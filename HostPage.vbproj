@@ -159,6 +159,7 @@
     <Content Include="Menu.ascx" />
     <Content Include="Page.ascx" />
     <Content Include="Styles.css" />
+    <Content Include="Web.config" />
     <EmbeddedResource Include="App_LocalResources\host.aspx.en.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -200,6 +201,14 @@
       <Project>{1c6d65f5-bc68-414d-9ed9-a0420016b95b}</Project>
       <Name>PrayTime</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
