@@ -1,0 +1,815 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<collection>
+  <books count="61" chapters="" sharedhadiths="">
+    <book index="1" chapters="8" hadiths="31" starthadith="1" sharedhadiths="0" ename="The Times of Prayer">
+      <chapter index="1" hadiths="12" starthadith="1" ename="The Times of Prayer" />
+      <chapter index="2" hadiths="2" starthadith="13" ename="The Time of the Jumua Prayer" />
+      <chapter index="3" hadiths="4" starthadith="15" ename="Catching a Raka of the Prayer" />
+      <chapter index="4" hadiths="2" starthadith="19" ename="Duluk ash-Shams and Ghasaq al-Layl" />
+      <chapter index="5" hadiths="4" starthadith="21" ename="The Times of Prayer in General" />
+      <chapter index="6" hadiths="2" starthadith="25" ename="Sleeping Through the Prayer" />
+      <chapter index="7" hadiths="3" starthadith="27" ename="Prohibition against Doing the Prayer at the Hottest Hour of the Day" />
+      <chapter index="8" hadiths="2" starthadith="30" ename="The Prohibition against Entering the Mosque Smelling of Garlic and the Prohibition against covering the Mouth in Prayer" />
+    </book>
+    <book index="2" chapters="33" hadiths="117" starthadith="1" sharedhadiths="0" ename="Purity">
+      <chapter index="1" hadiths="8" starthadith="1" ename="How to do Wudu" />
+      <chapter index="2" hadiths="2" starthadith="9" ename="The Wudu of a Man who has been Asleep when he Gets Up to Pray" />
+      <chapter index="3" hadiths="5" starthadith="11" ename="What is Pure for Wudu" />
+      <chapter index="4" hadiths="3" starthadith="16" ename="Things which do not break Wudu" />
+      <chapter index="5" hadiths="9" starthadith="19" ename="Discontinuing Doing Wudu on Account of Eating Cooked Food" />
+      <chapter index="6" hadiths="10" starthadith="28" ename="On Wudu in General" />
+      <chapter index="7" hadiths="4" starthadith="38" ename="Wiping the Head and Ears" />
+      <chapter index="8" hadiths="4" starthadith="42" ename="Wiping over Leather Socks" />
+      <chapter index="9" hadiths="2" starthadith="46" ename="How to Wipe over Leather Socks" />
+      <chapter index="10" hadiths="1" starthadith="48" ename="Nose-Bleeds" />
+      <chapter index="11" hadiths="2" starthadith="49" ename="How to Wipe over Leather Socks" />
+      <chapter index="12" hadiths="2" starthadith="51" ename="What to Do in the Event of a Nose-Bleed" />
+      <chapter index="13" hadiths="2" starthadith="53" ename="What to Do in the Event of Bleeding from a Wound or a Nose-Bleed" />
+      <chapter index="14" hadiths="3" starthadith="55" ename="Wudu on Account of Prostatic Fluid" />
+      <chapter index="15" hadiths="2" starthadith="58" ename="Indulgence in Not Having to do Wudu for Prostatic Fluid" />
+      <chapter index="16" hadiths="6" starthadith="60" ename="Wudu on Account of Touching the Genitals" />
+      <chapter index="17" hadiths="3" starthadith="66" ename="Wudu on Account of a Man Kissing His Wife" />
+      <chapter index="18" hadiths="4" starthadith="69" ename="How to do Ghusl for Major Ritual Impurity" />
+      <chapter index="19" hadiths="5" starthadith="73" ename="Obligation to Do Ghusl when the Two Circumcised Parts Meet" />
+      <chapter index="20" hadiths="3" starthadith="78" ename="Wudu of a Person in a State of Major Ritual Impurity (Janaba)" />
+      <chapter index="21" hadiths="5" starthadith="81" ename="The Repetition of the Prayer by a Person in a State of Major Ritual Impurity, his Doing Ghusl, when He has Prayed without Remembering it, and his Washing his Garments" />
+      <chapter index="22" hadiths="2" starthadith="86" ename="Ghusl of a Woman when She Experiences the Same as a Man in Her Sleep" />
+      <chapter index="23" hadiths="3" starthadith="88" ename="Ghusl for Major Ritual Impurity" />
+      <chapter index="24" hadiths="1" starthadith="91" ename="Tayammum" />
+      <chapter index="25" hadiths="2" starthadith="92" ename="How to do Tayammum" />
+      <chapter index="26" hadiths="1" starthadith="94" ename="Tayammum of Someone in a State of Major Ritual Impurity" />
+      <chapter index="27" hadiths="4" starthadith="95" ename="What is Permitted a Man from his Wife when She is Menstruating" />
+      <chapter index="28" hadiths="3" starthadith="99" ename="The Purity of a Menstruating Woman" />
+      <chapter index="29" hadiths="4" starthadith="102" ename="Menstruation in General" />
+      <chapter index="30" hadiths="5" starthadith="106" ename="Bleeding as if Menstruating" />
+      <chapter index="31" hadiths="2" starthadith="111" ename="The Urine of an Infant Boy" />
+      <chapter index="32" hadiths="2" starthadith="113" ename="Urinating Standing and Otherwise" />
+      <chapter index="33" hadiths="3" starthadith="115" ename="The Tooth-stick (Siwak)" />
+    </book>
+    <book index="3" chapters="19" hadiths="75" starthadith="1" sharedhadiths="0" ename="Prayer">
+      <chapter index="1" hadiths="10" starthadith="1" ename="The Call to Prayer" />
+      <chapter index="2" hadiths="4" starthadith="11" ename="The Adhan During a Journey and Without Wudu" />
+      <chapter index="3" hadiths="1" starthadith="15" ename="The Duration of the Meal before Dawn (Sahur) in Relation to the Adhan" />
+      <chapter index="4" hadiths="1" starthadith="16" ename="The Adhan During a Journey and Without Wudu" />
+      <chapter index="5" hadiths="7" starthadith="17" ename="The Opening of the Prayer" />
+      <chapter index="6" hadiths="5" starthadith="24" ename="The Recitation of Qur'an in the Maghrib and lsha Prayers" />
+      <chapter index="7" hadiths="6" starthadith="29" ename="Behaviour in the Recitation" />
+      <chapter index="8" hadiths="4" starthadith="35" ename="The Recitation in the Subh Prayer" />
+      <chapter index="9" hadiths="2" starthadith="39" ename="The Umm al-Qur'an" />
+      <chapter index="10" hadiths="4" starthadith="41" ename="Reciting to Oneself behind the Imam when He does not Recite Aloud" />
+      <chapter index="11" hadiths="2" starthadith="45" ename="Not Reciting behind the Imam when He Recites Aloud" />
+      <chapter index="12" hadiths="4" starthadith="47" ename="Saying 'Amin' behind the Imam" />
+      <chapter index="13" hadiths="5" starthadith="51" ename="Behaviour in the Sitting in the Prayer" />
+      <chapter index="14" hadiths="5" starthadith="56" ename="Tashahhud in the Prayer" />
+      <chapter index="15" hadiths="1" starthadith="61" ename="What to Do If One Raises One's Head Before the Imam" />
+      <chapter index="16" hadiths="4" starthadith="62" ename="What to Do if through Forgetfulness One Says the Taslim after Two Rakas" />
+      <chapter index="17" hadiths="4" starthadith="66" ename="Completing what is Recalled When Uncertain how much has been Prayed" />
+      <chapter index="18" hadiths="2" starthadith="70" ename="What to Do if One Stands After the Completion of the Prayer or After Two Rakas" />
+      <chapter index="19" hadiths="4" starthadith="72" ename="Looking in the Prayer at What Distracts You from It" />
+    </book>
+    <book index="4" chapters="1" hadiths="3" starthadith="1" sharedhadiths="0" ename="Forgetfulness in Prayer">
+      <chapter index="1" hadiths="3" starthadith="1" ename="What to Do if One Forgets in Prayer" />
+    </book>
+    <book index="5" chapters="9" hadiths="23" starthadith="1" sharedhadiths="0" ename="Jumu'a">
+      <chapter index="1" hadiths="5" starthadith="1" ename="Doing Ghusl on the Day of Jumua" />
+      <chapter index="2" hadiths="6" starthadith="6" ename="Paying Atlention when the Imam is Giving the Khutba on the Day of Jumua" />
+      <chapter index="3" hadiths="1" starthadith="12" ename="Concerning Someone Who Catches a Raka of the Jumua Prayer" />
+      <chapter index="4" hadiths="1" starthadith="13" ename="Nose Bleeds on the Day of Jumua" />
+      <chapter index="5" hadiths="1" starthadith="14" ename="Making Haste on the Day of Jumua" />
+      <chapter index="6" hadiths="1" starthadith="15" ename="The Imam's Stopping Off in a Town on the Day of Jumua" />
+      <chapter index="7" hadiths="2" starthadith="16" ename="The Special Time in the Day of Jumua" />
+      <chapter index="8" hadiths="3" starthadith="18" ename="Good Appearance and Not Stepping Over People and Facing the Imam on the Day of Jumua" />
+      <chapter index="9" hadiths="3" starthadith="21" ename="The Recitation in the Jumua Prayer, the Sitting, and Missing the Prayer Without a Reason" />
+    </book>
+    <book index="6" chapters="2" hadiths="8" starthadith="1" sharedhadiths="0" ename="Prayer in Ramadan">
+      <chapter index="1" hadiths="2" starthadith="1" ename="Stimulation of the Desire for Prayer in Ramadan" />
+      <chapter index="2" hadiths="6" starthadith="3" ename="Watching the Night in Prayer" />
+    </book>
+    <book index="7" chapters="4" hadiths="33" starthadith="1" sharedhadiths="1" ename="Tahajjud">
+      <chapter index="1" hadiths="7" starthadith="1" ename="Concerning Prayer in the Night" />
+      <chapter index="2" hadiths="5" starthadith="8" ename="How the Prophet, may Allah bless him and grant him peace, Prayed the Witr" />
+      <chapter index="3" hadiths="16" starthadith="13" ename="The Command to Pray the Witr" />
+      <chapter index="4" hadiths="5" starthadith="29" ename="The Two Rakas of Fajr" />
+    </book>
+    <book index="8" chapters="10" hadiths="39" starthadith="1" sharedhadiths="0" ename="Prayer in Congregation">
+      <chapter index="1" hadiths="4" starthadith="1" ename="The Superiority of Prayer in Congregation over Prayer Done Alone" />
+      <chapter index="2" hadiths="4" starthadith="5" ename="The Isha and Subh Prayers" />
+      <chapter index="3" hadiths="5" starthadith="9" ename="Doing the Prayer Again with the Imam" />
+      <chapter index="4" hadiths="3" starthadith="14" ename="Praying in a Group of People" />
+      <chapter index="5" hadiths="3" starthadith="17" ename="Prayer Behind an Imam when He Prays Sitting" />
+      <chapter index="6" hadiths="2" starthadith="20" ename="The Excellence of the Prayer of Someone Standing over the Prayer of Someone Sitting" />
+      <chapter index="7" hadiths="4" starthadith="22" ename="Praying Voluntary Prayers (Nawafil) Sitting" />
+      <chapter index="8" hadiths="4" starthadith="26" ename="The Middle Prayer" />
+      <chapter index="9" hadiths="6" starthadith="30" ename="Permission to Pray in One Garment" />
+      <chapter index="10" hadiths="4" starthadith="36" ename="Permission for a Woman to Pray in a Shift and Head-Covering" />
+    </book>
+    <book index="9" chapters="25" hadiths="98" starthadith="1" sharedhadiths="1" ename="Shortening the Prayer">
+      <chapter index="1" hadiths="7" starthadith="1" ename="Joining Two Prayers when Settled and when Travelling" />
+      <chapter index="2" hadiths="3" starthadith="8" ename="Shortening the Prayer in Travel" />
+      <chapter index="3" hadiths="7" starthadith="11" ename="Circumstances in Which the Prayer Has To Be Shortened" />
+      <chapter index="4" hadiths="2" starthadith="18" ename="The Prayer of a Traveller when Undecided whether to Remain in a Place or Not" />
+      <chapter index="5" hadiths="1" starthadith="20" ename="Doing the Full Prayer when One Decides to Remain in a Place" />
+      <chapter index="6" hadiths="3" starthadith="21" ename="The Prayer of a Traveller when Imam, or Behind an Imam" />
+      <chapter index="7" hadiths="6" starthadith="24" ename="Voluntary Prayers while Travelling, by Day and at Night, and Praying on a Riding Beast" />
+      <chapter index="8" hadiths="4" starthadith="30" ename="The Prayer of Duha" />
+      <chapter index="9" hadiths="2" starthadith="34" ename="General Remarks concerning the Voluntary Prayer of Duha" />
+      <chapter index="10" hadiths="5" starthadith="36" ename="Warning against Passing in Front of Someone Praying" />
+      <chapter index="11" hadiths="3" starthadith="41" ename="Permission to Pass in Front of Someone Praying" />
+      <chapter index="12" hadiths="1" starthadith="44" ename="The Sutra of a Man Praying on a Journey" />
+      <chapter index="13" hadiths="2" starthadith="45" ename="Brushing Away Small Stones in the Prayer" />
+      <chapter index="14" hadiths="2" starthadith="47" ename="Straightening the Rows" />
+      <chapter index="15" hadiths="2" starthadith="49" ename="Placing One Hand on the Other in the Prayer" />
+      <chapter index="16" hadiths="1" starthadith="51" ename="Qunut in the Subh Prayer" />
+      <chapter index="17" hadiths="2" starthadith="52" ename="Prohibition against a Man Praying when Wishing to Relieve Himself" />
+      <chapter index="18" hadiths="8" starthadith="54" ename="Waiting for The Prayer and Walking to It" />
+      <chapter index="19" hadiths="2" starthadith="62" ename="Placing the Hands Flat on the Surface by the Face when Prostrating" />
+      <chapter index="20" hadiths="3" starthadith="64" ename="Turning and Clapping when Necessary during the Prayer" />
+      <chapter index="21" hadiths="2" starthadith="67" ename="What to Do when Entering while the Imam is in Ruku" />
+      <chapter index="22" hadiths="3" starthadith="69" ename="Prayer on the Prophet, may Allah Bless Him and Grant Him Peace" />
+      <chapter index="23" hadiths="12" starthadith="72" ename="How to Do the Prayer in General" />
+      <chapter index="24" hadiths="13" starthadith="84" ename="Prayer in General" />
+      <chapter index="25" hadiths="2" starthadith="97" ename="Stimulation of the Desire for Prayer in General" />
+    </book>
+    <book index="10" chapters="7" hadiths="14" starthadith="1" sharedhadiths="0" ename="The Two 'Ids">
+      <chapter index="1" hadiths="2" starthadith="1" ename="The Ghusl of the Two Ids, the Call to Prayer for Them, and the Iqama" />
+      <chapter index="2" hadiths="3" starthadith="3" ename="The Order to Pray Before the Khutba on the Two Ids" />
+      <chapter index="3" hadiths="2" starthadith="6" ename="The Order to Eat Before Going Out on the Morning of the Id" />
+      <chapter index="4" hadiths="2" starthadith="8" ename="The Takbir and the Recitation in the Prayer of the Two Ids" />
+      <chapter index="5" hadiths="2" starthadith="10" ename="Refraining from Prayer Before and After the Two Id Prayers" />
+      <chapter index="6" hadiths="2" starthadith="12" ename="Permission to Pray Before and After the Two Id Prayers" />
+      <chapter index="7" hadiths="1" starthadith="14" ename="The Coming of the Imam on the Day of the Id and Waiting for the Khutba" />
+    </book>
+    <book index="11" chapters="1" hadiths="4" starthadith="1" sharedhadiths="0" ename="The Fear Prayer">
+      <chapter index="1" hadiths="4" starthadith="1" ename="The Fear Prayer" />
+    </book>
+    <book index="12" chapters="2" hadiths="4" starthadith="1" sharedhadiths="0" ename="The Eclipse Prayer">
+      <chapter index="1" hadiths="3" starthadith="1" ename="How to Pray the Eclipse Prayer" />
+      <chapter index="2" hadiths="1" starthadith="4" ename="About the Eclipse Prayer" />
+    </book>
+    <book index="13" chapters="3" hadiths="6" starthadith="1" sharedhadiths="0" ename="Asking for Rain">
+      <chapter index="1" hadiths="1" starthadith="1" ename="How to Ask for Rain" />
+      <chapter index="2" hadiths="2" starthadith="2" ename="About Asking for Rain" />
+      <chapter index="3" hadiths="3" starthadith="4" ename="About Asking the Stars for Rain" />
+    </book>
+    <book index="14" chapters="5" hadiths="15" starthadith="1" sharedhadiths="0" ename="The Qibla">
+      <chapter index="1" hadiths="2" starthadith="1" ename="The Prohibition against Relieving Oneself Facing the Qibla" />
+      <chapter index="2" hadiths="1" starthadith="3" ename="Permission to Face the Qibla when Urinating or Defecating" />
+      <chapter index="3" hadiths="5" starthadith="4" ename="The Prohibition against Spitting towards the Qibla" />
+      <chapter index="4" hadiths="3" starthadith="9" ename="Concerning the Mosque of the Prophet, may Allah Bless Him and Grant Him Peace" />
+      <chapter index="5" hadiths="4" starthadith="12" ename="Concerning Women Going Out to the Mosque" />
+    </book>
+    <book index="15" chapters="10" hadiths="50" starthadith="1" sharedhadiths="0" ename="The Qur'an">
+      <chapter index="1" hadiths="1" starthadith="1" ename="The Order to Be In Wudu (When Touching the Qur'an)" />
+      <chapter index="2" hadiths="1" starthadith="2" ename="Permission to Recite the Qur'an When Not in Wudu" />
+      <chapter index="3" hadiths="2" starthadith="3" ename="About the Division of the Qur'an into Sections (Hizbs)" />
+      <chapter index="4" hadiths="7" starthadith="5" ename="About the Qur'an" />
+      <chapter index="5" hadiths="5" starthadith="12" ename="The Prostration of the Qur'an" />
+      <chapter index="6" hadiths="3" starthadith="17" ename="About Reciting Surat al-Ikhlas and Surat al-Mulk" />
+      <chapter index="7" hadiths="6" starthadith="20" ename="Dhikr (Remembrance) ofAllah, the Blessed and Exalted" />
+      <chapter index="8" hadiths="11" starthadith="26" ename="Dua (Supplication)" />
+      <chapter index="9" hadiths="7" starthadith="37" ename="MakingDua" />
+      <chapter index="10" hadiths="7" starthadith="44" ename="Forbidding Prayer After Subh and After Asr" />
+    </book>
+    <book index="16" chapters="16" hadiths="58" starthadith="1" sharedhadiths="0" ename="Burials">
+      <chapter index="1" hadiths="4" starthadith="1" ename="Washing the Dead" />
+      <chapter index="2" hadiths="3" starthadith="5" ename="Shrouding the Dead" />
+      <chapter index="3" hadiths="4" starthadith="8" ename="Walking in Front of the Bier" />
+      <chapter index="4" hadiths="2" starthadith="12" ename="The Prohibition Against Following the Bier with a Burning Torch" />
+      <chapter index="5" hadiths="3" starthadith="14" ename="The Takbir Over a Dead Man" />
+      <chapter index="6" hadiths="3" starthadith="17" ename="What to Say in the Prayer for the Dead" />
+      <chapter index="7" hadiths="2" starthadith="20" ename="Permission to Pray Over the Dead After Subh until the Dawn is very Clear and After Asr until the Sun Turns Yellow" />
+      <chapter index="8" hadiths="2" starthadith="22" ename="Doing the Prayer for the Dead in Mosques" />
+      <chapter index="9" hadiths="3" starthadith="24" ename="The Prayer over the Dead in General" />
+      <chapter index="10" hadiths="6" starthadith="27" ename="Burying theDead" />
+      <chapter index="11" hadiths="3" starthadith="33" ename="Stopping for Funerals and Sitting in Graveyards" />
+      <chapter index="12" hadiths="2" starthadith="36" ename="The Prohibition Against Weeping Over the Dead" />
+      <chapter index="13" hadiths="3" starthadith="38" ename="Contentment in the Face of Misfortune" />
+      <chapter index="14" hadiths="3" starthadith="41" ename="Contentment in the Face of Misfortune Generally" />
+      <chapter index="15" hadiths="2" starthadith="44" ename="Digging Up Graves" />
+      <chapter index="16" hadiths="13" starthadith="46" ename="Burial in General" />
+    </book>
+    <book index="17" chapters="29" hadiths="58" starthadith="1" sharedhadiths="1" ename="Zakat">
+      <chapter index="1" hadiths="3" starthadith="1" ename="Things on which Zakat must be Paid" />
+      <chapter index="2" hadiths="4" starthadith="4" ename="The Zakat on Gold and Silver Coin" />
+      <chapter index="3" hadiths="1" starthadith="8" ename="The Zakat On Mines" />
+      <chapter index="4" hadiths="1" starthadith="9" ename="The Zakat on Buried Treasure (Rikaz)" />
+      <chapter index="5" hadiths="2" starthadith="10" ename="Things on Which there is No Zakat, in the Way of Jewellery, Bits of Gold and Silver, and Amber" />
+      <chapter index="6" hadiths="4" starthadith="12" ename="The Zakat on the Property of Orphans and Trading on their Behalf" />
+      <chapter index="7" hadiths="1" starthadith="16" ename="The Zakat on Inheritance" />
+      <chapter index="8" hadiths="3" starthadith="17" ename="The Zakat on Debts" />
+      <chapter index="9" hadiths="1" starthadith="20" ename="The Zakat on Merchandise" />
+      <chapter index="10" hadiths="2" starthadith="21" ename="Wealth which has been Hidden Away (Kanz)" />
+      <chapter index="11" hadiths="1" starthadith="23" ename="The Zakat on Livestock" />
+      <chapter index="12" hadiths="1" starthadith="24" ename="The Zakat on Cattle" />
+      <chapter index="13" hadiths="1" starthadith="25" ename="The Zakat of Associates" />
+      <chapter index="14" hadiths="1" starthadith="26" ename="Counting Lambs and Kids when Assessing Zakat" />
+      <chapter index="15" hadiths="1" starthadith="27" ename="What to do about the Zakat when Two Years are Assessed together" />
+      <chapter index="16" hadiths="2" starthadith="28" ename="The Prohibition against Making Things Difficult for People when Taking Zakat" />
+      <chapter index="17" hadiths="1" starthadith="30" ename="Receiving Zakat, and Who is Permitted to Receive It" />
+      <chapter index="18" hadiths="3" starthadith="31" ename="Collecting Zakat and Being Firm In Doing So" />
+      <chapter index="19" hadiths="2" starthadith="34" ename="The Zakat on Estimated Yields of Date Palms and Vines" />
+      <chapter index="20" hadiths="1" starthadith="36" ename="The Zakat on Seeds and Olives" />
+      <chapter index="21" hadiths="1" starthadith="37" ename="Fruit on which Zakat does Not have to be Paid" />
+      <chapter index="22" hadiths="0" ename="Fruits, Animal Fodder and Vegetables for which No Zakat has to be Paid" />
+      <chapter index="23" hadiths="4" starthadith="38" ename="The Zakat on Slaves, Horses and Honey" />
+      <chapter index="24" hadiths="5" starthadith="42" ename="Jizya on People of the Book and Magians" />
+      <chapter index="25" hadiths="3" starthadith="47" ename="Tithes for the People of Dhimma" />
+      <chapter index="26" hadiths="2" starthadith="50" ename="Selling Sadaqa and Taking it Back" />
+      <chapter index="27" hadiths="4" starthadith="52" ename="Who Pays the Zakat al-Fitr" />
+      <chapter index="28" hadiths="2" starthadith="56" ename="When to Send the Zakat al-Fitr" />
+      <chapter index="29" hadiths="1" starthadith="58" ename="People for Whom it is Not Obligatory to Pay the Zakat al-Fitr" />
+    </book>
+    <book index="18" chapters="22" hadiths="60" starthadith="1" sharedhadiths="0" ename="Fasting">
+      <chapter index="1" hadiths="4" starthadith="1" ename="Sighting the New Moon for Beginning and Ending the Fast of Ramadan" />
+      <chapter index="2" hadiths="1" starthadith="5" ename="Making the Intention to Fast Before Dawn" />
+      <chapter index="3" hadiths="3" starthadith="6" ename="Being Quick to Break the Fast" />
+      <chapter index="4" hadiths="4" starthadith="9" ename="Fasting When Junub in the Morning during Ramadan" />
+      <chapter index="5" hadiths="5" starthadith="13" ename="Permission for a Fasting Man to Kiss" />
+      <chapter index="6" hadiths="3" starthadith="18" ename="Restraint in Kissing when Fasting" />
+      <chapter index="7" hadiths="6" starthadith="21" ename="Fasting while Travelling" />
+      <chapter index="8" hadiths="1" starthadith="27" ename="What to Do when Returning from a Journey in Ramadan or Intending to Travel in Ramadan" />
+      <chapter index="9" hadiths="2" starthadith="28" ename="The Kaffara (Making Amends) for Breaking the Fast in Ramadan" />
+      <chapter index="10" hadiths="3" starthadith="30" ename="Cupping a Man who is Fasting" />
+      <chapter index="11" hadiths="3" starthadith="33" ename="Fasting on the Day of Ashura ( the 10th of Muharram)" />
+      <chapter index="12" hadiths="2" starthadith="36" ename="Fasting the Days of Fitr and Adha and Fasting Continuously" />
+      <chapter index="13" hadiths="2" starthadith="38" ename="The Prohibition against Fasting for Two Days or More without Breaking the Fast in between (Wisal)" />
+      <chapter index="14" hadiths="1" starthadith="40" ename="The Fasting of Someone who Kills by Mistake or Pronounces the Dhihar Form of Divorce" />
+      <chapter index="15" hadiths="1" starthadith="41" ename="What a Sick Man Does when Fasting" />
+      <chapter index="16" hadiths="2" starthadith="42" ename="The Vow to Fast, and Fasting for the Dead" />
+      <chapter index="17" hadiths="6" starthadith="44" ename="Making Up Days Missed in Ramadan, and the Kaffara" />
+      <chapter index="18" hadiths="1" starthadith="50" ename="Making up forVoluntary Fasts (Broken)" />
+      <chapter index="19" hadiths="3" starthadith="51" ename="The Fidya (Compensation) of a Man who Breaks the Fast in Ramadan from Weakness" />
+      <chapter index="20" hadiths="1" starthadith="54" ename="Making Up For Days Not Fasted in Ramadan in General" />
+      <chapter index="21" hadiths="1" starthadith="55" ename="Fasting The &quot;Day of Doubt&quot;" />
+      <chapter index="22" hadiths="5" starthadith="56" ename="The Fast in General" />
+    </book>
+    <book index="19" chapters="6" hadiths="17" starthadith="1" sharedhadiths="1" ename="I'tikaf in Ramadan">
+      <chapter index="1" hadiths="3" starthadith="1" ename="Mention of Iltikaf" />
+      <chapter index="2" hadiths="1" starthadith="4" ename="Things Without Which Itikaf is Not Possible" />
+      <chapter index="3" hadiths="2" starthadith="5" ename="Leaving Itikaf for the Id" />
+      <chapter index="4" hadiths="3" starthadith="7" ename="Making Up for the Itikaf (Not Done)" />
+      <chapter index="5" hadiths="0" ename="Marriage in Itikaf" />
+      <chapter index="6" hadiths="8" starthadith="10" ename="Laylat al-Qadr" />
+    </book>
+    <book index="20" chapters="78" hadiths="264" starthadith="1" sharedhadiths="2" ename="Hajj">
+      <chapter index="1" hadiths="3" starthadith="1" ename="The Ghusl to Enter Ihram" />
+      <chapter index="2" hadiths="4" starthadith="4" ename="The Ghusl of Someone in Ihram" />
+      <chapter index="3" hadiths="1" starthadith="8" ename="Clothes Forbidden to be Worn in Ihram" />
+      <chapter index="4" hadiths="5" starthadith="9" ename="Wearing Clothes when in Ihram" />
+      <chapter index="5" hadiths="8" starthadith="14" ename="Veiling the Face while in Ihram" />
+      <chapter index="6" hadiths="6" starthadith="22" ename="Where People Should Enter Ihram" />
+      <chapter index="7" hadiths="6" starthadith="28" ename="How to Enter Ihram" />
+      <chapter index="8" hadiths="2" starthadith="34" ename="Raising the Voice in Talbiyya" />
+      <chapter index="9" hadiths="4" starthadith="36" ename="Doing Hajj on its Own" />
+      <chapter index="10" hadiths="3" starthadith="40" ename="Doing Hajj and Umra Together (Hajj al-Qiran)" />
+      <chapter index="11" hadiths="7" starthadith="43" ename="When to Stop the Talbiya" />
+      <chapter index="12" hadiths="2" starthadith="50" ename="How the People of Makka, and Those Besides Them Living There, Go into Ihram" />
+      <chapter index="13" hadiths="3" starthadith="52" ename="Situations when Ihram Not Obligatory for Garlanding Sacrificial Animals" />
+      <chapter index="14" hadiths="1" starthadith="55" ename="What a Menstruating Woman Does on Hajj" />
+      <chapter index="15" hadiths="4" starthadith="56" ename="Umra in the Months of Hajj" />
+      <chapter index="16" hadiths="1" starthadith="60" ename="When to Stop Saying the Talbiya for Umra" />
+      <chapter index="17" hadiths="4" starthadith="61" ename="Hajj At-Tamattu" />
+      <chapter index="18" hadiths="1" starthadith="65" ename="Circumstances in which Tamattu is Not Obligatory" />
+      <chapter index="19" hadiths="4" starthadith="66" ename="About Umra in General" />
+      <chapter index="20" hadiths="5" starthadith="70" ename="Marriage in Ihram" />
+      <chapter index="21" hadiths="2" starthadith="75" ename="Cupping in Ihram" />
+      <chapter index="22" hadiths="7" starthadith="77" ename="Game that can be Eaten by Someone who is in Ihram" />
+      <chapter index="23" hadiths="3" starthadith="84" ename="Game that is Not Halal to Eat in Ihram" />
+      <chapter index="24" hadiths="1" starthadith="87" ename="Hunting in the Haram" />
+      <chapter index="25" hadiths="1" starthadith="88" ename="Assessing the Forfeit for Hunting Game Animals that Someone in Ihram can Kill" />
+      <chapter index="26" hadiths="4" starthadith="89" ename="Animals that Someone in Ihram can Kill" />
+      <chapter index="27" hadiths="5" starthadith="93" ename="Things that Someone in Ihram is Allowed to do" />
+      <chapter index="28" hadiths="1" starthadith="98" ename="Doing the Hajj for Somebody Else" />
+      <chapter index="29" hadiths="2" starthadith="99" ename="Concerning Someone whose Path (to the House) is Blocked by an Enemy" />
+      <chapter index="30" hadiths="4" starthadith="101" ename="Concerning Someone who is Hindered (From Going To The House) by Something Other than an Enemy" />
+      <chapter index="31" hadiths="3" starthadith="105" ename="Concerning Building the Kaba" />
+      <chapter index="32" hadiths="5" starthadith="108" ename="Hastening (Raml) in the Tawaf" />
+      <chapter index="33" hadiths="3" starthadith="113" ename="Saluting the Corners during Tawaf" />
+      <chapter index="34" hadiths="1" starthadith="116" ename="Kissing the Corner of the Black Stone when Saluting the Corners" />
+      <chapter index="35" hadiths="1" starthadith="117" ename="The Two Rakas of Tawaf" />
+      <chapter index="36" hadiths="3" starthadith="118" ename="Praying after Subh and Asr when doing Tawaf" />
+      <chapter index="37" hadiths="3" starthadith="121" ename="Taking Leave of the House" />
+      <chapter index="38" hadiths="3" starthadith="124" ename="Tawaf in General" />
+      <chapter index="39" hadiths="3" starthadith="127" ename="Starting with Safa in the Say" />
+      <chapter index="40" hadiths="3" starthadith="130" ename="Say in General" />
+      <chapter index="41" hadiths="2" starthadith="133" ename="Fasting the Day of Arafa" />
+      <chapter index="42" hadiths="4" starthadith="135" ename="Fasting on the Days of Mina" />
+      <chapter index="43" hadiths="7" starthadith="139" ename="What are Acceptable as Sacrificial Animals (Hadys)" />
+      <chapter index="44" hadiths="8" starthadith="146" ename="What to Do with Sacrificial Animals (Hadys) while They are being Driven" />
+      <chapter index="45" hadiths="6" starthadith="154" ename="What to Do with Sacrificial Animals (Hadys) if They get Injured or Stray" />
+      <chapter index="46" hadiths="2" starthadith="160" ename="The Animal (Hady) to be Sacriticed for Intercourse in Ihram" />
+      <chapter index="47" hadiths="2" starthadith="162" ename="The Animal (Hady) to be Sacrificed for Missing the Hajj" />
+      <chapter index="48" hadiths="3" starthadith="164" ename="Intercourse with One's Wife Before Doing the Tawaf al-Ifada" />
+      <chapter index="49" hadiths="4" starthadith="167" ename="The Sacrificial Animals that are Considered Least Difficult" />
+      <chapter index="50" hadiths="4" starthadith="171" ename="Sacrificial Animals in General" />
+      <chapter index="51" hadiths="2" starthadith="175" ename="The Wuquf at Arata and Muzdalifa" />
+      <chapter index="52" hadiths="1" starthadith="177" ename="Wuquf while Not in Wudu, and Wuquf on a Riding Beast" />
+      <chapter index="53" hadiths="2" starthadith="178" ename="The Wuquf at Arafa of Someone who Misses the Hajj" />
+      <chapter index="54" hadiths="5" starthadith="180" ename="Sending Women and Children Ahead" />
+      <chapter index="55" hadiths="2" starthadith="185" ename="Going from Arafa to Muzdalifa" />
+      <chapter index="56" hadiths="3" starthadith="187" ename="Sacrificing during the Hajj" />
+      <chapter index="57" hadiths="3" starthadith="190" ename="How to Make the Sacrifice" />
+      <chapter index="58" hadiths="2" starthadith="193" ename="Shaving the Head" />
+      <chapter index="59" hadiths="5" starthadith="195" ename="Cutting the Hair" />
+      <chapter index="60" hadiths="2" starthadith="200" ename="Matting the Hair" />
+      <chapter index="61" hadiths="3" starthadith="202" ename="Doing the Prayer in the House, Shortening the Prayer, and Hastening the Khutba at Arafa" />
+      <chapter index="62" hadiths="4" starthadith="205" ename="Doing the Prayer at Muzdalifa" />
+      <chapter index="63" hadiths="4" starthadith="209" ename="Doing the Prayer at Mina" />
+      <chapter index="64" hadiths="1" starthadith="213" ename="The Prayer of the Visitor of Makka or Mina" />
+      <chapter index="65" hadiths="1" starthadith="214" ename="Saying the Takbir During the Days of Tashriq" />
+      <chapter index="66" hadiths="2" starthadith="215" ename="Doing the Prayer at al-Muarras and al-Muhassab" />
+      <chapter index="67" hadiths="3" starthadith="217" ename="Staying Overnight at Makka on the Nights of Mina" />
+      <chapter index="68" hadiths="7" starthadith="220" ename="Stoning the Jamras" />
+      <chapter index="69" hadiths="5" starthadith="227" ename="Indulgence with Respect to Stoning the Jamras" />
+      <chapter index="70" hadiths="2" starthadith="232" ename="A Menstruating Woman's Entering Makka" />
+      <chapter index="71" hadiths="5" starthadith="234" ename="The Tawaf al-Ifada of a Menstruating Woman" />
+      <chapter index="72" hadiths="5" starthadith="239" ename="The Compensation (Fidya) for Killing Birds and Wild Animals in Ihram" />
+      <chapter index="73" hadiths="5" starthadith="244" ename="The Fidya for Killing Locusts in Ihram" />
+      <chapter index="74" hadiths="1" starthadith="249" ename="What to Do for Forgetfulness in the Rituals" />
+      <chapter index="75" hadiths="2" starthadith="250" ename="Compensation (Fidya) in General" />
+      <chapter index="76" hadiths="11" starthadith="252" ename="The Hajj in General" />
+      <chapter index="77" hadiths="1" starthadith="263" ename="The Hajj of a Woman without a Mahram" />
+      <chapter index="78" hadiths="1" starthadith="264" ename="Fasting in at-Tamattu" />
+    </book>
+    <book index="21" chapters="20" hadiths="51" starthadith="1" sharedhadiths="3" ename="Jihad">
+      <chapter index="1" hadiths="6" starthadith="1" ename="Stimulation of Desire for Jihad" />
+      <chapter index="2" hadiths="1" starthadith="7" ename="Prohibition against Travelling with the Qur'an in Enemy Territory" />
+      <chapter index="3" hadiths="4" starthadith="8" ename="Prohibition against Killing Women and Children in Military Expeditions" />
+      <chapter index="4" hadiths="1" starthadith="12" ename="Fulfilling Safe Conduct" />
+      <chapter index="5" hadiths="2" starthadith="13" ename="Giving in the Way of Allah" />
+      <chapter index="6" hadiths="2" starthadith="15" ename="Booty from War in General" />
+      <chapter index="7" hadiths="0" ename="Things on Which the Tax of One Fifth (Khumus) is Not Obligatory" />
+      <chapter index="8" hadiths="0" ename="What It is Permissible for the Muslims to Eat Before the Spoils are Divided" />
+      <chapter index="9" hadiths="1" starthadith="17" ename="Returning to the Owner What has been Captured by the Enemy Before the  Spoils are Divided" />
+      <chapter index="10" hadiths="2" starthadith="18" ename="Stripping the Slain of their Personal Effects in the Booty" />
+      <chapter index="11" hadiths="1" starthadith="20" ename="Awarding Bonuses from the Tax of One Fifth (Khumus)" />
+      <chapter index="12" hadiths="1" starthadith="21" ename="The Share of the Spoils Allotted to Cavalry in Military Expeditions" />
+      <chapter index="13" hadiths="5" starthadith="22" ename="Stealing from the Spoils" />
+      <chapter index="14" hadiths="7" starthadith="27" ename="The Martyrs in the Way of Allah" />
+      <chapter index="15" hadiths="2" starthadith="34" ename="Things in which Martyrdom Lies" />
+      <chapter index="16" hadiths="2" starthadith="36" ename="How to Wash the Martyr" />
+      <chapter index="17" hadiths="1" starthadith="38" ename="What is Disliked to be done with Something Given in the Way of Allah" />
+      <chapter index="18" hadiths="5" starthadith="39" ename="Stimulation of Desire for Jihad" />
+      <chapter index="19" hadiths="6" starthadith="44" ename="Horses and Racing Them and Expending in Military Expeditions" />
+      <chapter index="20" hadiths="2" starthadith="50" ename="Burial in One Grave by Necessity and Abu Bakr's, may Allah be Pleased with Him, Carrying Out the Promise of the Messenger of Allah, may Allah Bless Him and Grant Him Peace, After the Death of the Messenger, may Allah Bless Him and Grant Him Peace" />
+    </book>
+    <book index="22" chapters="8" hadiths="17" starthadith="1" sharedhadiths="1" ename="Vows and Oaths">
+      <chapter index="1" hadiths="3" starthadith="1" ename="Fulfilling Vows to Walk" />
+      <chapter index="2" hadiths="2" starthadith="4" ename="Making Vows to Walk to the House and Not Succeeding" />
+      <chapter index="3" hadiths="0" ename="How to Fulfill the Oath of Walking to the Kaba" />
+      <chapter index="4" hadiths="4" starthadith="6" ename="Vows Not Permitted in Disobedience to Allah" />
+      <chapter index="5" hadiths="1" starthadith="10" ename="Oaths for which Kaffara Not Obligatory" />
+      <chapter index="6" hadiths="1" starthadith="11" ename="Oaths for Which Kaffara is Obligatory" />
+      <chapter index="7" hadiths="2" starthadith="12" ename="Behaviour in the Kaffara of the Broken Oath" />
+      <chapter index="8" hadiths="4" starthadith="14" ename="Oaths in General" />
+    </book>
+    <book index="23" chapters="6" hadiths="13" starthadith="1" sharedhadiths="0" ename="Sacrificial Animals">
+      <chapter index="1" hadiths="2" starthadith="1" ename="Animals to Be Avoided as Sacrifices" />
+      <chapter index="2" hadiths="1" starthadith="3" ename="Animals Desirable as Sacrifices" />
+      <chapter index="3" hadiths="2" starthadith="4" ename="Prohibition against Sacrificing an Animal Before the Imam Departs" />
+      <chapter index="4" hadiths="3" starthadith="6" ename="Storing Meat from Sacrificial Animals" />
+      <chapter index="5" hadiths="3" starthadith="9" ename="Sharing Sacrificial Animals and How Many Share a Cow or Camel" />
+      <chapter index="6" hadiths="2" starthadith="12" ename="The Sacrificial Animal for the Child in the Womb and Mention of the Days of Sacrifice" />
+    </book>
+    <book index="24" chapters="4" hadiths="9" starthadith="1" sharedhadiths="0" ename="Slaughtering Animals">
+      <chapter index="1" hadiths="2" starthadith="1" ename="Saying the Name of Allah over the Slaughtered Animal" />
+      <chapter index="2" hadiths="4" starthadith="3" ename="Methods of Slaughter Permitted in Necessity" />
+      <chapter index="3" hadiths="1" starthadith="7" ename="What is Disapproved of in Slaughtering Animals" />
+      <chapter index="4" hadiths="2" starthadith="8" ename="Slaughtering What is in the Womb of a Slaughtered Animal" />
+    </book>
+    <book index="25" chapters="7" hadiths="19" starthadith="1" sharedhadiths="1" ename="Game">
+      <chapter index="1" hadiths="5" starthadith="1" ename="Eating Game Killed with Throwing Sticks and by Stones" />
+      <chapter index="2" hadiths="3" starthadith="6" ename="Game Caught by Trained Dogs" />
+      <chapter index="3" hadiths="4" starthadith="9" ename="Game of the Sea" />
+      <chapter index="4" hadiths="2" starthadith="13" ename="Prohibition Against Eating Animals with Fangs" />
+      <chapter index="5" hadiths="1" starthadith="15" ename="What is Disapproved of Regarding Eating Riding Animals" />
+      <chapter index="6" hadiths="3" starthadith="16" ename="Using the Skin of Animals Found Dead" />
+      <chapter index="7" hadiths="1" starthadith="19" ename="Eating Carrion when Forced to, out of Necessity" />
+    </book>
+    <book index="26" chapters="2" hadiths="7" starthadith="1" sharedhadiths="0" ename="The 'Aqiqa">
+      <chapter index="1" hadiths="3" starthadith="1" ename="About The Aqiqa" />
+      <chapter index="2" hadiths="4" starthadith="4" ename="Behaviour in the Aqiqa" />
+    </book>
+    <book index="27" chapters="14" hadiths="17" starthadith="0" sharedhadiths="7" ename="Fara'id">
+      <chapter index="1" hadiths="0" ename="Inheritance of Descendants" />
+      <chapter index="2" hadiths="0" ename="Inheritance of Husbands from Wives and Wives from Husbands" />
+      <chapter index="3" hadiths="0" ename="Inheritance of Fathers and Mothers from Children" />
+      <chapter index="4" hadiths="0" ename="Inheritance of Maternal Half-Siblings" />
+      <chapter index="5" hadiths="0" ename="Inheritance of Full Siblings" />
+      <chapter index="6" hadiths="0" ename="Inheritance of Paternal Half-Siblings" />
+      <chapter index="7" hadiths="3" starthadith="1" ename="Inheritance of Grandfathers" />
+      <chapter index="8" hadiths="4" starthadith="4" ename="Inheritance of Grandmothers" />
+      <chapter index="9" hadiths="2" starthadith="8" ename="Paternal Aunts" />
+      <chapter index="10" hadiths="0" ename="Inheritance of Paternal Relations" />
+      <chapter index="11" hadiths="0" ename="People who do Not Inherit" />
+      <chapter index="12" hadiths="5" starthadith="10" ename="Inheritance from People of Other Religions" />
+      <chapter index="13" hadiths="1" starthadith="15" ename="People Killed in Battle or Otherwise whose Situation in Inheritance is Not Known" />
+      <chapter index="14" hadiths="1" starthadith="16" ename="The Inheritance of the Child of Lian and the Child of Fornication" />
+    </book>
+    <book index="28" chapters="22" hadiths="57" starthadith="1" sharedhadiths="2" ename="Marriage">
+      <chapter index="1" hadiths="3" starthadith="1" ename="Asking for Someone's Hand in Marriage" />
+      <chapter index="2" hadiths="4" starthadith="4" ename="Asking Consent of Virgins and Women Previously Married for their Persons" />
+      <chapter index="3" hadiths="4" starthadith="8" ename="The Bride-Price and Unreturnable Gifts" />
+      <chapter index="4" hadiths="2" starthadith="12" ename="Consummating the Marriage" />
+      <chapter index="5" hadiths="2" starthadith="14" ename="Wedding Nights of Virgins and Women Previously Married" />
+      <chapter index="6" hadiths="1" starthadith="16" ename="Stipulations Not Permitted in Marriage" />
+      <chapter index="7" hadiths="3" starthadith="17" ename="Marriage of the Muhallil and its Like" />
+      <chapter index="8" hadiths="2" starthadith="20" ename="Combinations of Women Not to be Married Together" />
+      <chapter index="9" hadiths="2" starthadith="22" ename="Prohibition against Marrying Mothers of Wives" />
+      <chapter index="10" hadiths="0" ename="Marriage to Mothers of Women with Whom One has had Sexual Relations in a Disapproved Manner" />
+      <chapter index="11" hadiths="4" starthadith="24" ename="What is Not Permitted in Marriage in General" />
+      <chapter index="12" hadiths="2" starthadith="28" ename="Marrying Slaves when already Married to Free Women" />
+      <chapter index="13" hadiths="3" starthadith="30" ename="A Man's Owning a Slave Whom He has Married and then Divorced" />
+      <chapter index="14" hadiths="3" starthadith="33" ename="Reprehensibility of Intercourse with Two Sisters or a Mother and Daughter that One Owns" />
+      <chapter index="15" hadiths="3" starthadith="36" ename="Prohibition against Intercourse with a Slave-Girl who Belonged to One's Father" />
+      <chapter index="16" hadiths="0" ename="Prohibition against Marrying Slave-Girls of the People of the Book" />
+      <chapter index="17" hadiths="2" starthadith="39" ename="Muhsanat" />
+      <chapter index="18" hadiths="2" starthadith="41" ename="Temporary Marriage" />
+      <chapter index="19" hadiths="1" starthadith="43" ename="Marriage of Slaves" />
+      <chapter index="20" hadiths="3" starthadith="44" ename="Marriage of Idol Worshippers when their Wives become Muslim before Them" />
+      <chapter index="21" hadiths="5" starthadith="47" ename="The Wedding Feast" />
+      <chapter index="22" hadiths="6" starthadith="52" ename="Marriage in General" />
+    </book>
+    <book index="29" chapters="33" hadiths="109" starthadith="1" sharedhadiths="3" ename="Divorce">
+      <chapter index="1" hadiths="9" starthadith="1" ename="The 'Irrevocable' Divorce" />
+      <chapter index="2" hadiths="2" starthadith="10" ename="What is Clear about Giving Wives Right of Divorce" />
+      <chapter index="3" hadiths="2" starthadith="12" ename="Circumstances in Which only One Pronouncement of Divorce Permitted in Giving Wives Right of Divorce" />
+      <chapter index="4" hadiths="3" starthadith="14" ename="What is Not Clear in Giving Wives Right of Divorce" />
+      <chapter index="5" hadiths="3" starthadith="17" ename="Annulment of Marriage by Husband's Vow to Refrain from Intercourse (Ila)" />
+      <chapter index="6" hadiths="0" ename="The Ila (Vow of Abstention) of Slaves" />
+      <chapter index="7" hadiths="4" starthadith="20" ename="Dhihar of Free Men" />
+      <chapter index="8" hadiths="1" starthadith="24" ename="Dhihar of Slaves" />
+      <chapter index="9" hadiths="6" starthadith="25" ename="The Option (of Slave-Girls Married to Slaves when Freed)" />
+      <chapter index="10" hadiths="2" starthadith="31" ename="Separating from Wives for Compensation" />
+      <chapter index="11" hadiths="1" starthadith="33" ename="Divorce of Men who Divorce for Compensation" />
+      <chapter index="12" hadiths="2" starthadith="34" ename="Lian (Invoking Mutual Curses)" />
+      <chapter index="13" hadiths="1" starthadith="36" ename="Inheritance of Children of Women against whom Lian has been Pronounced" />
+      <chapter index="14" hadiths="2" starthadith="37" ename="Divorce of Virgins" />
+      <chapter index="15" hadiths="6" starthadith="39" ename="Divorce of Sick Men" />
+      <chapter index="16" hadiths="2" starthadith="45" ename="Compensation in Divorce" />
+      <chapter index="17" hadiths="5" starthadith="47" ename="The Divorce of the Slave" />
+      <chapter index="18" hadiths="0" ename="Maintenance of Slave-Girls Divorced when Pregnant" />
+      <chapter index="19" hadiths="1" starthadith="52" ename="Idda of Women whose Husbands are Missing" />
+      <chapter index="20" hadiths="10" starthadith="53" ename="Idda of Divorce and Divorce of Menstruating Women" />
+      <chapter index="21" hadiths="4" starthadith="63" ename="Idda of Women in their Houses when Divorced in Them" />
+      <chapter index="22" hadiths="2" starthadith="67" ename="Maintenance of Divorced Woman" />
+      <chapter index="23" hadiths="1" starthadith="69" ename="Idda of Slave-Girls Divorced by Their Husbands" />
+      <chapter index="24" hadiths="2" starthadith="70" ename="General Chapter on Idda of Divorce" />
+      <chapter index="25" hadiths="1" starthadith="72" ename="The Two Arbiters" />
+      <chapter index="26" hadiths="1" starthadith="73" ename="Oath of Men to Divorce while Not yet Married" />
+      <chapter index="27" hadiths="2" starthadith="74" ename="Deadline of Men who do Not have Intercourse with Their Wives" />
+      <chapter index="28" hadiths="7" starthadith="76" ename="General Section on Divorce" />
+      <chapter index="29" hadiths="8" starthadith="83" ename="Idda of Widows when Pregnant" />
+      <chapter index="30" hadiths="2" starthadith="91" ename="Idda of an Umm Walad when Her Master Dies" />
+      <chapter index="31" hadiths="2" starthadith="93" ename="Idda of Slave-Girls whose Master or Husband Dies" />
+      <chapter index="32" hadiths="6" starthadith="95" ename="Coitus Interruptus" />
+      <chapter index="33" hadiths="9" starthadith="101" ename="Limit of Abstaining from Adornment in Mourning" />
+    </book>
+    <book index="30" chapters="3" hadiths="17" starthadith="1" sharedhadiths="0" ename="Suckling">
+      <chapter index="1" hadiths="11" starthadith="1" ename="Suckling of the Young" />
+      <chapter index="2" hadiths="3" starthadith="12" ename="Suckling of Older People" />
+      <chapter index="3" hadiths="3" starthadith="15" ename="Suckling in General" />
+    </book>
+    <book index="31" chapters="45" hadiths="102" starthadith="1" sharedhadiths="1" ename="Business Transactions">
+      <chapter index="1" hadiths="1" starthadith="1" ename="Non-Returnable Deposits" />
+      <chapter index="2" hadiths="1" starthadith="2" ename="Wealth of Slaves" />
+      <chapter index="3" hadiths="1" starthadith="3" ename="Built-In Liability Agreements" />
+      <chapter index="4" hadiths="1" starthadith="4" ename="Defects in Slaves" />
+      <chapter index="5" hadiths="2" starthadith="5" ename="What is Done about Slave-Girls when Purchased and Conditions Made about Them" />
+      <chapter index="6" hadiths="2" starthadith="7" ename="Prohibition against Intercourse with Slave-Girls Who Have Husbands" />
+      <chapter index="7" hadiths="1" starthadith="9" ename="Ownership of the Fruit of Trees which have been Sold" />
+      <chapter index="8" hadiths="4" starthadith="10" ename="Prohibition against Selling Fruit until It starts to Ripen" />
+      <chapter index="9" hadiths="1" starthadith="14" ename="The Sale of Ariyas" />
+      <chapter index="10" hadiths="2" starthadith="15" ename="How Crop Damage Affects Sales of Agricultural Produce" />
+      <chapter index="11" hadiths="3" starthadith="17" ename="What is Permissible in Keeping Back a Portion of the Fruit" />
+      <chapter index="12" hadiths="3" starthadith="20" ename="What is Not Recommended in the Sale of Dates" />
+      <chapter index="13" hadiths="3" starthadith="23" ename="Muzabana and Muhaqala" />
+      <chapter index="14" hadiths="1" starthadith="26" ename="General Remarks about Selling Produce at its Source" />
+      <chapter index="15" hadiths="1" starthadith="27" ename="Selling Fruit" />
+      <chapter index="16" hadiths="10" starthadith="28" ename="Selling Gold for Silver, Minted and Unminted" />
+      <chapter index="17" hadiths="1" starthadith="38" ename="Money-Changing" />
+      <chapter index="18" hadiths="1" starthadith="39" ename="Selling Gold for Gold and Silver for Silver by Weight" />
+      <chapter index="19" hadiths="7" starthadith="40" ename="Buying on Delayed Terms and Re-Selling for Less on More Immediate Terms" />
+      <chapter index="20" hadiths="2" starthadith="47" ename="What is Disapproved in Selling Food with Delayed Payment or Delivery" />
+      <chapter index="21" hadiths="1" starthadith="49" ename="Pre-payment on Food" />
+      <chapter index="22" hadiths="3" starthadith="50" ename="Bartering Food for Food with No Increase between Them" />
+      <chapter index="23" hadiths="3" starthadith="53" ename="General Section on Selling Food" />
+      <chapter index="24" hadiths="3" starthadith="56" ename="Hoarding and Raising Prices by Stock-Piling" />
+      <chapter index="25" hadiths="3" starthadith="59" ename="What is Permitted in Selling Some Animals for Others and Making an Advance for Them" />
+      <chapter index="26" hadiths="2" starthadith="62" ename="What Is Not Permitted in the Sale of Animals" />
+      <chapter index="27" hadiths="3" starthadith="64" ename="Selling Animals in Exchange for Meat" />
+      <chapter index="28" hadiths="1" starthadith="67" ename="Selling Meat for Meat" />
+      <chapter index="29" hadiths="1" starthadith="68" ename="Selling dogs" />
+      <chapter index="30" hadiths="1" starthadith="69" ename="Advance and Sale of Some Goods for Others" />
+      <chapter index="31" hadiths="1" starthadith="70" ename="The Advance on Goods" />
+      <chapter index="32" hadiths="1" starthadith="71" ename="Selling Copper and Iron and Such Things which are Weighed" />
+      <chapter index="33" hadiths="3" starthadith="72" ename="Prohibition against Two Sales in One Sale" />
+      <chapter index="34" hadiths="1" starthadith="75" ename="Transactions with Uncertainty in Them" />
+      <chapter index="35" hadiths="2" starthadith="76" ename="Al-Mulamasa and al-Munabadha" />
+      <chapter index="36" hadiths="2" starthadith="78" ename="Sale according to List of Contents" />
+      <chapter index="37" hadiths="2" starthadith="80" ename="The Right of Withdrawal (Khiyar)" />
+      <chapter index="38" hadiths="3" starthadith="82" ename="Usury in Debts" />
+      <chapter index="39" hadiths="2" starthadith="85" ename="Debts and Transfer Debts in General" />
+      <chapter index="40" hadiths="1" starthadith="87" ename="Partnership, Transferral of Responsibility to an Agent and Revocation" />
+      <chapter index="41" hadiths="2" starthadith="88" ename="Bankruptcy of Debtors" />
+      <chapter index="42" hadiths="2" starthadith="90" ename="What is Permitted Of Free Loans" />
+      <chapter index="43" hadiths="4" starthadith="92" ename="What Is Not Permitted of Free Loans" />
+      <chapter index="44" hadiths="3" starthadith="96" ename="What is Forbidden of Haggling and Transactions" />
+      <chapter index="45" hadiths="4" starthadith="99" ename="Business Transactions in General" />
+    </book>
+    <book index="32" chapters="14" hadiths="16" starthadith="1" sharedhadiths="0" ename="Qirad">
+      <chapter index="1" hadiths="2" starthadith="1" ename="Qirad" />
+      <chapter index="2" hadiths="1" starthadith="3" ename="What Is Permitted in Qirad" />
+      <chapter index="3" hadiths="2" starthadith="4" ename="What Is Not Permitted in Qirad" />
+      <chapter index="4" hadiths="1" starthadith="6" ename="Conditions Not Permitted in Qirad" />
+      <chapter index="5" hadiths="1" starthadith="7" ename="Qirad In Wares" />
+      <chapter index="6" hadiths="1" starthadith="8" ename="Hire in Qirad" />
+      <chapter index="7" hadiths="1" starthadith="9" ename="Overstepping in Qirad" />
+      <chapter index="8" hadiths="1" starthadith="10" ename="Expenses Permitted in Qirad" />
+      <chapter index="9" hadiths="1" starthadith="11" ename="Expenses Not Permitted in Qirad" />
+      <chapter index="10" hadiths="1" starthadith="12" ename="Debts in Qirad" />
+      <chapter index="11" hadiths="1" starthadith="13" ename="Goods in the Qirad" />
+      <chapter index="12" hadiths="1" starthadith="14" ename="Loans in Qirad" />
+      <chapter index="13" hadiths="1" starthadith="15" ename="Accounting in Qirad" />
+      <chapter index="14" hadiths="1" starthadith="16" ename="A General View of Qirad" />
+    </book>
+    <book index="33" chapters="2" hadiths="3" starthadith="1" sharedhadiths="0" ename="Sharecropping">
+      <chapter index="1" hadiths="2" starthadith="1" ename="Sharecropping" />
+      <chapter index="2" hadiths="1" starthadith="3" ename="The Condition About Slaves in Sharecropping" />
+    </book>
+    <book index="34" chapters="1" hadiths="5" starthadith="1" sharedhadiths="0" ename="Renting Land">
+      <chapter index="1" hadiths="5" starthadith="1" ename="Renting Land" />
+    </book>
+    <book index="35" chapters="2" hadiths="4" starthadith="1" sharedhadiths="0" ename="Pre-emption in Property">
+      <chapter index="1" hadiths="3" starthadith="1" ename="Cases in which Pre-emption is Possible" />
+      <chapter index="2" hadiths="1" starthadith="4" ename="Cases in Which Pre-Emption Is Not Possible" />
+    </book>
+    <book index="36" chapters="41" hadiths="54" starthadith="1" sharedhadiths="16" ename="Judgements">
+      <chapter index="1" hadiths="2" starthadith="1" ename="Stimulation of Desire to Judge Correctly" />
+      <chapter index="2" hadiths="2" starthadith="3" ename="Giving Testimony" />
+      <chapter index="3" hadiths="0" ename="Judgement on Testimony of Recipients of Hadd-Punishments" />
+      <chapter index="4" hadiths="3" starthadith="5" ename="Judgement Based on Oaths with One Witness" />
+      <chapter index="5" hadiths="0" ename="Judgement on a Deceased with a Debt against Him and a Debt for Him, and only One Witness" />
+      <chapter index="6" hadiths="1" starthadith="8" ename="Judgement on Claims" />
+      <chapter index="7" hadiths="1" starthadith="9" ename="Judgement on Testimony of Children" />
+      <chapter index="8" hadiths="2" starthadith="10" ename="Perjury on the Mimbar of the Prophet, may Allah Bless Him and Grant Him Peace" />
+      <chapter index="9" hadiths="1" starthadith="12" ename="Taking Oaths on the Mimbar in General" />
+      <chapter index="10" hadiths="1" starthadith="13" ename="Prohibition against Forfeiting Pledges Given on Security" />
+      <chapter index="11" hadiths="0" ename="Judgement on Pledging Fruit and Animals as Security" />
+      <chapter index="12" hadiths="0" ename="Judgement on Pledging Animals as Security" />
+      <chapter index="13" hadiths="0" ename="Judgement on Pledges between Two Men" />
+      <chapter index="14" hadiths="0" ename="Judgement on Pledges in General" />
+      <chapter index="15" hadiths="0" ename="Judgement on Renting Animals and Going Beyond Specified Destinations" />
+      <chapter index="16" hadiths="1" starthadith="14" ename="Judgement about Raped Women" />
+      <chapter index="17" hadiths="0" ename="Judgement on Consumption of Other Peoples' Animals" />
+      <chapter index="18" hadiths="2" starthadith="15" ename="Judgement on Abandonment of Islam" />
+      <chapter index="19" hadiths="2" starthadith="17" ename="Judgement on Men Finding Other Men with Their Wives" />
+      <chapter index="20" hadiths="1" starthadith="19" ename="Judgement on the Abandoned Child" />
+      <chapter index="21" hadiths="4" starthadith="20" ename="Judgement on Attaching Paternity to Children" />
+      <chapter index="22" hadiths="0" ename="Judgement on Inheritance of Attached Children" />
+      <chapter index="23" hadiths="2" starthadith="24" ename="Judgement on Women who are Umm Walad" />
+      <chapter index="24" hadiths="2" starthadith="26" ename="Judgement on Bringing Barren Land into Cultivation" />
+      <chapter index="25" hadiths="3" starthadith="28" ename="Judgement on Watering Land" />
+      <chapter index="26" hadiths="4" starthadith="31" ename="Judgement on Benefitting Neighbours" />
+      <chapter index="27" hadiths="2" starthadith="35" ename="Judgement on Division of Properties" />
+      <chapter index="28" hadiths="2" starthadith="37" ename="Judgement on Animals Grazing on Other People's Crops and Animals Stolen from the Herd" />
+      <chapter index="29" hadiths="0" ename="Judgement on Injuries to Domestic Animals" />
+      <chapter index="30" hadiths="0" ename="Judgement on Articles Given to Artisans to Work On" />
+      <chapter index="31" hadiths="0" ename="Judgement on Taking On Debts and Transfers of Debt" />
+      <chapter index="32" hadiths="0" ename="Judgement on Garments Bought with Defects" />
+      <chapter index="33" hadiths="3" starthadith="39" ename="What is Not Permitted in Giving Gifts (1)" />
+      <chapter index="34" hadiths="0" ename="What is Not Permitted in Giving Gifts (2)" />
+      <chapter index="35" hadiths="1" starthadith="42" ename="Judgement on Gifts" />
+      <chapter index="36" hadiths="0" ename="Taking Back Sadaqa" />
+      <chapter index="37" hadiths="3" starthadith="43" ename="Judgement on Life Pensions" />
+      <chapter index="38" hadiths="3" starthadith="46" ename="The Judgement on Lost Property" />
+      <chapter index="39" hadiths="0" ename="Judgement on Slaves Using Finds" />
+      <chapter index="40" hadiths="3" starthadith="49" ename="Judgement on Strays" />
+      <chapter index="41" hadiths="3" starthadith="52" ename="Sadaqa of the Living for the Dead" />
+    </book>
+    <book index="37" chapters="10" hadiths="9" starthadith="1" sharedhadiths="4" ename="Wills and Testaments">
+      <chapter index="1" hadiths="1" starthadith="1" ename="Command to Write Testaments" />
+      <chapter index="2" hadiths="2" starthadith="2" ename="Permissibility of the Bequest of the Child, the Simpleton, the Lunatic and the Idiot" />
+      <chapter index="3" hadiths="1" starthadith="4" ename="Limiting the Bequest to One-Third of the Estate" />
+      <chapter index="4" hadiths="0" ename="Dealing with the Property of the Pregnant Woman, the Sick Person and Someone Present in Battle" />
+      <chapter index="5" hadiths="0" ename="Bequests to Heirs and Right of Possession" />
+      <chapter index="6" hadiths="2" starthadith="5" ename="Effeminate Men and Custody of Children" />
+      <chapter index="7" hadiths="0" ename="Liability for Defect Goods" />
+      <chapter index="8" hadiths="2" starthadith="7" ename="General Chapter on Making Judgement and Shying Away From It" />
+      <chapter index="9" hadiths="0" ename="About Damages and Injuries Caused by Slaves" />
+      <chapter index="10" hadiths="1" starthadith="9" ename="What is Permitted of Gifts" />
+    </book>
+    <book index="38" chapters="13" hadiths="25" starthadith="1" sharedhadiths="0" ename="Setting Free and Wala'">
+      <chapter index="1" hadiths="1" starthadith="1" ename="Freeing a Share Held in a Slave" />
+      <chapter index="2" hadiths="1" starthadith="2" ename="Making Conditions when Freeing a Slave" />
+      <chapter index="3" hadiths="2" starthadith="3" ename="People who Free Slaves and Own No Other Property" />
+      <chapter index="4" hadiths="1" starthadith="5" ename="Judgement on the Property of Slaves when Set Free" />
+      <chapter index="5" hadiths="2" starthadith="6" ename="Freeing Slaves who are Umm Walad and a General Chapter on Freeing" />
+      <chapter index="6" hadiths="4" starthadith="8" ename="Slaves Permitted to be Freed when a Slave must be Freed by Obligation" />
+      <chapter index="7" hadiths="1" starthadith="12" ename="Slaves Not Permitted to be Freed when a Slave must be Freed by Obligation" />
+      <chapter index="8" hadiths="2" starthadith="13" ename="Freeing the Living for the Dead" />
+      <chapter index="9" hadiths="2" starthadith="15" ename="The Excellence of Freeing Slaves, Freeing Adulteresses and Illegitimate Children" />
+      <chapter index="10" hadiths="4" starthadith="17" ename="The Right of the One who Sets Free to the Wala'" />
+      <chapter index="11" hadiths="1" starthadith="21" ename="Slaves Attracting the Wala' When Set Free" />
+      <chapter index="12" hadiths="3" starthadith="22" ename="The Inheritance of the Wala'" />
+      <chapter index="13" hadiths="1" starthadith="25" ename="The Inheritance of Slaves Set Free and the Wala' of Jews and Christians Who Set Slaves Free" />
+    </book>
+    <book index="39" chapters="12" hadiths="15" starthadith="1" sharedhadiths="0" ename="The Mukatab">
+      <chapter index="1" hadiths="3" starthadith="1" ename="Judgement on the Mukatab" />
+      <chapter index="2" hadiths="1" starthadith="4" ename="Assuming the Responsibility in Kitaba" />
+      <chapter index="3" hadiths="1" starthadith="5" ename="Severance in the Kitaba for an Agreed Price" />
+      <chapter index="4" hadiths="1" starthadith="6" ename="Injuries Caused by Mukatabs" />
+      <chapter index="5" hadiths="1" starthadith="7" ename="Selling Mukatabs" />
+      <chapter index="6" hadiths="1" starthadith="8" ename="The Labour of Mukatabs" />
+      <chapter index="7" hadiths="1" starthadith="9" ename="Freeing a Mukatab if he Pays what he Owes before the End of the Term" />
+      <chapter index="8" hadiths="1" starthadith="10" ename="The Inheritance of a Mukatab when he is Set Free" />
+      <chapter index="9" hadiths="1" starthadith="11" ename="Conditions Concerning Mukatabs" />
+      <chapter index="10" hadiths="1" starthadith="12" ename="The Wala' of the Mukatab when he is Set Free" />
+      <chapter index="11" hadiths="2" starthadith="13" ename="What is Not Permitted in Freeing a Mukatab" />
+      <chapter index="12" hadiths="1" starthadith="15" ename="Bequests involving Mukatabs" />
+    </book>
+    <book index="40" chapters="7" hadiths="8" starthadith="1" sharedhadiths="0" ename="Hudud">
+      <chapter index="1" hadiths="1" starthadith="1" ename="Judgement on the Mudabbar" />
+      <chapter index="2" hadiths="1" starthadith="2" ename="General Section on Tadbir" />
+      <chapter index="3" hadiths="1" starthadith="3" ename="Bequests involving Tadbir" />
+      <chapter index="4" hadiths="2" starthadith="4" ename="A Master's Intercourse with His Slave-girl when he has Made her Mudabbara" />
+      <chapter index="5" hadiths="1" starthadith="6" ename="Selling Mudabbars" />
+      <chapter index="6" hadiths="1" starthadith="7" ename="Injuries Caused by Mudabbars" />
+      <chapter index="7" hadiths="1" starthadith="8" ename="Injuries Caused by the Umm Walad" />
+    </book>
+    <book index="41" chapters="11" hadiths="35" starthadith="1" sharedhadiths="2" ename="The Mudabbar">
+      <chapter index="1" hadiths="11" starthadith="1" ename="Stoning" />
+      <chapter index="2" hadiths="2" starthadith="12" ename="Self-Confession of Fornication" />
+      <chapter index="3" hadiths="3" starthadith="14" ename="The Hadd for Fornication" />
+      <chapter index="4" hadiths="0" ename="Rape" />
+      <chapter index="5" hadiths="3" starthadith="17" ename="The Hadd for Slander, Denial and Insinuation" />
+      <chapter index="6" hadiths="1" starthadith="20" ename="What has No Hadd for It" />
+      <chapter index="7" hadiths="5" starthadith="21" ename="What Obliges Cutting Off the Hand" />
+      <chapter index="8" hadiths="2" starthadith="26" ename="Cutting Off the Hands of Runaway Slaves Who Steal" />
+      <chapter index="9" hadiths="2" starthadith="28" ename="Intercession Cut Off for Thieves when Cases Reach the Sultan" />
+      <chapter index="10" hadiths="2" starthadith="30" ename="General Section on Cutting Off the Hand" />
+      <chapter index="11" hadiths="4" starthadith="32" ename="Things for Which the Hand is Not Cut Off" />
+    </book>
+    <book index="42" chapters="5" hadiths="15" starthadith="1" sharedhadiths="0" ename="Drinks">
+      <chapter index="1" hadiths="4" starthadith="1" ename="The Hadd for Drinking Wine" />
+      <chapter index="2" hadiths="2" starthadith="5" ename="Containers Forbidden for Preparation of Nabidh" />
+      <chapter index="3" hadiths="2" starthadith="7" ename="Mixtures of Fruit Disapproved for Making Nabidh" />
+      <chapter index="4" hadiths="3" starthadith="9" ename="Wine Made Haram" />
+      <chapter index="5" hadiths="4" starthadith="12" ename="General Section on Wine being Made Haram" />
+    </book>
+    <book index="43" chapters="24" hadiths="15" starthadith="1" sharedhadiths="14" ename="Blood-Money">
+      <chapter index="1" hadiths="1" starthadith="1" ename="Mention of Blood-Money" />
+      <chapter index="2" hadiths="1" starthadith="2" ename="Procedure in Blood-Money" />
+      <chapter index="3" hadiths="1" starthadith="3" ename="The Blood-Money for Murder, When Accepted and the Criminal Act of the Insane" />
+      <chapter index="4" hadiths="1" starthadith="4" ename="The Blood-Money for Manslaughter" />
+      <chapter index="5" hadiths="0" ename="The Blood-Money for Accidental Injury" />
+      <chapter index="6" hadiths="0" ename="The Blood-Money of Women" />
+      <chapter index="7" hadiths="2" starthadith="5" ename="The Blood-Money for the Foetus" />
+      <chapter index="8" hadiths="0" ename="Injuries For Which There is Full Blood-Money" />
+      <chapter index="9" hadiths="0" ename="The Blood-Money for an Eye whose Sight is Lost" />
+      <chapter index="10" hadiths="0" ename="The Blood-Money for Head Wounds" />
+      <chapter index="11" hadiths="0" ename="The Blood-Money for Fingers" />
+      <chapter index="12" hadiths="1" starthadith="7" ename="General Section on the Blood-Money for Teeth" />
+      <chapter index="13" hadiths="1" starthadith="8" ename="Procedure in the Blood-Money for Teeth" />
+      <chapter index="14" hadiths="0" ename="The Blood-Money for Injuries to Slaves" />
+      <chapter index="15" hadiths="0" ename="The Blood-Money of the People of Protection (Dhimma)" />
+      <chapter index="16" hadiths="0" ename="Blood-Money that has to be Paid as an Individual" />
+      <chapter index="17" hadiths="3" starthadith="9" ename="Inheritance of Blood-Money and Dealing Harshly in Taking It" />
+      <chapter index="18" hadiths="1" starthadith="12" ename="General Section on Blood-Money" />
+      <chapter index="19" hadiths="2" starthadith="13" ename="Killing Secretly by Trickery and Sorcery" />
+      <chapter index="20" hadiths="1" starthadith="15" ename="What Is Obligatory for Intentional Injury" />
+      <chapter index="21" hadiths="0" ename="Retaliation in Killing" />
+      <chapter index="22" hadiths="0" ename="Pardoning Murder" />
+      <chapter index="23" hadiths="0" ename="Retaliation in Injury" />
+      <chapter index="24" hadiths="0" ename="The Blood-Money and Crime of the Slave Set Free and from Whom his Former Master does Not Inherit" />
+    </book>
+    <book index="44" chapters="5" hadiths="2" starthadith="1" sharedhadiths="4" ename="The Oath of Qasama">
+      <chapter index="1" hadiths="2" starthadith="1" ename="Beginning With the People Seeking Blood Revenge in the Oath" />
+      <chapter index="2" hadiths="0" ename="Blood-Relatives Who are Permitted to Swear in the Intentional Act" />
+      <chapter index="3" hadiths="0" ename="Swearing in Manslaughter" />
+      <chapter index="4" hadiths="0" ename="Inheritance in Cases of Qasama" />
+      <chapter index="5" hadiths="0" ename="Swearing for Blood-Revenge in Cases Involving Slaves" />
+    </book>
+    <book index="45" chapters="7" hadiths="26" starthadith="1" sharedhadiths="0" ename="Madina">
+      <chapter index="1" hadiths="2" starthadith="1" ename="The Dua for Madina and Its People" />
+      <chapter index="2" hadiths="7" starthadith="3" ename="Residing in Madina and Leaving It" />
+      <chapter index="3" hadiths="4" starthadith="10" ename="The Making a Haram of Madina" />
+      <chapter index="4" hadiths="3" starthadith="14" ename="The Epidemic of Madina" />
+      <chapter index="5" hadiths="3" starthadith="17" ename="The Expulsion of the Jews from Madina" />
+      <chapter index="6" hadiths="2" starthadith="20" ename="Concerning Madina" />
+      <chapter index="7" hadiths="5" starthadith="22" ename="About the Plague" />
+    </book>
+    <book index="46" chapters="2" hadiths="10" starthadith="1" sharedhadiths="0" ename="The Decree">
+      <chapter index="1" hadiths="6" starthadith="1" ename="The Prohibition against Talking about the Decree" />
+      <chapter index="2" hadiths="4" starthadith="7" ename="General Section on the People of the Decree" />
+    </book>
+    <book index="47" chapters="4" hadiths="18" starthadith="1" sharedhadiths="0" ename="Good Character">
+      <chapter index="1" hadiths="8" starthadith="1" ename="Good Character" />
+      <chapter index="2" hadiths="2" starthadith="9" ename="Modesty" />
+      <chapter index="3" hadiths="2" starthadith="11" ename="Anger" />
+      <chapter index="4" hadiths="6" starthadith="13" ename="Shunning People" />
+    </book>
+    <book index="48" chapters="8" hadiths="19" starthadith="1" sharedhadiths="0" ename="Dress">
+      <chapter index="1" hadiths="3" starthadith="1" ename="Wearing Clothes for Beautification" />
+      <chapter index="2" hadiths="1" starthadith="4" ename="Wearing Dyed Garments and Gold" />
+      <chapter index="3" hadiths="1" starthadith="5" ename="Wearing Silk" />
+      <chapter index="4" hadiths="3" starthadith="6" ename="Clothes Disapproved for Women to Wear" />
+      <chapter index="5" hadiths="4" starthadith="9" ename="A Man Dragging his Garments" />
+      <chapter index="6" hadiths="1" starthadith="13" ename="A Woman Dragging her Garments" />
+      <chapter index="7" hadiths="3" starthadith="14" ename="Wearing Sandals" />
+      <chapter index="8" hadiths="3" starthadith="17" ename="Ways of Dressing" />
+    </book>
+    <book index="49" chapters="12" hadiths="39" starthadith="1" sharedhadiths="0" ename="The Description of the Prophet, may Allah Bless Him and Grant Him Peace">
+      <chapter index="1" hadiths="1" starthadith="1" ename="Description of the Prophet, may Allah Bless Him and Grant Him Peace" />
+      <chapter index="2" hadiths="1" starthadith="2" ename="Description of Isa ibn Maryam, Peace be upon Him and the Dajjal" />
+      <chapter index="3" hadiths="2" starthadith="3" ename="Sunna of the Fitra" />
+      <chapter index="4" hadiths="2" starthadith="5" ename="Prohibition against Eating with the Left Hand" />
+      <chapter index="5" hadiths="2" starthadith="7" ename="The Very Poor" />
+      <chapter index="6" hadiths="2" starthadith="9" ename="The Intestines of the Kafir" />
+      <chapter index="7" hadiths="2" starthadith="11" ename="Prohibition against Drinking from Silver Vessels and Blowing into Drinks" />
+      <chapter index="8" hadiths="4" starthadith="13" ename="Drinking while Standing" />
+      <chapter index="9" hadiths="2" starthadith="17" ename="The Sunna about Drinking and Passing to the Right" />
+      <chapter index="10" hadiths="18" starthadith="19" ename="General Section on Food and Drink" />
+      <chapter index="11" hadiths="2" starthadith="37" ename="Wearing Rings" />
+      <chapter index="12" hadiths="1" starthadith="39" ename="Pulling off Necklaces and Bells from the Necks of Camels" />
+    </book>
+    <book index="50" chapters="7" hadiths="18" starthadith="1" sharedhadiths="0" ename="The Evil Eye">
+      <chapter index="1" hadiths="2" starthadith="1" ename="Wudu from the Evil Eye" />
+      <chapter index="2" hadiths="2" starthadith="3" ename="Guarding from the Evil Eye" />
+      <chapter index="3" hadiths="4" starthadith="5" ename="The Reward of the Invalid" />
+      <chapter index="4" hadiths="3" starthadith="9" ename="Seeking Refuge and Talismans in Illness" />
+      <chapter index="5" hadiths="3" starthadith="12" ename="Treating the Invalid" />
+      <chapter index="6" hadiths="2" starthadith="15" ename="Washing with Water for a Fever" />
+      <chapter index="7" hadiths="2" starthadith="17" ename="Visiting the Invalid and the Evil Omen" />
+    </book>
+    <book index="51" chapters="5" hadiths="16" starthadith="1" sharedhadiths="0" ename="Hair">
+      <chapter index="1" hadiths="5" starthadith="1" ename="The Sunna on Hair" />
+      <chapter index="2" hadiths="2" starthadith="6" ename="Caring for the Hair" />
+      <chapter index="3" hadiths="1" starthadith="8" ename="Dyeing the Hair" />
+      <chapter index="4" hadiths="4" starthadith="9" ename="Taking Refuge" />
+      <chapter index="5" hadiths="4" starthadith="13" ename="Those who Love Each Other in Allah" />
+    </book>
+    <book index="52" chapters="2" hadiths="7" starthadith="1" sharedhadiths="0" ename="Visions">
+      <chapter index="1" hadiths="5" starthadith="1" ename="Visions" />
+      <chapter index="2" hadiths="2" starthadith="6" ename="Games of Dice" />
+    </book>
+    <book index="53" chapters="3" hadiths="8" starthadith="1" sharedhadiths="0" ename="Greetings">
+      <chapter index="1" hadiths="2" starthadith="1" ename="Behaviour in the Greeting" />
+      <chapter index="2" hadiths="1" starthadith="3" ename="Greeting Jews and Christians" />
+      <chapter index="3" hadiths="5" starthadith="4" ename="General Section on the Greeting" />
+    </book>
+    <book index="54" chapters="17" hadiths="44" starthadith="1" sharedhadiths="0" ename="General Subjects">
+      <chapter index="1" hadiths="3" starthadith="1" ename="Asking Permission to Enter" />
+      <chapter index="2" hadiths="2" starthadith="4" ename="Blessing the Person who Sneezes" />
+      <chapter index="3" hadiths="3" starthadith="6" ename="Pictures and Images" />
+      <chapter index="4" hadiths="3" starthadith="9" ename="Eating Lizards" />
+      <chapter index="5" hadiths="2" starthadith="12" ename="Concerning Dogs" />
+      <chapter index="6" hadiths="5" starthadith="14" ename="Concerning Sheep" />
+      <chapter index="7" hadiths="2" starthadith="19" ename="Mice Falling into Clarified Butter, and giving Precedence to Food over the Prayer" />
+      <chapter index="8" hadiths="3" starthadith="21" ename="Guarding against Ill Luck" />
+      <chapter index="9" hadiths="2" starthadith="24" ename="Names that are Disliked" />
+      <chapter index="10" hadiths="3" starthadith="26" ename="Cupping and the Reward of the Cupper" />
+      <chapter index="11" hadiths="2" starthadith="29" ename="Concerning the East" />
+      <chapter index="12" hadiths="3" starthadith="31" ename="Killing Snakes and what is Said about them" />
+      <chapter index="13" hadiths="1" starthadith="34" ename="What to Say on Journeys" />
+      <chapter index="14" hadiths="3" starthadith="35" ename="Travelling Alone in the case of Men and Women" />
+      <chapter index="15" hadiths="2" starthadith="38" ename="How to Behave on Journeys" />
+      <chapter index="16" hadiths="3" starthadith="40" ename="The Command to be Kind to Slaves" />
+      <chapter index="17" hadiths="2" starthadith="43" ename="The Slave and his Reward" />
+    </book>
+    <book index="55" chapters="1" hadiths="3" starthadith="1" sharedhadiths="0" ename="The Oath of Allegiance">
+      <chapter index="1" hadiths="3" starthadith="1" ename="About the Oath of Allegiance" />
+    </book>
+    <book index="56" chapters="12" hadiths="28" starthadith="1" sharedhadiths="0" ename="Speech">
+      <chapter index="1" hadiths="4" starthadith="1" ename="Disliked Speech" />
+      <chapter index="2" hadiths="2" starthadith="5" ename="The Order to be Mindful in Speech" />
+      <chapter index="3" hadiths="3" starthadith="7" ename="Disliked Speech and Speech Without the Mention of Allah" />
+      <chapter index="4" hadiths="1" starthadith="10" ename="Backbiting" />
+      <chapter index="5" hadiths="2" starthadith="11" ename="What is Feared from the Tongue" />
+      <chapter index="6" hadiths="2" starthadith="13" ename="Two People Conversing to the Exclusion of Another" />
+      <chapter index="7" hadiths="5" starthadith="15" ename="Truthfulness and Lying" />
+      <chapter index="8" hadiths="2" starthadith="20" ename="Squandering Property and Being Two-faced" />
+      <chapter index="9" hadiths="2" starthadith="22" ename="Punishing the Many for the Actions of the Few" />
+      <chapter index="10" hadiths="2" starthadith="24" ename="About People with Taqwa" />
+      <chapter index="11" hadiths="1" starthadith="26" ename="What to Say when it Thunders" />
+      <chapter index="12" hadiths="2" starthadith="27" ename="The Legacy of the Prophet, may Allah Bless Him and Grant Him Peace" />
+    </book>
+    <book index="57" chapters="1" hadiths="2" starthadith="1" sharedhadiths="0" ename="Jahannam">
+      <chapter index="1" hadiths="2" starthadith="1" ename="Description of Jahannam" />
+    </book>
+    <book index="58" chapters="3" hadiths="15" starthadith="1" sharedhadiths="0" ename="Sadaqa">
+      <chapter index="1" hadiths="6" starthadith="1" ename="Stimulation of Desire for Sadaqa" />
+      <chapter index="2" hadiths="6" starthadith="7" ename="Refraining from Asking" />
+      <chapter index="3" hadiths="3" starthadith="13" ename="What Is Disliked in Sadaqa" />
+    </book>
+    <book index="59" chapters="1" hadiths="1" starthadith="1" sharedhadiths="0" ename="Knowledge">
+      <chapter index="1" hadiths="1" starthadith="1" ename="Seeking Knowledge" />
+    </book>
+    <book index="60" chapters="1" hadiths="0" sharedhadiths="0" ename="The Supplication of the Unjustly Wronged">
+      <chapter index="1" hadiths="0" ename="Supplication of the Unjustly Wronged" />
+    </book>
+    <book index="61" chapters="1" hadiths="0" sharedhadiths="0" ename="The Names of the Prophet, may Allah Bless Him and Grant Him Peace">
+      <chapter index="1" hadiths="0" ename="The Names of the Prophet, may Allah Bless Him and Grant Him Peace" />
+    </book>
+  </books>
+</collection>

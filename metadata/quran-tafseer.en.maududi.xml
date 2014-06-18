@@ -1,0 +1,9 @@
+﻿<!--
+
+FOR /L %%A IN (1,1,114) DO e:\wsusoffline\bin\wget.exe -O %%A.html http://www.searchtruth.com/tafsir/Quran/%%A/index.html
+
+var xmlhttp = new XMLHttpRequest(); xmlhttp.open("GET","http://www.searchtruth.com/tafsir/tafsir.php?chapter=" + sura.toString(), false); xmlhttp.send(); window.document.open(); window.document.write(xmlhttp.responseText); document.querySelector("iframe").contentDocument; window.document.close();
+var str = ""; for (var sura = 1; sura <= 114; sura++) { var next = window.open("file:///C:/Users/Gregory/Downloads/tafseer/" + sura.toString() + ".html"); do {} while (next.document.readyState != "complete"); str += "\t<sura index=\"" + sura.toString() + "\">\r\n"; str += "\t\t<aya index=\"0\" text =\"", bfoot = 0, binit = false, func = function(node) { for (node = node.firstChild; node; node = node.nextSibling) { if (node.nodeType == 3) { if (node.data.trim() == "1") bfoot++; if (node.data.trim().match(/^\[(\d{1,3}(\-\d{1,3})?)\]\s*/g)) binit = true; var nx = node.data.replace(/[\r\n]+/g, " ").replace(/\s+/g, " ").trim().replace(/&/gm, '&amp;').replace(/\'/gm, '&apos;').replace(/\"/gm, '&quot;').replace(!binit ? "$^" : /^\[(\d{1,3}(\-\d{1,3})?)\]\s*/g, "\" />\r\n\t\t<aya index=\"$1\" text=\"").replace(!binit ? "$^" : /^(\d{1,3})([^\)]|\s|$)\s*/g, bfoot == 2 ? "\" />\r\n\t\t<footer index=\"$1\" text=\"" : "{$1}"); str += ((nx != "" && nx.slice(0, 1) != "\"" && str != "" && str.slice(-1) != "\"") ? " " : "") + nx; } else { func(node); } } }; func(next.document.querySelector("body")); str += "\" />"; next.close(); } console.log(str);
+-->
+<qurantafseer name="Sayyid Abul Ala Maududi">
+</qurantafseer>

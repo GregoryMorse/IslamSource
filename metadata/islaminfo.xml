@@ -1,0 +1,1648 @@
+﻿<islamdata>
+	<!--
+borrowed from Christianity like supplication, Lord, Heaven, Hell)
+ Islamic Arabic direct transliterated loanwords in the English dictionary:
+ Allah
+ Quran/Qur'an/Koran
+ Hadith
+ Islam
+ Muslim/Moslem
+ Imam
+ Sheikh/Sheik/Shaykh/Shaikh
+ Caliph
+ Caliphate
+ Hajj/Hadj
+ Hajji/Hadji/Haji
+ Muharram/Moharram
+ Ramadan
+ Safar
+ Safari
+ Halal
+ Haram
+ Sunnah/Sunna
+ Ihram
+ Fitna
+ Makkah/Makah/Mecca
+ Medina
+ Salah/Salat
+ Nabi
+ Jihad/Jehad
+ Zakah/Zakat
+ Sadaqat
+ Wudu
+ Sawm
+ Adhan
+ Khutbah
+ Miraj
+ Hijrah/Hijra/Hegira
+ Shahada/Shahadah
+ Mujahid/Mujahideen/Mujahedin/Mujaheddin
+ Salaam
+ Hijab/Hejab
+ Qadi/Kadi/Cadi
+ Hakim/Hakeem
+ Shia/Shiah/Shii
+ Qiblah/Qibla/Kiblah/Kibla
+ Qiyas/Kiyas
+ Fiqh/Fikh
+ Surah/Sura
+ Sayyid/Said/Sayed/Sayid
+ Shirk
+ Shaitan/Shaytan
+ Talaq
+ Niqab
+ Deen/Din
+ Riba
+ Shariah/Sharia
+	-->
+	<jurisprudence name="fiqh" id="Jurisprudence">
+		<categories>
+			<category name="HalaAl" id="Permissible">
+				<category name="farD" id="Obligatory">
+					<category name="Al-farD Al-Eayn" id="ObligationOfTheSelf"></category>
+					<category name="Al-farD Al-kifaAyap" id="ObligationOfSufficiency"></category>
+				</category>
+				<category name="waAjib" id="Necessary"></category>
+				<category name="sun~ap" id="Tradition">
+					<category name="sun~ap muEak~adap" id="TraditionObligatory"></category>
+					<category name="sun~ap gaAir muEak~adap" id="TraditionVoluntary"></category>
+				</category>
+				<category name="mustaHab~" id="Recommended"></category>
+				<category name="nafl" id="Supererogatory"></category>
+				<category name="mubaAH" id="Neutral"></category>
+				<category name="makruwh" id="Disliked"></category>
+			</category>
+			<category name="HaraAm" id="Forbidden"></category>
+		</categories>
+	</jurisprudence>
+	<months>
+		<month name="muHar~am" id="Month1"></month>
+		<month name="Safar" id="Month2"></month>
+		<month name="rabiyE Al&gt;aw~al" id="Month3"></month>
+		<month name="rabiyE AlvaAniy" id="Month4"></month>
+		<month name="jumaAdaY Al&gt;uwlaY" id="Month5"></month>
+		<month name="jumaAdaY AlvaAniyap" id="Month6"></month>
+		<month name="rajab" id="Month7"></month>
+		<month name="$aEbaAn" id="Month8"></month>
+		<month name="ramaDaAn" id="Month9"></month>
+		<month name="$aw~aAl" id="Month10"></month>
+		<month name="*uw AlqaEdap" id="Month11"></month>
+		<month name="*uw AlHij~ap" id="Month12"></month>
+	</months>
+	<daysofweek name="yawm" id="DaysOfWeek">
+		<day name="Al&gt;aHad" id="DayOfWeek1"></day>
+		<day name="Al&lt;ivnayn" id="DayOfWeek2"></day>
+		<day name="AlvalaAvaA&apos;" id="DayOfWeek3"></day>
+		<day name="Al&gt;arbaEaA&apos;" id="DayOfWeek4"></day>
+		<day name="Alxamiys" id="DayOfWeek5"></day>
+		<day name="AljumuEap" id="DayOfWeek6"></day>
+		<day name="Alsabt" id="DayOfWeek7"></day>
+	</daysofweek>
+	<fasting name="sawm" id="Fasting">
+		<fastingtype name="sawm" id="FastingMonth" classification="Obligatory"></fastingtype>
+		<fastingtype name="sawm" id="FastingMondayThursday" classification="Tradition Obligatory"></fastingtype>
+		<fastingtype name="sawm" id="FastingMiddleLunarDays" classification="Tradition Obligatory"></fastingtype>
+		<fastingtype name="sawm" id="FastingAfterFastingMonth" classification="Tradition Obligatory"></fastingtype>
+		<fastingtype name="sawm" id="FastingDayOfArafa" classification="Tradition Obligatory"></fastingtype>
+		<fastingtype name="sawm" id="FastingDayOfAshura" classification="Tradition Obligatory"></fastingtype>
+		<fastingtype name="sawm" id="FastingBeforeFastingMonth" classification="Tradition Obligatory"></fastingtype>
+		<fastingtype name="sawm" id="FastingBeginningPilgrimageMonth" classification="Tradition Obligatory"></fastingtype>
+	</fasting>
+	<prayers name="SalaAp" id="Prayer">
+		<prayertype name="waqt" id="PrescribedTime" classification="Obligatory" prayerunits="Dawn=2,Noon=4,Afternoon=4,Sunset=3,Night=4"></prayertype>
+		<prayertype name="jumuEap" id="Friday" classification="Obligatory" prayerunits="Noon=2"></prayertype>
+		<prayertype name="janaAzap" id="Funeral" classification="Obligatory" prayerunits="0"></prayertype>
+		<prayertype name="qadaY" id="Fulfilling" classification="Obligatory" prayerunits="2|3|4"></prayertype>		
+		<prayertype name="&lt;iHoraAm" id="SacredState" classification="Obligatory" prayerunits="2"></prayertype>
+		<prayertype name="waqt" id="PrescribedTime" classification="TraditionObligatory" prayerunits="-Dawn=2,-Noon=4,+Noon=2,+Sunset=2,+Night=2"></prayertype>
+		<prayertype name="jumuEap" id="Friday" classification="TraditionObligatory" prayerunits="-Noon=4,+Noon=4"></prayertype>
+		<prayertype name="witr" id="Odd" classification="Necessary" prayerunits="+Night=3"></prayertype>
+		<prayertype name="Eayd" id="CelebrationDay" classification="Necessary" prayerunits="2"></prayertype>
+		<prayertype name="waqt" id="PrescribedTime" classification="TraditionVoluntary" prayerunits="-Noon=2,+Noon=4,-Afternoon=2|4,-Sunset=2,-Night=2|4"></prayertype>
+		<prayertype name="jumuEap" id="Friday" classification="TraditionVoluntary" prayerunits="-Noon=2,+Noon=2"></prayertype>
+		<prayertype name="AistixaArap" id="Guidance" classification="Tradition" prayerunits="2"></prayertype>
+		<prayertype name="tahaj~ud" id="LateNight" classification="Tradition" prayerunits="2*"></prayertype>
+		<prayertype name="&lt;istasqaA&apos;" id="RainForDraught" classification="Tradition" prayerunits="2"></prayertype>
+		<prayertype name="kusuwf" id="SolarEclipse" classification="Tradition" prayerunits="2"></prayertype>
+		<prayertype name="xusuwf" id="LunarEclipse" classification="Tradition" prayerunits="2"></prayertype>
+		<prayertype name="taraAwiyH" id="FastingMonthPrayer" classification="Tradition" prayerunits="8|12|20"></prayertype>
+		<prayertype name="Ai$raq" id="Sunrise" classification="Supererogatory" prayerunits="2"></prayertype>
+		<prayertype name="DuHa" id="MorningLight" classification="Supererogatory" prayerunits="2"></prayertype>
+		<prayertype name="fatH" id="Victory" classification="Supererogatory" prayerunits="2"></prayertype>
+		<prayertype name="Aw~abin" id="OftReturning" classification="Supererogatory" prayerunits="2"></prayertype>
+		<prayertype name="Tahiy~atul masjid" id="EnteringMosque" classification="Supererogatory" prayerunits="2"></prayertype>
+		<prayertype name="xawf" id="Fear" classification="Supererogatory" prayerunits="2"></prayertype>
+		<prayertype name="safar" id="Travel" classification="Supererogatory" prayerunits="2"></prayertype>
+	</prayers>
+	<prayertimes>
+		<prayertime name="fajr" id="PrayTime1"></prayertime>
+		<prayertime name="Zuhr" id="PrayTime2"></prayertime>
+		<prayertime name="EaSr" id="PrayTime3"></prayertime>
+		<prayertime name="magrib" id="PrayTime4"></prayertime>
+		<prayertime name="Ei$aA&apos;" id="PrayTime5"></prayertime>
+		<prayertime name="&lt;imsak" id="PrayTime6"></prayertime>
+		<prayertime name="$uruwq" id="PrayTime7"></prayertime>
+		<prayertime name="Almagrib maHsuwbap" id="PrayTime8"></prayertime>
+		<prayertime name="muntaSaf Allayl" id="PrayTime9"></prayertime>		
+	</prayertimes>
+	<verses>
+		<category title="PurificationSupplication">
+			<verse title="PurificationOfTheSoul" text="All~`hum~a |ti nafosiy taqowaAhaA wazak~ihaA &gt;anota xayoru mano zak~aAhaA &gt;anota waliy~uhaA wamawolaAhaA"></verse>
+		</category>
+		<category title="AfterCallToPrayerSupplication">
+			<verse title="AfterCallToPrayerFirstPart" text="All~`hum~a rab~a ha*hi AldEwapi AltAm~ap waAlSalaApi AlqaAi}map"></verse>
+			<verse title="AfterCallToPrayerSecondPart" text="|ti muHam~adAF Alwasiylapa waAlfaDiylap"></verse>
+			<verse title="AfterCallToPrayerThirdPart" text="waAbEvhu maqAmAF maHmuwdAF Al~a*iy wEdtha"></verse>
+		</category>
+		<category title="CallToPrayer">
+			<verse title="CallToPrayerFirstVerse" text="All~`hu &gt;akbar"></verse>
+			<verse title="CallToPrayerSecondVerse" text="&gt;a$hadu &gt;an laA &lt;ilaha &lt;il~aA All~`h"></verse>
+			<verse title="CallToPrayerThirdVerse" text="&gt;a$hadu &gt;an muHam~adAN rasuwl All~`h"></verse>
+			<verse title="CallToPrayerFourthVerse" text="Hay~a ElY AlSalAp"></verse>
+			<verse title="CallToPrayerFifthVerse" text="Hay~a ElY AlfalAH"></verse>
+			<verse title="CallToPrayerSixthVerse" text="AlS~alAp xayrN mina Aln~awm"></verse>
+			<verse title="CallToPrayerSeventhVerse" text="All~`hu &gt;akbar"></verse>
+			<verse title="CallToPrayerEighthVerse" text="laA &lt;ilaha &lt;il~aA All~`h"></verse>
+			<verse title="CallToBeginPrayerSixthVerse" text="qad qaAmati AlSalAp"></verse>
+		</category>
+		<category title="Creed">
+			<verse title="FirstCreed" text="l| &lt;ilaha &lt;il~aA All~`hu muHam~adN rasuwul All~`hi"></verse>
+			<verse title="SecondCreed" text="A$ohadu Ano l| &lt;ilaha &lt;il~aA All~`hu waHodah laA $ariyoka lah waAa$ohadu Aan~a muHam~adF AEaboduh warasuwluh"></verse>
+			<verse title="ThirdCreed" text="suboHaAn lil~`h waAloHamodu lil~`hi wal| &lt;ilaha &lt;il~aA All~`hu waAll~`hu Aakobaru walaA Hawola walAa quw~ap &lt;il~aA biAll~`hi AloEaliY~ AloEaZiyom"></verse>
+			<verse title="FourthCreed" text="l| &lt;ilaha &lt;il~aA All~`hu waHodahu laA $ariyoka laho lahu Alomuloku walahu AloHamodu yuHoY wayumiyotu wahuwa HaY~u l~aA yamuwotu AabadFA AabadFA *uw AlojalaAli waAloAikoraAmi biyadihi Aloxayoru wahuwa EalY kul~i $a}KA qadiyorN"></verse>
+			<verse title="FifthCreed" text="Asotagofiru All~`ha rab~iYo mino kul~i *anobK Aa*onabotuh EamadFA Aawo xaTaAF sir~FA Aawo EalaAniyapF waAatuwobu Ailayohi mino Al*~anobi Al~a*iYo AaEolamu wamino Al*~anobi Al~a*iYo laA AaEolamu Ain~aka Aanota Eal~aAmu Alguyubi wasat~aAru AloEuyuwobi wagaf~aAru Al*~unuwobi walaA Hawola walaA quw~apa &lt;il~aA biAll~`hi AloEaliY~i AlEaZiyom"></verse>		
+			<verse title="SixthCreed" text="All~`hum~a Ain~Yo AaEuwodu bika mino Ano Au$orika $a}FA waAanaA AaEolamu bih waAsotagofiruka limaA laA AaEolamu bih tubotu Eanohu watabar~aAotu mina Alokufori waAl$~roki waAloki*obi waAlogiyobapi waAlobidoEapi waAln~amiyomapi waAlofawaAHi$i waAlobuhotaAni waAlomaEaASiYo kul~ihaA waAasolamotu waAaquwolu l| Ailha &lt;il~aA All~`hu muHam~adu r~asuwolu All~`hi"></verse>
+		</category>
+		<category title="Umrah">
+			<verse title="BeforeTravel" text="&gt;asotawodiEuka All~`ha diyonaka wa&gt;amaA nataka waxawaAtima Eamalika."></verse>
+			<verse title="IntentionForJourneyShower" text="nawayotu Alofusla lils~afari sun~apF lil~`hi taEaAlaY"></verse>
+			<verse title="IntentionForIhramShower" text="nawayotu Alofusla sun~apa Aol&lt;iHoraAmi lil~`hi taEaAlaY"></verse>
+			<verse title="IntentionForJourneyPrayer" text="&gt;uSal~iY sun~apa Als~afari rakoEatayoni lil~`hi taEaAlaY"></verse>
+			<verse title="IntentionForIhramPrayer" text="&gt;uSal~iY sun~apa Aol&lt;iHoraAmi rakoEatayoni lil~`hi taEaAlaY"></verse>
+			<verse title="IhramPrayerSupplication" text="bisomi All~`hi Alr~aHomani Alr~aHiyomi. All~`hu &gt;akobaru, All~`hu &gt;akobaru, All~`hu &gt;akobaru, subHaAna Al~a*iyo sax~arAanaA ha*aA wamaA kun~aA lahu muqoriniyona. wa&lt;in~aA &lt;ilaY rab~inaA lamunoqalibuwona. All~`hum~a &lt;in~aA naso&gt;aluka fiY safarinaA ha*aA Alobir~a waAltaqowaY wamina AloEamali maA taroDiY. All~`hum~a huw~ino EaliyonaA safaranaA ha*aA wa&gt;aTowi Ean~aA buEodapu. All~`hum~a &gt;anota AlS~aAHibu fiY Als~afari waAloxaliyofatu fiY Al&gt;aholi All~`hum~a &lt;in~iy &gt;aEuwo*ubika mino waEovaA'i Als~afari wakaAbati AlomanoZari wasuwo'i Alomunoqalabi fiY AlomaAli waAl&gt;aholi."></verse>
+			<verse title="IntentionToPerformUmrah" text="nawayotu AloEumorata wa&gt;aHoramotu bihaA lil~`hi taEaAlaY."></verse>
+			<verse title="Talbiah" text="lab~ayoka All~`hum~a lab~ayoka, lab~ayoka laA $ariyoka laka lab~ayoka, &lt;in~a AloHamoda waAln~iEomata laka waAlomuloka, laA $ariyoka laka."></verse>
+			<verse title="SalawatSupplicationAfterTalbiah" text="All~`hum~a Sal~i EalaY say~idinaA muHam~adK waEalaY &gt;ali say~idinaA muHam~adK. kama Sal~ayota EalaY &lt;iborahiyomi waEalaY &gt;ali &lt;iborahiyomi. wabaAriko EalaY say~idinaA muHam~adK waEalaY &gt;ali say~idinaA muHam~ad kamaA baArakota EalaY &lt;iborahiyoma waEalaY &gt;ali &lt;iborahiyoma, fiY AloEaAlamiyona &lt;in~aka HamiyodN majiyodN."></verse>
+			<verse title="SupplicationAfterSalawatSupplication" text="All~`hum~a &lt;in~iy &gt;aso&gt;aluka riDaAka waAlojan~ata, wa&gt;aEuwo*ubika mino saxaTika waAlnA~ari."></verse>
+			<verse title="SupplicationForArrivingAtMakkah" text="All~`hum~a &lt;in~a ha*aA AloHaraAma Haramuka, waAlobalada baladuka walAl&gt;amona &gt;amanuka, faHar~imoniy EalaY Aln~aAri wa&gt;amin~ay mino Ea*aAbika yawoma taboEa$u EibaAdaka."></verse>
+			<verse title="EnteringMasjidilHaram" text="All~`hum~a &gt;anota Als~ala|mu waminoka Als~ala|mu faHay~inaA rab~anaA biAls~ala|mi wa&gt;adoxilonaA Alojan~ata daAra Als~ala|mi tabaArakota rab~anaA wataEaAlayota yaA *aAAloxalAali waAlo&lt;ikoraAmi. All~`hum~a AfotaHo liyo &gt;abowaAba raHomatka wamagoofiratika wa&gt;adoxiloniyo fiyohaA, bisomi All~`h waAloHamodu lil~`hi waAlS~alAatu waAls~ala|mu EalaY rasuwoli All~`hi Sal~aY All~`hu Ealayopi wasal~ama."></verse>
+		</category>
+		<category title="TheBestNames">
+			<verse title="Introduction" text="nas&gt;aluka yaA man huwa All~`hu Al~a*iy laA &lt;ilaha &lt;il~aA huwa"></verse>
+			<verse title="Final1" text="Al~a*iy laysa kamivlihi $ayN' wahuwa Als~amiyE AlbaSiyr"></verse>
+			<verse title="Final2" text="All~`hum~a Sal~iY AfDal~a S~alApi EalaY AsEadi maxluwqaAtika sayidinaA muHam~adi"></verse>
+			<verse title="Final3" text="wasal~im Eadada maEluwmaAtika wamidaAda kalimaAtika kul~amaA *akaraka Al*~aAkiruwna wagafala Ean *ikriki AlgaAfiluwn"></verse>
+		</category>
+		<category title="TheWhiteMoon">
+			<verse title="TheWhiteMoonFirst" text="TalaE Albadru EalaynaA"></verse>
+			<verse title="TheWhiteMoonSecond" text="min vaniy~aAti AlwadaAE"></verse>
+			<verse title="TheWhiteMoonThird" text="wajab Al$ukru EalaynaA"></verse>
+			<verse title="TheWhiteMoonFourth" text="maA daEaY lil~`hi daAE"></verse>
+			<verse title="TheWhiteMoonFifth" text="&gt;ay~uhaA AlmabEuwvu fiynaA"></verse>
+			<verse title="TheWhiteMoonSixth" text="ji}ta biAl&gt;amri AlmuTaAE"></verse>
+			<verse title="TheWhiteMoonSeventh" text="ji}ta $ar~afta Almadiynap"></verse>
+			<verse title="TheWhiteMoonEighth" text="marHabFA yaA xayra daAE"></verse>
+		</category>
+		<category title="PopularIslamicSongVerses">
+			<verse title="OMasterSendPrayersAndPeace" text="mawlaAya Sal~iy wasal~im daAi}mFA &gt;abadFA EalaY Habiybika xayri Alxulqi kul~ihimi"></verse>
+		</category>
+		<category title="Remembrance">
+			<verse title="RemembranceFirst" text="laA &lt;ilaha &lt;il~aA &gt;anta subHaAnikaY &lt;in~iy kuntu min AlZaAlimiyn"></verse>
+			<verse title="RemembranceSecond" text="HasbNA All~`hu waniEm Alwakiyl, niEm AlmawlaY waniEm Alnasiyr"></verse>
+			<verse title="RemembranceThird" text="laA hawla walaA quwapK &lt;il~aA bill~`hi AlEaliY~i AlEaZiym"></verse>
+			<verse title="SendBlessingsFirst" text="All~`hum~a Sal~i EalaY muHam~adK waEalaY |li muHam~adK kamaA Sal~ayota EalaY &lt;iboraAhiyma waEalaY |li &lt;iboraAhiyma &lt;in~aka HamiydN majiydN wabaAriko EalaY muHam~adK waEalaY |li muHam~adK kamaA baArakota EalaY &lt;iboraAhiyma waEalaY |li &lt;iboraAhiyma fiy AloEaAlamiyna &lt;in~aka HamiydN majiydN"></verse>
+			<verse title="SendBlessingsSecond" text="All~`hum~a Sal~i EalaY muHam~adK waEalaY |li muHam~adK kamaA Sal~ayota EalaY &lt;iboraAhiyma waEalaY |li &lt;iboraAhiyma &lt;ina~ka HamiydN majiydN Alla~huma~ baAriko EalaY muHama~dK waEalaY |li muHama~dK kamaA baArakota EalaY &lt;iboraAhiyma waEalaY |li &lt;iboraAhiyma &lt;ina~ka HamiydN majiydN"></verse>
+		</category>
+	</verses>
+	<grammar>
+		<category title="ProximalDemonstratives">
+			<word text="ha*aA" id="This" grammar="ms"></word>
+			<word text="ha*ihi" id="This" grammar="fs"></word>
+			<word text="ha}ula&apos;" id="These" grammar="np"></word>
+			<word text="ha*ihi" id="These" grammar="nb"></word>
+		</category>
+		<category title="DistalDemonstratives">
+			<word text="*`lika" id="That" grammar="ms"></word>
+			<word text="tiloka" id="That" grammar="fs"></word>
+			<word text="&gt;uwl{ika" id="Those" grammar="np"></word>
+			<word text="tiloka" id="Those" grammar="nb"></word>
+		</category>
+		<category title="RelativePronouns">
+			<word text="Al~a*iy" id="HeWho" grammar="ms"></word>
+			<word text="Al~atiy" id="SheWho" grammar="fs"></word>
+			<word text="Al~a*iyna" id="ThoseWho" grammar="np"></word>
+			<word text="Al~atiy" id="ThoseWho" grammar="nb"></word>
+		</category>
+		<category title="PersonalPronouns">
+			<word text="huwa" id="He" grammar="3ms"></word>
+			<word text="humo" id="Them" grammar="3mp"></word>
+			<word text="&gt;anota" id="You" grammar="2ms"></word>
+			<word text="&gt;anotum" id="YouAll" grammar="2mp"></word>
+			<word text="&gt;anaA" id="I" grammar="1ns"></word>
+			<word text="naHonu" id="We" grammar="1np"></word>
+			<word text="hiya" id="She" grammar="3fs"></word>
+			<word text="hun~a" id="They" grammar="3fp"></word>
+			<word text="&gt;anoti" id="You" grammar="2fs"></word>
+			<word text="hiya" id="They" grammar="3fs"></word>
+			<word text="&gt;anotumaA" id="YouTwo" grammar="2nd"></word>
+			<word text="humaA" id="ThoseTwo" grammar="3nd"></word>
+		</category>
+		<category title="PossessiveDeterminerPersonalPronouns">
+			<word text="h" id="His" grammar="3ms"></word>
+			<word text="humo" id="Their" grammar="3mp"></word>
+			<word text="ka" id="Your" grammar="2ms"></word>
+			<word text="kumo" id="Your" grammar="2mp"></word>
+			<word text="yo" id="My" grammar="1ns"></word>
+			<word text="na" id="Our" grammar="1np"></word>
+			<word text="haA" id="Her" grammar="3fs"></word>
+			<word text="hun~a" id="Their" grammar="3fp"></word>
+			<word text="ki" id="Your" grammar="2fs"></word>
+			<word text="haA" id="Their" grammar="3fs"></word>
+			<word text="kumaA" id="Your" grammar="2nd"></word>
+			<word text="humaA" id="Their" grammar="3nd"></word>
+		</category>
+		<category title="ResponseParticles">
+			<word text="&lt;ilaha" id="God"></word>
+			<word text="All~`h" id="Allah"></word>
+
+			<word text="kal~aA" id="NeverCertainlyNot"></word>
+			<word text="lano" id="NotFuture"></word>
+			<word text="lamo" id="NotPast"></word>
+			<word text="laA" id="ThereIsNo"></word>
+			<word text="maA" id="Not"></word>
+			<word text="layosa" id="Not"></word>
+			<word text="layosato" id="Not"></word>
+			<word text="balaY" id="YesIndeed"></word>
+			<word text="duwna" id="BesidesLessThan"></word>
+			<word text="&lt;il~aA" id="ExceptUnlessIfNot"></word>
+			<word text="naEamo" id="Yes"></word>
+
+			<word text="&lt;il~aA" id="Except" grammar="Exceptive"></word>
+			<word text="gayor" id="NotOtherThan" grammar="Exceptive"></word>
+			<word text="swY" id="" grammar="Exceptive"></word>
+			<word text="xlaA" id="" grammar="Exceptive"></word>
+			<word text="EdaA" id="" grammar="Exceptive"></word>
+			<word text="HaA$aA" id="" grammar="Exceptive"></word>
+
+			<word text="&lt;in~a" id="VerilyTruly" grammar="Accusative"></word>
+			<word text="&gt;an~a" id="That" grammar="Accusative"></word>
+			<word text="ka&gt;an~a" id="AsIf" grammar="Accusative"></word>
+			<word text="lkin~a" id="ButHowever" grammar="Accusative"></word>
+			<word text="lkino" id="ButHowever" grammar="Accusative"></word>
+			<word text="laEal~a" id="PerhapsMayBe" grammar="Accusative"></word>
+			<word text="layota" id="Wish" grammar="Accusative"></word>
+		</category>
+		<category title="Interogatives">
+			<word text="maA" id="WhatThatWhich"></word>
+			<word text="mano" id="WhoTheOneWho"></word>
+			<word text="matY" id="WhenTheTimeWhen"></word>
+			<word text="&gt;ayona" id="Where"></word>
+			<word text="kayofa" id="How"></word>
+			<word text="kamo" id="HowMany"></word>
+			<word text="&gt;ay~u" id="Which"></word>
+			<word text="&gt;an~aY" id="WhereFromWhy"></word>
+			<word text="&gt;a" id="IsAmAreDoHave"></word>
+			<word text="hal" id="IsAmAreDoHave"></word>
+			<word text="maA*aA" id="What"></word>
+			<word text="lima" id="Why"></word>
+			<word text="limaA*aA" id="Why"></word>
+			<word text="lawo laA" id="IfNotWhyNot"></word>
+		</category>
+		<category title="Prepositions">
+			<word text="bimaA" id="WithWhatBecause"></word>
+			<word text="Eam~aA" id="AboutWhat"></word>
+			<word text="fiymaA" id="InWhat"></word>
+			<word text="kamaA" id="AsJustAs"></word>
+			<word text="limaA" id="ForWhatForThatWhich"></word>
+			<word text="mim~aA" id="OutOfWhat"></word>
+			<word text="&gt;am~aA" id="AsToAsFor"></word>
+			<word text="&lt;im~aA" id="IfEitherOr"></word>
+			<word text="&gt;an~amaA" id="That"></word>
+			<word text="&lt;in~amaA" id="VerilyIsBut"></word>
+			<word text="ka&gt;an~amaA" id="AsIf"></word>
+			<word text="kul~amaA" id="Whenever"></word>
+			<word text="bi" id="WithInFrom"></word>
+			<word text="Eano" id="About"></word>
+			<word text="fiy" id="In"></word>
+			<word text="ka" id="AsLike"></word>
+			<word text="li" id="For"></word>
+			<word text="la" id="For"></word>
+			<word text="mino" id="From"></word>
+			<word text="&lt;ilaY" id="Towards"></word>
+			<word text="ta" id="ByOfOath"></word>
+			<word text="Hat~aY" id="Until"></word>
+			<word text="EalaY" id="On"></word>
+			<word text="maEa" id="With"></word>
+			<word text="wa" id="AndByOfOath"></word>
+		</category>
+	</grammar>
+	<vocabulary>
+		<category title="RulesOfRecitation">
+			<word text="sif~at" id="LetterCharacteristics"></word>
+			<word text="maxraj~" id="PointofArticulation"></word>
+			<word text="taEaw~u*" id="Protection"></word>
+			<word text="basmalap" id="PhraseForInTheNameOfAllah"></word>
+			<word text="laHn jaliy" id="MajorIncorrectPronounciation"></word>
+			<word text="laHn xafiy" id="MinorIncorrectPronounciation"></word>
+			<word text="&lt;i$maAm" id="Dipthong"></word>
+			<word text="maDmuwm" id="LongDamma"></word>
+			<word text="maksuwr" id="LongKasra"></word>
+			<word text="maftuwH" id="LongFatha"></word>
+			<word text="naAqiS" id="Incomplete"></word>
+			<word text="waqf" id="Stopping"></word>
+			<word text="&gt;alqalqalap Sugray" id="SmallBounce"></word>
+			<word text="&gt;alqalqalap mutawasiTa" id="ModerateBounce"></word>
+			<word text="&gt;alqalqalap kubraY" id="GreatBounce"></word>
+			<word text="Harf gun~ap mu$ad~adap" id="NasalizeCharacterDoubled"></word> 
+			<word text="nuwn saAkinap &lt;iZhaAr HalqiY" id="VowellessNoonClear"></word>
+			<word text="nuwn saAkinap &lt;iqlaAb" id="VowellessNoonCovered"></word>
+			<word text="nuwn saAkinap &lt;idgaAm gun~ap" id="VowellessNoonAssimilatingNasalization"></word>
+			<word text="nuwn saAkinap &lt;idgaAm" id="VowellessNoonAssimilating"></word>
+			<word text="nuwn saAkinap &lt;ixfaA&apos; HaqiyqiY tafxiym" id="VowellessNoonHideHeaviness"></word>
+			<word text="nuwn saAkinap &lt;ixfaA&apos; HaqiyqiY tarqiyq" id="VowellessNoonHideLightness"></word>
+			<word text="Harf mu$ad~adap" id="CharacterDoubled"></word>
+			<word text="miym saAkinap &lt;ixfaA&apos; $afawiy" id="VowellessMeemHide"></word>
+			<word text="miym saAkinap &lt;idgaAm mutamaAviliyn Sagiyr" id="VowellessMeemAssimilatingSmallIdentical"></word>
+			<word text="miym saAkinap &lt;iZhaAr $afawiy" id="VowellessMeemClear"></word>
+			<word text="miym saAkinap &lt;iZhaAr &gt;a$ad~ $afawiy" id="VowellessMeemClearGreater"></word>
+			<word text="hamzap waSl" id="EmptyHamza"></word>
+			<word text="la|m &gt;alfaEl" id="LaamVerb"></word>
+			<word text="la|m &gt;alHarf" id="LaamParticle"></word>
+			<word text="&lt;idogaAm &gt;all~a|m $~amosiya~" id="AssimilateLaamSunLetter"></word>
+			<word text="&lt;iZohaAr &gt;all~a|m qamariy~" id="ClearLaamMoonLetter"></word>
+			<word text="la|m tafxiym" id="LaamHeaviness"></word>
+			<word text="la|m tarqiyq" id="LaamLightness"></word>
+			<word text="raA&apos; tafxiym" id="RaaHeaviness"></word>
+			<word text="raA&apos; tarqiyq" id="RaaLightness"></word>
+			<word text="&lt;idogaAm &gt;alomutamavilaAn &gt;alS~agiyr" id="AssimilateSmallIdentical"></word>
+			<word text="&lt;idogaAm &gt;alomutamavilaAn &gt;alkabiyr" id="AssimilateGreatIdentical"></word>
+			<word text="&gt;alomutamavilaAn &gt;almuTlaq" id="AbsoluteIdentical"></word>
+			<word text="&lt;idogaAm &gt;alomutajaAnisaAn &gt;alS~agiyr" id="AssimilateSmallSimilar"></word>
+			<word text="&gt;alomutajaAnisaAn &gt;alkabiyr" id="GreatSimilar"></word>
+			<word text="&gt;alomutajaAnisaAn &gt;almuTlaq" id="AbsoluteSimilar"></word>
+			<word text="&lt;idogaAm &gt;almutaqaAribaAn &gt;alS~agiyr" id="AssimilateSmallProximate"></word>
+			<word text="&gt;almutaqaAribaAn &gt;alkabiyr" id="GreatProximate"></word>
+			<word text="&gt;almutaqaAribaAn &gt;almuTlaq" id="AbsoluteProximate"></word>
+			<word text="&gt;almutabaAEidaAn" id="Distanced"></word>
+			<word text="mad~ TabiyEiy" id="OriginalLengthening"></word>
+			<word text="mad~ vaAbit waqf" id="SteadyLengtheningStop"></word>
+			<word text="mad~ mutaSil waAjib" id="ConnectedLengtheningEssential"></word>
+			<word text="mad~ liyn" id="SoftLengthening"></word>
+			<word text="mad~ EaAriD li{los~ukuwn" id="LengtheningPresentedToSukoon"></word>
+			<word text="mad~ la|zim kla|miy muvaq~al" id="WeightedCompulsoryLengtheningWords"></word>
+			<word text="mad~ la|zim kla|miy muxafaf" id="LightenedCompulsoryLengtheningWords"></word>
+			<word text="mad~ la|zim Harfiy muvaq~al" id="WeightedCompulsoryLengtheningLetters"></word>
+			<word text="mad~ la|zim Harfiy muxafaf" id="LightenedCompulsoryLengtheningLetters"></word>
+			<word text="mad~ munfaSil jaA}iz" id="AllowedSeparatedLengthening"></word>
+			<word text="mad~ munfaSil silaY SugraY" id="SeparatedLengtheningGreatConnection"></word>
+			<word text="mad~ munfaSil silaY kubraY" id="SeparatedLengtheningSmallConnection"></word>
+			<word text="mad~ badal" id="ExchangeLengthening"></word>
+			<word text="mad~ EiwaAd" id="SubstituteLengthening"></word>
+			<word text="mad~ &gt;alfarq" id="DistinctionLengthening"></word>
+			<word text="mad~ tamkiyn" id="StablizationLengthening"></word>
+			<word text="siyn waAjib" id="SeenRequired"></word>
+			<word text="siyn ma$huwr" id="SeenNoted"></word>
+			<word text="sukuwn" id="Sukoon"></word>
+			<word text="&gt;alif xanjariyap" id="DaggerAlif"></word>
+		</category>
+		<category title="PointsOfArticulation">
+			<word text="&gt;alxay$uwm" id="NasalPassage"></word>
+			<word text="&gt;al$~afatayn" id="TwoLips"></word>
+			<word text="&gt;all~isaAn" id="Tongue"></word>
+			<word text="&gt;alHalq" id="Throat"></word>
+			<word text="&gt;aljawf" id="ChestInterior"></word>
+		</category>
+		<category title="LetterCharacteristics">
+			<word text="&gt;al$~id~ap" id="Strength"></word>
+			<word text="&gt;alt~awasuT" id="Moderation"></word>
+			<word text="&gt;alr~ixaAwap" id="Weakness"></word>
+			<word text="&gt;alhams" id="Whispers"></word>
+			<word text="&gt;aljahr" id="Audible"></word>
+			<word text="&gt;al&lt;istiEalaA'" id="Elevation"></word>
+			<word text="&gt;al&lt;istifaAl" id="Lowering"></word>
+			<word text="&gt;al&lt;iTibaAq" id="Closing"></word>
+			<word text="&gt;al&lt;infitaAH" id="Opening"></word>
+			<word text="&gt;al&lt;i*laAq" id="Fluency"></word>
+			<word text="&gt;al&lt;iSamaAt" id="Restraint"></word>
+			<word text="&gt;alS~afiyr" id="Whistling"></word>
+			<word text="&gt;alqalqalap" id="Vibration"></word>
+			<word text="&gt;all~iyn" id="Ease"></word>
+			<word text="&gt;al&lt;inHiraAf" id="InclinationDrifting"></word>
+			<word text="&gt;alt~akriyr" id="Repetition"></word>
+			<word text="&gt;alt~afa$~iy" id="Diffusion"></word>
+			<word text="&gt;al&lt;istiTaAlap" id="Elongation"></word>
+			<word text="&gt;algun~ap" id="Nasalization"></word>
+		</category>
+		<category title="Prophets">
+			<word text="|dam" id="Adam"></word>
+			<word text="&lt;idriys" id="Enoch"></word>
+			<word text="nuwH" id="Noah"></word>
+			<word text="huwd" id="Eber"></word>
+			<word text="SAliH" id="Saleh"></word>
+			<word text="&lt;ibrAhiym" id="Abraham"></word>
+			<word text="luwT" id="Lot"></word>
+			<word text="&lt;ismAEyl" id="Ishmael"></word>
+			<word text="&lt;isHAq" id="Isaac"></word>
+			<word text="yEquwb" id="Jacob"></word>
+			<word text="yuwsuf" id="Joseph"></word>
+			<word text="&gt;ayuwb" id="Job"></word>
+			<word text="$uEayb" id="Jethro"></word>
+			<word text="muwsY" id="Moses"></word>
+			<word text="hAruwn" id="Aaron"></word>
+			<word text="*uw Alkifl" id="Ezekiel"></word>
+			<word text="dAwud" id="David"></word>
+			<word text="sulaymAn" id="Solomon"></word>
+			<word text="lyAs" id="Elijah"></word>
+			<word text="AlyasE" id="Elisha"></word>
+			<word text="ywns" id="Jonas"></word>
+			<word text="zakariy~A" id="Zechariah"></word>
+			<word text="yaHyY" id="JohnTheBaptist"></word>
+			<word text="EysY" id="Jesus"></word>
+			<word text="muHam~ad" id="Muhammad"></word>
+		</category>
+		<category title="NamesOfAllah">
+			<word text="All~`h" id="Allah"></word>
+			<word text="Alr~aHomanu" id="TheBeneficent"></word>
+			<word text="Alr~aHiymu" id="TheMerciful"></word>
+			<word text="Alomaliku" id="TheEternalLord"></word>
+			<word text="Aloqud~uwsu" id="TheMostSacred"></word>
+			<word text="Als~ala|mu" id="TheEmbodimentOfPeace"></word>
+			<word text="Alomu&amp;ominu" id="TheInfuserOfFaith"></word>
+			<word text="Alomuhayominu" id="ThePreserverOfSafety"></word>
+			<word text="AloEaziyzu" id="TheMightyOne"></word>
+			<word text="Alojab~aAru" id="TheAllCompelling"></word>
+			<word text="Alomutakab~iru" id="TheDominantOne"></word>
+			<word text="AloxaAliqu" id="TheCreator"></word>
+			<word text="AlobaAri}u" id="TheEvolver"></word>
+			<word text="AlomuSaw~iru" id="TheFlawlessShaper"></word>
+			<word text="Alogaf~aAru" id="TheGreatForgiver"></word>
+			<word text="Aloqah~aAru" id="TheAllPrevailingOne"></word>
+			<word text="Alowah~aAbu" id="TheSupremeBestower"></word>
+			<word text="Alr~az~aAqu" id="TheTotalProvider"></word>
+			<word text="Alofat~aAHu" id="TheSupremeSolver"></word>
+			<word text="AlEaliymu" id="TheAllKnowingOne"></word>
+			<word text="AloqaAbiDu" id="TheRestrictingOne"></word>
+			<word text="AlobaAsiTu" id="TheExtender"></word>
+			<word text="AloxaAfiDu" id="TheReducer"></word>
+			<word text="Alr~aAfiEu" id="TheElevatingOne"></word>
+			<word text="AlomuEiz~u" id="TheHonourerBestower"></word>
+			<word text="Almu*il~u" id="TheAbaser"></word>
+			<word text="Als~amiyEu" id="TheAllHearer"></word>
+			<word text="AlobaSiyru" id="TheAllSeeing"></word>
+			<word text="AloHakamu" id="TheImpartialJudge"></word>
+			<word text="AloEadolu" id="TheEmbodimentOfJustice"></word>
+			<word text="Al~aTiyfu" id="TheKnowerOfSubtleties"></word>
+			<word text="Aloxabiyru" id="TheAllAwareOne"></word>
+			<word text="AloHaliymu" id="TheClementOne"></word>
+			<word text="AloEaZiymu" id="TheMagnificentOne"></word>
+			<word text="Alogafuwru" id="ThePardoner"></word>
+			<word text="Al$~akuwru" id="TheAcknowledgingOne"></word>
+			<word text="AloEaliy~u" id="TheSublimeOne"></word>
+			<word text="Alokabiyru" id="TheGreatOne"></word>
+			<word text="AloHafiyZu" id="TheGuardingOne"></word>
+			<word text="Almuqiyt" id="TheSustainingOne"></word>
+			<word text="AloHasiybu" id="TheReckoningOne"></word>
+			<word text="Alojaliylu" id="TheMajesticOne"></word>
+			<word text="Alokariymu" id="TheBountifulOne"></word>
+			<word text="Alr~aqiybu" id="TheWatchfulOne"></word>
+			<word text="Alomujiybu" id="TheRespondingOne"></word>
+			<word text="AlowaAsiEu" id="TheAllPervadingOne"></word>
+			<word text="AloHakiymu" id="TheWiseOne"></word>
+			<word text="Alowaduwdu" id="TheLovingOne"></word>
+			<word text="Alomajiydu" id="TheGloriousOne"></word>
+			<word text="AlobaAEivu" id="TheInfuserOfNewLife"></word>
+			<word text="Al$~ahiydu" id="TheAllObservingWitness"></word>
+			<word text="AloHaq~u" id="TheEmbodimentOfTruth"></word>
+			<word text="Alowakiylu" id="TheUniversalTrustee"></word>
+			<word text="Aloqawiy~u" id="TheStrongOne"></word>
+			<word text="Alomatiynu" id="TheFirmOne"></word>
+			<word text="Alowaliy~u" id="TheProtectingAssociate"></word>
+			<word text="AloHamiydu" id="TheSoleLaudableOne"></word>
+			<word text="AlomuHoSiy" id="TheAllEnumeratingOne"></word>
+			<word text="Alomubodi}u" id="TheOriginator"></word>
+			<word text="AlomuEiydu" id="TheRestorer"></word>
+			<word text="AlomuHoyiy" id="TheMaintainerOflife"></word>
+			<word text="Alomumiytu" id="TheInflictorOfDeath"></word>
+			<word text="AloHay~u" id="TheEverLiving"></word>
+			<word text="Aloqayuwm" id="TheSelfSubsistingOne"></word>
+			<word text="AlowaAjidu" id="ThePointingOne"></word>
+			<word text="AlomaAjidu" id="TheAllNobleOne"></word>
+			<word text="AlowAHidu" id="TheOnlyOne"></word>
+			<word text="AalAaHadu" id="TheSoleOne"></word>
+			<word text="AlS~amadu" id="TheSupremeProvider"></word>
+			<word text="AloqaAdiru" id="TheOmnipotentOne"></word>
+			<word text="Alomuqotadiru" id="TheAllAuthoritativeOne"></word>
+			<word text="Alomuqad~imu" id="TheExpeditingOne"></word>
+			<word text="Alomu&amp;ax~iru" id="TheProcrastinator"></word>
+			<word text="Al>w~alu" id="TheVeryFirst"></word>
+			<word text="Al|xiru" id="TheInfiniteLastOne"></word>
+			<word text="AlZ~aAhiru" id="ThePerceptible"></word>
+			<word text="AlobaATinu" id="TheImperceptible"></word>
+			<word text="AlowaAliy" id="TheHolderOfSupremeAuthority"></word>
+			<word text="AlomutaEaAliy" id="TheExtremelyExaltedOne"></word>
+			<word text="Alobar~u" id="TheFountainHeadOfTruth"></word>
+			<word text="Alt~awAbu" id="TheEverAcceptorOfRepentance"></word>
+			<word text="Alomunotaqimu" id="TheRetaliator"></word>
+			<word text="AlEafuw~u" id="TheSupremePardoner"></word>
+			<word text="Alr~a&amp;uwfu" id="TheBenignOne"></word>
+			<word text="maAliku Alomuloki" id="TheEternalPossessorOfSovereignty"></word>
+			<word text="*uwAlojalAali wa Al&lt;ikoraAmi" id="ThePossessorOfMajestyAndHonour"></word>
+			<word text="AlomuqosiTu" id="TheJustOne"></word>
+			<word text="AlojaAmiEu" id="TheAssemblerOfScatteredCreations"></word>
+			<word text="Aloganiy~u" id="TheSelfSufficientOne"></word>
+			<word text="Alomugoniy" id="TheBestowerOfSufficiency"></word>
+			<word text="AlmaAniEu" id="ThePreventer"></word>
+			<word text="AlD~aAr~a" id="TheDistressor"></word>
+			<word text="Aln~aAfiEu" id="TheBestowerOfBenefits"></word>
+			<word text="Aln~uwru" id="ThePrimeLight"></word>
+			<word text="AlohaAdiy" id="TheProviderOfGuidance"></word>
+			<word text="AlobadiyEu" id="TheUniqueOne"></word>
+			<word text="AlobaAqiy" id="TheEverSurvivingOne"></word>
+			<word text="AlowaArivu" id="TheEternalInheritor"></word>
+			<word text="Alr~a$iydu" id="TheGuideToPathOfRectitude"></word>
+			<word text="AlS~abuwru" id="TheExtensivelyEnduringOne"></word>
+		</category>
+		<category title="Abbreviations">
+			<word text="Ealayhi Als~ala|m" id="UponHimBePeaceAbbr"></word>
+			<word text="Sal~Y All~`hu Ealayhi wasala|m" id="ThePrayersOfAllahUponHimAndPeaceAbbr"></word>
+			<word text="raDiy All~`hu Eanhum" id="MayAllahBePleasedAbbr"></word>
+			<word text="subHanahu watEaAlaY" id="GloriousAndExaltedBeHeAbbr"></word>
+		</category>
+		<category title="IslamicPhrases">
+			<word text="Als~ala|mu Ealayokumu" id="PeaceBeUponYou"></word>
+			<word text="waEalayokumu Als~ala|mu" id="AndUponYouBePeace"></word>
+			<word text="Als~ala|mu Ealayokumu waraHmapu All~`hi" id="PeaceBeUponYouAndMercyOfAllah"></word>
+			<word text="waEalayokumu Als~ala|mu waraHmapu All~`hi" id="AndUponYouBePeaceAndMercyOfAllah"></word>
+			<word text="Als~ala|mu Ealayokumu waraHmapu All~`hi wabarakaAtuhu" id="PeaceBeUponYouAndMercyOfAllahAndBlessings"></word>
+			<word text="waEalayokumu Als~ala|mu waraHmapu All~`hi wabarakaAtuhu" id="AndUponYouBePeaceAndMercyOfAllahAndBlessings"></word>
+			<word text="Sal~Y All~`hu Ealayhi wasala|m" id="ThePrayersOfAllahUponHimAndPeace"></word>
+			<word text="Ealayhi Als~ala|m" id="UponHimBePeace"></word>
+			<word text="&gt;aEuw*u bill~`hi mina Al$ayTani Alr~ajiymi" id="SeekRefugeWithAllahFromSatanRejected"></word>
+			<word text="&lt;in $aA' All~`h" id="AllahWilling"></word>
+			<word text="maA $aA' All~`h" id="AllahWilledItSo"></word>
+			<word text="fiy &gt;amaAni All~`h" id="InProtectionOfAllah"></word>
+			<word text="jazaAkumu All~`hu xayrAF" id="MayAllahProtectYou"></word>
+			<word text="raHimahum All~`h" id="MayAllahHaveMercy"></word>
+			<word text="raDiy All~`hu Eanhum" id="MayAllahBePleased"></word>
+			<word text="subHanahu watEaAlaY" id="GloriousAndExaltedBeHe"></word>
+			<word text="Ea*~a wajal" id="SublimeAndMighty"></word>
+			<word text="jal~a jalaAluhu" id="MayHisGloryBeGlorified"></word>
+			<word text="Hasbiy All~`hu" id="AllahSufficesMe"></word>
+			<word text="Astagfiru All~`h" id="IAskAllahForgiveness"></word>
+			<word text="baAraka All~`h" id="BlessingsOfAllah"></word>
+			<word text="Sadaq All~`hu AlEaZiym" id="AllahSaysTheTruth"></word>
+			<word text="fiy sabiyli All~`h" id="InThePathOfAllah"></word>
+			<word text="&lt;in~aA lil~`hi wa&lt;in~aA &lt;ilayhi raAjiEuwn" id="TrulyFromAllahWeComeAndToHimWillReturn"></word>
+			<word text="yarHamuka All~`h" id="MayAllahBlessYou"></word>
+			<word text="All~`hu &gt;aElam" id="AllahKnowsBest"></word>
+			<word text="riDaA bi|lEawdap" id="PleasedWithDecree"></word>
+			<word text="&gt;adab &gt;ala|xtalaAf" id="MannersOfDiffering"></word>
+			<word text="&apos;aAmanuwA@ S~a`li" id="RighteousDeeds"></word>				
+			<word text="yaA AyuhaA |manuwA" id="OBelievers"></word>
+			<word text="bismi All~`h" id="InTheNameOfAllah"></word>
+			<word text="All~`hu &gt;akbar" id="AllahIsGreatest"></word>
+			<word text="AlHamdu lil~`h" id="AllPraiseAndThanksBeToAllah"></word>
+			<word text="subHAn All~`h" id="GloryBeToAllah"></word>
+		</category>
+		<category title="IslamicWords">
+			<word text="All~`h" id="Allah"></word>
+			<word text="&lt;islaAm" id="Islam"></word>
+			<word text="muslim" id="Muslim"></word>
+			<word text="&lt;imaAm" id="Imam"></word>
+			<word text="|miyn" id="MayAllahWillItSo"></word>
+			<word text="rasuwl" id="Messenger"></word>
+			<word text="nabiy" id="Prophet"></word>
+			<word text="masjid" id="Mosque"></word>
+			<word text="qubuwr" id="Grave"></word>
+			<word text="&gt;albaEth" id="Resurection"></word>
+			<word text="&gt;alha$m" id=""></word>
+			<word text="&gt;alHisaA&apos;" id=""></word>
+			<word text="&gt;almiyzaAn" id=""></word>
+			<word text="&gt;al&gt;aHasaAs" id=""></word>
+			<word text="&gt;alS~iraAT" id=""></word>
+			<word text="&gt;als~ifaAt" id=""></word>
+			<word text="sidrapu &gt;almuntahaY" id="LoteTree"></word>
+			<word text="EibaAdaAt &gt;altamuwr" id="WorshipOfMeditation"></word>
+			<word text="kahf gaAr HiraA&apos;" id=""></word>
+			<word text="&gt;alraHim" id=""></word>
+			<word text="&gt;amaAnah" id=""></word>
+			<word text="saqar" id=""></word>
+			<word text="&gt;alHuTamap" id="BrokenToPieces"></word>
+			<word text="&gt;alhaAwiyah" id="Abyss"></word>
+			<word text="darajaAt" id=""></word>
+			<word text="darakaAt" id=""></word>
+			<word text="taHriym" id=""></word>
+			<word text="waquwd" id=""></word>
+			<word text="samuwm" id=""></word>
+			<word text="Hamiym" id=""></word>
+			<word text="yaHmuwm" id=""></word>
+			<word text="zamhariyr" id=""></word>
+			<word text="&gt;alrazaAq" id="TheSustainer"></word>
+			<word text="xaAladiyna fiyhaA" id="AbidingTherein"></word>
+			<word text="janaAtiyaA huw" id=""></word>
+			<word text="&gt;aliym" id=""></word>
+			<word text="baAlsawq" id=""></word>
+			<word text="kufr" id=""></word>
+			<word text="hizliyn" id=""></word>
+			<word text="&gt;algas~aq" id=""></word>
+			<word text="&gt;alSadiyd" id=""></word>
+			<word text="&gt;alDaAl~iyn" id="Astray"></word>
+			<word text="yaA" id="O"></word>
+			<word text="Zahiyr" id=""></word>
+			<word text="faAHi$ha" id=""></word>
+			<word text="ribaA" id="Usury"></word>
+			<word text="nfAq" id="Hypocrisy"></word>
+			<word text="Hasad" id="Envy"></word>
+			<word text="EulamaA'" id=""></word>
+			<word text="AkdA'" id=""></word>
+			<word text="Alftnh" id=""></word>
+			<word text="saiy}" id=""></word>
+			<word text="SiyaAm" id=""></word>
+			<word text="gafuwr" id=""></word>
+			<word text="Huwr &gt;alEayn" id=""></word>
+			<word text="hajr" id="Dessertion"></word>
+			<word text="tawaAzun" id="Balance"></word>
+			<word text="qiyaAm" id="Do"></word>
+			<word text="baArak" id="Bless"></word>
+			<word text="huduwd" id="Limit"></word>
+			<word text="HifaAr" id="Digger"></word>
+			<word text="var" id="Impact"></word>
+			<word text="varvaAr" id="Talkative"></word>
+			<word text="muta$ad~iq" id="Loudmouthed"></word>
+			<word text="mutafariq" id="Sporadic"></word>
+			<word text="&lt;ijaAzh" id="Permission"></word>
+			<word text="m&amp;min" id="Faithful"></word>
+			<word text="muHsin" id="Optimizer"></word>
+			<word text="munaAfiq" id="Hypocrite"></word>
+			<word text="mu$rik" id="Polythiest"></word>
+			<word text="mawla|ya" id="Protector"></word>
+			<word text="mawla|naA" id="Master"></word>
+			<word text="&gt;um~ah" id="Community"></word>
+			<word text="SaHaAbap" id="Companions"></word>
+			<word text="fuSila" id="Division"></word>
+			<word text="daliyl" id="Guidance"></word>
+			<word text="Hasanah" id="Goodness"></word>
+			<word text="&gt;algayb" id="Unseen"></word>
+			<word text="&lt;iqraA" id="Recite"></word>
+			<word text="Sabr" id="Patience"></word>
+			<word text="Sabriyn" id="Satisfaction"></word>
+			<word text="&lt;ijmaAE" id="Concensus"></word>
+			<word text="&gt;amaAl" id="Deeds"></word>
+			<word text="&gt;anhaAr" id="Sacrifice"></word>
+			<word text="qurbaAn" id="Slaughter"></word>
+			<word text="Sadaqap" id="VoluntaryKindness"></word>
+			<word text="ja}iz" id="Allowed"></word>
+			<word text="gAfr" id="Forgiving"></word>
+			<word text="kawniy" id="Universal"></word>
+			<word text="wasubaHaAn" id="AndEveryone"></word>
+			<word text="Eumrap" id="MinorPilgrimage"></word>
+			<word text="Eabd" id="Slave"></word>
+			<word text="rakabap" id="Neck"></word>
+			<word text="taqwaY" id="Piety"></word>
+			<word text="$ayx" id="Sheikh"></word>
+			<word text="&gt;ustaA*" id="Professor"></word>
+			<word text="waliy" id="Guardian"></word>
+			<word text="dunyaA" id="World"></word>
+			<word text="&gt;axirap" id="Hereafter"></word>
+			<word text="&lt;imaAn" id="Faith"></word>
+			<word text="&lt;iHsaAn" id="Excellence"></word>
+			<word text="niy~ap" id="Intention"></word>
+			<word text="xaliyfap" id="Caliphate"></word>
+			<word text="gurabaA&apos;" id="Strangers"></word>
+			<word text="tazkiyap" id="Purification"></word>
+			<word text="tarbiyap" id="Nurturing"></word>
+			<word text="&lt;ibdAaE" id="Worship"></word>
+			<word text="kalaAm" id="Speech"></word>
+			<word text="mu$af" id="PrintedBook"></word>
+			<word text="Hikmap" id="Wisdom"></word>
+			<word text="xu$uwE" id="Concentration"></word>
+			<word text="tawak~al" id="Empowering"></word>
+			<word text="kaAfir" id="Disbeliever"></word>
+			<word text="tawbap" id="Repentance"></word>
+			<word text="&gt;alEalimiyap" id="Knowledgable"></word>
+			<word text="&gt;alEamaliyap" id="Practical"></word>
+			<word text="&gt;alruqaAq" id="HeartSofteners"></word>
+			<word text="&gt;almuqadamap" id="Introduction"></word>
+			<word text="&gt;alEaqiydap" id="Doctrine"></word>
+			<word text="&gt;alEibaAdat" id="Worship"></word>
+			<word text="&gt;almuEaAmalaAt" id="RighteousDealings"></word>
+			<word text="&gt;ala|xla|q" id="Manners"></word>
+			<word text="&gt;almuEaA$arap" id="Cohabitation"></word>
+			<word text="&gt;aHadiv" id="Latest"></word>
+			<word text="&gt;alrA$iduwn‎" id="Righteous"></word>
+			<word text="jan~ap" id="Gardens"></word>
+			<word text="*anb" id="Sin"></word>
+			<word text="zinaA" id="Fornication"></word>
+			<word text="kibr" id="Arrogance"></word>
+			<word text="bidaEp" id="Innovation"></word>
+			<word text="riyA&apos;" id="ShowingOff"></word>
+			<word text="qadar" id="Predestination"></word>
+			<word text="jamaEap" id="Congregation"></word>
+			<word text="tasliym" id="Delivery"></word>
+			<word text="ta$ahud" id="Witnessing"></word>
+			<word text="&gt;a*kaAr" id="SupplicationsAndPrayers"></word>
+			<word text="SalawaAt" id="Invocation"></word>
+			<word text="muftiy" id="Mufti"></word>
+			<word text="Sad~iq" id="Truthful"></word>
+			<word text="&gt;ala|miyn" id="Trustworthy"></word>
+			<word text="&lt;istgfaAr" id="AskForgiveness"></word>
+			<word text="tafsiyr" id="Commentary"></word>
+			<word text="siyrap" id="Biography"></word>
+			<word text="fitnap" id="Persecution"></word>
+			<word text="daEwap" id="CallToIslam"></word>
+			<word text="&gt;alkursiy" id="Throne"></word>
+			<word text="&gt;aln~as" id="Mankind"></word>
+			<word text="jin~" id="Jinn"></word>
+			<word text="malakat" id="Angel"></word>
+			<word text="diyn" id="Religion"></word>
+			<word text="Ea*aAb" id="Punishment"></word>
+			<word text="yaqiyn" id="Certainty"></word>
+			<word text="Sabr" id="Patience"></word>
+			<word text="say~id" id="Sir"></word>
+			<word text="saydinaA" id="Madame"></word>
+			<word text="fatAH" id="Conquest"></word>
+			<word text="&gt;amiyr" id="Leader"></word>
+			<word text="xuTbap" id="Lecture"></word>
+			<word text="raHmap" id="Mercy"></word>
+			<word text="nafs" id="Self"></word>
+			<word text="jihaAd" id="Fight"></word>
+			<word text="mujaAhid" id="Fighter"></word>
+			<word text="sun~ap" id="Tradition"></word>
+			<word text="tahaj~ud" id="LateNight"></word>
+			<word text="DuHaY" id="MorningLight"></word>
+			<word text="witr" id="Odd"></word>
+			<word text="HalaAl" id="Permissible"></word>
+			<word text="HaraAm" id="Forbidden"></word>
+			<word text="&gt;a*aAn" id="CallToPrayer"></word>
+			<word text="mu&amp;a*in" id="CallToPrayerLeader"></word>
+			<word text="&lt;iqAmap" id="CallToBeginThePrayer"></word>
+			<word text="qiblap" id="DirectionOfPrayer"></word>
+			<word text="sujuwd" id="Prostrating"></word>
+			<word text="sajdap" id="Prostration"></word>
+			<word text="rakaEp" id="UnitOfPrayer"></word>
+			<word text="rukuwE" id="BowOfPrayer"></word>
+			<word text="SalaAp" id="Prayer"></word>
+			<word text="wuDuw&apos;" id="Ablution"></word>
+			<word text="gusl" id="MajorAblution"></word>
+			<word text="duEaA&apos;" id="Supplication"></word>
+			<word text="*ikr" id="Remembrance"></word>
+			<word text="$ahaAdap" id="Creed"></word>
+			<word text="takobiyr" id="PhraseForAllahIsGreatest"></word>
+			<word text="taHmiyd" id="PhraseForAllPraiseAndThanksBeToAllah"></word>
+			<word text="tasbiyH" id="PhraseForGloryBeToAllah"></word>
+			<word text="tawHiyd" id="OnenessOfGod"></word>
+			<word text="Sawm" id="Fasting"></word>
+			<word text="zakaAp" id="AlmsGiving"></word>
+			<word text="Haj~" id="Pilgrimage"></word>
+			<word text="qura|n" id="RevelationOfAllah"></word>
+			<word text="suwrap" id="Chapter"></word>
+			<word text="|yap" id="Verse"></word>
+			<word text="juz&apos;" id="Part"></word>
+			<word text="manzil" id="Station"></word>
+			<word text="tajwiyd" id="ProperPronunciationDuringRecitation"></word>
+			<word text="Hadiyv" id="TransmissionOfInformation"></word>
+			<word text="fiqh" id="Jurisprudence"></word>
+			<word text="$ariyaEp" id="Law"></word>
+			<word text="qADiy" id="Judge"></word>
+			<word text="ma*hab" id="SchoolOfJurisprudence"></word>
+			<word text="risaAlap" id="Dissertation"></word>
+		</category>
+		<category title="Names">
+			<word text="&gt;abuw &gt;alqaAsim muHam~ad bin Eabd All`h bin Eabdu &gt;almuT~alib bin haA$im‎" id="MuhammadBinAbdullahBinAbduAlMuttalib"></word>
+			<word text="Hamzap bin Eabdu &gt;almuT~alib" id="HamzaBinAbduAlMuttalib"></word>
+			<word text="Eabd All`h bin &gt;abiy quHaAfap" id="AbdullahBinAbiQuhafah"></word>
+			<word text="&gt;abuw bakr AlSad~iyq" id="AbuBakrAlSaddiq"></word>
+			<word text="Eumar bin &gt;alxaT~aAb" id="UmarBinAlKhattab"></word>
+			<word text="EuvmaAn bin EafaAn" id="UthmanBinAffan"></word>
+			<word text="Ealiy bin &gt;abiy TaAlib" id="AliBinAbiTalib"></word>
+			<word text="&gt;alHasan bin Ealiy bin &gt;abiy TaAlib‎" id="HasanBinAli"></word>
+			<word text="&gt;alHus~ayn bin Ealiy bin &gt;abiy TaAlib" id="HusseinBinAli"></word>
+			<word text="Ealiy bin &gt;alHus~ayn" id="AliBinHussein"></word>
+			<word text="muHam~ad bin Ealiy &gt;albaAqir" id="MuhammadBinAli"></word> 
+			<word text="jaEfar bin muHam~ad &gt;alS~aAdiq‎" id="JafarBinMuhammad"></word>
+			<word text="muwsaY bin jaEfar &gt;alkaAZim‎" id="MusaBinJafar"></word>
+			<word text="faATimap bin muHam~ad" id="FatimaBinMuhammad"></word>
+			<word text="Ealiy bin muwsaY &gt;alriDaA‎" id="AliBinMusa"></word>
+			<word text="&gt;al&lt;imAm muHam~ad &gt;alt~aqiy &gt;aljawaAd" id="MuhammadBinAli"></word>
+			<word text="Ealiy &gt;alhaAdiy &gt;aln~aqiy‎" id="AliBinMuhammad"></word>
+			<word text="&gt;alHasan &gt;alEaskariy bin Ealiy bin muHam~ad" id="HasanBinAli"></word>
+			<word text="muHam~ad bin &gt;alHasan &gt;almahdiy" id="MuhammadBinAlHasan"></word>
+			<word text="TalHap bin Eabayd All`h‎" id=""></word>
+			<word text="&gt;alzubayr bin &gt;alEawaAm bin xuwaylid" id=""></word>
+			<word text="saEd bin malik" id=""></word>
+			<word text="saEd bin &gt;abiy waq~aAS‎" id=""></word>
+			<word text="Eabd &gt;alr~aHman bin Eawf‎" id=""></word>
+			<word text="&gt;abuw Eabaydap EaAmir bin Eabdi All`h bin &gt;aljar~aAH‎" id=""></word>
+			<word text="saEiyd bin zayd" id=""></word>
+			<word text="xadiyjap binti xuwaylid" id="KhadijahBintKhuwaylid"></word>
+			<word text="sawdap binti zamEap‎" id="SawdaBintZama"></word>
+			<word text="EaA}i$ap binti &gt;abiy‎ bakr" id="AishaBintAbiBakr"></word>
+			<word text="HafSap binti Eumar" id="HafsaBintUmar"></word>
+			<word text="zaynab binti xuzaymap‎" id="ZaynabBintKhuzayma"></word>
+			<word text="hind binti &gt;abiy &gt;umay~ap‎" id="HindBintAbiUmayya"></word>
+			<word text="zaynab binti jaH$" id="ZaynabBintJahsh"></word>
+			<word text="juwayriy~ap binti &gt;alHaAriv‎" id="JuwayriyaBintAlHarith"></word>
+			<word text="Safiy~ap binti Huyay‎~" id="SafiyyaBintHuyayy"></word>
+			<word text="ramlap binti &gt;abiy sufyaAn" id="RamlahBintAbiSufyan"></word>
+			<word text="maymuwnah binti &gt;alHaAriv‎" id="MaymunaBintAlHarith"></word>
+			<word text="maAryap &gt;alqubTiy~ap‎" id="MariaAlQibtiyya"></word>
+			<word text="rayHaAnap binti zayd‎" id="RayhanaBintZayd"></word>
+			<word text="Abuw hurayrah" id="AbuHurairah"></word>
+			<word text="xaAlid bin &gt;alwaliyd" id="KhalidBinWalid"></word>
+			<word text="Eabdu All`ah bin masEuwd" id="AbdullahBinMasood"></word>
+			<word text="Abuw sufyaAn bin Harf" id="AbuSufyan"></word>
+			<word text="muEaAwiyap bin &gt;abiy sufyaAn" id="Muawiyyah"></word>
+			<word text="Abuw Haniyfah" id="AbuHanifa"></word>
+			<word text="maAlik" id="Malik"></word>
+			<word text="$AfiEiy" id="Shafii"></word>
+			<word text="Hanbal" id="Hanbal"></word>
+			<word text="Abuw dahr" id="AbuDahr"></word>
+			<word text="Abuw jahal" id="AbuJahal"></word>
+			<word text="Abuw lahab" id="AbuLahab"></word>
+			<word text="&gt;al&lt;imaAm &gt;alnawawiy 40 Hadiyv" id="ImamNawawi40Hadith"></word>
+			<word text="Eamr bin &gt;alEaAS" id="AmrBinAlAas"></word>
+			<word text="&gt;all~ayv bin saAd" id="AlLaythBinSaad"></word>
+			<word text="saEd bin waEd" id="SaadBinWaad"></word>
+			<word text="baniw vaqiyf" id="BaniThaqeef"></word>
+			<word text="&gt;alxawaArij" id="Khawarij"></word>
+			<word text="quray$" id="Quraish"></word>
+			<word text="baniw hA$im" id="BaniHashim"></word>
+			<word text="&gt;al&gt;umawiy~ap‎" id="Umayyad"></word>
+			<word text="&gt;alaEbaAsiy~ap" id="Abbasid"></word>
+			<word text="&gt;almanSuwr" id="AlMansoor"></word>
+			<word text="&gt;almuwataY" id="AlMuwata"></word>
+			<word text="hind" id="Hind"></word>
+			<word text="&gt;alwasiy" id="AlWahsi"></word>
+			<word text="Ham~ad" id="Hammad"></word>
+			<word text="|zaAr" id="Azar"></word>			
+			<word text="wahaAbiyap" id="Wahhabi"></word>
+			<word text="salafi" id="Salafi"></word>
+			<word text="jibriyl" id="Gabriel"></word>
+			<word text="&lt;ibliys" id="Lucifer"></word>
+			<word text="$ayTaAn" id="Satan"></word>
+			<word text="firawn" id="Pharoah"></word>
+			<word text="yaAjuwj wa maAjuwj" id="GogAndMagog"></word>
+		</category>
+		<category title="Places">
+			<word text="&gt;al&lt;israA' wa&gt;almiEraAj‎" id="IsraAndMiraj"></word>
+			<word text="&gt;altaEif" id="Taaif"></word>
+			<word text="madiynah" id="Medina"></word>
+			<word text="mak~ah" id="Mecca"></word>
+			<word text="kaEbap" id="Kaaba"></word>
+			<word text="Hunayn" id="Hunain"></word>
+			<word text="&gt;alHudabiy~ah" id="Hudabiyyah"></word>
+			<word text="rawDap" id="Rawdah"></word>
+			<word text="riyaAD &gt;aljan~ap" id="RiadAlJannah"></word>
+			<word text="&gt;aljan~ap" id="Heaven"></word>
+			<word text="jahan~am" id="Hell"></word>
+			<word text="firdaws" id="Firdaus"></word>
+			<word text="jabal Aln~uwr" id="MountNour"></word>
+			<word text="jabal Euhuwd" id="MountUhud"></word>
+			<word text="&gt;almasjid &gt;alHaraAm" id="SacredMosque"></word>
+			<word text="&gt;almasjid &gt;aln~abawiy" id="MosqueOfTheProphet"></word>
+			<word text="&gt;almasjid &gt;al&gt;aqSaY‎" id="FarthestMosque"></word>
+			<word text="Eayd &gt;alfiTr‎" id="FestivalOfBreakingFast"></word>
+			<word text="Eayd &gt;al&gt;aDHaY‎" id="FestivalOfSacrifice"></word>
+			<word text="r&gt;as &gt;alsanap Alhijriyap‎" id="IslamicNewYear"></word> 
+			<word text="EaA$uwraA'" id="Ashura"></word>
+			<word text="mawlid &gt;aln~abiy" id="BirthdayOfTheProphet"></word>
+			<word text="ramaDaAn" id="Ramadan"></word>
+			<word text="laylapu &gt;alniSfi min $aEbaAn" id=""></word>
+		</category>		
+	</vocabulary>
+	<languages>
+		<language code="en"></language>
+		<language code="sq"></language>
+		<language code="ber"></language>
+		<language code="ar" rtl="true"></language>
+		<language code="am"></language>
+		<language code="az"></language>
+		<language code="bn"></language>
+		<language code="bs"></language>
+		<language code="bg"></language>
+		<language code="zh"></language>
+		<language code="cs"></language>
+		<language code="dv" rtl="true"></language>
+		<language code="nl"></language>
+		<language code="fr"></language>
+		<language code="de"></language>
+		<language code="ha"></language>
+		<language code="hi"></language>
+		<language code="id"></language>
+		<language code="it"></language>
+		<language code="ja"></language>
+		<language code="ko"></language>
+		<language code="ku" rtl="true"></language>
+		<language code="ms"></language>
+		<language code="ml"></language>
+		<language code="no"></language>
+		<language code="fa" rtl="true"></language>
+		<language code="pl"></language>
+		<language code="pt"></language>
+		<language code="ro"></language>
+		<language code="ru"></language>
+		<language code="sd" rtl="true"></language>
+		<language code="so"></language>
+		<language code="es"></language>
+		<language code="sw"></language>
+		<language code="sv"></language>
+		<language code="tg"></language>
+		<language code="ta"></language>
+		<language code="tt"></language>
+		<language code="th"></language>
+		<language code="tr"></language>
+		<language code="ur" rtl="true"></language>
+		<language code="ug" rtl="true"></language>
+		<language code="uz"></language>
+	</languages>
+	<arabicfonts>
+		<arabicfont id="def" name="Default" family="" embedname="" file=""></arabicfont>
+		<arabicfont id="me_quran" name="MeQuran" family="me_quran" embedname="meQuran" file="me_quran" scale="0.85"></arabicfont>
+		<arabicfont id="scheherazade" name="Scheherazade" family="Scheherazade" embedname="Scheheraza" file="Scheherazade" scale="1.22"></arabicfont>
+		<arabicfont id="saleem" name="PDMSSaleem" family="_PDMS_Saleem_QuranFont" embedname="PDMS_Saleem" file="PDMS_Saleem" scale="1.2"></arabicfont>
+		<arabicfont id="naskh" name="KFGQPCNaskh" family="KFGQPC Uthman Taha Naskh" embedname="KFGQPC_Naskh" file="KFC_naskh" scale="1"></arabicfont>
+		<arabicfont id="trad" name="TraditionalArabic" family="Traditional Arabic" embedname="" file="" scale="1.22"></arabicfont>
+		<arabicfont id="arabtype" name="ArabicTypesetting" family="Arabic Typesetting" embedname="" file="" scale="1.33"></arabicfont>
+		<arabicfont id="majalla" name="SakkalMajalla" family="Sakkal Majalla" embedname="" file="" scale="1.1"></arabicfont>
+		<arabicfont id="uighur" name="MSUighur" family="Microsoft Uighur" embedname="" file="" scale="1.27"></arabicfont>
+		<arabicfont id="arial" name="Arial" family="Arial" embedname="" file="" scale="0.95"></arabicfont>
+		<arabicfont id="custom" name="Custom" family="" embedname="" file=""></arabicfont>
+	</arabicfonts>
+	<scriptfonts>
+		<scriptfont name="simple">
+			<font id="naskh"></font>
+			<font id="scheherazade"></font>
+			<font id="trad"></font>
+			<font id="arabtype"></font>
+			<font id="majalla"></font>
+			<font id="uighur"></font>
+		</scriptfont>
+		<scriptfont name="uthmani">
+			<font id="me_quran"></font>
+			<font id="scheherazade"></font>
+			<font id="majalla"></font>
+			<font id="arabtype"></font>
+			<font id="arial"></font>
+		</scriptfont>
+		<scriptfont name="simpleSmall">
+			<font id="trad"></font>
+			<font id="scheherazade"></font>
+			<font id="naskh"></font>
+			<font id="majalla"></font>
+			<font id="arabtype"></font>
+			<font id="uighur"></font>
+		</scriptfont>
+		<scriptfont name="uthmaniSmall">
+			<font id="majalla"></font>
+			<font id="scheherazade"></font>
+			<font id="arabtype"></font>
+			<font id="arial"></font>
+		</scriptfont>
+	</scriptfonts>
+	
+	<!--
+		Transliteration tajweed rules:
+	Last letter <fatHap || kasrap || Dam~ap> + first letter >alif + la|m + <assimilating letter> -> <fatHap || kasrap || Dam~ap> + <assimilating letter> - <assimilating letter>
+	Last letter <fatHap || kasrap || Dam~ap> + first letter >alif + la|m -> <fatHap || kasrap || Dam~ap> + la|m
+	First letter >alif la|m <assimilating letter> -> >alif <assimilating letter> - <assimilating letter>
+	Last letter <fatHapan || kasrapan || Dam~apan> + first letter (la|m || raA') -> <fatHap || kasrap || Dam~ap> + first letter
+	Last letter <fatHapan || kasrapan || Dam~apan> + baA' + <fatHap || kasrap || Dam~ap> -> <fatHap || kasrap || Dam~ap> + miym + baA' + <fatHap || kasrap || Dam~ap>
+	fatHap + >alif -> a: -> aa
+	Dam~ap + waAw -> u: -> uu -> oo
+	kasrap + yaA' -> i: -> ii -> ee
+	vowel pulling with Esophigal: kaaf, qaaf, khaa', ghein, Tracheal: Haa', 'ein and 'alif
+	fatHap + 'ein -> ae
+	Dam~ap + 'ein -> o
+	kasrap + 'ein -> e
+	'ein + fatHap -> oa
+	'ein + Dam~ap -> ou
+	'ein + kasrap -> oi
+	Last letter before pause ta martabap -> a
+	Last letter before pause <fatHap || kasrap || Dam~ap || fatHapan || kasrapan || Dam~apan> ->
+	-->
+	<arabicletters>
+		<arabicsymbol symbolname="hamzap" uname="ArabicLetterHamza" symbol="0621" shaping="FE80" ipavalue="ʔ" extendedbuckwalter="39" romantranslit="" plainroman="'" terminating="false" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="&gt;alif mad~ap" uname="ArabicLetterAlefWithMaddaAbove" symbol="0622" shaping="FE81,FE82" ipavalue="?a:" extendedbuckwalter="124" romantranslit="a~" plainroman="'a" terminating="true" connecting="true" assimilate="false" />
+		<arabicsymbol symbolname="&gt;alif hamzap qaTE" uname="ArabicLetterAlefWithHamzaAbove" symbol="0623" shaping="FE83,FE84" ipavalue="ʔ" extendedbuckwalter="62" romantranslit="a'" plainroman="'" terminating="true" connecting="true" assimilate="false" />
+		<arabicsymbol symbolname="waAw hamzap" uname="ArabicLetterWawWithHamzaAbove" symbol="0624" shaping="FE85,FE86" ipavalue="ʔ" extendedbuckwalter="38" romantranslit="w'" plainroman="w'" terminating="true" connecting="true" assimilate="false" />
+		<arabicsymbol symbolname="&gt;alif hamzap" uname="ArabicLetterAlefWithHamzaBelow" symbol="0625" shaping="FE87,FE88" ipavalue="ʔ" extendedbuckwalter="60" romantranslit="i'" plainroman="'" terminating="true" connecting="true" assimilate="false" />
+		<arabicsymbol symbolname="yaA' hamzap" uname="ArabicLetterYehWithHamzaAbove" symbol="0626" shaping="FE89,FE8A,FE8B,FE8C" ipavalue="ʔ" extendedbuckwalter="125" romantranslit="y'" plainroman="y'" terminating="false" connecting="true" assimilate="false" />
+		<arabicsymbol symbolname="&gt;alif" uname="ArabicLetterAlef" symbol="0627" shaping="FE8D,FE8E" ipavalue="a:" extendedbuckwalter="65" romantranslit="a" plainroman="a" terminating="true" connecting="true" assimilate="false" />
+		<arabicsymbol symbolname="baA'" uname="ArabicLetterBeh" symbol="0628" shaping="FE8F,FE90,FE91,FE92" ipavalue="b" extendedbuckwalter="98" romantranslit="b" plainroman="b" terminating="false" connecting="true" assimilate="false" />
+		<arabicsymbol symbolname="taA' marbuwTap" uname="ArabicLetterTehMarbuta" symbol="0629" shaping="FE93,FE94" ipavalue="a|at" extendedbuckwalter="112" romantranslit="t-" plainroman="" terminating="true" connecting="true" assimilate="false" />
+		<arabicsymbol symbolname="taA'" uname="ArabicLetterTeh" symbol="062A" shaping="FE95,FE96,FE97,FE98" ipavalue="t" extendedbuckwalter="116" romantranslit="t" plainroman="t" terminating="false" connecting="true" assimilate="true" />
+		<arabicsymbol symbolname="vaA'" uname="ArabicLetterTheh" symbol="062B" shaping="FE99,FE9A,FE9B,FE9C" ipavalue="θ" extendedbuckwalter="118" romantranslit="TH" plainroman="th" terminating="false" connecting="true" assimilate="true" />
+		<arabicsymbol symbolname="jiym" uname="ArabicLetterJeem" symbol="062C" shaping="FE9D,FE9E,FE9F,FEA0" ipavalue="ɟ" extendedbuckwalter="106" romantranslit="j" plainroman="j" terminating="false" connecting="true" assimilate="false" />
+		<arabicsymbol symbolname="HaA'" uname="ArabicLetterHah" symbol="062D" shaping="FEA1,FEA2,FEA3,FEA4" ipavalue="ħ" extendedbuckwalter="72" romantranslit="HH" plainroman="h" terminating="false" connecting="true" assimilate="false" />
+		<arabicsymbol symbolname="xaA'" uname="ArabicLetterKhah" symbol="062E" shaping="FEA5,FEA6,FEA7,FEA8" ipavalue="χˠ" extendedbuckwalter="120" romantranslit="KH" plainroman="ch" terminating="false" connecting="true" assimilate="false" />
+		<arabicsymbol symbolname="daAl" uname="ArabicLetterDal" symbol="062F" shaping="FEA9,FEAA" ipavalue="d" extendedbuckwalter="100" romantranslit="d" plainroman="d" terminating="true" connecting="true" assimilate="true" />
+		<arabicsymbol symbolname="*aAl" uname="ArabicLetterThal" symbol="0630" shaping="FEAB,FEAC" ipavalue="ð" extendedbuckwalter="42" romantranslit="DH" plainroman="th" terminating="true" connecting="true" assimilate="true" />
+		<arabicsymbol symbolname="raA'" uname="ArabicLetterReh" symbol="0631" shaping="FEAD,FEAE" ipavalue="ɾˠ" extendedbuckwalter="114" romantranslit="r" plainroman="r" terminating="true" connecting="true" assimilate="true" />
+		<arabicsymbol symbolname="zaAiy" uname="ArabicLetterZain" symbol="0632" shaping="FEAF,FEB0" ipavalue="z" extendedbuckwalter="122" romantranslit="z" plainroman="z" terminating="true" connecting="true" assimilate="true" />
+		<arabicsymbol symbolname="siyn" uname="ArabicLetterSeen" symbol="0633" shaping="FEB1,FEB2,FEB3,FEB4" ipavalue="s" extendedbuckwalter="115" romantranslit="s" plainroman="s" terminating="false" connecting="true" assimilate="true" />
+		<arabicsymbol symbolname="$iyn" uname="ArabicLetterSheen" symbol="0634" shaping="FEB5,FEB6,FEB7,FEB8" ipavalue="ɕ" extendedbuckwalter="36" romantranslit="SH" plainroman="sh" terminating="false" connecting="true" assimilate="true" />
+		<arabicsymbol symbolname="SaAd" uname="ArabicLetterSad" symbol="0635" shaping="FEB9,FEBA,FEBB,FEBC" ipavalue="sˠ" extendedbuckwalter="83" romantranslit="S" plainroman="s" terminating="false" connecting="true" assimilate="true" />
+		<arabicsymbol symbolname="DaAd" uname="ArabicLetterDad" symbol="0636" shaping="FEBD,FEBE,FEBF,FEC0" ipavalue="ɮˠ" extendedbuckwalter="68" romantranslit="D" plainroman="d" terminating="false" connecting="true" assimilate="true" />
+		<arabicsymbol symbolname="TaA'" uname="ArabicLetterTah" symbol="0637" shaping="FEC1,FEC2,FEC3,FEC4" ipavalue="tˠ" extendedbuckwalter="84" romantranslit="T" plainroman="t" terminating="false" connecting="true" assimilate="true" />
+		<arabicsymbol symbolname="ZaA'" uname="ArabicLetterZah" symbol="0638" shaping="FEC5,FEC6,FEC7,FEC8" ipavalue="ðˠ" extendedbuckwalter="90" romantranslit="Z" plainroman="th" terminating="false" connecting="true" assimilate="true" />
+		<arabicsymbol symbolname="Eayn" uname="ArabicLetterAin" symbol="0639" shaping="FEC9,FECA,FECB,FECC" ipavalue="ʕ" extendedbuckwalter="69" romantranslit="`" plainroman="`" terminating="false" connecting="true" assimilate="false" />
+		<arabicsymbol symbolname="gayn" uname="ArabicLetterGhain" symbol="063A" shaping="FECD,FECE,FECF,FED0" ipavalue="ʁˠ" extendedbuckwalter="103" romantranslit="GH" plainroman="g" terminating="false" connecting="true" assimilate="false" />
+		<arabicsymbol symbolname="taTwiyl" uname="ArabicTatweel" symbol="0640" ipavalue="" extendedbuckwalter="95" romantranslit="" plainroman="" terminating="false" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="faA'" uname="ArabicLetterFeh" symbol="0641" shaping="FED1,FED2,FED3,FED4" ipavalue="f" extendedbuckwalter="102" romantranslit="f" plainroman="f" terminating="false" connecting="true" assimilate="false" />
+		<arabicsymbol symbolname="qaAf" uname="ArabicLetterQaf" symbol="0642" shaping="FED5,FED6,FED7,FED8" ipavalue="qˠ" extendedbuckwalter="113" romantranslit="q" plainroman="q" terminating="false" connecting="true" assimilate="false" />
+		<arabicsymbol symbolname="kaAf" uname="ArabicLetterKaf" symbol="0643" shaping="FED9,FEDA,FEDB,FEDC" ipavalue="k" extendedbuckwalter="107" romantranslit="k" plainroman="k" terminating="false" connecting="true" assimilate="false" />
+		<arabicsymbol symbolname="la|m" uname="ArabicLetterLam" symbol="0644" shaping="FEDD,FEDE,FEDF,FEE0" ipavalue="l|lˠ" extendedbuckwalter="108" romantranslit="l" plainroman="l" terminating="false" connecting="true" assimilate="true" />
+		<arabicsymbol symbolname="miym" uname="ArabicLetterMeem" symbol="0645" shaping="FEE1,FEE2,FEE3,FEE4" ipavalue="m" extendedbuckwalter="109" romantranslit="m" plainroman="m" terminating="false" connecting="true" assimilate="false" />
+		<arabicsymbol symbolname="nuwn" uname="ArabicLetterNoon" symbol="0646" shaping="FEE5,FEE6,FEE7,FEE8" ipavalue="n" extendedbuckwalter="110" romantranslit="n" plainroman="n" terminating="false" connecting="true" assimilate="true" />
+		<arabicsymbol symbolname="haA'" uname="ArabicLetterHeh" symbol="0647" shaping="FEE9,FEEA,FEEB,FEEC" ipavalue="h" extendedbuckwalter="104" romantranslit="h" plainroman="h" terminating="false" connecting="true" assimilate="false" />
+		<arabicsymbol symbolname="waAw" uname="ArabicLetterWaw" symbol="0648" shaping="FEED,FEEE" ipavalue="w" extendedbuckwalter="119" romantranslit="w" plainroman="w" terminating="true" connecting="true" assimilate="false" />
+		<arabicsymbol symbolname="&gt;alif maqSuwrap" uname="ArabicLetterAlefMaksura" symbol="0649" shaping="FEEF,FEF0" ipavalue="a:" extendedbuckwalter="89" romantranslit="y-" plainroman="y" terminating="true" connecting="true" assimilate="false" />
+		<arabicsymbol symbolname="yaA'" uname="ArabicLetterYeh" symbol="064A" shaping="FEF1,FEF2,FEF3,FEF4" ipavalue="j" extendedbuckwalter="121" romantranslit="y" plainroman="y" terminating="false" connecting="true" assimilate="false" />
+		<arabicsymbol symbolname="tanwiyn fatHap" uname="ArabicFathatan" symbol="064B" ipavalue="an" extendedbuckwalter="70" romantranslit="AN" plainroman="an" terminating="true" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="tanwiyn Dam~ap" uname="ArabicDammatan" symbol="064C" ipavalue="un" extendedbuckwalter="78" romantranslit="UN" plainroman="un" terminating="true" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="tanwiyn kasrap" uname="ArabicKasratan" symbol="064D" ipavalue="in" extendedbuckwalter="75" romantranslit="IN" plainroman="in" terminating="true" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="fatHap" uname="ArabicFatha" symbol="064E" ipavalue="a" extendedbuckwalter="97" romantranslit="a" plainroman="a" terminating="false" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="Dam~ap" uname="ArabicDamma" symbol="064F" ipavalue="u" extendedbuckwalter="117" romantranslit="u" plainroman="u" terminating="false" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="kasrap" uname="ArabicKasra" symbol="0650" ipavalue="i" extendedbuckwalter="105" romantranslit="i" plainroman="i" terminating="false" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="$ad~ap" uname="ArabicShadda" symbol="0651" ipavalue="" extendedbuckwalter="126" romantranslit="=" plainroman="" terminating="false" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="sukuwn" uname="ArabicSukun" symbol="0652" ipavalue="∅" extendedbuckwalter="111" romantranslit="+" plainroman="" terminating="false" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="mad~ap" uname="ArabicMaddahAbove" symbol="0653" ipavalue="" extendedbuckwalter="94" romantranslit="" plainroman="" terminating="false" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="hamzap" uname="ArabicHamzaAbove" symbol="0654" ipavalue="ʔ" extendedbuckwalter="35" romantranslit="'" plainroman="" terminating="false" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="hamzap" uname="ArabicHamzaBelow" symbol="0655" ipavalue="ʔ" extendedbuckwalter="0" romantranslit="'" plainroman="" terminating="false" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="Sifr" uname="ArabicIndicDigitZero" symbol="0660" ipavalue="" extendedbuckwalter="48" romantranslit="0" plainroman="0" terminating="true" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="waAHid" uname="ArabicIndicDigitOne" symbol="0661" ipavalue="" extendedbuckwalter="49" romantranslit="1" plainroman="1" terminating="true" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="&lt;ivnAn" uname="ArabicIndicDigitTwo" symbol="0662" ipavalue="" extendedbuckwalter="50" romantranslit="2" plainroman="2" terminating="true" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="valAvap" uname="ArabicIndicDigitThree" symbol="0663" ipavalue="" extendedbuckwalter="51" romantranslit="3" plainroman="3" terminating="true" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="&gt;arbaEap" uname="ArabicIndicDigitFour" symbol="0664" ipavalue="" extendedbuckwalter="52" romantranslit="4" plainroman="4" terminating="true" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="xamosap" uname="ArabicIndicDigitFive" symbol="0665" ipavalue="" extendedbuckwalter="53" romantranslit="5" plainroman="5" terminating="true" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="sit~ap" uname="ArabicIndicDigitSix" symbol="0666" ipavalue="" extendedbuckwalter="54" romantranslit="6" plainroman="6" terminating="true" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="saboEap" uname="ArabicIndicDigitSeven" symbol="0667" ipavalue="" extendedbuckwalter="55" romantranslit="7" plainroman="7" terminating="true" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="vamaAnyap" uname="ArabicIndicDigitEight" symbol="0668" ipavalue="" extendedbuckwalter="56" romantranslit="8" plainroman="8" terminating="true" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="tisoEap" uname="ArabicIndicDigitNine" symbol="0669" ipavalue="" extendedbuckwalter="57" romantranslit="9" plainroman="9" terminating="true" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="&gt;alif xanjariyap" uname="ArabicLetterSuperscriptAlef" symbol="0670" ipavalue="a:" extendedbuckwalter="96" romantranslit="a-" plainroman="a" terminating="false" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="&gt;alif hamzap waSl" uname="ArabicLetterAlefWasla" symbol="0671" ipavalue="" extendedbuckwalter="123" romantranslit="" plainroman="a" terminating="false" connecting="false" assimilate="false" />
+
+		<arabicsymbol symbolname="PaY" uname="ArabicLetterPeh" symbol="067E" ipavalue="" extendedbuckwalter="80" romantranslit="p" plainroman="p" terminating="false" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="JaY" uname="ArabicLetterTcheh" symbol="0686" ipavalue="" extendedbuckwalter="74" romantranslit="zj" plainroman="j" terminating="false" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="VaY" uname="ArabicLetterVeh" symbol="06A4" ipavalue="" extendedbuckwalter="86" romantranslit="v" plainroman="v" terminating="false" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="GaAf" uname="ArabicLetterGaf" symbol="06AF" ipavalue="" extendedbuckwalter="71" romantranslit="g" plainroman="g" terminating="false" connecting="false" assimilate="false" />
+
+		<arabicsymbol symbolname="tufiydu b&gt;an~a AlwaSla &gt;awolY maEa jawaAz Alwaqufi" uname="ArabicSmallHighLigatureSadWithLamWithAlefMaksura" symbol="06D6" ipavalue="" extendedbuckwalter="0" romantranslit="" plainroman="" terminating="false" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="tafiydu b&gt;an~a Alwaqufa &gt;awolY" uname="ArabicSmallHighLigatureQafWithLamWithAlefMaksura" symbol="06D7" ipavalue="" extendedbuckwalter="0" romantranslit="" plainroman="" terminating="false" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="tufiydu lazuwma Alwaquf" uname="ArabicSmallHighMeemInitialForm" symbol="06D8" ipavalue="" extendedbuckwalter="0" romantranslit="" plainroman="" terminating="false" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="tufiydu Aln~ahoya Ean Alwaquf" uname="ArabicSmallHighLamAlef" symbol="06D9" ipavalue="" extendedbuckwalter="0" romantranslit="" plainroman="" terminating="false" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="tufiydu jawaAza Alwaqufa" uname="ArabicSmallHighJeem" symbol="06DA" ipavalue="" extendedbuckwalter="0" romantranslit="" plainroman="" terminating="false" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="tufiydu jawaAza Alwaqufi b&gt;aHadi AlmwaDiEayon waliysa fiy kilayohimaA" uname="ArabicSmallHighThreeDots" symbol="06DB" ipavalue="" extendedbuckwalter="0" romantranslit="" plainroman="" terminating="false" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="lld~ilaAlapi EalY wujuwbi Aln~uTq baAls~iyn badal AlSaAd waA*aA wuDEato baAl&gt;asofal faAln~uTqu baAlS~aAdi ma$huwr" uname="ArabicSmallHighSeen" symbol="06DC" ipavalue="" extendedbuckwalter="58" romantranslit="s" plainroman="" terminating="false" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="lld~ilaAlapi EalY bihaA bapi Al|yapi waraqamuhaA" uname="ArabicEndOfAyah" symbol="06DD" ipavalue="" extendedbuckwalter="61" romantranslit="" plainroman="" terminating="false" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="lld~ilaAlapi EalY lld~ilaAlapi EalY bdaA}pi Al&gt;ajozaA' waAl&gt;aHozaAb waAnDaA fihaA wa&gt;a rbaA EihaA" uname="ArabicStartOfRubElHizb" symbol="06DE" ipavalue="" extendedbuckwalter="66" romantranslit="" plainroman="" terminating="false" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="lld~ilaAlapi EalY sukuwn AlHarofi" uname="ArabicSmallHighRoundedZero" symbol="06DF" ipavalue="" extendedbuckwalter="64" romantranslit="" plainroman="" terminating="false" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="" uname="ArabicSmallHighUprightRectangularZero" symbol="06E0" ipavalue="" extendedbuckwalter="34" romantranslit="" plainroman="" terminating="false" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="lld~ilaAlapi EalY wujuwd Al&lt;iqlaAbi" uname="ArabicSmallHighMeemIsolatedForm" symbol="06E2" ipavalue="" extendedbuckwalter="91" romantranslit="m" plainroman="" terminating="false" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="lld~ilaAlapi EalY wujuwbi Aln~uTq bils~iyn badl AlD~aAd waA*aA wuDEato baAl&gt;asofal faAln~uTqu bilD~aAdi ma$huwr" uname="ArabicSmallLowSeen" symbol="06E3" ipavalue="" extendedbuckwalter="59" romantranslit="s" plainroman="" terminating="false" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="lld~ilaAlapi EalY wujuwbi Aln~uTq biHuruwfi Altruwkapi" uname="ArabicSmallWaw" symbol="06E5" ipavalue="" extendedbuckwalter="44" romantranslit="w" plainroman="" terminating="false" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="lld~ilaAlapi EalY wujuwbi Aln~uTq biHuruwfi Altruwkapi" uname="ArabicSmallYeh" symbol="06E6" ipavalue="" extendedbuckwalter="46" romantranslit="y" plainroman="" terminating="false" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="lld~ilaAlapi EalY wujuwbi Aln~uTq bhaA" uname="ArabicSmallHighNoon" symbol="06E8" ipavalue="" extendedbuckwalter="33" romantranslit="n" plainroman="" terminating="false" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="lld~ilaAlapi EalY mawoDiE Als~ujuwd, &gt;amaAkilmap wujuwbi Als~ujuwd faqado wuDEa fawoqahaA xaTo" uname="ArabicPlaceOfSajdah" symbol="06E9" ipavalue="" extendedbuckwalter="82" romantranslit="" plainroman="" terminating="false" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="lld~ilaAlapi EalY zyaAdap AlHarof Hiyna AlwaSol" uname="ArabicEmptyCentreLowStop" symbol="06EA" ipavalue="" extendedbuckwalter="45" romantranslit="" plainroman="" terminating="false" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="lld~ilaAlapi EalY zyaAdap AlHarof waEadam Aln~uTq bhi" uname="ArabicEmptyCentreHighStop" symbol="06EB" ipavalue="" extendedbuckwalter="43" romantranslit="" plainroman="" terminating="false" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="lld~ilaAlapi EalY Altashiyl" uname="ArabicRoundedHighStopWithFilledCentre" symbol="06EC" ipavalue="" extendedbuckwalter="37" romantranslit="" plainroman="" terminating="false" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="miym" uname="ArabicSmallLowMeem" symbol="06ED" ipavalue="" extendedbuckwalter="93" romantranslit="" plainroman="" terminating="false" connecting="false" assimilate="false" />
+
+		<arabicsymbol symbolname="AlvalaAv" uname="Space" symbol="0020" ipavalue="" extendedbuckwalter="32" romantranslit=" " plainroman=" " terminating="false" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="Ealamapu taEaj~ub" uname="ExclamationMark" symbol="0021" ipavalue="" extendedbuckwalter="0" romantranslit="!" plainroman="!" terminating="true" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="faArizap AqtibaAs" uname="QuotationMark" symbol="0022" ipavalue="" extendedbuckwalter="0" romantranslit="&quot;" plainroman="&quot;" terminating="true" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="faArizap" uname="Comma" symbol="002C" ipavalue="" extendedbuckwalter="0" romantranslit="," plainroman="," terminating="true" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="xaT" uname="HyphenMinus" symbol="002D" ipavalue="" extendedbuckwalter="0" romantranslit="-" plainroman="-" terminating="true" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="nuqTap" uname="FullStop" symbol="002E" ipavalue="" extendedbuckwalter="0" romantranslit="." plainroman="." terminating="true" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="nutTataAn mutaEaAmidataAn" uname="Colon" symbol="003A" ipavalue="" extendedbuckwalter="0" romantranslit=":" plainroman=":" terminating="true" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="yamiyn biyn qawsiyn" uname="LeftSquareBracket" symbol="005B" ipavalue="" extendedbuckwalter="0" romantranslit="[" plainroman="[" terminating="true" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="yasaAr biyn qawsiyn" uname="RightSquareBracket" symbol="005D" ipavalue="" extendedbuckwalter="0" romantranslit="]" plainroman="]" terminating="true" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="yamiyn qawis AlmajmuwaEh" uname="LeftCurlyBracket" symbol="007B" ipavalue="" extendedbuckwalter="0" romantranslit="{" plainroman="{" terminating="true" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="yasaAr qawis AlmajmuwaEh" uname="RightCurlyBracket" symbol="007D" ipavalue="" extendedbuckwalter="0" romantranslit="}" plainroman="}" terminating="true" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="yamiyn Eala|map AltanSiyS" uname="LeftPointingDoubleAngleQuotationMark" symbol="00AB" ipavalue="" extendedbuckwalter="0" romantranslit="&quot;" plainroman="&quot;" terminating="true" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="yasaAr Eala|map AltanSiyS" uname="RightPointingDoubleAngleQuotationMark" symbol="00BB" ipavalue="" extendedbuckwalter="0" romantranslit="&quot;" plainroman="&quot;" terminating="true" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="faArizap" uname="ArabicComma" symbol="060C" ipavalue="" extendedbuckwalter="0" romantranslit="," plainroman="," terminating="false" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="faAsilap manquwTap" uname="ArabicSemicolon" symbol="061B" ipavalue="" extendedbuckwalter="0" romantranslit=";" plainroman=";" terminating="true" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="Ealamapu &lt;istifhaAm" uname="ArabicQuestionMark" symbol="061F" ipavalue="" extendedbuckwalter="0" romantranslit="?" plainroman="?" terminating="false" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="" uname="LeftToRightMark" symbol="200E" ipavalue="" extendedbuckwalter="0" romantranslit="" plainroman="" terminating="false" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="" uname="RightToLeftMark" symbol="200F" ipavalue="" extendedbuckwalter="0" romantranslit="" plainroman="" terminating="false" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="" uname="LeftToRightEmbedding" symbol="202A" ipavalue="" extendedbuckwalter="0" romantranslit="" plainroman="" terminating="false" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="" uname="RightToLeftEmbedding" symbol="202B" ipavalue="" extendedbuckwalter="0" romantranslit="" plainroman="" terminating="false" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="" uname="PopDirectionalFormatting" symbol="202C" ipavalue="" extendedbuckwalter="0" romantranslit="" plainroman="" terminating="false" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="" uname="LeftToRightOverride" symbol="202D" ipavalue="" extendedbuckwalter="0" romantranslit="" plainroman="" terminating="false" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="" uname="RightToLeftOverride" symbol="202E" ipavalue="" extendedbuckwalter="0" romantranslit="" plainroman="" terminating="false" connecting="false" assimilate="false" />
+		
+		<arabicsymbol symbolname="yamiyn AlqawsaAn" uname="OrnateLeftParenthesis" symbol="FD3E" ipavalue="" extendedbuckwalter="40" romantranslit="(" plainroman="(" terminating="true" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="yasaAr AlqawsaAn" uname="OrnateRightParenthesis" symbol="FD3F" ipavalue="" extendedbuckwalter="41" romantranslit=")" plainroman=")" terminating="true" connecting="false" assimilate="false" />
+
+		<arabicsymbol symbolname="Sal~Y" uname="ArabicLigatureSallaUsedAsKoranicStopSignIsolatedForm" symbol="FDF0" ipavalue="" extendedbuckwalter="0" romantranslit="" plainroman="" terminating="true" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="qalY" uname="ArabicLigatureQalaUsedAsKoranicStopSignIsolatedForm" symbol="FDF1" ipavalue="" extendedbuckwalter="0" romantranslit="" plainroman="" terminating="true" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="All~`h" uname="ArabicLigatureAllahIsolatedForm" symbol="FDF2" ipavalue="" extendedbuckwalter="0" romantranslit="" plainroman="" terminating="true" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="&gt;akbar" uname="ArabicLigatureAkbarIsolatedForm" symbol="FDF3" ipavalue="" extendedbuckwalter="0" romantranslit="" plainroman="" terminating="true" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="muHam~ad" uname="ArabicLigatureMohammadIsolatedForm" symbol="FDF4" ipavalue="" extendedbuckwalter="0" romantranslit="" plainroman="" terminating="true" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="sala|m" uname="ArabicLigatureSalamIsolatedForm" symbol="FDF5" ipavalue="" extendedbuckwalter="0" romantranslit="" plainroman="" terminating="true" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="rasuwl" uname="ArabicLigatureRasoulIsolatedForm" symbol="FDF6" ipavalue="" extendedbuckwalter="0" romantranslit="" plainroman="" terminating="true" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="Ealayhi" uname="ArabicLigatureAlayheIsolatedForm" symbol="FDF7" ipavalue="" extendedbuckwalter="0" romantranslit="" plainroman="" terminating="true" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="wasala|m" uname="ArabicLigatureWasallamIsolatedForm" symbol="FDF8" ipavalue="" extendedbuckwalter="0" romantranslit="" plainroman="" terminating="true" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="Sal~Y" uname="ArabicLigatureSallaIsolatedForm" symbol="FDF9" ipavalue="" extendedbuckwalter="0" romantranslit="" plainroman="" terminating="true" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="Sal~Y All~`hu Ealayhi wasala|m" uname="ArabicLigatureSallallahouAlayheWasallam" symbol="FDFA" ipavalue="" extendedbuckwalter="0" romantranslit="" plainroman="" terminating="true" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="jal~a jalAluhu" uname="ArabicLigatureJallajalalouhou" symbol="FDFB" ipavalue="" extendedbuckwalter="0" romantranslit="" plainroman="" terminating="true" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="riyAl" uname="RialSign" symbol="FDFC" ipavalue="" extendedbuckwalter="0" romantranslit="" plainroman="" terminating="true" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="bismi All~`hi AlraHmani AlraHiym" uname="ArabicLigatureBismillahArRahmanArRaheem" symbol="FDFD" ipavalue="" extendedbuckwalter="0" romantranslit="" plainroman="" terminating="true" connecting="false" assimilate="false" />
+	</arabicletters>
+	
+	<!-- Bukhari 2nd book shows 2nd missing is from 8.73.075? -->
+	<!--
+		Sunnah - Al-Sihah al-Sittah (The Six Reliable Works): Sahih al-Bukhari, Sahih Muslim, Sunan an-Nasa'i al-Sughra, Sunan Abu Dawood, Sunan al-Tirmidhi, Sunan Ibn Maja
+		Al-Muwatta, Musnad Ahmad ibn Hanbal (780–855), Sunan al-Darimi (868), Shamaail Tirmidhi (9th Century), Sahih Ibn Khuzaymah (923), Sahih Ibn Hibbaan (965)
+	Al-Mustadrak alaa al-Sahihain (1014), Mawdu'at al-Kubra (1128–1217), Riyadh as-Saaliheen (1233–1278), Mishkat al-Masabih (1340), Talkhis al-Mustadrak (1274–1348)
+	Majma al-Zawa'id (1335–1405), Bulugh al-Maram (1372–1449), Kanz al-Ummal (16th century), Muntakhab Ahadith (20th Century)
+	Shia - Al-Kutub Al-Arb'ah (The Four Books), Kitab al-Kafi of Kulainy, Man la yahduruhu al-Faqih of Shaikh Saduq, Tahdhib al-Ahkam of Shaikh Tusi, al-Istibsar of Shaikh Tusi
+	Book of Sulaym ibn Qays (7th century), Al-Sahifa al-Sajjadiyya (678–713), Wasael ush-Shia (17th century), Bihar al-Anwar (17th century)
+	Haqq al-Yaqeen (17th century), Ain Al-Hayat (17th century), Sharh Usul al-Kafi (?–1081) ->Qalam-e-Mowla, ->Daim al-Islam
+	'Mu'tazila - Sharh Nahj al-Balagha (?–1258)
+	'Unknown - Nur al-Thaqalayn
+	'isnād = chain of narration
+	'Ṣaḥīḥ, (صَحِيْح) = authentic, Ḥasan, (حَسَن) = good, musnad, (مُسْنَد) = supported, Ḍaʻīf, (ضَعِيْف) = weak, Munkar, (مُنْكَر) = denounced, Shādhdh, (شاذّ) = irregular, Muḍṭarib, (مُضْطَرِب) = shaky, mawḍūʻ, (مَوْضُوْع) = fabricated
+	'hadith ranking: trustworthiness of narrators, reliability of narrators, connectedness of the chain of narration, reliability of chain of narration, free of irregularity and contradiction of hadiths of greater reliability
+	-->
+	<hadithcollections>
+		<collection name="SahihBukhari" file="bukhari" default="en-muhsin_khan">
+			<translations>
+				<translation name="Dr. Muhammad Muhsin Khan" file="en-muhsin_khan"></translation>
+			</translations>
+		</collection>
+		<collection name="SahihMuslim" file="muslim" default="en-abdul_hamid_siddiqui">
+			<translations>
+				<translation name="Abdul Hamid Siddiqui" file="en-abdul_hamid_siddiqui"></translation>
+			</translations>
+		</collection>
+		<collection name="SunanNasai" file="nasai" default="">
+			<translations>
+			</translations>
+		</collection>
+		<collection name="SunanAbuDawood" file="dawood" default="en-ahmad_hasan">
+			<translations>
+				<translation name="Ahmad Hasan" file="en-ahmad_hasan"></translation>
+			</translations>
+		</collection>
+		<collection name="SunanTirmidhi" file="tirmidhi" default="">
+			<translations>
+			</translations>
+		</collection>
+		<collection name="SunanIbnMaja" file="majah" default="">
+			<translations>
+			</translations>
+		</collection>
+		<collection name="RiyadhSaaliheen" file="riyad" default="">
+			<translations>
+			</translations>
+		</collection>
+		<collection name="MalikMuwatta" file="muwatta" default="en-aisha_abdarahman_attarjumana_yaqub_johnson">
+			<translations>
+				<translation name="`A'isha `Abdarahman at-Tarjumana and Ya`qub Johnson" file="en-aisha_abdarahman_attarjumana_yaqub_johnson"></translation>
+			</translations>
+		</collection>
+	</hadithcollections>
+	<qurandivisions>
+		<division description="Chapters"></division>
+		<division description="ChaptersRevelationOrder"></division>
+		<division description="Parts"></division>
+		<division description="Groups"></division>
+		<division description="Stations"></division>
+		<division description="Sections"></division>
+		<division description="Pages"></division>
+		<division description="Prostrations"></division>
+		<division description="ImportantSelections"></division>
+	</qurandivisions>
+	<quranselections>
+		<quranselection description="VerseOfTheThrone">
+			<verse chapter="2" startverse="255"></verse>
+		</quranselection>
+		<quranselection description="FortyOurLordSupplications">
+			<verse chapter="2" startverse="127" startword="8"></verse>
+			<verse chapter="2" startverse="128"></verse>
+			<verse chapter="2" startverse="201" startword="4"></verse>
+			<verse chapter="2" startverse="250" startword="6"></verse>
+			<verse chapter="2" startverse="286" startword="15" endword="22"></verse>
+			<verse chapter="2" startverse="286" startword="23" endword="34"></verse>
+			<verse chapter="2" startverse="286" startword="35"></verse>
+			<verse chapter="3" startverse="8"></verse>
+			<verse chapter="3" startverse="9"></verse>
+			<verse chapter="3" startverse="16" startword="3"></verse>
+			<verse chapter="3" startverse="53"></verse>
+			<verse chapter="3" startverse="147" startword="7"></verse>
+			<verse chapter="3" startverse="191" startword="13"></verse>
+			<verse chapter="3" startverse="192"></verse>
+			<verse chapter="3" startverse="193"></verse>
+			<verse chapter="3" startverse="193"></verse>
+			<verse chapter="3" startverse="194"></verse>
+			<verse chapter="5" startverse="83" startword="18"></verse>
+			<verse chapter="5" startverse="114" startword="6"></verse>
+			<verse chapter="7" startverse="23" startword="2"></verse>
+			<verse chapter="7" startverse="47" startword="9"></verse>
+			<verse chapter="7" startverse="89" startword="26"></verse>
+			<verse chapter="7" startverse="126" startword="8"></verse>
+			<verse chapter="10" startverse="85" endverse="86" startword="5"></verse>
+			<verse chapter="14" startverse="38"></verse>
+			<verse chapter="14" startverse="40" startword="8"></verse>
+			<verse chapter="14" startverse="41"></verse>
+			<verse chapter="18" startverse="10" startword="7"></verse>
+			<verse chapter="20" startverse="45" startword="2"></verse>
+			<verse chapter="23" startverse="109" startword="7"></verse>
+			<verse chapter="25" startverse="65" endverse="66" startword="3"></verse>
+			<verse chapter="25" startverse="74" startword="3"></verse>
+			<verse chapter="35" startverse="34" startword="10"></verse>
+			<verse chapter="40" startverse="7" startword="14"></verse>
+			<verse chapter="40" startverse="8" endverse="9"></verse>
+			<verse chapter="59" startverse="10" startword="6" endword="19"></verse>
+			<verse chapter="59" startverse="10" startword="20"></verse>
+			<verse chapter="60" startverse="4" startword="47"></verse>
+			<verse chapter="60" startverse="5"></verse>
+			<verse chapter="66" startverse="8" startword="36"></verse>
+		</quranselection>
+		<quranselection description="UniqueLetters">
+			<verse chapter="2" startverse="1"></verse>
+			<verse chapter="3" startverse="1"></verse>
+			<verse chapter="7" startverse="1"></verse>
+			<verse chapter="10" startverse="1" endword="1"></verse>
+			<verse chapter="11" startverse="1" endword="1"></verse>
+			<verse chapter="12" startverse="1" endword="1"></verse>
+			<verse chapter="13" startverse="1" endword="1"></verse>
+			<verse chapter="14" startverse="1" endword="1"></verse>
+			<verse chapter="15" startverse="1" endword="1"></verse>
+			<verse chapter="19" startverse="1"></verse>
+			<verse chapter="20" startverse="1"></verse>
+			<verse chapter="26" startverse="1"></verse>
+			<verse chapter="27" startverse="1" endword="1"></verse>
+			<verse chapter="28" startverse="1"></verse>
+			<verse chapter="29" startverse="1"></verse>
+			<verse chapter="30" startverse="1"></verse>
+			<verse chapter="31" startverse="1"></verse>
+			<verse chapter="32" startverse="1"></verse>
+			<verse chapter="36" startverse="1"></verse>
+			<verse chapter="38" startverse="1" endword="1"></verse>
+			<verse chapter="40" startverse="1"></verse>
+			<verse chapter="41" startverse="1"></verse>
+			<verse chapter="42" startverse="1" endverse="2"></verse>
+			<verse chapter="43" startverse="1"></verse>
+			<verse chapter="44" startverse="1"></verse>
+			<verse chapter="45" startverse="1"></verse>
+			<verse chapter="46" startverse="1"></verse>
+			<verse chapter="50" startverse="1" endword="1"></verse>
+			<verse chapter="68" startverse="1" endword="1"></verse>
+		</quranselection>
+		<quranselection description="SoulStates">
+			<verse chapter="12" startverse="53"></verse>
+			<verse chapter="75" startverse="2"></verse>
+			<verse chapter="89" startverse="27"></verse>
+		</quranselection>
+	</quranselections>
+	<quranchapters>
+		<chapter index="1" name="AlfaAtiHap"></chapter>
+		<chapter index="2" name="Albaqarap" uniqueletters="1"></chapter>
+		<chapter index="3" name="|l EimraAn" uniqueletters="1"></chapter>
+		<chapter index="4" name="Aln~isaA'"></chapter>
+		<chapter index="5" name="AlmaAi}dap"></chapter>
+		<chapter index="6" name="Ala&gt;anEaAm"></chapter>
+		<chapter index="7" name="Ala&gt;aEraAf" uniqueletters="1"></chapter>
+		<chapter index="8" name="Ala&gt;anfaAl"></chapter>
+		<chapter index="9" name="Alt~wbap"></chapter>
+		<chapter index="10" name="yuwnus" uniqueletters="1"></chapter>
+		<chapter index="11" name="huwd" uniqueletters="1"></chapter>
+		<chapter index="12" name="yuwsuf" uniqueletters="1"></chapter>
+		<chapter index="13" name="Alr~aEd" uniqueletters="1"></chapter>
+		<chapter index="14" name="AbraAhiym" uniqueletters="1"></chapter>
+		<chapter index="15" name="AlHijr" uniqueletters="1"></chapter>
+		<chapter index="16" name="Aln~aHl"></chapter>
+		<chapter index="17" name="Ali&lt;israA'"></chapter>
+		<chapter index="18" name="Alkahf"></chapter>
+		<chapter index="19" name="maryam" uniqueletters="1"></chapter>
+		<chapter index="20" name="Th" uniqueletters="1"></chapter>
+		<chapter index="21" name="Ala&gt;anabiyaA'"></chapter>
+		<chapter index="22" name="AlHaj~"></chapter>
+		<chapter index="23" name="Almu&amp;minuwn"></chapter>
+		<chapter index="24" name="Aln~uwr"></chapter>
+		<chapter index="25" name="AlfurqaAn"></chapter>
+		<chapter index="26" name="Al$~uEaraA'" uniqueletters="1"></chapter>
+		<chapter index="27" name="Aln~aml" uniqueletters="1"></chapter>
+		<chapter index="28" name="AlqaSaS" uniqueletters="1"></chapter>
+		<chapter index="29" name="AlEankabuwt" uniqueletters="1"></chapter>
+		<chapter index="30" name="Alr~uwm" uniqueletters="1"></chapter>
+		<chapter index="31" name="luqmaAn" uniqueletters="1"></chapter>
+		<chapter index="32" name="Als~ajdap" uniqueletters="1"></chapter>
+		<chapter index="33" name="Ala&gt;aHzaAb"></chapter>
+		<chapter index="34" name="saba&lt;i"></chapter>
+		<chapter index="35" name="faATir"></chapter>
+		<chapter index="36" name="ys" uniqueletters="1"></chapter>
+		<chapter index="37" name="AlS~aAfaAt"></chapter>
+		<chapter index="38" name="S" uniqueletters="1"></chapter>
+		<chapter index="39" name="Alz~umar"></chapter>
+		<chapter index="40" name="gaAfir" uniqueletters="1"></chapter>
+		<chapter index="41" name="fuS~ilat" uniqueletters="1"></chapter>
+		<chapter index="42" name="Al$~uwraY" uniqueletters="2"></chapter>
+		<chapter index="43" name="Alz~uxruf" uniqueletters="1"></chapter>
+		<chapter index="44" name="Ald~uxaAn" uniqueletters="1"></chapter>
+		<chapter index="45" name="AljaAviyap" uniqueletters="1"></chapter>
+		<chapter index="46" name="Ala&gt;aHqaAf" uniqueletters="1"></chapter>
+		<chapter index="47" name="muHam~ad"></chapter>
+		<chapter index="48" name="AlfatoH"></chapter>
+		<chapter index="49" name="AlHujuraAt"></chapter>
+		<chapter index="50" name="q" uniqueletters="1"></chapter>
+		<chapter index="51" name="Al*~aAriyaAt"></chapter>
+		<chapter index="52" name="AlT~uwr"></chapter>
+		<chapter index="53" name="Aln~ajom"></chapter>
+		<chapter index="54" name="Alqamar"></chapter>
+		<chapter index="55" name="Alr~aHman"></chapter>
+		<chapter index="56" name="AlwaAqiEap"></chapter>
+		<chapter index="57" name="AlHadiyd"></chapter>
+		<chapter index="58" name="AlmujaAdilap"></chapter>
+		<chapter index="59" name="AlHa$r"></chapter>
+		<chapter index="60" name="AlmumtaHanap"></chapter>
+		<chapter index="61" name="AlS~af"></chapter>
+		<chapter index="62" name="AljumuEap"></chapter>
+		<chapter index="63" name="AlmunaAfiquwn"></chapter>
+		<chapter index="64" name="Alt~agaAbun"></chapter>
+		<chapter index="65" name="AlT~alaAq"></chapter>
+		<chapter index="66" name="Alt~aHoriym"></chapter>
+		<chapter index="67" name="Almulk"></chapter>
+		<chapter index="68" name="Alqalam" uniqueletters="1"></chapter>
+		<chapter index="69" name="AlHaAq~ap"></chapter>
+		<chapter index="70" name="AlmaEaArij"></chapter>
+		<chapter index="71" name="nuwH"></chapter>
+		<chapter index="72" name="Aljin~"></chapter>
+		<chapter index="73" name="Almuzam~il"></chapter>
+		<chapter index="74" name="Almud~av~ir"></chapter>
+		<chapter index="75" name="AlqiyaAmap"></chapter>
+		<chapter index="76" name="AliAnsaAn"></chapter>
+		<chapter index="77" name="AlmursalaAt"></chapter>
+		<chapter index="78" name="Aln~aba&lt;i"></chapter>
+		<chapter index="79" name="Aln~aAziEaAt"></chapter>
+		<chapter index="80" name="Eabasa"></chapter>
+		<chapter index="81" name="Alt~akwiyr"></chapter>
+		<chapter index="82" name="Ali&lt;infiTaAr"></chapter>
+		<chapter index="83" name="AlmuTaf~ifiyn"></chapter>
+		<chapter index="84" name="Ali&lt;in$aqaAq"></chapter>
+		<chapter index="85" name="Alburuwj"></chapter>
+		<chapter index="86" name="AlT~aAriq"></chapter>
+		<chapter index="87" name="Ala&gt;aElaY"></chapter>
+		<chapter index="88" name="AlgaA$iyap"></chapter>
+		<chapter index="89" name="Alfajr"></chapter>
+		<chapter index="90" name="Albalad"></chapter>
+		<chapter index="91" name="Al$~ams"></chapter>
+		<chapter index="92" name="Allayl"></chapter>
+		<chapter index="93" name="AlD~uHaY"></chapter>
+		<chapter index="94" name="Al$~arH"></chapter>
+		<chapter index="95" name="Alt~iyn"></chapter>
+		<chapter index="96" name="AlEalaq"></chapter>
+		<chapter index="97" name="Alqadr"></chapter>
+		<chapter index="98" name="Albay~inap"></chapter>
+		<chapter index="99" name="Alz~alzalap"></chapter>
+		<chapter index="100" name="AlEaAdiyaAt"></chapter>
+		<chapter index="101" name="AlqaAriEap"></chapter>
+		<chapter index="102" name="Alt~akaAvur"></chapter>
+		<chapter index="103" name="AlEaSr"></chapter>
+		<chapter index="104" name="Alhumazap"></chapter>
+		<chapter index="105" name="Alfiyl"></chapter>
+		<chapter index="106" name="quray$"></chapter>
+		<chapter index="107" name="AlmaAEuwn"></chapter>
+		<chapter index="108" name="Alkawvar"></chapter>
+		<chapter index="109" name="AlkaAfiruwn"></chapter>
+		<chapter index="110" name="Aln~aSr"></chapter>
+		<chapter index="111" name="Almasad"></chapter>
+		<chapter index="112" name="Ali&lt;ixlaAS"></chapter>
+		<chapter index="113" name="Alfalaq"></chapter>
+		<chapter index="114" name="Aln~aAs"></chapter>
+	</quranchapters>
+	<reciters default="afasy">
+		<reciter name="abdulbasit" reciter="AbdulBasit AbdusSamad" source="tanzil"></reciter>
+		<reciter name="abdulbasit-mjwd" reciter="AbdulBasit AbdusSamad (Mujawwad)" source="tanzil"></reciter>
+		<reciter name="afasy" reciter="Mishary bin Rashid Al-Afasy" source="tanzil"></reciter>
+		<reciter name="ajamy" reciter="Ahmed Al-Ajamy" source="tanzil"></reciter>
+		<reciter name="akhdar" reciter="Ibrahim Al-Akhdar" source="tanzil"></reciter>
+		<reciter name="ghamadi" reciter="Sa'ad Al-Ghamadi" source="tanzil"></reciter>
+		<reciter name="hudhaify" reciter="Ali Al-Hudhaify" source="tanzil"></reciter>
+		<reciter name="husary" reciter="Khalil Al-Husary" source="tanzil"></reciter>
+		<reciter name="husary-mjwd" reciter="Khalil Al-Husary (Mujawwad)" source="tanzil"></reciter>
+		<reciter name="juhany" reciter="Abdullah Awwad Al-Juhany" source="tanzil"></reciter>
+		<reciter name="matrood" reciter="Abdullah Al-Matrood" source="tanzil"></reciter>
+		<reciter name="minshawi" reciter="Mohammed Siddiq Al-Minshawi" source="tanzil"></reciter>
+		<reciter name="minshawi-mjwd" reciter="Mohammed Siddiq Al-Minshawi (Mujawwad)" source="tanzil"></reciter>
+		<reciter name="muaiqly" reciter="Mahir Al-Muaiqly" source="tanzil"></reciter>
+		<reciter name="qasim" reciter="AbdulMuhsin Al-Qasim" source="tanzil"></reciter>
+		<reciter name="hani" reciter="Hani Ar-Rafai" source="tanzil"></reciter>
+		<reciter name="shateri" reciter="Abu-Bakr Ash-Shateri" source="tanzil"></reciter>
+		<reciter name="shuraim" reciter="Sa'ud bin Ibrahim Ash-Shuraim" source="tanzil"></reciter>
+		<reciter name="sudais" reciter="AbdurRahman As-Sudais" source="tanzil"></reciter>
+		<reciter name="tablawi" reciter="Mohammad Mahmood At-Tablawi" source="tanzil"></reciter>
+		<reciter name="basfar" reciter="Abdullah Basfar" source="tanzil"></reciter>
+		<reciter name="basfar2" reciter="Abdullah Basfar" source="tanzil"></reciter>
+		<reciter name="bukhatir" reciter="Salah AbdulRahman Bukhatir" source="tanzil"></reciter>
+		<reciter name="ayyub" reciter="Muhammad Ayyub" source="tanzil"></reciter>
+		<reciter name="jibreel" reciter="Muhammad Jibreel" source="tanzil"></reciter>
+		<reciter name="parhizgar" reciter="Shahriar Parhizgar" source="tanzil"></reciter>
+		<reciter name="musayev" reciter="Rasim Balayev" translation="az.musayev" source="tanzil"></reciter>
+		<reciter name="itani" reciter="Itani" translation="en.itani" source="tanzil"></reciter>
+		<reciter name="ibrahim" reciter="Ibrahim Walk" translation="en.sahih" source="tanzil"></reciter>
+		<reciter name="fooladvand" reciter="هدایت‌فر" translation="fa.fooladvand" source="tanzil"></reciter>
+		<reciter name="makarem" reciter="کبیری" translation="fa.makarem" source="tanzil"></reciter>
+		<!--
+		URL: http://www.everyayah.com/data/status.php or http://www.versebyversequran.com/site/mp3-status/
+		JavaScript extraction technique:
+		$(".Quran:nth-child(1)").find("a:nth-child(4n+0)").each(function (num, it) { console.log(it.href.replace("http://www.everyayah.com/data/", "").replace("/000_checksum.md5", "")); });
+		$(".Quran:nth-child(1)").find("a:nth-child(4n+1)").each(function (num, it) { console.log(it.href.replace("http://www.everyayah.com/data/", "")); });
+		-->
+		<reciter name="English/Sahih_Intnl_Ibrahim_Walk_192kbps" reciter="Ibrahim Walk" translation="en.sahih" bitrate="192" source="everyayah"></reciter>
+		<reciter name="translations/azerbaijani/balayev" reciter="Rasim Balayev" translation="az.musayev" bitrate="64" source="everyayah"></reciter>
+		<reciter name="translations/besim_korkut_ajet_po_ajet" reciter="Besim Korkut (Bosnian)" translation="" bitrate="128" source="everyayah"></reciter>
+		<reciter name="translations/Fooladvand_Hedayatfar_40Kbps" reciter="هدایت‌فر" translation="fa.fooladvand" bitrate="40" source="everyayah"></reciter>
+		<reciter name="translations/Makarem_Kabiri_16Kbps" reciter="کبیری" translation="fa.makarem" bitrate="16" source="everyayah"></reciter>
+		<reciter name="translations/urdu_shamshad_ali_khan_46kbps" reciter="Shamshad Ali Khan" translation="" bitrate="46" source="everyayah"></reciter>
+		<reciter name="warsh/warsh_Abdul_Basit_128kbps" reciter="AbdulBasit AbdusSamad (Warsh)" bitrate="128" source="everyayah"></reciter>
+		<reciter name="warsh/warsh_ibrahim_aldosary_128kbps" reciter="Ibrahim Al-Dosary (Warsh)" bitrate="128" source="everyayah"></reciter>
+		<reciter name="warsh/warsh_yassin_al_jazaery_64kbps" reciter="Yassin Al-Jazaery (Warsh)" bitrate="64" source="everyayah"></reciter>
+		<reciter name="Abdul_Basit_Mujawwad_128kbps" reciter="AbdulBasit AbdusSamad (Mujawwad)" bitrate="128" source="everyayah"></reciter>
+		<reciter name="Abdul_Basit_Murattal_192kbps" reciter="AbdulBasit AbdusSamad" bitrate="192" source="everyayah"></reciter>
+		<reciter name="Abdul_Basit_Murattal_64kbps" reciter="AbdulBasit AbdusSamad" bitrate="64" source="everyayah"></reciter>
+		<reciter name="AbdulSamad_64kbps_QuranExplorer.Com" reciter="AbdulSamad QuranExplorer.Com" bitrate="64" source="everyayah"></reciter>
+		<reciter name="Abdullaah_3awwaad_Al-Juhaynee_128kbps" reciter="Abdullah Awwad Al-Juhany" bitrate="128" source="everyayah"></reciter>
+		<reciter name="Abdullah_Basfar_192kbps" reciter="Abdullah Basfar" bitrate="192" source="everyayah"></reciter>
+		<reciter name="Abdullah_Basfar_32kbps" reciter="Abdullah Basfar" bitrate="32" source="everyayah"></reciter>
+		<reciter name="Abdullah_Basfar_64kbps" reciter="Abdullah Basfar" bitrate="64" source="everyayah"></reciter>
+		<reciter name="Abdullah_Matroud_128kbps" reciter="Abdullah Al-Matrood" bitrate="128" source="everyayah"></reciter>
+		<reciter name="Abdurrahmaan_As-Sudais_192kbps" reciter="AbdurRahman As-Sudais" bitrate="192" source="everyayah"></reciter>
+		<reciter name="Abdurrahmaan_As-Sudais_64kbps" reciter="AbdurRahman As-Sudais" bitrate="64" source="everyayah"></reciter>
+		<reciter name="Abu_Bakr_Ash-Shaatree_128kbps" reciter="Abu-Bakr Ash-Shateri" bitrate="128" source="everyayah"></reciter>
+		<reciter name="Abu_Bakr_Ash-Shaatree_64kbps" reciter="Abu-Bakr Ash-Shateri" bitrate="64" source="everyayah"></reciter>
+		<reciter name="ahmed_ibn_ali_al_ajamy_128kbps" reciter="Ahmed Al-Ajamy" bitrate="128" source="everyayah"></reciter>
+		<reciter name="Ahmed_ibn_Ali_al-Ajamy_128kbps_ketaballah.net" reciter="Ahmed Al-Ajamy" bitrate="128" source="everyayah"></reciter>
+		<reciter name="Ahmed_ibn_Ali_al-Ajamy_64kbps_QuranExplorer.Com" reciter="Ahmed Al-Ajamy" bitrate="64" source="everyayah"></reciter>
+		<reciter name="Ahmed_Neana_128kbps" reciter="Ahmed Neana" bitrate="128" source="everyayah"></reciter>
+		<reciter name="Ahmed_ibn_Ali_al-Ajamy_128kbps_ketaballah.net" reciter="Ahmed Al-Ajamy KetabAllah.Net" bitrate="128" source="everyayah"></reciter>
+		<reciter name="Ahmed_ibn_Ali_al-Ajamy_64kbps_QuranExplorer.Com" reciter="Ahmed Al-Ajamy QuranExplorer.Com" bitrate="64" source="everyayah"></reciter>
+		<reciter name="Akram_AlAlaqimy_128kbps" reciter="Akram Al Alaqimy" bitrate="128" source="everyayah"></reciter>
+		<reciter name="Alafasy_128kbps" reciter="Mishary bin Rashid Al-Afasy" bitrate="128" source="everyayah"></reciter>
+		<reciter name="Alafasy_64kbps" reciter="Mishary bin Rashid Al-Afasy" bitrate="64" source="everyayah"></reciter>
+		<reciter name="Ali_Hajjaj_AlSuesy_128kbps" reciter="Ali Hajjaj AlSuesy" bitrate="128" source="everyayah"></reciter>
+		<reciter name="aziz_alili_128kbps" reciter="Aziz Alili" bitrate="128" source="everyayah"></reciter>
+		<reciter name="Ghamadi_40kbps" reciter="Sa'ad Al-Ghamadi" bitrate="40" source="everyayah"></reciter>
+		<reciter name="Hani_Rifai_192kbps" reciter="Hani Ar-Rafai" bitrate="192" source="everyayah"></reciter>
+		<reciter name="Hani_Rifai_64kbps" reciter="Hani Ar-Rafai" bitrate="64" source="everyayah"></reciter>
+		<reciter name="Hudhaify_128kbps" reciter="Ali Al-Hudhaify" bitrate="128" source="everyayah"></reciter>
+		<reciter name="Hudhaify_32kbps" reciter="Ali Al-Hudhaify" bitrate="32" source="everyayah"></reciter>
+		<reciter name="Hudhaify_64kbps" reciter="Ali Al-Hudhaify" bitrate="64" source="everyayah"></reciter>
+		<reciter name="Husary_128kbps" reciter="Khalil Al-Husary" bitrate="128" source="everyayah"></reciter>
+		<reciter name="Husary_64kbps" reciter="Khalil Al-Husary" bitrate="64" source="everyayah"></reciter>
+		<reciter name="Husary_Muallim_128kbps" reciter="Khalil Al-Husary (Muallim)" bitrate="128" source="everyayah"></reciter>
+		<reciter name="Husary_128kbps_Mujawwad" reciter="Khalil Al-Husary (Mujawwad)" bitrate="128" source="everyayah"></reciter>
+		<reciter name="Husary_Mujawwad_64kbps" reciter="Khalil Al-Husary (Mujawwad)" bitrate="64" source="everyayah"></reciter>
+		<reciter name="Ibrahim_Akhdar_32kbps" reciter="Ibrahim Al-Akhdar" bitrate="32" source="everyayah"></reciter>
+		<reciter name="Ibrahim_Akhdar_64kbps" reciter="Ibrahim Al-Akhdar" bitrate="64" source="everyayah"></reciter>
+		<reciter name="Karim_Mansoori_40kbps" reciter="Karim Mansoori (Iran)" bitrate="40" source="everyayah"></reciter>
+		<reciter name="khalefa_al_tunaiji_64kbps" reciter="Khalefa Al-Tunaiji" bitrate="64" source="everyayah"></reciter>
+		<reciter name="Khaalid_Abdullaah_al-Qahtaanee_192kbps" reciter="Khalid Abdullah al-Qahtanee" bitrate="192" source="everyayah"></reciter>
+		<reciter name="Maher_AlMuaiqly_64kbps" reciter="Mahir Al-Muaiqly" bitrate="64" source="everyayah"></reciter>
+		<reciter name="MaherAlMuaiqly128kbps" reciter="Mahir Al-Muaiqly" bitrate="128" source="everyayah"></reciter>
+		<reciter name="mahmoud_ali_al_banna_32kbps" reciter="Mahmoud Ali Al-Banna" bitrate="32" source="everyayah"></reciter>
+		<reciter name="Menshawi_16kbps" reciter="Mohammed Siddiq Al-Minshawi" bitrate="16" source="everyayah"></reciter>
+		<reciter name="Menshawi_32kbps" reciter="Mohammed Siddiq Al-Minshawi" bitrate="32" source="everyayah"></reciter>
+		<reciter name="Minshawy_Mujawwad_192kbps" reciter="Mohammed Siddiq Al-Minshawi (Mujawwad)" bitrate="192" source="everyayah"></reciter>
+		<reciter name="Minshawy_Mujawwad_64kbps" reciter="Mohammed Siddiq Al-Minshawi (Mujawwad)" bitrate="64" source="everyayah"></reciter>
+		<reciter name="Minshawy_Murattal_128kbps" reciter="Mohammed Siddiq Al-Minshawi (Murattal)" bitrate="128" source="everyayah"></reciter>
+		<reciter name="Mohammad_al_Tablaway_128kbps" reciter="Mohammad Mahmood At-Tablawi" bitrate="128" source="everyayah"></reciter>
+		<reciter name="Mohammad_al_Tablaway_64kbps" reciter="Mohammad Mahmood At-Tablawi" bitrate="64" source="everyayah"></reciter>
+		<reciter name="Muhammad_AbdulKareem_128kbps" reciter="Muhammad AbdulKareem" bitrate="128" source="everyayah"></reciter>
+		<reciter name="Muhammad_Ayyoub_128kbps" reciter="Muhammad Ayyub" bitrate="128" source="everyayah"></reciter>
+		<reciter name="Muhammad_Ayyoub_64kbps" reciter="Muhammad Ayyub" bitrate="64" source="everyayah"></reciter>
+		<reciter name="Muhammad_Ayyoub_32kbps" reciter="Muhammad Ayyub" bitrate="32" source="everyayah"></reciter>
+		<reciter name="Muhammad_Jibreel_128kbps" reciter="Muhammad Jibreel" bitrate="128" source="everyayah"></reciter>
+		<reciter name="Muhammad_Jibreel_64kbps" reciter="Muhammad Jibreel" bitrate="64" source="everyayah"></reciter>
+		<reciter name="Muhsin_Al_Qasim_192kbps" reciter="Muhsin Al Qasim" bitrate="192" source="everyayah"></reciter>
+		<reciter name="MultiLanguage/Basfar_Walk_192kbps" reciter="Basfar Walk (MultiLanguage)" bitrate="192" source="everyayah"></reciter>
+		<reciter name="Mustafa_Ismail_48kbps" reciter="Mustafa Ismail" bitrate="48" source="everyayah"></reciter>
+		<reciter name="Nasser_Alqatami_128kbps" reciter="Nasser Alqatami" bitrate="128" source="everyayah"></reciter>
+		<reciter name="Parhizgar_48kbps" reciter="Shahriar Parhizgar" bitrate="48" source="everyayah"></reciter>
+		<reciter name="Sahl_Yassin_128kbps" reciter="Sahl Yassin" bitrate="128" source="everyayah"></reciter>
+		<reciter name="Salaah_AbdulRahman_Bukhatir_128kbps" reciter="Salah AbdulRahman Bukhatir" bitrate="128" source="everyayah"></reciter>
+		<reciter name="Salah_Al_Budair_128kbps" reciter="Salah Al Budair" bitrate="128" source="everyayah"></reciter>
+		<reciter name="Saood_ash-Shuraym_128kbps" reciter="Sa'ud bin Ibrahim Ash-Shuraim" bitrate="128" source="everyayah"></reciter>
+		<reciter name="Saood_ash-Shuraym_64kbps" reciter="Sa'ud bin Ibrahim Ash-Shuraim" bitrate="64" source="everyayah"></reciter>
+		<reciter name="Yaser_Salamah_128kbps" reciter="Yaser Salamah" bitrate="128" source="everyayah"></reciter>
+		<reciter name="Yasser_Ad-Dussary_128kbps" reciter="Yasser Ad-Dussary" bitrate="128" source="everyayah"></reciter>
+	</reciters>
+	<translations default="en-maulana_ali">
+		<translation file="en-maulana_ali" name="Maulana Muhammad Ali" translator="Maulana Muhammad Ali"></translation>
+		<translation file="en.asad" name="Asad" translator="Muhammad Asad"></translation>
+		
+		<translation file="sq.nahi" name="Efendi Nahi" translator="Hasan Efendi Nahi"></translation>
+		<translation file="sq.mehdiu" name="Feti Mehdiu" translator="Feti Mehdiu"></translation>
+		<translation file="sq.ahmeti" name="Sherif Ahmeti" translator="Sherif Ahmeti"></translation>
+		<translation file="ber.mensur" name="At Mensur" translator="Ramdane At Mansour"></translation>
+		<translation file="ar.jalalayn" name="تفسير الجلالين" translator="Jalal ad-Din al-Mahalli and Jalal ad-Din as-Suyuti"></translation>
+		<translation file="ar.muyassar" name="تفسير المیسر" translator="King Fahad Quran Complex"></translation>
+		<translation file="am.sadiq" name="ሳዲቅ &amp; ሳኒ ሐቢብ" translator="Muhammed Sadiq and Muhammed Sani Habib"></translation>
+		<translation file="az.mammadaliyev" name="Məmmədəliyev &amp; Bünyadov" translator="Vasim Mammadaliyev and Ziya Bunyadov"></translation>
+		<translation file="az.musayev" name="Musayev" translator="Alikhan Musayev"></translation>
+		<translation file="bn.hoque" name="জহুরুল হক" translator="Zohurul Hoque"></translation>
+		<translation file="bn.bengali" name="মুহিউদ্দীন খান" translator="Muhiuddin Khan"></translation>
+		<translation file="bs.korkut" name="Korkut" translator="Besim Korkut"></translation>
+		<translation file="bs.mlivo" name="Mlivo" translator="Mustafa Mlivo"></translation>
+		<translation file="bg.theophanov" name="Теофанов" translator="Tzvetan Theophanov"></translation>
+		<translation file="zh.jian" name="Ma Jian" translator="Ma Jian"></translation>
+		<translation file="zh.majian" name="Ma Jian (Traditional)" translator="Ma Jian"></translation>
+		<translation file="cs.hrbek" name="Hrbek" translator="Preklad I. Hrbek"></translation>
+		<translation file="cs.nykl" name="Nykl" translator="A. R. Nykl"></translation>
+		<translation file="dv.divehi" name="ދިވެހި" translator="Office of the President of Maldives"></translation>
+		<translation file="nl.keyzer" name="Keyzer" translator="Salomo Keyzer"></translation>
+		<translation file="nl.leemhuis" name="Leemhuis" translator="Fred Leemhuis"></translation>
+		<translation file="nl.siregar" name="Siregar" translator="Sofian S. Siregar"></translation>
+		<translation file="en.ahmedali" name="Ahmed Ali" translator="Ahmed Ali"></translation>
+		<translation file="en.ahmedraza" name="Ahmed Raza Khan" translator="Ahmed Raza Khan"></translation>
+		<translation file="en.arberry" name="Arberry" translator="A. J. Arberry"></translation>
+		<translation file="en.daryabadi" name="Daryabadi" translator="Abdul Majid Daryabadi"></translation>
+		<translation file="en.hilali" name="Hilali &amp; Khan" translator="Muhammad Taqi-ud-Din al-Hilali and Muhammad Muhsin Khan"></translation>
+		<translation file="en.itani" name="Itani" translator="Talal Itani"></translation>
+		<translation file="en.maududi" name="Maududi" translator="Abul Ala Maududi"></translation>
+		<translation file="en.pickthall" name="Pickthall" translator="Mohammed Marmaduke William Pickthall"></translation>
+		<translation file="en.qarai" name="Qarai" translator="Ali Quli Qarai"></translation>
+		<translation file="en.qaribullah" name="Qaribullah &amp; Darwish" translator="Hasan al-Fatih Qaribullah and Ahmad Darwish"></translation>
+		<translation file="en.sahih" name="Saheeh International" translator="Saheeh International"></translation>
+		<translation file="en.sarwar" name="Sarwar" translator="Muhammad Sarwar"></translation>
+		<translation file="en.shakir" name="Shakir" translator="Mohammad Habib Shakir"></translation>
+		<translation file="en.transliteration" name="Transliteration" translator="English Transliteration"></translation>
+		<translation file="en.wahiduddin" name="Wahiduddin Khan" translator="Wahiduddin Khan"></translation>
+		<translation file="en.yusufali" name="Yusuf Ali" translator="Abdullah Yusuf Ali"></translation>
+		<translation file="fr.hamidullah" name="Hamidullah" translator="Muhammad Hamidullah"></translation>
+		<translation file="de.aburida" name="Abu Rida" translator="Abu Rida Muhammad ibn Ahmad ibn Rassoul"></translation>
+		<translation file="de.bubenheim" name="Bubenheim &amp; Elyas" translator="A. S. F. Bubenheim and N. Elyas"></translation>
+		<translation file="de.khoury" name="Khoury" translator="Adel Theodor Khoury"></translation>
+		<translation file="de.zaidan" name="Zaidan" translator="Amir Zaidan"></translation>
+		<translation file="ha.gumi" name="Gumi" translator="Abubakar Mahmoud Gumi"></translation>
+		<translation file="hi.farooq" name="फ़ारूक़ ख़ान &amp; अहमद" translator="Muhammad Farooq Khan and Muhammad Ahmed"></translation>
+		<translation file="hi.hindi" name="फ़ारूक़ ख़ान &amp; नदवी" translator="Suhel Farooq Khan and Saifur Rahman Nadwi"></translation>
+		<translation file="id.indonesian" name="Bahasa Indonesia" translator="Indonesian Ministry of Religious Affairs"></translation>
+		<translation file="id.muntakhab" name="Quraish Shihab" translator="Muhammad Quraish Shihab et al."></translation>
+		<translation file="id.jalalayn" name="Tafsir Jalalayn" translator="Jalal ad-Din al-Mahalli and Jalal ad-Din as-Suyuti"></translation>
+		<translation file="it.piccardo" name="Piccardo" translator="Hamza Roberto Piccardo"></translation>
+		<translation file="ja.japanese" name="Japanese" translator="Unknown"></translation>
+		<translation file="ko.korean" name="Korean" translator="Unknown"></translation>
+		<translation file="ku.asan" name="ته‌فسیری ئاسان" translator="Burhan Muhammad-Amin"></translation>
+		<translation file="ms.basmeih" name="Basmeih" translator="Abdullah Muhammad Basmeih"></translation>
+		<translation file="ml.abdulhameed" name="അബ്ദുല്‍ ഹമീദ് &amp; പറപ്പൂര്‍" translator="Cheriyamundam Abdul Hameed and Kunhi Mohammed Parappoor"></translation>
+		<translation file="ml.karakunnu" name="കാരകുന്ന് &amp; എളയാവൂര്" translator="Muhammad Karakunnu and Vanidas Elayavoor"></translation>
+		<translation file="no.berg" name="Einar Berg" translator="Einar Berg"></translation>
+		<translation file="fa.ghomshei" name="الهی قمشه‌ای" translator="Mahdi Elahi Ghomshei"></translation>
+		<translation file="fa.ansarian" name="انصاریان" translator="Hussain Ansarian"></translation>
+		<translation file="fa.ayati" name="آیتی" translator="AbdolMohammad Ayati"></translation>
+		<translation file="fa.bahrampour" name="بهرام پور" translator="Abolfazl Bahrampour"></translation>
+		<translation file="fa.khorramdel" name="خرمدل" translator="Mostafa Khorramdel"></translation>
+		<translation file="fa.khorramshahi" name="خرمشاهی" translator="Baha'oddin Khorramshahi"></translation>
+		<translation file="fa.sadeqi" name="صادقی تهرانی" translator="Mohammad Sadeqi Tehrani"></translation>
+		<translation file="fa.fooladvand" name="فولادوند" translator="Mohammad Mahdi Fooladvand"></translation>
+		<translation file="fa.mojtabavi" name="مجتبوی" translator="Sayyed Jalaloddin Mojtabavi"></translation>
+		<translation file="fa.moezzi" name="معزی" translator="Mohammad Kazem Moezzi"></translation>
+		<translation file="fa.makarem" name="مکارم شیرازی" translator="Naser Makarem Shirazi"></translation>
+		<translation file="pl.bielawskiego" name="Bielawskiego" translator="Józefa Bielawskiego"></translation>
+		<translation file="pt.elhayek" name="El-Hayek" translator="Samir El-Hayek"></translation>
+		<translation file="ro.grigore" name="Grigore" translator="George Grigore"></translation>
+		<translation file="ru.abuadel" name="Абу Адель" translator="Abu Adel"></translation>
+		<translation file="ru.muntahab" name="Аль-Мунтахаб" translator="Ministry of Awqaf, Egypt"></translation>
+		<translation file="ru.krachkovsky" name="Крачковский" translator="Ignaty Yulianovich Krachkovsky"></translation>
+		<translation file="ru.kuliev" name="Кулиев" translator="Elmir Kuliev"></translation>
+		<translation file="ru.kuliev-alsaadi" name="Кулиев + ас-Саади" translator="Elmir Kuliev (with Abd ar-Rahman as-Saadi's commentaries)"></translation>
+		<translation file="ru.osmanov" name="Османов" translator="Magomed-Nuri Osmanovich Osmanov"></translation>
+		<translation file="ru.porokhova" name="Порохова" translator="V. Porokhova"></translation>
+		<translation file="ru.sablukov" name="Саблуков" translator="Gordy Semyonovich Sablukov"></translation>
+		<translation file="sd.amroti" name="امروٽي" translator="Taj Mehmood Amroti"></translation>
+		<translation file="so.abduh" name="Abduh" translator="Mahmud Muhammad Abduh"></translation>
+		<translation file="es.asad" name="Asad" translator="Muhammad Asad - Abdurrasak Pérez"></translation>
+		<translation file="es.cortes" name="Cortes" translator="Julio Cortes"></translation>
+		<translation file="sw.barwani" name="Al-Barwani" translator="Ali Muhsin Al-Barwani"></translation>
+		<translation file="sv.bernstrom" name="Bernström" translator="Knut Bernström"></translation>
+		<translation file="tg.ayati" name="Оятӣ" translator="AbdolMohammad Ayati"></translation>
+		<translation file="ta.tamil" name="ஜான் டிரஸ்ட்" translator="Jan Turst Foundation"></translation>
+		<translation file="tt.nugman" name="Yakub Ibn Nugman" translator="Yakub Ibn Nugman"></translation>
+		<translation file="th.thai" name="ภาษาไทย" translator="King Fahad Quran Complex"></translation>
+		<translation file="tr.golpinarli" name="Abdulbakî Gölpınarlı" translator="Abdulbaki Golpinarli"></translation>
+		<translation file="tr.bulac" name="Alİ Bulaç" translator="Alİ Bulaç"></translation>
+		<translation file="tr.transliteration" name="Çeviriyazı" translator="Muhammet Abay"></translation>
+		<translation file="tr.diyanet" name="Diyanet İşleri" translator="Diyanet Isleri"></translation>
+		<translation file="tr.vakfi" name="Diyanet Vakfı" translator="Diyanet Vakfi"></translation>
+		<translation file="tr.yuksel" name="Edip Yüksel" translator="Edip Yüksel"></translation>
+		<translation file="tr.yazir" name="Elmalılı Hamdi Yazır" translator="Elmalili Hamdi Yazir"></translation>
+		<translation file="tr.ozturk" name="Öztürk" translator="Yasar Nuri Ozturk"></translation>
+		<translation file="tr.yildirim" name="Suat Yıldırım" translator="Suat Yildirim"></translation>
+		<translation file="tr.ates" name="Süleyman Ateş" translator="Suleyman Ates"></translation>
+		<translation file="ur.maududi" name="ابوالاعلی مودودی" translator="Abul A'ala Maududi"></translation>
+		<translation file="ur.kanzuliman" name="احمد رضا خان" translator="Ahmed Raza Khan"></translation>
+		<translation file="ur.ahmedali" name="احمد علی" translator="Ahmed Ali"></translation>
+		<translation file="ur.jalandhry" name="جالندہری" translator="Fateh Muhammad Jalandhry"></translation>
+		<translation file="ur.qadri" name="طاہر القادری" translator="Tahir ul Qadri"></translation>
+		<translation file="ur.jawadi" name="علامہ جوادی" translator="Syed Zeeshan Haider Jawadi"></translation>
+		<translation file="ur.junagarhi" name="محمد جوناگڑھی" translator="Muhammad Junagarhi"></translation>
+		<translation file="ur.najafi" name="محمد حسین نجفی" translator="Ayatollah Muhammad Hussain Najafi"></translation>
+		<translation file="ug.saleh" name="محمد صالح" translator="Muhammad Saleh"></translation>
+		<translation file="uz.sodik" name="Мухаммад Содик" translator="Muhammad Sodik Muhammad Yusuf"></translation>
+	</translations>
+</islamdata>

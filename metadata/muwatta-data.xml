@@ -1,0 +1,830 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<collection>
+  <books count="61">
+    <book index="1" chapters="8" hadiths="32" starthadith="1" name="كتاب وقوت الصلاة">
+      <chapter index="1" hadiths="12" starthadith="1" name="باب وُقُوتِ الصَّلاَةِ" />
+      <chapter index="2" hadiths="2" starthadith="13" name="باب وَقْتِ الْجُمُعَةِ" />
+      <chapter index="3" hadiths="4" starthadith="15" name="باب مَنْ أَدْرَكَ رَكْعَةً مِنَ الصَّلاَةِ" />
+      <chapter index="4" hadiths="2" starthadith="19" name="باب مَا جَاءَ فِي دُلُوكِ الشَّمْسِ وَغَسَقِ اللَّيْلِ" />
+      <chapter index="5" hadiths="4" starthadith="21" name="باب جَامِعِ الْوُقُوتِ" />
+      <chapter index="6" hadiths="2" starthadith="25" name="باب النَّوْمِ عَنِ الصَّلاَةِ" />
+      <chapter index="7" hadiths="4" starthadith="27" name="باب النَّهْىِ عَنِ الصَّلاَةِ بِالْهَاجِرَةِ" />
+      <chapter index="8" hadiths="2" starthadith="31" name="باب النَّهْىِ عَنْ دُخُولِ الْمَسْجِدِ، بِرِيحِ الثُّومِ وَتَغْطِيَةِ الْفَمِ" />
+    </book>
+    <book index="2" chapters="32" hadiths="114" starthadith="33" name="كتاب الطهارة">
+      <chapter index="1" hadiths="5" starthadith="33" name="باب الْعَمَلِ فِي الْوُضُوءِ" />
+      <chapter index="2" hadiths="4" starthadith="38" name="باب وُضُوءِ النَّائِمِ إِذَا قَامَ إِلَى الصَّلاَةِ" />
+      <chapter index="3" hadiths="4" starthadith="42" name="باب الطَّهُورِ لِلْوُضُوءِ" />
+      <chapter index="4" hadiths="3" starthadith="46" name="باب مَا لاَ يَجِبُ مِنْهُ الْوُضُوءُ" />
+      <chapter index="5" hadiths="9" starthadith="49" name="باب تَرْكِ الْوُضُوءِ مِمَّا مَسَّتْهُ النَّارُ" />
+      <chapter index="6" hadiths="10" starthadith="58" name="باب جَامِعِ الْوُضُوءِ" />
+      <chapter index="7" hadiths="4" starthadith="68" name="باب مَا جَاءَ فِي الْمَسْحِ بِالرَّأْسِ وَالأُذُنَيْنِ" />
+      <chapter index="8" hadiths="4" starthadith="72" name="باب مَا جَاءَ فِي الْمَسْحِ عَلَى الْخُفَّيْنِ" />
+      <chapter index="9" hadiths="2" starthadith="76" name="باب الْعَمَلِ فِي الْمَسْحِ عَلَى الْخُفَّيْنِ" />
+      <chapter index="10" hadiths="3" starthadith="78" name="باب مَا جَاءَ فِي الرُّعَافِ" />
+      <chapter index="11" hadiths="2" starthadith="81" name="باب الْعَمَلِ فِي الرُّعَافِ" />
+      <chapter index="12" hadiths="2" starthadith="83" name="باب الْعَمَلِ فِيمَنْ غَلَبَهُ الدَّمُ مِنْ جُرْحٍ أَوْ رُعَافٍ" />
+      <chapter index="13" hadiths="3" starthadith="85" name="باب الْوُضُوءِ مِنَ الْمَذْىِ" />
+      <chapter index="14" hadiths="2" starthadith="88" name="باب الرُّخْصَةِ فِي تَرْكِ الْوُضُوءِ مِنَ الْمَذْىِ" />
+      <chapter index="15" hadiths="6" starthadith="90" name="باب الْوُضُوءِ مِنْ مَسِّ الْفَرْجِ" />
+      <chapter index="16" hadiths="3" starthadith="96" name="باب الْوُضُوءِ مِنْ قُبْلَةِ الرَّجُلِ امْرَأَتَهُ" />
+      <chapter index="17" hadiths="4" starthadith="99" name="باب الْعَمَلِ فِي غُسْلِ الْجَنَابَةِ" />
+      <chapter index="18" hadiths="5" starthadith="103" name="باب وَاجِبِ الْغُسْلِ إِذَا الْتَقَى الْخِتَانَانِ" />
+      <chapter index="19" hadiths="3" starthadith="108" name="باب وُضُوءِ الْجُنُبِ إِذَا أَرَادَ أَنْ يَنَامَ أَوْ يَطْعَمَ قَبْلَ أَنْ يَغْتَسِلَ" />
+      <chapter index="20" hadiths="5" starthadith="111" name="باب إِعَادَةِ الْجُنُبِ الصَّلاَةَ وَغُسْلِهِ إِذَا صَلَّى وَلَمْ يَذْكُرْ وَغَسْلِهِ ثَوْبَهُ" />
+      <chapter index="21" hadiths="2" starthadith="116" name="باب غُسْلِ الْمَرْأَةِ إِذَا رَأَتْ فِي الْمَنَامِ مِثْلَ مَا يَرَى الرَّجُلُ" />
+      <chapter index="22" hadiths="3" starthadith="118" name="باب جَامِعِ غُسْلِ الْجَنَابَةِ" />
+      <chapter index="23" hadiths="1" starthadith="121" name="باب فِي التَّيَمُّمِ" />
+      <chapter index="24" hadiths="2" starthadith="122" name="باب الْعَمَلِ فِي التَّيَمُّمِ" />
+      <chapter index="25" hadiths="1" starthadith="124" name="باب تَيَمُّمِ الْجُنُبِ" />
+      <chapter index="26" hadiths="4" starthadith="125" name="باب مَا يَحِلُّ لِلرَّجُلِ مِنِ امْرَأَتِهِ وَهِيَ حَائِضٌ" />
+      <chapter index="27" hadiths="2" starthadith="129" name="باب طُهْرِ الْحَائِضِ" />
+      <chapter index="28" hadiths="4" starthadith="131" name="باب جَامِعِ الْحَيْضَةِ" />
+      <chapter index="29" hadiths="5" starthadith="135" name="باب الْمُسْتَحَاضَةِ" />
+      <chapter index="30" hadiths="2" starthadith="140" name="باب مَا جَاءَ فِي بَوْلِ الصَّبِيِّ" />
+      <chapter index="31" hadiths="2" starthadith="142" name="باب مَا جَاءَ فِي الْبَوْلِ قَائِمًا وَغَيْرِهِ" />
+      <chapter index="32" hadiths="3" starthadith="144" name="باب مَا جَاءَ فِي السِّوَاكِ" />
+    </book>
+    <book index="3" chapters="18" hadiths="76" starthadith="147" name="كتاب الصلاة">
+      <chapter index="1" hadiths="10" starthadith="147" name="باب مَا جَاءَ فِي النِّدَاءِ لِلصَّلاَةِ" />
+      <chapter index="2" hadiths="4" starthadith="157" name="باب النِّدَاءِ فِي السَّفَرِ وَعَلَى غَيْرِ وُضُوءٍ" />
+      <chapter index="3" hadiths="2" starthadith="161" name="باب قَدْرِ السُّحُورِ مِنَ النِّدَاءِ" />
+      <chapter index="4" hadiths="8" starthadith="163" name="باب افْتِتَاحِ الصَّلاَةِ" />
+      <chapter index="5" hadiths="5" starthadith="171" name="باب الْقِرَاءَةِ فِي الْمَغْرِبِ وَالْعِشَاءِ" />
+      <chapter index="6" hadiths="6" starthadith="176" name="باب الْعَمَلِ فِي الْقِرَاءَةِ" />
+      <chapter index="7" hadiths="4" starthadith="182" name="باب الْقِرَاءَةِ فِي الصُّبْحِ" />
+      <chapter index="8" hadiths="2" starthadith="186" name="باب مَا جَاءَ فِي أُمِّ الْقُرْآنِ" />
+      <chapter index="9" hadiths="4" starthadith="188" name="باب الْقِرَاءَةِ خَلْفَ الإِمَامِ فِيمَا لاَ يَجْهَرُ فِيهِ بِالْقِرَاءَةِ" />
+      <chapter index="10" hadiths="2" starthadith="192" name="باب تَرْكِ الْقِرَاءَةِ خَلْفَ الإِمَامِ فِيمَا جَهَرَ فِيهِ" />
+      <chapter index="11" hadiths="4" starthadith="194" name="باب مَا جَاءَ فِي التَّأْمِينِ خَلْفَ الإِمَامِ" />
+      <chapter index="12" hadiths="5" starthadith="198" name="باب الْعَمَلِ فِي الْجُلُوسِ فِي الصَّلاَةِ" />
+      <chapter index="13" hadiths="5" starthadith="203" name="باب التَّشَهُّدِ فِي الصَّلاَةِ" />
+      <chapter index="14" hadiths="1" starthadith="208" name="باب مَا يَفْعَلُ مَنْ رَفَعَ رَأْسَهُ قَبْلَ الإِمَامِ" />
+      <chapter index="15" hadiths="4" starthadith="209" name="باب مَا يَفْعَلُ مَنْ سَلَّمَ مِنْ رَكْعَتَيْنِ سَاهِيًا" />
+      <chapter index="16" hadiths="4" starthadith="213" name="باب إِتْمَامِ الْمُصَلِّي مَا ذَكَرَ إِذَا شَكَّ فِي صَلاَتِهِ" />
+      <chapter index="17" hadiths="2" starthadith="217" name="باب مَنْ قَامَ بَعْدَ الإِتْمَامِ أَوْ فِي الرَّكْعَتَيْنِ" />
+      <chapter index="18" hadiths="4" starthadith="219" name="باب النَّظَرِ فِي الصَّلاَةِ إِلَى مَا يَشْغَلُكَ عَنْهَا" />
+    </book>
+    <book index="4" chapters="1" hadiths="3" starthadith="223" name="كتاب السهو">
+      <chapter index="1" hadiths="3" starthadith="223" name="باب الْعَمَلِ فِي السَّهْوِ" />
+    </book>
+    <book index="5" chapters="9" hadiths="21" starthadith="226" name="كتاب الجمعة">
+      <chapter index="1" hadiths="5" starthadith="226" name="باب الْعَمَلِ فِي غُسْلِ يَوْمِ الْجُمُعَةِ" />
+      <chapter index="2" hadiths="6" starthadith="231" name="باب مَا جَاءَ فِي الإِنْصَاتِ يَوْمَ الْجُمُعَةِ وَالإِمَامُ يَخْطُبُ" />
+      <chapter index="3" hadiths="1" starthadith="237" name="باب مَا جَاءَ فِيمَنْ أَدْرَكَ رَكْعَةً يَوْمَ الْجُمُعَةِ" />
+      <chapter index="4" hadiths="0" name="باب مَا جَاءَ فِيمَنْ رَعَفَ يَوْمَ الْجُمُعَةِ" />
+      <chapter index="5" hadiths="1" starthadith="238" name="باب مَا جَاءَ فِي السَّعْىِ يَوْمَ الْجُمُعَةِ" />
+      <chapter index="6" hadiths="0" name="باب مَا جَاءَ فِي الإِمَامِ يَنْزِلُ بِقَرْيَةٍ يَوْمَ الْجُمُعَةِ فِي السَّفَرِ" />
+      <chapter index="7" hadiths="2" starthadith="239" name="باب مَا جَاءَ فِي السَّاعَةِ الَّتِي فِي يَوْمَ الْجُمُعَةِ" />
+      <chapter index="8" hadiths="3" starthadith="241" name="باب الْهَيْئَةِ وَتَخَطِّي الرِّقَابِ وَاسْتِقْبَالِ الإِمَامِ يَوْمَ الْجُمُعَةِ" />
+      <chapter index="9" hadiths="3" starthadith="244" name="باب الْقِرَاءَةِ فِي صَلاَةِ الْجُمُعَةِ وَالاِحْتِبَاءِ وَمَنْ تَرَكَهَا مِنْ غَيْرِ عُذْرٍ" />
+    </book>
+    <book index="6" chapters="2" hadiths="8" starthadith="247" name="كتاب الصلاة فى رمضان">
+      <chapter index="1" hadiths="2" starthadith="247" name="باب التَّرْغِيبِ فِي الصَّلاَةِ فِي رَمَضَانَ" />
+      <chapter index="2" hadiths="6" starthadith="249" name="باب مَا جَاءَ فِي قِيَامِ رَمَضَانَ" />
+    </book>
+    <book index="7" chapters="5" hadiths="33" starthadith="255" name="كتاب صلاة الليل">
+      <chapter index="1" hadiths="7" starthadith="255" name="باب مَا جَاءَ فِي صَلاَةِ اللَّيْلِ" />
+      <chapter index="2" hadiths="5" starthadith="262" name="باب صَلاَةِ النَّبِيِّ صلى الله عليه وسلم فِي الْوِتْرِ" />
+      <chapter index="3" hadiths="10" starthadith="267" name="باب الأَمْرِ بِالْوِتْرِ" />
+      <chapter index="4" hadiths="6" starthadith="277" name="باب الْوِتْرِ بَعْدَ الْفَجْرِ" />
+      <chapter index="5" hadiths="5" starthadith="283" name="باب مَا جَاءَ فِي رَكْعَتَىِ الْفَجْرِ" />
+    </book>
+    <book index="8" chapters="10" hadiths="41" starthadith="288" name="كتاب صلاة الجماعة">
+      <chapter index="1" hadiths="4" starthadith="288" name="باب فَضْلِ صَلاَةِ الْجَمَاعَةِ عَلَى صَلاَةِ الْفَذِّ" />
+      <chapter index="2" hadiths="6" starthadith="292" name="باب مَا جَاءَ فِي الْعَتَمَةِ وَالصُّبْحِ" />
+      <chapter index="3" hadiths="5" starthadith="298" name="باب إِعَادَةِ الصَّلاَةِ مَعَ الإِمَامِ" />
+      <chapter index="4" hadiths="3" starthadith="303" name="باب الْعَمَلِ فِي صَلاَةِ الْجَمَاعَةِ" />
+      <chapter index="5" hadiths="3" starthadith="306" name="باب صَلاَةِ الإِمَامِ وَهُوَ جَالِسٌ" />
+      <chapter index="6" hadiths="2" starthadith="309" name="باب فَضْلِ صَلاَةِ الْقَائِمِ عَلَى صَلاَةِ الْقَاعِد" />
+      <chapter index="7" hadiths="4" starthadith="311" name="باب مَا جَاءَ فِي صَلاَةِ الْقَاعِدِ فِي النَّافِلَةِ" />
+      <chapter index="8" hadiths="4" starthadith="315" name="باب الصَّلاَةِ الْوُسْطَى" />
+      <chapter index="9" hadiths="6" starthadith="319" name="باب الرُّخْصَةِ فِي الصَّلاَةِ فِي الثَّوْبِ الْوَاحِدِ" />
+      <chapter index="10" hadiths="4" starthadith="325" name="باب الرُّخْصَةِ فِي صَلاَةِ الْمَرْأَةِ فِي الدِّرْعِ وَالْخِمَارِ" />
+    </book>
+    <book index="9" chapters="25" hadiths="102" starthadith="329" name="كتاب قصر الصلاة فى السفر">
+      <chapter index="1" hadiths="7" starthadith="329" name="باب الْجَمْعِ بَيْنَ الصَّلاَتَيْنِ فِي الْحَضَرِ وَالسَّفَرِ" />
+      <chapter index="2" hadiths="3" starthadith="336" name="باب قَصْرِ الصَّلاَةِ فِي السَّفَرِ" />
+      <chapter index="3" hadiths="7" starthadith="339" name="باب مَا يَجِبُ فِيهِ قَصْرُ الصَّلاَةِ" />
+      <chapter index="4" hadiths="2" starthadith="346" name="باب صَلاَةِ الْمُسَافِرِ مَا لَمْ يُجْمِعْ مُكْثًا" />
+      <chapter index="5" hadiths="1" starthadith="348" name="باب صَلاَةِ الْمُسَافِرِ إِذَا أَجْمَعَ مُكْثًا" />
+      <chapter index="6" hadiths="4" starthadith="349" name="باب صَلاَةِ الْمُسَافِرِ إِذَا كَانَ إِمَامًا أَوْ كَانَ وَرَاءَ إِمَامٍ" />
+      <chapter index="7" hadiths="6" starthadith="353" name="باب صَلاَةِ النَّافِلَةِ فِي السَّفَرِ بِالنَّهَارِ وَاللَّيْلِ وَالصَّلاَةِ عَلَى الدَّابَّةِ" />
+      <chapter index="8" hadiths="4" starthadith="359" name="باب صَلاَةِ الضُّحَى" />
+      <chapter index="9" hadiths="2" starthadith="363" name="باب جَامِعِ سُبْحَةِ الضُّحَى" />
+      <chapter index="10" hadiths="5" starthadith="365" name="باب التَّشْدِيدِ فِي أَنْ يَمُرَّ أَحَدٌ بَيْنَ يَدَىِ الْمُصَلِّي" />
+      <chapter index="11" hadiths="4" starthadith="370" name="باب الرُّخْصَةِ فِي الْمُرُورِ بَيْنَ يَدَىِ الْمُصَلِّي" />
+      <chapter index="12" hadiths="2" starthadith="374" name="باب سُتْرَةِ الْمُصَلِّي فِي السَّفَرِ" />
+      <chapter index="13" hadiths="2" starthadith="376" name="باب مَسْحِ الْحَصْبَاءِ فِي الصَّلاَةِ" />
+      <chapter index="14" hadiths="2" starthadith="378" name="باب مَا جَاءَ فِي تَسْوِيَةِ الصُّفُوفِ" />
+      <chapter index="15" hadiths="2" starthadith="380" name="باب وَضَعِ الْيَدَيْنِ إِحْدَاهُمَا عَلَى الأُخْرَى فِي الصَّلاَةِ" />
+      <chapter index="16" hadiths="1" starthadith="382" name="باب الْقُنُوتِ فِي الصُّبْحِ" />
+      <chapter index="17" hadiths="2" starthadith="383" name="باب النَّهْىِ عَنِ الصَّلاَةِ، وَالإِنْسَانُ، يُرِيدُ حَاجَتَهُ" />
+      <chapter index="18" hadiths="8" starthadith="385" name="باب انْتِظَارِ الصَّلاَةِ وَالْمَشْىِ إِلَيْهَا" />
+      <chapter index="19" hadiths="2" starthadith="393" name="باب وَضْعِ الْيَدَيْنِ عَلَى مَا يُوضَعُ عَلَيْهِ الْوَجْهُ فِي السُّجُودِ" />
+      <chapter index="20" hadiths="3" starthadith="395" name="باب الاِلْتِفَاتِ وَالتَّصْفِيقِ عِنْدَ الْحَاجَةِ فِي الصَّلاَةِ" />
+      <chapter index="21" hadiths="2" starthadith="398" name="باب مَا يَفْعَلُ مَنْ جَاءَ وَالإِمَامُ رَاكِعٌ" />
+      <chapter index="22" hadiths="3" starthadith="400" name="باب مَا جَاءَ فِي الصَّلاَةِ عَلَى النَّبِيِّ صلى الله عليه وسلم" />
+      <chapter index="23" hadiths="12" starthadith="403" name="باب الْعَمَلِ فِي جَامِعِ الصَّلاَةِ" />
+      <chapter index="3" hadiths="14" starthadith="415" name="باب جَامِعِ الصَّلاَةِ" />
+      <chapter index="25" hadiths="2" starthadith="429" name="باب جَامِعِ التَّرْغِيبِ فِي الصَّلاَةِ" />
+    </book>
+    <book index="10" chapters="7" hadiths="13" starthadith="431" name="كتاب العيدين">
+      <chapter index="1" hadiths="2" starthadith="431" name="باب الْعَمَلِ فِي غُسْلِ الْعِيدَيْنِ وَالنِّدَاءِ فِيهِمَا وَالإِقَامَةِ" />
+      <chapter index="2" hadiths="3" starthadith="433" name="باب الأَمْرِ بِالصَّلاَةِ قَبْلَ الْخُطْبَةِ فِي الْعِيدَيْنِ" />
+      <chapter index="3" hadiths="2" starthadith="436" name="باب الأَمْرِ بِالأَكْلِ قَبْلَ الْغُدُوِّ فِي الْعِيدِ" />
+      <chapter index="4" hadiths="2" starthadith="438" name="باب مَا جَاءَ فِي التَّكْبِيرِ وَالْقِرَاءَةِ فِي صَلاَةِ الْعِيدَيْنِ" />
+      <chapter index="5" hadiths="2" starthadith="440" name="باب تَرْكِ الصَّلاَةِ قَبْلَ الْعِيدَيْنِ وَبَعْدَهُمَا" />
+      <chapter index="6" hadiths="2" starthadith="442" name="باب الرُّخْصَةِ فِي الصَّلاَةِ قَبْلَ الْعِيدَيْنِ وَبَعْدَهُمَا" />
+      <chapter index="7" hadiths="0" name="باب غُدُوِّ الإِمَامِ يَوْمَ الْعِيدِ وَانْتِظَارِ الْخُطْبَةِ" />
+    </book>
+    <book index="11" chapters="1" hadiths="4" starthadith="444" name="كتاب صلاة الخوف">
+      <chapter index="1" hadiths="4" starthadith="444" name="باب صَلاَةِ الْخَوْفِ" />
+    </book>
+    <book index="12" chapters="2" hadiths="4" starthadith="448" name="كتاب صلاة الكسوف">
+      <chapter index="1" hadiths="3" starthadith="448" name="باب الْعَمَلِ فِي صَلاَةِ الْكُسُوفِ" />
+      <chapter index="2" hadiths="1" starthadith="451" name="باب مَا جَاءَ فِي صَلاَةِ الْكُسُوفِ" />
+    </book>
+    <book index="13" chapters="3" hadiths="6" starthadith="452" name="كتاب الاستسقاء">
+      <chapter index="1" hadiths="1" starthadith="452" name="باب الْعَمَلِ فِي الاِسْتِسْقَاءِ" />
+      <chapter index="2" hadiths="2" starthadith="453" name="باب مَا جَاءَ فِي الاِسْتِسْقَاءِ" />
+      <chapter index="3" hadiths="3" starthadith="455" name="باب الاِسْتِمْطَارِ بِالنُّجُومِ" />
+    </book>
+    <book index="14" chapters="6" hadiths="15" starthadith="458" name="كتاب القبلة">
+      <chapter index="1" hadiths="2" starthadith="458" name="باب النَّهْىِ عَنِ اسْتِقْبَالِ الْقِبْلَةِ وَالإِنْسَانُ عَلَى حَاجَتِهِ" />
+      <chapter index="2" hadiths="1" starthadith="460" name="باب الرُّخْصَةِ فِي اسْتِقْبَالِ الْقِبْلَةِ لِبَوْلٍ أَوْ غَائِطٍ" />
+      <chapter index="3" hadiths="2" starthadith="461" name="باب النَّهْىِ عَنِ الْبُصَاقِ فِي الْقِبْلَةِ" />
+      <chapter index="4" hadiths="3" starthadith="463" name="باب مَا جَاءَ فِي الْقِبْلَةِ" />
+      <chapter index="5" hadiths="3" starthadith="466" name="باب مَا جَاءَ فِي مَسْجِدِ النَّبِيِّ صلى الله عليه وسلم" />
+      <chapter index="6" hadiths="4" starthadith="469" name="باب مَا جَاءَ فِي خُرُوجِ النِّسَاءِ إِلَى الْمَسَاجِدِ" />
+    </book>
+    <book index="15" chapters="10" hadiths="50" starthadith="473" name="كتاب القرآن">
+      <chapter index="1" hadiths="1" starthadith="473" name="باب الأَمْرِ بِالْوُضُوءِ لِمَنْ مَسَّ الْقُرْآنَ" />
+      <chapter index="2" hadiths="1" starthadith="474" name="باب الرُّخْصَةِ فِي قِرَاءَةِ الْقُرْآنِ عَلَى غَيْرِ وُضُوءٍ" />
+      <chapter index="3" hadiths="2" starthadith="475" name="باب مَا جَاءَ فِي تَحْزِيبِ الْقُرْآنِ" />
+      <chapter index="4" hadiths="7" starthadith="477" name="باب مَا جَاءَ فِي الْقُرْآنِ" />
+      <chapter index="5" hadiths="5" starthadith="484" name="باب مَا جَاءَ فِي سُجُودِ الْقُرْآنِ" />
+      <chapter index="6" hadiths="3" starthadith="489" name="باب مَا جَاءَ فِي قِرَاءَةِ ‏112.1-1{‏قُلْ هُوَ اللَّهُ أَحَدٌ‏}‏ وَ ‏67.1-1{‏تَبَارَكَ الَّذِي بِيَدِهِ الْمُلْكُ‏}‏" />
+      <chapter index="7" hadiths="6" starthadith="492" name="باب مَا جَاءَ فِي ذِكْرِ اللَّهِ تَبَارَكَ وَتَعَالَى" />
+      <chapter index="8" hadiths="11" starthadith="498" name="باب مَا جَاءَ فِي الدُّعَاءِ" />
+      <chapter index="9" hadiths="7" starthadith="509" name="باب الْعَمَلِ فِي الدُّعَاءِ" />
+      <chapter index="10" hadiths="7" starthadith="516" name="باب النَّهْىِ عَنِ الصَّلاَةِ بَعْدَ الصُّبْحِ وَبَعْدَ الْعَصْرِ" />
+    </book>
+    <book index="16" chapters="16" hadiths="58" starthadith="523" name="كتاب الجنائز">
+      <chapter index="1" hadiths="3" starthadith="523" name="باب غُسْلِ الْمَيِّتِ" />
+      <chapter index="2" hadiths="4" starthadith="526" name="باب مَا جَاءَ فِي كَفَنِ الْمَيِّتِ" />
+      <chapter index="3" hadiths="4" starthadith="530" name="باب الْمَشْىِ أَمَامَ الْجَنَازَةِ" />
+      <chapter index="4" hadiths="2" starthadith="534" name="باب النَّهْىِ عَنْ أَنْ تُتْبَعَ الْجَنَازَةُ بِنَارٍ" />
+      <chapter index="5" hadiths="3" starthadith="536" name="باب التَّكْبِيرِ عَلَى الْجَنَائِزِ" />
+      <chapter index="6" hadiths="3" starthadith="539" name="باب مَا يَقُولُ الْمُصَلِّي عَلَى الْجَنَازَةِ" />
+      <chapter index="7" hadiths="2" starthadith="542" name="باب الصَّلاَةِ عَلَى الْجَنَائِزِ بَعْدَ الصُّبْحِ إِلَى الإِسْفَارِ وَبَعْدَ الْعَصْرِ إِلَى الاِصْفِرَارِ" />
+      <chapter index="8" hadiths="2" starthadith="544" name="باب الصَّلاَةِ عَلَى الْجَنَائِزِ فِي الْمَسْجِدِ" />
+      <chapter index="9" hadiths="3" starthadith="546" name="باب جَامِعِ الصَّلاَةِ عَلَى الْجَنَائِزِ" />
+      <chapter index="10" hadiths="6" starthadith="549" name="باب مَا جَاءَ فِي دَفْنِ الْمَيِّتِ" />
+      <chapter index="11" hadiths="3" starthadith="555" name="باب الْوُقُوفِ لِلْجَنَائِزِ وَالْجُلُوسِ عَلَى الْمَقَابِرِ" />
+      <chapter index="12" hadiths="2" starthadith="558" name="باب النَّهْىِ عَنِ الْبُكَاءِ عَلَى الْمَيِّتِ" />
+      <chapter index="13" hadiths="3" starthadith="560" name="باب الْحِسْبَةِ فِي الْمُصِيبَةِ" />
+      <chapter index="14" hadiths="3" starthadith="563" name="باب جَامِعِ الْحِسْبَةِ فِي الْمُصِيبَةِ" />
+      <chapter index="15" hadiths="2" starthadith="566" name="باب مَا جَاءَ فِي الاِخْتِفَاءِ" />
+      <chapter index="16" hadiths="13" starthadith="568" name="باب جَامِعِ الْجَنَائِزِ" />
+    </book>
+    <book index="17" chapters="30" hadiths="52" starthadith="581" name="كتاب الزكاة">
+      <chapter index="1" hadiths="3" starthadith="581" name="باب مَا تَجِبُ فِيهِ الزَّكَاةُ" />
+      <chapter index="2" hadiths="4" starthadith="584" name="باب الزَّكَاةِ فِي الْعَيْنِ مِنَ الذَّهَبِ وَالْوَرِقِ" />
+      <chapter index="3" hadiths="1" starthadith="588" name="باب الزَّكَاةِ فِي الْمَعَادِنِ" />
+      <chapter index="4" hadiths="1" starthadith="589" name="باب زَكَاةِ الرِّكَازِ" />
+      <chapter index="5" hadiths="2" starthadith="590" name="باب مَا لاَ زَكَاةَ فِيهِ مِنَ الْحُلِيِّ وَالتِّبْرِ وَالْعَنْبَرِ" />
+      <chapter index="6" hadiths="4" starthadith="592" name="باب زَكَاةِ أَمْوَالِ الْيَتَامَى وَالتِّجَارَةِ لَهُمْ فِيهَا" />
+      <chapter index="7" hadiths="0" name="باب زَكَاةِ الْمِيرَاثِ" />
+      <chapter index="8" hadiths="3" starthadith="596" name="باب الزَّكَاةِ فِي الدَّيْنِ" />
+      <chapter index="9" hadiths="1" starthadith="599" name="باب زَكَاةِ الْعُرُوضِ" />
+      <chapter index="10" hadiths="2" starthadith="600" name="باب مَا جَاءَ فِي الْكَنْزِ" />
+      <chapter index="11" hadiths="1" starthadith="602" name="باب صَدَقَةِ الْمَاشِيَةِ" />
+      <chapter index="12" hadiths="1" starthadith="603" name="باب مَا جَاءَ فِي صَدَقَةِ الْبَقَرِ" />
+      <chapter index="13" hadiths="0" name="باب صَدَقَةِ الْخُلَطَاءِ" />
+      <chapter index="14" hadiths="1" starthadith="604" name="باب مَا جَاءَ فِيمَا يُعْتَدُّ بِهِ مِنَ السَّخْلِ فِي الصَّدَقَةِ" />
+      <chapter index="15" hadiths="0" name="باب الْعَمَلِ فِي صَدَقَةِ عَامَيْنِ إِذَا اجْتَمَعَا" />
+      <chapter index="16" hadiths="2" starthadith="605" name="باب النَّهْىِ عَنِ التَّضْيِيقِ عَلَى النَّاسِ فِي الصَّدَقَةِ" />
+      <chapter index="17" hadiths="1" starthadith="607" name="باب أَخْذِ الصَّدَقَةِ وَمَنْ يَجُوزُ لَهُ أَخْذُهَا" />
+      <chapter index="18" hadiths="3" starthadith="608" name="باب مَا جَاءَ فِي أَخْذِ الصَّدَقَاتِ وَالتَّشْدِيدِ فِيهَا" />
+      <chapter index="19" hadiths="2" starthadith="611" name="باب زَكَاةِ مَا يُخْرَصُ مِنْ ثِمَارِ النَّخِيلِ وَالأَعْنَابِ" />
+      <chapter index="20" hadiths="1" starthadith="613" name="باب زَكَاةِ الْحُبُوبِ وَالزَّيْتُونِ" />
+      <chapter index="21" hadiths="0" name="باب مَا لاَ زَكَاةَ فِيهِ مِنَ الثِّمَارِ" />
+      <chapter index="22" hadiths="0" name="باب مَا لاَ زَكَاةَ فِيهِ مِنَ الْفَوَاكِهِ وَالْقَضْبِ وَالْبُقُولِ" />
+      <chapter index="23" hadiths="4" starthadith="614" name="باب مَا جَاءَ فِي صَدَقَةِ الرَّقِيقِ وَالْخَيْلِ وَالْعَسَلِ" />
+      <chapter index="24" hadiths="5" starthadith="618" name="باب جِزْيَةِ أَهْلِ الْكِتَابِ وَالْمَجُوسِ" />
+      <chapter index="25" hadiths="3" starthadith="623" name="باب عُشُورِ أَهْلِ الذِّمَّةِ" />
+      <chapter index="26" hadiths="2" starthadith="626" name="باب اشْتِرَاءِ الصَّدَقَةِ وَالْعَوْدِ فِيهَا" />
+      <chapter index="27" hadiths="1" starthadith="628" name="باب مَنْ تَجِبُ عَلَيْهِ زَكَاةُ الْفِطْرِ" />
+      <chapter index="28" hadiths="3" starthadith="629" name="باب مَكِيلَةِ زَكَاةِ الْفِطْرِ" />
+      <chapter index="29" hadiths="1" starthadith="632" name="باب وَقْتِ إِرْسَالِ زَكَاةِ الْفِطْرِ" />
+      <chapter index="30" hadiths="0" name="باب مَنْ لاَ تَجِبُ عَلَيْهِ زَكَاةُ الْفِطْرِ" />
+    </book>
+    <book index="18" chapters="22" hadiths="60" starthadith="633" name="كتاب الصيام">
+      <chapter index="1" hadiths="4" starthadith="633" name="باب مَا جَاءَ فِي رُؤْيَةِ الْهِلاَلِ لِلصَّوْمِ وَالْفِطْرِ فِي رَمَضَانَ" />
+      <chapter index="2" hadiths="2" starthadith="637" name="باب مَنْ أَجْمَعَ الصِّيَامَ قَبْلَ الْفَجْرِ" />
+      <chapter index="3" hadiths="3" starthadith="639" name="باب مَا جَاءَ فِي تَعْجِيلِ الْفِطْرِ" />
+      <chapter index="4" hadiths="4" starthadith="642" name="باب مَا جَاءَ فِي صِيَامِ الَّذِي يُصْبِحُ جُنُبًا فِي رَمَضَانَ" />
+      <chapter index="5" hadiths="5" starthadith="646" name="باب مَا جَاءَ فِي الرُّخْصَةِ فِي الْقُبْلَةِ لِلصَّائِمِ" />
+      <chapter index="6" hadiths="4" starthadith="651" name="باب مَا جَاءَ فِي التَّشْدِيدِ فِي الْقُبْلَةِ لِلصَّائِمِ" />
+      <chapter index="7" hadiths="6" starthadith="655" name="باب مَا جَاءَ فِي الصِّيَامِ فِي السَّفَرِ" />
+      <chapter index="8" hadiths="1" starthadith="661" name="باب مَا يَفْعَلُ مَنْ قَدِمَ مِنْ سَفَرٍ أَوْ أَرَادَهُ فِي رَمَضَانَ" />
+      <chapter index="9" hadiths="2" starthadith="662" name="باب كَفَّارَةِ مَنْ أَفْطَرَ فِي رَمَضَانَ" />
+      <chapter index="10" hadiths="3" starthadith="664" name="باب مَا جَاءَ فِي حِجَامَةِ الصَّائِمِ" />
+      <chapter index="11" hadiths="3" starthadith="667" name="باب صِيَامِ يَوْمِ عَاشُورَاءَ" />
+      <chapter index="12" hadiths="2" starthadith="670" name="باب صِيَامِ يَوْمِ الْفِطْرِ وَالأَضْحَى وَالدَّهْرِ" />
+      <chapter index="13" hadiths="2" starthadith="672" name="باب النَّهْىِ عَنِ الْوِصَالِ، فِي الصِّيَامِ" />
+      <chapter index="14" hadiths="0" name="باب صِيَامِ الَّذِي يَقْتُلُ خَطَأً أَوْ يَتَظَاهَرُ" />
+      <chapter index="15" hadiths="0" name="باب مَا يَفْعَلُ الْمَرِيضُ فِي صِيَامِهِ" />
+      <chapter index="16" hadiths="3" starthadith="674" name="باب النَّذْرِ فِي الصِّيَامِ وَالصِّيَامِ عَنِ الْمَيِّتِ" />
+      <chapter index="17" hadiths="6" starthadith="677" name="باب مَا جَاءَ فِي قَضَاءِ رَمَضَانَ وَالْكَفَّارَاتِ" />
+      <chapter index="18" hadiths="1" starthadith="683" name="باب قَضَاءِ التَّطَوُّعِ" />
+      <chapter index="19" hadiths="4" starthadith="684" name="باب فِدْيَةِ مَنْ أَفْطَرَ فِي رَمَضَانَ مِنْ عِلَّةٍ" />
+      <chapter index="20" hadiths="1" starthadith="688" name="باب جَامِعِ قَضَاءِ الصِّيَامِ" />
+      <chapter index="21" hadiths="0" name="باب صِيَامِ الْيَوْمِ الَّذِي يُشَكُّ فِيهِ" />
+      <chapter index="22" hadiths="4" starthadith="689" name="باب جَامِعِ الصِّيَامِ" />
+    </book>
+    <book index="19" chapters="6" hadiths="15" starthadith="693" name="كتاب الاعتكاف">
+      <chapter index="1" hadiths="3" starthadith="693" name="باب ذِكْرِ الاِعْتِكَافِ" />
+      <chapter index="2" hadiths="1" starthadith="696" name="باب مَا لاَ يَجُوزُ الاِعْتِكَافُ إِلاَّ بِهِ" />
+      <chapter index="3" hadiths="1" starthadith="697" name="باب خُرُوجِ الْمُعْتَكِفِ لِلْعِيدِ" />
+      <chapter index="4" hadiths="2" starthadith="698" name="باب قَضَاءِ الاِعْتِكَافِ" />
+      <chapter index="5" hadiths="0" name="باب النِّكَاحِ فِي الاِعْتِكَافِ" />
+      <chapter index="6" hadiths="8" starthadith="700" name="باب مَا جَاءَ فِي لَيْلَةِ الْقَدْرِ" />
+    </book>
+    <book index="20" chapters="83" hadiths="254" starthadith="708" name="كتاب الحج">
+      <chapter index="1" hadiths="3" starthadith="708" name="باب الْغُسْلِ لِلإِهْلاَلِ" />
+      <chapter index="2" hadiths="4" starthadith="711" name="باب غُسْلِ الْمُحْرِمِ" />
+      <chapter index="3" hadiths="1" starthadith="715" name="باب مَا يُنْهَى عَنْهُ مِنْ لُبْسِ الثِّيَابِ فِي الإِحْرَامِ" />
+      <chapter index="4" hadiths="3" starthadith="716" name="باب لُبْسِ الثِّيَابِ الْمُصَبَّغَةِ فِي الإِحْرَامِ" />
+      <chapter index="5" hadiths="2" starthadith="719" name="باب لُبْسِ الْمُحْرِمِ الْمِنْطَقَةَ" />
+      <chapter index="6" hadiths="5" starthadith="721" name="باب تَخْمِيرِ الْمُحْرِمِ وَجْهَهُ" />
+      <chapter index="7" hadiths="5" starthadith="726" name="باب مَا جَاءَ فِي الطِّيبِ فِي الْحَجِّ" />
+      <chapter index="8" hadiths="5" starthadith="731" name="باب مَوَاقِيتِ الإِهْلاَلِ" />
+      <chapter index="9" hadiths="6" starthadith="736" name="باب الْعَمَلِ فِي الإِهْلاَلِ" />
+      <chapter index="10" hadiths="1" starthadith="742" name="باب رَفْعِ الصَّوْتِ بِالإِهْلاَلِ" />
+      <chapter index="11" hadiths="3" starthadith="743" name="باب إِفْرَادِ الْحَجِّ" />
+      <chapter index="12" hadiths="2" starthadith="746" name="باب الْقِرَانِ فِي الْحَجِّ" />
+      <chapter index="13" hadiths="7" starthadith="748" name="باب قَطْعِ التَّلْبِيَةِ" />
+      <chapter index="14" hadiths="2" starthadith="755" name="باب إِهْلاَلِ أَهْلِ مَكَّةَ وَمَنْ بِهَا مِنْ غَيْرِهِمْ" />
+      <chapter index="15" hadiths="3" starthadith="757" name="باب مَا لاَ يُوجِبُ الإِحْرَامُ مِنْ تَقْلِيدِ الْهَدْىِ" />
+      <chapter index="16" hadiths="1" starthadith="760" name="باب مَا تَفْعَلُ الْحَائِضُ فِي الْحَجِّ" />
+      <chapter index="17" hadiths="4" starthadith="761" name="باب الْعُمْرَةِ فِي أَشْهُرِ الْحَجِّ" />
+      <chapter index="18" hadiths="1" starthadith="765" name="باب قَطْعِ التَّلْبِيَةِ فِي الْعُمْرَةِ" />
+      <chapter index="19" hadiths="4" starthadith="766" name="باب مَا جَاءَ فِي التَّمَتُّعِ" />
+      <chapter index="20" hadiths="0" name="باب مَا لاَ يَجِبُ فِيهِ التَّمَتُّعُ" />
+      <chapter index="21" hadiths="4" starthadith="770" name="باب جَامِعِ مَا جَاءَ فِي الْعُمْرَةِ" />
+      <chapter index="22" hadiths="5" starthadith="774" name="باب نِكَاحِ الْمُحْرِمِ" />
+      <chapter index="23" hadiths="2" starthadith="779" name="باب حِجَامَةِ الْمُحْرِمِ" />
+      <chapter index="24" hadiths="7" starthadith="781" name="باب مَا يَجُوزُ لِلْمُحْرِمِ أَكْلُهُ مِنَ الصَّيْدِ" />
+      <chapter index="25" hadiths="3" starthadith="788" name="باب مَا لاَ يَحِلُّ لِلْمُحْرِمِ أَكْلُهُ مِنَ الصَّيْدِ" />
+      <chapter index="26" hadiths="0" name="باب أَمْرِ الصَّيْدِ فِي الْحَرَمِ" />
+      <chapter index="27" hadiths="0" name="باب الْحَكَمِ فِي الصَّيْدِ" />
+      <chapter index="28" hadiths="4" starthadith="791" name="باب مَا يَقْتُلُ الْمُحْرِمُ مِنَ الدَّوَابِّ" />
+      <chapter index="29" hadiths="5" starthadith="795" name="باب مَا يَجُوزُ لِلْمُحْرِمِ أَنْ يَفْعَلَهُ" />
+      <chapter index="30" hadiths="1" starthadith="800" name="باب الْحَجِّ عَمَّنْ يُحَجُّ عَنْهُ" />
+      <chapter index="31" hadiths="2" starthadith="801" name="باب مَا جَاءَ فِيمَنْ أُحْصِرَ بِعَدُوٍّ" />
+      <chapter index="32" hadiths="5" starthadith="803" name="باب مَا جَاءَ فِيمَنْ أُحْصِرَ بِغَيْرِ عَدُوٍّ" />
+      <chapter index="33" hadiths="3" starthadith="808" name="باب مَا جَاءَ فِي بِنَاءِ الْكَعْبَةِ" />
+      <chapter index="34" hadiths="5" starthadith="811" name="باب الرَّمَلِ فِي الطَّوَافِ" />
+      <chapter index="35" hadiths="3" starthadith="816" name="باب الاِسْتِلاَمِ فِي الطَّوَافِ" />
+      <chapter index="36" hadiths="1" starthadith="819" name="باب تَقْبِيلِ الرُّكْنِ الأَسْوَدِ فِي الاِسْتِلاَمِ" />
+      <chapter index="37" hadiths="1" starthadith="820" name="باب رَكْعَتَا الطَّوَافِ" />
+      <chapter index="38" hadiths="3" starthadith="821" name="باب الصَّلاَةِ بَعْدَ الصُّبْحِ وَالْعَصْرِ فِي الطَّوَافِ" />
+      <chapter index="39" hadiths="3" starthadith="824" name="باب وَدَاعِ الْبَيْتِ" />
+      <chapter index="40" hadiths="3" starthadith="827" name="باب جَامِعِ الطَّوَافِ" />
+      <chapter index="41" hadiths="3" starthadith="830" name="باب الْبَدْءِ بِالصَّفَا فِي السَّعْىِ" />
+      <chapter index="42" hadiths="3" starthadith="833" name="باب جَامِعِ السَّعْىِ" />
+      <chapter index="43" hadiths="2" starthadith="836" name="باب صِيَامِ يَوْمِ عَرَفَةَ" />
+      <chapter index="44" hadiths="4" starthadith="838" name="باب مَا جَاءَ فِي صِيَامِ أَيَّامِ مِنًى" />
+      <chapter index="45" hadiths="7" starthadith="842" name="باب مَا يَجُوزُ مِنَ الْهَدْىِ" />
+      <chapter index="46" hadiths="8" starthadith="849" name="باب الْعَمَلِ فِي الْهَدْىِ حِينَ يُسَاقُ" />
+      <chapter index="47" hadiths="5" starthadith="857" name="باب الْعَمَلِ فِي الْهَدْىِ إِذَا عَطِبَ أَوْ ضَلَّ" />
+      <chapter index="48" hadiths="2" starthadith="862" name="باب هَدْىِ الْمُحْرِمِ إِذَا أَصَابَ أَهْلَهُ" />
+      <chapter index="49" hadiths="2" starthadith="864" name="باب هَدْىِ مَنْ فَاتَهُ الْحَجُّ" />
+      <chapter index="50" hadiths="3" starthadith="866" name="باب مَنْ أَصَابَ أَهْلَهُ قَبْلَ أَنْ يُفِيضَ" />
+      <chapter index="51" hadiths="4" starthadith="869" name="باب ‏{‏مَا اسْتَيْسَرَ مِنَ الْهَدْىِ ‏}‏" />
+      <chapter index="52" hadiths="3" starthadith="873" name="باب جَامِعِ الْهَدْىِ" />
+      <chapter index="53" hadiths="2" starthadith="876" name="باب الْوُقُوفِ بِعَرَفَةَ وَالْمُزْدَلِفَةِ" />
+      <chapter index="54" hadiths="0" name="باب وُقُوفِ الرَّجُلِ وَهُوَ غَيْرُ طَاهِرٍ وَوُقُوفِهِ عَلَى دَابَّتِهِ" />
+      <chapter index="55" hadiths="2" starthadith="878" name="باب وُقُوفِ مَنْ فَاتَهُ الْحَجُّ بِعَرَفَةَ" />
+      <chapter index="56" hadiths="4" starthadith="880" name="باب تَقْدِيمِ النِّسَاءِ وَالصِّبْيَانِ" />
+      <chapter index="57" hadiths="2" starthadith="884" name="باب السَّيْرِ فِي الدَّفْعَةِ" />
+      <chapter index="58" hadiths="3" starthadith="886" name="باب مَا جَاءَ فِي النَّحْرِ فِي الْحَجِّ" />
+      <chapter index="59" hadiths="3" starthadith="889" name="باب الْعَمَلِ فِي النَّحْرِ" />
+      <chapter index="60" hadiths="2" starthadith="892" name="باب الْحِلاَقِ" />
+      <chapter index="61" hadiths="5" starthadith="894" name="باب التَّقْصِيرِ" />
+      <chapter index="62" hadiths="2" starthadith="899" name="باب التَّلْبِيدِ" />
+      <chapter index="63" hadiths="2" starthadith="901" name="باب الصَّلاَةِ فِي الْبَيْتِ وَقَصْرِ الصَّلاَةِ وَتَعْجِيلِ الْخُطْبَةِ بِعَرَفَةَ" />
+      <chapter index="64" hadiths="1" starthadith="903" name="باب الصَّلاَةِ بِمِنًى يَوْمَ التَّرْوِيَةِ وَالْجُمُعَةِ بِمِنًى وَعَرَفَةَ" />
+      <chapter index="65" hadiths="4" starthadith="904" name="باب صَلاَةِ الْمُزْدَلِفَةِ" />
+      <chapter index="66" hadiths="3" starthadith="908" name="باب صَلاَةِ مِنًى" />
+      <chapter index="67" hadiths="0" name="باب صَلاَةِ الْمُقِيمِ بِمَكَّةَ وَمِنًى" />
+      <chapter index="68" hadiths="1" starthadith="911" name="باب تَكْبِيرِ أَيَّامِ التَّشْرِيقِ" />
+      <chapter index="69" hadiths="2" starthadith="912" name="باب صَلاَةِ الْمُعَرَّسِ وَالْمُحَصَّبِ" />
+      <chapter index="70" hadiths="3" starthadith="914" name="باب الْبَيْتُوتَةِ بِمَكَّةَ لَيَالِيَ مِنًى" />
+      <chapter index="71" hadiths="7" starthadith="917" name="باب رَمْىِ الْجِمَارِ" />
+      <chapter index="72" hadiths="3" starthadith="924" name="باب الرُّخْصَةِ فِي رَمْىِ الْجِمَارِ" />
+      <chapter index="73" hadiths="2" starthadith="927" name="باب الإِفْاضَةِ" />
+      <chapter index="74" hadiths="3" starthadith="929" name="باب دُخُولِ الْحَائِضِ مَكَّةَ" />
+      <chapter index="75" hadiths="5" starthadith="932" name="باب إِفَاضَةِ الْحَائِضِ" />
+      <chapter index="76" hadiths="4" starthadith="937" name="باب فِدْيَةِ مَا أُصِيبَ مِنَ الطَّيْرِ وَالْوَحْشِ" />
+      <chapter index="77" hadiths="2" starthadith="941" name="باب فِدْيَةِ مَنْ أَصَابَ شَيْئًا مِنَ الْجَرَادِ وَهُوَ مُحْرِمٌ" />
+      <chapter index="78" hadiths="3" starthadith="943" name="باب فِدْيَةِ مَنْ حَلَقَ قَبْلَ أَنْ يَنْحَرَ" />
+      <chapter index="79" hadiths="1" starthadith="946" name="باب مَا يَفْعَلُ مَنْ نَسِيَ مِنْ نُسُكِهِ شَيْئًا" />
+      <chapter index="80" hadiths="0" name="باب جَامِعِ الْفِدْيَةِ" />
+      <chapter index="81" hadiths="13" starthadith="947" name="باب جَامِعِ الْحَجِّ" />
+      <chapter index="82" hadiths="0" name="باب حَجِّ الْمَرْأَةِ بِغَيْرِ ذِي مَحْرَمٍ" />
+      <chapter index="83" hadiths="2" starthadith="960" name="باب صِيَامِ الْمُتَمَتِّعِ" />
+    </book>
+    <book index="21" chapters="21" hadiths="50" starthadith="962" name="كتاب الجهاد">
+      <chapter index="1" hadiths="6" starthadith="962" name="باب التَّرْغِيبِ فِي الْجِهَادِ" />
+      <chapter index="2" hadiths="1" starthadith="968" name="باب النَّهْىِ عَنْ أَنْ يُسَافَرَ بِالْقُرْآنِ إِلَى أَرْضِ الْعَدُوِّ" />
+      <chapter index="3" hadiths="4" starthadith="969" name="باب النَّهْىِ عَنْ قَتْلِ النِّسَاءِ، وَالْوِلْدَانِ، فِي الْغَزْوِ" />
+      <chapter index="4" hadiths="1" starthadith="973" name="باب مَا جَاءَ فِي الْوَفَاءِ بِالأَمَانِ" />
+      <chapter index="5" hadiths="2" starthadith="974" name="باب الْعَمَلِ فِيمَنْ أَعْطَى شَيْئًا فِي سَبِيلِ اللَّهِ" />
+      <chapter index="6" hadiths="2" starthadith="976" name="باب جَامِعِ النَّفْلِ فِي الْغَزْوِ" />
+      <chapter index="7" hadiths="0" name="باب مَا لاَ يَجِبُ فِيهِ الْخُمْسُ" />
+      <chapter index="8" hadiths="0" name="باب مَا يَجُوزُ لِلْمُسْلِمِينَ أَكْلُهُ قَبْلَ الْخُمْسِ" />
+      <chapter index="9" hadiths="1" starthadith="978" name="باب مَا يُرَدُّ قَبْلَ أَنْ يَقَعَ الْقَسْمُ مِمَّا أَصَابَ الْعَدُوُّ" />
+      <chapter index="10" hadiths="2" starthadith="979" name="باب مَا جَاءَ فِي السَّلَبِ فِي النَّفْلِ" />
+      <chapter index="11" hadiths="1" starthadith="981" name="باب مَا جَاءَ فِي إِعْطَاءِ النَّفْلِ مِنَ الْخُمْسِ" />
+      <chapter index="12" hadiths="1" starthadith="982" name="باب الْقَسْمِ لِلْخَيْلِ فِي الْغَزْوِ" />
+      <chapter index="13" hadiths="5" starthadith="983" name="باب مَا جَاءَ فِي الْغُلُولِ" />
+      <chapter index="14" hadiths="7" starthadith="988" name="باب الشُّهَدَاءِ فِي سَبِيلِ اللَّهِ" />
+      <chapter index="15" hadiths="2" starthadith="995" name="باب مَا تَكُونُ فِيهِ الشَّهَادَةُ" />
+      <chapter index="16" hadiths="1" starthadith="997" name="باب الْعَمَلِ فِي غُسْلِ الشَّهِيدِ" />
+      <chapter index="17" hadiths="1" starthadith="998" name="باب مَا يُكْرَهُ مِنَ الشَّىْءِ يُجْعَلُ فِي سَبِيلِ اللَّهِ" />
+      <chapter index="18" hadiths="5" starthadith="999" name="باب التَّرْغِيبِ فِي الْجِهَادِ" />
+      <chapter index="19" hadiths="6" starthadith="1004" name="باب مَا جَاءَ فِي الْخَيْلِ وَالْمُسَابَقَةِ بَيْنَهَا وَالنَّفَقَةِ فِي الْغَزْوِ" />
+      <chapter index="20" hadiths="0" name="باب إِحْرَازِ مَنْ أَسْلَمَ مِنْ أَهْلِ الذِّمَّةِ أَرْضَهُ" />
+      <chapter index="21" hadiths="2" starthadith="1010" name="باب الدَّفْنِ فِي قَبْرٍ وَاحِدٍ مَنْ ضَرُورَةٍ" />
+    </book>
+    <book index="22" chapters="9" hadiths="19" starthadith="1012" name="كتاب النذور والأيمان">
+      <chapter index="1" hadiths="3" starthadith="1012" name="باب مَا يَجِبُ مِنَ النُّذُورِ فِي الْمَشْىِ" />
+      <chapter index="2" hadiths="3" starthadith="1015" name="باب فِيمَنْ نَذَرَ مَشْيًا إِلَى بَيْتِ اللَّهِ فَعَجَزَ" />
+      <chapter index="3" hadiths="0" name="باب الْعَمَلِ فِي الْمَشْىِ إِلَى الْكَعْبَةِ" />
+      <chapter index="4" hadiths="3" starthadith="1018" name="باب مَا لاَ يَجُوزُ مِنَ النُّذُورِ فِي مَعْصِيَةِ اللَّهِ" />
+      <chapter index="5" hadiths="1" starthadith="1021" name="باب اللَّغْوِ فِي الْيَمِينِ" />
+      <chapter index="6" hadiths="1" starthadith="1022" name="باب مَا لاَ تَجِبُ فِيهِ الْكَفَّارَةُ مِنَ الْيَمِينِ" />
+      <chapter index="7" hadiths="1" starthadith="1023" name="باب مَا تَجِبُ فِيهِ الْكَفَّارَةُ مِنَ الأَيْمَانِ" />
+      <chapter index="8" hadiths="3" starthadith="1024" name="باب الْعَمَلِ فِي كَفَّارَةِ الْيَمِينِ" />
+      <chapter index="9" hadiths="4" starthadith="1027" name="باب جَامِعِ الأَيْمَانِ" />
+    </book>
+    <book index="23" chapters="6" hadiths="14" starthadith="1031" name="كتاب الضحايا">
+      <chapter index="1" hadiths="2" starthadith="1031" name="باب مَا يُنْهَى عَنْهُ مِنَ الضَّحَايَا" />
+      <chapter index="2" hadiths="1" starthadith="1033" name="باب مَا يُسْتَحَبُّ مِنَ الضَّحَايَا" />
+      <chapter index="3" hadiths="2" starthadith="1034" name="باب النَّهْىِ عَنْ ذَبْحِ الضَّحِيَّةِ، قَبْلَ انْصِرَافِ الإِمَامِ" />
+      <chapter index="4" hadiths="3" starthadith="1036" name="باب ادِّخَارِ لُحُومِ الأَضَاحِيِّ" />
+      <chapter index="5" hadiths="3" starthadith="1039" name="باب الشَّرِكَةِ فِي الضَّحَايَا وَعَنْ كَمْ تُذْبَحُ الْبَقَرَةُ وَالْبَدَنَةُ" />
+      <chapter index="6" hadiths="3" starthadith="1042" name="باب الضَّحِيَّةِ عَمَّا فِي بَطْنِ الْمَرْأَةِ وَذِكْرِ أَيَّامِ الأَضْحَى" />
+    </book>
+    <book index="24" chapters="4" hadiths="10" starthadith="1045" name="كتاب الذبائح">
+      <chapter index="1" hadiths="2" starthadith="1045" name="باب مَا جَاءَ فِي التَّسْمِيَةِ عَلَى الذَّبِيحَةِ" />
+      <chapter index="2" hadiths="5" starthadith="1047" name="باب مَا يَجُوزُ مِنَ الذَّكَاةِ فِي حَالِ الضَّرُورَةِ" />
+      <chapter index="3" hadiths="1" starthadith="1052" name="باب مَا يُكْرَهُ مِنَ الذَّبِيحَةِ فِي الذَّكَاةِ" />
+      <chapter index="4" hadiths="2" starthadith="1053" name="باب ذَكَاةِ مَا فِي بَطْنِ الذَّبِيحَةِ" />
+    </book>
+    <book index="25" chapters="7" hadiths="15" starthadith="1055" name="كتاب الصيد">
+      <chapter index="1" hadiths="3" starthadith="1055" name="باب تَرْكِ أَكْلِ مَا قَتَلَ الْمِعْرَاضُ وَالْحَجَرُ" />
+      <chapter index="2" hadiths="3" starthadith="1058" name="باب مَا جَاءَ فِي صَيْدِ الْمُعَلَّمَاتِ" />
+      <chapter index="3" hadiths="4" starthadith="1061" name="باب مَا جَاءَ فِي صَيْدِ الْبَحْرِ" />
+      <chapter index="4" hadiths="2" starthadith="1065" name="باب تَحْرِيمِ أَكْلِ كُلِّ ذِي نَابٍ مِنَ السِّبَاعِ" />
+      <chapter index="5" hadiths="0" name="باب مَا يُكْرَهُ مِنْ أَكْلِ الدَّوَابِّ" />
+      <chapter index="6" hadiths="3" starthadith="1067" name="باب مَا جَاءَ فِي جُلُودِ الْمَيْتَةِ" />
+      <chapter index="7" hadiths="0" name="باب مَا جَاءَ فِيمَنْ يُضْطَرُّ إِلَى أَكْلِ الْمَيْتَةِ" />
+    </book>
+    <book index="26" chapters="2" hadiths="7" starthadith="1070" name="كتاب العقيقة">
+      <chapter index="1" hadiths="3" starthadith="1070" name="باب مَا جَاءَ فِي الْعَقِيقَةِ" />
+      <chapter index="2" hadiths="4" starthadith="1073" name="باب الْعَمَلِ فِي الْعَقِيقَةِ" />
+    </book>
+    <book index="27" chapters="15" hadiths="17" starthadith="1077" name="كتاب الفرائض">
+      <chapter index="1" hadiths="0" name="باب مِيرَاثِ الصُّلْبِ" />
+      <chapter index="2" hadiths="0" name="باب مِيرَاثِ الرَّجُلِ مِنِ امْرَأَتِهِ وَالْمَرْأَةِ مِنْ زِوْجِهَا" />
+      <chapter index="3" hadiths="0" name="باب مِيرَاثِ الأَبِ وَالأُمِّ مِنْ وَلَدِهِمَا" />
+      <chapter index="4" hadiths="0" name="باب مِيرَاثِ الإِخْوَةِ لِلأُمِّ" />
+      <chapter index="5" hadiths="0" name="باب مِيرَاثِ الإِخْوَةِ لِلأَبِ وَالأُمِّ" />
+      <chapter index="6" hadiths="0" name="باب مِيرَاثِ الإِخْوَةِ لِلأَبِ" />
+      <chapter index="7" hadiths="3" starthadith="1077" name="باب مِيرَاثِ الْجَدِّ" />
+      <chapter index="8" hadiths="3" starthadith="1080" name="باب مِيرَاثِ الْجَدَّةِ" />
+      <chapter index="9" hadiths="1" starthadith="1083" name="باب مِيرَاثِ الْكَلاَلَةِ" />
+      <chapter index="10" hadiths="2" starthadith="1084" name="باب مَا جَاءَ فِي الْعَمَّةِ" />
+      <chapter index="11" hadiths="0" name="باب مِيرَاثِ وِلاَيَةِ الْعَصَبَةِ" />
+      <chapter index="12" hadiths="0" name="باب مَنْ لاَ مِيرَاثَ لَهُ" />
+      <chapter index="13" hadiths="5" starthadith="1086" name="باب مِيرَاثِ أَهْلِ الْمِلَلِ" />
+      <chapter index="14" hadiths="1" starthadith="1091" name="باب مَنْ جُهِلَ أَمْرُهُ بِالْقَتْلِ أَوْ غَيْرِ ذَلِكَ" />
+      <chapter index="15" hadiths="2" starthadith="1092" name="باب مِيرَاثِ وَلَدِ الْمُلاَعَنَةِ وَوَلَدِ الزِّنَا" />
+    </book>
+    <book index="28" chapters="22" hadiths="59" starthadith="1094" name="كتاب النكاح">
+      <chapter index="1" hadiths="3" starthadith="1094" name="باب مَا جَاءَ فِي الْخِطْبَةِ" />
+      <chapter index="2" hadiths="4" starthadith="1097" name="باب اسْتِئْذَانِ الْبِكْرِ وَالأَيِّمِ فِي أَنْفُسِهِمَا" />
+      <chapter index="3" hadiths="4" starthadith="1101" name="باب مَا جَاءَ فِي الصَّدَاقِ وَالْحِبَاءِ" />
+      <chapter index="4" hadiths="3" starthadith="1105" name="باب إِرْخَاءِ السُّتُورِ" />
+      <chapter index="5" hadiths="2" starthadith="1108" name="باب الْمُقَامِ عِنْدَ الْبِكْرِ وَالأَيِّمِ" />
+      <chapter index="6" hadiths="1" starthadith="1110" name="باب مَا لاَ يَجُوزُ مِنَ الشُّرُوطِ فِي النِّكَاحِ" />
+      <chapter index="7" hadiths="3" starthadith="1111" name="باب نِكَاحِ الْمُحَلِّلِ وَمَا أَشْبَهَهُ" />
+      <chapter index="8" hadiths="2" starthadith="1114" name="باب مَا لاَ يُجْمَعُ بَيْنَهُ مِنَ النِّسَاءِ" />
+      <chapter index="9" hadiths="2" starthadith="1116" name="باب مَا لاَ يَجُوزُ مِنْ نِكَاحِ الرَّجُلِ أُمَّ امْرَأَتِهِ" />
+      <chapter index="10" hadiths="0" name="باب نِكَاحِ الرَّجُلِ أُمَّ امْرَأَةٍ قَدْ أَصَابَهَا عَلَى وَجْهِ مَا يُكْرَهُ" />
+      <chapter index="11" hadiths="4" starthadith="1118" name="باب جَامِعِ مَا لاَ يَجُوزُ مِنَ النِّكَاحِ" />
+      <chapter index="12" hadiths="2" starthadith="1122" name="باب نِكَاحِ الأَمَةِ عَلَى الْحُرَّةِ" />
+      <chapter index="13" hadiths="3" starthadith="1124" name="باب مَا جَاءَ فِي الرَّجُلِ يَمْلِكُ امْرَأَتَهُ وَقَدْ كَانَتْ تَحْتَهُ فَفَارَقَهَا" />
+      <chapter index="14" hadiths="3" starthadith="1127" name="باب مَا جَاءَ فِي كَرَاهِيَةِ إِصَابَةِ الأُخْتَيْنِ بِمِلْكِ الْيَمِينِ وَالْمَرْأَةِ وَابْنَتِهَا" />
+      <chapter index="15" hadiths="4" starthadith="1130" name="باب النَّهْىِ عَنْ أَنْ يُصِيبَ الرَّجُلُ أَمَةً كَانَتْ لأَبِيهِ" />
+      <chapter index="16" hadiths="0" name="باب النَّهْىِ عَنْ نِكَاحِ إِمَاءِ أَهْلِ الْكِتَابِ" />
+      <chapter index="17" hadiths="2" starthadith="1134" name="باب مَا جَاءَ فِي الإِحْصَانِ" />
+      <chapter index="18" hadiths="2" starthadith="1136" name="باب نِكَاحِ الْمُتْعَةِ" />
+      <chapter index="19" hadiths="1" starthadith="1138" name="باب نِكَاحِ الْعَبِيدِ" />
+      <chapter index="20" hadiths="3" starthadith="1139" name="باب نِكَاحِ الْمُشْرِكِ إِذَا أَسْلَمَتْ زَوْجَتُهُ قَبْلَهُ" />
+      <chapter index="21" hadiths="5" starthadith="1142" name="باب مَا جَاءَ فِي الْوَلِيمَةِ" />
+      <chapter index="22" hadiths="6" starthadith="1147" name="باب جَامِعِ النِّكَاحِ" />
+    </book>
+    <book index="29" chapters="35" hadiths="122" starthadith="1153" name="كتاب الطلاق">
+      <chapter index="1" hadiths="4" starthadith="1153" name="باب مَا جَاءَ فِي الْبَتَّةِ" />
+      <chapter index="2" hadiths="5" starthadith="1157" name="باب مَا جَاءَ فِي الْخَلِيَّةِ وَالْبَرِيَّةِ وَأَشْبَاهُ ذَلِكَ" />
+      <chapter index="3" hadiths="2" starthadith="1162" name="باب مَا يُبِينُ مِنَ التَّمْلِيكِ" />
+      <chapter index="4" hadiths="2" starthadith="1164" name="باب مَا يَجِبُ فِيهِ تَطْلِيقَةٌ وَاحِدَةٌ مِنَ التَّمْلِيكِ" />
+      <chapter index="5" hadiths="4" starthadith="1166" name="باب مَا لاَ يُبِينُ مِنَ التَّمْلِيكِ" />
+      <chapter index="6" hadiths="4" starthadith="1170" name="باب الإِيلاَءِ" />
+      <chapter index="7" hadiths="2" starthadith="1174" name="باب إِيلاَءِ الْعَبْدِ" />
+      <chapter index="8" hadiths="5" starthadith="1176" name="باب ظِهَارِ الْحُرِّ" />
+      <chapter index="9" hadiths="1" starthadith="1181" name="باب ظِهَارِ الْعَبِيدِ" />
+      <chapter index="10" hadiths="5" starthadith="1182" name="باب مَا جَاءَ فِي الْخِيَارِ" />
+      <chapter index="11" hadiths="2" starthadith="1187" name="باب مَا جَاءَ فِي الْخُلْعِ" />
+      <chapter index="12" hadiths="2" starthadith="1189" name="باب طَلاَقِ الْمُخْتَلِعَةِ" />
+      <chapter index="13" hadiths="2" starthadith="1191" name="باب مَا جَاءَ فِي اللِّعَانِ" />
+      <chapter index="14" hadiths="2" starthadith="1193" name="باب مِيرَاثِ وَلَدِ الْمُلاَعَنَةِ" />
+      <chapter index="15" hadiths="3" starthadith="1195" name="باب طَلاَقِ الْبِكْرِ" />
+      <chapter index="16" hadiths="5" starthadith="1198" name="باب طَلاَقِ الْمَرِيضِ" />
+      <chapter index="17" hadiths="4" starthadith="1203" name="باب مَا جَاءَ فِي مُتْعَةِ الطَّلاَقِ" />
+      <chapter index="18" hadiths="5" starthadith="1207" name="باب مَا جَاءَ فِي طَلاَقِ الْعَبْدِ" />
+      <chapter index="19" hadiths="0" name="باب نَفَقَةِ الأَمَةِ إِذَا طُلِّقَتْ وَهِيَ حَامِلٌ" />
+      <chapter index="20" hadiths="2" starthadith="1212" name="باب عِدَّةِ الَّتِي تَفْقِدُ زَوْجَهَا" />
+      <chapter index="21" hadiths="10" starthadith="1214" name="باب مَا جَاءَ فِي الأَقْرَاءِ وَعِدَّةِ الطَّلاَقِ وَطَلاَقِ الْحَائِضِ" />
+      <chapter index="22" hadiths="4" starthadith="1224" name="باب مَا جَاءَ فِي عِدَّةِ الْمَرْأَةِ فِي بَيْتِهَا إِذَا طُلِّقَتْ فِيهِ" />
+      <chapter index="23" hadiths="2" starthadith="1228" name="باب مَا جَاءَ فِي نَفَقَةِ الْمُطَلَّقَةِ" />
+      <chapter index="24" hadiths="0" name="باب مَا جَاءَ فِي عِدَّةِ الأَمَةِ مِنْ طَلاَقِ زَوْجِهَا" />
+      <chapter index="25" hadiths="3" starthadith="1230" name="باب جَامِعِ عِدَّةِ الطَّلاَقِ" />
+      <chapter index="26" hadiths="1" starthadith="1233" name="باب مَا جَاءَ فِي الْحَكَمَيْنِ" />
+      <chapter index="27" hadiths="2" starthadith="1234" name="باب يَمِينِ الرَّجُلِ بِطَلاَقٍ مَا لَمْ يَنْكِحُ" />
+      <chapter index="28" hadiths="2" starthadith="1236" name="باب أَجَلِ الَّذِي لاَ يَمَسُّ امْرَأَتَهُ" />
+      <chapter index="29" hadiths="8" starthadith="1238" name="باب جَامِعِ الطَّلاَقِ" />
+      <chapter index="30" hadiths="4" starthadith="1246" name="باب عِدَّةِ الْمُتَوَفَّى عَنْهَا زَوْجُهَا إِذَا كَانَتْ حَامِلاً" />
+      <chapter index="31" hadiths="5" starthadith="1250" name="باب مَقَامَ الْمُتَوَفَّى عَنْهَا زَوْجُهَا فِي بَيْتِهَا حَتَّى تَحِلَّ" />
+      <chapter index="32" hadiths="3" starthadith="1255" name="باب عِدَّةِ أُمِّ الْوَلَدِ إِذَا تُوُفِّيَ عَنْهَا سَيِّدُهَا" />
+      <chapter index="33" hadiths="2" starthadith="1258" name="باب عِدَّةِ الأَمَةِ إِذَا تَوَفِّيَ سَيِّدُهَا أَوْ زَوْجُهَا" />
+      <chapter index="34" hadiths="6" starthadith="1260" name="باب مَا جَاءَ فِي الْعَزْلِ" />
+      <chapter index="35" hadiths="9" starthadith="1266" name="باب مَا جَاءَ فِي الإِحْدَادِ" />
+    </book>
+    <book index="30" chapters="3" hadiths="18" starthadith="1275" name="كتاب الرضاع">
+      <chapter index="1" hadiths="12" starthadith="1275" name="باب رَضَاعَةِ الصَّغِيرِ" />
+      <chapter index="2" hadiths="3" starthadith="1287" name="باب مَا جَاءَ فِي الرَّضَاعَةِ بَعْدَ الْكِبَرِ" />
+      <chapter index="3" hadiths="3" starthadith="1290" name="باب جَامِعِ مَا جَاءَ فِي الرَّضَاعَةِ" />
+    </book>
+    <book index="31" chapters="46" hadiths="96" starthadith="1293" name="كتاب البيوع">
+      <chapter index="1" hadiths="1" starthadith="1293" name="باب مَا جَاءَ فِي بَيْعِ الْعُرْبَانِ" />
+      <chapter index="2" hadiths="1" starthadith="1294" name="باب مَا جَاءَ فِي مَالِ الْمَمْلُوكِ" />
+      <chapter index="3" hadiths="1" starthadith="1295" name="باب مَا جَاءَ فِي الْعُهْدَةِ" />
+      <chapter index="4" hadiths="1" starthadith="1296" name="باب الْعَيْبِ فِي الرَّقِيقِ" />
+      <chapter index="5" hadiths="2" starthadith="1297" name="باب مَا يُفْعَلُ فِي الْوَلِيدَةِ إِذَا بِيعَتْ وَالشَّرْطُ فِيهَا" />
+      <chapter index="6" hadiths="2" starthadith="1299" name="باب النَّهْىِ عَنْ أَنْ يَطَأَ الرَّجُلُ وَلِيدَةً وَلَهَا زَوْجٌ" />
+      <chapter index="7" hadiths="1" starthadith="1301" name="باب مَا جَاءَ فِي ثَمَرِ الْمَالِ يُبَاعُ أَصْلُهُ" />
+      <chapter index="8" hadiths="4" starthadith="1302" name="باب النَّهْىِ عَنْ بَيْعِ الثِّمَارِ، حَتَّى يَبْدُوَ صَلاَحُهَا" />
+      <chapter index="9" hadiths="2" starthadith="1306" name="باب مَا جَاءَ فِي بَيْعِ الْعَرِيَّةِ" />
+      <chapter index="10" hadiths="2" starthadith="1308" name="باب الْجَائِحَةِ فِي بَيْعِ الثِّمَارِ وَالزَّرْعِ" />
+      <chapter index="11" hadiths="3" starthadith="1310" name="باب مَا يَجُوزُ فِي اسْتِثْنَاءِ الثَّمَرِ" />
+      <chapter index="12" hadiths="3" starthadith="1313" name="باب مَا يُكْرَهُ مِنْ بَيْعِ التَّمْرِ" />
+      <chapter index="13" hadiths="3" starthadith="1316" name="باب مَا جَاءَ فِي الْمُزَابَنَةِ وَالْمُحَاقَلَةِ" />
+      <chapter index="14" hadiths="0" name="باب جَامِعِ بَيْعِ الثَّمَرِ" />
+      <chapter index="15" hadiths="0" name="باب بَيْعِ الْفَاكِهَةِ" />
+      <chapter index="16" hadiths="11" starthadith="1319" name="باب بَيْعِ الذَّهَبِ بِالْفِضَّةِ تِبْرًا وَعَيْنًا" />
+      <chapter index="17" hadiths="1" starthadith="1330" name="باب مَا جَاءَ فِي الصَّرْفِ" />
+      <chapter index="18" hadiths="1" starthadith="1331" name="باب الْمُرَاطَلَةِ" />
+      <chapter index="19" hadiths="7" starthadith="1332" name="باب الْعِينَةِ وَمَا يُشْبِهُهَا" />
+      <chapter index="20" hadiths="3" starthadith="1339" name="باب مَا يُكْرَهُ مِنْ بَيْعِ الطَّعَامِ إِلَى أَجَلٍ" />
+      <chapter index="21" hadiths="1" starthadith="1342" name="باب السُّلْفَةِ فِي الطَّعَامِ" />
+      <chapter index="22" hadiths="3" starthadith="1343" name="باب بَيْعِ الطَّعَامِ بِالطَّعَامِ لاَ فَضْلَ بَيْنَهُمَا" />
+      <chapter index="23" hadiths="2" starthadith="1346" name="باب جَامِعِ بَيْعِ الطَّعَامِ" />
+      <chapter index="24" hadiths="3" starthadith="1348" name="باب الْحُكْرَةِ وَالتَّرَبُّصِ" />
+      <chapter index="25" hadiths="3" starthadith="1351" name="باب مَا يَجُوزُ مَنْ بَيْعِ الْحَيَوَانِ بَعْضِهِ بِبَعْضٍ وَالسَّلْفِ فِيهِ" />
+      <chapter index="26" hadiths="2" starthadith="1354" name="باب مَا لاَ يَجُوزُ مِنْ بَيْعِ الْحَيَوَانِ" />
+      <chapter index="27" hadiths="3" starthadith="1356" name="باب بَيْعِ الْحَيَوَانِ بِاللَّحْمِ" />
+      <chapter index="28" hadiths="0" name="باب بَيْعِ اللَّحْمِ بِاللَّحْمِ" />
+      <chapter index="29" hadiths="1" starthadith="1359" name="باب مَا جَاءَ فِي ثَمَنِ الْكَلْبِ" />
+      <chapter index="30" hadiths="1" starthadith="1360" name="باب السَّلَفِ وَبَيْعِ الْعُرُوضِ بَعْضِهَا بِبَعْضٍ" />
+      <chapter index="31" hadiths="1" starthadith="1361" name="باب السُّلْفَةِ فِي الْعُرُوضِ" />
+      <chapter index="32" hadiths="0" name="باب بَيْعِ النُّحَاسِ وَالْحَدِيدِ وَمَا أَشْبَهُهُمَا مِمَّا يُوزَنُ" />
+      <chapter index="33" hadiths="3" starthadith="1362" name="باب النَّهْىِ عَنْ بَيْعَتَيْنِ، فِي بَيْعَةٍ" />
+      <chapter index="34" hadiths="1" starthadith="1365" name="باب بَيْعِ الْغَرَرِ" />
+      <chapter index="35" hadiths="1" starthadith="1366" name="باب الْمُلاَمَسَةِ وَالْمُنَابَذَةِ" />
+      <chapter index="36" hadiths="0" name="باب بَيْعِ الْمُرَابَحَةِ" />
+      <chapter index="37" hadiths="0" name="باب الْبَيْعِ عَلَى الْبَرْنَامِجِ" />
+      <chapter index="38" hadiths="2" starthadith="1367" name="باب بَيْعِ الْخِيَارِ" />
+      <chapter index="39" hadiths="3" starthadith="1369" name="باب مَا جَاءَ فِي الرِّبَا فِي الدَّيْنِ" />
+      <chapter index="40" hadiths="2" starthadith="1372" name="باب جَامِعِ الدَّيْنِ وَالْحَوْلِ" />
+      <chapter index="41" hadiths="0" name="باب مَا جَاءَ فِي الشَّرِكَةِ وَالتَّوْلِيَةِ وَالإِقَالَةِ" />
+      <chapter index="42" hadiths="2" starthadith="1374" name="باب مَا جَاءَ فِي إِفْلاَسِ الْغَرِيمِ" />
+      <chapter index="43" hadiths="2" starthadith="1376" name="باب مَا يَجُوزُ مِنَ السَّلَفِ" />
+      <chapter index="44" hadiths="4" starthadith="1378" name="باب مَا لاَ يَجُوزُ مِنَ السَّلَفِ" />
+      <chapter index="45" hadiths="3" starthadith="1382" name="باب مَا يُنْهَى عَنْهُ مِنَ الْمُسَاوَمَةِ وَالْمُبَايَعَةِ" />
+      <chapter index="46" hadiths="4" starthadith="1385" name="باب جَامِعِ الْبُيُوعِ" />
+    </book>
+    <book index="32" chapters="15" hadiths="2" starthadith="1389" name="كتاب القراض">
+      <chapter index="1" hadiths="2" starthadith="1389" name="باب مَا جَاءَ فِي الْقِرَاضِ" />
+      <chapter index="2" hadiths="0" name="باب مَا يَجُوزُ فِي الْقِرَاضِ" />
+      <chapter index="3" hadiths="0" name="باب مَا لاَ يَجُوزُ فِي الْقِرَاضِ" />
+      <chapter index="4" hadiths="0" name="باب مَا يَجُوزُ مِنَ الشَّرْطِ فِي الْقِرَاضِ" />
+      <chapter index="5" hadiths="0" name="باب مَا لاَ يَجُوزُ مِنَ الشَّرْطِ فِي الْقِرَاضِ" />
+      <chapter index="6" hadiths="0" name="باب الْقِرَاضِ فِي الْعُرُوضِ" />
+      <chapter index="7" hadiths="0" name="باب الْكِرَاءِ فِي الْقِرَاضِ" />
+      <chapter index="8" hadiths="0" name="باب التَّعَدِّي فِي الْقِرَاضِ" />
+      <chapter index="9" hadiths="0" name="باب مَا يَجُوزُ مِنَ النَّفَقَةِ فِي الْقِرَاضِ" />
+      <chapter index="10" hadiths="0" name="باب مَا لاَ يَجُوزُ مِنَ النَّفَقَةِ فِي الْقِرَاضِ" />
+      <chapter index="11" hadiths="0" name="باب الدَّيْنِ فِي الْقِرَاضِ" />
+      <chapter index="12" hadiths="0" name="باب الْبِضَاعَةِ فِي الْقِرَاضِ" />
+      <chapter index="13" hadiths="0" name="باب السَّلَفِ فِي الْقِرَاضِ" />
+      <chapter index="14" hadiths="0" name="باب الْمُحَاسَبَةِ فِي الْقِرَاضِ" />
+      <chapter index="15" hadiths="0" name="باب جَامِعِ مَا جَاءَ فِي الْقِرَاضِ" />
+    </book>
+    <book index="33" chapters="2" hadiths="2" starthadith="1391" name="كتاب المساقاة">
+      <chapter index="1" hadiths="2" starthadith="1391" name="باب مَا جَاءَ فِي الْمُسَاقَاةِ" />
+      <chapter index="2" hadiths="0" name="باب الشَّرْطِ فِي الرَّقِيقِ فِي الْمُسَاقَاةِ" />
+    </book>
+    <book index="34" chapters="1" hadiths="5" starthadith="1393" name="كتاب كراء الأرض">
+      <chapter index="1" hadiths="5" starthadith="1393" name="باب مَا جَاءَ فِي كِرَاءِ الأَرْضِ" />
+    </book>
+    <book index="35" chapters="2" hadiths="4" starthadith="1398" name="كتاب الشفعة">
+      <chapter index="1" hadiths="3" starthadith="1398" name="باب مَا تَقَعُ فِيهِ الشُّفْعَةِ" />
+      <chapter index="2" hadiths="1" starthadith="1401" name="باب مَا لاَ تَقَعُ فِيهِ الشُّفْعَةُ" />
+    </book>
+    <book index="36" chapters="41" hadiths="56" starthadith="1402" name="كتاب الأقضية">
+      <chapter index="1" hadiths="2" starthadith="1402" name="باب التَّرْغِيبِ فِي الْقَضَاءِ بِالْحَقِّ" />
+      <chapter index="2" hadiths="3" starthadith="1404" name="باب مَا جَاءَ فِي الشَّهَادَاتِ" />
+      <chapter index="3" hadiths="2" starthadith="1407" name="باب الْقَضَاءِ فِي شَهَادَةِ الْمَحْدُودِ" />
+      <chapter index="4" hadiths="3" starthadith="1409" name="باب الْقَضَاءِ بِالْيَمِينِ مَعَ الشَّاهِدِ" />
+      <chapter index="5" hadiths="0" name="باب الْقَضَاءِ فِيمَنْ هَلَكَ وَلَهُ دَيْنٌ وَعَلَيْهِ دَيْنٌ لَهُ فِيهِ شَاهِدٌ وَاحِدٌ" />
+      <chapter index="6" hadiths="1" starthadith="1412" name="باب الْقَضَاءِ فِي الدَّعْوَى" />
+      <chapter index="7" hadiths="1" starthadith="1413" name="باب الْقَضَاءِ فِي شَهَادَةِ الصِّبْيَانِ" />
+      <chapter index="8" hadiths="2" starthadith="1414" name="باب مَا جَاءَ فِي الْحِنْثِ عَلَى مِنْبَرِ النَّبِيِّ صلى الله عليه وسلم" />
+      <chapter index="9" hadiths="1" starthadith="1416" name="باب جَامِعِ مَا جَاءَ فِي الْيَمِينِ عَلَى الْمِنْبَرِ" />
+      <chapter index="10" hadiths="1" starthadith="1417" name="باب مَا لاَ يَجُوزُ مِنْ غَلَقِ الرَّهْنِ" />
+      <chapter index="11" hadiths="0" name="باب الْقَضَاءِ فِي رَهْنِ الثَّمَرِ وَالْحَيَوَانِ" />
+      <chapter index="12" hadiths="0" name="باب الْقَضَاءِ فِي الرَّهْنِ مِنَ الْحَيَوَانِ" />
+      <chapter index="13" hadiths="0" name="باب الْقَضَاءِ فِي الرَّهْنِ يَكُونُ بَيْنَ الرَّجُلَيْنِ" />
+      <chapter index="14" hadiths="0" name="باب الْقَضَاءِ فِي جَامِعِ الرُّهُونِ" />
+      <chapter index="15" hadiths="0" name="باب الْقَضَاءِ فِي كِرَاءِ الدَّابَّةِ وَالتَّعَدِّي بِهَا" />
+      <chapter index="16" hadiths="1" starthadith="1418" name="باب الْقَضَاءِ فِي الْمُسْتَكْرَهَةِ مِنَ النِّسَاءِ" />
+      <chapter index="17" hadiths="0" name="باب الْقَضَاءِ فِي اسْتِهْلاَكِ الْحَيَوَانِ وَالطَّعَامِ وَغَيْرِهِ" />
+      <chapter index="18" hadiths="2" starthadith="1419" name="باب الْقَضَاءِ فِيمَنِ ارْتَدَّ عَنِ الإِسْلاَمِ" />
+      <chapter index="19" hadiths="2" starthadith="1421" name="باب الْقَضَاءِ فِيمَنْ وَجَدَ مَعَ امْرَأَتِهِ رَجُلاً" />
+      <chapter index="20" hadiths="1" starthadith="1423" name="باب الْقَضَاءِ فِي الْمَنْبُوذِ" />
+      <chapter index="21" hadiths="4" starthadith="1424" name="باب الْقَضَاءِ بِإِلْحَاقِ الْوَلَدِ بِأَبِيهِ" />
+      <chapter index="22" hadiths="0" name="باب الْقَضَاءِ فِي مِيرَاثِ الْوَلَدِ الْمُسْتَلْحَقِ" />
+      <chapter index="23" hadiths="2" starthadith="1428" name="باب الْقَضَاءِ فِي أُمَّهَاتِ الأَوْلاَدِ" />
+      <chapter index="24" hadiths="2" starthadith="1430" name="باب الْقَضَاءِ فِي عِمَارَةِ الْمَوَاتِ" />
+      <chapter index="25" hadiths="3" starthadith="1432" name="باب الْقَضَاءِ فِي الْمِيَاهِ" />
+      <chapter index="26" hadiths="4" starthadith="1435" name="باب الْقَضَاءِ فِي الْمِرْفَقِ" />
+      <chapter index="27" hadiths="1" starthadith="1439" name="باب الْقَضَاءِ فِي قَسْمِ الأَمْوَالِ" />
+      <chapter index="28" hadiths="2" starthadith="1440" name="باب الْقَضَاءِ فِي الضَّوَارِي وَالْحَرِيسَةِ" />
+      <chapter index="29" hadiths="0" name="باب الْقَضَاءِ فِيمَنْ أَصَابَ شَيْئًا مِنَ الْبَهَائِمِ" />
+      <chapter index="30" hadiths="0" name="باب الْقَضَاءِ فِيمَا يُعْطَى الْعُمَّالُ" />
+      <chapter index="31" hadiths="0" name="باب الْقَضَاءِ فِي الْحَمَالَةِ وَالْحَوْلِ" />
+      <chapter index="32" hadiths="0" name="باب الْقَضَاءِ فِيمَنِ ابْتَاعَ ثَوْبًا وَبِهِ عَيْبٌ" />
+      <chapter index="33" hadiths="3" starthadith="1442" name="باب مَا لاَ يَجُوزُ مِنَ النَّحْلِ" />
+      <chapter index="34" hadiths="0" name="باب مَا لاَ يَجُوزُ مِنَ الْعَطِيَّةِ" />
+      <chapter index="35" hadiths="1" starthadith="1445" name="باب الْقَضَاءِ فِي الْهِبَةِ" />
+      <chapter index="36" hadiths="0" name="باب الاِعْتِصَارِ فِي الصَّدَقَةِ" />
+      <chapter index="37" hadiths="3" starthadith="1446" name="باب الْقَضَاءِ فِي الْعُمْرَى" />
+      <chapter index="38" hadiths="3" starthadith="1449" name="باب الْقَضَاءِ فِي اللُّقَطَةِ" />
+      <chapter index="39" hadiths="0" name="باب الْقَضَاءِ فِي اسْتِهْلاَكِ الْعَبْدِ اللُّقَطَةَ" />
+      <chapter index="40" hadiths="3" starthadith="1452" name="باب الْقَضَاءِ فِي الضَّوَالِّ" />
+      <chapter index="41" hadiths="3" starthadith="1455" name="باب صَدَقَةِ الْحَىِّ عَنِ الْمَيِّتِ‏.‏" />
+    </book>
+    <book index="37" chapters="10" hadiths="9" starthadith="1458" name="كتاب الوصية">
+      <chapter index="1" hadiths="1" starthadith="1458" name="باب الأَمْرِ بِالْوَصِيَّةِ" />
+      <chapter index="2" hadiths="2" starthadith="1459" name="باب جَوَازِ وَصِيَّةِ الصَّغِيرِ وَالضَّعِيفِ وَالْمُصَابِ وَالسَّفِيهِ" />
+      <chapter index="3" hadiths="1" starthadith="1461" name="باب الْوَصِيَّةِ فِي الثُّلُثِ لاَ تَتَعَدَّى" />
+      <chapter index="4" hadiths="0" name="باب أَمْرِ الْحَامِلِ وَالْمَرِيضِ وَالَّذِي يَحْضُرُ الْقِتَالَ فِي أَمْوَالِهِمْ" />
+      <chapter index="5" hadiths="0" name="باب الْوَصِيَّةِ لِلْوَارِثِ وَالْحِيَازَةِ" />
+      <chapter index="6" hadiths="2" starthadith="1462" name="باب مَا جَاءَ فِي الْمُؤَنَّثِ مِنَ الرِّجَالِ وَمَنْ أَحْقُّ بِالْوَلَدِ" />
+      <chapter index="7" hadiths="0" name="باب الْعَيْبِ فِي السِّلْعَةِ وَضَمَانِهَا" />
+      <chapter index="8" hadiths="2" starthadith="1464" name="باب جَامِعِ الْقَضَاءِ وَكَرَاهِيَتِهِ" />
+      <chapter index="9" hadiths="0" name="باب مَا جَاءَ فِيمَا أَفْسَدَ الْعَبِيدُ أَوْ جَرَحُوا" />
+      <chapter index="10" hadiths="1" starthadith="1466" name="باب مَا يَجُوزُ مِنَ النُّحْلِ" />
+    </book>
+    <book index="38" chapters="13" hadiths="25" starthadith="1467" name="كتاب العتق والولاء">
+      <chapter index="1" hadiths="1" starthadith="1467" name="باب مَنْ أَعْتَقَ شِرْكًا لَهُ فِي مَمْلُوكٍ" />
+      <chapter index="2" hadiths="0" name="باب الشَّرْطِ فِي الْعِتْقِ" />
+      <chapter index="3" hadiths="2" starthadith="1468" name="باب مَنْ أَعْتَقَ رَقِيقًا لاَ يَمْلِكُ مَالاً غَيْرَهُمْ" />
+      <chapter index="4" hadiths="1" starthadith="1470" name="باب الْقَضَاءِ فِي مَالِ الْعَبْدِ إِذَا عَتَقَ" />
+      <chapter index="5" hadiths="2" starthadith="1471" name="باب عِتْقِ أُمَّهَاتِ الأَوْلاَدِ وَجَامِعِ الْقَضَاءِ فِي الْعَتَاقَةِ" />
+      <chapter index="6" hadiths="4" starthadith="1473" name="باب مَا يَجُوزُ مِنَ الْعِتْقِ فِي الرِّقَابِ الْوَاجِبَةِ" />
+      <chapter index="7" hadiths="1" starthadith="1477" name="باب مَا لاَ يَجُوزُ مِنَ الْعِتْقِ فِي الرِّقَابِ الْوَاجِبَةِ" />
+      <chapter index="8" hadiths="2" starthadith="1478" name="باب عِتْقِ الْحَىِّ عَنِ الْمَيِّتِ" />
+      <chapter index="9" hadiths="2" starthadith="1480" name="باب فَضْلِ عِتْقِ الرِّقَابِ وَعِتْقِ الزَّانِيَةِ وَابْنِ الزِّنَا" />
+      <chapter index="10" hadiths="4" starthadith="1482" name="باب مَصِيرِ الْوَلاَءِ لِمَنْ أَعْتَقَ" />
+      <chapter index="11" hadiths="2" starthadith="1486" name="باب جَرِّ الْعَبْدِ الْوَلاَءَ إِذَا أُعْتِقَ" />
+      <chapter index="12" hadiths="3" starthadith="1488" name="باب مِيرَاثِ الْوَلاَءِ" />
+      <chapter index="13" hadiths="1" starthadith="1491" name="باب مِيرَاثِ السَّائِبَةِ وَوَلاَءِ مَنْ أَعْتَقَ الْيَهُودِيُّ وَالنَّصْرَانِيُّ" />
+    </book>
+    <book index="39" chapters="13" hadiths="8" starthadith="1492" name="كتاب المكاتب">
+      <chapter index="1" hadiths="4" starthadith="1492" name="باب الْقَضَاءِ فِي الْمُكَاتَبِ" />
+      <chapter index="2" hadiths="0" name="باب الْحَمَالَةِ فِي الْكِتَابَةِ" />
+      <chapter index="3" hadiths="1" starthadith="1496" name="باب الْقَطَاعَةِ فِي الْكِتَابَةِ" />
+      <chapter index="4" hadiths="0" name="باب جِرَاحِ الْمُكَاتَبِ" />
+      <chapter index="5" hadiths="0" name="باب بَيْعِ الْمُكَاتَبِ" />
+      <chapter index="6" hadiths="1" starthadith="1497" name="باب سَعْىِ الْمُكَاتَبِ" />
+      <chapter index="7" hadiths="1" starthadith="1498" name="باب عِتْقِ الْمُكَاتَبِ إِذَا أَدَّى مَا عَلَيْهِ قَبْلَ مَحِلِّهُ" />
+      <chapter index="8" hadiths="1" starthadith="1499" name="باب مِيرَاثِ الْمُكَاتَبِ إِذَا عَتَقَ" />
+      <chapter index="9" hadiths="0" name="باب الشَّرْطِ فِي الْمُكَاتَبِ" />
+      <chapter index="10" hadiths="0" name="باب وَلاَءِ الْمُكَاتَبِ إِذَا أُعْتِقَ" />
+      <chapter index="11" hadiths="0" name="باب مَا لاَ يَجُوزُ مِنْ عِتْقِ الْمُكَاتَبِ" />
+      <chapter index="12" hadiths="0" name="باب مَا جَاءَ فِي عِتْقِ الْمُكَاتَبِ وَأُمِّ وَلَدِهِ" />
+      <chapter index="13" hadiths="0" name="باب الْوَصِيَّةِ فِي الْمُكَاتَبِ" />
+    </book>
+    <book index="40" chapters="7" hadiths="3" starthadith="1500" name="كتاب المدبر">
+      <chapter index="1" hadiths="0" name="باب الْقَضَاءِ فِي الْمُدَبَّرِ" />
+      <chapter index="2" hadiths="0" name="باب جَامِعِ مَا فِي التَّدْبِيرِ" />
+      <chapter index="3" hadiths="0" name="باب الْوَصِيَّةِ فِي التَّدْبِيرِ" />
+      <chapter index="4" hadiths="2" starthadith="1500" name="باب مَسِّ الرَّجُلِ وَلِيدَتَهُ إِذَا دَبَّرَهَا" />
+      <chapter index="5" hadiths="0" name="باب بَيْعِ الْمُدَبَّرِ" />
+      <chapter index="6" hadiths="1" starthadith="1502" name="باب جِرَاحِ الْمُدَبَّرِ" />
+      <chapter index="7" hadiths="0" name="باب مَا جَاءَ فِي جِرَاحِ أُمِّ الْوَلَدِ" />
+    </book>
+    <book index="41" chapters="11" hadiths="37" starthadith="1503" name="كتاب الحدود">
+      <chapter index="1" hadiths="11" starthadith="1503" name="باب مَا جَاءَ فِي الرَّجْمِ" />
+      <chapter index="2" hadiths="2" starthadith="1514" name="باب مَا جَاءَ فِيمَنِ اعْتَرَفَ عَلَى نَفْسِهِ بِالزِّنَا" />
+      <chapter index="3" hadiths="3" starthadith="1516" name="باب جَامِعِ مَا جَاءَ فِي حَدِّ الزِّنَا" />
+      <chapter index="4" hadiths="0" name="باب مَا جَاءَ فِي الْمُغْتَصَبَةِ" />
+      <chapter index="5" hadiths="4" starthadith="1519" name="باب الْحَدِّ فِي الْقَذْفِ وَالنَّفْىِ وَالتَّعْرِيضِ" />
+      <chapter index="6" hadiths="1" starthadith="1523" name="باب مَا لاَ حَدَّ فِيهِ" />
+      <chapter index="7" hadiths="5" starthadith="1524" name="باب مَا يَجِبُ فِيهِ الْقَطْعُ" />
+      <chapter index="8" hadiths="3" starthadith="1529" name="باب مَا جَاءَ فِي قَطْعِ الآبِقِ وَالسَّارِقِ" />
+      <chapter index="9" hadiths="2" starthadith="1532" name="باب تَرْكِ الشَّفَاعَةِ لِلسَّارِقِ إِذَا بَلَغَ السُّلْطَانَ" />
+      <chapter index="10" hadiths="2" starthadith="1534" name="باب جَامِعِ الْقَطْعِ" />
+      <chapter index="11" hadiths="4" starthadith="1536" name="باب مَا لاَ قَطْعَ فِيهِ" />
+    </book>
+    <book index="42" chapters="5" hadiths="15" starthadith="1540" name="كتاب الأشربة">
+      <chapter index="1" hadiths="4" starthadith="1540" name="باب الْحَدِّ فِي الْخَمْرِ" />
+      <chapter index="2" hadiths="2" starthadith="1544" name="باب مَا يُنْهَى أَنْ يُنْبَذَ فِيهِ" />
+      <chapter index="3" hadiths="2" starthadith="1546" name="باب مَا يُكْرَهُ أَنْ يُنْبَذَ جَمِيعًا" />
+      <chapter index="4" hadiths="3" starthadith="1548" name="باب تَحْرِيمِ الْخَمْرِ" />
+      <chapter index="5" hadiths="4" starthadith="1551" name="باب جَامِعِ تَحْرِيمِ الْخَمْرِ" />
+    </book>
+    <book index="43" chapters="24" hadiths="44" starthadith="1555" name="كتاب العقول">
+      <chapter index="1" hadiths="1" starthadith="1555" name="باب ذِكْرِ الْعُقُولِ" />
+      <chapter index="2" hadiths="1" starthadith="1556" name="باب الْعَمَلِ فِي الدِّيَةِ" />
+      <chapter index="3" hadiths="2" starthadith="1557" name="باب مَا جَاءَ فِي دِيَةِ الْعَمْدِ إِذَا قُبِلَتْ وَجِنَايَةِ الْمُجْنُونِ" />
+      <chapter index="4" hadiths="2" starthadith="1559" name="باب دِيَةِ الْخَطَإِ فِي الْقَتْلِ" />
+      <chapter index="5" hadiths="0" name="باب عَقْلِ الْجِرَاحِ فِي الْخَطَإِ" />
+      <chapter index="6" hadiths="3" starthadith="1561" name="باب عَقْلِ الْمَرْأَةِ" />
+      <chapter index="7" hadiths="3" starthadith="1564" name="باب عَقْلِ الْجَنِينِ" />
+      <chapter index="8" hadiths="2" starthadith="1567" name="باب مَا فِيهِ الدِّيَةُ كَامِلَةً" />
+      <chapter index="9" hadiths="1" starthadith="1569" name="باب مَا جَاءَ فِي عَقْلِ الْعَيْنِ إِذَا ذَهَبَ بَصَرُهَا" />
+      <chapter index="10" hadiths="4" starthadith="1570" name="باب مَا جَاءَ فِي عَقْلِ الشِّجَاجِ" />
+      <chapter index="11" hadiths="1" starthadith="1574" name="باب مَا جَاءَ فِي عَقْلِ الأَصَابِعِ" />
+      <chapter index="12" hadiths="3" starthadith="1575" name="باب جَامِعِ عَقْلِ الأَسْنَانِ" />
+      <chapter index="13" hadiths="2" starthadith="1578" name="باب الْعَمَلِ فِي عَقْلِ الأَسْنَانِ" />
+      <chapter index="14" hadiths="2" starthadith="1580" name="باب مَا جَاءَ فِي دِيَةِ جِرَاحِ الْعَبْدِ" />
+      <chapter index="15" hadiths="2" starthadith="1582" name="باب مَا جَاءَ فِي دِيَةِ أَهْلِ الذِّمَّةِ" />
+      <chapter index="16" hadiths="4" starthadith="1584" name="باب مَا يُوجِبُ الْعَقْلَ عَلَى الرَّجُلِ فِي خَاصَّةِ مَالِهِ" />
+      <chapter index="17" hadiths="4" starthadith="1588" name="باب مَا جَاءَ فِي مِيرَاثِ الْعَقْلِ وَالتَّغْلِيظِ فِيهِ" />
+      <chapter index="18" hadiths="1" starthadith="1592" name="باب جَامِعِ الْعَقْلِ" />
+      <chapter index="19" hadiths="2" starthadith="1593" name="باب مَا جَاءَ فِي الْغِيلَةِ وَالسِّحْرِ" />
+      <chapter index="20" hadiths="1" starthadith="1595" name="باب مَا يَجِبُ فِي الْعَمْدِ" />
+      <chapter index="21" hadiths="1" starthadith="1596" name="باب الْقِصَاصِ فِي الْقَتْلِ" />
+      <chapter index="22" hadiths="0" name="باب الْعَفْوِ فِي قَتْلِ الْعَمْدِ" />
+      <chapter index="23" hadiths="1" starthadith="1597" name="باب الْقِصَاصِ فِي الْجِرَاحِ" />
+      <chapter index="24" hadiths="1" starthadith="1598" name="باب مَا جَاءَ فِي دِيَةِ السَّائِبَةِ وَجِنَايَتَهِ" />
+    </book>
+    <book index="44" chapters="5" hadiths="2" starthadith="1599" name="كتاب القسامة">
+      <chapter index="1" hadiths="2" starthadith="1599" name="باب تَبْدِئَةِ أَهْلِ الدَّمِ فِي الْقَسَامَةِ" />
+      <chapter index="2" hadiths="0" name="باب مَنْ تَجُوزُ قَسَامَتُهُ فِي الْعَمْدِ مِنْ وُلاَةِ الدَّمِ" />
+      <chapter index="3" hadiths="0" name="باب الْقَسَامَةِ فِي قَتْلِ الْخَطَإِ" />
+      <chapter index="4" hadiths="0" name="باب الْمِيرَاثِ فِي الْقَسَامَةِ" />
+      <chapter index="5" hadiths="0" name="باب الْقَسَامَةِ فِي الْعَبِيدِ" />
+    </book>
+    <book index="45" chapters="7" hadiths="25" starthadith="1601" name="كتاب الجامع">
+      <chapter index="1" hadiths="2" starthadith="1601" name="باب الدُّعَاءِ لِلْمَدِينَةِ وَأَهْلِهَا" />
+      <chapter index="2" hadiths="7" starthadith="1603" name="باب مَا جَاءَ فِي سُكْنَى الْمَدِينَةِ وَالْخُرُوجِ مِنْهَا" />
+      <chapter index="3" hadiths="4" starthadith="1610" name="باب مَا جَاءَ فِي تَحْرِيمِ الْمَدِينَةِ" />
+      <chapter index="4" hadiths="3" starthadith="1614" name="باب مَا جَاءَ فِي وَبَاءِ الْمَدِينَةِ" />
+      <chapter index="5" hadiths="2" starthadith="1617" name="باب مَا جَاءَ فِي إِجْلاَءِ الْيَهُودِ مِنَ الْمَدِينَةِ" />
+      <chapter index="6" hadiths="2" starthadith="1619" name="باب مَا جَاءَ فِي أَمْرِ الْمَدِينَةِ" />
+      <chapter index="7" hadiths="5" starthadith="1621" name="باب مَا جَاءَ فِي الطَّاعُونِ" />
+    </book>
+    <book index="46" chapters="2" hadiths="10" starthadith="1626" name="كتاب القدر">
+      <chapter index="1" hadiths="6" starthadith="1626" name="باب النَّهْىِ عَنِ الْقَوْلِ، بِالْقَدَرِ" />
+      <chapter index="2" hadiths="4" starthadith="1632" name="باب جَامِعِ مَا جَاءَ فِي أَهْلِ الْقَدَرِ" />
+    </book>
+    <book index="47" chapters="4" hadiths="18" starthadith="1636" name="كتاب حسن الخلق">
+      <chapter index="1" hadiths="8" starthadith="1636" name="باب مَا جَاءَ فِي حُسْنِ الْخُلُقِ" />
+      <chapter index="2" hadiths="2" starthadith="1644" name="باب مَا جَاءَ فِي الْحَيَاءِ" />
+      <chapter index="3" hadiths="2" starthadith="1646" name="باب مَا جَاءَ فِي الْغَضَبِ" />
+      <chapter index="4" hadiths="6" starthadith="1648" name="باب مَا جَاءَ فِي الْمُهَاجَرَةِ" />
+    </book>
+    <book index="48" chapters="8" hadiths="20" starthadith="1654" name="كتاب اللباس">
+      <chapter index="1" hadiths="3" starthadith="1654" name="باب مَا جَاءَ فِي لُبْسِ الثِّيَابِ لِلْجَمَالِ بِهَا" />
+      <chapter index="2" hadiths="2" starthadith="1657" name="باب مَا جَاءَ فِي لُبْسِ الثِّيَابِ الْمُصْبَغَةِ وَالذَّهَبِ" />
+      <chapter index="3" hadiths="1" starthadith="1659" name="باب مَا جَاءَ فِي لُبْسِ الْخَزِّ" />
+      <chapter index="4" hadiths="3" starthadith="1660" name="باب مَا يُكْرَهُ لِلنِّسَاءِ لُبْسُهُ مِنَ الثِّيَابِ" />
+      <chapter index="5" hadiths="4" starthadith="1663" name="باب مَا جَاءَ فِي إِسْبَالِ الرَّجُلِ ثَوْبَهُ" />
+      <chapter index="6" hadiths="1" starthadith="1667" name="باب مَا جَاءَ فِي إِسْبَالِ الْمَرْأَةِ ثَوْبَهَا" />
+      <chapter index="7" hadiths="3" starthadith="1668" name="باب مَا جَاءَ فِي الاِنْتِعَالِ" />
+      <chapter index="8" hadiths="3" starthadith="1671" name="باب مَا جَاءَ فِي لُبْسِ الثِّيَابِ" />
+    </book>
+    <book index="49" chapters="13" hadiths="40" starthadith="1674" name="كتاب صفة النبى صلى الله عليه وسلم">
+      <chapter index="1" hadiths="1" starthadith="1674" name="باب مَا جَاءَ فِي صِفَةِ النَّبِيِّ صلى الله عليه وسلم" />
+      <chapter index="2" hadiths="1" starthadith="1675" name="باب مَا جَاءَ فِي صِفَةِ عِيسَى ابْنِ مَرْيَمَ عَلَيْهِ السَّلاَمُ وَالدَّجَّالِ" />
+      <chapter index="3" hadiths="2" starthadith="1676" name="باب مَا جَاءَ فِي السُّنَّةِ فِي الْفِطْرَةِ" />
+      <chapter index="4" hadiths="2" starthadith="1678" name="باب النَّهْىِ عَنِ الأَكْلِ بِالشِّمَالِ" />
+      <chapter index="5" hadiths="2" starthadith="1680" name="باب مَا جَاءَ فِي الْمَسَاكِينِ" />
+      <chapter index="6" hadiths="2" starthadith="1682" name="باب مَا جَاءَ فِي مِعَى الْكَافِرِ" />
+      <chapter index="7" hadiths="2" starthadith="1684" name="باب النَّهْىِ عَنِ الشَّرَابِ، فِي آنِيَةِ الْفِضَّةِ وَالنَّفْخِ فِي الشَّرَابِ" />
+      <chapter index="8" hadiths="4" starthadith="1686" name="باب مَا جَاءَ فِي شُرْبِ الرَّجُلِ وَهُوَ قَائِمٌ" />
+      <chapter index="9" hadiths="2" starthadith="1690" name="باب السُّنَّةِ فِي الشُّرْبِ وَمُنَاوَلَتِهِ عَنِ الْيَمِينِ" />
+      <chapter index="10" hadiths="17" starthadith="1692" name="باب جَامِعِ مَا جَاءَ فِي الطَّعَامِ وَالشَّرَابِ" />
+      <chapter index="11" hadiths="2" starthadith="1709" name="باب مَا جَاءَ فِي أَكْلِ اللَّحْمِ" />
+      <chapter index="12" hadiths="2" starthadith="1711" name="باب مَا جَاءَ فِي لُبْسِ الْخَاتَمِ" />
+      <chapter index="13" hadiths="1" starthadith="1713" name="باب مَا جَاءَ فِي نَزْعِ الْمَعَالِيقِ وَالْجَرَسِ مِنَ الْعُنُقِ" />
+    </book>
+    <book index="50" chapters="7" hadiths="19" starthadith="1714" name="كتاب العين">
+      <chapter index="1" hadiths="2" starthadith="1714" name="باب الْوُضُوءِ مِنَ الْعَيْنِ" />
+      <chapter index="2" hadiths="2" starthadith="1716" name="باب الرُّقْيَةِ مِنَ الْعَيْنِ" />
+      <chapter index="3" hadiths="4" starthadith="1718" name="باب مَا جَاءَ فِي أَجْرِ الْمَرِيضِ" />
+      <chapter index="4" hadiths="3" starthadith="1722" name="باب التَّعَوُّذِ وَالرُّقْيَةِ فِي الْمَرَضِ" />
+      <chapter index="5" hadiths="3" starthadith="1725" name="باب تَعَالُجِ الْمَرِيضِ" />
+      <chapter index="6" hadiths="3" starthadith="1728" name="باب الْغَسْلِ بِالْمَاءِ مِنَ الْحُمَّى" />
+      <chapter index="7" hadiths="2" starthadith="1731" name="باب عِيَادَةِ الْمَرِيضِ وَالطِّيَرَةِ" />
+    </book>
+    <book index="51" chapters="5" hadiths="17" starthadith="1733" name="كتاب الشعر">
+      <chapter index="1" hadiths="5" starthadith="1733" name="باب السُّنَّةِ فِي الشَّعْرِ" />
+      <chapter index="2" hadiths="2" starthadith="1738" name="باب إِصْلاَحِ الشَّعْرِ" />
+      <chapter index="3" hadiths="1" starthadith="1740" name="باب مَا جَاءَ فِي صَبْغِ الشَّعْرِ" />
+      <chapter index="4" hadiths="4" starthadith="1741" name="باب مَا يُؤْمَرُ بِهِ مِنَ التَّعَوُّذِ" />
+      <chapter index="5" hadiths="5" starthadith="1745" name="باب مَا جَاءَ فِي الْمُتَحَابِّينِ فِي اللَّهِ" />
+    </book>
+    <book index="52" chapters="2" hadiths="9" starthadith="1750" name="كتاب الرؤيا">
+      <chapter index="1" hadiths="6" starthadith="1750" name="باب مَا جَاءَ فِي الرُّؤْيَا" />
+      <chapter index="2" hadiths="3" starthadith="1756" name="باب مَا جَاءَ فِي النَّرْدِ" />
+    </book>
+    <book index="53" chapters="3" hadiths="7" starthadith="1759" name="كتاب السلام">
+      <chapter index="1" hadiths="2" starthadith="1759" name="باب الْعَمَلِ فِي السَّلاَمِ" />
+      <chapter index="2" hadiths="1" starthadith="1761" name="باب مَا جَاءَ فِي السَّلاَمِ عَلَى الْيَهُودِيِّ وَالنَّصْرَانِيِّ" />
+      <chapter index="3" hadiths="4" starthadith="1762" name="باب جَامِعِ السَّلاَمِ" />
+    </book>
+    <book index="54" chapters="17" hadiths="45" starthadith="1766" name="كتاب الاستئذان">
+      <chapter index="1" hadiths="3" starthadith="1766" name="باب الاِسْتِئْذَانِ" />
+      <chapter index="2" hadiths="2" starthadith="1769" name="باب التَّشْمِيتِ فِي الْعُطَاسِ" />
+      <chapter index="3" hadiths="3" starthadith="1771" name="باب مَا جَاءَ فِي الصُّوَرِ وَالتَّمَاثِيلِ" />
+      <chapter index="4" hadiths="3" starthadith="1774" name="باب مَا جَاءَ فِي أَكْلِ الضَّبِّ" />
+      <chapter index="5" hadiths="3" starthadith="1777" name="باب مَا جَاءَ فِي أَمْرِ الْكِلاَبِ" />
+      <chapter index="6" hadiths="4" starthadith="1780" name="باب مَا جَاءَ فِي أَمْرِ الْغَنَمِ" />
+      <chapter index="7" hadiths="2" starthadith="1784" name="باب مَا جَاءَ فِي الْفَأْرَةِ تَقَعُ فِي السَّمْنِ وَالْبَدْءِ بِالأَكْلِ قَبْلَ الصَّلاَة" />
+      <chapter index="8" hadiths="3" starthadith="1786" name="باب مَا يُتَّقَى مِنَ الشُّؤْمِ" />
+      <chapter index="9" hadiths="2" starthadith="1789" name="باب مَا يُكْرَهُ مِنَ الأَسْمَاءِ" />
+      <chapter index="10" hadiths="3" starthadith="1791" name="باب مَا جَاءَ فِي الْحِجَامَةِ وَأُجْرَةِ الْحَجَّامِ" />
+      <chapter index="11" hadiths="2" starthadith="1794" name="باب مَا جَاءَ فِي الْمَشْرِقِ" />
+      <chapter index="12" hadiths="3" starthadith="1796" name="باب مَا جَاءَ فِي قَتْلِ الْحَيَّاتِ وَمَا يُقَالُ فِي ذَلِكَ" />
+      <chapter index="13" hadiths="2" starthadith="1799" name="باب مَا يُؤْمَرُ بِهِ مِنَ الْكَلاَمِ فِي السَّفَرِ" />
+      <chapter index="14" hadiths="3" starthadith="1801" name="باب مَا جَاءَ فِي الْوِحْدَةِ فِي السَّفَرِ لِلرِّجَالِ وَالنِّسَاءِ" />
+      <chapter index="15" hadiths="2" starthadith="1804" name="باب مَا يُؤْمَرُ بِهِ مِنَ الْعَمَلِ فِي السَّفَرِ" />
+      <chapter index="16" hadiths="3" starthadith="1806" name="باب الأَمْرِ بِالرِّفْقِ بِالْمَمْلُوكِ" />
+      <chapter index="17" hadiths="2" starthadith="1809" name="باب مَا جَاءَ فِي الْمَمْلُوكِ وَهِبَتِهِ" />
+    </book>
+    <book index="55" chapters="1" hadiths="3" starthadith="1811" name="كتاب البيعة">
+      <chapter index="1" hadiths="3" starthadith="1811" name="باب مَا جَاءَ فِي الْبَيْعَةِ" />
+    </book>
+    <book index="56" chapters="12" hadiths="28" starthadith="1814" name="كتاب الكلام">
+      <chapter index="1" hadiths="4" starthadith="1814" name="باب مَا يُكْرَهُ مِنَ الْكَلاَمِ" />
+      <chapter index="2" hadiths="2" starthadith="1818" name="باب مَا يُؤْمَرُ بِهِ مِنَ التَّحَفُّظِ فِي الْكَلاَمِ" />
+      <chapter index="3" hadiths="3" starthadith="1820" name="باب مَا يُكْرَهُ مِنَ الْكَلاَمِ بِغَيْرِ ذِكْرِ اللَّهِ" />
+      <chapter index="4" hadiths="1" starthadith="1823" name="باب مَا جَاءَ فِي الْغِيْبَةِ" />
+      <chapter index="5" hadiths="2" starthadith="1824" name="باب مَا جَاءَ فِيمَا يُخَافُ مِنَ اللِّسَانِ" />
+      <chapter index="6" hadiths="2" starthadith="1826" name="باب مَا جَاءَ فِي مُنَاجَاةِ اثْنَيْنِ دُونَ وَاحِدٍ" />
+      <chapter index="7" hadiths="5" starthadith="1828" name="باب مَا جَاءَ فِي الصِّدْقِ وَالْكَذِبِ" />
+      <chapter index="8" hadiths="2" starthadith="1833" name="باب مَا جَاءَ فِي إِضَاعَةِ الْمَالِ وَذِي الْوَجْهَيْنِ" />
+      <chapter index="9" hadiths="2" starthadith="1835" name="باب مَا جَاءَ فِي عَذَابِ الْعَامَّةِ بِعَمَلِ الْخَاصَّةِ" />
+      <chapter index="10" hadiths="2" starthadith="1837" name="باب مَا جَاءَ فِي التُّقَى" />
+      <chapter index="11" hadiths="1" starthadith="1839" name="باب الْقَوْلِ إِذَا سَمِعْتَ الرَّعْدَ" />
+      <chapter index="12" hadiths="2" starthadith="1840" name="باب مَا جَاءَ فِي تَرِكَةِ النَّبِيِّ صلى الله عليه وسلم" />
+    </book>
+    <book index="57" chapters="1" hadiths="2" starthadith="1842" name="كتاب جهنم">
+      <chapter index="1" hadiths="2" starthadith="1842" name="باب مَا جَاءَ فِي صِفَةِ جَهَنَّمَ" />
+    </book>
+    <book index="58" chapters="3" hadiths="15" starthadith="1844" name="كتاب الصدقة">
+      <chapter index="1" hadiths="6" starthadith="1844" name="باب التَّرْغِيبِ فِي الصَّدَقَةِ" />
+      <chapter index="2" hadiths="6" starthadith="1850" name="باب مَا جَاءَ فِي التَّعَفُّفِ عَنِ الْمَسْأَلَةِ" />
+      <chapter index="3" hadiths="3" starthadith="1856" name="باب مَا يُكْرَهُ مِنَ الصَّدَقَةِ" />
+    </book>
+    <book index="59" chapters="1" hadiths="1" starthadith="1859" name="كتاب العلم">
+      <chapter index="1" hadiths="1" starthadith="1859" name="باب مَا جَاءَ فِي طَلَبِ الْعِلْمِ" />
+    </book>
+    <book index="60" chapters="1" hadiths="1" starthadith="1860" name="كتاب دعوة المظلوم">
+      <chapter index="1" hadiths="1" starthadith="1860" name="باب مَا يُتَّقَى مِنْ دَعْوَةِ الْمَظْلُومِ" />
+    </book>
+    <book index="61" chapters="1" hadiths="1" starthadith="1861" name="كتاب أسماء النبى صلى الله عليه وسلم">
+      <chapter index="1" hadiths="1" starthadith="1861" name="باب أَسْمَاءِ النَّبِيِّ صلى الله عليه وسلم" />
+    </book>
+  </books>
+</collection>

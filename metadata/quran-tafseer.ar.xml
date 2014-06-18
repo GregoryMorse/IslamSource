@@ -1,0 +1,9 @@
+﻿<!--
+
+FOR /L %%A IN (1,1,114) DO e:\wsusoffline\bin\wget.exe http://www.searchtruth.com/chapter_display.php?chapter=%%A^&translator=27 && rename "chapter_display.php@chapter=%%A&translator=27" "chapter_display.php@chapter=%%A&translator=27.html"
+
+var xmlhttp = new XMLHttpRequest(); xmlhttp.open("GET","http://www.searchtruth.com/chapter_display.php?chapter=" + sura.toString() + "&translator=27", false); xmlhttp.send(); window.document.open(); window.document.write(xmlhttp.responseText); window.document.close();
+var str = ""; for (var sura = 1; sura <= 114; sura++) { var next = window.open("file:///C:/Users/Gregory/Downloads/tafseer/chapter_display.php@chapter=" + sura.toString() + "&translator=27.html"); do {} while (next.document.readyState != "complete"); str += "\t<sura index=\"" + sura.toString() + "\">\r\n"; var ar = next.document.getElementsByClassName("QuranDataArabicSimple"); var num = next.document.getElementsByClassName("QuranDataNumber"); for (var ct = 0; ct < ar.length; ct++) { str += "\t\t<aya index=\"" + num[ct].innerText.trim() + "\" text=\"" + ar[ct].innerText + "\" />\r\n"; } str += "\t</sura>\r\n"; next.close(); } console.log(str);
+-->
+<qurantafseer name="Jalal ad-Din">
+</qurantafseer>
