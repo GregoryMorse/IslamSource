@@ -1,0 +1,65 @@
+<!ELEMENT pages (page+|languages)>
+<!ELEMENT languages (language+)>
+<!ELEMENT language EMPTY>
+<!ELEMENT page ((child|frame|edit|radio|ipaddr|static|image|email|download)*|addlist?)>
+<!ELEMENT frame (edit|radio|ipaddr|static|image|email|download)*>
+<!ELEMENT list (edit|radio|ipaddr|static)*>
+<!ELEMENT child EMPTY>
+<!ELEMENT edit EMPTY>
+<!ELEMENT radio (option+)>
+<!ELEMENT ipaddr EMPTY>
+<!ELEMENT option EMPTY>
+<!ELEMENT static EMPTY>
+<!ELEMENT addlist EMPTY>
+<!ELEMENT image EMPTY>
+<!ELEMENT email EMPTY>
+<!ELEMENT download EMPTY>
+<!ATTLIST page name ID #REQUIRED>
+<!ATTLIST page description CDATA #REQUIRED>
+<!ATTLIST page summary CDATA #IMPLIED>
+<!ATTLIST page level (normal|advanced|expert|hidden) "normal">
+<!ATTLIST page icon CDATA #IMPLIED>
+<!ATTLIST page usersort (true|false) "false">
+<!ATTLIST child name IDREF #REQUIRED>
+<!ATTLIST child mandatory (true|false) "false">
+<!ATTLIST child maxinstances CDATA #IMPLIED>
+<!ATTLIST child xmlvalue CDATA #IMPLIED>
+<!ATTLIST frame name CDATA #REQUIRED>
+<!ATTLIST frame description CDATA #REQUIRED>
+<!ATTLIST list name CDATA #REQUIRED>
+<!ATTLIST list description CDATA #REQUIRED>
+<!ATTLIST edit name CDATA #REQUIRED>
+<!ATTLIST edit description CDATA #REQUIRED>
+<!ATTLIST edit level (normal|advanced|expert|hidden) "normal">
+<!ATTLIST edit rows CDATA "1">
+<!ATTLIST edit type (text|password|version|filename|filepath|dirpath|cmdline|dns|dnsip|dnsipsubnet|url|regkey|ininame|dialname|windname|md5|int8|uint8|int16|uint16|int32|uint32|int64|uint64|single|double) "text">
+<!ATTLIST edit nummin CDATA #IMPLIED>
+<!ATTLIST edit nummax CDATA #IMPLIED>
+<!ATTLIST edit defaultvalue CDATA #IMPLIED>
+<!ATTLIST edit pagename (true|false) "false">
+<!ATTLIST edit readonly (true|false) "false">
+<!ATTLIST radio name CDATA #REQUIRED>
+<!ATTLIST radio description CDATA #REQUIRED>
+<!ATTLIST radio level (normal|advanced|expert|hidden) "normal">
+<!ATTLIST option name CDATA #REQUIRED>
+<!ATTLIST option defaultvalue (true|false) "false">
+<!ATTLIST option nextbelow (true|false) "false">
+<!ATTLIST ipaddr name CDATA #REQUIRED>
+<!ATTLIST ipaddr description CDATA #REQUIRED>
+<!ATTLIST ipaddr level (normal|advanced|expert|hidden) "normal">
+<!ATTLIST ipaddr rows CDATA "1">
+<!ATTLIST ipaddr defaultvalue CDATA "0.0.0.0">
+<!ATTLIST static name CDATA #REQUIRED>
+<!ATTLIST static description CDATA #REQUIRED>
+<!ATTLIST image name CDATA #REQUIRED>
+<!ATTLIST image text CDATA #REQUIRED>
+<!ATTLIST image source CDATA #REQUIRED>
+<!ATTLIST image maxwidth CDATA #IMPLIED>
+<!ATTLIST image maxheight CDATA #IMPLIED>
+<!ATTLIST image usethumbonmax (true|false) "false">
+<!ATTLIST download name CDATA #REQUIRED>
+<!ATTLIST download text CDATA #REQUIRED>
+<!ATTLIST download path CDATA #REQUIRED>
+<!ATTLIST download userelativepath (true|false) "false">
+<!ATTLIST email name CDATA #REQUIRED>
+<!ATTLIST email useimage (true|false) "true">

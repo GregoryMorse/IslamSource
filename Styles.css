@@ -1,0 +1,384 @@
+@media screen and (max-height: 640px)
+{
+    #bgtopdiv
+    {
+        display: none;
+    }
+    #bgbottomdiv
+    {
+        display: none;
+    }
+}
+
+BODY
+{
+    background-color: #d3d3d3;
+    FONT-FAMILY: Verdana, Helvetica, sans-serif, Arial Unicode MS;
+    FONT-SIZE: .8em;
+    FONT-WEIGHT: normal;
+    LETTER-SPACING: normal;
+    TEXT-TRANSFORM: none;
+    WORD-SPACING: normal;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    height: 100%;
+    width: 100%;
+}
+
+textarea
+{
+    font-family: Cambria, serif;
+}
+
+#maindiv
+{
+    margin: 0px;
+    padding: 0px 0px 0px 226px;
+    border: 0px;
+}
+
+#bgtopdiv
+{
+    position: fixed;
+    display: block;
+    background-repeat: repeat-x;
+    height: 40%;
+    width: 100%;
+    z-index: -1;
+}
+
+#bgbottomdiv
+{
+    position: fixed;
+    display: block;
+    background-repeat: repeat-x;
+    height: 40%;
+    bottom: 0px;
+    width: 100%;
+    z-index: -1;
+    clear: left;
+}
+
+#menudiv
+{
+    width: 226px;
+    margin: 0px 0px 0px -226px;
+    padding: 0px;
+    border: 0px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+#panediv
+{
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+#panewrapper
+{
+    margin: 5px;
+}
+
+div.menusel
+{
+    font-weight: bold;
+    font-size: larger;
+}
+
+div.list
+{
+    display: inline-block;
+    margin: 5px 5px 5px 5px;
+    padding: 5px 5px 5px 5px;
+    border: solid 2px #9A9A9A;
+}
+
+div#qurantext
+{
+    border-width: 32px;
+    border-image: url("/host.aspx?Page=Image.gif&Image=MandelbrotFractal") 32 repeat;
+    border-style: solid;
+}
+
+div.multidisplay
+{
+    display: inline-block;
+    padding-left: 5px;
+    padding-right: 5px;
+    border: 1px dashed gray;
+}
+
+span.copy
+{
+    display: none;
+}
+
+span.transliteration
+{
+    display: block;
+}
+
+span.translation
+{
+    display: block;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    text-align: center;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    font-style: normal;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 13px;
+}
+
+span.arabic
+{
+    display: block;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    text-align: center;
+    direction: rtl;
+    padding-top: 8px;
+    padding-bottom: 2px;
+    font-family: Arial;
+    font-weight: 700;
+    font-size: 32px;
+}
+
+#qurantext, #supptext
+{
+    text-align: center;
+    direction: rtl;
+}
+
+div.normal
+{
+}
+
+H1, H2, H3, H4, H5, TH, THEAD, TFOOT
+{
+    COLOR: #003366;
+}
+H1
+{	
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size:	2em;
+	font-weight:	700;
+	font-style:	normal;
+	text-decoration:	none;
+	word-spacing:	normal;
+	letter-spacing:	normal;
+	text-transform:	none;
+}	
+		
+H2
+{	
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size:	1.75em;
+	font-weight:	700;
+	font-style:	normal;
+	text-decoration:	none;
+	word-spacing:	normal;
+	letter-spacing:	normal;
+	text-transform:	none;
+}	
+		
+H3
+{	
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size:	1.58em;
+	font-weight:	500;
+	font-style:	normal;
+	text-decoration:	none;
+	word-spacing:	normal;
+	letter-spacing:	normal;
+	text-transform:	none;
+}	
+		
+H4
+{	
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size:	1.33em;
+	font-weight:	500;
+	text-decoration:	none;
+	word-spacing:	normal;
+	letter-spacing:	normal;
+	text-transform:	none;
+}	
+		
+H5, DT
+{	
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size:	1em;
+	font-weight:	700;
+	font-style:	normal;
+	text-decoration:	none;
+	word-spacing:	normal;
+	letter-spacing:	normal;
+	text-transform:	none;
+}	
+		
+H6
+{	
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size:	.8em;
+	font-weight:	700;
+	font-style:	normal;
+	text-decoration:	none;
+	word-spacing:	normal;
+	letter-spacing:	normal;
+	text-transform:	none;
+}	
+		
+TFOOT, THEAD
+{	
+	font-size:	1em;
+	word-spacing:	normal;
+	letter-spacing:	normal;
+	text-transform:	none;
+	font-family: Arial, Helvetica, sans-serif;
+}	
+		
+TH
+{	
+	vertical-align:	baseline;
+	font-size:	1em;
+	font-weight:	bold;
+	word-spacing:	normal;
+	letter-spacing:	normal;
+	text-transform:	none;
+	font-family: Arial, Helvetica, sans-serif;
+}	
+
+
+A:link
+{	
+	text-decoration:	none;
+	color:	#3333cc;
+}	
+		
+A:visited
+{	
+	text-decoration:	none;
+	color:	#333399;
+}	
+		
+A:active
+{	
+	text-decoration:	none;
+	color:	#333366;
+}	
+		
+A:hover
+{	
+	text-decoration:	underline;
+	color:	#3333cc;
+}
+	
+SMALL
+{	
+	font-size:	.7em;
+}	
+
+BIG
+{	
+	font-size:	1.17em;
+}	
+
+BLOCKQUOTE, PRE
+{	
+	font-family:	Courier New, monospace;
+}	
+	
+IMG
+{
+	margin-top: 5px;
+	margin-left: 10px;
+	margin-right: 10px;
+    border-style: none
+}
+
+.error
+{
+    color: Red;
+    font-weight: bold;
+}
+
+.font-tester
+{
+    position: absolute;
+    left: -10000px;
+    font-size: 19px;
+    display: none;
+}
+
+.classification {
+    display:inline-block;
+    height:1em;
+    font-size:2em;
+    width:.5em;
+    text-align: center;
+    line-height: 1;
+    cursor: pointer;
+
+    margin-right:-.5em;
+    overflow:hidden;
+    *margin-right:0;
+}
+.classificationalt {
+    display:inline-block;
+    height:1em;
+    font-size:2em;
+    width:.5em;
+    text-align: center;
+    line-height: 1;
+    cursor: pointer;
+
+    overflow:hidden;
+    direction:rtl;
+    margin-left:.5em;
+    margin-right:0;
+    *margin-right:-.5em;
+    left:-.5em;
+}
+
+/*
+.classification { 
+	position: relative;
+	width: 91px;
+	height: 17px;
+}
+.classification .cover {
+	position: absolute;
+	background: transparent url(images/stars.png) top left no-repeat;
+	top: 0px;
+	left: 0px;
+	width: 91px;
+	height: 17px;
+	z-index: 101;
+}
+.classification .progress {
+	position: absolute;
+	background: transparent url(images/stars_full.png) top left no-repeat;
+	top: 0px;
+	left: 0px;
+	height: 17px;
+	z-index: 102;
+}
+.classification .change {
+	position: absolute;
+	background: transparent url(images/stars_change.png) top left no-repeat;
+	top: 0px;
+	left: 0px;
+	height: 17px;
+	z-index: 102;
+}
+*/
