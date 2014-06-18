@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE pages [
+<!ELEMENT pages (page+|languages)>
+<!ELEMENT languages (language+)>
+<!ELEMENT language EMPTY>
+<!ELEMENT page ((child|frame|edit|radio|ipaddr|static|image|email|download|button)*|addlist?)>
+<!ELEMENT frame (edit|radio|ipaddr|static|image|email|download)*>
+<!ELEMENT list (edit|radio|ipaddr|static)*>
+<!ELEMENT child EMPTY>
+<!ELEMENT edit EMPTY>
+<!ELEMENT radio (option+)>
+<!ELEMENT ipaddr EMPTY>
+<!ELEMENT option EMPTY>
+<!ELEMENT static EMPTY>
+<!ELEMENT addlist EMPTY>
+<!ELEMENT image EMPTY>
+<!ELEMENT email EMPTY>
+<!ELEMENT download EMPTY>
+<!ELEMENT button EMPTY>
+<!ATTLIST page name ID #REQUIRED>
+<!ATTLIST page description CDATA #REQUIRED>
+<!ATTLIST page summary CDATA #IMPLIED>
+<!ATTLIST page level (normal|advanced|expert|hidden) "normal">
+<!ATTLIST page icon CDATA #IMPLIED>
+<!ATTLIST page usersort (true|false) "false">
+<!ATTLIST child name IDREF #REQUIRED>
+<!ATTLIST child mandatory (true|false) "false">
+<!ATTLIST child maxinstances CDATA #IMPLIED>
+<!ATTLIST child xmlvalue CDATA #IMPLIED>
+<!ATTLIST frame name CDATA #REQUIRED>
+<!ATTLIST frame description CDATA #REQUIRED>
+<!ATTLIST frame hasform (true|false) "false">
+<!ATTLIST list name CDATA #REQUIRED>
+<!ATTLIST list description CDATA #REQUIRED>
+<!ATTLIST edit name CDATA #REQUIRED>
+<!ATTLIST edit description CDATA #REQUIRED>
+<!ATTLIST edit level (normal|advanced|expert|hidden) "normal">
+<!ATTLIST edit rows CDATA "1">
+<!ATTLIST edit type (text|password|version|filename|filepath|dirpath|cmdline|dns|dnsip|dnsipsubnet|url|regkey|ininame|dialname|windname|md5|int8|uint8|int16|uint16|int32|uint32|int64|uint64|single|double) "text">
+<!ATTLIST edit nummin CDATA #IMPLIED>
+<!ATTLIST edit nummax CDATA #IMPLIED>
+<!ATTLIST edit defaultvalue CDATA #IMPLIED>
+<!ATTLIST edit pagename (true|false) "false">
+<!ATTLIST edit readonly (true|false) "false">
+<!ATTLIST radio name CDATA #REQUIRED>
+<!ATTLIST radio description CDATA #REQUIRED>
+<!ATTLIST radio uselist (true|false) "false">
+<!ATTLIST radio usecheck (true|false) "false">
+<!ATTLIST radio level (normal|advanced|expert|hidden) "normal">
+<!ATTLIST radio onpopulate CDATA #IMPLIED>
+<!ATTLIST radio onchange CDATA #IMPLIED>
+<!ATTLIST option name CDATA #REQUIRED>
+<!ATTLIST option defaultvalue (true|false) "false">
+<!ATTLIST option nextbelow (true|false) "false">
+<!ATTLIST ipaddr name CDATA #REQUIRED>
+<!ATTLIST ipaddr description CDATA #REQUIRED>
+<!ATTLIST ipaddr level (normal|advanced|expert|hidden) "normal">
+<!ATTLIST ipaddr rows CDATA "1">
+<!ATTLIST ipaddr defaultvalue CDATA "0.0.0.0">
+<!ATTLIST static name CDATA #REQUIRED>
+<!ATTLIST static description CDATA #REQUIRED>
+<!ATTLIST static onrender CDATA #IMPLIED>
+<!ATTLIST image name CDATA #REQUIRED>
+<!ATTLIST image text CDATA #REQUIRED>
+<!ATTLIST image source CDATA #REQUIRED>
+<!ATTLIST image maxwidth CDATA #IMPLIED>
+<!ATTLIST image maxheight CDATA #IMPLIED>
+<!ATTLIST image usethumbonmax (true|false) "false">
+<!ATTLIST download name CDATA #REQUIRED>
+<!ATTLIST download text CDATA #REQUIRED>
+<!ATTLIST download path CDATA #REQUIRED>
+<!ATTLIST download userelativepath (true|false) "true">
+<!ATTLIST download showinline (true|false) "false">
+<!ATTLIST email name CDATA #REQUIRED>
+<!ATTLIST email useimage (true|false) "true">
+<!ATTLIST button name CDATA #REQUIRED>
+<!ATTLIST button description CDATA #REQUIRED>
+<!ATTLIST button onclick CDATA #IMPLIED>
+]>
+<!-- <!DOCTYPE pages SYSTEM "main.dtd"> -->
+<pages mainimage="islamsource.jpg" hoverimage="islamsourcehover.jpg" title="IslamSource">
+	<page name="Home" description="IslamSource_Home">
+		<frame name="intro" description="IslamSource_Introduction">
+			<static name="welcome" description="IslamSource_Welcome"></static>
+			<static name="goal" description="IslamSource_Goal"></static>
+			<static name="credits" description="IslamSource_Credits"></static>
+			<static name="introduction" description="IslamSource_Intro"></static>
+			<email name="introductionemail" useimage="true"></email>
+		</frame>
+	</page>
+	<page name="HijriCalender" description="IslamSource_HijriCalender">
+		<frame name="info" description="IslamSource_Information">
+			<static name="monthname" description="IslamSource_CurrentMonth" onrender="PrayerTime::GetMonthName"></static>
+			<static name="calender" description="IslamSource_HijriCalender" onrender="PrayerTime::GetCalender"></static>
+			<static name="hijrimonthname" description="IslamSource_CurrentMonth" onrender="PrayerTime::GetMonthName"></static>
+			<static name="hijricalender" description="IslamSource_HijriCalender" onrender="PrayerTime::GetCalender"></static>
+			<static name="umalquramonthname" description="IslamSource_CurrentMonth" onrender="PrayerTime::GetMonthName"></static>
+			<static name="umalquracalender" description="IslamSource_HijriCalender" onrender="PrayerTime::GetCalender"></static>
+		</frame>
+	</page>
+	<page name="PrayerTimes" description="IslamSource_PrayerTimes">
+		<frame name="info" description="IslamSource_Information">
+			<static name="qibladirection" description="IslamSource_QiblaDirectionFromTrueNorth" onrender="PrayerTime::GetQiblaDirection"></static>
+			<static name="praytime" description="IslamSource_PrayerTimes" onrender="PrayerTime::GetPrayerTimes"></static>
+		</frame>
+	</page>
+	<page name="islam" description="IslamSource_IslamicInformation">
+		<frame name="words" description="IslamSource_Viewer" hasform="true">
+			<radio name="selection" description="IslamSource_Selection" uselist="true" defaultvalue="0" onpopulate="Arabic::GetCategories"></radio>
+			<button name="selectiondisplay" description="IslamSource_Display"></button>
+			<radio name="translitscheme" description="IslamSource_TransliterationScheme" uselist="true" onchange="Arabic::GetChangeTransliterationJS"><option name="IslamSource_Off" defaultvalue="true"></option><option name="IslamSource_PlainRoman"></option><option name="IslamSource_EnglishRomanized"></option><option name="IslamSource_ExtendedBuckwalter"></option></radio>
+			<button name="fontsmaller" description="IslamSource_Smaller" onclick="ArabicFont::GetFontSmallerJS"></button>
+			<button name="fontdefaultsize" description="IslamSource_LetterSample" onclick="ArabicFont::GetFontDefaultSizeJS"></button>
+			<button name="fontbigger" description="IslamSource_Bigger" onclick="ArabicFont::GetFontBiggerJS"></button>
+			<radio name="fontselection" description="IslamSource_Font" uselist="true" defaultvalue="def" onpopulate="ArabicFont::GetFontList" onchange="ArabicFont::GetChangeFontJS"></radio>
+			<edit name="fontcustom" description="" defaultvalue="IslamSource_Lotus" rows="1"></edit>
+			<button name="fontcustomapply" description="IslamSource_Apply" onclick="ArabicFont::GetChangeCustomFontJS"></button>
+			<image name="fontloading" text="IslamSource_Loading" source="loading-h.gif"></image>
+			<static name="islaminfotext" description="IslamSource_Text" onrender="Arabic::DisplayTranslation"></static>
+			<static name="font-tester" description="">In the name of Allah, بسم الله الرحمن الرحيم</static>
+		</frame>		
+	</page>
+	<page name="supplications" description="IslamSource_Supplications">
+		<frame name="supplications" description="IslamSource_Viewer" hasform="true">
+			<radio name="selection" description="IslamSource_Selection" uselist="true" defaultvalue="0" onpopulate="Supplications::GetSuppCategories"></radio>
+			<button name="selectiondisplay" description="IslamSource_Display"></button>
+			<radio name="translitscheme" description="IslamSource_TransliterationScheme" uselist="true" onchange="Arabic::GetChangeTransliterationJS"><option name="IslamSource_Off" defaultvalue="true"></option><option name="IslamSource_PlainRoman"></option><option name="IslamSource_EnglishRomanized"></option><option name="IslamSource_ExtendedBuckwalter"></option></radio>
+			<button name="fontsmaller" description="IslamSource_Smaller" onclick="ArabicFont::GetFontSmallerJS"></button>
+			<button name="fontdefaultsize" description="IslamSource_LetterSample" onclick="ArabicFont::GetFontDefaultSizeJS"></button>
+			<button name="fontbigger" description="IslamSource_Bigger" onclick="ArabicFont::GetFontBiggerJS"></button>
+			<radio name="fontselection" description="IslamSource_Font" uselist="true" defaultvalue="def" onpopulate="ArabicFont::GetFontList" onchange="ArabicFont::GetChangeFontJS"></radio>
+			<edit name="fontcustom" description="" defaultvalue="IslamSource_Lotus" rows="1"></edit>
+			<button name="fontcustomapply" description="IslamSource_Apply" onclick="ArabicFont::GetChangeCustomFontJS"></button>
+			<image name="fontloading" text="IslamSource_Loading" source="loading-h.gif"></image>
+			<radio name="quotemode" description="IslamSource_QuoteMode" usecheck="true" onchange="RenderArray::GetQuoteModeJS"><option name="IslamSource_Quote"></option><option name="IslamSource_Disable" defaultvalue="true"></option></radio>
+			<static name="supptext" description="IslamSource_Text" onrender="Supplications::GetRenderedSuppText"></static>
+			<static name="font-tester" description="">In the name of Allah, بسم الله الرحمن الرحيم</static>
+		</frame>
+	</page>
+	<page name="transliterator" description="IslamSource_Transliteration">
+		<frame name="translite" description="IslamSource_Transliterate">
+			<button name="fontsmaller" description="IslamSource_Smaller" onclick="ArabicFont::GetFontSmallerJS"></button>
+			<button name="fontdefaultsize" description="IslamSource_LetterSample" onclick="ArabicFont::GetFontDefaultSizeJS"></button>
+			<button name="fontbigger" description="IslamSource_Bigger" onclick="ArabicFont::GetFontBiggerJS"></button>
+			<radio name="fontselection" description="IslamSource_Font" uselist="true" defaultvalue="def" onpopulate="ArabicFont::GetFontList" onchange="ArabicFont::GetChangeFontJS"></radio>
+			<edit name="fontcustom" description="" defaultvalue="IslamSource_Lotus" rows="1"></edit>
+			<button name="fontcustomapply" description="IslamSource_Apply" onclick="ArabicFont::GetChangeCustomFontJS"></button>
+			<image name="fontloading" text="IslamSource_Loading" source="loading-h.gif"></image>
+			<static name="font-tester" description="">In the name of Allah, بسم الله الرحمن الرحيم</static>
+			<edit name="translitedit" rows="4"></edit>
+			<radio name="scheme" description="IslamSource_Scheme" onchange="Arabic::GetSchemeChangeJS"><option name="IslamSource_Transliterate" defaultvalue="true"></option><option name="IslamSource_ModifyDiacritics"></option><option name="IslamSource_FixDirectionalMarkers"></option></radio>
+			<radio name="diacriticscheme" description="IslamSource_Operation"><option name="IslamSource_Add" defaultvalue="true"></option><option name="IslamSource_Remove"></option></radio>
+			<radio name="translitscheme" description="IslamSource_TransliterationScheme"><option name="IslamSource_ExtendedBuckwalter" defaultvalue="true"></option><option name="IslamSource_EnglishRomanized"></option></radio>
+			<radio name="direction" description="IslamSource_Direction"><option name="IslamSource_ArabicToRoman" defaultvalue="true"></option><option name="IslamSource_RomanToArabic"></option></radio>
+			<button name="transliterate" description="IslamSource_Perform" onclick="Arabic::GetTransliterateJS"></button>
+			<static name="translitvalue" description=""></static>
+		</frame>
+		<frame name="arabicalphabet" description="IslamSource_ArabicAlphabet">
+			<static name="alphabet" description="" onrender="Arabic::DisplayAll"></static>
+		</frame>
+	</page>
+	<page name="quranwords" description="IslamSource_QuranWords">
+		<frame name="quranwordviewer" description="IslamSource_Viewer" hasform="true">
+			<radio name="quranselection" description="IslamSource_Selection" uselist="true" onpopulate="TanzilReader::GetWordPartitions"></radio>
+			<button name="qurandisplay" description="IslamSource_Display"></button>
+			<radio name="translitscheme" description="IslamSource_TransliterationScheme" uselist="true" onchange="Arabic::GetChangeTransliterationJS"><option name="IslamSource_Off" defaultvalue="true"></option><option name="IslamSource_PlainRoman"></option><option name="IslamSource_EnglishRomanized"></option><option name="IslamSource_ExtendedBuckwalter"></option></radio>
+			<button name="fontsmaller" description="IslamSource_Smaller" onclick="ArabicFont::GetFontSmallerJS"></button>
+			<button name="fontdefaultsize" description="IslamSource_LetterSample" onclick="ArabicFont::GetFontDefaultSizeJS"></button>
+			<button name="fontbigger" description="IslamSource_Bigger" onclick="ArabicFont::GetFontBiggerJS"></button>
+			<radio name="fontselection" description="IslamSource_Font" uselist="true" defaultvalue="def" onpopulate="ArabicFont::GetFontList" onchange="ArabicFont::GetChangeFontJS"></radio>
+			<edit name="fontcustom" description="" defaultvalue="IslamSource_Lotus" rows="1"></edit>
+			<button name="fontcustomapply" description="IslamSource_Apply" onclick="ArabicFont::GetChangeCustomFontJS"></button>
+			<image name="fontloading" text="IslamSource_Loading" source="loading-h.gif"></image>
+			<radio name="quotemode" description="IslamSource_QuoteMode" usecheck="true" onchange="RenderArray::GetQuoteModeJS"><option name="IslamSource_Quote"></option><option name="IslamSource_Disable" defaultvalue="true"></option></radio>
+			<static name="quranwordtotal" description="IslamSource_WordTotal" onrender="TanzilReader::GetQuranWordTotal"></static>
+			<static name="quranwords" description="IslamSource_Text" onrender="TanzilReader::GetQuranWordFrequency"></static>
+			<static name="font-tester" description="">In the name of Allah, بسم الله الرحمن الرحيم</static>
+		</frame>
+	</page>
+	<page name="quran" description="IslamSource_Quran">
+		<frame name="quranviewer" description="IslamSource_Viewer" hasform="true">
+			<radio name="qurandivision" description="IslamSource_Division" uselist="true" onchange="TanzilReader::GetDivisionChangeJS" onpopulate="TanzilReader::GetDivisionTypes"></radio>
+			<radio name="quranselection" description="IslamSource_Selection" uselist="true" onpopulate="TanzilReader::GetSelectionNames"></radio>
+			<radio name="qurantranslation" description="IslamSource_Translation" uselist="true" defaultvalue="en-maulana_ali" onpopulate="TanzilReader::GetTranslationList"></radio>
+			<button name="qurandisplay" description="IslamSource_Display"></button>
+			<radio name="translitscheme" description="IslamSource_TransliterationScheme" uselist="true" onchange="Arabic::GetChangeTransliterationJS"><option name="IslamSource_Off" defaultvalue="true"></option><option name="IslamSource_PlainRoman"></option><option name="IslamSource_EnglishRomanized"></option><option name="IslamSource_ExtendedBuckwalter"></option></radio>
+			<button name="fontsmaller" description="IslamSource_Smaller" onclick="ArabicFont::GetFontSmallerJS"></button>
+			<button name="fontdefaultsize" description="IslamSource_LetterSample" onclick="ArabicFont::GetFontDefaultSizeJS"></button>
+			<button name="fontbigger" description="IslamSource_Bigger" onclick="ArabicFont::GetFontBiggerJS"></button>
+			<radio name="fontselection" description="IslamSource_Font" uselist="true" defaultvalue="def" onpopulate="ArabicFont::GetFontList" onchange="ArabicFont::GetChangeFontJS"></radio>
+			<edit name="fontcustom" description="" defaultvalue="IslamSource_Lotus" rows="1"></edit>
+			<button name="fontcustomapply" description="IslamSource_Apply" onclick="ArabicFont::GetChangeCustomFontJS"></button>
+			<image name="fontloading" text="IslamSource_Loading" source="loading-h.gif"></image>
+			<radio name="quotemode" description="IslamSource_QuoteMode" usecheck="true" onchange="RenderArray::GetQuoteModeJS"><option name="Quote"></option><option name="Disable" defaultvalue="true"></option></radio>
+			<static name="qurantext" description="IslamSource_Text" onrender="TanzilReader::GetRenderedQuranText"></static>
+			<static name="font-tester" description="">In the name of Allah, بسم الله الرحمن الرحيم</static>
+		</frame>
+	</page>
+	<page name="hadith" description="IslamSource_Hadiths">
+		<frame name="hadithviewer" description="IslamSource_Viewer" hasform="true">
+			<radio name="hadithcollection" description="IslamSource_Collection" uselist="true" onchange="HadithReader::GetCollectionChangeWithBooksJS" onpopulate="HadithReader::GetCollectionNames"></radio>
+			<radio name="hadithbook" description="IslamSource_Book" uselist="true" onpopulate="HadithReader::GetBookNames"></radio>
+			<radio name="hadithtranslation" description="IslamSource_Translation" uselist="true" defaultvalue="" onpopulate="HadithReader::GetTranslationList"></radio>
+			<button name="hadithdisplay" description="IslamSource_Display"></button>
+			<radio name="translitscheme" description="IslamSource_TransliterationScheme" uselist="true" onchange="Arabic::GetChangeTransliterationJS"><option name="IslamSource_Off" defaultvalue="true"></option><option name="IslamSource_PlainRoman"></option><option name="IslamSource_EnglishRomanized"></option><option name="IslamSource_ExtendedBuckwalter"></option></radio>
+			<button name="fontsmaller" description="IslamSource_Smaller" onclick="ArabicFont::GetFontSmallerJS"></button>
+			<button name="fontdefaultsize" description="IslamSource_LetterSample" onclick="ArabicFont::GetFontDefaultSizeJS"></button>
+			<button name="fontbigger" description="IslamSource_Bigger" onclick="ArabicFont::GetFontBiggerJS"></button>
+			<radio name="fontselection" description="IslamSource_Font" uselist="true" defaultvalue="def" onpopulate="ArabicFont::GetFontList" onchange="ArabicFont::GetChangeFontJS"></radio>
+			<edit name="fontcustom" description="" defaultvalue="IslamSource_Lotus" rows="1"></edit>
+			<button name="fontcustomapply" description="IslamSource_Apply" onclick="ArabicFont::GetChangeCustomFontJS"></button>
+			<image name="fontloading" text="IslamSource_Loading" source="loading-h.gif"></image>
+			<radio name="quotemode" description="IslamSource_QuoteMode" usecheck="true" onchange="RenderArray::GetQuoteModeJS"><option name="Quote"></option><option name="Disable" defaultvalue="true"></option></radio>
+			<static name="hadithtext" description="IslamSource_Text" onrender="HadithReader::GetRenderedText"></static>
+			<static name="font-tester" description="">In the name of Allah, بسم الله الرحمن الرحيم</static>
+		</frame>
+	</page>
+	<page name="hadithsource" description="IslamSource_HadithSourceText">
+		<frame name="hadithsourceviewer" description="IslamSource_Selection" hasform="true">
+			<static name="intro" description="IslamSource_SubmissionNote"></static>
+			<radio name="hadithcollection" description="IslamSource_Collection" uselist="true" onchange="HadithReader::GetCollectionChangeJS" onpopulate="HadithReader::GetCollectionNames"></radio>
+			<radio name="hadithtranslation" description="IslamSource_Translation" uselist="true" defaultvalue="" onpopulate="HadithReader::GetTranslationList"></radio>
+			<button name="hadithdisplay" description="IslamSource_Display"></button>
+		</frame>
+		<frame name="hadithdownloadmapping" description="IslamSource_DownloadMapping">
+			<download text="" path="" onrender="HadithReader::GetCollectionXMLMetaDataDownload"></download>
+			<download text="" path="" onrender="HadithReader::GetCollectionXMLDownload"></download>
+			<download text="" path="" onrender="HadithReader::GetTranslationXMLMetaDataDownload"></download>
+			<download text="" path="" onrender="HadithReader::GetTranslationTextDownload"></download>
+			<static name="hadithtext" description="IslamSource_Mapping" onrender="HadithReader::GetHadithMappingText"></static>
+		</frame>
+	</page>
+	<page name="quotes" description="IslamSource_IslamicQuotes">
+		<frame name="notablequotes" description="IslamSource_NotableQuotes">
+		</frame>
+	</page>	
+	<page name="websites" description="IslamSource_IslamicWebsites">
+		<frame name="quranresources" description="IslamSource_QuranResources">
+			<static name="tanzil" description="IslamSource_IslamicWebsitesTanzil" url="http://www.tanzil.net" imageurl="http://tanzil.ca/tanzil/img/logo-4.png"></static>
+			<static name="quranicarabiccorpus" description="IslamSource_IslamicWebsitesCorpus" url="http://corpus.quran.com" imageurl="http://corpus.quran.com/images/logo.png"></static>
+			<static name="zekr" description="IslamSource_IslamicWebsitesZekr" url="http://zekr.org" imageurl="http://zekr.org/img/zekr-logo-small.png"></static>
+			<static name="onlinequranproject" description="IslamSource_IslamicWebsitesQuranProject" url="http://al-quran.info" imageurl=""></static>
+			<static name="versebyversequran" description="IslamSource_IslamicWebsitesVerseByVerseQuran" url="http://www.versebyversequran.com" imageurl="http://www.versebyversequran.com/site/wp-content/themes/yoo_master_wp/styles/quran/images/logo.png"></static>
+			<static name="quran" description="IslamSource_IslamicWebsitesQuran" url="http://quran.com" imageurl="http://quran.com/images/logo.jpg"></static>
+			<static name="qurandownload" description="IslamSource_IslamicWebsitesQuranDownload" url="http://www.qurandownload.com" imageurl="http://www.qurandownload.com/images/QuranDownloadLogo.jpg"></static>
+			<static name="allahsquran" description="IslamSource_IslamicWebsitesAllahsQuran" url="http://www.allahsquran.com" imageurl="http://www.allahsquran.com/images/background_main.jpg"></static>
+			<static name="quranicaudio" description="IslamSource_IslamicWebsitesQuranicAudio" url="http://quranicaudio.com" imageurl="http://quranicaudio.com/imgs/logo.jpg?v=2"></static>
+			<static name="openburhan" description="IslamSource_IslamicWebsitesOpenBurhan" url="http://www.openburhan.net" imageurl="http://www.openburhan.net/openburhan.gif"></static>
+			<static name="qurantransliteration" description="IslamSource_IslamicWebsitesQuranTransliteration" url="http://transliteration.org" imageurl="http://transliteration.org/quran/home.h2.jpg"></static>
+			<static name="understandquran" description="IslamSource_IslamicWebsitesUnderstandQuran" url="http://understandquran.com" imageurl="http://understandquran.com/wp-content/themes/understandquran/images/logo.png"></static>
+			<static name="studyquran" description="IslamSource_IslamicWebsitesStudyQuran" url="http://www.studyquran.co.uk"></static>
+			<static name="houseofquran" description="IslamSource_IslamicWebsitesHouseQuran" url="http://www.houseofquran.com" imageurl="http://www.houseofquran.com/images/home/header.png"></static>
+			<static name="iquran" description="IslamSource_IslamicWebsitesiQuran" url="http://www.openislam.org"></static>
+			<static name="quran4u" description="IslamSource_IslamicWebsitesTheAbsoluteReality" url="http://www.quran4u.com" imageurl="http://www.quran4u.com/ArTiTop/TitleLogo.jpg"></static>
+			<static name="quranexplorer" description="IslamSource_IslamicWebsitesQuranExplorer" url="http://www.quranexplorer.com" imageurl="http://www.quranexplorer.com/Images/QuranExplorerLogo.gif"></static>
+		</frame>
+		<frame name="learningislam" description="IslamSource_LearningIslam">
+			<static name="kalamullah" description="IslamSource_IslamicWebsitesKalamullah" url="http://www.kalamullah.com"></static>
+			<static name="emuslim" description="IslamSource_IslamicWebsiteseMuslim" url="http://www.emuslim.com" imageurl="http://www.emuslim.com/images/MaineMuslim.jpg"></static>
+			<static name="salah" description="IslamSource_IslamicWebsitesSalah" url="http://salah.com" imageurl="http://salah.com/images/logo.png"></static>
+			<static name="guidedways" description="IslamSource_IslamicWebsitesGuidedWaysTechnologies" url="http://www.guidedways.com" imageurl="http://www.guidedways.com/images/guidedwayslogo.jpg"></static>
+			<static name="islamicfinder" description="IslamSource_IslamicWebsitesIslamicFinder" url="http://www.islamicfinder.org" imageurl="http://www.islamicfinder.org/images/logo.gif"></static>
+			<static name="alhudapk" description="IslamSource_IslamicWebsitesAlHudaInternationalWelfareFoundation" url="http://www.alhudapk.com" imageurl="http://www.alhudapk.com/images/stories/alhudalogo.png"></static>
+			<static name="maktabah" description="IslamSource_IslamicWebsitesMaktabahorgTheUltimateIslamicLibrary" url="http://www.maktabah.org"></static>
+			<static name="sunnah" description="IslamSource_IslamicWebsitesSunnahCom" url="http://sunnah.com" imageurl="http://sunnah.com/images/bannerfinalSmall.jpg"></static>
+			<static name="al-eman" description="IslamSource_IslamicWebsitesAlEman" url="http://www.al-eman.com" imageurl="http://www.al-eman.com/aleman/others/header-final-merge4.gif"></static>
+			<static name="erfan" description="IslamSource_IslamicWebsitesProfessorAnsarian" url="http://www.erfan.ir" imageurl="http://www.erfan.ir/files/images/sites/ansaryan.jpg"></static>
+			<static name="islamspirit" description="IslamSource_IslamicWebsitesIslamSpirit" url="http://www.islamspirit.com" imageurl="http://www.islamspirit.com/images/index_02.png"></static>
+			<static name="islamicsearchcenter" description="IslamSource_IslamicWebsitesIslamicSearchCenter" url="http://www.islamicsearchcenter.com" imageurl="http://www.islamicsearchcenter.com/wp-content/themes/whitehouse/images/header.jpg"></static>
+		</frame>
+		<frame name="islamicorganizations" description="IslamSource_IslamicOrganizations">
+			<static name="islamicinsights" description="IslamSource_IslamicWebsitesIslamicInsights" url="http://www.islamicinsights.com" imageurl="http://www.islamicinsights.com/templates/ja_teline_iv/images/logo.png"></static>
+			<static name="ahlulbaytacademy" description="IslamSource_IslamicWebsitesAhlulBaytAcademy" url="http://www.abacademy.org" imageurl="http://www.abacademy.org/wp-content/themes/neoteric/logo.png"></static>
+			<static name="theawaitedone" description="IslamSource_IslamicWebsitesTheAwaitedOneFoundation" url="http://www.awaitedone.org" imageurl="http://awaitedone.org/wp-content/uploads/2014/01/logo.png"></static>
+			<static name="islamicbulletin" description="IslamSource_IslamicWebsitesTheIslamicBulletin" url="http://islamicbulletin.org" imageurl="http://islamicbulletin.org/index/index_top_new.gif"></static>
+			<static name="islamicthinkers" description="IslamSource_IslamicWebsitesIslamicThinkersSociety" url="http://www.islamicthinkers.com" imageurl="http://www.islamicthinkers.com/new/templates/rt_panacea_j16/images/logo/light/logo.png"></static>
+			<static name="aaiil" description="IslamSource_IslamicWebsitesTheLahoreAhmadiyyaMovementIslam" url="http://aaiil.org" imageurl="http://aaiil.org/gfx/design/header.gif"></static>
+			<static name="muslim" description="IslamSource_IslamicWebsitesTheLahoreAhmadiyyaMovement" url="http://www.muslim.org"></static>
+		</frame>
+		<frame name="islamicshopping" description="IslamSource_IslamicShops">
+			<static name="islamicfoundation" description="IslamSource_IslamicWebsitesTheIslamicFoundation" url="http://www.islamic-foundation.com" imageurl="http://www.islamic-foundation.com/templates/OS03C00309/images/logo.gif"></static>
+			<static name="darulsalam" description="IslamSource_IslamicWebsitesDarusSalamPublications" url="http://www.dar-us-salam.com" imageurl="http://www.dar-us-salam.com/nav/Darussalam%20Trans.gif"></static>
+		</frame>
+		<frame name="foundations" description="IslamSource_IslamicFoundations">
+			<static name="icna" description="IslamSource_IslamicWebsitesIslamicCircleNorthAmerica" url="http://www.icna.org" imageurl="http://images.icna.org/wp-content/themes/icna/images/logo.gif"></static>
+			<static name="isna" description="IslamSource_IslamicWebsitesIslamicSocietyNorthAmerica" url="http://www.isna.net" imageurl="http://www.isna.net/uploads/1/5/7/4/15744382/7959619.png"></static>
+			<static name="cair" description="IslamSource_IslamicWebsitesCouncilAmericanIslamicRelations" url="http://www.cair.com" imageurl="http://www.cair.com/templates/cairv11b/images/logo-1622071488.png"></static>
+		</frame>
+		<frame name="charity" description="IslamSource_IslamicCharity">
+			<static name="islamicrelief" description="IslamSource_IslamicWebsitesIslamicRelief" url="http://www.islamic-relief.com/" imageurl="http://www.islamic-relief.com/images/islamicreliefworldwide-new.gif"></static>
+			<static name="islamicreliefusa" description="IslamSource_IslamicWebsitesIslamicReliefUSA" url="http://www.irusa.org" imageurl="http://b.cdn.irusa.org/content/uploads/2011/07/logo-irusa.png"></static>
+			<static name="zakat" description="IslamSource_IslamicWebsitesZakatFoundationAmerica" url="http://www.zakat.org" imageurl="https://s3.amazonaws.com/zakat.org/-/img/logo.png"></static>
+		</frame>
+	</page>
+	<page name="websitearticles" description="IslamSource_IslamicArticles">
+		<frame name="notablearticles" description="IslamSource_NotableArticles">
+		</frame>
+	</page>	
+	<page name="newsarticles" description="IslamSource_IslamicNews">
+		<frame name="notablenews" description="IslamSource_NotableNews">
+		</frame>
+	</page>	
+</pages>
