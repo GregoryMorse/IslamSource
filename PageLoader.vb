@@ -89,7 +89,7 @@ Public Class Utility
     End Class
     Public Shared Function GetTemplatePath() As String
         Dim Index As Integer = Array.FindIndex(ConnectionData.SiteDomains(), Function(Domain As String) Web.HttpContext.Current.Request.Url.Host.EndsWith(Domain))
-        Return GetFilePath("bin\" + CStr(IIf(Index = -1, ConnectionData.DefaultXML, ConnectionData.SiteXMLs()(Index))) + ".xml")
+        Return GetFilePath("metadata\" + CStr(IIf(Index = -1, ConnectionData.DefaultXML, ConnectionData.SiteXMLs()(Index))) + ".xml")
     End Function
     Public Shared Function GetFilePath(ByVal Path As String) As String
         Return CStr(IIf(IO.File.Exists(Web.HttpContext.Current.Request.PhysicalApplicationPath + Path), Web.HttpContext.Current.Request.PhysicalApplicationPath + Path, Web.HttpContext.Current.Request.PhysicalApplicationPath + ConnectionData.AlternatePath + Path))
@@ -2700,7 +2700,7 @@ End Class
         Public Collections() As CollectionInfo
         Public Shared Sub Initialize()
             If IslamData.ObjIslamData Is Nothing Then
-                Dim fs As IO.FileStream = New IO.FileStream(Utility.GetFilePath("bin\islaminfo.xml"), IO.FileMode.Open)
+            Dim fs As IO.FileStream = New IO.FileStream(Utility.GetFilePath("metadata\islaminfo.xml"), IO.FileMode.Open)
                 Dim xs As System.Xml.Serialization.XmlSerializer = New System.Xml.Serialization.XmlSerializer(GetType(IslamData))
                 IslamData.ObjIslamData = CType(xs.Deserialize(fs), IslamData)
                 fs.Close()
@@ -2907,7 +2907,7 @@ End Class
             Return CType(Output.ToArray(GetType(Array())), Array())
         End Function
         Public Shared Sub GetMorphologicalData()
-            Dim Lines As String() = IO.File.ReadAllLines(Utility.GetFilePath("bin\quranic-corpus-morphology-0.4.txt"))
+        Dim Lines As String() = IO.File.ReadAllLines(Utility.GetFilePath("metadata\quranic-corpus-morphology-0.4.txt"))
             For Count As Integer = 0 To Lines.Length - 1
                 If Lines(Count).Length <> 0 AndAlso Lines(Count).Chars(0) <> "#" Then
                     'LOCATION	FORM	TAG	FEATURES
@@ -2988,7 +2988,7 @@ End Class
             Dim Renderer As New RenderArray
             Dim Strings As String = Web.HttpContext.Current.Request.QueryString.Get("qurandivision")
             Dim XMLDocMain As New System.Xml.XmlDocument
-            XMLDocMain.Load(Utility.GetFilePath("bin\quran-uthmani.xml"))
+        XMLDocMain.Load(Utility.GetFilePath("metadata\quran-uthmani.xml"))
             If Not Strings Is Nothing Then Division = CInt(Strings)
             Strings = Web.HttpContext.Current.Request.QueryString.Get("quranselection")
             If Not Strings Is Nothing Then Index = CInt(Strings)
@@ -2996,8 +2996,8 @@ End Class
             Dim SeperateSectionCount As Integer = 1
             If Division = 8 Then SeperateSectionCount = IslamData.ObjIslamData.QuranSelections(Index).SelectionInfo.Length
             If Division = 9 Then SeperateSectionCount = LetterDictionary(IslamData.ObjIslamData.ArabicLetters(Index).Symbol).Count
-            Dim Lines As String() = IO.File.ReadAllLines(Utility.GetFilePath("bin\" + GetTranslationFileName(Web.HttpContext.Current.Request.QueryString.Get("qurantranslation"))))
-            Dim W4WLines As String() = IO.File.ReadAllLines(Utility.GetFilePath("bin\en.w4w.txt"))
+        Dim Lines As String() = IO.File.ReadAllLines(Utility.GetFilePath("metadata\" + GetTranslationFileName(Web.HttpContext.Current.Request.QueryString.Get("qurantranslation"))))
+        Dim W4WLines As String() = IO.File.ReadAllLines(Utility.GetFilePath("metadata\en.w4w.txt"))
             For SectionCount As Integer = 0 To SeperateSectionCount - 1
                 If Division = 0 Then
                     BaseChapter = CInt(GetChapterByIndex(Index).Attributes.GetNamedItem("index").Value)
@@ -3163,13 +3163,13 @@ End Class
             IslamData.Initialize()
             If XMLDocInfo Is Nothing Then
                 XMLDocInfo = New System.Xml.XmlDocument
-                XMLDocInfo.Load(Utility.GetFilePath("bin\quran-data.xml"))
+            XMLDocInfo.Load(Utility.GetFilePath("metadata\quran-data.xml"))
             End If
         End Sub
         Public Shared Sub BuildQuranLetterIndex()
             Dim Tanzil As New TanzilReader()
             Dim XMLDocMain As New System.Xml.XmlDocument
-            XMLDocMain.Load(Utility.GetFilePath("bin\quran-uthmani.xml"))
+        XMLDocMain.Load(Utility.GetFilePath("metadata\quran-uthmani.xml"))
             Dim Verses As Collections.Generic.List(Of String())
             Verses = GetQuranText(XMLDocMain, -1, -1, -1, -1)
             For Count As Integer = 0 To Verses.Count - 1
@@ -3378,7 +3378,7 @@ End Class
                 XMLDocInfo = New Collections.Generic.List(Of System.Xml.XmlDocument)
                 For Count = 0 To IslamData.ObjIslamData.Collections.Length - 1
                     XMLDocInfo.Add(New System.Xml.XmlDocument)
-                    XMLDocInfo(XMLDocInfo.Count - 1).Load(Utility.GetFilePath("bin\" + IslamData.ObjIslamData.Collections(Count).FileName + "-data.xml"))
+                XMLDocInfo(XMLDocInfo.Count - 1).Load(Utility.GetFilePath("metadata\" + IslamData.ObjIslamData.Collections(Count).FileName + "-data.xml"))
                 Next
             End If
         End Sub
@@ -3480,7 +3480,7 @@ End Class
             Dim Index As Integer = GetCurrentCollection()
             Dim XMLDocTranslate As New System.Xml.XmlDocument
             If IslamData.ObjIslamData.Collections(Index).Translations.Length = 0 Then Return New Array() {}
-            XMLDocTranslate.Load(Utility.GetFilePath("bin\" + GetTranslationXMLFileName(Index, Web.HttpContext.Current.Request.QueryString.Get("hadithtranslation")) + ".xml"))
+        XMLDocTranslate.Load(Utility.GetFilePath("metadata\" + GetTranslationXMLFileName(Index, Web.HttpContext.Current.Request.QueryString.Get("hadithtranslation")) + ".xml"))
             Dim Output As New ArrayList
             Output.Add(New String() {})
             If NewHadithReader.HasVolumes(Index) Then
@@ -3516,8 +3516,8 @@ End Class
                 Dim XMLDocTranslate As New System.Xml.XmlDocument
                 Dim Strings() As String = Nothing
                 If IslamData.ObjIslamData.Collections(Index).Translations.Length <> 0 Then
-                    XMLDocTranslate.Load(Utility.GetFilePath("bin\" + GetTranslationXMLFileName(Index, Web.HttpContext.Current.Request.QueryString.Get("hadithtranslation")) + ".xml"))
-                    Strings = IO.File.ReadAllLines(Utility.GetFilePath("bin\" + GetTranslationFileName(Index, Web.HttpContext.Current.Request.QueryString.Get("hadithtranslation")) + ".txt"))
+                XMLDocTranslate.Load(Utility.GetFilePath("metadata\" + GetTranslationXMLFileName(Index, Web.HttpContext.Current.Request.QueryString.Get("hadithtranslation")) + ".xml"))
+                Strings = IO.File.ReadAllLines(Utility.GetFilePath("metadata\" + GetTranslationFileName(Index, Web.HttpContext.Current.Request.QueryString.Get("hadithtranslation")) + ".txt"))
                 End If
                 For Hadith = 0 To HadithText.Count - 1
                     'Handle missing or excess chapter indexes
@@ -3569,7 +3569,7 @@ End Class
         Public Function GetHadithText(ByVal BookIndex As Integer) As Collections.Generic.List(Of Collections.Generic.List(Of Object))
             Dim Count As Integer
             Dim XMLDocMain As New System.Xml.XmlDocument
-            XMLDocMain.Load(Utility.GetFilePath("bin\" + IslamData.ObjIslamData.Collections(GetCurrentCollection()).FileName + ".xml"))
+        XMLDocMain.Load(Utility.GetFilePath("metadata\" + IslamData.ObjIslamData.Collections(GetCurrentCollection()).FileName + ".xml"))
             Dim BookNode As System.Xml.XmlNode = GetHadithTextBook(XMLDocMain, BookIndex)
             Dim HadithNode As System.Xml.XmlNode
             Dim Hadiths As New Collections.Generic.List(Of Collections.Generic.List(Of Object))

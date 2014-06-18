@@ -326,7 +326,7 @@
                 ResultBmp.Dispose()
                 GC.Collect()
         ElseIf Request.QueryString.Get(PageQuery) = "Source" Then
-                Dim f As IO.FileStream = New IO.FileStream(CStr(IIf(IO.File.Exists(Utility.GetFilePath("files\" + Request.QueryString.Get("File"))), Utility.GetFilePath("files\" + Request.QueryString.Get("File")), Utility.GetFilePath("bin\" + Request.QueryString.Get("File")))), IO.FileMode.Open, IO.FileAccess.Read, IO.FileShare.Read)
+            Dim f As IO.FileStream = New IO.FileStream(CStr(IIf(IO.File.Exists(Utility.GetFilePath("files\" + Request.QueryString.Get("File"))), Utility.GetFilePath("files\" + Request.QueryString.Get("File")), Utility.GetFilePath("metadata\" + Request.QueryString.Get("File")))), IO.FileMode.Open, IO.FileAccess.Read, IO.FileShare.Read)
                 Dim buffer As Byte() = New Byte(CInt(f.Length) - 1) {}
                 Dim count As Integer = f.Read(buffer, 0, CInt(f.Length))
                 Dim encoding As System.Text.Encoding = Utility.DetectEncoding(buffer)
