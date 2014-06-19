@@ -59,7 +59,13 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
  
  http://corpus.quran.com/wordbyword.jsp
  disable image loading in advanced browser settings
- var str = "", aya = 1; for (var sura = 1; sura <= 114; ) { var next = window.open("http://corpus.quran.com/wordbyword.jsp?chapter=" + sura.toString() + "&verse=" + aya.toString()); do {} while (next.document.readyState != "complete"); var startaya = aya, words = next.document.querySelectorAll(".morphologyTable > tbody > tr > td:first-child"); for (var ct = 1; ct < words.length; ct++) { if (startaya <= parseInt(words[ct].firstChild.innerText.split(":")[1], 10)) str += (aya.toString() != words[ct].firstChild.innerText.split(":")[1] ? '\r\n' : (words[ct].firstChild.innerText.split(":")[1] == startaya.toString() && words[ct].firstChild.innerText.split(":")[2] == "1)" ? '' : '|')) + words[ct].childNodes[4].data; aya = parseInt(words[ct].firstChild.innerText.split(":")[1], 10); } next.close(); aya = (aya < startaya) ? (sura++, 1) : (str += '\r\n', aya + 1); console.log(str), str = ""; }
+ var str = "", sura = 1, aya = 1, next, rs, func = function() { if (next.document.readyState === "complete") { window.clearInterval(rs); var startaya = aya, words = next.document.querySelectorAll(".morphologyTable > tbody > tr > td:first-child"); for (var ct = 1; ct < words.length; ct++) { if (startaya <= parseInt(words[ct].firstChild.innerText.split(":")[1], 10)) str += (aya.toString() != words[ct].firstChild.innerText.split(":")[1] ? '\r\n' : (words[ct].firstChild.innerText.split(":")[1] == startaya.toString() && words[ct].firstChild.innerText.split(":")[2] == "1)" ? '' : '|')) + words[ct].childNodes[4].data; aya = parseInt(words[ct].firstChild.innerText.split(":")[1], 10); } aya = (aya < startaya) ? (console.log(str), str = '', sura++, 1) : (str += '\r\n', aya + 1); if (sura <= 114) { next.location.href = "http://corpus.quran.com/wordbyword.jsp?chapter=" + sura.toString() + "&verse=" + aya.toString(); rs = window.setInterval(func, 100); } } }; next = window.open("http://corpus.quran.com/wordbyword.jsp?chapter=" + sura.toString() + "&verse=" + aya.toString()); rs = window.setInterval(func, 100);
+ 
+ http://www.alquran-indonesia.com/web/quran/listings/details/<chapter>
+ FOR /L %A IN (1,1,114) DO FOR /L %B IN (0,10,300) DO e:\wsusoffline\bin\wget.exe -O %A.%B.html http://www.alquran-indonesia.com/web/quran/listings/details/%A/%B
+
+ var str = "", sura = 1, aya = 0, next, rs, func = function() { if (next.document.readyState === "complete") { window.clearInterval(rs); var its = next.document.querySelectorAll("div.padleft > table > tbody > tr"); for (var ct = 0; ct < its.length; ct++) { var nits = its[ct].querySelectorAll("span > table > tbody > tr:nth-child(2)"); for (var nct = 0; nct < nits.length; nct++) { str += (nct == 0 ? '' : '|') + nits[nct].innerText + (nct == nits.length - 1 ? '\r\n' : ''); } } aya = (next.document.querySelector("span.next") != null) ? aya + 10 : (sura++, 0); if (sura <= 114) { next.location.href = "file:///c:/users/gregory/downloads/id/" + sura.toString() + "." + aya.toString() + ".html"; rs = window.setInterval(func, 100); } console.log(str); } }; next = window.open("about:blank"); next.location.href = "file:///c:/users/gregory/downloads/id/" + sura.toString() + "." + aya.toString() + ".html"; rs = window.setInterval(func, 100);
+ var str = "", aya = 0; for (var sura = 1; sura <= 114; ) { var xmlhttp = new XMLHttpRequest(); xmlhttp.open("GET", "http://www.alquran-indonesia.com/web/quran/listings/details/" + sura.toString() + "/" + aya.toString(), false); xmlhttp.send(); window.document.open(); window.document.write(xmlhttp.responseText); window.document.close(); var its = document.querySelectorAll("div.padleft > table > tbody > tr"); for (var ct = 0; ct < its.length; ct++) { var nits = its[ct].querySelectorAll("span > table > tbody > tr:nth-child(2)"); for (var nct = 0; nct < nits.length; nct++) { str += (nct == 0 ? '' : '|') + nits[nct].innerText + (nct == nits.length - 1 ? '\r\n' : ''); } } aya = (document.querySelector("span.next") != null) ? aya + 10 : (sura++, 0); } console.log(str);
  
 	-->
 	<jurisprudence name="fiqh" id="Jurisprudence">
@@ -1422,6 +1428,38 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 		<chapter index="113" name="Alfalaq"></chapter>
 		<chapter index="114" name="Aln~aAs"></chapter>
 	</quranchapters>
+	<quranparts>
+		<part index="1" name="|lm^"></part>
+		<part index="2" name="sayaquwlu"></part>
+		<part index="3" name="tiloka Alr~usulu"></part>
+		<part index="4" name="lano tanaAluwA"></part>
+		<part index="5" name="waAlomuHoSanaAtu"></part>
+		<part index="6" name="laA yuHib~u All~`hu"></part>
+		<part index="7" name="wa&lt;i*aA samiEuwA"></part>
+		<part index="8" name="walawo &gt;an~anaA"></part>
+		<part index="9" name="qaAla Alomala&gt;u"></part>
+		<part index="10" name="waAEolamuwA"></part>
+		<part index="11" name="yaEota*iruwna"></part>
+		<part index="12" name="wamaA mino daAb~apK"></part>
+		<part index="13" name="wamaA &gt;ubar~i}u"></part>
+		<part index="14" name="rubamaA"></part>
+		<part index="15" name="suboHaAna Al~a*iy"></part>
+		<part index="16" name="qaAla &gt;alamo"></part>
+		<part index="17" name="Aqotaraba"></part>
+		<part index="18" name="qado &gt;afolaHa"></part>
+		<part index="19" name="waqaAla Al~a*iyna"></part>
+		<part index="20" name="&gt;am~ano xalaqa"></part>
+		<part index="21" name="Atolu maA &gt;uwHiya"></part>
+		<part index="22" name="wamano yaqonuto"></part>
+		<part index="23" name="wamaA liya"></part>
+		<part index="24" name="famano &gt;aZolamu"></part>
+		<part index="25" name="&lt;ilayohi yurad~u"></part>
+		<part index="26" name="H`m^"></part>
+		<part index="27" name="qaAla famaA xaTobukumo"></part>
+		<part index="28" name="qado samiEa All~`hu"></part>
+		<part index="29" name="tabaAraka Al~a*iy"></part>
+		<part index="30" name="Eam~a yatasaA&apos;aluwna"></part>
+	</quranparts>
 	<reciters default="afasy">
 		<reciter name="abdulbasit" reciter="AbdulBasit AbdusSamad" source="tanzil"></reciter>
 		<reciter name="abdulbasit-mjwd" reciter="AbdulBasit AbdusSamad (Mujawwad)" source="tanzil"></reciter>
