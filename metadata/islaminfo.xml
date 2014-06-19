@@ -54,6 +54,12 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
  Deen/Din
  Riba
  Shariah/Sharia
+ 
+ e:\wsusoffline\bin\wget.exe -r -np -nd -L -R jsp@q* http://corpus.quran.com/wordbyword.jsp
+ 
+ http://corpus.quran.com/wordbyword.jsp
+ var str = "", aya = 1; for (var sura = 1; sura <= 114; ) { var next = window.open("http://corpus.quran.com/wordbyword.jsp?chapter=" + sura.toString() + "&verse=" + aya.toString()); do {} while (next.document.readyState != "complete"); var startaya = aya, words = next.document.querySelectorAll(".morphologyTable > tbody > tr > td:first-child"); for (var ct = 1; ct < words.length; ct++) { if (startaya <= parseInt(words[ct].firstChild.innerText.split(":")[1], 10)) str += (aya.toString() != words[ct].firstChild.innerText.split(":")[1] ? '\r\n' : (words[ct].firstChild.innerText.split(":")[1] == startaya.toString() && words[ct].firstChild.innerText.split(":")[2] == "1)" ? '' : '|')) + words[ct].childNodes[4].data; aya = parseInt(words[ct].firstChild.innerText.split(":")[1], 10); } next.close(); aya = (aya < startaya) ? (console.log(str), str = "", sura++, 1) : (str += '\r\n', aya + 1); }
+ 
 	-->
 	<jurisprudence name="fiqh" id="Jurisprudence">
 		<categories>
