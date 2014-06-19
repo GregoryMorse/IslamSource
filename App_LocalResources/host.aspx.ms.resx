@@ -4269,7 +4269,7 @@
   <data name="IslamSource_CurrentMonth" xml:space="preserve">
     <value>Bulan Semasa</value>
   </data>
-  <data name="IslamSource_HijriCalender" xml:space="preserve">
-    <value>Hijrah Calender</value>
+  <data name="IslamSource_HijriCalendar" xml:space="preserve">
+    <value>Hijrah Calendar</value>
   </data>
 </root>

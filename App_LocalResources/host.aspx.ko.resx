@@ -4266,7 +4266,7 @@
   <data name="IslamSource_CurrentMonth" xml:space="preserve">
     <value>현재 월</value>
   </data>
-  <data name="IslamSource_HijriCalender" xml:space="preserve">
+  <data name="IslamSource_HijriCalendar" xml:space="preserve">
     <value>회교 식 달력</value>
   </data>
 </root>

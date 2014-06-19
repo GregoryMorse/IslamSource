@@ -4269,7 +4269,7 @@
   <data name="IslamSource_CurrentMonth" xml:space="preserve">
     <value>Mis cyfredol</value>
   </data>
-  <data name="IslamSource_HijriCalender" xml:space="preserve">
+  <data name="IslamSource_HijriCalendar" xml:space="preserve">
     <value>Hijri Calendr</value>
   </data>
 </root>

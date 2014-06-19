@@ -4266,7 +4266,7 @@
   <data name="IslamSource_CurrentMonth" xml:space="preserve">
     <value>Pašreizējais mēnesis</value>
   </data>
-  <data name="IslamSource_HijriCalender" xml:space="preserve">
+  <data name="IslamSource_HijriCalendar" xml:space="preserve">
     <value>Hidžras kalendārs</value>
   </data>
 </root>

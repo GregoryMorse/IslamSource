@@ -4281,7 +4281,40 @@
   <data name="IslamSource_CurrentMonth" xml:space="preserve">
     <value>Current Month</value>
   </data>
-  <data name="IslamSource_HijriCalender" xml:space="preserve">
-    <value>Hijri Calender</value>
+  <data name="IslamSource_HijriCalendar" xml:space="preserve">
+    <value>Hijri Calendar</value>
+  </data>
+  <data name="IslamSource_Calculations" xml:space="preserve">
+    <value>Calculations</value>
+  </data>
+  <data name="IslamSource_Compute" xml:space="preserve">
+    <value>Compute</value>
+  </data>
+  <data name="IslamSource_Date" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="IslamSource_Degrees" xml:space="preserve">
+    <value>Degrees</value>
+  </data>
+  <data name="IslamSource_GregorianCalendar" xml:space="preserve">
+    <value>Gregorian Calendar</value>
+  </data>
+  <data name="IslamSource_Minutes" xml:space="preserve">
+    <value>Minutes</value>
+  </data>
+  <data name="IslamSource_Offset" xml:space="preserve">
+    <value>Offset</value>
+  </data>
+  <data name="IslamSource_Seconds" xml:space="preserve">
+    <value>Seconds</value>
+  </data>
+  <data name="IslamSource_UmAlQuraCalendar" xml:space="preserve">
+    <value>Um Al-Qura Calendar</value>
+  </data>
+  <data name="IslamSource_UnitConversion" xml:space="preserve">
+    <value>Unit Conversion</value>
+  </data>
+  <data name="IslamSource_Units" xml:space="preserve">
+    <value>Units</value>
   </data>
 </root>

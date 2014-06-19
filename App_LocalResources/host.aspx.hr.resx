@@ -4266,7 +4266,7 @@
   <data name="IslamSource_CurrentMonth" xml:space="preserve">
     <value>Trenutni mjesec</value>
   </data>
-  <data name="IslamSource_HijriCalender" xml:space="preserve">
+  <data name="IslamSource_HijriCalendar" xml:space="preserve">
     <value>Hijri kalendar</value>
   </data>
 </root>

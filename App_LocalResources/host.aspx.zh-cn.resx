@@ -4269,7 +4269,7 @@
   <data name="IslamSource_CurrentMonth" xml:space="preserve">
     <value>本月</value>
   </data>
-  <data name="IslamSource_HijriCalender" xml:space="preserve">
+  <data name="IslamSource_HijriCalendar" xml:space="preserve">
     <value>回历日历</value>
   </data>
 </root>

@@ -88,14 +88,14 @@
 			<email name="introductionemail" useimage="true"></email>
 		</frame>
 	</page>
-	<page name="HijriCalender" description="IslamSource_HijriCalender">
+	<page name="HijriCalendar" description="IslamSource_HijriCalendar">
 		<frame name="info" description="IslamSource_Information">
 			<static name="monthname" description="IslamSource_CurrentMonth" onrender="PrayerTime::GetMonthName"></static>
-			<static name="calender" description="IslamSource_HijriCalender" onrender="PrayerTime::GetCalender"></static>
+			<static name="calendar" description="IslamSource_GregorianCalendar" onrender="PrayerTime::GetCalendar"></static>
 			<static name="hijrimonthname" description="IslamSource_CurrentMonth" onrender="PrayerTime::GetMonthName"></static>
-			<static name="hijricalender" description="IslamSource_HijriCalender" onrender="PrayerTime::GetCalender"></static>
+			<static name="hijricalendar" description="IslamSource_HijriCalendar" onrender="PrayerTime::GetCalendar"></static>
 			<static name="umalquramonthname" description="IslamSource_CurrentMonth" onrender="PrayerTime::GetMonthName"></static>
-			<static name="umalquracalender" description="IslamSource_HijriCalender" onrender="PrayerTime::GetCalender"></static>
+			<static name="umalquracalendar" description="IslamSource_UmAlQuraCalendar" onrender="PrayerTime::GetCalendar"></static>
 		</frame>
 	</page>
 	<page name="PrayerTimes" description="IslamSource_PrayerTimes">
@@ -109,7 +109,7 @@
 			<edit name="degrees" description="IslamSource_Degrees"></edit>
 			<edit name="minutes" description="IslamSource_Minutes"></edit>
 			<edit name="seconds" description="IslamSource_Seconds"></edit>
-			<radio name="convunits" description="IslamSource_Units"><option name="IslamSource_DegreeMinuteSecond" defaultvalue="true"></option><option name="IslamSource_DecimalDegree"></option><option name="IslamSource_Radians"></option></radio>
+			<radio name="convunits" description="IslamSource_Units" onchange="UnitConversions::GetDegreeConversionUnitChangeJS"><option name="IslamSource_DegreeMinuteSecond" defaultvalue="true"></option><option name="IslamSource_DecimalDegree"></option><option name="IslamSource_Radians"></option></radio>
 			<button name="compute" description="IslamSource_Compute" onclick="UnitConversions::GetDegreeConversionJS"></button>
 			<static name="result" description=""></static>
 		</frame>
@@ -123,17 +123,21 @@
 			<edit name="destdist" description="IslamSource_Degrees"></edit>
 			<edit name="destangle" description="IslamSource_Minutes"></edit>
 			<radio name="convunits" description="IslamSource_Units"><option name="IslamSource_AngleDistance" defaultvalue="true"></option><option name="IslamSource_LatitudeLongitude"></option></radio>
-			<button name="compute" description="IslamSource_Compute" onclick="UnitConversions::GetDegreeConversionJS"></button>
+			<button name="compute" description="IslamSource_Compute" onclick="UnitConversions::GetDegreeOffsetJS"></button>
 			<static name="result" description=""></static>
 		</frame>
 		<frame name="systemconversion" description="IslamSource_UnitConversion">
 			<datetime name="date" description="IslamSource_Date"></datetime>
 			<edit name="offset" description="IslamSource_Offset"></edit>
 			<radio name="convunits" description="IslamSource_Units"><option name="IslamSource_Add" defaultvalue="true"></option><option name="IslamSource_Remove"></option></radio>
+			<button name="compute" description="IslamSource_Compute" onclick="UnitConversions::GetDateOffsetJS"></button>
+			<static name="result" description=""></static>
 		</frame>
 		<frame name="systemconversion" description="IslamSource_UnitConversion">
 			<datetime name="date" description="IslamSource_Date"></datetime>
 			<radio name="convunits" description="IslamSource_Units"><option name="IslamSource_Gregorian" defaultvalue="true"></option><option name="IslamSource_Hijri"></option><option name="IslamSource_UmAlQura"></option></radio>
+			<button name="compute" description="IslamSource_Compute" onclick="UnitConversions::GetDataConversionJS"></button>
+			<static name="result" description=""></static>
 		</frame>
 	</page> -->
 	<page name="islam" description="IslamSource_IslamicInformation">

@@ -406,11 +406,11 @@
             writer.Write("<meta property=""og:url"" content=""" + Utility.HtmlTextEncode(Web.HttpContext.Current.Request.Url.AbsoluteUri) + """>")
             writer.Write("<meta property=""og:description"" content=""" + CType(Controls(1), Page).GetDescription() + """>")
             writer.Write("<meta property=""og:image"" content=""" + Web.HttpContext.Current.Request.Url.GetLeftPart(UriPartial.Authority) + Utility.HtmlTextEncode(GetPageString("Image.gif&Image=Scale&p=menu.main")) + """>")
-            writer.Write("<meta property=""fb:app_id"" content=""241314199389208"">")
+            writer.Write("<meta property=""fb:app_id"" content=""" + Utility.ConnectionData.FBAppID + """>")
             writer.Write("<meta property=""og:type"" content=""article"">")
             writer.Write("<meta property=""og:locale"" content=""en_US"">")
-            writer.Write("<meta property=""article:author"" content=""greg.morse"">")
-            writer.Write("<meta property=""article:publisher"" content=""greg.morse"">")
+            writer.Write("<meta property=""article:author"" content=""" + Utility.ConnectionData.AuthorName + """>")
+            writer.Write("<meta property=""article:publisher"" content=""" + Utility.ConnectionData.AuthorName + """>")
             writer.WriteFullBeginTag("title")
             writer.Write(Utility.LoadResourceString(PageSet.Title))
             writer.WriteEndTag("title")
@@ -462,7 +462,7 @@
 "  var js, fjs = d.getElementsByTagName(s)[0];" + _
 "  if (d.getElementById(id)) return;" + _
 "  js = d.createElement(s); js.id = id;" + _
-"  js.src = ""//connect.facebook.net/en_US/all.js#xfbml=1&appId=241314199389208"";" + _
+"  js.src = ""//connect.facebook.net/en_US/all.js#xfbml=1&appId=" + Utility.ConnectionData.FBAppID + """;" + _
 "  fjs.parentNode.insertBefore(js, fjs);" + _
 "}(document, 'script', 'facebook-jssdk'));")
             writer.Write(vbCrLf + vbTab + vbTab)
