@@ -2997,7 +2997,7 @@ End Class
             If Division = 8 Then SeperateSectionCount = IslamData.ObjIslamData.QuranSelections(Index).SelectionInfo.Length
             If Division = 9 Then SeperateSectionCount = LetterDictionary(IslamData.ObjIslamData.ArabicLetters(Index).Symbol).Count
         Dim Lines As String() = IO.File.ReadAllLines(Utility.GetFilePath("metadata\" + GetTranslationFileName(Web.HttpContext.Current.Request.QueryString.Get("qurantranslation"))))
-        Dim W4WLines As String() = IO.File.ReadAllLines(Utility.GetFilePath("metadata\en.w4w.txt"))
+        Dim W4WLines As String() = IO.File.ReadAllLines(Utility.GetFilePath("metadata\en.w4w.shehnazshaikh.txt"))
             For SectionCount As Integer = 0 To SeperateSectionCount - 1
                 If Division = 0 Then
                     BaseChapter = CInt(GetChapterByIndex(Index).Attributes.GetNamedItem("index").Value)
