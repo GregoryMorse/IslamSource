@@ -2025,8 +2025,8 @@ Public Class Arabic
         IslamData.ObjIslamData.ArabicLetters.CopyTo(Letters, 0)
         Array.Sort(Letters, New StringLengthComparer)
         GetArabicSymbolJSArray = "var ArabicLetters = " + _
-                                Utility.MakeJSArray(New String() {Utility.MakeJSIndexedObject(New String() {"Symbol", "Assimilate", "TranslitLetter", "RomanTranslit", "PlainRoman"}, _
-                                Array.ConvertAll(Of IslamData.ArabicSymbol, String())(Letters, Function(Convert As IslamData.ArabicSymbol) New String() {CStr(AscW(Convert.Symbol)), CStr(IIf(Convert.Assimilate, "true", String.Empty)), CStr(IIf(Convert.ExtendedBuckwalterLetter = ChrW(0), String.Empty, Convert.ExtendedBuckwalterLetter)), Convert.RomanTranslit, Convert.PlainRoman}), False)}, True) + ";"
+                                Utility.MakeJSArray(New String() {Utility.MakeJSIndexedObject(New String() {"Symbol", "Shaping", "Assimilate", "TranslitLetter", "RomanTranslit", "PlainRoman"}, _
+                                Array.ConvertAll(Of IslamData.ArabicSymbol, String())(Letters, Function(Convert As IslamData.ArabicSymbol) New String() {CStr(AscW(Convert.Symbol)), Utility.MakeJSArray(Array.ConvertAll(Convert.Shaping, Function(Ch As Char) CStr(AscW(Ch)))), CStr(IIf(Convert.Assimilate, "true", String.Empty)), CStr(IIf(Convert.ExtendedBuckwalterLetter = ChrW(0), String.Empty, Convert.ExtendedBuckwalterLetter)), Convert.RomanTranslit, Convert.PlainRoman}), False)}, True) + ";"
     End Function
     Public Shared Function GetTransliterateGenJS() As String
         Return "function doTransliterate(sVal, direction, conversion) { var iCount, iSubCount, sOutVal = ''; for (iCount = 0; iCount < sVal.length; iCount++) { for (iSubCount = 0; iSubCount < ArabicLetters.length; iSubCount++) { if (direction ? sVal.charCodeAt(iCount) === parseInt(ArabicLetters[iSubCount].Symbol, 10) : sVal.charAt(iCount) === unescape((conversion ? ArabicLetters[iSubCount].TranslitLetter : ArabicLetters[iSubCount].RomanTranslit))) { sOutVal += (direction ? (conversion ? ArabicLetters[iSubCount].TranslitLetter : ArabicLetters[iSubCount].RomanTranslit) : String.fromCharCode(ArabicLetters[iSubCount].Symbol)); break; } } if (iSubCount === ArabicLetters.length) sOutVal += sVal.charAt(iCount); } return unescape(sOutVal); }"
@@ -2037,7 +2037,7 @@ Public Class Arabic
             FindLetterBySymbolJS()
     End Function
     Public Shared Function FindLetterBySymbolJS() As String
-        Return "function findLetterBySymbol(chVal) { var iSubCount; for (iSubCount = 0; iSubCount < ArabicLetters.length; iSubCount++) { if (chVal === parseInt(ArabicLetters[iSubCount].Symbol, 10)) return iSubCount; } return -1; }"
+        Return "function findLetterBySymbol(chVal) { var iSubCount; for (iSubCount = 0; iSubCount < ArabicLetters.length; iSubCount++) { if (chVal === parseInt(ArabicLetters[iSubCount].Symbol, 10)) return iSubCount; for (var iShapeCount = 0; iShapeCount < ArabicLetters[iSubCount].Shaping.length; iShapeCount++) { if (chVal === parseInt(ArabicLetters[iSubCount].Shaping[iShapeCount], 10)) return iSubCount; } } return -1; }"
     End Function
     Public Shared Function IsDiacriticJS() As String
         Return "function isDiacritic(index) { return (parseInt(ArabicLetters[index].Symbol, 10) === 1611 || parseInt(ArabicLetters[index].Symbol, 10) === 1612 || parseInt(ArabicLetters[index].Symbol, 10) === 1613 || parseInt(ArabicLetters[index].Symbol, 10) === 1614 || parseInt(ArabicLetters[index].Symbol, 10) === 1615 || parseInt(ArabicLetters[index].Symbol, 10) === 1616 || parseInt(ArabicLetters[index].Symbol, 10) === 1617 || parseInt(ArabicLetters[index].Symbol, 10) === 1618 || parseInt(ArabicLetters[index].Symbol, 10) === 1619 || parseInt(ArabicLetters[index].Symbol, 10) === 1620 || parseInt(ArabicLetters[index].Symbol, 10) === 1621); }"
