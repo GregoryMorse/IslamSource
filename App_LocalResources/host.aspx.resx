@@ -4428,6 +4428,27 @@
   <data name="IslamSource_HijriCalendar" xml:space="preserve">
     <value>Hijri Calendar</value>
   </data>
+  <data name="IslamInfo_Letters" xml:space="preserve">
+    <value>Letters</value>
+  </data>
+  <data name="IslamInfo_UniqueWords" xml:space="preserve">
+    <value>Unique Words</value>
+  </data>
+  <data name="IslamInfo_UniqueWordsPerPart" xml:space="preserve">
+    <value>Unique Words Per Part</value>
+  </data>
+  <data name="IslamInfo_UniqueWordsPerStation" xml:space="preserve">
+    <value>Unique Words Per Station</value>
+  </data>
+  <data name="IslamInfo_Words" xml:space="preserve">
+    <value>Words</value>
+  </data>
+  <data name="IslamInfo_WordsPerPart" xml:space="preserve">
+    <value>Words Per Part</value>
+  </data>
+  <data name="IslamInfo_WordsPerStation" xml:space="preserve">
+    <value>Words Per Station</value>
+  </data>
   <data name="IslamSource_Calculations" xml:space="preserve">
     <value>Calculations</value>
   </data>
