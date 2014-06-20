@@ -3,11 +3,12 @@
 <!ELEMENT pages (page+|languages)>
 <!ELEMENT languages (language+)>
 <!ELEMENT language EMPTY>
-<!ELEMENT page ((child|frame|edit|radio|ipaddr|static|image|email|download|button)*|addlist?)>
+<!ELEMENT page ((child|frame|edit|date|radio|ipaddr|static|image|email|download|button)*|addlist?)>
 <!ELEMENT frame (edit|radio|ipaddr|static|image|email|download)*>
 <!ELEMENT list (edit|radio|ipaddr|static)*>
 <!ELEMENT child EMPTY>
 <!ELEMENT edit EMPTY>
+<!ELEMENT date EMPTY>
 <!ELEMENT radio (option+)>
 <!ELEMENT ipaddr EMPTY>
 <!ELEMENT option EMPTY>
@@ -42,6 +43,8 @@
 <!ATTLIST edit defaultvalue CDATA #IMPLIED>
 <!ATTLIST edit pagename (true|false) "false">
 <!ATTLIST edit readonly (true|false) "false">
+<!ATTLIST date name CDATA #REQUIRED>
+<!ATTLIST date description CDATA #REQUIRED>
 <!ATTLIST radio name CDATA #REQUIRED>
 <!ATTLIST radio description CDATA #REQUIRED>
 <!ATTLIST radio uselist (true|false) "false">
@@ -104,7 +107,7 @@
 			<static name="praytime" description="IslamSource_PrayerTimes" onrender="PrayerTime::GetPrayerTimes"></static>
 		</frame>
 	</page>
-	<!-- <page name="Calculations" description="IslamSource_Calculations">
+	<page name="Calculations" description="IslamSource_Calculations">
 		<frame name="systemconversion" description="IslamSource_UnitConversion">
 			<edit name="degrees" description="IslamSource_Degrees"></edit>
 			<edit name="minutes" description="IslamSource_Minutes"></edit>
@@ -139,7 +142,7 @@
 			<button name="compute" description="IslamSource_Compute" onclick="UnitConversions::GetDataConversionJS"></button>
 			<static name="result" description=""></static>
 		</frame>
-	</page> -->
+	</page>
 	<page name="islam" description="IslamSource_IslamicInformation">
 		<frame name="words" description="IslamSource_Viewer" hasform="true">
 			<radio name="selection" description="IslamSource_Selection" uselist="true" defaultvalue="0" onpopulate="Arabic::GetCategories"></radio>
@@ -153,8 +156,8 @@
 			<button name="fontcustomapply" description="IslamSource_Apply" onclick="ArabicFont::GetChangeCustomFontJS"></button>
 			<image name="fontloading" text="IslamSource_Loading" source="loading-h.gif"></image>
 			<static name="islaminfotext" description="IslamSource_Text" onrender="Arabic::DisplayTranslation"></static>
-			<static name="font-tester" description="">In the name of Allah, بسم الله الرحمن الرحيم</static>
-		</frame>		
+			<static name="font-tester" description=""></static>
+		</frame>
 	</page>
 	<page name="supplications" description="IslamSource_Supplications">
 		<frame name="supplications" description="IslamSource_Viewer" hasform="true">
@@ -170,7 +173,7 @@
 			<image name="fontloading" text="IslamSource_Loading" source="loading-h.gif"></image>
 			<radio name="quotemode" description="IslamSource_QuoteMode" usecheck="true" onchange="RenderArray::GetQuoteModeJS"><option name="IslamSource_Quote"></option><option name="IslamSource_Disable" defaultvalue="true"></option></radio>
 			<static name="supptext" description="IslamSource_Text" onrender="Supplications::GetRenderedSuppText"></static>
-			<static name="font-tester" description="">In the name of Allah, بسم الله الرحمن الرحيم</static>
+			<static name="font-tester" description=""></static>
 		</frame>
 	</page>
 	<page name="transliterator" description="IslamSource_Transliteration">
@@ -182,7 +185,7 @@
 			<edit name="fontcustom" description="" defaultvalue="IslamSource_Lotus" rows="1"></edit>
 			<button name="fontcustomapply" description="IslamSource_Apply" onclick="ArabicFont::GetChangeCustomFontJS"></button>
 			<image name="fontloading" text="IslamSource_Loading" source="loading-h.gif"></image>
-			<static name="font-tester" description="">In the name of Allah, بسم الله الرحمن الرحيم</static>
+			<static name="font-tester" description=""></static>
 			<edit name="translitedit" rows="4"></edit>
 			<radio name="scheme" description="IslamSource_Scheme" onchange="Arabic::GetSchemeChangeJS"><option name="IslamSource_Transliterate" defaultvalue="true"></option><option name="IslamSource_ModifyDiacritics"></option><option name="IslamSource_FixDirectionalMarkers"></option></radio>
 			<radio name="diacriticscheme" description="IslamSource_Operation"><option name="IslamSource_Add" defaultvalue="true"></option><option name="IslamSource_Remove"></option></radio>
@@ -210,7 +213,7 @@
 			<radio name="quotemode" description="IslamSource_QuoteMode" usecheck="true" onchange="RenderArray::GetQuoteModeJS"><option name="IslamSource_Quote"></option><option name="IslamSource_Disable" defaultvalue="true"></option></radio>
 			<static name="quranwordtotal" description="IslamSource_WordTotal" onrender="TanzilReader::GetQuranWordTotal"></static>
 			<static name="quranwords" description="IslamSource_Text" onrender="TanzilReader::GetQuranWordFrequency"></static>
-			<static name="font-tester" description="">In the name of Allah, بسم الله الرحمن الرحيم</static>
+			<static name="font-tester" description=""></static>
 		</frame>
 	</page>
 	<page name="quran" description="IslamSource_Quran">
@@ -229,7 +232,7 @@
 			<image name="fontloading" text="IslamSource_Loading" source="loading-h.gif"></image>
 			<radio name="quotemode" description="IslamSource_QuoteMode" usecheck="true" onchange="RenderArray::GetQuoteModeJS"><option name="Quote"></option><option name="Disable" defaultvalue="true"></option></radio>
 			<static name="qurantext" description="IslamSource_Text" onrender="TanzilReader::GetRenderedQuranText"></static>
-			<static name="font-tester" description="">In the name of Allah, بسم الله الرحمن الرحيم</static>
+			<static name="font-tester" description=""></static>
 		</frame>
 	</page>
 	<page name="hadith" description="IslamSource_Hadiths">
@@ -248,7 +251,7 @@
 			<image name="fontloading" text="IslamSource_Loading" source="loading-h.gif"></image>
 			<radio name="quotemode" description="IslamSource_QuoteMode" usecheck="true" onchange="RenderArray::GetQuoteModeJS"><option name="Quote"></option><option name="Disable" defaultvalue="true"></option></radio>
 			<static name="hadithtext" description="IslamSource_Text" onrender="HadithReader::GetRenderedText"></static>
-			<static name="font-tester" description="">In the name of Allah, بسم الله الرحمن الرحيم</static>
+			<static name="font-tester" description=""></static>
 		</frame>
 	</page>
 	<page name="hadithsource" description="IslamSource_HadithSourceText">

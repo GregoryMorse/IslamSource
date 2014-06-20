@@ -55,7 +55,6 @@ Partial Class Menu
         writer.WriteAttribute("id", host.LangSet)
         writer.WriteAttribute("onchange", "javascript: this.parentElement.parentElement.submit();")
         writer.Write(HtmlTextWriter.TagRightChar)
-        IslamData.Initialize()
         Dim AllCultures() As Globalization.CultureInfo = Globalization.CultureInfo.GetCultures(Globalization.CultureTypes.AllCultures)
         For Count As Integer = 0 To AllCultures.Length - 1
             If IO.File.Exists(Utility.GetFilePath(VirtualPathUtility.ToAbsolute("~/App_LocalResources/host.aspx." + AllCultures(Count).Name + ".resx"))) Then

@@ -1031,9 +1031,9 @@ Public Class PrayerTime
     Public Shared Function GetCalendar(ByVal Item As PageLoader.TextItem) As Array()
         Dim Count As Integer
         Dim Calendar As Globalization.Calendar
-        If Item.Name = "hijricalender" Then
+        If Item.Name = "hijricalendar" Then
             Calendar = New Globalization.HijriCalendar
-        ElseIf Item.Name = "umalquracalender" Then
+        ElseIf Item.Name = "umalquracalendar" Then
             Calendar = New Globalization.UmAlQuraCalendar
         Else
             Calendar = Globalization.CultureInfo.CurrentCulture.Calendar
@@ -1179,7 +1179,7 @@ Public Class Arabic
         Try
             GetUName(CUShort(AscW(Character)), Str)
         Catch e As System.DllNotFoundException
-            Return Utility.LoadResourceString("unicode_" + IslamData.ObjIslamData.ArabicLetters(FindLetterBySymbol(Character)).UnicodeName)
+            Return Utility.LoadResourceString("unicode_" + CachedData.IslamData.ArabicLetters(FindLetterBySymbol(Character)).UnicodeName)
         End Try
         Return Str.ToString()
     End Function
@@ -1188,13 +1188,13 @@ Public Class Arabic
         Dim Count As Integer
         Dim Index As Integer
         For Count = 0 To Buckwalter.Length - 1
-            For Index = 0 To IslamData.ObjIslamData.ArabicLetters.Length - 1
-                If Buckwalter(Count) = IslamData.ObjIslamData.ArabicLetters(Index).ExtendedBuckwalterLetter Then
-                    ArabicString += IslamData.ObjIslamData.ArabicLetters(Index).Symbol
+            For Index = 0 To CachedData.IslamData.ArabicLetters.Length - 1
+                If Buckwalter(Count) = CachedData.IslamData.ArabicLetters(Index).ExtendedBuckwalterLetter Then
+                    ArabicString += CachedData.IslamData.ArabicLetters(Index).Symbol
                     Exit For
                 End If
             Next
-            If Index = IslamData.ObjIslamData.ArabicLetters.Length Then
+            If Index = CachedData.IslamData.ArabicLetters.Length Then
                 ArabicString += Buckwalter(Count)
             End If
         Next
@@ -1216,8 +1216,8 @@ Public Class Arabic
         Dim RomanString As String = String.Empty
         Dim Count As Integer
         Dim Index As Integer
-        Dim Letters(IslamData.ObjIslamData.ArabicLetters.Length - 1) As IslamData.ArabicSymbol
-        IslamData.ObjIslamData.ArabicLetters.CopyTo(Letters, 0)
+        Dim Letters(CachedData.IslamData.ArabicLetters.Length - 1) As IslamData.ArabicSymbol
+        CachedData.IslamData.ArabicLetters.CopyTo(Letters, 0)
         Array.Sort(Letters, New StringLengthComparer)
         For Count = 0 To ArabicString.Length - 1
             For Index = 0 To Letters.Length - 1
@@ -1233,7 +1233,7 @@ Public Class Arabic
         Return RomanString
     End Function
     Public Shared Function FindLetterBySymbol(Symbol As Char) As Integer
-        Return Array.FindIndex(IslamData.ObjIslamData.ArabicLetters, Function(Letter As IslamData.ArabicSymbol) Letter.Symbol = Symbol)
+        Return Array.FindIndex(CachedData.IslamData.ArabicLetters, Function(Letter As IslamData.ArabicSymbol) Letter.Symbol = Symbol)
     End Function
     Public Const Space As Char = ChrW(32)
     Public Const ExclamationMark As Char = ChrW(33)
@@ -1336,63 +1336,63 @@ Public Class Arabic
         ArabicSmallLowSeen, ArabicSmallWaw, ArabicSmallYeh, ArabicSmallHighNoon, _
         ArabicPlaceOfSajdah, ArabicEmptyCentreLowStop, ArabicEmptyCentreHighStop, _
         ArabicRoundedHighStopWithFilledCentre, ArabicSmallLowMeem _
-            }, Function(Ch As Char) New Object() {IslamData.ObjIslamData.ArabicLetters(FindLetterBySymbol(Ch)).UnicodeName + " (" + Ch + ")", FindLetterBySymbol(Ch)})
+            }, Function(Ch As Char) New Object() {CachedData.IslamData.ArabicLetters(FindLetterBySymbol(Ch)).UnicodeName + " (" + Ch + ")", FindLetterBySymbol(Ch)})
     End Function
     Public Shared Function IsLetter(Index As Integer) As Boolean
-        Return IslamData.ObjIslamData.ArabicLetters(Index).Symbol = ArabicLetterBeh Or _
-        IslamData.ObjIslamData.ArabicLetters(Index).Symbol = ArabicLetterTeh Or _
-        IslamData.ObjIslamData.ArabicLetters(Index).Symbol = ArabicLetterTheh Or _
-        IslamData.ObjIslamData.ArabicLetters(Index).Symbol = ArabicLetterJeem Or _
-        IslamData.ObjIslamData.ArabicLetters(Index).Symbol = ArabicLetterHah Or _
-        IslamData.ObjIslamData.ArabicLetters(Index).Symbol = ArabicLetterKhah Or _
-        IslamData.ObjIslamData.ArabicLetters(Index).Symbol = ArabicLetterDal Or _
-        IslamData.ObjIslamData.ArabicLetters(Index).Symbol = ArabicLetterThal Or _
-        IslamData.ObjIslamData.ArabicLetters(Index).Symbol = ArabicLetterReh Or _
-        IslamData.ObjIslamData.ArabicLetters(Index).Symbol = ArabicLetterZain Or _
-        IslamData.ObjIslamData.ArabicLetters(Index).Symbol = ArabicLetterSeen Or _
-        IslamData.ObjIslamData.ArabicLetters(Index).Symbol = ArabicLetterSheen Or _
-        IslamData.ObjIslamData.ArabicLetters(Index).Symbol = ArabicLetterSad Or _
-        IslamData.ObjIslamData.ArabicLetters(Index).Symbol = ArabicLetterDad Or _
-        IslamData.ObjIslamData.ArabicLetters(Index).Symbol = ArabicLetterTah Or _
-        IslamData.ObjIslamData.ArabicLetters(Index).Symbol = ArabicLetterZah Or _
-        IslamData.ObjIslamData.ArabicLetters(Index).Symbol = ArabicLetterAin Or _
-        IslamData.ObjIslamData.ArabicLetters(Index).Symbol = ArabicLetterGhain Or _
-        IslamData.ObjIslamData.ArabicLetters(Index).Symbol = ArabicLetterFeh Or _
-        IslamData.ObjIslamData.ArabicLetters(Index).Symbol = ArabicLetterQaf Or _
-        IslamData.ObjIslamData.ArabicLetters(Index).Symbol = ArabicLetterKaf Or _
-        IslamData.ObjIslamData.ArabicLetters(Index).Symbol = ArabicLetterLam Or _
-        IslamData.ObjIslamData.ArabicLetters(Index).Symbol = ArabicLetterMeem Or _
-        IslamData.ObjIslamData.ArabicLetters(Index).Symbol = ArabicLetterNoon Or _
-        IslamData.ObjIslamData.ArabicLetters(Index).Symbol = ArabicLetterHeh
+        Return CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterBeh Or _
+        CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterTeh Or _
+        CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterTheh Or _
+        CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterJeem Or _
+        CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterHah Or _
+        CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterKhah Or _
+        CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterDal Or _
+        CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterThal Or _
+        CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterReh Or _
+        CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterZain Or _
+        CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterSeen Or _
+        CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterSheen Or _
+        CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterSad Or _
+        CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterDad Or _
+        CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterTah Or _
+        CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterZah Or _
+        CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterAin Or _
+        CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterGhain Or _
+        CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterFeh Or _
+        CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterQaf Or _
+        CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterKaf Or _
+        CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterLam Or _
+        CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterMeem Or _
+        CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterNoon Or _
+        CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterHeh
     End Function
     Public Shared Function IsPunctuation(Index As Integer) As Boolean
-        Return IslamData.ObjIslamData.ArabicLetters(Index).Symbol = ExclamationMark Or IslamData.ObjIslamData.ArabicLetters(Index).Symbol = QuotationMark Or IslamData.ObjIslamData.ArabicLetters(Index).Symbol = FullStop Or IslamData.ObjIslamData.ArabicLetters(Index).Symbol = Comma Or IslamData.ObjIslamData.ArabicLetters(Index).Symbol = ArabicComma
+        Return CachedData.IslamData.ArabicLetters(Index).Symbol = ExclamationMark Or CachedData.IslamData.ArabicLetters(Index).Symbol = QuotationMark Or CachedData.IslamData.ArabicLetters(Index).Symbol = FullStop Or CachedData.IslamData.ArabicLetters(Index).Symbol = Comma Or CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicComma
     End Function
     Public Shared Function IsStop(Index As Integer) As Boolean
-        Return (IslamData.ObjIslamData.ArabicLetters(Index).Symbol = ArabicSmallHighLigatureSadWithLamWithAlefMaksura Or _
-                                IslamData.ObjIslamData.ArabicLetters(Index).Symbol = ArabicSmallHighLigatureQafWithLamWithAlefMaksura Or _
-                                IslamData.ObjIslamData.ArabicLetters(Index).Symbol = ArabicSmallHighMeemInitialForm Or _
-                                IslamData.ObjIslamData.ArabicLetters(Index).Symbol = ArabicSmallHighLamAlef Or _
-                                IslamData.ObjIslamData.ArabicLetters(Index).Symbol = ArabicSmallHighJeem Or _
-                                IslamData.ObjIslamData.ArabicLetters(Index).Symbol = ArabicSmallHighThreeDots Or _
-                                IslamData.ObjIslamData.ArabicLetters(Index).Symbol = ArabicSmallHighSeen) Or _
-                                (IslamData.ObjIslamData.ArabicLetters(Index).Symbol = ArabicEndOfAyah)
+        Return (CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicSmallHighLigatureSadWithLamWithAlefMaksura Or _
+                                CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicSmallHighLigatureQafWithLamWithAlefMaksura Or _
+                                CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicSmallHighMeemInitialForm Or _
+                                CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicSmallHighLamAlef Or _
+                                CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicSmallHighJeem Or _
+                                CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicSmallHighThreeDots Or _
+                                CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicSmallHighSeen) Or _
+                                (CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicEndOfAyah)
     End Function
     Public Shared Function IsIgnored(Index As Integer) As Boolean
-        Return (IslamData.ObjIslamData.ArabicLetters(Index).Symbol = ArabicSmallWaw) Or _
-            (IslamData.ObjIslamData.ArabicLetters(Index).Symbol = ArabicSmallHighMeemIsolatedForm)
+        Return (CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicSmallWaw) Or _
+            (CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicSmallHighMeemIsolatedForm)
     End Function
     Public Shared Function IsWhitespace(Index As Integer) As Boolean
-        Return IslamData.ObjIslamData.ArabicLetters(Index).Symbol = Space
+        Return CachedData.IslamData.ArabicLetters(Index).Symbol = Space
     End Function
     Public Shared Function IsAmbiguousGutteral(Index As Integer, After As Boolean) As Boolean
-        Return IslamData.ObjIslamData.ArabicLetters(Index).Symbol = ArabicLetterHamza Or _
-            IslamData.ObjIslamData.ArabicLetters(Index).Symbol = ArabicLetterHah Or _
-            Not After And (IslamData.ObjIslamData.ArabicLetters(Index).Symbol = ArabicLetterSad Or _
-                IslamData.ObjIslamData.ArabicLetters(Index).Symbol = ArabicLetterDad Or _
-                IslamData.ObjIslamData.ArabicLetters(Index).Symbol = ArabicLetterTah Or _
-                IslamData.ObjIslamData.ArabicLetters(Index).Symbol = ArabicLetterZah) Or _
-                IslamData.ObjIslamData.ArabicLetters(Index).Symbol = ArabicLetterAin
+        Return CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterHamza Or _
+            CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterHah Or _
+            Not After And (CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterSad Or _
+                CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterDad Or _
+                CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterTah Or _
+                CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterZah) Or _
+                CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterAin
     End Function
     Public Shared ArabicUniqueLetters As String() = {"Al^m^", "Al^m^S^", "Al^r", "Al^m^r", "k^hyE^S^", "Th", "Ts^m^", "Ts^", "ys^", "S^", "Hm^", "E^s^q^", "q^", "n^"}
     Public Shared ArabicWaslKasraExceptions As String() = {"{mo$uwA", "{}otuwA", "{qoDuwA", "{bonuwA", "{moDuwA", "{mora>ata", "{somu", "{vonatayni", "{vonayni", "{bonatu", "{bonu", "{moru&NA"}
@@ -1585,7 +1585,7 @@ Public Class Arabic
         For Each Ch As Char In Input
             Dim Index As Integer = FindLetterBySymbol(Ch)
             If IsLetter(Index) Then
-                Output += IslamData.ObjIslamData.ArabicLetters(Index).SymbolName
+                Output += CachedData.IslamData.ArabicLetters(Index).SymbolName
             End If
         Next
         Return Output
@@ -1594,38 +1594,38 @@ Public Class Arabic
         If bLeading Then
             If ArabicString(Index) = ArabicFatha Then
                 If ArabicString(Index + 1) = ArabicLetterAlef Then
-                    Dim Letter As String = CStr(IIf(bTrailing, String.Empty, IslamData.ObjIslamData.ArabicLetters(FindLetterBySymbol(ArabicString(Index + 2))).PlainRoman))
+                    Dim Letter As String = CStr(IIf(bTrailing, String.Empty, CachedData.IslamData.ArabicLetters(FindLetterBySymbol(ArabicString(Index + 2))).PlainRoman))
                     ArabicString = ArabicString.Remove(Index, CInt(IIf(bTrailing, 2, 3))).Insert(Index, "aae" + Letter)
                     If bTrailing Then Index += 3
                 Else
-                    Dim Letter As String = CStr(IIf(bTrailing, String.Empty, IslamData.ObjIslamData.ArabicLetters(FindLetterBySymbol(ArabicString(Index + 1))).PlainRoman))
+                    Dim Letter As String = CStr(IIf(bTrailing, String.Empty, CachedData.IslamData.ArabicLetters(FindLetterBySymbol(ArabicString(Index + 1))).PlainRoman))
                     ArabicString = ArabicString.Remove(Index, CInt(IIf(bTrailing, 1, 2))).Insert(Index, "ah" + Letter)
                     If bTrailing Then Index += 2
                 End If
             ElseIf ArabicString(Index) = ArabicDamma Then
                 If ArabicString(Index + 1) = ArabicLetterWaw Then
-                    Dim Letter As String = CStr(IIf(bTrailing, String.Empty, IslamData.ObjIslamData.ArabicLetters(FindLetterBySymbol(ArabicString(Index + 2))).PlainRoman))
+                    Dim Letter As String = CStr(IIf(bTrailing, String.Empty, CachedData.IslamData.ArabicLetters(FindLetterBySymbol(ArabicString(Index + 2))).PlainRoman))
                     ArabicString = ArabicString.Remove(Index, CInt(IIf(bTrailing, 2, 3))).Insert(Index, "eeh" + Letter)
                     If bTrailing Then Index += 3
                 Else
-                    Dim Letter As String = CStr(IIf(bTrailing, String.Empty, IslamData.ObjIslamData.ArabicLetters(FindLetterBySymbol(ArabicString(Index + 1))).PlainRoman))
+                    Dim Letter As String = CStr(IIf(bTrailing, String.Empty, CachedData.IslamData.ArabicLetters(FindLetterBySymbol(ArabicString(Index + 1))).PlainRoman))
                     ArabicString = ArabicString.Remove(Index, CInt(IIf(bTrailing, 1, 2))).Insert(Index, "k" + Letter)
                     If bTrailing Then Index += 1
                 End If
             ElseIf ArabicString(Index) = ArabicKasra Then
                 If ArabicString(Index + 1) = ArabicLetterYeh Then
-                    Dim Letter As String = CStr(IIf(bTrailing, String.Empty, IslamData.ObjIslamData.ArabicLetters(FindLetterBySymbol(ArabicString(Index + 2))).PlainRoman))
+                    Dim Letter As String = CStr(IIf(bTrailing, String.Empty, CachedData.IslamData.ArabicLetters(FindLetterBySymbol(ArabicString(Index + 2))).PlainRoman))
                     ArabicString = ArabicString.Remove(Index, CInt(IIf(bTrailing, 2, 3))).Insert(Index, "ooh" + Letter)
                     If bTrailing Then Index += 3
                 Else
-                    Dim Letter As String = CStr(IIf(bTrailing, String.Empty, IslamData.ObjIslamData.ArabicLetters(FindLetterBySymbol(ArabicString(Index + 1))).PlainRoman))
+                    Dim Letter As String = CStr(IIf(bTrailing, String.Empty, CachedData.IslamData.ArabicLetters(FindLetterBySymbol(ArabicString(Index + 1))).PlainRoman))
                     ArabicString = ArabicString.Remove(Index, CInt(IIf(bTrailing, 1, 2))).Insert(Index, "o" + Letter)
                     If bTrailing Then Index += 1
                 End If
             End If
         End If
         If bTrailing Then
-            Dim Letter As String = IslamData.ObjIslamData.ArabicLetters(FindLetterBySymbol(ArabicString(Index))).PlainRoman
+            Dim Letter As String = CachedData.IslamData.ArabicLetters(FindLetterBySymbol(ArabicString(Index))).PlainRoman
             If ArabicString(Index + 1) = ArabicFatha Then
                 If ArabicString.Length <> Index + 2 AndAlso ArabicString(Index + 2) = ArabicLetterAlef Then
                     ArabicString = ArabicString.Remove(Index, 3).Insert(Index, Letter + "waa")
@@ -1701,38 +1701,38 @@ Public Class Arabic
 
         ArabicString = System.Text.RegularExpressions.Regex.Replace(ArabicString, "(" + MakeRegMultiEx(Array.ConvertAll(ArabicLongVowels, Function(Str As String) MakeUniRegEx(Str))) + MakeRegMultiEx(Array.ConvertAll(ArabicFathaDammaKasra, Function(Str As String) MakeUniRegEx(Str))) + "|" + MakeRegMultiEx(Array.ConvertAll(ArabicTanweens, Function(Str As String) MakeUniRegEx(Str))) + ")\b\s*(" + MakeUniRegEx(ArabicLetterAlef) + MakeUniRegEx(ArabicLetterHamza) + ")", _
             Function(Match As System.Text.RegularExpressions.Match)
-                    Return Match.Value.Remove(Match.Groups(2).Index - Match.Index, 2)
-                End Function)
+                Return Match.Value.Remove(Match.Groups(2).Index - Match.Index, 2)
+            End Function)
         ArabicString = System.Text.RegularExpressions.Regex.Replace(ArabicString, MakeUniRegEx(ArabicFathatan) + "|" + MakeUniRegEx(ArabicLetterAlef) + "\s*$", _
             Function(Match As System.Text.RegularExpressions.Match)
-                    Return Match.Value.Remove(1, 1).Insert(1, ArabicFatha)
-                End Function)
+                Return Match.Value.Remove(1, 1).Insert(1, ArabicFatha)
+            End Function)
         'process madda loanwords and names
         'process loanwords and names
         ArabicString = System.Text.RegularExpressions.Regex.Replace(ArabicString, "(" + MakeRegMultiEx(Array.ConvertAll(ArabicLongVowels, Function(Str As String) MakeUniRegEx(Str))) + "|" + MakeRegMultiEx(Array.ConvertAll(ArabicFathaDammaKasra, Function(Str As String) MakeUniRegEx(Str))) + ")(" + MakeRegMultiEx(Array.ConvertAll(ArabicSpecialLeadingGutteral, Function(Str As String) MakeUniRegEx(Str))) + ")(" + MakeRegMultiEx(Array.ConvertAll(ArabicLongVowels, Function(Str As String) MakeUniRegEx(Str))) + "|" + MakeRegMultiEx(Array.ConvertAll(ArabicFathaDammaKasra, Function(Str As String) MakeUniRegEx(Str))) + "|" + MakeRegMultiEx(Array.ConvertAll(ArabicTanweens, Function(Str As String) MakeUniRegEx(Str))) + ")", _
             Function(Match As System.Text.RegularExpressions.Match)
-                    Return GutteralRules(Match.Value, 0, True, True)
-                End Function)
+                Return GutteralRules(Match.Value, 0, True, True)
+            End Function)
         ArabicString = System.Text.RegularExpressions.Regex.Replace(ArabicString, "(" + MakeRegMultiEx(Array.ConvertAll(ArabicSpecialGutteral, Function(Str As String) MakeUniRegEx(Str))) + ")(" + MakeRegMultiEx(Array.ConvertAll(ArabicLongVowels, Function(Str As String) MakeUniRegEx(Str))) + "|" + MakeRegMultiEx(Array.ConvertAll(ArabicFathaDammaKasra, Function(Str As String) MakeUniRegEx(Str))) + "|" + MakeRegMultiEx(Array.ConvertAll(ArabicTanweens, Function(Str As String) MakeUniRegEx(Str))) + ")", _
             Function(Match As System.Text.RegularExpressions.Match)
-                    Return GutteralRules(Match.Value, 0, False, True)
-                End Function)
+                Return GutteralRules(Match.Value, 0, False, True)
+            End Function)
         ArabicString = System.Text.RegularExpressions.Regex.Replace(ArabicString, "(" + MakeRegMultiEx(Array.ConvertAll(ArabicLongVowels, Function(Str As String) MakeUniRegEx(Str))) + "|" + MakeRegMultiEx(Array.ConvertAll(ArabicFathaDammaKasra, Function(Str As String) MakeUniRegEx(Str))) + ")(" + MakeUniRegEx(ArabicLetterHamza) + "|" + MakeRegMultiEx(Array.ConvertAll(ArabicSpecialLeadingGutteral, Function(Str As String) MakeUniRegEx(Str))) + ")", _
             Function(Match As System.Text.RegularExpressions.Match)
-                    Return GutteralRules(Match.Value, 0, True, False)
-                End Function)
+                Return GutteralRules(Match.Value, 0, True, False)
+            End Function)
         ArabicString = System.Text.RegularExpressions.Regex.Replace(ArabicString, "(" + MakeRegMultiEx(Array.ConvertAll(ArabicLetters, Function(Str As String) MakeUniRegEx(Str))) + ")" + MakeUniRegEx(ArabicShadda), _
             Function(Match As System.Text.RegularExpressions.Match)
-                    Return Match.Value.Remove(1, 1).Insert(1, "-" + Match.Value(0))
-                End Function)
+                Return Match.Value.Remove(1, 1).Insert(1, "-" + Match.Value(0))
+            End Function)
         ArabicString = ArabicString.Replace(ArabicFatha + ArabicLetterAlef, "aa") _
             .Replace(ArabicDamma + ArabicLetterWaw, "oo") _
             .Replace(ArabicKasra + ArabicLetterYeh, "ee") _
             .Replace(ArabicLetterAlef, String.Empty)
         ArabicString = System.Text.RegularExpressions.Regex.Replace(ArabicString, "(" + MakeRegMultiEx(Array.ConvertAll(ArabicLetters, Function(Str As String) MakeUniRegEx(Str))) + "|" + MakeRegMultiEx(Array.ConvertAll(ArabicTanweens, Function(Str As String) MakeUniRegEx(Str))) + "|" + MakeRegMultiEx(Array.ConvertAll(ArabicFathaDammaKasra, Function(Str As String) MakeUniRegEx(Str))) + "|" + MakeUniRegEx(ArabicLetterHamza) + ")", _
             Function(Match As System.Text.RegularExpressions.Match)
-                    Return Match.Value.Insert(1, IslamData.ObjIslamData.ArabicLetters(FindLetterBySymbol(Match.Value(0))).PlainRoman).Remove(0, 1)
-                End Function)
+                Return Match.Value.Insert(1, CachedData.IslamData.ArabicLetters(FindLetterBySymbol(Match.Value(0))).PlainRoman).Remove(0, 1)
+            End Function)
         RomanString = ArabicString
         'Dim Count As Integer
         'Dim Index As Integer
@@ -1745,40 +1745,40 @@ Public Class Arabic
         '        RomanString += ArabicString(Count)
         '    ElseIf IsIgnored(Index) Or IsWhitespace(Index) Then
         '        WordStart = Count + 1
-        '        RomanString += IslamData.ObjIslamData.ArabicLetters(Index).PlainRoman
+        '        RomanString += CachedData.IslamData.ArabicLetters(Index).PlainRoman
         '        Continue For 'do not record as previous?
-        '    ElseIf IslamData.ObjIslamData.ArabicLetters(Index).Symbol = ArabicEndOfAyah Then
+        '    ElseIf CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicEndOfAyah Then
         '        Dim NextIndex As Integer
         '        Do
         '            NextIndex = FindLetterBySymbol(ArabicString(Count + 1))
         '            Count += 1
         '        Loop While (ArabicString.Length - 1 <> Count) And NextIndex <> -1 AndAlso Not IsWhitespace(NextIndex)
-        '    ElseIf IslamData.ObjIslamData.ArabicLetters(Index).Symbol = ArabicShadda And PreviousIndex <> -1 Then
+        '    ElseIf CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicShadda And PreviousIndex <> -1 Then
         '        'double last non-diacritic letter and not a letter assimalated to the noun particle
         '        If WordStart = Count - 3 AndAlso FindLetterBySymbol(ArabicString(Count - 2)) <> -1 AndAlso _
-        '            IslamData.ObjIslamData.ArabicLetters(FindLetterBySymbol(ArabicString(Count - 2))).Symbol = ArabicLetterLam AndAlso FindLetterBySymbol(ArabicString(Count - 3)) <> -1 AndAlso _
-        '            (IslamData.ObjIslamData.ArabicLetters(FindLetterBySymbol(ArabicString(Count - 3))).Symbol = ArabicLetterAlef Or _
-        '             IslamData.ObjIslamData.ArabicLetters(FindLetterBySymbol(ArabicString(Count - 3))).Symbol = ArabicLetterAlefWasla) Then
+        '            CachedData.IslamData.ArabicLetters(FindLetterBySymbol(ArabicString(Count - 2))).Symbol = ArabicLetterLam AndAlso FindLetterBySymbol(ArabicString(Count - 3)) <> -1 AndAlso _
+        '            (CachedData.IslamData.ArabicLetters(FindLetterBySymbol(ArabicString(Count - 3))).Symbol = ArabicLetterAlef Or _
+        '             CachedData.IslamData.ArabicLetters(FindLetterBySymbol(ArabicString(Count - 3))).Symbol = ArabicLetterAlefWasla) Then
         '        Else
-        '            RomanString += "-" + IslamData.ObjIslamData.ArabicLetters(PreviousIndex).PlainRoman
+        '            RomanString += "-" + CachedData.IslamData.ArabicLetters(PreviousIndex).PlainRoman
         '        End If
-        '    ElseIf (IslamData.ObjIslamData.ArabicLetters(Index).Symbol = ArabicLetterAlef Or _
-        '            IslamData.ObjIslamData.ArabicLetters(Index).Symbol = ArabicLetterAlefWasla Or _
-        '            IslamData.ObjIslamData.ArabicLetters(Index).Symbol = ArabicLetterSuperscriptAlef) And _
+        '    ElseIf (CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterAlef Or _
+        '            CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterAlefWasla Or _
+        '            CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterSuperscriptAlef) And _
         '        PreviousIndex <> -1 AndAlso _
-        '    (IslamData.ObjIslamData.ArabicLetters(PreviousIndex).Symbol = ArabicFatha Or _
-        '     IslamData.ObjIslamData.ArabicLetters(PreviousIndex).Symbol = ArabicDamma Or _
-        '     IslamData.ObjIslamData.ArabicLetters(PreviousIndex).Symbol = ArabicKasra Or _
-        '     IslamData.ObjIslamData.ArabicLetters(PreviousIndex).Symbol = ArabicLetterAlef AndAlso PreviousPreviousIndex <> -1 AndAlso _
-        '     IslamData.ObjIslamData.ArabicLetters(PreviousPreviousIndex).Symbol = ArabicFatha Or _
-        '     IslamData.ObjIslamData.ArabicLetters(PreviousIndex).Symbol = ArabicLetterWaw AndAlso PreviousPreviousIndex <> -1 AndAlso _
-        '     IslamData.ObjIslamData.ArabicLetters(PreviousPreviousIndex).Symbol = ArabicDamma Or _
-        '     IslamData.ObjIslamData.ArabicLetters(PreviousIndex).Symbol = ArabicLetterYeh AndAlso PreviousPreviousIndex <> -1 AndAlso _
-        '     IslamData.ObjIslamData.ArabicLetters(PreviousPreviousIndex).Symbol = ArabicKasra) Then
+        '    (CachedData.IslamData.ArabicLetters(PreviousIndex).Symbol = ArabicFatha Or _
+        '     CachedData.IslamData.ArabicLetters(PreviousIndex).Symbol = ArabicDamma Or _
+        '     CachedData.IslamData.ArabicLetters(PreviousIndex).Symbol = ArabicKasra Or _
+        '     CachedData.IslamData.ArabicLetters(PreviousIndex).Symbol = ArabicLetterAlef AndAlso PreviousPreviousIndex <> -1 AndAlso _
+        '     CachedData.IslamData.ArabicLetters(PreviousPreviousIndex).Symbol = ArabicFatha Or _
+        '     CachedData.IslamData.ArabicLetters(PreviousIndex).Symbol = ArabicLetterWaw AndAlso PreviousPreviousIndex <> -1 AndAlso _
+        '     CachedData.IslamData.ArabicLetters(PreviousPreviousIndex).Symbol = ArabicDamma Or _
+        '     CachedData.IslamData.ArabicLetters(PreviousIndex).Symbol = ArabicLetterYeh AndAlso PreviousPreviousIndex <> -1 AndAlso _
+        '     CachedData.IslamData.ArabicLetters(PreviousPreviousIndex).Symbol = ArabicKasra) Then
         '        'drop if previous letter is vowel diacritic or long vowel 
-        '    ElseIf IslamData.ObjIslamData.ArabicLetters(Index).Symbol = ArabicLetterTehMarbuta Then
+        '    ElseIf CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterTehMarbuta Then
         '        'add the t if a feminine genitive construct
-        '        RomanString += IslamData.ObjIslamData.ArabicLetters(Index).PlainRoman
+        '        RomanString += CachedData.IslamData.ArabicLetters(Index).PlainRoman
         '        If (ArabicString.Length - 1 = Count) Then
         '            RomanString += "h"
         '        Else
@@ -1795,41 +1795,41 @@ Public Class Arabic
         '                Diagnostics.Debug.Print("Invalid Teh Marbuta in middle of word: " + ArabicString.Substring(0, Count) + "<" + ArabicString.Substring(Count + 1))
         '            End If
         '        End If
-        '    ElseIf IslamData.ObjIslamData.ArabicLetters(Index).Symbol = ArabicLetterAlef And (ArabicString.Length - 1 <> Count) Then
+        '    ElseIf CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterAlef And (ArabicString.Length - 1 <> Count) Then
         '        'drop if next letter is vowel diacritic
         '        Dim NextIndex As Integer = FindLetterBySymbol(ArabicString(Count + 1))
         '        If NextIndex = -1 Then
-        '            RomanString += IslamData.ObjIslamData.ArabicLetters(Index).PlainRoman
-        '        ElseIf IslamData.ObjIslamData.ArabicLetters(NextIndex).Symbol = ArabicFatha Or _
-        '                    IslamData.ObjIslamData.ArabicLetters(NextIndex).Symbol = ArabicDamma Or _
-        '                    IslamData.ObjIslamData.ArabicLetters(NextIndex).Symbol = ArabicKasra Or _
-        '                    IslamData.ObjIslamData.ArabicLetters(NextIndex).Symbol = ArabicFathatan Or _
-        '                    IslamData.ObjIslamData.ArabicLetters(NextIndex).Symbol = ArabicDammatan Or _
-        '                    IslamData.ObjIslamData.ArabicLetters(NextIndex).Symbol = ArabicKasratan Then
-        '        ElseIf IslamData.ObjIslamData.ArabicLetters(NextIndex).Symbol = ArabicHamzaAbove Then
+        '            RomanString += CachedData.IslamData.ArabicLetters(Index).PlainRoman
+        '        ElseIf CachedData.IslamData.ArabicLetters(NextIndex).Symbol = ArabicFatha Or _
+        '                    CachedData.IslamData.ArabicLetters(NextIndex).Symbol = ArabicDamma Or _
+        '                    CachedData.IslamData.ArabicLetters(NextIndex).Symbol = ArabicKasra Or _
+        '                    CachedData.IslamData.ArabicLetters(NextIndex).Symbol = ArabicFathatan Or _
+        '                    CachedData.IslamData.ArabicLetters(NextIndex).Symbol = ArabicDammatan Or _
+        '                    CachedData.IslamData.ArabicLetters(NextIndex).Symbol = ArabicKasratan Then
+        '        ElseIf CachedData.IslamData.ArabicLetters(NextIndex).Symbol = ArabicHamzaAbove Then
         '        Else
-        '            RomanString += IslamData.ObjIslamData.ArabicLetters(Index).PlainRoman
+        '            RomanString += CachedData.IslamData.ArabicLetters(Index).PlainRoman
         '        End If
-        '    ElseIf IslamData.ObjIslamData.ArabicLetters(Index).Symbol = ArabicLetterLam And _
+        '    ElseIf CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterLam And _
         '        (Count - 1 = WordStart AndAlso _
-        '         (IslamData.ObjIslamData.ArabicLetters(PreviousIndex).Symbol = ArabicLetterAlef Or _
-        '            IslamData.ObjIslamData.ArabicLetters(PreviousIndex).Symbol = ArabicLetterAlefWasla)) Then
+        '         (CachedData.IslamData.ArabicLetters(PreviousIndex).Symbol = ArabicLetterAlef Or _
+        '            CachedData.IslamData.ArabicLetters(PreviousIndex).Symbol = ArabicLetterAlefWasla)) Then
         '        'if previous letter is >alif and beginning of word and following letter is assimilating then assimilate
         '        Dim NextIndex As Integer = FindLetterBySymbol(ArabicString(Count + 1))
         '        If NextIndex = -1 Then
-        '            RomanString += IslamData.ObjIslamData.ArabicLetters(Index).PlainRoman
-        '        ElseIf IslamData.ObjIslamData.ArabicLetters(NextIndex).Symbol = ArabicShadda Then
-        '        ElseIf IslamData.ObjIslamData.ArabicLetters(NextIndex).Assimilate Then
-        '            If FindLetterBySymbol(ArabicString(Count + 2)) = -1 OrElse IslamData.ObjIslamData.ArabicLetters(FindLetterBySymbol(ArabicString(Count + 2))).Symbol <> ArabicShadda Then
+        '            RomanString += CachedData.IslamData.ArabicLetters(Index).PlainRoman
+        '        ElseIf CachedData.IslamData.ArabicLetters(NextIndex).Symbol = ArabicShadda Then
+        '        ElseIf CachedData.IslamData.ArabicLetters(NextIndex).Assimilate Then
+        '            If FindLetterBySymbol(ArabicString(Count + 2)) = -1 OrElse CachedData.IslamData.ArabicLetters(FindLetterBySymbol(ArabicString(Count + 2))).Symbol <> ArabicShadda Then
         '                Diagnostics.Debug.Print("Missing Shadda after assimilating letter: " + ArabicString.Substring(0, Count) + "<" + ArabicString.Substring(Count + 1))
         '            End If
-        '            RomanString += IslamData.ObjIslamData.ArabicLetters(NextIndex).PlainRoman + "-"
+        '            RomanString += CachedData.IslamData.ArabicLetters(NextIndex).PlainRoman + "-"
         '            Else
-        '                RomanString += IslamData.ObjIslamData.ArabicLetters(Index).PlainRoman + "-"
+        '                RomanString += CachedData.IslamData.ArabicLetters(Index).PlainRoman + "-"
         '            End If
-        '    ElseIf IslamData.ObjIslamData.ArabicLetters(Index).Symbol = ArabicFatha Or _
-        '        IslamData.ObjIslamData.ArabicLetters(Index).Symbol = ArabicDamma Or _
-        '        IslamData.ObjIslamData.ArabicLetters(Index).Symbol = ArabicKasra Then
+        '    ElseIf CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicFatha Or _
+        '        CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicDamma Or _
+        '        CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicKasra Then
         '        'if end of verse then drop
         '        If (ArabicString.Length - 1 = Count) Then
         '        Else
@@ -1842,65 +1842,65 @@ Public Class Arabic
         '                    NextIndex = -1
         '                End If
         '            End If
-        '            If NextIndex <> -1 AndAlso IslamData.ObjIslamData.ArabicLetters(NextIndex).Symbol = ArabicShadda Then
+        '            If NextIndex <> -1 AndAlso CachedData.IslamData.ArabicLetters(NextIndex).Symbol = ArabicShadda Then
         '                If WordStart = Count - 3 AndAlso FindLetterBySymbol(ArabicString(Count - 2)) <> -1 AndAlso _
-        '                    IslamData.ObjIslamData.ArabicLetters(FindLetterBySymbol(ArabicString(Count - 2))).Symbol = ArabicLetterLam AndAlso FindLetterBySymbol(ArabicString(Count - 3)) <> -1 AndAlso _
-        '                    (IslamData.ObjIslamData.ArabicLetters(FindLetterBySymbol(ArabicString(Count - 3))).Symbol = ArabicLetterAlef Or _
-        '                     IslamData.ObjIslamData.ArabicLetters(FindLetterBySymbol(ArabicString(Count - 3))).Symbol = ArabicLetterAlefWasla) Then
+        '                    CachedData.IslamData.ArabicLetters(FindLetterBySymbol(ArabicString(Count - 2))).Symbol = ArabicLetterLam AndAlso FindLetterBySymbol(ArabicString(Count - 3)) <> -1 AndAlso _
+        '                    (CachedData.IslamData.ArabicLetters(FindLetterBySymbol(ArabicString(Count - 3))).Symbol = ArabicLetterAlef Or _
+        '                     CachedData.IslamData.ArabicLetters(FindLetterBySymbol(ArabicString(Count - 3))).Symbol = ArabicLetterAlefWasla) Then
         '                Else
-        '                    RomanString += "-" + IslamData.ObjIslamData.ArabicLetters(PreviousIndex).PlainRoman
+        '                    RomanString += "-" + CachedData.IslamData.ArabicLetters(PreviousIndex).PlainRoman
         '                End If
         '                Count = Count + 1
         '                If (ArabicString.Length - 1 <> Count) Then NextIndex = FindLetterBySymbol(ArabicString(Count + 1))
         '            End If
         '            If NextIndex = -1 OrElse _
         '                (IsStop(NextIndex) Or IsPunctuation(NextIndex)) Then
-        '            ElseIf (IslamData.ObjIslamData.ArabicLetters(NextIndex).Symbol = ArabicLetterAlef Or _
-        '                    IslamData.ObjIslamData.ArabicLetters(NextIndex).Symbol = ArabicLetterAlefWasla Or _
-        '                IslamData.ObjIslamData.ArabicLetters(NextIndex).Symbol = ArabicLetterAlefWithHamzaBelow Or _
-        '                IslamData.ObjIslamData.ArabicLetters(NextIndex).Symbol = ArabicLetterAlefWithHamzaAbove Or _
-        '                    IslamData.ObjIslamData.ArabicLetters(NextIndex).Symbol = ArabicLetterAlefMaksura Or _
+        '            ElseIf (CachedData.IslamData.ArabicLetters(NextIndex).Symbol = ArabicLetterAlef Or _
+        '                    CachedData.IslamData.ArabicLetters(NextIndex).Symbol = ArabicLetterAlefWasla Or _
+        '                CachedData.IslamData.ArabicLetters(NextIndex).Symbol = ArabicLetterAlefWithHamzaBelow Or _
+        '                CachedData.IslamData.ArabicLetters(NextIndex).Symbol = ArabicLetterAlefWithHamzaAbove Or _
+        '                    CachedData.IslamData.ArabicLetters(NextIndex).Symbol = ArabicLetterAlefMaksura Or _
         '                    (IsWhitespace(NextIndex) And _
         '                    (ArabicString.Length - 1 <> Count) AndAlso (ArabicString.Length - 1 <> Count + 1) AndAlso FindLetterBySymbol(ArabicString(Count + 2)) <> -1 AndAlso _
-        '                    (IslamData.ObjIslamData.ArabicLetters(FindLetterBySymbol(ArabicString(Count + 2))).Symbol <> ArabicLetterAlefWasla) AndAlso Not IsStop(FindLetterBySymbol(ArabicString(Count + 2))) AndAlso Not IsPunctuation(FindLetterBySymbol(ArabicString(Count + 2))))) And _
-        '                        IslamData.ObjIslamData.ArabicLetters(Index).Symbol = ArabicFatha Then
+        '                    (CachedData.IslamData.ArabicLetters(FindLetterBySymbol(ArabicString(Count + 2))).Symbol <> ArabicLetterAlefWasla) AndAlso Not IsStop(FindLetterBySymbol(ArabicString(Count + 2))) AndAlso Not IsPunctuation(FindLetterBySymbol(ArabicString(Count + 2))))) And _
+        '                        CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicFatha Then
         '                RomanString += "a"
         '                If Not IsWhitespace(NextIndex) Then
-        '                    If IslamData.ObjIslamData.ArabicLetters(NextIndex).Symbol = ArabicLetterAlefWithHamzaBelow Or _
-        '                        IslamData.ObjIslamData.ArabicLetters(NextIndex).Symbol = ArabicLetterAlefWithHamzaAbove Then RomanString += IslamData.ObjIslamData.ArabicLetters(NextIndex).PlainRoman
+        '                    If CachedData.IslamData.ArabicLetters(NextIndex).Symbol = ArabicLetterAlefWithHamzaBelow Or _
+        '                        CachedData.IslamData.ArabicLetters(NextIndex).Symbol = ArabicLetterAlefWithHamzaAbove Then RomanString += CachedData.IslamData.ArabicLetters(NextIndex).PlainRoman
         '                    Count = Count + 1
         '                    PreviousPreviousIndex = PreviousIndex
         '                    PreviousIndex = Index
         '                    Index = NextIndex
         '                    'Prefixed particle causes start of word to be advanced
-        '                    If Count - 2 = WordStart AndAlso IslamData.ObjIslamData.ArabicLetters(PreviousPreviousIndex).Symbol = ArabicLetterWaw Then
+        '                    If Count - 2 = WordStart AndAlso CachedData.IslamData.ArabicLetters(PreviousPreviousIndex).Symbol = ArabicLetterWaw Then
         '                        WordStart = Count
         '                    End If
         '                End If
-        '            ElseIf (IslamData.ObjIslamData.ArabicLetters(NextIndex).Symbol = ArabicLetterWaw Or _
-        '                    IslamData.ObjIslamData.ArabicLetters(NextIndex).Symbol = ArabicLetterWawWithHamzaAbove Or _
+        '            ElseIf (CachedData.IslamData.ArabicLetters(NextIndex).Symbol = ArabicLetterWaw Or _
+        '                    CachedData.IslamData.ArabicLetters(NextIndex).Symbol = ArabicLetterWawWithHamzaAbove Or _
         '                    (IsWhitespace(NextIndex) And _
         '                    (ArabicString.Length - 1 <> Count + 1) AndAlso FindLetterBySymbol(ArabicString(Count + 2)) <> -1 AndAlso _
-        '                    (IslamData.ObjIslamData.ArabicLetters(FindLetterBySymbol(ArabicString(Count + 2))).Symbol <> ArabicLetterAlefWasla) AndAlso Not IsStop(FindLetterBySymbol(ArabicString(Count + 2))) AndAlso Not IsPunctuation(FindLetterBySymbol(ArabicString(Count + 2))))) And _
-        '                IslamData.ObjIslamData.ArabicLetters(Index).Symbol = ArabicDamma Then
+        '                    (CachedData.IslamData.ArabicLetters(FindLetterBySymbol(ArabicString(Count + 2))).Symbol <> ArabicLetterAlefWasla) AndAlso Not IsStop(FindLetterBySymbol(ArabicString(Count + 2))) AndAlso Not IsPunctuation(FindLetterBySymbol(ArabicString(Count + 2))))) And _
+        '                CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicDamma Then
         '                RomanString += "oo"
         '                If Not IsWhitespace(NextIndex) Then
-        '                    If IslamData.ObjIslamData.ArabicLetters(NextIndex).Symbol = ArabicLetterWawWithHamzaAbove Then RomanString += IslamData.ObjIslamData.ArabicLetters(NextIndex).PlainRoman
+        '                    If CachedData.IslamData.ArabicLetters(NextIndex).Symbol = ArabicLetterWawWithHamzaAbove Then RomanString += CachedData.IslamData.ArabicLetters(NextIndex).PlainRoman
         '                    Count = Count + 1
         '                    PreviousPreviousIndex = PreviousIndex
         '                    PreviousIndex = Index
         '                    Index = NextIndex
         '                End If
-        '            ElseIf (IslamData.ObjIslamData.ArabicLetters(NextIndex).Symbol = ArabicLetterYeh Or _
-        '                    IslamData.ObjIslamData.ArabicLetters(NextIndex).Symbol = ArabicLetterYehWithHamzaAbove Or _
-        '                    IslamData.ObjIslamData.ArabicLetters(NextIndex).Symbol = ArabicLetterAlefMaksura Or _
+        '            ElseIf (CachedData.IslamData.ArabicLetters(NextIndex).Symbol = ArabicLetterYeh Or _
+        '                    CachedData.IslamData.ArabicLetters(NextIndex).Symbol = ArabicLetterYehWithHamzaAbove Or _
+        '                    CachedData.IslamData.ArabicLetters(NextIndex).Symbol = ArabicLetterAlefMaksura Or _
         '                (IsWhitespace(NextIndex) And _
         '                    (ArabicString.Length - 1 <> Count + 1) AndAlso FindLetterBySymbol(ArabicString(Count + 2)) <> -1 AndAlso _
-        '                    (IslamData.ObjIslamData.ArabicLetters(FindLetterBySymbol(ArabicString(Count + 2))).Symbol <> ArabicLetterAlefWasla) AndAlso Not IsStop(FindLetterBySymbol(ArabicString(Count + 2))) AndAlso Not IsPunctuation(FindLetterBySymbol(ArabicString(Count + 2))))) And _
-        '                IslamData.ObjIslamData.ArabicLetters(Index).Symbol = ArabicKasra Then
+        '                    (CachedData.IslamData.ArabicLetters(FindLetterBySymbol(ArabicString(Count + 2))).Symbol <> ArabicLetterAlefWasla) AndAlso Not IsStop(FindLetterBySymbol(ArabicString(Count + 2))) AndAlso Not IsPunctuation(FindLetterBySymbol(ArabicString(Count + 2))))) And _
+        '                CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicKasra Then
         '                RomanString += "ee"
         '                If Not IsWhitespace(NextIndex) Then
-        '                    If IslamData.ObjIslamData.ArabicLetters(NextIndex).Symbol = ArabicLetterYehWithHamzaAbove Then RomanString += IslamData.ObjIslamData.ArabicLetters(NextIndex).PlainRoman
+        '                    If CachedData.IslamData.ArabicLetters(NextIndex).Symbol = ArabicLetterYehWithHamzaAbove Then RomanString += CachedData.IslamData.ArabicLetters(NextIndex).PlainRoman
         '                    Count = Count + 1
         '                    PreviousPreviousIndex = PreviousIndex
         '                    PreviousIndex = Index
@@ -1909,7 +1909,7 @@ Public Class Arabic
         '            ElseIf (PreviousIndex <> -1 AndAlso _
         '                        IsAmbiguousGutteral(PreviousIndex, False) Or _
         '                    IsAmbiguousGutteral(NextIndex, True)) Then
-        '                If (IslamData.ObjIslamData.ArabicLetters(Index).Symbol = ArabicFatha) Then
+        '                If (CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicFatha) Then
         '                    If (PreviousIndex <> -1 AndAlso _
         '                        IsAmbiguousGutteral(PreviousIndex, False)) Then
         '                        RomanString += "aw"
@@ -1917,7 +1917,7 @@ Public Class Arabic
         '                    If IsAmbiguousGutteral(NextIndex, True) Then
         '                        RomanString += "ah"
         '                    End If
-        '                ElseIf (IslamData.ObjIslamData.ArabicLetters(Index).Symbol = ArabicDamma) Then
+        '                ElseIf (CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicDamma) Then
         '                    If (PreviousIndex <> -1 AndAlso _
         '                        IsAmbiguousGutteral(PreviousIndex, False)) Then
         '                        RomanString += "o"
@@ -1925,7 +1925,7 @@ Public Class Arabic
         '                    If IsAmbiguousGutteral(NextIndex, True) Then
         '                        RomanString += "o"
         '                    End If
-        '                ElseIf (IslamData.ObjIslamData.ArabicLetters(Index).Symbol = ArabicKasra) Then
+        '                ElseIf (CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicKasra) Then
         '                    If (PreviousIndex <> -1 AndAlso _
         '                        IsAmbiguousGutteral(PreviousIndex, False)) Then
         '                        RomanString += "e"
@@ -1939,20 +1939,20 @@ Public Class Arabic
         '                    NextIndex = FindLetterBySymbol(ArabicString(Count + 2))
         '                    If NextIndex = -1 OrElse (IsStop(NextIndex) Or IsPunctuation(NextIndex)) Then
         '                    Else
-        '                        RomanString += IslamData.ObjIslamData.ArabicLetters(Index).PlainRoman
+        '                        RomanString += CachedData.IslamData.ArabicLetters(Index).PlainRoman
         '                    End If
         '                Else
-        '                    RomanString += IslamData.ObjIslamData.ArabicLetters(Index).PlainRoman
+        '                    RomanString += CachedData.IslamData.ArabicLetters(Index).PlainRoman
         '                End If
         '            End If
-        '            ElseIf IslamData.ObjIslamData.ArabicLetters(Index).Symbol = ArabicLetterNoon Or _
-        '                IslamData.ObjIslamData.ArabicLetters(Index).Symbol = ArabicFathatan Or _
-        '                    IslamData.ObjIslamData.ArabicLetters(Index).Symbol = ArabicDammatan Or _
-        '                    IslamData.ObjIslamData.ArabicLetters(Index).Symbol = ArabicKasratan Then
+        '            ElseIf CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterNoon Or _
+        '                CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicFathatan Or _
+        '                    CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicDammatan Or _
+        '                    CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicKasratan Then
         '            'if end of verse then drop
         '            If (ArabicString.Length - 1 = Count) Then
-        '                If IslamData.ObjIslamData.ArabicLetters(Index).Symbol = ArabicLetterNoon Then
-        '                    RomanString += IslamData.ObjIslamData.ArabicLetters(Index).PlainRoman
+        '                If CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterNoon Then
+        '                    RomanString += CachedData.IslamData.ArabicLetters(Index).PlainRoman
         '                End If
         '            Else
         '                'if next letter is Idghaam without ghunnah then drop the -n
@@ -1970,49 +1970,49 @@ Public Class Arabic
         '                    NextIndex = FindLetterBySymbol(ArabicString(Count + 2))
         '                End If
         '                If NextIndex = -1 OrElse _
-        '                  (IslamData.ObjIslamData.ArabicLetters(Index).Symbol <> ArabicLetterNoon And _
+        '                  (CachedData.IslamData.ArabicLetters(Index).Symbol <> ArabicLetterNoon And _
         '                   (IsStop(NextIndex) Or IsPunctuation(NextIndex))) Then
-        '            ElseIf IslamData.ObjIslamData.ArabicLetters(Index).Symbol = ArabicFathatan And _
-        '                IslamData.ObjIslamData.ArabicLetters(FindLetterBySymbol(ArabicString(Count + 1))).Symbol = ArabicLetterAlef Then
-        '                RomanString += IslamData.ObjIslamData.ArabicLetters(CInt(IIf(ArabicString.Length - 2 = Count, NextIndex, Index))).PlainRoman
+        '            ElseIf CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicFathatan And _
+        '                CachedData.IslamData.ArabicLetters(FindLetterBySymbol(ArabicString(Count + 1))).Symbol = ArabicLetterAlef Then
+        '                RomanString += CachedData.IslamData.ArabicLetters(CInt(IIf(ArabicString.Length - 2 = Count, NextIndex, Index))).PlainRoman
         '                Count = Count + 1
         '                PreviousPreviousIndex = PreviousIndex
         '                PreviousIndex = Index
         '                Index = NextIndex
-        '                ElseIf IslamData.ObjIslamData.ArabicLetters(NextIndex).Symbol = ArabicLetterLam Or _
-        '                            IslamData.ObjIslamData.ArabicLetters(NextIndex).Symbol = ArabicLetterReh Then
-        '                    RomanString += IslamData.ObjIslamData.ArabicLetters(Index).PlainRoman.Substring(0, IslamData.ObjIslamData.ArabicLetters(Index).PlainRoman.Length - 1)
-        '                ElseIf IslamData.ObjIslamData.ArabicLetters(NextIndex).Symbol = ArabicLetterBeh And _
+        '                ElseIf CachedData.IslamData.ArabicLetters(NextIndex).Symbol = ArabicLetterLam Or _
+        '                            CachedData.IslamData.ArabicLetters(NextIndex).Symbol = ArabicLetterReh Then
+        '                    RomanString += CachedData.IslamData.ArabicLetters(Index).PlainRoman.Substring(0, CachedData.IslamData.ArabicLetters(Index).PlainRoman.Length - 1)
+        '                ElseIf CachedData.IslamData.ArabicLetters(NextIndex).Symbol = ArabicLetterBeh And _
         '                    (ArabicString.Length - 1 <> Count + 1) AndAlso FindLetterBySymbol(ArabicString(Count + 2)) <> -1 AndAlso _
-        '                    (IslamData.ObjIslamData.ArabicLetters(FindLetterBySymbol(ArabicString(Count + 2))).Symbol = ArabicFatha Or _
-        '                      IslamData.ObjIslamData.ArabicLetters(FindLetterBySymbol(ArabicString(Count + 2))).Symbol = ArabicDamma Or _
-        '                      IslamData.ObjIslamData.ArabicLetters(FindLetterBySymbol(ArabicString(Count + 2))).Symbol = ArabicKasra) Then
+        '                    (CachedData.IslamData.ArabicLetters(FindLetterBySymbol(ArabicString(Count + 2))).Symbol = ArabicFatha Or _
+        '                      CachedData.IslamData.ArabicLetters(FindLetterBySymbol(ArabicString(Count + 2))).Symbol = ArabicDamma Or _
+        '                      CachedData.IslamData.ArabicLetters(FindLetterBySymbol(ArabicString(Count + 2))).Symbol = ArabicKasra) Then
         '                    RomanString += "m"
         '                Else
-        '                    RomanString += IslamData.ObjIslamData.ArabicLetters(Index).PlainRoman
+        '                    RomanString += CachedData.IslamData.ArabicLetters(Index).PlainRoman
         '                End If
         '            End If
         '    Else
-        '        If IslamData.ObjIslamData.ArabicLetters(Index).Symbol = ArabicLetterAlef Or _
-        '        IslamData.ObjIslamData.ArabicLetters(Index).Symbol = ArabicLetterAlefWasla Or _
-        '        IslamData.ObjIslamData.ArabicLetters(Index).Symbol = ArabicLetterSuperscriptAlef Or _
-        '        IslamData.ObjIslamData.ArabicLetters(Index).Symbol = ArabicLetterAlefWithHamzaAbove Or _
-        '        IslamData.ObjIslamData.ArabicLetters(Index).Symbol = ArabicLetterAlefWithHamzaBelow Or _
-        '        IslamData.ObjIslamData.ArabicLetters(Index).Symbol = ArabicLetterAlefMaksura Or _
-        '        IslamData.ObjIslamData.ArabicLetters(Index).Symbol = ArabicLetterWaw Or _
-        '        IslamData.ObjIslamData.ArabicLetters(Index).Symbol = ArabicLetterWawWithHamzaAbove Or _
-        '        IslamData.ObjIslamData.ArabicLetters(Index).Symbol = ArabicLetterYeh Or _
-        '        IslamData.ObjIslamData.ArabicLetters(Index).Symbol = ArabicLetterYehWithHamzaAbove Or IsLetter(Index) Then
+        '        If CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterAlef Or _
+        '        CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterAlefWasla Or _
+        '        CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterSuperscriptAlef Or _
+        '        CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterAlefWithHamzaAbove Or _
+        '        CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterAlefWithHamzaBelow Or _
+        '        CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterAlefMaksura Or _
+        '        CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterWaw Or _
+        '        CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterWawWithHamzaAbove Or _
+        '        CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterYeh Or _
+        '        CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterYehWithHamzaAbove Or IsLetter(Index) Then
         '            If PreviousIndex <> -1 AndAlso ( _
         '                Not IsWhitespace(PreviousIndex) Or _
-        '                IslamData.ObjIslamData.ArabicLetters(PreviousIndex).Symbol <> ArabicFatha Or _
-        '                IslamData.ObjIslamData.ArabicLetters(PreviousIndex).Symbol <> ArabicDamma Or _
-        '                IslamData.ObjIslamData.ArabicLetters(PreviousIndex).Symbol <> ArabicKasra Or _
-        '                IslamData.ObjIslamData.ArabicLetters(PreviousIndex).Symbol <> ArabicSukun) Then
+        '                CachedData.IslamData.ArabicLetters(PreviousIndex).Symbol <> ArabicFatha Or _
+        '                CachedData.IslamData.ArabicLetters(PreviousIndex).Symbol <> ArabicDamma Or _
+        '                CachedData.IslamData.ArabicLetters(PreviousIndex).Symbol <> ArabicKasra Or _
+        '                CachedData.IslamData.ArabicLetters(PreviousIndex).Symbol <> ArabicSukun) Then
         '                Diagnostics.Debug.Print("Missing diacritic: " + ArabicString.Substring(0, Count) + "<" + ArabicString.Substring(Count + 1))
         '            End If
         '        End If
-        '        RomanString += IslamData.ObjIslamData.ArabicLetters(Index).PlainRoman
+        '        RomanString += CachedData.IslamData.ArabicLetters(Index).PlainRoman
         '        End If
         '        PreviousPreviousIndex = PreviousIndex
         '        PreviousIndex = Index
@@ -2020,13 +2020,12 @@ Public Class Arabic
         Return RomanString
     End Function
     Shared Function GetArabicSymbolJSArray() As String
-        IslamData.Initialize()
-        Dim Letters(IslamData.ObjIslamData.ArabicLetters.Length - 1) As IslamData.ArabicSymbol
-        IslamData.ObjIslamData.ArabicLetters.CopyTo(Letters, 0)
+        Dim Letters(CachedData.IslamData.ArabicLetters.Length - 1) As IslamData.ArabicSymbol
+        CachedData.IslamData.ArabicLetters.CopyTo(Letters, 0)
         Array.Sort(Letters, New StringLengthComparer)
         GetArabicSymbolJSArray = "var ArabicLetters = " + _
                                 Utility.MakeJSArray(New String() {Utility.MakeJSIndexedObject(New String() {"Symbol", "Shaping", "Assimilate", "TranslitLetter", "RomanTranslit", "PlainRoman"}, _
-                                Array.ConvertAll(Of IslamData.ArabicSymbol, String())(Letters, Function(Convert As IslamData.ArabicSymbol) New String() {CStr(AscW(Convert.Symbol)), Utility.MakeJSArray(Array.ConvertAll(Convert.Shaping, Function(Ch As Char) CStr(AscW(Ch)))), CStr(IIf(Convert.Assimilate, "true", String.Empty)), CStr(IIf(Convert.ExtendedBuckwalterLetter = ChrW(0), String.Empty, Convert.ExtendedBuckwalterLetter)), Convert.RomanTranslit, Convert.PlainRoman}), False)}, True) + ";"
+                                Array.ConvertAll(Of IslamData.ArabicSymbol, String())(Letters, Function(Convert As IslamData.ArabicSymbol) New String() {CStr(AscW(Convert.Symbol)), If(Convert.Shaping = Nothing, String.Empty, Utility.MakeJSArray(Array.ConvertAll(Convert.Shaping, Function(Ch As Char) CStr(AscW(Ch))))), CStr(IIf(Convert.Assimilate, "true", String.Empty)), CStr(IIf(Convert.ExtendedBuckwalterLetter = ChrW(0), String.Empty, Convert.ExtendedBuckwalterLetter)), Convert.RomanTranslit, Convert.PlainRoman}), False)}, True) + ";"
     End Function
     Public Shared Function GetTransliterateGenJS() As String
         Return "function doTransliterate(sVal, direction, conversion) { var iCount, iSubCount, sOutVal = ''; for (iCount = 0; iCount < sVal.length; iCount++) { for (iSubCount = 0; iSubCount < ArabicLetters.length; iSubCount++) { if (direction ? sVal.charCodeAt(iCount) === parseInt(ArabicLetters[iSubCount].Symbol, 10) : sVal.charAt(iCount) === unescape((conversion ? ArabicLetters[iSubCount].TranslitLetter : ArabicLetters[iSubCount].RomanTranslit))) { sOutVal += (direction ? (conversion ? ArabicLetters[iSubCount].TranslitLetter : ArabicLetters[iSubCount].RomanTranslit) : String.fromCharCode(ArabicLetters[iSubCount].Symbol)); break; } } if (iSubCount === ArabicLetters.length) sOutVal += sVal.charAt(iCount); } return unescape(sOutVal); }"
@@ -2078,8 +2077,7 @@ Public Class Arabic
         "function changeTransliteration() { var k, child, iSubCount, text; $('span.transliteration').each(function() { $(this).css('display', $('#translitscheme').val() === '0' ? 'none' : 'block'); }); for (k in renderList) { text = ''; for (child in renderList[k]['children']) { for (iSubCount = 0; iSubCount < renderList[k]['children'][child]['arabic'].length; iSubCount++) { if ($('#translitscheme').val() === '1' && renderList[k]['children'][child]['arabic'][iSubCount] !== '' && renderList[k]['children'][child]['translit'][iSubCount] !== '') { if (text !== '') text += ' '; text += $('#' + renderList[k]['children'][child]['arabic'][iSubCount]).text(); } else { if (renderList[k]['children'][child]['translit'][iSubCount] !== '') $('#' + renderList[k]['children'][child]['translit'][iSubCount]).text(($('#translitscheme').val() === '0' || renderList[k]['children'][child]['arabic'][iSubCount] === '') ? '' : doTransliterate($('#' + renderList[k]['children'][child]['arabic'][iSubCount]).text(), true, $('#translitscheme').val() === '3')); } } } if ($('#translitscheme').val() === '1') { text = doPlainTransliterate(text).split(' '); for (child in renderList[k]['children']) { for (iSubCount = 0; iSubCount < renderList[k]['children'][child]['translit'].length; iSubCount++) { if (renderList[k]['children'][child]['translit'][iSubCount] !== '') $('#' + renderList[k]['children'][child]['translit'][iSubCount]).text(text.splice(0, 1)[0]); } } } for (iSubCount = 0; iSubCount < renderList[k]['arabic'].length; iSubCount++) { if (renderList[k]['translit'][iSubCount] !== '') $('#' + renderList[k]['translit'][iSubCount]).text(($('#translitscheme').val() === '0' || renderList[k]['arabic'][iSubCount] === '') ? '' : ($('#translitscheme').val() === '1' ? doPlainTransliterate($('#' + renderList[k]['arabic'][iSubCount]).text()) : doTransliterate($('#' + renderList[k]['arabic'][iSubCount]).text(), true, $('#translitscheme').val() === '3'))); } } }"}
     End Function
     Public Shared Function GetCategories() As String()
-        IslamData.Initialize()
-        Dim RetCat As New ArrayList(Array.ConvertAll(IslamData.ObjIslamData.VocabularyCategories, Function(Convert As IslamData.VocabCategory) Utility.LoadResourceString("IslamInfo_" + Convert.Title)))
+        Dim RetCat As New ArrayList(Array.ConvertAll(CachedData.IslamData.VocabularyCategories, Function(Convert As IslamData.VocabCategory) Utility.LoadResourceString("IslamInfo_" + Convert.Title)))
         RetCat.Add(Utility.LoadResourceString("IslamInfo_Months"))
         RetCat.Add(Utility.LoadResourceString("IslamInfo_DaysOfWeek"))
         RetCat.Add(Utility.LoadResourceString("IslamInfo_PrayerTimes"))
@@ -2092,16 +2090,16 @@ Public Class Arabic
         If Count = -1 Then Count = 0
         Dim Objects As ArrayList = New ArrayList From {New ArrayList, New ArrayList}
         Dim Total As Integer
-        If Count = IslamData.ObjIslamData.VocabularyCategories.Length Then
-            Total = IslamData.ObjIslamData.Months.Length
-        ElseIf Count = IslamData.ObjIslamData.VocabularyCategories.Length + 1 Then
-            Total = IslamData.ObjIslamData.DaysOfWeek.Length
-        ElseIf Count = IslamData.ObjIslamData.VocabularyCategories.Length + 2 Then
-            Total = IslamData.ObjIslamData.PrayerTimes.Length
-        ElseIf Count = IslamData.ObjIslamData.VocabularyCategories.Length + 3 Then
-            Total = IslamData.ObjIslamData.Prayers.Length
+        If Count = CachedData.IslamData.VocabularyCategories.Length Then
+            Total = CachedData.IslamData.Months.Length
+        ElseIf Count = CachedData.IslamData.VocabularyCategories.Length + 1 Then
+            Total = CachedData.IslamData.DaysOfWeek.Length
+        ElseIf Count = CachedData.IslamData.VocabularyCategories.Length + 2 Then
+            Total = CachedData.IslamData.PrayerTimes.Length
+        ElseIf Count = CachedData.IslamData.VocabularyCategories.Length + 3 Then
+            Total = CachedData.IslamData.Prayers.Length
         Else
-            Total = IslamData.ObjIslamData.VocabularyCategories(Count).Words.Length
+            Total = CachedData.IslamData.VocabularyCategories(Count).Words.Length
         End If
         For SubCount As Integer = 0 To Total - 1
             CType(Objects(0), ArrayList).Add("render" + CStr(SubCount))
@@ -2111,13 +2109,12 @@ Public Class Arabic
     End Function
     Public Shared Function DisplayTranslation(ByVal Item As PageLoader.TextItem) As Array()
         Dim Output As New ArrayList
-        IslamData.Initialize()
         Output.Add(GetRenderJS())
         Dim Count As Integer = CInt(Web.HttpContext.Current.Request.QueryString.Get("selection"))
-        If IslamData.ObjIslamData.VocabularyCategories.Length + 2 = Count Then
+        If CachedData.IslamData.VocabularyCategories.Length + 2 = Count Then
             Output.Add(New String() {"arabic", "transliteration", String.Empty, String.Empty, String.Empty, String.Empty})
             Output.Add(New String() {Utility.LoadResourceString("IslamInfo_Arabic"), Utility.LoadResourceString("IslamInfo_Transliteration"), Utility.LoadResourceString("IslamInfo_Translation"), Utility.LoadResourceString("IslamInfo_Before"), Utility.LoadResourceString("IslamInfo_PrescribedTime"), Utility.LoadResourceString("IslamInfo_After")})
-        ElseIf IslamData.ObjIslamData.VocabularyCategories.Length + 3 = Count Then
+        ElseIf CachedData.IslamData.VocabularyCategories.Length + 3 = Count Then
             Output.Add(New String() {"arabic", "transliteration", String.Empty, String.Empty, String.Empty})
             Output.Add(New String() {Utility.LoadResourceString("IslamInfo_Arabic"), Utility.LoadResourceString("IslamInfo_Transliteration"), Utility.LoadResourceString("IslamInfo_Translation"), Utility.LoadResourceString("IslamInfo_Classification"), Utility.LoadResourceString("IslamInfo_PrayerUnits")})
         Else
@@ -2125,51 +2122,50 @@ Public Class Arabic
             Output.Add(New String() {Utility.LoadResourceString("IslamInfo_Arabic"), Utility.LoadResourceString("IslamInfo_Transliteration"), Utility.LoadResourceString("IslamInfo_Translation")})
         End If
         If Count = -1 Then Count = 0
-        If IslamData.ObjIslamData.VocabularyCategories.Length = Count Then
-            For SubCount As Integer = 0 To IslamData.ObjIslamData.Months.Length - 1
-                Output.Add(New String() {Arabic.RightToLeftMark + TransliterateFromBuckwalter(IslamData.ObjIslamData.Months(SubCount).Name), TransliterateToScheme(TransliterateFromBuckwalter(IslamData.ObjIslamData.Months(SubCount).Name)).Trim(), Utility.LoadResourceString("IslamInfo_" + IslamData.ObjIslamData.Months(SubCount).TranslationID)})
+        If CachedData.IslamData.VocabularyCategories.Length = Count Then
+            For SubCount As Integer = 0 To CachedData.IslamData.Months.Length - 1
+                Output.Add(New String() {Arabic.RightToLeftMark + TransliterateFromBuckwalter(CachedData.IslamData.Months(SubCount).Name), TransliterateToScheme(TransliterateFromBuckwalter(CachedData.IslamData.Months(SubCount).Name)).Trim(), Utility.LoadResourceString("IslamInfo_" + CachedData.IslamData.Months(SubCount).TranslationID)})
             Next
-        ElseIf IslamData.ObjIslamData.VocabularyCategories.Length + 1 = Count Then
-            For SubCount As Integer = 0 To IslamData.ObjIslamData.DaysOfWeek.Length - 1
-                Output.Add(New String() {Arabic.RightToLeftMark + TransliterateFromBuckwalter(IslamData.ObjIslamData.DaysOfWeek(SubCount).Name), TransliterateToScheme(TransliterateFromBuckwalter(IslamData.ObjIslamData.DaysOfWeek(SubCount).Name)).Trim(), Utility.LoadResourceString("IslamInfo_" + IslamData.ObjIslamData.DaysOfWeek(SubCount).TranslationID)})
+        ElseIf CachedData.IslamData.VocabularyCategories.Length + 1 = Count Then
+            For SubCount As Integer = 0 To CachedData.IslamData.DaysOfWeek.Length - 1
+                Output.Add(New String() {Arabic.RightToLeftMark + TransliterateFromBuckwalter(CachedData.IslamData.DaysOfWeek(SubCount).Name), TransliterateToScheme(TransliterateFromBuckwalter(CachedData.IslamData.DaysOfWeek(SubCount).Name)).Trim(), Utility.LoadResourceString("IslamInfo_" + CachedData.IslamData.DaysOfWeek(SubCount).TranslationID)})
             Next
-        ElseIf IslamData.ObjIslamData.VocabularyCategories.Length + 2 = Count Then
+        ElseIf CachedData.IslamData.VocabularyCategories.Length + 2 = Count Then
             Dim Table As New Hashtable
-            Array.ForEach(IslamData.ObjIslamData.Prayers, Sub(Convert As IslamData.PrayerType) Array.ForEach(Convert.PrayerUnits.Split(","c), Sub(Part As String) If Part.Contains("="c) Then If Table.ContainsKey(Part.Substring(0, Part.IndexOf("="c))) Then Table.Item(Part.Substring(0, Part.IndexOf("="c))) = CStr(Table.Item(Part.Substring(0, Part.IndexOf("="c)))) + vbCrLf + Part.Substring(Part.IndexOf("="c) + 1).Replace("|"c, " or ") + " " + CStr(IIf(Utility.LoadResourceString("IslamInfo_" + Convert.TranslationID) <> "Prescribed time", Utility.LoadResourceString("IslamInfo_" + Convert.TranslationID) + " - ", String.Empty)) + Convert.Classification Else Table.Add(Part.Substring(0, Part.IndexOf("="c)), Part.Substring(Part.IndexOf("="c) + 1).Replace("|"c, " or ") + " " + Convert.Classification)))
-            For SubCount As Integer = 0 To IslamData.ObjIslamData.PrayerTimes.Length - 1
-                Output.Add(New String() {Arabic.RightToLeftMark + TransliterateFromBuckwalter(IslamData.ObjIslamData.PrayerTimes(SubCount).Name), TransliterateToScheme(TransliterateFromBuckwalter(IslamData.ObjIslamData.PrayerTimes(SubCount).Name)).Trim(), Utility.LoadResourceString("IslamInfo_" + IslamData.ObjIslamData.PrayerTimes(SubCount).TranslationID), CStr(IIf(Table.ContainsKey("-"c + Utility.LoadResourceString("IslamInfo_" + IslamData.ObjIslamData.PrayerTimes(SubCount).TranslationID)), Table.Item("-"c + Utility.LoadResourceString("IslamInfo_" + IslamData.ObjIslamData.PrayerTimes(SubCount).TranslationID)), String.Empty)), CStr(IIf(Table.ContainsKey(Utility.LoadResourceString("IslamInfo_" + IslamData.ObjIslamData.PrayerTimes(SubCount).TranslationID)), Table.Item(Utility.LoadResourceString("IslamInfo_" + IslamData.ObjIslamData.PrayerTimes(SubCount).TranslationID)), String.Empty)), CStr(IIf(Table.ContainsKey("+"c + Utility.LoadResourceString("IslamInfo_" + IslamData.ObjIslamData.PrayerTimes(SubCount).TranslationID)), Table.Item("+"c + Utility.LoadResourceString("IslamInfo_" + IslamData.ObjIslamData.PrayerTimes(SubCount).TranslationID)), String.Empty))})
+            Array.ForEach(CachedData.IslamData.Prayers, Sub(Convert As IslamData.PrayerType) Array.ForEach(Convert.PrayerUnits.Split(","c), Sub(Part As String) If Part.Contains("="c) Then If Table.ContainsKey(Part.Substring(0, Part.IndexOf("="c))) Then Table.Item(Part.Substring(0, Part.IndexOf("="c))) = CStr(Table.Item(Part.Substring(0, Part.IndexOf("="c)))) + vbCrLf + Part.Substring(Part.IndexOf("="c) + 1).Replace("|"c, " or ") + " " + CStr(IIf(Utility.LoadResourceString("IslamInfo_" + Convert.TranslationID) <> "Prescribed time", Utility.LoadResourceString("IslamInfo_" + Convert.TranslationID) + " - ", String.Empty)) + Convert.Classification Else Table.Add(Part.Substring(0, Part.IndexOf("="c)), Part.Substring(Part.IndexOf("="c) + 1).Replace("|"c, " or ") + " " + Convert.Classification)))
+            For SubCount As Integer = 0 To CachedData.IslamData.PrayerTimes.Length - 1
+                Output.Add(New String() {Arabic.RightToLeftMark + TransliterateFromBuckwalter(CachedData.IslamData.PrayerTimes(SubCount).Name), TransliterateToScheme(TransliterateFromBuckwalter(CachedData.IslamData.PrayerTimes(SubCount).Name)).Trim(), Utility.LoadResourceString("IslamInfo_" + CachedData.IslamData.PrayerTimes(SubCount).TranslationID), CStr(IIf(Table.ContainsKey("-"c + Utility.LoadResourceString("IslamInfo_" + CachedData.IslamData.PrayerTimes(SubCount).TranslationID)), Table.Item("-"c + Utility.LoadResourceString("IslamInfo_" + CachedData.IslamData.PrayerTimes(SubCount).TranslationID)), String.Empty)), CStr(IIf(Table.ContainsKey(Utility.LoadResourceString("IslamInfo_" + CachedData.IslamData.PrayerTimes(SubCount).TranslationID)), Table.Item(Utility.LoadResourceString("IslamInfo_" + CachedData.IslamData.PrayerTimes(SubCount).TranslationID)), String.Empty)), CStr(IIf(Table.ContainsKey("+"c + Utility.LoadResourceString("IslamInfo_" + CachedData.IslamData.PrayerTimes(SubCount).TranslationID)), Table.Item("+"c + Utility.LoadResourceString("IslamInfo_" + CachedData.IslamData.PrayerTimes(SubCount).TranslationID)), String.Empty))})
             Next
-        ElseIf IslamData.ObjIslamData.VocabularyCategories.Length + 3 = Count Then
-            For SubCount As Integer = 0 To IslamData.ObjIslamData.Prayers.Length - 1
-                Output.Add(New String() {Arabic.RightToLeftMark + TransliterateFromBuckwalter(IslamData.ObjIslamData.Prayers(SubCount).Name), TransliterateToScheme(TransliterateFromBuckwalter(IslamData.ObjIslamData.Prayers(SubCount).Name)).Trim(), Utility.LoadResourceString("IslamInfo_" + IslamData.ObjIslamData.Prayers(SubCount).TranslationID), IslamData.ObjIslamData.Prayers(SubCount).Classification, IslamData.ObjIslamData.Prayers(SubCount).PrayerUnits})
+        ElseIf CachedData.IslamData.VocabularyCategories.Length + 3 = Count Then
+            For SubCount As Integer = 0 To CachedData.IslamData.Prayers.Length - 1
+                Output.Add(New String() {Arabic.RightToLeftMark + TransliterateFromBuckwalter(CachedData.IslamData.Prayers(SubCount).Name), TransliterateToScheme(TransliterateFromBuckwalter(CachedData.IslamData.Prayers(SubCount).Name)).Trim(), Utility.LoadResourceString("IslamInfo_" + CachedData.IslamData.Prayers(SubCount).TranslationID), CachedData.IslamData.Prayers(SubCount).Classification, CachedData.IslamData.Prayers(SubCount).PrayerUnits})
             Next
         Else
-            For SubCount As Integer = 0 To IslamData.ObjIslamData.VocabularyCategories(Count).Words.Length - 1
-                Output.Add(New String() {Arabic.RightToLeftMark + TransliterateFromBuckwalter(IslamData.ObjIslamData.VocabularyCategories(Count).Words(SubCount).Text), TransliterateToScheme(TransliterateFromBuckwalter(IslamData.ObjIslamData.VocabularyCategories(Count).Words(SubCount).Text)).Trim(), Utility.DefaultValue(Utility.LoadResourceString("IslamInfo_" + IslamData.ObjIslamData.VocabularyCategories(Count).Words(SubCount).TranslationID), String.Empty)})
+            For SubCount As Integer = 0 To CachedData.IslamData.VocabularyCategories(Count).Words.Length - 1
+                Output.Add(New String() {Arabic.RightToLeftMark + TransliterateFromBuckwalter(CachedData.IslamData.VocabularyCategories(Count).Words(SubCount).Text), TransliterateToScheme(TransliterateFromBuckwalter(CachedData.IslamData.VocabularyCategories(Count).Words(SubCount).Text)).Trim(), Utility.LoadResourceString("IslamInfo_" + CachedData.IslamData.VocabularyCategories(Count).Words(SubCount).TranslationID)})
             Next
         End If
         Return DirectCast(Output.ToArray(GetType(Array)), Array())
     End Function
     Public Shared Function DisplayAll(ByVal Item As PageLoader.TextItem) As Array()
         Dim Count As Integer
-        IslamData.Initialize()
-        Dim Output(IslamData.ObjIslamData.ArabicLetters.Length + 2) As Array
+        Dim Output(CachedData.IslamData.ArabicLetters.Length + 2) As Array
         'Dim oFont As New Font(DefaultValue(Web.HttpContext.Current.Request.QueryString.Get("fontcustom"), "Arial"), 13)
-        'CheckIfCharInFont(IslamData.ObjIslamData.ArabicLetters(Count).Symbol, oFont)
+        'CheckIfCharInFont(CachedData.IslamData.ArabicLetters(Count).Symbol, oFont)
         Output(0) = New String() {}
         Output(1) = New String() {"arabic", String.Empty, "arabic", String.Empty, String.Empty, String.Empty, String.Empty, String.Empty, String.Empty, String.Empty}
         Output(2) = New String() {Utility.LoadResourceString("IslamInfo_LetterName"), Utility.LoadResourceString("IslamInfo_UnicodeName"), Utility.LoadResourceString("IslamInfo_Arabic"), Utility.LoadResourceString("IslamInfo_UnicodeValue"), Utility.LoadResourceString("IslamSource_ExtendedBuckwalter"), Utility.LoadResourceString("IslamSource_EnglishRomanized"), Utility.LoadResourceString("IslamSource_PlainRoman"), Utility.LoadResourceString("IslamInfo_Terminating"), Utility.LoadResourceString("IslamInfo_Connecting"), Utility.LoadResourceString("IslamInfo_Assimilate")}
-        For Count = 0 To IslamData.ObjIslamData.ArabicLetters.Length - 1
-            Output(Count + 3) = New String() {Arabic.RightToLeftMark + TransliterateFromBuckwalter(IslamData.ObjIslamData.ArabicLetters(Count).SymbolName), _
-                                              GetUnicodeName(IslamData.ObjIslamData.ArabicLetters(Count).Symbol), _
-                                       CStr(IslamData.ObjIslamData.ArabicLetters(Count).Symbol), _
-                                       CStr(AscW(IslamData.ObjIslamData.ArabicLetters(Count).Symbol)), _
-                                       CStr(IIf(IslamData.ObjIslamData.ArabicLetters(Count).ExtendedBuckwalterLetter = ChrW(0), String.Empty, IslamData.ObjIslamData.ArabicLetters(Count).ExtendedBuckwalterLetter)), _
-                                       IslamData.ObjIslamData.ArabicLetters(Count).RomanTranslit, _
-                                       IslamData.ObjIslamData.ArabicLetters(Count).PlainRoman, _
-                                       CStr(IslamData.ObjIslamData.ArabicLetters(Count).Terminating), _
-                                       CStr(IslamData.ObjIslamData.ArabicLetters(Count).Connecting), _
-                                       CStr(IslamData.ObjIslamData.ArabicLetters(Count).Assimilate)}
+        For Count = 0 To CachedData.IslamData.ArabicLetters.Length - 1
+            Output(Count + 3) = New String() {Arabic.RightToLeftMark + TransliterateFromBuckwalter(CachedData.IslamData.ArabicLetters(Count).SymbolName), _
+                                              GetUnicodeName(CachedData.IslamData.ArabicLetters(Count).Symbol), _
+                                       CStr(CachedData.IslamData.ArabicLetters(Count).Symbol), _
+                                       CStr(AscW(CachedData.IslamData.ArabicLetters(Count).Symbol)), _
+                                       CStr(IIf(CachedData.IslamData.ArabicLetters(Count).ExtendedBuckwalterLetter = ChrW(0), String.Empty, CachedData.IslamData.ArabicLetters(Count).ExtendedBuckwalterLetter)), _
+                                       CachedData.IslamData.ArabicLetters(Count).RomanTranslit, _
+                                       CachedData.IslamData.ArabicLetters(Count).PlainRoman, _
+                                       CStr(CachedData.IslamData.ArabicLetters(Count).Terminating), _
+                                       CStr(CachedData.IslamData.ArabicLetters(Count).Connecting), _
+                                       CStr(CachedData.IslamData.ArabicLetters(Count).Assimilate)}
         Next
         Return Output
     End Function
@@ -2397,19 +2393,17 @@ Public Class ArabicFont
     'Web.Config requires for cross site scripting: configuration -> system.WebServer -> httpProtocol -> customHeaders -> <add name="Access-Control-Allow-Origin" value="*" />
     Public Shared Function GetFontList() As Array()
         Dim Count As Integer
-        IslamData.Initialize()
-        Dim Strings(IslamData.ObjIslamData.ArabicFonts.Length - 1) As Array
-        For Count = 0 To IslamData.ObjIslamData.ArabicFonts.Length - 1
-            Strings(Count) = New String() {Utility.LoadResourceString("IslamInfo_" + IslamData.ObjIslamData.ArabicFonts(Count).Name), IslamData.ObjIslamData.ArabicFonts(Count).ID}
+        Dim Strings(CachedData.IslamData.ArabicFonts.Length - 1) As Array
+        For Count = 0 To CachedData.IslamData.ArabicFonts.Length - 1
+            Strings(Count) = New String() {Utility.LoadResourceString("IslamInfo_" + CachedData.IslamData.ArabicFonts(Count).Name), CachedData.IslamData.ArabicFonts(Count).ID}
         Next
         Return Strings
     End Function
     Public Shared Function GetArabicFontListJS() As String
-        IslamData.Initialize()
         Return "var fontList = " + _
-        Utility.MakeJSIndexedObject(Array.ConvertAll(IslamData.ObjIslamData.ArabicFonts, Function(Convert As IslamData.ArabicFontList) Convert.ID), New Array() {Array.ConvertAll(IslamData.ObjIslamData.ArabicFonts, Function(Convert As IslamData.ArabicFontList) Utility.MakeJSIndexedObject(New String() {"family", "embed", "file", "scale"}, New Array() {New String() {Convert.Family, Convert.EmbedName, Convert.FileName, CStr(Convert.Scale)}}, False))}, True) + _
-        ";var fontPrefs = " + Utility.MakeJSIndexedObject(Array.ConvertAll(IslamData.ObjIslamData.ScriptFonts, Function(Convert As IslamData.ScriptFont) Convert.Name), _
-                                                          New Array() {Array.ConvertAll(Of IslamData.ScriptFont, String)(IslamData.ObjIslamData.ScriptFonts, Function(Convert As IslamData.ScriptFont) Utility.MakeJSArray(Array.ConvertAll(Of IslamData.ScriptFont.Font, String)(Convert.FontList, Function(SubConv As IslamData.ScriptFont.Font) SubConv.ID)))}, True) + ";"
+        Utility.MakeJSIndexedObject(Array.ConvertAll(CachedData.IslamData.ArabicFonts, Function(Convert As IslamData.ArabicFontList) Convert.ID), New Array() {Array.ConvertAll(CachedData.IslamData.ArabicFonts, Function(Convert As IslamData.ArabicFontList) Utility.MakeJSIndexedObject(New String() {"family", "embed", "file", "scale"}, New Array() {New String() {Convert.Family, Convert.EmbedName, Convert.FileName, CStr(Convert.Scale)}}, False))}, True) + _
+        ";var fontPrefs = " + Utility.MakeJSIndexedObject(Array.ConvertAll(CachedData.IslamData.ScriptFonts, Function(Convert As IslamData.ScriptFont) Convert.Name), _
+                                                          New Array() {Array.ConvertAll(Of IslamData.ScriptFont, String)(CachedData.IslamData.ScriptFonts, Function(Convert As IslamData.ScriptFont) Utility.MakeJSArray(Array.ConvertAll(Of IslamData.ScriptFont.Font, String)(Convert.FontList, Function(SubConv As IslamData.ScriptFont.Font) SubConv.ID)))}, True) + ";"
     End Function
     Public Shared Function GetFontEmbedJS() As String
         Return "function embedFontStyle(fontID) { if (isInArray(fontID, embeddedFonts)) return; embeddedFonts.push(fontID); var font=fontList[fontID]; var style = 'font-family: \'' + font.embed + '\';' + 'src: url(\'/files/\' + font.file + \'.eot\');' + 'src: local(\'' + font.family + '\'), url(\'/files/' + font.file + ((font.file == 'KFC_naskh') ? '.otf\') format(\'opentype\');' : '.ttf\') format(\'truetype\');'); addStyleSheetRule(newStyleSheet(), '@font-face', style);  }"
@@ -2424,7 +2418,7 @@ Public Class ArabicFont
         Return "function getFontFace(fontID) { return fontList[fontID].family + (fontList[fontID].embed ? ',' + fontList[fontID].embed : ''); }"
     End Function
     Public Shared Function GetFontWidthJS() As String
-        Return "function fontWidth(fontName, text) { text = text || 'ربنا إنك جامع الناس ليوم لا ريب فيه إن الله لا يخلف الميعاد' ; if (text == 2) text = 'In the name of Allah, بسم الله الرحمن الرحيم'; var tester = $('#font-tester'); tester.css('fontFamily', fontName); if (tester.firstChild) tester.remove(tester.firstChild); tester.append(document.createTextNode(text)); tester.css('display', 'block'); var width = tester.offsetWidth; tester.css('display', 'none'); return width; }"
+        Return "function fontWidth(fontName, text) { text = text || '" + TanzilReader.GetTextVerse(TanzilReader.GetTextChapter(CachedData.XMLDocMain, 3), 9).Attributes.GetNamedItem("text").Value + "' ; if (text == 2) text = 'In the name of Allah" + "," + TanzilReader.GetTextVerse(TanzilReader.GetTextChapter(CachedData.XMLDocMain, 1), 1).Attributes.GetNamedItem("text").Value + "'; var tester = $('#font-tester'); tester.css('fontFamily', fontName); if (tester.firstChild) tester.remove(tester.firstChild); tester.append(document.createTextNode(text)); tester.css('display', 'block'); var width = tester.offsetWidth; tester.css('display', 'none'); return width; }"
     End Function
     Public Shared Function GetFontExistsJS() As String
         Return "function fontExists(fontName) { var fontFamily = fontName + ', ' + baseFont; return fontWidth(baseFont) * fontWidth(baseFont, 2) != fontWidth(fontFamily) * fontWidth(fontFamily, 2); }"
@@ -2705,6 +2699,8 @@ Public Class IslamData
         Public Index As String
         <System.Xml.Serialization.XmlAttribute("name")> _
         Public Name As String
+        <System.Xml.Serialization.XmlAttribute("id")> _
+        Public ID As String
     End Structure
     <System.Xml.Serialization.XmlArray("quranparts")> _
     <System.Xml.Serialization.XmlArrayItem("part")> _
@@ -2730,214 +2726,26 @@ Public Class IslamData
     <System.Xml.Serialization.XmlArray("hadithcollections")> _
     <System.Xml.Serialization.XmlArrayItem("collection")> _
     Public Collections() As CollectionInfo
-    Public Shared Sub Initialize()
-        If IslamData.ObjIslamData Is Nothing Then
-            Dim fs As IO.FileStream = New IO.FileStream(Utility.GetFilePath("metadata\islaminfo.xml"), IO.FileMode.Open)
-            Dim xs As System.Xml.Serialization.XmlSerializer = New System.Xml.Serialization.XmlSerializer(GetType(IslamData))
-            IslamData.ObjIslamData = CType(xs.Deserialize(fs), IslamData)
-            fs.Close()
-        End If
-    End Sub
-    Public Shared ObjIslamData As IslamData
 End Class
-Public Class Languages
-    Public Shared Function GetLanguageInfoByCode(ByVal Code As String) As IslamData.LanguageInfo
-        Dim Count As Integer
-        For Count = 0 To IslamData.ObjIslamData.LanguageList.Length - 1
-            If IslamData.ObjIslamData.LanguageList(Count).Code = Code Then Return IslamData.ObjIslamData.LanguageList(Count)
-        Next
-        Return Nothing
-    End Function
-End Class
-Public Class Supplications
-    Public Shared Function GetSuppCategories() As String()
-        IslamData.Initialize()
-        Return Array.ConvertAll(IslamData.ObjIslamData.VerseCategories, Function(Convert As IslamData.VerseCategory) Utility.LoadResourceString("IslamInfo_" + Convert.Title))
-    End Function
-    Public Shared Function GetRenderedSuppText(ByVal Item As PageLoader.TextItem) As RenderArray
-        Dim Renderer As New RenderArray
-        IslamData.Initialize()
-        Dim Count As Integer = CInt(Web.HttpContext.Current.Request.QueryString.Get("selection"))
-        If Count = -1 Then Count = 0
-        For SubCount As Integer = 0 To IslamData.ObjIslamData.VerseCategories(Count).Verses.Length - 1
-            Dim EnglishByWord As String() = Utility.LoadResourceString("IslamInfo_" + IslamData.ObjIslamData.VerseCategories(Count).Verses(SubCount).TranslationID + "WordByWord").Split("|"c)
-            Dim ArabicText As String() = IslamData.ObjIslamData.VerseCategories(Count).Verses(SubCount).Arabic.Split(" "c)
-            Dim Transliteration As String() = Arabic.TransliterateToScheme(Arabic.TransliterateFromBuckwalter(IslamData.ObjIslamData.VerseCategories(Count).Verses(SubCount).Arabic)).Split(" "c)
-            Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eHeaderCenter, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, Utility.LoadResourceString("IslamInfo_" + IslamData.ObjIslamData.VerseCategories(Count).Verses(SubCount).TranslationID))}))
-            Dim Items As New Collections.Generic.List(Of RenderArray.RenderItem)
-            For WordCount As Integer = 0 To EnglishByWord.Length - 1
-                Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.RightToLeftMark + Arabic.TransliterateFromBuckwalter(ArabicText(WordCount))), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, Transliteration(WordCount)), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, EnglishByWord(WordCount))}))
-            Next
-            Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eNested, Items), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, Utility.LoadResourceString("IslamInfo_" + IslamData.ObjIslamData.VerseCategories(Count).Verses(SubCount).TranslationID + "Trans"))}))
-        Next
-        Return Renderer
-    End Function
-End Class
-Public Class TanzilReader
-    Shared XMLDocInfo As System.Xml.XmlDocument
-    'need disk and memory cache as time consuming to build
-    Shared RootDictionary As New Generic.Dictionary(Of String, ArrayList)
-    Shared TagDictionary As New Generic.Dictionary(Of String, ArrayList)
-    Shared WordDictionary As New Generic.Dictionary(Of String, ArrayList)
-    Shared LetterDictionary As New Generic.Dictionary(Of Char, ArrayList)
-    Shared TotalLetters As Integer = 0
-    Public Shared Function GetDivisionTypes() As String()
-        Return Array.ConvertAll(IslamData.ObjIslamData.QuranDivisions, Function(Convert As IslamData.QuranDivision) Utility.LoadResourceString("IslamInfo_" + Convert.Description))
-    End Function
-    Public Shared Function GetTranslationList() As Array()
-        Return Array.ConvertAll(IslamData.ObjIslamData.Translations.TranslationList, Function(Convert As IslamData.TranslationsInfo.TranslationInfo) New String() {Utility.LoadResourceString("lang_local" + Languages.GetLanguageInfoByCode(Convert.FileName.Substring(0, CInt(IIf(Convert.FileName.IndexOf("-") <> -1, Convert.FileName.IndexOf("-"), Convert.FileName.IndexOf("."))))).Code) + ": " + Convert.Name, Convert.FileName})
-    End Function
-    Public Shared Function GetTranslationIndex(ByVal Translation As String) As Integer
-        If String.IsNullOrEmpty(Translation) Then Translation = IslamData.ObjIslamData.Translations.DefaultTranslation 'Default
-        Dim Count As Integer = Array.FindIndex(IslamData.ObjIslamData.Translations.TranslationList, Function(Test As IslamData.TranslationsInfo.TranslationInfo) Test.FileName = Translation)
-        If Count = -1 Then
-            Translation = IslamData.ObjIslamData.Translations.DefaultTranslation 'Default
-            Count = Array.FindIndex(IslamData.ObjIslamData.Translations.TranslationList, Function(Test As IslamData.TranslationsInfo.TranslationInfo) Test.FileName = Translation)
-        End If
-        Return Count
-    End Function
-    Public Shared Function GetTranslationFileName(ByVal Translation As String) As String
-        Dim Index As Integer = GetTranslationIndex(Translation)
-        Return IslamData.ObjIslamData.Translations.TranslationList(Index).FileName + ".txt"
-    End Function
-    Public Shared Function GetDivisionChangeJS() As String()
-        Dim NewTanzilReader As New TanzilReader()
-        Dim JSArrays As String = Utility.MakeJSArray(New String() {Utility.MakeJSArray(Array.ConvertAll(Of Array, String)(NewTanzilReader.GetChapterNames(), Function(Convert As Array) Utility.MakeJSArray(New String() {CStr(CType(Convert, Object())(0)), CStr(CType(Convert, Object())(1))})), True), _
-            Utility.MakeJSArray(Array.ConvertAll(Of Array, String)(NewTanzilReader.GetChapterNamesByRevelationOrder(), Function(Convert As Array) Utility.MakeJSArray(New String() {CStr(CType(Convert, Object())(0)), CStr(CType(Convert, Object())(1))})), True), _
-            Utility.MakeJSArray(Array.ConvertAll(Of Array, String)(NewTanzilReader.GetPartNames(), Function(Convert As Array) Utility.MakeJSArray(New String() {CStr(CType(Convert, Object())(0)), CStr(CType(Convert, Object())(1))})), True), _
-            Utility.MakeJSArray(Array.ConvertAll(Of Array, String)(NewTanzilReader.GetGroupNames(), Function(Convert As Array) Utility.MakeJSArray(New String() {CStr(CType(Convert, Object())(0)), CStr(CType(Convert, Object())(1))})), True), _
-            Utility.MakeJSArray(Array.ConvertAll(Of Array, String)(NewTanzilReader.GetStationNames(), Function(Convert As Array) Utility.MakeJSArray(New String() {CStr(CType(Convert, Object())(0)), CStr(CType(Convert, Object())(1))})), True), _
-            Utility.MakeJSArray(Array.ConvertAll(Of Array, String)(NewTanzilReader.GetSectionNames(), Function(Convert As Array) Utility.MakeJSArray(New String() {CStr(CType(Convert, Object())(0)), CStr(CType(Convert, Object())(1))})), True), _
-            Utility.MakeJSArray(Array.ConvertAll(Of Array, String)(NewTanzilReader.GetPageNames(), Function(Convert As Array) Utility.MakeJSArray(New String() {CStr(CType(Convert, Object())(0)), CStr(CType(Convert, Object())(1))})), True), _
-            Utility.MakeJSArray(Array.ConvertAll(Of Array, String)(NewTanzilReader.GetSajdaNames(), Function(Convert As Array) Utility.MakeJSArray(New String() {CStr(CType(Convert, Object())(0)), CStr(CType(Convert, Object())(1))})), True), _
-            Utility.MakeJSArray(Array.ConvertAll(Of Array, String)(NewTanzilReader.GetImportantNames(), Function(Convert As Array) Utility.MakeJSArray(New String() {CStr(CType(Convert, Object())(0)), CStr(CType(Convert, Object())(1))})), True), _
-            Utility.MakeJSArray(Array.ConvertAll(Of Array, String)(Arabic.GetRecitationSymbols(), Function(Convert As Array) Utility.MakeJSArray(New String() {CStr(CType(Convert, Object())(0)), CStr(CType(Convert, Object())(1))})), True)}, True)
-        Return New String() {"javascript: changeQuranDivision(this.selectedIndex);", String.Empty, Utility.GetClearOptionListJS(), _
-        "function changeQuranDivision(index) { var iCount; var qurandata = " + JSArrays + "; var eSelect = $('#quranselection').get(0); clearOptionList(eSelect); for (iCount = 0; iCount < qurandata[index].length; iCount++) { eSelect.options.add(new Option(qurandata[index][iCount][0], qurandata[index][iCount][1])); } }"}
-    End Function
-    Public Shared Function GetWordPartitions() As String()
-        Return New String() {"Letters", "Words", "Unique Words", "Unique Words Per Part", "Words Per Part", "Unique Words Per Station", "Words Per Station"}
-    End Function
-    Public Shared Function GetQuranWordTotalNumber() As Integer
-        Dim Total As Integer
-        If WordDictionary.Keys.Count = 0 Then GetMorphologicalData()
-        For Each Key As String In WordDictionary.Keys
-            Total = Total + WordDictionary.Item(Key).Count
-        Next
-        Return Total
-    End Function
-    Public Shared Function GetQuranWordTotal(ByVal Item As PageLoader.TextItem) As String
-        Dim Strings As String
-        Dim Index As Integer
-        Strings = Web.HttpContext.Current.Request.QueryString.Get("quranselection")
-        If Not Strings Is Nothing Then Index = CInt(Strings)
-        If WordDictionary.Keys.Count = 0 Then GetMorphologicalData()
-        If Index = 0 Then
-            Return CStr(TotalLetters)
-        ElseIf Index = 1 Then
-            Return CStr(GetQuranWordTotalNumber())
-        ElseIf Index = 2 Then
-            Return CStr(WordDictionary.Keys.Count)
-        Else
-            Return String.Empty
-        End If
-    End Function
-    Public Shared Function GetQuranWordFrequency(ByVal Item As PageLoader.TextItem) As Array()
-        Dim Output As New ArrayList
-        Dim Total As Integer = 0
-        If LetterDictionary.Keys.Count = 0 Then BuildQuranLetterIndex()
-        If WordDictionary.Keys.Count = 0 Then GetMorphologicalData()
-        Dim All As Double = TotalLetters
-        Output.Add(New String() {String.Empty, String.Empty, String.Empty, String.Empty, String.Empty})
-        Output.Add(New String() {"arabic", "transliteration", String.Empty, String.Empty, String.Empty})
-        Output.Add(New String() {Utility.LoadResourceString("IslamInfo_Arabic"), Utility.LoadResourceString("IslamInfo_Transliteration"), Utility.LoadResourceString("IslamSource_WordTotal"), String.Empty, String.Empty})
-        Dim Strings As String
-        Dim Index As Integer
-        Strings = Web.HttpContext.Current.Request.QueryString.Get("quranselection")
-        If Not Strings Is Nothing Then Index = CInt(Strings)
-        If Index = 0 Then
-            Dim LetterFreqArray(LetterDictionary.Keys.Count - 1) As Char
-            LetterDictionary.Keys.CopyTo(LetterFreqArray, 0)
-            Array.Sort(LetterFreqArray, Function(Key As Char, NextKey As Char) LetterDictionary.Item(NextKey).Count.CompareTo(LetterDictionary.Item(Key).Count))
-            For Count As Integer = 0 To LetterFreqArray.Length - 1
-                Total += LetterDictionary.Item(LetterFreqArray(Count)).Count
-                Output.Add(New String() {IslamData.ObjIslamData.ArabicLetters(Arabic.FindLetterBySymbol(LetterFreqArray(Count))).UnicodeName + " (" + Arabic.RightToLeftMark + " " + LetterFreqArray(Count) + " " + Arabic.LeftToRightMark + ")", String.Empty, CStr(LetterDictionary.Item(LetterFreqArray(Count)).Count), (CDbl(LetterDictionary.Item(LetterFreqArray(Count)).Count) * 100 / All).ToString("n2"), (CDbl(Total) * 100 / All).ToString("n2")})
-            Next
-        ElseIf Index = 1 Then
-            Dim FreqArray(WordDictionary.Keys.Count - 1) As String
-            WordDictionary.Keys.CopyTo(FreqArray, 0)
-            Total = 0
-            All = GetQuranWordTotalNumber()
-            Array.Sort(FreqArray, Function(Key As String, NextKey As String) WordDictionary.Item(NextKey).Count.CompareTo(WordDictionary.Item(Key).Count))
-            For Count As Integer = 0 To FreqArray.Length - 1
-                Total += WordDictionary.Item(FreqArray(Count)).Count
-                Output.Add(New String() {Arabic.RightToLeftMark + Arabic.TransliterateFromBuckwalter(FreqArray(Count)), String.Empty, CStr(WordDictionary.Item(FreqArray(Count)).Count), (CDbl(WordDictionary.Item(FreqArray(Count)).Count) * 100 / All).ToString("n2"), (CDbl(Total) * 100 / All).ToString("n2")})
-            Next
-        ElseIf Index = 3 Or Index = 4 Or Index = 5 Or Index = 6 Then
-            Dim FreqArray(WordDictionary.Keys.Count - 1) As String
-            WordDictionary.Keys.CopyTo(FreqArray, 0)
-            Dim NewTanzilReader As New TanzilReader()
-            Dim PartUniqueArray(NewTanzilReader.GetPartCount() - 1) As Generic.List(Of String)
-            Dim PartArray(NewTanzilReader.GetPartCount() - 1) As Generic.List(Of String)
-            Total = 0
-            All = 0
-            Dim AllUnique As Integer = 0
-            For Count As Integer = 1 To CInt(IIf(Index = 5 Or Index = 6, NewTanzilReader.GetStationCount(), NewTanzilReader.GetPartCount()))
-                PartUniqueArray(Count - 1) = New Generic.List(Of String)
-                PartArray(Count - 1) = New Generic.List(Of String)
-                Dim Node As System.Xml.XmlNode = CType(IIf(Index = 5 Or Index = 6, NewTanzilReader.GetStationByIndex(Count), NewTanzilReader.GetPartByIndex(Count)), System.Xml.XmlNode)
-                Dim BaseChapter As Integer = CInt(Node.Attributes.GetNamedItem("sura").Value)
-                Dim BaseVerse As Integer = CInt(Node.Attributes.GetNamedItem("aya").Value)
-                Dim Chapter As Integer
-                Dim Verse As Integer
-                Node = CType(IIf(Index = 5 Or Index = 6, NewTanzilReader.GetStationByIndex(Count + 1), NewTanzilReader.GetPartByIndex(Count + 1)), System.Xml.XmlNode)
-                If Node Is Nothing Then
-                    Chapter = GetChapterCount()
-                    Verse = GetVerseCount(Chapter)
-                Else
-                    Chapter = CInt(Node.Attributes.GetNamedItem("sura").Value)
-                    Verse = CInt(Node.Attributes.GetNamedItem("aya").Value)
-                    NewTanzilReader.GetPreviousChapterVerse(Chapter, Verse)
-                End If
-                For SubCount As Integer = 0 To FreqArray.Length - 1
-                    Dim RefCount As Integer
-                    Dim UniCount As Integer = 0
-                    For RefCount = 0 To WordDictionary(FreqArray(SubCount)).Count - 1
-                        If (CType(WordDictionary(FreqArray(SubCount))(RefCount), Integer())(0) = BaseChapter AndAlso _
-                            CType(WordDictionary(FreqArray(SubCount))(RefCount), Integer())(1) >= BaseVerse AndAlso _
-                            (BaseChapter <> Chapter OrElse _
-                            CType(WordDictionary(FreqArray(SubCount))(RefCount), Integer())(1) <= Verse)) OrElse _
-                            (CType(WordDictionary(FreqArray(SubCount))(RefCount), Integer())(0) > BaseChapter AndAlso _
-                            CType(WordDictionary(FreqArray(SubCount))(RefCount), Integer())(0) < Chapter) OrElse _
-                            (CType(WordDictionary(FreqArray(SubCount))(RefCount), Integer())(0) = Chapter AndAlso
-                            CType(WordDictionary(FreqArray(SubCount))(RefCount), Integer())(1) <= Verse) Then
-                            UniCount += 1
-                        End If
-                    Next
-                    If UniCount = WordDictionary(FreqArray(SubCount)).Count Then
-                        PartUniqueArray(Count - 1).Add(FreqArray(SubCount))
-                        AllUnique += 1
-                    End If
-                    If UniCount > 0 Then
-                        PartArray(Count - 1).Add(FreqArray(SubCount))
-                        All += 1
-                    End If
-                Next
-            Next
-            If Index = 3 Or Index = 5 Then
-                For Count As Integer = 0 To CInt(IIf(Index = 5 Or Index = 6, NewTanzilReader.GetStationCount(), NewTanzilReader.GetPartCount())) - 1
-                    Total += PartUniqueArray(Count).Count
-                    Output.Add(New String() {Arabic.LeftToRightMark + CStr(Count + 1), String.Empty, CStr(PartUniqueArray(Count).Count), (CDbl(PartUniqueArray(Count).Count) * 100 / AllUnique).ToString("n2"), (CDbl(Total) * 100 / AllUnique).ToString("n2")})
-                Next
-            ElseIf Index = 4 Or Index = 6 Then
-                For Count As Integer = 0 To CInt(IIf(Index = 5 Or Index = 6, NewTanzilReader.GetStationCount(), NewTanzilReader.GetPartCount())) - 1
-                    Total += PartArray(Count).Count
-                    Output.Add(New String() {Arabic.LeftToRightMark + CStr(Count + 1), String.Empty, CStr(PartArray(Count).Count), (CDbl(PartArray(Count).Count) * 100 / All).ToString("n2"), (CDbl(Total) * 100 / All).ToString("n2")})
-                Next
-            End If
-        End If
-        Return CType(Output.ToArray(GetType(Array())), Array())
-    End Function
+Public Class CachedData
+    'need disk and memory cache as time consuming to read or build
+    Shared _ObjIslamData As IslamData
+    Shared _XMLDocMain As System.Xml.XmlDocument 'Tanzil Quran data
+    Shared _XMLDocInfo As System.Xml.XmlDocument 'Tanzil metadata
+    Shared _XMLDocInfos As Collections.Generic.List(Of System.Xml.XmlDocument) 'Hadiths
+    Shared _RootDictionary As New Generic.Dictionary(Of String, ArrayList)
+    Shared _TagDictionary As New Generic.Dictionary(Of String, ArrayList)
+    Shared _WordDictionary As New Generic.Dictionary(Of String, ArrayList)
+    Shared _LetterDictionary As New Generic.Dictionary(Of Char, ArrayList)
+    Shared _TotalLetters As Integer = 0
+    Shared _PartUniqueArray(TanzilReader.GetPartCount() - 1) As Generic.List(Of String)
+    Shared _PartArray(TanzilReader.GetPartCount() - 1) As Generic.List(Of String)
+    Shared _StationUniqueArray(TanzilReader.GetPartCount() - 1) As Generic.List(Of String)
+    Shared _StationArray(TanzilReader.GetPartCount() - 1) As Generic.List(Of String)
+    Shared _TotalUniqueWordsInParts As Integer = 0
+    Shared _TotalWordsInParts As Integer = 0
+    Shared _TotalUniqueWordsInStations As Integer = 0
+    Shared _TotalWordsInStations As Integer = 0
     Public Shared Sub GetMorphologicalData()
         Dim Lines As String() = IO.File.ReadAllLines(Utility.GetFilePath("metadata\quranic-corpus-morphology-0.4.txt"))
         For Count As Integer = 0 To Lines.Length - 1
@@ -2947,11 +2755,11 @@ Public Class TanzilReader
                 'FORM can be found identically in tanzil
                 If Pieces(0).Chars(0) = "(" Then
                     'TAG
-                    If Not TagDictionary.ContainsKey(Pieces(2)) Then
-                        TagDictionary.Add(Pieces(2), New ArrayList)
+                    If Not _TagDictionary.ContainsKey(Pieces(2)) Then
+                        _TagDictionary.Add(Pieces(2), New ArrayList)
                     End If
                     Dim Location As Integer() = Array.ConvertAll(Pieces(0).TrimStart("("c).TrimEnd(")"c).Split(":"c), Function(Str As String) CInt(Str))
-                    TagDictionary.Item(Pieces(2)).Add(Location)
+                    _TagDictionary.Item(Pieces(2)).Add(Location)
                     Dim Parts As String() = Pieces(3).Split("|"c)
                     If Array.Find(Parts, Function(Str As String) Str = "PREFIX" Or Str = "SUFFIX") = String.Empty Then
                         'LEM: or if not present FORM
@@ -2961,1384 +2769,1670 @@ Public Class TanzilReader
                         Else
                             Lem = Pieces(1)
                         End If
-                        If Not WordDictionary.ContainsKey(Lem) Then
-                            WordDictionary.Add(Lem, New ArrayList)
+                        If Not _WordDictionary.ContainsKey(Lem) Then
+                            _WordDictionary.Add(Lem, New ArrayList)
                         End If
-                        WordDictionary.Item(Lem).Add(Location)
+                        _WordDictionary.Item(Lem).Add(Location)
                     End If
                     'ROOT:
                     Dim Root As String = Array.Find(Parts, Function(Str As String) Str.StartsWith("ROOT:"))
                     If Root <> String.Empty Then
                         Root = Root.Replace("ROOT:", String.Empty)
-                        If Not RootDictionary.ContainsKey(Root) Then
-                            RootDictionary.Add(Root, New ArrayList)
+                        If Not _RootDictionary.ContainsKey(Root) Then
+                            _RootDictionary.Add(Root, New ArrayList)
                         End If
-                        RootDictionary.Item(Root).Add(Location)
+                        _RootDictionary.Item(Root).Add(Location)
                     End If
                 End If
             End If
         Next
     End Sub
-    Public Shared Function GetSelectionNames() As Array()
-        Dim NewTanzilReader As New TanzilReader()
-        Dim Division As Integer = 0
-        Dim Strings As String = Web.HttpContext.Current.Request.QueryString.Get("qurandivision")
-        If Not Strings Is Nothing Then Division = CInt(Strings)
-        If Division = 0 Then
-            Return NewTanzilReader.GetChapterNames()
-        ElseIf Division = 1 Then
-            Return NewTanzilReader.GetChapterNamesByRevelationOrder()
-        ElseIf Division = 2 Then
-            Return NewTanzilReader.GetPartNames()
-        ElseIf Division = 3 Then
-            Return NewTanzilReader.GetGroupNames()
-        ElseIf Division = 4 Then
-            Return NewTanzilReader.GetStationNames()
-        ElseIf Division = 5 Then
-            Return NewTanzilReader.GetSectionNames()
-        ElseIf Division = 6 Then
-            Return NewTanzilReader.GetPageNames()
-        ElseIf Division = 7 Then
-            Return NewTanzilReader.GetSajdaNames()
-        ElseIf Division = 8 Then
-            Return NewTanzilReader.GetImportantNames()
-        ElseIf Division = 9 Then
-            Return Arabic.GetRecitationSymbols()
-        End If
-        Return Nothing
-    End Function
-    Public Shared Function GetRenderedQuranText(ByVal Item As PageLoader.TextItem) As RenderArray
-        Dim NewTanzilReader As New TanzilReader()
-        Dim Division As Integer = 0
-        Dim Index As Integer = 1
-        Dim Chapter As Integer
-        Dim Verse As Integer
-        Dim BaseChapter As Integer
-        Dim BaseVerse As Integer
-        Dim Text As String
-        Dim Node As System.Xml.XmlNode
-        Dim Renderer As New RenderArray
-        Dim Strings As String = Web.HttpContext.Current.Request.QueryString.Get("qurandivision")
-        Dim XMLDocMain As New System.Xml.XmlDocument
-        XMLDocMain.Load(Utility.GetFilePath("metadata\quran-uthmani.xml"))
-        If Not Strings Is Nothing Then Division = CInt(Strings)
-        Strings = Web.HttpContext.Current.Request.QueryString.Get("quranselection")
-        If Not Strings Is Nothing Then Index = CInt(Strings)
-        Dim QuranText As Collections.Generic.List(Of String())
-        Dim SeperateSectionCount As Integer = 1
-        If Division = 8 Then SeperateSectionCount = IslamData.ObjIslamData.QuranSelections(Index).SelectionInfo.Length
-        If Division = 9 Then SeperateSectionCount = LetterDictionary(IslamData.ObjIslamData.ArabicLetters(Index).Symbol).Count
-        Dim Lines As String() = IO.File.ReadAllLines(Utility.GetFilePath("metadata\" + GetTranslationFileName(Web.HttpContext.Current.Request.QueryString.Get("qurantranslation"))))
-        Dim W4WLines As String() = IO.File.ReadAllLines(Utility.GetFilePath("metadata\en.w4w.shehnazshaikh.txt"))
-        For SectionCount As Integer = 0 To SeperateSectionCount - 1
-            If Division = 0 Then
-                BaseChapter = CInt(GetChapterByIndex(Index).Attributes.GetNamedItem("index").Value)
-                BaseVerse = 1
-                QuranText = New Collections.Generic.List(Of String())
-                QuranText.Add(GetQuranText(XMLDocMain, BaseChapter, BaseVerse, -1))
-            ElseIf Division = 1 Then
-                BaseChapter = CInt(NewTanzilReader.GetChapterIndexByRevelationOrder(Index).Attributes.GetNamedItem("index").Value)
-                BaseVerse = 1
-                QuranText = New Collections.Generic.List(Of String())
-                QuranText.Add(GetQuranText(XMLDocMain, BaseChapter, BaseVerse, -1))
-            ElseIf Division = 2 Then
-                Node = NewTanzilReader.GetPartByIndex(Index)
-                BaseChapter = CInt(Node.Attributes.GetNamedItem("sura").Value)
-                BaseVerse = CInt(Node.Attributes.GetNamedItem("aya").Value)
-                Node = NewTanzilReader.GetPartByIndex(Index + 1)
-                If Node Is Nothing Then
-                    Chapter = -1
-                    Verse = -1
-                Else
-                    Chapter = CInt(Node.Attributes.GetNamedItem("sura").Value)
-                    Verse = CInt(Node.Attributes.GetNamedItem("aya").Value)
-                    NewTanzilReader.GetPreviousChapterVerse(Chapter, Verse)
-                End If
-                QuranText = GetQuranText(XMLDocMain, BaseChapter, BaseVerse, Chapter, Verse)
-            ElseIf Division = 3 Then
-                Node = NewTanzilReader.GetGroupByIndex(Index)
-                BaseChapter = CInt(Node.Attributes.GetNamedItem("sura").Value)
-                BaseVerse = CInt(Node.Attributes.GetNamedItem("aya").Value)
-                Node = NewTanzilReader.GetGroupByIndex(Index + 1)
-                If Node Is Nothing Then
-                    Chapter = -1
-                    Verse = -1
-                Else
-                    Chapter = CInt(Node.Attributes.GetNamedItem("sura").Value)
-                    Verse = CInt(Node.Attributes.GetNamedItem("aya").Value)
-                    NewTanzilReader.GetPreviousChapterVerse(Chapter, Verse)
-                End If
-                QuranText = GetQuranText(XMLDocMain, BaseChapter, BaseVerse, Chapter, Verse)
-            ElseIf Division = 4 Then
-                Node = NewTanzilReader.GetStationByIndex(Index)
-                BaseChapter = CInt(Node.Attributes.GetNamedItem("sura").Value)
-                BaseVerse = CInt(Node.Attributes.GetNamedItem("aya").Value)
-                Node = NewTanzilReader.GetStationByIndex(Index + 1)
-                If Node Is Nothing Then
-                    Chapter = -1
-                    Verse = -1
-                Else
-                    Chapter = CInt(Node.Attributes.GetNamedItem("sura").Value)
-                    Verse = CInt(Node.Attributes.GetNamedItem("aya").Value)
-                    NewTanzilReader.GetPreviousChapterVerse(Chapter, Verse)
-                End If
-                QuranText = GetQuranText(XMLDocMain, BaseChapter, BaseVerse, Chapter, Verse)
-            ElseIf Division = 5 Then
-                Node = NewTanzilReader.GetSectionByIndex(Index)
-                BaseChapter = CInt(Node.Attributes.GetNamedItem("sura").Value)
-                BaseVerse = CInt(Node.Attributes.GetNamedItem("aya").Value)
-                Node = NewTanzilReader.GetSectionByIndex(Index + 1)
-                If Node Is Nothing Then
-                    Chapter = -1
-                    Verse = -1
-                Else
-                    Chapter = CInt(Node.Attributes.GetNamedItem("sura").Value)
-                    Verse = CInt(Node.Attributes.GetNamedItem("aya").Value)
-                    NewTanzilReader.GetPreviousChapterVerse(Chapter, Verse)
-                End If
-                QuranText = GetQuranText(XMLDocMain, BaseChapter, BaseVerse, Chapter, Verse)
-            ElseIf Division = 6 Then
-                Node = NewTanzilReader.GetPageByIndex(Index)
-                BaseChapter = CInt(Node.Attributes.GetNamedItem("sura").Value)
-                BaseVerse = CInt(Node.Attributes.GetNamedItem("aya").Value)
-                Node = NewTanzilReader.GetPageByIndex(Index + 1)
-                If Node Is Nothing Then
-                    Chapter = -1
-                    Verse = -1
-                Else
-                    Chapter = CInt(Node.Attributes.GetNamedItem("sura").Value)
-                    Verse = CInt(Node.Attributes.GetNamedItem("aya").Value)
-                    NewTanzilReader.GetPreviousChapterVerse(Chapter, Verse)
-                End If
-                QuranText = GetQuranText(XMLDocMain, BaseChapter, BaseVerse, Chapter, Verse)
-            ElseIf Division = 7 Then
-                Node = NewTanzilReader.GetSajdaByIndex(Index)
-                BaseChapter = CInt(Node.Attributes.GetNamedItem("sura").Value)
-                BaseVerse = CInt(Node.Attributes.GetNamedItem("aya").Value)
-                QuranText = New Collections.Generic.List(Of String())
-                QuranText.Add(GetQuranText(XMLDocMain, BaseChapter, BaseVerse, BaseVerse))
-            ElseIf Division = 8 Then
-                BaseChapter = IslamData.ObjIslamData.QuranSelections(Index).SelectionInfo(SectionCount).ChapterNumber
-                BaseVerse = IslamData.ObjIslamData.QuranSelections(Index).SelectionInfo(SectionCount).VerseNumber
-                QuranText = New Collections.Generic.List(Of String())
-                QuranText.Add(GetQuranText(XMLDocMain, BaseChapter, BaseVerse, CInt(IIf(IslamData.ObjIslamData.QuranSelections(Index).SelectionInfo(SectionCount).ExtraVerseNumber <> 0, IslamData.ObjIslamData.QuranSelections(Index).SelectionInfo(SectionCount).ExtraVerseNumber, BaseVerse))))
-                If (IslamData.ObjIslamData.QuranSelections(Index).SelectionInfo(SectionCount).WordNumber > 1) Then
-                    Dim VerseIndex As Integer = 0
-                    For Count As Integer = 1 To IslamData.ObjIslamData.QuranSelections(Index).SelectionInfo(SectionCount).WordNumber - 1
-                        VerseIndex = QuranText(0)(0).IndexOf(" "c, VerseIndex) + 1
-                    Next
-                    QuranText(0)(0) = QuranText(0)(0).Substring(VerseIndex)
-                End If
-                If (IslamData.ObjIslamData.QuranSelections(Index).SelectionInfo(SectionCount).EndWordNumber <> 0) Then
-                    Dim VerseIndex As Integer = 0
-                    'selections are always within the same chapter
-                    Dim LastVerse As Integer = CInt(IIf(IslamData.ObjIslamData.QuranSelections(Index).SelectionInfo(SectionCount).ExtraVerseNumber <> 0, 1, 0))
-                    For Count As Integer = IslamData.ObjIslamData.QuranSelections(Index).SelectionInfo(SectionCount).WordNumber To IslamData.ObjIslamData.QuranSelections(Index).SelectionInfo(SectionCount).EndWordNumber - 1
-                        VerseIndex = QuranText(0)(LastVerse).IndexOf(" "c, VerseIndex) + 1
-                    Next
-                    QuranText(0)(LastVerse) = QuranText(0)(LastVerse).Substring(0, VerseIndex + 1)
-                End If
-            ElseIf Division = 9 Then
-                QuranText = New Collections.Generic.List(Of String())
-                QuranText.Add(GetQuranText(XMLDocMain, CType(LetterDictionary(IslamData.ObjIslamData.ArabicLetters(Index).Symbol)(SectionCount), Integer())(0), CType(LetterDictionary(IslamData.ObjIslamData.ArabicLetters(Index).Symbol)(SectionCount), Integer())(1), CType(LetterDictionary(IslamData.ObjIslamData.ArabicLetters(Index).Symbol)(SectionCount), Integer())(1)))
+    Public Shared Sub GetMorphDataByDivision(bStation As Boolean, _
+                                             ByRef All As Integer, ByRef AllUnique As Integer, _
+                                             ByRef PartArray() As Generic.List(Of String), _
+                                             ByRef PartUniqueArray() As Generic.List(Of String))
+        Dim FreqArray(CachedData.WordDictionary.Keys.Count - 1) As String
+        CachedData.WordDictionary.Keys.CopyTo(FreqArray, 0)
+        For Count As Integer = 1 To CInt(IIf(bStation, TanzilReader.GetStationCount(), TanzilReader.GetPartCount()))
+            PartUniqueArray(Count - 1) = New Generic.List(Of String)
+            PartArray(Count - 1) = New Generic.List(Of String)
+            Dim Node As System.Xml.XmlNode = CType(IIf(bStation, TanzilReader.GetStationByIndex(Count), TanzilReader.GetPartByIndex(Count)), System.Xml.XmlNode)
+            Dim BaseChapter As Integer = CInt(Node.Attributes.GetNamedItem("sura").Value)
+            Dim BaseVerse As Integer = CInt(Node.Attributes.GetNamedItem("aya").Value)
+            Dim Chapter As Integer
+            Dim Verse As Integer
+            Node = CType(IIf(bStation, TanzilReader.GetStationByIndex(Count + 1), TanzilReader.GetPartByIndex(Count + 1)), System.Xml.XmlNode)
+            If Node Is Nothing Then
+                Chapter = TanzilReader.GetChapterCount()
+                Verse = TanzilReader.GetVerseCount(Chapter)
             Else
-                QuranText = Nothing
+                Chapter = CInt(Node.Attributes.GetNamedItem("sura").Value)
+                Verse = CInt(Node.Attributes.GetNamedItem("aya").Value)
+                TanzilReader.GetPreviousChapterVerse(Chapter, Verse)
             End If
-            If Not QuranText Is Nothing Then
-                For Chapter = 0 To QuranText.Count - 1
-                    Dim ChapterNode As System.Xml.XmlNode = GetChapterByIndex(BaseChapter + Chapter)
-                    Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eHeaderLeft, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.RightToLeftMark + Arabic.TransliterateFromBuckwalter("|yAthA " + ChapterNode.Attributes.GetNamedItem("ayas").Value + " ")), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, Arabic.TransliterateToScheme(Arabic.TransliterateFromBuckwalter("|yAthA " + ChapterNode.Attributes.GetNamedItem("ayas").Value + " ")).Trim()), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, "Verses " + ChapterNode.Attributes.GetNamedItem("ayas").Value + " ")}))
-                    Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eHeaderCenter, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.RightToLeftMark + Arabic.TransliterateFromBuckwalter("suwrapu " + IslamData.ObjIslamData.QuranChapters(CInt(ChapterNode.Attributes.GetNamedItem("index").Value) - 1).Name + " ")), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, Arabic.TransliterateToScheme(Arabic.TransliterateFromBuckwalter("suwrapu " + IslamData.ObjIslamData.QuranChapters(CInt(ChapterNode.Attributes.GetNamedItem("index").Value) - 1).Name + " ")).Trim()), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, "Chapter " + NewTanzilReader.GetChapterEName(ChapterNode) + " ")}))
-                    Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eHeaderRight, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.RightToLeftMark + Arabic.TransliterateFromBuckwalter("rukwEAthA " + ChapterNode.Attributes.GetNamedItem("rukus").Value + " ")), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, Arabic.TransliterateToScheme(Arabic.TransliterateFromBuckwalter("rukwEAthA " + ChapterNode.Attributes.GetNamedItem("rukus").Value + " ")).Trim()), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, "Rukus " + ChapterNode.Attributes.GetNamedItem("rukus").Value + " ")}))
-                    For Verse = 0 To QuranText(Chapter).Length - 1
-                        Dim Items As New Collections.Generic.List(Of RenderArray.RenderItem)
-                        Text = String.Empty
-                        If BaseChapter + Chapter <> 1 AndAlso NewTanzilReader.IsQuarterStart(BaseChapter + Chapter, CInt(IIf(Chapter = 0, BaseVerse, 1)) + Verse) Then
-                            Text += Arabic.TransliterateFromBuckwalter("B")
-                            Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.RightToLeftMark + Arabic.TransliterateFromBuckwalter("B"))}))
-                        End If
-                        If CInt(IIf(Chapter = 0, BaseVerse, 1)) + Verse = 1 Then
-                            Node = GetTextVerse(GetTextChapter(XMLDocMain, BaseChapter + Chapter), 1).Attributes.GetNamedItem("bismillah")
-                            If Not Node Is Nothing Then
-                                Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.RightToLeftMark + Node.Value + " "), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, Arabic.TransliterateToScheme(Node.Value).Trim()), New RenderArray.RenderText(DirectCast(IIf(IsTranslationTextLTR(), RenderArray.RenderDisplayClass.eLTR, RenderArray.RenderDisplayClass.eRTL), RenderArray.RenderDisplayClass), NewTanzilReader.GetTranslationVerse(Lines, 1, 1))}))
-                            End If
-                        End If
-                        Dim Words As String() = QuranText(Chapter)(Verse).Split(" "c)
-                        Dim TranslitWords As String() = Arabic.TransliterateToScheme(QuranText(Chapter)(Verse)).Split(" "c)
-                        Dim PauseMarks As Integer = 0
-                        For Count As Integer = 0 To Words.Length - 1
-                            If Words(Count).Length = 1 AndAlso _
-                                Arabic.IsStop(Arabic.FindLetterBySymbol(Words(Count)(0))) Then
-                                PauseMarks += 1
-                                Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.RightToLeftMark + Words(Count)), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, TranslitWords(Count))}))
-                            Else
-                                Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.RightToLeftMark + Words(Count)), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, TranslitWords(Count)), New RenderArray.RenderText(DirectCast(IIf(IsTranslationTextLTR(), RenderArray.RenderDisplayClass.eLTR, RenderArray.RenderDisplayClass.eRTL), RenderArray.RenderDisplayClass), NewTanzilReader.GetW4WTranslationVerse(W4WLines, BaseChapter + Chapter, CInt(IIf(Chapter = 0, BaseVerse, 1)) + Verse, Count - PauseMarks))}))
-                            End If
-                        Next
-                        Text += QuranText(Chapter)(Verse) + " "
-                        If NewTanzilReader.IsSajda(BaseChapter + Chapter, CInt(IIf(Chapter = 0, BaseVerse, 1)) + Verse) Then
-                            'Sajda markers are already in the text
-                            'Text += Arabic.TransliterateFromBuckwalter("R")
-                            'Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.RightToLeftMark + Arabic.TransliterateFromBuckwalter("R"))}))
-                        End If
-                        Text += Arabic.TransliterateFromBuckwalter("=" + CStr(CInt(IIf(Chapter = 0, BaseVerse, 1)) + Verse)) + " "
-                        Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.RightToLeftMark + Arabic.TransliterateFromBuckwalter("=" + CStr(CInt(IIf(Chapter = 0, BaseVerse, 1)) + Verse))), New RenderArray.RenderText(DirectCast(IIf(IsTranslationTextLTR(), RenderArray.RenderDisplayClass.eLTR, RenderArray.RenderDisplayClass.eRTL), RenderArray.RenderDisplayClass), "(" + CStr(CInt(IIf(Chapter = 0, BaseVerse, 1)) + Verse) + ")")}))
-                        'Text += Arabic.TransliterateFromBuckwalter("(" + CStr(IIf(Chapter = 0, BaseVerse, 1) + Verse) + ") ")
-                        Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eNested, Items), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.RightToLeftMark + Text), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, Arabic.TransliterateToScheme(QuranText(Chapter)(Verse)).Trim()), New RenderArray.RenderText(DirectCast(IIf(IsTranslationTextLTR(), RenderArray.RenderDisplayClass.eLTR, RenderArray.RenderDisplayClass.eRTL), RenderArray.RenderDisplayClass), "(" + CStr(CInt(IIf(Chapter = 0, BaseVerse, 1)) + Verse) + ") " + NewTanzilReader.GetTranslationVerse(Lines, BaseChapter + Chapter, CInt(IIf(Chapter = 0, BaseVerse, 1)) + Verse))}))
-                    Next
+            For SubCount As Integer = 0 To FreqArray.Length - 1
+                Dim RefCount As Integer
+                Dim UniCount As Integer = 0
+                For RefCount = 0 To CachedData.WordDictionary(FreqArray(SubCount)).Count - 1
+                    If (CType(CachedData.WordDictionary(FreqArray(SubCount))(RefCount), Integer())(0) = BaseChapter AndAlso _
+                        CType(CachedData.WordDictionary(FreqArray(SubCount))(RefCount), Integer())(1) >= BaseVerse AndAlso _
+                        (BaseChapter <> Chapter OrElse _
+                        CType(CachedData.WordDictionary(FreqArray(SubCount))(RefCount), Integer())(1) <= Verse)) OrElse _
+                        (CType(CachedData.WordDictionary(FreqArray(SubCount))(RefCount), Integer())(0) > BaseChapter AndAlso _
+                        CType(CachedData.WordDictionary(FreqArray(SubCount))(RefCount), Integer())(0) < Chapter) OrElse _
+                        (CType(CachedData.WordDictionary(FreqArray(SubCount))(RefCount), Integer())(0) = Chapter AndAlso
+                        CType(CachedData.WordDictionary(FreqArray(SubCount))(RefCount), Integer())(1) <= Verse) Then
+                        UniCount += 1
+                    End If
                 Next
-            End If
+                If UniCount = CachedData.WordDictionary(FreqArray(SubCount)).Count Then
+                    PartUniqueArray(Count - 1).Add(FreqArray(SubCount))
+                    AllUnique += 1
+                End If
+                If UniCount > 0 Then
+                    PartArray(Count - 1).Add(FreqArray(SubCount))
+                    All += 1
+                End If
+            Next
         Next
-        Return Renderer
-    End Function
-    Public Sub New()
-        IslamData.Initialize()
-        If XMLDocInfo Is Nothing Then
-            XMLDocInfo = New System.Xml.XmlDocument
-            XMLDocInfo.Load(Utility.GetFilePath("metadata\quran-data.xml"))
-        End If
     End Sub
     Public Shared Sub BuildQuranLetterIndex()
-        Dim Tanzil As New TanzilReader()
-        Dim XMLDocMain As New System.Xml.XmlDocument
-        XMLDocMain.Load(Utility.GetFilePath("metadata\quran-uthmani.xml"))
         Dim Verses As Collections.Generic.List(Of String())
-        Verses = GetQuranText(XMLDocMain, -1, -1, -1, -1)
+        Verses = TanzilReader.GetQuranText(CachedData.XMLDocMain, -1, -1, -1, -1)
         For Count As Integer = 0 To Verses.Count - 1
             For SubCount As Integer = 0 To Verses(Count).Length - 1
                 For LetCount As Integer = 0 To Verses(Count)(SubCount).Length - 1
-                    TotalLetters += 1
-                    If Not LetterDictionary.ContainsKey(Verses(Count)(SubCount)(LetCount)) Then
-                        LetterDictionary.Add(Verses(Count)(SubCount)(LetCount), New ArrayList)
+                    _TotalLetters += 1
+                    If Not _LetterDictionary.ContainsKey(Verses(Count)(SubCount)(LetCount)) Then
+                        _LetterDictionary.Add(Verses(Count)(SubCount)(LetCount), New ArrayList)
                     End If
-                    LetterDictionary.Item(Verses(Count)(SubCount)(LetCount)).Add(New Integer() {Count, SubCount, LetCount})
+                    _LetterDictionary.Item(Verses(Count)(SubCount)(LetCount)).Add(New Integer() {Count, SubCount, LetCount})
                 Next
             Next
         Next
     End Sub
-    Public Shared Function GetQuranText(ByVal XMLDocMain As System.Xml.XmlDocument, ByVal StartChapter As Integer, ByVal StartAyat As Integer, ByVal EndChapter As Integer, ByVal EndAyat As Integer) As Collections.Generic.List(Of String())
-        Dim Count As Integer
-        If StartChapter = -1 Then StartChapter = 1
-        If EndChapter = -1 Then EndChapter = GetChapterCount()
-        Dim ChapterVerses As New Collections.Generic.List(Of String())
-        For Count = StartChapter To EndChapter
-            ChapterVerses.Add(GetQuranText(XMLDocMain, Count, CInt(IIf(StartChapter = Count, StartAyat, -1)), CInt(IIf(EndChapter = Count, EndAyat, -1))))
-        Next
-        Return ChapterVerses
-    End Function
-    Public Shared Function GetQuranText(ByVal XMLDocMain As System.Xml.XmlDocument, ByVal Chapter As Integer, ByVal StartVerse As Integer, ByVal EndVerse As Integer) As String()
-        Dim Count As Integer
-        If StartVerse = -1 Then StartVerse = 1
-        If EndVerse = -1 Then EndVerse = GetVerseCount(Chapter)
-        Dim Verses(EndVerse - StartVerse) As String
-        For Count = StartVerse To EndVerse
-            Verses(Count - StartVerse) = GetTextVerse(GetTextChapter(XMLDocMain, Chapter), Count).Attributes.GetNamedItem("text").Value
-        Next
-        Return Verses
-    End Function
-    Public Shared Function GetTextChapter(ByVal XMLDocMain As System.Xml.XmlDocument, ByVal Chapter As Integer) As System.Xml.XmlNode
-        Return Utility.GetChildNodeByIndex("sura", "index", Chapter, XMLDocMain.DocumentElement.ChildNodes)
-    End Function
-    Public Shared Function GetTextVerse(ByVal ChapterNode As System.Xml.XmlNode, ByVal Verse As Integer) As System.Xml.XmlNode
-        Return Utility.GetChildNodeByIndex("aya", "index", Verse, ChapterNode.ChildNodes)
-    End Function
-    Public Shared Function GetVerseCount(ByVal Chapter As Integer) As Integer
-        Return CInt(GetChapterByIndex(Chapter).Attributes.GetNamedItem("ayas").Value)
-    End Function
-    Public Sub GetPreviousChapterVerse(ByRef Chapter As Integer, ByRef Verse As Integer)
-        If Verse = 1 Then
-            If Chapter <> 1 Then
-                Chapter -= 1
-                Verse = GetVerseCount(Chapter)
+    Public Shared ReadOnly Property IslamData As IslamData
+        Get
+            If _ObjIslamData Is Nothing Then
+                Dim fs As IO.FileStream = New IO.FileStream(Utility.GetFilePath("metadata\islaminfo.xml"), IO.FileMode.Open)
+                Dim xs As System.Xml.Serialization.XmlSerializer = New System.Xml.Serialization.XmlSerializer(GetType(IslamData))
+                _ObjIslamData = CType(xs.Deserialize(fs), IslamData)
+                fs.Close()
             End If
-        Else
-            Verse -= 1
-        End If
-    End Sub
-    Public Function GetVerseNumber(ByVal Chapter As Integer, ByVal Verse As Integer) As Integer
-        Return CInt(GetChapterByIndex(Chapter).Attributes.GetNamedItem("start").Value) + Verse
-    End Function
-    Public Shared Function IsTranslationTextLTR() As Boolean
-        Dim Index As Integer = GetTranslationIndex(Web.HttpContext.Current.Request.QueryString.Get("qurantranslation"))
-        Return Not Languages.GetLanguageInfoByCode(IslamData.ObjIslamData.Translations.TranslationList(Index).FileName.Substring(0, 2)).IsRTL
-    End Function
-    Public Function GetTranslationVerse(Lines As String(), ByVal Chapter As Integer, ByVal Verse As Integer) As String
-        GetTranslationVerse = Lines(GetVerseNumber(Chapter, Verse) - 1)
-    End Function
-    Public Function GetW4WTranslationVerse(Lines As String(), ByVal Chapter As Integer, ByVal Verse As Integer, ByVal Word As Integer) As String
-        Dim Words As String() = Lines(GetVerseNumber(Chapter, Verse) - 1).Split("|"c)
-        If Word >= Words.Length Then
-            GetW4WTranslationVerse = String.Empty
-        Else
-            GetW4WTranslationVerse = Words(Word)
-        End If
-    End Function
-    Public Function IsQuarterStart(ByVal Chapter As Integer, ByVal Verse As Integer) As Boolean
-        Dim Count As Integer
-        Dim Node As System.Xml.XmlNode
-        For Count = 0 To Utility.GetChildNode("hizbs", XMLDocInfo.DocumentElement.ChildNodes).ChildNodes.Count - 1
-            Node = Utility.GetChildNode("hizbs", XMLDocInfo.DocumentElement.ChildNodes).ChildNodes.Item(Count)
-            If Node.Name = "quarter" AndAlso _
-                CInt(Node.Attributes.GetNamedItem("sura").Value) = Chapter AndAlso _
-                CInt(Node.Attributes.GetNamedItem("aya").Value) = Verse Then
-                Return True
+            Return _ObjIslamData
+        End Get
+    End Property
+    Public Shared ReadOnly Property XMLDocMain As System.Xml.XmlDocument
+        Get
+            If _XMLDocMain Is Nothing Then
+                _XMLDocMain = New System.Xml.XmlDocument
+                _XMLDocMain.Load(Utility.GetFilePath("metadata\quran-uthmani.xml"))
             End If
-        Next
-        Return False
-    End Function
-    Public Function IsSajda(ByVal Chapter As Integer, ByVal Verse As Integer) As Boolean
-        Dim Count As Integer
-        Dim Node As System.Xml.XmlNode
-        For Count = 0 To Utility.GetChildNode("sajdas", XMLDocInfo.DocumentElement.ChildNodes).ChildNodes.Count - 1
-            Node = Utility.GetChildNode("sajdas", XMLDocInfo.DocumentElement.ChildNodes).ChildNodes.Item(Count)
-            If Node.Name = "sajda" AndAlso _
-                CInt(Node.Attributes.GetNamedItem("sura").Value) = Chapter AndAlso _
-                CInt(Node.Attributes.GetNamedItem("aya").Value) = Verse Then
-                Return True
+            Return _XMLDocMain
+        End Get
+    End Property
+    Public Shared ReadOnly Property XMLDocInfo As System.Xml.XmlDocument
+        Get
+            If _XMLDocInfo Is Nothing Then
+                _XMLDocInfo = New System.Xml.XmlDocument
+                _XMLDocInfo.Load(Utility.GetFilePath("metadata\quran-data.xml"))
             End If
-        Next
-        Return False
-    End Function
-    Public Function GetImportantNames() As Array()
-        Dim Names() As Array = Array.ConvertAll(IslamData.ObjIslamData.QuranSelections, Function(Convert As IslamData.QuranSelection) New Object() {Utility.LoadResourceString("IslamInfo_" + Convert.Description), CInt(Array.IndexOf(IslamData.ObjIslamData.QuranSelections, Convert))})
-        Array.Sort(Names, New Utility.CompareNameValueArray)
-        Return Names
-    End Function
-    Public Shared Function GetChapterCount() As Integer
-        Return Utility.GetChildNodeCount("sura", Utility.GetChildNode("suras", XMLDocInfo.DocumentElement.ChildNodes))
-    End Function
-    Public Shared Function GetChapterByIndex(ByVal Index As Integer) As System.Xml.XmlNode
-        Return Utility.GetChildNodeByIndex("sura", "index", Index, Utility.GetChildNode("suras", XMLDocInfo.DocumentElement.ChildNodes).ChildNodes)
-    End Function
-    Public Function GetChapterNames() As Array()
-        Dim Names() As Array = Array.ConvertAll(Utility.GetChildNodes("sura", Utility.GetChildNode("suras", XMLDocInfo.DocumentElement.ChildNodes).ChildNodes), Function(Convert As System.Xml.XmlNode) New Object() {Convert.Attributes.GetNamedItem("index").Value + ". " + GetChapterEName(Convert) + " (" + Arabic.TransliterateFromBuckwalter("suwrapu " + IslamData.ObjIslamData.QuranChapters(CInt(Convert.Attributes.GetNamedItem("index").Value) - 1).Name + " ") + ")", CInt(Convert.Attributes.GetNamedItem("index").Value)})
-        Array.Sort(Names, New Utility.CompareNameValueArray)
-        Return Names
-    End Function
-    Public Function GetChapterEName(ByVal ChapterNode As System.Xml.XmlNode) As String
-        Return Utility.LoadResourceString("IslamInfo_QuranChapter" + ChapterNode.Attributes.GetNamedItem("index").Value)
-    End Function
-    Public Function GetChapterNamesByRevelationOrder() As Array()
-        Dim Names() As Array = Array.ConvertAll(Utility.GetChildNodes("sura", Utility.GetChildNode("suras", XMLDocInfo.DocumentElement.ChildNodes).ChildNodes), Function(Convert As System.Xml.XmlNode) New Object() {Convert.Attributes.GetNamedItem("index").Value + ". " + GetChapterEName(Convert) + " (" + Arabic.TransliterateFromBuckwalter("suwrapu " + IslamData.ObjIslamData.QuranChapters(CInt(Convert.Attributes.GetNamedItem("index").Value) - 1).Name + " ") + ")", CInt(Convert.Attributes.GetNamedItem("order").Value)})
-        Array.Sort(Names, New Utility.CompareNameValueArray)
-        Return Names
-    End Function
-    Public Function GetChapterIndexByRevelationOrder(ByVal Index As Integer) As System.Xml.XmlNode
-        Dim Count As Integer
-        Dim ChapterNode As System.Xml.XmlNode
-        For Count = 0 To Utility.GetChildNode("suras", XMLDocInfo.DocumentElement.ChildNodes).ChildNodes.Count - 1
-            ChapterNode = Utility.GetChildNode("suras", XMLDocInfo.DocumentElement.ChildNodes).ChildNodes.Item(Count)
-            If ChapterNode.Name = "sura" AndAlso CInt(ChapterNode.Attributes.GetNamedItem("order").Value) = Index Then
-                Return ChapterNode
+            Return _XMLDocInfo
+        End Get
+    End Property
+    Public Shared ReadOnly Property XMLDocInfos As Collections.Generic.List(Of System.Xml.XmlDocument)
+        Get
+            Dim Count As Integer
+            If _XMLDocInfos Is Nothing Then
+                _XMLDocInfos = New Collections.Generic.List(Of System.Xml.XmlDocument)
+                For Count = 0 To CachedData.IslamData.Collections.Length - 1
+                    _XMLDocInfos.Add(New System.Xml.XmlDocument)
+                    _XMLDocInfos(_XMLDocInfos.Count - 1).Load(Utility.GetFilePath("metadata\" + CachedData.IslamData.Collections(Count).FileName + "-data.xml"))
+                Next
             End If
-        Next
-        Return Nothing
-    End Function
-    Public Function GetPartNames() As Array()
-        Dim Names() As Array = Array.ConvertAll(Utility.GetChildNodes("juz", Utility.GetChildNode("juzs", XMLDocInfo.DocumentElement.ChildNodes).ChildNodes), Function(Convert As System.Xml.XmlNode) New Object() {Convert.Attributes.GetNamedItem("index").Value + " (" + Arabic.TransliterateFromBuckwalter("juz " + IslamData.ObjIslamData.QuranParts(CInt(Convert.Attributes.GetNamedItem("index").Value) - 1).Name + " ") + ")", CInt(Convert.Attributes.GetNamedItem("index").Value)})
-        Array.Sort(Names, New Utility.CompareNameValueArray)
-        Return Names
-    End Function
-    Public Function GetPartCount() As Integer
-        Return Utility.GetChildNodeCount("juz", Utility.GetChildNode("juzs", XMLDocInfo.DocumentElement.ChildNodes))
-    End Function
-    Public Function GetPartByIndex(ByVal Index As Integer) As System.Xml.XmlNode
-        Return Utility.GetChildNodeByIndex("juz", "index", Index, Utility.GetChildNode("juzs", XMLDocInfo.DocumentElement.ChildNodes).ChildNodes)
-    End Function
-    Public Function GetGroupNames() As Array()
-        Dim Names() As Array = Array.ConvertAll(Utility.GetChildNodes("quarter", Utility.GetChildNode("hizbs", XMLDocInfo.DocumentElement.ChildNodes).ChildNodes), Function(Convert As System.Xml.XmlNode) New Object() {Convert.Attributes.GetNamedItem("index").Value, CInt(Convert.Attributes.GetNamedItem("index").Value)})
-        Array.Sort(Names, New Utility.CompareNameValueArray)
-        Return Names
-    End Function
-    Public Function GetGroupCount() As Integer
-        Return Utility.GetChildNodeCount("quarter", Utility.GetChildNode("hizbs", XMLDocInfo.DocumentElement.ChildNodes))
-    End Function
-    Public Function GetGroupByIndex(ByVal Index As Integer) As System.Xml.XmlNode
-        Return Utility.GetChildNodeByIndex("quarter", "index", Index, Utility.GetChildNode("hizbs", XMLDocInfo.DocumentElement.ChildNodes).ChildNodes)
-    End Function
-    Public Function GetStationNames() As Array()
-        Dim Names() As Array = Array.ConvertAll(Utility.GetChildNodes("manzil", Utility.GetChildNode("manzils", XMLDocInfo.DocumentElement.ChildNodes).ChildNodes), Function(Convert As System.Xml.XmlNode) New Object() {Convert.Attributes.GetNamedItem("index").Value, CInt(Convert.Attributes.GetNamedItem("index").Value)})
-        Array.Sort(Names, New Utility.CompareNameValueArray)
-        Return Names
-    End Function
-    Public Function GetStationCount() As Integer
-        Return Utility.GetChildNodeCount("manzil", Utility.GetChildNode("manzils", XMLDocInfo.DocumentElement.ChildNodes))
-    End Function
-    Public Function GetStationByIndex(ByVal Index As Integer) As System.Xml.XmlNode
-        Return Utility.GetChildNodeByIndex("manzil", "index", Index, Utility.GetChildNode("manzils", XMLDocInfo.DocumentElement.ChildNodes).ChildNodes)
-    End Function
-    Public Function GetSectionNames() As Array()
-        Dim Names() As Array = Array.ConvertAll(Utility.GetChildNodes("ruku", Utility.GetChildNode("rukus", XMLDocInfo.DocumentElement.ChildNodes).ChildNodes), Function(Convert As System.Xml.XmlNode) New Object() {Convert.Attributes.GetNamedItem("index").Value, CInt(Convert.Attributes.GetNamedItem("index").Value)})
-        Array.Sort(Names, New Utility.CompareNameValueArray)
-        Return Names
-    End Function
-    Public Function GetSectionCount() As Integer
-        Return Utility.GetChildNodeCount("ruku", Utility.GetChildNode("rukus", XMLDocInfo.DocumentElement.ChildNodes))
-    End Function
-    Public Function GetSectionByIndex(ByVal Index As Integer) As System.Xml.XmlNode
-        Return Utility.GetChildNodeByIndex("ruku", "index", Index, Utility.GetChildNode("rukus", XMLDocInfo.DocumentElement.ChildNodes).ChildNodes)
-    End Function
-    Public Function GetPageNames() As Array()
-        Dim Names() As Array = Array.ConvertAll(Utility.GetChildNodes("page", Utility.GetChildNode("pages", XMLDocInfo.DocumentElement.ChildNodes).ChildNodes), Function(Convert As System.Xml.XmlNode) New Object() {Convert.Attributes.GetNamedItem("index").Value, CInt(Convert.Attributes.GetNamedItem("index").Value)})
-        Array.Sort(Names, New Utility.CompareNameValueArray)
-        Return Names
-    End Function
-    Public Function GetPageCount() As Integer
-        Return Utility.GetChildNodeCount("page", Utility.GetChildNode("pages", XMLDocInfo.DocumentElement.ChildNodes))
-    End Function
-    Public Function GetPageByIndex(ByVal Index As Integer) As System.Xml.XmlNode
-        Return Utility.GetChildNodeByIndex("page", "index", Index, Utility.GetChildNode("pages", XMLDocInfo.DocumentElement.ChildNodes).ChildNodes)
-    End Function
-    Public Function GetSajdaNames() As Array()
-        Dim Names() As Array = Array.ConvertAll(Utility.GetChildNodes("sajda", Utility.GetChildNode("sajdas", XMLDocInfo.DocumentElement.ChildNodes).ChildNodes), Function(Convert As System.Xml.XmlNode) New Object() {Convert.Attributes.GetNamedItem("index").Value, CInt(Convert.Attributes.GetNamedItem("index").Value)})
-        Array.Sort(Names, New Utility.CompareNameValueArray)
-        Return Names
-    End Function
-    Public Function GetSajdaCount() As Integer
-        Return Utility.GetChildNodeCount("sajda", Utility.GetChildNode("sajdas", XMLDocInfo.DocumentElement.ChildNodes))
-    End Function
-    Public Function GetSajdaByIndex(ByVal Index As Integer) As System.Xml.XmlNode
-        Return Utility.GetChildNodeByIndex("sajda", "index", Index, Utility.GetChildNode("sajdas", XMLDocInfo.DocumentElement.ChildNodes).ChildNodes)
-    End Function
+            Return _XMLDocInfos
+        End Get
+    End Property
+    Public Shared ReadOnly Property RootDictionary As Generic.Dictionary(Of String, ArrayList)
+        Get
+            If _RootDictionary.Keys.Count = 0 Then GetMorphologicalData()
+            Return _RootDictionary
+        End Get
+    End Property
+    Public Shared ReadOnly Property TagDictionary As Generic.Dictionary(Of String, ArrayList)
+        Get
+            If _TagDictionary.Keys.Count = 0 Then GetMorphologicalData()
+            Return _TagDictionary
+        End Get
+    End Property
+    Public Shared ReadOnly Property WordDictionary As Generic.Dictionary(Of String, ArrayList)
+        Get
+            If _WordDictionary.Keys.Count = 0 Then GetMorphologicalData()
+            Return _WordDictionary
+        End Get
+    End Property
+    Public Shared ReadOnly Property LetterDictionary As Generic.Dictionary(Of Char, ArrayList)
+        Get
+            If _LetterDictionary.Keys.Count = 0 Then BuildQuranLetterIndex()
+            Return _LetterDictionary
+        End Get
+    End Property
+    Public Shared ReadOnly Property TotalLetters As Integer
+        Get
+            If _TotalLetters = 0 Then BuildQuranLetterIndex()
+            Return _TotalLetters
+        End Get
+    End Property
+    Public Shared ReadOnly Property PartArray As Generic.List(Of String)()
+        Get
+            If TotalWordsInParts = 0 Then GetMorphDataByDivision(False, _TotalWordsInParts, _TotalUniqueWordsInParts, _PartArray, _PartUniqueArray)
+            Return _PartArray
+        End Get
+    End Property
+    Public Shared ReadOnly Property PartUniqueArray As Generic.List(Of String)()
+        Get
+            If TotalUniqueWordsInParts = 0 Then GetMorphDataByDivision(False, _TotalWordsInParts, _TotalUniqueWordsInParts, _PartArray, _PartUniqueArray)
+            Return _PartUniqueArray
+        End Get
+    End Property
+    Public Shared ReadOnly Property TotalWordsInParts As Integer
+        Get
+            If TotalWordsInParts = 0 Then GetMorphDataByDivision(False, _TotalWordsInParts, _TotalUniqueWordsInParts, _PartArray, _PartUniqueArray)
+            Return _TotalWordsInParts
+        End Get
+    End Property
+    Public Shared ReadOnly Property TotalUniqueWordsInParts As Integer
+        Get
+            If TotalUniqueWordsInParts = 0 Then GetMorphDataByDivision(False, _TotalWordsInParts, _TotalUniqueWordsInParts, _PartArray, _PartUniqueArray)
+            Return _TotalUniqueWordsInParts
+        End Get
+    End Property
+    Public Shared ReadOnly Property StationArray As Generic.List(Of String)()
+        Get
+            If _TotalWordsInStations = 0 Then GetMorphDataByDivision(True, _TotalWordsInStations, _TotalUniqueWordsInStations, _StationArray, _StationUniqueArray)
+            Return _StationArray
+        End Get
+    End Property
+    Public Shared ReadOnly Property StationUniqueArray As Generic.List(Of String)()
+        Get
+            If TotalUniqueWordsInStations = 0 Then GetMorphDataByDivision(True, _TotalWordsInStations, _TotalUniqueWordsInStations, _StationArray, _StationUniqueArray)
+            Return _StationUniqueArray
+        End Get
+    End Property
+    Public Shared ReadOnly Property TotalWordsInStations As Integer
+        Get
+            If _TotalWordsInStations = 0 Then GetMorphDataByDivision(True, _TotalWordsInStations, _TotalUniqueWordsInStations, _StationArray, _StationUniqueArray)
+            Return _TotalWordsInStations
+        End Get
+    End Property
+    Public Shared ReadOnly Property TotalUniqueWordsInStations As Integer
+        Get
+            If TotalUniqueWordsInStations = 0 Then GetMorphDataByDivision(True, _TotalWordsInStations, _TotalUniqueWordsInStations, _StationArray, _StationUniqueArray)
+            Return _TotalUniqueWordsInStations
+        End Get
+    End Property
 End Class
-Public Class HadithReader
-    Shared XMLDocInfo As Collections.Generic.List(Of System.Xml.XmlDocument)
-    Public Sub New()
-        Dim Count As Integer
-        IslamData.Initialize()
-        If XMLDocInfo Is Nothing Then
-            XMLDocInfo = New Collections.Generic.List(Of System.Xml.XmlDocument)
-            For Count = 0 To IslamData.ObjIslamData.Collections.Length - 1
-                XMLDocInfo.Add(New System.Xml.XmlDocument)
-                XMLDocInfo(XMLDocInfo.Count - 1).Load(Utility.GetFilePath("metadata\" + IslamData.ObjIslamData.Collections(Count).FileName + "-data.xml"))
+Public Class Languages
+        Public Shared Function GetLanguageInfoByCode(ByVal Code As String) As IslamData.LanguageInfo
+            Dim Count As Integer
+            For Count = 0 To CachedData.IslamData.LanguageList.Length - 1
+                If CachedData.IslamData.LanguageList(Count).Code = Code Then Return CachedData.IslamData.LanguageList(Count)
             Next
-        End If
-    End Sub
-
-    Public Shared Function GetCollectionChangeOnlyJS() As String
-        Dim NewHadithReader As New HadithReader()
-        Dim JSArrays As String = Utility.MakeJSArray(Array.ConvertAll(IslamData.ObjIslamData.Collections, Function(Convert As IslamData.CollectionInfo) Utility.MakeJSArray(Array.ConvertAll(Of IslamData.CollectionInfo.CollTranslationInfo, String)(Convert.Translations, Function(TranslateBlock As IslamData.CollectionInfo.CollTranslationInfo) Utility.MakeJSArray(New String() {Utility.LoadResourceString("lang_local" + Languages.GetLanguageInfoByCode(TranslateBlock.FileName.Substring(0, 2)).Code) + ": " + Utility.LoadResourceString("IslamInfo_" + TranslateBlock.Name), TranslateBlock.FileName})), True)), True)
-        Return "function changeHadithCollection(index) { var iCount; var hadithdata = " + JSArrays + "; var eSelect = $('#hadithtranslation').get(0); clearOptionList(eSelect); for (iCount = 0; iCount < hadithdata[index].length; iCount++) { eSelect.options.add(new Option(hadithdata[index][iCount][0], hadithdata[index][iCount][1])); } }"
-    End Function
-    Public Shared Function GetCollectionChangeWithBooksJS() As String()
-        Dim NewHadithReader As New HadithReader()
-        Dim JSArrays As String = Utility.MakeJSArray(Array.ConvertAll(Of IslamData.CollectionInfo, String)(IslamData.ObjIslamData.Collections, Function(Convert As IslamData.CollectionInfo) Utility.MakeJSArray(Array.ConvertAll(Of Array, String)(NewHadithReader.GetBookNamesByCollection(GetCollectionIndex(Convert.Name)), Function(BookNames As Array) Utility.MakeJSArray(New String() {CStr(BookNames.GetValue(0)), CStr(BookNames.GetValue(1))})), True)), True)
-        Return New String() {"javascript: changeHadithCollectionBooks(this.selectedIndex);", String.Empty, Utility.GetClearOptionListJS(), _
-                             GetCollectionChangeOnlyJS(), _
-        "function changeHadithCollectionBooks(index) { changeHadithCollection(index); var iCount; var hadithtdata = " + JSArrays + "; var eSelect = $('#hadithbook').get(0); clearOptionList(eSelect); for (iCount = 0; iCount < hadithtdata[index].length; iCount++) { eSelect.options.add(new Option(hadithtdata[index][iCount][0], hadithtdata[index][iCount][1])); } }"}
-    End Function
-    Public Shared Function GetCollectionChangeJS() As String()
-        Return New String() {"javascript: changeHadithCollection(this.selectedIndex);", String.Empty, Utility.GetClearOptionListJS(), _
-                             GetCollectionChangeOnlyJS()}
-    End Function
-    Public Shared Function GetCollectionXMLMetaDataDownload() As String()
-        Return New String() {host.GetPageString("Source&File=" + IslamData.ObjIslamData.Collections(GetCurrentCollection()).FileName + "-data.xml"), Utility.LoadResourceString("IslamInfo_" + IslamData.ObjIslamData.Collections(GetCurrentCollection()).Name) + " XML metadata"}
-    End Function
-    Public Shared Function GetCollectionXMLDownload() As String()
-        Return New String() {host.GetPageString("Source&File=" + IslamData.ObjIslamData.Collections(GetCurrentCollection()).FileName + ".xml"), Utility.LoadResourceString("IslamInfo_" + IslamData.ObjIslamData.Collections(GetCurrentCollection()).Name) + " XML source text"}
-    End Function
-    Public Shared Function GetTranslationXMLMetaDataDownload() As String()
-        Dim TranslationIndex As Integer = GetTranslationIndex(GetCurrentCollection(), Web.HttpContext.Current.Request.QueryString.Get("hadithtranslation"))
-        If TranslationIndex = -1 Then Return New String() {}
-        Return New String() {host.GetPageString("Source&File=" + GetTranslationXMLFileName(GetCurrentCollection(), Web.HttpContext.Current.Request.QueryString.Get("hadithtranslation")) + ".xml"), IslamData.ObjIslamData.Collections(GetCurrentCollection()).Translations(TranslationIndex).Name + " XML metadata"}
-    End Function
-    Public Shared Function GetTranslationTextDownload() As String()
-        Dim TranslationIndex As Integer = GetTranslationIndex(GetCurrentCollection(), Web.HttpContext.Current.Request.QueryString.Get("hadithtranslation"))
-        If TranslationIndex = -1 Then Return New String() {}
-        Return New String() {host.GetPageString("Source&File=" + GetTranslationFileName(GetCurrentCollection(), Web.HttpContext.Current.Request.QueryString.Get("hadithtranslation")) + ".txt"), IslamData.ObjIslamData.Collections(GetCurrentCollection()).Translations(TranslationIndex).Name + " raw source text"}
-    End Function
-    Public Shared Function GetCollectionIndex(ByVal Name As String) As Integer
-        Dim Count As Integer
-        For Count = 0 To IslamData.ObjIslamData.Collections.Length - 1
-            If Name = IslamData.ObjIslamData.Collections(Count).Name Then Return Count
-        Next
-        Return -1
-    End Function
-    Public Shared Function GetCollectionNames() As String()
-        Return Array.ConvertAll(IslamData.ObjIslamData.Collections, Function(Convert As IslamData.CollectionInfo) Utility.LoadResourceString("IslamInfo_" + Convert.Name))
-    End Function
-    Public Shared Function GetChapterByIndex(ByVal BookNode As System.Xml.XmlNode, ByVal ChapterIndex As Integer) As System.Xml.XmlNode
-        Return Utility.GetChildNodeByIndex("chapter", "index", ChapterIndex, BookNode.ChildNodes)
-    End Function
-    Public Shared Function GetSubChapterByIndex(ByVal ChapterNode As System.Xml.XmlNode, ByVal SubChapterIndex As Integer) As System.Xml.XmlNode
-        Return Utility.GetChildNodeByIndex("subchapter", "index", SubChapterIndex, ChapterNode.ChildNodes)
-    End Function
-    Public Shared Function GetCurrentCollection() As Integer
-        Dim Strings As String = Web.HttpContext.Current.Request.QueryString.Get("hadithcollection")
-        If Not Strings Is Nothing Then Return CInt(Strings) Else Return 0
-    End Function
-    Public Shared Function GetCurrentBook() As Integer
-        Dim Strings As String = Web.HttpContext.Current.Request.QueryString.Get("hadithbook")
-        If Not Strings Is Nothing Then Return CInt(Strings) Else Return 1
-    End Function
-    Public Shared Function GetBookNames() As Array()
-        Dim NewHadithReader As New HadithReader()
-        Return NewHadithReader.GetBookNamesByCollection(GetCurrentCollection())
-    End Function
-    Public Shared Function GetBookEName(ByVal BookNode As System.Xml.XmlNode, CollectionIndex As Integer) As String
-        If BookNode Is Nothing Then
+            Return Nothing
+        End Function
+    End Class
+    Public Class Supplications
+        Public Shared Function GetSuppCategories() As String()
+            Return Array.ConvertAll(CachedData.IslamData.VerseCategories, Function(Convert As IslamData.VerseCategory) Utility.LoadResourceString("IslamInfo_" + Convert.Title))
+        End Function
+        Public Shared Function GetRenderedSuppText(ByVal Item As PageLoader.TextItem) As RenderArray
+            Dim Renderer As New RenderArray
+            Dim Count As Integer = CInt(Web.HttpContext.Current.Request.QueryString.Get("selection"))
+            If Count = -1 Then Count = 0
+            For SubCount As Integer = 0 To CachedData.IslamData.VerseCategories(Count).Verses.Length - 1
+                Dim EnglishByWord As String() = Utility.LoadResourceString("IslamInfo_" + CachedData.IslamData.VerseCategories(Count).Verses(SubCount).TranslationID + "WordByWord").Split("|"c)
+                Dim ArabicText As String() = CachedData.IslamData.VerseCategories(Count).Verses(SubCount).Arabic.Split(" "c)
+                Dim Transliteration As String() = Arabic.TransliterateToScheme(Arabic.TransliterateFromBuckwalter(CachedData.IslamData.VerseCategories(Count).Verses(SubCount).Arabic)).Split(" "c)
+                Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eHeaderCenter, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, Utility.LoadResourceString("IslamInfo_" + CachedData.IslamData.VerseCategories(Count).Verses(SubCount).TranslationID))}))
+                Dim Items As New Collections.Generic.List(Of RenderArray.RenderItem)
+                For WordCount As Integer = 0 To EnglishByWord.Length - 1
+                    Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.RightToLeftMark + Arabic.TransliterateFromBuckwalter(ArabicText(WordCount))), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, Transliteration(WordCount)), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, EnglishByWord(WordCount))}))
+                Next
+                Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eNested, Items), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, Utility.LoadResourceString("IslamInfo_" + CachedData.IslamData.VerseCategories(Count).Verses(SubCount).TranslationID + "Trans"))}))
+            Next
+            Return Renderer
+        End Function
+    End Class
+    Public Class TanzilReader
+        Public Shared Function GetDivisionTypes() As String()
+            Return Array.ConvertAll(CachedData.IslamData.QuranDivisions, Function(Convert As IslamData.QuranDivision) Utility.LoadResourceString("IslamInfo_" + Convert.Description))
+        End Function
+        Public Shared Function GetTranslationList() As Array()
+            Return Array.ConvertAll(CachedData.IslamData.Translations.TranslationList, Function(Convert As IslamData.TranslationsInfo.TranslationInfo) New String() {Utility.LoadResourceString("lang_local" + Languages.GetLanguageInfoByCode(Convert.FileName.Substring(0, CInt(IIf(Convert.FileName.IndexOf("-") <> -1, Convert.FileName.IndexOf("-"), Convert.FileName.IndexOf("."))))).Code) + ": " + Convert.Name, Convert.FileName})
+        End Function
+        Public Shared Function GetTranslationIndex(ByVal Translation As String) As Integer
+            If String.IsNullOrEmpty(Translation) Then Translation = CachedData.IslamData.Translations.DefaultTranslation 'Default
+            Dim Count As Integer = Array.FindIndex(CachedData.IslamData.Translations.TranslationList, Function(Test As IslamData.TranslationsInfo.TranslationInfo) Test.FileName = Translation)
+            If Count = -1 Then
+                Translation = CachedData.IslamData.Translations.DefaultTranslation 'Default
+                Count = Array.FindIndex(CachedData.IslamData.Translations.TranslationList, Function(Test As IslamData.TranslationsInfo.TranslationInfo) Test.FileName = Translation)
+            End If
+            Return Count
+        End Function
+        Public Shared Function GetTranslationFileName(ByVal Translation As String) As String
+            Dim Index As Integer = GetTranslationIndex(Translation)
+            Return CachedData.IslamData.Translations.TranslationList(Index).FileName + ".txt"
+        End Function
+        Public Shared Function GetDivisionChangeJS() As String()
+            Dim JSArrays As String = Utility.MakeJSArray(New String() {Utility.MakeJSArray(Array.ConvertAll(Of Array, String)(TanzilReader.GetChapterNames(), Function(Convert As Array) Utility.MakeJSArray(New String() {CStr(CType(Convert, Object())(0)), CStr(CType(Convert, Object())(1))})), True), _
+                Utility.MakeJSArray(Array.ConvertAll(Of Array, String)(TanzilReader.GetChapterNamesByRevelationOrder(), Function(Convert As Array) Utility.MakeJSArray(New String() {CStr(CType(Convert, Object())(0)), CStr(CType(Convert, Object())(1))})), True), _
+                Utility.MakeJSArray(Array.ConvertAll(Of Array, String)(TanzilReader.GetPartNames(), Function(Convert As Array) Utility.MakeJSArray(New String() {CStr(CType(Convert, Object())(0)), CStr(CType(Convert, Object())(1))})), True), _
+                Utility.MakeJSArray(Array.ConvertAll(Of Array, String)(TanzilReader.GetGroupNames(), Function(Convert As Array) Utility.MakeJSArray(New String() {CStr(CType(Convert, Object())(0)), CStr(CType(Convert, Object())(1))})), True), _
+                Utility.MakeJSArray(Array.ConvertAll(Of Array, String)(TanzilReader.GetStationNames(), Function(Convert As Array) Utility.MakeJSArray(New String() {CStr(CType(Convert, Object())(0)), CStr(CType(Convert, Object())(1))})), True), _
+                Utility.MakeJSArray(Array.ConvertAll(Of Array, String)(TanzilReader.GetSectionNames(), Function(Convert As Array) Utility.MakeJSArray(New String() {CStr(CType(Convert, Object())(0)), CStr(CType(Convert, Object())(1))})), True), _
+                Utility.MakeJSArray(Array.ConvertAll(Of Array, String)(TanzilReader.GetPageNames(), Function(Convert As Array) Utility.MakeJSArray(New String() {CStr(CType(Convert, Object())(0)), CStr(CType(Convert, Object())(1))})), True), _
+                Utility.MakeJSArray(Array.ConvertAll(Of Array, String)(TanzilReader.GetSajdaNames(), Function(Convert As Array) Utility.MakeJSArray(New String() {CStr(CType(Convert, Object())(0)), CStr(CType(Convert, Object())(1))})), True), _
+                Utility.MakeJSArray(Array.ConvertAll(Of Array, String)(TanzilReader.GetImportantNames(), Function(Convert As Array) Utility.MakeJSArray(New String() {CStr(CType(Convert, Object())(0)), CStr(CType(Convert, Object())(1))})), True), _
+                Utility.MakeJSArray(Array.ConvertAll(Of Array, String)(Arabic.GetRecitationSymbols(), Function(Convert As Array) Utility.MakeJSArray(New String() {CStr(CType(Convert, Object())(0)), CStr(CType(Convert, Object())(1))})), True)}, True)
+            Return New String() {"javascript: changeQuranDivision(this.selectedIndex);", String.Empty, Utility.GetClearOptionListJS(), _
+            "function changeQuranDivision(index) { var iCount; var qurandata = " + JSArrays + "; var eSelect = $('#quranselection').get(0); clearOptionList(eSelect); for (iCount = 0; iCount < qurandata[index].length; iCount++) { eSelect.options.add(new Option(qurandata[index][iCount][0], qurandata[index][iCount][1])); } }"}
+        End Function
+        Public Shared Function GetWordPartitions() As String()
+            Return New String() {"Letters", "Words", "Unique Words", "Unique Words Per Part", "Words Per Part", "Unique Words Per Station", "Words Per Station"}
+        End Function
+        Public Shared Function GetQuranWordTotalNumber() As Integer
+            Dim Total As Integer
+            For Each Key As String In CachedData.WordDictionary.Keys
+                Total = Total + CachedData.WordDictionary.Item(Key).Count
+            Next
+            Return Total
+        End Function
+    Public Shared Function GetQuranWordTotal(ByVal Item As PageLoader.TextItem) As String
+        Dim Strings As String
+        Dim Index As Integer
+        Strings = Web.HttpContext.Current.Request.QueryString.Get("quranselection")
+        If Not Strings Is Nothing Then Index = CInt(Strings)
+        If Index = 0 Then
+            Return CStr(CachedData.TotalLetters)
+        ElseIf Index = 1 Then
+            Return CStr(GetQuranWordTotalNumber())
+        ElseIf Index = 2 Then
+            Return CStr(CachedData.WordDictionary.Keys.Count)
+        ElseIf Index = 3 Then
+            Return CStr(CachedData.TotalUniqueWordsInParts)
+        ElseIf Index = 4 Then
+            Return CStr(CachedData.TotalWordsInParts)
+        ElseIf Index = 5 Then
+            Return CStr(CachedData.TotalUniqueWordsInStations)
+        ElseIf Index = 6 Then
+            Return CStr(CachedData.TotalWordsInStations)
+        Else
             Return String.Empty
-        Else
-            GetBookEName = Utility.LoadResourceString("IslamInfo_" + IslamData.ObjIslamData.Collections(CollectionIndex).FileName + "Book" + BookNode.Attributes.GetNamedItem("index").Value)
-            If GetBookEName Is Nothing Then GetBookEName = String.Empty
         End If
     End Function
-    Public Shared Function GetTranslationList() As Array()
-        Return Array.ConvertAll(IslamData.ObjIslamData.Collections(GetCurrentCollection()).Translations, Function(Convert As IslamData.CollectionInfo.CollTranslationInfo) New String() {Utility.LoadResourceString("lang_local" + Languages.GetLanguageInfoByCode(Convert.FileName.Substring(0, 2)).Code) + ": " + Utility.LoadResourceString("IslamInfo_" + Convert.Name), Convert.FileName})
-    End Function
-    Public Shared Function IsTranslationTextLTR(ByVal Index As Integer) As Boolean
-        Dim TranslationIndex As Integer = GetTranslationIndex(Index, Web.HttpContext.Current.Request.QueryString.Get("hadithtranslation"))
-        Return TranslationIndex = -1 OrElse Not Languages.GetLanguageInfoByCode(IslamData.ObjIslamData.Collections(Index).Translations(TranslationIndex).FileName.Substring(0, 2)).IsRTL
-    End Function
-    Public Shared Function GetTranslationIndex(ByVal Index As Integer, ByVal Translation As String) As Integer
-        If String.IsNullOrEmpty(Translation) Then Translation = IslamData.ObjIslamData.Collections(Index).DefaultTranslation
-        Dim Count As Integer = Array.FindIndex(IslamData.ObjIslamData.Collections(Index).Translations, Function(Test As IslamData.CollectionInfo.CollTranslationInfo) Test.FileName = Translation)
-        If Count = -1 Then
-            Translation = IslamData.ObjIslamData.Collections(Index).DefaultTranslation
-            Count = Array.FindIndex(IslamData.ObjIslamData.Collections(Index).Translations, Function(Test As IslamData.CollectionInfo.CollTranslationInfo) Test.FileName = Translation)
-        End If
-        Return Count
-    End Function
-    Public Shared Function GetTranslationXMLFileName(ByVal Index As Integer, ByVal Translation As String) As String
-        Dim TranslationIndex As Integer = GetTranslationIndex(Index, Translation)
-        Return IslamData.ObjIslamData.Collections(Index).FileName + "." + IslamData.ObjIslamData.Collections(Index).Translations(TranslationIndex).FileName + "-data"
-    End Function
-    Public Shared Function GetTranslationFileName(ByVal Index As Integer, ByVal Translation As String) As String
-        Dim TranslationIndex As Integer = GetTranslationIndex(Index, Translation)
-        Return IslamData.ObjIslamData.Collections(Index).FileName + "." + IslamData.ObjIslamData.Collections(Index).Translations(TranslationIndex).FileName
-    End Function
-    Public Shared Function GetHadithMappingText(ByVal Item As PageLoader.TextItem) As Array()
-        Dim NewHadithReader As New HadithReader
-        Dim Index As Integer = GetCurrentCollection()
-        Dim XMLDocTranslate As New System.Xml.XmlDocument
-        If IslamData.ObjIslamData.Collections(Index).Translations.Length = 0 Then Return New Array() {}
-        XMLDocTranslate.Load(Utility.GetFilePath("metadata\" + GetTranslationXMLFileName(Index, Web.HttpContext.Current.Request.QueryString.Get("hadithtranslation")) + ".xml"))
-        Dim Output As New ArrayList
-        Output.Add(New String() {})
-        If NewHadithReader.HasVolumes(Index) Then
-            Output.Add(New String() {String.Empty, String.Empty, String.Empty, String.Empty, String.Empty, String.Empty})
-            Output.Add(New String() {Utility.LoadResourceString("Hadith_Volume"), Utility.LoadResourceString("Hadith_Book"), Utility.LoadResourceString("Hadith_Index"), Utility.LoadResourceString("Hadith_Chapters"), Utility.LoadResourceString("Hadith_Hadiths"), Utility.LoadResourceString("Hadith_Translation")})
-        Else
+        Public Shared Function GetQuranWordFrequency(ByVal Item As PageLoader.TextItem) As Array()
+            Dim Output As New ArrayList
+            Dim Total As Integer = 0
+            Dim All As Double = CachedData.TotalLetters
             Output.Add(New String() {String.Empty, String.Empty, String.Empty, String.Empty, String.Empty})
-            Output.Add(New String() {Utility.LoadResourceString("Hadith_Book"), Utility.LoadResourceString("Hadith_Index"), Utility.LoadResourceString("Hadith_Chapters"), Utility.LoadResourceString("Hadith_Hadiths"), Utility.LoadResourceString("Hadith_Translation")})
-        End If
-        If NewHadithReader.HasVolumes(Index) Then
-            Output.AddRange(Array.ConvertAll(Utility.GetChildNodes("book", Utility.GetChildNode("books", XMLDocInfo(Index).DocumentElement.ChildNodes).ChildNodes), Function(Convert As System.Xml.XmlNode) New Object() {CStr(NewHadithReader.GetVolumeIndex(Index, CInt(Convert.Attributes.GetNamedItem("index").Value))), GetBookEName(Convert, Index), Convert.Attributes.GetNamedItem("index").Value, CStr(NewHadithReader.GetChapterCount(Index, CInt(Convert.Attributes.GetNamedItem("index").Value))), CStr(NewHadithReader.GetHadithCount(Index, CInt(Convert.Attributes.GetNamedItem("index").Value))), NewHadithReader.GetBookHadithMapping(XMLDocTranslate, Index, CInt(Convert.Attributes.GetNamedItem("index").Value))}))
-        Else
-            Output.AddRange(Array.ConvertAll(Utility.GetChildNodes("book", Utility.GetChildNode("books", XMLDocInfo(Index).DocumentElement.ChildNodes).ChildNodes), Function(Convert As System.Xml.XmlNode) New Object() {GetBookEName(Convert, Index), Convert.Attributes.GetNamedItem("index").Value, CStr(NewHadithReader.GetChapterCount(Index, CInt(Convert.Attributes.GetNamedItem("index").Value))), CStr(NewHadithReader.GetHadithCount(Index, CInt(Convert.Attributes.GetNamedItem("index").Value))), NewHadithReader.GetBookHadithMapping(XMLDocTranslate, Index, CInt(Convert.Attributes.GetNamedItem("index").Value))}))
-        End If
-        Return DirectCast(Output.ToArray(GetType(Array)), Array())
-    End Function
-    Public Shared Function GetRenderedText(ByVal Item As PageLoader.TextItem) As RenderArray
-        Dim NewHadithReader As New HadithReader()
-        Dim Renderer As New RenderArray
-        Dim Hadith As Integer
-        Dim Index As Integer = GetCurrentCollection()
-        Dim BookIndex As Integer = GetCurrentBook()
-        Dim HadithText As Collections.Generic.List(Of Collections.Generic.List(Of Object)) = NewHadithReader.GetHadithText(BookIndex)
-        Dim ChapterIndex As Integer = -1
-        Dim SubChapterIndex As Integer = -1
-        Dim BookNode As System.Xml.XmlNode = NewHadithReader.GetBookByIndex(Index, BookIndex)
-        Dim ChapterNode As System.Xml.XmlNode = Nothing
-        Dim SubChapterNode As System.Xml.XmlNode
-        If Not BookNode Is Nothing Then
-            Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eHeaderLeft, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.RightToLeftMark + Arabic.TransliterateFromBuckwalter("Had~iv " + BookNode.Attributes.GetNamedItem("hadiths").Value + " ")), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, Arabic.TransliterateToScheme(Arabic.TransliterateFromBuckwalter("Had~iv " + BookNode.Attributes.GetNamedItem("hadiths").Value + " ")).Trim()), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, "Hadiths: " + BookNode.Attributes.GetNamedItem("hadiths").Value + " ")}))
-            Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eHeaderCenter, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.RightToLeftMark + Arabic.TransliterateFromBuckwalter("{lokita`bu " + CStr(BookIndex)) + " " + BookNode.Attributes.GetNamedItem("name").Value + " "), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, Arabic.TransliterateToScheme(Arabic.TransliterateFromBuckwalter("{lokita`bu " + CStr(BookIndex)) + " " + BookNode.Attributes.GetNamedItem("name").Value + " ").Trim()), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, "Book " + CStr(BookIndex) + ": " + GetBookEName(BookNode, Index) + " ")}))
-            'Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eHeaderRight, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.RightToLeftMark + Arabic.TransliterateFromBuckwalter("mjld " + Utility.GetChildNode("books", XMLDocInfo(Index).DocumentElement.ChildNodes).ChildNodes.Item(BookIndex).Attributes.GetNamedItem("volume").Value + " ")), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, Arabic.TransliterateToScheme(Arabic.TransliterateFromBuckwalter("mjld " + Utility.GetChildNode("books", XMLDocInfo(Index).DocumentElement.ChildNodes).ChildNodes.Item(BookIndex).Attributes.GetNamedItem("volume").Value + " ")).Trim()), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, "Volume " + Utility.GetChildNode("books", XMLDocInfo(Index).DocumentElement.ChildNodes).ChildNodes.Item(BookIndex).Attributes.GetNamedItem("volume").Value + " ")}))
-            Dim XMLDocTranslate As New System.Xml.XmlDocument
-            Dim Strings() As String = Nothing
-            If IslamData.ObjIslamData.Collections(Index).Translations.Length <> 0 Then
-                XMLDocTranslate.Load(Utility.GetFilePath("metadata\" + GetTranslationXMLFileName(Index, Web.HttpContext.Current.Request.QueryString.Get("hadithtranslation")) + ".xml"))
-                Strings = IO.File.ReadAllLines(Utility.GetFilePath("metadata\" + GetTranslationFileName(Index, Web.HttpContext.Current.Request.QueryString.Get("hadithtranslation")) + ".txt"))
-            End If
-            For Hadith = 0 To HadithText.Count - 1
-                'Handle missing or excess chapter indexes
-                If ChapterIndex <> CInt(HadithText(Hadith)(1)) Then
-                    ChapterIndex = CInt(HadithText(Hadith)(1))
-                    ChapterNode = GetChapterByIndex(BookNode, ChapterIndex)
-                    If Not ChapterNode Is Nothing Then
-                        Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eHeaderLeft, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.RightToLeftMark + Arabic.TransliterateFromBuckwalter("Had~iv " + ChapterNode.Attributes.GetNamedItem("hadiths").Value + " ")), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, Arabic.TransliterateToScheme(Arabic.TransliterateFromBuckwalter("Had~iv " + ChapterNode.Attributes.GetNamedItem("hadiths").Value + " ")).Trim()), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, "Hadiths: " + ChapterNode.Attributes.GetNamedItem("hadiths").Value + " ")}))
-                        Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eHeaderCenter, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.RightToLeftMark + Arabic.TransliterateFromBuckwalter("bAb " + CStr(ChapterIndex)) + " " + ChapterNode.Attributes.GetNamedItem("name").Value + " "), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, Arabic.TransliterateToScheme(Arabic.TransliterateFromBuckwalter("bAb " + CStr(ChapterIndex)) + " " + ChapterNode.Attributes.GetNamedItem("name").Value + " ").Trim()), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, "Chapter " + CStr(ChapterIndex) + ": " + Utility.DefaultValue(Utility.LoadResourceString("IslamInfo_" + IslamData.ObjIslamData.Collections(Index).FileName + "Book" + BookNode.Attributes.GetNamedItem("index").Value + "Chapter" + ChapterNode.Attributes.GetNamedItem("index").Value), String.Empty) + " ")}))
-                    End If
-                    SubChapterIndex = -1
-                End If
-                'Handle missing or excess subchapter indexes
-                If SubChapterIndex <> CInt(HadithText(Hadith)(2)) Then
-                    SubChapterIndex = CInt(HadithText(Hadith)(2))
-                    If Not ChapterNode Is Nothing Then
-                        SubChapterNode = GetSubChapterByIndex(ChapterNode, SubChapterIndex)
-                        If Not SubChapterNode Is Nothing Then
-                            Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eHeaderLeft, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.RightToLeftMark + Arabic.TransliterateFromBuckwalter("Had~iv " + SubChapterNode.Attributes.GetNamedItem("hadiths").Value + " ")), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, Arabic.TransliterateToScheme(Arabic.TransliterateFromBuckwalter("Had~iv " + SubChapterNode.Attributes.GetNamedItem("hadiths").Value + " ")).Trim()), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, "Hadiths: " + SubChapterNode.Attributes.GetNamedItem("hadiths").Value + " ")}))
-                            Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eHeaderCenter, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.RightToLeftMark + Arabic.TransliterateFromBuckwalter("bAb " + CStr(SubChapterIndex)) + " " + SubChapterNode.Attributes.GetNamedItem("name").Value + " "), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, Arabic.TransliterateToScheme(Arabic.TransliterateFromBuckwalter("bAb " + CStr(SubChapterIndex)) + " " + SubChapterNode.Attributes.GetNamedItem("name").Value + " ").Trim()), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, "Sub-Chapter " + CStr(SubChapterIndex) + ": " + Utility.DefaultValue(Utility.LoadResourceString("IslamInfo_" + IslamData.ObjIslamData.Collections(Index).FileName + "Book" + BookNode.Attributes.GetNamedItem("index").Value + "Chapter" + ChapterNode.Attributes.GetNamedItem("index").Value + "Subchapter" + SubChapterNode.Attributes.GetNamedItem("index").Value), String.Empty) + " ")}))
-                        End If
-                    End If
-                End If
-                Dim HadithTranslation As String = String.Empty
-                If CInt(HadithText(Hadith)(0)) <> 0 Then
-                    Dim TranslationLines() As String = NewHadithReader.GetTranslationHadith(XMLDocTranslate, Strings, Index, BookIndex - 1, CInt(HadithText(Hadith)(0)))
-                    Dim Count As Integer
-                    For Count = 0 To TranslationLines.Length - 1
-                        HadithTranslation += vbCrLf + TranslationLines(Count)
-                    Next
-                End If
-                'Arabic.TransliterateFromBuckwalter("(" + HadithText(Hadith)(0) + ") ")
-                Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.RightToLeftMark + CStr(HadithText(Hadith)(3)) + " " + Arabic.TransliterateFromBuckwalter("=" + CStr(HadithText(Hadith)(0))) + " "), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, Arabic.TransliterateToScheme(CStr(HadithText(Hadith)(3)) + " " + Arabic.TransliterateFromBuckwalter("=" + CStr(HadithText(Hadith)(0))) + " ").Trim()), New RenderArray.RenderText(DirectCast(IIf(IsTranslationTextLTR(Index), RenderArray.RenderDisplayClass.eLTR, RenderArray.RenderDisplayClass.eRTL), RenderArray.RenderDisplayClass), "(" + CStr(HadithText(Hadith)(0)) + ") " + HadithTranslation)}))
-                Dim Ranking As Integer() = SiteDatabase.GetHadithRankingData(IslamData.ObjIslamData.Collections(Index).FileName, BookIndex, CInt(HadithText(Hadith)(0)))
-                Dim UserRanking As Integer
-                If UserAccounts.IsLoggedIn() Then
-                    UserRanking = SiteDatabase.GetUserHadithRankingData(UserAccounts.GetUserID(), IslamData.ObjIslamData.Collections(Index).FileName, BookIndex, CInt(HadithText(Hadith)(0)))
-                Else
-                    UserRanking = -1
-                End If
-                Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eRanking, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eRanking, IslamData.ObjIslamData.Collections(Index).FileName + "|" + CStr(BookIndex) + "|" + CStr(HadithText(Hadith)(0)) + "|" + CStr(Ranking(0)) + "|" + CStr(Ranking(1)) + "|" + CStr(UserRanking))}))
-            Next
-        End If
-        Return Renderer
-    End Function
-    Public Function GetHadithTextBook(ByVal XMLDocMain As System.Xml.XmlDocument, ByVal BookIndex As Integer) As System.Xml.XmlNode
-        Return Utility.GetChildNodeByIndex("book", "index", BookIndex, XMLDocMain.DocumentElement.ChildNodes)
-    End Function
-    Public Function GetHadithText(ByVal BookIndex As Integer) As Collections.Generic.List(Of Collections.Generic.List(Of Object))
-        Dim Count As Integer
-        Dim XMLDocMain As New System.Xml.XmlDocument
-        XMLDocMain.Load(Utility.GetFilePath("metadata\" + IslamData.ObjIslamData.Collections(GetCurrentCollection()).FileName + ".xml"))
-        Dim BookNode As System.Xml.XmlNode = GetHadithTextBook(XMLDocMain, BookIndex)
-        Dim HadithNode As System.Xml.XmlNode
-        Dim Hadiths As New Collections.Generic.List(Of Collections.Generic.List(Of Object))
-        For Count = 0 To BookNode.ChildNodes.Count - 1
-            HadithNode = BookNode.ChildNodes.Item(Count)
-            If HadithNode.Name = "hadith" Then
-                Dim NextEntry As New Collections.Generic.List(Of Object)
-                NextEntry.AddRange(New Object() {CInt(HadithNode.Attributes.GetNamedItem("index").Value), _
-                                              CInt(Utility.ParseValue(HadithNode.Attributes.GetNamedItem("sectionindex"), "-1")), _
-                                              CInt(Utility.ParseValue(HadithNode.Attributes.GetNamedItem("subsectionindex"), "-1")), _
-                                              HadithNode.Attributes.GetNamedItem("text").Value})
-                Hadiths.Add(NextEntry)
-            End If
-        Next
-        Return Hadiths
-    End Function
-    Public Function GetBookCount(ByVal Index As Integer) As Integer
-        Return CInt(Utility.GetChildNode("books", XMLDocInfo(Index).DocumentElement.ChildNodes).Attributes("count").Value)
-    End Function
-    Public Function GetBookByIndex(ByVal Index As Integer, ByVal BookIndex As Integer) As System.Xml.XmlNode
-        Return Utility.GetChildNodeByIndex("book", "index", BookIndex, Utility.GetChildNode("books", XMLDocInfo(Index).DocumentElement.ChildNodes).ChildNodes)
-    End Function
-    Public Function GetBookNamesByCollection(ByVal Index As Integer) As Array()
-        Dim Names() As Array = Array.ConvertAll(Utility.GetChildNodes("book", Utility.GetChildNode("books", XMLDocInfo(Index).DocumentElement.ChildNodes).ChildNodes), Function(Convert As System.Xml.XmlNode) New Object() {Convert.Attributes.GetNamedItem("index").Value + ". " + GetBookEName(Convert, Index), CInt(Convert.Attributes.GetNamedItem("index").Value)})
-        Array.Sort(Names, New Utility.CompareNameValueArray)
-        Return Names
-    End Function
-    Public Function HasVolumes(ByVal Index As Integer) As Boolean
-        Return Not Utility.GetChildNode("books", XMLDocInfo(Index).DocumentElement.ChildNodes).Attributes("volumes") Is Nothing
-    End Function
-    Public Function GetVolumeIndex(ByVal Index As Integer, ByVal BookIndex As Integer) As Integer
-        Dim Node As System.Xml.XmlNode = GetBookByIndex(Index, BookIndex).Attributes.GetNamedItem("volume")
-        If Node Is Nothing Then Return -1
-        Return CInt(Node.Value)
-    End Function
-    Public Function GetChapterCount(ByVal Index As Integer, ByVal BookIndex As Integer) As Integer
-        Dim Node As System.Xml.XmlNode = GetBookByIndex(Index, BookIndex).Attributes.GetNamedItem("chapters")
-        If Node Is Nothing Then Return -1
-        Return CInt(Node.Value)
-    End Function
-    Public Function GetChapterIndex(ByVal Index As Integer, ByVal BookIndex As Integer, ByVal HadithIndex As Integer) As Integer
-        Dim BookNode As System.Xml.XmlNode = GetBookByIndex(Index, BookIndex)
-        Dim ChapterNode As System.Xml.XmlNode
-        Dim Count As Integer
-        For Count = 0 To BookNode.ChildNodes.Count - 1
-            ChapterNode = BookNode.ChildNodes.Item(Count)
-            If ChapterNode.Name = "chapter" AndAlso _
-                (CInt(ChapterNode.Attributes.GetNamedItem("starthadith").Value) <= HadithIndex And _
-                CInt(ChapterNode.Attributes.GetNamedItem("starthadith").Value) + CInt(ChapterNode.Attributes.GetNamedItem("hadiths ").Value) > HadithIndex) Then Return Count
-        Next
-        Return -1
-    End Function
-    Public Function GetHadithCount(ByVal Index As Integer, ByVal BookIndex As Integer) As Integer
-        Dim Node As System.Xml.XmlNode = GetBookByIndex(Index, BookIndex).Attributes.GetNamedItem("hadiths")
-        If Node Is Nothing Then Return -1
-        Return CInt(Node.Value)
-    End Function
-    Public Function GetHadithStart(ByVal Index As Integer, ByVal BookIndex As Integer) As Integer
-        Dim Node As System.Xml.XmlNode = GetBookByIndex(Index, BookIndex).Attributes.GetNamedItem("starthadith")
-        If Node Is Nothing Then Return -1
-        Return CInt(Node.Value)
-    End Function
-    Public Function ParseBookTranslationIndex(ByVal BookString As String) As Integer()
-        Return Array.ConvertAll(BookString.Split("|"c), Function(MakeNumeric As String) Integer.Parse(MakeNumeric))
-    End Function
-    Public Function ExpandIndexes(ByVal ExpandString As String) As Collections.Generic.List(Of Object)
-        Dim Count As Integer
-        Dim SubCount As Integer
-        Dim Groupings As String() = ExpandString.Split(","c)
-        Dim Indexes As New Collections.Generic.List(Of Object)
-        For Count = 0 To Groupings.Length - 1
-            If Groupings(Count) = String.Empty Then
-                Indexes.Add(-1)
-            Else
-                Dim Ranges As String() = Groupings(Count).Split("-"c)
-                If Ranges.Length = 1 Then
-                    Dim Combined As String() = Ranges(0).Split("+"c)
-                    If Combined.Length = 1 Then
-                        Indexes.Add(Integer.Parse(Ranges(0)))
-                    Else
-                        Indexes.Add(Array.ConvertAll(Combined, Function(MakeNumeric As String) Integer.Parse(MakeNumeric)))
-                    End If
-                ElseIf Ranges.Length = 2 Then
-                    Dim Combined As String() = Ranges(1).Split("+"c)
-                    For SubCount = Integer.Parse(Ranges(0)) To Integer.Parse(Combined(0))
-                        If Combined.Length > 1 AndAlso SubCount = Integer.Parse(Combined(0)) Then
-                            Indexes.Add(Array.ConvertAll(Combined, Function(MakeNumeric As String) Integer.Parse(MakeNumeric)))
-                        Else
-                            Indexes.Add(SubCount)
-                        End If
-                    Next
-                End If
-            End If
-        Next
-        Return Indexes
-    End Function
-    Public Function ParseHadithTranslationIndex(ByVal HadithString As String) As Collections.Generic.List(Of Collections.Generic.List(Of Object))
-        ParseHadithTranslationIndex = New Collections.Generic.List(Of Collections.Generic.List(Of Object))
-        ParseHadithTranslationIndex.AddRange(Array.ConvertAll(HadithString.Split("|"c), Function(IndexString As String) ExpandIndexes(IndexString)))
-    End Function
-    Public Function TranslationHasVolumes(ByVal XMLDocTranslate As System.Xml.XmlDocument) As Boolean
-        Return Not Utility.GetChildNode("books", XMLDocTranslate.DocumentElement.ChildNodes).Attributes("volumes") Is Nothing
-    End Function
-    Public Function GetTranslateMaxHadith(ByVal XMLDocTranslate As System.Xml.XmlDocument) As Integer
-        Dim BookNode As System.Xml.XmlNode
-        Dim Count As Integer
-        Dim MaxHadith As Integer = 0
-        For Count = 0 To Utility.GetChildNode("books", XMLDocTranslate.DocumentElement.ChildNodes).ChildNodes.Count - 1
-            BookNode = Utility.GetChildNode("books", XMLDocTranslate.DocumentElement.ChildNodes).ChildNodes.Item(Count)
-            If BookNode.Name = "book" Then
-                If CInt(BookNode.Attributes.GetNamedItem("hadiths").Value) <> 0 Then
-                    MaxHadith = Math.Max(MaxHadith, CInt(BookNode.Attributes.GetNamedItem("starthadith").Value) + CInt(BookNode.Attributes.GetNamedItem("hadiths").Value) - 1)
-                End If
-            End If
-        Next
-        Return MaxHadith
-    End Function
-    Public Function GetMaxChapter(ByVal XMLDocTranslate As System.Xml.XmlDocument) As Integer
-        Dim BookNode As System.Xml.XmlNode
-        Dim ChapterNode As System.Xml.XmlNode
-        Dim Count As Integer
-        Dim SubCount As Integer
-        Dim MaxChapter As Integer = 0
-        For Count = 0 To Utility.GetChildNode("books", XMLDocTranslate.DocumentElement.ChildNodes).ChildNodes.Count - 1
-            BookNode = Utility.GetChildNode("books", XMLDocTranslate.DocumentElement.ChildNodes).ChildNodes.Item(Count)
-            If BookNode.Name = "book" Then
-                For SubCount = 0 To BookNode.ChildNodes.Count - 1
-                    ChapterNode = BookNode.ChildNodes.Item(SubCount)
-                    If ChapterNode.Name = "chapter" Then
-                        MaxChapter = Math.Max(MaxChapter, CInt(ChapterNode.Attributes.GetNamedItem("index").Value))
-                    End If
+            Output.Add(New String() {"arabic", "transliteration", String.Empty, String.Empty, String.Empty})
+            Output.Add(New String() {Utility.LoadResourceString("IslamInfo_Arabic"), Utility.LoadResourceString("IslamInfo_Transliteration"), Utility.LoadResourceString("IslamSource_WordTotal"), String.Empty, String.Empty})
+            Dim Strings As String
+            Dim Index As Integer
+            Strings = Web.HttpContext.Current.Request.QueryString.Get("quranselection")
+            If Not Strings Is Nothing Then Index = CInt(Strings)
+            If Index = 0 Then
+                Dim LetterFreqArray(CachedData.LetterDictionary.Keys.Count - 1) As Char
+                CachedData.LetterDictionary.Keys.CopyTo(LetterFreqArray, 0)
+                Array.Sort(LetterFreqArray, Function(Key As Char, NextKey As Char) CachedData.LetterDictionary.Item(NextKey).Count.CompareTo(CachedData.LetterDictionary.Item(Key).Count))
+                For Count As Integer = 0 To LetterFreqArray.Length - 1
+                    Total += CachedData.LetterDictionary.Item(LetterFreqArray(Count)).Count
+                    Output.Add(New String() {CachedData.IslamData.ArabicLetters(Arabic.FindLetterBySymbol(LetterFreqArray(Count))).UnicodeName + " (" + Arabic.RightToLeftMark + " " + LetterFreqArray(Count) + " " + Arabic.LeftToRightMark + ")", String.Empty, CStr(CachedData.LetterDictionary.Item(LetterFreqArray(Count)).Count), (CDbl(CachedData.LetterDictionary.Item(LetterFreqArray(Count)).Count) * 100 / All).ToString("n2"), (CDbl(Total) * 100 / All).ToString("n2")})
+                Next
+            ElseIf Index = 1 Then
+                Dim FreqArray(CachedData.WordDictionary.Keys.Count - 1) As String
+                CachedData.WordDictionary.Keys.CopyTo(FreqArray, 0)
+                Total = 0
+                All = GetQuranWordTotalNumber()
+                Array.Sort(FreqArray, Function(Key As String, NextKey As String) CachedData.WordDictionary.Item(NextKey).Count.CompareTo(CachedData.WordDictionary.Item(Key).Count))
+                For Count As Integer = 0 To FreqArray.Length - 1
+                    Total += CachedData.WordDictionary.Item(FreqArray(Count)).Count
+                    Output.Add(New String() {Arabic.RightToLeftMark + Arabic.TransliterateFromBuckwalter(FreqArray(Count)), String.Empty, CStr(CachedData.WordDictionary.Item(FreqArray(Count)).Count), (CDbl(CachedData.WordDictionary.Item(FreqArray(Count)).Count) * 100 / All).ToString("n2"), (CDbl(Total) * 100 / All).ToString("n2")})
+                Next
+            ElseIf Index = 3 Or Index = 4 Or Index = 5 Or Index = 6 Then
+                Total = 0
+            Dim DivArray As Collections.Generic.List(Of String)()
+            If Index = 3 Or Index = 5 Then
+                DivArray = If(Index = 5, CachedData.StationUniqueArray, CachedData.PartUniqueArray)
+                All = If(Index = 5, CachedData.TotalUniqueWordsInStations, CachedData.TotalUniqueWordsInParts)
+                For Count As Integer = 0 To CInt(IIf(Index = 5, TanzilReader.GetStationCount(), TanzilReader.GetPartCount())) - 1
+                    Total += DivArray(Count).Count
+                    Output.Add(New String() {Arabic.LeftToRightMark + CStr(Count + 1), String.Empty, CStr(DivArray(Count).Count), (CDbl(DivArray(Count).Count) * 100 / All).ToString("n2"), (CDbl(Total) * 100 / All).ToString("n2")})
+                Next
+            ElseIf Index = 4 Or Index = 6 Then
+                DivArray = If(Index = 6, CachedData.StationUniqueArray, CachedData.PartUniqueArray)
+                All = If(Index = 6, CachedData.TotalWordsInStations, CachedData.TotalWordsInParts)
+                For Count As Integer = 0 To CInt(IIf(Index = 6, TanzilReader.GetStationCount(), TanzilReader.GetPartCount())) - 1
+                    Total += DivArray(Count).Count
+                    Output.Add(New String() {Arabic.LeftToRightMark + CStr(Count + 1), String.Empty, CStr(DivArray(Count).Count), (CDbl(DivArray(Count).Count) * 100 / All).ToString("n2"), (CDbl(Total) * 100 / All).ToString("n2")})
                 Next
             End If
-        Next
-        Return MaxChapter
-    End Function
-    Public Function GetHadithChapter(ByVal BookNode As System.Xml.XmlNode, ByVal Hadith As Integer) As Integer
-        Dim ChapterNode As System.Xml.XmlNode
-        Dim Node As System.Xml.XmlNode
-        Dim Count As Integer
-        For Count = 0 To BookNode.ChildNodes.Count - 1
-            ChapterNode = BookNode.ChildNodes.Item(Count)
-            If ChapterNode.Name = "chapter" Then
-                Node = ChapterNode.Attributes.GetNamedItem("starthadith")
-                If Not Node Is Nothing AndAlso (Hadith >= CInt(Node.Value) And _
-                    Hadith < CInt(Node.Value) + CInt(ChapterNode.Attributes.GetNamedItem("hadiths").Value)) Then
-                    Return CInt(ChapterNode.Attributes.GetNamedItem("index").Value)
-                End If
             End If
-        Next
-        Return -1
-    End Function
-    Public Function BuildTranslationIndex(ByVal XMLDocTranslate As System.Xml.XmlDocument, ByVal Volume As Integer, ByVal Book As Integer, ByVal Chapter As Integer, ByVal Hadith As Integer, ByVal SharedHadith As Integer) As String
-        Dim MaxVolume As Integer = 0
-        Dim MaxBook As Integer = CInt(Utility.GetChildNode("books", XMLDocTranslate.DocumentElement.ChildNodes).Attributes.GetNamedItem("count").Value)
-        Dim MaxChapter As Integer
-        Dim MaxHadith As Integer
-        Dim bHasSharedHadith As Boolean = Not Utility.GetChildNode("books", XMLDocTranslate.DocumentElement.ChildNodes).Attributes.GetNamedItem("sharedhadiths") Is Nothing
-        MaxHadith = GetTranslateMaxHadith(XMLDocTranslate)
-        Dim bHasChapters As Boolean = Not Utility.GetChildNode("books", XMLDocTranslate.DocumentElement.ChildNodes).Attributes.GetNamedItem("chapters") Is Nothing
-        If Chapter <> -1 Then
-            MaxChapter = GetMaxChapter(XMLDocTranslate)
-        End If
-        If Volume <> -1 Then
-            MaxVolume = CInt(Utility.GetChildNode("books", XMLDocTranslate.DocumentElement.ChildNodes).Attributes.GetNamedItem("volumes").Value)
-        End If
-        Return CStr(IIf(Volume = -1, String.Empty, Utility.ZeroPad(CStr(Volume), Utility.GetDigitLength(MaxVolume)) + ".")) + Utility.ZeroPad(CStr(Book), Utility.GetDigitLength(MaxBook)) + "." + CStr(IIf(Chapter = -1, String.Empty, Utility.ZeroPad(CStr(Chapter), Utility.GetDigitLength(MaxChapter)) + ".")) + Utility.ZeroPad(CStr(Hadith), Utility.GetDigitLength(MaxHadith)) + CStr(IIf(bHasSharedHadith, IIf(SharedHadith = 0, IIf(Chapter = -1 Or Utility.GetChildNode("books", XMLDocTranslate.DocumentElement.ChildNodes).Attributes.GetNamedItem("sourced") Is Nothing, " ", String.Empty), Chr(64 + SharedHadith)), String.Empty)) + ":"
-    End Function
-    Public Function MapIndexes(ByVal ExpandString As String, ByVal HadithIndex As Integer) As Object()
-        Dim Count As Integer
-        Dim SubCount As Integer
-        Dim Groupings As String() = ExpandString.Split(","c)
-        Dim Indexes As New ArrayList
-        Indexes.Add(New String() {})
-        Indexes.Add(New String() {String.Empty, String.Empty})
-        Indexes.Add(New String() {Utility.LoadResourceString("Hadith_SourceHadithIndex"), Utility.LoadResourceString("Hadith_TranslationHadithIndex")})
-        Dim HadithCount As Integer = 0
-        For Count = 0 To Groupings.Length - 1
-            If Groupings(Count) = String.Empty Then
-                Indexes.Add(New String() {CStr(HadithIndex), Utility.LoadResourceString("Hadith_NoTranslation")})
-                HadithIndex += 1
-            Else
-                Dim Ranges As String() = Groupings(Count).Split("-"c)
-                If Ranges.Length = 1 Then
-                    Dim Compile As String = String.Empty
-                    Dim Combined As String() = Ranges(0).Split("+"c)
-                    For SubCount = 0 To Combined.Length - 1
-                        Compile += Combined(SubCount) + CStr(IIf(SubCount <> Combined.Length - 1, "&", String.Empty))
-                    Next
-                    Indexes.Add(New String() {CStr(HadithIndex), Compile})
-                    HadithIndex += 1
-                    HadithCount += Combined.Length
-                ElseIf Ranges.Length = 2 Then
-                    Dim Compile As String
-                    Dim Combined As String() = Ranges(1).Split("+"c)
-                    Compile = Ranges(0) + "-"
-                    For SubCount = 0 To Combined.Length - 1
-                        Compile += Combined(SubCount) + CStr(IIf(SubCount <> Combined.Length - 1, "&", String.Empty))
-                    Next
-                    Indexes.Add(New String() {CStr(HadithIndex) + "-" + CStr(HadithIndex + Integer.Parse(Combined(0)) - Integer.Parse(Ranges(0))), Compile})
-                    HadithIndex += Integer.Parse(Combined(0)) - Integer.Parse(Ranges(0)) + 1
-                    HadithCount += Integer.Parse(Combined(0)) - Integer.Parse(Ranges(0)) + Combined.Length
-                End If
+            Return CType(Output.ToArray(GetType(Array())), Array())
+        End Function
+        Public Shared Function GetSelectionNames() As Array()
+            Dim Division As Integer = 0
+            Dim Strings As String = Web.HttpContext.Current.Request.QueryString.Get("qurandivision")
+            If Not Strings Is Nothing Then Division = CInt(Strings)
+            If Division = 0 Then
+                Return TanzilReader.GetChapterNames()
+            ElseIf Division = 1 Then
+                Return TanzilReader.GetChapterNamesByRevelationOrder()
+            ElseIf Division = 2 Then
+                Return TanzilReader.GetPartNames()
+            ElseIf Division = 3 Then
+                Return TanzilReader.GetGroupNames()
+            ElseIf Division = 4 Then
+                Return TanzilReader.GetStationNames()
+            ElseIf Division = 5 Then
+                Return TanzilReader.GetSectionNames()
+            ElseIf Division = 6 Then
+                Return TanzilReader.GetPageNames()
+            ElseIf Division = 7 Then
+                Return TanzilReader.GetSajdaNames()
+            ElseIf Division = 8 Then
+                Return TanzilReader.GetImportantNames()
+            ElseIf Division = 9 Then
+                Return Arabic.GetRecitationSymbols()
             End If
-        Next
-        Return New Object() {CStr(HadithCount), Indexes.ToArray(GetType(Array))}
-    End Function
-    Public Function GetBookHadithMapping(ByVal XMLDocTranslate As System.Xml.XmlDocument, ByVal Index As Integer, ByVal BookIndex As Integer) As Object()
-        Dim Count As Integer
-        Dim SourceStart As Integer
-        Dim Volume As Integer
-        Dim Mapping As New ArrayList
-        Mapping.Add(New String() {})
-        If TranslationHasVolumes(XMLDocTranslate) Then
-            Mapping.Add(New String() {String.Empty, String.Empty, String.Empty, String.Empty})
-            Mapping.Add(New String() {Utility.LoadResourceString("Hadith_TranslationVolume"), Utility.LoadResourceString("Hadith_TranslationBook"), Utility.LoadResourceString("Hadith_TranslationHadithCount"), Utility.LoadResourceString("Hadith_TranslationMapping")})
-        Else
-            Mapping.Add(New String() {String.Empty, String.Empty, String.Empty})
-            Mapping.Add(New String() {Utility.LoadResourceString("Hadith_TranslationBook"), Utility.LoadResourceString("Hadith_TranslationHadithCount"), Utility.LoadResourceString("Hadith_TranslationMapping")})
-        End If
-        Dim bHasSharedHadith As Boolean = Not Utility.GetChildNode("books", XMLDocTranslate.DocumentElement.ChildNodes).Attributes.GetNamedItem("sharedhadiths") Is Nothing
-        Dim Books() As Integer
-        Dim TranslateBookIndex As Integer
-        Dim BookNode As System.Xml.XmlNode
-        Dim Node As System.Xml.XmlNode
-        For Count = 0 To Utility.GetChildNode("books", XMLDocTranslate.DocumentElement.ChildNodes).ChildNodes.Count - 1
-            BookNode = Utility.GetChildNode("books", XMLDocTranslate.DocumentElement.ChildNodes).ChildNodes.Item(Count)
-            If BookNode.Name = "book" Then
-                Node = BookNode.Attributes.GetNamedItem("sourcebook")
-                If Node Is Nothing Then
-                    Books = New Integer() {CInt(BookNode.Attributes.GetNamedItem("index").Value)}
-                Else
-                    Books = ParseBookTranslationIndex(Node.Value)
-                End If
-                Node = BookNode.Attributes.GetNamedItem("volume")
-                If Node Is Nothing Then
-                    Volume = -1
-                Else
-                    Volume = CInt(Node.Value)
-                End If
-                TranslateBookIndex = Array.FindIndex(Books, Function(CheckIndex As Integer) CheckIndex = BookIndex)
-                If TranslateBookIndex <> -1 Then
-                    'Must handle shared hadiths
-                    Node = BookNode.Attributes.GetNamedItem("sourcestart")
+            Return Nothing
+        End Function
+        Public Shared Function GetRenderedQuranText(ByVal Item As PageLoader.TextItem) As RenderArray
+            Dim Division As Integer = 0
+            Dim Index As Integer = 1
+            Dim Chapter As Integer
+            Dim Verse As Integer
+            Dim BaseChapter As Integer
+            Dim BaseVerse As Integer
+            Dim Text As String
+            Dim Node As System.Xml.XmlNode
+            Dim Renderer As New RenderArray
+            Dim Strings As String = Web.HttpContext.Current.Request.QueryString.Get("qurandivision")
+            If Not Strings Is Nothing Then Division = CInt(Strings)
+            Strings = Web.HttpContext.Current.Request.QueryString.Get("quranselection")
+            If Not Strings Is Nothing Then Index = CInt(Strings)
+            Dim QuranText As Collections.Generic.List(Of String())
+            Dim SeperateSectionCount As Integer = 1
+            If Division = 8 Then SeperateSectionCount = CachedData.IslamData.QuranSelections(Index).SelectionInfo.Length
+            If Division = 9 Then SeperateSectionCount = CachedData.LetterDictionary(CachedData.IslamData.ArabicLetters(Index).Symbol).Count
+            Dim Lines As String() = IO.File.ReadAllLines(Utility.GetFilePath("metadata\" + GetTranslationFileName(Web.HttpContext.Current.Request.QueryString.Get("qurantranslation"))))
+            Dim W4WLines As String() = IO.File.ReadAllLines(Utility.GetFilePath("metadata\en.w4w.shehnazshaikh.txt"))
+            For SectionCount As Integer = 0 To SeperateSectionCount - 1
+                If Division = 0 Then
+                    BaseChapter = CInt(GetChapterByIndex(Index).Attributes.GetNamedItem("index").Value)
+                    BaseVerse = 1
+                    QuranText = New Collections.Generic.List(Of String())
+                    QuranText.Add(GetQuranText(CachedData.XMLDocMain, BaseChapter, BaseVerse, -1))
+                ElseIf Division = 1 Then
+                    BaseChapter = CInt(TanzilReader.GetChapterIndexByRevelationOrder(Index).Attributes.GetNamedItem("index").Value)
+                    BaseVerse = 1
+                    QuranText = New Collections.Generic.List(Of String())
+                    QuranText.Add(GetQuranText(CachedData.XMLDocMain, BaseChapter, BaseVerse, -1))
+                ElseIf Division = 2 Then
+                    Node = TanzilReader.GetPartByIndex(Index)
+                    BaseChapter = CInt(Node.Attributes.GetNamedItem("sura").Value)
+                    BaseVerse = CInt(Node.Attributes.GetNamedItem("aya").Value)
+                    Node = TanzilReader.GetPartByIndex(Index + 1)
                     If Node Is Nothing Then
-                        If CInt(BookNode.Attributes.GetNamedItem("hadiths").Value) = 0 Then
-                            SourceStart = 0
-                        Else
-                            SourceStart = CInt(BookNode.Attributes.GetNamedItem("starthadith").Value)
-                        End If
+                        Chapter = -1
+                        Verse = -1
                     Else
-                        SourceStart = CInt(Node.Value.Split("|"c)(TranslateBookIndex))
+                        Chapter = CInt(Node.Attributes.GetNamedItem("sura").Value)
+                        Verse = CInt(Node.Attributes.GetNamedItem("aya").Value)
+                        TanzilReader.GetPreviousChapterVerse(Chapter, Verse)
                     End If
-                    Node = BookNode.Attributes.GetNamedItem("sourceindex")
-                    If Node Is Nothing OrElse Node.Value = String.Empty Then
-                        If TranslationHasVolumes(XMLDocTranslate) Then
-                            Mapping.Add(New String() {CStr(Volume), BookNode.Attributes.GetNamedItem("index").Value, _
-                                        CStr(BookNode.Attributes.GetNamedItem("hadiths").Value), Utility.LoadResourceString("Hadith_IdenticalNumbering")})
-                        Else
-                            Mapping.Add(New String() {BookNode.Attributes.GetNamedItem("index").Value, _
-                                        CStr(BookNode.Attributes.GetNamedItem("hadiths").Value), Utility.LoadResourceString("Hadith_IdenticalNumbering")})
-                        End If
+                    QuranText = GetQuranText(CachedData.XMLDocMain, BaseChapter, BaseVerse, Chapter, Verse)
+                ElseIf Division = 3 Then
+                    Node = TanzilReader.GetGroupByIndex(Index)
+                    BaseChapter = CInt(Node.Attributes.GetNamedItem("sura").Value)
+                    BaseVerse = CInt(Node.Attributes.GetNamedItem("aya").Value)
+                    Node = TanzilReader.GetGroupByIndex(Index + 1)
+                    If Node Is Nothing Then
+                        Chapter = -1
+                        Verse = -1
                     Else
-                        Dim RetObject As Object()
-                        RetObject = MapIndexes(Node.Value.Split("|"c)(TranslateBookIndex), SourceStart)
-                        Dim SharedHadith As Integer
-                        If bHasSharedHadith Then
-                            SharedHadith = CInt(Utility.ParseValue(BookNode.Attributes.GetNamedItem("sharedhadiths"), "0"))
-                        Else
-                            SharedHadith = 0
-                        End If
-                        If TranslationHasVolumes(XMLDocTranslate) Then
-                            Mapping.Add(New Object() {CStr(Volume), BookNode.Attributes.GetNamedItem("index").Value, _
-                                        String.Format(Utility.LoadResourceString("Hadith_MappedOf"), CStr(RetObject(0)), CStr(CInt(BookNode.Attributes.GetNamedItem("hadiths").Value) + SharedHadith)), RetObject(1)})
-                        Else
-                            Mapping.Add(New Object() {BookNode.Attributes.GetNamedItem("index").Value, _
-                                        String.Format(Utility.LoadResourceString("Hadith_MappedOf"), CStr(RetObject(0)), CStr(CInt(BookNode.Attributes.GetNamedItem("hadiths").Value) + SharedHadith)), RetObject(1)})
-                        End If
+                        Chapter = CInt(Node.Attributes.GetNamedItem("sura").Value)
+                        Verse = CInt(Node.Attributes.GetNamedItem("aya").Value)
+                        TanzilReader.GetPreviousChapterVerse(Chapter, Verse)
                     End If
-                End If
-            End If
-        Next
-        Return Mapping.ToArray()
-    End Function
-    Public Function GetSharedHadithIndex(ByVal TranslationIndexes As Collections.Generic.List(Of Collections.Generic.List(Of Object)), ByVal TranslateBookIndex As Integer, ByVal HadithIndex As Integer, ByVal SubCount As Integer) As Integer
-        Dim Count As Integer
-        Dim HadithCount As Integer
-        Dim ChildCount As Integer
-        Dim HadithValue As Integer
-        Dim SharedHadith As Integer = -1
-        If TypeOf TranslationIndexes(TranslateBookIndex).Item(HadithIndex) Is Integer() Then
-            HadithValue = DirectCast(TranslationIndexes(TranslateBookIndex)(HadithIndex), Integer())(SubCount)
-        Else
-            HadithValue = CInt(TranslationIndexes(TranslateBookIndex)(HadithIndex))
-        End If
-        For Count = 0 To TranslateBookIndex
-            For HadithCount = 0 To CInt(IIf(Count = TranslateBookIndex, HadithIndex, TranslationIndexes(Count).Count - 1))
-                If TypeOf TranslationIndexes(Count)(HadithCount) Is Integer() Then
-                    For ChildCount = 0 To CInt(IIf(Count = TranslateBookIndex And HadithCount = HadithIndex, SubCount - 1, DirectCast(TranslationIndexes(Count)(HadithCount), Integer()).Length - 1))
-                        If DirectCast(TranslationIndexes(Count)(HadithCount), Integer())(ChildCount) = HadithValue Then
-                            SharedHadith += 1
-                        End If
-                    Next
+                    QuranText = GetQuranText(CachedData.XMLDocMain, BaseChapter, BaseVerse, Chapter, Verse)
+                ElseIf Division = 4 Then
+                    Node = TanzilReader.GetStationByIndex(Index)
+                    BaseChapter = CInt(Node.Attributes.GetNamedItem("sura").Value)
+                    BaseVerse = CInt(Node.Attributes.GetNamedItem("aya").Value)
+                    Node = TanzilReader.GetStationByIndex(Index + 1)
+                    If Node Is Nothing Then
+                        Chapter = -1
+                        Verse = -1
+                    Else
+                        Chapter = CInt(Node.Attributes.GetNamedItem("sura").Value)
+                        Verse = CInt(Node.Attributes.GetNamedItem("aya").Value)
+                        TanzilReader.GetPreviousChapterVerse(Chapter, Verse)
+                    End If
+                    QuranText = GetQuranText(CachedData.XMLDocMain, BaseChapter, BaseVerse, Chapter, Verse)
+                ElseIf Division = 5 Then
+                    Node = TanzilReader.GetSectionByIndex(Index)
+                    BaseChapter = CInt(Node.Attributes.GetNamedItem("sura").Value)
+                    BaseVerse = CInt(Node.Attributes.GetNamedItem("aya").Value)
+                    Node = TanzilReader.GetSectionByIndex(Index + 1)
+                    If Node Is Nothing Then
+                        Chapter = -1
+                        Verse = -1
+                    Else
+                        Chapter = CInt(Node.Attributes.GetNamedItem("sura").Value)
+                        Verse = CInt(Node.Attributes.GetNamedItem("aya").Value)
+                        TanzilReader.GetPreviousChapterVerse(Chapter, Verse)
+                    End If
+                    QuranText = GetQuranText(CachedData.XMLDocMain, BaseChapter, BaseVerse, Chapter, Verse)
+                ElseIf Division = 6 Then
+                    Node = TanzilReader.GetPageByIndex(Index)
+                    BaseChapter = CInt(Node.Attributes.GetNamedItem("sura").Value)
+                    BaseVerse = CInt(Node.Attributes.GetNamedItem("aya").Value)
+                    Node = TanzilReader.GetPageByIndex(Index + 1)
+                    If Node Is Nothing Then
+                        Chapter = -1
+                        Verse = -1
+                    Else
+                        Chapter = CInt(Node.Attributes.GetNamedItem("sura").Value)
+                        Verse = CInt(Node.Attributes.GetNamedItem("aya").Value)
+                        TanzilReader.GetPreviousChapterVerse(Chapter, Verse)
+                    End If
+                    QuranText = GetQuranText(CachedData.XMLDocMain, BaseChapter, BaseVerse, Chapter, Verse)
+                ElseIf Division = 7 Then
+                    Node = TanzilReader.GetSajdaByIndex(Index)
+                    BaseChapter = CInt(Node.Attributes.GetNamedItem("sura").Value)
+                    BaseVerse = CInt(Node.Attributes.GetNamedItem("aya").Value)
+                    QuranText = New Collections.Generic.List(Of String())
+                    QuranText.Add(GetQuranText(CachedData.XMLDocMain, BaseChapter, BaseVerse, BaseVerse))
+                ElseIf Division = 8 Then
+                    BaseChapter = CachedData.IslamData.QuranSelections(Index).SelectionInfo(SectionCount).ChapterNumber
+                    BaseVerse = CachedData.IslamData.QuranSelections(Index).SelectionInfo(SectionCount).VerseNumber
+                    QuranText = New Collections.Generic.List(Of String())
+                    QuranText.Add(GetQuranText(CachedData.XMLDocMain, BaseChapter, BaseVerse, CInt(IIf(CachedData.IslamData.QuranSelections(Index).SelectionInfo(SectionCount).ExtraVerseNumber <> 0, CachedData.IslamData.QuranSelections(Index).SelectionInfo(SectionCount).ExtraVerseNumber, BaseVerse))))
+                    If (CachedData.IslamData.QuranSelections(Index).SelectionInfo(SectionCount).WordNumber > 1) Then
+                        Dim VerseIndex As Integer = 0
+                        For Count As Integer = 1 To CachedData.IslamData.QuranSelections(Index).SelectionInfo(SectionCount).WordNumber - 1
+                            VerseIndex = QuranText(0)(0).IndexOf(" "c, VerseIndex) + 1
+                        Next
+                        QuranText(0)(0) = QuranText(0)(0).Substring(VerseIndex)
+                    End If
+                    If (CachedData.IslamData.QuranSelections(Index).SelectionInfo(SectionCount).EndWordNumber <> 0) Then
+                        Dim VerseIndex As Integer = 0
+                        'selections are always within the same chapter
+                        Dim LastVerse As Integer = CInt(IIf(CachedData.IslamData.QuranSelections(Index).SelectionInfo(SectionCount).ExtraVerseNumber <> 0, 1, 0))
+                        For Count As Integer = CachedData.IslamData.QuranSelections(Index).SelectionInfo(SectionCount).WordNumber To CachedData.IslamData.QuranSelections(Index).SelectionInfo(SectionCount).EndWordNumber - 1
+                            VerseIndex = QuranText(0)(LastVerse).IndexOf(" "c, VerseIndex) + 1
+                        Next
+                        QuranText(0)(LastVerse) = QuranText(0)(LastVerse).Substring(0, VerseIndex + 1)
+                    End If
+                ElseIf Division = 9 Then
+                    QuranText = New Collections.Generic.List(Of String())
+                    QuranText.Add(GetQuranText(CachedData.XMLDocMain, CType(CachedData.LetterDictionary(CachedData.IslamData.ArabicLetters(Index).Symbol)(SectionCount), Integer())(0), CType(CachedData.LetterDictionary(CachedData.IslamData.ArabicLetters(Index).Symbol)(SectionCount), Integer())(1), CType(CachedData.LetterDictionary(CachedData.IslamData.ArabicLetters(Index).Symbol)(SectionCount), Integer())(1)))
                 Else
-                    If CInt(TranslationIndexes(Count)(HadithCount)) = HadithValue Then
-                        SharedHadith += 1
+                    QuranText = Nothing
+                End If
+                If Not QuranText Is Nothing Then
+                    For Chapter = 0 To QuranText.Count - 1
+                        Dim ChapterNode As System.Xml.XmlNode = GetChapterByIndex(BaseChapter + Chapter)
+                        Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eHeaderLeft, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.RightToLeftMark + Arabic.TransliterateFromBuckwalter("|yAthA " + ChapterNode.Attributes.GetNamedItem("ayas").Value + " ")), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, Arabic.TransliterateToScheme(Arabic.TransliterateFromBuckwalter("|yAthA " + ChapterNode.Attributes.GetNamedItem("ayas").Value + " ")).Trim()), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, "Verses " + ChapterNode.Attributes.GetNamedItem("ayas").Value + " ")}))
+                        Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eHeaderCenter, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.RightToLeftMark + Arabic.TransliterateFromBuckwalter("suwrapu " + CachedData.IslamData.QuranChapters(CInt(ChapterNode.Attributes.GetNamedItem("index").Value) - 1).Name + " ")), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, Arabic.TransliterateToScheme(Arabic.TransliterateFromBuckwalter("suwrapu " + CachedData.IslamData.QuranChapters(CInt(ChapterNode.Attributes.GetNamedItem("index").Value) - 1).Name + " ")).Trim()), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, "Chapter " + TanzilReader.GetChapterEName(ChapterNode) + " ")}))
+                        Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eHeaderRight, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.RightToLeftMark + Arabic.TransliterateFromBuckwalter("rukwEAthA " + ChapterNode.Attributes.GetNamedItem("rukus").Value + " ")), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, Arabic.TransliterateToScheme(Arabic.TransliterateFromBuckwalter("rukwEAthA " + ChapterNode.Attributes.GetNamedItem("rukus").Value + " ")).Trim()), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, "Rukus " + ChapterNode.Attributes.GetNamedItem("rukus").Value + " ")}))
+                        For Verse = 0 To QuranText(Chapter).Length - 1
+                            Dim Items As New Collections.Generic.List(Of RenderArray.RenderItem)
+                            Text = String.Empty
+                            If BaseChapter + Chapter <> 1 AndAlso TanzilReader.IsQuarterStart(BaseChapter + Chapter, CInt(IIf(Chapter = 0, BaseVerse, 1)) + Verse) Then
+                                Text += Arabic.TransliterateFromBuckwalter("B")
+                                Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.RightToLeftMark + Arabic.TransliterateFromBuckwalter("B"))}))
+                            End If
+                            If CInt(IIf(Chapter = 0, BaseVerse, 1)) + Verse = 1 Then
+                                Node = GetTextVerse(GetTextChapter(CachedData.XMLDocMain, BaseChapter + Chapter), 1).Attributes.GetNamedItem("bismillah")
+                                If Not Node Is Nothing Then
+                                    Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.RightToLeftMark + Node.Value + " "), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, Arabic.TransliterateToScheme(Node.Value).Trim()), New RenderArray.RenderText(DirectCast(IIf(IsTranslationTextLTR(), RenderArray.RenderDisplayClass.eLTR, RenderArray.RenderDisplayClass.eRTL), RenderArray.RenderDisplayClass), TanzilReader.GetTranslationVerse(Lines, 1, 1))}))
+                                End If
+                            End If
+                            Dim Words As String() = QuranText(Chapter)(Verse).Split(" "c)
+                            Dim TranslitWords As String() = Arabic.TransliterateToScheme(QuranText(Chapter)(Verse)).Split(" "c)
+                            Dim PauseMarks As Integer = 0
+                            For Count As Integer = 0 To Words.Length - 1
+                                If Words(Count).Length = 1 AndAlso _
+                                    Arabic.IsStop(Arabic.FindLetterBySymbol(Words(Count)(0))) Then
+                                    PauseMarks += 1
+                                    Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.RightToLeftMark + Words(Count)), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, TranslitWords(Count))}))
+                                Else
+                                    Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.RightToLeftMark + Words(Count)), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, TranslitWords(Count)), New RenderArray.RenderText(DirectCast(IIf(IsTranslationTextLTR(), RenderArray.RenderDisplayClass.eLTR, RenderArray.RenderDisplayClass.eRTL), RenderArray.RenderDisplayClass), TanzilReader.GetW4WTranslationVerse(W4WLines, BaseChapter + Chapter, CInt(IIf(Chapter = 0, BaseVerse, 1)) + Verse, Count - PauseMarks))}))
+                                End If
+                            Next
+                            Text += QuranText(Chapter)(Verse) + " "
+                            If TanzilReader.IsSajda(BaseChapter + Chapter, CInt(IIf(Chapter = 0, BaseVerse, 1)) + Verse) Then
+                                'Sajda markers are already in the text
+                                'Text += Arabic.TransliterateFromBuckwalter("R")
+                                'Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.RightToLeftMark + Arabic.TransliterateFromBuckwalter("R"))}))
+                            End If
+                            Text += Arabic.TransliterateFromBuckwalter("=" + CStr(CInt(IIf(Chapter = 0, BaseVerse, 1)) + Verse)) + " "
+                            Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.RightToLeftMark + Arabic.TransliterateFromBuckwalter("=" + CStr(CInt(IIf(Chapter = 0, BaseVerse, 1)) + Verse))), New RenderArray.RenderText(DirectCast(IIf(IsTranslationTextLTR(), RenderArray.RenderDisplayClass.eLTR, RenderArray.RenderDisplayClass.eRTL), RenderArray.RenderDisplayClass), "(" + CStr(CInt(IIf(Chapter = 0, BaseVerse, 1)) + Verse) + ")")}))
+                            'Text += Arabic.TransliterateFromBuckwalter("(" + CStr(IIf(Chapter = 0, BaseVerse, 1) + Verse) + ") ")
+                            Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eNested, Items), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.RightToLeftMark + Text), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, Arabic.TransliterateToScheme(QuranText(Chapter)(Verse)).Trim()), New RenderArray.RenderText(DirectCast(IIf(IsTranslationTextLTR(), RenderArray.RenderDisplayClass.eLTR, RenderArray.RenderDisplayClass.eRTL), RenderArray.RenderDisplayClass), "(" + CStr(CInt(IIf(Chapter = 0, BaseVerse, 1)) + Verse) + ") " + TanzilReader.GetTranslationVerse(Lines, BaseChapter + Chapter, CInt(IIf(Chapter = 0, BaseVerse, 1)) + Verse))}))
+                        Next
+                    Next
+                End If
+            Next
+            Return Renderer
+        End Function
+        Public Shared Function GetQuranText(ByVal XMLDocMain As System.Xml.XmlDocument, ByVal StartChapter As Integer, ByVal StartAyat As Integer, ByVal EndChapter As Integer, ByVal EndAyat As Integer) As Collections.Generic.List(Of String())
+            Dim Count As Integer
+            If StartChapter = -1 Then StartChapter = 1
+            If EndChapter = -1 Then EndChapter = GetChapterCount()
+            Dim ChapterVerses As New Collections.Generic.List(Of String())
+            For Count = StartChapter To EndChapter
+                ChapterVerses.Add(GetQuranText(XMLDocMain, Count, CInt(IIf(StartChapter = Count, StartAyat, -1)), CInt(IIf(EndChapter = Count, EndAyat, -1))))
+            Next
+            Return ChapterVerses
+        End Function
+        Public Shared Function GetQuranText(ByVal XMLDocMain As System.Xml.XmlDocument, ByVal Chapter As Integer, ByVal StartVerse As Integer, ByVal EndVerse As Integer) As String()
+            Dim Count As Integer
+            If StartVerse = -1 Then StartVerse = 1
+            If EndVerse = -1 Then EndVerse = GetVerseCount(Chapter)
+            Dim Verses(EndVerse - StartVerse) As String
+            For Count = StartVerse To EndVerse
+                Verses(Count - StartVerse) = GetTextVerse(GetTextChapter(XMLDocMain, Chapter), Count).Attributes.GetNamedItem("text").Value
+            Next
+            Return Verses
+        End Function
+        Public Shared Function GetTextChapter(ByVal XMLDocMain As System.Xml.XmlDocument, ByVal Chapter As Integer) As System.Xml.XmlNode
+            Return Utility.GetChildNodeByIndex("sura", "index", Chapter, XMLDocMain.DocumentElement.ChildNodes)
+        End Function
+        Public Shared Function GetTextVerse(ByVal ChapterNode As System.Xml.XmlNode, ByVal Verse As Integer) As System.Xml.XmlNode
+            Return Utility.GetChildNodeByIndex("aya", "index", Verse, ChapterNode.ChildNodes)
+        End Function
+        Public Shared Function GetVerseCount(ByVal Chapter As Integer) As Integer
+            Return CInt(GetChapterByIndex(Chapter).Attributes.GetNamedItem("ayas").Value)
+        End Function
+        Public Shared Sub GetPreviousChapterVerse(ByRef Chapter As Integer, ByRef Verse As Integer)
+            If Verse = 1 Then
+                If Chapter <> 1 Then
+                    Chapter -= 1
+                    Verse = GetVerseCount(Chapter)
+                End If
+            Else
+                Verse -= 1
+            End If
+        End Sub
+        Public Shared Function GetVerseNumber(ByVal Chapter As Integer, ByVal Verse As Integer) As Integer
+            Return CInt(GetChapterByIndex(Chapter).Attributes.GetNamedItem("start").Value) + Verse
+        End Function
+        Public Shared Function IsTranslationTextLTR() As Boolean
+            Dim Index As Integer = GetTranslationIndex(Web.HttpContext.Current.Request.QueryString.Get("qurantranslation"))
+            Return Not Languages.GetLanguageInfoByCode(CachedData.IslamData.Translations.TranslationList(Index).FileName.Substring(0, 2)).IsRTL
+        End Function
+        Public Shared Function GetTranslationVerse(Lines As String(), ByVal Chapter As Integer, ByVal Verse As Integer) As String
+            GetTranslationVerse = Lines(GetVerseNumber(Chapter, Verse) - 1)
+        End Function
+        Public Shared Function GetW4WTranslationVerse(Lines As String(), ByVal Chapter As Integer, ByVal Verse As Integer, ByVal Word As Integer) As String
+            Dim Words As String() = Lines(GetVerseNumber(Chapter, Verse) - 1).Split("|"c)
+            If Word >= Words.Length Then
+                GetW4WTranslationVerse = String.Empty
+            Else
+                GetW4WTranslationVerse = Words(Word)
+            End If
+        End Function
+        Public Shared Function IsQuarterStart(ByVal Chapter As Integer, ByVal Verse As Integer) As Boolean
+            Dim Count As Integer
+            Dim Node As System.Xml.XmlNode
+            For Count = 0 To Utility.GetChildNode("hizbs", CachedData.XMLDocInfo.DocumentElement.ChildNodes).ChildNodes.Count - 1
+                Node = Utility.GetChildNode("hizbs", CachedData.XMLDocInfo.DocumentElement.ChildNodes).ChildNodes.Item(Count)
+                If Node.Name = "quarter" AndAlso _
+                    CInt(Node.Attributes.GetNamedItem("sura").Value) = Chapter AndAlso _
+                    CInt(Node.Attributes.GetNamedItem("aya").Value) = Verse Then
+                    Return True
+                End If
+            Next
+            Return False
+        End Function
+        Public Shared Function IsSajda(ByVal Chapter As Integer, ByVal Verse As Integer) As Boolean
+            Dim Count As Integer
+            Dim Node As System.Xml.XmlNode
+            For Count = 0 To Utility.GetChildNode("sajdas", CachedData.XMLDocInfo.DocumentElement.ChildNodes).ChildNodes.Count - 1
+                Node = Utility.GetChildNode("sajdas", CachedData.XMLDocInfo.DocumentElement.ChildNodes).ChildNodes.Item(Count)
+                If Node.Name = "sajda" AndAlso _
+                    CInt(Node.Attributes.GetNamedItem("sura").Value) = Chapter AndAlso _
+                    CInt(Node.Attributes.GetNamedItem("aya").Value) = Verse Then
+                    Return True
+                End If
+            Next
+            Return False
+        End Function
+        Public Shared Function GetImportantNames() As Array()
+            Dim Names() As Array = Array.ConvertAll(CachedData.IslamData.QuranSelections, Function(Convert As IslamData.QuranSelection) New Object() {Utility.LoadResourceString("IslamInfo_" + Convert.Description), CInt(Array.IndexOf(CachedData.IslamData.QuranSelections, Convert))})
+            Array.Sort(Names, New Utility.CompareNameValueArray)
+            Return Names
+        End Function
+        Public Shared Function GetChapterCount() As Integer
+            Return Utility.GetChildNodeCount("sura", Utility.GetChildNode("suras", CachedData.XMLDocInfo.DocumentElement.ChildNodes))
+        End Function
+        Public Shared Function GetChapterByIndex(ByVal Index As Integer) As System.Xml.XmlNode
+            Return Utility.GetChildNodeByIndex("sura", "index", Index, Utility.GetChildNode("suras", CachedData.XMLDocInfo.DocumentElement.ChildNodes).ChildNodes)
+        End Function
+        Public Shared Function GetChapterNames() As Array()
+            Dim Names() As Array = Array.ConvertAll(Utility.GetChildNodes("sura", Utility.GetChildNode("suras", CachedData.XMLDocInfo.DocumentElement.ChildNodes).ChildNodes), Function(Convert As System.Xml.XmlNode) New Object() {Convert.Attributes.GetNamedItem("index").Value + ". " + GetChapterEName(Convert) + " (" + Arabic.TransliterateFromBuckwalter("suwrapu " + CachedData.IslamData.QuranChapters(CInt(Convert.Attributes.GetNamedItem("index").Value) - 1).Name + " ") + ")", CInt(Convert.Attributes.GetNamedItem("index").Value)})
+            Array.Sort(Names, New Utility.CompareNameValueArray)
+            Return Names
+        End Function
+        Public Shared Function GetChapterEName(ByVal ChapterNode As System.Xml.XmlNode) As String
+            Return Utility.LoadResourceString("IslamInfo_QuranChapter" + ChapterNode.Attributes.GetNamedItem("index").Value)
+        End Function
+        Public Shared Function GetChapterNamesByRevelationOrder() As Array()
+            Dim Names() As Array = Array.ConvertAll(Utility.GetChildNodes("sura", Utility.GetChildNode("suras", CachedData.XMLDocInfo.DocumentElement.ChildNodes).ChildNodes), Function(Convert As System.Xml.XmlNode) New Object() {Convert.Attributes.GetNamedItem("index").Value + ". " + GetChapterEName(Convert) + " (" + Arabic.TransliterateFromBuckwalter("suwrapu " + CachedData.IslamData.QuranChapters(CInt(Convert.Attributes.GetNamedItem("index").Value) - 1).Name + " ") + ")", CInt(Convert.Attributes.GetNamedItem("order").Value)})
+            Array.Sort(Names, New Utility.CompareNameValueArray)
+            Return Names
+        End Function
+        Public Shared Function GetChapterIndexByRevelationOrder(ByVal Index As Integer) As System.Xml.XmlNode
+            Dim Count As Integer
+            Dim ChapterNode As System.Xml.XmlNode
+            For Count = 0 To Utility.GetChildNode("suras", CachedData.XMLDocInfo.DocumentElement.ChildNodes).ChildNodes.Count - 1
+                ChapterNode = Utility.GetChildNode("suras", CachedData.XMLDocInfo.DocumentElement.ChildNodes).ChildNodes.Item(Count)
+                If ChapterNode.Name = "sura" AndAlso CInt(ChapterNode.Attributes.GetNamedItem("order").Value) = Index Then
+                    Return ChapterNode
+                End If
+            Next
+            Return Nothing
+        End Function
+        Public Shared Function GetPartNames() As Array()
+            Dim Names() As Array = Array.ConvertAll(Utility.GetChildNodes("juz", Utility.GetChildNode("juzs", CachedData.XMLDocInfo.DocumentElement.ChildNodes).ChildNodes), Function(Convert As System.Xml.XmlNode) New Object() {Convert.Attributes.GetNamedItem("index").Value + " (" + Arabic.TransliterateFromBuckwalter("juz " + CachedData.IslamData.QuranParts(CInt(Convert.Attributes.GetNamedItem("index").Value) - 1).Name + " ") + ")", CInt(Convert.Attributes.GetNamedItem("index").Value)})
+            Array.Sort(Names, New Utility.CompareNameValueArray)
+            Return Names
+        End Function
+        Public Shared Function GetPartCount() As Integer
+            Return Utility.GetChildNodeCount("juz", Utility.GetChildNode("juzs", CachedData.XMLDocInfo.DocumentElement.ChildNodes))
+        End Function
+        Public Shared Function GetPartByIndex(ByVal Index As Integer) As System.Xml.XmlNode
+            Return Utility.GetChildNodeByIndex("juz", "index", Index, Utility.GetChildNode("juzs", CachedData.XMLDocInfo.DocumentElement.ChildNodes).ChildNodes)
+        End Function
+        Public Shared Function GetGroupNames() As Array()
+            Dim Names() As Array = Array.ConvertAll(Utility.GetChildNodes("quarter", Utility.GetChildNode("hizbs", CachedData.XMLDocInfo.DocumentElement.ChildNodes).ChildNodes), Function(Convert As System.Xml.XmlNode) New Object() {Convert.Attributes.GetNamedItem("index").Value, CInt(Convert.Attributes.GetNamedItem("index").Value)})
+            Array.Sort(Names, New Utility.CompareNameValueArray)
+            Return Names
+        End Function
+        Public Shared Function GetGroupCount() As Integer
+            Return Utility.GetChildNodeCount("quarter", Utility.GetChildNode("hizbs", CachedData.XMLDocInfo.DocumentElement.ChildNodes))
+        End Function
+        Public Shared Function GetGroupByIndex(ByVal Index As Integer) As System.Xml.XmlNode
+            Return Utility.GetChildNodeByIndex("quarter", "index", Index, Utility.GetChildNode("hizbs", CachedData.XMLDocInfo.DocumentElement.ChildNodes).ChildNodes)
+        End Function
+        Public Shared Function GetStationNames() As Array()
+            Dim Names() As Array = Array.ConvertAll(Utility.GetChildNodes("manzil", Utility.GetChildNode("manzils", CachedData.XMLDocInfo.DocumentElement.ChildNodes).ChildNodes), Function(Convert As System.Xml.XmlNode) New Object() {Convert.Attributes.GetNamedItem("index").Value, CInt(Convert.Attributes.GetNamedItem("index").Value)})
+            Array.Sort(Names, New Utility.CompareNameValueArray)
+            Return Names
+        End Function
+        Public Shared Function GetStationCount() As Integer
+            Return Utility.GetChildNodeCount("manzil", Utility.GetChildNode("manzils", CachedData.XMLDocInfo.DocumentElement.ChildNodes))
+        End Function
+        Public Shared Function GetStationByIndex(ByVal Index As Integer) As System.Xml.XmlNode
+            Return Utility.GetChildNodeByIndex("manzil", "index", Index, Utility.GetChildNode("manzils", CachedData.XMLDocInfo.DocumentElement.ChildNodes).ChildNodes)
+        End Function
+        Public Shared Function GetSectionNames() As Array()
+            Dim Names() As Array = Array.ConvertAll(Utility.GetChildNodes("ruku", Utility.GetChildNode("rukus", CachedData.XMLDocInfo.DocumentElement.ChildNodes).ChildNodes), Function(Convert As System.Xml.XmlNode) New Object() {Convert.Attributes.GetNamedItem("index").Value, CInt(Convert.Attributes.GetNamedItem("index").Value)})
+            Array.Sort(Names, New Utility.CompareNameValueArray)
+            Return Names
+        End Function
+        Public Shared Function GetSectionCount() As Integer
+            Return Utility.GetChildNodeCount("ruku", Utility.GetChildNode("rukus", CachedData.XMLDocInfo.DocumentElement.ChildNodes))
+        End Function
+        Public Shared Function GetSectionByIndex(ByVal Index As Integer) As System.Xml.XmlNode
+            Return Utility.GetChildNodeByIndex("ruku", "index", Index, Utility.GetChildNode("rukus", CachedData.XMLDocInfo.DocumentElement.ChildNodes).ChildNodes)
+        End Function
+        Public Shared Function GetPageNames() As Array()
+            Dim Names() As Array = Array.ConvertAll(Utility.GetChildNodes("page", Utility.GetChildNode("pages", CachedData.XMLDocInfo.DocumentElement.ChildNodes).ChildNodes), Function(Convert As System.Xml.XmlNode) New Object() {Convert.Attributes.GetNamedItem("index").Value, CInt(Convert.Attributes.GetNamedItem("index").Value)})
+            Array.Sort(Names, New Utility.CompareNameValueArray)
+            Return Names
+        End Function
+        Public Shared Function GetPageCount() As Integer
+            Return Utility.GetChildNodeCount("page", Utility.GetChildNode("pages", CachedData.XMLDocInfo.DocumentElement.ChildNodes))
+        End Function
+        Public Shared Function GetPageByIndex(ByVal Index As Integer) As System.Xml.XmlNode
+            Return Utility.GetChildNodeByIndex("page", "index", Index, Utility.GetChildNode("pages", CachedData.XMLDocInfo.DocumentElement.ChildNodes).ChildNodes)
+        End Function
+        Public Shared Function GetSajdaNames() As Array()
+            Dim Names() As Array = Array.ConvertAll(Utility.GetChildNodes("sajda", Utility.GetChildNode("sajdas", CachedData.XMLDocInfo.DocumentElement.ChildNodes).ChildNodes), Function(Convert As System.Xml.XmlNode) New Object() {Convert.Attributes.GetNamedItem("index").Value, CInt(Convert.Attributes.GetNamedItem("index").Value)})
+            Array.Sort(Names, New Utility.CompareNameValueArray)
+            Return Names
+        End Function
+        Public Shared Function GetSajdaCount() As Integer
+            Return Utility.GetChildNodeCount("sajda", Utility.GetChildNode("sajdas", CachedData.XMLDocInfo.DocumentElement.ChildNodes))
+        End Function
+        Public Shared Function GetSajdaByIndex(ByVal Index As Integer) As System.Xml.XmlNode
+            Return Utility.GetChildNodeByIndex("sajda", "index", Index, Utility.GetChildNode("sajdas", CachedData.XMLDocInfo.DocumentElement.ChildNodes).ChildNodes)
+        End Function
+    End Class
+    Public Class HadithReader
+        Public Shared Function GetCollectionChangeOnlyJS() As String
+            Dim JSArrays As String = Utility.MakeJSArray(Array.ConvertAll(CachedData.IslamData.Collections, Function(Convert As IslamData.CollectionInfo) Utility.MakeJSArray(Array.ConvertAll(Of IslamData.CollectionInfo.CollTranslationInfo, String)(Convert.Translations, Function(TranslateBlock As IslamData.CollectionInfo.CollTranslationInfo) Utility.MakeJSArray(New String() {Utility.LoadResourceString("lang_local" + Languages.GetLanguageInfoByCode(TranslateBlock.FileName.Substring(0, 2)).Code) + ": " + Utility.LoadResourceString("IslamInfo_" + TranslateBlock.Name), TranslateBlock.FileName})), True)), True)
+            Return "function changeHadithCollection(index) { var iCount; var hadithdata = " + JSArrays + "; var eSelect = $('#hadithtranslation').get(0); clearOptionList(eSelect); for (iCount = 0; iCount < hadithdata[index].length; iCount++) { eSelect.options.add(new Option(hadithdata[index][iCount][0], hadithdata[index][iCount][1])); } }"
+        End Function
+        Public Shared Function GetCollectionChangeWithBooksJS() As String()
+            Dim JSArrays As String = Utility.MakeJSArray(Array.ConvertAll(Of IslamData.CollectionInfo, String)(CachedData.IslamData.Collections, Function(Convert As IslamData.CollectionInfo) Utility.MakeJSArray(Array.ConvertAll(Of Array, String)(HadithReader.GetBookNamesByCollection(GetCollectionIndex(Convert.Name)), Function(BookNames As Array) Utility.MakeJSArray(New String() {CStr(BookNames.GetValue(0)), CStr(BookNames.GetValue(1))})), True)), True)
+            Return New String() {"javascript: changeHadithCollectionBooks(this.selectedIndex);", String.Empty, Utility.GetClearOptionListJS(), _
+                                 GetCollectionChangeOnlyJS(), _
+            "function changeHadithCollectionBooks(index) { changeHadithCollection(index); var iCount; var hadithtdata = " + JSArrays + "; var eSelect = $('#hadithbook').get(0); clearOptionList(eSelect); for (iCount = 0; iCount < hadithtdata[index].length; iCount++) { eSelect.options.add(new Option(hadithtdata[index][iCount][0], hadithtdata[index][iCount][1])); } }"}
+        End Function
+        Public Shared Function GetCollectionChangeJS() As String()
+            Return New String() {"javascript: changeHadithCollection(this.selectedIndex);", String.Empty, Utility.GetClearOptionListJS(), _
+                                 GetCollectionChangeOnlyJS()}
+        End Function
+        Public Shared Function GetCollectionXMLMetaDataDownload() As String()
+            Return New String() {host.GetPageString("Source&File=" + CachedData.IslamData.Collections(GetCurrentCollection()).FileName + "-data.xml"), Utility.LoadResourceString("IslamInfo_" + CachedData.IslamData.Collections(GetCurrentCollection()).Name) + " XML metadata"}
+        End Function
+        Public Shared Function GetCollectionXMLDownload() As String()
+            Return New String() {host.GetPageString("Source&File=" + CachedData.IslamData.Collections(GetCurrentCollection()).FileName + ".xml"), Utility.LoadResourceString("IslamInfo_" + CachedData.IslamData.Collections(GetCurrentCollection()).Name) + " XML source text"}
+        End Function
+        Public Shared Function GetTranslationXMLMetaDataDownload() As String()
+            Dim TranslationIndex As Integer = GetTranslationIndex(GetCurrentCollection(), Web.HttpContext.Current.Request.QueryString.Get("hadithtranslation"))
+            If TranslationIndex = -1 Then Return New String() {}
+            Return New String() {host.GetPageString("Source&File=" + GetTranslationXMLFileName(GetCurrentCollection(), Web.HttpContext.Current.Request.QueryString.Get("hadithtranslation")) + ".xml"), CachedData.IslamData.Collections(GetCurrentCollection()).Translations(TranslationIndex).Name + " XML metadata"}
+        End Function
+        Public Shared Function GetTranslationTextDownload() As String()
+            Dim TranslationIndex As Integer = GetTranslationIndex(GetCurrentCollection(), Web.HttpContext.Current.Request.QueryString.Get("hadithtranslation"))
+            If TranslationIndex = -1 Then Return New String() {}
+            Return New String() {host.GetPageString("Source&File=" + GetTranslationFileName(GetCurrentCollection(), Web.HttpContext.Current.Request.QueryString.Get("hadithtranslation")) + ".txt"), CachedData.IslamData.Collections(GetCurrentCollection()).Translations(TranslationIndex).Name + " raw source text"}
+        End Function
+        Public Shared Function GetCollectionIndex(ByVal Name As String) As Integer
+            Dim Count As Integer
+            For Count = 0 To CachedData.IslamData.Collections.Length - 1
+                If Name = CachedData.IslamData.Collections(Count).Name Then Return Count
+            Next
+            Return -1
+        End Function
+        Public Shared Function GetCollectionNames() As String()
+            Return Array.ConvertAll(CachedData.IslamData.Collections, Function(Convert As IslamData.CollectionInfo) Utility.LoadResourceString("IslamInfo_" + Convert.Name))
+        End Function
+        Public Shared Function GetChapterByIndex(ByVal BookNode As System.Xml.XmlNode, ByVal ChapterIndex As Integer) As System.Xml.XmlNode
+            Return Utility.GetChildNodeByIndex("chapter", "index", ChapterIndex, BookNode.ChildNodes)
+        End Function
+        Public Shared Function GetSubChapterByIndex(ByVal ChapterNode As System.Xml.XmlNode, ByVal SubChapterIndex As Integer) As System.Xml.XmlNode
+            Return Utility.GetChildNodeByIndex("subchapter", "index", SubChapterIndex, ChapterNode.ChildNodes)
+        End Function
+        Public Shared Function GetCurrentCollection() As Integer
+            Dim Strings As String = Web.HttpContext.Current.Request.QueryString.Get("hadithcollection")
+            If Not Strings Is Nothing Then Return CInt(Strings) Else Return 0
+        End Function
+        Public Shared Function GetCurrentBook() As Integer
+            Dim Strings As String = Web.HttpContext.Current.Request.QueryString.Get("hadithbook")
+            If Not Strings Is Nothing Then Return CInt(Strings) Else Return 1
+        End Function
+        Public Shared Function GetBookNames() As Array()
+            Return HadithReader.GetBookNamesByCollection(GetCurrentCollection())
+        End Function
+        Public Shared Function GetBookEName(ByVal BookNode As System.Xml.XmlNode, CollectionIndex As Integer) As String
+            If BookNode Is Nothing Then
+                Return String.Empty
+            Else
+                GetBookEName = Utility.LoadResourceString("IslamInfo_" + CachedData.IslamData.Collections(CollectionIndex).FileName + "Book" + BookNode.Attributes.GetNamedItem("index").Value)
+                If GetBookEName Is Nothing Then GetBookEName = String.Empty
+            End If
+        End Function
+        Public Shared Function GetTranslationList() As Array()
+            Return Array.ConvertAll(CachedData.IslamData.Collections(GetCurrentCollection()).Translations, Function(Convert As IslamData.CollectionInfo.CollTranslationInfo) New String() {Utility.LoadResourceString("lang_local" + Languages.GetLanguageInfoByCode(Convert.FileName.Substring(0, 2)).Code) + ": " + Utility.LoadResourceString("IslamInfo_" + Convert.Name), Convert.FileName})
+        End Function
+        Public Shared Function IsTranslationTextLTR(ByVal Index As Integer) As Boolean
+            Dim TranslationIndex As Integer = GetTranslationIndex(Index, Web.HttpContext.Current.Request.QueryString.Get("hadithtranslation"))
+            Return TranslationIndex = -1 OrElse Not Languages.GetLanguageInfoByCode(CachedData.IslamData.Collections(Index).Translations(TranslationIndex).FileName.Substring(0, 2)).IsRTL
+        End Function
+        Public Shared Function GetTranslationIndex(ByVal Index As Integer, ByVal Translation As String) As Integer
+            If String.IsNullOrEmpty(Translation) Then Translation = CachedData.IslamData.Collections(Index).DefaultTranslation
+            Dim Count As Integer = Array.FindIndex(CachedData.IslamData.Collections(Index).Translations, Function(Test As IslamData.CollectionInfo.CollTranslationInfo) Test.FileName = Translation)
+            If Count = -1 Then
+                Translation = CachedData.IslamData.Collections(Index).DefaultTranslation
+                Count = Array.FindIndex(CachedData.IslamData.Collections(Index).Translations, Function(Test As IslamData.CollectionInfo.CollTranslationInfo) Test.FileName = Translation)
+            End If
+            Return Count
+        End Function
+        Public Shared Function GetTranslationXMLFileName(ByVal Index As Integer, ByVal Translation As String) As String
+            Dim TranslationIndex As Integer = GetTranslationIndex(Index, Translation)
+            Return CachedData.IslamData.Collections(Index).FileName + "." + CachedData.IslamData.Collections(Index).Translations(TranslationIndex).FileName + "-data"
+        End Function
+        Public Shared Function GetTranslationFileName(ByVal Index As Integer, ByVal Translation As String) As String
+            Dim TranslationIndex As Integer = GetTranslationIndex(Index, Translation)
+            Return CachedData.IslamData.Collections(Index).FileName + "." + CachedData.IslamData.Collections(Index).Translations(TranslationIndex).FileName
+        End Function
+        Public Shared Function GetHadithMappingText(ByVal Item As PageLoader.TextItem) As Array()
+            Dim Index As Integer = GetCurrentCollection()
+            Dim XMLDocTranslate As New System.Xml.XmlDocument
+            If CachedData.IslamData.Collections(Index).Translations.Length = 0 Then Return New Array() {}
+            XMLDocTranslate.Load(Utility.GetFilePath("metadata\" + GetTranslationXMLFileName(Index, Web.HttpContext.Current.Request.QueryString.Get("hadithtranslation")) + ".xml"))
+            Dim Output As New ArrayList
+            Output.Add(New String() {})
+            If HadithReader.HasVolumes(Index) Then
+                Output.Add(New String() {String.Empty, String.Empty, String.Empty, String.Empty, String.Empty, String.Empty})
+                Output.Add(New String() {Utility.LoadResourceString("Hadith_Volume"), Utility.LoadResourceString("Hadith_Book"), Utility.LoadResourceString("Hadith_Index"), Utility.LoadResourceString("Hadith_Chapters"), Utility.LoadResourceString("Hadith_Hadiths"), Utility.LoadResourceString("Hadith_Translation")})
+            Else
+                Output.Add(New String() {String.Empty, String.Empty, String.Empty, String.Empty, String.Empty})
+                Output.Add(New String() {Utility.LoadResourceString("Hadith_Book"), Utility.LoadResourceString("Hadith_Index"), Utility.LoadResourceString("Hadith_Chapters"), Utility.LoadResourceString("Hadith_Hadiths"), Utility.LoadResourceString("Hadith_Translation")})
+            End If
+            If HadithReader.HasVolumes(Index) Then
+                Output.AddRange(Array.ConvertAll(Utility.GetChildNodes("book", Utility.GetChildNode("books", CachedData.XMLDocInfos(Index).DocumentElement.ChildNodes).ChildNodes), Function(Convert As System.Xml.XmlNode) New Object() {CStr(HadithReader.GetVolumeIndex(Index, CInt(Convert.Attributes.GetNamedItem("index").Value))), GetBookEName(Convert, Index), Convert.Attributes.GetNamedItem("index").Value, CStr(HadithReader.GetChapterCount(Index, CInt(Convert.Attributes.GetNamedItem("index").Value))), CStr(HadithReader.GetHadithCount(Index, CInt(Convert.Attributes.GetNamedItem("index").Value))), HadithReader.GetBookHadithMapping(XMLDocTranslate, Index, CInt(Convert.Attributes.GetNamedItem("index").Value))}))
+            Else
+                Output.AddRange(Array.ConvertAll(Utility.GetChildNodes("book", Utility.GetChildNode("books", CachedData.XMLDocInfos(Index).DocumentElement.ChildNodes).ChildNodes), Function(Convert As System.Xml.XmlNode) New Object() {GetBookEName(Convert, Index), Convert.Attributes.GetNamedItem("index").Value, CStr(HadithReader.GetChapterCount(Index, CInt(Convert.Attributes.GetNamedItem("index").Value))), CStr(HadithReader.GetHadithCount(Index, CInt(Convert.Attributes.GetNamedItem("index").Value))), HadithReader.GetBookHadithMapping(XMLDocTranslate, Index, CInt(Convert.Attributes.GetNamedItem("index").Value))}))
+            End If
+            Return DirectCast(Output.ToArray(GetType(Array)), Array())
+        End Function
+        Public Shared Function GetRenderedText(ByVal Item As PageLoader.TextItem) As RenderArray
+            Dim Renderer As New RenderArray
+            Dim Hadith As Integer
+            Dim Index As Integer = GetCurrentCollection()
+            Dim BookIndex As Integer = GetCurrentBook()
+            Dim HadithText As Collections.Generic.List(Of Collections.Generic.List(Of Object)) = HadithReader.GetHadithText(BookIndex)
+            Dim ChapterIndex As Integer = -1
+            Dim SubChapterIndex As Integer = -1
+            Dim BookNode As System.Xml.XmlNode = HadithReader.GetBookByIndex(Index, BookIndex)
+            Dim ChapterNode As System.Xml.XmlNode = Nothing
+            Dim SubChapterNode As System.Xml.XmlNode
+            If Not BookNode Is Nothing Then
+                Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eHeaderLeft, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.RightToLeftMark + Arabic.TransliterateFromBuckwalter("Had~iv " + BookNode.Attributes.GetNamedItem("hadiths").Value + " ")), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, Arabic.TransliterateToScheme(Arabic.TransliterateFromBuckwalter("Had~iv " + BookNode.Attributes.GetNamedItem("hadiths").Value + " ")).Trim()), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, "Hadiths: " + BookNode.Attributes.GetNamedItem("hadiths").Value + " ")}))
+                Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eHeaderCenter, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.RightToLeftMark + Arabic.TransliterateFromBuckwalter("{lokita`bu " + CStr(BookIndex)) + " " + BookNode.Attributes.GetNamedItem("name").Value + " "), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, Arabic.TransliterateToScheme(Arabic.TransliterateFromBuckwalter("{lokita`bu " + CStr(BookIndex)) + " " + BookNode.Attributes.GetNamedItem("name").Value + " ").Trim()), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, "Book " + CStr(BookIndex) + ": " + GetBookEName(BookNode, Index) + " ")}))
+                'Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eHeaderRight, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.RightToLeftMark + Arabic.TransliterateFromBuckwalter("mjld " + Utility.GetChildNode("books", XMLDocInfo(Index).DocumentElement.ChildNodes).ChildNodes.Item(BookIndex).Attributes.GetNamedItem("volume").Value + " ")), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, Arabic.TransliterateToScheme(Arabic.TransliterateFromBuckwalter("mjld " + Utility.GetChildNode("books", XMLDocInfo(Index).DocumentElement.ChildNodes).ChildNodes.Item(BookIndex).Attributes.GetNamedItem("volume").Value + " ")).Trim()), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, "Volume " + Utility.GetChildNode("books", XMLDocInfo(Index).DocumentElement.ChildNodes).ChildNodes.Item(BookIndex).Attributes.GetNamedItem("volume").Value + " ")}))
+                Dim XMLDocTranslate As New System.Xml.XmlDocument
+                Dim Strings() As String = Nothing
+                If CachedData.IslamData.Collections(Index).Translations.Length <> 0 Then
+                    XMLDocTranslate.Load(Utility.GetFilePath("metadata\" + GetTranslationXMLFileName(Index, Web.HttpContext.Current.Request.QueryString.Get("hadithtranslation")) + ".xml"))
+                    Strings = IO.File.ReadAllLines(Utility.GetFilePath("metadata\" + GetTranslationFileName(Index, Web.HttpContext.Current.Request.QueryString.Get("hadithtranslation")) + ".txt"))
+                End If
+                For Hadith = 0 To HadithText.Count - 1
+                    'Handle missing or excess chapter indexes
+                    If ChapterIndex <> CInt(HadithText(Hadith)(1)) Then
+                        ChapterIndex = CInt(HadithText(Hadith)(1))
+                        ChapterNode = GetChapterByIndex(BookNode, ChapterIndex)
+                        If Not ChapterNode Is Nothing Then
+                            Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eHeaderLeft, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.RightToLeftMark + Arabic.TransliterateFromBuckwalter("Had~iv " + ChapterNode.Attributes.GetNamedItem("hadiths").Value + " ")), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, Arabic.TransliterateToScheme(Arabic.TransliterateFromBuckwalter("Had~iv " + ChapterNode.Attributes.GetNamedItem("hadiths").Value + " ")).Trim()), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, "Hadiths: " + ChapterNode.Attributes.GetNamedItem("hadiths").Value + " ")}))
+                            Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eHeaderCenter, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.RightToLeftMark + Arabic.TransliterateFromBuckwalter("bAb " + CStr(ChapterIndex)) + " " + ChapterNode.Attributes.GetNamedItem("name").Value + " "), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, Arabic.TransliterateToScheme(Arabic.TransliterateFromBuckwalter("bAb " + CStr(ChapterIndex)) + " " + ChapterNode.Attributes.GetNamedItem("name").Value + " ").Trim()), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, "Chapter " + CStr(ChapterIndex) + ": " + Utility.DefaultValue(Utility.LoadResourceString("IslamInfo_" + CachedData.IslamData.Collections(Index).FileName + "Book" + BookNode.Attributes.GetNamedItem("index").Value + "Chapter" + ChapterNode.Attributes.GetNamedItem("index").Value), String.Empty) + " ")}))
+                        End If
+                        SubChapterIndex = -1
+                    End If
+                    'Handle missing or excess subchapter indexes
+                    If SubChapterIndex <> CInt(HadithText(Hadith)(2)) Then
+                        SubChapterIndex = CInt(HadithText(Hadith)(2))
+                        If Not ChapterNode Is Nothing Then
+                            SubChapterNode = GetSubChapterByIndex(ChapterNode, SubChapterIndex)
+                            If Not SubChapterNode Is Nothing Then
+                                Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eHeaderLeft, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.RightToLeftMark + Arabic.TransliterateFromBuckwalter("Had~iv " + SubChapterNode.Attributes.GetNamedItem("hadiths").Value + " ")), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, Arabic.TransliterateToScheme(Arabic.TransliterateFromBuckwalter("Had~iv " + SubChapterNode.Attributes.GetNamedItem("hadiths").Value + " ")).Trim()), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, "Hadiths: " + SubChapterNode.Attributes.GetNamedItem("hadiths").Value + " ")}))
+                                Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eHeaderCenter, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.RightToLeftMark + Arabic.TransliterateFromBuckwalter("bAb " + CStr(SubChapterIndex)) + " " + SubChapterNode.Attributes.GetNamedItem("name").Value + " "), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, Arabic.TransliterateToScheme(Arabic.TransliterateFromBuckwalter("bAb " + CStr(SubChapterIndex)) + " " + SubChapterNode.Attributes.GetNamedItem("name").Value + " ").Trim()), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, "Sub-Chapter " + CStr(SubChapterIndex) + ": " + Utility.DefaultValue(Utility.LoadResourceString("IslamInfo_" + CachedData.IslamData.Collections(Index).FileName + "Book" + BookNode.Attributes.GetNamedItem("index").Value + "Chapter" + ChapterNode.Attributes.GetNamedItem("index").Value + "Subchapter" + SubChapterNode.Attributes.GetNamedItem("index").Value), String.Empty) + " ")}))
+                            End If
+                        End If
+                    End If
+                    Dim HadithTranslation As String = String.Empty
+                    If CInt(HadithText(Hadith)(0)) <> 0 Then
+                        Dim TranslationLines() As String = HadithReader.GetTranslationHadith(XMLDocTranslate, Strings, Index, BookIndex - 1, CInt(HadithText(Hadith)(0)))
+                        Dim Count As Integer
+                        For Count = 0 To TranslationLines.Length - 1
+                            HadithTranslation += vbCrLf + TranslationLines(Count)
+                        Next
+                    End If
+                    'Arabic.TransliterateFromBuckwalter("(" + HadithText(Hadith)(0) + ") ")
+                    Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.RightToLeftMark + CStr(HadithText(Hadith)(3)) + " " + Arabic.TransliterateFromBuckwalter("=" + CStr(HadithText(Hadith)(0))) + " "), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, Arabic.TransliterateToScheme(CStr(HadithText(Hadith)(3)) + " " + Arabic.TransliterateFromBuckwalter("=" + CStr(HadithText(Hadith)(0))) + " ").Trim()), New RenderArray.RenderText(DirectCast(IIf(IsTranslationTextLTR(Index), RenderArray.RenderDisplayClass.eLTR, RenderArray.RenderDisplayClass.eRTL), RenderArray.RenderDisplayClass), "(" + CStr(HadithText(Hadith)(0)) + ") " + HadithTranslation)}))
+                    Dim Ranking As Integer() = SiteDatabase.GetHadithRankingData(CachedData.IslamData.Collections(Index).FileName, BookIndex, CInt(HadithText(Hadith)(0)))
+                    Dim UserRanking As Integer
+                    If UserAccounts.IsLoggedIn() Then
+                        UserRanking = SiteDatabase.GetUserHadithRankingData(UserAccounts.GetUserID(), CachedData.IslamData.Collections(Index).FileName, BookIndex, CInt(HadithText(Hadith)(0)))
+                    Else
+                        UserRanking = -1
+                    End If
+                    Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eRanking, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eRanking, CachedData.IslamData.Collections(Index).FileName + "|" + CStr(BookIndex) + "|" + CStr(HadithText(Hadith)(0)) + "|" + CStr(Ranking(0)) + "|" + CStr(Ranking(1)) + "|" + CStr(UserRanking))}))
+                Next
+            End If
+            Return Renderer
+        End Function
+        Public Shared Function GetHadithTextBook(ByVal XMLDocMain As System.Xml.XmlDocument, ByVal BookIndex As Integer) As System.Xml.XmlNode
+            Return Utility.GetChildNodeByIndex("book", "index", BookIndex, XMLDocMain.DocumentElement.ChildNodes)
+        End Function
+        Public Shared Function GetHadithText(ByVal BookIndex As Integer) As Collections.Generic.List(Of Collections.Generic.List(Of Object))
+            Dim Count As Integer
+            Dim XMLDocMain As New System.Xml.XmlDocument
+            XMLDocMain.Load(Utility.GetFilePath("metadata\" + CachedData.IslamData.Collections(GetCurrentCollection()).FileName + ".xml"))
+            Dim BookNode As System.Xml.XmlNode = GetHadithTextBook(XMLDocMain, BookIndex)
+            Dim HadithNode As System.Xml.XmlNode
+            Dim Hadiths As New Collections.Generic.List(Of Collections.Generic.List(Of Object))
+            For Count = 0 To BookNode.ChildNodes.Count - 1
+                HadithNode = BookNode.ChildNodes.Item(Count)
+                If HadithNode.Name = "hadith" Then
+                    Dim NextEntry As New Collections.Generic.List(Of Object)
+                    NextEntry.AddRange(New Object() {CInt(HadithNode.Attributes.GetNamedItem("index").Value), _
+                                                  CInt(Utility.ParseValue(HadithNode.Attributes.GetNamedItem("sectionindex"), "-1")), _
+                                                  CInt(Utility.ParseValue(HadithNode.Attributes.GetNamedItem("subsectionindex"), "-1")), _
+                                                  HadithNode.Attributes.GetNamedItem("text").Value})
+                    Hadiths.Add(NextEntry)
+                End If
+            Next
+            Return Hadiths
+        End Function
+        Public Shared Function GetBookCount(ByVal Index As Integer) As Integer
+            Return CInt(Utility.GetChildNode("books", CachedData.XMLDocInfos(Index).DocumentElement.ChildNodes).Attributes("count").Value)
+        End Function
+        Public Shared Function GetBookByIndex(ByVal Index As Integer, ByVal BookIndex As Integer) As System.Xml.XmlNode
+            Return Utility.GetChildNodeByIndex("book", "index", BookIndex, Utility.GetChildNode("books", CachedData.XMLDocInfos(Index).DocumentElement.ChildNodes).ChildNodes)
+        End Function
+        Public Shared Function GetBookNamesByCollection(ByVal Index As Integer) As Array()
+            Dim Names() As Array = Array.ConvertAll(Utility.GetChildNodes("book", Utility.GetChildNode("books", CachedData.XMLDocInfos(Index).DocumentElement.ChildNodes).ChildNodes), Function(Convert As System.Xml.XmlNode) New Object() {Convert.Attributes.GetNamedItem("index").Value + ". " + GetBookEName(Convert, Index), CInt(Convert.Attributes.GetNamedItem("index").Value)})
+            Array.Sort(Names, New Utility.CompareNameValueArray)
+            Return Names
+        End Function
+        Public Shared Function HasVolumes(ByVal Index As Integer) As Boolean
+            Return Not Utility.GetChildNode("books", CachedData.XMLDocInfos(Index).DocumentElement.ChildNodes).Attributes("volumes") Is Nothing
+        End Function
+        Public Shared Function GetVolumeIndex(ByVal Index As Integer, ByVal BookIndex As Integer) As Integer
+            Dim Node As System.Xml.XmlNode = GetBookByIndex(Index, BookIndex).Attributes.GetNamedItem("volume")
+            If Node Is Nothing Then Return -1
+            Return CInt(Node.Value)
+        End Function
+        Public Shared Function GetChapterCount(ByVal Index As Integer, ByVal BookIndex As Integer) As Integer
+            Dim Node As System.Xml.XmlNode = GetBookByIndex(Index, BookIndex).Attributes.GetNamedItem("chapters")
+            If Node Is Nothing Then Return -1
+            Return CInt(Node.Value)
+        End Function
+        Public Shared Function GetChapterIndex(ByVal Index As Integer, ByVal BookIndex As Integer, ByVal HadithIndex As Integer) As Integer
+            Dim BookNode As System.Xml.XmlNode = GetBookByIndex(Index, BookIndex)
+            Dim ChapterNode As System.Xml.XmlNode
+            Dim Count As Integer
+            For Count = 0 To BookNode.ChildNodes.Count - 1
+                ChapterNode = BookNode.ChildNodes.Item(Count)
+                If ChapterNode.Name = "chapter" AndAlso _
+                    (CInt(ChapterNode.Attributes.GetNamedItem("starthadith").Value) <= HadithIndex And _
+                    CInt(ChapterNode.Attributes.GetNamedItem("starthadith").Value) + CInt(ChapterNode.Attributes.GetNamedItem("hadiths ").Value) > HadithIndex) Then Return Count
+            Next
+            Return -1
+        End Function
+        Public Shared Function GetHadithCount(ByVal Index As Integer, ByVal BookIndex As Integer) As Integer
+            Dim Node As System.Xml.XmlNode = GetBookByIndex(Index, BookIndex).Attributes.GetNamedItem("hadiths")
+            If Node Is Nothing Then Return -1
+            Return CInt(Node.Value)
+        End Function
+        Public Shared Function GetHadithStart(ByVal Index As Integer, ByVal BookIndex As Integer) As Integer
+            Dim Node As System.Xml.XmlNode = GetBookByIndex(Index, BookIndex).Attributes.GetNamedItem("starthadith")
+            If Node Is Nothing Then Return -1
+            Return CInt(Node.Value)
+        End Function
+        Public Shared Function ParseBookTranslationIndex(ByVal BookString As String) As Integer()
+            Return Array.ConvertAll(BookString.Split("|"c), Function(MakeNumeric As String) Integer.Parse(MakeNumeric))
+        End Function
+        Public Shared Function ExpandIndexes(ByVal ExpandString As String) As Collections.Generic.List(Of Object)
+            Dim Count As Integer
+            Dim SubCount As Integer
+            Dim Groupings As String() = ExpandString.Split(","c)
+            Dim Indexes As New Collections.Generic.List(Of Object)
+            For Count = 0 To Groupings.Length - 1
+                If Groupings(Count) = String.Empty Then
+                    Indexes.Add(-1)
+                Else
+                    Dim Ranges As String() = Groupings(Count).Split("-"c)
+                    If Ranges.Length = 1 Then
+                        Dim Combined As String() = Ranges(0).Split("+"c)
+                        If Combined.Length = 1 Then
+                            Indexes.Add(Integer.Parse(Ranges(0)))
+                        Else
+                            Indexes.Add(Array.ConvertAll(Combined, Function(MakeNumeric As String) Integer.Parse(MakeNumeric)))
+                        End If
+                    ElseIf Ranges.Length = 2 Then
+                        Dim Combined As String() = Ranges(1).Split("+"c)
+                        For SubCount = Integer.Parse(Ranges(0)) To Integer.Parse(Combined(0))
+                            If Combined.Length > 1 AndAlso SubCount = Integer.Parse(Combined(0)) Then
+                                Indexes.Add(Array.ConvertAll(Combined, Function(MakeNumeric As String) Integer.Parse(MakeNumeric)))
+                            Else
+                                Indexes.Add(SubCount)
+                            End If
+                        Next
                     End If
                 End If
             Next
-        Next
-        Return SharedHadith
-    End Function
-    Public Function GetTranslationHadith(XMLDocTranslate As System.Xml.XmlDocument, Strings() As String, ByVal Index As Integer, ByVal BookIndex As Integer, ByVal HadithIndex As Integer) As String()
-        Dim BookNode As System.Xml.XmlNode
-        Dim Node As System.Xml.XmlNode
-        Dim Count As Integer
-        Dim SubCount As Integer
-        Dim SourceStart As Integer
-        Dim Volume As Integer
-        Dim Books() As Integer
-        Dim TranslateBookIndex As Integer
-        Dim TranslationIndexes As Collections.Generic.List(Of Collections.Generic.List(Of Object))
-        Dim TranslationHadith As New ArrayList
-        If IslamData.ObjIslamData.Collections(Index).Translations.Length = 0 Then Return New String() {}
-        For Count = 0 To Utility.GetChildNode("books", XMLDocTranslate.DocumentElement.ChildNodes).ChildNodes.Count - 1
-            BookNode = Utility.GetChildNode("books", XMLDocTranslate.DocumentElement.ChildNodes).ChildNodes.Item(Count)
-            If BookNode.Name = "book" Then
-                Node = BookNode.Attributes.GetNamedItem("sourcebook")
-                If Node Is Nothing Then
-                    Books = New Integer() {Count + 1}
-                Else
-                    Books = ParseBookTranslationIndex(Node.Value)
-                End If
-                Node = BookNode.Attributes.GetNamedItem("volume")
-                If Node Is Nothing Then
-                    Volume = -1
-                Else
-                    Volume = CInt(Node.Value)
-                End If
-                TranslateBookIndex = Array.FindIndex(Books, Function(CheckIndex As Integer) CheckIndex = BookIndex + 1)
-                If TranslateBookIndex <> -1 Then
-                    Node = BookNode.Attributes.GetNamedItem("sourcestart")
-                    If Node Is Nothing Then
-                        SourceStart = HadithIndex
-                    Else
-                        SourceStart = CInt(Node.Value.Split("|"c)(TranslateBookIndex))
+            Return Indexes
+        End Function
+        Public Shared Function ParseHadithTranslationIndex(ByVal HadithString As String) As Collections.Generic.List(Of Collections.Generic.List(Of Object))
+            ParseHadithTranslationIndex = New Collections.Generic.List(Of Collections.Generic.List(Of Object))
+            ParseHadithTranslationIndex.AddRange(Array.ConvertAll(HadithString.Split("|"c), Function(IndexString As String) ExpandIndexes(IndexString)))
+        End Function
+        Public Shared Function TranslationHasVolumes(ByVal XMLDocTranslate As System.Xml.XmlDocument) As Boolean
+            Return Not Utility.GetChildNode("books", XMLDocTranslate.DocumentElement.ChildNodes).Attributes("volumes") Is Nothing
+        End Function
+        Public Shared Function GetTranslateMaxHadith(ByVal XMLDocTranslate As System.Xml.XmlDocument) As Integer
+            Dim BookNode As System.Xml.XmlNode
+            Dim Count As Integer
+            Dim MaxHadith As Integer = 0
+            For Count = 0 To Utility.GetChildNode("books", XMLDocTranslate.DocumentElement.ChildNodes).ChildNodes.Count - 1
+                BookNode = Utility.GetChildNode("books", XMLDocTranslate.DocumentElement.ChildNodes).ChildNodes.Item(Count)
+                If BookNode.Name = "book" Then
+                    If CInt(BookNode.Attributes.GetNamedItem("hadiths").Value) <> 0 Then
+                        MaxHadith = Math.Max(MaxHadith, CInt(BookNode.Attributes.GetNamedItem("starthadith").Value) + CInt(BookNode.Attributes.GetNamedItem("hadiths").Value) - 1)
                     End If
-                    Node = BookNode.Attributes.GetNamedItem("sourceindex")
+                End If
+            Next
+            Return MaxHadith
+        End Function
+        Public Shared Function GetMaxChapter(ByVal XMLDocTranslate As System.Xml.XmlDocument) As Integer
+            Dim BookNode As System.Xml.XmlNode
+            Dim ChapterNode As System.Xml.XmlNode
+            Dim Count As Integer
+            Dim SubCount As Integer
+            Dim MaxChapter As Integer = 0
+            For Count = 0 To Utility.GetChildNode("books", XMLDocTranslate.DocumentElement.ChildNodes).ChildNodes.Count - 1
+                BookNode = Utility.GetChildNode("books", XMLDocTranslate.DocumentElement.ChildNodes).ChildNodes.Item(Count)
+                If BookNode.Name = "book" Then
+                    For SubCount = 0 To BookNode.ChildNodes.Count - 1
+                        ChapterNode = BookNode.ChildNodes.Item(SubCount)
+                        If ChapterNode.Name = "chapter" Then
+                            MaxChapter = Math.Max(MaxChapter, CInt(ChapterNode.Attributes.GetNamedItem("index").Value))
+                        End If
+                    Next
+                End If
+            Next
+            Return MaxChapter
+        End Function
+        Public Shared Function GetHadithChapter(ByVal BookNode As System.Xml.XmlNode, ByVal Hadith As Integer) As Integer
+            Dim ChapterNode As System.Xml.XmlNode
+            Dim Node As System.Xml.XmlNode
+            Dim Count As Integer
+            For Count = 0 To BookNode.ChildNodes.Count - 1
+                ChapterNode = BookNode.ChildNodes.Item(Count)
+                If ChapterNode.Name = "chapter" Then
+                    Node = ChapterNode.Attributes.GetNamedItem("starthadith")
+                    If Not Node Is Nothing AndAlso (Hadith >= CInt(Node.Value) And _
+                        Hadith < CInt(Node.Value) + CInt(ChapterNode.Attributes.GetNamedItem("hadiths").Value)) Then
+                        Return CInt(ChapterNode.Attributes.GetNamedItem("index").Value)
+                    End If
+                End If
+            Next
+            Return -1
+        End Function
+        Public Shared Function BuildTranslationIndex(ByVal XMLDocTranslate As System.Xml.XmlDocument, ByVal Volume As Integer, ByVal Book As Integer, ByVal Chapter As Integer, ByVal Hadith As Integer, ByVal SharedHadith As Integer) As String
+            Dim MaxVolume As Integer = 0
+            Dim MaxBook As Integer = CInt(Utility.GetChildNode("books", XMLDocTranslate.DocumentElement.ChildNodes).Attributes.GetNamedItem("count").Value)
+            Dim MaxChapter As Integer
+            Dim MaxHadith As Integer
+            Dim bHasSharedHadith As Boolean = Not Utility.GetChildNode("books", XMLDocTranslate.DocumentElement.ChildNodes).Attributes.GetNamedItem("sharedhadiths") Is Nothing
+            MaxHadith = GetTranslateMaxHadith(XMLDocTranslate)
+            Dim bHasChapters As Boolean = Not Utility.GetChildNode("books", XMLDocTranslate.DocumentElement.ChildNodes).Attributes.GetNamedItem("chapters") Is Nothing
+            If Chapter <> -1 Then
+                MaxChapter = GetMaxChapter(XMLDocTranslate)
+            End If
+            If Volume <> -1 Then
+                MaxVolume = CInt(Utility.GetChildNode("books", XMLDocTranslate.DocumentElement.ChildNodes).Attributes.GetNamedItem("volumes").Value)
+            End If
+            Return CStr(IIf(Volume = -1, String.Empty, Utility.ZeroPad(CStr(Volume), Utility.GetDigitLength(MaxVolume)) + ".")) + Utility.ZeroPad(CStr(Book), Utility.GetDigitLength(MaxBook)) + "." + CStr(IIf(Chapter = -1, String.Empty, Utility.ZeroPad(CStr(Chapter), Utility.GetDigitLength(MaxChapter)) + ".")) + Utility.ZeroPad(CStr(Hadith), Utility.GetDigitLength(MaxHadith)) + CStr(IIf(bHasSharedHadith, IIf(SharedHadith = 0, IIf(Chapter = -1 Or Utility.GetChildNode("books", XMLDocTranslate.DocumentElement.ChildNodes).Attributes.GetNamedItem("sourced") Is Nothing, " ", String.Empty), Chr(64 + SharedHadith)), String.Empty)) + ":"
+        End Function
+        Public Shared Function MapIndexes(ByVal ExpandString As String, ByVal HadithIndex As Integer) As Object()
+            Dim Count As Integer
+            Dim SubCount As Integer
+            Dim Groupings As String() = ExpandString.Split(","c)
+            Dim Indexes As New ArrayList
+            Indexes.Add(New String() {})
+            Indexes.Add(New String() {String.Empty, String.Empty})
+            Indexes.Add(New String() {Utility.LoadResourceString("Hadith_SourceHadithIndex"), Utility.LoadResourceString("Hadith_TranslationHadithIndex")})
+            Dim HadithCount As Integer = 0
+            For Count = 0 To Groupings.Length - 1
+                If Groupings(Count) = String.Empty Then
+                    Indexes.Add(New String() {CStr(HadithIndex), Utility.LoadResourceString("Hadith_NoTranslation")})
+                    HadithIndex += 1
+                Else
+                    Dim Ranges As String() = Groupings(Count).Split("-"c)
+                    If Ranges.Length = 1 Then
+                        Dim Compile As String = String.Empty
+                        Dim Combined As String() = Ranges(0).Split("+"c)
+                        For SubCount = 0 To Combined.Length - 1
+                            Compile += Combined(SubCount) + CStr(IIf(SubCount <> Combined.Length - 1, "&", String.Empty))
+                        Next
+                        Indexes.Add(New String() {CStr(HadithIndex), Compile})
+                        HadithIndex += 1
+                        HadithCount += Combined.Length
+                    ElseIf Ranges.Length = 2 Then
+                        Dim Compile As String
+                        Dim Combined As String() = Ranges(1).Split("+"c)
+                        Compile = Ranges(0) + "-"
+                        For SubCount = 0 To Combined.Length - 1
+                            Compile += Combined(SubCount) + CStr(IIf(SubCount <> Combined.Length - 1, "&", String.Empty))
+                        Next
+                        Indexes.Add(New String() {CStr(HadithIndex) + "-" + CStr(HadithIndex + Integer.Parse(Combined(0)) - Integer.Parse(Ranges(0))), Compile})
+                        HadithIndex += Integer.Parse(Combined(0)) - Integer.Parse(Ranges(0)) + 1
+                        HadithCount += Integer.Parse(Combined(0)) - Integer.Parse(Ranges(0)) + Combined.Length
+                    End If
+                End If
+            Next
+            Return New Object() {CStr(HadithCount), Indexes.ToArray(GetType(Array))}
+        End Function
+        Public Shared Function GetBookHadithMapping(ByVal XMLDocTranslate As System.Xml.XmlDocument, ByVal Index As Integer, ByVal BookIndex As Integer) As Object()
+            Dim Count As Integer
+            Dim SourceStart As Integer
+            Dim Volume As Integer
+            Dim Mapping As New ArrayList
+            Mapping.Add(New String() {})
+            If TranslationHasVolumes(XMLDocTranslate) Then
+                Mapping.Add(New String() {String.Empty, String.Empty, String.Empty, String.Empty})
+                Mapping.Add(New String() {Utility.LoadResourceString("Hadith_TranslationVolume"), Utility.LoadResourceString("Hadith_TranslationBook"), Utility.LoadResourceString("Hadith_TranslationHadithCount"), Utility.LoadResourceString("Hadith_TranslationMapping")})
+            Else
+                Mapping.Add(New String() {String.Empty, String.Empty, String.Empty})
+                Mapping.Add(New String() {Utility.LoadResourceString("Hadith_TranslationBook"), Utility.LoadResourceString("Hadith_TranslationHadithCount"), Utility.LoadResourceString("Hadith_TranslationMapping")})
+            End If
+            Dim bHasSharedHadith As Boolean = Not Utility.GetChildNode("books", XMLDocTranslate.DocumentElement.ChildNodes).Attributes.GetNamedItem("sharedhadiths") Is Nothing
+            Dim Books() As Integer
+            Dim TranslateBookIndex As Integer
+            Dim BookNode As System.Xml.XmlNode
+            Dim Node As System.Xml.XmlNode
+            For Count = 0 To Utility.GetChildNode("books", XMLDocTranslate.DocumentElement.ChildNodes).ChildNodes.Count - 1
+                BookNode = Utility.GetChildNode("books", XMLDocTranslate.DocumentElement.ChildNodes).ChildNodes.Item(Count)
+                If BookNode.Name = "book" Then
+                    Node = BookNode.Attributes.GetNamedItem("sourcebook")
                     If Node Is Nothing Then
-                        TranslationHadith.Add(CStr(IIf(Volume = -1, String.Empty, Utility.LoadResourceString("Hadith_Volume") + ": " + CStr(Volume) + " ")) + Utility.LoadResourceString("Hadith_Books") + ": " + CStr(Books(TranslateBookIndex)) + " " + Utility.LoadResourceString("Hadith_Hadith") + ": " + CStr(HadithIndex))
-                        TranslationHadith.AddRange(Utility.GetFileLinesByNumberPrefix(Strings, BuildTranslationIndex(XMLDocTranslate, Volume, CInt(BookNode.Attributes.GetNamedItem("index").Value), GetHadithChapter(BookNode, HadithIndex), HadithIndex, 0)))
+                        Books = New Integer() {CInt(BookNode.Attributes.GetNamedItem("index").Value)}
                     Else
-                        TranslationIndexes = ParseHadithTranslationIndex(Node.Value)
-                        If HadithIndex >= SourceStart AndAlso HadithIndex - SourceStart < TranslationIndexes(TranslateBookIndex).Count Then
-                            If TypeOf TranslationIndexes(TranslateBookIndex)(HadithIndex - SourceStart) Is Integer() Then
-                                For SubCount = 0 To DirectCast(TranslationIndexes(TranslateBookIndex)(HadithIndex - SourceStart), Integer()).Length - 1
-                                    Dim SharedHadithIndex As Integer = GetSharedHadithIndex(TranslationIndexes, TranslateBookIndex, HadithIndex - SourceStart, SubCount)
-                                    TranslationHadith.Add(CStr(IIf(Volume = -1, String.Empty, Utility.LoadResourceString("Hadith_Volume") + ": " + CStr(Volume) + " ")) + Utility.LoadResourceString("Hadith_Book") + ": " + BookNode.Attributes.GetNamedItem("index").Value + " " + Utility.LoadResourceString("Hadith_Hadith") + ": " + CStr(DirectCast(TranslationIndexes(TranslateBookIndex)(HadithIndex - SourceStart), Integer())(SubCount)))
-                                    TranslationHadith.AddRange(Utility.GetFileLinesByNumberPrefix(Strings, BuildTranslationIndex(XMLDocTranslate, Volume, CInt(BookNode.Attributes.GetNamedItem("index").Value), GetHadithChapter(BookNode, DirectCast(TranslationIndexes(TranslateBookIndex)(HadithIndex - SourceStart), Integer())(SubCount)), DirectCast(TranslationIndexes(TranslateBookIndex)(HadithIndex - SourceStart), Integer())(SubCount), SharedHadithIndex)))
-                                Next
+                        Books = ParseBookTranslationIndex(Node.Value)
+                    End If
+                    Node = BookNode.Attributes.GetNamedItem("volume")
+                    If Node Is Nothing Then
+                        Volume = -1
+                    Else
+                        Volume = CInt(Node.Value)
+                    End If
+                    TranslateBookIndex = Array.FindIndex(Books, Function(CheckIndex As Integer) CheckIndex = BookIndex)
+                    If TranslateBookIndex <> -1 Then
+                        'Must handle shared hadiths
+                        Node = BookNode.Attributes.GetNamedItem("sourcestart")
+                        If Node Is Nothing Then
+                            If CInt(BookNode.Attributes.GetNamedItem("hadiths").Value) = 0 Then
+                                SourceStart = 0
                             Else
-                                If CInt(TranslationIndexes(TranslateBookIndex)(HadithIndex - SourceStart)) = -1 Then Return New String() {}
-                                Dim SharedHadithIndex As Integer = GetSharedHadithIndex(TranslationIndexes, TranslateBookIndex, HadithIndex - SourceStart, -1)
-                                TranslationHadith.Add(CStr(IIf(Volume = -1, String.Empty, Utility.LoadResourceString("Hadith_Volume") + ": " + CStr(Volume) + " ")) + Utility.LoadResourceString("Hadith_Book") + ": " + BookNode.Attributes.GetNamedItem("index").Value + " " + Utility.LoadResourceString("Hadith_Hadith") + ": " + CStr(TranslationIndexes(TranslateBookIndex)(HadithIndex - SourceStart)))
-                                TranslationHadith.AddRange(Utility.GetFileLinesByNumberPrefix(Strings, BuildTranslationIndex(XMLDocTranslate, Volume, CInt(BookNode.Attributes.GetNamedItem("index").Value), GetHadithChapter(BookNode, CInt(TranslationIndexes(TranslateBookIndex)(HadithIndex - SourceStart))), CInt(TranslationIndexes(TranslateBookIndex)(HadithIndex - SourceStart)), SharedHadithIndex)))
+                                SourceStart = CInt(BookNode.Attributes.GetNamedItem("starthadith").Value)
+                            End If
+                        Else
+                            SourceStart = CInt(Node.Value.Split("|"c)(TranslateBookIndex))
+                        End If
+                        Node = BookNode.Attributes.GetNamedItem("sourceindex")
+                        If Node Is Nothing OrElse Node.Value = String.Empty Then
+                            If TranslationHasVolumes(XMLDocTranslate) Then
+                                Mapping.Add(New String() {CStr(Volume), BookNode.Attributes.GetNamedItem("index").Value, _
+                                            CStr(BookNode.Attributes.GetNamedItem("hadiths").Value), Utility.LoadResourceString("Hadith_IdenticalNumbering")})
+                            Else
+                                Mapping.Add(New String() {BookNode.Attributes.GetNamedItem("index").Value, _
+                                            CStr(BookNode.Attributes.GetNamedItem("hadiths").Value), Utility.LoadResourceString("Hadith_IdenticalNumbering")})
+                            End If
+                        Else
+                            Dim RetObject As Object()
+                            RetObject = MapIndexes(Node.Value.Split("|"c)(TranslateBookIndex), SourceStart)
+                            Dim SharedHadith As Integer
+                            If bHasSharedHadith Then
+                                SharedHadith = CInt(Utility.ParseValue(BookNode.Attributes.GetNamedItem("sharedhadiths"), "0"))
+                            Else
+                                SharedHadith = 0
+                            End If
+                            If TranslationHasVolumes(XMLDocTranslate) Then
+                                Mapping.Add(New Object() {CStr(Volume), BookNode.Attributes.GetNamedItem("index").Value, _
+                                            String.Format(Utility.LoadResourceString("Hadith_MappedOf"), CStr(RetObject(0)), CStr(CInt(BookNode.Attributes.GetNamedItem("hadiths").Value) + SharedHadith)), RetObject(1)})
+                            Else
+                                Mapping.Add(New Object() {BookNode.Attributes.GetNamedItem("index").Value, _
+                                            String.Format(Utility.LoadResourceString("Hadith_MappedOf"), CStr(RetObject(0)), CStr(CInt(BookNode.Attributes.GetNamedItem("hadiths").Value) + SharedHadith)), RetObject(1)})
                             End If
                         End If
                     End If
                 End If
-            End If
-        Next
-        Return DirectCast(TranslationHadith.ToArray(GetType(String)), String())
-    End Function
-End Class
-Class MailDispatcher
-    Public Shared Sub SendEMail(ByVal EMail As String, ByVal Subject As String, ByVal Body As String)
-        Dim SmtpClient As New Net.Mail.SmtpClient
-        'encrypt and unencrypt password credential
-        SmtpClient.Credentials = New Net.NetworkCredential(Utility.ConnectionData.IslamSourceAdminEMail, Utility.ConnectionData.IslamSourceAdminEMailPass)
-        SmtpClient.Port = 587
-        SmtpClient.Host = Utility.ConnectionData.IslamSourceMailServer
-        Dim SmtpMail As New Net.Mail.MailMessage
-        SmtpMail.From = New Net.Mail.MailAddress(Utility.ConnectionData.IslamSourceAdminEMail, Utility.ConnectionData.IslamSourceAdminName)
-        SmtpMail.To.Add(EMail)
-        SmtpMail.Subject = Subject
-        SmtpMail.Body = Body
-        Try
-            SmtpClient.Send(SmtpMail)
-        Catch eException As Net.Mail.SmtpException
-        End Try
-    End Sub
-    Public Shared Sub SendActivationEMail(ByVal UserName As String, ByVal EMail As String, ByVal UserID As Integer, ByVal ActivationCode As Integer)
-        SendEMail(EMail, String.Format(Utility.LoadResourceString("Acct_ActivationAccountSubject"), Web.HttpContext.Current.Request.Url.Host), _
-            String.Format(Utility.LoadResourceString("Acct_ActivationAccountBody"), Web.HttpContext.Current.Request.Url.Host, UserName, "http://" + Web.HttpContext.Current.Request.Url.Host + "/" + host.GetPageString("ActivateAccount&UserID=" + CStr(UserID) + "&ActivationCode=" + CStr(ActivationCode)), "http://" + Web.HttpContext.Current.Request.Url.Host + "/" + host.GetPageString("ActivateAccount"), CStr(ActivationCode)))
-    End Sub
-    Public Shared Sub SendUserNameReminderEMail(ByVal UserName As String, ByVal EMail As String)
-        SendEMail(EMail, String.Format(Utility.LoadResourceString("Acct_UsernameReminderSubject"), Web.HttpContext.Current.Request.Url.Host), _
-            String.Format(Utility.LoadResourceString("Acct_UsernameReminderBody"), Web.HttpContext.Current.Request.Url.Host, UserName))
-    End Sub
-    Public Shared Sub SendPasswordResetEMail(ByVal UserName As String, ByVal EMail As String, ByVal UserID As Integer, ByVal PasswordResetCode As UInteger)
-        SendEMail(EMail, String.Format(Utility.LoadResourceString("Acct_PasswordResetSubject"), Web.HttpContext.Current.Request.Url.Host), _
-            String.Format(Utility.LoadResourceString("Acct_PasswordResetBody"), Web.HttpContext.Current.Request.Url.Host, UserName, "http://" + Web.HttpContext.Current.Request.Url.Host + "/" + host.GetPageString("ResetPassword&UserID=" + CStr(UserID) + "&PasswordResetCode=" + CStr(PasswordResetCode)), "http://" + Web.HttpContext.Current.Request.Url.Host + "/" + host.GetPageString("ResetPassword"), CStr(PasswordResetCode)))
-    End Sub
-    Public Shared Sub SendUserNameChangedEMail(ByVal UserName As String, ByVal EMail As String)
-        SendEMail(EMail, String.Format(Utility.LoadResourceString("Acct_UsernameChangedSubject"), Web.HttpContext.Current.Request.Url.Host), _
-            String.Format(Utility.LoadResourceString("Acct_UsernameChangedBody"), Web.HttpContext.Current.Request.Url.Host, UserName))
-    End Sub
-    Public Shared Sub SendPasswordChangedEMail(ByVal UserName As String, ByVal EMail As String)
-        SendEMail(EMail, String.Format(Utility.LoadResourceString("Acct_PasswordChangedSubject"), Web.HttpContext.Current.Request.Url.Host), _
-            String.Format(Utility.LoadResourceString("Acct_PasswordChangedBody"), Web.HttpContext.Current.Request.Url.Host, UserName))
-    End Sub
-End Class
-Class SiteDatabase
-    Public Shared Function GetConnection() As MySql.Data.MySqlClient.MySqlConnection
-        Dim Connection As MySql.Data.MySqlClient.MySqlConnection = New MySql.Data.MySqlClient.MySqlConnection("Server=" + Utility.ConnectionData.DbConnServer + ";Uid=" + Utility.ConnectionData.DbConnUid + ";Pwd=" + Utility.ConnectionData.DbConnPwd + ";Database=" + Utility.ConnectionData.DbConnDatabase + ";")
-        Try
-            Connection.Open()
-        Catch e As MySql.Data.MySqlClient.MySqlException
-            Return Nothing
-        Catch e As TimeoutException
-            Return Nothing
-        End Try
-        Return Connection
-    End Function
-    Public Shared Sub ExecuteNonQuery(ByVal Connection As MySql.Data.MySqlClient.MySqlConnection, ByVal Query As String, Optional Parameters As Generic.Dictionary(Of String, Object) = Nothing)
-        Dim Command As MySql.Data.MySqlClient.MySqlCommand = Connection.CreateCommand()
-        Command.CommandText = Query
-        If Not Parameters Is Nothing Then
-            For Each Key As String In Parameters.Keys
-                Command.Parameters.AddWithValue(Key, Parameters(Key))
             Next
-        End If
-        Command.ExecuteNonQuery()
-    End Sub
-    Public Shared Sub CreateDatabase()
-        Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
-        If Connection Is Nothing Then Return
-        'SHA1 produces 20 bytes not available in MySQL 5.1
-        'should salt the password
-        ExecuteNonQuery(Connection, "CREATE TABLE Users (UserID int NOT NULL AUTO_INCREMENT, " + _
-        "PRIMARY KEY(UserID), " + _
-        "UserName VARCHAR(15) UNIQUE, " + _
-        "Password BINARY(20), " + _
-        "EMail VARCHAR(254) UNIQUE, " + _
-        "Access int NOT NULL DEFAULT 0, " + _
-        "ActivationCode int, " + _
-        "LoginSecret int DEFAULT NULL, " + _
-        "LoginTime TIMESTAMP NULL)")
-        ExecuteNonQuery(Connection, "CREATE TABLE HadithRankings (UserID int NOT NULL, " + _
-        "Collection VARCHAR(254) NOT NULL, " + _
-        "BookIndex int, " + _
-        "HadithIndex int NOT NULL, " + _
-        "Ranking int NOT NULL)")
-        Connection.Close()
-    End Sub
-    Public Shared Sub RemoveDatabase()
-        Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
-        If Connection Is Nothing Then Return
-        Dim Command As MySql.Data.MySqlClient.MySqlCommand = Connection.CreateCommand()
-        ExecuteNonQuery(Connection, "DROP TABLE Users")
-        ExecuteNonQuery(Connection, "DROP TABLE HadithRankings")
-        Connection.Close()
-    End Sub
-    Public Shared Sub CleanupStaleActivations()
-        Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
-        If Connection Is Nothing Then Return
-        ExecuteNonQuery(Connection, "DELETE FROM Users WHERE ActivationCode IS NOT NULL AND (LoginTime IS NULL OR UTC_TIMESTAMP > TIMESTAMPADD(DAY, 10, LoginTime))")
-        Connection.Close()
-    End Sub
-    Public Shared Sub CleanupStaleLoginSessions()
-        Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
-        If Connection Is Nothing Then Return
-        ExecuteNonQuery(Connection, "UPDATE Users SET LoginSecret=NULL, LoginTime=NULL WHERE ActivationCode IS NOT NULL AND (LoginTime IS NOT NULL AND UTC_TIMESTAMP > TIMESTAMPADD(HOUR, 1, LoginTime))")
-        Connection.Close()
-    End Sub
-    Public Shared Sub AddUser(ByVal UserName As String, ByVal Password As String, ByVal EMail As String)
-        Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
-        If Connection Is Nothing Then Return
-        Dim Generator As New System.Random()
-        ExecuteNonQuery(Connection, "INSERT INTO Users (UserName, Password, EMail, ActivationCode, LoginTime) VALUES (@UserName, UNHEX(SHA1(@Password)), @EMail, @Code, UTC_TIMESTAMP)", _
-                        New Generic.Dictionary(Of String, Object) From {{"@UserName", UserName}, {"@Password", Password}, {"@EMail", EMail}, {"@Code", CStr(Generator.Next(0, 99999999))}})
-        Connection.Close()
-    End Sub
-    Public Shared Function GetUserID(ByVal UserName As String, ByVal Password As String) As Integer
-        Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
-        If Connection Is Nothing Then Return -1
-        Dim Command As MySql.Data.MySqlClient.MySqlCommand = Connection.CreateCommand()
-        Command.CommandText = "SELECT UserID FROM Users WHERE UserName=@UserName AND Password=UNHEX(SHA1(@Password))"
-        Command.Parameters.AddWithValue("@UserName", UserName)
-        Command.Parameters.AddWithValue("@Password", Password)
-        Dim Reader As MySql.Data.MySqlClient.MySqlDataReader = Command.ExecuteReader()
-        If Reader.Read() AndAlso Not Reader.IsDBNull(0) Then
-            GetUserID = Reader.GetInt32("UserID")
-        Else
-            GetUserID = -1
-        End If
-        Reader.Close()
-        Connection.Close()
-    End Function
-    Public Shared Function GetUserID(ByVal UserName As String) As Integer
-        Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
-        If Connection Is Nothing Then Return -1
-        Dim Command As MySql.Data.MySqlClient.MySqlCommand = Connection.CreateCommand()
-        Command.CommandText = "SELECT UserID FROM Users WHERE UserName=@UserName"
-        Command.Parameters.AddWithValue("@UserName", UserName)
-        Dim Reader As MySql.Data.MySqlClient.MySqlDataReader = Command.ExecuteReader()
-        If Reader.Read() AndAlso Not Reader.IsDBNull(0) Then
-            GetUserID = Reader.GetInt32("UserID")
-        Else
-            GetUserID = -1
-        End If
-        Reader.Close()
-        Connection.Close()
-    End Function
-    Public Shared Function GetUserIDByEMail(ByVal EMail As String) As Integer
-        Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
-        If Connection Is Nothing Then Return -1
-        Dim Command As MySql.Data.MySqlClient.MySqlCommand = Connection.CreateCommand()
-        Command.CommandText = "SELECT UserID FROM Users WHERE EMail=@EMail"
-        Command.Parameters.AddWithValue("@EMail", EMail)
-        Dim Reader As MySql.Data.MySqlClient.MySqlDataReader = Command.ExecuteReader()
-        If Reader.Read() AndAlso Not Reader.IsDBNull(0) Then
-            GetUserIDByEMail = Reader.GetInt32("UserID")
-        Else
-            GetUserIDByEMail = -1
-        End If
-        Reader.Close()
-        Connection.Close()
-    End Function
-    Public Shared Function GetUserResetCode(ByVal UserID As Integer) As UInteger
-        Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
-        If Connection Is Nothing Then Return &HFFFFFFFFL
-        Dim Command As MySql.Data.MySqlClient.MySqlCommand = Connection.CreateCommand()
-        Command.CommandText = "SELECT CRC32(Password) FROM Users WHERE UserID=" + CStr(UserID)
-        Dim Reader As MySql.Data.MySqlClient.MySqlDataReader = Command.ExecuteReader()
-        If Reader.Read() AndAlso Not Reader.IsDBNull(0) Then
-            GetUserResetCode = Reader.GetUInt32("CRC32(Password)")
-        Else
-            GetUserResetCode = &HFFFFFFFFL
-        End If
-        Reader.Close()
-        Connection.Close()
-    End Function
-    Public Shared Function CheckLogin(ByVal UserID As Integer, ByVal Secret As Integer) As Boolean
-        Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
-        If Connection Is Nothing Then Return False
-        Dim Command As MySql.Data.MySqlClient.MySqlCommand = Connection.CreateCommand()
-        Command.CommandText = "SELECT UserID FROM Users WHERE UserID=" + CStr(UserID) + " AND ActivationCode IS NULL AND LoginSecret=" + CStr(Secret) + CStr(IIf(Secret Mod 2 = 0, " AND LoginTime IS NULL", " AND LoginTime IS NOT NULL AND UTC_TIMESTAMP < TIMESTAMPADD(HOUR, 1, LoginTime)"))
-        Dim Reader As MySql.Data.MySqlClient.MySqlDataReader = Command.ExecuteReader()
-        If Reader.Read() AndAlso Not Reader.IsDBNull(0) Then
-            CheckLogin = CInt(Reader.Item("UserID")) = UserID
-        Else
-            CheckLogin = False
-        End If
-        Reader.Close()
-        Connection.Close()
-    End Function
-    Public Shared Function CheckAccess(ByVal UserID As Integer) As Integer
-        Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
-        If Connection Is Nothing Then Return 0
-        Dim Command As MySql.Data.MySqlClient.MySqlCommand = Connection.CreateCommand()
-        Command.CommandText = "SELECT Access FROM Users WHERE UserID=" + CStr(UserID)
-        Dim Reader As MySql.Data.MySqlClient.MySqlDataReader = Command.ExecuteReader()
-        If Reader.Read() AndAlso Not Reader.IsDBNull(0) Then
-            CheckAccess = CInt(Reader.Item("Access"))
-        Else
-            CheckAccess = 0
-        End If
-        Reader.Close()
-        Connection.Close()
-    End Function
-    Public Shared Function SetLogin(ByVal UserID As Integer, ByVal Persist As Boolean) As Integer
-        Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
-        If Connection Is Nothing Then Return -1
-        Dim Generator As New System.Random()
-        'Persistant login secret is even, non-persistant is odd
-        SetLogin = (Generator.Next(0, 99999999) \ 2) * 2 + CInt(IIf(Persist, 0, 1))
-        ExecuteNonQuery(Connection, "UPDATE Users SET LoginSecret=" + CStr(SetLogin) + ", LoginTime=" + CStr(IIf(Persist, "NULL", "UTC_TIMESTAMP")) + " WHERE UserID=" + CStr(UserID))
-        Connection.Close()
-    End Function
-    Public Shared Sub ClearLogin(ByVal UserID As Integer)
-        Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
-        If Connection Is Nothing Then Return
-        ExecuteNonQuery(Connection, "UPDATE Users SET LoginSecret=NULL, LoginTime=NULL WHERE UserID=" + CStr(UserID))
-        Connection.Close()
-    End Sub
-    Public Shared Function GetUserActivated(ByVal UserID As Integer) As Integer
-        Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
-        If Connection Is Nothing Then Return -1
-        Dim Command As MySql.Data.MySqlClient.MySqlCommand = Connection.CreateCommand()
-        Command.CommandText = "SELECT ActivationCode FROM Users WHERE UserID=" + CStr(UserID)
-        Dim Reader As MySql.Data.MySqlClient.MySqlDataReader = Command.ExecuteReader()
-        'If Reader.IsDBNull(0) Then Return -1 'NULL is activated
-        If Not Reader.Read() OrElse Reader.IsDBNull(0) Then
-            GetUserActivated = -1 'NULL is activated
-        Else
-            GetUserActivated = Reader.GetInt32("ActivationCode")
-        End If
-        Reader.Close()
-        Connection.Close()
-    End Function
-    Public Shared Function GetUserName(ByVal UserID As Integer) As String
-        Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
-        If Connection Is Nothing Then Return String.Empty
-        Dim Command As MySql.Data.MySqlClient.MySqlCommand = Connection.CreateCommand()
-        Command.CommandText = "SELECT UserName FROM Users WHERE UserID=" + CStr(UserID)
-        Dim Reader As MySql.Data.MySqlClient.MySqlDataReader = Command.ExecuteReader()
-        If Reader.Read() AndAlso Not Reader.IsDBNull(0) Then
-            GetUserName = Reader.GetString("UserName")
-        Else
-            GetUserName = String.Empty
-        End If
-        Reader.Close()
-        Connection.Close()
-    End Function
-    Public Shared Function GetUserEMail(ByVal UserID As Integer) As String
-        Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
-        If Connection Is Nothing Then Return String.Empty
-        Dim Command As MySql.Data.MySqlClient.MySqlCommand = Connection.CreateCommand()
-        Command.CommandText = "SELECT EMail FROM Users WHERE UserID=" + CStr(UserID)
-        Dim Reader As MySql.Data.MySqlClient.MySqlDataReader = Command.ExecuteReader()
-        If Reader.Read() AndAlso Not Reader.IsDBNull(0) Then
-            GetUserEMail = Reader.GetString("EMail")
-        Else
-            GetUserEMail = String.Empty
-        End If
-        Reader.Close()
-        Connection.Close()
-    End Function
-    Public Shared Sub ChangeUserName(ByVal UserID As Integer, ByVal UserName As String)
-        Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
-        If Connection Is Nothing Then Return
-        ExecuteNonQuery(Connection, "UPDATE Users SET UserName=@UserName WHERE UserID=" + CStr(UserID), New Generic.Dictionary(Of String, Object) From {{"@UserName", UserName}})
-        Connection.Close()
-    End Sub
-    Public Shared Sub ChangeUserPassword(ByVal UserID As Integer, ByVal Password As String)
-        Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
-        If Connection Is Nothing Then Return
-        ExecuteNonQuery(Connection, "UPDATE Users SET Password=UNHEX(SHA1(@Password)) WHERE UserID=" + CStr(UserID), New Generic.Dictionary(Of String, Object) From {{"@Password", Password}})
-        Connection.Close()
-    End Sub
-    Public Shared Sub ChangeUserEMail(ByVal UserID As Integer, ByVal EMail As String)
-        Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
-        If Connection Is Nothing Then Return
-        Dim Generator As New System.Random()
-        ExecuteNonQuery(Connection, "UPDATE Users SET EMail=@EMail, ActivationCode='" + CStr(Generator.Next(0, 99999999)) + "' WHERE UserID=" + CStr(UserID), New Generic.Dictionary(Of String, Object) From {{"@EMail", EMail}})
-        Connection.Close()
-    End Sub
-    Public Shared Sub SetUserActivated(ByVal UserID As Integer)
-        Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
-        If Connection Is Nothing Then Return
-        Dim Generator As New System.Random()
-        ExecuteNonQuery(Connection, "UPDATE Users SET ActivationCode=NULL, LoginTime=NULL WHERE UserID=" + CStr(UserID))
-        Connection.Close()
-    End Sub
-    Public Shared Sub RemoveUser(ByVal UserID As Integer)
-        Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
-        If Connection Is Nothing Then Return
-        ExecuteNonQuery(Connection, "DELETE FROM Users WHERE UserID=" + CStr(UserID))
-        Connection.Close()
-    End Sub
-    Public Shared Function GetHadithCollectionRankingData(ByVal Collection As String) As Double
-        Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
-        If Connection Is Nothing Then Return -1
-        Dim Command As MySql.Data.MySqlClient.MySqlCommand = Connection.CreateCommand()
-        Command.CommandText = "SELECT AVG(Ranking) AS AvgRank FROM HadithRankings Collection=@Collection"
-        Command.Parameters.AddWithValue("@Collection", Collection)
-        Dim Reader As MySql.Data.MySqlClient.MySqlDataReader = Command.ExecuteReader()
-        If Reader.Read() AndAlso Not Reader.IsDBNull(0) Then
-            GetHadithCollectionRankingData = Reader.GetInt32("AvgRank")
-        Else
-            GetHadithCollectionRankingData = -1
-        End If
-        Reader.Close()
-        Connection.Close()
-    End Function
-    Public Shared Function GetHadithBookRankingData(ByVal Collection As String, ByVal Book As Integer) As Double
-        Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
-        If Connection Is Nothing Then Return -1
-        Dim Command As MySql.Data.MySqlClient.MySqlCommand = Connection.CreateCommand()
-        Command.CommandText = "SELECT AVG(Ranking) AS AvgRank FROM HadithRankings WHERE Collection=@Collection AND BookIndex=" + CStr(Book)
-        Command.Parameters.AddWithValue("@Collection", Collection)
-        Dim Reader As MySql.Data.MySqlClient.MySqlDataReader = Command.ExecuteReader()
-        If Reader.Read() AndAlso Not Reader.IsDBNull(0) Then
-            GetHadithBookRankingData = Reader.GetInt32("AvgRank")
-        Else
-            GetHadithBookRankingData = -1
-        End If
-        Reader.Close()
-        Connection.Close()
-    End Function
-    Public Shared Function GetHadithRankingData(ByVal Collection As String, ByVal Book As Integer, ByVal Hadith As Integer) As Integer()
-        Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
-        If Connection Is Nothing Then Return {0, 0}
-        Dim Command As MySql.Data.MySqlClient.MySqlCommand = Connection.CreateCommand()
-        Command.CommandText = "SELECT SUM(Ranking) AS SumRank, COUNT(Ranking) AS CountRank FROM HadithRankings WHERE Collection=@Collection AND BookIndex=" + CStr(Book) + " AND HadithIndex=" + CStr(Hadith)
-        Command.Parameters.AddWithValue("@Collection", Collection)
-        Dim Reader As MySql.Data.MySqlClient.MySqlDataReader = Command.ExecuteReader()
-        If Reader.Read() AndAlso Not Reader.IsDBNull(0) Then
-            GetHadithRankingData = {Reader.GetInt32("SumRank"), Reader.GetInt32("CountRank")}
-        Else
-            GetHadithRankingData = {0, 0}
-        End If
-        Reader.Close()
-        Connection.Close()
-    End Function
-    Public Shared Function GetUserHadithRankingData(ByVal UserID As Integer, ByVal Collection As String, ByVal Book As Integer, ByVal Hadith As Integer) As Integer
-        Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
-        If Connection Is Nothing Then Return -1
-        Dim Command As MySql.Data.MySqlClient.MySqlCommand = Connection.CreateCommand()
-        Command.CommandText = "SELECT Ranking FROM HadithRankings WHERE UserID=" + CStr(UserID) + " AND Collection=@Collection AND BookIndex=" + CStr(Book) + " AND HadithIndex=" + CStr(Hadith)
-        Command.Parameters.AddWithValue("@Collection", Collection)
-        Dim Reader As MySql.Data.MySqlClient.MySqlDataReader = Command.ExecuteReader()
-        If Reader.Read() AndAlso Not Reader.IsDBNull(0) Then
-            GetUserHadithRankingData = Reader.GetInt32("Ranking")
-        Else
-            GetUserHadithRankingData = -1
-        End If
-        Reader.Close()
-        Connection.Close()
-    End Function
-    Public Shared Function SetUserHadithRankingData(ByVal UserID As Integer, ByVal Collection As String, ByVal Book As Integer, ByVal Hadith As Integer, ByVal Rank As Integer) As Double
-        Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
-        If Connection Is Nothing Then Return -1
-        ExecuteNonQuery(Connection, "INSERT INTO HadithRankings (UserID, Collection, BookIndex, HadithIndex, Ranking) VALUES (" + CStr(UserID) + ", @Collection, " + CStr(Book) + ", " + CStr(Hadith) + ", " + CStr(Rank) + ")", New Generic.Dictionary(Of String, Object) From {{"@Collection", Collection}})
-        Connection.Close()
-    End Function
-    Public Shared Function UpdateUserHadithRankingData(ByVal UserID As Integer, ByVal Collection As String, ByVal Book As Integer, ByVal Hadith As Integer, ByVal Rank As Integer) As Double
-        Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
-        If Connection Is Nothing Then Return -1
-        ExecuteNonQuery(Connection, "UPDATE HadithRankings SET Ranking=" + CStr(Rank) + " WHERE UserID=" + CStr(UserID) + " AND Collection=@Collection AND BookIndex=" + CStr(Book) + " AND HadithIndex=" + CStr(Hadith), New Generic.Dictionary(Of String, Object) From {{"@Collection", Collection}})
-        Connection.Close()
-    End Function
-    Public Shared Function RemoveUserHadithRankingData(ByVal UserID As Integer, ByVal Collection As String, ByVal Book As Integer, ByVal Hadith As Integer) As Double
-        Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
-        If Connection Is Nothing Then Return -1
-        ExecuteNonQuery(Connection, "DELETE FROM HadithRankings WHERE UserID=" + CStr(UserID) + " AND Collection=@Collection AND BookIndex=" + CStr(Book) + " AND HadithIndex=" + CStr(Hadith), New Generic.Dictionary(Of String, Object) From {{"@Collection", Collection}})
-        Connection.Close()
-    End Function
-End Class
+            Return Mapping.ToArray()
+        End Function
+        Public Shared Function GetSharedHadithIndex(ByVal TranslationIndexes As Collections.Generic.List(Of Collections.Generic.List(Of Object)), ByVal TranslateBookIndex As Integer, ByVal HadithIndex As Integer, ByVal SubCount As Integer) As Integer
+            Dim Count As Integer
+            Dim HadithCount As Integer
+            Dim ChildCount As Integer
+            Dim HadithValue As Integer
+            Dim SharedHadith As Integer = -1
+            If TypeOf TranslationIndexes(TranslateBookIndex).Item(HadithIndex) Is Integer() Then
+                HadithValue = DirectCast(TranslationIndexes(TranslateBookIndex)(HadithIndex), Integer())(SubCount)
+            Else
+                HadithValue = CInt(TranslationIndexes(TranslateBookIndex)(HadithIndex))
+            End If
+            For Count = 0 To TranslateBookIndex
+                For HadithCount = 0 To CInt(IIf(Count = TranslateBookIndex, HadithIndex, TranslationIndexes(Count).Count - 1))
+                    If TypeOf TranslationIndexes(Count)(HadithCount) Is Integer() Then
+                        For ChildCount = 0 To CInt(IIf(Count = TranslateBookIndex And HadithCount = HadithIndex, SubCount - 1, DirectCast(TranslationIndexes(Count)(HadithCount), Integer()).Length - 1))
+                            If DirectCast(TranslationIndexes(Count)(HadithCount), Integer())(ChildCount) = HadithValue Then
+                                SharedHadith += 1
+                            End If
+                        Next
+                    Else
+                        If CInt(TranslationIndexes(Count)(HadithCount)) = HadithValue Then
+                            SharedHadith += 1
+                        End If
+                    End If
+                Next
+            Next
+            Return SharedHadith
+        End Function
+        Public Shared Function GetTranslationHadith(XMLDocTranslate As System.Xml.XmlDocument, Strings() As String, ByVal Index As Integer, ByVal BookIndex As Integer, ByVal HadithIndex As Integer) As String()
+            Dim BookNode As System.Xml.XmlNode
+            Dim Node As System.Xml.XmlNode
+            Dim Count As Integer
+            Dim SubCount As Integer
+            Dim SourceStart As Integer
+            Dim Volume As Integer
+            Dim Books() As Integer
+            Dim TranslateBookIndex As Integer
+            Dim TranslationIndexes As Collections.Generic.List(Of Collections.Generic.List(Of Object))
+            Dim TranslationHadith As New ArrayList
+            If CachedData.IslamData.Collections(Index).Translations.Length = 0 Then Return New String() {}
+            For Count = 0 To Utility.GetChildNode("books", XMLDocTranslate.DocumentElement.ChildNodes).ChildNodes.Count - 1
+                BookNode = Utility.GetChildNode("books", XMLDocTranslate.DocumentElement.ChildNodes).ChildNodes.Item(Count)
+                If BookNode.Name = "book" Then
+                    Node = BookNode.Attributes.GetNamedItem("sourcebook")
+                    If Node Is Nothing Then
+                        Books = New Integer() {Count + 1}
+                    Else
+                        Books = ParseBookTranslationIndex(Node.Value)
+                    End If
+                    Node = BookNode.Attributes.GetNamedItem("volume")
+                    If Node Is Nothing Then
+                        Volume = -1
+                    Else
+                        Volume = CInt(Node.Value)
+                    End If
+                    TranslateBookIndex = Array.FindIndex(Books, Function(CheckIndex As Integer) CheckIndex = BookIndex + 1)
+                    If TranslateBookIndex <> -1 Then
+                        Node = BookNode.Attributes.GetNamedItem("sourcestart")
+                        If Node Is Nothing Then
+                            SourceStart = HadithIndex
+                        Else
+                            SourceStart = CInt(Node.Value.Split("|"c)(TranslateBookIndex))
+                        End If
+                        Node = BookNode.Attributes.GetNamedItem("sourceindex")
+                        If Node Is Nothing Then
+                            TranslationHadith.Add(CStr(IIf(Volume = -1, String.Empty, Utility.LoadResourceString("Hadith_Volume") + ": " + CStr(Volume) + " ")) + Utility.LoadResourceString("Hadith_Books") + ": " + CStr(Books(TranslateBookIndex)) + " " + Utility.LoadResourceString("Hadith_Hadith") + ": " + CStr(HadithIndex))
+                            TranslationHadith.AddRange(Utility.GetFileLinesByNumberPrefix(Strings, BuildTranslationIndex(XMLDocTranslate, Volume, CInt(BookNode.Attributes.GetNamedItem("index").Value), GetHadithChapter(BookNode, HadithIndex), HadithIndex, 0)))
+                        Else
+                            TranslationIndexes = ParseHadithTranslationIndex(Node.Value)
+                            If HadithIndex >= SourceStart AndAlso HadithIndex - SourceStart < TranslationIndexes(TranslateBookIndex).Count Then
+                                If TypeOf TranslationIndexes(TranslateBookIndex)(HadithIndex - SourceStart) Is Integer() Then
+                                    For SubCount = 0 To DirectCast(TranslationIndexes(TranslateBookIndex)(HadithIndex - SourceStart), Integer()).Length - 1
+                                        Dim SharedHadithIndex As Integer = GetSharedHadithIndex(TranslationIndexes, TranslateBookIndex, HadithIndex - SourceStart, SubCount)
+                                        TranslationHadith.Add(CStr(IIf(Volume = -1, String.Empty, Utility.LoadResourceString("Hadith_Volume") + ": " + CStr(Volume) + " ")) + Utility.LoadResourceString("Hadith_Book") + ": " + BookNode.Attributes.GetNamedItem("index").Value + " " + Utility.LoadResourceString("Hadith_Hadith") + ": " + CStr(DirectCast(TranslationIndexes(TranslateBookIndex)(HadithIndex - SourceStart), Integer())(SubCount)))
+                                        TranslationHadith.AddRange(Utility.GetFileLinesByNumberPrefix(Strings, BuildTranslationIndex(XMLDocTranslate, Volume, CInt(BookNode.Attributes.GetNamedItem("index").Value), GetHadithChapter(BookNode, DirectCast(TranslationIndexes(TranslateBookIndex)(HadithIndex - SourceStart), Integer())(SubCount)), DirectCast(TranslationIndexes(TranslateBookIndex)(HadithIndex - SourceStart), Integer())(SubCount), SharedHadithIndex)))
+                                    Next
+                                Else
+                                    If CInt(TranslationIndexes(TranslateBookIndex)(HadithIndex - SourceStart)) = -1 Then Return New String() {}
+                                    Dim SharedHadithIndex As Integer = GetSharedHadithIndex(TranslationIndexes, TranslateBookIndex, HadithIndex - SourceStart, -1)
+                                    TranslationHadith.Add(CStr(IIf(Volume = -1, String.Empty, Utility.LoadResourceString("Hadith_Volume") + ": " + CStr(Volume) + " ")) + Utility.LoadResourceString("Hadith_Book") + ": " + BookNode.Attributes.GetNamedItem("index").Value + " " + Utility.LoadResourceString("Hadith_Hadith") + ": " + CStr(TranslationIndexes(TranslateBookIndex)(HadithIndex - SourceStart)))
+                                    TranslationHadith.AddRange(Utility.GetFileLinesByNumberPrefix(Strings, BuildTranslationIndex(XMLDocTranslate, Volume, CInt(BookNode.Attributes.GetNamedItem("index").Value), GetHadithChapter(BookNode, CInt(TranslationIndexes(TranslateBookIndex)(HadithIndex - SourceStart))), CInt(TranslationIndexes(TranslateBookIndex)(HadithIndex - SourceStart)), SharedHadithIndex)))
+                                End If
+                            End If
+                        End If
+                    End If
+                End If
+            Next
+            Return DirectCast(TranslationHadith.ToArray(GetType(String)), String())
+        End Function
+    End Class
+    Class MailDispatcher
+        Public Shared Sub SendEMail(ByVal EMail As String, ByVal Subject As String, ByVal Body As String)
+            Dim SmtpClient As New Net.Mail.SmtpClient
+            'encrypt and unencrypt password credential
+            SmtpClient.Credentials = New Net.NetworkCredential(Utility.ConnectionData.IslamSourceAdminEMail, Utility.ConnectionData.IslamSourceAdminEMailPass)
+            SmtpClient.Port = 587
+            SmtpClient.Host = Utility.ConnectionData.IslamSourceMailServer
+            Dim SmtpMail As New Net.Mail.MailMessage
+            SmtpMail.From = New Net.Mail.MailAddress(Utility.ConnectionData.IslamSourceAdminEMail, Utility.ConnectionData.IslamSourceAdminName)
+            SmtpMail.To.Add(EMail)
+            SmtpMail.Subject = Subject
+            SmtpMail.Body = Body
+            Try
+                SmtpClient.Send(SmtpMail)
+            Catch eException As Net.Mail.SmtpException
+            End Try
+        End Sub
+        Public Shared Sub SendActivationEMail(ByVal UserName As String, ByVal EMail As String, ByVal UserID As Integer, ByVal ActivationCode As Integer)
+            SendEMail(EMail, String.Format(Utility.LoadResourceString("Acct_ActivationAccountSubject"), Web.HttpContext.Current.Request.Url.Host), _
+                String.Format(Utility.LoadResourceString("Acct_ActivationAccountBody"), Web.HttpContext.Current.Request.Url.Host, UserName, "http://" + Web.HttpContext.Current.Request.Url.Host + "/" + host.GetPageString("ActivateAccount&UserID=" + CStr(UserID) + "&ActivationCode=" + CStr(ActivationCode)), "http://" + Web.HttpContext.Current.Request.Url.Host + "/" + host.GetPageString("ActivateAccount"), CStr(ActivationCode)))
+        End Sub
+        Public Shared Sub SendUserNameReminderEMail(ByVal UserName As String, ByVal EMail As String)
+            SendEMail(EMail, String.Format(Utility.LoadResourceString("Acct_UsernameReminderSubject"), Web.HttpContext.Current.Request.Url.Host), _
+                String.Format(Utility.LoadResourceString("Acct_UsernameReminderBody"), Web.HttpContext.Current.Request.Url.Host, UserName))
+        End Sub
+        Public Shared Sub SendPasswordResetEMail(ByVal UserName As String, ByVal EMail As String, ByVal UserID As Integer, ByVal PasswordResetCode As UInteger)
+            SendEMail(EMail, String.Format(Utility.LoadResourceString("Acct_PasswordResetSubject"), Web.HttpContext.Current.Request.Url.Host), _
+                String.Format(Utility.LoadResourceString("Acct_PasswordResetBody"), Web.HttpContext.Current.Request.Url.Host, UserName, "http://" + Web.HttpContext.Current.Request.Url.Host + "/" + host.GetPageString("ResetPassword&UserID=" + CStr(UserID) + "&PasswordResetCode=" + CStr(PasswordResetCode)), "http://" + Web.HttpContext.Current.Request.Url.Host + "/" + host.GetPageString("ResetPassword"), CStr(PasswordResetCode)))
+        End Sub
+        Public Shared Sub SendUserNameChangedEMail(ByVal UserName As String, ByVal EMail As String)
+            SendEMail(EMail, String.Format(Utility.LoadResourceString("Acct_UsernameChangedSubject"), Web.HttpContext.Current.Request.Url.Host), _
+                String.Format(Utility.LoadResourceString("Acct_UsernameChangedBody"), Web.HttpContext.Current.Request.Url.Host, UserName))
+        End Sub
+        Public Shared Sub SendPasswordChangedEMail(ByVal UserName As String, ByVal EMail As String)
+            SendEMail(EMail, String.Format(Utility.LoadResourceString("Acct_PasswordChangedSubject"), Web.HttpContext.Current.Request.Url.Host), _
+                String.Format(Utility.LoadResourceString("Acct_PasswordChangedBody"), Web.HttpContext.Current.Request.Url.Host, UserName))
+        End Sub
+    End Class
+    Class SiteDatabase
+        Public Shared Function GetConnection() As MySql.Data.MySqlClient.MySqlConnection
+            Dim Connection As MySql.Data.MySqlClient.MySqlConnection = New MySql.Data.MySqlClient.MySqlConnection("Server=" + Utility.ConnectionData.DbConnServer + ";Uid=" + Utility.ConnectionData.DbConnUid + ";Pwd=" + Utility.ConnectionData.DbConnPwd + ";Database=" + Utility.ConnectionData.DbConnDatabase + ";")
+            Try
+                Connection.Open()
+            Catch e As MySql.Data.MySqlClient.MySqlException
+                Return Nothing
+            Catch e As TimeoutException
+                Return Nothing
+            End Try
+            Return Connection
+        End Function
+        Public Shared Sub ExecuteNonQuery(ByVal Connection As MySql.Data.MySqlClient.MySqlConnection, ByVal Query As String, Optional Parameters As Generic.Dictionary(Of String, Object) = Nothing)
+            Dim Command As MySql.Data.MySqlClient.MySqlCommand = Connection.CreateCommand()
+            Command.CommandText = Query
+            If Not Parameters Is Nothing Then
+                For Each Key As String In Parameters.Keys
+                    Command.Parameters.AddWithValue(Key, Parameters(Key))
+                Next
+            End If
+            Command.ExecuteNonQuery()
+        End Sub
+        Public Shared Sub CreateDatabase()
+            Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
+            If Connection Is Nothing Then Return
+            'SHA1 produces 20 bytes not available in MySQL 5.1
+            'should salt the password
+            ExecuteNonQuery(Connection, "CREATE TABLE Users (UserID int NOT NULL AUTO_INCREMENT, " + _
+            "PRIMARY KEY(UserID), " + _
+            "UserName VARCHAR(15) UNIQUE, " + _
+            "Password BINARY(20), " + _
+            "EMail VARCHAR(254) UNIQUE, " + _
+            "Access int NOT NULL DEFAULT 0, " + _
+            "ActivationCode int, " + _
+            "LoginSecret int DEFAULT NULL, " + _
+            "LoginTime TIMESTAMP NULL)")
+            ExecuteNonQuery(Connection, "CREATE TABLE HadithRankings (UserID int NOT NULL, " + _
+            "Collection VARCHAR(254) NOT NULL, " + _
+            "BookIndex int, " + _
+            "HadithIndex int NOT NULL, " + _
+            "Ranking int NOT NULL)")
+            Connection.Close()
+        End Sub
+        Public Shared Sub RemoveDatabase()
+            Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
+            If Connection Is Nothing Then Return
+            Dim Command As MySql.Data.MySqlClient.MySqlCommand = Connection.CreateCommand()
+            ExecuteNonQuery(Connection, "DROP TABLE Users")
+            ExecuteNonQuery(Connection, "DROP TABLE HadithRankings")
+            Connection.Close()
+        End Sub
+        Public Shared Sub CleanupStaleActivations()
+            Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
+            If Connection Is Nothing Then Return
+            ExecuteNonQuery(Connection, "DELETE FROM Users WHERE ActivationCode IS NOT NULL AND (LoginTime IS NULL OR UTC_TIMESTAMP > TIMESTAMPADD(DAY, 10, LoginTime))")
+            Connection.Close()
+        End Sub
+        Public Shared Sub CleanupStaleLoginSessions()
+            Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
+            If Connection Is Nothing Then Return
+            ExecuteNonQuery(Connection, "UPDATE Users SET LoginSecret=NULL, LoginTime=NULL WHERE ActivationCode IS NOT NULL AND (LoginTime IS NOT NULL AND UTC_TIMESTAMP > TIMESTAMPADD(HOUR, 1, LoginTime))")
+            Connection.Close()
+        End Sub
+        Public Shared Sub AddUser(ByVal UserName As String, ByVal Password As String, ByVal EMail As String)
+            Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
+            If Connection Is Nothing Then Return
+            Dim Generator As New System.Random()
+            ExecuteNonQuery(Connection, "INSERT INTO Users (UserName, Password, EMail, ActivationCode, LoginTime) VALUES (@UserName, UNHEX(SHA1(@Password)), @EMail, @Code, UTC_TIMESTAMP)", _
+                            New Generic.Dictionary(Of String, Object) From {{"@UserName", UserName}, {"@Password", Password}, {"@EMail", EMail}, {"@Code", CStr(Generator.Next(0, 99999999))}})
+            Connection.Close()
+        End Sub
+        Public Shared Function GetUserID(ByVal UserName As String, ByVal Password As String) As Integer
+            Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
+            If Connection Is Nothing Then Return -1
+            Dim Command As MySql.Data.MySqlClient.MySqlCommand = Connection.CreateCommand()
+            Command.CommandText = "SELECT UserID FROM Users WHERE UserName=@UserName AND Password=UNHEX(SHA1(@Password))"
+            Command.Parameters.AddWithValue("@UserName", UserName)
+            Command.Parameters.AddWithValue("@Password", Password)
+            Dim Reader As MySql.Data.MySqlClient.MySqlDataReader = Command.ExecuteReader()
+            If Reader.Read() AndAlso Not Reader.IsDBNull(0) Then
+                GetUserID = Reader.GetInt32("UserID")
+            Else
+                GetUserID = -1
+            End If
+            Reader.Close()
+            Connection.Close()
+        End Function
+        Public Shared Function GetUserID(ByVal UserName As String) As Integer
+            Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
+            If Connection Is Nothing Then Return -1
+            Dim Command As MySql.Data.MySqlClient.MySqlCommand = Connection.CreateCommand()
+            Command.CommandText = "SELECT UserID FROM Users WHERE UserName=@UserName"
+            Command.Parameters.AddWithValue("@UserName", UserName)
+            Dim Reader As MySql.Data.MySqlClient.MySqlDataReader = Command.ExecuteReader()
+            If Reader.Read() AndAlso Not Reader.IsDBNull(0) Then
+                GetUserID = Reader.GetInt32("UserID")
+            Else
+                GetUserID = -1
+            End If
+            Reader.Close()
+            Connection.Close()
+        End Function
+        Public Shared Function GetUserIDByEMail(ByVal EMail As String) As Integer
+            Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
+            If Connection Is Nothing Then Return -1
+            Dim Command As MySql.Data.MySqlClient.MySqlCommand = Connection.CreateCommand()
+            Command.CommandText = "SELECT UserID FROM Users WHERE EMail=@EMail"
+            Command.Parameters.AddWithValue("@EMail", EMail)
+            Dim Reader As MySql.Data.MySqlClient.MySqlDataReader = Command.ExecuteReader()
+            If Reader.Read() AndAlso Not Reader.IsDBNull(0) Then
+                GetUserIDByEMail = Reader.GetInt32("UserID")
+            Else
+                GetUserIDByEMail = -1
+            End If
+            Reader.Close()
+            Connection.Close()
+        End Function
+        Public Shared Function GetUserResetCode(ByVal UserID As Integer) As UInteger
+            Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
+            If Connection Is Nothing Then Return &HFFFFFFFFL
+            Dim Command As MySql.Data.MySqlClient.MySqlCommand = Connection.CreateCommand()
+            Command.CommandText = "SELECT CRC32(Password) FROM Users WHERE UserID=" + CStr(UserID)
+            Dim Reader As MySql.Data.MySqlClient.MySqlDataReader = Command.ExecuteReader()
+            If Reader.Read() AndAlso Not Reader.IsDBNull(0) Then
+                GetUserResetCode = Reader.GetUInt32("CRC32(Password)")
+            Else
+                GetUserResetCode = &HFFFFFFFFL
+            End If
+            Reader.Close()
+            Connection.Close()
+        End Function
+        Public Shared Function CheckLogin(ByVal UserID As Integer, ByVal Secret As Integer) As Boolean
+            Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
+            If Connection Is Nothing Then Return False
+            Dim Command As MySql.Data.MySqlClient.MySqlCommand = Connection.CreateCommand()
+            Command.CommandText = "SELECT UserID FROM Users WHERE UserID=" + CStr(UserID) + " AND ActivationCode IS NULL AND LoginSecret=" + CStr(Secret) + CStr(IIf(Secret Mod 2 = 0, " AND LoginTime IS NULL", " AND LoginTime IS NOT NULL AND UTC_TIMESTAMP < TIMESTAMPADD(HOUR, 1, LoginTime)"))
+            Dim Reader As MySql.Data.MySqlClient.MySqlDataReader = Command.ExecuteReader()
+            If Reader.Read() AndAlso Not Reader.IsDBNull(0) Then
+                CheckLogin = CInt(Reader.Item("UserID")) = UserID
+            Else
+                CheckLogin = False
+            End If
+            Reader.Close()
+            Connection.Close()
+        End Function
+        Public Shared Function CheckAccess(ByVal UserID As Integer) As Integer
+            Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
+            If Connection Is Nothing Then Return 0
+            Dim Command As MySql.Data.MySqlClient.MySqlCommand = Connection.CreateCommand()
+            Command.CommandText = "SELECT Access FROM Users WHERE UserID=" + CStr(UserID)
+            Dim Reader As MySql.Data.MySqlClient.MySqlDataReader = Command.ExecuteReader()
+            If Reader.Read() AndAlso Not Reader.IsDBNull(0) Then
+                CheckAccess = CInt(Reader.Item("Access"))
+            Else
+                CheckAccess = 0
+            End If
+            Reader.Close()
+            Connection.Close()
+        End Function
+        Public Shared Function SetLogin(ByVal UserID As Integer, ByVal Persist As Boolean) As Integer
+            Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
+            If Connection Is Nothing Then Return -1
+            Dim Generator As New System.Random()
+            'Persistant login secret is even, non-persistant is odd
+            SetLogin = (Generator.Next(0, 99999999) \ 2) * 2 + CInt(IIf(Persist, 0, 1))
+            ExecuteNonQuery(Connection, "UPDATE Users SET LoginSecret=" + CStr(SetLogin) + ", LoginTime=" + CStr(IIf(Persist, "NULL", "UTC_TIMESTAMP")) + " WHERE UserID=" + CStr(UserID))
+            Connection.Close()
+        End Function
+        Public Shared Sub ClearLogin(ByVal UserID As Integer)
+            Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
+            If Connection Is Nothing Then Return
+            ExecuteNonQuery(Connection, "UPDATE Users SET LoginSecret=NULL, LoginTime=NULL WHERE UserID=" + CStr(UserID))
+            Connection.Close()
+        End Sub
+        Public Shared Function GetUserActivated(ByVal UserID As Integer) As Integer
+            Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
+            If Connection Is Nothing Then Return -1
+            Dim Command As MySql.Data.MySqlClient.MySqlCommand = Connection.CreateCommand()
+            Command.CommandText = "SELECT ActivationCode FROM Users WHERE UserID=" + CStr(UserID)
+            Dim Reader As MySql.Data.MySqlClient.MySqlDataReader = Command.ExecuteReader()
+            'If Reader.IsDBNull(0) Then Return -1 'NULL is activated
+            If Not Reader.Read() OrElse Reader.IsDBNull(0) Then
+                GetUserActivated = -1 'NULL is activated
+            Else
+                GetUserActivated = Reader.GetInt32("ActivationCode")
+            End If
+            Reader.Close()
+            Connection.Close()
+        End Function
+        Public Shared Function GetUserName(ByVal UserID As Integer) As String
+            Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
+            If Connection Is Nothing Then Return String.Empty
+            Dim Command As MySql.Data.MySqlClient.MySqlCommand = Connection.CreateCommand()
+            Command.CommandText = "SELECT UserName FROM Users WHERE UserID=" + CStr(UserID)
+            Dim Reader As MySql.Data.MySqlClient.MySqlDataReader = Command.ExecuteReader()
+            If Reader.Read() AndAlso Not Reader.IsDBNull(0) Then
+                GetUserName = Reader.GetString("UserName")
+            Else
+                GetUserName = String.Empty
+            End If
+            Reader.Close()
+            Connection.Close()
+        End Function
+        Public Shared Function GetUserEMail(ByVal UserID As Integer) As String
+            Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
+            If Connection Is Nothing Then Return String.Empty
+            Dim Command As MySql.Data.MySqlClient.MySqlCommand = Connection.CreateCommand()
+            Command.CommandText = "SELECT EMail FROM Users WHERE UserID=" + CStr(UserID)
+            Dim Reader As MySql.Data.MySqlClient.MySqlDataReader = Command.ExecuteReader()
+            If Reader.Read() AndAlso Not Reader.IsDBNull(0) Then
+                GetUserEMail = Reader.GetString("EMail")
+            Else
+                GetUserEMail = String.Empty
+            End If
+            Reader.Close()
+            Connection.Close()
+        End Function
+        Public Shared Sub ChangeUserName(ByVal UserID As Integer, ByVal UserName As String)
+            Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
+            If Connection Is Nothing Then Return
+            ExecuteNonQuery(Connection, "UPDATE Users SET UserName=@UserName WHERE UserID=" + CStr(UserID), New Generic.Dictionary(Of String, Object) From {{"@UserName", UserName}})
+            Connection.Close()
+        End Sub
+        Public Shared Sub ChangeUserPassword(ByVal UserID As Integer, ByVal Password As String)
+            Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
+            If Connection Is Nothing Then Return
+            ExecuteNonQuery(Connection, "UPDATE Users SET Password=UNHEX(SHA1(@Password)) WHERE UserID=" + CStr(UserID), New Generic.Dictionary(Of String, Object) From {{"@Password", Password}})
+            Connection.Close()
+        End Sub
+        Public Shared Sub ChangeUserEMail(ByVal UserID As Integer, ByVal EMail As String)
+            Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
+            If Connection Is Nothing Then Return
+            Dim Generator As New System.Random()
+            ExecuteNonQuery(Connection, "UPDATE Users SET EMail=@EMail, ActivationCode='" + CStr(Generator.Next(0, 99999999)) + "' WHERE UserID=" + CStr(UserID), New Generic.Dictionary(Of String, Object) From {{"@EMail", EMail}})
+            Connection.Close()
+        End Sub
+        Public Shared Sub SetUserActivated(ByVal UserID As Integer)
+            Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
+            If Connection Is Nothing Then Return
+            Dim Generator As New System.Random()
+            ExecuteNonQuery(Connection, "UPDATE Users SET ActivationCode=NULL, LoginTime=NULL WHERE UserID=" + CStr(UserID))
+            Connection.Close()
+        End Sub
+        Public Shared Sub RemoveUser(ByVal UserID As Integer)
+            Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
+            If Connection Is Nothing Then Return
+            ExecuteNonQuery(Connection, "DELETE FROM Users WHERE UserID=" + CStr(UserID))
+            Connection.Close()
+        End Sub
+        Public Shared Function GetHadithCollectionRankingData(ByVal Collection As String) As Double
+            Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
+            If Connection Is Nothing Then Return -1
+            Dim Command As MySql.Data.MySqlClient.MySqlCommand = Connection.CreateCommand()
+            Command.CommandText = "SELECT AVG(Ranking) AS AvgRank FROM HadithRankings Collection=@Collection"
+            Command.Parameters.AddWithValue("@Collection", Collection)
+            Dim Reader As MySql.Data.MySqlClient.MySqlDataReader = Command.ExecuteReader()
+            If Reader.Read() AndAlso Not Reader.IsDBNull(0) Then
+                GetHadithCollectionRankingData = Reader.GetInt32("AvgRank")
+            Else
+                GetHadithCollectionRankingData = -1
+            End If
+            Reader.Close()
+            Connection.Close()
+        End Function
+        Public Shared Function GetHadithBookRankingData(ByVal Collection As String, ByVal Book As Integer) As Double
+            Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
+            If Connection Is Nothing Then Return -1
+            Dim Command As MySql.Data.MySqlClient.MySqlCommand = Connection.CreateCommand()
+            Command.CommandText = "SELECT AVG(Ranking) AS AvgRank FROM HadithRankings WHERE Collection=@Collection AND BookIndex=" + CStr(Book)
+            Command.Parameters.AddWithValue("@Collection", Collection)
+            Dim Reader As MySql.Data.MySqlClient.MySqlDataReader = Command.ExecuteReader()
+            If Reader.Read() AndAlso Not Reader.IsDBNull(0) Then
+                GetHadithBookRankingData = Reader.GetInt32("AvgRank")
+            Else
+                GetHadithBookRankingData = -1
+            End If
+            Reader.Close()
+            Connection.Close()
+        End Function
+        Public Shared Function GetHadithRankingData(ByVal Collection As String, ByVal Book As Integer, ByVal Hadith As Integer) As Integer()
+            Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
+            If Connection Is Nothing Then Return {0, 0}
+            Dim Command As MySql.Data.MySqlClient.MySqlCommand = Connection.CreateCommand()
+            Command.CommandText = "SELECT SUM(Ranking) AS SumRank, COUNT(Ranking) AS CountRank FROM HadithRankings WHERE Collection=@Collection AND BookIndex=" + CStr(Book) + " AND HadithIndex=" + CStr(Hadith)
+            Command.Parameters.AddWithValue("@Collection", Collection)
+            Dim Reader As MySql.Data.MySqlClient.MySqlDataReader = Command.ExecuteReader()
+            If Reader.Read() AndAlso Not Reader.IsDBNull(0) Then
+                GetHadithRankingData = {Reader.GetInt32("SumRank"), Reader.GetInt32("CountRank")}
+            Else
+                GetHadithRankingData = {0, 0}
+            End If
+            Reader.Close()
+            Connection.Close()
+        End Function
+        Public Shared Function GetUserHadithRankingData(ByVal UserID As Integer, ByVal Collection As String, ByVal Book As Integer, ByVal Hadith As Integer) As Integer
+            Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
+            If Connection Is Nothing Then Return -1
+            Dim Command As MySql.Data.MySqlClient.MySqlCommand = Connection.CreateCommand()
+            Command.CommandText = "SELECT Ranking FROM HadithRankings WHERE UserID=" + CStr(UserID) + " AND Collection=@Collection AND BookIndex=" + CStr(Book) + " AND HadithIndex=" + CStr(Hadith)
+            Command.Parameters.AddWithValue("@Collection", Collection)
+            Dim Reader As MySql.Data.MySqlClient.MySqlDataReader = Command.ExecuteReader()
+            If Reader.Read() AndAlso Not Reader.IsDBNull(0) Then
+                GetUserHadithRankingData = Reader.GetInt32("Ranking")
+            Else
+                GetUserHadithRankingData = -1
+            End If
+            Reader.Close()
+            Connection.Close()
+        End Function
+        Public Shared Function SetUserHadithRankingData(ByVal UserID As Integer, ByVal Collection As String, ByVal Book As Integer, ByVal Hadith As Integer, ByVal Rank As Integer) As Double
+            Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
+            If Connection Is Nothing Then Return -1
+            ExecuteNonQuery(Connection, "INSERT INTO HadithRankings (UserID, Collection, BookIndex, HadithIndex, Ranking) VALUES (" + CStr(UserID) + ", @Collection, " + CStr(Book) + ", " + CStr(Hadith) + ", " + CStr(Rank) + ")", New Generic.Dictionary(Of String, Object) From {{"@Collection", Collection}})
+            Connection.Close()
+        End Function
+        Public Shared Function UpdateUserHadithRankingData(ByVal UserID As Integer, ByVal Collection As String, ByVal Book As Integer, ByVal Hadith As Integer, ByVal Rank As Integer) As Double
+            Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
+            If Connection Is Nothing Then Return -1
+            ExecuteNonQuery(Connection, "UPDATE HadithRankings SET Ranking=" + CStr(Rank) + " WHERE UserID=" + CStr(UserID) + " AND Collection=@Collection AND BookIndex=" + CStr(Book) + " AND HadithIndex=" + CStr(Hadith), New Generic.Dictionary(Of String, Object) From {{"@Collection", Collection}})
+            Connection.Close()
+        End Function
+        Public Shared Function RemoveUserHadithRankingData(ByVal UserID As Integer, ByVal Collection As String, ByVal Book As Integer, ByVal Hadith As Integer) As Double
+            Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
+            If Connection Is Nothing Then Return -1
+            ExecuteNonQuery(Connection, "DELETE FROM HadithRankings WHERE UserID=" + CStr(UserID) + " AND Collection=@Collection AND BookIndex=" + CStr(Book) + " AND HadithIndex=" + CStr(Hadith), New Generic.Dictionary(Of String, Object) From {{"@Collection", Collection}})
+            Connection.Close()
+        End Function
+    End Class
