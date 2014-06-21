@@ -682,6 +682,14 @@ Public Class PageLoader
             Password = NewPassword
         End Sub
     End Structure
+    Structure DateItem
+        Dim Name As String
+        Dim Description As String
+        Public Sub New(ByVal NewName As String, ByVal NewDescription As String, Optional ByVal NewOnClick As String = "")
+            Name = NewName
+            Description = NewDescription
+        End Sub
+    End Structure
     Structure ButtonItem
         Dim Name As String
         Dim Description As String
@@ -762,6 +770,9 @@ Public Class PageLoader
     Public Shared Function IsEditItem(ByVal Item As Object) As Boolean
         IsEditItem = TypeOf Item Is EditItem
     End Function
+    Public Shared Function IsDateItem(ByVal Item As Object) As Boolean
+        IsDateItem = TypeOf Item Is DateItem
+    End Function
     Public Shared Function IsRadioItem(ByVal Item As Object) As Boolean
         IsRadioItem = TypeOf Item Is RadioItem
     End Function
@@ -840,6 +851,9 @@ Public Class PageLoader
             List.Add(New EditItem(XMLChildNode.Attributes.GetNamedItem("name").Value, _
                                   Utility.ParseValue(XMLChildNode.Attributes.GetNamedItem("defaultvalue"), String.Empty), _
                                   CInt(Utility.ParseValue(XMLChildNode.Attributes.GetNamedItem("rows"), "1"))))
+        ElseIf XMLChildNode.Name = "date" Then
+            List.Add(New DateItem(XMLChildNode.Attributes.GetNamedItem("name").Value, _
+                                  XMLChildNode.Attributes.GetNamedItem("description").Value))
         ElseIf XMLChildNode.Name = "radio" Then
             Dim XMLOptionNode As System.Xml.XmlNode
             Dim OptionArray As New ArrayList

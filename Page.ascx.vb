@@ -328,113 +328,120 @@ Partial Class Page
 
                     If DirectCast(Item, PageLoader.EditItem).Rows <> 0 Then writer.WriteAttribute("size", "20")
                     writer.Write(HtmlTextWriter.TagRightChar)
-                End If
-            ElseIf (PageLoader.IsRadioItem(Item)) Then
-                writer.Write(vbCrLf + BaseTabs)
-                writer.WriteBeginTag("span")
-                writer.WriteAttribute("id", DirectCast(Item, PageLoader.RadioItem).Name + "_")
-                If DirectCast(Item, PageLoader.RadioItem).Name = "diacriticscheme" Then writer.WriteAttribute("style", "display: none;")
+            End If
+        ElseIf (PageLoader.IsDateItem(Item)) Then
+            writer.Write(vbCrLf + BaseTabs)
+            writer.WriteBeginTag("input")
+            writer.WriteAttribute("type", "text")
+            writer.WriteAttribute("name", DirectCast(Item, PageLoader.DateItem).Name)
+            writer.WriteAttribute("id", DirectCast(Item, PageLoader.DateItem).Name)
             writer.Write(HtmlTextWriter.TagRightChar)
-                writer.Write(Utility.HtmlTextEncode(Utility.LoadResourceString(DirectCast(Item, PageLoader.RadioItem).Description)))
-                Dim LoadArray As Object() = Nothing
-                Dim Length As Integer
-                Dim Text As String
-                Dim DefaultValue As String
-                Dim OnChangeJS() As String = Nothing
+        ElseIf (PageLoader.IsRadioItem(Item)) Then
+            writer.Write(vbCrLf + BaseTabs)
+            writer.WriteBeginTag("span")
+            writer.WriteAttribute("id", DirectCast(Item, PageLoader.RadioItem).Name + "_")
+            If DirectCast(Item, PageLoader.RadioItem).Name = "diacriticscheme" Then writer.WriteAttribute("style", "display: none;")
+            writer.Write(HtmlTextWriter.TagRightChar)
+            writer.Write(Utility.HtmlTextEncode(Utility.LoadResourceString(DirectCast(Item, PageLoader.RadioItem).Description)))
+            Dim LoadArray As Object() = Nothing
+            Dim Length As Integer
+            Dim Text As String
+            Dim DefaultValue As String
+            Dim OnChangeJS() As String = Nothing
+            If Not DirectCast(Item, PageLoader.RadioItem).OnChangeFunction Is Nothing Then
+                OnChangeJS = CType(DirectCast(Item, PageLoader.RadioItem).OnChangeFunction.Invoke(Nothing, Nothing), String())
+                AddToJSFunctions(OnChangeJS)
+            End If
+            If Not DirectCast(Item, PageLoader.RadioItem).OnPopulateFunction Is Nothing Then
+                LoadArray = CType(DirectCast(Item, PageLoader.RadioItem).OnPopulateFunction.Invoke(Nothing, Nothing), Object())
+                Length = LoadArray.Length
+            Else
+                Length = DirectCast(Item, PageLoader.RadioItem).OptionArray.Length
+            End If
+            If HttpContext.Current.Request.QueryString.Get(DirectCast(Item, PageLoader.RadioItem).Name) Is Nothing Then
+                DefaultValue = DirectCast(Item, PageLoader.RadioItem).DefaultValue
+            Else
+                DefaultValue = HttpContext.Current.Request.QueryString.Get(DirectCast(Item, PageLoader.RadioItem).Name)
+            End If
+            If (DirectCast(Item, PageLoader.RadioItem).UseList) Then
+                writer.Write(vbCrLf + BaseTabs + vbTab)
+                writer.WriteBeginTag("select")
+                writer.WriteAttribute("name", DirectCast(Item, PageLoader.RadioItem).Name)
+                writer.WriteAttribute("id", DirectCast(Item, PageLoader.RadioItem).Name)
                 If Not DirectCast(Item, PageLoader.RadioItem).OnChangeFunction Is Nothing Then
-                    OnChangeJS = CType(DirectCast(Item, PageLoader.RadioItem).OnChangeFunction.Invoke(Nothing, Nothing), String())
-                    AddToJSFunctions(OnChangeJS)
+                    writer.WriteAttribute("onchange", OnChangeJS(0))
                 End If
-                If Not DirectCast(Item, PageLoader.RadioItem).OnPopulateFunction Is Nothing Then
-                    LoadArray = CType(DirectCast(Item, PageLoader.RadioItem).OnPopulateFunction.Invoke(Nothing, Nothing), Object())
-                    Length = LoadArray.Length
-                Else
-                    Length = DirectCast(Item, PageLoader.RadioItem).OptionArray.Length
-                End If
-                If HttpContext.Current.Request.QueryString.Get(DirectCast(Item, PageLoader.RadioItem).Name) Is Nothing Then
-                    DefaultValue = DirectCast(Item, PageLoader.RadioItem).DefaultValue
-                Else
-                    DefaultValue = HttpContext.Current.Request.QueryString.Get(DirectCast(Item, PageLoader.RadioItem).Name)
-                End If
-                If (DirectCast(Item, PageLoader.RadioItem).UseList) Then
-                    writer.Write(vbCrLf + BaseTabs + vbTab)
-                    writer.WriteBeginTag("select")
-                    writer.WriteAttribute("name", DirectCast(Item, PageLoader.RadioItem).Name)
-                    writer.WriteAttribute("id", DirectCast(Item, PageLoader.RadioItem).Name)
-                    If Not DirectCast(Item, PageLoader.RadioItem).OnChangeFunction Is Nothing Then
-                        writer.WriteAttribute("onchange", OnChangeJS(0))
+                writer.Write(HtmlTextWriter.TagRightChar)
+                For SubIndex = 0 To Length - 1
+                    writer.Write(vbCrLf + BaseTabs + vbTab + vbTab)
+                    writer.WriteBeginTag("option")
+                    If DirectCast(Item, PageLoader.RadioItem).OnPopulateFunction Is Nothing OrElse Not TypeOf LoadArray Is Array() Then
+                        writer.WriteAttribute("value", CStr(SubIndex))
+                        If SubIndex = CInt(DefaultValue) Then writer.WriteAttribute("selected", "selected")
+                    Else
+                        writer.WriteAttribute("value", CStr(DirectCast(LoadArray(SubIndex), Object()).GetValue(1)))
+                        If CStr(DirectCast(LoadArray(SubIndex), Object()).GetValue(1)) = DefaultValue Then writer.WriteAttribute("selected", "selected")
                     End If
                     writer.Write(HtmlTextWriter.TagRightChar)
-                    For SubIndex = 0 To Length - 1
-                        writer.Write(vbCrLf + BaseTabs + vbTab + vbTab)
-                        writer.WriteBeginTag("option")
-                        If DirectCast(Item, PageLoader.RadioItem).OnPopulateFunction Is Nothing OrElse Not TypeOf LoadArray Is Array() Then
-                            writer.WriteAttribute("value", CStr(SubIndex))
-                            If SubIndex = CInt(DefaultValue) Then writer.WriteAttribute("selected", "selected")
+                    If DirectCast(Item, PageLoader.RadioItem).OnPopulateFunction Is Nothing Then
+                        Text = Utility.LoadResourceString(DirectCast(Item, PageLoader.RadioItem).OptionArray(SubIndex).Name)
+                    Else
+                        If TypeOf LoadArray Is Array() Then
+                            Text = CStr(DirectCast(LoadArray(SubIndex), Object()).GetValue(0))
                         Else
-                            writer.WriteAttribute("value", CStr(DirectCast(LoadArray(SubIndex), Object()).GetValue(1)))
-                            If CStr(DirectCast(LoadArray(SubIndex), Object()).GetValue(1)) = DefaultValue Then writer.WriteAttribute("selected", "selected")
+                            Text = CStr(LoadArray(SubIndex))
                         End If
-                        writer.Write(HtmlTextWriter.TagRightChar)
-                        If DirectCast(Item, PageLoader.RadioItem).OnPopulateFunction Is Nothing Then
-                            Text = Utility.LoadResourceString(DirectCast(Item, PageLoader.RadioItem).OptionArray(SubIndex).Name)
-                        Else
-                            If TypeOf LoadArray Is Array() Then
-                                Text = CStr(DirectCast(LoadArray(SubIndex), Object()).GetValue(0))
-                            Else
-                                Text = CStr(LoadArray(SubIndex))
-                            End If
-                        End If
+                    End If
                     writer.Write(vbCrLf + BaseTabs + vbTab + vbTab + vbTab)
-                        writer.Write(Utility.HtmlTextEncode(Text))
-                        writer.Write(vbCrLf + BaseTabs + vbTab + vbTab)
-                        writer.WriteEndTag("option")
-                    Next
-                    writer.Write(vbCrLf + BaseTabs)
-                    writer.WriteEndTag("select")
-                ElseIf (DirectCast(Item, PageLoader.RadioItem).UseCheck) Then
+                    writer.Write(Utility.HtmlTextEncode(Text))
+                    writer.Write(vbCrLf + BaseTabs + vbTab + vbTab)
+                    writer.WriteEndTag("option")
+                Next
+                writer.Write(vbCrLf + BaseTabs)
+                writer.WriteEndTag("select")
+            ElseIf (DirectCast(Item, PageLoader.RadioItem).UseCheck) Then
+                writer.Write(vbCrLf + BaseTabs + vbTab)
+                writer.WriteBeginTag("input")
+                writer.WriteAttribute("type", "checkbox")
+                writer.WriteAttribute("name", DirectCast(Item, PageLoader.RadioItem).Name)
+                SubIndex = 0
+                writer.WriteAttribute("id", DirectCast(Item, PageLoader.RadioItem).Name)
+                writer.WriteAttribute("value", CStr(SubIndex))
+                If SubIndex = CInt(DefaultValue) Then writer.WriteAttribute("checked", "checked")
+                If Not DirectCast(Item, PageLoader.RadioItem).OnChangeFunction Is Nothing Then
+                    writer.WriteAttribute("onchange", OnChangeJS(0))
+                End If
+                writer.Write(HtmlTextWriter.TagRightChar)
+            Else
+                For SubIndex = 0 To Length - 1
                     writer.Write(vbCrLf + BaseTabs + vbTab)
                     writer.WriteBeginTag("input")
-                    writer.WriteAttribute("type", "checkbox")
+                    writer.WriteAttribute("type", "radio")
                     writer.WriteAttribute("name", DirectCast(Item, PageLoader.RadioItem).Name)
-                    SubIndex = 0
-                    writer.WriteAttribute("id", DirectCast(Item, PageLoader.RadioItem).Name)
-                    writer.WriteAttribute("value", CStr(SubIndex))
-                    If SubIndex = CInt(DefaultValue) Then writer.WriteAttribute("checked", "checked")
+                    writer.WriteAttribute("id", DirectCast(Item, PageLoader.RadioItem).Name + CStr(SubIndex))
+                    If DirectCast(Item, PageLoader.RadioItem).OnPopulateFunction Is Nothing OrElse Not TypeOf LoadArray Is Array() Then
+                        writer.WriteAttribute("value", CStr(SubIndex))
+                        If SubIndex = CInt(DefaultValue) Then writer.WriteAttribute("checked", "checked")
+                    Else
+                        writer.WriteAttribute("value", CStr(DirectCast(LoadArray(SubIndex), Object()).GetValue(1)))
+                        If CStr(DirectCast(LoadArray(SubIndex), Object()).GetValue(1)) = DefaultValue Then writer.WriteAttribute("checked", "checked")
+                    End If
                     If Not DirectCast(Item, PageLoader.RadioItem).OnChangeFunction Is Nothing Then
                         writer.WriteAttribute("onchange", OnChangeJS(0))
                     End If
                     writer.Write(HtmlTextWriter.TagRightChar)
-                Else
-                    For SubIndex = 0 To Length - 1
-                        writer.Write(vbCrLf + BaseTabs + vbTab)
-                        writer.WriteBeginTag("input")
-                        writer.WriteAttribute("type", "radio")
-                        writer.WriteAttribute("name", DirectCast(Item, PageLoader.RadioItem).Name)
-                        writer.WriteAttribute("id", DirectCast(Item, PageLoader.RadioItem).Name + CStr(SubIndex))
-                        If DirectCast(Item, PageLoader.RadioItem).OnPopulateFunction Is Nothing OrElse Not TypeOf LoadArray Is Array() Then
-                            writer.WriteAttribute("value", CStr(SubIndex))
-                            If SubIndex = CInt(DefaultValue) Then writer.WriteAttribute("checked", "checked")
+                    If DirectCast(Item, PageLoader.RadioItem).OnPopulateFunction Is Nothing Then
+                        Text = Utility.LoadResourceString(DirectCast(Item, PageLoader.RadioItem).OptionArray(SubIndex).Name)
+                    Else
+                        If TypeOf LoadArray Is Array() Then
+                            Text = CStr(DirectCast(LoadArray(SubIndex), Object()).GetValue(0))
                         Else
-                            writer.WriteAttribute("value", CStr(DirectCast(LoadArray(SubIndex), Object()).GetValue(1)))
-                            If CStr(DirectCast(LoadArray(SubIndex), Object()).GetValue(1)) = DefaultValue Then writer.WriteAttribute("checked", "checked")
+                            Text = CStr(LoadArray(SubIndex))
                         End If
-                        If Not DirectCast(Item, PageLoader.RadioItem).OnChangeFunction Is Nothing Then
-                            writer.WriteAttribute("onchange", OnChangeJS(0))
-                        End If
-                        writer.Write(HtmlTextWriter.TagRightChar)
-                        If DirectCast(Item, PageLoader.RadioItem).OnPopulateFunction Is Nothing Then
-                            Text = Utility.LoadResourceString(DirectCast(Item, PageLoader.RadioItem).OptionArray(SubIndex).Name)
-                        Else
-                            If TypeOf LoadArray Is Array() Then
-                                Text = CStr(DirectCast(LoadArray(SubIndex), Object()).GetValue(0))
-                            Else
-                                Text = CStr(LoadArray(SubIndex))
-                            End If
-                        End If
-                        writer.Write(Utility.HtmlTextEncode(Text))
-                    Next
-                End If
+                    End If
+                    writer.Write(Utility.HtmlTextEncode(Text))
+                Next
+            End If
             writer.WriteEndTag("span")
             ElseIf (PageLoader.IsButtonItem(Item)) Then
                 writer.Write(vbCrLf + BaseTabs)
