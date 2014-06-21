@@ -385,7 +385,7 @@ Partial Class Page
                                 Text = CStr(LoadArray(SubIndex))
                             End If
                         End If
-                        writer.Write(vbCrLf + BaseTabs + vbTab + vbTab + vbTab)
+                    writer.Write(vbCrLf + BaseTabs + vbTab + vbTab + vbTab)
                         writer.Write(Utility.HtmlTextEncode(Text))
                         writer.Write(vbCrLf + BaseTabs + vbTab + vbTab)
                         writer.WriteEndTag("option")

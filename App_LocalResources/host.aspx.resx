@@ -4428,8 +4428,17 @@
   <data name="IslamSource_HijriCalendar" xml:space="preserve">
     <value>Hijri Calendar</value>
   </data>
+  <data name="IslamInfo_LetterCharacteristics" xml:space="preserve">
+    <value>Letter Characteristics</value>
+  </data>
   <data name="IslamInfo_Letters" xml:space="preserve">
     <value>Letters</value>
+  </data>
+  <data name="IslamInfo_PointsOfArticulation" xml:space="preserve">
+    <value>Points Of Articulation</value>
+  </data>
+  <data name="IslamInfo_RulesOfRecitation" xml:space="preserve">
+    <value>Rules Of Recitation</value>
   </data>
   <data name="IslamInfo_UniqueWords" xml:space="preserve">
     <value>Unique Words</value>
