@@ -929,6 +929,16 @@ Public Class PageLoader
     End Sub
 End Class
 Public Class UnitConversions
+    Public Shared Function GetPIJS() As String
+        Return "function getPI() { return 3.14159265358979323846; }" + _
+        "function degToDegMinSec(deg) { return Math.floor(deg).toString() + '\u00B0 ' + Math.floor((deg % 1) * 60).toString() + '\' ' + ((((deg % 1) * 60) % 1) * 60).toString() + '""'; }" + _
+        "function degMinSecToDeg(deg, min, sec) { return Number(deg) + min / 60 + sec / 3600; }" + _
+        "function degToRad(deg) { return deg * getPI() /  180; }" + _
+        "function radToDeg(rad) { return rad * 180 / getPI(); }" + _
+        "function toBearing(rad) { return (radToDeg(rad) + 360) % 360; }" + _
+        "function getSphericalDistance(lat1, lon1, lat2, lon2) { var R = 6378.137, dLon = degToRad(lon2 - lon1), dLat = degToRad(lat2 - lat1); a = Math.sin(dLat / 2) * Math.sin(dLat / 2) + Math.sin(dLon / 2) * Math.sin(dLon / 2) * Math.cos(degToRad(lat1)) * Math.cos(degToRad(lat2)); return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a)); }" + _
+        "function getDegreeBearing(lat1, lon1, lat2, lon2) { var dLon = degToRad(lon1 - lon2); return toBearing(-Math.atan2(Math.sin(dLon), Math.cos(degToRad(lat1)) * Math.tan(degToRad(lat2)) - Math.sin(degToRad(lat1)) * Math.cos(dLon))); }"
+    End Function
     Public Shared Function GetTimeDistToSpeedJS() As String()
         Return New String() {"javascript: doTimeDistToSpeed();", String.Empty, _
         "function doTimeDistToSpeed() { $('#speedresult').text($('#mode0').prop('checked') ? ($('#distance').val() / (($('#minutes').val() * 60 + parseFloat($('#seconds').val())) / 3600 + parseFloat($('#hours').val()))) : ((parseFloat($('#minutes').val()) + (parseFloat($('#seconds').val()) + $('#hours').val() * 3600) / 60) / $('#distance').val())); }"}
@@ -942,8 +952,20 @@ Public Class UnitConversions
         "function doDegreeConversionUnitChange() { $('#minutes').css('display', $('#convunits0').prop('checked') ? 'block' : 'none'); $('#seconds').css('display', $('#convunits0').prop('checked') ? 'block' : 'none'); }"}
     End Function
     Public Shared Function GetDegreeConversionJS() As String()
-        Return New String() {"javascript: doDegreeConversion();", String.Empty, _
-        "function doDegreeConversion() { $('result').text($('#convunits0').prop('checked') ? Math.floor($('#degrees').val()).toString() + '\u00B0 ' + Math.floor(($('#degrees').val() % 1) * 60).toString() + '\' ' + (((($('#degrees').val() % 1) * 60) % 1) * 60).toString() + '""' : $('#degrees').val() + $('#minutes').val() / 60 + $('#seconds').val() / 3600); }"}
+        Return New String() {"javascript: doDegreeConversion();", String.Empty, GetPIJS(), _
+        "function doDegreeConversion() { $('#result').text($('#convunits0').prop('checked') ? degMinSecToDeg($('#degrees').val(), $('#minutes').val(), $('#seconds').val()).toString() + '\u00B0\r\n' + degToRad(degMinSecToDeg($('#degrees').val(), $('#minutes').val(), $('#seconds').val())).toString() + 'rad' : ($('#convunits1').prop('checked') ? degToDegMinSec($('#degrees').val()).toString() + '\r\n' + degToRad($('#degrees').val()) + 'rad' : radToDeg($('#degrees').val()) + '\u00B0\r\n' + degToDegMinSec(radToDeg($('#degrees').val())))); }"}
+    End Function
+    Public Shared Function GetDegreeOffsetJS() As String()
+        Return New String() {"javascript: doDegreeOffset();", String.Empty, _
+        "function doDegreeOffset() { $('#resultdist').text(getSphericalDistance(degMinSecToDeg($('#latdegrees').val(), $('#latminutes').val(), $('#latseconds').val()), degMinSecToDeg($('#londegrees').val(), $('#lonminutes').val(), $('#lonseconds').val()), degMinSecToDeg($('#destlatdegrees').val(), $('#destlatminutes').val(), $('#destlatseconds').val()), degMinSecToDeg($('#destlondegrees').val(), $('#destlonminutes').val(), $('#destlonseconds').val())) + 'km\r\n' + getDegreeBearing(degMinSecToDeg($('#latdegrees').val(), $('#latminutes').val(), $('#latseconds').val()), degMinSecToDeg($('#londegrees').val(), $('#lonminutes').val(), $('#lonseconds').val()), degMinSecToDeg($('#destlatdegrees').val(), $('#destlatminutes').val(), $('#destlatseconds').val()), degMinSecToDeg($('#destlondegrees').val(), $('#destlonminutes').val(), $('#destlonseconds').val())) + '\u00B0'); }"}
+    End Function
+    Public Shared Function GetDateOffsetJS() As String()
+        Return New String() {"javascript: doDateOffset();", String.Empty, _
+        "function doDateOffset() { var d = new Date($('#date').val()); d.setDate($('#convdates0').prop('checked') ? (d.getDate() - (-$('#offset').val())) : (d.getDate() - $('#offset').val())); $('#resultdate').text(d.toDateString()); }"}
+    End Function
+    Public Shared Function GetDataConversionJS() As String()
+        Return New String() {"javascript: doDateConversion();", String.Empty, _
+        "function doDateConversion() { $('#resultcal').text($.calendars.instance($('#convcalendars0').prop('checked') ? 'gregorian' : ($('#convcalendars1').prop('checked') ? 'islamic' : 'ummalqura')).fromJD($.calendars.instance('gregorian').fromJSDate(new Date($('#dateconv').val())).toJD()).formatDate($.calendars.instance().FULL)); }"}
     End Function
 End Class
 Public Class XMLCoding
@@ -1093,7 +1115,7 @@ Public Class PrayerTime
     End Function
 
     Public Shared Function SphericalDistance(ByVal lat1 As Double, ByVal lon1 As Double, ByVal lat2 As Double, ByVal lon2 As Double) As Double
-        Const R As Double = 6378.137 'earth’s mean radius (volumetric radius = 6,371km)
+        Const R As Double = 6378.137 'earth’s mean radius (volumetric radius = 6,371km) according to the WGS84 system
         Dim dLon As Double = ToRad(lon2 - lon1)
         Dim dLat As Double = ToRad(lat2 - lat1)
         Dim a As Double = Math.Sin(dLat / 2) * Math.Sin(dLat / 2) + Math.Sin(dLon / 2) * Math.Sin(dLon / 2) * Math.Cos(ToRad(lat1)) * Math.Cos(ToRad(lat2))

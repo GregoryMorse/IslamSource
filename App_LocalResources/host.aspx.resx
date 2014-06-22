@@ -412,7 +412,7 @@
     <value>Collection</value>
   </data>
   <data name="IslamSource_Credits" xml:space="preserve">
-    <value>Credit for the Quran text goes to the Tanzil project.  Any translations not provided in raw form goes to the Tanzil project and the translator.  Credit for the hadith collection text goes to Al Eman.  Credit for the hadith collection translations goes to the translator.</value>
+    <value>Credit for the Arabic Quran text goes to the Tanzil project.  Credit for any translations verse by verse for many of them goes to the Tanzil project and for others or the word by word translation then it goes to the respective translator.  Credit for the morphological information goes to the Quran Corpus project.  Credit for any topic indexes goes to the indexer.  Credit for any Quran tafseer translations goes to the translator.  Credit for the Arabic hadith collection text goes to Al Eman.  Credit for the hadith collection translations goes to each respective translator.  Credit for linguistic translations goes to Google Translate.  Credit for .NET framework and web administration goes to Microsoft.  Credit for MySQL goes to Oracle Corporation.  Credit for jQuery goes to The jQuery Foundation.  Credit for the jQuery Calenders Datepicker goes to Keith Wood.</value>
   </data>
   <data name="IslamSource_Direction" xml:space="preserve">
     <value>Direction</value>
@@ -4458,6 +4458,9 @@
   <data name="IslamInfo_WordsPerStation" xml:space="preserve">
     <value>Words Per Station</value>
   </data>
+  <data name="IslamSource_AngleDistance" xml:space="preserve">
+    <value>Angle Distance</value>
+  </data>
   <data name="IslamSource_Calculations" xml:space="preserve">
     <value>Calculations</value>
   </data>
@@ -4467,17 +4470,29 @@
   <data name="IslamSource_Date" xml:space="preserve">
     <value>Date</value>
   </data>
+  <data name="IslamSource_DecimalDegree" xml:space="preserve">
+    <value>Decimal Degrees</value>
+  </data>
+  <data name="IslamSource_DegreeMinuteSecond" xml:space="preserve">
+    <value>Degrees Minutes Seconds</value>
+  </data>
   <data name="IslamSource_Degrees" xml:space="preserve">
     <value>Degrees</value>
   </data>
   <data name="IslamSource_GregorianCalendar" xml:space="preserve">
     <value>Gregorian Calendar</value>
   </data>
+  <data name="IslamSource_LatitudeLongitude" xml:space="preserve">
+    <value>Latitude Longitude</value>
+  </data>
   <data name="IslamSource_Minutes" xml:space="preserve">
     <value>Minutes</value>
   </data>
   <data name="IslamSource_Offset" xml:space="preserve">
     <value>Offset</value>
+  </data>
+  <data name="IslamSource_Radians" xml:space="preserve">
+    <value>Radians</value>
   </data>
   <data name="IslamSource_Seconds" xml:space="preserve">
     <value>Seconds</value>

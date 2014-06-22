@@ -117,30 +117,36 @@
 			<static name="result" description=""></static>
 		</frame>
 		<frame name="systemconversion" description="IslamSource_UnitConversion">
-			<edit name="degrees" description="IslamSource_Degrees"></edit>
-			<edit name="minutes" description="IslamSource_Minutes"></edit>
-			<edit name="seconds" description="IslamSource_Seconds"></edit>
-			<edit name="destdegrees" description="IslamSource_Degrees"></edit>
-			<edit name="destminutes" description="IslamSource_Minutes"></edit>
-			<edit name="destseconds" description="IslamSource_Seconds"></edit>
+			<edit name="latdegrees" description="IslamSource_Degrees"></edit>
+			<edit name="latminutes" description="IslamSource_Minutes"></edit>
+			<edit name="latseconds" description="IslamSource_Seconds"></edit>
+			<edit name="londegrees" description="IslamSource_Degrees"></edit>
+			<edit name="lonminutes" description="IslamSource_Minutes"></edit>
+			<edit name="lonseconds" description="IslamSource_Seconds"></edit>
+			<edit name="destlatdegrees" description="IslamSource_Degrees"></edit>
+			<edit name="destlatminutes" description="IslamSource_Minutes"></edit>
+			<edit name="destlatseconds" description="IslamSource_Seconds"></edit>
+			<edit name="destlondegrees" description="IslamSource_Degrees"></edit>
+			<edit name="destlonminutes" description="IslamSource_Minutes"></edit>
+			<edit name="destlonseconds" description="IslamSource_Seconds"></edit>
 			<edit name="destdist" description="IslamSource_Degrees"></edit>
 			<edit name="destangle" description="IslamSource_Minutes"></edit>
-			<radio name="convunits" description="IslamSource_Units"><option name="IslamSource_AngleDistance" defaultvalue="true"></option><option name="IslamSource_LatitudeLongitude"></option></radio>
+			<radio name="convdistunits" description="IslamSource_Units"><option name="IslamSource_AngleDistance" defaultvalue="true"></option><option name="IslamSource_LatitudeLongitude"></option></radio>
 			<button name="compute" description="IslamSource_Compute" onclick="UnitConversions::GetDegreeOffsetJS"></button>
-			<static name="result" description=""></static>
+			<static name="resultdist" description=""></static>
 		</frame>
 		<frame name="systemconversion" description="IslamSource_UnitConversion">
-			<datetime name="date" description="IslamSource_Date"></datetime>
+			<date name="date" description="IslamSource_Date"></date>
 			<edit name="offset" description="IslamSource_Offset"></edit>
-			<radio name="convunits" description="IslamSource_Units"><option name="IslamSource_Add" defaultvalue="true"></option><option name="IslamSource_Remove"></option></radio>
+			<radio name="convdates" description="IslamSource_Units"><option name="IslamSource_Add" defaultvalue="true"></option><option name="IslamSource_Remove"></option></radio>
 			<button name="compute" description="IslamSource_Compute" onclick="UnitConversions::GetDateOffsetJS"></button>
-			<static name="result" description=""></static>
+			<static name="resultdate" description=""></static>
 		</frame>
 		<frame name="systemconversion" description="IslamSource_UnitConversion">
-			<datetime name="date" description="IslamSource_Date"></datetime>
-			<radio name="convunits" description="IslamSource_Units"><option name="IslamSource_Gregorian" defaultvalue="true"></option><option name="IslamSource_Hijri"></option><option name="IslamSource_UmAlQura"></option></radio>
+			<date name="dateconv" description="IslamSource_Date"></date>
+			<radio name="convcalendars" description="IslamSource_Units"><option name="IslamSource_GregorianCalendar" defaultvalue="true"></option><option name="IslamSource_HijriCalendar"></option><option name="IslamSource_UmAlQuraCalendar"></option></radio>
 			<button name="compute" description="IslamSource_Compute" onclick="UnitConversions::GetDataConversionJS"></button>
-			<static name="result" description=""></static>
+			<static name="resultcal" description=""></static>
 		</frame>
 	</page>
 	<page name="islam" description="IslamSource_IslamicInformation">

@@ -336,6 +336,13 @@ Partial Class Page
             writer.WriteAttribute("name", DirectCast(Item, PageLoader.DateItem).Name)
             writer.WriteAttribute("id", DirectCast(Item, PageLoader.DateItem).Name)
             writer.Write(HtmlTextWriter.TagRightChar)
+            writer.Write(vbCrLf + BaseTabs)
+            writer.WriteBeginTag("div")
+            writer.WriteAttribute("id", DirectCast(Item, PageLoader.DateItem).Name + "_div")
+            writer.Write(HtmlTextWriter.TagRightChar)
+            writer.Write(vbCrLf + BaseTabs)
+            writer.WriteEndTag("div")
+            AddToJSFunctions(New String() {String.Empty, "$('#" + DirectCast(Item, PageLoader.DateItem).Name + "').calendarsPicker($.extend({yearRange: 'any', alignment:'bottomLeft', popupContainer: '#" + DirectCast(Item, PageLoader.DateItem).Name + "_div'}, '" + Globalization.CultureInfo.CurrentCulture.Name + "' in $.calendarsPicker.regionalOptions ? $.calendarsPicker.regionalOptions['" + Globalization.CultureInfo.CurrentCulture.Name + "'] : ('" + Globalization.CultureInfo.CurrentCulture.TwoLetterISOLanguageName + "' in $.calendarsPicker.regionalOptions ? $.calendarsPicker.regionalOptions['" + Globalization.CultureInfo.CurrentCulture.TwoLetterISOLanguageName + "'] : $.calendarsPicker.regionalOptions[''])));", String.Empty})
         ElseIf (PageLoader.IsRadioItem(Item)) Then
             writer.Write(vbCrLf + BaseTabs)
             writer.WriteBeginTag("span")
