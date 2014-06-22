@@ -2178,7 +2178,7 @@ Public Class Arabic
             Next
         Else
             For SubCount As Integer = 0 To CachedData.IslamData.VocabularyCategories(Count).Words.Length - 1
-                Output.Add(New String() {Arabic.RightToLeftMark + TransliterateFromBuckwalter(CachedData.IslamData.VocabularyCategories(Count).Words(SubCount).Text), TransliterateToScheme(TransliterateFromBuckwalter(CachedData.IslamData.VocabularyCategories(Count).Words(SubCount).Text)).Trim(), Utility.LoadResourceString("IslamInfo_" + CachedData.IslamData.VocabularyCategories(Count).Words(SubCount).TranslationID)})
+                Output.Add(New String() {Arabic.RightToLeftMark + TransliterateFromBuckwalter(CachedData.IslamData.VocabularyCategories(Count).Words(SubCount).Text), TransliterateToScheme(TransliterateFromBuckwalter(CachedData.IslamData.VocabularyCategories(Count).Words(SubCount).Text)).Trim(), Utility.DefaultValue(Utility.LoadResourceString("IslamInfo_" + CachedData.IslamData.VocabularyCategories(Count).Words(SubCount).TranslationID), "TODO!!!")})
             Next
         End If
         Return DirectCast(Output.ToArray(GetType(Array)), Array())
