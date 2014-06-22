@@ -595,7 +595,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 	<vocabulary>
 		<category title="RulesOfRecitation">
 			<word text="sif~aAt" id="LetterCharacteristics"></word>
-			<word text="maxraj~" id="PointofArticulation"></word>
+			<word text="maxraj~" id="PointOfArticulation"></word>
 			<word text="taEaw~u*" id="Protection"></word>
 			<word text="basmalap" id="PhraseForInTheNameOfAllah"></word>
 			<word text="laHn jaliy" id="MajorIncorrectPronounciation"></word>
@@ -859,6 +859,20 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="All~`hu &gt;akbar" id="AllahIsGreatest"></word>
 			<word text="AlHamdu lil~`h" id="AllPraiseAndThanksBeToAllah"></word>
 			<word text="subHAn All~`h" id="GloryBeToAllah"></word>
+			<word text="sidrapu &gt;almuntahaY" id="LoteTree"></word>
+			<word text="EibaAdaAt &gt;alt&gt;amal" id="WorshipOfMeditation"></word>
+			<word text="xaAladiyna fiyhaA" id="AbidingTherein"></word>
+			<word text="ahl &gt;al*~im~ap" id="DisbelievingPeople"></word>
+			<word text="baAb &gt;alS~alaAp" id="GateOfPrayer"></word>
+			<word text="baAb &gt;aljihaAd" id="GateOfJihad"></word>
+			<word text="baAb &gt;alS~adaqap" id="GateOfCharity"></word>
+			<word text="baAb &gt;alr~ay~aAn" id="GateOfFasting"></word>
+			<word text="baAb &gt;alHaj~" id="GateOfPilgrimage"></word>
+			<word text="baAb &gt;alkaAZimiyn &gt;algayZ wa&gt;alEaAfiyn Ean &gt;alnaAs" id="GateOfWithholdingAngerAndForgivness"></word>
+			<word text="baAb &gt;al&gt;aymaAn" id="GateOfFaith"></word>
+			<word text="baAb &gt;al*~ikr" id="GateOfRemembrance"></word>
+			<word text="baAb bir~ &gt;alwaAlidayn" id="GateOfRighteousnessToParents"></word>
+			<word text="Huwr &gt;alEayn" id="FairLadiesOfTheRiver"></word>
 		</category>
 		<category title="IslamicWords">
 			<word text="All~`h" id="Allah"></word>
@@ -876,8 +890,6 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="&gt;almiyzaAn" id="Scale"></word>
 			<word text="&gt;al&gt;aHasaAs" id="Sense"></word>
 			<word text="&gt;alS~iraAT" id="Path"></word>
-			<word text="sidrapu &gt;almuntahaY" id="LoteTree"></word>
-			<word text="EibaAdaAt &gt;altamuwr" id="WorshipOfMeditation"></word>
 			<word text="&gt;alraHim" id="Kinship"></word>
 			<word text="&gt;amaAnah" id="Safety"></word>
 			<word text="naAr" id="Fire"></word>
@@ -896,7 +908,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="&gt;alyaHmuwm" id="SmokeOfHell"></word>
 			<word text="&gt;alDariyE" id="BitterObnoxiousThornyPlant"></word>
 			<word text="&gt;alzaq~uwm" id="HorribleTreeOfHell"></word>
-			<word text="&gt;algisliyn" id=""></word>
+			<word text="&gt;algisliyn" id="FoulNourishment"></word>
 			<word text="&gt;algas~aq" id="Dusk"></word>
 			<word text="&gt;algas~aAq" id="HotFood"></word>
 			<word text="&gt;alSadiyd" id="Pus"></word>
@@ -908,9 +920,6 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="&gt;als~aHb" id="Dragging"></word>
 			<word text="zamhariyr" id="BitterCold"></word>
 			<word text="&gt;alrazaAq" id="TheSustainer"></word>
-			<word text="xaAladiyna fiyhaA" id="AbidingTherein"></word>
-			<word text="ahl &gt;al*~im~ap" id="DisbelievingPeople"></word>
-			<word text="janaAtiyaA huw" id=""></word>
 			<word text="&gt;al&gt;abraAr" id="TheRighteous"></word>
 			<word text="&gt;alTalH" id="AcaciaTree"></word>
 			<word text="&gt;alSidr" id="LotusTree"></word>
@@ -932,22 +941,12 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="&gt;alfitnah" id="Discord"></word>
 			<word text="ruqya" id="Charms"></word>
 			<word text="&gt;alqaSaS" id="Stories"></word>
-			<word text="baAb &gt;alS~alaAp" id="GateOfPrayer"></word>
-			<word text="baAb &gt;aljihaAd" id="GateOfJihad"></word>
-			<word text="baAb &gt;alS~adaqap" id="GateOfCharity"></word>
-			<word text="baAb &gt;alr~ay~aAn" id="GateOfFasting"></word>
-			<word text="baAb &gt;alHaj~" id="GateOfPilgrimage"></word>
-			<word text="baAb &gt;alkaAZimiyn &gt;algayZ wa&gt;alEaAfiyn Ean &gt;alnaAs" id="GateOfWithholdingAngerAndForgivness"></word>
-			<word text="baAb &gt;al&gt;aymaAn" id="GateOfFaith"></word>
-			<word text="baAb &gt;al*~ikr" id="GateOfRemembrance"></word>
-			<word text="baAb bir~ &gt;alwaAlidayn" id="GateOfRighteousnessToParents"></word>
-			<word text="kaAfuwr" id=""></word>
-			<word text="tasniym" id=""></word>
-			<word text="Eayn" id=""></word>
+			<word text="kaAfuwr" id="CoolRefreshingDrink"></word>
+			<word text="tasniym" id="FoundationOfParadise"></word>
+			<word text="Eayn" id="River"></word>
 			<word text="say~id" id="Mister"></word>
 			<word text="SiyaAm" id="Fasting"></word>
 			<word text="gafuwr" id="Forgiving"></word>
-			<word text="Huwr &gt;alEayn" id="FairLadiesOfTheRiver"></word>
 			<word text="hajr" id="Dessertion"></word>
 			<word text="tawaAzun" id="Balance"></word>
 			<word text="qiyaAm" id="Do"></word>
@@ -1117,13 +1116,13 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="Ealiy &gt;alhaAdiy &gt;aln~aqiy‎" id="AliBinMuhammad"></word>
 			<word text="&gt;alHasan &gt;alEaskariy bin Ealiy bin muHam~ad" id="HasanBinAli"></word>
 			<word text="muHam~ad bin &gt;alHasan &gt;almahdiy" id="MuhammadBinAlHasan"></word>
-			<word text="TalHap bin Eabayd All`h‎" id=""></word>
-			<word text="&gt;alzubayr bin &gt;alEawaAm bin xuwaylid" id=""></word>
-			<word text="saEd bin malik" id=""></word>
-			<word text="saEd bin &gt;abiy waq~aAS‎" id=""></word>
-			<word text="Eabd &gt;alr~aHman bin Eawf‎" id=""></word>
-			<word text="&gt;abuw Eabaydap EaAmir bin Eabdi All`h bin &gt;aljar~aAH‎" id=""></word>
-			<word text="saEiyd bin zayd" id=""></word>
+			<word text="TalHap bin Eabayd All`h‎" id="TalhaBinObaidullah"></word>
+			<word text="&gt;alzubayr bin &gt;alEawaAm bin xuwaylid" id="AzZubayrbinAlAwam"></word>
+			<word text="saEd bin malik" id="SadBinMalik"></word>
+			<word text="saEd bin &gt;abiy waq~aAS‎" id="SadBinAbiWaqqas"></word>
+			<word text="Eabd &gt;alr~aHman bin Eawf‎" id="AbdurRahmanBinAwf"></word>
+			<word text="&gt;abuw Eubaydap EaAmir bin Eabdi All`h bin &gt;aljar~aAH‎" id="AbuUbaidahBinAlJarrah"></word>
+			<word text="saEiyd bin zayd" id="SaeedBinZaid"></word>
 			<word text="xadiyjap binti xuwaylid" id="KhadijahBintKhuwaylid"></word>
 			<word text="sawdap binti zamEap‎" id="SawdaBintZama"></word>
 			<word text="EaA}i$ap binti &gt;abiy‎ bakr" id="AishaBintAbiBakr"></word>

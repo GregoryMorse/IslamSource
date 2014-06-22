@@ -129,7 +129,7 @@ Public Class Utility
         Return CInt((num + (num2 * &H5D588B65)) And &H800000007FFFFFFFL)
     End Function
     Public Shared Function LoadResourceString(resourceKey As String) As String
-        Return CStr(HttpContext.GetLocalResourceObject(LocalFile, resourceKey))
+        Return DefaultValue(CStr(HttpContext.GetLocalResourceObject(LocalFile, resourceKey)), "  <data name=""" + resourceKey + """ xml:space=""preserve"">" + vbCrLf + "    <value>" + System.Text.RegularExpressions.Regex.Replace(System.Text.RegularExpressions.Regex.Replace(resourceKey, ".*_", String.Empty), "(.+?)([A-Z])", "$1 $2") + "</value>" + vbCrLf + "  </data>")
     End Function
     Public Shared Function DefaultValue(Value As String, DefValue As String) As String
         If Value Is Nothing Then Return DefValue
@@ -2178,7 +2178,7 @@ Public Class Arabic
             Next
         Else
             For SubCount As Integer = 0 To CachedData.IslamData.VocabularyCategories(Count).Words.Length - 1
-                Output.Add(New String() {Arabic.RightToLeftMark + TransliterateFromBuckwalter(CachedData.IslamData.VocabularyCategories(Count).Words(SubCount).Text), TransliterateToScheme(TransliterateFromBuckwalter(CachedData.IslamData.VocabularyCategories(Count).Words(SubCount).Text)).Trim(), Utility.DefaultValue(Utility.LoadResourceString("IslamInfo_" + CachedData.IslamData.VocabularyCategories(Count).Words(SubCount).TranslationID), "TODO!!!")})
+                Output.Add(New String() {Arabic.RightToLeftMark + TransliterateFromBuckwalter(CachedData.IslamData.VocabularyCategories(Count).Words(SubCount).Text), TransliterateToScheme(TransliterateFromBuckwalter(CachedData.IslamData.VocabularyCategories(Count).Words(SubCount).Text)).Trim(), Utility.LoadResourceString("IslamInfo_" + CachedData.IslamData.VocabularyCategories(Count).Words(SubCount).TranslationID)})
             Next
         End If
         Return DirectCast(Output.ToArray(GetType(Array)), Array())
