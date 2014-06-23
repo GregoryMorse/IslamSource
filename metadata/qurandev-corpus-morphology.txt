@@ -1,12 +1,12 @@
-﻿#====================================================================
+#====================================================================
 #
 #var gq = {};
 #load manzil1,7.js + manzil2,3,4.js + manzil5,6.js
 #word for word translation:
-#var str = ''; for (var ct = 0; ct < 4; ct++) { gq[['MANZIL1','MANZIL234','MANZIL56','MANZIL7'][ct]].slice(1).forEach(function (it) { str += it.replace(/⚓/gm, '\t').replace(/★/gm, '\r\n').replace(/.*\t(.*)\t.*\r\n/gm, '$1|').slice(0, -1) + '\r\n'; }); } console.log(str);
+#var str = ''; for (var ct = 0; ct < 4; ct++) { gq[['MANZIL1','MANZIL234','MANZIL56','MANZIL7'][ct]].slice(1).forEach(function (it) { str += it.replace(/\u2693/gm, '\t').replace(/\u2605/gm, '\r\n').replace(/.*\t(.*)\t.*\r\n/gm, '$1|').slice(0, -1) + '\r\n'; }); } console.log(str);
 #load suras from tanzil.net quran-data.js QuranData.Sura
 #morphological data:
-#var s = 1, a = 0, w, str = ''; for (var ct = 0; ct < 4; ct++) { gq[['MANZIL1','MANZIL234','MANZIL56','MANZIL7'][ct]].slice(1).forEach(function (it) { w = 1; if (a >= suras[s][1]) { s++; a = 1; } else { a++; } str += it.replace(/⚓/gm, '\t').replace(/★/gm, '\r\n').replace(/(.*\t).*\t(.*?)\|(.*\r\n)/gm, function (m, c1, c2, c3) { return '(' + s + ':' + a + ':' + w++ + ')\t' + c1 + c2 + '\t' + c3; }); }); } console.log(str);
+#var s = 1, a = 0, w, str = ''; for (var ct = 0; ct < 4; ct++) { gq[['MANZIL1','MANZIL234','MANZIL56','MANZIL7'][ct]].slice(1).forEach(function (it) { w = 1; if (a >= suras[s][1]) { s++; a = 1; } else { a++; } str += it.replace(/\u2693/gm, '\t').replace(/\u2605/gm, '\r\n').replace(/(.*\t).*\t(.*?)\|(.*\r\n)/gm, function (m, c1, c2, c3) { return '(' + s + ':' + a + ':' + w++ + ')\t' + c1 + c2 + '\t' + c3; }); }); } console.log(str);
 #
 #====================================================================
 
@@ -5563,7 +5563,7 @@ Al^m^	Alif Laam Meem	INL
 (2:266:6)	jan~apN	 N	LEM:jan~ap|ROOT:jnn|F|INDEF|NOM
 (2:266:7)	m~in	 P	LEM:min
 (2:266:8)	n~axiylK	 N	LEM:n~axiyl|ROOT:nxl|MP|INDEF|GEN
-(2:266:9)	wa>aEonaAbK	 N	LEM:Einab|ROOT:Enb|MP|INDEF|GEN
+(2:266:9)	wa>aEonaAbK	 N	LEM:EM:EM:Einab|ROOT:Enb|MP|INDEF|GEN
 (2:266:10)	tajoriY	 V	IMPF|LEM:jarayo|ROOT:jry|3FS
 (2:266:11)	min	 P	LEM:min
 (2:266:12)	taHotihaA	 N	LEM:taHot|ROOT:tHt|GEN

@@ -2773,7 +2773,9 @@ Public Class CachedData
     Shared _TagDictionary As New Generic.Dictionary(Of String, ArrayList)
     Shared _WordDictionary As New Generic.Dictionary(Of String, ArrayList)
     Shared _LetterDictionary As New Generic.Dictionary(Of Char, ArrayList)
+    Shared _IsolatedLetterDictionary As New Generic.Dictionary(Of Char, ArrayList)
     Shared _TotalLetters As Integer = 0
+    Shared _TotalIsolatedLetters As Integer = 0
     Shared _PartUniqueArray(TanzilReader.GetPartCount() - 1) As Generic.List(Of String)
     Shared _PartArray(TanzilReader.GetPartCount() - 1) As Generic.List(Of String)
     Shared _StationUniqueArray(TanzilReader.GetPartCount() - 1) As Generic.List(Of String)
@@ -2883,6 +2885,14 @@ Public Class CachedData
                         _LetterDictionary.Add(Verses(Count)(SubCount)(LetCount), New ArrayList)
                     End If
                     _LetterDictionary.Item(Verses(Count)(SubCount)(LetCount)).Add(New Integer() {Count, SubCount, LetCount})
+                    If LetCount <> 0 AndAlso LetCount <> Verses(Count)(SubCount).Length - 1 AndAlso _
+                        Char.IsWhiteSpace(Verses(Count)(SubCount)(LetCount - 1)) AndAlso Char.IsWhiteSpace(Verses(Count)(SubCount)(LetCount + 1)) Then
+                        _TotalIsolatedLetters += 1
+                        If Not _IsolatedLetterDictionary.ContainsKey(Verses(Count)(SubCount)(LetCount)) Then
+                            _IsolatedLetterDictionary.Add(Verses(Count)(SubCount)(LetCount), New ArrayList)
+                        End If
+                        _IsolatedLetterDictionary.Item(Verses(Count)(SubCount)(LetCount)).Add(New Integer() {Count, SubCount, LetCount})
+                    End If
                 Next
             Next
         Next
@@ -2957,6 +2967,18 @@ Public Class CachedData
         Get
             If _TotalLetters = 0 Then BuildQuranLetterIndex()
             Return _TotalLetters
+        End Get
+    End Property
+    Public Shared ReadOnly Property IsolatedLetterDictionary As Generic.Dictionary(Of Char, ArrayList)
+        Get
+            If _IsolatedLetterDictionary.Keys.Count = 0 Then BuildQuranLetterIndex()
+            Return _IsolatedLetterDictionary
+        End Get
+    End Property
+    Public Shared ReadOnly Property TotalIsolatedLetters As Integer
+        Get
+            If _TotalIsolatedLetters = 0 Then BuildQuranLetterIndex()
+            Return _TotalIsolatedLetters
         End Get
     End Property
     Public Shared ReadOnly Property PartArray As Generic.List(Of String)()
@@ -3074,7 +3096,7 @@ Public Class Languages
             "function changeQuranDivision(index) { var iCount; var qurandata = " + JSArrays + "; var eSelect = $('#quranselection').get(0); clearOptionList(eSelect); for (iCount = 0; iCount < qurandata[index].length; iCount++) { eSelect.options.add(new Option(qurandata[index][iCount][0], qurandata[index][iCount][1])); } }"}
         End Function
         Public Shared Function GetWordPartitions() As String()
-        Return New String() {Utility.LoadResourceString("IslamInfo_Letters"), Utility.LoadResourceString("IslamInfo_Words"), Utility.LoadResourceString("IslamInfo_UniqueWords"), Utility.LoadResourceString("IslamInfo_UniqueWordsPerPart"), Utility.LoadResourceString("IslamInfo_WordsPerPart"), Utility.LoadResourceString("IslamInfo_UniqueWordsPerStation"), Utility.LoadResourceString("IslamInfo_WordsPerStation")}
+        Return New String() {Utility.LoadResourceString("IslamInfo_Letters"), Utility.LoadResourceString("IslamInfo_Words"), Utility.LoadResourceString("IslamInfo_UniqueWords"), Utility.LoadResourceString("IslamInfo_UniqueWordsPerPart"), Utility.LoadResourceString("IslamInfo_WordsPerPart"), Utility.LoadResourceString("IslamInfo_UniqueWordsPerStation"), Utility.LoadResourceString("IslamInfo_WordsPerStation"), Utility.LoadResourceString("IslamInfo_Letters")}
         End Function
         Public Shared Function GetQuranWordTotalNumber() As Integer
             Dim Total As Integer
@@ -3090,6 +3112,8 @@ Public Class Languages
         If Not Strings Is Nothing Then Index = CInt(Strings)
         If Index = 0 Then
             Return CStr(CachedData.TotalLetters)
+        ElseIf Index = 7 Then
+            Return CStr(CachedData.TotalIsolatedLetters)
         ElseIf Index = 1 Then
             Return CStr(GetQuranWordTotalNumber())
         ElseIf Index = 2 Then
@@ -3109,7 +3133,7 @@ Public Class Languages
         Public Shared Function GetQuranWordFrequency(ByVal Item As PageLoader.TextItem) As Array()
             Dim Output As New ArrayList
             Dim Total As Integer = 0
-            Dim All As Double = CachedData.TotalLetters
+        Dim All As Double
             Output.Add(New String() {String.Empty, String.Empty, String.Empty, String.Empty, String.Empty})
             Output.Add(New String() {"arabic", "transliteration", String.Empty, String.Empty, String.Empty})
             Output.Add(New String() {Utility.LoadResourceString("IslamInfo_Arabic"), Utility.LoadResourceString("IslamInfo_Transliteration"), Utility.LoadResourceString("IslamSource_WordTotal"), String.Empty, String.Empty})
@@ -3117,26 +3141,36 @@ Public Class Languages
             Dim Index As Integer
             Strings = Web.HttpContext.Current.Request.QueryString.Get("quranselection")
             If Not Strings Is Nothing Then Index = CInt(Strings)
-            If Index = 0 Then
-                Dim LetterFreqArray(CachedData.LetterDictionary.Keys.Count - 1) As Char
-                CachedData.LetterDictionary.Keys.CopyTo(LetterFreqArray, 0)
-                Array.Sort(LetterFreqArray, Function(Key As Char, NextKey As Char) CachedData.LetterDictionary.Item(NextKey).Count.CompareTo(CachedData.LetterDictionary.Item(Key).Count))
-                For Count As Integer = 0 To LetterFreqArray.Length - 1
-                    Total += CachedData.LetterDictionary.Item(LetterFreqArray(Count)).Count
-                    Output.Add(New String() {CachedData.IslamData.ArabicLetters(Arabic.FindLetterBySymbol(LetterFreqArray(Count))).UnicodeName + " (" + Arabic.RightToLeftMark + " " + LetterFreqArray(Count) + " " + Arabic.LeftToRightMark + ")", String.Empty, CStr(CachedData.LetterDictionary.Item(LetterFreqArray(Count)).Count), (CDbl(CachedData.LetterDictionary.Item(LetterFreqArray(Count)).Count) * 100 / All).ToString("n2"), (CDbl(Total) * 100 / All).ToString("n2")})
-                Next
-            ElseIf Index = 1 Then
-                Dim FreqArray(CachedData.WordDictionary.Keys.Count - 1) As String
-                CachedData.WordDictionary.Keys.CopyTo(FreqArray, 0)
-                Total = 0
-                All = GetQuranWordTotalNumber()
-                Array.Sort(FreqArray, Function(Key As String, NextKey As String) CachedData.WordDictionary.Item(NextKey).Count.CompareTo(CachedData.WordDictionary.Item(Key).Count))
-                For Count As Integer = 0 To FreqArray.Length - 1
-                    Total += CachedData.WordDictionary.Item(FreqArray(Count)).Count
-                    Output.Add(New String() {Arabic.RightToLeftMark + Arabic.TransliterateFromBuckwalter(FreqArray(Count)), String.Empty, CStr(CachedData.WordDictionary.Item(FreqArray(Count)).Count), (CDbl(CachedData.WordDictionary.Item(FreqArray(Count)).Count) * 100 / All).ToString("n2"), (CDbl(Total) * 100 / All).ToString("n2")})
-                Next
-            ElseIf Index = 3 Or Index = 4 Or Index = 5 Or Index = 6 Then
-                Total = 0
+        If Index = 0 Then
+            All = CachedData.TotalLetters
+            Dim LetterFreqArray(CachedData.LetterDictionary.Keys.Count - 1) As Char
+            CachedData.LetterDictionary.Keys.CopyTo(LetterFreqArray, 0)
+            Array.Sort(LetterFreqArray, Function(Key As Char, NextKey As Char) CachedData.LetterDictionary.Item(NextKey).Count.CompareTo(CachedData.LetterDictionary.Item(Key).Count))
+            For Count As Integer = 0 To LetterFreqArray.Length - 1
+                Total += CachedData.LetterDictionary.Item(LetterFreqArray(Count)).Count
+                Output.Add(New String() {CachedData.IslamData.ArabicLetters(Arabic.FindLetterBySymbol(LetterFreqArray(Count))).UnicodeName + " (" + Arabic.RightToLeftMark + " " + LetterFreqArray(Count) + " " + Arabic.LeftToRightMark + ")", String.Empty, CStr(CachedData.LetterDictionary.Item(LetterFreqArray(Count)).Count), (CDbl(CachedData.LetterDictionary.Item(LetterFreqArray(Count)).Count) * 100 / All).ToString("n2"), (CDbl(Total) * 100 / All).ToString("n2")})
+            Next
+        ElseIf Index = 7 Then
+            All = CachedData.TotalIsolatedLetters
+            Dim LetterFreqArray(CachedData.IsolatedLetterDictionary.Keys.Count - 1) As Char
+            CachedData.IsolatedLetterDictionary.Keys.CopyTo(LetterFreqArray, 0)
+            Array.Sort(LetterFreqArray, Function(Key As Char, NextKey As Char) CachedData.IsolatedLetterDictionary.Item(NextKey).Count.CompareTo(CachedData.IsolatedLetterDictionary.Item(Key).Count))
+            For Count As Integer = 0 To LetterFreqArray.Length - 1
+                Total += CachedData.IsolatedLetterDictionary.Item(LetterFreqArray(Count)).Count
+                Output.Add(New String() {CachedData.IslamData.ArabicLetters(Arabic.FindLetterBySymbol(LetterFreqArray(Count))).UnicodeName + " (" + Arabic.RightToLeftMark + " " + LetterFreqArray(Count) + " " + Arabic.LeftToRightMark + ")", String.Empty, CStr(CachedData.IsolatedLetterDictionary.Item(LetterFreqArray(Count)).Count), (CDbl(CachedData.IsolatedLetterDictionary.Item(LetterFreqArray(Count)).Count) * 100 / All).ToString("n2"), (CDbl(Total) * 100 / All).ToString("n2")})
+            Next
+        ElseIf Index = 1 Then
+            Dim FreqArray(CachedData.WordDictionary.Keys.Count - 1) As String
+            CachedData.WordDictionary.Keys.CopyTo(FreqArray, 0)
+            Total = 0
+            All = GetQuranWordTotalNumber()
+            Array.Sort(FreqArray, Function(Key As String, NextKey As String) CachedData.WordDictionary.Item(NextKey).Count.CompareTo(CachedData.WordDictionary.Item(Key).Count))
+            For Count As Integer = 0 To FreqArray.Length - 1
+                Total += CachedData.WordDictionary.Item(FreqArray(Count)).Count
+                Output.Add(New String() {Arabic.RightToLeftMark + Arabic.TransliterateFromBuckwalter(FreqArray(Count)), String.Empty, CStr(CachedData.WordDictionary.Item(FreqArray(Count)).Count), (CDbl(CachedData.WordDictionary.Item(FreqArray(Count)).Count) * 100 / All).ToString("n2"), (CDbl(Total) * 100 / All).ToString("n2")})
+            Next
+        ElseIf Index = 3 Or Index = 4 Or Index = 5 Or Index = 6 Then
+            Total = 0
             Dim DivArray As Collections.Generic.List(Of String)()
             If Index = 3 Or Index = 5 Then
                 DivArray = If(Index = 5, CachedData.StationUniqueArray, CachedData.PartUniqueArray)
@@ -3153,7 +3187,7 @@ Public Class Languages
                     Output.Add(New String() {Arabic.LeftToRightMark + CStr(Count + 1), String.Empty, CStr(DivArray(Count).Count), (CDbl(DivArray(Count).Count) * 100 / All).ToString("n2"), (CDbl(Total) * 100 / All).ToString("n2")})
                 Next
             End If
-            End If
+        End If
             Return CType(Output.ToArray(GetType(Array())), Array())
         End Function
         Public Shared Function GetSelectionNames() As Array()
