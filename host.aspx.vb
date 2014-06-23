@@ -477,7 +477,7 @@
             End If
             writer.Write(vbCrLf + vbTab + vbTab)
             writer.WriteBeginTag("link")
-            writer.WriteAttribute("href", "Styles.css")
+            writer.WriteAttribute("href", "Content/Styles.css")
             writer.WriteAttribute("rel", "stylesheet")
             writer.WriteAttribute("type", "text/css")
             writer.Write(HtmlTextWriter.TagRightChar + vbCrLf + vbTab)
