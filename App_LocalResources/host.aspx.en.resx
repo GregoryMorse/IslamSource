@@ -4956,4 +4956,70 @@
   <data name="IslamInfo_GogAndMagog" xml:space="preserve">
     <value>Gog And Magog</value>
   </data>
+  <data name="IslamInfo_TalhaBinObaidullah" xml:space="preserve">
+    <value>Talha Bin Obaidullah</value>
+  </data>
+  <data name="IslamInfo_AzZubayrbinAlAwam" xml:space="preserve">
+    <value>Az Zubayrbin Al Awam</value>
+  </data>
+  <data name="IslamInfo_SadBinMalik" xml:space="preserve">
+    <value>Sad Bin Malik</value>
+  </data>
+  <data name="IslamInfo_SadBinAbiWaqqas" xml:space="preserve">
+    <value>Sad Bin Abi Waqqas</value>
+  </data>
+  <data name="IslamInfo_AbdurRahmanBinAwf" xml:space="preserve">
+    <value>Abdur Rahman Bin Awf</value>
+  </data>
+  <data name="IslamInfo_AbuUbaidahBinAlJarrah" xml:space="preserve">
+    <value>Abu Ubaidah Bin Al Jarrah</value>
+  </data>
+  <data name="IslamInfo_SaeedBinZaid" xml:space="preserve">
+    <value>Saeed Bin Zaid</value>
+  </data>
+  <data name="IslamInfo_IsraAndMiraj" xml:space="preserve">
+    <value>Isra And Miraj</value>
+  </data>
+  <data name="IslamInfo_Heaven" xml:space="preserve">
+    <value>Heaven</value>
+  </data>
+  <data name="IslamInfo_CaveOfHira" xml:space="preserve">
+    <value>Cave Of Hira</value>
+  </data>
+  <data name="IslamInfo_MountNour" xml:space="preserve">
+    <value>Mount Nour</value>
+  </data>
+  <data name="IslamInfo_MountUhud" xml:space="preserve">
+    <value>Mount Uhud</value>
+  </data>
+  <data name="IslamInfo_SacredMosque" xml:space="preserve">
+    <value>Sacred Mosque</value>
+  </data>
+  <data name="IslamInfo_MosqueOfTheProphet" xml:space="preserve">
+    <value>Mosque Of The Prophet</value>
+  </data>
+  <data name="IslamInfo_FarthestMosque" xml:space="preserve">
+    <value>Farthest Mosque</value>
+  </data>
+  <data name="IslamInfo_FestivalOfBreakingFast" xml:space="preserve">
+    <value>Festival Of Breaking Fast</value>
+  </data>
+  <data name="IslamInfo_FestivalOfSacrifice" xml:space="preserve">
+    <value>Festival Of Sacrifice</value>
+  </data>
+  <data name="IslamInfo_IslamicNewYear" xml:space="preserve">
+    <value>Islamic New Year</value>
+  </data>
+  <data name="IslamInfo_Ashura" xml:space="preserve">
+    <value>Ashura</value>
+  </data>
+  <data name="IslamInfo_BirthdayOfTheProphet" xml:space="preserve">
+    <value>Birthday Of The Prophet</value>
+  </data>
+  <data name="IslamInfo_Ramadan" xml:space="preserve">
+    <value>Ramadan</value>
+  </data>
+  <data name="IslamInfo_MidShaban" xml:space="preserve">
+    <value>Mid Shaban</value>
+  </data>
 </root>
