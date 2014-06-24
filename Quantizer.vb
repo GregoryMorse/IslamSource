@@ -684,9 +684,19 @@ Namespace ImageQuantization
             For Count As Integer = 0 To 215
                 Colors(Count) = Color.FromArgb(Rs(Count Mod 6), Gs((Count \ 6) Mod 6), Bs(Count \ 36))
             Next
-            DrawMandelbrotSet(Bmp, Color.Transparent, Colors, 1, 1.5, -2, -1.5, 150, False)
+            DrawJuliaSet(Bmp, Color.Transparent, Colors, 1, 1.5, -2, -1.5, 150, False)
         End Sub
-        Shared Sub DrawMandelbrotSet(Bm As Bitmap, _
+        Shared Sub StandardJuliaSet(Bmp As Bitmap)
+            Dim Gs() As Integer = {&HFF, &HCC, &H99, &H66, &H33, &H0}
+            Dim Rs() As Integer = {&HFF, &HCC, &H99, &H66, &H33, &H0}
+            Dim Bs() As Integer = {&H0, &H33, &H66, &H99, &HCC, &HFF}
+            Dim Colors(215) As Color
+            For Count As Integer = 0 To 215
+                Colors(Count) = Color.FromArgb(Rs(Count Mod 6), Gs((Count \ 6) Mod 6), Bs(Count \ 36))
+            Next
+            DrawJuliaSet(Bmp, Color.Transparent, Colors, -0.4, 0.6, 0, 0, 150, True)
+        End Sub
+        Shared Sub DrawJuliaSet(Bm As Bitmap, _
                                      BackColor As Color, Colors As Color(), _
                                      Zr As Double, Zim As Double,
                                      Z2r As Double, Z2im As Double,
@@ -731,8 +741,8 @@ Namespace ImageQuantization
                         ' Calculate Z(clr).
                         ReaZ2 = ReaZ * ReaZ
                         ImaZ2 = ImaZ * ImaZ
-                        ImaZ = 2 * ImaZ * ReaZ + ImaC
-                        ReaZ = ReaZ2 - ImaZ2 + ReaC
+                        ImaZ = 2 * ImaZ * ReaZ + If(IsJuliaSet, Zim, ImaC)
+                        ReaZ = ReaZ2 - ImaZ2 + If(IsJuliaSet, Zr, ReaC)
                         clr = clr + 1
                     Loop
 

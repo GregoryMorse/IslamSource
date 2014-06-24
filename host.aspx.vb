@@ -225,9 +225,13 @@
                         g.DrawString(Utility.ConnectionData.EMailAddress, oFont, Brushes.Black, New RectangleF(0, 0, CSng(Math.Ceiling(TextExtent.Width)), CSng(Math.Ceiling(TextExtent.Height))), Format)
                         bmp.MakeTransparent(Color.White)
                         oFont.Dispose()
-                ElseIf Request.QueryString.Get("Image") = "MandelbrotFractal" Then
+                ElseIf Request.QueryString.Get("Image") = "MandelbrotFractal" Or Request.QueryString.Get("Image") = "JuliaFractal" Then
                     Dim FractalBmp As New Bitmap(50, 50)
-                    ImageQuantization.Fractal.StandardMandelbrotSet(FractalBmp)
+                    If Request.QueryString.Get("Image") = "MandelbrotFractal" Then
+                        ImageQuantization.Fractal.StandardMandelbrotSet(FractalBmp)
+                    Else
+                        ImageQuantization.Fractal.StandardJuliaSet(FractalBmp)
+                    End If
                     bmp = New Bitmap(32 * 3, 32 * 3)
                     Dim g As Graphics = Graphics.FromImage(bmp)
                     Dim adj As Single = CSng(32 * Math.Sqrt(2))

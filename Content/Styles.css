@@ -106,6 +106,13 @@ div#qurantext
     border-style: solid;
 }
 
+div#hadithtext
+{
+    border-width: 32px;
+    border-image: url("/host.aspx?Page=Image.gif&Image=JuliaFractal") 32 repeat;
+    border-style: solid;
+}
+
 div.multidisplay
 {
     display: inline-block;

@@ -154,6 +154,8 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Quantizer.vb" />
+    <Content Include="Content\jquery.calendars.picker.css" />
+    <Content Include="Content\Styles.css" />
     <Content Include="Content\themes\base\images\animated-overlay.gif" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
@@ -225,7 +227,6 @@
     <Content Include="Scripts\jquery-1.11.1.min.js" />
     <Content Include="Scripts\jquery-ui-1.10.4.js" />
     <Content Include="Scripts\jquery-ui-1.10.4.min.js" />
-    <Content Include="Styles.css" />
     <Content Include="Web.config" />
     <EmbeddedResource Include="App_LocalResources\host.aspx.en.resx">
       <SubType>Designer</SubType>
