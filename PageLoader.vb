@@ -129,7 +129,11 @@ Public Class Utility
         Return CInt((num + (num2 * &H5D588B65)) And &H800000007FFFFFFFL)
     End Function
     Public Shared Function LoadResourceString(resourceKey As String) As String
-        Return DefaultValue(CStr(HttpContext.GetLocalResourceObject(LocalFile, resourceKey)), "  <data name=""" + resourceKey + """ xml:space=""preserve"">" + vbCrLf + "    <value>" + System.Text.RegularExpressions.Regex.Replace(System.Text.RegularExpressions.Regex.Replace(resourceKey, ".*_", String.Empty), "(.+?)([A-Z])", "$1 $2") + "</value>" + vbCrLf + "  </data>")
+        LoadResourceString = CStr(HttpContext.GetLocalResourceObject(LocalFile, resourceKey))
+        If LoadResourceString = Nothing Then
+            LoadResourceString = String.Empty
+            System.Diagnostics.Debug.WriteLine("  <data name=""" + resourceKey + """ xml:space=""preserve"">" + vbCrLf + "    <value>" + System.Text.RegularExpressions.Regex.Replace(System.Text.RegularExpressions.Regex.Replace(resourceKey, ".*_", String.Empty), "(.+?)([A-Z])", "$1 $2") + "</value>" + vbCrLf + "  </data>")
+        End If
     End Function
     Public Shared Function DefaultValue(Value As String, DefValue As String) As String
         If Value Is Nothing Then Return DefValue
