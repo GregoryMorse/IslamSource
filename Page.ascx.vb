@@ -272,7 +272,7 @@ Partial Class Page
                     writer.WriteEndTag("a")
                 End If
             ElseIf (PageLoader.IsImageItem(Item)) Then
-                SizeF = Utility.GetImageDimensions(HttpContext.Current.Request.PhysicalApplicationPath + "images\" + DirectCast(Item, PageLoader.ImageItem).Path)
+            SizeF = Utility.GetImageDimensions(Utility.GetFilePath("images\" + DirectCast(Item, PageLoader.ImageItem).Path))
                 Scale = Utility.ComputeImageScale(SizeF.Width, SizeF.Height, DirectCast(Item, PageLoader.ImageItem).MaxX, DirectCast(Item, PageLoader.ImageItem).MaxY)
                 If DirectCast(Item, PageLoader.ImageItem).Link And Scale <> 1 Then
                     writer.Write(vbCrLf + BaseTabs)

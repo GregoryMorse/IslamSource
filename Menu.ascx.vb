@@ -79,7 +79,7 @@ Partial Class Menu
         writer.WriteAttribute("id", "mainimage")
         writer.WriteAttribute("alt", Utility.LoadResourceString(PageSet.Title))
         writer.WriteAttribute("src", Utility.HtmlTextEncode(host.GetPageString("Image.gif&Image=Scale&p=menu.main")))
-        SizeF = Utility.GetImageDimensions(Request.PhysicalApplicationPath + "images/" + PageSet.MainImage)
+        SizeF = Utility.GetImageDimensions(Utility.GetFilePath("images/" + PageSet.MainImage))
         Scale = Utility.ComputeImageScale(SizeF.Width, SizeF.Height, 226 - 10 - 10, 200)
         writer.WriteAttribute("width", Convert.ToInt32(SizeF.Width / Scale).ToString())
         writer.WriteAttribute("height", Convert.ToInt32(SizeF.Height / Scale).ToString())
