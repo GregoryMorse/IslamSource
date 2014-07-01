@@ -66,6 +66,7 @@ Partial Class Page
         AddToJSFunctions(CType(OutArray(0), String()))
         writer.Write(vbCrLf + BaseTabs)
         writer.WriteBeginTag("table")
+        writer.WriteAttribute("id", "render" + Prefix)
         writer.Write(HtmlTextWriter.TagRightChar)
         For Count = 2 To OutArray.Length - 1
             writer.Write(vbCrLf + BaseTabs + vbTab)
@@ -82,6 +83,14 @@ Partial Class Page
                         writer.WriteAttribute("class", CStr(DirectCast(OutArray(1), Object())(Index)))
                         If CStr(DirectCast(OutArray(1), Object())(Index)) = "transliteration" Then
                             writer.WriteAttribute("style", "display: " + CStr(IIf(CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) <> 0, "block", "none")) + ";")
+                        ElseIf CStr(DirectCast(OutArray(1), Object())(Index)) = "check" Then
+                            writer.Write(HtmlTextWriter.TagRightChar)
+                            writer.WriteBeginTag("input")
+                            writer.WriteAttribute("id", "check" + CStr(IIf(Prefix <> String.Empty, Prefix + "_", String.Empty)) + CStr(Count - 3) + "_" + CStr(Index))
+                            writer.WriteAttribute("type", "checkbox")
+                            writer.WriteAttribute("onchange", CType(OutArray(0), String())(0))
+                        ElseIf CStr(DirectCast(OutArray(1), Object())(Index)) = "hidden" Then
+                            writer.WriteAttribute("style", "display: none;")
                         End If
                     End If
                     writer.Write(HtmlTextWriter.TagRightChar)

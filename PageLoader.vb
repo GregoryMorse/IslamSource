@@ -1013,14 +1013,17 @@ Public Class Document
     Public Shared Function GetDocument(ByVal Item As PageLoader.TextItem) As String
         Return String.Empty
     End Function
-    Public Shared Function GetXML(ByVal Item As PageLoader.TextItem) As String
-        Dim XML As String = String.Empty
+    Public Shared Function GetXML(ByVal Item As PageLoader.TextItem) As Array
         Dim XMLDoc As New System.Xml.XmlDocument
         XMLDoc.Load(Utility.GetFilePath("metadata\" + Utility.ConnectionData.DocXML))
+        Dim RetArray(2 + XMLDoc.DocumentElement.ChildNodes.Count) As Array
+        RetArray(0) = New String() {"javascript: doOnCheck(this);", "doSort();", "function doSort() { var child = $('#render').children('tr'); child.shift(); child.sort(function(a, b) { if (window.localstorage.getItem(a.children('td')(3).text()) == window.localstorage.getItem(b.children('td')(3).text())) return new Date(a.children('td')(1).text()) > new Data(b.children('td')(1).text()); return (window.localstorage.getItem(a.children('td')(3).text())) ? 1 : -1; }); child.detach().appendTo($('#render')); }" + "function doOnCheck(element) { element.checked = !element.checked; if (element.checked) { window.localstorage.setItem($(element).parent().children('td')(3), true); } else { window.localstorage.removeItem($(element).parent().children('td')(3)); } doSort(); }"}
+        RetArray(1) = New String() {"check", String.Empty, String.Empty, "hidden"}
+        RetArray(2) = New String() {String.Empty, String.Empty, String.Empty, String.Empty}
         For Count As Integer = 0 To XMLDoc.DocumentElement.ChildNodes.Count - 1
-            XML += XMLDoc.DocumentElement.ChildNodes.Item(Count).Attributes("date").Value + ": " + XMLDoc.DocumentElement.ChildNodes.Item(Count).Attributes("message").Value + vbCrLf
+            RetArray(2 + Count) = New String() {"Separate?", XMLDoc.DocumentElement.ChildNodes.Item(Count).Attributes("date").Value, XMLDoc.DocumentElement.ChildNodes.Item(Count).Attributes("message").Value, XMLDoc.DocumentElement.ChildNodes.Item(Count).Attributes("id").Value}
         Next
-        Return XML
+        Return RetArray
     End Function
 End Class
 Public Class Geolocation
