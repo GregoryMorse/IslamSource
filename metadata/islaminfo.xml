@@ -948,8 +948,135 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="maEa" id="With"></word>
 			<word text="wa" id="AndByOfOath"></word>
 		</category>
+		<category title="Nouns">
+			<word text="bay~inap|bay~inaAt" id="ClearEvidence"></word>
+			<word text="rab~|&gt;arobaAb" id="Lord"></word>
+			<word text="kawokib|kawaAkib" id="Star"></word>
+			<word text="miyqaAt|mawaAqiyt" id="Appointment"></word>
+			<word text="vamorap|vamaraAt" id="Fruit"></word>
+			<word text="rajaA&apos;|" id="Hoping"></word>
+			<word text="qariyn|quranaA&apos;" id="CloseFriend"></word>
+			<word text="kalob|kilaAb" id="Dog"></word>
+			<word text="kasolaAn|kusaAliY" id="Lazy"></word>
+			<word text="ra&gt;os|ru}uws" id="Head"></word>
+			<word text="qalam|&gt;aqalaAm" id="Pen"></word>
+			<word text="qarn|quruwn" id="Generation"></word>
+			<word text="Husn" id="ExcellentBeautiful"></word>
+			<word text="qadam|&gt;aqadaAm" id="StepFoot"></word>
+			<word text="xuboz|&gt;axobaAz" id="Bread"></word>
+			<word text="haw|" id="Entertainment"></word>
+			<word text="miHoraAb|maHaArib" id="PrayerChamber"></word>
+			<word text="nidaA&apos;|" id="Call"></word>
+			<word text="$ahor|&gt;a$hur" id="Months"></word>
+			<word text="Zil~|ZilaAl" id="Shade"></word>
+			<word text="laEib|" id="PlayAmusement"></word>
+			<word text="vaAbit|" id="FixedStationary"></word>
+			<word text="SaAdiq|SaAdiquwn" id="TruthfulPerson"></word>
+			<word text="kul~|kilaA" id="EachAll"></word>
+			<word text="madiynap|mudun,madaA{in" id="City"></word>
+			<word text="kaviyr|" id="Many"></word>
+			<word text="naxolap|naxol,naxiyl" id="DatePalm"></word>
+			<word text="qaliyl|" id="LittleQuantity"></word>
+			<word text="miyzaAn|mawaAziyn" id="BalanceScale"></word>
+			<word text="mar~ap|mar~aAt" id="OnceOneTime"></word>
+			<word text="naADirap" id="RadiantFresh"></word>
+			<word text="fariyDap|faraA{iD" id="Requirement"></word>
+			<word text="Dar~|&gt;DoraAr" id="Injury"></word>
+			<word text="Euduw~|&gt;aEodaA&apos;" id="Enemy"></word>
+			<word text="$a&gt;on|$u}uwn" id="Matter"></word>
+			<word text="yatiym|yataAmaY" id="Orphan"></word>
+			<word text="kayol|&gt;akoyaAl" id="Measure"></word>
+			<word text="faAsiq|faAsiquwn" id="OpenSinner"></word>
+			<word text="jadiyd|" id="New"></word>
+			<word text="maA&apos;|miyaAh" id="Water"></word>
+			<word text="waraA&apos;|" id="Behind"></word>
+			<word text="mawoEiZap|mawaAEiZ" id="Admonition"></word>
+			<word text="miraArAF|" id="Repeatedly"></word>
+			<word text="rum~aAn|" id="Pomegranate"></word>
+			<word text="suruwr|" id="Happiness"></word>
+			<word text="Eibrap|Eibar" id="Admonition"></word>
+			<word text="&gt;u*un||*aAn" id=""></word>
+			<word text="nusuk|" id="Sacrifice"></word>
+			
+			<word text="|ayap||ayaAt" id="Sign"></word>
+			<word text="rasuwl|rusul" id="Messenger"></word>
+			<word text="nabiy~|&gt;anobiyaA&apos;,nabiy~uwn,nabiy~iyn" id="Prophet"></word>
+			<word text="quro|n|" id="QuranReadingRecitation"></word>
+			<word text="&gt;anoEaAm" id="Cattle"></word>
+			<word text="jabal|jibaAl" id="Mountain"></word>
+			<word text="baHor|buHuwr" id="SeaLargeRiver"></word>
+			<word text="$amos|$umuws" id="Sun"></word>
+			<word text="qamar|&gt;aqomaAr" id="Moon"></word>
+			<word text="layl|layaAl" id="Night"></word>
+			<word text="nahaAr|&gt;anohur" id="Day"></word>
+			<word text="&gt;aroD|&gt;araADK" id="World"></word>
+			<word text="samaA&apos;|samaAwaAt" id="Sky"></word>
+			<word text="&gt;abadAF" id="ForeverEver"></word>
+			<word text="SaAHib|&gt;aSoHaAb" id="CompanionFellow"></word>
+			<word text="&gt;ajor|&gt;ujuwr" id="Reward"></word>
+			<word text="EaAqibap|EawaAqib" id="End"></word>
+			<word text="&gt;ajal||jaAl" id="Term"></word>
+			<word text="Ea*aAb|Ea*aAbaAt" id="Torment"></word>
+			<word text="&gt;alo|xirap|" id="Hereafter"></word>
+			<word text="EiqaAb|" id="ChastisementFromSin"></word>
+			<word text="&gt;aliym" id="Painful"></word>
+			<word text="qiyaAmap" id="Resurrection"></word>
+			<word text="vawaAb|" id="Reward"></word>
+			<word text="liqaA&apos;|liqaA&apos;aAt" id="Meeting"></word>
+			<word text="jaHiym|" id="Hellfire"></word>
+			<word text="musam~aY|musam~aAt" id="Fixed"></word>
+			<word text="jazaA&apos;|" id="Reward"></word>
+			<word text="naAr|niyraAn" id="Fire"></word>
+			<word text="jan~ap|jan~aAt" id="Garden"></word>
+			<word text="nahar|&gt;anohaAr" id="River"></word>
+			<word text="jahan~am|" id="Hell"></word>
+			<word text="wayol|" id="WoeUnto"></word>
+			<word text="HisaAb|HisaAbaAt" id="Reckoning"></word>
+			<word text="yawom|&gt;ay~aAm" id="Day"></word>
+			<word text="saAEap|saAEaAt" id="HourOnDayOfResurrection"></word>
+			<word text="yawoma{i*K" id="ThatDay"></word>
+			<word text="$ayoTaAn|$ayaATiyn" id="Satan"></word>
+			<word text="firoEawon|firaAEinap" id="Pharoah"></word>
+			<word text="EaAd|" id="PeopleOfHud"></word>
+			<word text="vamuwd|" id="PeopleOfSalih"></word>
+			<word text="&lt;israA{iyl" id="Israel"></word>
+		</category>
 	</grammar>
 	<vocabulary>
+		<category title="GrammaticalTerms">
+			<word text="&lt;iEraAb" id="Declension"></word>
+			<word text="binaA&apos;" id="Construction"></word>
+			<word text="Sarf" id="WordPatterns"></word>
+			<word text="&gt;an~aHw" id="ScienceOfGrammar"></word>
+			<word text="HarakaAt" id="Vowels"></word>
+			<word text="ta$kiyl" id="Diacritics"></word>
+			<word text="&gt;alkalimap" id="Word"></word>
+			<word text="fiEolN|&gt;afoEaAlN" id="Verb"></word>
+			<word text="&lt;isomN|&gt;asomaA&apos;N" id="Noun"></word>
+			<word text="HarofN|HuruwfN" id="Particle"></word>
+			<word text="lafoZu &gt;alojalaAlap" id="GrandWord"></word>
+			<word text="rafoE" id="Nominative"></word>
+			<word text="naSob" id="Accusative"></word>
+			<word text="jar~" id="Genitive"></word>
+			<word text="&gt;aloEadad" id="NumberPlurality"></word>
+			<word text="&gt;alojinos" id="Gender"></word>
+			<word text="&gt;aloqisom" id="Definiteness"></word>
+			<word text="&gt;alomaEorifap" id="Definite"></word>
+			<word text="&gt;an~akirap" id="Indefinite"></word>
+			<word text="fEl,&gt;afoEaAlN,fuEuwlN,fiEaAlN,faEaAEilN" id="RepresentativeStem"></word>
+			<word text="jamoEu &gt;almu*ak~ari &gt;als~aAlim" id="SoundMasculinePlural"></word>
+			<word text="jamoEu &gt;almu}an~av &gt;als~aAlim" id="SoundFemininePlural"></word>
+			<word text="jamoEu &gt;alt~akosiyr" id="BrokenPlural"></word>
+			<word text="&lt;isomu &gt;alofaAEil" id="Doers"></word>
+			<word text="jamoEu" id="Plural"></word>
+			<word text="mafoEuwl" id="AdverbsDenotingDetail"></word>
+			<word text="&lt;iDaAfap" id="Possession"></word>
+			<word text="Huruwf &gt;aljar~" id="ObjectsOfPreposition"></word>
+			<word text="Eajamiy" id="Illiterate"></word>
+			<word text="&gt;alfuSoH`Y" id="ClassicArabic"></word>
+			<word text="kitaAbu &gt;alEayn" id="ArabicDictionary"></word>
+			<word text="Huruwf gayoru EaAmil" id="ParticlesWithoutDeclension"></word>
+		</category>
 		<category title="RulesOfRecitation">
 			<word text="sif~aAt" id="LetterCharacteristics"></word>
 			<word text="maxraj~" id="PointOfArticulation"></word>
@@ -1051,26 +1178,26 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="&lt;idriys" id="Enoch"></word>
 			<word text="nuwH" id="Noah"></word>
 			<word text="huwd" id="Eber"></word>
-			<word text="SAliH" id="Saleh"></word>
-			<word text="&lt;ibrAhiym" id="Abraham"></word>
+			<word text="SaAliH" id="Saleh"></word>
+			<word text="&lt;iborAhiym" id="Abraham"></word>
 			<word text="luwT" id="Lot"></word>
-			<word text="&lt;ismAEyl" id="Ishmael"></word>
-			<word text="&lt;isHAq" id="Isaac"></word>
-			<word text="yEquwb" id="Jacob"></word>
+			<word text="&lt;ismaAEiyl" id="Ishmael"></word>
+			<word text="&lt;isHaAq" id="Isaac"></word>
+			<word text="yaEoquwb" id="Jacob"></word>
 			<word text="yuwsuf" id="Joseph"></word>
 			<word text="&gt;ayuwb" id="Job"></word>
-			<word text="$uEayb" id="Jethro"></word>
-			<word text="muwsY" id="Moses"></word>
+			<word text="$uEayob" id="Jethro"></word>
+			<word text="muwsaY" id="Moses"></word>
 			<word text="hAruwn" id="Aaron"></word>
 			<word text="*uw Alkifl" id="Ezekiel"></word>
 			<word text="dAwud" id="David"></word>
 			<word text="sulaymAn" id="Solomon"></word>
 			<word text="lyAs" id="Elijah"></word>
 			<word text="AlyasE" id="Elisha"></word>
-			<word text="ywns" id="Jonas"></word>
+			<word text="yuwnas" id="Jonas"></word>
 			<word text="zakariy~A" id="Zechariah"></word>
 			<word text="yaHyY" id="JohnTheBaptist"></word>
-			<word text="EysY" id="Jesus"></word>
+			<word text="EiysaY &lt;ibnu maroyama" id="JesusSonOfMary"></word>
 			<word text="muHam~ad" id="Muhammad"></word>
 		</category>
 		<category title="NamesOfAllah">

@@ -144,7 +144,7 @@ Public Class Utility
             resourceKey.StartsWith("IslamInfo_") Or _
             resourceKey.StartsWith("IslamSource_") Or _
             resourceKey.StartsWith("lang_") Or _
-            resourceKey.StartsWith("unicode_") Then
+            resourceKey.StartsWith("unicode_") Or resourceKey = "IslamSource" Then
             LoadResourceString = CStr(HttpContext.GetLocalResourceObject(LocalFile, resourceKey))
         Else
             LoadResourceString = CStr(HttpContext.GetGlobalResourceObject(ConnectionData.GlobalRes, resourceKey))
@@ -1391,8 +1391,7 @@ Public Class Arabic
     Public Const ArabicSmallLowMeem As Char = ChrW(1773)
     Public Const LeftToRightMark As Char = ChrW(&H200E)
     Public Const RightToLeftMark As Char = ChrW(&H200F)
-    Public Shared Function GetRecitationSymbols() As Array()
-        Return Array.ConvertAll(New Char() {Space, _
+    Public Shared RecitationSymbols() As Char = {Space, _
         ArabicLetterHamza, ArabicLetterAlefWithHamzaAbove, ArabicLetterWawWithHamzaAbove, _
         ArabicLetterAlefWithHamzaBelow, ArabicLetterYehWithHamzaAbove, _
         ArabicLetterAlef, ArabicLetterBeh, ArabicLetterTehMarbuta, ArabicLetterTeh, _
@@ -1411,48 +1410,18 @@ Public Class Arabic
         ArabicSmallHighUprightRectangularZero, ArabicSmallHighMeemIsolatedForm, _
         ArabicSmallLowSeen, ArabicSmallWaw, ArabicSmallYeh, ArabicSmallHighNoon, _
         ArabicPlaceOfSajdah, ArabicEmptyCentreLowStop, ArabicEmptyCentreHighStop, _
-        ArabicRoundedHighStopWithFilledCentre, ArabicSmallLowMeem _
-            }, Function(Ch As Char) New Object() {CachedData.IslamData.ArabicLetters(FindLetterBySymbol(Ch)).UnicodeName + " (" + Ch + ")", FindLetterBySymbol(Ch)})
+        ArabicRoundedHighStopWithFilledCentre, ArabicSmallLowMeem}
+    Public Shared Function GetRecitationSymbols() As Array()
+        Return Array.ConvertAll(RecitationSymbols, Function(Ch As Char) New Object() {CachedData.IslamData.ArabicLetters(FindLetterBySymbol(Ch)).UnicodeName + " (" + Ch + ")", FindLetterBySymbol(Ch)})
     End Function
     Public Shared Function IsLetter(Index As Integer) As Boolean
-        Return CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterBeh Or _
-        CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterTeh Or _
-        CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterTheh Or _
-        CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterJeem Or _
-        CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterHah Or _
-        CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterKhah Or _
-        CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterDal Or _
-        CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterThal Or _
-        CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterReh Or _
-        CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterZain Or _
-        CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterSeen Or _
-        CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterSheen Or _
-        CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterSad Or _
-        CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterDad Or _
-        CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterTah Or _
-        CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterZah Or _
-        CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterAin Or _
-        CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterGhain Or _
-        CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterFeh Or _
-        CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterQaf Or _
-        CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterKaf Or _
-        CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterLam Or _
-        CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterMeem Or _
-        CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterNoon Or _
-        CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterHeh
+        Return Array.FindIndex(ArabicLetters, Function(Str As String) Str = CachedData.IslamData.ArabicLetters(Index).Symbol) <> -1
     End Function
     Public Shared Function IsPunctuation(Index As Integer) As Boolean
         Return CachedData.IslamData.ArabicLetters(Index).Symbol = ExclamationMark Or CachedData.IslamData.ArabicLetters(Index).Symbol = QuotationMark Or CachedData.IslamData.ArabicLetters(Index).Symbol = FullStop Or CachedData.IslamData.ArabicLetters(Index).Symbol = Comma Or CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicComma
     End Function
     Public Shared Function IsStop(Index As Integer) As Boolean
-        Return (CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicSmallHighLigatureSadWithLamWithAlefMaksura Or _
-                                CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicSmallHighLigatureQafWithLamWithAlefMaksura Or _
-                                CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicSmallHighMeemInitialForm Or _
-                                CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicSmallHighLamAlef Or _
-                                CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicSmallHighJeem Or _
-                                CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicSmallHighThreeDots Or _
-                                CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicSmallHighSeen) Or _
-                                (CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicEndOfAyah)
+        Return Array.FindIndex(ArabicStopLetters, Function(Str As String) Str = CachedData.IslamData.ArabicLetters(Index).Symbol) <> -1
     End Function
     Public Shared Function IsIgnored(Index As Integer) As Boolean
         Return (CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicSmallWaw) Or _
@@ -1481,6 +1450,10 @@ Public Class Arabic
     Public Shared ArabicSpecialLeadingGutteral As String() = {ArabicLetterHah, ArabicLetterAin}
     Public Shared ArabicSpecialGutteral As String() = {ArabicLetterHamza, ArabicLetterHah, ArabicLetterAin, ArabicLetterSad, ArabicLetterDad, ArabicLetterTah, ArabicLetterZah}
     Public Shared ArabicLetters As String() = {ArabicLetterTeh, ArabicLetterTheh, ArabicLetterDal, ArabicLetterThal, ArabicLetterReh, ArabicLetterZain, ArabicLetterSeen, ArabicLetterSheen, ArabicLetterSad, ArabicLetterDad, ArabicLetterTah, ArabicLetterZah, ArabicLetterLam, ArabicLetterNoon, ArabicLetterAlef, ArabicLetterBeh, ArabicLetterJeem, ArabicLetterHah, ArabicLetterKhah, ArabicLetterAin, ArabicLetterGhain, ArabicLetterFeh, ArabicLetterQaf, ArabicLetterKaf, ArabicLetterMeem, ArabicLetterHeh, ArabicLetterWaw, ArabicLetterYeh}
+    Public Shared ArabicStopLetters As String() = {ArabicSmallHighLigatureSadWithLamWithAlefMaksura, _
+                                                   ArabicSmallHighLigatureQafWithLamWithAlefMaksura, _
+                                ArabicSmallHighMeemInitialForm, ArabicSmallHighLamAlef, _
+                                ArabicSmallHighJeem, ArabicSmallHighThreeDots, ArabicSmallHighSeen}
     Structure RuleTranslation
         Public Rule As String
         Public RuleName As String
@@ -2150,7 +2123,7 @@ Public Class Arabic
     End Function
     Public Shared Function GetChangeTransliterationJS() As String()
         Return New String() {"javascript: changeTransliteration();", String.Empty, Utility.GetLookupStyleSheetJS(), GetArabicSymbolJSArray(), GetTransliterateGenJS(), GetPlainTransliterateGenJS(), _
-        "function changeTransliteration() { var k, child, iSubCount, text; $('span.transliteration').each(function() { $(this).css('display', $('#translitscheme').val() === '0' ? 'none' : 'block'); }); for (k in renderList) { text = ''; for (child in renderList[k]['children']) { for (iSubCount = 0; iSubCount < renderList[k]['children'][child]['arabic'].length; iSubCount++) { if ($('#translitscheme').val() === '1' && renderList[k]['children'][child]['arabic'][iSubCount] !== '' && renderList[k]['children'][child]['translit'][iSubCount] !== '') { if (text !== '') text += ' '; text += $('#' + renderList[k]['children'][child]['arabic'][iSubCount]).text(); } else { if (renderList[k]['children'][child]['translit'][iSubCount] !== '') $('#' + renderList[k]['children'][child]['translit'][iSubCount]).text(($('#translitscheme').val() === '0' || renderList[k]['children'][child]['arabic'][iSubCount] === '') ? '' : doTransliterate($('#' + renderList[k]['children'][child]['arabic'][iSubCount]).text(), true, $('#translitscheme').val() === '3')); } } } if ($('#translitscheme').val() === '1') { text = doPlainTransliterate(text).split(' '); for (child in renderList[k]['children']) { for (iSubCount = 0; iSubCount < renderList[k]['children'][child]['translit'].length; iSubCount++) { if (renderList[k]['children'][child]['translit'][iSubCount] !== '') $('#' + renderList[k]['children'][child]['translit'][iSubCount]).text(text.splice(0, 1)[0]); } } } for (iSubCount = 0; iSubCount < renderList[k]['arabic'].length; iSubCount++) { if (renderList[k]['translit'][iSubCount] !== '') $('#' + renderList[k]['translit'][iSubCount]).text(($('#translitscheme').val() === '0' || renderList[k]['arabic'][iSubCount] === '') ? '' : ($('#translitscheme').val() === '1' ? doPlainTransliterate($('#' + renderList[k]['arabic'][iSubCount]).text()) : doTransliterate($('#' + renderList[k]['arabic'][iSubCount]).text(), true, $('#translitscheme').val() === '3'))); } } }"}
+        "function changeTransliteration() { var k, child, iSubCount, text; $('span.transliteration').each(function() { $(this).css('display', $('#translitscheme').val() === '0' ? 'none' : 'block'); }); for (k in renderList) { text = ''; for (child in renderList[k]['children']) { for (iSubCount = 0; iSubCount < renderList[k]['children'][child]['arabic'].length; iSubCount++) { if ($('#translitscheme').val() === '1' && renderList[k]['children'][child]['arabic'][iSubCount] !== '' && (renderList[k]['children'][child]['arabic'][iSubCount].length !== 1 || !isStop(findLetterBySymbol(renderList[k]['children'][child]['arabic'][iSubCount].charCodeAt(0)))) && renderList[k]['children'][child]['translit'][iSubCount] !== '') { if (text !== '') text += ' '; text += $('#' + renderList[k]['children'][child]['arabic'][iSubCount]).text(); } else { if (renderList[k]['children'][child]['translit'][iSubCount] !== '') $('#' + renderList[k]['children'][child]['translit'][iSubCount]).text(($('#translitscheme').val() === '0' || renderList[k]['children'][child]['arabic'][iSubCount] === '') ? '' : doTransliterate($('#' + renderList[k]['children'][child]['arabic'][iSubCount]).text(), true, $('#translitscheme').val() === '3')); } } } if ($('#translitscheme').val() === '1') { text = doPlainTransliterate(text).split(' '); for (child in renderList[k]['children']) { for (iSubCount = 0; iSubCount < renderList[k]['children'][child]['translit'].length; iSubCount++) { if (renderList[k]['children'][child]['translit'][iSubCount] !== '') $('#' + renderList[k]['children'][child]['translit'][iSubCount]).text(text.shift()); } } } for (iSubCount = 0; iSubCount < renderList[k]['arabic'].length; iSubCount++) { if (renderList[k]['translit'][iSubCount] !== '') $('#' + renderList[k]['translit'][iSubCount]).text(($('#translitscheme').val() === '0' || renderList[k]['arabic'][iSubCount] === '') ? '' : ($('#translitscheme').val() === '1' ? doPlainTransliterate($('#' + renderList[k]['arabic'][iSubCount]).text()) : doTransliterate($('#' + renderList[k]['arabic'][iSubCount]).text(), true, $('#translitscheme').val() === '3'))); } } }"}
     End Function
     Public Shared Function GetCategories() As String()
         Dim RetCat As New ArrayList(Array.ConvertAll(CachedData.IslamData.VocabularyCategories, Function(Convert As IslamData.VocabCategory) Utility.LoadResourceString("IslamInfo_" + Convert.Title)))
@@ -3400,10 +3373,11 @@ Public Class TanzilReader
                     For Verse = 0 To QuranText(Chapter).Length - 1
                         Dim Items As New Collections.Generic.List(Of RenderArray.RenderItem)
                         Text = String.Empty
-                        If BaseChapter + Chapter <> 1 AndAlso TanzilReader.IsQuarterStart(BaseChapter + Chapter, CInt(IIf(Chapter = 0, BaseVerse, 1)) + Verse) Then
-                            Text += Arabic.TransliterateFromBuckwalter("B")
-                            Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.RightToLeftMark + Arabic.TransliterateFromBuckwalter("B"))}))
-                        End If
+                        'hizb symbols not needed as Quranic text already contains them
+                        'If BaseChapter + Chapter <> 1 AndAlso TanzilReader.IsQuarterStart(BaseChapter + Chapter, CInt(IIf(Chapter = 0, BaseVerse, 1)) + Verse) Then
+                        '    Text += Arabic.TransliterateFromBuckwalter("B")
+                        '    Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.RightToLeftMark + Arabic.TransliterateFromBuckwalter("B"))}))
+                        'End If
                         If CInt(IIf(Chapter = 0, BaseVerse, 1)) + Verse = 1 Then
                             Node = GetTextVerse(GetTextChapter(CachedData.XMLDocMain, BaseChapter + Chapter), 1).Attributes.GetNamedItem("bismillah")
                             If Not Node Is Nothing Then
