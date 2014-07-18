@@ -831,48 +831,62 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 		<category title="ProximalDemonstratives">
 			<word text="ha*aA" id="This" grammar="ms"></word>
 			<word text="ha*ihi" id="This" grammar="fs"></word>
-			<word text="ha}ula&apos;" id="These" grammar="np"></word>
-			<word text="ha*ihi" id="These" grammar="nb"></word>
+			<word text="ha*aAni ha*ayoni" id="TheseTwo" grammar="md"></word>
+			<word text="hataAni hatayoni" id="TheseTwo" grammar="fd"></word>
+			<word text="ha}ulaA&apos;i" id="These" grammar="mp|fp"></word>
+			<word text="ha*ihi" id="These" grammar="bp"></word>
 		</category>
 		<category title="DistalDemonstratives">
 			<word text="*`lika" id="That" grammar="ms"></word>
 			<word text="tiloka" id="That" grammar="fs"></word>
-			<word text="&gt;uwl{ika" id="Those" grammar="np"></word>
-			<word text="tiloka" id="Those" grammar="nb"></word>
+			<word text="*aAnika *ayonika" id="ThoseTwo" grammar="md"></word>
+			<word text="taAnika tayonika" id="ThoseTwo" grammar="fd"></word>
+			<word text="&gt;uwl{ika" id="Those" grammar="mp|fp"></word>
+			<word text="tiloka" id="Those" grammar="bp"></word>
+		</category>
+		<category title="PointingNouns">
+			<word text="ka*alika" id="LikeThis"></word>
+			<word text="h`ka*aA" id="InThisWay"></word>
+			<word text="hahunaA hunaA" id="Here"></word>
+			<word text="hunaka" id="There"></word>
+			<word text="tam~a" id="ThereOverThere"></word>
 		</category>
 		<category title="RelativePronouns">
 			<word text="Al~a*iy" id="HeWho" grammar="ms"></word>
 			<word text="Al~atiy" id="SheWho" grammar="fs"></word>
-			<word text="Al~a*iyna" id="ThoseWho" grammar="np"></word>
-			<word text="Al~atiy" id="ThoseWho" grammar="nb"></word>
+			<word text="Al~a*iyna" id="ThoseWho" grammar="mp"></word>
+			<word text="Al~a`tiy" id="ThoseWho" grammar="fp"></word>
+			<word text="Al~atiy" id="ThoseWho" grammar="bp"></word>
 		</category>
 		<category title="PersonalPronouns">
-			<word text="huwa" id="He" grammar="3ms"></word>
-			<word text="humo" id="Them" grammar="3mp"></word>
+			<word text="&gt;anaA" id="I" grammar="1ms|1fs"></word>
+			<word text="naHonu" id="We" grammar="1md|1fd|1mp|1fp"></word>
 			<word text="&gt;anota" id="You" grammar="2ms"></word>
-			<word text="&gt;anotum" id="YouAll" grammar="2mp"></word>
-			<word text="&gt;anaA" id="I" grammar="1ns"></word>
-			<word text="naHonu" id="We" grammar="1np"></word>
-			<word text="hiya" id="She" grammar="3fs"></word>
-			<word text="hun~a" id="They" grammar="3fp"></word>
 			<word text="&gt;anoti" id="You" grammar="2fs"></word>
-			<word text="hiya" id="They" grammar="3fs"></word>
-			<word text="&gt;anotumaA" id="YouTwo" grammar="2nd"></word>
-			<word text="humaA" id="ThoseTwo" grammar="3nd"></word>
+			<word text="&gt;anotumaA" id="YouTwo" grammar="2md|2fd"></word>
+			<word text="&gt;anotum" id="YouAll" grammar="2mp"></word>
+			<word text="&gt;anotun~a" id="YouAll" grammar="2fp"></word>
+			<word text="huwa" id="He" grammar="3ms"></word>
+			<word text="hiya" id="She" grammar="3fs"></word>
+			<word text="humaA" id="ThoseTwo" grammar="3md|3fd"></word>
+			<word text="humo" id="Them" grammar="3mp"></word>
+			<word text="hun~a" id="They" grammar="3fp"></word>
+			<word text="hiya" id="They" grammar="3bp"></word>
 		</category>
 		<category title="PossessiveDeterminerPersonalPronouns">
-			<word text="h" id="His" grammar="3ms"></word>
-			<word text="humo" id="Their" grammar="3mp"></word>
+			<word text="yo niy" id="My" grammar="1ms|1fs"></word>
+			<word text="naA" id="Our" grammar="1md|1fd|1mp|1fp"></word>
 			<word text="ka" id="Your" grammar="2ms"></word>
-			<word text="kumo" id="Your" grammar="2mp"></word>
-			<word text="yo" id="My" grammar="1ns"></word>
-			<word text="na" id="Our" grammar="1np"></word>
-			<word text="haA" id="Her" grammar="3fs"></word>
-			<word text="hun~a" id="Their" grammar="3fp"></word>
 			<word text="ki" id="Your" grammar="2fs"></word>
-			<word text="haA" id="Their" grammar="3fs"></word>
-			<word text="kumaA" id="Your" grammar="2nd"></word>
-			<word text="humaA" id="Their" grammar="3nd"></word>
+			<word text="kumaA" id="Your" grammar="2md|2fd"></word>
+			<word text="kumo" id="Your" grammar="2mp"></word>
+			<word text="kun~a" id="Your" grammar="2fp"></word>
+			<word text="hu" id="His" grammar="3ms"></word>
+			<word text="haA" id="Her" grammar="3fs"></word>
+			<word text="humaA" id="Their" grammar="3md|3fd"></word>
+			<word text="humo" id="Their" grammar="3mp"></word>
+			<word text="hun~a" id="Their" grammar="3fp"></word>
+			<word text="haA" id="Their" grammar="3bp"></word>
 		</category>
 		<category title="ResponseParticles">
 			<word text="&lt;ilaha" id="God"></word>
@@ -949,97 +963,242 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="wa" id="AndByOfOath"></word>
 		</category>
 		<category title="Nouns">
-			<word text="bay~inap|bay~inaAt" id="ClearEvidence"></word>
-			<word text="rab~|&gt;arobaAb" id="Lord"></word>
-			<word text="kawokib|kawaAkib" id="Star"></word>
-			<word text="miyqaAt|mawaAqiyt" id="Appointment"></word>
-			<word text="vamorap|vamaraAt" id="Fruit"></word>
-			<word text="rajaA&apos;|" id="Hoping"></word>
-			<word text="qariyn|quranaA&apos;" id="CloseFriend"></word>
-			<word text="kalob|kilaAb" id="Dog"></word>
-			<word text="kasolaAn|kusaAliY" id="Lazy"></word>
-			<word text="ra&gt;os|ru}uws" id="Head"></word>
-			<word text="qalam|&gt;aqalaAm" id="Pen"></word>
-			<word text="qarn|quruwn" id="Generation"></word>
-			<word text="Husn" id="ExcellentBeautiful"></word>
-			<word text="qadam|&gt;aqadaAm" id="StepFoot"></word>
-			<word text="xuboz|&gt;axobaAz" id="Bread"></word>
-			<word text="haw|" id="Entertainment"></word>
-			<word text="miHoraAb|maHaArib" id="PrayerChamber"></word>
-			<word text="nidaA&apos;|" id="Call"></word>
-			<word text="$ahor|&gt;a$hur" id="Months"></word>
-			<word text="Zil~|ZilaAl" id="Shade"></word>
-			<word text="laEib|" id="PlayAmusement"></word>
-			<word text="vaAbit|" id="FixedStationary"></word>
-			<word text="SaAdiq|SaAdiquwn" id="TruthfulPerson"></word>
-			<word text="kul~|kilaA" id="EachAll"></word>
-			<word text="madiynap|mudun,madaA{in" id="City"></word>
-			<word text="kaviyr|" id="Many"></word>
-			<word text="naxolap|naxol,naxiyl" id="DatePalm"></word>
-			<word text="qaliyl|" id="LittleQuantity"></word>
-			<word text="miyzaAn|mawaAziyn" id="BalanceScale"></word>
-			<word text="mar~ap|mar~aAt" id="OnceOneTime"></word>
-			<word text="naADirap" id="RadiantFresh"></word>
-			<word text="fariyDap|faraA{iD" id="Requirement"></word>
-			<word text="Dar~|&gt;DoraAr" id="Injury"></word>
-			<word text="Euduw~|&gt;aEodaA&apos;" id="Enemy"></word>
-			<word text="$a&gt;on|$u}uwn" id="Matter"></word>
-			<word text="yatiym|yataAmaY" id="Orphan"></word>
-			<word text="kayol|&gt;akoyaAl" id="Measure"></word>
-			<word text="faAsiq|faAsiquwn" id="OpenSinner"></word>
-			<word text="jadiyd|" id="New"></word>
-			<word text="maA&apos;|miyaAh" id="Water"></word>
-			<word text="waraA&apos;|" id="Behind"></word>
-			<word text="mawoEiZap|mawaAEiZ" id="Admonition"></word>
-			<word text="miraArAF|" id="Repeatedly"></word>
-			<word text="rum~aAn|" id="Pomegranate"></word>
-			<word text="suruwr|" id="Happiness"></word>
-			<word text="Eibrap|Eibar" id="Admonition"></word>
-			<word text="&gt;u*un||*aAn" id=""></word>
-			<word text="nusuk|" id="Sacrifice"></word>
+			<word text="bay~inap" plural="bay~inaAt" id="ClearEvidence"></word>
+			<word text="rab~" plural="&gt;arobaAb" id="Lord"></word>
+			<word text="kawokib" plural="kawaAkib" id="Star"></word>
+			<word text="miyqaAt" plural="mawaAqiyt" id="Appointment"></word>
+			<word text="vamorap" plural="vamaraAt" id="Fruit"></word>
+			<word text="rajaA&apos;" plural="" id="Hoping"></word>
+			<word text="qariyn" plural="quranaA&apos;" id="CloseFriend"></word>
+			<word text="kalob" plural="kilaAb" id="Dog"></word>
+			<word text="kasolaAn" plural="kusaAliY" id="Lazy"></word>
+			<word text="ra&gt;os" plural="ru}uws" id="Head"></word>
+			<word text="qalam" plural="&gt;aqalaAm" id="Pen"></word>
+			<word text="qarn" plural="quruwn" id="Generation"></word>
+			<word text="Husn" plural="" id="ExcellentBeautiful"></word>
+			<word text="qadam" plural="&gt;aqadaAm" id="StepFoot"></word>
+			<word text="xuboz" plural="&gt;axobaAz" id="Bread"></word>
+			<word text="haw" plural="" id="Entertainment"></word>
+			<word text="miHoraAb" plural="maHaArib" id="PrayerChamber"></word>
+			<word text="nidaA&apos;" plural="" id="Call"></word>
+			<word text="$ahor" plural="&gt;a$hur" id="Months"></word>
+			<word text="Zil~" plural="ZilaAl" id="Shade"></word>
+			<word text="laEib" plural="" id="PlayAmusement"></word>
+			<word text="vaAbit" plural="" id="FixedStationary"></word>
+			<word text="SaAdiq" plural="SaAdiquwn" id="TruthfulPerson"></word>
+			<word text="kul~" plural="kilaA" id="EachAll"></word>
+			<word text="madiynap" plural="mudun madaA{in" id="City"></word>
+			<word text="kaviyr" plural="" id="Many"></word>
+			<word text="naxolap" plural="naxol naxiyl" id="DatePalm"></word>
+			<word text="qaliyl" plural="" id="LittleQuantity"></word>
+			<word text="miyzaAn" plural="mawaAziyn" id="BalanceScale"></word>
+			<word text="mar~ap" plural="mar~aAt" id="OnceOneTime"></word>
+			<word text="naADirap" plural="" id="RadiantFresh"></word>
+			<word text="fariyDap" plural="faraA{iD" id="Requirement"></word>
+			<word text="Dar~" plural="&gt;DoraAr" id="Injury"></word>
+			<word text="Euduw~" plural="&gt;aEodaA&apos;" id="Enemy"></word>
+			<word text="$a&gt;on" plural="$u}uwn" id="Matter"></word>
+			<word text="yatiym" plural="yataAmaY" id="Orphan"></word>
+			<word text="kayol" plural="&gt;akoyaAl" id="Measure"></word>
+			<word text="faAsiq" plural="faAsiquwn" id="OpenSinner"></word>
+			<word text="jadiyd" plural="" id="New"></word>
+			<word text="maA&apos;" plural="miyaAh" id="Water"></word>
+			<word text="waraA&apos;" plural="" id="Behind"></word>
+			<word text="mawoEiZap" plural="mawaAEiZ" id="Admonition"></word>
+			<word text="miraArAF" plural="" id="Repeatedly"></word>
+			<word text="rum~aAn" plural="" id="Pomegranate"></word>
+			<word text="suruwr" plural="" id="Happiness"></word>
+			<word text="Eibrap" plural="Eibar" id="Admonition"></word>
+			<word text="&gt;u*un" plural="|*aAn" id=""></word>
+			<word text="nusuk" plural="" id="Sacrifice"></word>
 			
-			<word text="|ayap||ayaAt" id="Sign"></word>
-			<word text="rasuwl|rusul" id="Messenger"></word>
-			<word text="nabiy~|&gt;anobiyaA&apos;,nabiy~uwn,nabiy~iyn" id="Prophet"></word>
-			<word text="quro|n|" id="QuranReadingRecitation"></word>
-			<word text="&gt;anoEaAm" id="Cattle"></word>
-			<word text="jabal|jibaAl" id="Mountain"></word>
-			<word text="baHor|buHuwr" id="SeaLargeRiver"></word>
-			<word text="$amos|$umuws" id="Sun"></word>
-			<word text="qamar|&gt;aqomaAr" id="Moon"></word>
-			<word text="layl|layaAl" id="Night"></word>
-			<word text="nahaAr|&gt;anohur" id="Day"></word>
-			<word text="&gt;aroD|&gt;araADK" id="World"></word>
-			<word text="samaA&apos;|samaAwaAt" id="Sky"></word>
-			<word text="&gt;abadAF" id="ForeverEver"></word>
-			<word text="SaAHib|&gt;aSoHaAb" id="CompanionFellow"></word>
-			<word text="&gt;ajor|&gt;ujuwr" id="Reward"></word>
-			<word text="EaAqibap|EawaAqib" id="End"></word>
-			<word text="&gt;ajal||jaAl" id="Term"></word>
-			<word text="Ea*aAb|Ea*aAbaAt" id="Torment"></word>
-			<word text="&gt;alo|xirap|" id="Hereafter"></word>
-			<word text="EiqaAb|" id="ChastisementFromSin"></word>
-			<word text="&gt;aliym" id="Painful"></word>
-			<word text="qiyaAmap" id="Resurrection"></word>
-			<word text="vawaAb|" id="Reward"></word>
-			<word text="liqaA&apos;|liqaA&apos;aAt" id="Meeting"></word>
-			<word text="jaHiym|" id="Hellfire"></word>
-			<word text="musam~aY|musam~aAt" id="Fixed"></word>
-			<word text="jazaA&apos;|" id="Reward"></word>
-			<word text="naAr|niyraAn" id="Fire"></word>
-			<word text="jan~ap|jan~aAt" id="Garden"></word>
-			<word text="nahar|&gt;anohaAr" id="River"></word>
-			<word text="jahan~am|" id="Hell"></word>
-			<word text="wayol|" id="WoeUnto"></word>
-			<word text="HisaAb|HisaAbaAt" id="Reckoning"></word>
-			<word text="yawom|&gt;ay~aAm" id="Day"></word>
-			<word text="saAEap|saAEaAt" id="HourOnDayOfResurrection"></word>
-			<word text="yawoma{i*K" id="ThatDay"></word>
-			<word text="$ayoTaAn|$ayaATiyn" id="Satan"></word>
-			<word text="firoEawon|firaAEinap" id="Pharoah"></word>
-			<word text="EaAd|" id="PeopleOfHud"></word>
-			<word text="vamuwd|" id="PeopleOfSalih"></word>
-			<word text="&lt;israA{iyl" id="Israel"></word>
+			<word text="|ayap" plural="|ayaAt" id="Sign"></word>
+			<word text="rasuwl" plural="rusul" id="Messenger"></word>
+			<word text="nabiy~" plural="&gt;anobiyaA&apos; nabiy~uwn nabiy~iyn" id="Prophet"></word>
+			<word text="quro|n" plural="" id="QuranReadingRecitation"></word>
+			<word text="&gt;anoEaAm" plural="" id="Cattle"></word>
+			<word text="jabal" plural="jibaAl" id="Mountain"></word>
+			<word text="baHor" plural="buHuwr" id="SeaLargeRiver"></word>
+			<word text="$amos" plural="$umuws" id="Sun"></word>
+			<word text="qamar" plural="&gt;aqomaAr" id="Moon"></word>
+			<word text="layl" plural="layaAl" id="Night"></word>
+			<word text="nahaAr" plural="&gt;anohur" id="Day"></word>
+			<word text="&gt;aroD" plural="&gt;araADK" id="World"></word>
+			<word text="samaA&apos;" plural="samaAwaAt" id="Sky"></word>
+			<word text="&gt;abadAF" plural="" id="ForeverEver"></word>
+			<word text="SaAHib" plural="&gt;aSoHaAb" id="CompanionFellow"></word>
+			<word text="&gt;ajor" plural="&gt;ujuwr" id="Reward"></word>
+			<word text="EaAqibap" plural="EawaAqib" id="End"></word>
+			<word text="&gt;ajal" plural="|jaAl" id="Term"></word>
+			<word text="Ea*aAb" plural="Ea*aAbaAt" id="Torment"></word>
+			<word text="&gt;alo|xirap" plural="" id="Hereafter"></word>
+			<word text="EiqaAb" plural="" id="ChastisementFromSin"></word>
+			<word text="&gt;aliym" plural="" id="Painful"></word>
+			<word text="qiyaAmap" plural="" id="Resurrection"></word>
+			<word text="vawaAb" plural="" id="Reward"></word>
+			<word text="liqaA&apos;" plural="liqaA&apos;aAt" id="Meeting"></word>
+			<word text="jaHiym" plural="" id="Hellfire"></word>
+			<word text="musam~aY" plural="musam~aAt" id="Fixed"></word>
+			<word text="jazaA&apos;" plural="" id="Reward"></word>
+			<word text="naAr" plural="niyraAn" id="Fire"></word>
+			<word text="jan~ap" plural="jan~aAt" id="Garden"></word>
+			<word text="nahar" plural="&gt;anohaAr" id="River"></word>
+			<word text="jahan~am" plural="" id="Hell"></word>
+			<word text="wayol" plural="" id="WoeUnto"></word>
+			<word text="HisaAb" plural="HisaAbaAt" id="Reckoning"></word>
+			<word text="yawom" plural="&gt;ay~aAm" id="Day"></word>
+			<word text="saAEap" plural="saAEaAt" id="HourOnDayOfResurrection"></word>
+			<word text="yawoma{i*K" plural="" id="ThatDay"></word>
+			<word text="$ayoTaAn" plural="$ayaATiyn" id="Satan"></word>
+			<word text="firoEawon" plural="firaAEinap" id="Pharoah"></word>
+			<word text="EaAd" plural="" id="PeopleOfHud"></word>
+			<word text="vamuwd" plural="" id="PeopleOfSalih"></word>
+			<word text="&lt;israA{iyl" plural="" id="Israel"></word>
+
+			<word text="&gt;aHad &lt;iHodaY" plural="" id="One"></word>
+			<word text="&gt;amor" plural="&gt;amuwr" id="MatterAffair"></word>
+			<word text="&lt;ilah" plural="|lihap" id="GodDiety"></word>
+			<word text="taqowaY" plural="" id="PietyFearProtection"></word>
+			<word text="$ariyk" plural="$urakaA&apos;" id="PartnerAssociate"></word>
+			<word text="Haq~" plural="Huquwq" id="TruthTrueRight"></word>
+			<word text="$aHaAdap" plural="$aHaAdaAt" id="Witness"></word>
+			<word text="baATil" plural="" id="Falsehood"></word>
+			<word text="Ear$" plural="Euruw$" id="Throne"></word>
+			<word text="Hikomap" plural="Hikam" id="Wisdom"></word>
+			<word text="Eahod" plural="Euhuwd" id="TreatyCovenant"></word>
+			<word text="Hamod" plural="" id="Praise"></word>
+			<word text="gayob" plural="guyuwb" id="Unseen"></word>
+			<word text="diyn" plural="&gt;adiyaAn" id="ReligionLawJudgment"></word>
+			<word text="kitaAb" plural="kutub" id="Book"></word>
+			<word text="zakaAp" plural="zakawaAt" id="PoorDueCharity"></word>
+			<word text="kalimap" plural="kalimaAt" id="Word"></word>
+			<word text="$ahiyd" plural="$uhadaA&apas;" id="WitnessPresent"></word>
+			<word text="malak" plural="malaA{ikap" id="Angel"></word>
+			<word text="SalaAp" plural="SalawaAt" id="Prayer"></word>
+			<word text="miyvaAq" plural="mawaAviyq" id="CovenantTreaty"></word>
+			<word text="mubiyn" plural="" id="ClearSelfExpressive"></word>
+			<word text="waAHid waAHidap" plural="" id="One"></word>
+			<word text="nuwr" plural="&gt;anwaAr" id="Light"></word>
+			<word text="" plural="|laA&apos;" id="Favors"></word>
+			<word text="&gt;aEomaAl" plural="Eamal" id="ActionsDeedsWorks"></word>
+			<word text="SuloTaAn" plural="SalaATiyn" id="AuthorityWarrant"></word>
+			<word text="Hasanap" plural="HasanaAt" id="GoodDeed"></word>
+			<word text="faDl" plural="fuDuwl" id="Grace"></word>
+			<word text="say~i{ap" plural="say~i{aAt" id="EvilBad"></word>
+			<word text="maA&apos;" plural="miyaAp" id="Water"></word>
+			<word text="xayor" plural="xiyaAr" id="GoodBetter"></word>
+			<word text="mulok" plural="" id="DominionReign"></word>
+			<word text="$ar~" plural="$uruwr" id="EvilBadWorse"></word>
+			<word text="niEomap" plural="niEam" id="Favor"></word>
+			<word text="&lt;ivom" plural="|vaAm" id="Sin"></word>
+			<word text="" plural="&gt;ajomaEuwn &gt;ajomaEiyn" id="All"></word>
+			<word text="*anob" plural="*unuwb" id="Sin"></word>
+			<word text="&lt;i*on" plural="&gt;u*uwn" id="Permission"></word>
+			<word text="junaAH" plural="" id="Sin"></word>
+			<word text="ba&gt;os" plural="" id="PunishmentPowerAdversity"></word>
+			<word text="HaraAm" plural="Hurum" id="Unlawful"></word>
+			<word text="" plural="jamiyE" id="AllEverybody"></word>
+			<word text="&lt;isom" plural="&gt;asomaA&apos;" id="Name"></word>
+			<word text="sawaA&apos;" plural="" id="SameEqualLevelFair"></word>
+			<word text="Hadiyv" plural="&gt;aHaAdiyv" id="DiscourseSpeech"></word>
+			<word text="fariyq" plural="furaqaA&apos;" id="PartyGroup"></word>
+			<word text="Tay~ibap" plural="Tay~ibaAt" id="Good"></word>
+
+			<word text="wajoh" plural="wujuwh" id="Face"></word>
+			<word text="&gt;um~N" plural="&gt;um~ahaAt" id="Mother"></word>
+			<word text="Eayn" plural="&gt;aEoyun Euyuwn" id="EyeSpring"></word>
+			<word text="&gt;ab &gt;abati" plural="|abaA&apos;" id="Father"></word>
+			<word text="baSar" plural="&gt;abSaAr" id="Sight"></word>
+			<word text="zawoj" plural="&gt;azowaAj" id="WifeHusband"></word>
+			<word text="fam" plural="&gt;afowaAh" id="Mouth"></word>
+			<word text="rajul" plural="rijaAl" id="Man"></word>
+			<word text="lisaAn" plural="&gt;alosinap" id="TongueLanguage"></word>
+			<word text="&lt;imora&gt;ap" plural="nisaA&apos;" id="Woman"></word>
+			<word text="qalob" plural="quluwb" id="Heart"></word>
+			<word text="walad" plural="&gt;awlaAd" id="Child"></word>
+			<word text="Sadr" plural="Suduwr" id="Breast"></word>
+			<word text="waAlid" plural="waAlidayon" id="Father"></word>
+			<word text="yad" plural="&gt;ayodiy" id="Hand"></word>
+			<word text="*ur~iy~ap" plural="*uriy~aAt" id="DescendentsChildren"></word>
+			<word text="rijolN" plural="&gt;arojul" id="Foot"></word>
+			<word text="&lt;ibon" plural="banuwn baniyn &gt;abonaA&apos;" id="Son"></word>
+			<word text="nafos" plural="&gt;anofus" id="Soul"></word>
+			<word text="ruwH" plural="&gt;arowaAH" id="SoulSpirit"></word>
+			<word text="&gt;ax" plural="&gt;axuw &gt;axaA &gt;axiy &lt;ixowaAn" id="Brother"></word>
+			<word text="quw~ap" plural="" id="PowerStrength"></word>
+			<word text="&gt;um~ap" plural="&gt;umam" id="Community"></word>
+			<word text="bayot" plural="buyuwt" id="House"></word>
+			<word text="qawm" plural="&gt;aqowaAm" id="People"></word>
+			<word text="daAr" plural="diyaAr" id="Abode"></word>
+			<word text="&lt;inosaAn" plural="" id="Man"></word>
+			<word text="dunoyaA" plural="dunaYF" id="World"></word>
+			<word text="naAs" plural="" id="MenPeople"></word>
+			<word text="sabiyl" plural="subul" id="Way"></word>
+			<word text="*akar" plural="*ukuwr" id="Male"></word>
+			<word text="SiraAT" plural="SuruT" id="Path"></word>
+			<word text="&gt;unovaY" plural="&lt;inaAv" id="Female"></word>
+			<word text="EaAlam" plural="EaAlamiyn" id="World"></word>
+			<word text="Eabod" plural="EibaAd" id="Slave"></word>
+			<word text="fitonap" plural="fitan" id="TrialPersecution"></word>
+			<word text="Eaduw~" plural="&gt;aEodaA&apos;" id="Enemy"></word>
+			<word text="qaroyap" plural="qurYF" id="Town"></word>
+			<word text="" plural="kuf~aAr" id="Disbelievers"></word>
+			<word text="maAl" plural="&gt;amowaAl" id="Wealth"></word>
+			<word text="mujorim" plural="mujorimuwn" id="Criminal"></word>
+			<word text="mataAE" plural="&gt;amotiEap" id="ProvisionEnjoyment"></word>
+			<word text="mala&gt;" plural="" id="ChiefsLeaders"></word>
+			<word text="masjid" plural="masaAjid" id="Mosque"></word>
+			<word text="waliy~" plural="&gt;awoliyaA&apos;" id="ProtectingFriendGuardian"></word>
+			<word text="makaAn" plural="makaAnap" id="PlaceAbode"></word>
+			
+			<word text="nabaAt" plural="nabaAtaAt" id="VegetationPlant"></word>
+			<word text="rayb" plural="" id="Doubt"></word>
+			<word text="&gt;anof" plural="&gt;unuwf" id="Nose"></word>
+			<word text="maqobarap" plural="maqaAbir" id="Grave"></word>
+			<word text="&gt;abokam" plural="bukom" id="Dumb"></word>
+			<word text="bariy{" plural="" id="Innocent"></word>
+			<word text="&gt;amoniyap" plural="&gt;amaAniy~" id="FalseHope"></word>
+			<word text="EaZom" plural="EiZaAm" id="Bone"></word>
+			<word text="&gt;aEomY" plural="EumoyN" id="Blind"></word>
+			<word text="hudYF" plural="" id="Guidance"></word>
+			<word text="gaAlib" plural="gaAlibuwn gaAlibiyn" id="DominantVictorious"></word>			
+			<word text="jamal" plural="jimaAl &lt;ibil" id="Camel"></word>
+			<word text="&gt;avar" plural="|vaAr" id="Trace"></word>			
+			<word text="*ahab" plural="" id="Gold"></word>
+			<word text="&gt;ariykap" plural="&gt;araA{ik" id="Throne"></word>
+			<word text="burohaAn" plural="baraAhiyn" id="Evidence"></word>
+			<word text="mawoqiE" plural="mawaAqiE" id="Place"></word>
+			<word text="misokiyn" plural="masaAkiyn" id="PoorPerson"></word>
+			<word text="&gt;usoTuwrap" plural="&gt;asaATiyr" id="TaleStory"></word>			
+			<word text="baTan" plural="buTuwn" id="Stomach"></word>
+			<word text="&gt;asowad" plural="suwdN" id="Black"></word>
+			<word text="TaEaAm" plural="&gt;aToEimap" id="Food"></word>
+			<word text="&lt;iSobaE" plural="&gt;aSaAbiE" id="Finger"></word>
+			<word text="gulaAm" plural="gilomaAn gilmap" id="ServantBoy"></word>
+			<word text="nad~" plural="&gt;anodaAd" id="Partner"></word>
+			<word text="fiD~ap" plural="" id="Silver"></word>
+			<word text="najam" plural="nujuwm" id="Star"></word>
+			<word text="na*or" plural="nu*uwr" id="Vow"></word>
+			<word text="Hizob" plural="&gt;aHozaAb" id="Party"></word>
+			<word text="$aEob" plural="$uEuwb" id="Nation"></word>
+			<word text="baHor" plural="&gt;aboHur biHaAr" id="Sea"></word>			
+			<word text="mariyD" plural="maroDY" id="SickPerson"></word>
+			<word text="bar~" plural="&gt;aboraAr" id="RighteousPerson"></word>
+			<word text="&lt;ivom" plural="|vaAm" id="Sin"></word>
+			<word text="gurofap" plural="guraf" id="RoomQuarter"></word>
+			<word text="malik" plural="muluwk" id="King"></word>
+			<word text="Sawot" plural="&gt;aSowaAt" id="Voice"></word>
+			<word text="Eaqib" plural="&gt;aEqaAb" id="End"></word>
+			<word text="&gt;axbaAr" plural="xabar" id="News"></word>
+			<word text="baSar" plural="&gt;aboSaAr" id="Sight"></word>
+			<word text="xazaAnap" plural="xazaA{in" id="Treasure"></word>
+			<word text="vawob" plural="viyaAb" id="ClothesGarment"></word>
+			<word text="" plural="" id=""></word>
+			<word text="" plural="" id=""></word>
+			<word text="" plural="" id=""></word>
+			<word text="" plural="" id=""></word>
+			<word text="" plural="" id=""></word>
+			<word text="" plural="" id=""></word>
 		</category>
 	</grammar>
 	<vocabulary>
@@ -1051,9 +1210,9 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="HarakaAt" id="Vowels"></word>
 			<word text="ta$kiyl" id="Diacritics"></word>
 			<word text="&gt;alkalimap" id="Word"></word>
-			<word text="fiEolN|&gt;afoEaAlN" id="Verb"></word>
-			<word text="&lt;isomN|&gt;asomaA&apos;N" id="Noun"></word>
-			<word text="HarofN|HuruwfN" id="Particle"></word>
+			<word text="fiEolN" plural="&gt;afoEaAlN" id="Verb"></word>
+			<word text="&lt;isomN" plural="&gt;asomaA&apos;N" id="Noun"></word>
+			<word text="HarofN" plural="HuruwfN" id="Particle"></word>
 			<word text="lafoZu &gt;alojalaAlap" id="GrandWord"></word>
 			<word text="rafoE" id="Nominative"></word>
 			<word text="naSob" id="Accusative"></word>
@@ -1063,7 +1222,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="&gt;aloqisom" id="Definiteness"></word>
 			<word text="&gt;alomaEorifap" id="Definite"></word>
 			<word text="&gt;an~akirap" id="Indefinite"></word>
-			<word text="fEl,&gt;afoEaAlN,fuEuwlN,fiEaAlN,faEaAEilN" id="RepresentativeStem"></word>
+			<word text="fEl &gt;afoEaAlN fuEuwlN fiEaAlN faEaAEilN fuEalaA&apos;u mafaAEilu faEaAlilu faEaAliylu mafaAEilu faElaAn" id="RepresentativeStem"></word>
 			<word text="jamoEu &gt;almu*ak~ari &gt;als~aAlim" id="SoundMasculinePlural"></word>
 			<word text="jamoEu &gt;almu}an~av &gt;als~aAlim" id="SoundFemininePlural"></word>
 			<word text="jamoEu &gt;alt~akosiyr" id="BrokenPlural"></word>
@@ -1076,6 +1235,18 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="&gt;alfuSoH`Y" id="ClassicArabic"></word>
 			<word text="kitaAbu &gt;alEayn" id="ArabicDictionary"></word>
 			<word text="Huruwf gayoru EaAmil" id="ParticlesWithoutDeclension"></word>
+			<word text="muEorab" id="Flexible"></word>
+			<word text="mabonaY" id="Inflexible"></word>
+			<word text="gayru munoSarif" id="PartiallyFlexible"></word>
+			<word text="Dama{ir" plural="Damiyr" id="Pronoun"></word>
+			<word text="&gt;alS~arf" id="Phonation"></word>
+			<word text="&gt;alD~amiA{iru &gt;alomunofaSilap" id="DetachedPronouns"></word>
+			<word text="&gt;alD~amiA{iru &gt;alomut~aSilap" id="AttachedPronouns"></word>
+			<word text="&gt;aloqariyb" id="Near"></word>
+			<word text="&gt;alobaEiyd" id="Far"></word>
+			<word text="&gt;asmaA&apos;u &gt;alo&lt;i$aArapi" id="PointingNouns"></word>
+			<word text="&gt;asmaA&apos;u &gt;alo&lt;i$aArapi &gt;alobaEiyd" id="FarPointingNouns"></word>
+			<word text="nuwnu &gt;alowiqaAyap" id="FirstPersonSingularVerbalAttachedPronoun"></word>
 		</category>
 		<category title="RulesOfRecitation">
 			<word text="sif~aAt" id="LetterCharacteristics"></word>
