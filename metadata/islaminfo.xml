@@ -828,6 +828,22 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 		</category>
 	</verses>
 	<grammar>
+		<category title="Plurals">
+			<word text="u" id="FlexibleDefiniteNominative" grammar="ms|fs,flex,def,nom"></word>
+			<word text="N" id="FlexibleIndefiniteNominative" grammar="ms|fs,flex,indef,nom"></word>
+			<word text="i" id="FlexibleDefinitePossessive" grammar="ms|fs,flex,def,pos"></word>
+			<word text="K" id="FlexibleIndefinitePossessive" grammar="ms|fs,flex,indef,pos"></word>
+			<word text="a" id="FlexibleDefiniteAccusative" grammar="ms|fs,flex,def,acc"></word>
+			<word text="F" id="FlexibleIndefiniteAccusative" grammar="ms|fs,flex,indef,acc"></word>
+			<word text="aAni" id="DualNominative" grammar="md|fd,flex,nom"></word>
+			<word text="ayoni" id="DualAccusativePossessive" grammar="md|fd,flex,acc|pos"></word>
+			<word text="p -> &gt;atN" id="SoundFemininePluralNominative" grammar="fp,flex,nom"></word>
+			<word text="p -> &gt;atK" id="SoundFemininePluralAccusativePossessive" grammar="fp,flex,acc|pos"></word>
+			<word text="uwna" id="SoundMasculinePluralNominative" grammar="mp,flex,nom"></word>
+			<word text="iyna" id="SoundMasculinePluralAccusativePossessive" grammar="mp,flex,acc|pos"></word>
+			<word text="u" id="PartiallyFlexibleNominative" grammar="ms|fs|faEolaAn|bp(fuEalaA&apos;,mafaAEil),pflex,nom"></word>
+			<word text="a" id="PartiallyFlexibleAccusativePossessive" grammar="ms|fs|bp,pflex,acc|pos"></word>
+		</category>
 		<category title="ProximalDemonstratives">
 			<word text="ha*aA" id="This" grammar="ms"></word>
 			<word text="ha*ihi" id="This" grammar="fs"></word>
@@ -876,18 +892,22 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="hiya" id="They" grammar="3bp"></word>
 		</category>
 		<category title="PossessiveDeterminerPersonalPronouns">
-			<word text="yo niy" id="My" grammar="1ms|1fs"></word>
+			<word text="yo iy niy" id="My" grammar="1ms|1fs"></word>
 			<word text="naA" id="Our" grammar="1md|1fd|1mp|1fp"></word>
 			<word text="ka" id="Your" grammar="2ms"></word>
 			<word text="ki" id="Your" grammar="2fs"></word>
 			<word text="kumaA" id="Your" grammar="2md|2fd"></word>
 			<word text="kumo" id="Your" grammar="2mp"></word>
 			<word text="kun~a" id="Your" grammar="2fp"></word>
-			<word text="hu" id="His" grammar="3ms"></word>
+			<word text="hu" id="His" grammar="3ms,nom|acc"></word>
+			<word text="hi" id="His" grammar="3ms,pos"></word>
 			<word text="haA" id="Her" grammar="3fs"></word>
-			<word text="humaA" id="Their" grammar="3md|3fd"></word>
-			<word text="humo" id="Their" grammar="3mp"></word>
-			<word text="hun~a" id="Their" grammar="3fp"></word>
+			<word text="humaA" id="Their" grammar="3md|3fd,nom|acc"></word>
+			<word text="himaA" id="Their" grammar="3md|3fd,pos"></word>
+			<word text="humo" id="Their" grammar="3mp,nom|acc"></word>
+			<word text="himo" id="Their" grammar="3mp,pos"></word>
+			<word text="hun~a" id="Their" grammar="3fp,nom|acc"></word>
+			<word text="hin~a" id="Their" grammar="3fp,pos"></word>
 			<word text="haA" id="Their" grammar="3bp"></word>
 		</category>
 		<category title="ResponseParticles">
@@ -903,28 +923,19 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="layosato" id="Not"></word>
 			<word text="balaY" id="YesIndeed"></word>
 			<word text="duwna" id="BesidesLessThan"></word>
-			<word text="&lt;il~aA" id="ExceptUnlessIfNot"></word>
 			<word text="naEamo" id="Yes"></word>
 
-			<word text="&lt;il~aA" id="Except" grammar="Exceptive"></word>
-			<word text="gayor" id="NotOtherThan" grammar="Exceptive"></word>
-			<word text="swY" id="" grammar="Exceptive"></word>
-			<word text="xlaA" id="" grammar="Exceptive"></word>
-			<word text="EdaA" id="" grammar="Exceptive"></word>
-			<word text="HaA$aA" id="" grammar="Exceptive"></word>
-
-			<word text="&lt;in~a" id="VerilyTruly" grammar="Accusative"></word>
-			<word text="&gt;an~a" id="That" grammar="Accusative"></word>
-			<word text="ka&gt;an~a" id="AsIf" grammar="Accusative"></word>
-			<word text="lakin~a" id="ButHowever" grammar="Accusative"></word>
-			<word text="lakino" id="ButHowever" grammar="Accusative"></word>
-			<word text="laEal~a" id="PerhapsMayBe" grammar="Accusative"></word>
-			<word text="layota" id="Wish" grammar="Accusative"></word>
+			<word text="&lt;il~aA" id="ExceptUnlessIfNot" grammar="except"></word>
+			<word text="gayor" id="NotOtherThan" grammar="except"></word>
+			<word text="swY" id="" grammar="except"></word>
+			<word text="xlaA" id="" grammar="except"></word>
+			<word text="EdaA" id="" grammar="except"></word>
+			<word text="HaA$aA" id="" grammar="except"></word>
 		</category>
 		<category title="Interogatives">	
 			<word text="maA" id="WhatThatWhich"></word>
 			<word text="mano" id="WhoTheOneWho"></word>
-			<word text="matY" id="WhenTheTimeWhen"></word>
+			<word text="mataY" id="WhenTheTimeWhen"></word>
 			<word text="&gt;ayona" id="Where"></word>
 			<word text="kayofa" id="How"></word>
 			<word text="kamo" id="HowMany"></word>
@@ -938,16 +949,16 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="lawo laA" id="IfNotWhyNot"></word>
 		</category>
 		<category title="LocationPrepositions">
-			<word text="fawoqa" id="AboveUp"></word>
-			<word text="taHota" id="Under"></word>
+			<word text="fawoqa" id="AboveUp" grammar="pos"></word>
+			<word text="taHota" id="Under" grammar="pos"></word>
 			<word text="bayona &gt;ayaday bayona yaday" id="InFrontOf"></word>
-			<word text="xalofa" id="BackAfter"></word>
-			<word text="&gt;amaAma" id="InFrontOf"></word>
-			<word text="waraA&apos;" id="Behind"></word>
+			<word text="xalofa" id="BackAfter" grammar="pos"></word>
+			<word text="&gt;amaAma" id="InFrontOf" grammar="pos"></word>
+			<word text="waraA&apos;" id="Behind" grammar="pos"></word>
 			<word text="yamiyn &gt;ayomaAn" id="RightOath"></word>
 			<word text="$imaAl $amaA{il" id="Left"></word>
-			<word text="bayona" id="Between"></word>
-			<word text="Hawola" id="Around"></word>
+			<word text="bayona" id="Between" grammar="pos"></word>
+			<word text="Hawola" id="Around" grammar="pos"></word>
 			<word text="Hiyovu" id="Wherever"></word>
 			<word text="&gt;ayonamaA" id="Wherever"></word>
 		</category>
@@ -978,26 +989,28 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="&lt;in~amaA" id="VerilyIsBut"></word>
 			<word text="ka&gt;an~amaA" id="AsIf"></word>
 			<word text="kul~amaA" id="Whenever"></word>
-			<word text="bi" id="WithInFrom"></word>
-			<word text="Eano" id="About"></word>
-			<word text="fiy" id="In"></word>
-			<word text="ka" id="AsLike"></word>
-			<word text="li" id="For"></word>
+			<word text="bi" id="WithInFrom" grammar="pos"></word>
+			<word text="Eano" id="About" grammar="pos"></word>
+			<word text="fiy" id="In" grammar="pos"></word>
+			<word text="ka" id="AsLike" grammar="pos"></word>
+			<word text="li" id="For" grammar="pos"></word>
 			<word text="la" id="For"></word>
-			<word text="mino" id="From"></word>
-			<word text="&lt;ilaY" id="Towards"></word>
-			<word text="ta ti" id="ByOfOath"></word>
-			<word text="Hat~aY" id="Until"></word>
-			<word text="EalaY" id="On"></word>
-			<word text="maEa" id="With"></word>
-			<word text="wa" id="AndByOfOath"></word>
+			<word text="mino" id="From" grammar="pos"></word>
+			<word text="&lt;ilaY" id="Towards" grammar="pos"></word>
+			<word text="ta ti" id="ByOfOath" grammar="pos"></word>
+			<word text="Hat~aY" id="Until" grammar="pos|acc"></word>
+			<word text="EalaY" id="On" grammar="pos"></word>
+			<word text="maEa" id="With" grammar="pos"></word>
+			<word text="wa" id="AndByOfOath" grammar="pos"></word>
 			
-			<word text="&lt;in~a" id="VerilyTruly"></word>
-			<word text="&lt;an~a" id="That"></word>
-			<word text="ka&gt;an~a" id="AsIf"></word>
-			<word text="lakin~a" id="ButHowever"></word>
-			<word text="lakino" id="ButHowever"></word>
-			<word text="laEal~a" id="PerhapsMayBe"></word>
+			<word text="&lt;in~a" id="VerilyTrulySurely" grammar="acc"></word>
+			<word text="&gt;an~a" id="ThatSurelyVerily" grammar="acc"></word>
+			<word text="ka&gt;an~a" id="AsIfAsThough" grammar="acc"></word>
+			<word text="lakin~a" id="ButHoweverOnTheContraryActually" grammar="acc"></word>
+			<word text="lakino" id="ButHowever" grammar="acc"></word>
+			<word text="laEal~a" id="PerhapsMayBeSoAsTo" grammar="acc"></word>
+			<word text="layota" id="WishIfOnly" grammar="acc"></word>
+
 			<word text="&gt;ano" id="ThatTo"></word>
 			<word text="&lt;iy~aA" id="AloneOnly"></word>
 			<word text="EasaY" id="PossiblyPerhaps"></word>
@@ -1032,7 +1045,60 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="maval &gt;amovaAl" id="Similitude"></word>			
 			<word text="mim~ano" basis="mino mano" id="ThanTheOneWhoFromThoseWho"></word>			
 		</category>
+		<category title="Particles">
+			<word text="&lt;ilaY" id="ToTowards" grammar="pos"></word>
+			<word text="bi" id="InWith" grammar="pos"></word>
+			<word text="ta" id="ByOath" grammar="pos"></word>
+			<word text="Hay~a" id="Until" grammar="pos"></word>
+			<word text="Eano" id="FromAbout" grammar="pos"></word>
+			<word text="EalaY" id="UponOn" grammar="pos"></word>
+			<word text="fiy" id="In" grammar="pos"></word>
+			<word text="ka" id="LikeSimilarity" grammar="pos"></word>
+			<word text="li" id="ForTo" grammar="pos"></word>
+			<word text="wa" id="ByOath" grammar="pos"></word>
+			<word text="min" id="From" grammar="pos"></word>
+
+			<word text="baEoD" id="After" grammar="pos"></word>
+			<word text="Hawla" id="Around" grammar="pos"></word>
+			<word text="duwna" id="BesidesOtherThan" grammar="pos"></word>
+			<word text="gayor mino duwna" id="OtherThan" grammar="pos"></word>
+			<word text="ladaY laduno" id="FromWith" grammar="pos"></word>
+
+			<word text="&gt;amaama" id="InFrontOfBefore" grammar="pos"></word>
+			<word text="waraA&apos;a" id="Behind" grammar="pos"></word>
+			<word text="bayona" id="Between" grammar="pos"></word>
+			<word text="xalofa" id="After" grammar="pos"></word>
+			<word text="fawqa" id="Above" grammar="pos"></word>
+			<word text="maEa" id="With" grammar="pos"></word>
+			<word text="taHota" id="Under" grammar="pos"></word>
+			<word text="Einoda" id="With" grammar="pos"></word>
+
+			<word text="HiynAF" id="ForAPeriodOfTime" grammar="pos"></word>
+			<word text="qabola" id="Before" grammar="pos"></word>
+			<word text="SabaAHAF" id="Morning" grammar="pos"></word>
+			<word text="baEoda" id="After" grammar="pos"></word>
+			<word text="bukorapF" id="EarlyMorning" grammar="pos"></word>
+			<word text="&gt;alyawoma" id="Today" grammar="pos"></word>
+			<word text="saHarAF" id="EarlyMorning" grammar="pos"></word>
+			<word text="&gt;abadAF" id="Always" grammar="pos"></word>
+			
+			<word text="&gt;ano" id="ThatTo" grammar="acc"></word>
+			<word text="lano" id="WillNever" grammar="acc"></word>
+			<word text="li" id="SoThat" grammar="acc"></word>
+			<word text="kayo likayo" id="SoThat" grammar="acc"></word>
+			<word text="&lt;i*aAF" id="Therefore" grammar="acc"></word>
+			<word text="&gt;al~aA" id="MayNot" grammar="acc"></word>
+			<word text="li&gt;ano" id="ForThat" grammar="acc"></word>
+			
+			<word text="li" id="Should" grammar="prespos"></word>
+			<word text="laA" id="Negation" grammar="prespos"></word>
+			<word text="lam" id="DidNot" grammar="prespos"></word>
+			<word text="&lt;ino" id="If" grammar="prespos"></word>
+			<word text="lam~a" id="NotYetWhen" grammar="prespos"></word>
+		</category>
 		<category title="Nouns">
+			<word text="suwq naAr xamar nafos riyH $amos Harob sabiyl EaSaA ka&gt;os bi{or daAr" id="SpecialFeminine"></word>
+			
 			<word text="&gt;aw~al &gt;uwalaY" id="First"></word>
 			<word text="|xir |xirap" id="Last"></word>
 			<word text="|xar &gt;uxoraY" id="Other"></word>
@@ -1312,7 +1378,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="baSar" plural="&gt;aboSaAr" id="Sight"></word>
 			<word text="xazaAnap" plural="xazaA{in" id="Treasure"></word>
 			<word text="vawob" plural="viyaAb" id="ClothesGarment"></word>
-			<word text="lub~" plural="&gt;alobaAt" id="Intellect"></word>
+			<word text="lub~" plural="&gt;alobaAb" id="Intellect"></word>
 			<word text="jidaAr" plural="judur" id="Wall"></word>
 			<word text="daAb~ap" plural="dawaAb" id="CreatureFourLegged"></word>
 			<word text="jisom" plural="&gt;ajosaAm" id="Body"></word>
@@ -1370,69 +1436,139 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="*uw" dual="*awaAni *awayoni" plural="&gt;uwoluwo" id="OwnerOfPossessor"></word>
 			<word text="*aAtN" dual="*awaAtaAni *awaAtayoni" plural="&gt;uwlaAtN" id="OwnerOfPossessor"></word>
 		</category>
-		<category title="Particles">
-			<word text="&lt;ilaY" id="ToTowards"></word>
-			<word text="bi" id="InWith"></word>
-			<word text="ta" id="ByOath"></word>
-			<word text="Hay~a" id="Until"></word>
-			<word text="Eano" id="FromAbout"></word>
-			<word text="EalaY" id="UponOn"></word>
-			<word text="fiy" id="In"></word>
-			<word text="ka" id="LikeSimilarity"></word>
-			<word text="li" id="ForTo"></word>
-			<word text="wa" id="ByOath"></word>
-			<word text="min" id="From"></word>
+		<category title="Verbs">
+			<word text="faEala" id="Do"></word>
+			<word text="ftH" id="OpenGiveVictory"></word>
+			<word text="bEv" id="RaiseResurrect"></word>
+			<word text="jEl" id="MakePlaceSetUp"></word>
+			<word text="jmE" id="GatherCollect"></word>
+			<word text="*hb" id="Go"></word>
+			<word text="rfE" id="Raise"></word>
+			<word text="sHr" id="EnchantBewitch"></word>
+			<word text="SlH" id="ActRighteously"></word>
+			<word text="lEn" id="Curse"></word>
+			<word text="nfE" id="Profit"></word>
+			<word text="nSr" id="HelpDeliver"></word>
+			<word text="blg" id="Reach"></word>
+			<word text="trk" id="Leave"></word>
+			<word text="H$r" id="GatherBringTogether"></word>
+			<word text="Hkm" id="JudgeRule"></word>
+			<word text="xrj" id="ComeOut"></word>
+			<word text="xld" id="LiveForever"></word>
+			<word text="xlq" id="CreateOutOfNothing"></word>
+			<word text="dxl" id="Enter"></word>
+			<word text="*kr" id="Remember"></word>
+			<word text="rzq" id="Provide"></word>
+			<word text="sjd" id="Prostrate"></word>
+			<word text="$Er" id="Perceive"></word>
+			<word text="$kr" id="BeGrateful"></word>
+			<word text="Sdq" id="BeTrueSayTheTruth"></word>
+			<word text="Ebd" id="WorshipServe"></word>
+			<word text="fsq" id="Transgress"></word>
+			<word text="qtl" id="KillSlay"></word>
+			<word text="qEd" id="SitRemainBehind"></word>
+			<word text="ktb" id="PrescribeWrite"></word>
+			<word text="kfr" id="DisbelieveBeUngrateful"></word>
+			<word text="mkr" id="Plot"></word>
+			<word text="nZr" id="LookWait"></word>
+			<word text="Drb" id="Strike"></word>
+			<word text="Hml" id="CarryBear"></word>
+			<word text="Sbr" id="BearWithPatience"></word>
+			<word text="Zlm" id="Wrong"></word>
+			<word text="Erf" id="Recognize"></word>
+			<word text="Eql" id="UnderstandComprehend"></word>
+			<word text="gfr" id="ForgiveCover"></word>
+			<word text="qdr" id="DecreeHavePower"></word>
+			<word text="k*b" id="Lie"></word>
+			<word text="ksb" id="Earn"></word>
+			<word text="mlk" id="Possess"></word>
+			<word text="smiE" id="Hear"></word>
+			<word text="Hzin" id="BeGrieved"></word>
+			<word text="Hsib" id="ThinkListen"></word>
+			<word text="HfiZ" id="GuardProtect"></word>
+			<word text="xsir" id="Lose"></word>
+			<word text="rHim" id="HaveMercyOnSomeone"></word>
+			<word text="$hid" id="BearWitnessBePresent"></word>
+			<word text="Elim" id="Know"></word>
+			<word text="Emil" id="WorkDo"></word>
+			<word text="krih" id="DislikeDetest"></word>
+			<word text="bSur" id="WatchSee"></word>
 
-			<word text="baEoD" id="After"></word>
-			<word text="Hawla" id="Around"></word>
-			<word text="qabla" id="Before"></word>
-			<word text="baEoda" id="After"></word>
-			<word text="duwna" id="BesidesOtherThan"></word>
-			<word text="gayor mino duwna" id="OtherThan"></word>
-			<word text="ladaY laduno" id="FromWith"></word>
-
-			<word text="&gt;amaama" id="InFrontOfBefore"></word>
-			<word text="waraA&apos;a" id="Behind"></word>
-			<word text="bayona" id="Between"></word>
-			<word text="xalofa" id="After"></word>
-			<word text="fawqa" id="Above"></word>
-			<word text="maEa" id="With"></word>
-			<word text="taHota" id="Under"></word>
-			<word text="Einoda" id="With"></word>
-
-			<word text="HiynAF" id="ForAPeriodOfTime"></word>
-			<word text="qabola" id="Before"></word>
-			<word text="SabaAHAF" id="Morning"></word>
-			<word text="baEoda" id="After"></word>
-			<word text="bukorapF" id="EarlyMorning"></word>
-			<word text="&gt;alyawoma" id="Today"></word>
-			<word text="saHarAF" id="EarlyMorning"></word>
-			<word text="&gt;abadAF" id="Always"></word>
-			
-			<word text="&lt;in~a" id="SurelyVerily"></word>
-			<word text="&gt;an~a" id="SurelyVerily"></word>
-			<word text="ka&gt;an~a" id="AsThough"></word>
-			<word text="layota" id="IfOnly"></word>
-			<word text="lakin~a" id="ButOnTheContraryActually"></word>
-			<word text="laEal~a" id="PerhapsMaybeSoAsTo"></word>
-			
-			<word text="&gt;ano" id="ThatTo"></word>
-			<word text="lano" id="WillNever"></word>
-			<word text="li" id="SoThat"></word>
-			<word text="kayo likayo" id="SoThat"></word>
-			<word text="&lt;i*aAF" id="Therefore"></word>
-			<word text="Hat~aY" id="Until"></word>
-			<word text="&gt;al~aA" id="MayNot"></word>
-			<word text="li&gt;ano" id="ForThat"></word>
-			
-			<word text="li" id="Should"></word>
-			<word text="laA" id="Negation"></word>
-			<word text="lam" id="DidNot"></word>
-			<word text="&lt;ino" id="If"></word>
-			<word text="lam~a" id="NotYetWhen"></word>
+			<word text="SbE" id="MakeConstruct"></word>
+			<word text="sxir" id="RidiculeMock"></word>
+			<word text="HbiT" id="BecomeWorthless"></word>
+			<word text="skn" id="LiveRestDwell"></word>
+			<word text="glb" id="Overcome"></word>
+			<word text="ErD" id="DisplayTurnAway"></word>
+			<word text="H*r" id="BewareFear"></word>
+			<word text="$rib" id="Drink"></word>
+			<word text="Edl" id="BeJust"></word>
+			<word text="slk" id="TreadAPathInsert"></word>
+			<word text="fqih" id="Understand"></word>
+			<word text="ftn" id="PersecuteTryTest"></word>
+			<word text="k$f" id="Uncover"></word>
+			<word text="friH" id="Rejoice"></word>
+			<word text="nfx" id="Breathe"></word>
+			<word text="ktm" id="ConcealHide"></word>
+			<word text="zEm" id="Claim"></word>
+			<word text="&gt;fk" id="DeludeTurnAway"></word>
+			<word text="Srf" id="TurnDivert"></word>
+			<word text="sbq" id="Precede"></word>
+			<word text="nkH" id="Marry"></word>
+			<word text="bsT" id="ExtendStretch"></word>
+			<word text="Hlf" id="Swear"></word>
 		</category>
 		<cateogry title="RepresentativeStems">
 			<word text="fEl" id=""></word>
+			
+			<word text="sawofa sa" id="FutureTense"></word>
+			<word text="faAEilN" id="VerbFamilyIDoerNoun"></word>
+			<word text="mafoEuwlN" id="VeryFamilyIPassiveNoun"></word>
+			<word text="faEala" present="yafoEulu" command="&gt;ufoEulo" verbalnoun="fiEolN"></word>
+			<word text="faEala" present="yafoEilu" command="&gt;ifoEilo" verbalnoun="fiEolN"></word>
+			<word text="faEala" present="yafoEalu" command="&gt;ifoEalo" verbalnoun="faEolN"></word>
+			<word text="faEula" present="yafoEulu" command="&gt;ufoEulo" verbalnoun="fuEolN"></word>
+			<word text="faEila" present="yafoEalu" command="&gt;ifoEalo" verbalnoun="faEolN"></word>
+			<word text="faEila" present="yafoEilu" command="&gt;ifoEilo" verbalnoun="faEolN"></word>
+			
+			<word text="faEala" id="VerbFamilyI" other="laA tafoEulo fuEila yufoEalu"></word>
+			<word text="faEala" grammar="past,3ms"></word>
+			<word text="faEalaA" grammar="past,3md"></word>
+			<word text="faEaluwA" grammar="past,3mp"></word>
+			<word text="faEalat" grammar="past,3fs"></word>
+			<word text="faEalataA" grammar="past,3fd"></word>
+			<word text="faEalona" grammar="past,3fp"></word>
+			<word text="faEalota" grammar="past,2ms"></word>
+			<word text="faEalotumaA" grammar="past,2md|2fd"></word>
+			<word text="faEalotum" grammar="past,2mp"></word>
+			<word text="faEaloti" grammar="past,2fs"></word>
+			<word text="faEalotun~a" grammar="past,2fp"></word>
+			<word text="faEalotu" grammar="past,1ms|1fs"></word>
+			<word text="faEalonaA" grammar="past,1md|1fd|1mp|1fp"></word>
+			
+			<word text="yafoEalu" grammar="pres,3ms"></word>
+			<word text="yafoEalaAni" grammar="pres,3md"></word>
+			<word text="yafoEaluwna" grammar="pres,3mp"></word>
+			<word text="tafoEalu" grammar="pres,3fs|2ms"></word>
+			<word text="tafoEalaAni" grammar="pres,3fd|2md|2fd"></word>
+			<word text="yafoEalona" grammar="pres,3fp"></word>
+			<word text="tafoEaluwna" grammar="pres,2mp"></word>
+			<word text="tafoEaliyna" grammar="pres,2fs"></word>
+			<word text="tafoEalona" grammar="pres,2fp"></word>
+			<word text="&gt;afoEalu" grammar="pres,1ms|1fs"></word>
+			<word text="nafoEalu" grammar="pres,1md|1fd|1mp|1fp"></word>
+
+			<word text="faE~ala" id="VerbFamilyII" other="yufaE~ilu faE~ilo laA tufaE~ilo fuE~ila yufaE~alu yafoEiylN mufaE~ilN mufaE~alN"></word>
+			<word text="faAEala" id="VerbFamilyIII" other="yufaAEilu faAEilo laA tufaAEilo fuwEila yufaAEalu mufaAEalapN fiEaAlN mufaAEilN mufaAEalN"></word>
+			<word text="&gt;afoEala" id="VerbFamilyIV" other="yufoEila &gt;afoEilo laA tufoEilo &gt;ufoEila yufoEalu &lt;ifoEaAlN mufoEilN mufoEalN"></word>
+			<word text="tafaE~ala" id="VerbFamilyV" other="yatafaE~alu tafaE~alo laA tatafaE~alo tufuE~ila yutafaE~alu tafaE~ulN mutafaE~ilN mutafaE~alN"></word>
+			<word text="tafaAEala" id="VerbFamilyVI" other="yatafaAEalu tafaAEalo laA tatafaAEalo tufuwEila yutafaAEalu	tafaAEulN mutafaAEilN mutafaAEalN"></word>
+			<word text="&lt;inofaEala" id="VerbFamilyVII" other="yanofaEilu &lt;inofaEilo laA tanofaEilo &gt;unofuEila yunofaEalu &lt;infiEaAlN munofaEilN"></word>
+			<word text="&lt;ifotaEala" id="VerbFamilyVIII" other="yafotaEilu &lt;ifotaEilo laA tafotaEilo &gt;ufotuEila yufotaEalu &lt;ifotiEaAlN mufotaEilN mufotaEalN"></word>
+			<word text="&lt;ifoEal~a" id="VerbFamilyXI" other="yafoEal~u &lt;ifoEalilo laA tafoEal~ &gt;ufoEil~a yufoEal~u &lt;ifoEilaAlN mufoEal~K"></word>
+			<word text="&lt;isotafoEala" id="VerbFamilyX" other="yasotafoEilu &lt;isotafoEilo laA tasotafoEilo &gt;usotufoEila yusotafoEalu &lt;isotifoEaAlN musotafoEilN musotafoEalN"></word>
+
+			<word text="faElaAn" id="AttributeSingularPattern"></word>
 
 			<word text="&gt;afoEaAlN"></word>
 			<word text="fuEuwlN"></word>
@@ -1452,7 +1588,6 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="faEaAEilN" id=""></word>
 			<word text="faEaAlilu" id=""></word>
 			<word text="faEaAliylu" id=""></word>
-			<word text="faElaAn" id=""></word>
 		</cateogry>
 	</grammar>
 	<vocabulary>
@@ -1467,16 +1602,20 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="maSodar" plural="maSaAdir" id="VerbalNoun"></word>
 			<word text="&lt;iEraAb" id="Declension"></word>
 			<word text="binaA&apos;" id="Construction"></word>
-			<word text="Sarf" id="WordPatterns"></word>
+			<word text="Sarf" id="MorphologyWordPatterns"></word>
 			<word text="&gt;an~aHw" id="ScienceOfGrammar"></word>
 			<word text="ta$kiyl" id="Diacritics"></word>
 			<word text="&gt;alkalimap" id="Word"></word>
 			<word text="&lt;isomu &gt;alS~ilap" id="RelativePronoun"></word>
 			<word text="&lt;isomu &gt;alofaAEil" id="ActiveParticipleVerbalDoer"></word>
 			<word text="&lt;isomu &gt;alomafoEuwl" id="PassiveParticiplePassiveNoun"></word>
+			<word text="&lt;isomu tafoDiyl" id="NounsOfSuperiority"></word>
+			<word text="&lt;isomu &gt;alZ~arof" id="PossessionConstructionLikeNouns"></word>
 			<word text="&gt;asomaA&apos;u &gt;alo&lt;i$aArapi" id="PointingNouns"></word>
 			<word text="&gt;asomaA&apos;u &gt;alo&lt;i$aArapi &gt;alobaEiyd" id="FarPointingNouns"></word>
 			<word text="&gt;al&gt;asomaA&apos;u &gt;aloxamosap" id="FiveSpecialNouns"></word>
+			<word text="siygap mubaAlagap" id="DerivedAdjectivesIntransitive"></word>
+			<word text="sifap mu$ab~ahap" id="SuperlativeAdjectivesTransitive"></word>
 			<word text="Silap" id="DescriptionAfterRelativePronoun"></word>
 			<word text="&gt;alD~amiA{iru &gt;alomunofaSilap" id="DetachedPronouns"></word>
 			<word text="&gt;alD~amiA{iru &gt;alomut~aSilap" id="AttachedPronouns"></word>
@@ -1512,8 +1651,12 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="Huruwf gayoru EaAmilapK" id="ParticlesWithoutDeclension"></word>
 			<word text="Huruwf &gt;almakaAn" id="ParticlesOfPlace"></word>
 			<word text="Huruwf &gt;alz~amaAn" id="ParticlesOfTime"></word>
-			<word text="Huruwf &gt;alqasam" id="ParticlesForOaths"></word>
-			<word text="Huruwf &gt;al&gt;asotifhaAm" id=""></word>
+			<word text="Huruwf &gt;aloqasam" id="ParticlesForOaths"></word>
+			<word text="Huruwf &gt;aln~afiy" id="ParticlesOfNegation"></word>
+			<word text="Huruwf &gt;aloEaTof" id="ConnectingParticles"></word>
+			<word text="Huruwf &gt;alt~awokiyd" id="ParticlesOfEmphasis"></word>
+			<word text="Huruwf &gt;al$~aroT" id="ParticlesOfCondition"></word>
+			<word text="Huruwf &gt;al&gt;asotifhaAm" id="ParticlesOfInterogation"></word>
 			<word text="Huruwf &gt;aloEil~ap" id="VowelLetter"></word>
 			<word text="&lt;in~a wa &gt;axawaAtuhaA" id="VerilyAndItsSisters"></word>
 			<word text="muDaAriE" id="PresentTense"></word>
@@ -1523,10 +1666,13 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="taA&apos; &gt;alomarobuwtap" id="TheTaaOfFemininity"></word>
 			<word text="&gt;alojar~u wa &gt;alomajoruwr" id="PossessiveConstruction"></word>
 			<word text="jumolap &lt;isomiy~ap" id="NominalSentence"></word>
+			<word text="&gt;anowaAEu &gt;alojumal" id="NominalSentence"></word>
 			<word text="jumolap fiEoliy~ap" id="VerbalSentence"></word>
 			<word text="jawaAb &gt;al$~arT" id="ResponseStatementAfterCondition"></word>
 			<word text="xabar" id="Predicate"></word>
-
+			<word text="Zuruwf" id="PossessionConstructionLikeNouns"></word>
+			<word text="Zarofu &gt;alomakaAn" id="RelativePlaceNouns"></word>
+			<word text="Zarofu &gt;alr~amaAn" id="RelativeTimeNouns"></word>
 			<word text="$ibohu &gt;alojumolap" id="EssentiallyPossessiveConstruction"></word>
 			<word text="&gt;al$~arT" id="ConditionDenotedByConditionParticle"></word>
 			<word text="Damiyro mut~aSil" id="ConnectedPronoun"></word>
@@ -1536,7 +1682,8 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="EaA{id" id="PronounConnectingToWordItDescribes"></word>
 			<word text="gaA{ib" id="ThirdPerson"></word>
 			<word text="&gt;alofiEolu &gt;alo&gt;amor" id="CommandTenseVerb"></word>
-			<word text="fiEolu &gt;alv~ulaAviy" id="FirstFamilyRootVerb"></word>
+			<word text="fiEolu &gt;alv~ulaAviy" id="ThreeLetterRootVerb"></word>
+			<word text="fiEolu &gt;alv~ulaAviy &gt;alomujar~adi" id="FirstFamilyRootVerb"></word>
 			<word text="fiEolu &gt;alv~ulaAviy &gt;alomuziyd fiyhi" id="HigherVerbFamiliesDerivedFromFirstFamily"></word>
 			<word text="&gt;alofiEol &gt;alr~ubaAEiy" id="FourLetterRootVerb"></word>
 			<word text="fiEolu maADK" id="VerbInThePastTense"></word>
