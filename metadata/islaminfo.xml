@@ -1437,86 +1437,102 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="*aAtN" dual="*awaAtaAni *awaAtayoni" plural="&gt;uwlaAtN" id="OwnerOfPossessor"></word>
 		</category>
 		<category title="Verbs">
-			<word text="faEala" id="Do"></word>
-			<word text="ftH" id="OpenGiveVictory"></word>
-			<word text="bEv" id="RaiseResurrect"></word>
-			<word text="jEl" id="MakePlaceSetUp"></word>
-			<word text="jmE" id="GatherCollect"></word>
-			<word text="*hb" id="Go"></word>
-			<word text="rfE" id="Raise"></word>
-			<word text="sHr" id="EnchantBewitch"></word>
-			<word text="SlH" id="ActRighteously"></word>
-			<word text="lEn" id="Curse"></word>
-			<word text="nfE" id="Profit"></word>
-			<word text="nSr" id="HelpDeliver"></word>
-			<word text="blg" id="Reach"></word>
-			<word text="trk" id="Leave"></word>
-			<word text="H$r" id="GatherBringTogether"></word>
-			<word text="Hkm" id="JudgeRule"></word>
-			<word text="xrj" id="ComeOut"></word>
-			<word text="xld" id="LiveForever"></word>
-			<word text="xlq" id="CreateOutOfNothing"></word>
-			<word text="dxl" id="Enter"></word>
-			<word text="*kr" id="Remember"></word>
-			<word text="rzq" id="Provide"></word>
-			<word text="sjd" id="Prostrate"></word>
-			<word text="$Er" id="Perceive"></word>
-			<word text="$kr" id="BeGrateful"></word>
-			<word text="Sdq" id="BeTrueSayTheTruth"></word>
-			<word text="Ebd" id="WorshipServe"></word>
-			<word text="fsq" id="Transgress"></word>
-			<word text="qtl" id="KillSlay"></word>
-			<word text="qEd" id="SitRemainBehind"></word>
-			<word text="ktb" id="PrescribeWrite"></word>
-			<word text="kfr" id="DisbelieveBeUngrateful"></word>
-			<word text="mkr" id="Plot"></word>
-			<word text="nZr" id="LookWait"></word>
-			<word text="Drb" id="Strike"></word>
-			<word text="Hml" id="CarryBear"></word>
-			<word text="Sbr" id="BearWithPatience"></word>
-			<word text="Zlm" id="Wrong"></word>
-			<word text="Erf" id="Recognize"></word>
-			<word text="Eql" id="UnderstandComprehend"></word>
-			<word text="gfr" id="ForgiveCover"></word>
-			<word text="qdr" id="DecreeHavePower"></word>
-			<word text="k*b" id="Lie"></word>
-			<word text="ksb" id="Earn"></word>
-			<word text="mlk" id="Possess"></word>
-			<word text="smiE" id="Hear"></word>
-			<word text="Hzin" id="BeGrieved"></word>
-			<word text="Hsib" id="ThinkListen"></word>
-			<word text="HfiZ" id="GuardProtect"></word>
-			<word text="xsir" id="Lose"></word>
-			<word text="rHim" id="HaveMercyOnSomeone"></word>
-			<word text="$hid" id="BearWitnessBePresent"></word>
-			<word text="Elim" id="Know"></word>
-			<word text="Emil" id="WorkDo"></word>
-			<word text="krih" id="DislikeDetest"></word>
-			<word text="bSur" id="WatchSee"></word>
+			<word text="faEala a" id="Do"></word>
+			<word text="ftH a" id="OpenGiveVictory"></word>
+			<word text="bEv a" id="RaiseResurrect"></word>
+			<word text="jEl a" id="MakePlaceSetUp"></word>
+			<word text="jmE a" id="GatherCollect"></word>
+			<word text="*hb a" poss="bi &lt;ilaY Eano" id="GoTakeAwayGoTowardGoAway"></word>
+			<word text="rfE a" id="Raise"></word>
+			<word text="sHr a" id="EnchantBewitch"></word>
+			<word text="SlH a" id="ActRighteously"></word>
+			<word text="lEn a" id="Curse"></word>
+			<word text="nfE a" id="Profit"></word>
+			
+			<word text="nSr u" id="HelpDeliver"></word>
+			<word text="blg u" id="Reach"></word>
+			<word text="trk u" id="Leave"></word>
+			<word text="H$r u" id="GatherBringTogether"></word>
+			<word text="Hkm u" id="JudgeRule"></word>
+			<word text="xrj u" id="ComeOut"></word>
+			<word text="xld u" id="LiveForever"></word>
+			<word text="xlq u" id="CreateOutOfNothing"></word>
+			<word text="dxl u" id="Enter"></word>
+			<word text="*kr u" id="Remember"></word>
+			<word text="rzq u" id="Provide"></word>
+			<word text="sjd u" id="Prostrate"></word>
+			<word text="$Er u" id="Perceive"></word>
+			<word text="$kr u" id="BeGrateful"></word>
+			<word text="Sdq u" id="BeTrueSayTheTruth"></word>
+			<word text="Ebd u" id="WorshipServe"></word>
+			<word text="fsq u" id="Transgress"></word>
+			<word text="qtl u" id="KillSlay"></word>
+			<word text="qEd u" id="SitRemainBehind"></word>
+			<word text="ktb u" id="PrescribeWrite"></word>
+			<word text="kfr u" id="DisbelieveBeUngrateful"></word>
+			<word text="mkr u" id="Plot"></word>
+			<word text="nZr u" id="LookWait"></word>
+			
+			<word text="Drb i" poss="fiy mavalaAF EalaY li" id="StrikeHitTravelInThroughWentForthStroveGiveExampleImposeUponStruckUponOvershadowMentionGiveExample"></word>
+			<word text="Hml i" id="CarryBear"></word>
+			<word text="Sbr i" id="BearWithPatience"></word>
+			<word text="Zlm i" id="Wrong"></word>
+			<word text="Erf i" id="Recognize"></word>
+			<word text="Eql i" id="UnderstandComprehend"></word>
+			<word text="gfr i" poss="" id="ForgiveCover"></word>
+			<word text="qdr i" id="DecreeHavePower"></word>
+			<word text="k*b i" id="Lie"></word>
+			<word text="ksb i" id="Earn"></word>
+			<word text="mlk i" id="Possess"></word>
+			
+			<word text="smiE a" id="Hear"></word>
+			<word text="Hzin a" id="BeGrieved"></word>
+			<word text="Hsib a" id="ThinkListen"></word>
+			<word text="HfiZ a" id="GuardProtect"></word>
+			<word text="xsir a" id="Lose"></word>
+			<word text="rHim a" id="HaveMercyOnSomeone"></word>
+			<word text="$hid a" id="BearWitnessBePresent"></word>
+			<word text="Elim a" id="Know"></word>
+			<word text="Emil a" id="WorkDo"></word>
+			<word text="krih a" id="DislikeDetest"></word>
+			
+			<word text="bSur u" id="WatchSee"></word>
 
-			<word text="SbE" id="MakeConstruct"></word>
-			<word text="sxir" id="RidiculeMock"></word>
-			<word text="HbiT" id="BecomeWorthless"></word>
-			<word text="skn" id="LiveRestDwell"></word>
-			<word text="glb" id="Overcome"></word>
-			<word text="ErD" id="DisplayTurnAway"></word>
-			<word text="H*r" id="BewareFear"></word>
-			<word text="$rib" id="Drink"></word>
-			<word text="Edl" id="BeJust"></word>
-			<word text="slk" id="TreadAPathInsert"></word>
-			<word text="fqih" id="Understand"></word>
-			<word text="ftn" id="PersecuteTryTest"></word>
-			<word text="k$f" id="Uncover"></word>
-			<word text="friH" id="Rejoice"></word>
-			<word text="nfx" id="Breathe"></word>
-			<word text="ktm" id="ConcealHide"></word>
-			<word text="zEm" id="Claim"></word>
-			<word text="&gt;fk" id="DeludeTurnAway"></word>
-			<word text="Srf" id="TurnDivert"></word>
-			<word text="sbq" id="Precede"></word>
-			<word text="nkH" id="Marry"></word>
-			<word text="bsT" id="ExtendStretch"></word>
-			<word text="Hlf" id="Swear"></word>
+			<word text="SbE a" id="MakeConstruct"></word>
+			<word text="sxir a" id="RidiculeMock"></word>
+			<word text="HbiT a" id="BecomeWorthless"></word>
+			<word text="skn u" id="LiveRestDwell"></word>
+			<word text="glb i" id="Overcome"></word>
+			<word text="ErD i" id="DisplayTurnAway"></word>
+			<word text="H*r a" id="BewareFear"></word>
+			<word text="$rib a" id="Drink"></word>
+			<word text="Edl i" id="BeJust"></word>
+			<word text="slk u" id="TreadAPathInsert"></word>
+			<word text="fqih a" id="Understand"></word>
+			<word text="ftn i" id="PersecuteTryTest"></word>
+			<word text="k$f i" id="Uncover"></word>
+			<word text="friH a" id="Rejoice"></word>
+			<word text="nfx u" id="Breathe"></word>
+			<word text="ktm u" id="ConcealHide"></word>
+			<word text="zEm u" id="Claim"></word>
+			<word text="&gt;fk i" id="DeludeTurnAway"></word>
+			<word text="Srf i" id="TurnDivert"></word>
+			<word text="sbq i" id="Precede"></word>
+			<word text="nkH i" id="Marry"></word>
+			<word text="bsT u" id="ExtendStretch"></word>
+			<word text="Hlf i" id="Swear"></word>
+			
+			<word text="&gt;ataY" poss="bi" id="ComeBring"></word>
+			<word text="jaA&apos;a" poss="bi" id="ComeArriveBring"></word>
+			<word text="taAba" poss="&lt;ilaY EalaY" id="RepentAcceptRepentance"></word>
+			<word text="qaDaY" poss="bayona EalaY" id="DecreeFulfillJudgeBetweenKill"></word>
+			<word text="qaAla yaquwlu" id="SaySpeak"></word>
+			<word text="kaAna yakuwnu" id="Be"></word>
+			<word text="EafaA" poss="Eano" id="ForgoPardonForgive"></word>
+			<word text="waDaEa" poss="Eano" id="PutLayDownPlaceRemove"></word>
+			<word text="walaY" poss="&lt;ilaY Eano" id="TurnCauseToTurnTurnToTurnAwayFrom"></word>
+			<word text="bagaY" poss="EalaY" id="SeekOppressIsUnjust"></word>
+			<word text="radiya" poss="Eano" id="BePleasedBePleasedWith"></word>
 		</category>
 		<cateogry title="RepresentativeStems">
 			<word text="fEl" id=""></word>
@@ -1689,6 +1705,8 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="fiEolu maADK" id="VerbInThePastTense"></word>
 			<word text="fiEolu majohuwl" id="PassiveVerb"></word>
 			<word text="fiEolu muDaAriE" id="PresentOrFutureTenseVerb"></word>
+			<word text="&gt;alofiEolu &gt;alomutaEad~iy" id="TransitiveVerb"></word>
+			<word text="&gt;alofiEolu &gt;alolaAzim" id="IntransitiveVerb"></word>
 			<word text="laA &gt;aln~aAfiyap" id="NegationParticle"></word>
 			<word text="laA &gt;aln~ahiy~ap" id="NegativeCommand"></word>
 			<word text="&gt;alomu}an~av" id="Feminine"></word>
@@ -1706,8 +1724,10 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="&gt;almuDaAf &lt;ilayohi" id="SecondParticlePossessionConstruction"></word>
 			<word text="muEorab" id="FullyFlexibleVerbOrNoun"></word>
 			<word text="mafoEuwl bihi" id="DirectObjectOfVerb"></word>
+			<word text="$ibohu jumolap" id="IndirectObject"></word>
 			<word text="mawoSuwf" id="WordBeingDescribed"></word>
 			<word text="naA{ibu &gt;alofaAEil" id="DeputyDoer"></word>
+			<word text="mutaEal~iq" id="ParticleAssociatedVerbs"></word>
 		</category>
 		<category title="RulesOfRecitation">
 			<word text="sif~aAt" id="LetterCharacteristics"></word>
@@ -2150,7 +2170,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="muftiy" id="Mufti"></word>
 			<word text="Sad~iq" id="Truthful"></word>
 			<word text="&gt;al&gt;amiyn" id="Trustworthy"></word>
-			<word text="&gt;al&gtamin" id="PeaceSecure"></word>
+			<word text="&gt;al&gt;amin" id="PeaceSecure"></word>
 			<word text="&lt;istgfaAr" id="AskForgiveness"></word>
 			<word text="tafsiyr" id="Commentary"></word>
 			<word text="siyrap" id="Biography"></word>
