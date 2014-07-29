@@ -2223,8 +2223,8 @@ Public Class Arabic
         Dim Output(2 + If(Personal, 6, 2)) As Array
         Dim Build As New Generic.Dictionary(Of String, Generic.Dictionary(Of String, String))
         Output(0) = New String() {}
-        Output(1) = New String() {"arabic", "arabic", "arabic"}
-        Output(2) = New String() {"Plural", "Dual", "Singular"}
+        Output(1) = New String() {"arabic", "arabic", "arabic", String.Empty}
+        Output(2) = New String() {"Plural", "Dual", "Singular", String.Empty}
         For Count = 0 To CachedData.IslamData.GrammarCategories(Index).Words.Length - 1
             Array.ForEach(CachedData.IslamData.GrammarCategories(Index).Words(Count).Grammar.Split(","c)(0).Split("|"c),
                           Sub(Str As String)
@@ -2243,15 +2243,15 @@ Public Class Arabic
                           End Sub)
         Next
         If Personal Then
-            Output(3) = New String() {Build("3m")("p"), Build("3m")("d"), Build("3m")("s")}
-            Output(4) = New String() {Build("3f")("p"), Build("3f")("d"), Build("3f")("s")}
-            Output(5) = New String() {Build("2m")("p"), Build("2m")("d"), Build("2m")("s")}
-            Output(6) = New String() {Build("2f")("p"), Build("2f")("d"), Build("2f")("s")}
-            Output(7) = New String() {Build("1m")("p"), Build("1m")("d"), Build("1m")("s")}
-            Output(8) = New String() {Build("1f")("p"), Build("1f")("d"), Build("1f")("s")}
+            Output(3) = New String() {Build("3m")("p"), Build("3m")("d"), Build("3m")("s"), "Third Person Masculine"}
+            Output(4) = New String() {Build("3f")("p"), Build("3f")("d"), Build("3f")("s"), "Third Person Feminine"}
+            Output(5) = New String() {Build("2m")("p"), Build("2m")("d"), Build("2m")("s"), "Second Person Masculine"}
+            Output(6) = New String() {Build("2f")("p"), Build("2f")("d"), Build("2f")("s"), "Second Person Feminine"}
+            Output(7) = New String() {Build("1m")("p"), Build("1m")("d"), Build("1m")("s"), "First Person Masculine"}
+            Output(8) = New String() {Build("1f")("p"), Build("1f")("d"), Build("1f")("s"), "First Person Feminine"}
         Else
-            Output(3) = New String() {Build("m")("p"), Build("m")("d"), Build("m")("s")}
-            Output(4) = New String() {Build("f")("p"), Build("f")("d"), Build("f")("s")}
+            Output(3) = New String() {Build("m")("p"), Build("m")("d"), Build("m")("s"), "Masculine"}
+            Output(4) = New String() {Build("f")("p"), Build("f")("d"), Build("f")("s"), "Feminine"}
         End If
         Return Output
     End Function
@@ -2270,7 +2270,12 @@ Public Class Arabic
     Public Shared Function DisplayDeterminerPersonals(ByVal Item As PageLoader.TextItem) As Array()
         Return DisplayPronoun(6, True)
     End Function
-
+    Public Shared Function DisplayPastVerbsFamilyI(ByVal Item As PageLoader.TextItem) As Array()
+        Return DisplayPronoun(7, True)
+    End Function
+    Public Shared Function DisplayPresentVerbsFamilyI(ByVal Item As PageLoader.TextItem) As Array()
+        Return DisplayPronoun(8, True)
+    End Function
 End Class
 Public Class RenderArray
     Enum RenderTypes

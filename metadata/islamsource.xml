@@ -219,6 +219,8 @@
 			<static name="relatives" description="IslamSource_Text" onrender="Arabic::DisplayRelatives"></static>
 			<static name="personals" description="IslamSource_Text" onrender="Arabic::DisplayPersonals"></static>
 			<static name="determinerpersonals" description="IslamSource_Text" onrender="Arabic::DisplayDeterminerPersonals"></static>
+			<static name="pastverbsfamilyi" description="IslamSource_Text" onrender="Arabic::DisplayPastVerbsFamilyI"></static>
+			<static name="presentverbsfamilyi" description="IslamSource_Text" onrender="Arabic::DisplayPresentVerbsFamilyI"></static>
 		</frame>
 	</page>
 	<page name="quranwords" description="IslamSource_QuranWords">

@@ -916,6 +916,34 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="hin~a" id="Their" grammar="3fp,pos"></word>
 			<word text="haA" id="Their" grammar="3bp"></word>
 		</category>
+		<category title="PastTenseVerbsFamilyI">
+			<word text="faEala" grammar="3ms"></word>
+			<word text="faEalaA" grammar="3md"></word>
+			<word text="faEaluwA" grammar="3mp"></word>
+			<word text="faEalat" grammar="3fs"></word>
+			<word text="faEalataA" grammar="3fd"></word>
+			<word text="faEalona" grammar="3fp"></word>
+			<word text="faEalota" grammar="2ms"></word>
+			<word text="faEalotumaA" grammar="2md|2fd"></word>
+			<word text="faEalotum" grammar="2mp"></word>
+			<word text="faEaloti" grammar="2fs"></word>
+			<word text="faEalotun~a" grammar="2fp"></word>
+			<word text="faEalotu" grammar="1ms|1fs"></word>
+			<word text="faEalonaA" grammar="1md|1fd|1mp|1fp"></word>
+		</category>
+		<category title="PresentTenseVerbsFamilyI">
+			<word text="yafoEalu" grammar="3ms"></word>
+			<word text="yafoEalaAni" grammar="3md"></word>
+			<word text="yafoEaluwna" grammar="3mp"></word>
+			<word text="tafoEalu" grammar="3fs|2ms"></word>
+			<word text="tafoEalaAni" grammar="3fd|2md|2fd"></word>
+			<word text="yafoEalona" grammar="3fp"></word>
+			<word text="tafoEaluwna" grammar="2mp"></word>
+			<word text="tafoEaliyna" grammar="2fs"></word>
+			<word text="tafoEalona" grammar="2fp"></word>
+			<word text="&gt;afoEalu" grammar="1ms|1fs"></word>
+			<word text="nafoEalu" grammar="1md|1fd|1mp|1fp"></word>
+		</category>
 		<category title="ResponseParticles">
 			<word text="&lt;ilaha" id="God"></word>
 			<word text="{ll~`h" id="Allah"></word>
@@ -1554,31 +1582,6 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="faEila" present="yafoEilu" command="&gt;ifoEilo" verbalnoun="faEolN"></word>
 			
 			<word text="faEala" id="VerbFamilyI" other="laA tafoEulo fuEila yufoEalu"></word>
-			<word text="faEala" grammar="past,3ms"></word>
-			<word text="faEalaA" grammar="past,3md"></word>
-			<word text="faEaluwA" grammar="past,3mp"></word>
-			<word text="faEalat" grammar="past,3fs"></word>
-			<word text="faEalataA" grammar="past,3fd"></word>
-			<word text="faEalona" grammar="past,3fp"></word>
-			<word text="faEalota" grammar="past,2ms"></word>
-			<word text="faEalotumaA" grammar="past,2md|2fd"></word>
-			<word text="faEalotum" grammar="past,2mp"></word>
-			<word text="faEaloti" grammar="past,2fs"></word>
-			<word text="faEalotun~a" grammar="past,2fp"></word>
-			<word text="faEalotu" grammar="past,1ms|1fs"></word>
-			<word text="faEalonaA" grammar="past,1md|1fd|1mp|1fp"></word>
-			
-			<word text="yafoEalu" grammar="pres,3ms"></word>
-			<word text="yafoEalaAni" grammar="pres,3md"></word>
-			<word text="yafoEaluwna" grammar="pres,3mp"></word>
-			<word text="tafoEalu" grammar="pres,3fs|2ms"></word>
-			<word text="tafoEalaAni" grammar="pres,3fd|2md|2fd"></word>
-			<word text="yafoEalona" grammar="pres,3fp"></word>
-			<word text="tafoEaluwna" grammar="pres,2mp"></word>
-			<word text="tafoEaliyna" grammar="pres,2fs"></word>
-			<word text="tafoEalona" grammar="pres,2fp"></word>
-			<word text="&gt;afoEalu" grammar="pres,1ms|1fs"></word>
-			<word text="nafoEalu" grammar="pres,1md|1fd|1mp|1fp"></word>
 
 			<word text="faE~ala" id="VerbFamilyII" other="yufaE~ilu faE~ilo laA tufaE~ilo fuE~ila yufaE~alu yafoEiylN mufaE~ilN mufaE~alN"></word>
 			<word text="faAEala" id="VerbFamilyIII" other="yufaAEilu faAEilo laA tufaAEilo fuwEila yufaAEalu mufaAEalapN fiEaAlN mufaAEilN mufaAEalN"></word>
