@@ -4566,7 +4566,7 @@
   <data name="IslamInfo_Throat" xml:space="preserve">
     <value>Throat</value>
   </data>
-   <data name="IslamInfo_ChestInterior" xml:space="preserve">
+  <data name="IslamInfo_ChestInterior" xml:space="preserve">
     <value>Chest Interior</value>
   </data>
   <data name="IslamInfo_Strength" xml:space="preserve">
@@ -4658,9 +4658,6 @@
   </data>
   <data name="IslamInfo_Safety" xml:space="preserve">
     <value>Safety</value>
-  </data>
-  <data name="IslamInfo_Fire" xml:space="preserve">
-    <value>Fire</value>
   </data>
   <data name="IslamInfo_Fire" xml:space="preserve">
     <value>Fire</value>
@@ -4896,14 +4893,8 @@
   <data name="IslamInfo_AliBinMusa" xml:space="preserve">
     <value>Ali Bin Musa</value>
   </data>
-  <data name="IslamInfo_MuhammadBinAli" xml:space="preserve">
-    <value>Muhammad Bin Ali</value>
-  </data>
   <data name="IslamInfo_AliBinMuhammad" xml:space="preserve">
     <value>Ali Bin Muhammad</value>
-  </data>
-  <data name="IslamInfo_HasanBinAli" xml:space="preserve">
-    <value>Hasan Bin Ali</value>
   </data>
   <data name="IslamInfo_MuhammadBinAlHasan" xml:space="preserve">
     <value>Muhammad Bin Al Hasan</value>
@@ -5021,5 +5012,8 @@
   </data>
   <data name="IslamInfo_MidShaban" xml:space="preserve">
     <value>Mid Shaban</value>
+  </data>
+  <data name="IslamSource_Grammar" xml:space="preserve">
+    <value>Grammar</value>
   </data>
 </root>

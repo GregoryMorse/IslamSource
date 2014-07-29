@@ -204,6 +204,23 @@
 			<static name="alphabet" description="" onrender="Arabic::DisplayAll"></static>
 		</frame>
 	</page>
+	<page name="grammar" description="IslamSource_Grammar">
+		<frame name="arabicgrammar" description="IslamSource_Grammar">
+			<button name="fontsmaller" description="IslamSource_Smaller" onclick="ArabicFont::GetFontSmallerJS"></button>
+			<button name="fontdefaultsize" description="IslamSource_LetterSample" onclick="ArabicFont::GetFontDefaultSizeJS"></button>
+			<button name="fontbigger" description="IslamSource_Bigger" onclick="ArabicFont::GetFontBiggerJS"></button>
+			<radio name="fontselection" description="IslamSource_Font" uselist="true" defaultvalue="def" onpopulate="ArabicFont::GetFontList" onchange="ArabicFont::GetChangeFontJS"></radio>
+			<edit name="fontcustom" description="" defaultvalue="IslamSource_Lotus" rows="1"></edit>
+			<button name="fontcustomapply" description="IslamSource_Apply" onclick="ArabicFont::GetChangeCustomFontJS"></button>
+			<image name="fontloading" text="IslamSource_Loading" source="loading-h.gif"></image>
+			<static name="font-tester" description=""></static>
+			<static name="proximals" description="IslamSource_Text" onrender="Arabic::DisplayProximals"></static>
+			<static name="distals" description="IslamSource_Text" onrender="Arabic::DisplayDistals"></static>
+			<static name="relatives" description="IslamSource_Text" onrender="Arabic::DisplayRelatives"></static>
+			<static name="personals" description="IslamSource_Text" onrender="Arabic::DisplayPersonals"></static>
+			<static name="determinerpersonals" description="IslamSource_Text" onrender="Arabic::DisplayDeterminerPersonals"></static>
+		</frame>
+	</page>
 	<page name="quranwords" description="IslamSource_QuranWords">
 		<frame name="quranwordviewer" description="IslamSource_Viewer" hasform="true">
 			<radio name="quranselection" description="IslamSource_Selection" uselist="true" onpopulate="TanzilReader::GetWordPartitions"></radio>

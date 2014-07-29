@@ -2218,6 +2218,59 @@ Public Class Arabic
         Next
         Return Output
     End Function
+    Public Shared Function DisplayPronoun(Index As Integer, Personal As Boolean) As Array()
+        Dim Count As Integer
+        Dim Output(2 + If(Personal, 6, 2)) As Array
+        Dim Build As New Generic.Dictionary(Of String, Generic.Dictionary(Of String, String))
+        Output(0) = New String() {}
+        Output(1) = New String() {"arabic", "arabic", "arabic"}
+        Output(2) = New String() {"Plural", "Dual", "Singular"}
+        For Count = 0 To CachedData.IslamData.GrammarCategories(Index).Words.Length - 1
+            Array.ForEach(CachedData.IslamData.GrammarCategories(Index).Words(Count).Grammar.Split(","c)(0).Split("|"c),
+                          Sub(Str As String)
+                              Dim Key As String = Str.Chars(0)
+                              If Personal Then '"123".Contains(Str.Chars(0))
+                                  Key += Str.Chars(1)
+                              End If
+                              If Not Build.ContainsKey(Key) Then
+                                  Build.Add(Key, New Generic.Dictionary(Of String, String))
+                              End If
+                              If Build.Item(Key).ContainsKey(Str.Chars(If(Personal, 2, 1))) Then
+                                  Build.Item(Key).Item(Str.Chars(If(Personal, 2, 1))) += " " + TransliterateFromBuckwalter(CachedData.IslamData.GrammarCategories(Index).Words(Count).Text)
+                              Else
+                                  Build.Item(Key).Add(Str.Chars(If(Personal, 2, 1)), TransliterateFromBuckwalter(CachedData.IslamData.GrammarCategories(Index).Words(Count).Text))
+                              End If
+                          End Sub)
+        Next
+        If Personal Then
+            Output(3) = New String() {Build("3m")("p"), Build("3m")("d"), Build("3m")("s")}
+            Output(4) = New String() {Build("3f")("p"), Build("3f")("d"), Build("3f")("s")}
+            Output(5) = New String() {Build("2m")("p"), Build("2m")("d"), Build("2m")("s")}
+            Output(6) = New String() {Build("2f")("p"), Build("2f")("d"), Build("2f")("s")}
+            Output(7) = New String() {Build("1m")("p"), Build("1m")("d"), Build("1m")("s")}
+            Output(8) = New String() {Build("1f")("p"), Build("1f")("d"), Build("1f")("s")}
+        Else
+            Output(3) = New String() {Build("m")("p"), Build("m")("d"), Build("m")("s")}
+            Output(4) = New String() {Build("f")("p"), Build("f")("d"), Build("f")("s")}
+        End If
+        Return Output
+    End Function
+    Public Shared Function DisplayProximals(ByVal Item As PageLoader.TextItem) As Array()
+        Return DisplayPronoun(1, False)
+    End Function
+    Public Shared Function DisplayDistals(ByVal Item As PageLoader.TextItem) As Array()
+        Return DisplayPronoun(2, False)
+    End Function
+    Public Shared Function DisplayRelatives(ByVal Item As PageLoader.TextItem) As Array()
+        Return DisplayPronoun(4, False)
+    End Function
+    Public Shared Function DisplayPersonals(ByVal Item As PageLoader.TextItem) As Array()
+        Return DisplayPronoun(5, True)
+    End Function
+    Public Shared Function DisplayDeterminerPersonals(ByVal Item As PageLoader.TextItem) As Array()
+        Return DisplayPronoun(6, True)
+    End Function
+
 End Class
 Public Class RenderArray
     Enum RenderTypes
@@ -2592,6 +2645,25 @@ Public Class IslamData
     <System.Xml.Serialization.XmlArray("vocabulary")> _
     <System.Xml.Serialization.XmlArrayItem("category")> _
     Public VocabularyCategories() As VocabCategory
+
+    Public Structure GrammarCategory
+        Public Structure GrammarWord
+            <System.Xml.Serialization.XmlAttribute("text")> _
+            Public Text As String
+            <System.Xml.Serialization.XmlAttribute("id")> _
+            Public TranslationID As String
+            <System.Xml.Serialization.XmlAttribute("grammar")> _
+            Public Grammar As String
+        End Structure
+        <System.Xml.Serialization.XmlAttribute("title")> _
+        Public Title As String
+        <System.Xml.Serialization.XmlElement("word")> _
+        Public Words() As GrammarWord
+    End Structure
+
+    <System.Xml.Serialization.XmlArray("grammar")> _
+    <System.Xml.Serialization.XmlArrayItem("category")> _
+    Public GrammarCategories() As GrammarCategory
 
     Public Structure ArabicSymbol
         <System.Xml.Serialization.XmlAttribute("symbolname")> _
