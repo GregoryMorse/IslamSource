@@ -745,7 +745,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<verse title="" text="suboHaAna {ll~`hi wabiHamodihi (mA}p mrp fy {loywm)"></verse>
 			<verse title="" text="suboHaAna {ll~`hi wabiHamodihi (Hyn ySbH wHyn ymsy)"></verse>
 			<verse title="" text="laA &lt;ilha &lt;il~aA {ll~`hu waHodahu laA $ariyka lahu lahu {lomuloku walahu {loHamodu whuwa EalY kul~i $ay'K qadyrN"></verse>
-			<verse title="" text="suboHAna {ll~`hi wabiHamodihi wsuboHaAna {ll~`hi {loEaZiymi"></verse>
+			<verse title="" text="suboHaAna {ll~`hi wabiHamodihi wsuboHaAna {ll~`hi {loEaZiymi"></verse>
 			<verse title="" text="suboHaAna {ll~`hi wAlHamodu llhi laA &lt;ilaha &lt;l~aA {ll~`hu w{ll~`hu &gt;akobaru"></verse>
 			<verse title="" text="suboHaAna {ll~`hi"></verse>
 			<verse title="" text="suboHaAna {ll~`hi {loEaZiymi wbiHamodihi"></verse>
@@ -932,31 +932,51 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="faEalonaA" grammar="1md|1fd|1mp|1fp"></word>
 		</category>
 		<category title="PresentTenseVerbsFamilyI">
-			<word text="yafoEalu" grammar="3ms"></word>
-			<word text="yafoEalaAni" grammar="3md"></word>
-			<word text="yafoEaluwna" grammar="3mp"></word>
-			<word text="tafoEalu" grammar="3fs|2ms"></word>
-			<word text="tafoEalaAni" grammar="3fd|2md|2fd"></word>
+			<word text="yafoEalu" grammar="3ms,nom"></word>
+			<word text="yafoEala" grammar="3ms,acc"></word>
+			<word text="yafoEalo" grammar="3ms,prespos"></word>
+			<word text="yafoEalaAni" grammar="3md,nom"></word>
+			<word text="yafoEalaA" grammar="3md,acc|prespos"></word>
+			<word text="yafoEaluwna" grammar="3mp,nom"></word>
+			<word text="yafoEaluwA" grammar="3mp,acc|prespos"></word>
+			<word text="tafoEalu" grammar="3fs|2ms,nom"></word>
+			<word text="tafoEala" grammar="3fs|2ms,acc"></word>
+			<word text="tafoEalo" grammar="3fs|2ms,prespos"></word>
+			<word text="tafoEalaAni" grammar="3fd|2md|2fd,nom"></word>
+			<word text="tafoEalaA" grammar="3fd|2md|2fd,acc|prespos"></word>
 			<word text="yafoEalona" grammar="3fp"></word>
-			<word text="tafoEaluwna" grammar="2mp"></word>
-			<word text="tafoEaliyna" grammar="2fs"></word>
+			<word text="tafoEaluwna" grammar="2mp,nom"></word>
+			<word text="tafoEaluwA" grammar="2mp,acc|prespos"></word>
+			<word text="tafoEaliyna" grammar="2fs,nom"></word>
+			<word text="tafoEaliy" grammar="2fs,acc|prespos"></word>
 			<word text="tafoEalona" grammar="2fp"></word>
-			<word text="&gt;afoEalu" grammar="1ms|1fs"></word>
-			<word text="nafoEalu" grammar="1md|1fd|1mp|1fp"></word>
+			<word text="&gt;afoEalu" grammar="1ms|1fs,nom"></word>
+			<word text="&gt;afoEala" grammar="1ms|1fs,acc"></word>
+			<word text="&gt;afoEalo" grammar="1ms|1fs,prespos"></word>
+			<word text="nafoEalu" grammar="1md|1fd|1mp|1fp,nom"></word>
+			<word text="nafoEala" grammar="1md|1fd|1mp|1fp,acc"></word>
+			<word text="nafoEalo" grammar="1md|1fd|1mp|1fp,prespos"></word>
+		</category>
+		<category title="CommandTenseVerbsFamilyI">
+			<word text="&lt;ifEalo" grammar="ms"></word>
+			<word text="&lt;ifEalaA" grammar="md|fd"></word>
+			<word text="&lt;ifEaluwA" grammar="mp"></word>
+			<word text="&lt;ifEaliy" grammar="fs"></word>
+			<word text="&lt;ifEalona" grammar="fp"></word>
 		</category>
 		<category title="ResponseParticles">
 			<word text="&lt;ilaha" id="God"></word>
 			<word text="{ll~`h" id="Allah"></word>
 
 			<word text="kal~aA" id="NeverCertainlyNot"></word>
-			<word text="lano" id="NotFuture"></word>
-			<word text="lamo" id="NotPast"></word>
+			<word text="lano" id="NotFutureWillNever" grammar="acc"></word>
+			<word text="lamo" id="NotPastDidNot" grammar="prespos"></word>
 			<word text="laA" id="ThereIsNo"></word>
 			<word text="maA" id="Not"></word>
 			<word text="layosa" id="Not"></word>
 			<word text="layosato" id="Not"></word>
 			<word text="balaY" id="YesIndeed"></word>
-			<word text="duwna" id="BesidesLessThan"></word>
+			<word text="duwna" id="BesidesOtherThanLessThan" grammar="pos"></word>
 			<word text="naEamo" id="Yes"></word>
 
 			<word text="&lt;il~aA" id="ExceptUnlessIfNot" grammar="except"></word>
@@ -967,10 +987,10 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="HaA$aA" id="" grammar="except"></word>
 		</category>
 		<category title="Interogatives">	
-			<word text="maA" id="WhatThatWhich"></word>
-			<word text="mano" id="WhoTheOneWho"></word>
-			<word text="mataY" id="WhenTheTimeWhen"></word>
-			<word text="&gt;ayona" id="Where"></word>
+			<word text="maA" id="WhatThatWhich" grammar="prespos"></word>
+			<word text="mano" id="WhoTheOneWho" grammar="prespos"></word>
+			<word text="mataY" id="WhenTheTimeWhen" grammar="prespos"></word>
+			<word text="&gt;ayona" id="Where" grammar="prespos"></word>
 			<word text="kayofa" id="How"></word>
 			<word text="kamo" id="HowMany"></word>
 			<word text="&gt;ay~u" id="Which"></word>
@@ -987,7 +1007,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="taHota" id="Under" grammar="pos"></word>
 			<word text="bayona &gt;ayaday bayona yaday" id="InFrontOf"></word>
 			<word text="xalofa" id="BackAfter" grammar="pos"></word>
-			<word text="&gt;amaAma" id="InFrontOf" grammar="pos"></word>
+			<word text="&gt;amaama" id="InFrontOfBefore" grammar="pos"></word>
 			<word text="waraA&apos;" id="Behind" grammar="pos"></word>
 			<word text="yamiyn &gt;ayomaAn" id="RightOath"></word>
 			<word text="$imaAl $amaA{il" id="Left"></word>
@@ -997,18 +1017,18 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="&gt;ayonamaA" id="Wherever"></word>
 		</category>
 		<category title="TimePrepositions">
-			<word text="qabola" id="Before"></word>
+			<word text="qabola" id="Before" grammar="pos"></word>
 			<word text="naEod" id="After"></word>
-			<word text="Hiyn" id="TimePeriodAtTheTimeOf"></word>
+			<word text="Hiyn HiynAF" id="TimePeriodAtTheTimeOfForAPeriodOfTime" grammar="pos"></word>
 			<word text="&lt;i*" id="WhenForPast"></word>
-			<word text="&lt;i*aA" id="WhenForFuture"></word>
+			<word text="&lt;i*aA &lt;i*aAF" id="WhenForFutureTherefore" grammar="acc"></word>
 			<word text="vum~a" id="Then"></word>
 			<word text="fa" id="ThenThusTherefore"></word>
 			<word text="bal" id="NayRatherButHowever"></word>
 			<word text="Einoda ladaY laduno" id="NearWith"></word>
 			<word text="&lt;ino &lt;il~aA" id="NothingBut"></word>
 			<word text="maA &lt;il~aA" id="NothingBut"></word>
-			<word text="&gt;al~aA" basis="&gt;ano laA" id="ThatNotSoAsNotTo"></word>
+			<word text="&gt;al~aA" basis="&gt;ano laA" id="ThatNotSoAsNotToMayNot" grammar="acc"></word>
 		</category>
 		<category title="Prepositions">
 			<word text="bimaA" id="WithWhatBecause"></word>
@@ -1024,16 +1044,16 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="ka&gt;an~amaA" id="AsIf"></word>
 			<word text="kul~amaA" id="Whenever"></word>
 			<word text="bi" id="WithInFrom" grammar="pos"></word>
-			<word text="Eano" id="About" grammar="pos"></word>
+			<word text="Eano" id="FromAbout" grammar="pos"></word>
 			<word text="fiy" id="In" grammar="pos"></word>
-			<word text="ka" id="AsLike" grammar="pos"></word>
-			<word text="li" id="For" grammar="pos"></word>
-			<word text="la" id="For"></word>
+			<word text="ka" id="AsLikeSimilarity" grammar="pos"></word>
+			<word text="li" id="ForTo" grammar="pos"></word>
+			<word text="la" id="For" grammar="prespos"></word>
 			<word text="mino" id="From" grammar="pos"></word>
-			<word text="&lt;ilaY" id="Towards" grammar="pos"></word>
+			<word text="&lt;ilaY" id="ToTowards" grammar="pos"></word>
 			<word text="ta ti" id="ByOfOath" grammar="pos"></word>
 			<word text="Hat~aY" id="Until" grammar="pos|acc"></word>
-			<word text="EalaY" id="On" grammar="pos"></word>
+			<word text="EalaY" id="UponOn" grammar="pos"></word>
 			<word text="maEa" id="With" grammar="pos"></word>
 			<word text="wa" id="AndByOfOath" grammar="pos"></word>
 			
@@ -1045,7 +1065,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="laEal~a" id="PerhapsMayBeSoAsTo" grammar="acc"></word>
 			<word text="layota" id="WishIfOnly" grammar="acc"></word>
 
-			<word text="&gt;ano" id="ThatTo"></word>
+			<word text="&gt;ano" id="ThatTo" grammar="acc"></word>
 			<word text="&lt;iy~aA" id="AloneOnly"></word>
 			<word text="EasaY" id="PossiblyPerhaps"></word>
 			<word text="lam~aA mataY" id="When"></word>
@@ -1062,7 +1082,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="{lo" id="The"></word>
 			<word text="&gt;amo" id="Or"></word>
 			<word text="&gt;awo" id="Or"></word>
-			<word text="baEoD" id="SomeOf"></word>
+			<word text="baEoD" id="SomeOfAfter" grammar="pos"></word>
 			<word text="kul~u kilaA" id="EveryoneAll"></word>
 		</category>
 		<category title="Particles">
@@ -1080,35 +1100,16 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="mim~ano" basis="mino mano" id="ThanTheOneWhoFromThoseWho"></word>			
 		</category>
 		<category title="Particles">
-			<word text="&lt;ilaY" id="ToTowards" grammar="pos"></word>
-			<word text="bi" id="InWith" grammar="pos"></word>
-			<word text="ta" id="ByOath" grammar="pos"></word>
 			<word text="Hay~a" id="Until" grammar="pos"></word>
-			<word text="Eano" id="FromAbout" grammar="pos"></word>
-			<word text="EalaY" id="UponOn" grammar="pos"></word>
-			<word text="fiy" id="In" grammar="pos"></word>
-			<word text="ka" id="LikeSimilarity" grammar="pos"></word>
-			<word text="li" id="ForTo" grammar="pos"></word>
-			<word text="wa" id="ByOath" grammar="pos"></word>
-			<word text="min" id="From" grammar="pos"></word>
 
-			<word text="baEoD" id="After" grammar="pos"></word>
 			<word text="Hawla" id="Around" grammar="pos"></word>
-			<word text="duwna" id="BesidesOtherThan" grammar="pos"></word>
 			<word text="gayor mino duwna" id="OtherThan" grammar="pos"></word>
 			<word text="ladaY laduno" id="FromWith" grammar="pos"></word>
 
-			<word text="&gt;amaama" id="InFrontOfBefore" grammar="pos"></word>
 			<word text="waraA&apos;a" id="Behind" grammar="pos"></word>
-			<word text="bayona" id="Between" grammar="pos"></word>
-			<word text="xalofa" id="After" grammar="pos"></word>
 			<word text="fawqa" id="Above" grammar="pos"></word>
-			<word text="maEa" id="With" grammar="pos"></word>
-			<word text="taHota" id="Under" grammar="pos"></word>
 			<word text="Einoda" id="With" grammar="pos"></word>
 
-			<word text="HiynAF" id="ForAPeriodOfTime" grammar="pos"></word>
-			<word text="qabola" id="Before" grammar="pos"></word>
 			<word text="SabaAHAF" id="Morning" grammar="pos"></word>
 			<word text="baEoda" id="After" grammar="pos"></word>
 			<word text="bukorapF" id="EarlyMorning" grammar="pos"></word>
@@ -1116,19 +1117,16 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="saHarAF" id="EarlyMorning" grammar="pos"></word>
 			<word text="&gt;abadAF" id="Always" grammar="pos"></word>
 			
-			<word text="&gt;ano" id="ThatTo" grammar="acc"></word>
-			<word text="lano" id="WillNever" grammar="acc"></word>
 			<word text="li" id="SoThat" grammar="acc"></word>
 			<word text="kayo likayo" id="SoThat" grammar="acc"></word>
-			<word text="&lt;i*aAF" id="Therefore" grammar="acc"></word>
-			<word text="&gt;al~aA" id="MayNot" grammar="acc"></word>
 			<word text="li&gt;ano" id="ForThat" grammar="acc"></word>
 			
 			<word text="li" id="Should" grammar="prespos"></word>
 			<word text="laA" id="Negation" grammar="prespos"></word>
-			<word text="lam" id="DidNot" grammar="prespos"></word>
 			<word text="&lt;ino" id="If" grammar="prespos"></word>
 			<word text="lam~a" id="NotYetWhen" grammar="prespos"></word>
+			<word text="&gt;alam~aA" id="" grammar="prespos"></word>
+			<word text="&gt;alamo" id="" grammar="prespos"></word>
 		</category>
 		<category title="Nouns">
 			<word text="suwq naAr xamar nafos riyH $amos Harob sabiyl EaSaA ka&gt;os bi{or daAr" id="SpecialFeminine"></word>
