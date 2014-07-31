@@ -1128,9 +1128,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="&gt;alam~aA" id="" grammar="prespos"></word>
 			<word text="&gt;alamo" id="" grammar="prespos"></word>
 		</category>
-		<category title="Nouns">
-			<word text="suwq naAr xamar nafos riyH $amos Harob sabiyl EaSaA ka&gt;os bi{or daAr" id="SpecialFeminine"></word>
-			
+		<category title="Nouns">			
 			<word text="&gt;aw~al &gt;uwalaY" id="First"></word>
 			<word text="|xir |xirap" id="Last"></word>
 			<word text="|xar &gt;uxoraY" id="Other"></word>
@@ -1569,6 +1567,8 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 		<category title="RepresentativeStems">
 			<word text="fEl" id=""></word>
 			
+			<word text="suwq naAr xamar nafos riyH $amos Harob sabiyl EaSaA ka&gt;os bi{or daAr" id="SpecialFeminine"></word>
+
 			<word text="sawofa sa" id="FutureTense"></word>
 			<word text="faAEilN" id="VerbFamilyIDoerNoun"></word>
 			<word text="mafoEuwlN" id="VeryFamilyIPassiveNoun"></word>

@@ -2218,6 +2218,18 @@ Public Class Arabic
         Next
         Return Output
     End Function
+    Public Shared Function DisplayParticle(Index As Integer) As Array()
+        Dim Count As Integer
+        Dim Output(2 + CachedData.IslamData.GrammarCategories(Index).Words.Length) As Array
+        Dim Build As New Generic.Dictionary(Of String, Generic.Dictionary(Of String, String))
+        Output(0) = New String() {}
+        Output(1) = New String() {"arabic", String.Empty, String.Empty}
+        Output(2) = New String() {"Particle", "Singular Translation", "Grammar Feature"}
+        For Count = 0 To CachedData.IslamData.GrammarCategories(Index).Words.Length - 1
+            Output(3 + Count) = New String() {CachedData.IslamData.GrammarCategories(Index).Words(Count).Text, CachedData.IslamData.GrammarCategories(Index).Words(Count).TranslationID, CachedData.IslamData.GrammarCategories(Index).Words(Count).Grammar}
+        Next
+        Return Output
+    End Function
     Public Shared Function DisplayPronoun(Index As Integer, Personal As Boolean) As Array()
         Dim Count As Integer
         Dim Output(2 + If(Personal, 6, 2)) As Array
@@ -2275,6 +2287,30 @@ Public Class Arabic
     End Function
     Public Shared Function DisplayPresentVerbsFamilyI(ByVal Item As PageLoader.TextItem) As Array()
         Return DisplayPronoun(8, True)
+    End Function
+    Public Shared Function DisplayCommandVerbsFamilyI(ByVal Item As PageLoader.TextItem) As Array()
+        Return DisplayPronoun(9, False)
+    End Function
+    Public Shared Function DisplayResponseParticles(ByVal Item As PageLoader.TextItem) As Array()
+        Return DisplayParticle(10)
+    End Function
+    Public Shared Function DisplayInterogativeParticles(ByVal Item As PageLoader.TextItem) As Array()
+        Return DisplayParticle(11)
+    End Function
+    Public Shared Function DisplayLocationParticles(ByVal Item As PageLoader.TextItem) As Array()
+        Return DisplayParticle(12)
+    End Function
+    Public Shared Function DisplayTimeParticles(ByVal Item As PageLoader.TextItem) As Array()
+        Return DisplayParticle(13)
+    End Function
+    Public Shared Function DisplayPrepositions(ByVal Item As PageLoader.TextItem) As Array()
+        Return DisplayParticle(14)
+    End Function
+    Public Shared Function DisplayParticles(ByVal Item As PageLoader.TextItem) As Array()
+        Return DisplayParticle(15)
+    End Function
+    Public Shared Function DisplayOtherParticles(ByVal Item As PageLoader.TextItem) As Array()
+        Return DisplayParticle(16)
     End Function
 End Class
 Public Class RenderArray
