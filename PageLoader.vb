@@ -2224,9 +2224,9 @@ Public Class Arabic
         Dim Build As New Generic.Dictionary(Of String, Generic.Dictionary(Of String, String))
         Output(0) = New String() {}
         Output(1) = New String() {"arabic", String.Empty, String.Empty}
-        Output(2) = New String() {"Particle", "Singular Translation", "Grammar Feature"}
+        Output(2) = New String() {"Particle", "Translation", "Grammar Feature"}
         For Count = 0 To CachedData.IslamData.GrammarCategories(Index).Words.Length - 1
-            Output(3 + Count) = New String() {CachedData.IslamData.GrammarCategories(Index).Words(Count).Text, CachedData.IslamData.GrammarCategories(Index).Words(Count).TranslationID, CachedData.IslamData.GrammarCategories(Index).Words(Count).Grammar}
+            Output(3 + Count) = New String() {TransliterateFromBuckwalter(CachedData.IslamData.GrammarCategories(Index).Words(Count).Text), CachedData.IslamData.GrammarCategories(Index).Words(Count).TranslationID, Utility.DefaultValue(CachedData.IslamData.GrammarCategories(Index).Words(Count).Grammar, String.Empty)}
         Next
         Return Output
     End Function
@@ -2311,6 +2311,32 @@ Public Class Arabic
     End Function
     Public Shared Function DisplayOtherParticles(ByVal Item As PageLoader.TextItem) As Array()
         Return DisplayParticle(16)
+    End Function
+    Public Shared Function DisplayNouns(ByVal Item As PageLoader.TextItem) As Array()
+        Dim Count As Integer
+        Dim Index As Integer = 17
+        Dim Output(2 + CachedData.IslamData.GrammarCategories(Index).Words.Length) As Array
+        Dim Build As New Generic.Dictionary(Of String, Generic.Dictionary(Of String, String))
+        Output(0) = New String() {}
+        Output(1) = New String() {"arabic", "arabic", "arabic", String.Empty}
+        Output(2) = New String() {"Noun", "Dual", "Plural", "Singular Translation"}
+        For Count = 0 To CachedData.IslamData.GrammarCategories(Index).Words.Length - 1
+            Output(3 + Count) = New String() {TransliterateFromBuckwalter(CachedData.IslamData.GrammarCategories(Index).Words(Count).Text), String.Empty, String.Empty, CachedData.IslamData.GrammarCategories(Index).Words(Count).TranslationID}
+        Next
+        Return Output
+    End Function
+    Public Shared Function DisplayVerbs(ByVal Item As PageLoader.TextItem) As Array()
+        Dim Count As Integer
+        Dim Index As Integer = 18
+        Dim Output(2 + CachedData.IslamData.GrammarCategories(Index).Words.Length) As Array
+        Dim Build As New Generic.Dictionary(Of String, Generic.Dictionary(Of String, String))
+        Output(0) = New String() {}
+        Output(1) = New String() {"arabic", "arabic", String.Empty}
+        Output(2) = New String() {"Past Root", "Present Root", "Particles"}
+        For Count = 0 To CachedData.IslamData.GrammarCategories(Index).Words.Length - 1
+            Output(3 + Count) = New String() {TransliterateFromBuckwalter(CachedData.IslamData.GrammarCategories(Index).Words(Count).Text), String.Empty, Utility.DefaultValue(CachedData.IslamData.GrammarCategories(Index).Words(Count).Grammar, String.Empty)}
+        Next
+        Return Output
     End Function
 End Class
 Public Class RenderArray

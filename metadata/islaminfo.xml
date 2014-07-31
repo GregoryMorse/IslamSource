@@ -1121,7 +1121,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="kayo likayo" id="SoThat" grammar="acc"></word>
 			<word text="li&gt;ano" id="ForThat" grammar="acc"></word>
 			
-			<word text="li" id="Should" grammar="prespos"></word>
+			<word text="li lo" id="Should" grammar="prespos"></word>
 			<word text="laA" id="Negation" grammar="prespos"></word>
 			<word text="&lt;ino" id="If" grammar="prespos"></word>
 			<word text="lam~a" id="NotYetWhen" grammar="prespos"></word>
@@ -1735,6 +1735,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="mawoSuwf" id="WordBeingDescribed"></word>
 			<word text="naA{ibu {lofaAEil" id="DeputyDoer"></word>
 			<word text="mutaEal~iq" id="ParticleAssociatedVerbs"></word>
+			<word text="la|mu {lt~awokiyd" id="LaamOfEmphasis"></word>
 		</category>
 		<category title="RulesOfRecitation">
 			<word text="sif~aAt" id="LetterCharacteristics"></word>
