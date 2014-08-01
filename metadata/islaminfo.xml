@@ -1467,90 +1467,90 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="*aAtN" dual="*awaAtaAni *awaAtayoni" plural="&gt;uwlaAtN" id="OwnerOfPossessor"></word>
 		</category>
 		<category title="Verbs">
-			<word text="faEala a" id="Do"></word>
-			<word text="ftH a" id="OpenGiveVictory"></word>
-			<word text="bEv a" id="RaiseResurrect"></word>
-			<word text="jEl a" id="MakePlaceSetUp"></word>
-			<word text="jmE a" id="GatherCollect"></word>
-			<word text="*hb a" poss="bi &lt;ilaY Eano" id="GoTakeAwayGoTowardGoAway"></word>
-			<word text="rfE a" id="Raise"></word>
-			<word text="sHr a" id="EnchantBewitch"></word>
-			<word text="SlH a" id="ActRighteously"></word>
-			<word text="lEn a" id="Curse"></word>
-			<word text="nfE a" id="Profit"></word>
+			<word text="fEl" id="Do" grammar="form=faEala,yafoEalu"></word>
+			<word text="ftH" id="OpenGiveVictory" grammar="form=faEala,yafoEalu"></word>
+			<word text="bEv" id="RaiseResurrect" grammar="form=faEala,yafoEalu"></word>
+			<word text="jEl" id="MakePlaceSetUp" grammar="form=faEala,yafoEalu"></word>
+			<word text="jmE" id="GatherCollect" grammar="form=faEala,yafoEalu"></word>
+			<word text="*hb" poss="bi &lt;ilaY Eano" id="GoTakeAwayGoTowardGoAway" grammar="form=faEala,yafoEalu"></word>
+			<word text="rfE" id="Raise" grammar="form=faEala,yafoEalu"></word>
+			<word text="sHr" id="EnchantBewitch" grammar="form=faEala,yafoEalu"></word>
+			<word text="SlH" id="ActRighteously" grammar="form=faEala,yafoEalu"></word>
+			<word text="lEn" id="Curse" grammar="form=faEala,yafoEalu"></word>
+			<word text="nfE" id="Profit" grammar="form=faEala,yafoEalu"></word>
 			
-			<word text="nSr u" id="HelpDeliver"></word>
-			<word text="blg u" id="Reach"></word>
-			<word text="trk u" id="Leave"></word>
-			<word text="H$r u" id="GatherBringTogether"></word>
-			<word text="Hkm u" id="JudgeRule"></word>
-			<word text="xrj u" id="ComeOut"></word>
-			<word text="xld u" id="LiveForever"></word>
-			<word text="xlq u" id="CreateOutOfNothing"></word>
-			<word text="dxl u" id="Enter"></word>
-			<word text="*kr u" id="Remember"></word>
-			<word text="rzq u" id="Provide"></word>
-			<word text="sjd u" id="Prostrate"></word>
-			<word text="$Er u" id="Perceive"></word>
-			<word text="$kr u" id="BeGrateful"></word>
-			<word text="Sdq u" id="BeTrueSayTheTruth"></word>
-			<word text="Ebd u" id="WorshipServe"></word>
-			<word text="fsq u" id="Transgress"></word>
-			<word text="qtl u" id="KillSlay"></word>
-			<word text="qEd u" id="SitRemainBehind"></word>
-			<word text="ktb u" id="PrescribeWrite"></word>
-			<word text="kfr u" id="DisbelieveBeUngrateful"></word>
-			<word text="mkr u" id="Plot"></word>
-			<word text="nZr u" id="LookWait"></word>
+			<word text="nSr" id="HelpDeliver" grammar="form=faEala,yafoEulu"></word>
+			<word text="blg" id="Reach" grammar="form=faEala,yafoEulu"></word>
+			<word text="trk" id="Leave" grammar="form=faEala,yafoEulu"></word>
+			<word text="H$r" id="GatherBringTogether" grammar="form=faEala,yafoEulu"></word>
+			<word text="Hkm" id="JudgeRule" grammar="form=faEala,yafoEulu"></word>
+			<word text="xrj" id="ComeOut" grammar="form=faEala,yafoEulu"></word>
+			<word text="xld" id="LiveForever" grammar="form=faEala,yafoEulu"></word>
+			<word text="xlq" id="CreateOutOfNothing" grammar="form=faEala,yafoEulu"></word>
+			<word text="dxl" id="Enter" grammar="form=faEala,yafoEulu"></word>
+			<word text="*kr" id="Remember" grammar="form=faEala,yafoEulu"></word>
+			<word text="rzq" id="Provide" grammar="form=faEala,yafoEulu"></word>
+			<word text="sjd" id="Prostrate" grammar="form=faEala,yafoEulu"></word>
+			<word text="$Er" id="Perceive" grammar="form=faEala,yafoEulu"></word>
+			<word text="$kr" id="BeGrateful" grammar="form=faEala,yafoEulu"></word>
+			<word text="Sdq" id="BeTrueSayTheTruth" grammar="form=faEala,yafoEulu"></word>
+			<word text="Ebd" id="WorshipServe" grammar="form=faEala,yafoEulu"></word>
+			<word text="fsq" id="Transgress" grammar="form=faEala,yafoEulu"></word>
+			<word text="qtl" id="KillSlay" grammar="form=faEala,yafoEulu"></word>
+			<word text="qEd" id="SitRemainBehind" grammar="form=faEala,yafoEulu"></word>
+			<word text="ktb" id="PrescribeWrite" grammar="form=faEala,yafoEulu"></word>
+			<word text="kfr" id="DisbelieveBeUngrateful" grammar="form=faEala,yafoEulu"></word>
+			<word text="mkr" id="Plot" grammar="form=faEala,yafoEulu"></word>
+			<word text="nZr" id="LookWait" grammar="form=faEala,yafoEulu"></word>
 			
-			<word text="Drb i" poss="fiy mavalaAF EalaY li" id="StrikeHitTravelInThroughWentForthStroveGiveExampleImposeUponStruckUponOvershadowMentionGiveExample"></word>
-			<word text="Hml i" id="CarryBear"></word>
-			<word text="Sbr i" id="BearWithPatience"></word>
-			<word text="Zlm i" id="Wrong"></word>
-			<word text="Erf i" id="Recognize"></word>
-			<word text="Eql i" id="UnderstandComprehend"></word>
-			<word text="gfr i" poss="li" id="ForgiveCover"></word>
-			<word text="qdr i" id="DecreeHavePower"></word>
-			<word text="k*b i" id="Lie"></word>
-			<word text="ksb i" id="Earn"></word>
-			<word text="mlk i" id="Possess"></word>
+			<word text="Drb" poss="fiy mavalaAF EalaY li" id="StrikeHitTravelInThroughWentForthStroveGiveExampleImposeUponStruckUponOvershadowMentionGiveExample" grammar="form=faEala,yafoEilu"></word>
+			<word text="Hml" id="CarryBear" grammar="form=faEala,yafoEilu"></word>
+			<word text="Sbr" id="BearWithPatience" grammar="form=faEala,yafoEilu"></word>
+			<word text="Zlm" id="Wrong" grammar="form=faEala,yafoEilu"></word>
+			<word text="Erf" id="Recognize" grammar="form=faEala,yafoEilu"></word>
+			<word text="Eql" id="UnderstandComprehend" grammar="form=faEala,yafoEilu"></word>
+			<word text="gfr" poss="li" id="ForgiveCover" grammar="form=faEala,yafoEilu"></word>
+			<word text="qdr" id="DecreeHavePower" grammar="form=faEala,yafoEilu"></word>
+			<word text="k*b" id="Lie" grammar="form=faEala,yafoEilu"></word>
+			<word text="ksb" id="Earn" grammar="form=faEala,yafoEilu"></word>
+			<word text="mlk" id="Possess" grammar="form=faEala,yafoEilu"></word>
 			
-			<word text="smiE a" id="Hear"></word>
-			<word text="Hzin a" id="BeGrieved"></word>
-			<word text="Hsib a" id="ThinkListen"></word>
-			<word text="HfiZ a" id="GuardProtect"></word>
-			<word text="xsir a" id="Lose"></word>
-			<word text="rHim a" id="HaveMercyOnSomeone"></word>
-			<word text="$hid a" id="BearWitnessBePresent"></word>
-			<word text="Elim a" id="Know"></word>
-			<word text="Emil a" id="WorkDo"></word>
-			<word text="krih a" id="DislikeDetest"></word>
+			<word text="smE" id="Hear" grammar="form=faEila,yafoEalu"></word>
+			<word text="Hzn" id="BeGrieved" grammar="form=faEila,yafoEalu"></word>
+			<word text="Hsb" id="ThinkListen" grammar="form=faEila,yafoEalu"></word>
+			<word text="HfZ" id="GuardProtect" grammar="form=faEila,yafoEalu"></word>
+			<word text="xsr" id="Lose" grammar="form=faEila,yafoEalu"></word>
+			<word text="rHm" id="HaveMercyOnSomeone" grammar="form=faEila,yafoEalu"></word>
+			<word text="$hd" id="BearWitnessBePresent" grammar="form=faEila,yafoEalu"></word>
+			<word text="Elm" id="Know" grammar="form=faEila,yafoEalu"></word>
+			<word text="Eml" id="WorkDo" grammar="form=faEila,yafoEalu"></word>
+			<word text="krh" id="DislikeDetest" grammar="form=faEila,yafoEalu"></word>
 			
-			<word text="bSur u" id="WatchSee"></word>
+			<word text="bSr" id="WatchSee" grammar="form=faEula,yafoEulu"></word>
 
-			<word text="SbE a" id="MakeConstruct"></word>
-			<word text="sxir a" id="RidiculeMock"></word>
-			<word text="HbiT a" id="BecomeWorthless"></word>
-			<word text="skn u" id="LiveRestDwell"></word>
-			<word text="glb i" id="Overcome"></word>
-			<word text="ErD i" id="DisplayTurnAway"></word>
-			<word text="H*r a" id="BewareFear"></word>
-			<word text="$rib a" id="Drink"></word>
-			<word text="Edl i" id="BeJust"></word>
-			<word text="slk u" id="TreadAPathInsert"></word>
-			<word text="fqih a" id="Understand"></word>
-			<word text="ftn i" id="PersecuteTryTest"></word>
-			<word text="k$f i" id="Uncover"></word>
-			<word text="friH a" id="Rejoice"></word>
-			<word text="nfx u" id="Breathe"></word>
-			<word text="ktm u" id="ConcealHide"></word>
-			<word text="zEm u" id="Claim"></word>
-			<word text="&gt;fk i" id="DeludeTurnAway"></word>
-			<word text="Srf i" id="TurnDivert"></word>
-			<word text="sbq i" id="Precede"></word>
-			<word text="nkH i" id="Marry"></word>
-			<word text="bsT u" id="ExtendStretch"></word>
-			<word text="Hlf i" id="Swear"></word>
+			<word text="SnE" id="MakeConstruct" grammar="form=faEala,yafoEalu"></word>
+			<word text="sxr" id="RidiculeMock" grammar="form=faEila,yafoEalu"></word>
+			<word text="HbT" id="BecomeWorthless" grammar="form=faEila,yafoEalu"></word>
+			<word text="skn" id="LiveRestDwell" grammar="form=faEala,yafoEulu"></word>
+			<word text="glb" id="Overcome" grammar="form=faEala,yafoEilu"></word>
+			<word text="ErD" id="DisplayTurnAway" grammar="form=faEala,yafoEilu"></word>
+			<word text="H*r" id="BewareFear" grammar="form=faEala,yafoEalu"></word>
+			<word text="$rb" id="Drink" grammar="form="faEila,yafoEalu"></word>
+			<word text="Edl" id="BeJust" grammar="form=faEala,yafoEilu"></word>
+			<word text="slk" id="TreadAPathInsert" grammar="form=faEala,yafoEulu"></word>
+			<word text="fqh" id="Understand" grammar="form=faEila,yafoEalu"></word>
+			<word text="ftn" id="PersecuteTryTest" grammar="form=faEala,yafoEilu"></word>
+			<word text="k$f" id="Uncover" grammar="form=faEala,yafoEilu"></word>
+			<word text="frH" id="Rejoice" grammar="form=faEila,yafoEalu"></word>
+			<word text="nfx" id="Breathe" grammar="form=faEala,yafoEulu"></word>
+			<word text="ktm" id="ConcealHide" grammar="form=faEala,yafoEulu"></word>
+			<word text="zEm" id="Claim" grammar="form=faEala,yafoEulu"></word>
+			<word text="&gt;fk" id="DeludeTurnAway" grammar="form=faEala,yafoEilu"></word>
+			<word text="Srf" id="TurnDivert" grammar="form=faEala,yafoEilu"></word>
+			<word text="sbq" id="Precede" grammar="form=faEala,yafoEilu"></word>
+			<word text="nkH" id="Marry" grammar="form=faEala,yafoEilu"></word>
+			<word text="bsT" id="ExtendStretch" grammar="form=faEala,yafoEulu"></word>
+			<word text="Hlf" id="Swear" grammar="form=faEala,yafoEilu"></word>
 			
 			<word text="&gt;ataY" poss="bi" id="ComeBring"></word>
 			<word text="jaA&apos;a" poss="bi" id="ComeArriveBring"></word>
