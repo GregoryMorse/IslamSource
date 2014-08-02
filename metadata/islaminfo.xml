@@ -1535,7 +1535,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="glb" id="Overcome" grammar="form=faEala,yafoEilu"></word>
 			<word text="ErD" id="DisplayTurnAway" grammar="form=faEala,yafoEilu"></word>
 			<word text="H*r" id="BewareFear" grammar="form=faEala,yafoEalu"></word>
-			<word text="$rb" id="Drink" grammar="form="faEila,yafoEalu"></word>
+			<word text="$rb" id="Drink" grammar="form=faEila,yafoEalu"></word>
 			<word text="Edl" id="BeJust" grammar="form=faEala,yafoEilu"></word>
 			<word text="slk" id="TreadAPathInsert" grammar="form=faEala,yafoEulu"></word>
 			<word text="fqh" id="Understand" grammar="form=faEila,yafoEalu"></word>
@@ -1632,13 +1632,17 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="&lt;isomu {lS~ilap" id="RelativePronoun"></word>
 			<word text="&lt;isomu {lofaAEil" id="ActiveParticipleVerbalDoer"></word>
 			<word text="&lt;isomu {lomafoEuwl" id="PassiveParticiplePassiveNoun"></word>
-			<word text="&lt;isomu tafoDiyl" id="NounsOfSuperiority"></word>
-			<word text="&lt;isomu {lZ~arof" id="PossessionConstructionLikeNouns"></word>
+			<word text="&lt;isomu tafoDiyl" id="ComparativeDerivedNoun"></word>
+			<word text="&lt;isomu {lZ~arof" id="PossessionConstructionLikeNounsForTimePlace"></word>
+			<word text="&lt;isomu mu$otaq~N" id="DerivedNouns"></word>
+			<word text="&lt;isomu {lo&gt;alap" id="InstrumentOfAction"></word>
 			<word text="&gt;asomaA&apos;u {lo&lt;i$aArapi" id="PointingNouns"></word>
 			<word text="&gt;asomaA&apos;u {lo&lt;i$aArapi {lobaEiyd" id="FarPointingNouns"></word>
 			<word text="{l&gt;asomaA&apos;u {loxamosap" id="FiveSpecialNouns"></word>
-			<word text="siygap mubaAlagap" id="DerivedAdjectivesIntransitive"></word>
-			<word text="sifap mu$ab~ahap" id="SuperlativeAdjectivesTransitive"></word>
+			<word text="Zurf {lomakaAn" id="ParticlesOfPlace"></word>
+			<word text="Zurf {lz~amaAn" id="ParticlesOfTime"></word>
+			<word text="siygap mubaAlagap" id="DerivedIntensiveAdjectivesIntransitive"></word>
+			<word text="sifap mu$ab~ahap" id="DerivedSuperlativeAdjectivesTransitive"></word>
 			<word text="Silap" id="DescriptionAfterRelativePronoun"></word>
 			<word text="{lD~amiA{iru {lomunofaSilap" id="DetachedPronouns"></word>
 			<word text="{lD~amiA{iru {lomut~aSilap" id="AttachedPronouns"></word>
@@ -1721,9 +1725,11 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="muvanaY" id="Dual"></word>
 			<word text="majoruwr" id="NounInPossessiveState"></word>
 			<word text="majohuwl" id="Passive"></word>
+			<word text="{lomaADiy {lomajohuwl" id="PassivePastTense"></word>
+			<word text="{lomuDariE {lomajohuwl" id="PassivePresentTense"></word>
 			<word text="muxaATab" id="SecondPerson"></word>
 			<word text="{lomu*ak~ar" id="Masculine"></word>
-			<word text="murak~ab &lt;iDaAfiy~" id="PosessionConstruction"></word>
+			<word text="murak~ab &lt;iDaAfiy~" id="PossessionConstruction"></word>
 			<word text="marokab maE &gt;asmaA&apos;i {lo&lt;i$saArap" id="PointingConstruction"></word>
 			<word text="murak~ab tawSiyfiy~" id="DescribingConstruction"></word>
 			<word text="{lomuSoHaf" id="QuranPreservedInUthmaniScript"></word>
@@ -1733,7 +1739,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="mafoEuwl bihi" id="DirectObjectOfVerb"></word>
 			<word text="$ibohu jumolap" id="IndirectObject"></word>
 			<word text="mawoSuwf" id="WordBeingDescribed"></word>
-			<word text="naA{ibu {lofaAEil" id="DeputyDoer"></word>
+			<word text="naA}ibu {lofaAEil" id="DeputyDoer"></word>
 			<word text="mutaEal~iq" id="ParticleAssociatedVerbs"></word>
 			<word text="la|mu {lt~awokiyd" id="LaamOfEmphasis"></word>
 		</category>

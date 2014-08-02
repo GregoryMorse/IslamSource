@@ -2331,10 +2331,47 @@ Public Class Arabic
         Dim Output(2 + CachedData.IslamData.GrammarCategories(Index).Words.Length) As Array
         Dim Build As New Generic.Dictionary(Of String, Generic.Dictionary(Of String, String))
         Output(0) = New String() {}
-        Output(1) = New String() {"arabic", "arabic", String.Empty}
-        Output(2) = New String() {"Past Root", "Present Root", "Particles"}
+        Output(1) = New String() {"arabic", "arabic", "arabic", "arabic", "arabic", "arabic", "arabic", "arabic", "arabic"}
+        Output(2) = New String() {"Past Root", "Present Root", "Command Root", "Forbidding Root", "Passive Past Root", "Passive Present Root", "Verbal Doer", "Passive Noun", "Particles"}
         For Count = 0 To CachedData.IslamData.GrammarCategories(Index).Words.Length - 1
-            Output(3 + Count) = New String() {TransliterateFromBuckwalter(CachedData.IslamData.GrammarCategories(Index).Words(Count).Text), String.Empty, Utility.DefaultValue(CachedData.IslamData.GrammarCategories(Index).Words(Count).Grammar, String.Empty)}
+            Dim Grammar As String
+            Dim Text As String
+            Dim Present As String
+            Dim Command As String
+            Dim Forbidding As String
+            Dim PassivePast As String
+            Dim PassivePresent As String
+            Dim VerbalDoer As String
+            Dim PassiveNoun As String
+            If (Not CachedData.IslamData.GrammarCategories(Index).Words(Count).Grammar Is Nothing AndAlso CachedData.IslamData.GrammarCategories(Index).Words(Count).Grammar.StartsWith("form=")) Then
+                Text = TransliterateFromBuckwalter(CachedData.IslamData.GrammarCategories(Index).Words(Count).Grammar.Substring(5).Split(","c)(0).Replace("f", CachedData.IslamData.GrammarCategories(Index).Words(Count).Text.Chars(0)).Replace("E", CachedData.IslamData.GrammarCategories(Index).Words(Count).Text.Chars(1)).Replace("l", CachedData.IslamData.GrammarCategories(Index).Words(Count).Text.Chars(2)))
+                Present = TransliterateFromBuckwalter(CachedData.IslamData.GrammarCategories(Index).Words(Count).Grammar.Substring(5).Split(","c)(1).Replace("f", CachedData.IslamData.GrammarCategories(Index).Words(Count).Text.Chars(0)).Replace("E", CachedData.IslamData.GrammarCategories(Index).Words(Count).Text.Chars(1)).Replace("l", CachedData.IslamData.GrammarCategories(Index).Words(Count).Text.Chars(2)))
+                Command = TransliterateFromBuckwalter("{foE$1lo".Replace("f", CachedData.IslamData.GrammarCategories(Index).Words(Count).Text.Chars(0)).Replace("E", CachedData.IslamData.GrammarCategories(Index).Words(Count).Text.Chars(1)).Replace("l", CachedData.IslamData.GrammarCategories(Index).Words(Count).Text.Chars(2)).Replace("$1", CachedData.IslamData.GrammarCategories(Index).Words(Count).Grammar.Substring(5).Split(","c)(1).Chars(5)))
+                Forbidding = TransliterateFromBuckwalter("laA " + "tafoE$1lo".Replace("f", CachedData.IslamData.GrammarCategories(Index).Words(Count).Text.Chars(0)).Replace("E", CachedData.IslamData.GrammarCategories(Index).Words(Count).Text.Chars(1)).Replace("l", CachedData.IslamData.GrammarCategories(Index).Words(Count).Text.Chars(2)).Replace("$1", CachedData.IslamData.GrammarCategories(Index).Words(Count).Grammar.Substring(5).Split(","c)(1).Chars(5)))
+                PassivePast = TransliterateFromBuckwalter("fuEila".Replace("f", CachedData.IslamData.GrammarCategories(Index).Words(Count).Text.Chars(0)).Replace("E", CachedData.IslamData.GrammarCategories(Index).Words(Count).Text.Chars(1)).Replace("l", CachedData.IslamData.GrammarCategories(Index).Words(Count).Text.Chars(2)))
+                PassivePresent = TransliterateFromBuckwalter("yufoEalu".Replace("f", CachedData.IslamData.GrammarCategories(Index).Words(Count).Text.Chars(0)).Replace("E", CachedData.IslamData.GrammarCategories(Index).Words(Count).Text.Chars(1)).Replace("l", CachedData.IslamData.GrammarCategories(Index).Words(Count).Text.Chars(2)))
+                VerbalDoer = TransliterateFromBuckwalter("faAEilN".Replace("f", CachedData.IslamData.GrammarCategories(Index).Words(Count).Text.Chars(0)).Replace("E", CachedData.IslamData.GrammarCategories(Index).Words(Count).Text.Chars(1)).Replace("l", CachedData.IslamData.GrammarCategories(Index).Words(Count).Text.Chars(2)))
+                PassiveNoun = TransliterateFromBuckwalter("mafoEuwlN".Replace("f", CachedData.IslamData.GrammarCategories(Index).Words(Count).Text.Chars(0)).Replace("E", CachedData.IslamData.GrammarCategories(Index).Words(Count).Text.Chars(1)).Replace("l", CachedData.IslamData.GrammarCategories(Index).Words(Count).Text.Chars(2)))
+                '"faEiylN" passive noun
+                '"mafoEilN" time
+                '"mafoEalN" place
+                '"faEiylN" derived adjective "faEalN" "faEulaAnu" "&gt;ufoEalN" "faEolN" "fuEaAlN" "faEuwlN"
+                '"&gt;afoEalu" "fuEolaY" comparative derived noun
+                '"faE~aAlN" "mifoEaAlN" "faEuwlN" "fuE~uwl" "faEilN" "fiE~iylN" "fuEalapN" intensive derived noun
+                '"mifoEalapN" "mifoEalN" "mifoEaAlN" instrument of action
+                Grammar = String.Empty
+            Else
+                Text = TransliterateFromBuckwalter(CachedData.IslamData.GrammarCategories(Index).Words(Count).Text)
+                Present = String.Empty
+                Command = String.Empty
+                Forbidding = String.Empty
+                PassivePast = String.Empty
+                PassivePresent = String.Empty
+                VerbalDoer = String.Empty
+                PassiveNoun = String.Empty
+                Grammar = Utility.DefaultValue(CachedData.IslamData.GrammarCategories(Index).Words(Count).Grammar, String.Empty)
+            End If
+            Output(3 + Count) = New String() {Text, Present, Command, Forbidding, PassivePast, PassivePresent, VerbalDoer, PassiveNoun, Grammar}
         Next
         Return Output
     End Function
