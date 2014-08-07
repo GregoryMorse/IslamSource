@@ -1460,6 +1460,84 @@ Public Class Arabic
         Public Match As String
         Public Evaluator As System.Text.RegularExpressions.MatchEvaluator
     End Structure
+    Structure ColorRule
+        Public Rule As String
+        Public RuleName As String
+        Public Match As String
+        Public Color As Color
+    End Structure
+    Public Shared ColoringRules As ColorRule() = { _
+        New ColorRule With {.RuleName = "Normal", .Match = "empty|helperfatha|helperkasra|helperdamma|helpermeem|assimilator|assimilatorincomplete|dipthong|compulsorystop|endofversestop|prostration|canstoporcontinue|betternottostop|stopatfirstnotsecond|stopatsecondnotfirst|bettertostopbutpermissibletocontinue|bettertocontinuebutpermissibletostop|subtlestopwithoutbreath", .Color = Color.Black}, _
+        New ColorRule With {.RuleName = "NecessaryProlongation", .Match = "necessaryprolong", .Color = Color.DarkRed}, _
+        New ColorRule With {.RuleName = "ObligatoryProlongation", .Match = "obligatoryprolong", .Color = Color.FromArgb(175, 17, 28)}, _
+        New ColorRule With {.RuleName = "PermissibleProlongation", .Match = "permissibleprolong", .Color = Color.OrangeRed}, _
+        New ColorRule With {.RuleName = "NormalProlongation", .Match = "normalprolong", .Color = Color.FromArgb(213, 139, 24)}, _
+        New ColorRule With {.RuleName = "Nasalization", .Match = "nasalize", .Color = Color.Green}, _
+        New ColorRule With {.RuleName = "Unannounced", .Match = "assimilate|assimilateincomplete", .Color = Color.Gray}, _
+        New ColorRule With {.RuleName = "EmphaticPronounciation", .Match = "emphasis", .Color = Color.DarkBlue}, _
+        New ColorRule With {.RuleName = "UnrestLetters", .Match = "bounce", .Color = Color.Blue} _
+    }
+    Public Shared BreakdownRules As RuleTranslation() = { _
+            New RuleTranslation With {.RuleName = "AlefMaddah", .Match = MakeUniRegEx(ArabicLetterAlefWithMaddaAbove), _
+                                      .Evaluator = Function(Match As System.Text.RegularExpressions.Match) ArabicLetterAlef + ArabicMaddahAbove}, _
+            New RuleTranslation With {.RuleName = "Maddah", .Match = MakeUniRegEx(ArabicMaddahAbove), _
+                .Evaluator = Function(Match As System.Text.RegularExpressions.Match) ArabicLetterHamza + ArabicFatha + ArabicLetterAlef}, _
+            New RuleTranslation With {.RuleName = "AlefHamzah", .Match = MakeUniRegEx(ArabicLetterAlefWithHamzaAbove) + "|" + MakeUniRegEx(ArabicLetterAlefWithHamzaBelow), _
+                                      .Evaluator = Function(Match As System.Text.RegularExpressions.Match) ArabicLetterAlef + ArabicLetterHamza}, _
+            New RuleTranslation With {.RuleName = "WawHamzah", .Match = MakeUniRegEx(ArabicLetterWawWithHamzaAbove), _
+                                      .Evaluator = Function(Match As System.Text.RegularExpressions.Match) ArabicLetterWaw + ArabicLetterHamza}, _
+            New RuleTranslation With {.RuleName = "YehHamzah", .Match = MakeUniRegEx(ArabicLetterYehWithHamzaAbove), _
+                                      .Evaluator = Function(Match As System.Text.RegularExpressions.Match) ArabicLetterAlefMaksura + ArabicLetterHamza}, _
+            New RuleTranslation With {.RuleName = "SmallWaw", .Match = MakeUniRegEx(ArabicSmallWaw), _
+                                      .Evaluator = Function(Match As System.Text.RegularExpressions.Match) ArabicLetterWaw}, _
+            New RuleTranslation With {.RuleName = "SmallYeh", .Match = MakeUniRegEx(ArabicSmallYeh), _
+                                      .Evaluator = Function(Match As System.Text.RegularExpressions.Match) ArabicLetterYeh}, _
+            New RuleTranslation With {.RuleName = "SmallMeem", .Match = MakeUniRegEx(ArabicSmallLowMeem) + "|" + MakeUniRegEx(ArabicSmallHighMeemIsolatedForm), _
+                                      .Evaluator = Function(Match As System.Text.RegularExpressions.Match) ArabicLetterAlef + ArabicLetterHamza}, _
+            New RuleTranslation With {.RuleName = "SmallNoon", .Match = MakeUniRegEx(ArabicSmallHighNoon), _
+                                      .Evaluator = Function(Match As System.Text.RegularExpressions.Match) ArabicLetterNoon}, _
+            New RuleTranslation With {.RuleName = "SmallSeen", .Match = MakeUniRegEx(ArabicSmallHighSeen), _
+                                      .Evaluator = Function(Match As System.Text.RegularExpressions.Match) ArabicLetterSeen}, _
+            New RuleTranslation With {.RuleName = "Sukun", .Match = MakeUniRegEx(ArabicSukun), _
+                                      .Evaluator = Function(Match As System.Text.RegularExpressions.Match) Match.Value.Insert(Match.Groups(1).Length + Match.Groups(1).Index - Match.Index, "</empty>").Insert(Match.Groups(1).Index - Match.Index, "<empty>")}, _
+            New RuleTranslation With {.RuleName = "AlefMaksuraDaggerAlef", .Match = MakeUniRegEx(ArabicLetterAlefMaksura) + MakeUniRegEx(ArabicLetterSuperscriptAlef), _
+                                      .Evaluator = Function(Match As System.Text.RegularExpressions.Match) Match.Value.Insert(1, "</helperfatha>").Insert(0, "<helperfatha>")}, _
+            New RuleTranslation With {.RuleName = "HelperFatha", .Match = "<helperfatha>.*?</helperfatha>", _
+                                      .Evaluator = Function(Match As System.Text.RegularExpressions.Match) ArabicFatha}, _
+            New RuleTranslation With {.RuleName = "HelperKasra", .Match = "<helperkasra>.*?</helperkasra>", _
+                                      .Evaluator = Function(Match As System.Text.RegularExpressions.Match) ArabicKasra}, _
+            New RuleTranslation With {.RuleName = "HelperDamma", .Match = "<helperdamma>.*?</helperdamma>", _
+                                      .Evaluator = Function(Match As System.Text.RegularExpressions.Match) ArabicDamma}, _
+            New RuleTranslation With {.RuleName = "DaggerAlef", .Match = MakeUniRegEx(ArabicLetterSuperscriptAlef), _
+                                      .Evaluator = Function(Match As System.Text.RegularExpressions.Match) ArabicLetterAlef}, _
+            New RuleTranslation With {.RuleName = "SmallHamza", .Match = MakeUniRegEx(ArabicHamzaAbove) + "|" + MakeUniRegEx(ArabicHamzaBelow), _
+                                      .Evaluator = Function(Match As System.Text.RegularExpressions.Match) ArabicLetterHamza}, _
+            New RuleTranslation With {.RuleName = "LetterSpelling", .Match = "\b(" + MakeRegMultiEx(Array.ConvertAll(ArabicUniqueLetters, Function(Str As String) MakeUniRegEx(TransliterateFromBuckwalter(Str)))) + ")\b", _
+                                      .Evaluator = Function(Match As System.Text.RegularExpressions.Match) ArabicLetterSpelling(Match.Value)}, _
+            New RuleTranslation With {.RuleName = "FathaAlefMaksura", .Match = MakeUniRegEx(ArabicFatha) + MakeUniRegEx(ArabicLetterAlefMaksura), _
+                                      .Evaluator = Function(Match As System.Text.RegularExpressions.Match) Match.Value.Remove(1).Insert(1, ArabicLetterAlef)}, _
+            New RuleTranslation With {.RuleName = "KasraAlefMaksura", .Match = MakeUniRegEx(ArabicKasra) + MakeUniRegEx(ArabicLetterAlefMaksura), _
+                                      .Evaluator = Function(Match As System.Text.RegularExpressions.Match) Match.Value.Remove(1).Insert(1, ArabicLetterYeh)}, _
+            New RuleTranslation With {.RuleName = "TehMarbuta", .Match = MakeUniRegEx(ArabicKasra) + MakeUniRegEx(ArabicLetterAlefMaksura), _
+                                      .Evaluator = Function(Match As System.Text.RegularExpressions.Match) Match.Value.Remove(1).Insert(1, ArabicLetterYeh)}, _
+            New RuleTranslation With {.RuleName = "TehMarbuta", .Match = MakeUniRegEx(ArabicLetterTehMarbuta) + "(" + MakeRegMultiEx(Array.ConvertAll(ArabicFathaDammaKasra, Function(Str As String) MakeUniRegEx(Str))) + "|" + MakeRegMultiEx(Array.ConvertAll(ArabicTanweens, Function(Str As String) MakeUniRegEx(Str))) + ")", _
+                                      .Evaluator = Function(Match As System.Text.RegularExpressions.Match) Match.Value.Remove(0).Insert(0, ArabicLetterTeh)}, _
+            New RuleTranslation With {.RuleName = "TehMarbuta", .Match = MakeUniRegEx(ArabicLetterTehMarbuta), _
+                                      .Evaluator = Function(Match As System.Text.RegularExpressions.Match) ArabicLetterHeh}
+        }
+    Public Shared RomanizationRules As RuleTranslation() = { _
+        }
+    Public Shared ColoringSpelledOutRules As RuleTranslation() = { _
+        New RuleTranslation With {.RuleName = "Normal", .Match = "empty|helperfatha|helperkasra|helperdamma|helpermeem|assimilator|assimilatorincomplete|dipthong|compulsorystop|endofversestop|prostration|canstoporcontinue|betternottostop|stopatfirstnotsecond|stopatsecondnotfirst|bettertostopbutpermissibletocontinue|bettertocontinuebutpermissibletostop|subtlestopwithoutbreath", .Evaluator = Function(Match As System.Text.RegularExpressions.Match) Match.Value}, _
+        New RuleTranslation With {.RuleName = "NecessaryProlongation", .Match = "necessaryprolong", .Evaluator = Function(Match As System.Text.RegularExpressions.Match) Match.Value + "-" + Match.Value + "-" + Match.Value + "-" + Match.Value + "-" + Match.Value + "-" + Match.Value}, _
+        New RuleTranslation With {.RuleName = "ObligatoryProlongation", .Match = "obligatoryprolong", .Evaluator = Function(Match As System.Text.RegularExpressions.Match) Match.Value + "-" + Match.Value + "-" + Match.Value + "-" + Match.Value + "(-" + Match.Value + ")"}, _
+        New RuleTranslation With {.RuleName = "PermissibleProlongation", .Match = "permissibleprolong", .Evaluator = Function(Match As System.Text.RegularExpressions.Match) Match.Value + "-" + Match.Value + "(-" + Match.Value + "-" + Match.Value + ")(-" + Match.Value + "-" + Match.Value + ")"}, _
+        New RuleTranslation With {.RuleName = "NormalProlongation", .Match = "normalprolong", .Evaluator = Function(Match As System.Text.RegularExpressions.Match) Match.Value + "-" + Match.Value}, _
+        New RuleTranslation With {.RuleName = "Nasalization", .Match = "nasalize", .Evaluator = Function(Match As System.Text.RegularExpressions.Match) Match.Value}, _
+        New RuleTranslation With {.RuleName = "Unannounced", .Match = "assimilate|assimilateincomplete", .Evaluator = Function(Match As System.Text.RegularExpressions.Match) Match.Value}, _
+        New RuleTranslation With {.RuleName = "EmphaticPronounciation", .Match = "emphasis", .Evaluator = Function(Match As System.Text.RegularExpressions.Match) UCase(Match.Value)}, _
+        New RuleTranslation With {.RuleName = "UnrestLetters", .Match = "bounce", .Evaluator = Function(Match As System.Text.RegularExpressions.Match) Match.Value + "-" + Match.Value} _
+        }
     Public Shared RulesOfRecitationRegEx As RuleTranslation() = { _
             New RuleTranslation With {.RuleName = "Stopping", .Match = "(" + MakeUniRegEx(ArabicSmallHighMeemIsolatedForm) + "|" + MakeUniRegEx(ArabicStartOfRubElHizb) + "|" + MakeUniRegEx(ArabicEndOfAyah) + ")\s*\b",
                 .Evaluator = Function(Match As System.Text.RegularExpressions.Match)
@@ -1703,24 +1781,57 @@ Public Class Arabic
         End If
         Return ArabicString
     End Function
-    Public Shared Function TransliterateToPlainRoman(ByVal ArabicString As String) As String
+    Public Shared Function ColorRuleSplit() As String
+        Return "(" + MakeRegMultiEx(Array.ConvertAll(ColoringRules, Function(ClrRule As ColorRule) MakeRegMultiEx(Array.ConvertAll(ClrRule.Match.Split("|"c), Function(Rule As String) "<" + Rule + ">(.+?)</" + Rule + ">")))) + ")" ' paranthesis causes delimeter capture
+    End Function
+    Public Shared Function ApplyColorRules(ByVal ArabicString As String) As RenderArray.RenderText()
+        Dim Count As Integer
+        Dim Index As Integer
+        Dim Strings As RenderArray.RenderText()
+        For Count = 0 To RulesOfRecitationRegEx.Length - 1
+            ArabicString = System.Text.RegularExpressions.Regex.Replace(ArabicString, RulesOfRecitationRegEx(Count).Match, RulesOfRecitationRegEx(Count).Evaluator)
+        Next
+        Strings = Array.ConvertAll(System.Text.RegularExpressions.Regex.Split(ArabicString, ColorRuleSplit()), Function(Str As String) New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Str))
+        For Count = 0 To ColoringRules.Length - 1
+            For Index = 0 To Strings.Length - 1
+                Dim Match As System.Text.RegularExpressions.Match = System.Text.RegularExpressions.Regex.Match(CStr(Strings(Index).Text), MakeRegMultiEx(Array.ConvertAll(ColoringRules(Count).Match.Split("|"c), Function(Rule As String) "^<" + Rule + ">(.+?)</" + Rule + ">$")))
+                If Match.Success Then
+                    'ApplyColorRules(Match.Captures(0))
+                    Strings(Index).Text = Match.Captures(0)
+                    Strings(Index).Clr = ColoringRules(Count).Color
+                End If
+            Next
+        Next
+        Return Strings
+    End Function
+    Public Shared Function TransliterateToPlainRoman(ByVal ArabicString As String, ApplyColorRules As Boolean) As String
         Dim RomanString As String = String.Empty
         'need to check for decomposed first
         If System.Text.RegularExpressions.Regex.Matches(ArabicString, MakeUniRegEx(ArabicLetterAlefWithHamzaAbove) + "[^" + MakeUniRegEx(ArabicFatha) + MakeUniRegEx(ArabicDamma) + "]|" + MakeUniRegEx(ArabicLetterAlefWithHamzaBelow) + "[^" + MakeUniRegEx(ArabicKasra) + "]").Count <> 0 Then
             Diagnostics.Debug.Print("Missing diacritic: " + ArabicString)
         End If
+        If System.Text.RegularExpressions.Regex.Matches(ArabicString, "(" + MakeRegMultiEx(ArabicSunLetters) + "|" + MakeRegMultiEx(ArabicMoonLettersNoVowels) + "|" + MakeUniRegEx(ArabicFatha) + MakeUniRegEx(ArabicLetterYeh) + "|" + MakeUniRegEx(ArabicFatha) + MakeUniRegEx(ArabicLetterWaw) + ")(" + MakeRegMultiEx(ArabicSunLetters) + "|" + MakeRegMultiEx(ArabicMoonLettersNoVowels) + "|" + MakeUniRegEx(ArabicLetterAlef) + "|" + MakeUniRegEx(ArabicLetterWaw) + "|" + MakeUniRegEx(ArabicLetterYeh) + ")").Count <> 0 Then
+            Diagnostics.Debug.Print("Missing diacritic: " + ArabicString)
+        End If
         If System.Text.RegularExpressions.Regex.Matches(ArabicString, MakeUniRegEx(ArabicLetterAlefMaksura) + "(" + MakeRegMultiEx(Array.ConvertAll(ArabicFathaDammaKasra, Function(Str As String) MakeUniRegEx(Str))) + "|" + MakeRegMultiEx(Array.ConvertAll(ArabicTanweens, Function(Str As String) MakeUniRegEx(Str))) + "|" + MakeUniRegEx(ArabicLetterSuperscriptAlef) + ")?\B|" + MakeUniRegEx(ArabicLetterTehMarbuta) + "(" + MakeRegMultiEx(Array.ConvertAll(ArabicFathaDammaKasra, Function(Str As String) MakeUniRegEx(Str))) + "|" + MakeRegMultiEx(Array.ConvertAll(ArabicTanweens, Function(Str As String) MakeUniRegEx(Str))) + ")?\B").Count <> 0 Then
             Diagnostics.Debug.Print("Can only appear at end of word: " + ArabicString)
         End If
-        If System.Text.RegularExpressions.Regex.Matches(ArabicString, "\b[" + MakeUniRegEx(ArabicLetterAlef) + MakeUniRegEx(ArabicShadda) + "]").Count <> 0 Then
+        If System.Text.RegularExpressions.Regex.Matches(ArabicString, "\b[" + MakeUniRegEx(ArabicLetterAlef) + MakeUniRegEx(ArabicShadda) + MakeUniRegEx(ArabicSukun) + MakeRegMultiEx(Array.ConvertAll(ArabicFathaDammaKasra, Function(Str As String) MakeUniRegEx(Str))) + MakeRegMultiEx(Array.ConvertAll(ArabicTanweens, Function(Str As String) MakeUniRegEx(Str))) + "]").Count <> 0 Then
             Diagnostics.Debug.Print("Must not appear at beginning of word: " + ArabicString)
         End If
-        If System.Text.RegularExpressions.Regex.Matches(ArabicString, "\B" + MakeUniRegEx(ArabicLetterAlefWasla) + MakeUniRegEx(ArabicLetterAlefWithMaddaAbove)).Count <> 0 Then
+        If System.Text.RegularExpressions.Regex.Matches(ArabicString, "\B" + MakeUniRegEx(ArabicLetterAlefWasla)).Count <> 0 Then
             Diagnostics.Debug.Print("Must appear at beginning of word: " + ArabicString)
+        End If
+        If System.Text.RegularExpressions.Regex.Matches(ArabicString, MakeUniRegEx(ArabicDamma) + MakeUniRegEx(ArabicLetterYeh) + "|" + MakeUniRegEx(ArabicKasra) + MakeUniRegEx(ArabicLetterWaw)).Count <> 0 Then
+            Diagnostics.Debug.Print("Not a valid combination: " + ArabicString)
         End If
         If System.Text.RegularExpressions.Regex.Matches(ArabicString, "(" + MakeUniRegEx(ArabicLetterAlef) + MakeUniRegEx(ArabicMaddahAbove) + "|" + MakeUniRegEx(ArabicLetterHamza) + MakeUniRegEx(ArabicFatha) + MakeUniRegEx(ArabicLetterAlef) + "|" + MakeUniRegEx(ArabicLetterAlef) + MakeUniRegEx(ArabicLetterHamza) + "|" + MakeUniRegEx(ArabicLetterWaw) + MakeUniRegEx(ArabicLetterHamza) + "|" + MakeUniRegEx(ArabicLetterAlefMaksura) + MakeUniRegEx(ArabicLetterHamza) + ")").Count <> 0 Then
             Diagnostics.Debug.Print("Needs to be recomposed: " + ArabicString)
         End If
+        Dim Count As Integer
+        For Count = 0 To RulesOfRecitationRegEx.Length - 1
+            ArabicString = System.Text.RegularExpressions.Regex.Replace(ArabicString, RulesOfRecitationRegEx(Count).Match, RulesOfRecitationRegEx(Count).Evaluator)
+        Next
         ArabicString = ArabicString.Replace(ArabicLetterAlefWithMaddaAbove, ArabicLetterAlef + ArabicMaddahAbove) _
             .Replace(ArabicMaddahAbove, ArabicLetterHamza + ArabicFatha + ArabicLetterAlef) _
             .Replace(ArabicLetterAlefWithHamzaAbove, ArabicLetterAlef + ArabicLetterHamza) _
@@ -1743,7 +1854,7 @@ Public Class Arabic
         ArabicString = System.Text.RegularExpressions.Regex.Replace(ArabicString, "\b" + MakeUniRegEx(ArabicKasra) + MakeUniRegEx(ArabicLetterAlefMaksura) + "\b", ArabicKasra + ArabicLetterYeh)
         ArabicString = System.Text.RegularExpressions.Regex.Replace(ArabicString, MakeUniRegEx(ArabicLetterTehMarbuta) + "(" + MakeRegMultiEx(Array.ConvertAll(ArabicFathaDammaKasra, Function(Str As String) MakeUniRegEx(Str))) + "|" + MakeRegMultiEx(Array.ConvertAll(ArabicTanweens, Function(Str As String) MakeUniRegEx(Str))) + ")", ArabicLetterTeh)
         ArabicString = ArabicString.Replace(ArabicLetterTehMarbuta, ArabicLetterHeh)
-        If System.Text.RegularExpressions.Regex.Matches(ArabicString, "(" + MakeRegMultiEx(Array.ConvertAll(ArabicSunLetters, Function(Str As String) MakeUniRegEx(Str))) + "|" + MakeRegMultiEx(Array.ConvertAll(ArabicMoonLettersNoVowels, Function(Str As String) MakeUniRegEx(Str))) + "|" + MakeUniRegEx(ArabicLetterHamza) + "|" + MakeUniRegEx(ArabicFatha) + MakeUniRegEx(ArabicLetterWaw) + "|" + MakeUniRegEx(ArabicKasra) + MakeUniRegEx(ArabicLetterWaw) + "|" + MakeUniRegEx(ArabicFatha) + MakeUniRegEx(ArabicLetterYeh) + "|" + MakeUniRegEx(ArabicDamma) + MakeUniRegEx(ArabicLetterYeh) + ")(\b|" + MakeRegMultiEx(Array.ConvertAll(ArabicSunLetters, Function(Str As String) MakeUniRegEx(Str))) + "|" + MakeRegMultiEx(Array.ConvertAll(ArabicMoonLettersNoVowels, Function(Str As String) MakeUniRegEx(Str))) + "|" + MakeUniRegEx(ArabicLetterHamza) + "|" + MakeUniRegEx(ArabicLetterWaw) + "|" + MakeUniRegEx(ArabicLetterYeh) + ")").Count <> 0 Then
+        If System.Text.RegularExpressions.Regex.Matches(ArabicString, "(" + MakeRegMultiEx(Array.ConvertAll(ArabicSunLetters, Function(Str As String) MakeUniRegEx(Str))) + "|" + MakeRegMultiEx(Array.ConvertAll(ArabicMoonLettersNoVowels, Function(Str As String) MakeUniRegEx(Str))) + "|" + MakeUniRegEx(ArabicLetterHamza) + "|" + MakeUniRegEx(ArabicFatha) + MakeUniRegEx(ArabicLetterWaw) + "|" + MakeUniRegEx(ArabicFatha) + MakeUniRegEx(ArabicLetterYeh) + ")(\b|" + MakeRegMultiEx(Array.ConvertAll(ArabicSunLetters, Function(Str As String) MakeUniRegEx(Str))) + "|" + MakeRegMultiEx(Array.ConvertAll(ArabicMoonLettersNoVowels, Function(Str As String) MakeUniRegEx(Str))) + "|" + MakeUniRegEx(ArabicLetterHamza) + "|" + MakeUniRegEx(ArabicLetterWaw) + "|" + MakeUniRegEx(ArabicLetterYeh) + ")").Count <> 0 Then
             Diagnostics.Debug.Print("Warning: Missing " + ArabicString)
         End If
         ArabicString = ArabicString.Replace(ArabicSukun, String.Empty)
@@ -2394,10 +2505,12 @@ Public Class RenderArray
     End Enum
     Structure RenderText
         Public DisplayClass As RenderDisplayClass
+        Public Clr As Color
         Public Text As Object
         Sub New(ByVal NewDisplayClass As RenderDisplayClass, ByVal NewText As Object)
             DisplayClass = NewDisplayClass
             Text = NewText
+            Clr = Color.Black 'default
         End Sub
     End Structure
     Structure RenderItem
