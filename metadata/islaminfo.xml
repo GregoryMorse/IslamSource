@@ -1974,6 +1974,11 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="raDiy {ll~`hu Eanhum" id="MayAllahBePleasedAbbr"></word>
 			<word text="subHanahu watEaAlaY" id="GloriousAndExaltedBeHeAbbr"></word>
 		</category>
+		<category title="Concepts">
+			<word text="tawHiyd {lr~ubuwbiy~ap" id="UnityInLordShipDominion"></word>
+			<word text="tawHiyd {l&gt;asomaA&apos; wa{lS~ifaAt" id="UnityInEssenceAndAttributes"></word>
+			<word text="tawHiyd uluwhiy~ap EibaAdap" id="UnityInDivinityAndWorship"></word>
+		</category>
 		<category title="IslamicPhrases">
 			<word text="{ls~alaAmu Ealayokumu" id="PeaceBeUponYou"></word>
 			<word text="waEalayokumu {ls~alaAmu" id="AndUponYouBePeace"></word>
@@ -2034,9 +2039,12 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="nabiy" id="Prophet"></word>
 			<word text="masjid" id="Mosque"></word>
 			<word text="qubuwr" id="Grave"></word>
+			<word text="barzax" id="LandOfTheDead"></word>
+			<word text="{loqiyaAmap" id="Resurection"></word>
 			<word text="{lobaEth" id="Resurection"></word>
 			<word text="{loha$im" id="Gathering"></word>
-			<word text="{loHisaAb" id="Account"></word>
+			<word text="{loqaSaS" id="SettlingOfRightsBetweenBelievers"></word>
+			<word text="{loHisaAb" id="AccountReckoningQuestioning"></word>
 			<word text="{lomiyzaAn" id="Scale"></word>
 			<word text="{l&gt;aHasaAs" id="Sense"></word>
 			<word text="{lS~iraAT" id="Path"></word>
@@ -2053,16 +2061,19 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="darakaAt" id="DegreesOfHell"></word>
 			<word text="taHriym" id="Prohibited"></word>
 			<word text="waquwd" id="Fuel"></word>
+			<word text="lahab" id="Flame"></word>
+			<word text="laDZaY" id="BlazingFire"></word>
+			<word text="{lowaSilap" id="Intercession"></word>
 			<word text="{ls~amuwm" id="IntenselyHotWind"></word>
 			<word text="{loHamiym" id="BoilingWater"></word>
 			<word text="{loyaHmuwm" id="SmokeOfHell"></word>
 			<word text="{lD~ariyE" id="BitterObnoxiousThornyPlant"></word>
 			<word text="{lz~aq~uwm" id="HorribleTreeOfHell"></word>
-			<word text="{logisliyn" id="FoulNourishment"></word>
+			<word text="{logisliyn" id="FoulNourishmentPusDischarge"></word>
 			<word text="{logas~aq" id="Dusk"></word>
-			<word text="{logas~aAq" id="HotFood"></word>
+			<word text="{logas~aAq" id="HotFoodGreaseSweat"></word>
 			<word text="{lS~adiyd" id="Pus"></word>
-			<word text="{lomuhl" id="Deadlines"></word>
+			<word text="{lomuhl" id="BoilingOil"></word>
 			<word text="{lomihaAd" id="Bed"></word>
 			<word text="{logawaA$" id="Cover"></word>
 			<word text="{lS~ahar" id="Melting"></word>

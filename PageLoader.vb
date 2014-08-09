@@ -1541,7 +1541,7 @@ Public Class Arabic
             New RuleTranslation With {.RuleName = "KasraYeh", .Match = MakeUniRegEx(ArabicKasra) + MakeUniRegEx(ArabicLetterYeh), _
                                       .Evaluator = Function(Match As System.Text.RegularExpressions.Match) "ee"}, _
             New RuleTranslation With {.RuleName = "LettersTanweensVowelsHamza", .Match = "(" + MakeRegMultiEx(Array.ConvertAll(ArabicLetters, Function(Str As String) MakeUniRegEx(Str))) + "|" + MakeRegMultiEx(Array.ConvertAll(ArabicTanweens, Function(Str As String) MakeUniRegEx(Str))) + "|" + MakeRegMultiEx(Array.ConvertAll(ArabicFathaDammaKasra, Function(Str As String) MakeUniRegEx(Str))) + "|" + MakeUniRegEx(ArabicLetterHamza) + ")", _
-                                      .Evaluator = Function(Match As System.Text.RegularExpressions.Match) Match.Value.Insert(1, CachedData.IslamData.ArabicLetters(FindLetterBySymbol(Match.Value(0))).PlainRoman).Remove(0, 1)}, _
+                                      .Evaluator = Function(Match As System.Text.RegularExpressions.Match) Match.Value.Insert(1, CachedData.IslamData.ArabicLetters(FindLetterBySymbol(Match.Value(0))).PlainRoman).Remove(0, 1)} _
         }
     Public Shared ColoringSpelledOutRules As RuleTranslation() = { _
         New RuleTranslation With {.RuleName = "Normal", .Match = "empty|helperfatha|helperkasra|helperdamma|helpermeem|assimilator|assimilatorincomplete|dipthong|compulsorystop|endofversestop|prostration|canstoporcontinue|betternottostop|stopatfirstnotsecond|stopatsecondnotfirst|bettertostopbutpermissibletocontinue|bettertocontinuebutpermissibletostop|subtlestopwithoutbreath", .Evaluator = Function(Match As System.Text.RegularExpressions.Match) Match.Value}, _
@@ -1820,7 +1820,7 @@ Public Class Arabic
         Next
         Return Strings
     End Function
-    Public Shared Function TransliterateToPlainRoman(ByVal ArabicString As String, ApplyColorRules As Boolean) As String
+    Public Shared Function TransliterateToPlainRoman(ByVal ArabicString As String) As String
         Dim RomanString As String = String.Empty
         'need to check for decomposed first
         If System.Text.RegularExpressions.Regex.Matches(ArabicString, MakeUniRegEx(ArabicLetterAlefWithHamzaAbove) + "[^" + MakeUniRegEx(ArabicFatha) + MakeUniRegEx(ArabicDamma) + "]|" + MakeUniRegEx(ArabicLetterAlefWithHamzaBelow) + "[^" + MakeUniRegEx(ArabicKasra) + "]").Count <> 0 Then
@@ -1877,38 +1877,38 @@ Public Class Arabic
 
         ArabicString = System.Text.RegularExpressions.Regex.Replace(ArabicString, "(" + MakeRegMultiEx(Array.ConvertAll(ArabicLongVowels, Function(Str As String) MakeUniRegEx(Str))) + MakeRegMultiEx(Array.ConvertAll(ArabicFathaDammaKasra, Function(Str As String) MakeUniRegEx(Str))) + "|" + MakeRegMultiEx(Array.ConvertAll(ArabicTanweens, Function(Str As String) MakeUniRegEx(Str))) + ")\b\s*(" + MakeUniRegEx(ArabicLetterAlef) + MakeUniRegEx(ArabicLetterHamza) + ")", _
             Function(Match As System.Text.RegularExpressions.Match)
-                    Return Match.Value.Remove(Match.Groups(2).Index - Match.Index, 2)
-                End Function)
+                Return Match.Value.Remove(Match.Groups(2).Index - Match.Index, 2)
+            End Function)
         ArabicString = System.Text.RegularExpressions.Regex.Replace(ArabicString, MakeUniRegEx(ArabicFathatan) + "|" + MakeUniRegEx(ArabicLetterAlef) + "\s*$", _
             Function(Match As System.Text.RegularExpressions.Match)
-                    Return Match.Value.Remove(1, 1).Insert(1, ArabicFatha)
-                End Function)
+                Return Match.Value.Remove(1, 1).Insert(1, ArabicFatha)
+            End Function)
         'process madda loanwords and names
         'process loanwords and names
         ArabicString = System.Text.RegularExpressions.Regex.Replace(ArabicString, "(" + MakeRegMultiEx(Array.ConvertAll(ArabicLongVowels, Function(Str As String) MakeUniRegEx(Str))) + "|" + MakeRegMultiEx(Array.ConvertAll(ArabicFathaDammaKasra, Function(Str As String) MakeUniRegEx(Str))) + ")(" + MakeRegMultiEx(Array.ConvertAll(ArabicSpecialLeadingGutteral, Function(Str As String) MakeUniRegEx(Str))) + ")(" + MakeRegMultiEx(Array.ConvertAll(ArabicLongVowels, Function(Str As String) MakeUniRegEx(Str))) + "|" + MakeRegMultiEx(Array.ConvertAll(ArabicFathaDammaKasra, Function(Str As String) MakeUniRegEx(Str))) + "|" + MakeRegMultiEx(Array.ConvertAll(ArabicTanweens, Function(Str As String) MakeUniRegEx(Str))) + ")", _
             Function(Match As System.Text.RegularExpressions.Match)
-                    Return GutteralRules(Match.Value, 0, True, True)
-                End Function)
+                Return GutteralRules(Match.Value, 0, True, True)
+            End Function)
         ArabicString = System.Text.RegularExpressions.Regex.Replace(ArabicString, "(" + MakeRegMultiEx(Array.ConvertAll(ArabicSpecialGutteral, Function(Str As String) MakeUniRegEx(Str))) + ")(" + MakeRegMultiEx(Array.ConvertAll(ArabicLongVowels, Function(Str As String) MakeUniRegEx(Str))) + "|" + MakeRegMultiEx(Array.ConvertAll(ArabicFathaDammaKasra, Function(Str As String) MakeUniRegEx(Str))) + "|" + MakeRegMultiEx(Array.ConvertAll(ArabicTanweens, Function(Str As String) MakeUniRegEx(Str))) + ")", _
             Function(Match As System.Text.RegularExpressions.Match)
-                    Return GutteralRules(Match.Value, 0, False, True)
-                End Function)
+                Return GutteralRules(Match.Value, 0, False, True)
+            End Function)
         ArabicString = System.Text.RegularExpressions.Regex.Replace(ArabicString, "(" + MakeRegMultiEx(Array.ConvertAll(ArabicLongVowels, Function(Str As String) MakeUniRegEx(Str))) + "|" + MakeRegMultiEx(Array.ConvertAll(ArabicFathaDammaKasra, Function(Str As String) MakeUniRegEx(Str))) + ")(" + MakeUniRegEx(ArabicLetterHamza) + "|" + MakeRegMultiEx(Array.ConvertAll(ArabicSpecialLeadingGutteral, Function(Str As String) MakeUniRegEx(Str))) + ")", _
             Function(Match As System.Text.RegularExpressions.Match)
-                    Return GutteralRules(Match.Value, 0, True, False)
-                End Function)
+                Return GutteralRules(Match.Value, 0, True, False)
+            End Function)
         ArabicString = System.Text.RegularExpressions.Regex.Replace(ArabicString, "(" + MakeRegMultiEx(Array.ConvertAll(ArabicLetters, Function(Str As String) MakeUniRegEx(Str))) + ")" + MakeUniRegEx(ArabicShadda), _
             Function(Match As System.Text.RegularExpressions.Match)
-                    Return Match.Value.Remove(1, 1).Insert(1, "-" + Match.Value(0))
-                End Function)
+                Return Match.Value.Remove(1, 1).Insert(1, "-" + Match.Value(0))
+            End Function)
         ArabicString = ArabicString.Replace(ArabicFatha + ArabicLetterAlef, "aa") _
             .Replace(ArabicDamma + ArabicLetterWaw, "oo") _
             .Replace(ArabicKasra + ArabicLetterYeh, "ee") _
             .Replace(ArabicLetterAlef, String.Empty)
         ArabicString = System.Text.RegularExpressions.Regex.Replace(ArabicString, "(" + MakeRegMultiEx(Array.ConvertAll(ArabicLetters, Function(Str As String) MakeUniRegEx(Str))) + "|" + MakeRegMultiEx(Array.ConvertAll(ArabicTanweens, Function(Str As String) MakeUniRegEx(Str))) + "|" + MakeRegMultiEx(Array.ConvertAll(ArabicFathaDammaKasra, Function(Str As String) MakeUniRegEx(Str))) + "|" + MakeUniRegEx(ArabicLetterHamza) + ")", _
             Function(Match As System.Text.RegularExpressions.Match)
-                    Return Match.Value.Insert(1, CachedData.IslamData.ArabicLetters(FindLetterBySymbol(Match.Value(0))).PlainRoman).Remove(0, 1)
-                End Function)
+                Return Match.Value.Insert(1, CachedData.IslamData.ArabicLetters(FindLetterBySymbol(Match.Value(0))).PlainRoman).Remove(0, 1)
+            End Function)
         RomanString = ArabicString
         'Dim Count As Integer
         'Dim Index As Integer
