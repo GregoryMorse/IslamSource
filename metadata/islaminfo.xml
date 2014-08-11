@@ -118,7 +118,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 		<word value="fiqh" id="Fiqh"></word>
 		<word value="suwrap" id="Surah"></word>
 		<word value="say~id" id="Sayyid"></word>
-		<word value="$irk " id="Shirk"></word>
+		<word value="$irk" id="Shirk"></word>
 		<word value="$ayTaAn" id="Shaitan"></word>
 		<word value="TalaAq" id="Talaq"></word>
 		<word value="niqaAb" id="Niqab"></word>
@@ -1978,6 +1978,8 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="tawHiyd {lr~ubuwbiy~ap" id="UnityInLordShipDominion"></word>
 			<word text="tawHiyd {l&gt;asomaA&apos; wa{lS~ifaAt" id="UnityInEssenceAndAttributes"></word>
 			<word text="tawHiyd uluwhiy~ap EibaAdap" id="UnityInDivinityAndWorship"></word>
+			<word text="{l$~irk {l&gt;akbar" id="MajorAssociation"></word>
+			<word text="{l$~irk {l&gt;asgar" id="MajorAssociation"></word>
 		</category>
 		<category title="IslamicPhrases">
 			<word text="{ls~alaAmu Ealayokumu" id="PeaceBeUponYou"></word>
@@ -2041,8 +2043,8 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="qubuwr" id="Grave"></word>
 			<word text="barzax" id="LandOfTheDead"></word>
 			<word text="{loqiyaAmap" id="Resurection"></word>
-			<word text="{lobaEth" id="Resurection"></word>
-			<word text="{loha$im" id="Gathering"></word>
+			<word text="{lobaEv" id="Resurection"></word>
+			<word text="{loHa$ir" id="Gathering"></word>
 			<word text="{loqaSaS" id="SettlingOfRightsBetweenBelievers"></word>
 			<word text="{loHisaAb" id="AccountReckoningQuestioning"></word>
 			<word text="{lomiyzaAn" id="Scale"></word>
@@ -2062,7 +2064,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="taHriym" id="Prohibited"></word>
 			<word text="waquwd" id="Fuel"></word>
 			<word text="lahab" id="Flame"></word>
-			<word text="laDZaY" id="BlazingFire"></word>
+			<word text="laDTaY" id="BlazingFire"></word>
 			<word text="{lowaSilap" id="Intercession"></word>
 			<word text="{ls~amuwm" id="IntenselyHotWind"></word>
 			<word text="{loHamiym" id="BoilingWater"></word>
@@ -2185,7 +2187,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="zinaA" id="Fornication"></word>
 			<word text="kibr" id="Arrogance"></word>
 			<word text="bidaEp" id="Innovation"></word>
-			<word text="riyA&apos;" id="ShowingOff"></word>
+			<word text="riyaA&apos;" id="ShowingOff"></word>
 			<word text="qadar" id="Predestination"></word>
 			<word text="jamaEap" id="Congregation"></word>
 			<word text="tasliym" id="Delivery"></word>
@@ -2257,6 +2259,12 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="qADiy" id="Judge"></word>
 			<word text="ma*hab" id="SchoolOfJurisprudence"></word>
 			<word text="risaAlap" id="Dissertation"></word>
+			<word text="$irk" id="AssociatingPartners"></word>
+			<word text="TaAguwt" id="FalseGod"></word>
+			<word text="Hay~" id="Life"></word>
+			<word text="mawotaY" id="Dead"></word>
+			<word text="{loEuluw" id="Transcendence"></word>
+			<word text="&gt;uSuwl" id="Foundations"></word>
 		</category>
 		<category title="Names">
 			<word text="&gt;abuw {loqaAsim muHam~ad bin Eabd {ll~`h bin Eabdu {lomuT~alib bin haA$im‎" id="MuhammadBinAbdullahBinAbduAlMuttalib"></word>
