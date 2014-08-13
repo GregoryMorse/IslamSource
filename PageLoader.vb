@@ -1499,7 +1499,7 @@ Public Class Arabic
             New RuleTranslation With {.RuleName = "SmallSeen", .Match = MakeUniRegEx(ArabicSmallHighSeen), _
                                       .Evaluator = Function(Match As System.Text.RegularExpressions.Match) ArabicLetterSeen}, _
             New RuleTranslation With {.RuleName = "Sukun", .Match = MakeUniRegEx(ArabicSukun), _
-                                      .Evaluator = Function(Match As System.Text.RegularExpressions.Match) Match.Value.Insert(Match.Groups(1).Length + Match.Groups(1).Index - Match.Index, "</empty>").Insert(Match.Groups(1).Index - Match.Index, "<empty>")}, _
+                                      .Evaluator = Function(Match As System.Text.RegularExpressions.Match) Match.Value.Insert(1, "</empty>").Insert(0, "<empty>")}, _
             New RuleTranslation With {.RuleName = "AlefMaksuraDaggerAlef", .Match = MakeUniRegEx(ArabicLetterAlefMaksura) + MakeUniRegEx(ArabicLetterSuperscriptAlef), _
                                       .Evaluator = Function(Match As System.Text.RegularExpressions.Match) Match.Value.Insert(1, "</helperfatha>").Insert(0, "<helperfatha>")}, _
             New RuleTranslation With {.RuleName = "HelperFatha", .Match = "<helperfatha>.*?</helperfatha>", _
