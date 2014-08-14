@@ -1980,6 +1980,10 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="tawHiyd uluwhiy~ap EibaAdap" id="UnityInDivinityAndWorship"></word>
 			<word text="{l$~irk {l&gt;akbar" id="MajorAssociation"></word>
 			<word text="{l$~irk {l&gt;asgar" id="MajorAssociation"></word>
+			<word text="kitaAbap kawniy~ap" id="UniversalPrescription"></word>
+			<word text="kitaAbap $ariyEap" id="LegislativePrescription"></word>
+			<word text="farD kifaAyap" id="CollectiveObligation"></word>
+			<word text="farD Eayn" id="IndividualObligation"></word>
 		</category>
 		<category title="IslamicPhrases">
 			<word text="{ls~alaAmu Ealayokumu" id="PeaceBeUponYou"></word>
@@ -2256,7 +2260,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="tajwiyd" id="ProperPronunciationDuringRecitation"></word>
 			<word text="Hadiyv" id="TransmissionOfInformation"></word>
 			<word text="fiqh" id="Jurisprudence"></word>
-			<word text="$ariyaEp" id="Law"></word>
+			<word text="$ariyEap" id="Law"></word>
 			<word text="qADiy" id="Judge"></word>
 			<word text="ma*hab" id="SchoolOfJurisprudence"></word>
 			<word text="risaAlap" id="Dissertation"></word>
