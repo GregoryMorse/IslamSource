@@ -1984,6 +1984,11 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="kitaAbap $ariyEap" id="LegislativePrescription"></word>
 			<word text="farD kifaAyap" id="CollectiveObligation"></word>
 			<word text="farD Eayn" id="IndividualObligation"></word>
+			<word text="{loqadar {loyawmi" id="DailyPredestination"></word>
+			<word text="{loqadar {ls~anawi" id="YearlyPredestination"></word>
+			<word text="{loqadar {loEumri" id="LifePredestination"></word>
+			<word text="{loqadar {ls~aAbiq" id="AbsolutePredestination"></word>
+			<word text="{ll~awH {lomahfooZ" id="PreservedTablet"></word>
 		</category>
 		<category title="IslamicPhrases">
 			<word text="{ls~alaAmu Ealayokumu" id="PeaceBeUponYou"></word>
@@ -2193,6 +2198,16 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="bidaEp" id="Innovation"></word>
 			<word text="riyaA&apos;" id="ShowingOff"></word>
 			<word text="qadar" id="Predestination"></word>
+			<word text="nutfap" id="DropOfLiquidOfManAndWoman"></word>
+			<word text="Ealaqap" id="ClotOfBloodClingingToWomb"></word>
+			<word text="mudgap" id="PieceChewedFlesh"></word>
+			<word text="mu$aAhadap" id="OneWhoIsSeen"></word>
+			<word text="muraAqabap" id="OneWhoWitnesses"></word>
+			<word text="muqtasidiyn" id="OneWhoDoesGoodDeedsAndAbandonsProhibitions"></word>
+			<word text="muhkamaAt" id="ClearCut"></word>
+			<word text="mu$tabihaAt" id="DoubtfulMatters"></word>
+			<word text="qadariy~ap" id="ThoseBelievingNoPredestination"></word>
+			<word text="jabariy~ap" id="ThoseBelievingNoFreedomOfChoice"></word>
 			<word text="jamaEap" id="Congregation"></word>
 			<word text="tasliym" id="Delivery"></word>
 			<word text="ta$ahud" id="Witnessing"></word>
