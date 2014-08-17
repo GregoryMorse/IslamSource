@@ -2039,6 +2039,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="baAb {l*~ikr" id="GateOfRemembrance"></word>
 			<word text="baAb bir~ {lowaAlidayn" id="GateOfRighteousnessToParents"></word>
 			<word text="Huwr {loEayn" id="FairLadiesOfTheRiver"></word>
+			<word text="taAbiEu {lt~aAbiEiyn" id="FollowersOfFollowers"></word>
 		</category>
 		<category title="IslamicWords">
 			<word text="{ll~`h" id="Allah"></word>
@@ -2138,6 +2139,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="mawlaAnaA" id="Master"></word>
 			<word text="&gt;um~ah" id="Community"></word>
 			<word text="SaHaAbap" id="Companions"></word>
+			<word text="taAbiEuwn" id="Followers"></word>
 			<word text="anSaAr" id="Helpers"></word>
 			<word text="{lomuhaAjiriyn" id="Emigrants"></word>
 			<word text="fuSila" id="Division"></word>
@@ -2285,6 +2287,20 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="mawotaY" id="Dead"></word>
 			<word text="{loEuluw" id="Transcendence"></word>
 			<word text="&gt;uSuwl" id="Foundations"></word>
+			<word text="sanad" id="ListOfNarrators"></word>
+			<word text="matn" id="Text"></word>
+			<word text="mukav~iruwn" id="ReportersOfManyTraditions"></word>
+			<word text="SaHiyfap" id="WritingMaterial"></word>
+			<word text="muSan~af" id="ClassifiedOrganizedWork"></word>
+			<word text="musnad" id="CompilationByName"></word>
+			<word text="SaHiyH" id="Authentic"></word>
+			<word text="Hasan" id="Good"></word>
+			<word text="DaEiyf" id="Weak"></word>
+			<word text="mawDuwE" id="Fabricated"></word>
+			<word text="&lt;iEtikaAf" id="Isolation"></word>
+			<word text="maHram" id="CloseRelative"></word>
+			<word text="&lt;ixlaAS" id="Sincerity"></word>
+			<word text="tasliym" id="EndOfPrayer"></word>
 		</category>
 		<category title="Names">
 			<word text="&gt;abuw {loqaAsim muHam~ad bin Eabd {ll~`h bin Eabdu {lomuT~alib bin haA$im‎" id="MuhammadBinAbdullahBinAbduAlMuttalib"></word>
