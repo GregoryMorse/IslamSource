@@ -1818,26 +1818,44 @@ Public Class Arabic
     Public Shared Function ColorRuleSplit() As String
         Return "(" + MakeRegMultiEx(Array.ConvertAll(ColoringRules, Function(ClrRule As ColorRule) MakeRegMultiEx(Array.ConvertAll(ClrRule.Match.Split("|"c), Function(Rule As String) "<" + Rule + ">(.+?)</" + Rule + ">")))) + ")" ' paranthesis causes delimeter capture
     End Function
+    Class RuleMetadataComparer
+        Implements Collections.Generic.IComparer(Of RuleMetadata)
+        Public Function Compare(x As RuleMetadata, y As RuleMetadata) As Integer Implements Generic.IComparer(Of RuleMetadata).Compare
+            If x.Index = y.Index Then
+                Return x.Length.CompareTo(y.Length)
+            Else
+                Return x.Index.CompareTo(y.Index)
+            End If
+        End Function
+    End Class
     Public Shared Function ApplyColorRules(ByVal ArabicString As String) As RenderArray.RenderText()
         Dim Count As Integer
         Dim Index As Integer
         Dim MetadataList As New Generic.List(Of RuleMetadata)
-        Dim Strings As RenderArray.RenderText()
+        Dim Strings As New Generic.List(Of RenderArray.RenderText)
         For Count = 0 To RulesOfRecitationRegEx.Length - 1
             MetadataList.AddRange(RulesOfRecitationRegEx(Count).Evaluator(System.Text.RegularExpressions.Regex.Match(ArabicString, RulesOfRecitationRegEx(Count).Match)))
         Next
-        Strings = Array.ConvertAll(System.Text.RegularExpressions.Regex.Split(ArabicString, ColorRuleSplit()), Function(Str As String) New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Str))
-        For Count = 0 To ColoringRules.Length - 1
-            For Index = 0 To Strings.Length - 1
-                Dim Match As System.Text.RegularExpressions.Match = System.Text.RegularExpressions.Regex.Match(CStr(Strings(Index).Text), MakeRegMultiEx(Array.ConvertAll(ColoringRules(Count).Match.Split("|"c), Function(Rule As String) "^<" + Rule + ">(.+?)</" + Rule + ">$")))
-                If Match.Success Then
-                    'ApplyColorRules(Match.Captures(0))
-                    Strings(Index).Text = Match.Captures(0)
-                    Strings(Index).Clr = ColoringRules(Count).Color
+        MetadataList.Sort(New RuleMetadataComparer)
+        For Index = 0 To MetadataList.Count - 1
+            If If(Index <> 0, MetadataList(Index - 1).Index + MetadataList(Index - 1).Length, 0) <> MetadataList(Index).Index Then
+                Strings.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, ArabicString.Substring(If(Index <> 0, MetadataList(Index - 1).Index + MetadataList(Index - 1).Length, 0), MetadataList(Index).Index - If(Index <> 0, MetadataList(Index - 1).Index + MetadataList(Index - 1).Length, 0)))) Then
+            End If
+            Strings.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, ArabicString.Substring(MetadataList(Index).Index, MetadataList(Index).Length)))
+            For Count = 0 To ColoringRules.Length - 1
+                Dim Match As Integer = Array.FindIndex(ColoringRules(Count).Match.Split("|"c), Function(Str As String) Str = MetadataList(Index).Type)
+                If Match <> -1 Then
+                    'ApplyColorRules(Strings(Strings.Count - 1).Text)
+                    Dim Text As RenderArray.RenderText = Strings(Strings.Count - 1)
+                    Text.Clr = ColoringRules(Count).Color
+                    Strings(Strings.Count - 1) = Text
                 End If
             Next
         Next
-        Return Strings
+        If MetadataList.Count = 0 OrElse MetadataList(MetadataList.Count - 1).Index <> ArabicString.Length - 1 Then
+            Strings.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, ArabicString.Substring(If(MetadataList.Count = 0, 0, MetadataList(MetadataList.Count - 1).Index))))
+        End If
+        Return Strings.ToArray()
     End Function
     Public Shared Function TransliterateToPlainRoman(ByVal ArabicString As String) As String
         Dim RomanString As String = String.Empty
@@ -2338,19 +2356,19 @@ Public Class Arabic
         For Count = 0 To CachedData.IslamData.GrammarCategories(Index).Words.Length - 1
             Array.ForEach(CachedData.IslamData.GrammarCategories(Index).Words(Count).Grammar.Split(","c)(0).Split("|"c),
                           Sub(Str As String)
-                              Dim Key As String = Str.Chars(0)
-                              If Personal Then '"123".Contains(Str.Chars(0))
-                                  Key += Str.Chars(1)
-                              End If
-                              If Not Build.ContainsKey(Key) Then
-                                  Build.Add(Key, New Generic.Dictionary(Of String, String))
-                              End If
-                              If Build.Item(Key).ContainsKey(Str.Chars(If(Personal, 2, 1))) Then
-                                  Build.Item(Key).Item(Str.Chars(If(Personal, 2, 1))) += " " + TransliterateFromBuckwalter(CachedData.IslamData.GrammarCategories(Index).Words(Count).Text)
-                              Else
-                                  Build.Item(Key).Add(Str.Chars(If(Personal, 2, 1)), TransliterateFromBuckwalter(CachedData.IslamData.GrammarCategories(Index).Words(Count).Text))
-                              End If
-                          End Sub)
+                                  Dim Key As String = Str.Chars(0)
+                                  If Personal Then '"123".Contains(Str.Chars(0))
+                                      Key += Str.Chars(1)
+                                  End If
+                                  If Not Build.ContainsKey(Key) Then
+                                      Build.Add(Key, New Generic.Dictionary(Of String, String))
+                                  End If
+                                  If Build.Item(Key).ContainsKey(Str.Chars(If(Personal, 2, 1))) Then
+                                      Build.Item(Key).Item(Str.Chars(If(Personal, 2, 1))) += " " + TransliterateFromBuckwalter(CachedData.IslamData.GrammarCategories(Index).Words(Count).Text)
+                                  Else
+                                      Build.Item(Key).Add(Str.Chars(If(Personal, 2, 1)), TransliterateFromBuckwalter(CachedData.IslamData.GrammarCategories(Index).Words(Count).Text))
+                                  End If
+                              End Sub)
         Next
         If Personal Then
             Output(3) = New String() {Build("3m")("p"), Build("3m")("d"), Build("3m")("s"), "Third Person Masculine"}
