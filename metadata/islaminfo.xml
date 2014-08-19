@@ -2250,7 +2250,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="HaraAm" id="Forbidden"></word>
 			<word text="&gt;a*aAn" id="CallToPrayer"></word>
 			<word text="mu&amp;a*in" id="CallToPrayerLeader"></word>
-			<word text="&lt;iqAmap" id="CallToBeginThePrayer"></word>
+			<word text="&lt;iqaAmap" id="CallToBeginThePrayer"></word>
 			<word text="qiblap" id="DirectionOfPrayer"></word>
 			<word text="sujuwd" id="Prostrating"></word>
 			<word text="sajdap" id="Prostration"></word>
@@ -2269,7 +2269,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="Sawm" id="Fasting"></word>
 			<word text="zakaAp" id="AlmsGiving"></word>
 			<word text="Haj~" id="Pilgrimage"></word>
-			<word text="qura|n" id="RevelationOfAllah"></word>
+			<word text="qur|n" id="RevelationOfAllah"></word>
 			<word text="suwrap" id="Chapter"></word>
 			<word text="|yap" id="Verse"></word>
 			<word text="juz&apos;" id="Part"></word>
@@ -2303,6 +2303,12 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="tasliym" id="EndOfPrayer"></word>
 			<word text="nasx" id="Abrogation"></word>
 			<word text="waSiy~ap" id="Bequest"></word>
+			<word text="&lt;ijtihaAd" id="ReasonedDecision"></word>
+			<word text="qiyaAs" id="AnalogicalDeduction"></word>
+			<word text="&lt;ijmaA&apos;" id="Concensus"></word>
+			<word text="$uwraY" id="Consultation"></word>
+			<word text="majlis" id="Council"></word>
+			<word text="wahi" id="Revelation"></word>
 		</category>
 		<category title="Names">
 			<word text="&gt;abuw {loqaAsim muHam~ad bin Eabd {ll~`h bin Eabdu {lomuT~alib bin haA$im‎" id="MuhammadBinAbdullahBinAbduAlMuttalib"></word>
