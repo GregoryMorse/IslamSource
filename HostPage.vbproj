@@ -150,10 +150,6 @@
       <DependentUpon>Page.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="PageLoader.vb">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Quantizer.vb" />
     <Content Include="Content\jquery.calendars.picker.css" />
     <Content Include="Content\Styles.css" />
     <Content Include="Content\themes\base\images\animated-overlay.gif" />
@@ -271,6 +267,10 @@
     <ProjectReference Include="..\PrayTime\PrayTime.csproj">
       <Project>{1c6d65f5-bc68-414d-9ed9-a0420016b95b}</Project>
       <Name>PrayTime</Name>
+    </ProjectReference>
+    <ProjectReference Include="IslamMetadata\IslamMetadata.vbproj">
+      <Project>{8cef3958-a8d0-4afa-95f1-80568237f4ee}</Project>
+      <Name>IslamMetadata</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

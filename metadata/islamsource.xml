@@ -204,6 +204,16 @@
 			<static name="alphabet" description="" onrender="Arabic::DisplayAll"></static>
 		</frame>
 	</page>
+	<page name="quiz" description="IslamSource_Quiz">
+		<frame name="arabicquiz" description="IslamSource_Quiz">
+			<static name="count" description="" onrender="Quiz::DisplayCount"></static>
+			<static name="question" description="" onrender="Quiz::DisplayQuestion"></static>
+			<button name="answer1" description="" onrender="Quiz::DisplayAnswer" onclick="Quiz::VerifyAnswer"></button>
+			<button name="answer2" description="" onrender="Quiz::DisplayAnswer" onclick="Quiz::VerifyAnswer"></button>
+			<button name="answer3" description="" onrender="Quiz::DisplayAnswer" onclick="Quiz::VerifyAnswer"></button>
+			<button name="answer4" description="" onrender="Quiz::DisplayAnswer" onclick="Quiz::VerifyAnswer"></button>
+		</frame>
+	</page>
 	<page name="grammar" description="IslamSource_Grammar">
 		<frame name="arabicgrammar" description="IslamSource_Grammar">
 			<button name="fontsmaller" description="IslamSource_Smaller" onclick="ArabicFont::GetFontSmallerJS"></button>

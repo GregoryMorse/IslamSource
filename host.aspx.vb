@@ -1,4 +1,6 @@
-﻿Partial Class host
+﻿Imports IslamMetadata
+
+Partial Class host
     Inherits System.Web.UI.Page
     Dim _IsHtml As Boolean = False
     Dim PageSet As PageLoader
@@ -33,6 +35,7 @@
         Dim Index As Integer
         Dim bmp As Bitmap = Nothing
         Dim ResultBmp As Bitmap = Nothing
+        Utility.Initialize(MainPage, AddressOf GetPageString, AddressOf UserAccounts.GetUserID, AddressOf UserAccounts.IsLoggedIn)
         PageSet = New PageLoader()
         Controls.Clear() 'clear viewstate and default HTML rendering control container
         If Request.QueryString.Get(LangSet) <> String.Empty Then
@@ -180,51 +183,51 @@
             Dim Data As Integer() = SiteDatabase.GetHadithRankingData(Request.Form.Get("Collection"), CInt(Request.Form.Get("Book")), CInt(Request.Form.Get("Hadith")))
             If Data(1) <> 0 Then Response.Write("Average of " + CStr(Data(0) / Data(1) / 2) + " out of " + CStr(Data(1)) + " rankings")
         ElseIf (Request.QueryString.Get(PageQuery) = "Image.gif") Then
-                Dim DateModified As Date = Now
-                If Request.QueryString.Get("Image") = "EMailAddress" Or _
-                    Request.QueryString.Get("Image") = "GradientBackground" Or _
-                    Request.QueryString.Get("Image") = "GradientBackgroundBottom" Then
-                    DateModified = IO.File.GetLastWriteTimeUtc(Utility.GetFilePath("bin\HostPage.dll"))
-                ElseIf Request.QueryString.Get("Image") = "Scale" Then
-                    Dim FetchImageItem As PageLoader.ImageItem
-                    If Request.QueryString.Get("p") = "menu.main" Then
-                        FetchImageItem = New PageLoader.ImageItem(String.Empty, String.Empty, PageSet.MainImage, Nothing, 206, 200)
-                    ElseIf Request.QueryString.Get("p") = "menu.hover" Then
-                        FetchImageItem = New PageLoader.ImageItem(String.Empty, String.Empty, PageSet.HoverImage, Nothing, 206, 200)
-                    Else
-                        FetchImageItem = DirectCast(PageSet.GetPageItem(Request.QueryString.Get("p")), PageLoader.ImageItem)
-                    End If
-                    'check XML timestamp also
-                    DateModified = IO.File.GetLastWriteTimeUtc(Utility.GetFilePath("images\" + FetchImageItem.Path))
-                ElseIf Request.QueryString.Get("Image") = "Thumb" Then
-                    Dim FetchImageItem As PageLoader.TextItem = DirectCast(PageSet.GetPageItem(Request.QueryString.Get("p")), PageLoader.TextItem)
-                    'check XML timestamp also
-                    If CInt(DiskCache.GetCacheItems().Length * New Random().NextDouble()) = 0 Then
-                        DateModified = Utility.GetURLLastModified(FetchImageItem.ImageURL)
-                    Else
-                        DateModified = Date.MinValue
-                    End If
+            Dim DateModified As Date = Now
+            If Request.QueryString.Get("Image") = "EMailAddress" Or _
+                Request.QueryString.Get("Image") = "GradientBackground" Or _
+                Request.QueryString.Get("Image") = "GradientBackgroundBottom" Then
+                DateModified = IO.File.GetLastWriteTimeUtc(Utility.GetFilePath("bin\HostPage.dll"))
+            ElseIf Request.QueryString.Get("Image") = "Scale" Then
+                Dim FetchImageItem As PageLoader.ImageItem
+                If Request.QueryString.Get("p") = "menu.main" Then
+                    FetchImageItem = New PageLoader.ImageItem(String.Empty, String.Empty, PageSet.MainImage, Nothing, 206, 200)
+                ElseIf Request.QueryString.Get("p") = "menu.hover" Then
+                    FetchImageItem = New PageLoader.ImageItem(String.Empty, String.Empty, PageSet.HoverImage, Nothing, 206, 200)
+                Else
+                    FetchImageItem = DirectCast(PageSet.GetPageItem(Request.QueryString.Get("p")), PageLoader.ImageItem)
                 End If
-                Dim Bytes() As Byte = DiskCache.GetCacheItem(Request.Url.Host + "_" + Request.QueryString().ToString(), DateModified)
-                If Not Bytes Is Nothing Then
-                    ResultBmp = DirectCast(Bitmap.FromStream(New IO.MemoryStream(Bytes)), Bitmap)
+                'check XML timestamp also
+                DateModified = IO.File.GetLastWriteTimeUtc(Utility.GetFilePath("images\" + FetchImageItem.Path))
+            ElseIf Request.QueryString.Get("Image") = "Thumb" Then
+                Dim FetchImageItem As PageLoader.TextItem = DirectCast(PageSet.GetPageItem(Request.QueryString.Get("p")), PageLoader.TextItem)
+                'check XML timestamp also
+                If CInt(DiskCache.GetCacheItems().Length * New Random().NextDouble()) = 0 Then
+                    DateModified = Utility.GetURLLastModified(FetchImageItem.ImageURL)
+                Else
+                    DateModified = Date.MinValue
                 End If
-                If ResultBmp Is Nothing Then
-                    If Request.QueryString.Get("Image") = "EMailAddress" Then
-                        Dim oFont As New Font("Arial", 13)
-                        Dim TextExtent As SizeF = Utility.GetTextExtent(Utility.ConnectionData.EMailAddress, oFont)
-                        bmp = New Bitmap(CInt(Math.Ceiling(TextExtent.Width)), CInt(Math.Ceiling(TextExtent.Height)))
-                        Dim g As Graphics = Graphics.FromImage(bmp)
-                        g.PageUnit = GraphicsUnit.Pixel
-                        g.TextRenderingHint = Drawing.Text.TextRenderingHint.SystemDefault
-                        g.TextContrast = 12
-                        g.FillRectangle(Brushes.White, New RectangleF(0, 0, CSng(Math.Ceiling(TextExtent.Width)), CSng(Math.Ceiling(TextExtent.Height))))
-                        Dim Format As StringFormat = Drawing.StringFormat.GenericTypographic
-                        Format.LineAlignment = StringAlignment.Center
-                        Format.Alignment = StringAlignment.Center
-                        g.DrawString(Utility.ConnectionData.EMailAddress, oFont, Brushes.Black, New RectangleF(0, 0, CSng(Math.Ceiling(TextExtent.Width)), CSng(Math.Ceiling(TextExtent.Height))), Format)
-                        bmp.MakeTransparent(Color.White)
-                        oFont.Dispose()
+            End If
+            Dim Bytes() As Byte = DiskCache.GetCacheItem(Request.Url.Host + "_" + Request.QueryString().ToString(), DateModified)
+            If Not Bytes Is Nothing Then
+                ResultBmp = DirectCast(Bitmap.FromStream(New IO.MemoryStream(Bytes)), Bitmap)
+            End If
+            If ResultBmp Is Nothing Then
+                If Request.QueryString.Get("Image") = "EMailAddress" Then
+                    Dim oFont As New Font("Arial", 13)
+                    Dim TextExtent As SizeF = Utility.GetTextExtent(Utility.ConnectionData.EMailAddress, oFont)
+                    bmp = New Bitmap(CInt(Math.Ceiling(TextExtent.Width)), CInt(Math.Ceiling(TextExtent.Height)))
+                    Dim g As Graphics = Graphics.FromImage(bmp)
+                    g.PageUnit = GraphicsUnit.Pixel
+                    g.TextRenderingHint = Drawing.Text.TextRenderingHint.SystemDefault
+                    g.TextContrast = 12
+                    g.FillRectangle(Brushes.White, New RectangleF(0, 0, CSng(Math.Ceiling(TextExtent.Width)), CSng(Math.Ceiling(TextExtent.Height))))
+                    Dim Format As StringFormat = Drawing.StringFormat.GenericTypographic
+                    Format.LineAlignment = StringAlignment.Center
+                    Format.Alignment = StringAlignment.Center
+                    g.DrawString(Utility.ConnectionData.EMailAddress, oFont, Brushes.Black, New RectangleF(0, 0, CSng(Math.Ceiling(TextExtent.Width)), CSng(Math.Ceiling(TextExtent.Height))), Format)
+                    bmp.MakeTransparent(Color.White)
+                    oFont.Dispose()
                 ElseIf Request.QueryString.Get("Image") = "MandelbrotFractal" Or Request.QueryString.Get("Image") = "JuliaFractal" Then
                     Dim FractalBmp As New Bitmap(50, 50)
                     If Request.QueryString.Get("Image") = "MandelbrotFractal" Then
@@ -268,34 +271,34 @@
                     Dim g As Graphics = Graphics.FromImage(bmp)
                     Dim oBrush As New Drawing2D.LinearGradientBrush(New Rectangle(0, 0, 1, 320), Color.LightBlue, Color.LightGray, 90)
                     g.FillRectangle(oBrush, New Rectangle(0, 0, 1, 320))
-                    ElseIf Request.QueryString.Get("Image") = "GradientBackgroundBottom" Then
-                        bmp = New Bitmap(1, 320)
-                        Dim g As Graphics = Graphics.FromImage(bmp)
-                        Dim oBrush As New Drawing2D.LinearGradientBrush(New Rectangle(0, 0, 1, 320), Color.LightGray, Color.LightBlue, 90)
-                        g.FillRectangle(oBrush, New Rectangle(0, 0, 1, 320))
-                    ElseIf Request.QueryString.Get("Image") = "Scale" Then
-                        Dim SizeF As System.Drawing.SizeF
-                        Dim Scale As Double
-                        Dim FetchImageItem As PageLoader.ImageItem
-                        Dim OriginalBmp As Bitmap
-                        If Request.QueryString.Get("p") = "menu.main" Then
-                            FetchImageItem = New PageLoader.ImageItem(String.Empty, String.Empty, PageSet.MainImage, Nothing, 206, 200)
-                            OriginalBmp = DirectCast(Bitmap.FromFile(Utility.GetFilePath("images\" + FetchImageItem.Path)), Bitmap)
-                            Utility.AddTextLogo(OriginalBmp, Utility.LoadResourceString(PageSet.Title))
-                        ElseIf Request.QueryString.Get("p") = "menu.hover" Then
-                            FetchImageItem = New PageLoader.ImageItem(String.Empty, String.Empty, PageSet.HoverImage, Nothing, 206, 200)
-                            OriginalBmp = DirectCast(Bitmap.FromFile(Utility.GetFilePath("images\" + FetchImageItem.Path)), Bitmap)
-                            Utility.AddTextLogo(OriginalBmp, Utility.LoadResourceString(PageSet.Title))
-                        Else
-                            'check boundaries
-                            FetchImageItem = DirectCast(PageSet.GetPageItem(Request.QueryString.Get("p")), PageLoader.ImageItem)
-                            OriginalBmp = DirectCast(Bitmap.FromFile(Utility.GetFilePath("images\" + FetchImageItem.Path)), Bitmap)
-                        End If
-                        SizeF = OriginalBmp.GetBounds(Drawing.GraphicsUnit.Pixel).Size
-                        Scale = Utility.ComputeImageScale(SizeF.Width, SizeF.Height, FetchImageItem.MaxX, FetchImageItem.MaxY)
-                        bmp = Utility.MakeThumbnail(OriginalBmp, Convert.ToInt32(SizeF.Width / Scale), Convert.ToInt32(SizeF.Height / Scale))
-                        If Request.QueryString.Get("p") = "menu.main" Then
-                            Utility.ApplyTransparencyFilter(bmp, Color.FromArgb(&HFFF0F0F0), Color.White)
+                ElseIf Request.QueryString.Get("Image") = "GradientBackgroundBottom" Then
+                    bmp = New Bitmap(1, 320)
+                    Dim g As Graphics = Graphics.FromImage(bmp)
+                    Dim oBrush As New Drawing2D.LinearGradientBrush(New Rectangle(0, 0, 1, 320), Color.LightGray, Color.LightBlue, 90)
+                    g.FillRectangle(oBrush, New Rectangle(0, 0, 1, 320))
+                ElseIf Request.QueryString.Get("Image") = "Scale" Then
+                    Dim SizeF As System.Drawing.SizeF
+                    Dim Scale As Double
+                    Dim FetchImageItem As PageLoader.ImageItem
+                    Dim OriginalBmp As Bitmap
+                    If Request.QueryString.Get("p") = "menu.main" Then
+                        FetchImageItem = New PageLoader.ImageItem(String.Empty, String.Empty, PageSet.MainImage, Nothing, 206, 200)
+                        OriginalBmp = DirectCast(Bitmap.FromFile(Utility.GetFilePath("images\" + FetchImageItem.Path)), Bitmap)
+                        Utility.AddTextLogo(OriginalBmp, Utility.LoadResourceString(PageSet.Title))
+                    ElseIf Request.QueryString.Get("p") = "menu.hover" Then
+                        FetchImageItem = New PageLoader.ImageItem(String.Empty, String.Empty, PageSet.HoverImage, Nothing, 206, 200)
+                        OriginalBmp = DirectCast(Bitmap.FromFile(Utility.GetFilePath("images\" + FetchImageItem.Path)), Bitmap)
+                        Utility.AddTextLogo(OriginalBmp, Utility.LoadResourceString(PageSet.Title))
+                    Else
+                        'check boundaries
+                        FetchImageItem = DirectCast(PageSet.GetPageItem(Request.QueryString.Get("p")), PageLoader.ImageItem)
+                        OriginalBmp = DirectCast(Bitmap.FromFile(Utility.GetFilePath("images\" + FetchImageItem.Path)), Bitmap)
+                    End If
+                    SizeF = OriginalBmp.GetBounds(Drawing.GraphicsUnit.Pixel).Size
+                    Scale = Utility.ComputeImageScale(SizeF.Width, SizeF.Height, FetchImageItem.MaxX, FetchImageItem.MaxY)
+                    bmp = Utility.MakeThumbnail(OriginalBmp, Convert.ToInt32(SizeF.Width / Scale), Convert.ToInt32(SizeF.Height / Scale))
+                    If Request.QueryString.Get("p") = "menu.main" Then
+                        Utility.ApplyTransparencyFilter(bmp, Color.FromArgb(&HFFF0F0F0), Color.White)
                     End If
                 ElseIf Request.QueryString.Get("Image") = "UnicodeChar" Then
                     Dim oFont As New Font("Arial Unicode MS", 13)
@@ -315,65 +318,65 @@
                 ElseIf Request.QueryString.Get("Image") = "Thumb" Then
                     Dim FetchImageItem As PageLoader.TextItem = DirectCast(PageSet.GetPageItem(Request.QueryString.Get("p")), PageLoader.TextItem)
                     bmp = Utility.MakeThumbFromURL(FetchImageItem.ImageURL, 121)
-                    End If
-                    If Not bmp Is Nothing Then
-                        Dim quantizer As ImageQuantization.OctreeQuantizer = New ImageQuantization.OctreeQuantizer(255, 8, Not Bitmap.IsAlphaPixelFormat(bmp.PixelFormat), Color.White)
-                        ResultBmp = quantizer.QuantizeBitmap(bmp)
-                        bmp.Dispose()
-                        Dim MemStream As New IO.MemoryStream()
-                        ResultBmp.Save(MemStream, CType(IIf(Object.Equals(ResultBmp.RawFormat, Drawing.Imaging.ImageFormat.MemoryBmp), Drawing.Imaging.ImageFormat.Gif, ResultBmp.RawFormat), Drawing.Imaging.ImageFormat))
-                        DiskCache.CacheItem(Request.Url.Host + "_" + Request.QueryString().ToString(), DateModified, MemStream.GetBuffer())
-                    End If
                 End If
-                Response.ContentType = "image/gif"
-                ResultBmp.Save(Response.OutputStream, System.Drawing.Imaging.ImageFormat.Gif)
-                ResultBmp.Dispose()
-                GC.Collect()
+                If Not bmp Is Nothing Then
+                    Dim quantizer As ImageQuantization.OctreeQuantizer = New ImageQuantization.OctreeQuantizer(255, 8, Not Bitmap.IsAlphaPixelFormat(bmp.PixelFormat), Color.White)
+                    ResultBmp = quantizer.QuantizeBitmap(bmp)
+                    bmp.Dispose()
+                    Dim MemStream As New IO.MemoryStream()
+                    ResultBmp.Save(MemStream, CType(IIf(Object.Equals(ResultBmp.RawFormat, Drawing.Imaging.ImageFormat.MemoryBmp), Drawing.Imaging.ImageFormat.Gif, ResultBmp.RawFormat), Drawing.Imaging.ImageFormat))
+                    DiskCache.CacheItem(Request.Url.Host + "_" + Request.QueryString().ToString(), DateModified, MemStream.GetBuffer())
+                End If
+            End If
+            Response.ContentType = "image/gif"
+            ResultBmp.Save(Response.OutputStream, System.Drawing.Imaging.ImageFormat.Gif)
+            ResultBmp.Dispose()
+            GC.Collect()
         ElseIf Request.QueryString.Get(PageQuery) = "Source" Then
             Dim f As IO.FileStream = New IO.FileStream(CStr(IIf(IO.File.Exists(Utility.GetFilePath("files\" + Request.QueryString.Get("File"))), Utility.GetFilePath("files\" + Request.QueryString.Get("File")), Utility.GetFilePath("metadata\" + Request.QueryString.Get("File")))), IO.FileMode.Open, IO.FileAccess.Read, IO.FileShare.Read)
-                Dim buffer As Byte() = New Byte(CInt(f.Length) - 1) {}
-                Dim count As Integer = f.Read(buffer, 0, CInt(f.Length))
-                Dim encoding As System.Text.Encoding = Utility.DetectEncoding(buffer)
-                If encoding Is Nothing Then
-                    encoding = System.Text.Encoding.ASCII
-                End If
-                'Convert tabs to spaces
-                Response.Write(Utility.SourceTextEncode(encoding.GetChars(buffer, encoding.GetPreamble().Length, count - encoding.GetPreamble().Length)))
-                Response.ContentType = "text/plain;charset=" + encoding.WebName
+            Dim buffer As Byte() = New Byte(CInt(f.Length) - 1) {}
+            Dim count As Integer = f.Read(buffer, 0, CInt(f.Length))
+            Dim encoding As System.Text.Encoding = Utility.DetectEncoding(buffer)
+            If encoding Is Nothing Then
+                encoding = System.Text.Encoding.ASCII
+            End If
+            'Convert tabs to spaces
+            Response.Write(Utility.SourceTextEncode(encoding.GetChars(buffer, encoding.GetPreamble().Length, count - encoding.GetPreamble().Length)))
+            Response.ContentType = "text/plain;charset=" + encoding.WebName
         Else
-                If Request.QueryString.Get(PageQuery) = UserAccounts.ID_Register Then
-                    UserAccounts.Register(PageSet, Request.Form.Get(UserAccounts.ID_Username), Request.Form.Get(UserAccounts.ID_Password), Request.Form.Get(UserAccounts.ID_ConfirmPassword), Request.Form.Get(UserAccounts.ID_EmailAddress), Request.Form.Get(UserAccounts.ID_ConfirmEmailAddress), Request.Form.Get(UserAccounts.ID_Register))
-                ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_Login Then
-                    UserAccounts.Login(PageSet, Request.Form.Get(UserAccounts.ID_Username), Request.Form.Get(UserAccounts.ID_Password), Request.Form.Get(UserAccounts.ID_Remember), Request.Form.Get(UserAccounts.ID_Login))
-                ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_Logoff Then
-                    UserAccounts.Logoff(PageSet)
-                ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_ForgotUsername Then
-                    UserAccounts.ForgotUserName(PageSet, Request.Form.Get(UserAccounts.ID_EmailAddress), Request.Form.Get(UserAccounts.ID_RetrieveUsername))
-                ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_ForgotPassword Then
-                    UserAccounts.ForgotPassword(PageSet, Request.Form.Get(UserAccounts.ID_Username), Request.Form.Get(UserAccounts.ID_RetrievePassword))
-                ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_ResetPassword Then
-                    If Request.HttpMethod = "POST" Then
-                        UserAccounts.ResetPassword(PageSet, String.Empty, Request.Form.Get(UserAccounts.ID_Username), Request.Form.Get(UserAccounts.ID_PasswordResetCode), Request.Form.Get(UserAccounts.ID_Password), Request.Form.Get(UserAccounts.ID_ConfirmPassword), Request.Form.Get(UserAccounts.ID_ResetPassword))
-                    Else
-                        UserAccounts.ResetPassword(PageSet, Request.QueryString.Get(UserAccounts.ID_UserID), String.Empty, Request.QueryString.Get(UserAccounts.ID_PasswordResetCode), String.Empty, String.Empty, UserAccounts.ID_ResetPassword)
-                    End If
-                ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_ActivateAccount Then
-                    If Request.HttpMethod = "POST" Then
-                        UserAccounts.ActivateAccount(PageSet, String.Empty, Request.Form.Get(UserAccounts.ID_Username), Request.Form.Get(UserAccounts.ID_ActivationCode), Request.Form.Get(UserAccounts.ID_ActivateAccount))
-                    Else
-                        UserAccounts.ActivateAccount(PageSet, Request.QueryString.Get(UserAccounts.ID_UserID), String.Empty, Request.QueryString.Get(UserAccounts.ID_ActivationCode), UserAccounts.ID_ActivateAccount)
-                    End If
-                ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_SendActivationCode Then
-                    UserAccounts.SendActivation(PageSet, Request.Form.Get(UserAccounts.ID_Username), Request.Form.Get(UserAccounts.ID_SendActivationCode))
-                ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_ControlPanel Then
-                    UserAccounts.ControlPanel(PageSet)
-                ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_DeleteAccount Then
-                    UserAccounts.DeleteAccount(PageSet, Request.Form.Get(UserAccounts.ID_Certain), Request.Form.Get(UserAccounts.ID_DeleteAccount))
-                ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_ChangeEMailAddress Then
-                    UserAccounts.ChangeEMailAddress(PageSet, Request.Form.Get(UserAccounts.ID_EmailAddress), Request.Form.Get(UserAccounts.ID_ConfirmEmailAddress), Request.Form.Get(UserAccounts.ID_ChangeEMailAddress))
-                ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_ChangePassword Then
-                    UserAccounts.ChangePassword(PageSet, Request.Form.Get(UserAccounts.ID_Password), Request.Form.Get(UserAccounts.ID_ConfirmPassword), Request.Form.Get(UserAccounts.ID_ChangePassword))
-                ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_ChangeUsername Then
+            If Request.QueryString.Get(PageQuery) = UserAccounts.ID_Register Then
+                UserAccounts.Register(PageSet, Request.Form.Get(UserAccounts.ID_Username), Request.Form.Get(UserAccounts.ID_Password), Request.Form.Get(UserAccounts.ID_ConfirmPassword), Request.Form.Get(UserAccounts.ID_EmailAddress), Request.Form.Get(UserAccounts.ID_ConfirmEmailAddress), Request.Form.Get(UserAccounts.ID_Register))
+            ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_Login Then
+                UserAccounts.Login(PageSet, Request.Form.Get(UserAccounts.ID_Username), Request.Form.Get(UserAccounts.ID_Password), Request.Form.Get(UserAccounts.ID_Remember), Request.Form.Get(UserAccounts.ID_Login))
+            ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_Logoff Then
+                UserAccounts.Logoff(PageSet)
+            ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_ForgotUsername Then
+                UserAccounts.ForgotUserName(PageSet, Request.Form.Get(UserAccounts.ID_EmailAddress), Request.Form.Get(UserAccounts.ID_RetrieveUsername))
+            ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_ForgotPassword Then
+                UserAccounts.ForgotPassword(PageSet, Request.Form.Get(UserAccounts.ID_Username), Request.Form.Get(UserAccounts.ID_RetrievePassword))
+            ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_ResetPassword Then
+                If Request.HttpMethod = "POST" Then
+                    UserAccounts.ResetPassword(PageSet, String.Empty, Request.Form.Get(UserAccounts.ID_Username), Request.Form.Get(UserAccounts.ID_PasswordResetCode), Request.Form.Get(UserAccounts.ID_Password), Request.Form.Get(UserAccounts.ID_ConfirmPassword), Request.Form.Get(UserAccounts.ID_ResetPassword))
+                Else
+                    UserAccounts.ResetPassword(PageSet, Request.QueryString.Get(UserAccounts.ID_UserID), String.Empty, Request.QueryString.Get(UserAccounts.ID_PasswordResetCode), String.Empty, String.Empty, UserAccounts.ID_ResetPassword)
+                End If
+            ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_ActivateAccount Then
+                If Request.HttpMethod = "POST" Then
+                    UserAccounts.ActivateAccount(PageSet, String.Empty, Request.Form.Get(UserAccounts.ID_Username), Request.Form.Get(UserAccounts.ID_ActivationCode), Request.Form.Get(UserAccounts.ID_ActivateAccount))
+                Else
+                    UserAccounts.ActivateAccount(PageSet, Request.QueryString.Get(UserAccounts.ID_UserID), String.Empty, Request.QueryString.Get(UserAccounts.ID_ActivationCode), UserAccounts.ID_ActivateAccount)
+                End If
+            ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_SendActivationCode Then
+                UserAccounts.SendActivation(PageSet, Request.Form.Get(UserAccounts.ID_Username), Request.Form.Get(UserAccounts.ID_SendActivationCode))
+            ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_ControlPanel Then
+                UserAccounts.ControlPanel(PageSet)
+            ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_DeleteAccount Then
+                UserAccounts.DeleteAccount(PageSet, Request.Form.Get(UserAccounts.ID_Certain), Request.Form.Get(UserAccounts.ID_DeleteAccount))
+            ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_ChangeEMailAddress Then
+                UserAccounts.ChangeEMailAddress(PageSet, Request.Form.Get(UserAccounts.ID_EmailAddress), Request.Form.Get(UserAccounts.ID_ConfirmEmailAddress), Request.Form.Get(UserAccounts.ID_ChangeEMailAddress))
+            ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_ChangePassword Then
+                UserAccounts.ChangePassword(PageSet, Request.Form.Get(UserAccounts.ID_Password), Request.Form.Get(UserAccounts.ID_ConfirmPassword), Request.Form.Get(UserAccounts.ID_ChangePassword))
+            ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_ChangeUsername Then
                 UserAccounts.ChangeUserName(PageSet, Request.Form.Get(UserAccounts.ID_Username), Request.Form.Get(UserAccounts.ID_ChangeUsername))
             ElseIf bIsAdmin And Request.QueryString.Get(PageQuery) = UserAccounts.ID_CertInstall Then
                 UserAccounts.UploadCertificate(PageSet, Request.Form.Get(UserAccounts.ID_CertInstall), Request.Form.Get(UserAccounts.ID_Certificate), Request.Form.Get(UserAccounts.ID_CertRequest))
@@ -384,11 +387,11 @@
             ElseIf bIsAdmin And Request.QueryString.Get(PageQuery) = UserAccounts.ID_DeleteCertRequest Then
                 UserAccounts.DeleteCertificateRequest(PageSet, Request.Form.Get(UserAccounts.ID_DeleteCertRequest), Request.Form.Get(UserAccounts.ID_Certificate))
             End If
-                _IsHtml = True
-                Index = PageSet.GetPageIndex(Request.QueryString.Get(PageQuery))
-                Controls.Add(New Menu(PageSet, Index))
-                Controls.Add(New Page(PageSet.Pages.Item(Index)))
-                Response.ContentType = "text/html;charset=" + System.Text.Encoding.UTF8.WebName
+            _IsHtml = True
+            Index = PageSet.GetPageIndex(Request.QueryString.Get(PageQuery))
+            Controls.Add(New Menu(PageSet, Index))
+            Controls.Add(New Page(PageSet.Pages.Item(Index)))
+            Response.ContentType = "text/html;charset=" + System.Text.Encoding.UTF8.WebName
         End If
     End Sub
     Protected Overrides Sub Render(ByVal writer As System.Web.UI.HtmlTextWriter)

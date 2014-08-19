@@ -675,7 +675,7 @@ Namespace ImageQuantization
             End Class
         End Class
     End Class
-    Class Fractal
+    Public Class Fractal
         Shared Sub StandardMandelbrotSet(Bmp As Bitmap)
             Dim Rs() As Integer = {&HFF, &HCC, &H99, &H66, &H33, &H0}
             Dim Gs() As Integer = {&HFF, &HCC, &H99, &H66, &H33, &H0}

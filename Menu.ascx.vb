@@ -1,3 +1,5 @@
+Imports IslamMetadata
+
 Partial Class Menu
     Inherits System.Web.UI.UserControl
     Dim PageSet As PageLoader

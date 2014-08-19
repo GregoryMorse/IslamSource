@@ -5160,4 +5160,7 @@
   <data name="IslamSource_Grammar" xml:space="preserve">
     <value>Grammar</value>
   </data>
+  <data name="IslamSource_Quiz" xml:space="preserve">
+    <value>Quiz</value>
+  </data>
 </root>

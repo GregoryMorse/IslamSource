@@ -1,3 +1,5 @@
+Imports IslamMetadata
+
 Partial Class Page
     Inherits System.Web.UI.UserControl
     Dim MyPage As PageLoader.PageItem
@@ -263,80 +265,80 @@ Partial Class Page
                 writer.Write(vbCrLf + BaseTabs)
                 writer.WriteFullBeginTag("br")
             End If
-            ElseIf (PageLoader.IsEmailItem(Item)) Then
-                writer.Write(vbCrLf + BaseTabs)
-                If DirectCast(Item, PageLoader.EmailItem).UseImage Then
-                    writer.WriteBeginTag("img")
+        ElseIf (PageLoader.IsEmailItem(Item)) Then
+            writer.Write(vbCrLf + BaseTabs)
+            If DirectCast(Item, PageLoader.EmailItem).UseImage Then
+                writer.WriteBeginTag("img")
                 writer.WriteAttribute("src", HttpUtility.HtmlEncode("host.aspx?Page=Image.gif&Image=EMailAddress"))
                 writer.WriteAttribute("alt", Utility.HtmlTextEncode(Utility.LoadResourceString("Acct_EmailAddress") + ": " + Utility.ConnectionData.EMailAddress))
-                    writer.Write(HtmlTextWriter.TagRightChar)
-                    writer.Write(vbCrLf + BaseTabs)
-                    writer.WriteFullBeginTag("br")
-                Else
-                    writer.WriteBeginTag("a")
-                    writer.WriteAttribute("href", HttpUtility.HtmlEncode("mailto: " + Utility.ConnectionData.EMailAddress))
-                    writer.Write(HtmlTextWriter.TagRightChar)
-                writer.Write(vbCrLf + BaseTabs + vbTab + Utility.LoadResourceString("Acct_EmailAddress"))
-                    writer.Write(vbCrLf + BaseTabs)
-                    writer.WriteEndTag("a")
-                End If
-            ElseIf (PageLoader.IsImageItem(Item)) Then
-            SizeF = Utility.GetImageDimensions(Utility.GetFilePath("images\" + DirectCast(Item, PageLoader.ImageItem).Path))
-                Scale = Utility.ComputeImageScale(SizeF.Width, SizeF.Height, DirectCast(Item, PageLoader.ImageItem).MaxX, DirectCast(Item, PageLoader.ImageItem).MaxY)
-                If DirectCast(Item, PageLoader.ImageItem).Link And Scale <> 1 Then
-                    writer.Write(vbCrLf + BaseTabs)
-                    writer.WriteBeginTag("a")
-                    writer.WriteAttribute("href", HttpUtility.HtmlEncode("images/" + DirectCast(Item, PageLoader.ImageItem).Path))
-                    writer.Write(HtmlTextWriter.TagRightChar)
-                    writer.Write(vbCrLf + BaseTabs + vbTab)
-                Else
-                    writer.Write(vbCrLf + BaseTabs)
-                End If
-                writer.WriteBeginTag("img")
-                writer.WriteAttribute("src", CStr(IIf(Scale = 1, "images/" + DirectCast(Item, PageLoader.ImageItem).Path, host.GetPageString("Image.gif&Image=Scale&p=" + IndexString + "." + DirectCast(Item, PageLoader.ImageItem).Name))))
-                writer.WriteAttribute("alt", Utility.HtmlTextEncode(Utility.LoadResourceString(DirectCast(Item, PageLoader.ImageItem).Text)))
-                writer.WriteAttribute("width", Convert.ToInt32(SizeF.Width / Scale).ToString())
-                writer.WriteAttribute("height", Convert.ToInt32(SizeF.Height / Scale).ToString())
-                If DirectCast(Item, PageLoader.ImageItem).Name = "fontloading" Then
-                    writer.WriteAttribute("id", DirectCast(Item, PageLoader.ImageItem).Name)
-                    writer.WriteAttribute("style", "display: none;")
-                End If
                 writer.Write(HtmlTextWriter.TagRightChar)
-                If DirectCast(Item, PageLoader.ImageItem).Link And Scale <> 1 Then
-                    writer.Write(vbCrLf + BaseTabs)
-                    writer.WriteEndTag("a")
-                End If
                 writer.Write(vbCrLf + BaseTabs)
                 writer.WriteFullBeginTag("br")
-            ElseIf (PageLoader.IsEditItem(Item)) Then
+            Else
+                writer.WriteBeginTag("a")
+                writer.WriteAttribute("href", HttpUtility.HtmlEncode("mailto: " + Utility.ConnectionData.EMailAddress))
+                writer.Write(HtmlTextWriter.TagRightChar)
+                writer.Write(vbCrLf + BaseTabs + vbTab + Utility.LoadResourceString("Acct_EmailAddress"))
                 writer.Write(vbCrLf + BaseTabs)
-                If (DirectCast(Item, PageLoader.EditItem).Rows > 1) Then
-                    writer.WriteBeginTag("textarea")
-                    writer.WriteAttribute("name", DirectCast(Item, PageLoader.EditItem).Name)
-                    writer.WriteAttribute("id", DirectCast(Item, PageLoader.EditItem).Name)
-                    If Web.HttpContext.Current.Request.QueryString.Get(DirectCast(Item, PageLoader.EditItem).Name) <> String.Empty Then
-                        writer.WriteAttribute("value", Web.HttpContext.Current.Request.QueryString.Get(DirectCast(Item, PageLoader.EditItem).Name))
-                    ElseIf DirectCast(Item, PageLoader.EditItem).DefaultValue <> String.Empty Then
-                        writer.WriteAttribute("value", Utility.LoadResourceString(DirectCast(Item, PageLoader.EditItem).DefaultValue))
-                    End If
-                    writer.WriteAttribute("cols", "80")
-                    writer.WriteAttribute("rows", DirectCast(Item, PageLoader.EditItem).Rows.ToString())
-                    writer.Write(HtmlTextWriter.TagRightChar)
-                    writer.WriteEndTag("textarea")
-                Else
-                    writer.WriteBeginTag("input")
-                    writer.WriteAttribute("type", CStr(IIf(DirectCast(Item, PageLoader.EditItem).Rows = 0, "hidden", IIf(DirectCast(Item, PageLoader.EditItem).Password, "password", "text"))))
-                    writer.WriteAttribute("name", DirectCast(Item, PageLoader.EditItem).Name)
-                    writer.WriteAttribute("id", DirectCast(Item, PageLoader.EditItem).Name)
-                    If DirectCast(Item, PageLoader.EditItem).Name = "fontcustom" And Web.HttpContext.Current.Request.QueryString.Get("fontselection") <> "custom" Then writer.WriteAttribute("style", "display: none;")
-                    If Web.HttpContext.Current.Request.QueryString.Get(DirectCast(Item, PageLoader.EditItem).Name) <> String.Empty Then
-                        writer.WriteAttribute("value", Web.HttpContext.Current.Request.QueryString.Get(DirectCast(Item, PageLoader.EditItem).Name))
-                    ElseIf DirectCast(Item, PageLoader.EditItem).DefaultValue <> String.Empty Then
-                        writer.WriteAttribute("value", Utility.LoadResourceString(DirectCast(Item, PageLoader.EditItem).DefaultValue))
-                    End If
+                writer.WriteEndTag("a")
+            End If
+        ElseIf (PageLoader.IsImageItem(Item)) Then
+            SizeF = Utility.GetImageDimensions(Utility.GetFilePath("images\" + DirectCast(Item, PageLoader.ImageItem).Path))
+            Scale = Utility.ComputeImageScale(SizeF.Width, SizeF.Height, DirectCast(Item, PageLoader.ImageItem).MaxX, DirectCast(Item, PageLoader.ImageItem).MaxY)
+            If DirectCast(Item, PageLoader.ImageItem).Link And Scale <> 1 Then
+                writer.Write(vbCrLf + BaseTabs)
+                writer.WriteBeginTag("a")
+                writer.WriteAttribute("href", HttpUtility.HtmlEncode("images/" + DirectCast(Item, PageLoader.ImageItem).Path))
+                writer.Write(HtmlTextWriter.TagRightChar)
+                writer.Write(vbCrLf + BaseTabs + vbTab)
+            Else
+                writer.Write(vbCrLf + BaseTabs)
+            End If
+            writer.WriteBeginTag("img")
+            writer.WriteAttribute("src", CStr(IIf(Scale = 1, "images/" + DirectCast(Item, PageLoader.ImageItem).Path, host.GetPageString("Image.gif&Image=Scale&p=" + IndexString + "." + DirectCast(Item, PageLoader.ImageItem).Name))))
+            writer.WriteAttribute("alt", Utility.HtmlTextEncode(Utility.LoadResourceString(DirectCast(Item, PageLoader.ImageItem).Text)))
+            writer.WriteAttribute("width", Convert.ToInt32(SizeF.Width / Scale).ToString())
+            writer.WriteAttribute("height", Convert.ToInt32(SizeF.Height / Scale).ToString())
+            If DirectCast(Item, PageLoader.ImageItem).Name = "fontloading" Then
+                writer.WriteAttribute("id", DirectCast(Item, PageLoader.ImageItem).Name)
+                writer.WriteAttribute("style", "display: none;")
+            End If
+            writer.Write(HtmlTextWriter.TagRightChar)
+            If DirectCast(Item, PageLoader.ImageItem).Link And Scale <> 1 Then
+                writer.Write(vbCrLf + BaseTabs)
+                writer.WriteEndTag("a")
+            End If
+            writer.Write(vbCrLf + BaseTabs)
+            writer.WriteFullBeginTag("br")
+        ElseIf (PageLoader.IsEditItem(Item)) Then
+            writer.Write(vbCrLf + BaseTabs)
+            If (DirectCast(Item, PageLoader.EditItem).Rows > 1) Then
+                writer.WriteBeginTag("textarea")
+                writer.WriteAttribute("name", DirectCast(Item, PageLoader.EditItem).Name)
+                writer.WriteAttribute("id", DirectCast(Item, PageLoader.EditItem).Name)
+                If Web.HttpContext.Current.Request.QueryString.Get(DirectCast(Item, PageLoader.EditItem).Name) <> String.Empty Then
+                    writer.WriteAttribute("value", Web.HttpContext.Current.Request.QueryString.Get(DirectCast(Item, PageLoader.EditItem).Name))
+                ElseIf DirectCast(Item, PageLoader.EditItem).DefaultValue <> String.Empty Then
+                    writer.WriteAttribute("value", Utility.LoadResourceString(DirectCast(Item, PageLoader.EditItem).DefaultValue))
+                End If
+                writer.WriteAttribute("cols", "80")
+                writer.WriteAttribute("rows", DirectCast(Item, PageLoader.EditItem).Rows.ToString())
+                writer.Write(HtmlTextWriter.TagRightChar)
+                writer.WriteEndTag("textarea")
+            Else
+                writer.WriteBeginTag("input")
+                writer.WriteAttribute("type", CStr(IIf(DirectCast(Item, PageLoader.EditItem).Rows = 0, "hidden", IIf(DirectCast(Item, PageLoader.EditItem).Password, "password", "text"))))
+                writer.WriteAttribute("name", DirectCast(Item, PageLoader.EditItem).Name)
+                writer.WriteAttribute("id", DirectCast(Item, PageLoader.EditItem).Name)
+                If DirectCast(Item, PageLoader.EditItem).Name = "fontcustom" And Web.HttpContext.Current.Request.QueryString.Get("fontselection") <> "custom" Then writer.WriteAttribute("style", "display: none;")
+                If Web.HttpContext.Current.Request.QueryString.Get(DirectCast(Item, PageLoader.EditItem).Name) <> String.Empty Then
+                    writer.WriteAttribute("value", Web.HttpContext.Current.Request.QueryString.Get(DirectCast(Item, PageLoader.EditItem).Name))
+                ElseIf DirectCast(Item, PageLoader.EditItem).DefaultValue <> String.Empty Then
+                    writer.WriteAttribute("value", Utility.LoadResourceString(DirectCast(Item, PageLoader.EditItem).DefaultValue))
+                End If
 
-                    If DirectCast(Item, PageLoader.EditItem).Rows <> 0 Then writer.WriteAttribute("size", "20")
-                    writer.Write(HtmlTextWriter.TagRightChar)
+                If DirectCast(Item, PageLoader.EditItem).Rows <> 0 Then writer.WriteAttribute("size", "20")
+                writer.Write(HtmlTextWriter.TagRightChar)
             End If
         ElseIf (PageLoader.IsDateItem(Item)) Then
             writer.Write(vbCrLf + BaseTabs)
@@ -459,22 +461,26 @@ Partial Class Page
                 Next
             End If
             writer.WriteEndTag("span")
-            ElseIf (PageLoader.IsButtonItem(Item)) Then
-                writer.Write(vbCrLf + BaseTabs)
-                writer.WriteBeginTag("input")
-                writer.WriteAttribute("name", DirectCast(Item, PageLoader.ButtonItem).Name)
-                writer.WriteAttribute("id", DirectCast(Item, PageLoader.ButtonItem).Name)
+        ElseIf (PageLoader.IsButtonItem(Item)) Then
+            writer.Write(vbCrLf + BaseTabs)
+            writer.WriteBeginTag("input")
+            writer.WriteAttribute("name", DirectCast(Item, PageLoader.ButtonItem).Name)
+            writer.WriteAttribute("id", DirectCast(Item, PageLoader.ButtonItem).Name)
+            If Not DirectCast(Item, PageLoader.ButtonItem).OnRenderFunction Is Nothing Then
+                writer.WriteAttribute("value", CStr(DirectCast(Item, PageLoader.ButtonItem).OnRenderFunction.Invoke(Nothing, New Object() {Item})))
+            Else
                 writer.WriteAttribute("value", Utility.LoadResourceString(DirectCast(Item, PageLoader.ButtonItem).Description))
-                If DirectCast(Item, PageLoader.ButtonItem).Name = "fontcustomapply" And Web.HttpContext.Current.Request.QueryString.Get("fontselection") <> "custom" Then writer.WriteAttribute("style", "display: none;")
-                If Not DirectCast(Item, PageLoader.ButtonItem).OnClickFunction Is Nothing Then
-                    Dim OnClickJS As String() = CType(DirectCast(Item, PageLoader.ButtonItem).OnClickFunction.Invoke(Nothing, Nothing), String())
-                    AddToJSFunctions(OnClickJS)
-                    writer.WriteAttribute("onclick", OnClickJS(0))
-                    writer.WriteAttribute("type", "button")
-                Else
-                    writer.WriteAttribute("type", "submit")
-                End If
-                writer.Write(HtmlTextWriter.TagRightChar)
+            End If
+            If DirectCast(Item, PageLoader.ButtonItem).Name = "fontcustomapply" And Web.HttpContext.Current.Request.QueryString.Get("fontselection") <> "custom" Then writer.WriteAttribute("style", "display: none;")
+            If Not DirectCast(Item, PageLoader.ButtonItem).OnClickFunction Is Nothing Then
+                Dim OnClickJS As String() = CType(DirectCast(Item, PageLoader.ButtonItem).OnClickFunction.Invoke(Nothing, Nothing), String())
+                AddToJSFunctions(OnClickJS)
+                writer.WriteAttribute("onclick", OnClickJS(0))
+                writer.WriteAttribute("type", "button")
+            Else
+                writer.WriteAttribute("type", "submit")
+            End If
+            writer.Write(HtmlTextWriter.TagRightChar)
             ElseIf (PageLoader.IsTextItem(Item)) Then
                 WriteTextItem(writer, DirectCast(Item, PageLoader.TextItem), TabCount, IndexString)
             End If

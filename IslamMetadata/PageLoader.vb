@@ -1,6 +1,22 @@
+Imports System.Drawing
+Imports System.Web
+Imports System.Web.UI
+
 Public Class Utility
+    Delegate Function _GetUserID() As Integer
+    Public Shared GetUserID As _GetUserID
+    Delegate Function _IsLoggedIn() As Boolean
+    Public Shared IsLoggedIn As _IsLoggedIn
+    Delegate Function _GetPageString(Page As String) As String
+    Public Shared GetPageString As _GetPageString
     'Web.HttpContext.Current.Trace.Write(Text)
-    Public Const LocalFile As String = "~/" + host.MainPage
+    Public Shared LocalFile As String = "~/"
+    Public Shared Function Initialize(MainPage As String, NewGetPageString As _GetPageString, NewGetUserID As _GetUserID, NewIsLoggedIn As _IsLoggedIn)
+        GetPageString = NewGetPageString
+        GetUserID = NewGetUserID
+        IsLoggedIn = NewIsLoggedIn
+        LocalFile = "~/" + MainPage
+    End Function
     Public Const LocalConfig As String = "~/web.config"
     Public Class ConnectionData
         Public Shared ReadOnly Property IslamSourceAdminEMail As String
@@ -516,7 +532,7 @@ Public Class Utility
     Public Shared Function LookupClassMember(ByVal Text As String) As Reflection.MethodInfo
         Dim ClassMember As String() = Text.Split(":"c)
         If (ClassMember.Length = 3 AndAlso ClassMember(1) = String.Empty) Then
-            Return Type.GetType("HostPage." + ClassMember(0)).GetMethod(ClassMember(2))
+            Return Type.GetType("IslamMetadata." + ClassMember(0)).GetMethod(ClassMember(2))
         End If
         Return Nothing
     End Function
@@ -598,7 +614,7 @@ Public Class Utility
         Return Count
     End Function
 End Class
-Class DiskCache
+Public Class DiskCache
     Shared Function GetCacheDirectory() As String
         Dim Path As String
         Path = IO.Path.Combine(HttpRuntime.CodegenDir, "DiskCache")
@@ -717,10 +733,12 @@ Public Class PageLoader
         Dim Name As String
         Dim Description As String
         Dim OnClickFunction As Reflection.MethodInfo
-        Public Sub New(ByVal NewName As String, ByVal NewDescription As String, Optional ByVal NewOnClick As String = "")
+        Dim OnRenderFunction As Reflection.MethodInfo
+        Public Sub New(ByVal NewName As String, ByVal NewDescription As String, Optional ByVal NewOnClick As String = "", Optional ByVal NewOnRender As String = "")
             Name = NewName
             Description = NewDescription
             If NewOnClick <> String.Empty Then OnClickFunction = Utility.LookupClassMember(NewOnClick)
+            If NewOnRender <> String.Empty Then OnRenderFunction = Utility.LookupClassMember(NewOnRender)
         End Sub
     End Structure
     Structure RadioItem
@@ -869,7 +887,8 @@ Public Class PageLoader
         ElseIf XMLChildNode.Name = "button" Then
             List.Add(New ButtonItem(XMLChildNode.Attributes.GetNamedItem("name").Value, _
                                     XMLChildNode.Attributes.GetNamedItem("description").Value, _
-                                    Utility.ParseValue(XMLChildNode.Attributes.GetNamedItem("onclick"), String.Empty)))
+                                    Utility.ParseValue(XMLChildNode.Attributes.GetNamedItem("onclick"), String.Empty), _
+                                    Utility.ParseValue(XMLChildNode.Attributes.GetNamedItem("onrender"), String.Empty)))
         ElseIf XMLChildNode.Name = "edit" Then
             List.Add(New EditItem(XMLChildNode.Attributes.GetNamedItem("name").Value, _
                                   Utility.ParseValue(XMLChildNode.Attributes.GetNamedItem("defaultvalue"), String.Empty), _
@@ -1839,7 +1858,7 @@ Public Class Arabic
         MetadataList.Sort(New RuleMetadataComparer)
         For Index = 0 To MetadataList.Count - 1
             If If(Index <> 0, MetadataList(Index - 1).Index + MetadataList(Index - 1).Length, 0) <> MetadataList(Index).Index Then
-                Strings.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, ArabicString.Substring(If(Index <> 0, MetadataList(Index - 1).Index + MetadataList(Index - 1).Length, 0), MetadataList(Index).Index - If(Index <> 0, MetadataList(Index - 1).Index + MetadataList(Index - 1).Length, 0)))) Then
+                Strings.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, ArabicString.Substring(If(Index <> 0, MetadataList(Index - 1).Index + MetadataList(Index - 1).Length, 0), MetadataList(Index).Index - If(Index <> 0, MetadataList(Index - 1).Index + MetadataList(Index - 1).Length, 0))))
             End If
             Strings.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, ArabicString.Substring(MetadataList(Index).Index, MetadataList(Index).Length)))
             For Count = 0 To ColoringRules.Length - 1
@@ -2356,19 +2375,19 @@ Public Class Arabic
         For Count = 0 To CachedData.IslamData.GrammarCategories(Index).Words.Length - 1
             Array.ForEach(CachedData.IslamData.GrammarCategories(Index).Words(Count).Grammar.Split(","c)(0).Split("|"c),
                           Sub(Str As String)
-                                  Dim Key As String = Str.Chars(0)
-                                  If Personal Then '"123".Contains(Str.Chars(0))
-                                      Key += Str.Chars(1)
-                                  End If
-                                  If Not Build.ContainsKey(Key) Then
-                                      Build.Add(Key, New Generic.Dictionary(Of String, String))
-                                  End If
-                                  If Build.Item(Key).ContainsKey(Str.Chars(If(Personal, 2, 1))) Then
-                                      Build.Item(Key).Item(Str.Chars(If(Personal, 2, 1))) += " " + TransliterateFromBuckwalter(CachedData.IslamData.GrammarCategories(Index).Words(Count).Text)
-                                  Else
-                                      Build.Item(Key).Add(Str.Chars(If(Personal, 2, 1)), TransliterateFromBuckwalter(CachedData.IslamData.GrammarCategories(Index).Words(Count).Text))
-                                  End If
-                              End Sub)
+                              Dim Key As String = Str.Chars(0)
+                              If Personal Then '"123".Contains(Str.Chars(0))
+                                  Key += Str.Chars(1)
+                              End If
+                              If Not Build.ContainsKey(Key) Then
+                                  Build.Add(Key, New Generic.Dictionary(Of String, String))
+                              End If
+                              If Build.Item(Key).ContainsKey(Str.Chars(If(Personal, 2, 1))) Then
+                                  Build.Item(Key).Item(Str.Chars(If(Personal, 2, 1))) += " " + TransliterateFromBuckwalter(CachedData.IslamData.GrammarCategories(Index).Words(Count).Text)
+                              Else
+                                  Build.Item(Key).Add(Str.Chars(If(Personal, 2, 1)), TransliterateFromBuckwalter(CachedData.IslamData.GrammarCategories(Index).Words(Count).Text))
+                              End If
+                          End Sub)
         Next
         If Personal Then
             Output(3) = New String() {Build("3m")("p"), Build("3m")("d"), Build("3m")("s"), "Third Person Masculine"}
@@ -2534,7 +2553,7 @@ Public Class RenderArray
         Return New String() {"javascript: quoteMode();", String.Empty, Utility.GetLookupStyleSheetJS(), "function quoteMode() { var rule = findStyleSheetRule('span.copy'); rule.style.display = $('#quotemode').prop('checked') === true ? 'block' : 'none'; }"}
     End Function
     Public Shared Function GetStarRatingJS() As String
-        Return "function changeStarRating(e, item, val, data) { $(item).parent().find('span').each(function (index, Element) { if (Element.textContent !== '\u26D2') { Element.style.color = (index < val) ? '#00a4e4' : '#cccccc'; Element.innerText = (index < val) ? '\u2605' : '\u2606'; } }); data['Rating'] = val.toString(); $.ajax({url: '" + host.GetPageString("HadithRanking") + "', data: data, type: 'POST', success: function(data) { $(item).parent().parent().children('span').text(data); }, dataType: 'text'}); } " + _
+        Return "function changeStarRating(e, item, val, data) { $(item).parent().find('span').each(function (index, Element) { if (Element.textContent !== '\u26D2') { Element.style.color = (index < val) ? '#00a4e4' : '#cccccc'; Element.innerText = (index < val) ? '\u2605' : '\u2606'; } }); data['Rating'] = val.toString(); $.ajax({url: '" + Utility.GetPageString("HadithRanking") + "', data: data, type: 'POST', success: function(data) { $(item).parent().parent().children('span').text(data); }, dataType: 'text'}); } " + _
             "function restoreStarRating(e, item) { $(item).parent().find('span').each(function (index, Element) { if (Element.textContent !== '\u26D2') Element.style.color = (Element.textContent === '\u2605') ? '#00a4e4' : '#cccccc'; }); } " + _
             "function updateStarRating(e, item, val) { $(item).parent().find('span').each(function (index, Element) { if (Element.textContent !== '\u26D2') Element.style.color = (index < val) ? '#aa1010' : ((Element.textContent === '\u2605') ? '#00a4e4' : '#cccccc'); }); }"
         'Return "function changeStarRating(e, item, data) { $(item).find('div').get(0).style.width = (Math.ceil((e.pageX - $(item).parent().offset().left) / $(item).outerWidth() * 10) * 10).toString() + '%'; data['Rating'] = Math.ceil((e.pageX - $(item).parent().offset().left) / $(item).outerWidth() * 10).toString(); $.ajax({url: '" + host.GetPageString("HadithRanking") + "', data: data, type: 'POST', success: function(data) { $(item).parent().parent().find('span').text(data); }, dataType: 'text'}); } " + _
@@ -3368,6 +3387,36 @@ Public Class Supplications
         Return Renderer
     End Function
 End Class
+Public Class Quiz
+    Public Shared Function DisplayCount(ByVal Item As PageLoader.TextItem) As String
+        Return "Wrong: 0 Right: 0"
+    End Function
+    Public Shared Function DisplayQuestion(ByVal Item As PageLoader.TextItem) As String
+        Web.HttpContext.Current.Items.Add("rnd", DateTime.Now.ToBinary())
+        Randomize(CDbl(Web.HttpContext.Current.Items("rnd")))
+        Dim Count As Integer = Rnd() * 4
+        While Count
+            Rnd()
+            Count -= 1
+        End While
+        Return CachedData.IslamData.ArabicLetters(CInt(Rnd() * Arabic.ArabicLetters.Length)).Symbol
+    End Function
+    Public Shared Function DisplayAnswer(ByVal Item As PageLoader.ButtonItem) As String
+        Randomize(CDbl(Web.HttpContext.Current.Items("rnd")))
+        Rnd()
+        For Count = 1 To Integer.Parse(Item.Name.Replace("answer", String.Empty))
+            Rnd()
+        Next
+        Return CachedData.IslamData.ArabicLetters(CInt(Rnd() * Arabic.ArabicLetters.Length)).RomanTranslit
+    End Function
+    Public Shared Function VerifyAnswer() As String()
+        Return New String() {"javascript: verifyAnswer(this);", String.Empty, _
+                             Arabic.GetArabicSymbolJSArray(), Arabic.FindLetterBySymbolJS(), _
+                             "var qwrong = 0, qright = 0; " + _
+                             "function getUniqueRnd(excl, count) { var rnd; do { rnd = Math.floor(Math.random() * count); } while (excl.indexOf(rnd) !== -1); return rnd; } " + _
+                             "function verifyAnswer(ctl) { $(ctl).prop('value') === ArabicLetters[findLetterBySymbol($('#question').text().charCodeAt(0))].RomanTranslit ? qright++ : qwrong++; $('#count').text('Wrong: ' + qwrong + ' Right: ' + qright); var i = Math.floor(Math.random() * 4), nidx = getUniqueRnd([], ArabicLetters.length), aidx = []; aidx[0] = getUniqueRnd([nidx], ArabicLetters.length); aidx[1] = getUniqueRnd([nidx, aidx[0]], ArabicLetters.length); aidx[2] = getUniqueRnd([nidx, aidx[0], aidx[1]], ArabicLetters.length); $('#question').text(String.fromCharCode(ArabicLetters[nidx].Symbol)); $('#answer1').prop('value', ArabicLetters[i === 0 ? nidx : aidx[0]].RomanTranslit); $('#answer2').prop('value', ArabicLetters[i === 1 ? nidx : aidx[i > 1 ? 1 : 0]].RomanTranslit); $('#answer3').prop('value', ArabicLetters[i === 2 ? nidx : aidx[i > 2 ? 2 : 1]].RomanTranslit); $('#answer4').prop('value', ArabicLetters[i === 3 ? nidx : aidx[2]].RomanTranslit); }"}
+    End Function
+End Class
 Public Class TanzilReader
     Public Shared Function GetDivisionTypes() As String()
         Return Array.ConvertAll(CachedData.IslamData.QuranDivisions, Function(Convert As IslamData.QuranDivision) Utility.LoadResourceString("IslamInfo_" + Convert.Description))
@@ -3907,20 +3956,20 @@ Public Class HadithReader
                              GetCollectionChangeOnlyJS()}
     End Function
     Public Shared Function GetCollectionXMLMetaDataDownload() As String()
-        Return New String() {host.GetPageString("Source&File=" + CachedData.IslamData.Collections(GetCurrentCollection()).FileName + "-data.xml"), Utility.LoadResourceString("IslamInfo_" + CachedData.IslamData.Collections(GetCurrentCollection()).Name) + " XML metadata"}
+        Return New String() {Utility.GetPageString("Source&File=" + CachedData.IslamData.Collections(GetCurrentCollection()).FileName + "-data.xml"), Utility.LoadResourceString("IslamInfo_" + CachedData.IslamData.Collections(GetCurrentCollection()).Name) + " XML metadata"}
     End Function
     Public Shared Function GetCollectionXMLDownload() As String()
-        Return New String() {host.GetPageString("Source&File=" + CachedData.IslamData.Collections(GetCurrentCollection()).FileName + ".xml"), Utility.LoadResourceString("IslamInfo_" + CachedData.IslamData.Collections(GetCurrentCollection()).Name) + " XML source text"}
+        Return New String() {Utility.GetPageString("Source&File=" + CachedData.IslamData.Collections(GetCurrentCollection()).FileName + ".xml"), Utility.LoadResourceString("IslamInfo_" + CachedData.IslamData.Collections(GetCurrentCollection()).Name) + " XML source text"}
     End Function
     Public Shared Function GetTranslationXMLMetaDataDownload() As String()
         Dim TranslationIndex As Integer = GetTranslationIndex(GetCurrentCollection(), Web.HttpContext.Current.Request.QueryString.Get("hadithtranslation"))
         If TranslationIndex = -1 Then Return New String() {}
-        Return New String() {host.GetPageString("Source&File=" + GetTranslationXMLFileName(GetCurrentCollection(), Web.HttpContext.Current.Request.QueryString.Get("hadithtranslation")) + ".xml"), CachedData.IslamData.Collections(GetCurrentCollection()).Translations(TranslationIndex).Name + " XML metadata"}
+        Return New String() {Utility.GetPageString("Source&File=" + GetTranslationXMLFileName(GetCurrentCollection(), Web.HttpContext.Current.Request.QueryString.Get("hadithtranslation")) + ".xml"), CachedData.IslamData.Collections(GetCurrentCollection()).Translations(TranslationIndex).Name + " XML metadata"}
     End Function
     Public Shared Function GetTranslationTextDownload() As String()
         Dim TranslationIndex As Integer = GetTranslationIndex(GetCurrentCollection(), Web.HttpContext.Current.Request.QueryString.Get("hadithtranslation"))
         If TranslationIndex = -1 Then Return New String() {}
-        Return New String() {host.GetPageString("Source&File=" + GetTranslationFileName(GetCurrentCollection(), Web.HttpContext.Current.Request.QueryString.Get("hadithtranslation")) + ".txt"), CachedData.IslamData.Collections(GetCurrentCollection()).Translations(TranslationIndex).Name + " raw source text"}
+        Return New String() {Utility.GetPageString("Source&File=" + GetTranslationFileName(GetCurrentCollection(), Web.HttpContext.Current.Request.QueryString.Get("hadithtranslation")) + ".txt"), CachedData.IslamData.Collections(GetCurrentCollection()).Translations(TranslationIndex).Name + " raw source text"}
     End Function
     Public Shared Function GetCollectionIndex(ByVal Name As String) As Integer
         Dim Count As Integer
@@ -4057,8 +4106,8 @@ Public Class HadithReader
                 Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.RightToLeftMark + CStr(HadithText(Hadith)(3)) + " " + Arabic.TransliterateFromBuckwalter("=" + CStr(HadithText(Hadith)(0))) + " "), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, Arabic.TransliterateToScheme(CStr(HadithText(Hadith)(3)) + " " + Arabic.TransliterateFromBuckwalter("=" + CStr(HadithText(Hadith)(0))) + " ").Trim()), New RenderArray.RenderText(DirectCast(IIf(IsTranslationTextLTR(Index), RenderArray.RenderDisplayClass.eLTR, RenderArray.RenderDisplayClass.eRTL), RenderArray.RenderDisplayClass), "(" + CStr(HadithText(Hadith)(0)) + ") " + HadithTranslation)}))
                 Dim Ranking As Integer() = SiteDatabase.GetHadithRankingData(CachedData.IslamData.Collections(Index).FileName, BookIndex, CInt(HadithText(Hadith)(0)))
                 Dim UserRanking As Integer
-                If UserAccounts.IsLoggedIn() Then
-                    UserRanking = SiteDatabase.GetUserHadithRankingData(UserAccounts.GetUserID(), CachedData.IslamData.Collections(Index).FileName, BookIndex, CInt(HadithText(Hadith)(0)))
+                If Utility.IsLoggedIn() Then
+                    UserRanking = SiteDatabase.GetUserHadithRankingData(Utility.GetUserID(), CachedData.IslamData.Collections(Index).FileName, BookIndex, CInt(HadithText(Hadith)(0)))
                 Else
                     UserRanking = -1
                 End If
@@ -4448,7 +4497,7 @@ Public Class HadithReader
         Return DirectCast(TranslationHadith.ToArray(GetType(String)), String())
     End Function
 End Class
-Class MailDispatcher
+Public Class MailDispatcher
     Public Shared Sub SendEMail(ByVal EMail As String, ByVal Subject As String, ByVal Body As String)
         Dim SmtpClient As New Net.Mail.SmtpClient
         'encrypt and unencrypt password credential
@@ -4467,7 +4516,7 @@ Class MailDispatcher
     End Sub
     Public Shared Sub SendActivationEMail(ByVal UserName As String, ByVal EMail As String, ByVal UserID As Integer, ByVal ActivationCode As Integer)
         SendEMail(EMail, String.Format(Utility.LoadResourceString("Acct_ActivationAccountSubject"), Web.HttpContext.Current.Request.Url.Host), _
-            String.Format(Utility.LoadResourceString("Acct_ActivationAccountBody"), Web.HttpContext.Current.Request.Url.Host, UserName, "http://" + Web.HttpContext.Current.Request.Url.Host + "/" + host.GetPageString("ActivateAccount&UserID=" + CStr(UserID) + "&ActivationCode=" + CStr(ActivationCode)), "http://" + Web.HttpContext.Current.Request.Url.Host + "/" + host.GetPageString("ActivateAccount"), CStr(ActivationCode)))
+            String.Format(Utility.LoadResourceString("Acct_ActivationAccountBody"), Web.HttpContext.Current.Request.Url.Host, UserName, "http://" + Web.HttpContext.Current.Request.Url.Host + "/" + Utility.GetPageString("ActivateAccount&UserID=" + CStr(UserID) + "&ActivationCode=" + CStr(ActivationCode)), "http://" + Web.HttpContext.Current.Request.Url.Host + "/" + Utility.GetPageString("ActivateAccount"), CStr(ActivationCode)))
     End Sub
     Public Shared Sub SendUserNameReminderEMail(ByVal UserName As String, ByVal EMail As String)
         SendEMail(EMail, String.Format(Utility.LoadResourceString("Acct_UsernameReminderSubject"), Web.HttpContext.Current.Request.Url.Host), _
@@ -4475,7 +4524,7 @@ Class MailDispatcher
     End Sub
     Public Shared Sub SendPasswordResetEMail(ByVal UserName As String, ByVal EMail As String, ByVal UserID As Integer, ByVal PasswordResetCode As UInteger)
         SendEMail(EMail, String.Format(Utility.LoadResourceString("Acct_PasswordResetSubject"), Web.HttpContext.Current.Request.Url.Host), _
-            String.Format(Utility.LoadResourceString("Acct_PasswordResetBody"), Web.HttpContext.Current.Request.Url.Host, UserName, "http://" + Web.HttpContext.Current.Request.Url.Host + "/" + host.GetPageString("ResetPassword&UserID=" + CStr(UserID) + "&PasswordResetCode=" + CStr(PasswordResetCode)), "http://" + Web.HttpContext.Current.Request.Url.Host + "/" + host.GetPageString("ResetPassword"), CStr(PasswordResetCode)))
+            String.Format(Utility.LoadResourceString("Acct_PasswordResetBody"), Web.HttpContext.Current.Request.Url.Host, UserName, "http://" + Web.HttpContext.Current.Request.Url.Host + "/" + Utility.GetPageString("ResetPassword&UserID=" + CStr(UserID) + "&PasswordResetCode=" + CStr(PasswordResetCode)), "http://" + Web.HttpContext.Current.Request.Url.Host + "/" + Utility.GetPageString("ResetPassword"), CStr(PasswordResetCode)))
     End Sub
     Public Shared Sub SendUserNameChangedEMail(ByVal UserName As String, ByVal EMail As String)
         SendEMail(EMail, String.Format(Utility.LoadResourceString("Acct_UsernameChangedSubject"), Web.HttpContext.Current.Request.Url.Host), _
@@ -4486,7 +4535,7 @@ Class MailDispatcher
             String.Format(Utility.LoadResourceString("Acct_PasswordChangedBody"), Web.HttpContext.Current.Request.Url.Host, UserName))
     End Sub
 End Class
-Class SiteDatabase
+Public Class SiteDatabase
     Public Shared Function GetConnection() As MySql.Data.MySqlClient.MySqlConnection
         Dim Connection As MySql.Data.MySqlClient.MySqlConnection = New MySql.Data.MySqlClient.MySqlConnection("Server=" + Utility.ConnectionData.DbConnServer + ";Uid=" + Utility.ConnectionData.DbConnUid + ";Pwd=" + Utility.ConnectionData.DbConnPwd + ";Database=" + Utility.ConnectionData.DbConnDatabase + ";")
         Try

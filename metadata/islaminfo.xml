@@ -2040,6 +2040,10 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="baAb bir~ {lowaAlidayn" id="GateOfRighteousnessToParents"></word>
 			<word text="Huwr {loEayn" id="FairLadiesOfTheRiver"></word>
 			<word text="taAbiEu {lt~aAbiEiyn" id="FollowersOfFollowers"></word>
+			<word text="qiyaAs {l$~abap" id="DeductionByResemblance"></word>
+			<word text="&gt;uSuwl {lofiqh" id="LegalMethodology"></word>
+			<word text="&lt;ilm {lokalaAm" id="Theology"></word>
+			<word text="&lt;ilm {l&gt;axlaAq" id="Ethics"></word>
 		</category>
 		<category title="IslamicWords">
 			<word text="{ll~`h" id="Allah"></word>
@@ -2258,6 +2262,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="rukuwE" id="BowOfPrayer"></word>
 			<word text="SalaAp" id="Prayer"></word>
 			<word text="wuDuw&apos;" id="Ablution"></word>
+			<word text="tayam~um" id="DustAblution"></word>
 			<word text="gusl" id="MajorAblution"></word>
 			<word text="duEaA&apos;" id="Supplication"></word>
 			<word text="*ikr" id="Remembrance"></word>
@@ -2287,6 +2292,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="mawotaY" id="Dead"></word>
 			<word text="{loEuluw" id="Transcendence"></word>
 			<word text="&gt;uSuwl" id="Foundations"></word>
+			<word text="furuw&apos;" id="Details"></word>
 			<word text="sanad" id="ListOfNarrators"></word>
 			<word text="matn" id="Text"></word>
 			<word text="mukav~iruwn" id="ReportersOfManyTraditions"></word>
@@ -2296,19 +2302,36 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="SaHiyH" id="Authentic"></word>
 			<word text="Hasan" id="Good"></word>
 			<word text="DaEiyf" id="Weak"></word>
+			<word text="waAhin" id="ExtremelyWeak"></word>
 			<word text="mawDuwE" id="Fabricated"></word>
+			<word text="baATil" id="False"></word>
 			<word text="&lt;iEtikaAf" id="Isolation"></word>
 			<word text="maHram" id="CloseRelative"></word>
 			<word text="&lt;ixlaAS" id="Sincerity"></word>
 			<word text="tasliym" id="EndOfPrayer"></word>
 			<word text="nasx" id="Abrogation"></word>
 			<word text="waSiy~ap" id="Bequest"></word>
-			<word text="&lt;ijtihaAd" id="ReasonedDecision"></word>
+			<word text="&lt;ijotihaAd" id="ReasonedDecision"></word>
 			<word text="qiyaAs" id="AnalogicalDeduction"></word>
-			<word text="&lt;ijmaA&apos;" id="Concensus"></word>
+			<word text="&lt;ijmaAE" id="Concensus"></word>
 			<word text="$uwraY" id="Consultation"></word>
 			<word text="majlis" id="Council"></word>
 			<word text="wahi" id="Revelation"></word>
+			<word text="munaA*araAt" id="CourtDebates"></word>
+			<word text="taqliyd" id="BlindFollowing"></word>
+			<word text="qur&apos;" id="Menses"></word>
+			<word text="&lt;id~ap" id="WaitingPeriod"></word>
+			<word text="lamsN" id="Touch"></word>
+			<word text="qay&apos;" id="Vomit"></word>
+			<word text="ma$ohoor" id="WellKnown"></word>
+			<word text="mursal" id="UnknownSourceNarrator"></word>
+			<word text="tarjiyH" id="GivingPreference"></word>
+			<word text="&lt;istiSlaAH" id="DeemProper"></word>
+			<word text="&lt;istiHsaAn" id="Preference"></word>
+			<word text="&lt;ixtilaAf" id="DifferencesDisagreement"></word>
+			<word text="tawas~al" id="GraveWorship"></word>
+			<word text="musnad" id="Referenced"></word>
+			<word text="majhuwl" id="Unknown"></word>
 		</category>
 		<category title="Names">
 			<word text="&gt;abuw {loqaAsim muHam~ad bin Eabd {ll~`h bin Eabdu {lomuT~alib bin haA$im‎" id="MuhammadBinAbdullahBinAbduAlMuttalib"></word>
