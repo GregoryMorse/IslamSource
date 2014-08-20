@@ -206,6 +206,7 @@
 	</page>
 	<page name="quiz" description="IslamSource_Quiz">
 		<frame name="arabicquiz" description="IslamSource_Quiz">
+			<radio name="quizselection" description="IslamSource_Quiz" uselist="true" defaultvalue="" onpopulate="Quiz::GetQuizList" onchange="Quiz::GetChangeQuizJS"></radio>
 			<static name="count" description="" onrender="Quiz::DisplayCount"></static>
 			<static name="question" description="" onrender="Quiz::DisplayQuestion"></static>
 			<button name="answer1" description="" onrender="Quiz::DisplayAnswer" onclick="Quiz::VerifyAnswer"></button>

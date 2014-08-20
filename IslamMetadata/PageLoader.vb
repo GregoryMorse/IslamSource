@@ -3388,6 +3388,16 @@ Public Class Supplications
     End Function
 End Class
 Public Class Quiz
+    Public Shared Function GetQuizList() As Array()
+        Dim Strings(1) As Array
+        Strings(0) = New String() {"ArabicLetters", "arabicletters"}
+        Strings(1) = New String() {"ArabicLettersDiacritics", "arabiclettersdiacritics"}
+        Return Strings
+    End Function
+    Public Shared Function GetChangeQuizJS() As String()
+        Return New String() {"javascript: changeQuiz();", String.Empty, _
+                             "function changeQuiz() { qtype = $('#quizselection').val(); qwrong = 0; qright = 0; nextQuestion(); }"}
+    End Function
     Public Shared Function DisplayCount(ByVal Item As PageLoader.TextItem) As String
         Return "Wrong: 0 Right: 0"
     End Function
@@ -3416,9 +3426,10 @@ Public Class Quiz
         Return New String() {"javascript: verifyAnswer(this);", String.Empty, _
                              Arabic.GetArabicSymbolJSArray(), Arabic.FindLetterBySymbolJS(), _
                              "var ArabicLets = " + Utility.MakeJSArray(Array.ConvertAll(Arabic.ArabicLetters, Function(Str As String) CStr(AscW(Str.Chars(0)))), True) + ";", _
-                             "var qwrong = 0, qright = 0; " + _
+                             "var qtype = 'arabicletters', qwrong = 0, qright = 0; " + _
                              "function getUniqueRnd(excl, count) { var rnd; do { rnd = Math.floor(Math.random() * count); } while (excl.indexOf(rnd) !== -1); return rnd; } " + _
-                             "function verifyAnswer(ctl) { $(ctl).prop('value') === ArabicLetters[findLetterBySymbol($('#question').text().charCodeAt(0))].RomanTranslit ? qright++ : qwrong++; $('#count').text('Wrong: ' + qwrong + ' Right: ' + qright); var i = Math.floor(Math.random() * 4), nidx = getUniqueRnd([], ArabicLets.length), aidx = []; aidx[0] = getUniqueRnd([nidx], ArabicLets.length); aidx[1] = getUniqueRnd([nidx, aidx[0]], ArabicLets.length); aidx[2] = getUniqueRnd([nidx, aidx[0], aidx[1]], ArabicLets.length); $('#question').text(String.fromCharCode(ArabicLets[nidx])); $('#answer1').prop('value', ArabicLetters[findLetterBySymbol(ArabicLets[i === 0 ? nidx : aidx[0]])].RomanTranslit); $('#answer2').prop('value', ArabicLetters[findLetterBySymbol(ArabicLets[i === 1 ? nidx : aidx[i > 1 ? 1 : 0]])].RomanTranslit); $('#answer3').prop('value', ArabicLetters[findLetterBySymbol(ArabicLets[i === 2 ? nidx : aidx[i > 2 ? 2 : 1]])].RomanTranslit); $('#answer4').prop('value', ArabicLetters[findLetterBySymbol(ArabicLets[i === 3 ? nidx : aidx[2]])].RomanTranslit); }"}
+                             "function nextQuestion() { $('#count').text('Wrong: ' + qwrong + ' Right: ' + qright); var i = Math.floor(Math.random() * 4), nidx = getUniqueRnd([], ArabicLets.length), aidx = []; aidx[0] = getUniqueRnd([nidx], ArabicLets.length); aidx[1] = getUniqueRnd([nidx, aidx[0]], ArabicLets.length); aidx[2] = getUniqueRnd([nidx, aidx[0], aidx[1]], ArabicLets.length); $('#question').text(String.fromCharCode(ArabicLets[nidx])); $('#answer1').prop('value', ArabicLetters[findLetterBySymbol(ArabicLets[i === 0 ? nidx : aidx[0]])].RomanTranslit); $('#answer2').prop('value', ArabicLetters[findLetterBySymbol(ArabicLets[i === 1 ? nidx : aidx[i > 1 ? 1 : 0]])].RomanTranslit); $('#answer3').prop('value', ArabicLetters[findLetterBySymbol(ArabicLets[i === 2 ? nidx : aidx[i > 2 ? 2 : 1]])].RomanTranslit); $('#answer4').prop('value', ArabicLetters[findLetterBySymbol(ArabicLets[i === 3 ? nidx : aidx[2]])].RomanTranslit); } " + _
+                             "function verifyAnswer(ctl) { $(ctl).prop('value') === ArabicLetters[findLetterBySymbol($('#question').text().charCodeAt(0))].RomanTranslit ? qright++ : qwrong++; nextQuestion(); }"}
     End Function
 End Class
 Public Class TanzilReader
