@@ -3392,29 +3392,33 @@ Public Class Quiz
         Return "Wrong: 0 Right: 0"
     End Function
     Public Shared Function DisplayQuestion(ByVal Item As PageLoader.TextItem) As String
-        Web.HttpContext.Current.Items.Add("rnd", DateTime.Now.ToBinary())
+        Web.HttpContext.Current.Items.Add("rnd", DateTime.Now.ToFileTime())
+        Rnd(-1)
         Randomize(CDbl(Web.HttpContext.Current.Items("rnd")))
-        Dim Count As Integer = Rnd() * 4
+        Dim Count As Integer = CInt(Math.Floor(Rnd() * 4))
         While Count
             Rnd()
             Count -= 1
         End While
-        Return CachedData.IslamData.ArabicLetters(CInt(Rnd() * Arabic.ArabicLetters.Length)).Symbol
+        Return CachedData.IslamData.ArabicLetters(Arabic.FindLetterBySymbol(Arabic.ArabicLetters(CInt(Math.Floor(Rnd() * Arabic.ArabicLetters.Length))).Chars(0))).Symbol
     End Function
     Public Shared Function DisplayAnswer(ByVal Item As PageLoader.ButtonItem) As String
+        Dim Count As Integer
+        Rnd(-1)
         Randomize(CDbl(Web.HttpContext.Current.Items("rnd")))
         Rnd()
-        For Count = 1 To Integer.Parse(Item.Name.Replace("answer", String.Empty))
+        For Count = 2 To Integer.Parse(Item.Name.Replace("answer", String.Empty))
             Rnd()
         Next
-        Return CachedData.IslamData.ArabicLetters(CInt(Rnd() * Arabic.ArabicLetters.Length)).RomanTranslit
+        Return CachedData.IslamData.ArabicLetters(Arabic.FindLetterBySymbol(Arabic.ArabicLetters(CInt(Math.Floor(Rnd() * Arabic.ArabicLetters.Length))).Chars(0))).RomanTranslit
     End Function
     Public Shared Function VerifyAnswer() As String()
         Return New String() {"javascript: verifyAnswer(this);", String.Empty, _
                              Arabic.GetArabicSymbolJSArray(), Arabic.FindLetterBySymbolJS(), _
+                             "var ArabicLets = " + Utility.MakeJSArray(Array.ConvertAll(Arabic.ArabicLetters, Function(Str As String) CStr(AscW(Str.Chars(0)))), True) + ";", _
                              "var qwrong = 0, qright = 0; " + _
                              "function getUniqueRnd(excl, count) { var rnd; do { rnd = Math.floor(Math.random() * count); } while (excl.indexOf(rnd) !== -1); return rnd; } " + _
-                             "function verifyAnswer(ctl) { $(ctl).prop('value') === ArabicLetters[findLetterBySymbol($('#question').text().charCodeAt(0))].RomanTranslit ? qright++ : qwrong++; $('#count').text('Wrong: ' + qwrong + ' Right: ' + qright); var i = Math.floor(Math.random() * 4), nidx = getUniqueRnd([], ArabicLetters.length), aidx = []; aidx[0] = getUniqueRnd([nidx], ArabicLetters.length); aidx[1] = getUniqueRnd([nidx, aidx[0]], ArabicLetters.length); aidx[2] = getUniqueRnd([nidx, aidx[0], aidx[1]], ArabicLetters.length); $('#question').text(String.fromCharCode(ArabicLetters[nidx].Symbol)); $('#answer1').prop('value', ArabicLetters[i === 0 ? nidx : aidx[0]].RomanTranslit); $('#answer2').prop('value', ArabicLetters[i === 1 ? nidx : aidx[i > 1 ? 1 : 0]].RomanTranslit); $('#answer3').prop('value', ArabicLetters[i === 2 ? nidx : aidx[i > 2 ? 2 : 1]].RomanTranslit); $('#answer4').prop('value', ArabicLetters[i === 3 ? nidx : aidx[2]].RomanTranslit); }"}
+                             "function verifyAnswer(ctl) { $(ctl).prop('value') === ArabicLetters[findLetterBySymbol($('#question').text().charCodeAt(0))].RomanTranslit ? qright++ : qwrong++; $('#count').text('Wrong: ' + qwrong + ' Right: ' + qright); var i = Math.floor(Math.random() * 4), nidx = getUniqueRnd([], ArabicLets.length), aidx = []; aidx[0] = getUniqueRnd([nidx], ArabicLets.length); aidx[1] = getUniqueRnd([nidx, aidx[0]], ArabicLets.length); aidx[2] = getUniqueRnd([nidx, aidx[0], aidx[1]], ArabicLets.length); $('#question').text(String.fromCharCode(ArabicLets[nidx])); $('#answer1').prop('value', ArabicLetters[findLetterBySymbol(ArabicLets[i === 0 ? nidx : aidx[0]])].RomanTranslit); $('#answer2').prop('value', ArabicLetters[findLetterBySymbol(ArabicLets[i === 1 ? nidx : aidx[i > 1 ? 1 : 0]])].RomanTranslit); $('#answer3').prop('value', ArabicLetters[findLetterBySymbol(ArabicLets[i === 2 ? nidx : aidx[i > 2 ? 2 : 1]])].RomanTranslit); $('#answer4').prop('value', ArabicLetters[findLetterBySymbol(ArabicLets[i === 3 ? nidx : aidx[2]])].RomanTranslit); }"}
     End Function
 End Class
 Public Class TanzilReader
