@@ -43,6 +43,13 @@
   <PropertyGroup>
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
   </ItemGroup>
@@ -71,65 +78,62 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="host.aspx.af.resx" />
-    <EmbeddedResource Include="host.aspx.ar.resx" />
-    <EmbeddedResource Include="host.aspx.be.resx" />
-    <EmbeddedResource Include="host.aspx.bg.resx" />
-    <EmbeddedResource Include="host.aspx.ca.resx" />
-    <EmbeddedResource Include="host.aspx.cs.resx" />
-    <EmbeddedResource Include="host.aspx.cy.resx" />
-    <EmbeddedResource Include="host.aspx.da.resx" />
-    <EmbeddedResource Include="host.aspx.de.resx" />
-    <EmbeddedResource Include="host.aspx.el.resx" />
-    <EmbeddedResource Include="host.aspx.en.resx">
+    <EmbeddedResource Include="IslamResources.af.resx" />
+    <EmbeddedResource Include="IslamResources.ar.resx" />
+    <EmbeddedResource Include="IslamResources.be.resx" />
+    <EmbeddedResource Include="IslamResources.bg.resx" />
+    <EmbeddedResource Include="IslamResources.ca.resx" />
+    <EmbeddedResource Include="IslamResources.cs.resx" />
+    <EmbeddedResource Include="IslamResources.cy.resx" />
+    <EmbeddedResource Include="IslamResources.da.resx" />
+    <EmbeddedResource Include="IslamResources.de.resx" />
+    <EmbeddedResource Include="IslamResources.el.resx" />
+    <EmbeddedResource Include="IslamResources.en.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="host.aspx.es.resx" />
-    <EmbeddedResource Include="host.aspx.et.resx" />
-    <EmbeddedResource Include="host.aspx.fa.resx" />
-    <EmbeddedResource Include="host.aspx.fi.resx" />
-    <EmbeddedResource Include="host.aspx.fr.resx" />
-    <EmbeddedResource Include="host.aspx.ga.resx" />
-    <EmbeddedResource Include="host.aspx.gl.resx" />
-    <EmbeddedResource Include="host.aspx.hi.resx" />
-    <EmbeddedResource Include="host.aspx.hr.resx" />
-    <EmbeddedResource Include="host.aspx.hu.resx" />
-    <EmbeddedResource Include="host.aspx.id.resx" />
-    <EmbeddedResource Include="host.aspx.is.resx" />
-    <EmbeddedResource Include="host.aspx.it.resx" />
-    <EmbeddedResource Include="host.aspx.iw.resx" />
-    <EmbeddedResource Include="host.aspx.ja.resx" />
-    <EmbeddedResource Include="host.aspx.ko.resx" />
-    <EmbeddedResource Include="host.aspx.lt.resx" />
-    <EmbeddedResource Include="host.aspx.lv.resx" />
-    <EmbeddedResource Include="host.aspx.mk.resx" />
-    <EmbeddedResource Include="host.aspx.ms.resx" />
-    <EmbeddedResource Include="host.aspx.mt.resx" />
-    <EmbeddedResource Include="host.aspx.nl.resx" />
-    <EmbeddedResource Include="host.aspx.no.resx" />
-    <EmbeddedResource Include="host.aspx.pl.resx" />
-    <EmbeddedResource Include="host.aspx.pt-pt.resx" />
-    <EmbeddedResource Include="host.aspx.resx">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="host.aspx.ro.resx" />
-    <EmbeddedResource Include="host.aspx.ru.resx" />
-    <EmbeddedResource Include="host.aspx.sk.resx" />
-    <EmbeddedResource Include="host.aspx.sl.resx" />
-    <EmbeddedResource Include="host.aspx.sq.resx" />
-    <EmbeddedResource Include="host.aspx.sr.resx" />
-    <EmbeddedResource Include="host.aspx.sv.resx" />
-    <EmbeddedResource Include="host.aspx.sw.resx" />
-    <EmbeddedResource Include="host.aspx.th.resx" />
-    <EmbeddedResource Include="host.aspx.tl.resx" />
-    <EmbeddedResource Include="host.aspx.tr.resx" />
-    <EmbeddedResource Include="host.aspx.uk.resx" />
-    <EmbeddedResource Include="host.aspx.vi.resx" />
-    <EmbeddedResource Include="host.aspx.yi.resx" />
-    <EmbeddedResource Include="host.aspx.zh-cn.resx" />
-    <EmbeddedResource Include="host.aspx.zh-tw.resx" />
+    <EmbeddedResource Include="IslamResources.es.resx" />
+    <EmbeddedResource Include="IslamResources.et.resx" />
+    <EmbeddedResource Include="IslamResources.fa.resx" />
+    <EmbeddedResource Include="IslamResources.fi.resx" />
+    <EmbeddedResource Include="IslamResources.fr.resx" />
+    <EmbeddedResource Include="IslamResources.ga.resx" />
+    <EmbeddedResource Include="IslamResources.gl.resx" />
+    <EmbeddedResource Include="IslamResources.hi.resx" />
+    <EmbeddedResource Include="IslamResources.hr.resx" />
+    <EmbeddedResource Include="IslamResources.hu.resx" />
+    <EmbeddedResource Include="IslamResources.id.resx" />
+    <EmbeddedResource Include="IslamResources.is.resx" />
+    <EmbeddedResource Include="IslamResources.it.resx" />
+    <EmbeddedResource Include="IslamResources.iw.resx" />
+    <EmbeddedResource Include="IslamResources.ja.resx" />
+    <EmbeddedResource Include="IslamResources.ko.resx" />
+    <EmbeddedResource Include="IslamResources.lt.resx" />
+    <EmbeddedResource Include="IslamResources.lv.resx" />
+    <EmbeddedResource Include="IslamResources.mk.resx" />
+    <EmbeddedResource Include="IslamResources.ms.resx" />
+    <EmbeddedResource Include="IslamResources.mt.resx" />
+    <EmbeddedResource Include="IslamResources.nl.resx" />
+    <EmbeddedResource Include="IslamResources.no.resx" />
+    <EmbeddedResource Include="IslamResources.pl.resx" />
+    <EmbeddedResource Include="IslamResources.pt-pt.resx" />
+    <EmbeddedResource Include="IslamResources.ro.resx" />
+    <EmbeddedResource Include="IslamResources.ru.resx" />
+    <EmbeddedResource Include="IslamResources.sk.resx" />
+    <EmbeddedResource Include="IslamResources.sl.resx" />
+    <EmbeddedResource Include="IslamResources.sq.resx" />
+    <EmbeddedResource Include="IslamResources.sr.resx" />
+    <EmbeddedResource Include="IslamResources.sv.resx" />
+    <EmbeddedResource Include="IslamResources.sw.resx" />
+    <EmbeddedResource Include="IslamResources.th.resx" />
+    <EmbeddedResource Include="IslamResources.tl.resx" />
+    <EmbeddedResource Include="IslamResources.tr.resx" />
+    <EmbeddedResource Include="IslamResources.uk.resx" />
+    <EmbeddedResource Include="IslamResources.vi.resx" />
+    <EmbeddedResource Include="IslamResources.yi.resx" />
+    <EmbeddedResource Include="IslamResources.zh-cn.resx" />
+    <EmbeddedResource Include="IslamResources.zh-tw.resx" />
     <EmbeddedResource Include="My Project\Resources.resx">
-      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <Generator>PublicVbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>

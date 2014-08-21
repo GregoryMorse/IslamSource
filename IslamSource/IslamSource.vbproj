@@ -123,6 +123,10 @@
       <Project>{8cef3958-a8d0-4afa-95f1-80568237f4ee}</Project>
       <Name>IslamMetadata</Name>
     </ProjectReference>
+    <ProjectReference Include="..\IslamResources\IslamResources.vbproj">
+      <Project>{0a2a299b-a9d7-4a06-b810-de0fcd3bbdd7}</Project>
+      <Name>IslamResources</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
