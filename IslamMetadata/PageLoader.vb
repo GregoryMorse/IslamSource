@@ -10,13 +10,11 @@ Public Class Utility
     Delegate Function _GetPageString(Page As String) As String
     Public Shared GetPageString As _GetPageString
     'Web.HttpContext.Current.Trace.Write(Text)
-    Public Shared LocalFile As String = "~/"
-    Public Shared Function Initialize(MainPage As String, NewGetPageString As _GetPageString, NewGetUserID As _GetUserID, NewIsLoggedIn As _IsLoggedIn)
+    Public Shared Sub Initialize(NewGetPageString As _GetPageString, NewGetUserID As _GetUserID, NewIsLoggedIn As _IsLoggedIn)
         GetPageString = NewGetPageString
         GetUserID = NewGetUserID
         IsLoggedIn = NewIsLoggedIn
-        LocalFile = "~/" + MainPage
-    End Function
+    End Sub
     Public Const LocalConfig As String = "~/web.config"
     Public Class ConnectionData
         Public Shared ReadOnly Property IslamSourceAdminEMail As String
@@ -166,17 +164,16 @@ Public Class Utility
         Return CInt((num + (num2 * &H5D588B65)) And &H800000007FFFFFFFL)
     End Function
     Public Shared Function LoadResourceString(resourceKey As String) As String
-        If IsDesktopApp() Then
-        ElseIf resourceKey.StartsWith("Acct_") Or _
+        If resourceKey.StartsWith("Acct_") Or _
             resourceKey.StartsWith("Hadith_") Or _
             resourceKey.StartsWith("IslamInfo_") Or _
             resourceKey.StartsWith("IslamSource_") Or _
             resourceKey.StartsWith("lang_") Or _
             resourceKey.StartsWith("unicode_") Or resourceKey = "IslamSource" Then
             'LoadResourceString = CStr(HttpContext.GetLocalResourceObject(LocalFile, resourceKey))
-            LoadResourceString = System.Resources.ResourceManager.CreateFileBasedResourceManager("IslamResources", "IslamResources", Nothing)..GetString(resourceKey, Threading.Thread.CurrentThread.CurrentUICulture)
+            LoadResourceString = System.Resources.ResourceManager.CreateFileBasedResourceManager("IslamResources", "IslamResources", Nothing).GetString(resourceKey, Threading.Thread.CurrentThread.CurrentUICulture)
         Else
-            LoadResourceString = System.Resources.ResourceManager.CreateFileBasedResourceManager("GMorseCodeResources", "GMorseCodeResources", Nothing)..GetString(resourceKey, Threading.Thread.CurrentThread.CurrentUICulture)
+            LoadResourceString = System.Resources.ResourceManager.CreateFileBasedResourceManager("GMorseCodeResources", "GMorseCodeResources", Nothing).GetString(resourceKey, Threading.Thread.CurrentThread.CurrentUICulture)
             'LoadResourceString = CStr(HttpContext.GetGlobalResourceObject(ConnectionData.GlobalRes, resourceKey))
         End If
         If LoadResourceString = Nothing Then
@@ -671,7 +668,8 @@ Public Class DiskCache
         IO.File.Delete(Name)
     End Sub
 End Class
-Public Class PageLoader
+<CLSCompliant(True)> _
+ Public Class PageLoader
     Structure PageItem
         Dim Page As ArrayList
         Dim PageName As String
@@ -4873,22 +4871,22 @@ Public Class SiteDatabase
         Reader.Close()
         Connection.Close()
     End Function
-    Public Shared Function SetUserHadithRankingData(ByVal UserID As Integer, ByVal Collection As String, ByVal Book As Integer, ByVal Hadith As Integer, ByVal Rank As Integer) As Double
+    Public Shared Sub SetUserHadithRankingData(ByVal UserID As Integer, ByVal Collection As String, ByVal Book As Integer, ByVal Hadith As Integer, ByVal Rank As Integer)
         Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
-        If Connection Is Nothing Then Return -1
+        If Connection Is Nothing Then Return
         ExecuteNonQuery(Connection, "INSERT INTO HadithRankings (UserID, Collection, BookIndex, HadithIndex, Ranking) VALUES (" + CStr(UserID) + ", @Collection, " + CStr(Book) + ", " + CStr(Hadith) + ", " + CStr(Rank) + ")", New Generic.Dictionary(Of String, Object) From {{"@Collection", Collection}})
         Connection.Close()
-    End Function
-    Public Shared Function UpdateUserHadithRankingData(ByVal UserID As Integer, ByVal Collection As String, ByVal Book As Integer, ByVal Hadith As Integer, ByVal Rank As Integer) As Double
+    End Sub
+    Public Shared Sub UpdateUserHadithRankingData(ByVal UserID As Integer, ByVal Collection As String, ByVal Book As Integer, ByVal Hadith As Integer, ByVal Rank As Integer)
         Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
-        If Connection Is Nothing Then Return -1
+        If Connection Is Nothing Then Return
         ExecuteNonQuery(Connection, "UPDATE HadithRankings SET Ranking=" + CStr(Rank) + " WHERE UserID=" + CStr(UserID) + " AND Collection=@Collection AND BookIndex=" + CStr(Book) + " AND HadithIndex=" + CStr(Hadith), New Generic.Dictionary(Of String, Object) From {{"@Collection", Collection}})
         Connection.Close()
-    End Function
-    Public Shared Function RemoveUserHadithRankingData(ByVal UserID As Integer, ByVal Collection As String, ByVal Book As Integer, ByVal Hadith As Integer) As Double
+    End Sub
+    Public Shared Sub RemoveUserHadithRankingData(ByVal UserID As Integer, ByVal Collection As String, ByVal Book As Integer, ByVal Hadith As Integer)
         Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
-        If Connection Is Nothing Then Return -1
+        If Connection Is Nothing Then Return
         ExecuteNonQuery(Connection, "DELETE FROM HadithRankings WHERE UserID=" + CStr(UserID) + " AND Collection=@Collection AND BookIndex=" + CStr(Book) + " AND HadithIndex=" + CStr(Hadith), New Generic.Dictionary(Of String, Object) From {{"@Collection", Collection}})
         Connection.Close()
-    End Function
+    End Sub
 End Class

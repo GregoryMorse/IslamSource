@@ -35,7 +35,7 @@ Partial Class host
         Dim Index As Integer
         Dim bmp As Bitmap = Nothing
         Dim ResultBmp As Bitmap = Nothing
-        Utility.Initialize(MainPage, AddressOf GetPageString, AddressOf UserAccounts.GetUserID, AddressOf UserAccounts.IsLoggedIn)
+        Utility.Initialize(AddressOf GetPageString, AddressOf UserAccounts.GetUserID, AddressOf UserAccounts.IsLoggedIn)
         PageSet = New PageLoader()
         Controls.Clear() 'clear viewstate and default HTML rendering control container
         If Request.QueryString.Get(LangSet) <> String.Empty Then
