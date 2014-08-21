@@ -167,16 +167,17 @@ Public Class Utility
     End Function
     Public Shared Function LoadResourceString(resourceKey As String) As String
         If IsDesktopApp() Then
-            LoadResourceString = System.Resources.ResourceManager.CreateFileBasedResourceManager("IslamResources", "IslamResources", Nothing)..GetString(resourceKey, Threading.Thread.CurrentThread.CurrentUICulture)
         ElseIf resourceKey.StartsWith("Acct_") Or _
             resourceKey.StartsWith("Hadith_") Or _
             resourceKey.StartsWith("IslamInfo_") Or _
             resourceKey.StartsWith("IslamSource_") Or _
             resourceKey.StartsWith("lang_") Or _
             resourceKey.StartsWith("unicode_") Or resourceKey = "IslamSource" Then
-            LoadResourceString = CStr(HttpContext.GetLocalResourceObject(LocalFile, resourceKey))
+            'LoadResourceString = CStr(HttpContext.GetLocalResourceObject(LocalFile, resourceKey))
+            LoadResourceString = System.Resources.ResourceManager.CreateFileBasedResourceManager("IslamResources", "IslamResources", Nothing)..GetString(resourceKey, Threading.Thread.CurrentThread.CurrentUICulture)
         Else
-            LoadResourceString = CStr(HttpContext.GetGlobalResourceObject(ConnectionData.GlobalRes, resourceKey))
+            LoadResourceString = System.Resources.ResourceManager.CreateFileBasedResourceManager("GMorseCodeResources", "GMorseCodeResources", Nothing)..GetString(resourceKey, Threading.Thread.CurrentThread.CurrentUICulture)
+            'LoadResourceString = CStr(HttpContext.GetGlobalResourceObject(ConnectionData.GlobalRes, resourceKey))
         End If
         If LoadResourceString = Nothing Then
             LoadResourceString = String.Empty
