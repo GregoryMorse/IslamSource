@@ -59,7 +59,10 @@ Partial Class Menu
         writer.Write(HtmlTextWriter.TagRightChar)
         Dim AllCultures() As Globalization.CultureInfo = Globalization.CultureInfo.GetCultures(Globalization.CultureTypes.AllCultures)
         For Count As Integer = 0 To AllCultures.Length - 1
-            If IO.File.Exists(Utility.GetFilePath(VirtualPathUtility.ToAbsolute("~/App_LocalResources/host.aspx." + AllCultures(Count).Name + ".resx"))) Then
+            'yi is yiddish should be ji
+            'iw is hebrew should be he
+            'tl is tagalog has no equivalent perhaps could be changed to es-ph or a spanish prefixed dialect
+            If IO.File.Exists(Utility.GetFilePath(VirtualPathUtility.ToAbsolute("~/bin/" + AllCultures(Count).Name + "/IslamResources.resources.dll"))) Then
                 writer.WriteBeginTag("option")
                 writer.WriteAttribute("value", AllCultures(Count).Name)
                 If AllCultures(Count).Name = Globalization.CultureInfo.CurrentCulture.Name Or _

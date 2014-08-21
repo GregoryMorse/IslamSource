@@ -2047,6 +2047,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="tawHiyd {lr~ubuwbiy~ap" id="OnenessOfLordship"></word>
 			<word text="tawHiyd {lEuluwhiy~ap" id="OnenessOfWorship"></word>
 			<word text="tawHiyd {l&gt;asmaA wa{lsifaAt" id="OnenessOfNamesAndAttributes"></word>
+			<word text="Haq~ {ll~`h" id="RightOfAllah"></word>
 		</category>
 		<category title="IslamicWords">
 			<word text="{ll~`h" id="Allah"></word>
@@ -2131,7 +2132,6 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="tawaAzun" id="Balance"></word>
 			<word text="qiyaAm" id="Do"></word>
 			<word text="baArak" id="Bless"></word>
-			<word text="huduwd" id="Limit"></word>
 			<word text="HifaAr" id="Digger"></word>
 			<word text="var" id="Impact"></word>
 			<word text="varvaAr" id="Talkative"></word>
@@ -2349,6 +2349,8 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="EaAm" id="General"></word>
 			<word text="xaAs" id="Specific"></word>
 			<word text="qis~ap" id="Narrative"></word>
+			<word text="qiSaAS" id="Retaliation"></word>
+			<word text="taEziyr" id="Discretionary"></word>
 		</category>
 		<category title="Names">
 			<word text="&gt;abuw {loqaAsim muHam~ad bin Eabd {ll~`h bin Eabdu {lomuT~alib bin haA$im‎" id="MuhammadBinAbdullahBinAbduAlMuttalib"></word>

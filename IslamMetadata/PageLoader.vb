@@ -122,11 +122,11 @@ Public Class Utility
         End Property
     End Class
     Public Shared Function IsDesktopApp() As Boolean
-        Return New Reflection.AssemblyName(Reflection.Assembly.GetEntryAssembly().FullName).Name = "IslamSource"
+        Return Not Reflection.Assembly.GetEntryAssembly() Is Nothing AndAlso New Reflection.AssemblyName(Reflection.Assembly.GetEntryAssembly().FullName).Name = "IslamSource"
     End Function
     Public Shared Function GetTemplatePath() As String
         If IsDesktopApp() Then
-            Return "..\..\..\metadata\IslamSource.xml"
+            Return GetFilePath("metadata\IslamSource.xml")
         Else
             Dim Index As Integer = Array.FindIndex(ConnectionData.SiteDomains(), Function(Domain As String) Web.HttpContext.Current.Request.Url.Host.EndsWith(Domain))
             If Index = -1 Then
@@ -138,7 +138,7 @@ Public Class Utility
     End Function
     Public Shared Function GetFilePath(ByVal Path As String) As String
         If IsDesktopApp() Then
-            Return Path
+            Return "..\..\..\" + Path
         Else
             Return CStr(IIf(IO.File.Exists(Web.HttpContext.Current.Request.PhysicalApplicationPath + Path), Web.HttpContext.Current.Request.PhysicalApplicationPath + Path, Web.HttpContext.Current.Request.PhysicalApplicationPath + ConnectionData.AlternatePath + Path))
         End If
