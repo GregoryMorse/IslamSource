@@ -4,31 +4,34 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0A2A299B-A9D7-4A06-B810-DE0FCD3BBDD7}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <RootNamespace>IslamResources</RootNamespace>
-    <AssemblyName>IslamResources</AssemblyName>
+    <ProjectGuid>{28990B1C-834C-4164-8C69-B8A123CA40F1}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>IslamSource.My.MyApplication</StartupObject>
+    <RootNamespace>IslamSource</RootNamespace>
+    <AssemblyName>IslamSource</AssemblyName>
     <FileAlignment>512</FileAlignment>
-    <MyType>Windows</MyType>
+    <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
-    <DocumentationFile>IslamResources.xml</DocumentationFile>
+    <DocumentationFile>IslamSource.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <DefineDebug>false</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DocumentationFile>IslamResources.xml</DocumentationFile>
+    <DocumentationFile>IslamSource.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup>
@@ -46,6 +49,9 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -57,12 +63,27 @@
     <Import Include="System.Collections" />
     <Import Include="System.Collections.Generic" />
     <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
     <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
     <Import Include="System.Linq" />
     <Import Include="System.Xml.Linq" />
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmMain.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.vb">
+      <DependentUpon>frmMain.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MultiLangRender.Designer.vb">
+      <DependentUpon>MultiLangRender.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MultiLangRender.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -80,63 +101,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="host.aspx.af.resx" />
-    <EmbeddedResource Include="host.aspx.ar.resx" />
-    <EmbeddedResource Include="host.aspx.be.resx" />
-    <EmbeddedResource Include="host.aspx.bg.resx" />
-    <EmbeddedResource Include="host.aspx.ca.resx" />
-    <EmbeddedResource Include="host.aspx.cs.resx" />
-    <EmbeddedResource Include="host.aspx.cy.resx" />
-    <EmbeddedResource Include="host.aspx.da.resx" />
-    <EmbeddedResource Include="host.aspx.de.resx" />
-    <EmbeddedResource Include="host.aspx.el.resx" />
-    <EmbeddedResource Include="host.aspx.en.resx">
-      <SubType>Designer</SubType>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="host.aspx.es.resx" />
-    <EmbeddedResource Include="host.aspx.et.resx" />
-    <EmbeddedResource Include="host.aspx.fa.resx" />
-    <EmbeddedResource Include="host.aspx.fi.resx" />
-    <EmbeddedResource Include="host.aspx.fr.resx" />
-    <EmbeddedResource Include="host.aspx.ga.resx" />
-    <EmbeddedResource Include="host.aspx.gl.resx" />
-    <EmbeddedResource Include="host.aspx.hi.resx" />
-    <EmbeddedResource Include="host.aspx.hr.resx" />
-    <EmbeddedResource Include="host.aspx.hu.resx" />
-    <EmbeddedResource Include="host.aspx.id.resx" />
-    <EmbeddedResource Include="host.aspx.is.resx" />
-    <EmbeddedResource Include="host.aspx.it.resx" />
-    <EmbeddedResource Include="host.aspx.iw.resx" />
-    <EmbeddedResource Include="host.aspx.ja.resx" />
-    <EmbeddedResource Include="host.aspx.ko.resx" />
-    <EmbeddedResource Include="host.aspx.lt.resx" />
-    <EmbeddedResource Include="host.aspx.lv.resx" />
-    <EmbeddedResource Include="host.aspx.mk.resx" />
-    <EmbeddedResource Include="host.aspx.ms.resx" />
-    <EmbeddedResource Include="host.aspx.mt.resx" />
-    <EmbeddedResource Include="host.aspx.nl.resx" />
-    <EmbeddedResource Include="host.aspx.no.resx" />
-    <EmbeddedResource Include="host.aspx.pl.resx" />
-    <EmbeddedResource Include="host.aspx.pt-pt.resx" />
-    <EmbeddedResource Include="host.aspx.resx">
-      <SubType>Designer</SubType>
+    <EmbeddedResource Include="MultiLangRender.resx">
+      <DependentUpon>MultiLangRender.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="host.aspx.ro.resx" />
-    <EmbeddedResource Include="host.aspx.ru.resx" />
-    <EmbeddedResource Include="host.aspx.sk.resx" />
-    <EmbeddedResource Include="host.aspx.sl.resx" />
-    <EmbeddedResource Include="host.aspx.sq.resx" />
-    <EmbeddedResource Include="host.aspx.sr.resx" />
-    <EmbeddedResource Include="host.aspx.sv.resx" />
-    <EmbeddedResource Include="host.aspx.sw.resx" />
-    <EmbeddedResource Include="host.aspx.th.resx" />
-    <EmbeddedResource Include="host.aspx.tl.resx" />
-    <EmbeddedResource Include="host.aspx.tr.resx" />
-    <EmbeddedResource Include="host.aspx.uk.resx" />
-    <EmbeddedResource Include="host.aspx.vi.resx" />
-    <EmbeddedResource Include="host.aspx.yi.resx" />
-    <EmbeddedResource Include="host.aspx.zh-cn.resx" />
-    <EmbeddedResource Include="host.aspx.zh-tw.resx" />
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
@@ -154,6 +124,13 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\IslamMetadata\IslamMetadata.vbproj">
+      <Project>{8cef3958-a8d0-4afa-95f1-80568237f4ee}</Project>
+      <Name>IslamMetadata</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -226,17 +226,11 @@
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
-    <EmbeddedResource Include="App_LocalResources\host.aspx.en.resx">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
     <EmbeddedResource Include="Global.asax.resx">
       <DependentUpon>Global.asax.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="host.aspx.resx">
       <DependentUpon>host.aspx.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="App_LocalResources\host.aspx.resx">
-      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Menu.ascx.resx">
       <DependentUpon>Menu.ascx.vb</DependentUpon>
