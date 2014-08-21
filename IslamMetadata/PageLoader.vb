@@ -123,16 +123,27 @@ Public Class Utility
             End Get
         End Property
     End Class
+    Public Shared Function IsDesktopApp() As Boolean
+        Return New Reflection.AssemblyName(Reflection.Assembly.GetEntryAssembly().FullName).Name = "IslamSource"
+    End Function
     Public Shared Function GetTemplatePath() As String
-        Dim Index As Integer = Array.FindIndex(ConnectionData.SiteDomains(), Function(Domain As String) Web.HttpContext.Current.Request.Url.Host.EndsWith(Domain))
-        If Index = -1 Then
-            Return GetFilePath("metadata\" + ConnectionData.DefaultXML + ".xml")
+        If IsDesktopApp() Then
+            Return "..\..\..\metadata\IslamSource.xml"
         Else
-            Return GetFilePath("metadata\" + ConnectionData.SiteXMLs()(Index) + ".xml")
+            Dim Index As Integer = Array.FindIndex(ConnectionData.SiteDomains(), Function(Domain As String) Web.HttpContext.Current.Request.Url.Host.EndsWith(Domain))
+            If Index = -1 Then
+                Return GetFilePath("metadata\" + ConnectionData.DefaultXML + ".xml")
+            Else
+                Return GetFilePath("metadata\" + ConnectionData.SiteXMLs()(Index) + ".xml")
+            End If
         End If
     End Function
     Public Shared Function GetFilePath(ByVal Path As String) As String
-        Return CStr(IIf(IO.File.Exists(Web.HttpContext.Current.Request.PhysicalApplicationPath + Path), Web.HttpContext.Current.Request.PhysicalApplicationPath + Path, Web.HttpContext.Current.Request.PhysicalApplicationPath + ConnectionData.AlternatePath + Path))
+        If IsDesktopApp() Then
+            Return Path
+        Else
+            Return CStr(IIf(IO.File.Exists(Web.HttpContext.Current.Request.PhysicalApplicationPath + Path), Web.HttpContext.Current.Request.PhysicalApplicationPath + Path, Web.HttpContext.Current.Request.PhysicalApplicationPath + ConnectionData.AlternatePath + Path))
+        End If
     End Function
     Friend Shared Function GetStringHashCode(ByVal s As String) As Integer
         Dim spin As System.Runtime.InteropServices.GCHandle = System.Runtime.InteropServices.GCHandle.Alloc(s, Runtime.InteropServices.GCHandleType.Pinned)
@@ -155,7 +166,9 @@ Public Class Utility
         Return CInt((num + (num2 * &H5D588B65)) And &H800000007FFFFFFFL)
     End Function
     Public Shared Function LoadResourceString(resourceKey As String) As String
-        If resourceKey.StartsWith("Acct_") Or _
+        If IsDesktopApp() Then
+            LoadResourceString = System.Resources.ResourceManager.CreateFileBasedResourceManager("IslamResources", "IslamResources", Nothing)..GetString(resourceKey, Threading.Thread.CurrentThread.CurrentUICulture)
+        ElseIf resourceKey.StartsWith("Acct_") Or _
             resourceKey.StartsWith("Hadith_") Or _
             resourceKey.StartsWith("IslamInfo_") Or _
             resourceKey.StartsWith("IslamSource_") Or _

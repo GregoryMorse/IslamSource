@@ -2044,6 +2044,9 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="&gt;uSuwl {lofiqh" id="LegalMethodology"></word>
 			<word text="&lt;ilm {lokalaAm" id="Theology"></word>
 			<word text="&lt;ilm {l&gt;axlaAq" id="Ethics"></word>
+			<word text="tawHiyd {lr~ubuwbiy~ap" id="OnenessOfLordship"></word>
+			<word text="tawHiyd {lEuluwhiy~ap" id="OnenessOfWorship"></word>
+			<word text="tawHiyd {l&gt;asmaA wa{lsifaAt" id="OnenessOfNamesAndAttributes"></word>
 		</category>
 		<category title="IslamicWords">
 			<word text="{ll~`h" id="Allah"></word>
@@ -2332,6 +2335,19 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="tawas~al" id="GraveWorship"></word>
 			<word text="musnad" id="Referenced"></word>
 			<word text="majhuwl" id="Unknown"></word>
+			<word text="{lomuqtadiyaAt" id="NamesAndAttributes"></word>
+			<word text="tawaAf" id="Circumambulating"></word>
+			<word text="tahriyf" id="Distortion"></word>
+			<word text="taEwiyl" id="Reinterpretation"></word>
+			<word text="taEtiyl" id="Denial"></word>
+			<word text="takyiyf" id="AskingHow"></word>
+			<word text="ta$biyh" id="Likening"></word>
+			<word text="tamviyl" id="MakingExamples"></word>
+			<word text="tafwiyd" id="AcceptingWithoutUnderstanding"></word>
+			<word text="mufawidap" id="DeviantPeople"></word>
+			<word text="daAEiy" id="Caller"></word>
+			<word text="EaAm" id="General"></word>
+			<word text="xaAs" id="Specific"></word>
 		</category>
 		<category title="Names">
 			<word text="&gt;abuw {loqaAsim muHam~ad bin Eabd {ll~`h bin Eabdu {lomuT~alib bin haA$im‎" id="MuhammadBinAbdullahBinAbduAlMuttalib"></word>
