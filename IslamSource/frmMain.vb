@@ -11,7 +11,10 @@ Public Class frmMain
                 End If
             Next
         Next
-        Dim Renderers As New MultiLangRender
-        Me.Controls.Add(Renderers)
+
+        Dim Renderer As New MultiLangRender
+        Renderer.MaximumSize = New Size(gbMain.Width, gbMain.Height)
+        Renderer.RenderArray = TanzilReader.DoGetRenderedQuranText(0, 1, String.Empty, 0, 0)
+        gbMain.Controls.Add(Renderer)
     End Sub
 End Class

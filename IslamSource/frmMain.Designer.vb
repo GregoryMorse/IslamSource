@@ -47,9 +47,10 @@ Partial Class frmMain
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(555, 419)
-        Me.Controls.Add(Me.gbMain)
         Me.Controls.Add(Me.tvwMain)
+        Me.Controls.Add(Me.gbMain)
         Me.Name = "frmMain"
+        Me.RightToLeftLayout = True
         Me.Text = "Islam Source"
         Me.ResumeLayout(False)
 
