@@ -14,7 +14,7 @@ Public Class frmMain
 
         Dim Renderer As New MultiLangRender
         Renderer.MaximumSize = New Size(gbMain.Width, gbMain.Height)
-        Renderer.RenderArray = TanzilReader.DoGetRenderedQuranText(0, 1, String.Empty, 0, 0).Items
+        Renderer.RenderArray = TanzilReader.DoGetRenderedQuranText(0, 1, String.Empty, 3, 0).Items
         Renderer.Anchor = AnchorStyles.Left Or AnchorStyles.Top Or AnchorStyles.Right Or AnchorStyles.Bottom
         gbMain.Controls.Add(Renderer)
     End Sub
