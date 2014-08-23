@@ -28,6 +28,8 @@ Partial Class frmMain
         '
         'tvwMain
         '
+        Me.tvwMain.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.tvwMain.Location = New System.Drawing.Point(0, 6)
         Me.tvwMain.Name = "tvwMain"
         Me.tvwMain.Size = New System.Drawing.Size(161, 409)
@@ -35,6 +37,9 @@ Partial Class frmMain
         '
         'gbMain
         '
+        Me.gbMain.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.gbMain.Location = New System.Drawing.Point(167, 6)
         Me.gbMain.Name = "gbMain"
         Me.gbMain.Size = New System.Drawing.Size(386, 409)
