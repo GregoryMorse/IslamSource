@@ -57,6 +57,7 @@
                         Right -= Renderer.Size.Width
                     End If
                     Renderer.Left = Right
+                    CurTop += Renderer.Size.Height
                 ElseIf _RenderArray(Count).TextItems(SubCount).DisplayClass = IslamMetadata.RenderArray.RenderDisplayClass.eArabic Or _RenderArray(Count).TextItems(SubCount).DisplayClass = IslamMetadata.RenderArray.RenderDisplayClass.eLTR Or _RenderArray(Count).TextItems(SubCount).DisplayClass = IslamMetadata.RenderArray.RenderDisplayClass.eRTL Or _RenderArray(Count).TextItems(SubCount).DisplayClass = IslamMetadata.RenderArray.RenderDisplayClass.eTransliteration Then
                     Dim theText As String = _RenderArray(Count).TextItems(SubCount).Text
                     Right = NextRight
