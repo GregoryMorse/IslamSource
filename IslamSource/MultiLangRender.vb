@@ -14,8 +14,8 @@
     Const SM_CXBORDER As Integer = 5
     Const SM_CYBORDER As Integer = 6
     Const EM_GETMARGINS As UInteger = &HD4
-    Dim _RenderArray As IslamMetadata.RenderArray
-    Dim Texts As New Generic.List(Of Generic.List(Of Generic.List(Of TextBox)))
+    Dim _RenderArray As Generic.List(Of IslamMetadata.RenderArray.RenderItem)
+    Dim Texts As New Generic.List(Of Generic.List(Of Generic.List(Of Object)))
     Public Property RenderArray
         Get
             Return _RenderArray
@@ -35,19 +35,34 @@
         Dim NextRight As Integer
         Dim IsOverflow As Boolean
         Me.RightToLeft = Windows.Forms.RightToLeft.Yes
-        For Count As Integer = 0 To _RenderArray.Items.Count - 1
-            Texts.Add(New Generic.List(Of Generic.List(Of TextBox)))
+        For Count As Integer = 0 To _RenderArray.Count - 1
+            Texts.Add(New Generic.List(Of Generic.List(Of Object)))
             NextRight = Right
             IsOverflow = False
             Dim IsFirst As Boolean = False
-            For SubCount As Integer = 0 To _RenderArray.Items(Count).TextItems.Length - 1
-                Texts(Count).Add(New Generic.List(Of TextBox))
-                If _RenderArray.Items(Count).TextItems(SubCount).DisplayClass = IslamMetadata.RenderArray.RenderDisplayClass.eArabic Or _RenderArray.Items(Count).TextItems(SubCount).DisplayClass = IslamMetadata.RenderArray.RenderDisplayClass.eLTR Or _RenderArray.Items(Count).TextItems(SubCount).DisplayClass = IslamMetadata.RenderArray.RenderDisplayClass.eRTL Then
-                    Dim theText As String = _RenderArray.Items(Count).TextItems(SubCount).Text
+            For SubCount As Integer = 0 To _RenderArray(Count).TextItems.Length - 1
+                Texts(Count).Add(New Generic.List(Of Object))
+                If _RenderArray(Count).TextItems(SubCount).DisplayClass = IslamMetadata.RenderArray.RenderDisplayClass.eNested Then
+                    Dim Renderer As New MultiLangRender
+                    Renderer.MaximumSize = New Size(MaximumSize.Width, MaximumSize.Height - Top)
+                    Renderer.RenderArray = _RenderArray(Count).TextItems(SubCount).Text
+                    Me.Controls.Add(Renderer)
+                    Renderer.Top = Top + CurTop
+                    If Right - Renderer.Size.Width < 0 Then
+                        CurTop += Renderer.Size.Height
+                        Right = MaximumSize.Width - Renderer.Size.Width
+                        NextRight = MaximumSize.Width
+                        IsOverflow = True
+                    Else
+                        Right -= Renderer.Size.Width
+                    End If
+                    Renderer.Left = Right
+                ElseIf _RenderArray(Count).TextItems(SubCount).DisplayClass = IslamMetadata.RenderArray.RenderDisplayClass.eArabic Or _RenderArray(Count).TextItems(SubCount).DisplayClass = IslamMetadata.RenderArray.RenderDisplayClass.eLTR Or _RenderArray(Count).TextItems(SubCount).DisplayClass = IslamMetadata.RenderArray.RenderDisplayClass.eRTL Or _RenderArray(Count).TextItems(SubCount).DisplayClass = IslamMetadata.RenderArray.RenderDisplayClass.eTransliteration Then
+                    Dim theText As String = _RenderArray(Count).TextItems(SubCount).Text
                     Right = NextRight
                     While theText <> String.Empty
                         Dim NewText As New TextBox
-                        NewText.RightToLeft = If(_RenderArray.Items(Count).TextItems(SubCount).DisplayClass <> IslamMetadata.RenderArray.RenderDisplayClass.eLTR, Windows.Forms.RightToLeft.Yes, Windows.Forms.RightToLeft.No)
+                        NewText.RightToLeft = If(_RenderArray(Count).TextItems(SubCount).DisplayClass <> IslamMetadata.RenderArray.RenderDisplayClass.eLTR, Windows.Forms.RightToLeft.Yes, Windows.Forms.RightToLeft.No)
                         NewText.Font = New System.Drawing.Font(NewText.Font.FontFamily.Name, 22, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
                         Dim s As Drawing.Size
                         Dim nChar As Integer
@@ -63,12 +78,12 @@
                                     NextRight = MaximumSize.Width
                                     Right = NextRight
                                 Else
-                                    For TestCount As Integer = 1 To _RenderArray.Items(Count).TextItems.Length - 1
+                                    For TestCount As Integer = 1 To _RenderArray(Count).TextItems.Length - 1
                                         Dim tnChar As Integer
                                         Dim ts As Drawing.Size
-                                        If _RenderArray.Items(Count).TextItems(TestCount).DisplayClass = IslamMetadata.RenderArray.RenderDisplayClass.eArabic Or _RenderArray.Items(Count).TextItems(TestCount).DisplayClass = IslamMetadata.RenderArray.RenderDisplayClass.eLTR Or _RenderArray.Items(Count).TextItems(TestCount).DisplayClass = IslamMetadata.RenderArray.RenderDisplayClass.eRTL Then
-                                            GetTextExtentExPoint(hdc, _RenderArray.Items(Count).TextItems(TestCount).Text, _RenderArray.Items(Count).TextItems(TestCount).Text.Length, MaximumSize.Width - (ret.ToInt32() And &HFFFF) - (ret.ToInt32() << 16) - GetSystemMetrics(SM_CXBORDER) * 2 - NewText.Margin.Left - NewText.Margin.Right, tnChar, Nothing, ts)
-                                            If _RenderArray.Items(Count).TextItems(TestCount).Text.Length <> tnChar Or Right - ts.Width < 0 Then
+                                        If _RenderArray(Count).TextItems(TestCount).DisplayClass = IslamMetadata.RenderArray.RenderDisplayClass.eArabic Or _RenderArray(Count).TextItems(TestCount).DisplayClass = IslamMetadata.RenderArray.RenderDisplayClass.eLTR Or _RenderArray(Count).TextItems(TestCount).DisplayClass = IslamMetadata.RenderArray.RenderDisplayClass.eRTL Or _RenderArray(Count).TextItems(TestCount).DisplayClass = IslamMetadata.RenderArray.RenderDisplayClass.eTransliteration Then
+                                            GetTextExtentExPoint(hdc, _RenderArray(Count).TextItems(TestCount).Text, _RenderArray(Count).TextItems(TestCount).Text.Length, MaximumSize.Width - (ret.ToInt32() And &HFFFF) - (ret.ToInt32() << 16) - GetSystemMetrics(SM_CXBORDER) * 2 - NewText.Margin.Left - NewText.Margin.Right, tnChar, Nothing, ts)
+                                            If _RenderArray(Count).TextItems(TestCount).Text.Length <> tnChar Or Right - ts.Width < 0 Then
                                                 Top += CurTop
                                                 NextRight = MaximumSize.Width
                                                 Right = NextRight
@@ -100,7 +115,9 @@
                         End If
                         NewText.Left = Right
                     End While
-                    CurTop += Texts(Count)(SubCount)(Texts(Count)(SubCount).Count - 1).PreferredSize.Height
+                    If _RenderArray(Count).TextItems(SubCount).Text <> String.Empty Then
+                        CurTop += Texts(Count)(SubCount)(Texts(Count)(SubCount).Count - 1).PreferredSize.Height
+                    End If
                 End If
             Next
             If IsOverflow Then
@@ -108,8 +125,8 @@
                 CurTop = 0
             End If
             MaxRight = Math.Min(Right, MaxRight)
-            If Count = _RenderArray.Items.Count - 1 Then
-                Top += CurTop + Texts(Count)(_RenderArray.Items(Count).TextItems.Length - 1)(Texts(Count)(_RenderArray.Items(Count).TextItems.Length - 1).Count - 1).PreferredSize.Height
+            If Count = _RenderArray.Count - 1 Then
+                Top += CurTop + Texts(Count)(_RenderArray(Count).TextItems.Length - 1)(Texts(Count)(_RenderArray(Count).TextItems.Length - 1).Count - 1).PreferredSize.Height
             End If
         Next
         Me.Size = New Size(MaximumSize.Width, Top) '- Math.Min(Right, MaxRight)
