@@ -13,16 +13,15 @@ Public Class frmMain
         Next
 
         Dim Renderer As New MultiLangRender
-        Renderer.MaximumSize = New Size(gbMain.Width, gbMain.Height)
-        Renderer.RenderArray = TanzilReader.DoGetRenderedQuranText(0, 1, String.Empty, 3, 0).Items
         Renderer.Anchor = AnchorStyles.Left Or AnchorStyles.Top Or AnchorStyles.Right Or AnchorStyles.Bottom
+        Renderer.Size = New Size(gbMain.Width, gbMain.Height)
+        Renderer.RenderArray = TanzilReader.DoGetRenderedQuranText(0, 1, String.Empty, 1, 0).Items
         gbMain.Controls.Add(Renderer)
     End Sub
 
     Private Sub gbMain_Resize(sender As Object, e As EventArgs) Handles gbMain.Resize
         If gbMain.Controls.Count <> 0 Then
-            gbMain.Controls(0).MaximumSize = New Size(gbMain.Width, gbMain.Height)
-            gbMain.Controls(0).Size = New Size(0, 0)
+            gbMain.Controls(0).Size = New Size(gbMain.Width, gbMain.Height)
         End If
     End Sub
 End Class

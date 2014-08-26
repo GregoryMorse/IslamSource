@@ -208,7 +208,7 @@ Public Class Utility
     Public Shared Function DoDecrypt(DecryptStr As String) As String
         Dim cspParams As New System.Security.Cryptography.CspParameters(1, "Microsoft Base Cryptographic Provider v1.0", Utility.ConnectionData.KeyContainerName)
         cspParams.KeyNumber = System.Security.Cryptography.KeyNumber.Exchange
-        cspParams.Flags = System.Security.Cryptography.CspProviderFlags.NoFlags
+        cspParams.Flags = System.Security.Cryptography.CspProviderFlags.UseMachineKeyStore 'user may change to must use machine store
         Dim Transform As New System.Security.Cryptography.RSACryptoServiceProvider(512, cspParams)
         Dim CspBlob As Byte() = IO.File.ReadAllBytes(Utility.GetFilePath("bin\" + Utility.ConnectionData.KeyFileName))
         Transform.PersistKeyInCsp = False
@@ -1887,7 +1887,7 @@ Public Class Arabic
         End If
         Return Strings.ToArray()
     End Function
-    Public Shared Function TransliterateToPlainRoman(ByVal ArabicString As String) As String
+    Public Shared Function NewTransliterateToPlainRoman(ByVal ArabicString As String) As String
         Dim RomanString As String = String.Empty
         'need to check for decomposed first
         If System.Text.RegularExpressions.Regex.Matches(ArabicString, MakeUniRegEx(ArabicLetterAlefWithHamzaAbove) + "[^" + MakeUniRegEx(ArabicFatha) + MakeUniRegEx(ArabicDamma) + "]|" + MakeUniRegEx(ArabicLetterAlefWithHamzaBelow) + "[^" + MakeUniRegEx(ArabicKasra) + "]").Count <> 0 Then
@@ -1914,7 +1914,10 @@ Public Class Arabic
         Dim Count As Integer
         Dim MetadataList As New Generic.List(Of RuleMetadata)
         For Count = 0 To RulesOfRecitationRegEx.Length - 1
-            MetadataList.AddRange(RulesOfRecitationRegEx(Count).Evaluator(System.Text.RegularExpressions.Regex.Match(ArabicString, RulesOfRecitationRegEx(Count).Match)))
+            Dim Match As System.Text.RegularExpressions.Match = System.Text.RegularExpressions.Regex.Match(ArabicString, RulesOfRecitationRegEx(Count).Match)
+            If Match.Success Then
+                MetadataList.AddRange(RulesOfRecitationRegEx(Count).Evaluator(Match))
+            End If
         Next
         For Count = 0 To BreakdownRules.Length - 1
             ArabicString = System.Text.RegularExpressions.Regex.Replace(ArabicString, BreakdownRules(Count).Match, BreakdownRules(Count).Evaluator)
@@ -1929,289 +1932,292 @@ Public Class Arabic
         'process madda loanwords and names
         'process loanwords and names
         RomanString = ArabicString
-        'Dim Count As Integer
-        'Dim Index As Integer
-        'Dim WordStart As Integer = 0
-        'Dim PreviousIndex As Integer = -1
-        'Dim PreviousPreviousIndex As Integer = -1
-        'For Count = 0 To ArabicString.Length - 1
-        '    Index = FindLetterBySymbol(ArabicString(Count))
-        '    If Index = -1 Then
-        '        RomanString += ArabicString(Count)
-        '    ElseIf IsIgnored(Index) Or IsWhitespace(Index) Then
-        '        WordStart = Count + 1
-        '        RomanString += CachedData.IslamData.ArabicLetters(Index).PlainRoman
-        '        Continue For 'do not record as previous?
-        '    ElseIf CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicEndOfAyah Then
-        '        Dim NextIndex As Integer
-        '        Do
-        '            NextIndex = FindLetterBySymbol(ArabicString(Count + 1))
-        '            Count += 1
-        '        Loop While (ArabicString.Length - 1 <> Count) And NextIndex <> -1 AndAlso Not IsWhitespace(NextIndex)
-        '    ElseIf CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicShadda And PreviousIndex <> -1 Then
-        '        'double last non-diacritic letter and not a letter assimalated to the noun particle
-        '        If WordStart = Count - 3 AndAlso FindLetterBySymbol(ArabicString(Count - 2)) <> -1 AndAlso _
-        '            CachedData.IslamData.ArabicLetters(FindLetterBySymbol(ArabicString(Count - 2))).Symbol = ArabicLetterLam AndAlso FindLetterBySymbol(ArabicString(Count - 3)) <> -1 AndAlso _
-        '            (CachedData.IslamData.ArabicLetters(FindLetterBySymbol(ArabicString(Count - 3))).Symbol = ArabicLetterAlef Or _
-        '             CachedData.IslamData.ArabicLetters(FindLetterBySymbol(ArabicString(Count - 3))).Symbol = ArabicLetterAlefWasla) Then
-        '        Else
-        '            RomanString += "-" + CachedData.IslamData.ArabicLetters(PreviousIndex).PlainRoman
-        '        End If
-        '    ElseIf (CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterAlef Or _
-        '            CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterAlefWasla Or _
-        '            CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterSuperscriptAlef) And _
-        '        PreviousIndex <> -1 AndAlso _
-        '    (CachedData.IslamData.ArabicLetters(PreviousIndex).Symbol = ArabicFatha Or _
-        '     CachedData.IslamData.ArabicLetters(PreviousIndex).Symbol = ArabicDamma Or _
-        '     CachedData.IslamData.ArabicLetters(PreviousIndex).Symbol = ArabicKasra Or _
-        '     CachedData.IslamData.ArabicLetters(PreviousIndex).Symbol = ArabicLetterAlef AndAlso PreviousPreviousIndex <> -1 AndAlso _
-        '     CachedData.IslamData.ArabicLetters(PreviousPreviousIndex).Symbol = ArabicFatha Or _
-        '     CachedData.IslamData.ArabicLetters(PreviousIndex).Symbol = ArabicLetterWaw AndAlso PreviousPreviousIndex <> -1 AndAlso _
-        '     CachedData.IslamData.ArabicLetters(PreviousPreviousIndex).Symbol = ArabicDamma Or _
-        '     CachedData.IslamData.ArabicLetters(PreviousIndex).Symbol = ArabicLetterYeh AndAlso PreviousPreviousIndex <> -1 AndAlso _
-        '     CachedData.IslamData.ArabicLetters(PreviousPreviousIndex).Symbol = ArabicKasra) Then
-        '        'drop if previous letter is vowel diacritic or long vowel 
-        '    ElseIf CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterTehMarbuta Then
-        '        'add the t if a feminine genitive construct
-        '        RomanString += CachedData.IslamData.ArabicLetters(Index).PlainRoman
-        '        If (ArabicString.Length - 1 = Count) Then
-        '            RomanString += "h"
-        '        Else
-        '            Dim NextIndex As Integer = FindLetterBySymbol(ArabicString(Count + 1))
-        '            If NextIndex <> -1 AndAlso _
-        '                (IsWhitespace(NextIndex) And _
-        '                (ArabicString.Length - 2 <> Count)) Then
-        '                NextIndex = FindLetterBySymbol(ArabicString(Count + 2))
-        '            End If
-        '            If NextIndex = -1 OrElse IsStop(NextIndex) OrElse IsPunctuation(NextIndex) Then
-        '                RomanString += "h"
-        '            Else
-        '                RomanString += "t"
-        '                Diagnostics.Debug.Print("Invalid Teh Marbuta in middle of word: " + ArabicString.Substring(0, Count) + "<" + ArabicString.Substring(Count + 1))
-        '            End If
-        '        End If
-        '    ElseIf CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterAlef And (ArabicString.Length - 1 <> Count) Then
-        '        'drop if next letter is vowel diacritic
-        '        Dim NextIndex As Integer = FindLetterBySymbol(ArabicString(Count + 1))
-        '        If NextIndex = -1 Then
-        '            RomanString += CachedData.IslamData.ArabicLetters(Index).PlainRoman
-        '        ElseIf CachedData.IslamData.ArabicLetters(NextIndex).Symbol = ArabicFatha Or _
-        '                    CachedData.IslamData.ArabicLetters(NextIndex).Symbol = ArabicDamma Or _
-        '                    CachedData.IslamData.ArabicLetters(NextIndex).Symbol = ArabicKasra Or _
-        '                    CachedData.IslamData.ArabicLetters(NextIndex).Symbol = ArabicFathatan Or _
-        '                    CachedData.IslamData.ArabicLetters(NextIndex).Symbol = ArabicDammatan Or _
-        '                    CachedData.IslamData.ArabicLetters(NextIndex).Symbol = ArabicKasratan Then
-        '        ElseIf CachedData.IslamData.ArabicLetters(NextIndex).Symbol = ArabicHamzaAbove Then
-        '        Else
-        '            RomanString += CachedData.IslamData.ArabicLetters(Index).PlainRoman
-        '        End If
-        '    ElseIf CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterLam And _
-        '        (Count - 1 = WordStart AndAlso _
-        '         (CachedData.IslamData.ArabicLetters(PreviousIndex).Symbol = ArabicLetterAlef Or _
-        '            CachedData.IslamData.ArabicLetters(PreviousIndex).Symbol = ArabicLetterAlefWasla)) Then
-        '        'if previous letter is >alif and beginning of word and following letter is assimilating then assimilate
-        '        Dim NextIndex As Integer = FindLetterBySymbol(ArabicString(Count + 1))
-        '        If NextIndex = -1 Then
-        '            RomanString += CachedData.IslamData.ArabicLetters(Index).PlainRoman
-        '        ElseIf CachedData.IslamData.ArabicLetters(NextIndex).Symbol = ArabicShadda Then
-        '        ElseIf CachedData.IslamData.ArabicLetters(NextIndex).Assimilate Then
-        '            If FindLetterBySymbol(ArabicString(Count + 2)) = -1 OrElse CachedData.IslamData.ArabicLetters(FindLetterBySymbol(ArabicString(Count + 2))).Symbol <> ArabicShadda Then
-        '                Diagnostics.Debug.Print("Missing Shadda after assimilating letter: " + ArabicString.Substring(0, Count) + "<" + ArabicString.Substring(Count + 1))
-        '            End If
-        '            RomanString += CachedData.IslamData.ArabicLetters(NextIndex).PlainRoman + "-"
-        '            Else
-        '                RomanString += CachedData.IslamData.ArabicLetters(Index).PlainRoman + "-"
-        '            End If
-        '    ElseIf CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicFatha Or _
-        '        CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicDamma Or _
-        '        CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicKasra Then
-        '        'if end of verse then drop
-        '        If (ArabicString.Length - 1 = Count) Then
-        '        Else
-        '            'if next letter makes long sound then change
-        '            Dim NextIndex As Integer = FindLetterBySymbol(ArabicString(Count + 1))
-        '            If NextIndex <> -1 AndAlso IsIgnored(NextIndex) Then
-        '                If (ArabicString.Length - 1 <> Count + 1) Then
-        '                    NextIndex = FindLetterBySymbol(ArabicString(Count + 2))
-        '                Else
-        '                    NextIndex = -1
-        '                End If
-        '            End If
-        '            If NextIndex <> -1 AndAlso CachedData.IslamData.ArabicLetters(NextIndex).Symbol = ArabicShadda Then
-        '                If WordStart = Count - 3 AndAlso FindLetterBySymbol(ArabicString(Count - 2)) <> -1 AndAlso _
-        '                    CachedData.IslamData.ArabicLetters(FindLetterBySymbol(ArabicString(Count - 2))).Symbol = ArabicLetterLam AndAlso FindLetterBySymbol(ArabicString(Count - 3)) <> -1 AndAlso _
-        '                    (CachedData.IslamData.ArabicLetters(FindLetterBySymbol(ArabicString(Count - 3))).Symbol = ArabicLetterAlef Or _
-        '                     CachedData.IslamData.ArabicLetters(FindLetterBySymbol(ArabicString(Count - 3))).Symbol = ArabicLetterAlefWasla) Then
-        '                Else
-        '                    RomanString += "-" + CachedData.IslamData.ArabicLetters(PreviousIndex).PlainRoman
-        '                End If
-        '                Count = Count + 1
-        '                If (ArabicString.Length - 1 <> Count) Then NextIndex = FindLetterBySymbol(ArabicString(Count + 1))
-        '            End If
-        '            If NextIndex = -1 OrElse _
-        '                (IsStop(NextIndex) Or IsPunctuation(NextIndex)) Then
-        '            ElseIf (CachedData.IslamData.ArabicLetters(NextIndex).Symbol = ArabicLetterAlef Or _
-        '                    CachedData.IslamData.ArabicLetters(NextIndex).Symbol = ArabicLetterAlefWasla Or _
-        '                CachedData.IslamData.ArabicLetters(NextIndex).Symbol = ArabicLetterAlefWithHamzaBelow Or _
-        '                CachedData.IslamData.ArabicLetters(NextIndex).Symbol = ArabicLetterAlefWithHamzaAbove Or _
-        '                    CachedData.IslamData.ArabicLetters(NextIndex).Symbol = ArabicLetterAlefMaksura Or _
-        '                    (IsWhitespace(NextIndex) And _
-        '                    (ArabicString.Length - 1 <> Count) AndAlso (ArabicString.Length - 1 <> Count + 1) AndAlso FindLetterBySymbol(ArabicString(Count + 2)) <> -1 AndAlso _
-        '                    (CachedData.IslamData.ArabicLetters(FindLetterBySymbol(ArabicString(Count + 2))).Symbol <> ArabicLetterAlefWasla) AndAlso Not IsStop(FindLetterBySymbol(ArabicString(Count + 2))) AndAlso Not IsPunctuation(FindLetterBySymbol(ArabicString(Count + 2))))) And _
-        '                        CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicFatha Then
-        '                RomanString += "a"
-        '                If Not IsWhitespace(NextIndex) Then
-        '                    If CachedData.IslamData.ArabicLetters(NextIndex).Symbol = ArabicLetterAlefWithHamzaBelow Or _
-        '                        CachedData.IslamData.ArabicLetters(NextIndex).Symbol = ArabicLetterAlefWithHamzaAbove Then RomanString += CachedData.IslamData.ArabicLetters(NextIndex).PlainRoman
-        '                    Count = Count + 1
-        '                    PreviousPreviousIndex = PreviousIndex
-        '                    PreviousIndex = Index
-        '                    Index = NextIndex
-        '                    'Prefixed particle causes start of word to be advanced
-        '                    If Count - 2 = WordStart AndAlso CachedData.IslamData.ArabicLetters(PreviousPreviousIndex).Symbol = ArabicLetterWaw Then
-        '                        WordStart = Count
-        '                    End If
-        '                End If
-        '            ElseIf (CachedData.IslamData.ArabicLetters(NextIndex).Symbol = ArabicLetterWaw Or _
-        '                    CachedData.IslamData.ArabicLetters(NextIndex).Symbol = ArabicLetterWawWithHamzaAbove Or _
-        '                    (IsWhitespace(NextIndex) And _
-        '                    (ArabicString.Length - 1 <> Count + 1) AndAlso FindLetterBySymbol(ArabicString(Count + 2)) <> -1 AndAlso _
-        '                    (CachedData.IslamData.ArabicLetters(FindLetterBySymbol(ArabicString(Count + 2))).Symbol <> ArabicLetterAlefWasla) AndAlso Not IsStop(FindLetterBySymbol(ArabicString(Count + 2))) AndAlso Not IsPunctuation(FindLetterBySymbol(ArabicString(Count + 2))))) And _
-        '                CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicDamma Then
-        '                RomanString += "oo"
-        '                If Not IsWhitespace(NextIndex) Then
-        '                    If CachedData.IslamData.ArabicLetters(NextIndex).Symbol = ArabicLetterWawWithHamzaAbove Then RomanString += CachedData.IslamData.ArabicLetters(NextIndex).PlainRoman
-        '                    Count = Count + 1
-        '                    PreviousPreviousIndex = PreviousIndex
-        '                    PreviousIndex = Index
-        '                    Index = NextIndex
-        '                End If
-        '            ElseIf (CachedData.IslamData.ArabicLetters(NextIndex).Symbol = ArabicLetterYeh Or _
-        '                    CachedData.IslamData.ArabicLetters(NextIndex).Symbol = ArabicLetterYehWithHamzaAbove Or _
-        '                    CachedData.IslamData.ArabicLetters(NextIndex).Symbol = ArabicLetterAlefMaksura Or _
-        '                (IsWhitespace(NextIndex) And _
-        '                    (ArabicString.Length - 1 <> Count + 1) AndAlso FindLetterBySymbol(ArabicString(Count + 2)) <> -1 AndAlso _
-        '                    (CachedData.IslamData.ArabicLetters(FindLetterBySymbol(ArabicString(Count + 2))).Symbol <> ArabicLetterAlefWasla) AndAlso Not IsStop(FindLetterBySymbol(ArabicString(Count + 2))) AndAlso Not IsPunctuation(FindLetterBySymbol(ArabicString(Count + 2))))) And _
-        '                CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicKasra Then
-        '                RomanString += "ee"
-        '                If Not IsWhitespace(NextIndex) Then
-        '                    If CachedData.IslamData.ArabicLetters(NextIndex).Symbol = ArabicLetterYehWithHamzaAbove Then RomanString += CachedData.IslamData.ArabicLetters(NextIndex).PlainRoman
-        '                    Count = Count + 1
-        '                    PreviousPreviousIndex = PreviousIndex
-        '                    PreviousIndex = Index
-        '                    Index = NextIndex
-        '                End If
-        '            ElseIf (PreviousIndex <> -1 AndAlso _
-        '                        IsAmbiguousGutteral(PreviousIndex, False) Or _
-        '                    IsAmbiguousGutteral(NextIndex, True)) Then
-        '                If (CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicFatha) Then
-        '                    If (PreviousIndex <> -1 AndAlso _
-        '                        IsAmbiguousGutteral(PreviousIndex, False)) Then
-        '                        RomanString += "aw"
-        '                    End If
-        '                    If IsAmbiguousGutteral(NextIndex, True) Then
-        '                        RomanString += "ah"
-        '                    End If
-        '                ElseIf (CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicDamma) Then
-        '                    If (PreviousIndex <> -1 AndAlso _
-        '                        IsAmbiguousGutteral(PreviousIndex, False)) Then
-        '                        RomanString += "o"
-        '                    End If
-        '                    If IsAmbiguousGutteral(NextIndex, True) Then
-        '                        RomanString += "o"
-        '                    End If
-        '                ElseIf (CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicKasra) Then
-        '                    If (PreviousIndex <> -1 AndAlso _
-        '                        IsAmbiguousGutteral(PreviousIndex, False)) Then
-        '                        RomanString += "e"
-        '                    End If
-        '                    If IsAmbiguousGutteral(NextIndex, True) Then
-        '                        RomanString += "k"
-        '                    End If
-        '                End If
-        '                ElseIf IsWhitespace(NextIndex) And _
-        '                    (ArabicString.Length - 2 <> Count) Then
-        '                    NextIndex = FindLetterBySymbol(ArabicString(Count + 2))
-        '                    If NextIndex = -1 OrElse (IsStop(NextIndex) Or IsPunctuation(NextIndex)) Then
-        '                    Else
-        '                        RomanString += CachedData.IslamData.ArabicLetters(Index).PlainRoman
-        '                    End If
-        '                Else
-        '                    RomanString += CachedData.IslamData.ArabicLetters(Index).PlainRoman
-        '                End If
-        '            End If
-        '            ElseIf CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterNoon Or _
-        '                CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicFathatan Or _
-        '                    CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicDammatan Or _
-        '                    CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicKasratan Then
-        '            'if end of verse then drop
-        '            If (ArabicString.Length - 1 = Count) Then
-        '                If CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterNoon Then
-        '                    RomanString += CachedData.IslamData.ArabicLetters(Index).PlainRoman
-        '                End If
-        '            Else
-        '                'if next letter is Idghaam without ghunnah then drop the -n
-        '                'if next letter is Iqlaab then change to miym
-        '                Dim NextIndex As Integer = FindLetterBySymbol(ArabicString(Count + 1))
-        '                If NextIndex <> -1 AndAlso IsIgnored(NextIndex) Then
-        '                    If (ArabicString.Length - 1 <> Count + 1) Then
-        '                        NextIndex = FindLetterBySymbol(ArabicString(Count + 2))
-        '                    Else
-        '                        NextIndex = -1
-        '                    End If
-        '                End If
-        '                If NextIndex <> -1 AndAlso IsWhitespace(NextIndex) And _
-        '                        (ArabicString.Length - 2 <> Count) Then
-        '                    NextIndex = FindLetterBySymbol(ArabicString(Count + 2))
-        '                End If
-        '                If NextIndex = -1 OrElse _
-        '                  (CachedData.IslamData.ArabicLetters(Index).Symbol <> ArabicLetterNoon And _
-        '                   (IsStop(NextIndex) Or IsPunctuation(NextIndex))) Then
-        '            ElseIf CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicFathatan And _
-        '                CachedData.IslamData.ArabicLetters(FindLetterBySymbol(ArabicString(Count + 1))).Symbol = ArabicLetterAlef Then
-        '                RomanString += CachedData.IslamData.ArabicLetters(CInt(IIf(ArabicString.Length - 2 = Count, NextIndex, Index))).PlainRoman
-        '                Count = Count + 1
-        '                PreviousPreviousIndex = PreviousIndex
-        '                PreviousIndex = Index
-        '                Index = NextIndex
-        '                ElseIf CachedData.IslamData.ArabicLetters(NextIndex).Symbol = ArabicLetterLam Or _
-        '                            CachedData.IslamData.ArabicLetters(NextIndex).Symbol = ArabicLetterReh Then
-        '                    RomanString += CachedData.IslamData.ArabicLetters(Index).PlainRoman.Substring(0, CachedData.IslamData.ArabicLetters(Index).PlainRoman.Length - 1)
-        '                ElseIf CachedData.IslamData.ArabicLetters(NextIndex).Symbol = ArabicLetterBeh And _
-        '                    (ArabicString.Length - 1 <> Count + 1) AndAlso FindLetterBySymbol(ArabicString(Count + 2)) <> -1 AndAlso _
-        '                    (CachedData.IslamData.ArabicLetters(FindLetterBySymbol(ArabicString(Count + 2))).Symbol = ArabicFatha Or _
-        '                      CachedData.IslamData.ArabicLetters(FindLetterBySymbol(ArabicString(Count + 2))).Symbol = ArabicDamma Or _
-        '                      CachedData.IslamData.ArabicLetters(FindLetterBySymbol(ArabicString(Count + 2))).Symbol = ArabicKasra) Then
-        '                    RomanString += "m"
-        '                Else
-        '                    RomanString += CachedData.IslamData.ArabicLetters(Index).PlainRoman
-        '                End If
-        '            End If
-        '    Else
-        '        If CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterAlef Or _
-        '        CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterAlefWasla Or _
-        '        CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterSuperscriptAlef Or _
-        '        CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterAlefWithHamzaAbove Or _
-        '        CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterAlefWithHamzaBelow Or _
-        '        CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterAlefMaksura Or _
-        '        CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterWaw Or _
-        '        CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterWawWithHamzaAbove Or _
-        '        CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterYeh Or _
-        '        CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterYehWithHamzaAbove Or IsLetter(Index) Then
-        '            If PreviousIndex <> -1 AndAlso ( _
-        '                Not IsWhitespace(PreviousIndex) Or _
-        '                CachedData.IslamData.ArabicLetters(PreviousIndex).Symbol <> ArabicFatha Or _
-        '                CachedData.IslamData.ArabicLetters(PreviousIndex).Symbol <> ArabicDamma Or _
-        '                CachedData.IslamData.ArabicLetters(PreviousIndex).Symbol <> ArabicKasra Or _
-        '                CachedData.IslamData.ArabicLetters(PreviousIndex).Symbol <> ArabicSukun) Then
-        '                Diagnostics.Debug.Print("Missing diacritic: " + ArabicString.Substring(0, Count) + "<" + ArabicString.Substring(Count + 1))
-        '            End If
-        '        End If
-        '        RomanString += CachedData.IslamData.ArabicLetters(Index).PlainRoman
-        '        End If
-        '        PreviousPreviousIndex = PreviousIndex
-        '        PreviousIndex = Index
-        'Next
+    End Function
+    Public Shared Function TransliterateToPlainRoman(ByVal ArabicString As String) As String
+        Dim RomanString As String = String.Empty
+        Dim Count As Integer
+        Dim Index As Integer
+        Dim WordStart As Integer = 0
+        Dim PreviousIndex As Integer = -1
+        Dim PreviousPreviousIndex As Integer = -1
+        For Count = 0 To ArabicString.Length - 1
+            Index = FindLetterBySymbol(ArabicString(Count))
+            If Index = -1 Then
+                RomanString += ArabicString(Count)
+            ElseIf IsIgnored(Index) Or IsWhitespace(Index) Then
+                WordStart = Count + 1
+                RomanString += CachedData.IslamData.ArabicLetters(Index).PlainRoman
+                Continue For 'do not record as previous?
+            ElseIf CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicEndOfAyah Then
+                Dim NextIndex As Integer
+                Do
+                    NextIndex = FindLetterBySymbol(ArabicString(Count + 1))
+                    Count += 1
+                Loop While (ArabicString.Length - 1 <> Count) And NextIndex <> -1 AndAlso Not IsWhitespace(NextIndex)
+            ElseIf CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicShadda And PreviousIndex <> -1 Then
+                'double last non-diacritic letter and not a letter assimalated to the noun particle
+                If WordStart = Count - 3 AndAlso FindLetterBySymbol(ArabicString(Count - 2)) <> -1 AndAlso _
+                    CachedData.IslamData.ArabicLetters(FindLetterBySymbol(ArabicString(Count - 2))).Symbol = ArabicLetterLam AndAlso FindLetterBySymbol(ArabicString(Count - 3)) <> -1 AndAlso _
+                    (CachedData.IslamData.ArabicLetters(FindLetterBySymbol(ArabicString(Count - 3))).Symbol = ArabicLetterAlef Or _
+                     CachedData.IslamData.ArabicLetters(FindLetterBySymbol(ArabicString(Count - 3))).Symbol = ArabicLetterAlefWasla) Then
+                Else
+                    RomanString += "-" + CachedData.IslamData.ArabicLetters(PreviousIndex).PlainRoman
+                End If
+            ElseIf (CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterAlef Or _
+                    CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterAlefWasla Or _
+                    CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterSuperscriptAlef) And _
+                PreviousIndex <> -1 AndAlso _
+            (CachedData.IslamData.ArabicLetters(PreviousIndex).Symbol = ArabicFatha Or _
+             CachedData.IslamData.ArabicLetters(PreviousIndex).Symbol = ArabicDamma Or _
+             CachedData.IslamData.ArabicLetters(PreviousIndex).Symbol = ArabicKasra Or _
+             CachedData.IslamData.ArabicLetters(PreviousIndex).Symbol = ArabicLetterAlef AndAlso PreviousPreviousIndex <> -1 AndAlso _
+             CachedData.IslamData.ArabicLetters(PreviousPreviousIndex).Symbol = ArabicFatha Or _
+             CachedData.IslamData.ArabicLetters(PreviousIndex).Symbol = ArabicLetterWaw AndAlso PreviousPreviousIndex <> -1 AndAlso _
+             CachedData.IslamData.ArabicLetters(PreviousPreviousIndex).Symbol = ArabicDamma Or _
+             CachedData.IslamData.ArabicLetters(PreviousIndex).Symbol = ArabicLetterYeh AndAlso PreviousPreviousIndex <> -1 AndAlso _
+             CachedData.IslamData.ArabicLetters(PreviousPreviousIndex).Symbol = ArabicKasra) Then
+                'drop if previous letter is vowel diacritic or long vowel 
+            ElseIf CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterTehMarbuta Then
+                'add the t if a feminine genitive construct
+                RomanString += CachedData.IslamData.ArabicLetters(Index).PlainRoman
+                If (ArabicString.Length - 1 = Count) Then
+                    RomanString += "h"
+                Else
+                    Dim NextIndex As Integer = FindLetterBySymbol(ArabicString(Count + 1))
+                    If NextIndex <> -1 AndAlso _
+                        (IsWhitespace(NextIndex) And _
+                        (ArabicString.Length - 2 <> Count)) Then
+                        NextIndex = FindLetterBySymbol(ArabicString(Count + 2))
+                    End If
+                    If NextIndex = -1 OrElse IsStop(NextIndex) OrElse IsPunctuation(NextIndex) Then
+                        RomanString += "h"
+                    Else
+                        RomanString += "t"
+                        Diagnostics.Debug.Print("Invalid Teh Marbuta in middle of word: " + ArabicString.Substring(0, Count) + "<" + ArabicString.Substring(Count + 1))
+                    End If
+                End If
+            ElseIf CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterAlef And (ArabicString.Length - 1 <> Count) Then
+                'drop if next letter is vowel diacritic
+                Dim NextIndex As Integer = FindLetterBySymbol(ArabicString(Count + 1))
+                If NextIndex = -1 Then
+                    RomanString += CachedData.IslamData.ArabicLetters(Index).PlainRoman
+                ElseIf CachedData.IslamData.ArabicLetters(NextIndex).Symbol = ArabicFatha Or _
+                            CachedData.IslamData.ArabicLetters(NextIndex).Symbol = ArabicDamma Or _
+                            CachedData.IslamData.ArabicLetters(NextIndex).Symbol = ArabicKasra Or _
+                            CachedData.IslamData.ArabicLetters(NextIndex).Symbol = ArabicFathatan Or _
+                            CachedData.IslamData.ArabicLetters(NextIndex).Symbol = ArabicDammatan Or _
+                            CachedData.IslamData.ArabicLetters(NextIndex).Symbol = ArabicKasratan Then
+                ElseIf CachedData.IslamData.ArabicLetters(NextIndex).Symbol = ArabicHamzaAbove Then
+                Else
+                    RomanString += CachedData.IslamData.ArabicLetters(Index).PlainRoman
+                End If
+            ElseIf CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterLam And _
+                (Count - 1 = WordStart AndAlso _
+                 (CachedData.IslamData.ArabicLetters(PreviousIndex).Symbol = ArabicLetterAlef Or _
+                    CachedData.IslamData.ArabicLetters(PreviousIndex).Symbol = ArabicLetterAlefWasla)) Then
+                'if previous letter is >alif and beginning of word and following letter is assimilating then assimilate
+                Dim NextIndex As Integer = FindLetterBySymbol(ArabicString(Count + 1))
+                If NextIndex = -1 Then
+                    RomanString += CachedData.IslamData.ArabicLetters(Index).PlainRoman
+                ElseIf CachedData.IslamData.ArabicLetters(NextIndex).Symbol = ArabicShadda Then
+                ElseIf CachedData.IslamData.ArabicLetters(NextIndex).Assimilate Then
+                    If FindLetterBySymbol(ArabicString(Count + 2)) = -1 OrElse CachedData.IslamData.ArabicLetters(FindLetterBySymbol(ArabicString(Count + 2))).Symbol <> ArabicShadda Then
+                        Diagnostics.Debug.Print("Missing Shadda after assimilating letter: " + ArabicString.Substring(0, Count) + "<" + ArabicString.Substring(Count + 1))
+                    End If
+                    RomanString += CachedData.IslamData.ArabicLetters(NextIndex).PlainRoman + "-"
+                Else
+                    RomanString += CachedData.IslamData.ArabicLetters(Index).PlainRoman + "-"
+                End If
+            ElseIf CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicFatha Or _
+                CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicDamma Or _
+                CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicKasra Then
+                'if end of verse then drop
+                If (ArabicString.Length - 1 = Count) Then
+                Else
+                    'if next letter makes long sound then change
+                    Dim NextIndex As Integer = FindLetterBySymbol(ArabicString(Count + 1))
+                    If NextIndex <> -1 AndAlso IsIgnored(NextIndex) Then
+                        If (ArabicString.Length - 1 <> Count + 1) Then
+                            NextIndex = FindLetterBySymbol(ArabicString(Count + 2))
+                        Else
+                            NextIndex = -1
+                        End If
+                    End If
+                    If NextIndex <> -1 AndAlso CachedData.IslamData.ArabicLetters(NextIndex).Symbol = ArabicShadda Then
+                        If WordStart = Count - 3 AndAlso FindLetterBySymbol(ArabicString(Count - 2)) <> -1 AndAlso _
+                            CachedData.IslamData.ArabicLetters(FindLetterBySymbol(ArabicString(Count - 2))).Symbol = ArabicLetterLam AndAlso FindLetterBySymbol(ArabicString(Count - 3)) <> -1 AndAlso _
+                            (CachedData.IslamData.ArabicLetters(FindLetterBySymbol(ArabicString(Count - 3))).Symbol = ArabicLetterAlef Or _
+                             CachedData.IslamData.ArabicLetters(FindLetterBySymbol(ArabicString(Count - 3))).Symbol = ArabicLetterAlefWasla) Then
+                        Else
+                            RomanString += "-" + CachedData.IslamData.ArabicLetters(PreviousIndex).PlainRoman
+                        End If
+                        Count = Count + 1
+                        If (ArabicString.Length - 1 <> Count) Then NextIndex = FindLetterBySymbol(ArabicString(Count + 1))
+                    End If
+                    If NextIndex = -1 OrElse _
+                        (IsStop(NextIndex) Or IsPunctuation(NextIndex)) Then
+                    ElseIf (CachedData.IslamData.ArabicLetters(NextIndex).Symbol = ArabicLetterAlef Or _
+                            CachedData.IslamData.ArabicLetters(NextIndex).Symbol = ArabicLetterAlefWasla Or _
+                        CachedData.IslamData.ArabicLetters(NextIndex).Symbol = ArabicLetterAlefWithHamzaBelow Or _
+                        CachedData.IslamData.ArabicLetters(NextIndex).Symbol = ArabicLetterAlefWithHamzaAbove Or _
+                            CachedData.IslamData.ArabicLetters(NextIndex).Symbol = ArabicLetterAlefMaksura Or _
+                            (IsWhitespace(NextIndex) And _
+                            (ArabicString.Length - 1 <> Count) AndAlso (ArabicString.Length - 1 <> Count + 1) AndAlso FindLetterBySymbol(ArabicString(Count + 2)) <> -1 AndAlso _
+                            (CachedData.IslamData.ArabicLetters(FindLetterBySymbol(ArabicString(Count + 2))).Symbol <> ArabicLetterAlefWasla) AndAlso Not IsStop(FindLetterBySymbol(ArabicString(Count + 2))) AndAlso Not IsPunctuation(FindLetterBySymbol(ArabicString(Count + 2))))) And _
+                                CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicFatha Then
+                        RomanString += "a"
+                        If Not IsWhitespace(NextIndex) Then
+                            If CachedData.IslamData.ArabicLetters(NextIndex).Symbol = ArabicLetterAlefWithHamzaBelow Or _
+                                CachedData.IslamData.ArabicLetters(NextIndex).Symbol = ArabicLetterAlefWithHamzaAbove Then RomanString += CachedData.IslamData.ArabicLetters(NextIndex).PlainRoman
+                            Count = Count + 1
+                            PreviousPreviousIndex = PreviousIndex
+                            PreviousIndex = Index
+                            Index = NextIndex
+                            'Prefixed particle causes start of word to be advanced
+                            If Count - 2 = WordStart AndAlso CachedData.IslamData.ArabicLetters(PreviousPreviousIndex).Symbol = ArabicLetterWaw Then
+                                WordStart = Count
+                            End If
+                        End If
+                    ElseIf (CachedData.IslamData.ArabicLetters(NextIndex).Symbol = ArabicLetterWaw Or _
+                            CachedData.IslamData.ArabicLetters(NextIndex).Symbol = ArabicLetterWawWithHamzaAbove Or _
+                            (IsWhitespace(NextIndex) And _
+                            (ArabicString.Length - 1 <> Count + 1) AndAlso FindLetterBySymbol(ArabicString(Count + 2)) <> -1 AndAlso _
+                            (CachedData.IslamData.ArabicLetters(FindLetterBySymbol(ArabicString(Count + 2))).Symbol <> ArabicLetterAlefWasla) AndAlso Not IsStop(FindLetterBySymbol(ArabicString(Count + 2))) AndAlso Not IsPunctuation(FindLetterBySymbol(ArabicString(Count + 2))))) And _
+                        CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicDamma Then
+                        RomanString += "oo"
+                        If Not IsWhitespace(NextIndex) Then
+                            If CachedData.IslamData.ArabicLetters(NextIndex).Symbol = ArabicLetterWawWithHamzaAbove Then RomanString += CachedData.IslamData.ArabicLetters(NextIndex).PlainRoman
+                            Count = Count + 1
+                            PreviousPreviousIndex = PreviousIndex
+                            PreviousIndex = Index
+                            Index = NextIndex
+                        End If
+                    ElseIf (CachedData.IslamData.ArabicLetters(NextIndex).Symbol = ArabicLetterYeh Or _
+                            CachedData.IslamData.ArabicLetters(NextIndex).Symbol = ArabicLetterYehWithHamzaAbove Or _
+                            CachedData.IslamData.ArabicLetters(NextIndex).Symbol = ArabicLetterAlefMaksura Or _
+                        (IsWhitespace(NextIndex) And _
+                            (ArabicString.Length - 1 <> Count + 1) AndAlso FindLetterBySymbol(ArabicString(Count + 2)) <> -1 AndAlso _
+                            (CachedData.IslamData.ArabicLetters(FindLetterBySymbol(ArabicString(Count + 2))).Symbol <> ArabicLetterAlefWasla) AndAlso Not IsStop(FindLetterBySymbol(ArabicString(Count + 2))) AndAlso Not IsPunctuation(FindLetterBySymbol(ArabicString(Count + 2))))) And _
+                        CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicKasra Then
+                        RomanString += "ee"
+                        If Not IsWhitespace(NextIndex) Then
+                            If CachedData.IslamData.ArabicLetters(NextIndex).Symbol = ArabicLetterYehWithHamzaAbove Then RomanString += CachedData.IslamData.ArabicLetters(NextIndex).PlainRoman
+                            Count = Count + 1
+                            PreviousPreviousIndex = PreviousIndex
+                            PreviousIndex = Index
+                            Index = NextIndex
+                        End If
+                    ElseIf (PreviousIndex <> -1 AndAlso _
+                                IsAmbiguousGutteral(PreviousIndex, False) Or _
+                            IsAmbiguousGutteral(NextIndex, True)) Then
+                        If (CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicFatha) Then
+                            If (PreviousIndex <> -1 AndAlso _
+                                IsAmbiguousGutteral(PreviousIndex, False)) Then
+                                RomanString += "aw"
+                            End If
+                            If IsAmbiguousGutteral(NextIndex, True) Then
+                                RomanString += "ah"
+                            End If
+                        ElseIf (CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicDamma) Then
+                            If (PreviousIndex <> -1 AndAlso _
+                                IsAmbiguousGutteral(PreviousIndex, False)) Then
+                                RomanString += "o"
+                            End If
+                            If IsAmbiguousGutteral(NextIndex, True) Then
+                                RomanString += "o"
+                            End If
+                        ElseIf (CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicKasra) Then
+                            If (PreviousIndex <> -1 AndAlso _
+                                IsAmbiguousGutteral(PreviousIndex, False)) Then
+                                RomanString += "e"
+                            End If
+                            If IsAmbiguousGutteral(NextIndex, True) Then
+                                RomanString += "k"
+                            End If
+                        End If
+                    ElseIf IsWhitespace(NextIndex) And _
+                        (ArabicString.Length - 2 <> Count) Then
+                        NextIndex = FindLetterBySymbol(ArabicString(Count + 2))
+                        If NextIndex = -1 OrElse (IsStop(NextIndex) Or IsPunctuation(NextIndex)) Then
+                        Else
+                            RomanString += CachedData.IslamData.ArabicLetters(Index).PlainRoman
+                        End If
+                    Else
+                        RomanString += CachedData.IslamData.ArabicLetters(Index).PlainRoman
+                    End If
+                End If
+            ElseIf CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterNoon Or _
+                CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicFathatan Or _
+                    CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicDammatan Or _
+                    CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicKasratan Then
+                'if end of verse then drop
+                If (ArabicString.Length - 1 = Count) Then
+                    If CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterNoon Then
+                        RomanString += CachedData.IslamData.ArabicLetters(Index).PlainRoman
+                    End If
+                Else
+                    'if next letter is Idghaam without ghunnah then drop the -n
+                    'if next letter is Iqlaab then change to miym
+                    Dim NextIndex As Integer = FindLetterBySymbol(ArabicString(Count + 1))
+                    If NextIndex <> -1 AndAlso IsIgnored(NextIndex) Then
+                        If (ArabicString.Length - 1 <> Count + 1) Then
+                            NextIndex = FindLetterBySymbol(ArabicString(Count + 2))
+                        Else
+                            NextIndex = -1
+                        End If
+                    End If
+                    If NextIndex <> -1 AndAlso IsWhitespace(NextIndex) And _
+                            (ArabicString.Length - 2 <> Count) Then
+                        NextIndex = FindLetterBySymbol(ArabicString(Count + 2))
+                    End If
+                    If NextIndex = -1 OrElse _
+                      (CachedData.IslamData.ArabicLetters(Index).Symbol <> ArabicLetterNoon And _
+                       (IsStop(NextIndex) Or IsPunctuation(NextIndex))) Then
+                    ElseIf CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicFathatan And _
+                        CachedData.IslamData.ArabicLetters(FindLetterBySymbol(ArabicString(Count + 1))).Symbol = ArabicLetterAlef Then
+                        RomanString += CachedData.IslamData.ArabicLetters(CInt(IIf(ArabicString.Length - 2 = Count, NextIndex, Index))).PlainRoman
+                        Count = Count + 1
+                        PreviousPreviousIndex = PreviousIndex
+                        PreviousIndex = Index
+                        Index = NextIndex
+                    ElseIf CachedData.IslamData.ArabicLetters(NextIndex).Symbol = ArabicLetterLam Or _
+                                CachedData.IslamData.ArabicLetters(NextIndex).Symbol = ArabicLetterReh Then
+                        RomanString += CachedData.IslamData.ArabicLetters(Index).PlainRoman.Substring(0, CachedData.IslamData.ArabicLetters(Index).PlainRoman.Length - 1)
+                    ElseIf CachedData.IslamData.ArabicLetters(NextIndex).Symbol = ArabicLetterBeh And _
+                        (ArabicString.Length - 1 <> Count + 1) AndAlso FindLetterBySymbol(ArabicString(Count + 2)) <> -1 AndAlso _
+                        (CachedData.IslamData.ArabicLetters(FindLetterBySymbol(ArabicString(Count + 2))).Symbol = ArabicFatha Or _
+                          CachedData.IslamData.ArabicLetters(FindLetterBySymbol(ArabicString(Count + 2))).Symbol = ArabicDamma Or _
+                          CachedData.IslamData.ArabicLetters(FindLetterBySymbol(ArabicString(Count + 2))).Symbol = ArabicKasra) Then
+                        RomanString += "m"
+                    Else
+                        RomanString += CachedData.IslamData.ArabicLetters(Index).PlainRoman
+                    End If
+                End If
+            Else
+                If CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterAlef Or _
+                CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterAlefWasla Or _
+                CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterSuperscriptAlef Or _
+                CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterAlefWithHamzaAbove Or _
+                CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterAlefWithHamzaBelow Or _
+                CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterAlefMaksura Or _
+                CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterWaw Or _
+                CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterWawWithHamzaAbove Or _
+                CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterYeh Or _
+                CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterYehWithHamzaAbove Or IsLetter(Index) Then
+                    If PreviousIndex <> -1 AndAlso ( _
+                        Not IsWhitespace(PreviousIndex) Or _
+                        CachedData.IslamData.ArabicLetters(PreviousIndex).Symbol <> ArabicFatha Or _
+                        CachedData.IslamData.ArabicLetters(PreviousIndex).Symbol <> ArabicDamma Or _
+                        CachedData.IslamData.ArabicLetters(PreviousIndex).Symbol <> ArabicKasra Or _
+                        CachedData.IslamData.ArabicLetters(PreviousIndex).Symbol <> ArabicSukun) Then
+                        Diagnostics.Debug.Print("Missing diacritic: " + ArabicString.Substring(0, Count) + "<" + ArabicString.Substring(Count + 1))
+                    End If
+                End If
+                RomanString += CachedData.IslamData.ArabicLetters(Index).PlainRoman
+            End If
+            PreviousPreviousIndex = PreviousIndex
+            PreviousIndex = Index
+        Next
         Return RomanString
     End Function
     Shared Function GetArabicSymbolJSArray() As String

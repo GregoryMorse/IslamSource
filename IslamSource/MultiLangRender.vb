@@ -15,6 +15,7 @@
     Const SM_CYBORDER As Integer = 6
     Const EM_GETMARGINS As UInteger = &HD4
     Dim _RenderArray As Generic.List(Of IslamMetadata.RenderArray.RenderItem)
+    Dim MaxWidths As New Generic.List(Of Integer)
     Dim Texts As New Generic.List(Of Generic.List(Of Generic.List(Of Object)))
     Public Property RenderArray
         Get
@@ -27,102 +28,88 @@
     Private Sub RecalcLayout()
         Me.Controls.Clear()
         Texts.Clear()
-        If _RenderArray Is Nothing Then Return
-        Dim Top As Integer = 0
-        Dim CurTop As Integer
-        Dim Right As Integer
-        Dim MaxRight As Integer = MaximumSize.Width
-        Dim NextRight As Integer = MaximumSize.Width
-        Dim IsOverflow As Boolean
+        MaxWidths.Clear()
+        If _RenderArray Is Nothing Or Me.Parent Is Nothing OrElse Me.Parent.Width = 0 Then Return
         Me.RightToLeft = Windows.Forms.RightToLeft.Yes
+
+        Dim g As Graphics = CreateGraphics()
+        Dim hdc As IntPtr = g.GetHdc()
+        Dim oldFont As IntPtr = SelectObject(hdc, Font.ToHfont())
         For Count As Integer = 0 To _RenderArray.Count - 1
+            MaxWidths.Add(0)
             Texts.Add(New Generic.List(Of Generic.List(Of Object)))
-            IsOverflow = False
-            Dim IsFirst As Boolean = True
-            Dim MaxWidth As Integer = 0
             For SubCount As Integer = 0 To _RenderArray(Count).TextItems.Length - 1
                 Texts(Count).Add(New Generic.List(Of Object))
                 If _RenderArray(Count).TextItems(SubCount).DisplayClass = IslamMetadata.RenderArray.RenderDisplayClass.eNested Then
-                    'Dim Renderer As New MultiLangRender
-                    'Renderer.MaximumSize = New Size(MaximumSize.Width, MaximumSize.Height - Top)
-                    'Renderer.RenderArray = _RenderArray(Count).TextItems(SubCount).Text
-                    'Me.Controls.Add(Renderer)
-                    'Renderer.Top = Top + CurTop
-                    'If Right - Renderer.Size.Width < 0 Then
-                    '    CurTop += Renderer.Size.Height
-                    '    Right = MaximumSize.Width - Renderer.Size.Width
-                    '    NextRight = MaximumSize.Width
-                    '    IsOverflow = True
-                    'Else
-                    '    Right -= Renderer.Size.Width
-                    'End If
-                    'Renderer.Left = Right
-                    'CurTop += Renderer.Size.Height
+                    Dim Renderer As New MultiLangRender
+                    Renderer.RenderArray = _RenderArray(Count).TextItems(SubCount).Text
+                    Texts(Count)(SubCount).Add(Renderer)
+                    MaxWidths(Count) = Math.Max(MaxWidths(Count), Renderer.Width)
                 ElseIf _RenderArray(Count).TextItems(SubCount).DisplayClass = IslamMetadata.RenderArray.RenderDisplayClass.eArabic Or _RenderArray(Count).TextItems(SubCount).DisplayClass = IslamMetadata.RenderArray.RenderDisplayClass.eLTR Or _RenderArray(Count).TextItems(SubCount).DisplayClass = IslamMetadata.RenderArray.RenderDisplayClass.eRTL Or _RenderArray(Count).TextItems(SubCount).DisplayClass = IslamMetadata.RenderArray.RenderDisplayClass.eTransliteration Then
                     Dim theText As String = _RenderArray(Count).TextItems(SubCount).Text
                     While theText <> String.Empty
-                        Right = NextRight
                         Dim NewText As New TextBox
                         NewText.RightToLeft = If(_RenderArray(Count).TextItems(SubCount).DisplayClass <> IslamMetadata.RenderArray.RenderDisplayClass.eLTR And _RenderArray(Count).TextItems(SubCount).DisplayClass <> IslamMetadata.RenderArray.RenderDisplayClass.eTransliteration, Windows.Forms.RightToLeft.Yes, Windows.Forms.RightToLeft.No)
-                        NewText.Font = New System.Drawing.Font(NewText.Font.FontFamily.Name, 22, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+                        NewText.Font = Font
                         Dim s As Drawing.Size
                         Dim nChar As Integer
-                        Dim g As Graphics = NewText.CreateGraphics()
-                        Dim hdc As IntPtr = g.GetHdc()
-                        Dim oldFont As IntPtr = SelectObject(hdc, NewText.Font.ToHfont())
                         Dim ret As IntPtr = SendMessage(NewText.Handle, EM_GETMARGINS, IntPtr.Zero, IntPtr.Zero)
-                        GetTextExtentExPoint(hdc, theText, theText.Length, MaximumSize.Width - (ret.ToInt32() And &HFFFF) - (ret.ToInt32() << 16) - GetSystemMetrics(SM_CXBORDER) * 2 - NewText.Margin.Left - NewText.Margin.Right, nChar, Nothing, s)
-                        If IsFirst Then
-                            MaxWidth = s.Width
-                            For TestCount As Integer = 1 To _RenderArray(Count).TextItems.Length - 1
-                                Dim tnChar As Integer
-                                Dim ts As Drawing.Size
-                                If _RenderArray(Count).TextItems(TestCount).DisplayClass = IslamMetadata.RenderArray.RenderDisplayClass.eArabic Or _RenderArray(Count).TextItems(TestCount).DisplayClass = IslamMetadata.RenderArray.RenderDisplayClass.eLTR Or _RenderArray(Count).TextItems(TestCount).DisplayClass = IslamMetadata.RenderArray.RenderDisplayClass.eRTL Or _RenderArray(Count).TextItems(TestCount).DisplayClass = IslamMetadata.RenderArray.RenderDisplayClass.eTransliteration Then
-                                    GetTextExtentExPoint(hdc, _RenderArray(Count).TextItems(TestCount).Text, _RenderArray(Count).TextItems(TestCount).Text.Length, MaximumSize.Width - (ret.ToInt32() And &HFFFF) - (ret.ToInt32() << 16) - GetSystemMetrics(SM_CXBORDER) * 2 - NewText.Margin.Left - NewText.Margin.Right, tnChar, Nothing, ts)
-                                    MaxWidth = Math.Max(ts.Width, MaxWidth)
-                                End If
-                            Next
-                            If CurTop <> 0 Then
-                                If Right - MaxWidth < 0 Then
-                                    Top += CurTop
-                                    NextRight = MaximumSize.Width
-                                    Right = NextRight
-                                End If
-                                CurTop = 0
-                            End If
-                            MaxWidth = Math.Min(MaximumSize.Width, MaxWidth)
-                            IsFirst = False
-                        End If
+                        GetTextExtentExPoint(hdc, theText, theText.Length, Me.Parent.Width - (ret.ToInt32() And &HFFFF) - (ret.ToInt32() << 16) - GetSystemMetrics(SM_CXBORDER) * 2 - NewText.Margin.Left - NewText.Margin.Right, nChar, Nothing, s)
                         'break up string on previous word boundary unless beginning of string
-                        If nChar <> theText.Length Then
+                        If nChar = 0 Then
+                            nChar = theText.Length 'If no room for even a letter than just use placeholder
+                        ElseIf nChar <> theText.Length Then
                             Dim idx As Integer = Array.FindLastIndex(theText.ToCharArray(), nChar - 1, nChar, Function(ch As Char) Char.IsWhiteSpace(ch))
                             If idx <> -1 Then nChar = idx
                         End If
                         NewText.Text = theText.Substring(0, nChar)
                         theText = theText.Substring(nChar)
                         If theText <> String.Empty Then
-                            GetTextExtentExPoint(hdc, NewText.Text, NewText.Text.Length, MaximumSize.Width - (ret.ToInt32() And &HFFFF) - (ret.ToInt32() << 16) - GetSystemMetrics(SM_CXBORDER) * 2 - NewText.Margin.Left - NewText.Margin.Right, nChar, Nothing, s)
+                            GetTextExtentExPoint(hdc, NewText.Text, NewText.Text.Length, Me.Parent.Width - (ret.ToInt32() And &HFFFF) - (ret.ToInt32() << 16) - GetSystemMetrics(SM_CXBORDER) * 2 - NewText.Margin.Left - NewText.Margin.Right, nChar, Nothing, s)
                         End If
-                        SelectObject(hdc, oldFont)
-                        g.ReleaseHdc(hdc)
-                        g.Dispose()
                         Texts(Count)(SubCount).Add(NewText)
-                        Me.Controls.Add(NewText)
                         NewText.Width = s.Width + (ret.ToInt32() And &HFFFF) + (ret.ToInt32() << 16) + GetSystemMetrics(SM_CXBORDER) * 2 + NewText.Margin.Left + NewText.Margin.Right
-                        NewText.Top = Top + CurTop
-                        If theText <> String.Empty Then
-                            CurTop += NewText.PreferredSize.Height
-                            Right = MaxWidth / 2 - (s.Width + (ret.ToInt32() And &HFFFF) + (ret.ToInt32() << 16) + GetSystemMetrics(SM_CXBORDER) * 2 + NewText.Margin.Left + NewText.Margin.Right) / 2
-                            NextRight = MaximumSize.Width
-                            IsOverflow = True
-                        Else
-                            Right -= MaxWidth - (MaxWidth / 2 - (s.Width + (ret.ToInt32() And &HFFFF) + (ret.ToInt32() << 16) + GetSystemMetrics(SM_CXBORDER) * 2 + NewText.Margin.Left + NewText.Margin.Right) / 2)
-                        End If
-                        NewText.Left = Right
+                        MaxWidths(Count) = Math.Max(MaxWidths(Count), NewText.Width)
                     End While
-                    If _RenderArray(Count).TextItems(SubCount).Text <> String.Empty Then
-                        CurTop += Texts(Count)(SubCount)(Texts(Count)(SubCount).Count - 1).PreferredSize.Height
+                End If
+            Next
+        Next
+        SelectObject(hdc, oldFont)
+        g.ReleaseHdc(hdc)
+        g.Dispose()
+
+        Dim CurTop As Integer = 0
+        Dim Top As Integer = 0
+        Dim Right As Integer = Me.Parent.Width
+        'Dim MaxRight As Integer = Right
+        Dim NextRight As Integer = Right
+        For Count As Integer = 0 To _RenderArray.Count - 1
+            Dim IsOverflow As Boolean = False
+            If CurTop <> 0 Then
+                If Right - MaxWidths(Count) < 0 Then
+                    Top += CurTop
+                    NextRight = Me.Parent.Width
+                    Right = NextRight
+                End If
+                CurTop = 0
+            End If
+            For SubCount As Integer = 0 To _RenderArray(Count).TextItems.Length - 1
+                For NextCount As Integer = 0 To Texts(Count)(SubCount).Count - 1
+                    Right = NextRight
+                    Texts(Count)(SubCount)(NextCount).Top = Top + CurTop
+                    If NextCount <> Texts(Count)(SubCount).Count - 1 Then
+                        CurTop += Texts(Count)(SubCount)(NextCount).PreferredSize.Height
+                        Right = MaxWidths(Count) / 2 - Texts(Count)(SubCount)(NextCount).Width / 2
+                        NextRight = Me.Parent.Width
+                        IsOverflow = True
+                    Else
+                        Right -= (MaxWidths(Count) - (MaxWidths(Count) / 2 - Texts(Count)(SubCount)(NextCount).Width / 2))
                     End If
+                    Texts(Count)(SubCount)(NextCount).Left = Right
+                    Me.Controls.Add(Texts(Count)(SubCount)(NextCount))
+                Next
+                If Texts(Count)(SubCount).Count <> 0 Then
+                    CurTop += Texts(Count)(SubCount)(Texts(Count)(SubCount).Count - 1).PreferredSize.Height
                 End If
             Next
             If IsOverflow Then
@@ -130,17 +117,18 @@
                 CurTop = 0
                 Right = NextRight
             Else
-                NextRight -= MaxWidth
+                NextRight -= MaxWidths(Count)
             End If
-            MaxRight = Math.Min(Right, MaxRight)
+            'MaxRight = Math.Min(Right, MaxRight)
             If Count = _RenderArray.Count - 1 Then
                 Top += CurTop + Texts(Count)(_RenderArray(Count).TextItems.Length - 1)(Texts(Count)(_RenderArray(Count).TextItems.Length - 1).Count - 1).PreferredSize.Height
             End If
         Next
-        Me.Size = New Size(MaximumSize.Width, Top) '- Math.Min(Right, MaxRight)
+        Me.Size = New Size(Me.Parent.Width, Top) '- Math.Min(Right, MaxRight)
     End Sub
 
     Private Sub MultiLangRender_Load(sender As Object, e As EventArgs) Handles Me.Load
+        Font = New System.Drawing.Font(Font.FontFamily.Name, 22, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         RecalcLayout()
     End Sub
     Private Sub MultiLangRender_Resize(sender As Object, e As EventArgs) Handles Me.Resize
