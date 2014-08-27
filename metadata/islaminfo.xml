@@ -1,4 +1,5 @@
-﻿<islamdata>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<islamdata>
 <!--
 borrowed from Christianity like supplication, Lord, Heaven, Hell)
  Islamic Arabic direct transliterated loanwords in the English dictionary:
@@ -1238,7 +1239,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="kitaAb" plural="kutub" id="Book"></word>
 			<word text="zakaAp" plural="zakawaAt" id="PoorDueCharity"></word>
 			<word text="kalimap" plural="kalimaAt" id="Word"></word>
-			<word text="$ahiyd" plural="$uhadaA&apas;" id="WitnessPresent"></word>
+			<word text="$ahiyd" plural="$uhadaA&apos;" id="WitnessPresent"></word>
 			<word text="malak" plural="malaA{ikap" id="Angel"></word>
 			<word text="SalaAp" plural="SalawaAt" id="Prayer"></word>
 			<word text="miyvaAq" plural="mawaAviyq" id="CovenantTreaty"></word>
