@@ -635,7 +635,7 @@ Public Class DiskCache
     Public Shared Function GetCacheItem(ByVal Name As String, ByVal ModifiedUtc As Date) As Byte()
         If Not IO.File.Exists(IO.Path.Combine(GetCacheDirectory, Name)) OrElse _
             ModifiedUtc > IO.File.GetLastWriteTimeUtc(IO.Path.Combine(GetCacheDirectory(), Name)) Then Return Nothing
-        Dim File As IO.FileStream = IO.File.Open(IO.Path.Combine(GetCacheDirectory(), Name), IO.FileMode.Open)
+        Dim File As IO.FileStream = IO.File.Open(IO.Path.Combine(GetCacheDirectory(), Name), IO.FileMode.Open, IO.FileAccess.Read)
         Dim Bytes(CInt(File.Length) - 1) As Byte
         File.Read(Bytes, 0, CInt(File.Length))
         File.Close()
@@ -648,7 +648,7 @@ Public Class DiskCache
         Return True
     End Function
     Public Shared Sub CacheItem(ByVal Name As String, ByVal LastModifiedUtc As Date, ByVal Data() As Byte)
-        Dim File As IO.FileStream = IO.File.Open(IO.Path.Combine(GetCacheDirectory(), Name), IO.FileMode.Create)
+        Dim File As IO.FileStream = IO.File.Open(IO.Path.Combine(GetCacheDirectory(), Name), IO.FileMode.Create, IO.FileAccess.Write)
         File.Write(Data, 0, Data.Length)
         File.Close()
         If LastModifiedUtc = DateTime.MinValue Then LastModifiedUtc = DateTime.Now
@@ -3247,7 +3247,7 @@ Public Class CachedData
     Public Shared ReadOnly Property IslamData As IslamData
         Get
             If _ObjIslamData Is Nothing Then
-                Dim fs As IO.FileStream = New IO.FileStream(Utility.GetFilePath("metadata\islaminfo.xml"), IO.FileMode.Open)
+                Dim fs As IO.FileStream = New IO.FileStream(Utility.GetFilePath("metadata\islaminfo.xml"), IO.FileMode.Open, IO.FileAccess.Read)
                 Dim xs As System.Xml.Serialization.XmlSerializer = New System.Xml.Serialization.XmlSerializer(GetType(IslamData))
                 _ObjIslamData = CType(xs.Deserialize(fs), IslamData)
                 fs.Close()
