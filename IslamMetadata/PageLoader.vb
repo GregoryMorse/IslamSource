@@ -3584,7 +3584,7 @@ Public Class TanzilReader
                 Next
             End If
         End If
-        Return CType(Output.ToArray(GetType(Array())), Array())
+        Return CType(Output.ToArray(GetType(Array)), Array())
     End Function
     Public Shared Function GetSelectionNames() As Array()
         Dim Division As Integer = 0
