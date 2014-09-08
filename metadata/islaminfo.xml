@@ -1976,9 +1976,9 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="subHanahu watEaAlaY" id="GloriousAndExaltedBeHeAbbr"></word>
 		</category>
 		<category title="Concepts">
-			<word text="tawHiyd {lr~ubuwbiy~ap" id="UnityInLordShipDominion"></word>
-			<word text="tawHiyd {l&gt;asomaA&apos; wa{lS~ifaAt" id="UnityInEssenceAndAttributes"></word>
-			<word text="tawHiyd uluwhiy~ap EibaAdap" id="UnityInDivinityAndWorship"></word>
+			<word text="tawHiyd {lr~ubuwbiy~ap" id="OnenessOfLordshipDominion"></word>
+			<word text="tawHiyd {lEuluwhiy~ap EibaAdap" id="OnenessOfDivinityAndWorship"></word>
+			<word text="tawHiyd {l&gt;asomaA&apos; wa{lS~ifaAt" id="OnenessOfNamesAndAttributes"></word>
 			<word text="{l$~irk {l&gt;akbar" id="MajorAssociation"></word>
 			<word text="{l$~irk {l&gt;asgar" id="MajorAssociation"></word>
 			<word text="kitaAbap kawniy~ap" id="UniversalPrescription"></word>
@@ -2045,11 +2045,9 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="&gt;uSuwl {lofiqh" id="LegalMethodology"></word>
 			<word text="&lt;ilm {lokalaAm" id="Theology"></word>
 			<word text="&lt;ilm {l&gt;axlaAq" id="Ethics"></word>
-			<word text="tawHiyd {lr~ubuwbiy~ap" id="OnenessOfLordship"></word>
-			<word text="tawHiyd {lEuluwhiy~ap" id="OnenessOfWorship"></word>
-			<word text="tawHiyd {l&gt;asmaA wa{lsifaAt" id="OnenessOfNamesAndAttributes"></word>
 			<word text="Haq~ {ll~`h" id="RightOfAllah"></word>
 			<word text="qarD Hasan" id="InterestFreeLoan"></word>
+			<word text="tawHiydu {ll~`h" id="OnenessOfAllah"></word>
 		</category>
 		<category title="IslamicWords">
 			<word text="{ll~`h" id="Allah"></word>
@@ -2195,7 +2193,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="{loEamaliyap" id="Practical"></word>
 			<word text="{lr~uqaAq" id="HeartSofteners"></word>
 			<word text="{lomuqadamap" id="Introduction"></word>
-			<word text="{loEaqiydap" id="Doctrine"></word>
+			<word text="{loEaqiydap" id="DoctrineTheology"></word>
 			<word text="{loEibaAdat" id="Worship"></word>
 			<word text="{lomuEaAmalaAt" id="RighteousDealings"></word>
 			<word text="{l|xlaAq" id="Manners"></word>
@@ -2276,6 +2274,12 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="taHmiyd" id="PhraseForAllPraiseAndThanksBeToAllah"></word>
 			<word text="tasbiyH" id="PhraseForGloryBeToAllah"></word>
 			<word text="tawHiyd" id="OnenessOfGod"></word>
+			<word text="waH~ada" id="UniteUnifyConsolidate"></word>
+			<word text="rubuwbiy~ap" id="Domininion"></word>
+			<word text="{l&gt;asomaA&apos;" id="Names"></word>
+			<word text="{lS~ifaAt" id="Attributes"></word>
+			<word text="{lEuluwhiy~ap" id="Divinity"></word>
+			<word text="EibaAdap" id="Worship"></word>
 			<word text="Sawm" id="Fasting"></word>
 			<word text="zakaAp" id="AlmsGiving"></word>
 			<word text="Haj~" id="Pilgrimage"></word>
@@ -2428,6 +2432,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="|zaAr" id="Azar"></word>			
 			<word text="wahaAbiyap" id="Wahhabi"></word>
 			<word text="salafi" id="Salafi"></word>
+			<word text="muEtazilap" id="Rationalists"></word>
 			<word text="jibriyl" id="Gabriel"></word>
 			<word text="&lt;ibliys" id="Lucifer"></word>
 			<word text="$ayTaAn" id="Satan"></word>
