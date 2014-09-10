@@ -486,7 +486,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 		</category>
 		<category title="ForTheDeceasedAtFuneralPrayer">
 			<verse title="" text="{ll~`hum~i Agofiro lahu waAroHamoh waEAfihi waAEofu Eanoh wa&gt;akorimo nuzulah wawas~iEo mudoxalah waAgosilohu bi{lomA'i wa{lv~aloji wa{lobarado wanaq~ihi mina {loxTAyA kamA naq~yota {lv~awobu {l&gt;aboyaDu mina {ld~anaso wa&gt;abodilohu dArAF xayorAF mino dArih wa&gt;aholAF xayorAF mino &gt;aholih wazawojaAF xayorAF mino zawojih wa&gt;adoxilohu {lojan~ap wa&gt;aEi*ohu mino Ea*Abi {loqabor waEa*Abi {ln~Ar"></verse>
-			<verse title="" text="{ll~`hum~i Agofiro liHay~inA wamay~itinA wa$AhidinA wagA}ibinA waSagyrinA wakabyrinA wa*akarinA wa&gt;unovAnA {ll~`hum~i mano &gt;aHoyayotahu min~A fa&gt;aHoyihi EalY {l&lt;isolAm wamano tawaf~ayotahu min~A fatawaf~ahu EalY {l&lt;iymAn {ll~`hum~i lA taHorimonA &gt;ajorah walA tuDil~anA baEodah"></verse>
+			<verse title="" text="{ll~`hum~i Agofiro liHay~inA wamay~itinA wa$AhidinA wagA}ibinA waSagyrinA wakabyrinA wa*akarinA wa&gt;unovAnA {ll~`hum~i mano &gt;aHoyayotahu min~A fa&gt;aHoyihi EalY {l&lt;isolAm wamano tawaf~ayotahu min~A fatawaf~ahu EalY {l&lt;iymaAn {ll~`hum~i lA taHorimonA &gt;ajorah walA tuDil~anA baEodah"></verse>
 			<verse title="" text="{ll~`hum~i &lt;in~a fulAna bona fulAnK fy *im~atik waHaboli jiwArik faqihi mino fitonapi {loqabori waEa*Abi {ln~Ar wa&gt;anota &gt;aholu {lowafA'i wa{loHaq~i faAgofiro lahu waAroHamohu &lt;in~aka &gt;anota {logafwru {lr~aHym"></verse>
 			<verse title="" text="{ll~`hum~i Eaboduka waAbonu &gt;amatik AHotAja &lt;ilY raHomatik wa&gt;anota ganiy~N Eano Ea*Abih &lt;ino kAna muHosinAF fazido fy HasanAtih wa&lt;ino kAna musy}AF fatajAwazo Eanoh"></verse>
 		</category>
@@ -1977,7 +1977,8 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 		</category>
 		<category title="Concepts">
 			<word text="tawHiyd {lr~ubuwbiy~ap" id="OnenessOfLordshipDominion"></word>
-			<word text="tawHiyd {lEuluwhiy~ap EibaAdap" id="OnenessOfDivinityAndWorship"></word>
+			<word text="tawHiyd {loEuluwhiy~ap EibaAdap" id="OnenessOfDivinityAndWorship"></word>
+			<word text="tawHiyd {loEibaAdap" id="OnenessOfDivinityAndWorship"></word>
 			<word text="tawHiyd {l&gt;asomaA&apos; wa{lS~ifaAt" id="OnenessOfNamesAndAttributes"></word>
 			<word text="{l$~irk {l&gt;akbar" id="MajorAssociation"></word>
 			<word text="{l$~irk {l&gt;asgar" id="MajorAssociation"></word>
@@ -2042,12 +2043,23 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="Huwr {loEayn" id="FairLadiesOfTheRiver"></word>
 			<word text="taAbiEu {lt~aAbiEiyn" id="FollowersOfFollowers"></word>
 			<word text="qiyaAs {l$~abap" id="DeductionByResemblance"></word>
-			<word text="&gt;uSuwl {lofiqh" id="LegalMethodology"></word>
+			<word text="&gt;uSuwl {lofiqh" id="LegalMethodologyFundamentalPrinciplesOfIslamicLaw"></word>
 			<word text="&lt;ilm {lokalaAm" id="Theology"></word>
 			<word text="&lt;ilm {l&gt;axlaAq" id="Ethics"></word>
 			<word text="Haq~ {ll~`h" id="RightOfAllah"></word>
 			<word text="qarD Hasan" id="InterestFreeLoan"></word>
-			<word text="tawHiydu {ll~`h" id="OnenessOfAllah"></word>
+			<word text="tawHiydu {ll~`h" id="UnityOfAllah"></word>
+			<word text="yuwaH~iduw {ll~`h" id="OnenessOfAllah"></word>
+			<word text="&gt;uSuwl {lt~afsiyr" id="FundamentalPrinciplesOfQuranicInterpretation"></word>
+			<word text="Euluwm {loqur&apos;|n" id="QuranicSciences"></word>
+			<word text="rasmu {l&gt;uvmaAniy" id="UthmanicScript"></word>
+			<word text="&lt;iEjaAz {loqur&apos;|n" id="MiraculousAspectsOfTheQuran"></word>
+			<word text="&gt;asbaAb {ln~uzuwl" id="ReasonsForRevelation"></word>
+			<word text="{ln~aAsix wa{lomansuwx" id="AbrogatingAndAbrogatedVerses"></word>
+			<word text="&lt;ieraAb {loqur&apos;|n" id="QuranicGrammar"></word>
+			<word text="gariyb {loqur&apos;|n" id="UnusualQuranicTerms"></word>
+			<word text="majaAz {loqur&apos;|n" id="QuranicMetaphor"></word>
+			<word text="&gt;ahlu {lokitaAb" id="PeopleOfTheBook"></word>
 		</category>
 		<category title="IslamicWords">
 			<word text="{ll~`h" id="Allah"></word>
@@ -2138,7 +2150,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="muta$ad~iq" id="Loudmouthed"></word>
 			<word text="mutafariq" id="Sporadic"></word>
 			<word text="&lt;ijaAzh" id="Permission"></word>
-			<word text="m&amp;min" id="Faithful"></word>
+			<word text="mu&amp;min" id="Faithful"></word>
 			<word text="muHsin" id="Optimizer"></word>
 			<word text="munaAfiq" id="Hypocrite"></word>
 			<word text="mu$rik" id="Polythiest"></word>
@@ -2174,7 +2186,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="waliy" id="Guardian"></word>
 			<word text="dunyaA" id="World"></word>
 			<word text="&gt;axirap" id="Hereafter"></word>
-			<word text="&lt;imaAn" id="Faith"></word>
+			<word text="&lt;iymaAn" id="Faith"></word>
 			<word text="&lt;iHsaAn" id="Excellence"></word>
 			<word text="niy~ap" id="Intention"></word>
 			<word text="xaliyfap" id="Caliphate"></word>
@@ -2214,6 +2226,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="muraAqabap" id="OneWhoWitnesses"></word>
 			<word text="muqtasidiyn" id="OneWhoDoesGoodDeedsAndAbandonsProhibitions"></word>
 			<word text="muhkamaAt" id="ClearCut"></word>
+			<word text="muta$aAbip" id="DoubtfulMatters"></word>
 			<word text="mu$tabihaAt" id="DoubtfulMatters"></word>
 			<word text="qadariy~ap" id="ThoseBelievingNoPredestination"></word>
 			<word text="jabariy~ap" id="ThoseBelievingNoFreedomOfChoice"></word>
@@ -2228,6 +2241,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="{l&gt;amin" id="PeaceSecure"></word>
 			<word text="&lt;istgfaAr" id="AskForgiveness"></word>
 			<word text="tafsiyr" id="Commentary"></word>
+			<word text="qiraA&apos;|t" id="Recitations"></word>
 			<word text="ta&gt;owiyl" id="Interpretation"></word>
 			<word text="siyrap" id="Biography"></word>
 			<word text="fitnap" id="Persecution"></word>
@@ -2283,7 +2297,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="Sawm" id="Fasting"></word>
 			<word text="zakaAp" id="AlmsGiving"></word>
 			<word text="Haj~" id="Pilgrimage"></word>
-			<word text="qur|n" id="RevelationOfAllah"></word>
+			<word text="qur&apos;|n" id="RevelationOfAllah"></word>
 			<word text="suwrap" id="Chapter"></word>
 			<word text="|yap" id="Verse"></word>
 			<word text="juz&apos;" id="Part"></word>
@@ -2325,7 +2339,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="&lt;ijmaAE" id="Concensus"></word>
 			<word text="$uwraY" id="Consultation"></word>
 			<word text="majlis" id="Council"></word>
-			<word text="wahi" id="Revelation"></word>
+			<word text="waHy" id="Revelation"></word>
 			<word text="munaA*araAt" id="CourtDebates"></word>
 			<word text="taqliyd" id="BlindFollowing"></word>
 			<word text="qur&apos;" id="Menses"></word>
@@ -2361,6 +2375,13 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="mu$aArakap" id="Partnership"></word>
 			<word text="muDaArabap" id="ProfitSharing"></word>
 			<word text="&lt;ijaArap" id="Leasing"></word>
+			<word text="taqdiym" id="Advancement"></word>
+			<word text="ta&apos;xiyr" id="Delay"></word>
+			<word text="naAsix" id="Abrogating"></word>
+			<word text="mansuwx" id="Abrogated"></word>
+			<word text="*ulm" id="Transgression"></word>
+			<word text="siwaAk" id="ToothStick"></word>
+			<word text="gaADib" id="Angry"></word>
 		</category>
 		<category title="Names">
 			<word text="&gt;abuw {loqaAsim muHam~ad bin Eabd {ll~`h bin Eabdu {lomuT~alib bin haA$im‎" id="MuhammadBinAbdullahBinAbduAlMuttalib"></word>
