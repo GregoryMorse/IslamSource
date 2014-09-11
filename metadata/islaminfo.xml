@@ -1143,7 +1143,6 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="Hamiyd" id="Praiseworthy"></word>
 			<word text="Hamiym" id="WarmFriendBoilingWater"></word>
 			<word text="xabiyr" id="KnowingEverAware"></word>
-			<word text="rab~" id="LordSustainer"></word>
 			<word text="raHoman" id="Compassionate"></word>
 			<word text="salaAm" id="Peace"></word>
 			<word text="samiyE" id="OneWhoListens"></word>
@@ -1319,7 +1318,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="makaAn" plural="makaAnap" id="PlaceAbode"></word>
 
 			<word text="bay~inap" plural="bay~inaAt" id="ClearEvidence"></word>
-			<word text="rab~" plural="&gt;arobaAb" id="Lord"></word>
+			<word text="rab~" plural="&gt;arobaAb" id="LordSustainer"></word>
 			<word text="kawokib" plural="kawaAkib" id="Star"></word>
 			<word text="miyqaAt" plural="mawaAqiyt" id="Appointment"></word>
 			<word text="vamorap" plural="vamaraAt" id="Fruit"></word>
@@ -2282,7 +2281,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="tayam~um" id="DustAblution"></word>
 			<word text="gusl" id="MajorAblution"></word>
 			<word text="duEaA&apos;" id="Supplication"></word>
-			<word text="*ikr" id="Remembrance"></word>
+			<word text="*ikr" id="ReminderRemembrance"></word>
 			<word text="$ahaAdap" id="Creed"></word>
 			<word text="takobiyr" id="PhraseForAllahIsGreatest"></word>
 			<word text="taHmiyd" id="PhraseForAllPraiseAndThanksBeToAllah"></word>
@@ -2298,6 +2297,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="zakaAp" id="AlmsGiving"></word>
 			<word text="Haj~" id="Pilgrimage"></word>
 			<word text="qur&apos;|n" id="RevelationOfAllah"></word>
+			<word text="furqaAn" id="DistinctionCriterion"></word>
 			<word text="suwrap" id="Chapter"></word>
 			<word text="|yap" id="Verse"></word>
 			<word text="juz&apos;" id="Part"></word>
@@ -2382,6 +2382,16 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="*ulm" id="Transgression"></word>
 			<word text="siwaAk" id="ToothStick"></word>
 			<word text="gaADib" id="Angry"></word>
+			<word text="qaT&apos;iy" id="Incontrovertible"></word>
+			<word text="van~iy" id="Conjecture"></word>
+			<word text="nahw" id="Grammar"></word>
+			<word text="sarf" id="etymology"></word>
+			<word text="mutawaAtir" id="CredibleReport"></word>
+			<word text="tawaatur" id="ProcessOfCredibleReporting"></word>
+			<word text="&lt;iEjaz" id="RenderingIncapablePowerless"></word>
+			<word text="muEjizap" id="Miracle"></word>
+			<word text="Sarfap" id="TurningAway"></word>
+			<word text="sajE" id="RhymingProse"></word>
 		</category>
 		<category title="Names">
 			<word text="&gt;abuw {loqaAsim muHam~ad bin Eabd {ll~`h bin Eabdu {lomuT~alib bin haA$im‎" id="MuhammadBinAbdullahBinAbduAlMuttalib"></word>
