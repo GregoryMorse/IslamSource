@@ -1037,7 +1037,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="fiymaA" id="InWhat"></word>
 			<word text="kamaA" id="AsJustAs"></word>
 			<word text="limaA" id="ForWhatForThatWhich"></word>
-			<word text="mim~aA" id="OutOfWhat"></word>
+			<word text="mim~aA" basis="mino maA" id="OutOfWhat"></word>
 			<word text="&gt;am~aA" id="AsToAsFor"></word>
 			<word text="&lt;im~aA" id="IfEitherOr"></word>
 			<word text="&gt;an~amaA" id="That"></word>
@@ -1050,7 +1050,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="ka" id="AsLikeSimilarity" grammar="pos"></word>
 			<word text="li" id="ForTo" grammar="pos"></word>
 			<word text="la" id="For" grammar="prespos"></word>
-			<word text="mino" id="From" grammar="pos"></word>
+			<word text="mino mina" id="From" grammar="pos"></word>
 			<word text="&lt;ilaY" id="ToTowards" grammar="pos"></word>
 			<word text="ta ti" id="ByOfOath" grammar="pos"></word>
 			<word text="Hat~aY" id="Until" grammar="pos|acc"></word>
@@ -1647,9 +1647,12 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="{lD~amiA{iru {lomunofaSilap" id="DetachedPronouns"></word>
 			<word text="{lD~amiA{iru {lomut~aSilap" id="AttachedPronouns"></word>
 			<word text="lafoZu {lojalaAlap" id="GrandWord"></word>
-			<word text="rafoE" id="Nominative"></word>
-			<word text="naSob" id="Accusative"></word>
-			<word text="jar~" id="Possessive"></word>
+			<word text="rafoE" id="NominativeState"></word>
+			<word text="naSob" id="AccusativeState"></word>
+			<word text="jar~" id="PossessiveState"></word>
+			<word text="marfuwEN" id="Nominative"></word>
+			<word text="manSuwbN" id="Accusative"></word>
+			<word text="majruwrN" id="Possessive"></word>
 			<word text="{loEadad" id="NumberPlurality"></word>
 			<word text="{lojinos" id="Gender"></word>
 			<word text="{loqisom" id="Definiteness"></word>
@@ -1742,6 +1745,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="naA}ibu {lofaAEil" id="DeputyDoer"></word>
 			<word text="mutaEal~iq" id="ParticleAssociatedVerbs"></word>
 			<word text="la|mu {lt~awokiyd" id="LaamOfEmphasis"></word>
+			<word text="{l tEariyf" id="AlOfDefiniteness"></word>
 		</category>
 		<category title="RulesOfRecitation">
 			<word text="sif~aAt" id="LetterCharacteristics"></word>
@@ -2059,6 +2063,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="gariyb {loqur&apos;|n" id="UnusualQuranicTerms"></word>
 			<word text="majaAz {loqur&apos;|n" id="QuranicMetaphor"></word>
 			<word text="&gt;ahlu {lokitaAb" id="PeopleOfTheBook"></word>
+			<word text="manaAhij {lotafsiyr" id="MethodologyOfQuranicInterpretation"></word>
 		</category>
 		<category title="IslamicWords">
 			<word text="{ll~`h" id="Allah"></word>
@@ -2178,6 +2183,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="wasubaHaAn" id="AndEveryone"></word>
 			<word text="Eumrap" id="MinorPilgrimage"></word>
 			<word text="Eabd" id="Slave"></word>
+			<word text="&gt;amat" id="FemaleSlave"></word>
 			<word text="rakabap" id="Neck"></word>
 			<word text="taqwaY" id="Piety"></word>
 			<word text="$ayx" id="Sheikh"></word>
@@ -2241,6 +2247,13 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="&lt;istgfaAr" id="AskForgiveness"></word>
 			<word text="tafsiyr" id="Commentary"></word>
 			<word text="qiraA&apos;|t" id="Recitations"></word>
+			<word text="mujaw~ad" id="MelodicRecitation"></word>
+			<word text="murat~al" id="SlowPracticeRecitation"></word>
+			<word text="tartiyl" id="SlowMeasuredRhythmicTones"></word>
+			<word text="{lt~aHoqiyq" id="PreciseMethodicalRecitation"></word>
+			<word text="{lt~adowiyr" id="InBetweenRecitation"></word>
+			<word text="{loHador" id="RapidRecitation"></word>
+			<word text="maqam" id="SystemOfMelodicModes"></word>
 			<word text="ta&gt;owiyl" id="Interpretation"></word>
 			<word text="siyrap" id="Biography"></word>
 			<word text="fitnap" id="Persecution"></word>
@@ -2335,6 +2348,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="nasx" id="Abrogation"></word>
 			<word text="waSiy~ap" id="Bequest"></word>
 			<word text="&lt;ijotihaAd" id="ReasonedDecision"></word>
+			<word text="fatwaY" id="Ruling"></word>
 			<word text="qiyaAs" id="AnalogicalDeduction"></word>
 			<word text="&lt;ijmaAE" id="Concensus"></word>
 			<word text="$uwraY" id="Consultation"></word>
@@ -2392,6 +2406,64 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="muEjizap" id="Miracle"></word>
 			<word text="Sarfap" id="TurningAway"></word>
 			<word text="sajE" id="RhymingProse"></word>
+			<word text="&lt;ilm" plural="&gt;uluwm" id="KnowledgeScience"></word>
+			<word text="&gt;asl" plural="&gt;usuwl" id="PrincipleMethod"></word>
+			<word text="manhaj" plural="manaAhij" id="Methodology"></word>
+		</category>
+		<category title="RegularWords">
+			<word text="{ld~ars" id="Lesson"></word>
+			<word text="{lomaEonaY" id="Meaning"></word>
+			<word text="{lomufradaAtu" id="Vocabulary"></word>
+			<word text="{lt~adriybaAtu" id="Drill"></word>
+			<word text="{loqawaAEidu" id="GrammarRules"></word>
+			<word text="{lt~amriynaAtu" id="Exercise"></word>
+			<word text="bayotN" plural="buyuwtN" id="HouseHome"></word>
+			<word text="faSolN" plural="fuSuwlN" id="ClassClassroom"></word>
+			<word text="kitaAb" plural="kutub" id="Book"></word>
+			<word text="mudar~isN" plural="mudar~isuwna" id="Teacher"></word>
+			<word text="mudar~isapN" plural="mudar~isaAtN" grammar="f" id="Teacher"></word>
+			<word text="madorasapN" grammar="f" id="School"></word>
+			<word text="TaAlibN" plural="TulaAbN" id="Student"></word>
+			<word text="TaAlibapN" plural="TaAlibaAtN" grammar="f" id="Student"></word>
+			<word text="qalamN" plural="&gt;aqolaAmN" id="Pen"></word>
+			<word text="madiynapN" plural="mudunN" grammar="f" id="City"></word>
+			<word text="muHam~adN" id="Muhammad"></word>
+			<word text="xaAlidN" id="Khaalid"></word>
+			<word text="saAlimN" id="Saalim"></word>
+			<word text="Safiy~apu" grammar="f" id="Safeeyah"></word>
+			<word text="xadiyjapu" grammar="f" id="Khadeejah"></word>
+			<word text="&gt;amiynapu" grammar="f" id="Ameenah"></word>
+			<word text="maroyamu" grammar="f" id="Mary"></word>
+			<word text="faATimapu" grammar="f" id="Faatimah"></word>
+			<word text="EaA}i$apu" grammar="f" id="Aaishah"></word>
+			<word text="&gt;amoriykaA" id="America"></word>
+			<word text="{lS~iynu" id="China"></word>
+			<word text="sriylaAnkaA" id="SriLanka"></word>
+			<word text="briyTaAniyaA" id="GreatBritain"></word>
+			<word text="kanadaA" id="Canada"></word>
+			<word text="{lofiliybiynu" id="Philippines"></word>
+			<word text="{lohinodu" id="India"></word>
+			<word text="{l&gt;urodun~u" id="Jordon"></word>
+			<word text="{lojazaA}iru" id="Algeria"></word>
+			<word text="{loEiraAqo" id="Iraq"></word>
+			<word text="&lt;inoduwniysiyaA" id="Indonesia"></word>
+			<word text="{lobaAkistaAnu baAkistaAnu" id="Pakistan"></word>
+			<word text="&gt;alomaAniyaA" id="Germany"></word>
+			<word text="kiyniyaA" id="Kenya"></word>
+			<word text="{l&gt;imaAraAtu" id="Emirates"></word>
+			<word text="{ls~aEuwdiy~apu" id="Saudi Arabia"></word>
+			<word text="{lokuwayotu" id="Kuwait"></word>
+			<word text="foranosaA" id="France"></word>
+			<word text="{lomagoribu" id="Morocco"></word>
+			<word text="{ls~uwdaAno" id="Sudan"></word>
+			<word text="miSru" id="Egypt"></word>
+			<word text="lubonaAnu" id="Lebanon"></word>
+			<word text="tuwnisu" id="Tunisia"></word>
+			<word text="jid~atu" id="Jeddah"></word>
+			<word text="mak~apu" id="Makkah"></word>
+			<word text="biyruwtu" id="Beirut"></word>
+			<word text="Eam~aAnu" id="Amman"></word>
+			<word text="&gt;asmaA&apos;u {ld~uwali" id="NamesOfCountries"></word>
 		</category>
 		<category title="Names">
 			<word text="&gt;abuw {loqaAsim muHam~ad bin Eabd {ll~`h bin Eabdu {lomuT~alib bin haA$im‎" id="MuhammadBinAbdullahBinAbduAlMuttalib"></word>
@@ -2433,24 +2505,41 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="maymuwnah binti {loHaAriv‎" id="MaymunaBintAlHarith"></word>
 			<word text="maAryap {loqubTiy~ap‎" id="MariaAlQibtiyya"></word>
 			<word text="rayHaAnap binti zayd‎" id="RayhanaBintZayd"></word>
-			<word text="Abuw hurayrah" id="AbuHurairah"></word>
+			<word text="&gt;abuw hurayrah" id="AbuHurairah"></word>
 			<word text="xaAlid bin {lowaliyd" id="KhalidBinWalid"></word>
 			<word text="Eabdu {ll~`h bin masEuwd" id="AbdullahBinMasood"></word>
+			<word text="Eabdu {ll~`h bin Eab~aAs" id="AbdullahBinAbbas"></word>
+			<word text="Eabdu {ll~`h bin Eumar" id="AbdullahBinUmar"></word>
+			<word text="Eabdu {ll~`h bin Eamr bin {loEaAS" id="AbdullahBinAmrBinAlAas"></word>
+			<word text="zayd bin vaAbit" id="ZaydBinThaabit"></word>
+			<word text="&gt;ubay~ bin kaEb" id="UbayyBinKab"></word>
+			<word text="&gt;anas bin maAlik" id="AnasBinMaalik"></word>
+			<word text="jaAbir bin Eabdu {ll~`h" id="JaabirBinAbdullah"></word>
+			<word text="&gt;abuw muwsaY {l&gt;a$Eariy" id="AbooMoosaaAlAsharee"></word>
+			<word text="muEaA* bin jabal" id="MuathBinJabal"></word>
+			<word text="saAlim mawlaY &gt;abiy Hu*ayfap" id="SaalimMawlaaAbeeHuthayfah"></word>
+			<word text="Eabdu {ll~`h bin {lzubayr" id="AbdullahBinAlZubayr"></word>
+			<word text="&gt;abuw zayd" id="AbooZayd"></word>
+			<word text="&gt;abuw {lodarda&apos;" id="AbooDarda"></word>
 			<word text="Abuw sufyaAn bin Harf" id="AbuSufyan"></word>
 			<word text="muEaAwiyap bin &gt;abiy sufyaAn" id="Muawiyyah"></word>
-			<word text="Abuw Haniyfah" id="AbuHanifa"></word>
-			<word text="maAlik" id="Malik"></word>
+			<word text="&gt;abuw Haniyfah" id="AbuHanifa"></word>
+			<word text="maAlik bin &gt;anas" id="Malik"></word>
 			<word text="$AfiEiy" id="Shafii"></word>
 			<word text="Hanbal" id="Hanbal"></word>
-			<word text="Abuw dahr" id="AbuDahr"></word>
-			<word text="Abuw jahal" id="AbuJahal"></word>
-			<word text="Abuw lahab" id="AbuLahab"></word>
+			<word text="sufyaAn {lv~awri" id="SufyanAlThawri"></word>
+			<word text="{l&gt;awzaAEi" id="AlAwzaai"></word>
+			<word text="{ll~av bin saEd" id="AlLaythBinSad"></word>
+			<word text="&gt;abuw dahr" id="AbuDahr"></word>
+			<word text="&gt;abuw jahal" id="AbuJahal"></word>
+			<word text="&gt;abuw lahab" id="AbuLahab"></word>
 			<word text="{l&lt;imaAm {ln~awawiy 40 Hadiyv" id="ImamNawawi40Hadith"></word>
 			<word text="Eamr bin {loEaAS" id="AmrBinAlAas"></word>
 			<word text="{ll~ayv bin saAd" id="AlLaythBinSaad"></word>
 			<word text="saEd bin waEd" id="SaadBinWaad"></word>
 			<word text="baniw vaqiyf" id="BaniThaqeef"></word>
 			<word text="{loxawaArij" id="Khawarij"></word>
+			<word text="$iyEap" id="Shia"></word>
 			<word text="quray$" id="Quraish"></word>
 			<word text="baniw hA$im" id="BaniHashim"></word>
 			<word text="{l&gt;umawiy~ap‎" id="Umayyad"></word>
@@ -2469,12 +2558,15 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="$ayTaAn" id="Satan"></word>
 			<word text="firawn" id="Pharoah"></word>
 			<word text="yaAjuwj wa maAjuwj" id="GogAndMagog"></word>
+			<word text="&gt;ahlu {lHadiyv" id="PeopleOfHadith"></word>
+			<word text="&gt;ahlu {lr~aA&apos;i" id="PeopleOfReasoningOpinion"></word>
 		</category>
 		<category title="Places">
 			<word text="{l&lt;israA&apos; wa{lomiEraAj‎" id="IsraAndMiraj"></word>
 			<word text="{lt~aEif" id="Taaif"></word>
 			<word text="madiynah {lomunaw~irap" id="Medina"></word>
 			<word text="mak~ah {lomukarimap" id="Mecca"></word>
+			<word text="HijaAz" id="WesternCoastOfArabianPeninsula"></word>
 			<word text="kaEbap" id="Kaaba"></word>
 			<word text="Hunayn" id="Hunain"></word>
 			<word text="{loHudabiy~ah" id="Hudabiyyah"></word>
@@ -2489,6 +2581,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="{lomasjid {loHaraAm" id="SacredMosque"></word>
 			<word text="{lomasjid {ln~abawiy" id="MosqueOfTheProphet"></word>
 			<word text="{lomasjid {l&gt;aqSaY‎" id="FarthestMosque"></word>
+			<word text="baytu {lomaAl" id="CentralTreasury"></word>
 			<word text="Eayd {lofiTr‎" id="FestivalOfBreakingFast"></word>
 			<word text="Eayd {l&gt;aDHaY‎" id="FestivalOfSacrifice"></word>
 			<word text="r&gt;as {ls~anap {lohijriyap‎" id="IslamicNewYear"></word> 
@@ -2796,6 +2889,10 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			</translations>
 		</collection>
 	</hadithcollections>
+	<islamicbooks>
+		<book title="Ulum Al-Qur&apos;an" author="Ahmad Von Denffer"></book>
+		<book title="An Introduction to the Sciences of the Qur&apos;an" author="Yasir Qadh"></book>
+	</islamicbooks>
 	<qurandivisions>
 		<division description="Chapters"></division>
 		<division description="ChaptersRevelationOrder"></division>
