@@ -2064,6 +2064,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="majaAz {loqur&apos;|n" id="QuranicMetaphor"></word>
 			<word text="&gt;ahlu {lokitaAb" id="PeopleOfTheBook"></word>
 			<word text="manaAhij {lotafsiyr" id="MethodologyOfQuranicInterpretation"></word>
+			<word text="haAlatul janabap" id="StateofMajorRitualImpurity"></word>
 		</category>
 		<category title="IslamicWords">
 			<word text="{ll~`h" id="Allah"></word>
@@ -2210,7 +2211,8 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="{loEamaliyap" id="Practical"></word>
 			<word text="{lr~uqaAq" id="HeartSofteners"></word>
 			<word text="{lomuqadamap" id="Introduction"></word>
-			<word text="{loEaqiydap" id="DoctrineTheology"></word>
+			<word text="{loEaqiydap" id="DoctrineTheologyPrincipleOfBelief"></word>
+			<word text="Eaqada" id="ConsolidationAffirmationHoldingTogether"></word>
 			<word text="{loEibaAdat" id="Worship"></word>
 			<word text="{lomuEaAmalaAt" id="RighteousDealings"></word>
 			<word text="{l|xlaAq" id="Manners"></word>
@@ -2293,6 +2295,18 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="wuDuw&apos;" id="Ablution"></word>
 			<word text="tayam~um" id="DustAblution"></word>
 			<word text="gusl" id="MajorAblution"></word>
+			<word text="TahaArap" id="Purification"></word>
+			<word text="TaAhir" id="RitualPurity"></word>
+			<word text="TawaAf" id="Circumambulation"></word>
+			<word text="najasap" id="StateOfRitualImpurity"></word>
+			<word text="najis" id="RituallyImpure"></word>
+			<word text="junub" id="MajorRitualImpurity"></word>
+			<word text="masaH" id="RituallyCleaningHeadFeet"></word>
+			<word text="xitaAn" id="Circumcision"></word>
+			<word text="xilaAl" id="PurifyingFingerToesBeard"></word>
+			<word text="muShaf" id="Codex"></word>
+			<word text="fidyap" id="ReligiousDonation"></word>
+			<word text="kaf~aArap" id="ReligiousDonationExpiation"></word>
 			<word text="duEaA&apos;" id="Supplication"></word>
 			<word text="*ikr" id="ReminderRemembrance"></word>
 			<word text="$ahaAdap" id="Creed"></word>
