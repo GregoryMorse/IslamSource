@@ -233,16 +233,16 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 	</prayertimes>
 	<verses>
 		<category title="WhenWakingUp">
-			<verse title="" text="{loHamodu lil~`hi Al~a*iyo &gt;aHoyaAnaA baEoda maA &gt;amaAtanaA wa&lt;ilayohi {ln~u$uwru"></verse>
-			<verse title="" text="lA &lt;ilha &lt;ilA~ {ll~`hu waHodahu lA $aryka lh lhu {lomulku wlhu {loHamd whwa ElY kl~ $y&apos;K qdyr suboHAna {ll~`hi wAlHmodu llh wlA &lt;ilha &lt;ilA~ {ll~`hu w{ll~`hu &gt;akbar walA Hawla walA qw~p &lt;ilA~ bi{ll~`hi {loEly~ {loEZym"></verse>
-			<verse title="" text="{loHamdu lil~`hi Al*y EAfAny fy jasady warad~ Ealy~ rwHy wa&gt;a*ina ly bi*ikorih"></verse>
-			<verse title="" text="{3:190-200}"></verse>
+			<verse title="WhenWakingUp1" text="{loHamodu lil~`hi Al~a*iyo &gt;aHoyaAnaA baEoda maA &gt;amaAtanaA wa&lt;ilayohi {ln~u$uwru"></verse>
+			<verse title="WhenWakingUp2" text="laA &lt;ilaha &lt;il~aA {ll~`hu waHodahu laA $ariyka lahu lahu {lomuloku walahu {loHamodu wahuwa EalaY kul~i $ayo&apos;K qadiyrN suboHaAna {ll~`hi wa{lHamodu lil~`hi walaA &lt;ilaha &lt;il~aA {ll~`hu w{ll~`hu &gt;akobaru walaA Hawola walaA quw~apa &lt;il~aA bi{ll~`hi {loEaliy~i {loEaZiymi rab~i {gofiroliy"></verse>
+			<verse title="WhenWakingUp3" text="{loHamodu lil~`hi Al~a*iyo EaAfaAniy fiy jasadiy warad~a Ealay~a ruwHiy wa&gt;a*ina liy bi*ikorihi"></verse>
+			<verse title="WhenWakingUp4" text="{3:190-200}"></verse>
 		</category>
 		<category title="WhenWearingAGarment">
-			<verse title="" text="{loHamodu lil~`hi Al~a*iyo kasaAniyo h`*aA (Alv~awoba) warazaqaniyohi mino gayori HawolK m~in~iyo walAa quw~apK"></verse>
+			<verse title="WhenWearingAGarment1" text="{loHamodu lil~`hi Al~a*iyo kasaAniyo h`*aA ({lv~awoba) warazaqaniyhi mino gayori HawolK min~iyo walaA quw~apK"></verse>
 		</category>
 		<category title="WhenWearingANewGarment">
-			<verse title="" text="{ll~`huma~ laka {loHamodu &gt;anota kasawotaniyhi &gt;aso&gt;aluka mino xayorihi waxayori maA SuniEa lahu wa&gt;aEuw*u bika mino $ari~hi wa$ari~ maA SuniEa lahu"></verse>
+			<verse title="WhenWearingANewGarment1" text="{ll~`hum~a laka {loHamodu &gt;anota kasawotaniyhi &gt;aso&gt;aluka mino xayorihi waxayori maA SuniEa lahu wa&gt;aEuw*u bika mino $ari~hi wa$ar~i maA SuniEa lahu"></verse>
 		</category>
 		<category title="WhenSomeoneElseWearingANewGarment">
 			<verse title="" text="tuboliy wayuxolifu {ll~`hu taEaAlaY"></verse>
@@ -2423,6 +2423,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="&lt;ilm" plural="&gt;uluwm" id="KnowledgeScience"></word>
 			<word text="&gt;asl" plural="&gt;usuwl" id="PrincipleMethod"></word>
 			<word text="manhaj" plural="manaAhij" id="Methodology"></word>
+			<word text="{lt~a$riyE" plural="" id="Legislation"></word>
 		</category>
 		<category title="RegularWords">
 			<word text="{ld~ars" id="Lesson"></word>
@@ -2478,6 +2479,36 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="biyruwtu" id="Beirut"></word>
 			<word text="Eam~aAnu" id="Amman"></word>
 			<word text="&gt;asmaA&apos;u {ld~uwali" id="NamesOfCountries"></word>
+		</category>
+		<category title="Common">
+			<word text="qaliylaA" id="Little"></word>
+			<word text="kabiyr" id="Big"></word>
+			<word text="yamiyn" id="Right"></word>
+			<word text="yasaAr" id="Left"></word>
+			<word text="xulf" id="Behind"></word>
+			<word text="&gt;amaAm" id="Front"></word>
+			<word text="baEad" id="After"></word>
+			<word text="qabl" id="Before"></word>
+			<word text="{lowaqt" id="Time"></word>
+			<word text="{lv~aAniy" id="Second"></word>
+			<word text="daqiyqap" id="Minute"></word>
+			<word text="saAEap" id="Hour"></word>
+			<word text="{loyawm" id="Day"></word>
+			<word text="{l&gt;usbuwE" id="Week"></word>
+			<word text="{l$~ahr" id="Month"></word>
+			<word text="sanap" id="Year"></word>
+			<word text="kam" id="HowMany"></word>
+			<word text="mataY" id="When"></word>
+			<word text="kaviyr" id="Many"></word>
+			<word text="biAxtiSaAr" id="Short"></word>
+			<word text="Tawiyl {loqaAmap" id="Tall"></word>
+			<word text="&gt;a$taraY" id="Buy"></word>
+			<word text="baAEt" id="Sell"></word>
+			<word text="" id=""></word>
+			<word text="" id=""></word>
+			<word text="" id=""></word>
+			<word text="" id=""></word>
+			<word text="" id=""></word>
 		</category>
 		<category title="Names">
 			<word text="&gt;abuw {loqaAsim muHam~ad bin Eabd {ll~`h bin Eabdu {lomuT~alib bin haA$im‎" id="MuhammadBinAbdullahBinAbduAlMuttalib"></word>
@@ -2567,6 +2598,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="wahaAbiyap" id="Wahhabi"></word>
 			<word text="salafi" id="Salafi"></word>
 			<word text="muEtazilap" id="Rationalists"></word>
+			<word text="qur&apos;|niyuwn" id="QuranFollowers"></word>
 			<word text="jibriyl" id="Gabriel"></word>
 			<word text="&lt;ibliys" id="Lucifer"></word>
 			<word text="$ayTaAn" id="Satan"></word>

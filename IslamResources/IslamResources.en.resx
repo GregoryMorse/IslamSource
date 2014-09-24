@@ -1326,6 +1326,60 @@
   <data name="IslamInfo_FortyOurLordSupplications" xml:space="preserve">
     <value>40 Our Lord Supplications</value>
   </data>
+  <data name="IslamInfo_WhenWearingANewGarment" xml:space="preserve">
+    <value>When Wearing A New Garment</value>
+  </data>
+  <data name="IslamInfo_WhenWearingANewGarment1" xml:space="preserve">
+    <value>When Wearing A New Garment</value>
+  </data>
+  <data name="IslamInfo_WhenWearingANewGarment1Trans" xml:space="preserve">
+    <value>O Allah, praise is to You.  You have clothed me.  I ask You for its goodness and the goodness of what it has been made for, and I seek Your protection from the evil of it and the evil of what it has been made for.</value>
+  </data>
+  <data name="IslamInfo_WhenWearingANewGarment1WordByWord" xml:space="preserve">
+    <value>O Allah|to You|(is) praise|You|have clothed me|I ask You|for|its goodness|and the goodness|of what|has been made|for it|and I seek protection|with You|from|the evil of it|and the evil|of what|has been made|for it</value>
+  </data>
+  <data name="IslamInfo_WhenWearingAGarment" xml:space="preserve">
+    <value>When Wearing A Garment</value>
+  </data>
+  <data name="IslamInfo_WhenWearingAGarment1" xml:space="preserve">
+    <value>When Wearing A Garment</value>
+  </data>
+  <data name="IslamInfo_WhenWearingAGarment1Trans" xml:space="preserve">
+    <value>Praise is to Allah Who has clothed me with this (garment) (3x) and provided it for me, though I was powerless myself and incapable.</value>
+  </data>
+  <data name="IslamInfo_WhenWearingAGarment1WordByWord" xml:space="preserve">
+    <value>Praise|(is) to Allah|Who|has clothed me with|this (garment)|(3x)|and provided it for me|from|other than|power|(of) myself|and incapable</value>
+  </data>
+  <data name="IslamInfo_WhenWakingUp" xml:space="preserve">
+    <value>When Waking Up</value>
+  </data>
+  <data name="IslamInfo_WhenWakingUp1" xml:space="preserve">
+    <value>When Waking Up 1</value>
+  </data>
+  <data name="IslamInfo_WhenWakingUp1Trans" xml:space="preserve">
+    <value>Praise is to Allah Who gives us life after He has caused us to die and to Him is the return.</value>
+  </data>
+  <data name="IslamInfo_WhenWakingUp1WordByWord" xml:space="preserve">
+    <value>Praise is|to Allah|Who|gives us life|after||He has caused us to die|and to Him|is the return</value>
+  </data>
+  <data name="IslamInfo_WhenWakingUp2" xml:space="preserve">
+    <value>When Waking Up 2</value>
+  </data>
+  <data name="IslamInfo_WhenWakingUp2Trans" xml:space="preserve">
+    <value>There is none worthy of worship but Allah alone, Who has no partner.  His is the dominion and to Him belongs all praise, and He is Able to do all things.  Glory is to Allah.  Praise is to Allah.  There is none worthy of worship but Allah.  Allah is the Most Great.  There is no might and no power except by Allah's leave, the Exalted, the Mighty.  My Lord, forgive me.</value>
+  </data>
+  <data name="IslamInfo_WhenWakingUp2WordByWord" xml:space="preserve">
+    <value>There is none|worthy of worship|but|Allah|alone|no|partner|for Him|His|is the dominion|and to Him|belongs all praise|and He is|upon|all|things|powerful|Glory|is to Allah|Praise|is to Allah|There is none|worthy of worship|but|Allah|Allah|is the Most Great|There is no|might|and no|power|except|by Allah's leave|the Exalted|the Mighty|My Lord|forgive me</value>
+  </data>
+  <data name="IslamInfo_WhenWakingUp3" xml:space="preserve">
+    <value>When Waking Up 3</value>
+  </data>
+  <data name="IslamInfo_WhenWakingUp3Trans" xml:space="preserve">
+    <value>Praise is to Allah Who gave strength to my body and returned my soul to me and permitted me to remember Him.</value>
+  </data>
+  <data name="IslamInfo_WhenWakingUp3WordByWord" xml:space="preserve">
+    <value>Praise|(is) to Allah|Who|gave strength|to|my body|and returned|to me|my soul|and permitted|me|to remember Him</value>
+  </data>
   <data name="IslamInfo_FourthCreed" xml:space="preserve">
     <value>Fourth creed - The word of Unity (Tauhid)</value>
   </data>
