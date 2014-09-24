@@ -1461,6 +1461,75 @@
   <data name="IslamInfo_FortyOurLordSupplications" xml:space="preserve">
     <value>40 Our Lord Supplications</value>
   </data>
+  <data name="IslamInfo_BeforeUndressing" xml:space="preserve">
+    <value>Before Undressing</value>
+  </data>
+  <data name="IslamInfo_BeforeUndressing1" xml:space="preserve">
+    <value>Before Undressing</value>
+  </data>
+  <data name="IslamInfo_BeforeUndressing1Trans" xml:space="preserve">
+    <value>In the name of Allah.</value>
+  </data>
+  <data name="IslamInfo_BeforeUndressing1WordByWord" xml:space="preserve">
+    <value>In the name of|Allah</value>
+  </data>
+  <data name="IslamInfo_BeforeEnteringTheToilet" xml:space="preserve">
+    <value>Before Entering The Toilet</value>
+  </data>
+  <data name="IslamInfo_BeforeEnteringTheToilet1" xml:space="preserve">
+    <value>After Leaving The Toilet</value>
+  </data>
+  <data name="IslamInfo_BeforeEnteringTheToilet1Trans" xml:space="preserve">
+    <value>(In the name of Allah). (Then) O Allah, I seek protection in You from the male and female unclean spirits.</value>
+  </data>
+  <data name="IslamInfo_BeforeEnteringTheToilet1WordByWord" xml:space="preserve">
+    <value>(In the name of|Allah)|(Then) O Allah|I|seek protection|in You|from|the male unclean spirits|and the female unclean spirits</value>
+  </data>
+  <data name="IslamInfo_AfterLeavingTheToilet" xml:space="preserve">
+    <value>After Leaving The Toilet</value>
+  </data>
+  <data name="IslamInfo_AfterLeavingTheToilet1" xml:space="preserve">
+    <value>After Leaving The Toilet</value>
+  </data>
+  <data name="IslamInfo_AfterLeavingTheToilet1Trans" xml:space="preserve">
+    <value>I seek Your forgiveness.</value>
+  </data>
+  <data name="IslamInfo_AfterLeavingTheToilet1WordByWord" xml:space="preserve">
+    <value>I seek Your forgiveness</value>
+  </data>
+  <data name="IslamInfo_WhenStartingAblution" xml:space="preserve">
+    <value>When Starting Ablution</value>
+  </data>
+  <data name="IslamInfo_WhenStartingAblution1" xml:space="preserve">
+    <value>When Starting Ablution</value>
+  </data>
+  <data name="IslamInfo_WhenStartingAblution1Trans" xml:space="preserve">
+    <value>In the name of Allah.</value>
+  </data>
+  <data name="IslamInfo_WhenStartingAblution1WordByWord" xml:space="preserve">
+    <value>In the name of|Allah</value>
+  </data>
+  <data name="IslamInfo_WhenSomeoneElseWearingANewGarment" xml:space="preserve">
+    <value>When Someone Else Is Wearing A New Garment</value>
+  </data>
+  <data name="IslamInfo_WhenSomeoneElseWearingANewGarment1" xml:space="preserve">
+    <value>When Someone Else Is Wearing A New Garment</value>
+  </data>
+  <data name="IslamInfo_WhenSomeoneElseWearingANewGarment1Trans" xml:space="preserve">
+    <value>May Allah replace it when it is worn out.</value>
+  </data>
+  <data name="IslamInfo_WhenSomeoneElseWearingANewGarment1WordByWord" xml:space="preserve">
+    <value>Worn out|then it is replaced|(by) Allah|the Most High</value>
+  </data>
+  <data name="IslamInfo_WhenSomeoneElseWearingANewGarment2" xml:space="preserve">
+    <value>When Someone Else Is Wearing A New Garment</value>
+  </data>
+  <data name="IslamInfo_WhenSomeoneElseWearingANewGarment2Trans" xml:space="preserve">
+    <value>Put on new clothes, live a praise-worthy life and die as a martyr.</value>
+  </data>
+  <data name="IslamInfo_WhenSomeoneElseWearingANewGarment2WordByWord" xml:space="preserve">
+    <value>Put on clothes|new|live a life|praise-worthy|and die as|a martyr</value>
+  </data>
   <data name="IslamInfo_WhenWearingANewGarment" xml:space="preserve">
     <value>When Wearing A New Garment</value>
   </data>
