@@ -1509,6 +1509,81 @@
   <data name="IslamInfo_WhenStartingAblution1WordByWord" xml:space="preserve">
     <value>In the name of|Allah</value>
   </data>
+  <data name="IslamInfo_UponCompletingAblution" xml:space="preserve">
+    <value>Upon Completing Ablution</value>
+  </data>
+  <data name="IslamInfo_UponCompletingAblution1" xml:space="preserve">
+    <value>Upon Completing Ablution</value>
+  </data>
+  <data name="IslamInfo_UponCompletingAblution1Trans" xml:space="preserve">
+    <value>I bear witness that none has the right to be worshipped but Allah alone, Who has no partner; and I bear witness that Muhammad is His slave and His Messenger.</value>
+  </data>
+  <data name="IslamInfo_UponCompletingAblution1WordByWord" xml:space="preserve">
+    <value>I bear witness|that|none|has the right to be worshipped|but|Allah|alone|no|partner|has He|and I bear witness|that|Muhammad|is His slave|and His Messenger</value>
+  </data>
+  <data name="IslamInfo_UponCompletingAblution2" xml:space="preserve">
+    <value>Upon Completing Ablution</value>
+  </data>
+  <data name="IslamInfo_UponCompletingAblution2Trans" xml:space="preserve">
+    <value>O Allah, make me among those who turn to You in repentance, and make me among those who are purified.</value>
+  </data>
+  <data name="IslamInfo_UponCompletingAblution2WordByWord" xml:space="preserve">
+    <value>O Allah|make me|among|those who turn to You in repentance|and make me|among|those who are purified</value>
+  </data>
+  <data name="IslamInfo_UponCompletingAblution3" xml:space="preserve">
+    <value>Upon Completing Ablution</value>
+  </data>
+  <data name="IslamInfo_UponCompletingAblution3Trans" xml:space="preserve">
+    <value>Glory is to You, O Allah, and praise; I bear witness that there is none worthy of worship but You.  I seek Your forgiveness and turn to You in repentance.</value>
+  </data>
+  <data name="IslamInfo_UponCompletingAblution3WordByWord" xml:space="preserve">
+    <value>Glory is to You|O Allah|and praise|I bear witness|that|there is none|worthy of worship|but|You|I seek Your forgiveness|and turn in repentance|to You</value>
+  </data>
+  <data name="IslamInfo_WhenLeavingTheHome" xml:space="preserve">
+    <value>When Leaving The Home</value>
+  </data>
+  <data name="IslamInfo_WhenLeavingTheHome1" xml:space="preserve">
+    <value>When Leaving The Home</value>
+  </data>
+  <data name="IslamInfo_WhenLeavingTheHome1Trans" xml:space="preserve">
+    <value>In the name of Allah, I have placed my trust in Allah, there is no might and no power except by Allah.</value>
+  </data>
+  <data name="IslamInfo_WhenLeavingTheHome1WordByWord" xml:space="preserve">
+    <value>In the name of|Allah|I have placed my trust|in|Allah|there is no|might|and no|power|except|by Allah</value>
+  </data>
+  <data name="IslamInfo_WhenLeavingTheHome2" xml:space="preserve">
+    <value>When Leaving The Home</value>
+  </data>
+  <data name="IslamInfo_WhenLeavingTheHome2Trans" xml:space="preserve">
+    <value>O Allah, I seek refuge in You lest I misguide others, or I am misguided by others, lest I cause others to err or I am caused to err, lest I abuse others or be abused, and lest I behave foolishly or meet with the foolishness of others.</value>
+  </data>
+  <data name="IslamInfo_WhenLeavingTheHome2WordByWord" xml:space="preserve">
+    <value>O Allah|I|seek refuge|in You|lest|I misguide others|or|I am misguided by others|lest|I cause others to err|or|I am caused to err|lest|I abuse others|or|be abused|and lest|I behave foolishly|or|the foolishness of others|met with</value>
+  </data>
+  <data name="IslamInfo_UponEnteringTheHome" xml:space="preserve">
+    <value>Upon Entering The Home</value>
+  </data>
+  <data name="IslamInfo_UponEnteringTheHome1" xml:space="preserve">
+    <value>Upon Entering The Home</value>
+  </data>
+  <data name="IslamInfo_UponEnteringTheHome1Trans" xml:space="preserve">
+    <value>In the name of Allah, we enter, in the name of Allah we leave and upon Allah our Lord we depend.</value>
+  </data>
+  <data name="IslamInfo_UponEnteringTheHome1WordByWord" xml:space="preserve">
+    <value>In the name of|Allah|we enter|in the name of|Allah|we leave|and upon|Allah our Lord|we depend</value>
+  </data>
+  <data name="IslamInfo_WhenGoingToTheMosque" xml:space="preserve">
+    <value>When Going To The Mosque</value>
+  </data>
+  <data name="IslamInfo_WhenGoingToTheMosque1" xml:space="preserve">
+    <value>When Going To The Mosque</value>
+  </data>
+  <data name="IslamInfo_WhenGoingToTheMosque1Trans" xml:space="preserve">
+    <value>O Allah, place light in my heart, and on my tongue light, and in my ears light and in my sight light, and above me light and below me light, and to my right light and to my left light, and before me light and behind me light.  Place in my soul light.  Magnify for me light, and amplify for me light.  Make for me light and make me a light.  O Allah, grant me light, and place light in my nerves, and in my body light and in my blood light and in my hair light and in my skin light.  (O Allah, make for me a light in my grave...  and a light in my bones.)  (Increase me in light, increase me in light, increase me in light.)  (Grant me light upon light.)</value>
+  </data>
+  <data name="IslamInfo_WhenGoingToTheMosque1WordByWord" xml:space="preserve">
+    <value>O Allah|place|in|my heart|light|and on|my tongue|light|and in|my ears|light|and in|my sight|light|and|above me|light|and|below me|light|and to|my right|light|and to|my left|light|and|before me|light|and|behind me|light|Place|in|my soul|light|Magnify|for me|light|and amplify|for me|light|Make|for me|light|and make me|a light|O Allah|grant me|light|and place|in|my nerves|light|and in|my body|light|and in|my blood|light|and in|my hair|light|and in|my skin|light|(O Allah|make|for me|a light|in|my grave|and a light|in|my bones)|(Increase me in|light|increase me in|light|increase me in|light)|(Grant|me|light|upon|light)</value>
+  </data>
   <data name="IslamInfo_WhenSomeoneElseWearingANewGarment" xml:space="preserve">
     <value>When Someone Else Is Wearing A New Garment</value>
   </data>
