@@ -183,7 +183,7 @@
 		</frame>
 	</page>
 	<page name="transliterator" description="IslamSource_Transliteration">
-		<frame name="translite" description="IslamSource_Transliterate">
+		<frame name="translit" description="IslamSource_Transliterate">
 			<button name="fontsmaller" description="IslamSource_Smaller" onclick="ArabicFont::GetFontSmallerJS"></button>
 			<button name="fontdefaultsize" description="IslamSource_LetterSample" onclick="ArabicFont::GetFontDefaultSizeJS"></button>
 			<button name="fontbigger" description="IslamSource_Bigger" onclick="ArabicFont::GetFontBiggerJS"></button>
@@ -202,6 +202,24 @@
 		</frame>
 		<frame name="arabicalphabet" description="IslamSource_ArabicAlphabet">
 			<static name="alphabet" description="" onrender="Arabic::DisplayAll"></static>
+		</frame>
+	</page>
+	<page name="arabicnumbers" description="IslamSource_ArabicNumbers">
+		<frame name="nums" description="IslamSource_ArabicNumbers">
+			<button name="fontsmaller" description="IslamSource_Smaller" onclick="ArabicFont::GetFontSmallerJS"></button>
+			<button name="fontdefaultsize" description="IslamSource_LetterSample" onclick="ArabicFont::GetFontDefaultSizeJS"></button>
+			<button name="fontbigger" description="IslamSource_Bigger" onclick="ArabicFont::GetFontBiggerJS"></button>
+			<radio name="fontselection" description="IslamSource_Font" uselist="true" defaultvalue="def" onpopulate="ArabicFont::GetFontList" onchange="ArabicFont::GetChangeFontJS"></radio>
+			<edit name="fontcustom" description="" defaultvalue="IslamSource_Lotus" rows="1"></edit>
+			<button name="fontcustomapply" description="IslamSource_Apply" onclick="ArabicFont::GetChangeCustomFontJS"></button>
+			<image name="fontloading" text="IslamSource_Loading" source="loading-h.gif"></image>
+			<static name="font-tester" description=""></static>
+			<edit name="translitedit" rows="4"></edit>
+			<radio name="useclassic" description="IslamSource_UseClassicArabic"><option name="IslamSource_Yes" defaultvalue="true"></option><option name="IslamSource_No"></option></radio>
+			<radio name="usehundredform" description="IslamSource_AlternateHundredForm"><option name="IslamSource_Yes"></option><option name="IslamSource_No" defaultvalue="true"></option></radio>
+			<radio name="usemilliard" description="IslamSource_UseMilliard"><option name="IslamSource_Yes"></option><option name="IslamSource_No" defaultvalue="true"></option></radio>
+			<button name="transliterate" description="IslamSource_Perform" onclick="Arabic::GetTransliterateNumberJS"></button>
+			<static name="translitvalue" description=""></static>
 		</frame>
 	</page>
 	<page name="quiz" description="IslamSource_Quiz">

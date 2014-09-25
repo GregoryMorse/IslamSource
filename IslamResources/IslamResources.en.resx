@@ -717,6 +717,24 @@
   <data name="IslamSource_Remove" xml:space="preserve">
     <value>Remove</value>
   </data>
+  <data name="IslamSource_ArabicNumbers" xml:space="preserve">
+    <value>Arabic Numbers</value>
+  </data>
+  <data name="IslamSource_UseClassicArabic" xml:space="preserve">
+    <value>Use Classic Arabic</value>
+  </data>
+  <data name="IslamSource_AlternateHundredForm" xml:space="preserve">
+    <value>Alternate Hundred Form</value>
+  </data>
+  <data name="IslamSource_UseMilliard" xml:space="preserve">
+    <value>Use Milliard</value>
+  </data>
+  <data name="IslamSource_Yes" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="IslamSource_No" xml:space="preserve">
+    <value>No</value>
+  </data>
   <data name="IslamInfo_Chapters" xml:space="preserve">
     <value>Chapters</value>
   </data>

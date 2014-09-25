@@ -1479,6 +1479,7 @@ Public Class Arabic
                 CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicLetterAin
     End Function
     Public Shared ArabicUniqueLetters As String() = {"Al^m^", "Al^m^S^", "Al^r", "Al^m^r", "k^hyE^S^", "Th", "Ts^m^", "Ts^", "ys^", "S^", "Hm^", "E^s^q^", "q^", "n^"}
+    Public Shared ArabicNumbers As String() = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"}
     Public Shared ArabicWaslKasraExceptions As String() = {"{mo$uwA", "{}otuwA", "{qoDuwA", "{bonuwA", "{moDuwA", "{mora>ata", "{somu", "{vonatayni", "{vonayni", "{bonatu", "{bonu", "{moru&NA"}
     Public Shared ArabicFathaDammaKasra As String() = {ArabicFatha, ArabicDamma, ArabicKasra}
     Public Shared ArabicTanweens As String() = {ArabicFathatan, ArabicDammatan, ArabicKasratan}
@@ -1571,8 +1572,8 @@ Public Class Arabic
                                       .Evaluator = Function(Match As System.Text.RegularExpressions.Match) ArabicLetterHamza}, _
             New RuleTranslation With {.RuleName = "LetterSpelling", .Match = "\b(" + MakeRegMultiEx(Array.ConvertAll(ArabicUniqueLetters, Function(Str As String) MakeUniRegEx(TransliterateFromBuckwalter(Str)))) + ")\b", _
                                       .Evaluator = Function(Match As System.Text.RegularExpressions.Match) ArabicLetterSpelling(Match.Value)}, _
-            New RuleTranslation With {.RuleName = "NumberSpelling", .Match = "\b(" + MakeRegMultiEx(Array.ConvertAll(ArabicUniqueLetters, Function(Str As String) MakeUniRegEx(TransliterateFromBuckwalter(Str)))) + ")\b", _
-                                      .Evaluator = Function(Match As System.Text.RegularExpressions.Match) ArabicWordFromNumber(CInt(Match.Value), True, False, False)}, _
+            New RuleTranslation With {.RuleName = "NumberSpelling", .Match = "\b(" + MakeRegMultiEx(Array.ConvertAll(ArabicNumbers, Function(Str As String) MakeUniRegEx(TransliterateFromBuckwalter(Str)))) + ")+\b", _
+                                      .Evaluator = Function(Match As System.Text.RegularExpressions.Match) ArabicWordFromNumber(CInt(TransliterateToScheme(Match.Value, 3)), True, False, False)}, _
             New RuleTranslation With {.RuleName = "FathaAlefMaksura", .Match = MakeUniRegEx(ArabicFatha) + MakeUniRegEx(ArabicLetterAlefMaksura), _
                                       .Evaluator = Function(Match As System.Text.RegularExpressions.Match) Match.Value.Remove(1).Insert(1, ArabicLetterAlef)}, _
             New RuleTranslation With {.RuleName = "KasraAlefMaksura", .Match = MakeUniRegEx(ArabicKasra) + MakeUniRegEx(ArabicLetterAlefMaksura), _
@@ -1912,7 +1913,7 @@ Public Class Arabic
         Dim Str As String = String.Empty
         Dim HundStr As String = String.Empty
         If Number >= 100 Then
-            HundStr = If(UseAlefHundred, ArabicBaseHundredNumbers((Number \ 100) - 1).Insert(3, "A"), ArabicBaseHundredNumbers((Number \ 100) - 1))
+            HundStr = If(UseAlefHundred, ArabicBaseHundredNumbers((Number \ 100) - 1).Insert(2, "A"), ArabicBaseHundredNumbers((Number \ 100) - 1))
             Number = Number Mod 100
         End If
         If (Number Mod 10) <> 0 And Number <> 11 And Number <> 12 Then
@@ -1942,17 +1943,17 @@ Public Class Arabic
             ElseIf Number >= 2 * BaseNums(CurBase) And Number < 3 * BaseNums(CurBase) Then
                 NextStr = Bases(CurBase)(1)
             ElseIf Number >= 3 * BaseNums(CurBase) And Number < 10 * BaseNums(CurBase) Then
-                NextStr = ArabicBaseNumbers(Number \ BaseNums(CurBase) - 1).Remove(ArabicBaseNumbers(Number \ BaseNums(CurBase) - 1).Length - 1) + "u " + ArabicBaseThousandNumbers(2)
+                NextStr = ArabicBaseNumbers(Number \ BaseNums(CurBase) - 1).Remove(ArabicBaseNumbers(Number \ BaseNums(CurBase) - 1).Length - 1) + "u " + Bases(CurBase)(2)
             ElseIf Number >= 10 * BaseNums(CurBase) And Number < 11 * BaseNums(CurBase) Then
                 NextStr = ArabicBaseTenNumbers(1).Remove(ArabicBaseTenNumbers(1).Length - 1) + "u " + Bases(CurBase)(2)
             ElseIf Number >= BaseNums(CurBase) Then
                 NextStr = ArabicWordForLessThanThousand((Number \ BaseNums(CurBase)) Mod 100, UseClassic, UseAlefHundred)
-                If If(UseClassic, Number >= 100 * BaseNums(CurBase) And Number < 200 * BaseNums(CurBase), Number >= 100 * BaseNums(CurBase) And Number < 101 * BaseNums(CurBase)) Then
-                    NextStr += NextStr.Remove(NextStr.Length - 1) + "u " + Bases(CurBase)(0).Remove(Bases(CurBase)(0).Length - 1) + "K"
-                ElseIf If(UseClassic, Number >= 200 * BaseNums(CurBase) And Number < 300 * BaseNums(CurBase), 200 * BaseNums(CurBase) And Number < 201 * BaseNums(CurBase)) Then
-                    NextStr += NextStr.Remove(NextStr.Length - 2) + " " + Bases(CurBase)(0).Remove(Bases(CurBase)(0).Length - 1) + "K"
-                ElseIf If(UseClassic, Number >= 300 * BaseNums(CurBase), Number >= 300 * BaseNums(CurBase) And (Number \ BaseNums(CurBase)) Mod 100 = 0) Then
-                    NextStr += NextStr.Remove(NextStr.Length - 1) + "i " + Bases(CurBase)(0).Remove(Bases(CurBase)(0).Length - 1) + "K"
+                If Number >= 100 * BaseNums(CurBase) And Number < If(UseClassic, 200, 101) * BaseNums(CurBase) Then
+                    NextStr = NextStr.Remove(NextStr.Length - 1) + "u " + Bases(CurBase)(0).Remove(Bases(CurBase)(0).Length - 1) + "K"
+                ElseIf Number >= 200 * BaseNums(CurBase) And Number < If(UseClassic, 300, 201) * BaseNums(CurBase) Then
+                    NextStr = NextStr.Remove(NextStr.Length - 2) + " " + Bases(CurBase)(0).Remove(Bases(CurBase)(0).Length - 1) + "K"
+                ElseIf Number >= 300 * BaseNums(CurBase) And (UseClassic Or (Number \ BaseNums(CurBase)) Mod 100 = 0) Then
+                    NextStr = NextStr.Remove(NextStr.Length - 1) + "i " + Bases(CurBase)(0).Remove(Bases(CurBase)(0).Length - 1) + "K"
                 Else
                     NextStr += " " + Bases(CurBase)(0).Remove(Bases(CurBase)(0).Length - 1) + "FA"
                 End If
@@ -1960,6 +1961,7 @@ Public Class Arabic
             Number = Number Mod BaseNums(CurBase)
             CurBase -= 1
             Str = If(UseClassic, If(NextStr = String.Empty, String.Empty, NextStr + " wa") + Str, If(Str = String.Empty, String.Empty, Str + " wa") + NextStr)
+            NextStr = String.Empty
         Loop While CurBase > 0
         If Number <> 0 Or Str = String.Empty Then NextStr = ArabicWordForLessThanThousand(Number, UseClassic, UseAlefHundred)
         Return If(UseClassic, If(NextStr = String.Empty, String.Empty, NextStr + " wa") + Str, If(Str = String.Empty, String.Empty, Str + " wa") + NextStr)
@@ -2306,7 +2308,7 @@ Public Class Arabic
                                 Array.ConvertAll(Of IslamData.ArabicSymbol, String())(Letters, Function(Convert As IslamData.ArabicSymbol) New String() {CStr(AscW(Convert.Symbol)), If(Convert.Shaping = Nothing, String.Empty, Utility.MakeJSArray(Array.ConvertAll(Convert.Shaping, Function(Ch As Char) CStr(AscW(Ch))))), CStr(IIf(Convert.Assimilate, "true", String.Empty)), CStr(IIf(Convert.ExtendedBuckwalterLetter = ChrW(0), String.Empty, Convert.ExtendedBuckwalterLetter)), Convert.RomanTranslit, Convert.PlainRoman}), False)}, True) + ";"
     End Function
     Public Shared Function GetTransliterateGenJS() As String
-        Return "function doTransliterate(sVal, direction, conversion) { var iCount, iSubCount, sOutVal = ''; for (iCount = 0; iCount < sVal.length; iCount++) { if (sVal.charAt(iCount) === '\\') { iCount++; if (sVal.charAt(iCount) === ',') sOutVal += String.fromCharCode(1548); } else { sOutVal += sVal.charAt(iCount); } } else { for (iSubCount = 0; iSubCount < ArabicLetters.length; iSubCount++) { if (direction ? sVal.charCodeAt(iCount) === parseInt(ArabicLetters[iSubCount].Symbol, 10) : sVal.charAt(iCount) === unescape((conversion ? ArabicLetters[iSubCount].TranslitLetter : ArabicLetters[iSubCount].RomanTranslit))) { sOutVal += (direction ? (conversion ? ArabicLetters[iSubCount].TranslitLetter : ArabicLetters[iSubCount].RomanTranslit) : String.fromCharCode(ArabicLetters[iSubCount].Symbol)); break; } } if (iSubCount === ArabicLetters.length) sOutVal += sVal.charAt(iCount); } } return unescape(sOutVal); }"
+        Return "function doTransliterate(sVal, direction, conversion) { var iCount, iSubCount, sOutVal = ''; for (iCount = 0; iCount < sVal.length; iCount++) { if (sVal.charAt(iCount) === '\\') { iCount++; if (sVal.charAt(iCount) === ',') { sOutVal += String.fromCharCode(1548); } else { sOutVal += sVal.charAt(iCount); } } else { for (iSubCount = 0; iSubCount < ArabicLetters.length; iSubCount++) { if (direction ? sVal.charCodeAt(iCount) === parseInt(ArabicLetters[iSubCount].Symbol, 10) : sVal.charAt(iCount) === unescape((conversion ? ArabicLetters[iSubCount].TranslitLetter : ArabicLetters[iSubCount].RomanTranslit))) { sOutVal += (direction ? (conversion ? ArabicLetters[iSubCount].TranslitLetter : ArabicLetters[iSubCount].RomanTranslit) : String.fromCharCode(ArabicLetters[iSubCount].Symbol)); break; } } if (iSubCount === ArabicLetters.length) sOutVal += sVal.charAt(iCount); } } return unescape(sOutVal); }"
     End Function
     Public Shared Function GetDiacriticJS() As String
         Return "function doDiacritics(sVal, direction) { var iCount, sOutVal = ''; for (iCount = 0; iCount < sVal.length; iCount++) { sOutVal += findLetterBySymbol(sVal.charCodeAt(iCount)) === -1 || !isDiacritic(findLetterBySymbol(sVal.charCodeAt(iCount))) ? sVal[iCount] : ''; } return sOutVal; }" + _
@@ -2340,6 +2342,22 @@ Public Class Arabic
                 "else if ((parseInt(ArabicLetters[nextIndex].Symbol, 10) === 1610 || parseInt(ArabicLetters[nextIndex].Symbol, 10) === 1574 || parseInt(ArabicLetters[nextIndex].Symbol, 10) === 1609 || (isWhitespace(nextIndex) && sVal.length - 1 !== iCount + 1 && findLetterBySymbol(sVal.charCodeAt(iCount + 2)) !== -1 && parseInt(ArabicLetters[findLetterBySymbol(sVal.charCodeAt(iCount + 2))].Symbol, 10) !== 1649 && !isStop(findLetterBySymbol(sVal.charCodeAt(iCount + 2))) && !isPunctuation(findLetterBySymbol(sVal.charCodeAt(iCount + 2))))) && parseInt(ArabicLetters[index].Symbol, 10) === 1616) { sOutVal += 'ee'; if (!isWhitespace(nextIndex)) { if (parseInt(ArabicLetters[nextIndex].Symbol, 10) === 1574) sOutVal += ArabicLetters[nextIndex].PlainRoman; iCount++; previousPreviousIndex = previousIndex; previousIndex = index; index = nextIndex; } } else if (isWhitespace(nextIndex) && sVal.length - 2 !== iCount) { nextIndex = findLetterBySymbol(sVal.charCodeAt(iCount + 2)); if (nextIndex === -1 || isStop(nextIndex) || isPunctuation(nextIndex)) {} else { sOutVal += ArabicLetters[index].PlainRoman; } } else { sOutVal += ArabicLetters[index].PlainRoman; } } " +
             "} else if (parseInt(ArabicLetters[index].Symbol, 10) === 1606 || parseInt(ArabicLetters[index].Symbol, 10) === 1611 || parseInt(ArabicLetters[index].Symbol, 10) === 1612 || parseInt(ArabicLetters[index].Symbol, 10) === 1613) { if (sVal.length - 1 === iCount) { if (parseInt(ArabicLetters[index].Symbol, 10) === 1606) sOutVal += ArabicLetters[index].PlainRoman; } else { var nextIndex = findLetterBySymbol(sVal.charCodeAt(iCount + 1)); if (nextIndex !== -1 && isIgnored(nextIndex)) { if (sVal.length - 1 !== iCount + 1) { nextIndex = findLetterBySymbol(sVal.charCodeAt(iCount + 2)); } else { nextIndex = -1; } } if (nextIndex !== -1 && isWhitespace(nextIndex) && sVal.length - 2 !== iCount) nextIndex = findLetterBySymbol(sVal.charCodeAt(iCount + 2)); if (nextIndex === -1 || parseInt(ArabicLetters[index].Symbol, 10) !== 1606 && (isStop(nextIndex) || isPunctuation(nextIndex))) {} else if (parseInt(ArabicLetters[index].Symbol, 10) === 1611 && parseInt(ArabicLetters[findLetterBySymbol(sVal.charCodeAt(iCount + 1))].Symbol, 10) === 1575) { sOutVal += ArabicLetters[sVal.length - 2 == iCount ? nextIndex : index].PlainRoman; iCount++; previousPreviousIndex = previousIndex; previousIndex = index; index = nextIndex; } else if (parseInt(ArabicLetters[nextIndex].Symbol, 10) === 1604 || parseInt(ArabicLetters[nextIndex].Symbol, 10) === 1585) { sOutVal += ArabicLetters[index].PlainRoman.substr(0, ArabicLetters[index].PlainRoman.length - 1); } else if (parseInt(ArabicLetters[nextIndex].Symbol, 10) === 1576 && sVal.length - 1 !== iCount + 1 && findLetterBySymbol(sVal.charCodeAt(iCount + 2)) !== -1 && (parseInt(ArabicLetters[findLetterBySymbol(sVal.charCodeAt(iCount + 2))].Symbol, 10) === 1614 || parseInt(ArabicLetters[findLetterBySymbol(sVal.charCodeAt(iCount + 2))].Symbol, 10) === 1615 || parseInt(ArabicLetters[findLetterBySymbol(sVal.charCodeAt(iCount + 2))].Symbol, 10) === 1616)) { sOutVal += 'm'; } else { sOutVal += ArabicLetters[index].PlainRoman; } } " +
             "} else { sOutVal += ArabicLetters[index].PlainRoman; } previousPreviousIndex = previousIndex; previousIndex = index; } return sOutVal; }"
+    End Function
+    Public Shared Function GetTransliterateNumberJS() As String()
+        Return New String() {"javascript: doTransliterateNum();", String.Empty, GetArabicSymbolJSArray(), GetTransliterateGenJS(), _
+                             "var arabicOrdinalNumbers = ['&gt;aw~alN', 'vaAniyN', 'vaAlivN', 'raAbiEN', 'xaAmisN', 'saAdisN', 'saAbiEN', 'vaAminN', 'taAsiEN', 'EaA$irN'];", _
+                             "var arabicBaseNumbers = ['waAHidN', '&lt;ivonaAni', 'valaAvapN', '&gt;arbaEapN', 'xamosapN', 'sit~apN', 'saboEapN', 'vamaAnoyapN', 'tisoEapN'];", _
+                             "var arabicBaseExtraNumbers = ['&gt;aHada', '&lt;ivonaA'];", _
+                             "var arabicBaseTenNumbers = ['SiforN', 'Ea$arapN', 'Ei$oruwna', 'valaAvuwna', '&gt;arbaEuwna', 'xamosuwna', 'sit~uwna', 'saboEuwna', 'vamaAnuwna', 'tisoEuwna'];", _
+                             "var arabicBaseHundredNumbers = ['mi}apN', 'mi}ataAni', 'valaAvumi}apK', '&gt;arbaEumi}apK', 'xamosumi}apK', 'sit~umi}apK', 'saboEumi}apK', 'vamaAnumi}apK', 'tisoEumi}apK'];", _
+                             "var arabicBaseThousandNumbers = ['&gt;alofN', '&gt;alofaAni', '|laAfK'];", _
+                             "var arabicBaseMillionNumbers = ['miloyuwnu', 'miloyuwnaAni', 'malaAyiyna'];", _
+                             "var arabicBaseBillionNumbers = ['biloyuwnu', 'biloyuwnaAni', 'balaAyiyna'];", _
+                             "var arabicBaseMilliardNumbers = ['miloyaAru', 'miloyaAraAni', 'miloyaAraAtK'];", _
+                             "var arabicBaseTrillionNumbers = ['toriloyuwnu', 'toriloyuwnaAni', 'triloyuwnaAtK'];", _
+                             "function doTransliterateNum() { $('#translitvalue').text(translitNumber($('#translitedit').val(), $('#useclassic0').prop('checked'), $('#usehundredform0').prop('checked'), $('#usemilliard0').prop('checked'))); }", _
+                             "function translitLessThanThousand(number, useclassic, usealefhundred) { var str = '', hundstr = ''; if (number >= 100) { hundstr = usealefhundred ? arabicBaseHundredNumbers[Math.floor(number / 100) - 1].substr(0, 2) + 'A' + arabicBaseHundredNumbers[Math.floor(number / 100) - 1].substr(2) : arabicBaseHundredNumbers[Math.floor(number / 100) - 1]; number = number % 100; } if ((number % 10) !== 0 && number !== 11 && number !== 12) { str = arabicBaseNumbers[Math.floor(number / 10) - 1]; } if (number >= 11 && number < 20) { if (number == 11 || number == 12) { str += arabicBaseExtraNumbers[number - 11]; } else { str = str.slice(0, -1) + 'a'; } str += ' Ea$ara'; } else if ((number === 0 && str === '') || number === 10 || number >= 20) { str += (str === '' ? '' : str + ' wa') + arabicBaseTenNumbers[Math.floor(number / 10)]; } return useclassic ? ((str === '' ? '' : str + ' wa') + hundstr) : ((hundstr === '' ? '' : hundstr + ' wa') + str); }", _
+                             "function translitNumber(number, useclassic, usealefhundred, usemilliard) { var str = '', nextstr = '', curbase = 3, basenums = [1000, 1000000, 1000000000, 1000000000000], bases = [arabicBaseThousandNumbers, arabicBaseMillionNumbers, usemilliard ? arabicBaseMilliardNumbers : arabicBaseBillionNumbers, arabicBaseTrillionNumbers]; do { if (number >= basenums[curbase] && number < 2 * basenums[curbase]) { nextstr = bases[curbase][0]; } else if (number >= 2 * basenums[curbase] && number < 3 * basenums[curbase]) { nextstr = bases[curbase][1]; } else if (number >= 3 * basenums[curbase] && number < 10 * basenums[curbase]) { nextstr = arabicBaseNumbers[Math.floor(Number / basenums[curbase]) - 1].slice(0, -1) + 'u ' + bases[curbase][2]; } else if (number >= 10 * basenums[curbase] && number < 11 * basenums[curbase]) { nextstr = arabicBaseTenNumbers[1].slice(0, -1) + 'u ' + bases[curbase][2]; } else if (number >= basenums[curbase]) { nextstr = translitLessThanThousand(Math.floor(number / basenums[curbase]) % 100, useclassic, usealefhundred); if (number >= 100 * basenums[curbase] && number < (useclassic ? 200 : 101) * basenums[curbase]) { nextstr = nextstr.slice(0, -1) + 'u ' + bases[curbase][0].slice(0, -1) + 'K'; } else if (number >= 200 * basenums[curbase] && number < (useclassic ? 300 : 201) * basenums[curbase]) { nextstr = nextstr.slice(0, -2) + ' ' + bases[curbase][0].slice(0, -1) + 'K'; } else if (number >= 300 * basenums[curbase] && (useclassic || Math.floor(number / basenums[curbase]) % 100 === 0)) { nextstr = nextstr.slice(0, -1) + 'i ' + bases[curbase][0].slice(0, -1) + 'K'; } else { nextstr += ' ' + bases[curbase][0].slice(0, -1) + 'FA'; } } number = number % basenums[curbase]; curbase--; str = useclassic ? ((nextstr === '' ? '' : nextstr + ' wa') + str) : ((str === '' ? '' : str + ' wa') + nextstr); nextstr = ''; } while (curbase > 0); if (number !== 0 || str === '') { nextstr = translitLessThanThousand(number, useclassic, usealefhundred); } return useclassic ? ((nextstr === '' ? '' : nextstr + ' wa') + str) : ((str === '' ? '' : str + ' wa') + nextstr); }"}
     End Function
     Public Shared Function GetTransliterateJS() As String()
         Return New String() {"javascript: doTransliterateDisplay();", String.Empty, GetArabicSymbolJSArray(), GetTransliterateGenJS(), GetDiacriticJS(), _

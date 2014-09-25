@@ -33,6 +33,7 @@ Partial Class host
     'TODO: Upload script which also handles ImageItem and DownloadItem files
     Private Sub Page_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Dim Index As Integer
+        Dim IsPrint As Boolean = False
         Dim bmp As Bitmap = Nothing
         Dim ResultBmp As Bitmap = Nothing
         Utility.Initialize(AddressOf GetPageString, AddressOf UserAccounts.GetUserID, AddressOf UserAccounts.IsLoggedIn)
@@ -343,6 +344,8 @@ Partial Class host
             'Convert tabs to spaces
             Response.Write(Utility.SourceTextEncode(encoding.GetChars(buffer, encoding.GetPreamble().Length, count - encoding.GetPreamble().Length)))
             Response.ContentType = "text/plain;charset=" + encoding.WebName
+        ElseIf Request.QueryString.Get(PageQuery) = "Print" Then
+            IsPrint = True
         Else
             If Request.QueryString.Get(PageQuery) = UserAccounts.ID_Register Then
                 UserAccounts.Register(PageSet, Request.Form.Get(UserAccounts.ID_Username), Request.Form.Get(UserAccounts.ID_Password), Request.Form.Get(UserAccounts.ID_ConfirmPassword), Request.Form.Get(UserAccounts.ID_EmailAddress), Request.Form.Get(UserAccounts.ID_ConfirmEmailAddress), Request.Form.Get(UserAccounts.ID_Register))
@@ -388,8 +391,10 @@ Partial Class host
                 UserAccounts.DeleteCertificateRequest(PageSet, Request.Form.Get(UserAccounts.ID_DeleteCertRequest), Request.Form.Get(UserAccounts.ID_Certificate))
             End If
             _IsHtml = True
-            Index = PageSet.GetPageIndex(Request.QueryString.Get(PageQuery))
-            Controls.Add(New Menu(PageSet, Index))
+            If Not IsPrint Then
+                Index = PageSet.GetPageIndex(Request.QueryString.Get(PageQuery))
+                Controls.Add(New Menu(PageSet, Index))
+            End If
             Controls.Add(New Page(PageSet.Pages.Item(Index)))
             Response.ContentType = "text/html;charset=" + System.Text.Encoding.UTF8.WebName
         End If
