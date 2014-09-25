@@ -234,7 +234,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 	<verses>
 		<category title="WhenWakingUp">
 			<verse title="WhenWakingUp1" text="{loHamodu lil~`hi Al~a*iyo &gt;aHoyaAnaA baEoda maA &gt;amaAtanaA wa&lt;ilayohi {ln~u$uwru"></verse>
-			<verse title="WhenWakingUp2" text="laA &lt;ilaha &lt;il~aA {ll~`hu waHodahu laA $ariyka lahu lahu {lomuloku walahu {loHamodu wahuwa EalaY kul~i $ayo&apos;K qadiyrN suboHaAna {ll~`hi wa{lHamodu lil~`hi walaA &lt;ilaha &lt;il~aA {ll~`hu w{ll~`hu &gt;akobaru walaA Hawola walaA quw~apa &lt;il~aA bi{ll~`hi {loEaliy~i {loEaZiymi rab~i {gofiroliy"></verse>
+			<verse title="WhenWakingUp2" text="laA &lt;ilaha &lt;il~aA {ll~`hu waHodahu laA $ariyka lahu\, lahu {lomuloku walahu {loHamodu\, wahuwa EalaY kul~i $ayo&apos;K qadiyrN\. suboHaAna {ll~`hi\, wa{lHamodu lil~`hi\, walaA &lt;ilaha &lt;il~aA {ll~`hu\, wa{ll~`hu &gt;akobaru\, walaA Hawola walaA quw~apa &lt;il~aA bi{ll~`hi {loEaliy~i {loEaZiymi\, rab~i {gofiroliy"></verse>
 			<verse title="WhenWakingUp3" text="{loHamodu lil~`hi Al~a*iyo EaAfaAniy fiy jasadiy warad~a Ealay~a ruwHiy wa&gt;a*ina liy bi*ikorihi"></verse>
 			<verse title="WhenWakingUp4" text="{3:190-200}"></verse>
 		</category>
@@ -2796,10 +2796,10 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 		<arabicsymbol symbolname="mad~ap" uname="ArabicMaddahAbove" symbol="0653" ipavalue="" extendedbuckwalter="94" romantranslit="" plainroman="" terminating="false" connecting="false" assimilate="false" />
 		<arabicsymbol symbolname="hamzap" uname="ArabicHamzaAbove" symbol="0654" ipavalue="ʔ" extendedbuckwalter="35" romantranslit="&apos;" plainroman="" terminating="false" connecting="false" assimilate="false" />
 		<arabicsymbol symbolname="hamzap" uname="ArabicHamzaBelow" symbol="0655" ipavalue="ʔ" extendedbuckwalter="0" romantranslit="&apos;" plainroman="" terminating="false" connecting="false" assimilate="false" />
-		<arabicsymbol symbolname="Sifr" uname="ArabicIndicDigitZero" symbol="0660" ipavalue="" extendedbuckwalter="48" romantranslit="0" plainroman="0" terminating="true" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="Sifor" uname="ArabicIndicDigitZero" symbol="0660" ipavalue="" extendedbuckwalter="48" romantranslit="0" plainroman="0" terminating="true" connecting="false" assimilate="false" />
 		<arabicsymbol symbolname="waAHid" uname="ArabicIndicDigitOne" symbol="0661" ipavalue="" extendedbuckwalter="49" romantranslit="1" plainroman="1" terminating="true" connecting="false" assimilate="false" />
-		<arabicsymbol symbolname="&lt;ivnAn" uname="ArabicIndicDigitTwo" symbol="0662" ipavalue="" extendedbuckwalter="50" romantranslit="2" plainroman="2" terminating="true" connecting="false" assimilate="false" />
-		<arabicsymbol symbolname="valAvap" uname="ArabicIndicDigitThree" symbol="0663" ipavalue="" extendedbuckwalter="51" romantranslit="3" plainroman="3" terminating="true" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="&lt;ivonaAn" uname="ArabicIndicDigitTwo" symbol="0662" ipavalue="" extendedbuckwalter="50" romantranslit="2" plainroman="2" terminating="true" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="valaAvap" uname="ArabicIndicDigitThree" symbol="0663" ipavalue="" extendedbuckwalter="51" romantranslit="3" plainroman="3" terminating="true" connecting="false" assimilate="false" />
 		<arabicsymbol symbolname="&gt;arbaEap" uname="ArabicIndicDigitFour" symbol="0664" ipavalue="" extendedbuckwalter="52" romantranslit="4" plainroman="4" terminating="true" connecting="false" assimilate="false" />
 		<arabicsymbol symbolname="xamosap" uname="ArabicIndicDigitFive" symbol="0665" ipavalue="" extendedbuckwalter="53" romantranslit="5" plainroman="5" terminating="true" connecting="false" assimilate="false" />
 		<arabicsymbol symbolname="sit~ap" uname="ArabicIndicDigitSix" symbol="0666" ipavalue="" extendedbuckwalter="54" romantranslit="6" plainroman="6" terminating="true" connecting="false" assimilate="false" />
