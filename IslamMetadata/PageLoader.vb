@@ -1896,14 +1896,71 @@ Public Class Arabic
         End If
         Return Strings.ToArray()
     End Function
-    Public Shared ArabicBaseNumbers As String() = {"Sifor", "waAHid", "&lt;ivonaAn", "valaAvap", "&gt;arbaEap", "xamosap", "sit~ap", "saboEap", "vamaAnoyap", "tisoEap", "Ea$arap"}
     Public Shared ArabicOrdinalNumbers As String() = {"&gt;aw~alN", "vaAniyN", "vaAlivN", "raAbiEN", "xaAmisN", "saAdisN", "saAbiEN", "vaAminN", "taAsiEN", "EaA$irN"}
-    Public Shared ArabicBaseTenNumbers As String() = {"&gt;aHada", "&lt;ivonaA", "Ei$oruwn", "valaAvuwn", "&gt;arbaEuwn", "xamosuwn", "sit~uwn", "saboEuwn", "vamaAnuwn", "tisoEuwn", "miA}ap", "mi}ap"}
-    Public Shared Function ArabicWordFromNumber(ByVal Number As Integer)
-        If Number >= 0 AndAlso Number <= 10 Then
-        ElseIf Number >= 11 AndAlso Number < 20 Then
-
+    Public Shared ArabicBaseNumbers As String() = {"waAHidN", "&lt;ivonaAni", "valaAvapN", "&gt;arbaEapN", "xamosapN", "sit~apN", "saboEapN", "vamaAnoyapN", "tisoEapN"}
+    Public Shared ArabicBaseExtraNumbers As String() = {"&gt;aHada", "&lt;ivonaA"}
+    Public Shared ArabicBaseTenNumbers As String() = {"SiforN", "Ea$arapN", "Ei$oruwna", "valaAvuwna", "&gt;arbaEuwna", "xamosuwna", "sit~uwna", "saboEuwna", "vamaAnuwna", "tisoEuwna"}
+    Public Shared ArabicBaseHundredNumbers As String() = {"mi}apN", "mi}ataAni", "valaAvumi}apK", "&gt;arbaEumi}apK", "xamosumi}apK", "sit~umi}apK", "saboEumi}apK", "vamaAnumi}apK", "tisoEumi}apK"} '"miA}apN"
+    Public Shared ArabicBaseThousandNumbers As String() = {"&gt;alofN", "&gt;alofaAni", "|laAfK"}
+    Public Shared ArabicBaseMillionNumbers As String() = {"miloyuwnu", "miloyuwnaAni", "malaAyiyna"}
+    Public Shared ArabicBaseBillionNumbers As String() = {"biloyuwnu", "biloyuwnaAni", "balaAyiyna"}
+    Public Shared ArabicBaseMilliardNumbers As String() = {"miloyaAru", "miloyaAraAni", "miloyaAraAtK"}
+    Public Shared ArabicBaseTrillionNumbers As String() = {"toriloyuwnu", "toriloyuwnaAni", "triloyuwnaAtK"}
+    Public Shared Function ArabicWordForLessThanThousand(ByVal Number As Integer, UseClassic As Boolean, UseAlefHundred As Boolean)
+        Dim Str As String = String.Empty
+        Dim HundStr As String = String.Empty
+        If Number >= 100 Then
+            HundStr = If(UseAlefHundred, ArabicBaseHundredNumbers((Number \ 100) - 1).Insert(3, "A"), ArabicBaseHundredNumbers((Number \ 100) - 1))
+            Number = Number Mod 100
         End If
+        If (Number Mod 10) <> 0 And Number <> 11 And Number <> 12 Then
+            Str = ArabicBaseNumbers((Number Mod 10) - 1)
+        End If
+        If Number >= 11 AndAlso Number < 20 Then
+            If Number = 11 Or Number = 12 Then
+                Str += ArabicBaseExtraNumbers(Number - 11)
+            Else
+                Str = Str.Remove(Str.Length - 1) + "a"
+            End If
+            Str += " Ea$ara"
+        ElseIf (Number = 0 And Str = String.Empty) Or Number = 10 Or Number >= 20 Then
+            Str += If(Str = String.Empty, String.Empty, Str + " wa") + ArabicBaseTenNumbers(Number \ 10)
+        End If
+        Return If(UseClassic, If(Str = String.Empty, String.Empty, Str + " wa") + HundStr, If(HundStr = String.Empty, String.Empty, HundStr + " wa") + Str)
+    End Function
+    Public Shared Function ArabicWordFromNumber(ByVal Number As Long, UseClassic As Boolean, UseAlefHundred As Boolean, UseMilliard As Boolean)
+        Dim Str As String = String.Empty
+        Dim NextStr As String = String.Empty
+        Dim CurBase As Integer = 3
+        Dim BaseNums As Long() = {1000, 1000000, 1000000000, 1000000000000}
+        Dim Bases As String()() = {ArabicBaseThousandNumbers, ArabicBaseMillionNumbers, If(UseMilliard, ArabicBaseMilliardNumbers, ArabicBaseBillionNumbers), ArabicBaseTrillionNumbers}
+        Do
+            If Number >= BaseNums(CurBase) And Number < 2 * BaseNums(CurBase) Then
+                NextStr = Bases(CurBase)(0)
+            ElseIf Number >= 2 * BaseNums(CurBase) And Number < 3 * BaseNums(CurBase) Then
+                NextStr = Bases(CurBase)(1)
+            ElseIf Number >= 3 * BaseNums(CurBase) And Number < 10 * BaseNums(CurBase) Then
+                NextStr = ArabicBaseNumbers(Number \ BaseNums(CurBase) - 1).Remove(ArabicBaseNumbers(Number \ BaseNums(CurBase) - 1).Length - 1) + "u " + ArabicBaseThousandNumbers(2)
+            ElseIf Number >= 10 * BaseNums(CurBase) And Number < 11 * BaseNums(CurBase) Then
+                NextStr = ArabicBaseTenNumbers(1).Remove(ArabicBaseTenNumbers(1).Length - 1) + "u " + Bases(CurBase)(2)
+            ElseIf Number >= BaseNums(CurBase) Then
+                NextStr = ArabicWordForLessThanThousand((Number \ BaseNums(CurBase)) Mod 100, UseClassic, UseAlefHundred)
+                If If(UseClassic, Number >= 100 * BaseNums(CurBase) And Number < 200 * BaseNums(CurBase), Number >= 100 * BaseNums(CurBase) And Number < 101 * BaseNums(CurBase)) Then
+                    NextStr += NextStr.Remove(NextStr.Length - 1) + "u " + Bases(CurBase)(0).Remove(Bases(CurBase)(0).Length - 1) + "K"
+                ElseIf If(UseClassic, Number >= 200 * BaseNums(CurBase) And Number < 300 * BaseNums(CurBase), 200 * BaseNums(CurBase) And Number < 201 * BaseNums(CurBase)) Then
+                    NextStr += NextStr.Remove(NextStr.Length - 2) + " " + Bases(CurBase)(0).Remove(Bases(CurBase)(0).Length - 1) + "K"
+                ElseIf If(UseClassic, Number >= 300 * BaseNums(CurBase), Number >= 300 * BaseNums(CurBase) And (Number \ BaseNums(CurBase)) Mod 100 = 0) Then
+                    NextStr += NextStr.Remove(NextStr.Length - 1) + "i " + Bases(CurBase)(0).Remove(Bases(CurBase)(0).Length - 1) + "K"
+                Else
+                    NextStr += " " + Bases(CurBase)(0).Remove(Bases(CurBase)(0).Length - 1) + "FA"
+                End If
+            End If
+            Number = Number Mod BaseNums(CurBase)
+            CurBase -= 1
+            Str = If(UseClassic, If(NextStr = String.Empty, String.Empty, NextStr + " wa") + Str, If(Str = String.Empty, String.Empty, Str + " wa") + NextStr)
+        Loop While CurBase > 0
+        If Number <> 0 Or Str = String.Empty Then NextStr = ArabicWordForLessThanThousand(Number, UseClassic, UseAlefHundred)
+        Return If(UseClassic, If(NextStr = String.Empty, String.Empty, NextStr + " wa") + Str, If(Str = String.Empty, String.Empty, Str + " wa") + NextStr)
     End Function
     Public Shared Function TransliterateToPlainRoman(ByVal ArabicString As String) As String
         Dim RomanString As String = String.Empty
