@@ -870,6 +870,9 @@
   <data name="IslamSource_Smaller" xml:space="preserve">
     <value>-</value>
   </data>
+  <data name="IslamSource_Print" xml:space="preserve">
+    <value>Print</value>
+  </data>
   <data name="IslamInfo_Chapters" xml:space="preserve">
     <value>Chapters</value>
   </data>

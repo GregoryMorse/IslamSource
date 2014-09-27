@@ -169,6 +169,7 @@
 		<frame name="supplications" description="IslamSource_Viewer" hasform="true">
 			<radio name="selection" description="IslamSource_Selection" uselist="true" defaultvalue="0" onpopulate="Supplications::GetSuppCategories"></radio>
 			<button name="selectiondisplay" description="IslamSource_Display"></button>
+			<button name="print" description="IslamSource_Print" onclick="Utility::GetOnPrintJS"></button>
 			<radio name="translitscheme" description="IslamSource_TransliterationScheme" uselist="true" onchange="Arabic::GetChangeTransliterationJS"><option name="IslamSource_Off" defaultvalue="true"></option><option name="IslamSource_PlainRoman"></option><option name="IslamSource_EnglishRomanized"></option><option name="IslamSource_ExtendedBuckwalter"></option></radio>
 			<button name="fontsmaller" description="IslamSource_Smaller" onclick="ArabicFont::GetFontSmallerJS"></button>
 			<button name="fontdefaultsize" description="IslamSource_LetterSample" onclick="ArabicFont::GetFontDefaultSizeJS"></button>

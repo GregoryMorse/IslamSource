@@ -550,6 +550,9 @@ Public Class Utility
     Public Shared Function TextRender(ByVal Item As PageLoader.TextItem) As String
         Return Item.Text
     End Function
+    Public Shared Function GetOnPrintJS() As String()
+        Return New String() {"javascript: openPrintable(this);", String.Empty, "function openPrintable(btn) { var input = document.createElement('input'); input.type = 'hidden'; input.name = 'PagePrint'; input.value = btn.form.elements['Page'].value; btn.form.appendChild(input); btn.form.target = '_blank'; btn.form.elements['Page'].value = 'Print'; btn.form.submit(); btn.form.target = ''; btn.form.elements['Page'].value = btn.form.elements['PagePrint'].value; btn.form.removeChild(input); }"}
+    End Function
     Public Shared Function GetClearOptionListJS() As String
         Return "function clearOptionList(selectObject) { while (selectObject.options.length) { selectObject.options.remove(selectObject.options.length - 1); } }"
     End Function
@@ -1900,7 +1903,7 @@ Public Class Arabic
         Return Strings.ToArray()
     End Function
     Public Shared ArabicOrdinalNumbers As String() = {"&gt;aw~alN", "vaAniyN", "vaAlivN", "raAbiEN", "xaAmisN", "saAdisN", "saAbiEN", "vaAminN", "taAsiEN", "EaA$irN"}
-    Public Shared ArabicOrdinalExtraNumbers As String() = {"HaAdiy"} '"&gt;uwalaY" "~ap" "ap"
+    Public Shared ArabicOrdinalExtraNumbers As String() = {"HaAdiy"} '"&gt;uwalaY" "ap"
     Public Shared ArabicFractionNumbers As String() = {"nisof", "vuluv", "rubuE", "xumus"}
     Public Shared ArabicBaseNumbers As String() = {"waAHidN", "&lt;ivonaAni", "valaAvapN", "&gt;arbaEapN", "xamosapN", "sit~apN", "saboEapN", "vamaAnoyapN", "tisoEapN"}
     Public Shared ArabicBaseExtraNumbers As String() = {"&gt;aHada", "&lt;ivonaA"}

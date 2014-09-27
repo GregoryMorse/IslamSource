@@ -735,6 +735,9 @@
   <data name="IslamSource_No" xml:space="preserve">
     <value>No</value>
   </data>
+  <data name="IslamSource_Print" xml:space="preserve">
+    <value>Print</value>
+  </data>
   <data name="IslamInfo_Chapters" xml:space="preserve">
     <value>Chapters</value>
   </data>

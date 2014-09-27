@@ -25,6 +25,7 @@ Partial Class host
     Public Const RootPath As String = "/"
     Public Const MainPage As String = "host.aspx"
     Public Const PageQuery As String = "Page"
+    Public Const PagePrintQuery As String = "PagePrint"
     Public Const LangSet As String = "LangSet"
     Public Shared Function GetPageString(Page As String) As String
         Return RootPath + MainPage + "?" + PageQuery + "=" + Page
@@ -392,7 +393,7 @@ Partial Class host
             End If
             _IsHtml = True
             If Not IsPrint Then
-                Index = PageSet.GetPageIndex(Request.QueryString.Get(PageQuery))
+                Index = PageSet.GetPageIndex(Request.QueryString.Get(PagePrintQuery))
                 Controls.Add(New Menu(PageSet, Index))
             End If
             Controls.Add(New Page(PageSet.Pages.Item(Index)))
