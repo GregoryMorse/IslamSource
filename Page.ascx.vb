@@ -4,6 +4,7 @@ Partial Class Page
     Inherits System.Web.UI.UserControl
     Dim MyPage As PageLoader.PageItem
     Dim UsePanes As Boolean
+    Dim UsePrint As Boolean
     Public JSFunctions As New Collections.Generic.List(Of String)
     Public JSInitFuncs As New Collections.Generic.List(Of String)
 
@@ -25,9 +26,10 @@ Partial Class Page
     End Sub
 
 #End Region
-    Public Sub New(ByVal NewPage As PageLoader.PageItem, Optional ByVal NewUsePanes As Boolean = True)
+    Public Sub New(ByVal NewPage As PageLoader.PageItem, Optional ByVal NewUsePanes As Boolean = True, Optional ByVal NewIsPrint As Boolean = False)
         MyPage = NewPage
         UsePanes = NewUsePanes
+        UsePrint = NewIsPrint
     End Sub
     Function GetTitle() As String
         Return Utility.LoadResourceString(MyPage.Text)
@@ -210,7 +212,7 @@ Partial Class Page
             writer.WriteEndTag("b")
             writer.Write(vbCrLf + BaseTabs + vbTab)
             writer.WriteEndTag("div")
-            If DirectCast(Item, PageLoader.ListItem).HasForm Then
+            If Not UsePrint And DirectCast(Item, PageLoader.ListItem).HasForm Then
                 writer.Write(vbCrLf + BaseTabs + vbTab)
                 writer.WriteBeginTag("form")
                 writer.WriteAttribute("action", CStr(IIf(DirectCast(Item, PageLoader.ListItem).FormPostURL <> String.Empty, DirectCast(Item, PageLoader.ListItem).FormPostURL, host.MainPage)))
@@ -310,7 +312,7 @@ Partial Class Page
             End If
             writer.Write(vbCrLf + BaseTabs)
             writer.WriteFullBeginTag("br")
-        ElseIf (PageLoader.IsEditItem(Item)) Then
+        ElseIf Not UsePrint And (PageLoader.IsEditItem(Item)) Then
             writer.Write(vbCrLf + BaseTabs)
             If (DirectCast(Item, PageLoader.EditItem).Rows > 1) Then
                 writer.WriteBeginTag("textarea")
@@ -340,7 +342,7 @@ Partial Class Page
                 If DirectCast(Item, PageLoader.EditItem).Rows <> 0 Then writer.WriteAttribute("size", "20")
                 writer.Write(HtmlTextWriter.TagRightChar)
             End If
-        ElseIf (PageLoader.IsDateItem(Item)) Then
+        ElseIf Not UsePrint And (PageLoader.IsDateItem(Item)) Then
             writer.Write(vbCrLf + BaseTabs)
             writer.WriteBeginTag("input")
             writer.WriteAttribute("type", "text")
@@ -354,7 +356,7 @@ Partial Class Page
             writer.Write(vbCrLf + BaseTabs)
             writer.WriteEndTag("div")
             AddToJSFunctions(New String() {String.Empty, "$('#" + DirectCast(Item, PageLoader.DateItem).Name + "').calendarsPicker($.extend({yearRange: 'any', alignment:'bottomLeft', popupContainer: '#" + DirectCast(Item, PageLoader.DateItem).Name + "_div'}, '" + Globalization.CultureInfo.CurrentCulture.Name + "' in $.calendarsPicker.regionalOptions ? $.calendarsPicker.regionalOptions['" + Globalization.CultureInfo.CurrentCulture.Name + "'] : ('" + Globalization.CultureInfo.CurrentCulture.TwoLetterISOLanguageName + "' in $.calendarsPicker.regionalOptions ? $.calendarsPicker.regionalOptions['" + Globalization.CultureInfo.CurrentCulture.TwoLetterISOLanguageName + "'] : $.calendarsPicker.regionalOptions[''])));", String.Empty})
-        ElseIf (PageLoader.IsRadioItem(Item)) Then
+        ElseIf Not UsePrint And (PageLoader.IsRadioItem(Item)) Then
             writer.Write(vbCrLf + BaseTabs)
             writer.WriteBeginTag("span")
             writer.WriteAttribute("id", DirectCast(Item, PageLoader.RadioItem).Name + "_")
@@ -461,7 +463,7 @@ Partial Class Page
                 Next
             End If
             writer.WriteEndTag("span")
-        ElseIf (PageLoader.IsButtonItem(Item)) Then
+        ElseIf Not UsePrint And (PageLoader.IsButtonItem(Item)) Then
             writer.Write(vbCrLf + BaseTabs)
             writer.WriteBeginTag("input")
             writer.WriteAttribute("name", DirectCast(Item, PageLoader.ButtonItem).Name)

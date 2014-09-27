@@ -345,60 +345,60 @@ Partial Class host
             'Convert tabs to spaces
             Response.Write(Utility.SourceTextEncode(encoding.GetChars(buffer, encoding.GetPreamble().Length, count - encoding.GetPreamble().Length)))
             Response.ContentType = "text/plain;charset=" + encoding.WebName
-        ElseIf Request.QueryString.Get(PageQuery) = "Print" Then
-            IsPrint = True
         Else
-            If Request.QueryString.Get(PageQuery) = UserAccounts.ID_Register Then
-                UserAccounts.Register(PageSet, Request.Form.Get(UserAccounts.ID_Username), Request.Form.Get(UserAccounts.ID_Password), Request.Form.Get(UserAccounts.ID_ConfirmPassword), Request.Form.Get(UserAccounts.ID_EmailAddress), Request.Form.Get(UserAccounts.ID_ConfirmEmailAddress), Request.Form.Get(UserAccounts.ID_Register))
-            ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_Login Then
-                UserAccounts.Login(PageSet, Request.Form.Get(UserAccounts.ID_Username), Request.Form.Get(UserAccounts.ID_Password), Request.Form.Get(UserAccounts.ID_Remember), Request.Form.Get(UserAccounts.ID_Login))
-            ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_Logoff Then
-                UserAccounts.Logoff(PageSet)
-            ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_ForgotUsername Then
-                UserAccounts.ForgotUserName(PageSet, Request.Form.Get(UserAccounts.ID_EmailAddress), Request.Form.Get(UserAccounts.ID_RetrieveUsername))
-            ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_ForgotPassword Then
-                UserAccounts.ForgotPassword(PageSet, Request.Form.Get(UserAccounts.ID_Username), Request.Form.Get(UserAccounts.ID_RetrievePassword))
-            ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_ResetPassword Then
-                If Request.HttpMethod = "POST" Then
-                    UserAccounts.ResetPassword(PageSet, String.Empty, Request.Form.Get(UserAccounts.ID_Username), Request.Form.Get(UserAccounts.ID_PasswordResetCode), Request.Form.Get(UserAccounts.ID_Password), Request.Form.Get(UserAccounts.ID_ConfirmPassword), Request.Form.Get(UserAccounts.ID_ResetPassword))
-                Else
-                    UserAccounts.ResetPassword(PageSet, Request.QueryString.Get(UserAccounts.ID_UserID), String.Empty, Request.QueryString.Get(UserAccounts.ID_PasswordResetCode), String.Empty, String.Empty, UserAccounts.ID_ResetPassword)
+            If Request.QueryString.Get(PageQuery) = "Print" Then
+                IsPrint = True
+            ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_Register Then
+                    UserAccounts.Register(PageSet, Request.Form.Get(UserAccounts.ID_Username), Request.Form.Get(UserAccounts.ID_Password), Request.Form.Get(UserAccounts.ID_ConfirmPassword), Request.Form.Get(UserAccounts.ID_EmailAddress), Request.Form.Get(UserAccounts.ID_ConfirmEmailAddress), Request.Form.Get(UserAccounts.ID_Register))
+                ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_Login Then
+                    UserAccounts.Login(PageSet, Request.Form.Get(UserAccounts.ID_Username), Request.Form.Get(UserAccounts.ID_Password), Request.Form.Get(UserAccounts.ID_Remember), Request.Form.Get(UserAccounts.ID_Login))
+                ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_Logoff Then
+                    UserAccounts.Logoff(PageSet)
+                ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_ForgotUsername Then
+                    UserAccounts.ForgotUserName(PageSet, Request.Form.Get(UserAccounts.ID_EmailAddress), Request.Form.Get(UserAccounts.ID_RetrieveUsername))
+                ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_ForgotPassword Then
+                    UserAccounts.ForgotPassword(PageSet, Request.Form.Get(UserAccounts.ID_Username), Request.Form.Get(UserAccounts.ID_RetrievePassword))
+                ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_ResetPassword Then
+                    If Request.HttpMethod = "POST" Then
+                        UserAccounts.ResetPassword(PageSet, String.Empty, Request.Form.Get(UserAccounts.ID_Username), Request.Form.Get(UserAccounts.ID_PasswordResetCode), Request.Form.Get(UserAccounts.ID_Password), Request.Form.Get(UserAccounts.ID_ConfirmPassword), Request.Form.Get(UserAccounts.ID_ResetPassword))
+                    Else
+                        UserAccounts.ResetPassword(PageSet, Request.QueryString.Get(UserAccounts.ID_UserID), String.Empty, Request.QueryString.Get(UserAccounts.ID_PasswordResetCode), String.Empty, String.Empty, UserAccounts.ID_ResetPassword)
+                    End If
+                ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_ActivateAccount Then
+                    If Request.HttpMethod = "POST" Then
+                        UserAccounts.ActivateAccount(PageSet, String.Empty, Request.Form.Get(UserAccounts.ID_Username), Request.Form.Get(UserAccounts.ID_ActivationCode), Request.Form.Get(UserAccounts.ID_ActivateAccount))
+                    Else
+                        UserAccounts.ActivateAccount(PageSet, Request.QueryString.Get(UserAccounts.ID_UserID), String.Empty, Request.QueryString.Get(UserAccounts.ID_ActivationCode), UserAccounts.ID_ActivateAccount)
+                    End If
+                ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_SendActivationCode Then
+                    UserAccounts.SendActivation(PageSet, Request.Form.Get(UserAccounts.ID_Username), Request.Form.Get(UserAccounts.ID_SendActivationCode))
+                ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_ControlPanel Then
+                    UserAccounts.ControlPanel(PageSet)
+                ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_DeleteAccount Then
+                    UserAccounts.DeleteAccount(PageSet, Request.Form.Get(UserAccounts.ID_Certain), Request.Form.Get(UserAccounts.ID_DeleteAccount))
+                ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_ChangeEMailAddress Then
+                    UserAccounts.ChangeEMailAddress(PageSet, Request.Form.Get(UserAccounts.ID_EmailAddress), Request.Form.Get(UserAccounts.ID_ConfirmEmailAddress), Request.Form.Get(UserAccounts.ID_ChangeEMailAddress))
+                ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_ChangePassword Then
+                    UserAccounts.ChangePassword(PageSet, Request.Form.Get(UserAccounts.ID_Password), Request.Form.Get(UserAccounts.ID_ConfirmPassword), Request.Form.Get(UserAccounts.ID_ChangePassword))
+                ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_ChangeUsername Then
+                    UserAccounts.ChangeUserName(PageSet, Request.Form.Get(UserAccounts.ID_Username), Request.Form.Get(UserAccounts.ID_ChangeUsername))
+                ElseIf bIsAdmin And Request.QueryString.Get(PageQuery) = UserAccounts.ID_CertInstall Then
+                    UserAccounts.UploadCertificate(PageSet, Request.Form.Get(UserAccounts.ID_CertInstall), Request.Form.Get(UserAccounts.ID_Certificate), Request.Form.Get(UserAccounts.ID_CertRequest))
+                ElseIf bIsAdmin And Request.QueryString.Get(PageQuery) = UserAccounts.ID_CertInstallIntermed Then
+                    UserAccounts.InstallIntermediateCert(PageSet, Request.Form.Get(UserAccounts.ID_CertInstallIntermed), Request.Form.Get(UserAccounts.ID_Certificate))
+                ElseIf bIsAdmin And Request.QueryString.Get(PageQuery) = UserAccounts.ID_CertRequest Then
+                    UserAccounts.CreateCertificateRequest(PageSet, Request.Form.Get(UserAccounts.ID_CertRequest), Request.Form.Get(UserAccounts.ID_PrivateKey))
+                ElseIf bIsAdmin And Request.QueryString.Get(PageQuery) = UserAccounts.ID_DeleteCertRequest Then
+                    UserAccounts.DeleteCertificateRequest(PageSet, Request.Form.Get(UserAccounts.ID_DeleteCertRequest), Request.Form.Get(UserAccounts.ID_Certificate))
                 End If
-            ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_ActivateAccount Then
-                If Request.HttpMethod = "POST" Then
-                    UserAccounts.ActivateAccount(PageSet, String.Empty, Request.Form.Get(UserAccounts.ID_Username), Request.Form.Get(UserAccounts.ID_ActivationCode), Request.Form.Get(UserAccounts.ID_ActivateAccount))
-                Else
-                    UserAccounts.ActivateAccount(PageSet, Request.QueryString.Get(UserAccounts.ID_UserID), String.Empty, Request.QueryString.Get(UserAccounts.ID_ActivationCode), UserAccounts.ID_ActivateAccount)
-                End If
-            ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_SendActivationCode Then
-                UserAccounts.SendActivation(PageSet, Request.Form.Get(UserAccounts.ID_Username), Request.Form.Get(UserAccounts.ID_SendActivationCode))
-            ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_ControlPanel Then
-                UserAccounts.ControlPanel(PageSet)
-            ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_DeleteAccount Then
-                UserAccounts.DeleteAccount(PageSet, Request.Form.Get(UserAccounts.ID_Certain), Request.Form.Get(UserAccounts.ID_DeleteAccount))
-            ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_ChangeEMailAddress Then
-                UserAccounts.ChangeEMailAddress(PageSet, Request.Form.Get(UserAccounts.ID_EmailAddress), Request.Form.Get(UserAccounts.ID_ConfirmEmailAddress), Request.Form.Get(UserAccounts.ID_ChangeEMailAddress))
-            ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_ChangePassword Then
-                UserAccounts.ChangePassword(PageSet, Request.Form.Get(UserAccounts.ID_Password), Request.Form.Get(UserAccounts.ID_ConfirmPassword), Request.Form.Get(UserAccounts.ID_ChangePassword))
-            ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_ChangeUsername Then
-                UserAccounts.ChangeUserName(PageSet, Request.Form.Get(UserAccounts.ID_Username), Request.Form.Get(UserAccounts.ID_ChangeUsername))
-            ElseIf bIsAdmin And Request.QueryString.Get(PageQuery) = UserAccounts.ID_CertInstall Then
-                UserAccounts.UploadCertificate(PageSet, Request.Form.Get(UserAccounts.ID_CertInstall), Request.Form.Get(UserAccounts.ID_Certificate), Request.Form.Get(UserAccounts.ID_CertRequest))
-            ElseIf bIsAdmin And Request.QueryString.Get(PageQuery) = UserAccounts.ID_CertInstallIntermed Then
-                UserAccounts.InstallIntermediateCert(PageSet, Request.Form.Get(UserAccounts.ID_CertInstallIntermed), Request.Form.Get(UserAccounts.ID_Certificate))
-            ElseIf bIsAdmin And Request.QueryString.Get(PageQuery) = UserAccounts.ID_CertRequest Then
-                UserAccounts.CreateCertificateRequest(PageSet, Request.Form.Get(UserAccounts.ID_CertRequest), Request.Form.Get(UserAccounts.ID_PrivateKey))
-            ElseIf bIsAdmin And Request.QueryString.Get(PageQuery) = UserAccounts.ID_DeleteCertRequest Then
-                UserAccounts.DeleteCertificateRequest(PageSet, Request.Form.Get(UserAccounts.ID_DeleteCertRequest), Request.Form.Get(UserAccounts.ID_Certificate))
+                _IsHtml = True
+                Index = PageSet.GetPageIndex(Request.QueryString.Get(If(IsPrint, PagePrintQuery, PageQuery)))
+                If Not IsPrint Then
+                    Controls.Add(New Menu(PageSet, Index))
             End If
-            _IsHtml = True
-            Index = PageSet.GetPageIndex(Request.QueryString.Get(If(IsPrint, PagePrintQuery, PageQuery)))
-            If Not IsPrint Then
-                Controls.Add(New Menu(PageSet, Index))
+            Controls.Add(New Page(PageSet.Pages.Item(Index), True, IsPrint))
+                Response.ContentType = "text/html;charset=" + System.Text.Encoding.UTF8.WebName
             End If
-            Controls.Add(New Page(PageSet.Pages.Item(Index)))
-            Response.ContentType = "text/html;charset=" + System.Text.Encoding.UTF8.WebName
-        End If
     End Sub
     Protected Overrides Sub Render(ByVal writer As System.Web.UI.HtmlTextWriter)
         Dim Count As Integer
@@ -414,10 +414,10 @@ Partial Class host
             writer.Write(vbCrLf + vbTab)
             writer.WriteFullBeginTag("head")
             writer.Write("<meta http-equiv='Content-type' content='text/html;charset=" + System.Text.Encoding.UTF8.WebName + "'>")
-            writer.Write("<meta property=""og:title"" content=""" + CType(Controls(1), Page).GetTitle() + """>")
+            writer.Write("<meta property=""og:title"" content=""" + CType(Controls(Controls.Count - 1), Page).GetTitle() + """>")
             writer.Write("<meta property=""og:site_name"" content=""" + Utility.LoadResourceString(PageSet.Title) + """>")
             writer.Write("<meta property=""og:url"" content=""" + Utility.HtmlTextEncode(Web.HttpContext.Current.Request.Url.AbsoluteUri) + """>")
-            writer.Write("<meta property=""og:description"" content=""" + CType(Controls(1), Page).GetDescription() + """>")
+            writer.Write("<meta property=""og:description"" content=""" + CType(Controls(Controls.Count - 1), Page).GetDescription() + """>")
             writer.Write("<meta property=""og:image"" content=""" + Web.HttpContext.Current.Request.Url.GetLeftPart(UriPartial.Authority) + Utility.HtmlTextEncode(GetPageString("Image.gif&Image=Scale&p=menu.main")) + """>")
             writer.Write("<meta property=""fb:app_id"" content=""" + Utility.ConnectionData.FBAppID + """>")
             writer.Write("<meta property=""og:type"" content=""article"">")
@@ -427,7 +427,7 @@ Partial Class host
             writer.WriteFullBeginTag("title")
             writer.Write(Utility.LoadResourceString(PageSet.Title))
             writer.WriteEndTag("title")
-            If CType(Controls(1), Page).JSFunctions.Count <> 0 Then
+            If CType(Controls(Controls.Count - 1), Page).JSFunctions.Count <> 0 Then
                 writer.Write(vbCrLf + vbTab + vbTab)
                 writer.WriteBeginTag("script")
                 writer.WriteAttribute("type", "text/javascript")
@@ -481,9 +481,9 @@ Partial Class host
                 writer.WriteBeginTag("script")
                 writer.WriteAttribute("type", "text/javascript")
                 writer.Write(HtmlTextWriter.TagRightChar)
-                For Count = 0 To CType(Controls(1), Page).JSFunctions.Count - 1
+                For Count = 0 To CType(Controls(Controls.Count - 1), Page).JSFunctions.Count - 1
                     writer.Write(vbCrLf + vbTab + vbTab + vbTab)
-                    writer.Write(CType(Controls(1), Page).JSFunctions(Count))
+                    writer.Write(CType(Controls(Controls.Count - 1), Page).JSFunctions(Count))
                 Next
                 writer.Write(vbCrLf + vbTab + vbTab)
                 writer.WriteEndTag("script")
@@ -497,73 +497,76 @@ Partial Class host
             writer.WriteEndTag("head")
             writer.Write(vbCrLf + vbTab)
             writer.WriteBeginTag("body")
-            If CType(Controls(1), Page).JSInitFuncs.Count <> 0 Then
+            If CType(Controls(Controls.Count - 1), Page).JSInitFuncs.Count <> 0 Then
                 Dim LoadJS As String = String.Empty
-                For Count = 0 To CType(Controls(1), Page).JSInitFuncs.Count - 1
-                    LoadJS += CType(Controls(1), Page).JSInitFuncs(Count)
+                For Count = 0 To CType(Controls(Controls.Count - 1), Page).JSInitFuncs.Count - 1
+                    LoadJS += CType(Controls(Controls.Count - 1), Page).JSInitFuncs(Count)
                 Next
                 writer.WriteAttribute("onload", LoadJS)
             End If
+            If Controls.Count = 2 Then
+                writer.Write(HtmlTextWriter.TagRightChar + vbCrLf + vbTab + vbTab)
+                writer.WriteBeginTag("div")
+                writer.WriteAttribute("id", "fb-root")
+                writer.Write(HtmlTextWriter.TagRightChar + vbCrLf + vbTab + vbTab)
+                writer.WriteEndTag("div")
+                writer.Write(vbCrLf + vbTab + vbTab)
+                writer.WriteBeginTag("script")
+                writer.WriteAttribute("type", "text/javascript")
+                writer.Write(HtmlTextWriter.TagRightChar)
+                writer.Write("(function(d, s, id) {" + _
+    "  var js, fjs = d.getElementsByTagName(s)[0];" + _
+    "  if (d.getElementById(id)) return;" + _
+    "  js = d.createElement(s); js.id = id;" + _
+    "  js.src = ""//connect.facebook.net/en_US/all.js#xfbml=1&appId=" + Utility.ConnectionData.FBAppID + """;" + _
+    "  fjs.parentNode.insertBefore(js, fjs);" + _
+    "}(document, 'script', 'facebook-jssdk'));")
+                writer.Write(vbCrLf + vbTab + vbTab)
+                writer.WriteEndTag("script")
 
-            writer.Write(HtmlTextWriter.TagRightChar + vbCrLf + vbTab + vbTab)
-            writer.WriteBeginTag("div")
-            writer.WriteAttribute("id", "fb-root")
-            writer.Write(HtmlTextWriter.TagRightChar + vbCrLf + vbTab + vbTab)
-            writer.WriteEndTag("div")
-            writer.Write(vbCrLf + vbTab + vbTab)
-            writer.WriteBeginTag("script")
-            writer.WriteAttribute("type", "text/javascript")
-            writer.Write(HtmlTextWriter.TagRightChar)
-            writer.Write("(function(d, s, id) {" + _
-"  var js, fjs = d.getElementsByTagName(s)[0];" + _
-"  if (d.getElementById(id)) return;" + _
-"  js = d.createElement(s); js.id = id;" + _
-"  js.src = ""//connect.facebook.net/en_US/all.js#xfbml=1&appId=" + Utility.ConnectionData.FBAppID + """;" + _
-"  fjs.parentNode.insertBefore(js, fjs);" + _
-"}(document, 'script', 'facebook-jssdk'));")
-            writer.Write(vbCrLf + vbTab + vbTab)
-            writer.WriteEndTag("script")
-
-            writer.Write(vbCrLf + vbTab + vbTab)
-            writer.WriteBeginTag("div")
-            writer.WriteAttribute("id", "bgtopdiv")
-            writer.Write(HtmlTextWriter.TagRightChar + vbCrLf + vbTab + vbTab + vbTab)
-            writer.WriteBeginTag("img")
-            writer.WriteAttribute("alt", String.Empty)
-            writer.WriteAttribute("width", "100%")
-            writer.WriteAttribute("height", "100%")
-            writer.WriteAttribute("src", Utility.HtmlTextEncode(GetPageString("Image.gif&Image=GradientBackground")))
-            writer.Write(HtmlTextWriter.TagRightChar + vbCrLf + vbTab + vbTab)
-            writer.WriteEndTag("div")
-            writer.Write(vbCrLf + vbTab + vbTab)
-            writer.WriteBeginTag("div")
-            writer.WriteAttribute("id", "maindiv")
-            writer.Write(HtmlTextWriter.TagRightChar)
+                writer.Write(vbCrLf + vbTab + vbTab)
+                writer.WriteBeginTag("div")
+                writer.WriteAttribute("id", "bgtopdiv")
+                writer.Write(HtmlTextWriter.TagRightChar + vbCrLf + vbTab + vbTab + vbTab)
+                writer.WriteBeginTag("img")
+                writer.WriteAttribute("alt", String.Empty)
+                writer.WriteAttribute("width", "100%")
+                writer.WriteAttribute("height", "100%")
+                writer.WriteAttribute("src", Utility.HtmlTextEncode(GetPageString("Image.gif&Image=GradientBackground")))
+                writer.Write(HtmlTextWriter.TagRightChar + vbCrLf + vbTab + vbTab)
+                writer.WriteEndTag("div")
+                writer.Write(vbCrLf + vbTab + vbTab)
+                writer.WriteBeginTag("div")
+                writer.WriteAttribute("id", "maindiv")
+                writer.Write(HtmlTextWriter.TagRightChar)
+            End If
             writer.Write(StringWriter.ToString())
-            writer.WriteEndTag("div")
+            If Controls.Count = 2 Then
+                writer.WriteEndTag("div")
 
-            writer.Write(vbCrLf + vbTab + vbTab)
-            writer.WriteBeginTag("div")
-            writer.WriteAttribute("id", "bgbottomdiv")
-            writer.Write(HtmlTextWriter.TagRightChar + vbCrLf + vbTab + vbTab + vbTab)
-            writer.WriteBeginTag("img")
-            writer.WriteAttribute("alt", String.Empty)
-            writer.WriteAttribute("width", "100%")
-            writer.WriteAttribute("height", "100%")
-            writer.WriteAttribute("src", Utility.HtmlTextEncode(GetPageString("Image.gif&Image=GradientBackgroundBottom")))
-            writer.Write(HtmlTextWriter.TagRightChar + vbCrLf + vbTab + vbTab)
-            writer.WriteEndTag("div")
+                writer.Write(vbCrLf + vbTab + vbTab)
+                writer.WriteBeginTag("div")
+                writer.WriteAttribute("id", "bgbottomdiv")
+                writer.Write(HtmlTextWriter.TagRightChar + vbCrLf + vbTab + vbTab + vbTab)
+                writer.WriteBeginTag("img")
+                writer.WriteAttribute("alt", String.Empty)
+                writer.WriteAttribute("width", "100%")
+                writer.WriteAttribute("height", "100%")
+                writer.WriteAttribute("src", Utility.HtmlTextEncode(GetPageString("Image.gif&Image=GradientBackgroundBottom")))
+                writer.Write(HtmlTextWriter.TagRightChar + vbCrLf + vbTab + vbTab)
+                writer.WriteEndTag("div")
 
-            writer.Write(vbCrLf + vbTab + vbTab)
-            writer.WriteBeginTag("div")
-            writer.WriteAttribute("class", "fb-like")
-            writer.WriteAttribute("data-href", Utility.HtmlTextEncode(Web.HttpContext.Current.Request.Url.AbsoluteUri))
-            writer.WriteAttribute("data-layout", "standard")
-            writer.WriteAttribute("data-action", "like")
-            writer.WriteAttribute("data-show-faces", "true")
-            writer.WriteAttribute("data-share", "true")
-            writer.Write(HtmlTextWriter.TagRightChar + vbCrLf + vbTab + vbTab + vbTab)
-            writer.WriteEndTag("div")
+                writer.Write(vbCrLf + vbTab + vbTab)
+                writer.WriteBeginTag("div")
+                writer.WriteAttribute("class", "fb-like")
+                writer.WriteAttribute("data-href", Utility.HtmlTextEncode(Web.HttpContext.Current.Request.Url.AbsoluteUri))
+                writer.WriteAttribute("data-layout", "standard")
+                writer.WriteAttribute("data-action", "like")
+                writer.WriteAttribute("data-show-faces", "true")
+                writer.WriteAttribute("data-share", "true")
+                writer.Write(HtmlTextWriter.TagRightChar + vbCrLf + vbTab + vbTab + vbTab)
+                writer.WriteEndTag("div")
+            End If
 
             writer.Write(vbCrLf + vbTab)
             writer.WriteEndTag("body")
