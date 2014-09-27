@@ -392,8 +392,8 @@ Partial Class host
                 UserAccounts.DeleteCertificateRequest(PageSet, Request.Form.Get(UserAccounts.ID_DeleteCertRequest), Request.Form.Get(UserAccounts.ID_Certificate))
             End If
             _IsHtml = True
+            Index = PageSet.GetPageIndex(Request.QueryString.Get(If(IsPrint, PagePrintQuery, PageQuery)))
             If Not IsPrint Then
-                Index = PageSet.GetPageIndex(Request.QueryString.Get(PagePrintQuery))
                 Controls.Add(New Menu(PageSet, Index))
             End If
             Controls.Add(New Page(PageSet.Pages.Item(Index)))
