@@ -1338,14 +1338,23 @@ Public Class Arabic
         CachedData.IslamData.ArabicLetters.CopyTo(Letters, 0)
         Array.Sort(Letters, New StringLengthComparer)
         For Count = 0 To ArabicString.Length - 1
-            For Index = 0 To Letters.Length - 1
-                If ArabicString(Count) = Letters(Index).Symbol Then
-                    RomanString += CStr(IIf(UseBuckwalter, Letters(Index).ExtendedBuckwalterLetter, Letters(Index).RomanTranslit))
-                    Exit For
+            If ArabicString(Count) = "\" Then
+                Count += 1
+                If ArabicString(Count) = "," Then
+                    RomanString += ArabicComma
+                Else
+                    RomanString += ArabicString(Count)
                 End If
-            Next
-            If Index = Letters.Length Then
-                RomanString += ArabicString(Count)
+            Else
+                For Index = 0 To Letters.Length - 1
+                    If ArabicString(Count) = Letters(Index).Symbol Then
+                        RomanString += CStr(IIf(UseBuckwalter, Letters(Index).ExtendedBuckwalterLetter, Letters(Index).RomanTranslit))
+                        Exit For
+                    End If
+                Next
+                If Index = Letters.Length Then
+                    RomanString += ArabicString(Count)
+                End If
             End If
         Next
         Return RomanString
@@ -2370,7 +2379,7 @@ Public Class Arabic
         Return New String() {"javascript: doTransliterateDisplay();", String.Empty, GetArabicSymbolJSArray(), GetTransliterateGenJS(), GetDiacriticJS(), _
         "function isRTL(c) { return ((c===0x05BE)||(c===0x05C0)||(c===0x05C3)||(c===0x05C6)||((c>=0x05D0)&&(c<=0x05F4))||(c===0x0608)||(c===0x060B)||(c===0x060D)||((c>=0x061B)&&(c<=0x064A))||((c>=0x066D)&&(c<=0x066F))||((c>=0x0671)&&(c<=0x06D5))||((c>=0x06E5)&&(c<=0x06E6))||((c>=0x06EE)&&(c<=0x06EF))||((c>=0x06FA)&&(c<=0x0710))||((c>=0x0712)&&(c<=0x072F))||((c>=0x074D)&&(c<=0x07A5))||((c>=0x07B1)&&(c<=0x07EA))||((c>=0x07F4)&&(c<=0x07F5))||((c>=0x07FA)&&(c<=0x0815))||(c===0x081A)||(c===0x0824)||(c===0x0828)||((c>=0x0830)&&(c<=0x0858))||((c>=0x085E)&&(c<=0x08AC))||(c===0x200F)||(c===0xFB1D)||((c>=0xFB1F)&&(c<=0xFB28))||((c>=0xFB2A)&&(c<=0xFD3D))||((c>=0xFD50)&&(c<=0xFDFC))||((c>=0xFE70)&&(c<=0xFEFC))||((c>=0x10800)&&(c<=0x1091B))||((c>=0x10920)&&(c<=0x10A00))||((c>=0x10A10)&&(c<=0x10A33))||((c>=0x10A40)&&(c<=0x10B35))||((c>=0x10B40)&&(c<=0x10C48))||((c>=0x1EE00)&&(c<=0x1EEBB))); }", _
         "function doFixDirection(sVal, direction) { var iCount, sOutVal = direction ? '\u200E' : '\u200F', bInv = false; for (iCount = 0; iCount < sVal.length; iCount++) { sOutVal += (sVal.charCodeAt(iCount) == 0x200E || sVal.charCodeAt(iCount) == 0x200F || sVal.charCodeAt(iCount) == 0x202A || sVal.charCodeAt(iCount) == 0x202B || sVal.charCodeAt(iCount) == 0x202C || sVal.charCodeAt(iCount) == 0x202D || sVal.charCodeAt(iCount) == 0x202E) ? '' : (!bInv && isRTL(sVal.charCodeAt(iCount)) === direction ? '' : (direction ? '\u202A' : '\u202B')) + sVal[iCount]; } return sOutVal; }", _
-        "function doTransliterateDisplay() { $('#translitvalue').text(doTransliterate($('#scheme0').prop('checked') ? doTransliterate($('#translitedit').val(), $('#direction0').prop('checked'), $('#translitscheme0').prop('checked')) : ($('#scheme1').prop('checked') ? doDiacritics($('#translitedit').val(), $('#diacriticscheme0').prop('checked')) : doFixDirection($('#translitedit').val(), $('#diacriticscheme0').prop('checked')))); }"}
+        "function doTransliterateDisplay() { $('#translitvalue').text(doTransliterate($('#scheme0').prop('checked') ? doTransliterate($('#translitedit').val(), $('#direction0').prop('checked'), $('#translitscheme0').prop('checked')) : ($('#scheme1').prop('checked') ? doDiacritics($('#translitedit').val(), $('#diacriticscheme0').prop('checked')) : doFixDirection($('#translitedit').val(), $('#diacriticscheme0').prop('checked'))))); }"}
     End Function
     Public Shared Function GetSchemeChangeJS() As String()
         Return New String() {"javascript: doSchemeChange();", String.Empty, "function doSchemeChange() { $('#diacriticscheme_').css('display', $('#scheme0').prop('checked') ? 'none' : 'block'); $('#translitscheme_').css('display', $('#scheme0').prop('checked') ? 'block' : 'none'); $('#direction_').css('display', $('#scheme0').prop('checked') ? 'block' : 'none'); }"}
@@ -2818,15 +2827,17 @@ Public Class RenderArray
                         writer.WriteAttribute("class", "arabic")
                         writer.WriteAttribute("dir", "rtl")
                         writer.WriteAttribute("id", "arabic" + CStr(IIf(NestPrefix = String.Empty, String.Empty, NestPrefix + "_")) + CStr(Count) + "_" + CStr(Index))
+                        writer.WriteAttribute("style", "color: " + System.Drawing.ColorTranslator.ToHtml(Items(Count).TextItems(Index).Clr) + ";")
                     ElseIf Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eTransliteration Then
                         writer.WriteAttribute("class", "transliteration")
                         writer.WriteAttribute("dir", "ltr")
-                        writer.WriteAttribute("style", "display: " + CStr(IIf(CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) <> 0, "block", "none")) + ";")
+                        writer.WriteAttribute("style", "color: " + System.Drawing.ColorTranslator.ToHtml(Items(Count).TextItems(Index).Clr) + "; display: " + CStr(IIf(CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) <> 0, "block", "none")) + ";")
                         writer.WriteAttribute("id", "translit" + CStr(IIf(NestPrefix = String.Empty, String.Empty, NestPrefix + "_")) + CStr(Count) + "_" + CStr(Index))
                     Else
                         writer.WriteAttribute("class", "translation")
                         writer.WriteAttribute("dir", CStr(IIf(Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eRTL, "rtl", "ltr")))
                         writer.WriteAttribute("id", "translate" + CStr(IIf(NestPrefix = String.Empty, String.Empty, NestPrefix + "_")) + CStr(Count) + "_" + CStr(Index))
+                        writer.WriteAttribute("style", "color: " + System.Drawing.ColorTranslator.ToHtml(Items(Count).TextItems(Index).Clr) + ";")
                     End If
                     writer.Write(HtmlTextWriter.TagRightChar)
                     writer.Write(Utility.HtmlTextEncode(CStr(Items(Count).TextItems(Index).Text)).Replace(vbCrLf, "<br>"))
