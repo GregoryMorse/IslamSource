@@ -1440,8 +1440,30 @@ Public Class Arabic
     Public Const ArabicEmptyCentreHighStop As Char = ChrW(1771)
     Public Const ArabicRoundedHighStopWithFilledCentre As Char = ChrW(1772)
     Public Const ArabicSmallLowMeem As Char = ChrW(1773)
+    Public Const ArabicLetterMark As Char = ChrW(&H61C)
     Public Const LeftToRightMark As Char = ChrW(&H200E)
     Public Const RightToLeftMark As Char = ChrW(&H200F)
+    'http://www.unicode.org/Public/7.0.0/ucd/UnicodeData.txt
+    Public LTRCategories As String() = New String() {"L"}
+    Public RTLCategories As String() = New String() {"R", "AL"}
+    Public NeutralCategories As String() = New String() {"B", "S", "WS", "ON"}
+    Public WeakCategories As String() = New String() {"EN", "ES", "ET", "AN", "CS", "NSM", "BN"}
+    Public ExplicitCategories As String() = New String() {"LRE", "LRO", "RLE", "RLO", "PDF", "LRI", "RLI", "FSI", "PDI"}
+    Public Function MakeUniCategory(Cats As String()) As String
+        Dim Strs As String() = IO.File.ReadAllLines("UnicodeData.txt")
+        Dim Ranges As New ArrayList
+        For Count = 0 To Strs.Length - 1
+            If Array.IndexOf(Cats, Strs(Count).Split(";"c)(4)) Then
+                Dim NewRangeMatch As Integer = Integer.Parse(Strs(Count).Split(";"c)(0), Globalization.NumberStyles.AllowHexSpecifier)
+                If Ranges(Ranges.Count - 1)(Ranges(Ranges.Count - 1).Count - 1) + 1 = NewRangeMatch Then
+                    Ranges(Ranges.Count - 1).Add(NewRangeMatch)
+                Else
+                    Ranges.Add(New ArrayList From {NewRangeMatch})
+                End If
+            End If
+        Next
+        Return "return " + String.Join("||", Array.ConvertAll(Of ArrayList, String)(Ranges, Function(Arr As ArrayList) If(Arr.Count = 1, "c===" + Arr(0), "(c>=" + Arr(0) + "&&c<=" + Arr(Arr.Count - 1) + ")")))
+    End Function
     Public Shared RecitationSymbols() As Char = {Space, _
         ArabicLetterHamza, ArabicLetterAlefWithHamzaAbove, ArabicLetterWawWithHamzaAbove, _
         ArabicLetterAlefWithHamzaBelow, ArabicLetterYehWithHamzaAbove, _
