@@ -1496,6 +1496,35 @@ Public Class Arabic
     Public Shared Function GetRecitationSymbols() As Array()
         Return Array.ConvertAll(RecitationSymbols, Function(Ch As Char) New Object() {CachedData.IslamData.ArabicLetters(FindLetterBySymbol(Ch)).UnicodeName + " (" + Ch + ")", FindLetterBySymbol(Ch)})
     End Function
+    Public Shared Function GetRecitationLetters() As Char()
+        Return {ArabicLetterHamza, ArabicLetterAlefWithHamzaAbove, ArabicLetterWawWithHamzaAbove, _
+        ArabicLetterAlefWithHamzaBelow, ArabicLetterYehWithHamzaAbove, _
+        ArabicLetterAlef, ArabicLetterBeh, ArabicLetterTehMarbuta, ArabicLetterTeh, _
+        ArabicLetterTheh, ArabicLetterJeem, ArabicLetterHah, ArabicLetterKhah, ArabicLetterDal,
+        ArabicLetterThal, ArabicLetterReh, ArabicLetterZain, ArabicLetterSeen, ArabicLetterSheen, _
+        ArabicLetterSad, ArabicLetterDad, ArabicLetterTah, ArabicLetterZah, ArabicLetterAin, _
+        ArabicLetterGhain, ArabicTatweel, ArabicLetterFeh, ArabicLetterQaf, ArabicLetterKaf, _
+        ArabicLetterLam, ArabicLetterMeem, ArabicLetterNoon, ArabicLetterHeh, ArabicLetterWaw, _
+        ArabicLetterAlefMaksura, ArabicLetterYeh}
+    End Function
+    Public Shared Function GetRecitationDiacritics() As Char()
+        Return {ArabicFathatan, ArabicDammatan, ArabicKasratan, _
+        ArabicFatha, ArabicDamma, ArabicKasra, ArabicShadda, ArabicSukun, ArabicMaddahAbove, _
+        ArabicHamzaAbove, ArabicLetterSuperscriptAlef, ArabicLetterAlefWasla}
+    End Function
+    Public Shared Function GetRecitationLettersDiacritics() As Char()
+        Return {ArabicLetterHamza, ArabicLetterAlefWithHamzaAbove, ArabicLetterWawWithHamzaAbove, _
+        ArabicLetterAlefWithHamzaBelow, ArabicLetterYehWithHamzaAbove, _
+        ArabicLetterAlef, ArabicLetterBeh, ArabicLetterTehMarbuta, ArabicLetterTeh, _
+        ArabicLetterTheh, ArabicLetterJeem, ArabicLetterHah, ArabicLetterKhah, ArabicLetterDal,
+        ArabicLetterThal, ArabicLetterReh, ArabicLetterZain, ArabicLetterSeen, ArabicLetterSheen, _
+        ArabicLetterSad, ArabicLetterDad, ArabicLetterTah, ArabicLetterZah, ArabicLetterAin, _
+        ArabicLetterGhain, ArabicTatweel, ArabicLetterFeh, ArabicLetterQaf, ArabicLetterKaf, _
+        ArabicLetterLam, ArabicLetterMeem, ArabicLetterNoon, ArabicLetterHeh, ArabicLetterWaw, _
+        ArabicLetterAlefMaksura, ArabicLetterYeh, ArabicFathatan, ArabicDammatan, ArabicKasratan, _
+        ArabicFatha, ArabicDamma, ArabicKasra, ArabicShadda, ArabicSukun, ArabicMaddahAbove, _
+        ArabicHamzaAbove, ArabicLetterSuperscriptAlef, ArabicLetterAlefWasla}
+    End Function
     Public Shared Function IsLetter(Index As Integer) As Boolean
         Return Array.FindIndex(ArabicLetters, Function(Str As String) Str = CachedData.IslamData.ArabicLetters(Index).Symbol) <> -1
     End Function
@@ -1578,6 +1607,24 @@ Public Class Arabic
         New ColorRule With {.RuleName = "EmphaticPronounciation", .Match = "emphasis", .Color = Color.DarkBlue}, _
         New ColorRule With {.RuleName = "UnrestLetters", .Match = "bounce", .Color = Color.Blue} _
     }
+    Public Shared ErrorCheckRules As RuleTranslation() = { _
+            New RuleTranslation With {.Rule = "Missing diacritic", .RuleName = "MissingDiacritic", .Match = MakeUniRegEx(ArabicLetterAlefWithHamzaAbove) + "[^" + MakeUniRegEx(ArabicFatha) + MakeUniRegEx(ArabicDamma) + "]|" + MakeUniRegEx(ArabicLetterAlefWithHamzaBelow) + "[^" + MakeUniRegEx(ArabicKasra) + "]", _
+                                      .Evaluator = Function(Match As System.Text.RegularExpressions.Match) Match.Value}, _
+            New RuleTranslation With {.Rule = "Missing diacritic", .RuleName = "MissingDiacritic", .Match = "(" + MakeRegMultiEx(ArabicSunLetters) + "|" + MakeRegMultiEx(ArabicMoonLettersNoVowels) + "|" + MakeUniRegEx(ArabicFatha) + MakeUniRegEx(ArabicLetterYeh) + "|" + MakeUniRegEx(ArabicFatha) + MakeUniRegEx(ArabicLetterWaw) + ")(" + MakeRegMultiEx(ArabicSunLetters) + "|" + MakeRegMultiEx(ArabicMoonLettersNoVowels) + "|" + MakeUniRegEx(ArabicLetterAlef) + "|" + MakeUniRegEx(ArabicLetterWaw) + "|" + MakeUniRegEx(ArabicLetterYeh) + ")", _
+                                      .Evaluator = Function(Match As System.Text.RegularExpressions.Match) Match.Value}, _
+            New RuleTranslation With {.RuleName = "NotAtEndOfWord", .Match = "", _
+                                      .Evaluator = Function(Match As System.Text.RegularExpressions.Match) Match.Value}, _
+            New RuleTranslation With {.Rule = "Can only appear at end of word", .RuleName = "OnlyAtEndOfWord", .Match = MakeUniRegEx(ArabicLetterAlefMaksura) + "(" + MakeRegMultiEx(Array.ConvertAll(ArabicFathaDammaKasra, Function(Str As String) MakeUniRegEx(Str))) + "|" + MakeRegMultiEx(Array.ConvertAll(ArabicTanweens, Function(Str As String) MakeUniRegEx(Str))) + "|" + MakeUniRegEx(ArabicLetterSuperscriptAlef) + ")?\B|" + MakeUniRegEx(ArabicLetterTehMarbuta) + "(" + MakeRegMultiEx(Array.ConvertAll(ArabicFathaDammaKasra, Function(Str As String) MakeUniRegEx(Str))) + "|" + MakeRegMultiEx(Array.ConvertAll(ArabicTanweens, Function(Str As String) MakeUniRegEx(Str))) + ")?\B", _
+                                      .Evaluator = Function(Match As System.Text.RegularExpressions.Match) Match.Value}, _
+            New RuleTranslation With {.Rule = "Must not appear at beginning of word", .RuleName = "NotAtStartOfWord", .Match = "\b[" + MakeUniRegEx(ArabicLetterAlef) + MakeUniRegEx(ArabicShadda) + MakeUniRegEx(ArabicSukun) + MakeRegMultiEx(Array.ConvertAll(ArabicFathaDammaKasra, Function(Str As String) MakeUniRegEx(Str))) + MakeRegMultiEx(Array.ConvertAll(ArabicTanweens, Function(Str As String) MakeUniRegEx(Str))) + "]", _
+                                      .Evaluator = Function(Match As System.Text.RegularExpressions.Match) Match.Value}, _
+            New RuleTranslation With {.Rule = "Must appear at beginning of word", .RuleName = "OnlyAtStartOfWord", .Match = "\B" + MakeUniRegEx(ArabicLetterAlefWasla), _
+                                      .Evaluator = Function(Match As System.Text.RegularExpressions.Match) Match.Value}, _
+            New RuleTranslation With {.Rule = "Not a valid combination", .RuleName = "NotValidCombination", .Match = MakeUniRegEx(ArabicDamma) + MakeUniRegEx(ArabicLetterYeh) + "|" + MakeUniRegEx(ArabicKasra) + MakeUniRegEx(ArabicLetterWaw), _
+                                      .Evaluator = Function(Match As System.Text.RegularExpressions.Match) Match.Value}, _
+            New RuleTranslation With {.Rule = "Needs to be recomposed", .RuleName = "NeedsRecomposition", .Match = "(" + MakeUniRegEx(ArabicLetterAlef) + MakeUniRegEx(ArabicMaddahAbove) + "|" + MakeUniRegEx(ArabicLetterHamza) + MakeUniRegEx(ArabicFatha) + MakeUniRegEx(ArabicLetterAlef) + "|" + MakeUniRegEx(ArabicLetterAlef) + MakeUniRegEx(ArabicLetterHamza) + "|" + MakeUniRegEx(ArabicLetterWaw) + MakeUniRegEx(ArabicLetterHamza) + "|" + MakeUniRegEx(ArabicLetterAlefMaksura) + MakeUniRegEx(ArabicLetterHamza) + ")", _
+                                      .Evaluator = Function(Match As System.Text.RegularExpressions.Match) Match.Value}
+            }
     Public Shared BreakdownRules As RuleTranslation() = { _
             New RuleTranslation With {.RuleName = "AlefMaddah", .Match = MakeUniRegEx(ArabicLetterAlefWithMaddaAbove), _
                                       .Evaluator = Function(Match As System.Text.RegularExpressions.Match) ArabicLetterAlef + ArabicMaddahAbove}, _
@@ -2014,29 +2061,14 @@ Public Class Arabic
     Public Shared Function TransliterateToPlainRoman(ByVal ArabicString As String) As String
         Dim RomanString As String = String.Empty
         'need to check for decomposed first
-        If System.Text.RegularExpressions.Regex.Matches(ArabicString, MakeUniRegEx(ArabicLetterAlefWithHamzaAbove) + "[^" + MakeUniRegEx(ArabicFatha) + MakeUniRegEx(ArabicDamma) + "]|" + MakeUniRegEx(ArabicLetterAlefWithHamzaBelow) + "[^" + MakeUniRegEx(ArabicKasra) + "]").Count <> 0 Then
-            Diagnostics.Debug.Print("Missing diacritic: " + ArabicString)
-        End If
-        If System.Text.RegularExpressions.Regex.Matches(ArabicString, "(" + MakeRegMultiEx(ArabicSunLetters) + "|" + MakeRegMultiEx(ArabicMoonLettersNoVowels) + "|" + MakeUniRegEx(ArabicFatha) + MakeUniRegEx(ArabicLetterYeh) + "|" + MakeUniRegEx(ArabicFatha) + MakeUniRegEx(ArabicLetterWaw) + ")(" + MakeRegMultiEx(ArabicSunLetters) + "|" + MakeRegMultiEx(ArabicMoonLettersNoVowels) + "|" + MakeUniRegEx(ArabicLetterAlef) + "|" + MakeUniRegEx(ArabicLetterWaw) + "|" + MakeUniRegEx(ArabicLetterYeh) + ")").Count <> 0 Then
-            Diagnostics.Debug.Print("Missing diacritic: " + ArabicString)
-        End If
-        If System.Text.RegularExpressions.Regex.Matches(ArabicString, MakeUniRegEx(ArabicLetterAlefMaksura) + "(" + MakeRegMultiEx(Array.ConvertAll(ArabicFathaDammaKasra, Function(Str As String) MakeUniRegEx(Str))) + "|" + MakeRegMultiEx(Array.ConvertAll(ArabicTanweens, Function(Str As String) MakeUniRegEx(Str))) + "|" + MakeUniRegEx(ArabicLetterSuperscriptAlef) + ")?\B|" + MakeUniRegEx(ArabicLetterTehMarbuta) + "(" + MakeRegMultiEx(Array.ConvertAll(ArabicFathaDammaKasra, Function(Str As String) MakeUniRegEx(Str))) + "|" + MakeRegMultiEx(Array.ConvertAll(ArabicTanweens, Function(Str As String) MakeUniRegEx(Str))) + ")?\B").Count <> 0 Then
-            Diagnostics.Debug.Print("Can only appear at end of word: " + ArabicString)
-        End If
-        If System.Text.RegularExpressions.Regex.Matches(ArabicString, "\b[" + MakeUniRegEx(ArabicLetterAlef) + MakeUniRegEx(ArabicShadda) + MakeUniRegEx(ArabicSukun) + MakeRegMultiEx(Array.ConvertAll(ArabicFathaDammaKasra, Function(Str As String) MakeUniRegEx(Str))) + MakeRegMultiEx(Array.ConvertAll(ArabicTanweens, Function(Str As String) MakeUniRegEx(Str))) + "]").Count <> 0 Then
-            Diagnostics.Debug.Print("Must not appear at beginning of word: " + ArabicString)
-        End If
-        If System.Text.RegularExpressions.Regex.Matches(ArabicString, "\B" + MakeUniRegEx(ArabicLetterAlefWasla)).Count <> 0 Then
-            Diagnostics.Debug.Print("Must appear at beginning of word: " + ArabicString)
-        End If
-        If System.Text.RegularExpressions.Regex.Matches(ArabicString, MakeUniRegEx(ArabicDamma) + MakeUniRegEx(ArabicLetterYeh) + "|" + MakeUniRegEx(ArabicKasra) + MakeUniRegEx(ArabicLetterWaw)).Count <> 0 Then
-            Diagnostics.Debug.Print("Not a valid combination: " + ArabicString)
-        End If
-        If System.Text.RegularExpressions.Regex.Matches(ArabicString, "(" + MakeUniRegEx(ArabicLetterAlef) + MakeUniRegEx(ArabicMaddahAbove) + "|" + MakeUniRegEx(ArabicLetterHamza) + MakeUniRegEx(ArabicFatha) + MakeUniRegEx(ArabicLetterAlef) + "|" + MakeUniRegEx(ArabicLetterAlef) + MakeUniRegEx(ArabicLetterHamza) + "|" + MakeUniRegEx(ArabicLetterWaw) + MakeUniRegEx(ArabicLetterHamza) + "|" + MakeUniRegEx(ArabicLetterAlefMaksura) + MakeUniRegEx(ArabicLetterHamza) + ")").Count <> 0 Then
-            Diagnostics.Debug.Print("Needs to be recomposed: " + ArabicString)
-        End If
         Dim Count As Integer
         Dim MetadataList As New Generic.List(Of RuleMetadata)
+        For Count = 0 To ErrorCheckRules.Length - 1
+            Dim Match As System.Text.RegularExpressions.Match = System.Text.RegularExpressions.Regex.Match(ArabicString, ErrorCheckRules(Count).Match)
+            If Match.Success Then
+                Debug.Print(ErrorCheckRules(Count).Rule + ": " + Match.Value)
+            End If
+        Next
         For Count = 0 To RulesOfRecitationRegEx.Length - 1
             Dim Match As System.Text.RegularExpressions.Match = System.Text.RegularExpressions.Regex.Match(ArabicString, RulesOfRecitationRegEx(Count).Match)
             If Match.Success Then
@@ -3671,6 +3703,8 @@ Public Class TanzilReader
             Return CStr(CachedData.TotalUniqueWordsInStations)
         ElseIf Index = 6 Then
             Return CStr(CachedData.TotalWordsInStations)
+        ElseIf Index = 7 Then
+            Return String.Empty
         Else
             Return String.Empty
         End If
@@ -3734,6 +3768,41 @@ Public Class TanzilReader
             End If
         End If
         Return CType(Output.ToArray(GetType(Array)), Array())
+    End Function
+    Public Shared Function GetQuranLetterPatterns() As Array()
+        Dim StartWordOnly As String = String.Join(String.Empty, Array.ConvertAll(Arabic.GetRecitationLetters(), Function(C As Char) CStr(C)))
+        Dim EndWordOnly As String = String.Join(String.Empty, Array.ConvertAll(Arabic.GetRecitationLetters(), Function(C As Char) CStr(C)))
+        Dim NotStartWord As String = String.Join(String.Empty, Array.ConvertAll(Arabic.GetRecitationLetters(), Function(C As Char) CStr(C)))
+        Dim NotEndWord As String = String.Join(String.Empty, Array.ConvertAll(Arabic.GetRecitationLetters(), Function(C As Char) CStr(C)))
+        Dim MiddleWordOnly As String = String.Join(String.Empty, Array.ConvertAll(Arabic.GetRecitationLetters(), Function(C As Char) CStr(C)))
+        Dim NotMiddleWord As String = String.Join(String.Empty, Array.ConvertAll(Arabic.GetRecitationLetters(), Function(C As Char) CStr(C)))
+        Dim DiaStartWordOnly As String = String.Join(String.Empty, Array.ConvertAll(Arabic.GetRecitationDiacritics(), Function(C As Char) CStr(C)))
+        Dim DiaEndWordOnly As String = String.Join(String.Empty, Array.ConvertAll(Arabic.GetRecitationDiacritics(), Function(C As Char) CStr(C)))
+        Dim DiaNotStartWord As String = String.Join(String.Empty, Array.ConvertAll(Arabic.GetRecitationDiacritics(), Function(C As Char) CStr(C)))
+        Dim DiaNotEndWord As String = String.Join(String.Empty, Array.ConvertAll(Arabic.GetRecitationDiacritics(), Function(C As Char) CStr(C)))
+        Dim DiaMiddleWordOnly As String = String.Join(String.Empty, Array.ConvertAll(Arabic.GetRecitationDiacritics(), Function(C As Char) CStr(C)))
+        Dim DiaNotMiddleWord As String = String.Join(String.Empty, Array.ConvertAll(Arabic.GetRecitationDiacritics(), Function(C As Char) CStr(C)))
+        'Dim Combos As String() = Array.ConvertAll(Arabic.GetRecitationLettersDiacritics(), Function(C As Char) Array.ConvertAll(Arabic.GetRecitationLettersDiacritics(), Function(Nxt As Char) C + Nxt))
+        For Each Key As String In CachedData.WordDictionary.Keys
+            For Count = 0 To CStr(CachedData.WordDictionary.Item(Key).Item(0)).Length - 1
+                Dim Index As Integer
+                If Count = 0 Then
+                    Index = MiddleWordOnly.IndexOf(CStr(CachedData.WordDictionary.Item(Key).Item(0)).Chars(0))
+                    If Index <> -1 Then
+                        MiddleWordOnly = MiddleWordOnly.Remove(Index)
+                    End If
+                    If Count = CStr(CachedData.WordDictionary.Item(Key).Item(0)).Length - 1 Then
+                    Else
+                        Index = EndWordOnly.IndexOf(CStr(CachedData.WordDictionary.Item(Key).Item(0)).Chars(0))
+                        If Index <> -1 Then
+                            EndWordOnly = EndWordOnly.Remove(Index)
+                        End If
+                    End If
+                ElseIf Count = CStr(CachedData.WordDictionary.Item(Key).Item(0)).Length - 1 Then
+                Else
+                End If
+            Next
+        Next
     End Function
     Public Shared Function GetSelectionNames() As Array()
         Dim Division As Integer = 0
