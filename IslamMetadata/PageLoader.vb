@@ -1505,12 +1505,22 @@ Public Class Arabic
         ArabicLetterSad, ArabicLetterDad, ArabicLetterTah, ArabicLetterZah, ArabicLetterAin, _
         ArabicLetterGhain, ArabicTatweel, ArabicLetterFeh, ArabicLetterQaf, ArabicLetterKaf, _
         ArabicLetterLam, ArabicLetterMeem, ArabicLetterNoon, ArabicLetterHeh, ArabicLetterWaw, _
-        ArabicLetterAlefMaksura, ArabicLetterYeh}
+        ArabicLetterAlefMaksura, ArabicLetterYeh, ArabicLetterAlefWasla}
     End Function
     Public Shared Function GetRecitationDiacritics() As Char()
         Return {ArabicFathatan, ArabicDammatan, ArabicKasratan, _
         ArabicFatha, ArabicDamma, ArabicKasra, ArabicShadda, ArabicSukun, ArabicMaddahAbove, _
-        ArabicHamzaAbove, ArabicLetterSuperscriptAlef, ArabicLetterAlefWasla}
+        ArabicHamzaAbove, ArabicLetterSuperscriptAlef}
+    End Function
+    Public Shared Function GetRecitationSpecialSymbols() As Char()
+        Return {ArabicSmallHighLigatureSadWithLamWithAlefMaksura, _
+        ArabicSmallHighLigatureQafWithLamWithAlefMaksura, ArabicSmallHighMeemInitialForm, _
+        ArabicSmallHighLamAlef, ArabicSmallHighJeem, ArabicSmallHighThreeDots, _
+        ArabicSmallHighSeen, ArabicStartOfRubElHizb, ArabicSmallHighRoundedZero, _
+        ArabicSmallHighUprightRectangularZero, ArabicSmallHighMeemIsolatedForm, _
+        ArabicSmallLowSeen, ArabicSmallWaw, ArabicSmallYeh, ArabicSmallHighNoon, _
+        ArabicPlaceOfSajdah, ArabicEmptyCentreLowStop, ArabicEmptyCentreHighStop, _
+        ArabicRoundedHighStopWithFilledCentre, ArabicSmallLowMeem}
     End Function
     Public Shared Function GetRecitationLettersDiacritics() As Char()
         Return {ArabicLetterHamza, ArabicLetterAlefWithHamzaAbove, ArabicLetterWawWithHamzaAbove, _
@@ -3298,6 +3308,7 @@ Public Class CachedData
     Shared _XMLDocInfo As System.Xml.XmlDocument 'Tanzil metadata
     Shared _XMLDocInfos As Collections.Generic.List(Of System.Xml.XmlDocument) 'Hadiths
     Shared _RootDictionary As New Generic.Dictionary(Of String, ArrayList)
+    Shared _FormDictionary As New Generic.Dictionary(Of String, ArrayList)
     Shared _TagDictionary As New Generic.Dictionary(Of String, ArrayList)
     Shared _WordDictionary As New Generic.Dictionary(Of String, ArrayList)
     Shared _LetterDictionary As New Generic.Dictionary(Of Char, ArrayList)
@@ -3320,11 +3331,15 @@ Public Class CachedData
                 Dim Pieces As String() = Lines(Count).Split(CChar(vbTab))
                 'FORM can be found identically in tanzil
                 If Pieces(0).Chars(0) = "(" Then
+                    If Not _FormDictionary.ContainsKey(Pieces(1)) Then
+                        _FormDictionary.Add(Pieces(1), New ArrayList)
+                    End If
                     'TAG
                     If Not _TagDictionary.ContainsKey(Pieces(2)) Then
                         _TagDictionary.Add(Pieces(2), New ArrayList)
                     End If
                     Dim Location As Integer() = Array.ConvertAll(Pieces(0).TrimStart("("c).TrimEnd(")"c).Split(":"c), Function(Str As String) CInt(Str))
+                    _FormDictionary.Item(Pieces(1)).Add(Location)
                     _TagDictionary.Item(Pieces(2)).Add(Location)
                     Dim Parts As String() = Pieces(3).Split("|"c)
                     If Array.Find(Parts, Function(Str As String) Str = "PREFIX" Or Str = "SUFFIX") = String.Empty Then
@@ -3471,6 +3486,12 @@ Public Class CachedData
         Get
             If _RootDictionary.Keys.Count = 0 Then GetMorphologicalData()
             Return _RootDictionary
+        End Get
+    End Property
+    Public Shared ReadOnly Property FormDictionary As Generic.Dictionary(Of String, ArrayList)
+        Get
+            If _FormDictionary.Keys.Count = 0 Then GetMorphologicalData()
+            Return _FormDictionary
         End Get
     End Property
     Public Shared ReadOnly Property TagDictionary As Generic.Dictionary(Of String, ArrayList)
@@ -3673,7 +3694,7 @@ Public Class TanzilReader
         "function changeQuranDivision(index) { var iCount; var qurandata = " + JSArrays + "; var eSelect = $('#quranselection').get(0); clearOptionList(eSelect); for (iCount = 0; iCount < qurandata[index].length; iCount++) { eSelect.options.add(new Option(qurandata[index][iCount][0], qurandata[index][iCount][1])); } }"}
     End Function
     Public Shared Function GetWordPartitions() As String()
-        Return New String() {Utility.LoadResourceString("IslamInfo_Letters"), Utility.LoadResourceString("IslamInfo_Words"), Utility.LoadResourceString("IslamInfo_UniqueWords"), Utility.LoadResourceString("IslamInfo_UniqueWordsPerPart"), Utility.LoadResourceString("IslamInfo_WordsPerPart"), Utility.LoadResourceString("IslamInfo_UniqueWordsPerStation"), Utility.LoadResourceString("IslamInfo_WordsPerStation"), Utility.LoadResourceString("IslamInfo_Letters")}
+        Return New String() {Utility.LoadResourceString("IslamInfo_Letters"), Utility.LoadResourceString("IslamInfo_Words"), Utility.LoadResourceString("IslamInfo_UniqueWords"), Utility.LoadResourceString("IslamInfo_UniqueWordsPerPart"), Utility.LoadResourceString("IslamInfo_WordsPerPart"), Utility.LoadResourceString("IslamInfo_UniqueWordsPerStation"), Utility.LoadResourceString("IslamInfo_WordsPerStation"), Utility.LoadResourceString("IslamInfo_Letters"), Utility.LoadResourceString("IslamInfo_Letters")}
     End Function
     Public Shared Function GetQuranWordTotalNumber() As Integer
         Dim Total As Integer
@@ -3703,7 +3724,7 @@ Public Class TanzilReader
             Return CStr(CachedData.TotalUniqueWordsInStations)
         ElseIf Index = 6 Then
             Return CStr(CachedData.TotalWordsInStations)
-        ElseIf Index = 7 Then
+        ElseIf Index = 8 Then
             Return String.Empty
         Else
             Return String.Empty
@@ -3766,43 +3787,91 @@ Public Class TanzilReader
                     Output.Add(New String() {Arabic.LeftToRightMark + CStr(Count + 1), String.Empty, CStr(DivArray(Count).Count), (CDbl(DivArray(Count).Count) * 100 / All).ToString("n2"), (CDbl(Total) * 100 / All).ToString("n2")})
                 Next
             End If
+        ElseIf Index = 8 Then
+            Output.AddRange(Array.ConvertAll(GetQuranLetterPatterns(), Function(Str As String) {Str}))
         End If
         Return CType(Output.ToArray(GetType(Array)), Array())
     End Function
-    Public Shared Function GetQuranLetterPatterns() As Array()
-        Dim StartWordOnly As String = String.Join(String.Empty, Array.ConvertAll(Arabic.GetRecitationLetters(), Function(C As Char) CStr(C)))
-        Dim EndWordOnly As String = String.Join(String.Empty, Array.ConvertAll(Arabic.GetRecitationLetters(), Function(C As Char) CStr(C)))
-        Dim NotStartWord As String = String.Join(String.Empty, Array.ConvertAll(Arabic.GetRecitationLetters(), Function(C As Char) CStr(C)))
-        Dim NotEndWord As String = String.Join(String.Empty, Array.ConvertAll(Arabic.GetRecitationLetters(), Function(C As Char) CStr(C)))
-        Dim MiddleWordOnly As String = String.Join(String.Empty, Array.ConvertAll(Arabic.GetRecitationLetters(), Function(C As Char) CStr(C)))
-        Dim NotMiddleWord As String = String.Join(String.Empty, Array.ConvertAll(Arabic.GetRecitationLetters(), Function(C As Char) CStr(C)))
+    Public Shared Function GetQuranLetterPatterns() As String()
+        Dim RecSymbols As String = String.Join(String.Empty, Array.ConvertAll(Arabic.GetRecitationSpecialSymbols(), Function(C As Char) CStr(C)))
+        Dim LtrSymbols As String = String.Join(String.Empty, Array.ConvertAll(Arabic.GetRecitationLetters(), Function(C As Char) CStr(C)))
+        Dim DiaSymbols As String = String.Join(String.Empty, Array.ConvertAll(Arabic.GetRecitationDiacritics(), Function(C As Char) CStr(C)))
+        Dim StartWordOnly As String = String.Join(String.Empty, Array.ConvertAll(Arabic.GetRecitationLettersDiacritics(), Function(C As Char) CStr(C)))
+        Dim NotStartWord As String = String.Join(String.Empty, Array.ConvertAll(Arabic.GetRecitationLettersDiacritics(), Function(C As Char) CStr(C)))
+        Dim EndWordOnly As String = String.Join(String.Empty, Array.ConvertAll(Arabic.GetRecitationLettersDiacritics(), Function(C As Char) CStr(C)))
+        Dim NotEndWord As String = String.Join(String.Empty, Array.ConvertAll(Arabic.GetRecitationLettersDiacritics(), Function(C As Char) CStr(C)))
+        Dim EndWordOnlyNoDia As String = String.Join(String.Empty, Array.ConvertAll(Arabic.GetRecitationLetters(), Function(C As Char) CStr(C)))
+        Dim NotEndWordNoDia As String = String.Join(String.Empty, Array.ConvertAll(Arabic.GetRecitationLetters(), Function(C As Char) CStr(C)))
+        Dim MiddleWordOnly As String = String.Join(String.Empty, Array.ConvertAll(Arabic.GetRecitationLettersDiacritics(), Function(C As Char) CStr(C)))
+        Dim NotMiddleWord As String = String.Join(String.Empty, Array.ConvertAll(Arabic.GetRecitationLettersDiacritics(), Function(C As Char) CStr(C)))
         Dim DiaStartWordOnly As String = String.Join(String.Empty, Array.ConvertAll(Arabic.GetRecitationDiacritics(), Function(C As Char) CStr(C)))
-        Dim DiaEndWordOnly As String = String.Join(String.Empty, Array.ConvertAll(Arabic.GetRecitationDiacritics(), Function(C As Char) CStr(C)))
         Dim DiaNotStartWord As String = String.Join(String.Empty, Array.ConvertAll(Arabic.GetRecitationDiacritics(), Function(C As Char) CStr(C)))
+        Dim DiaEndWordOnly As String = String.Join(String.Empty, Array.ConvertAll(Arabic.GetRecitationDiacritics(), Function(C As Char) CStr(C)))
         Dim DiaNotEndWord As String = String.Join(String.Empty, Array.ConvertAll(Arabic.GetRecitationDiacritics(), Function(C As Char) CStr(C)))
         Dim DiaMiddleWordOnly As String = String.Join(String.Empty, Array.ConvertAll(Arabic.GetRecitationDiacritics(), Function(C As Char) CStr(C)))
         Dim DiaNotMiddleWord As String = String.Join(String.Empty, Array.ConvertAll(Arabic.GetRecitationDiacritics(), Function(C As Char) CStr(C)))
-        'Dim Combos As String() = Array.ConvertAll(Arabic.GetRecitationLettersDiacritics(), Function(C As Char) Array.ConvertAll(Arabic.GetRecitationLettersDiacritics(), Function(Nxt As Char) C + Nxt))
-        For Each Key As String In CachedData.WordDictionary.Keys
-            For Count = 0 To CStr(CachedData.WordDictionary.Item(Key).Item(0)).Length - 1
+        Dim Combos As String() = String.Join("|", Array.ConvertAll(Arabic.GetRecitationLettersDiacritics(), Function(C As Char) String.Join("|", Array.ConvertAll(Arabic.GetRecitationLettersDiacritics(), Function(Nxt As Char) C + Nxt)))).Split("|")
+        For Each Key As String In CachedData.FormDictionary.Keys
+            Dim Str As String = String.Empty
+            Array.ForEach(Key.ToCharArray(), Sub(Ch As Char)
+                                                 Str += If(RecSymbols.Contains(CStr(Ch)), String.Empty, CStr(Ch))
+                                             End Sub)
+            Str = Arabic.TransliterateFromBuckwalter(Str)
+            For Count = 0 To Str.Length - 1
                 Dim Index As Integer
-                If Count = 0 Then
-                    Index = MiddleWordOnly.IndexOf(CStr(CachedData.WordDictionary.Item(Key).Item(0)).Chars(0))
+                If Count = 0 Or Count = Str.Length - 1 Then
+                    Index = MiddleWordOnly.IndexOf(Str.Chars(Count))
                     If Index <> -1 Then
-                        MiddleWordOnly = MiddleWordOnly.Remove(Index)
+                        MiddleWordOnly = MiddleWordOnly.Remove(Index, 1)
                     End If
-                    If Count = CStr(CachedData.WordDictionary.Item(Key).Item(0)).Length - 1 Then
-                    Else
-                        Index = EndWordOnly.IndexOf(CStr(CachedData.WordDictionary.Item(Key).Item(0)).Chars(0))
+                Else
+                    Index = NotMiddleWord.IndexOf(Str.Chars(Count))
+                    If Index <> -1 Then
+                        NotMiddleWord = NotMiddleWord.Remove(Index, 1)
+                    End If
+                End If
+                If Count <> 0 Then
+                    Index = StartWordOnly.IndexOf(Str.Chars(Count))
+                    If Index <> -1 Then
+                        StartWordOnly = StartWordOnly.Remove(Index, 1)
+                    End If
+                Else
+                    Index = NotStartWord.IndexOf(Str.Chars(Count))
+                    If Index <> -1 Then
+                        NotStartWord = NotStartWord.Remove(Index, 1)
+                    End If
+                End If
+                If Count <> Str.Length - 1 Then
+                    Index = EndWordOnly.IndexOf(Str.Chars(Count))
+                    If Index <> -1 Then
+                        EndWordOnly = EndWordOnly.Remove(Index, 1)
+                    End If
+                Else
+                    Index = NotEndWord.IndexOf(Str.Chars(Count))
+                    If Index <> -1 Then
+                        NotEndWord = NotEndWord.Remove(Index, 1)
+                    End If
+                End If
+                If Count <= Str.LastIndexOfAny(LtrSymbols.ToCharArray()) Then
+                    If Str.Chars(Count) = Arabic.ArabicLetterHamza And Count <> Str.LastIndexOfAny(LtrSymbols.ToCharArray()) Then
+                        Count += 1 - 1
+                    End If
+                    If Count <> Str.LastIndexOfAny(LtrSymbols.ToCharArray()) Then
+                        Index = EndWordOnlyNoDia.IndexOf(Str.Chars(Count))
                         If Index <> -1 Then
-                            EndWordOnly = EndWordOnly.Remove(Index)
+                            EndWordOnlyNoDia = EndWordOnlyNoDia.Remove(Index, 1)
+                        End If
+                    Else
+                        Index = NotEndWordNoDia.IndexOf(Str.Chars(Count))
+                        If Index <> -1 Then
+                            NotEndWordNoDia = NotEndWordNoDia.Remove(Index, 1)
                         End If
                     End If
-                ElseIf Count = CStr(CachedData.WordDictionary.Item(Key).Item(0)).Length - 1 Then
-                Else
                 End If
+                Combos = Array.FindAll(Combos, Function(S As String) Not Str.Contains(S))
             Next
         Next
+        Return {StartWordOnly, NotStartWord, EndWordOnly, NotEndWord, EndWordOnlyNoDia, NotEndWordNoDia, MiddleWordOnly, NotMiddleWord, String.Join(" | ", Combos)}
     End Function
     Public Shared Function GetSelectionNames() As Array()
         Dim Division As Integer = 0
