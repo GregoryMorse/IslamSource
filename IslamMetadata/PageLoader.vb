@@ -3802,6 +3802,8 @@ Public Class TanzilReader
         Dim NotEndWord As String = String.Join(String.Empty, Array.ConvertAll(Arabic.GetRecitationLettersDiacritics(), Function(C As Char) CStr(C)))
         Dim EndWordOnlyNoDia As String = String.Join(String.Empty, Array.ConvertAll(Arabic.GetRecitationLetters(), Function(C As Char) CStr(C)))
         Dim NotEndWordNoDia As String = String.Join(String.Empty, Array.ConvertAll(Arabic.GetRecitationLetters(), Function(C As Char) CStr(C)))
+        Dim MiddleWordOnlyNoDia As String = String.Join(String.Empty, Array.ConvertAll(Arabic.GetRecitationLetters(), Function(C As Char) CStr(C)))
+        Dim NotMiddleWordNoDia As String = String.Join(String.Empty, Array.ConvertAll(Arabic.GetRecitationLetters(), Function(C As Char) CStr(C)))
         Dim MiddleWordOnly As String = String.Join(String.Empty, Array.ConvertAll(Arabic.GetRecitationLettersDiacritics(), Function(C As Char) CStr(C)))
         Dim NotMiddleWord As String = String.Join(String.Empty, Array.ConvertAll(Arabic.GetRecitationLettersDiacritics(), Function(C As Char) CStr(C)))
         Dim DiaStartWordOnly As String = String.Join(String.Empty, Array.ConvertAll(Arabic.GetRecitationDiacritics(), Function(C As Char) CStr(C)))
@@ -3811,11 +3813,10 @@ Public Class TanzilReader
         Dim DiaMiddleWordOnly As String = String.Join(String.Empty, Array.ConvertAll(Arabic.GetRecitationDiacritics(), Function(C As Char) CStr(C)))
         Dim DiaNotMiddleWord As String = String.Join(String.Empty, Array.ConvertAll(Arabic.GetRecitationDiacritics(), Function(C As Char) CStr(C)))
         Dim Combos As String() = String.Join("|", Array.ConvertAll(Arabic.GetRecitationLettersDiacritics(), Function(C As Char) String.Join("|", Array.ConvertAll(Arabic.GetRecitationLettersDiacritics(), Function(Nxt As Char) C + Nxt)))).Split("|")
+        Dim DiaCombos As String() = String.Join("|", Array.ConvertAll(Arabic.GetRecitationDiacritics(), Function(C As Char) String.Join("|", Array.ConvertAll(Arabic.GetRecitationDiacritics(), Function(Nxt As Char) C + Nxt)))).Split("|")
+        Dim LetCombos As String() = String.Join("|", Array.ConvertAll(Arabic.GetRecitationLetters(), Function(C As Char) String.Join("|", Array.ConvertAll(Arabic.GetRecitationLetters(), Function(Nxt As Char) C + Nxt)))).Split("|")
         For Each Key As String In CachedData.FormDictionary.Keys
-            Dim Str As String = String.Empty
-            Array.ForEach(Key.ToCharArray(), Sub(Ch As Char)
-                                                 Str += If(RecSymbols.Contains(CStr(Ch)), String.Empty, CStr(Ch))
-                                             End Sub)
+            Dim Str As String = New String(Array.FindAll(Key.ToCharArray(), Function(Ch As Char) Not RecSymbols.Contains(CStr(Ch))))
             Str = Arabic.TransliterateFromBuckwalter(Str)
             For Count = 0 To Str.Length - 1
                 Dim Index As Integer
@@ -3853,8 +3854,16 @@ Public Class TanzilReader
                     End If
                 End If
                 If Count <= Str.LastIndexOfAny(LtrSymbols.ToCharArray()) Then
-                    If Str.Chars(Count) = Arabic.ArabicLetterHamza And Count <> Str.LastIndexOfAny(LtrSymbols.ToCharArray()) Then
-                        Count += 1 - 1
+                    If Count = 0 Or Count = Str.LastIndexOfAny(LtrSymbols.ToCharArray()) Then
+                        Index = MiddleWordOnlyNoDia.IndexOf(Str.Chars(Count))
+                        If Index <> -1 Then
+                            MiddleWordOnlyNoDia = MiddleWordOnlyNoDia.Remove(Index, 1)
+                        End If
+                    Else
+                        Index = NotMiddleWordNoDia.IndexOf(Str.Chars(Count))
+                        If Index <> -1 Then
+                            NotMiddleWordNoDia = NotMiddleWordNoDia.Remove(Index, 1)
+                        End If
                     End If
                     If Count <> Str.LastIndexOfAny(LtrSymbols.ToCharArray()) Then
                         Index = EndWordOnlyNoDia.IndexOf(Str.Chars(Count))
@@ -3869,9 +3878,27 @@ Public Class TanzilReader
                     End If
                 End If
                 Combos = Array.FindAll(Combos, Function(S As String) Not Str.Contains(S))
+                DiaCombos = Array.FindAll(DiaCombos, Function(S As String) Not Str.Contains(S))
+                LetCombos = Array.FindAll(LetCombos, Function(S As String) Not New String(Array.FindAll(Str.ToCharArray(), Function(C As Char) LtrSymbols.Contains(C))).Contains(S))
             Next
         Next
-        Return {StartWordOnly, NotStartWord, EndWordOnly, NotEndWord, EndWordOnlyNoDia, NotEndWordNoDia, MiddleWordOnly, NotMiddleWord, String.Join(" | ", Combos)}
+        Dim Dict As New Generic.Dictionary(Of Char, String)
+        Array.ForEach(Combos, Sub(Str As String)
+                                  If Dict.ContainsKey(Str.Chars(0)) Then
+                                      Dict.Item(Str.Chars(0)) = Dict.Item(Str.Chars(0)) + Str.Chars(1)
+                                  Else
+                                      Dict.Add(Str.Chars(0), Str.Chars(1))
+                                  End If
+                              End Sub)
+        Dim Val As String = String.Empty
+        For Each Key As Char In Dict.Keys
+            If Dict.Item(Key).Length > (DiaSymbols.Length + LtrSymbols.Length) / 2 Then
+                Val += Key + " ! [" + String.Join(" ", Array.ConvertAll(New String(Array.FindAll((DiaSymbols + LtrSymbols).ToCharArray(), Function(C As Char) Not Dict.Item(Key).Contains(C))).ToCharArray(), Function(C As Char) CStr(C) + Arabic.LeftToRightMark)) + " ]" + vbTab
+            Else
+                Val += Key + " [ " + String.Join(" ", Array.ConvertAll(Dict.Item(Key).ToCharArray(), Function(C As Char) CStr(C) + Arabic.RightToLeftMark)) + " ]" + vbTab
+            End If
+        Next
+        Return {StartWordOnly, NotStartWord, EndWordOnly, NotEndWord, EndWordOnlyNoDia, NotEndWordNoDia, MiddleWordOnly, NotMiddleWord, MiddleWordOnlyNoDia, NotMiddleWordNoDia, Val, String.Join(" | ", DiaCombos), String.Join(" | ", LetCombos)}
     End Function
     Public Shared Function GetSelectionNames() As Array()
         Dim Division As Integer = 0
