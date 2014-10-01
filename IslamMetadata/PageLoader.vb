@@ -1443,6 +1443,9 @@ Public Class Arabic
     Public Const ArabicLetterMark As Char = ChrW(&H61C)
     Public Const LeftToRightMark As Char = ChrW(&H200E)
     Public Const RightToLeftMark As Char = ChrW(&H200F)
+    Public Const PopDirectionalFormatting As Char = ChrW(&H202C)
+    Public Const LeftToRightOverride As Char = ChrW(&H202D)
+    Public Const RightToLeftOverride As Char = ChrW(&H202E)
     'http://www.unicode.org/Public/7.0.0/ucd/UnicodeData.txt
     Public Shared LTRCategories As String() = New String() {"L"}
     Public Shared RTLCategories As String() = New String() {"R", "AL"}
@@ -1534,6 +1537,21 @@ Public Class Arabic
         ArabicLetterAlefMaksura, ArabicLetterYeh, ArabicFathatan, ArabicDammatan, ArabicKasratan, _
         ArabicFatha, ArabicDamma, ArabicKasra, ArabicShadda, ArabicSukun, ArabicMaddahAbove, _
         ArabicHamzaAbove, ArabicLetterSuperscriptAlef, ArabicLetterAlefWasla}
+    End Function
+    Public Shared Function FixStartingCombiningSymbol(Str As String) As String
+        Return If(Array.IndexOf(GetRecitationCombiningSymbols(), Str.Chars(0)) <> -1, Arabic.LeftToRightOverride + Str + Arabic.PopDirectionalFormatting, Str)
+    End Function
+    Public Shared Function GetRecitationCombiningSymbols() As Char()
+        Return {ArabicFathatan, ArabicDammatan, ArabicKasratan, _
+        ArabicFatha, ArabicDamma, ArabicKasra, ArabicShadda, ArabicSukun, ArabicMaddahAbove, _
+        ArabicHamzaAbove, ArabicLetterSuperscriptAlef, _
+        ArabicSmallHighLigatureSadWithLamWithAlefMaksura, _
+        ArabicSmallHighLigatureQafWithLamWithAlefMaksura, ArabicSmallHighMeemInitialForm, _
+        ArabicSmallHighLamAlef, ArabicSmallHighJeem, ArabicSmallHighThreeDots, _
+        ArabicSmallHighSeen, ArabicSmallHighRoundedZero, _
+        ArabicSmallHighUprightRectangularZero, ArabicSmallHighMeemIsolatedForm, _
+        ArabicSmallLowSeen, ArabicSmallHighNoon, ArabicEmptyCentreLowStop, ArabicEmptyCentreHighStop, _
+        ArabicRoundedHighStopWithFilledCentre, ArabicSmallLowMeem}
     End Function
     Public Shared Function IsLetter(Index As Integer) As Boolean
         Return Array.FindIndex(ArabicLetters, Function(Str As String) Str = CachedData.IslamData.ArabicLetters(Index).Symbol) <> -1
@@ -3748,7 +3766,7 @@ Public Class TanzilReader
             Array.Sort(LetterFreqArray, Function(Key As Char, NextKey As Char) CachedData.LetterDictionary.Item(NextKey).Count.CompareTo(CachedData.LetterDictionary.Item(Key).Count))
             For Count As Integer = 0 To LetterFreqArray.Length - 1
                 Total += CachedData.LetterDictionary.Item(LetterFreqArray(Count)).Count
-                Output.Add(New String() {CachedData.IslamData.ArabicLetters(Arabic.FindLetterBySymbol(LetterFreqArray(Count))).UnicodeName + " (" + Arabic.RightToLeftMark + " " + LetterFreqArray(Count) + " " + Arabic.LeftToRightMark + ")", String.Empty, CStr(CachedData.LetterDictionary.Item(LetterFreqArray(Count)).Count), (CDbl(CachedData.LetterDictionary.Item(LetterFreqArray(Count)).Count) * 100 / All).ToString("n2"), (CDbl(Total) * 100 / All).ToString("n2")})
+                Output.Add(New String() {CachedData.IslamData.ArabicLetters(Arabic.FindLetterBySymbol(LetterFreqArray(Count))).UnicodeName + " ( " + Arabic.FixStartingCombiningSymbol(LetterFreqArray(Count)) + " )", String.Empty, CStr(CachedData.LetterDictionary.Item(LetterFreqArray(Count)).Count), (CDbl(CachedData.LetterDictionary.Item(LetterFreqArray(Count)).Count) * 100 / All).ToString("n2"), (CDbl(Total) * 100 / All).ToString("n2")})
             Next
         ElseIf Index = 7 Then
             All = CachedData.TotalIsolatedLetters
@@ -3757,7 +3775,7 @@ Public Class TanzilReader
             Array.Sort(LetterFreqArray, Function(Key As Char, NextKey As Char) CachedData.IsolatedLetterDictionary.Item(NextKey).Count.CompareTo(CachedData.IsolatedLetterDictionary.Item(Key).Count))
             For Count As Integer = 0 To LetterFreqArray.Length - 1
                 Total += CachedData.IsolatedLetterDictionary.Item(LetterFreqArray(Count)).Count
-                Output.Add(New String() {CachedData.IslamData.ArabicLetters(Arabic.FindLetterBySymbol(LetterFreqArray(Count))).UnicodeName + " (" + Arabic.RightToLeftMark + " " + LetterFreqArray(Count) + " " + Arabic.LeftToRightMark + ")", String.Empty, CStr(CachedData.IsolatedLetterDictionary.Item(LetterFreqArray(Count)).Count), (CDbl(CachedData.IsolatedLetterDictionary.Item(LetterFreqArray(Count)).Count) * 100 / All).ToString("n2"), (CDbl(Total) * 100 / All).ToString("n2")})
+                Output.Add(New String() {CachedData.IslamData.ArabicLetters(Arabic.FindLetterBySymbol(LetterFreqArray(Count))).UnicodeName + " ( " + Arabic.FixStartingCombiningSymbol(LetterFreqArray(Count)) + " )", String.Empty, CStr(CachedData.IsolatedLetterDictionary.Item(LetterFreqArray(Count)).Count), (CDbl(CachedData.IsolatedLetterDictionary.Item(LetterFreqArray(Count)).Count) * 100 / All).ToString("n2"), (CDbl(Total) * 100 / All).ToString("n2")})
             Next
         ElseIf Index = 1 Then
             Dim FreqArray(CachedData.WordDictionary.Keys.Count - 1) As String
@@ -3893,9 +3911,9 @@ Public Class TanzilReader
         Dim Val As String = String.Empty
         For Each Key As Char In Dict.Keys
             If Dict.Item(Key).Length > (DiaSymbols.Length + LtrSymbols.Length) / 2 Then
-                Val += Key + " ! [" + String.Join(" ", Array.ConvertAll(New String(Array.FindAll((DiaSymbols + LtrSymbols).ToCharArray(), Function(C As Char) Not Dict.Item(Key).Contains(C))).ToCharArray(), Function(C As Char) CStr(C) + Arabic.LeftToRightMark)) + " ]" + vbTab
+                Val += Key + " ! [" + String.Join(" ", Array.ConvertAll(New String(Array.FindAll((DiaSymbols + LtrSymbols).ToCharArray(), Function(C As Char) Not Dict.Item(Key).Contains(C))).ToCharArray(), Function(C As Char) Arabic.FixStartingCombiningSymbol(CStr(C)))) + " ]" + vbTab
             Else
-                Val += Key + " [ " + String.Join(" ", Array.ConvertAll(Dict.Item(Key).ToCharArray(), Function(C As Char) CStr(C) + Arabic.RightToLeftMark)) + " ]" + vbTab
+                Val += Key + " [ " + String.Join(" ", Array.ConvertAll(Dict.Item(Key).ToCharArray(), Function(C As Char) Arabic.FixStartingCombiningSymbol(CStr(C)))) + " ]" + vbTab
             End If
         Next
         Return {StartWordOnly, NotStartWord, EndWordOnly, NotEndWord, EndWordOnlyNoDia, NotEndWordNoDia, MiddleWordOnly, NotMiddleWord, MiddleWordOnlyNoDia, NotMiddleWordNoDia, Val, String.Join(" | ", DiaCombos), String.Join(" | ", LetCombos)}
