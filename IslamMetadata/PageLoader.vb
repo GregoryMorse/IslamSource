@@ -3335,6 +3335,8 @@ Public Class CachedData
     Shared _TagDictionary As New Generic.Dictionary(Of String, ArrayList)
     Shared _WordDictionary As New Generic.Dictionary(Of String, ArrayList)
     Shared _LetterDictionary As New Generic.Dictionary(Of Char, ArrayList)
+    Shared _PreDictionary As New Generic.Dictionary(Of String, ArrayList)
+    Shared _SufDictionary As New Generic.Dictionary(Of String, ArrayList)
     Shared _IsolatedLetterDictionary As New Generic.Dictionary(Of Char, ArrayList)
     Shared _TotalLetters As Integer = 0
     Shared _TotalIsolatedLetters As Integer = 0
@@ -3377,6 +3379,17 @@ Public Class CachedData
                             _WordDictionary.Add(Lem, New ArrayList)
                         End If
                         _WordDictionary.Item(Lem).Add(Location)
+                    End If
+                    If Array.Find(Parts, Function(Str As String) Str = "PREFIX") <> String.Empty Then
+                        If Not _PreDictionary.ContainsKey(Pieces(1)) Then
+                            _PreDictionary.Add(Pieces(1), New ArrayList)
+                        End If
+                        _PreDictionary.Item(Pieces(1)).Add(Location)
+                    ElseIf Array.Find(Parts, Function(Str As String) Str = "SUFFIX") <> String.Empty Then
+                        If Not _SufDictionary.ContainsKey(Pieces(1)) Then
+                            _SufDictionary.Add(Pieces(1), New ArrayList)
+                        End If
+                        _SufDictionary.Item(Pieces(1)).Add(Location)
                     End If
                     'ROOT:
                     Dim Root As String = Array.Find(Parts, Function(Str As String) Str.StartsWith("ROOT:"))
@@ -3717,7 +3730,7 @@ Public Class TanzilReader
         "function changeQuranDivision(index) { var iCount; var qurandata = " + JSArrays + "; var eSelect = $('#quranselection').get(0); clearOptionList(eSelect); for (iCount = 0; iCount < qurandata[index].length; iCount++) { eSelect.options.add(new Option(qurandata[index][iCount][0], qurandata[index][iCount][1])); } }"}
     End Function
     Public Shared Function GetWordPartitions() As String()
-        Return New String() {Utility.LoadResourceString("IslamInfo_Letters"), Utility.LoadResourceString("IslamInfo_Words"), Utility.LoadResourceString("IslamInfo_UniqueWords"), Utility.LoadResourceString("IslamInfo_UniqueWordsPerPart"), Utility.LoadResourceString("IslamInfo_WordsPerPart"), Utility.LoadResourceString("IslamInfo_UniqueWordsPerStation"), Utility.LoadResourceString("IslamInfo_WordsPerStation"), Utility.LoadResourceString("IslamInfo_Letters"), Utility.LoadResourceString("IslamInfo_Letters")}
+        Return New String() {Utility.LoadResourceString("IslamInfo_Letters"), Utility.LoadResourceString("IslamInfo_Words"), Utility.LoadResourceString("IslamInfo_UniqueWords"), Utility.LoadResourceString("IslamInfo_UniqueWordsPerPart"), Utility.LoadResourceString("IslamInfo_WordsPerPart"), Utility.LoadResourceString("IslamInfo_UniqueWordsPerStation"), Utility.LoadResourceString("IslamInfo_WordsPerStation"), Utility.LoadResourceString("IslamInfo_Letters"), Utility.LoadResourceString("IslamInfo_Letters"), Utility.LoadResourceString("IslamInfo_Letters")}
     End Function
     Public Shared Function GetQuranWordTotalNumber() As Integer
         Dim Total As Integer
@@ -3748,6 +3761,8 @@ Public Class TanzilReader
         ElseIf Index = 6 Then
             Return CStr(CachedData.TotalWordsInStations)
         ElseIf Index = 8 Then
+            Return String.Empty
+        ElseIf Index = 9 Then
             Return String.Empty
         Else
             Return String.Empty
@@ -3819,6 +3834,9 @@ Public Class TanzilReader
         Dim RecSymbols As String = String.Join(String.Empty, Array.ConvertAll(Arabic.GetRecitationSpecialSymbols(), Function(C As Char) CStr(C)))
         Dim LtrSymbols As String = String.Join(String.Empty, Array.ConvertAll(Arabic.GetRecitationLetters(), Function(C As Char) CStr(C)))
         Dim DiaSymbols As String = String.Join(String.Empty, Array.ConvertAll(Arabic.GetRecitationDiacritics(), Function(C As Char) CStr(C)))
+        Dim StartWordMultiOnly As New Generic.Dictionary(Of String, String)
+        Dim EndWordMultiOnly As New Generic.Dictionary(Of String, String)
+        Dim MiddleWordMultiOnly As New Generic.Dictionary(Of String, String)
         Dim StartWordOnly As String = String.Join(String.Empty, Array.ConvertAll(Arabic.GetRecitationLettersDiacritics(), Function(C As Char) CStr(C)))
         Dim NotStartWord As String = String.Join(String.Empty, Array.ConvertAll(Arabic.GetRecitationLettersDiacritics(), Function(C As Char) CStr(C)))
         Dim EndWordOnly As String = String.Join(String.Empty, Array.ConvertAll(Arabic.GetRecitationLettersDiacritics(), Function(C As Char) CStr(C)))
@@ -3840,7 +3858,38 @@ Public Class TanzilReader
         Dim LetCombos As String() = String.Join("|", Array.ConvertAll(Arabic.GetRecitationLetters(), Function(C As Char) String.Join("|", Array.ConvertAll(Arabic.GetRecitationLetters(), Function(Nxt As Char) C + Nxt)))).Split("|")
         For Each Key As String In CachedData.FormDictionary.Keys
             Dim Str As String = New String(Array.FindAll(Key.ToCharArray(), Function(Ch As Char) Not RecSymbols.Contains(CStr(Ch))))
+            For Count = 1 To Str.Length - 2
+                If Not EndWordMultiOnly.ContainsKey(Str.Substring(Count)) Then
+                    EndWordMultiOnly.Add(Str.Substring(Count), Nothing)
+                End If
+                If Not StartWordMultiOnly.ContainsKey(Str.Substring(0, Count + 1)) Then
+                    StartWordMultiOnly.Add(Str.Substring(0, Count + 1), Nothing)
+                End If
+                For SubCount As Integer = 2 To Str.Length - 1 - Count
+                    If Not MiddleWordMultiOnly.ContainsKey(Str.Substring(Count, SubCount)) Then
+                        MiddleWordMultiOnly.Add(Str.Substring(Count, SubCount), Nothing)
+                    End If
+                Next
+            Next
+        Next
+        For Each Key As String In CachedData.FormDictionary.Keys
+            Dim Str As String = New String(Array.FindAll(Key.ToCharArray(), Function(Ch As Char) Not RecSymbols.Contains(CStr(Ch))))
             Str = Arabic.TransliterateFromBuckwalter(Str)
+            For Each S As String In EndWordMultiOnly.Keys
+                If Str.IndexOf(S) <> -1 AndAlso Str.IndexOf(S) <> Str.Length - S.Length Then
+                    EndWordMultiOnly.Remove(S)
+                End If
+            Next
+            For Each S As String In StartWordMultiOnly.Keys
+                If Str.LastIndexOf(S) <> -1 AndAlso Str.LastIndexOf(S) <> 0 Then
+                    StartWordMultiOnly.Remove(S)
+                End If
+            Next
+            For Each S As String In MiddleWordMultiOnly.Keys
+                If Str.IndexOf(S) = 0 Or Str.LastIndexOf(S) = Str.Length - S.Length Then
+                    MiddleWordMultiOnly.Remove(S)
+                End If
+            Next
             For Count = 0 To Str.Length - 1
                 Dim Index As Integer
                 If Count = 0 Or Count = Str.Length - 1 Then
@@ -3985,7 +4034,22 @@ Public Class TanzilReader
                 LetRevVal += "! [ " + String.Join(" ", Array.ConvertAll(LetRevDict.Item(Key).ToCharArray(), Function(C As Char) Arabic.FixStartingCombiningSymbol(CStr(C)))) + " ] " + Arabic.FixStartingCombiningSymbol(Key) + vbTab
             End If
         Next
-        Return {Arabic.LeftToRightMark + "[" + String.Join(" ", Array.ConvertAll(StartWordOnly.ToCharArray(), Function(C As Char) Arabic.FixStartingCombiningSymbol(CStr(C)))) + "]", _
+        Dim StartMulti As String = " "
+        For Each Key As String In StartWordMultiOnly.Keys
+            StartMulti += Key + " "
+        Next
+        Dim EndMulti As String = " "
+        For Each Key As String In EndWordMultiOnly.Keys
+            EndMulti += Key + " "
+        Next
+        Dim MiddleMulti As String = " "
+        For Each Key As String In MiddleWordMultiOnly.Keys
+            MiddleMulti += Key + " "
+        Next
+        Return {Arabic.LeftToRightMark + "[" + StartMulti + "]", _
+                Arabic.LeftToRightMark + "[" + EndMulti + "]", _
+                Arabic.LeftToRightMark + "[" + MiddleMulti + "]", _
+                Arabic.LeftToRightMark + "[" + String.Join(" ", Array.ConvertAll(StartWordOnly.ToCharArray(), Function(C As Char) Arabic.FixStartingCombiningSymbol(CStr(C)))) + "]", _
                 Arabic.LeftToRightMark + "[" + String.Join(" ", Array.ConvertAll(NotStartWord.ToCharArray(), Function(C As Char) Arabic.FixStartingCombiningSymbol(CStr(C)))) + "]", _
                 Arabic.LeftToRightMark + "[" + String.Join(" ", Array.ConvertAll(EndWordOnly.ToCharArray(), Function(C As Char) Arabic.FixStartingCombiningSymbol(CStr(C)))) + "]", _
                 Arabic.LeftToRightMark + "[" + String.Join(" ", Array.ConvertAll(NotEndWord.ToCharArray(), Function(C As Char) Arabic.FixStartingCombiningSymbol(CStr(C)))) + "]", _
