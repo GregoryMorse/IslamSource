@@ -1539,7 +1539,7 @@ Public Class Arabic
         ArabicHamzaAbove, ArabicLetterSuperscriptAlef, ArabicLetterAlefWasla}
     End Function
     Public Shared Function FixStartingCombiningSymbol(Str As String) As String
-        Return If(Array.IndexOf(GetRecitationCombiningSymbols(), Str.Chars(0)) <> -1, Arabic.LeftToRightOverride + Str + Arabic.PopDirectionalFormatting, Str)
+        Return If(Array.IndexOf(GetRecitationCombiningSymbols(), Str.Chars(0)) <> -1 Or Str.Length = 1, Arabic.LeftToRightOverride + Str + Arabic.PopDirectionalFormatting, Str)
     End Function
     Public Shared Function GetRecitationCombiningSymbols() As Char()
         Return {ArabicFathatan, ArabicDammatan, ArabicKasratan, _
@@ -2413,7 +2413,7 @@ Public Class Arabic
                                 Array.ConvertAll(Of IslamData.ArabicSymbol, String())(Letters, Function(Convert As IslamData.ArabicSymbol) New String() {CStr(AscW(Convert.Symbol)), If(Convert.Shaping = Nothing, String.Empty, Utility.MakeJSArray(Array.ConvertAll(Convert.Shaping, Function(Ch As Char) CStr(AscW(Ch))))), CStr(IIf(Convert.Assimilate, "true", String.Empty)), CStr(IIf(Convert.ExtendedBuckwalterLetter = ChrW(0), String.Empty, Convert.ExtendedBuckwalterLetter)), Convert.RomanTranslit, Convert.PlainRoman}), False)}, True) + ";"
     End Function
     Public Shared Function GetTransliterateGenJS() As String
-        Return "function doTransliterate(sVal, direction, conversion) { var iCount, iSubCount, sOutVal = ''; for (iCount = 0; iCount < sVal.length; iCount++) { if (sVal.charAt(iCount) === '\\') { iCount++; if (sVal.charAt(iCount) === ',') { sOutVal += String.fromCharCode(1548); } else { sOutVal += sVal.charAt(iCount); } } else { for (iSubCount = 0; iSubCount < ArabicLetters.length; iSubCount++) { if (direction ? sVal.charCodeAt(iCount) === parseInt(ArabicLetters[iSubCount].Symbol, 10) : sVal.charAt(iCount) === unescape((conversion ? ArabicLetters[iSubCount].TranslitLetter : ArabicLetters[iSubCount].RomanTranslit))) { sOutVal += (direction ? (conversion ? ArabicLetters[iSubCount].TranslitLetter : ArabicLetters[iSubCount].RomanTranslit) : (isCombiningSymbol(iSubCount) && (iSubCount === 0 || !isLetterDiacritic(findLetterBySymbol(sVal.slice(-1))) && !isSpecialSymbol(findLetterBySymbol(sVal.slice(-1)))) ? String.fromCharCode(0x202D) : '') + String.fromCharCode(ArabicLetters[iSubCount].Symbol) + (isCombiningSymbol(iSubCount) && (iSubCount === 0 || !isLetterDiacritic(findLetterBySymbol(sVal.slice(-1))) && !isSpecialSymbol(findLetterBySymbol(sVal.slice(-1)))) ? String.fromCharCode(0x202C) : '')); break; } } if (iSubCount === ArabicLetters.length) sOutVal += sVal.charAt(iCount); } } return unescape(sOutVal); }"
+        Return "function doTransliterate(sVal, direction, conversion) { var iCount, iSubCount, sOutVal = ''; for (iCount = 0; iCount < sVal.length; iCount++) { if (sVal.charAt(iCount) === '\\') { iCount++; if (sVal.charAt(iCount) === ',') { sOutVal += String.fromCharCode(1548); } else { sOutVal += sVal.charAt(iCount); } } else { for (iSubCount = 0; iSubCount < ArabicLetters.length; iSubCount++) { if (direction ? sVal.charCodeAt(iCount) === parseInt(ArabicLetters[iSubCount].Symbol, 10) : sVal.charAt(iCount) === unescape((conversion ? ArabicLetters[iSubCount].TranslitLetter : ArabicLetters[iSubCount].RomanTranslit))) { sOutVal += (direction ? (conversion ? ArabicLetters[iSubCount].TranslitLetter : ArabicLetters[iSubCount].RomanTranslit) : (isCombiningSymbol(iSubCount) && (iSubCount === 0 || findLetterBySymbol(sVal.slice(-1)) === -1 || !isLetterDiacritic(findLetterBySymbol(sVal.slice(-1))) && !isSpecialSymbol(findLetterBySymbol(sVal.slice(-1)))) ? String.fromCharCode(0x202D) : '') + String.fromCharCode(ArabicLetters[iSubCount].Symbol) + (isCombiningSymbol(iSubCount) && (iSubCount === 0 || findLetterBySymbol(sVal.slice(-1)) === -1 || !isLetterDiacritic(findLetterBySymbol(sVal.slice(-1))) && !isSpecialSymbol(findLetterBySymbol(sVal.slice(-1)))) ? String.fromCharCode(0x202C) : '')); break; } } if (iSubCount === ArabicLetters.length) sOutVal += sVal.charAt(iCount); } } return unescape(sOutVal); }"
     End Function
     Public Shared Function GetDiacriticJS() As String
         Return "function doDiacritics(sVal, direction) { var iCount, sOutVal = ''; for (iCount = 0; iCount < sVal.length; iCount++) { sOutVal += findLetterBySymbol(sVal.charCodeAt(iCount)) === -1 || !isDiacritic(findLetterBySymbol(sVal.charCodeAt(iCount))) ? sVal[iCount] : ''; } return sOutVal; }" + _
@@ -2424,12 +2424,12 @@ Public Class Arabic
         Return "function findLetterBySymbol(chVal) { var iSubCount; for (iSubCount = 0; iSubCount < ArabicLetters.length; iSubCount++) { if (chVal === parseInt(ArabicLetters[iSubCount].Symbol, 10)) return iSubCount; for (var iShapeCount = 0; iShapeCount < ArabicLetters[iSubCount].Shaping.length; iShapeCount++) { if (chVal === parseInt(ArabicLetters[iSubCount].Shaping[iShapeCount], 10)) return iSubCount; } } return -1; }"
     End Function
     Public Shared Function IsDiacriticJS() As String
-        Return "function isDiacritic(index) { return (" + String.Join("||", Array.ConvertAll(Arabic.GetRecitationDiacritics(), Function(C As Char) "parseInt(ArabicLetters[index].Symbol, 10) === 0x" + Hex(Asc(C)))) + "); }" + _
-        "function isLetter(index) { return (" + String.Join("||", Array.ConvertAll(Arabic.GetRecitationLetters(), Function(C As Char) "parseInt(ArabicLetters[index].Symbol, 10) === 0x" + Hex(Asc(C)))) + "); }" + _
-        "function isLetterDiacritic(index) { return (" + String.Join("||", Array.ConvertAll(Arabic.GetRecitationLettersDiacritics(), Function(C As Char) "parseInt(ArabicLetters[index].Symbol, 10) === 0x" + Hex(Asc(C)))) + "); }" + _
-        "function isSpecialSymbol(index) { return (" + String.Join("||", Array.ConvertAll(Arabic.GetRecitationSpecialSymbols(), Function(C As Char) "parseInt(ArabicLetters[index].Symbol, 10) === 0x" + Hex(Asc(C)))) + "); }" + _
-        "function isSymbol(index) { return (" + String.Join("||", Array.ConvertAll(Arabic.GetRecitationSymbols(), Function(A As Array) "parseInt(ArabicLetters[index].Symbol, 10) === 0x" + Hex(Asc(CachedData.IslamData.ArabicLetters(A(1)).Symbol)))) + "); }" + _
-        "function isCombiningSymbol(index) { return (" + String.Join("||", Array.ConvertAll(Arabic.GetRecitationCombiningSymbols(), Function(C As Char) "parseInt(ArabicLetters[index].Symbol, 10) === 0x" + Hex(Asc(C)))) + "); }"
+        Return "function isDiacritic(index) { return (" + String.Join("||", Array.ConvertAll(Arabic.GetRecitationDiacritics(), Function(C As Char) "parseInt(ArabicLetters[index].Symbol, 10) === 0x" + Hex(AscW(C)))) + "); }" + _
+        "function isLetter(index) { return (" + String.Join("||", Array.ConvertAll(Arabic.GetRecitationLetters(), Function(C As Char) "parseInt(ArabicLetters[index].Symbol, 10) === 0x" + Hex(AscW(C)))) + "); }" + _
+        "function isLetterDiacritic(index) { return (" + String.Join("||", Array.ConvertAll(Arabic.GetRecitationLettersDiacritics(), Function(C As Char) "parseInt(ArabicLetters[index].Symbol, 10) === 0x" + Hex(AscW(C)))) + "); }" + _
+        "function isSpecialSymbol(index) { return (" + String.Join("||", Array.ConvertAll(Arabic.GetRecitationSpecialSymbols(), Function(C As Char) "parseInt(ArabicLetters[index].Symbol, 10) === 0x" + Hex(AscW(C)))) + "); }" + _
+        "function isSymbol(index) { return (" + String.Join("||", Array.ConvertAll(Arabic.GetRecitationSymbols(), Function(A As Array) "parseInt(ArabicLetters[index].Symbol, 10) === 0x" + Hex(AscW(CachedData.IslamData.ArabicLetters(A(1)).Symbol)))) + "); }" + _
+        "function isCombiningSymbol(index) { return (" + String.Join("||", Array.ConvertAll(Arabic.GetRecitationCombiningSymbols(), Function(C As Char) "parseInt(ArabicLetters[index].Symbol, 10) === 0x" + Hex(AscW(C)))) + "); }"
     End Function
     Public Shared Function GetPlainTransliterateGenJS() As String
         Return FindLetterBySymbolJS() + _
@@ -3913,15 +3913,89 @@ Public Class TanzilReader
                                       Dict.Add(Str.Chars(0), Str.Chars(1))
                                   End If
                               End Sub)
-        Dim Val As String = String.Empty
+        Dim Val As String = Arabic.LeftToRightMark
         For Each Key As Char In Dict.Keys
             If Dict.Item(Key).Length > (DiaSymbols.Length + LtrSymbols.Length) / 2 Then
-                Val += Key + " ! [" + String.Join(" ", Array.ConvertAll(New String(Array.FindAll((DiaSymbols + LtrSymbols).ToCharArray(), Function(C As Char) Not Dict.Item(Key).Contains(C))).ToCharArray(), Function(C As Char) Arabic.FixStartingCombiningSymbol(CStr(C)))) + " ]" + vbTab
+                Val += Arabic.FixStartingCombiningSymbol(Key) + " [" + String.Join(" ", Array.ConvertAll(New String(Array.FindAll((DiaSymbols + LtrSymbols).ToCharArray(), Function(C As Char) Not Dict.Item(Key).Contains(C))).ToCharArray(), Function(C As Char) Arabic.FixStartingCombiningSymbol(CStr(C)))) + " ]" + vbTab
             Else
-                Val += Key + " [ " + String.Join(" ", Array.ConvertAll(Dict.Item(Key).ToCharArray(), Function(C As Char) Arabic.FixStartingCombiningSymbol(CStr(C)))) + " ]" + vbTab
+                Val += Arabic.FixStartingCombiningSymbol(Key) + " ! [ " + String.Join(" ", Array.ConvertAll(Dict.Item(Key).ToCharArray(), Function(C As Char) Arabic.FixStartingCombiningSymbol(CStr(C)))) + " ]" + vbTab
             End If
         Next
-        Return {StartWordOnly, NotStartWord, EndWordOnly, NotEndWord, EndWordOnlyNoDia, NotEndWordNoDia, MiddleWordOnly, NotMiddleWord, MiddleWordOnlyNoDia, NotMiddleWordNoDia, Val, String.Join(" | ", DiaCombos), String.Join(" | ", LetCombos)}
+        Dim RevDict As New Generic.Dictionary(Of Char, String)
+        Array.ForEach(Combos, Sub(Str As String)
+                                  If RevDict.ContainsKey(Str.Chars(1)) Then
+                                      RevDict.Item(Str.Chars(1)) = RevDict.Item(Str.Chars(1)) + Str.Chars(0)
+                                  Else
+                                      RevDict.Add(Str.Chars(1), Str.Chars(0))
+                                  End If
+                              End Sub)
+        Dim RevVal As String = Arabic.LeftToRightMark
+        For Each Key As Char In Dict.Keys
+            If RevDict.Item(Key).Length > (DiaSymbols.Length + LtrSymbols.Length) / 2 Then
+                RevVal += "[" + String.Join(" ", Array.ConvertAll(New String(Array.FindAll((DiaSymbols + LtrSymbols).ToCharArray(), Function(C As Char) Not RevDict.Item(Key).Contains(C))).ToCharArray(), Function(C As Char) Arabic.FixStartingCombiningSymbol(CStr(C)))) + " ] " + Arabic.FixStartingCombiningSymbol(Key) + vbTab
+            Else
+                RevVal += "! [ " + String.Join(" ", Array.ConvertAll(RevDict.Item(Key).ToCharArray(), Function(C As Char) Arabic.FixStartingCombiningSymbol(CStr(C)))) + " ] " + Arabic.FixStartingCombiningSymbol(Key) + vbTab
+            End If
+        Next
+        Dim DiaDict As New Generic.Dictionary(Of Char, String)
+        Array.ForEach(DiaCombos, Sub(Str As String)
+                                     If DiaDict.ContainsKey(Str.Chars(0)) Then
+                                         DiaDict.Item(Str.Chars(0)) = DiaDict.Item(Str.Chars(0)) + Str.Chars(1)
+                                     Else
+                                         DiaDict.Add(Str.Chars(0), Str.Chars(1))
+                                     End If
+                                 End Sub)
+        Dim DiaVal As String = Arabic.LeftToRightMark
+        For Each Key As Char In DiaDict.Keys
+            If DiaDict.Item(Key).Length > DiaSymbols.Length / 2 Then
+                DiaVal += Arabic.FixStartingCombiningSymbol(Key) + " [" + String.Join(" ", Array.ConvertAll(New String(Array.FindAll(DiaSymbols.ToCharArray(), Function(C As Char) Not DiaDict.Item(Key).Contains(C))).ToCharArray(), Function(C As Char) Arabic.FixStartingCombiningSymbol(CStr(C)))) + " ]" + vbTab
+            Else
+                DiaVal += Arabic.FixStartingCombiningSymbol(Key) + " ! [ " + String.Join(" ", Array.ConvertAll(DiaDict.Item(Key).ToCharArray(), Function(C As Char) Arabic.FixStartingCombiningSymbol(CStr(C)))) + " ]" + vbTab
+            End If
+        Next
+        Dim LetDict As New Generic.Dictionary(Of Char, String)
+        Array.ForEach(LetCombos, Sub(Str As String)
+                                     If LetDict.ContainsKey(Str.Chars(0)) Then
+                                         LetDict.Item(Str.Chars(0)) = LetDict.Item(Str.Chars(0)) + Str.Chars(1)
+                                     Else
+                                         LetDict.Add(Str.Chars(0), Str.Chars(1))
+                                     End If
+                                 End Sub)
+        Dim LetVal As String = Arabic.LeftToRightMark
+        For Each Key As Char In LetDict.Keys
+            If LetDict.Item(Key).Length > LtrSymbols.Length / 2 Then
+                LetVal += Arabic.FixStartingCombiningSymbol(Key) + " [" + String.Join(" ", Array.ConvertAll(New String(Array.FindAll(LtrSymbols.ToCharArray(), Function(C As Char) Not LetDict.Item(Key).Contains(C))).ToCharArray(), Function(C As Char) Arabic.FixStartingCombiningSymbol(CStr(C)))) + " ]" + vbTab
+            Else
+                LetVal += Arabic.FixStartingCombiningSymbol(Key) + " ! [ " + String.Join(" ", Array.ConvertAll(LetDict.Item(Key).ToCharArray(), Function(C As Char) Arabic.FixStartingCombiningSymbol(CStr(C)))) + " ]" + vbTab
+            End If
+        Next
+        Dim LetRevDict As New Generic.Dictionary(Of Char, String)
+        Array.ForEach(LetCombos, Sub(Str As String)
+                                     If LetRevDict.ContainsKey(Str.Chars(1)) Then
+                                         LetRevDict.Item(Str.Chars(1)) = LetRevDict.Item(Str.Chars(1)) + Str.Chars(0)
+                                     Else
+                                         LetRevDict.Add(Str.Chars(1), Str.Chars(0))
+                                     End If
+                                 End Sub)
+        Dim LetRevVal As String = Arabic.LeftToRightMark
+        For Each Key As Char In LetRevDict.Keys
+            If LetRevDict.Item(Key).Length > LtrSymbols.Length / 2 Then
+                LetRevVal += "[" + String.Join(" ", Array.ConvertAll(New String(Array.FindAll(LtrSymbols.ToCharArray(), Function(C As Char) Not LetRevDict.Item(Key).Contains(C))).ToCharArray(), Function(C As Char) Arabic.FixStartingCombiningSymbol(CStr(C)))) + " ] " + Arabic.FixStartingCombiningSymbol(Key) + vbTab
+            Else
+                LetRevVal += "! [ " + String.Join(" ", Array.ConvertAll(LetRevDict.Item(Key).ToCharArray(), Function(C As Char) Arabic.FixStartingCombiningSymbol(CStr(C)))) + " ] " + Arabic.FixStartingCombiningSymbol(Key) + vbTab
+            End If
+        Next
+        Return {Arabic.LeftToRightMark + "[" + String.Join(" ", Array.ConvertAll(StartWordOnly.ToCharArray(), Function(C As Char) Arabic.FixStartingCombiningSymbol(CStr(C)))) + "]", _
+                Arabic.LeftToRightMark + "[" + String.Join(" ", Array.ConvertAll(NotStartWord.ToCharArray(), Function(C As Char) Arabic.FixStartingCombiningSymbol(CStr(C)))) + "]", _
+                Arabic.LeftToRightMark + "[" + String.Join(" ", Array.ConvertAll(EndWordOnly.ToCharArray(), Function(C As Char) Arabic.FixStartingCombiningSymbol(CStr(C)))) + "]", _
+                Arabic.LeftToRightMark + "[" + String.Join(" ", Array.ConvertAll(NotEndWord.ToCharArray(), Function(C As Char) Arabic.FixStartingCombiningSymbol(CStr(C)))) + "]", _
+                Arabic.LeftToRightMark + "[" + String.Join(" ", Array.ConvertAll(EndWordOnlyNoDia.ToCharArray(), Function(C As Char) Arabic.FixStartingCombiningSymbol(CStr(C)))) + "]", _
+                Arabic.LeftToRightMark + "[" + String.Join(" ", Array.ConvertAll(NotEndWordNoDia.ToCharArray(), Function(C As Char) Arabic.FixStartingCombiningSymbol(CStr(C)))) + "]", _
+                Arabic.LeftToRightMark + "[" + String.Join(" ", Array.ConvertAll(MiddleWordOnly.ToCharArray(), Function(C As Char) Arabic.FixStartingCombiningSymbol(CStr(C)))) + "]", _
+                Arabic.LeftToRightMark + "[" + String.Join(" ", Array.ConvertAll(NotMiddleWord.ToCharArray(), Function(C As Char) Arabic.FixStartingCombiningSymbol(CStr(C)))) + "]", _
+                Arabic.LeftToRightMark + "[" + String.Join(" ", Array.ConvertAll(MiddleWordOnlyNoDia.ToCharArray(), Function(C As Char) Arabic.FixStartingCombiningSymbol(CStr(C)))) + "]", _
+                Arabic.LeftToRightMark + "[" + String.Join(" ", Array.ConvertAll(NotMiddleWordNoDia.ToCharArray(), Function(C As Char) Arabic.FixStartingCombiningSymbol(CStr(C)))) + "]", _
+                Val, RevVal, DiaVal, LetVal, LetRevVal}
     End Function
     Public Shared Function GetSelectionNames() As Array()
         Dim Division As Integer = 0
