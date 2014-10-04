@@ -3548,6 +3548,18 @@ Public Class CachedData
             Return _LetterDictionary
         End Get
     End Property
+    Public Shared ReadOnly Property PreDictionary As Generic.Dictionary(Of String, ArrayList)
+        Get
+            If _PreDictionary.Keys.Count = 0 Then GetMorphologicalData()
+            Return _PreDictionary
+        End Get
+    End Property
+    Public Shared ReadOnly Property SufDictionary As Generic.Dictionary(Of String, ArrayList)
+        Get
+            If _SufDictionary.Keys.Count = 0 Then GetMorphologicalData()
+            Return _SufDictionary
+        End Get
+    End Property
     Public Shared ReadOnly Property TotalLetters As Integer
         Get
             If _TotalLetters = 0 Then BuildQuranLetterIndex()
@@ -3730,7 +3742,7 @@ Public Class TanzilReader
         "function changeQuranDivision(index) { var iCount; var qurandata = " + JSArrays + "; var eSelect = $('#quranselection').get(0); clearOptionList(eSelect); for (iCount = 0; iCount < qurandata[index].length; iCount++) { eSelect.options.add(new Option(qurandata[index][iCount][0], qurandata[index][iCount][1])); } }"}
     End Function
     Public Shared Function GetWordPartitions() As String()
-        Return New String() {Utility.LoadResourceString("IslamInfo_Letters"), Utility.LoadResourceString("IslamInfo_Words"), Utility.LoadResourceString("IslamInfo_UniqueWords"), Utility.LoadResourceString("IslamInfo_UniqueWordsPerPart"), Utility.LoadResourceString("IslamInfo_WordsPerPart"), Utility.LoadResourceString("IslamInfo_UniqueWordsPerStation"), Utility.LoadResourceString("IslamInfo_WordsPerStation"), Utility.LoadResourceString("IslamInfo_Letters"), Utility.LoadResourceString("IslamInfo_Letters"), Utility.LoadResourceString("IslamInfo_Letters")}
+        Return New String() {Utility.LoadResourceString("IslamInfo_Letters"), Utility.LoadResourceString("IslamInfo_Words"), Utility.LoadResourceString("IslamInfo_UniqueWords"), Utility.LoadResourceString("IslamInfo_UniqueWordsPerPart"), Utility.LoadResourceString("IslamInfo_WordsPerPart"), Utility.LoadResourceString("IslamInfo_UniqueWordsPerStation"), Utility.LoadResourceString("IslamInfo_WordsPerStation"), Utility.LoadResourceString("IslamInfo_Letters"), Utility.LoadResourceString("IslamInfo_Letters"), Utility.LoadResourceString("IslamInfo_Letters"), Utility.LoadResourceString("IslamInfo_Letters")}
     End Function
     Public Shared Function GetQuranWordTotalNumber() As Integer
         Dim Total As Integer
@@ -3763,7 +3775,9 @@ Public Class TanzilReader
         ElseIf Index = 8 Then
             Return String.Empty
         ElseIf Index = 9 Then
-            Return String.Empty
+            Return CStr(CachedData.PreDictionary.Count)
+        ElseIf Index = 10 Then
+            Return CStr(CachedData.SufDictionary.Count)
         Else
             Return String.Empty
         End If
@@ -3797,15 +3811,25 @@ Public Class TanzilReader
                 Total += CachedData.IsolatedLetterDictionary.Item(LetterFreqArray(Count)).Count
                 Output.Add(New String() {CachedData.IslamData.ArabicLetters(Arabic.FindLetterBySymbol(LetterFreqArray(Count))).UnicodeName + " ( " + Arabic.FixStartingCombiningSymbol(LetterFreqArray(Count)) + " )", String.Empty, CStr(CachedData.IsolatedLetterDictionary.Item(LetterFreqArray(Count)).Count), (CDbl(CachedData.IsolatedLetterDictionary.Item(LetterFreqArray(Count)).Count) * 100 / All).ToString("n2"), (CDbl(Total) * 100 / All).ToString("n2")})
             Next
-        ElseIf Index = 1 Then
-            Dim FreqArray(CachedData.WordDictionary.Keys.Count - 1) As String
-            CachedData.WordDictionary.Keys.CopyTo(FreqArray, 0)
+        ElseIf Index = 1 Or Index = 9 Or Index = 10 Then
+            Dim Dict As Generic.Dictionary(Of String, ArrayList)
+            If Index = 1 Then
+                Dict = CachedData.WordDictionary
+            ElseIf Index = 9 Then
+                Dict = CachedData.PreDictionary
+            ElseIf Index = 10 Then
+                Dict = CachedData.SufDictionary
+            Else
+                Dict = Nothing
+            End If
+            Dim FreqArray(Dict.Keys.Count - 1) As String
+            Dict.Keys.CopyTo(FreqArray, 0)
             Total = 0
             All = GetQuranWordTotalNumber()
-            Array.Sort(FreqArray, Function(Key As String, NextKey As String) CachedData.WordDictionary.Item(NextKey).Count.CompareTo(CachedData.WordDictionary.Item(Key).Count))
+            Array.Sort(FreqArray, Function(Key As String, NextKey As String) Dict.Item(NextKey).Count.CompareTo(Dict.Item(Key).Count))
             For Count As Integer = 0 To FreqArray.Length - 1
-                Total += CachedData.WordDictionary.Item(FreqArray(Count)).Count
-                Output.Add(New String() {Arabic.RightToLeftMark + Arabic.TransliterateFromBuckwalter(FreqArray(Count)), String.Empty, CStr(CachedData.WordDictionary.Item(FreqArray(Count)).Count), (CDbl(CachedData.WordDictionary.Item(FreqArray(Count)).Count) * 100 / All).ToString("n2"), (CDbl(Total) * 100 / All).ToString("n2")})
+                Total += Dict.Item(FreqArray(Count)).Count
+                Output.Add(New String() {Arabic.RightToLeftMark + Arabic.TransliterateFromBuckwalter(FreqArray(Count)), String.Empty, CStr(Dict.Item(FreqArray(Count)).Count), (CDbl(Dict.Item(FreqArray(Count)).Count) * 100 / All).ToString("n2"), (CDbl(Total) * 100 / All).ToString("n2")})
             Next
         ElseIf Index = 3 Or Index = 4 Or Index = 5 Or Index = 6 Then
             Total = 0
@@ -3875,21 +3899,21 @@ Public Class TanzilReader
         For Each Key As String In CachedData.FormDictionary.Keys
             Dim Str As String = New String(Array.FindAll(Key.ToCharArray(), Function(Ch As Char) Not RecSymbols.Contains(CStr(Ch))))
             Str = Arabic.TransliterateFromBuckwalter(Str)
-            For Each S As String In EndWordMultiOnly.Keys
-                If Str.IndexOf(S) <> -1 AndAlso Str.IndexOf(S) <> Str.Length - S.Length Then
-                    EndWordMultiOnly.Remove(S)
-                End If
-            Next
-            For Each S As String In StartWordMultiOnly.Keys
-                If Str.LastIndexOf(S) <> -1 AndAlso Str.LastIndexOf(S) <> 0 Then
-                    StartWordMultiOnly.Remove(S)
-                End If
-            Next
-            For Each S As String In MiddleWordMultiOnly.Keys
-                If Str.IndexOf(S) = 0 Or Str.LastIndexOf(S) = Str.Length - S.Length Then
-                    MiddleWordMultiOnly.Remove(S)
-                End If
-            Next
+            Dim KeyArray(EndWordMultiOnly.Keys.Count - 1) As String
+            EndWordMultiOnly.Keys.CopyTo(KeyArray, 0)
+            Array.ForEach(KeyArray, Sub(S As String)
+                                        If Str.LastIndexOf(S) <> -1 AndAlso Str.LastIndexOf(S) <> 0 Then EndWordMultiOnly.Remove(S)
+                                    End Sub)
+            ReDim KeyArray(StartWordMultiOnly.Keys.Count - 1)
+            StartWordMultiOnly.Keys.CopyTo(KeyArray, 0)
+            Array.ForEach(KeyArray, Sub(S As String)
+                                        If Str.LastIndexOf(S) <> -1 AndAlso Str.LastIndexOf(S) <> 0 Then StartWordMultiOnly.Remove(S)
+                                    End Sub)
+            ReDim KeyArray(MiddleWordMultiOnly.Keys.Count - 1)
+            MiddleWordMultiOnly.Keys.CopyTo(KeyArray, 0)
+            Array.ForEach(KeyArray, Sub(S As String)
+                                        If Str.LastIndexOf(S) <> -1 AndAlso Str.LastIndexOf(S) <> 0 Then MiddleWordMultiOnly.Remove(S)
+                                    End Sub)
             For Count = 0 To Str.Length - 1
                 Dim Index As Integer
                 If Count = 0 Or Count = Str.Length - 1 Then
