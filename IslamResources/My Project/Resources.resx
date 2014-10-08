@@ -4653,6 +4653,153 @@
   <data name="IslamInfo_Letters" xml:space="preserve">
     <value>Letters</value>
   </data>
+  <data name="IslamInfo_IsolatedLetters" xml:space="preserve">
+    <value>Isolated Letters</value>
+  </data>
+  <data name="IslamInfo_LetterPatterns" xml:space="preserve">
+    <value>Letter Patterns</value>
+  </data>
+  <data name="IslamInfo_Prefix" xml:space="preserve">
+    <value>Prefix</value>
+  </data>
+  <data name="IslamInfo_Suffix" xml:space="preserve">
+    <value>Suffix</value>
+  </data>
+  <data name="IslamInfo_Noun" xml:space="preserve">
+    <value>Noun</value>
+  </data>
+  <data name="IslamInfo_ProperNoun" xml:space="preserve">
+    <value>Proper Noun</value>
+  </data>
+  <data name="IslamInfo_Adjective" xml:space="preserve">
+    <value>Adjective</value>
+  </data>
+  <data name="IslamInfo_ImperativeVerbalNoun" xml:space="preserve">
+    <value>Imperative Verbal Noun</value>
+  </data>
+  <data name="IslamInfo_PersonalPronoun" xml:space="preserve">
+    <value>Personal Pronoun</value>
+  </data>
+  <data name="IslamInfo_DemonstrativePronoun" xml:space="preserve">
+    <value>Demonstrative Pronoun</value>
+  </data>
+  <data name="IslamInfo_RelativePronoun" xml:space="preserve">
+    <value>Relative Pronoun</value>
+  </data>
+  <data name="IslamInfo_TimeAdverb" xml:space="preserve">
+    <value>Time Adverb</value>
+  </data>
+  <data name="IslamInfo_LocationAdverb" xml:space="preserve">
+    <value>Location Adverb</value>
+  </data>
+  <data name="IslamInfo_DeterminerPrefix" xml:space="preserve">
+    <value>Determiner Prefix</value>
+  </data>
+  <data name="IslamInfo_Verb" xml:space="preserve">
+    <value>Verb</value>
+  </data>
+  <data name="IslamInfo_Preposition" xml:space="preserve">
+    <value>Preposition</value>
+  </data>
+  <data name="IslamInfo_EmphaticLaamPrefix" xml:space="preserve">
+    <value>Emphatic Laam Prefix</value>
+  </data>
+  <data name="IslamInfo_ImperativeLaamPrefix" xml:space="preserve">
+    <value>Imperative Laam Prefix</value>
+  </data>
+  <data name="IslamInfo_PurposeLaamPrefix" xml:space="preserve">
+    <value>Purpose Laam Prefix</value>
+  </data>
+  <data name="IslamInfo_CoordinatingConjunction" xml:space="preserve">
+    <value>Coordinating Conjunction</value>
+  </data>
+  <data name="IslamInfo_SubordinatingConjunction" xml:space="preserve">
+    <value>Subordinating Conjunction</value>
+  </data>
+  <data name="IslamInfo_AccusativeParticle" xml:space="preserve">
+    <value>Accusative Particle</value>
+  </data>
+  <data name="IslamInfo_AmendmentParticle" xml:space="preserve">
+    <value>Amendment Particle</value>
+  </data>
+  <data name="IslamInfo_AnswerParticle" xml:space="preserve">
+    <value>Answer Particle</value>
+  </data>
+  <data name="IslamInfo_AversionParticle" xml:space="preserve">
+    <value>Aversion Particle</value>
+  </data>
+  <data name="IslamInfo_ParticleOfCause" xml:space="preserve">
+    <value>Particle Of Cause</value>
+  </data>
+  <data name="IslamInfo_ParticleOfCertainty" xml:space="preserve">
+    <value>Particle Of Certainty</value>
+  </data>
+  <data name="IslamInfo_CircumstantialParticle" xml:space="preserve">
+    <value>Circumstantial Particle</value>
+  </data>
+  <data name="IslamInfo_ComitativeParticle" xml:space="preserve">
+    <value>Comitative Particle</value>
+  </data>
+  <data name="IslamInfo_ConditionalParticle" xml:space="preserve">
+    <value>Conditional Particle</value>
+  </data>
+  <data name="IslamInfo_EqualizationParticle" xml:space="preserve">
+    <value>Equalization Particle</value>
+  </data>
+  <data name="IslamInfo_ExhortationParticle" xml:space="preserve">
+    <value>Exhortation Particle</value>
+  </data>
+  <data name="IslamInfo_ExplanationParticle" xml:space="preserve">
+    <value>Explanation Particle</value>
+  </data>
+  <data name="IslamInfo_ExceptiveParticle" xml:space="preserve">
+    <value>Exceptive Particle</value>
+  </data>
+  <data name="IslamInfo_FutureParticle" xml:space="preserve">
+    <value>Future Particle</value>
+  </data>
+  <data name="IslamInfo_InceptiveParticle" xml:space="preserve">
+    <value>Inceptive Particle</value>
+  </data>
+  <data name="IslamInfo_ParticleOfInterpretation" xml:space="preserve">
+    <value>Particle Of Interpretation</value>
+  </data>
+  <data name="IslamInfo_InterogativeParticle" xml:space="preserve">
+    <value>Interogative Particle</value>
+  </data>
+  <data name="IslamInfo_NegativeParticle" xml:space="preserve">
+    <value>Negative Particle</value>
+  </data>
+  <data name="IslamInfo_PreventiveParticle" xml:space="preserve">
+    <value>Preventive Particle</value>
+  </data>
+  <data name="IslamInfo_ProhibitionParticle" xml:space="preserve">
+    <value>Prohibition Particle</value>
+  </data>
+  <data name="IslamInfo_ResumptionParticle" xml:space="preserve">
+    <value>Resumption Particle</value>
+  </data>
+  <data name="IslamInfo_RestrictionParticle" xml:space="preserve">
+    <value>Restriction Particle</value>
+  </data>
+  <data name="IslamInfo_RetractionParticle" xml:space="preserve">
+    <value>Retraction Particle</value>
+  </data>
+  <data name="IslamInfo_ResultParticle" xml:space="preserve">
+    <value>Result Particle</value>
+  </data>
+  <data name="IslamInfo_SupplementalParticle" xml:space="preserve">
+    <value>Supplemental Particle</value>
+  </data>
+  <data name="IslamInfo_SurpriseParticle" xml:space="preserve">
+    <value>Surprise Particle</value>
+  </data>
+  <data name="IslamInfo_VocativeParticle" xml:space="preserve">
+    <value>Vocative Particle</value>
+  </data>
+  <data name="IslamInfo_QuranicInitials" xml:space="preserve">
+    <value>Quranic Initials</value>
+  </data>
   <data name="IslamInfo_PointsOfArticulation" xml:space="preserve">
     <value>Points Of Articulation</value>
   </data>

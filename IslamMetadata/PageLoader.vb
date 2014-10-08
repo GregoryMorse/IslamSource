@@ -1624,6 +1624,38 @@ Public Class Arabic
         Public Match As String
         Public Color As Color
     End Structure
+    Public Shared AdDuriOrthography As RuleTranslation() = {
+      New RuleTranslation With {.Rule = "Feh", .Match = ArabicLetterFeh, .Evaluator = Function(Match As System.Text.RegularExpressions.Match) ChrW(&H6A2)},
+      New RuleTranslation With {.Rule = "ImalaE", .Match = String.Empty, .Evaluator = Function(Match As System.Text.RegularExpressions.Match) ChrW(&H65C)}
+        }
+    Public Shared WarshOrthography As RuleTranslation() = { _
+      New RuleTranslation With {.Rule = "Feh", .Match = ArabicLetterFeh, .Evaluator = Function(Match As System.Text.RegularExpressions.Match) ChrW(&H6A1) + ChrW(&H6A2)},
+      New RuleTranslation With {.Rule = "Qaf", .Match = ArabicLetterQaf, .Evaluator = Function(Match As System.Text.RegularExpressions.Match) ChrW(&H66F) + ChrW(&H6A7)},
+      New RuleTranslation With {.Rule = "Kaf", .Match = ArabicLetterKaf, .Evaluator = Function(Match As System.Text.RegularExpressions.Match) ChrW(&H6A9)},
+      New RuleTranslation With {.Rule = "Noon", .Match = ArabicLetterNoon, .Evaluator = Function(Match As System.Text.RegularExpressions.Match) ChrW(&H6BA) + ChrW(&H646)},
+      New RuleTranslation With {.Rule = "ImalaE", .Match = String.Empty, .Evaluator = Function(Match As System.Text.RegularExpressions.Match) ChrW(&H65C)},
+      New RuleTranslation With {.Rule = "IIFinal", .Match = ArabicKasra + ArabicLetterYeh + "\b", .Evaluator = Function(Match As System.Text.RegularExpressions.Match) Match.Value.Chars(0) + ChrW(&H6D2)}
+        }
+    Public Shared UthmaniMinimalScript As RuleTranslation() = { _
+        New RuleTranslation With {.Rule = "ShortVowelsBeforeLongVowels", .Match = MakeRegMultiEx(Array.ConvertAll(ArabicLongVowels, Function(Str As String) MakeUniRegEx(Str))), _
+            .Evaluator = Function(Match As System.Text.RegularExpressions.Match) Match.Value.Chars(1)}, _
+        New RuleTranslation With {.Rule = "Sukun", .Match = MakeUniRegEx(ArabicSukun), _
+            .Evaluator = Function(Match As System.Text.RegularExpressions.Match) String.Empty}, _
+        New RuleTranslation With {.Rule = "SmallSadAboveHamzaWasl", .Match = MakeUniRegEx(ArabicLetterAlefWasla), _
+            .Evaluator = Function(Match As System.Text.RegularExpressions.Match) ArabicLetterAlef}, _
+        New RuleTranslation With {.Rule = "SmallCircleShowingNonReadLetters", .Match = MakeUniRegEx(ArabicLetterWaw) + MakeUniRegEx(ArabicLetterAlef) + MakeUniRegEx(ArabicSmallHighRoundedZero) + "|" + MakeUniRegEx(ArabicLetterAlefWithHamzaAbove) + MakeUniRegEx(ArabicDamma) + MakeUniRegEx(ArabicLetterWaw) + MakeUniRegEx(ArabicSmallHighRoundedZero), _
+            .Evaluator = Function(Match As System.Text.RegularExpressions.Match) Match.Value.Remove(Match.Value.Length - 1)}, _
+        New RuleTranslation With {.Rule = "ShaddaIdgham", .Match = "\b(" + MakeUniRegEx(ArabicLetterNoon) + "|" + MakeUniRegEx(ArabicLetterWaw) + "|" + MakeUniRegEx(ArabicLetterMeem) + "|" + MakeUniRegEx(ArabicLetterYeh) + "|" + MakeUniRegEx(ArabicLetterLam) + "|" + MakeUniRegEx(ArabicLetterReh) + ")" + MakeUniRegEx(ArabicShadda), _
+            .Evaluator = Function(Match As System.Text.RegularExpressions.Match) Match.Value.Remove(Match.Value.Length - 1)}, _
+        New RuleTranslation With {.Rule = "SmallMeemIghlab", .Match = MakeUniRegEx(ArabicSmallHighMeemIsolatedForm), _
+            .Evaluator = Function(Match As System.Text.RegularExpressions.Match) String.Empty}, _
+        New RuleTranslation With {.Rule = "Madda", .Match = MakeUniRegEx(ArabicLetterAlefWithMaddaAbove), _
+            .Evaluator = Function(Match As System.Text.RegularExpressions.Match) ArabicLetterAlef}, _
+        New RuleTranslation With {.Rule = "SmallYehSmallWawAfterPronounHeh", .Match = MakeUniRegEx(ArabicSmallYeh) + "|" + MakeUniRegEx(ArabicSmallWaw), _
+            .Evaluator = Function(Match As System.Text.RegularExpressions.Match) String.Empty}
+        }
+    'Madda includies sole maddah?
+    'SmallCircleShowingNonReadLetters = if this is Sukun then need algorithm to find unusual exceptions
     Public Shared ColoringRules As ColorRule() = { _
         New ColorRule With {.RuleName = "Normal", .Match = "empty|helperfatha|helperkasra|helperdamma|helpermeem|assimilator|assimilatorincomplete|dipthong|compulsorystop|endofversestop|prostration|canstoporcontinue|betternottostop|stopatfirstnotsecond|stopatsecondnotfirst|bettertostopbutpermissibletocontinue|bettertocontinuebutpermissibletostop|subtlestopwithoutbreath", .Color = Color.Black}, _
         New ColorRule With {.RuleName = "NecessaryProlongation", .Match = "necessaryprolong", .Color = Color.DarkRed}, _
@@ -3323,6 +3355,15 @@ Public Class IslamData
     <System.Xml.Serialization.XmlArray("hadithcollections")> _
     <System.Xml.Serialization.XmlArrayItem("collection")> _
     Public Collections() As CollectionInfo
+    Structure PartOfSpeechInfo
+        <System.Xml.Serialization.XmlAttribute("symbol")> _
+        Public Symbol As String
+        <System.Xml.Serialization.XmlAttribute("id")> _
+        Public Id As String
+    End Structure
+    <System.Xml.Serialization.XmlArray("partsofspeech")> _
+    <System.Xml.Serialization.XmlArrayItem("pos")> _
+    Public PartsOfSpeech() As PartOfSpeechInfo
 End Class
 Public Class CachedData
     'need disk and memory cache as time consuming to read or build
@@ -3332,7 +3373,7 @@ Public Class CachedData
     Shared _XMLDocInfos As Collections.Generic.List(Of System.Xml.XmlDocument) 'Hadiths
     Shared _RootDictionary As New Generic.Dictionary(Of String, ArrayList)
     Shared _FormDictionary As New Generic.Dictionary(Of String, ArrayList)
-    Shared _TagDictionary As New Generic.Dictionary(Of String, ArrayList)
+    Shared _TagDictionary As New Generic.Dictionary(Of String, Generic.Dictionary(Of String, ArrayList))
     Shared _WordDictionary As New Generic.Dictionary(Of String, ArrayList)
     Shared _LetterDictionary As New Generic.Dictionary(Of Char, ArrayList)
     Shared _PreDictionary As New Generic.Dictionary(Of String, ArrayList)
@@ -3361,11 +3402,14 @@ Public Class CachedData
                     End If
                     'TAG
                     If Not _TagDictionary.ContainsKey(Pieces(2)) Then
-                        _TagDictionary.Add(Pieces(2), New ArrayList)
+                        _TagDictionary.Add(Pieces(2), New Generic.Dictionary(Of String, ArrayList))
                     End If
                     Dim Location As Integer() = Array.ConvertAll(Pieces(0).TrimStart("("c).TrimEnd(")"c).Split(":"c), Function(Str As String) CInt(Str))
                     _FormDictionary.Item(Pieces(1)).Add(Location)
-                    _TagDictionary.Item(Pieces(2)).Add(Location)
+                    If Not _TagDictionary.Item(Pieces(2)).ContainsKey(Pieces(1)) Then
+                        _TagDictionary.Item(Pieces(2)).Add(Pieces(1), New ArrayList)
+                    End If
+                    _TagDictionary.Item(Pieces(2)).Item(Pieces(1)).Add(Location)
                     Dim Parts As String() = Pieces(3).Split("|"c)
                     If Array.Find(Parts, Function(Str As String) Str = "PREFIX" Or Str = "SUFFIX") = String.Empty Then
                         'LEM: or if not present FORM
@@ -3530,7 +3574,7 @@ Public Class CachedData
             Return _FormDictionary
         End Get
     End Property
-    Public Shared ReadOnly Property TagDictionary As Generic.Dictionary(Of String, ArrayList)
+    Public Shared ReadOnly Property TagDictionary As Generic.Dictionary(Of String, Generic.Dictionary(Of String, ArrayList))
         Get
             If _TagDictionary.Keys.Count = 0 Then GetMorphologicalData()
             Return _TagDictionary
@@ -3742,7 +3786,9 @@ Public Class TanzilReader
         "function changeQuranDivision(index) { var iCount; var qurandata = " + JSArrays + "; var eSelect = $('#quranselection').get(0); clearOptionList(eSelect); for (iCount = 0; iCount < qurandata[index].length; iCount++) { eSelect.options.add(new Option(qurandata[index][iCount][0], qurandata[index][iCount][1])); } }"}
     End Function
     Public Shared Function GetWordPartitions() As String()
-        Return New String() {Utility.LoadResourceString("IslamInfo_Letters"), Utility.LoadResourceString("IslamInfo_Words"), Utility.LoadResourceString("IslamInfo_UniqueWords"), Utility.LoadResourceString("IslamInfo_UniqueWordsPerPart"), Utility.LoadResourceString("IslamInfo_WordsPerPart"), Utility.LoadResourceString("IslamInfo_UniqueWordsPerStation"), Utility.LoadResourceString("IslamInfo_WordsPerStation"), Utility.LoadResourceString("IslamInfo_Letters"), Utility.LoadResourceString("IslamInfo_Letters"), Utility.LoadResourceString("IslamInfo_Letters"), Utility.LoadResourceString("IslamInfo_Letters")}
+        Dim Parts As New Generic.List(Of String) From {Utility.LoadResourceString("IslamInfo_Letters"), Utility.LoadResourceString("IslamInfo_Words"), Utility.LoadResourceString("IslamInfo_UniqueWords"), Utility.LoadResourceString("IslamInfo_UniqueWordsPerPart"), Utility.LoadResourceString("IslamInfo_WordsPerPart"), Utility.LoadResourceString("IslamInfo_UniqueWordsPerStation"), Utility.LoadResourceString("IslamInfo_WordsPerStation"), Utility.LoadResourceString("IslamInfo_IsolatedLetters"), Utility.LoadResourceString("IslamInfo_LetterPatterns"), Utility.LoadResourceString("IslamInfo_Prefix"), Utility.LoadResourceString("IslamInfo_Suffix")}
+        Parts.AddRange(Array.ConvertAll(CachedData.IslamData.PartsOfSpeech, Function(POS As IslamData.PartOfSpeechInfo) Utility.LoadResourceString("IslamInfo_" + POS.Id)))
+        Return Parts.ToArray()
     End Function
     Public Shared Function GetQuranWordTotalNumber() As Integer
         Dim Total As Integer
@@ -3778,6 +3824,8 @@ Public Class TanzilReader
             Return CStr(CachedData.PreDictionary.Count)
         ElseIf Index = 10 Then
             Return CStr(CachedData.SufDictionary.Count)
+        ElseIf Index >= 11 And Index < 11 + CachedData.IslamData.PartsOfSpeech.Length Then
+            Return CStr(CachedData.TagDictionary.Item(CachedData.IslamData.PartsOfSpeech(Index - 11).Symbol).Count)
         Else
             Return String.Empty
         End If
@@ -3811,7 +3859,7 @@ Public Class TanzilReader
                 Total += CachedData.IsolatedLetterDictionary.Item(LetterFreqArray(Count)).Count
                 Output.Add(New String() {CachedData.IslamData.ArabicLetters(Arabic.FindLetterBySymbol(LetterFreqArray(Count))).UnicodeName + " ( " + Arabic.FixStartingCombiningSymbol(LetterFreqArray(Count)) + " )", String.Empty, CStr(CachedData.IsolatedLetterDictionary.Item(LetterFreqArray(Count)).Count), (CDbl(CachedData.IsolatedLetterDictionary.Item(LetterFreqArray(Count)).Count) * 100 / All).ToString("n2"), (CDbl(Total) * 100 / All).ToString("n2")})
             Next
-        ElseIf Index = 1 Or Index = 9 Or Index = 10 Then
+        ElseIf Index = 1 Or Index = 9 Or Index = 10 Or Index >= 11 And Index < 11 + CachedData.IslamData.PartsOfSpeech.Length Then
             Dim Dict As Generic.Dictionary(Of String, ArrayList)
             If Index = 1 Then
                 Dict = CachedData.WordDictionary
@@ -3819,6 +3867,8 @@ Public Class TanzilReader
                 Dict = CachedData.PreDictionary
             ElseIf Index = 10 Then
                 Dict = CachedData.SufDictionary
+            ElseIf Index >= 11 And Index < 11 + CachedData.IslamData.PartsOfSpeech.Length Then
+                Dict = CachedData.TagDictionary(CachedData.IslamData.PartsOfSpeech(Index - 11).Symbol)
             Else
                 Dict = Nothing
             End If

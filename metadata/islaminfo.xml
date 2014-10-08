@@ -852,19 +852,19 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="a" id="PartiallyFlexibleAccusativePossessive" grammar="ms|fs|bp,pflex,acc|pos"></word>
 		</category>
 		<category title="ProximalDemonstratives">
-			<word text="ha*aA" id="This" grammar="ms"></word>
-			<word text="ha*ihi" id="This" grammar="fs"></word>
-			<word text="ha*aAni ha*ayoni" id="TheseTwo" grammar="md"></word>
+			<word text="ha`*aA" id="This" grammar="ms"></word>
+			<word text="ha`*ihi" id="This" grammar="fs"></word>
+			<word text="ha`*a`ni ha`*aAni ha*ayoni" id="TheseTwo" grammar="md"></word>
 			<word text="hataAni hatayoni" id="TheseTwo" grammar="fd"></word>
-			<word text="ha}ulaA&apos;i" id="These" grammar="mp|fp"></word>
-			<word text="ha*ihi" id="These" grammar="bp"></word>
+			<word text="ha`^&amp;ulaA^&apos;i" id="These" grammar="mp|fp"></word>
+			<word text="ha`*ihi" id="These" grammar="bp"></word>
 		</category>
 		<category title="DistalDemonstratives">
-			<word text="*`lika" id="That" grammar="ms"></word>
+			<word text="*a`lika" id="That" grammar="ms"></word>
 			<word text="tiloka" id="That" grammar="fs"></word>
-			<word text="*aAnika *ayonika" id="ThoseTwo" grammar="md"></word>
+			<word text="*a`nika *ayonika" id="ThoseTwo" grammar="md"></word>
 			<word text="taAnika tayonika" id="ThoseTwo" grammar="fd"></word>
-			<word text="&gt;uwl{ika" id="Those" grammar="mp|fp"></word>
+			<word text="&gt;uw@la`^}ika" id="Those" grammar="mp|fp"></word>
 			<word text="tiloka" id="Those" grammar="bp"></word>
 		</category>
 		<category title="PointingNouns">
@@ -875,13 +875,13 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="tam~a" id="ThereOverThere"></word>
 		</category>
 		<category title="RelativePronouns">
-			<word text="Al~a*iy" id="HeWho" grammar="ms"></word>
-			<word text="Al~atiy" id="SheWho" grammar="fs"></word>
-			<word text="Al~a*aAni Al~a*ayoni" id="TheseTwoWho" grammar="md"></word>
-			<word text="Al~ataAni Al~atayoni" id="TheseTwoWho" grammar="fd"></word>
-			<word text="Al~a*iyna" id="ThoseWho" grammar="mp"></word>
-			<word text="Al~aA{iy Al~aAtiy" id="ThoseWho" grammar="fp"></word>
-			<word text="Al~atiy" id="ThoseWho" grammar="bp"></word>
+			<word text="{l~a*iy" id="HeWho" grammar="ms"></word>
+			<word text="{l~atiy" id="SheWho" grammar="fs"></word>
+			<word text="{l~a*aAni {l~a*ayoni" id="TheseTwoWho" grammar="md"></word>
+			<word text="{l~ataAni {l~atayoni" id="TheseTwoWho" grammar="fd"></word>
+			<word text="{l~a*iyna" id="ThoseWho" grammar="mp"></word>
+			<word text="{l~a`^_#iY {l~a`tiY" id="ThoseWho" grammar="fp"></word>
+			<word text="{l~atiy" id="ThoseWho" grammar="bp"></word>
 		</category>
 		<category title="PersonalPronouns">
 			<word text="&gt;anaA" id="I" grammar="1ms|1fs"></word>
@@ -3411,4 +3411,51 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 		<translation file="ug.saleh" name="محمد صالح" translator="Muhammad Saleh"></translation>
 		<translation file="uz.sodik" name="Мухаммад Содик" translator="Muhammad Sodik Muhammad Yusuf"></translation>
 	</translations>
+	<partsofspeech>
+		<pos symbol="N" id="Noun"></pos>
+		<pos symbol="PN" id="ProperNoun"></pos>
+		<pos symbol="ADJ" id="Adjective"></pos>
+		<pos symbol="IMPN" id="ImperativeVerbalNoun"></pos>
+		<pos symbol="PRON" id="PersonalPronoun"></pos>
+		<pos symbol="DEM" id="DemonstrativePronoun"></pos>
+		<pos symbol="REL" id="RelativePronoun"></pos>
+		<pos symbol="T" id="TimeAdverb"></pos>
+		<pos symbol="LOC" id="LocationAdverb"></pos>
+		<pos symbol="DET" id="DeterminerPrefix"></pos>
+		<pos symbol="V" id="Verb"></pos>
+		<pos symbol="P" id="Preposition"></pos>
+		<pos symbol="EMPH" id="EmphaticLaamPrefix"></pos>
+		<pos symbol="IMPV" id="ImperativeLaamPrefix"></pos>
+		<pos symbol="PRP" id="PurposeLaamPrefix"></pos>
+		<pos symbol="CONJ" id="CoordinatingConjunction"></pos>
+		<pos symbol="SUB" id="SubordinatingConjunction"></pos>
+		<pos symbol="ACC" id="AccusativeParticle"></pos>
+		<pos symbol="AMD" id="AmendmentParticle"></pos>
+		<pos symbol="ANS" id="AnswerParticle"></pos>
+		<pos symbol="AVR" id="AversionParticle"></pos>
+		<pos symbol="CAUS" id="ParticleOfCause"></pos>
+		<pos symbol="CERT" id="ParticleOfCertainty"></pos>
+		<pos symbol="CIRC" id="CircumstantialParticle"></pos>
+		<pos symbol="COM" id="ComitativeParticle"></pos>
+		<pos symbol="COND" id="ConditionalParticle"></pos>
+		<pos symbol="EQ" id="EqualizationParticle"></pos>
+		<pos symbol="EXH" id="ExhortationParticle"></pos>
+		<pos symbol="EXL" id="ExplanationParticle"></pos>
+		<pos symbol="EXP" id="ExceptiveParticle"></pos>
+		<pos symbol="FUT" id="FutureParticle"></pos>
+		<pos symbol="INC" id="InceptiveParticle"></pos>
+		<pos symbol="INT" id="ParticleOfInterpretation"></pos>
+		<pos symbol="INTG" id="InterogativeParticle"></pos>
+		<pos symbol="NEG" id="NegativeParticle"></pos>
+		<pos symbol="PREV" id="PreventiveParticle"></pos>
+		<pos symbol="PRO" id="ProhibitionParticle"></pos>
+		<pos symbol="REM" id="ResumptionParticle"></pos>
+		<pos symbol="RES" id="RestrictionParticle"></pos>
+		<pos symbol="RET" id="RetractionParticle"></pos>
+		<pos symbol="RSLT" id="ResultParticle"></pos>
+		<pos symbol="SUP" id="SupplementalParticle"></pos>
+		<pos symbol="SUR" id="SurpriseParticle"></pos>
+		<pos symbol="VOC" id="VocativeParticle"></pos>
+		<pos symbol="INL" id="QuranicInitials"></pos>
+	</partsofspeech>
 </islamdata>
