@@ -2,8 +2,7 @@
     Shared Arr1 As New Dictionary(Of String, Integer()) From {
 {" ", New Integer() {&H20}},
 {"llh", New Integer() {&H21}},
-{"A", New Integer() {&H23}},
-{"l", New Integer() {&H24, &H25}},
+{"A", New Integer() {&H23, &H24, &H25}},
 {">", New Integer() {&H26, &H27, &H28}},
 {"<", New Integer() {&H29, &H2A}},
 {"|", New Integer() {&H2C, &H2D}},
@@ -24,7 +23,8 @@
 {"T", New Integer() {&HDB, &HDC, &HDD, &HDE}},
 {"Z", New Integer() {&HDF, &HE0, &HE1, &HE2}},
 {"E", New Integer() {&HE3, &HE4, &HE5, &HE6, &HE7, &HE8, &HE9, &HEA, &HEB, &HEC, &HED}},
-{"g", New Integer() {&HEE, &HEF, &HF0, &HF1, &HF3, &HF6, &HF0F7, &HF8, &HF9, &HF0FA, &HFB, &HF0FF}}
+{"g", New Integer() {&HEE, &HEF, &HF0, &HF1, &HF3, &HF6, &HF0F7, &HF8}},
+{"f", New Integer() {&HF9, &HF0FA, &HFB, &HF0FF}}
 }
     Shared Arr2 As New Dictionary(Of String, Integer()) From {
     {" ", New Integer() {&H20}},
@@ -42,7 +42,7 @@
     {"l>", New Integer() {&H3C8, &H7B, &H7C, &H7D, &H223C}},
     {"y", New Integer() {&H192, &H201E, &H2020, &H2021, &H2C6, &H2030, &H160, &H2039, &HF08D, &HF08E, &HF08F, &HF090, &H23A7, &H23AA, &H23AB}},
     {"Y", New Integer() {&H2018, &H2019, &H201C, &H201D, &HA9, &HAC, &H23A9, &H2321}},
-    {"}", New Integer() {&H2014, &H2DC, &H2122, &H203A, &HF09D, &H2044, &H221E, &H2666}},
+    {"}", New Integer() {&H2014, &H2DC, &H203A, &HF09D, &H2044, &H221E, &H2666}},
     {"#", New Integer() {&H2194, &H23AE}},
     {"\x1621", New Integer() {&H2190, &H2033, &H2265, &HD7, &H221D}},
     {"`", New Integer() {&H2261, &H2248, &H2211}},
@@ -62,7 +62,6 @@
     {"6", New Integer() {&H2209}},
     {"7", New Integer() {&H2220}},
     {"8", New Integer() {&H2207}},
-    {"9", New Integer() {&HAE}},
     {"H", New Integer() {&H220F, &H21D4}},
     {"x", New Integer() {&H221A, &H21D0}},
     {"Y#", New Integer() {&H22C5}},
@@ -75,7 +74,7 @@
     {"t", New Integer() {&H23A2, &H222B, &H23A0}},
     {"b", New Integer() {&H2320, &H23A4}},
     {"v", New Integer() {&H239F}}
-    }
+    } '{"9", New Integer() {&HAE}},
     Shared Arr3 As New Dictionary(Of String, Integer()) From {
 {"l", New Integer() {&H21, &H23, &H51}},
 {"d", New Integer() {&H24}},
@@ -177,6 +176,7 @@
     Class CompareChar
         Implements IComparer(Of ArrayList)
         Public Function Compare(x As ArrayList, y As ArrayList) As Integer Implements IComparer(Of ArrayList).Compare
+            If x(3) = y(3) Then Return 0
             Return If(x(3) > y(3), 1, -1)
             If x(1) = y(1) Then
                 If x(0) = y(0) Then
@@ -191,12 +191,14 @@
         Dim Lines As Byte() = IO.File.ReadAllBytes("..\..\..\IslamMetadata\warsh.csv")
         Dim LinesOrder As String() = IO.File.ReadAllLines("..\..\..\IslamMetadata\warshp.txt", System.Text.Encoding.UTF8)
         Dim CharTable As String = String.Empty
-        For Count As Integer = 0 To 200 'LinesOrder.Length - 1
-            CharTable += StrReverse((New System.Text.UnicodeEncoding).GetString(System.Text.Encoding.Convert(System.Text.Encoding.UTF8, System.Text.Encoding.Unicode, (New System.Text.UTF8Encoding).GetBytes(LinesOrder(Count).ToCharArray()))))
+        For Count As Integer = 0 To 1000 'LinesOrder.Length - 1
+            CharTable += (New System.Text.UnicodeEncoding).GetString(System.Text.Encoding.Convert(System.Text.Encoding.UTF8, System.Text.Encoding.Unicode, (New System.Text.UTF8Encoding).GetBytes((StrReverse(LinesOrder(Count)) + " ").ToCharArray())))
         Next
+        Dim Bytes As Char() = CharTable.ToCharArray()
         Dim Chars As New ArrayList
         Dim Pos As Integer = 0
-        For Count As Integer = 0 To 200 'Lines.Length - 1
+        Dim bNextPage As Boolean = False
+        For Count As Integer = 0 To 360 'Lines.Length - 1
             Dim Vals(11) As String
             Vals(0) = System.Text.Encoding.Default.GetString(Lines, Pos, Array.IndexOf(Lines, CByte(Asc(","c)), Pos) - Pos).Trim("""")
             Pos = Array.IndexOf(Lines, CByte(Asc(","c)), Pos) + 1
@@ -223,12 +225,21 @@
             If Vals(0) = "BAMCBO+TimesNewRomanPSMT" Then
                 Vals(11) = System.Text.Encoding.Unicode.GetString(System.Text.Encoding.Convert(System.Text.Encoding.UTF8, System.Text.Encoding.Unicode, Lines, Pos, Array.IndexOf(Lines, CByte(Asc(vbCr)), Pos) - Pos)).Trim("""")
                 Pos = Array.IndexOf(Lines, CByte(Asc(vbLf)), Pos) + 1
-                Dim Idx As Integer
-                For SubCount = Vals(11).Length - 1 To 0 Step -1
-                    Idx = CharTable.IndexOf(Vals(11).Chars(SubCount))
-                    CharTable = CharTable.Remove(Idx, 1).Insert(Idx, Chr(0))
-                Next
-                If Vals(11) = " " And Chars.Count <> 0 Then Chars.Add(New ArrayList From {CSng(Vals(7)), CSng(Vals(8)) - If(CSng(Vals(8)) - 0.6571 = Chars(Chars.Count - 1)(1), 0.6571, 0.657), Vals(11), Idx})
+                Dim Idx As Integer = 0
+                If Vals(11).Replace(" ", String.Empty) <> String.Empty Or Vals(11) = " " Then
+                    For SubCount = Vals(11).Length - 1 To 0 Step -1
+                        Idx = Array.IndexOf(Bytes, Vals(11).Chars(SubCount))
+                        Bytes(Idx) = ChrW(0)
+                    Next
+                End If
+                If Not bNextPage And Vals(11).Length > 1 And Vals(11).Length < 10 And Vals(11).Replace(" ", String.Empty) = String.Empty Then
+                    Idx = Array.IndexOf(Bytes, " "c)
+                    Bytes(Idx) = ChrW(0)
+                    If Chars.Count <> 0 Then Chars.Add(New ArrayList From {CSng(Vals(7)), CSng(Vals(8)) - If(CSng(Vals(8)) - 0.6571 = Chars(Chars.Count - 1)(1), 0.6571, 0.657), Vals(11), Idx})
+                End If
+                If Vals(11) = " " Then
+                    If Chars.Count <> 0 Then Chars.Add(New ArrayList From {CSng(Vals(7)), CSng(Vals(8)) - If(CSng(Vals(8)) - 0.6571 = Chars(Chars.Count - 1)(1), 0.6571, 0.657), Vals(11), Idx})
+                End If
             Else
                 Dim CurDict As Dictionary(Of String, Integer()) = Nothing
                 If Vals(0) = "BAMCIC+HQPB1" Then
@@ -246,12 +257,25 @@
                 Else
                     Vals(11) = System.Text.Encoding.Unicode.GetString(System.Text.Encoding.Convert(System.Text.Encoding.UTF8, System.Text.Encoding.Unicode, Lines, Pos, Array.IndexOf(Lines, CByte(Asc(vbCr)), Pos) - Pos)).Trim("""")
                     Pos = Array.IndexOf(Lines, CByte(Asc(vbLf)), Pos) + 1
-                    For SubCount = Vals(11).Length - 1 To 0 Step -1
-                        Dim Idx As Integer = CharTable.IndexOf(Vals(11).Chars(SubCount))
-                        If Idx <> -1 Then CharTable = CharTable.Remove(Idx, 1).Insert(Idx, Chr(0))
-                    Next
+                    If Vals(11).Replace(" ", String.Empty) <> String.Empty Or Vals(11) = " " Then
+                        For SubCount = Vals(11).Length - 1 To 0 Step -1
+                            Dim Idx As Integer = Array.IndexOf(Bytes, Vals(11).Chars(SubCount))
+                            If Idx <> -1 Then Bytes(Idx) = ChrW(0)
+                        Next
+                    End If
+                End If
+                If Vals(0) = "TraditionalArabic" Then
+                    bNextPage = True
                 End If
                 If Not CurDict Is Nothing Then
+                    If bNextPage Then
+                        'Bytes(Array.IndexOf(Bytes, " "c)) = ChrW(0)
+                        MsgBox(StrReverse(Vals(11)) + "/" + CStr(Array.IndexOf(Bytes, " "c)) + "/" + CStr(Array.LastIndexOf(Bytes, ChrW(0), Array.IndexOf(Bytes, " "c))) + "/" + String.Join(String.Empty, Array.ConvertAll(Bytes, Function(C As Char) CStr(C)), Array.LastIndexOf(Bytes, ChrW(0), Array.IndexOf(Bytes, " "c)) + 1, Array.IndexOf(Bytes, " "c) - Array.LastIndexOf(Bytes, " "c, Array.IndexOf(Bytes, " "c))))
+                        bNextPage = False
+                        If Bytes(Array.IndexOf(Bytes, " "c) - 1) = ChrW(&H2329) Or Bytes(Array.IndexOf(Bytes, " "c) - 1) = ChrW(&HAE) Then
+
+                        End If
+                    End If
                     Vals(11) = System.Text.Encoding.Unicode.GetString(System.Text.Encoding.Convert(System.Text.Encoding.UTF8, System.Text.Encoding.Unicode, Lines, Pos, Array.IndexOf(Lines, CByte(Asc(vbCr)), Pos) - Pos)).Trim("""")
                     Pos = Array.IndexOf(Lines, CByte(Asc(vbLf)), Pos) + 1
                     Dim privateFonts As New System.Drawing.Text.PrivateFontCollection()
@@ -277,13 +301,12 @@
                                     ' If SubCount = 0 And (KeyValue.Key.Chars(0) = "a" Or KeyValue.Key.Chars(0) = "i" Or KeyValue.Key.Chars(0) = "i" Or KeyValue.Key.Chars(0) = "u" Or KeyValue.Key.Chars(0) = "o" Or KeyValue.Key.Chars(0) = "F" Or KeyValue.Key.Chars(0) = "N" Or KeyValue.Key.Chars(0) = "K" Or KeyValue.Key.Chars(0) = "~" Or KeyValue.Key.Chars(0) = "`") Then
 
                                     'End If
-                                    Dim Idx As Integer = CharTable.IndexOf(Vals(11).Chars(SubCount))
+                                    Dim Idx As Integer = Array.LastIndexOf(Bytes, Vals(11).Chars(SubCount), Array.IndexOf(Bytes, " "c))
+                                    If Idx = -1 Then Idx = Array.IndexOf(Bytes, Vals(11).Chars(SubCount))
                                     Chars.Add(New ArrayList From {If(SubCount = Vals(11).Length - 1, CSng(Vals(7)), CSng(Vals(9)) + Rgs(SubCount).GetBounds(g).Width * 72 / 100), CSng(Vals(8)), KeyValue.Key, Idx})
-                                    CharTable = CharTable.Remove(Idx, 1).Insert(Idx, Chr(0))
-                                    If Count = 91 Then
-                                        Dim S As Integer = 1
-                                    End If
+                                    Bytes(Idx) = ChrW(0)
                                     '(CSng(Vals(7)) - CSng(Vals(9))) / Rgs(Vals(11).Length - 1).GetBounds(g).Width *
+                                    Exit For
                                 End If
                             Next
                         End If
@@ -294,23 +317,34 @@
         Dim SortChars As ArrayList() = Chars.ToArray(GetType(ArrayList))
         Array.Sort(SortChars, New CompareChar)
         ParseQuran = Nothing
-        For Count As Integer = 0 To 200 'SortChars.Length - 1
+        For Count As Integer = 0 To SortChars.Length - 1
             If SortChars(Count)(2) = "A" AndAlso SortChars(Count + 1)(2) = "{" Then
             ElseIf SortChars(Count)(2) = "llh" Then
             ElseIf SortChars(Count)(2) = "i~ai" Or SortChars(Count)(2) = "~i~ai" Then
-                ParseQuran += SortChars(Count)(2).Chars(0)
-                If SortChars(Count)(2).Chars(0) = "~" Then
-                    ParseQuran += SortChars(Count)(2).Chars(1)
+                If SortChars(Count - 1)(2) = "llh" Then
+                    ParseQuran += SortChars(Count - 1)(2).Chars(0) + SortChars(Count)(2).Chars(0)
+                    If SortChars(Count)(2).Chars(0) = "~" Then
+                        ParseQuran += SortChars(Count)(2).Chars(1)
+                    End If
+                    ParseQuran += SortChars(Count - 1)(2).Chars(1)
+                    ParseQuran += SortChars(Count)(2).Chars(If(SortChars(Count)(2).Chars(0) = "~", 2, 1)) + SortChars(Count)(2).Chars(If(SortChars(Count)(2).Chars(0) = "~", 3, 2))
+                    ParseQuran += SortChars(Count - 1)(2).Chars(2)
+                    ParseQuran += SortChars(Count)(2).Chars(If(SortChars(Count)(2).Chars(0) = "~", 4, 3))
+                Else
+                    ParseQuran += SortChars(Count)(2).Chars(0)
+                    If SortChars(Count)(2).Chars(0) = "~" Then
+                        ParseQuran += SortChars(Count)(2).Chars(1)
+                    End If
+                    ParseQuran += SortChars(Count + 1)(2)
+                    ParseQuran += SortChars(Count)(2).Chars(If(SortChars(Count)(2).Chars(0) = "~", 2, 1)) + SortChars(Count)(2).Chars(If(SortChars(Count)(2).Chars(0) = "~", 3, 2))
+                    ParseQuran += SortChars(Count + 2)(2)
+                    ParseQuran += SortChars(Count)(2).Chars(If(SortChars(Count)(2).Chars(0) = "~", 4, 3))
+                    Count += 2
                 End If
-                ParseQuran += SortChars(Count + 1)(2)
-                ParseQuran += SortChars(Count)(2).Chars(If(SortChars(Count)(2).Chars(0) = "~", 2, 1)) + SortChars(Count)(2).Chars(If(SortChars(Count)(2).Chars(0) = "~", 3, 2))
-                ParseQuran += SortChars(Count + 2)(2)
-                ParseQuran += SortChars(Count)(2).Chars(If(SortChars(Count)(2).Chars(0) = "~", 4, 3))
-                Count += 2
             ElseIf SortChars(Count)(2) <> String.Empty AndAlso SortChars(Count)(2).Length >= If(SortChars(Count)(2).Chars(0) = "~", 3, 2) AndAlso ("aiuo".IndexOf(SortChars(Count)(2).Chars(1)) <> -1 And "aiuo".IndexOf(SortChars(Count)(2).Chars(If(SortChars(Count)(2).Chars(0) = "~", 2, 0))) <> -1) Then
                 '"oa", "ia", "oi", "iu", "aa", "~ia", "ai", "~iu", "ii", "au", "~aa", "~ii", "~au", "ao", "~ai"
                 If SortChars(Count - 1)(2) = "llh" Then
-                    ParseQuran += SortChars(Count - 1)(2).Chars(0) + SortChars(Count - 1)(2).Chars(0) + SortChars(Count)(2).Chars(0)
+                    ParseQuran += SortChars(Count - 1)(2).Chars(0) + SortChars(Count - 1)(2).Chars(1) + SortChars(Count)(2).Chars(0)
                     If SortChars(Count)(2).Chars(0) = "~" Then
                         ParseQuran += SortChars(Count)(2).Chars(1)
                     End If
@@ -323,8 +357,8 @@
                     End If
                     ParseQuran += SortChars(Count + 1)(2)
                     ParseQuran += SortChars(Count)(2).Chars(If(SortChars(Count)(2).Chars(0) = "~", 2, 1))
+                    Count += 1
                 End If
-                Count += 1
             Else
                 ParseQuran += SortChars(Count)(2)
             End If
