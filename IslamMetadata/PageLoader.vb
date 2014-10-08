@@ -1553,6 +1553,17 @@ Public Class Arabic
         ArabicSmallLowSeen, ArabicSmallHighNoon, ArabicEmptyCentreLowStop, ArabicEmptyCentreHighStop, _
         ArabicRoundedHighStopWithFilledCentre, ArabicSmallLowMeem}
     End Function
+    Public Shared Function GetRecitationConnectingFollowerSymbols() As Char()
+        Return {ArabicLetterAlefWithHamzaAbove, ArabicLetterWawWithHamzaAbove, _
+        ArabicLetterAlefWithHamzaBelow, ArabicLetterYehWithHamzaAbove, _
+        ArabicLetterAlef, ArabicLetterBeh, ArabicLetterTehMarbuta, ArabicLetterTeh, _
+        ArabicLetterTheh, ArabicLetterJeem, ArabicLetterHah, ArabicLetterKhah, ArabicLetterDal,
+        ArabicLetterThal, ArabicLetterReh, ArabicLetterZain, ArabicLetterSeen, ArabicLetterSheen, _
+        ArabicLetterSad, ArabicLetterDad, ArabicLetterTah, ArabicLetterZah, ArabicLetterAin, _
+        ArabicLetterGhain, ArabicTatweel, ArabicLetterFeh, ArabicLetterQaf, ArabicLetterKaf, _
+        ArabicLetterLam, ArabicLetterMeem, ArabicLetterNoon, ArabicLetterHeh, ArabicLetterWaw, _
+        ArabicLetterAlefMaksura, ArabicLetterYeh}
+    End Function
     Public Shared Function IsLetter(Index As Integer) As Boolean
         Return Array.FindIndex(ArabicLetters, Function(Str As String) Str = CachedData.IslamData.ArabicLetters(Index).Symbol) <> -1
     End Function
@@ -1590,6 +1601,7 @@ Public Class Arabic
     Public Shared ArabicSpecialLeadingGutteral As String() = {ArabicLetterHah, ArabicLetterAin}
     Public Shared ArabicSpecialGutteral As String() = {ArabicLetterHamza, ArabicLetterHah, ArabicLetterAin, ArabicLetterSad, ArabicLetterDad, ArabicLetterTah, ArabicLetterZah}
     Public Shared ArabicLetters As String() = {ArabicLetterTeh, ArabicLetterTheh, ArabicLetterDal, ArabicLetterThal, ArabicLetterReh, ArabicLetterZain, ArabicLetterSeen, ArabicLetterSheen, ArabicLetterSad, ArabicLetterDad, ArabicLetterTah, ArabicLetterZah, ArabicLetterLam, ArabicLetterNoon, ArabicLetterAlef, ArabicLetterBeh, ArabicLetterJeem, ArabicLetterHah, ArabicLetterKhah, ArabicLetterAin, ArabicLetterGhain, ArabicLetterFeh, ArabicLetterQaf, ArabicLetterKaf, ArabicLetterMeem, ArabicLetterHeh, ArabicLetterWaw, ArabicLetterYeh}
+    Public Shared ArabicCombining
     Public Shared ArabicStopLetters As String() = {ArabicSmallHighLigatureSadWithLamWithAlefMaksura, _
                                                    ArabicSmallHighLigatureQafWithLamWithAlefMaksura, _
                                 ArabicSmallHighMeemInitialForm, ArabicSmallHighLamAlef, _
@@ -1624,17 +1636,20 @@ Public Class Arabic
         Public Match As String
         Public Color As Color
     End Structure
-    Public Shared AdDuriOrthography As RuleTranslation() = {
+    Public Shared AlDuriOrthography As RuleTranslation() = {
       New RuleTranslation With {.Rule = "Feh", .Match = ArabicLetterFeh, .Evaluator = Function(Match As System.Text.RegularExpressions.Match) ChrW(&H6A2)},
       New RuleTranslation With {.Rule = "ImalaE", .Match = String.Empty, .Evaluator = Function(Match As System.Text.RegularExpressions.Match) ChrW(&H65C)}
         }
     Public Shared WarshOrthography As RuleTranslation() = { _
-      New RuleTranslation With {.Rule = "Feh", .Match = ArabicLetterFeh, .Evaluator = Function(Match As System.Text.RegularExpressions.Match) ChrW(&H6A1) + ChrW(&H6A2)},
-      New RuleTranslation With {.Rule = "Qaf", .Match = ArabicLetterQaf, .Evaluator = Function(Match As System.Text.RegularExpressions.Match) ChrW(&H66F) + ChrW(&H6A7)},
-      New RuleTranslation With {.Rule = "Kaf", .Match = ArabicLetterKaf, .Evaluator = Function(Match As System.Text.RegularExpressions.Match) ChrW(&H6A9)},
-      New RuleTranslation With {.Rule = "Noon", .Match = ArabicLetterNoon, .Evaluator = Function(Match As System.Text.RegularExpressions.Match) ChrW(&H6BA) + ChrW(&H646)},
+      New RuleTranslation With {.Rule = "FehBeginMiddle", .Match = MakeUniRegEx(ArabicLetterFeh) + "(" + MakeRegMultiEx(Array.ConvertAll(GetRecitationCombiningSymbols(), Function(C As Char) CStr(C))) + ")*(?!(" + MakeRegMultiEx(Array.ConvertAll(GetRecitationConnectingFollowerSymbols(), Function(C As Char) CStr(C))) + "))", .Evaluator = Function(Match As System.Text.RegularExpressions.Match) ChrW(&H6A1)},
+      New RuleTranslation With {.Rule = "FehIsolatedEnd", .Match = MakeUniRegEx(ArabicLetterFeh) + "(" + MakeRegMultiEx(Array.ConvertAll(GetRecitationCombiningSymbols(), Function(C As Char) CStr(C))) + ")*(" + MakeRegMultiEx(Array.ConvertAll(GetRecitationConnectingFollowerSymbols(), Function(C As Char) CStr(C))) + ")", .Evaluator = Function(Match As System.Text.RegularExpressions.Match) ChrW(&H6A2)},
+      New RuleTranslation With {.Rule = "QafBeginMiddle", .Match = MakeUniRegEx(ArabicLetterQaf) + "(" + MakeRegMultiEx(Array.ConvertAll(GetRecitationCombiningSymbols(), Function(C As Char) CStr(C))) + ")*(?!(" + MakeRegMultiEx(Array.ConvertAll(GetRecitationConnectingFollowerSymbols(), Function(C As Char) CStr(C))) + "))", .Evaluator = Function(Match As System.Text.RegularExpressions.Match) ChrW(&H66F)},
+      New RuleTranslation With {.Rule = "QafIsolatedEnd", .Match = MakeUniRegEx(ArabicLetterQaf) + "(" + MakeRegMultiEx(Array.ConvertAll(GetRecitationCombiningSymbols(), Function(C As Char) CStr(C))) + ")*(" + MakeRegMultiEx(Array.ConvertAll(GetRecitationConnectingFollowerSymbols(), Function(C As Char) CStr(C))) + ")", .Evaluator = Function(Match As System.Text.RegularExpressions.Match) ChrW(&H6A7)},
+      New RuleTranslation With {.Rule = "Kaf", .Match = MakeUniRegEx(ArabicLetterKaf), .Evaluator = Function(Match As System.Text.RegularExpressions.Match) ChrW(&H6A9)},
+      New RuleTranslation With {.Rule = "NoonBeginMiddle", .Match = MakeUniRegEx(ArabicLetterNoon) + "(" + MakeRegMultiEx(Array.ConvertAll(GetRecitationCombiningSymbols(), Function(C As Char) CStr(C))) + ")*(?!(" + MakeRegMultiEx(Array.ConvertAll(GetRecitationConnectingFollowerSymbols(), Function(C As Char) CStr(C))) + "))", .Evaluator = Function(Match As System.Text.RegularExpressions.Match) ChrW(&H6BA)},
+      New RuleTranslation With {.Rule = "NoonIsolatedEnd", .Match = MakeUniRegEx(ArabicLetterNoon) + "(" + MakeRegMultiEx(Array.ConvertAll(GetRecitationCombiningSymbols(), Function(C As Char) CStr(C))) + ")*(" + MakeRegMultiEx(Array.ConvertAll(GetRecitationConnectingFollowerSymbols(), Function(C As Char) CStr(C))) + ")", .Evaluator = Function(Match As System.Text.RegularExpressions.Match) ChrW(&H646)},
       New RuleTranslation With {.Rule = "ImalaE", .Match = String.Empty, .Evaluator = Function(Match As System.Text.RegularExpressions.Match) ChrW(&H65C)},
-      New RuleTranslation With {.Rule = "IIFinal", .Match = ArabicKasra + ArabicLetterYeh + "\b", .Evaluator = Function(Match As System.Text.RegularExpressions.Match) Match.Value.Chars(0) + ChrW(&H6D2)}
+      New RuleTranslation With {.Rule = "IIFinal", .Match = MakeUniRegEx(ArabicKasra) + MakeUniRegEx(ArabicLetterYeh) + "\b", .Evaluator = Function(Match As System.Text.RegularExpressions.Match) Match.Value.Chars(0) + ChrW(&H6D2)}
         }
     Public Shared UthmaniMinimalScript As RuleTranslation() = { _
         New RuleTranslation With {.Rule = "ShortVowelsBeforeLongVowels", .Match = MakeRegMultiEx(Array.ConvertAll(ArabicLongVowels, Function(Str As String) MakeUniRegEx(Str))), _
