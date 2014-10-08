@@ -1658,20 +1658,20 @@ Public Class Arabic
             .Evaluator = Function(Match As System.Text.RegularExpressions.Match) String.Empty}, _
         New RuleTranslation With {.Rule = "SmallSadAboveHamzaWasl", .Match = MakeUniRegEx(ArabicLetterAlefWasla), _
             .Evaluator = Function(Match As System.Text.RegularExpressions.Match) CStr(ArabicLetterAlef)}, _
-        New RuleTranslation With {.Rule = "SmallCircleShowingNonReadLetters", .Match = MakeUniRegEx(ArabicLetterWaw) + MakeUniRegEx(ArabicLetterAlef) + MakeUniRegEx(ArabicSmallHighRoundedZero) + "|" + MakeUniRegEx(ArabicLetterAlefWithHamzaAbove) + MakeUniRegEx(ArabicDamma) + MakeUniRegEx(ArabicLetterWaw) + MakeUniRegEx(ArabicSmallHighRoundedZero), _
-            .Evaluator = Function(Match As System.Text.RegularExpressions.Match) Match.Value.Remove(Match.Value.Length - 1)}, _
-        New RuleTranslation With {.Rule = "ShaddaIdgham", .Match = Space + "(" + MakeUniRegEx(ArabicLetterNoon) + "|" + MakeUniRegEx(ArabicLetterWaw) + "|" + MakeUniRegEx(ArabicLetterMeem) + "|" + MakeUniRegEx(ArabicLetterYeh) + "|" + MakeUniRegEx(ArabicLetterLam) + "|" + MakeUniRegEx(ArabicLetterReh) + ")" + MakeUniRegEx(ArabicShadda), _
-            .Evaluator = Function(Match As System.Text.RegularExpressions.Match) Match.Value.Remove(Match.Value.Length - 1)}, _
-        New RuleTranslation With {.Rule = "SmallMeemIghlab", .Match = MakeUniRegEx(ArabicSmallHighMeemIsolatedForm), _
-            .Evaluator = Function(Match As System.Text.RegularExpressions.Match) String.Empty}, _
         New RuleTranslation With {.Rule = "Madda", .Match = MakeUniRegEx(ArabicLetterAlefWithMaddaAbove), _
             .Evaluator = Function(Match As System.Text.RegularExpressions.Match) CStr(ArabicLetterAlef)}, _
         New RuleTranslation With {.Rule = "Madda", .Match = MakeUniRegEx(ArabicMaddahAbove), _
             .Evaluator = Function(Match As System.Text.RegularExpressions.Match) String.Empty}, _
+        New RuleTranslation With {.Rule = "SmallCircleShowingNonReadLetters", .Match = MakeUniRegEx(ArabicLetterWaw) + MakeUniRegEx(ArabicLetterAlef) + MakeUniRegEx(ArabicSmallHighRoundedZero) + "|" + MakeUniRegEx(ArabicLetterAlefWithHamzaAbove) + MakeUniRegEx(ArabicDamma) + MakeUniRegEx(ArabicLetterWaw) + MakeUniRegEx(ArabicSmallHighRoundedZero), _
+            .Evaluator = Function(Match As System.Text.RegularExpressions.Match) Match.Value.Remove(Match.Value.Length - 1)}, _
+        New RuleTranslation With {.Rule = "ShaddaIdgham", .Match = Space + "(" + MakeRegMultiEx(ArabicSunLetters) + "|" + MakeUniRegEx(ArabicLetterWaw) + "|" + MakeUniRegEx(ArabicLetterMeem) + "|" + MakeUniRegEx(ArabicLetterYeh) + ")" + MakeUniRegEx(ArabicShadda), _
+            .Evaluator = Function(Match As System.Text.RegularExpressions.Match) Match.Value.Remove(Match.Value.Length - 1)}, _
+        New RuleTranslation With {.Rule = "SmallMeemIghlab", .Match = MakeUniRegEx(ArabicSmallHighMeemIsolatedForm) + "|" + MakeUniRegEx(ArabicSmallLowMeem), _
+            .Evaluator = Function(Match As System.Text.RegularExpressions.Match) String.Empty}, _
         New RuleTranslation With {.Rule = "SmallYehSmallWawAfterPronounHeh", .Match = MakeUniRegEx(ArabicSmallYeh) + "|" + MakeUniRegEx(ArabicSmallWaw), _
             .Evaluator = Function(Match As System.Text.RegularExpressions.Match) String.Empty}
         }
-    'Madda includies sole maddah?
+    '
     'SmallCircleShowingNonReadLetters = if this is Sukun then need algorithm to find unusual exceptions
     Public Shared ColoringRules As ColorRule() = { _
         New ColorRule With {.RuleName = "Normal", .Match = "empty|helperfatha|helperkasra|helperdamma|helpermeem|assimilator|assimilatorincomplete|dipthong|compulsorystop|endofversestop|prostration|canstoporcontinue|betternottostop|stopatfirstnotsecond|stopatsecondnotfirst|bettertostopbutpermissibletocontinue|bettertocontinuebutpermissibletostop|subtlestopwithoutbreath", .Color = Color.Black}, _
@@ -4206,6 +4206,9 @@ Public Class TanzilReader
         For Count As Integer = 0 To Verses.Count - 1
             Dim ChapterNode As System.Xml.XmlNode = GetTextChapter(Doc, Count + 1)
             For SubCount As Integer = 0 To Verses(Count).Length - 1
+                If SubCount = 0 AndAlso Not GetTextVerse(ChapterNode, SubCount + 1).Attributes.GetNamedItem("bismillah") Is Nothing Then
+                    GetTextVerse(ChapterNode, SubCount + 1).Attributes.GetNamedItem("bismillah").Value = Arabic.ChangeScript(GetTextVerse(ChapterNode, SubCount + 1).Attributes.GetNamedItem("bismillah").Value, ScriptType)
+                End If
                 GetTextVerse(ChapterNode, SubCount + 1).Attributes.GetNamedItem("text").Value = Arabic.ChangeScript(Verses(Count)(SubCount), ScriptType)
             Next
         Next
