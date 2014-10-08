@@ -1652,20 +1652,22 @@ Public Class Arabic
       New RuleTranslation With {.Rule = "IIFinal", .Match = MakeUniRegEx(ArabicKasra) + MakeUniRegEx(ArabicLetterYeh) + "\b", .Evaluator = Function(Match As System.Text.RegularExpressions.Match) Match.Value.Chars(0) + ChrW(&H6D2)}
         }
     Public Shared UthmaniMinimalScript As RuleTranslation() = { _
-        New RuleTranslation With {.Rule = "ShortVowelsBeforeLongVowels", .Match = MakeRegMultiEx(Array.ConvertAll(ArabicLongVowels, Function(Str As String) MakeUniRegEx(Str))), _
-            .Evaluator = Function(Match As System.Text.RegularExpressions.Match) Match.Value.Chars(1)}, _
+        New RuleTranslation With {.Rule = "ShortVowelsBeforeLongVowels", .Match = "[^" + MakeUniRegEx(ArabicLetterAlefWithHamzaAbove) + MakeUniRegEx(ArabicLetterAlefWithHamzaBelow) + "](" + MakeRegMultiEx(Array.ConvertAll(ArabicLongVowels, Function(Str As String) MakeUniRegEx(Str))) + ")|" + MakeUniRegEx(ArabicFatha) + "(" + MakeUniRegEx(ArabicLetterSuperscriptAlef) + "|" + MakeUniRegEx(ArabicLetterAlefMaksura) + ")|" + MakeUniRegEx(ArabicKasra) + MakeUniRegEx(ArabicLetterAlefMaksura), _
+            .Evaluator = Function(Match As System.Text.RegularExpressions.Match) CStr(If(Match.Value.Length = 2, Match.Value.Remove(0, 1), Match.Value.Remove(1, 1)))}, _
         New RuleTranslation With {.Rule = "Sukun", .Match = MakeUniRegEx(ArabicSukun), _
             .Evaluator = Function(Match As System.Text.RegularExpressions.Match) String.Empty}, _
         New RuleTranslation With {.Rule = "SmallSadAboveHamzaWasl", .Match = MakeUniRegEx(ArabicLetterAlefWasla), _
-            .Evaluator = Function(Match As System.Text.RegularExpressions.Match) ArabicLetterAlef}, _
+            .Evaluator = Function(Match As System.Text.RegularExpressions.Match) CStr(ArabicLetterAlef)}, _
         New RuleTranslation With {.Rule = "SmallCircleShowingNonReadLetters", .Match = MakeUniRegEx(ArabicLetterWaw) + MakeUniRegEx(ArabicLetterAlef) + MakeUniRegEx(ArabicSmallHighRoundedZero) + "|" + MakeUniRegEx(ArabicLetterAlefWithHamzaAbove) + MakeUniRegEx(ArabicDamma) + MakeUniRegEx(ArabicLetterWaw) + MakeUniRegEx(ArabicSmallHighRoundedZero), _
             .Evaluator = Function(Match As System.Text.RegularExpressions.Match) Match.Value.Remove(Match.Value.Length - 1)}, _
-        New RuleTranslation With {.Rule = "ShaddaIdgham", .Match = "\b(" + MakeUniRegEx(ArabicLetterNoon) + "|" + MakeUniRegEx(ArabicLetterWaw) + "|" + MakeUniRegEx(ArabicLetterMeem) + "|" + MakeUniRegEx(ArabicLetterYeh) + "|" + MakeUniRegEx(ArabicLetterLam) + "|" + MakeUniRegEx(ArabicLetterReh) + ")" + MakeUniRegEx(ArabicShadda), _
+        New RuleTranslation With {.Rule = "ShaddaIdgham", .Match = Space + "(" + MakeUniRegEx(ArabicLetterNoon) + "|" + MakeUniRegEx(ArabicLetterWaw) + "|" + MakeUniRegEx(ArabicLetterMeem) + "|" + MakeUniRegEx(ArabicLetterYeh) + "|" + MakeUniRegEx(ArabicLetterLam) + "|" + MakeUniRegEx(ArabicLetterReh) + ")" + MakeUniRegEx(ArabicShadda), _
             .Evaluator = Function(Match As System.Text.RegularExpressions.Match) Match.Value.Remove(Match.Value.Length - 1)}, _
         New RuleTranslation With {.Rule = "SmallMeemIghlab", .Match = MakeUniRegEx(ArabicSmallHighMeemIsolatedForm), _
             .Evaluator = Function(Match As System.Text.RegularExpressions.Match) String.Empty}, _
         New RuleTranslation With {.Rule = "Madda", .Match = MakeUniRegEx(ArabicLetterAlefWithMaddaAbove), _
-            .Evaluator = Function(Match As System.Text.RegularExpressions.Match) ArabicLetterAlef}, _
+            .Evaluator = Function(Match As System.Text.RegularExpressions.Match) CStr(ArabicLetterAlef)}, _
+        New RuleTranslation With {.Rule = "Madda", .Match = MakeUniRegEx(ArabicMaddahAbove), _
+            .Evaluator = Function(Match As System.Text.RegularExpressions.Match) String.Empty}, _
         New RuleTranslation With {.Rule = "SmallYehSmallWawAfterPronounHeh", .Match = MakeUniRegEx(ArabicSmallYeh) + "|" + MakeUniRegEx(ArabicSmallWaw), _
             .Evaluator = Function(Match As System.Text.RegularExpressions.Match) String.Empty}
         }
