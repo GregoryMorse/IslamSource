@@ -2133,6 +2133,14 @@ Public Class Arabic
         If Number <> 0 Or Str = String.Empty Then NextStr = ArabicWordForLessThanThousand(Number, UseClassic, UseAlefHundred)
         Return If(UseClassic, If(NextStr = String.Empty, String.Empty, NextStr + " wa") + Str, If(Str = String.Empty, String.Empty, Str + " wa") + NextStr)
     End Function
+    Public Shared Function ChangeScript(ArabicString As String, ScriptType As TanzilReader.QuranScripts) As String
+        If ScriptType = TanzilReader.QuranScripts.UthmaniMin Then
+            For Count = 0 To UthmaniMinimalScript.Length - 1
+                ArabicString = System.Text.RegularExpressions.Regex.Replace(ArabicString, UthmaniMinimalScript(Count).Match, UthmaniMinimalScript(Count).Evaluator)
+            Next
+        End If
+        Return ArabicString
+    End Function
     Public Shared Function TransliterateToPlainRoman(ByVal ArabicString As String) As String
         Dim RomanString As String = String.Empty
         'need to check for decomposed first
@@ -4177,6 +4185,30 @@ Public Class TanzilReader
         End If
         Return Nothing
     End Function
+    Enum QuranScripts
+        Uthmani = 0
+        UthmaniMin = 1
+        Simple = 2
+        SimpleMin = 3
+        SimpleEnhanced = 4
+        SimpleClean = 5
+        Warsh = 6
+        AlDari = 7
+    End Enum
+    Shared QuranFileNames As String() = {"quran-uthmani.xml", "quran-uthmani-min.xml", "quran-simple.xml", "quran-simple-min.xml", "quran-simple-enhanced.xml", "quran-simple-clean.xml", "quran-warsh.xml", "quran-alduri.xml"}
+    Public Shared Sub ChangeQuranFormat(ScriptType As QuranScripts)
+        Dim Doc As New System.Xml.XmlDocument
+        Doc.Load(Utility.GetFilePath("metadata\quran-uthmani.xml"))
+        Dim Verses As Collections.Generic.List(Of String())
+        Verses = TanzilReader.GetQuranText(CachedData.XMLDocMain, -1, -1, -1, -1)
+        For Count As Integer = 0 To Verses.Count - 1
+            Dim ChapterNode As System.Xml.XmlNode = GetTextChapter(Doc, Count + 1)
+            For SubCount As Integer = 0 To Verses(Count).Length - 1
+                GetTextVerse(ChapterNode, SubCount + 1).Attributes.GetNamedItem("text").Value = Arabic.ChangeScript(Verses(Count)(SubCount), ScriptType)
+            Next
+        Next
+        Doc.Save(Utility.GetFilePath("metadata\-" + QuranFileNames(ScriptType)))
+    End Sub
     Public Shared Function GetRenderedQuranText(ByVal Item As PageLoader.TextItem) As RenderArray
         Dim Division As Integer = 0
         Dim Index As Integer = 1
