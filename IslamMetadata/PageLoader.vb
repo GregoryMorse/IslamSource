@@ -1694,26 +1694,26 @@ Public Class Arabic
             .Evaluator = Function(Match As System.Text.RegularExpressions.Match) CStr(ArabicLetterAlef)}, _
         New RuleTranslation With {.Rule = "Madda", .Match = MakeUniRegEx(ArabicLetterHamza) + MakeUniRegEx(ArabicFatha) + MakeUniRegEx(ArabicLetterAlef) + "|" + MakeUniRegEx(ArabicTatweel) + MakeUniRegEx(ArabicHamzaAbove) + MakeUniRegEx(ArabicFatha) + MakeUniRegEx(ArabicLetterAlef), _
             .Evaluator = Function(Match As System.Text.RegularExpressions.Match) CStr(ArabicLetterAlefWithMaddaAbove)}, _
-        New RuleTranslation With {.Rule = "Madda", .Match = MakeUniRegEx(ArabicLetterSuperscriptAlef) + MakeUniRegEx(ArabicMaddahAbove) + MakeUniRegEx(ArabicLetterAlefWithHamzaAbove), _
-            .Evaluator = Function(Match As System.Text.RegularExpressions.Match) Match.Value.Remove(0, 2).Insert(0, CStr(ArabicLetterAlef) + " ")},
+        New RuleTranslation With {.Rule = "Madda", .Match = MakeUniRegEx(ArabicLetterSuperscriptAlef) + MakeUniRegEx(ArabicMaddahAbove) + "(" + MakeUniRegEx(ArabicLetterAlefWithHamzaAbove) + "|" + MakeUniRegEx(ArabicLetterAlefWithMaddaAbove) + ")|(?<=(^| )" + MakeUniRegEx(ArabicLetterYeh) + MakeUniRegEx(ArabicFatha) + ")" + MakeUniRegEx(ArabicLetterSuperscriptAlef), _
+            .Evaluator = Function(Match As System.Text.RegularExpressions.Match) Match.Value.Remove(0, If(Match.Value.Length = 1, 1, 2)).Insert(0, CStr(ArabicLetterAlef) + " ")},
         New RuleTranslation With {.Rule = "Madda", .Match = MakeUniRegEx(ArabicMaddahAbove), _
             .Evaluator = Function(Match As System.Text.RegularExpressions.Match) String.Empty},
         New RuleTranslation With {.Rule = "SmallCircleShowingNonReadLetters", .Match = MakeUniRegEx(ArabicSmallHighRoundedZero) + "|" + MakeUniRegEx(ArabicSmallHighUprightRectangularZero), _
             .Evaluator = Function(Match As System.Text.RegularExpressions.Match) String.Empty}, _
         New RuleTranslation With {.Rule = "SmallMeemIghlab", .Match = MakeUniRegEx(ArabicSmallHighMeemIsolatedForm) + "|" + MakeUniRegEx(ArabicSmallLowMeem), _
             .Evaluator = Function(Match As System.Text.RegularExpressions.Match) String.Empty}, _
+        New RuleTranslation With {.Rule = "HamzaKasra", .Match = "(?<!" + MakeUniRegEx(ArabicLetterAlef) + ")(" + MakeUniRegEx(ArabicLetterHamza) + "|" + MakeUniRegEx(ArabicTatweel) + MakeUniRegEx(ArabicHamzaAbove) + ")(" + MakeUniRegEx(ArabicKasra) + "|" + MakeUniRegEx(ArabicDamma) + ")(?! |$)", _
+            .Evaluator = Function(Match As System.Text.RegularExpressions.Match) Match.Value.Remove(0, Match.Value.Length - 1).Insert(0, ArabicLetterYehWithHamzaAbove)}, _
         New RuleTranslation With {.Rule = "SuperscriptAlef", .Match = MakeUniRegEx(ArabicFatha) + "(" + MakeUniRegEx(ArabicLetterWaw) + "|" + MakeUniRegEx(ArabicLetterAlefMaksura) + ")" + MakeUniRegEx(ArabicLetterSuperscriptAlef) + "(?! |$)", _
             .Evaluator = Function(Match As System.Text.RegularExpressions.Match) CStr(ArabicFatha) + CStr(ArabicLetterAlef)}, _
-        New RuleTranslation With {.Rule = "SuperscriptAlef", .Match = MakeUniRegEx(ArabicLetterSuperscriptAlef) + "(?! |$|" + MakeUniRegEx(ArabicLetterNoon) + MakeUniRegEx(ArabicKasra) + "( |$)|" + MakeUniRegEx(ArabicLetterLam) + MakeUniRegEx(ArabicKasra) + MakeUniRegEx(ArabicLetterKaf) + MakeUniRegEx(ArabicFatha) + "|" + MakeUniRegEx(ArabicLetterThal) + MakeUniRegEx(ArabicFatha) + MakeUniRegEx(ArabicLetterAlef) + "|" + MakeUniRegEx(ArabicLetterKaf) + MakeUniRegEx(ArabicKasra) + MakeUniRegEx(ArabicLetterNoon) + "|" + MakeUniRegEx(ArabicLetterYehWithHamzaAbove) + "|" + MakeUniRegEx(ArabicLetterWawWithHamzaAbove) + ")", _
+        New RuleTranslation With {.Rule = "SuperscriptAlef", .Match = MakeUniRegEx(ArabicLetterSuperscriptAlef) + "(?! |$|" + MakeUniRegEx(ArabicLetterNoon) + MakeUniRegEx(ArabicKasra) + "( |$)|" + MakeUniRegEx(ArabicLetterLam) + MakeUniRegEx(ArabicKasra) + MakeUniRegEx(ArabicLetterKaf) + MakeUniRegEx(ArabicFatha) + "|" + MakeUniRegEx(ArabicLetterThal) + "(" + MakeUniRegEx(ArabicFatha) + MakeUniRegEx(ArabicLetterAlef) + "|" + MakeUniRegEx(ArabicKasra) + MakeUniRegEx(ArabicLetterHeh) + MakeUniRegEx(ArabicKasra) + ")|" + MakeUniRegEx(ArabicLetterKaf) + MakeUniRegEx(ArabicKasra) + MakeUniRegEx(ArabicLetterNoon) + "|" + MakeUniRegEx(ArabicLetterHeh) + MakeUniRegEx(ArabicKasra) + "( | $)|" + MakeUniRegEx(ArabicLetterYehWithHamzaAbove) + MakeUniRegEx(ArabicKasra) + MakeUniRegEx(ArabicLetterKaf) + MakeUniRegEx(ArabicFatha) + "( | $)|" + MakeUniRegEx(ArabicLetterWawWithHamzaAbove) + ")", _
             .Evaluator = Function(Match As System.Text.RegularExpressions.Match) CStr(ArabicLetterAlef)}, _
         New RuleTranslation With {.Rule = "HamzaFatha", .Match = "(?<= |^)" + MakeUniRegEx(ArabicLetterHamza) + MakeUniRegEx(ArabicFatha), _
             .Evaluator = Function(Match As System.Text.RegularExpressions.Match) CStr(ArabicLetterAlefWithHamzaAbove) + CStr(ArabicFatha)},
         New RuleTranslation With {.Rule = "HamzaFatha", .Match = "((?<!" + MakeUniRegEx(ArabicLetterYeh) + ")" + MakeUniRegEx(ArabicTatweel) + MakeUniRegEx(ArabicHamzaAbove) + "|(?<!" + MakeUniRegEx(ArabicLetterAlef) + ")" + MakeUniRegEx(ArabicLetterHamza) + ")" + MakeUniRegEx(ArabicFatha) + "(?! |$)", _
-            .Evaluator = Function(Match As System.Text.RegularExpressions.Match) Match.Value.Remove(Match.Value.Length - 2, 1).Insert(Match.Value.Length - 2, ArabicLetterAlefWithHamzaAbove)}, _
+            .Evaluator = Function(Match As System.Text.RegularExpressions.Match) Match.Value.Remove(0, Match.Value.Length - 1).Insert(0, ArabicLetterAlefWithHamzaAbove)}, _
         New RuleTranslation With {.Rule = "YehHamza", .Match = MakeUniRegEx(ArabicLetterYeh) + MakeUniRegEx(ArabicTatweel) + MakeUniRegEx(ArabicHamzaAbove), _
-            .Evaluator = Function(Match As System.Text.RegularExpressions.Match) CStr(ArabicLetterYeh) + CStr(ArabicLetterYehWithHamzaAbove)}, _
-        New RuleTranslation With {.Rule = "HamzaKasra", .Match = MakeUniRegEx(ArabicLetterHamza) + "(" + MakeUniRegEx(ArabicKasra) + "|" + MakeUniRegEx(ArabicDamma) + ")(?! |$)", _
-            .Evaluator = Function(Match As System.Text.RegularExpressions.Match) Match.Value.Remove(0, 1).Insert(0, ArabicLetterYehWithHamzaAbove)}
+            .Evaluator = Function(Match As System.Text.RegularExpressions.Match) CStr(ArabicLetterYeh) + CStr(ArabicLetterYehWithHamzaAbove)}
         }
 
     'SmallCircleShowingNonReadLetters = need algorithm to find unusual exceptions
