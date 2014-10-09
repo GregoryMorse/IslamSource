@@ -4,7 +4,7 @@ Public Class frmMain
     Private PageSet As New PageLoader
     Private Sub frmMain_Load(sender As Object, e As EventArgs) Handles Me.Load
         'Debug.Print(Arabic.GetUniCats())
-        TanzilReader.ChangeQuranFormat(TanzilReader.QuranScripts.UthmaniMin)
+        TanzilReader.ChangeQuranFormat(TanzilReader.QuranScripts.SimpleEnhanced)
         clsWarshQuran.ParseQuran()
         For Index = 0 To PageSet.Pages.Count - 1
             Dim newNode As TreeNode = tvwMain.Nodes.Add(PageSet.Pages.Item(Index).PageName, Utility.LoadResourceString(PageSet.Pages.Item(Index).Text))
