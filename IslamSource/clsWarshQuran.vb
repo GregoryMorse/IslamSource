@@ -119,7 +119,7 @@
 {"i", New Integer() {&HBD, &HBE, &HBF, &HC2, &HC3, &HC4, &HC5, &HC6, &HC7, &HC8, &HC9, &HCA, &HCB, &HCC, &HCD, &HCE, &HCF}},
 {"N", New Integer() {&HD0, &HD1, &HD2, &HD3, &HD4, &HD6, &HD7, &HD8}},
 {"u", New Integer() {&HD9, &HDA, &HDB, &HDC, &HDD, &HDE, &HDF, &HE0, &HE1, &HE2, &HE3, &HE4, &HE5, &HE6, &HE7, &HE8, &HE9}},
-{"u^", New Integer() {&HEA, &HEB, &HEC, &HED, &HEE}},
+{"N^", New Integer() {&HEA, &HEB, &HEC, &HED, &HEE}},
 {"o", New Integer() {&HEF, &HF1, &HF2, &HF3, &HF4, &HF5, &HF6, &HF7, &HF8, &HF9}}
 }
     'combine with alef
