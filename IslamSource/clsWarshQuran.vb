@@ -117,9 +117,8 @@
 {"~u", New Integer() {&HF08E, &HF08F, &HF090, &H2018, &H2019, &H201C, &H201D, &H2022, &H2013, &H2014, &H2122, &H161, &H203A, &H153, &HF09D}},
 {"~a", New Integer() {&HF09E, &HA0, &HA1, &HA2, &HA3, &HA4, &HA5, &HA6, &HA7, &HA8, &HA9, &HAA, &HAC, &H2212, &HAE, &HAF, &HB0}},
 {"i", New Integer() {&HBD, &HBE, &HBF, &HC2, &HC3, &HC4, &HC5, &HC6, &HC7, &HC8, &HC9, &HCA, &HCB, &HCC, &HCD, &HCE, &HCF}},
-{"N", New Integer() {&HD0, &HD1, &HD2, &HD3, &HD4, &HD6, &HD7, &HD8}},
+{"N", New Integer() {&HD0, &HD1, &HD2, &HD3, &HD4, &HD6, &HD7, &HD8, &HEA, &HEB, &HEC, &HED, &HEE}},
 {"u", New Integer() {&HD9, &HDA, &HDB, &HDC, &HDD, &HDE, &HDF, &HE0, &HE1, &HE2, &HE3, &HE4, &HE5, &HE6, &HE7, &HE8, &HE9}},
-{"N^", New Integer() {&HEA, &HEB, &HEC, &HED, &HEE}},
 {"o", New Integer() {&HEF, &HF1, &HF2, &HF3, &HF4, &HF5, &HF6, &HF7, &HF8, &HF9}}
 }
     'combine with alef
