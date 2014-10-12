@@ -2065,6 +2065,21 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="&gt;ahlu {lokitaAb" id="PeopleOfTheBook"></word>
 			<word text="manaAhij {lotafsiyr" id="MethodologyOfQuranicInterpretation"></word>
 			<word text="haAlatul janabap" id="StateofMajorRitualImpurity"></word>
+			<word text="TaAharapu {loxabav" id=""></word>
+			<word text="TaAharapu {loHadiyv" id=""></word>
+			<word text="Hur~imap Ealayokum {lomaytap" id=""></word>
+			<word text="&gt;ahlu {lokitaAbi" id="PeopleOfTheBook"></word>
+			<word text="{loEayn wikaA`as~ahl" id=""></word>
+			<word text="{ll~a&gt;uh {lomaHfuwZ" id=""></word>
+			<word text="&lt;iqaAmap {lS~alaAp" id=""></word>
+			<word text="kufr Eamaliy" id=""></word>
+			<word text="kufr &lt;itaqaAliy" id=""></word>
+			<word text="takbiyr {l&lt;iHraAm" id=""></word>
+			<word text="takbiyr {lt~aHriymiy" id=""></word>
+			<word text="takbiyr {l&lt;intiqaAl" id=""></word>
+			<word text="sajdapu {lsuhuw" id=""></word>
+			<word text="duEaA&apos; &lt;istiftaA&apos;" id=""></word>
+			<word text="{lS~alaAp EalaY {lonabiy" id=""></word>
 		</category>
 		<category title="IslamicWords">
 			<word text="{ll~`h" id="Allah"></word>
@@ -2424,6 +2439,74 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="&gt;asl" plural="&gt;usuwl" id="PrincipleMethod"></word>
 			<word text="manhaj" plural="manaAhij" id="Methodology"></word>
 			<word text="{lt~a$riyE" plural="" id="Legislation"></word>
+			<word text="manduwb" id="Recommended"></word>
+			<word text="maa&amp;n" id="Water"></word>
+			<word text="Tahuwr" id="PureAndPurifying"></word>
+			<word text="TaAhir" id="PurifiedClean"></word>
+			<word text="najis" id="Impure"></word>
+			<word text="najaAsap" id="Impurity"></word>
+			<word text="*aAtiy~ap" id=""></word>
+			<word text="Hukomiy~ap" id=""></word>
+			<word text="qul~aY" id=""></word>
+			<word text="biduwin" id=""></word>
+			<word text="siwaAk" id=""></word>
+			<word text="Eawrap" id=""></word>
+			<word text="&gt;a*kaAr" id=""></word>
+			<word text="&lt;istinjaA&apos;" id=""></word>
+			<word text="&lt;istijomaAr" id=""></word>
+			<word text="$ayaATiyn" id=""></word>
+			<word text="manTuwq" id=""></word>
+			<word text="mafhuwm" id=""></word>
+			<word text="ma*aAhib" id=""></word>
+			<word text="&gt;aHaAdiyv" id=""></word>
+			<word text="masfuwh" id=""></word>
+			<word text="maytap" id=""></word>
+			<word text="&lt;ihaAb" id=""></word>
+			<word text="diybaAr" id=""></word>
+			<word text="HimaAr" id=""></word>
+			<word text="mahdiy" id=""></word>
+			<word text="waAdiy" id=""></word>
+			<word text="maniy" id=""></word>
+			<word text="janaAbap" id="MajorImpurity"></word>
+			<word text="xamr" id="Wine"></word>
+			<word text="&gt;atha" id=""></word>
+			<word text="{lkuhl" id=""></word>
+			<word text="rijs" id=""></word>
+			<word text="{lniyap" id=""></word>
+			<word text="taEaAm" id=""></word>
+			<word text="waS~iyap" id=""></word>
+			<word text="nawaAfil" id=""></word>
+			<word text="&lt;istiHaAdap" id=""></word>
+			<word text="fuqaAhap" id=""></word>
+			<word text="mu&gt;alaAqaAt" id=""></word>
+			<word text="lamasah" id=""></word>
+			<word text="TawaAf" id=""></word>
+			<word text="mursal" id=""></word>
+			<word text="mu$aAf" id=""></word>
+			<word text="xuwf~" id=""></word>
+			<word text="jwAryb" id=""></word>
+			<word text="xumra" id=""></word>
+			<word text="qiraA&apos;ap" id=""></word>
+			<word text="$ahadap" id=""></word>
+			<word text="mu&gt;a*~dhin" id=""></word>
+			<word text="sutrap" id=""></word>
+			<word text="ximaAr" id=""></word>
+			<word text="Dir&apos;" id=""></word>
+			<word text="&lt;izaAr" id=""></word>
+			<word text="m&gt;amuwn" id=""></word>
+			<word text="tasliym" id=""></word>
+			<word text="{lt~a$ahud" id=""></word>
+			<word text="ZaAhiriyap" id=""></word>
+			<word text="qunuwt" id=""></word>
+			<word text="qanaATa" id=""></word>
+			<word text="Hukm" id=""></word>
+			<word text="&lt;iftiraA$" id=""></word>
+			<word text="tawar~uk" id=""></word>
+			<word text="{lt~aHar~uj" id=""></word>
+			<word text="mu&apos;ak~adap" id=""></word>
+			<word text="jawaArib" id=""></word>
+			<word text="fitrap" id=""></word>
+			<word text="tawatur" id=""></word>
 		</category>
 		<category title="RegularWords">
 			<word text="{ld~ars" id="Lesson"></word>
@@ -2614,7 +2697,11 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="mak~ah {lomukarimap" id="Mecca"></word>
 			<word text="HijaAz" id="WesternCoastOfArabianPeninsula"></word>
 			<word text="kaEbap" id="Kaaba"></word>
+			<word text="xaybar" id="Khaybar"></word>
 			<word text="Hunayn" id="Hunain"></word>
+			<word text="SafaA" id=""></word>
+			<word text="marwap" id=""></word>
+			<word text="Earafap" id=""></word>
 			<word text="{loHudabiy~ah" id="Hudabiyyah"></word>
 			<word text="rawDap" id="Rawdah"></word>
 			<word text="riyaAD {lojan~ap" id="RiadAlJannah"></word>
@@ -2627,6 +2714,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="{lomasjid {loHaraAm" id="SacredMosque"></word>
 			<word text="{lomasjid {ln~abawiy" id="MosqueOfTheProphet"></word>
 			<word text="{lomasjid {l&gt;aqSaY‎" id="FarthestMosque"></word>
+			<word text="baytu {lomaqdis" id=""></word> 
 			<word text="baytu {lomaAl" id="CentralTreasury"></word>
 			<word text="Eayd {lofiTr‎" id="FestivalOfBreakingFast"></word>
 			<word text="Eayd {l&gt;aDHaY‎" id="FestivalOfSacrifice"></word>
