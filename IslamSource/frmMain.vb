@@ -4,6 +4,7 @@ Public Class frmMain
     Private PageSet As New PageLoader
     Private Sub frmMain_Load(sender As Object, e As EventArgs) Handles Me.Load
         'Debug.Print(Arabic.GetUniCats())
+        TanzilReader.CheckNotablePatterns()
         TanzilReader.ChangeQuranFormat(TanzilReader.QuranScripts.SimpleMin)
         clsWarshQuran.ParseQuran()
         For Index = 0 To PageSet.Pages.Count - 1

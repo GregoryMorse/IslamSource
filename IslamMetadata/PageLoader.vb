@@ -1780,12 +1780,13 @@ Public Class Arabic
         New RuleTranslation With {.Rule = "RemoveDiacritics", .Match = MakeUniRegEx(ArabicShadda) + "|" + MakeUniRegEx(ArabicSukun) + "|" + MakeUniRegEx(ArabicFatha) + "|" + MakeUniRegEx(ArabicKasra) + "|" + MakeUniRegEx(ArabicDamma) + "|" + MakeUniRegEx(ArabicFathatan) + "|" + MakeUniRegEx(ArabicKasratan) + "|" + MakeUniRegEx(ArabicDammatan) + "|" + MakeUniRegEx(ArabicLetterSuperscriptAlef), _
             .Evaluator = Function(Match As System.Text.RegularExpressions.Match) String.Empty}
     }
+    Public Shared SimpleMinAlefs As String = "(?<=(^| ))(" + MakeUniRegEx(ArabicLetterWaw) + "|" + MakeUniRegEx(ArabicLetterFeh) + "|" + MakeUniRegEx(ArabicLetterKaf) + ")" + MakeUniRegEx(ArabicFatha) + MakeUniRegEx(ArabicLetterAlef) + ".*?(?= |$)"
     Public Shared SimpleMinimalScript As RuleTranslation() = { _
         New RuleTranslation With {.Rule = "RemoveShadda", .Match = "(?<=(^| )(" + MakeRegMultiEx(Array.ConvertAll(ArabicLetters, Function(Str As String) MakeUniRegEx(Str))) + "))" + MakeUniRegEx(ArabicShadda) + "|(?<=(" + MakeUniRegEx(ArabicLetterQaf) + "|" + MakeUniRegEx(ArabicLetterKaf) + ")" + MakeUniRegEx(ArabicLetterKaf) + "|" + MakeUniRegEx(ArabicLetterDal) + MakeUniRegEx(ArabicLetterTeh) + "|" + MakeUniRegEx(ArabicLetterYeh) + MakeUniRegEx(ArabicLetterYeh) + "|" + MakeUniRegEx(ArabicLetterHeh) + MakeUniRegEx(ArabicLetterHeh) + ")" + MakeUniRegEx(ArabicShadda) + "(?=(" + MakeUniRegEx(ArabicKasra) + MakeUniRegEx(ArabicLetterKaf) + "|" + MakeUniRegEx(ArabicFatha) + MakeUniRegEx(ArabicLetterHeh) + ")?(" + MakeUniRegEx(ArabicDamma) + "|" + MakeUniRegEx(ArabicFatha) + ")(((" + MakeUniRegEx(ArabicLetterNoon) + "|" + MakeUniRegEx(ArabicLetterHeh) + MakeUniRegEx(ArabicDamma) + "?)?" + MakeUniRegEx(ArabicFatha) + MakeUniRegEx(ArabicLetterAlef) + ")|" + MakeUniRegEx(ArabicLetterNoon) + MakeUniRegEx(ArabicShadda) + MakeUniRegEx(ArabicFatha) + "|(((" + MakeUniRegEx(ArabicLetterMeem) + MakeUniRegEx(ArabicDamma) + MakeUniRegEx(ArabicLetterWaw) + ")?" + MakeUniRegEx(ArabicLetterHeh) + "|" + MakeUniRegEx(ArabicLetterKaf) + ")(" + MakeUniRegEx(ArabicDamma) + "|" + MakeUniRegEx(ArabicFatha) + "))?(" + MakeUniRegEx(ArabicLetterMeem) + "(" + MakeUniRegEx(ArabicSukun) + "|" + MakeUniRegEx(ArabicDamma) + ")?)?)( |$))", _
             .Evaluator = Function(Match As System.Text.RegularExpressions.Match) String.Empty}, _
         New RuleTranslation With {.Rule = "RemoveSukun", .Match = MakeUniRegEx(ArabicSukun), _
             .Evaluator = Function(Match As System.Text.RegularExpressions.Match) String.Empty}, _
-        New RuleTranslation With {.Rule = "RemoveLongVowelDiacritics", .Match = MakeUniRegEx(ArabicFatha) + "(" + MakeUniRegEx(ArabicLetterSuperscriptAlef) + "|" + MakeUniRegEx(ArabicLetterAlefMaksura) + ")|" + MakeRegMultiEx(Array.ConvertAll(ArabicLongVowels, Function(Str As String) MakeUniRegEx(Str))), _
+        New RuleTranslation With {.Rule = "RemoveLongVowelDiacritics", .Match = "((?<!(^| )(" + MakeUniRegEx(ArabicLetterWaw) + "|" + MakeUniRegEx(ArabicLetterFeh) + "|" + MakeUniRegEx(ArabicLetterKaf) + "))" + MakeUniRegEx(ArabicFatha) + MakeUniRegEx(ArabicLetterAlef) + "(?=" + MakeUniRegEx(ArabicLetterLam) + ")|" + MakeUniRegEx(ArabicFatha) + MakeUniRegEx(ArabicLetterAlef) + "(" + MakeUniRegEx(ArabicLetterHah) + "|" + MakeUniRegEx(ArabicLetterAin) + "|" + MakeUniRegEx(ArabicLetterJeem) + "|" + MakeUniRegEx(ArabicLetterQaf) + ")|(?<!(^| )(" + MakeUniRegEx(ArabicLetterWaw) + "|" + MakeUniRegEx(ArabicLetterFeh) + "))" + MakeUniRegEx(ArabicFatha) + MakeUniRegEx(ArabicLetterAlef) + "(?!" + MakeUniRegEx(ArabicLetterLam) + ")|" + MakeUniRegEx(ArabicFatha) + "(" + MakeUniRegEx(ArabicLetterSuperscriptAlef) + "|" + MakeUniRegEx(ArabicLetterAlefMaksura) + "(?!($| " + MakeUniRegEx(ArabicSmallHighLamAlef) + ")))|" + MakeUniRegEx(ArabicKasra) + MakeUniRegEx(ArabicLetterYeh) + "(?!" + MakeUniRegEx(ArabicLetterHamza) + ")|" + MakeUniRegEx(ArabicDamma) + MakeUniRegEx(ArabicLetterWaw) + "(?!" + MakeUniRegEx(ArabicLetterLam) + "(" + MakeUniRegEx(ArabicFatha) + MakeUniRegEx(ArabicLetterSuperscriptAlef) + MakeUniRegEx(ArabicLetterYehWithHamzaAbove) + "|" + MakeUniRegEx(ArabicKasra) + MakeUniRegEx(ArabicLetterYeh) + ")))(?!" + MakeUniRegEx(ArabicFatha) + "|" + MakeUniRegEx(ArabicFathatan) + MakeUniRegEx(ArabicLetterAlef) + "?|" + MakeUniRegEx(ArabicDamma) + "|" + MakeUniRegEx(ArabicShadda) + "|" + MakeUniRegEx(ArabicLetterAlef) + "?" + " " + MakeUniRegEx(ArabicLetterAlef) + ")", _
             .Evaluator = Function(Match As System.Text.RegularExpressions.Match) Match.Value.Remove(0, 1)}
     }
 
@@ -4339,6 +4340,68 @@ Public Class TanzilReader
         AlDari = 7
     End Enum
     Shared QuranFileNames As String() = {"quran-uthmani.xml", "quran-uthmani-min.xml", "quran-simple.xml", "quran-simple-min.xml", "quran-simple-enhanced.xml", "quran-simple-clean.xml", "quran-warsh.xml", "quran-alduri.xml"}
+    Public Shared Sub CheckNotablePatterns()
+        ComparePatterns(QuranScripts.SimpleEnhanced, QuranScripts.SimpleMin, Arabic.SimpleMinAlefs)
+    End Sub
+    Public Shared Sub ComparePatterns(ScriptType As QuranScripts, CompScriptType As QuranScripts, Pattern As String)
+        Dim FirstList As List(Of String) = PatternMatch(ScriptType, Pattern)
+        FirstList.Sort()
+        Dim CompList As List(Of String) = PatternMatch(CompScriptType, Pattern)
+        CompList.Sort()
+        Dim Index As Integer = 0
+        Do While Index < CompList.Count - 1
+            Do While Index < CompList.Count - 1 AndAlso CompList(Index + 1) = CompList(Index)
+                CompList.RemoveAt(Index)
+            Loop
+            Index += 1
+        Loop
+        Index = 0
+        Do While Index < FirstList.Count - 1
+            Do While Index < FirstList.Count - 1 AndAlso FirstList(Index + 1) = FirstList(Index)
+                FirstList.RemoveAt(Index)
+            Loop
+            Dim Find As Integer = CompList.BinarySearch(FirstList(Index))
+            If Find <> -1 Then
+                Do
+                    CompList.RemoveAt(Find)
+                Loop While Find <= CompList.Count - 1 AndAlso CompList(Find) = FirstList(Index)
+            End If
+            Index += 1
+        Loop
+        Dim Msg As String = "First: "
+        For Each Str As String In FirstList
+            Msg += Str + " "
+        Next
+        Msg += vbCrLf + "Second: "
+        For Each Str As String In CompList
+            Msg += Str + " "
+        Next
+        Debug.Print(Msg)
+    End Sub
+    Public Shared Function PatternMatch(ScriptType As QuranScripts, Pattern As String) As List(Of String)
+        PatternMatch = New List(Of String)
+        Dim Doc As New System.Xml.XmlDocument
+        If ScriptType = QuranScripts.Uthmani Then
+            Doc.Load(Utility.GetFilePath("metadata\quran-uthmani.xml"))
+        Else
+            Doc.Load(Utility.GetFilePath("IslamMetadata\" + QuranFileNames(ScriptType)))
+        End If
+        Dim Verses As Collections.Generic.List(Of String())
+        Verses = TanzilReader.GetQuranText(CachedData.XMLDocMain, -1, -1, -1, -1)
+        For Count As Integer = 0 To Verses.Count - 1
+            Dim ChapterNode As System.Xml.XmlNode = GetTextChapter(Doc, Count + 1)
+            For SubCount As Integer = 0 To Verses(Count).Length - 1
+                If SubCount = 0 AndAlso Not GetTextVerse(ChapterNode, SubCount + 1).Attributes.GetNamedItem("bismillah") Is Nothing Then
+                    For Each Val As System.Text.RegularExpressions.Match In System.Text.RegularExpressions.Regex.Matches(GetTextVerse(ChapterNode, SubCount + 1).Attributes.GetNamedItem("bismillah").Value, Pattern)
+                        PatternMatch.Add(Val.Value)
+                    Next
+                End If
+                For Each Val As System.Text.RegularExpressions.Match In System.Text.RegularExpressions.Regex.Matches(Verses(Count)(SubCount), Pattern)
+                    PatternMatch.Add(Val.Value)
+                Next
+            Next
+        Next
+    End Function
     Public Shared Sub ChangeQuranFormat(ScriptType As QuranScripts)
         Dim Doc As New System.Xml.XmlDocument
         Doc.Load(Utility.GetFilePath("metadata\quran-uthmani.xml"))
