@@ -2515,6 +2515,10 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="{lt~adriybaAtu" id="Drill"></word>
 			<word text="{loqawaAEidu" id="GrammarRules"></word>
 			<word text="{lt~amriynaAtu" id="Exercise"></word>
+			<word text="SifapN" id="Adjective"></word>
+			<word text="mawoSuwfN" id="NounBeingModified"></word>
+			<word text="mu*ak~ar" id="Masculine"></word>
+			<word text="mu&amp;an~av" id="Feminine"></word>
 			<word text="bayotN" plural="buyuwtN" id="HouseHome"></word>
 			<word text="faSolN" plural="fuSuwlN" id="ClassClassroom"></word>
 			<word text="kitaAb" plural="kutub" id="Book"></word>
@@ -2525,6 +2529,20 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="TaAlibapN" plural="TaAlibaAtN" grammar="f" id="Student"></word>
 			<word text="qalamN" plural="&gt;aqolaAmN" id="Pen"></word>
 			<word text="madiynapN" plural="mudunN" grammar="f" id="City"></word>
+			<word text="&gt;aroDN" grammar="f" id="GroundEarth"></word>
+			<word text="$amosN" grammar="f" id="Sun"></word>
+			<word text="yadN" grammar="f" id="Hand"></word>
+			<word text="kurosiy~N" id="Chair"></word>
+			<word text="salaAmN" id="Peace"></word>
+			<word text="TaAwilapN" plural="TaAwilaAtN" grammar="f" id="Table"></word>
+			<word text="kabiyrN" plural="kabiyruwna" id="LargeOld"></word>
+			<word text="sagiyrN" plural="sagiyruwna" id="SmallYoung"></word>
+			<word text="jadiydN" plural="jududN" id="New"></word>
+			<word text="qadiymN" plural="qudamaA&apos;N" id="Old"></word>
+			<word text="musolimN" plural="musolimuwna" id="Muslim"></word>
+			<word text="&gt;ajorN" id="Reward"></word>
+			<word text="Ealiy~N" id="Transcendent"></word>
+			<word text="jid~FA" id="Very"></word>
 			<word text="muHam~adN" id="Muhammad"></word>
 			<word text="xaAlidN" id="Khaalid"></word>
 			<word text="saAlimN" id="Saalim"></word>
