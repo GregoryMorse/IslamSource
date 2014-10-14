@@ -3705,6 +3705,24 @@
   <data name="IslamInfo_PopularIslamicSongVerses" xml:space="preserve">
     <value>Popular Islamic Song Verses</value>
   </data>
+  <data name="IslamInfo_IntroductionFirst" xml:space="preserve">
+    <value>Introduction First</value>
+  </data>
+  <data name="IslamInfo_IntroductionFirstTrans" xml:space="preserve">
+    <value>Verily all praise is for Allah, we praise Him, seek His help and guidance and His forgiveness; and we seek refuge in Allah from the evil of ourselves and from the sinfulness of our actions.  Whosoever Allah guides, then none can misguide him, and whosoever Allah misguides, there can be no guide for him.  I testify there is no deity worthy of worship except Allah alone, and I testify that Muhammad is His servant and messenger.</value>
+  </data>
+  <data name="IslamInfo_IntroductionFirstWordByWord" xml:space="preserve">
+    <value>Verily|all praise|is for Allah,|we praise Him,|and seek His help and guidance|and His forgiveness;|and we seek refuge|in Allah|from|the evil|of ourselves|and from|the sinfulness|of our actions.|Whosoever|guides|Allah|then none|can misguide|him,|and whosoever|Allah misguides|there can be no|guide|for him.|and I testify|that|there is no|deity worthy of worship|except|Allah|alone|no|partner|has He,|and I testify|that|Muhammad|is His servant|and messenger.</value>
+  </data>
+  <data name="IslamInfo_IntroductionSecond" xml:space="preserve">
+    <value>Introduction Second</value>
+  </data>
+  <data name="IslamInfo_IntroductionSecondTrans" xml:space="preserve">
+    <value>To proceed: Certainly the best speech is the Book of Allah and the finest guidance is the guidance of Muhammad, the prayers of Allah upon him and peace.  The most evil affair is a newly invented matter in religion and every newly invented matter is innovation and every innovation is straying and every straying is in the fire.</value>
+  </data>
+  <data name="IslamInfo_IntroductionSecondWordByWord" xml:space="preserve">
+    <value>To|proceed:|Certainly|the best|speech|is the Book|of Allah|and the finest|guidance|is the guidance|of Muhammad,|the prayers|of Allah|upon him|and peace.|The most evil|affair|is a newly invented matter in religion|and every|newly invented matter|is innovation|and every|innovation|is straying|and every|straying|is in|the fire.</value>
+  </data>
   <data name="IslamInfo_RemembranceFirst" xml:space="preserve">
     <value>Remembrance First</value>
   </data>
@@ -3926,6 +3944,9 @@
   </data>
   <data name="IslamInfo_UniqueLetters" xml:space="preserve">
     <value>Unique Letters</value>
+  </data>
+  <data name="IslamInfo_CommonlyRecitedVerses" xml:space="preserve">
+    <value>Commonly Recited Verses</value>
   </data>
   <data name="IslamInfo_SoulStates" xml:space="preserve">
     <value>Soul states</value>

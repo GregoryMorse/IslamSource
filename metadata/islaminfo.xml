@@ -832,6 +832,8 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<verse title="RemembranceThird" text="laA hawla walaA quwapK &lt;il~aA bill~`hi {loEaliY~i {loEaZiym"></verse>
 			<verse title="SendBlessingsFirst" text="{ll~`hum~a Sal~i EalaY muHam~adK waEalaY |li muHam~adK kamaA Sal~ayota EalaY &lt;iboraAhiyma waEalaY |li &lt;iboraAhiyma &lt;in~aka HamiydN majiydN wabaAriko EalaY muHam~adK waEalaY |li muHam~adK kamaA baArakota EalaY &lt;iboraAhiyma waEalaY |li &lt;iboraAhiyma fiy {loEaAlamiyna &lt;in~aka HamiydN majiydN"></verse>
 			<verse title="SendBlessingsSecond" text="{ll~`hum~a Sal~i EalaY muHam~adK waEalaY |li muHam~adK kamaA Sal~ayota EalaY &lt;iboraAhiyma waEalaY |li &lt;iboraAhiyma &lt;ina~ka HamiydN majiydN {ll~`huma~ baAriko EalaY muHama~dK waEalaY |li muHama~dK kamaA baArakota EalaY &lt;iboraAhiyma waEalaY |li &lt;iboraAhiyma &lt;ina~ka HamiydN majiydN"></verse>
+			<verse title="IntroductionFirst" text="&lt;in~a {loHamoda lil~`hi naHomaduhu wanasotaEiynuhu wanasotagofiruhu wanaEuw*u bi{ll~`hi mino $uruwri &gt;anofusinaA wamino say~i}aAti &gt;aEomaAlinaA mino yahodi {ll~`hu falaA muDil~a lahu wamano yuDolilo falaA haAdiya lahu\, wa&gt;a$ohadu &gt;ano laA &lt;ilaha &lt;il~aA {ll~`hu waHodahu laA $ariyka lahu\, wa&gt;a$ohadu &gt;an~a muHam~adFA Eaboduhu warasuwluhu {3:182}{4:1}{70:71}"></verse>
+			<verse title="IntroductionSecond" text="&gt;amaA baEad\: fa&lt;in~a &gt;aSodaqa {loHadiyvi kitaAbu {ll~`hi\, waxayra {lohadoyi hadoyu muHam~adK Sal~aY {ll~`hu Ealayohi wasal~am\, wa$ar~a {l&gt;umuwri muHodavaAtuhaA\, wakul~a muHodavapK bidoEapN\, wakul~a bidoEapK DalaAlapN\, wakul~a DalaAlapK fiy {ln~aAri"></verse>
 		</category>
 	</verses>
 	<grammar>
@@ -3137,6 +3139,10 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<verse chapter="12" startverse="53"></verse>
 			<verse chapter="75" startverse="2"></verse>
 			<verse chapter="89" startverse="27"></verse>
+		</quranselection>
+		<quranselection description="CommonlyRecitedVerses">
+			<verse chapter="37" startverse="180" endverse="182"></verse>
+			<verse chapter="39" startverse="36" endverse="37" startword="11" endword="7"></verse>
 		</quranselection>
 	</quranselections>
 	<quranchapters>
