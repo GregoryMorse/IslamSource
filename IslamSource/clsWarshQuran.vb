@@ -175,8 +175,8 @@
     Class CompareChar
         Implements IComparer(Of ArrayList)
         Public Function Compare(x As ArrayList, y As ArrayList) As Integer Implements IComparer(Of ArrayList).Compare
-            If x(3) = y(3) Then Return 0
-            Return If(x(3) > y(3), 1, -1)
+            'If x(3) = y(3) Then Return 0
+            'Return If(x(3) > y(3), 1, -1)
             If x(1) = y(1) Then
                 If x(0) = y(0) Then
                     Return 1
@@ -232,8 +232,8 @@
                     Next
                 End If
                 If Not bNextPage And Vals(11).Length > 1 And Vals(11).Length < 10 And Vals(11).Replace(" ", String.Empty) = String.Empty Then
-                    Idx = Array.IndexOf(Bytes, " "c)
-                    Bytes(Idx) = ChrW(0)
+                    'Idx = Array.IndexOf(Bytes, " "c)
+                    'Bytes(Idx) = ChrW(0)
                     If Chars.Count <> 0 Then Chars.Add(New ArrayList From {CSng(Vals(7)), CSng(Vals(8)) - If(CSng(Vals(8)) - 0.6571 = Chars(Chars.Count - 1)(1), 0.6571, 0.657), Vals(11), Idx})
                 End If
                 If Vals(11) = " " Then
@@ -258,8 +258,8 @@
                     Pos = Array.IndexOf(Lines, CByte(Asc(vbLf)), Pos) + 1
                     If Vals(11).Replace(" ", String.Empty) <> String.Empty Or Vals(11) = " " Then
                         For SubCount = Vals(11).Length - 1 To 0 Step -1
-                            Dim Idx As Integer = Array.IndexOf(Bytes, Vals(11).Chars(SubCount))
-                            If Idx <> -1 Then Bytes(Idx) = ChrW(0)
+                            'Dim Idx As Integer = Array.IndexOf(Bytes, Vals(11).Chars(SubCount))
+                            'If Idx <> -1 Then Bytes(Idx) = ChrW(0)
                         Next
                     End If
                 End If
@@ -281,6 +281,7 @@
                     privateFonts.AddFontFile("..\..\..\IslamMetadata\" + Vals(0) + ".ttf")
                     Dim f As New Font(privateFonts.Families(0), CSng(Vals(2)), GraphicsUnit.Point)
                     Dim i As New System.Drawing.Bitmap(595, 842)
+                    i.SetResolution(72, 72)
                     '8.26 width = 595, 11.69 height = 842, 72 DPI
                     Dim g As Graphics = Graphics.FromImage(i)
                     g.PageUnit = GraphicsUnit.Point
@@ -301,9 +302,9 @@
 
                                     'End If
                                     Dim Idx As Integer = Array.LastIndexOf(Bytes, Vals(11).Chars(SubCount), Array.IndexOf(Bytes, " "c))
-                                    If Idx = -1 Then Idx = Array.IndexOf(Bytes, Vals(11).Chars(SubCount))
+                                    'If Idx = -1 Then Idx = Array.IndexOf(Bytes, Vals(11).Chars(SubCount))
                                     Chars.Add(New ArrayList From {If(SubCount = Vals(11).Length - 1, CSng(Vals(7)), CSng(Vals(9)) + Rgs(SubCount).GetBounds(g).Width * 72 / 100), CSng(Vals(8)), KeyValue.Key, Idx})
-                                    Bytes(Idx) = ChrW(0)
+                                    'Bytes(Idx) = ChrW(0)
                                     '(CSng(Vals(7)) - CSng(Vals(9))) / Rgs(Vals(11).Length - 1).GetBounds(g).Width *
                                     Exit For
                                 End If

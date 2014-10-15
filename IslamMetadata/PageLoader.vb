@@ -1780,13 +1780,14 @@ Public Class Arabic
         New RuleTranslation With {.Rule = "RemoveDiacritics", .Match = MakeUniRegEx(ArabicShadda) + "|" + MakeUniRegEx(ArabicSukun) + "|" + MakeUniRegEx(ArabicFatha) + "|" + MakeUniRegEx(ArabicKasra) + "|" + MakeUniRegEx(ArabicDamma) + "|" + MakeUniRegEx(ArabicFathatan) + "|" + MakeUniRegEx(ArabicKasratan) + "|" + MakeUniRegEx(ArabicDammatan) + "|" + MakeUniRegEx(ArabicLetterSuperscriptAlef), _
             .Evaluator = Function(Match As System.Text.RegularExpressions.Match) String.Empty}
     }
-    Public Shared SimpleMinAlefs As String = "(?<=(^| ))(" + MakeUniRegEx(ArabicLetterWaw) + "|" + MakeUniRegEx(ArabicLetterFeh) + "|" + MakeUniRegEx(ArabicLetterKaf) + ")" + MakeUniRegEx(ArabicFatha) + MakeUniRegEx(ArabicLetterAlef) + ".*?(?= |$)"
+    Public Shared SimpleMinAlefLams As String = "(?<=(^| )(" + MakeUniRegEx(ArabicLetterWaw) + "|" + MakeUniRegEx(ArabicLetterFeh) + "|" + MakeUniRegEx(ArabicLetterKaf) + "))" + MakeUniRegEx(ArabicFatha) + MakeUniRegEx(ArabicLetterAlef) + "(?=" + MakeUniRegEx(ArabicLetterLam) + ").*?(?= |$)"
+    Public Shared SimpleMinAlefNotLams As String = "(?<=(^| )(" + MakeUniRegEx(ArabicLetterWaw) + "|" + MakeUniRegEx(ArabicLetterFeh) + "))" + MakeUniRegEx(ArabicFatha) + MakeUniRegEx(ArabicLetterAlef) + "(?!" + MakeUniRegEx(ArabicLetterLam) + ").*?(?= |$)"
     Public Shared SimpleMinimalScript As RuleTranslation() = { _
         New RuleTranslation With {.Rule = "RemoveShadda", .Match = "(?<=(^| )(" + MakeRegMultiEx(Array.ConvertAll(ArabicLetters, Function(Str As String) MakeUniRegEx(Str))) + "))" + MakeUniRegEx(ArabicShadda) + "|(?<=(" + MakeUniRegEx(ArabicLetterQaf) + "|" + MakeUniRegEx(ArabicLetterKaf) + ")" + MakeUniRegEx(ArabicLetterKaf) + "|" + MakeUniRegEx(ArabicLetterDal) + MakeUniRegEx(ArabicLetterTeh) + "|" + MakeUniRegEx(ArabicLetterYeh) + MakeUniRegEx(ArabicLetterYeh) + "|" + MakeUniRegEx(ArabicLetterHeh) + MakeUniRegEx(ArabicLetterHeh) + ")" + MakeUniRegEx(ArabicShadda) + "(?=(" + MakeUniRegEx(ArabicKasra) + MakeUniRegEx(ArabicLetterKaf) + "|" + MakeUniRegEx(ArabicFatha) + MakeUniRegEx(ArabicLetterHeh) + ")?(" + MakeUniRegEx(ArabicDamma) + "|" + MakeUniRegEx(ArabicFatha) + ")(((" + MakeUniRegEx(ArabicLetterNoon) + "|" + MakeUniRegEx(ArabicLetterHeh) + MakeUniRegEx(ArabicDamma) + "?)?" + MakeUniRegEx(ArabicFatha) + MakeUniRegEx(ArabicLetterAlef) + ")|" + MakeUniRegEx(ArabicLetterNoon) + MakeUniRegEx(ArabicShadda) + MakeUniRegEx(ArabicFatha) + "|(((" + MakeUniRegEx(ArabicLetterMeem) + MakeUniRegEx(ArabicDamma) + MakeUniRegEx(ArabicLetterWaw) + ")?" + MakeUniRegEx(ArabicLetterHeh) + "|" + MakeUniRegEx(ArabicLetterKaf) + ")(" + MakeUniRegEx(ArabicDamma) + "|" + MakeUniRegEx(ArabicFatha) + "))?(" + MakeUniRegEx(ArabicLetterMeem) + "(" + MakeUniRegEx(ArabicSukun) + "|" + MakeUniRegEx(ArabicDamma) + ")?)?)( |$))", _
             .Evaluator = Function(Match As System.Text.RegularExpressions.Match) String.Empty}, _
         New RuleTranslation With {.Rule = "RemoveSukun", .Match = MakeUniRegEx(ArabicSukun), _
             .Evaluator = Function(Match As System.Text.RegularExpressions.Match) String.Empty}, _
-        New RuleTranslation With {.Rule = "RemoveLongVowelDiacritics", .Match = "((?<!(^| )(" + MakeUniRegEx(ArabicLetterWaw) + "|" + MakeUniRegEx(ArabicLetterFeh) + "|" + MakeUniRegEx(ArabicLetterKaf) + "))" + MakeUniRegEx(ArabicFatha) + MakeUniRegEx(ArabicLetterAlef) + "(?=" + MakeUniRegEx(ArabicLetterLam) + ")|" + MakeUniRegEx(ArabicFatha) + MakeUniRegEx(ArabicLetterAlef) + "(" + MakeUniRegEx(ArabicLetterHah) + "|" + MakeUniRegEx(ArabicLetterAin) + "|" + MakeUniRegEx(ArabicLetterJeem) + "|" + MakeUniRegEx(ArabicLetterQaf) + ")|(?<!(^| )(" + MakeUniRegEx(ArabicLetterWaw) + "|" + MakeUniRegEx(ArabicLetterFeh) + "))" + MakeUniRegEx(ArabicFatha) + MakeUniRegEx(ArabicLetterAlef) + "(?!" + MakeUniRegEx(ArabicLetterLam) + ")|" + MakeUniRegEx(ArabicFatha) + "(" + MakeUniRegEx(ArabicLetterSuperscriptAlef) + "|" + MakeUniRegEx(ArabicLetterAlefMaksura) + "(?!($| " + MakeUniRegEx(ArabicSmallHighLamAlef) + ")))|" + MakeUniRegEx(ArabicKasra) + MakeUniRegEx(ArabicLetterYeh) + "(?!" + MakeUniRegEx(ArabicLetterHamza) + ")|" + MakeUniRegEx(ArabicDamma) + MakeUniRegEx(ArabicLetterWaw) + "(?!" + MakeUniRegEx(ArabicLetterLam) + "(" + MakeUniRegEx(ArabicFatha) + MakeUniRegEx(ArabicLetterSuperscriptAlef) + MakeUniRegEx(ArabicLetterYehWithHamzaAbove) + "|" + MakeUniRegEx(ArabicKasra) + MakeUniRegEx(ArabicLetterYeh) + ")))(?!" + MakeUniRegEx(ArabicFatha) + "|" + MakeUniRegEx(ArabicFathatan) + MakeUniRegEx(ArabicLetterAlef) + "?|" + MakeUniRegEx(ArabicDamma) + "|" + MakeUniRegEx(ArabicShadda) + "|" + MakeUniRegEx(ArabicLetterAlef) + "?" + " " + MakeUniRegEx(ArabicLetterAlef) + ")", _
+        New RuleTranslation With {.Rule = "RemoveLongVowelDiacritics", .Match = "((?<!(^| )((" + MakeUniRegEx(ArabicLetterWaw) + MakeUniRegEx(ArabicFatha) + ")?" + MakeUniRegEx(ArabicLetterTeh) + "|" + MakeUniRegEx(ArabicLetterWaw) + "|" + MakeUniRegEx(ArabicLetterFeh) + "|" + MakeUniRegEx(ArabicLetterKaf) + "))" + MakeUniRegEx(ArabicFatha) + MakeUniRegEx(ArabicLetterAlef) + "(?=" + MakeUniRegEx(ArabicLetterLam) + ")|(?<=(^| )(" + MakeUniRegEx(ArabicLetterWaw) + "|(" + MakeUniRegEx(ArabicLetterAlefWithHamzaAbove) + MakeUniRegEx(ArabicFatha) + ")?" + MakeUniRegEx(ArabicLetterFeh) + "))" + MakeUniRegEx(ArabicFatha) + MakeUniRegEx(ArabicLetterAlef) + "(?=(" + MakeUniRegEx(ArabicLetterTeh) + "|" + MakeUniRegEx(ArabicLetterTheh) + "|" + MakeUniRegEx(ArabicLetterDad) + "|" + MakeUniRegEx(ArabicLetterQaf) + ")" + MakeUniRegEx(ArabicFatha) + "|" + MakeUniRegEx(ArabicLetterHamza) + "|(" + MakeUniRegEx(ArabicLetterJeem) + "|" + MakeUniRegEx(ArabicLetterBeh) + "|" + MakeUniRegEx(ArabicLetterReh) + "|" + MakeUniRegEx(ArabicLetterSeen) + "|" + MakeUniRegEx(ArabicLetterSad) + "|" + MakeUniRegEx(ArabicLetterTah) + "|" + MakeUniRegEx(ArabicLetterHah) + ")" + MakeUniRegEx(ArabicKasra) + "|" + MakeUniRegEx(ArabicLetterKaf) + MakeUniRegEx(ArabicKasra) + MakeUniRegEx(ArabicLetterHeh) + "|" + MakeUniRegEx(ArabicLetterHeh) + "(" + MakeUniRegEx(ArabicKasra) + "|" + MakeUniRegEx(ArabicDamma) + ")|(" + MakeUniRegEx(ArabicLetterDal) + "|" + MakeUniRegEx(ArabicLetterQaf) + "|" + MakeUniRegEx(ArabicLetterLam) + ")(" + MakeUniRegEx(ArabicKasra) + "|" + MakeUniRegEx(ArabicKasratan) + ")|(" + MakeUniRegEx(ArabicLetterZain) + "|" + MakeUniRegEx(ArabicLetterAin) + ")(" + MakeUniRegEx(ArabicKasra) + "|" + MakeUniRegEx(ArabicFatha) + ")|" + MakeUniRegEx(ArabicLetterNoon) + MakeUniRegEx(ArabicKasratan) + ")|(?<!(^| )(" + MakeUniRegEx(ArabicLetterWaw) + "|(" + MakeUniRegEx(ArabicLetterAlefWithHamzaAbove) + MakeUniRegEx(ArabicFatha) + ")?" + MakeUniRegEx(ArabicLetterFeh) + "|" + MakeUniRegEx(ArabicLetterLam) + ")|" + MakeUniRegEx(ArabicLetterYehWithHamzaAbove) + ")" + MakeUniRegEx(ArabicFatha) + MakeUniRegEx(ArabicLetterAlef) + "(?!" + MakeUniRegEx(ArabicLetterLam) + "(?!" + MakeUniRegEx(ArabicKasra) + "|" + MakeUniRegEx(ArabicDamma) + "|" + MakeUniRegEx(ArabicKasratan) + "))|(?<=^" + MakeUniRegEx(ArabicLetterLam) + ")" + MakeUniRegEx(ArabicFatha) + MakeUniRegEx(ArabicLetterAlef) + "(?=" + MakeUniRegEx(ArabicLetterBeh) + ")|(?<=(^| )" + MakeUniRegEx(ArabicLetterLam) + ")" + MakeUniRegEx(ArabicFatha) + MakeUniRegEx(ArabicLetterAlef) + "(?!" + MakeUniRegEx(ArabicLetterNoon) + "|" + MakeUniRegEx(ArabicLetterFeh) + "|" + MakeUniRegEx(ArabicLetterReh) + "|" + MakeUniRegEx(ArabicLetterTeh) + "|" + MakeUniRegEx(ArabicLetterBeh) + "|" + MakeUniRegEx(ArabicLetterKhah) + "|" + MakeUniRegEx(ArabicLetterSeen) + "|" + MakeUniRegEx(ArabicLetterSad) + ")|" + MakeUniRegEx(ArabicFatha) + "(" + MakeUniRegEx(ArabicLetterSuperscriptAlef) + "|" + MakeUniRegEx(ArabicLetterAlefMaksura) + "(?!($| " + MakeUniRegEx(ArabicSmallHighLamAlef) + "| " + MakeUniRegEx(ArabicSmallHighLigatureSadWithLamWithAlefMaksura) + ")))|(?<!" + MakeUniRegEx(ArabicLetterJeem) + ")" + MakeUniRegEx(ArabicKasra) + MakeUniRegEx(ArabicLetterYeh) + "(?=" + MakeUniRegEx(ArabicLetterHamza) + ")|(?<=" + MakeUniRegEx(ArabicLetterAlefWithHamzaAbove) + MakeUniRegEx(ArabicFatha) + MakeUniRegEx(ArabicLetterKhah) + "|" + MakeUniRegEx(ArabicKasra) + MakeUniRegEx(ArabicLetterNoon) + MakeUniRegEx(ArabicFatha) + MakeUniRegEx(ArabicLetterFeh) + MakeUniRegEx(ArabicLetterSeen) + "| " + MakeUniRegEx(ArabicLetterThal) + MakeUniRegEx(ArabicKasra) + MakeUniRegEx(ArabicLetterKaf) + MakeUniRegEx(ArabicLetterReh) + ")" + MakeUniRegEx(ArabicKasra) + MakeUniRegEx(ArabicLetterYeh) + "(?!$)|(?<!" + MakeUniRegEx(ArabicLetterAlefWithHamzaAbove) + MakeUniRegEx(ArabicFatha) + MakeUniRegEx(ArabicLetterKhah) + "|" + MakeUniRegEx(ArabicKasra) + MakeUniRegEx(ArabicLetterNoon) + MakeUniRegEx(ArabicFatha) + MakeUniRegEx(ArabicLetterFeh) + MakeUniRegEx(ArabicLetterSeen) + "| " + MakeUniRegEx(ArabicLetterThal) + MakeUniRegEx(ArabicKasra) + MakeUniRegEx(ArabicLetterKaf) + MakeUniRegEx(ArabicLetterReh) + ")" + MakeUniRegEx(ArabicKasra) + MakeUniRegEx(ArabicLetterYeh) + "(?!" + MakeUniRegEx(ArabicLetterHamza) + ")|(?<=(^| )(" + MakeUniRegEx(ArabicLetterWaw) + MakeUniRegEx(ArabicFatha) + ")?" + MakeUniRegEx(ArabicLetterAlefWithHamzaAbove) + ")" + MakeUniRegEx(ArabicDamma) + MakeUniRegEx(ArabicLetterWaw) + "(?!" + MakeUniRegEx(ArabicLetterLam) + "(" + MakeUniRegEx(ArabicFatha) + "(" + MakeUniRegEx(ArabicLetterSuperscriptAlef) + "|" + MakeUniRegEx(ArabicLetterAlef) + "(" + MakeUniRegEx(ArabicLetterTeh) + "|" + MakeUniRegEx(ArabicLetterHamza) + "))|" + MakeUniRegEx(ArabicKasra) + MakeUniRegEx(ArabicLetterYeh) + "|" + MakeUniRegEx(ArabicDamma) + MakeUniRegEx(ArabicLetterWaw) + "))|(?<!(^| )(" + MakeUniRegEx(ArabicLetterWaw) + MakeUniRegEx(ArabicFatha) + ")?" + MakeUniRegEx(ArabicLetterAlefWithHamzaAbove) + ")" + MakeUniRegEx(ArabicDamma) + MakeUniRegEx(ArabicLetterWaw) + "(?!" + MakeUniRegEx(ArabicLetterLam) + "(" + MakeUniRegEx(ArabicFatha) + MakeUniRegEx(ArabicLetterSuperscriptAlef) + MakeUniRegEx(ArabicLetterYehWithHamzaAbove) + "|" + MakeUniRegEx(ArabicKasra) + MakeUniRegEx(ArabicLetterYeh) + " " + MakeUniRegEx(ArabicLetterAlef) + ")))(?!" + MakeUniRegEx(ArabicFatha) + "|" + MakeUniRegEx(ArabicFathatan) + MakeUniRegEx(ArabicLetterAlef) + "?|" + MakeUniRegEx(ArabicDamma) + "|" + MakeUniRegEx(ArabicShadda) + "|" + MakeUniRegEx(ArabicLetterAlef) + "?" + "( " + MakeUniRegEx(ArabicSmallHighJeem) + "| " + MakeUniRegEx(ArabicSmallHighLamAlef) + ")?" + " " + MakeUniRegEx(ArabicLetterAlef) + ")", _
             .Evaluator = Function(Match As System.Text.RegularExpressions.Match) Match.Value.Remove(0, 1)}
     }
 
@@ -4341,7 +4342,8 @@ Public Class TanzilReader
     End Enum
     Shared QuranFileNames As String() = {"quran-uthmani.xml", "quran-uthmani-min.xml", "quran-simple.xml", "quran-simple-min.xml", "quran-simple-enhanced.xml", "quran-simple-clean.xml", "quran-warsh.xml", "quran-alduri.xml"}
     Public Shared Sub CheckNotablePatterns()
-        ComparePatterns(QuranScripts.SimpleEnhanced, QuranScripts.SimpleMin, Arabic.SimpleMinAlefs)
+        ComparePatterns(QuranScripts.SimpleEnhanced, QuranScripts.SimpleMin, Arabic.SimpleMinAlefLams)
+        ComparePatterns(QuranScripts.SimpleEnhanced, QuranScripts.SimpleMin, Arabic.SimpleMinAlefNotLams)
     End Sub
     Public Shared Sub ComparePatterns(ScriptType As QuranScripts, CompScriptType As QuranScripts, Pattern As String)
         Dim FirstList As List(Of String) = PatternMatch(ScriptType, Pattern)
@@ -4356,25 +4358,30 @@ Public Class TanzilReader
             Index += 1
         Loop
         Index = 0
-        Do While Index < FirstList.Count - 1
+        Do While Index <= FirstList.Count - 1
             Do While Index < FirstList.Count - 1 AndAlso FirstList(Index + 1) = FirstList(Index)
                 FirstList.RemoveAt(Index)
             Loop
             Dim Find As Integer = CompList.BinarySearch(FirstList(Index))
-            If Find <> -1 Then
+            If Find >= 0 Then
                 Do
                     CompList.RemoveAt(Find)
                 Loop While Find <= CompList.Count - 1 AndAlso CompList(Find) = FirstList(Index)
+                Find -= 1
+                While Find <> -1 AndAlso CompList(Find) = FirstList(Index)
+                    CompList.RemoveAt(Find)
+                    Find -= 1
+                End While
             End If
             Index += 1
         Loop
         Dim Msg As String = "First: "
         For Each Str As String In FirstList
-            Msg += Str + " "
+            Msg += Arabic.TransliterateToScheme(Str, 3) + " "
         Next
         Msg += vbCrLf + "Second: "
         For Each Str As String In CompList
-            Msg += Str + " "
+            Msg += Arabic.TransliterateToScheme(Str, 3) + " "
         Next
         Debug.Print(Msg)
     End Sub
@@ -4387,7 +4394,7 @@ Public Class TanzilReader
             Doc.Load(Utility.GetFilePath("IslamMetadata\" + QuranFileNames(ScriptType)))
         End If
         Dim Verses As Collections.Generic.List(Of String())
-        Verses = TanzilReader.GetQuranText(CachedData.XMLDocMain, -1, -1, -1, -1)
+        Verses = TanzilReader.GetQuranText(Doc, -1, -1, -1, -1)
         For Count As Integer = 0 To Verses.Count - 1
             Dim ChapterNode As System.Xml.XmlNode = GetTextChapter(Doc, Count + 1)
             For SubCount As Integer = 0 To Verses(Count).Length - 1
