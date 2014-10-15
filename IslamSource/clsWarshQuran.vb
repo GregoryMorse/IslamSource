@@ -187,6 +187,31 @@
         End Function
     End Class
     Shared Function ParseQuran() As String
+        Dim Doc As PdfSharp.Pdf.PdfDocument = PdfSharp.Pdf.IO.PdfReader.Open("..\..\..\IslamMetadata\warsh.pdf")
+        Dim XG As PdfSharp.Drawing.XGraphics = PdfSharp.Drawing.XGraphics.FromPdfPage(Doc.Pages(0))
+        'For Cnt As Integer = 0 To Doc.Pages.Count - 1
+        '    Dim CurFont As PdfSharp.Pdf.Content.Objects.CName
+        '    Dim Content As PdfSharp.Pdf.Content.Objects.CSequence = PdfSharp.Pdf.Content.ContentReader.ReadContent(Doc.Pages(Cnt))
+        '    For Each Obj As PdfSharp.Pdf.Content.Objects.CObject In Content
+        '        If TypeOf Obj Is PdfSharp.Pdf.Content.Objects.COperator Then
+        '            Dim COp As PdfSharp.Pdf.Content.Objects.COperator = Obj
+        '            If COp.OpCode.Name = PdfSharp.Pdf.Content.Objects.OpCodeName.Tf.ToString() Then
+        '                CurFont = COp.Operands.Item(0)
+        '                Dim CurSize As PdfSharp.Pdf.Content.Objects.CInteger = COp.Operands.Item(1)
+        '                Dim F As New PdfSharp.Pdf.Advanced.PdfFont
+        '                Dim Item As PdfSharp.Pdf.PdfName = CType(CType(CType(CType(CType(Doc.Pages(Cnt).Elements("/Resources"), PdfSharp.Pdf.Advanced.PdfReference).Value, PdfSharp.Pdf.PdfDictionary).Elements("/Font"), PdfSharp.Pdf.PdfDictionary).Elements("/TT1"), PdfSharp.Pdf.Advanced.PdfReference).Value, PdfSharp.Pdf.PdfDictionary).Elements("/BaseFont")
+
+        '            ElseIf COp.OpCode.Name = PdfSharp.Pdf.Content.Objects.OpCodeName.Tj.ToString() Or COp.OpCode.Name = "TJ" Then
+        '                For Each Str As PdfSharp.Pdf.Content.Objects.CObject In COp.Operands
+        '                    If TypeOf Str Is PdfSharp.Pdf.Content.Objects.CString Then
+        '                        MsgBox(CType(Str, PdfSharp.Pdf.Content.Objects.CString).Value)
+        '                    End If
+        '                Next
+
+        '            End If
+        '        End If
+        '    Next
+        'Next
         Dim Lines As Byte() = IO.File.ReadAllBytes("..\..\..\IslamMetadata\warsh.csv")
         Dim LinesOrder As String() = IO.File.ReadAllLines("..\..\..\IslamMetadata\warshp.txt", System.Text.Encoding.UTF8)
         Dim CharTable As String = String.Empty
@@ -269,7 +294,7 @@
                 If Not CurDict Is Nothing Then
                     If bNextPage Then
                         'Bytes(Array.IndexOf(Bytes, " "c)) = ChrW(0)
-                        MsgBox(StrReverse(Vals(11)) + "/" + CStr(Array.IndexOf(Bytes, " "c)) + "/" + CStr(Array.LastIndexOf(Bytes, ChrW(0), Array.IndexOf(Bytes, " "c))) + "/" + String.Join(String.Empty, Array.ConvertAll(Bytes, Function(C As Char) CStr(C)), Array.LastIndexOf(Bytes, ChrW(0), Array.IndexOf(Bytes, " "c)) + 1, Array.IndexOf(Bytes, " "c) - Array.LastIndexOf(Bytes, " "c, Array.IndexOf(Bytes, " "c))))
+                        'MsgBox(StrReverse(Vals(11)) + "/" + CStr(Array.IndexOf(Bytes, " "c)) + "/" + CStr(Array.LastIndexOf(Bytes, ChrW(0), Array.IndexOf(Bytes, " "c))) + "/" + String.Join(String.Empty, Array.ConvertAll(Bytes, Function(C As Char) CStr(C)), Array.LastIndexOf(Bytes, ChrW(0), Array.IndexOf(Bytes, " "c)) + 1, Array.IndexOf(Bytes, " "c) - Array.LastIndexOf(Bytes, " "c, Array.IndexOf(Bytes, " "c))))
                         bNextPage = False
                         If Bytes(Array.IndexOf(Bytes, " "c) - 1) = ChrW(&H2329) Or Bytes(Array.IndexOf(Bytes, " "c) - 1) = ChrW(&HAE) Then
 
@@ -279,7 +304,13 @@
                     Pos = Array.IndexOf(Lines, CByte(Asc(vbLf)), Pos) + 1
                     Dim privateFonts As New System.Drawing.Text.PrivateFontCollection()
                     privateFonts.AddFontFile("..\..\..\IslamMetadata\" + Vals(0) + ".ttf")
-                    Dim f As New Font(privateFonts.Families(0), CSng(Vals(2)), GraphicsUnit.Point)
+                    Dim f As New Font(privateFonts.Families(0), CSng(Vals(2)), GraphicsUnit.World)
+                    Dim Opt As New PdfSharp.Drawing.XPdfFontOptions(PdfSharp.Pdf.PdfFontEncoding.Unicode, PdfSharp.Pdf.PdfFontEmbedding.None)
+                    Dim XF As New PdfSharp.Drawing.XFont(f, Opt)
+                    Dim Form As New PdfSharp.Drawing.XStringFormat
+                    Form.Alignment = PdfSharp.Drawing.XStringAlignment.Far
+                    Form.FormatFlags = PdfSharp.Drawing.XStringFormatFlags.MeasureTrailingSpaces
+                    Dim Wid As Double = XG.MeasureString(Vals(11), XF, Form).Width
                     Dim i As New System.Drawing.Bitmap(595, 842)
                     i.SetResolution(72, 72)
                     '8.26 width = 595, 11.69 height = 842, 72 DPI
