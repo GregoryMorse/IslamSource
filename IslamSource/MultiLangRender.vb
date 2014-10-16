@@ -60,7 +60,7 @@
                             nChar = theText.Length 'If no room for even a letter than just use placeholder
                         ElseIf nChar <> theText.Length Then
                             Dim idx As Integer = Array.FindLastIndex(theText.ToCharArray(), nChar - 1, nChar, Function(ch As Char) Char.IsWhiteSpace(ch))
-                            If idx <> -1 Then nChar = idx
+                            If idx <> -1 Then nChar = idx + 1
                         End If
                         NewText.Text = theText.Substring(0, nChar)
                         theText = theText.Substring(nChar)

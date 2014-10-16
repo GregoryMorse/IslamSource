@@ -1841,10 +1841,6 @@ Public Class Arabic
                                       .Evaluator = Function(Match As System.Text.RegularExpressions.Match) ArabicLetterNoon}, _
             New RuleTranslation With {.RuleName = "SmallSeen", .Match = MakeUniRegEx(ArabicSmallHighSeen), _
                                       .Evaluator = Function(Match As System.Text.RegularExpressions.Match) ArabicLetterSeen}, _
-            New RuleTranslation With {.RuleName = "Sukun", .Match = MakeUniRegEx(ArabicSukun), _
-                                      .Evaluator = Function(Match As System.Text.RegularExpressions.Match) Match.Value.Insert(1, "</empty>").Insert(0, "<empty>")}, _
-            New RuleTranslation With {.RuleName = "AlefMaksuraDaggerAlef", .Match = MakeUniRegEx(ArabicLetterAlefMaksura) + MakeUniRegEx(ArabicLetterSuperscriptAlef), _
-                                      .Evaluator = Function(Match As System.Text.RegularExpressions.Match) Match.Value.Insert(1, "</helperfatha>").Insert(0, "<helperfatha>")}, _
             New RuleTranslation With {.RuleName = "HelperFatha", .Match = "<helperfatha>.*?</helperfatha>", _
                                       .Evaluator = Function(Match As System.Text.RegularExpressions.Match) ArabicFatha}, _
             New RuleTranslation With {.RuleName = "HelperKasra", .Match = "<helperkasra>.*?</helperkasra>", _
@@ -2060,7 +2056,11 @@ Public Class Arabic
             New RuleMetadataTranslation With {.RuleName = "ClearLaamMoonLetter", .Match = "(^\s*|\b)(" + MakeUniRegEx(ArabicLetterWaw) + MakeUniRegEx(ArabicFatha) + "|" + MakeUniRegEx(ArabicLetterBeh) + MakeUniRegEx(ArabicKasra) + "|" + MakeUniRegEx(ArabicLetterTeh) + MakeUniRegEx(ArabicFatha) + "|" + MakeUniRegEx(ArabicLetterKaf) + MakeUniRegEx(ArabicFatha) + "|" + MakeUniRegEx(ArabicLetterLam) + MakeUniRegEx(ArabicKasra) + ")?(" + MakeUniRegEx(ArabicLetterAlefWasla) + MakeUniRegEx(ArabicLetterLam) + ")(" + MakeRegMultiEx(Array.ConvertAll(ArabicSunLetters, Function(Str As String) MakeUniRegEx(Str))) + ")" + MakeUniRegEx(ArabicShadda),
                 .Evaluator = Function(Match As System.Text.RegularExpressions.Match)
                                  Return New RuleMetadata() {New RuleMetadata(Match.Groups(3).Index - Match.Index, Match.Groups(3).Length, "assimilator"), New RuleMetadata(Match.Groups(2).Length - 1 + Match.Groups(2).Index - Match.Index, 1, "assimilate")}
-                             End Function} _
+                             End Function}, _
+            New RuleMetadataTranslation With {.RuleName = "Sukun", .Match = MakeUniRegEx(ArabicSukun), _
+                .Evaluator = Function(Match As System.Text.RegularExpressions.Match) New RuleMetadata() {New RuleMetadata(Match.Index, Match.Length, "empty")}}, _
+            New RuleMetadataTranslation With {.RuleName = "AlefMaksuraDaggerAlef", .Match = MakeUniRegEx(ArabicLetterAlefMaksura) + MakeUniRegEx(ArabicLetterSuperscriptAlef), _
+                .Evaluator = Function(Match As System.Text.RegularExpressions.Match) New RuleMetadata() {New RuleMetadata(Match.Index, 1, "helperfatha")}} _
         }
     Public Shared Function MakeUniRegEx(Input As String) As String
         Return String.Join(String.Empty, Array.ConvertAll(Of Char, String)(Input.ToCharArray(), Function(Ch As Char) "\u" + AscW(Ch).ToString("X4")))
@@ -2300,7 +2300,8 @@ Public Class Arabic
         For Count = 0 To RulesOfRecitationRegEx.Length - 1
             Dim Match As System.Text.RegularExpressions.Match = System.Text.RegularExpressions.Regex.Match(ArabicString, RulesOfRecitationRegEx(Count).Match)
             If Match.Success Then
-                MetadataList.AddRange(RulesOfRecitationRegEx(Count).Evaluator(Match))
+                Dim Matches As RuleMetadata() = RulesOfRecitationRegEx(Count).Evaluator(Match)
+                If Not Matches Is Nothing Then MetadataList.AddRange(Matches)
             End If
         Next
         For Count = 0 To BreakdownRules.Length - 1
