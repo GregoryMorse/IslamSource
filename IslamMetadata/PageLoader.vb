@@ -1625,6 +1625,13 @@ Public Class Arabic
         Public Match As String
         Public Evaluator As RuleMetadataEvaluator
     End Structure
+    Delegate Function SpelledOutRuleEvaluator(Match As String) As String
+    Structure SpelledOutRuleTranslation
+        Public Rule As String
+        Public RuleName As String
+        Public Match As String
+        Public Evaluator As SpelledOutRuleEvaluator
+    End Structure
     Structure RuleTranslation
         Public Rule As String
         Public RuleName As String
@@ -1841,12 +1848,6 @@ Public Class Arabic
                                       .Evaluator = Function(Match As System.Text.RegularExpressions.Match) ArabicLetterNoon}, _
             New RuleTranslation With {.RuleName = "SmallSeen", .Match = MakeUniRegEx(ArabicSmallHighSeen), _
                                       .Evaluator = Function(Match As System.Text.RegularExpressions.Match) ArabicLetterSeen}, _
-            New RuleTranslation With {.RuleName = "HelperFatha", .Match = "<helperfatha>.*?</helperfatha>", _
-                                      .Evaluator = Function(Match As System.Text.RegularExpressions.Match) ArabicFatha}, _
-            New RuleTranslation With {.RuleName = "HelperKasra", .Match = "<helperkasra>.*?</helperkasra>", _
-                                      .Evaluator = Function(Match As System.Text.RegularExpressions.Match) ArabicKasra}, _
-            New RuleTranslation With {.RuleName = "HelperDamma", .Match = "<helperdamma>.*?</helperdamma>", _
-                                      .Evaluator = Function(Match As System.Text.RegularExpressions.Match) ArabicDamma}, _
             New RuleTranslation With {.RuleName = "DaggerAlef", .Match = MakeUniRegEx(ArabicLetterSuperscriptAlef), _
                                       .Evaluator = Function(Match As System.Text.RegularExpressions.Match) ArabicLetterAlef}, _
             New RuleTranslation With {.RuleName = "SmallHamza", .Match = MakeUniRegEx(ArabicHamzaAbove) + "|" + MakeUniRegEx(ArabicHamzaBelow), _
@@ -1854,7 +1855,7 @@ Public Class Arabic
             New RuleTranslation With {.RuleName = "LetterSpelling", .Match = "\b(" + MakeRegMultiEx(Array.ConvertAll(ArabicUniqueLetters, Function(Str As String) MakeUniRegEx(TransliterateFromBuckwalter(Str)))) + ")\b", _
                                       .Evaluator = Function(Match As System.Text.RegularExpressions.Match) ArabicLetterSpelling(Match.Value)}, _
             New RuleTranslation With {.RuleName = "NumberSpelling", .Match = "\b(" + MakeRegMultiEx(Array.ConvertAll(ArabicNumbers, Function(Str As String) MakeUniRegEx(TransliterateFromBuckwalter(Str)))) + ")+\b", _
-                                      .Evaluator = Function(Match As System.Text.RegularExpressions.Match) ArabicWordFromNumber(CInt(TransliterateToScheme(Match.Value, 3)), True, False, False)}, _
+                                      .Evaluator = Function(Match As System.Text.RegularExpressions.Match) TransliterateToPlainRoman(TransliterateFromBuckwalter(ArabicWordFromNumber(CInt(TransliterateToScheme(Match.Value, 3)), True, False, False)))}, _
             New RuleTranslation With {.RuleName = "FathaAlefMaksura", .Match = MakeUniRegEx(ArabicFatha) + MakeUniRegEx(ArabicLetterAlefMaksura), _
                                       .Evaluator = Function(Match As System.Text.RegularExpressions.Match) Match.Value.Remove(1).Insert(1, ArabicLetterAlef)}, _
             New RuleTranslation With {.RuleName = "KasraAlefMaksura", .Match = MakeUniRegEx(ArabicKasra) + MakeUniRegEx(ArabicLetterAlefMaksura), _
@@ -1884,16 +1885,24 @@ Public Class Arabic
             New RuleTranslation With {.RuleName = "LettersTanweensVowelsHamza", .Match = "(" + MakeRegMultiEx(Array.ConvertAll(ArabicLetters, Function(Str As String) MakeUniRegEx(Str))) + "|" + MakeRegMultiEx(Array.ConvertAll(ArabicTanweens, Function(Str As String) MakeUniRegEx(Str))) + "|" + MakeRegMultiEx(Array.ConvertAll(ArabicFathaDammaKasra, Function(Str As String) MakeUniRegEx(Str))) + "|" + MakeUniRegEx(ArabicLetterHamza) + ")", _
                                       .Evaluator = Function(Match As System.Text.RegularExpressions.Match) Match.Value.Insert(1, CachedData.IslamData.ArabicLetters(FindLetterBySymbol(Match.Value(0))).PlainRoman).Remove(0, 1)} _
         }
-    Public Shared ColoringSpelledOutRules As RuleTranslation() = { _
-        New RuleTranslation With {.RuleName = "Normal", .Match = "empty|helperfatha|helperkasra|helperdamma|helpermeem|assimilator|assimilatorincomplete|dipthong|compulsorystop|endofversestop|prostration|canstoporcontinue|betternottostop|stopatfirstnotsecond|stopatsecondnotfirst|bettertostopbutpermissibletocontinue|bettertocontinuebutpermissibletostop|subtlestopwithoutbreath", .Evaluator = Function(Match As System.Text.RegularExpressions.Match) Match.Value}, _
-        New RuleTranslation With {.RuleName = "NecessaryProlongation", .Match = "necessaryprolong", .Evaluator = Function(Match As System.Text.RegularExpressions.Match) Match.Value + "-" + Match.Value + "-" + Match.Value + "-" + Match.Value + "-" + Match.Value + "-" + Match.Value}, _
-        New RuleTranslation With {.RuleName = "ObligatoryProlongation", .Match = "obligatoryprolong", .Evaluator = Function(Match As System.Text.RegularExpressions.Match) Match.Value + "-" + Match.Value + "-" + Match.Value + "-" + Match.Value + "(-" + Match.Value + ")"}, _
-        New RuleTranslation With {.RuleName = "PermissibleProlongation", .Match = "permissibleprolong", .Evaluator = Function(Match As System.Text.RegularExpressions.Match) Match.Value + "-" + Match.Value + "(-" + Match.Value + "-" + Match.Value + ")(-" + Match.Value + "-" + Match.Value + ")"}, _
-        New RuleTranslation With {.RuleName = "NormalProlongation", .Match = "normalprolong", .Evaluator = Function(Match As System.Text.RegularExpressions.Match) Match.Value + "-" + Match.Value}, _
-        New RuleTranslation With {.RuleName = "Nasalization", .Match = "nasalize", .Evaluator = Function(Match As System.Text.RegularExpressions.Match) Match.Value}, _
-        New RuleTranslation With {.RuleName = "Unannounced", .Match = "assimilate|assimilateincomplete", .Evaluator = Function(Match As System.Text.RegularExpressions.Match) Match.Value}, _
-        New RuleTranslation With {.RuleName = "EmphaticPronounciation", .Match = "emphasis", .Evaluator = Function(Match As System.Text.RegularExpressions.Match) UCase(Match.Value)}, _
-        New RuleTranslation With {.RuleName = "UnrestLetters", .Match = "bounce", .Evaluator = Function(Match As System.Text.RegularExpressions.Match) Match.Value + "-" + Match.Value} _
+    Public Shared ColoringSpelledOutRules As SpelledOutRuleTranslation() = { _
+            New SpelledOutRuleTranslation With {.RuleName = "HelperFatha", .Match = "helperfatha", _
+                                      .Evaluator = Function(Match As String) ArabicFatha}, _
+            New SpelledOutRuleTranslation With {.RuleName = "HelperKasra", .Match = "helperkasra", _
+                                      .Evaluator = Function(Match As String) ArabicKasra}, _
+            New SpelledOutRuleTranslation With {.RuleName = "HelperDamma", .Match = "helperdamma", _
+                                      .Evaluator = Function(Match As String) ArabicDamma}, _
+            New SpelledOutRuleTranslation With {.RuleName = "Empty", .Match = "empty|assimilate|assimilateincomplete", _
+                                      .Evaluator = Function(Match As String) String.Empty}, _
+            New SpelledOutRuleTranslation With {.RuleName = "Normal", .Match = "helpermeem|assimilator|assimilatorincomplete|dipthong|compulsorystop|endofversestop|prostration|canstoporcontinue|betternottostop|stopatfirstnotsecond|stopatsecondnotfirst|bettertostopbutpermissibletocontinue|bettertocontinuebutpermissibletostop|subtlestopwithoutbreath", .Evaluator = Function(Match As String) Match}, _
+        New SpelledOutRuleTranslation With {.RuleName = "NecessaryProlongation", .Match = "necessaryprolong", .Evaluator = Function(Match As String) Match + "-" + Match + "-" + Match + "-" + Match + "-" + Match + "-" + Match}, _
+        New SpelledOutRuleTranslation With {.RuleName = "ObligatoryProlongation", .Match = "obligatoryprolong", .Evaluator = Function(Match As String) Match + "-" + Match + "-" + Match + "-" + Match + "(-" + Match + ")"}, _
+        New SpelledOutRuleTranslation With {.RuleName = "PermissibleProlongation", .Match = "permissibleprolong", .Evaluator = Function(Match As String) Match + "-" + Match + "(-" + Match + "-" + Match + ")(-" + Match + "-" + Match + ")"}, _
+        New SpelledOutRuleTranslation With {.RuleName = "NormalProlongation", .Match = "normalprolong", .Evaluator = Function(Match As String) Match + "-" + Match}, _
+        New SpelledOutRuleTranslation With {.RuleName = "Nasalization", .Match = "nasalize", .Evaluator = Function(Match As String) Match}, _
+        New SpelledOutRuleTranslation With {.RuleName = "Unannounced", .Match = "assimilate|assimilateincomplete", .Evaluator = Function(Match As String) String.Empty}, _
+        New SpelledOutRuleTranslation With {.RuleName = "EmphaticPronounciation", .Match = "emphasis", .Evaluator = Function(Match As String) UCase(Match)}, _
+        New SpelledOutRuleTranslation With {.RuleName = "UnrestLetters", .Match = "bounce", .Evaluator = Function(Match As String) Match + "-" + Match} _
         }
     Public Shared RulesOfRecitationRegEx As RuleMetadataTranslation() = { _
             New RuleMetadataTranslation With {.RuleName = "Stopping", .Match = "(" + MakeUniRegEx(ArabicSmallHighMeemIsolatedForm) + "|" + MakeUniRegEx(ArabicStartOfRubElHizb) + "|" + MakeUniRegEx(ArabicEndOfAyah) + ")\s*\b",
@@ -2093,21 +2102,21 @@ Public Class Arabic
             ElseIf ArabicString(Index) = ArabicDamma Then
                 If ArabicString(Index + 1) = ArabicLetterWaw Then
                     Dim Letter As String = CStr(IIf(bTrailing, String.Empty, CachedData.IslamData.ArabicLetters(FindLetterBySymbol(ArabicString(Index + 2))).PlainRoman))
-                    ArabicString = ArabicString.Remove(Index, CInt(IIf(bTrailing, 2, 3))).Insert(Index, "eeh" + Letter)
-                    If bTrailing Then Index += 3
-                Else
-                    Dim Letter As String = CStr(IIf(bTrailing, String.Empty, CachedData.IslamData.ArabicLetters(FindLetterBySymbol(ArabicString(Index + 1))).PlainRoman))
-                    ArabicString = ArabicString.Remove(Index, CInt(IIf(bTrailing, 1, 2))).Insert(Index, "k" + Letter)
-                    If bTrailing Then Index += 1
-                End If
-            ElseIf ArabicString(Index) = ArabicKasra Then
-                If ArabicString(Index + 1) = ArabicLetterYeh Then
-                    Dim Letter As String = CStr(IIf(bTrailing, String.Empty, CachedData.IslamData.ArabicLetters(FindLetterBySymbol(ArabicString(Index + 2))).PlainRoman))
                     ArabicString = ArabicString.Remove(Index, CInt(IIf(bTrailing, 2, 3))).Insert(Index, "ooh" + Letter)
                     If bTrailing Then Index += 3
                 Else
                     Dim Letter As String = CStr(IIf(bTrailing, String.Empty, CachedData.IslamData.ArabicLetters(FindLetterBySymbol(ArabicString(Index + 1))).PlainRoman))
                     ArabicString = ArabicString.Remove(Index, CInt(IIf(bTrailing, 1, 2))).Insert(Index, "o" + Letter)
+                    If bTrailing Then Index += 1
+                End If
+            ElseIf ArabicString(Index) = ArabicKasra Then
+                If ArabicString(Index + 1) = ArabicLetterYeh Then
+                    Dim Letter As String = CStr(IIf(bTrailing, String.Empty, CachedData.IslamData.ArabicLetters(FindLetterBySymbol(ArabicString(Index + 2))).PlainRoman))
+                    ArabicString = ArabicString.Remove(Index, CInt(IIf(bTrailing, 2, 3))).Insert(Index, "eeh" + Letter)
+                    If bTrailing Then Index += 3
+                Else
+                    Dim Letter As String = CStr(IIf(bTrailing, String.Empty, CachedData.IslamData.ArabicLetters(FindLetterBySymbol(ArabicString(Index + 1))).PlainRoman))
+                    ArabicString = ArabicString.Remove(Index, CInt(IIf(bTrailing, 1, 2))).Insert(Index, "k" + Letter)
                     If bTrailing Then Index += 1
                 End If
             End If
@@ -2307,8 +2316,15 @@ Public Class Arabic
         For Count = 0 To BreakdownRules.Length - 1
             ArabicString = System.Text.RegularExpressions.Regex.Replace(ArabicString, BreakdownRules(Count).Match, BreakdownRules(Count).Evaluator)
         Next
-        For Count = 0 To ColoringSpelledOutRules.Length - 1
-            ArabicString = System.Text.RegularExpressions.Regex.Replace(ArabicString, ColoringSpelledOutRules(Count).Match, ColoringSpelledOutRules(Count).Evaluator)
+        MetadataList.Sort(New RuleMetadataComparer)
+        For Index = 0 To MetadataList.Count - 1
+            Dim ItType As String = MetadataList(Index).Type
+            For Count = 0 To ColoringSpelledOutRules.Length - 1
+                Dim Match As Integer = Array.FindIndex(ColoringSpelledOutRules(Count).Match.Split("|"c), Function(Str As String) Str = ItType)
+                If Match <> -1 Then
+                    ArabicString = ArabicString.Insert(MetadataList(Index).Index, ColoringSpelledOutRules(Count).Evaluator(ArabicString.Substring(MetadataList(Index).Index, MetadataList(Index).Length))).Remove(MetadataList(Index).Index, MetadataList(Index).Length)
+                End If
+            Next
         Next
         For Count = 0 To RomanizationRules.Length - 1
             ArabicString = System.Text.RegularExpressions.Regex.Replace(ArabicString, RomanizationRules(Count).Match, RomanizationRules(Count).Evaluator)
