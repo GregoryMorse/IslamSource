@@ -2082,6 +2082,11 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="sajdapu {lsuhuw" id=""></word>
 			<word text="duEaA&apos; &lt;istiftaA&apos;" id=""></word>
 			<word text="{lS~alaAp EalaY {lonabiy" id=""></word>
+			<word text="taxoSiyS {loEaAm~" id="PartialAbrogation"></word>
+			<word text="taqliyd {lomuTolaq" id=""></word>
+			<word text="tabyiyn {lomujomal" id=""></word>
+			<word text="|ayapu {losayf" id="VerseOfTheSword"></word>
+			<word text="|ayapu {lokursiy" id="VerseOfTheThrone"></word>
 		</category>
 		<category title="IslamicWords">
 			<word text="{ll~`h" id="Allah"></word>
@@ -2184,7 +2189,6 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="anSaAr" id="Helpers"></word>
 			<word text="{lomuhaAjiriyn" id="Emigrants"></word>
 			<word text="fuSila" id="Division"></word>
-			<word text="daliyl" id="Guidance"></word>
 			<word text="Hasanah" id="Goodness"></word>
 			<word text="{logayb" id="Unseen"></word>
 			<word text="&lt;iqraA" id="Recite"></word>
@@ -2249,8 +2253,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="mu$aAhadap" id="OneWhoIsSeen"></word>
 			<word text="muraAqabap" id="OneWhoWitnesses"></word>
 			<word text="muqtasidiyn" id="OneWhoDoesGoodDeedsAndAbandonsProhibitions"></word>
-			<word text="muhkamaAt" id="ClearCut"></word>
-			<word text="muta$aAbip" id="DoubtfulMatters"></word>
+			<word text="muHkamaAt" id="ClearCut"></word>
 			<word text="mu$tabihaAt" id="DoubtfulMatters"></word>
 			<word text="qadariy~ap" id="ThoseBelievingNoPredestination"></word>
 			<word text="jabariy~ap" id="ThoseBelievingNoFreedomOfChoice"></word>
@@ -2341,6 +2344,9 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="zakaAp" id="AlmsGiving"></word>
 			<word text="Haj~" id="Pilgrimage"></word>
 			<word text="qur&apos;|n" id="RevelationOfAllah"></word>
+			<word text="&lt;injiyl" id="Gospels"></word>
+			<word text="zabuwr" id="Psalms"></word>
+			<word text="tawraAp" id="Torah"></word>
 			<word text="furqaAn" id="DistinctionCriterion"></word>
 			<word text="suwrap" id="Chapter"></word>
 			<word text="|yap" id="Verse"></word>
@@ -2376,7 +2382,30 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="maHram" id="CloseRelative"></word>
 			<word text="&lt;ixlaAS" id="Sincerity"></word>
 			<word text="tasliym" id="EndOfPrayer"></word>
-			<word text="nasx" id="Abrogation"></word>
+			<word text="nasox" id="Abrogation"></word>
+			<word text="nukoxap" id="Copy"></word>
+			<word text="naAsix" id="Abrogating"></word>
+			<word text="mansuwx" id="Abrogated"></word>
+			<word text="taxoSiyS" id="Specification"></word>
+			<word text="mathal" id="SimileProverbMetaphor"></word>
+			<word text="qasam" id="Oath"></word>
+			<word text="jadal" id="Debate"></word>
+			<word text="qis~ap" id="Narrative"></word>
+			<word text="EaAm~" id="General"></word>
+			<word text="xaAS~" id="Specific"></word>
+			<word text="kul~" id="AllEveryEach"></word>
+			<word text="muTolaq" id="Absolute"></word>
+			<word text="muqay~ad" id="Qualified"></word>
+			<word text="manTuwq" id="Stated"></word>
+			<word text="mafhoom" id="Implied"></word>
+			<word text="naS~" id="Explicit"></word>
+			<word text="ZaAhir" id="Obvious"></word>
+			<word text="muEaw~al" id="Explained"></word>
+			<word text="&lt;iqtiDaA&apos;" id="Necessity"></word>
+			<word text="&lt;i$aArap" id="Suggestion"></word>
+			<word text="mafhoom" id="Implied"></word>
+			<word text="$ubuhaAt" id="DoubtsAboutExistence"></word>
+			<word text="badaA" id="AppearNewRealizationOccurToSomeone"></word>
 			<word text="waSiy~ap" id="Bequest"></word>
 			<word text="&lt;ijotihaAd" id="ReasonedDecision"></word>
 			<word text="fatwaY" id="Ruling"></word>
@@ -2433,6 +2462,10 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="sarf" id="etymology"></word>
 			<word text="mutawaAtir" id="CredibleReport"></word>
 			<word text="tawaatur" id="ProcessOfCredibleReporting"></word>
+			<word text="muHkam" id="Clear"></word>
+			<word text="muta$aAbih" id="Obscure"></word>
+			<word text="daliyl" id="EvidenceGuidance"></word>
+			<word text="ibTaAl" id="TotalNegation"></word>
 			<word text="&lt;iEjaz" id="RenderingIncapablePowerless"></word>
 			<word text="muEjizap" id="Miracle"></word>
 			<word text="Sarfap" id="TurningAway"></word>
@@ -2470,7 +2503,8 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="waAdiy" id=""></word>
 			<word text="maniy" id=""></word>
 			<word text="janaAbap" id="MajorImpurity"></word>
-			<word text="xamr" id="Wine"></word>
+			<word text="xamor" id="Wine"></word>
+			<word text="maysir" id="Gambling"></word>
 			<word text="&gt;atha" id=""></word>
 			<word text="{lkuhl" id=""></word>
 			<word text="rijs" id=""></word>
@@ -2501,14 +2535,14 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="ZaAhiriyap" id=""></word>
 			<word text="qunuwt" id=""></word>
 			<word text="qanaATa" id=""></word>
-			<word text="Hukm" id=""></word>
+			<word text="Hukm" id="IslamicRuling"></word>
+			<word text="tilaAwap" id="Reciting"></word>
 			<word text="&lt;iftiraA$" id=""></word>
 			<word text="tawar~uk" id=""></word>
 			<word text="{lt~aHar~uj" id=""></word>
 			<word text="mu&apos;ak~adap" id=""></word>
 			<word text="jawaArib" id=""></word>
 			<word text="fitrap" id=""></word>
-			<word text="tawatur" id=""></word>
 		</category>
 		<category title="RegularWords">
 			<word text="{ld~ars" id="Lesson"></word>
@@ -3061,6 +3095,9 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 	<quranselections>
 		<quranselection description="VerseOfTheThrone">
 			<verse chapter="2" startverse="255"></verse>
+		</quranselection>
+		<quranselection description="VerseOfTheSword">
+			<verse chapter="9" startverse="5"></verse>
 		</quranselection>
 		<quranselection description="FortyOurLordSupplications">
 			<verse chapter="2" startverse="127" startword="8"></verse>
