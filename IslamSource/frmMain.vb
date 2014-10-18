@@ -7,6 +7,9 @@ Public Class frmMain
         'TanzilReader.CheckNotablePatterns()
         'TanzilReader.ChangeQuranFormat(TanzilReader.QuranScripts.SimpleMin)
         'clsWarshQuran.ParseQuran()
+        For Index = 1000 To 1030
+            Debug.Print(Arabic.ArabicWordFromNumber(Index, True, False, False) + vbCrLf)
+        Next
         For Index = 0 To PageSet.Pages.Count - 1
             Dim newNode As TreeNode = tvwMain.Nodes.Add(PageSet.Pages.Item(Index).PageName, Utility.LoadResourceString(PageSet.Pages.Item(Index).Text))
             For SubIndex = 0 To PageSet.Pages.Item(Index).Page.Count - 1
