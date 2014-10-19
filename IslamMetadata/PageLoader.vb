@@ -4346,10 +4346,16 @@ Public Class TanzilReader
         SimpleMin = 3
         SimpleEnhanced = 4
         SimpleClean = 5
-        Warsh = 6
-        AlDari = 7
+        BuckwalterUthmani = 6
+        BuckwalterUthmaniMin = 7
+        BuckwalterSimple = 8
+        BuckwalterSimpleMin = 9
+        BuckwalterSimpleEnhanced = 10
+        BuckwalterSimpleClean = 11
+        Warsh = 12
+        AlDari = 13
     End Enum
-    Shared QuranFileNames As String() = {"quran-uthmani.xml", "quran-uthmani-min.xml", "quran-simple.xml", "quran-simple-min.xml", "quran-simple-enhanced.xml", "quran-simple-clean.xml", "quran-warsh.xml", "quran-alduri.xml"}
+    Shared QuranFileNames As String() = {"quran-uthmani.xml", "quran-uthmani-min.xml", "quran-simple.xml", "quran-simple-min.xml", "quran-simple-enhanced.xml", "quran-simple-clean.xml", "quran-buckwalter-uthmani.xml", "quran-buckwalter-uthmani-min.xml", "quran-buckwlater-simple.xml", "quran-buckwalter-simple-min.xml", "quran-buckwalter-simple-enhanced.xml", "quran-buckwalter-simple-clean.xml", "quran-warsh.xml", "quran-alduri.xml"}
     Public Shared Sub CheckNotablePatterns()
         ComparePatterns(QuranScripts.SimpleEnhanced, QuranScripts.SimpleMin, Arabic.SimpleMinAlefLams)
         ComparePatterns(QuranScripts.SimpleEnhanced, QuranScripts.SimpleMin, Arabic.SimpleMinAlefNotLams)
@@ -4422,17 +4428,47 @@ Public Class TanzilReader
         Dim Doc As New System.Xml.XmlDocument
         Doc.Load(Utility.GetFilePath("metadata\quran-uthmani.xml"))
         Dim Verses As Collections.Generic.List(Of String())
+        Dim UseBuckwalter As Boolean = False
+        Dim Path As String = Utility.GetFilePath("metadata\-" + QuranFileNames(ScriptType))
+        If ScriptType = QuranScripts.BuckwalterUthmani Then
+            UseBuckwalter = True
+            ScriptType = QuranScripts.Uthmani
+        ElseIf ScriptType = QuranScripts.BuckwalterUthmaniMin Then
+            UseBuckwalter = True
+            ScriptType = QuranScripts.UthmaniMin
+        ElseIf ScriptType = QuranScripts.BuckwalterSimple Then
+            UseBuckwalter = True
+            ScriptType = QuranScripts.Simple
+        ElseIf ScriptType = QuranScripts.BuckwalterSimpleEnhanced Then
+            UseBuckwalter = True
+            ScriptType = QuranScripts.SimpleEnhanced
+        ElseIf ScriptType = QuranScripts.BuckwalterSimpleMin Then
+            UseBuckwalter = True
+            ScriptType = QuranScripts.SimpleMin
+        ElseIf ScriptType = QuranScripts.BuckwalterSimpleClean Then
+            UseBuckwalter = True
+            ScriptType = QuranScripts.SimpleClean
+        End If
         Verses = TanzilReader.GetQuranText(CachedData.XMLDocMain, -1, -1, -1, -1)
         For Count As Integer = 0 To Verses.Count - 1
             Dim ChapterNode As System.Xml.XmlNode = GetTextChapter(Doc, Count + 1)
+            If UseBuckwalter Then
+                ChapterNode.Attributes.GetNamedItem("name").Value = Arabic.TransliterateToScheme(ChapterNode.Attributes.GetNamedItem("name").Value, 3)
+            End If
             For SubCount As Integer = 0 To Verses(Count).Length - 1
                 If SubCount = 0 AndAlso Not GetTextVerse(ChapterNode, SubCount + 1).Attributes.GetNamedItem("bismillah") Is Nothing Then
                     GetTextVerse(ChapterNode, SubCount + 1).Attributes.GetNamedItem("bismillah").Value = Arabic.ChangeScript(GetTextVerse(ChapterNode, SubCount + 1).Attributes.GetNamedItem("bismillah").Value, ScriptType)
+                    If UseBuckwalter Then
+                        GetTextVerse(ChapterNode, SubCount + 1).Attributes.GetNamedItem("bismillah").Value = Arabic.TransliterateToScheme(GetTextVerse(ChapterNode, SubCount + 1).Attributes.GetNamedItem("bismillah").Value, 3)
+                    End If
                 End If
                 GetTextVerse(ChapterNode, SubCount + 1).Attributes.GetNamedItem("text").Value = Arabic.ChangeScript(Verses(Count)(SubCount), ScriptType)
+                If UseBuckwalter Then
+                    GetTextVerse(ChapterNode, SubCount + 1).Attributes.GetNamedItem("text").Value = Arabic.TransliterateToScheme(GetTextVerse(ChapterNode, SubCount + 1).Attributes.GetNamedItem("text").Value, 3)
+                End If
             Next
         Next
-        Doc.Save(Utility.GetFilePath("metadata\-" + QuranFileNames(ScriptType)))
+        Doc.Save(Path)
     End Sub
     Public Shared Function GetRenderedQuranText(ByVal Item As PageLoader.TextItem) As RenderArray
         Dim Division As Integer = 0

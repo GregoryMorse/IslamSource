@@ -5,7 +5,7 @@ Public Class frmMain
     Private Sub frmMain_Load(sender As Object, e As EventArgs) Handles Me.Load
         'Debug.Print(Arabic.GetUniCats())
         'TanzilReader.CheckNotablePatterns()
-        'TanzilReader.ChangeQuranFormat(TanzilReader.QuranScripts.SimpleMin)
+        TanzilReader.ChangeQuranFormat(TanzilReader.QuranScripts.BuckwalterUthmani)
         'clsWarshQuran.ParseQuran()
         For Index = 1000 To 1030
             Debug.Print(Arabic.ArabicWordFromNumber(Index, True, False, False) + vbCrLf)
