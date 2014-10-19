@@ -1476,6 +1476,9 @@ Public Class Arabic
         Next
         Return "return " + String.Join("||", Array.ConvertAll(Of ArrayList, String)(Ranges.ToArray(GetType(ArrayList)), Function(Arr As ArrayList) If(Arr.Count = 1, "c===0x" + Hex(Arr(0)), "(c>=0x" + Hex(Arr(0)) + "&&c<=0x" + Hex(Arr(Arr.Count - 1)) + ")"))) + ";"
     End Function
+    'ArabicLetterAlefWithMaddahAbove is used in simple script but not uthmani
+    'ArabicEndOfAyah is added later
+    'ArabicHamzaBelow never used along with ArabicLetterPeh, ArabicLetterTcheh, ArabicLetterVeh, ArabicLetterGaf
     Public Shared RecitationSymbols() As Char = {Space, _
         ArabicLetterHamza, ArabicLetterAlefWithHamzaAbove, ArabicLetterWawWithHamzaAbove, _
         ArabicLetterAlefWithHamzaBelow, ArabicLetterYehWithHamzaAbove, _
@@ -1499,8 +1502,7 @@ Public Class Arabic
     Public Shared Function GetRecitationSymbols() As Array()
         Return Array.ConvertAll(RecitationSymbols, Function(Ch As Char) New Object() {CachedData.IslamData.ArabicLetters(FindLetterBySymbol(Ch)).UnicodeName + " (" + Arabic.FixStartingCombiningSymbol(Ch) + ")", FindLetterBySymbol(Ch)})
     End Function
-    Public Shared Function GetRecitationLetters() As Char()
-        Return {ArabicLetterHamza, ArabicLetterAlefWithHamzaAbove, ArabicLetterWawWithHamzaAbove, _
+    Public Shared RecitationLetters As Char() = {ArabicLetterHamza, ArabicLetterAlefWithHamzaAbove, ArabicLetterWawWithHamzaAbove, _
         ArabicLetterAlefWithHamzaBelow, ArabicLetterYehWithHamzaAbove, _
         ArabicLetterAlef, ArabicLetterBeh, ArabicLetterTehMarbuta, ArabicLetterTeh, _
         ArabicLetterTheh, ArabicLetterJeem, ArabicLetterHah, ArabicLetterKhah, ArabicLetterDal,
@@ -1509,14 +1511,10 @@ Public Class Arabic
         ArabicLetterGhain, ArabicTatweel, ArabicLetterFeh, ArabicLetterQaf, ArabicLetterKaf, _
         ArabicLetterLam, ArabicLetterMeem, ArabicLetterNoon, ArabicLetterHeh, ArabicLetterWaw, _
         ArabicLetterAlefMaksura, ArabicLetterYeh, ArabicLetterAlefWasla}
-    End Function
-    Public Shared Function GetRecitationDiacritics() As Char()
-        Return {ArabicFathatan, ArabicDammatan, ArabicKasratan, _
+    Public Shared RecitationDiacritics As Char() = {ArabicFathatan, ArabicDammatan, ArabicKasratan, _
         ArabicFatha, ArabicDamma, ArabicKasra, ArabicShadda, ArabicSukun, ArabicMaddahAbove, _
         ArabicHamzaAbove, ArabicLetterSuperscriptAlef}
-    End Function
-    Public Shared Function GetRecitationSpecialSymbols() As Char()
-        Return {ArabicSmallHighLigatureSadWithLamWithAlefMaksura, _
+    Public Shared RecitationSpecialSymbols As Char() = {ArabicSmallHighLigatureSadWithLamWithAlefMaksura, _
         ArabicSmallHighLigatureQafWithLamWithAlefMaksura, ArabicSmallHighMeemInitialForm, _
         ArabicSmallHighLamAlef, ArabicSmallHighJeem, ArabicSmallHighThreeDots, _
         ArabicSmallHighSeen, ArabicStartOfRubElHizb, ArabicSmallHighRoundedZero, _
@@ -1524,9 +1522,7 @@ Public Class Arabic
         ArabicSmallLowSeen, ArabicSmallWaw, ArabicSmallYeh, ArabicSmallHighNoon, _
         ArabicPlaceOfSajdah, ArabicEmptyCentreLowStop, ArabicEmptyCentreHighStop, _
         ArabicRoundedHighStopWithFilledCentre, ArabicSmallLowMeem}
-    End Function
-    Public Shared Function GetRecitationLettersDiacritics() As Char()
-        Return {ArabicLetterHamza, ArabicLetterAlefWithHamzaAbove, ArabicLetterWawWithHamzaAbove, _
+    Public Shared RecitationLettersDiacritics As Char() = {ArabicLetterHamza, ArabicLetterAlefWithHamzaAbove, ArabicLetterWawWithHamzaAbove, _
         ArabicLetterAlefWithHamzaBelow, ArabicLetterYehWithHamzaAbove, _
         ArabicLetterAlef, ArabicLetterBeh, ArabicLetterTehMarbuta, ArabicLetterTeh, _
         ArabicLetterTheh, ArabicLetterJeem, ArabicLetterHah, ArabicLetterKhah, ArabicLetterDal,
@@ -1537,12 +1533,10 @@ Public Class Arabic
         ArabicLetterAlefMaksura, ArabicLetterYeh, ArabicFathatan, ArabicDammatan, ArabicKasratan, _
         ArabicFatha, ArabicDamma, ArabicKasra, ArabicShadda, ArabicSukun, ArabicMaddahAbove, _
         ArabicHamzaAbove, ArabicLetterSuperscriptAlef, ArabicLetterAlefWasla}
-    End Function
     Public Shared Function FixStartingCombiningSymbol(Str As String) As String
-        Return If(Array.IndexOf(GetRecitationCombiningSymbols(), Str.Chars(0)) <> -1 Or Str.Length = 1, Arabic.LeftToRightOverride + Str + Arabic.PopDirectionalFormatting, Str)
+        Return If(Array.IndexOf(RecitationCombiningSymbols, Str.Chars(0)) <> -1 Or Str.Length = 1, Arabic.LeftToRightOverride + Str + Arabic.PopDirectionalFormatting, Str)
     End Function
-    Public Shared Function GetRecitationCombiningSymbols() As Char()
-        Return {ArabicFathatan, ArabicDammatan, ArabicKasratan, _
+    Public Shared RecitationCombiningSymbols As Char() = {ArabicFathatan, ArabicDammatan, ArabicKasratan, _
         ArabicFatha, ArabicDamma, ArabicKasra, ArabicShadda, ArabicSukun, ArabicMaddahAbove, _
         ArabicHamzaAbove, ArabicLetterSuperscriptAlef, _
         ArabicSmallHighLigatureSadWithLamWithAlefMaksura, _
@@ -1552,9 +1546,7 @@ Public Class Arabic
         ArabicSmallHighUprightRectangularZero, ArabicSmallHighMeemIsolatedForm, _
         ArabicSmallLowSeen, ArabicSmallHighNoon, ArabicEmptyCentreLowStop, ArabicEmptyCentreHighStop, _
         ArabicRoundedHighStopWithFilledCentre, ArabicSmallLowMeem}
-    End Function
-    Public Shared Function GetRecitationConnectingFollowerSymbols() As Char()
-        Return {ArabicLetterAlefWithHamzaAbove, ArabicLetterWawWithHamzaAbove, _
+    Public Shared RecitationConnectingFollowerSymbols As Char() = {ArabicLetterAlefWithHamzaAbove, ArabicLetterWawWithHamzaAbove, _
         ArabicLetterAlefWithHamzaBelow, ArabicLetterYehWithHamzaAbove, _
         ArabicLetterAlef, ArabicLetterBeh, ArabicLetterTehMarbuta, ArabicLetterTeh, _
         ArabicLetterTheh, ArabicLetterJeem, ArabicLetterHah, ArabicLetterKhah, ArabicLetterDal,
@@ -1563,7 +1555,6 @@ Public Class Arabic
         ArabicLetterGhain, ArabicTatweel, ArabicLetterFeh, ArabicLetterQaf, ArabicLetterKaf, _
         ArabicLetterLam, ArabicLetterMeem, ArabicLetterNoon, ArabicLetterHeh, ArabicLetterWaw, _
         ArabicLetterAlefMaksura, ArabicLetterYeh}
-    End Function
     Public Shared Function IsLetter(Index As Integer) As Boolean
         Return Array.FindIndex(ArabicLetters, Function(Str As String) Str = CachedData.IslamData.ArabicLetters(Index).Symbol) <> -1
     End Function
@@ -1649,13 +1640,13 @@ Public Class Arabic
       New RuleTranslation With {.Rule = "ImalaE", .Match = String.Empty, .Evaluator = Function(Match As System.Text.RegularExpressions.Match) ChrW(&H65C)}
         }
     Public Shared WarshOrthography As RuleTranslation() = { _
-      New RuleTranslation With {.Rule = "FehBeginMiddle", .Match = MakeUniRegEx(ArabicLetterFeh) + "(" + MakeRegMultiEx(Array.ConvertAll(GetRecitationCombiningSymbols(), Function(C As Char) MakeUniRegEx(C))) + ")*(?!(" + MakeRegMultiEx(Array.ConvertAll(GetRecitationConnectingFollowerSymbols(), Function(C As Char) MakeUniRegEx(C))) + "))", .Evaluator = Function(Match As System.Text.RegularExpressions.Match) ChrW(&H6A1)},
-      New RuleTranslation With {.Rule = "FehIsolatedEnd", .Match = MakeUniRegEx(ArabicLetterFeh) + "(" + MakeRegMultiEx(Array.ConvertAll(GetRecitationCombiningSymbols(), Function(C As Char) MakeUniRegEx(C))) + ")*(" + MakeRegMultiEx(Array.ConvertAll(GetRecitationConnectingFollowerSymbols(), Function(C As Char) MakeUniRegEx(C))) + ")", .Evaluator = Function(Match As System.Text.RegularExpressions.Match) ChrW(&H6A2)},
-      New RuleTranslation With {.Rule = "QafBeginMiddle", .Match = MakeUniRegEx(ArabicLetterQaf) + "(" + MakeRegMultiEx(Array.ConvertAll(GetRecitationCombiningSymbols(), Function(C As Char) MakeUniRegEx(C))) + ")*(?!(" + MakeRegMultiEx(Array.ConvertAll(GetRecitationConnectingFollowerSymbols(), Function(C As Char) MakeUniRegEx(C))) + "))", .Evaluator = Function(Match As System.Text.RegularExpressions.Match) ChrW(&H66F)},
-      New RuleTranslation With {.Rule = "QafIsolatedEnd", .Match = MakeUniRegEx(ArabicLetterQaf) + "(" + MakeRegMultiEx(Array.ConvertAll(GetRecitationCombiningSymbols(), Function(C As Char) MakeUniRegEx(C))) + ")*(" + MakeRegMultiEx(Array.ConvertAll(GetRecitationConnectingFollowerSymbols(), Function(C As Char) MakeUniRegEx(C))) + ")", .Evaluator = Function(Match As System.Text.RegularExpressions.Match) ChrW(&H6A7)},
+      New RuleTranslation With {.Rule = "FehBeginMiddle", .Match = MakeUniRegEx(ArabicLetterFeh) + "(" + MakeRegMultiEx(Array.ConvertAll(RecitationCombiningSymbols, Function(C As Char) MakeUniRegEx(C))) + ")*(?!(" + MakeRegMultiEx(Array.ConvertAll(RecitationConnectingFollowerSymbols, Function(C As Char) MakeUniRegEx(C))) + "))", .Evaluator = Function(Match As System.Text.RegularExpressions.Match) ChrW(&H6A1)},
+      New RuleTranslation With {.Rule = "FehIsolatedEnd", .Match = MakeUniRegEx(ArabicLetterFeh) + "(" + MakeRegMultiEx(Array.ConvertAll(RecitationCombiningSymbols, Function(C As Char) MakeUniRegEx(C))) + ")*(" + MakeRegMultiEx(Array.ConvertAll(RecitationConnectingFollowerSymbols, Function(C As Char) MakeUniRegEx(C))) + ")", .Evaluator = Function(Match As System.Text.RegularExpressions.Match) ChrW(&H6A2)},
+      New RuleTranslation With {.Rule = "QafBeginMiddle", .Match = MakeUniRegEx(ArabicLetterQaf) + "(" + MakeRegMultiEx(Array.ConvertAll(RecitationCombiningSymbols, Function(C As Char) MakeUniRegEx(C))) + ")*(?!(" + MakeRegMultiEx(Array.ConvertAll(RecitationConnectingFollowerSymbols, Function(C As Char) MakeUniRegEx(C))) + "))", .Evaluator = Function(Match As System.Text.RegularExpressions.Match) ChrW(&H66F)},
+      New RuleTranslation With {.Rule = "QafIsolatedEnd", .Match = MakeUniRegEx(ArabicLetterQaf) + "(" + MakeRegMultiEx(Array.ConvertAll(RecitationCombiningSymbols, Function(C As Char) MakeUniRegEx(C))) + ")*(" + MakeRegMultiEx(Array.ConvertAll(RecitationConnectingFollowerSymbols, Function(C As Char) MakeUniRegEx(C))) + ")", .Evaluator = Function(Match As System.Text.RegularExpressions.Match) ChrW(&H6A7)},
       New RuleTranslation With {.Rule = "Kaf", .Match = MakeUniRegEx(ArabicLetterKaf), .Evaluator = Function(Match As System.Text.RegularExpressions.Match) ChrW(&H6A9)},
-      New RuleTranslation With {.Rule = "NoonBeginMiddle", .Match = MakeUniRegEx(ArabicLetterNoon) + "(" + MakeRegMultiEx(Array.ConvertAll(GetRecitationCombiningSymbols(), Function(C As Char) MakeUniRegEx(C))) + ")*(?!(" + MakeRegMultiEx(Array.ConvertAll(GetRecitationConnectingFollowerSymbols(), Function(C As Char) MakeUniRegEx(C))) + "))", .Evaluator = Function(Match As System.Text.RegularExpressions.Match) ChrW(&H6BA)},
-      New RuleTranslation With {.Rule = "NoonIsolatedEnd", .Match = MakeUniRegEx(ArabicLetterNoon) + "(" + MakeRegMultiEx(Array.ConvertAll(GetRecitationCombiningSymbols(), Function(C As Char) MakeUniRegEx(C))) + ")*(" + MakeRegMultiEx(Array.ConvertAll(GetRecitationConnectingFollowerSymbols(), Function(C As Char) MakeUniRegEx(C))) + ")", .Evaluator = Function(Match As System.Text.RegularExpressions.Match) ChrW(&H646)},
+      New RuleTranslation With {.Rule = "NoonBeginMiddle", .Match = MakeUniRegEx(ArabicLetterNoon) + "(" + MakeRegMultiEx(Array.ConvertAll(RecitationCombiningSymbols, Function(C As Char) MakeUniRegEx(C))) + ")*(?!(" + MakeRegMultiEx(Array.ConvertAll(RecitationConnectingFollowerSymbols, Function(C As Char) MakeUniRegEx(C))) + "))", .Evaluator = Function(Match As System.Text.RegularExpressions.Match) ChrW(&H6BA)},
+      New RuleTranslation With {.Rule = "NoonIsolatedEnd", .Match = MakeUniRegEx(ArabicLetterNoon) + "(" + MakeRegMultiEx(Array.ConvertAll(RecitationCombiningSymbols, Function(C As Char) MakeUniRegEx(C))) + ")*(" + MakeRegMultiEx(Array.ConvertAll(RecitationConnectingFollowerSymbols, Function(C As Char) MakeUniRegEx(C))) + ")", .Evaluator = Function(Match As System.Text.RegularExpressions.Match) ChrW(&H646)},
       New RuleTranslation With {.Rule = "ImalaE", .Match = String.Empty, .Evaluator = Function(Match As System.Text.RegularExpressions.Match) ChrW(&H65C)},
       New RuleTranslation With {.Rule = "IIFinal", .Match = MakeUniRegEx(ArabicKasra) + MakeUniRegEx(ArabicLetterYeh) + "\b", .Evaluator = Function(Match As System.Text.RegularExpressions.Match) Match.Value.Chars(0) + ChrW(&H6D2)}
         }
@@ -2642,12 +2633,12 @@ Public Class Arabic
         Return "function findLetterBySymbol(chVal) { var iSubCount; for (iSubCount = 0; iSubCount < ArabicLetters.length; iSubCount++) { if (chVal === parseInt(ArabicLetters[iSubCount].Symbol, 10)) return iSubCount; for (var iShapeCount = 0; iShapeCount < ArabicLetters[iSubCount].Shaping.length; iShapeCount++) { if (chVal === parseInt(ArabicLetters[iSubCount].Shaping[iShapeCount], 10)) return iSubCount; } } return -1; }"
     End Function
     Public Shared Function IsDiacriticJS() As String
-        Return "function isDiacritic(index) { return (" + String.Join("||", Array.ConvertAll(Arabic.GetRecitationDiacritics(), Function(C As Char) "parseInt(ArabicLetters[index].Symbol, 10) === 0x" + Hex(AscW(C)))) + "); }" + _
-        "function isLetter(index) { return (" + String.Join("||", Array.ConvertAll(Arabic.GetRecitationLetters(), Function(C As Char) "parseInt(ArabicLetters[index].Symbol, 10) === 0x" + Hex(AscW(C)))) + "); }" + _
-        "function isLetterDiacritic(index) { return (" + String.Join("||", Array.ConvertAll(Arabic.GetRecitationLettersDiacritics(), Function(C As Char) "parseInt(ArabicLetters[index].Symbol, 10) === 0x" + Hex(AscW(C)))) + "); }" + _
-        "function isSpecialSymbol(index) { return (" + String.Join("||", Array.ConvertAll(Arabic.GetRecitationSpecialSymbols(), Function(C As Char) "parseInt(ArabicLetters[index].Symbol, 10) === 0x" + Hex(AscW(C)))) + "); }" + _
+        Return "function isDiacritic(index) { return (" + String.Join("||", Array.ConvertAll(Arabic.RecitationDiacritics, Function(C As Char) "parseInt(ArabicLetters[index].Symbol, 10) === 0x" + Hex(AscW(C)))) + "); }" + _
+        "function isLetter(index) { return (" + String.Join("||", Array.ConvertAll(Arabic.RecitationLetters, Function(C As Char) "parseInt(ArabicLetters[index].Symbol, 10) === 0x" + Hex(AscW(C)))) + "); }" + _
+        "function isLetterDiacritic(index) { return (" + String.Join("||", Array.ConvertAll(Arabic.RecitationLettersDiacritics, Function(C As Char) "parseInt(ArabicLetters[index].Symbol, 10) === 0x" + Hex(AscW(C)))) + "); }" + _
+        "function isSpecialSymbol(index) { return (" + String.Join("||", Array.ConvertAll(Arabic.RecitationSpecialSymbols, Function(C As Char) "parseInt(ArabicLetters[index].Symbol, 10) === 0x" + Hex(AscW(C)))) + "); }" + _
         "function isSymbol(index) { return (" + String.Join("||", Array.ConvertAll(Arabic.GetRecitationSymbols(), Function(A As Array) "parseInt(ArabicLetters[index].Symbol, 10) === 0x" + Hex(AscW(CachedData.IslamData.ArabicLetters(A(1)).Symbol)))) + "); }" + _
-        "function isCombiningSymbol(index) { return (" + String.Join("||", Array.ConvertAll(Arabic.GetRecitationCombiningSymbols(), Function(C As Char) "parseInt(ArabicLetters[index].Symbol, 10) === 0x" + Hex(AscW(C)))) + "); }"
+        "function isCombiningSymbol(index) { return (" + String.Join("||", Array.ConvertAll(Arabic.RecitationCombiningSymbols, Function(C As Char) "parseInt(ArabicLetters[index].Symbol, 10) === 0x" + Hex(AscW(C)))) + "); }"
     End Function
     Public Shared Function GetPlainTransliterateGenJS() As String
         Return FindLetterBySymbolJS() + _
@@ -4091,31 +4082,31 @@ Public Class TanzilReader
         Return CType(Output.ToArray(GetType(Array)), Array())
     End Function
     Public Shared Function GetQuranLetterPatterns() As String()
-        Dim RecSymbols As String = String.Join(String.Empty, Array.ConvertAll(Arabic.GetRecitationSpecialSymbols(), Function(C As Char) CStr(C)))
-        Dim LtrSymbols As String = String.Join(String.Empty, Array.ConvertAll(Arabic.GetRecitationLetters(), Function(C As Char) CStr(C)))
-        Dim DiaSymbols As String = String.Join(String.Empty, Array.ConvertAll(Arabic.GetRecitationDiacritics(), Function(C As Char) CStr(C)))
+        Dim RecSymbols As String = String.Join(String.Empty, Array.ConvertAll(Arabic.RecitationSpecialSymbols, Function(C As Char) CStr(C)))
+        Dim LtrSymbols As String = String.Join(String.Empty, Array.ConvertAll(Arabic.RecitationLetters, Function(C As Char) CStr(C)))
+        Dim DiaSymbols As String = String.Join(String.Empty, Array.ConvertAll(Arabic.RecitationDiacritics, Function(C As Char) CStr(C)))
         Dim StartWordMultiOnly As New Generic.Dictionary(Of String, String)
         Dim EndWordMultiOnly As New Generic.Dictionary(Of String, String)
         Dim MiddleWordMultiOnly As New Generic.Dictionary(Of String, String)
-        Dim StartWordOnly As String = String.Join(String.Empty, Array.ConvertAll(Arabic.GetRecitationLettersDiacritics(), Function(C As Char) CStr(C)))
-        Dim NotStartWord As String = String.Join(String.Empty, Array.ConvertAll(Arabic.GetRecitationLettersDiacritics(), Function(C As Char) CStr(C)))
-        Dim EndWordOnly As String = String.Join(String.Empty, Array.ConvertAll(Arabic.GetRecitationLettersDiacritics(), Function(C As Char) CStr(C)))
-        Dim NotEndWord As String = String.Join(String.Empty, Array.ConvertAll(Arabic.GetRecitationLettersDiacritics(), Function(C As Char) CStr(C)))
-        Dim EndWordOnlyNoDia As String = String.Join(String.Empty, Array.ConvertAll(Arabic.GetRecitationLetters(), Function(C As Char) CStr(C)))
-        Dim NotEndWordNoDia As String = String.Join(String.Empty, Array.ConvertAll(Arabic.GetRecitationLetters(), Function(C As Char) CStr(C)))
-        Dim MiddleWordOnlyNoDia As String = String.Join(String.Empty, Array.ConvertAll(Arabic.GetRecitationLetters(), Function(C As Char) CStr(C)))
-        Dim NotMiddleWordNoDia As String = String.Join(String.Empty, Array.ConvertAll(Arabic.GetRecitationLetters(), Function(C As Char) CStr(C)))
-        Dim MiddleWordOnly As String = String.Join(String.Empty, Array.ConvertAll(Arabic.GetRecitationLettersDiacritics(), Function(C As Char) CStr(C)))
-        Dim NotMiddleWord As String = String.Join(String.Empty, Array.ConvertAll(Arabic.GetRecitationLettersDiacritics(), Function(C As Char) CStr(C)))
-        Dim DiaStartWordOnly As String = String.Join(String.Empty, Array.ConvertAll(Arabic.GetRecitationDiacritics(), Function(C As Char) CStr(C)))
-        Dim DiaNotStartWord As String = String.Join(String.Empty, Array.ConvertAll(Arabic.GetRecitationDiacritics(), Function(C As Char) CStr(C)))
-        Dim DiaEndWordOnly As String = String.Join(String.Empty, Array.ConvertAll(Arabic.GetRecitationDiacritics(), Function(C As Char) CStr(C)))
-        Dim DiaNotEndWord As String = String.Join(String.Empty, Array.ConvertAll(Arabic.GetRecitationDiacritics(), Function(C As Char) CStr(C)))
-        Dim DiaMiddleWordOnly As String = String.Join(String.Empty, Array.ConvertAll(Arabic.GetRecitationDiacritics(), Function(C As Char) CStr(C)))
-        Dim DiaNotMiddleWord As String = String.Join(String.Empty, Array.ConvertAll(Arabic.GetRecitationDiacritics(), Function(C As Char) CStr(C)))
-        Dim Combos As String() = String.Join("|", Array.ConvertAll(Arabic.GetRecitationLettersDiacritics(), Function(C As Char) String.Join("|", Array.ConvertAll(Arabic.GetRecitationLettersDiacritics(), Function(Nxt As Char) C + Nxt)))).Split("|")
-        Dim DiaCombos As String() = String.Join("|", Array.ConvertAll(Arabic.GetRecitationDiacritics(), Function(C As Char) String.Join("|", Array.ConvertAll(Arabic.GetRecitationDiacritics(), Function(Nxt As Char) C + Nxt)))).Split("|")
-        Dim LetCombos As String() = String.Join("|", Array.ConvertAll(Arabic.GetRecitationLetters(), Function(C As Char) String.Join("|", Array.ConvertAll(Arabic.GetRecitationLetters(), Function(Nxt As Char) C + Nxt)))).Split("|")
+        Dim StartWordOnly As String = String.Join(String.Empty, Array.ConvertAll(Arabic.RecitationLettersDiacritics, Function(C As Char) CStr(C)))
+        Dim NotStartWord As String = String.Join(String.Empty, Array.ConvertAll(Arabic.RecitationLettersDiacritics, Function(C As Char) CStr(C)))
+        Dim EndWordOnly As String = String.Join(String.Empty, Array.ConvertAll(Arabic.RecitationLettersDiacritics, Function(C As Char) CStr(C)))
+        Dim NotEndWord As String = String.Join(String.Empty, Array.ConvertAll(Arabic.RecitationLettersDiacritics, Function(C As Char) CStr(C)))
+        Dim EndWordOnlyNoDia As String = String.Join(String.Empty, Array.ConvertAll(Arabic.RecitationLetters, Function(C As Char) CStr(C)))
+        Dim NotEndWordNoDia As String = String.Join(String.Empty, Array.ConvertAll(Arabic.RecitationLetters, Function(C As Char) CStr(C)))
+        Dim MiddleWordOnlyNoDia As String = String.Join(String.Empty, Array.ConvertAll(Arabic.RecitationLetters, Function(C As Char) CStr(C)))
+        Dim NotMiddleWordNoDia As String = String.Join(String.Empty, Array.ConvertAll(Arabic.RecitationLetters, Function(C As Char) CStr(C)))
+        Dim MiddleWordOnly As String = String.Join(String.Empty, Array.ConvertAll(Arabic.RecitationLettersDiacritics, Function(C As Char) CStr(C)))
+        Dim NotMiddleWord As String = String.Join(String.Empty, Array.ConvertAll(Arabic.RecitationLettersDiacritics, Function(C As Char) CStr(C)))
+        Dim DiaStartWordOnly As String = String.Join(String.Empty, Array.ConvertAll(Arabic.RecitationDiacritics, Function(C As Char) CStr(C)))
+        Dim DiaNotStartWord As String = String.Join(String.Empty, Array.ConvertAll(Arabic.RecitationDiacritics, Function(C As Char) CStr(C)))
+        Dim DiaEndWordOnly As String = String.Join(String.Empty, Array.ConvertAll(Arabic.RecitationDiacritics, Function(C As Char) CStr(C)))
+        Dim DiaNotEndWord As String = String.Join(String.Empty, Array.ConvertAll(Arabic.RecitationDiacritics, Function(C As Char) CStr(C)))
+        Dim DiaMiddleWordOnly As String = String.Join(String.Empty, Array.ConvertAll(Arabic.RecitationDiacritics, Function(C As Char) CStr(C)))
+        Dim DiaNotMiddleWord As String = String.Join(String.Empty, Array.ConvertAll(Arabic.RecitationDiacritics, Function(C As Char) CStr(C)))
+        Dim Combos As String() = String.Join("|", Array.ConvertAll(Arabic.RecitationLettersDiacritics, Function(C As Char) String.Join("|", Array.ConvertAll(Arabic.RecitationLettersDiacritics, Function(Nxt As Char) C + Nxt)))).Split("|")
+        Dim DiaCombos As String() = String.Join("|", Array.ConvertAll(Arabic.RecitationDiacritics, Function(C As Char) String.Join("|", Array.ConvertAll(Arabic.RecitationDiacritics, Function(Nxt As Char) C + Nxt)))).Split("|")
+        Dim LetCombos As String() = String.Join("|", Array.ConvertAll(Arabic.RecitationLetters, Function(C As Char) String.Join("|", Array.ConvertAll(Arabic.RecitationLetters, Function(Nxt As Char) C + Nxt)))).Split("|")
         For Each Key As String In CachedData.FormDictionary.Keys
             Dim Str As String = New String(Array.FindAll(Key.ToCharArray(), Function(Ch As Char) Not RecSymbols.Contains(CStr(Ch))))
             For Count = 1 To Str.Length - 2
