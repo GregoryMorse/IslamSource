@@ -4356,6 +4356,7 @@ Public Class TanzilReader
         AlDari = 13
     End Enum
     Shared QuranFileNames As String() = {"quran-uthmani.xml", "quran-uthmani-min.xml", "quran-simple.xml", "quran-simple-min.xml", "quran-simple-enhanced.xml", "quran-simple-clean.xml", "quran-buckwalter-uthmani.xml", "quran-buckwalter-uthmani-min.xml", "quran-buckwlater-simple.xml", "quran-buckwalter-simple-min.xml", "quran-buckwalter-simple-enhanced.xml", "quran-buckwalter-simple-clean.xml", "quran-warsh.xml", "quran-alduri.xml"}
+    Shared QuranScriptNames As String() = {"Uthmani", "Uthmani Minimal", "Simple", "Simple Minimal", "Simple Enhanced", "Simple Clean"}
     Public Shared Sub CheckNotablePatterns()
         ComparePatterns(QuranScripts.SimpleEnhanced, QuranScripts.SimpleMin, Arabic.SimpleMinAlefLams)
         ComparePatterns(QuranScripts.SimpleEnhanced, QuranScripts.SimpleMin, Arabic.SimpleMinAlefNotLams)
@@ -4449,6 +4450,7 @@ Public Class TanzilReader
             UseBuckwalter = True
             ScriptType = QuranScripts.SimpleClean
         End If
+        Doc.DocumentElement.PreviousSibling.Value.Replace("Uthmani", QuranScriptNames(ScriptType))
         Verses = TanzilReader.GetQuranText(CachedData.XMLDocMain, -1, -1, -1, -1)
         For Count As Integer = 0 To Verses.Count - 1
             Dim ChapterNode As System.Xml.XmlNode = GetTextChapter(Doc, Count + 1)
