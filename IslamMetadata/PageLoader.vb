@@ -1609,12 +1609,11 @@ Public Class Arabic
         Public Type As String
         Public Children As RuleMetadata()
     End Structure
-    Delegate Function RuleMetadataEvaluator(Match As System.Text.RegularExpressions.Match) As RuleMetadata()
     Structure RuleMetadataTranslation
         Public Rule As String
         Public RuleName As String
         Public Match As String
-        Public Evaluator As RuleMetadataEvaluator
+        Public Evaluator As String()
     End Structure
     Structure RuleTranslation
         Public Rule As String
@@ -1916,173 +1915,62 @@ Public Class Arabic
         New RuleTranslation With {.RuleName = "EmphaticPronounciation", .Match = "emphasis", .Evaluator = "$&", .RuleFunc = RuleFuncs.eUpperCase}, _
         New RuleTranslation With {.RuleName = "UnrestLetters", .Match = "bounce", .Evaluator = "$&-$&"} _
         }
-        Public Shared RulesOfRecitationRegEx As RuleMetadataTranslation() = { _
-                New RuleMetadataTranslation With {.RuleName = "Stopping", .Match = "(" + MakeUniRegEx(ArabicSmallHighMeemIsolatedForm) + "|" + MakeUniRegEx(ArabicStartOfRubElHizb) + "|" + MakeUniRegEx(ArabicEndOfAyah) + ")\s*\b",
-                    .Evaluator = Function(Match As System.Text.RegularExpressions.Match)
-                                     If Match.Groups(1).Value = ArabicSmallHighMeemIsolatedForm Then
-                                         Return New RuleMetadata() {New RuleMetadata(Match.Groups(1).Index, Match.Groups(1).Length, "compulsorystop")}
-                                     ElseIf Match.Groups(1).Value = ArabicStartOfRubElHizb Then
-                                         Return New RuleMetadata() {New RuleMetadata(Match.Groups(1).Index, Match.Groups(1).Length, "endofversestop")}
-                                     ElseIf Match.Groups(1).Value = ArabicEndOfAyah Then
-                                         Return New RuleMetadata() {New RuleMetadata(Match.Groups(1).Index, Match.Groups(1).Length, "prostration")}
-                                     Else
-                                         Return Nothing
-                                     End If
-                                 End Function}, _
-                New RuleMetadataTranslation With {.RuleName = "Stopping", .Match = MakeUniRegEx(ArabicSmallHighJeem) + "|" + MakeUniRegEx(ArabicSmallHighLamAlef) + "|" + MakeUniRegEx(ArabicSmallHighThreeDots) + "\w*" + MakeUniRegEx(ArabicSmallHighThreeDots) + "|" + MakeUniRegEx(ArabicSmallHighLigatureQafWithLamWithAlefMaksura) + "|" + MakeUniRegEx(ArabicSmallHighLigatureSadWithLamWithAlefMaksura) + "|" + MakeUniRegEx(ArabicSmallHighSeen),
-                    .Evaluator = Function(Match As System.Text.RegularExpressions.Match)
-                                     If Match.Groups(1).Value = ArabicSmallHighJeem Then
-                                         Return New RuleMetadata() {New RuleMetadata(Match.Index, Match.Length, "canstoporcontinue")}
-                                     ElseIf Match.Groups(1).Value = ArabicSmallHighLamAlef Then
-                                         Return New RuleMetadata() {New RuleMetadata(Match.Index, Match.Length, "betternottostop")}
-                                     ElseIf Match.Groups(1).Value.StartsWith(ArabicSmallHighThreeDots) Then
-                                         Return New RuleMetadata() {New RuleMetadata(Match.Index + Match.Length - 1, Match.Length, "stopatsecondnotfirst"), New RuleMetadata(Match.Index, 1, "stopatfirstnotsecond")}
-                                     ElseIf Match.Groups(1).Value = ArabicSmallHighLigatureQafWithLamWithAlefMaksura Then
-                                         Return New RuleMetadata() {New RuleMetadata(Match.Index, Match.Length, "bettertostopbutpermissibletocontinue")}
-                                     ElseIf Match.Groups(1).Value = ArabicSmallHighLigatureSadWithLamWithAlefMaksura Then
-                                         Return New RuleMetadata() {New RuleMetadata(Match.Index, Match.Length, "bettertocontinuebutpermissibletostop")}
-                                     ElseIf Match.Groups(1).Value = ArabicSmallHighSeen Then
-                                         Return New RuleMetadata() {New RuleMetadata(Match.Index, Match.Length, "subtlestopwithoutbreath")}
-                                     Else
-                                         Return Nothing
-                                     End If
-                                 End Function}, _
-                New RuleMetadataTranslation With {.RuleName = "Stopping", .Match = "(" + MakeRegMultiEx(Array.ConvertAll(ArabicFathaDammaKasra, Function(Str As String) MakeUniRegEx(Str))) + "|" + MakeUniRegEx(ArabicKasratan) + "|" + MakeUniRegEx(ArabicDammatan) + ")\s*$",
-                    .Evaluator = Function(Match As System.Text.RegularExpressions.Match)
-                                     Return New RuleMetadata() {New RuleMetadata(Match.Groups(1).Index, Match.Groups(1).Length, "empty")}
-                                 End Function}, _
-                New RuleMetadataTranslation With {.RuleName = "Stopping", .Match = MakeUniRegEx(ArabicLetterTehMarbuta) + "(" + MakeRegMultiEx(Array.ConvertAll(ArabicFathaDammaKasra, Function(Str As String) MakeUniRegEx(Str))) + "|" + MakeRegMultiEx(Array.ConvertAll(ArabicTanweens, Function(Str As String) MakeUniRegEx(Str))) + ")",
-                    .Evaluator = Function(Match As System.Text.RegularExpressions.Match)
-                                     Return New RuleMetadata() {New RuleMetadata(Match.Index, 1, "helperheh")}
-                                 End Function}, _
-                New RuleMetadataTranslation With {.RuleName = "SmallBounce", .Match = "(" + MakeRegMultiEx(Array.ConvertAll(ArabicFathaDammaKasra, Function(Str As String) MakeUniRegEx(Str))) + ")(" + MakeUniRegEx(ArabicLetterDal) + "|" + MakeUniRegEx(ArabicLetterBeh) + "|" + MakeUniRegEx(ArabicLetterQaf) + "|" + MakeUniRegEx(ArabicLetterTah) + "|" + MakeUniRegEx(ArabicLetterJeem) + ")" + MakeUniRegEx(ArabicSukun) + "\B", _
-                    .Evaluator = Function(Match As System.Text.RegularExpressions.Match)
-                                     Return New RuleMetadata() {New RuleMetadata(Match.Groups(2).Index, Match.Groups(2).Length, "bounce")}
-                                 End Function}, _
-                New RuleMetadataTranslation With {.RuleName = "ModerateBounce", .Match = "(" + MakeUniRegEx(ArabicLetterDal) + "|" + MakeUniRegEx(ArabicLetterBeh) + "|" + MakeUniRegEx(ArabicLetterQaf) + "|" + MakeUniRegEx(ArabicLetterTah) + "|" + MakeUniRegEx(ArabicLetterJeem) + ")" + "(" + MakeRegMultiEx(Array.ConvertAll(ArabicTanweens, Function(Str As String) MakeUniRegEx(Str))) + "|" + MakeRegMultiEx(Array.ConvertAll(ArabicFathaDammaKasra, Function(Str As String) MakeUniRegEx(Str))) + ")\s*$", _
-                    .Evaluator = Function(Match As System.Text.RegularExpressions.Match)
-                                     Return New RuleMetadata() {New RuleMetadata(Match.Groups(1).Index, Match.Groups(1).Length, "bounce")}
-                                 End Function}, _
-                New RuleMetadataTranslation With {.RuleName = "GreatBounce", .Match = "(" + MakeUniRegEx(ArabicLetterDal) + "|" + MakeUniRegEx(ArabicLetterBeh) + "|" + MakeUniRegEx(ArabicLetterQaf) + "|" + MakeUniRegEx(ArabicLetterTah) + "|" + MakeUniRegEx(ArabicLetterJeem) + ")" + MakeUniRegEx(ArabicShadda) + MakeUniRegEx(ArabicSukun) + "\s*$", _
-                    .Evaluator = Function(Match As System.Text.RegularExpressions.Match)
-                                     Return New RuleMetadata() {New RuleMetadata(Match.Groups(1).Index, Match.Groups(1).Length, "bounce")}
-                                 End Function}, _
-                New RuleMetadataTranslation With {.RuleName = "NasalizeCharacterDoubled", .Match = MakeUniRegEx(ArabicLetterNoon) + MakeUniRegEx(ArabicShadda),
-                    .Evaluator = Function(Match As System.Text.RegularExpressions.Match)
-                                     Return New RuleMetadata() {New RuleMetadata(Match.Index, Match.Length, "nasalize normalprolong")}
-                                 End Function}, _
-                New RuleMetadataTranslation With {.RuleName = "VowellessNoonClear", .Match = "(" + MakeUniRegEx(ArabicLetterNoon) + MakeUniRegEx(ArabicSukun) + "|(" + MakeUniRegEx(ArabicLetterNoon) + "|" + MakeRegMultiEx(Array.ConvertAll(ArabicTanweens, Function(Str As String) MakeUniRegEx(Str))) + ")\b\s*)(" + MakeUniRegEx(ArabicLetterAin) + "|" + MakeUniRegEx(ArabicLetterGhain) + "|" + MakeUniRegEx(ArabicLetterJeem) + "|" + MakeUniRegEx(ArabicLetterHah) + "|" + MakeUniRegEx(ArabicLetterHeh) + "|" + MakeUniRegEx(ArabicLetterHamza) + ")",
-                    .Evaluator = Function(Match As System.Text.RegularExpressions.Match)
-                                     Return Nothing
-                                 End Function}, _
-                New RuleMetadataTranslation With {.RuleName = "VowellessNoonCovered", .Match = "(" + MakeUniRegEx(ArabicLetterNoon) + MakeUniRegEx(ArabicSukun) + MakeUniRegEx(ArabicSmallHighMeemIsolatedForm) + "|(" + MakeUniRegEx(ArabicLetterNoon) + MakeUniRegEx(ArabicSmallHighMeemIsolatedForm) + "|" + MakeUniRegEx(ArabicFathatan) + MakeUniRegEx(ArabicSmallHighMeemIsolatedForm) + "|" + MakeUniRegEx(ArabicDammatan) + MakeUniRegEx(ArabicSmallHighMeemIsolatedForm) + "|" + MakeUniRegEx(ArabicKasratan) + MakeUniRegEx(ArabicSmallLowMeem) + ")\b\s*)(" + MakeUniRegEx(ArabicLetterBeh) + MakeUniRegEx(ArabicFatha) + "|" + MakeUniRegEx(ArabicLetterBeh) + MakeUniRegEx(ArabicDamma) + "|" + MakeUniRegEx(ArabicLetterBeh) + MakeUniRegEx(ArabicKasra) + ")",
-                    .Evaluator = Function(Match As System.Text.RegularExpressions.Match)
-                                     If Match.Groups(1).Value = ArabicLetterNoon + ArabicSukun + ArabicSmallHighMeemIsolatedForm Then
-                                         Return New RuleMetadata() {New RuleMetadata(Match.Groups(1).Length - 1 + Match.Groups(1).Index, 1, "nasalize"), New RuleMetadata(Match.Index, 2, "empty")}
-                                     ElseIf Match.Groups(1).Value.StartsWith(ArabicLetterNoon + ArabicSmallHighMeemIsolatedForm) Then
-                                         Return New RuleMetadata() {New RuleMetadata(1 + Match.Groups(1).Index, 1, "nasalize"), New RuleMetadata(Match.Index, 1, "empty")}
-                                     Else
-                                         Return New RuleMetadata() {New RuleMetadata(1 + Match.Groups(1).Index, 1, "nasalize"), New RuleMetadata(Match.Index, 1, "dividetanween(,empty)")}
-                                     End If
-                                 End Function}, _
-                New RuleMetadataTranslation With {.RuleName = "VowellessNoonAssimilatingNasalization", .Match = "(" + MakeUniRegEx(ArabicLetterNoon) + MakeUniRegEx(ArabicSukun) + "|(" + MakeUniRegEx(ArabicLetterNoon) + "|" + MakeRegMultiEx(Array.ConvertAll(ArabicTanweens, Function(Str As String) MakeUniRegEx(Str))) + ")\b\s*)(" + MakeUniRegEx(ArabicLetterNoon) + "|" + MakeUniRegEx(ArabicLetterWaw) + "|" + MakeUniRegEx(ArabicLetterMeem) + "|" + MakeUniRegEx(ArabicLetterYeh) + ")",
-                    .Evaluator = Function(Match As System.Text.RegularExpressions.Match)
-                                     If Match.Groups(1).Value = ArabicLetterNoon + ArabicSukun Then
-                                         Return New RuleMetadata() {New RuleMetadata(Match.Groups(2).Index, Match.Groups(2).Length, "nasalize normalprolong assimilator"), New RuleMetadata(Match.Index, 2, "assimilate")}
-                                     ElseIf Match.Groups(1).Value.StartsWith(ArabicLetterNoon) Then
-                                         Return New RuleMetadata() {New RuleMetadata(Match.Groups(2).Index, Match.Groups(2).Length, "nasalize normalprolong assimilator"), New RuleMetadata(Match.Index, 1, "assimilate")}
-                                     Else
-                                         Return New RuleMetadata() {New RuleMetadata(Match.Groups(2).Index, Match.Groups(2).Length, "nasalize normalprolong assimilator"), New RuleMetadata(Match.Index, 1, "dividetanween(,assimilate)")}
-                                     End If
-                                 End Function}, _
-                New RuleMetadataTranslation With {.RuleName = "VowellessNoonAssimilating", .Match = "(" + MakeUniRegEx(ArabicLetterNoon) + MakeUniRegEx(ArabicSukun) + "|(" + MakeUniRegEx(ArabicLetterNoon) + "|" + MakeRegMultiEx(Array.ConvertAll(ArabicTanweens, Function(Str As String) MakeUniRegEx(Str))) + ")\b\s*)(" + MakeUniRegEx(ArabicLetterLam) + "|" + MakeUniRegEx(ArabicLetterReh) + ")",
-                    .Evaluator = Function(Match As System.Text.RegularExpressions.Match)
-                                     If Match.Groups(1).Value = ArabicLetterNoon + ArabicSukun Then
-                                         Return New RuleMetadata() {New RuleMetadata(Match.Groups(2).Index, Match.Groups(2).Length, "assimilator"), New RuleMetadata(Match.Index, 2, "assimilate")}
-                                     ElseIf Match.Groups(1).Value.StartsWith(ArabicLetterNoon) Then
-                                         Return New RuleMetadata() {New RuleMetadata(Match.Groups(2).Index, Match.Groups(2).Length, "assimilator"), New RuleMetadata(Match.Index, 1, "assimilate")}
-                                     Else
-                                         Return New RuleMetadata() {New RuleMetadata(Match.Groups(2).Index, Match.Groups(2).Length, "assimilator"), New RuleMetadata(Match.Index, 1, "dividetanween(,assimilate)")}
-                                     End If
-                                 End Function}, _
-                New RuleMetadataTranslation With {.RuleName = "VowellessNoonHideHeaviness", .Match = "(" + MakeUniRegEx(ArabicLetterNoon) + MakeUniRegEx(ArabicSukun) + "|(" + MakeUniRegEx(ArabicLetterNoon) + "|" + MakeRegMultiEx(Array.ConvertAll(ArabicTanweens, Function(Str As String) MakeUniRegEx(Str))) + ")\b\s*)(" + MakeUniRegEx(ArabicLetterSad) + "|" + MakeUniRegEx(ArabicLetterDad) + "|" + MakeUniRegEx(ArabicLetterTah) + "|" + MakeUniRegEx(ArabicLetterZah) + "|" + MakeUniRegEx(ArabicLetterQaf) + ")",
-                    .Evaluator = Function(Match As System.Text.RegularExpressions.Match)
-                                     If Match.Groups(1).Value = ArabicLetterNoon + ArabicSukun Then
-                                         Return New RuleMetadata() {New RuleMetadata(Match.Index, 2, "nasalize normalprolong")}
-                                     ElseIf Match.Groups(1).Value.StartsWith(ArabicLetterNoon) Then
-                                         Return New RuleMetadata() {New RuleMetadata(Match.Index, 1, "nasalize normalprolong")}
-                                     Else
-                                         Return New RuleMetadata() {New RuleMetadata(Match.Index, 1, "dividetanween(,normalprolong nasalize)")}
-                                     End If
-                                 End Function}, _
-                New RuleMetadataTranslation With {.RuleName = "VowellessNoonHideLightness", .Match = "(" + MakeUniRegEx(ArabicLetterNoon) + MakeUniRegEx(ArabicSukun) + "|(" + MakeUniRegEx(ArabicLetterNoon) + "|" + MakeRegMultiEx(Array.ConvertAll(ArabicTanweens, Function(Str As String) MakeUniRegEx(Str))) + ")\b\s*)(" + MakeUniRegEx(ArabicLetterTeh) + "|" + MakeUniRegEx(ArabicLetterTheh) + "|" + MakeUniRegEx(ArabicLetterJeem) + "|" + MakeUniRegEx(ArabicLetterDal) + "|" + MakeUniRegEx(ArabicLetterThal) + "|" + MakeUniRegEx(ArabicLetterZain) + "|" + MakeUniRegEx(ArabicLetterSeen) + "|" + MakeUniRegEx(ArabicLetterSheen) + "|" + MakeUniRegEx(ArabicLetterFeh) + "|" + MakeUniRegEx(ArabicLetterKaf) + ")",
-                    .Evaluator = Function(Match As System.Text.RegularExpressions.Match)
-                                     If Match.Groups(1).Value = ArabicLetterNoon + ArabicSukun Then
-                                         Return New RuleMetadata() {New RuleMetadata(Match.Index, 2, "nasalize normalprolong")}
-                                     ElseIf Match.Groups(1).Value.StartsWith(ArabicLetterNoon) Then
-                                         Return New RuleMetadata() {New RuleMetadata(Match.Index, 1, "nasalize normalprolong")}
-                                     Else
-                                         Return New RuleMetadata() {New RuleMetadata(Match.Index, 1, "dividetanween(,normalprolong nasalize)")}
-                                     End If
-                                 End Function}, _
-                New RuleMetadataTranslation With {.RuleName = "CharacterDoubled", .Match = MakeUniRegEx(ArabicLetterMeem) + MakeUniRegEx(ArabicShadda),
-                    .Evaluator = Function(Match As System.Text.RegularExpressions.Match)
-                                     Return New RuleMetadata() {New RuleMetadata(Match.Index, Match.Length, "nasalize normalprolong")}
-                                 End Function}, _
-                New RuleMetadataTranslation With {.RuleName = "VowellessMeemHide", .Match = "(" + MakeUniRegEx(ArabicLetterMeem) + MakeUniRegEx(ArabicSukun) + "|" + MakeUniRegEx(ArabicLetterMeem) + "\b\s*)(" + MakeUniRegEx(ArabicLetterBeh) + MakeUniRegEx(ArabicFatha) + "|" + MakeUniRegEx(ArabicLetterBeh) + MakeUniRegEx(ArabicDamma) + "|" + MakeUniRegEx(ArabicLetterBeh) + MakeUniRegEx(ArabicKasra) + ")",
-                    .Evaluator = Function(Match As System.Text.RegularExpressions.Match)
-                                     If Match.Groups(1).Value = ArabicLetterMeem + ArabicSukun Then
-                                         Return New RuleMetadata() {New RuleMetadata(Match.Index, 2, "nasalize normalprolong")}
-                                     Else
-                                         Return New RuleMetadata() {New RuleMetadata(Match.Index, 1, "nasalize normalprolong")}
-                                     End If
-                                     Return New RuleMetadata() {New RuleMetadata(Match.Groups(2).Index, Match.Groups(2).Length, "nasalize assimilator"), New RuleMetadata(Match.Groups(1).Index, Match.Groups(1).Length, "assimilate")}
-                                 End Function}, _
-                New RuleMetadataTranslation With {.RuleName = "VowellessMeemAssimilating", .Match = "(" + MakeUniRegEx(ArabicLetterMeem) + MakeUniRegEx(ArabicSukun) + "|" + MakeUniRegEx(ArabicLetterMeem) + "\b\s*)(" + MakeUniRegEx(ArabicLetterMeem) + MakeUniRegEx(ArabicFatha) + "|" + MakeUniRegEx(ArabicLetterMeem) + MakeUniRegEx(ArabicDamma) + "|" + MakeUniRegEx(ArabicLetterMeem) + MakeUniRegEx(ArabicKasra) + ")",
-                    .Evaluator = Function(Match As System.Text.RegularExpressions.Match)
-                                     If Match.Groups(1).Value = ArabicLetterMeem + ArabicSukun Then
-                                         Return New RuleMetadata() {New RuleMetadata(Match.Groups(2).Index, Match.Groups(2).Length, "nasalize normalprolong assimilator"), New RuleMetadata(Match.Index, 2, "assimilate")}
-                                     Else
-                                         Return New RuleMetadata() {New RuleMetadata(Match.Groups(2).Index, Match.Groups(2).Length, "nasalize normalprolong assimilator"), New RuleMetadata(Match.Index, 1, "assimilate")}
-                                     End If
-                                 End Function}, _
-                New RuleMetadataTranslation With {.RuleName = "VowellessMeemClear", .Match = "(" + MakeUniRegEx(ArabicLetterMeem) + MakeUniRegEx(ArabicSukun) + "|" + MakeUniRegEx(ArabicLetterMeem) + "\b\s*)(" + MakeUniRegEx(ArabicLetterTeh) + "|" + MakeUniRegEx(ArabicLetterTheh) + "|" + MakeUniRegEx(ArabicLetterJeem) + "|" + MakeUniRegEx(ArabicLetterHah) + "|" + MakeUniRegEx(ArabicLetterKhah) + "|" + MakeUniRegEx(ArabicLetterDal) + "|" + MakeUniRegEx(ArabicLetterThal) + "|" + MakeUniRegEx(ArabicLetterReh) + "|" + MakeUniRegEx(ArabicLetterZain) + "|" + MakeUniRegEx(ArabicLetterSeen) + "|" + MakeUniRegEx(ArabicLetterSheen) + "|" + MakeUniRegEx(ArabicLetterSad) + "|" + MakeUniRegEx(ArabicLetterDad) + "|" + MakeUniRegEx(ArabicLetterTah) + "|" + MakeUniRegEx(ArabicLetterZah) + "|" + MakeUniRegEx(ArabicLetterAin) + "|" + MakeUniRegEx(ArabicLetterGhain) + "|" + MakeUniRegEx(ArabicLetterQaf) + "|" + MakeUniRegEx(ArabicLetterKaf) + "|" + MakeUniRegEx(ArabicLetterLam) + "|" + MakeUniRegEx(ArabicLetterNoon) + "|" + MakeUniRegEx(ArabicLetterHamza) + "|((" + MakeUniRegEx(ArabicSukun) + "|" + MakeUniRegEx(ArabicFatha) + ")(" + MakeUniRegEx(ArabicLetterYeh) + "))" + ")(" + MakeRegMultiEx(Array.ConvertAll(ArabicFathaDammaKasra, Function(Str As String) MakeUniRegEx(Str))) + ")",
-                    .Evaluator = Function(Match As System.Text.RegularExpressions.Match)
-                                     Return Nothing
-                                 End Function}, _
-                New RuleMetadataTranslation With {.RuleName = "VowellessMeemClearGreater", .Match = "(" + MakeUniRegEx(ArabicLetterMeem) + MakeUniRegEx(ArabicSukun) + "|" + MakeUniRegEx(ArabicLetterMeem) + "\b\s*)(" + MakeUniRegEx(ArabicLetterFeh) + "|((" + MakeUniRegEx(ArabicSukun) + "|" + MakeUniRegEx(ArabicFatha) + ")(" + MakeUniRegEx(ArabicLetterWaw) + "))" + ")(" + MakeRegMultiEx(Array.ConvertAll(ArabicFathaDammaKasra, Function(Str As String) MakeUniRegEx(Str))) + ")",
-                    .Evaluator = Function(Match As System.Text.RegularExpressions.Match)
-                                     Return Nothing
-                                 End Function}, _
-                New RuleMetadataTranslation With {.RuleName = "EmptyHamza", .Match = "^\s*(" + MakeUniRegEx(ArabicLetterAlefWasla) + ")" + MakeUniRegEx(ArabicLetterLam) + "((" + MakeRegMultiEx(Array.ConvertAll(ArabicSunLetters, Function(Str As String) MakeUniRegEx(Str))) + ")" + MakeUniRegEx(ArabicShadda) + "|(" + MakeRegMultiEx(Array.ConvertAll(ArabicMoonLetters, Function(Str As String) MakeUniRegEx(Str))) + "))",
-                    .Evaluator = Function(Match As System.Text.RegularExpressions.Match)
-                                     Return New RuleMetadata() {New RuleMetadata(Match.Groups(1).Index, Match.Groups(1).Length, "helperfatha")}
-                                 End Function}, _
-                New RuleMetadataTranslation With {.RuleName = "EmptyHamza", .Match = "^\s*(" + MakeUniRegEx(ArabicLetterAlefWasla) + "(" + MakeRegMultiEx(Array.ConvertAll(ArabicLetters, Function(Str As String) MakeUniRegEx(Str))) + ")" + "(" + MakeRegMultiEx(Array.ConvertAll(ArabicFathaDammaKasra, Function(Str As String) MakeUniRegEx(Str))) + ")?" + "(" + MakeRegMultiEx(Array.ConvertAll(ArabicLetters, Function(Str As String) MakeUniRegEx(Str))) + ")(" + MakeUniRegEx(ArabicFatha) + "|" + MakeUniRegEx(ArabicKasra) + ")|" + MakeRegMultiEx(Array.ConvertAll(ArabicWaslKasraExceptions, Function(Str As String) MakeUniRegEx(TransliterateFromBuckwalter(Str)))) + ")",
-                    .Evaluator = Function(Match As System.Text.RegularExpressions.Match)
-                                     Return New RuleMetadata() {New RuleMetadata(Match.Groups(1).Index, 1, "helperkasra")}
-                                 End Function}, _
-                New RuleMetadataTranslation With {.RuleName = "EmptyHamza", .Match = "^\s*(" + MakeUniRegEx(ArabicLetterAlefWasla) + ")(" + MakeRegMultiEx(Array.ConvertAll(ArabicLetters, Function(Str As String) MakeUniRegEx(Str))) + ")" + "(" + MakeRegMultiEx(Array.ConvertAll(ArabicFathaDammaKasra, Function(Str As String) MakeUniRegEx(Str))) + ")?" + "(" + MakeRegMultiEx(Array.ConvertAll(ArabicLetters, Function(Str As String) MakeUniRegEx(Str))) + ")" + MakeUniRegEx(ArabicDamma),
-                    .Evaluator = Function(Match As System.Text.RegularExpressions.Match)
-                                     Return New RuleMetadata() {New RuleMetadata(Match.Groups(1).Index, Match.Groups(1).Length, "helperdamma")}
-                                 End Function}, _
-                New RuleMetadataTranslation With {.RuleName = "EmptyHamza", .Match = "\w+\s*(" + MakeUniRegEx(ArabicLetterAlefWasla) + ")",
-                    .Evaluator = Function(Match As System.Text.RegularExpressions.Match)
-                                     Return New RuleMetadata() {New RuleMetadata(Match.Groups(1).Index, Match.Groups(1).Length, "empty")}
-                                 End Function}, _
-                New RuleMetadataTranslation With {.RuleName = "AssimilateLaamSunLetter", .Match = "(^\s*|\b)(" + MakeUniRegEx(ArabicLetterWaw) + MakeUniRegEx(ArabicFatha) + "|" + MakeUniRegEx(ArabicLetterBeh) + MakeUniRegEx(ArabicKasra) + "|" + MakeUniRegEx(ArabicLetterTeh) + MakeUniRegEx(ArabicFatha) + "|" + MakeUniRegEx(ArabicLetterKaf) + MakeUniRegEx(ArabicFatha) + "|" + MakeUniRegEx(ArabicLetterLam) + MakeUniRegEx(ArabicKasra) + ")?(" + MakeUniRegEx(ArabicLetterAlefWasla) + MakeUniRegEx(ArabicLetterLam) + ")(" + MakeRegMultiEx(Array.ConvertAll(ArabicSunLetters, Function(Str As String) MakeUniRegEx(Str))) + ")" + MakeUniRegEx(ArabicShadda),
-                    .Evaluator = Function(Match As System.Text.RegularExpressions.Match)
-                                     Return New RuleMetadata() {New RuleMetadata(Match.Groups(4).Index, Match.Groups(4).Length, "assimilator"), New RuleMetadata(Match.Groups(3).Index, 2, "assimilate")}
-                                 End Function}, _
-                New RuleMetadataTranslation With {.RuleName = "ClearLaamMoonLetter", .Match = "(^\s*|\b)(" + MakeUniRegEx(ArabicLetterWaw) + MakeUniRegEx(ArabicFatha) + "|" + MakeUniRegEx(ArabicLetterBeh) + MakeUniRegEx(ArabicKasra) + "|" + MakeUniRegEx(ArabicLetterTeh) + MakeUniRegEx(ArabicFatha) + "|" + MakeUniRegEx(ArabicLetterKaf) + MakeUniRegEx(ArabicFatha) + "|" + MakeUniRegEx(ArabicLetterLam) + MakeUniRegEx(ArabicKasra) + ")?(" + MakeUniRegEx(ArabicLetterAlefWasla) + MakeUniRegEx(ArabicLetterLam) + ")(" + MakeRegMultiEx(Array.ConvertAll(ArabicMoonLetters, Function(Str As String) MakeUniRegEx(Str))) + ")" + MakeUniRegEx(ArabicShadda),
-                    .Evaluator = Function(Match As System.Text.RegularExpressions.Match)
-                                     Return New RuleMetadata() {New RuleMetadata(Match.Groups(3).Index + 1, 1, "assimilator"), New RuleMetadata(Match.Groups(3).Index, 1, "assimilate")}
-                                 End Function}, _
-                New RuleMetadataTranslation With {.RuleName = "Sukun", .Match = MakeUniRegEx(ArabicSukun), _
-                    .Evaluator = Function(Match As System.Text.RegularExpressions.Match) New RuleMetadata() {New RuleMetadata(Match.Index, Match.Length, "empty")}}, _
-                New RuleMetadataTranslation With {.RuleName = "AlefMaksuraDaggerAlef", .Match = MakeUniRegEx(ArabicLetterAlefMaksura) + MakeUniRegEx(ArabicLetterSuperscriptAlef), _
-                    .Evaluator = Function(Match As System.Text.RegularExpressions.Match) New RuleMetadata() {New RuleMetadata(Match.Index, 1, "helperfatha")}} _
-            }
+    Public Shared RulesOfRecitationRegEx As RuleMetadataTranslation() = { _
+            New RuleMetadataTranslation With {.RuleName = "Stopping", .Match = "(?:(" + MakeUniRegEx(ArabicSmallHighMeemIsolatedForm) + ")|(" + MakeUniRegEx(ArabicStartOfRubElHizb) + ")|(" + MakeUniRegEx(ArabicEndOfAyah) + ")|(" + MakeUniRegEx(ArabicPlaceOfSajdah) + "))(?=\s*\b)",
+                .Evaluator = New String() {Nothing, "compulsorystop", "startofhizbstop", "endofversestop", "prostration"}}, _
+            New RuleMetadataTranslation With {.RuleName = "Stopping", .Match = "(" + MakeUniRegEx(ArabicSmallHighJeem) + ")|(" + MakeUniRegEx(ArabicSmallHighLamAlef) + ")|(" + MakeUniRegEx(ArabicSmallHighThreeDots) + ")(?:\w*)(" + MakeUniRegEx(ArabicSmallHighThreeDots) + ")|(" + MakeUniRegEx(ArabicSmallHighLigatureQafWithLamWithAlefMaksura) + ")|(" + MakeUniRegEx(ArabicSmallHighLigatureSadWithLamWithAlefMaksura) + ")|(" + MakeUniRegEx(ArabicSmallHighSeen) + ")",
+                .Evaluator = New String() {"canstoporcontinue", "betternottostop", "stopatfirstnotsecond", "stopatsecondnotfirst", "bettertostopbutpermissibletocontinue", "bettertocontinuebutpermissibletostop", "subtlestopwithoutbreath"}}, _
+            New RuleMetadataTranslation With {.RuleName = "Stopping", .Match = "(" + MakeRegMultiEx(Array.ConvertAll(ArabicFathaDammaKasra, Function(Str As String) MakeUniRegEx(Str))) + "|" + MakeUniRegEx(ArabicKasratan) + "|" + MakeUniRegEx(ArabicDammatan) + ")\s*$",
+                .Evaluator = New String() {"empty"}}, _
+            New RuleMetadataTranslation With {.RuleName = "Stopping", .Match = MakeUniRegEx(ArabicLetterTehMarbuta) + "(?=" + MakeRegMultiEx(Array.ConvertAll(ArabicFathaDammaKasra, Function(Str As String) MakeUniRegEx(Str))) + "|" + MakeRegMultiEx(Array.ConvertAll(ArabicTanweens, Function(Str As String) MakeUniRegEx(Str))) + ")",
+                .Evaluator = New String() {"helperheh"}}, _
+            New RuleMetadataTranslation With {.RuleName = "SmallBounce", .Match = "(?<=" + MakeRegMultiEx(Array.ConvertAll(ArabicFathaDammaKasra, Function(Str As String) MakeUniRegEx(Str))) + ")(" + MakeUniRegEx(ArabicLetterDal) + "|" + MakeUniRegEx(ArabicLetterBeh) + "|" + MakeUniRegEx(ArabicLetterQaf) + "|" + MakeUniRegEx(ArabicLetterTah) + "|" + MakeUniRegEx(ArabicLetterJeem) + ")(?=" + MakeUniRegEx(ArabicSukun) + "\B)", _
+                .Evaluator = New String() {"bounce"}}, _
+            New RuleMetadataTranslation With {.RuleName = "ModerateBounce", .Match = "(" + MakeUniRegEx(ArabicLetterDal) + "|" + MakeUniRegEx(ArabicLetterBeh) + "|" + MakeUniRegEx(ArabicLetterQaf) + "|" + MakeUniRegEx(ArabicLetterTah) + "|" + MakeUniRegEx(ArabicLetterJeem) + ")(?=(" + MakeRegMultiEx(Array.ConvertAll(ArabicTanweens, Function(Str As String) MakeUniRegEx(Str))) + "|" + MakeRegMultiEx(Array.ConvertAll(ArabicFathaDammaKasra, Function(Str As String) MakeUniRegEx(Str))) + ")\s*$)", _
+                .Evaluator = New String() {"bounce"}}, _
+            New RuleMetadataTranslation With {.RuleName = "GreatBounce", .Match = "(" + MakeUniRegEx(ArabicLetterDal) + "|" + MakeUniRegEx(ArabicLetterBeh) + "|" + MakeUniRegEx(ArabicLetterQaf) + "|" + MakeUniRegEx(ArabicLetterTah) + "|" + MakeUniRegEx(ArabicLetterJeem) + ")(?=" + MakeUniRegEx(ArabicShadda) + MakeUniRegEx(ArabicSukun) + "\s*$)", _
+                .Evaluator = New String() {"bounce"}}, _
+            New RuleMetadataTranslation With {.RuleName = "NasalizeCharacterDoubled", .Match = MakeUniRegEx(ArabicLetterNoon) + MakeUniRegEx(ArabicShadda),
+                .Evaluator = New String() {"nasalize normalprolong"}}, _
+            New RuleMetadataTranslation With {.RuleName = "VowellessNoonClear", .Match = "(" + MakeUniRegEx(ArabicLetterNoon) + MakeUniRegEx(ArabicSukun) + "|(" + MakeUniRegEx(ArabicLetterNoon) + "|" + MakeRegMultiEx(Array.ConvertAll(ArabicTanweens, Function(Str As String) MakeUniRegEx(Str))) + ")\b\s*)(" + MakeUniRegEx(ArabicLetterAin) + "|" + MakeUniRegEx(ArabicLetterGhain) + "|" + MakeUniRegEx(ArabicLetterJeem) + "|" + MakeUniRegEx(ArabicLetterHah) + "|" + MakeUniRegEx(ArabicLetterHeh) + "|" + MakeUniRegEx(ArabicLetterHamza) + ")",
+                .Evaluator = Nothing}, _
+            New RuleMetadataTranslation With {.RuleName = "VowellessNoonCovered", .Match = "(" + MakeUniRegEx(ArabicLetterNoon) + ")(?:" + MakeUniRegEx(ArabicSukun) + "?)(" + MakeUniRegEx(ArabicSmallHighMeemIsolatedForm) + ")|(?:(" + MakeUniRegEx(ArabicFathatan) + "|" + MakeUniRegEx(ArabicDammatan) + ")(" + MakeUniRegEx(ArabicSmallHighMeemIsolatedForm) + ")|(" + MakeUniRegEx(ArabicKasratan) + ")(" + MakeUniRegEx(ArabicSmallLowMeem) + "))\b\s*)(?=" + MakeUniRegEx(ArabicLetterBeh) + MakeUniRegEx(ArabicFatha) + "|" + MakeUniRegEx(ArabicLetterBeh) + MakeUniRegEx(ArabicDamma) + "|" + MakeUniRegEx(ArabicLetterBeh) + MakeUniRegEx(ArabicKasra) + ")",
+                .Evaluator = New String() {"empty", "nasalize", "dividetanween(,empty)", "nasalize", "dividetanween(,empty)", "nasalize"}}, _
+            New RuleMetadataTranslation With {.RuleName = "VowellessNoonAssimilatingNasalization", .Match = "(?:(" + MakeUniRegEx(ArabicLetterNoon) + MakeUniRegEx(ArabicSukun) + ")|(?:(" + MakeUniRegEx(ArabicLetterNoon) + ")|(" + MakeRegMultiEx(Array.ConvertAll(ArabicTanweens, Function(Str As String) MakeUniRegEx(Str))) + "))(?:\b\s*))(" + MakeUniRegEx(ArabicLetterNoon) + "|" + MakeUniRegEx(ArabicLetterWaw) + "|" + MakeUniRegEx(ArabicLetterMeem) + "|" + MakeUniRegEx(ArabicLetterYeh) + ")",
+                .Evaluator = New String() {"assimilate", "assimilate", "dividetanween(,assimilate)", "nasalize normalprolong assimilator"}}, _
+            New RuleMetadataTranslation With {.RuleName = "VowellessNoonAssimilating", .Match = "(?:(" + MakeUniRegEx(ArabicLetterNoon) + MakeUniRegEx(ArabicSukun) + ")|(?:(" + MakeUniRegEx(ArabicLetterNoon) + ")|(" + MakeRegMultiEx(Array.ConvertAll(ArabicTanweens, Function(Str As String) MakeUniRegEx(Str))) + "))(?:\b\s*))(" + MakeUniRegEx(ArabicLetterLam) + "|" + MakeUniRegEx(ArabicLetterReh) + ")",
+                .Evaluator = New String() {Nothing, "assimilate", "assimilate", "dividetanween(,assimilate)", "assimilator"}}, _
+            New RuleMetadataTranslation With {.RuleName = "VowellessNoonHideHeaviness", .Match = "(?:(" + MakeUniRegEx(ArabicLetterNoon) + MakeUniRegEx(ArabicSukun) + ")|(?:(" + MakeUniRegEx(ArabicLetterNoon) + ")|(" + MakeRegMultiEx(Array.ConvertAll(ArabicTanweens, Function(Str As String) MakeUniRegEx(Str))) + "))(?:\b\s*))(?=" + MakeUniRegEx(ArabicLetterSad) + "|" + MakeUniRegEx(ArabicLetterDad) + "|" + MakeUniRegEx(ArabicLetterTah) + "|" + MakeUniRegEx(ArabicLetterZah) + "|" + MakeUniRegEx(ArabicLetterQaf) + ")",
+                .Evaluator = New String() {Nothing, "nasalize normalprolong", "nasalize normalprolong", "dividetanween(,normalprolong nasalize)"}}, _
+            New RuleMetadataTranslation With {.RuleName = "VowellessNoonHideLightness", .Match = "(?:(" + MakeUniRegEx(ArabicLetterNoon) + MakeUniRegEx(ArabicSukun) + ")|(?:(" + MakeUniRegEx(ArabicLetterNoon) + ")|(" + MakeRegMultiEx(Array.ConvertAll(ArabicTanweens, Function(Str As String) MakeUniRegEx(Str))) + "))(?:\b\s*))(?=" + MakeUniRegEx(ArabicLetterTeh) + "|" + MakeUniRegEx(ArabicLetterTheh) + "|" + MakeUniRegEx(ArabicLetterJeem) + "|" + MakeUniRegEx(ArabicLetterDal) + "|" + MakeUniRegEx(ArabicLetterThal) + "|" + MakeUniRegEx(ArabicLetterZain) + "|" + MakeUniRegEx(ArabicLetterSeen) + "|" + MakeUniRegEx(ArabicLetterSheen) + "|" + MakeUniRegEx(ArabicLetterFeh) + "|" + MakeUniRegEx(ArabicLetterKaf) + ")",
+                .Evaluator = New String() {Nothing, "nasalize normalprolong", "nasalize normalprolong", "dividetanween(,normalprolong nasalize)"}}, _
+            New RuleMetadataTranslation With {.RuleName = "CharacterDoubled", .Match = MakeUniRegEx(ArabicLetterMeem) + MakeUniRegEx(ArabicShadda),
+                .Evaluator = New String() {"nasalize normalprolong"}}, _
+            New RuleMetadataTranslation With {.RuleName = "VowellessMeemHide", .Match = "(" + MakeUniRegEx(ArabicLetterMeem) + MakeUniRegEx(ArabicSukun) + ")|(" + MakeUniRegEx(ArabicLetterMeem) + ")(?:\b\s*)(" + MakeUniRegEx(ArabicLetterBeh) + "(?:" + MakeUniRegEx(ArabicFatha) + "|" + MakeUniRegEx(ArabicDamma) + "|" + MakeUniRegEx(ArabicKasra) + "))",
+                .Evaluator = New String() {Nothing, "nasalize normalprolong", "nasalize normalprolong", "assimilate", "nasalize assimilator"}}, _
+            New RuleMetadataTranslation With {.RuleName = "VowellessMeemAssimilating", .Match = "(" + MakeUniRegEx(ArabicLetterMeem) + MakeUniRegEx(ArabicSukun) + "|" + MakeUniRegEx(ArabicLetterMeem) + ")(?:\b\s*)" + MakeUniRegEx(ArabicLetterMeem) + "(?=" + MakeUniRegEx(ArabicFatha) + "|" + MakeUniRegEx(ArabicDamma) + "|" + MakeUniRegEx(ArabicKasra) + ")",
+                .Evaluator = New String() {Nothing, "assimilate", "nasalize normalprolong assimilator"}}, _
+            New RuleMetadataTranslation With {.RuleName = "VowellessMeemClear", .Match = "(" + MakeUniRegEx(ArabicLetterMeem) + MakeUniRegEx(ArabicSukun) + "|" + MakeUniRegEx(ArabicLetterMeem) + "\b\s*)(" + MakeUniRegEx(ArabicLetterTeh) + "|" + MakeUniRegEx(ArabicLetterTheh) + "|" + MakeUniRegEx(ArabicLetterJeem) + "|" + MakeUniRegEx(ArabicLetterHah) + "|" + MakeUniRegEx(ArabicLetterKhah) + "|" + MakeUniRegEx(ArabicLetterDal) + "|" + MakeUniRegEx(ArabicLetterThal) + "|" + MakeUniRegEx(ArabicLetterReh) + "|" + MakeUniRegEx(ArabicLetterZain) + "|" + MakeUniRegEx(ArabicLetterSeen) + "|" + MakeUniRegEx(ArabicLetterSheen) + "|" + MakeUniRegEx(ArabicLetterSad) + "|" + MakeUniRegEx(ArabicLetterDad) + "|" + MakeUniRegEx(ArabicLetterTah) + "|" + MakeUniRegEx(ArabicLetterZah) + "|" + MakeUniRegEx(ArabicLetterAin) + "|" + MakeUniRegEx(ArabicLetterGhain) + "|" + MakeUniRegEx(ArabicLetterQaf) + "|" + MakeUniRegEx(ArabicLetterKaf) + "|" + MakeUniRegEx(ArabicLetterLam) + "|" + MakeUniRegEx(ArabicLetterNoon) + "|" + MakeUniRegEx(ArabicLetterHamza) + "|((" + MakeUniRegEx(ArabicSukun) + "|" + MakeUniRegEx(ArabicFatha) + ")(" + MakeUniRegEx(ArabicLetterYeh) + "))" + ")(" + MakeRegMultiEx(Array.ConvertAll(ArabicFathaDammaKasra, Function(Str As String) MakeUniRegEx(Str))) + ")",
+                .Evaluator = Nothing}, _
+            New RuleMetadataTranslation With {.RuleName = "VowellessMeemClearGreater", .Match = "(" + MakeUniRegEx(ArabicLetterMeem) + MakeUniRegEx(ArabicSukun) + "|" + MakeUniRegEx(ArabicLetterMeem) + "\b\s*)(" + MakeUniRegEx(ArabicLetterFeh) + "|((" + MakeUniRegEx(ArabicSukun) + "|" + MakeUniRegEx(ArabicFatha) + ")(" + MakeUniRegEx(ArabicLetterWaw) + "))" + ")(" + MakeRegMultiEx(Array.ConvertAll(ArabicFathaDammaKasra, Function(Str As String) MakeUniRegEx(Str))) + ")",
+                .Evaluator = Nothing}, _
+            New RuleMetadataTranslation With {.RuleName = "EmptyHamza", .Match = "(?<=^\s*)" + MakeUniRegEx(ArabicLetterAlefWasla) + "(?=" + MakeUniRegEx(ArabicLetterLam) + "((" + MakeRegMultiEx(Array.ConvertAll(ArabicSunLetters, Function(Str As String) MakeUniRegEx(Str))) + ")" + MakeUniRegEx(ArabicShadda) + "|(" + MakeRegMultiEx(Array.ConvertAll(ArabicMoonLetters, Function(Str As String) MakeUniRegEx(Str))) + ")))",
+                .Evaluator = New String() {"helperfatha"}}, _
+            New RuleMetadataTranslation With {.RuleName = "EmptyHamza", .Match = "(?<=^\s*)" + MakeUniRegEx(ArabicLetterAlefWasla) + "(?=(" + MakeRegMultiEx(Array.ConvertAll(ArabicLetters, Function(Str As String) MakeUniRegEx(Str))) + ")(" + MakeRegMultiEx(Array.ConvertAll(ArabicFathaDammaKasra, Function(Str As String) MakeUniRegEx(Str))) + ")?" + "(" + MakeRegMultiEx(Array.ConvertAll(ArabicLetters, Function(Str As String) MakeUniRegEx(Str))) + ")(" + MakeUniRegEx(ArabicFatha) + "|" + MakeUniRegEx(ArabicKasra) + ")|" + MakeRegMultiEx(Array.ConvertAll(ArabicWaslKasraExceptions, Function(Str As String) MakeUniRegEx(TransliterateFromBuckwalter(Str)))) + ")",
+                .Evaluator = New String() {"helperkasra"}}, _
+            New RuleMetadataTranslation With {.RuleName = "EmptyHamza", .Match = "(?<=^\s*)" + MakeUniRegEx(ArabicLetterAlefWasla) + "(?=(" + MakeRegMultiEx(Array.ConvertAll(ArabicLetters, Function(Str As String) MakeUniRegEx(Str))) + ")(" + MakeRegMultiEx(Array.ConvertAll(ArabicFathaDammaKasra, Function(Str As String) MakeUniRegEx(Str))) + ")?" + "(" + MakeRegMultiEx(Array.ConvertAll(ArabicLetters, Function(Str As String) MakeUniRegEx(Str))) + ")" + MakeUniRegEx(ArabicDamma) + ")",
+                .Evaluator = New String() {"helperdamma"}}, _
+            New RuleMetadataTranslation With {.RuleName = "EmptyHamza", .Match = "(?<=\w+\s*)" + MakeUniRegEx(ArabicLetterAlefWasla),
+                .Evaluator = New String() {"empty"}}, _
+            New RuleMetadataTranslation With {.RuleName = "AssimilateLaamSunLetter", .Match = "(?<=(^\s*|\b)(" + MakeUniRegEx(ArabicLetterWaw) + MakeUniRegEx(ArabicFatha) + "|" + MakeUniRegEx(ArabicLetterBeh) + MakeUniRegEx(ArabicKasra) + "|" + MakeUniRegEx(ArabicLetterTeh) + MakeUniRegEx(ArabicFatha) + "|" + MakeUniRegEx(ArabicLetterKaf) + MakeUniRegEx(ArabicFatha) + "|" + MakeUniRegEx(ArabicLetterLam) + MakeUniRegEx(ArabicKasra) + ")?)(" + MakeUniRegEx(ArabicLetterAlefWasla) + MakeUniRegEx(ArabicLetterLam) + ")(" + MakeRegMultiEx(Array.ConvertAll(ArabicSunLetters, Function(Str As String) MakeUniRegEx(Str))) + ")(?=" + MakeUniRegEx(ArabicShadda) + ")",
+                .Evaluator = New String() {Nothing, "assimilate", "assimilator"}}, _
+            New RuleMetadataTranslation With {.RuleName = "ClearLaamMoonLetter", .Match = "(?<=(^\s*|\b)(" + MakeUniRegEx(ArabicLetterWaw) + MakeUniRegEx(ArabicFatha) + "|" + MakeUniRegEx(ArabicLetterBeh) + MakeUniRegEx(ArabicKasra) + "|" + MakeUniRegEx(ArabicLetterTeh) + MakeUniRegEx(ArabicFatha) + "|" + MakeUniRegEx(ArabicLetterKaf) + MakeUniRegEx(ArabicFatha) + "|" + MakeUniRegEx(ArabicLetterLam) + MakeUniRegEx(ArabicKasra) + ")?)(" + MakeUniRegEx(ArabicLetterAlefWasla) + ")(" + MakeUniRegEx(ArabicLetterLam) + ")(?=" + MakeUniRegEx(ArabicSukun) + "?(" + MakeRegMultiEx(Array.ConvertAll(ArabicMoonLetters, Function(Str As String) MakeUniRegEx(Str))) + "))",
+                .Evaluator = New String() {Nothing, "assimilate", "assimilator"}}, _
+            New RuleMetadataTranslation With {.RuleName = "Sukun", .Match = MakeUniRegEx(ArabicSukun), _
+                .Evaluator = New String() {"empty"}}, _
+            New RuleMetadataTranslation With {.RuleName = "AlefMaksuraDaggerAlef", .Match = MakeUniRegEx(ArabicLetterAlefMaksura) + "(?=" + MakeUniRegEx(ArabicLetterSuperscriptAlef) + ")", _
+                .Evaluator = New String() {"helperfatha"}} _
+        }
     Public Shared Function MakeUniRegEx(Input As String) As String
         Return String.Join(String.Empty, Array.ConvertAll(Of Char, String)(Input.ToCharArray(), Function(Ch As Char) "\u" + AscW(Ch).ToString("X4")))
     End Function
@@ -2182,7 +2070,14 @@ Public Class Arabic
         Dim MetadataList As New Generic.List(Of RuleMetadata)
         Dim Strings As New Generic.List(Of RenderArray.RenderText)
         For Count = 0 To RulesOfRecitationRegEx.Length - 1
-            MetadataList.AddRange(RulesOfRecitationRegEx(Count).Evaluator(System.Text.RegularExpressions.Regex.Match(ArabicString, RulesOfRecitationRegEx(Count).Match)))
+            If Not RulesOfRecitationRegEx(Count).Evaluator Is Nothing Then
+                Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(ArabicString, RulesOfRecitationRegEx(Count).Match)
+                For SubCount = 0 To RulesOfRecitationRegEx(Count).Evaluator.Length - 1
+                    If Not RulesOfRecitationRegEx(Count).Evaluator(SubCount) Is Nothing Then
+                        MetadataList.Add(New RuleMetadata(Matches(SubCount).Index, Matches(SubCount).Length, RulesOfRecitationRegEx(Count).Evaluator(SubCount)))
+                    End If
+                Next
+            End If
         Next
         MetadataList.Sort(New RuleMetadataComparer)
         For Index = 0 To MetadataList.Count - 1
@@ -2320,11 +2215,14 @@ Public Class Arabic
             Next
         Next
         For Count = 0 To RulesOfRecitationRegEx.Length - 1
-            Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(ArabicString, RulesOfRecitationRegEx(Count).Match)
-            For MatchIndex As Integer = 0 To Matches.Count - 1
-                Dim MetadataRules As RuleMetadata() = RulesOfRecitationRegEx(Count).Evaluator(Matches(MatchIndex))
-                If Not MetadataRules Is Nothing Then MetadataList.AddRange(MetadataRules)
-            Next
+            If Not RulesOfRecitationRegEx(Count).Evaluator Is Nothing Then
+                Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(ArabicString, RulesOfRecitationRegEx(Count).Match)
+                For SubCount = 0 To RulesOfRecitationRegEx(Count).Evaluator.Length - 1
+                    If Not RulesOfRecitationRegEx(Count).Evaluator(SubCount) Is Nothing Then
+                        MetadataList.Add(New RuleMetadata(Matches(SubCount).Index, Matches(SubCount).Length, RulesOfRecitationRegEx(Count).Evaluator(SubCount)))
+                    End If
+                Next
+            End If
         Next
         MetadataList.Sort(New RuleMetadataComparer)
         Dim Index As Integer
