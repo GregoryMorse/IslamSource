@@ -1934,7 +1934,7 @@ Public Class Arabic
                 .Evaluator = New String() {"nasalize normalprolong"}}, _
             New RuleMetadataTranslation With {.RuleName = "VowellessNoonClear", .Match = "(" + MakeUniRegEx(ArabicLetterNoon) + MakeUniRegEx(ArabicSukun) + "|(" + MakeUniRegEx(ArabicLetterNoon) + "|" + MakeRegMultiEx(Array.ConvertAll(ArabicTanweens, Function(Str As String) MakeUniRegEx(Str))) + ")\b\s*)(" + MakeUniRegEx(ArabicLetterAin) + "|" + MakeUniRegEx(ArabicLetterGhain) + "|" + MakeUniRegEx(ArabicLetterJeem) + "|" + MakeUniRegEx(ArabicLetterHah) + "|" + MakeUniRegEx(ArabicLetterHeh) + "|" + MakeUniRegEx(ArabicLetterHamza) + ")",
                 .Evaluator = Nothing}, _
-            New RuleMetadataTranslation With {.RuleName = "VowellessNoonCovered", .Match = "(" + MakeUniRegEx(ArabicLetterNoon) + ")(?:" + MakeUniRegEx(ArabicSukun) + "?)(" + MakeUniRegEx(ArabicSmallHighMeemIsolatedForm) + ")|(?:(" + MakeUniRegEx(ArabicFathatan) + "|" + MakeUniRegEx(ArabicDammatan) + ")(" + MakeUniRegEx(ArabicSmallHighMeemIsolatedForm) + ")|(" + MakeUniRegEx(ArabicKasratan) + ")(" + MakeUniRegEx(ArabicSmallLowMeem) + "))\b\s*)(?=" + MakeUniRegEx(ArabicLetterBeh) + MakeUniRegEx(ArabicFatha) + "|" + MakeUniRegEx(ArabicLetterBeh) + MakeUniRegEx(ArabicDamma) + "|" + MakeUniRegEx(ArabicLetterBeh) + MakeUniRegEx(ArabicKasra) + ")",
+            New RuleMetadataTranslation With {.RuleName = "VowellessNoonCovered", .Match = "(" + MakeUniRegEx(ArabicLetterNoon) + ")(?:" + MakeUniRegEx(ArabicSukun) + "?)(" + MakeUniRegEx(ArabicSmallHighMeemIsolatedForm) + ")|(?:(?:(" + MakeUniRegEx(ArabicFathatan) + "|" + MakeUniRegEx(ArabicDammatan) + ")(" + MakeUniRegEx(ArabicSmallHighMeemIsolatedForm) + ")|(" + MakeUniRegEx(ArabicKasratan) + ")(" + MakeUniRegEx(ArabicSmallLowMeem) + "))\b\s*)(?=" + MakeUniRegEx(ArabicLetterBeh) + MakeUniRegEx(ArabicFatha) + "|" + MakeUniRegEx(ArabicLetterBeh) + MakeUniRegEx(ArabicDamma) + "|" + MakeUniRegEx(ArabicLetterBeh) + MakeUniRegEx(ArabicKasra) + ")",
                 .Evaluator = New String() {"empty", "nasalize", "dividetanween(,empty)", "nasalize", "dividetanween(,empty)", "nasalize"}}, _
             New RuleMetadataTranslation With {.RuleName = "VowellessNoonAssimilatingNasalization", .Match = "(?:(" + MakeUniRegEx(ArabicLetterNoon) + MakeUniRegEx(ArabicSukun) + ")|(?:(" + MakeUniRegEx(ArabicLetterNoon) + ")|(" + MakeRegMultiEx(Array.ConvertAll(ArabicTanweens, Function(Str As String) MakeUniRegEx(Str))) + "))(?:\b\s*))(" + MakeUniRegEx(ArabicLetterNoon) + "|" + MakeUniRegEx(ArabicLetterWaw) + "|" + MakeUniRegEx(ArabicLetterMeem) + "|" + MakeUniRegEx(ArabicLetterYeh) + ")",
                 .Evaluator = New String() {"assimilate", "assimilate", "dividetanween(,assimilate)", "nasalize normalprolong assimilator"}}, _
@@ -1962,9 +1962,9 @@ Public Class Arabic
                 .Evaluator = New String() {"helperdamma"}}, _
             New RuleMetadataTranslation With {.RuleName = "EmptyHamza", .Match = "(?<=\w+\s*)" + MakeUniRegEx(ArabicLetterAlefWasla),
                 .Evaluator = New String() {"empty"}}, _
-            New RuleMetadataTranslation With {.RuleName = "AssimilateLaamSunLetter", .Match = "(?<=(^\s*|\b)(" + MakeUniRegEx(ArabicLetterWaw) + MakeUniRegEx(ArabicFatha) + "|" + MakeUniRegEx(ArabicLetterBeh) + MakeUniRegEx(ArabicKasra) + "|" + MakeUniRegEx(ArabicLetterTeh) + MakeUniRegEx(ArabicFatha) + "|" + MakeUniRegEx(ArabicLetterKaf) + MakeUniRegEx(ArabicFatha) + "|" + MakeUniRegEx(ArabicLetterLam) + MakeUniRegEx(ArabicKasra) + ")?)(" + MakeUniRegEx(ArabicLetterAlefWasla) + MakeUniRegEx(ArabicLetterLam) + ")(" + MakeRegMultiEx(Array.ConvertAll(ArabicSunLetters, Function(Str As String) MakeUniRegEx(Str))) + ")(?=" + MakeUniRegEx(ArabicShadda) + ")",
+            New RuleMetadataTranslation With {.RuleName = "AssimilateLaamSunLetter", .Match = "(?<=(?:^\s*|\b)(?:" + MakeUniRegEx(ArabicLetterWaw) + MakeUniRegEx(ArabicFatha) + "|" + MakeUniRegEx(ArabicLetterBeh) + MakeUniRegEx(ArabicKasra) + "|" + MakeUniRegEx(ArabicLetterTeh) + MakeUniRegEx(ArabicFatha) + "|" + MakeUniRegEx(ArabicLetterKaf) + MakeUniRegEx(ArabicFatha) + "|" + MakeUniRegEx(ArabicLetterLam) + MakeUniRegEx(ArabicKasra) + ")?)(" + MakeUniRegEx(ArabicLetterAlefWasla) + MakeUniRegEx(ArabicLetterLam) + ")(" + MakeRegMultiEx(Array.ConvertAll(ArabicSunLetters, Function(Str As String) MakeUniRegEx(Str))) + ")(?=" + MakeUniRegEx(ArabicShadda) + ")",
                 .Evaluator = New String() {Nothing, "assimilate", "assimilator"}}, _
-            New RuleMetadataTranslation With {.RuleName = "ClearLaamMoonLetter", .Match = "(?<=(^\s*|\b)(" + MakeUniRegEx(ArabicLetterWaw) + MakeUniRegEx(ArabicFatha) + "|" + MakeUniRegEx(ArabicLetterBeh) + MakeUniRegEx(ArabicKasra) + "|" + MakeUniRegEx(ArabicLetterTeh) + MakeUniRegEx(ArabicFatha) + "|" + MakeUniRegEx(ArabicLetterKaf) + MakeUniRegEx(ArabicFatha) + "|" + MakeUniRegEx(ArabicLetterLam) + MakeUniRegEx(ArabicKasra) + ")?)(" + MakeUniRegEx(ArabicLetterAlefWasla) + ")(" + MakeUniRegEx(ArabicLetterLam) + ")(?=" + MakeUniRegEx(ArabicSukun) + "?(" + MakeRegMultiEx(Array.ConvertAll(ArabicMoonLetters, Function(Str As String) MakeUniRegEx(Str))) + "))",
+            New RuleMetadataTranslation With {.RuleName = "ClearLaamMoonLetter", .Match = "(?<=(?:^\s*|\b)(?:" + MakeUniRegEx(ArabicLetterWaw) + MakeUniRegEx(ArabicFatha) + "|" + MakeUniRegEx(ArabicLetterBeh) + MakeUniRegEx(ArabicKasra) + "|" + MakeUniRegEx(ArabicLetterTeh) + MakeUniRegEx(ArabicFatha) + "|" + MakeUniRegEx(ArabicLetterKaf) + MakeUniRegEx(ArabicFatha) + "|" + MakeUniRegEx(ArabicLetterLam) + MakeUniRegEx(ArabicKasra) + ")?)(" + MakeUniRegEx(ArabicLetterAlefWasla) + ")(" + MakeUniRegEx(ArabicLetterLam) + ")(?=" + MakeUniRegEx(ArabicSukun) + "?(?:" + MakeRegMultiEx(Array.ConvertAll(ArabicMoonLetters, Function(Str As String) MakeUniRegEx(Str))) + "))",
                 .Evaluator = New String() {Nothing, "assimilate", "assimilator"}}, _
             New RuleMetadataTranslation With {.RuleName = "Sukun", .Match = MakeUniRegEx(ArabicSukun), _
                 .Evaluator = New String() {"empty"}}, _
@@ -2072,10 +2072,12 @@ Public Class Arabic
         For Count = 0 To RulesOfRecitationRegEx.Length - 1
             If Not RulesOfRecitationRegEx(Count).Evaluator Is Nothing Then
                 Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(ArabicString, RulesOfRecitationRegEx(Count).Match)
-                For SubCount = 0 To RulesOfRecitationRegEx(Count).Evaluator.Length - 1
-                    If Not RulesOfRecitationRegEx(Count).Evaluator(SubCount) Is Nothing Then
-                        MetadataList.Add(New RuleMetadata(Matches(SubCount).Index, Matches(SubCount).Length, RulesOfRecitationRegEx(Count).Evaluator(SubCount)))
-                    End If
+                For MatchIndex As Integer = 0 To Matches.Count - 1
+                    For SubCount As Integer = 0 To RulesOfRecitationRegEx(Count).Evaluator.Length - 1
+                        If Not RulesOfRecitationRegEx(Count).Evaluator(SubCount) Is Nothing Then
+                            MetadataList.Add(New RuleMetadata(Matches(MatchIndex).Groups(SubCount).Index, Matches(MatchIndex).Groups(SubCount).Length, RulesOfRecitationRegEx(Count).Evaluator(SubCount)))
+                        End If
+                    Next
                 Next
             End If
         Next
@@ -2217,10 +2219,12 @@ Public Class Arabic
         For Count = 0 To RulesOfRecitationRegEx.Length - 1
             If Not RulesOfRecitationRegEx(Count).Evaluator Is Nothing Then
                 Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(ArabicString, RulesOfRecitationRegEx(Count).Match)
-                For SubCount = 0 To RulesOfRecitationRegEx(Count).Evaluator.Length - 1
-                    If Not RulesOfRecitationRegEx(Count).Evaluator(SubCount) Is Nothing Then
-                        MetadataList.Add(New RuleMetadata(Matches(SubCount).Index, Matches(SubCount).Length, RulesOfRecitationRegEx(Count).Evaluator(SubCount)))
-                    End If
+                For MatchIndex As Integer = 0 To Matches.Count - 1
+                    For SubCount As Integer = 0 To RulesOfRecitationRegEx(Count).Evaluator.Length - 1
+                        If Not RulesOfRecitationRegEx(Count).Evaluator(SubCount) Is Nothing Then
+                            MetadataList.Add(New RuleMetadata(Matches(MatchIndex).Groups(SubCount).Index, Matches(MatchIndex).Groups(SubCount).Length, RulesOfRecitationRegEx(Count).Evaluator(SubCount)))
+                        End If
+                    Next
                 Next
             End If
         Next
