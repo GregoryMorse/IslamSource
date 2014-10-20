@@ -132,13 +132,13 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 		<word value="Hadiyv nabawiy" id="ImamNabawi40Hadith"></word>
 		<word value="SaHiyH {lobuxaAriy" id="SahihAlBukhari"></word>
 		<word value="SaHiyH muslim" id="SahihMuslim"></word>
-		<word value="{ls~unan {lS~ugraY" id="AlSunan AlSughra"></word>
-		<word value="sunan &gt;abiy daAwud" id="Sunan Abi Dawood"></word>
-		<word value="jaAmiE {lt~irmi*iy" id="Sunan AlTirmidhi"></word>
-		<word value="sunan &lt;ibn maAjah" id="Sunan Ibn Maja"></word>
-		<word value="{lokitaAb {lokaAfiy" id="Kitab AlKafi"></word>
-		<word value="man laA yaHDuruhu {lofaqiyh" id="Man La Yahduruhu AlFaqih"></word>
-		<word value="tah*iyb {l&gt;aHkaAm" id="Tahdhib AlAhkam"></word>
+		<word value="{ls~unan {lS~ugraY" id="AlSunanAlSughra"></word>
+		<word value="sunan &gt;abiy daAwud" id="SunanAbiDawood"></word>
+		<word value="jaAmiE {lt~irmi*iy" id="SunanAlTirmidhi"></word>
+		<word value="sunan &lt;ibn maAjah" id="SunanIbnMaja"></word>
+		<word value="{lokitaAb {lokaAfiy" id="KitabAlKafi"></word>
+		<word value="man laA yaHDuruhu {lofaqiyh" id="ManLaYahduruhuAlFaqih"></word>
+		<word value="tah*iyb {l&gt;aHkaAm" id="TahdhibAlAhkam"></word>
 		<word value="{l&lt;istibSaAr" id="AlIstibsar"></word>
 	</loanwords>
 	<jurisprudence name="fiqh" id="Jurisprudence">
@@ -206,16 +206,16 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 		<prayertype name="Eayd" id="CelebrationDay" classification="Necessary" prayerunits="2"></prayertype>
 		<prayertype name="waqt" id="PrescribedTime" classification="TraditionVoluntary" prayerunits="-Noon=2,+Noon=4,-Afternoon=2|4,-Sunset=2,-Night=2|4"></prayertype>
 		<prayertype name="jumuEap" id="Friday" classification="TraditionVoluntary" prayerunits="-Noon=2,+Noon=2"></prayertype>
-		<prayertype name="AistixaArap" id="Guidance" classification="Tradition" prayerunits="2"></prayertype>
+		<prayertype name="&lt;istixaArap" id="Guidance" classification="Tradition" prayerunits="2"></prayertype>
 		<prayertype name="tahaj~ud" id="LateNight" classification="Tradition" prayerunits="2*"></prayertype>
 		<prayertype name="&lt;istasqaA&apos;" id="RainForDraught" classification="Tradition" prayerunits="2"></prayertype>
 		<prayertype name="kusuwf" id="SolarEclipse" classification="Tradition" prayerunits="2"></prayertype>
 		<prayertype name="xusuwf" id="LunarEclipse" classification="Tradition" prayerunits="2"></prayertype>
 		<prayertype name="taraAwiyH" id="FastingMonthPrayer" classification="Tradition" prayerunits="8|12|20"></prayertype>
-		<prayertype name="Ai$raq" id="Sunrise" classification="Supererogatory" prayerunits="2"></prayertype>
+		<prayertype name="&lt;i$raq" id="Sunrise" classification="Supererogatory" prayerunits="2"></prayertype>
 		<prayertype name="DuHa" id="MorningLight" classification="Supererogatory" prayerunits="2"></prayertype>
 		<prayertype name="fatH" id="Victory" classification="Supererogatory" prayerunits="2"></prayertype>
-		<prayertype name="Aw~abin" id="OftReturning" classification="Supererogatory" prayerunits="2"></prayertype>
+		<prayertype name="&gt;aw~abin" id="OftReturning" classification="Supererogatory" prayerunits="2"></prayertype>
 		<prayertype name="Tahiy~atul masjid" id="EnteringMosque" classification="Supererogatory" prayerunits="2"></prayertype>
 		<prayertype name="xawf" id="Fear" classification="Supererogatory" prayerunits="2"></prayertype>
 		<prayertype name="safar" id="Travel" classification="Supererogatory" prayerunits="2"></prayertype>
@@ -2599,6 +2599,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="mu&apos;ak~adap" id=""></word>
 			<word text="jawaArib" id=""></word>
 			<word text="fitrap" id=""></word>
+			<word text="ma&apos;muwm" id=""></word>
 		</category>
 		<category title="RegularWords">
 			<word text="{ld~ars" id="Lesson"></word>
@@ -2944,6 +2945,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 	'ein + kasrap -> oi
 	Last letter before pause ta martabap -> a
 	Last letter before pause <fatHap || kasrap || Dam~ap || fatHapan || kasrapan || Dam~apan> ->
+	Online writing: Ain = 3, Hah = 7, Tah = 6, Hamzah = 2, Qaaf = 9, Khah = kh, Theh = th, Dad = dh, ghein = gh
 	-->
 	<arabicletters>
 		<arabicsymbol symbolname="hamzap" uname="ArabicLetterHamza" symbol="0621" shaping="FE80" ipavalue="ʔ" extendedbuckwalter="39" romantranslit="" plainroman="&apos;" terminating="false" connecting="false" assimilate="false" />
@@ -3155,6 +3157,33 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 		</quranselection>
 		<quranselection description="VerseOfTheSword">
 			<verse chapter="9" startverse="5"></verse>
+		</quranselection>
+		<quranselection description="LongestVerse">
+			<verse chapter="2" startverse="282"></verse>
+		</quranselection>
+		<quranselection description="LongestChapter">
+			<verse chapter="2" startverse="1" endverse="286"></verse>
+		</quranselection>
+		<quranselection description="ShortestVerses">
+			<verse chapter="55" startverse="64"></verse>
+			<verse chapter="103" startverse="1"></verse>
+			<verse chapter="55" startverse="1"></verse>
+			<verse chapter="74" startverse="21"></verse>
+		</quranselection>
+		<quranselection description="ShortestChapter">
+			<verse chapter="108" startverse="1" endverse="3"></verse>
+		</quranselection>
+		<quranselection description="EssenceVerse">
+			<verse chapter="16" startverse="90"></verse>
+		</quranselection>
+		<quranselection description="ComprehensiveVerse">
+			<verse chapter="99" startverse="7" endverse="8"></verse>
+		</quranselection>
+		<quranselection description="VerseEvokingFear">
+			<verse chapter="4" startverse="123"></verse>
+		</quranselection>
+		<quranselection description="VerseEvokingHope">
+			<verse chapter="39" startverse="53"></verse>
 		</quranselection>
 		<quranselection description="FortyOurLordSupplications">
 			<verse chapter="2" startverse="127" startword="8"></verse>

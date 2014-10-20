@@ -3,13 +3,13 @@
 Public Class frmMain
     Private PageSet As New PageLoader
     Private Sub frmMain_Load(sender As Object, e As EventArgs) Handles Me.Load
-        'Debug.Print(Arabic.GetUniCats())
         'TanzilReader.CheckNotablePatterns()
-        TanzilReader.ChangeQuranFormat(TanzilReader.QuranScripts.BuckwalterUthmani)
+        TanzilReader.ChangeQuranFormat(TanzilReader.QuranScripts.UthmaniMin)
+        TanzilReader.ChangeQuranFormat(TanzilReader.QuranScripts.SimpleEnhanced)
+        TanzilReader.ChangeQuranFormat(TanzilReader.QuranScripts.Simple)
+        TanzilReader.ChangeQuranFormat(TanzilReader.QuranScripts.SimpleMin)
+        TanzilReader.ChangeQuranFormat(TanzilReader.QuranScripts.SimpleClean)
         'clsWarshQuran.ParseQuran()
-        For Index = 1000 To 1030
-            Debug.Print(Arabic.ArabicWordFromNumber(Index, True, False, False) + vbCrLf)
-        Next
         For Index = 0 To PageSet.Pages.Count - 1
             Dim newNode As TreeNode = tvwMain.Nodes.Add(PageSet.Pages.Item(Index).PageName, Utility.LoadResourceString(PageSet.Pages.Item(Index).Text))
             For SubIndex = 0 To PageSet.Pages.Item(Index).Page.Count - 1
