@@ -1319,12 +1319,18 @@ Public Class Arabic
         Next
         Return ArabicString
     End Function
-    Public Shared Function TransliterateToScheme(ByVal ArabicString As String, Scheme As Integer) As String
-        If Scheme = 1 Then
+    Public Enum TranslitScheme
+        None = 0
+        PlainRoman = 1
+        Roman = 2
+        Buckwalter = 3
+    End Enum
+    Public Shared Function TransliterateToScheme(ByVal ArabicString As String, Scheme As TranslitScheme) As String
+        If Scheme = TranslitScheme.PlainRoman Then
             Return TransliterateToPlainRoman(ArabicString)
-        ElseIf Scheme = 2 Then
+        ElseIf Scheme = TranslitScheme.Roman Then
             Return TransliterateToRoman(ArabicString, False)
-        ElseIf Scheme = 3 Then
+        ElseIf Scheme = TranslitScheme.Buckwalter Then
             Return TransliterateToRoman(ArabicString, True)
         Else
             Return New String(System.Array.FindAll(ArabicString.ToCharArray(), Function(Check As Char) Check = " "c))
@@ -1859,7 +1865,7 @@ Public Class Arabic
     Public Delegate Function RuleFunction(Str As String) As String
     Public Shared RuleFunctions As RuleFunction() = {
         Function(Str As String) UCase(Str),
-        Function(Str As String) TransliterateToPlainRoman(TransliterateFromBuckwalter(ArabicWordFromNumber(CInt(TransliterateToScheme(Str, 3)), True, False, False))),
+        Function(Str As String) TransliterateToPlainRoman(TransliterateFromBuckwalter(ArabicWordFromNumber(CInt(TransliterateToScheme(Str, TranslitScheme.Buckwalter)), True, False, False))),
         Function(Str As String) ArabicLetterSpelling(Str),
         Function(Str As String) CachedData.IslamData.ArabicLetters(FindLetterBySymbol(Str)).PlainRoman,
         Function(Str As String) GutteralRules(Str, 0, True, True),
@@ -1905,59 +1911,59 @@ Public Class Arabic
         New RuleTranslation With {.RuleName = "UnrestLetters", .Match = "bounce", .Evaluator = "{0}-{0}"} _
         }
     Public Shared RulesOfRecitationRegEx As RuleMetadataTranslation() = { _
-            New RuleMetadataTranslation With {.RuleName = "Stopping", .Match = "(?:(" + MakeUniRegEx(ArabicSmallHighMeemIsolatedForm) + ")|(" + MakeUniRegEx(ArabicStartOfRubElHizb) + ")|(" + MakeUniRegEx(ArabicEndOfAyah) + ")|(" + MakeUniRegEx(ArabicPlaceOfSajdah) + "))(?=\s*\b)",
-                .Evaluator = New String() {Nothing, "compulsorystop", "startofhizbstop", "endofversestop", "prostration"}}, _
-            New RuleMetadataTranslation With {.RuleName = "Stopping", .Match = "(" + MakeUniRegEx(ArabicSmallHighJeem) + ")|(" + MakeUniRegEx(ArabicSmallHighLamAlef) + ")|(" + MakeUniRegEx(ArabicSmallHighThreeDots) + ")(?:\w*)(" + MakeUniRegEx(ArabicSmallHighThreeDots) + ")|(" + MakeUniRegEx(ArabicSmallHighLigatureQafWithLamWithAlefMaksura) + ")|(" + MakeUniRegEx(ArabicSmallHighLigatureSadWithLamWithAlefMaksura) + ")|(" + MakeUniRegEx(ArabicSmallHighSeen) + ")",
-                .Evaluator = New String() {"canstoporcontinue", "betternottostop", "stopatfirstnotsecond", "stopatsecondnotfirst", "bettertostopbutpermissibletocontinue", "bettertocontinuebutpermissibletostop", "subtlestopwithoutbreath"}}, _
-            New RuleMetadataTranslation With {.RuleName = "Stopping", .Match = "(" + MakeRegMultiEx(Array.ConvertAll(ArabicFathaDammaKasra, Function(Str As String) MakeUniRegEx(Str))) + "|" + MakeUniRegEx(ArabicKasratan) + "|" + MakeUniRegEx(ArabicDammatan) + ")\s*$",
+            New RuleMetadataTranslation With {.RuleName = "Stopping", .Match = "(" + MakeUniRegEx(ArabicSmallHighMeemIsolatedForm) + ")|(" + MakeUniRegEx(ArabicStartOfRubElHizb) + ")|(" + MakeUniRegEx(ArabicEndOfAyah) + ")|(" + MakeUniRegEx(ArabicPlaceOfSajdah) + ")(?=\s*\b)",
+                .Evaluator = New String() {"compulsorystop", "startofhizbstop", "endofversestop", "prostration"}}, _
+            New RuleMetadataTranslation With {.RuleName = "Stopping", .Match = "(" + MakeUniRegEx(ArabicSmallHighJeem) + ")|(" + MakeUniRegEx(ArabicSmallHighLamAlef) + ")|(" + MakeUniRegEx(ArabicSmallHighThreeDots) + ")(\w*)(" + MakeUniRegEx(ArabicSmallHighThreeDots) + ")|(" + MakeUniRegEx(ArabicSmallHighLigatureQafWithLamWithAlefMaksura) + ")|(" + MakeUniRegEx(ArabicSmallHighLigatureSadWithLamWithAlefMaksura) + ")|(" + MakeUniRegEx(ArabicSmallHighSeen) + ")",
+                .Evaluator = New String() {"canstoporcontinue", "betternottostop", "stopatfirstnotsecond", Nothing, "stopatsecondnotfirst", "bettertostopbutpermissibletocontinue", "bettertocontinuebutpermissibletostop", "subtlestopwithoutbreath"}}, _
+            New RuleMetadataTranslation With {.RuleName = "Stopping", .Match = "(" + MakeRegMultiEx(Array.ConvertAll(ArabicFathaDammaKasra, Function(Str As String) MakeUniRegEx(Str))) + "|" + MakeUniRegEx(ArabicKasratan) + "|" + MakeUniRegEx(ArabicDammatan) + ")(?=\s*$)",
                 .Evaluator = New String() {"empty"}}, _
-            New RuleMetadataTranslation With {.RuleName = "Stopping", .Match = MakeUniRegEx(ArabicLetterTehMarbuta) + "(?=" + MakeRegMultiEx(Array.ConvertAll(ArabicFathaDammaKasra, Function(Str As String) MakeUniRegEx(Str))) + "|" + MakeRegMultiEx(Array.ConvertAll(ArabicTanweens, Function(Str As String) MakeUniRegEx(Str))) + ")",
+            New RuleMetadataTranslation With {.RuleName = "Stopping", .Match = "(" + MakeUniRegEx(ArabicLetterTehMarbuta) + ")(?=" + MakeRegMultiEx(Array.ConvertAll(ArabicFathaDammaKasra, Function(Str As String) MakeUniRegEx(Str))) + "|" + MakeRegMultiEx(Array.ConvertAll(ArabicTanweens, Function(Str As String) MakeUniRegEx(Str))) + ")",
                 .Evaluator = New String() {"helperheh"}}, _
-            New RuleMetadataTranslation With {.RuleName = "SmallBounce", .Match = "(?:" + MakeRegMultiEx(Array.ConvertAll(ArabicFathaDammaKasra, Function(Str As String) MakeUniRegEx(Str))) + ")(" + MakeUniRegEx(ArabicLetterDal) + "|" + MakeUniRegEx(ArabicLetterBeh) + "|" + MakeUniRegEx(ArabicLetterQaf) + "|" + MakeUniRegEx(ArabicLetterTah) + "|" + MakeUniRegEx(ArabicLetterJeem) + ")(?=" + MakeUniRegEx(ArabicSukun) + "\B)", _
-                .Evaluator = New String() {"bounce"}}, _
+            New RuleMetadataTranslation With {.RuleName = "SmallBounce", .Match = "(" + MakeRegMultiEx(Array.ConvertAll(ArabicFathaDammaKasra, Function(Str As String) MakeUniRegEx(Str))) + ")(" + MakeUniRegEx(ArabicLetterDal) + "|" + MakeUniRegEx(ArabicLetterBeh) + "|" + MakeUniRegEx(ArabicLetterQaf) + "|" + MakeUniRegEx(ArabicLetterTah) + "|" + MakeUniRegEx(ArabicLetterJeem) + ")(?=" + MakeUniRegEx(ArabicSukun) + "\B)", _
+                .Evaluator = New String() {Nothing, "bounce"}}, _
             New RuleMetadataTranslation With {.RuleName = "ModerateBounce", .Match = "(" + MakeUniRegEx(ArabicLetterDal) + "|" + MakeUniRegEx(ArabicLetterBeh) + "|" + MakeUniRegEx(ArabicLetterQaf) + "|" + MakeUniRegEx(ArabicLetterTah) + "|" + MakeUniRegEx(ArabicLetterJeem) + ")(?=(" + MakeRegMultiEx(Array.ConvertAll(ArabicTanweens, Function(Str As String) MakeUniRegEx(Str))) + "|" + MakeRegMultiEx(Array.ConvertAll(ArabicFathaDammaKasra, Function(Str As String) MakeUniRegEx(Str))) + ")\s*$)", _
                 .Evaluator = New String() {"bounce"}}, _
             New RuleMetadataTranslation With {.RuleName = "GreatBounce", .Match = "(" + MakeUniRegEx(ArabicLetterDal) + "|" + MakeUniRegEx(ArabicLetterBeh) + "|" + MakeUniRegEx(ArabicLetterQaf) + "|" + MakeUniRegEx(ArabicLetterTah) + "|" + MakeUniRegEx(ArabicLetterJeem) + ")(?=" + MakeUniRegEx(ArabicShadda) + MakeUniRegEx(ArabicSukun) + "\s*$)", _
                 .Evaluator = New String() {"bounce"}}, _
-            New RuleMetadataTranslation With {.RuleName = "NasalizeCharacterDoubled", .Match = MakeUniRegEx(ArabicLetterNoon) + MakeUniRegEx(ArabicShadda),
-                .Evaluator = New String() {"nasalize normalprolong"}}, _
-            New RuleMetadataTranslation With {.RuleName = "VowellessNoonClear", .Match = "(" + MakeUniRegEx(ArabicLetterNoon) + MakeUniRegEx(ArabicSukun) + "|(" + MakeUniRegEx(ArabicLetterNoon) + "|" + MakeRegMultiEx(Array.ConvertAll(ArabicTanweens, Function(Str As String) MakeUniRegEx(Str))) + ")\b\s*)(" + MakeUniRegEx(ArabicLetterAin) + "|" + MakeUniRegEx(ArabicLetterGhain) + "|" + MakeUniRegEx(ArabicLetterJeem) + "|" + MakeUniRegEx(ArabicLetterHah) + "|" + MakeUniRegEx(ArabicLetterHeh) + "|" + MakeUniRegEx(ArabicLetterHamza) + ")",
+            New RuleMetadataTranslation With {.RuleName = "NasalizeCharacterDoubled", .Match = "(" + MakeUniRegEx(ArabicLetterNoon) + MakeUniRegEx(ArabicShadda) + ")",
+                .Evaluator = New String() {"nasalize|normalprolong"}}, _
+            New RuleMetadataTranslation With {.RuleName = "VowellessNoonClear", .Match = "(?:(" + MakeUniRegEx(ArabicLetterNoon) + MakeUniRegEx(ArabicSukun) + ")|(?:(" + MakeUniRegEx(ArabicLetterNoon) + ")|(" + MakeRegMultiEx(Array.ConvertAll(ArabicTanweens, Function(Str As String) MakeUniRegEx(Str))) + "))(?:\b\s*))(" + MakeUniRegEx(ArabicLetterAin) + "|" + MakeUniRegEx(ArabicLetterGhain) + "|" + MakeUniRegEx(ArabicLetterJeem) + "|" + MakeUniRegEx(ArabicLetterHah) + "|" + MakeUniRegEx(ArabicLetterHeh) + "|" + MakeUniRegEx(ArabicLetterHamza) + ")",
                 .Evaluator = Nothing}, _
-            New RuleMetadataTranslation With {.RuleName = "VowellessNoonCovered", .Match = "(" + MakeUniRegEx(ArabicLetterNoon) + ")(?:" + MakeUniRegEx(ArabicSukun) + "?)(" + MakeUniRegEx(ArabicSmallHighMeemIsolatedForm) + ")|(?:(?:(" + MakeUniRegEx(ArabicFathatan) + "|" + MakeUniRegEx(ArabicDammatan) + ")(" + MakeUniRegEx(ArabicSmallHighMeemIsolatedForm) + ")|(" + MakeUniRegEx(ArabicKasratan) + ")(" + MakeUniRegEx(ArabicSmallLowMeem) + "))\b\s*)(?=" + MakeUniRegEx(ArabicLetterBeh) + MakeUniRegEx(ArabicFatha) + "|" + MakeUniRegEx(ArabicLetterBeh) + MakeUniRegEx(ArabicDamma) + "|" + MakeUniRegEx(ArabicLetterBeh) + MakeUniRegEx(ArabicKasra) + ")",
+            New RuleMetadataTranslation With {.RuleName = "VowellessNoonCovered", .Match = "(" + MakeUniRegEx(ArabicLetterNoon) + ")(?:" + MakeUniRegEx(ArabicSukun) + "?)(" + MakeUniRegEx(ArabicSmallHighMeemIsolatedForm) + ")|(?:(?:(" + MakeUniRegEx(ArabicFathatan) + "|" + MakeUniRegEx(ArabicDammatan) + ")(" + MakeUniRegEx(ArabicSmallHighMeemIsolatedForm) + ")|(" + MakeUniRegEx(ArabicKasratan) + ")(" + MakeUniRegEx(ArabicSmallLowMeem) + "))(?:\b\s*))(?=" + MakeUniRegEx(ArabicLetterBeh) + MakeUniRegEx(ArabicFatha) + "|" + MakeUniRegEx(ArabicLetterBeh) + MakeUniRegEx(ArabicDamma) + "|" + MakeUniRegEx(ArabicLetterBeh) + MakeUniRegEx(ArabicKasra) + ")",
                 .Evaluator = New String() {"empty", "nasalize", "dividetanween(,empty)", "nasalize", "dividetanween(,empty)", "nasalize"}}, _
             New RuleMetadataTranslation With {.RuleName = "VowellessNoonAssimilatingNasalization", .Match = "(?:(" + MakeUniRegEx(ArabicLetterNoon) + MakeUniRegEx(ArabicSukun) + ")|(?:(" + MakeUniRegEx(ArabicLetterNoon) + ")|(" + MakeRegMultiEx(Array.ConvertAll(ArabicTanweens, Function(Str As String) MakeUniRegEx(Str))) + "))(?:\b\s*))(" + MakeUniRegEx(ArabicLetterNoon) + "|" + MakeUniRegEx(ArabicLetterWaw) + "|" + MakeUniRegEx(ArabicLetterMeem) + "|" + MakeUniRegEx(ArabicLetterYeh) + ")",
-                .Evaluator = New String() {"assimilate", "assimilate", "dividetanween(,assimilate)", "nasalize normalprolong assimilator"}}, _
+                .Evaluator = New String() {"assimilate", "assimilate", "dividetanween(,assimilate)", "nasalize|normalprolong|assimilator"}}, _
             New RuleMetadataTranslation With {.RuleName = "VowellessNoonAssimilating", .Match = "(?:(" + MakeUniRegEx(ArabicLetterNoon) + MakeUniRegEx(ArabicSukun) + ")|(?:(" + MakeUniRegEx(ArabicLetterNoon) + ")|(" + MakeRegMultiEx(Array.ConvertAll(ArabicTanweens, Function(Str As String) MakeUniRegEx(Str))) + "))(?:\b\s*))(" + MakeUniRegEx(ArabicLetterLam) + "|" + MakeUniRegEx(ArabicLetterReh) + ")",
-                .Evaluator = New String() {Nothing, "assimilate", "assimilate", "dividetanween(,assimilate)", "assimilator"}}, _
+                .Evaluator = New String() {"assimilate", "assimilate", "dividetanween(,assimilate)", "assimilator"}}, _
             New RuleMetadataTranslation With {.RuleName = "VowellessNoonHideHeaviness", .Match = "(?:(" + MakeUniRegEx(ArabicLetterNoon) + MakeUniRegEx(ArabicSukun) + ")|(?:(" + MakeUniRegEx(ArabicLetterNoon) + ")|(" + MakeRegMultiEx(Array.ConvertAll(ArabicTanweens, Function(Str As String) MakeUniRegEx(Str))) + "))(?:\b\s*))(?=" + MakeUniRegEx(ArabicLetterSad) + "|" + MakeUniRegEx(ArabicLetterDad) + "|" + MakeUniRegEx(ArabicLetterTah) + "|" + MakeUniRegEx(ArabicLetterZah) + "|" + MakeUniRegEx(ArabicLetterQaf) + ")",
-                .Evaluator = New String() {Nothing, "nasalize normalprolong", "nasalize normalprolong", "dividetanween(,normalprolong nasalize)"}}, _
+                .Evaluator = New String() {"nasalize|normalprolong", "nasalize|normalprolong", "dividetanween(,normalprolong|nasalize)"}}, _
             New RuleMetadataTranslation With {.RuleName = "VowellessNoonHideLightness", .Match = "(?:(" + MakeUniRegEx(ArabicLetterNoon) + MakeUniRegEx(ArabicSukun) + ")|(?:(" + MakeUniRegEx(ArabicLetterNoon) + ")|(" + MakeRegMultiEx(Array.ConvertAll(ArabicTanweens, Function(Str As String) MakeUniRegEx(Str))) + "))(?:\b\s*))(?=" + MakeUniRegEx(ArabicLetterTeh) + "|" + MakeUniRegEx(ArabicLetterTheh) + "|" + MakeUniRegEx(ArabicLetterJeem) + "|" + MakeUniRegEx(ArabicLetterDal) + "|" + MakeUniRegEx(ArabicLetterThal) + "|" + MakeUniRegEx(ArabicLetterZain) + "|" + MakeUniRegEx(ArabicLetterSeen) + "|" + MakeUniRegEx(ArabicLetterSheen) + "|" + MakeUniRegEx(ArabicLetterFeh) + "|" + MakeUniRegEx(ArabicLetterKaf) + ")",
-                .Evaluator = New String() {Nothing, "nasalize normalprolong", "nasalize normalprolong", "dividetanween(,normalprolong nasalize)"}}, _
-            New RuleMetadataTranslation With {.RuleName = "CharacterDoubled", .Match = MakeUniRegEx(ArabicLetterMeem) + MakeUniRegEx(ArabicShadda),
-                .Evaluator = New String() {"nasalize normalprolong"}}, _
-            New RuleMetadataTranslation With {.RuleName = "VowellessMeemHide", .Match = "(" + MakeUniRegEx(ArabicLetterMeem) + MakeUniRegEx(ArabicSukun) + ")|(" + MakeUniRegEx(ArabicLetterMeem) + ")(?:\b\s*)(" + MakeUniRegEx(ArabicLetterBeh) + "(?:" + MakeUniRegEx(ArabicFatha) + "|" + MakeUniRegEx(ArabicDamma) + "|" + MakeUniRegEx(ArabicKasra) + "))",
-                .Evaluator = New String() {Nothing, "nasalize normalprolong", "nasalize normalprolong", "assimilate", "nasalize assimilator"}}, _
-            New RuleMetadataTranslation With {.RuleName = "VowellessMeemAssimilating", .Match = "(" + MakeUniRegEx(ArabicLetterMeem) + MakeUniRegEx(ArabicSukun) + "|" + MakeUniRegEx(ArabicLetterMeem) + ")(?:\b\s*)" + MakeUniRegEx(ArabicLetterMeem) + "(?=" + MakeUniRegEx(ArabicFatha) + "|" + MakeUniRegEx(ArabicDamma) + "|" + MakeUniRegEx(ArabicKasra) + ")",
-                .Evaluator = New String() {Nothing, "assimilate", "nasalize normalprolong assimilator"}}, _
-            New RuleMetadataTranslation With {.RuleName = "VowellessMeemClear", .Match = "(" + MakeUniRegEx(ArabicLetterMeem) + MakeUniRegEx(ArabicSukun) + "|" + MakeUniRegEx(ArabicLetterMeem) + "\b\s*)(" + MakeUniRegEx(ArabicLetterTeh) + "|" + MakeUniRegEx(ArabicLetterTheh) + "|" + MakeUniRegEx(ArabicLetterJeem) + "|" + MakeUniRegEx(ArabicLetterHah) + "|" + MakeUniRegEx(ArabicLetterKhah) + "|" + MakeUniRegEx(ArabicLetterDal) + "|" + MakeUniRegEx(ArabicLetterThal) + "|" + MakeUniRegEx(ArabicLetterReh) + "|" + MakeUniRegEx(ArabicLetterZain) + "|" + MakeUniRegEx(ArabicLetterSeen) + "|" + MakeUniRegEx(ArabicLetterSheen) + "|" + MakeUniRegEx(ArabicLetterSad) + "|" + MakeUniRegEx(ArabicLetterDad) + "|" + MakeUniRegEx(ArabicLetterTah) + "|" + MakeUniRegEx(ArabicLetterZah) + "|" + MakeUniRegEx(ArabicLetterAin) + "|" + MakeUniRegEx(ArabicLetterGhain) + "|" + MakeUniRegEx(ArabicLetterQaf) + "|" + MakeUniRegEx(ArabicLetterKaf) + "|" + MakeUniRegEx(ArabicLetterLam) + "|" + MakeUniRegEx(ArabicLetterNoon) + "|" + MakeUniRegEx(ArabicLetterHamza) + "|((" + MakeUniRegEx(ArabicSukun) + "|" + MakeUniRegEx(ArabicFatha) + ")(" + MakeUniRegEx(ArabicLetterYeh) + "))" + ")(" + MakeRegMultiEx(Array.ConvertAll(ArabicFathaDammaKasra, Function(Str As String) MakeUniRegEx(Str))) + ")",
+                .Evaluator = New String() {"nasalize|normalprolong", "nasalize|normalprolong", "dividetanween(,normalprolong|nasalize)"}}, _
+            New RuleMetadataTranslation With {.RuleName = "CharacterDoubled", .Match = "(" + MakeUniRegEx(ArabicLetterMeem) + MakeUniRegEx(ArabicShadda) + ")",
+                .Evaluator = New String() {"nasalize|normalprolong"}}, _
+            New RuleMetadataTranslation With {.RuleName = "VowellessMeemHide", .Match = "(?:(" + MakeUniRegEx(ArabicLetterMeem) + MakeUniRegEx(ArabicSukun) + ")|(" + MakeUniRegEx(ArabicLetterMeem) + ")(?:\b\s*))(" + MakeUniRegEx(ArabicLetterBeh) + "(?=" + MakeUniRegEx(ArabicFatha) + "|" + MakeUniRegEx(ArabicDamma) + "|" + MakeUniRegEx(ArabicKasra) + "))",
+                .Evaluator = New String() {"assimilate", "assimilate", "nasalize|normalprolong|assimilator"}}, _
+            New RuleMetadataTranslation With {.RuleName = "VowellessMeemAssimilating", .Match = "(?:(" + MakeUniRegEx(ArabicLetterMeem) + MakeUniRegEx(ArabicSukun) + ")|(" + MakeUniRegEx(ArabicLetterMeem) + ")(?:\b\s*))(" + MakeUniRegEx(ArabicLetterMeem) + "(?=" + MakeUniRegEx(ArabicFatha) + "|" + MakeUniRegEx(ArabicDamma) + "|" + MakeUniRegEx(ArabicKasra) + "))",
+                .Evaluator = New String() {"assimilate", "assimilate", "nasalize|normalprolong|assimilator"}}, _
+            New RuleMetadataTranslation With {.RuleName = "VowellessMeemClear", .Match = "(?:(" + MakeUniRegEx(ArabicLetterMeem) + MakeUniRegEx(ArabicSukun) + ")|(" + MakeUniRegEx(ArabicLetterMeem) + ")(?:\b\s*))(?=(" + MakeUniRegEx(ArabicLetterTeh) + "|" + MakeUniRegEx(ArabicLetterTheh) + "|" + MakeUniRegEx(ArabicLetterJeem) + "|" + MakeUniRegEx(ArabicLetterHah) + "|" + MakeUniRegEx(ArabicLetterKhah) + "|" + MakeUniRegEx(ArabicLetterDal) + "|" + MakeUniRegEx(ArabicLetterThal) + "|" + MakeUniRegEx(ArabicLetterReh) + "|" + MakeUniRegEx(ArabicLetterZain) + "|" + MakeUniRegEx(ArabicLetterSeen) + "|" + MakeUniRegEx(ArabicLetterSheen) + "|" + MakeUniRegEx(ArabicLetterSad) + "|" + MakeUniRegEx(ArabicLetterDad) + "|" + MakeUniRegEx(ArabicLetterTah) + "|" + MakeUniRegEx(ArabicLetterZah) + "|" + MakeUniRegEx(ArabicLetterAin) + "|" + MakeUniRegEx(ArabicLetterGhain) + "|" + MakeUniRegEx(ArabicLetterQaf) + "|" + MakeUniRegEx(ArabicLetterKaf) + "|" + MakeUniRegEx(ArabicLetterLam) + "|" + MakeUniRegEx(ArabicLetterNoon) + "|" + MakeUniRegEx(ArabicLetterHamza) + "|((" + MakeUniRegEx(ArabicSukun) + "|" + MakeUniRegEx(ArabicFatha) + ")(" + MakeUniRegEx(ArabicLetterYeh) + ")))(" + MakeRegMultiEx(Array.ConvertAll(ArabicFathaDammaKasra, Function(Str As String) MakeUniRegEx(Str))) + "))",
                 .Evaluator = Nothing}, _
-            New RuleMetadataTranslation With {.RuleName = "VowellessMeemClearGreater", .Match = "(" + MakeUniRegEx(ArabicLetterMeem) + MakeUniRegEx(ArabicSukun) + "|" + MakeUniRegEx(ArabicLetterMeem) + "\b\s*)(" + MakeUniRegEx(ArabicLetterFeh) + "|((" + MakeUniRegEx(ArabicSukun) + "|" + MakeUniRegEx(ArabicFatha) + ")(" + MakeUniRegEx(ArabicLetterWaw) + "))" + ")(" + MakeRegMultiEx(Array.ConvertAll(ArabicFathaDammaKasra, Function(Str As String) MakeUniRegEx(Str))) + ")",
+            New RuleMetadataTranslation With {.RuleName = "VowellessMeemClearGreater", .Match = "(?:(" + MakeUniRegEx(ArabicLetterMeem) + MakeUniRegEx(ArabicSukun) + ")|(" + MakeUniRegEx(ArabicLetterMeem) + ")(?:\b\s*))(?=(" + MakeUniRegEx(ArabicLetterFeh) + "|((" + MakeUniRegEx(ArabicSukun) + "|" + MakeUniRegEx(ArabicFatha) + ")(" + MakeUniRegEx(ArabicLetterWaw) + "))" + ")(" + MakeRegMultiEx(Array.ConvertAll(ArabicFathaDammaKasra, Function(Str As String) MakeUniRegEx(Str))) + "))",
                 .Evaluator = Nothing}, _
-            New RuleMetadataTranslation With {.RuleName = "EmptyHamza", .Match = "(?:^\s*)(" + MakeUniRegEx(ArabicLetterAlefWasla) + ")(?=" + MakeUniRegEx(ArabicLetterLam) + "((" + MakeRegMultiEx(Array.ConvertAll(ArabicSunLetters, Function(Str As String) MakeUniRegEx(Str))) + ")" + MakeUniRegEx(ArabicShadda) + "|(" + MakeRegMultiEx(Array.ConvertAll(ArabicMoonLetters, Function(Str As String) MakeUniRegEx(Str))) + ")))",
-                .Evaluator = New String() {"helperfatha"}}, _
-            New RuleMetadataTranslation With {.RuleName = "EmptyHamza", .Match = "(?:^\s*)(" + MakeUniRegEx(ArabicLetterAlefWasla) + ")(?=(" + MakeRegMultiEx(Array.ConvertAll(ArabicLetters, Function(Str As String) MakeUniRegEx(Str))) + ")(" + MakeRegMultiEx(Array.ConvertAll(ArabicFathaDammaKasra, Function(Str As String) MakeUniRegEx(Str))) + ")?" + "(" + MakeRegMultiEx(Array.ConvertAll(ArabicLetters, Function(Str As String) MakeUniRegEx(Str))) + ")(" + MakeUniRegEx(ArabicFatha) + "|" + MakeUniRegEx(ArabicKasra) + ")|" + MakeRegMultiEx(Array.ConvertAll(ArabicWaslKasraExceptions, Function(Str As String) MakeUniRegEx(TransliterateFromBuckwalter(Str)))) + ")",
-                .Evaluator = New String() {"helperkasra"}}, _
-            New RuleMetadataTranslation With {.RuleName = "EmptyHamza", .Match = "(?:^\s*)(" + MakeUniRegEx(ArabicLetterAlefWasla) + ")(?=(" + MakeRegMultiEx(Array.ConvertAll(ArabicLetters, Function(Str As String) MakeUniRegEx(Str))) + ")(" + MakeRegMultiEx(Array.ConvertAll(ArabicFathaDammaKasra, Function(Str As String) MakeUniRegEx(Str))) + ")?" + "(" + MakeRegMultiEx(Array.ConvertAll(ArabicLetters, Function(Str As String) MakeUniRegEx(Str))) + ")" + MakeUniRegEx(ArabicDamma) + ")",
-                .Evaluator = New String() {"helperdamma"}}, _
-            New RuleMetadataTranslation With {.RuleName = "EmptyHamza", .Match = "(?:\w+\s*)(" + MakeUniRegEx(ArabicLetterAlefWasla) + ")",
-                .Evaluator = New String() {"empty"}}, _
-            New RuleMetadataTranslation With {.RuleName = "AssimilateLaamSunLetter", .Match = "(?:(?:^\s*|\b)(?:" + MakeUniRegEx(ArabicLetterWaw) + MakeUniRegEx(ArabicFatha) + "|" + MakeUniRegEx(ArabicLetterBeh) + MakeUniRegEx(ArabicKasra) + "|" + MakeUniRegEx(ArabicLetterTeh) + MakeUniRegEx(ArabicFatha) + "|" + MakeUniRegEx(ArabicLetterKaf) + MakeUniRegEx(ArabicFatha) + "|" + MakeUniRegEx(ArabicLetterLam) + MakeUniRegEx(ArabicKasra) + ")?)(" + MakeUniRegEx(ArabicLetterAlefWasla) + MakeUniRegEx(ArabicLetterLam) + ")(" + MakeRegMultiEx(Array.ConvertAll(ArabicSunLetters, Function(Str As String) MakeUniRegEx(Str))) + ")(?=" + MakeUniRegEx(ArabicShadda) + ")",
+            New RuleMetadataTranslation With {.RuleName = "EmptyHamza", .Match = "(^\s*)(" + MakeUniRegEx(ArabicLetterAlefWasla) + ")(?=" + MakeUniRegEx(ArabicLetterLam) + "((" + MakeRegMultiEx(Array.ConvertAll(ArabicSunLetters, Function(Str As String) MakeUniRegEx(Str))) + ")" + MakeUniRegEx(ArabicShadda) + "|(" + MakeRegMultiEx(Array.ConvertAll(ArabicMoonLetters, Function(Str As String) MakeUniRegEx(Str))) + ")))",
+                .Evaluator = New String() {Nothing, "helperfatha"}}, _
+            New RuleMetadataTranslation With {.RuleName = "EmptyHamza", .Match = "(^\s*)(" + MakeUniRegEx(ArabicLetterAlefWasla) + ")(?=(" + MakeRegMultiEx(Array.ConvertAll(ArabicLetters, Function(Str As String) MakeUniRegEx(Str))) + ")(" + MakeRegMultiEx(Array.ConvertAll(ArabicFathaDammaKasra, Function(Str As String) MakeUniRegEx(Str))) + ")?" + "(" + MakeRegMultiEx(Array.ConvertAll(ArabicLetters, Function(Str As String) MakeUniRegEx(Str))) + ")(" + MakeUniRegEx(ArabicFatha) + "|" + MakeUniRegEx(ArabicKasra) + ")|" + MakeRegMultiEx(Array.ConvertAll(ArabicWaslKasraExceptions, Function(Str As String) MakeUniRegEx(TransliterateFromBuckwalter(Str)))) + ")",
+                .Evaluator = New String() {Nothing, "helperkasra"}}, _
+            New RuleMetadataTranslation With {.RuleName = "EmptyHamza", .Match = "(^\s*)(" + MakeUniRegEx(ArabicLetterAlefWasla) + ")(?=(" + MakeRegMultiEx(Array.ConvertAll(ArabicLetters, Function(Str As String) MakeUniRegEx(Str))) + ")(" + MakeRegMultiEx(Array.ConvertAll(ArabicFathaDammaKasra, Function(Str As String) MakeUniRegEx(Str))) + ")?" + "(" + MakeRegMultiEx(Array.ConvertAll(ArabicLetters, Function(Str As String) MakeUniRegEx(Str))) + ")" + MakeUniRegEx(ArabicDamma) + ")",
+                .Evaluator = New String() {Nothing, "helperdamma"}}, _
+            New RuleMetadataTranslation With {.RuleName = "EmptyHamza", .Match = "(\w+\s*)(" + MakeUniRegEx(ArabicLetterAlefWasla) + ")",
+                .Evaluator = New String() {Nothing, "empty"}}, _
+            New RuleMetadataTranslation With {.RuleName = "AssimilateLaamSunLetter", .Match = "((?:^\s*|\b)(?:" + MakeUniRegEx(ArabicLetterWaw) + MakeUniRegEx(ArabicFatha) + "|" + MakeUniRegEx(ArabicLetterBeh) + MakeUniRegEx(ArabicKasra) + "|" + MakeUniRegEx(ArabicLetterTeh) + MakeUniRegEx(ArabicFatha) + "|" + MakeUniRegEx(ArabicLetterKaf) + MakeUniRegEx(ArabicFatha) + "|" + MakeUniRegEx(ArabicLetterLam) + MakeUniRegEx(ArabicKasra) + ")?)(" + MakeUniRegEx(ArabicLetterAlefWasla) + MakeUniRegEx(ArabicLetterLam) + ")(" + MakeRegMultiEx(Array.ConvertAll(ArabicSunLetters, Function(Str As String) MakeUniRegEx(Str))) + ")(?=" + MakeUniRegEx(ArabicShadda) + ")",
                 .Evaluator = New String() {Nothing, "assimilate", "assimilator"}}, _
-            New RuleMetadataTranslation With {.RuleName = "ClearLaamMoonLetter", .Match = "(?:(?:^\s*|\b)(?:" + MakeUniRegEx(ArabicLetterWaw) + MakeUniRegEx(ArabicFatha) + "|" + MakeUniRegEx(ArabicLetterBeh) + MakeUniRegEx(ArabicKasra) + "|" + MakeUniRegEx(ArabicLetterTeh) + MakeUniRegEx(ArabicFatha) + "|" + MakeUniRegEx(ArabicLetterKaf) + MakeUniRegEx(ArabicFatha) + "|" + MakeUniRegEx(ArabicLetterLam) + MakeUniRegEx(ArabicKasra) + ")?)(" + MakeUniRegEx(ArabicLetterAlefWasla) + ")(" + MakeUniRegEx(ArabicLetterLam) + ")(?=" + MakeUniRegEx(ArabicSukun) + "?(?:" + MakeRegMultiEx(Array.ConvertAll(ArabicMoonLetters, Function(Str As String) MakeUniRegEx(Str))) + "))",
+            New RuleMetadataTranslation With {.RuleName = "ClearLaamMoonLetter", .Match = "((?:^\s*|\b)(?:" + MakeUniRegEx(ArabicLetterWaw) + MakeUniRegEx(ArabicFatha) + "|" + MakeUniRegEx(ArabicLetterBeh) + MakeUniRegEx(ArabicKasra) + "|" + MakeUniRegEx(ArabicLetterTeh) + MakeUniRegEx(ArabicFatha) + "|" + MakeUniRegEx(ArabicLetterKaf) + MakeUniRegEx(ArabicFatha) + "|" + MakeUniRegEx(ArabicLetterLam) + MakeUniRegEx(ArabicKasra) + ")?)(" + MakeUniRegEx(ArabicLetterAlefWasla) + ")(" + MakeUniRegEx(ArabicLetterLam) + ")(?=" + MakeUniRegEx(ArabicSukun) + "?(?:" + MakeRegMultiEx(Array.ConvertAll(ArabicMoonLetters, Function(Str As String) MakeUniRegEx(Str))) + "))",
                 .Evaluator = New String() {Nothing, "assimilate", "assimilator"}}, _
-            New RuleMetadataTranslation With {.RuleName = "Sukun", .Match = MakeUniRegEx(ArabicSukun), _
+            New RuleMetadataTranslation With {.RuleName = "Sukun", .Match = "(" + MakeUniRegEx(ArabicSukun) + ")", _
                 .Evaluator = New String() {"empty"}}, _
-            New RuleMetadataTranslation With {.RuleName = "AlefMaksuraDaggerAlef", .Match = MakeUniRegEx(ArabicLetterAlefMaksura) + "(?=" + MakeUniRegEx(ArabicLetterSuperscriptAlef) + ")", _
+            New RuleMetadataTranslation With {.RuleName = "AlefMaksuraDaggerAlef", .Match = "(" + MakeUniRegEx(ArabicLetterAlefMaksura) + ")(?=" + MakeUniRegEx(ArabicLetterSuperscriptAlef) + ")", _
                 .Evaluator = New String() {"helperfatha"}} _
         }
     Public Shared Function MakeUniRegEx(Input As String) As String
@@ -2040,9 +2046,6 @@ Public Class Arabic
         End If
         Return ArabicString
     End Function
-    Public Shared Function ColorRuleSplit() As String
-        Return "(" + MakeRegMultiEx(Array.ConvertAll(ColoringRules, Function(ClrRule As ColorRule) MakeRegMultiEx(Array.ConvertAll(ClrRule.Match.Split("|"c), Function(Rule As String) "<" + Rule + ">(.+?)</" + Rule + ">")))) + ")" ' paranthesis causes delimeter capture
-    End Function
     Class RuleMetadataComparer
         Implements Collections.Generic.IComparer(Of RuleMetadata)
         Public Function Compare(x As RuleMetadata, y As RuleMetadata) As Integer Implements Generic.IComparer(Of RuleMetadata).Compare
@@ -2064,7 +2067,7 @@ Public Class Arabic
                 For MatchIndex As Integer = 0 To Matches.Count - 1
                     For SubCount As Integer = 0 To RulesOfRecitationRegEx(Count).Evaluator.Length - 1
                         If Not RulesOfRecitationRegEx(Count).Evaluator(SubCount) Is Nothing Then
-                            MetadataList.Add(New RuleMetadata(Matches(MatchIndex).Groups(SubCount + If(SubCount = 0 AndAlso Matches(MatchIndex).Groups.Count > 1, 1, 0)).Index, Matches(MatchIndex).Groups(SubCount).Length - If(SubCount = 0 AndAlso Matches(MatchIndex).Groups.Count > 1, Matches(MatchIndex).Groups(SubCount + 1).Length - Matches(MatchIndex).Groups(SubCount).Length, 0), RulesOfRecitationRegEx(Count).Evaluator(SubCount)))
+                            MetadataList.Add(New RuleMetadata(Matches(MatchIndex).Groups(SubCount + 1).Index, Matches(MatchIndex).Groups(SubCount + 1).Length, RulesOfRecitationRegEx(Count).Evaluator(SubCount)))
                         End If
                     Next
                 Next
@@ -2077,7 +2080,7 @@ Public Class Arabic
             End If
             Strings.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, ArabicString.Substring(MetadataList(Index).Index, MetadataList(Index).Length)))
             For Count = 0 To ColoringRules.Length - 1
-                Dim Match As Integer = Array.FindIndex(ColoringRules(Count).Match.Split("|"c), Function(Str As String) Array.IndexOf(MetadataList(Index).Type.Split(" "), Str) <> -1)
+                Dim Match As Integer = Array.FindIndex(ColoringRules(Count).Match.Split("|"c), Function(Str As String) Array.IndexOf(MetadataList(Index).Type.Split("|"c), Str) <> -1)
                 If Match <> -1 Then
                     'ApplyColorRules(Strings(Strings.Count - 1).Text)
                     Dim Text As RenderArray.RenderText = Strings(Strings.Count - 1)
@@ -2210,7 +2213,7 @@ Public Class Arabic
                 For MatchIndex As Integer = 0 To Matches.Count - 1
                     For SubCount As Integer = 0 To RulesOfRecitationRegEx(Count).Evaluator.Length - 1
                         If Not RulesOfRecitationRegEx(Count).Evaluator(SubCount) Is Nothing Then
-                            MetadataList.Add(New RuleMetadata(Matches(MatchIndex).Groups(SubCount + If(SubCount = 0 AndAlso Matches(MatchIndex).Groups.Count > 1, 1, 0)).Index, Matches(MatchIndex).Groups(SubCount).Length - If(SubCount = 0 AndAlso Matches(MatchIndex).Groups.Count > 1, Matches(MatchIndex).Groups(SubCount + 1).Length - Matches(MatchIndex).Groups(SubCount).Length, 0), RulesOfRecitationRegEx(Count).Evaluator(SubCount)))
+                            MetadataList.Add(New RuleMetadata(Matches(MatchIndex).Groups(SubCount + 1).Index, Matches(MatchIndex).Groups(SubCount + 1).Length, RulesOfRecitationRegEx(Count).Evaluator(SubCount)))
                         End If
                     Next
                 Next
@@ -2220,13 +2223,10 @@ Public Class Arabic
         Dim Index As Integer
         For Index = 0 To MetadataList.Count - 1
             For Count = 0 To ColoringSpelledOutRules.Length - 1
-                Dim Match As Integer = Array.FindIndex(ColoringSpelledOutRules(Count).Match.Split("|"c), Function(Str As String) Array.IndexOf(MetadataList(Index).Type.Split(" "), Str) <> -1)
+                Dim Match As Integer = Array.FindIndex(ColoringSpelledOutRules(Count).Match.Split("|"c), Function(Str As String) Array.IndexOf(MetadataList(Index).Type.Split("|"c), Str) <> -1)
                 If Match <> -1 Then
-                    If ColoringSpelledOutRules(Count).RuleFunc = Nothing Then
-                        ArabicString = ArabicString.Insert(MetadataList(Index).Index + MetadataList(Index).Length, String.Format(ColoringSpelledOutRules(Count).Evaluator, ArabicString.Substring(MetadataList(Index).Index, MetadataList(Index).Length))).Remove(MetadataList(Index).Index, MetadataList(Index).Length)
-                    Else
-                        ArabicString = ArabicString.Insert(MetadataList(Index).Index + MetadataList(Index).Length, RuleFunctions(ColoringSpelledOutRules(Count).RuleFunc)(String.Format(ColoringSpelledOutRules(Count).Evaluator, ArabicString.Substring(MetadataList(Index).Index, MetadataList(Index).Length)))).Remove(MetadataList(Index).Index, MetadataList(Index).Length)
-                    End If
+                    Dim Str As String = String.Format(ColoringSpelledOutRules(Count).Evaluator, ArabicString.Substring(MetadataList(Index).Index, MetadataList(Index).Length))    
+                    ArabicString = ArabicString.Insert(MetadataList(Index).Index + MetadataList(Index).Length, If(ColoringSpelledOutRules(Count).RuleFunc = Nothing, Str, RuleFunctions(ColoringSpelledOutRules(Count).RuleFunc)(Str))).Remove(MetadataList(Index).Index, MetadataList(Index).Length)
                 End If
             Next
         Next
@@ -2254,12 +2254,12 @@ Public Class Arabic
         Dim Letters(CachedData.IslamData.ArabicLetters.Length - 1) As IslamData.ArabicSymbol
         CachedData.IslamData.ArabicLetters.CopyTo(Letters, 0)
         Array.Sort(Letters, New StringLengthComparer)
-        GetArabicSymbolJSArray = "var ArabicLetters = " + _
+        GetArabicSymbolJSArray = "var arabicLetters = " + _
                                 Utility.MakeJSArray(New String() {Utility.MakeJSIndexedObject(New String() {"Symbol", "Shaping", "Assimilate", "TranslitLetter", "RomanTranslit", "PlainRoman"}, _
                                 Array.ConvertAll(Of IslamData.ArabicSymbol, String())(Letters, Function(Convert As IslamData.ArabicSymbol) New String() {CStr(AscW(Convert.Symbol)), If(Convert.Shaping = Nothing, String.Empty, Utility.MakeJSArray(Array.ConvertAll(Convert.Shaping, Function(Ch As Char) CStr(AscW(Ch))))), CStr(IIf(Convert.Assimilate, "true", String.Empty)), CStr(IIf(Convert.ExtendedBuckwalterLetter = ChrW(0), String.Empty, Convert.ExtendedBuckwalterLetter)), Convert.RomanTranslit, Convert.PlainRoman}), False)}, True) + ";"
     End Function
     Public Shared Function GetTransliterateGenJS() As String
-        Return "function doTransliterate(sVal, direction, conversion) { var iCount, iSubCount, sOutVal = ''; for (iCount = 0; iCount < sVal.length; iCount++) { if (sVal.charAt(iCount) === '\\') { iCount++; if (sVal.charAt(iCount) === ',') { sOutVal += String.fromCharCode(1548); } else { sOutVal += sVal.charAt(iCount); } } else { for (iSubCount = 0; iSubCount < ArabicLetters.length; iSubCount++) { if (direction ? sVal.charCodeAt(iCount) === parseInt(ArabicLetters[iSubCount].Symbol, 10) : sVal.charAt(iCount) === unescape((conversion ? ArabicLetters[iSubCount].TranslitLetter : ArabicLetters[iSubCount].RomanTranslit))) { sOutVal += (direction ? (conversion ? ArabicLetters[iSubCount].TranslitLetter : ArabicLetters[iSubCount].RomanTranslit) : (isCombiningSymbol(iSubCount) && (iSubCount === 0 || findLetterBySymbol(sVal.slice(-1)) === -1 || !isLetterDiacritic(findLetterBySymbol(sVal.slice(-1))) && !isSpecialSymbol(findLetterBySymbol(sVal.slice(-1)))) ? String.fromCharCode(0x202D) : '') + String.fromCharCode(ArabicLetters[iSubCount].Symbol) + (isCombiningSymbol(iSubCount) && (iSubCount === 0 || findLetterBySymbol(sVal.slice(-1)) === -1 || !isLetterDiacritic(findLetterBySymbol(sVal.slice(-1))) && !isSpecialSymbol(findLetterBySymbol(sVal.slice(-1)))) ? String.fromCharCode(0x202C) : '')); break; } } if (iSubCount === ArabicLetters.length) sOutVal += sVal.charAt(iCount); } } return unescape(sOutVal); }"
+        Return "function doTransliterate(sVal, direction, conversion) { var iCount, iSubCount, sOutVal = ''; for (iCount = 0; iCount < sVal.length; iCount++) { if (sVal.charAt(iCount) === '\\') { iCount++; if (sVal.charAt(iCount) === ',') { sOutVal += String.fromCharCode(1548); } else { sOutVal += sVal.charAt(iCount); } } else { for (iSubCount = 0; iSubCount < arabicLetters.length; iSubCount++) { if (direction ? sVal.charCodeAt(iCount) === parseInt(arabicLetters[iSubCount].Symbol, 10) : sVal.charAt(iCount) === unescape((conversion ? arabicLetters[iSubCount].TranslitLetter : arabicLetters[iSubCount].RomanTranslit))) { sOutVal += (direction ? (conversion ? arabicLetters[iSubCount].TranslitLetter : arabicLetters[iSubCount].RomanTranslit) : (isCombiningSymbol(iSubCount) && (iSubCount === 0 || findLetterBySymbol(sVal.slice(-1)) === -1 || !isLetterDiacritic(findLetterBySymbol(sVal.slice(-1))) && !isSpecialSymbol(findLetterBySymbol(sVal.slice(-1)))) ? String.fromCharCode(0x202D) : '') + String.fromCharCode(arabicLetters[iSubCount].Symbol) + (isCombiningSymbol(iSubCount) && (iSubCount === 0 || findLetterBySymbol(sVal.slice(-1)) === -1 || !isLetterDiacritic(findLetterBySymbol(sVal.slice(-1))) && !isSpecialSymbol(findLetterBySymbol(sVal.slice(-1)))) ? String.fromCharCode(0x202C) : '')); break; } } if (iSubCount === arabicLetters.length) sOutVal += sVal.charAt(iCount); } } return unescape(sOutVal); }"
     End Function
     Public Shared Function GetDiacriticJS() As String
         Return "function doDiacritics(sVal, direction) { var iCount, sOutVal = ''; for (iCount = 0; iCount < sVal.length; iCount++) { sOutVal += findLetterBySymbol(sVal.charCodeAt(iCount)) === -1 || !isDiacritic(findLetterBySymbol(sVal.charCodeAt(iCount))) ? sVal[iCount] : ''; } return sOutVal; }" + _
@@ -2267,49 +2267,51 @@ Public Class Arabic
             FindLetterBySymbolJS()
     End Function
     Public Shared Function FindLetterBySymbolJS() As String
-        Return "function findLetterBySymbol(chVal) { var iSubCount; for (iSubCount = 0; iSubCount < ArabicLetters.length; iSubCount++) { if (chVal === parseInt(ArabicLetters[iSubCount].Symbol, 10)) return iSubCount; for (var iShapeCount = 0; iShapeCount < ArabicLetters[iSubCount].Shaping.length; iShapeCount++) { if (chVal === parseInt(ArabicLetters[iSubCount].Shaping[iShapeCount], 10)) return iSubCount; } } return -1; }"
+        Return "function findLetterBySymbol(chVal) { var iSubCount; for (iSubCount = 0; iSubCount < arabicLetters.length; iSubCount++) { if (chVal === parseInt(arabicLetters[iSubCount].Symbol, 10)) return iSubCount; for (var iShapeCount = 0; iShapeCount < arabicLetters[iSubCount].Shaping.length; iShapeCount++) { if (chVal === parseInt(arabicLetters[iSubCount].Shaping[iShapeCount], 10)) return iSubCount; } } return -1; }"
     End Function
     Public Shared Function IsDiacriticJS() As String
-        Return "function isDiacritic(index) { return (" + String.Join("||", Array.ConvertAll(Arabic.RecitationDiacritics, Function(C As Char) "parseInt(ArabicLetters[index].Symbol, 10) === 0x" + Hex(AscW(C)))) + "); }" + _
-        "function isLetter(index) { return (" + String.Join("||", Array.ConvertAll(Arabic.RecitationLetters, Function(C As Char) "parseInt(ArabicLetters[index].Symbol, 10) === 0x" + Hex(AscW(C)))) + "); }" + _
-        "function isLetterDiacritic(index) { return (" + String.Join("||", Array.ConvertAll(Arabic.RecitationLettersDiacritics, Function(C As Char) "parseInt(ArabicLetters[index].Symbol, 10) === 0x" + Hex(AscW(C)))) + "); }" + _
-        "function isSpecialSymbol(index) { return (" + String.Join("||", Array.ConvertAll(Arabic.RecitationSpecialSymbols, Function(C As Char) "parseInt(ArabicLetters[index].Symbol, 10) === 0x" + Hex(AscW(C)))) + "); }" + _
-        "function isSymbol(index) { return (" + String.Join("||", Array.ConvertAll(Arabic.GetRecitationSymbols(), Function(A As Array) "parseInt(ArabicLetters[index].Symbol, 10) === 0x" + Hex(AscW(CachedData.IslamData.ArabicLetters(A(1)).Symbol)))) + "); }" + _
-        "function isCombiningSymbol(index) { return (" + String.Join("||", Array.ConvertAll(Arabic.RecitationCombiningSymbols, Function(C As Char) "parseInt(ArabicLetters[index].Symbol, 10) === 0x" + Hex(AscW(C)))) + "); }" + _
-        "var uthmaniMinimalScript = " + Utility.MakeJSArray(New String() {Utility.MakeJSIndexedObject(New String() {"Rule", "RuleName", "Match", "Evaluator", "RuleFunc"}, _
+        Return "function isDiacritic(index) { return (" + String.Join("||", Array.ConvertAll(Arabic.RecitationDiacritics, Function(C As Char) "parseInt(arabicLetters[index].Symbol, 10) === 0x" + Hex(AscW(C)))) + "); }" + _
+        "function isLetter(index) { return (" + String.Join("||", Array.ConvertAll(Arabic.RecitationLetters, Function(C As Char) "parseInt(arabicLetters[index].Symbol, 10) === 0x" + Hex(AscW(C)))) + "); }" + _
+        "function isLetterDiacritic(index) { return (" + String.Join("||", Array.ConvertAll(Arabic.RecitationLettersDiacritics, Function(C As Char) "parseInt(arabicLetters[index].Symbol, 10) === 0x" + Hex(AscW(C)))) + "); }" + _
+        "function isSpecialSymbol(index) { return (" + String.Join("||", Array.ConvertAll(Arabic.RecitationSpecialSymbols, Function(C As Char) "parseInt(arabicLetters[index].Symbol, 10) === 0x" + Hex(AscW(C)))) + "); }" + _
+        "function isSymbol(index) { return (" + String.Join("||", Array.ConvertAll(Arabic.GetRecitationSymbols(), Function(A As Array) "parseInt(arabicLetters[index].Symbol, 10) === 0x" + Hex(AscW(CachedData.IslamData.ArabicLetters(A(1)).Symbol)))) + "); }" + _
+        "function isCombiningSymbol(index) { return (" + String.Join("||", Array.ConvertAll(Arabic.RecitationCombiningSymbols, Function(C As Char) "parseInt(arabicLetters[index].Symbol, 10) === 0x" + Hex(AscW(C)))) + "); }" + _
+        "var uthmaniMinimalScript = " + Utility.MakeJSArray(New String() {Utility.MakeJSIndexedObject(New String() {"rule", "ruleName", "match", "evaluator", "ruleFunc"}, _
                                 Array.ConvertAll(Of RuleTranslation, String())(UthmaniMinimalScript, Function(Convert As RuleTranslation) New String() {Convert.Rule, Convert.RuleName, Convert.Match, Convert.Evaluator, Convert.RuleFunc}), False)}, True) + ";" + _
-        "var simpleEnhancedScript = " + Utility.MakeJSArray(New String() {Utility.MakeJSIndexedObject(New String() {"Rule", "RuleName", "Match", "Evaluator", "RuleFunc"}, _
+        "var simpleEnhancedScript = " + Utility.MakeJSArray(New String() {Utility.MakeJSIndexedObject(New String() {"rule", "ruleName", "match", "evaluator", "ruleFunc"}, _
                                 Array.ConvertAll(Of RuleTranslation, String())(SimpleEnhancedScript, Function(Convert As RuleTranslation) New String() {Convert.Rule, Convert.RuleName, Convert.Match, Convert.Evaluator, Convert.RuleFunc}), False)}, True) + ";" + _
-        "var simpleScript = " + Utility.MakeJSArray(New String() {Utility.MakeJSIndexedObject(New String() {"Rule", "RuleName", "Match", "Evaluator", "RuleFunc"}, _
+        "var simpleScript = " + Utility.MakeJSArray(New String() {Utility.MakeJSIndexedObject(New String() {"rule", "ruleName", "match", "evaluator", "ruleFunc"}, _
                                 Array.ConvertAll(Of RuleTranslation, String())(SimpleScript, Function(Convert As RuleTranslation) New String() {Convert.Rule, Convert.RuleName, Convert.Match, Convert.Evaluator, Convert.RuleFunc}), False)}, True) + ";" + _
-        "var simpleMinimalScript = " + Utility.MakeJSArray(New String() {Utility.MakeJSIndexedObject(New String() {"Rule", "RuleName", "Match", "Evaluator", "RuleFunc"}, _
+        "var simpleMinimalScript = " + Utility.MakeJSArray(New String() {Utility.MakeJSIndexedObject(New String() {"rule", "ruleName", "match", "evaluator", "ruleFunc"}, _
                                 Array.ConvertAll(Of RuleTranslation, String())(SimpleMinimalScript, Function(Convert As RuleTranslation) New String() {Convert.Rule, Convert.RuleName, Convert.Match, Convert.Evaluator, Convert.RuleFunc}), False)}, True) + ";" + _
-        "var simpleCleanScript = " + Utility.MakeJSArray(New String() {Utility.MakeJSIndexedObject(New String() {"Rule", "RuleName", "Match", "Evaluator", "RuleFunc"}, _
+        "var simpleCleanScript = " + Utility.MakeJSArray(New String() {Utility.MakeJSIndexedObject(New String() {"rule", "ruleName", "match", "evaluator", "ruleFunc"}, _
                                 Array.ConvertAll(Of RuleTranslation, String())(SimpleCleanScript, Function(Convert As RuleTranslation) New String() {Convert.Rule, Convert.RuleName, Convert.Match, Convert.Evaluator, Convert.RuleFunc}), False)}, True) + ";" + _
-        "var errorCheckRules = " + Utility.MakeJSArray(New String() {Utility.MakeJSIndexedObject(New String() {"Rule", "RuleName", "Match", "Evaluator", "RuleFunc"}, _
+        "var errorCheckRules = " + Utility.MakeJSArray(New String() {Utility.MakeJSIndexedObject(New String() {"rule", "ruleName", "match", "evaluator", "ruleFunc"}, _
                                 Array.ConvertAll(Of RuleTranslation, String())(ErrorCheckRules, Function(Convert As RuleTranslation) New String() {Convert.Rule, Convert.RuleName, Convert.Match, Convert.Evaluator, Convert.RuleFunc}), False)}, True) + ";" + _
-        "var coloringSpelledOutRules = " + Utility.MakeJSArray(New String() {Utility.MakeJSIndexedObject(New String() {"Rule", "RuleName", "Match", "Evaluator", "RuleFunc"}, _
+        "var coloringSpelledOutRules = " + Utility.MakeJSArray(New String() {Utility.MakeJSIndexedObject(New String() {"rule", "ruleName", "match", "evaluator", "ruleFunc"}, _
                                 Array.ConvertAll(Of RuleTranslation, String())(ColoringSpelledOutRules, Function(Convert As RuleTranslation) New String() {Convert.Rule, Convert.RuleName, Convert.Match, Convert.Evaluator, Convert.RuleFunc}), False)}, True) + ";" + _
-        "var breakdownRules = " + Utility.MakeJSArray(New String() {Utility.MakeJSIndexedObject(New String() {"Rule", "RuleName", "Match", "Evaluator", "RuleFunc"}, _
+        "var breakdownRules = " + Utility.MakeJSArray(New String() {Utility.MakeJSIndexedObject(New String() {"rule", "ruleName", "match", "evaluator", "ruleFunc"}, _
                                 Array.ConvertAll(Of RuleTranslation, String())(BreakdownRules, Function(Convert As RuleTranslation) New String() {Convert.Rule, Convert.RuleName, Convert.Match, Convert.Evaluator, Convert.RuleFunc}), False)}, True) + ";" + _
-        "var romanizationRules = " + Utility.MakeJSArray(New String() {Utility.MakeJSIndexedObject(New String() {"Rule", "RuleName", "Match", "Evaluator", "RuleFunc"}, _
+        "var romanizationRules = " + Utility.MakeJSArray(New String() {Utility.MakeJSIndexedObject(New String() {"rule", "ruleName", "match", "evaluator", "ruleFunc"}, _
                                 Array.ConvertAll(Of RuleTranslation, String())(RomanizationRules, Function(Convert As RuleTranslation) New String() {Convert.Rule, Convert.RuleName, Convert.Match, Convert.Evaluator, Convert.RuleFunc}), False)}, True) + ";" + _
-        "var coloringRules = " + Utility.MakeJSArray(New String() {Utility.MakeJSIndexedObject(New String() {"Rule", "RuleName", "Match", "Color"}, _
+        "var coloringRules = " + Utility.MakeJSArray(New String() {Utility.MakeJSIndexedObject(New String() {"rule", "ruleName", "match", "color"}, _
                                 Array.ConvertAll(Of ColorRule, String())(ColoringRules, Function(Convert As ColorRule) New String() {Convert.Rule, Convert.RuleName, Convert.Match, System.Drawing.ColorTranslator.ToHtml(Convert.Color)}), False)}, True) + ";" + _
-        "var rulesOfRecitationRegEx = " + Utility.MakeJSArray(New String() {Utility.MakeJSIndexedObject(New String() {"Rule", "RuleName", "Match", "Evaluator"}, _
+        "var rulesOfRecitationRegEx = " + Utility.MakeJSArray(New String() {Utility.MakeJSIndexedObject(New String() {"rule", "ruleName", "match", "evaluator"}, _
                                 Array.ConvertAll(Of RuleMetadataTranslation, String())(RulesOfRecitationRegEx, Function(Convert As RuleMetadataTranslation) New String() {Convert.Rule, Convert.RuleName, Convert.Match, Utility.MakeJSArray(Convert.Evaluator)}), False)}, True) + ";"
     End Function
     Public Shared Function GetPlainTransliterateGenJS() As String
         Return FindLetterBySymbolJS() + _
             IsDiacriticJS() + _
-            "function isWhitespace(index) { return (" + String.Join("||", Array.ConvertAll(Arabic.WhitespaceSymbols, Function(C As Char) "parseInt(ArabicLetters[index].Symbol, 10) === 0x" + Hex(AscW(C)))) + "); }" + _
-            "function isPunctuation(index) { return (" + String.Join("||", Array.ConvertAll(Arabic.PunctuationSymbols, Function(C As Char) "parseInt(ArabicLetters[index].Symbol, 10) === 0x" + Hex(AscW(C)))) + "); }" + _
-            "function isStop(index) { return (" + String.Join("||", Array.ConvertAll(Arabic.ArabicStopLetters, Function(C As Char) "parseInt(ArabicLetters[index].Symbol, 10) === 0x" + Hex(AscW(C)))) + "); }" + _
+            "function isWhitespace(index) { return (" + String.Join("||", Array.ConvertAll(Arabic.WhitespaceSymbols, Function(C As Char) "parseInt(arabicLetters[index].Symbol, 10) === 0x" + Hex(AscW(C)))) + "); }" + _
+            "function isPunctuation(index) { return (" + String.Join("||", Array.ConvertAll(Arabic.PunctuationSymbols, Function(C As Char) "parseInt(arabicLetters[index].Symbol, 10) === 0x" + Hex(AscW(C)))) + "); }" + _
+            "function isStop(index) { return (" + String.Join("||", Array.ConvertAll(Arabic.ArabicStopLetters, Function(C As Char) "parseInt(arabicLetters[index].Symbol, 10) === 0x" + Hex(AscW(C)))) + "); }" + _
             "function applyColorRules(sVal) {}" + _
             "function changeScript(sVal, scriptType) {}" + _
-            "function arabicLetterSpelling(sVal) {}" + _
-            "function gutteralRules(sVal, idx, bLeading, bTrailing) {}" + _
-            "function doPlainTransliterate(sVal) { var count, index, metadataList; for (count = 0; count < errorCheckRules.length; count++) { } }"
+            "function arabicLetterSpelling(sVal) { var count, index, output = ''; for (count = 0; count < sVal.length; count++) { index = findLetterBySymbol(sVal[count]); if (isLetter(index)) { output += arabicLetters[index].SymbolName; } } return output; }" + _
+            "function gutteralRules(sVal, idx, bLeading, bTrailing) { return sVal; }" + _
+            "var ruleFuncs = [function(str) { return str.toUpperCase(); }, function(str) { return transliterateToPlainRoman(doTransliterate(arabicWordFromNumber(parseInt(doTransliterate(str, true, true), 10), true, false, false), true, true)); }, function(str) { return arabicLetterSpelling(str); }, function(str) { return arabicLetters[findLetterBySymbol(str)].PlainRoman; }, function(str) { return gutteralRules(str, 0, true, true); }, function(str) { return gutteralRules(str, 0, false, true); }, function(str) { return gutteralRules(str, 0, true, false); }];" + _
+            "function ruleMetadataComparer(a, b) { return (a.index === b.index) ? b.length - a.length : b.index - a.index; }" + _
+            "function transliterateToPlainRoman(sVal) { var count, index, arr, re, metadataList = [], findFunc = function(e) { return metadataList[index].type.split('|').indexOf(e) !== -1; }, breakdownFunc = function(m) { return ruleFunctions[breakdownRules[count].ruleFunc](RegExp.matchResult(breakdownRules[count].evaluator, m, arguments[arguments.length - 2], arguments[arguments.length - 1])); }, romanizationFunc = function(m) { return ruleFunctions[breakdownRules[count].ruleFunc](RegExp.matchResult(romanizationRules[count].evaluator, m, arguments[arguments.length - 2], arguments[arguments.length - 1])); }; for (count = 0; count < errorCheckRules.length; count++) { re = new RegExp(errorCheckRules[count].match, 'g'); while ((arr = re.exec(sVal)) !== null) { console.log(errorCheckRules[count].rule + ': ' + sVal.substr(0, arr.index) + '<!-- -->' + sVal.substr(arr.index)); } } for (count = 0; count < rulesOfRecitationRegEx.length; count++) { if (rulesOfRecitationRegEx[count] !== null) { var subcount, lindex; re = new RegExp(rulesOfRecitationRegEx[count].match, 'g'); while ((arr = re.exec(sVal)) !== null) { lindex = 0; for (subcount = 0; subcount < rulesOfRecitationRegEx[count].evaluator.length; subcount++) { if (rulesOfRecitationRegEx[count].evaluator[subcount] !== null) { metadataList.push({index: lindex, length: arr[subcount + 1].length, type: rulesOfRecitationRegEx[count].evaluator[subcount]}); } lindex += arr[subcount + 1].length; } } } } metadataList.sort(ruleMetadataComparer); for (index = 0; index < metadataList.length; index++) { for (count = 0; count < coloringSpelledOutRules.length; count++) { var match = coloringSpelledOutRules.split('|').findIndex(findFunc); if (match !== -1) { var str = coloringSpelledOutRules[count].evaluator.format(sVal.substr(metadataList[index].index, metadataList[index].length)); sVal = sVal.substr(0, metadataList[index].index) + ((coloringSpelledOutRules[count].ruleFunc === null) ? str : ruleFunctions[coloringSpelledOutRules[count].ruleFunc](str)) + sVal.substr(metadataList[index].index + metadataList[index].length); } } } for (count = 0; count < breakdownRules.length; count++) { sVal = sVal.replace(new RegExp(breakdownRules[count].match, 'g'), breakdownRules[count].ruleFunc === null ? breakdownRules[count].evaluator : breakdownFunc); } for (count = 0; count < romanizationRules.length; count++) { sVal = sVal.replace(new RegExp(romanizationRules[count].match, 'g'), romanizationRules[count].ruleFunc === null ? romanizationRules[count].evaluator : romanizationFunc); } return sVal; }"
     End Function
     Public Shared Function GetTransliterateNumberJS() As String()
         Return New String() {"javascript: doTransliterateNum();", String.Empty, GetArabicSymbolJSArray(), GetTransliterateGenJS(), _
@@ -2325,9 +2327,9 @@ Public Class Arabic
                              "var arabicBaseBillionNumbers = " + Utility.MakeJSArray(ArabicBaseBillionNumbers) + ";", _
                              "var arabicBaseMilliardNumbers = " + Utility.MakeJSArray(ArabicBaseMilliardNumbers) + ";", _
                              "var arabicBaseTrillionNumbers = " + Utility.MakeJSArray(ArabicBaseTrillionNumbers) + ";", _
-                             "function doTransliterateNum() { $('#translitvalue').text(doTransliterate(translitNumber($('#translitedit').val(), $('#useclassic0').prop('checked'), $('#usehundredform0').prop('checked'), $('#usemilliard0').prop('checked')), false, true)); }", _
-                             "function translitLessThanThousand(number, useclassic, usealefhundred) { var str = '', hundstr = ''; if (number >= 100) { hundstr = usealefhundred ? arabicBaseHundredNumbers[Math.floor(number / 100) - 1].substr(0, 2) + 'A' + arabicBaseHundredNumbers[Math.floor(number / 100) - 1].substr(2) : arabicBaseHundredNumbers[Math.floor(number / 100) - 1]; if (number === 100) { return hundstr; } number = number % 100; } if ((number % 10) !== 0 && number !== 11 && number !== 12) { str = arabicBaseNumbers[Math.floor(number / 10) - 1]; } if (number >= 11 && number < 20) { if (number == 11 || number == 12) { str += arabicBaseExtraNumbers[number - 11]; } else { str = str.slice(0, -1) + 'a'; } str += ' Ea$ara'; } else if ((number === 0 && str === '') || number === 10 || number >= 20) { str = (str === '' ? '' : str + ' wa') + arabicBaseTenNumbers[Math.floor(number / 10)]; } return useclassic ? ((str === '' ? '' : str + (hundstr === '' ? '' : ' wa')) + hundstr) : ((hundstr === '' ? '' : hundstr + (str === '' ? '' : ' wa')) + str); }", _
-                             "function translitNumber(number, useclassic, usealefhundred, usemilliard) { var str = '', nextstr = '', curbase = 3, basenums = [1000, 1000000, 1000000000, 1000000000000], bases = [arabicBaseThousandNumbers, arabicBaseMillionNumbers, usemilliard ? arabicBaseMilliardNumbers : arabicBaseBillionNumbers, arabicBaseTrillionNumbers]; do { if (number >= basenums[curbase] && number < 2 * basenums[curbase]) { nextstr = bases[curbase][0]; } else if (number >= 2 * basenums[curbase] && number < 3 * basenums[curbase]) { nextstr = bases[curbase][1]; } else if (number >= 3 * basenums[curbase] && number < 10 * basenums[curbase]) { nextstr = arabicBaseNumbers[Math.floor(Number / basenums[curbase]) - 1].slice(0, -1) + 'u ' + bases[curbase][2]; } else if (number >= 10 * basenums[curbase] && number < 11 * basenums[curbase]) { nextstr = arabicBaseTenNumbers[1].slice(0, -1) + 'u ' + bases[curbase][2]; } else if (number >= basenums[curbase]) { nextstr = translitLessThanThousand(Math.floor(number / basenums[curbase]) % 100, useclassic, usealefhundred); if (number >= 100 * basenums[curbase] && number < (useclassic ? 200 : 101) * basenums[curbase]) { nextstr = nextstr.slice(0, -1) + 'u ' + bases[curbase][0].slice(0, -1) + 'K'; } else if (number >= 200 * basenums[curbase] && number < (useclassic ? 300 : 201) * basenums[curbase]) { nextstr = nextstr.slice(0, -2) + ' ' + bases[curbase][0].slice(0, -1) + 'K'; } else if (number >= 300 * basenums[curbase] && (useclassic || Math.floor(number / basenums[curbase]) % 100 === 0)) { nextstr = nextstr.slice(0, -1) + 'i ' + bases[curbase][0].slice(0, -1) + 'K'; } else { nextstr += ' ' + bases[curbase][0].slice(0, -1) + 'FA'; } } number = number % basenums[curbase]; curbase--; str = useclassic ? ((nextstr === '' ? '' : nextstr + (str === '' ? '' : ' wa')) + str) : ((str === '' ? '' : str + (nextstr === '' ? '' : ' wa')) + nextstr); nextstr = ''; } while (curbase >= 0); if (number !== 0 || str === '') { nextstr = translitLessThanThousand(number, useclassic, usealefhundred); } return useclassic ? ((nextstr === '' ? '' : nextstr + (str === '' ? '' : ' wa')) + str) : ((str === '' ? '' : str + (nextstr === '' ? '' : ' wa')) + nextstr); }"}
+                             "function doTransliterateNum() { $('#translitvalue').text(doTransliterate(arabicWordFromNumber($('#translitedit').val(), $('#useclassic0').prop('checked'), $('#usehundredform0').prop('checked'), $('#usemilliard0').prop('checked')), false, true)); }", _
+                             "function arabicWordForLessThanThousand(number, useclassic, usealefhundred) { var str = '', hundstr = ''; if (number >= 100) { hundstr = usealefhundred ? arabicBaseHundredNumbers[Math.floor(number / 100) - 1].substr(0, 2) + 'A' + arabicBaseHundredNumbers[Math.floor(number / 100) - 1].substr(2) : arabicBaseHundredNumbers[Math.floor(number / 100) - 1]; if (number === 100) { return hundstr; } number = number % 100; } if ((number % 10) !== 0 && number !== 11 && number !== 12) { str = arabicBaseNumbers[Math.floor(number / 10) - 1]; } if (number >= 11 && number < 20) { if (number == 11 || number == 12) { str += arabicBaseExtraNumbers[number - 11]; } else { str = str.slice(0, -1) + 'a'; } str += ' Ea$ara'; } else if ((number === 0 && str === '') || number === 10 || number >= 20) { str = (str === '' ? '' : str + ' wa') + arabicBaseTenNumbers[Math.floor(number / 10)]; } return useclassic ? ((str === '' ? '' : str + (hundstr === '' ? '' : ' wa')) + hundstr) : ((hundstr === '' ? '' : hundstr + (str === '' ? '' : ' wa')) + str); }", _
+                             "function arabicWordFromNumber(number, useclassic, usealefhundred, usemilliard) { var str = '', nextstr = '', curbase = 3, basenums = [1000, 1000000, 1000000000, 1000000000000], bases = [arabicBaseThousandNumbers, arabicBaseMillionNumbers, usemilliard ? arabicBaseMilliardNumbers : arabicBaseBillionNumbers, arabicBaseTrillionNumbers]; do { if (number >= basenums[curbase] && number < 2 * basenums[curbase]) { nextstr = bases[curbase][0]; } else if (number >= 2 * basenums[curbase] && number < 3 * basenums[curbase]) { nextstr = bases[curbase][1]; } else if (number >= 3 * basenums[curbase] && number < 10 * basenums[curbase]) { nextstr = arabicBaseNumbers[Math.floor(Number / basenums[curbase]) - 1].slice(0, -1) + 'u ' + bases[curbase][2]; } else if (number >= 10 * basenums[curbase] && number < 11 * basenums[curbase]) { nextstr = arabicBaseTenNumbers[1].slice(0, -1) + 'u ' + bases[curbase][2]; } else if (number >= basenums[curbase]) { nextstr = arabicWordForLessThanThousand(Math.floor(number / basenums[curbase]) % 100, useclassic, usealefhundred); if (number >= 100 * basenums[curbase] && number < (useclassic ? 200 : 101) * basenums[curbase]) { nextstr = nextstr.slice(0, -1) + 'u ' + bases[curbase][0].slice(0, -1) + 'K'; } else if (number >= 200 * basenums[curbase] && number < (useclassic ? 300 : 201) * basenums[curbase]) { nextstr = nextstr.slice(0, -2) + ' ' + bases[curbase][0].slice(0, -1) + 'K'; } else if (number >= 300 * basenums[curbase] && (useclassic || Math.floor(number / basenums[curbase]) % 100 === 0)) { nextstr = nextstr.slice(0, -1) + 'i ' + bases[curbase][0].slice(0, -1) + 'K'; } else { nextstr += ' ' + bases[curbase][0].slice(0, -1) + 'FA'; } } number = number % basenums[curbase]; curbase--; str = useclassic ? ((nextstr === '' ? '' : nextstr + (str === '' ? '' : ' wa')) + str) : ((str === '' ? '' : str + (nextstr === '' ? '' : ' wa')) + nextstr); nextstr = ''; } while (curbase >= 0); if (number !== 0 || str === '') { nextstr = arabicWordForLessThanThousand(number, useclassic, usealefhundred); } return useclassic ? ((nextstr === '' ? '' : nextstr + (str === '' ? '' : ' wa')) + str) : ((str === '' ? '' : str + (nextstr === '' ? '' : ' wa')) + nextstr); }"}
     End Function
     Public Shared Function GetTransliterateJS() As String()
         Return New String() {"javascript: doTransliterateDisplay();", String.Empty, GetArabicSymbolJSArray(), GetTransliterateGenJS(), GetDiacriticJS(), _
@@ -2339,7 +2341,7 @@ Public Class Arabic
         "function IsExplicit(c) { return (c>=0x202A&&c<=0x202E)||(c>=0x2066&&c<=0x2069); }", _
         "function doFixDirection(sVal, direction) { var iCount, sOutVal = direction ? '\u200E' : '\u200F', bInv = false; for (iCount = 0; iCount < sVal.length; iCount++) { sOutVal += (sVal.charCodeAt(iCount) == 0x200E || sVal.charCodeAt(iCount) == 0x200F || IsExplicit(sVal.charCodeAt(iCount))) ? '' : (!bInv && IsNeutral(sVal.charCodeAt(iCount)) ? '' : (direction ? '\u202A' : '\u202B')) + sVal[iCount]; } return sOutVal; }", _
         "String.prototype.format = function() { var formatted = this; for (var i = 0; i < arguments.length; i++) { formatted = formatted.replace(new RegExp('\\{'+i+'\\}', 'gi'), arguments[i]); } return formatted; };" + _
-        "function RegExp.matchResult(subexp, match, offset, str) { var args = arguments; subexp.replace(/\\$(\\$|&|`|\'|[0-9]+)/g, function(m, p) { if (p === '$') return '$'; if (p === '&' || parseInt(p, 10) === 0) return match; if (p === '`') return str.slice(0, offset); if (p === '\'') return str.slice(offset + match.length); return args[3 + parseInt(p, 10)]; }); }" + _
+        "RegExp.matchResult = function(subexp, match, offset, str) { var args = arguments; return subexp.replace(/\$(\$|&|`|\'|[0-9]+)/g, function(m, p) { if (p === '$') return '$'; if (p === '`') return str.slice(0, offset); if (p === '\'') return str.slice(offset + match.length); if (p === '&' || parseInt(p, 10) <= 0 || parseInt(p, 10) >= args.length - 3) return match; return args[3 + parseInt(p, 10)]; }); };" + _
         "function doTransliterateDisplay() { $('#translitvalue').css('direction', $('#direction0').prop('checked') ? 'ltr' : 'rtl'); $('#translitvalue').text($('#scheme0').prop('checked') ? doTransliterate($('#translitedit').val(), $('#direction0').prop('checked'), $('#translitscheme0').prop('checked')) : ($('#scheme1').prop('checked') ? doDiacritics($('#translitedit').val(), $('#diacriticscheme0').prop('checked')) : doFixDirection($('#translitedit').val(), $('#diacriticscheme0').prop('checked')))); }"}
     End Function
     Public Shared Function GetSchemeChangeJS() As String()
@@ -2347,7 +2349,7 @@ Public Class Arabic
     End Function
     Public Shared Function GetChangeTransliterationJS() As String()
         Return New String() {"javascript: changeTransliteration();", String.Empty, Utility.GetLookupStyleSheetJS(), GetArabicSymbolJSArray(), GetTransliterateGenJS(), GetPlainTransliterateGenJS(), _
-        "function changeTransliteration() { var k, child, iSubCount, text; $('span.transliteration').each(function() { $(this).css('display', $('#translitscheme').val() === '0' ? 'none' : 'block'); }); for (k in renderList) { text = ''; for (child in renderList[k]['children']) { for (iSubCount = 0; iSubCount < renderList[k]['children'][child]['arabic'].length; iSubCount++) { if ($('#translitscheme').val() === '1' && renderList[k]['children'][child]['arabic'][iSubCount] !== '' && (renderList[k]['children'][child]['arabic'][iSubCount].length !== 1 || !isStop(findLetterBySymbol(renderList[k]['children'][child]['arabic'][iSubCount].charCodeAt(0)))) && renderList[k]['children'][child]['translit'][iSubCount] !== '') { if (text !== '') text += ' '; text += $('#' + renderList[k]['children'][child]['arabic'][iSubCount]).text(); } else { if (renderList[k]['children'][child]['translit'][iSubCount] !== '') $('#' + renderList[k]['children'][child]['translit'][iSubCount]).text(($('#translitscheme').val() === '0' || renderList[k]['children'][child]['arabic'][iSubCount] === '') ? '' : doTransliterate($('#' + renderList[k]['children'][child]['arabic'][iSubCount]).text(), true, $('#translitscheme').val() === '3')); } } } if ($('#translitscheme').val() === '1') { text = doPlainTransliterate(text).split(' '); for (child in renderList[k]['children']) { for (iSubCount = 0; iSubCount < renderList[k]['children'][child]['translit'].length; iSubCount++) { if (renderList[k]['children'][child]['translit'][iSubCount] !== '') $('#' + renderList[k]['children'][child]['translit'][iSubCount]).text(text.shift()); } } } for (iSubCount = 0; iSubCount < renderList[k]['arabic'].length; iSubCount++) { if (renderList[k]['translit'][iSubCount] !== '') $('#' + renderList[k]['translit'][iSubCount]).text(($('#translitscheme').val() === '0' || renderList[k]['arabic'][iSubCount] === '') ? '' : ($('#translitscheme').val() === '1' ? doPlainTransliterate($('#' + renderList[k]['arabic'][iSubCount]).text()) : doTransliterate($('#' + renderList[k]['arabic'][iSubCount]).text(), true, $('#translitscheme').val() === '3'))); } } }"}
+        "function changeTransliteration() { var k, child, iSubCount, text; $('span.transliteration').each(function() { $(this).css('display', $('#translitscheme').val() === '0' ? 'none' : 'block'); }); for (k in renderList) { text = ''; for (child in renderList[k]['children']) { for (iSubCount = 0; iSubCount < renderList[k]['children'][child]['arabic'].length; iSubCount++) { if ($('#translitscheme').val() === '1' && renderList[k]['children'][child]['arabic'][iSubCount] !== '' && (renderList[k]['children'][child]['arabic'][iSubCount].length !== 1 || !isStop(findLetterBySymbol(renderList[k]['children'][child]['arabic'][iSubCount].charCodeAt(0)))) && renderList[k]['children'][child]['translit'][iSubCount] !== '') { if (text !== '') text += ' '; text += $('#' + renderList[k]['children'][child]['arabic'][iSubCount]).text(); } else { if (renderList[k]['children'][child]['translit'][iSubCount] !== '') $('#' + renderList[k]['children'][child]['translit'][iSubCount]).text(($('#translitscheme').val() === '0' || renderList[k]['children'][child]['arabic'][iSubCount] === '') ? '' : doTransliterate($('#' + renderList[k]['children'][child]['arabic'][iSubCount]).text(), true, $('#translitscheme').val() === '3')); } } } if ($('#translitscheme').val() === '1') { text = transliterateToPlainRoman(text).split(' '); for (child in renderList[k]['children']) { for (iSubCount = 0; iSubCount < renderList[k]['children'][child]['translit'].length; iSubCount++) { if (renderList[k]['children'][child]['translit'][iSubCount] !== '') $('#' + renderList[k]['children'][child]['translit'][iSubCount]).text(text.shift()); } } } for (iSubCount = 0; iSubCount < renderList[k]['arabic'].length; iSubCount++) { if (renderList[k]['translit'][iSubCount] !== '') $('#' + renderList[k]['translit'][iSubCount]).text(($('#translitscheme').val() === '0' || renderList[k]['arabic'][iSubCount] === '') ? '' : ($('#translitscheme').val() === '1' ? transliterateToPlainRoman($('#' + renderList[k]['arabic'][iSubCount]).text()) : doTransliterate($('#' + renderList[k]['arabic'][iSubCount]).text(), true, $('#translitscheme').val() === '3'))); } } }"}
     End Function
     Public Shared Function GetCategories() As String()
         Dim RetCat As New ArrayList(Array.ConvertAll(CachedData.IslamData.VocabularyCategories, Function(Convert As IslamData.VocabCategory) Utility.LoadResourceString("IslamInfo_" + Convert.Title)))
@@ -2382,10 +2384,10 @@ Public Class Arabic
     End Function
     Public Shared Function DisplayTranslation(ByVal Item As PageLoader.TextItem) As Array()
         Dim Count As Integer = CInt(HttpContext.Current.Request.QueryString.Get("selection"))
-        Dim Scheme As Integer = CInt(HttpContext.Current.Request.QueryString.Get("translitscheme"))
+        Dim Scheme As Arabic.TranslitScheme = CInt(HttpContext.Current.Request.QueryString.Get("translitscheme"))
         Return DoDisplayTranslation(Count, Scheme)
     End Function
-    Public Shared Function DoDisplayTranslation(Count As Integer, Scheme As Integer) As Array()
+    Public Shared Function DoDisplayTranslation(Count As Integer, Scheme As Arabic.TranslitScheme) As Array()
         Dim Output As New ArrayList
         Output.Add(GetRenderJS())
         If CachedData.IslamData.VocabularyCategories.Length + 2 = Count Then
@@ -2792,7 +2794,7 @@ Public Class RenderArray
                     ElseIf Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eTransliteration Then
                         writer.WriteAttribute("class", "transliteration")
                         writer.WriteAttribute("dir", "ltr")
-                        writer.WriteAttribute("style", "color: " + System.Drawing.ColorTranslator.ToHtml(Items(Count).TextItems(Index).Clr) + "; display: " + CStr(IIf(CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) <> 0, "block", "none")) + ";")
+                        writer.WriteAttribute("style", "color: " + System.Drawing.ColorTranslator.ToHtml(Items(Count).TextItems(Index).Clr) + "; display: " + CStr(IIf(CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) <> Arabic.TranslitScheme.None, "block", "none")) + ";")
                         writer.WriteAttribute("id", "translit" + CStr(IIf(NestPrefix = String.Empty, String.Empty, NestPrefix + "_")) + CStr(Count) + "_" + CStr(Index))
                     Else
                         writer.WriteAttribute("class", "translation")
@@ -3513,10 +3515,10 @@ Public Class Supplications
         Return Array.ConvertAll(CachedData.IslamData.VerseCategories, Function(Convert As IslamData.VerseCategory) Utility.LoadResourceString("IslamInfo_" + Convert.Title))
     End Function
     Public Shared Function GetRenderedSuppText(ByVal Item As PageLoader.TextItem) As RenderArray
-        Dim Scheme As Integer = CInt(HttpContext.Current.Request.QueryString.Get("translitscheme"))
+        Dim Scheme As Arabic.TranslitScheme = CInt(HttpContext.Current.Request.QueryString.Get("translitscheme"))
         Return DoGetRenderedSuppText(Scheme)
     End Function
-    Public Shared Function DoGetRenderedSuppText(Scheme As Integer) As RenderArray
+    Public Shared Function DoGetRenderedSuppText(Scheme As Arabic.TranslitScheme) As RenderArray
         Dim Renderer As New RenderArray
         Dim Count As Integer = CInt(HttpContext.Current.Request.QueryString.Get("selection"))
         If Count = -1 Then Count = 0
@@ -3575,8 +3577,8 @@ Public Class Quiz
                              "var ArabicLets = " + Utility.MakeJSArray(Array.ConvertAll(Arabic.ArabicLetters, Function(Str As String) CStr(AscW(Str.Chars(0)))), True) + ";", _
                              "var qtype = 'arabicletters', qwrong = 0, qright = 0; " + _
                              "function getUniqueRnd(excl, count) { var rnd; do { rnd = Math.floor(Math.random() * count); } while (excl.indexOf(rnd) !== -1); return rnd; } " + _
-                             "function nextQuestion() { $('#count').text('Wrong: ' + qwrong + ' Right: ' + qright); var i = Math.floor(Math.random() * 4), nidx = getUniqueRnd([], ArabicLets.length), aidx = []; aidx[0] = getUniqueRnd([nidx], ArabicLets.length); aidx[1] = getUniqueRnd([nidx, aidx[0]], ArabicLets.length); aidx[2] = getUniqueRnd([nidx, aidx[0], aidx[1]], ArabicLets.length); $('#question').text(String.fromCharCode(ArabicLets[nidx])); $('#answer1').prop('value', ArabicLetters[findLetterBySymbol(ArabicLets[i === 0 ? nidx : aidx[0]])].RomanTranslit); $('#answer2').prop('value', ArabicLetters[findLetterBySymbol(ArabicLets[i === 1 ? nidx : aidx[i > 1 ? 1 : 0]])].RomanTranslit); $('#answer3').prop('value', ArabicLetters[findLetterBySymbol(ArabicLets[i === 2 ? nidx : aidx[i > 2 ? 2 : 1]])].RomanTranslit); $('#answer4').prop('value', ArabicLetters[findLetterBySymbol(ArabicLets[i === 3 ? nidx : aidx[2]])].RomanTranslit); } " + _
-                             "function verifyAnswer(ctl) { $(ctl).prop('value') === ArabicLetters[findLetterBySymbol($('#question').text().charCodeAt(0))].RomanTranslit ? qright++ : qwrong++; nextQuestion(); }"}
+                             "function nextQuestion() { $('#count').text('Wrong: ' + qwrong + ' Right: ' + qright); var i = Math.floor(Math.random() * 4), nidx = getUniqueRnd([], ArabicLets.length), aidx = []; aidx[0] = getUniqueRnd([nidx], ArabicLets.length); aidx[1] = getUniqueRnd([nidx, aidx[0]], ArabicLets.length); aidx[2] = getUniqueRnd([nidx, aidx[0], aidx[1]], ArabicLets.length); $('#question').text(String.fromCharCode(ArabicLets[nidx])); $('#answer1').prop('value', arabicLetters[findLetterBySymbol(ArabicLets[i === 0 ? nidx : aidx[0]])].RomanTranslit); $('#answer2').prop('value', arabicLetters[findLetterBySymbol(ArabicLets[i === 1 ? nidx : aidx[i > 1 ? 1 : 0]])].RomanTranslit); $('#answer3').prop('value', arabicLetters[findLetterBySymbol(ArabicLets[i === 2 ? nidx : aidx[i > 2 ? 2 : 1]])].RomanTranslit); $('#answer4').prop('value', arabicLetters[findLetterBySymbol(ArabicLets[i === 3 ? nidx : aidx[2]])].RomanTranslit); } " + _
+                             "function verifyAnswer(ctl) { $(ctl).prop('value') === arabicLetters[findLetterBySymbol($('#question').text().charCodeAt(0))].RomanTranslit ? qright++ : qwrong++; nextQuestion(); }"}
     End Function
 End Class
 Public Class TanzilReader
@@ -4044,11 +4046,11 @@ Public Class TanzilReader
         Loop
         Dim Msg As String = "First: "
         For Each Str As String In FirstList
-            Msg += Arabic.TransliterateToScheme(Str, 3) + " "
+            Msg += Arabic.TransliterateToScheme(Str, Arabic.TranslitScheme.Buckwalter) + " "
         Next
         Msg += vbCrLf + "Second: "
         For Each Str As String In CompList
-            Msg += Arabic.TransliterateToScheme(Str, 3) + " "
+            Msg += Arabic.TransliterateToScheme(Str, Arabic.TranslitScheme.Buckwalter) + " "
         Next
         Debug.Print(Msg)
     End Sub
@@ -4106,18 +4108,18 @@ Public Class TanzilReader
         For Count As Integer = 0 To Verses.Count - 1
             Dim ChapterNode As System.Xml.XmlNode = GetTextChapter(Doc, Count + 1)
             If UseBuckwalter Then
-                ChapterNode.Attributes.GetNamedItem("name").Value = Arabic.TransliterateToScheme(ChapterNode.Attributes.GetNamedItem("name").Value, 3)
+                ChapterNode.Attributes.GetNamedItem("name").Value = Arabic.TransliterateToScheme(ChapterNode.Attributes.GetNamedItem("name").Value, Arabic.TranslitScheme.Buckwalter)
             End If
             For SubCount As Integer = 0 To Verses(Count).Length - 1
                 If SubCount = 0 AndAlso Not GetTextVerse(ChapterNode, SubCount + 1).Attributes.GetNamedItem("bismillah") Is Nothing Then
                     GetTextVerse(ChapterNode, SubCount + 1).Attributes.GetNamedItem("bismillah").Value = Arabic.ChangeScript(GetTextVerse(ChapterNode, SubCount + 1).Attributes.GetNamedItem("bismillah").Value, ScriptType)
                     If UseBuckwalter Then
-                        GetTextVerse(ChapterNode, SubCount + 1).Attributes.GetNamedItem("bismillah").Value = Arabic.TransliterateToScheme(GetTextVerse(ChapterNode, SubCount + 1).Attributes.GetNamedItem("bismillah").Value, 3)
+                        GetTextVerse(ChapterNode, SubCount + 1).Attributes.GetNamedItem("bismillah").Value = Arabic.TransliterateToScheme(GetTextVerse(ChapterNode, SubCount + 1).Attributes.GetNamedItem("bismillah").Value, Arabic.TranslitScheme.Buckwalter)
                     End If
                 End If
                 GetTextVerse(ChapterNode, SubCount + 1).Attributes.GetNamedItem("text").Value = Arabic.ChangeScript(Verses(Count)(SubCount), ScriptType)
                 If UseBuckwalter Then
-                    GetTextVerse(ChapterNode, SubCount + 1).Attributes.GetNamedItem("text").Value = Arabic.TransliterateToScheme(GetTextVerse(ChapterNode, SubCount + 1).Attributes.GetNamedItem("text").Value, 3)
+                    GetTextVerse(ChapterNode, SubCount + 1).Attributes.GetNamedItem("text").Value = Arabic.TransliterateToScheme(GetTextVerse(ChapterNode, SubCount + 1).Attributes.GetNamedItem("text").Value, Arabic.TranslitScheme.Buckwalter)
                 End If
             Next
         Next
@@ -4130,11 +4132,11 @@ Public Class TanzilReader
         If Not Strings Is Nothing Then Division = CInt(Strings)
         Strings = HttpContext.Current.Request.QueryString.Get("quranselection")
         If Not Strings Is Nothing Then Index = CInt(Strings)
-        Dim Scheme As Integer = CInt(HttpContext.Current.Request.QueryString.Get("translitscheme"))
+        Dim Scheme As Arabic.TranslitScheme = CInt(HttpContext.Current.Request.QueryString.Get("translitscheme"))
         Dim TranslationIndex As Integer = GetTranslationIndex(HttpContext.Current.Request.QueryString.Get("qurantranslation"))
         Return DoGetRenderedQuranText(Division, Index, HttpContext.Current.Request.QueryString.Get("qurantranslation"), Scheme, TranslationIndex)
     End Function
-    Public Shared Function DoGetRenderedQuranText(Division As Integer, Index As Integer, Translation As String, Scheme As Integer, TranslationIndex As Integer) As RenderArray
+    Public Shared Function DoGetRenderedQuranText(Division As Integer, Index As Integer, Translation As String, Scheme As Arabic.TranslitScheme, TranslationIndex As Integer) As RenderArray
         Dim Chapter As Integer
         Dim Verse As Integer
         Dim BaseChapter As Integer
@@ -4606,11 +4608,11 @@ Public Class HadithReader
         Return DirectCast(Output.ToArray(GetType(Array)), Array())
     End Function
     Public Shared Function GetRenderedText(ByVal Item As PageLoader.TextItem) As RenderArray
-        Dim Scheme As Integer = CInt(HttpContext.Current.Request.QueryString.Get("translitscheme"))
+        Dim Scheme As Arabic.TranslitScheme = CInt(HttpContext.Current.Request.QueryString.Get("translitscheme"))
         Dim Translation As String = HttpContext.Current.Request.QueryString.Get("hadithtranslation")
         Return DoGetRenderedText(Scheme, Translation)
     End Function
-    Public Shared Function DoGetRenderedText(Scheme As Integer, Translation As String) As RenderArray
+    Public Shared Function DoGetRenderedText(Scheme As Arabic.TranslitScheme, Translation As String) As RenderArray
         Dim Renderer As New RenderArray
         Dim Hadith As Integer
         Dim Index As Integer = GetCurrentCollection()
