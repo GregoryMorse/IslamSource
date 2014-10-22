@@ -46,11 +46,13 @@ Partial Class Menu
         writer.Write(HtmlTextWriter.TagRightChar)
         writer.WriteFullBeginTag("div")
         For Each Item As String In Request.QueryString.AllKeys
-            writer.WriteBeginTag("input")
-            writer.WriteAttribute("type", "hidden")
-            writer.WriteAttribute("name", Item)
-            writer.WriteAttribute("value", Request.QueryString(Item))
-            writer.Write(HtmlTextWriter.TagRightChar)
+            If Item <> host.LangSet Then
+                writer.WriteBeginTag("input")
+                writer.WriteAttribute("type", "hidden")
+                writer.WriteAttribute("name", Item)
+                writer.WriteAttribute("value", Request.QueryString(Item))
+                writer.Write(HtmlTextWriter.TagRightChar)
+            End If
         Next
         writer.WriteBeginTag("select")
         writer.WriteAttribute("name", host.LangSet)
