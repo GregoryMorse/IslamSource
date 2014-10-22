@@ -279,6 +279,9 @@ Public Class Utility
             End If
         End Function
     End Class
+    Public Shared Function EscapeJS(Str As String) As String
+        Return Str.Replace("\", "\\")
+    End Function
     Public Shared Function EncodeJS(Str As String) As String
         Return Str.Replace("'", "\'")
     End Function
@@ -309,10 +312,10 @@ Public Class Utility
             JSArray += "{"
             For SubCount = 0 To IndexNamesArray.Length - 1
                 JSArray += "'" + EncodeJS(IndexNamesArray(SubCount)) + "':"
-                If CType(StringsArray(Count), String())(SubCount) Is Nothing Then
+                If CType(StringsArray(Count), Object())(SubCount) Is Nothing Then
                     JSArray += "null"
                 ElseIf bObject Then
-                    JSArray += CType(StringsArray(Count), String())(SubCount)
+                    JSArray += CStr(CType(StringsArray(Count), Object())(SubCount))
                 Else
                     JSArray += MakeJSString(CStr(CType(StringsArray(Count), String())(SubCount)))
                 End If
@@ -1859,6 +1862,7 @@ Public Class Arabic
                                       .Evaluator = ArabicLetterHeh}
         }
     Public Enum RuleFuncs As Integer
+        eNone
         eUpperCase
         eSpellNumber
         eSpellLetter
@@ -2230,23 +2234,23 @@ Public Class Arabic
             For Count = 0 To ColoringSpelledOutRules.Length - 1
                 If Array.FindIndex(ColoringSpelledOutRules(Count).Match.Split("|"c), Function(Str As String) Array.IndexOf(MetadataList(Index).Type.Split("|"c), Str) <> -1) <> -1 Then
                     Dim Str As String = String.Format(ColoringSpelledOutRules(Count).Evaluator, ArabicString.Substring(MetadataList(Index).Index, MetadataList(Index).Length))
-                    ArabicString = ArabicString.Insert(MetadataList(Index).Index + MetadataList(Index).Length, If(ColoringSpelledOutRules(Count).RuleFunc = Nothing, Str, RuleFunctions(ColoringSpelledOutRules(Count).RuleFunc)(Str))).Remove(MetadataList(Index).Index, MetadataList(Index).Length)
+                    ArabicString = ArabicString.Insert(MetadataList(Index).Index + MetadataList(Index).Length, If(ColoringSpelledOutRules(Count).RuleFunc = RuleFuncs.eNone, Str, RuleFunctions(ColoringSpelledOutRules(Count).RuleFunc - 1)(Str))).Remove(MetadataList(Index).Index, MetadataList(Index).Length)
                 End If
             Next
         Next
         For Count = 0 To BreakdownRules.Length - 1
-            If BreakdownRules(Count).RuleFunc = Nothing Then
+            If BreakdownRules(Count).RuleFunc = RuleFuncs.eNone Then
                 ArabicString = System.Text.RegularExpressions.Regex.Replace(ArabicString, BreakdownRules(Count).Match, BreakdownRules(Count).Evaluator)
             Else
-                ArabicString = System.Text.RegularExpressions.Regex.Replace(ArabicString, BreakdownRules(Count).Match, Function(Match As System.Text.RegularExpressions.Match) RuleFunctions(BreakdownRules(Count).RuleFunc)(Match.Result(BreakdownRules(Count).Evaluator)))
+                ArabicString = System.Text.RegularExpressions.Regex.Replace(ArabicString, BreakdownRules(Count).Match, Function(Match As System.Text.RegularExpressions.Match) RuleFunctions(BreakdownRules(Count).RuleFunc - 1)(Match.Result(BreakdownRules(Count).Evaluator)))
             End If
         Next
         'redundant romanization rules should have -'s such as seen/teh/kaf-heh
         For Count = 0 To RomanizationRules.Length - 1
-            If RomanizationRules(Count).RuleFunc = Nothing Then
+            If RomanizationRules(Count).RuleFunc = RuleFuncs.eNone Then
                 ArabicString = System.Text.RegularExpressions.Regex.Replace(ArabicString, RomanizationRules(Count).Match, RomanizationRules(Count).Evaluator)
             Else
-                ArabicString = System.Text.RegularExpressions.Regex.Replace(ArabicString, RomanizationRules(Count).Match, Function(Match As System.Text.RegularExpressions.Match) RuleFunctions(RomanizationRules(Count).RuleFunc)(Match.Result(RomanizationRules(Count).Evaluator)))
+                ArabicString = System.Text.RegularExpressions.Regex.Replace(ArabicString, RomanizationRules(Count).Match, Function(Match As System.Text.RegularExpressions.Match) RuleFunctions(RomanizationRules(Count).RuleFunc - 1)(Match.Result(RomanizationRules(Count).Evaluator)))
             End If
         Next
 
@@ -2286,29 +2290,29 @@ Public Class Arabic
             "function isSymbol(index) { return (" + String.Join("||", Array.ConvertAll(Arabic.GetRecitationSymbols(), Function(A As Array) "parseInt(arabicLetters[index].Symbol, 10) === 0x" + Hex(AscW(CachedData.IslamData.ArabicLetters(A(1)).Symbol)))) + "); }", _
             "function isCombiningSymbol(index) { return (" + String.Join("||", Array.ConvertAll(Arabic.RecitationCombiningSymbols, Function(C As Char) "parseInt(arabicLetters[index].Symbol, 10) === 0x" + Hex(AscW(C)))) + "); }", _
             "var uthmaniMinimalScript = " + Utility.MakeJSArray(New String() {Utility.MakeJSIndexedObject(New String() {"rule", "match", "evaluator", "ruleFunc"}, _
-                                    Array.ConvertAll(Of RuleTranslation, String())(UthmaniMinimalScript, Function(Convert As RuleTranslation) New String() {Convert.Rule, Convert.Match, Convert.Evaluator, Convert.RuleFunc}), False)}, True) + ";", _
+                                    Array.ConvertAll(Of RuleTranslation, Object())(UthmaniMinimalScript, Function(Convert As RuleTranslation) New Object() {Utility.MakeJSString(Convert.Rule), Utility.MakeJSString(Utility.EscapeJS(Convert.Match)), Utility.MakeJSString(Convert.Evaluator), Convert.RuleFunc}), True)}, True) + ";", _
             "var simpleEnhancedScript = " + Utility.MakeJSArray(New String() {Utility.MakeJSIndexedObject(New String() {"rule", "match", "evaluator", "ruleFunc"}, _
-                                    Array.ConvertAll(Of RuleTranslation, String())(SimpleEnhancedScript, Function(Convert As RuleTranslation) New String() {Convert.Rule, Convert.Match, Convert.Evaluator, Convert.RuleFunc}), False)}, True) + ";", _
+                                    Array.ConvertAll(Of RuleTranslation, Object())(SimpleEnhancedScript, Function(Convert As RuleTranslation) New Object() {Utility.MakeJSString(Convert.Rule), Utility.MakeJSString(Utility.EscapeJS(Convert.Match)), Utility.MakeJSString(Convert.Evaluator), Convert.RuleFunc}), True)}, True) + ";", _
             "var simpleScript = " + Utility.MakeJSArray(New String() {Utility.MakeJSIndexedObject(New String() {"rule", "match", "evaluator", "ruleFunc"}, _
-                                    Array.ConvertAll(Of RuleTranslation, String())(SimpleScript, Function(Convert As RuleTranslation) New String() {Convert.Rule, Convert.Match, Convert.Evaluator, Convert.RuleFunc}), False)}, True) + ";", _
+                                    Array.ConvertAll(Of RuleTranslation, Object())(SimpleScript, Function(Convert As RuleTranslation) New Object() {Utility.MakeJSString(Convert.Rule), Utility.MakeJSString(Utility.EscapeJS(Convert.Match)), Utility.MakeJSString(Convert.Evaluator), Convert.RuleFunc}), True)}, True) + ";", _
             "var simpleMinimalScript = " + Utility.MakeJSArray(New String() {Utility.MakeJSIndexedObject(New String() {"rule", "match", "evaluator", "ruleFunc"}, _
-                                    Array.ConvertAll(Of RuleTranslation, String())(SimpleMinimalScript, Function(Convert As RuleTranslation) New String() {Convert.Rule, Convert.Match, Convert.Evaluator, Convert.RuleFunc}), False)}, True) + ";", _
+                                    Array.ConvertAll(Of RuleTranslation, Object())(SimpleMinimalScript, Function(Convert As RuleTranslation) New Object() {Utility.MakeJSString(Convert.Rule), Utility.MakeJSString(Utility.EscapeJS(Convert.Match)), Utility.MakeJSString(Convert.Evaluator), Convert.RuleFunc}), True)}, True) + ";", _
             "var simpleCleanScript = " + Utility.MakeJSArray(New String() {Utility.MakeJSIndexedObject(New String() {"rule", "match", "evaluator", "ruleFunc"}, _
-                                    Array.ConvertAll(Of RuleTranslation, String())(SimpleCleanScript, Function(Convert As RuleTranslation) New String() {Convert.Rule, Convert.Match, Convert.Evaluator, Convert.RuleFunc}), False)}, True) + ";", _
+                                    Array.ConvertAll(Of RuleTranslation, Object())(SimpleCleanScript, Function(Convert As RuleTranslation) New Object() {Utility.MakeJSString(Convert.Rule), Utility.MakeJSString(Utility.EscapeJS(Convert.Match)), Utility.MakeJSString(Convert.Evaluator), Convert.RuleFunc}), True)}, True) + ";", _
             "var errorCheckRules = " + Utility.MakeJSArray(New String() {Utility.MakeJSIndexedObject(New String() {"rule", "match", "evaluator", "ruleFunc"}, _
-                                    Array.ConvertAll(Of RuleTranslation, String())(ErrorCheckRules, Function(Convert As RuleTranslation) New String() {Convert.Rule, Convert.Match, Convert.Evaluator, Convert.RuleFunc}), False)}, True) + ";", _
+                                    Array.ConvertAll(Of RuleTranslation, Object())(ErrorCheckRules, Function(Convert As RuleTranslation) New Object() {Utility.MakeJSString(Convert.Rule), Utility.MakeJSString(Utility.EscapeJS(Convert.Match)), Utility.MakeJSString(Convert.Evaluator), Convert.RuleFunc}), True)}, True) + ";", _
             "var coloringSpelledOutRules = " + Utility.MakeJSArray(New String() {Utility.MakeJSIndexedObject(New String() {"rule", "match", "evaluator", "ruleFunc"}, _
-                                    Array.ConvertAll(Of RuleTranslation, String())(ColoringSpelledOutRules, Function(Convert As RuleTranslation) New String() {Convert.Rule, Convert.Match, Convert.Evaluator, Convert.RuleFunc}), False)}, True) + ";", _
+                                    Array.ConvertAll(Of RuleTranslation, Object())(ColoringSpelledOutRules, Function(Convert As RuleTranslation) New Object() {Utility.MakeJSString(Convert.Rule), Utility.MakeJSString(Utility.EscapeJS(Convert.Match)), Utility.MakeJSString(Convert.Evaluator), Convert.RuleFunc}), True)}, True) + ";", _
             "var breakdownRules = " + Utility.MakeJSArray(New String() {Utility.MakeJSIndexedObject(New String() {"rule", "match", "evaluator", "ruleFunc"}, _
-                                    Array.ConvertAll(Of RuleTranslation, String())(BreakdownRules, Function(Convert As RuleTranslation) New String() {Convert.Rule, Convert.Match, Convert.Evaluator, Convert.RuleFunc}), False)}, True) + ";", _
+                                    Array.ConvertAll(Of RuleTranslation, Object())(BreakdownRules, Function(Convert As RuleTranslation) New Object() {Utility.MakeJSString(Convert.Rule), Utility.MakeJSString(Utility.EscapeJS(Convert.Match)), Utility.MakeJSString(Convert.Evaluator), Convert.RuleFunc}), True)}, True) + ";", _
             "var romanizationRules = " + Utility.MakeJSArray(New String() {Utility.MakeJSIndexedObject(New String() {"rule", "match", "evaluator", "ruleFunc"}, _
-                                    Array.ConvertAll(Of RuleTranslation, String())(RomanizationRules, Function(Convert As RuleTranslation) New String() {Convert.Rule, Convert.Match, Convert.Evaluator, Convert.RuleFunc}), False)}, True) + ";", _
+                                    Array.ConvertAll(Of RuleTranslation, Object())(RomanizationRules, Function(Convert As RuleTranslation) New Object() {Utility.MakeJSString(Convert.Rule), Utility.MakeJSString(Utility.EscapeJS(Convert.Match)), Utility.MakeJSString(Convert.Evaluator), Convert.RuleFunc}), True)}, True) + ";", _
             "var coloringRules = " + Utility.MakeJSArray(New String() {Utility.MakeJSIndexedObject(New String() {"rule", "match", "color"}, _
-                                    Array.ConvertAll(Of ColorRule, String())(ColoringRules, Function(Convert As ColorRule) New String() {Convert.Rule, Convert.Match, System.Drawing.ColorTranslator.ToHtml(Convert.Color)}), False)}, True) + ";", _
+                                    Array.ConvertAll(Of ColorRule, String())(ColoringRules, Function(Convert As ColorRule) New String() {Convert.Rule, Utility.EscapeJS(Convert.Match), System.Drawing.ColorTranslator.ToHtml(Convert.Color)}), False)}, True) + ";", _
             "var rulesOfRecitationRegEx = " + Utility.MakeJSArray(New String() {Utility.MakeJSIndexedObject(New String() {"rule", "match", "evaluator"}, _
-                                    Array.ConvertAll(Of RuleMetadataTranslation, String())(RulesOfRecitationRegEx, Function(Convert As RuleMetadataTranslation) New String() {Utility.MakeJSString(Convert.Rule), Utility.MakeJSString(Convert.Match), If(Convert.Evaluator Is Nothing, Nothing, Utility.MakeJSArray(Convert.Evaluator))}), True)}, True) + ";", _
+                                    Array.ConvertAll(Of RuleMetadataTranslation, Object())(RulesOfRecitationRegEx, Function(Convert As RuleMetadataTranslation) New Object() {Utility.MakeJSString(Convert.Rule), Utility.MakeJSString(Utility.EscapeJS(Convert.Match)), If(Convert.Evaluator Is Nothing, Nothing, Utility.MakeJSArray(Convert.Evaluator))}), True)}, True) + ";", _
             "function ruleMetadataComparer(a, b) { return (a.index === b.index) ? b.length - a.length : b.index - a.index; }", _
-            "function transliterateToPlainRoman(sVal) { var count, index, arr, re, metadataList = [], findFunc = function(e) { return metadataList[index].type.split('|').indexOf(e) !== -1; }, replaceFunc = function(f, e) { return function(m) { return f(RegExp.matchResult(e, m, arguments[arguments.length - 2], arguments[arguments.length - 1])); }; }; for (count = 0; count < errorCheckRules.length; count++) { re = new RegExp(errorCheckRules[count].match, 'g'); while ((arr = re.exec(sVal)) !== null) { console.log(errorCheckRules[count].rule + ': ' + doTransliterate(sVal.substr(0, arr.index), true, true) + '<!-- -->' + doTransliterate(sVal.substr(arr.index), true, true)); } } for (count = 0; count < rulesOfRecitationRegEx.length; count++) { if (rulesOfRecitationRegEx[count].evaluator !== null) { var subcount, lindex; re = new RegExp(rulesOfRecitationRegEx[count].match, 'g'); while ((arr = re.exec(sVal)) !== null) { lindex = 0; for (subcount = 0; subcount < rulesOfRecitationRegEx[count].evaluator.length; subcount++) { if (rulesOfRecitationRegEx[count].evaluator[subcount] !== null && arr[subcount + 1]) { metadataList.push({index: lindex, length: arr[subcount + 1].length, type: rulesOfRecitationRegEx[count].evaluator[subcount]}); } lindex += (arr[subcount + 1] ? arr[subcount + 1].length : 0); } } } } metadataList.sort(ruleMetadataComparer); for (index = 0; index < metadataList.length; index++) { for (count = 0; count < coloringSpelledOutRules.length; count++) { if (coloringSpelledOutRules[count].match.split('|').some(findFunc)) { var str = coloringSpelledOutRules[count].evaluator.format(sVal.substr(metadataList[index].index, metadataList[index].length)); sVal = sVal.substr(0, metadataList[index].index) + ((coloringSpelledOutRules[count].ruleFunc === null) ? str : ruleFunctions[parseInt(coloringSpelledOutRules[count].ruleFunc, 10)](str)) + sVal.substr(metadataList[index].index + metadataList[index].length); } } } for (count = 0; count < breakdownRules.length; count++) { sVal = sVal.replace(new RegExp(breakdownRules[count].match, 'g'), (breakdownRules[count].ruleFunc === null) ? breakdownRules[count].evaluator : replaceFunc(ruleFunctions[parseInt(breakdownRules[count].ruleFunc, 10)], breakdownRules[count].evaluator)); } for (count = 0; count < romanizationRules.length; count++) { sVal = sVal.replace(new RegExp(romanizationRules[count].match, 'g'), (romanizationRules[count].ruleFunc === null) ? romanizationRules[count].evaluator : replaceFunc(ruleFunctions[parseInt(romanizationRules[count].ruleFunc, 10)], romanizationRules[count].evaluator)); } return sVal; }"}
+            "function transliterateToPlainRoman(sVal) { var count, index, arr, re, metadataList = [], getFindFunc = function(idx) { return function(e) { return metadataList[idx].type.split('|').indexOf(e) !== -1; }; }, replaceFunc = function(f, e) { return function(m) { return f(RegExp.matchResult(e, m, arguments[arguments.length - 2], arguments[arguments.length - 1])); }; }; for (count = 0; count < errorCheckRules.length; count++) { re = new RegExp(errorCheckRules[count].match, 'g'); while ((arr = re.exec(sVal)) !== null) { console.log(errorCheckRules[count].rule + ': ' + doTransliterate(sVal.substr(0, arr.index), true, true) + '<!-- -->' + doTransliterate(sVal.substr(arr.index), true, true)); } } for (count = 0; count < rulesOfRecitationRegEx.length; count++) { if (rulesOfRecitationRegEx[count].evaluator !== null) { var subcount, lindex; re = new RegExp(rulesOfRecitationRegEx[count].match, 'g'); while ((arr = re.exec(sVal)) !== null) { lindex = arr.index; for (subcount = 0; subcount < rulesOfRecitationRegEx[count].evaluator.length; subcount++) { if (rulesOfRecitationRegEx[count].evaluator[subcount] !== null && arr[subcount + 1]) { metadataList.push({index: lindex, length: arr[subcount + 1].length, type: rulesOfRecitationRegEx[count].evaluator[subcount]}); } lindex += (arr[subcount + 1] ? arr[subcount + 1].length : 0); } } } } metadataList.sort(ruleMetadataComparer); for (index = 0; index < metadataList.length; index++) { for (count = 0; count < coloringSpelledOutRules.length; count++) { if (coloringSpelledOutRules[count].match.split('|').some(getFindFunc(index))) { var str = coloringSpelledOutRules[count].evaluator.format(sVal.substr(metadataList[index].index, metadataList[index].length)); sVal = sVal.substr(0, metadataList[index].index) + ((coloringSpelledOutRules[count].ruleFunc === 0) ? str : ruleFunctions[coloringSpelledOutRules[count].ruleFunc - 1](str)) + sVal.substr(metadataList[index].index + metadataList[index].length); } } } for (count = 0; count < breakdownRules.length; count++) { sVal = sVal.replace(new RegExp(breakdownRules[count].match, 'g'), (breakdownRules[count].ruleFunc === 0) ? breakdownRules[count].evaluator : replaceFunc(ruleFunctions[breakdownRules[count].ruleFunc - 1], breakdownRules[count].evaluator)); } for (count = 0; count < romanizationRules.length; count++) { sVal = sVal.replace(new RegExp(romanizationRules[count].match, 'g'), (romanizationRules[count].ruleFunc === 0) ? romanizationRules[count].evaluator : replaceFunc(ruleFunctions[romanizationRules[count].ruleFunc - 1], romanizationRules[count].evaluator)); } return sVal; }"}
     Public Shared NumberGenJS As String() = {"var arabicOrdinalNumbers = " + Utility.MakeJSArray(ArabicOrdinalNumbers) + ";", _
                 "var arabicOrdinalExtraNumbers = " + Utility.MakeJSArray(ArabicOrdinalExtraNumbers) + ";", _
                 "var arabicFractionNumbers = " + Utility.MakeJSArray(ArabicFractionNumbers) + ";", _
