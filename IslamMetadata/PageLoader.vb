@@ -171,10 +171,10 @@ Public Class Utility
             resourceKey.StartsWith("lang_") Or _
             resourceKey.StartsWith("unicode_") Or resourceKey = "IslamSource" Then
             'LoadResourceString = CStr(HttpContext.GetLocalResourceObject(LocalFile, resourceKey))
-            LoadResourceString = New System.Resources.ResourceManager("IslamResources.resources", Reflection.Assembly.Load("IslamResources")).GetString(resourceKey, Threading.Thread.CurrentThread.CurrentUICulture)
+            LoadResourceString = New System.Resources.ResourceManager("IslamResources.Resources", Reflection.Assembly.Load("IslamResources")).GetString(resourceKey, Threading.Thread.CurrentThread.CurrentUICulture)
         Else
             'LoadResourceString = CStr(HttpContext.GetGlobalResourceObject(ConnectionData.GlobalRes, resourceKey))
-            LoadResourceString = New System.Resources.ResourceManager("GMorseCodeResources.resources", Reflection.Assembly.Load("GMorseCodeResources")).GetString(resourceKey, Threading.Thread.CurrentThread.CurrentUICulture)
+            LoadResourceString = New System.Resources.ResourceManager("GMorseCodeResources.Resources", Reflection.Assembly.Load("GMorseCodeResources")).GetString(resourceKey, Threading.Thread.CurrentThread.CurrentUICulture)
         End If
         If LoadResourceString = Nothing Then
             LoadResourceString = String.Empty
