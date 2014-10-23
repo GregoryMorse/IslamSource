@@ -3271,9 +3271,9 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 		</quranselection>
 	</quranselections>
 	<quranchapters>
-		<chapter index="1" name="{lofaAtiHap"></chapter>
-		<chapter index="2" name="{lobaqarap" uniqueletters="1"></chapter>
-		<chapter index="3" name="{loEimraAn" uniqueletters="1"></chapter>
+		<chapter index="1" name="{lofaAtiHapi"></chapter>
+		<chapter index="2" name="{lobaqarapi" uniqueletters="1"></chapter>
+		<chapter index="3" name="|loEimoraAna" uniqueletters="1"></chapter>
 		<chapter index="4" name="{ln~isaA&apos;"></chapter>
 		<chapter index="5" name="{lomaAi}dap"></chapter>
 		<chapter index="6" name="{l&gt;anEaAm"></chapter>
@@ -3357,34 +3357,34 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 		<chapter index="84" name="{l&lt;in$aqaAq"></chapter>
 		<chapter index="85" name="{loburuwj"></chapter>
 		<chapter index="86" name="{lT~aAriq"></chapter>
-		<chapter index="87" name="{l&gt;aElaY"></chapter>
-		<chapter index="88" name="{logaA$iyap"></chapter>
-		<chapter index="89" name="{lofajr"></chapter>
-		<chapter index="90" name="{lobalad"></chapter>
-		<chapter index="91" name="{l$~ams"></chapter>
-		<chapter index="92" name="{ll~ayl"></chapter>
-		<chapter index="93" name="{lD~uHaY"></chapter>
-		<chapter index="94" name="{l$~arH"></chapter>
-		<chapter index="95" name="{lt~iyn"></chapter>
-		<chapter index="96" name="{loEalaq"></chapter>
-		<chapter index="97" name="{loqadr"></chapter>
-		<chapter index="98" name="{lobay~inap"></chapter>
-		<chapter index="99" name="{lz~alzalap"></chapter>
-		<chapter index="100" name="{loEaAdiyaAt"></chapter>
-		<chapter index="101" name="{loqaAriEap"></chapter>
-		<chapter index="102" name="{lt~akaAvur"></chapter>
-		<chapter index="103" name="{loEaSr"></chapter>
-		<chapter index="104" name="{lohumazap"></chapter>
-		<chapter index="105" name="{lofiyl"></chapter>
-		<chapter index="106" name="quray$"></chapter>
-		<chapter index="107" name="{lomaAEuwn"></chapter>
-		<chapter index="108" name="{lokawvar"></chapter>
-		<chapter index="109" name="{lokaAfiruwn"></chapter>
-		<chapter index="110" name="{ln~aSr"></chapter>
-		<chapter index="111" name="{lomasad"></chapter>
-		<chapter index="112" name="{l&lt;ixlaAS"></chapter>
-		<chapter index="113" name="{lofalaq"></chapter>
-		<chapter index="114" name="{ln~aAs"></chapter>
+		<chapter index="87" name="{l&gt;aElaY`"></chapter>
+		<chapter index="88" name="{logaA$iyapi"></chapter>
+		<chapter index="89" name="{lofajori"></chapter>
+		<chapter index="90" name="{lobaladi"></chapter>
+		<chapter index="91" name="{l$~amsi"></chapter>
+		<chapter index="92" name="{ll~ayli"></chapter>
+		<chapter index="93" name="{lD~uHaY`"></chapter>
+		<chapter index="94" name="{l$~aroHi"></chapter>
+		<chapter index="95" name="{lt~iyni"></chapter>
+		<chapter index="96" name="{loEalaqi"></chapter>
+		<chapter index="97" name="{loqadori"></chapter>
+		<chapter index="98" name="{lobay~inapi"></chapter>
+		<chapter index="99" name="{lz~alzalapi"></chapter>
+		<chapter index="100" name="{loEaAdiyaAti"></chapter>
+		<chapter index="101" name="{loqaAriEapi"></chapter>
+		<chapter index="102" name="{lt~akaAvuri"></chapter>
+		<chapter index="103" name="{loEaSri"></chapter>
+		<chapter index="104" name="{lohumazapi"></chapter>
+		<chapter index="105" name="{lofiyli"></chapter>
+		<chapter index="106" name="quray$K"></chapter>
+		<chapter index="107" name="{lomaAEuwni"></chapter>
+		<chapter index="108" name="{lokawovari"></chapter>
+		<chapter index="109" name="{lokaAfiruwna"></chapter>
+		<chapter index="110" name="{ln~aSri"></chapter>
+		<chapter index="111" name="{lomasadi"></chapter>
+		<chapter index="112" name="{l&lt;ixlaASi"></chapter>
+		<chapter index="113" name="{lofalaqi"></chapter>
+		<chapter index="114" name="{ln~aAsi"></chapter>
 	</quranchapters>
 	<quranparts>
 		<part index="1" name="|lm^" id="AlifLaamMeem"></part>
