@@ -1992,6 +1992,8 @@ Public Class Arabic
             .Evaluator = Nothing}, _
         New RuleMetadataTranslation With {.Rule = "AlefSmallHighRoundedZero", .Match = "(" + MakeUniRegEx(ArabicLetterAlef) + MakeUniRegEx(ArabicSmallHighRoundedZero) + ")(?=\s*$|\s+)",
             .Evaluator = New String() {"empty"}}, _
+        New RuleMetadataTranslation With {.Rule = "AlefSmallHighRoundedZero", .Match = "(" + MakeUniRegEx(ArabicLetterWaw) + MakeUniRegEx(ArabicSmallHighRoundedZero) + ")(?=\s*$|\s+)",
+            .Evaluator = New String() {"empty"}}, _
         New RuleMetadataTranslation With {.Rule = "SmallHighUprightRectangularZero", .Match = "(" + MakeUniRegEx(ArabicSmallHighUprightRectangularZero) + ")",
             .Evaluator = New String() {"empty"}}, _
         New RuleMetadataTranslation With {.Rule = "EmptyCentreLowStop", .Match = "(" + MakeUniRegEx(ArabicEmptyCentreLowStop) + ")",
@@ -2026,11 +2028,13 @@ Public Class Arabic
             .Evaluator = New String() {Nothing, "dividelettersymbol(empty,empty)"}}, _
         New RuleMetadataTranslation With {.Rule = "AlefHamza", .Match = "(\S\s+(?:" + MakeUniRegEx(ArabicLetterWaw) + MakeUniRegEx(ArabicFatha) + "|" + MakeUniRegEx(ArabicLetterBeh) + MakeUniRegEx(ArabicKasra) + "|" + MakeUniRegEx(ArabicLetterTeh) + MakeUniRegEx(ArabicFatha) + "|" + MakeUniRegEx(ArabicLetterKaf) + MakeUniRegEx(ArabicFatha) + "|" + MakeUniRegEx(ArabicLetterLam) + MakeUniRegEx(ArabicKasra) + ")?)(" + MakeUniRegEx(ArabicLetterAlefWithHamzaAbove) + "|" + MakeUniRegEx(ArabicLetterAlefWithHamzaBelow) + ")", _
             .Evaluator = New String() {Nothing, "dividelettersymbol(helperalef,helperhamza)"}}, _
+        New RuleMetadataTranslation With {.Rule = "AlefHamza", .Match = "(\S\s+(?!" + MakeUniRegEx(ArabicLetterWaw) + MakeUniRegEx(ArabicFatha) + "|" + MakeUniRegEx(ArabicLetterBeh) + MakeUniRegEx(ArabicKasra) + "|" + MakeUniRegEx(ArabicLetterTeh) + MakeUniRegEx(ArabicFatha) + "|" + MakeUniRegEx(ArabicLetterKaf) + MakeUniRegEx(ArabicFatha) + "|" + MakeUniRegEx(ArabicLetterLam) + MakeUniRegEx(ArabicKasra) + ")\S+)(" + MakeUniRegEx(ArabicLetterAlefWithHamzaAbove) + "|" + MakeUniRegEx(ArabicLetterAlefWithHamzaBelow) + ")", _
+            .Evaluator = New String() {Nothing, "dividelettersymbol(helperalef,helperhamza)"}}, _
         New RuleMetadataTranslation With {.Rule = "WawHamzah", .Match = "(" + MakeUniRegEx(ArabicLetterWawWithHamzaAbove) + ")", _
             .Evaluator = New String() {"dividelettersymbol(helperwaw,helperhamza)"}}, _
         New RuleMetadataTranslation With {.Rule = "AlefMaksuraHamzah", .Match = "(" + ArabicKasra + ")(" + MakeUniRegEx(ArabicLetterYehWithHamzaAbove) + ")", _
             .Evaluator = New String() {Nothing, "dividelettersymbol(helperyeh,helperhamza)"}}, _
-        New RuleMetadataTranslation With {.Rule = "AlefMaksuraHamzah", .Match = "(" + ArabicFatha + ")(" + MakeUniRegEx(ArabicLetterYehWithHamzaAbove) + ")", _
+        New RuleMetadataTranslation With {.Rule = "AlefMaksuraHamzah", .Match = "(" + ArabicFatha + "|" + ArabicLetterSuperscriptAlef + ArabicMaddahAbove + ")(" + MakeUniRegEx(ArabicLetterYehWithHamzaAbove) + ")", _
             .Evaluator = New String() {Nothing, "dividelettersymbol(helperalef,helperhamza)"}}, _
         New RuleMetadataTranslation With {.Rule = "SmallWaw", .Match = "(" + MakeUniRegEx(ArabicSmallWaw) + ")", _
             .Evaluator = New String() {"helperwaw"}}, _
@@ -2064,11 +2068,14 @@ Public Class Arabic
         Dim Output As String = String.Empty
         For Each Ch As Char In Input
             Dim Index As Integer = FindLetterBySymbol(Ch)
-            If IsLetter(Index) Then
+            If Index <> -1 AndAlso IsLetter(Index) Then
+                If Output <> String.Empty Then Output += " "
                 Output += CachedData.IslamData.ArabicLetters(Index).SymbolName
+            ElseIf Index <> -1 AndAlso CachedData.IslamData.ArabicLetters(Index).Symbol = ArabicMaddahAbove Then
+                Output += Ch
             End If
         Next
-        Return Output
+        Return TransliterateFromBuckwalter(Output)
     End Function
     Class RuleMetadataComparer
         Implements Collections.Generic.IComparer(Of RuleMetadata)
@@ -2135,7 +2142,7 @@ Public Class Arabic
         Dim HundStr As String = String.Empty
         If Number >= 100 Then
             HundStr = If(UseAlefHundred, ArabicBaseHundredNumbers((Number \ 100) - 1).Insert(2, "A"), ArabicBaseHundredNumbers((Number \ 100) - 1))
-            If Number = 100 Then Return HundStr
+            If (Number Mod 100) = 0 Then Return HundStr
             Number = Number Mod 100
         End If
         If (Number Mod 10) <> 0 And Number <> 11 And Number <> 12 Then
@@ -2311,7 +2318,7 @@ Public Class Arabic
             "function isStop(index) { return (" + String.Join("||", Array.ConvertAll(Arabic.ArabicStopLetters, Function(C As Char) "parseInt(arabicLetters[index].Symbol, 10) === 0x" + Hex(AscW(C)))) + "); }", _
             "function applyColorRules(sVal) {}", _
             "function changeScript(sVal, scriptType) {}", _
-            "function arabicLetterSpelling(sVal) { var count, index, output = ''; for (count = 0; count < sVal.length; count++) { index = findLetterBySymbol(sVal[count]); if (isLetter(index)) { output += arabicLetters[index].SymbolName; } } return output; }", _
+            "function arabicLetterSpelling(sVal) { var count, index, output = ''; for (count = 0; count < sVal.length; count++) { index = findLetterBySymbol(sVal.charCodeAt(count)); if (index !== -1 && isLetter(index)) { if (output !== '') output += ' '; output += arabicLetters[index].SymbolName; } else if (index !== -1 && arabicLetters[index].Symbol === 1619) { output += sVal.charCodeAt(count); } } return doTransliterate(output, false, true); }", _
             "String.prototype.format = function() { var formatted = this; for (var i = 0; i < arguments.length; i++) { formatted = formatted.replace(new RegExp('\\{'+i+'\\}', 'gi'), arguments[i]); } return formatted; };", _
             "RegExp.matchResult = function(subexp, match, offset, str) { var args = arguments; return subexp.replace(/\$(\$|&|`|\'|[0-9]+)/g, function(m, p) { if (p === '$') return '$'; if (p === '`') return str.slice(0, offset); if (p === '\'') return str.slice(offset + match.length); if (p === '&' || parseInt(p, 10) <= 0 || parseInt(p, 10) >= args.length - 3) return match; return args[3 + parseInt(p, 10)]; }); };", _
             "var ruleFunctions = [function(str) { return [str.toUpperCase()]; }, function(str) { return [transliterateToPlainRoman(doTransliterate(arabicWordFromNumber(parseInt(doTransliterate(str, true, true), 10), true, false, false), false, true))]; }, function(str) { return [arabicLetterSpelling(str)]; }, function(str) { return [arabicLetters[findLetterBySymbol(str.charCodeAt(0))].PlainRoman]; }, function(str) { return [" + Utility.MakeJSArray(ArabicFathaDammaKasra) + "[" + Utility.MakeJSArray(ArabicTanweens) + ".indexOf(str)], '" + ArabicLetterNoon + "']; }, function (str) { return ['', '']; }];", _
@@ -2354,7 +2361,7 @@ Public Class Arabic
                 "var arabicBaseMilliardNumbers = " + Utility.MakeJSArray(ArabicBaseMilliardNumbers) + ";", _
                 "var arabicBaseTrillionNumbers = " + Utility.MakeJSArray(ArabicBaseTrillionNumbers) + ";", _
                 "function doTransliterateNum() { $('#translitvalue').text(doTransliterate(arabicWordFromNumber($('#translitedit').val(), $('#useclassic0').prop('checked'), $('#usehundredform0').prop('checked'), $('#usemilliard0').prop('checked')), false, true)); }", _
-                "function arabicWordForLessThanThousand(number, useclassic, usealefhundred) { var str = '', hundstr = ''; if (number >= 100) { hundstr = usealefhundred ? arabicBaseHundredNumbers[Math.floor(number / 100) - 1].substr(0, 2) + 'A' + arabicBaseHundredNumbers[Math.floor(number / 100) - 1].substr(2) : arabicBaseHundredNumbers[Math.floor(number / 100) - 1]; if (number === 100) { return hundstr; } number = number % 100; } if ((number % 10) !== 0 && number !== 11 && number !== 12) { str = arabicBaseNumbers[number % 10 - 1]; } if (number >= 11 && number < 20) { if (number == 11 || number == 12) { str += arabicBaseExtraNumbers[number - 11]; } else { str = str.slice(0, -1) + 'a'; } str += ' Ea$ara'; } else if ((number === 0 && str === '') || number === 10 || number >= 20) { str = ((str === '') ? '' : str + ' wa') + arabicBaseTenNumbers[Math.floor(number / 10)]; } return useclassic ? (((str === '') ? '' : str + ((hundstr === '') ? '' : ' wa')) + hundstr) : (((hundstr === '') ? '' : hundstr + ((str === '') ? '' : ' wa')) + str); }", _
+                "function arabicWordForLessThanThousand(number, useclassic, usealefhundred) { var str = '', hundstr = ''; if (number >= 100) { hundstr = usealefhundred ? arabicBaseHundredNumbers[Math.floor(number / 100) - 1].substr(0, 2) + 'A' + arabicBaseHundredNumbers[Math.floor(number / 100) - 1].substr(2) : arabicBaseHundredNumbers[Math.floor(number / 100) - 1]; if ((number % 100) === 0) { return hundstr; } number = number % 100; } if ((number % 10) !== 0 && number !== 11 && number !== 12) { str = arabicBaseNumbers[number % 10 - 1]; } if (number >= 11 && number < 20) { if (number == 11 || number == 12) { str += arabicBaseExtraNumbers[number - 11]; } else { str = str.slice(0, -1) + 'a'; } str += ' Ea$ara'; } else if ((number === 0 && str === '') || number === 10 || number >= 20) { str = ((str === '') ? '' : str + ' wa') + arabicBaseTenNumbers[Math.floor(number / 10)]; } return useclassic ? (((str === '') ? '' : str + ((hundstr === '') ? '' : ' wa')) + hundstr) : (((hundstr === '') ? '' : hundstr + ((str === '') ? '' : ' wa')) + str); }", _
                 "function arabicWordFromNumber(number, useclassic, usealefhundred, usemilliard) { var str = '', nextstr = '', curbase = 3, basenums = [1000, 1000000, 1000000000, 1000000000000], bases = [arabicBaseThousandNumbers, arabicBaseMillionNumbers, usemilliard ? arabicBaseMilliardNumbers : arabicBaseBillionNumbers, arabicBaseTrillionNumbers]; do { if (number >= basenums[curbase] && number < 2 * basenums[curbase]) { nextstr = bases[curbase][0]; } else if (number >= 2 * basenums[curbase] && number < 3 * basenums[curbase]) { nextstr = bases[curbase][1]; } else if (number >= 3 * basenums[curbase] && number < 10 * basenums[curbase]) { nextstr = arabicBaseNumbers[Math.floor(Number / basenums[curbase]) - 1].slice(0, -1) + 'u ' + bases[curbase][2]; } else if (number >= 10 * basenums[curbase] && number < 11 * basenums[curbase]) { nextstr = arabicBaseTenNumbers[1].slice(0, -1) + 'u ' + bases[curbase][2]; } else if (number >= basenums[curbase]) { nextstr = arabicWordForLessThanThousand(Math.floor(number / basenums[curbase]) % 100, useclassic, usealefhundred); if (number >= 100 * basenums[curbase] && number < (useclassic ? 200 : 101) * basenums[curbase]) { nextstr = nextstr.slice(0, -1) + 'u ' + bases[curbase][0].slice(0, -1) + 'K'; } else if (number >= 200 * basenums[curbase] && number < (useclassic ? 300 : 201) * basenums[curbase]) { nextstr = nextstr.slice(0, -2) + ' ' + bases[curbase][0].slice(0, -1) + 'K'; } else if (number >= 300 * basenums[curbase] && (useclassic || Math.floor(number / basenums[curbase]) % 100 === 0)) { nextstr = nextstr.slice(0, -1) + 'i ' + bases[curbase][0].slice(0, -1) + 'K'; } else { nextstr += ' ' + bases[curbase][0].slice(0, -1) + 'FA'; } } number = number % basenums[curbase]; curbase--; str = useclassic ? (((nextstr === '') ? '' : nextstr + ((str === '') ? '' : ' wa')) + str) : (((str === '') ? '' : str + ((nextstr === '') ? '' : ' wa')) + nextstr); nextstr = ''; } while (curbase >= 0); if (number !== 0 || str === '') { nextstr = arabicWordForLessThanThousand(number, useclassic, usealefhundred); } return useclassic ? (((nextstr === '') ? '' : nextstr + ((str === '') ? '' : ' wa')) + str) : (((str === '') ? '' : str + ((nextstr === '') ? '' : ' wa')) + nextstr); }"}
     Public Shared Function GetTransliterateNumberJS() As String()
         Dim GetJS As New List(Of String) From {"javascript: doTransliterateNum();", String.Empty, GetArabicSymbolJSArray()}
@@ -3546,6 +3553,44 @@ Public Class Languages
         Return Nothing
     End Function
 End Class
+Public Class DocBuilder
+    Public Shared Function GetRenderedText(ByVal Item As PageLoader.TextItem) As RenderArray
+        Dim Division As Integer = 0
+        Dim Index As Integer = 1
+        Dim Strings As String = HttpContext.Current.Request.QueryString.Get("docedit")
+        Dim Renderer As New RenderArray
+        Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(Strings, "\{(\d+)(?:\:(\d+))?(?:\:(\d+))?(?:-(\d+)(?:\:(\d+))?)?\}")
+        Dim Scheme As Arabic.TranslitScheme = CInt(HttpContext.Current.Request.QueryString.Get("translitscheme"))
+        Dim TranslationIndex As Integer = TanzilReader.GetTranslationIndex(HttpContext.Current.Request.QueryString.Get("qurantranslation"))
+        For Count = 0 To Matches.Count - 1
+            Dim BaseChapter As Integer = Matches(Count).Groups(1).Value
+            Dim BaseVerse As Integer = Matches(Count).Groups(2).Value
+            Dim WordNumber As Integer = Matches(Count).Groups(3).Value
+            Dim ExtraVerseNumber As Integer = Matches(Count).Groups(4).Value
+            Dim EndWordNumber As Integer = Matches(Count).Groups(5).Value
+            Dim QuranText As New Collections.Generic.List(Of String())
+            QuranText.Add(TanzilReader.GetQuranText(CachedData.XMLDocMain, BaseChapter, BaseVerse, CInt(IIf(ExtraVerseNumber <> 0, ExtraVerseNumber, BaseVerse))))
+            If (WordNumber > 1) Then
+                Dim VerseIndex As Integer = 0
+                For WordCount As Integer = 1 To WordNumber - 1
+                    VerseIndex = QuranText(0)(0).IndexOf(" "c, VerseIndex) + 1
+                Next
+                QuranText(0)(0) = System.Text.RegularExpressions.Regex.Replace(QuranText(0)(0).Substring(0, VerseIndex), "(?<=^\s*|\s+)[^\s" + String.Join(String.Empty, Array.ConvertAll(Arabic.ArabicStopLetters, Function(Str As String) Arabic.MakeUniRegEx(Str))) + "]+(?=\s*$|\s+)", String.Empty) + QuranText(0)(0).Substring(VerseIndex)
+            End If
+            If (EndWordNumber <> 0) Then
+                Dim VerseIndex As Integer = 0
+                'selections are always within the same chapter
+                Dim LastVerse As Integer = CInt(IIf(ExtraVerseNumber <> 0, QuranText(0).Length - 1, 0))
+                For WordCount As Integer = 1 To EndWordNumber - 1
+                    VerseIndex = QuranText(0)(LastVerse).IndexOf(" "c, VerseIndex) + 1
+                Next
+                QuranText(0)(LastVerse) = QuranText(0)(LastVerse).Substring(0, VerseIndex) + System.Text.RegularExpressions.Regex.Replace(QuranText(0)(LastVerse).Substring(VerseIndex), "(?<=^\s*|\s+)[^\s" + String.Join(String.Empty, Array.ConvertAll(Arabic.ArabicStopLetters, Function(Str As String) Arabic.MakeUniRegEx(Str))) + "]+(?=\s*$|\s+)", String.Empty)
+            End If
+            Renderer.Items.AddRange(TanzilReader.DoGetRenderedQuranText(QuranText, BaseChapter, BaseVerse, HttpContext.Current.Request.QueryString.Get("qurantranslation"), Scheme, TranslationIndex).Items)
+        Next
+        Return Renderer
+    End Function
+End Class
 Public Class Supplications
     Public Shared Function GetSuppCategories() As String()
         Return Array.ConvertAll(CachedData.IslamData.VerseCategories, Function(Convert As IslamData.VerseCategory) Utility.LoadResourceString("IslamInfo_" + Convert.Title))
@@ -4170,22 +4215,16 @@ Public Class TanzilReader
         If Not Strings Is Nothing Then Index = CInt(Strings)
         Dim Scheme As Arabic.TranslitScheme = CInt(HttpContext.Current.Request.QueryString.Get("translitscheme"))
         Dim TranslationIndex As Integer = GetTranslationIndex(HttpContext.Current.Request.QueryString.Get("qurantranslation"))
-        Return DoGetRenderedQuranText(Division, Index, HttpContext.Current.Request.QueryString.Get("qurantranslation"), Scheme, TranslationIndex)
-    End Function
-    Public Shared Function DoGetRenderedQuranText(Division As Integer, Index As Integer, Translation As String, Scheme As Arabic.TranslitScheme, TranslationIndex As Integer) As RenderArray
         Dim Chapter As Integer
         Dim Verse As Integer
         Dim BaseChapter As Integer
         Dim BaseVerse As Integer
-        Dim Text As String
         Dim Node As System.Xml.XmlNode
         Dim Renderer As New RenderArray
         Dim QuranText As Collections.Generic.List(Of String())
         Dim SeperateSectionCount As Integer = 1
         If Division = 8 Then SeperateSectionCount = CachedData.IslamData.QuranSelections(Index).SelectionInfo.Length
         If Division = 9 Then SeperateSectionCount = CachedData.LetterDictionary(CachedData.IslamData.ArabicLetters(Index).Symbol).Count
-        Dim Lines As String() = IO.File.ReadAllLines(Utility.GetFilePath("metadata\" + GetTranslationFileName(Translation)))
-        Dim W4WLines As String() = IO.File.ReadAllLines(Utility.GetFilePath("metadata\en.w4w.shehnazshaikh.txt"))
         For SectionCount As Integer = 0 To SeperateSectionCount - 1
             If Division = 0 Then
                 BaseChapter = CInt(GetChapterByIndex(Index).Attributes.GetNamedItem("index").Value)
@@ -4300,54 +4339,63 @@ Public Class TanzilReader
             Else
                 QuranText = Nothing
             End If
-            If Not QuranText Is Nothing Then
-                For Chapter = 0 To QuranText.Count - 1
-                    Dim ChapterNode As System.Xml.XmlNode = GetChapterByIndex(BaseChapter + Chapter)
-                    Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eHeaderLeft, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.RightToLeftMark + Arabic.TransliterateFromBuckwalter("|yaAtohaA " + ChapterNode.Attributes.GetNamedItem("ayas").Value + " ")), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, Arabic.TransliterateToScheme(Arabic.TransliterateFromBuckwalter("|yaAtohaA " + ChapterNode.Attributes.GetNamedItem("ayas").Value + " "), Scheme).Trim()), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, "Verses " + ChapterNode.Attributes.GetNamedItem("ayas").Value + " ")}))
-                    Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eHeaderCenter, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.RightToLeftMark + Arabic.TransliterateFromBuckwalter("suwrapu " + CachedData.IslamData.QuranChapters(CInt(ChapterNode.Attributes.GetNamedItem("index").Value) - 1).Name + " ")), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, Arabic.TransliterateToScheme(Arabic.TransliterateFromBuckwalter("suwrapu " + CachedData.IslamData.QuranChapters(CInt(ChapterNode.Attributes.GetNamedItem("index").Value) - 1).Name + " "), Scheme).Trim()), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, "Chapter " + TanzilReader.GetChapterEName(ChapterNode) + " ")}))
-                    Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eHeaderRight, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.RightToLeftMark + Arabic.TransliterateFromBuckwalter("rukuwEaAtohaA " + ChapterNode.Attributes.GetNamedItem("rukus").Value + " ")), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, Arabic.TransliterateToScheme(Arabic.TransliterateFromBuckwalter("rukuwEaAtohaA " + ChapterNode.Attributes.GetNamedItem("rukus").Value + " "), Scheme).Trim()), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, "Rukus " + ChapterNode.Attributes.GetNamedItem("rukus").Value + " ")}))
-                    For Verse = 0 To QuranText(Chapter).Length - 1
-                        Dim Items As New Collections.Generic.List(Of RenderArray.RenderItem)
-                        Text = String.Empty
-                        'hizb symbols not needed as Quranic text already contains them
-                        'If BaseChapter + Chapter <> 1 AndAlso TanzilReader.IsQuarterStart(BaseChapter + Chapter, CInt(IIf(Chapter = 0, BaseVerse, 1)) + Verse) Then
-                        '    Text += Arabic.TransliterateFromBuckwalter("B")
-                        '    Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.RightToLeftMark + Arabic.TransliterateFromBuckwalter("B"))}))
-                        'End If
-                        If CInt(IIf(Chapter = 0, BaseVerse, 1)) + Verse = 1 Then
-                            Node = GetTextVerse(GetTextChapter(CachedData.XMLDocMain, BaseChapter + Chapter), 1).Attributes.GetNamedItem("bismillah")
-                            If Not Node Is Nothing Then
-                                Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.RightToLeftMark + Node.Value + " "), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, Arabic.TransliterateToScheme(Node.Value, Scheme).Trim()), New RenderArray.RenderText(DirectCast(IIf(IsTranslationTextLTR(TranslationIndex), RenderArray.RenderDisplayClass.eLTR, RenderArray.RenderDisplayClass.eRTL), RenderArray.RenderDisplayClass), TanzilReader.GetTranslationVerse(Lines, 1, 1))}))
-                            End If
-                        End If
-                        Dim Words As String() = QuranText(Chapter)(Verse).Split(" "c)
-                        Dim TranslitWords As String() = Arabic.TransliterateToScheme(QuranText(Chapter)(Verse), Scheme).Split(" "c)
-                        Dim PauseMarks As Integer = 0
-                        For Count As Integer = 0 To Words.Length - 1
-                            'handle start/end words here which have space placeholders
-                            If Words(Count).Length = 1 AndAlso _
-                                Arabic.IsStop(Arabic.FindLetterBySymbol(Words(Count)(0))) Then
-                                PauseMarks += 1
-                                Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.RightToLeftMark + Words(Count)), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, TranslitWords(Count))}))
-                            ElseIf Words(Count).Length = 0 Then
-                            Else
-                                Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.RightToLeftMark + Words(Count)), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, TranslitWords(Count)), New RenderArray.RenderText(DirectCast(IIf(IsTranslationTextLTR(TranslationIndex), RenderArray.RenderDisplayClass.eLTR, RenderArray.RenderDisplayClass.eRTL), RenderArray.RenderDisplayClass), TanzilReader.GetW4WTranslationVerse(W4WLines, BaseChapter + Chapter, CInt(IIf(Chapter = 0, BaseVerse, 1)) + Verse, Count - PauseMarks))}))
-                            End If
-                        Next
-                        Text += QuranText(Chapter)(Verse) + " "
-                        If TanzilReader.IsSajda(BaseChapter + Chapter, CInt(IIf(Chapter = 0, BaseVerse, 1)) + Verse) Then
-                            'Sajda markers are already in the text
-                            'Text += Arabic.TransliterateFromBuckwalter("R")
-                            'Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.RightToLeftMark + Arabic.TransliterateFromBuckwalter("R"))}))
-                        End If
-                        Text += Arabic.TransliterateFromBuckwalter("=" + CStr(CInt(IIf(Chapter = 0, BaseVerse, 1)) + Verse)) + " "
-                        Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.RightToLeftMark + Arabic.TransliterateFromBuckwalter("=" + CStr(CInt(IIf(Chapter = 0, BaseVerse, 1)) + Verse))), New RenderArray.RenderText(DirectCast(IIf(IsTranslationTextLTR(TranslationIndex), RenderArray.RenderDisplayClass.eLTR, RenderArray.RenderDisplayClass.eRTL), RenderArray.RenderDisplayClass), "(" + CStr(CInt(IIf(Chapter = 0, BaseVerse, 1)) + Verse) + ")")}))
-                        'Text += Arabic.TransliterateFromBuckwalter("(" + CStr(IIf(Chapter = 0, BaseVerse, 1) + Verse) + ") ")
-                        Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eNested, Items), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.RightToLeftMark + Text), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, Arabic.TransliterateToScheme(QuranText(Chapter)(Verse) + " " + Arabic.TransliterateFromBuckwalter("=" + CStr(CInt(IIf(Chapter = 0, BaseVerse, 1)) + Verse)) + " ", Scheme).Trim()), New RenderArray.RenderText(DirectCast(IIf(IsTranslationTextLTR(TranslationIndex), RenderArray.RenderDisplayClass.eLTR, RenderArray.RenderDisplayClass.eRTL), RenderArray.RenderDisplayClass), "(" + CStr(CInt(IIf(Chapter = 0, BaseVerse, 1)) + Verse) + ") " + TanzilReader.GetTranslationVerse(Lines, BaseChapter + Chapter, CInt(IIf(Chapter = 0, BaseVerse, 1)) + Verse))}))
-                    Next
-                Next
-            End If
+            Renderer.Items.AddRange(DoGetRenderedQuranText(QuranText, BaseChapter, BaseVerse, HttpContext.Current.Request.QueryString.Get("qurantranslation"), Scheme, TranslationIndex).Items)
         Next
+        Return Renderer
+    End Function
+    Public Shared Function DoGetRenderedQuranText(QuranText As Collections.Generic.List(Of String()), BaseChapter As Integer, BaseVerse As Integer, Translation As String, Scheme As Arabic.TranslitScheme, TranslationIndex As Integer) As RenderArray
+        Dim Text As String
+        Dim Node As System.Xml.XmlNode
+        Dim Renderer As New RenderArray
+        Dim Lines As String() = IO.File.ReadAllLines(Utility.GetFilePath("metadata\" + GetTranslationFileName(Translation)))
+        Dim W4WLines As String() = IO.File.ReadAllLines(Utility.GetFilePath("metadata\en.w4w.shehnazshaikh.txt"))
+        If Not QuranText Is Nothing Then
+            For Chapter = 0 To QuranText.Count - 1
+                Dim ChapterNode As System.Xml.XmlNode = GetChapterByIndex(BaseChapter + Chapter)
+                Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eHeaderLeft, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.RightToLeftMark + Arabic.TransliterateFromBuckwalter("|yaAtohaA " + ChapterNode.Attributes.GetNamedItem("ayas").Value + " ")), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, Arabic.TransliterateToScheme(Arabic.TransliterateFromBuckwalter("|yaAtohaA " + ChapterNode.Attributes.GetNamedItem("ayas").Value + " "), Scheme).Trim()), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, "Verses " + ChapterNode.Attributes.GetNamedItem("ayas").Value + " ")}))
+                Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eHeaderCenter, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.RightToLeftMark + Arabic.TransliterateFromBuckwalter("suwrapu " + CachedData.IslamData.QuranChapters(CInt(ChapterNode.Attributes.GetNamedItem("index").Value) - 1).Name + " ")), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, Arabic.TransliterateToScheme(Arabic.TransliterateFromBuckwalter("suwrapu " + CachedData.IslamData.QuranChapters(CInt(ChapterNode.Attributes.GetNamedItem("index").Value) - 1).Name + " "), Scheme).Trim()), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, "Chapter " + TanzilReader.GetChapterEName(ChapterNode) + " ")}))
+                Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eHeaderRight, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.RightToLeftMark + Arabic.TransliterateFromBuckwalter("rukuwEaAtohaA " + ChapterNode.Attributes.GetNamedItem("rukus").Value + " ")), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, Arabic.TransliterateToScheme(Arabic.TransliterateFromBuckwalter("rukuwEaAtohaA " + ChapterNode.Attributes.GetNamedItem("rukus").Value + " "), Scheme).Trim()), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, "Rukus " + ChapterNode.Attributes.GetNamedItem("rukus").Value + " ")}))
+                For Verse = 0 To QuranText(Chapter).Length - 1
+                    Dim Items As New Collections.Generic.List(Of RenderArray.RenderItem)
+                    Text = String.Empty
+                    'hizb symbols not needed as Quranic text already contains them
+                    'If BaseChapter + Chapter <> 1 AndAlso TanzilReader.IsQuarterStart(BaseChapter + Chapter, CInt(IIf(Chapter = 0, BaseVerse, 1)) + Verse) Then
+                    '    Text += Arabic.TransliterateFromBuckwalter("B")
+                    '    Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.RightToLeftMark + Arabic.TransliterateFromBuckwalter("B"))}))
+                    'End If
+                    If CInt(IIf(Chapter = 0, BaseVerse, 1)) + Verse = 1 Then
+                        Node = GetTextVerse(GetTextChapter(CachedData.XMLDocMain, BaseChapter + Chapter), 1).Attributes.GetNamedItem("bismillah")
+                        If Not Node Is Nothing Then
+                            Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.RightToLeftMark + Node.Value + " "), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, Arabic.TransliterateToScheme(Node.Value, Scheme).Trim()), New RenderArray.RenderText(DirectCast(IIf(IsTranslationTextLTR(TranslationIndex), RenderArray.RenderDisplayClass.eLTR, RenderArray.RenderDisplayClass.eRTL), RenderArray.RenderDisplayClass), TanzilReader.GetTranslationVerse(Lines, 1, 1))}))
+                        End If
+                    End If
+                    Dim Words As String() = QuranText(Chapter)(Verse).Split(" "c)
+                    Dim TranslitWords As String() = Arabic.TransliterateToScheme(QuranText(Chapter)(Verse), Scheme).Split(" "c)
+                    Dim PauseMarks As Integer = 0
+                    For Count As Integer = 0 To Words.Length - 1
+                        'handle start/end words here which have space placeholders
+                        If Words(Count).Length = 1 AndAlso _
+                            Arabic.IsStop(Arabic.FindLetterBySymbol(Words(Count)(0))) Then
+                            PauseMarks += 1
+                            Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.RightToLeftMark + Words(Count)), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, TranslitWords(Count))}))
+                        ElseIf Words(Count).Length = 0 Then
+                        Else
+                            Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.RightToLeftMark + Words(Count)), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, TranslitWords(Count)), New RenderArray.RenderText(DirectCast(IIf(IsTranslationTextLTR(TranslationIndex), RenderArray.RenderDisplayClass.eLTR, RenderArray.RenderDisplayClass.eRTL), RenderArray.RenderDisplayClass), TanzilReader.GetW4WTranslationVerse(W4WLines, BaseChapter + Chapter, CInt(IIf(Chapter = 0, BaseVerse, 1)) + Verse, Count - PauseMarks))}))
+                        End If
+                    Next
+                    Text += QuranText(Chapter)(Verse) + " "
+                    If TanzilReader.IsSajda(BaseChapter + Chapter, CInt(IIf(Chapter = 0, BaseVerse, 1)) + Verse) Then
+                        'Sajda markers are already in the text
+                        'Text += Arabic.TransliterateFromBuckwalter("R")
+                        'Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.RightToLeftMark + Arabic.TransliterateFromBuckwalter("R"))}))
+                    End If
+                    Text += Arabic.TransliterateFromBuckwalter("=" + CStr(CInt(IIf(Chapter = 0, BaseVerse, 1)) + Verse)) + " "
+                    Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.RightToLeftMark + Arabic.TransliterateFromBuckwalter("=" + CStr(CInt(IIf(Chapter = 0, BaseVerse, 1)) + Verse))), New RenderArray.RenderText(DirectCast(IIf(IsTranslationTextLTR(TranslationIndex), RenderArray.RenderDisplayClass.eLTR, RenderArray.RenderDisplayClass.eRTL), RenderArray.RenderDisplayClass), "(" + CStr(CInt(IIf(Chapter = 0, BaseVerse, 1)) + Verse) + ")")}))
+                    'Text += Arabic.TransliterateFromBuckwalter("(" + CStr(IIf(Chapter = 0, BaseVerse, 1) + Verse) + ") ")
+                    Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eNested, Items), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.RightToLeftMark + Text), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, Arabic.TransliterateToScheme(QuranText(Chapter)(Verse) + " " + Arabic.TransliterateFromBuckwalter("=" + CStr(CInt(IIf(Chapter = 0, BaseVerse, 1)) + Verse)) + " ", Scheme).Trim()), New RenderArray.RenderText(DirectCast(IIf(IsTranslationTextLTR(TranslationIndex), RenderArray.RenderDisplayClass.eLTR, RenderArray.RenderDisplayClass.eRTL), RenderArray.RenderDisplayClass), "(" + CStr(CInt(IIf(Chapter = 0, BaseVerse, 1)) + Verse) + ") " + TanzilReader.GetTranslationVerse(Lines, BaseChapter + Chapter, CInt(IIf(Chapter = 0, BaseVerse, 1)) + Verse))}))
+                Next
+            Next
+        End If
         Return Renderer
     End Function
     Public Shared Function GetQuranText(ByVal XMLDocMain As System.Xml.XmlDocument, ByVal StartChapter As Integer, ByVal StartAyat As Integer, ByVal EndChapter As Integer, ByVal EndAyat As Integer) As Collections.Generic.List(Of String())

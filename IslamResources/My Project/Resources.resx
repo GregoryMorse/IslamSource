@@ -471,6 +471,9 @@
   <data name="IslamSource_IslamicInformation" xml:space="preserve">
     <value>Islamic Information</value>
   </data>
+  <data name="IslamSource_DocumentBuilder" xml:space="preserve">
+    <value>Document Builder</value>
+  </data>
   <data name="IslamSource_IslamicNews" xml:space="preserve">
     <value>Islamic News</value>
   </data>
