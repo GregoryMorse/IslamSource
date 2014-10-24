@@ -3559,34 +3559,29 @@ Public Class DocBuilder
         Dim Index As Integer = 1
         Dim Strings As String = HttpContext.Current.Request.QueryString.Get("docedit")
         Dim Renderer As New RenderArray
-        Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(Strings, "\{(\d+)(?:\:(\d+))?(?:\:(\d+))?(?:-(\d+)(?:\:(\d+))?)?\}")
+        If Strings = Nothing Then Return Renderer
+        Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(Strings, "\{(\d+)(?:\:(\d+))?(?:\:(\d+))?(?:-(\d+)(?:\:(\d+))?(?:\:(\d+))?)?\}")
         Dim Scheme As Arabic.TranslitScheme = CInt(HttpContext.Current.Request.QueryString.Get("translitscheme"))
         Dim TranslationIndex As Integer = TanzilReader.GetTranslationIndex(HttpContext.Current.Request.QueryString.Get("qurantranslation"))
         For Count = 0 To Matches.Count - 1
             Dim BaseChapter As Integer = Matches(Count).Groups(1).Value
-            Dim BaseVerse As Integer = Matches(Count).Groups(2).Value
-            Dim WordNumber As Integer = Matches(Count).Groups(3).Value
-            Dim ExtraVerseNumber As Integer = Matches(Count).Groups(4).Value
-            Dim EndWordNumber As Integer = Matches(Count).Groups(5).Value
-            Dim QuranText As New Collections.Generic.List(Of String())
-            QuranText.Add(TanzilReader.GetQuranText(CachedData.XMLDocMain, BaseChapter, BaseVerse, CInt(IIf(ExtraVerseNumber <> 0, ExtraVerseNumber, BaseVerse))))
-            If (WordNumber > 1) Then
-                Dim VerseIndex As Integer = 0
-                For WordCount As Integer = 1 To WordNumber - 1
-                    VerseIndex = QuranText(0)(0).IndexOf(" "c, VerseIndex) + 1
-                Next
-                QuranText(0)(0) = System.Text.RegularExpressions.Regex.Replace(QuranText(0)(0).Substring(0, VerseIndex), "(?<=^\s*|\s+)[^\s" + String.Join(String.Empty, Array.ConvertAll(Arabic.ArabicStopLetters, Function(Str As String) Arabic.MakeUniRegEx(Str))) + "]+(?=\s*$|\s+)", String.Empty) + QuranText(0)(0).Substring(VerseIndex)
+            Dim BaseVerse As Integer = If(Matches(Count).Groups(2).Value = String.Empty, 0, CInt(Matches(Count).Groups(2).Value))
+            Dim WordNumber As Integer = If(Matches(Count).Groups(3).Value = String.Empty, 0, CInt(Matches(Count).Groups(3).Value))
+            Dim EndChapter As Integer = If(Matches(Count).Groups(4).Value = String.Empty, 0, CInt(Matches(Count).Groups(4).Value))
+            Dim ExtraVerseNumber As Integer = If(Matches(Count).Groups(5).Value = String.Empty, 0, CInt(Matches(Count).Groups(5).Value))
+            Dim EndWordNumber As Integer = If(Matches(Count).Groups(6).Value = String.Empty, 0, CInt(Matches(Count).Groups(6).Value))
+            If BaseVerse <> 0 And WordNumber = 0 And EndChapter <> 0 And ExtraVerseNumber = 0 And EndWordNumber = 0 Then
+                ExtraVerseNumber = EndChapter
+                EndChapter = 0
+            ElseIf BaseVerse <> 0 And WordNumber <> 0 And EndChapter <> 0 And ExtraVerseNumber = 0 And EndWordNumber = 0 Then
+                EndWordNumber = EndChapter
+                EndChapter = 0
+            ElseIf BaseVerse <> 0 And WordNumber <> 0 And EndChapter <> 0 And ExtraVerseNumber <> 0 And EndWordNumber = 0 Then
+                EndWordNumber = ExtraVerseNumber
+                ExtraVerseNumber = EndChapter
+                EndChapter = 0
             End If
-            If (EndWordNumber <> 0) Then
-                Dim VerseIndex As Integer = 0
-                'selections are always within the same chapter
-                Dim LastVerse As Integer = CInt(IIf(ExtraVerseNumber <> 0, QuranText(0).Length - 1, 0))
-                For WordCount As Integer = 1 To EndWordNumber - 1
-                    VerseIndex = QuranText(0)(LastVerse).IndexOf(" "c, VerseIndex) + 1
-                Next
-                QuranText(0)(LastVerse) = QuranText(0)(LastVerse).Substring(0, VerseIndex) + System.Text.RegularExpressions.Regex.Replace(QuranText(0)(LastVerse).Substring(VerseIndex), "(?<=^\s*|\s+)[^\s" + String.Join(String.Empty, Array.ConvertAll(Arabic.ArabicStopLetters, Function(Str As String) Arabic.MakeUniRegEx(Str))) + "]+(?=\s*$|\s+)", String.Empty)
-            End If
-            Renderer.Items.AddRange(TanzilReader.DoGetRenderedQuranText(QuranText, BaseChapter, BaseVerse, HttpContext.Current.Request.QueryString.Get("qurantranslation"), Scheme, TranslationIndex).Items)
+            Renderer.Items.AddRange(TanzilReader.DoGetRenderedQuranText(TanzilReader.QuranTextRangeLookup(BaseChapter, BaseVerse, WordNumber, EndChapter, ExtraVerseNumber, EndWordNumber), BaseChapter, BaseVerse, HttpContext.Current.Request.QueryString.Get("qurantranslation"), Scheme, TranslationIndex).Items)
         Next
         Return Renderer
     End Function
@@ -4206,15 +4201,33 @@ Public Class TanzilReader
         Next
         Doc.Save(Path)
     End Sub
-    Public Shared Function GetRenderedQuranText(ByVal Item As PageLoader.TextItem) As RenderArray
-        Dim Division As Integer = 0
-        Dim Index As Integer = 1
-        Dim Strings As String = HttpContext.Current.Request.QueryString.Get("qurandivision")
-        If Not Strings Is Nothing Then Division = CInt(Strings)
-        Strings = HttpContext.Current.Request.QueryString.Get("quranselection")
-        If Not Strings Is Nothing Then Index = CInt(Strings)
-        Dim Scheme As Arabic.TranslitScheme = CInt(HttpContext.Current.Request.QueryString.Get("translitscheme"))
-        Dim TranslationIndex As Integer = GetTranslationIndex(HttpContext.Current.Request.QueryString.Get("qurantranslation"))
+    Public Shared Function QuranTextRangeLookup(BaseChapter As Integer, BaseVerse As Integer, WordNumber As Integer, EndChapter As Integer, ExtraVerseNumber As Integer, EndWordNumber As Integer) As Collections.Generic.List(Of String())
+        Dim QuranText As New Collections.Generic.List(Of String())
+        If EndChapter = 0 Or EndChapter = BaseChapter Then
+            QuranText.Add(TanzilReader.GetQuranText(CachedData.XMLDocMain, BaseChapter, BaseVerse, CInt(IIf(ExtraVerseNumber <> 0, ExtraVerseNumber, BaseVerse))))
+        Else
+            QuranText.AddRange(TanzilReader.GetQuranText(CachedData.XMLDocMain, BaseChapter, BaseVerse, EndChapter, ExtraVerseNumber))
+        End If
+        If (WordNumber > 1) Then
+            Dim VerseIndex As Integer = 0
+            For WordCount As Integer = 1 To WordNumber - 1
+                VerseIndex = QuranText(0)(0).IndexOf(" "c, VerseIndex) + 1
+            Next
+            QuranText(0)(0) = System.Text.RegularExpressions.Regex.Replace(QuranText(0)(0).Substring(0, VerseIndex), "(?<=^\s*|\s+)[^\s" + String.Join(String.Empty, Array.ConvertAll(Arabic.ArabicStopLetters, Function(Str As String) Arabic.MakeUniRegEx(Str))) + "]+(?=\s*$|\s+)", String.Empty) + QuranText(0)(0).Substring(VerseIndex)
+        End If
+        If (EndWordNumber <> 0) Then
+            Dim VerseIndex As Integer = 0
+            'selections are always within the same chapter
+            Dim LastChapter As Integer = QuranText.Count - 1
+            Dim LastVerse As Integer = CInt(IIf(ExtraVerseNumber <> 0, QuranText(LastChapter).Length - 1, 0))
+            For WordCount As Integer = 1 To EndWordNumber - 1
+                VerseIndex = QuranText(LastChapter)(LastVerse).IndexOf(" "c, VerseIndex) + 1
+            Next
+            QuranText(LastChapter)(LastVerse) = QuranText(LastChapter)(LastVerse).Substring(0, VerseIndex) + System.Text.RegularExpressions.Regex.Replace(QuranText(LastChapter)(LastVerse).Substring(VerseIndex), "(?<=^\s*|\s+)[^\s" + String.Join(String.Empty, Array.ConvertAll(Arabic.ArabicStopLetters, Function(Str As String) Arabic.MakeUniRegEx(Str))) + "]+(?=\s*$|\s+)", String.Empty)
+        End If
+        Return QuranText
+    End Function
+    Public Shared Function GetQuranTextBySelection(Division As Integer, Index As Integer, Translation As String, Scheme As Arabic.TranslitScheme, TranslationIndex As Integer) As RenderArray
         Dim Chapter As Integer
         Dim Verse As Integer
         Dim BaseChapter As Integer
@@ -4315,33 +4328,27 @@ Public Class TanzilReader
             ElseIf Division = 8 Then
                 BaseChapter = CachedData.IslamData.QuranSelections(Index).SelectionInfo(SectionCount).ChapterNumber
                 BaseVerse = CachedData.IslamData.QuranSelections(Index).SelectionInfo(SectionCount).VerseNumber
-                QuranText = New Collections.Generic.List(Of String())
-                QuranText.Add(GetQuranText(CachedData.XMLDocMain, BaseChapter, BaseVerse, CInt(IIf(CachedData.IslamData.QuranSelections(Index).SelectionInfo(SectionCount).ExtraVerseNumber <> 0, CachedData.IslamData.QuranSelections(Index).SelectionInfo(SectionCount).ExtraVerseNumber, BaseVerse))))
-                If (CachedData.IslamData.QuranSelections(Index).SelectionInfo(SectionCount).WordNumber > 1) Then
-                    Dim VerseIndex As Integer = 0
-                    For Count As Integer = 1 To CachedData.IslamData.QuranSelections(Index).SelectionInfo(SectionCount).WordNumber - 1
-                        VerseIndex = QuranText(0)(0).IndexOf(" "c, VerseIndex) + 1
-                    Next
-                    QuranText(0)(0) = System.Text.RegularExpressions.Regex.Replace(QuranText(0)(0).Substring(0, VerseIndex), "(?<=^\s*|\s+)[^\s" + String.Join(String.Empty, Array.ConvertAll(Arabic.ArabicStopLetters, Function(Str As String) Arabic.MakeUniRegEx(Str))) + "]+(?=\s*$|\s+)", String.Empty) + QuranText(0)(0).Substring(VerseIndex)
-                End If
-                If (CachedData.IslamData.QuranSelections(Index).SelectionInfo(SectionCount).EndWordNumber <> 0) Then
-                    Dim VerseIndex As Integer = 0
-                    'selections are always within the same chapter
-                    Dim LastVerse As Integer = CInt(IIf(CachedData.IslamData.QuranSelections(Index).SelectionInfo(SectionCount).ExtraVerseNumber <> 0, QuranText(0).Length - 1, 0))
-                    For Count As Integer = 1 To CachedData.IslamData.QuranSelections(Index).SelectionInfo(SectionCount).EndWordNumber - 1
-                        VerseIndex = QuranText(0)(LastVerse).IndexOf(" "c, VerseIndex) + 1
-                    Next
-                    QuranText(0)(LastVerse) = QuranText(0)(LastVerse).Substring(0, VerseIndex) + System.Text.RegularExpressions.Regex.Replace(QuranText(0)(LastVerse).Substring(VerseIndex), "(?<=^\s*|\s+)[^\s" + String.Join(String.Empty, Array.ConvertAll(Arabic.ArabicStopLetters, Function(Str As String) Arabic.MakeUniRegEx(Str))) + "]+(?=\s*$|\s+)", String.Empty)
-                End If
+                QuranText = QuranTextRangeLookup(BaseChapter, BaseVerse, CachedData.IslamData.QuranSelections(Index).SelectionInfo(SectionCount).WordNumber, 0, CachedData.IslamData.QuranSelections(Index).SelectionInfo(SectionCount).ExtraVerseNumber, CachedData.IslamData.QuranSelections(Index).SelectionInfo(SectionCount).EndWordNumber)
             ElseIf Division = 9 Then
                 QuranText = New Collections.Generic.List(Of String())
                 QuranText.Add(GetQuranText(CachedData.XMLDocMain, CType(CachedData.LetterDictionary(CachedData.IslamData.ArabicLetters(Index).Symbol)(SectionCount), Integer())(0), CType(CachedData.LetterDictionary(CachedData.IslamData.ArabicLetters(Index).Symbol)(SectionCount), Integer())(1), CType(CachedData.LetterDictionary(CachedData.IslamData.ArabicLetters(Index).Symbol)(SectionCount), Integer())(1)))
             Else
                 QuranText = Nothing
             End If
-            Renderer.Items.AddRange(DoGetRenderedQuranText(QuranText, BaseChapter, BaseVerse, HttpContext.Current.Request.QueryString.Get("qurantranslation"), Scheme, TranslationIndex).Items)
+            Renderer.Items.AddRange(DoGetRenderedQuranText(QuranText, BaseChapter, BaseVerse, Translation, Scheme, TranslationIndex).Items)
         Next
         Return Renderer
+    End Function
+    Public Shared Function GetRenderedQuranText(ByVal Item As PageLoader.TextItem) As RenderArray
+        Dim Division As Integer = 0
+        Dim Index As Integer = 1
+        Dim Strings As String = HttpContext.Current.Request.QueryString.Get("qurandivision")
+        If Not Strings Is Nothing Then Division = CInt(Strings)
+        Strings = HttpContext.Current.Request.QueryString.Get("quranselection")
+        If Not Strings Is Nothing Then Index = CInt(Strings)
+        Dim Scheme As Arabic.TranslitScheme = CInt(HttpContext.Current.Request.QueryString.Get("translitscheme"))
+        Dim TranslationIndex As Integer = GetTranslationIndex(HttpContext.Current.Request.QueryString.Get("qurantranslation"))
+        Return GetQuranTextBySelection(Division, Index, HttpContext.Current.Request.QueryString.Get("qurantranslation"), Scheme, TranslationIndex)
     End Function
     Public Shared Function DoGetRenderedQuranText(QuranText As Collections.Generic.List(Of String()), BaseChapter As Integer, BaseVerse As Integer, Translation As String, Scheme As Arabic.TranslitScheme, TranslationIndex As Integer) As RenderArray
         Dim Text As String
