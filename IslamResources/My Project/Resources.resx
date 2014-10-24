@@ -2322,6 +2322,36 @@
   <data name="IslamInfo_VerseOfTheThrone" xml:space="preserve">
     <value>The Verse of the Throne</value>
   </data>
+  <data name="IslamInfo_VerseOfTheSword" xml:space="preserve">
+    <value>The Verse of the Sword</value>
+  </data>
+  <data name="IslamInfo_LongestVerse" xml:space="preserve">
+    <value>Longest Verse</value>
+  </data>
+  <data name="IslamInfo_LongestChapter" xml:space="preserve">
+    <value>Longest Chapter</value>
+  </data>
+  <data name="IslamInfo_ShortestVerses" xml:space="preserve">
+    <value>Shortest Verses</value>
+  </data>
+  <data name="IslamInfo_ShortestChapter" xml:space="preserve">
+    <value>Shortest Chapter</value>
+  </data>
+  <data name="IslamInfo_EssenceVerse" xml:space="preserve">
+    <value>Essence Verse</value>
+  </data>
+  <data name="IslamInfo_ComprehensiveVerse" xml:space="preserve">
+    <value>Comprehensive Verse</value>
+  </data>
+  <data name="IslamInfo_VerseEvokingFear" xml:space="preserve">
+    <value>Verse Evoking Fear</value>
+  </data>
+  <data name="IslamInfo_VerseEvokingHope" xml:space="preserve">
+    <value>Verse Evoking Hope</value>
+  </data>
+  <data name="IslamInfo_ChapterNames" xml:space="preserve">
+    <value>Chapter Names</value>
+  </data>
   <data name="IslamInfo_Zechariah" xml:space="preserve">
     <value>Zechariah</value>
   </data>
