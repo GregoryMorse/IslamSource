@@ -160,7 +160,7 @@ span.arabic
     font-size: 32px;
 }
 
-#qurantext, #supptext
+#qurantext, #supptext, #doctext
 {
     text-align: center;
     direction: rtl;
