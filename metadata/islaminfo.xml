@@ -233,7 +233,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 	</prayertimes>
 	<verses>
 		<category title="WhenWakingUp">
-			<verse title="WhenWakingUp1" text="{loHamodu lil~`hi {l~a*iyo &gt;aHoyaAnaA baEoda maA &gt;amaAtanaA wa&lt;ilayohi {ln~u$uwru"></verse>
+			<verse title="WhenWakingUp1" text="{loHamodu lil~`hi {l~a*iyo &gt;aHoyaAnaA baEoda maA &gt;amaAtanaA wa&lt;ilayohi {ln~u$uwru \{Al-Bukhari, cf. Al-Asqalani, Fathul-Bari 11/113; Muslim 4/2083\}"></verse>
 			<verse title="WhenWakingUp2" text="laA &lt;ilaha &lt;il~aA {ll~`hu waHodahu laA $ariyka lahu\, lahu {lomuloku walahu {loHamodu\, wahuwa EalaY kul~i $ayo&apos;K qadiyrN\. suboHaAna {ll~`hi\, wa{lHamodu lil~`hi\, walaA &lt;ilaha &lt;il~aA {ll~`hu\, wa{ll~`hu &gt;akobaru\, walaA Hawola walaA quw~apa &lt;il~aA bi{ll~`hi {loEaliy~i {loEaZiymi\, rab~i {gofiroliy"></verse>
 			<verse title="WhenWakingUp3" text="{loHamodu lil~`hi {l~a*iyo EaAfaAniy fiy jasadiy\, warad~a Ealay~a ruwHiy\, wa&gt;a*ina liy bi*ikorihi"></verse>
 			<verse title="WhenWakingUp4" text="\{3:190-200\}"></verse>
@@ -273,7 +273,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<verse title="UponEnteringTheHome1" text="bisomi {ll~`hi walajonaA\, wabisomi {ll~`hi xarajonaA\, waEalaY rab~inaA tawak~alonaA"></verse>
 		</category>
 		<category title="WhenGoingToTheMosque">
-			<verse title="WhenGoingToTheMosque1" text="{ll~ahum~a {joEalo fiy qalobiy nuwrFA\, wafiy lisaAniy nuwrFA\, wafiy samoEiy nuwrFA\, wafiy baSariy nuwrFA\, wamino fawoqiy nuwrFA\, wamino taHotiy nuwrFA\, waEano yamiyniy nuwrFA\, waEano $imaAliy nuwrFA\, wamino &gt;amaAmiy nuwrFA\, wamino xalofiy nuwrFA\, waAjoEalo fiy nafosiy nuwrFA\, wa&gt;aEoZimo liy nuwrFA\, waEaZ~imo liy nuwrFA\, waAjoEalo liy nuwrFA\, waAjoEaloniy nuwrFA\, {ll~`hum~a &gt;aEoTiniy nuwrFA\, waAjoEalo fiy EaSabiy nuwrFA\, wafiy laHomiy nuwrFA\, wafiy damiy nuwrFA\, wafiy $aEoriy nuwrFA\, wafiy ba$ariy nuwrFA ({ll~`hum~a {joEalo liy nuwrFA fiy qaboriy\. wanuwrFA fiy EiZaAmiy) (wazidoniy nuwrFA\, wazidoniy nuwrFA\, wazidoniy nuwrFA) (wahabo liy nuwrFA EalaY nuwrK)"></verse>
+			<verse title="WhenGoingToTheMosque1" text="{ll~ahum~a {joEalo fiy qalobiy nuwrFA\, wafiy lisaAniy nuwrFA\, wafiy samoEiy nuwrFA\, wafiy baSariy nuwrFA\, wamino fawoqiy nuwrFA\, wamino taHotiy nuwrFA\, waEano yamiyniy nuwrFA\, waEano $imaAliy nuwrFA\, wamino &gt;amaAmiy nuwrFA\, wamino xalofiy nuwrFA\, waAjoEalo fiy nafosiy nuwrFA\, wa&gt;aEoZimo liy nuwrFA\, waEaZ~imo liy nuwrFA\, waAjoEalo liy nuwrFA\, waAjoEaloniy nuwrFA\, {ll~`hum~a &gt;aEoTiniy nuwrFA\, waAjoEalo fiy EaSabiy nuwrFA\, wafiy laHomiy nuwrFA\, wafiy damiy nuwrFA\, wafiy $aEoriy nuwrFA\, wafiy ba$ariy nuwrFA ({ll~`hum~a {joEalo liy nuwrFA fiy qaboriy\. wanuwrFA fiy EiZaAmiy) (wazidoniy nuwrFA\, wazidoniy nuwrFA\, wazidoniy nuwrFA) (wahabo liy nuwrFA EalaY nuwrK) \{Al-Bukhari 11/116 (Hadith no. 6316) and by Muslim 1/526,529-530 (Hadith no. 763). Al-Tirmidhi 5/483 (Hadith no. 3419). Al-Bukhari in Al-Adab Al-Mufrad (Hadith no. 695), p. 258.  See also Al-Albani, Sahih Al-Adab Al-Mufrad (no. 536), Al-Bukhari, cf. Al-Asqalani, Fathul-Bari 11/118.\}"></verse>
 		</category>
 		<category title="UponEnteringTheMosque">
 			<verse title="" text="&gt;aEuw*u bi{ll~`hi {loEaZiymi\, wabiwajohihi {lokariymi wasuloTaAnihi {loqadiymi\, mina {l$a~yoTaAni {lr~ajiymi (bisomi {ll~`hi\, wa{lSa~laApu) (wa{lsa~laAmu EalaY rasuwli {ll~`hi) ({ll~`hum~a {fotaHo liy &gt;abowaAba raHomatika)"></verse>
@@ -3061,8 +3061,8 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 		<arabicsymbol symbolname="" uname="RightToLeftOverride" symbol="202E" ipavalue="" extendedbuckwalter="0" romantranslit="" plainroman="" terminating="false" connecting="false" assimilate="false" />
 		<arabicsymbol symbolname="{lv~alaAv" uname="NarrowNoBreakSpace" symbol="202F" ipavalue="" extendedbuckwalter="0" romantranslit=" " plainroman=" " terminating="false" connecting="false" assimilate="false" />
 		
-		<arabicsymbol symbolname="yamiyn {loqawsaAn" uname="OrnateLeftParenthesis" symbol="FD3E" ipavalue="" extendedbuckwalter="40" romantranslit="(" plainroman="(" terminating="true" connecting="false" assimilate="false" />
-		<arabicsymbol symbolname="yasaAr {loqawsaAn" uname="OrnateRightParenthesis" symbol="FD3F" ipavalue="" extendedbuckwalter="41" romantranslit=")" plainroman=")" terminating="true" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="yamiyn {loqawsaAn" uname="OrnateLeftParenthesis" symbol="FD3E" ipavalue="" extendedbuckwalter="41" romantranslit=")" plainroman=")" terminating="true" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="yasaAr {loqawsaAn" uname="OrnateRightParenthesis" symbol="FD3F" ipavalue="" extendedbuckwalter="40" romantranslit="(" plainroman="(" terminating="true" connecting="false" assimilate="false" />
 
 		<arabicsymbol symbolname="Sal~Y" uname="ArabicLigatureSallaUsedAsKoranicStopSignIsolatedForm" symbol="FDF0" ipavalue="" extendedbuckwalter="0" romantranslit="" plainroman="" terminating="true" connecting="false" assimilate="false" />
 		<arabicsymbol symbolname="qalY" uname="ArabicLigatureQalaUsedAsKoranicStopSignIsolatedForm" symbol="FDF1" ipavalue="" extendedbuckwalter="0" romantranslit="" plainroman="" terminating="true" connecting="false" assimilate="false" />
