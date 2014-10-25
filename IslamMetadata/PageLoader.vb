@@ -1634,6 +1634,7 @@ Public Class Arabic
         Public Rule As String
         Public Match As String
         Public Evaluator As String
+        Public NegativeMatch As String
         Public RuleFunc As RuleFuncs
     End Structure
     Structure ColorRule
@@ -1788,7 +1789,7 @@ Public Class Arabic
                     Next
                     Return FixStr
                 End Function)) + "))?(" + MakeRegMultiEx(Array.ConvertAll(ArabicSunLetters, Function(Str As String) MakeUniRegEx(Str))) + "|" + MakeRegMultiEx(Array.ConvertAll(ArabicMoonLettersNoVowels, Function(Str As String) MakeUniRegEx(Str))) + "|" + MakeUniRegEx(ArabicFatha) + "(" + MakeUniRegEx(ArabicLetterWaw) + "|" + MakeUniRegEx(ArabicLetterYeh) + "))(?=\s*$|\s+|(" + MakeRegMultiEx(Array.ConvertAll(ArabicSunLetters, Function(Str As String) MakeUniRegEx(Str))) + ")(?!" + MakeUniRegEx(ArabicShadda) + ")|" + MakeRegMultiEx(Array.ConvertAll(ArabicMoonLetters, Function(Str As String) MakeUniRegEx(Str))) + ")", _
-            .Evaluator = "$2" + CStr(ArabicSukun)}
+            .Evaluator = "$2" + CStr(ArabicSukun), .NegativeMatch = "$1"}
     }
     Public Shared SimpleCleanScript As RuleTranslation() = { _
         New RuleTranslation With {.Rule = "RemoveDiacritics", .Match = MakeUniRegEx(ArabicShadda) + "|" + MakeUniRegEx(ArabicSukun) + "|" + MakeUniRegEx(ArabicFatha) + "|" + MakeUniRegEx(ArabicKasra) + "|" + MakeUniRegEx(ArabicDamma) + "|" + MakeUniRegEx(ArabicFathatan) + "|" + MakeUniRegEx(ArabicKasratan) + "|" + MakeUniRegEx(ArabicDammatan) + "|" + MakeUniRegEx(ArabicLetterSuperscriptAlef), _
@@ -2225,7 +2226,7 @@ Public Class Arabic
                 ArabicString = System.Text.RegularExpressions.Regex.Replace(ArabicString, SimpleEnhancedScript(Count).Match, SimpleEnhancedScript(Count).Evaluator)
             Next
             For Count = 0 To SimpleScript.Length - 1
-                ArabicString = System.Text.RegularExpressions.Regex.Replace(ArabicString, SimpleScript(Count).Match, SimpleScript(Count).Evaluator)
+                ArabicString = System.Text.RegularExpressions.Regex.Replace(ArabicString, SimpleScript(Count).Match, Function(Match As System.Text.RegularExpressions.Match) If(SimpleScript(Count).NegativeMatch <> String.Empty AndAlso Match.Result(SimpleScript(Count).NegativeMatch) <> String.Empty, Match.Value, Match.Result(SimpleScript(Count).Evaluator)))
             Next
         ElseIf ScriptType = TanzilReader.QuranScripts.SimpleClean Then
             For Count = 0 To SimpleEnhancedScript.Length - 1
