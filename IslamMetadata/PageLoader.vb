@@ -1319,6 +1319,9 @@ Public Class Arabic
             Else
                 For Index = 0 To CachedData.IslamData.ArabicLetters.Length - 1
                     If Buckwalter(Count) = CachedData.IslamData.ArabicLetters(Index).ExtendedBuckwalterLetter Then
+                        If CachedData.IslamData.ArabicLetters(Index).Symbol = OrnateLeftParenthesis Or CachedData.IslamData.ArabicLetters(Index).Symbol = OrnateRightParenthesis Then
+                            ArabicString += RightToLeftMark
+                        End If
                         ArabicString += CachedData.IslamData.ArabicLetters(Index).Symbol
                         Exit For
                     End If
@@ -1463,6 +1466,8 @@ Public Class Arabic
     Public Const PopDirectionalFormatting As Char = ChrW(&H202C)
     Public Const LeftToRightOverride As Char = ChrW(&H202D)
     Public Const RightToLeftOverride As Char = ChrW(&H202E)
+    Public Const OrnateLeftParenthesis As Char = ChrW(&HFD3E)
+    Public Const OrnateRightParenthesis As Char = ChrW(&HFD3F)
     'http://www.unicode.org/Public/7.0.0/ucd/UnicodeData.txt
     Public Shared LTRCategories As String() = New String() {"L"}
     Public Shared RTLCategories As String() = New String() {"R", "AL"}
@@ -1795,7 +1800,7 @@ Public Class Arabic
     }
 
     Public Shared ColoringRules As ColorRule() = { _
-        New ColorRule With {.Rule = "Normal", .Match = "empty|helperfatha|helperkasra|helperdamma|helpermeem|assimilator|assimilatorincomplete|dipthong|compulsorystop|endofversestop|prostration|canstoporcontinue|betternottostop|stopatfirstnotsecond|stopatsecondnotfirst|bettertostopbutpermissibletocontinue|bettertocontinuebutpermissibletostop|subtlestopwithoutbreath", .Color = Color.Black}, _
+        New ColorRule With {.Rule = "Normal", .Match = "empty|helperfatha|helperkasra|helperdamma|helpermeem|assimilator|assimilatorincomplete|dipthong|compulsorystop|endofversestop|prostration|canstoporcontinue|prohibitedtostop|stopatfirstnotsecond|stopatsecondnotfirst|bettertostopbutpermissibletocontinue|bettertocontinuebutpermissibletostop|subtlestopwithoutbreath", .Color = Color.Black}, _
         New ColorRule With {.Rule = "NecessaryProlongation", .Match = "necessaryprolong", .Color = Color.DarkRed}, _
         New ColorRule With {.Rule = "ObligatoryProlongation", .Match = "obligatoryprolong", .Color = Color.FromArgb(175, 17, 28)}, _
         New ColorRule With {.Rule = "PermissibleProlongation", .Match = "permissibleprolong", .Color = Color.OrangeRed}, _
@@ -1929,7 +1934,7 @@ Public Class Arabic
                                     .Evaluator = ArabicLetterSad}, _
         New RuleTranslation With {.Rule = "HelperMadda", .Match = "helpermadda", _
                                     .Evaluator = ArabicLetterHamza + ArabicFatha + ArabicLetterAlef}, _
-        New RuleTranslation With {.Rule = "Empty", .Match = "empty|compulsorystop|startofhizb|endofversestop|prostration|canstoporcontinue|betternottostop|stopatfirstnotsecond|stopatsecondnotfirst|bettertostopbutpermissibletocontinue|bettertocontinuebutpermissibletostop|subtlestopwithoutbreath", _
+        New RuleTranslation With {.Rule = "Empty", .Match = "empty|compulsorystop|startofhizb|endofversestop|prostration|canstoporcontinue|prohibitedtostop|stopatfirstnotsecond|stopatsecondnotfirst|bettertostopbutpermissibletocontinue|bettertocontinuebutpermissibletostop|subtlestopwithoutbreath", _
                                     .Evaluator = String.Empty}, _
         New RuleTranslation With {.Rule = "Normal", .Match = "helpermeem|assimilator|assimilatorincomplete|dipthong", .Evaluator = "{0}"}, _
         New RuleTranslation With {.Rule = "NecessaryProlongation", .Match = "necessaryprolong", .Evaluator = "{0}-{0}-{0}-{0}-{0}-{0}"}, _
@@ -1941,6 +1946,9 @@ Public Class Arabic
         New RuleTranslation With {.Rule = "EmphaticPronounciation", .Match = "emphasis", .Evaluator = "{0}", .RuleFunc = RuleFuncs.eUpperCase}, _
         New RuleTranslation With {.Rule = "UnrestLetters", .Match = "bounce", .Evaluator = "{0}-{0}"} _
     }
+    Public Shared PrefixPattern As String = ""
+    Public Shared CertainStopPattern As String = MakeUniRegEx(ArabicSmallHighMeemInitialForm) + "|" + MakeUniRegEx(ArabicSmallHighLamAlef) + "|" + MakeUniRegEx(ArabicComma) + "|" + MakeUniRegEx(OrnateLeftParenthesis) + "|" + MakeUniRegEx(OrnateRightParenthesis) + "|$"
+    Public Shared OptionalStopPattern As String = MakeUniRegEx(ArabicEndOfAyah) + "|" + MakeUniRegEx(ArabicSmallHighJeem) + "|" + MakeUniRegEx(ArabicSmallHighThreeDots) + "|" + MakeUniRegEx(ArabicSmallHighLigatureQafWithLamWithAlefMaksura) + "|" + MakeUniRegEx(ArabicSmallHighLigatureSadWithLamWithAlefMaksura)
     Public Shared RulesOfRecitationRegEx As RuleMetadataTranslation() = { _
         New RuleMetadataTranslation With {.Rule = "LetterSpelling", .Match = "(^\s*|\s+)(" + MakeRegMultiEx(Array.ConvertAll(ArabicUniqueLetters, Function(Str As String) MakeUniRegEx(TransliterateFromBuckwalter(Str)))) + ")(?=\s*$|\s+)", _
             .Evaluator = New String() {Nothing, "spellletter"}}, _
@@ -1948,15 +1956,15 @@ Public Class Arabic
             .Evaluator = New String() {Nothing, "spellnumber"}}, _
         New RuleMetadataTranslation With {.Rule = "NumberSpelling", .Match = "(" + MakeUniRegEx(ArabicEndOfAyah) + ")()((?:" + MakeRegMultiEx(Array.ConvertAll(ArabicNumbers, Function(Str As String) MakeUniRegEx(TransliterateFromBuckwalter(Str)))) + ")+)()(?=\s*$|\s+)", _
             .Evaluator = New String() {Nothing, "helperlparen", "spellnumber", "helperrparen"}}, _
-        New RuleMetadataTranslation With {.Rule = "Stopping", .Match = "(" + MakeUniRegEx(ArabicSmallHighMeemInitialForm) + ")|(" + MakeUniRegEx(ArabicStartOfRubElHizb) + ")|(" + MakeUniRegEx(ArabicEndOfAyah) + ")|(" + MakeUniRegEx(ArabicPlaceOfSajdah) + ")(?=\s*$|\s+)",
+        New RuleMetadataTranslation With {.Rule = "Stopping", .Match = "(?:(" + MakeUniRegEx(ArabicSmallHighMeemInitialForm) + ")|(" + MakeUniRegEx(ArabicStartOfRubElHizb) + ")|(" + MakeUniRegEx(ArabicEndOfAyah) + ")|(" + MakeUniRegEx(ArabicPlaceOfSajdah) + "))(?=\s*$|\s+)",
             .Evaluator = New String() {"compulsorystop", "startofhizb", "endofversestop", "prostration"}}, _
         New RuleMetadataTranslation With {.Rule = "Stopping", .Match = "(" + MakeUniRegEx(ArabicSmallHighJeem) + ")|(" + MakeUniRegEx(ArabicSmallHighLamAlef) + ")|(" + MakeUniRegEx(ArabicSmallHighThreeDots) + ")(.*)(" + MakeUniRegEx(ArabicSmallHighThreeDots) + ")|(" + MakeUniRegEx(ArabicSmallHighLigatureQafWithLamWithAlefMaksura) + ")|(" + MakeUniRegEx(ArabicSmallHighLigatureSadWithLamWithAlefMaksura) + ")|(" + MakeUniRegEx(ArabicSmallHighSeen) + ")",
-            .Evaluator = New String() {"canstoporcontinue", "betternottostop", "stopatfirstnotsecond", Nothing, "stopatsecondnotfirst", "bettertostopbutpermissibletocontinue", "bettertocontinuebutpermissibletostop", "subtlestopwithoutbreath"}}, _
-        New RuleMetadataTranslation With {.Rule = "Stopping", .Match = "(" + MakeUniRegEx(ArabicFathatan) + ")(?=" + MakeUniRegEx(ArabicLetterAlef) + "\s*$)",
+            .Evaluator = New String() {"canstoporcontinue", "prohibitedtostop", "stopatfirstnotsecond", Nothing, "stopatsecondnotfirst", "bettertostopbutpermissibletocontinue", "bettertocontinuebutpermissibletostop", "subtlestopwithoutbreath"}}, _
+        New RuleMetadataTranslation With {.Rule = "Stopping", .Match = "(" + MakeUniRegEx(ArabicFathatan) + ")(?=" + MakeUniRegEx(ArabicLetterAlef) + "\s*(" + CertainStopPattern + "|" + OptionalStopPattern + "))",
             .Evaluator = New String() {"helperfatha"}}, _
-        New RuleMetadataTranslation With {.Rule = "Stopping", .Match = "([^" + MakeUniRegEx(ArabicLetterTehMarbuta) + "])(" + MakeRegMultiEx(Array.ConvertAll(ArabicFathaDammaKasra, Function(Str As String) MakeUniRegEx(Str))) + "|" + MakeUniRegEx(ArabicKasratan) + "|" + MakeUniRegEx(ArabicDammatan) + ")(?=\s*$)",
+        New RuleMetadataTranslation With {.Rule = "Stopping", .Match = "([^" + MakeUniRegEx(ArabicLetterTehMarbuta) + "])(" + MakeRegMultiEx(Array.ConvertAll(ArabicFathaDammaKasra, Function(Str As String) MakeUniRegEx(Str))) + "|" + MakeUniRegEx(ArabicKasratan) + "|" + MakeUniRegEx(ArabicDammatan) + ")(?=\s*(" + CertainStopPattern + "|" + OptionalStopPattern + "))",
             .Evaluator = New String() {Nothing, "empty"}}, _
-        New RuleMetadataTranslation With {.Rule = "Stopping", .Match = "(" + MakeUniRegEx(ArabicLetterTehMarbuta) + ")(" + MakeRegMultiEx(Array.ConvertAll(ArabicFathaDammaKasra, Function(Str As String) MakeUniRegEx(Str))) + "|" + MakeRegMultiEx(Array.ConvertAll(ArabicTanweens, Function(Str As String) MakeUniRegEx(Str))) + ")(?=\s*" + MakeUniRegEx(ArabicEndOfAyah) + "|\s*$)",
+        New RuleMetadataTranslation With {.Rule = "Stopping", .Match = "(" + MakeUniRegEx(ArabicLetterTehMarbuta) + ")(" + MakeRegMultiEx(Array.ConvertAll(ArabicFathaDammaKasra, Function(Str As String) MakeUniRegEx(Str))) + "|" + MakeRegMultiEx(Array.ConvertAll(ArabicTanweens, Function(Str As String) MakeUniRegEx(Str))) + ")(?=\s*(" + CertainStopPattern + "|" + OptionalStopPattern + "))",
             .Evaluator = New String() {"helperheh", "empty"}}, _
         New RuleMetadataTranslation With {.Rule = "Continuing", .Match = "(" + MakeUniRegEx(ArabicLetterTehMarbuta) + ")(?=(" + MakeRegMultiEx(Array.ConvertAll(ArabicFathaDammaKasra, Function(Str As String) MakeUniRegEx(Str))) + "|" + MakeRegMultiEx(Array.ConvertAll(ArabicTanweens, Function(Str As String) MakeUniRegEx(Str))) + ")\s*\S)",
             .Evaluator = New String() {"helperteh"}}, _
@@ -3561,33 +3569,20 @@ Public Class Languages
 End Class
 Public Class DocBuilder
     Public Shared Function GetRenderedText(ByVal Item As PageLoader.TextItem) As RenderArray
-        Dim Division As Integer = 0
-        Dim Index As Integer = 1
-        Dim Strings As String = HttpContext.Current.Request.QueryString.Get("docedit")
+        Return TextFromReferences(HttpContext.Current.Request.QueryString.Get("docedit"))
+    End Function
+    Public Shared Function TextFromReferences(Strings As String) As RenderArray
         Dim Renderer As New RenderArray
         If Strings = Nothing Then Return Renderer
-        Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(Strings, "\{(\d+)(?:\:(\d+))?(?:\:(\d+))?(?:-(\d+)(?:\:(\d+))?(?:\:(\d+))?)?\}")
-        Dim Scheme As Arabic.TranslitScheme = CInt(HttpContext.Current.Request.QueryString.Get("translitscheme"))
-        Dim TranslationIndex As Integer = TanzilReader.GetTranslationIndex(HttpContext.Current.Request.QueryString.Get("qurantranslation"))
-        For Count = 0 To Matches.Count - 1
-            Dim BaseChapter As Integer = Matches(Count).Groups(1).Value
-            Dim BaseVerse As Integer = If(Matches(Count).Groups(2).Value = String.Empty, 0, CInt(Matches(Count).Groups(2).Value))
-            Dim WordNumber As Integer = If(Matches(Count).Groups(3).Value = String.Empty, 0, CInt(Matches(Count).Groups(3).Value))
-            Dim EndChapter As Integer = If(Matches(Count).Groups(4).Value = String.Empty, 0, CInt(Matches(Count).Groups(4).Value))
-            Dim ExtraVerseNumber As Integer = If(Matches(Count).Groups(5).Value = String.Empty, 0, CInt(Matches(Count).Groups(5).Value))
-            Dim EndWordNumber As Integer = If(Matches(Count).Groups(6).Value = String.Empty, 0, CInt(Matches(Count).Groups(6).Value))
-            If BaseVerse <> 0 And WordNumber = 0 And EndChapter <> 0 And ExtraVerseNumber = 0 And EndWordNumber = 0 Then
-                ExtraVerseNumber = EndChapter
-                EndChapter = 0
-            ElseIf BaseVerse <> 0 And WordNumber <> 0 And EndChapter <> 0 And ExtraVerseNumber = 0 And EndWordNumber = 0 Then
-                EndWordNumber = EndChapter
-                EndChapter = 0
-            ElseIf BaseVerse <> 0 And WordNumber <> 0 And EndChapter <> 0 And ExtraVerseNumber <> 0 And EndWordNumber = 0 Then
-                EndWordNumber = ExtraVerseNumber
-                ExtraVerseNumber = EndChapter
-                EndChapter = 0
+        Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(Strings, "(\{)(.*?)(\})")
+        For Count As Integer = 0 To Matches.Count - 1
+            'text before and after reference matches needs rendering
+            'hadith reference matching {bukhari,3:4:5}
+            'other useful reference matching such as Arabic names, expressions and such
+            '{MAKKAH} {SAWS} {RA} {BISMILLAH}
+            If TanzilReader.IsQuranTextReference(Matches(Count).Result("$2")) Then
+                Renderer.Items.AddRange(TanzilReader.QuranTextFromReference(Matches(Count).Result("$2")))
             End If
-            Renderer.Items.AddRange(TanzilReader.DoGetRenderedQuranText(TanzilReader.QuranTextRangeLookup(BaseChapter, BaseVerse, WordNumber, EndChapter, ExtraVerseNumber, EndWordNumber), BaseChapter, BaseVerse, HttpContext.Current.Request.QueryString.Get("qurantranslation"), Scheme, TranslationIndex).Items)
         Next
         Return Renderer
     End Function
@@ -3605,15 +3600,23 @@ Public Class Supplications
         Dim Count As Integer = CInt(HttpContext.Current.Request.QueryString.Get("selection"))
         If Count = -1 Then Count = 0
         For SubCount As Integer = 0 To CachedData.IslamData.VerseCategories(Count).Verses.Length - 1
-            Dim EnglishByWord As String() = Utility.LoadResourceString("IslamInfo_" + CachedData.IslamData.VerseCategories(Count).Verses(SubCount).TranslationID + "WordByWord").Split("|"c)
-            Dim ArabicText As String() = CachedData.IslamData.VerseCategories(Count).Verses(SubCount).Arabic.Split(" "c)
-            Dim Transliteration As String() = Arabic.TransliterateToScheme(Arabic.TransliterateFromBuckwalter(CachedData.IslamData.VerseCategories(Count).Verses(SubCount).Arabic), Scheme).Split(" "c)
-            Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eHeaderCenter, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, Utility.LoadResourceString("IslamInfo_" + CachedData.IslamData.VerseCategories(Count).Verses(SubCount).TranslationID))}))
-            Dim Items As New Collections.Generic.List(Of RenderArray.RenderItem)
-            For WordCount As Integer = 0 To EnglishByWord.Length - 1
-                Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.RightToLeftMark + Arabic.TransliterateFromBuckwalter(ArabicText(WordCount))), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, Transliteration(WordCount)), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, EnglishByWord(WordCount))}))
+            Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(CachedData.IslamData.VerseCategories(Count).Verses(SubCount).Arabic, "(\\\{)(.*?)(\\\})")
+            For MatchCount As Integer = 0 To Matches.Count - 1
+                If TanzilReader.IsQuranTextReference(Matches(MatchCount).Result("$2")) Then
+                    Renderer.Items.AddRange(TanzilReader.QuranTextFromReference(Matches(MatchCount).Result("$2")))
+                End If
             Next
-            Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eNested, Items), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, Utility.LoadResourceString("IslamInfo_" + CachedData.IslamData.VerseCategories(Count).Verses(SubCount).TranslationID + "Trans"))}))
+            If Matches.Count = 0 Then
+                Dim EnglishByWord As String() = Utility.LoadResourceString("IslamInfo_" + CachedData.IslamData.VerseCategories(Count).Verses(SubCount).TranslationID + "WordByWord").Split("|"c)
+                Dim ArabicText As String() = CachedData.IslamData.VerseCategories(Count).Verses(SubCount).Arabic.Split(" "c)
+                Dim Transliteration As String() = Arabic.TransliterateToScheme(Arabic.TransliterateFromBuckwalter(CachedData.IslamData.VerseCategories(Count).Verses(SubCount).Arabic), Scheme).Split(" "c)
+                Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eHeaderCenter, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, Utility.LoadResourceString("IslamInfo_" + CachedData.IslamData.VerseCategories(Count).Verses(SubCount).TranslationID))}))
+                Dim Items As New Collections.Generic.List(Of RenderArray.RenderItem)
+                For WordCount As Integer = 0 To EnglishByWord.Length - 1
+                    Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.RightToLeftMark + Arabic.TransliterateFromBuckwalter(ArabicText(WordCount))), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, Transliteration(WordCount)), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, EnglishByWord(WordCount))}))
+                Next
+                Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eNested, Items), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, Utility.LoadResourceString("IslamInfo_" + CachedData.IslamData.VerseCategories(Count).Verses(SubCount).TranslationID + "Trans"))}))
+            End If
         Next
         Return Renderer
     End Function
@@ -4212,6 +4215,36 @@ Public Class TanzilReader
         Next
         Doc.Save(Path)
     End Sub
+    Public Shared Function IsQuranTextReference(Str As String) As Boolean
+        Return System.Text.RegularExpressions.Regex.Match(Str, "(\d+)(?:\:(\d+))?(?:\:(\d+))?(?:-(\d+)(?:\:(\d+))?(?:\:(\d+))?)?").Success
+    End Function
+    Public Shared Function QuranTextFromReference(Str As String) As RenderArray
+        Dim Renderer As New RenderArray
+        Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(Str, "(\d+)(?:\:(\d+))?(?:\:(\d+))?(?:-(\d+)(?:\:(\d+))?(?:\:(\d+))?)?")
+        Dim Scheme As Arabic.TranslitScheme = CInt(HttpContext.Current.Request.QueryString.Get("translitscheme"))
+        Dim TranslationIndex As Integer = GetTranslationIndex(HttpContext.Current.Request.QueryString.Get("qurantranslation"))
+        For Count = 0 To Matches.Count - 1
+            Dim BaseChapter As Integer = Matches(Count).Groups(1).Value
+            Dim BaseVerse As Integer = If(Matches(Count).Groups(2).Value = String.Empty, 0, CInt(Matches(Count).Groups(2).Value))
+            Dim WordNumber As Integer = If(Matches(Count).Groups(3).Value = String.Empty, 0, CInt(Matches(Count).Groups(3).Value))
+            Dim EndChapter As Integer = If(Matches(Count).Groups(4).Value = String.Empty, 0, CInt(Matches(Count).Groups(4).Value))
+            Dim ExtraVerseNumber As Integer = If(Matches(Count).Groups(5).Value = String.Empty, 0, CInt(Matches(Count).Groups(5).Value))
+            Dim EndWordNumber As Integer = If(Matches(Count).Groups(6).Value = String.Empty, 0, CInt(Matches(Count).Groups(6).Value))
+            If BaseVerse <> 0 And WordNumber = 0 And EndChapter <> 0 And ExtraVerseNumber = 0 And EndWordNumber = 0 Then
+                ExtraVerseNumber = EndChapter
+                EndChapter = 0
+            ElseIf BaseVerse <> 0 And WordNumber <> 0 And EndChapter <> 0 And ExtraVerseNumber = 0 And EndWordNumber = 0 Then
+                EndWordNumber = EndChapter
+                EndChapter = 0
+            ElseIf BaseVerse <> 0 And WordNumber <> 0 And EndChapter <> 0 And ExtraVerseNumber <> 0 And EndWordNumber = 0 Then
+                EndWordNumber = ExtraVerseNumber
+                ExtraVerseNumber = EndChapter
+                EndChapter = 0
+            End If
+            Renderer.Items.AddRange(DoGetRenderedQuranText(QuranTextRangeLookup(BaseChapter, BaseVerse, WordNumber, EndChapter, ExtraVerseNumber, EndWordNumber), BaseChapter, BaseVerse, HttpContext.Current.Request.QueryString.Get("qurantranslation"), Scheme, TranslationIndex).Items)
+        Next
+        Return Renderer
+    End Function
     Public Shared Function QuranTextRangeLookup(BaseChapter As Integer, BaseVerse As Integer, WordNumber As Integer, EndChapter As Integer, ExtraVerseNumber As Integer, EndWordNumber As Integer) As Collections.Generic.List(Of String())
         Dim QuranText As New Collections.Generic.List(Of String())
         If EndChapter = 0 Or EndChapter = BaseChapter Then
@@ -4247,7 +4280,7 @@ Public Class TanzilReader
         Dim Renderer As New RenderArray
         Dim QuranText As Collections.Generic.List(Of String())
         Dim SeperateSectionCount As Integer = 1
-        Dim Keys() As String
+        Dim Keys() As String = Nothing
         If Division = 8 Then SeperateSectionCount = CachedData.IslamData.QuranSelections(Index).SelectionInfo.Length
         If Division = 9 Then
             ReDim Keys(CachedData.LetterDictionary(CachedData.IslamData.ArabicLetters(Index).Symbol).Count - 1)
