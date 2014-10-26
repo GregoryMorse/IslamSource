@@ -1657,6 +1657,8 @@ Public Class Arabic
         New RuleTranslation With {.Rule = "ImalaE", .Match = String.Empty, .Evaluator = ChrW(&H65C)},
         New RuleTranslation With {.Rule = "IIFinal", .Match = "(" + MakeUniRegEx(ArabicKasra) + ")(?=" + MakeUniRegEx(ArabicLetterYeh) + "(^\s*|\s+))", .Evaluator = "$1" + ChrW(&H6D2)}
     }
+    Public Shared UthmaniMinimalSuperscriptAlefWord As String = "(?<=^\s*|\s+)\S*" + MakeUniRegEx(ArabicLetterSuperscriptAlef) + "\S*(?=\s+|\s*$)"
+    Public Shared UthmaniMinimalSuperScriptAlef As String = ArabicLetterSuperscriptAlef
     Public Shared UthmaniMinimalScript As RuleTranslation() = { _
         New RuleTranslation With {.Rule = "SmallYehSmallWawAfterPronounHeh", .Match = "(?:(" + MakeUniRegEx(ArabicLetterHeh) + MakeUniRegEx(ArabicKasra) + ")" + MakeUniRegEx(ArabicSmallYeh) + "|(" + MakeUniRegEx(ArabicLetterHeh) + MakeUniRegEx(ArabicDamma) + ")" + MakeUniRegEx(ArabicSmallWaw) + ")" + MakeUniRegEx(ArabicMaddahAbove) + "?(?=\s*$|\s+)", _
             .Evaluator = "$1$2"}, _
@@ -1783,8 +1785,6 @@ Public Class Arabic
         New RuleTranslation With {.Rule = "RemoveDiacritics", .Match = MakeUniRegEx(ArabicShadda) + "|" + MakeUniRegEx(ArabicSukun) + "|" + MakeUniRegEx(ArabicFatha) + "|" + MakeUniRegEx(ArabicKasra) + "|" + MakeUniRegEx(ArabicDamma) + "|" + MakeUniRegEx(ArabicFathatan) + "|" + MakeUniRegEx(ArabicKasratan) + "|" + MakeUniRegEx(ArabicDammatan) + "|" + MakeUniRegEx(ArabicLetterSuperscriptAlef), _
             .Evaluator = String.Empty}
     }
-    Public Shared SimpleMinAlefLams As String = "((?:^\s*|\s+)(?:" + MakeUniRegEx(ArabicLetterWaw) + "|" + MakeUniRegEx(ArabicLetterFeh) + "|" + MakeUniRegEx(ArabicLetterKaf) + "))" + MakeUniRegEx(ArabicFatha) + MakeUniRegEx(ArabicLetterAlef) + "(?=" + MakeUniRegEx(ArabicLetterLam) + ").*?(?=\s*$|\s+)"
-    Public Shared SimpleMinAlefNotLams As String = "((?:^\s*|\s+)(?:" + MakeUniRegEx(ArabicLetterWaw) + "|" + MakeUniRegEx(ArabicLetterFeh) + "))" + MakeUniRegEx(ArabicFatha) + MakeUniRegEx(ArabicLetterAlef) + "(?!" + MakeUniRegEx(ArabicLetterLam) + ").*?(?=\s*$|\s+)"
     Public Shared SimpleMinimalScript As RuleTranslation() = { _
         New RuleTranslation With {.Rule = "RemoveShadda", .Match = "((?:^\s*|\s+)(?:" + MakeRegMultiEx(Array.ConvertAll(ArabicLetters, Function(Str As String) MakeUniRegEx(Str))) + "))" + MakeUniRegEx(ArabicShadda) + "|((?:" + MakeUniRegEx(ArabicLetterQaf) + "|" + MakeUniRegEx(ArabicLetterKaf) + ")" + MakeUniRegEx(ArabicLetterKaf) + "|" + MakeUniRegEx(ArabicLetterDal) + MakeUniRegEx(ArabicLetterTeh) + "|" + MakeUniRegEx(ArabicLetterYeh) + MakeUniRegEx(ArabicLetterYeh) + "|" + MakeUniRegEx(ArabicLetterHeh) + MakeUniRegEx(ArabicLetterHeh) + ")" + MakeUniRegEx(ArabicShadda) + "(?=(?:" + MakeUniRegEx(ArabicKasra) + MakeUniRegEx(ArabicLetterKaf) + "|" + MakeUniRegEx(ArabicFatha) + MakeUniRegEx(ArabicLetterHeh) + ")?(?:" + MakeUniRegEx(ArabicDamma) + "|" + MakeUniRegEx(ArabicFatha) + ")(?:(?:(?:" + MakeUniRegEx(ArabicLetterNoon) + "|" + MakeUniRegEx(ArabicLetterHeh) + MakeUniRegEx(ArabicDamma) + "?)?" + MakeUniRegEx(ArabicFatha) + MakeUniRegEx(ArabicLetterAlef) + ")|" + MakeUniRegEx(ArabicLetterNoon) + MakeUniRegEx(ArabicShadda) + MakeUniRegEx(ArabicFatha) + "|(?:(?:(?:" + MakeUniRegEx(ArabicLetterMeem) + MakeUniRegEx(ArabicDamma) + MakeUniRegEx(ArabicLetterWaw) + ")?" + MakeUniRegEx(ArabicLetterHeh) + "|" + MakeUniRegEx(ArabicLetterKaf) + ")(?:" + MakeUniRegEx(ArabicDamma) + "|" + MakeUniRegEx(ArabicFatha) + "))?(?:" + MakeUniRegEx(ArabicLetterMeem) + "(?:" + MakeUniRegEx(ArabicSukun) + "|" + MakeUniRegEx(ArabicDamma) + ")?)?)(?:\s*$|\s+))", _
             .Evaluator = "$1$2"}, _
@@ -3579,7 +3579,7 @@ Public Class DocBuilder
         Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(Strings, "(\{)(.*?)(\})")
         For Count As Integer = 0 To Matches.Count - 1
             'text before and after reference matches needs rendering
-            'hadith reference matching {bukhari,3:4:5}
+            'hadith reference matching {name,book/hadith}
             'other useful reference matching such as Arabic names, expressions and such
             '{MAKKAH} {SAWS} {RA} {BISMILLAH}
             If TanzilReader.IsQuranTextReference(Matches(Count).Result("$2")) Then
@@ -4136,14 +4136,13 @@ Public Class TanzilReader
     Shared QuranFileNames As String() = {"quran-uthmani.xml", "quran-uthmani-min.xml", "quran-simple.xml", "quran-simple-min.xml", "quran-simple-enhanced.xml", "quran-simple-clean.xml", "quran-buckwalter-uthmani.xml", "quran-buckwalter-uthmani-min.xml", "quran-buckwlater-simple.xml", "quran-buckwalter-simple-min.xml", "quran-buckwalter-simple-enhanced.xml", "quran-buckwalter-simple-clean.xml", "quran-warsh.xml", "quran-alduri.xml"}
     Shared QuranScriptNames As String() = {"Uthmani", "Uthmani Minimal", "Simple", "Simple Minimal", "Simple Enhanced", "Simple Clean"}
     Public Shared Sub CheckNotablePatterns()
-        ComparePatterns(QuranScripts.SimpleEnhanced, QuranScripts.SimpleMin, Arabic.SimpleMinAlefLams)
-        ComparePatterns(QuranScripts.SimpleEnhanced, QuranScripts.SimpleMin, Arabic.SimpleMinAlefNotLams)
+        ComparePatterns(QuranScripts.Uthmani, QuranScripts.UthmaniMin, Arabic.UthmaniMinimalSuperscriptAlefWord, Arabic.UthmaniMinimalSuperScriptAlef)
     End Sub
-    Public Shared Sub ComparePatterns(ScriptType As QuranScripts, CompScriptType As QuranScripts, Pattern As String)
-        Dim FirstList As List(Of String) = PatternMatch(ScriptType, Pattern)
-        FirstList.Sort()
-        Dim CompList As List(Of String) = PatternMatch(CompScriptType, Pattern)
-        CompList.Sort()
+    Public Shared Sub ComparePatterns(ScriptType As QuranScripts, CompScriptType As QuranScripts, WordPattern As String, LetterPattern As String)
+        Dim FirstList As List(Of String) = PatternMatch(ScriptType, WordPattern)
+        FirstList.Sort(StringComparer.Ordinal)
+        Dim CompList As List(Of String) = PatternMatch(CompScriptType, WordPattern)
+        CompList.Sort(StringComparer.Ordinal)
         Dim Index As Integer = 0
         Do While Index < CompList.Count - 1
             Do While Index < CompList.Count - 1 AndAlso CompList(Index + 1) = CompList(Index)
@@ -4169,13 +4168,125 @@ Public Class TanzilReader
             End If
             Index += 1
         Loop
+        Dim FirstDict As New Dictionary(Of String, String)
+        Dim CompDict As New Dictionary(Of String, String)
         Dim Msg As String = "First: "
         For Each Str As String In FirstList
+            Dim SubKey As String = Str.Substring(0, Str.IndexOf(LetterPattern))
+            For Count As Integer = 0 To SubKey.Length - 1
+                If Not FirstDict.ContainsKey(SubKey.Substring(Count)) Then
+                    FirstDict.Add(SubKey.Substring(Count), Nothing)
+                End If
+            Next
             Msg += Arabic.TransliterateToScheme(Str, Arabic.TranslitScheme.Buckwalter) + " "
         Next
         Msg += vbCrLf + "Second: "
         For Each Str As String In CompList
+            Dim SubKey As String = Str.Substring(0, Str.IndexOf(LetterPattern))
+            For Count As Integer = 0 To SubKey.Length - 1
+                If Not CompDict.ContainsKey(SubKey.Substring(Count)) Then
+                    CompDict.Add(SubKey.Substring(Count), Nothing)
+                End If
+            Next
             Msg += Arabic.TransliterateToScheme(Str, Arabic.TranslitScheme.Buckwalter) + " "
+        Next
+        Dim Keys(FirstDict.Keys.Count - 1) As String
+        FirstDict.Keys.CopyTo(Keys, 0)
+        For Count As Integer = 0 To Keys.Length - 1
+            If CompDict.ContainsKey(Keys(Count)) Then
+                FirstDict.Remove(Keys(Count))
+                CompDict.Remove(Keys(Count))
+            End If
+        Next
+        ReDim Keys(FirstDict.Keys.Count - 1)
+        FirstDict.Keys.CopyTo(Keys, 0)
+        For Count As Integer = 0 To Keys.Length - 1
+            For SubCount = 1 To Keys(Count).Length - 1
+                If FirstDict.ContainsKey(Keys(Count).Substring(SubCount)) Then
+                    FirstDict.Remove(Keys(Count))
+                    Exit For
+                End If
+            Next
+        Next
+        ReDim Keys(CompDict.Keys.Count - 1)
+        CompDict.Keys.CopyTo(Keys, 0)
+        For Count As Integer = 0 To Keys.Length - 1
+            For SubCount = 1 To Keys(Count).Length - 1
+                If CompDict.ContainsKey(Keys(Count).Substring(SubCount)) Then
+                    CompDict.Remove(Keys(Count))
+                    Exit For
+                End If
+            Next
+        Next
+        Msg += vbCrLf + "First: "
+        ReDim Keys(FirstDict.Keys.Count - 1)
+        FirstDict.Keys.CopyTo(Keys, 0)
+        For Count As Integer = 0 To Keys.Length - 1
+            Msg += Arabic.TransliterateToScheme(Keys(Count), Arabic.TranslitScheme.Buckwalter) + " "
+        Next
+        Msg += vbCrLf + "Second: "
+        ReDim Keys(CompDict.Keys.Count - 1)
+        CompDict.Keys.CopyTo(Keys, 0)
+        For Count As Integer = 0 To Keys.Length - 1
+            Msg += Arabic.TransliterateToScheme(Keys(Count), Arabic.TranslitScheme.Buckwalter) + " "
+        Next
+        FirstDict = New Dictionary(Of String, String)
+        CompDict = New Dictionary(Of String, String)
+        Msg += vbCrLf + "First: "
+        For Each Str As String In FirstList
+            Dim SubKey As String = Str.Substring(Str.IndexOf(LetterPattern) + 1)
+            For Count As Integer = 1 To SubKey.Length
+                If Not FirstDict.ContainsKey(SubKey.Substring(0, Count)) Then
+                    FirstDict.Add(SubKey.Substring(0, Count), Nothing)
+                End If
+            Next
+        Next
+        For Each Str As String In CompList
+            Dim SubKey As String = Str.Substring(Str.IndexOf(LetterPattern) + 1)
+            For Count As Integer = 1 To SubKey.Length
+                If Not CompDict.ContainsKey(SubKey.Substring(0, Count)) Then
+                    CompDict.Add(SubKey.Substring(0, Count), Nothing)
+                End If
+            Next
+        Next
+        ReDim Keys(FirstDict.Keys.Count - 1)
+        FirstDict.Keys.CopyTo(Keys, 0)
+        For Count As Integer = 0 To Keys.Length - 1
+            If CompDict.ContainsKey(Keys(Count)) Then
+                FirstDict.Remove(Keys(Count))
+                CompDict.Remove(Keys(Count))
+            End If
+        Next
+        ReDim Keys(FirstDict.Keys.Count - 1)
+        FirstDict.Keys.CopyTo(Keys, 0)
+        For Count As Integer = 0 To Keys.Length - 1
+            For SubCount = 1 To Keys(Count).Length - 1
+                If FirstDict.ContainsKey(Keys(Count).Substring(0, SubCount)) Then
+                    FirstDict.Remove(Keys(Count))
+                    Exit For
+                End If
+            Next
+        Next
+        ReDim Keys(CompDict.Keys.Count - 1)
+        CompDict.Keys.CopyTo(Keys, 0)
+        For Count As Integer = 0 To Keys.Length - 1
+            For SubCount = 1 To Keys(Count).Length - 1
+                If CompDict.ContainsKey(Keys(Count).Substring(0, SubCount)) Then
+                    CompDict.Remove(Keys(Count))
+                    Exit For
+                End If
+            Next
+        Next
+        ReDim Keys(FirstDict.Keys.Count - 1)
+        FirstDict.Keys.CopyTo(Keys, 0)
+        For Count As Integer = 0 To Keys.Length - 1
+            Msg += Arabic.TransliterateToScheme(Keys(Count), Arabic.TranslitScheme.Buckwalter) + " "
+        Next
+        Msg += vbCrLf + "Second: "
+        ReDim Keys(CompDict.Keys.Count - 1)
+        CompDict.Keys.CopyTo(Keys, 0)
+        For Count As Integer = 0 To Keys.Length - 1
+            Msg += Arabic.TransliterateToScheme(Keys(Count), Arabic.TranslitScheme.Buckwalter) + " "
         Next
         Debug.Print(Msg)
     End Sub
