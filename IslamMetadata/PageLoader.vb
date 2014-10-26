@@ -4195,7 +4195,7 @@ Public Class TanzilReader
                     CompDict.Add(SubKey.Substring(Count), Str)
                 End If
             Next
-            Msg += Arabic.TransliterateToScheme(Str, Arabic.TranslitScheme.Buckwalter) + """, "
+            Msg += """" + Arabic.TransliterateToScheme(Str, Arabic.TranslitScheme.Buckwalter) + """, "
         Next
         Dim Keys(FirstDict.Keys.Count - 1) As String
         Dim FirstNotInDict As New Dictionary(Of String, String)
