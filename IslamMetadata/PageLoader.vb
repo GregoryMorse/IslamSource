@@ -1657,8 +1657,8 @@ Public Class Arabic
         New RuleTranslation With {.Rule = "ImalaE", .Match = String.Empty, .Evaluator = ChrW(&H65C)},
         New RuleTranslation With {.Rule = "IIFinal", .Match = "(" + MakeUniRegEx(ArabicKasra) + ")(?=" + MakeUniRegEx(ArabicLetterYeh) + "(^\s*|\s+))", .Evaluator = "$1" + ChrW(&H6D2)}
     }
-    Public Shared UthmaniMinimalSuperscriptAlefWord As String = "(?<=^\s*|\s+)\S*" + MakeUniRegEx(ArabicLetterSuperscriptAlef) + "\S*(?=\s+|\s*$)"
-    Public Shared UthmaniMinimalSuperScriptAlef As String = ArabicLetterSuperscriptAlef
+    Public Shared SimpleSuperscriptAlefWord As String = "(?<=^\s*|\s+)\S*" + MakeUniRegEx(ArabicLetterSuperscriptAlef) + "\S*(?=\s+|\s*$)"
+    Public Shared SimpleSuperScriptAlef As String = ArabicLetterSuperscriptAlef
     Public Shared UthmaniMinimalScript As RuleTranslation() = { _
         New RuleTranslation With {.Rule = "SmallYehSmallWawAfterPronounHeh", .Match = "(?:(" + MakeUniRegEx(ArabicLetterHeh) + MakeUniRegEx(ArabicKasra) + ")" + MakeUniRegEx(ArabicSmallYeh) + "|(" + MakeUniRegEx(ArabicLetterHeh) + MakeUniRegEx(ArabicDamma) + ")" + MakeUniRegEx(ArabicSmallWaw) + ")" + MakeUniRegEx(ArabicMaddahAbove) + "?(?=\s*$|\s+)", _
             .Evaluator = "$1$2"}, _
@@ -4136,7 +4136,7 @@ Public Class TanzilReader
     Shared QuranFileNames As String() = {"quran-uthmani.xml", "quran-uthmani-min.xml", "quran-simple.xml", "quran-simple-min.xml", "quran-simple-enhanced.xml", "quran-simple-clean.xml", "quran-buckwalter-uthmani.xml", "quran-buckwalter-uthmani-min.xml", "quran-buckwlater-simple.xml", "quran-buckwalter-simple-min.xml", "quran-buckwalter-simple-enhanced.xml", "quran-buckwalter-simple-clean.xml", "quran-warsh.xml", "quran-alduri.xml"}
     Shared QuranScriptNames As String() = {"Uthmani", "Uthmani Minimal", "Simple", "Simple Minimal", "Simple Enhanced", "Simple Clean"}
     Public Shared Sub CheckNotablePatterns()
-        ComparePatterns(QuranScripts.Uthmani, QuranScripts.UthmaniMin, Arabic.UthmaniMinimalSuperscriptAlefWord, Arabic.UthmaniMinimalSuperScriptAlef)
+        ComparePatterns(QuranScripts.Uthmani, QuranScripts.SimpleEnhanced, Arabic.SimpleSuperscriptAlefWord, Arabic.SimpleSuperScriptAlef)
     End Sub
     Public Shared Sub ComparePatterns(ScriptType As QuranScripts, CompScriptType As QuranScripts, WordPattern As String, LetterPattern As String)
         Dim FirstList As List(Of String) = PatternMatch(ScriptType, WordPattern)
@@ -4178,7 +4178,7 @@ Public Class TanzilReader
                     FirstDict.Add(SubKey.Substring(Count), Nothing)
                 End If
             Next
-            Msg += Arabic.TransliterateToScheme(Str, Arabic.TranslitScheme.Buckwalter) + " "
+            Msg += """" + Arabic.TransliterateToScheme(Str, Arabic.TranslitScheme.Buckwalter) + """, "
         Next
         Msg += vbCrLf + "Second: "
         For Each Str As String In CompList
@@ -4188,7 +4188,7 @@ Public Class TanzilReader
                     CompDict.Add(SubKey.Substring(Count), Nothing)
                 End If
             Next
-            Msg += Arabic.TransliterateToScheme(Str, Arabic.TranslitScheme.Buckwalter) + " "
+            Msg += Arabic.TransliterateToScheme(Str, Arabic.TranslitScheme.Buckwalter) + """, "
         Next
         Dim Keys(FirstDict.Keys.Count - 1) As String
         FirstDict.Keys.CopyTo(Keys, 0)
@@ -4221,18 +4221,19 @@ Public Class TanzilReader
         Msg += vbCrLf + "First: "
         ReDim Keys(FirstDict.Keys.Count - 1)
         FirstDict.Keys.CopyTo(Keys, 0)
+        Array.Sort(Keys, StringComparer.Ordinal)
         For Count As Integer = 0 To Keys.Length - 1
-            Msg += Arabic.TransliterateToScheme(Keys(Count), Arabic.TranslitScheme.Buckwalter) + " "
+            Msg += """" + Arabic.TransliterateToScheme(Keys(Count), Arabic.TranslitScheme.Buckwalter) + """, "
         Next
         Msg += vbCrLf + "Second: "
         ReDim Keys(CompDict.Keys.Count - 1)
         CompDict.Keys.CopyTo(Keys, 0)
+        Array.Sort(Keys, StringComparer.Ordinal)
         For Count As Integer = 0 To Keys.Length - 1
-            Msg += Arabic.TransliterateToScheme(Keys(Count), Arabic.TranslitScheme.Buckwalter) + " "
+            Msg += """" + Arabic.TransliterateToScheme(Keys(Count), Arabic.TranslitScheme.Buckwalter) + """, "
         Next
         FirstDict = New Dictionary(Of String, String)
         CompDict = New Dictionary(Of String, String)
-        Msg += vbCrLf + "First: "
         For Each Str As String In FirstList
             Dim SubKey As String = Str.Substring(Str.IndexOf(LetterPattern) + 1)
             For Count As Integer = 1 To SubKey.Length
@@ -4277,16 +4278,19 @@ Public Class TanzilReader
                 End If
             Next
         Next
+        Msg += vbCrLf + "First: "
         ReDim Keys(FirstDict.Keys.Count - 1)
         FirstDict.Keys.CopyTo(Keys, 0)
+        Array.Sort(Keys, StringComparer.Ordinal)
         For Count As Integer = 0 To Keys.Length - 1
-            Msg += Arabic.TransliterateToScheme(Keys(Count), Arabic.TranslitScheme.Buckwalter) + " "
+            Msg += """" + Arabic.TransliterateToScheme(Keys(Count), Arabic.TranslitScheme.Buckwalter) + """, "
         Next
         Msg += vbCrLf + "Second: "
         ReDim Keys(CompDict.Keys.Count - 1)
         CompDict.Keys.CopyTo(Keys, 0)
+        Array.Sort(Keys, StringComparer.Ordinal)
         For Count As Integer = 0 To Keys.Length - 1
-            Msg += Arabic.TransliterateToScheme(Keys(Count), Arabic.TranslitScheme.Buckwalter) + " "
+            Msg += """" + Arabic.TransliterateToScheme(Keys(Count), Arabic.TranslitScheme.Buckwalter) + """, "
         Next
         Debug.Print(Msg)
     End Sub
