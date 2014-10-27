@@ -1596,6 +1596,42 @@
   <data name="IslamInfo_UponEnteringTheHome1WordByWord" xml:space="preserve">
     <value>In the name of|Allah|we enter|in the name of|Allah|we leave|and upon|Allah our Lord|we depend</value>
   </data>
+  <data name="IslamInfo_UponEnteringTheMosque" xml:space="preserve">
+    <value>Upon Entering The Mosque</value>
+  </data>
+  <data name="IslamInfo_UponEnteringTheMosque1" xml:space="preserve">
+    <value>Upon Entering The Mosque</value>
+  </data>
+  <data name="IslamInfo_UponEnteringTheMosque1Trans" xml:space="preserve">
+    <value>I seek refuge in Almighty Allah, by His Noble Face, by His primordial power, from Satan the outcast.  (In the Name of Allah, and blessings.)  (And peace be upon the Messenger of Allah.)  O Allah, open before me the doors of your mercy.</value>
+  </data>
+  <data name="IslamInfo_UponEnteringTheMosque1WordByWord" xml:space="preserve">
+    <value>I seek refuge|in Allah|Almighty,|by His Face|Noble,|by His power|primordial,|from|Satan|the outcast.|(In the Name|of Allah,|and blessings.)|(And peace|be upon|the Messenger|of Allah.)|O Allah|open|before me|the doors|of your mercy.</value>
+  </data>
+  <data name="IslamInfo_UponLeavingTheMosque" xml:space="preserve">
+    <value>Upon Leaving The Mosque</value>
+  </data>
+  <data name="IslamInfo_UponLeavingTheMosque1" xml:space="preserve">
+    <value>Upon Leaving The Mosque</value>
+  </data>
+  <data name="IslamInfo_UponLeavingTheMosque1Trans" xml:space="preserve">
+    <value>In the name of Allah, and peace and blessings be upon the Messenger of Allah.  O Allah, I ask for your favor, O Allah, protect me from Satan the outcast.</value>
+  </data>
+  <data name="IslamInfo_UponLeavingTheMosque1WordByWord" xml:space="preserve">
+    <value>In the name|of Allah,|and blessings|and peace|be upon|the Messenger|of Allah.|O Allah,|truly|I ask|for|your favor,|O Allah,|protect me|from|Satan|the outcast.</value>
+  </data>
+  <data name="IslamInfo_ImmediatelyFollowingDeclarationOfFaithInCallToPrayer" xml:space="preserve">
+    <value>Immediately Following Declaration Of Faith In Call To Prayer</value>
+  </data>
+  <data name="IslamInfo_ImmediatelyFollowingDeclarationOfFaithInCallToPrayer1" xml:space="preserve">
+    <value>Immediately Following Declaration Of Faith In Call To Prayer</value>
+  </data>
+  <data name="IslamInfo_ImmediatelyFollowingDeclarationOfFaithInCallToPrayer1Trans" xml:space="preserve">
+    <value>I bear witness that none has the right to be worshipped but Allah alone, Who has no partner, and that Muhammad is His slave and His Messenger.  I am pleased with Allah as my Lord, with Muhammad as my Messenger and with Islam as my religion.</value>
+  </data>
+  <data name="IslamInfo_ImmediatelyFollowingDeclarationOfFaithInCallToPrayer1WordByWord" xml:space="preserve">
+    <value>I|bear witness|that|none|has the right to be worshipped|but|Allah|alone,|no|partner|has He,|and that|Muhammad|is His slave|and His Messenger.|I am pleased|with Allah|as my Lord,|with Muhammad|as my Messenger|and with Islam|as my religion.</value>
+  </data>
   <data name="IslamInfo_WhenGoingToTheMosque" xml:space="preserve">
     <value>When Going To The Mosque</value>
   </data>
