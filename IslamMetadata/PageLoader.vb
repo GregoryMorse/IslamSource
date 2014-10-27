@@ -1657,13 +1657,16 @@ Public Class Arabic
         New RuleTranslation With {.Rule = "ImalaE", .Match = String.Empty, .Evaluator = ChrW(&H65C)},
         New RuleTranslation With {.Rule = "IIFinal", .Match = "(" + MakeUniRegEx(ArabicKasra) + ")(?=" + MakeUniRegEx(ArabicLetterYeh) + "(^\s*|\s+))", .Evaluator = "$1" + ChrW(&H6D2)}
     }
-    Public Shared UthmaniMinimalTrailingAlef As String = "(?<=^\s*|\s+)\S*" + MakeUniRegEx(ArabicLetterSuperscriptAlef) + "\S*(?=\s+|\s*$)"
-    Public Shared SimpleSuperscriptAlefWord As String = "(?<=^\s*|\s+)\S*" + MakeUniRegEx(ArabicLetterSuperscriptAlef) + "\S*(?=\s+|\s*$)"
+    Public Shared SimpleTrailingAlef As String = ArabicLetterAlef + ArabicSmallHighRoundedZero
     Public Shared SimpleSuperscriptAlef As String = ArabicLetterSuperscriptAlef
-    Public Shared SimpleSuperscriptAlefBefore As String() = {"'a", "'ila", ">a", ">a$oqaY", ">ansaY", ">anohaY", ">obaY", "AtaY", "AsaY", "ATaY", "AfaY", "Ala", "AwaY", "ba", "bala", "bi*a", "bila", "bimuwsaY", "b~a", "bokaY", "bolaY", "ta", "taxo$aY", "taxofaY", "taroDaY", "tasoEaY", "tago$aY", "taqowaY", "tala", "tuloqaY", "tumonaY", "tila", "t~a", "t~aY", "toqaY", "va", "vala", "vonaY", "vowaY", "ja", "jala", "jal~aY", "jaha", "jaY", "jiha", "j~aY", "Ha", "Hala", "HodaY", "xa", "xala", "xi*a", "xila", "da", "dal~aY", "d~a", "d~aY", "doraY", "dolaY", "*~a", "ra", "ra>aY", "ramaY", "riha", "r~a", "rodaY", "roqaY", "za", "zak~aY", "z~a", "sa", "saAlaY", "saqaY", "sala", "s~a", "s~aY", "soma", "$a", "$aha", "$~a", "$~aY", "Sa", "SaroEaY", "Sal~aY", "S~a", "S~aY", "SogaY", "SofaY", "SolaY", "Da", "Dala", "DuHaY", "DoHaY", "Ta", "TagaY", "T~a", "T~aY", "Za", "ZaY", "Zila", "Z~a", "Z~aY", "Ea", "Eala", "EalaY", "EusoraY", "EotaraY", "Eoma", "EowaY", "ga", "gawaY", "gowaY", "fa", "fataY", "fa*a", "f~a", "f~aY", "qa", "qaDaY", "qala", "qalaY", "q~aY", "qoma", "ka", "kala", "k~a", "ll~a", "lahadaY", "lofaY", "loma", "lohaY", "maAraY", "mataY", "maDaY", "mala", "miha", "m~a", "na", "najowaY", "naxozaY", "naxo$aY", "naraY", "nansaY", "nahaY", "n~a", "h~a", "h~aY", "w", "wbaY", "wHaY", "wraY", "wSaY", "wma", "wa", "wa*a", "waqaY", "waka*a", "wakafaY", "wali*a", "wanaAdaY", "w~a", "woraY", "yzaY", "ysaY", "ykaY", "yla", "yma", "ymaY", "ya", "yaboqaY", "yaloqaY", "yutolaY", "y~a", "y~aY", "yoma", "a>aboqaY", "a>ataY", "a>aHoSaY", "a>adonaY", "a>a*a", "a>araY", "a>awolaY", "a>uxoraY", "abaY", "abu$oraY", "ataraY", "ata$oqaY", "atanohaY", "aHaY", "a*ikoraY", "azaY", "asaw~aY", "asaY", "aSaY", "aEaY", "aEoraY", "akaY", "al~a", "aloHusonaY", "alohudaY", "ama", "ama>owaY", "amaroEaY", "amuwsaY", "anaY", "ayaHoyaY", "ayaroDaY", "ayaTogaY", "ayanohaY", "ayusoqaY", "u*a", "uqaY", "ula", "uma", "umolaY", "unsaY", "uha", "uhodaY", "i>uxoraY", "i>uwlaY", "itujozaY", "ilt~aqowaY", "ilr~aHoma", "ima", "inaY", "ihudaY", "iyaHoyaY", "~a>owaY", "~aroDaY", "~ala", "~aha", "~uwsaY", "osaY", "ola", "oha", "owala", "^>aY", "#a", "{botagaY", "{botalaY", "{t~aqaY", "{rotaDaY", "{sotasoqaY", "{sotaEolaY", "{sotagonaY", "{sotawaY", "{$otaraY", "{SoTafaY", "{EotadaY", "{fotadaY", "{fotaraY", "{lt~aqowaY", "{lv~araY", "{l*~ikoraY", "{lr~aHoma", "{lr~ujoEaY", "{ls~alowaY", "{ls~ufolaY", "{l$~iEoraY", "{lD~uHaY", "{ln~ajowaY", "{ln~awaY", "{ln~uhaY", "{l~a", "{lo>adonaY", "{lo>a*aY", "{lo>asoraY", "{lo>aEolaY", "{lo>aEomaY", "{lo>awofaY", "{lo>uxoraY", "{lo>unvaY", "{lo>uwlaY", "{lobu$oraY", "{loHusonaY", "{loEamaY", "{loEuz~aY", "{loEulaY", "{loquraY", "{loqurobaY", "{loquSowaY", "{loquwaY", "{lokuboraY", "{loma>owaY", "{lomaroDaY", "{lomaroEaY", "{lomawotaY", "{lomawolaY", "{lomuvolaY", "{lomuntahaY", "{lohawaY", "{lohudaY", "{lowuvoqaY", "{lowusoTaY", "{ntahaY", "{hotadaY", "@la", ".la", "-Y"}
-    Public Shared SimpleSuperscriptAlefNotBefore As String() = {"|saY", "|waY", ">a<ila", "AbotagaY", "AbotalaY", "At~aqaY", "ArotaDaY", "AsotasoqaY", "AsotaEolaY", "AsotagonaY", "AsotawaY", "A$otaraY", "ASoTafaY", "AEotadaY", "AfotadaY", "AfotaraY", "Alt~aqowaY", "Alv~araY", "Al*~ikoraY", "Alr~aHoma", "Alr~ujoEaY", "Als~alowaY", "Als~ufolaY", "Al$~iEoraY", "AlD~uHaY", "Aln~ajowaY", "Aln~awaY", "Aln~uhaY", "Alo>adonaY", "Alo>a*aY", "Alo>asoraY", "Alo>aEolaY", "Alo>aEomaY", "Alo>awofaY", "Alo>uxoraY", "Alo>unvaY", "Alo>uwlaY", "Alobu$oraY", "AloHusonaY", "AloEamaY", "AloEuz~aY", "AloEulaY", "AloquraY", "AloqurobaY", "AloquSowaY", "AloquwaY", "AlokuboraY", "Aloma>owaY", "AlomaroDaY", "AlomaroEaY", "AlomawotaY", "AlomawolaY", "AlomuvolaY", "AlomuntahaY", "AlohawaY", "AlohudaY", "AlowuvoqaY", "AlowusoTaY", "AmaY", "AntahaY", "AhotadaY", "toraY", "raAdaY", "saAraY", "safaY", "SaAraY", "EaAlaY", "kaAraY", "lataY", "na>aY", "w>aY", "wla", "waAraY", "~a>aY"}
-    Public Shared SimpleSuperscriptAlefAfter As String() = {"A", "b", "p", "t", "v", "j", "H", "x", "d", "*F", "*aAn", "*aA^", "*a`", "*ib", "*ir", "*ihi.", "r", "z", "s", "$", "S", "D", "T", "Z", "E", "g", "f", "q", "kah", "ku", "kib", "kiv", "kir", "kis", "kiE", "kif", "kim", "kina", "kinu", "kini", "kin~aA^", "kin~aA""", "kin~ak", "kin~ahu,", "kin~iY", "kino", "kin[", "kih", "kiy", "lF", "lN", "lK", "la", "lu", "lib", "liH", "lid", "lis", "lig", "lif", "liq", "likun", "likuw", "liki", "lim", "lin", "lih", "liY", "liy", "m", "nF", "nN", "nK", "naA", "nat", "nak", "nan", "nah", "na`", "nuk", "nuh", "nuw", "nit", "nis", "niT", "nik", "nin", "nih", "niY", "niy", "ni.", "hF]", "hN]", "hK]", "haA", "had", "har", "hahu,", "ha`", "hum", "hunaA^", "hun~", "huw", "hid", "hir", "hi_", "hiku", "hil", "him", "hih", "hiy", "hi.", "w", "Y", "y", "^"}
-    Public Shared SimpleSuperscriptAlefNotAfter As String() = {"&", "}", "kin~iy"}
+    Public Shared UthmaniShortVowelsBeforeLongVowelsSuperscriptAlef As String = ArabicFatha + ArabicLetterSuperscriptAlef
+    Public Shared UthmaniShortVowelsBeforeLongVowelsAlefAlefMaksura As String = ArabicFatha + ArabicLetterAlefMaksura
+    Public Shared UthmaniShortVowelsBeforeLongVowelsYehAlefMaksura As String = ArabicKasra + ArabicLetterAlefMaksura
+    Public Shared UthmaniShortVowelsBeforeLongVowelsAlef As String = ArabicFatha + ArabicLetterAlef
+    Public Shared UthmaniShortVowelsBeforeLongVowelsWaw As String = ArabicDamma + ArabicLetterWaw
+    Public Shared UthmaniShortVowelsBeforeLongVowelsSmallWaw As String = ArabicDamma + ArabicSmallWaw
+    Public Shared UthmaniShortVowelsBeforeLongVowelsYeh As String = ArabicKasra + ArabicLetterYeh
+    Public Shared UthmaniShortVowelsBeforeLongVowelsSmallYeh As String = ArabicKasra + ArabicSmallYeh
     Public Shared UthmaniMinimalScript As RuleTranslation() = { _
         New RuleTranslation With {.Rule = "SmallYehSmallWawAfterPronounHeh", .Match = "(?:(" + MakeUniRegEx(ArabicLetterHeh) + MakeUniRegEx(ArabicKasra) + ")" + MakeUniRegEx(ArabicSmallYeh) + "|(" + MakeUniRegEx(ArabicLetterHeh) + MakeUniRegEx(ArabicDamma) + ")" + MakeUniRegEx(ArabicSmallWaw) + ")" + MakeUniRegEx(ArabicMaddahAbove) + "?(?=\s*$|\s+)", _
             .Evaluator = "$1$2"}, _
@@ -4144,12 +4147,45 @@ Public Class TanzilReader
     Shared QuranFileNames As String() = {"quran-uthmani.xml", "quran-uthmani-min.xml", "quran-simple.xml", "quran-simple-min.xml", "quran-simple-enhanced.xml", "quran-simple-clean.xml", "quran-buckwalter-uthmani.xml", "quran-buckwalter-uthmani-min.xml", "quran-buckwlater-simple.xml", "quran-buckwalter-simple-min.xml", "quran-buckwalter-simple-enhanced.xml", "quran-buckwalter-simple-clean.xml", "quran-warsh.xml", "quran-alduri.xml"}
     Shared QuranScriptNames As String() = {"Uthmani", "Uthmani Minimal", "Simple", "Simple Minimal", "Simple Enhanced", "Simple Clean"}
     Public Shared Sub CheckNotablePatterns()
-        ComparePatterns(QuranScripts.Uthmani, QuranScripts.SimpleEnhanced, Arabic.SimpleSuperscriptAlefWord, Arabic.SimpleSuperScriptAlef)
+        'ComparePatterns(QuranScripts.Uthmani, QuranScripts.UthmaniMin, Arabic.UthmaniShortVowelsBeforeLongVowelsAlef)
+        'ComparePatterns(QuranScripts.Uthmani, QuranScripts.UthmaniMin, Arabic.UthmaniShortVowelsBeforeLongVowelsSuperscriptAlef)
+        'ComparePatterns(QuranScripts.Uthmani, QuranScripts.UthmaniMin, Arabic.UthmaniShortVowelsBeforeLongVowelsAlefAlefMaksura)
+        'ComparePatterns(QuranScripts.Uthmani, QuranScripts.UthmaniMin, Arabic.UthmaniShortVowelsBeforeLongVowelsYehAlefMaksura)
+        'ComparePatterns(QuranScripts.Uthmani, QuranScripts.UthmaniMin, Arabic.UthmaniShortVowelsBeforeLongVowelsYeh)
+        'ComparePatterns(QuranScripts.Uthmani, QuranScripts.UthmaniMin, Arabic.UthmaniShortVowelsBeforeLongVowelsSmallYeh)
+        'ComparePatterns(QuranScripts.Uthmani, QuranScripts.UthmaniMin, Arabic.UthmaniShortVowelsBeforeLongVowelsWaw)
+        'ComparePatterns(QuranScripts.Uthmani, QuranScripts.UthmaniMin, Arabic.UthmaniShortVowelsBeforeLongVowelsSmallWaw)
+        ComparePatterns(QuranScripts.Uthmani, QuranScripts.SimpleEnhanced, Arabic.SimpleTrailingAlef)
+        'this rule should be analyzed after all other rules in Simple Enhanced are processed as it will great simplify its expression while the earlier it is processed the longer it will be
+        'ComparePatterns(QuranScripts.Uthmani, QuranScripts.SimpleEnhanced, Arabic.SimpleSuperscriptAlef)
     End Sub
-    Public Shared Sub ComparePatterns(ScriptType As QuranScripts, CompScriptType As QuranScripts, WordPattern As String, LetterPattern As String)
+    Public Shared Sub RemoveSubsetPatterns(ByRef Dict As Dictionary(Of String, String), Prefix As Boolean)
+        Dim Keys(Dict.Keys.Count - 1) As String
+        Dict.Keys.CopyTo(Keys, 0)
+        For Count As Integer = 0 To Keys.Length - 1
+            For SubCount As Integer = 1 To Keys(Count).Length - 1
+                If Dict.ContainsKey(If(Prefix, Keys(Count).Substring(SubCount), Keys(Count).Substring(0, SubCount))) Then
+                    Dict.Remove(Keys(Count))
+                    Exit For
+                End If
+            Next
+        Next
+    End Sub
+    Public Shared Function DumpDictionary(Dict As Dictionary(Of String, String)) As String
+        Dim Msg As String = String.Empty
+        Dim Keys(Dict.Keys.Count - 1) As String
+        Dict.Keys.CopyTo(Keys, 0)
+        Array.Sort(Keys, StringComparer.Ordinal)
+        For Count As Integer = 0 To Keys.Length - 1
+            Msg += """" + Arabic.TransliterateToScheme(Keys(Count), Arabic.TranslitScheme.Buckwalter) + """" + If(Count <> Keys.Length - 1, ", ", String.Empty)
+        Next
+        Return Msg
+    End Function
+    Public Shared Sub ComparePatterns(ScriptType As QuranScripts, CompScriptType As QuranScripts, LetterPattern As String)
+        Dim WordPattern As String = "(?<=^\s*|\s+)\S*" + Arabic.MakeUniRegEx(LetterPattern) + "\S*(?=\s+|\s*$)"
         Dim FirstList As List(Of String) = PatternMatch(ScriptType, WordPattern)
         FirstList.Sort(StringComparer.Ordinal)
-        Dim CompList As List(Of String) = PatternMatch(CompScriptType, WordPattern)
+        Dim CompList As List(Of String) = PatternMatch(CompScriptType, "(?<=^\s*|\s+)\S*" + Arabic.MakeUniRegEx(LetterPattern.Substring(0, 1)) + "(?=\s+|\s*$)")
         CompList.Sort(StringComparer.Ordinal)
         Dim Index As Integer = 0
         Do While Index < CompList.Count - 1
@@ -4205,49 +4241,20 @@ Public Class TanzilReader
         For Count As Integer = 0 To Keys.Length - 1
             If CompDict.ContainsKey(Keys(Count)) Then
                 If Not FirstNotInDict.ContainsKey(FirstDict(Keys(Count))) Then
-                    FirstNotInDict.Add(FirstDict(Keys(Count)), Nothing)
+                    FirstNotInDict.Add(Keys(Count), FirstDict(Keys(Count)))
                 End If
                 If Not CompNotInDict.ContainsKey(CompDict(Keys(Count))) Then
-                    CompNotInDict.Add(CompDict(Keys(Count)), Nothing)
+                    CompNotInDict.Add(Keys(Count), CompDict(Keys(Count)))
                 End If
                 FirstDict.Remove(Keys(Count))
                 CompDict.Remove(Keys(Count))
             End If
         Next
-        ReDim Keys(FirstDict.Keys.Count - 1)
-        FirstDict.Keys.CopyTo(Keys, 0)
-        For Count As Integer = 0 To Keys.Length - 1
-            For SubCount = 1 To Keys(Count).Length - 1
-                If FirstDict.ContainsKey(Keys(Count).Substring(SubCount)) Then
-                    FirstDict.Remove(Keys(Count))
-                    Exit For
-                End If
-            Next
-        Next
-        ReDim Keys(CompDict.Keys.Count - 1)
-        CompDict.Keys.CopyTo(Keys, 0)
-        For Count As Integer = 0 To Keys.Length - 1
-            For SubCount = 1 To Keys(Count).Length - 1
-                If CompDict.ContainsKey(Keys(Count).Substring(SubCount)) Then
-                    CompDict.Remove(Keys(Count))
-                    Exit For
-                End If
-            Next
-        Next
-        Msg += vbCrLf + "First: "
-        ReDim Keys(FirstDict.Keys.Count - 1)
-        FirstDict.Keys.CopyTo(Keys, 0)
-        Array.Sort(Keys, StringComparer.Ordinal)
-        For Count As Integer = 0 To Keys.Length - 1
-            Msg += """" + Arabic.TransliterateToScheme(Keys(Count), Arabic.TranslitScheme.Buckwalter) + """, "
-        Next
-        Msg += vbCrLf + "Second: "
-        ReDim Keys(CompDict.Keys.Count - 1)
-        CompDict.Keys.CopyTo(Keys, 0)
-        Array.Sort(Keys, StringComparer.Ordinal)
-        For Count As Integer = 0 To Keys.Length - 1
-            Msg += """" + Arabic.TransliterateToScheme(Keys(Count), Arabic.TranslitScheme.Buckwalter) + """, "
-        Next
+        RemoveSubsetPatterns(FirstNotInDict, True)
+        RemoveSubsetPatterns(CompNotInDict, True)
+        RemoveSubsetPatterns(FirstDict, True)
+        RemoveSubsetPatterns(CompDict, True)
+        Msg += vbCrLf + "First: " + DumpDictionary(FirstDict) + vbCrLf + "Not First: " + DumpDictionary(FirstNotInDict) + vbCrLf + "Second: " + DumpDictionary(CompDict) + vbCrLf + "Not Second: " + DumpDictionary(CompNotInDict)
         FirstDict = New Dictionary(Of String, String)
         CompDict = New Dictionary(Of String, String)
         For Each Str As String In FirstList
@@ -4266,62 +4273,27 @@ Public Class TanzilReader
                 End If
             Next
         Next
+        FirstNotInDict = New Dictionary(Of String, String)
+        CompNotInDict = New Dictionary(Of String, String)
         ReDim Keys(FirstDict.Keys.Count - 1)
         FirstDict.Keys.CopyTo(Keys, 0)
         For Count As Integer = 0 To Keys.Length - 1
             If CompDict.ContainsKey(Keys(Count)) Then
                 If Not FirstNotInDict.ContainsKey(FirstDict(Keys(Count))) Then
-                    FirstNotInDict.Add(FirstDict(Keys(Count)), Nothing)
+                    FirstNotInDict.Add(Keys(Count), FirstDict(Keys(Count)))
                 End If
                 If Not CompNotInDict.ContainsKey(CompDict(Keys(Count))) Then
-                    CompNotInDict.Add(CompDict(Keys(Count)), Nothing)
+                    CompNotInDict.Add(Keys(Count), CompDict(Keys(Count)))
                 End If
                 FirstDict.Remove(Keys(Count))
                 CompDict.Remove(Keys(Count))
             End If
         Next
-        Msg += vbCrLf + "First Not Fixed: "
-        For Each Val As KeyValuePair(Of String, String) In FirstNotInDict
-            Msg += """" + Arabic.TransliterateToScheme(Val.Key, Arabic.TranslitScheme.Buckwalter) + """, "
-        Next
-        Msg += vbCrLf + "Second Not Fixed: "
-        For Each Val As KeyValuePair(Of String, String) In CompNotInDict
-            Msg += """" + Arabic.TransliterateToScheme(Val.Key, Arabic.TranslitScheme.Buckwalter) + """, "
-        Next
-        ReDim Keys(FirstDict.Keys.Count - 1)
-        FirstDict.Keys.CopyTo(Keys, 0)
-        For Count As Integer = 0 To Keys.Length - 1
-            For SubCount = 1 To Keys(Count).Length - 1
-                If FirstDict.ContainsKey(Keys(Count).Substring(0, SubCount)) Then
-                    FirstDict.Remove(Keys(Count))
-                    Exit For
-                End If
-            Next
-        Next
-        ReDim Keys(CompDict.Keys.Count - 1)
-        CompDict.Keys.CopyTo(Keys, 0)
-        For Count As Integer = 0 To Keys.Length - 1
-            For SubCount = 1 To Keys(Count).Length - 1
-                If CompDict.ContainsKey(Keys(Count).Substring(0, SubCount)) Then
-                    CompDict.Remove(Keys(Count))
-                    Exit For
-                End If
-            Next
-        Next
-        Msg += vbCrLf + "First: "
-        ReDim Keys(FirstDict.Keys.Count - 1)
-        FirstDict.Keys.CopyTo(Keys, 0)
-        Array.Sort(Keys, StringComparer.Ordinal)
-        For Count As Integer = 0 To Keys.Length - 1
-            Msg += """" + Arabic.TransliterateToScheme(Keys(Count), Arabic.TranslitScheme.Buckwalter) + """, "
-        Next
-        Msg += vbCrLf + "Second: "
-        ReDim Keys(CompDict.Keys.Count - 1)
-        CompDict.Keys.CopyTo(Keys, 0)
-        Array.Sort(Keys, StringComparer.Ordinal)
-        For Count As Integer = 0 To Keys.Length - 1
-            Msg += """" + Arabic.TransliterateToScheme(Keys(Count), Arabic.TranslitScheme.Buckwalter) + """, "
-        Next
+        RemoveSubsetPatterns(FirstNotInDict, False)
+        RemoveSubsetPatterns(CompNotInDict, False)
+        RemoveSubsetPatterns(FirstDict, False)
+        RemoveSubsetPatterns(CompDict, False)
+        Msg += vbCrLf + "First: " + DumpDictionary(FirstDict) + vbCrLf + "Not First: " + DumpDictionary(FirstNotInDict) + vbCrLf + "Second: " + DumpDictionary(CompDict) + vbCrLf + "Not Second: " + DumpDictionary(CompNotInDict)
         Debug.Print(Msg)
     End Sub
     Public Shared Function PatternMatch(ScriptType As QuranScripts, Pattern As String) As List(Of String)
