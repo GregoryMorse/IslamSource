@@ -1572,6 +1572,69 @@
   <data name="IslamInfo_AtTheStartOfPrayer6WordByWord" xml:space="preserve">
     <value>O Allah,|to You is|praise.|You|are the light|of the heavens|and the earth|and all that|they contain.|to You is|Praise,|You|are the Sustainer|of the heavens|and the earth|and all|they contain.|(to You is|Praise,|You|are the Lord|of the heavens|and the earth|and all|they contain.)|(to You is|Praise,|Yours|is dominion|of the heavens|and the earth|and all|they contain.)|(to You is|Praise,|You|are the King|of the heavens|and the earth.)|(And to you is|praise.)|(You|are the truth,|Your Promise|is true,|Your Word|is true,|Your audience|is true,|Paradise|is true,|Hell|is true,|the Prophets|are true,|and Muhammad (peace and blessings be upon him)|is true,|and the Hour of Judgement|is true.)|(O Allah,|to You|I have submitted,|and upon You|I depend.|in You|I have believed|and to You|I turn in repentence.|For Your sake|I dispute|and by Your standard|I judge.|Forgive|me|what|I have sent before me|and what|I have let behind me,|what|I have concealed|and what|I have declared.)|(You|are the One Who sends forth|and You|are the One Who delays,|there is none|who has the right to be worshipped|but|You.)|(You|are my God,|there is none|who has the right to be worshipped|but|You.)</value>
   </data>
+  <data name="IslamInfo_WhileBowingInPrayer" xml:space="preserve">
+    <value>While Bowing In Prayer</value>
+  </data>
+  <data name="IslamInfo_WhileBowingInPrayer1" xml:space="preserve">
+    <value>While Bowing In Prayer</value>
+  </data>
+  <data name="IslamInfo_WhileBowingInPrayer1" xml:space="preserve">
+    <value>While Bowing In Prayer</value>
+  </data>
+  <data name="IslamInfo_WhileBowingInPrayer1Trans" xml:space="preserve">
+    <value>Glory to my Lord the Exalted (3x).</value>
+  </data>
+  <data name="IslamInfo_WhileBowingInPrayer1WordByWord" xml:space="preserve">
+    <value>Glory|to my Lord|the Exalted.</value>
+  </data>
+  <data name="IslamInfo_WhileBowingInPrayer2" xml:space="preserve">
+    <value>While Bowing In Prayer</value>
+  </data>
+  <data name="IslamInfo_WhileBowingInPrayer2" xml:space="preserve">
+    <value>While Bowing In Prayer</value>
+  </data>
+  <data name="IslamInfo_WhileBowingInPrayer2Trans" xml:space="preserve">
+    <value>Glory is to You, O Allah, our Lord, and praise is Yours.  O Allah, forgive me.</value>
+  </data>
+  <data name="IslamInfo_WhileBowingInPrayer2WordByWord" xml:space="preserve">
+    <value>Glory is to You,|O Allah,|our Lord,|and praise is Yours.|O Allah,|forgive|me.</value>
+  </data>
+  <data name="IslamInfo_WhileBowingInPrayer3" xml:space="preserve">
+    <value>While Bowing In Prayer</value>
+  </data>
+  <data name="IslamInfo_WhileBowingInPrayer3" xml:space="preserve">
+    <value>While Bowing In Prayer</value>
+  </data>
+  <data name="IslamInfo_WhileBowingInPrayer3Trans" xml:space="preserve">
+    <value>Glory (to You), Most Holy (are You), Lord of the angels and the Spirit.</value>
+  </data>
+  <data name="IslamInfo_WhileBowingInPrayer3WordByWord" xml:space="preserve">
+    <value>Glory (to You),|Most Holy (are You),|Lord|of the angels|and the Spirit.</value>
+  </data>
+  <data name="IslamInfo_WhileBowingInPrayer4" xml:space="preserve">
+    <value>While Bowing In Prayer</value>
+  </data>
+  <data name="IslamInfo_WhileBowingInPrayer4" xml:space="preserve">
+    <value>While Bowing In Prayer</value>
+  </data>
+  <data name="IslamInfo_WhileBowingInPrayer4Trans" xml:space="preserve">
+    <value>O Allah, to You I bow (in prayer) and in You I believe and to You I have submitted.  Before You my hearing is humbled, as is my sight, my mind, my bones, my nerves and what my feet have mounted upon (for travel).</value>
+  </data>
+  <data name="IslamInfo_WhileBowingInPrayer4WordByWord" xml:space="preserve">
+    <value>O Allah,|to You|I bow (in prayer)|and in You|I believe|and to You|I have submitted.|humbled|Before You|my hearing is,|as is my sight,|my mind,|my bones,|my nerves|and what|have mounted|upon (for travel)|my feet.</value>
+  </data>
+  <data name="IslamInfo_WhileBowingInPrayer5" xml:space="preserve">
+    <value>While Bowing In Prayer</value>
+  </data>
+  <data name="IslamInfo_WhileBowingInPrayer5" xml:space="preserve">
+    <value>While Bowing In Prayer</value>
+  </data>
+  <data name="IslamInfo_WhileBowingInPrayer5Trans" xml:space="preserve">
+    <value>Glory is to You, Master of power, of dominion, of majesty and greatness.</value>
+  </data>
+  <data name="IslamInfo_WhileBowingInPrayer5WordByWord" xml:space="preserve">
+    <value>Glory is to You,|Master|of power,|of dominion,|of majesty|and greatness.</value>
+  </data>
   <data name="IslamInfo_WhenGoingToTheMosque" xml:space="preserve">
     <value>When Going To The Mosque</value>
   </data>
