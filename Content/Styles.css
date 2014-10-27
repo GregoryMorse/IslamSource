@@ -160,6 +160,15 @@ span.arabic
     font-size: 32px;
 }
 
+#quizquestion
+{
+    text-align: center;
+    direction: rtl;
+    font-family: Arial;
+    font-weight: 700;
+    font-size: 32px;
+}
+
 #qurantext, #supptext, #doctext
 {
     text-align: center;

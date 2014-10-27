@@ -243,8 +243,9 @@
 	<page name="quiz" description="IslamSource_Quiz">
 		<frame name="arabicquiz" description="IslamSource_Quiz">
 			<radio name="quizselection" description="IslamSource_Quiz" uselist="true" defaultvalue="" onpopulate="Quiz::GetQuizList" onchange="Quiz::GetChangeQuizJS"></radio>
+			<radio name="translitscheme" description="IslamSource_TransliterationScheme" uselist="true" onchange="Arabic::GetChangeTransliterationJS"><option name="IslamSource_PlainRoman" defaultvalue="true"></option><option name="IslamSource_EnglishRomanized"></option><option name="IslamSource_ExtendedBuckwalter"></option></radio>
 			<static name="count" description="" onrender="Quiz::DisplayCount"></static>
-			<static name="question" description="" onrender="Quiz::DisplayQuestion"></static>
+			<static name="quizquestion" description="" onrender="Quiz::DisplayQuestion"></static>
 			<button name="answer1" description="" onrender="Quiz::DisplayAnswer" onclick="Quiz::VerifyAnswer"></button>
 			<button name="answer2" description="" onrender="Quiz::DisplayAnswer" onclick="Quiz::VerifyAnswer"></button>
 			<button name="answer3" description="" onrender="Quiz::DisplayAnswer" onclick="Quiz::VerifyAnswer"></button>

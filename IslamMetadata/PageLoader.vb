@@ -3658,26 +3658,39 @@ Public Class Quiz
     Public Shared Function DisplayCount(ByVal Item As PageLoader.TextItem) As String
         Return "Wrong: 0 Right: 0"
     End Function
+    Public Shared Function GetQuizSet() As String()
+        Dim Quiz As Integer = HttpContext.Current.Request.QueryString.Get("quizselection")
+        If Quiz = 0 Then
+            Return Arabic.ArabicLetters
+        ElseIf Quiz = 1 Then
+            Dim CurList As New Generic.List(Of String)
+            For Count As Integer = 0 To ArabicDiacriticsBefore.Length - 1
+                Dim CurLet As String = ArabicDiacriticsBefore(Count)
+                CurList.AddRange(Array.ConvertAll(Arabic.ArabicLetters, Function(Str As String) CurLet + Str))
+            Next
+            Return CurList.ToArray()
+        ElseIf Quiz = 2 Then
+            Dim CurList As New Generic.List(Of String)
+            For Count As Integer = 0 To ArabicDiacriticsAfter.Length - 1
+                Dim CurLet As String = ArabicDiacriticsAfter(Count)
+                CurList.AddRange(Array.ConvertAll(Arabic.ArabicLetters, Function(Str As String) Str + CurLet))
+            Next
+            Return CurList.ToArray()
+        Else
+            Return Nothing
+        End If
+    End Function
     Public Shared Function DisplayQuestion(ByVal Item As PageLoader.TextItem) As String
         HttpContext.Current.Items.Add("rnd", DateTime.Now.ToFileTime())
         Rnd(-1)
         Randomize(CDbl(HttpContext.Current.Items("rnd")))
         Dim Count As Integer = CInt(Math.Floor(Rnd() * 4))
-        Dim Quiz As Integer = HttpContext.Current.Request.QueryString.Get("quizselection")
         While Count
             Rnd()
-            If Quiz <> 0 Then Rnd()
             Count -= 1
         End While
-        If Quiz = 0 Then
-            Return CachedData.IslamData.ArabicLetters(Arabic.FindLetterBySymbol(Arabic.ArabicLetters(CInt(Math.Floor(Rnd() * Arabic.ArabicLetters.Length))).Chars(0))).Symbol
-        ElseIf Quiz = 1 Then
-            Return Arabic.RightToLeftOverride + CachedData.IslamData.ArabicLetters(Arabic.FindLetterBySymbol(ArabicDiacriticsBefore(CInt(Math.Floor(Rnd() * Arabic.ArabicFathaDammaKasra.Length))).Chars(0))).Symbol + Arabic.PopDirectionalFormatting + CachedData.IslamData.ArabicLetters(Arabic.FindLetterBySymbol(Arabic.ArabicLetters(CInt(Math.Floor(Rnd() * Arabic.ArabicLetters.Length))).Chars(0))).Symbol
-        ElseIf Quiz = 2 Then
-            Return CachedData.IslamData.ArabicLetters(Arabic.FindLetterBySymbol(Arabic.ArabicLetters(CInt(Math.Floor(Rnd() * Arabic.ArabicLetters.Length))).Chars(0))).Symbol + CachedData.IslamData.ArabicLetters(Arabic.FindLetterBySymbol(ArabicDiacriticsAfter(CInt(Math.Floor(Rnd() * Arabic.ArabicFathaDammaKasra.Length))).Chars(0))).Symbol
-        Else
-            Return String.Empty
-        End If
+        Dim QuizSet As String() = GetQuizSet()
+        Return QuizSet(CInt(Math.Floor(Rnd() * QuizSet.Length)))
     End Function
     Public Shared Function DisplayAnswer(ByVal Item As PageLoader.ButtonItem) As String
         Dim Count As Integer
@@ -3689,27 +3702,24 @@ Public Class Quiz
             Rnd()
             If Quiz <> 0 Then Rnd()
         Next
-        If Quiz = 0 Then
-            Return CachedData.IslamData.ArabicLetters(Arabic.FindLetterBySymbol(Arabic.ArabicLetters(CInt(Math.Floor(Rnd() * Arabic.ArabicLetters.Length))).Chars(0))).RomanTranslit
-        ElseIf Quiz = 1 Then
-            Return CachedData.IslamData.ArabicLetters(Arabic.FindLetterBySymbol(ArabicDiacriticsBefore(CInt(Math.Floor(Rnd() * Arabic.ArabicFathaDammaKasra.Length))).Chars(0))).RomanTranslit + CachedData.IslamData.ArabicLetters(Arabic.FindLetterBySymbol(Arabic.ArabicLetters(CInt(Math.Floor(Rnd() * Arabic.ArabicLetters.Length))).Chars(0))).RomanTranslit
-        ElseIf Quiz = 2 Then
-            Return CachedData.IslamData.ArabicLetters(Arabic.FindLetterBySymbol(Arabic.ArabicLetters(CInt(Math.Floor(Rnd() * Arabic.ArabicLetters.Length))).Chars(0))).RomanTranslit + CachedData.IslamData.ArabicLetters(Arabic.FindLetterBySymbol(ArabicDiacriticsAfter(CInt(Math.Floor(Rnd() * Arabic.ArabicFathaDammaKasra.Length))).Chars(0))).RomanTranslit
-        Else
-            Return String.Empty
-        End If
+        Dim QuizSet As String() = GetQuizSet()
+        Return Arabic.TransliterateToScheme(QuizSet(CInt(Math.Floor(Rnd() * QuizSet.Length))), CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) + 1)
     End Function
     Public Shared Function VerifyAnswer() As String()
-        Return New String() {"javascript: verifyAnswer(this);", String.Empty, _
-                             Arabic.GetArabicSymbolJSArray(), Arabic.FindLetterBySymbolJS, _
-                             "var arabicLets = " + Utility.MakeJSArray(Array.ConvertAll(Arabic.ArabicLetters, Function(Str As String) CStr(AscW(Str.Chars(0)))), True) + ";", _
-                             "var arabicDiacriticsBefore = " + Utility.MakeJSArray(Array.ConvertAll(ArabicDiacriticsBefore, Function(Str As String) CStr(AscW(Str.Chars(0)))), True) + ";", _
-                             "var arabicDiacriticsAfter = " + Utility.MakeJSArray(Array.ConvertAll(ArabicDiacriticsAfter, Function(Str As String) CStr(AscW(Str.Chars(0)))), True) + ";", _
-                             "var qtype = 'arabicletters', qwrong = 0, qright = 0;", _
-                             "function getUniqueRnd(excl, count) { var rnd; do { rnd = Math.floor(Math.random() * count); } while (excl.indexOf(rnd) !== -1); return rnd; }", _
-                             "function getQA(bQuest, nidx) { return bQuest ? ((qtype === 'arabicdiacriticsletters') ? String.fromCharCode(0x202E) + String.fromCharCode(arabicDiacriticsBefore[Math.floor(nidx / arabicLets.length)]) + String.fromCharCode(0x202C) : '') + String.fromCharCode(arabicLets[nidx % arabicLets.length]) + ((qtype === 'arabiclettersdiacritics') ? String.fromCharCode(arabicDiacriticsAfter[Math.floor(nidx / arabicLets.length)]) : '') : ((qtype === 'arabicdiacriticsletters') ? arabicLetters[findLetterBySymbol(arabicDiacriticsBefore[Math.floor(nidx / arabicLets.length)])].RomanTranslit : '') + arabicLetters[findLetterBySymbol(arabicLets[nidx % arabicLets.length])].RomanTranslit + ((qtype === 'arabiclettersdiacritics') ? arabicLetters[findLetterBySymbol(arabicDiacriticsAfter[Math.floor(nidx / arabicLets.length)])].RomanTranslit : ''); }", _
-                             "function nextQuestion() { $('#count').text('Wrong: ' + qwrong + ' Right: ' + qright); var i = Math.floor(Math.random() * 4), pos = (qtype === 'arabicdiacriticsletters') ? arabicLets.length * arabicDiacriticsBefore.length : (qtype === 'arabiclettersdiacritics') ? arabicLets.length * arabicDiacriticsAfter.length : arabicLets.length, nidx = getUniqueRnd([], pos), aidx = []; aidx[0] = getUniqueRnd([nidx], pos); aidx[1] = getUniqueRnd([nidx, aidx[0]], pos); aidx[2] = getUniqueRnd([nidx, aidx[0], aidx[1]], pos); $('#question').text(getQA(true, nidx)); $('#answer1').prop('value', getQA(false, i === 0 ? nidx : aidx[0])); $('#answer2').prop('value', getQA(false, i === 1 ? nidx : aidx[i > 1 ? 1 : 0])); $('#answer3').prop('value', getQA(false, i === 2 ? nidx : aidx[i > 2 ? 2 : 1])); $('#answer4').prop('value', getQA(false, i === 3 ? nidx : aidx[2])); }", _
-                             "function verifyAnswer(ctl) { $(ctl).prop('value') === (arabicLetters[findLetterBySymbol($('#question').text().charCodeAt($('#question').text().charCodeAt(0) === 0x202E ? 1 : 0))].RomanTranslit + (($('#question').text().length > 1) ? arabicLetters[findLetterBySymbol($('#question').text().charCodeAt($('#question').text().charCodeAt(0) === 0x202E ? 3 : 1))].RomanTranslit : '')) ? qright++ : qwrong++; nextQuestion(); }"}
+        Dim JSList As New List(Of String) From {"javascript: verifyAnswer(this);", String.Empty, _
+            Arabic.GetArabicSymbolJSArray(), Arabic.FindLetterBySymbolJS, _
+            "var arabicLets = " + Utility.MakeJSArray(Arabic.ArabicLetters, False) + ";", _
+            "var arabicDiacriticsBefore = " + Utility.MakeJSArray(ArabicDiacriticsBefore, False) + ";", _
+            "var arabicDiacriticsAfter = " + Utility.MakeJSArray(ArabicDiacriticsAfter, False) + ";", _
+            "var qtype = 'arabicletters', qwrong = 0, qright = 0;", _
+            "function getUniqueRnd(excl, count) { var rnd; if (excl.length === count) return 0; do { rnd = Math.floor(Math.random() * count); } while (excl.indexOf(rnd) !== -1); return rnd; }", _
+            "function getQuizSet() { if (qtype === 'arabicletters') return arabicLets; if (qtype === 'arabiclettersdiacritics') { var count = 0, arr = []; for (count = 0; count < arabicDiacriticsAfter.length; count++) { arr = arr.concat(arabicLets.map(function(val) { return val + arabicDiacriticsAfter[count]; })); } return arr; } if (qtype === 'arabicdiacriticsletters') { var count = 0, arr = []; for (count = 0; count < arabicDiacriticsBefore.length; count++) { arr = arr.concat(arabicLets.map(function(val) { return arabicDiacriticsBefore[count] + val; })); } return arr; }; return []; }", _
+            "function getQA(quizSet, quest, nidx) { if (quest) return quizSet[nidx]; return $('#translitscheme').val() === '0' ? transliterateToPlainRoman(quizSet[nidx]) : doTransliterate(quizSet[nidx], true, $('#translitscheme').val() === '2'); }", _
+            "function nextQuestion() { $('#count').text('Wrong: ' + qwrong + ' Right: ' + qright); var i = Math.floor(Math.random() * 4), quizSet = getQuizSet(), pos = quizSet.length, nidx = getUniqueRnd([], pos), aidx = []; aidx[0] = getUniqueRnd([nidx], pos); aidx[1] = getUniqueRnd([nidx, aidx[0]], pos); aidx[2] = getUniqueRnd([nidx, aidx[0], aidx[1]], pos); $('#quizquestion').text(getQA(quizSet, true, nidx)); $('#answer1').prop('value', getQA(quizSet, false, i === 0 ? nidx : aidx[0])); $('#answer2').prop('value', getQA(quizSet, false, i === 1 ? nidx : aidx[i > 1 ? 1 : 0])); $('#answer3').prop('value', getQA(quizSet, false, i === 2 ? nidx : aidx[i > 2 ? 2 : 1])); $('#answer4').prop('value', getQA(quizSet, false, i === 3 ? nidx : aidx[2])); }", _
+            "function verifyAnswer(ctl) { $(ctl).prop('value') === ($('#translitscheme').val() === '0' ? transliterateToPlainRoman($('#quizquestion').text().trim()) : doTransliterate($('#quizquestion').text().trim(), true, $('#translitscheme').val() === '2')) ? qright++ : qwrong++; nextQuestion(); }"}
+        JSList.AddRange(Arabic.PlainTransliterateGenJS)
+        JSList.AddRange(Arabic.TransliterateGenJS)
+        Return JSList.ToArray()
     End Function
 End Class
 Public Class TanzilReader
