@@ -2069,7 +2069,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="gariyb {loqur&apos;|n" id="UnusualQuranicTerms"></word>
 			<word text="majaAz {loqur&apos;|n" id="QuranicMetaphor"></word>
 			<word text="&gt;ahlu {lokitaAb" id="PeopleOfTheBook"></word>
-			<word text="manaAhij {lotafsiyr" id="MethodologyOfQuranicInterpretation"></word>
+			<word text="manaAhij {lotafosiyr" id="MethodologyOfQuranicInterpretation"></word>
 			<word text="haAlatul janabap" id="StateofMajorRitualImpurity"></word>
 			<word text="TaAharapu {loxabav" id=""></word>
 			<word text="TaAharapu {loHadiyv" id=""></word>
@@ -2111,6 +2111,8 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="ta$obiyh SariyH" id="Simile"></word>
 			<word text="jawaAb {loqasam" id="ConditionOfOath"></word>
 			<word text="&gt;aqosimu bi{ll~`hi" id="ISwearByAllah"></word>
+			<word text="{loqiyaAs {l&gt;awolaA" id="StrongerReasonArgument"></word>
+			<word text="i$aAriy tafosiyr" id="CommentaryByContemplation"></word>
 		</category>
 		<category title="IslamicWords">
 			<word text="{ll~`h" id="Allah"></word>
@@ -2299,7 +2301,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="{l&gt;amin" id="PeaceSecure"></word>
 			<word text="fawaAtiH" id="Openers"></word>
 			<word text="&lt;istgfaAr" id="AskForgiveness"></word>
-			<word text="tafsiyr" id="Commentary"></word>
+			<word text="tafosiyr" id="Commentary"></word>
 			<word text="qiraA&apos;|t" id="Recitations"></word>
 			<word text="mujaw~ad" id="MelodicRecitation"></word>
 			<word text="murat~al" id="SlowPracticeRecitation"></word>
@@ -3525,6 +3527,23 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<verse chapter="21" startverse="22"></verse>
 			<verse chapter="75" startverse="36" endverse="40"></verse>
 			<verse chapter="30" startverse="27"></verse>
+			<verse chapter="3" startverse="190" endverse="191"></verse>
+			<verse chapter="51" startverse="20" endverse="21"></verse>
+			<verse chapter="41" startverse="53"></verse>
+			<verse chapter="28" startverse="71" endverse="72"></verse>
+			<verse chapter="56" startverse="58" endverse="59"></verse>
+			<verse chapter="56" startverse="68" endverse="69"></verse>
+			<verse chapter="52" startverse="35"></verse>
+			<verse chapter="6" startverse="143" endverse="144"></verse>
+			<verse chapter="50" startverse="15"></verse>
+			<verse chapter="36" startverse="81"></verse>
+			<verse chapter="7" startverse="57"></verse>
+			<verse chapter="36" startverse="79" endverse="80"></verse>
+			<verse chapter="45" startverse="21" endverse="22"></verse>
+			<verse chapter="6" startverse="91"></verse>
+			<verse chapter="6" startverse="100" endverse="101"></verse>
+			<verse chapter="6" startverse="74" endverse="83"></verse>
+			<verse chapter="17" startverse="42"></verse>
 		</quranselection>
 		<quranselection description="Narrative">
 			<verse chapter="22" startverse="62"></verse>
@@ -3532,6 +3551,25 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<verse chapter="35" startverse="31"></verse>
 			<verse chapter="28" startverse="3"></verse>
 			<verse chapter="12" startverse="111"></verse>
+			<verse chapter="67" startverse="14"></verse>
+			<verse chapter="7" startverse="59"></verse>
+			<verse chapter="7" startverse="65"></verse>
+			<verse chapter="7" startverse="73"></verse>
+			<verse chapter="7" startverse="85"></verse>
+			<verse chapter="11" startverse="49"></verse>
+			<verse chapter="7" startverse="176"></verse>
+			<verse chapter="89" startverse="6" endverse="14"></verse>
+			<verse chapter="21" startverse="74" endverse="75"></verse>
+			<verse chapter="21" startverse="76" endverse="77"></verse>
+			<verse chapter="20" startverse="47" endverse="52"></verse>
+			<verse chapter="26" startverse="16" endverse="37"></verse>
+			<verse chapter="23" startverse="112" endverse="113"></verse>
+			<verse chapter="2" startverse="259"></verse>
+			<verse chapter="23" startverse="50"></verse>
+			<verse chapter="25" startverse="38" endverse="39"></verse>
+			<verse chapter="2" startverse="58" endverse="60"></verse>
+			<verse chapter="12" startverse="45" endverse="46"></verse>
+			<verse chapter="27" startverse="35" endverse="36"></verse>
 		</quranselection>
 		<quranselection description="ReferenceWithoutName">
 			<verse chapter="1" startverse="6"></verse>
