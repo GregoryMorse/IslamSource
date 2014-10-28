@@ -1466,11 +1466,14 @@ Public Class Arabic
     Public Const ArabicRoundedHighStopWithFilledCentre As Char = ChrW(1772)
     Public Const ArabicSmallLowMeem As Char = ChrW(1773)
     Public Const ArabicLetterMark As Char = ChrW(&H61C)
+    Public Const ZeroWidthNonJoiner As Char = ChrW(&H200C)
+    Public Const ZeroWidthJoiner As Char = ChrW(&H200D)
     Public Const LeftToRightMark As Char = ChrW(&H200E)
     Public Const RightToLeftMark As Char = ChrW(&H200F)
     Public Const PopDirectionalFormatting As Char = ChrW(&H202C)
     Public Const LeftToRightOverride As Char = ChrW(&H202D)
     Public Const RightToLeftOverride As Char = ChrW(&H202E)
+    Public Const DottedCircle As Char = ChrW(&H25CC)
     Public Const OrnateLeftParenthesis As Char = ChrW(&HFD3E)
     Public Const OrnateRightParenthesis As Char = ChrW(&HFD3F)
     'http://www.unicode.org/Public/7.0.0/ucd/UnicodeData.txt
@@ -1527,7 +1530,7 @@ Public Class Arabic
         ArabicPlaceOfSajdah, ArabicEmptyCentreLowStop, ArabicEmptyCentreHighStop, _
         ArabicRoundedHighStopWithFilledCentre, ArabicSmallLowMeem}
     Public Shared Function GetRecitationSymbols() As Array()
-        Return Array.ConvertAll(RecitationSymbols, Function(Ch As Char) New Object() {CachedData.IslamData.ArabicLetters(FindLetterBySymbol(Ch)).UnicodeName + " (" + Arabic.FixStartingCombiningSymbol(Ch) + ")", FindLetterBySymbol(Ch)})
+        Return Array.ConvertAll(RecitationSymbols, Function(Ch As Char) New Object() {CachedData.IslamData.ArabicLetters(FindLetterBySymbol(Ch)).UnicodeName + " (" + Arabic.FixStartingCombiningSymbol(Ch) + Arabic.LeftToRightOverride + ")" + Arabic.PopDirectionalFormatting, FindLetterBySymbol(Ch)})
     End Function
     Public Shared RecitationLetters As Char() = {ArabicLetterHamza, ArabicLetterAlefWithHamzaAbove, ArabicLetterWawWithHamzaAbove, _
         ArabicLetterAlefWithHamzaBelow, ArabicLetterYehWithHamzaAbove, _
@@ -1955,8 +1958,10 @@ Public Class Arabic
         New RuleTranslation With {.Rule = "UnrestLetters", .Match = "bounce", .Evaluator = "{0}-{0}"} _
     }
     Public Shared PrefixPattern As String = ""
-    Public Shared CertainStopPattern As String = MakeUniRegEx(ArabicSmallHighMeemInitialForm) + "|" + MakeUniRegEx(ArabicSmallHighLamAlef) + "|" + MakeRegMultiEx(Array.ConvertAll(PunctuationSymbols, Function(Ch As Char) MakeUniRegEx(Ch)))
+    Public Shared CertainStopPattern As String = MakeUniRegEx(ArabicSmallHighMeemInitialForm) + "|" + MakeRegMultiEx(Array.ConvertAll(PunctuationSymbols, Function(Ch As Char) MakeUniRegEx(Ch)))
+    Public Shared CertainNotStopPattern As String = MakeRegMultiEx(Array.ConvertAll(RecitationSymbols, Function(Str As String) MakeUniRegEx(Str)))
     Public Shared OptionalStopPattern As String = MakeUniRegEx(ArabicEndOfAyah) + "|" + MakeUniRegEx(ArabicSmallHighJeem) + "|" + MakeUniRegEx(ArabicSmallHighThreeDots) + "|" + MakeUniRegEx(ArabicSmallHighLigatureQafWithLamWithAlefMaksura) + "|" + MakeUniRegEx(ArabicSmallHighLigatureSadWithLamWithAlefMaksura)
+    Public Shared OptionalNotStopPattern As String = String.Empty
     Public Shared RulesOfRecitationRegEx As RuleMetadataTranslation() = { _
         New RuleMetadataTranslation With {.Rule = "LetterSpelling", .Match = "(^\s*|\s+)(" + MakeRegMultiEx(Array.ConvertAll(ArabicUniqueLetters, Function(Str As String) MakeUniRegEx(TransliterateFromBuckwalter(Str)))) + ")(?=\s*$|\s+)", _
             .Evaluator = New String() {Nothing, "spellletter"}}, _
@@ -2018,13 +2023,13 @@ Public Class Arabic
             .Evaluator = New String() {"empty"}}, _
         New RuleMetadataTranslation With {.Rule = "RoundedHighStopWithFilledCentre", .Match = "(" + MakeUniRegEx(ArabicRoundedHighStopWithFilledCentre) + ")",
             .Evaluator = New String() {"empty"}}, _
-        New RuleMetadataTranslation With {.Rule = "EmptyHamza", .Match = "((?:^|" + CertainStopPattern + "|" + OptionalStopPattern + ")\s*)(" + MakeUniRegEx(ArabicLetterAlefWasla) + ")(?=" + MakeUniRegEx(ArabicLetterLam) + "((" + MakeRegMultiEx(Array.ConvertAll(ArabicSunLetters, Function(Str As String) MakeUniRegEx(Str))) + ")" + MakeUniRegEx(ArabicShadda) + "|" + MakeUniRegEx(ArabicSukun) + "?(" + MakeRegMultiEx(Array.ConvertAll(ArabicMoonLetters, Function(Str As String) MakeUniRegEx(Str))) + ")))",
+        New RuleMetadataTranslation With {.Rule = "EmptyHamza", .Match = "((?:^|" + CertainStopPattern + "|" + OptionalStopPattern + ")\s*)(" + MakeUniRegEx(ArabicLetterAlefWasla) + ")(?=" + MakeUniRegEx(ArabicLetterLam) + "((" + MakeRegMultiEx(Array.ConvertAll(ArabicSunLetters, Function(Str As String) MakeUniRegEx(Str))) + ")?" + MakeUniRegEx(ArabicShadda) + "|" + MakeUniRegEx(ArabicSukun) + "?(" + MakeRegMultiEx(Array.ConvertAll(ArabicMoonLetters, Function(Str As String) MakeUniRegEx(Str))) + "|" + MakeUniRegEx(ArabicLetterAlefWithHamzaAbove) + "|" + MakeUniRegEx(ArabicLetterAlefWithHamzaBelow) + "|" + MakeUniRegEx(ArabicLetterHamza) + "|" + MakeUniRegEx(ArabicTatweel) + MakeUniRegEx(ArabicHamzaAbove) + ")))",
             .Evaluator = New String() {Nothing, "helperfatha"}}, _
         New RuleMetadataTranslation With {.Rule = "EmptyHamza", .Match = "((?:^|" + CertainStopPattern + "|" + OptionalStopPattern + ")\s*)(" + MakeUniRegEx(ArabicLetterAlefWasla) + ")(?=(" + MakeRegMultiEx(Array.ConvertAll(ArabicMoonLetters, Function(Str As String) MakeUniRegEx(Str))) + "|" + MakeRegMultiEx(Array.ConvertAll(ArabicSunLettersNoLam, Function(Str As String) MakeUniRegEx(Str))) + ")(" + MakeUniRegEx(ArabicSukun) + "|" + MakeRegMultiEx(Array.ConvertAll(ArabicFathaDammaKasra, Function(Str As String) MakeUniRegEx(Str))) + ")?" + "(" + MakeRegMultiEx(Array.ConvertAll(ArabicLetters, Function(Str As String) MakeUniRegEx(Str))) + ")(" + MakeUniRegEx(ArabicFatha) + "|" + MakeUniRegEx(ArabicKasra) + ")|" + MakeRegMultiEx(Array.ConvertAll(ArabicWaslKasraExceptions, Function(Str As String) MakeUniRegEx(TransliterateFromBuckwalter(Str)))) + ")",
             .Evaluator = New String() {Nothing, "helperkasra"}}, _
         New RuleMetadataTranslation With {.Rule = "EmptyHamza", .Match = "((?:^|" + CertainStopPattern + "|" + OptionalStopPattern + ")\s*)(" + MakeUniRegEx(ArabicLetterAlefWasla) + ")(?=(" + MakeRegMultiEx(Array.ConvertAll(ArabicLetters, Function(Str As String) MakeUniRegEx(Str))) + ")(" + MakeUniRegEx(ArabicSukun) + "|" + MakeRegMultiEx(Array.ConvertAll(ArabicFathaDammaKasra, Function(Str As String) MakeUniRegEx(Str))) + ")?" + "(" + MakeRegMultiEx(Array.ConvertAll(ArabicLetters, Function(Str As String) MakeUniRegEx(Str))) + ")" + MakeUniRegEx(ArabicDamma) + ")",
             .Evaluator = New String() {Nothing, "helperdamma"}}, _
-        New RuleMetadataTranslation With {.Rule = "EmptyHamza", .Match = "(\S+\s+(?:" + MakeUniRegEx(ArabicLetterWaw) + MakeUniRegEx(ArabicFatha) + "|" + MakeUniRegEx(ArabicLetterBeh) + MakeUniRegEx(ArabicKasra) + "|" + MakeUniRegEx(ArabicLetterTeh) + MakeUniRegEx(ArabicFatha) + "|" + MakeUniRegEx(ArabicLetterKaf) + MakeUniRegEx(ArabicFatha) + "|" + MakeUniRegEx(ArabicLetterLam) + MakeUniRegEx(ArabicKasra) + ")?)(" + MakeUniRegEx(ArabicLetterAlefWasla) + ")",
+        New RuleMetadataTranslation With {.Rule = "EmptyHamza", .Match = "(\S+|" + CertainNotStopPattern + "\s*|" + OptionalNotStopPattern + "\s*)(" + MakeUniRegEx(ArabicLetterAlefWasla) + ")",
             .Evaluator = New String() {Nothing, "empty"}}, _
         New RuleMetadataTranslation With {.Rule = "AssimilateLaamSunLetter", .Match = "((?:^\s*|\s+)(?:" + MakeUniRegEx(ArabicLetterWaw) + MakeUniRegEx(ArabicFatha) + "|" + MakeUniRegEx(ArabicLetterBeh) + MakeUniRegEx(ArabicKasra) + "|" + MakeUniRegEx(ArabicLetterTeh) + MakeUniRegEx(ArabicFatha) + "|" + MakeUniRegEx(ArabicLetterKaf) + MakeUniRegEx(ArabicFatha) + "|" + MakeUniRegEx(ArabicLetterLam) + MakeUniRegEx(ArabicKasra) + ")?" + MakeUniRegEx(ArabicLetterAlefWasla) + ")(" + MakeUniRegEx(ArabicLetterLam) + ")(" + MakeRegMultiEx(Array.ConvertAll(ArabicSunLetters, Function(Str As String) MakeUniRegEx(Str))) + ")(?=" + MakeUniRegEx(ArabicShadda) + ")",
             .Evaluator = New String() {Nothing, "assimilate", "assimilator"}}, _
@@ -2040,18 +2045,20 @@ Public Class Arabic
             .Evaluator = New String() {Nothing, "helpermadda"}}, _
         New RuleMetadataTranslation With {.Rule = "Maddah", .Match = "(" + MakeUniRegEx(ArabicLetterYeh) + "|" + MakeUniRegEx(ArabicSmallYeh) + "|" + MakeUniRegEx(ArabicKasra) + MakeUniRegEx(ArabicLetterAlefMaksura) + ")(" + MakeUniRegEx(ArabicMaddahAbove) + ")", _
             .Evaluator = New String() {Nothing, "permissibleprolong"}}, _
-        New RuleMetadataTranslation With {.Rule = "AlefHamza", .Match = "((?:^|" + CertainStopPattern + "|" + OptionalStopPattern + ")\s*)(" + MakeUniRegEx(ArabicLetterAlefWithHamzaAbove) + "|" + MakeUniRegEx(ArabicLetterAlefWithHamzaBelow) + ")", _
-            .Evaluator = New String() {Nothing, "dividelettersymbol(empty,empty)"}}, _
-        New RuleMetadataTranslation With {.Rule = "AlefHamza", .Match = "(\S\s+(?:" + MakeUniRegEx(ArabicLetterWaw) + MakeUniRegEx(ArabicFatha) + "|" + MakeUniRegEx(ArabicLetterBeh) + MakeUniRegEx(ArabicKasra) + "|" + MakeUniRegEx(ArabicLetterTeh) + MakeUniRegEx(ArabicFatha) + "|" + MakeUniRegEx(ArabicLetterKaf) + MakeUniRegEx(ArabicFatha) + "|" + MakeUniRegEx(ArabicLetterLam) + MakeUniRegEx(ArabicKasra) + ")?)(" + MakeUniRegEx(ArabicLetterAlefWithHamzaAbove) + "|" + MakeUniRegEx(ArabicLetterAlefWithHamzaBelow) + ")", _
-            .Evaluator = New String() {Nothing, "dividelettersymbol(helperalef,helperhamza)"}}, _
-        New RuleMetadataTranslation With {.Rule = "AlefHamza", .Match = "(\S\s+(?!" + MakeUniRegEx(ArabicLetterWaw) + MakeUniRegEx(ArabicFatha) + "|" + MakeUniRegEx(ArabicLetterBeh) + MakeUniRegEx(ArabicKasra) + "|" + MakeUniRegEx(ArabicLetterTeh) + MakeUniRegEx(ArabicFatha) + "|" + MakeUniRegEx(ArabicLetterKaf) + MakeUniRegEx(ArabicFatha) + "|" + MakeUniRegEx(ArabicLetterLam) + MakeUniRegEx(ArabicKasra) + ")\S+)(" + MakeUniRegEx(ArabicLetterAlefWithHamzaAbove) + "|" + MakeUniRegEx(ArabicLetterAlefWithHamzaBelow) + ")", _
-            .Evaluator = New String() {Nothing, "dividelettersymbol(helperalef,helperhamza)"}}, _
+        New RuleMetadataTranslation With {.Rule = "AlefWaslaWawHamza", .Match = "((?:^|" + CertainStopPattern + "|" + OptionalStopPattern + ")\s*" + MakeUniRegEx(ArabicLetterAlefWasla) + ")(" + MakeUniRegEx(ArabicLetterWawWithHamzaAbove) + ")", _
+            .Evaluator = New String() {Nothing, "dividelettersymbol(helperwaw,empty)"}}, _
+        New RuleMetadataTranslation With {.Rule = "AlefWaslaAlefMaksuraHamza", .Match = "((?:^|" + CertainStopPattern + "|" + OptionalStopPattern + ")\s*" + MakeUniRegEx(ArabicLetterAlefWasla) + ")(" + MakeUniRegEx(ArabicLetterYehWithHamzaAbove) + ")", _
+            .Evaluator = New String() {Nothing, "dividelettersymbol(helperyeh,empty)"}}, _
+        New RuleMetadataTranslation With {.Rule = "AlefHamza", .Match = "((?:^|" + CertainStopPattern + "|" + OptionalStopPattern + ")\s*)(" + MakeUniRegEx(ArabicLetterAlefWithHamzaAbove) + "|" + MakeUniRegEx(ArabicLetterAlefWithHamzaBelow) + "|" + MakeUniRegEx(ArabicLetterHamza) + ")", _
+            .Evaluator = New String() {Nothing, "empty"}}, _
+        New RuleMetadataTranslation With {.Rule = "AlefHamza", .Match = "(\S+|" + CertainNotStopPattern + "\s*|" + OptionalNotStopPattern + "\s*)(" + MakeUniRegEx(ArabicLetterAlefWithHamzaAbove) + "|" + MakeUniRegEx(ArabicLetterAlefWithHamzaBelow) + ")", _
+            .Evaluator = New String() {Nothing, "dividelettersymbol(empty,helperhamza)"}}, _
+        New RuleMetadataTranslation With {.Rule = "AlefHamza", .Match = "(\S+|" + CertainNotStopPattern + "\s*|" + OptionalNotStopPattern + "\s*)(" + MakeUniRegEx(ArabicLetterAlefWithHamzaAbove) + "|" + MakeUniRegEx(ArabicLetterAlefWithHamzaBelow) + ")", _
+            .Evaluator = New String() {Nothing, "dividelettersymbol(empty,helperhamza)"}}, _
         New RuleMetadataTranslation With {.Rule = "WawHamzah", .Match = "(" + MakeUniRegEx(ArabicLetterWawWithHamzaAbove) + ")", _
-            .Evaluator = New String() {"dividelettersymbol(helperwaw,helperhamza)"}}, _
-        New RuleMetadataTranslation With {.Rule = "AlefMaksuraHamzah", .Match = "(" + MakeUniRegEx(ArabicKasra) + ")(" + MakeUniRegEx(ArabicLetterYehWithHamzaAbove) + ")", _
-            .Evaluator = New String() {Nothing, "dividelettersymbol(helperyeh,helperhamza)"}}, _
-        New RuleMetadataTranslation With {.Rule = "AlefMaksuraHamzah", .Match = "(" + MakeUniRegEx(ArabicFatha) + MakeUniRegEx(ArabicLetterAlef) + "?|" + MakeUniRegEx(ArabicLetterSuperscriptAlef) + MakeUniRegEx(ArabicMaddahAbove) + ")(" + MakeUniRegEx(ArabicLetterYehWithHamzaAbove) + ")", _
-            .Evaluator = New String() {Nothing, "dividelettersymbol(helperalef,helperhamza)"}}, _
+            .Evaluator = New String() {"dividelettersymbol(empty,helperhamza)"}}, _
+        New RuleMetadataTranslation With {.Rule = "AlefMaksuraHamzah", .Match = "(" + MakeUniRegEx(ArabicKasra) + "|" + MakeUniRegEx(ArabicFatha) + "(?:" + MakeUniRegEx(ArabicLetterAlef) + MakeUniRegEx(ArabicMaddahAbove) + "?)?|" + MakeUniRegEx(ArabicLetterSuperscriptAlef) + MakeUniRegEx(ArabicMaddahAbove) + ")(" + MakeUniRegEx(ArabicLetterYehWithHamzaAbove) + ")", _
+            .Evaluator = New String() {Nothing, "dividelettersymbol(empty,helperhamza)"}}, _
         New RuleMetadataTranslation With {.Rule = "SmallWaw", .Match = "(" + MakeUniRegEx(ArabicSmallWaw) + ")", _
             .Evaluator = New String() {"helperwaw"}}, _
         New RuleMetadataTranslation With {.Rule = "SmallYeh", .Match = "(" + MakeUniRegEx(ArabicSmallYeh) + ")", _
@@ -2066,7 +2073,7 @@ Public Class Arabic
             .Evaluator = New String() {"helpersad"}}, _
         New RuleMetadataTranslation With {.Rule = "DaggerAlef", .Match = "(" + MakeUniRegEx(ArabicLetterSuperscriptAlef) + ")", _
             .Evaluator = New String() {"helperalef"}}, _
-        New RuleMetadataTranslation With {.Rule = "SmallHamza", .Match = "(" + MakeUniRegEx(ArabicHamzaAbove) + "|" + MakeUniRegEx(ArabicHamzaBelow) + ")", _
+        New RuleMetadataTranslation With {.Rule = "SmallHamza", .Match = "(" + MakeUniRegEx(ArabicTatweel) + MakeUniRegEx(ArabicHamzaAbove) + "|" + MakeUniRegEx(ArabicHamzaBelow) + ")", _
             .Evaluator = New String() {"helperhamza"}}, _
         New RuleMetadataTranslation With {.Rule = "FathaAlefMaksura", .Match = "(" + MakeUniRegEx(ArabicFatha) + ")(" + MakeUniRegEx(ArabicLetterAlefMaksura) + ")", _
             .Evaluator = New String() {Nothing, "helperalef"}}, _
@@ -2326,7 +2333,7 @@ Public Class Arabic
         "function isLetterDiacritic(index) { return (" + String.Join("||", Array.ConvertAll(Arabic.RecitationLettersDiacritics, Function(C As Char) "parseInt(arabicLetters[index].Symbol, 10) === 0x" + Hex(AscW(C)))) + "); }", _
         "function isSpecialSymbol(index) { return (" + String.Join("||", Array.ConvertAll(Arabic.RecitationSpecialSymbols, Function(C As Char) "parseInt(arabicLetters[index].Symbol, 10) === 0x" + Hex(AscW(C)))) + "); }", _
         "function isCombiningSymbol(index) { return (" + String.Join("||", Array.ConvertAll(Arabic.RecitationCombiningSymbols, Function(C As Char) "parseInt(arabicLetters[index].Symbol, 10) === 0x" + Hex(AscW(C)))) + "); }", _
-        "function doTransliterate(sVal, direction, conversion) { var iCount, iSubCount, sOutVal = ''; for (iCount = 0; iCount < sVal.length; iCount++) { if (sVal.charAt(iCount) === '\\') { iCount++; if (sVal.charAt(iCount) === ',') { sOutVal += String.fromCharCode(1548); } else { sOutVal += sVal.charAt(iCount); } } else { for (iSubCount = 0; iSubCount < arabicLetters.length; iSubCount++) { if (direction ? sVal.charCodeAt(iCount) === parseInt(arabicLetters[iSubCount].Symbol, 10) : sVal.charAt(iCount) === unescape((conversion ? arabicLetters[iSubCount].TranslitLetter : arabicLetters[iSubCount].RomanTranslit))) { sOutVal += (direction ? (conversion ? arabicLetters[iSubCount].TranslitLetter : arabicLetters[iSubCount].RomanTranslit) : ((isCombiningSymbol(iSubCount) && (iSubCount === 0 || findLetterBySymbol(sOutVal.charCodeAt(sOutVal.length - 1)) === -1 || !isLetterDiacritic(findLetterBySymbol(sOutVal.charCodeAt(sOutVal.length - 1))) && !isSpecialSymbol(findLetterBySymbol(sOutVal.charCodeAt(sOutVal.length - 1))))) ? String.fromCharCode(0x202D) : '') + String.fromCharCode(arabicLetters[iSubCount].Symbol) + ((isCombiningSymbol(iSubCount) && (iSubCount === 0 || findLetterBySymbol(sOutVal.charCodeAt(sOutVal.length - 1)) === -1 || !isLetterDiacritic(findLetterBySymbol(sOutVal.charCodeAt(sOutVal.length - 1))) && !isSpecialSymbol(findLetterBySymbol(sOutVal.charCodeAt(sOutVal.length - 1))))) ? String.fromCharCode(0x202C) : '')); break; } } if (iSubCount === arabicLetters.length) sOutVal += sVal.charAt(iCount); } } return unescape(sOutVal); }"
+        "function doTransliterate(sVal, direction, conversion) { var iCount, iSubCount, sOutVal = ''; for (iCount = 0; iCount < sVal.length; iCount++) { if (sVal.charAt(iCount) === '\\') { iCount++; if (sVal.charAt(iCount) === ',') { sOutVal += String.fromCharCode(1548); } else { sOutVal += sVal.charAt(iCount); } } else { for (iSubCount = 0; iSubCount < arabicLetters.length; iSubCount++) { if (direction ? sVal.charCodeAt(iCount) === parseInt(arabicLetters[iSubCount].Symbol, 10) : sVal.charAt(iCount) === unescape((conversion ? arabicLetters[iSubCount].TranslitLetter : arabicLetters[iSubCount].RomanTranslit))) { sOutVal += (direction ? (conversion ? arabicLetters[iSubCount].TranslitLetter : arabicLetters[iSubCount].RomanTranslit) : ((isCombiningSymbol(iSubCount) && (iSubCount === 0 || findLetterBySymbol(sOutVal.charCodeAt(sOutVal.length - 1)) === -1 || !isLetterDiacritic(findLetterBySymbol(sOutVal.charCodeAt(sOutVal.length - 1))) && !isSpecialSymbol(findLetterBySymbol(sOutVal.charCodeAt(sOutVal.length - 1))))) ? String.fromCharCode(0x202D) + String.fromCharCode(0x25CC) : '') + String.fromCharCode(arabicLetters[iSubCount].Symbol) + ((isCombiningSymbol(iSubCount) && (iSubCount === 0 || findLetterBySymbol(sOutVal.charCodeAt(sOutVal.length - 1)) === -1 || !isLetterDiacritic(findLetterBySymbol(sOutVal.charCodeAt(sOutVal.length - 1))) && !isSpecialSymbol(findLetterBySymbol(sOutVal.charCodeAt(sOutVal.length - 1))))) ? String.fromCharCode(0x202C) : '')); break; } } if (iSubCount === arabicLetters.length) sOutVal += sVal.charAt(iCount); } } return unescape(sOutVal); }"
     }
     Public Shared IsDiacriticJS As String = "function isDiacritic(index) { return (" + String.Join("||", Array.ConvertAll(Arabic.RecitationDiacritics, Function(C As Char) "parseInt(arabicLetters[index].Symbol, 10) === 0x" + Hex(AscW(C)))) + "); }"
     Public Shared DiacriticJS As String() =
@@ -3822,7 +3829,7 @@ Public Class TanzilReader
             Array.Sort(LetterFreqArray, Function(Key As Char, NextKey As Char) CachedData.LetterDictionary.Item(NextKey).Count.CompareTo(CachedData.LetterDictionary.Item(Key).Count))
             For Count As Integer = 0 To LetterFreqArray.Length - 1
                 Total += CachedData.LetterDictionary.Item(LetterFreqArray(Count)).Count
-                Output.Add(New String() {Arabic.GetUnicodeName(LetterFreqArray(Count)) + " ( " + Arabic.FixStartingCombiningSymbol(LetterFreqArray(Count)) + " )", String.Empty, CStr(CachedData.LetterDictionary.Item(LetterFreqArray(Count)).Count), (CDbl(CachedData.LetterDictionary.Item(LetterFreqArray(Count)).Count) * 100 / All).ToString("n2"), (CDbl(Total) * 100 / All).ToString("n2")})
+                Output.Add(New String() {Arabic.LeftToRightMark + Arabic.GetUnicodeName(LetterFreqArray(Count)) + " ( " + Arabic.FixStartingCombiningSymbol(LetterFreqArray(Count)) + Arabic.LeftToRightOverride + " )" + Arabic.PopDirectionalFormatting, String.Empty, CStr(CachedData.LetterDictionary.Item(LetterFreqArray(Count)).Count), (CDbl(CachedData.LetterDictionary.Item(LetterFreqArray(Count)).Count) * 100 / All).ToString("n2"), (CDbl(Total) * 100 / All).ToString("n2")})
             Next
         ElseIf Index = 7 Then
             All = CachedData.TotalIsolatedLetters
@@ -3831,7 +3838,7 @@ Public Class TanzilReader
             Array.Sort(LetterFreqArray, Function(Key As Char, NextKey As Char) CachedData.IsolatedLetterDictionary.Item(NextKey).Count.CompareTo(CachedData.IsolatedLetterDictionary.Item(Key).Count))
             For Count As Integer = 0 To LetterFreqArray.Length - 1
                 Total += CachedData.IsolatedLetterDictionary.Item(LetterFreqArray(Count)).Count
-                Output.Add(New String() {Arabic.GetUnicodeName(LetterFreqArray(Count)) + " ( " + Arabic.FixStartingCombiningSymbol(LetterFreqArray(Count)) + " )", String.Empty, CStr(CachedData.IsolatedLetterDictionary.Item(LetterFreqArray(Count)).Count), (CDbl(CachedData.IsolatedLetterDictionary.Item(LetterFreqArray(Count)).Count) * 100 / All).ToString("n2"), (CDbl(Total) * 100 / All).ToString("n2")})
+                Output.Add(New String() {Arabic.LeftToRightMark + Arabic.GetUnicodeName(LetterFreqArray(Count)) + " ( " + Arabic.FixStartingCombiningSymbol(LetterFreqArray(Count)) + Arabic.LeftToRightOverride + " )" + Arabic.PopDirectionalFormatting, String.Empty, CStr(CachedData.IsolatedLetterDictionary.Item(LetterFreqArray(Count)).Count), (CDbl(CachedData.IsolatedLetterDictionary.Item(LetterFreqArray(Count)).Count) * 100 / All).ToString("n2"), (CDbl(Total) * 100 / All).ToString("n2")})
             Next
         ElseIf Index = 1 Or Index = 9 Or Index = 10 Or Index >= 11 And Index < 11 + CachedData.IslamData.PartsOfSpeech.Length + Arabic.RecitationSymbols.Length Then
             Dim Dict As Generic.Dictionary(Of String, ArrayList)
@@ -4012,12 +4019,12 @@ Public Class TanzilReader
                                       Dict.Add(Str.Chars(0), Str.Chars(1))
                                   End If
                               End Sub)
-        Dim Val As String = Arabic.LeftToRightMark
+        Dim Val As String = Arabic.LeftToRightMark + "Combinations: "
         For Each Key As Char In Dict.Keys
             If Dict.Item(Key).Length > (DiaSymbols.Length + LtrSymbols.Length) / 2 Then
-                Val += Arabic.FixStartingCombiningSymbol(Key) + " [" + String.Join(" ", Array.ConvertAll(New String(Array.FindAll((DiaSymbols + LtrSymbols).ToCharArray(), Function(C As Char) Not Dict.Item(Key).Contains(C))).ToCharArray(), Function(C As Char) Arabic.FixStartingCombiningSymbol(CStr(C)))) + " ]" + vbTab
+                Val += Arabic.FixStartingCombiningSymbol(Key) + Arabic.LeftToRightOverride + " [" + Arabic.PopDirectionalFormatting + String.Join(" ", Array.ConvertAll(New String(Array.FindAll((DiaSymbols + LtrSymbols).ToCharArray(), Function(C As Char) Not Dict.Item(Key).Contains(C))).ToCharArray(), Function(C As Char) Arabic.FixStartingCombiningSymbol(CStr(C)))) + Arabic.LeftToRightOverride + " ]" + Arabic.PopDirectionalFormatting + vbTab
             Else
-                Val += Arabic.FixStartingCombiningSymbol(Key) + " ! [ " + String.Join(" ", Array.ConvertAll(Dict.Item(Key).ToCharArray(), Function(C As Char) Arabic.FixStartingCombiningSymbol(CStr(C)))) + " ]" + vbTab
+                Val += Arabic.FixStartingCombiningSymbol(Key) + Arabic.LeftToRightOverride + " ! [ " + Arabic.PopDirectionalFormatting + String.Join(" ", Array.ConvertAll(Dict.Item(Key).ToCharArray(), Function(C As Char) Arabic.FixStartingCombiningSymbol(CStr(C)))) + Arabic.LeftToRightOverride + " ]" + Arabic.PopDirectionalFormatting + vbTab
             End If
         Next
         Dim RevDict As New Generic.Dictionary(Of Char, String)
@@ -4028,12 +4035,12 @@ Public Class TanzilReader
                                       RevDict.Add(Str.Chars(1), Str.Chars(0))
                                   End If
                               End Sub)
-        Dim RevVal As String = Arabic.LeftToRightMark
-        For Each Key As Char In Dict.Keys
+        Dim RevVal As String = Arabic.LeftToRightMark + "Reverse Combinations: "
+        For Each Key As Char In RevDict.Keys
             If RevDict.Item(Key).Length > (DiaSymbols.Length + LtrSymbols.Length) / 2 Then
-                RevVal += "[" + String.Join(" ", Array.ConvertAll(New String(Array.FindAll((DiaSymbols + LtrSymbols).ToCharArray(), Function(C As Char) Not RevDict.Item(Key).Contains(C))).ToCharArray(), Function(C As Char) Arabic.FixStartingCombiningSymbol(CStr(C)))) + " ] " + Arabic.FixStartingCombiningSymbol(Key) + vbTab
+                RevVal += Arabic.LeftToRightOverride + "[" + Arabic.PopDirectionalFormatting + String.Join(" ", Array.ConvertAll(New String(Array.FindAll((DiaSymbols + LtrSymbols).ToCharArray(), Function(C As Char) Not RevDict.Item(Key).Contains(C))).ToCharArray(), Function(C As Char) Arabic.FixStartingCombiningSymbol(CStr(C)))) + Arabic.LeftToRightOverride + " ] " + Arabic.PopDirectionalFormatting + Arabic.FixStartingCombiningSymbol(Key) + vbTab
             Else
-                RevVal += "! [ " + String.Join(" ", Array.ConvertAll(RevDict.Item(Key).ToCharArray(), Function(C As Char) Arabic.FixStartingCombiningSymbol(CStr(C)))) + " ] " + Arabic.FixStartingCombiningSymbol(Key) + vbTab
+                RevVal += Arabic.LeftToRightOverride + "! [ " + Arabic.PopDirectionalFormatting + String.Join(" ", Array.ConvertAll(RevDict.Item(Key).ToCharArray(), Function(C As Char) Arabic.FixStartingCombiningSymbol(CStr(C)))) + Arabic.LeftToRightOverride + " ] " + Arabic.PopDirectionalFormatting + Arabic.FixStartingCombiningSymbol(Key) + vbTab
             End If
         Next
         Dim DiaDict As New Generic.Dictionary(Of Char, String)
@@ -4044,12 +4051,12 @@ Public Class TanzilReader
                                          DiaDict.Add(Str.Chars(0), Str.Chars(1))
                                      End If
                                  End Sub)
-        Dim DiaVal As String = Arabic.LeftToRightMark
+        Dim DiaVal As String = Arabic.LeftToRightMark + "Diacritic Only Combinations: "
         For Each Key As Char In DiaDict.Keys
             If DiaDict.Item(Key).Length > DiaSymbols.Length / 2 Then
-                DiaVal += Arabic.FixStartingCombiningSymbol(Key) + " [" + String.Join(" ", Array.ConvertAll(New String(Array.FindAll(DiaSymbols.ToCharArray(), Function(C As Char) Not DiaDict.Item(Key).Contains(C))).ToCharArray(), Function(C As Char) Arabic.FixStartingCombiningSymbol(CStr(C)))) + " ]" + vbTab
+                DiaVal += Arabic.FixStartingCombiningSymbol(Key) + Arabic.LeftToRightOverride + " [" + Arabic.PopDirectionalFormatting + String.Join(" ", Array.ConvertAll(New String(Array.FindAll(DiaSymbols.ToCharArray(), Function(C As Char) Not DiaDict.Item(Key).Contains(C))).ToCharArray(), Function(C As Char) Arabic.FixStartingCombiningSymbol(CStr(C)))) + Arabic.LeftToRightOverride + " ]" + Arabic.PopDirectionalFormatting + vbTab
             Else
-                DiaVal += Arabic.FixStartingCombiningSymbol(Key) + " ! [ " + String.Join(" ", Array.ConvertAll(DiaDict.Item(Key).ToCharArray(), Function(C As Char) Arabic.FixStartingCombiningSymbol(CStr(C)))) + " ]" + vbTab
+                DiaVal += Arabic.FixStartingCombiningSymbol(Key) + Arabic.LeftToRightOverride + " ! [ " + Arabic.PopDirectionalFormatting + String.Join(" ", Array.ConvertAll(DiaDict.Item(Key).ToCharArray(), Function(C As Char) Arabic.FixStartingCombiningSymbol(CStr(C)))) + Arabic.LeftToRightOverride + " ]" + Arabic.PopDirectionalFormatting + vbTab
             End If
         Next
         Dim LetDict As New Generic.Dictionary(Of Char, String)
@@ -4060,12 +4067,12 @@ Public Class TanzilReader
                                          LetDict.Add(Str.Chars(0), Str.Chars(1))
                                      End If
                                  End Sub)
-        Dim LetVal As String = Arabic.LeftToRightMark
+        Dim LetVal As String = Arabic.LeftToRightMark + "Letter Only Combinations: "
         For Each Key As Char In LetDict.Keys
             If LetDict.Item(Key).Length > LtrSymbols.Length / 2 Then
-                LetVal += Arabic.FixStartingCombiningSymbol(Key) + " [" + String.Join(" ", Array.ConvertAll(New String(Array.FindAll(LtrSymbols.ToCharArray(), Function(C As Char) Not LetDict.Item(Key).Contains(C))).ToCharArray(), Function(C As Char) Arabic.FixStartingCombiningSymbol(CStr(C)))) + " ]" + vbTab
+                LetVal += Arabic.FixStartingCombiningSymbol(Key) + Arabic.LeftToRightOverride + " [" + Arabic.PopDirectionalFormatting + String.Join(" ", Array.ConvertAll(New String(Array.FindAll(LtrSymbols.ToCharArray(), Function(C As Char) Not LetDict.Item(Key).Contains(C))).ToCharArray(), Function(C As Char) Arabic.FixStartingCombiningSymbol(CStr(C)))) + Arabic.LeftToRightOverride + " ]" + Arabic.PopDirectionalFormatting + vbTab
             Else
-                LetVal += Arabic.FixStartingCombiningSymbol(Key) + " ! [ " + String.Join(" ", Array.ConvertAll(LetDict.Item(Key).ToCharArray(), Function(C As Char) Arabic.FixStartingCombiningSymbol(CStr(C)))) + " ]" + vbTab
+                LetVal += Arabic.FixStartingCombiningSymbol(Key) + Arabic.LeftToRightOverride + " ! [ " + Arabic.PopDirectionalFormatting + String.Join(" ", Array.ConvertAll(LetDict.Item(Key).ToCharArray(), Function(C As Char) Arabic.FixStartingCombiningSymbol(CStr(C)))) + Arabic.LeftToRightOverride + " ]" + Arabic.PopDirectionalFormatting + vbTab
             End If
         Next
         Dim LetRevDict As New Generic.Dictionary(Of Char, String)
@@ -4076,12 +4083,12 @@ Public Class TanzilReader
                                          LetRevDict.Add(Str.Chars(1), Str.Chars(0))
                                      End If
                                  End Sub)
-        Dim LetRevVal As String = Arabic.LeftToRightMark
+        Dim LetRevVal As String = Arabic.LeftToRightMark + "Reverse Letter Only Combinations: "
         For Each Key As Char In LetRevDict.Keys
             If LetRevDict.Item(Key).Length > LtrSymbols.Length / 2 Then
-                LetRevVal += "[" + String.Join(" ", Array.ConvertAll(New String(Array.FindAll(LtrSymbols.ToCharArray(), Function(C As Char) Not LetRevDict.Item(Key).Contains(C))).ToCharArray(), Function(C As Char) Arabic.FixStartingCombiningSymbol(CStr(C)))) + " ] " + Arabic.FixStartingCombiningSymbol(Key) + vbTab
+                LetRevVal += Arabic.LeftToRightOverride + "[" + Arabic.PopDirectionalFormatting + String.Join(" ", Array.ConvertAll(New String(Array.FindAll(LtrSymbols.ToCharArray(), Function(C As Char) Not LetRevDict.Item(Key).Contains(C))).ToCharArray(), Function(C As Char) Arabic.FixStartingCombiningSymbol(CStr(C)))) + Arabic.LeftToRightOverride + " ] " + Arabic.PopDirectionalFormatting + Arabic.FixStartingCombiningSymbol(Key) + vbTab
             Else
-                LetRevVal += "! [ " + String.Join(" ", Array.ConvertAll(LetRevDict.Item(Key).ToCharArray(), Function(C As Char) Arabic.FixStartingCombiningSymbol(CStr(C)))) + " ] " + Arabic.FixStartingCombiningSymbol(Key) + vbTab
+                LetRevVal += Arabic.LeftToRightOverride + "! [ " + Arabic.PopDirectionalFormatting + String.Join(" ", Array.ConvertAll(LetRevDict.Item(Key).ToCharArray(), Function(C As Char) Arabic.FixStartingCombiningSymbol(CStr(C)))) + Arabic.LeftToRightOverride + " ] " + Arabic.PopDirectionalFormatting + Arabic.FixStartingCombiningSymbol(Key) + vbTab
             End If
         Next
         Dim StartMulti As String = " "
@@ -4096,19 +4103,19 @@ Public Class TanzilReader
         For Each Key As String In MiddleWordMultiOnly.Keys
             MiddleMulti += Key + " "
         Next
-        Return {Arabic.LeftToRightMark + "[" + StartMulti + "]", _
-                Arabic.LeftToRightMark + "[" + EndMulti + "]", _
-                Arabic.LeftToRightMark + "[" + MiddleMulti + "]", _
-                Arabic.LeftToRightMark + "[" + String.Join(" ", Array.ConvertAll(StartWordOnly.ToCharArray(), Function(C As Char) Arabic.FixStartingCombiningSymbol(CStr(C)))) + "]", _
-                Arabic.LeftToRightMark + "[" + String.Join(" ", Array.ConvertAll(NotStartWord.ToCharArray(), Function(C As Char) Arabic.FixStartingCombiningSymbol(CStr(C)))) + "]", _
-                Arabic.LeftToRightMark + "[" + String.Join(" ", Array.ConvertAll(EndWordOnly.ToCharArray(), Function(C As Char) Arabic.FixStartingCombiningSymbol(CStr(C)))) + "]", _
-                Arabic.LeftToRightMark + "[" + String.Join(" ", Array.ConvertAll(NotEndWord.ToCharArray(), Function(C As Char) Arabic.FixStartingCombiningSymbol(CStr(C)))) + "]", _
-                Arabic.LeftToRightMark + "[" + String.Join(" ", Array.ConvertAll(EndWordOnlyNoDia.ToCharArray(), Function(C As Char) Arabic.FixStartingCombiningSymbol(CStr(C)))) + "]", _
-                Arabic.LeftToRightMark + "[" + String.Join(" ", Array.ConvertAll(NotEndWordNoDia.ToCharArray(), Function(C As Char) Arabic.FixStartingCombiningSymbol(CStr(C)))) + "]", _
-                Arabic.LeftToRightMark + "[" + String.Join(" ", Array.ConvertAll(MiddleWordOnly.ToCharArray(), Function(C As Char) Arabic.FixStartingCombiningSymbol(CStr(C)))) + "]", _
-                Arabic.LeftToRightMark + "[" + String.Join(" ", Array.ConvertAll(NotMiddleWord.ToCharArray(), Function(C As Char) Arabic.FixStartingCombiningSymbol(CStr(C)))) + "]", _
-                Arabic.LeftToRightMark + "[" + String.Join(" ", Array.ConvertAll(MiddleWordOnlyNoDia.ToCharArray(), Function(C As Char) Arabic.FixStartingCombiningSymbol(CStr(C)))) + "]", _
-                Arabic.LeftToRightMark + "[" + String.Join(" ", Array.ConvertAll(NotMiddleWordNoDia.ToCharArray(), Function(C As Char) Arabic.FixStartingCombiningSymbol(CStr(C)))) + "]", _
+        Return {Arabic.LeftToRightMark + "Unique Prefix: [" + StartMulti + Arabic.LeftToRightOverride + "]" + Arabic.PopDirectionalFormatting, _
+                Arabic.LeftToRightMark + "Unique Suffix: [" + EndMulti + Arabic.LeftToRightOverride + "]" + Arabic.PopDirectionalFormatting, _
+                Arabic.LeftToRightMark + "Unique Middle: [" + MiddleMulti + Arabic.LeftToRightOverride + "]" + Arabic.PopDirectionalFormatting, _
+                Arabic.LeftToRightMark + "Start Only: [" + String.Join(" ", Array.ConvertAll(StartWordOnly.ToCharArray(), Function(C As Char) Arabic.FixStartingCombiningSymbol(CStr(C)))) + Arabic.LeftToRightOverride + "]" + Arabic.PopDirectionalFormatting, _
+                Arabic.LeftToRightMark + "Not Start: [" + String.Join(" ", Array.ConvertAll(NotStartWord.ToCharArray(), Function(C As Char) Arabic.FixStartingCombiningSymbol(CStr(C)))) + Arabic.LeftToRightOverride + "]" + Arabic.PopDirectionalFormatting, _
+                Arabic.LeftToRightMark + "End Only: [" + String.Join(" ", Array.ConvertAll(EndWordOnly.ToCharArray(), Function(C As Char) Arabic.FixStartingCombiningSymbol(CStr(C)))) + Arabic.LeftToRightOverride + "]" + Arabic.PopDirectionalFormatting, _
+                Arabic.LeftToRightMark + "Not End: [" + String.Join(" ", Array.ConvertAll(NotEndWord.ToCharArray(), Function(C As Char) Arabic.FixStartingCombiningSymbol(CStr(C)))) + Arabic.LeftToRightOverride + "]" + Arabic.PopDirectionalFormatting, _
+                Arabic.LeftToRightMark + "End Only No Diacritics: [" + String.Join(" ", Array.ConvertAll(EndWordOnlyNoDia.ToCharArray(), Function(C As Char) Arabic.FixStartingCombiningSymbol(CStr(C)))) + Arabic.LeftToRightOverride + "]" + Arabic.PopDirectionalFormatting, _
+                Arabic.LeftToRightMark + "Not End No Diacritics: [" + String.Join(" ", Array.ConvertAll(NotEndWordNoDia.ToCharArray(), Function(C As Char) Arabic.FixStartingCombiningSymbol(CStr(C)))) + Arabic.LeftToRightOverride + "]" + Arabic.PopDirectionalFormatting, _
+                Arabic.LeftToRightMark + "Middle Only: [" + String.Join(" ", Array.ConvertAll(MiddleWordOnly.ToCharArray(), Function(C As Char) Arabic.FixStartingCombiningSymbol(CStr(C)))) + Arabic.LeftToRightOverride + "]" + Arabic.PopDirectionalFormatting, _
+                Arabic.LeftToRightMark + "Not Middle: [" + String.Join(" ", Array.ConvertAll(NotMiddleWord.ToCharArray(), Function(C As Char) Arabic.FixStartingCombiningSymbol(CStr(C)))) + Arabic.LeftToRightOverride + "]" + Arabic.PopDirectionalFormatting, _
+                Arabic.LeftToRightMark + "Middle Only No Diacritics: [" + String.Join(" ", Array.ConvertAll(MiddleWordOnlyNoDia.ToCharArray(), Function(C As Char) Arabic.FixStartingCombiningSymbol(CStr(C)))) + Arabic.LeftToRightOverride + "]" + Arabic.PopDirectionalFormatting, _
+                Arabic.LeftToRightMark + "Not Middle No Diacritics: [" + String.Join(" ", Array.ConvertAll(NotMiddleWordNoDia.ToCharArray(), Function(C As Char) Arabic.FixStartingCombiningSymbol(CStr(C)))) + Arabic.LeftToRightOverride + "]" + Arabic.PopDirectionalFormatting, _
                 Val, RevVal, DiaVal, LetVal, LetRevVal}
     End Function
     Public Shared Function GetSelectionNames() As Array()
