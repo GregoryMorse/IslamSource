@@ -3827,7 +3827,7 @@ Public Class TanzilReader
         ElseIf Index >= 11 + CachedData.IslamData.PartsOfSpeech.Length And Index < 11 + CachedData.IslamData.PartsOfSpeech.Length + Arabic.RecitationSymbols.Length Then
             Return CStr(CachedData.LetterDictionary.Item(Arabic.RecitationSymbols(Index - 11 - CachedData.IslamData.PartsOfSpeech.Length)).Count)
         ElseIf Index >= 11 + CachedData.IslamData.PartsOfSpeech.Length + Arabic.RecitationSymbols.Length And Index < 11 + CachedData.IslamData.PartsOfSpeech.Length + Arabic.RecitationSymbols.Length + Arabic.RecitationSymbols.Length Then
-            Return CStr(CachedData.LetterPreDictionary.Item(Arabic.RecitationSymbols(Index - 11 - CachedData.IslamData.PartsOfSpeech.Length)).Count - Arabic.RecitationSymbols.Length)
+            Return CStr(CachedData.LetterPreDictionary.Item(Arabic.RecitationSymbols(Index - 11 - CachedData.IslamData.PartsOfSpeech.Length - Arabic.RecitationSymbols.Length)).Count)
         Else
             Return String.Empty
         End If
