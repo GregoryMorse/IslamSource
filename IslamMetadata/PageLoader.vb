@@ -1544,6 +1544,10 @@ Public Class Arabic
     Public Shared RecitationDiacritics As Char() = {ArabicFathatan, ArabicDammatan, ArabicKasratan, _
         ArabicFatha, ArabicDamma, ArabicKasra, ArabicShadda, ArabicSukun, ArabicMaddahAbove, _
         ArabicHamzaAbove, ArabicLetterSuperscriptAlef}
+    Public Shared RecitationAlefs As Char() = {ArabicLetterAlefWithHamzaAbove, ArabicLetterAlefWithHamzaBelow, ArabicLetterAlef, _
+                        ArabicLetterAlefWithMaddaAbove, ArabicLetterAlefMaksura, ArabicLetterAlefWasla, ArabicLetterSuperscriptAlef}
+    Public Shared RecitationHamzas As Char() = {ArabicLetterAlefWithHamzaAbove, ArabicLetterAlefWithHamzaBelow, ArabicLetterWawWithHamzaAbove, _
+                        ArabicLetterYehWithHamzaAbove, ArabicLetterHamza, ArabicHamzaAbove}
     Public Shared RecitationSpecialSymbols As Char() = {ArabicSmallHighLigatureSadWithLamWithAlefMaksura, _
         ArabicSmallHighLigatureQafWithLamWithAlefMaksura, ArabicSmallHighMeemInitialForm, _
         ArabicSmallHighLamAlef, ArabicSmallHighJeem, ArabicSmallHighThreeDots, _
@@ -1832,7 +1836,7 @@ Public Class Arabic
                                     .Evaluator = "$&"}, _
         New RuleTranslation With {.Rule = "OnlyAtStartOfWord", .Match = "(?:\S)" + MakeUniRegEx(ArabicLetterAlefWasla), _
                                     .Evaluator = "$&"}, _
-        New RuleTranslation With {.Rule = "NotValidCombination", .Match = MakeUniRegEx(ArabicDamma) + MakeUniRegEx(ArabicLetterYeh) + "|" + MakeUniRegEx(ArabicKasra) + MakeUniRegEx(ArabicLetterWaw), _
+        New RuleTranslation With {.Rule = "NotValidCombination", .Match = MakeUniRegEx(ArabicLetterAlefWasla) + "(" + MakeRegMultiEx(Array.ConvertAll(RecitationDiacritics, Function(Str As String) MakeUniRegEx(Str))) + "|" + MakeUniRegEx(ArabicLetterWaw) + "|" + MakeUniRegEx(ArabicLetterYeh) + "|" + MakeUniRegEx(ArabicTatweel) + "|" + MakeRegMultiEx(Array.ConvertAll(RecitationAlefs, Function(Str As String) MakeUniRegEx(Str))) + ")|(" + MakeUniRegEx(ArabicTatweel) + "|" + MakeRegMultiEx(Array.ConvertAll(RecitationAlefs, Function(Str As String) MakeUniRegEx(Str))) + ")" + MakeUniRegEx(ArabicFathatan) + "|" + MakeUniRegEx(ArabicLetterAlef), _
                                     .Evaluator = "$&"}, _
         New RuleTranslation With {.Rule = "NeedsRecomposition", .Match = "(" + MakeUniRegEx(ArabicLetterAlef) + MakeUniRegEx(ArabicMaddahAbove) + "|" + MakeUniRegEx(ArabicLetterHamza) + MakeUniRegEx(ArabicFatha) + MakeUniRegEx(ArabicLetterAlef) + "|" + MakeUniRegEx(ArabicLetterAlef) + MakeUniRegEx(ArabicLetterHamza) + "|" + MakeUniRegEx(ArabicLetterWaw) + MakeUniRegEx(ArabicLetterHamza) + "|" + MakeUniRegEx(ArabicLetterAlefMaksura) + MakeUniRegEx(ArabicLetterHamza) + ")", _
                                     .Evaluator = "$&"}
@@ -3277,6 +3281,7 @@ Public Class CachedData
     Shared _TagDictionary As New Generic.Dictionary(Of String, Generic.Dictionary(Of String, ArrayList))
     Shared _WordDictionary As New Generic.Dictionary(Of String, ArrayList)
     Shared _LetterDictionary As New Generic.Dictionary(Of Char, Generic.Dictionary(Of String, ArrayList))
+    Shared _LetterPreDictionary As New Generic.Dictionary(Of Char, Generic.Dictionary(Of String, ArrayList))
     Shared _PreDictionary As New Generic.Dictionary(Of String, ArrayList)
     Shared _SufDictionary As New Generic.Dictionary(Of String, ArrayList)
     Shared _IsolatedLetterDictionary As New Generic.Dictionary(Of Char, ArrayList)
@@ -3408,6 +3413,9 @@ Public Class CachedData
                     If Not _LetterDictionary.ContainsKey(Verses(Count)(SubCount)(LetCount)) Then
                         _LetterDictionary.Add(Verses(Count)(SubCount)(LetCount), New Dictionary(Of String, ArrayList))
                     End If
+                    If Not _LetterPreDictionary.ContainsKey(Verses(Count)(SubCount)(LetCount)) Then
+                        _LetterPreDictionary.Add(Verses(Count)(SubCount)(LetCount), New Dictionary(Of String, ArrayList))
+                    End If
                     Dim PrevIndex As Integer = Verses(Count)(SubCount).LastIndexOf(" "c, LetCount) + If(Verses(Count)(SubCount)(LetCount) = " ", 0, 1)
                     Dim NextIndex As Integer = Verses(Count)(SubCount).IndexOf(" "c, LetCount)
                     If NextIndex = -1 Then NextIndex = Verses(Count)(SubCount).Length
@@ -3415,6 +3423,10 @@ Public Class CachedData
                         _LetterDictionary.Item(Verses(Count)(SubCount)(LetCount)).Add(Verses(Count)(SubCount).Substring(PrevIndex, NextIndex - PrevIndex), New ArrayList)
                     End If
                     _LetterDictionary.Item(Verses(Count)(SubCount)(LetCount))(Verses(Count)(SubCount).Substring(PrevIndex, NextIndex - PrevIndex)).Add(New Integer() {Count, SubCount, LetCount})
+                    If Not _LetterPreDictionary.Item(Verses(Count)(SubCount)(LetCount)).ContainsKey(Verses(Count)(SubCount).Substring(PrevIndex, LetCount - PrevIndex)) Then
+                        _LetterPreDictionary.Item(Verses(Count)(SubCount)(LetCount)).Add(Verses(Count)(SubCount).Substring(PrevIndex, LetCount - PrevIndex), New ArrayList)
+                    End If
+                    _LetterPreDictionary.Item(Verses(Count)(SubCount)(LetCount))(Verses(Count)(SubCount).Substring(PrevIndex, LetCount - PrevIndex)).Add(New Integer() {Count, SubCount, LetCount})
                     If LetCount <> 0 AndAlso LetCount <> Verses(Count)(SubCount).Length - 1 AndAlso _
                         Char.IsWhiteSpace(Verses(Count)(SubCount)(LetCount - 1)) AndAlso Char.IsWhiteSpace(Verses(Count)(SubCount)(LetCount + 1)) Then
                         _TotalIsolatedLetters += 1
@@ -3497,6 +3509,12 @@ Public Class CachedData
         Get
             If _LetterDictionary.Keys.Count = 0 Then BuildQuranLetterIndex()
             Return _LetterDictionary
+        End Get
+    End Property
+    Public Shared ReadOnly Property LetterPreDictionary As Generic.Dictionary(Of Char, Generic.Dictionary(Of String, ArrayList))
+        Get
+            If _LetterPreDictionary.Keys.Count = 0 Then BuildQuranLetterIndex()
+            Return _LetterPreDictionary
         End Get
     End Property
     Public Shared ReadOnly Property PreDictionary As Generic.Dictionary(Of String, ArrayList)
@@ -3767,6 +3785,7 @@ Public Class TanzilReader
         Dim Parts As New Generic.List(Of String) From {Utility.LoadResourceString("IslamInfo_Letters"), Utility.LoadResourceString("IslamInfo_Words"), Utility.LoadResourceString("IslamInfo_UniqueWords"), Utility.LoadResourceString("IslamInfo_UniqueWordsPerPart"), Utility.LoadResourceString("IslamInfo_WordsPerPart"), Utility.LoadResourceString("IslamInfo_UniqueWordsPerStation"), Utility.LoadResourceString("IslamInfo_WordsPerStation"), Utility.LoadResourceString("IslamInfo_IsolatedLetters"), Utility.LoadResourceString("IslamInfo_LetterPatterns"), Utility.LoadResourceString("IslamInfo_Prefix"), Utility.LoadResourceString("IslamInfo_Suffix")}
         Parts.AddRange(Array.ConvertAll(CachedData.IslamData.PartsOfSpeech, Function(POS As IslamData.PartOfSpeechInfo) Utility.LoadResourceString("IslamInfo_" + POS.Id)))
         Parts.AddRange(Array.ConvertAll(Arabic.RecitationSymbols, Function(Sym As String) Arabic.GetUnicodeName(Sym)))
+        Parts.AddRange(Array.ConvertAll(Arabic.RecitationSymbols, Function(Sym As String) "Prefix of: " + Arabic.GetUnicodeName(Sym)))
         Return Parts.ToArray()
     End Function
     Public Shared Function GetQuranWordTotalNumber() As Integer
@@ -3807,6 +3826,8 @@ Public Class TanzilReader
             Return CStr(CachedData.TagDictionary.Item(CachedData.IslamData.PartsOfSpeech(Index - 11).Symbol).Count)
         ElseIf Index >= 11 + CachedData.IslamData.PartsOfSpeech.Length And Index < 11 + CachedData.IslamData.PartsOfSpeech.Length + Arabic.RecitationSymbols.Length Then
             Return CStr(CachedData.LetterDictionary.Item(Arabic.RecitationSymbols(Index - 11 - CachedData.IslamData.PartsOfSpeech.Length)).Count)
+        ElseIf Index >= 11 + CachedData.IslamData.PartsOfSpeech.Length + Arabic.RecitationSymbols.Length And Index < 11 + CachedData.IslamData.PartsOfSpeech.Length + Arabic.RecitationSymbols.Length + Arabic.RecitationSymbols.Length Then
+            Return CStr(CachedData.LetterPreDictionary.Item(Arabic.RecitationSymbols(Index - 11 - CachedData.IslamData.PartsOfSpeech.Length)).Count - Arabic.RecitationSymbols.Length)
         Else
             Return String.Empty
         End If
@@ -3840,7 +3861,7 @@ Public Class TanzilReader
                 Total += CachedData.IsolatedLetterDictionary.Item(LetterFreqArray(Count)).Count
                 Output.Add(New String() {Arabic.LeftToRightMark + Arabic.GetUnicodeName(LetterFreqArray(Count)) + " ( " + Arabic.FixStartingCombiningSymbol(LetterFreqArray(Count)) + Arabic.LeftToRightOverride + " )" + Arabic.PopDirectionalFormatting, String.Empty, CStr(CachedData.IsolatedLetterDictionary.Item(LetterFreqArray(Count)).Count), (CDbl(CachedData.IsolatedLetterDictionary.Item(LetterFreqArray(Count)).Count) * 100 / All).ToString("n2"), (CDbl(Total) * 100 / All).ToString("n2")})
             Next
-        ElseIf Index = 1 Or Index = 9 Or Index = 10 Or Index >= 11 And Index < 11 + CachedData.IslamData.PartsOfSpeech.Length + Arabic.RecitationSymbols.Length Then
+        ElseIf Index = 1 Or Index = 9 Or Index = 10 Or Index >= 11 And Index < 11 + CachedData.IslamData.PartsOfSpeech.Length + Arabic.RecitationSymbols.Length + Arabic.RecitationSymbols.Length Then
             Dim Dict As Generic.Dictionary(Of String, ArrayList)
             If Index = 1 Then
                 Dict = CachedData.WordDictionary
@@ -3852,6 +3873,8 @@ Public Class TanzilReader
                 Dict = CachedData.TagDictionary(CachedData.IslamData.PartsOfSpeech(Index - 11).Symbol)
             ElseIf Index >= 11 + CachedData.IslamData.PartsOfSpeech.Length And Index < 11 + CachedData.IslamData.PartsOfSpeech.Length + Arabic.RecitationSymbols.Length Then
                 Dict = CachedData.LetterDictionary(Arabic.RecitationSymbols(Index - 11 - CachedData.IslamData.PartsOfSpeech.Length))
+            ElseIf Index >= 11 + CachedData.IslamData.PartsOfSpeech.Length + Arabic.RecitationSymbols.Length And Index < 11 + CachedData.IslamData.PartsOfSpeech.Length + Arabic.RecitationSymbols.Length + Arabic.RecitationSymbols.Length Then
+                Dict = CachedData.LetterPreDictionary(Arabic.RecitationSymbols(Index - 11 - CachedData.IslamData.PartsOfSpeech.Length - Arabic.RecitationSymbols.Length))
             Else
                 Dict = Nothing
             End If
@@ -4006,10 +4029,10 @@ Public Class TanzilReader
                         End If
                     End If
                 End If
-                Combos = Array.FindAll(Combos, Function(S As String) Not Str.Contains(S))
-                DiaCombos = Array.FindAll(DiaCombos, Function(S As String) Not Str.Contains(S))
-                LetCombos = Array.FindAll(LetCombos, Function(S As String) Not New String(Array.FindAll(Str.ToCharArray(), Function(C As Char) LtrSymbols.Contains(C))).Contains(S))
             Next
+            Combos = Array.FindAll(Combos, Function(S As String) Not Str.Contains(S))
+            DiaCombos = Array.FindAll(DiaCombos, Function(S As String) Not Str.Contains(S))
+            LetCombos = Array.FindAll(LetCombos, Function(S As String) Not New String(Array.FindAll(Str.ToCharArray(), Function(C As Char) LtrSymbols.Contains(C))).Contains(S))
         Next
         Dim Dict As New Generic.Dictionary(Of Char, String)
         Array.ForEach(Combos, Sub(Str As String)
