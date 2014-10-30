@@ -1836,6 +1836,13 @@ Public Class Arabic
                                 .Evaluator = "$&", .NegativeMatch = "$1"}, _
         New RuleTranslation With {.Rule = "NotValidCombination", .Match = MakeUniRegEx(ArabicLetterAlef) + "(?:" + MakeUniRegEx(ArabicFatha) + "|" + MakeUniRegEx(ArabicKasra) + "|" + MakeUniRegEx(ArabicDamma) + "|" + MakeUniRegEx(ArabicSukun) + "|" + MakeUniRegEx(ArabicShadda) + ")|(?:" + MakeUniRegEx(ArabicLetterAlef) + "|" + MakeUniRegEx(ArabicLetterYeh) + ")" + MakeUniRegEx(ArabicDammatan) + "|(?:" + MakeUniRegEx(ArabicLetterAlef) + "|" + MakeUniRegEx(ArabicLetterWaw) + "|" + MakeUniRegEx(ArabicLetterAlefMaksura) + ")" + MakeUniRegEx(ArabicKasratan) + "|" + MakeUniRegEx(ArabicKasratan) + "(?!(?:" + MakeUniRegEx(ArabicSmallLowMeem) + "|" + MakeUniRegEx(ArabicSmallHighMeemIsolatedForm) + ")?(?:\s+|\s*$))" + "|" + MakeUniRegEx(ArabicDammatan) + "(?!(?:" + MakeUniRegEx(ArabicSmallLowMeem) + "|" + MakeUniRegEx(ArabicSmallHighMeemIsolatedForm) + ")?(?:" + MakeUniRegEx(ArabicLetterAlef) + MakeUniRegEx(ArabicSmallHighRoundedZero) + "?)?(?:\s+|\s*$))", _
                                 .Evaluator = "$&"}}
+    'Not at beginning of word diacritics
+    'Not at end of word letters
+    'Invalid letter combinations
+
+    'Diacritic and tatweel formula
+    'Hamza Formula
+    'Long consonant and vowel combinations
     'New RuleTranslation With {.Rule = "MissingDiacritic", .Match = MakeUniRegEx(ArabicLetterAlefWithHamzaAbove) + "[^" + MakeUniRegEx(ArabicFatha) + MakeUniRegEx(ArabicDamma) + "]|" + MakeUniRegEx(ArabicLetterAlefWithHamzaBelow) + "[^" + MakeUniRegEx(ArabicKasra) + "]", _
     '                            .Evaluator = "$&"}, _
     'New RuleTranslation With {.Rule = "MissingDiacritic", .Match = "(" + MakeRegMultiEx(Array.ConvertAll(ArabicSunLettersNoLam, Function(Str As String) MakeUniRegEx(Str))) + "|" + MakeRegMultiEx(Array.ConvertAll(ArabicMoonLettersNoVowels, Function(Str As String) MakeUniRegEx(Str))) + "|" + MakeUniRegEx(ArabicFatha) + MakeUniRegEx(ArabicLetterYeh) + "|" + MakeUniRegEx(ArabicFatha) + MakeUniRegEx(ArabicLetterWaw) + ")(" + MakeRegMultiEx(Array.ConvertAll(ArabicSunLetters, Function(Str As String) MakeUniRegEx(Str))) + "|" + MakeRegMultiEx(Array.ConvertAll(ArabicMoonLettersNoVowels, Function(Str As String) MakeUniRegEx(Str))) + "|" + MakeUniRegEx(ArabicLetterAlef) + "|" + MakeUniRegEx(ArabicLetterWaw) + "|" + MakeUniRegEx(ArabicLetterYeh) + ")", _
