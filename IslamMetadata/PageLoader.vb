@@ -3458,6 +3458,17 @@ Public Class CachedData
         'loanwords word value/id, jurisprudence name/id, category name/id, months name/id
         'daysofweek name/id, fasting fastingtype name/id, islamicbooks book title/author
         Dim Count As Integer
+        Dim Verses As Collections.Generic.List(Of String())
+        Verses = TanzilReader.GetQuranText(CachedData.XMLDocMain, -1, -1, -1, -1)
+        For Count = 0 To Verses.Count - 1
+            Dim ChapterNode As System.Xml.XmlNode = TanzilReader.GetTextChapter(CachedData.XMLDocMain, Count + 1)
+            For SubCount As Integer = 0 To Verses(Count).Length - 1
+                If SubCount = 0 AndAlso Not TanzilReader.GetTextVerse(ChapterNode, SubCount + 1).Attributes.GetNamedItem("bismillah") Is Nothing Then
+                    Arabic.DoErrorCheck(TanzilReader.GetTextVerse(ChapterNode, SubCount + 1).Attributes.GetNamedItem("bismillah").Value)
+                End If
+                Arabic.DoErrorCheck(Verses(Count)(SubCount))
+            Next
+        Next
         For Count = 0 To IslamData.Months.Length - 1
             Arabic.DoErrorCheck(IslamData.Months(Count).Name)
             Utility.LoadResourceString(IslamData.Months(Count).TranslationID)
