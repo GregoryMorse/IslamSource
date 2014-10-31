@@ -1854,11 +1854,12 @@ Public Class Arabic
                                 .Evaluator = "$&", .NegativeMatch = "$1"}, _
         New RuleTranslation With {.Rule = "NotValidStartEnd", .Match = "(?:^\s*|\s+)(?:" + MakeUniRegEx(ArabicFatha) + "|" + MakeUniRegEx(ArabicKasra) + "|" + MakeUniRegEx(ArabicDamma) + "|" + MakeUniRegEx(ArabicFathatan) + "|" + MakeUniRegEx(ArabicKasratan) + "|" + MakeUniRegEx(ArabicDammatan) + "|" + MakeUniRegEx(ArabicSukun) + "|" + MakeUniRegEx(ArabicMaddahAbove) + "|" + MakeUniRegEx(ArabicHamzaAbove) + "|" + MakeUniRegEx(ArabicShadda) + ")|(?:" + MakeUniRegEx(ArabicLetterJeem) + "|" + MakeUniRegEx(ArabicLetterHah) + "|" + MakeUniRegEx(ArabicLetterKhah) + "|" + MakeUniRegEx(ArabicLetterZain) + "|" + MakeUniRegEx(ArabicLetterSeen) + "|" + MakeUniRegEx(ArabicLetterSheen) + "|" + MakeUniRegEx(ArabicLetterSad) + "|" + MakeUniRegEx(ArabicLetterDad) + "|" + MakeUniRegEx(ArabicLetterTah) + "|" + MakeUniRegEx(ArabicLetterGhain) + ")(?=\s*$|\s+)", _
                                 .Evaluator = "$&"}}
-    'New RuleTranslation With {.Rule = "MissingDiacritic", .Match = MakeUniRegEx(ArabicLetterAlefWithHamzaAbove) + "[^" + MakeUniRegEx(ArabicFatha) + MakeUniRegEx(ArabicDamma) + "]|" + MakeUniRegEx(ArabicLetterAlefWithHamzaBelow) + "[^" + MakeUniRegEx(ArabicKasra) + "]", _
-    '                            .Evaluator = "$&"}, _
+    'Sukun between words
+    'When Sukun cannot be between letters
     'New RuleTranslation With {.Rule = "NeedsRecomposition", .Match = "(" + MakeUniRegEx(ArabicLetterAlef) + MakeUniRegEx(ArabicMaddahAbove) + "|" + MakeUniRegEx(ArabicLetterHamza) + MakeUniRegEx(ArabicFatha) + MakeUniRegEx(ArabicLetterAlef) + "|" + MakeUniRegEx(ArabicLetterAlef) + MakeUniRegEx(ArabicLetterHamza) + "|" + MakeUniRegEx(ArabicLetterWaw) + MakeUniRegEx(ArabicLetterHamza) + "|" + MakeUniRegEx(ArabicLetterAlefMaksura) + MakeUniRegEx(ArabicLetterHamza) + ")", _
     '                            .Evaluator = "$&"}
     '} '"Missing diacritic", "Can only appear at end of word", "Must not appear at beginning of word", "Must appear at beginning of word", "Not a valid combination", "Needs to be recomposed"
+
     Public Enum RuleFuncs As Integer
         eNone
         eUpperCase
