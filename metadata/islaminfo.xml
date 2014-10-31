@@ -104,23 +104,23 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 		<word value="&gt;a*~aAn" id="Adhan"></word>
 		<word value="xuTbah" id="Khutbah"></word>
 		<word value="miEraAj" id="Miraj"></word>
-		<word value="hijrap" id="Hijrah"></word>
-		<word value="$haAdap" id="Shahada"></word>
+		<word value="hijorap" id="Hijrah"></word>
+		<word value="$ahaAdap" id="Shahada"></word>
 		<word value="mujaAhid" id="Mujahid"></word>
 		<word value="mujaAhidiyn" id="Mujahideen"></word>
 		<word value="salaAm" id="Salaam"></word>
 		<word value="HijaAb" id="Hijab"></word>
-		<word value="qaEdip" id="Qadi"></word>
+		<word value="qaEodip" id="Qadi"></word>
 		<word value="Hakiym" id="Hakim"></word>
 		<word value="$iyEap" id="Shia"></word>
 		<word value="$iyEiy" id="Shii"></word>
-		<word value="qiblap" id="Qiblah"></word>
+		<word value="qibolap" id="Qiblah"></word>
 		<word value="qiyaAs" id="Qiyas"></word>
 		<word value="fiqh" id="Fiqh"></word>
 		<word value="suwrap" id="Surah"></word>
 		<word value="say~id" id="Sayyid"></word>
 		<word value="$irk" id="Shirk"></word>
-		<word value="$ayTaAn" id="Shaitan"></word>
+		<word value="$ayoTaAn" id="Shaitan"></word>
 		<word value="TalaAq" id="Talaq"></word>
 		<word value="niqaAb" id="Niqab"></word>
 		<word value="diyn" id="Deen"></word>
@@ -138,7 +138,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 		<word value="sunan &lt;ibn maAjah" id="SunanIbnMaja"></word>
 		<word value="{lokitaAb {lokaAfiy" id="KitabAlKafi"></word>
 		<word value="man laA yaHDuruhu {lofaqiyh" id="ManLaYahduruhuAlFaqih"></word>
-		<word value="tah*iyb {lo&gt;aHkaAm" id="TahdhibAlAhkam"></word>
+		<word value="tah*iyb {lo&gt;aHokaAm" id="TahdhibAlAhkam"></word>
 		<word value="{lo&lt;istibSaAr" id="AlIstibsar"></word>
 	</loanwords>
 	<jurisprudence name="fiqh" id="Jurisprudence">
@@ -242,7 +242,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<verse title="WhenWearingAGarment1" text="{loHamodu lil~ahi {l~a*iyo kasaAniyo h`*aA ({lv~awoba) warazaqaniyhi mino gayori HawolK min~iyo walaA quw~apK"></verse>
 		</category>
 		<category title="WhenWearingANewGarment">
-			<verse title="WhenWearingANewGarment1" text="{ll~ahum~a laka {loHamodu &gt;anota kasawotaniyhi\, &gt;aso&gt;aluka mino xayorihi waxayori maA SuniEa lahu\, wa&gt;aEuw*u bika mino $ar~ihi wa$ar~i maA SuniEa lahu"></verse>
+			<verse title="WhenWearingANewGarment1" text="{ll~ahum~a laka {loHamodu &gt;anota kasawotaniyhi\, &gt;aso&gt;aluka mino xayorihi waxayori maA SuniEa lahu\, wa&gt;aEuwo*u bika mino $ar~ihi wa$ar~i maA SuniEa lahu"></verse>
 		</category>
 		<category title="WhenSomeoneElseWearingANewGarment">
 			<verse title="WhenSomeoneElseWearingANewGarment1" text="tuboliy wayuxolifu {ll~ahu taEaAlaY"></verse>
@@ -252,7 +252,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<verse title="BeforeUndressing1" text="bisomi {ll~ahi"></verse>
 		</category>
 		<category title="BeforeEnteringTheToilet">
-			<verse title="BeforeEnteringTheToilet1" text="(bisomi {ll~ahi) {ll~ahum~a &lt;ini~y &gt;aEuw*u bika mina {loxubovi wa{loxabaA}ivi"></verse>
+			<verse title="BeforeEnteringTheToilet1" text="(bisomi {ll~ahi) {ll~ahum~a &lt;ini~y &gt;aEuwo*u bika mina {loxubovi wa{loxabaA}ivi"></verse>
 		</category>
 		<category title="AfterLeavingTheToilet">
 			<verse title="AfterLeavingTheToilet1" text="guforaAnaka"></verse>
@@ -267,7 +267,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 		</category>
 		<category title="WhenLeavingTheHome">
 			<verse title="WhenLeavingTheHome1" text="bisomi {ll~ahi\, tawak~alotu EalaY {ll~ahi\, walaA Hawola walaA quw~apa &lt;il~aA bi{ll~ahi"></verse>
-			<verse title="WhenLeavingTheHome2" text="{ll~ahum~a &lt;in~iy &gt;aEuw*u bika &gt;ano &gt;aDil~a\, &gt;awo &gt;uDal~a\, &gt;awo &gt;azil~a\, &gt;awo &gt;uzal~a\, &gt;awo &gt;aZolima\, &gt;awo &gt;uZolama\, &gt;awo &gt;ajohala\, &gt;awo yujohala Ealay~a"></verse>
+			<verse title="WhenLeavingTheHome2" text="{ll~ahum~a &lt;in~iy &gt;aEuwo*u bika &gt;ano &gt;aDil~a\, &gt;awo &gt;uDal~a\, &gt;awo &gt;azil~a\, &gt;awo &gt;uzal~a\, &gt;awo &gt;aZolima\, &gt;awo &gt;uZolama\, &gt;awo &gt;ajohala\, &gt;awo yujohala Ealay~a"></verse>
 		</category>
 		<category title="UponEnteringTheHome">
 			<verse title="UponEnteringTheHome1" text="bisomi {ll~ahi walajonaA\, wabisomi {ll~ahi xarajonaA\, waEalaY rab~inaA tawak~alonaA"></verse>
@@ -276,7 +276,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<verse title="WhenGoingToTheMosque1" text="{ll~ahum~a {joEalo fiy qalobiy nuwrFA\, wafiy lisaAniy nuwrFA\, wafiy samoEiy nuwrFA\, wafiy baSariy nuwrFA\, wamino fawoqiy nuwrFA\, wamino taHotiy nuwrFA\, waEano yamiyniy nuwrFA\, waEano $imaAliy nuwrFA\, wamino &gt;amaAmiy nuwrFA\, wamino xalofiy nuwrFA\, waAjoEalo fiy nafosiy nuwrFA\, wa&gt;aEoZimo liy nuwrFA\, waEaZ~imo liy nuwrFA\, waAjoEalo liy nuwrFA\, waAjoEaloniy nuwrFA\, {ll~ahum~a &gt;aEoTiniy nuwrFA\, waAjoEalo fiy EaSabiy nuwrFA\, wafiy laHomiy nuwrFA\, wafiy damiy nuwrFA\, wafiy $aEoriy nuwrFA\, wafiy ba$ariy nuwrFA ({ll~ahum~a {joEalo liy nuwrFA fiy qaboriy\. wanuwrFA fiy EiZaAmiy) (wazidoniy nuwrFA\, wazidoniy nuwrFA\, wazidoniy nuwrFA) (wahabo liy nuwrFA EalaY nuwrK) \{Al-Bukhari 11/116 (Hadith no. 6316) and by Muslim 1/526,529-530 (Hadith no. 763). Al-Tirmidhi 5/483 (Hadith no. 3419). Al-Bukhari in Al-Adab Al-Mufrad (Hadith no. 695), p. 258.  See also Al-Albani, Sahih Al-Adab Al-Mufrad (no. 536), Al-Bukhari, cf. Al-Asqalani, Fathul-Bari 11/118.\}"></verse>
 		</category>
 		<category title="UponEnteringTheMosque">
-			<verse title="UponEnteringTheMosque1" text="&gt;aEuw*u bi{ll~ahi {loEaZiymi\, wabiwajohihi {lokariymi wasuloTaAnihi {loqadiymi\, mina {l$~ayoTaAni {lr~ajiymi (bisomi {ll~ahi\, wa{lS~alaApu) (wa{ls~alaAmu EalaY rasuwli {ll~ahi) ({ll~ahum~a {fotaHo liy &gt;abowaAba raHomatika)"></verse>
+			<verse title="UponEnteringTheMosque1" text="&gt;aEuwo*u bi{ll~ahi {loEaZiymi\, wabiwajohihi {lokariymi wasuloTaAnihi {loqadiymi\, mina {l$~ayoTaAni {lr~ajiymi (bisomi {ll~ahi\, wa{lS~alaApu) (wa{ls~alaAmu EalaY rasuwli {ll~ahi) ({ll~ahum~a {fotaHo liy &gt;abowaAba raHomatika)"></verse>
 		</category>
 		<category title="UponLeavingTheMosque">
 			<verse title="UponLeavingTheMosque1" text="bisomi {ll~ahi wa{lS~alaApu wa{ls~alaAmu EalaY rasuwli {ll~ahi\, {ll~ahum~a &lt;in~iy &gt;aso&gt;aluka mino faDolika\, {ll~ahum~a {EoSimoniy mina {l$~ayoTaAni {lr~ajiymi"></verse>
@@ -287,22 +287,22 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 		<category title="AtTheStartOfPrayer">
 			<verse title="AtTheStartOfPrayer1" text="{ll~ahum~a baAEido bayoniy wabayona xaTaAyaAya kamaA baAEadota bayona {loma$oriqi wa{lomagoribi\, {ll~ahum~a naq~iniy mino xaTaAyaAya kamaA yunaq~aY {lv~awobu {lo&gt;aboyaDu mina {ld~anasi\, {ll~ahum~a {gosiloniy mino xaTaAyaAya bi{lv~aloji wa{lomaA^&apos;i wa{lobaradi"></verse>
 			<verse title="AtTheStartOfPrayer2" text="suboHaAnaka {ll~ahum~a wabiHamodika\, watabaAraka {somuka\, wataEaAlaY jad~uka\, walaA &lt;ilaha gayoruka"></verse>
-			<verse title="AtTheStartOfPrayer3" text="waj~ahotu wajohiya lil~a*iy faTara {ls~amawaAti wa{lo&gt;aroDa HaniyfFA wamaA &gt;anaA mina {lomu$orikiyna\, &lt;in~a SalaAtiy\, wanusukiy\, wamaHoyaAya\, wamamaAtiy lil~ahi rab~i {loEaAlamiyna\, laA $ariyka lahu wabi*alika &gt;umirotu wa&gt;anaA mina {lomusolimiyna\. {ll~ahum~a &gt;anota {lomaliku laA &lt;ilaha &lt;il~aA &gt;anota\. &gt;anota rab~iy wa&gt;anaA Eaboduka\, Zalamotu nafosiy waAEotarafotu bi*anobiy fa{gofiro liy *unuwbiy jamiyEFA &lt;in~ahu laA yagofiru {l*~unuwba &lt;il~aA &gt;anota\. waAhodiniy l&gt;aHosani {lo&gt;axolaAqi laA yahodiy l&gt;aHosanihaA &lt;il~aA &gt;anota\, waASorifo Ean~iy say~i}ahaA laA yaSorifu Ean~iy say~i}ahaA &lt;il~aA &gt;anota\, lab~ayoka wasaEodayoka\, wa{loxayoru kul~uhu biyadayoka\, wa{l$~ar~u layosa &lt;ilayoka\, &gt;anaA bika wa&lt;ilayoka\, tabaArakota wataEaAlayota\, &gt;asotagofiruka wa&gt;atuwbu &lt;ilayoka"></verse>
-			<verse title="AtTheStartOfPrayer4" text="{ll~ahum~a rab~a jiboraA}iyla\, wamiykaA}iyla\, wa&lt;isoraAfiyla\, faATira {ls~am`waAti wa{lo&gt;aroDi\, EaAlima {logayobi wa{l$~ahaAdapi &gt;anota taHokumu bayona EibaAdika fiymaA kaAnuwA fiyhi yaxotalifuwna\. {hdiniy limaA {xotulifa fiyhi mina {loHaq~i bi&lt;i*onika &lt;in~aka tahodiy mano ta$aA^&apos;u &lt;ilaY SiraATK musotaqiymK"></verse>
-			<verse title="AtTheStartOfPrayer5" text="{ll~ahu &gt;akobaru kabiyrFA\, {ll~ahu &gt;akobaru kabiyrFA\, {ll~ahu &gt;akobaru kabiyrFA\, wa{loHamodu lil~ahi kaviyrFA\, wa{loHamodu lil~ahi kaviyrFA\, wa{loHamodu lil~ahi kaviyrFA\, wasuboHaAna {ll~ahi bukorapFA\, wa&gt;aSiylFA (valaAvFA) &gt;aEuw*u bi{ll~ahi mina {l$~ayoTaAni\: mino nafoxihi\, wanafovihi\, wahamozihi"></verse>
-			<verse title="AtTheStartOfPrayer6" text="{ll~ahum~a laka {loHamodu &gt;anota nuwru {ls~amwaAti wa{lo&gt;aroDi wamano fiyhin~a\, walaka {loHamodu &gt;anota qay~imu {ls~amwaAti wa{lo&gt;aroDi wamano fiyhin~a\, walaka {loHamodu &gt;anota rab~u {ls~amwaAti wa{lo&gt;aroDi wamano fiyhin~a\, walaka {loHamodu laka muloku {ls~amwaAti wa{lo&gt;aroDi wamano fiyhin~a\, walaka {loHamodu &gt;anota maliku {ls~amwaAti wa{lo&gt;aroDi\, walaka {loHamodu\, &gt;anota {loHaq~u\, wawaEoduka {loHaq~u\, waqawoluka {loHaq~u\, waliqaA&amp;uka {loHaq~u\, wa{lojan~apu Haq~N\, wa{ln~aAru Haq~N\, wa{ln~abiy~uwna Haq~N\, wamuHam~adN Haq~N\, wa{ls~AEapu Haq~N\, {ll~ahum~a laka &gt;asolamotu\, waEalayoka tawak~alotu\, wabika |manotu\, wa&lt;ilayoka &gt;anabotu\, wabika xaASamotu\, wa&lt;ilayoka HaAkamotu\, fa{gofiro liy maA qad~amotu wamaA &gt;ax~arotu\, wamaA &gt;asorarotu\, wamaA &gt;aEolanotu\, &gt;anota {lomuqad~imu\, wa&gt;anota {lomu&amp;ax~iru laA &lt;ilaha &lt;il~aA &gt;anota\, &gt;anota &lt;ilahiy laA &lt;ilaha &lt;il~aA &gt;anota"></verse>
+			<verse title="AtTheStartOfPrayer3" text="waj~ahotu wajohiya lil~a*iy faTara {ls~ama`wa`ti wa{lo&gt;aroDa HaniyfFA wamaA &gt;anaA mina {lomu$orikiyna\, &lt;in~a SalaAtiy\, wanusukiy\, wamaHoyaAya\, wamamaAtiy lil~ahi rab~i {loEaAlamiyna\, laA $ariyka lahu wabi*alika &gt;umirotu wa&gt;anaA mina {lomusolimiyna\. {ll~ahum~a &gt;anota {lomaliku laA &lt;ilaha &lt;il~aA &gt;anota\. &gt;anota rab~iy wa&gt;anaA Eaboduka\, Zalamotu nafosiy waAEotarafotu bi*anobiy fa{gofiro liy *unuwbiy jamiyEFA &lt;in~ahu laA yagofiru {l*~unuwba &lt;il~aA &gt;anota\. waAhodiniy l&gt;aHosani {lo&gt;axolaAqi laA yahodiy l&gt;aHosanihaA &lt;il~aA &gt;anota\, waASorifo Ean~iy say~i}ahaA laA yaSorifu Ean~iy say~i}ahaA &lt;il~aA &gt;anota\, lab~ayoka wasaEodayoka\, wa{loxayoru kul~uhu biyadayoka\, wa{l$~ar~u layosa &lt;ilayoka\, &gt;anaA bika wa&lt;ilayoka\, tabaArakota wataEaAlayota\, &gt;asotagofiruka wa&gt;atuwbu &lt;ilayoka"></verse>
+			<verse title="AtTheStartOfPrayer4" text="{ll~ahum~a rab~a jiboraA}iyla\, wamiykaA}iyla\, wa&lt;isoraAfiyla\, faATira {ls~ama`wa`ti wa{lo&gt;aroDi\, EaAlima {logayobi wa{l$~ahaAdapi &gt;anota taHokumu bayona EibaAdika fiymaA kaAnuwA fiyhi yaxotalifuwna\. {hdiniy limaA {xotulifa fiyhi mina {loHaq~i bi&lt;i*onika &lt;in~aka tahodiy mano ta$aA^&apos;u &lt;ilaY SiraATK musotaqiymK"></verse>
+			<verse title="AtTheStartOfPrayer5" text="{ll~ahu &gt;akobaru kabiyrFA\, {ll~ahu &gt;akobaru kabiyrFA\, {ll~ahu &gt;akobaru kabiyrFA\, wa{loHamodu lil~ahi kaviyrFA\, wa{loHamodu lil~ahi kaviyrFA\, wa{loHamodu lil~ahi kaviyrFA\, wasuboHaAna {ll~ahi bukorapFA\, wa&gt;aSiylFA (valaAvFA) &gt;aEuwo*u bi{ll~ahi mina {l$~ayoTaAni\: mino nafoxihi\, wanafovihi\, wahamozihi"></verse>
+			<verse title="AtTheStartOfPrayer6" text="{ll~ahum~a laka {loHamodu &gt;anota nuwru {ls~ama`wa`ti wa{lo&gt;aroDi wamano fiyhin~a\, walaka {loHamodu &gt;anota qay~imu {ls~ama`wa`ti wa{lo&gt;aroDi wamano fiyhin~a\, walaka {loHamodu &gt;anota rab~u {ls~ama`wa`ti wa{lo&gt;aroDi wamano fiyhin~a\, walaka {loHamodu laka muloku {ls~ama`wa`ti wa{lo&gt;aroDi wamano fiyhin~a\, walaka {loHamodu &gt;anota maliku {ls~ama`wa`ti wa{lo&gt;aroDi\, walaka {loHamodu\, &gt;anota {loHaq~u\, wawaEoduka {loHaq~u\, waqawoluka {loHaq~u\, waliqaA&amp;uka {loHaq~u\, wa{lojan~apu Haq~N\, wa{ln~aAru Haq~N\, wa{ln~abiy~uwna Haq~N\, wamuHam~adN Haq~N\, wa{ls~aAEapu Haq~N\, {ll~ahum~a laka &gt;asolamotu\, waEalayoka tawak~alotu\, wabika |manotu\, wa&lt;ilayoka &gt;anabotu\, wabika xaASamotu\, wa&lt;ilayoka HaAkamotu\, fa{gofiro liy maA qad~amotu wamaA &gt;ax~arotu\, wamaA &gt;asorarotu\, wamaA &gt;aEolanotu\, &gt;anota {lomuqad~imu\, wa&gt;anota {lomu&amp;ax~iru laA &lt;ilaha &lt;il~aA &gt;anota\, &gt;anota &lt;ilahiy laA &lt;ilaha &lt;il~aA &gt;anota"></verse>
 		</category>
 		<category title="WhileBowingInPrayer">
 			<verse title="WhileBowingInPrayer1" text="suboHaAna rab~iya {loEaZiymi (valaAvFA)"></verse>
 			<verse title="WhileBowingInPrayer2" text="suboHaAnaka {ll~ahum~a rab~anaA wabiHamodika {ll~ahum~a {gofiro liy"></verse>
 			<verse title="WhileBowingInPrayer3" text="sub~uwHN\, qud~uwsN rab~u {lomalaA}ikapi wa{lr~uwHi"></verse>
-			<verse title="WhileBowingInPrayer4" text="{ll~ahum~a laka rakaEotu\, wabika |manotu\, walaka &gt;asolamotu xa$aEa laka samoEiy\, wabaSariy wamux~iy\, waEaZomiy\, waEaSabiy\, wamA {sotaqal~a bihi qadamiy"></verse>
+			<verse title="WhileBowingInPrayer4" text="{ll~ahum~a laka rakaEotu\, wabika |manotu\, walaka &gt;asolamotu xa$aEa laka samoEiy\, wabaSariy wamux~iy\, waEaZomiy\, waEaSabiy\, wamaA {sotaqal~a bihi qadamiy"></verse>
 			<verse title="WhileBowingInPrayer5" text="suboHaAna *iy {lojabaruwti\, wa{lomalakuwti\, wa{lokiboriyaA^&apos;i\, wa{loEaZamapi"></verse>
 		</category>
 		<category title="UponRisingFromBowing">
 			<verse title="" text="samiEa {ll~ahu limano Hamidahu"></verse>
-			<verse title="" text="rab~anA walaka {loHamodu\, HamodFA kaviyrFA Tay~ibFA mubaArakFA fiyhi"></verse>
-			<verse title="" text="milo&apos;a {ls~am`waAti wamilo&apos;a {lo&gt;aroDi wamaA bayonahumaA wamilo&apos;a maA $i}ota mino $ayo&apos;K baEodu\. &gt;ahola {lv~anaA^&apos;i wa{lomajodi\, &gt;aHaq~u maA qaAla {loEabodu\, wakul~unaA laka EabodN\. {ll~ahum~a laA maAniEa limaA &gt;aEoTayota\, walaA muEoTiya limaA manaEota\, walaA yanofaEu *a{lojad~i minoka {lojad~u"></verse>
+			<verse title="" text="rab~anaA walaka {loHamodu\, HamodFA kaviyrFA Tay~ibFA mubaArakFA fiyhi"></verse>
+			<verse title="" text="milo&apos;a {ls~ama`wa`ti wamilo&apos;a {lo&gt;aroDi wamaA bayonahumaA wamilo&apos;a maA $i}ota mino $ayo&apos;K baEodu\. &gt;ahola {lv~anaA^&apos;i wa{lomajodi\, &gt;aHaq~u maA qaAla {loEabodu\, wakul~unaA laka EabodN\. {ll~ahum~a laA maAniEa limaA &gt;aEoTayota\, walaA muEoTiya limaA manaEota\, walaA yanofaEu *a{lojad~i minoka {lojad~u"></verse>
 		</category>
 		<category title="WhileProstrating">
 			<verse title="" text="suboHaAna rab~iya {lo&gt;aEolaY (valaAvFA)"></verse>
@@ -311,139 +311,139 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<verse title="" text="{ll~ahum~a laka sajadotu wabika |manotu\, walaka &gt;asolamotu\, sajada wajohiya lil~a*iy xalaqahu\, waSaw~arahu\, wa$aq~a samoEahu wabaSarahu\, tabaAraka {ll~ahu &gt;aHosanu {loxaAliqiyna"></verse>
 			<verse title="" text="suboHaAna *iy {lojabaruwti\, wa{lomalakuwti\, wa{lokiboriyaA^&apos;i\, wa{loEaZamapi"></verse>
 			<verse title="" text="{ll~ahum~a {gofiro liy *anobiy kul~ahu\, diq~ahu wajil~ahu\, wa&gt;aw~alahu wa|xirahu waEalaAniyatahu wasir~ahu"></verse>
-			<verse title="" text="{ll~ahum~a &lt;in~iy &gt;aEow*u biriDAka mino saxaTik wabimEaAfAtika mino Euqwbatik wa&gt;aEow*u bika minok laA &gt;uHoSy vanA&apos;F Ealayok &gt;anota kamaA &gt;avonayota EalaY nafosik"></verse>
+			<verse title="" text="{ll~ahum~a &lt;in~iy &gt;aEuwo*u biriDAka mino saxaTik wabimEaAfAtika mino Euqwbatik wa&gt;aEuwo*u bika minok laA &gt;uHoSy vanaA&apos;F Ealayok &gt;anota kamaA &gt;avonayota EalaY nafosik"></verse>
 		</category>
 		<category title="BetweenTwoProstrations">
 			<verse title="" text="rab~i {gofiro liy rab~i {gofiro liy"></verse>
 			<verse title="" text="{ll~ahum~a {gofiro liy waAroHamoniy waAhodiniy waAjoburoniy waEaAfiniy waArozuqoniy waArofaEoniy"></verse>
 		</category>
 		<category title="ProstratingDueToQuranRecitation">
-			<verse title="" text="sajada wajohy ll~a*iy xalaqahu waSaw~arahu wa$aq~a samoEahu wabaSarahu biHawolihi waquw~atihi tabAraka {ll~ahu &gt;aHosanu {loxAliqyn"></verse>
-			<verse title="" text="{ll~ahum~a Akotubo liy bihA Einodaka &gt;ajorFA waDaEo Ean~iy bihA wizorFA waAjoEalhA liy Einodaka *uxorFA wataqab~alhA min~iy kamaA taqab~alotahA mino Eabodika dAwd"></verse>
+			<verse title="" text="sajada wajohy ll~a*iy xalaqahu waSaw~arahu wa$aq~a samoEahu wabaSarahu biHawolihi waquw~atihi tabaAraka {ll~ahu &gt;aHosanu {loxAliqyn"></verse>
+			<verse title="" text="{ll~ahum~a Akotubo liy bihaA Einodaka &gt;ajorFA waDaEo Ean~iy bihaA wizorFA waAjoEalhaA liy Einodaka *uxorFA wataqab~alhaA min~iy kamaA taqab~alotahaA mino Eabodika dAwd"></verse>
 		</category>
 		<category title="DeclarationWhenSittingInPrayer">
-			<verse title="" text="{lt~aHiy~Atu lil~ahi wa{lS~alawAtu wa{lT~ay~ibAt {ls~alAmu Ealayoka &gt;ay~uhA {ln~abiy~u waraHomapu {ll~ahi wabarakAtuh {ls~alAmu EalayonA waEalaY EibAdi ka {lS~aAliHyn &gt;a$ohadu &gt;ano laA &lt;ilaha &lt;il~aA {ll~ah wa&gt;a$ohadu &gt;an~a muHam~dFA Eaboduhu waraswluh"></verse>
+			<verse title="" text="{lt~aHiy~aAtu lil~ahi wa{lS~alawAtu wa{lT~ay~ibaAt {ls~alaAmu Ealayoka &gt;ay~uhaA {ln~abiy~u waraHomapu {ll~ahi wabarakaAtuh {ls~alaAmu EalayonaA waEalaY EibaAdi ka {lS~aAliHyn &gt;a$ohadu &gt;ano laA &lt;ilaha &lt;il~aA {ll~ah wa&gt;a$ohadu &gt;an~a muHam~dFA Eaboduhu waraswluh"></verse>
 		</category>
 		<category title="InvocationAfterDeclarationWhenSittingInPrayer">
-			<verse title="" text="{ll~ahum~a Sal~i EalaY muHm~ad waEalaY |li muHm~ad kamaA Sal~ayota EalaY &lt;ibora`hiyma waEalaY |li &lt;ibora`hiymm &lt;in~aka HamiydN majiyd {ll~ahum~a bAriko EalaY muHm~ad waEalaY |li muHm~ad kamaA bArikota EalaY &lt;ibora`hiyma waEalaY |li &lt;ibora`hiym &lt;in~aka HamiydN majiyd"></verse>
-			<verse title="" text="{ll~ahum~a Sal~i EalaY muHm~adK waEalaY &gt;azowaAjihi wa*ur~iy~atih kamaA Sal~ayota EalaY |li &lt;ibora`hiym wabAriko EalaY muHm~adK waEalaY &gt;azowaAjihi wa*ur~iy~atih kamaA bArikota EalaY |li &lt;ibora`hiym &lt;in~aka HamiydN majiyd"></verse>
+			<verse title="" text="{ll~ahum~a Sal~i EalaY muHm~ad waEalaY |li muHm~ad kamaA Sal~ayota EalaY &lt;ibora`hiyma waEalaY |li &lt;ibora`hiymm &lt;in~aka HamiydN majiyd {ll~ahum~a baAriko EalaY muHm~ad waEalaY |li muHm~ad kamaA baArikota EalaY &lt;ibora`hiyma waEalaY |li &lt;ibora`hiym &lt;in~aka HamiydN majiyd"></verse>
+			<verse title="" text="{ll~ahum~a Sal~i EalaY muHm~adK waEalaY &gt;azowaAjihi wa*ur~iy~atih kamaA Sal~ayota EalaY |li &lt;ibora`hiym wabaAriko EalaY muHm~adK waEalaY &gt;azowaAjihi wa*ur~iy~atih kamaA baArikota EalaY |li &lt;ibora`hiym &lt;in~aka HamiydN majiyd"></verse>
 		</category>
 		<category title="BeforeGivingPeaceOfPrayer">
-			<verse title="" text="{ll~ahum~a &lt;in~iy &gt;aEow*u bika mino Ea*aAbi {loqabor wamino Ea*aAbi jahan~am wamino fitonapi {lomaHoyaA wa{lomamAt wamino $ar~i fitonapi {lomasyHi {ld~aj~Al"></verse>
-			<verse title="" text="{ll~ahum~a &lt;in~iy &gt;aEow*u bika mino Ea*aAbi {loqabor wa&gt;aEow*u bika mino fitonapi {lomasyHi {ld~aj~Al wa&gt;aEow*u bika mino fitonapi {lomaHoyaA wa{lomamAt {ll~ahum~a &lt;in~iy &gt;aEow*u bika mina {loma&gt;ovami wa{lomagoram"></verse>
-			<verse title="" text="{ll~ahum~a &lt;in~iy Zalamotu nafosy ZulomFA kavyrFA walaA yagofiru {l*~unwba &lt;il~aA &gt;anot fa{gofir liy magofirapF mino Einodik waAroHamoniy &lt;in~aka &gt;anota {logafwru {lr~aHym"></verse>
-			<verse title="" text="{ll~ahum~a {gofiro liy maA qad~amotu wamA &gt;ax~arot wamA &gt;asorarotu wamA &gt;aEolanot wamA &gt;asorafot wamA &gt;anota &gt;aEolamu bihi min~iy &gt;anota {lomuqad~imu wa&gt;anota {lomu&amp;ax~iru laA &lt;ilaha &lt;il~aA &gt;anot"></verse>
-			<verse title="" text="{ll~ahum~a &gt;aEin~iy EalaY *ikorika wa$ukorik waHusoni EibAdatik"></verse>
-			<verse title="" text="{ll~ahum~a &lt;in~iy &gt;aEow*u bika mina {lobuxol wa&gt;aEow*u bika mina {lojubon wa&gt;aEow*u bika mino &gt;ano &gt;urad~a &lt;ilY &gt;aro*ali {loEumur wa&gt;aEow*u bika mino fitonapi {ld~unoyaA waEa*aAbi {loqabor"></verse>
-			<verse title="" text="{ll~ahum~a &lt;in~iy &gt;aso&gt;aluka {lojan~apa w&gt;aEow*u bika mina {ln~Ar"></verse>
-			<verse title="" text="{ll~ahum~a biEilomika {logayobi waqudoratika EalaY {loxalqi &gt;aHoyiniy maA Ealimota {loHyApa xayorFA liy watawaf~aniy &lt;i*A Ealimota {lowafApa xayorFA liy {ll~ahum~a &lt;in~iy &gt;aso&gt;aluka xa$oyataka fiy {logayobi wa{l$~ahAdapi wa&gt;aso&gt;aluka kalimapa {loHaq~i fiy {lr~iDA wa{logaDab wa&gt;aso&gt;aluka {loqaSoda fiy {loginY wa{lofaqor wa&gt;aso&gt;aluka naEymFA laA yanofad wa&gt;aso&gt;aluka qur~apa EayonK laA tanoqaTiEo wa&gt;aso&gt;aluka {lr~iDA baEoda {loqaDA&apos; wa&gt;aso&gt;aluka bFroda {loEayo$i baEoda {lomawot wa&gt;aso&gt;aluka la*~apa {ln~aZari &lt;ilY wajohika wa{l$~awoqa &lt;ilY liqA}ik fiy gayri Dar~A&apos;a muDir~ap walaA fitonapK muDl~ap {ll~ahum~a zay~in~A biziynapi {lo&lt;iymaAn waAjoEalnA hudApF muhotadyn"></verse>
+			<verse title="" text="{ll~ahum~a &lt;in~iy &gt;aEuwo*u bika mino Ea*aAbi {loqabor wamino Ea*aAbi jahan~am wamino fitonapi {lomaHoyaA wa{lomamAt wamino $ar~i fitonapi {lomasyHi {ld~aj~aAl"></verse>
+			<verse title="" text="{ll~ahum~a &lt;in~iy &gt;aEuwo*u bika mino Ea*aAbi {loqabor wa&gt;aEuwo*u bika mino fitonapi {lomasyHi {ld~aj~aAl wa&gt;aEuwo*u bika mino fitonapi {lomaHoyaA wa{lomamAt {ll~ahum~a &lt;in~iy &gt;aEuwo*u bika mina {loma&gt;ovami wa{lomagoram"></verse>
+			<verse title="" text="{ll~ahum~a &lt;in~iy Zalamotu nafosiy ZulomFA kavyrFA walaA yagofiru {l*~unwba &lt;il~aA &gt;anot fa{gofir liy magofirapF mino Einodik waAroHamoniy &lt;in~aka &gt;anota {logafwru {lr~aHym"></verse>
+			<verse title="" text="{ll~ahum~a {gofiro liy maA qad~amotu wamaA &gt;ax~arot wamaA &gt;asorarotu wamaA &gt;aEolanot wamaA &gt;asorafot wamaA &gt;anota &gt;aEolamu bihi min~iy &gt;anota {lomuqad~imu wa&gt;anota {lomu&amp;ax~iru laA &lt;ilaha &lt;il~aA &gt;anot"></verse>
+			<verse title="" text="{ll~ahum~a &gt;aEin~iy EalaY *ikorika wa$ukorik waHusoni EibaAdatik"></verse>
+			<verse title="" text="{ll~ahum~a &lt;in~iy &gt;aEuwo*u bika mina {lobuxol wa&gt;aEuwo*u bika mina {lojubon wa&gt;aEuwo*u bika mino &gt;ano &gt;urad~a &lt;ilY &gt;aro*ali {loEumur wa&gt;aEuwo*u bika mino fitonapi {ld~unoyaA waEa*aAbi {loqabor"></verse>
+			<verse title="" text="{ll~ahum~a &lt;in~iy &gt;aso&gt;aluka {lojan~apa w&gt;aEuwo*u bika mina {ln~aAr"></verse>
+			<verse title="" text="{ll~ahum~a biEilomika {logayobi waqudoratika EalaY {loxalqi &gt;aHoyiniy maA Ealimota {loHyaApa xayorFA liy watawaf~aniy &lt;i*A Ealimota {lowafApa xayorFA liy {ll~ahum~a &lt;in~iy &gt;aso&gt;aluka xa$oyataka fiy {logayobi wa{l$~ahaAdapi wa&gt;aso&gt;aluka kalimapa {loHaq~i fiy {lr~iDA wa{logaDab wa&gt;aso&gt;aluka {loqaSoda fiy {loginY wa{lofaqor wa&gt;aso&gt;aluka naEymFA laA yanofad wa&gt;aso&gt;aluka qur~apa EayonK laA tanoqaTiEo wa&gt;aso&gt;aluka {lr~iDA baEoda {loqaDA&apos; wa&gt;aso&gt;aluka bFroda {loEayo$i baEoda {lomawot wa&gt;aso&gt;aluka la*~apa {ln~aZari &lt;ilY wajohika wa{l$~awoqa &lt;ilY liqA}ik fiy gayri Dar~aA&apos;a muDir~ap walaA fitonapK muDl~ap {ll~ahum~a zay~in~aA biziynapi {lo&lt;iymaAn waAjoEalnaA hudApF muhotadyn"></verse>
 			<verse title="" text="{ll~ahum~a &lt;in~iy &gt;aso&gt;aluka yaA {ll~ahu bi&gt;an~aka {lowAHidu {lo&gt;aHad {lS~amadu {l~a*iy lamo yalido walamo ywlado walamo yakno lahu kufuwFA &gt;aHad &gt;ano tagofiro liy *unwby &lt;in~aka &gt;anota {logafwru {lr~aH~iym"></verse>
-			<verse title="" text="{ll~ahum~a &lt;in~iy &gt;aso&gt;aluka bi&gt;an~a laka {loHamodu laA &lt;ilaha &lt;il~aA &gt;anota waHodaka laA $aryka laka {loman~Anu yaA badyEa {ls~amwAti wa{lo&gt;aroDi yaA *A {lojalAli wa{lo&lt;ikorAm yaA Hay~u yaA qay~uwmu &lt;in~iy &gt;aso&gt;aluka {lojan~apa wa&gt;aEow*u bika mina {ln~Ar"></verse>
+			<verse title="" text="{ll~ahum~a &lt;in~iy &gt;aso&gt;aluka bi&gt;an~a laka {loHamodu laA &lt;ilaha &lt;il~aA &gt;anota waHodaka laA $ariyka laka {loman~aAnu yaA badyEa {ls~ama`wa`ti wa{lo&gt;aroDi yaA *A {lojalaAli wa{lo&lt;ikorAm yaA Hay~u yaA qay~uwmu &lt;in~iy &gt;aso&gt;aluka {lojan~apa wa&gt;aEuwo*u bika mina {ln~aAr"></verse>
 			<verse title="" text="{ll~ahum~a &lt;in~iy &gt;aso&gt;aluka bi&gt;an~ay &gt;a$ohadu &gt;an~aka &gt;anota {ll~ahu laA &lt;ilaha &lt;il~aA &gt;anot {lo&gt;aHadu {lS~amadu {l~a*iy lamo yalido walamo ywlado walamo yakno lahu kufuwFA &gt;aHad"></verse>
 		</category>
 		<category title="RemembranceAfterGivingPeaceOfPrayer">
-			<verse title="" text="&gt;asotagofiru {ll~ah (valaAvFA) {ll~ahum~a &gt;anota {ls~alAmu waminoka {ls~alAm tabArakota yaA *A {lojalAli wa{lo&lt;ikorAm"></verse>
-			<verse title="" text="laA &lt;ilaha &lt;il~aA {ll~ahu wHdahu laA $ryka lhu lhu {lomuloku wlhu {loHamod whwa ElY kl~ $ay&apos;K qadyr {ll~ahum~a laA mAniEa limA &gt;aEoTayot walaA muEoTiya limA manaEot walaA yanofaEu *A {lojad~i minoka {lojad"></verse>
-			<verse title="" text="laA &lt;ilaha &lt;il~aA {ll~ah wHdahu laA $ryka lhu lhu {lomlku wlhu {loHamd whwa ElY kl~ $y&apos;K qdyr laA Hawola walaA qw~apa &lt;il~aA bi{ll~ahi laA &lt;ilaha &lt;il~aA {ll~ah walaA naEobudu &lt;il~aA &lt;iy~Ah lahu {ln~iEomapu walahu {lofaDol walahu {lv~anA&apos;u {loHasan laA &lt;ilaha &lt;il~aA {ll~ahu mxoliSyna lahu {ld~iyna walawo kariha {lokAfirwn"></verse>
-			<verse title="" text="suboHaAna {ll~ahi wa{loHamodu lil~ah wa{ll~ahu &gt;akobar (valaAvFA wavalaAvyn) laA &lt;ilaha &lt;il~aA {ll~ahu waHodahu laA $ryka lhu lhu {lomlku wlhu {loHamod whuwa ElY kul~ $ay&apos;K qadyr"></verse>
+			<verse title="" text="&gt;asotagofiru {ll~ah (valaAvFA) {ll~ahum~a &gt;anota {ls~alaAmu waminoka {ls~alaAm tabaArakota yaA *A {lojalaAli wa{lo&lt;ikorAm"></verse>
+			<verse title="" text="laA &lt;ilaha &lt;il~aA {ll~ahu waHodahu laA $ariyka lahu lahu {lomuloku walahu {loHamod wahuwa EalaY kul~i $ay&apos;K qadiyr {ll~ahum~a laA mAniEa limA &gt;aEoTayot walaA muEoTiya limA manaEot walaA yanofaEu *A {lojad~i minoka {lojad"></verse>
+			<verse title="" text="laA &lt;ilaha &lt;il~aA {ll~ahu waHodahu laA $ariyka lahu lahu {lomuloku walahu {loHamod wahuwa EalaY kul~i $ay&apos;K qadiyr laA Hawola walaA quw~apa &lt;il~aA bi{ll~ahi laA &lt;ilaha &lt;il~aA {ll~ah walaA naEobudu &lt;il~aA &lt;iy~aAh lahu {ln~iEomapu walahu {lofaDol walahu {lv~anaA&apos;u {loHasan laA &lt;ilaha &lt;il~aA {ll~ahu mxoliSyna lahu {ld~iyna walawo kariha {lokaAfirwn"></verse>
+			<verse title="" text="suboHaAna {ll~ahi wa{loHamodu lil~ah wa{ll~ahu &gt;akobar (valaAvFA wavalaAvyn) laA &lt;ilaha &lt;il~aA {ll~ahu waHodahu laA $ariyka lahu lahu {lomuloku walahu {loHamod wahuwa EalaY kul~i $ay&apos;K qadiyr"></verse>
 			<verse title="" text="\{112\}\{112\}\{112\}\{113\}\{113\}\{113\}\{114\}\{114\}\{114\}"></verse>
 			<verse title="" text="\{2:255\}"></verse>
-			<verse title="" text="laA &lt;ilaha &lt;il~aA {ll~ahu wHodahu laA $ryka lhu lhu {lomulku wlhu {loHamod yuHyy wayumytu whuwa ElY kul~ $y&apos;K qdyr (Ea$or mar~At baEoda {lomagorib wa{lS~boH)"></verse>
-			<verse title="" text="{ll~ahum~a &lt;in~iy &gt;aso&gt;aluka EilomFA nAfiEFA warizoqFA Tay~ibFA waEamalFA mutaqab~alFA (baEod {ls~alaAmi mn SalaApi {lofajor )"></verse>
+			<verse title="" text="laA &lt;ilaha &lt;il~aA {ll~ahu waHodahu laA $ariyka lahu lahu {lomuloku walahu {loHamod yuHoyiy wayumiytu wahuwa EalaY kul~i $ay&apos;K qadiyr (Ea$or mar~aAt baEoda {lomagorib wa{lS~boH)"></verse>
+			<verse title="" text="{ll~ahum~a &lt;in~iy &gt;aso&gt;aluka EilomFA naAfiEFA warizoqFA Tay~ibFA waEamalFA mutaqab~alFA (baEod {ls~alaAmi mn SalaApi {lofajor )"></verse>
 		</category>
 		<category title="ForSeekingGuidance">
-			<verse title="" text="{ll~ahum~a &lt;in~iy &gt;asotaxyruka biEiAomik wa&gt;sotaqodiruka biqudoratik wa&gt;aso&gt;luka mino faDolika {loEaZym fa&lt;in~aka taqodiru walaA &gt;aqodir wataEolamu walaA &gt;aEolam wa&gt;anota Eal~aAmu {loguywb {ll~ahum~a &lt;ino kunota taEolamu &gt;an~a ha*aA {lo&gt;mora wayusam~iy HAjatah xayorN liy fiy diyniy wamaEA$y waEAqibapi &gt;amory faAqodurohu liy wayas~irohu liy vm~a bAriko liy fyh wa&lt;ino kunota taEolamu &gt;an~a ha*aA {lo&gt;mora $arN liy fiy diyniy wamaEA$y waEAqibapi &gt;amory faASorifohu waASorifoniy Eanohu waAqoduro liy {loxayora Hayovu kAna vum~a &gt;aroDiniy bih"></verse>
+			<verse title="" text="{ll~ahum~a &lt;in~iy &gt;asotaxyruka biEiAomik wa&gt;sotaqodiruka biqudoratik wa&gt;aso&gt;luka mino faDolika {loEaZym fa&lt;in~aka taqodiru walaA &gt;aqodir wataEolamu walaA &gt;aEolam wa&gt;anota Eal~aAmu {loguywb {ll~ahum~a &lt;ino kunota taEolamu &gt;an~a ha*aA {lo&gt;mora wayusam~iy HAjatah xayorN liy fiy diyniy wamaEA$y waEAqibapi &gt;amory faAqodurohu liy wayas~irohu liy vm~a baAriko liy fiyh wa&lt;ino kunota taEolamu &gt;an~a ha*aA {lo&gt;mora $arN liy fiy diyniy wamaEA$y waEAqibapi &gt;amory faASorifohu waASorifoniy Eanohu waAqoduro liy {loxayora Hayovu kaAna vum~a &gt;aroDiniy bih"></verse>
 		</category>
 		<category title="InTheEvening">
-			<verse title="" text="&gt;amosayonA wa&gt;amosY {lomuloku lil~ah wa{loHamdu lil~ah laA &lt;ilaha &lt;il~aA {ll~ahu waHdahu laA $aryka lhu lhu {lomulku wlhu {loHamod whuwa ElY kl~ $ay&apos;K qdyr rab~i &gt;so&gt;aluka xayra maA fiy h*hi {ll~ayolapi waxayra maA baEodahA wa&gt;aEow*u bika mino $ar~i h*hi {ll~ayolpi wa$ar~i maA baEodahA rab~i &gt;aEow*ubika mina {lokasali wasw&apos;i {lokibar rab~i &gt;aEow*ubika mino Ea*AbK fiy {ln~Ari waEa*AbK fiy {loqabor"></verse>
-			<verse title="" text="{ll~ahum~a bika &gt;amosaynA wabika &gt;aSobaHonA wabika naHoyaA wabika namwtu wa&lt;ilayoka {lomaSyr"></verse>
-			<verse title="" text="{ll~ahum~a &lt;in~iy &gt;amosayotu &gt;au$ohiduk wa&gt;u$ohidu Hamalapa Earo$ik  wamalA}ikatik wajamyEa xaloqik &gt;an~aka &gt;anota {ll~ahu laA &lt;ilaha &lt;il~aA &gt;anota waHodaka laA $aryka lak wa&gt;an~a u muHam~dFA Eaboduka waraswluk (&gt;rbE mrAt Hyna ySobiH &gt;wo ymsy)"></verse>
-			<verse title="" text="{ll~ahum~a maA &gt;amosaA by mino niEomapK &gt;aw bi&gt;aHadK mino xaloqik faminoka waHodaka laA $ryka lak falaka {loHamodu walaka {l$~ukor"></verse>
-			<verse title="" text="&gt;aEow*ubikalimAti {ll~ahi {lt~Am~Ati mino $ar~i maA xalaq (valaAvFA &lt;i*A &gt;msY)"></verse>
-			<verse title="" text="&gt;amosayonA wa&gt;amosY {lomulku lil~ahi rab~i {loEAlamyn {ll~ahum~a &lt;in~iy &gt;so&gt;aluka xayora h*hi {ll~ayolap fatoHahA wanaSorahA wanwrahA wabarakatahA wahudAhA wa&gt;aEow*u bika mino $ar~i maA fyhAi wa$ar~i maA baEodahA"></verse>
-			<verse title="" text="&gt;amosaynA ElY fiTorapi {lo&lt;solAm waEalaY kalimapi {lo&lt;ixolaAS waElY dyni nabiy~inA muHam~adK waEaAY mil~api &gt;bynA &lt;ibora`hiyma HanyfFA musolimFA wamA kAna mina {lomu$rikyn"></verse>
+			<verse title="" text="&gt;amosayonaA wa&gt;amosY {lomuloku lil~ah wa{loHamodu lil~ah laA &lt;ilaha &lt;il~aA {ll~ahu waHodahu laA $ariyka lahu lahu {lomuloku walahu {loHamod wahuwa EalaY kul~i $ay&apos;K qadiyr rab~i &gt;so&gt;aluka xayra maA fiy h*hi {ll~ayolapi waxayra maA baEodahaA wa&gt;aEuwo*u bika mino $ar~i h*hi {ll~ayolpi wa$ar~i maA baEodahaA rab~i &gt;aEuwo*ubika mina {lokasali wasw&apos;i {lokibar rab~i &gt;aEuwo*ubika mino Ea*AbK fiy {ln~aAri waEa*AbK fiy {loqabor"></verse>
+			<verse title="" text="{ll~ahum~a bika &gt;amosaynaA wabika &gt;aSobaHonaA wabika naHoyaA wabika namwtu wa&lt;ilayoka {lomaSyr"></verse>
+			<verse title="" text="{ll~ahum~a &lt;in~iy &gt;amosayotu &gt;au$ohiduk wa&gt;u$ohidu Hamalapa Earo$ik  wamalaA}ikatik wajamyEa xaloqik &gt;an~aka &gt;anota {ll~ahu laA &lt;ilaha &lt;il~aA &gt;anota waHodaka laA $ariyka lak wa&gt;an~a u muHam~dFA Eaboduka waraswluk (&gt;rbE mrAt Hyna ySobiH &gt;wo ymsy)"></verse>
+			<verse title="" text="{ll~ahum~a maA &gt;amosaA by mino niEomapK &gt;aw bi&gt;aHadK mino xaloqik faminoka waHodaka laA $ariyka lak falaka {loHamodu walaka {l$~ukor"></verse>
+			<verse title="" text="&gt;aEuwo*ubikalimAti {ll~ahi {lt~aAm~aAti mino $ar~i maA xalaq (valaAvFA &lt;i*A &gt;msY)"></verse>
+			<verse title="" text="&gt;amosayonaA wa&gt;amosY {lomuloku lil~ahi rab~i {loEAlamyn {ll~ahum~a &lt;in~iy &gt;so&gt;aluka xayora h*hi {ll~ayolap fatoHahaA wanaSorahaA wanwrahaA wabarakatahaA wahudAhaA wa&gt;aEuwo*u bika mino $ar~i maA fiyhaAi wa$ar~i maA baEodahaA"></verse>
+			<verse title="" text="&gt;amosaynaA EalaY fiTorapi {lo&lt;solaAm waEalaY kalimapi {lo&lt;ixolaAS waEalaY dyni nabiy~inaA muHam~adK waEaAY mil~api &gt;bynaA &lt;ibora`hiyma HaniyfFA musolimFA wamaA kaAna mina {lomu$rikyn"></verse>
 		</category>
 		<category title="InTheMorning">
-			<verse title="" text="&gt;aSobaHonA wa&gt;aSobaHa {lomuloku lil~ah wa{loHamdu lil~ah laA &lt;ilaha &lt;il~aA {ll~ahu waHdahu laA $aryka lhu lhu {lomulku wlhu {loHamod whuwa ElY kl~ $ay&apos;K qdyr rab~i &gt;so&gt;aluka xayra maA fiy h*hi {ll~ayolapi waxayra maA baEodahA wa&gt;aEow*u bika mino $ar~i h*hi {ll~ayolpi wa$ar~i maA baEodahA rab~i &gt;aEow*ubika mina {lokasali wasw&apos;i {lokibar rab~i &gt;aEow*ubika mino Ea*AbK fiy {ln~Ari waEa*AbK fiy {loqabor"></verse>
-			<verse title="" text="{ll~ahum~a bika &gt;aSobaHonA wabika &gt;amosaynA wabika naHoyaA wabika namwtu wa&lt;ilayoka {ln~i$wr"></verse>
-			<verse title="" text="{ll~ahum~a &lt;in~iy &gt;aSobaHotu &gt;au$ohiduk wa&gt;u$ohidu Hamalapa Earo$ik  wamalA}ikatik wajamyEa xaloqik &gt;an~aka &gt;anota {ll~ahu laA &lt;ilaha &lt;il~aA &gt;anota waHodaka laA $aryka lak wa&gt;an~a u muHam~dFA Eaboduka waraswluk (&gt;rbE mrAt Hyna ySobiH &gt;wo ymsy)"></verse>
-			<verse title="" text="{ll~ahum~a maA &gt;aSobaaHa by mino niEomapK &gt;aw bi&gt;aHadK mino xaloqik faminoka waHodaka laA $ryka lak falaka {loHamodu walaka {l$~ukor"></verse>
-			<verse title="" text="&gt;aSobaHonA wa&gt;aSobaHo {lomulku lil~ahi rab~i {loEAlamyn {ll~ahum~a &lt;in~iy &gt;so&gt;aluka xayora ha*aA {loyawom fatoHahu wanaSorahu wanwrahu wabarakatahu wahudAhu wa&gt;aEow*u bika mino $ar~i maA fyhi wa$ar~i maA baEodah"></verse>
-			<verse title="" text="laA &lt;ilaha &lt;il~aA {ll~ahu wHodahu laA $aryka lhu lhu {lomulku wlhu {loHamod whuwa ElY kul~ $ay&apos;K qadyr"></verse>
-			<verse title="" text="&gt;aSobaHonA ElY fiTorapi {lo&lt;isolaAm waEalaY kalimapi {lo&lt;ixolaAS waElY dyni nabiy~inA muHam~adK waEaAY mil~api &gt;bynA &lt;ibora`hiyma HanyfFA musolimFA wamA kAna mina {lomu$rikyn"></verse>
+			<verse title="" text="&gt;aSobaHonaA wa&gt;aSobaHa {lomuloku lil~ah wa{loHamodu lil~ah laA &lt;ilaha &lt;il~aA {ll~ahu waHodahu laA $ariyka lahu lahu {lomuloku walahu {loHamod wahuwa EalaY kul~i $ay&apos;K qadiyr rab~i &gt;so&gt;aluka xayra maA fiy h*hi {ll~ayolapi waxayra maA baEodahaA wa&gt;aEuwo*u bika mino $ar~i h*hi {ll~ayolpi wa$ar~i maA baEodahaA rab~i &gt;aEuwo*ubika mina {lokasali wasw&apos;i {lokibar rab~i &gt;aEuwo*ubika mino Ea*AbK fiy {ln~aAri waEa*AbK fiy {loqabor"></verse>
+			<verse title="" text="{ll~ahum~a bika &gt;aSobaHonaA wabika &gt;amosaynaA wabika naHoyaA wabika namwtu wa&lt;ilayoka {ln~i$wr"></verse>
+			<verse title="" text="{ll~ahum~a &lt;in~iy &gt;aSobaHotu &gt;au$ohiduk wa&gt;u$ohidu Hamalapa Earo$ik  wamalaA}ikatik wajamyEa xaloqik &gt;an~aka &gt;anota {ll~ahu laA &lt;ilaha &lt;il~aA &gt;anota waHodaka laA $ariyka lak wa&gt;an~a u muHam~dFA Eaboduka waraswluk (&gt;rbE mrAt Hyna ySobiH &gt;wo ymsy)"></verse>
+			<verse title="" text="{ll~ahum~a maA &gt;aSobaaHa by mino niEomapK &gt;aw bi&gt;aHadK mino xaloqik faminoka waHodaka laA $ariyka lak falaka {loHamodu walaka {l$~ukor"></verse>
+			<verse title="" text="&gt;aSobaHonaA wa&gt;aSobaHo {lomuloku lil~ahi rab~i {loEAlamyn {ll~ahum~a &lt;in~iy &gt;so&gt;aluka xayora ha*aA {loyawom fatoHahu wanaSorahu wanwrahu wabarakatahu wahudAhu wa&gt;aEuwo*u bika mino $ar~i maA fiyhi wa$ar~i maA baEodah"></verse>
+			<verse title="" text="laA &lt;ilaha &lt;il~aA {ll~ahu wHodahu laA $ariyka lahu lahu {lomuloku walahu {loHamod wahuwa EalaY kul~i $ay&apos;K qadiyr"></verse>
+			<verse title="" text="&gt;aSobaHonaA EalaY fiTorapi {lo&lt;isolaAm waEalaY kalimapi {lo&lt;ixolaAS waEalaY dyni nabiy~inaA muHam~adK waEaAY mil~api &gt;bynaA &lt;ibora`hiyma HaniyfFA musolimFA wamaA kaAna mina {lomu$rikyn"></verse>
 		</category>
 		<category title="InTheMorningOrEvening">
-			<verse title="" text="{ll~ahum~a &gt;anota rab~iy laA &lt;ilaha &lt;il~aA &gt;anota xalaqotaniy wa&gt;anA Eaboduk wa&gt;anA EalaY Eahodika wawaEodika maA AsotaTaEot &gt;aEow*ubika mino $ar~i maA SanaEot &gt;abw&apos;u laka biniEomatika Ealay~a wa&gt;abw&apos;u bi*anoby fa{gofiro liy fa&lt;in~ahu laA yagofiru {l*~unwba &lt;il~aA &gt;anota"></verse>
-			<verse title="" text="{ll~ahum~a EaAfiniy fiy badaniy {ll~ahum~a EaAfiniy fiy samoEy {ll~ahum~a EaAfiniy fiy baSary laA &lt;ilaha &lt;il~aA {ll~ah &gt;anota (valaAvFA) {ll~ahum~a &lt;in~y &gt;aEow*ubika mina {lokufr wa{lofaqor wa&gt;aEow*ubika mino Ea*aAbi {loqabor laA &lt;ilaha &lt;il~aA &gt;anota (valaAvFA)"></verse>
-			<verse title="" text="Hasobiya {ll~ahu laA &lt;ilaha &lt;il~aA huwa Ealayohi tawak~altu wahuwa rab~u {loEaro$i {loEaZym ( sbE mar~At Hyna ySobiH waymsy)"></verse>
-			<verse title="" text="{ll~ahum~a &lt;in~iy &gt;so&gt;aluka {loEafowa wa{loEaAfiypa fiy {ld~unoyaA wa{l|xirap {ll~ahum~a &lt;in~iy &gt;so&gt;aluka {loEafowa wa{loEaAfiypa fiy diyniy wadunoyAya wa&gt;holy wamAly {ll~ahum~a Asoturo EworAty wa|mino rawoEAty {ll~ahum~a AHofaZoniy min bayni yaday~a wamin xalofy waEan yamiyniy waEan $imAly wamin fawoqy wa&gt;aEow*u biEaZamatika &gt;an &gt;ugotAla min taHoty"></verse>
-			<verse title="" text="{ll~ahum~a EAlima {logayobi wa{l$~hAdapi fATira {ls~mAwAti wa{lo&gt;aroDi rab~a kl~i $ay&apos;K wamalykah &gt;a$ohadu &gt;ano laA &lt;ilaha &lt;il~aA &gt;anot &gt;aEow*u bika min $ar~i nafosy wamin $ar~i {l$~ayoTAni wa$irokih wa&gt;ano &gt;aqotarifa EalaY nafosy sw&apos;FA &gt;awo &gt;ajur~ahu &lt;ilY musolim"></verse>
-			<verse title="" text="bismi {ll~ahi {l~a*iy laA yaDur~u maEa Asmihi $ay&apos;N fiy {lo&gt;aroDi walaA fiy {ls~mA&apos;i wahwa {ls~myEu {loEalym (valaAvFA)"></verse>
-			<verse title="" text="raDytu bi{ll~ahi rab~aFA wabiAl&lt;solAmi dynFA wabimuHam~adK nabiy~FA (valaAvFA)"></verse>
+			<verse title="" text="{ll~ahum~a &gt;anota rab~iy laA &lt;ilaha &lt;il~aA &gt;anota xalaqotaniy wa&gt;anaA Eaboduk wa&gt;anaA EalaY Eahodika wawaEodika maA AsotaTaEot &gt;aEuwo*ubika mino $ar~i maA SanaEot &gt;abw&apos;u laka biniEomatika Ealay~a wa&gt;abw&apos;u bi*anoby fa{gofiro liy fa&lt;in~ahu laA yagofiru {l*~unwba &lt;il~aA &gt;anota"></verse>
+			<verse title="" text="{ll~ahum~a EaAfiniy fiy badaniy {ll~ahum~a EaAfiniy fiy samoEy {ll~ahum~a EaAfiniy fiy baSary laA &lt;ilaha &lt;il~aA {ll~ah &gt;anota (valaAvFA) {ll~ahum~a &lt;in~y &gt;aEuwo*ubika mina {lokufr wa{lofaqor wa&gt;aEuwo*ubika mino Ea*aAbi {loqabor laA &lt;ilaha &lt;il~aA &gt;anota (valaAvFA)"></verse>
+			<verse title="" text="Hasobiya {ll~ahu laA &lt;ilaha &lt;il~aA huwa Ealayohi tawak~altu wahuwa rab~u {loEaro$i {loEaZym ( sbE mar~aAt Hyna ySobiH waymsy)"></verse>
+			<verse title="" text="{ll~ahum~a &lt;in~iy &gt;so&gt;aluka {loEafowa wa{loEaAfiypa fiy {ld~unoyaA wa{l|xirap {ll~ahum~a &lt;in~iy &gt;so&gt;aluka {loEafowa wa{loEaAfiypa fiy diyniy wadunoyaAya wa&gt;holy wamAly {ll~ahum~a Asoturo EworAty wa|mino rawoEAty {ll~ahum~a AHofaZoniy min bayni yaday~a wamin xalofy waEan yamiyniy waEan $imAly wamin fawoqy wa&gt;aEuwo*u biEaZamatika &gt;an &gt;ugotAla min taHoty"></verse>
+			<verse title="" text="{ll~ahum~a EAlima {logayobi wa{l$~haAdapi fATira {ls~ama`wa`ti wa{lo&gt;aroDi rab~a kul~i $ay&apos;K wamalykah &gt;a$ohadu &gt;ano laA &lt;ilaha &lt;il~aA &gt;anot &gt;aEuwo*u bika min $ar~i nafosiy wamin $ar~i {l$~ayoTAni wa$irokih wa&gt;ano &gt;aqotarifa EalaY nafosiy sw&apos;FA &gt;awo &gt;ajur~ahu &lt;ilY musolim"></verse>
+			<verse title="" text="bisomi {ll~ahi {l~a*iy laA yaDur~u maEa Asmihi $ay&apos;N fiy {lo&gt;aroDi walaA fiy {ls~mA&apos;i wahwa {ls~myEu {loEalym (valaAvFA)"></verse>
+			<verse title="" text="raDytu bi{ll~ahi rab~aFA wabiAl&lt;solaAmi dynFA wabimuHam~adK nabiy~FA (valaAvFA)"></verse>
 			<verse title="" text="suboHaAna {ll~ahi wabiHamodihi Eadada xaloqih wariDA nafosih wazinapa Earo$ih wamidAda kalimAtih (valaAvFA)"></verse>
 			<verse title="" text="suboHaAna {ll~ahi wabiHamodihi (mA}p mrp)"></verse>
-			<verse title="" text="yaA Hay~u yaA qay~uwmu biraHomatiki &gt;asotagyv &gt;aSoliHo liy $a&gt;oniy kul~ah walaA takilniy &lt;ilY nafosy Tarofapa Eayn"></verse>
-			<verse title="" text="laA &lt;ilaha &lt;il~aA {ll~ahu waHodahu laA $ariyka lahu, lahu {lomuloku wlhu {loHamod whuwa ElY kul~ $ay&apos;K qadyr (mA}p mrp)"></verse>
+			<verse title="" text="yaA Hay~u yaA qay~uwmu biraHomatiki &gt;asotagyv &gt;aSoliHo liy $a&gt;oniy kul~ah walaA takilniy &lt;ilY nafosiy Tarofapa Eayn"></verse>
+			<verse title="" text="laA &lt;ilaha &lt;il~aA {ll~ahu waHodahu laA $ariyka lahu, lahu {lomuloku walahu {loHamod wahuwa EalaY kul~i $ay&apos;K qadiyr (mA}p mrp)"></verse>
 			<verse title="" text="\{112\}\{112\}\{112\}\{113\}\{113\}\{113\}\{114\}\{114\}\{114\}"></verse>
 		</category>
 		<category title="RemembranceBeforeSleeping">
 			<verse title="" text="\{112\}\{112\}\{112\}\{113\}\{113\}\{113\}\{114\}\{114\}\{114\}"></verse>
 			<verse title="" text="\{2:255\}"></verse>
 			<verse title="" text="\{2:285-286\}"></verse>
-			<verse title="" text="biAsomika rab~iy waDaEotu janoby wabika &gt;arofaEuh fa&lt;in &gt;amosakota nafosy fAroHamohA wa&lt;ino &gt;arosalotahA fAHofaZohA bimA taHofaZu bih EibAdaka {lS~AliHyn"></verse>
-			<verse title="" text="{ll~ahum~a &lt;in~aka xalaqota nafosy wa&gt;anota tawaf~AhA laka mmaAthA wamaHoyAhA &lt;ino &gt;aHoyayotahA fAHofaZohA wa&lt;ino &gt;amat~ahA fa{gofiro lahA {ll~ahum~a &lt;in~ay &gt;aso&gt;aluka {loEaAfiyap"></verse>
-			<verse title="" text="{ll~ahum~a qiniy Ea*Abaka yawoma taboEavu EibAdak (valaAvFA)"></verse>
-			<verse title="" text="biAsomika {ll~ahum~a &gt;amwtu wa&gt;aHoyA"></verse>
-			<verse title="" text="suboHaAna {ll~ah (valaAvFA wavalaAvyn) {loHamdu lil~ah (valaAvFA wavalaAvyn) {ll~ahu &gt;akobar (&gt;rbEFA wavalaAvyn)"></verse>
-			<verse title="" text="{ll~ahum~a rab~a {ls~mwAti {ls~aboEi warab~a {loEaro$i {loEaZym rab~anA warab~a kul~i $ay&apos; fAliqa {loHab~i wa{ln~awY wamunaz~ila {lt~aworApi wa{lo&lt;inojiyl wa{lfuroqAn &gt;aEow*u bika min $ar~i kul~i $ay&apos;K &gt;anota |xi*N binASiyatih {ll~ahum~a &gt;anota {lo&gt;aw~alu falaysa qabolaka $ay&apos; wa&gt;anota {l|xirufalaysa baEodaka $ay&apos; wa&gt;anota {lZ~Ahirufalayosa fawoqaka $ay&apos; wa&gt;anota {lobATinu falayosa dwnaka $ay&apos; AqoDi Ean~A {ld~ayona wa&gt;agoninA mina {lofaqor"></verse>
+			<verse title="" text="biAsomika rab~iy waDaEotu janoby wabika &gt;arofaEuh fa&lt;in &gt;amosakota nafosiy fAroHamohaA wa&lt;ino &gt;arosalotahaA fAHofaZohaA bimA taHofaZu bih EibaAdaka {lS~aAliHyn"></verse>
+			<verse title="" text="{ll~ahum~a &lt;in~aka xalaqota nafosiy wa&gt;anota tawaf~aAhaA laka mmaAthaA wamaHoyaAhaA &lt;ino &gt;aHoyayotahaA fAHofaZohaA wa&lt;ino &gt;amat~ahaA fa{gofiro lahaA {ll~ahum~a &lt;in~ay &gt;aso&gt;aluka {loEaAfiyap"></verse>
+			<verse title="" text="{ll~ahum~a qiniy Ea*Abaka yawoma taboEavu EibaAdak (valaAvFA)"></verse>
+			<verse title="" text="biAsomika {ll~ahum~a &gt;amwtu wa&gt;aHoyaA"></verse>
+			<verse title="" text="suboHaAna {ll~ah (valaAvFA wavalaAvyn) {loHamodu lil~ah (valaAvFA wavalaAvyn) {ll~ahu &gt;akobar (&gt;rbEFA wavalaAvyn)"></verse>
+			<verse title="" text="{ll~ahum~a rab~a {ls~ama`wa`ti {ls~aboEi warab~a {loEaro$i {loEaZym rab~anaA warab~a kul~i $ay&apos; fAliqa {loHab~i wa{ln~awY wamunaz~ila {lt~aworApi wa{lo&lt;inojiyl wa{lfuroqAn &gt;aEuwo*u bika min $ar~i kul~i $ay&apos;K &gt;anota |xi*N binaASiyatih {ll~ahum~a &gt;anota {lo&gt;aw~alu falaysa qabolaka $ay&apos; wa&gt;anota {l|xirufalaysa baEodaka $ay&apos; wa&gt;anota {lZ~aAhirufalayosa fawoqaka $ay&apos; wa&gt;anota {lobaATinu falayosa dwnaka $ay&apos; AqoDi Ean~aA {ld~ayona wa&gt;agoninaA mina {lofaqor"></verse>
 			<verse title="" text="{loHamodu lil~ahi {l~a*iy &gt;aToEamanaA wasaqaAnaA wakafaAnaA wa|waAnaA fakamo mim~ano laA kaAfiya lahu walaA mu&amp;owiy"></verse>
-			<verse title="" text="{ll~ahum~a EAlima {logaybi wa{l$~hAdpi fATira {ls~mAwAti wa{lo&gt;aroDi rab~a kul~i $ay&apos;K wamalykah &gt;a$ohdu &gt;ano laA &lt;ilaha &lt;il~aA &gt;anot &gt;aEow*u bika min $ar~i nafosy wamin $ar~i {l$~ayoTAni wa$irokih wa&gt;ano &gt;aqotarifa EalaY nafosy sw&apos;FA &gt;awo &gt;ajur~ahu &lt;ilY musolim"></verse>
+			<verse title="" text="{ll~ahum~a EAlima {logaybi wa{l$~haAdpi fATira {ls~ama`wa`ti wa{lo&gt;aroDi rab~a kul~i $ay&apos;K wamalykah &gt;a$ohdu &gt;ano laA &lt;ilaha &lt;il~aA &gt;anot &gt;aEuwo*u bika min $ar~i nafosiy wamin $ar~i {l$~ayoTAni wa$irokih wa&gt;ano &gt;aqotarifa EalaY nafosiy sw&apos;FA &gt;awo &gt;ajur~ahu &lt;ilY musolim"></verse>
 			<verse title="" text="\{32\}\{67\}"></verse>
-			<verse title="" text="{ll~ahum~a &gt;asolamotu nafosy &lt;ilayoka wafaw~aDotu &gt;amory &lt;ilayoka wawaj~ahotu wajohy &lt;ilayoka wa{lojaAotu Zahry &lt;ilayoka ragobapF warahobapF &lt;ilayoka laA maloja&gt;a walaA manojA minoka &lt;il~aA &lt;ilayoka |manotu bikitAbika {l~*iy &gt;anozalota wabinabiy~ika {l~*iy &gt;arosalot"></verse>
+			<verse title="" text="{ll~ahum~a &gt;asolamotu nafosiy &lt;ilayoka wafaw~aDotu &gt;amory &lt;ilayoka wawaj~ahotu wajohy &lt;ilayoka wa{lojaAotu Zahry &lt;ilayoka ragobapF warahobapF &lt;ilayoka laA maloja&gt;a walaA manojA minoka &lt;il~aA &lt;ilayoka |manotu bikitAbika {l~*iy &gt;anozalota wabinabiy~ika {l~*iy &gt;arosalot"></verse>
 		</category>
 		<category title="WhenTurningOverInTheNight">
-			<verse title="" text="laA &lt;ilaha &lt;il~aA {ll~ahu {lowAHidu {loqah~Ar rab~u {ls~amwAti wa{lo&gt;aroDi wamA bayonahmA {loEaziyzu {logaf~Ar"></verse>
+			<verse title="" text="laA &lt;ilaha &lt;il~aA {ll~ahu {lowAHidu {loqah~aAr rab~u {ls~ama`wa`ti wa{lo&gt;aroDi wamaA bayonahmA {loEaziyzu {logaf~aAr"></verse>
 		</category>
 		<category title="UponExperiencingFearUnrestApprehensivenessDuringSleep">
-			<verse title="" text="&gt;aEow*ubikalimAti {ll~ahi {lt~Am~Ati min gaDabihi waEiqAbihi wa$ar~i EibAdihi wamino hamazAti {l$~ayATyni wa&gt;ano yaHoDrwn"></verse>
+			<verse title="" text="&gt;aEuwo*ubikalimAti {ll~ahi {lt~aAm~aAti min gaDabihi waEiqAbihi wa$ar~i EibaAdihi wamino hamazAti {l$~ayaATyni wa&gt;ano yaHoDrwn"></verse>
 		</category>
 		<category title="UponSeeingABadDream">
-			<verse title="" text="&gt;aEuw*u bill~`hi mina {l$ayoTani {lr~ajiymi"></verse>
+			<verse title="" text="&gt;aEuwo*u bi{ll~ahi mina {l$ayoTani {lr~ajiymi"></verse>
 		</category>
 		<category title="DesperateOddPrayer">
-			<verse title="" text="{ll~ahum~a Ahodiniy fymano hadayot waEaAfiniy fymano EaAfayot watawal~aniy fymano tawal~ayot wabAriko liy fymA &gt;aEoTayot waqiniy $ar~a maA qaDayot fa&lt;in~aka taqoDy walaA yuqoDY Ealayok &lt;in~ahu laA ya*il~u mano wa{layot walaA yaEiz~u man EAdayot tabArakota rab~anA wataEAlayot"></verse>
-			<verse title="" text="{ll~ahum~a &lt;in~iy &gt;aEow*u biriDAka mino saxaTik wabimuEaAfAtika mino Euqwbatik wa&gt;aEow*u bika minok laA &gt;uHoSy vanA&apos;F Ealayok &gt;anota kamaA &gt;avonayota EalaY nafosik"></verse>
-			<verse title="" text="{ll~ahum~a &lt;iy~Aka nEobudo walaka nuSal~y wanasojud wa&lt;ilayoka nasoEY wanaHofid narojw raHomatak wanaxo$Y Ea*Abak &lt;in~a Ea*Abaka bAlkAfryn mloHaq {ll~ahum~a &lt;in~A nasotaEynuka wanasotagofiruk wanuvoniy Ealayok {loxayora walaA nakofuruk wanu&amp;ominu bik wanaxoDaEu laka wanaxolaEu mano yakofruk"></verse>
+			<verse title="" text="{ll~ahum~a Ahodiniy fiymano hadayot waEaAfiniy fiymano EaAfayot watawal~aniy fiymano tawal~ayot wabaAriko liy fiymaA &gt;aEoTayot waqiniy $ar~a maA qaDayot fa&lt;in~aka taqoDy walaA yuqoDY Ealayok &lt;in~ahu laA ya*il~u mano wa{layot walaA yaEiz~u man EAdayot tabaArakota rab~anaA wataEAlayot"></verse>
+			<verse title="" text="{ll~ahum~a &lt;in~iy &gt;aEuwo*u biriDAka mino saxaTik wabimuEaAfAtika mino Euqwbatik wa&gt;aEuwo*u bika minok laA &gt;uHoSy vanaA&apos;F Ealayok &gt;anota kamaA &gt;avonayota EalaY nafosik"></verse>
+			<verse title="" text="{ll~ahum~a &lt;iy~aAka nEobudo walaka nuSal~y wanasojud wa&lt;ilayoka nasoEY wanaHofid narojw raHomatak wanaxo$Y Ea*Abak &lt;in~a Ea*Abaka baAlkaAfryn mloHaq {ll~ahum~a &lt;in~aA nasotaEynuka wanasotagofiruk wanuvoniy Ealayok {loxayora walaA nakofuruk wanu&amp;ominu bik wanaxoDaEu laka wanaxolaEu mano yakofruk"></verse>
 		</category>
 		<category title="OddPrayerAndAfter">
-			<verse title="" text="{87}{109}{112}suboHaAna {lomaliki {loqud~uws (valaAv mrAt) rb~i {lomlA}kpi wa{lr~uwH"></verse>
+			<verse title="" text="{87}{109}{112}suboHaAna {lomaliki {loqud~uws (valaAv mrAt) rb~i {lomlaA}kpi wa{lr~uwH"></verse>
 		</category>
 		<category title="ForAnxietyAndSorrow">
-			<verse title="" text="{ll~ahum~a &lt;in~iy Eaboduka Abonu Eabodika Abonu &gt;amatika naASiyatiy biyadika maADK fiy~a Hukomuka EadolN fiy~a qaDaA&amp;ka &gt;aso&gt;aluka bikul~i AsomK huwa laka sam~ayota bihi nafosaka &gt;iwo &gt;anozalotahu fiy kitaAbika &gt;awo Eal~amotahu &gt;aHadFA mino xaloqika &gt;awi Asota&gt;ovarota bihi fiy Eilomi {logayobi Einodaka &gt;ano tajoEala {loquro|na rabiyEa qalobiy wanwra Sadoriy wjalaA^&apos;a Huzoniy w*ahaAba ham~iy"></verse>
-			<verse title="" text="{ll~ahum~a &lt;in~iy &gt;aEow*u bika mina {loham~i wa {loHuzoni wa{lEFjozi wa{lkasali wa{lbuxoli wa{ljuboni wDaloEi {ld~ayoni wgalabapi {lr~ijAl"></verse>
+			<verse title="" text="{ll~ahum~a &lt;in~iy Eaboduka Abonu Eabodika Abonu &gt;amatika naASiyatiy biyadika maADK fiy~a Hukomuka EadolN fiy~a qaDaA&amp;ka &gt;aso&gt;aluka bikul~i AsomK huwa laka sam~ayota bihi nafosaka &gt;iwo &gt;anozalotahu fiy kitaAbika &gt;awo Eal~amotahu &gt;aHadFA mino xaloqika &gt;awi Asota&gt;ovarota bihi fiy Eilomi {logayobi Einodaka &gt;ano tajoEala {loquro|na rabiyEa qalobiy wanwra Sadoriy wjalaA^&apos;a Huzoniy wa*ahaAba ham~iy"></verse>
+			<verse title="" text="{ll~ahum~a &lt;in~iy &gt;aEuwo*u bika mina {loham~i wa {loHuzoni wa{lEFjozi wa{lkasali wa{lbuxoli wa{ljuboni wDaloEi {ld~ayoni wgalabapi {lr~ijAl"></verse>
 		</category>
 		<category title="ForOneInDistress">
-			<verse title="" text="laA &lt;ilaha &lt;il~aA {ll~ahu {loEaZymu {loHaliymo laA &lt;ilaha &lt;il~aA {ll~ahu rab~u {loEaro$i {loEaZiymi laA &lt;ilaha &lt;il~aA {ll~aho rab~u {ls~amaw~Ati wr~b~u {lo&gt;aroDi wrab~u {loEaro$i {lokarym"></verse>
-			<verse title="" text="{ll~ahum~a raHomataka &gt;arojwfalA takilniy &lt;ilY nafosy Tarofapa Eayon wa&gt;aSoliHo liy $a&gt;oniy kul~ah laA &lt;ilaha &lt;il~aA &gt;anota"></verse>
-			<verse title="" text="laA &lt;ilaha &lt;il~aA &gt;anota suboHaAnaka &lt;in~iy kunotu mina {lZ~Alimyn"></verse>
+			<verse title="" text="laA &lt;ilaha &lt;il~aA {ll~ahu {loEaZymu {loHaliymo laA &lt;ilaha &lt;il~aA {ll~ahu rab~u {loEaro$i {loEaZiymi laA &lt;ilaha &lt;il~aA {ll~aho rab~u {ls~amaw~aAti wr~b~u {lo&gt;aroDi wrab~u {loEaro$i {lokarym"></verse>
+			<verse title="" text="{ll~ahum~a raHomataka &gt;arojwfalaA takilniy &lt;ilY nafosiy Tarofapa Eayon wa&gt;aSoliHo liy $a&gt;oniy kul~ah laA &lt;ilaha &lt;il~aA &gt;anota"></verse>
+			<verse title="" text="laA &lt;ilaha &lt;il~aA &gt;anota suboHaAnaka &lt;in~iy kunotu mina {lZ~aAlimyn"></verse>
 			<verse title="" text="{ll~ahu {ll~ahu rab~i laA &gt;u$oriku bihi $ayo}FA"></verse>
 		</category>
 		<category title="UponEncounteringAnEnemyOrThoseOfAuthority">
-			<verse title="" text="{ll~ahum~a &lt;inA najoEaluka fiy nuHwrihim wanaEow*u bika mino $urwrihmo"></verse>
+			<verse title="" text="{ll~ahum~a &lt;inaA najoEaluka fiy nuHwrihim wanaEuwo*u bika mino $urwrihmo"></verse>
 			<verse title="" text="{ll~ahum~a &gt;anota EaDudy wa&gt;anota naSyry bika &gt;ajwlu wabika &gt;aSwlu wabika &gt;uqAtil"></verse>
-			<verse title="" text="HasobunA {ll~ahu waniEoma {lowakyl"></verse>
+			<verse title="" text="HasobunaA {ll~ahu waniEoma {lowakyl"></verse>
 		</category>
 		<category title="ForOneAfflictedWithDoubtInFaith">
-			<verse title="" text="&gt;aEuw*u bill~`hi mina {l$ayTani {lr~ajiymi"></verse>
+			<verse title="" text="&gt;aEuwo*u bi{ll~ahi mina {l$ayoTani {lr~ajiymi"></verse>
 			<verse title="" text="|manotu bi{ll~ahi warusulih"></verse>
-			<verse title="" text="huwa {lo&gt;aw~alu wa{l|xiru wa{lZ~Ahiru wa{lobATinu wahuwa bikul~i $ay&apos;K Ealym"></verse>
+			<verse title="" text="huwa {lo&gt;aw~alu wa{l|xiru wa{lZ~aAhiru wa{lobaATinu wahuwa bikul~i $ay&apos;K Ealym"></verse>
 		</category>
 		<category title="SettlingADebt">
-			<verse title="" text="{ll~ahum~a Akofiniy biHalAlika Eano HarAmik wa&gt;agoniniy bifaDoliki Eam~ano siwAk"></verse>
-			<verse title="" text="{ll~ahum~a &lt;in~iy &gt;aEow*u bika mina {loham~i wa {loHuzoni wa{loEFjozi wa{lokasali wa{lobuxoli wa{lojuboni wDaloEi {ld~ayoni wgalabapi {lr~ijAl"></verse>
+			<verse title="" text="{ll~ahum~a Akofiniy biHalaAlika Eano HarAmik wa&gt;agoniniy bifaDoliki Eam~ano siwAk"></verse>
+			<verse title="" text="{ll~ahum~a &lt;in~iy &gt;aEuwo*u bika mina {loham~i wa {loHuzoni wa{loEFjozi wa{lokasali wa{lobuxoli wa{lojuboni wDaloEi {ld~ayoni wgalabapi {lr~ijAl"></verse>
 		</category>
 		<category title="ForOneAffectedByWhisperingsInPrayerOrSupplication">
-			<verse title="" text="&gt;aEuw*u bill~`hi mina {l$ayTani {lr~ajiymi"></verse>
+			<verse title="" text="&gt;aEuwo*u bi{ll~ahi mina {l$ayoTani {lr~ajiymi"></verse>
 		</category>
 		<category title="ForOneWhoseAffairsHaveBecomeDifficult">
 			<verse title="" text="{ll~ahum~a laA sahola &lt;il~aA maA jaEaltahu sahlFA wa&gt;anota tajoEalu {loHazana &lt;i*A $i}ota saholFA"></verse>
@@ -452,19 +452,19 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<verse title="" text=""></verse>
 		</category>
 		<category title="ForExpellingTheDevilAndHisWhisperings">
-			<verse title="" text="&gt;aEuw*u bill~`hi mina {l$ayTani {lr~ajiymi"></verse>
+			<verse title="" text="&gt;aEuwo*u bi{ll~ahi mina {l$ayoTani {lr~ajiymi"></verse>
 			<verse title="" text=""></verse>
 			<verse title="" text=""></verse>
 		</category>
 		<category title="WhenStrickenWithAMishapOrOvertakenByAnAffair">
-			<verse title="" text="qad~ara {ll~ahu wamA $A&apos;a faEal"></verse>
+			<verse title="" text="qad~ara {ll~ahu wamaA $aA&apos;a faEal"></verse>
 			<verse title="" text="Hasobiya {ll~ahu waniEoma {lowakyl"></verse>
 		</category>
 		<category title="PlacingChildrenUnderAllahsProtection">
-			<verse title="" text="&gt;uEy*ukumA bikalimAti {ll~ahi {lt~Am~ap mino kul~i $ayoTAnK wahAm~ap wamino kul~i EayonK lAm~ap"></verse>
+			<verse title="" text="&gt;uEy*ukumA bikalimAti {ll~ahi {lt~aAm~ap mino kul~i $ayoTAnK wahaAm~ap wamino kul~i EayonK laAm~ap"></verse>
 		</category>
 		<category title="WhenVisitingTheSick">
-			<verse title="" text="laA b>osa TahwrN &lt;ino $A&apos;a {ll~ah"></verse>
+			<verse title="" text="laA b>osa TahwrN &lt;ino $aA&apos;a {ll~ah"></verse>
 			<verse title="" text="&gt;aso&gt;alu {ll~aha {loEaZym rab~a {loEaro$i {loEaZym &gt;ano ya$ofyk (sbE mrAt)"></verse>
 		</category>
 		<category title="ExcellenceOfVisitingTheSick">
@@ -473,29 +473,29 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 		<category title="TheSickWhoHaveRenouncedAllHopeOfLife">
 			<verse title="" text="&gt;ll~hum~a {gofiro liy waAroHamoniy wa{loHiqoniy biAlr~afyqi {lo&gt;~EolY \{4:69\}"></verse>
 			<verse title="" text="laA &lt;ilaha &lt;il~aA {ll~ah &lt;in~a llmawoti lasakarAt"></verse>
-			<verse title="" text="laA &lt;ilaha &lt;il~aA {ll~ahu wa{ll~ahu &gt;akobar laA &lt;ilaha &lt;il~aA {ll~ahu wHodahu laA $aryka lhu laA &lt;ilaha &lt;il~aA {ll~ahu lhu {lomulku wlhu {loHamod laA &lt;ilaha &lt;il~aA {ll~ahu walaA Hawola walaA quw~apa &lt;il~aA bi{ll~ah"></verse>
+			<verse title="" text="laA &lt;ilaha &lt;il~aA {ll~ahu wa{ll~ahu &gt;akobar laA &lt;ilaha &lt;il~aA {ll~ahu waHodahu laA $ariyka lahu laA &lt;ilaha &lt;il~aA {ll~ahu lahu {lomuloku walahu {loHamod laA &lt;ilaha &lt;il~aA {ll~ahu walaA Hawola walaA quw~apa &lt;il~aA bi{ll~ah"></verse>
 		</category>
 		<category title="InstructionForTheOneNearingDeath">
 			<verse title="" text="laA &lt;ilaha &lt;il~aA {ll~ah"></verse>
 		</category>
 		<category title="InstructionForOneAfflictedByCalamity">
-			<verse title="" text="&lt;in~A lil~ahi wa&lt;inaA &lt;ilayohi rAjiEwn {ll~ahum~i Aojuroniy fiy muSybaty waAxolufo liy xayorFA minohA"></verse>
+			<verse title="" text="&lt;in~aA lil~ahi wa&lt;inaA &lt;ilayohi rAjiEwn {ll~ahum~i Aojuroniy fiy muSybaty waAxolufo liy xayorFA minohaA"></verse>
 		</category>
 		<category title="WhenClosingTheEyesOfTheDeceased">
-			<verse title="" text="{ll~ahum~i {gofiro liflAn bAsmh waArofaEo darajatahu fiy {lomahodiyyn waAxolufohu fiy Eaqibihi fiy {logAbiryn wa{gofiro lanA walahu yaA rab~a {loEAlamyn waAfosaHo lahu fiy qaborihi wanaw~iro lahu fyh"></verse>
+			<verse title="" text="{ll~ahum~i {gofiro liflaAn baAsmh waArofaEo darajatahu fiy {lomahodiyyn waAxolufohu fiy Eaqibihi fiy {logAbiryn wa{gofiro lanaA walahu yaA rab~a {loEAlamyn waAfosaHo lahu fiy qaborihi wanaw~iro lahu fiyh"></verse>
 		</category>
 		<category title="ForTheDeceasedAtFuneralPrayer">
-			<verse title="" text="{ll~ahum~i {gofiro lahu waAroHamoh waEaAfihi waAEofu Eanoh wa&gt;akorimo nuzulah wawas~iEo mudoxalah waAgosilohu bi{lomA'i wa{lv~aloji wa{lobarado wanaq~ihi mina {loxTAyaA kamaA naq~yota {lv~awobu {lo&gt;aboyaDu mina {ld~anaso wa&gt;abodilohu dArFA xayorFA mino dArih wa&gt;aholFA xayorFA mino &gt;aholih wazawojaFA xayorFA mino zawojih wa&gt;adoxilohu {lojan~ap wa&gt;aEi*ohu mino Ea*aAbi {loqabor waEa*aAbi {ln~Ar"></verse>
-			<verse title="" text="{ll~ahum~i {gofiro liHay~inA wamay~itinA wa$AhidinA wagA}ibinA waSagyrinA wakabiyrinA wa*akarinA wa&gt;unovAnA {ll~ahum~i mano &gt;aHoyayotahu min~A fa&gt;aHoyihi EalaY {lo&lt;isolaAm wamano tawaf~ayotahu min~A fatawaf~ahu EalaY {lo&lt;iymaAn {ll~ahum~i laA taHorimonA &gt;ajorah walaA tuDil~anA baEodah"></verse>
-			<verse title="" text="{ll~ahum~i &lt;in~a fulAna bona fulAnK fiy *im~atik waHaboli jiwArik faqihi mino fitonapi {loqabori waEa*aAbi {ln~Ar wa&gt;anota &gt;aholu {lowafA'i wa{loHaq~i fa{gofiro lahu waAroHamohu &lt;in~aka &gt;anota {logafwru {lr~aHym"></verse>
-			<verse title="" text="{ll~ahum~i Eaboduka waAbonu &gt;amatik AHotAja &lt;ilY raHomatik wa&gt;anota ganiy~N Eano Ea*aAbih &lt;ino kAna muHosinFA fazido fiy HasanAtih wa&lt;ino kAna musy}FA fatajAwazo Eanoh"></verse>
+			<verse title="" text="{ll~ahum~i {gofiro lahu waAroHamoh waEaAfihi waAEofu Eanoh wa&gt;akorimo nuzulah wawas~iEo mudoxalah waAgosilohu bi{lomA&apos;i wa{lv~aloji wa{lobarado wanaq~ihi mina {loxTAyaA kamaA naq~yota {lv~awobu {lo&gt;aboyaDu mina {ld~anaso wa&gt;abodilohu dArFA xayorFA mino dArih wa&gt;aholFA xayorFA mino &gt;aholih wazawojaFA xayorFA mino zawojih wa&gt;adoxilohu {lojan~ap wa&gt;aEi*ohu mino Ea*aAbi {loqabor waEa*aAbi {ln~aAr"></verse>
+			<verse title="" text="{ll~ahum~i {gofiro liHay~inaA wamay~itinaA wa$aAhidinaA wagaA}ibinaA waSagyrinaA wakabiyrinaA wa*akarinaA wa&gt;unovaAnaA {ll~ahum~i mano &gt;aHoyayotahu min~aA fa&gt;aHoyihi EalaY {lo&lt;isolaAm wamano tawaf~ayotahu min~aA fatawaf~ahu EalaY {lo&lt;iymaAn {ll~ahum~i laA taHorimonaA &gt;ajorah walaA tuDil~anaA baEodah"></verse>
+			<verse title="" text="{ll~ahum~i &lt;in~a fulaAna bona fulaAnK fiy *im~atik waHaboli jiwArik faqihi mino fitonapi {loqabori waEa*aAbi {ln~aAr wa&gt;anota &gt;aholu {lowafA&apos;i wa{loHaq~i fa{gofiro lahu waAroHamohu &lt;in~aka &gt;anota {logafwru {lr~aHym"></verse>
+			<verse title="" text="{ll~ahum~i Eaboduka waAbonu &gt;amatik AHotAja &lt;ilY raHomatik wa&gt;anota ganiy~N Eano Ea*aAbih &lt;ino kaAna muHosinFA fazido fiy HasanaAtih wa&lt;ino kaAna musy}FA fatajAwazo Eanoh"></verse>
 		</category>
 		<category title="ForTheAdvancementOfRewardDuringTheFuneralPrayer">
 			<verse title="" text="{ll~ahum~i AjoEalohu faraTFA wa*uxorFA liwa{lidayh wa$afyEFA mujAbFA {ll~ahum~i vaq~ilo bihi mawAziynahumA wa&gt;aEoZimo bihi &gt;ujwrahumA wa{loHiqohu biSAliHi {lom&amp;ominyn waAjoEalohu fiy kafAlapi &lt;ibora`hiym waqihi biraHomatika Ea*Aba {lojaHym"></verse>
 			<verse title="" text="\{1\}"></verse>
 		</category>
 		<category title="Condolence">
-			<verse title="" text="&lt;in~a lil~ahi maA &gt;axa* walahu maA &gt;aEoTY wakul~u $ay'K Einodahu bi&gt;ajalK musam~aYfalotaSobir walotaHotasib"></verse>
+			<verse title="" text="&lt;in~a lil~ahi maA &gt;axa* walahu maA &gt;aEoTY wakul~u $ay&apos;K Einodahu bi&gt;ajalK musam~aYfalotaSobir walotaHotasib"></verse>
 		</category>
 		<category title="PlacingTheDeceasedInTheGrave">
 			<verse title="" text="bisomi {ll~ahi waEalaY sun~api raswli {ll~ah"></verse>
@@ -504,83 +504,83 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<verse title="" text=""></verse>
 		</category>
 		<category title="VisitingTheGraves">
-			<verse title="" text="{ls~alAmu Ealayokumo &gt;ahola {ld~iyAri mina {lom&amp;ominyna wa{lomusolimyn wa&lt;in~A &lt;ino $A'a {ll~ahu bikumo lAHiqwn nasoAalu {ll~aha lnA walakumo {loEaAfiyap"></verse>
+			<verse title="" text="{ls~alaAmu Ealayokumo &gt;ahola {ld~iyaAri mina {lom&amp;ominyna wa{lomusolimyn wa&lt;in~aA &lt;ino $aA&apos;a {ll~ahu bikumo laAHiqwn nasoAalu {ll~aha lnaA walakumo {loEaAfiyap"></verse>
 		</category>
 		<category title="PrayerSaidDuringAWindStorm">
-			<verse title="" text="{ll~ahum~a &lt;in~ay &gt;aso&gt;aluka xayorahA wa&gt;aEow*u bika mino $ar~ihA"></verse>
-			<verse title="" text="{ll~ahum~a &lt;in~ay &gt;aso&gt;aluka xayorahA waxayora maA fyhA waxayora maA Aurosilato bih wa&gt;aEow*u bika mino $ar~ihA wa$ar~i maA fyhA wa$ar~i maA Aurosilato bih"></verse>
+			<verse title="" text="{ll~ahum~a &lt;in~ay &gt;aso&gt;aluka xayorahaA wa&gt;aEuwo*u bika mino $ar~ihaA"></verse>
+			<verse title="" text="{ll~ahum~a &lt;in~ay &gt;aso&gt;aluka xayorahaA waxayora maA fiyhaA waxayora maA Aurosilato bih wa&gt;aEuwo*u bika mino $ar~ihaA wa$ar~i maA fiyhaA wa$ar~i maA Aurosilato bih"></verse>
 		</category>
 		<category title="UponHearingThunder">
-			<verse title="" text="suboHaAna {l~*iy yusab~iHu {lr~aEodu biHamodihi wa{lomlA}ikpu mino xyfath"></verse>
+			<verse title="" text="suboHaAna {l~*iy yusab~iHu {lr~aEodu biHamodihi wa{lomlaA}ikpu mino xyfath"></verse>
 		</category>
 		<category title="ForRain">
-			<verse title="" text="{ll~ahum~a AsoqinA gayovFA mugyvFA mary}FA muryEFA nAfiEFA gayora DAr EAjilFA gayora |jil"></verse>
-			<verse title="" text="{ll~ahum~a &gt;givonA {ll~ahum~a &gt;givonA {ll~ahum~a &gt;givonA"></verse>
-			<verse title="" text="{ll~ahum~a Asoqi EibAdaka wabahA}imak waAno$uro raHomataka wa&gt;aHoyiy baladaka {lomay~it"></verse>
+			<verse title="" text="{ll~ahum~a AsoqinaA gayovFA mugyvFA mary}FA muryEFA naAfiEFA gayora DAr EAjilFA gayora |jil"></verse>
+			<verse title="" text="{ll~ahum~a &gt;givonaA {ll~ahum~a &gt;givonaA {ll~ahum~a &gt;givonaA"></verse>
+			<verse title="" text="{ll~ahum~a Asoqi EibaAdaka wabahaA}imak waAno$uro raHomataka wa&gt;aHoyiy baladaka {lomay~it"></verse>
 		</category>
 		<category title="WhenItRains">
-			<verse title="" text="{ll~ahum~a Say~ibFA nAfiEFA"></verse>
+			<verse title="" text="{ll~ahum~a Say~ibFA naAfiEFA"></verse>
 		</category>
 		<category title="AfterRainfall">
-			<verse title="" text="muTironA bifaDoli {ll~ahi waraHomatih"></verse>
+			<verse title="" text="muTironaA bifaDoli {ll~ahi waraHomatih"></verse>
 		</category>
 		<category title="AskingForClearSkies">
-			<verse title="" text="{ll~ahum~a Hawa{layonA walaA EalayonA {ll~ahum~a EalaY {l|kAmi wa{lZ~irAb wabuTwni {lo&gt;awodiyap wamanAbiti {l$~ajr"></verse>
+			<verse title="" text="{ll~ahum~a Hawa{layonaA walaA EalayonaA {ll~ahum~a EalaY {l|kaAmi wa{lZ~irAb wabuTwni {lo&gt;awodiyap wamanaAbiti {l$~ajor"></verse>
 		</category>
 		<category title="UponSightingTheCrescentMoon">
-			<verse title="" text="{ll~ahu &gt;akobar {ll~ahum~a &gt;ahil~ahu EalayonA biAl>moni wa{lo&lt;iymaAn wa{ls~alAmapi wa{lo&lt;isolaAm wa{lt~awofyqi limA tuHib~u wataroDY rab~unA warab~uka {ll~ah"></verse>
+			<verse title="" text="{ll~ahu &gt;akobar {ll~ahum~a &gt;ahil~ahu EalayonaA biAl>moni wa{lo&lt;iymaAn wa{ls~alaAmapi wa{lo&lt;isolaAm wa{lt~awofyqi limA tuHib~u wataroDY rab~unaA warab~uka {ll~ah"></verse>
 		</category>
 		<category title="UponBreakingFast">
-			<verse title="" text="*ahaba {lZ~ama&gt;u waAbotal~ati {loEurwq wavabata {lo&gt;joru &lt;ino $A'a {ll~ah"></verse>
+			<verse title="" text="*ahaba {lZ~ama&gt;u waAbotal~ati {loEurwq wavabata {lo&gt;joru &lt;ino $aA&apos;a {ll~ah"></verse>
 			<verse title="" text="{ll~ahum~a &lt;in~ay &gt;aso&gt;aluka biraHomatika {l~ty wasiEat kul~a $y' &gt;ano tagofira liy"></verse>
 		</category>
 		<category title="BeforeEating">
 			<verse title="" text="bisomi {ll~ahi fiy &gt;aw~alihi wa|xirih"></verse>
-			<verse title="" text="{ll~ahum~a bAriko lanA fyhi wa&gt;aToEimonA xayorFA minoh"></verse>
+			<verse title="" text="{ll~ahum~a baAriko lanaA fiyhi wa&gt;aToEimonaA xayorFA minoh"></verse>
 		</category>
 		<category title="UponCompletingTheMeal">
 			<verse title="" text="{loHamodu lil~ahi {l~a*iy &gt;aToEamaniy ha*aA warazaqanyhi mino gayori HawolK min~iy walaA quw~ap"></verse>
-			<verse title="" text="{loHamodu lil~ahi HamodFA kavyrFA Tay~ibFA mubArakFA fyh gayora makofiy~K walaA muwad~aEK walaA musotagonYF Eanohu rab~unA"></verse>
+			<verse title="" text="{loHamodu lil~ahi HamodFA kavyrFA Tay~ibFA mubaArakFA fiyh gayora makofiy~K walaA muwad~aEK walaA musotagonaYF Eanohu rab~unaA"></verse>
 		</category>
 		<category title="OfTheGuestForTheHost">
-			<verse title="" text="{ll~ahum~a bAriko lahumo fymA razaqotahum wa{gofiro lahumo waAroHamohumo"></verse>
+			<verse title="" text="{ll~ahum~a baAriko lahumo fiymaA razaqotahum wa{gofiro lahumo waAroHamohumo"></verse>
 		</category>
 		<category title="SaidToOneOfferingADrinkOrTheOneWhoIntendedToDoThat">
-			<verse title="" text="{ll~ahum~a &gt;aToEimo man &gt;aToEamaniy waAsoqi man sqAny"></verse>
+			<verse title="" text="{ll~ahum~a &gt;aToEimo man &gt;aToEamaniy waAsoqi man sqaAny"></verse>
 		</category>
 		<category title="WhenBreakingFastInSomeonesHome">
-			<verse title="" text="&gt;afoTara Einodakum {lS~A}imwna wa&gt;akala TaEAmakumu {lo&gt;boraAr waSal~ato Ealayokumu {lomlA}ikap"></verse>
+			<verse title="" text="&gt;afoTara Einodakum {lS~aA}imuwna wa&gt;akala TaEAmakumu {lo&gt;boraAr waSal~ato Ealayokumu {lomlaA}ikap"></verse>
 		</category>
 		<category title="ByOneFastingWhenPresentedWithFoodAndDoesNotBreakFast">
 			<verse title="" text=""></verse>
 		</category>
 		<category title="UponSeeingEarlyOrPrematureFruit">
-			<verse title="" text="{ll~ahum~a bAriko lanA fiy vamarinA wabAriko lanA fiy madynatinA wabAriko lanA fiy SAEinA wabAriko lanA fiy mud~inA"></verse>
+			<verse title="" text="{ll~ahum~a baAriko lanaA fiy vamarinaA wabaAriko lanaA fiy madynatinaA wabaAriko lanaA fiy SAEinaA wabaAriko lanaA fiy mud~inaA"></verse>
 		</category>
 		<category title="UponSneezing">
-			<verse title="" text="{loHamodu lil~ahi yaroHamuka {ll~ah yahodykumu {ll~ahu wayuSoliHu bAlakum"></verse>
+			<verse title="" text="{loHamodu lil~ahi yaroHamuka {ll~ah yahodykumu {ll~ahu wayuSoliHu baAlakum"></verse>
 		</category>
 		<category title="ToTheNewlyWed">
-			<verse title="" text="bAraka {ll~ahu lak wabAraka Ealayok wajamaEa bayonakumA fiy xayor"></verse>
+			<verse title="" text="baAraka {ll~ahu lak wabaAraka Ealayok wajamaEa bayonakumA fiy xayor"></verse>
 		</category>
 		<category title="GroomOnWeddingNightOrWhenBuyingAnimal">
-			<verse title="" text="{ll~ahum~a &lt;in~ay &gt;aso&gt;aluka xayorahA waxayora maA jabalotahA Ealayoh wa&gt;aEow*u bika mino $ar~ihA wa$ar~i maA jabalotahA Ealayoh"></verse>
+			<verse title="" text="{ll~ahum~a &lt;in~ay &gt;aso&gt;aluka xayorahaA waxayora maA jabalotahaA Ealayoh wa&gt;aEuwo*u bika mino $ar~ihaA wa$ar~i maA jabalotahaA Ealayoh"></verse>
 		</category>
 		<category title="BeforeSexualIntercourse">
-			<verse title="" text="bisomi {ll~ah {ll~ahum~a jan~ibonA {l$~ayoTAna wajan~ibi {l$~ayoTAna maA razaqotanA"></verse>
+			<verse title="" text="bisomi {ll~ah {ll~ahum~a jan~ibonaA {l$~ayoTAna wajan~ibi {l$~ayoTAna maA razaqotanaA"></verse>
 		</category>
 		<category title="WhenAngry">
-			<verse title="" text="&gt;aEow*u bi{ll~ahi mina [l$~ayoTAni {lr~ajym"></verse>
+			<verse title="" text="&gt;aEuwo*u bi{ll~ahi mina [l$~ayoTAni {lr~ajym"></verse>
 		</category>
 		<category title="UponSeeingSomeoneInTrialOrTribulation">
-			<verse title="" text="{loHamodu lil~ahi {l~*iy EaAfAniy mim~A AbotalAka bihi wafaD~alaniy EalaY kavyrK mim~ano xalaqa tafoDylA"></verse>
+			<verse title="" text="{loHamodu lil~ahi {l~*iy EaAfAniy mim~aA AbotalaAka bihi wafaD~alaniy EalaY kavyrK mim~ano xalaqa tafoDylaA"></verse>
 		</category>
 		<category title="RemembranceAtSittingOrGathering">
-			<verse title="" text="rab~i {gofiro liy watubo Ealay~a &lt;in~aka &gt;anota {lt~aw~Abu {lOgafwr"></verse>
+			<verse title="" text="rab~i {gofiro liy watubo Ealay~a &lt;in~aka &gt;anota {lt~aw~aAbu {lOgafwr"></verse>
 		</category>
 		<category title="ForExpiationOfSinsAtTheConclusionOfSittingOrGathering">
-			<verse title="" text="suboHaAnaka {ll~ahum~a wabiHamdik &gt;a$ohadu &gt;ano laA &lt;ilaha &lt;il~aA &gt;anota &gt;asotagofiruka wa&gt;atwbu &lt;ilayok"></verse>
-			<verse title="" text="suboHaAnaka wabiHamdik laA &lt;ilaha &lt;il~aA &gt;anota &gt;asotagofiruka wa&gt;atwbu &lt;ilayok"></verse>
+			<verse title="" text="suboHaAnaka {ll~ahum~a wabiHamodik &gt;a$ohadu &gt;ano laA &lt;ilaha &lt;il~aA &gt;anota &gt;asotagofiruka wa&gt;atwbu &lt;ilayok"></verse>
+			<verse title="" text="suboHaAnaka wabiHamodik laA &lt;ilaha &lt;il~aA &gt;anota &gt;asotagofiruka wa&gt;atwbu &lt;ilayok"></verse>
 		</category>
 		<category title="ForConcludingAllSittings">
 			<verse title="" text="gafara {ll~ahu laka yaA raswla {ll~ah walaka"></verse>
@@ -598,31 +598,31 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<verse title="" text="&gt;aHab~aka {l~a*iy &gt;aHobabotaniy lah"></verse>
 		</category>
 		<category title="ToOneWhoHasOfferedYouSomeOfHisWealth">
-			<verse title="" text="bAraka {ll~ahu laka fiy &gt;aholika wamAlik"></verse>
+			<verse title="" text="baAraka {ll~ahu laka fiy &gt;aholika wamAlik"></verse>
 		</category>
 		<category title="ToTheDebtorWhenHisDebtIsSettled">
-			<verse title="" text="bAraka {ll~ahu laka fiy &gt;aholika wamAlik &lt;in~amA jazA'u {ls~alafi {loHamodu wa{lo&gt;adaA^&apos;"></verse>
+			<verse title="" text="baAraka {ll~ahu laka fiy &gt;aholika wamAlik &lt;in~amA jazaA&apos;u {ls~alafi {loHamodu wa{lo&gt;adaA^&apos;"></verse>
 		</category>
 		<category title="ForFearOfShirk">
-			<verse title="" text="{ll~ahum~a &lt;in~y &gt;aEow*ubika &gt;ano &gt;u$orika bika wa&gt;anA &gt;aEolamo wa&gt;asotagofiruka limA laA &gt;aEolam"></verse>
+			<verse title="" text="{ll~ahum~a &lt;in~y &gt;aEuwo*ubika &gt;ano &gt;u$orika bika wa&gt;anaA &gt;aEolamo wa&gt;asotagofiruka limA laA &gt;aEolam"></verse>
 		</category>
 		<category title="ReturningASupplicationAfterHavingBestowedAGiftOrCharityUponSomeone">
-			<verse title="" text="bAraka {ll~ahu fykumo wafyhimo bAraka {ll~ah"></verse>
+			<verse title="" text="baAraka {ll~ahu fykumo wafiyhimo baAraka {ll~ah"></verse>
 		</category>
 		<category title="ForbiddanceOfAscribingThingsToOmens">
 			<verse title="" text="{ll~ahum~a laA Tayora &lt;il~aA Tayoruk walaA xayora &lt;il~aA xayoruk walaA &lt;ilaha gayoruk"></verse>
 		</category>
 		<category title="WhenMountingAnAnimalOrAnyMeansOfTransport">
-			<verse title="" text="bisomi {ll~ahi wa{loHamodu lil~ah suboHaAna {l~a*iy sax~ara lanA ha*aA wamA kun~A lahu muqorinyn wa&lt;in~A &lt;ilY rab~inA lamunqalibwn {loHamodu lil~ah {loHamodu lil~ah {loHamodu lil~ah {ll~ahu &gt;akobar {ll~ahu &gt;akobar {ll~ahu &gt;akobar suboHaAnaka {ll~ahum~a &lt;in~y Zalamotu nafosy fa{gofiro liy fa&lt;in~ahu laA yagofiru {l*~unwba &lt;il~aA &gt;anot"></verse>
+			<verse title="" text="bisomi {ll~ahi wa{loHamodu lil~ah suboHaAna {l~a*iy sax~ara lanaA ha*aA wamaA kun~aA lahu muqorinyn wa&lt;in~aA &lt;ilY rab~inaA lamunqalibwn {loHamodu lil~ah {loHamodu lil~ah {loHamodu lil~ah {ll~ahu &gt;akobar {ll~ahu &gt;akobar {ll~ahu &gt;akobar suboHaAnaka {ll~ahum~a &lt;in~y Zalamotu nafosiy fa{gofiro liy fa&lt;in~ahu laA yagofiru {l*~unwba &lt;il~aA &gt;anot"></verse>
 		</category>
 		<category title="ForTravel">
-			<verse title="" text="{ll~ahu &gt;akobar {ll~ahu &gt;akobar {ll~ahu &gt;akobar suboHaAna {l~a*iy sax~ara lanA ha*aA wamA kun~A lahu muqorinyn wa&lt;in~A &lt;ilY rab~inA lamunoqalibwn {ll~ahum~a &lt;in~A naso&gt;aluka fiy safarinA ha*aA {lobir~a wa{lt~aqowY wamina {loEamali maA taroDY {ll~ahum~a haw~ino EalaynA safaranA ha*aA waATowi Ean~A buEodah {ll~ahum~a &gt;anota {lS~AHibu fiy {ls~afar wa{loxalyfapu fiy {lo&gt;ahli {ll~ahum~a &lt;in~y &gt;aEow*ubika mino waEovA'i {ls~afar waka|bapi {lomanoZar wasw'i {lomunoqalabi fiy {lomAli wa{lo&gt;ahol |yibwna tA}ibwna EAbidwna lirab~inA HAmidwn"></verse>
+			<verse title="" text="{ll~ahu &gt;akobar {ll~ahu &gt;akobar {ll~ahu &gt;akobar suboHaAna {l~a*iy sax~ara lanaA ha*aA wamaA kun~aA lahu muqorinyn wa&lt;in~aA &lt;ilY rab~inaA lamunoqalibwn {ll~ahum~a &lt;in~aA naso&gt;aluka fiy safarinaA ha*aA {lobir~a wa{lt~aqowY wamina {loEamali maA taroDY {ll~ahum~a haw~ino EalaynaA safaranaA ha*aA waATowi Ean~aA buEodah {ll~ahum~a &gt;anota {lS~aAHibu fiy {ls~afar wa{loxalyfapu fiy {lo&gt;ahli {ll~ahum~a &lt;in~y &gt;aEuwo*ubika mino waEovA&apos;i {ls~afar waka|bapi {lomanoZar wasw&apos;i {lomunoqalabi fiy {lomAli wa{lo&gt;ahol |yibwna tA}ibwna EAbidwna lirab~inaA HAmidwn"></verse>
 		</category>
 		<category title="UponEnteringATownOrVillage">
-			<verse title="" text="&gt;ll~hum~a rab~a {ls~amwAti {ls~boEi wamA &gt;aZolalan warab~a {lo&gt;arADyna {ls~boEi wamA >qolalon warab~a {l$~ayATyni wamA &gt;aDolalon warab~a {lr~iyAHi wamA *arayon &gt;aso&gt;aluka xayora ha*ihi {loqaroyapi waxayora &gt;aholihA waxayora maA fyhA wa&gt;aEow*u bika mino $ar~ihA wa$ar~i &gt;aholihA wa$ar~i maA fyhA"></verse>
+			<verse title="" text="&gt;ll~hum~a rab~a {ls~ama`wa`ti {ls~boEi wamaA &gt;aZolalan warab~a {lo&gt;arADyna {ls~boEi wamaA >qolalon warab~a {l$~ayaATyni wamaA &gt;aDolalon warab~a {lr~iyaAHi wamaA *arayon &gt;aso&gt;aluka xayora ha*ihi {loqaroyapi waxayora &gt;aholihaA waxayora maA fiyhaA wa&gt;aEuwo*u bika mino $ar~ihaA wa$ar~i &gt;aholihaA wa$ar~i maA fiyhaA"></verse>
 		</category>
 		<category title="WhenEnteringTheMarket">
-			<verse title="" text="laA &lt;ilaha &lt;il~aA {ll~ah wHdahu laA $ryka lhu lhu {lomuloku wlhu {loHamod yuHoyy wayumytu wahuwa Hay~N laA yamwt biyadihi {loxayoru wahwa ElY kl~ $y'K qdyr"></verse>
+			<verse title="" text="laA &lt;ilaha &lt;il~aA {ll~ah waHodahu laA $ariyka lahu lahu {lomuloku walahu {loHamod yuHoyiy wayumiytu wahuwa Hay~N laA yamwt biyadihi {loxayoru wahuwa EalaY kul~i $ay&apos;K qdyr"></verse>
 		</category>
 		<category title="WhenTheMountedAnimalOrMeansOfTransportStumbles">
 			<verse title="" text="bisomi {ll~ahi"></verse>
@@ -638,16 +638,16 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<verse title="" text="{ll~ahu &gt;akobar suboHaAna {ll~ah"></verse>
 		</category>
 		<category title="OfTheTravellerAsDawnApproaches">
-			<verse title="" text="samiEa sAmiEu biHamodi {ll~ahi waHusoni balA}ihi EalayonA rab~anA SAHibonA wa&gt;afoDil EalayonA EA}i*FA bi{ll~ahi mina {ln~Ar"></verse>
+			<verse title="" text="samiEa sAmiEu biHamodi {ll~ahi waHusoni balaA}ihi EalayonaA rab~anaA SAHibonaA wa&gt;afoDil EalayonaA EA}i*FA bi{ll~ahi mina {ln~aAr"></verse>
 		</category>
 		<category title="StoppingOrLodgingSomewhere">
-			<verse title="" text="&gt;aEow*u bikalimAti {ll~ahi {lt~Am~Ati mino $ar~i maA xalaq"></verse>
+			<verse title="" text="&gt;aEuwo*u bikalimAti {ll~ahi {lt~aAm~aAti mino $ar~i maA xalaq"></verse>
 		</category>
 		<category title="WhileReturningFromTravel">
-			<verse title="" text="{ll~ahu &gt;akobar {ll~ahu &gt;akobar {ll~ahu &gt;akobar laA &lt;ilaha &lt;il~aA {ll~ahu waHodahu laA $ryka lhu lhu {lomlku wlhu {loHamod whuwa ElY kul~ $ay'K qadyr |yibwna tA}ibwna EAbidwna lirab~inA HAmidwn Sadaqa {ll~ahu waEodah wanaSara Eabodah wahazama {lo&gt;aHozAba waHodah"></verse>
+			<verse title="" text="{ll~ahu &gt;akobar {ll~ahu &gt;akobar {ll~ahu &gt;akobar laA &lt;ilaha &lt;il~aA {ll~ahu waHodahu laA $ariyka lahu lahu {lomuloku walahu {loHamod wahuwa EalaY kul~i $ay&apos;K qadiyr |yibwna tA}ibwna EAbidwna lirab~inaA HAmidwn Sadaqa {ll~ahu waEodah wanaSara Eabodah wahazama {lo&gt;aHozAba waHodah"></verse>
 		</category>
 		<category title="UponReceivingPleasingOrDispleasingNews">
-			<verse title="" text="{loHamodu lil~ahi {l~a*iy biniEomatihi tatim~u {lS~AliHAt {loHamodu lil~ahi ElY kul~i HAl"></verse>
+			<verse title="" text="{loHamodu lil~ahi {l~a*iy biniEomatihi tatim~u {lS~aAliHaAt {loHamodu lil~ahi EalaY kul~i HaAl"></verse>
 		</category>
 		<category title="ExcellenceOfSendingPrayersUponTheProphet">
 			<verse title="" text=""></verse>
@@ -666,7 +666,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<verse title="" text=""></verse>
 		</category>
 		<category title="ForTheOneYouHaveInsulted">
-			<verse title="" text="{ll~ahum~a f&gt;ay~umaA mu&amp;ominK sababotuhu faAjoEalo *alika lhu qurobpF &lt;ilyka yawoma {loqiyaAmpi"></verse>
+			<verse title="" text="{ll~ahum~a f&gt;ay~umaA mu&amp;ominK sababotuhu faAjoEalo *alika lahu qurobpF &lt;ilayka yawoma {loqiyaAmpi"></verse>
 		</category>
 		<category title="TheEtiquetteOfPraisingAFellowMuslim">
 			<verse title="" text=""></verse>
@@ -675,10 +675,10 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<verse title="" text="\{2:201:4-14\}"></verse>
 		</category>
 		<category title="WhenAtMountSafaAndMountMarwah">
-			<verse title="" text="{2:158} &gt;aboda&gt;u bimaA bada&gt;a {ll~ahu bihi {ll~ahu &gt;akobaru {ll~ahu &gt;akobaru {ll~ahu &gt;akobaru laA &lt;ilaha &lt;il~aA {ll~ahu waHodahu laA $ariyka lahu lahu {lomuloku walahu {loHamodu whuwa EalaY kul~i $ay'K qadyrN laA &lt;ilaha &lt;il~aA {ll~ahu waHodahu &gt;anojaza waEodahu wanaSara Eabodahu wahazama {lo&gt;aHozaAba waHodahu"></verse>
+			<verse title="" text="{2:158} &gt;aboda&gt;u bimaA bada&gt;a {ll~ahu bihi {ll~ahu &gt;akobaru {ll~ahu &gt;akobaru {ll~ahu &gt;akobaru laA &lt;ilaha &lt;il~aA {ll~ahu waHodahu laA $ariyka lahu lahu {lomuloku walahu {loHamodu wahuwa EalaY kul~i $ay&apos;K qadyrN laA &lt;ilaha &lt;il~aA {ll~ahu waHodahu &gt;anojaza waEodahu wanaSara Eabodahu wahazama {lo&gt;aHozaAba waHodahu"></verse>
 		</category>
 		<category title="TheDayOfArafah">
-			<verse title="" text="laA &lt;ilaha &lt;il~aA {ll~ahu waHodahu laA $aryka lahu lahu {lomuloku wlahu {loHamodu whuwa EalaY kul~i $ayo'K qadyrN"></verse>
+			<verse title="" text="laA &lt;ilaha &lt;il~aA {ll~ahu waHodahu laA $ariyka lahu lahu {lomuloku walahu {loHamodu wahuwa EalaY kul~i $ayo&apos;K qadyrN"></verse>
 		</category>
 		<category title="AtTheSacredSite">
 			<verse title="" text=""></verse>
@@ -703,10 +703,10 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<verse title="" text=""></verse>
 		</category>
 		<category title="WhenFeelingSomePainInTheBody">
-			<verse title="" text="bisomi {ll~ahi (valaAvFA) &gt;aEuw*u bi{ll~ahi waqudoratihi mano $ar~i maA &gt;ajidu wa&gt;uHaA*iru (sbE mrAt)"></verse>
+			<verse title="" text="bisomi {ll~ahi (valaAvFA) &gt;aEuwo*u bi{ll~ahi waqudoratihi mano $ar~i maA &gt;ajidu wa&gt;uHaA*iru (sbE mrAt)"></verse>
 		</category>
 		<category title="WhenInFearOfAfflictingSomethingOrSomeoneWithOnesEye">
-			<verse title="" text="{ll~ahum~a baArik Ealayh maA $A'a {ll~ah laA quw~apa &lt;il~aA bi{ll~ah"></verse>
+			<verse title="" text="{ll~ahum~a baArik Ealayh maA $aA&apos;a {ll~ah laA quw~apa &lt;il~aA bi{ll~ah"></verse>
 			<verse title="" text=""></verse>
 		</category>
 		<category title="EtiquetteOfRetiringForTheNight">
@@ -731,7 +731,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<verse title="" text="bisomi {ll~ahi wa{ll~ahu &gt;akobaru {ll~ahum~a minoka wlaka {ll~ahum~a taqab~alo min~iy"></verse>
 		</category>
 		<category title="ToWardOffTheDeceptionOfTheObstinateDevils">
-			<verse title="" text="&gt;aEuw*u bkalimaAti {ll~ahi {lt~aAm~aAti {l~atiy laA yujaAwizuhun~a bar~N wlaA faAjrN mino $~r~i maA xalqa wbara&gt;a w*ara&gt;a wmino $ar~i maA yanozilu mina {ls~amaA^&apos;i wimno $ar~i maA yaEoruju fyhaA wmin $ar~i maA *ara&gt;a fiy {lo&gt;aroDi wmino $ar~i maA yaxoruju minohaA wimno $ar~i fitani {ll~ayoli wa{ln~ahAri wmino $ar~i kul~i TAriqK &lt;il~aA TaAriqFA yaToruqu bxayorK yaA raHomanu"></verse>
+			<verse title="" text="&gt;aEuwo*u bkalimaAti {ll~ahi {lt~aAm~aAti {l~atiy laA yujaAwizuhun~a bar~N wlaA faAjorN mino $~r~i maA xalqa wabara&gt;a wa*ara&gt;a wamino $ar~i maA yanozilu mina {ls~amaA^&apos;i wimno $ar~i maA yaEoruju fiyhaA wamin $ar~i maA *ara&gt;a fiy {lo&gt;aroDi wamino $ar~i maA yaxoruju minohaA wimno $ar~i fitani {ll~ayoli wa{ln~ahaAri wamino $ar~i kul~i TAriqK &lt;il~aA TaAriqFA yaToruqu bxayorK yaA raHomanu"></verse>
 		</category>
 		<category title="SeekingForgivenessAndRepentance">
 			<verse title="" text=""></verse>
@@ -742,17 +742,17 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<verse title="" text=""></verse>
 		</category>
 		<category title="ExcellenceOfRemembranceAndGlorificationOfAllah">
-			<verse title="" text="laA &lt;ilaha &lt;il~aA {ll~ahu waHodahu laA $ariyka lahu lahu {lomuloku walahu {loHamod whuwa EalaY kul~i $ay'K qadyrN (mA}p mrp)"></verse>
+			<verse title="" text="laA &lt;ilaha &lt;il~aA {ll~ahu waHodahu laA $ariyka lahu lahu {lomuloku walahu {loHamod wahuwa EalaY kul~i $ay&apos;K qadyrN (mA}p mrp)"></verse>
 			<verse title="" text="suboHaAna {ll~ahi wabiHamodihi (mA}p mrp fiy {loywm)"></verse>
 			<verse title="" text="suboHaAna {ll~ahi wabiHamodihi (Hyn ySbH wHyn ymsy)"></verse>
-			<verse title="" text="laA &lt;ilaha &lt;il~aA {ll~ahu waHodahu laA $ariyka lahu lahu {lomuloku walahu {loHamodu whuwa EalaY kul~i $ay'K qadyrN"></verse>
+			<verse title="" text="laA &lt;ilaha &lt;il~aA {ll~ahu waHodahu laA $ariyka lahu lahu {lomuloku walahu {loHamodu wahuwa EalaY kul~i $ay&apos;K qadyrN"></verse>
 			<verse title="" text="suboHaAna {ll~ahi wabiHamodihi wsuboHaAna {ll~ahi {loEaZiymi"></verse>
 			<verse title="" text="suboHaAna {ll~ahi wa{loHamodu lil~ahi laA &lt;ilaha &lt;il~aA {ll~ahu wa{ll~ahu &gt;akobaru"></verse>
 			<verse title="" text="suboHaAna {ll~ahi"></verse>
 			<verse title="" text="suboHaAna {ll~ahi {loEaZiymi wbiHamodihi"></verse>
 			<verse title="" text="laA HawKla walaA quw~apa &lt;il~aA bi{ll~ahi"></verse>
 			<verse title="" text="suboHaAna {ll~ahi wa{loHamodu lil~ahi wlaA &lt;ilaha &lt;il~aA {ll~ahu wa{ll~ahu &gt;akobaru"></verse>
-			<verse title="" text="laA &lt;ilaha &lt;il~aA {ll~ahu waHodahu laA $ariyka lahu {ll~ahu &gt;akobaru kabiyrAa wa{loHamodu lil~ahi kavyrFA suboHaAna {ll~ahi rab~i {loEaAlamyna laA Hawola walaA quw~apa &lt;il~A bi{ll~ahi {loEaziyzi {loHakiymi {ll~ahum~a {gofiro liy wAroHamoniy wAhodiniy wArozuqoniy"></verse>
+			<verse title="" text="laA &lt;ilaha &lt;il~aA {ll~ahu waHodahu laA $ariyka lahu {ll~ahu &gt;akobaru kabiyrAa wa{loHamodu lil~ahi kavyrFA suboHaAna {ll~ahi rab~i {loEaAlamyna laA Hawola walaA quw~apa &lt;il~aA bi{ll~ahi {loEaziyzi {loHakiymi {ll~ahum~a {gofiro liy wAroHamoniy wAhodiniy wArozuqoniy"></verse>
 			<verse title="" text="{ll~ahum~a {gofiri liy wAroHamoniy wAhodiniy wEaAfiniy wArozuqoniy"></verse>
 			<verse title="" text="{loHamodu lil~ahi laA &lt;ilah &lt;il~aA {ll~ahu"></verse>
 			<verse title="" text="suboHaAna {ll~ahi wa{loHamodu lil~ahi laA &lt;ilaha &lt;al~aA {ll~ahu wa{ll~ahu &gt;akobaru walaA Hawola walaA quw~apa &lt;il~aA bi{ll~ahi"></verse>
@@ -770,8 +770,8 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 		</category>
 		<category title="CallToPrayer">
 			<verse title="CallToPrayerFirstVerse" text="{ll~ahu &gt;akobaru"></verse>
-			<verse title="CallToPrayerSecondVerse" text="&gt;a$hadu &gt;an laA &lt;ilaha &lt;il~aA {ll~ahu"></verse>
-			<verse title="CallToPrayerThirdVerse" text="&gt;a$hadu &gt;an muHam~adAN rasuwl {ll~ahi"></verse>
+			<verse title="CallToPrayerSecondVerse" text="&gt;a$ohadu &gt;an laA &lt;ilaha &lt;il~aA {ll~ahu"></verse>
+			<verse title="CallToPrayerThirdVerse" text="&gt;a$ohadu &gt;an muHam~adAN rasuwl {ll~ahi"></verse>
 			<verse title="CallToPrayerFourthVerse" text="Hay~a EalaY {lS~alaApi"></verse>
 			<verse title="CallToPrayerFifthVerse" text="Hay~a EalaY {lofalaAHi"></verse>
 			<verse title="CallToPrayerSixthVerse" text="{lS~alaApu xayrN mina {ln~awmi"></verse>
@@ -798,8 +798,8 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<verse title="Talbiah" text="lab~ayoka {ll~ahum~a lab~ayoka\, lab~ayoka laA $ariyoka laka lab~ayoka\, &lt;in~a {loHamoda wa{ln~iEomata laka wa{lomuloka\, laA $ariyoka laka\."></verse>
 			<verse title="SalawatSupplicationAfterTalbiah" text="{ll~ahum~a Sal~i EalaY say~idinaA muHam~adK waEalaY &gt;ali say~idinaA muHam~adK. kamaA Sal~ayota EalaY &lt;ibora`hiymi waEalaY &gt;ali &lt;ibora`hiymi\. wabaAriko EalaY say~idinaA muHam~adK waEalaY &gt;ali say~idinaA muHam~ad kamaA baArakota EalaY &lt;ibora`hiyma waEalaY &gt;ali &lt;ibora`hiyma\, fiY {loEaAlamiyona &lt;in~aka HamiyodN majiyodN\."></verse>
 			<verse title="SupplicationAfterSalawatSupplication" text="{ll~ahum~a &lt;in~iy &gt;aso&gt;aluka riDaAka wa{lojan~ata\, wa&gt;aEuwo*ubika mino saxaTika wa{ln~aAri\."></verse>
-			<verse title="SupplicationForArrivingAtMakkah" text="{ll~ahum~a &lt;in~a ha*aA {loHaraAma Haramuka\, wa{lobalada baladuka walAl&gt;amona &gt;amanuka\, faHar~imoniy EalaY {ln~aAri wa&gt;amin~ay mino Ea*aAbika yawoma taboEa$u EibaAdaka\."></verse>
-			<verse title="EnteringMasjidilHaram" text="{ll~ahum~a &gt;anota {ls~alaAmu waminoka {ls~alaAmu faHay~inaA rab~anaA biAls~alaAmi wa&gt;adoxilonaA {lojan~ata daAra {ls~alaAmi tabaArakota rab~anaA wataEaAlayota yaA *aA{loxalAali wa{lo&lt;ikoraAmi\. {ll~ahum~a AfotaHo liyo &gt;abowaAba raHomatka wamagoofiratika wa&gt;adoxiloniyo fiyohaA\, bisomi {ll~ah wa{loHamodu lil~ahi wa{lS~alAatu wa{ls~alaAmu EalaY rasuwoli {ll~ahi Sal~aY {ll~ahu Ealayopi wasal~ama\."></verse>
+			<verse title="SupplicationForArrivingAtMakkah" text="{ll~ahum~a &lt;in~a ha*aA {loHaraAma Haramuka\, wa{lobalada baladuka walaAl&gt;amona &gt;amanuka\, faHar~imoniy EalaY {ln~aAri wa&gt;amin~ay mino Ea*aAbika yawoma taboEa$u EibaAdaka\."></verse>
+			<verse title="EnteringMasjidilHaram" text="{ll~ahum~a &gt;anota {ls~alaAmu waminoka {ls~alaAmu faHay~inaA rab~anaA biAls~alaAmi wa&gt;adoxilonaA {lojan~ata daAra {ls~alaAmi tabaArakota rab~anaA wataEaAlayota yaA *aA{loxalaAali wa{lo&lt;ikoraAmi\. {ll~ahum~a AfotaHo liyo &gt;abowaAba raHomatka wamagoofiratika wa&gt;adoxiloniyo fiyohaA\, bisomi {ll~ah wa{loHamodu lil~ahi wa{lS~alaAatu wa{ls~alaAmu EalaY rasuwoli {ll~ahi Sal~aY {ll~ahu Ealayopi wasal~ama\."></verse>
 		</category>
 		<category title="Celebration">
 			<verse title="Allah is greatest, Allah is greatest, Allah is greatest, there is no God except Allah, and Allah is greatest, Allah is greatest, and to Allah is all praise and thanks" text="{ll~ahu &gt;akobaru\, {ll~ahu &gt;akobaru\, {ll~ahu &gt;akobaru\, laA &lt;ilaha &lt;il~aA {ll~ahu\, wa{ll~ahu &gt;akobaru\, {ll~ahu &gt;akobaru\, wa{ll~ahi {loHamodu"></verse>
@@ -809,7 +809,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 		<category title="TheBestNames">
 			<verse title="Introduction" text="nas&gt;aluka yaA man huwa {ll~ahu {l~a*iy laA &lt;ilaha &lt;il~aA huwa"></verse>
 			<verse title="Final1" text="{l~a*iy laysa kamivlihi $ayN&apos; wahuwa {ls~amiyE {lbaSiyr"></verse>
-			<verse title="Final2" text="{ll~ahum~a Sal~iY {fDal~a S~alApi EalaY AsEadi maxluwqaAtika sayidinaA muHam~adi"></verse>
+			<verse title="Final2" text="{ll~ahum~a Sal~iY {fDal~a S~alaApi EalaY AsEadi maxluwqaAtika sayidinaA muHam~adi"></verse>
 			<verse title="Final3" text="wasal~im Eadada maEluwmaAtika wamidaAda kalimaAtika kul~amaA *akaraka {l*~aAkiruwna wagafala Ean *ikriki {logaAfiluwn"></verse>
 		</category>
 		<category title="TheWhiteMoon">
@@ -824,15 +824,15 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 		</category>
 		<category title="PopularIslamicSongVerses">
 			<verse title="OMasterSendPrayersAndPeace" text="mawlaAya Sal~iy wasal~im daAi}mFA &gt;abadFA EalaY Habiybika xayri {loxulqi kul~ihimi"></verse>
-			<verse title="SalutationsUponYouOfAllah" text="SalaY Ealayok {ll~ahu yaA EadnaAni yaA muSTafaY yaA Safwap {lraHmaAni {lHamodulil~ahi {l~*iy &gt;aETaAniy ha*aA {lgulaAm {lTayb {lo&gt;ardaAni ha*aA {lgulaAm {lTayb {lo&gt;ardaAni qad saAd fiy {lomahdi EalaY {lgilmaAni &gt;aEy*ihu bi{lbayti *iy {lo&gt;rkAani HataY &gt;araAhu bi{lgi {lbunyaAni &gt;anta {l~*iy sumiypa fiy {lqur&gt;ani &gt;anta {l~*iy sumiypa fiy {lqur&gt;ani &gt;aHmadu maktuwbu EalaY {ljinaAni SalaY Ealayok {ll~ahu fiy {lo&gt;aHyaAni &gt;aHmadhu fiy {ls~iri wa{lobirhaAni Haq~aA EalaY {lo&lt;islaAmi wa {lo&lt;iymaAni Haq~aA EalaY {lo&lt;islaAmi wa {lo&lt;iymaAni"></verse>
+			<verse title="SalutationsUponYouOfAllah" text="SalaY Ealayok {ll~ahu yaA EadnaAni yaA muSTafaY yaA Safwap {lraHmaAni {lHamodulil~ahi {l~*iy &gt;aETaAniy ha*aA {lgulaAm {lTayb {lo&gt;ardaAni ha*aA {lgulaAm {lTayb {lo&gt;ardaAni qad saAd fiy {lomahdi EalaY {lgilmaAni &gt;aEy*ihu bi{lbayti *iy {lo&gt;rkaAani HataY &gt;araAhu bi{lgi {lbunyaAni &gt;anta {l~*iy sumiypa fiy {lqur&gt;ani &gt;anta {l~*iy sumiypa fiy {lqur&gt;ani &gt;aHmadu maktuwbu EalaY {ljinaAni SalaY Ealayok {ll~ahu fiy {lo&gt;aHyaAni &gt;aHmadhu fiy {ls~iri wa{lobirhaAni Haq~aA EalaY {lo&lt;islaAmi wa {lo&lt;iymaAni Haq~aA EalaY {lo&lt;islaAmi wa {lo&lt;iymaAni"></verse>
 		</category>
 		<category title="Remembrance">
 			<verse title="RemembranceFirst" text="laA &lt;ilaha &lt;il~aA &gt;anta subHaAnikaY &lt;in~iy kuntu min {lZ~aAlimiyn"></verse>
 			<verse title="RemembranceSecond" text="HasbNA {ll~ahu waniEm {lowakiyl\, niEm {lomawlaY waniEm {ln~asiyr"></verse>
-			<verse title="RemembranceThird" text="laA hawla walaA quwapK &lt;il~aA bill~`hi {loEaliY~i {loEaZiym"></verse>
+			<verse title="RemembranceThird" text="laA hawla walaA quwapK &lt;il~aA bi{ll~ahi {loEaliY~i {loEaZiym"></verse>
 			<verse title="SendBlessingsFirst" text="{ll~ahum~a Sal~i EalaY muHam~adK waEalaY |li muHam~adK kamaA Sal~ayota EalaY &lt;iboraAhiyma waEalaY |li &lt;iboraAhiyma &lt;in~aka HamiydN majiydN wabaAriko EalaY muHam~adK waEalaY |li muHam~adK kamaA baArakota EalaY &lt;iboraAhiyma waEalaY |li &lt;iboraAhiyma fiy {loEaAlamiyna &lt;in~aka HamiydN majiydN"></verse>
 			<verse title="SendBlessingsSecond" text="{ll~ahum~a Sal~i EalaY muHam~adK waEalaY |li muHam~adK kamaA Sal~ayota EalaY &lt;iboraAhiyma waEalaY |li &lt;iboraAhiyma &lt;in~aka HamiydN majiydN {ll~ahum~a baAriko EalaY muHam~adK waEalaY |li muHam~adK kamaA baArakota EalaY &lt;iboraAhiyma waEalaY |li &lt;iboraAhiyma &lt;in~aka HamiydN majiydN"></verse>
-			<verse title="IntroductionFirst" text="&lt;in~a {loHamoda lil~ahi naHomaduhu wanasotaEiynuhu wanasotagofiruhu wanaEuw*u bi{ll~ahi mino $uruwri &gt;anofusinaA wamino say~i}aAti &gt;aEomaAlinaA mino yahodi {ll~ahu falaA muDil~a lahu wamano yuDolilo falaA haAdiya lahu\, wa&gt;a$ohadu &gt;ano laA &lt;ilaha &lt;il~aA {ll~ahu waHodahu laA $ariyka lahu\, wa&gt;a$ohadu &gt;an~a muHam~adFA Eaboduhu warasuwluhu \{3:182\}\{4:1\}\{70:71\}"></verse>
+			<verse title="IntroductionFirst" text="&lt;in~a {loHamoda lil~ahi naHomaduhu wanasotaEiynuhu wanasotagofiruhu wanaEuwo*u bi{ll~ahi mino $uruwri &gt;anofusinaA wamino say~i}aAti &gt;aEomaAlinaA mino yahodi {ll~ahu falaA muDil~a lahu wamano yuDolilo falaA haAdiya lahu\, wa&gt;a$ohadu &gt;ano laA &lt;ilaha &lt;il~aA {ll~ahu waHodahu laA $ariyka lahu\, wa&gt;a$ohadu &gt;an~a muHam~adFA Eaboduhu warasuwluhu \{3:182\}\{4:1\}\{70:71\}"></verse>
 			<verse title="IntroductionSecond" text="&gt;amaA baEad\: fa&lt;in~a &gt;aSodaqa {loHadiyvi kitaAbu {ll~ahi\, waxayra {lohadoyi hadoyu muHam~adK Sal~aY {ll~ahu Ealayohi wasal~am\, wa$ar~a {lo&gt;umuwri muHodavaAtuhaA\, wakul~a muHodavapK bidoEapN\, wakul~a bidoEapK DalaAlapN\, wakul~a DalaAlapK fiy {ln~aAri"></verse>
 		</category>
 	</verses>
@@ -1337,7 +1337,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="haw" plural="" id="Entertainment"></word>
 			<word text="miHoraAb" plural="maHaArib" id="PrayerChamber"></word>
 			<word text="nidaA^&apos;" plural="" id="Call"></word>
-			<word text="$ahor" plural="&gt;a$hur" id="Months"></word>
+			<word text="$ahor" plural="&gt;a$ohur" id="Months"></word>
 			<word text="Zil~" plural="ZilaAl" id="Shade"></word>
 			<word text="laEib" plural="" id="PlayAmusement"></word>
 			<word text="vaAbit" plural="" id="FixedStationary"></word>
@@ -1364,7 +1364,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="miraArFA" plural="" id="Repeatedly"></word>
 			<word text="rum~aAn" plural="" id="Pomegranate"></word>
 			<word text="suruwr" plural="" id="Happiness"></word>
-			<word text="Eibrap" plural="Eibar" id="Admonition"></word>
+			<word text="Eiborap" plural="Eibar" id="Admonition"></word>
 			<word text="&gt;u*un" plural="|*aAn" id="Ear"></word>
 			<word text="nusuk" plural="" id="Sacrifice"></word>
 			
@@ -1651,9 +1651,9 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="rafoE" id="NominativeState"></word>
 			<word text="naSob" id="AccusativeState"></word>
 			<word text="jar~" id="PossessiveState"></word>
-			<word text="marfuwEN" id="Nominative"></word>
+			<word text="marofuwEN" id="Nominative"></word>
 			<word text="manSuwbN" id="Accusative"></word>
-			<word text="majruwrN" id="Possessive"></word>
+			<word text="majoruwrN" id="Possessive"></word>
 			<word text="{loEadad" id="NumberPlurality"></word>
 			<word text="{lojinos" id="Gender"></word>
 			<word text="{loqisom" id="Definiteness"></word>
@@ -1776,7 +1776,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="miym saAkinap &lt;idgaAm mutamaAviliyn Sagiyr" id="VowellessMeemAssimilatingSmallIdentical"></word>
 			<word text="miym saAkinap &lt;iZhaAr $afawiy" id="VowellessMeemClear"></word>
 			<word text="miym saAkinap &lt;iZhaAr &gt;a$ad~ $afawiy" id="VowellessMeemClearGreater"></word>
-			<word text="hamozap waSl" id="EmptyHamza"></word>
+			<word text="hamozap waSol" id="EmptyHamza"></word>
 			<word text="la|m {lofaEl" id="LaamVerb"></word>
 			<word text="la|m {loHarf" id="LaamParticle"></word>
 			<word text="&lt;idogaAm {ll~a|m $~amosiy~a" id="AssimilateLaamSunLetter"></word>
@@ -1812,7 +1812,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="mad~ {lofarq" id="DistinctionLengthening"></word>
 			<word text="mad~ tamkiyn" id="StablizationLengthening"></word>
 			<word text="siyn waAjib" id="SeenRequired"></word>
-			<word text="siyn ma$huwr" id="SeenNoted"></word>
+			<word text="siyn ma$ohuwr" id="SeenNoted"></word>
 			<word text="sukuwn" id="Sukoon"></word>
 			<word text="&gt;alif xanjariyap" id="DaggerAlif"></word>
 		</category>
@@ -1852,21 +1852,21 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="SaAliH" id="Saleh"></word>
 			<word text="&lt;ibora`hiym" id="Abraham"></word>
 			<word text="luwT" id="Lot"></word>
-			<word text="&lt;ismaAEiyl" id="Ishmael"></word>
+			<word text="&lt;isomaAEiyl" id="Ishmael"></word>
 			<word text="&lt;isHaAq" id="Isaac"></word>
 			<word text="yaEoquwb" id="Jacob"></word>
 			<word text="yuwsuf" id="Joseph"></word>
 			<word text="&gt;ayuwb" id="Job"></word>
 			<word text="$uEayob" id="Jethro"></word>
 			<word text="muwsaY" id="Moses"></word>
-			<word text="hAruwn" id="Aaron"></word>
+			<word text="haAruwn" id="Aaron"></word>
 			<word text="*uw {lokifol" id="Ezekiel"></word>
 			<word text="dAwud" id="David"></word>
 			<word text="sulaymAn" id="Solomon"></word>
-			<word text="lyAs" id="Elijah"></word>
+			<word text="lyaAs" id="Elijah"></word>
 			<word text="&gt;alyasE" id="Elisha"></word>
 			<word text="yuwnas" id="Jonas"></word>
-			<word text="zakariy~A" id="Zechariah"></word>
+			<word text="zakariy~aA" id="Zechariah"></word>
 			<word text="yaHyY" id="JohnTheBaptist"></word>
 			<word text="EiysaY &lt;ibnu maroyama" id="JesusSonOfMary"></word>
 			<word text="muHam~ad" id="Muhammad"></word>
@@ -1988,7 +1988,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="tawHiyd {lo&gt;asomaA^&apos; wa{lS~ifaAt" id="OnenessOfNamesAndAttributes"></word>
 			<word text="{l$~irk {lo&gt;akobar" id="MajorAssociation"></word>
 			<word text="{l$~irk {lo&gt;asgar" id="MajorAssociation"></word>
-			<word text="kitaAbap kawniy~ap" id="UniversalPrescription"></word>
+			<word text="kitaAbap kawoniy~ap" id="UniversalPrescription"></word>
 			<word text="kitaAbap $ariyEap" id="LegislativePrescription"></word>
 			<word text="farD kifaAyap" id="CollectiveObligation"></word>
 			<word text="farD Eayn" id="IndividualObligation"></word>
@@ -2008,7 +2008,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="Sal~aY {ll~ahu Ealayohi wasalaAm" id="ThePrayersOfAllahUponHimAndPeace"></word>
 			<word text="Ealayohi {ls~alaAm" id="UponHimBePeace"></word>
 			<word text="Ealayohi &gt;alfi SalaApu wasalaAmu" id="UponHimOneThousandPrayersAndPeace"></word>
-			<word text="&gt;aEuw*u bill~`hi mina {l$~ayTani {lr~ajiymi" id="SeekRefugeWithAllahFromSatanRejected"></word>
+			<word text="&gt;aEuwo*u bi{ll~ahi mina {l$~ayoTani {lr~ajiymi" id="SeekRefugeWithAllahFromSatanRejected"></word>
 			<word text="&lt;in $aA^&apos; {ll~ah" id="AllahWilling"></word>
 			<word text="maA $aA^&apos; {ll~ah" id="AllahWilledItSo"></word>
 			<word text="fiy &gt;amaAni {ll~ah" id="InProtectionOfAllah"></word>
@@ -2032,7 +2032,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="&gt;adab {l|xtalaAf" id="MannersOfDiffering"></word>
 			<word text="&apos;aAmanuwA@ S~a`li" id="RighteousDeeds"></word>				
 			<word text="yaA AyuhaA |manuwA" id="OBelievers"></word>
-			<word text="bismi {ll~ah" id="InTheNameOfAllah"></word>
+			<word text="bisomi {ll~ah" id="InTheNameOfAllah"></word>
 			<word text="{ll~ahu &gt;akobar" id="AllahIsGreatest"></word>
 			<word text="{loHamodu lil~ah" id="AllPraiseAndThanksBeToAllah"></word>
 			<word text="suboHaAn {ll~ah" id="GloryBeToAllah"></word>
@@ -2092,15 +2092,15 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="|ayapu {losayf" id="VerseOfTheSword"></word>
 			<word text="|ayapu {lokursiy" id="VerseOfTheThrone"></word>
 			<word text="&gt;asmaA^&apos; {l$~arT" id="SubordinatorsBeginningConditionalClauses"></word>
-			<word text="&lt;ismu {lojins" id="GenericNounInPossessiveConstructionWithDefiniteNounOrPronoun"></word>
-			<word text="badal {lobaED mina {lokul~" id="SubstitutionOfAPartForAWhole"></word>
+			<word text="&lt;isomu {lojins" id="GenericNounInPossessiveConstructionWithDefiniteNounOrPronoun"></word>
+			<word text="badal {lobaEoD mina {lokul~" id="SubstitutionOfAPartForAWhole"></word>
 			<word text="dalaAlap {lo&lt;iqotiDaA^&apos;" id="IndictationOfMeaningByNecessarySupposition"></word>
 			<word text="dilaAlap {lo&lt;i$aArap" id="IndictationOfMeaningBySuggestion"></word>
 			<word text="mafhuwm {lomuwaAfaqap" id="RuleInImpliedMeaningAgreesWithStatedMeaning"></word>
 			<word text="{loqiyaAs {lojaliy" id="ObviousAnalogy"></word>
 			<word text="mafhuwm {lomuxaAlafap" id="RuleInImpliedMeaningIsContrapositiveToStatedMeaning"></word>
 			<word text="um~ {lokitaAb" id="EssenceOfTheBook"></word>
-			<word text="&gt;aHkam {lofaras" id="BridleIt"></word>
+			<word text="&gt;aHokam {lofaras" id="BridleIt"></word>
 			<word text="naql {ll~ugaAt" id="BasisOfTransmissionOfLanguage"></word>
 			<word text="{loHuruwf {lomuqaT~aEaAt" id="DisjointedLetters"></word>
 			<word text="majaAz Eaqliy" id="RationalMetonymy"></word>
@@ -2150,24 +2150,24 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="taHriym" id="Prohibited"></word>
 			<word text="waquwd" id="Fuel"></word>
 			<word text="lahab" id="Flame"></word>
-			<word text="laDTaY" id="BlazingFire"></word>
+			<word text="laDoTaY" id="BlazingFire"></word>
 			<word text="{lowaSilap" id="Intercession"></word>
 			<word text="{ls~amuwm" id="IntenselyHotWind"></word>
 			<word text="{loHamiym" id="BoilingWater"></word>
-			<word text="{loyaHmuwm" id="SmokeOfHell"></word>
+			<word text="{loyaHomuwm" id="SmokeOfHell"></word>
 			<word text="{lD~ariyE" id="BitterObnoxiousThornyPlant"></word>
 			<word text="{lz~aq~uwm" id="HorribleTreeOfHell"></word>
-			<word text="{logisliyn" id="FoulNourishmentPusDischarge"></word>
+			<word text="{logisoliyn" id="FoulNourishmentPusDischarge"></word>
 			<word text="{logas~aq" id="Dusk"></word>
 			<word text="{logas~aAq" id="HotFoodGreaseSweat"></word>
 			<word text="{lS~adiyd" id="Pus"></word>
-			<word text="{lomuhl" id="BoilingOil"></word>
+			<word text="{lomuhol" id="BoilingOil"></word>
 			<word text="{lomihaAd" id="Bed"></word>
 			<word text="{logawaA$" id="Cover"></word>
 			<word text="{lS~ahar" id="Melting"></word>
-			<word text="{ll~afH" id="Scorching"></word>
-			<word text="{ls~aHb" id="Dragging"></word>
-			<word text="zamhariyr" id="BitterCold"></word>
+			<word text="{ll~afoH" id="Scorching"></word>
+			<word text="{ls~aHob" id="Dragging"></word>
+			<word text="zamohariyr" id="BitterCold"></word>
 			<word text="{lr~azaAq" id="TheSustainer"></word>
 			<word text="{lo&gt;abraAr" id="TheRighteous"></word>
 			<word text="{lT~alH" id="AcaciaTree"></word>
@@ -2179,7 +2179,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="{lD~aAl~iyn" id="Astray"></word>
 			<word text="yaA" id="O"></word>
 			<word text="Zahiyr" id="Patron"></word>
-			<word text="faAHi$ha" id="EvilDeeds"></word>
+			<word text="faAHi$oha" id="EvilDeeds"></word>
 			<word text="ribaA" id="Usury"></word>
 			<word text="bayE" id="Trade"></word>
 			<word text="rafav" id="VulgarWord"></word>
@@ -2192,30 +2192,30 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="EulamaA^&apos;" id="Scholars"></word>
 			<word text="&gt;akdaA^&apos;" id="Confirmed"></word>
 			<word text="{lofitnah" id="Discord"></word>
-			<word text="ruqya" id="Charms"></word>
+			<word text="ruqoya" id="Charms"></word>
 			<word text="{loqaSaS" id="Stories"></word>
 			<word text="kaAfuwr" id="CoolRefreshingDrink"></word>
-			<word text="tasniym" id="FoundationOfParadise"></word>
-			<word text="Eayn" id="River"></word>
+			<word text="tasoniym" id="FoundationOfParadise"></word>
+			<word text="Eayon" id="River"></word>
 			<word text="say~id" id="Mister"></word>
 			<word text="SiyaAm" id="Fasting"></word>
 			<word text="gafuwr" id="Forgiving"></word>
-			<word text="hajr" id="Dessertion"></word>
+			<word text="hajor" id="Dessertion"></word>
 			<word text="tawaAzun" id="Balance"></word>
 			<word text="qiyaAm" id="Do"></word>
 			<word text="baArak" id="Bless"></word>
 			<word text="HifaAr" id="Digger"></word>
 			<word text="var" id="Impact"></word>
-			<word text="varvaAr" id="Talkative"></word>
+			<word text="varovaAr" id="Talkative"></word>
 			<word text="muta$ad~iq" id="Loudmouthed"></word>
 			<word text="mutafariq" id="Sporadic"></word>
 			<word text="&lt;ijaAzh" id="Permission"></word>
 			<word text="mu&amp;min" id="Faithful"></word>
-			<word text="muHsin" id="Optimizer"></word>
+			<word text="muHosin" id="Optimizer"></word>
 			<word text="munaAfiq" id="Hypocrite"></word>
-			<word text="mu$rik" id="Polythiest"></word>
-			<word text="mawlaAya" id="Protector"></word>
-			<word text="mawlaAnaA" id="Master"></word>
+			<word text="mu$orik" id="Polythiest"></word>
+			<word text="mawolaAya" id="Protector"></word>
+			<word text="mawolaAnaA" id="Master"></word>
 			<word text="&gt;um~ah" id="Community"></word>
 			<word text="SaHaAbap" id="Companions"></word>
 			<word text="taAbiEuwn" id="Followers"></word>
@@ -2225,42 +2225,42 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="Hasanah" id="Goodness"></word>
 			<word text="{logayb" id="Unseen"></word>
 			<word text="&lt;iqraA" id="Recite"></word>
-			<word text="Sabr" id="Patience"></word>
-			<word text="Sabriyn" id="Satisfaction"></word>
+			<word text="Sabor" id="Patience"></word>
+			<word text="Saboriyn" id="Satisfaction"></word>
 			<word text="&lt;ijomaAE" id="Concensus"></word>
 			<word text="&gt;amaAl" id="Deeds"></word>
-			<word text="&gt;anhaAr" id="Sacrifice"></word>
-			<word text="qurbaAn" id="Slaughter"></word>
+			<word text="&gt;anohaAr" id="Sacrifice"></word>
+			<word text="qurobaAn" id="Slaughter"></word>
 			<word text="Sadaqap" id="VoluntaryKindness"></word>
 			<word text="ja}iz" id="Allowed"></word>
-			<word text="gAfr" id="Forgiving"></word>
-			<word text="kawniy" id="Universal"></word>
+			<word text="gAfor" id="Forgiving"></word>
+			<word text="kawoniy" id="Universal"></word>
 			<word text="wasubaHaAn" id="AndEveryone"></word>
-			<word text="Eumrap" id="MinorPilgrimage"></word>
+			<word text="Eumorap" id="MinorPilgrimage"></word>
 			<word text="Eabod" id="Slave"></word>
 			<word text="&gt;amat" id="FemaleSlave"></word>
 			<word text="rakabap" id="Neck"></word>
-			<word text="taqwaY" id="Piety"></word>
+			<word text="taqowaY" id="Piety"></word>
 			<word text="$ayx" id="Sheikh"></word>
-			<word text="&gt;ustaA*" id="Professor"></word>
+			<word text="&gt;usotaA*" id="Professor"></word>
 			<word text="waliy" id="Guardian"></word>
-			<word text="dunyaA" id="World"></word>
+			<word text="dunoyaA" id="World"></word>
 			<word text="&gt;axirap" id="Hereafter"></word>
 			<word text="&lt;iymaAn" id="Faith"></word>
-			<word text="&lt;iHsaAn" id="Excellence"></word>
+			<word text="&lt;iHosaAn" id="Excellence"></word>
 			<word text="niy~ap" id="Intention"></word>
 			<word text="xaliyfap" id="Caliphate"></word>
 			<word text="gurabaA^&apos;" id="Strangers"></word>
-			<word text="tazkiyap" id="Purification"></word>
-			<word text="tarbiyap" id="Nurturing"></word>
-			<word text="&lt;ibdAaE" id="Worship"></word>
+			<word text="tazokiyap" id="Purification"></word>
+			<word text="tarobiyap" id="Nurturing"></word>
+			<word text="&lt;ibodAaE" id="Worship"></word>
 			<word text="kalaAm" id="Speech"></word>
 			<word text="mu$af" id="PrintedBook"></word>
-			<word text="Hikmap" id="Wisdom"></word>
+			<word text="Hikomap" id="Wisdom"></word>
 			<word text="xu$uwE" id="Concentration"></word>
 			<word text="tawak~al" id="Empowering"></word>
 			<word text="kaAfir" id="Disbeliever"></word>
-			<word text="tawbap" id="Repentance"></word>
+			<word text="tawobap" id="Repentance"></word>
 			<word text="{loEalimiyap" id="Knowledgable"></word>
 			<word text="{loEamaliyap" id="Practical"></word>
 			<word text="{lr~uqaAq" id="HeartSofteners"></word>
@@ -2269,33 +2269,33 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="Eaqada" id="ConsolidationAffirmationHoldingTogether"></word>
 			<word text="{loEibaAdat" id="Worship"></word>
 			<word text="{lomuEaAmalaAt" id="RighteousDealings"></word>
-			<word text="{l|xlaAq" id="Manners"></word>
+			<word text="{l|xolaAq" id="Manners"></word>
 			<word text="{lomuEaA$arap" id="Cohabitation"></word>
 			<word text="&gt;aHadiv" id="Latest"></word>
 			<word text="{lr~aA$iduwn‎" id="WiseOne"></word>
 			<word text="jan~ap" id="Gardens"></word>
-			<word text="*anb" id="Sin"></word>
+			<word text="*anob" id="Sin"></word>
 			<word text="zinaA" id="Fornication"></word>
-			<word text="kibr" id="Arrogance"></word>
-			<word text="bidaEp" id="Innovation"></word>
+			<word text="kibor" id="Arrogance"></word>
+			<word text="bidaEop" id="Innovation"></word>
 			<word text="riyaA^&apos;" id="ShowingOff"></word>
 			<word text="qadar" id="Predestination"></word>
-			<word text="nutfap" id="DropOfLiquidOfManAndWoman"></word>
+			<word text="nutofap" id="DropOfLiquidOfManAndWoman"></word>
 			<word text="Ealaqap" id="ClotOfBloodClingingToWomb"></word>
-			<word text="mudgap" id="PieceChewedFlesh"></word>
+			<word text="mudogap" id="PieceChewedFlesh"></word>
 			<word text="mu$aAhadap" id="OneWhoIsSeen"></word>
 			<word text="muraAqabap" id="OneWhoWitnesses"></word>
 			<word text="muqotasidiyn" id="OneWhoDoesGoodDeedsAndAbandonsProhibitions"></word>
-			<word text="muHkamaAt" id="ClearCut"></word>
-			<word text="mu$tabihaAt" id="DoubtfulMatters"></word>
+			<word text="muHokamaAt" id="ClearCut"></word>
+			<word text="mu$otabihaAt" id="DoubtfulMatters"></word>
 			<word text="qadariy~ap" id="ThoseBelievingNoPredestination"></word>
 			<word text="jabariy~ap" id="ThoseBelievingNoFreedomOfChoice"></word>
 			<word text="jamaEap" id="Congregation"></word>
-			<word text="tasliym" id="Delivery"></word>
+			<word text="tasoliym" id="Delivery"></word>
 			<word text="ta$ahud" id="Witnessing"></word>
 			<word text="&gt;a*kaAr" id="SupplicationsAndPrayers"></word>
 			<word text="SalawaAt" id="Invocation"></word>
-			<word text="muftiy" id="Mufti"></word>
+			<word text="mufotiy" id="Mufti"></word>
 			<word text="Sad~iq" id="Truthful"></word>
 			<word text="{lo&gt;amiyn" id="Trustworthy"></word>
 			<word text="{lo&gt;amin" id="PeaceSecure"></word>
@@ -2305,49 +2305,49 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="qiraA^&apos;|t" id="Recitations"></word>
 			<word text="mujaw~ad" id="MelodicRecitation"></word>
 			<word text="murat~al" id="SlowPracticeRecitation"></word>
-			<word text="tartiyl" id="SlowMeasuredRhythmicTones"></word>
+			<word text="tarotiyl" id="SlowMeasuredRhythmicTones"></word>
 			<word text="{lt~aHoqiyq" id="PreciseMethodicalRecitation"></word>
 			<word text="{lt~adowiyr" id="InBetweenRecitation"></word>
 			<word text="{loHador" id="RapidRecitation"></word>
 			<word text="maqam" id="SystemOfMelodicModes"></word>
 			<word text="ta&gt;owiyl" id="Interpretation"></word>
 			<word text="siyrap" id="Biography"></word>
-			<word text="fitnap" id="Persecution"></word>
+			<word text="fitonap" id="Persecution"></word>
 			<word text="daEowap" id="CallToIslam"></word>
-			<word text="{lokursiy" id="Throne"></word>
+			<word text="{lokurosiy" id="Throne"></word>
 			<word text="{ln~as" id="Mankind"></word>
 			<word text="jin~" id="Jinn"></word>
 			<word text="malakat" id="Angel"></word>
 			<word text="diyn" id="Religion"></word>
 			<word text="Ea*aAb" id="Punishment"></word>
 			<word text="yaqiyn" id="Certainty"></word>
-			<word text="Sabr" id="Patience"></word>
+			<word text="Sabor" id="Patience"></word>
 			<word text="say~id" id="Sir"></word>
-			<word text="saydinaA" id="Madame"></word>
-			<word text="fatAH" id="Conquest"></word>
+			<word text="sayodinaA" id="Madame"></word>
+			<word text="fataAH" id="Conquest"></word>
 			<word text="&gt;amiyr" id="Leader"></word>
-			<word text="xuTbap" id="Lecture"></word>
-			<word text="raHmap" id="Mercy"></word>
-			<word text="nafs" id="Self"></word>
+			<word text="xuTobap" id="Lecture"></word>
+			<word text="raHomap" id="Mercy"></word>
+			<word text="nafos" id="Self"></word>
 			<word text="jihaAd" id="Fight"></word>
 			<word text="mujaAhid" id="Fighter"></word>
 			<word text="sun~ap" id="Tradition"></word>
 			<word text="tahaj~ud" id="LateNight"></word>
 			<word text="DuHaY" id="MorningLight"></word>
-			<word text="witr" id="Odd"></word>
+			<word text="witor" id="Odd"></word>
 			<word text="HalaAl" id="Permissible"></word>
 			<word text="HaraAm" id="Forbidden"></word>
 			<word text="&gt;a*aAn" id="CallToPrayer"></word>
 			<word text="mu&amp;a*in" id="CallToPrayerLeader"></word>
 			<word text="&lt;iqaAmap" id="CallToBeginThePrayer"></word>
-			<word text="qiblap" id="DirectionOfPrayer"></word>
+			<word text="qibolap" id="DirectionOfPrayer"></word>
 			<word text="sujuwd" id="Prostrating"></word>
 			<word text="sajdap" id="Prostration"></word>
 			<word text="rakaEp" id="UnitOfPrayer"></word>
 			<word text="rukuwE" id="BowOfPrayer"></word>
 			<word text="wuDuw&apos;" id="Ablution"></word>
 			<word text="tayam~um" id="DustAblution"></word>
-			<word text="gusl" id="MajorAblution"></word>
+			<word text="gusol" id="MajorAblution"></word>
 			<word text="TahaArap" id="Purification"></word>
 			<word text="TaAhir" id="RitualPurity"></word>
 			<word text="TawaAf" id="Circumambulation"></word>
@@ -2357,42 +2357,42 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="masaH" id="RituallyCleaningHeadFeet"></word>
 			<word text="xitaAn" id="Circumcision"></word>
 			<word text="xilaAl" id="PurifyingFingerToesBeard"></word>
-			<word text="muShaf" id="Codex"></word>
-			<word text="fidyap" id="ReligiousDonation"></word>
+			<word text="muSohaf" id="Codex"></word>
+			<word text="fidoyap" id="ReligiousDonation"></word>
 			<word text="kaf~aArap" id="ReligiousDonationExpiation"></word>
 			<word text="duEaA^&apos;" id="Supplication"></word>
-			<word text="*ikr" id="ReminderRemembrance"></word>
+			<word text="*ikor" id="ReminderRemembrance"></word>
 			<word text="$ahaAdap" id="Creed"></word>
 			<word text="takobiyr" id="PhraseForAllahIsGreatest"></word>
-			<word text="taHmiyd" id="PhraseForAllPraiseAndThanksBeToAllah"></word>
-			<word text="tasbiyH" id="PhraseForGloryBeToAllah"></word>
-			<word text="tawHiyd" id="OnenessOfGod"></word>
+			<word text="taHomiyd" id="PhraseForAllPraiseAndThanksBeToAllah"></word>
+			<word text="tasobiyH" id="PhraseForGloryBeToAllah"></word>
+			<word text="tawoHiyd" id="OnenessOfGod"></word>
 			<word text="waH~ada" id="UniteUnifyConsolidate"></word>
 			<word text="rubuwbiy~ap" id="Domininion"></word>
 			<word text="{lo&gt;asomaA^&apos;" id="Names"></word>
 			<word text="{lS~ifaAt" id="Attributes"></word>
 			<word text="{lEuluwhiy~ap" id="Divinity"></word>
 			<word text="EibaAdap" id="Worship"></word>
-			<word text="Sawm" id="Fasting"></word>
+			<word text="Sawom" id="Fasting"></word>
 			<word text="zakaAp" id="AlmsGiving"></word>
 			<word text="Haj~" id="Pilgrimage"></word>
 			<word text="qur&apos;|n" id="RevelationOfAllah"></word>
 			<word text="&lt;injiyl" id="Gospels"></word>
 			<word text="zabuwr" id="Psalms"></word>
-			<word text="tawraAp" id="Torah"></word>
+			<word text="taworaAp" id="Torah"></word>
 			<word text="furqaAn" id="DistinctionCriterion"></word>
 			<word text="suwrap" id="Chapter"></word>
 			<word text="&apos;aAyap" id="Verse"></word>
 			<word text="juz&apos;" id="Part"></word>
 			<word text="manzil" id="Station"></word>
-			<word text="tajwiyd" id="ProperPronunciationDuringRecitation"></word>
+			<word text="tajowiyd" id="ProperPronunciationDuringRecitation"></word>
 			<word text="Hadiyv" id="TransmissionOfInformation"></word>
 			<word text="fiqh" id="Jurisprudence"></word>
 			<word text="$ariyEap" id="Law"></word>
-			<word text="qADiy" id="Judge"></word>
+			<word text="qaADiy" id="Judge"></word>
 			<word text="ma*hab" id="SchoolOfJurisprudence"></word>
 			<word text="risaAlap" id="Dissertation"></word>
-			<word text="$irk" id="AssociatingPartners"></word>
+			<word text="$irok" id="AssociatingPartners"></word>
 			<word text="TaAguwt" id="FalseGod"></word>
 			<word text="Hay~" id="Life"></word>
 			<word text="mawotaY" id="Dead"></word>
@@ -2400,32 +2400,32 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="&gt;uSuwl" id="Foundations"></word>
 			<word text="furuw&apos;" id="Details"></word>
 			<word text="sanad" id="ListOfNarrators"></word>
-			<word text="matn" id="Text"></word>
+			<word text="maton" id="Text"></word>
 			<word text="mukav~iruwn" id="ReportersOfManyTraditions"></word>
 			<word text="SaHiyfap" id="WritingMaterial"></word>
 			<word text="muSan~af" id="ClassifiedOrganizedWork"></word>
-			<word text="musnad" id="CompilationByName"></word>
+			<word text="musonad" id="CompilationByName"></word>
 			<word text="SaHiyH" id="Authentic"></word>
 			<word text="Hasan" id="Good"></word>
 			<word text="DaEiyf" id="Weak"></word>
 			<word text="waAhin" id="ExtremelyWeak"></word>
-			<word text="mawDuwE" id="Fabricated"></word>
+			<word text="mawoDuwE" id="Fabricated"></word>
 			<word text="baATil" id="False"></word>
 			<word text="&lt;iEtikaAf" id="Isolation"></word>
-			<word text="maHram" id="CloseRelative"></word>
-			<word text="&lt;ixlaAS" id="Sincerity"></word>
-			<word text="tasliym" id="EndOfPrayer"></word>
+			<word text="maHoram" id="CloseRelative"></word>
+			<word text="&lt;ixolaAS" id="Sincerity"></word>
+			<word text="tasoliym" id="EndOfPrayer"></word>
 			<word text="nasox" id="Abrogation"></word>
 			<word text="nukoxap" id="Copy"></word>
 			<word text="naAsix" id="Abrogating"></word>
-			<word text="mansuwx" id="Abrogated"></word>
+			<word text="manosuwx" id="Abrogated"></word>
 			<word text="taxoSiyS" id="Specification"></word>
 			<word text="&lt;isotivonaA^&apos;" id="Exception"></word>
 			<word text="Sifap" id="Modification"></word>
-			<word text="$arT" id="Condition"></word>
+			<word text="$aroT" id="Condition"></word>
 			<word text="gaAyap" id="ClausesOfTime"></word>
 			<word text="mubohamaAt" id="ReferenceWithoutName"></word>
-			<word text="mathal" id="SimileProverbMetaphor"></word>
+			<word text="matohal" id="SimileProverbMetaphor"></word>
 			<word text="&lt;isotiEaArap" id="BorrowingExpressionFromSituationForOther"></word>
 			<word text="qasam" id="Oath"></word>
 			<word text="jadal" id="Debate"></word>
@@ -2443,19 +2443,19 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="kaAmilap" id="Complete"></word>
 			<word text="baAg" id="WillfulDisobedienceIgnorant"></word>
 			<word text="yaTohurona" id="Pure"></word>
-			<word text="manTuwq" id="Stated"></word>
-			<word text="mafhuwm" id="Implied"></word>
+			<word text="manoTuwq" id="Stated"></word>
+			<word text="mafohuwm" id="Implied"></word>
 			<word text="naS~" id="Explicit"></word>
 			<word text="ZaAhir" id="ObviousApparent"></word>
 			<word text="baAtin" id="Hidden"></word>
 			<word text="Haqiyqap" id="LiteralMeaningInnerMeaning"></word>
 			<word text="Haqiyqiy" id="Actual"></word>
 			<word text="majaAziy" id="Metaphorical"></word>
-			<word text="malzuwm" id="HeadBoundSubservient"></word>
+			<word text="malozuwm" id="HeadBoundSubservient"></word>
 			<word text="laziym" id="BodyNecessary"></word>
 			<word text="kinaAyap" id="AllusionEuphemism"></word>
-			<word text="tasriyh" id="FrankCandid"></word>
-			<word text="taEriyd" id="Hint"></word>
+			<word text="tasoriyh" id="FrankCandid"></word>
+			<word text="taEoriyd" id="Hint"></word>
 			<word text="&gt;asad" id="Lion"></word>
 			<word text="majaAz" id="MetonymyMetaphor"></word>
 			<word text="murak~ab" id="Metaphor"></word>
@@ -2468,10 +2468,10 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="mujomal" id="WordingIntentCannotBeDeterminedWithoutFurtherClarification"></word>
 			<word text="raAjiH" id="Preponderate"></word>
 			<word text="mukal~af" id="AccountablePerson"></word>
-			<word text="marjuwH" id="LessPredominate"></word>
+			<word text="marojuwH" id="LessPredominate"></word>
 			<word text="mu$okil" id="ApparentMeaningNotIntended"></word>
-			<word text="lafZiy" id="Textual"></word>
-			<word text="qaTEiy" id="Definitive"></word>
+			<word text="lafoZiy" id="Textual"></word>
+			<word text="qaToEiy" id="Definitive"></word>
 			<word text="Mu$tarak" id="Homonyms"></word>
 			<word text="muEaw~al" id="Explained"></word>
 			<word text="&lt;iqotiDaA^&apos;" id="Necessity"></word>
@@ -2480,46 +2480,46 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="badaA" id="AppearNewRealizationOccurToSomeone"></word>
 			<word text="waSiy~ap" id="Bequest"></word>
 			<word text="&lt;ijotihaAd" id="ReasonedDecision"></word>
-			<word text="fatwaY" id="Ruling"></word>
+			<word text="fatowaY" id="Ruling"></word>
 			<word text="qiyaAs" id="AnalogicalDeduction"></word>
 			<word text="&lt;ijomaAE" id="Concensus"></word>
 			<word text="$uwraY" id="Consultation"></word>
-			<word text="majlis" id="Council"></word>
-			<word text="waHy" id="Revelation"></word>
+			<word text="majolis" id="Council"></word>
+			<word text="waHoy" id="Revelation"></word>
 			<word text="munaA*araAt" id="CourtDebates"></word>
-			<word text="taqliyd" id="BlindFollowing"></word>
+			<word text="taqoliyd" id="BlindFollowing"></word>
 			<word text="qur&apos;" id="Menses"></word>
 			<word text="&lt;id~ap" id="WaitingPeriod"></word>
-			<word text="lamsN" id="Touch"></word>
+			<word text="lamosN" id="Touch"></word>
 			<word text="qay&apos;" id="Vomit"></word>
 			<word text="ma$ohuwr" id="WellKnown"></word>
-			<word text="mursal" id="UnknownSourceNarrator"></word>
-			<word text="tarjiyH" id="GivingPreference"></word>
+			<word text="murosal" id="UnknownSourceNarrator"></word>
+			<word text="tarojiyH" id="GivingPreference"></word>
 			<word text="&lt;isotiSolaAH" id="DeemProper"></word>
 			<word text="&lt;isotiHosaAn" id="Preference"></word>
 			<word text="&lt;isotiSoHaAb" id="Linking"></word>
 			<word text="ka*~aAb" id="Liar"></word>
 			<word text="muHodav" id="NewlyExistent"></word>
-			<word text="&lt;ixtilaAf" id="DifferencesDisagreement"></word>
+			<word text="&lt;ixotilaAf" id="DifferencesDisagreement"></word>
 			<word text="tawas~al" id="GraveWorship"></word>
-			<word text="musnad" id="Referenced"></word>
-			<word text="majhuwl" id="Unknown"></word>
+			<word text="musonad" id="Referenced"></word>
+			<word text="majohuwl" id="Unknown"></word>
 			<word text="{lomuqotadiyaAt" id="NamesAndAttributes"></word>
 			<word text="tawaAf" id="Circumambulating"></word>
 			<word text="tahriyf" id="Distortion"></word>
 			<word text="taEowiyl" id="Reinterpretation"></word>
-			<word text="taEtiyl" id="Denial"></word>
-			<word text="takyiyf" id="AskingHow"></word>
-			<word text="ta$biyh" id="Likening"></word>
-			<word text="tamviyl" id="MakingExamples"></word>
-			<word text="tafwiyd" id="AcceptingWithoutUnderstanding"></word>
+			<word text="taEotiyl" id="Denial"></word>
+			<word text="takoyiyf" id="AskingHow"></word>
+			<word text="ta$obiyh" id="Likening"></word>
+			<word text="tamoviyl" id="MakingExamples"></word>
+			<word text="tafowiyd" id="AcceptingWithoutUnderstanding"></word>
 			<word text="mufawidap" id="DeviantPeople"></word>
 			<word text="daAEiy" id="Caller"></word>
 			<word text="EaAm" id="General"></word>
 			<word text="xaAs" id="Specific"></word>
 			<word text="qis~ap" id="Narrative"></word>
 			<word text="qiSaAS" id="Retaliation"></word>
-			<word text="taEziyr" id="Discretionary"></word>
+			<word text="taEoziyr" id="Discretionary"></word>
 			<word text="muraAbaHap" id="MarkUpFinancing"></word>
 			<word text="mu$aArakap" id="Partnership"></word>
 			<word text="muDaArabap" id="ProfitSharing"></word>
@@ -2541,16 +2541,16 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="sarf" id="etymology"></word>
 			<word text="mutawaAtir" id="CredibleReport"></word>
 			<word text="tawaatur" id="ProcessOfCredibleReporting"></word>
-			<word text="muHkam" id="PerfectedCompletelyFormed"></word>
+			<word text="muHokam" id="PerfectedCompletelyFormed"></word>
 			<word text="muta$aAbih" id="ConsistentSimilarMutuallyResemblingOneAnother"></word>
 			<word text="daliyl" id="EvidenceGuidance"></word>
-			<word text="ibTaAl" id="TotalNegation"></word>
+			<word text="iboTaAl" id="TotalNegation"></word>
 			<word text="&lt;iEjaz" id="RenderingIncapablePowerless"></word>
 			<word text="muEjizap" id="Miracle"></word>
 			<word text="Sarfap" id="TurningAway"></word>
 			<word text="sajE" id="RhymingProse"></word>
 			<word text="&lt;ilm" plural="&gt;uluwm" id="KnowledgeScience"></word>
-			<word text="&gt;asl" plural="&gt;usuwl" id="PrincipleMethod"></word>
+			<word text="&gt;asol" plural="&gt;usuwl" id="PrincipleMethod"></word>
 			<word text="manhaj" plural="manaAhij" id="Methodology"></word>
 			<word text="{lt~a$riyE" plural="" id="Legislation"></word>
 			<word text="manduwb" id="Recommended"></word>
@@ -2573,27 +2573,27 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="mafohuwm" id="UnderstoodMeaning"></word>
 			<word text="ma*aAhib" id=""></word>
 			<word text="&gt;aHaAdiyv" id=""></word>
-			<word text="masfuwh" id=""></word>
+			<word text="masofuwh" id=""></word>
 			<word text="mayotap" id=""></word>
 			<word text="&lt;ihaAb" id=""></word>
 			<word text="diybaAr" id=""></word>
 			<word text="HimaAr" id=""></word>
-			<word text="mahdiy" id=""></word>
+			<word text="mahodiy" id=""></word>
 			<word text="waAdiy" id=""></word>
 			<word text="maniy" id=""></word>
 			<word text="janaAbap" id="MajorImpurity"></word>
 			<word text="xamor" id="Wine"></word>
-			<word text="maysir" id="Gambling"></word>
-			<word text="&gt;azlaAm" id="FortuneTelling"></word>
+			<word text="mayosir" id="Gambling"></word>
+			<word text="&gt;azolaAm" id="FortuneTelling"></word>
 			<word text="{lomuTal~aqaAt" id="DivorcedWomen"></word>
 			<word text="&gt;atoha" id=""></word>
-			<word text="{lkuhol" id=""></word>
+			<word text="{lokuhol" id=""></word>
 			<word text="rijos" id=""></word>
-			<word text="{lniyap" id=""></word>
+			<word text="{ln~iyap" id=""></word>
 			<word text="taEaAm" id=""></word>
 			<word text="waS~iyap" id=""></word>
 			<word text="nawaAfil" id=""></word>
-			<word text="&lt;iostiHaAdap" id=""></word>
+			<word text="&lt;isotiHaAdap" id=""></word>
 			<word text="fuqaAhap" id=""></word>
 			<word text="mu&gt;alaAqaAt" id=""></word>
 			<word text="lamasah" id=""></word>
@@ -2611,7 +2611,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="Dir&apos;" id=""></word>
 			<word text="&lt;izaAr" id=""></word>
 			<word text="m&gt;amuwn" id=""></word>
-			<word text="tasliym" id=""></word>
+			<word text="tasoliym" id=""></word>
 			<word text="{lt~a$ahud" id=""></word>
 			<word text="ZaAhiriyap" id=""></word>
 			<word text="qunuwt" id=""></word>
@@ -2623,7 +2623,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="{lt~aHar~uj" id=""></word>
 			<word text="mu&apos;ak~adap" id=""></word>
 			<word text="jawaArib" id=""></word>
-			<word text="fitrap" id=""></word>
+			<word text="fitorap" id=""></word>
 			<word text="ma&apos;muwm" id=""></word>
 		</category>
 		<category title="RegularWords">
@@ -2690,7 +2690,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="foranosaA" id="France"></word>
 			<word text="{lomagoribu" id="Morocco"></word>
 			<word text="{ls~uwdaAno" id="Sudan"></word>
-			<word text="miSru" id="Egypt"></word>
+			<word text="miSoru" id="Egypt"></word>
 			<word text="lubonaAnu" id="Lebanon"></word>
 			<word text="tuwnisu" id="Tunisia"></word>
 			<word text="jid~atu" id="Jeddah"></word>
@@ -2707,7 +2707,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="xulf" id="Behind"></word>
 			<word text="&gt;amaAm" id="Front"></word>
 			<word text="baEad" id="After"></word>
-			<word text="qabl" id="Before"></word>
+			<word text="qabol" id="Before"></word>
 			<word text="{lowaqot" id="Time"></word>
 			<word text="{lv~aAniy" id="Second"></word>
 			<word text="daqiyqap" id="Minute"></word>
@@ -2751,11 +2751,11 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="muHam~ad bin {loHasan {lomahdiy" id="MuhammadBinAlHasan"></word>
 			<word text="TalHap bin Eabayd {ll~ah‎" id="TalhaBinObaidullah"></word>
 			<word text="{lz~ubayor bin {loEawaAm bin xuwayolid" id="AzZubayrbinAlAwam"></word>
-			<word text="saEd bin malik" id="SadBinMalik"></word>
-			<word text="saEd bin &gt;abiy waq~aAS‎" id="SadBinAbiWaqqas"></word>
+			<word text="saEod bin malik" id="SadBinMalik"></word>
+			<word text="saEod bin &gt;abiy waq~aAS‎" id="SadBinAbiWaqqas"></word>
 			<word text="Eabodu {lr~aHman bin Eawf‎" id="AbdurRahmanBinAwf"></word>
 			<word text="&gt;abuw Eubaydap EaAmir bin Eabodi {ll~ah bin {lojar~aAH‎" id="AbuUbaidahBinAlJarrah"></word>
-			<word text="saEiyd bin zayd" id="SaeedBinZaid"></word>
+			<word text="saEiyd bin zayod" id="SaeedBinZaid"></word>
 			<word text="xadiyjap binti xuwayolid" id="KhadijahBintKhuwaylid"></word>
 			<word text="sawodap binti zamoEap‎" id="SawdaBintZama"></word>
 			<word text="EaA}i$ap binti &gt;abiy‎ bakr" id="AishaBintAbiBakr"></word>
@@ -2768,44 +2768,44 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="ramolap binti &gt;abiy sufoyaAn" id="RamlahBintAbiSufyan"></word>
 			<word text="maymuwnah binti {loHaAriv‎" id="MaymunaBintAlHarith"></word>
 			<word text="maAroyap {loqubTiy~ap‎" id="MariaAlQibtiyya"></word>
-			<word text="rayHaAnap binti zayd‎" id="RayhanaBintZayd"></word>
+			<word text="rayHaAnap binti zayod‎" id="RayhanaBintZayd"></word>
 			<word text="&gt;abuw hurayrah" id="AbuHurairah"></word>
 			<word text="xaAlid bin {lowaliyd" id="KhalidBinWalid"></word>
 			<word text="Eabodu {ll~ah bin masEuwd" id="AbdullahBinMasood"></word>
 			<word text="Eabodu {ll~ah bin Eab~aAs" id="AbdullahBinAbbas"></word>
 			<word text="Eabodu {ll~ah bin Eumar" id="AbdullahBinUmar"></word>
 			<word text="Eabodu {ll~ah bin Eamr bin {loEaAS" id="AbdullahBinAmrBinAlAas"></word>
-			<word text="zayd bin vaAbit" id="ZaydBinThaabit"></word>
+			<word text="zayod bin vaAbit" id="ZaydBinThaabit"></word>
 			<word text="&gt;ubay~ bin kaEb" id="UbayyBinKab"></word>
 			<word text="&gt;anas bin maAlik" id="AnasBinMaalik"></word>
 			<word text="jaAbir bin Eabodu {ll~ah" id="JaabirBinAbdullah"></word>
 			<word text="&gt;abuw muwsaY {lo&gt;a$Eariy" id="AbooMoosaaAlAsharee"></word>
 			<word text="muEaA* bin jabal" id="MuathBinJabal"></word>
 			<word text="saAlim mawlaY &gt;abiy Hu*ayfap" id="SaalimMawlaaAbeeHuthayfah"></word>
-			<word text="Eabodu {ll~ah bin {lzubayr" id="AbdullahBinAlZubayr"></word>
-			<word text="&gt;abuw zayd" id="AbooZayd"></word>
+			<word text="Eabodu {ll~ah bin {lz~ubayr" id="AbdullahBinAlZubayr"></word>
+			<word text="&gt;abuw zayod" id="AbooZayd"></word>
 			<word text="&gt;abuw {lodarda&apos;" id="AbooDarda"></word>
 			<word text="Abuw sufyaAn bin Harf" id="AbuSufyan"></word>
 			<word text="muEaAwiyap bin &gt;abiy sufyaAn" id="Muawiyyah"></word>
 			<word text="&gt;abuw Haniyfah" id="AbuHanifa"></word>
 			<word text="maAlik bin &gt;anas" id="Malik"></word>
-			<word text="$AfiEiy" id="Shafii"></word>
+			<word text="$aAfiEiy" id="Shafii"></word>
 			<word text="Hanbal" id="Hanbal"></word>
 			<word text="sufyaAn {lv~awri" id="SufyanAlThawri"></word>
 			<word text="{lo&gt;awzaAEi" id="AlAwzaai"></word>
-			<word text="{ll~av bin saEd" id="AlLaythBinSad"></word>
+			<word text="{ll~av bin saEod" id="AlLaythBinSad"></word>
 			<word text="&gt;abuw dahr" id="AbuDahr"></word>
 			<word text="&gt;abuw jahal" id="AbuJahal"></word>
 			<word text="&gt;abuw lahab" id="AbuLahab"></word>
 			<word text="{lo&lt;imaAm {ln~awawiy 40 Hadiyv" id="ImamNawawi40Hadith"></word>
 			<word text="Eamr bin {loEaAS" id="AmrBinAlAas"></word>
 			<word text="{ll~ayv bin saAd" id="AlLaythBinSaad"></word>
-			<word text="saEd bin waEd" id="SaadBinWaad"></word>
+			<word text="saEod bin waEod" id="SaadBinWaad"></word>
 			<word text="baniw vaqiyf" id="BaniThaqeef"></word>
 			<word text="{loxawaArij" id="Khawarij"></word>
 			<word text="$iyEap" id="Shia"></word>
 			<word text="quray$" id="Quraish"></word>
-			<word text="baniw hA$im" id="BaniHashim"></word>
+			<word text="baniw haA$im" id="BaniHashim"></word>
 			<word text="{lo&gt;umawiy~ap‎" id="Umayyad"></word>
 			<word text="{laEbaAsiy~ap" id="Abbasid"></word>
 			<word text="{lomanSuwr" id="AlMansoor"></word>
@@ -2818,10 +2818,10 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="salafi" id="Salafi"></word>
 			<word text="muEtazilap" id="Rationalists"></word>
 			<word text="qur&apos;|niyuwn" id="QuranFollowers"></word>
-			<word text="jibriyl" id="Gabriel"></word>
-			<word text="&lt;ibliys" id="Lucifer"></word>
-			<word text="$ayTaAn" id="Satan"></word>
-			<word text="firawn" id="Pharoah"></word>
+			<word text="jiboriyl" id="Gabriel"></word>
+			<word text="&lt;iboliys" id="Lucifer"></word>
+			<word text="$ayoTaAn" id="Satan"></word>
+			<word text="firawon" id="Pharoah"></word>
 			<word text="yaAjuwj wa maAjuwj" id="GogAndMagog"></word>
 			<word text="&gt;ahlu {lHadiyv" id="PeopleOfHadith"></word>
 			<word text="&gt;ahlu {lr~aA^&apos;i" id="PeopleOfReasoningOpinion"></word>
@@ -2836,7 +2836,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="xayobar" id="Khaybar"></word>
 			<word text="Hunayn" id="Hunain"></word>
 			<word text="SafaA" id=""></word>
-			<word text="marwap" id=""></word>
+			<word text="marowap" id=""></word>
 			<word text="Earafap" id=""></word>
 			<word text="{loHudabiy~ah" id="Hudabiyyah"></word>
 			<word text="rawoDap" id="Rawdah"></word>
@@ -2844,7 +2844,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="{lojan~ap" id="Heaven"></word>
 			<word text="jahan~am" id="Hell"></word>
 			<word text="firodawos" id="Firdaus"></word>
-			<word text="kahf gaAr HiraA^&apos;" id="CaveOfHira"></word>
+			<word text="kahof gaAr HiraA^&apos;" id="CaveOfHira"></word>
 			<word text="jabal {ln~uwr" id="MountNour"></word>
 			<word text="jabal Euhuwd" id="MountUhud"></word>
 			<word text="{lomasojid {loHaraAm" id="SacredMosque"></word>
@@ -2854,7 +2854,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="bayotu {lomaAl" id="CentralTreasury"></word>
 			<word text="Eayod {lofiTr‎" id="FestivalOfBreakingFast"></word>
 			<word text="Eayod {lo&gt;aDHaY‎" id="FestivalOfSacrifice"></word>
-			<word text="r&gt;as {ls~anap {lohijriyap‎" id="IslamicNewYear"></word> 
+			<word text="r&gt;as {ls~anap {lohijoriyap‎" id="IslamicNewYear"></word> 
 			<word text="EaA$uwraA^&apos;" id="Ashura"></word>
 			<word text="mawolid {ln~abiy" id="BirthdayOfTheProphet"></word>
 			<word text="ramaDaAn" id="Ramadan"></word>
@@ -3020,42 +3020,42 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 		<arabicsymbol symbolname="vamaAnoyap" uname="ArabicIndicDigitEight" symbol="0668" ipavalue="" extendedbuckwalter="56" romantranslit="8" plainroman="8" terminating="true" connecting="false" assimilate="false" />
 		<arabicsymbol symbolname="tisoEap" uname="ArabicIndicDigitNine" symbol="0669" ipavalue="" extendedbuckwalter="57" romantranslit="9" plainroman="9" terminating="true" connecting="false" assimilate="false" />
 		<arabicsymbol symbolname="&gt;alif xanjariyap" uname="ArabicLetterSuperscriptAlef" symbol="0670" ipavalue="a:" extendedbuckwalter="96" romantranslit="a-" plainroman="a" terminating="false" connecting="false" assimilate="false" />
-		<arabicsymbol symbolname="&gt;alif hamozap waSl" uname="ArabicLetterAlefWasla" symbol="0671" ipavalue="" extendedbuckwalter="123" romantranslit="" plainroman="a" terminating="false" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="&gt;alif hamozap waSol" uname="ArabicLetterAlefWasla" symbol="0671" ipavalue="" extendedbuckwalter="123" romantranslit="" plainroman="a" terminating="false" connecting="false" assimilate="false" />
 
-		<arabicsymbol symbolname="tufiydu b&gt;an~a {lowaSla &gt;awolY maEa jawaAz {lowaqufi" uname="ArabicSmallHighLigatureSadWithLamWithAlefMaksura" symbol="06D6" ipavalue="" extendedbuckwalter="76" romantranslit="" plainroman="" terminating="false" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="tufiydu b&gt;an~a {lowaSola &gt;awolY maEa jawaAz {lowaqufi" uname="ArabicSmallHighLigatureSadWithLamWithAlefMaksura" symbol="06D6" ipavalue="" extendedbuckwalter="76" romantranslit="" plainroman="" terminating="false" connecting="false" assimilate="false" />
 		<arabicsymbol symbolname="tafiydu b&gt;an~a {lowaqufa &gt;awolY" uname="ArabicSmallHighLigatureQafWithLamWithAlefMaksura" symbol="06D7" ipavalue="" extendedbuckwalter="81" romantranslit="" plainroman="" terminating="false" connecting="false" assimilate="false" />
 		<arabicsymbol symbolname="tufiydu lazuwma {lowaquf" uname="ArabicSmallHighMeemInitialForm" symbol="06D8" ipavalue="" extendedbuckwalter="77" romantranslit="" plainroman="" terminating="false" connecting="false" assimilate="false" />
 		<arabicsymbol symbolname="tufiydu {ln~ahoya Ean {lowaquf" uname="ArabicSmallHighLamAlef" symbol="06D9" ipavalue="" extendedbuckwalter="73" romantranslit="" plainroman="" terminating="false" connecting="false" assimilate="false" />
 		<arabicsymbol symbolname="tufiydu jawaAza {lowaqufa" uname="ArabicSmallHighJeem" symbol="06DA" ipavalue="" extendedbuckwalter="67" romantranslit="" plainroman="" terminating="false" connecting="false" assimilate="false" />
 		<arabicsymbol symbolname="tufiydu jawaAza {lowaqufi b&gt;aHadi {lomwaDiEayon waliysa fiy kilayohimaA" uname="ArabicSmallHighThreeDots" symbol="06DB" ipavalue="" extendedbuckwalter="79" romantranslit="" plainroman="" terminating="false" connecting="false" assimilate="false" />
-		<arabicsymbol symbolname="lld~ilaAlapi EalaY wujuwbi {ln~uTq baAls~iyn badal {lS~aAd waA*aA wuDEato baAl&gt;asofal faAln~uTqu baAlS~aAdi ma$huwr" uname="ArabicSmallHighSeen" symbol="06DC" ipavalue="" extendedbuckwalter="58" romantranslit="s" plainroman="" terminating="false" connecting="false" assimilate="false" />
-		<arabicsymbol symbolname="lld~ilaAlapi EalaY bihaA bapi {l|yapi waraqamuhaA" uname="ArabicEndOfAyah" symbol="06DD" ipavalue="" extendedbuckwalter="61" romantranslit="" plainroman="" terminating="false" connecting="false" assimilate="false" />
-		<arabicsymbol symbolname="lld~ilaAlapi EalaY lld~ilaAlapi EalaY bdaA}pi {lo&gt;ajozaA^&apos; wa{lo&gt;aHozaAb waAnDaA fihaA wa&gt;a rbaA EihaA" uname="ArabicStartOfRubElHizb" symbol="06DE" ipavalue="" extendedbuckwalter="66" romantranslit="" plainroman="" terminating="false" connecting="false" assimilate="false" />
-		<arabicsymbol symbolname="lld~ilaAlapi EalaY sukuwn {loHarofi" uname="ArabicSmallHighRoundedZero" symbol="06DF" ipavalue="" extendedbuckwalter="64" romantranslit="" plainroman="" terminating="false" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="lild~ilaAlapi EalaY wujuwbi {ln~uToq baAls~iyn badal {lS~aAd waA*aA wuDEato baAl&gt;asofal fa{ln~uToqu baAlS~aAdi ma$ohuwr" uname="ArabicSmallHighSeen" symbol="06DC" ipavalue="" extendedbuckwalter="58" romantranslit="s" plainroman="" terminating="false" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="lild~ilaAlapi EalaY bihaA bapi {l|yapi waraqamuhaA" uname="ArabicEndOfAyah" symbol="06DD" ipavalue="" extendedbuckwalter="61" romantranslit="" plainroman="" terminating="false" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="lild~ilaAlapi EalaY lild~ilaAlapi EalaY bdaA}pi {lo&gt;ajozaA^&apos; wa{lo&gt;aHozaAb waAnDaA fihaA wa&gt;a rbaA EihaA" uname="ArabicStartOfRubElHizb" symbol="06DE" ipavalue="" extendedbuckwalter="66" romantranslit="" plainroman="" terminating="false" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="lild~ilaAlapi EalaY sukuwn {loHarofi" uname="ArabicSmallHighRoundedZero" symbol="06DF" ipavalue="" extendedbuckwalter="64" romantranslit="" plainroman="" terminating="false" connecting="false" assimilate="false" />
 		<arabicsymbol symbolname="" uname="ArabicSmallHighUprightRectangularZero" symbol="06E0" ipavalue="" extendedbuckwalter="34" romantranslit="" plainroman="" terminating="false" connecting="false" assimilate="false" />
-		<arabicsymbol symbolname="lld~ilaAlapi EalaY wujuwd {lo&lt;iqlaAbi" uname="ArabicSmallHighMeemIsolatedForm" symbol="06E2" ipavalue="" extendedbuckwalter="91" romantranslit="m" plainroman="" terminating="false" connecting="false" assimilate="false" />
-		<arabicsymbol symbolname="lld~ilaAlapi EalaY wujuwbi {ln~uTq bils~iyn badl {lD~aAd waA*aA wuDEato baAl&gt;asofal faAln~uTqu bilD~aAdi ma$huwr" uname="ArabicSmallLowSeen" symbol="06E3" ipavalue="" extendedbuckwalter="59" romantranslit="s" plainroman="" terminating="false" connecting="false" assimilate="false" />
-		<arabicsymbol symbolname="lld~ilaAlapi EalaY wujuwbi {ln~uTq biHuruwfi {lt~ruwkapi" uname="ArabicSmallWaw" symbol="06E5" ipavalue="" extendedbuckwalter="44" romantranslit="w" plainroman="" terminating="false" connecting="false" assimilate="false" />
-		<arabicsymbol symbolname="lld~ilaAlapi EalaY wujuwbi {ln~uTq biHuruwfi {lt~ruwkapi" uname="ArabicSmallYeh" symbol="06E6" ipavalue="" extendedbuckwalter="46" romantranslit="y" plainroman="" terminating="false" connecting="false" assimilate="false" />
-		<arabicsymbol symbolname="lld~ilaAlapi EalaY wujuwbi {ln~uTq bhaA" uname="ArabicSmallHighNoon" symbol="06E8" ipavalue="" extendedbuckwalter="33" romantranslit="n" plainroman="" terminating="false" connecting="false" assimilate="false" />
-		<arabicsymbol symbolname="lld~ilaAlapi EalaY mawoDiE {ls~ujuwd, &gt;amaAkilmap wujuwbi {ls~ujuwd faqado wuDEa fawoqahaA xaTo" uname="ArabicPlaceOfSajdah" symbol="06E9" ipavalue="" extendedbuckwalter="82" romantranslit="" plainroman="" terminating="false" connecting="false" assimilate="false" />
-		<arabicsymbol symbolname="lld~ilaAlapi EalaY ziyaAdap {loHarof Hiyna {lowaSol" uname="ArabicEmptyCentreLowStop" symbol="06EA" ipavalue="" extendedbuckwalter="45" romantranslit="" plainroman="" terminating="false" connecting="false" assimilate="false" />
-		<arabicsymbol symbolname="lld~ilaAlapi EalaY ziyaAdap {loHarof waEadam {ln~uTq bhi" uname="ArabicEmptyCentreHighStop" symbol="06EB" ipavalue="" extendedbuckwalter="43" romantranslit="" plainroman="" terminating="false" connecting="false" assimilate="false" />
-		<arabicsymbol symbolname="lld~ilaAlapi EalaY {lt~ashiyl" uname="ArabicRoundedHighStopWithFilledCentre" symbol="06EC" ipavalue="" extendedbuckwalter="37" romantranslit="" plainroman="" terminating="false" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="lild~ilaAlapi EalaY wujuwd {lo&lt;iqlaAbi" uname="ArabicSmallHighMeemIsolatedForm" symbol="06E2" ipavalue="" extendedbuckwalter="91" romantranslit="m" plainroman="" terminating="false" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="lild~ilaAlapi EalaY wujuwbi {ln~uToq bils~iyn badl {lD~aAd waA*aA wuDEato baAl&gt;asofal fa{ln~uToqu bilD~aAdi ma$ohuwr" uname="ArabicSmallLowSeen" symbol="06E3" ipavalue="" extendedbuckwalter="59" romantranslit="s" plainroman="" terminating="false" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="lild~ilaAlapi EalaY wujuwbi {ln~uToq biHuruwfi {lt~ruwkapi" uname="ArabicSmallWaw" symbol="06E5" ipavalue="" extendedbuckwalter="44" romantranslit="w" plainroman="" terminating="false" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="lild~ilaAlapi EalaY wujuwbi {ln~uToq biHuruwfi {lt~ruwkapi" uname="ArabicSmallYeh" symbol="06E6" ipavalue="" extendedbuckwalter="46" romantranslit="y" plainroman="" terminating="false" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="lild~ilaAlapi EalaY wujuwbi {ln~uToq bhaA" uname="ArabicSmallHighNoon" symbol="06E8" ipavalue="" extendedbuckwalter="33" romantranslit="n" plainroman="" terminating="false" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="lild~ilaAlapi EalaY mawoDiE {ls~ujuwd, &gt;amaAkilmap wujuwbi {ls~ujuwd faqado wuDEa fawoqahaA xaTo" uname="ArabicPlaceOfSajdah" symbol="06E9" ipavalue="" extendedbuckwalter="82" romantranslit="" plainroman="" terminating="false" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="lild~ilaAlapi EalaY ziyaAdap {loHarof Hiyna {lowaSol" uname="ArabicEmptyCentreLowStop" symbol="06EA" ipavalue="" extendedbuckwalter="45" romantranslit="" plainroman="" terminating="false" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="lild~ilaAlapi EalaY ziyaAdap {loHarof waEadam {ln~uToq bhi" uname="ArabicEmptyCentreHighStop" symbol="06EB" ipavalue="" extendedbuckwalter="43" romantranslit="" plainroman="" terminating="false" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="lild~ilaAlapi EalaY {lt~asohiyl" uname="ArabicRoundedHighStopWithFilledCentre" symbol="06EC" ipavalue="" extendedbuckwalter="37" romantranslit="" plainroman="" terminating="false" connecting="false" assimilate="false" />
 		<arabicsymbol symbolname="miym" uname="ArabicSmallLowMeem" symbol="06ED" ipavalue="" extendedbuckwalter="93" romantranslit="" plainroman="" terminating="false" connecting="false" assimilate="false" />
 
 		<arabicsymbol symbolname="{lv~alaAv" uname="Space" symbol="0020" ipavalue="" extendedbuckwalter="32" romantranslit=" " plainroman=" " terminating="false" connecting="false" assimilate="false" />
 
 		<arabicsymbol symbolname="Ealamapu taEaj~ub" uname="ExclamationMark" symbol="0021" ipavalue="" extendedbuckwalter="0" romantranslit="!" plainroman="!" terminating="true" connecting="false" assimilate="false" />
-		<arabicsymbol symbolname="faArizap AqotibaAs" uname="QuotationMark" symbol="0022" ipavalue="" extendedbuckwalter="0" romantranslit="&quot;" plainroman="&quot;" terminating="true" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="faArizap {qotibaAs" uname="QuotationMark" symbol="0022" ipavalue="" extendedbuckwalter="0" romantranslit="&quot;" plainroman="&quot;" terminating="true" connecting="false" assimilate="false" />
 		<arabicsymbol symbolname="faArizap" uname="Comma" symbol="002C" ipavalue="" extendedbuckwalter="0" romantranslit="," plainroman="," terminating="true" connecting="false" assimilate="false" />
 		<arabicsymbol symbolname="xaT" uname="HyphenMinus" symbol="002D" ipavalue="" extendedbuckwalter="0" romantranslit="-" plainroman="-" terminating="true" connecting="false" assimilate="false" />
-		<arabicsymbol symbolname="nuqTap" uname="FullStop" symbol="002E" ipavalue="" extendedbuckwalter="0" romantranslit="." plainroman="." terminating="true" connecting="false" assimilate="false" />
-		<arabicsymbol symbolname="nutTataAn mutaEaAmidataAn" uname="Colon" symbol="003A" ipavalue="" extendedbuckwalter="0" romantranslit=":" plainroman=":" terminating="true" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="nuqoTap" uname="FullStop" symbol="002E" ipavalue="" extendedbuckwalter="0" romantranslit="." plainroman="." terminating="true" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="nutoTataAn mutaEaAmidataAn" uname="Colon" symbol="003A" ipavalue="" extendedbuckwalter="0" romantranslit=":" plainroman=":" terminating="true" connecting="false" assimilate="false" />
 		<arabicsymbol symbolname="yamiyn biyn qawosiyn" uname="LeftSquareBracket" symbol="005B" ipavalue="" extendedbuckwalter="0" romantranslit="[" plainroman="[" terminating="true" connecting="false" assimilate="false" />
 		<arabicsymbol symbolname="yasaAr biyn qawosiyn" uname="RightSquareBracket" symbol="005D" ipavalue="" extendedbuckwalter="0" romantranslit="]" plainroman="]" terminating="true" connecting="false" assimilate="false" />
-		<arabicsymbol symbolname="yamiyn qawis {lomajomuwaEh" uname="LeftCurlyBracket" symbol="007B" ipavalue="" extendedbuckwalter="0" romantranslit="{" plainroman="{" terminating="true" connecting="false" assimilate="false" />
-		<arabicsymbol symbolname="yasaAr qawis {lomajomuwaEh" uname="RightCurlyBracket" symbol="007D" ipavalue="" extendedbuckwalter="0" romantranslit="}" plainroman="}" terminating="true" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="yamiyn qawis {lomajomuwaEoh" uname="LeftCurlyBracket" symbol="007B" ipavalue="" extendedbuckwalter="0" romantranslit="{" plainroman="{" terminating="true" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="yasaAr qawis {lomajomuwaEoh" uname="RightCurlyBracket" symbol="007D" ipavalue="" extendedbuckwalter="0" romantranslit="}" plainroman="}" terminating="true" connecting="false" assimilate="false" />
 		<arabicsymbol symbolname="{lv~alaAv" uname="NoBreakSpace" symbol="00A0" ipavalue="" extendedbuckwalter="0" romantranslit=" " plainroman=" " terminating="false" connecting="false" assimilate="false" />
 		<arabicsymbol symbolname="yamiyn EalaAmap {lt~anSiyS" uname="LeftPointingDoubleAngleQuotationMark" symbol="00AB" ipavalue="" extendedbuckwalter="0" romantranslit="&quot;" plainroman="&quot;" terminating="true" connecting="false" assimilate="false" />
 		<arabicsymbol symbolname="yasaAr EalaAmap {lt~anSiyS" uname="RightPointingDoubleAngleQuotationMark" symbol="00BB" ipavalue="" extendedbuckwalter="0" romantranslit="&quot;" plainroman="&quot;" terminating="true" connecting="false" assimilate="false" />
@@ -3086,9 +3086,9 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 		<arabicsymbol symbolname="wasalaAm" uname="ArabicLigatureWasallamIsolatedForm" symbol="FDF8" ipavalue="" extendedbuckwalter="0" romantranslit="" plainroman="" terminating="true" connecting="false" assimilate="false" />
 		<arabicsymbol symbolname="Sal~aY" uname="ArabicLigatureSallaIsolatedForm" symbol="FDF9" ipavalue="" extendedbuckwalter="0" romantranslit="" plainroman="" terminating="true" connecting="false" assimilate="false" />
 		<arabicsymbol symbolname="Sal~aY {ll~ahu Ealayohi wasalaAm" uname="ArabicLigatureSallallahouAlayheWasallam" symbol="FDFA" ipavalue="" extendedbuckwalter="0" romantranslit="" plainroman="" terminating="true" connecting="false" assimilate="false" />
-		<arabicsymbol symbolname="jal~a jalAluhu" uname="ArabicLigatureJallajalalouhou" symbol="FDFB" ipavalue="" extendedbuckwalter="0" romantranslit="" plainroman="" terminating="true" connecting="false" assimilate="false" />
-		<arabicsymbol symbolname="riyAl" uname="RialSign" symbol="FDFC" ipavalue="" extendedbuckwalter="0" romantranslit="" plainroman="" terminating="true" connecting="false" assimilate="false" />
-		<arabicsymbol symbolname="bismi {ll~ahi {lr~aHmani {lr~aHiym" uname="ArabicLigatureBismillahArRahmanArRaheem" symbol="FDFD" ipavalue="" extendedbuckwalter="0" romantranslit="" plainroman="" terminating="true" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="jal~a jalaAluhu" uname="ArabicLigatureJallajalalouhou" symbol="FDFB" ipavalue="" extendedbuckwalter="0" romantranslit="" plainroman="" terminating="true" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="riyaAl" uname="RialSign" symbol="FDFC" ipavalue="" extendedbuckwalter="0" romantranslit="" plainroman="" terminating="true" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="bisomi {ll~ahi {lr~aHoma`ni {lr~aHiymi" uname="ArabicLigatureBismillahArRahmanArRaheem" symbol="FDFD" ipavalue="" extendedbuckwalter="0" romantranslit="" plainroman="" terminating="true" connecting="false" assimilate="false" />
 
 		<arabicsymbol symbolname="hamozap" uname="ArabicHamzaBelow" symbol="0655" ipavalue="ʔ" extendedbuckwalter="0" romantranslit="&apos;" plainroman="" terminating="false" connecting="false" assimilate="false" />
 		<arabicsymbol symbolname="PaY" uname="ArabicLetterPeh" symbol="067E" ipavalue="" extendedbuckwalter="80" romantranslit="p" plainroman="p" terminating="false" connecting="false" assimilate="false" />
@@ -3731,7 +3731,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 		<chapter index="96" name="{loEalaqi"></chapter>
 		<chapter index="97" name="{loqadori"></chapter>
 		<chapter index="98" name="{lobay~inapi"></chapter>
-		<chapter index="99" name="{lz~alzalapi"></chapter>
+		<chapter index="99" name="{lz~alozalapi"></chapter>
 		<chapter index="100" name="{loEaAdiyaAti"></chapter>
 		<chapter index="101" name="{loqaAriEapi"></chapter>
 		<chapter index="102" name="{lt~akaAvuri"></chapter>
