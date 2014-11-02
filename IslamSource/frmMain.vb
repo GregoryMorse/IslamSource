@@ -19,7 +19,7 @@ Public Class frmMain
         Dim Renderer As New MultiLangRender
         Renderer.Anchor = AnchorStyles.Left Or AnchorStyles.Top Or AnchorStyles.Right Or AnchorStyles.Bottom
         Renderer.Size = New Size(gbMain.Width, gbMain.Height)
-        Renderer.RenderArray = TanzilReader.GetQuranTextBySelection(0, 1, String.Empty, 1, 0).Items
+        Renderer.RenderArray = TanzilReader.GetQuranTextBySelection(0, 1, String.Empty, Arabic.TranslitScheme.RuleBased, "PlainRoman", 0).Items
         gbMain.Controls.Add(Renderer)
     End Sub
 

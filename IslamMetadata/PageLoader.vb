@@ -2535,44 +2535,55 @@ Public Class Arabic
     End Function
     Public Shared Function DisplayTranslation(ByVal Item As PageLoader.TextItem) As Array()
         Dim Count As Integer = CInt(HttpContext.Current.Request.QueryString.Get("selection"))
-        Dim Scheme As Arabic.TranslitScheme = CInt(HttpContext.Current.Request.QueryString.Get("translitscheme"))
-        Return DoDisplayTranslation(Count, Scheme)
+        If Count = -1 Then Count = 0
+        Dim SchemeType As Arabic.TranslitScheme = If(CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) >= 2, 2 + CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) Mod 2, CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")))
+        Dim Scheme As String = CachedData.IslamData.TranslitSchemes(If(CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) >= 2, (CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) - 2) \ 2, String.Empty)).Name
+        If Count = CachedData.IslamData.VocabularyCategories.Length Then
+            Return DoDisplayTranslation(CachedData.IslamData.Months, SchemeType, Scheme)
+        ElseIf Count = CachedData.IslamData.VocabularyCategories.Length + 1 Then
+            Return DoDisplayTranslation(CachedData.IslamData.DaysOfWeek, SchemeType, Scheme)
+        ElseIf Count = CachedData.IslamData.VocabularyCategories.Length + 2 Then
+            Return DoDisplayTranslation(CachedData.IslamData.PrayerTimes, SchemeType, Scheme)
+        ElseIf Count = CachedData.IslamData.VocabularyCategories.Length + 3 Then
+            Return DoDisplayTranslation(CachedData.IslamData.Prayers, SchemeType, Scheme)
+        Else
+            Return DoDisplayTranslation(CachedData.IslamData.VocabularyCategories(Count), SchemeType, Scheme)
+        End If
     End Function
-    Public Shared Function DoDisplayTranslation(Count As Integer, Scheme As Arabic.TranslitScheme) As Array()
+    Public Shared Function DoDisplayTranslation(Category As Object, SchemeType As Arabic.TranslitScheme, Scheme As String) As Array()
         Dim Output As New ArrayList
         Output.Add(GetRenderJS())
-        If CachedData.IslamData.VocabularyCategories.Length + 2 = Count Then
+        If TypeOf Category Is IslamData.PrayerTime Then
             Output.Add(New String() {"arabic", "transliteration", String.Empty, String.Empty, String.Empty, String.Empty})
             Output.Add(New String() {Utility.LoadResourceString("IslamInfo_Arabic"), Utility.LoadResourceString("IslamInfo_Transliteration"), Utility.LoadResourceString("IslamInfo_Translation"), Utility.LoadResourceString("IslamInfo_Before"), Utility.LoadResourceString("IslamInfo_PrescribedTime"), Utility.LoadResourceString("IslamInfo_After")})
-        ElseIf CachedData.IslamData.VocabularyCategories.Length + 3 = Count Then
+        ElseIf TypeOf Category Is IslamData.PrayerType Then
             Output.Add(New String() {"arabic", "transliteration", String.Empty, String.Empty, String.Empty})
             Output.Add(New String() {Utility.LoadResourceString("IslamInfo_Arabic"), Utility.LoadResourceString("IslamInfo_Transliteration"), Utility.LoadResourceString("IslamInfo_Translation"), Utility.LoadResourceString("IslamInfo_Classification"), Utility.LoadResourceString("IslamInfo_PrayerUnits")})
         Else
             Output.Add(New String() {"arabic", "transliteration", String.Empty})
             Output.Add(New String() {Utility.LoadResourceString("IslamInfo_Arabic"), Utility.LoadResourceString("IslamInfo_Transliteration"), Utility.LoadResourceString("IslamInfo_Translation")})
         End If
-        If Count = -1 Then Count = 0
-        If CachedData.IslamData.VocabularyCategories.Length = Count Then
-            For SubCount As Integer = 0 To CachedData.IslamData.Months.Length - 1
-                Output.Add(New String() {Arabic.RightToLeftMark + TransliterateFromBuckwalter(CachedData.IslamData.Months(SubCount).Name), TransliterateToScheme(TransliterateFromBuckwalter(CachedData.IslamData.Months(SubCount).Name), Scheme, String.Empty).Trim(), Utility.LoadResourceString("IslamInfo_" + CachedData.IslamData.Months(SubCount).TranslationID)})
+        If TypeOf Category Is IslamData.Month Then
+            For SubCount As Integer = 0 To CType(Category, IslamData.Month()).Length - 1
+                Output.Add(New String() {Arabic.RightToLeftMark + TransliterateFromBuckwalter(CType(Category, IslamData.Month())(SubCount).Name), TransliterateToScheme(TransliterateFromBuckwalter(CType(Category, IslamData.Month())(SubCount).Name), SchemeType, Scheme).Trim(), Utility.LoadResourceString("IslamInfo_" + CType(Category, IslamData.Month())(SubCount).TranslationID)})
             Next
-        ElseIf CachedData.IslamData.VocabularyCategories.Length + 1 = Count Then
-            For SubCount As Integer = 0 To CachedData.IslamData.DaysOfWeek.Length - 1
-                Output.Add(New String() {Arabic.RightToLeftMark + TransliterateFromBuckwalter(CachedData.IslamData.DaysOfWeek(SubCount).Name), TransliterateToScheme(TransliterateFromBuckwalter(CachedData.IslamData.DaysOfWeek(SubCount).Name), Scheme, String.Empty).Trim(), Utility.LoadResourceString("IslamInfo_" + CachedData.IslamData.DaysOfWeek(SubCount).TranslationID)})
+        ElseIf TypeOf Category Is IslamData.DayOfWeek Then
+            For SubCount As Integer = 0 To CType(Category, IslamData.DayOfWeek()).Length - 1
+                Output.Add(New String() {Arabic.RightToLeftMark + TransliterateFromBuckwalter(CType(Category, IslamData.DayOfWeek())(SubCount).Name), TransliterateToScheme(TransliterateFromBuckwalter(CType(Category, IslamData.DayOfWeek())(SubCount).Name), SchemeType, Scheme).Trim(), Utility.LoadResourceString("IslamInfo_" + CType(Category, IslamData.DayOfWeek())(SubCount).TranslationID)})
             Next
-        ElseIf CachedData.IslamData.VocabularyCategories.Length + 2 = Count Then
+        ElseIf TypeOf Category Is IslamData.PrayerTime Then
             Dim Table As New Hashtable
             Array.ForEach(CachedData.IslamData.Prayers, Sub(Convert As IslamData.PrayerType) Array.ForEach(Convert.PrayerUnits.Split(","c), Sub(Part As String) If Part.Contains("="c) Then If Table.ContainsKey(Part.Substring(0, Part.IndexOf("="c))) Then Table.Item(Part.Substring(0, Part.IndexOf("="c))) = CStr(Table.Item(Part.Substring(0, Part.IndexOf("="c)))) + vbCrLf + Part.Substring(Part.IndexOf("="c) + 1).Replace("|"c, " or ") + " " + CStr(IIf(Utility.LoadResourceString("IslamInfo_" + Convert.TranslationID) <> "Prescribed time", Utility.LoadResourceString("IslamInfo_" + Convert.TranslationID) + " - ", String.Empty)) + Convert.Classification Else Table.Add(Part.Substring(0, Part.IndexOf("="c)), Part.Substring(Part.IndexOf("="c) + 1).Replace("|"c, " or ") + " " + Convert.Classification)))
-            For SubCount As Integer = 0 To CachedData.IslamData.PrayerTimes.Length - 1
-                Output.Add(New String() {Arabic.RightToLeftMark + TransliterateFromBuckwalter(CachedData.IslamData.PrayerTimes(SubCount).Name), TransliterateToScheme(TransliterateFromBuckwalter(CachedData.IslamData.PrayerTimes(SubCount).Name), Scheme, String.Empty).Trim(), Utility.LoadResourceString("IslamInfo_" + CachedData.IslamData.PrayerTimes(SubCount).TranslationID), CStr(IIf(Table.ContainsKey("-"c + Utility.LoadResourceString("IslamInfo_" + CachedData.IslamData.PrayerTimes(SubCount).TranslationID)), Table.Item("-"c + Utility.LoadResourceString("IslamInfo_" + CachedData.IslamData.PrayerTimes(SubCount).TranslationID)), String.Empty)), CStr(IIf(Table.ContainsKey(Utility.LoadResourceString("IslamInfo_" + CachedData.IslamData.PrayerTimes(SubCount).TranslationID)), Table.Item(Utility.LoadResourceString("IslamInfo_" + CachedData.IslamData.PrayerTimes(SubCount).TranslationID)), String.Empty)), CStr(IIf(Table.ContainsKey("+"c + Utility.LoadResourceString("IslamInfo_" + CachedData.IslamData.PrayerTimes(SubCount).TranslationID)), Table.Item("+"c + Utility.LoadResourceString("IslamInfo_" + CachedData.IslamData.PrayerTimes(SubCount).TranslationID)), String.Empty))})
+            For SubCount As Integer = 0 To CType(Category, IslamData.PrayerTime()).Length - 1
+                Output.Add(New String() {Arabic.RightToLeftMark + TransliterateFromBuckwalter(CType(Category, IslamData.PrayerTime())(SubCount).Name), TransliterateToScheme(TransliterateFromBuckwalter(CType(Category, IslamData.PrayerTime())(SubCount).Name), SchemeType, Scheme).Trim(), Utility.LoadResourceString("IslamInfo_" + CType(Category, IslamData.PrayerTime())(SubCount).TranslationID), CStr(IIf(Table.ContainsKey("-"c + Utility.LoadResourceString("IslamInfo_" + CType(Category, IslamData.PrayerTime())(SubCount).TranslationID)), Table.Item("-"c + Utility.LoadResourceString("IslamInfo_" + CType(Category, IslamData.PrayerTime())(SubCount).TranslationID)), String.Empty)), CStr(IIf(Table.ContainsKey(Utility.LoadResourceString("IslamInfo_" + CType(Category, IslamData.PrayerTime())(SubCount).TranslationID)), Table.Item(Utility.LoadResourceString("IslamInfo_" + CType(Category, IslamData.PrayerTime())(SubCount).TranslationID)), String.Empty)), CStr(IIf(Table.ContainsKey("+"c + Utility.LoadResourceString("IslamInfo_" + CType(Category, IslamData.PrayerTime())(SubCount).TranslationID)), Table.Item("+"c + Utility.LoadResourceString("IslamInfo_" + CType(Category, IslamData.PrayerTime())(SubCount).TranslationID)), String.Empty))})
             Next
-        ElseIf CachedData.IslamData.VocabularyCategories.Length + 3 = Count Then
-            For SubCount As Integer = 0 To CachedData.IslamData.Prayers.Length - 1
-                Output.Add(New String() {Arabic.RightToLeftMark + TransliterateFromBuckwalter(CachedData.IslamData.Prayers(SubCount).Name), TransliterateToScheme(TransliterateFromBuckwalter(CachedData.IslamData.Prayers(SubCount).Name), Scheme, String.Empty).Trim(), Utility.LoadResourceString("IslamInfo_" + CachedData.IslamData.Prayers(SubCount).TranslationID), CachedData.IslamData.Prayers(SubCount).Classification, CachedData.IslamData.Prayers(SubCount).PrayerUnits})
+        ElseIf TypeOf Category Is IslamData.PrayerType Then
+            For SubCount As Integer = 0 To CType(Category, IslamData.PrayerType()).Length - 1
+                Output.Add(New String() {Arabic.RightToLeftMark + TransliterateFromBuckwalter(CType(Category, IslamData.PrayerType())(SubCount).Name), TransliterateToScheme(TransliterateFromBuckwalter(CType(Category, IslamData.PrayerType())(SubCount).Name), SchemeType, Scheme).Trim(), Utility.LoadResourceString("IslamInfo_" + CType(Category, IslamData.PrayerType())(SubCount).TranslationID), CType(Category, IslamData.PrayerType())(SubCount).Classification, CType(Category, IslamData.PrayerType())(SubCount).PrayerUnits})
             Next
         Else
-            For SubCount As Integer = 0 To CachedData.IslamData.VocabularyCategories(Count).Words.Length - 1
-                Output.Add(New String() {Arabic.RightToLeftMark + TransliterateFromBuckwalter(CachedData.IslamData.VocabularyCategories(Count).Words(SubCount).Text), TransliterateToScheme(TransliterateFromBuckwalter(CachedData.IslamData.VocabularyCategories(Count).Words(SubCount).Text), Scheme, String.Empty).Trim(), Utility.LoadResourceString("IslamInfo_" + CachedData.IslamData.VocabularyCategories(Count).Words(SubCount).TranslationID)})
+            For SubCount As Integer = 0 To CType(Category, IslamData.VocabCategory).Words.Length - 1
+                Output.Add(New String() {Arabic.RightToLeftMark + TransliterateFromBuckwalter(CType(Category, IslamData.VocabCategory).Words(SubCount).Text), TransliterateToScheme(TransliterateFromBuckwalter(CType(Category, IslamData.VocabCategory).Words(SubCount).Text), SchemeType, Scheme).Trim(), Utility.LoadResourceString("IslamInfo_" + CType(Category, IslamData.VocabCategory).Words(SubCount).TranslationID)})
             Next
         End If
         Return DirectCast(Output.ToArray(GetType(Array)), Array())
@@ -2635,7 +2646,7 @@ Public Class Arabic
         Next
         Return Output
     End Function
-    Public Shared Function DisplayAll(ByVal Item As PageLoader.TextItem) As Array()
+    Public Shared Function LetterDisplay(Symbols() As IslamData.ArabicSymbol) As Array()
         Dim Count As Integer
         Dim Output(CachedData.IslamData.ArabicLetters.Length + 2) As Array
         'Dim oFont As New Font(DefaultValue(HttpContext.Current.Request.QueryString.Get("fontcustom"), "Arial"), 13)
@@ -2643,42 +2654,45 @@ Public Class Arabic
         Output(0) = New String() {}
         Output(1) = New String() {"arabic", String.Empty, "arabic", String.Empty, String.Empty, String.Empty, String.Empty, String.Empty, String.Empty, String.Empty, String.Empty}
         Output(2) = New String() {Utility.LoadResourceString("IslamInfo_LetterName"), Utility.LoadResourceString("IslamInfo_UnicodeName"), Utility.LoadResourceString("IslamInfo_Arabic"), Utility.LoadResourceString("IslamInfo_UnicodeValue"), Utility.LoadResourceString("IslamSource_ExtendedBuckwalter"), Utility.LoadResourceString("IslamSource_EnglishRomanized"), Utility.LoadResourceString("IslamSource_PlainRoman"), Utility.LoadResourceString("IslamInfo_Terminating"), Utility.LoadResourceString("IslamInfo_Connecting"), Utility.LoadResourceString("IslamInfo_Assimilate"), Utility.LoadResourceString("IslamInfo_Shaping")}
-        For Count = 0 To CachedData.IslamData.ArabicLetters.Length - 1
-            Output(Count + 3) = New String() {Arabic.RightToLeftMark + TransliterateFromBuckwalter(CachedData.IslamData.ArabicLetters(Count).SymbolName), _
-                                              GetUnicodeName(CachedData.IslamData.ArabicLetters(Count).Symbol), _
-                                       CStr(CachedData.IslamData.ArabicLetters(Count).Symbol), _
-                                       CStr(AscW(CachedData.IslamData.ArabicLetters(Count).Symbol)), _
-                                       CStr(IIf(CachedData.IslamData.ArabicLetters(Count).ExtendedBuckwalterLetter = ChrW(0), String.Empty, CachedData.IslamData.ArabicLetters(Count).ExtendedBuckwalterLetter)), _
-                                       GetSchemeValueFromSymbol(CachedData.IslamData.ArabicLetters(Count), "RomanTranslit"), _
-                                       GetSchemeValueFromSymbol(CachedData.IslamData.ArabicLetters(Count), "PlainRoman"), _
-                                       CStr(CachedData.IslamData.ArabicLetters(Count).Terminating), _
-                                       CStr(CachedData.IslamData.ArabicLetters(Count).Connecting), _
-                                       CStr(CachedData.IslamData.ArabicLetters(Count).Assimilate),
-                                       If(CachedData.IslamData.ArabicLetters(Count).Shaping = Nothing, String.Empty, String.Join(", ", Array.ConvertAll(CachedData.IslamData.ArabicLetters(Count).Shaping, Function(Shape As Char) Shape + " " + CStr(AscW(Shape)) + " " + GetUnicodeName(Shape))))}
+        For Count = 0 To Symbols.Length - 1
+            Output(Count + 3) = New String() {Arabic.RightToLeftMark + TransliterateFromBuckwalter(Symbols(Count).SymbolName), _
+                                              GetUnicodeName(Symbols(Count).Symbol), _
+                                       CStr(Symbols(Count).Symbol), _
+                                       CStr(AscW(Symbols(Count).Symbol)), _
+                                       CStr(IIf(Symbols(Count).ExtendedBuckwalterLetter = ChrW(0), String.Empty, Symbols(Count).ExtendedBuckwalterLetter)), _
+                                       GetSchemeValueFromSymbol(Symbols(Count), "RomanTranslit"), _
+                                       GetSchemeValueFromSymbol(Symbols(Count), "PlainRoman"), _
+                                       CStr(Symbols(Count).Terminating), _
+                                       CStr(Symbols(Count).Connecting), _
+                                       CStr(Symbols(Count).Assimilate),
+                                       If(Symbols(Count).Shaping = Nothing, String.Empty, String.Join(", ", Array.ConvertAll(Symbols(Count).Shaping, Function(Shape As Char) Shape + " " + CStr(AscW(Shape)) + " " + GetUnicodeName(Shape))))}
         Next
         Return Output
     End Function
-    Public Shared Function DisplayParticle(Index As Integer) As Array()
+    Public Shared Function DisplayAll(ByVal Item As PageLoader.TextItem) As Array()
+        Return LetterDisplay(CachedData.IslamData.ArabicLetters)
+    End Function
+    Public Shared Function DisplayParticle(Category As IslamData.GrammarCategory) As Array()
         Dim Count As Integer
-        Dim Output(2 + CachedData.IslamData.GrammarCategories(Index).Words.Length) As Array
+        Dim Output(2 + Category.Words.Length) As Array
         Dim Build As New Generic.Dictionary(Of String, Generic.Dictionary(Of String, String))
         Output(0) = New String() {}
         Output(1) = New String() {"arabic", String.Empty, String.Empty}
         Output(2) = New String() {"Particle", "Translation", "Grammar Feature"}
-        For Count = 0 To CachedData.IslamData.GrammarCategories(Index).Words.Length - 1
-            Output(3 + Count) = New String() {TransliterateFromBuckwalter(CachedData.IslamData.GrammarCategories(Index).Words(Count).Text), CachedData.IslamData.GrammarCategories(Index).Words(Count).TranslationID, Utility.DefaultValue(CachedData.IslamData.GrammarCategories(Index).Words(Count).Grammar, String.Empty)}
+        For Count = 0 To Category.Words.Length - 1
+            Output(3 + Count) = New String() {TransliterateFromBuckwalter(Category.Words(Count).Text), Category.Words(Count).TranslationID, Utility.DefaultValue(Category.Words(Count).Grammar, String.Empty)}
         Next
         Return Output
     End Function
-    Public Shared Function DisplayPronoun(Index As Integer, Personal As Boolean) As Array()
+    Public Shared Function DisplayPronoun(Category As IslamData.GrammarCategory, Personal As Boolean) As Array()
         Dim Count As Integer
         Dim Output(2 + If(Personal, 6, 2)) As Array
         Dim Build As New Generic.Dictionary(Of String, Generic.Dictionary(Of String, String))
         Output(0) = New String() {}
         Output(1) = New String() {"arabic", "arabic", "arabic", String.Empty}
         Output(2) = New String() {"Plural", "Dual", "Singular", String.Empty}
-        For Count = 0 To CachedData.IslamData.GrammarCategories(Index).Words.Length - 1
-            Array.ForEach(CachedData.IslamData.GrammarCategories(Index).Words(Count).Grammar.Split(","c)(0).Split("|"c),
+        For Count = 0 To Category.Words.Length - 1
+            Array.ForEach(Category.Words(Count).Grammar.Split(","c)(0).Split("|"c),
                           Sub(Str As String)
                               Dim Key As String = Str.Chars(0)
                               If Personal Then '"123".Contains(Str.Chars(0))
@@ -2688,9 +2702,9 @@ Public Class Arabic
                                   Build.Add(Key, New Generic.Dictionary(Of String, String))
                               End If
                               If Build.Item(Key).ContainsKey(Str.Chars(If(Personal, 2, 1))) Then
-                                  Build.Item(Key).Item(Str.Chars(If(Personal, 2, 1))) += " " + TransliterateFromBuckwalter(CachedData.IslamData.GrammarCategories(Index).Words(Count).Text)
+                                  Build.Item(Key).Item(Str.Chars(If(Personal, 2, 1))) += " " + TransliterateFromBuckwalter(Category.Words(Count).Text)
                               Else
-                                  Build.Item(Key).Add(Str.Chars(If(Personal, 2, 1)), TransliterateFromBuckwalter(CachedData.IslamData.GrammarCategories(Index).Words(Count).Text))
+                                  Build.Item(Key).Add(Str.Chars(If(Personal, 2, 1)), TransliterateFromBuckwalter(Category.Words(Count).Text))
                               End If
                           End Sub)
         Next
@@ -2708,72 +2722,73 @@ Public Class Arabic
         Return Output
     End Function
     Public Shared Function DisplayProximals(ByVal Item As PageLoader.TextItem) As Array()
-        Return DisplayPronoun(1, False)
+        Return DisplayPronoun(CachedData.IslamData.GrammarCategories(1), False)
     End Function
     Public Shared Function DisplayDistals(ByVal Item As PageLoader.TextItem) As Array()
-        Return DisplayPronoun(2, False)
+        Return DisplayPronoun(CachedData.IslamData.GrammarCategories(2), False)
     End Function
     Public Shared Function DisplayRelatives(ByVal Item As PageLoader.TextItem) As Array()
-        Return DisplayPronoun(4, False)
+        Return DisplayPronoun(CachedData.IslamData.GrammarCategories(4), False)
     End Function
     Public Shared Function DisplayPersonals(ByVal Item As PageLoader.TextItem) As Array()
-        Return DisplayPronoun(5, True)
+        Return DisplayPronoun(CachedData.IslamData.GrammarCategories(5), True)
     End Function
     Public Shared Function DisplayDeterminerPersonals(ByVal Item As PageLoader.TextItem) As Array()
-        Return DisplayPronoun(6, True)
+        Return DisplayPronoun(CachedData.IslamData.GrammarCategories(6), True)
     End Function
     Public Shared Function DisplayPastVerbsFamilyI(ByVal Item As PageLoader.TextItem) As Array()
-        Return DisplayPronoun(7, True)
+        Return DisplayPronoun(CachedData.IslamData.GrammarCategories(7), True)
     End Function
     Public Shared Function DisplayPresentVerbsFamilyI(ByVal Item As PageLoader.TextItem) As Array()
-        Return DisplayPronoun(8, True)
+        Return DisplayPronoun(CachedData.IslamData.GrammarCategories(8), True)
     End Function
     Public Shared Function DisplayCommandVerbsFamilyI(ByVal Item As PageLoader.TextItem) As Array()
-        Return DisplayPronoun(9, False)
+        Return DisplayPronoun(CachedData.IslamData.GrammarCategories(9), False)
     End Function
     Public Shared Function DisplayResponseParticles(ByVal Item As PageLoader.TextItem) As Array()
-        Return DisplayParticle(10)
+        Return DisplayParticle(CachedData.IslamData.GrammarCategories(10))
     End Function
     Public Shared Function DisplayInterogativeParticles(ByVal Item As PageLoader.TextItem) As Array()
-        Return DisplayParticle(11)
+        Return DisplayParticle(CachedData.IslamData.GrammarCategories(11))
     End Function
     Public Shared Function DisplayLocationParticles(ByVal Item As PageLoader.TextItem) As Array()
-        Return DisplayParticle(12)
+        Return DisplayParticle(CachedData.IslamData.GrammarCategories(12))
     End Function
     Public Shared Function DisplayTimeParticles(ByVal Item As PageLoader.TextItem) As Array()
-        Return DisplayParticle(13)
+        Return DisplayParticle(CachedData.IslamData.GrammarCategories(13))
     End Function
     Public Shared Function DisplayPrepositions(ByVal Item As PageLoader.TextItem) As Array()
-        Return DisplayParticle(14)
+        Return DisplayParticle(CachedData.IslamData.GrammarCategories(14))
     End Function
     Public Shared Function DisplayParticles(ByVal Item As PageLoader.TextItem) As Array()
-        Return DisplayParticle(15)
+        Return DisplayParticle(CachedData.IslamData.GrammarCategories(15))
     End Function
     Public Shared Function DisplayOtherParticles(ByVal Item As PageLoader.TextItem) As Array()
-        Return DisplayParticle(16)
+        Return DisplayParticle(CachedData.IslamData.GrammarCategories(16))
     End Function
-    Public Shared Function DisplayNouns(ByVal Item As PageLoader.TextItem) As Array()
+    Public Shared Function NounDisplay(Category As IslamData.GrammarCategory) As Array()
         Dim Count As Integer
-        Dim Index As Integer = 17
-        Dim Output(2 + CachedData.IslamData.GrammarCategories(Index).Words.Length) As Array
+        Dim Output(2 + Category.Words.Length) As Array
         Dim Build As New Generic.Dictionary(Of String, Generic.Dictionary(Of String, String))
         Output(0) = New String() {}
         Output(1) = New String() {"arabic", "arabic", "arabic", String.Empty}
         Output(2) = New String() {"Noun", "Dual", "Plural", "Singular Translation"}
-        For Count = 0 To CachedData.IslamData.GrammarCategories(Index).Words.Length - 1
-            Output(3 + Count) = New String() {TransliterateFromBuckwalter(CachedData.IslamData.GrammarCategories(Index).Words(Count).Text), String.Empty, String.Empty, CachedData.IslamData.GrammarCategories(Index).Words(Count).TranslationID}
+        For Count = 0 To Category.Words.Length - 1
+            Output(3 + Count) = New String() {TransliterateFromBuckwalter(Category.Words(Count).Text), String.Empty, String.Empty, Category.Words(Count).TranslationID}
         Next
         Return Output
     End Function
-    Public Shared Function DisplayVerbs(ByVal Item As PageLoader.TextItem) As Array()
+    Public Shared Function DisplayNouns(ByVal Item As PageLoader.TextItem) As Array()
+        Return NounDisplay(CachedData.IslamData.GrammarCategories(17))
+    End Function
+    Public Shared Function VerbDisplay(Category As IslamData.GrammarCategory) As Array()
         Dim Count As Integer
-        Dim Index As Integer = 18
-        Dim Output(2 + CachedData.IslamData.GrammarCategories(Index).Words.Length) As Array
+        Dim Output(2 + Category.Words.Length) As Array
         Dim Build As New Generic.Dictionary(Of String, Generic.Dictionary(Of String, String))
         Output(0) = New String() {}
         Output(1) = New String() {"arabic", "arabic", "arabic", "arabic", "arabic", "arabic", "arabic", "arabic", "arabic"}
         Output(2) = New String() {"Past Root", "Present Root", "Command Root", "Forbidding Root", "Passive Past Root", "Passive Present Root", "Verbal Doer", "Passive Noun", "Particles"}
-        For Count = 0 To CachedData.IslamData.GrammarCategories(Index).Words.Length - 1
+        For Count = 0 To Category.Words.Length - 1
             Dim Grammar As String
             Dim Text As String
             Dim Present As String
@@ -2783,15 +2798,15 @@ Public Class Arabic
             Dim PassivePresent As String
             Dim VerbalDoer As String
             Dim PassiveNoun As String
-            If (Not CachedData.IslamData.GrammarCategories(Index).Words(Count).Grammar Is Nothing AndAlso CachedData.IslamData.GrammarCategories(Index).Words(Count).Grammar.StartsWith("form=")) Then
-                Text = TransliterateFromBuckwalter(CachedData.IslamData.GrammarCategories(Index).Words(Count).Grammar.Substring(5).Split(","c)(0).Replace("f", CachedData.IslamData.GrammarCategories(Index).Words(Count).Text.Chars(0)).Replace("E", CachedData.IslamData.GrammarCategories(Index).Words(Count).Text.Chars(1)).Replace("l", CachedData.IslamData.GrammarCategories(Index).Words(Count).Text.Chars(2)))
-                Present = TransliterateFromBuckwalter(CachedData.IslamData.GrammarCategories(Index).Words(Count).Grammar.Substring(5).Split(","c)(1).Replace("f", CachedData.IslamData.GrammarCategories(Index).Words(Count).Text.Chars(0)).Replace("E", CachedData.IslamData.GrammarCategories(Index).Words(Count).Text.Chars(1)).Replace("l", CachedData.IslamData.GrammarCategories(Index).Words(Count).Text.Chars(2)))
-                Command = TransliterateFromBuckwalter("{foE$1lo".Replace("f", CachedData.IslamData.GrammarCategories(Index).Words(Count).Text.Chars(0)).Replace("E", CachedData.IslamData.GrammarCategories(Index).Words(Count).Text.Chars(1)).Replace("l", CachedData.IslamData.GrammarCategories(Index).Words(Count).Text.Chars(2)).Replace("$1", CachedData.IslamData.GrammarCategories(Index).Words(Count).Grammar.Substring(5).Split(","c)(1).Chars(5)))
-                Forbidding = TransliterateFromBuckwalter("laA tafoE$1lo".Replace("f", CachedData.IslamData.GrammarCategories(Index).Words(Count).Text.Chars(0)).Replace("E", CachedData.IslamData.GrammarCategories(Index).Words(Count).Text.Chars(1)).Replace("l", CachedData.IslamData.GrammarCategories(Index).Words(Count).Text.Chars(2)).Replace("$1", CachedData.IslamData.GrammarCategories(Index).Words(Count).Grammar.Substring(5).Split(","c)(1).Chars(5)))
-                PassivePast = TransliterateFromBuckwalter("fuEila".Replace("f", CachedData.IslamData.GrammarCategories(Index).Words(Count).Text.Chars(0)).Replace("E", CachedData.IslamData.GrammarCategories(Index).Words(Count).Text.Chars(1)).Replace("l", CachedData.IslamData.GrammarCategories(Index).Words(Count).Text.Chars(2)))
-                PassivePresent = TransliterateFromBuckwalter("yufoEalu".Replace("f", CachedData.IslamData.GrammarCategories(Index).Words(Count).Text.Chars(0)).Replace("E", CachedData.IslamData.GrammarCategories(Index).Words(Count).Text.Chars(1)).Replace("l", CachedData.IslamData.GrammarCategories(Index).Words(Count).Text.Chars(2)))
-                VerbalDoer = TransliterateFromBuckwalter("faAEilN".Replace("f", CachedData.IslamData.GrammarCategories(Index).Words(Count).Text.Chars(0)).Replace("E", CachedData.IslamData.GrammarCategories(Index).Words(Count).Text.Chars(1)).Replace("l", CachedData.IslamData.GrammarCategories(Index).Words(Count).Text.Chars(2)))
-                PassiveNoun = TransliterateFromBuckwalter("mafoEuwlN".Replace("f", CachedData.IslamData.GrammarCategories(Index).Words(Count).Text.Chars(0)).Replace("E", CachedData.IslamData.GrammarCategories(Index).Words(Count).Text.Chars(1)).Replace("l", CachedData.IslamData.GrammarCategories(Index).Words(Count).Text.Chars(2)))
+            If (Not Category.Words(Count).Grammar Is Nothing AndAlso Category.Words(Count).Grammar.StartsWith("form=")) Then
+                Text = TransliterateFromBuckwalter(Category.Words(Count).Grammar.Substring(5).Split(","c)(0).Replace("f", Category.Words(Count).Text.Chars(0)).Replace("E", Category.Words(Count).Text.Chars(1)).Replace("l", Category.Words(Count).Text.Chars(2)))
+                Present = TransliterateFromBuckwalter(Category.Words(Count).Grammar.Substring(5).Split(","c)(1).Replace("f", Category.Words(Count).Text.Chars(0)).Replace("E", Category.Words(Count).Text.Chars(1)).Replace("l", Category.Words(Count).Text.Chars(2)))
+                Command = TransliterateFromBuckwalter("{foE$1lo".Replace("f", Category.Words(Count).Text.Chars(0)).Replace("E", Category.Words(Count).Text.Chars(1)).Replace("l", Category.Words(Count).Text.Chars(2)).Replace("$1", Category.Words(Count).Grammar.Substring(5).Split(","c)(1).Chars(5)))
+                Forbidding = TransliterateFromBuckwalter("laA tafoE$1lo".Replace("f", Category.Words(Count).Text.Chars(0)).Replace("E", Category.Words(Count).Text.Chars(1)).Replace("l", Category.Words(Count).Text.Chars(2)).Replace("$1", Category.Words(Count).Grammar.Substring(5).Split(","c)(1).Chars(5)))
+                PassivePast = TransliterateFromBuckwalter("fuEila".Replace("f", Category.Words(Count).Text.Chars(0)).Replace("E", Category.Words(Count).Text.Chars(1)).Replace("l", Category.Words(Count).Text.Chars(2)))
+                PassivePresent = TransliterateFromBuckwalter("yufoEalu".Replace("f", Category.Words(Count).Text.Chars(0)).Replace("E", Category.Words(Count).Text.Chars(1)).Replace("l", Category.Words(Count).Text.Chars(2)))
+                VerbalDoer = TransliterateFromBuckwalter("faAEilN".Replace("f", Category.Words(Count).Text.Chars(0)).Replace("E", Category.Words(Count).Text.Chars(1)).Replace("l", Category.Words(Count).Text.Chars(2)))
+                PassiveNoun = TransliterateFromBuckwalter("mafoEuwlN".Replace("f", Category.Words(Count).Text.Chars(0)).Replace("E", Category.Words(Count).Text.Chars(1)).Replace("l", Category.Words(Count).Text.Chars(2)))
                 '"faEiylN" passive noun
                 '"mafoEilN" time
                 '"mafoEalN" place
@@ -2801,7 +2816,7 @@ Public Class Arabic
                 '"mifoEalapN" "mifoEalN" "mifoEaAlN" instrument of action
                 Grammar = String.Empty
             Else
-                Text = TransliterateFromBuckwalter(CachedData.IslamData.GrammarCategories(Index).Words(Count).Text)
+                Text = TransliterateFromBuckwalter(Category.Words(Count).Text)
                 Present = String.Empty
                 Command = String.Empty
                 Forbidding = String.Empty
@@ -2809,11 +2824,14 @@ Public Class Arabic
                 PassivePresent = String.Empty
                 VerbalDoer = String.Empty
                 PassiveNoun = String.Empty
-                Grammar = Utility.DefaultValue(CachedData.IslamData.GrammarCategories(Index).Words(Count).Grammar, String.Empty)
+                Grammar = Utility.DefaultValue(Category.Words(Count).Grammar, String.Empty)
             End If
             Output(3 + Count) = New String() {Text, Present, Command, Forbidding, PassivePast, PassivePresent, VerbalDoer, PassiveNoun, Grammar}
         Next
         Return Output
+    End Function
+    Public Shared Function DisplayVerbs(ByVal Item As PageLoader.TextItem) As Array()
+        Return VerbDisplay(CachedData.IslamData.GrammarCategories(18))
     End Function
 End Class
 Public Class RenderArray
@@ -4010,27 +4028,28 @@ Public Class Supplications
         Return Array.ConvertAll(CachedData.IslamData.VerseCategories, Function(Convert As IslamData.VerseCategory) Utility.LoadResourceString("IslamInfo_" + Convert.Title))
     End Function
     Public Shared Function GetRenderedSuppText(ByVal Item As PageLoader.TextItem) As RenderArray
-        Dim Scheme As Arabic.TranslitScheme = CInt(HttpContext.Current.Request.QueryString.Get("translitscheme"))
-        Return DoGetRenderedSuppText(Scheme)
-    End Function
-    Public Shared Function DoGetRenderedSuppText(Scheme As Arabic.TranslitScheme) As RenderArray
-        Dim Renderer As New RenderArray
+        Dim SchemeType As Arabic.TranslitScheme = If(CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) >= 2, 2 + CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) Mod 2, CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")))
+        Dim Scheme As String = CachedData.IslamData.TranslitSchemes(If(CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) >= 2, (CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) - 2) \ 2, String.Empty)).Name
         Dim Count As Integer = CInt(HttpContext.Current.Request.QueryString.Get("selection"))
         If Count = -1 Then Count = 0
-        For SubCount As Integer = 0 To CachedData.IslamData.VerseCategories(Count).Verses.Length - 1
-            Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(CachedData.IslamData.VerseCategories(Count).Verses(SubCount).Arabic, "(.*?)(?:(\\\{)(.*?)(\\\})|$)")
+        Return DoGetRenderedSuppText(SchemeType, Scheme, CachedData.IslamData.VerseCategories(Count))
+    End Function
+    Public Shared Function DoGetRenderedSuppText(SchemeType As Arabic.TranslitScheme, Scheme As String, Category As IslamData.VerseCategory) As RenderArray
+        Dim Renderer As New RenderArray
+        For SubCount As Integer = 0 To Category.Verses.Length - 1
+            Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(Category.Verses(SubCount).Arabic, "(.*?)(?:(\\\{)(.*?)(\\\})|$)")
             For MatchCount As Integer = 0 To Matches.Count - 1
                 If Matches(MatchCount).Length <> 0 Then
                     If Matches(MatchCount).Groups(1).Length <> 0 Then
-                        Dim EnglishByWord As String() = Utility.LoadResourceString("IslamInfo_" + CachedData.IslamData.VerseCategories(Count).Verses(SubCount).TranslationID + "WordByWord").Split("|"c)
+                        Dim EnglishByWord As String() = Utility.LoadResourceString("IslamInfo_" + Category.Verses(SubCount).TranslationID + "WordByWord").Split("|"c)
                         Dim ArabicText As String() = Matches(MatchCount).Groups(1).Value.Split(" "c)
-                        Dim Transliteration As String() = Arabic.TransliterateToScheme(Arabic.TransliterateFromBuckwalter(Matches(MatchCount).Groups(1).Value), Scheme, String.Empty).Split(" "c)
-                        Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eHeaderCenter, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, Utility.LoadResourceString("IslamInfo_" + CachedData.IslamData.VerseCategories(Count).Verses(SubCount).TranslationID))}))
+                        Dim Transliteration As String() = Arabic.TransliterateToScheme(Arabic.TransliterateFromBuckwalter(Matches(MatchCount).Groups(1).Value), SchemeType, Scheme).Split(" "c)
+                        Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eHeaderCenter, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, Utility.LoadResourceString("IslamInfo_" + Category.Verses(SubCount).TranslationID))}))
                         Dim Items As New Collections.Generic.List(Of RenderArray.RenderItem)
                         For WordCount As Integer = 0 To EnglishByWord.Length - 1
                             Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.RightToLeftMark + Arabic.TransliterateFromBuckwalter(ArabicText(WordCount))), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, Transliteration(WordCount)), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, EnglishByWord(WordCount))}))
                         Next
-                        Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eNested, Items), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.RightToLeftMark + Arabic.TransliterateFromBuckwalter(Matches(MatchCount).Groups(1).Value)), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, Arabic.TransliterateToScheme(Arabic.TransliterateFromBuckwalter(Matches(MatchCount).Groups(1).Value), Scheme, String.Empty)), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, Utility.LoadResourceString("IslamInfo_" + CachedData.IslamData.VerseCategories(Count).Verses(SubCount).TranslationID + "Trans"))}))
+                        Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eNested, Items), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.RightToLeftMark + Arabic.TransliterateFromBuckwalter(Matches(MatchCount).Groups(1).Value)), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, Arabic.TransliterateToScheme(Arabic.TransliterateFromBuckwalter(Matches(MatchCount).Groups(1).Value), SchemeType, Scheme)), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, Utility.LoadResourceString("IslamInfo_" + Category.Verses(SubCount).TranslationID + "Trans"))}))
                     End If
                     If Matches(MatchCount).Groups(3).Length <> 0 Then
                         If TanzilReader.IsQuranTextReference(Matches(MatchCount).Groups(3).Value) Then
@@ -4798,7 +4817,8 @@ Public Class TanzilReader
     Public Shared Function QuranTextFromReference(Str As String) As RenderArray
         Dim Renderer As New RenderArray
         Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(Str, "(?:,?(\d+)(?:\:(\d+))?(?:\:(\d+))?(?:-(\d+)(?:\:(\d+))?(?:\:(\d+))?)?)")
-        Dim Scheme As Arabic.TranslitScheme = CInt(HttpContext.Current.Request.QueryString.Get("translitscheme"))
+        Dim SchemeType As Arabic.TranslitScheme = If(CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) >= 2, 2 + CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) Mod 2, CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")))
+        Dim Scheme As String = CachedData.IslamData.TranslitSchemes(If(CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) >= 2, (CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) - 2) \ 2, String.Empty)).Name
         Dim TranslationIndex As Integer = GetTranslationIndex(HttpContext.Current.Request.QueryString.Get("qurantranslation"))
         Dim Reference As String
         For Count = 0 To Matches.Count - 1
@@ -4819,7 +4839,7 @@ Public Class TanzilReader
                 ExtraVerseNumber = EndChapter
                 EndChapter = 0
             End If
-            Renderer.Items.AddRange(DoGetRenderedQuranText(QuranTextRangeLookup(BaseChapter, BaseVerse, WordNumber, EndChapter, ExtraVerseNumber, EndWordNumber), BaseChapter, BaseVerse, HttpContext.Current.Request.QueryString.Get("qurantranslation"), Scheme, TranslationIndex).Items)
+            Renderer.Items.AddRange(DoGetRenderedQuranText(QuranTextRangeLookup(BaseChapter, BaseVerse, WordNumber, EndChapter, ExtraVerseNumber, EndWordNumber), BaseChapter, BaseVerse, HttpContext.Current.Request.QueryString.Get("qurantranslation"), SchemeType, Scheme, TranslationIndex).Items)
             Reference = CStr(BaseChapter) + If(BaseVerse <> 0, ":" + CStr(BaseVerse), String.Empty) + If(EndChapter <> 0, "-" + CStr(EndChapter) + If(ExtraVerseNumber <> 0, ":" + CStr(ExtraVerseNumber), String.Empty), If(ExtraVerseNumber <> 0, "-" + CStr(ExtraVerseNumber), String.Empty))
             Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eHeaderCenter, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, "(Qur'an " + Reference + ")")}))
         Next
@@ -4851,7 +4871,7 @@ Public Class TanzilReader
         End If
         Return QuranText
     End Function
-    Public Shared Function GetQuranTextBySelection(Division As Integer, Index As Integer, Translation As String, Scheme As Arabic.TranslitScheme, TranslationIndex As Integer) As RenderArray
+    Public Shared Function GetQuranTextBySelection(Division As Integer, Index As Integer, Translation As String, SchemeType As Arabic.TranslitScheme, Scheme As String, TranslationIndex As Integer) As RenderArray
         Dim Chapter As Integer
         Dim Verse As Integer
         Dim BaseChapter As Integer
@@ -4963,13 +4983,13 @@ Public Class TanzilReader
                 For SubCount = 0 To CachedData.LetterDictionary(CachedData.IslamData.ArabicLetters(Index).Symbol)(Keys(SectionCount)).Count - 1
                     QuranText.Add(GetQuranText(CachedData.XMLDocMain, CType(CachedData.LetterDictionary(CachedData.IslamData.ArabicLetters(Index).Symbol)(Keys(SectionCount))(SubCount), Integer())(0), CType(CachedData.LetterDictionary(CachedData.IslamData.ArabicLetters(Index).Symbol)(Keys(SectionCount))(SubCount), Integer())(1), CType(CachedData.LetterDictionary(CachedData.IslamData.ArabicLetters(Index).Symbol)(Keys(SectionCount))(SubCount), Integer())(1)))
                     If SubCount <> CachedData.LetterDictionary(CachedData.IslamData.ArabicLetters(Index).Symbol)(Keys(SectionCount)).Count - 1 Then
-                        Renderer.Items.AddRange(DoGetRenderedQuranText(QuranText, BaseChapter, BaseVerse, Translation, Scheme, TranslationIndex).Items)
+                        Renderer.Items.AddRange(DoGetRenderedQuranText(QuranText, BaseChapter, BaseVerse, Translation, SchemeType, Scheme, TranslationIndex).Items)
                     End If
                 Next
             Else
                 QuranText = Nothing
             End If
-            Renderer.Items.AddRange(DoGetRenderedQuranText(QuranText, BaseChapter, BaseVerse, Translation, Scheme, TranslationIndex).Items)
+            Renderer.Items.AddRange(DoGetRenderedQuranText(QuranText, BaseChapter, BaseVerse, Translation, SchemeType, Scheme, TranslationIndex).Items)
         Next
         Return Renderer
     End Function
@@ -4980,11 +5000,12 @@ Public Class TanzilReader
         If Not Strings Is Nothing Then Division = CInt(Strings)
         Strings = HttpContext.Current.Request.QueryString.Get("quranselection")
         If Not Strings Is Nothing Then Index = CInt(Strings)
-        Dim Scheme As Arabic.TranslitScheme = CInt(HttpContext.Current.Request.QueryString.Get("translitscheme"))
+        Dim SchemeType As Arabic.TranslitScheme = If(CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) >= 2, 2 + CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) Mod 2, CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")))
+        Dim Scheme As String = CachedData.IslamData.TranslitSchemes(If(CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) >= 2, (CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) - 2) \ 2, String.Empty)).Name
         Dim TranslationIndex As Integer = GetTranslationIndex(HttpContext.Current.Request.QueryString.Get("qurantranslation"))
-        Return GetQuranTextBySelection(Division, Index, HttpContext.Current.Request.QueryString.Get("qurantranslation"), Scheme, TranslationIndex)
+        Return GetQuranTextBySelection(Division, Index, HttpContext.Current.Request.QueryString.Get("qurantranslation"), SchemeType, Scheme, TranslationIndex)
     End Function
-    Public Shared Function DoGetRenderedQuranText(QuranText As Collections.Generic.List(Of String()), BaseChapter As Integer, BaseVerse As Integer, Translation As String, Scheme As Arabic.TranslitScheme, TranslationIndex As Integer) As RenderArray
+    Public Shared Function DoGetRenderedQuranText(QuranText As Collections.Generic.List(Of String()), BaseChapter As Integer, BaseVerse As Integer, Translation As String, SchemeType As Arabic.TranslitScheme, Scheme As String, TranslationIndex As Integer) As RenderArray
         Dim Text As String
         Dim Node As System.Xml.XmlNode
         Dim Renderer As New RenderArray
@@ -4993,9 +5014,9 @@ Public Class TanzilReader
         If Not QuranText Is Nothing Then
             For Chapter = 0 To QuranText.Count - 1
                 Dim ChapterNode As System.Xml.XmlNode = GetChapterByIndex(BaseChapter + Chapter)
-                Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eHeaderLeft, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.RightToLeftMark + Arabic.TransliterateFromBuckwalter("'aAya`tuhaA " + ChapterNode.Attributes.GetNamedItem("ayas").Value + " ")), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, Arabic.TransliterateToScheme(Arabic.TransliterateFromBuckwalter("'aAya`tuhaA " + ChapterNode.Attributes.GetNamedItem("ayas").Value + " "), Scheme, String.Empty).Trim()), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, "Verses " + ChapterNode.Attributes.GetNamedItem("ayas").Value + " ")}))
-                Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eHeaderCenter, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.RightToLeftMark + Arabic.TransliterateFromBuckwalter("suwrapu " + CachedData.IslamData.QuranChapters(CInt(ChapterNode.Attributes.GetNamedItem("index").Value) - 1).Name + " ")), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, Arabic.TransliterateToScheme(Arabic.TransliterateFromBuckwalter("suwrapu " + CachedData.IslamData.QuranChapters(CInt(ChapterNode.Attributes.GetNamedItem("index").Value) - 1).Name + " "), Scheme, String.Empty).Trim()), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, "Chapter " + TanzilReader.GetChapterEName(ChapterNode) + " ")}))
-                Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eHeaderRight, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.RightToLeftMark + Arabic.TransliterateFromBuckwalter("rukuwEaAtuhaA " + ChapterNode.Attributes.GetNamedItem("rukus").Value + " ")), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, Arabic.TransliterateToScheme(Arabic.TransliterateFromBuckwalter("rukuwEaAtuhaA " + ChapterNode.Attributes.GetNamedItem("rukus").Value + " "), Scheme, String.Empty).Trim()), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, "Rukus " + ChapterNode.Attributes.GetNamedItem("rukus").Value + " ")}))
+                Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eHeaderLeft, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.RightToLeftMark + Arabic.TransliterateFromBuckwalter("'aAya`tuhaA " + ChapterNode.Attributes.GetNamedItem("ayas").Value + " ")), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, Arabic.TransliterateToScheme(Arabic.TransliterateFromBuckwalter("'aAya`tuhaA " + ChapterNode.Attributes.GetNamedItem("ayas").Value + " "), SchemeType, Scheme).Trim()), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, "Verses " + ChapterNode.Attributes.GetNamedItem("ayas").Value + " ")}))
+                Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eHeaderCenter, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.RightToLeftMark + Arabic.TransliterateFromBuckwalter("suwrapu " + CachedData.IslamData.QuranChapters(CInt(ChapterNode.Attributes.GetNamedItem("index").Value) - 1).Name + " ")), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, Arabic.TransliterateToScheme(Arabic.TransliterateFromBuckwalter("suwrapu " + CachedData.IslamData.QuranChapters(CInt(ChapterNode.Attributes.GetNamedItem("index").Value) - 1).Name + " "), SchemeType, Scheme).Trim()), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, "Chapter " + TanzilReader.GetChapterEName(ChapterNode) + " ")}))
+                Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eHeaderRight, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.RightToLeftMark + Arabic.TransliterateFromBuckwalter("rukuwEaAtuhaA " + ChapterNode.Attributes.GetNamedItem("rukus").Value + " ")), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, Arabic.TransliterateToScheme(Arabic.TransliterateFromBuckwalter("rukuwEaAtuhaA " + ChapterNode.Attributes.GetNamedItem("rukus").Value + " "), SchemeType, Scheme).Trim()), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, "Rukus " + ChapterNode.Attributes.GetNamedItem("rukus").Value + " ")}))
                 For Verse = 0 To QuranText(Chapter).Length - 1
                     Dim Items As New Collections.Generic.List(Of RenderArray.RenderItem)
                     Text = String.Empty
@@ -5007,11 +5028,11 @@ Public Class TanzilReader
                     If CInt(IIf(Chapter = 0, BaseVerse, 1)) + Verse = 1 Then
                         Node = GetTextVerse(GetTextChapter(CachedData.XMLDocMain, BaseChapter + Chapter), 1).Attributes.GetNamedItem("bismillah")
                         If Not Node Is Nothing Then
-                            Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.RightToLeftMark + Node.Value + " "), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, Arabic.TransliterateToScheme(Node.Value, Scheme, String.Empty).Trim()), New RenderArray.RenderText(DirectCast(IIf(IsTranslationTextLTR(TranslationIndex), RenderArray.RenderDisplayClass.eLTR, RenderArray.RenderDisplayClass.eRTL), RenderArray.RenderDisplayClass), TanzilReader.GetTranslationVerse(Lines, 1, 1))}))
+                            Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.RightToLeftMark + Node.Value + " "), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, Arabic.TransliterateToScheme(Node.Value, SchemeType, Scheme).Trim()), New RenderArray.RenderText(DirectCast(IIf(IsTranslationTextLTR(TranslationIndex), RenderArray.RenderDisplayClass.eLTR, RenderArray.RenderDisplayClass.eRTL), RenderArray.RenderDisplayClass), TanzilReader.GetTranslationVerse(Lines, 1, 1))}))
                         End If
                     End If
                     Dim Words As String() = QuranText(Chapter)(Verse).Split(" "c)
-                    Dim TranslitWords As String() = Arabic.TransliterateToScheme(QuranText(Chapter)(Verse), Scheme, String.Empty).Split(" "c)
+                    Dim TranslitWords As String() = Arabic.TransliterateToScheme(QuranText(Chapter)(Verse), SchemeType, Scheme).Split(" "c)
                     Dim PauseMarks As Integer = 0
                     For Count As Integer = 0 To Words.Length - 1
                         'handle start/end words here which have space placeholders
@@ -5035,7 +5056,7 @@ Public Class TanzilReader
                     Text += Arabic.TransliterateFromBuckwalter("=" + CStr(CInt(IIf(Chapter = 0, BaseVerse, 1)) + Verse)) + " "
                     Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.RightToLeftMark + Arabic.TransliterateFromBuckwalter("=" + CStr(CInt(IIf(Chapter = 0, BaseVerse, 1)) + Verse))), New RenderArray.RenderText(DirectCast(IIf(IsTranslationTextLTR(TranslationIndex), RenderArray.RenderDisplayClass.eLTR, RenderArray.RenderDisplayClass.eRTL), RenderArray.RenderDisplayClass), "(" + CStr(CInt(IIf(Chapter = 0, BaseVerse, 1)) + Verse) + ")")}))
                     'Text += Arabic.TransliterateFromBuckwalter("(" + CStr(IIf(Chapter = 0, BaseVerse, 1) + Verse) + ") ")
-                    Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eNested, Items), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.RightToLeftMark + Text), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, Arabic.TransliterateToScheme(QuranText(Chapter)(Verse) + " " + Arabic.TransliterateFromBuckwalter("=" + CStr(CInt(IIf(Chapter = 0, BaseVerse, 1)) + Verse)) + " ", Scheme, String.Empty).Trim()), New RenderArray.RenderText(DirectCast(IIf(IsTranslationTextLTR(TranslationIndex), RenderArray.RenderDisplayClass.eLTR, RenderArray.RenderDisplayClass.eRTL), RenderArray.RenderDisplayClass), "(" + CStr(CInt(IIf(Chapter = 0, BaseVerse, 1)) + Verse) + ") " + TanzilReader.GetTranslationVerse(Lines, BaseChapter + Chapter, CInt(IIf(Chapter = 0, BaseVerse, 1)) + Verse))}))
+                    Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eNested, Items), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.RightToLeftMark + Text), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, Arabic.TransliterateToScheme(QuranText(Chapter)(Verse) + " " + Arabic.TransliterateFromBuckwalter("=" + CStr(CInt(IIf(Chapter = 0, BaseVerse, 1)) + Verse)) + " ", SchemeType, Scheme).Trim()), New RenderArray.RenderText(DirectCast(IIf(IsTranslationTextLTR(TranslationIndex), RenderArray.RenderDisplayClass.eLTR, RenderArray.RenderDisplayClass.eRTL), RenderArray.RenderDisplayClass), "(" + CStr(CInt(IIf(Chapter = 0, BaseVerse, 1)) + Verse) + ") " + TanzilReader.GetTranslationVerse(Lines, BaseChapter + Chapter, CInt(IIf(Chapter = 0, BaseVerse, 1)) + Verse))}))
                 Next
             Next
         End If
@@ -5135,8 +5156,9 @@ Public Class TanzilReader
         Return Utility.GetChildNodeByIndex("sura", "index", Index, Utility.GetChildNode("suras", CachedData.XMLDocInfo.DocumentElement.ChildNodes).ChildNodes)
     End Function
     Public Shared Function GetChapterNames() As Array()
-        Dim Scheme As Arabic.TranslitScheme = CInt(HttpContext.Current.Request.QueryString.Get("translitscheme"))
-        Dim Names() As Array = Array.ConvertAll(Utility.GetChildNodes("sura", Utility.GetChildNode("suras", CachedData.XMLDocInfo.DocumentElement.ChildNodes).ChildNodes), Function(Convert As System.Xml.XmlNode) New Object() {Convert.Attributes.GetNamedItem("index").Value + ". " + GetChapterEName(Convert) + " (" + Arabic.RightToLeftMark + Arabic.TransliterateFromBuckwalter("suwrapu " + CachedData.IslamData.QuranChapters(CInt(Convert.Attributes.GetNamedItem("index").Value) - 1).Name) + Arabic.LeftToRightMark + ")" + If(Scheme = Arabic.TranslitScheme.None, String.Empty, " " + Arabic.TransliterateToScheme(Arabic.TransliterateFromBuckwalter(CachedData.IslamData.QuranChapters(CInt(Convert.Attributes.GetNamedItem("index").Value) - 1).Name), Scheme, String.Empty)), CInt(Convert.Attributes.GetNamedItem("index").Value)})
+        Dim SchemeType As Arabic.TranslitScheme = If(CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) >= 2, 2 + CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) Mod 2, CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")))
+        Dim Scheme As String = CachedData.IslamData.TranslitSchemes(If(CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) >= 2, (CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) - 2) \ 2, String.Empty)).Name
+        Dim Names() As Array = Array.ConvertAll(Utility.GetChildNodes("sura", Utility.GetChildNode("suras", CachedData.XMLDocInfo.DocumentElement.ChildNodes).ChildNodes), Function(Convert As System.Xml.XmlNode) New Object() {Convert.Attributes.GetNamedItem("index").Value + ". " + GetChapterEName(Convert) + " (" + Arabic.RightToLeftMark + Arabic.TransliterateFromBuckwalter("suwrapu " + CachedData.IslamData.QuranChapters(CInt(Convert.Attributes.GetNamedItem("index").Value) - 1).Name) + Arabic.LeftToRightMark + ")" + If(Scheme = Arabic.TranslitScheme.None, String.Empty, " " + Arabic.TransliterateToScheme(Arabic.TransliterateFromBuckwalter(CachedData.IslamData.QuranChapters(CInt(Convert.Attributes.GetNamedItem("index").Value) - 1).Name), SchemeType, Scheme)), CInt(Convert.Attributes.GetNamedItem("index").Value)})
         Array.Sort(Names, New Utility.CompareNameValueArray)
         Return Names
     End Function
@@ -5144,8 +5166,9 @@ Public Class TanzilReader
         Return Utility.LoadResourceString("IslamInfo_QuranChapter" + ChapterNode.Attributes.GetNamedItem("index").Value)
     End Function
     Public Shared Function GetChapterNamesByRevelationOrder() As Array()
-        Dim Scheme As Arabic.TranslitScheme = CInt(HttpContext.Current.Request.QueryString.Get("translitscheme"))
-        Dim Names() As Array = Array.ConvertAll(Utility.GetChildNodes("sura", Utility.GetChildNode("suras", CachedData.XMLDocInfo.DocumentElement.ChildNodes).ChildNodes), Function(Convert As System.Xml.XmlNode) New Object() {Convert.Attributes.GetNamedItem("index").Value + ". " + GetChapterEName(Convert) + " (" + Arabic.RightToLeftMark + Arabic.TransliterateFromBuckwalter("suwrapu " + CachedData.IslamData.QuranChapters(CInt(Convert.Attributes.GetNamedItem("index").Value) - 1).Name) + Arabic.LeftToRightMark + ")" + If(Scheme = Arabic.TranslitScheme.None, String.Empty, " " + Arabic.TransliterateToScheme(Arabic.TransliterateFromBuckwalter(CachedData.IslamData.QuranChapters(CInt(Convert.Attributes.GetNamedItem("index").Value) - 1).Name), Scheme, String.Empty)), CInt(Convert.Attributes.GetNamedItem("order").Value)})
+        Dim SchemeType As Arabic.TranslitScheme = If(CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) >= 2, 2 + CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) Mod 2, CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")))
+        Dim Scheme As String = CachedData.IslamData.TranslitSchemes(If(CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) >= 2, (CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) - 2) \ 2, String.Empty)).Name
+        Dim Names() As Array = Array.ConvertAll(Utility.GetChildNodes("sura", Utility.GetChildNode("suras", CachedData.XMLDocInfo.DocumentElement.ChildNodes).ChildNodes), Function(Convert As System.Xml.XmlNode) New Object() {Convert.Attributes.GetNamedItem("index").Value + ". " + GetChapterEName(Convert) + " (" + Arabic.RightToLeftMark + Arabic.TransliterateFromBuckwalter("suwrapu " + CachedData.IslamData.QuranChapters(CInt(Convert.Attributes.GetNamedItem("index").Value) - 1).Name) + Arabic.LeftToRightMark + ")" + If(Scheme = Arabic.TranslitScheme.None, String.Empty, " " + Arabic.TransliterateToScheme(Arabic.TransliterateFromBuckwalter(CachedData.IslamData.QuranChapters(CInt(Convert.Attributes.GetNamedItem("index").Value) - 1).Name), SchemeType, Scheme)), CInt(Convert.Attributes.GetNamedItem("order").Value)})
         Array.Sort(Names, New Utility.CompareNameValueArray)
         Return Names
     End Function
@@ -5339,11 +5362,12 @@ Public Class HadithReader
         Return DirectCast(Output.ToArray(GetType(Array)), Array())
     End Function
     Public Shared Function GetRenderedText(ByVal Item As PageLoader.TextItem) As RenderArray
-        Dim Scheme As Arabic.TranslitScheme = CInt(HttpContext.Current.Request.QueryString.Get("translitscheme"))
+        Dim SchemeType As Arabic.TranslitScheme = If(CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) >= 2, 2 + CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) Mod 2, CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")))
+        Dim Scheme As String = CachedData.IslamData.TranslitSchemes(If(CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) >= 2, (CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) - 2) \ 2, String.Empty)).Name
         Dim Translation As String = HttpContext.Current.Request.QueryString.Get("hadithtranslation")
-        Return DoGetRenderedText(Scheme, Translation)
+        Return DoGetRenderedText(SchemeType, Scheme, Translation)
     End Function
-    Public Shared Function DoGetRenderedText(Scheme As Arabic.TranslitScheme, Translation As String) As RenderArray
+    Public Shared Function DoGetRenderedText(SchemeType As Arabic.TranslitScheme, Scheme As String, Translation As String) As RenderArray
         Dim Renderer As New RenderArray
         Dim Hadith As Integer
         Dim Index As Integer = GetCurrentCollection()
@@ -5355,9 +5379,9 @@ Public Class HadithReader
         Dim ChapterNode As System.Xml.XmlNode = Nothing
         Dim SubChapterNode As System.Xml.XmlNode
         If Not BookNode Is Nothing Then
-            Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eHeaderLeft, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.RightToLeftMark + Arabic.TransliterateFromBuckwalter("Had~iv " + BookNode.Attributes.GetNamedItem("hadiths").Value + " ")), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, Arabic.TransliterateToScheme(Arabic.TransliterateFromBuckwalter("Had~iv " + BookNode.Attributes.GetNamedItem("hadiths").Value + " "), Scheme, String.Empty).Trim()), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, "Hadiths: " + BookNode.Attributes.GetNamedItem("hadiths").Value + " ")}))
-            Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eHeaderCenter, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.RightToLeftMark + Arabic.TransliterateFromBuckwalter("{lokita`bu " + CStr(BookIndex)) + " " + BookNode.Attributes.GetNamedItem("name").Value + " "), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, Arabic.TransliterateToScheme(Arabic.TransliterateFromBuckwalter("{lokita`bu " + CStr(BookIndex)) + " " + BookNode.Attributes.GetNamedItem("name").Value + " ", Scheme, String.Empty).Trim()), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, "Book " + CStr(BookIndex) + ": " + GetBookEName(BookNode, Index) + " ")}))
-            'Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eHeaderRight, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.RightToLeftMark + Arabic.TransliterateFromBuckwalter("mjld " + Utility.GetChildNode("books", XMLDocInfo(Index).DocumentElement.ChildNodes).ChildNodes.Item(BookIndex).Attributes.GetNamedItem("volume").Value + " ")), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, Arabic.TransliterateToScheme(Arabic.TransliterateFromBuckwalter("mjld " + Utility.GetChildNode("books", XMLDocInfo(Index).DocumentElement.ChildNodes).ChildNodes.Item(BookIndex).Attributes.GetNamedItem("volume").Value + " "), Scheme, String.Empty).Trim()), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, "Volume " + Utility.GetChildNode("books", XMLDocInfo(Index).DocumentElement.ChildNodes).ChildNodes.Item(BookIndex).Attributes.GetNamedItem("volume").Value + " ")}))
+            Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eHeaderLeft, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.RightToLeftMark + Arabic.TransliterateFromBuckwalter("Had~iv " + BookNode.Attributes.GetNamedItem("hadiths").Value + " ")), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, Arabic.TransliterateToScheme(Arabic.TransliterateFromBuckwalter("Had~iv " + BookNode.Attributes.GetNamedItem("hadiths").Value + " "), SchemeType, Scheme).Trim()), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, "Hadiths: " + BookNode.Attributes.GetNamedItem("hadiths").Value + " ")}))
+            Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eHeaderCenter, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.RightToLeftMark + Arabic.TransliterateFromBuckwalter("{lokita`bu " + CStr(BookIndex)) + " " + BookNode.Attributes.GetNamedItem("name").Value + " "), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, Arabic.TransliterateToScheme(Arabic.TransliterateFromBuckwalter("{lokita`bu " + CStr(BookIndex)) + " " + BookNode.Attributes.GetNamedItem("name").Value + " ", SchemeType, Scheme).Trim()), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, "Book " + CStr(BookIndex) + ": " + GetBookEName(BookNode, Index) + " ")}))
+            'Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eHeaderRight, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.RightToLeftMark + Arabic.TransliterateFromBuckwalter("mjld " + Utility.GetChildNode("books", XMLDocInfo(Index).DocumentElement.ChildNodes).ChildNodes.Item(BookIndex).Attributes.GetNamedItem("volume").Value + " ")), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, Arabic.TransliterateToScheme(Arabic.TransliterateFromBuckwalter("mjld " + Utility.GetChildNode("books", XMLDocInfo(Index).DocumentElement.ChildNodes).ChildNodes.Item(BookIndex).Attributes.GetNamedItem("volume").Value + " "), SchemeType, Scheme).Trim()), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, "Volume " + Utility.GetChildNode("books", XMLDocInfo(Index).DocumentElement.ChildNodes).ChildNodes.Item(BookIndex).Attributes.GetNamedItem("volume").Value + " ")}))
             Dim XMLDocTranslate As New System.Xml.XmlDocument
             Dim Strings() As String = Nothing
             If CachedData.IslamData.Collections(Index).Translations.Length <> 0 Then
@@ -5370,8 +5394,8 @@ Public Class HadithReader
                     ChapterIndex = CInt(HadithText(Hadith)(1))
                     ChapterNode = GetChapterByIndex(BookNode, ChapterIndex)
                     If Not ChapterNode Is Nothing Then
-                        Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eHeaderLeft, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.RightToLeftMark + Arabic.TransliterateFromBuckwalter("Had~iv " + ChapterNode.Attributes.GetNamedItem("hadiths").Value + " ")), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, Arabic.TransliterateToScheme(Arabic.TransliterateFromBuckwalter("Had~iv " + ChapterNode.Attributes.GetNamedItem("hadiths").Value + " "), Scheme, String.Empty).Trim()), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, "Hadiths: " + ChapterNode.Attributes.GetNamedItem("hadiths").Value + " ")}))
-                        Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eHeaderCenter, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.RightToLeftMark + Arabic.TransliterateFromBuckwalter("bAb " + CStr(ChapterIndex)) + " " + ChapterNode.Attributes.GetNamedItem("name").Value + " "), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, Arabic.TransliterateToScheme(Arabic.TransliterateFromBuckwalter("bAb " + CStr(ChapterIndex)) + " " + ChapterNode.Attributes.GetNamedItem("name").Value + " ", Scheme, String.Empty).Trim()), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, "Chapter " + CStr(ChapterIndex) + ": " + Utility.DefaultValue(Utility.LoadResourceString("IslamInfo_" + CachedData.IslamData.Collections(Index).FileName + "Book" + BookNode.Attributes.GetNamedItem("index").Value + "Chapter" + ChapterNode.Attributes.GetNamedItem("index").Value), String.Empty) + " ")}))
+                        Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eHeaderLeft, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.RightToLeftMark + Arabic.TransliterateFromBuckwalter("Had~iv " + ChapterNode.Attributes.GetNamedItem("hadiths").Value + " ")), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, Arabic.TransliterateToScheme(Arabic.TransliterateFromBuckwalter("Had~iv " + ChapterNode.Attributes.GetNamedItem("hadiths").Value + " "), SchemeType, Scheme).Trim()), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, "Hadiths: " + ChapterNode.Attributes.GetNamedItem("hadiths").Value + " ")}))
+                        Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eHeaderCenter, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.RightToLeftMark + Arabic.TransliterateFromBuckwalter("bAb " + CStr(ChapterIndex)) + " " + ChapterNode.Attributes.GetNamedItem("name").Value + " "), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, Arabic.TransliterateToScheme(Arabic.TransliterateFromBuckwalter("bAb " + CStr(ChapterIndex)) + " " + ChapterNode.Attributes.GetNamedItem("name").Value + " ", SchemeType, Scheme).Trim()), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, "Chapter " + CStr(ChapterIndex) + ": " + Utility.DefaultValue(Utility.LoadResourceString("IslamInfo_" + CachedData.IslamData.Collections(Index).FileName + "Book" + BookNode.Attributes.GetNamedItem("index").Value + "Chapter" + ChapterNode.Attributes.GetNamedItem("index").Value), String.Empty) + " ")}))
                     End If
                     SubChapterIndex = -1
                 End If
@@ -5381,8 +5405,8 @@ Public Class HadithReader
                     If Not ChapterNode Is Nothing Then
                         SubChapterNode = GetSubChapterByIndex(ChapterNode, SubChapterIndex)
                         If Not SubChapterNode Is Nothing Then
-                            Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eHeaderLeft, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.RightToLeftMark + Arabic.TransliterateFromBuckwalter("Had~iv " + SubChapterNode.Attributes.GetNamedItem("hadiths").Value + " ")), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, Arabic.TransliterateToScheme(Arabic.TransliterateFromBuckwalter("Had~iv " + SubChapterNode.Attributes.GetNamedItem("hadiths").Value + " "), Scheme, String.Empty).Trim()), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, "Hadiths: " + SubChapterNode.Attributes.GetNamedItem("hadiths").Value + " ")}))
-                            Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eHeaderCenter, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.RightToLeftMark + Arabic.TransliterateFromBuckwalter("bAb " + CStr(SubChapterIndex)) + " " + SubChapterNode.Attributes.GetNamedItem("name").Value + " "), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, Arabic.TransliterateToScheme(Arabic.TransliterateFromBuckwalter("bAb " + CStr(SubChapterIndex)) + " " + SubChapterNode.Attributes.GetNamedItem("name").Value + " ", Scheme, String.Empty).Trim()), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, "Sub-Chapter " + CStr(SubChapterIndex) + ": " + Utility.DefaultValue(Utility.LoadResourceString("IslamInfo_" + CachedData.IslamData.Collections(Index).FileName + "Book" + BookNode.Attributes.GetNamedItem("index").Value + "Chapter" + ChapterNode.Attributes.GetNamedItem("index").Value + "Subchapter" + SubChapterNode.Attributes.GetNamedItem("index").Value), String.Empty) + " ")}))
+                            Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eHeaderLeft, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.RightToLeftMark + Arabic.TransliterateFromBuckwalter("Had~iv " + SubChapterNode.Attributes.GetNamedItem("hadiths").Value + " ")), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, Arabic.TransliterateToScheme(Arabic.TransliterateFromBuckwalter("Had~iv " + SubChapterNode.Attributes.GetNamedItem("hadiths").Value + " "), SchemeType, Scheme).Trim()), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, "Hadiths: " + SubChapterNode.Attributes.GetNamedItem("hadiths").Value + " ")}))
+                            Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eHeaderCenter, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.RightToLeftMark + Arabic.TransliterateFromBuckwalter("bAb " + CStr(SubChapterIndex)) + " " + SubChapterNode.Attributes.GetNamedItem("name").Value + " "), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, Arabic.TransliterateToScheme(Arabic.TransliterateFromBuckwalter("bAb " + CStr(SubChapterIndex)) + " " + SubChapterNode.Attributes.GetNamedItem("name").Value + " ", SchemeType, Scheme).Trim()), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, "Sub-Chapter " + CStr(SubChapterIndex) + ": " + Utility.DefaultValue(Utility.LoadResourceString("IslamInfo_" + CachedData.IslamData.Collections(Index).FileName + "Book" + BookNode.Attributes.GetNamedItem("index").Value + "Chapter" + ChapterNode.Attributes.GetNamedItem("index").Value + "Subchapter" + SubChapterNode.Attributes.GetNamedItem("index").Value), String.Empty) + " ")}))
                         End If
                     End If
                 End If
@@ -5395,7 +5419,7 @@ Public Class HadithReader
                     Next
                 End If
                 'Arabic.TransliterateFromBuckwalter("(" + HadithText(Hadith)(0) + ") ")
-                Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.RightToLeftMark + CStr(HadithText(Hadith)(3)) + " " + Arabic.TransliterateFromBuckwalter("=" + CStr(HadithText(Hadith)(0))) + " "), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, Arabic.TransliterateToScheme(CStr(HadithText(Hadith)(3)) + " " + Arabic.TransliterateFromBuckwalter("=" + CStr(HadithText(Hadith)(0))) + " ", Scheme, String.Empty).Trim()), New RenderArray.RenderText(DirectCast(IIf(IsTranslationTextLTR(Index, Translation), RenderArray.RenderDisplayClass.eLTR, RenderArray.RenderDisplayClass.eRTL), RenderArray.RenderDisplayClass), "(" + CStr(HadithText(Hadith)(0)) + ") " + HadithTranslation)}))
+                Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.RightToLeftMark + CStr(HadithText(Hadith)(3)) + " " + Arabic.TransliterateFromBuckwalter("=" + CStr(HadithText(Hadith)(0))) + " "), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, Arabic.TransliterateToScheme(CStr(HadithText(Hadith)(3)) + " " + Arabic.TransliterateFromBuckwalter("=" + CStr(HadithText(Hadith)(0))) + " ", SchemeType, Scheme).Trim()), New RenderArray.RenderText(DirectCast(IIf(IsTranslationTextLTR(Index, Translation), RenderArray.RenderDisplayClass.eLTR, RenderArray.RenderDisplayClass.eRTL), RenderArray.RenderDisplayClass), "(" + CStr(HadithText(Hadith)(0)) + ") " + HadithTranslation)}))
                 Dim Ranking As Integer() = SiteDatabase.GetHadithRankingData(CachedData.IslamData.Collections(Index).FileName, BookIndex, CInt(HadithText(Hadith)(0)))
                 Dim UserRanking As Integer
                 If Utility.IsLoggedIn() Then
