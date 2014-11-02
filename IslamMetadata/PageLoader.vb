@@ -1348,28 +1348,44 @@ Public Class Arabic
             Return New String(System.Array.FindAll(ArabicString.ToCharArray(), Function(Check As Char) Check = " "c))
         End If
     End Function
+    Public Shared Function GetSchemeLongVowelFromString(Str As String, Scheme As String) As String
+        Dim Sch As IslamData.TranslitScheme = Nothing
+        Dim Count As Integer
+        For Count = 0 To CachedData.IslamData.TranslitSchemes.Length - 1
+            If CachedData.IslamData.TranslitSchemes(Count).Name = Scheme Then
+                Sch = CachedData.IslamData.TranslitSchemes(Count)
+                Exit For
+            End If
+        Next
+        If Count = CachedData.IslamData.TranslitSchemes.Length Then Return String.Empty
+        If Array.IndexOf(ArabicVowels, Str) <> -1 Then
+            Return Sch.Vowels(Array.IndexOf(ArabicVowels, Str))
+        End If
+        Return String.Empty
+    End Function
     Public Shared Function GetSchemeValueFromSymbol(Symbol As IslamData.ArabicSymbol, Scheme As String) As String
         Dim Sch As IslamData.TranslitScheme = Nothing
         Dim Count As Integer
         For Count = 0 To CachedData.IslamData.TranslitSchemes.Length - 1
             If CachedData.IslamData.TranslitSchemes(Count).Name = Scheme Then
                 Sch = CachedData.IslamData.TranslitSchemes(Count)
+                Exit For
             End If
         Next
         If Count = CachedData.IslamData.TranslitSchemes.Length Then Return String.Empty
-        If Array.IndexOf(ArabicLettersInOrder, Symbol.Symbol) <> 0 Then
+        If Array.IndexOf(ArabicLettersInOrder, Symbol.Symbol) <> -1 Then
             Return Sch.Alphabet(Array.IndexOf(ArabicLettersInOrder, Symbol.Symbol))
-        ElseIf Array.IndexOf(ArabicHamzas, Symbol.Symbol) <> 0 Then
+        ElseIf Array.IndexOf(ArabicHamzas, Symbol.Symbol) <> -1 Then
             Return Sch.Hamza(Array.IndexOf(ArabicHamzas, Symbol.Symbol))
-        ElseIf Array.IndexOf(ArabicSpecialLetters, Symbol.Symbol) <> 0 Then
+        ElseIf Array.IndexOf(ArabicSpecialLetters, Symbol.Symbol) <> -1 Then
             Return Sch.SpecialLetters(Array.IndexOf(ArabicSpecialLetters, Symbol.Symbol))
-        ElseIf Array.IndexOf(ArabicVowels, Symbol.Symbol) <> 0 Then
-            Return Sch.Vowels(Array.IndexOf(ArabicVowels, Symbol.Symbol))
-        ElseIf Array.IndexOf(ArabicTajweed, Symbol.Symbol) <> 0 Then
+        ElseIf Array.IndexOf(ArabicVowels, CStr(Symbol.Symbol)) <> -1 Then
+            Return Sch.Vowels(Array.IndexOf(ArabicVowels, CStr(Symbol.Symbol)))
+        ElseIf Array.IndexOf(ArabicTajweed, Symbol.Symbol) <> -1 Then
             Return Sch.Tajweed(Array.IndexOf(ArabicTajweed, Symbol.Symbol))
-        ElseIf Array.IndexOf(ArabicPunctuation, Symbol.Symbol) <> 0 Then
+        ElseIf Array.IndexOf(ArabicPunctuation, Symbol.Symbol) <> -1 Then
             Return Sch.Punctuation(Array.IndexOf(ArabicPunctuation, Symbol.Symbol))
-        ElseIf Array.IndexOf(NonArabicLetters, Symbol.Symbol) <> 0 Then
+        ElseIf Array.IndexOf(NonArabicLetters, Symbol.Symbol) <> -1 Then
             Return Sch.NonArabic(Array.IndexOf(NonArabicLetters, Symbol.Symbol))
         End If
         Return String.Empty
@@ -1652,13 +1668,13 @@ Public Class Arabic
     Public Shared ArabicSpecialLeadingGutteral As String() = {ArabicLetterHah, ArabicLetterAin}
     Public Shared ArabicSpecialGutteral As String() = {ArabicLetterHamza, ArabicLetterHah, ArabicLetterAin, ArabicLetterSad, ArabicLetterDad, ArabicLetterTah, ArabicLetterZah}
     Public Shared ArabicLetters As String() = {ArabicLetterTeh, ArabicLetterTheh, ArabicLetterDal, ArabicLetterThal, ArabicLetterReh, ArabicLetterZain, ArabicLetterSeen, ArabicLetterSheen, ArabicLetterSad, ArabicLetterDad, ArabicLetterTah, ArabicLetterZah, ArabicLetterLam, ArabicLetterNoon, ArabicLetterAlef, ArabicLetterBeh, ArabicLetterJeem, ArabicLetterHah, ArabicLetterKhah, ArabicLetterAin, ArabicLetterGhain, ArabicLetterFeh, ArabicLetterQaf, ArabicLetterKaf, ArabicLetterMeem, ArabicLetterHeh, ArabicLetterWaw, ArabicLetterYeh}
-    Public Shared ArabicLettersInOrder As String() = {ArabicLetterAlef, ArabicLetterBeh, ArabicLetterTeh, ArabicLetterTheh, ArabicLetterJeem, ArabicLetterHah, ArabicLetterKhah, ArabicLetterDal, ArabicLetterThal, ArabicLetterReh, ArabicLetterZain, ArabicLetterSeen, ArabicLetterSheen, ArabicLetterSad, ArabicLetterDad, ArabicLetterTah, ArabicLetterZah, ArabicLetterAin, ArabicLetterGhain, ArabicLetterFeh, ArabicLetterQaf, ArabicLetterKaf, ArabicLetterLam, ArabicLetterMeem, ArabicLetterNoon, ArabicLetterHeh, ArabicLetterWaw, ArabicLetterYeh}
-    Public Shared ArabicHamzas As String() = {ArabicLetterHamza, ArabicLetterAlefWithMaddaAbove, ArabicLetterAlefWithHamzaAbove, ArabicLetterWawWithHamzaAbove, ArabicLetterAlefWithHamzaBelow, ArabicLetterYehWithHamzaAbove, ArabicHamzaAbove, ArabicLetterAlefWasla, ArabicHamzaBelow}
-    Public Shared ArabicSpecialLetters As String() = {ArabicLetterTehMarbuta, ArabicLetterTehMarbuta, ArabicLetterTehMarbuta, ArabicLetterAlefMaksura, ArabicLetterSuperscriptAlef, ArabicLetterNoonGhunna}
+    Public Shared ArabicLettersInOrder As Char() = {ArabicLetterAlef, ArabicLetterBeh, ArabicLetterTeh, ArabicLetterTheh, ArabicLetterJeem, ArabicLetterHah, ArabicLetterKhah, ArabicLetterDal, ArabicLetterThal, ArabicLetterReh, ArabicLetterZain, ArabicLetterSeen, ArabicLetterSheen, ArabicLetterSad, ArabicLetterDad, ArabicLetterTah, ArabicLetterZah, ArabicLetterAin, ArabicLetterGhain, ArabicLetterFeh, ArabicLetterQaf, ArabicLetterKaf, ArabicLetterLam, ArabicLetterMeem, ArabicLetterNoon, ArabicLetterHeh, ArabicLetterWaw, ArabicLetterYeh}
+    Public Shared ArabicHamzas As Char() = {ArabicLetterHamza, ArabicLetterAlefWithMaddaAbove, ArabicLetterAlefWithHamzaAbove, ArabicLetterWawWithHamzaAbove, ArabicLetterAlefWithHamzaBelow, ArabicLetterYehWithHamzaAbove, ArabicHamzaAbove, ArabicLetterAlefWasla, ArabicHamzaBelow}
+    Public Shared ArabicSpecialLetters As Char() = {ArabicLetterTehMarbuta, ArabicLetterTehMarbuta, ArabicLetterTehMarbuta, ArabicLetterAlefMaksura, ArabicLetterSuperscriptAlef, ArabicLetterNoonGhunna}
     Public Shared ArabicVowels As String() = {ArabicFatha, ArabicDamma, ArabicKasra, ArabicFathatan, ArabicDammatan, ArabicKasratan, ArabicFatha + ArabicLetterAlef, ArabicDamma + ArabicLetterWaw, ArabicKasra + ArabicLetterYeh, ArabicFatha + ArabicLetterWaw, ArabicFatha + ArabicLetterYeh, ArabicShadda, ArabicSukun}
-    Public Shared ArabicTajweed As String() = {ArabicSmallHighSeen, ArabicSmallHighMeemIsolatedForm, ArabicSmallLowSeen, ArabicSmallWaw, ArabicSmallYeh, ArabicSmallHighNoon, ArabicSmallLowMeem}
-    Public Shared ArabicPunctuation As String() = {Space, ExclamationMark, QuotationMark, Comma, HyphenMinus, FullStop, Colon, LeftSquareBracket, RightSquareBracket, LeftCurlyBracket, RightCurlyBracket, NoBreakSpace, LeftPointingDoubleAngleQuotationMark, RightPointingDoubleAngleQuotationMark, ArabicComma, ArabicSemicolon, ArabicQuestionMark, ZeroWidthNonJoiner, NarrowNoBreakSpace, OrnateLeftParenthesis, OrnateRightParenthesis}
-    Public Shared NonArabicLetters As String() = {ArabicLetterPeh, ArabicLetterTcheh, ArabicLetterVeh, ArabicLetterGaf}
+    Public Shared ArabicTajweed As Char() = {ArabicSmallHighSeen, ArabicSmallHighMeemIsolatedForm, ArabicSmallLowSeen, ArabicSmallWaw, ArabicSmallYeh, ArabicSmallHighNoon, ArabicSmallLowMeem}
+    Public Shared ArabicPunctuation As Char() = {Space, ExclamationMark, QuotationMark, Comma, HyphenMinus, FullStop, Colon, LeftSquareBracket, RightSquareBracket, LeftCurlyBracket, RightCurlyBracket, NoBreakSpace, LeftPointingDoubleAngleQuotationMark, RightPointingDoubleAngleQuotationMark, ArabicComma, ArabicSemicolon, ArabicQuestionMark, ZeroWidthNonJoiner, NarrowNoBreakSpace, OrnateLeftParenthesis, OrnateRightParenthesis}
+    Public Shared NonArabicLetters As Char() = {ArabicLetterPeh, ArabicLetterTcheh, ArabicLetterVeh, ArabicLetterGaf}
     Public Shared PunctuationSymbols As String() = {ExclamationMark, QuotationMark, FullStop, Comma, ArabicComma, OrnateLeftParenthesis, OrnateRightParenthesis}
     Public Shared ArabicPunctuationSymbols As String() = {ArabicComma, OrnateLeftParenthesis, OrnateRightParenthesis}
     Public Shared WhitespaceSymbols As String() = {Space}
@@ -2669,7 +2685,7 @@ Public Class Arabic
         Output(1) = New String() {"arabic", String.Empty, "arabic", String.Empty, String.Empty, String.Empty, String.Empty, String.Empty, String.Empty}
         Output(2) = New String() {Utility.LoadResourceString("IslamInfo_LetterName"), Utility.LoadResourceString("IslamInfo_UnicodeName"), Utility.LoadResourceString("IslamInfo_Arabic"), Utility.LoadResourceString("IslamInfo_UnicodeValue"), Utility.LoadResourceString("IslamSource_ExtendedBuckwalter"), Utility.LoadResourceString("IslamInfo_Terminating"), Utility.LoadResourceString("IslamInfo_Connecting"), Utility.LoadResourceString("IslamInfo_Assimilate"), Utility.LoadResourceString("IslamInfo_Shaping")}
         For Count = 0 To Symbols.Length - 1
-            Output(Count + 3) = New String() {Arabic.RightToLeftMark + TransliterateFromBuckwalter(Symbols(Count).SymbolName), _
+            Output(Count + 3) = New String() {TransliterateFromBuckwalter(Symbols(Count).SymbolName), _
                                               GetUnicodeName(Symbols(Count).Symbol), _
                                        CStr(Symbols(Count).Symbol), _
                                        CStr(AscW(Symbols(Count).Symbol)), _
@@ -2686,7 +2702,7 @@ Public Class Arabic
     End Function
     Public Shared Function DisplayTranslitSchemes(ByVal Item As PageLoader.TextItem) As Array()
         Dim Count As Integer
-        Dim Output(CachedData.IslamData.ArabicLetters.Length + 2) As Array
+        Dim Output(CachedData.IslamData.ArabicLetters.Length + ArabicLongVowels.Length + 2) As Array
         'Dim oFont As New Font(DefaultValue(HttpContext.Current.Request.QueryString.Get("fontcustom"), "Arial"), 13)
         'CheckIfCharInFont(CachedData.IslamData.ArabicLetters(Count).Symbol, oFont)
         Output(0) = New String() {}
@@ -2699,13 +2715,23 @@ Public Class Arabic
             Output(2)(4 + SchemeCount) = Utility.LoadResourceString("IslamSource_" + CachedData.IslamData.TranslitSchemes(SchemeCount).Name)
         Next
         For Count = 0 To CachedData.IslamData.ArabicLetters.Length - 1
-            Output(Count + 3) = New String() {Arabic.RightToLeftMark + TransliterateFromBuckwalter(CachedData.IslamData.ArabicLetters(Count).SymbolName), _
+            Output(Count + 3) = New String() {TransliterateFromBuckwalter(CachedData.IslamData.ArabicLetters(Count).SymbolName), _
                                               GetUnicodeName(CachedData.IslamData.ArabicLetters(Count).Symbol), _
                                        CStr(CachedData.IslamData.ArabicLetters(Count).Symbol), _
                                        CStr(IIf(CachedData.IslamData.ArabicLetters(Count).ExtendedBuckwalterLetter = ChrW(0), String.Empty, CachedData.IslamData.ArabicLetters(Count).ExtendedBuckwalterLetter))}
             Array.Resize(Of String)(Output(Count + 3), 4 + CachedData.IslamData.TranslitSchemes.Length)
             For SchemeCount = 0 To CachedData.IslamData.TranslitSchemes.Length - 1
                 Output(Count + 3)(4 + SchemeCount) = GetSchemeValueFromSymbol(CachedData.IslamData.ArabicLetters(Count), CachedData.IslamData.TranslitSchemes(SchemeCount).Name)
+            Next
+        Next
+        For Count = 0 To ArabicLongVowels.Length - 1
+            Output(CachedData.IslamData.ArabicLetters.Length + Count + 3) = New String() {String.Join(" ", Array.ConvertAll(ArabicLongVowels(Count).ToCharArray(), Function(Ch As Char) TransliterateFromBuckwalter(CachedData.IslamData.ArabicLetters(FindLetterBySymbol(Ch)).SymbolName))), _
+                                              String.Empty, _
+                                       ArabicLongVowels(Count), _
+                                       TransliterateToScheme(ArabicLongVowels(Count), TranslitScheme.Literal, String.Empty)}
+            Array.Resize(Of String)(Output(CachedData.IslamData.ArabicLetters.Length + Count + 3), 4 + CachedData.IslamData.TranslitSchemes.Length)
+            For SchemeCount = 0 To CachedData.IslamData.TranslitSchemes.Length - 1
+                Output(CachedData.IslamData.ArabicLetters.Length + Count + 3)(4 + SchemeCount) = GetSchemeLongVowelFromString(ArabicLongVowels(Count), CachedData.IslamData.TranslitSchemes(SchemeCount).Name)
             Next
         Next
         Return Output

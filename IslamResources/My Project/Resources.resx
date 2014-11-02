@@ -660,6 +660,15 @@
   <data name="IslamSource_PlainRoman" xml:space="preserve">
     <value>Plain Roman</value>
   </data>
+  <data name="IslamSource_RomanTranslit" xml:space="preserve">
+    <value>Roman Transliteration</value>
+  </data>
+  <data name="IslamSource_HansWeir" xml:space="preserve">
+    <value>Hans Weir</value>
+  </data>
+  <data name="IslamSource_HansWeir4thEdition" xml:space="preserve">
+    <value>Hans Weir 4th Edition</value>
+  </data>
   <data name="IslamSource_PrayerTimes" xml:space="preserve">
     <value>Prayer Times</value>
   </data>
