@@ -153,7 +153,7 @@
 		<frame name="docbuild" description="IslamSource_Viewer" hasform="true">
 			<edit name="docedit" rows="4"></edit>
 			<button name="selectiondisplay" description="IslamSource_Display"></button>
-			<radio name="translitscheme" description="IslamSource_TransliterationScheme" uselist="true" onchange="Arabic::GetChangeTransliterationJS"><option name="IslamSource_Off" defaultvalue="true"></option><option name="IslamSource_PlainRoman"></option><option name="IslamSource_EnglishRomanized"></option><option name="IslamSource_ExtendedBuckwalter"></option></radio>
+			<radio name="translitscheme" description="IslamSource_TransliterationScheme" uselist="true" onchange="Arabic::GetChangeTransliterationJS" onpopulate="Arabic::GetTransliterationSchemes"></radio>
 			<button name="fontsmaller" description="IslamSource_Smaller" onclick="ArabicFont::GetFontSmallerJS"></button>
 			<button name="fontdefaultsize" description="IslamSource_LetterSample" onclick="ArabicFont::GetFontDefaultSizeJS"></button>
 			<button name="fontbigger" description="IslamSource_Bigger" onclick="ArabicFont::GetFontBiggerJS"></button>
@@ -170,7 +170,7 @@
 		<frame name="words" description="IslamSource_Viewer" hasform="true">
 			<radio name="selection" description="IslamSource_Selection" uselist="true" defaultvalue="0" onpopulate="Arabic::GetCategories"></radio>
 			<button name="selectiondisplay" description="IslamSource_Display"></button>
-			<radio name="translitscheme" description="IslamSource_TransliterationScheme" uselist="true" onchange="Arabic::GetChangeTransliterationJS"><option name="IslamSource_Off" defaultvalue="true"></option><option name="IslamSource_PlainRoman"></option><option name="IslamSource_EnglishRomanized"></option><option name="IslamSource_ExtendedBuckwalter"></option></radio>
+			<radio name="translitscheme" description="IslamSource_TransliterationScheme" uselist="true" onchange="Arabic::GetChangeTransliterationJS" onpopulate="Arabic::GetTransliterationSchemes"></radio>
 			<button name="fontsmaller" description="IslamSource_Smaller" onclick="ArabicFont::GetFontSmallerJS"></button>
 			<button name="fontdefaultsize" description="IslamSource_LetterSample" onclick="ArabicFont::GetFontDefaultSizeJS"></button>
 			<button name="fontbigger" description="IslamSource_Bigger" onclick="ArabicFont::GetFontBiggerJS"></button>
@@ -187,7 +187,7 @@
 			<radio name="selection" description="IslamSource_Selection" uselist="true" defaultvalue="0" onpopulate="Supplications::GetSuppCategories"></radio>
 			<button name="selectiondisplay" description="IslamSource_Display"></button>
 			<button name="print" description="IslamSource_Print" onclick="Utility::GetOnPrintJS"></button>
-			<radio name="translitscheme" description="IslamSource_TransliterationScheme" uselist="true" onchange="Arabic::GetChangeTransliterationJS"><option name="IslamSource_Off" defaultvalue="true"></option><option name="IslamSource_PlainRoman"></option><option name="IslamSource_EnglishRomanized"></option><option name="IslamSource_ExtendedBuckwalter"></option></radio>
+			<radio name="translitscheme" description="IslamSource_TransliterationScheme" uselist="true" onchange="Arabic::GetChangeTransliterationJS" onpopulate="Arabic::GetTransliterationSchemes"></radio>
 			<button name="fontsmaller" description="IslamSource_Smaller" onclick="ArabicFont::GetFontSmallerJS"></button>
 			<button name="fontdefaultsize" description="IslamSource_LetterSample" onclick="ArabicFont::GetFontDefaultSizeJS"></button>
 			<button name="fontbigger" description="IslamSource_Bigger" onclick="ArabicFont::GetFontBiggerJS"></button>
@@ -213,7 +213,7 @@
 			<edit name="translitedit" rows="4"></edit>
 			<radio name="scheme" description="IslamSource_Scheme" onchange="Arabic::GetSchemeChangeJS"><option name="IslamSource_Transliterate" defaultvalue="true"></option><option name="IslamSource_ModifyDiacritics"></option><option name="IslamSource_FixDirectionalMarkers"></option></radio>
 			<radio name="diacriticscheme" description="IslamSource_Operation"><option name="IslamSource_Add" defaultvalue="true"></option><option name="IslamSource_Remove"></option></radio>
-			<radio name="translitscheme" description="IslamSource_TransliterationScheme"><option name="IslamSource_ExtendedBuckwalter" defaultvalue="true"></option><option name="IslamSource_EnglishRomanized"></option></radio>
+			<radio name="translitscheme" description="IslamSource_TransliterationScheme" uselist="true" onpopulate="Arabic::GetTransliterationSchemes"></radio>
 			<radio name="direction" description="IslamSource_Direction"><option name="IslamSource_ArabicToRoman" defaultvalue="true"></option><option name="IslamSource_RomanToArabic"></option></radio>
 			<button name="transliterate" description="IslamSource_Perform" onclick="Arabic::GetTransliterateJS"></button>
 			<static name="translitvalue" description=""></static>
@@ -221,6 +221,7 @@
 		<frame name="arabicalphabet" description="IslamSource_ArabicAlphabet">
 			<static name="alphabet" description="" onrender="Arabic::DisplayAll"></static>
 			<static name="combos" description="" onrender="Arabic::DisplayCombo"></static>
+			<static name="schemes" description="" onrender="Arabic::DisplayTranslitSchemes"></static>
 		</frame>
 	</page>
 	<page name="arabicnumbers" description="IslamSource_ArabicNumbers">
@@ -291,7 +292,7 @@
 		<frame name="quranwordviewer" description="IslamSource_Viewer" hasform="true">
 			<radio name="quranselection" description="IslamSource_Selection" uselist="true" onpopulate="TanzilReader::GetWordPartitions"></radio>
 			<button name="qurandisplay" description="IslamSource_Display"></button>
-			<radio name="translitscheme" description="IslamSource_TransliterationScheme" uselist="true" onchange="Arabic::GetChangeTransliterationJS"><option name="IslamSource_Off" defaultvalue="true"></option><option name="IslamSource_PlainRoman"></option><option name="IslamSource_EnglishRomanized"></option><option name="IslamSource_ExtendedBuckwalter"></option></radio>
+			<radio name="translitscheme" description="IslamSource_TransliterationScheme" uselist="true" onchange="Arabic::GetChangeTransliterationJS" onpopulate="Arabic::GetTransliterationSchemes"></radio>
 			<button name="fontsmaller" description="IslamSource_Smaller" onclick="ArabicFont::GetFontSmallerJS"></button>
 			<button name="fontdefaultsize" description="IslamSource_LetterSample" onclick="ArabicFont::GetFontDefaultSizeJS"></button>
 			<button name="fontbigger" description="IslamSource_Bigger" onclick="ArabicFont::GetFontBiggerJS"></button>
@@ -311,7 +312,7 @@
 			<radio name="quranselection" description="IslamSource_Selection" uselist="true" onpopulate="TanzilReader::GetSelectionNames"></radio>
 			<radio name="qurantranslation" description="IslamSource_Translation" uselist="true" defaultvalue="en-maulana_ali" onpopulate="TanzilReader::GetTranslationList"></radio>
 			<button name="qurandisplay" description="IslamSource_Display"></button>
-			<radio name="translitscheme" description="IslamSource_TransliterationScheme" uselist="true" onchange="Arabic::GetChangeTransliterationJS"><option name="IslamSource_Off" defaultvalue="true"></option><option name="IslamSource_PlainRoman"></option><option name="IslamSource_EnglishRomanized"></option><option name="IslamSource_ExtendedBuckwalter"></option></radio>
+			<radio name="translitscheme" description="IslamSource_TransliterationScheme" uselist="true" onchange="Arabic::GetChangeTransliterationJS" onpopulate="Arabic::GetTransliterationSchemes"></radio>
 			<button name="fontsmaller" description="IslamSource_Smaller" onclick="ArabicFont::GetFontSmallerJS"></button>
 			<button name="fontdefaultsize" description="IslamSource_LetterSample" onclick="ArabicFont::GetFontDefaultSizeJS"></button>
 			<button name="fontbigger" description="IslamSource_Bigger" onclick="ArabicFont::GetFontBiggerJS"></button>
@@ -330,7 +331,7 @@
 			<radio name="hadithbook" description="IslamSource_Book" uselist="true" onpopulate="HadithReader::GetBookNames"></radio>
 			<radio name="hadithtranslation" description="IslamSource_Translation" uselist="true" defaultvalue="" onpopulate="HadithReader::GetTranslationList"></radio>
 			<button name="hadithdisplay" description="IslamSource_Display"></button>
-			<radio name="translitscheme" description="IslamSource_TransliterationScheme" uselist="true" onchange="Arabic::GetChangeTransliterationJS"><option name="IslamSource_Off" defaultvalue="true"></option><option name="IslamSource_PlainRoman"></option><option name="IslamSource_EnglishRomanized"></option><option name="IslamSource_ExtendedBuckwalter"></option></radio>
+			<radio name="translitscheme" description="IslamSource_TransliterationScheme" uselist="true" onchange="Arabic::GetChangeTransliterationJS" onpopulate="Arabic::GetTransliterationSchemes"></radio>
 			<button name="fontsmaller" description="IslamSource_Smaller" onclick="ArabicFont::GetFontSmallerJS"></button>
 			<button name="fontdefaultsize" description="IslamSource_LetterSample" onclick="ArabicFont::GetFontDefaultSizeJS"></button>
 			<button name="fontbigger" description="IslamSource_Bigger" onclick="ArabicFont::GetFontBiggerJS"></button>

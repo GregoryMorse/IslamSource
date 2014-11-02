@@ -2395,7 +2395,7 @@ Public Class Arabic
             End If
         Next
 
-        'process madda loanwords and names
+        'process wasl loanwords and names
         'process loanwords and names
         Return ArabicString
     End Function
@@ -2493,6 +2493,16 @@ Public Class Arabic
     End Function
     Public Shared Function GetSchemeChangeJS() As String()
         Return New String() {"javascript: doSchemeChange();", String.Empty, "function doSchemeChange() { $('#diacriticscheme_').css('display', $('#scheme0').prop('checked') ? 'none' : 'block'); $('#translitscheme_').css('display', $('#scheme0').prop('checked') ? 'block' : 'none'); $('#direction_').css('display', $('#scheme0').prop('checked') ? 'block' : 'none'); }"}
+    End Function
+    Public Shared Function GetTransliterationSchemes() As Array()
+        Dim Count As Integer
+        Dim Strings(CachedData.IslamData.TranslitSchemes.Length - 1 + 2) As Array
+        Strings(0) = New String() {Utility.LoadResourceString("IslamSource_Off"), "IslamSource_Off"}
+        Strings(1) = New String() {Utility.LoadResourceString("IslamInfo_ExtendedBuckwalter"), "IslamInfo_ExtendedBuckwalter"}
+        For Count = 0 To CachedData.IslamData.TranslitSchemes.Length - 1
+            Strings(Count + 2) = New String() {Utility.LoadResourceString("IslamInfo_" + CachedData.IslamData.TranslitSchemes(Count).Name), "IslamInfo_" + CachedData.IslamData.TranslitSchemes(Count).Name}
+        Next
+        Return Strings
     End Function
     Public Shared Function GetChangeTransliterationJS() As String()
         Dim GetJS As New List(Of String) From {"javascript: changeTransliteration();", String.Empty, Utility.GetLookupStyleSheetJS(), GetArabicSymbolJSArray(), _
@@ -2652,16 +2662,14 @@ Public Class Arabic
         'Dim oFont As New Font(DefaultValue(HttpContext.Current.Request.QueryString.Get("fontcustom"), "Arial"), 13)
         'CheckIfCharInFont(CachedData.IslamData.ArabicLetters(Count).Symbol, oFont)
         Output(0) = New String() {}
-        Output(1) = New String() {"arabic", String.Empty, "arabic", String.Empty, String.Empty, String.Empty, String.Empty, String.Empty, String.Empty, String.Empty, String.Empty}
-        Output(2) = New String() {Utility.LoadResourceString("IslamInfo_LetterName"), Utility.LoadResourceString("IslamInfo_UnicodeName"), Utility.LoadResourceString("IslamInfo_Arabic"), Utility.LoadResourceString("IslamInfo_UnicodeValue"), Utility.LoadResourceString("IslamSource_ExtendedBuckwalter"), Utility.LoadResourceString("IslamSource_EnglishRomanized"), Utility.LoadResourceString("IslamSource_PlainRoman"), Utility.LoadResourceString("IslamInfo_Terminating"), Utility.LoadResourceString("IslamInfo_Connecting"), Utility.LoadResourceString("IslamInfo_Assimilate"), Utility.LoadResourceString("IslamInfo_Shaping")}
+        Output(1) = New String() {"arabic", String.Empty, "arabic", String.Empty, String.Empty, String.Empty, String.Empty, String.Empty, String.Empty}
+        Output(2) = New String() {Utility.LoadResourceString("IslamInfo_LetterName"), Utility.LoadResourceString("IslamInfo_UnicodeName"), Utility.LoadResourceString("IslamInfo_Arabic"), Utility.LoadResourceString("IslamInfo_UnicodeValue"), Utility.LoadResourceString("IslamSource_ExtendedBuckwalter"), Utility.LoadResourceString("IslamInfo_Terminating"), Utility.LoadResourceString("IslamInfo_Connecting"), Utility.LoadResourceString("IslamInfo_Assimilate"), Utility.LoadResourceString("IslamInfo_Shaping")}
         For Count = 0 To Symbols.Length - 1
             Output(Count + 3) = New String() {Arabic.RightToLeftMark + TransliterateFromBuckwalter(Symbols(Count).SymbolName), _
                                               GetUnicodeName(Symbols(Count).Symbol), _
                                        CStr(Symbols(Count).Symbol), _
                                        CStr(AscW(Symbols(Count).Symbol)), _
                                        CStr(IIf(Symbols(Count).ExtendedBuckwalterLetter = ChrW(0), String.Empty, Symbols(Count).ExtendedBuckwalterLetter)), _
-                                       GetSchemeValueFromSymbol(Symbols(Count), "RomanTranslit"), _
-                                       GetSchemeValueFromSymbol(Symbols(Count), "PlainRoman"), _
                                        CStr(Symbols(Count).Terminating), _
                                        CStr(Symbols(Count).Connecting), _
                                        CStr(Symbols(Count).Assimilate),
@@ -2671,6 +2679,32 @@ Public Class Arabic
     End Function
     Public Shared Function DisplayAll(ByVal Item As PageLoader.TextItem) As Array()
         Return LetterDisplay(CachedData.IslamData.ArabicLetters)
+    End Function
+    Public Shared Function DisplayTranslitSchemes(ByVal Item As PageLoader.TextItem) As Array()
+        Dim Count As Integer
+        Dim Output(CachedData.IslamData.ArabicLetters.Length + 2) As Array
+        'Dim oFont As New Font(DefaultValue(HttpContext.Current.Request.QueryString.Get("fontcustom"), "Arial"), 13)
+        'CheckIfCharInFont(CachedData.IslamData.ArabicLetters(Count).Symbol, oFont)
+        Output(0) = New String() {}
+        Output(1) = New String() {"arabic", String.Empty, "arabic", String.Empty}
+        Array.Resize(CType(Output(1), String()), 4 + CachedData.IslamData.TranslitSchemes.Length)
+        Output(2) = New String() {Utility.LoadResourceString("IslamInfo_LetterName"), Utility.LoadResourceString("IslamInfo_UnicodeName"), Utility.LoadResourceString("IslamInfo_Arabic"), Utility.LoadResourceString("IslamSource_ExtendedBuckwalter")}
+        Array.Resize(CType(Output(2), String()), 4 + CachedData.IslamData.TranslitSchemes.Length)
+        For SchemeCount = 0 To CachedData.IslamData.TranslitSchemes.Length - 1
+            Output(1)(4 + SchemeCount) = String.Empty
+            Output(2)(4 + SchemeCount) = Utility.LoadResourceString("IslamSource_" + CachedData.IslamData.TranslitSchemes(SchemeCount).Name)
+        Next
+        For Count = 0 To CachedData.IslamData.ArabicLetters.Length - 1
+            Output(Count + 3) = New String() {Arabic.RightToLeftMark + TransliterateFromBuckwalter(CachedData.IslamData.ArabicLetters(Count).SymbolName), _
+                                              GetUnicodeName(CachedData.IslamData.ArabicLetters(Count).Symbol), _
+                                       CStr(CachedData.IslamData.ArabicLetters(Count).Symbol), _
+                                       CStr(IIf(CachedData.IslamData.ArabicLetters(Count).ExtendedBuckwalterLetter = ChrW(0), String.Empty, CachedData.IslamData.ArabicLetters(Count).ExtendedBuckwalterLetter))}
+            Array.Resize(CType(Output(Count + 3), String()), 4 + CachedData.IslamData.TranslitSchemes.Length)
+            For SchemeCount = 0 To CachedData.IslamData.TranslitSchemes.Length - 1
+                Output(Count + 3)(4 + SchemeCount) = GetSchemeValueFromSymbol(CachedData.IslamData.ArabicLetters(Count), CachedData.IslamData.TranslitSchemes(SchemeCount).Name)
+            Next
+        Next
+        Return Output
     End Function
     Public Shared Function DisplayParticle(Category As IslamData.GrammarCategory) As Array()
         Dim Count As Integer
