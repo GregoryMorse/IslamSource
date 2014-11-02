@@ -1357,20 +1357,20 @@ Public Class Arabic
             End If
         Next
         If Count = CachedData.IslamData.TranslitSchemes.Length Then Return String.Empty
-        If Array.IndexOf(ArabicLettersInOrder, Symbol) <> 0 Then
-            Return Sch.Alphabet(Array.IndexOf(ArabicLettersInOrder, Symbol))
-        ElseIf Array.IndexOf(ArabicHamzas, Symbol) <> 0 Then
-            Return Sch.Hamza(Array.IndexOf(ArabicHamzas, Symbol))
-        ElseIf Array.IndexOf(ArabicSpecialLetters, Symbol) <> 0 Then
-            Return Sch.SpecialLetters(Array.IndexOf(ArabicSpecialLetters, Symbol))
-        ElseIf Array.IndexOf(ArabicVowels, Symbol) <> 0 Then
-            Return Sch.Vowels(Array.IndexOf(ArabicVowels, Symbol))
-        ElseIf Array.IndexOf(ArabicTajweed, Symbol) <> 0 Then
-            Return Sch.Tajweed(Array.IndexOf(ArabicTajweed, Symbol))
-        ElseIf Array.IndexOf(ArabicPunctuation, Symbol) <> 0 Then
-            Return Sch.Punctuation(Array.IndexOf(ArabicPunctuation, Symbol))
-        ElseIf Array.IndexOf(NonArabicLetters, Symbol) <> 0 Then
-            Return Sch.NonArabic(Array.IndexOf(NonArabicLetters, Symbol))
+        If Array.IndexOf(ArabicLettersInOrder, Symbol.Symbol) <> 0 Then
+            Return Sch.Alphabet(Array.IndexOf(ArabicLettersInOrder, Symbol.Symbol))
+        ElseIf Array.IndexOf(ArabicHamzas, Symbol.Symbol) <> 0 Then
+            Return Sch.Hamza(Array.IndexOf(ArabicHamzas, Symbol.Symbol))
+        ElseIf Array.IndexOf(ArabicSpecialLetters, Symbol.Symbol) <> 0 Then
+            Return Sch.SpecialLetters(Array.IndexOf(ArabicSpecialLetters, Symbol.Symbol))
+        ElseIf Array.IndexOf(ArabicVowels, Symbol.Symbol) <> 0 Then
+            Return Sch.Vowels(Array.IndexOf(ArabicVowels, Symbol.Symbol))
+        ElseIf Array.IndexOf(ArabicTajweed, Symbol.Symbol) <> 0 Then
+            Return Sch.Tajweed(Array.IndexOf(ArabicTajweed, Symbol.Symbol))
+        ElseIf Array.IndexOf(ArabicPunctuation, Symbol.Symbol) <> 0 Then
+            Return Sch.Punctuation(Array.IndexOf(ArabicPunctuation, Symbol.Symbol))
+        ElseIf Array.IndexOf(NonArabicLetters, Symbol.Symbol) <> 0 Then
+            Return Sch.NonArabic(Array.IndexOf(NonArabicLetters, Symbol.Symbol))
         End If
         Return String.Empty
     End Function
@@ -3978,7 +3978,7 @@ Public Class DocBuilder
     Public Shared Function TextFromReferences(Strings As String) As RenderArray
         Dim Renderer As New RenderArray
         If Strings = Nothing Then Return Renderer
-        Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(Strings, "(.*?)(?:(\\\{)(.*?)(\\\})|$)")
+        Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(Strings, "(.*?)(?:(\{)(.*?)(\})|$)")
         For Count As Integer = 0 To Matches.Count - 1
             If Matches(Count).Length <> 0 Then
                 If Matches(Count).Groups(1).Length <> 0 Then
@@ -4797,7 +4797,7 @@ Public Class TanzilReader
     End Function
     Public Shared Function QuranTextFromReference(Str As String) As RenderArray
         Dim Renderer As New RenderArray
-        Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(Str, "^(?:,?(\d+)(?:\:(\d+))?(?:\:(\d+))?(?:-(\d+)(?:\:(\d+))?(?:\:(\d+))?)?)+$")
+        Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(Str, "(?:,?(\d+)(?:\:(\d+))?(?:\:(\d+))?(?:-(\d+)(?:\:(\d+))?(?:\:(\d+))?)?)")
         Dim Scheme As Arabic.TranslitScheme = CInt(HttpContext.Current.Request.QueryString.Get("translitscheme"))
         Dim TranslationIndex As Integer = GetTranslationIndex(HttpContext.Current.Request.QueryString.Get("qurantranslation"))
         Dim Reference As String

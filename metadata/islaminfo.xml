@@ -3225,7 +3225,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 	-->
 	<translitschemes>
 		<scheme name="RomanTranslit" alphabet="a|b|t|TH|h|HH|KH|d|DH|r|z|s|SH|S|D|T|Z|`|GH|f|q|k|l|m|n|h|w|y" hamza="|a~|a&apos;|w&apos;|i&apos;|y&apos;|&apos;||&apos;" tehmarbutaalefmaksuradaggeralefgunnah="t-|t-|t-|y-|a-|n" fathadammakasratanweenlongvowelsdipthongsshaddasukun="a|u|i|AN|UN|IN|aa|oo|ee|aw|ay|=|+" tajweed="s|m|s|w|y|n|m" punctuation=" |!|&quot;|,|-|.|:|[|]|{|}| |&quot;|&quot;|,|;|?| | |(|)" number="0|1|2|3|4|5|6|7|8|9" nonarabic="p|ZJ|v|g"></scheme>
-		<scheme name="HansWeir" alphabet="ā|b|t|ṯ|ǧ|ḥ|ḫ|d|ḏ|r|z|s|š|ṣ|ḍ|ṭ|ẓ|ʻ|ġ|f|q|k|l|m|n|h|w|y" hamza="ʼ|ā|ʼ|ʼ|ʼ|ʼ|ʼ||ʼ" ="" tehmarbutaalefmaksuradaggeralefgunnah="|t|h|ā|ā|n" fathadammakasratanweenlongvowelsdipthongsshaddasukun="a|u|i|an|un|in|ā|ū|ī|au|ai||" tajweed="||||||" punctuation=" |!|&quot;|,|-|.|:|[|]|{|}| |&quot;|&quot;|,|;|?| | |(|)" number="0|1|2|3|4|5|6|7|8|9" nonarabic="p|ž|v|g"></scheme>
+		<scheme name="HansWeir" alphabet="ā|b|t|ṯ|ǧ|ḥ|ḫ|d|ḏ|r|z|s|š|ṣ|ḍ|ṭ|ẓ|ʻ|ġ|f|q|k|l|m|n|h|w|y" hamza="ʼ|ā|ʼ|ʼ|ʼ|ʼ|ʼ||ʼ" tehmarbutaalefmaksuradaggeralefgunnah="|t|h|ā|ā|n" fathadammakasratanweenlongvowelsdipthongsshaddasukun="a|u|i|an|un|in|ā|ū|ī|au|ai||" tajweed="||||||" punctuation=" |!|&quot;|,|-|.|:|[|]|{|}| |&quot;|&quot;|,|;|?| | |(|)" number="0|1|2|3|4|5|6|7|8|9" nonarabic="p|ž|v|g"></scheme>
 		<scheme name="HansWeir4thEdition" alphabet="ā|b|t|ṯ|j|ḥ|ḵ|d|ḏ|r|z|s|š|ṣ|ḍ|ṭ|ẓ|ʻ|ḡ|f|q|k|l|m|n|h|w|y" hamza="ʼ|ā|ʼ|ʼ|ʼ|ʼ|ʼ||ʼ" tehmarbutaalefmaksuradaggeralefgunnah="|t|h|ā|ā|n" fathadammakasratanweenlongvowelsdipthongsshaddasukun="a|u|i|an|un|in|ā|ū|ī|au|ai||" tajweed="||||||" punctuation=" |!|&quot;|,|-|.|:|[|]|{|}| |&quot;|&quot;|,|;|?| | |(|)" number="0|1|2|3|4|5|6|7|8|9" nonarabic="p|ž|v|g"></scheme>
 		<scheme name="PlainRoman" alphabet="a|b|t|th|j|h|ch|d|th|r|z|s|sh|s|d|t|th|`|g|f|q|k|l|m|n|h|w|y" hamza="&apos;|&apos;a|&apos;|w&apos;|&apos;|y&apos;||a|" tehmarbutaalefmaksuradaggeralefgunnah="|||y|a|n" fathadammakasratanweenlongvowelsdipthongsshaddasukun="a|u|i|an|un|in|aa|oo|ee|aw|ay||" tajweed="||||||" punctuation=" |!|&quot;|,|-|.|:|[|]|{|}| |&quot;|&quot;|,|;|?| | |(|)" number="0|1|2|3|4|5|6|7|8|9" nonarabic="p|j|v|g"></scheme>
 	</translitschemes>
@@ -3360,10 +3360,10 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 		<arabicsymbol symbolname="bisomi {ll~ahi {lr~aHoma`ni {lr~aHiymi" uname="ArabicLigatureBismillahArRahmanArRaheem" symbol="FDFD" ipavalue="" extendedbuckwalter="0" terminating="true" connecting="false" assimilate="false" />
 
 		<arabicsymbol symbolname="hamozapN" uname="ArabicHamzaBelow" symbol="0655" ipavalue="ʔ" extendedbuckwalter="0" terminating="false" connecting="false" assimilate="false" />
-		<arabicsymbol symbolname="PaY" uname="ArabicLetterPeh" symbol="067E" ipavalue="" extendedbuckwalter="80" terminating="false" connecting="false" assimilate="false" />
-		<arabicsymbol symbolname="JaY" uname="ArabicLetterTcheh" symbol="0686" ipavalue="" extendedbuckwalter="74" terminating="false" connecting="false" assimilate="false" />
-		<arabicsymbol symbolname="VaY" uname="ArabicLetterVeh" symbol="06A4" ipavalue="" extendedbuckwalter="86" terminating="false" connecting="false" assimilate="false" />
-		<arabicsymbol symbolname="GaAf" uname="ArabicLetterGaf" symbol="06AF" ipavalue="" extendedbuckwalter="71" terminating="false" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="PaY" uname="ArabicLetterPeh" symbol="067E" shaping="FB56,FB57,FB58,FB59" ipavalue="" iextendedbuckwalter="80" terminating="false" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="JaY" uname="ArabicLetterTcheh" symbol="0686" shaping="FB7A,FB7B,FB7C,FB7D" ipavalue="" extendedbuckwalter="74" terminating="false" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="VaY" uname="ArabicLetterVeh" symbol="06A4" shaping="FB6A,FB6B,FB6C,FB6D" ipavalue="" extendedbuckwalter="86" terminating="false" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="GaAf" uname="ArabicLetterGaf" symbol="06AF" shaping="FB92,FB93,FB94,FB95" ipavalue="" extendedbuckwalter="71" terminating="false" connecting="false" assimilate="false" />
 	</arabicletters>
 	
 	<!-- Bukhari 2nd book shows 2nd missing is from 8.73.075? -->
