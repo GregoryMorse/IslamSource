@@ -3818,14 +3818,20 @@ Public Class DocBuilder
     Public Shared Function TextFromReferences(Strings As String) As RenderArray
         Dim Renderer As New RenderArray
         If Strings = Nothing Then Return Renderer
-        Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(Strings, "(\{)(.*?)(\})")
+        Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(Strings, "(.*?)(?:(\\\{)(.*?)(\\\})|$)")
         For Count As Integer = 0 To Matches.Count - 1
             'text before and after reference matches needs rendering
             'hadith reference matching {name,book/hadith}
-            'other useful reference matching such as Arabic names, expressions and such
-            '{MAKKAH} {SAWS} {RA} {BISMILLAH}
             If TanzilReader.IsQuranTextReference(Matches(Count).Result("$2")) Then
                 Renderer.Items.AddRange(TanzilReader.QuranTextFromReference(Matches(Count).Result("$2")).Items)
+            ElseIf Matches(Count).Result("$2").StartsWith("letter:") Then
+            ElseIf Matches(Count).Result("$2").StartsWith("pronoun:") Then
+            ElseIf Matches(Count).Result("$2").StartsWith("attachedpronoun:") Then
+            ElseIf Matches(Count).Result("$2").StartsWith("particle:") Then
+            ElseIf Matches(Count).Result("$2").StartsWith("noun:") Then
+            ElseIf Matches(Count).Result("$2").StartsWith("verb:") Then
+                '{MAKKAH} {SAWS} {RA} {BISMILLAH}
+                'ElseIf CachedData.IslamData.Abbreviations.FindIndex(Matches(Count).Result("$2")) <> 0 Then
             End If
         Next
         Return Renderer
