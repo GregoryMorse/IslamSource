@@ -2542,7 +2542,7 @@ Public Class Arabic
         For Count = 0 To Lines.Length - 1
             '"ā", "au", "ai", "ē", "ī", "ō", "ū", "t", "d", "ḳ", "š", "ṣ", "ḍ", "ṯ", "ẓ", "‘", "’"
             '".", "│"
-            Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(Lines(Count), "(\p{IsArabic}+)([1-6]?) ([^\s,]+)(?:,?)")
+            Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(Lines(Count), "(\p{IsArabic}+\s*―\s*\p{IsArabic}+)([1-6]?) ([^\s,]+\s*―\s*[^\s,]+)(?:,?)")
             For MatchCount = 0 To Matches.Count - 1
                 Dim Val As String = String.Empty
                 Dim Len As Integer = Matches(MatchCount).Groups(3).Value.Length - 1
@@ -2578,10 +2578,12 @@ Public Class Arabic
         Dim Count As Integer
         Dim Output(CachedData.IslamData.ArabicCombos.Length + 2) As Array
         Output(0) = New String() {}
-        Output(1) = New String() {String.Empty, "arabic", String.Empty, String.Empty}
+        Output(1) = New String() {"arabic", "arabic", String.Empty, String.Empty}
         Output(2) = New String() {Utility.LoadResourceString("IslamInfo_LetterName"), Utility.LoadResourceString("IslamInfo_Arabic"), Utility.LoadResourceString("IslamSource_ExtendedBuckwalter"), Utility.LoadResourceString("IslamInfo_Shaping")}
+        Dim Combos As IslamData.ArabicCombo() = CachedData.IslamData.ArabicCombos
+        Array.Sort(Combos, Function(Key As IslamData.ArabicCombo, NextKey As IslamData.ArabicCombo) Key.SymbolName.CompareTo(NextKey.SymbolName))
         For Count = 0 To CachedData.IslamData.ArabicCombos.Length - 1
-            Output(Count + 3) = New String() {String.Join(String.Empty, Array.ConvertAll(TransliterateFromBuckwalter(CachedData.IslamData.ArabicCombos(Count).SymbolName).ToCharArray(), Function(Ch As Char) TransliterateFromBuckwalter(CachedData.IslamData.ArabicLetters(FindLetterBySymbol(Ch)).SymbolName))), _
+            Output(Count + 3) = New String() {String.Join(" ", Array.ConvertAll(TransliterateFromBuckwalter(CachedData.IslamData.ArabicCombos(Count).SymbolName).ToCharArray(), Function(Ch As Char) TransliterateFromBuckwalter(CachedData.IslamData.ArabicLetters(FindLetterBySymbol(Ch)).SymbolName))), _
                                        TransliterateFromBuckwalter(CachedData.IslamData.ArabicCombos(Count).SymbolName), _
                                        CachedData.IslamData.ArabicCombos(Count).SymbolName,
                                        String.Join(", ", Array.ConvertAll(CachedData.IslamData.ArabicCombos(Count).Shaping, Function(Shape As Char) Shape + " " + CStr(AscW(Shape)) + " " + GetUnicodeName(Shape)))}
