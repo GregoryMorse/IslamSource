@@ -3149,6 +3149,14 @@ Public Class IslamData
     <System.Xml.Serialization.XmlArrayItem("category")> _
     Public VocabularyCategories() As VocabCategory
 
+    <System.Xml.Serialization.XmlArray("abbreviations")> _
+    <System.Xml.Serialization.XmlArrayItem("category")> _
+    Public Abbreviations() As VocabCategory
+
+    <System.Xml.Serialization.XmlArray("lists")> _
+    <System.Xml.Serialization.XmlArrayItem("category")> _
+    Public Lists() As VocabCategory
+
     Public Structure GrammarCategory
         Public Structure GrammarWord
             <System.Xml.Serialization.XmlAttribute("text")> _
@@ -3820,18 +3828,26 @@ Public Class DocBuilder
         If Strings = Nothing Then Return Renderer
         Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(Strings, "(.*?)(?:(\\\{)(.*?)(\\\})|$)")
         For Count As Integer = 0 To Matches.Count - 1
-            'text before and after reference matches needs rendering
-            'hadith reference matching {name,book/hadith}
-            If TanzilReader.IsQuranTextReference(Matches(Count).Result("$2")) Then
-                Renderer.Items.AddRange(TanzilReader.QuranTextFromReference(Matches(Count).Result("$2")).Items)
-            ElseIf Matches(Count).Result("$2").StartsWith("letter:") Then
-            ElseIf Matches(Count).Result("$2").StartsWith("pronoun:") Then
-            ElseIf Matches(Count).Result("$2").StartsWith("attachedpronoun:") Then
-            ElseIf Matches(Count).Result("$2").StartsWith("particle:") Then
-            ElseIf Matches(Count).Result("$2").StartsWith("noun:") Then
-            ElseIf Matches(Count).Result("$2").StartsWith("verb:") Then
-                '{MAKKAH} {SAWS} {RA} {BISMILLAH}
-                'ElseIf CachedData.IslamData.Abbreviations.FindIndex(Matches(Count).Result("$2")) <> 0 Then
+            If Matches(Count).Length <> 0 Then
+                If Matches(Count).Groups(1).Length <> 0 Then
+
+                End If
+                If Matches(Count).Groups(3).Length <> 0 Then
+                    'text before and after reference matches needs rendering
+                    'hadith reference matching {name,book/hadith}
+                    If TanzilReader.IsQuranTextReference(Matches(Count).Groups(3).Value) Then
+                        Renderer.Items.AddRange(TanzilReader.QuranTextFromReference(Matches(Count).Groups(3).Value).Items)
+                    ElseIf Matches(Count).Groups(3).Value.StartsWith("letter:") Then
+                    ElseIf Matches(Count).Groups(3).Value.StartsWith("personalpronoun:") Then
+                    ElseIf Matches(Count).Groups(3).Value.StartsWith("possessivedeterminerpersonalpronoun:") Then
+                    ElseIf Matches(Count).Groups(3).Value.StartsWith("particle:") Then
+                    ElseIf Matches(Count).Groups(3).Value.StartsWith("noun:") Then
+                    ElseIf Matches(Count).Groups(3).Value.StartsWith("verb:") Then
+                    ElseIf Matches(Count).Groups(3).Value.StartsWith("phrase:") Then
+                    ElseIf Matches(Count).Groups(3).Value.StartsWith("reference:") Then
+                    ElseIf Array.IndexOf(CachedData.IslamData.Abbreviations, Matches(Count).Groups(3).Value) <> 0 Then
+                    End If
+                End If
             End If
         Next
         Return Renderer
@@ -4625,11 +4641,11 @@ Public Class TanzilReader
         Doc.Save(Path)
     End Sub
     Public Shared Function IsQuranTextReference(Str As String) As Boolean
-        Return System.Text.RegularExpressions.Regex.Match(Str, "^(\d+)(?:\:(\d+))?(?:\:(\d+))?(?:-(\d+)(?:\:(\d+))?(?:\:(\d+))?)?$").Success
+        Return System.Text.RegularExpressions.Regex.Match(Str, "^(?:,?(\d+)(?:\:(\d+))?(?:\:(\d+))?(?:-(\d+)(?:\:(\d+))?(?:\:(\d+))?)?)+$").Success
     End Function
     Public Shared Function QuranTextFromReference(Str As String) As RenderArray
         Dim Renderer As New RenderArray
-        Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(Str, "^(\d+)(?:\:(\d+))?(?:\:(\d+))?(?:-(\d+)(?:\:(\d+))?(?:\:(\d+))?)?$")
+        Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(Str, "^(?:,?(\d+)(?:\:(\d+))?(?:\:(\d+))?(?:-(\d+)(?:\:(\d+))?(?:\:(\d+))?)?)+$")
         Dim Scheme As Arabic.TranslitScheme = CInt(HttpContext.Current.Request.QueryString.Get("translitscheme"))
         Dim TranslationIndex As Integer = GetTranslationIndex(HttpContext.Current.Request.QueryString.Get("qurantranslation"))
         Dim Reference As String
