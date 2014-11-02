@@ -220,6 +220,7 @@
 		</frame>
 		<frame name="arabicalphabet" description="IslamSource_ArabicAlphabet">
 			<static name="alphabet" description="" onrender="Arabic::DisplayAll"></static>
+			<static name="combos" description="" onrender="Arabic::DisplayCombo"></static>
 		</frame>
 	</page>
 	<page name="arabicnumbers" description="IslamSource_ArabicNumbers">
@@ -250,6 +251,11 @@
 			<button name="answer2" description="" onrender="Quiz::DisplayAnswer" onclick="Quiz::VerifyAnswer"></button>
 			<button name="answer3" description="" onrender="Quiz::DisplayAnswer" onclick="Quiz::VerifyAnswer"></button>
 			<button name="answer4" description="" onrender="Quiz::DisplayAnswer" onclick="Quiz::VerifyAnswer"></button>
+		</frame>
+	</page>
+	<page name="dictionary" description="IslamSource_Dictionary">
+		<frame name="dictionary" description="IslamSource_Dictionary">
+			<static name="dict" description="" onrender="Arabic::DisplayDict"></static>
 		</frame>
 	</page>
 	<page name="grammar" description="IslamSource_Grammar">

@@ -2532,14 +2532,70 @@ Public Class Arabic
         End If
         Return DirectCast(Output.ToArray(GetType(Array)), Array())
     End Function
+    Public Shared Function DisplayDict(ByVal Item As PageLoader.TextItem) As Array()
+        Dim Lines As String() = IO.File.ReadAllLines(Utility.GetFilePath("metadata\HansWeir.txt"))
+        Dim Count As Integer
+        Dim Words As New List(Of String())
+        Words.Add(New String() {})
+        Words.Add(New String() {"arabic", String.Empty})
+        Words.Add(New String() {Utility.LoadResourceString("IslamInfo_Arabic"), Utility.LoadResourceString("IslamInfo_Meaning")})
+        For Count = 0 To Lines.Length - 1
+            '"ā", "au", "ai", "ē", "ī", "ō", "ū", "t", "d", "ḳ", "š", "ṣ", "ḍ", "ṯ", "ẓ", "‘", "’"
+            '".", "│"
+            Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(Lines(Count), "(\p{IsArabic}+)([1-6]?) ([^\s,]+)(?:,?)")
+            For MatchCount = 0 To Matches.Count - 1
+                Dim Val As String = String.Empty
+                Dim Len As Integer = Matches(MatchCount).Groups(3).Value.Length - 1
+                For SubCount = Matches(MatchCount).Groups(1).Value.Length - 1 To 0 Step -1
+                    '()
+                    '" see "
+                    '"pl. -āt"
+                    If (Matches(MatchCount).Groups(3).Value(Len) = "a") Then
+                        Val = ArabicFatha + Val
+                    ElseIf (Matches(MatchCount).Groups(3).Value(Len) = "i") Then
+                        Val = ArabicKasra + Val
+                    ElseIf (Matches(MatchCount).Groups(3).Value(Len) = "u") Then
+                        Val = ArabicDamma + Val
+                    ElseIf (Matches(MatchCount).Groups(3).Value(Len) = "ā" Or Len <> 0 AndAlso ((Matches(MatchCount).Groups(3).Value(Len) = "i" Or Matches(MatchCount).Groups(3).Value(SubCount) = "u") And Matches(MatchCount).Groups(3).Value(SubCount - 1) = "a")) Then
+                        Val = ArabicFatha + Val
+                    ElseIf (Matches(MatchCount).Groups(3).Value(Len) = "ī" Or Matches(MatchCount).Groups(3).Value(Len) = "ē") Then
+                        Val = ArabicKasra + Val
+                    ElseIf (Matches(MatchCount).Groups(3).Value(Len) = "ū" Or Matches(MatchCount).Groups(3).Value(Len) = "ō") Then
+                        Val = ArabicDamma + Val
+                    ElseIf Len <> 0 AndAlso Matches(MatchCount).Groups(3).Value(Len) = Matches(MatchCount).Groups(3).Value(Len - 1) Then
+                        Val = ArabicShadda + Val
+                    ElseIf Matches(MatchCount).Groups(3).Value(Len) = "." Then
+                    Else
+                        Val = Matches(MatchCount).Groups(1).Value(SubCount) + Val
+                    End If
+                Next
+                Words.Add(New String() {Val})
+            Next
+        Next
+        Return Words.ToArray()
+    End Function
+    Public Shared Function DisplayCombo(ByVal Item As PageLoader.TextItem) As Array()
+        Dim Count As Integer
+        Dim Output(CachedData.IslamData.ArabicCombos.Length + 2) As Array
+        Output(0) = New String() {}
+        Output(1) = New String() {String.Empty, "arabic", String.Empty, String.Empty}
+        Output(2) = New String() {Utility.LoadResourceString("IslamInfo_LetterName"), Utility.LoadResourceString("IslamInfo_Arabic"), Utility.LoadResourceString("IslamSource_ExtendedBuckwalter"), Utility.LoadResourceString("IslamInfo_Shaping")}
+        For Count = 0 To CachedData.IslamData.ArabicCombos.Length - 1
+            Output(Count + 3) = New String() {String.Join(String.Empty, Array.ConvertAll(TransliterateFromBuckwalter(CachedData.IslamData.ArabicCombos(Count).SymbolName).ToCharArray(), Function(Ch As Char) TransliterateFromBuckwalter(CachedData.IslamData.ArabicLetters(FindLetterBySymbol(Ch)).SymbolName))), _
+                                       TransliterateFromBuckwalter(CachedData.IslamData.ArabicCombos(Count).SymbolName), _
+                                       CachedData.IslamData.ArabicCombos(Count).SymbolName,
+                                       String.Join(", ", Array.ConvertAll(CachedData.IslamData.ArabicCombos(Count).Shaping, Function(Shape As Char) Shape + " " + CStr(AscW(Shape)) + " " + GetUnicodeName(Shape)))}
+        Next
+        Return Output
+    End Function
     Public Shared Function DisplayAll(ByVal Item As PageLoader.TextItem) As Array()
         Dim Count As Integer
         Dim Output(CachedData.IslamData.ArabicLetters.Length + 2) As Array
         'Dim oFont As New Font(DefaultValue(HttpContext.Current.Request.QueryString.Get("fontcustom"), "Arial"), 13)
         'CheckIfCharInFont(CachedData.IslamData.ArabicLetters(Count).Symbol, oFont)
         Output(0) = New String() {}
-        Output(1) = New String() {"arabic", String.Empty, "arabic", String.Empty, String.Empty, String.Empty, String.Empty, String.Empty, String.Empty, String.Empty}
-        Output(2) = New String() {Utility.LoadResourceString("IslamInfo_LetterName"), Utility.LoadResourceString("IslamInfo_UnicodeName"), Utility.LoadResourceString("IslamInfo_Arabic"), Utility.LoadResourceString("IslamInfo_UnicodeValue"), Utility.LoadResourceString("IslamSource_ExtendedBuckwalter"), Utility.LoadResourceString("IslamSource_EnglishRomanized"), Utility.LoadResourceString("IslamSource_PlainRoman"), Utility.LoadResourceString("IslamInfo_Terminating"), Utility.LoadResourceString("IslamInfo_Connecting"), Utility.LoadResourceString("IslamInfo_Assimilate")}
+        Output(1) = New String() {"arabic", String.Empty, "arabic", String.Empty, String.Empty, String.Empty, String.Empty, String.Empty, String.Empty, String.Empty, String.Empty}
+        Output(2) = New String() {Utility.LoadResourceString("IslamInfo_LetterName"), Utility.LoadResourceString("IslamInfo_UnicodeName"), Utility.LoadResourceString("IslamInfo_Arabic"), Utility.LoadResourceString("IslamInfo_UnicodeValue"), Utility.LoadResourceString("IslamSource_ExtendedBuckwalter"), Utility.LoadResourceString("IslamSource_EnglishRomanized"), Utility.LoadResourceString("IslamSource_PlainRoman"), Utility.LoadResourceString("IslamInfo_Terminating"), Utility.LoadResourceString("IslamInfo_Connecting"), Utility.LoadResourceString("IslamInfo_Assimilate"), Utility.LoadResourceString("IslamInfo_Shaping")}
         For Count = 0 To CachedData.IslamData.ArabicLetters.Length - 1
             Output(Count + 3) = New String() {Arabic.RightToLeftMark + TransliterateFromBuckwalter(CachedData.IslamData.ArabicLetters(Count).SymbolName), _
                                               GetUnicodeName(CachedData.IslamData.ArabicLetters(Count).Symbol), _
@@ -2550,7 +2606,8 @@ Public Class Arabic
                                        CachedData.IslamData.ArabicLetters(Count).PlainRoman, _
                                        CStr(CachedData.IslamData.ArabicLetters(Count).Terminating), _
                                        CStr(CachedData.IslamData.ArabicLetters(Count).Connecting), _
-                                       CStr(CachedData.IslamData.ArabicLetters(Count).Assimilate)}
+                                       CStr(CachedData.IslamData.ArabicLetters(Count).Assimilate),
+                                       If(CachedData.IslamData.ArabicLetters(Count).Shaping = Nothing, String.Empty, String.Join(", ", Array.ConvertAll(CachedData.IslamData.ArabicLetters(Count).Shaping, Function(Shape As Char) Shape + " " + CStr(AscW(Shape)) + " " + GetUnicodeName(Shape))))}
         Next
         Return Output
     End Function
@@ -3108,7 +3165,28 @@ Public Class IslamData
     <System.Xml.Serialization.XmlArray("grammar")> _
     <System.Xml.Serialization.XmlArrayItem("category")> _
     Public GrammarCategories() As GrammarCategory
-
+    Public Structure ArabicCombo
+        <System.Xml.Serialization.XmlAttribute("symbolname")> _
+        Public SymbolName As String
+        <System.Xml.Serialization.XmlAttribute("uname")> _
+        Public UnicodeName As String
+        Public Shaping() As Char
+        <System.Xml.Serialization.XmlAttribute("shaping")> _
+        Property ShapingParse As String
+            Get
+                If Shaping.Length = 0 Then Return String.Empty
+                Return String.Join(","c, Array.ConvertAll(Shaping, Function(Ch As Char) Asc(Ch).ToString("X2")))
+            End Get
+            Set(value As String)
+                If Not value Is Nothing Then
+                    Shaping = Array.ConvertAll(value.Split(","c), Function(Str As String) ChrW(Integer.Parse(Str, System.Globalization.NumberStyles.HexNumber)))
+                End If
+            End Set
+        End Property
+    End Structure
+    <System.Xml.Serialization.XmlArray("arabiccombos")> _
+    <System.Xml.Serialization.XmlArrayItem("combo")> _
+    Public ArabicCombos() As ArabicCombo
     Public Structure ArabicSymbol
         <System.Xml.Serialization.XmlAttribute("symbolname")> _
         Public SymbolName As String
@@ -3125,6 +3203,7 @@ Public Class IslamData
             End Set
         End Property
         Public Shaping() As Char
+        <System.Xml.Serialization.XmlAttribute("shaping")> _
         Property ShapingParse As String
             Get
                 If Shaping.Length = 0 Then Return String.Empty

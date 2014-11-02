@@ -402,6 +402,9 @@
   <data name="IslamSource_ArabicAlphabet" xml:space="preserve">
     <value>Arabic Alphabet</value>
   </data>
+  <data name="IslamSource_Dictionary" xml:space="preserve">
+    <value>Dictionary</value>
+  </data>
   <data name="IslamSource_ArabicToRoman" xml:space="preserve">
     <value>Arabic To Roman</value>
   </data>
