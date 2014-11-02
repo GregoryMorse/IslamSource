@@ -886,19 +886,19 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="{l~atiy" id="ThoseWho" grammar="bp"></word>
 		</category>
 		<category title="PersonalPronouns">
-			<word text="&gt;anaA" id="I" grammar="1ms|1fs"></word>
-			<word text="naHonu" id="We" grammar="1md|1fd|1mp|1fp"></word>
+			<word text="&gt;anaA" id="IMe" grammar="1ms|1fs"></word>
+			<word text="naHonu" id="WeUs" grammar="1md|1fd|1mp|1fp"></word>
 			<word text="&gt;anta" id="You" grammar="2ms"></word>
 			<word text="&gt;anoti" id="You" grammar="2fs"></word>
 			<word text="&gt;antumaA" id="YouTwo" grammar="2md|2fd"></word>
 			<word text="&gt;antum" id="YouAll" grammar="2mp"></word>
 			<word text="&gt;antun~a" id="YouAll" grammar="2fp"></word>
-			<word text="huwa" id="He" grammar="3ms"></word>
-			<word text="hiya" id="She" grammar="3fs"></word>
+			<word text="huwa" id="HeHimIt" grammar="3ms"></word>
+			<word text="hiya" id="SheHerIt" grammar="3fs"></word>
 			<word text="humaA" id="ThoseTwo" grammar="3md|3fd"></word>
-			<word text="humo" id="Them" grammar="3mp"></word>
-			<word text="hun~a" id="They" grammar="3fp"></word>
-			<word text="hiya" id="They" grammar="3bp"></word>
+			<word text="humo" id="TheyThem" grammar="3mp"></word>
+			<word text="hun~a" id="TheyThem" grammar="3fp"></word>
+			<word text="hiya" id="TheyThem" grammar="3bp"></word>
 		</category>
 		<category title="PossessiveDeterminerPersonalPronouns">
 			<word text="yo iy niy" id="My" grammar="1ms|1fs"></word>
@@ -999,7 +999,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="&gt;ay~u" id="Which"></word>
 			<word text="&gt;an~aY" id="WhereFromWhy"></word>
 			<word text="&gt;a" id="IsAmAreDoHave"></word>
-			<word text="hal" id="IsAmAreDoHave"></word>
+			<word text="halo" id="IsAmAreDoHave"></word>
 			<word text="maA*aA" id="What"></word>
 			<word text="lima" id="Why"></word>
 			<word text="limaA*aA" id="Why"></word>
@@ -1021,13 +1021,13 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 		</category>
 		<category title="TimePrepositions">
 			<word text="qabola" id="Before" grammar="pos"></word>
-			<word text="naEod" id="After"></word>
+			<word text="naEodo" id="After"></word>
 			<word text="HiynN HiynFA" id="TimePeriodAtTheTimeOfForAPeriodOfTime" grammar="pos"></word>
 			<word text="&lt;i*" id="WhenForPast"></word>
 			<word text="&lt;i*aA &lt;i*aFA" id="WhenForFutureTherefore" grammar="acc"></word>
 			<word text="vum~a" id="Then"></word>
 			<word text="fa" id="ThenThusTherefore"></word>
-			<word text="bal" id="NayRatherButHowever"></word>
+			<word text="balo" id="NayRatherButHowever"></word>
 			<word text="Einda ladaY laduno" id="NearWith"></word>
 			<word text="&lt;ino &lt;il~aA" id="NothingBut"></word>
 			<word text="maA &lt;il~aA" id="NothingBut"></word>
@@ -1085,7 +1085,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="{lo" id="The"></word>
 			<word text="&gt;amo" id="Or"></word>
 			<word text="&gt;awo" id="Or"></word>
-			<word text="baEoD" id="SomeOfAfter" grammar="pos"></word>
+			<word text="baEoDo" id="SomeOfAfter" grammar="pos"></word>
 			<word text="kul~u kilaA" id="EveryoneAll"></word>
 		</category>
 		<category title="Particles">
@@ -1111,7 +1111,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 
 			<word text="waraA^&apos;a" id="Behind" grammar="pos"></word>
 			<word text="fawoqa" id="Above" grammar="pos"></word>
-			<word text="Einda" id="With" grammar="pos"></word>
+			<word text="Einda" id="WithNear" grammar="pos"></word>
 
 			<word text="SabaAHFA" id="Morning" grammar="pos"></word>
 			<word text="baEoda" id="After" grammar="pos"></word>
@@ -1266,7 +1266,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="ba&gt;osN" plural="" id="PunishmentPowerAdversity"></word>
 			<word text="HaraAmN" plural="HurumN" id="Unlawful"></word>
 			<word text="" plural="jamiyEN" id="AllEverybody"></word>
-			<word text="&lt;isomN" plural="&gt;asomaA^&apos;N" id="Name"></word>
+			<word text="&lt;isomN" plural="&gt;asomaA^&apos;N" id="NounName"></word>
 			<word text="sawaA^&apos;N" plural="" id="SameEqualLevelFair"></word>
 			<word text="HadiyvN" plural="&gt;aHaAdiyvN" id="DiscourseSpeech"></word>
 			<word text="fariyqN" plural="furaqaA^&apos;N" id="PartyGroup"></word>
@@ -1295,7 +1295,8 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="&gt;axN" plural="&gt;axuw &gt;axaA &gt;axiy &lt;ixowaAnN" id="Brother"></word>
 			<word text="quw~apN" plural="" id="PowerStrength"></word>
 			<word text="&gt;um~apN" plural="&gt;umamN" id="Community"></word>
-			<word text="bayotN" plural="buyuwtN" id="House"></word>
+			<word text="bayotN" plural="buyuwtN" id="HouseHome"></word>
+			<word text="falsN" plural="fuluwsN" id="Money"></word>
 			<word text="qawomN" plural="&gt;aqowaAmN" id="People"></word>
 			<word text="daArN" plural="diyaArN" id="Abode"></word>
 			<word text="&lt;insaAnN" plural="" id="Man"></word>
@@ -1343,7 +1344,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="vaAbitN" plural="" id="FixedStationary"></word>
 			<word text="SaAdiqN" plural="SaAdiquwna" id="TruthfulPerson"></word>
 			<word text="kul~N" plural="kilaA" id="EachAll"></word>
-			<word text="madiynapN" plural="mudunN madaA{inN" id="City"></word>
+			<word text="madiynapN" plural="mudunN madaA{inN" id="TownCity"></word>
 			<word text="kaviyrN" plural="" id="Many"></word>
 			<word text="naxolapN" plural="naxolN naxiylN" id="DatePalm"></word>
 			<word text="qaliylN" plural="" id="LittleQuantity"></word>
@@ -1958,18 +1959,22 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="fitorapN" id=""></word>
 		</category>
 		<category title="RegularWords">
-			<word text="{ld~arosu" id="Lesson"></word>
+			<word text="darosN" id="Lesson"></word>
 			<word text="{lomaEonaY" id="Meaning"></word>
-			<word text="{lomuforadaAtu" id="Vocabulary"></word>
-			<word text="{lt~adoriybaAtu" id="Drill"></word>
-			<word text="{loqawaAEidu" id="GrammarRules"></word>
-			<word text="{lt~amriynaAtu" id="Exercise"></word>
+			<word text="muforadaAtN" id="Vocabulary"></word>
+			<word text="tanowiynN" id="Nunation"></word>
+			<word text="Dam~apN" id="SmallCurlLikeDiacriticPlacedAboveLetterToRepresentShortU"></word>
+			<word text="kasorapN" id="SmallDiagonalLinePlacedBelowLetterToRepresentShortI"></word>
+			<word text="fatoHapN" id="SmallDiagonalLinePlacedAboveLetterToRepresentShortA"></word>
+			<word text="tadoriybaAtN" id="Drill"></word>
+			<word text="qawaAEidN" id="GrammarRules"></word>
+			<word text="tamriynaAtN" id="Exercise"></word>
 			<word text="SifapN" id="Adjective"></word>
 			<word text="mawoSuwfN" id="NounBeingModified"></word>
 			<word text="mu*ak~arN" id="Masculine"></word>
 			<word text="mu&amp;an~avN" id="Feminine"></word>
 			<word text="bayotN" plural="buyuwtN" id="HouseHome"></word>
-			<word text="faSolN" plural="fuSuwlN" id="ClassClassroom"></word>
+			<word text="faSolN" plural="fuSuwlN" id="ClassClassroomSeason"></word>
 			<word text="kitaAb" plural="kutub" id="Book"></word>
 			<word text="mudar~isN" plural="mudar~isuwna" id="Teacher"></word>
 			<word text="mudar~isapN" plural="mudar~isaAtN" grammar="f" id="Teacher"></word>
@@ -1977,7 +1982,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="TaAlibN" plural="TulaAbN" id="Student"></word>
 			<word text="TaAlibapN" plural="TaAlibaAtN" grammar="f" id="Student"></word>
 			<word text="qalamN" plural="&gt;aqolaAmN" id="Pen"></word>
-			<word text="madiynapN" plural="mudunN" grammar="f" id="City"></word>
+			<word text="madiynapN" plural="mudunN" grammar="f" id="TownCity"></word>
 			<word text="&gt;aroDN" grammar="f" id="GroundEarth"></word>
 			<word text="$amosN" grammar="f" id="Sun"></word>
 			<word text="yadN" grammar="f" id="Hand"></word>
@@ -1992,16 +1997,21 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="musolimN" plural="musolimuwna" id="Muslim"></word>
 			<word text="&gt;ajorN" id="Reward"></word>
 			<word text="Ealiy~N" id="Transcendent"></word>
+			<word text="muHar~amN" id="Consecrated"></word>
 			<word text="jid~FA" id="Very"></word>
 			<word text="muHam~adN" id="Muhammad"></word>
+			<word text="HasanN" id="Hasan"></word>
+			<word text="&gt;aliy~N" id="Ali"></word>
 			<word text="xaAlidN" id="Khaalid"></word>
 			<word text="saAlimN" id="Saalim"></word>
+			<word text="TaloHapu" id="Talha"></word>
+			<word text="Eurowapu" id="Orwa"></word>
 			<word text="Safiy~apu" grammar="f" id="Safeeyah"></word>
 			<word text="xadiyjapu" grammar="f" id="Khadeejah"></word>
 			<word text="&gt;amiynapu" grammar="f" id="Ameenah"></word>
 			<word text="maroyamu" grammar="f" id="Mary"></word>
-			<word text="faATimapu" grammar="f" id="Faatimah"></word>
-			<word text="EaA}i$apu" grammar="f" id="Aaishah"></word>
+			<word text="faATimapu" grammar="f" id="Fatima"></word>
+			<word text="EaA}i$apu" grammar="f" id="Aisha"></word>
 			<word text="&gt;amoriykaA" id="America"></word>
 			<word text="{lS~iynu" id="China"></word>
 			<word text="soriylaAnkaA" id="SriLanka"></word>
@@ -2193,6 +2203,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 
 			<word text="Eaqada" id="ConsolidationAffirmationHoldingTogether"></word>
 			<word text="waH~ada" id="UniteUnifyConsolidate"></word>			
+			<word text="tuxorijuwA" id="Expel"></word>
 		</category>
 		<category title="RepresentativeStems">
 			<word text="fEl" id=""></word>
@@ -2251,7 +2262,6 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="SifapN" plural="SifaAtN" id="Adjective"></word>
 			<word text="DamiyrN" plural="DamaA{irN" id="Pronoun"></word>
 			<word text="fiEolN" plural="&gt;afoEaAlN" id="Verb"></word>
-			<word text="&lt;isomN" plural="&gt;asomaA^&apos;N" id="Noun"></word>
 			<word text="maSodarN" plural="maSaAdirN" id="VerbalNoun"></word>
 			<word text="&lt;iEoraAbN" id="Declension"></word>
 			<word text="binaA^&apos;N" id="Construction"></word>
@@ -2280,9 +2290,9 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="rafoEN" id="NominativeState"></word>
 			<word text="naSobN" id="AccusativeState"></word>
 			<word text="jar~N" id="PossessiveState"></word>
-			<word text="marofuwEN" id="Nominative"></word>
-			<word text="manSuwbN" id="Accusative"></word>
-			<word text="majoruwrN" id="Possessive"></word>
+			<word text="marofuwEN" id="NominativeCase"></word>
+			<word text="manSuwbN" id="AccusativeCase"></word>
+			<word text="majoruwrN" id="PossessiveCase"></word>
 			<word text="{loEadadu" id="NumberPlurality"></word>
 			<word text="{lojinsu" id="Gender"></word>
 			<word text="{loqisomu" id="Definiteness"></word>
@@ -2325,11 +2335,11 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="{lobolaAgapu" id="StudyOfRhetoricEloquence"></word>
 			<word text="taA^&apos;N {lomarobuwtapu" id="TheTaaOfFemininity"></word>
 			<word text="{lojar~u wa {lomajoruwru" id="PossessiveConstruction"></word>
-			<word text="jumolapN &lt;isomiy~apu" id="NominalSentence"></word>
+			<word text="{lojumolapu {lo&lt;isomiy~apu" id="NominalSentence"></word>
 			<word text="&gt;anowaAEu {lojumalu" id="NominalSentence"></word>
 			<word text="jumolapN fiEoliy~apN" id="VerbalSentence"></word>
 			<word text="jawaAbN {l$~aroTu" id="ResponseStatementAfterCondition"></word>
-			<word text="xabarN" id="Predicate"></word>
+			<word text="{loxabaru" id="Predicate"></word>
 			<word text="ZuruwfN" id="PossessionConstructionLikeNouns"></word>
 			<word text="Zarofu {lomakaAnu" id="RelativePlaceNouns"></word>
 			<word text="Zarofu {lr~amaAnu" id="RelativeTimeNouns"></word>
@@ -2354,7 +2364,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="laA {ln~aAfiyapu" id="NegationParticle"></word>
 			<word text="laA {ln~ahiy~apu" id="NegativeCommand"></word>
 			<word text="{lomu}an~avu" id="Feminine"></word>
-			<word text="mubotada&gt;a" id="SubjectNominalSentence"></word>
+			<word text="{lomubotada&gt;u" id="SubjectNominalSentence"></word>
 			<word text="muvanaY" id="Dual"></word>
 			<word text="majoruwrN" id="NounInPossessiveState"></word>
 			<word text="majohuwlN" id="Passive"></word>
@@ -2406,7 +2416,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="miymN saAkinapN &lt;idogaAmN mutamaAviliyna SagiyrN" id="VowellessMeemAssimilatingSmallIdentical"></word>
 			<word text="miymN saAkinapN &lt;iZohaArN $afawiy" id="VowellessMeemClear"></word>
 			<word text="miymN saAkinapN &lt;iZohaArN &gt;a$ad~ $afawiy" id="VowellessMeemClearGreater"></word>
-			<word text="hamozapN waSolN" id="EmptyHamza"></word>
+			<word text="hamozapN {lowaSolu" id="EmptyHamza"></word>
 			<word text="la&apos;aAmN {lofaEolu" id="LaamVerb"></word>
 			<word text="la&apos;aAmN {loHarofu" id="LaamParticle"></word>
 			<word text="&lt;idogaAmu {ll~a&apos;aAmu $~amosiy~a" id="AssimilateLaamSunLetter"></word>
@@ -2756,17 +2766,17 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="Eumar {bonu {loxaT~aAb" id="UmarBinAlKhattab"></word>
 			<word text="EuvomaAn {bonu EafaAn" id="UthmanBinAffan"></word>
 			<word text="Ealiy {bonu &gt;abiy TaAlib" id="AliBinAbiTalib"></word>
-			<word text="{loHasan {bonu Ealiy {bonu &gt;abiy TaAlib‎" id="HasanBinAli"></word>
-			<word text="{loHus~ayon {bonu Ealiy {bonu &gt;abiy TaAlib" id="HusseinBinAli"></word>
+			<word text="{loHasan {bonu Ealiy~N {bonu &gt;abiy TaAlib‎" id="HasanBinAli"></word>
+			<word text="{loHus~ayon {bonu Ealiy~N {bonu &gt;abiy TaAlib" id="HusseinBinAli"></word>
 			<word text="Ealiy {bonu {loHus~ayon" id="AliBinHussein"></word>
-			<word text="muHam~adN {bonu Ealiy {lobaAqir" id="MuhammadBinAli"></word> 
+			<word text="muHam~adN {bonu Ealiy~N {lobaAqir" id="MuhammadBinAli"></word> 
 			<word text="jaEfar {bonu muHam~adN {lS~aAdiq‎" id="JafarBinMuhammad"></word>
 			<word text="muwsaY {bonu jaEfar {lokaAZim‎" id="MusaBinJafar"></word>
 			<word text="faATimapu {bonu muHam~ad" id="FatimaBinMuhammad"></word>
 			<word text="Ealiy {bonu muwsaY {lr~iDaA‎" id="AliBinMusa"></word>
 			<word text="{lo&lt;imaAm muHam~adN {lt~aqiy {lojawaAd" id="MuhammadBinAli"></word>
 			<word text="Ealiy {lohaAdiy {ln~aqiy‎" id="AliBinMuhammad"></word>
-			<word text="{loHasan {loEaskariy {bonu Ealiy {bonu muHam~ad" id="HasanBinAli"></word>
+			<word text="{loHasan {loEaskariy {bonu Ealiy~N {bonu muHam~ad" id="HasanBinAli"></word>
 			<word text="muHam~adN {bonu {loHasan {lomahdiy" id="MuhammadBinAlHasan"></word>
 			<word text="TaloHapN {bonu Eabayd {ll~ah‎" id="TalhaBinObaidullah"></word>
 			<word text="{lz~ubayor {bonu {loEawaAm {bonu xuwayolid" id="AzZubayrbinAlAwam"></word>
@@ -2846,7 +2856,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 		<category title="Categories">
 			<word text="\{word:\}" id="ScienceOfFiqh"></word>
 			<word text="\{word:\}" id="RulesOfFiqh"></word>
-			<word text="\{word:\}" id="Arabic"></word>
+			<word text="\{letter:Alef,Beh,Teh,Theh,Jeem,Hah,Khah,Dal,Thal,Reh,Zain,Seen,Sheen,Sad,Dad,Tah,Zah,Ain,Ghain,Feh,Qaf,Kaf,Lam,Meem,Noon,Heh,Waw,Yeh,AlefWasla,AlefMaksura,TehMarbuta,Fathatan,Dammatan,Kasratan,Fatha,Damma,Kasra,Sukun\}\{attachedpronouns\}\{word:Lesson,First,Meaning,NounName,Vocabulary,Drill,Nunation,NominativeCase,PossessiveCase,SmallCurlLikeDiacriticPlacedAboveLetterToRepresentShortU,SmallDiagonalLinePlacedBelowLetterToRepresentShortI,SmallDiagonalLinePlacedAboveLetterToRepresentShortA,SubjectNominalSentence,Predicate,Adjective,WordBeingDescribed,Possession,GrammarRules,Masculine,Feminine,NamesOfCountries,In,The,From,UponOn,IsAmAreDoHave,Where,WhoTheOneWho,OutOfWhat,WithNear,IMe,WeUs,You,YouAll,HeHimIt,SheHerIt,TheyThem,No,Yes,HouseHome,ClassClassroomSeason,Student,Teacher,School,Book,Pen,TownCity,GroundEarth,Sun,Hand,Chair,Peace,Muslim,Table,Money,Transcendent,Consecrated,LargeOld,SmallYoung,New,Old,Very,Muhammad,Hasan,Ali,Khaalid,Saalim,Talha,Orwa,Safeeyah,Khadeejah,Ameenah,Mary,Fatima,Aisha,Pharoah,Moses,China,GreatBritain,Philippines,Jordan,Iraq,Pakistan,Kenya,SaudiArabia,France,Sudan,America,SriLanka,Canada,India,Algeria,Indonesia,Germany,Emirates,Kuwait,Morocco,Egypt,Tunisia,Lebanon,Jeddah,Makkah,Beirut,Amman\}\{verb:Expel\}\{phrase:PeaceBeUponYou,NominalSentence,EmptyHamza\}\{17:93,24:36,4:15,20:14,4:156,12:21,3:78,65:1,45:29,12:23,3:49,4:100,10:90,67:12,31:30,12:6,14:37,27:64,2:221\}" id="ArabicMidterm101"></word>
 			<word text="\{word:\}" id="Aqeedah"></word>
 			<word text="\{word:\}" id="Seerah"></word>
 			<word text="\{word:\}" id="Tafseer"></word>
