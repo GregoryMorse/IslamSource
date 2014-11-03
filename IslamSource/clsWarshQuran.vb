@@ -177,13 +177,13 @@
         Public Function Compare(x As ArrayList, y As ArrayList) As Integer Implements IComparer(Of ArrayList).Compare
             'If x(3) = y(3) Then Return 0
             'Return If(x(3) > y(3), 1, -1)
-            If x(1) = y(1) Then
-                If x(0) = y(0) Then
+            If CSng(x(1)) = CSng(y(1)) Then
+                If CSng(x(0)) = CSng(y(0)) Then
                     Return 1
                 End If
-                Return If(x(0) > y(0), -1, 1)
+                Return If(CSng(x(0)) > CSng(y(0)), -1, 1)
             End If
-            Return If(x(1) > y(1), -1, 1)
+            Return If(CSng(x(1)) > CSng(y(1)), -1, 1)
         End Function
     End Class
     Shared Function ParseQuran() As String
@@ -224,7 +224,7 @@
         Dim bNextPage As Boolean = False
         For Count As Integer = 0 To 360 'Lines.Length - 1
             Dim Vals(11) As String
-            Vals(0) = System.Text.Encoding.Default.GetString(Lines, Pos, Array.IndexOf(Lines, CByte(Asc(","c)), Pos) - Pos).Trim("""")
+            Vals(0) = System.Text.Encoding.Default.GetString(Lines, Pos, Array.IndexOf(Lines, CByte(Asc(","c)), Pos) - Pos).Trim(""""c)
             Pos = Array.IndexOf(Lines, CByte(Asc(","c)), Pos) + 1
             Vals(1) = System.Text.Encoding.Default.GetString(Lines, Pos, Array.IndexOf(Lines, CByte(Asc(","c)), Pos) - Pos)
             Pos = Array.IndexOf(Lines, CByte(Asc(","c)), Pos) + 1
@@ -247,7 +247,7 @@
             Vals(10) = System.Text.Encoding.Default.GetString(Lines, Pos, Array.IndexOf(Lines, CByte(Asc(","c)), Pos) - Pos)
             Pos = Array.IndexOf(Lines, CByte(Asc(","c)), Pos) + 1
             If Vals(0) = "BAMCBO+TimesNewRomanPSMT" Then
-                Vals(11) = System.Text.Encoding.Unicode.GetString(System.Text.Encoding.Convert(System.Text.Encoding.UTF8, System.Text.Encoding.Unicode, Lines, Pos, Array.IndexOf(Lines, CByte(Asc(vbCr)), Pos) - Pos)).Trim("""")
+                Vals(11) = System.Text.Encoding.Unicode.GetString(System.Text.Encoding.Convert(System.Text.Encoding.UTF8, System.Text.Encoding.Unicode, Lines, Pos, Array.IndexOf(Lines, CByte(Asc(vbCr)), Pos) - Pos)).Trim(""""c)
                 Pos = Array.IndexOf(Lines, CByte(Asc(vbLf)), Pos) + 1
                 Dim Idx As Integer = 0
                 If Vals(11).Replace(" ", String.Empty) <> String.Empty Or Vals(11) = " " Then
@@ -259,10 +259,10 @@
                 If Not bNextPage And Vals(11).Length > 1 And Vals(11).Length < 10 And Vals(11).Replace(" ", String.Empty) = String.Empty Then
                     'Idx = Array.IndexOf(Bytes, " "c)
                     'Bytes(Idx) = ChrW(0)
-                    If Chars.Count <> 0 Then Chars.Add(New ArrayList From {CSng(Vals(7)), CSng(Vals(8)) - If(CSng(Vals(8)) - 0.6571 = Chars(Chars.Count - 1)(1), 0.6571, 0.657), Vals(11), Idx})
+                    If Chars.Count <> 0 Then Chars.Add(New ArrayList From {CSng(Vals(7)), CSng(Vals(8)) - If(CSng(Vals(8)) - 0.6571 = CSng(CType(Chars(Chars.Count - 1), ArrayList)(1)), 0.6571, 0.657), Vals(11), Idx})
                 End If
                 If Vals(11) = " " Then
-                    If Chars.Count <> 0 Then Chars.Add(New ArrayList From {CSng(Vals(7)), CSng(Vals(8)) - If(CSng(Vals(8)) - 0.6571 = Chars(Chars.Count - 1)(1), 0.6571, 0.657), Vals(11), Idx})
+                    If Chars.Count <> 0 Then Chars.Add(New ArrayList From {CSng(Vals(7)), CSng(Vals(8)) - If(CSng(Vals(8)) - 0.6571 = CSng(CType(Chars(Chars.Count - 1), ArrayList)(1)), 0.6571, 0.657), Vals(11), Idx})
                 End If
             Else
                 Dim CurDict As Dictionary(Of String, Integer()) = Nothing
@@ -279,7 +279,7 @@
                 ElseIf Vals(0) = "BAMDFB+HQPB7" Then
                     CurDict = Arr7
                 Else
-                    Vals(11) = System.Text.Encoding.Unicode.GetString(System.Text.Encoding.Convert(System.Text.Encoding.UTF8, System.Text.Encoding.Unicode, Lines, Pos, Array.IndexOf(Lines, CByte(Asc(vbCr)), Pos) - Pos)).Trim("""")
+                    Vals(11) = System.Text.Encoding.Unicode.GetString(System.Text.Encoding.Convert(System.Text.Encoding.UTF8, System.Text.Encoding.Unicode, Lines, Pos, Array.IndexOf(Lines, CByte(Asc(vbCr)), Pos) - Pos)).Trim(""""c)
                     Pos = Array.IndexOf(Lines, CByte(Asc(vbLf)), Pos) + 1
                     If Vals(11).Replace(" ", String.Empty) <> String.Empty Or Vals(11) = " " Then
                         For SubCount = Vals(11).Length - 1 To 0 Step -1
@@ -300,7 +300,7 @@
 
                         End If
                     End If
-                    Vals(11) = System.Text.Encoding.Unicode.GetString(System.Text.Encoding.Convert(System.Text.Encoding.UTF8, System.Text.Encoding.Unicode, Lines, Pos, Array.IndexOf(Lines, CByte(Asc(vbCr)), Pos) - Pos)).Trim("""")
+                    Vals(11) = System.Text.Encoding.Unicode.GetString(System.Text.Encoding.Convert(System.Text.Encoding.UTF8, System.Text.Encoding.Unicode, Lines, Pos, Array.IndexOf(Lines, CByte(Asc(vbCr)), Pos) - Pos)).Trim(""""c)
                     Pos = Array.IndexOf(Lines, CByte(Asc(vbLf)), Pos) + 1
                     Dim privateFonts As New System.Drawing.Text.PrivateFontCollection()
                     privateFonts.AddFontFile("..\..\..\IslamMetadata\" + Vals(0) + ".ttf")
@@ -345,53 +345,53 @@
                 End If
             End If
         Next
-        Dim SortChars As ArrayList() = Chars.ToArray(GetType(ArrayList))
+        Dim SortChars As ArrayList() = CType(Chars.ToArray(GetType(ArrayList)), ArrayList())
         Array.Sort(SortChars, New CompareChar)
         ParseQuran = Nothing
         For Count As Integer = 0 To SortChars.Length - 1
-            If SortChars(Count)(2) = "A" AndAlso SortChars(Count + 1)(2) = "{" Then
-            ElseIf SortChars(Count)(2) = "llh" Then
-            ElseIf SortChars(Count)(2) = "i~ai" Or SortChars(Count)(2) = "~i~ai" Then
-                If SortChars(Count - 1)(2) = "llh" Then
-                    ParseQuran += SortChars(Count - 1)(2).Chars(0) + SortChars(Count)(2).Chars(0)
-                    If SortChars(Count)(2).Chars(0) = "~" Then
-                        ParseQuran += SortChars(Count)(2).Chars(1)
+            If CStr(SortChars(Count)(2)) = "A" AndAlso CStr(SortChars(Count + 1)(2)) = "{" Then
+            ElseIf CStr(SortChars(Count)(2)) = "llh" Then
+            ElseIf CStr(SortChars(Count)(2)) = "i~ai" Or CStr(SortChars(Count)(2)) = "~i~ai" Then
+                If CStr(SortChars(Count - 1)(2)) = "llh" Then
+                    ParseQuran += CStr(SortChars(Count - 1)(2)).Chars(0) + CStr(SortChars(Count)(2)).Chars(0)
+                    If CStr(SortChars(Count)(2)).Chars(0) = "~" Then
+                        ParseQuran += CStr(SortChars(Count)(2)).Chars(1)
                     End If
-                    ParseQuran += SortChars(Count - 1)(2).Chars(1)
-                    ParseQuran += SortChars(Count)(2).Chars(If(SortChars(Count)(2).Chars(0) = "~", 2, 1)) + SortChars(Count)(2).Chars(If(SortChars(Count)(2).Chars(0) = "~", 3, 2))
-                    ParseQuran += SortChars(Count - 1)(2).Chars(2)
-                    ParseQuran += SortChars(Count)(2).Chars(If(SortChars(Count)(2).Chars(0) = "~", 4, 3))
+                    ParseQuran += CStr(SortChars(Count - 1)(2)).Chars(1)
+                    ParseQuran += CStr(SortChars(Count)(2)).Chars(If(CStr(SortChars(Count)(2)).Chars(0) = "~", 2, 1)) + CStr(SortChars(Count)(2)).Chars(If(CStr(SortChars(Count)(2)).Chars(0) = "~", 3, 2))
+                    ParseQuran += CStr(SortChars(Count - 1)(2)).Chars(2)
+                    ParseQuran += CStr(SortChars(Count)(2)).Chars(If(CStr(SortChars(Count)(2)).Chars(0) = "~", 4, 3))
                 Else
-                    ParseQuran += SortChars(Count)(2).Chars(0)
-                    If SortChars(Count)(2).Chars(0) = "~" Then
-                        ParseQuran += SortChars(Count)(2).Chars(1)
+                    ParseQuran += CStr(SortChars(Count)(2)).Chars(0)
+                    If CStr(SortChars(Count)(2)).Chars(0) = "~" Then
+                        ParseQuran += CStr(SortChars(Count)(2)).Chars(1)
                     End If
-                    ParseQuran += SortChars(Count + 1)(2)
-                    ParseQuran += SortChars(Count)(2).Chars(If(SortChars(Count)(2).Chars(0) = "~", 2, 1)) + SortChars(Count)(2).Chars(If(SortChars(Count)(2).Chars(0) = "~", 3, 2))
-                    ParseQuran += SortChars(Count + 2)(2)
-                    ParseQuran += SortChars(Count)(2).Chars(If(SortChars(Count)(2).Chars(0) = "~", 4, 3))
+                    ParseQuran += CStr(SortChars(Count + 1)(2))
+                    ParseQuran += CStr(SortChars(Count)(2)).Chars(If(CStr(SortChars(Count)(2)).Chars(0) = "~", 2, 1)) + CStr(SortChars(Count)(2)).Chars(If(CStr(SortChars(Count)(2)).Chars(0) = "~", 3, 2))
+                    ParseQuran += CStr(SortChars(Count + 2)(2))
+                    ParseQuran += CStr(SortChars(Count)(2)).Chars(If(CStr(SortChars(Count)(2)).Chars(0) = "~", 4, 3))
                     Count += 2
                 End If
-            ElseIf SortChars(Count)(2) <> String.Empty AndAlso SortChars(Count)(2).Length >= If(SortChars(Count)(2).Chars(0) = "~", 3, 2) AndAlso ("aiuo".IndexOf(SortChars(Count)(2).Chars(1)) <> -1 And "aiuo".IndexOf(SortChars(Count)(2).Chars(If(SortChars(Count)(2).Chars(0) = "~", 2, 0))) <> -1) Then
+            ElseIf CStr(SortChars(Count)(2)) <> String.Empty AndAlso CStr(SortChars(Count)(2)).Length >= If(CStr(SortChars(Count)(2)).Chars(0) = "~", 3, 2) AndAlso ("aiuo".IndexOf(CStr(SortChars(Count)(2)).Chars(1)) <> -1 And "aiuo".IndexOf(CStr(SortChars(Count)(2)).Chars(If(CStr(SortChars(Count)(2)).Chars(0) = "~", 2, 0))) <> -1) Then
                 '"oa", "ia", "oi", "iu", "aa", "~ia", "ai", "~iu", "ii", "au", "~aa", "~ii", "~au", "ao", "~ai"
-                If SortChars(Count - 1)(2) = "llh" Then
-                    ParseQuran += SortChars(Count - 1)(2).Chars(0) + SortChars(Count - 1)(2).Chars(1) + SortChars(Count)(2).Chars(0)
-                    If SortChars(Count)(2).Chars(0) = "~" Then
-                        ParseQuran += SortChars(Count)(2).Chars(1)
+                If CStr(SortChars(Count - 1)(2)) = "llh" Then
+                    ParseQuran += CStr(SortChars(Count - 1)(2)).Chars(0) + CStr(SortChars(Count - 1)(2)).Chars(1) + CStr(SortChars(Count)(2)).Chars(0)
+                    If CStr(SortChars(Count)(2)).Chars(0) = "~" Then
+                        ParseQuran += CStr(SortChars(Count)(2)).Chars(1)
                     End If
-                    ParseQuran += SortChars(Count - 1)(2).Chars(2)
-                    ParseQuran += SortChars(Count)(2).Chars(If(SortChars(Count)(2).Chars(0) = "~", 2, 1))
+                    ParseQuran += CStr(SortChars(Count - 1)(2)).Chars(2)
+                    ParseQuran += CStr(SortChars(Count)(2)).Chars(If(CStr(SortChars(Count)(2)).Chars(0) = "~", 2, 1))
                 Else
-                    ParseQuran += SortChars(Count)(2).Chars(0)
-                    If SortChars(Count)(2).Chars(0) = "~" Then
-                        ParseQuran += SortChars(Count)(2).Chars(1)
+                    ParseQuran += CStr(SortChars(Count)(2)).Chars(0)
+                    If CStr(SortChars(Count)(2)).Chars(0) = "~" Then
+                        ParseQuran += CStr(SortChars(Count)(2)).Chars(1)
                     End If
-                    ParseQuran += SortChars(Count + 1)(2)
-                    ParseQuran += SortChars(Count)(2).Chars(If(SortChars(Count)(2).Chars(0) = "~", 2, 1))
+                    ParseQuran += CStr(SortChars(Count + 1)(2))
+                    ParseQuran += CStr(SortChars(Count)(2)).Chars(If(CStr(SortChars(Count)(2)).Chars(0) = "~", 2, 1))
                     Count += 1
                 End If
             Else
-                ParseQuran += SortChars(Count)(2)
+                ParseQuran += CStr(SortChars(Count)(2))
             End If
         Next
         MsgBox(ParseQuran)

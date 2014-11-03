@@ -17,11 +17,11 @@
     Dim _RenderArray As Generic.List(Of IslamMetadata.RenderArray.RenderItem)
     Dim MaxWidths As New Generic.List(Of Integer)
     Dim Texts As New Generic.List(Of Generic.List(Of Generic.List(Of Object)))
-    Public Property RenderArray
+    Public Property RenderArray As List(Of IslamMetadata.RenderArray.RenderItem)
         Get
             Return _RenderArray
         End Get
-        Set(value)
+        Set(value As List(Of IslamMetadata.RenderArray.RenderItem))
             _RenderArray = value
         End Set
     End Property
@@ -42,11 +42,11 @@
                 Texts(Count).Add(New Generic.List(Of Object))
                 If _RenderArray(Count).TextItems(SubCount).DisplayClass = IslamMetadata.RenderArray.RenderDisplayClass.eNested Then
                     Dim Renderer As New MultiLangRender
-                    Renderer.RenderArray = _RenderArray(Count).TextItems(SubCount).Text
+                    Renderer.RenderArray = CType(_RenderArray(Count).TextItems(SubCount).Text, List(Of IslamMetadata.RenderArray.RenderItem))
                     Texts(Count)(SubCount).Add(Renderer)
                     MaxWidths(Count) = Math.Max(MaxWidths(Count), Renderer.Width)
                 ElseIf _RenderArray(Count).TextItems(SubCount).DisplayClass = IslamMetadata.RenderArray.RenderDisplayClass.eArabic Or _RenderArray(Count).TextItems(SubCount).DisplayClass = IslamMetadata.RenderArray.RenderDisplayClass.eLTR Or _RenderArray(Count).TextItems(SubCount).DisplayClass = IslamMetadata.RenderArray.RenderDisplayClass.eRTL Or _RenderArray(Count).TextItems(SubCount).DisplayClass = IslamMetadata.RenderArray.RenderDisplayClass.eTransliteration Then
-                    Dim theText As String = _RenderArray(Count).TextItems(SubCount).Text
+                    Dim theText As String = CStr(_RenderArray(Count).TextItems(SubCount).Text)
                     While theText <> String.Empty
                         Dim NewText As New TextBox
                         NewText.RightToLeft = If(_RenderArray(Count).TextItems(SubCount).DisplayClass <> IslamMetadata.RenderArray.RenderDisplayClass.eLTR And _RenderArray(Count).TextItems(SubCount).DisplayClass <> IslamMetadata.RenderArray.RenderDisplayClass.eTransliteration, Windows.Forms.RightToLeft.Yes, Windows.Forms.RightToLeft.No)
@@ -96,20 +96,20 @@
             For SubCount As Integer = 0 To _RenderArray(Count).TextItems.Length - 1
                 For NextCount As Integer = 0 To Texts(Count)(SubCount).Count - 1
                     Right = NextRight
-                    Texts(Count)(SubCount)(NextCount).Top = Top + CurTop
+                    CType(Texts(Count)(SubCount)(NextCount), Control).Top = Top + CurTop
                     If NextCount <> Texts(Count)(SubCount).Count - 1 Then
-                        CurTop += Texts(Count)(SubCount)(NextCount).PreferredSize.Height
-                        Right = MaxWidths(Count) / 2 - Texts(Count)(SubCount)(NextCount).Width / 2
+                        CurTop += CType(Texts(Count)(SubCount)(NextCount), Control).PreferredSize.Height
+                        Right = CInt(MaxWidths(Count) / 2 - CType(Texts(Count)(SubCount)(NextCount), Control).Width / 2)
                         NextRight = Me.Parent.Width
                         IsOverflow = True
                     Else
-                        Right -= (MaxWidths(Count) - (MaxWidths(Count) / 2 - Texts(Count)(SubCount)(NextCount).Width / 2))
+                        Right -= CInt(MaxWidths(Count) - (MaxWidths(Count) / 2 - CType(Texts(Count)(SubCount)(NextCount), Control).Width / 2))
                     End If
-                    Texts(Count)(SubCount)(NextCount).Left = Right
-                    Me.Controls.Add(Texts(Count)(SubCount)(NextCount))
+                    CType(Texts(Count)(SubCount)(NextCount), Control).Left = Right
+                    Me.Controls.Add(CType(Texts(Count)(SubCount)(NextCount), Control))
                 Next
                 If Texts(Count)(SubCount).Count <> 0 Then
-                    CurTop += Texts(Count)(SubCount)(Texts(Count)(SubCount).Count - 1).PreferredSize.Height
+                    CurTop += CType(Texts(Count)(SubCount)(Texts(Count)(SubCount).Count - 1), Control).PreferredSize.Height
                 End If
             Next
             If IsOverflow Then
@@ -121,7 +121,7 @@
             End If
             'MaxRight = Math.Min(Right, MaxRight)
             If Count = _RenderArray.Count - 1 Then
-                Top += CurTop + Texts(Count)(_RenderArray(Count).TextItems.Length - 1)(Texts(Count)(_RenderArray(Count).TextItems.Length - 1).Count - 1).PreferredSize.Height
+                Top += CurTop + CType(Texts(Count)(_RenderArray(Count).TextItems.Length - 1)(Texts(Count)(_RenderArray(Count).TextItems.Length - 1).Count - 1), Control).PreferredSize.Height
             End If
         Next
         Me.Size = New Size(Me.Parent.Width, Top) '- Math.Min(Right, MaxRight)
