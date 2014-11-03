@@ -2070,7 +2070,7 @@ Public Class Arabic
         New RuleMetadataTranslation With {.Rule = "NumberSpelling", .Match = "(^\s*|\s+)((?:" + MakeRegMultiEx(Array.ConvertAll(ArabicNumbers, Function(Str As String) MakeUniRegEx(TransliterateFromBuckwalter(Str)))) + ")+)(?=\s*$|\s+)", _
             .Evaluator = New String() {Nothing, "spellnumber"}}, _
         New RuleMetadataTranslation With {.Rule = "NumberSpelling", .Match = "(" + MakeUniRegEx(ArabicEndOfAyah) + ")()((?:" + MakeRegMultiEx(Array.ConvertAll(ArabicNumbers, Function(Str As String) MakeUniRegEx(TransliterateFromBuckwalter(Str)))) + ")+)()(?=\s*$|\s+)", _
-            .Evaluator = New String() {Nothing, "helperlparen", "spellnumber", "helperrparen"}}, _
+            .Evaluator = New String() {"empty", "helperlparen", "spellnumber", "helperrparen"}}, _
         New RuleMetadataTranslation With {.Rule = "Stopping", .Match = "(?:(" + MakeUniRegEx(ArabicSmallHighMeemInitialForm) + ")|(" + MakeUniRegEx(ArabicStartOfRubElHizb) + ")|(" + MakeUniRegEx(ArabicEndOfAyah) + ")|(" + MakeUniRegEx(ArabicPlaceOfSajdah) + "))(?=\s*$|\s+)",
             .Evaluator = New String() {"compulsorystop", "startofhizb", "endofversestop", "prostration"}}, _
         New RuleMetadataTranslation With {.Rule = "Stopping", .Match = "(" + MakeUniRegEx(ArabicSmallHighJeem) + ")|(" + MakeUniRegEx(ArabicSmallHighLamAlef) + ")|(" + MakeUniRegEx(ArabicSmallHighThreeDots) + ")(.*)(" + MakeUniRegEx(ArabicSmallHighThreeDots) + ")|(" + MakeUniRegEx(ArabicSmallHighLigatureQafWithLamWithAlefMaksura) + ")|(" + MakeUniRegEx(ArabicSmallHighLigatureSadWithLamWithAlefMaksura) + ")|(" + MakeUniRegEx(ArabicSmallHighSeen) + ")(?:\s+|\s*$)",
@@ -4201,27 +4201,36 @@ Public Class DocBuilder
                         Next
                         Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eList, Arabic.SymbolDisplay(Symbols.ToArray()))}))
                     ElseIf Matches(Count).Groups(3).Value.StartsWith("personalpronoun:") Then
+                        Dim GrammarCat As New IslamData.GrammarCategory
+                        GrammarCat.Title = CachedData.IslamData.GrammarCategories(5).Title
+                        Dim Words As New List(Of IslamData.GrammarCategory.GrammarWord)
                         Dim SelArr As String() = Matches(Count).Groups(3).Value.Replace("personalpronoun:", String.Empty).Split(","c)
-                        Arabic.DisplayPronoun(CachedData.IslamData.GrammarCategories(5), True)
+                        For SubCount = 0 To CachedData.IslamData.GrammarCategories(5).Words.Length - 1
+                            If Array.IndexOf(SelArr, CachedData.IslamData.GrammarCategories(5).Words(SubCount).TranslationID) <> -1 Then
+                                Words.Add(CachedData.IslamData.GrammarCategories(5).Words(SubCount))
+                            End If
+                        Next
+                        GrammarCat.Words = Words.ToArray()
+                        Arabic.DisplayPronoun(GrammarCat, True)
                     ElseIf Matches(Count).Groups(3).Value.StartsWith("possessivedeterminerpersonalpronoun:") Then
                         Dim SelArr As String() = Matches(Count).Groups(3).Value.Replace("possessivedeterminerpersonalpronoun:", String.Empty).Split(","c)
                         Arabic.DisplayPronoun(CachedData.IslamData.GrammarCategories(6), True)
                     ElseIf Matches(Count).Groups(3).Value.StartsWith("particle:") Then
-                        Dim SelArr As String() = Matches(Count).Groups(3).Value.Replace("particle:", String.Empty).Split(","c)
-                        'Arabic.DisplayParticle()
+                            Dim SelArr As String() = Matches(Count).Groups(3).Value.Replace("particle:", String.Empty).Split(","c)
+                            'Arabic.DisplayParticle()
                     ElseIf Matches(Count).Groups(3).Value.StartsWith("noun:") Then
-                        Dim SelArr As String() = Matches(Count).Groups(3).Value.Replace("noun:", String.Empty).Split(","c)
-                        Matches(Count).Groups(3).Value.Replace("noun:", String.Empty).Split(","c)
-                        'Arabic.NounDisplay()
+                            Dim SelArr As String() = Matches(Count).Groups(3).Value.Replace("noun:", String.Empty).Split(","c)
+                            Matches(Count).Groups(3).Value.Replace("noun:", String.Empty).Split(","c)
+                            'Arabic.NounDisplay()
                     ElseIf Matches(Count).Groups(3).Value.StartsWith("verb:") Then
-                        Dim SelArr As String() = Matches(Count).Groups(3).Value.Replace("verb:", String.Empty).Split(","c)
-                        'Arabic.VerbDisplay()
+                            Dim SelArr As String() = Matches(Count).Groups(3).Value.Replace("verb:", String.Empty).Split(","c)
+                            'Arabic.VerbDisplay()
                     ElseIf Matches(Count).Groups(3).Value.StartsWith("phrase:") Then
-                        Dim SelArr As String() = Matches(Count).Groups(3).Value.Replace("phrase:", String.Empty).Split(","c)
-                        'Arabic.DoDisplayTranslation()
+                            Dim SelArr As String() = Matches(Count).Groups(3).Value.Replace("phrase:", String.Empty).Split(","c)
+                            'Arabic.DoDisplayTranslation()
                     ElseIf Matches(Count).Groups(3).Value.StartsWith("reference:") Then
-                        Dim SelArr As String() = Matches(Count).Groups(3).Value.Replace("reference:", String.Empty).Split(","c)
-                        'Supplications.DoGetRenderedSuppText()
+                            Dim SelArr As String() = Matches(Count).Groups(3).Value.Replace("reference:", String.Empty).Split(","c)
+                            'Supplications.DoGetRenderedSuppText()
                     ElseIf Array.IndexOf(CachedData.IslamData.Abbreviations, Matches(Count).Groups(3).Value) <> 0 Then
                     End If
                 End If
