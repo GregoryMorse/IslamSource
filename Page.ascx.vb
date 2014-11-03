@@ -118,7 +118,7 @@ Partial Class Page
                 AddToJSFunctions(DirectCast(Output, RenderArray).GetRenderJS())
             Else
                 RenderArray.WriteTable(writer, DirectCast(Output, Object()), TabCount + 1, String.Empty)
-                AddToJSFunctions(RenderArray.GetTableJSFunctions(DirectCast(Output, Object())))
+                Array.ForEach(RenderArray.GetTableJSFunctions(DirectCast(Output, Object())), Sub(Strs As String()) AddToJSFunctions(Strs))
             End If
         End If
         If (Item.URL <> String.Empty) Then
