@@ -1359,7 +1359,7 @@ Public Class Arabic
         Next
         If Count = CachedData.IslamData.TranslitSchemes.Length Then Return String.Empty
         If Array.IndexOf(ArabicVowels, Str) <> -1 Then
-            Return Sch.Vowels(Array.IndexOf(ArabicVowels, Str))
+            Return Sch.Vowels(6 + Array.IndexOf(ArabicVowels, Str))
         End If
         Return String.Empty
     End Function
@@ -1935,18 +1935,22 @@ Public Class Arabic
         eSpellNumber
         eSpellLetter
         eLookupLetter
+        eLookupLongVowel
         eDivideTanween
         eDivideLetterSymbol
         eStopOption
+        eLeadingGutteral
+        eTrailingGutteral
     End Enum
-    Public Delegate Function RuleFunction(Str As String) As String()
+    Public Delegate Function RuleFunction(Str As String, Scheme As String) As String()
     Public Shared RuleFunctions As RuleFunction() = {
-        Function(Str As String) {UCase(Str)},
-        Function(Str As String) {TransliterateWithRules(TransliterateFromBuckwalter(ArabicWordFromNumber(CInt(TransliterateToScheme(Str, TranslitScheme.Literal, String.Empty)), True, False, False)), String.Empty)},
-        Function(Str As String) {ArabicLetterSpelling(Str)},
-        Function(Str As String) {Arabic.GetSchemeValueFromSymbol(CachedData.IslamData.ArabicLetters(FindLetterBySymbol(Str)), String.Empty)},
-        Function(Str As String) {ArabicFathaDammaKasra(Array.IndexOf(ArabicTanweens, Str)), ArabicLetterNoon},
-        Function(Str As String) {String.Empty, String.Empty}
+        Function(Str As String, Scheme As String) {UCase(Str)},
+        Function(Str As String, Scheme As String) {TransliterateWithRules(TransliterateFromBuckwalter(ArabicWordFromNumber(CInt(TransliterateToScheme(Str, TranslitScheme.Literal, String.Empty)), True, False, False)), Scheme)},
+        Function(Str As String, Scheme As String) {ArabicLetterSpelling(Str)},
+        Function(Str As String, Scheme As String) {GetSchemeValueFromSymbol(CachedData.IslamData.ArabicLetters(FindLetterBySymbol(Str)), Scheme)},
+        Function(Str As String, Scheme As String) {GetSchemeLongVowelFromString(Str, Scheme)},
+        Function(Str As String, Scheme As String) {ArabicFathaDammaKasra(Array.IndexOf(ArabicTanweens, Str)), ArabicLetterNoon},
+        Function(Str As String, Scheme As String) {String.Empty, String.Empty}
     }
         'Javascript does not support negative or positive lookbehind in regular expressions
     Public Shared RomanizationRules As RuleTranslation() = { _
@@ -1982,12 +1986,8 @@ Public Class Arabic
                                     .Evaluator = "ooh$1"}, _
         New RuleTranslation With {.Rule = "LeadingGutteralRules", .Match = "(?:" + MakeUniRegEx(ArabicDamma) + ")(" + MakeUniRegEx(ArabicLetterHamza) + "|" + MakeRegMultiEx(Array.ConvertAll(ArabicSpecialLeadingGutteral, Function(Str As String) MakeUniRegEx(Str))) + ")", _
                                     .Evaluator = "o$1"}, _
-        New RuleTranslation With {.Rule = "FathaAlef", .Match = MakeUniRegEx(ArabicFatha) + MakeUniRegEx(ArabicLetterAlef), _
-                                    .Evaluator = "aa"}, _
-        New RuleTranslation With {.Rule = "DammaWaw", .Match = MakeUniRegEx(ArabicDamma) + MakeUniRegEx(ArabicLetterWaw), _
-                                    .Evaluator = "oo"}, _
-        New RuleTranslation With {.Rule = "KasraYeh", .Match = MakeUniRegEx(ArabicKasra) + MakeUniRegEx(ArabicLetterYeh), _
-                                    .Evaluator = "ee"}, _
+        New RuleTranslation With {.Rule = "LongVowels", .Match = MakeUniRegEx(ArabicFatha) + MakeUniRegEx(ArabicLetterAlef) + "|" + MakeUniRegEx(ArabicDamma) + MakeUniRegEx(ArabicLetterWaw) + "|" + MakeUniRegEx(ArabicKasra) + MakeUniRegEx(ArabicLetterYeh), _
+                                    .Evaluator = "$&", .RuleFunc = RuleFuncs.eLookupLongVowel}, _
         New RuleTranslation With {.Rule = "ResolveAmbiguity", .Match = "(" + MakeUniRegEx(ArabicLetterSeen) + "|" + MakeUniRegEx(ArabicLetterTeh) + "|" + MakeUniRegEx(ArabicLetterTah) + ")(" + MakeUniRegEx(ArabicLetterHeh) + ")", _
                                   .Evaluator = "$1-$2"}, _
         New RuleTranslation With {.Rule = "LettersTanweensVowelsHamza", .Match = "(" + MakeRegMultiEx(Array.ConvertAll(ArabicLetters, Function(Str As String) MakeUniRegEx(Str))) + "|" + MakeRegMultiEx(Array.ConvertAll(ArabicTanweens, Function(Str As String) MakeUniRegEx(Str))) + "|" + MakeRegMultiEx(Array.ConvertAll(ArabicFathaDammaKasra, Function(Str As String) MakeUniRegEx(Str))) + "|" + MakeUniRegEx(ArabicLetterHamza) + ")", _
@@ -2170,7 +2170,6 @@ Public Class Arabic
         New RuleMetadataTranslation With {.Rule = "KasraAlefMaksura", .Match = "(" + MakeUniRegEx(ArabicKasra) + ")(" + MakeUniRegEx(ArabicLetterAlefMaksura) + ")", _
             .Evaluator = New String() {Nothing, "helperyeh"}}
     }
-        'U+2BC3 is horizontal stop sign make red color, U+2B45/6 is left/rightwards quadruple arrow make green color
     Public Shared Function MakeUniRegEx(Input As String) As String
         Return String.Join(String.Empty, Array.ConvertAll(Of Char, String)(Input.ToCharArray(), Function(Ch As Char) "\u" + AscW(Ch).ToString("X4")))
     End Function
@@ -2346,20 +2345,20 @@ Public Class Arabic
         End If
         Return ArabicString
     End Function
-    Public Shared Function ReplaceMetadata(ArabicString As String, MetadataRule As RuleMetadata) As String
+    Public Shared Function ReplaceMetadata(ArabicString As String, MetadataRule As RuleMetadata, Scheme As String) As String
         For Count As Integer = 0 To ColoringSpelledOutRules.Length - 1
             Dim Match As String = Array.Find(ColoringSpelledOutRules(Count).Match.Split("|"c), Function(Str As String) Array.IndexOf(Array.ConvertAll(MetadataRule.Type.Split("|"c), Function(S As String) System.Text.RegularExpressions.Regex.Replace(S, "\(.*\)", String.Empty)), Str) <> -1)
             If Match <> Nothing Then
                 Dim Str As String = String.Format(ColoringSpelledOutRules(Count).Evaluator, ArabicString.Substring(MetadataRule.Index, MetadataRule.Length))
                 If ColoringSpelledOutRules(Count).RuleFunc <> RuleFuncs.eNone Then
-                    Dim Args As String() = RuleFunctions(ColoringSpelledOutRules(Count).RuleFunc - 1)(Str)
+                    Dim Args As String() = RuleFunctions(ColoringSpelledOutRules(Count).RuleFunc - 1)(Str, Scheme)
                     If Args.Length = 1 Then
                         Str = Args(0)
                     Else
                         Dim MetaArgs As String() = System.Text.RegularExpressions.Regex.Match(MetadataRule.Type, Match + "\((.*)\)").Groups(1).Value.Split(",")
                         Str = String.Empty
                         For Index As Integer = 0 To Args.Length - 1
-                            Str += ReplaceMetadata(Args(Index), New RuleMetadata(0, Args(Index).Length, MetaArgs(Index).Replace(" "c, "|"c)))
+                            Str += ReplaceMetadata(Args(Index), New RuleMetadata(0, Args(Index).Length, MetaArgs(Index).Replace(" "c, "|"c)), Scheme)
                         Next
                     End If
                 End If
@@ -2400,14 +2399,14 @@ Public Class Arabic
         MetadataList.Sort(New RuleMetadataComparer)
         Dim Index As Integer
         For Index = 0 To MetadataList.Count - 1
-            ArabicString = ReplaceMetadata(ArabicString, MetadataList(Index))
+            ArabicString = ReplaceMetadata(ArabicString, MetadataList(Index), Scheme)
         Next
         'redundant romanization rules should have -'s such as seen/teh/kaf-heh
         For Count = 0 To RomanizationRules.Length - 1
             If RomanizationRules(Count).RuleFunc = RuleFuncs.eNone Then
                 ArabicString = System.Text.RegularExpressions.Regex.Replace(ArabicString, RomanizationRules(Count).Match, RomanizationRules(Count).Evaluator)
             Else
-                ArabicString = System.Text.RegularExpressions.Regex.Replace(ArabicString, RomanizationRules(Count).Match, Function(Match As System.Text.RegularExpressions.Match) RuleFunctions(RomanizationRules(Count).RuleFunc - 1)(Match.Result(RomanizationRules(Count).Evaluator))(0))
+                ArabicString = System.Text.RegularExpressions.Regex.Replace(ArabicString, RomanizationRules(Count).Match, Function(Match As System.Text.RegularExpressions.Match) RuleFunctions(RomanizationRules(Count).RuleFunc - 1)(Match.Result(RomanizationRules(Count).Evaluator), Scheme)(0))
             End If
         Next
 
@@ -2415,13 +2414,19 @@ Public Class Arabic
         'process loanwords and names
         Return ArabicString
     End Function
+    Shared Function GetTranslitSchemeJSArray() As String
+        'Dim Letters(CachedData.IslamData.ArabicLetters.Length - 1) As IslamData.ArabicSymbol
+        'CachedData.IslamData.ArabicLetters.CopyTo(Letters, 0)
+        'Array.Sort(Letters, New StringLengthComparer("RomanTranslit"))
+        Return "var translitSchemes = " + _
+            Utility.MakeJSArray(New String() {Utility.MakeJSIndexedObject(Array.ConvertAll(CachedData.IslamData.TranslitSchemes, Function(TranslitScheme As IslamData.TranslitScheme) TranslitScheme.Name), _
+                                                                          New Array() {Array.ConvertAll(CachedData.IslamData.TranslitSchemes, Function(TranslitScheme As IslamData.TranslitScheme) Utility.MakeJSArray(Array.ConvertAll(ArabicLettersInOrder, Function(Ch As Char) GetSchemeValueFromSymbol(CachedData.IslamData.ArabicLetters(FindLetterBySymbol(Ch)), TranslitScheme.Name))))}, False)})
+
+    End Function
     Shared Function GetArabicSymbolJSArray() As String
-        Dim Letters(CachedData.IslamData.ArabicLetters.Length - 1) As IslamData.ArabicSymbol
-        CachedData.IslamData.ArabicLetters.CopyTo(Letters, 0)
-        Array.Sort(Letters, New StringLengthComparer("RomanTranslit"))
         GetArabicSymbolJSArray = "var arabicLetters = " + _
-                                Utility.MakeJSArray(New String() {Utility.MakeJSIndexedObject(New String() {"Symbol", "Shaping", "Assimilate", "TranslitLetter", "RomanTranslit", "PlainRoman"}, _
-                                Array.ConvertAll(Of IslamData.ArabicSymbol, String())(Letters, Function(Convert As IslamData.ArabicSymbol) New String() {CStr(AscW(Convert.Symbol)), If(Convert.Shaping = Nothing, String.Empty, Utility.MakeJSArray(Array.ConvertAll(Convert.Shaping, Function(Ch As Char) CStr(AscW(Ch))))), CStr(IIf(Convert.Assimilate, "true", String.Empty)), CStr(IIf(Convert.ExtendedBuckwalterLetter = ChrW(0), String.Empty, Convert.ExtendedBuckwalterLetter)), GetSchemeValueFromSymbol(Convert, "RomanTranslit"), GetSchemeValueFromSymbol(Convert, "PlainRoman")}), False)}, True) + ";"
+                                Utility.MakeJSArray(New String() {Utility.MakeJSIndexedObject(New String() {"Symbol", "Shaping", "Assimilate", "TranslitLetter"}, _
+                                Array.ConvertAll(Of IslamData.ArabicSymbol, String())(CachedData.IslamData.ArabicLetters, Function(Convert As IslamData.ArabicSymbol) New String() {CStr(AscW(Convert.Symbol)), If(Convert.Shaping = Nothing, String.Empty, Utility.MakeJSArray(Array.ConvertAll(Convert.Shaping, Function(Ch As Char) CStr(AscW(Ch))))), CStr(IIf(Convert.Assimilate, "true", String.Empty)), CStr(IIf(Convert.ExtendedBuckwalterLetter = ChrW(0), String.Empty, Convert.ExtendedBuckwalterLetter))}), False)}, True) + ";"
     End Function
     Public Shared FindLetterBySymbolJS As String = "function findLetterBySymbol(chVal) { var iSubCount; for (iSubCount = 0; iSubCount < arabicLetters.length; iSubCount++) { if (chVal === parseInt(arabicLetters[iSubCount].Symbol, 10)) return iSubCount; for (var iShapeCount = 0; iShapeCount < arabicLetters[iSubCount].Shaping.length; iShapeCount++) { if (chVal === parseInt(arabicLetters[iSubCount].Shaping[iShapeCount], 10)) return iSubCount; } } return -1; }"
     Public Shared TransliterateGenJS As String() = {
@@ -2672,11 +2677,11 @@ Public Class Arabic
             Output(Count + 3) = New String() {String.Join(" ", Array.ConvertAll(TransliterateFromBuckwalter(CachedData.IslamData.ArabicCombos(Count).SymbolName).ToCharArray(), Function(Ch As Char) TransliterateFromBuckwalter(CachedData.IslamData.ArabicLetters(FindLetterBySymbol(Ch)).SymbolName))), _
                                        TransliterateFromBuckwalter(CachedData.IslamData.ArabicCombos(Count).SymbolName), _
                                        CachedData.IslamData.ArabicCombos(Count).SymbolName,
-                                       String.Join(", ", Array.ConvertAll(CachedData.IslamData.ArabicCombos(Count).Shaping, Function(Shape As Char) If(Shape = ChrW(0), String.Empty, Shape + " " + CStr(AscW(Shape)) + " " + If(CheckShapingOrder(Array.IndexOf(CachedData.IslamData.ArabicCombos(Count).Shaping, Shape), GetUnicodeName(Shape)), String.Empty, "!!!") + GetUnicodeName(Shape))))}
+                                       String.Join(vbCrLf, Array.ConvertAll(CachedData.IslamData.ArabicCombos(Count).Shaping, Function(Shape As Char) If(Shape = ChrW(0), String.Empty, Shape + " " + CStr(AscW(Shape)) + " " + If(CheckShapingOrder(Array.IndexOf(CachedData.IslamData.ArabicCombos(Count).Shaping, Shape), GetUnicodeName(Shape)), String.Empty, "!!!") + GetUnicodeName(Shape))))}
         Next
         Return Output
     End Function
-    Public Shared Function LetterDisplay(Symbols() As IslamData.ArabicSymbol) As Array()
+    Public Shared Function SymbolDisplay(Symbols() As IslamData.ArabicSymbol) As Array()
         Dim Count As Integer
         Dim Output(CachedData.IslamData.ArabicLetters.Length + 2) As Array
         'Dim oFont As New Font(DefaultValue(HttpContext.Current.Request.QueryString.Get("fontcustom"), "Arial"), 13)
@@ -2693,12 +2698,12 @@ Public Class Arabic
                                        CStr(Symbols(Count).Terminating), _
                                        CStr(Symbols(Count).Connecting), _
                                        CStr(Symbols(Count).Assimilate),
-                                       If(Symbols(Count).Shaping = Nothing, String.Empty, String.Join(", ", Array.ConvertAll(Symbols(Count).Shaping, Function(Shape As Char) If(Shape = ChrW(0), String.Empty, Shape + " " + CStr(AscW(Shape)) + " " + If(CheckShapingOrder(Array.IndexOf(Symbols(Count).Shaping, Shape), GetUnicodeName(Shape)), String.Empty, "!!!") + GetUnicodeName(Shape)))))}
+                                       If(Symbols(Count).Shaping = Nothing, String.Empty, String.Join(vbCrLf, Array.ConvertAll(Symbols(Count).Shaping, Function(Shape As Char) If(Shape = ChrW(0), String.Empty, Shape + " " + CStr(AscW(Shape)) + " " + If(CheckShapingOrder(Array.IndexOf(Symbols(Count).Shaping, Shape), GetUnicodeName(Shape)), String.Empty, "!!!") + GetUnicodeName(Shape)))))}
         Next
         Return Output
     End Function
     Public Shared Function DisplayAll(ByVal Item As PageLoader.TextItem) As Array()
-        Return LetterDisplay(CachedData.IslamData.ArabicLetters)
+        Return SymbolDisplay(CachedData.IslamData.ArabicLetters)
     End Function
     Public Shared Function DisplayTranslitSchemes(ByVal Item As PageLoader.TextItem) As Array()
         Dim Count As Integer
@@ -2904,7 +2909,7 @@ Public Class RenderArray
         eHeaderCenter
         eHeaderRight
         eText
-        eRanking
+        eInteractive
     End Enum
     Enum RenderDisplayClass
         eNested
@@ -2912,7 +2917,9 @@ Public Class RenderArray
         eTransliteration
         eLTR
         eRTL
+        eContinueStop
         eRanking
+        eList
     End Enum
     Structure RenderText
         Public DisplayClass As RenderDisplayClass
@@ -2947,6 +2954,9 @@ Public Class RenderArray
         '    "function restoreStarRating(e, item) { $(item).find('div').get(1).style.width = '0%'; $(item).find('div').get(1).style.zIndex = 102; } " + _
         '    "function updateStarRating(e, item) { $(item).find('div').get(1).style.width = (Math.ceil((e.pageX - $(item).parent().offset().left) / $(item).outerWidth() * 10) * 10).toString() + '%'; $(item).find('div').get(0).style.zIndex = parseFloat($(item).find('div').get(1).style.width) > parseFloat($(item).find('div').get(0).style.width) ? 103 : 102; }"
     End Function
+    Public Shared Function GetContinueStopJS() As String
+        Return "function changeContinueStop(e, item, data) {}"
+    End Function
     Public Shared Function GetCopyClipboardJS() As String
         Return "function setClipboardText(text) { if (window.clipboardData) { window.clipboardData.setData('Text', text); } }"
     End Function
@@ -2976,7 +2986,8 @@ Public Class RenderArray
                     Dim Objs As Object() = GetInitJSItems(CType(Items(Count).TextItems(Index).Text, Collections.Generic.List(Of RenderItem)), LastTitle, CStr(Count))
                     CType(Children(0), ArrayList).AddRange(CType(Objs(0), ArrayList))
                     CType(Children(1), ArrayList).AddRange(CType(Objs(1), ArrayList))
-                ElseIf Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eRanking Then
+                ElseIf Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eRanking Or _
+                    Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eContinueStop Then
                 Else
                     If Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eArabic Then
                         Arabic.Add("arabic" + CStr(IIf(NestPrefix = String.Empty, String.Empty, NestPrefix + "_")) + CStr(Count) + "_" + CStr(Index))
@@ -3001,8 +3012,78 @@ Public Class RenderArray
         Return CType(Objects.ToArray(GetType(Object)), Object())
     End Function
     Public Shared Function DoGetRenderJS(Items As Collections.Generic.List(Of RenderItem)) As String()
-        Return New String() {String.Empty, String.Empty, GetInitJS(Items), GetCopyClipboardJS(), GetSetClipboardJS(), GetStarRatingJS()}
+        Return New String() {String.Empty, String.Empty, GetInitJS(Items), GetCopyClipboardJS(), GetSetClipboardJS(), GetStarRatingJS(), GetContinueStopJS()}
     End Function
+    Public Shared Function GetTableJSFunctions(ByVal Output As Object()) As String()
+        Dim Count As Integer
+        Dim JSFuncs As New List(Of String)
+        Dim OutArray As Object() = Output
+        JSFuncs.AddRange(CType(OutArray(0), String()))
+        For Count = 2 To OutArray.Length - 1
+            If TypeOf OutArray(Count) Is Object() Then
+                Dim InnerArray As Object() = DirectCast(OutArray(Count), Object())
+                For Index = 0 To InnerArray.Length - 1
+                    If TypeOf InnerArray(Index) Is Object() Then
+                        JSFuncs.AddRange(GetTableJSFunctions(DirectCast(InnerArray(Index), Object())))
+                    End If
+                Next
+            End If
+        Next
+        Return JSFuncs.ToArray()
+    End Function
+    Public Shared Sub WriteTable(ByVal writer As System.Web.UI.HtmlTextWriter, ByVal Output As Object(), ByVal TabCount As Integer, Prefix As String)
+        '2 dimensional array for table
+        Dim BaseTabs As String = Utility.MakeTabString(TabCount)
+        Dim Count As Integer
+        Dim Index As Integer
+        If Output.Length = 0 Then Return
+        Dim OutArray As Object() = Output
+        writer.Write(vbCrLf + BaseTabs)
+        writer.WriteBeginTag("table")
+        writer.WriteAttribute("id", "render" + Prefix)
+        writer.Write(HtmlTextWriter.TagRightChar)
+        For Count = 2 To OutArray.Length - 1
+            writer.Write(vbCrLf + BaseTabs + vbTab)
+            writer.WriteFullBeginTag("tr")
+            If TypeOf OutArray(Count) Is Object() Then
+                Dim InnerArray As Object() = DirectCast(OutArray(Count), Object())
+                For Index = 0 To InnerArray.Length - 1
+                    writer.Write(vbCrLf + BaseTabs + vbTab + vbTab)
+                    writer.WriteFullBeginTag(CStr(IIf(Count = 2, "th", "td")))
+                    writer.Write(vbCrLf + BaseTabs + vbTab + vbTab + vbTab)
+                    writer.WriteBeginTag("span")
+                    If Count <> 2 Then writer.WriteAttribute("id", "render" + CStr(IIf(Prefix <> String.Empty, Prefix + "_", String.Empty)) + CStr(Count - 3) + "_" + CStr(Index))
+                    If (CStr(DirectCast(OutArray(1), Object())(Index)) <> String.Empty) Then
+                        writer.WriteAttribute("class", CStr(DirectCast(OutArray(1), Object())(Index)))
+                        If CStr(DirectCast(OutArray(1), Object())(Index)) = "transliteration" Then
+                            writer.WriteAttribute("style", "display: " + CStr(IIf(CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) <> 0, "block", "none")) + ";")
+                        ElseIf CStr(DirectCast(OutArray(1), Object())(Index)) = "check" Then
+                            writer.Write(HtmlTextWriter.TagRightChar)
+                            writer.WriteBeginTag("input")
+                            writer.WriteAttribute("id", "check" + CStr(IIf(Prefix <> String.Empty, Prefix + "_", String.Empty)) + CStr(Count - 3) + "_" + CStr(Index))
+                            writer.WriteAttribute("type", "checkbox")
+                            writer.WriteAttribute("onchange", CType(OutArray(0), String())(0))
+                        ElseIf CStr(DirectCast(OutArray(1), Object())(Index)) = "hidden" Then
+                            writer.WriteAttribute("style", "display: none;")
+                        End If
+                    End If
+                    writer.Write(HtmlTextWriter.TagRightChar)
+                    If TypeOf InnerArray(Index) Is Object() Then
+                        WriteTable(writer, DirectCast(InnerArray(Index), Object()), TabCount + 4, CStr(Count - 3) + "_" + CStr(Index))
+                    Else
+                        writer.Write(Utility.HtmlTextEncode(CStr(InnerArray(Index))).Replace(vbCrLf, "<br>"))
+                    End If
+                    writer.WriteEndTag("span")
+                    writer.Write(vbCrLf + BaseTabs + vbTab + vbTab)
+                    writer.WriteEndTag(CStr(IIf(Count = 2, "th", "td")))
+                Next
+            End If
+            writer.Write(vbCrLf + BaseTabs + vbTab)
+            writer.WriteEndTag("tr")
+        Next
+        writer.Write(vbCrLf + BaseTabs)
+        writer.WriteEndTag("table")
+    End Sub
     Public Shared Sub DoRender(ByVal writer As System.Web.UI.HtmlTextWriter, ByVal TabCount As Integer, Items As Collections.Generic.List(Of RenderItem), NestPrefix As String)
         Dim BaseTabs As String = Utility.MakeTabString(TabCount)
         Dim Count As Integer
@@ -3025,6 +3106,11 @@ Public Class RenderArray
                 If Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eNested Then
                     writer.Write(HtmlTextWriter.TagRightChar)
                     DoRender(writer, TabCount, CType(Items(Count).TextItems(Index).Text, Collections.Generic.List(Of RenderItem)), CStr(Count))
+                ElseIf Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eContinueStop Then
+                    'U+2BC3 is horizontal stop sign make red color, U+2B45/6 is left/rightwards quadruple arrow make green color
+                    writer.WriteAttribute("style", "color: " + If(Items(Count).TextItems(Index).Text <> String.Empty, "#ff0000", "#00ff00") + ";")
+                    writer.WriteAttribute("onclick", "javascript: changeContinueStop(event, this, {Reference:'" + +"'});")
+                    writer.Write(HtmlTextWriter.TagRightChar + If(Items(Count).TextItems(Index).Text <> String.Empty, "&#2BC3;", "&#x2B45;"))
                 ElseIf Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eRanking Then
                     Dim Data As String() = CStr(Items(Count).TextItems(Index).Text).Split("|"c)
                     writer.Write(HtmlTextWriter.TagRightChar)
@@ -4071,14 +4157,30 @@ Public Class DocBuilder
                     'hadith reference matching {name,book/hadith}
                     If TanzilReader.IsQuranTextReference(Matches(Count).Groups(3).Value) Then
                         Renderer.Items.AddRange(TanzilReader.QuranTextFromReference(Matches(Count).Groups(3).Value).Items)
-                    ElseIf Matches(Count).Groups(3).Value.StartsWith("letter:") Then
+                    ElseIf Matches(Count).Groups(3).Value.StartsWith("symbol:") Then
+                        Dim Symbols As New List(Of IslamData.ArabicSymbol)
+                        Dim SelArr As String() = Matches(Count).Groups(3).Value.Replace("symbol:", String.Empty).Split(","c)
+                        For SubCount = 0 To CachedData.IslamData.ArabicLetters.Length - 1
+                            If Array.IndexOf(SelArr, CachedData.IslamData.ArabicLetters(SubCount).UnicodeName.Replace("ArabicLetter", String.Empty).Replace("Arabic", String.Empty)) <> -1 Then
+                                Symbols.Add(CachedData.IslamData.ArabicLetters(SubCount))
+                            End If
+                        Next
+                        Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eList, Arabic.SymbolDisplay(Symbols.ToArray()))}))
                     ElseIf Matches(Count).Groups(3).Value.StartsWith("personalpronoun:") Then
+                        Arabic.DisplayPronoun(CachedData.IslamData.GrammarCategories(5), True)
                     ElseIf Matches(Count).Groups(3).Value.StartsWith("possessivedeterminerpersonalpronoun:") Then
+                        Arabic.DisplayPronoun(CachedData.IslamData.GrammarCategories(6), True)
                     ElseIf Matches(Count).Groups(3).Value.StartsWith("particle:") Then
+                        'Arabic.DisplayParticle()
                     ElseIf Matches(Count).Groups(3).Value.StartsWith("noun:") Then
+                        Matches(Count).Groups(3).Value.Replace("noun:", String.Empty).Split(","c)
+                        'Arabic.NounDisplay()
                     ElseIf Matches(Count).Groups(3).Value.StartsWith("verb:") Then
+                        'Arabic.VerbDisplay()
                     ElseIf Matches(Count).Groups(3).Value.StartsWith("phrase:") Then
+                        'Arabic.DoDisplayTranslation()
                     ElseIf Matches(Count).Groups(3).Value.StartsWith("reference:") Then
+                        'Supplications.DoGetRenderedSuppText()
                     ElseIf Array.IndexOf(CachedData.IslamData.Abbreviations, Matches(Count).Groups(3).Value) <> 0 Then
                     End If
                 End If
@@ -5491,7 +5593,7 @@ Public Class HadithReader
                 Else
                     UserRanking = -1
                 End If
-                Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eRanking, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eRanking, CachedData.IslamData.Collections(Index).FileName + "|" + CStr(BookIndex) + "|" + CStr(HadithText(Hadith)(0)) + "|" + CStr(Ranking(0)) + "|" + CStr(Ranking(1)) + "|" + CStr(UserRanking))}))
+                Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eInteractive, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eRanking, CachedData.IslamData.Collections(Index).FileName + "|" + CStr(BookIndex) + "|" + CStr(HadithText(Hadith)(0)) + "|" + CStr(Ranking(0)) + "|" + CStr(Ranking(1)) + "|" + CStr(UserRanking))}))
             Next
         End If
         Return Renderer

@@ -60,60 +60,6 @@ Partial Class Page
             End If
         Next
     End Sub
-    Sub WriteTable(ByVal writer As System.Web.UI.HtmlTextWriter, ByVal Output As Object(), ByVal TabCount As Integer, Prefix As String)
-        '2 dimensional array for table
-        Dim BaseTabs As String = Utility.MakeTabString(TabCount)
-        Dim Count As Integer
-        Dim Index As Integer
-        If Output.Length = 0 Then Return
-        Dim OutArray As Object() = Output
-        AddToJSFunctions(CType(OutArray(0), String()))
-        writer.Write(vbCrLf + BaseTabs)
-        writer.WriteBeginTag("table")
-        writer.WriteAttribute("id", "render" + Prefix)
-        writer.Write(HtmlTextWriter.TagRightChar)
-        For Count = 2 To OutArray.Length - 1
-            writer.Write(vbCrLf + BaseTabs + vbTab)
-            writer.WriteFullBeginTag("tr")
-            If TypeOf OutArray(Count) Is Object() Then
-                Dim InnerArray As Object() = DirectCast(OutArray(Count), Object())
-                For Index = 0 To InnerArray.Length - 1
-                    writer.Write(vbCrLf + BaseTabs + vbTab + vbTab)
-                    writer.WriteFullBeginTag(CStr(IIf(Count = 2, "th", "td")))
-                    writer.Write(vbCrLf + BaseTabs + vbTab + vbTab + vbTab)
-                    writer.WriteBeginTag("span")
-                    If Count <> 2 Then writer.WriteAttribute("id", "render" + CStr(IIf(Prefix <> String.Empty, Prefix + "_", String.Empty)) + CStr(Count - 3) + "_" + CStr(Index))
-                    If (CStr(DirectCast(OutArray(1), Object())(Index)) <> String.Empty) Then
-                        writer.WriteAttribute("class", CStr(DirectCast(OutArray(1), Object())(Index)))
-                        If CStr(DirectCast(OutArray(1), Object())(Index)) = "transliteration" Then
-                            writer.WriteAttribute("style", "display: " + CStr(IIf(CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) <> 0, "block", "none")) + ";")
-                        ElseIf CStr(DirectCast(OutArray(1), Object())(Index)) = "check" Then
-                            writer.Write(HtmlTextWriter.TagRightChar)
-                            writer.WriteBeginTag("input")
-                            writer.WriteAttribute("id", "check" + CStr(IIf(Prefix <> String.Empty, Prefix + "_", String.Empty)) + CStr(Count - 3) + "_" + CStr(Index))
-                            writer.WriteAttribute("type", "checkbox")
-                            writer.WriteAttribute("onchange", CType(OutArray(0), String())(0))
-                        ElseIf CStr(DirectCast(OutArray(1), Object())(Index)) = "hidden" Then
-                            writer.WriteAttribute("style", "display: none;")
-                        End If
-                    End If
-                    writer.Write(HtmlTextWriter.TagRightChar)
-                    If TypeOf InnerArray(Index) Is Object() Then
-                        WriteTable(writer, DirectCast(InnerArray(Index), Object()), TabCount + 4, CStr(Count - 3) + "_" + CStr(Index))
-                    Else
-                        writer.Write(Utility.HtmlTextEncode(CStr(InnerArray(Index))).Replace(vbCrLf, "<br>"))
-                    End If
-                    writer.WriteEndTag("span")
-                    writer.Write(vbCrLf + BaseTabs + vbTab + vbTab)
-                    writer.WriteEndTag(CStr(IIf(Count = 2, "th", "td")))
-                Next
-            End If
-            writer.Write(vbCrLf + BaseTabs + vbTab)
-            writer.WriteEndTag("tr")
-        Next
-        writer.Write(vbCrLf + BaseTabs)
-        writer.WriteEndTag("table")
-    End Sub
     Sub OutputStrings(ByVal writer As System.Web.UI.HtmlTextWriter, ByVal Strings As String())
         Dim Count As Integer
         For Count = 0 To Strings.Length - 1
@@ -171,7 +117,8 @@ Partial Class Page
                 DirectCast(Output, RenderArray).Render(writer, TabCount + 1)
                 AddToJSFunctions(DirectCast(Output, RenderArray).GetRenderJS())
             Else
-                WriteTable(writer, DirectCast(Output, Object()), TabCount + 1, String.Empty)
+                RenderArray.WriteTable(writer, DirectCast(Output, Object()), TabCount + 1, String.Empty)
+                AddToJSFunctions(RenderArray.GetTableJSFunctions(DirectCast(Output, Object())))
             End If
         End If
         If (Item.URL <> String.Empty) Then
