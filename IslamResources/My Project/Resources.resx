@@ -702,6 +702,9 @@
   <data name="IslamSource_Supplications" xml:space="preserve">
     <value>Supplications</value>
   </data>
+  <data name="IslamSource_Lists" xml:space="preserve">
+    <value>Lists</value>
+  </data>
   <data name="IslamSource_Text" xml:space="preserve">
     <value>Text</value>
   </data>
