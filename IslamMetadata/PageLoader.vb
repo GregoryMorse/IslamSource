@@ -2694,7 +2694,7 @@ Public Class Arabic
     End Function
     Public Shared Function SymbolDisplay(Symbols() As IslamData.ArabicSymbol) As Array()
         Dim Count As Integer
-        Dim Output(CachedData.IslamData.ArabicLetters.Length + 2) As Array
+        Dim Output(Symbols.Length + 2) As Array
         'Dim oFont As New Font(DefaultValue(HttpContext.Current.Request.QueryString.Get("fontcustom"), "Arial"), 13)
         'CheckIfCharInFont(CachedData.IslamData.ArabicLetters(Count).Symbol, oFont)
         Output(0) = New String() {}
@@ -2793,15 +2793,55 @@ Public Class Arabic
                           End Sub)
         Next
         If Personal Then
-            Output(3) = New String() {Build("3m")("p"), Build("3m")("d"), Build("3m")("s"), "Third Person Masculine"}
-            Output(4) = New String() {Build("3f")("p"), Build("3f")("d"), Build("3f")("s"), "Third Person Feminine"}
-            Output(5) = New String() {Build("2m")("p"), Build("2m")("d"), Build("2m")("s"), "Second Person Masculine"}
-            Output(6) = New String() {Build("2f")("p"), Build("2f")("d"), Build("2f")("s"), "Second Person Feminine"}
-            Output(7) = New String() {Build("1m")("p"), Build("1m")("d"), Build("1m")("s"), "First Person Masculine"}
-            Output(8) = New String() {Build("1f")("p"), Build("1f")("d"), Build("1f")("s"), "First Person Feminine"}
+            If Build.ContainsKey("3m") Then
+                If Not Build("3m").ContainsKey("p") Then Build("3m").Add("p", String.Empty)
+                If Not Build("3m").ContainsKey("d") Then Build("3m").Add("d", String.Empty)
+                If Not Build("3m").ContainsKey("s") Then Build("3m").Add("s", String.Empty)
+                Output(3) = New String() {Build("3m")("p"), Build("3m")("d"), Build("3m")("s"), "Third Person Masculine"}
+            End If
+            If Build.ContainsKey("3f") Then
+                If Not Build("3f").ContainsKey("p") Then Build("3f").Add("p", String.Empty)
+                If Not Build("3f").ContainsKey("d") Then Build("3f").Add("d", String.Empty)
+                If Not Build("3f").ContainsKey("s") Then Build("3f").Add("s", String.Empty)
+                Output(4) = New String() {Build("3f")("p"), Build("3f")("d"), Build("3f")("s"), "Third Person Feminine"}
+            End If
+            If Build.ContainsKey("2m") Then
+                If Not Build("2m").ContainsKey("p") Then Build("2m").Add("p", String.Empty)
+                If Not Build("2m").ContainsKey("d") Then Build("2m").Add("d", String.Empty)
+                If Not Build("2m").ContainsKey("s") Then Build("2m").Add("s", String.Empty)
+                Output(5) = New String() {Build("2m")("p"), Build("2m")("d"), Build("2m")("s"), "Second Person Masculine"}
+            End If
+            If Build.ContainsKey("2f") Then
+                If Not Build("2f").ContainsKey("p") Then Build("2f").Add("p", String.Empty)
+                If Not Build("2f").ContainsKey("d") Then Build("2f").Add("d", String.Empty)
+                If Not Build("2f").ContainsKey("s") Then Build("2f").Add("s", String.Empty)
+                Output(6) = New String() {Build("2f")("p"), Build("2f")("d"), Build("2f")("s"), "Second Person Feminine"}
+            End If
+            If Build.ContainsKey("1m") Then
+                If Not Build("1m").ContainsKey("p") Then Build("1m").Add("p", String.Empty)
+                If Not Build("1m").ContainsKey("d") Then Build("1m").Add("d", String.Empty)
+                If Not Build("1m").ContainsKey("s") Then Build("1m").Add("s", String.Empty)
+                Output(7) = New String() {Build("1m")("p"), Build("1m")("d"), Build("1m")("s"), "First Person Masculine"}
+            End If
+            If Build.ContainsKey("1f") Then
+                If Not Build("1f").ContainsKey("p") Then Build("1f").Add("p", String.Empty)
+                If Not Build("1f").ContainsKey("d") Then Build("1f").Add("d", String.Empty)
+                If Not Build("1f").ContainsKey("s") Then Build("1f").Add("s", String.Empty)
+                Output(8) = New String() {Build("1f")("p"), Build("1f")("d"), Build("1f")("s"), "First Person Feminine"}
+            End If
         Else
-            Output(3) = New String() {Build("m")("p"), Build("m")("d"), Build("m")("s"), "Masculine"}
-            Output(4) = New String() {Build("f")("p"), Build("f")("d"), Build("f")("s"), "Feminine"}
+            If Build.ContainsKey("m") Then
+                If Not Build("m").ContainsKey("p") Then Build("m").Add("p", String.Empty)
+                If Not Build("m").ContainsKey("d") Then Build("m").Add("d", String.Empty)
+                If Not Build("m").ContainsKey("s") Then Build("m").Add("s", String.Empty)
+                Output(3) = New String() {Build("m")("p"), Build("m")("d"), Build("m")("s"), "Masculine"}
+            End If
+            If Build.ContainsKey("f") Then
+                If Not Build("f").ContainsKey("p") Then Build("f").Add("p", String.Empty)
+                If Not Build("f").ContainsKey("d") Then Build("f").Add("d", String.Empty)
+                If Not Build("f").ContainsKey("s") Then Build("f").Add("s", String.Empty)
+                Output(4) = New String() {Build("f")("p"), Build("f")("d"), Build("f")("s"), "Feminine"}
+            End If
         End If
         Return Output
     End Function
@@ -3132,14 +3172,14 @@ Public Class RenderArray
             For Index = 0 To Items(Count).TextItems.Length - 1
                 writer.Write(vbCrLf + BaseTabs + vbTab)
                 writer.WriteBeginTag(CStr(IIf(Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eNested Or Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eRanking Or Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eList, "div", "span")))
-                If Items(Count).Type = RenderTypes.eHeaderCenter Or (Items(Count).Type = RenderTypes.eText And (Count - Base) Mod 2 = 1) Then writer.WriteAttribute("style", "background-color: 0xD0D0D0;")
+                If Items(Count).TextItems(Index).DisplayClass <> RenderDisplayClass.eList And (Items(Count).Type = RenderTypes.eHeaderCenter Or (Items(Count).Type = RenderTypes.eText And (Count - Base) Mod 2 = 1)) Then writer.WriteAttribute("style", "background-color: 0xD0D0D0;")
                 If Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eNested Then
                     writer.Write(HtmlTextWriter.TagRightChar)
                     DoRender(writer, TabCount, CType(Items(Count).TextItems(Index).Text, Collections.Generic.List(Of RenderItem)), CStr(Count))
                 ElseIf Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eList Then
                     writer.WriteAttribute("style", "direction: ltr;")
                     writer.Write(HtmlTextWriter.TagRightChar)
-                    WriteTable(writer, CType(Items(Count).TextItems(Index).Text, Object()), TabCount, String.Empty)
+                    WriteTable(writer, CType(Items(Count).TextItems(Index).Text, Object()), TabCount, CStr(Count))
                 ElseIf Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eContinueStop Then
                     'U+2BC3 is horizontal stop sign make red color, U+2B45/6 is left/rightwards quadruple arrow make green color
                     writer.WriteAttribute("style", "color: " + If(CStr(Items(Count).TextItems(Index).Text) <> String.Empty, "#ff0000", "#00ff00") + ";")
@@ -4262,7 +4302,7 @@ Public Class DocBuilder
                 End If
             Next
             GrammarCat.Words = Words.ToArray()
-            Arabic.DisplayPronoun(GrammarCat, True)
+            Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eList, Arabic.DisplayPronoun(GrammarCat, True))}))
         ElseIf Strings.StartsWith("particle:") Then
             Dim SelArr As String() = Strings.Replace("particle:", String.Empty).Split(","c)
             'Arabic.DisplayParticle()
@@ -4278,7 +4318,7 @@ Public Class DocBuilder
                 End If
             Next
             GrammarCat.Words = Words.ToArray()
-            Arabic.NounDisplay(GrammarCat)
+            Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eList, Arabic.NounDisplay(GrammarCat))}))
         ElseIf Strings.StartsWith("verb:") Then
             Dim SelArr As String() = Strings.Replace("verb:", String.Empty).Split(","c)
             'Arabic.VerbDisplay()
