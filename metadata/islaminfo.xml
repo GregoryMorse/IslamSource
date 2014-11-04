@@ -1368,7 +1368,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="EiborapN" plural="EibarN" id="Admonition"></word>
 			<word text="&gt;u*unN" plural="&apos;aA*aAnN" id="Ear"></word>
 			<word text="nusukN" plural="" id="Sacrifice"></word>
--			
+			
 			<word text="nabaAtN" plural="nabaAtaAtN" id="VegetationPlant"></word>
 			<word text="rayobN" plural="" id="Doubt"></word>
 			<word text="&gt;anfN" plural="&gt;unuwfN" id="Nose"></word>
@@ -1957,8 +1957,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="mu&apos;ak~adapN" id=""></word>
 			<word text="jawrabN" plural="jawaAribN" id="SockStocking"></word>
 			<word text="fitorapN" id=""></word>
-		</category>
-		<category title="RegularWords">
+
 			<word text="darosN" id="Lesson"></word>
 			<word text="{lomaEonaY" id="Meaning"></word>
 			<word text="muforadaAtN" id="Vocabulary"></word>
@@ -2039,8 +2038,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="mak~apu" id="Makkah"></word>
 			<word text="biyruwtu" id="Beirut"></word>
 			<word text="Eam~aAnu" id="Amman"></word>
-		</category>
-		<category title="Common">
+
 			<word text="qaliylaA" id="Little"></word>
 			<word text="kabiyrN" id="Big"></word>
 			<word text="yamiynN" id="Right"></word>
@@ -2847,22 +2845,24 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 		</category>		
 	</vocabulary>
 	<abbreviations>
-		<word text="AS" id="UponHimBePeace"></word>
-		<word text="SAWS|SAW" id="ThePrayersOfAllahUponHimAndPeace"></word>
-		<word text="RAum|RA" id="MayAllahBePleased"></word>
-		<word text="RAu" id="MayAllahBePleased"></word>
-		<word text="RAaa" id="MayAllahBePleased"></word>
-		<word text="SWT" id="GloriousAndExaltedBeHe"></word>
-		<word text="BISMILLAH" id="InTheNameOfAllah"></word>
+		<category title="Categories">
+			<word text="AS" id="UponHimBePeace"></word>
+			<word text="SAWS|SAW" id="ThePrayersOfAllahUponHimAndPeace"></word>
+			<word text="RAum|RA" id="MayAllahBePleased"></word>
+			<word text="RAu" id="MayAllahBePleased"></word>
+			<word text="RAaa" id="MayAllahBePleased"></word>
+			<word text="SWT" id="GloriousAndExaltedBeHe"></word>
+			<word text="BISMILLAH" id="InTheNameOfAllah"></word>
+		</category>
 	</abbreviations>
 	<lists>
 		<category title="Categories">
-			<word text="\{word:\}" id="ScienceOfFiqh"></word>
-			<word text="\{word:\}" id="RulesOfFiqh"></word>
-			<word text="\{symbol:Alef,Beh,Teh,Theh,Jeem,Hah,Khah,Dal,Thal,Reh,Zain,Seen,Sheen,Sad,Dad,Tah,Zah,Ain,Ghain,Feh,Qaf,Kaf,Lam,Meem,Noon,Heh,Waw,Yeh,AlefWasla,AlefMaksura,TehMarbuta,Fathatan,Dammatan,Kasratan,Fatha,Damma,Kasra,Sukun\}\{personalpronoun:IMe,WeUs,You,YouAll,HeHimIt,SheHerIt,TheyThem\}\{possessivedeterminerpersonalpronoun:My,Our,Your,His,Her,Their\}\{noun:Lesson,First,Meaning,NounName,Vocabulary,Drill,Nunation,NominativeCase,PossessiveCase,SmallCurlLikeDiacriticPlacedAboveLetterToRepresentShortU,SmallDiagonalLinePlacedBelowLetterToRepresentShortI,SmallDiagonalLinePlacedAboveLetterToRepresentShortA,SubjectNominalSentence,Predicate,Adjective,WordBeingDescribed,Possession,GrammarRules,Masculine,Feminine,NamesOfCountries,In,The,From,UponOn,IsAmAreDoHave,Where,WhoTheOneWho,OutOfWhat,WithNear,No,Yes,HouseHome,ClassClassroomSeason,Student,Teacher,School,Book,Pen,TownCity,GroundEarth,Sun,Hand,Chair,Peace,Muslim,Table,Money,Transcendent,Consecrated,LargeOld,SmallYoung,New,Old,Very,Muhammad,Hasan,Ali,Khaalid,Saalim,Talha,Orwa,Safeeyah,Khadeejah,Ameenah,Mary,Fatima,Aisha,Pharoah,Moses,China,GreatBritain,Philippines,Jordan,Iraq,Pakistan,Kenya,SaudiArabia,France,Sudan,America,SriLanka,Canada,India,Algeria,Indonesia,Germany,Emirates,Kuwait,Morocco,Egypt,Tunisia,Lebanon,Jeddah,Makkah,Beirut,Amman\}\{verb:Expel\}\{phrase:PeaceBeUponYou,NominalSentence,EmptyHamza\}\{17:93,24:36,4:15,20:14,4:156,12:21,3:78,65:1,45:29,12:23,3:49,4:100,10:90,67:12,31:30,12:6,14:37,27:64,2:221\}" id="ArabicMidterm101"></word>
-			<word text="\{word:\}" id="Aqeedah"></word>
-			<word text="\{word:\}" id="Seerah"></word>
-			<word text="\{word:\}" id="Tafseer"></word>
+			<word text="\{word:\}" id="ScienceOfIslamicJurisprudence"></word>
+			<word text="\{word:\}" id="RulesOfIslamicJurisprudence"></word>
+			<word text="\{symbol:Alef,Beh,Teh,Theh,Jeem,Hah,Khah,Dal,Thal,Reh,Zain,Seen,Sheen,Sad,Dad,Tah,Zah,Ain,Ghain,Feh,Qaf,Kaf,Lam,Meem,Noon,Heh,Waw,Yeh,AlefWasla,AlefMaksura,TehMarbuta,Fathatan,Dammatan,Kasratan,Fatha,Damma,Kasra,Sukun\}\{personalpronoun:IMe,WeUs,You,YouAll,HeHimIt,SheHerIt,TheyThem\}\{possessivedeterminerpersonalpronoun:My,Our,Your,His,Her,Their\}\{noun:Lesson,First,Meaning,NounName,Vocabulary,Drill,Nunation,NominativeCase,PossessiveCase,SmallCurlLikeDiacriticPlacedAboveLetterToRepresentShortU,SmallDiagonalLinePlacedBelowLetterToRepresentShortI,SmallDiagonalLinePlacedAboveLetterToRepresentShortA,SubjectNominalSentence,Predicate,Adjective,WordBeingDescribed,Possession,GrammarRules,Masculine,Feminine,NamesOfCountries,In,The,From,UponOn,IsAmAreDoHave,Where,WhoTheOneWho,OutOfWhat,WithNear,No,Yes,HouseHome,ClassClassroomSeason,Student,Teacher,School,Book,Pen,TownCity,GroundEarth,Sun,Hand,Chair,Peace,Muslim,Table,Money,Transcendent,Consecrated,LargeOld,SmallYoung,New,Old,Very,Muhammad,Hasan,Ali,Khaalid,Saalim,Talha,Orwa,Safeeyah,Khadeejah,Ameenah,Mary,Fatima,Aisha,Pharoah,Moses,China,GreatBritain,Philippines,Jordan,Iraq,Pakistan,Kenya,SaudiArabia,France,Sudan,America,SriLanka,Canada,India,Algeria,Indonesia,Germany,Emirates,Kuwait,Morocco,Egypt,Tunisia,Lebanon,Jeddah,Makkah,Beirut,Amman\}\{verb:Expel\}\{phrase:PeaceBeUponYou,NominalSentence,EmptyHamza\}\{17:93:1-6,24:36:1-4,4:15:13-15,20:14:1-3,4:156:2-4,12:21:1-6,3:78:10-13,65:1:15-18,45:29:1-5,12:23:3-5,3:49:36-39,4:100:14-17,10:90:27-29,67:12:8-9,31:30:14-16,11:6:15-18,14:37:10-12,27:64:12-14,2:221:20-24\}" id="Arabic"></word>
+			<word text="\{word:\}" id="IslamicTheology"></word>
+			<word text="\{word:\}" id="PropheticBiography"></word>
+			<word text="\{word:\}" id="QuranicExegesis"></word>
 		</category>
 	</lists>
 	<languages>
