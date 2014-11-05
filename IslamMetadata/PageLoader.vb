@@ -1982,6 +1982,7 @@ Public Class Arabic
         Function(Str As String, Scheme As String) {GetSchemeLongVowelFromString(Str, Scheme)},
         Function(Str As String, Scheme As String) {ArabicFathaDammaKasra(Array.IndexOf(ArabicTanweens, Str)), ArabicLetterNoon},
         Function(Str As String, Scheme As String) {String.Empty, String.Empty},
+        Function(Str As String, Scheme As String) {String.Empty},
         Function(Str As String, Scheme As String) {GetSchemeGutteralFromString(Str, Scheme, True)},
         Function(Str As String, Scheme As String) {GetSchemeGutteralFromString(Str, Scheme, False)}
     }
