@@ -1375,7 +1375,7 @@ Public Class Arabic
         Next
         If Count = CachedData.IslamData.TranslitSchemes.Length Then Return String.Empty
         If Array.IndexOf(ArabicLeadingGutterals, Str) <> -1 Then
-            Return Sch.Vowels(Array.IndexOf(ArabicLeadingGutterals, Str) + ArabicVowels.Length + If(Leading, 0, ArabicLeadingGutterals.Length))
+            Return Sch.Vowels(Array.IndexOf(ArabicLeadingGutterals, Str) + ArabicVowels.Length + If(Leading, ArabicLeadingGutterals.Length, 0))
         End If
         Return String.Empty
     End Function
@@ -1983,26 +1983,26 @@ Public Class Arabic
         Function(Str As String, Scheme As String) {ArabicFathaDammaKasra(Array.IndexOf(ArabicTanweens, Str)), ArabicLetterNoon},
         Function(Str As String, Scheme As String) {String.Empty, String.Empty},
         Function(Str As String, Scheme As String) {String.Empty},
-        Function(Str As String, Scheme As String) {GetSchemeGutteralFromString(Str, Scheme, True)},
-        Function(Str As String, Scheme As String) {GetSchemeGutteralFromString(Str, Scheme, False)}
+        Function(Str As String, Scheme As String) {GetSchemeGutteralFromString(Str.Remove(Str.Length - 1), Scheme, True) + Str.Chars(Str.Length - 1)},
+        Function(Str As String, Scheme As String) {Str.Chars(0) + GetSchemeGutteralFromString(Str.Remove(0, 1), Scheme, False)}
     }
-        'Javascript does not support negative or positive lookbehind in regular expressions
-        Public Shared RomanizationRules As RuleTranslation() = { _
-            New RuleTranslation With {.Rule = "Shadda", .Match = "(" + MakeRegMultiEx(Array.ConvertAll(ArabicLetters, Function(Str As String) MakeUniRegEx(Str))) + ")" + MakeUniRegEx(ArabicShadda), _
-                                        .Evaluator = "$1-$1"}, _
-            New RuleTranslation With {.Rule = "GutteralRules", .Match = "(" + MakeRegMultiEx(Array.ConvertAll(ArabicSpecialGutteral, Function(Str As String) MakeUniRegEx(Str))) + "|" + MakeRegMultiEx(Array.ConvertAll(ArabicSpecialLeadingGutteral, Function(Str As String) MakeUniRegEx(Str))) + ")(?:" + MakeUniRegEx(ArabicFatha) + MakeUniRegEx(ArabicLetterAlef) + "|" + MakeUniRegEx(ArabicFatha) + "|" + MakeUniRegEx(ArabicDamma) + MakeUniRegEx(ArabicLetterWaw) + "|" + MakeUniRegEx(ArabicDamma) + "|" + MakeUniRegEx(ArabicKasra) + MakeUniRegEx(ArabicLetterYeh) + "|" + MakeUniRegEx(ArabicKasra) + "|" + MakeUniRegEx(ArabicFathatan) + "|" + MakeUniRegEx(ArabicDammatan) + "|" + MakeUniRegEx(ArabicKasratan) + ")", _
-                                        .Evaluator = "$&", .RuleFunc = RuleFuncs.eTrailingGutteral}, _
-            New RuleTranslation With {.Rule = "LeadingGutteralRules", .Match = "(?:" + MakeUniRegEx(ArabicFatha) + MakeUniRegEx(ArabicLetterAlef) + "|" + MakeUniRegEx(ArabicFatha) + "|" + MakeUniRegEx(ArabicKasra) + MakeUniRegEx(ArabicLetterYeh) + "|" + MakeUniRegEx(ArabicKasra) + "|" + MakeUniRegEx(ArabicDamma) + MakeUniRegEx(ArabicLetterWaw) + "|" + MakeUniRegEx(ArabicDamma) + ")(" + MakeUniRegEx(ArabicLetterHamza) + "|" + MakeRegMultiEx(Array.ConvertAll(ArabicSpecialLeadingGutteral, Function(Str As String) MakeUniRegEx(Str))) + ")", _
-                                        .Evaluator = "$&", .RuleFunc = RuleFuncs.eLeadingGutteral}, _
-            New RuleTranslation With {.Rule = "LongVowels", .Match = MakeUniRegEx(ArabicFatha) + MakeUniRegEx(ArabicLetterAlef) + "|" + MakeUniRegEx(ArabicDamma) + MakeUniRegEx(ArabicLetterWaw) + "|" + MakeUniRegEx(ArabicKasra) + MakeUniRegEx(ArabicLetterYeh), _
-                                        .Evaluator = "$&", .RuleFunc = RuleFuncs.eLookupLongVowel}, _
-            New RuleTranslation With {.Rule = "ResolveAmbiguity", .Match = "(" + MakeUniRegEx(ArabicLetterSeen) + "|" + MakeUniRegEx(ArabicLetterTeh) + "|" + MakeUniRegEx(ArabicLetterTah) + ")(" + MakeUniRegEx(ArabicLetterHeh) + ")", _
-                                      .Evaluator = "$1-$2"}, _
-            New RuleTranslation With {.Rule = "LettersTanweensVowelsHamza", .Match = "(" + MakeRegMultiEx(Array.ConvertAll(ArabicLetters, Function(Str As String) MakeUniRegEx(Str))) + "|" + MakeRegMultiEx(Array.ConvertAll(ArabicTanweens, Function(Str As String) MakeUniRegEx(Str))) + "|" + MakeRegMultiEx(Array.ConvertAll(ArabicFathaDammaKasra, Function(Str As String) MakeUniRegEx(Str))) + "|" + MakeUniRegEx(ArabicLetterHamza) + ")", _
-                                        .Evaluator = "$&", .RuleFunc = RuleFuncs.eLookupLetter}, _
-            New RuleTranslation With {.Rule = "Punctuation", .Match = "(" + MakeRegMultiEx(Array.ConvertAll(ArabicPunctuationSymbols, Function(Str As String) MakeUniRegEx(Str))) + ")", _
-                                        .Evaluator = "$&", .RuleFunc = RuleFuncs.eLookupLetter}
-        }
+    'Javascript does not support negative or positive lookbehind in regular expressions
+    Public Shared RomanizationRules As RuleTranslation() = { _
+        New RuleTranslation With {.Rule = "Shadda", .Match = "(" + MakeRegMultiEx(Array.ConvertAll(ArabicLetters, Function(Str As String) MakeUniRegEx(Str))) + ")" + MakeUniRegEx(ArabicShadda), _
+                                    .Evaluator = "$1-$1"}, _
+        New RuleTranslation With {.Rule = "GutteralRules", .Match = "(?:" + MakeRegMultiEx(Array.ConvertAll(ArabicSpecialGutteral, Function(Str As String) MakeUniRegEx(Str))) + "|" + MakeRegMultiEx(Array.ConvertAll(ArabicSpecialLeadingGutteral, Function(Str As String) MakeUniRegEx(Str))) + ")(" + MakeUniRegEx(ArabicFatha) + MakeUniRegEx(ArabicLetterAlef) + "|" + MakeUniRegEx(ArabicFatha) + "|" + MakeUniRegEx(ArabicDamma) + MakeUniRegEx(ArabicLetterWaw) + "|" + MakeUniRegEx(ArabicDamma) + "|" + MakeUniRegEx(ArabicKasra) + MakeUniRegEx(ArabicLetterYeh) + "|" + MakeUniRegEx(ArabicKasra) + "|" + MakeUniRegEx(ArabicFathatan) + "|" + MakeUniRegEx(ArabicDammatan) + "|" + MakeUniRegEx(ArabicKasratan) + ")", _
+                                    .Evaluator = "$&", .RuleFunc = RuleFuncs.eTrailingGutteral}, _
+        New RuleTranslation With {.Rule = "LeadingGutteralRules", .Match = "(" + MakeUniRegEx(ArabicFatha) + MakeUniRegEx(ArabicLetterAlef) + "|" + MakeUniRegEx(ArabicFatha) + "|" + MakeUniRegEx(ArabicKasra) + MakeUniRegEx(ArabicLetterYeh) + "|" + MakeUniRegEx(ArabicKasra) + "|" + MakeUniRegEx(ArabicDamma) + MakeUniRegEx(ArabicLetterWaw) + "|" + MakeUniRegEx(ArabicDamma) + ")(?:" + MakeUniRegEx(ArabicLetterHamza) + "|" + MakeRegMultiEx(Array.ConvertAll(ArabicSpecialLeadingGutteral, Function(Str As String) MakeUniRegEx(Str))) + ")", _
+                                    .Evaluator = "$&", .RuleFunc = RuleFuncs.eLeadingGutteral}, _
+        New RuleTranslation With {.Rule = "LongVowels", .Match = MakeUniRegEx(ArabicFatha) + MakeUniRegEx(ArabicLetterAlef) + "|" + MakeUniRegEx(ArabicDamma) + MakeUniRegEx(ArabicLetterWaw) + "|" + MakeUniRegEx(ArabicKasra) + MakeUniRegEx(ArabicLetterYeh), _
+                                    .Evaluator = "$&", .RuleFunc = RuleFuncs.eLookupLongVowel}, _
+        New RuleTranslation With {.Rule = "ResolveAmbiguity", .Match = "(" + MakeUniRegEx(ArabicLetterSeen) + "|" + MakeUniRegEx(ArabicLetterTeh) + "|" + MakeUniRegEx(ArabicLetterTah) + ")(" + MakeUniRegEx(ArabicLetterHeh) + ")", _
+                                  .Evaluator = "$1-$2"}, _
+        New RuleTranslation With {.Rule = "LettersTanweensVowelsHamza", .Match = "(" + MakeRegMultiEx(Array.ConvertAll(ArabicLetters, Function(Str As String) MakeUniRegEx(Str))) + "|" + MakeRegMultiEx(Array.ConvertAll(ArabicTanweens, Function(Str As String) MakeUniRegEx(Str))) + "|" + MakeRegMultiEx(Array.ConvertAll(ArabicFathaDammaKasra, Function(Str As String) MakeUniRegEx(Str))) + "|" + MakeUniRegEx(ArabicLetterHamza) + ")", _
+                                    .Evaluator = "$&", .RuleFunc = RuleFuncs.eLookupLetter}, _
+        New RuleTranslation With {.Rule = "Punctuation", .Match = "(" + MakeRegMultiEx(Array.ConvertAll(ArabicPunctuationSymbols, Function(Str As String) MakeUniRegEx(Str))) + ")", _
+                                    .Evaluator = "$&", .RuleFunc = RuleFuncs.eLookupLetter}
+    }
         Public Shared AllowZeroLength As String() = {"helperlparen", "helperrparen"}
         Public Shared ColoringSpelledOutRules As RuleTranslation() = { _
             New RuleTranslation With {.Rule = "DivideTanween", .Match = "dividetanween",
