@@ -1053,6 +1053,21 @@
   <data name="IslamInfo_CelebrationDay" xml:space="preserve">
     <value>Celebration day</value>
   </data>
+  <data name="IslamInfo_Celebration" xml:space="preserve">
+    <value>Celebration</value>
+  </data>
+  <data name="IslamInfo_Celebration1" xml:space="preserve">
+    <value>Celebration</value>
+  </data>
+  <data name="IslamInfo_Celebration1Trans" xml:space="preserve">
+    <value>Allah is greatest, Allah is greatest, Allah is greatest, there is no God except Allah, and Allah is greatest, Allah is greatest, and to Allah is all praise and thanks</value>
+  </data>
+  <data name="IslamInfo_Celebration2" xml:space="preserve">
+    <value>Celebration</value>
+  </data>
+  <data name="IslamInfo_Celebration2Trans" xml:space="preserve">
+    <value>O Allah, truly You are Most Forgiving and You love forgiveness so forgive me</value>
+  </data>
   <data name="IslamInfo_DayOfWeek1" xml:space="preserve">
     <value>Sunday</value>
   </data>
