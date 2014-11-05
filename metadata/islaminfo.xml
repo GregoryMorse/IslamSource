@@ -484,7 +484,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<verse title="" text="&lt;in~aA lil~ahi wa&lt;inaA &lt;ilayohi rAjiEwn {ll~ahum~i Aojuroniy fiy muSybaty waAxolufo liy xayorFA minohaA"></verse>
 		</category>
 		<category title="WhenClosingTheEyesOfTheDeceased">
-			<verse title="" text="{ll~ahum~i {gofiro liflaAn baAsmh waArofaEo darajatahu fiy {lomahodiyyn waAxolufohu fiy Eaqibihi fiy {logAbiriyna wa{gofiro lanaA walahu yaA rab~a {loEAlamyn waAfosaHo lahu fiy qaborihi wanaw~iro lahu fiyh"></verse>
+			<verse title="" text="{ll~ahum~i {gofiro liflaAn baAsmh waArofaEo darajatahu fiy {lomahodiyn waAxolufohu fiy Eaqibihi fiy {logAbiriyna wa{gofiro lanaA walahu yaA rab~a {loEAlamyn waAfosaHo lahu fiy qaborihi wanaw~iro lahu fiyh"></verse>
 		</category>
 		<category title="ForTheDeceasedAtFuneralPrayer">
 			<verse title="" text="{ll~ahum~i {gofiro lahu waAroHamoh waEaAfihi waAEofu Eanoh wa&gt;akorimo nuzulah wawas~iEo mudoxalah waAgosilohu bi{lomaA&apos;i wa{lv~aloji wa{lobarado wanaq~ihi mina {loxoTaAyaA kamaA naq~yota {lv~awobu {lo&gt;aboyaDu mina {ld~anaso wa&gt;abodilohu daArFA xayorFA mino daArih wa&gt;aholFA xayorFA mino &gt;aholih wazawojaFA xayorFA mino zawojih wa&gt;adoxilohu {lojan~apu wa&gt;aEi*ohu mino Ea*aAbi {loqabor waEa*aAbi {ln~aAr"></verse>
@@ -836,6 +836,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<verse title="SendBlessingsSecond" text="{ll~ahum~a Sal~i EalaY muHam~adK waEalaY &apos;aAli muHam~adK kamaA Sal~ayota EalaY &lt;iboraAhiyma waEalaY &apos;aAli &lt;iboraAhiyma &lt;in~aka HamiydN majiydN {ll~ahum~a baAriko EalaY muHam~adK waEalaY &apos;aAli muHam~adK kamaA baArakota EalaY &lt;iboraAhiyma waEalaY &apos;aAli &lt;iboraAhiyma &lt;in~aka HamiydN majiydN"></verse>
 			<verse title="IntroductionFirst" text="&lt;in~a {loHamoda lil~ahi naHomaduhu wanasotaEiynuhu wanasotagofiruhu wanaEuw*u bi{ll~ahi mino $uruwri &gt;anfusinaA wamin say~i}aAti &gt;aEomaAlinaA min yahodi {ll~ahu falaA muDil~a lahu waman yuDolilo falaA haAdiya lahu\, wa&gt;a$ohadu &gt;ano laA &lt;ilaha &lt;il~aA {ll~ahu waHodahu laA $ariyka lahu\, wa&gt;a$ohadu &gt;an~a muHam~adFA Eaboduhu warasuwluhu \{3:182\}\{4:1\}\{70:71\}"></verse>
 			<verse title="IntroductionSecond" text="&gt;amaA baEad\: fa&lt;in~a &gt;aSodaqa {loHadiyvi kitaAbu {ll~ahi\, waxayora {lohadoyi hadoyu muHam~adK Sal~aY {ll~ahu Ealayohi wasal~am\, wa$ar~a {lo&gt;umuwri muHodavaAtuhaA\, wakul~a muHodavapK bidoEapN\, wakul~a bidoEapK DalaAlapN\, wakul~a DalaAlapK fiy {ln~aAri"></verse>
+			<verse title="ForKnowledge" text="\{20:114:17-19\}"></verse>
 		</category>
 	</verses>
 	<grammar>
@@ -1586,7 +1587,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="ja}izN" id="Allowed"></word>
 			<word text="gaAforN" id="Forgiving"></word>
 			<word text="kawoniy" id="Universal"></word>
-			<word text="wasubaHaAnN" id="AndEveryone"></word>
+			<word text="wa&gt;SabaAHapN" id="OCalamityOfTheMorning"></word>
 			<word text="EumorapN" id="MinorPilgrimage"></word>
 			<word text="EabodN" id="Slave"></word>
 			<word text="&gt;amatN" id="FemaleSlave"></word>
@@ -1927,7 +1928,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="&lt;ihaAbN" id=""></word>
 			<word text="diybaArN" id=""></word>
 			<word text="HimaArN" id=""></word>
-			<word text="mahodiy" id=""></word>
+			<word text="mahodiy" id="GuidedOne"></word>
 			<word text="waAdiy" id=""></word>
 			<word text="maniy" id=""></word>
 			<word text="janaAbapN" id="MajorImpurity"></word>
@@ -2755,35 +2756,57 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="ta{ll~ahi" id="ISwearByAllah"></word>
 			<word text="wa{ll~ahi" id="ISwearByAllah"></word>
 			<word text="&gt;asomaA^&apos;u {ld~uwali" id="NamesOfCountries"></word>
+			<word text="&gt;aholu {loHadiyvu" id="PeopleOfHadith"></word>
+			<word text="&gt;aholu {lr~aA^&apos;i" id="PeopleOfReasoningOpinion"></word>
+			<word text="&lt;ijoma &gt;aholu madinapu" id="ConsensusOfThePeopleOfMedina"></word>
+			<word text="{lofiqohu {lowaqiEiy" id="RealisticJurisprudence"></word>
 		</category>
 		<category title="Names">
-			<word text="&gt;abuw {loqaAsim muHam~adN {bonu Eabodu {ll~ahi {bonu Eabodu {lomuT~alib {bonu haA$im‎" id="MuhammadBinAbdullahBinAbduAlMuttalib"></word>
-			<word text="HamozapN {bonu Eabodu {lomuT~alib" id="HamzaBinAbduAlMuttalib"></word>
-			<word text="Eabodu {ll~ahi {bonu &gt;abiy quHaAfapN" id="AbdullahBinAbiQuhafah"></word>
-			<word text="&gt;abuw bakr {lSad~iyq" id="AbuBakrAlSaddiq"></word>
-			<word text="Eumar {bonu {loxaT~aAb" id="UmarBinAlKhattab"></word>
-			<word text="EuvomaAn {bonu EafaAn" id="UthmanBinAffan"></word>
-			<word text="Ealiy {bonu &gt;abiy TaAlib" id="AliBinAbiTalib"></word>
-			<word text="{loHasan {bonu Ealiy~N {bonu &gt;abiy TaAlib‎" id="HasanBinAli"></word>
-			<word text="{loHus~ayon {bonu Ealiy~N {bonu &gt;abiy TaAlib" id="HusseinBinAli"></word>
-			<word text="Ealiy {bonu {loHus~ayon" id="AliBinHussein"></word>
+			<word text="muHam~adN {bonu Eabodu {ll~ahi {bonu Eabodu {lomuT~alibu {bonu haA$im‎N" nickname="&gt;abuw {loqaAsim" id="MuhammadBinAbdullahBinAbduAlMuttalib"></word>
+			<word text="qaAsimN {bonu muHam~adN" nickname="{lT~aahiru" id="QaasimBinMuhammad"></word>
+			<word text="Eabodu {all~ahi {bonu muHam~adN" nickname="{lTay~ibu" id="AbdullahBinMuhammad"></word>
+			<word text="zayonabu {bonatu muHam~adN" id="ZaynabBintiMuhammad"></word>
+			<word text="ruqay~apu {bonatu muHam~adN" id="RuqayyahBintiMuhammad"></word>
+			<word text="&gt;um~N kulovumN {bonatu muHam~adN" id="UmmKulthumBintiMuhammad"></word>
+			<word text="faATimapu {bonatu muHam~adN" id="FatimaBintiMuhammad"></word>
+			<word text="HamozapN {bonu Eabodu {lomuT~alibu" id="HamzaBinAbduAlMuttalib"></word>
+			<word text="{loEabaAsu {bonu Eabodu {lomuT~alibu" id="AlAbbasBinAbduAlMuttalib"></word>
+			<word text="Eabodu {ll~ahi {bonu Eabodu {lomuT~alibu" id="AbdullahBinAbduAlMuttalib"></word>
+			<word text="&apos;aAminapu {bonatu wahobN" id="AaminaBintiWahb"></word>
+			<word text="{bonu Eabodu {lomuT~alibu" id="&gt;abuw TaAlibN" id="AbuTalib"></word>
+			<word text="{bonu Eabodu {lomuT~alibu" id="&gt;abuw lahabN" id="AbuLahab"></word>
+			<word text="sumay~apu {bonatu xayaAT~N" id="SumayyaBintiKhayatt"></word>
+			<word text="yaAsirN {bonu EaAmirN {loEanosiy" id="YaasirBinAmir"></word>
+			<word text="EamaArN {bonu yaAsirN {bonu EaAmirN {bonu maAlikN &gt;abuw {loyaqoZaAnu" id="AmaarBinYaasir"></word>
+			<word text="suhayolN {bonu EamorN" id="SuhaylBinAmr"></word>
+			<word text="faAtimapu {bonatu EamorN" id="FatimaBintiAmr"></word>
+			<word text="Eamoruw {bonu hi$aAmN" nickname="&gt;abuw jaholN &gt;abuw {loHakamu" id="AbuJahl"></word>
+			<word text="Eabodu {ll~ahi {bonu &gt;abiy quHaAfapN" nickname="&gt;abuw bakr {lSad~iyq" id="AbuBakrAlSaddiqAbdullahBinAbiQuhafah"></word>
+			<word text="EumarN {bonu {loxaT~aAbu" nickname="{lofuroqanu" id="UmarBinAlKhattab"></word>
+			<word text="EuvomaAnN {bonu EafaAnN" id="UthmanBinAffan"></word>
+			<word text="jaEfarM {bonu &gt;abiy TaAlibN" id="JafarBinAbiTalib"></word>
+			<word text="Ealiy~N {bonu &gt;abiy TaAlibN" id="AliBinAbiTalib"></word>
+			<word text="{loHasanu {bonu Ealiy~N {bonu &gt;abiy TaAlib‎" id="HasanBinAli"></word>
+			<word text="{loHus~ayonu {bonu Ealiy~N {bonu &gt;abiy TaAlib" id="HusseinBinAli"></word>
+			<word text="Ealiy~N {bonu {loHus~ayon" id="AliBinHussein"></word>
 			<word text="muHam~adN {bonu Ealiy~N {lobaAqir" id="MuhammadBinAli"></word> 
-			<word text="jaEfar {bonu muHam~adN {lS~aAdiq‎" id="JafarBinMuhammad"></word>
-			<word text="muwsaY {bonu jaEfar {lokaAZim‎" id="MusaBinJafar"></word>
-			<word text="faATimapu {bonu muHam~ad" id="FatimaBinMuhammad"></word>
-			<word text="Ealiy {bonu muwsaY {lr~iDaA‎" id="AliBinMusa"></word>
+			<word text="jaEfarN {bonu muHam~adN {lS~aAdiq‎" id="JafarBinMuhammad"></word>
+			<word text="muwsaY {bonu jaEfarN {lokaAZim‎" id="MusaBinJafar"></word>
+			<word text="faATimapu {bonatu muHam~ad" id="FatimaBintiMuhammad"></word>
+			<word text="Ealiy~N {bonu muwsaY {lr~iDaA‎" id="AliBinMusa"></word>
 			<word text="{lo&lt;imaAm muHam~adN {lt~aqiy {lojawaAd" id="MuhammadBinAli"></word>
-			<word text="Ealiy {lohaAdiy {ln~aqiy‎" id="AliBinMuhammad"></word>
-			<word text="{loHasan {loEaskariy {bonu Ealiy~N {bonu muHam~ad" id="HasanBinAli"></word>
+			<word text="Ealiy~N {lohaAdiy {ln~aqiy‎" id="AliBinMuhammad"></word>
+			<word text="{loHasanu {loEaskariy {bonu Ealiy~N {bonu muHam~ad" id="HasanBinAli"></word>
 			<word text="muHam~adN {bonu {loHasan {lomahdiy" id="MuhammadBinAlHasan"></word>
 			<word text="TaloHapN {bonu Eabayd {ll~ah‎" id="TalhaBinObaidullah"></word>
-			<word text="{lz~ubayor {bonu {loEawaAm {bonu xuwayolid" id="AzZubayrbinAlAwam"></word>
-			<word text="saEod {bonu malik" id="SadBinMalik"></word>
-			<word text="saEod {bonu &gt;abiy waq~aAS‎" id="SadBinAbiWaqqas"></word>
+			<word text="{lz~ubayoru {bonu {loEawaAm {bonu xuwayolid" id="AzZubayrbinAlAwam"></word>
+			<word text="saEodN {bonu malikN" id="SadBinMalik"></word>
+			<word text="saEodN {bonu &gt;abiy waq~aAS‎" id="SadBinAbiWaqqas"></word>
 			<word text="Eabodu {lr~aHoman {bonu Eawf‎" id="AbdurRahmanBinAwf"></word>
 			<word text="&gt;abuw EubaydapN EaAmir {bonu Eabodi {ll~ahi {bonu {lojar~aAH‎" id="AbuUbaidahBinAlJarrah"></word>
 			<word text="saEiydN {bonu zayodN" id="SaeedBinZaid"></word>
 			<word text="xadiyjapu {bonatu xuwayolidN" id="KhadijahBintKhuwaylid"></word>
+			<word text="waraqapu {bonu nawofalN {bonu &gt;asadN {bonu Eabdu {loEuz~aY {bonu quSay~N {loqura$iy" id="WaraqahBinNawfal"></word>
 			<word text="sawodapu {bonatu zamoEap‎N" id="SawdaBintZama"></word>
 			<word text="EaA}i$apN {bonatu &gt;abiy‎ bakorN" id="AishaBintAbiBakr"></word>
 			<word text="HafoSapN {bonatu EumarN" id="HafsaBintUmar"></word>
@@ -2797,7 +2820,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="maAroyapN {loqubTiy~ap‎" id="MariaAlQibtiyya"></word>
 			<word text="rayHaAnapN {bonatu zayod‎" id="RayhanaBintZayd"></word>
 			<word text="&gt;abuw hurayorapN" id="AbuHurairah"></word>
-			<word text="xaAlidN {bonu {lowaliyd" id="KhalidBinWalid"></word>
+			<word text="xaAlidN {bonu {lowaliydu" id="KhalidBinWalid"></word>
 			<word text="Eabodu {ll~ahi {bonu masoEuwdu" id="AbdullahBinMasood"></word>
 			<word text="Eabodu {ll~ahi {bonu Eab~aAsN" id="AbdullahBinAbbas"></word>
 			<word text="Eabodu {ll~ahi {bonu EumarN" id="AbdullahBinUmar"></word>
@@ -2826,21 +2849,16 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="&gt;aHomadN {bonu HanobalN {l$~ayobaAniy" id="ImamHanbal"></word>
 
 			<word text="&gt;abuw dahorN" id="AbuDahr"></word>
-			<word text="&gt;abuw jahalN" id="AbuJahal"></word>
-			<word text="&gt;abuw lahabN" id="AbuLahab"></word>
 			<word text="{lo&lt;imaAmu {ln~awawiy 40 HadiyvN" id="ImamNawawi40Hadith"></word>
 			<word text="EamorN {bonu {loEaASu" id="AmrBinAlAas"></word>
 			<word text="{l~ayovu {bonu saAdN" id="AlLaythBinSaad"></word>
 			<word text="saEodN {bonu waEodN" id="SaadBinWaad"></word>
 			<word text="baniw vaqiyfN" id="BaniThaqeef"></word>
 			<word text="baniw haA$imN" id="BaniHashim"></word>
+			<word text="baniw maxozuwmN" id="BaniHashim"></word>
 			<word text="yaAjuwjN wa maAjuwjN" id="GogAndMagog"></word>
 			<word text="{lobuxaAriy" id="ImamBukhari"></word>
 			<word text="musolimN" id="ImamMuslim"></word>
-			<word text="&gt;aholu {loHadiyvu" id="PeopleOfHadith"></word>
-			<word text="&gt;aholu {lr~aA^&apos;i" id="PeopleOfReasoningOpinion"></word>
-			<word text="&lt;ijoma &gt;aholu madinapu" id="ConsensusOfThePeopleOfMedina"></word>
-			<word text="{lofiqohu {lowaqiEiy" id="RealisticJurisprudence"></word>
 		</category>
 		<category title="Places">
 			<word text="{lo&lt;israA^&apos; wa{lomiEoraAj‎" id="IsraAndMiraj"></word>
