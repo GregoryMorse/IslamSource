@@ -142,7 +142,7 @@
             If Count = CurRenderArray.Count - 1 Then
                 Top += CurTop + Bounds(Count)(CurRenderArray(Count).TextItems.Length - 1)(Bounds(Count)(CurRenderArray(Count).TextItems.Length - 1).Count - 1).Rect.Height
             End If
-            MaxRight = Math.Min(Math.Max(Right, Right + MaxWidth), MaxRight)
+            MaxRight = Math.Min(Math.Max(Math.Max(Right, _Width - MaxWidth), Right + MaxWidth), MaxRight)
         Next
         For Count = 0 To Bounds.Count - 1
             For SubCount = 0 To Bounds(Count).Count - 1
@@ -157,9 +157,9 @@
     Private Sub RecalcLayout()
         Me.Controls.Clear()
         If _RenderArray Is Nothing Or Me.Parent Is Nothing OrElse Me.Parent.Width = 0 Then Return
-        Dim Bounds As Generic.List(Of Generic.List(Of Generic.List(Of LayoutInfo)))
-        If CurBounds Is Nothing Then
-            Bounds = New Generic.List(Of Generic.List(Of Generic.List(Of LayoutInfo)))
+        Dim _Bounds As Generic.List(Of Generic.List(Of Generic.List(Of LayoutInfo))) = CurBounds
+        If _Bounds Is Nothing Then
+            _Bounds = New Generic.List(Of Generic.List(Of Generic.List(Of LayoutInfo)))
             Me.RightToLeft = Windows.Forms.RightToLeft.Yes
             Me.MaximumSize = New Size(Me.Parent.Width, Me.Height)
             Dim g As Graphics = CreateGraphics()
@@ -167,7 +167,7 @@
             Dim oldFont As IntPtr = SelectObject(hdc, Font.ToHfont())
             Dim CalcText As New TextBox
             CalcText.Font = Font
-            Me.Size = GetLayout(_RenderArray, Me.Parent.Width, Bounds, GetTextWidthFromTextBox(CalcText, hdc))
+            Me.Size = GetLayout(_RenderArray, Me.Parent.Width, _Bounds, GetTextWidthFromTextBox(CalcText, hdc))
             SelectObject(hdc, oldFont)
             g.ReleaseHdc(hdc)
             g.Dispose()
@@ -176,20 +176,20 @@
             For SubCount As Integer = 0 To _RenderArray(Count).TextItems.Length - 1
                 If _RenderArray(Count).TextItems(SubCount).DisplayClass = IslamMetadata.RenderArray.RenderDisplayClass.eNested Then
                     Dim Renderer As New MultiLangRender
-                    Renderer.CurBounds = Bounds(Count)(SubCount)(0).Bounds
+                    Renderer.CurBounds = _Bounds(Count)(SubCount)(0).Bounds
                     Renderer.RenderArray = CType(_RenderArray(Count).TextItems(SubCount).Text, List(Of IslamMetadata.RenderArray.RenderItem))
-                    Renderer.Bounds = Bounds(Count)(SubCount)(0).Rect
                     Me.Controls.Add(Renderer)
+                    Renderer.Bounds = _Bounds(Count)(SubCount)(0).Rect
                 ElseIf _RenderArray(Count).TextItems(SubCount).DisplayClass = IslamMetadata.RenderArray.RenderDisplayClass.eArabic Or _RenderArray(Count).TextItems(SubCount).DisplayClass = IslamMetadata.RenderArray.RenderDisplayClass.eLTR Or _RenderArray(Count).TextItems(SubCount).DisplayClass = IslamMetadata.RenderArray.RenderDisplayClass.eRTL Or _RenderArray(Count).TextItems(SubCount).DisplayClass = IslamMetadata.RenderArray.RenderDisplayClass.eTransliteration Then
                     Dim theText As String = CStr(_RenderArray(Count).TextItems(SubCount).Text)
-                    For NextCount As Integer = 0 To Bounds(Count)(SubCount).Count - 1
+                    For NextCount As Integer = 0 To _Bounds(Count)(SubCount).Count - 1
                         Dim NewText As New TextBox
                         NewText.RightToLeft = If(_RenderArray(Count).TextItems(SubCount).DisplayClass <> IslamMetadata.RenderArray.RenderDisplayClass.eLTR And _RenderArray(Count).TextItems(SubCount).DisplayClass <> IslamMetadata.RenderArray.RenderDisplayClass.eTransliteration, Windows.Forms.RightToLeft.Yes, Windows.Forms.RightToLeft.No)
                         NewText.Font = Font
-                        NewText.Text = theText.Substring(0, Bounds(Count)(SubCount)(NextCount).nChar)
-                        theText = theText.Substring(Bounds(Count)(SubCount)(NextCount).nChar)
-                        NewText.Bounds = Bounds(Count)(SubCount)(NextCount).Rect
+                        NewText.Text = theText.Substring(0, _Bounds(Count)(SubCount)(NextCount).nChar)
+                        theText = theText.Substring(_Bounds(Count)(SubCount)(NextCount).nChar)
                         Me.Controls.Add(NewText)
+                        NewText.Bounds = _Bounds(Count)(SubCount)(NextCount).Rect
                     Next
                 End If
             Next
