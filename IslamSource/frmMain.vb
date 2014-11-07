@@ -20,6 +20,7 @@ Public Class frmMain
         Renderer.Anchor = AnchorStyles.Left Or AnchorStyles.Top Or AnchorStyles.Right Or AnchorStyles.Bottom
         Renderer.Size = New Size(gbMain.Width, gbMain.Height)
         Renderer.RenderArray = TanzilReader.GetQuranTextBySelection(0, 1, String.Empty, Arabic.TranslitScheme.RuleBased, "PlainRoman", 0).Items
+        MultiLangRender.OutputPdf("test.pdf", Renderer.RenderArray)
         gbMain.Controls.Add(Renderer)
     End Sub
 

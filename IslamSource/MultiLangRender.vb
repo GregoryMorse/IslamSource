@@ -17,16 +17,6 @@
     Dim CurBounds As Generic.List(Of Generic.List(Of Generic.List(Of LayoutInfo))) = Nothing
     Dim _ReEntry As Boolean = False
     Dim _RenderArray As Generic.List(Of IslamMetadata.RenderArray.RenderItem)
-    Structure LayoutInfo
-        Public Sub New(NewRect As Rectangle, NewNChar As Integer, NewBounds As Generic.List(Of Generic.List(Of Generic.List(Of LayoutInfo))))
-            Rect = NewRect
-            nChar = NewNChar
-            Bounds = NewBounds
-        End Sub
-        Dim Rect As Rectangle
-        Dim nChar As Integer
-        Dim Bounds As Generic.List(Of Generic.List(Of Generic.List(Of LayoutInfo)))
-    End Structure
     Public Property RenderArray As List(Of IslamMetadata.RenderArray.RenderItem)
         Get
             Return _RenderArray
@@ -35,52 +25,94 @@
             _RenderArray = value
         End Set
     End Property
-    Public Sub OutputPdf(Path As String)
+    Structure LayoutInfo
+        Public Sub New(NewRect As RectangleF, NewNChar As Integer, NewBounds As Generic.List(Of Generic.List(Of Generic.List(Of LayoutInfo))))
+            Rect = NewRect
+            nChar = NewNChar
+            Bounds = NewBounds
+        End Sub
+        Dim Rect As RectangleF
+        Dim nChar As Integer
+        Dim Bounds As Generic.List(Of Generic.List(Of Generic.List(Of LayoutInfo)))
+    End Structure
+    Public Shared Sub DoRenderPdf(Doc As PdfSharp.Pdf.PdfDocument, Font As PdfSharp.Drawing.XFont, ByRef Page As PdfSharp.Pdf.PdfPage, ByRef XGraphics As PdfSharp.Drawing.XGraphics, CurRenderArray As List(Of IslamMetadata.RenderArray.RenderItem), _Bounds As Generic.List(Of Generic.List(Of Generic.List(Of LayoutInfo))), BaseOffset As PointF)
+        For Count As Integer = 0 To CurRenderArray.Count - 1
+            For SubCount As Integer = 0 To CurRenderArray(Count).TextItems.Length - 1
+                If CurRenderArray(Count).TextItems(SubCount).DisplayClass = IslamMetadata.RenderArray.RenderDisplayClass.eNested Then
+                    DoRenderPdf(Doc, Font, Page, XGraphics, CType(CurRenderArray(Count).TextItems(SubCount).Text, List(Of IslamMetadata.RenderArray.RenderItem)), _Bounds(Count)(SubCount)(0).Bounds, New PointF(BaseOffset.X + _Bounds(Count)(SubCount)(0).Rect.Location.X, BaseOffset.Y + _Bounds(Count)(SubCount)(0).Rect.Location.Y))
+                ElseIf CurRenderArray(Count).TextItems(SubCount).DisplayClass = IslamMetadata.RenderArray.RenderDisplayClass.eArabic Or CurRenderArray(Count).TextItems(SubCount).DisplayClass = IslamMetadata.RenderArray.RenderDisplayClass.eLTR Or CurRenderArray(Count).TextItems(SubCount).DisplayClass = IslamMetadata.RenderArray.RenderDisplayClass.eRTL Or CurRenderArray(Count).TextItems(SubCount).DisplayClass = IslamMetadata.RenderArray.RenderDisplayClass.eTransliteration Then
+                    Dim theText As String = CStr(CurRenderArray(Count).TextItems(SubCount).Text)
+                    For NextCount As Integer = 0 To _Bounds(Count)(SubCount).Count - 1
+                        If _Bounds(Count)(SubCount)(NextCount).Rect.Top > Page.Height.Point Then
+                            Page = New PdfSharp.Pdf.PdfPage
+                            Doc.Pages.Add(Page)
+                            XGraphics = PdfSharp.Drawing.XGraphics.FromPdfPage(Page)
+                            BaseOffset.Y -= _Bounds(Count)(SubCount)(NextCount).Rect.Top
+                            Exit For
+                        End If
+                    Next
+                    For NextCount As Integer = 0 To _Bounds(Count)(SubCount).Count - 1
+                        Dim Rect As RectangleF = _Bounds(Count)(SubCount)(NextCount).Rect
+                        Rect.Offset(BaseOffset)
+                        Rect.Height = 0
+                        XGraphics.DrawString(theText.Substring(0, _Bounds(Count)(SubCount)(NextCount).nChar), Font, PdfSharp.Drawing.XBrushes.Black, Rect)
+                        theText = theText.Substring(_Bounds(Count)(SubCount)(NextCount).nChar)
+                    Next
+                End If
+            Next
+        Next
+    End Sub
+    Public Shared Sub OutputPdf(Path As String, CurRenderArray As List(Of IslamMetadata.RenderArray.RenderItem))
         Dim Doc As New PdfSharp.Pdf.PdfDocument
         Dim Font As New PdfSharp.Drawing.XFont("Arial", 20, PdfSharp.Drawing.XFontStyle.Bold)
-        Dim Bounds As New Generic.List(Of Generic.List(Of Generic.List(Of LayoutInfo)))
-        'define page height and split
-        'For Count = 0 To Pages.Count - 1
+        Dim _Bounds As New Generic.List(Of Generic.List(Of Generic.List(Of LayoutInfo)))
+        'divide into pages by heights
         Dim Page As New PdfSharp.Pdf.PdfPage
-        GetLayout(_RenderArray, Page.Width.Point, Bounds, GetTextWidthFromPdf())
+        Doc.Pages.Add(Page)
         Dim XGraphics As PdfSharp.Drawing.XGraphics = PdfSharp.Drawing.XGraphics.FromPdfPage(Page)
-        'XGraphics.DrawString("test", Font, PdfSharp.Drawing.XBrushes.Black, New PdfSharp.Drawing.XPoint(x, y))
-        'Next
+        GetLayout(CurRenderArray, CSng(Page.Width.Point), _Bounds, GetTextWidthFromPdf(XGraphics, Font))
+        DoRenderPdf(Doc, Font, Page, XGraphics, CurRenderArray, _Bounds, New PointF(0, 0))
         Doc.Save(Path)
     End Sub
-    Delegate Function GetTextWidth(Str As String, MaxWidth As Double, ByRef s As Size) As Integer
-    Private Shared Function GetTextWidthFromTextBox(NewText As TextBox, hdc As IntPtr) As GetTextWidth
-        Dim ret As IntPtr = SendMessage(NewText.Handle, EM_GETMARGINS, IntPtr.Zero, IntPtr.Zero)
-        Dim WidthOffset As Integer = (ret.ToInt32() And &HFFFF) + (ret.ToInt32() << 16) + GetSystemMetrics(SM_CXBORDER) * 2 + NewText.Margin.Left + NewText.Margin.Right
-        Return Function(Str As String, MaxWidth As Double, ByRef s As Size)
-                   Dim nChar As Integer
-                   GetTextExtentExPoint(hdc, Str, Str.Length, CInt(MaxWidth) - WidthOffset, nChar, Nothing, s)
-                   s.Width += WidthOffset
-                   NewText.Text = Str
-                   s.Height = NewText.PreferredSize.Height
-                   Return nChar
+    Delegate Function GetTextWidth(Str As String, MaxWidth As Single, ByRef s As SizeF) As Integer
+    Private Shared Function GetTextWidthFromPdf(XGraphics As PdfSharp.Drawing.XGraphics, Font As PdfSharp.Drawing.XFont) As GetTextWidth
+        Return Function(Str As String, MaxWidth As Single, ByRef s As SizeF)
+                   s = XGraphics.MeasureString(Str, Font).ToSizeF()
+                   Dim Len As Integer = Str.Length
+                   Dim Search As Integer = Len
+                   'binary search the maximum characters
+                   If s.Width > MaxWidth Then
+                       While Search <> 0
+                           Search = Search \ 2
+                           If s.Width > MaxWidth Then
+                               Len -= Search
+                           Else
+                               Len += Search
+                           End If
+                           s = XGraphics.MeasureString(Str.Substring(0, Len), Font).ToSizeF()
+                       End While
+                       If s.Width > MaxWidth Then
+                           Len -= 1 'factor towards fitting not overflowing
+                       End If
+                   End If
+                   Return Len
                End Function
     End Function
-    Private Shared Function GetTextWidthFromPdf() As GetTextWidth
-        Return Function(Str As String, MaxWidth As Double, ByRef s As Size)
-                   Return 0
-               End Function
-    End Function
-    Private Shared Function GetLayout(CurRenderArray As List(Of IslamMetadata.RenderArray.RenderItem), _Width As Double, ByRef Bounds As Generic.List(Of Generic.List(Of Generic.List(Of LayoutInfo))), WidthFunc As GetTextWidth) As Size
-        Dim MaxRight As Double = _Width
-        Dim Top As Integer = 0
-        Dim NextRight As Double = _Width
-        Dim LastCurTop As Integer = 0
-        Dim LastRight As Double = _Width
+    Private Shared Function GetLayout(CurRenderArray As List(Of IslamMetadata.RenderArray.RenderItem), _Width As Single, ByRef Bounds As Generic.List(Of Generic.List(Of Generic.List(Of LayoutInfo))), WidthFunc As GetTextWidth) As SizeF
+        Dim MaxRight As Single = _Width
+        Dim Top As Single = 0
+        Dim NextRight As Single = _Width
+        Dim LastCurTop As Single = 0
+        Dim LastRight As Single = _Width
         For Count As Integer = 0 To CurRenderArray.Count - 1
             Dim IsOverflow As Boolean = False
-            Dim MaxWidth As Double = 0
-            Dim Right As Double = NextRight
-            Dim CurTop As Integer = 0
+            Dim MaxWidth As Single = 0
+            Dim Right As Single = NextRight
+            Dim CurTop As Single = 0
             Bounds.Add(New Generic.List(Of Generic.List(Of LayoutInfo)))
             For SubCount As Integer = 0 To CurRenderArray(Count).TextItems.Length - 1
                 Bounds(Count).Add(New Generic.List(Of LayoutInfo))
-                Dim s As Drawing.Size
+                Dim s As Drawing.SizeF
                 If CurRenderArray(Count).TextItems(SubCount).DisplayClass = IslamMetadata.RenderArray.RenderDisplayClass.eNested Then
                     Dim SubBounds As New Generic.List(Of Generic.List(Of Generic.List(Of LayoutInfo)))
                     s = MultiLangRender.GetLayout(CType(CurRenderArray(Count).TextItems(SubCount).Text, List(Of IslamMetadata.RenderArray.RenderItem)), _Width, SubBounds, WidthFunc)
@@ -89,7 +121,7 @@
                         NextRight = _Width
                         IsOverflow = True
                     End If
-                    Bounds(Count)(SubCount).Add(New LayoutInfo(New Rectangle(CInt(Right), Top + CurTop, s.Width, s.Height), 0, SubBounds))
+                    Bounds(Count)(SubCount).Add(New LayoutInfo(New RectangleF(Right, Top + CurTop, s.Width, s.Height), 0, SubBounds))
                     MaxWidth = Math.Max(MaxWidth, s.Width)
                 ElseIf CurRenderArray(Count).TextItems(SubCount).DisplayClass = IslamMetadata.RenderArray.RenderDisplayClass.eArabic Or CurRenderArray(Count).TextItems(SubCount).DisplayClass = IslamMetadata.RenderArray.RenderDisplayClass.eLTR Or CurRenderArray(Count).TextItems(SubCount).DisplayClass = IslamMetadata.RenderArray.RenderDisplayClass.eRTL Or CurRenderArray(Count).TextItems(SubCount).DisplayClass = IslamMetadata.RenderArray.RenderDisplayClass.eTransliteration Then
                     Dim theText As String = CStr(CurRenderArray(Count).TextItems(SubCount).Text)
@@ -112,7 +144,7 @@
                             NextRight = _Width
                             IsOverflow = True
                         End If
-                        Bounds(Count)(SubCount).Add(New LayoutInfo(New Rectangle(CInt(Right), Top + CurTop, s.Width, s.Height), nChar, Nothing))
+                        Bounds(Count)(SubCount).Add(New LayoutInfo(New RectangleF(Right, Top + CurTop, s.Width, s.Height), nChar, Nothing))
                         MaxWidth = Math.Max(MaxWidth, s.Width)
                     End While
                 End If
@@ -124,9 +156,9 @@
             For SubCount = 0 To Bounds(Count).Count - 1
                 For NextCount = 0 To Bounds(Count)(SubCount).Count - 1
                     If NextCount <> Bounds(Count)(SubCount).Count - 1 Then
-                        Bounds(Count)(SubCount)(NextCount) = New LayoutInfo(New Rectangle(CInt(MaxWidth / 2 - Bounds(Count)(SubCount)(NextCount).Rect.Width / 2), Bounds(Count)(SubCount)(NextCount).Rect.Top + If(IsOverflow, LastCurTop, 0), Bounds(Count)(SubCount)(NextCount).Rect.Width, Bounds(Count)(SubCount)(NextCount).Rect.Height), Bounds(Count)(SubCount)(NextCount).nChar, Bounds(Count)(SubCount)(NextCount).Bounds)
+                        Bounds(Count)(SubCount)(NextCount) = New LayoutInfo(New RectangleF(MaxWidth / 2 - Bounds(Count)(SubCount)(NextCount).Rect.Width / 2, Bounds(Count)(SubCount)(NextCount).Rect.Top + If(IsOverflow, LastCurTop, 0), Bounds(Count)(SubCount)(NextCount).Rect.Width, Bounds(Count)(SubCount)(NextCount).Rect.Height), Bounds(Count)(SubCount)(NextCount).nChar, Bounds(Count)(SubCount)(NextCount).Bounds)
                     Else
-                        Bounds(Count)(SubCount)(NextCount) = New LayoutInfo(New Rectangle(If(IsOverflow, CInt(_Width), Bounds(Count)(SubCount)(NextCount).Rect.Left) - CInt(MaxWidth - (MaxWidth / 2 - Bounds(Count)(SubCount)(NextCount).Rect.Width / 2)), Bounds(Count)(SubCount)(NextCount).Rect.Top + If(IsOverflow, LastCurTop, 0), Bounds(Count)(SubCount)(NextCount).Rect.Width, Bounds(Count)(SubCount)(NextCount).Rect.Height), Bounds(Count)(SubCount)(NextCount).nChar, Bounds(Count)(SubCount)(NextCount).Bounds)
+                        Bounds(Count)(SubCount)(NextCount) = New LayoutInfo(New RectangleF(If(IsOverflow, _Width, Bounds(Count)(SubCount)(NextCount).Rect.Left) - CInt(MaxWidth - (MaxWidth / 2 - Bounds(Count)(SubCount)(NextCount).Rect.Width / 2)), Bounds(Count)(SubCount)(NextCount).Rect.Top + If(IsOverflow, LastCurTop, 0), Bounds(Count)(SubCount)(NextCount).Rect.Width, Bounds(Count)(SubCount)(NextCount).Rect.Height), Bounds(Count)(SubCount)(NextCount).nChar, Bounds(Count)(SubCount)(NextCount).Bounds)
                     End If
                 Next
             Next
@@ -148,11 +180,26 @@
             For SubCount = 0 To Bounds(Count).Count - 1
                 For NextCount = 0 To Bounds(Count)(SubCount).Count - 1
                     'overall centering can be done here though must calculate an overall line width
-                    Bounds(Count)(SubCount)(NextCount) = New LayoutInfo(New Rectangle(Bounds(Count)(SubCount)(NextCount).Rect.Left - CInt(_Width - MaxRight), Bounds(Count)(SubCount)(NextCount).Rect.Top, Bounds(Count)(SubCount)(NextCount).Rect.Width, Bounds(Count)(SubCount)(NextCount).Rect.Height), Bounds(Count)(SubCount)(NextCount).nChar, Bounds(Count)(SubCount)(NextCount).Bounds)
+                    Bounds(Count)(SubCount)(NextCount) = New LayoutInfo(New RectangleF(Bounds(Count)(SubCount)(NextCount).Rect.Left - CInt(_Width - MaxRight), Bounds(Count)(SubCount)(NextCount).Rect.Top, Bounds(Count)(SubCount)(NextCount).Rect.Width, Bounds(Count)(SubCount)(NextCount).Rect.Height), Bounds(Count)(SubCount)(NextCount).nChar, Bounds(Count)(SubCount)(NextCount).Bounds)
                 Next
             Next
         Next
-        Return New Size(CInt(MaxRight), Top)
+        Return New SizeF(MaxRight, Top)
+    End Function
+
+    Private Shared Function GetTextWidthFromTextBox(NewText As TextBox, hdc As IntPtr) As GetTextWidth
+        Dim ret As IntPtr = SendMessage(NewText.Handle, EM_GETMARGINS, IntPtr.Zero, IntPtr.Zero)
+        Dim WidthOffset As Integer = (ret.ToInt32() And &HFFFF) + (ret.ToInt32() << 16) + GetSystemMetrics(SM_CXBORDER) * 2 + NewText.Margin.Left + NewText.Margin.Right
+        Return Function(Str As String, MaxWidth As Single, ByRef s As SizeF)
+                   Dim nChar As Integer
+                   Dim GetSize As Size
+                   GetTextExtentExPoint(hdc, Str, Str.Length, CInt(MaxWidth) - WidthOffset, nChar, Nothing, GetSize)
+                   s = New SizeF(GetSize.Width, GetSize.Height)
+                   s.Width += WidthOffset
+                   NewText.Text = Str
+                   s.Height = NewText.PreferredSize.Height
+                   Return nChar
+               End Function
     End Function
     Private Sub RecalcLayout()
         Me.Controls.Clear()
@@ -167,7 +214,7 @@
             Dim oldFont As IntPtr = SelectObject(hdc, Font.ToHfont())
             Dim CalcText As New TextBox
             CalcText.Font = Font
-            Me.Size = GetLayout(_RenderArray, Me.Parent.Width, _Bounds, GetTextWidthFromTextBox(CalcText, hdc))
+            Me.Size = GetLayout(_RenderArray, CSng(Me.Parent.Width), _Bounds, GetTextWidthFromTextBox(CalcText, hdc)).ToSize()
             SelectObject(hdc, oldFont)
             g.ReleaseHdc(hdc)
             g.Dispose()
@@ -179,7 +226,7 @@
                     Renderer.CurBounds = _Bounds(Count)(SubCount)(0).Bounds
                     Renderer.RenderArray = CType(_RenderArray(Count).TextItems(SubCount).Text, List(Of IslamMetadata.RenderArray.RenderItem))
                     Me.Controls.Add(Renderer)
-                    Renderer.Bounds = _Bounds(Count)(SubCount)(0).Rect
+                    Renderer.Bounds = Rectangle.Round(_Bounds(Count)(SubCount)(0).Rect)
                 ElseIf _RenderArray(Count).TextItems(SubCount).DisplayClass = IslamMetadata.RenderArray.RenderDisplayClass.eArabic Or _RenderArray(Count).TextItems(SubCount).DisplayClass = IslamMetadata.RenderArray.RenderDisplayClass.eLTR Or _RenderArray(Count).TextItems(SubCount).DisplayClass = IslamMetadata.RenderArray.RenderDisplayClass.eRTL Or _RenderArray(Count).TextItems(SubCount).DisplayClass = IslamMetadata.RenderArray.RenderDisplayClass.eTransliteration Then
                     Dim theText As String = CStr(_RenderArray(Count).TextItems(SubCount).Text)
                     For NextCount As Integer = 0 To _Bounds(Count)(SubCount).Count - 1
@@ -189,7 +236,7 @@
                         NewText.Text = theText.Substring(0, _Bounds(Count)(SubCount)(NextCount).nChar)
                         theText = theText.Substring(_Bounds(Count)(SubCount)(NextCount).nChar)
                         Me.Controls.Add(NewText)
-                        NewText.Bounds = _Bounds(Count)(SubCount)(NextCount).Rect
+                        NewText.Bounds = Rectangle.Round(_Bounds(Count)(SubCount)(NextCount).Rect)
                     Next
                 End If
             Next
