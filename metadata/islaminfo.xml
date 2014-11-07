@@ -1284,9 +1284,9 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="famN" plural="&gt;afowaAhN" id="Mouth"></word>
 			<word text="rajulN" plural="rijaAlN" id="Man"></word>
 			<word text="lisaAnN" plural="&gt;alosinapN" id="TongueLanguage"></word>
-			<word text="&lt;imora&gt;apN" plural="nisaA^&apos;N" id="Woman"></word>
+			<word text="&lt;imora&gt;apN {lomaro&gt;apu" plural="nisaA^&apos;N" id="Woman"></word>
 			<word text="qalobN" plural="quluwbN" id="Heart"></word>
-			<word text="waladN" plural="&gt;awolaAdN" id="Child"></word>
+			<word text="waladN" plural="&gt;awolaAdN" id="BoySonChild"></word>
 			<word text="SadorN" plural="SuduwrN" id="Breast"></word>
 			<word text="waAlidN" plural="waAlidayonN" id="Father"></word>
 			<word text="yadN" plural="&gt;ayodiy" id="Hand"></word>
@@ -2056,6 +2056,8 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="maroyamu" grammar="f" id="Mary"></word>
 			<word text="faATimapu" grammar="f" id="Fatima"></word>
 			<word text="EaA^}i$apu" grammar="f" id="Aisha"></word>
+			<word text="EarabN" id="Arab"></word>
+			<word text="Earabiy~N" id="Arabic"></word>
 			<word text="&gt;amoriykaA" id="America"></word>
 			<word text="{lS~iynu" id="China"></word>
 			<word text="soriylaAnkaA" id="SriLanka"></word>
@@ -2105,6 +2107,10 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="kaviyrN" id="Many"></word>
 			<word text="biAxotiSaArN" id="Short"></word>
 			<word text="TawiylN {loqaAmapu" id="Tall"></word>
+			<word text="jamiylN" id="Young"></word>
+			<word text="saAkinN" id="Living"></word>
+			<word text="qaSiyrN" id="Short"></word>
+			<word text="binotN" plural="banaAtN" id="GirlDaughter"></word>
 			<word text="&gt;a$otaraY" id="Buy"></word>
 			<word text="baAEotN" id="Sell"></word>
 			
