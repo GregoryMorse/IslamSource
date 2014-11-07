@@ -779,7 +779,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<verse title="CallToPrayerSixthVerse" text="{lS~alaw`pu xayorN mina {ln~awomi"></verse>
 			<verse title="CallToPrayerSeventhVerse" text="{ll~ahu &gt;akobaru"></verse>
 			<verse title="CallToPrayerEighthVerse" text="laA &lt;ilaha &lt;il~aA {ll~ahu"></verse>
-			<verse title="CallToBeginPrayerSixthVerse" text="qado qaAmati {lS~alaw`pu"></verse>
+			<verse title="CallToBeginPrayerSixthVerse" text="qadi qaAmati {lS~alaw`pu"></verse>
 		</category>
 		<category title="Creed">
 			<verse title="FirstCreed" text="laA &lt;ilaha &lt;il~aA {ll~ahu\, muHam~adN rasuwulu {ll~ahi"></verse>
@@ -820,7 +820,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<verse title="TheWhiteMoonThird" text="wajab {l$~ukoru EalayonaA"></verse>
 			<verse title="TheWhiteMoonFourth" text="maA daEaY lil~ahi daAE"></verse>
 			<verse title="TheWhiteMoonFifth" text="&gt;ay~uhaA {lomaboEuwvu fiynaA"></verse>
-			<verse title="TheWhiteMoonSixth" text="ji}ta bi{l&gt;amri {lomuTaAE"></verse>
+			<verse title="TheWhiteMoonSixth" text="ji}ta bi{l&gt;amori {lomuTaAE"></verse>
 			<verse title="TheWhiteMoonSeventh" text="ji}ta $ar~afta {lomadiynapu"></verse>
 			<verse title="TheWhiteMoonEighth" text="maroHabFA yaA xayora daAE"></verse>
 		</category>
@@ -1241,7 +1241,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="gayobN" plural="guyuwbN" id="Unseen"></word>
 			<word text="diynN" plural="&gt;adiyaAnN" id="ReligionLawJudgment"></word>
 			<word text="kitaAbN" plural="kutubN" id="Book"></word>
-			<word text="zakaw`pN" plural="zakawaAtN" id="PoorDueCharity"></word>
+			<word text="zakaw`pN" plural="zakawaAtN" id="PoorDueCharityAlmsGiving"></word>
 			<word text="kalimapN" plural="kalimaAtN" id="Word"></word>
 			<word text="$ahiydN" plural="$uhadaA^&apos;N" id="WitnessPresent"></word>
 			<word text="malakN" plural="malaA^}ikapN" id="Angel"></word>
@@ -1643,7 +1643,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="jabariy~apN" id="ThoseBelievingNoFreedomOfChoice"></word>
 			<word text="jamaEapN" id="Congregation"></word>
 			<word text="tasoliymN" id="Delivery"></word>
-			<word text="ta$ahudN" id="Witnessing"></word>
+			<word text="ta$ah~udN" id="Witnessing"></word>
 			<word text="&gt;a*okaArN" id="SupplicationsAndPrayers"></word>
 			<word text="SalawaAtN" id="Invocation"></word>
 			<word text="mufotiy" id="Mufti"></word>
@@ -1694,7 +1694,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="qibolapN" id="DirectionOfPrayer"></word>
 			<word text="sujuwdN" id="Prostrating"></word>
 			<word text="sajodapN" id="Prostration"></word>
-			<word text="rakaEapN" id="UnitOfPrayer"></word>
+			<word text="rakoEapN" id="UnitOfPrayer"></word>
 			<word text="rukuwEN" id="BowOfPrayer"></word>
 			<word text="wuDuw&apos;N" id="Ablution"></word>
 			<word text="tayam~umN" id="DustAblution"></word>
@@ -1715,15 +1715,31 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="$ahaAdapN" id="Creed"></word>
 			<word text="takobiyrN" id="PhraseForAllahIsGreatest"></word>
 			<word text="taHomiydN" id="PhraseForAllPraiseAndThanksBeToAllah"></word>
+			<word text="taholiylN" id="PhraseForThereIsNoGodExceptAllah"></word>
+			<word text="talobiyapN" id="RecitationPilgrimage"></word>
 			<word text="tasobiyHN" id="PhraseForGloryBeToAllah"></word>
+			<word text="tasomiEN" id="PhraseForAllahListensToTheOneWhoPraisesHim"></word>
+			<word text="ta&gt;omiynN" id="PhraseForMayAllahWillItSo"></word>
 			<word text="tawoHiydN" id="OnenessOfGod"></word>
+			<word text="huf~aAZN" plural="haAfiZN" id="MemorizerOfQuran"></word>
+			<word text="HaniyfN" id="PureMonotheism"></word>
+			<word text="&lt;isotiHodaAd" id="ShavingThePubicHair"></word>
+			<word text="jizoyapN" id="HeadTaxForNonMuslims"></word>
+			<word text="magaziy" id="Battles"></word>
+			<word text="buroquEN" id="VeilCoveringFaceWithTwoHolesToPermitVision"></word>
+			<word text="ximaArN" id="ShawlLikeClothCoveringHeadAndShouldersWornByMuslimWomen"></word>
+			<word text="dinarN" id="GoldCoinOf2.975Grams"></word>
+			<word text="dirohamN" id="SilverOf2.975Grams"></word>
+			<word text="mivoqaAlN" id="WeightMeasureOf4.25Grams"></word>
+			<word text="mud~N" id="WeightMeasureOf543Grams"></word>
+			<word text="SaAEN" id="WeightMeasureOf2172Grams"></word>
+			<word text="wasoqN" id="WeightMeasureOf130320Grams"></word>
 			<word text="rubuwbiy~apN" id="Domininion"></word>
 			<word text="{lo&gt;asomaA^&apos;u" id="Names"></word>
 			<word text="{lS~ifaAtu" id="Attributes"></word>
 			<word text="{loEuluwhiy~apu" id="Divinity"></word>
 			<word text="EibaAdapN" id="Worship"></word>
 			<word text="SawomN" id="Fasting"></word>
-			<word text="zakaw`pN" id="AlmsGiving"></word>
 			<word text="Haj~N" id="Pilgrimage"></word>
 			<word text="quro&apos;aAnN" id="RevelationOfAllah"></word>
 			<word text="&lt;injiylN" id="Gospels"></word>
@@ -1749,16 +1765,27 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="&gt;uSuwlN" id="Foundations"></word>
 			<word text="furuw&apos;N" id="Details"></word>
 			<word text="sanadN" id="ListOfNarrators"></word>
+			<word text="&lt;isonaAdN" id="ListOfNarrators"></word>
 			<word text="matonN" id="Text"></word>
 			<word text="mukav~iruwna" id="ReportersOfManyTraditions"></word>
 			<word text="SaHiyfapN" id="WritingMaterial"></word>
 			<word text="muSan~afN" id="ClassifiedOrganizedWork"></word>
-			<word text="musonadN" id="CompilationByName"></word>
+			<word text="musonadN" id="CompilationByNameReferenced"></word>
 			<word text="SaHiyHN" id="Authentic"></word>
 			<word text="HasanN" id="Good"></word>
 			<word text="DaEiyfN" id="Weak"></word>
+			<word text="munoqaTi" id="NameInChainOfNarrationOmittedOrUnknownNameMentioned"></word>
+			<word text="muEad~alN" id="TwoOrMoreNamesMissingFromChainOfNarration"></word>
+			<word text="tadoliysN" id="NarratorMakesFalseClaim"></word>
+			<word text="mudal~asN" id="NarratorMakesFalseClaim"></word>
+			<word text="muEal~alN" id="HiddenWeakness"></word>
+			<word text="munokarN" id="NarratedByUntrustworthyPersonDenounced"></word>
+			<word text="muDoTaribN" id="Shaky"></word>
+			<word text="$aA*N" id="IrregularNarratedBySingleTrustworthyPersonContraryToOtherSources"></word>
 			<word text="waAhinN" id="ExtremelyWeak"></word>
 			<word text="mawoDuwEN" id="Fabricated"></word>
+			<word text="gariybN" id="OnePartOfChainHasSingleNarrator"></word>
+			<word text="HasanN gariybN" id="GoodAndOnePartOfChainHasSingleNarrator"></word>
 			<word text="baATilN" id="False"></word>
 			<word text="&lt;iEotikaAfN" id="Isolation"></word>
 			<word text="maHoramN" id="CloseRelative"></word>
@@ -1860,7 +1887,6 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="muHodavN" id="NewlyExistent"></word>
 			<word text="&lt;ixotilaAfN" id="DifferencesDisagreement"></word>
 			<word text="tawas~alN" id="GraveWorship"></word>
-			<word text="musonadN" id="Referenced"></word>
 			<word text="majohuwlN" id="Unknown"></word>
 			<word text="{lomuqotadiyaAtu" id="NamesAndAttributes"></word>
 			<word text="tahoriyfN" id="Distortion"></word>
@@ -1918,9 +1944,9 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="Hukomiy~apN" id=""></word>
 			<word text="qul~aY" id=""></word>
 			<word text="biduwinN" id=""></word>
-			<word text="EaworapN" id=""></word>
-			<word text="&lt;isotinjaA^&apos;N" id=""></word>
-			<word text="&lt;isotijomaArN" id=""></word>
+			<word text="EaworapN" id="PrivatePartsOrPartsOfBodyForbiddenToExposeToOthers"></word>
+			<word text="&lt;isotinjaA^&apos;N" id="CleaningOnesStoolAndUrineExitsAfterDefecationOrUrinationWithWater"></word>
+			<word text="&lt;isotijomaArN" id="CleaningOnesStoolAndUrineExitsAfterDefecationOrUrinationWithStonesOrSubstitute"></word>
 			<word text="$ayaATiynN" id=""></word>
 			<word text="&gt;aHaAdiyvN" id=""></word>
 			<word text="masofuwhN" id=""></word>
@@ -1939,10 +1965,11 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="&gt;atoha" id=""></word>
 			<word text="{lokuholu" id=""></word>
 			<word text="rijosN" plural="&gt;arojaAsN" id="DirtFilth"></word>
-			<word text="{ln~iyapu" id=""></word>
-			<word text="taEaAmN" id=""></word>
+			<word text="{ln~iyapu" id="Intention"></word>
+			<word text="taEaAmN" id="Food"></word>
 			<word text="naAfilapN" plural="nawaAfilN" id="SupererogatoryPerformance"></word>
-			<word text="&lt;isotiHaAdapN" id=""></word>
+			<word text="&lt;isotiHaAdapN" id="VaginalBleedingOtherThanMenstruation"></word>
+			<word text="musotaHaAdapN" id="WomanWithVaginalBleedingOtherThanMenstruation"></word>
 			<word text="fuqaAhapN" id="Knowledgable"></word>
 			<word text="mu&amp;alaAqaAtN" id=""></word>
 			<word text="lamosahN" plural="lamosaAtN" id="Touch"></word>
@@ -1968,7 +1995,8 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="{lt~aHar~uju" id=""></word>
 			<word text="mu&apos;ak~adapN" id=""></word>
 			<word text="jaworabN" plural="jawaAribN" id="SockStocking"></word>
-			<word text="fitorapN" id=""></word>
+			<word text="fitorapN" id="NaturalBeliefInGod"></word>
+			<word text="{lomuEaw~i*ataynu" id="VersesOfRefuge"></word>
 
 			<word text="darosN" id="Lesson"></word>
 			<word text="{lomaEonaY" id="Meaning"></word>
@@ -2009,6 +2037,11 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="&gt;ajorN" id="Reward"></word>
 			<word text="Ealiy~N" id="Transcendent"></word>
 			<word text="muHar~amN" id="Consecrated"></word>
+			<word text="jaAlisN" id="Sitting"></word>
+			<word text="waAqifN" id="Standing"></word>
+			<word text="musaAfirN" id="Travelling"></word>
+			<word text="qaAdimN" id="Coming"></word>
+			<word text="*aAhibN" id="Going"></word>
 			<word text="jid~FA" id="Very"></word>
 			<word text="muHam~adN" id="Muhammad"></word>
 			<word text="HasanN" id="Hasan"></word>
@@ -2395,12 +2428,14 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="la&apos;aAmu {lt~awokiydu" id="LaamOfEmphasis"></word>
 			<word text="{l {lt~aEoriyfu" id="AlOfDefiniteness"></word>
 			<word text="yaA^&apos;N {lomutakal~imu" id="FirstPersonAttachedPronoun"></word>
+			<word text="&lt;isomu {ln~isobapi" id="RelativeAdjective"></word>
 		</category>
 		<category title="RulesOfRecitation">
 			<word text="sif~aAtN" id="LetterCharacteristics"></word>
 			<word text="maxoraj~N" id="PointOfArticulation"></word>
 			<word text="taEaw~u*N" id="Protection"></word>
 			<word text="basomalapN" id="PhraseForInTheNameOfAllah"></word>
+			<word text="tasomiyapN" id="PhraseForInTheNameOfAllah"></word>
 			<word text="laHonN jaliy" id="MajorIncorrectPronounciation"></word>
 			<word text="laHonN xafiy" id="MinorIncorrectPronounciation"></word>
 			<word text="&lt;i$omaAmN" id="Dipthong"></word>
@@ -2713,7 +2748,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="majaAzN {loquro&apos;aAnu" id="QuranicMetaphor"></word>
 			<word text="&gt;aholu {lokitaAbi" id="PeopleOfTheBook"></word>
 			<word text="manaAhijN {lotafosiyru" id="MethodologyOfQuranicInterpretation"></word>
-			<word text="haAlatulN janabapN" id="StateofMajorRitualImpurity"></word>
+			<word text="haAlatulN janaAbapN" id="StateofMajorRitualImpurity"></word>
 			<word text="TaAharapu {loxabavu" id=""></word>
 			<word text="TaAharapu {loHadiyvu" id=""></word>
 			<word text="Hur~imapN Ealayokum {lomayotapu" id=""></word>
@@ -2764,6 +2799,9 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="&gt;aholu {lr~aA^&apos;i" id="PeopleOfReasoningOpinion"></word>
 			<word text="&lt;ijoma &gt;aholu madinapu" id="ConsensusOfThePeopleOfMedina"></word>
 			<word text="{lofiqohu {lowaqiEiy" id="RealisticJurisprudence"></word>
+			<word text="rafa {loyadayni" id="RaisingHandsInPrayer"></word>
+			<word text="{lomasiyHu {ld~aj~aAlu" id="Antichrist"></word>
+			<word text="zakaw`pN {lofiTori" id="FastBreakingCharity"></word>
 		</category>
 		<category title="Names">
 			<word text="muHam~adN {bonu Eabodu {ll~ahi {bonu Eabodu {lomuT~alibu {bonu haA$im‎N" nickname="&gt;abuw {loqaAsim" id="MuhammadBinAbdullahBinAbduAlMuttalib"></word>
@@ -2875,10 +2913,10 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="{lomasojidu {loHaraAmu" id="SacredMosque"></word>
 			<word text="{lomasojidu {ln~abawiy" id="MosqueOfTheProphet"></word>
 			<word text="{lomasojidu {lo&gt;aqoSaY‎" id="FarthestMosque"></word>
-			<word text="bayotu {lomaqodisi" id=""></word> 
+			<word text="bayotu {lomaqodisi" id="HolyHouse"></word> 
 			<word text="bayotu {lomaAli" id="CentralTreasury"></word>
-			<word text="EayodN {lofiTor‎i" id="FestivalOfBreakingFast"></word>
-			<word text="EayodN {lo&gt;aDoHaY‎" id="FestivalOfSacrifice"></word>
+			<word text="EiyodN {lofiTor‎i" id="FestivalOfBreakingFast"></word>
+			<word text="EiyodN {lo&gt;aDoHaY‎" id="FestivalOfSacrifice"></word>
 			<word text="ra&gt;asN {ls~anapu {lohijoriy~ap‎u" id="IslamicNewYear"></word> 
 			<word text="EaA$uwraA^&apos;" id="Ashura"></word>
 			<word text="mawolidN {ln~abiy" id="BirthdayOfTheProphet"></word>
@@ -3418,8 +3456,6 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 	Haqq al-Yaqeen (17th century), Ain Al-Hayat (17th century), Sharh Usul al-Kafi (?–1081) ->Qalam-e-Mowla, ->Daim al-Islam
 	'Mu'tazila - Sharh Nahj al-Balagha (?–1258)
 	'Unknown - Nur al-Thaqalayn
-	'isnād = chain of narration
-	'Ṣaḥīḥ, (صَحِيْح) = authentic, Ḥasan, (حَسَن) = good, musnad, (مُسْنَد) = supported, Ḍaʻīf, (ضَعِيْف) = weak, Munkar, (مُنْكَر) = denounced, Shādhdh, (شاذّ) = irregular, Muḍṭarib, (مُضْطَرِب) = shaky, mawḍūʻ, (مَوْضُوْع) = fabricated
 	'hadith ranking: trustworthiness of narrators, reliability of narrators, connectedness of the chain of narration, reliability of chain of narration, free of irregularity and contradiction of hadiths of greater reliability
 	-->
 	<hadithcollections>

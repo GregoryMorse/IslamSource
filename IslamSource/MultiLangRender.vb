@@ -14,6 +14,7 @@
     Const SM_CXBORDER As Integer = 5
     Const SM_CYBORDER As Integer = 6
     Const EM_GETMARGINS As UInteger = &HD4
+    Dim _ReEntry As Boolean = False
     Dim _RenderArray As Generic.List(Of IslamMetadata.RenderArray.RenderItem)
     Dim MaxWidths As New Generic.List(Of Integer)
     Dim Texts As New Generic.List(Of Generic.List(Of Generic.List(Of Object)))
@@ -25,6 +26,17 @@
             _RenderArray = value
         End Set
     End Property
+    Public Sub OutputPdf(Path As String)
+        Dim Doc As New PdfSharp.Pdf.PdfDocument
+        'define page height and split
+        'For Count = 0 To Pages.Count -1
+        Dim Page As New PdfSharp.Pdf.PdfPage
+        Dim XGraphics As PdfSharp.Drawing.XGraphics = PdfSharp.Drawing.XGraphics.FromPdfPage(Page)
+        Dim Font As New PdfSharp.Drawing.XFont("Arial", 20, PdfSharp.Drawing.XFontStyle.Bold)
+        'XGraphics.DrawString("test", Font, PdfSharp.Drawing.XBrushes.Black, New PdfSharp.Drawing.XPoint(x, y))
+        'Next
+        Doc.Save(Path)
+    End Sub
     Private Sub RecalcLayout()
         Me.Controls.Clear()
         Texts.Clear()
@@ -83,6 +95,8 @@
         Dim Right As Integer = Me.Parent.Width
         'Dim MaxRight As Integer = Right
         Dim NextRight As Integer = Right
+        Me.MaximumSize = New Size(Me.Parent.Width, Me.Height)
+        Me.Size = New Size(Me.Parent.Width, Me.Height) 'Preset width for child calculations
         For Count As Integer = 0 To _RenderArray.Count - 1
             Dim IsOverflow As Boolean = False
             If CurTop <> 0 Then
@@ -124,14 +138,23 @@
                 Top += CurTop + CType(Texts(Count)(_RenderArray(Count).TextItems.Length - 1)(Texts(Count)(_RenderArray(Count).TextItems.Length - 1).Count - 1), Control).PreferredSize.Height
             End If
         Next
+        Me.MaximumSize = New Size(Me.Parent.Width, Top)
         Me.Size = New Size(Me.Parent.Width, Top) '- Math.Min(Right, MaxRight)
     End Sub
 
     Private Sub MultiLangRender_Load(sender As Object, e As EventArgs) Handles Me.Load
         Font = New System.Drawing.Font(Font.FontFamily.Name, 22, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        RecalcLayout()
+        If Not _ReEntry Then
+            _ReEntry = True
+            RecalcLayout()
+            _ReEntry = False
+        End If
     End Sub
     Private Sub MultiLangRender_Resize(sender As Object, e As EventArgs) Handles Me.Resize
-        RecalcLayout()
+        If Not _ReEntry Then
+            _ReEntry = True
+            RecalcLayout()
+            _ReEntry = False
+        End If
     End Sub
 End Class
