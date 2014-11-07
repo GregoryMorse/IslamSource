@@ -28,6 +28,7 @@ Partial Class MultiLangRender
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.Name = "MultiLangRender"
         Me.RightToLeft = System.Windows.Forms.RightToLeft.Yes
         Me.Size = New System.Drawing.Size(10, 10)

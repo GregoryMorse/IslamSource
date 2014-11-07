@@ -138,7 +138,6 @@
                 Top += CurTop + CType(Texts(Count)(_RenderArray(Count).TextItems.Length - 1)(Texts(Count)(_RenderArray(Count).TextItems.Length - 1).Count - 1), Control).PreferredSize.Height
             End If
         Next
-        Me.MaximumSize = New Size(Me.Parent.Width, Top)
         Me.Size = New Size(Me.Parent.Width, Top) '- Math.Min(Right, MaxRight)
     End Sub
 
