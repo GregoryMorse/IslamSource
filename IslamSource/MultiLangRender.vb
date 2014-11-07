@@ -65,13 +65,14 @@
     End Function
     Private Shared Function GetLayout(_RenderArray As List(Of IslamMetadata.RenderArray.RenderItem), Width As Double, ByRef Bounds As Generic.List(Of Generic.List(Of Generic.List(Of LayoutInfo))), WidthFunc As GetTextWidth) As Size
         Dim MaxRight As Double = 0
-        Dim CurTop As Integer = 0
         Dim Top As Integer = 0
-        Dim Right As Double = Width
-        Dim NextRight As Double = Right
+        Dim NextRight As Double = Width
+        Dim LastCurTop As Integer = 0
         For Count As Integer = 0 To _RenderArray.Count - 1
             Dim IsOverflow As Boolean = False
             Dim MaxWidth As Double = 0
+            Dim Right As Double = NextRight
+            Dim CurTop As Integer = 0
             Bounds.Add(New Generic.List(Of Generic.List(Of LayoutInfo)))
             For SubCount As Integer = 0 To _RenderArray(Count).TextItems.Length - 1
                 Bounds(Count).Add(New Generic.List(Of LayoutInfo))
@@ -80,7 +81,7 @@
                     Dim SubBounds As New Generic.List(Of Generic.List(Of Generic.List(Of LayoutInfo)))
                     s = MultiLangRender.GetLayout(CType(_RenderArray(Count).TextItems(SubCount).Text, List(Of IslamMetadata.RenderArray.RenderItem)), Width, SubBounds, WidthFunc)
                     Right = NextRight
-                    If s.Width > NextRight Then
+                    If s.Width > NextRight Or IsOverflow Then
                         CurTop += s.Height
                         NextRight = Width
                         IsOverflow = True
@@ -104,7 +105,7 @@
                         End If
                         theText = theText.Substring(nChar)
                         Right = NextRight
-                        If theText <> String.Empty Then
+                        If theText <> String.Empty Or s.Width > NextRight Or IsOverflow Then
                             CurTop += s.Height
                             NextRight = Width
                             IsOverflow = True
@@ -121,9 +122,9 @@
             For SubCount = 0 To Bounds(Count).Count - 1
                 For NextCount = 0 To Bounds(Count)(SubCount).Count - 1
                     If NextCount <> Bounds(Count)(SubCount).Count - 1 Then
-                        Bounds(Count)(SubCount)(NextCount) = New LayoutInfo(New Rectangle(CInt(MaxWidth / 2 - Bounds(Count)(SubCount)(NextCount).Rect.Width / 2), Bounds(Count)(SubCount)(NextCount).Rect.Top, Bounds(Count)(SubCount)(NextCount).Rect.Width, Bounds(Count)(SubCount)(NextCount).Rect.Height), Bounds(Count)(SubCount)(NextCount).nChar)
+                        Bounds(Count)(SubCount)(NextCount) = New LayoutInfo(New Rectangle(CInt(MaxWidth / 2 - Bounds(Count)(SubCount)(NextCount).Rect.Width / 2), Bounds(Count)(SubCount)(NextCount).Rect.Top + If(IsOverflow, LastCurTop, 0), Bounds(Count)(SubCount)(NextCount).Rect.Width, Bounds(Count)(SubCount)(NextCount).Rect.Height), Bounds(Count)(SubCount)(NextCount).nChar)
                     Else
-                        Bounds(Count)(SubCount)(NextCount) = New LayoutInfo(New Rectangle(Bounds(Count)(SubCount)(NextCount).Rect.Left - CInt(MaxWidth - (MaxWidth / 2 - Bounds(Count)(SubCount)(NextCount).Rect.Width / 2)), Bounds(Count)(SubCount)(NextCount).Rect.Top, Bounds(Count)(SubCount)(NextCount).Rect.Width, Bounds(Count)(SubCount)(NextCount).Rect.Height), Bounds(Count)(SubCount)(NextCount).nChar)
+                        Bounds(Count)(SubCount)(NextCount) = New LayoutInfo(New Rectangle(Bounds(Count)(SubCount)(NextCount).Rect.Left - CInt(MaxWidth - (MaxWidth / 2 - Bounds(Count)(SubCount)(NextCount).Rect.Width / 2)), Bounds(Count)(SubCount)(NextCount).Rect.Top + If(IsOverflow, LastCurTop, 0), Bounds(Count)(SubCount)(NextCount).Rect.Width, Bounds(Count)(SubCount)(NextCount).Rect.Height), Bounds(Count)(SubCount)(NextCount).nChar)
                     End If
                 Next
             Next
@@ -134,14 +135,7 @@
             Else
                 NextRight -= MaxWidth
             End If
-            If CurTop <> 0 Then
-                If Right - MaxWidth < 0 Then
-                    Top += CurTop
-                    NextRight = Width
-                    Right = NextRight
-                End If
-                CurTop = 0
-            End If
+            LastCurTop = CurTop
             If Count = _RenderArray.Count - 1 Then
                 Top += CurTop + Bounds(Count)(_RenderArray(Count).TextItems.Length - 1)(Bounds(Count)(_RenderArray(Count).TextItems.Length - 1).Count - 1).Rect.Height
             End If
