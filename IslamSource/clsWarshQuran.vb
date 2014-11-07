@@ -187,8 +187,8 @@
         End Function
     End Class
     Shared Function ParseQuran() As String
-        Dim Doc As PdfSharp.Pdf.PdfDocument = PdfSharp.Pdf.IO.PdfReader.Open("..\..\..\IslamMetadata\warsh.pdf")
-        Dim XG As PdfSharp.Drawing.XGraphics = PdfSharp.Drawing.XGraphics.FromPdfPage(Doc.Pages(0))
+        'Dim Doc As PdfSharp.Pdf.PdfDocument = PdfSharp.Pdf.IO.PdfReader.Open("..\..\..\IslamMetadata\warsh.pdf")
+        'Dim XG As PdfSharp.Drawing.XGraphics = PdfSharp.Drawing.XGraphics.FromPdfPage(Doc.Pages(0))
         'For Cnt As Integer = 0 To Doc.Pages.Count - 1
         '    Dim CurFont As PdfSharp.Pdf.Content.Objects.CName
         '    Dim Content As PdfSharp.Pdf.Content.Objects.CSequence = PdfSharp.Pdf.Content.ContentReader.ReadContent(Doc.Pages(Cnt))
@@ -305,12 +305,12 @@
                     Dim privateFonts As New System.Drawing.Text.PrivateFontCollection()
                     privateFonts.AddFontFile("..\..\..\IslamMetadata\" + Vals(0) + ".ttf")
                     Dim f As New Font(privateFonts.Families(0), CSng(Vals(2)), GraphicsUnit.World)
-                    Dim Opt As New PdfSharp.Drawing.XPdfFontOptions(PdfSharp.Pdf.PdfFontEncoding.Unicode, PdfSharp.Pdf.PdfFontEmbedding.None)
-                    Dim XF As New PdfSharp.Drawing.XFont(f, Opt)
-                    Dim Form As New PdfSharp.Drawing.XStringFormat
-                    Form.Alignment = PdfSharp.Drawing.XStringAlignment.Far
-                    Form.FormatFlags = PdfSharp.Drawing.XStringFormatFlags.MeasureTrailingSpaces
-                    Dim Wid As Double = XG.MeasureString(Vals(11), XF, Form).Width
+                    'Dim Opt As New PdfSharp.Drawing.XPdfFontOptions(PdfSharp.Pdf.PdfFontEncoding.Unicode, PdfSharp.Pdf.PdfFontEmbedding.None)
+                    'Dim XF As New PdfSharp.Drawing.XFont(f, Opt)
+                    'Dim Form As New PdfSharp.Drawing.XStringFormat
+                    'Form.Alignment = PdfSharp.Drawing.XStringAlignment.Far
+                    'Form.FormatFlags = PdfSharp.Drawing.XStringFormatFlags.MeasureTrailingSpaces
+                    'Dim Wid As Double = XG.MeasureString(Vals(11), XF, Form).Width
                     Dim i As New System.Drawing.Bitmap(595, 842)
                     i.SetResolution(72, 72)
                     '8.26 width = 595, 11.69 height = 842, 72 DPI

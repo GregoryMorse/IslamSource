@@ -51,11 +51,8 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="PdfSharp">
-      <HintPath>..\..\..\..\Documents\Visual Studio 2008\Projects\HostPage\packages\PDFsharp.1.32.3057.0\lib\net20\PdfSharp.dll</HintPath>
-    </Reference>
-    <Reference Include="PdfSharp.Charting">
-      <HintPath>..\..\..\..\Documents\Visual Studio 2008\Projects\HostPage\packages\PDFsharp.1.32.3057.0\lib\net20\PdfSharp.Charting.dll</HintPath>
+    <Reference Include="itextsharp">
+      <HintPath>..\..\..\..\Documents\Visual Studio 2008\Projects\HostPage\packages\iTextSharp.5.5.3\lib\itextsharp.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
