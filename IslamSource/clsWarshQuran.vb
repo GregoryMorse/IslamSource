@@ -186,32 +186,110 @@
             Return If(CSng(x(1)) > CSng(y(1)), -1, 1)
         End Function
     End Class
+    Class TextExtractionStrategy
+        Implements iTextSharp.text.pdf.parser.ITextExtractionStrategy
+        Class Chunk
+            Public Str As String
+            Public FontName As String
+            Public Start As iTextSharp.text.pdf.parser.Vector
+            Public Finish As iTextSharp.text.pdf.parser.Vector
+            Public Sub New(NewStr As String, NewFontName As String, NewStart As iTextSharp.text.pdf.parser.Vector, NewFinish As iTextSharp.text.pdf.parser.Vector)
+                Str = NewStr
+                FontName = NewFontName
+                Start = NewStart
+                Finish = NewFinish
+            End Sub
+        End Class
+        Dim Chunks As New Generic.List(Of Chunk)
+
+        Public Sub BeginTextBlock() Implements iTextSharp.text.pdf.parser.IRenderListener.BeginTextBlock
+
+        End Sub
+
+        Public Sub EndTextBlock() Implements iTextSharp.text.pdf.parser.IRenderListener.EndTextBlock
+
+        End Sub
+
+        Public Sub RenderImage(renderInfo As iTextSharp.text.pdf.parser.ImageRenderInfo) Implements iTextSharp.text.pdf.parser.IRenderListener.RenderImage
+
+        End Sub
+
+        Public Sub RenderText(renderInfo As iTextSharp.text.pdf.parser.TextRenderInfo) Implements iTextSharp.text.pdf.parser.IRenderListener.RenderText
+            For Count As Integer = 0 To renderInfo.GetCharacterRenderInfos.Count - 1
+                Dim Segment As iTextSharp.text.pdf.parser.LineSegment = renderInfo.GetCharacterRenderInfos(Count).GetBaseline()
+                Chunks.Add(New Chunk(renderInfo.GetCharacterRenderInfos(Count).GetText(), renderInfo.GetFont().PostscriptFontName, Segment.GetStartPoint(), Segment.GetEndPoint()))
+            Next
+        End Sub
+
+        Public Function GetResultantText() As String Implements iTextSharp.text.pdf.parser.ITextExtractionStrategy.GetResultantText
+            Dim Str As String = String.Empty
+            Chunks.Sort(Function(First As Chunk, Second As Chunk)
+                            If First.Finish.Item(iTextSharp.text.pdf.parser.Vector.I2) = Second.Finish.Item(iTextSharp.text.pdf.parser.Vector.I2) Then
+                                Return If(First.Finish.Item(iTextSharp.text.pdf.parser.Vector.I1) > Second.Finish.Item(iTextSharp.text.pdf.parser.Vector.I1), -1, 1)
+                            End If
+                            Return If(First.Finish.Item(iTextSharp.text.pdf.parser.Vector.I2) > Second.Finish.Item(iTextSharp.text.pdf.parser.Vector.I2), -1, 1)
+
+                            Dim Vec1 As iTextSharp.text.pdf.parser.Vector = First.Finish.Subtract(First.Start)
+                            If Vec1.Length = 0 Then
+                                Vec1 = New iTextSharp.text.pdf.parser.Vector(1, 0, 0)
+                            Else
+                                Vec1 = Vec1.Normalize()
+                            End If
+                            Dim Vec2 As iTextSharp.text.pdf.parser.Vector = Second.Finish.Subtract(Second.Start)
+                            If Vec2.Length = 0 Then
+                                Vec2 = New iTextSharp.text.pdf.parser.Vector(1, 0, 0)
+                            Else
+                                Vec2 = Vec1.Normalize()
+                            End If
+                            Dim Mag1 As Integer = CInt(Math.Atan2(Vec1(iTextSharp.text.pdf.parser.Vector.I2), Vec1(iTextSharp.text.pdf.parser.Vector.I1)) * 1000)
+                            Dim Mag2 As Integer = CInt(Math.Atan2(Vec2(iTextSharp.text.pdf.parser.Vector.I2), Vec2(iTextSharp.text.pdf.parser.Vector.I1)) * 1000)
+                            If Mag1 = Mag2 Then
+                                Dim DistPerp1 As Integer = CInt(First.Start.Subtract(New iTextSharp.text.pdf.parser.Vector(0, 0, 1)).Cross(Vec1).Item(iTextSharp.text.pdf.parser.Vector.I3))
+                                Dim DistPerp2 As Integer = CInt(Second.Start.Subtract(New iTextSharp.text.pdf.parser.Vector(0, 0, 1)).Cross(Vec2).Item(iTextSharp.text.pdf.parser.Vector.I3))
+                                If DistPerp1 = DistPerp2 Then
+                                    Return If(Vec1.Dot(First.Start) < Vec2.Dot(Second.Start), -1, 1)
+                                Else
+                                    Return If(DistPerp1 < DistPerp2, -1, 1)
+                                End If
+                            Else
+                                Return If(Mag1 < Mag2, -1, 1)
+                            End If
+                        End Function)
+            For Count As Integer = 0 To Chunks.Count - 1
+                Dim CurDict As Dictionary(Of String, Integer()) = Nothing
+                If Chunks(Count).FontName = "BAMCIC+HQPB1" Then
+                    CurDict = Arr1
+                ElseIf Chunks(Count).FontName = "BAMCGB+HQPB2" Then
+                    CurDict = Arr2
+                ElseIf Chunks(Count).FontName = "BAMCJD+HQPB3" Then
+                    CurDict = Arr3
+                ElseIf Chunks(Count).FontName = "BAMCGA+HQPB4" Then
+                    CurDict = Arr4
+                ElseIf Chunks(Count).FontName = "BAMCHB+HQPB5" Then
+                    CurDict = Arr5
+                ElseIf Chunks(Count).FontName = "BAMDFB+HQPB7" Then
+                    CurDict = Arr7
+                End If
+                If Not CurDict Is Nothing Then
+                    For Each KeyValue As Collections.Generic.KeyValuePair(Of String, Integer()) In CurDict
+                        If Array.IndexOf(KeyValue.Value, System.Text.Encoding.Unicode.GetBytes(Chunks(Count).Str)(0) + 256 * System.Text.Encoding.Unicode.GetBytes(Chunks(Count).Str)(1)) <> -1 Then
+                            Str += KeyValue.Key
+                        End If
+                    Next
+                End If
+            Next
+            Return Str
+        End Function
+    End Class
     Shared Function ParseQuran() As String
-        'Dim Doc As PdfSharp.Pdf.PdfDocument = PdfSharp.Pdf.IO.PdfReader.Open("..\..\..\IslamMetadata\warsh.pdf")
-        'Dim XG As PdfSharp.Drawing.XGraphics = PdfSharp.Drawing.XGraphics.FromPdfPage(Doc.Pages(0))
-        'For Cnt As Integer = 0 To Doc.Pages.Count - 1
-        '    Dim CurFont As PdfSharp.Pdf.Content.Objects.CName
-        '    Dim Content As PdfSharp.Pdf.Content.Objects.CSequence = PdfSharp.Pdf.Content.ContentReader.ReadContent(Doc.Pages(Cnt))
-        '    For Each Obj As PdfSharp.Pdf.Content.Objects.CObject In Content
-        '        If TypeOf Obj Is PdfSharp.Pdf.Content.Objects.COperator Then
-        '            Dim COp As PdfSharp.Pdf.Content.Objects.COperator = Obj
-        '            If COp.OpCode.Name = PdfSharp.Pdf.Content.Objects.OpCodeName.Tf.ToString() Then
-        '                CurFont = COp.Operands.Item(0)
-        '                Dim CurSize As PdfSharp.Pdf.Content.Objects.CInteger = COp.Operands.Item(1)
-        '                Dim F As New PdfSharp.Pdf.Advanced.PdfFont
-        '                Dim Item As PdfSharp.Pdf.PdfName = CType(CType(CType(CType(CType(Doc.Pages(Cnt).Elements("/Resources"), PdfSharp.Pdf.Advanced.PdfReference).Value, PdfSharp.Pdf.PdfDictionary).Elements("/Font"), PdfSharp.Pdf.PdfDictionary).Elements("/TT1"), PdfSharp.Pdf.Advanced.PdfReference).Value, PdfSharp.Pdf.PdfDictionary).Elements("/BaseFont")
+        Dim Reader As New iTextSharp.text.pdf.PdfReader("..\..\..\IslamMetadata\warsh.pdf")
+        For Cnt As Integer = 0 To Reader.NumberOfPages - 1
+            iTextSharp.text.pdf.parser.PdfTextExtractor.GetTextFromPage(Reader, Cnt + 1, New TextExtractionStrategy)
 
-        '            ElseIf COp.OpCode.Name = PdfSharp.Pdf.Content.Objects.OpCodeName.Tj.ToString() Or COp.OpCode.Name = "TJ" Then
-        '                For Each Str As PdfSharp.Pdf.Content.Objects.CObject In COp.Operands
-        '                    If TypeOf Str Is PdfSharp.Pdf.Content.Objects.CString Then
-        '                        MsgBox(CType(Str, PdfSharp.Pdf.Content.Objects.CString).Value)
-        '                    End If
-        '                Next
-
-        '            End If
-        '        End If
-        '    Next
-        'Next
+        Next
+        'Tf - Font, Size
+        '"/Resources/Font/TT1/BaseFont"
+        'Tj Or "TJ"
         Dim Lines As Byte() = IO.File.ReadAllBytes("..\..\..\IslamMetadata\warsh.csv")
         Dim LinesOrder As String() = IO.File.ReadAllLines("..\..\..\IslamMetadata\warshp.txt", System.Text.Encoding.UTF8)
         Dim CharTable As String = String.Empty
@@ -305,12 +383,6 @@
                     Dim privateFonts As New System.Drawing.Text.PrivateFontCollection()
                     privateFonts.AddFontFile("..\..\..\IslamMetadata\" + Vals(0) + ".ttf")
                     Dim f As New Font(privateFonts.Families(0), CSng(Vals(2)), GraphicsUnit.World)
-                    'Dim Opt As New PdfSharp.Drawing.XPdfFontOptions(PdfSharp.Pdf.PdfFontEncoding.Unicode, PdfSharp.Pdf.PdfFontEmbedding.None)
-                    'Dim XF As New PdfSharp.Drawing.XFont(f, Opt)
-                    'Dim Form As New PdfSharp.Drawing.XStringFormat
-                    'Form.Alignment = PdfSharp.Drawing.XStringAlignment.Far
-                    'Form.FormatFlags = PdfSharp.Drawing.XStringFormatFlags.MeasureTrailingSpaces
-                    'Dim Wid As Double = XG.MeasureString(Vals(11), XF, Form).Width
                     Dim i As New System.Drawing.Bitmap(595, 842)
                     i.SetResolution(72, 72)
                     '8.26 width = 595, 11.69 height = 842, 72 DPI

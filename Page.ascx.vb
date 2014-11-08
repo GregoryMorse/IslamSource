@@ -430,9 +430,9 @@ Partial Class Page
                 writer.WriteAttribute("type", "submit")
             End If
             writer.Write(HtmlTextWriter.TagRightChar)
-            ElseIf (PageLoader.IsTextItem(Item)) Then
-                WriteTextItem(writer, DirectCast(Item, PageLoader.TextItem), TabCount, IndexString)
-            End If
+        ElseIf (PageLoader.IsTextItem(Item)) Then
+            WriteTextItem(writer, DirectCast(Item, PageLoader.TextItem), TabCount, IndexString)
+        End If
     End Sub
     Protected Overrides Sub Render(ByVal writer As System.Web.UI.HtmlTextWriter)
         Dim Index As Integer

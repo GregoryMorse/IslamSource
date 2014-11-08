@@ -3,7 +3,7 @@
 Public Class frmMain
     Private PageSet As New PageLoader
     Private Sub frmMain_Load(sender As Object, e As EventArgs) Handles Me.Load
-        'clsWarshQuran.ParseQuran()
+        clsWarshQuran.ParseQuran()
         'TanzilReader.ChangeQuranFormat(TanzilReader.QuranScripts.SimpleEnhanced)
         'TanzilReader.CheckNotablePatterns()
         'CachedData.DoErrorCheck()
@@ -20,7 +20,7 @@ Public Class frmMain
         Renderer.Anchor = AnchorStyles.Left Or AnchorStyles.Top Or AnchorStyles.Right Or AnchorStyles.Bottom
         Renderer.Size = New Size(gbMain.Width, gbMain.Height)
         Renderer.RenderArray = TanzilReader.GetQuranTextBySelection(0, 1, String.Empty, Arabic.TranslitScheme.RuleBased, "PlainRoman", 0).Items
-        MultiLangRender.OutputPdf("test.pdf", Renderer.RenderArray)
+        IslamMetadata.RenderArray.OutputPdf("test.pdf", Renderer.RenderArray)
         gbMain.Controls.Add(Renderer)
     End Sub
 
