@@ -3444,7 +3444,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 		<arabicsymbol symbolname="riyaAlN" uname="RialSign" symbol="FDFC" ipavalue="" extendedbuckwalter="0" terminating="true" connecting="false" assimilate="false" />
 		<arabicsymbol symbolname="bisomi {ll~ahi {lr~aHoma`ni {lr~aHiymi" uname="ArabicLigatureBismillahArRahmanArRaheem" symbol="FDFD" ipavalue="" extendedbuckwalter="0" terminating="true" connecting="false" assimilate="false" />
 
-		<arabicsymbol symbolname="hamozapN" uname="ArabicHamzaBelow" symbol="0655" ipavalue="ʔ" extendedbuckwalter="0" terminating="false" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="hamozapN" uname="ArabicHamzaBelow" symbol="0655" ipavalue="ʔ" extendedbuckwalter="88" terminating="false" connecting="false" assimilate="false" />
 		<arabicsymbol symbolname="PaY" uname="ArabicLetterPeh" symbol="067E" shaping="FB56,FB57,FB58,FB59" ipavalue="" extendedbuckwalter="80" terminating="false" connecting="false" assimilate="false" />
 		<arabicsymbol symbolname="JaY" uname="ArabicLetterTcheh" symbol="0686" shaping="FB7A,FB7B,FB7C,FB7D" ipavalue="" extendedbuckwalter="74" terminating="false" connecting="false" assimilate="false" />
 		<arabicsymbol symbolname="VaY" uname="ArabicLetterVeh" symbol="06A4" shaping="FB6A,FB6B,FB6C,FB6D" ipavalue="" extendedbuckwalter="86" terminating="false" connecting="false" assimilate="false" />

@@ -1044,6 +1044,12 @@ Public Class XMLCoding
     End Function
 End Class
 Public Class HTTPCoding
+    Public Shared Function XmlEncode(Str As String) As String
+        Return Str.Replace("&", "&amp;").Replace("<", "&lt;").Replace(">", "&gt;").Replace("'", "&apos;").Replace("""", "&quot;")
+    End Function
+    Public Shared Function XmlDecode(Str As String) As String
+        Return Str.Replace("&lt;", "<").Replace("&gt;", ">").Replace("&apos;", "'").Replace("&quot;", """").Replace("&amp;", "&")
+    End Function
     Public Shared Function PerformCoding() As String()
         Return New String() {"javascript: doHttpCoding();", String.Empty, _
         "function doHttpCoding() { $('#httpresult').text($('#convhttpdir0').prop('checked') ? ($('#convhttpattr0').prop('checked') ? encodeURI($('#convhttp').val()) : encodeURIComponent($('#convhttp').val())) : ($('#convhttpattr0').prop('checked') ? unescape($('#convhttp').val()) : decodeURIComponent($('#convhttp').val()))); }"}
