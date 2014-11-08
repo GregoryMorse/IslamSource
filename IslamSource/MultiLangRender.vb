@@ -60,7 +60,7 @@
                         Dim ct As New iTextSharp.text.pdf.ColumnText(Writer.DirectContent)
                         If CurRenderArray(Count).TextItems(SubCount).DisplayClass = IslamMetadata.RenderArray.RenderDisplayClass.eArabic Or CurRenderArray(Count).TextItems(SubCount).DisplayClass = IslamMetadata.RenderArray.RenderDisplayClass.eRTL Then
                             ct.RunDirection = iTextSharp.text.pdf.PdfWriter.RUN_DIRECTION_RTL
-                            ct.ArabicOptions = iTextSharp.text.pdf.ColumnText.AR_COMPOSEDTASHKEEL
+                            ct.ArabicOptions = iTextSharp.text.pdf.ColumnText.AR_LIG
                             ct.UseAscender = False
                         Else
                             ct.RunDirection = iTextSharp.text.pdf.PdfWriter.RUN_DIRECTION_LTR
@@ -74,13 +74,17 @@
             Next
         Next
     End Sub
+    Public Shared Function GetFontPath(Index As Integer) As String
+        'Return IslamMetadata.Utility.GetFilePath("files\" + "Scheherazade-R.ttf")
+        Dim Fonts As String() = {"times.ttf", "me_quran.ttf", "Scheherazade.ttf", "PDMS_Saleem.ttf", "KFC_naskh.otf", "trado.ttf", "arabtype.ttf", "majalla.ttf", "msuighur.ttf", "ARIALUNI.ttf"}
+        Return If(Index < 1 Or Index > 4, IO.Path.Combine(Environment.GetEnvironmentVariable("windir"), "Fonts\" + Fonts(Index)), IslamMetadata.Utility.GetFilePath("files\" + Fonts(Index)))
+    End Function
     Public Shared Sub OutputPdf(Path As String, CurRenderArray As List(Of IslamMetadata.RenderArray.RenderItem))
         Dim Doc As New iTextSharp.text.Document
         Dim Writer As iTextSharp.text.pdf.PdfWriter = iTextSharp.text.pdf.PdfWriter.GetInstance(Doc, New IO.FileStream(Path, IO.FileMode.Create, IO.FileAccess.Write, IO.FileShare.None))
         Doc.Open()
         Doc.NewPage()
-        Dim ARIALUNI_TFF As String = IO.Path.Combine(Environment.GetEnvironmentVariable("windir"), "Fonts\Times.TTF")
-        Dim BaseFont As iTextSharp.text.pdf.BaseFont = iTextSharp.text.pdf.BaseFont.CreateFont(ARIALUNI_TFF, iTextSharp.text.pdf.BaseFont.IDENTITY_H, iTextSharp.text.pdf.BaseFont.NOT_EMBEDDED)
+        Dim BaseFont As iTextSharp.text.pdf.BaseFont = iTextSharp.text.pdf.BaseFont.CreateFont(GetFontPath(5), iTextSharp.text.pdf.BaseFont.IDENTITY_H, iTextSharp.text.pdf.BaseFont.NOT_EMBEDDED)
         Dim Font As New iTextSharp.text.Font(BaseFont, 20, iTextSharp.text.Font.BOLD)
         Dim _Bounds As New Generic.List(Of Generic.List(Of Generic.List(Of LayoutInfo)))
         'divide into pages by heights
