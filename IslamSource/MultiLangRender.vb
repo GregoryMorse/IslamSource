@@ -39,32 +39,33 @@
         Dim nChar As Integer
         Dim Bounds As Generic.List(Of Generic.List(Of Generic.List(Of LayoutInfo)))
     End Structure
-    Public Shared Sub DoRenderPdf(Doc As iTextSharp.text.Document, Writer As iTextSharp.text.pdf.PdfWriter, Font As iTextSharp.text.Font, CurRenderArray As List(Of IslamMetadata.RenderArray.RenderItem), _Bounds As Generic.List(Of Generic.List(Of Generic.List(Of LayoutInfo))), BaseOffset As PointF)
+    Public Shared Sub DoRenderPdf(Doc As iTextSharp.text.Document, Writer As iTextSharp.text.pdf.PdfWriter, Font As iTextSharp.text.Font, CurRenderArray As List(Of IslamMetadata.RenderArray.RenderItem), _Bounds As Generic.List(Of Generic.List(Of Generic.List(Of LayoutInfo))), ByRef PageOffset As PointF, BaseOffset As PointF)
         For Count As Integer = 0 To CurRenderArray.Count - 1
             For SubCount As Integer = 0 To CurRenderArray(Count).TextItems.Length - 1
                 If CurRenderArray(Count).TextItems(SubCount).DisplayClass = IslamMetadata.RenderArray.RenderDisplayClass.eNested Then
-                    DoRenderPdf(Doc, Writer, Font, CType(CurRenderArray(Count).TextItems(SubCount).Text, List(Of IslamMetadata.RenderArray.RenderItem)), _Bounds(Count)(SubCount)(0).Bounds, New PointF(BaseOffset.X + _Bounds(Count)(SubCount)(0).Rect.Location.X, BaseOffset.Y + _Bounds(Count)(SubCount)(0).Rect.Location.Y))
+                    DoRenderPdf(Doc, Writer, Font, CType(CurRenderArray(Count).TextItems(SubCount).Text, List(Of IslamMetadata.RenderArray.RenderItem)), _Bounds(Count)(SubCount)(0).Bounds, PageOffset, New PointF(_Bounds(Count)(SubCount)(0).Rect.Location.X, _Bounds(Count)(SubCount)(0).Rect.Location.Y))
                 ElseIf CurRenderArray(Count).TextItems(SubCount).DisplayClass = IslamMetadata.RenderArray.RenderDisplayClass.eArabic Or CurRenderArray(Count).TextItems(SubCount).DisplayClass = IslamMetadata.RenderArray.RenderDisplayClass.eLTR Or CurRenderArray(Count).TextItems(SubCount).DisplayClass = IslamMetadata.RenderArray.RenderDisplayClass.eRTL Or CurRenderArray(Count).TextItems(SubCount).DisplayClass = IslamMetadata.RenderArray.RenderDisplayClass.eTransliteration Then
                     Dim theText As String = CStr(CurRenderArray(Count).TextItems(SubCount).Text)
                     For NextCount As Integer = 0 To _Bounds(Count)(SubCount).Count - 1
-                        If _Bounds(Count)(SubCount)(NextCount).Rect.Top > Doc.PageSize.Height + BaseOffset.Y Then
+                        If _Bounds(Count)(SubCount)(NextCount).Rect.Top + PageOffset.Y + BaseOffset.Y > Doc.PageSize.Height - Doc.BottomMargin - Doc.TopMargin Then
                             Doc.NewPage()
-                            BaseOffset.Y -= _Bounds(Count)(SubCount)(NextCount).Rect.Top
+                            PageOffset.Y = -_Bounds(Count)(SubCount)(NextCount).Rect.Top - BaseOffset.Y
                             Exit For
                         End If
                     Next
                     For NextCount As Integer = 0 To _Bounds(Count)(SubCount).Count - 1
                         Dim Rect As RectangleF = _Bounds(Count)(SubCount)(NextCount).Rect
                         Rect.Offset(BaseOffset)
-                        Rect.Height = 0
-                        Dim Content As iTextSharp.text.pdf.PdfContentByte = Writer.DirectContent
-                        Dim ct As New iTextSharp.text.pdf.ColumnText(Content)
+                        Rect.Offset(PageOffset)
+                        Dim ct As New iTextSharp.text.pdf.ColumnText(Writer.DirectContent)
                         If CurRenderArray(Count).TextItems(SubCount).DisplayClass = IslamMetadata.RenderArray.RenderDisplayClass.eArabic Or CurRenderArray(Count).TextItems(SubCount).DisplayClass = IslamMetadata.RenderArray.RenderDisplayClass.eRTL Then
                             ct.RunDirection = iTextSharp.text.pdf.PdfWriter.RUN_DIRECTION_RTL
-                            ct.SetSimpleColumn(Rect.Left, Doc.PageSize.Height - Rect.Top, Rect.Width, Rect.Height, 0, iTextSharp.text.Element.ALIGN_RIGHT)
+                            ct.ArabicOptions = iTextSharp.text.pdf.ColumnText.AR_COMPOSEDTASHKEEL
+                            ct.UseAscender = False
                         Else
-                            ct.SetSimpleColumn(Doc.PageSize.Width - Rect.Left, Doc.PageSize.Height - Rect.Top, Rect.Width, Rect.Height, 0, iTextSharp.text.Element.ALIGN_LEFT)
+                            ct.RunDirection = iTextSharp.text.pdf.PdfWriter.RUN_DIRECTION_LTR
                         End If
+                        ct.SetSimpleColumn(Rect.Left + Doc.LeftMargin, Doc.PageSize.Height - Doc.BottomMargin - Doc.TopMargin - Rect.Bottom, Rect.Right + 1 + Doc.LeftMargin, Doc.PageSize.Height - Doc.BottomMargin - Doc.TopMargin - Rect.Top + 1, Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size), iTextSharp.text.Element.ALIGN_CENTER)
                         ct.AddText(New iTextSharp.text.Chunk(theText.Substring(0, _Bounds(Count)(SubCount)(NextCount).nChar), Font))
                         ct.Go()
                         theText = theText.Substring(_Bounds(Count)(SubCount)(NextCount).nChar)
@@ -78,20 +79,22 @@
         Dim Writer As iTextSharp.text.pdf.PdfWriter = iTextSharp.text.pdf.PdfWriter.GetInstance(Doc, New IO.FileStream(Path, IO.FileMode.Create, IO.FileAccess.Write, IO.FileShare.None))
         Doc.Open()
         Doc.NewPage()
-        Dim ARIALUNI_TFF As String = IO.Path.Combine(Environment.GetEnvironmentVariable("windir"), "Fonts\ARIALUNI.TTF")
+        Dim ARIALUNI_TFF As String = IO.Path.Combine(Environment.GetEnvironmentVariable("windir"), "Fonts\Times.TTF")
         Dim BaseFont As iTextSharp.text.pdf.BaseFont = iTextSharp.text.pdf.BaseFont.CreateFont(ARIALUNI_TFF, iTextSharp.text.pdf.BaseFont.IDENTITY_H, iTextSharp.text.pdf.BaseFont.NOT_EMBEDDED)
         Dim Font As New iTextSharp.text.Font(BaseFont, 20, iTextSharp.text.Font.BOLD)
         Dim _Bounds As New Generic.List(Of Generic.List(Of Generic.List(Of LayoutInfo)))
         'divide into pages by heights
-        GetLayout(CurRenderArray, Doc.PageSize.Width, _Bounds, GetTextWidthFromPdf(Font, Font.Size))
-        DoRenderPdf(Doc, Writer, Font, CurRenderArray, _Bounds, New PointF(0, 0))
+        GetLayout(CurRenderArray, Doc.PageSize.Width - Doc.LeftMargin - Doc.RightMargin, _Bounds, GetTextWidthFromPdf(Font, Writer.DirectContent))
+        Dim PageOffset As New PointF(0, 0)
+        DoRenderPdf(Doc, Writer, Font, CurRenderArray, _Bounds, PageOffset, New PointF(0, 0))
         Doc.Close()
     End Sub
     Delegate Function GetTextWidth(Str As String, MaxWidth As Single, IsRTL As Boolean, ByRef s As SizeF) As Integer
-    Private Shared Function GetTextWidthFromPdf(Font As iTextSharp.text.Font, FontSize As Single) As GetTextWidth
+    Private Shared Function GetTextWidthFromPdf(Font As iTextSharp.text.Font, Content As iTextSharp.text.pdf.PdfContentByte) As GetTextWidth
         Return Function(Str As String, MaxWidth As Single, IsRTL As Boolean, ByRef s As SizeF)
-                   s.Height = Font.BaseFont.GetAscentPoint(Str, FontSize) + Font.BaseFont.GetDescentPoint(Str, FontSize)
-                   s.Width = iTextSharp.text.pdf.ColumnText.GetWidth(New iTextSharp.text.Phrase(Str, Font), If(IsRTL, iTextSharp.text.pdf.PdfWriter.RUN_DIRECTION_RTL, iTextSharp.text.pdf.PdfWriter.RUN_DIRECTION_DEFAULT), 0)
+                   Font.BaseFont.CorrectArabicAdvance()
+                   s.Height = 8 * Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size) + Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_ASCENT, Font.Size) - Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_DESCENT, Font.Size)
+                   s.Width = iTextSharp.text.pdf.ColumnText.GetWidth(New iTextSharp.text.Phrase(New iTextSharp.text.Chunk(Str, Font)), If(IsRTL, iTextSharp.text.pdf.PdfWriter.RUN_DIRECTION_RTL, iTextSharp.text.pdf.PdfWriter.RUN_DIRECTION_LTR), iTextSharp.text.pdf.ColumnText.AR_COMPOSEDTASHKEEL)
                    Dim Len As Integer = Str.Length
                    Dim Search As Integer = Len
                    'binary search the maximum characters
@@ -103,11 +106,11 @@
                            Else
                                Len += Search
                            End If
-                           s.Width = iTextSharp.text.pdf.ColumnText.GetWidth(New iTextSharp.text.Phrase(Str.Substring(0, Len), Font), If(IsRTL, iTextSharp.text.pdf.PdfWriter.RUN_DIRECTION_RTL, iTextSharp.text.pdf.PdfWriter.RUN_DIRECTION_DEFAULT), 0)
+                           s.Width = iTextSharp.text.pdf.ColumnText.GetWidth(New iTextSharp.text.Phrase(Str.Substring(0, Len), Font), If(IsRTL, iTextSharp.text.pdf.PdfWriter.RUN_DIRECTION_RTL, iTextSharp.text.pdf.PdfWriter.RUN_DIRECTION_LTR), 0)
                        End While
                        If s.Width > MaxWidth Then
                            Len -= 1 'factor towards fitting not overflowing
-                           s.Width = iTextSharp.text.pdf.ColumnText.GetWidth(New iTextSharp.text.Phrase(Str.Substring(0, Len), Font), If(IsRTL, iTextSharp.text.pdf.PdfWriter.RUN_DIRECTION_RTL, iTextSharp.text.pdf.PdfWriter.RUN_DIRECTION_DEFAULT), 0)
+                           s.Width = iTextSharp.text.pdf.ColumnText.GetWidth(New iTextSharp.text.Phrase(Str.Substring(0, Len), Font), If(IsRTL, iTextSharp.text.pdf.PdfWriter.RUN_DIRECTION_RTL, iTextSharp.text.pdf.PdfWriter.RUN_DIRECTION_LTR), 0)
                        End If
                    End If
                    Return Len
@@ -160,6 +163,7 @@
                             IsOverflow = True
                         End If
                         Bounds(Count)(SubCount).Add(New LayoutInfo(New RectangleF(Right, Top + CurTop, s.Width, s.Height), nChar, Nothing))
+                        If theText <> String.Empty Then CurTop += s.Height
                         MaxWidth = Math.Max(MaxWidth, s.Width)
                     End While
                 End If
