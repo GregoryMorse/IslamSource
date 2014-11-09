@@ -47,7 +47,7 @@
     {"liA", New Integer() {&H50, &H7E}},
     {"w%a", New Integer() {&H51}},
     {"w", New Integer() {&H53, &H55}},
-    {"w%", New Integer() {%H54}},
+    {"w%", New Integer() {&H54}},
     {"LFA", New Integer() {&H5A, &H5B, &H5C, &H5D}},
     {"LF[A", New Integer() {&H60, &H61}},
     {"L~F[A", New Integer() {&H62}},
@@ -108,7 +108,7 @@
 {"r", New Integer() {&HF08D, &HF08E, &HF08F, &HF090, &H2018, &H2019}},
 {"z", New Integer() {&H201C, &H201D, &H2022, &H2013, &H2014}},
 {"s", New Integer() {&H2122, &H203A, &H153, &HF09D, &HF09E, &HA0, &HA1, &HA3, &HA4, &HA6, &HA7, &HA8}},
-{"$", New Integer() {&HA9, &HAB, &HAC, &H2212, &HB0, &HB1, &HB4, &HB5, &HB6, &HB7, &HB8}},
+{"$", New Integer() {&HA9, &HAB, &HAC, &H2212, &HB0, &HB1, &HB3, &HB4, &HB5, &HB6, &HB7, &HB8}},
 {"S", New Integer() {&HB9, &HBB, &HBC, &HBE, &HC0, &HC1, &HC2, &HC4, &HC7, &HC8, &HC9}},
 {"D", New Integer() {&HCA, &HCC, &HCE, &HCF, &HD1, &HD2, &HD3, &HD5, &HD6, &HD8, &HD9, &HDA}},
 {"T", New Integer() {&HDB, &HDC, &HDD, &HDE}},
@@ -128,14 +128,16 @@
     {"h", New Integer() {&H3B4, &H3B5, &H3C6, &H3B3, &H3B7, &H3B9, &H3D5, &H3BA, &H3BB, &HB5, &H3BD}},
     {"p", New Integer() {&H3BF, &H3C0}},
     {"w", New Integer() {&H3B8, &H3C1}},
-    {"&", New Integer() {&H3C3, &H3C4, &H3C5}},
+    {"&", New Integer() {&H3C3, &H3C4}},
+    {"wX", New Integer() {&H3C5}},
     {"lA", New Integer() {&H3C9, &H3BE}},
-    {"l>", New Integer() {&H3C8, &H7B, &H7C, &H7D, &H223C}},
+    {"l>", New Integer() {&H3C8, &H7B, &H7C}},
+    {"l<", New Integer() {&H7D, &H223C}},
     {"y", New Integer() {&H192, &H201E, &H2020, &H2021, &H2C6, &H2030, &H160, &H2039, &HF08D, &HF08E, &HF08F, &HF090, &H23A7, &H23AA, &H23AB}},
-    {"Y", New Integer() {&HFF, &H2018, &H2019, &H201C, &H201D, &HA9, &HAC, &H23A9, &H2321}},
-    {"}", New Integer() {&H2014, &H2DC, &H203A, &HF09D, &H2044, &H221E, &H2666}},
+    {"Y", New Integer() {&HFF, &H2018, &H2019, &H201C, &H201D, &HA9, &HAC}},
+    {"}", New Integer() {&H2014, &H2DC, &HF09D, &H2044, &H221E, &H2666}},
+    {"YX", New Integer() {&H2122, &H203A, &H2190, &H2033, &H2265, &HD7, &H221D, &H23A9, &H2321}},
     {"#", New Integer() {&H2194, &H23AE}},
-    {"X", New Integer() {&H2190, &H2033, &H2265, &HD7, &H221D}},
     {"`", New Integer() {&H2261, &H2248, &H2211}},
     {",", New Integer() {&H2026, &H23D0}},
     {".", New Integer() {&H23AF, &H21B5}},
@@ -166,7 +168,7 @@
     {"t", New Integer() {&H23A2, &H222B, &H23A0}},
     {"b", New Integer() {&H2320, &H23A4}},
     {"v", New Integer() {&H239F}}
-    }
+    } '2122 is conflict
     Shared Arr3 As New Dictionary(Of String, Integer()) From {
             {"l", New Integer() {&H21, &H23, &H51, &H5E}},
             {"d", New Integer() {&H24}},
@@ -175,18 +177,16 @@
             {"p", New Integer() {&H27}},
             {"t", New Integer() {&H29, &H56, &H6E}},
             {"y", New Integer() {&H2C, &H71}},
-            {"Y", New Integer() {&H2E}},
+            {"Y", New Integer() {&H2E, &H52, &H5F, &H2020}},
             {"m", New Integer() {&H2F, &H201E}},
             {"`", New Integer() {&H31, &H38, &H39}},
             {"n", New Integer() {&H47}},
-            {"Y", New Integer() {&H52, &H5F, &H2020}},
-            {"s", New Integer() {&HF08E}},
             {"llh", New Integer() {&H54}},
             {"b", New Integer() {&H55}},
             {"v", New Integer() {&H57}},
             {"f", New Integer() {&H58, &H2019}},
             {"q", New Integer() {&H59}},
-            {"s", New Integer() {&H5A, &H5B}},
+            {"s", New Integer() {&H5A, &H5B, &HF08E}},
             {"$", New Integer() {&H5C}},
             {"{lr~aHiymi", New Integer() {&H69}},
             {"{ll~`hi {lr~aHoma`ni", New Integer() {&H6A}},
@@ -261,8 +261,9 @@
     {"~i~ai", New Integer() {&HB0}}
     }
     Shared Arr7 As New Dictionary(Of String, Integer()) From {
-    {"a", New Integer() {&H31, &H76, &H79, &H7D, &HF08D}}
-    } '&H31 is an imalee fatha
+    {"V", New Integer() {&H31}},
+    {"a", New Integer() {&H76, &H79, &H7D, &HF08D}}
+    }
     Class TextExtractionStrategy
         Implements iTextSharp.text.pdf.parser.ITextExtractionStrategy
         Class Chunk
@@ -400,57 +401,73 @@
                                 Str += KeyValue.Key.Chars(If(KeyValue.Key.Chars(0) = "~", 2, 1))
                                 'End If
                             ElseIf KeyValue.Key = "~a" Then
-                                If Str.Length <> 0 AndAlso Str.Chars(Str.Length - 1) = "A" Then
-                                    Str = Str.Insert(Str.Length - 1, KeyValue.Key)
-                                Else
-                                    Str += KeyValue.Key
-                                End If
-                            ElseIf KeyValue.Key = "a" Then
-                                If Str.Length <> 0 AndAlso Str.Chars(Str.Length - 1) = "A" Then
-                                    Str = Str.Insert(Str.Length - 1, KeyValue.Key)
-                                ElseIf Str.Length <> 0 AndAlso Str.Chars(Str.Length - 1) = "a" Then
-                                Else
-                                    Str += KeyValue.Key
-                                End If
-                            ElseIf KeyValue.Key = "i" Then
-                                If Str.Length <> 0 AndAlso Str.Chars(Str.Length - 1) = "i" Then
-                                Else
-                                    Str += KeyValue.Key
-                                End If
-                            ElseIf KeyValue.Key = "~" Then
-                                If Str.Length <> 0 AndAlso Str.Chars(Str.Length - 1) = "A" Then
-                                    Str = Str.Insert(Str.Length - 1, KeyValue.Key)
-                                ElseIf Str.Length <> 0 AndAlso (Str.Chars(Str.Length - 1) = "a" Or Str.Chars(Str.Length - 1) = "i") Then
-                                    Str = Str.Insert(Str.Length - 1, KeyValue.Key)
+                                If Str.Length > 1 AndAlso Str.Chars(Str.Length - 1) = "A" Then
+                                    If Str.Chars(Str.Length - 2) <> "~" Then
+                                        Str = Str.Insert(Str.Length - 1, KeyValue.Key)
+                                    Else
+                                        Str = Str.Insert(Str.Length - 1, KeyValue.Key.Chars(1))
+                                    End If
                                 ElseIf Str.Length <> 0 AndAlso Str.Chars(Str.Length - 1) = "~" Then
+                                    Str += KeyValue.Key.Chars(1)
                                 Else
                                     Str += KeyValue.Key
                                 End If
-                            ElseIf KeyValue.Key = "=" Then
-                                If Str.Substring(Str.LastIndexOf(" "c) + 1) = "1" Then
-                                    If Chapter <> 0 Then QStr += "  </sura>" + vbCrLf
-                                    Chapter += 1
-                                    Dim Idx As Integer = Str.IndexOf(" (")
-                                    If Idx = -1 Then Idx = Str.IndexOf(" madaniy~ap")
-                                    If Idx = -1 Then Idx = Str.IndexOf(" ma_k~iy~apN")
-                                    QStr += "  <sura index=""" + CStr(Chapter) + """ name=""" + IslamMetadata.HTTPCoding.XmlEncode(Str.Substring(0, Idx).Replace("suwrapu ", String.Empty).Replace(") ", String.Empty)) + """>" + vbCrLf
-                                End If
-                                Dim Index As Integer = Str.IndexOf("bisomi {ll~ahi {lr~aHoma`ni {lr~aHiymi ")
-                                If Index = -1 Then
-                                    Index = Str.IndexOf("bisomi{ll~`hi {lr~aHoma`ni{lr~aHiymi ")
-                                    If Index <> -1 Then Index += "bisomi{ll~`hi {lr~aHoma`ni{lr~aHiymi ".Length
+                                ElseIf KeyValue.Key = "a" Then
+                                    If Str.Length > 1 AndAlso Str.Chars(Str.Length - 1) = "A" Then
+                                        If Str.Chars(Str.Length - 2) <> "a" Then Str = Str.Insert(Str.Length - 1, KeyValue.Key)
+                                    ElseIf Str.Length <> 0 AndAlso Str.Chars(Str.Length - 1) = "a" Then
+                                    Else
+                                        Str += KeyValue.Key
+                                    End If
+                                ElseIf KeyValue.Key = "i" Then
+                                    If Str.Length <> 0 AndAlso Str.Chars(Str.Length - 1) = "i" Then
+                                    Else
+                                        Str += KeyValue.Key
+                                    End If
+                                ElseIf KeyValue.Key = "o" Then
+                                    If Str.Length <> 0 AndAlso Str.Chars(Str.Length - 1) = "o" Then
+                                    Else
+                                        Str += KeyValue.Key
+                                    End If
+                                ElseIf KeyValue.Key = "F" Then
+                                    If Str.Length <> 0 AndAlso Str.Chars(Str.Length - 1) = "F" Then
+                                    Else
+                                        Str += KeyValue.Key
+                                    End If
+                                ElseIf KeyValue.Key = "~" Then
+                                    If Str.Length <> 0 AndAlso Str.Chars(Str.Length - 1) = "A" Then
+                                        Str = Str.Insert(Str.Length - 1, KeyValue.Key)
+                                    ElseIf Str.Length <> 0 AndAlso (Str.Chars(Str.Length - 1) = "a" Or Str.Chars(Str.Length - 1) = "i") Then
+                                        Str = Str.Insert(Str.Length - 1, KeyValue.Key)
+                                    ElseIf Str.Length <> 0 AndAlso Str.Chars(Str.Length - 1) = "~" Then
+                                    Else
+                                        Str += KeyValue.Key
+                                    End If
+                                ElseIf KeyValue.Key = "=" Then
+                                    If Str.Substring(Str.LastIndexOf(" "c) + 1) = "1" Then
+                                        If Chapter <> 0 Then QStr += "  </sura>" + vbCrLf
+                                        Chapter += 1
+                                        Dim Idx As Integer = Str.IndexOf(" (")
+                                        If Idx = -1 Then Idx = Str.IndexOf(" madaniy~ap")
+                                        If Idx = -1 Then Idx = Str.IndexOf(" ma_k~iy~apN")
+                                        QStr += "  <sura index=""" + CStr(Chapter) + """ name=""" + IslamMetadata.HTTPCoding.XmlEncode(Str.Substring(0, Idx).Replace("suwrapu ", String.Empty).Replace(") ", String.Empty)) + """>" + vbCrLf
+                                    End If
+                                    Dim Index As Integer = Str.IndexOf("bisomi {ll~ahi {lr~aHoma`ni {lr~aHiymi ")
+                                    If Index = -1 Then
+                                        Index = Str.IndexOf("bisomi{ll~`hi {lr~aHoma`ni{lr~aHiymi ")
+                                        If Index <> -1 Then Index += "bisomi{ll~`hi {lr~aHoma`ni{lr~aHiymi ".Length
+                                    Else
+                                        Index += "bisomi {ll~ahi {lr~aHoma`ni {lr~aHiymi ".Length
+                                    End If
+                                    If Str.Substring(Str.LastIndexOf(" "c) + 1) = "1" AndAlso Index <> -1 Then
+                                        QStr += "    <aya index=""" + StrReverse(Str.Substring(Str.LastIndexOf(" "c) + 1)) + """ text=""" + IslamMetadata.HTTPCoding.XmlEncode(Str.Substring(Index, Str.LastIndexOf(" "c) - Index)) + """ " + "bismillah=""bisomi {ll~ahi {lr~aHoma`ni {lr~aHiymi""/>" + vbCrLf
+                                    Else
+                                        QStr += "    <aya index=""" + StrReverse(Str.Substring(Str.LastIndexOf(" "c) + 1)) + """ text=""" + IslamMetadata.HTTPCoding.XmlEncode(Str.Substring(0, Str.LastIndexOf(" "c))) + """ />" + vbCrLf
+                                    End If
+                                    Str = String.Empty
                                 Else
-                                    Index += "bisomi {ll~ahi {lr~aHoma`ni {lr~aHiymi ".Length
+                                    Str += KeyValue.Key
                                 End If
-                                If Str.Substring(Str.LastIndexOf(" "c) + 1) = "1" AndAlso Index <> -1 Then
-                                    QStr += "    <aya index=""" + StrReverse(Str.Substring(Str.LastIndexOf(" "c) + 1)) + """ text=""" + IslamMetadata.HTTPCoding.XmlEncode(Str.Substring(Index, Str.LastIndexOf(" "c) - Index)) + """ " + "bismillah=""bisomi {ll~ahi {lr~aHoma`ni {lr~aHiymi""/>" + vbCrLf
-                                Else
-                                    QStr += "    <aya index=""" + StrReverse(Str.Substring(Str.LastIndexOf(" "c) + 1)) + """ text=""" + IslamMetadata.HTTPCoding.XmlEncode(Str.Substring(0, Str.LastIndexOf(" "c))) + """ />" + vbCrLf
-                                End If
-                                Str = String.Empty
-                            Else
-                                Str += KeyValue.Key
-                            End If
                             Exit For
                         End If
                     Next
@@ -487,7 +504,35 @@
     End Class
     Shared Sub ParseQuran()
         Dim Reader As New iTextSharp.text.pdf.PdfReader("..\..\..\IslamMetadata\warsh.pdf")
-        Dim Str As String = "<?xml version=""1.0"" encoding=""utf-8""?>" + vbCrLf + "<quran>" + vbCrLf
+        Dim Str As String = "<?xml version=""1.0"" encoding=""utf-8""?>" + vbCrLf + _
+            "<!--" + vbCrLf + vbCrLf + "# PLEASE DO NOT REMOVE OR CHANGE THIS COPYRIGHT BLOCK" + vbCrLf + _
+"#====================================================================" + vbCrLf + _
+"#" + vbCrLf + _
+"#  IslamSource Quran Text (Warsh, version 1.0.0)" + vbCrLf + _
+"#  Copyright (C) 2014-2014 IslamSource.Info" + vbCrLf + _
+"#  License: Creative Commons Attribution 3.0" + vbCrLf + _
+"#" + vbCrLf + _
+"#  This copy of quran text is carefully produced, " + vbCrLf + _
+"#  verified and continuously monitored by a specialist " + vbCrLf + _
+"#  at IslamSource project." + vbCrLf + _
+"#" + vbCrLf + _
+"#  TERMS OF USE:" + vbCrLf + _
+"#" + vbCrLf + _
+"#  - Permission is granted to copy and distribute verbatim copies " + vbCrLf + _
+"#    of this text, but CHANGING IT IS NOT ALLOWED." + vbCrLf + _
+"#" + vbCrLf + _
+"#  - This quran text can be used in any website or application, " + vbCrLf + _
+"#    provided its source (IslamSource.info) is clearly indicated, and " + vbCrLf + _
+"#    a link is made to http://islamsource.info to enable users to " + vbCrLf + _
+"#    track changes." + vbCrLf + "#" + vbCrLf + _
+"#  - This copyright notice shall be included in all verbatim copies " + vbCrLf + _
+"#    of the text, and shall be reproduced appropriately in all files " + vbCrLf + _
+"#    derived from or containing substantial portion of this text." + vbCrLf + _
+"#" + vbCrLf + _
+"#  Please check updates at: http://islamsource.info" + vbCrLf + _
+"# " + vbCrLf + _
+"#====================================================================" + vbCrLf + vbCrLf + _
+"-->" + "<quran>" + vbCrLf
         Dim Strat As New TextExtractionStrategy
         For Cnt As Integer = 0 To Reader.NumberOfPages - 1
             Strat.Chunks.Clear()
