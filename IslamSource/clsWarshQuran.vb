@@ -453,7 +453,7 @@
                                 Else
                                     Str += KeyValue.Key
                                 End If
-                            ElseIf KeyValue.Key = "i" Or KeyValue.Key = "u" Or KeyValue.Key = "o" Then
+                            ElseIf KeyValue.Key = "i" Or KeyValue.Key = "u" Or KeyValue.Key = "o" Or KeyValue.Key = "^" Then
                                 If Str.Length <> 0 AndAlso (Str.Chars(Str.Length - 1) = "^"c Or Str.Chars(Str.Length - 1) = "a"c Or Str.Chars(Str.Length - 1) = "i"c Or Str.Chars(Str.Length - 1) = "u"c Or Str.Chars(Str.Length - 1) = "o"c) Then
                                     While Chunks(Count + 1).Str = Chunks(Count).Str
                                         Count += 1
