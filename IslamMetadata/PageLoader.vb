@@ -1319,6 +1319,7 @@ Public Class Arabic
         Dim Count As Integer
         Dim SubCount As Integer
         ConvertLigatures = String.Empty
+        'Division seleciton between Presentation A and B forms can be done here though wasl and gunnah need consideration
         Dim Combos(CachedData.IslamData.ArabicLetters.Length + CachedData.IslamData.ArabicCombos.Length - 1) As IslamData.ArabicCombo
         CachedData.IslamData.ArabicLetters.CopyTo(CachedData.IslamData.ArabicCombos, 0)
         For Count = 0 To CachedData.IslamData.ArabicLetters.Length - 1
@@ -1838,6 +1839,8 @@ Public Class Arabic
     Public Shared UthmaniShortVowelsBeforeLongVowelsSmallWaw As String = ArabicDamma + ArabicSmallWaw
     Public Shared UthmaniShortVowelsBeforeLongVowelsYeh As String = ArabicKasra + ArabicLetterYeh
     Public Shared UthmaniShortVowelsBeforeLongVowelsSmallYeh As String = ArabicKasra + ArabicSmallYeh
+    Public Shared WarshScript As RuleTranslation() = { _
+        }
     Public Shared UthmaniMinimalScript As RuleTranslation() = { _
         New RuleTranslation With {.Rule = "SmallYehSmallWawAfterPronounHeh", .Match = "(?:(" + MakeUniRegEx(ArabicLetterHeh) + MakeUniRegEx(ArabicKasra) + ")" + MakeUniRegEx(ArabicSmallYeh) + "|(" + MakeUniRegEx(ArabicLetterHeh) + MakeUniRegEx(ArabicDamma) + ")" + MakeUniRegEx(ArabicSmallWaw) + ")" + MakeUniRegEx(ArabicMaddahAbove) + "?(?=\s*$|\s+)", _
             .Evaluator = "$1$2"}, _
@@ -2393,6 +2396,14 @@ Public Class Arabic
         Return Function(Match As System.Text.RegularExpressions.Match)
                    Return If(NegativeMatch <> String.Empty AndAlso Match.Result(NegativeMatch) <> String.Empty, Match.Value, Match.Result(Evaluator))
                End Function
+    End Function
+    Public Shared Function ChangeBaseScript(ArabicString As String, BaseText As TanzilReader.QuranTexts) As String
+        If BaseText = TanzilReader.QuranScripts.UthmaniMin Then
+            For Count = 0 To UthmaniMinimalScript.Length - 1
+                ArabicString = System.Text.RegularExpressions.Regex.Replace(ArabicString, UthmaniMinimalScript(Count).Match, NegativeMatchEliminator(UthmaniMinimalScript(Count).NegativeMatch, UthmaniMinimalScript(Count).Evaluator))
+            Next
+        End If
+        Return ArabicString
     End Function
     Public Shared Function ChangeScript(ArabicString As String, ScriptType As TanzilReader.QuranScripts) As String
         If ScriptType = TanzilReader.QuranScripts.UthmaniMin Then
@@ -5308,7 +5319,7 @@ Public Class TanzilReader
         If ScriptType = QuranScripts.Uthmani Then
             Doc.Load(Utility.GetFilePath("metadata\" + QuranTextNames(BaseText) + ".xml"))
         Else
-            Doc.Load(Utility.GetFilePath("metadata\" + QuranTextNames(BaseText) + "-" + QuranFileNames(ScriptType) + If(Presentation <> ArabicPresentation.None, PresentationCacheNames(Presentation), String.Empty) + ".xml"))
+            Doc.Load(Utility.GetFilePath("metadata\" + QuranTextNames(BaseText) + "-" + QuranFileNames(ScriptType) + If(Presentation <> ArabicPresentation.None, "-" + PresentationCacheNames(Presentation), String.Empty) + ".xml"))
         End If
         Dim Verses As Collections.Generic.List(Of String())
         Verses = TanzilReader.GetQuranText(Doc, -1, -1, -1, -1)
@@ -5326,17 +5337,22 @@ Public Class TanzilReader
             Next
         Next
     End Function
-    Public Shared Sub ChangeQuranFormat(BaseText As QuranTexts, ScriptType As QuranScripts, Presentation As ArabicPresentation)
+    Public Shared Sub ChangeQuranFormat(BaseText As QuranTexts, TargetBaseText As QuranTexts, ScriptType As QuranScripts, Presentation As ArabicPresentation)
         Dim Doc As New System.Xml.XmlDocument
         Doc.Load(Utility.GetFilePath("metadata\" + QuranTextNames(BaseText) + ".xml"))
         Dim Verses As Collections.Generic.List(Of String())
         Dim UseBuckwalter As Boolean = False
-        Dim Path As String = Utility.GetFilePath("metadata\" + QuranTextNames(BaseText) + "-" + QuranFileNames(ScriptType) + If(Presentation <> ArabicPresentation.None, PresentationCacheNames(Presentation), String.Empty) + ".xml")
+        Dim Path As String
+        If BaseText = TargetBaseText Then
+            Path = Utility.GetFilePath("metadata\" + QuranTextNames(BaseText) + "-" + QuranFileNames(ScriptType) + If(Presentation <> ArabicPresentation.None, "-" + PresentationCacheNames(Presentation), String.Empty) + ".xml")
+        Else
+            Path = Utility.GetFilePath("metadata\" + QuranTextNames(BaseText) + "-" + QuranFileNames(ScriptType) + If(Presentation <> ArabicPresentation.None, "-" + PresentationCacheNames(Presentation), String.Empty) + ".xml")
+        End If
         If Presentation = ArabicPresentation.Buckwalter Then
             UseBuckwalter = True
         End If
         Doc.DocumentElement.PreviousSibling.Value = Doc.DocumentElement.PreviousSibling.Value.Replace("Uthmani", QuranScriptNames(ScriptType))
-        Verses = TanzilReader.GetQuranText(CachedData.XMLDocMain, -1, -1, -1, -1)
+        Verses = TanzilReader.GetQuranText(Doc, -1, -1, -1, -1)
         For Count As Integer = 0 To Verses.Count - 1
             Dim ChapterNode As System.Xml.XmlNode = GetTextChapter(Doc, Count + 1)
             If UseBuckwalter Then
@@ -5344,12 +5360,12 @@ Public Class TanzilReader
             End If
             For SubCount As Integer = 0 To Verses(Count).Length - 1
                 If SubCount = 0 AndAlso Not GetTextVerse(ChapterNode, SubCount + 1).Attributes.GetNamedItem("bismillah") Is Nothing Then
-                    GetTextVerse(ChapterNode, SubCount + 1).Attributes.GetNamedItem("bismillah").Value = Arabic.ChangeScript(GetTextVerse(ChapterNode, SubCount + 1).Attributes.GetNamedItem("bismillah").Value, ScriptType)
+                    GetTextVerse(ChapterNode, SubCount + 1).Attributes.GetNamedItem("bismillah").Value = If(BaseText = TargetBaseText, Arabic.ChangeScript(GetTextVerse(ChapterNode, SubCount + 1).Attributes.GetNamedItem("bismillah").Value, ScriptType), Arabic.ChangeBaseScript(GetTextVerse(ChapterNode, SubCount + 1).Attributes.GetNamedItem("bismillah").Value, TargetBaseText))
                     If UseBuckwalter Then
                         GetTextVerse(ChapterNode, SubCount + 1).Attributes.GetNamedItem("bismillah").Value = Arabic.TransliterateToScheme(GetTextVerse(ChapterNode, SubCount + 1).Attributes.GetNamedItem("bismillah").Value, Arabic.TranslitScheme.Literal, String.Empty)
                     End If
                 End If
-                GetTextVerse(ChapterNode, SubCount + 1).Attributes.GetNamedItem("text").Value = Arabic.ChangeScript(Verses(Count)(SubCount), ScriptType)
+                GetTextVerse(ChapterNode, SubCount + 1).Attributes.GetNamedItem("text").Value = If(BaseText = TargetBaseText, Arabic.ChangeScript(Verses(Count)(SubCount), ScriptType), Arabic.ChangeBaseScript(Verses(Count)(SubCount), TargetBaseText))
                 If UseBuckwalter Then
                     GetTextVerse(ChapterNode, SubCount + 1).Attributes.GetNamedItem("text").Value = Arabic.TransliterateToScheme(GetTextVerse(ChapterNode, SubCount + 1).Attributes.GetNamedItem("text").Value, Arabic.TranslitScheme.Literal, String.Empty)
                 End If
