@@ -1315,6 +1315,65 @@ Public Class Arabic
         End Try
         Return Str.ToString()
     End Function
+    Public Shared Function ConvertLigatures(Str As String, Dir As Boolean) As String
+        Dim Count As Integer
+        Dim SubCount As Integer
+        ConvertLigatures = String.Empty
+        Dim Combos(CachedData.IslamData.ArabicLetters.Length + CachedData.IslamData.ArabicCombos.Length - 1) As IslamData.ArabicCombo
+        CachedData.IslamData.ArabicLetters.CopyTo(CachedData.IslamData.ArabicCombos, 0)
+        For Count = 0 To CachedData.IslamData.ArabicLetters.Length - 1
+            'do not need to transfer UnicodeName as it is not used here
+            Combos(CachedData.IslamData.ArabicCombos.Length + Count).SymbolName = CachedData.IslamData.ArabicLetters(Count).Symbol
+            Combos(CachedData.IslamData.ArabicCombos.Length + Count).Shaping = CachedData.IslamData.ArabicLetters(Count).Shaping
+        Next
+        Array.Sort(Combos, Function(Com1 As IslamData.ArabicCombo, Com2 As IslamData.ArabicCombo) If(Com1.SymbolName.Length = Com2.SymbolName.Length, Com1.SymbolName.CompareTo(Com2.SymbolName), If(Com1.SymbolName.Length > Com2.SymbolName.Length, -1, 1)))
+        For Count = 0 To Str.Length - 1
+            For SubCount = 0 To CachedData.IslamData.ArabicCombos.Length - 1
+                If Dir Then
+                    If Array.IndexOf(CachedData.IslamData.ArabicCombos(SubCount).Shaping, Str.Chars(Count)) <> -1 Then
+                        ConvertLigatures += TransliterateFromBuckwalter(CachedData.IslamData.ArabicCombos(SubCount).SymbolName)
+                        Exit For
+                    End If
+                Else
+                    If Str.Length - Count >= Combos(SubCount).SymbolName.Length _
+                        AndAlso TransliterateFromBuckwalter(Combos(SubCount).SymbolName) = Str.Substring(Count, Combos(SubCount).SymbolName.Length) Then
+                        'ignore all transparent characters
+                        'isolated - non-connecting + (non-connecting letter | connecting letter + end)
+                        'final - connecting + (non-connecting letter | connecting letter + end)
+                        'initial - non-connecting + connecting letter + not end
+                        'medial - connecting + connecting letter + not end
+                        Dim bLastConnects = False 'default to non-connecting begining 
+                        Dim bIsEnd = True 'default to non-connecting end
+                        Dim bConnects As Boolean = CachedData.IslamData.ArabicLetters(FindLetterBySymbol(Str.Chars(Count + Combos(SubCount).SymbolName.Length - 1))).Connecting
+                        For CharCount As Integer = Count - 1 To 0 Step -1
+                            If Array.IndexOf(RecitationCombiningSymbols, Str(CharCount)) = -1 Then
+                                bLastConnects = CachedData.IslamData.ArabicLetters(FindLetterBySymbol(Str(CharCount))).Connecting
+                                Exit For
+                            End If
+                        Next
+                        For CharCount As Integer = Count + Combos(SubCount).SymbolName.Length To Str.Length - 1
+                            If Array.IndexOf(RecitationCombiningSymbols, Str(CharCount)) = -1 Then
+                                bIsEnd = False
+                                Exit For
+                            End If
+                        Next
+                        If Not bLastConnects And (Not bConnects Or bConnects And bIsEnd) And Combos(SubCount).Shaping(0) <> ChrW(0) Then
+                            Str += Combos(SubCount).Shaping(0)
+                        ElseIf bLastConnects And (Not bConnects Or bConnects And bIsEnd) And Combos(SubCount).Shaping(1) <> ChrW(0) Then
+                            Str += Combos(SubCount).Shaping(1)
+                        ElseIf Not bLastConnects And bConnects And Not bIsEnd And Combos(SubCount).Shaping(2) <> ChrW(0) Then
+                            Str += Combos(SubCount).Shaping(2)
+                        ElseIf bLastConnects And bConnects And Not bIsEnd And Combos(SubCount).Shaping(3) <> ChrW(0) Then
+                            Str += Combos(SubCount).Shaping(3)
+                        End If
+                    End If
+                End If
+            Next
+            If SubCount = CachedData.IslamData.ArabicCombos.Length Then
+                ConvertLigatures += Str.Chars(Count)
+            End If
+        Next
+    End Function
     Public Shared Function TransliterateFromBuckwalter(ByVal Buckwalter As String) As String
         Dim ArabicString As String = String.Empty
         Dim Count As Integer
@@ -2694,7 +2753,8 @@ Public Class Arabic
         Output(0) = New String() {}
         Output(1) = New String() {"arabic", "arabic", String.Empty, String.Empty}
         Output(2) = New String() {Utility.LoadResourceString("IslamInfo_LetterName"), Utility.LoadResourceString("IslamInfo_Arabic"), Utility.LoadResourceString("IslamSource_ExtendedBuckwalter"), Utility.LoadResourceString("IslamInfo_Shaping")}
-        Dim Combos As IslamData.ArabicCombo() = CachedData.IslamData.ArabicCombos
+        'Dim Combos(CachedData.IslamData.ArabicCombos.Length - 1) As IslamData.ArabicCombo
+        'CachedData.IslamData.ArabicLetters.CopyTo(CachedData.IslamData.ArabicCombos, 0)
         'Array.Sort(Combos, Function(Key As IslamData.ArabicCombo, NextKey As IslamData.ArabicCombo) Key.SymbolName.CompareTo(NextKey.SymbolName))
         For Count = 0 To CachedData.IslamData.ArabicCombos.Length - 1
             Output(Count + 3) = New String() {String.Join(" ", Array.ConvertAll(TransliterateFromBuckwalter(CachedData.IslamData.ArabicCombos(Count).SymbolName).ToCharArray(), Function(Ch As Char) TransliterateFromBuckwalter(CachedData.IslamData.ArabicLetters(FindLetterBySymbol(Ch)).SymbolName))), _
@@ -4251,7 +4311,7 @@ Public Class CachedData
         Get
             If _XMLDocMain Is Nothing Then
                 _XMLDocMain = New System.Xml.XmlDocument
-                _XMLDocMain.Load(Utility.GetFilePath("metadata\quran-uthmani.xml"))
+                _XMLDocMain.Load(Utility.GetFilePath("metadata\" + TanzilReader.QuranTextNames(0) + ".xml"))
             End If
             Return _XMLDocMain
         End Get
@@ -5070,24 +5130,28 @@ Public Class TanzilReader
         End If
         Return Nothing
     End Function
-    Enum QuranScripts
+    Public Enum QuranScripts
         Uthmani = 0
         UthmaniMin = 1
         Simple = 2
         SimpleMin = 3
         SimpleEnhanced = 4
         SimpleClean = 5
-        BuckwalterUthmani = 6
-        BuckwalterUthmaniMin = 7
-        BuckwalterSimple = 8
-        BuckwalterSimpleMin = 9
-        BuckwalterSimpleEnhanced = 10
-        BuckwalterSimpleClean = 11
-        Warsh = 12
-        AlDari = 13
     End Enum
-    Shared QuranFileNames As String() = {"quran-uthmani.xml", "quran-uthmani-min.xml", "quran-simple.xml", "quran-simple-min.xml", "quran-simple-enhanced.xml", "quran-simple-clean.xml", "quran-buckwalter-uthmani.xml", "quran-buckwalter-uthmani-min.xml", "quran-buckwlater-simple.xml", "quran-buckwalter-simple-min.xml", "quran-buckwalter-simple-enhanced.xml", "quran-buckwalter-simple-clean.xml", "quran-warsh.xml", "quran-alduri.xml"}
-    Shared QuranScriptNames As String() = {"Uthmani", "Uthmani Minimal", "Simple", "Simple Minimal", "Simple Enhanced", "Simple Clean"}
+    Public Enum QuranTexts
+        Hafs = 0
+        Warsh = 1
+        AlDari = 2
+    End Enum
+    Public Enum ArabicPresentation
+        None = 0
+        PresentationLigatures = 1
+        Buckwalter = 2
+    End Enum
+    Public Shared QuranTextNames As String() = {"quran-hafs", "quran-warsh", "quran-alduri"}
+    Public Shared QuranFileNames As String() = {"uthmani", "uthmani-min", "simple", "simple-min", "simple-enhanced", "simple-clean"}
+    Public Shared QuranScriptNames As String() = {"Uthmani", "Uthmani Minimal", "Simple", "Simple Minimal", "Simple Enhanced", "Simple Clean"}
+    Public Shared PresentationCacheNames As String() = {String.Empty, "pres", "buckwalter"}
     Public Shared Sub CheckNotablePatterns()
         'ComparePatterns(QuranScripts.Uthmani, QuranScripts.UthmaniMin, Arabic.UthmaniShortVowelsBeforeLongVowelsAlef)
         'ComparePatterns(QuranScripts.Uthmani, QuranScripts.UthmaniMin, Arabic.UthmaniShortVowelsBeforeLongVowelsSuperscriptAlef)
@@ -5097,7 +5161,7 @@ Public Class TanzilReader
         'ComparePatterns(QuranScripts.Uthmani, QuranScripts.UthmaniMin, Arabic.UthmaniShortVowelsBeforeLongVowelsSmallYeh)
         'ComparePatterns(QuranScripts.Uthmani, QuranScripts.UthmaniMin, Arabic.UthmaniShortVowelsBeforeLongVowelsWaw)
         'ComparePatterns(QuranScripts.Uthmani, QuranScripts.UthmaniMin, Arabic.UthmaniShortVowelsBeforeLongVowelsSmallWaw)
-        ComparePatterns(QuranScripts.Uthmani, QuranScripts.SimpleEnhanced, Arabic.SimpleTrailingAlef)
+        ComparePatterns(QuranTexts.Hafs, QuranScripts.Uthmani, QuranScripts.SimpleEnhanced, Arabic.SimpleTrailingAlef)
         'this rule should be analyzed after all other rules in Simple Enhanced are processed as it will great simplify its expression while the earlier it is processed the longer it will be
         'ComparePatterns(QuranScripts.Uthmani, QuranScripts.SimpleEnhanced, Arabic.SimpleSuperscriptAlef)
     End Sub
@@ -5123,11 +5187,11 @@ Public Class TanzilReader
         Next
         Return Msg
     End Function
-    Public Shared Sub ComparePatterns(ScriptType As QuranScripts, CompScriptType As QuranScripts, LetterPattern As String)
+    Public Shared Sub ComparePatterns(BaseText As QuranTexts, ScriptType As QuranScripts, CompScriptType As QuranScripts, LetterPattern As String)
         Dim WordPattern As String = "(?<=^\s*|\s+)\S*" + Arabic.MakeUniRegEx(LetterPattern) + "\S*(?=\s+|\s*$)"
-        Dim FirstList As List(Of String) = PatternMatch(ScriptType, WordPattern)
+        Dim FirstList As List(Of String) = PatternMatch(BaseText, ScriptType, ArabicPresentation.None, WordPattern)
         FirstList.Sort(StringComparer.Ordinal)
-        Dim CompList As List(Of String) = PatternMatch(CompScriptType, "(?<=^\s*|\s+)\S*" + Arabic.MakeUniRegEx(LetterPattern.Substring(0, 1)) + "(?=\s+|\s*$)")
+        Dim CompList As List(Of String) = PatternMatch(BaseText, CompScriptType, ArabicPresentation.None, "(?<=^\s*|\s+)\S*" + Arabic.MakeUniRegEx(LetterPattern.Substring(0, 1)) + "(?=\s+|\s*$)")
         CompList.Sort(StringComparer.Ordinal)
         Dim Index As Integer = 0
         Do While Index < CompList.Count - 1
@@ -5238,13 +5302,13 @@ Public Class TanzilReader
         Msg += vbCrLf + "First: " + DumpDictionary(FirstDict) + vbCrLf + "Not First: " + DumpDictionary(FirstNotInDict) + vbCrLf + "Second: " + DumpDictionary(CompDict) + vbCrLf + "Not Second: " + DumpDictionary(CompNotInDict)
         Debug.Print(Msg)
     End Sub
-    Public Shared Function PatternMatch(ScriptType As QuranScripts, Pattern As String) As List(Of String)
+    Public Shared Function PatternMatch(BaseText As QuranTexts, ScriptType As QuranScripts, Presentation As ArabicPresentation, Pattern As String) As List(Of String)
         PatternMatch = New List(Of String)
         Dim Doc As New System.Xml.XmlDocument
         If ScriptType = QuranScripts.Uthmani Then
-            Doc.Load(Utility.GetFilePath("metadata\quran-uthmani.xml"))
+            Doc.Load(Utility.GetFilePath("metadata\" + QuranTextNames(BaseText) + ".xml"))
         Else
-            Doc.Load(Utility.GetFilePath("IslamMetadata\" + QuranFileNames(ScriptType)))
+            Doc.Load(Utility.GetFilePath("metadata\" + QuranTextNames(BaseText) + "-" + QuranFileNames(ScriptType) + If(Presentation <> ArabicPresentation.None, PresentationCacheNames(Presentation), String.Empty) + ".xml"))
         End If
         Dim Verses As Collections.Generic.List(Of String())
         Verses = TanzilReader.GetQuranText(Doc, -1, -1, -1, -1)
@@ -5262,30 +5326,14 @@ Public Class TanzilReader
             Next
         Next
     End Function
-    Public Shared Sub ChangeQuranFormat(ScriptType As QuranScripts)
+    Public Shared Sub ChangeQuranFormat(BaseText As QuranTexts, ScriptType As QuranScripts, Presentation As ArabicPresentation)
         Dim Doc As New System.Xml.XmlDocument
-        Doc.Load(Utility.GetFilePath("metadata\quran-uthmani.xml"))
+        Doc.Load(Utility.GetFilePath("metadata\" + QuranTextNames(BaseText) + ".xml"))
         Dim Verses As Collections.Generic.List(Of String())
         Dim UseBuckwalter As Boolean = False
-        Dim Path As String = Utility.GetFilePath("metadata\-" + QuranFileNames(ScriptType))
-        If ScriptType = QuranScripts.BuckwalterUthmani Then
+        Dim Path As String = Utility.GetFilePath("metadata\" + QuranTextNames(BaseText) + "-" + QuranFileNames(ScriptType) + If(Presentation <> ArabicPresentation.None, PresentationCacheNames(Presentation), String.Empty) + ".xml")
+        If Presentation = ArabicPresentation.Buckwalter Then
             UseBuckwalter = True
-            ScriptType = QuranScripts.Uthmani
-        ElseIf ScriptType = QuranScripts.BuckwalterUthmaniMin Then
-            UseBuckwalter = True
-            ScriptType = QuranScripts.UthmaniMin
-        ElseIf ScriptType = QuranScripts.BuckwalterSimple Then
-            UseBuckwalter = True
-            ScriptType = QuranScripts.Simple
-        ElseIf ScriptType = QuranScripts.BuckwalterSimpleEnhanced Then
-            UseBuckwalter = True
-            ScriptType = QuranScripts.SimpleEnhanced
-        ElseIf ScriptType = QuranScripts.BuckwalterSimpleMin Then
-            UseBuckwalter = True
-            ScriptType = QuranScripts.SimpleMin
-        ElseIf ScriptType = QuranScripts.BuckwalterSimpleClean Then
-            UseBuckwalter = True
-            ScriptType = QuranScripts.SimpleClean
         End If
         Doc.DocumentElement.PreviousSibling.Value = Doc.DocumentElement.PreviousSibling.Value.Replace("Uthmani", QuranScriptNames(ScriptType))
         Verses = TanzilReader.GetQuranText(CachedData.XMLDocMain, -1, -1, -1, -1)
