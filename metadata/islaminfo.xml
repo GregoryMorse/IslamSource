@@ -3377,6 +3377,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 		<arabicsymbol symbolname="&gt;alifN xanjariyapN" uname="ArabicLetterSuperscriptAlef" symbol="0670" ipavalue="a:" extendedbuckwalter="96" terminating="false" connecting="false" assimilate="false" />
 		<arabicsymbol symbolname="&gt;alifN hamozapN waSolN" uname="ArabicLetterAlefWasla" symbol="0671" shaping="FB50,FB51,," ipavalue="" extendedbuckwalter="123" terminating="false" connecting="false" assimilate="false" />
 		<arabicsymbol symbolname="nuwnN gun~apN" uname="ArabicLetterNoonGhunna" symbol="06BA" shaping="FB9E,FB9F,," ipavalue="n" extendedbuckwalter="0" terminating="false" connecting="true" assimilate="true" />
+		<arabicsymbol symbolname="&lt;imaAlapN" uname="Bullet" symbol="2022" shaping="" ipavalue="" extendedbuckwalter="85" terminating="false" connecting="true" assimilate="true" />
 
 		<arabicsymbol symbolname="tufiydu bi&gt;an~a {lowaSola &gt;awolaY maEa jawaAzK {lowaqufi" uname="ArabicSmallHighLigatureSadWithLamWithAlefMaksura" symbol="06D6" ipavalue="" extendedbuckwalter="76" terminating="false" connecting="false" assimilate="false" />
 		<arabicsymbol symbolname="tafiydu bi&gt;an~a {lowaqufa &gt;awolaY" uname="ArabicSmallHighLigatureQafWithLamWithAlefMaksura" symbol="06D7" ipavalue="" extendedbuckwalter="81" terminating="false" connecting="false" assimilate="false" />

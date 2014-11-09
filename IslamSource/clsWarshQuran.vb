@@ -173,7 +173,7 @@
     {"t", New Integer() {&H23A2, &H222B, &H23A0}},
     {"b", New Integer() {&H2320, &H23A4}},
     {"v", New Integer() {&H239F}}
-    } '2122 is conflict
+    }
     Shared Arr3 As New Dictionary(Of String, Integer()) From {
             {"l", New Integer() {&H21, &H23, &H51, &H5E}},
             {"d", New Integer() {&H24}},
@@ -219,7 +219,7 @@
 {"N", New Integer() {&HD0, &HD1, &HD2, &HD3, &HD4, &HD6, &HD7, &HD8, &HEA, &HEB, &HEC, &HED, &HEE}},
 {"u", New Integer() {&HD9, &HDA, &HDB, &HDC, &HDD, &HDE, &HDF, &HE0, &HE1, &HE2, &HE3, &HE4, &HE5, &HE6, &HE7, &HE8, &HE9}},
 {"o", New Integer() {&HEF, &HF1, &HF2, &HF3, &HF4, &HF5, &HF6, &HF7, &HF8, &HF9}}
-}
+} 'some of N could be u^
     'combine with alef
     Shared Arr5 As New Dictionary(Of String, Integer()) From {
     {" ", New Integer() {&H20}},
@@ -231,8 +231,7 @@
     {"a+", New Integer() {&H30}},
     {"`", New Integer() {&H32, &H33, &H34}},
     {"N[", New Integer() {&H36, &H37, &H38, &H39}},
-    {"~u^", New Integer() {&H3A, &H3B, &H3C}},
-    {"~N", New Integer() {&H3F, &H40, &H41}},
+    {"~N", New Integer() {&H3A, &H3B, &H3C, &H3F, &H40, &H41}},
     {"~N[", New Integer() {&H42}},
     {"~F[", New Integer() {&H43}},
     {"oa", New Integer() {&H46}},
@@ -265,9 +264,9 @@
     {"~ai", New Integer() {&HAB}},
     {"i~ai", New Integer() {&HAC}},
     {"~i~ai", New Integer() {&HB0}}
-    }
+    } '&H3A, &H3B, &H3C could be "~u^"
     Shared Arr7 As New Dictionary(Of String, Integer()) From {
-    {"V", New Integer() {&H31}},
+    {"T", New Integer() {&H31}},
     {"a", New Integer() {&H76, &H79, &H7D, &HF08D}}
     }
     Class TextExtractionStrategy
@@ -367,10 +366,13 @@
                 ElseIf Chunks(Count).FontName = "BAMCJD+HQPB3" Then
                     CurDict = Arr3
                 ElseIf Chunks(Count).FontName = "BAMCGA+HQPB4" Then
+                    If Count <> Chunks.Count - 1 AndAlso (Chunks(Count).FontName = Chunks(Count + 1).FontName And Chunks(Count).Str = Chunks(Count + 1).Str) Then Continue For
                     CurDict = Arr4
                 ElseIf Chunks(Count).FontName = "BAMCHB+HQPB5" Then
+                    If Count <> Chunks.Count - 1 AndAlso (Chunks(Count).FontName = Chunks(Count + 1).FontName And Chunks(Count).Str = Chunks(Count + 1).Str) Then Continue For
                     CurDict = Arr5
                 ElseIf Chunks(Count).FontName = "BAMDFB+HQPB7" Then
+                    If Count <> Chunks.Count - 1 AndAlso (Chunks(Count).FontName = Chunks(Count + 1).FontName And Chunks(Count).Str = Chunks(Count + 1).Str) Then Continue For
                     CurDict = Arr7
                     'ElseIf Chunks(Count).FontName = "BAMBNO+DecoType-ProfessionalNaskhSupplement4Kashidahs" Then
                     '    CurDict = ProfessionalNaskhSupplements4Kashidahs
@@ -381,6 +383,7 @@
                 ElseIf Chunks(Count).FontName = "BAMDAC+Hamd2" Then
                     CurDict = Hamd2
                 ElseIf Chunks(Count).FontName = "BAPFCA+MSH-Quraan1" Then
+                    If Count <> Chunks.Count - 1 AndAlso (Chunks(Count).FontName = Chunks(Count + 1).FontName And Chunks(Count).Str = Chunks(Count + 1).Str) Then Continue For
                     CurDict = MSHQuraan1
                 ElseIf Chunks(Count).FontName = "BAMCBO+TimesNewRomanPSMT" Then
                     If Str.Length <> 0 AndAlso Str.Chars(Str.Length - 1) <> " "c Then Str += " "
@@ -391,39 +394,57 @@
                         Dim Match As Integer = Array.IndexOf(KeyValue.Value, System.Text.Encoding.Unicode.GetBytes(Chunks(Count).Str)(0) + 256 * System.Text.Encoding.Unicode.GetBytes(Chunks(Count).Str)(1))
                         If Match <> -1 Then
                             'redundant value corrections using look behind
-                            If KeyValue.Value(Match) = &H2122 And KeyValue.Key = "YX" And Str.Length > 1 AndAlso Str.Chars(Str.Length - 1) = "X" Then Continue For
-                            If KeyValue.Value(Match) = &H23AF And KeyValue.Key = "n" And Str.Length > 1 AndAlso Str.Chars(Str.Length - 1) = "i" AndAlso Str.Chars(Str.Length - 2) = "h" Then Continue For
+                            If KeyValue.Value(Match) = &H2122 And KeyValue.Key = "YX" And Str.Length > 1 AndAlso Str.Chars(Str.Length - 1) = "X"c Then Continue For
+                            If KeyValue.Value(Match) = &H23AF And (KeyValue.Key = "n" Or KeyValue.Key = "r") And Str.Length > 1 AndAlso Str.Chars(Str.Length - 1) = "i"c AndAlso Str.Chars(Str.Length - 2) = "h"c Then Continue For
                             If KeyValue.Value(Match) = &HAE And KeyValue.Key = "9" And Str.Length = 0 Then Continue For
-                            If Str.Length <> 0 AndAlso Str.Chars(Str.Length - 1) = "A" AndAlso KeyValue.Key = "{" Then
+                            If Str.Length <> 0 AndAlso Str.Chars(Str.Length - 1) = "."c And KeyValue.Key <> "^" Then Str.Remove(Str.Length - 1).Insert(Str.Length - 1, "n")
+                            If Str.Length <> 0 AndAlso Str.Chars(Str.Length - 1) = "I"c Then Str += " "
+                            If Str.Length <> 0 AndAlso Str.Chars(Str.Length - 1) = "A"c AndAlso (KeyValue.Key = "{" Or KeyValue.Key = "a{" Or KeyValue.Key = "~a{" Or KeyValue.Key = "i{") Then
                                 Str = Str.Remove(Str.Length - 1) + KeyValue.Key
+                            ElseIf KeyValue.Key = "I" Then
+                                If Str.Chars(Str.Length - 1) <> " " Then
+                                    Dim Ch As Chunk = Chunks(Count + 1)
+                                    Chunks(Count + 1) = Chunks(Count)
+                                    Chunks(Count) = Ch
+                                    Count -= 1
+                                ElseIf Str.Chars(Str.Length - 1) <> "I"c Then
+                                    Str += KeyValue.Key
+                                End If
                             ElseIf KeyValue.Key = "i~ai" Or KeyValue.Key = "~i~ai" Then
                                 Str = Str.Insert(Str.Length - 2, KeyValue.Key.Chars(0))
-                                If KeyValue.Key.Chars(0) = "~" Then
+                                If KeyValue.Key.Chars(0) = "~"c Then
                                     Str = Str.Insert(Str.Length - 2, KeyValue.Key.Chars(1))
                                 End If
-                                Str = Str.Insert(Str.Length - 1, KeyValue.Key.Chars(If(KeyValue.Key.Chars(0) = "~", 2, 1)) + KeyValue.Key.Chars(If(KeyValue.Key.Chars(0) = "~", 3, 2)))
+                                Str = Str.Insert(Str.Length - 1, KeyValue.Key.Chars(If(KeyValue.Key.Chars(0) = "~"c, 2, 1)) + KeyValue.Key.Chars(If(KeyValue.Key.Chars(0) = "~", 3, 2)))
                                 Str += KeyValue.Key.Chars(If(KeyValue.Key.Chars(0) = "~", 4, 3))
-                            ElseIf KeyValue.Key <> String.Empty AndAlso KeyValue.Key.Length >= If(KeyValue.Key.Chars(0) = "~", 3, 2) AndAlso ("aiuo^".IndexOf(KeyValue.Key.Chars(1)) <> -1 And "aiuo^".IndexOf(KeyValue.Key.Chars(If(KeyValue.Key.Chars(0) = "~", 2, 0))) <> -1) Then
+                            ElseIf KeyValue.Key <> String.Empty AndAlso KeyValue.Key.Length >= If(KeyValue.Key.Chars(0) = "~"c, 3, 2) AndAlso ("aiuo^".IndexOf(KeyValue.Key.Chars(1)) <> -1 And "aiuo^".IndexOf(KeyValue.Key.Chars(If(KeyValue.Key.Chars(0) = "~"c, 2, 0))) <> -1) Then
                                 '"oa", "ia", "oi", "iu", "aa", "~ia", "ai", "~iu", "ii", "au", "~aa", "~ii", "~au", "ao", "~ai"
-                                Str = Str.Insert(Str.Length - 1, KeyValue.Key.Chars(0))
-                                If KeyValue.Key.Chars(0) = "~" Then
-                                    Str = Str.Insert(Str.Length - 1, KeyValue.Key.Chars(1))
+                                If KeyValue.Key.Chars(0) = "~"c AndAlso Str.Length > 2 AndAlso Str.Chars(Str.Length - 3) = KeyValue.Key.Chars(1) AndAlso Str.Chars(Str.Length - 1) = KeyValue.Key.Chars(2) Then
+                                    Str = Str.Insert(Str.Length - 3, KeyValue.Key.Chars(0))
+                                ElseIf KeyValue.Key.Chars(0) <> "~"c AndAlso Str.Length > 2 AndAlso Str.Chars(Str.Length - 3) = KeyValue.Key.Chars(0) AndAlso Str.Chars(Str.Length - 1) = KeyValue.Key.Chars(1) Then
+                                Else
+                                    Str = Str.Insert(Str.Length - 1, KeyValue.Key.Chars(0))
+                                    If KeyValue.Key.Chars(0) = "~"c Then
+                                        Str = Str.Insert(Str.Length - 1, KeyValue.Key.Chars(1))
+                                    End If
+                                    Str += KeyValue.Key.Chars(If(KeyValue.Key.Chars(0) = "~"c, 2, 1))
                                 End If
-                                Str += KeyValue.Key.Chars(If(KeyValue.Key.Chars(0) = "~", 2, 1))
-                            ElseIf KeyValue.Key = "~a" Then
-                                If Str.Length > 1 AndAlso Str.Chars(Str.Length - 1) = "A" Then
+                            ElseIf KeyValue.Key = "~a" Or KeyValue.Key = "~u" Or KeyValue.Key = "~F" Or KeyValue.Key = "~F[" Then
+                                If Str.Length > 1 AndAlso Str.Chars(Str.Length - 1) = "A"c Then
                                     Str = Str.Insert(Str.Length - 1, KeyValue.Key)
-                                ElseIf Str.Length > 1 AndAlso Str.Chars(Str.Length - 1) = "a" AndAlso Str.Chars(Str.Length - 2) = "~" Then
-                                ElseIf Str.Length <> 0 AndAlso Str.Chars(Str.Length - 1) = "a" Then
-                                    Str = Str.Insert(Str.Length - 1, KeyValue.Key(0))
+                                ElseIf Str.Length > 1 AndAlso Str.Chars(Str.Length - 1) = KeyValue.Key.Chars(1) AndAlso Str.Chars(Str.Length - 2) = KeyValue.Key.Chars(0) Then
+                                ElseIf Str.Length <> 0 AndAlso (Str.Chars(Str.Length - 1) = "a"c Or Str.Chars(Str.Length - 1) = "i"c Or Str.Chars(Str.Length - 1) = "u"c Or Str.Chars(Str.Length - 1) = "^"c) Then
+                                    Dim Ch As Chunk = Chunks(Count + 1)
+                                    Chunks(Count + 1) = Chunks(Count)
+                                    Chunks(Count) = Ch
+                                    Count -= 1
                                 Else
                                     Str += KeyValue.Key
                                 End If
                             ElseIf KeyValue.Key = "a" Then
-                                If Str.Length > 1 AndAlso Str.Chars(Str.Length - 1) = "A" Then
-                                    If Str.Chars(Str.Length - 2) <> "a" Then Str = Str.Insert(Str.Length - 1, KeyValue.Key)
-                                ElseIf Str.Length <> 0 AndAlso Str.Chars(Str.Length - 1) = "a" Then
-                                ElseIf Str.Length = 0 OrElse Str(Str.Length - 1) = " " Then
+                                If Str.Length > 1 AndAlso Str.Chars(Str.Length - 1) = "A"c Then
+                                    If Str.Chars(Str.Length - 2) <> "a"c Then Str = Str.Insert(Str.Length - 1, KeyValue.Key)
+                                ElseIf (Str.Length = 0 OrElse Str(Str.Length - 1) = " ") Or (Str.Length <> 0 AndAlso (Str.Chars(Str.Length - 1) = "^"c Or Str.Chars(Str.Length - 1) = "a"c Or Str.Chars(Str.Length - 1) = "i"c Or Str.Chars(Str.Length - 1) = "u"c Or Str.Chars(Str.Length - 1) = "o"c)) Then
                                     Dim Ch As Chunk = Chunks(Count + 1)
                                     Chunks(Count + 1) = Chunks(Count)
                                     Chunks(Count) = Ch
@@ -432,54 +453,26 @@
                                 Else
                                     Str += KeyValue.Key
                                 End If
-                            ElseIf KeyValue.Key = "i" Then
-                                If Str.Length <> 0 AndAlso Str.Chars(Str.Length - 1) = "i" Then
-                                Else
-                                    Str += KeyValue.Key
-                                End If
-                            ElseIf KeyValue.Key = "o" Then
-                                If Str.Length <> 0 AndAlso Str.Chars(Str.Length - 1) = "o" Then
-                                Else
-                                    Str += KeyValue.Key
-                                End If
-                            ElseIf KeyValue.Key = "F" Then
-                                If Str.Length <> 0 AndAlso Str.Chars(Str.Length - 1) = "F" Then
-                                Else
-                                    Str += KeyValue.Key
-                                End If
-                            ElseIf KeyValue.Key = "X" Then
-                                If Str.Length <> 0 AndAlso Str.Chars(Str.Length - 1) = "X" Then
-                                Else
-                                    Str += KeyValue.Key
-                                End If
-                            ElseIf KeyValue.Key = "V" Then
-                                If Str.Length <> 0 AndAlso Str.Chars(Str.Length - 1) = "V" Then
-                                Else
-                                    Str += KeyValue.Key
-                                End If
-                            ElseIf KeyValue.Key = "K" Then
-                                If Str.Length <> 0 AndAlso Str.Chars(Str.Length - 1) = "K" Then
-                                Else
-                                    Str += KeyValue.Key
-                                End If
-                            ElseIf KeyValue.Key = "N" Then
-                                If Str.Length <> 0 AndAlso Str.Chars(Str.Length - 1) = "N" Then
-                                Else
-                                    Str += KeyValue.Key
-                                End If
-                            ElseIf KeyValue.Key = "^" Then
-                                If Str.Length <> 0 AndAlso Str.Chars(Str.Length - 1) = "^" Then
+                            ElseIf KeyValue.Key = "i" Or KeyValue.Key = "u" Or KeyValue.Key = "o" Then
+                                If Str.Length <> 0 AndAlso (Str.Chars(Str.Length - 1) = "^"c Or Str.Chars(Str.Length - 1) = "a"c Or Str.Chars(Str.Length - 1) = "i"c Or Str.Chars(Str.Length - 1) = "u"c Or Str.Chars(Str.Length - 1) = "o"c) Then
+                                    While Chunks(Count + 1).Str = Chunks(Count).Str
+                                        Count += 1
+                                    End While
+                                    Dim Ch As Chunk = Chunks(Count + 1)
+                                    Chunks(Count + 1) = Chunks(Count)
+                                    Chunks(Count) = Ch
+                                    Count -= 1
+                                    Exit For
                                 Else
                                     Str += KeyValue.Key
                                 End If
                             ElseIf KeyValue.Key = "~" Then
-                                If Str.Length <> 0 AndAlso Str.Chars(Str.Length - 1) = "A" Then
+                                If Str.Length <> 0 AndAlso (Str.Chars(Str.Length - 1) = "A"c Or Str.Chars(Str.Length - 1) = "K"c) Then
                                     Str = Str.Insert(Str.Length - 1, KeyValue.Key)
-                                ElseIf Str.Length <> 0 AndAlso (Str.Chars(Str.Length - 1) = "a" Or Str.Chars(Str.Length - 1) = "i") Then
-                                    If Str.Chars(Str.Length - 2) <> "~" Then
+                                ElseIf Str.Length <> 0 AndAlso (Str.Chars(Str.Length - 1) = "a"c Or Str.Chars(Str.Length - 1) = "i"c Or Str.Chars(Str.Length - 1) = "u"c) Then
+                                    If Str.Chars(Str.Length - 2) <> "~"c Then
                                         Str = Str.Insert(Str.Length - 1, KeyValue.Key)
                                     End If
-                                ElseIf Str.Length <> 0 AndAlso Str.Chars(Str.Length - 1) = "~" Then
                                 Else
                                     Str += KeyValue.Key
                                 End If
@@ -490,7 +483,7 @@
                                     Dim Idx As Integer = Str.IndexOf(" (")
                                     If Idx = -1 Then Idx = Str.IndexOf(" madaniy~ap")
                                     If Idx = -1 Then Idx = Str.IndexOf(" ma_k~iy~apN")
-                                    QStr += "  <sura index=""" + CStr(Chapter) + """ name=""" + IslamMetadata.HTTPCoding.XmlEncode(Str.Substring(0, Idx).Replace("suwrapu ", String.Empty).Replace(") ", String.Empty)) + """>" + vbCrLf
+                                    QStr += "  <sura index=""" + CStr(Chapter) + """ name=""" + IslamMetadata.HTTPCoding.XmlEncode(Str.Substring(0, Idx).Replace("suwrapu ", String.Empty).Replace(") ", String.Empty).Replace("(", String.Empty)).Trim() + """>" + vbCrLf
                                 End If
                                 Dim Index As Integer = Str.IndexOf("bisomi {ll~ahi {lr~aHoma`ni {lr~aHiymi ")
                                 If Index = -1 Then
@@ -500,15 +493,15 @@
                                     Index += "bisomi {ll~ahi {lr~aHoma`ni {lr~aHiymi ".Length
                                 End If
                                 If Str.Substring(Str.LastIndexOf(" "c) + 1) = "1" AndAlso Index <> -1 Then
-                                    QStr += "    <aya index=""" + StrReverse(Str.Substring(Str.LastIndexOf(" "c) + 1)) + """ text=""" + IslamMetadata.HTTPCoding.XmlEncode(Str.Substring(Index, Str.LastIndexOf(" "c) - Index)) + """ " + "bismillah=""bisomi {ll~ahi {lr~aHoma`ni {lr~aHiymi""/>" + vbCrLf
+                                    QStr += "    <aya index=""" + StrReverse(Str.Substring(Str.LastIndexOf(" "c) + 1)) + """ text=""" + IslamMetadata.HTTPCoding.XmlEncode(Str.Substring(Index, Str.LastIndexOf(" "c) - Index)).Trim() + """ " + "bismillah=""bisomi {ll~ahi {lr~aHoma`ni {lr~aHiymi""/>" + vbCrLf
                                 Else
-                                    QStr += "    <aya index=""" + StrReverse(Str.Substring(Str.LastIndexOf(" "c) + 1)) + """ text=""" + IslamMetadata.HTTPCoding.XmlEncode(Str.Substring(0, Str.LastIndexOf(" "c))) + """ />" + vbCrLf
+                                    QStr += "    <aya index=""" + StrReverse(Str.Substring(Str.LastIndexOf(" "c) + 1)) + """ text=""" + IslamMetadata.HTTPCoding.XmlEncode(Str.Substring(0, Str.LastIndexOf(" "c))).Trim() + """ />" + vbCrLf
                                 End If
                                 Str = String.Empty
                             Else
                                 Str += KeyValue.Key
                             End If
-                            Exit For
+                                Exit For
                         End If
                     Next
                 End If
