@@ -36,23 +36,23 @@
     {"AV", New Integer() {&H3, &H74}},
     {"V", New Integer() {&H7, &HDB}},
     {"laA", New Integer() {&HD, &H1E, &H6C, &H6F, &H71}},
-    {"l~uA", New Integer() {&H19}},
+    {"l~Au", New Integer() {&H19}},
     {"liA%a", New Integer() {&H1A}},
-    {"luA", New Integer() {&H1D}},
+    {"lAu", New Integer() {&H1D}},
     {"YV", New Integer() {&H22, &H23, &H79}},
     {"%", New Integer() {&H24}},
     {"Yo", New Integer() {&H25}},
     {"Y%a", New Integer() {&H27, &H81, &H221E}},
     {"|", New Integer() {&H4E}},
-    {"liA", New Integer() {&H50, &H7E}},
+    {"lAi", New Integer() {&H50, &H7E}},
     {"w%a", New Integer() {&H51}},
     {"w", New Integer() {&H53, &H55}},
     {"w%", New Integer() {&H54}},
-    {"LFA", New Integer() {&H5A, &H5B, &H5C, &H5D}},
-    {"LF[A", New Integer() {&H60, &H61}},
-    {"L~F[A", New Integer() {&H62}},
-    {"L~FA", New Integer() {&H65, &H67, &H68}},
-    {"L~aA", New Integer() {&H6B}},
+    {"lFA", New Integer() {&H5A, &H5B, &H5C, &H5D}},
+    {"lF[A", New Integer() {&H60, &H61}},
+    {"l~F[A", New Integer() {&H62}},
+    {"l~FA", New Integer() {&H65, &H67, &H68}},
+    {"l~aA", New Integer() {&H6B}},
     {"w^", New Integer() {&H70}},
     {"Aa", New Integer() {&H75, &H77}},
     {"A%", New Integer() {&HDC, &HDD}},
@@ -123,7 +123,7 @@
     {"q", New Integer() {&H25, &H220B, &H29, &H2217, &H2B, &H2C, &H2212}},
     {"k", New Integer() {&H2E, &H30, &H31, &H32, &H33, &H34, &H35, &H36, &H37, &H38}},
     {"l", New Integer() {&H39, &H3A, &H3B, &H3C, &H3D, &H3E, &H3F, &H2245, &H391}},
-    {"m", New Integer() {&H392, &H3A7, &H2206, &H395, &H393, &H397, &H399, &H3D1, &H39A, &H39B, &H39C, &H39D, &H39F, &H3A0, &H398}},
+    {"m", New Integer() {&HFF, &H392, &H3A7, &H2206, &H395, &H393, &H397, &H399, &H3D1, &H39A, &H39B, &H39C, &H39D, &H39F, &H3A0, &H398}},
     {"n", New Integer() {&H3A1, &H3A3, &H3A4, &H3A5, &H3C2, &H2126, &H39E, &H3A8, &H396, &H2234, &H5D, &H22A5, &H5F, &H3B2, &H3C7, &H2205, &H239D, &HF0, &H239E, &H23A5, &H23A6, &H23AF}},
     {"h", New Integer() {&H3B4, &H3B5, &H3C6, &H3B3, &H3B7, &H3B9, &H3D5, &H3BA, &H3BB, &HB5, &H3BD}},
     {"p", New Integer() {&H3BF, &H3C0}},
@@ -134,18 +134,23 @@
     {"l>", New Integer() {&H3C8, &H7B, &H7C}},
     {"l<", New Integer() {&H7D, &H223C}},
     {"y", New Integer() {&H192, &H201E, &H2020, &H2021, &H2C6, &H2030, &H160, &H2039, &HF08D, &HF08E, &HF08F, &HF090, &H23A7, &H23AA, &H23AB}},
-    {"Y", New Integer() {&HFF, &H2018, &H2019, &H201C, &H201D, &HA9, &HAC}},
+    {"Y", New Integer() {&H2018, &H2019, &H201C, &H201D, &HA9, &HAC}},
     {"}", New Integer() {&H2014, &H2DC, &HF09D, &H2044, &H221E, &H2666}},
     {"YX", New Integer() {&H2122, &H203A, &H2190, &H2033, &H2265, &HD7, &H221D, &H23A9, &H2321}},
-    {"#", New Integer() {&H2194, &H23AE}},
-    {"`", New Integer() {&H2261, &H2248, &H2211}},
-    {",", New Integer() {&H2026, &H23D0}},
-    {".", New Integer() {&H23AF, &H21B5}},
+    {"Y#", New Integer() {&H23AE, &H22C5}},
+    {"_#", New Integer() {&H2194}},
+    {"`", New Integer() {&H2261, &H2211}},
+    {"_`", New Integer() {&H2248}},
+    {",", New Integer() {&H2026}},
+    {"_,", New Integer() {&H23D0}},
+    {".", New Integer() {&H23AF}},
+    {"_.", New Integer() {&H21B5}},
     {"`#", New Integer() {&H2135}},
-    {"`^", New Integer() {&H211C, &H2118}},
+    {"`^", New Integer() {&H211C}},
+    {"_`^", New Integer() {&H2118}},
     {"_", New Integer() {&H2297}},
-    {"=", New Integer() {&H2229}},
     {"", New Integer() {&H222A}},
+    {"=", New Integer() {&H2229}},
     {"0", New Integer() {&H2283}},
     {"1", New Integer() {&H2287}},
     {"2", New Integer() {&H2284}},
@@ -157,7 +162,6 @@
     {"8", New Integer() {&H2207}},
     {"H", New Integer() {&H220F, &H21D4}},
     {"x", New Integer() {&H221A, &H21D0}},
-    {"Y#", New Integer() {&H22C5}},
     {"j", New Integer() {&H2228}},
     {"S", New Integer() {&H21D1, &H21D2}},
     {"D", New Integer() {&H21D3}},
@@ -177,9 +181,10 @@
             {"p", New Integer() {&H27}},
             {"t", New Integer() {&H29, &H56, &H6E}},
             {"y", New Integer() {&H2C, &H71}},
-            {"Y", New Integer() {&H2E, &H52, &H5F, &H2020}},
-            {"m", New Integer() {&H2F, &H201E}},
-            {"`", New Integer() {&H31, &H38, &H39}},
+            {"YV", New Integer() {&H2E}},
+            {"Y", New Integer() {&H5F, &H2020}},
+            {"m", New Integer() {&H2F, &H52, &H201E}},
+            {"Y`", New Integer() {&H31, &H38, &H39}},
             {"n", New Integer() {&H47}},
             {"llh", New Integer() {&H54}},
             {"b", New Integer() {&H55}},
@@ -383,91 +388,103 @@
                             If Str.Length <> 0 AndAlso Str.Chars(Str.Length - 1) = "A" AndAlso KeyValue.Key = "{" Then
                                 Str = Str.Remove(Str.Length - 1) + KeyValue.Key
                             ElseIf KeyValue.Key = "i~ai" Or KeyValue.Key = "~i~ai" Then
-                                'If Str.Length > 2 AndAlso Str.Substring(Str.Length - 3) = "llh" Then
                                 Str = Str.Insert(Str.Length - 2, KeyValue.Key.Chars(0))
                                 If KeyValue.Key.Chars(0) = "~" Then
                                     Str = Str.Insert(Str.Length - 2, KeyValue.Key.Chars(1))
                                 End If
                                 Str = Str.Insert(Str.Length - 1, KeyValue.Key.Chars(If(KeyValue.Key.Chars(0) = "~", 2, 1)) + KeyValue.Key.Chars(If(KeyValue.Key.Chars(0) = "~", 3, 2)))
                                 Str += KeyValue.Key.Chars(If(KeyValue.Key.Chars(0) = "~", 4, 3))
-                                'End If
                             ElseIf KeyValue.Key <> String.Empty AndAlso KeyValue.Key.Length >= If(KeyValue.Key.Chars(0) = "~", 3, 2) AndAlso ("aiuo^".IndexOf(KeyValue.Key.Chars(1)) <> -1 And "aiuo^".IndexOf(KeyValue.Key.Chars(If(KeyValue.Key.Chars(0) = "~", 2, 0))) <> -1) Then
                                 '"oa", "ia", "oi", "iu", "aa", "~ia", "ai", "~iu", "ii", "au", "~aa", "~ii", "~au", "ao", "~ai"
-                                'If Str.Length > 2 AndAlso Str.Substring(Str.Length - 3) = "llh" Then
                                 Str = Str.Insert(Str.Length - 1, KeyValue.Key.Chars(0))
                                 If KeyValue.Key.Chars(0) = "~" Then
                                     Str = Str.Insert(Str.Length - 1, KeyValue.Key.Chars(1))
                                 End If
                                 Str += KeyValue.Key.Chars(If(KeyValue.Key.Chars(0) = "~", 2, 1))
-                                'End If
                             ElseIf KeyValue.Key = "~a" Then
                                 If Str.Length > 1 AndAlso Str.Chars(Str.Length - 1) = "A" Then
+                                    Str = Str.Insert(Str.Length - 1, KeyValue.Key)
+                                ElseIf Str.Length > 1 AndAlso Str.Chars(Str.Length - 1) = "a" AndAlso Str.Chars(Str.Length - 2) = "~" Then
+                                ElseIf Str.Length <> 0 AndAlso Str.Chars(Str.Length - 1) = "a" Then
+                                    Str = Str.Insert(Str.Length - 1, KeyValue.Key(0))
+                                Else
+                                    Str += KeyValue.Key
+                                End If
+                            ElseIf KeyValue.Key = "a" Then
+                                If Str.Length > 1 AndAlso Str.Chars(Str.Length - 1) = "A" Then
+                                    If Str.Chars(Str.Length - 2) <> "a" Then Str = Str.Insert(Str.Length - 1, KeyValue.Key)
+                                ElseIf Str.Length <> 0 AndAlso Str.Chars(Str.Length - 1) = "a" Then
+                                ElseIf Str.Length = 0 OrElse Str(Str.Length - 1) = " " Then
+
+                                Else
+                                    Str += KeyValue.Key
+                                End If
+                            ElseIf KeyValue.Key = "i" Then
+                                If Str.Length <> 0 AndAlso Str.Chars(Str.Length - 1) = "i" Then
+                                Else
+                                    Str += KeyValue.Key
+                                End If
+                            ElseIf KeyValue.Key = "o" Then
+                                If Str.Length <> 0 AndAlso Str.Chars(Str.Length - 1) = "o" Then
+                                Else
+                                    Str += KeyValue.Key
+                                End If
+                            ElseIf KeyValue.Key = "F" Then
+                                If Str.Length <> 0 AndAlso Str.Chars(Str.Length - 1) = "F" Then
+                                Else
+                                    Str += KeyValue.Key
+                                End If
+                            ElseIf KeyValue.Key = "K" Then
+                                If Str.Length <> 0 AndAlso Str.Chars(Str.Length - 1) = "K" Then
+                                Else
+                                    Str += KeyValue.Key
+                                End If
+                            ElseIf KeyValue.Key = "N" Then
+                                If Str.Length <> 0 AndAlso Str.Chars(Str.Length - 1) = "N" Then
+                                Else
+                                    Str += KeyValue.Key
+                                End If
+                            ElseIf KeyValue.Key = "^" Then
+                                If Str.Length <> 0 AndAlso Str.Chars(Str.Length - 1) = "^" Then
+                                Else
+                                    Str += KeyValue.Key
+                                End If
+                            ElseIf KeyValue.Key = "~" Then
+                                If Str.Length <> 0 AndAlso Str.Chars(Str.Length - 1) = "A" Then
+                                    Str = Str.Insert(Str.Length - 1, KeyValue.Key)
+                                ElseIf Str.Length <> 0 AndAlso (Str.Chars(Str.Length - 1) = "a" Or Str.Chars(Str.Length - 1) = "i") Then
                                     If Str.Chars(Str.Length - 2) <> "~" Then
                                         Str = Str.Insert(Str.Length - 1, KeyValue.Key)
-                                    Else
-                                        Str = Str.Insert(Str.Length - 1, KeyValue.Key.Chars(1))
                                     End If
                                 ElseIf Str.Length <> 0 AndAlso Str.Chars(Str.Length - 1) = "~" Then
-                                    Str += KeyValue.Key.Chars(1)
                                 Else
                                     Str += KeyValue.Key
                                 End If
-                                ElseIf KeyValue.Key = "a" Then
-                                    If Str.Length > 1 AndAlso Str.Chars(Str.Length - 1) = "A" Then
-                                        If Str.Chars(Str.Length - 2) <> "a" Then Str = Str.Insert(Str.Length - 1, KeyValue.Key)
-                                    ElseIf Str.Length <> 0 AndAlso Str.Chars(Str.Length - 1) = "a" Then
-                                    Else
-                                        Str += KeyValue.Key
-                                    End If
-                                ElseIf KeyValue.Key = "i" Then
-                                    If Str.Length <> 0 AndAlso Str.Chars(Str.Length - 1) = "i" Then
-                                    Else
-                                        Str += KeyValue.Key
-                                    End If
-                                ElseIf KeyValue.Key = "o" Then
-                                    If Str.Length <> 0 AndAlso Str.Chars(Str.Length - 1) = "o" Then
-                                    Else
-                                        Str += KeyValue.Key
-                                    End If
-                                ElseIf KeyValue.Key = "F" Then
-                                    If Str.Length <> 0 AndAlso Str.Chars(Str.Length - 1) = "F" Then
-                                    Else
-                                        Str += KeyValue.Key
-                                    End If
-                                ElseIf KeyValue.Key = "~" Then
-                                    If Str.Length <> 0 AndAlso Str.Chars(Str.Length - 1) = "A" Then
-                                        Str = Str.Insert(Str.Length - 1, KeyValue.Key)
-                                    ElseIf Str.Length <> 0 AndAlso (Str.Chars(Str.Length - 1) = "a" Or Str.Chars(Str.Length - 1) = "i") Then
-                                        Str = Str.Insert(Str.Length - 1, KeyValue.Key)
-                                    ElseIf Str.Length <> 0 AndAlso Str.Chars(Str.Length - 1) = "~" Then
-                                    Else
-                                        Str += KeyValue.Key
-                                    End If
-                                ElseIf KeyValue.Key = "=" Then
-                                    If Str.Substring(Str.LastIndexOf(" "c) + 1) = "1" Then
-                                        If Chapter <> 0 Then QStr += "  </sura>" + vbCrLf
-                                        Chapter += 1
-                                        Dim Idx As Integer = Str.IndexOf(" (")
-                                        If Idx = -1 Then Idx = Str.IndexOf(" madaniy~ap")
-                                        If Idx = -1 Then Idx = Str.IndexOf(" ma_k~iy~apN")
-                                        QStr += "  <sura index=""" + CStr(Chapter) + """ name=""" + IslamMetadata.HTTPCoding.XmlEncode(Str.Substring(0, Idx).Replace("suwrapu ", String.Empty).Replace(") ", String.Empty)) + """>" + vbCrLf
-                                    End If
-                                    Dim Index As Integer = Str.IndexOf("bisomi {ll~ahi {lr~aHoma`ni {lr~aHiymi ")
-                                    If Index = -1 Then
-                                        Index = Str.IndexOf("bisomi{ll~`hi {lr~aHoma`ni{lr~aHiymi ")
-                                        If Index <> -1 Then Index += "bisomi{ll~`hi {lr~aHoma`ni{lr~aHiymi ".Length
-                                    Else
-                                        Index += "bisomi {ll~ahi {lr~aHoma`ni {lr~aHiymi ".Length
-                                    End If
-                                    If Str.Substring(Str.LastIndexOf(" "c) + 1) = "1" AndAlso Index <> -1 Then
-                                        QStr += "    <aya index=""" + StrReverse(Str.Substring(Str.LastIndexOf(" "c) + 1)) + """ text=""" + IslamMetadata.HTTPCoding.XmlEncode(Str.Substring(Index, Str.LastIndexOf(" "c) - Index)) + """ " + "bismillah=""bisomi {ll~ahi {lr~aHoma`ni {lr~aHiymi""/>" + vbCrLf
-                                    Else
-                                        QStr += "    <aya index=""" + StrReverse(Str.Substring(Str.LastIndexOf(" "c) + 1)) + """ text=""" + IslamMetadata.HTTPCoding.XmlEncode(Str.Substring(0, Str.LastIndexOf(" "c))) + """ />" + vbCrLf
-                                    End If
-                                    Str = String.Empty
-                                Else
-                                    Str += KeyValue.Key
+                            ElseIf KeyValue.Key = "=" Then
+                                If Str.Substring(Str.LastIndexOf(" "c) + 1) = "1" Then
+                                    If Chapter <> 0 Then QStr += "  </sura>" + vbCrLf
+                                    Chapter += 1
+                                    Dim Idx As Integer = Str.IndexOf(" (")
+                                    If Idx = -1 Then Idx = Str.IndexOf(" madaniy~ap")
+                                    If Idx = -1 Then Idx = Str.IndexOf(" ma_k~iy~apN")
+                                    QStr += "  <sura index=""" + CStr(Chapter) + """ name=""" + IslamMetadata.HTTPCoding.XmlEncode(Str.Substring(0, Idx).Replace("suwrapu ", String.Empty).Replace(") ", String.Empty)) + """>" + vbCrLf
                                 End If
+                                Dim Index As Integer = Str.IndexOf("bisomi {ll~ahi {lr~aHoma`ni {lr~aHiymi ")
+                                If Index = -1 Then
+                                    Index = Str.IndexOf("bisomi{ll~`hi {lr~aHoma`ni{lr~aHiymi ")
+                                    If Index <> -1 Then Index += "bisomi{ll~`hi {lr~aHoma`ni{lr~aHiymi ".Length
+                                Else
+                                    Index += "bisomi {ll~ahi {lr~aHoma`ni {lr~aHiymi ".Length
+                                End If
+                                If Str.Substring(Str.LastIndexOf(" "c) + 1) = "1" AndAlso Index <> -1 Then
+                                    QStr += "    <aya index=""" + StrReverse(Str.Substring(Str.LastIndexOf(" "c) + 1)) + """ text=""" + IslamMetadata.HTTPCoding.XmlEncode(Str.Substring(Index, Str.LastIndexOf(" "c) - Index)) + """ " + "bismillah=""bisomi {ll~ahi {lr~aHoma`ni {lr~aHiymi""/>" + vbCrLf
+                                Else
+                                    QStr += "    <aya index=""" + StrReverse(Str.Substring(Str.LastIndexOf(" "c) + 1)) + """ text=""" + IslamMetadata.HTTPCoding.XmlEncode(Str.Substring(0, Str.LastIndexOf(" "c))) + """ />" + vbCrLf
+                                End If
+                                Str = String.Empty
+                            Else
+                                Str += KeyValue.Key
+                            End If
                             Exit For
                         End If
                     Next
