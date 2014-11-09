@@ -492,29 +492,35 @@
                                     If Idx = -1 Then Idx = Str.IndexOf(" ma_k~iy~apN")
                                     QStr += "  <sura index=""" + CStr(Chapter) + """ name=""" + IslamMetadata.Arabic.TransliterateFromBuckwalter(Str.Substring(0, Idx).Replace("suwrapu ", String.Empty).Replace(")", String.Empty).Replace("(", String.Empty)).Trim() + """>" + vbCrLf
                                 End If
-                                Dim Index As Integer = Str.IndexOf("bisomi {ll~ahi {lr~aHoma_`ni {lr~aHiymi ")
-                                If Index = -1 Then
-                                    Index = Str.IndexOf("bisomi{ll~`hi {lr~aHoma`ni{lr~aHiymi ")
+                                Dim Index As Integer = -1
+                                If Str.Substring(Str.LastIndexOf(" "c) + 1) = "1" Then
+                                    Index = Str.IndexOf("bisomi {ll~ahi {lr~aHoma_`ni {lr~aHiymi ")
                                     If Index = -1 Then
-                                        Index = Str.IndexOf("aAyaAtuhaA") + "aAyaAtuhaA".Length
-                                        While Char.IsWhiteSpace(Str(Index)) Or Char.IsDigit(Str(Index))
-                                            Index += 1
-                                        End While
-                                        Str = Str.Substring(Index)
-                                        Index = -1
+                                        Index = Str.IndexOf("bisomi{ll~`hi {lr~aHoma`ni{lr~aHiymi ")
+                                        If Index = -1 Then
+                                            Index = Str.IndexOf("aAyaAtuhaA")
+                                            If Index <> -1 Then
+                                                Index += "aAyaAtuhaA".Length
+                                                While Char.IsWhiteSpace(Str(Index)) Or Char.IsDigit(Str(Index))
+                                                    Index += 1
+                                                End While
+                                                Str = Str.Substring(Index)
+                                                Index = -1
+                                            End If
+                                        Else
+                                            Index += "bisomi{ll~`hi {lr~aHoma`ni{lr~aHiymi ".Length
+                                        End If
                                     Else
-                                        Index += "bisomi{ll~`hi {lr~aHoma`ni{lr~aHiymi ".Length
+                                        Index += "bisomi {ll~ahi {lr~aHoma`ni {lr~aHiymi ".Length
                                     End If
+                                End If
+                                Verse = Verse + 1 'text has off by one error so better than StrReverse(Str.Substring(Str.LastIndexOf(" "c) + 1))
+                                If Str.Substring(Str.LastIndexOf(" "c) + 1) = "1" AndAlso Index <> -1 Then
+                                    QStr += "    <aya index=""" + CStr(Verse) + """ text=""" + IslamMetadata.Arabic.TransliterateFromBuckwalter(Str.Substring(Index, Str.LastIndexOf(" "c) - Index)).Trim() + """ " + "bismillah=""" + IslamMetadata.Arabic.TransliterateFromBuckwalter("bisomi {ll~ahi {lr~aHoma`ni {lr~aHiymi") + """/>" + vbCrLf
                                 Else
-                                    Index += "bisomi {ll~ahi {lr~aHoma`ni {lr~aHiymi ".Length
-                            End If
-                            Verse = Verse + 1 'text has off by one error so better than StrReverse(Str.Substring(Str.LastIndexOf(" "c) + 1))
-                            If Str.Substring(Str.LastIndexOf(" "c) + 1) = "1" AndAlso Index <> -1 Then
-                                QStr += "    <aya index=""" + CStr(Verse) + """ text=""" + IslamMetadata.Arabic.TransliterateFromBuckwalter(Str.Substring(Index, Str.LastIndexOf(" "c) - Index)).Trim() + """ " + "bismillah=""" + IslamMetadata.Arabic.TransliterateFromBuckwalter("bisomi {ll~ahi {lr~aHoma`ni {lr~aHiymi") + """/>" + vbCrLf
-                            Else
-                                QStr += "    <aya index=""" + CStr(Verse) + """ text=""" + IslamMetadata.Arabic.TransliterateFromBuckwalter(Str.Substring(0, Str.LastIndexOf(" "c))).Trim() + """ />" + vbCrLf
-                            End If
-                            Str = String.Empty
+                                    QStr += "    <aya index=""" + CStr(Verse) + """ text=""" + IslamMetadata.Arabic.TransliterateFromBuckwalter(Str.Substring(0, Str.LastIndexOf(" "c))).Trim() + """ />" + vbCrLf
+                                End If
+                                Str = String.Empty
                             Else
                                 Str += KeyValue.Key
                             End If

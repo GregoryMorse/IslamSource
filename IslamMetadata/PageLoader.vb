@@ -1840,6 +1840,14 @@ Public Class Arabic
     Public Shared UthmaniShortVowelsBeforeLongVowelsYeh As String = ArabicKasra + ArabicLetterYeh
     Public Shared UthmaniShortVowelsBeforeLongVowelsSmallYeh As String = ArabicKasra + ArabicSmallYeh
     Public Shared WarshScript As RuleTranslation() = { _
+        New RuleTranslation With {.Rule = "InitialAlefMadda", .Match = "(^\s*|\s+)" + MakeUniRegEx(ArabicLetterAlefMaksura) + MakeUniRegEx(ArabicHamzaBelow) + "(?=" + MakeUniRegEx(ArabicFatha) + MakeUniRegEx(ArabicLetterAlef) + ")", _
+            .Evaluator = "$1" + ArabicLetterHamza}, _
+        New RuleTranslation With {.Rule = "AlefWithHamzaBelow", .Match = "(^\s*|\s+)" + MakeUniRegEx(ArabicLetterAlef) + "(?=" + MakeUniRegEx(ArabicKasra) + ")", _
+            .Evaluator = "$1" + ArabicLetterAlefWithHamzaBelow}, _
+        New RuleTranslation With {.Rule = "AlefWithHamzaAbove", .Match = "(^\s*|\s+)" + MakeUniRegEx(ArabicLetterAlef) + "(?=" + MakeUniRegEx(ArabicFatha) + "|" + MakeUniRegEx(ArabicDamma) + ")", _
+            .Evaluator = "$1" + ArabicLetterAlefWithHamzaAbove}, _
+        New RuleTranslation With {.Rule = "Tatweel", .Match = MakeUniRegEx(ArabicTatweel) + "(?=" + MakeUniRegEx(ArabicLetterSuperscriptAlef) + ")", _
+            .Evaluator = String.Empty}
         }
     Public Shared UthmaniMinimalScript As RuleTranslation() = { _
         New RuleTranslation With {.Rule = "SmallYehSmallWawAfterPronounHeh", .Match = "(?:(" + MakeUniRegEx(ArabicLetterHeh) + MakeUniRegEx(ArabicKasra) + ")" + MakeUniRegEx(ArabicSmallYeh) + "|(" + MakeUniRegEx(ArabicLetterHeh) + MakeUniRegEx(ArabicDamma) + ")" + MakeUniRegEx(ArabicSmallWaw) + ")" + MakeUniRegEx(ArabicMaddahAbove) + "?(?=\s*$|\s+)", _
@@ -2398,9 +2406,9 @@ Public Class Arabic
                End Function
     End Function
     Public Shared Function ChangeBaseScript(ArabicString As String, BaseText As TanzilReader.QuranTexts) As String
-        If BaseText = TanzilReader.QuranScripts.UthmaniMin Then
-            For Count = 0 To UthmaniMinimalScript.Length - 1
-                ArabicString = System.Text.RegularExpressions.Regex.Replace(ArabicString, UthmaniMinimalScript(Count).Match, NegativeMatchEliminator(UthmaniMinimalScript(Count).NegativeMatch, UthmaniMinimalScript(Count).Evaluator))
+        If BaseText = TanzilReader.QuranTexts.Warsh Then
+            For Count = 0 To WarshScript.Length - 1
+                ArabicString = System.Text.RegularExpressions.Regex.Replace(ArabicString, WarshScript(Count).Match, NegativeMatchEliminator(WarshScript(Count).NegativeMatch, WarshScript(Count).Evaluator))
             Next
         End If
         Return ArabicString
@@ -5344,9 +5352,9 @@ Public Class TanzilReader
         Dim UseBuckwalter As Boolean = False
         Dim Path As String
         If BaseText = TargetBaseText Then
-            Path = Utility.GetFilePath("metadata\" + QuranTextNames(BaseText) + "-" + QuranFileNames(ScriptType) + If(Presentation <> ArabicPresentation.None, "-" + PresentationCacheNames(Presentation), String.Empty) + ".xml")
+            Path = Utility.GetFilePath("metadata\" + QuranTextNames(TargetBaseText) + "-" + QuranFileNames(ScriptType) + If(Presentation <> ArabicPresentation.None, "-" + PresentationCacheNames(Presentation), String.Empty) + ".xml")
         Else
-            Path = Utility.GetFilePath("metadata\" + QuranTextNames(BaseText) + "-" + QuranFileNames(ScriptType) + If(Presentation <> ArabicPresentation.None, "-" + PresentationCacheNames(Presentation), String.Empty) + ".xml")
+            Path = Utility.GetFilePath("metadata\" + QuranTextNames(TargetBaseText) + "-" + QuranFileNames(ScriptType) + If(Presentation <> ArabicPresentation.None, "-" + PresentationCacheNames(Presentation), String.Empty) + ".xml")
         End If
         If Presentation = ArabicPresentation.Buckwalter Then
             UseBuckwalter = True
@@ -5643,7 +5651,7 @@ Public Class TanzilReader
     Public Shared Function GetQuranText(ByVal XMLDocMain As System.Xml.XmlDocument, ByVal Chapter As Integer, ByVal StartVerse As Integer, ByVal EndVerse As Integer) As String()
         Dim Count As Integer
         If StartVerse = -1 Then StartVerse = 1
-        If EndVerse = -1 Then EndVerse = GetVerseCount(Chapter)
+        If EndVerse = -1 Then EndVerse = GetTextChapter(XMLDocMain, Chapter).ChildNodes.Count 'GetVerseCount(Chapter)
         Dim Verses(EndVerse - StartVerse) As String
         For Count = StartVerse To EndVerse
             Verses(Count - StartVerse) = GetTextVerse(GetTextChapter(XMLDocMain, Chapter), Count).Attributes.GetNamedItem("text").Value
