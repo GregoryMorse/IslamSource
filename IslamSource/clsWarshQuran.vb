@@ -33,13 +33,13 @@
 {"", New Integer() {&H105, &H106, &H107, &H109, &H10F}}
 } '109 + {105=b/n, 106=t/y, 107=v}, 10F + {105=f, 106=q}
     Shared Hamd2 As New Dictionary(Of String, Integer()) From {
-    {"AV", New Integer() {&H3, &H74}},
-    {"V", New Integer() {&H7, &HDB}},
+    {"AW", New Integer() {&H3, &H74}},
+    {"W", New Integer() {&H7, &HDB}},
     {"laA", New Integer() {&HD, &H1E, &H6C, &H6F, &H71}},
     {"l~Au", New Integer() {&H19}},
     {"liA%a", New Integer() {&H1A}},
     {"lAu", New Integer() {&H1D}},
-    {"YV", New Integer() {&H22, &H23, &H79}},
+    {"YW", New Integer() {&H22, &H23, &H79}},
     {"%", New Integer() {&H24}},
     {"Yo", New Integer() {&H25}},
     {"Y%a", New Integer() {&H27, &H81, &H221E}},
@@ -58,7 +58,7 @@
     {"A%", New Integer() {&HDC, &HDD}},
     {"A%a", New Integer() {&HDE}},
     {"Ai", New Integer() {&H76}},
-    {"AVi", New Integer() {&H7F}},
+    {"AWi", New Integer() {&H7F}},
     {"_", New Integer() {&H7B}},
     {"la", New Integer() {&H7D}},
     {"l", New Integer() {&H82}},
@@ -76,7 +76,7 @@
     {"I", New Integer() {&H2217}},
     {"^", New Integer() {&H3A, &H3B}},
     {"]", New Integer() {&H3E}},
-    {"X", New Integer() {&H3A7}},
+    {"W", New Integer() {&H3A7}},
     {"%", New Integer() {&H2206}},
     {"!", New Integer() {&H3A6}},
     {"`", New Integer() {&H397, &H3C5}},
@@ -182,7 +182,7 @@
             {"p", New Integer() {&H27}},
             {"t", New Integer() {&H29, &H56, &H6E}},
             {"y", New Integer() {&H2C, &H71}},
-            {"YV", New Integer() {&H2E}},
+            {"YX", New Integer() {&H2E}},
             {"Y", New Integer() {&H5F, &H2020}},
             {"m", New Integer() {&H2F, &H52, &H201E}},
             {"Y`", New Integer() {&H31, &H38, &H39}},
@@ -255,7 +255,8 @@
     {"aN", New Integer() {&H64}},
     {"i{", New Integer() {&H65}},
     {"ao", New Integer() {&H68}},
-    {"a", New Integer() {&H31, &H6D, &H6E, &H6F, &H70, &H71, &H72, &H73, &H74, &H75, &H76, &H77, &H78, &H79, &H7A, &H7B, &H7C, &H7D, &H7E, &HF080, &HF08D, &H161, &H178}},
+    {"W", New Integer() {&H31}},
+    {"a", New Integer() {&H6D, &H6E, &H6F, &H70, &H71, &H72, &H73, &H74, &H75, &H76, &H77, &H78, &H79, &H7A, &H7B, &H7C, &H7D, &H7E, &HF080, &HF08D, &H161, &H178}},
     {"~a", New Integer() {&H153, &HF09E}},
     {"I", New Integer() {&HA0}},
     {"O", New Integer() {&HA1}},
@@ -266,7 +267,7 @@
     {"~i~ai", New Integer() {&HB0}}
     } '&H3A, &H3B, &H3C could be "~u^"
     Shared Arr7 As New Dictionary(Of String, Integer()) From {
-    {"T", New Integer() {&H31}},
+    {"U", New Integer() {&H31}},
     {"a", New Integer() {&H76, &H79, &H7D, &HF08D}}
     }
     Class TextExtractionStrategy
@@ -394,13 +395,17 @@
                         Dim Match As Integer = Array.IndexOf(KeyValue.Value, System.Text.Encoding.Unicode.GetBytes(Chunks(Count).Str)(0) + 256 * System.Text.Encoding.Unicode.GetBytes(Chunks(Count).Str)(1))
                         If Match <> -1 Then
                             'redundant value corrections using look behind
-                            If KeyValue.Value(Match) = &H2122 And KeyValue.Key = "YX" And Str.Length > 1 AndAlso Str.Chars(Str.Length - 1) = "X"c Then Continue For
+                            If KeyValue.Value(Match) = &H2122 And KeyValue.Key = "YX" And Str.Length > 1 AndAlso Str.Chars(Str.Length - 1) = "W"c Then Continue For
                             If KeyValue.Value(Match) = &H23AF And (KeyValue.Key = "n" Or KeyValue.Key = "r") And Str.Length > 1 AndAlso Str.Chars(Str.Length - 1) = "i"c AndAlso Str.Chars(Str.Length - 2) = "h"c Then Continue For
                             If KeyValue.Value(Match) = &HAE And KeyValue.Key = "9" And Str.Length = 0 Then Continue For
                             If Str.Length <> 0 AndAlso Str.Chars(Str.Length - 1) = "."c And KeyValue.Key <> "^" Then Str.Remove(Str.Length - 1).Insert(Str.Length - 1, "n")
                             If Str.Length <> 0 AndAlso Str.Chars(Str.Length - 1) = "I"c Then Str += " "
                             If Str.Length <> 0 AndAlso Str.Chars(Str.Length - 1) = "A"c AndAlso (KeyValue.Key = "{" Or KeyValue.Key = "a{" Or KeyValue.Key = "~a{" Or KeyValue.Key = "i{") Then
                                 Str = Str.Remove(Str.Length - 1) + KeyValue.Key
+                            ElseIf KeyValue.Key = "_" Then
+                                If Str.Length = 0 OrElse Str.Chars(Str.Length - 1) <> "_"c Then
+                                    Str += KeyValue.Key
+                                End If
                             ElseIf KeyValue.Key = "I" Then
                                 If Str.Chars(Str.Length - 1) <> " " Then
                                     Dim Ch As Chunk = Chunks(Count + 1)
@@ -483,7 +488,7 @@
                                     Dim Idx As Integer = Str.IndexOf(" (")
                                     If Idx = -1 Then Idx = Str.IndexOf(" madaniy~ap")
                                     If Idx = -1 Then Idx = Str.IndexOf(" ma_k~iy~apN")
-                                    QStr += "  <sura index=""" + CStr(Chapter) + """ name=""" + IslamMetadata.HTTPCoding.XmlEncode(Str.Substring(0, Idx).Replace("suwrapu ", String.Empty).Replace(") ", String.Empty).Replace("(", String.Empty)).Trim() + """>" + vbCrLf
+                                    QStr += "  <sura index=""" + CStr(Chapter) + """ name=""" + IslamMetadata.Arabic.TransliterateFromBuckwalter(Str.Substring(0, Idx).Replace("suwrapu ", String.Empty).Replace(") ", String.Empty).Replace("(", String.Empty)).Trim() + """>" + vbCrLf
                                 End If
                                 Dim Index As Integer = Str.IndexOf("bisomi {ll~ahi {lr~aHoma`ni {lr~aHiymi ")
                                 If Index = -1 Then
@@ -493,9 +498,9 @@
                                     Index += "bisomi {ll~ahi {lr~aHoma`ni {lr~aHiymi ".Length
                                 End If
                                 If Str.Substring(Str.LastIndexOf(" "c) + 1) = "1" AndAlso Index <> -1 Then
-                                    QStr += "    <aya index=""" + StrReverse(Str.Substring(Str.LastIndexOf(" "c) + 1)) + """ text=""" + IslamMetadata.HTTPCoding.XmlEncode(Str.Substring(Index, Str.LastIndexOf(" "c) - Index)).Trim() + """ " + "bismillah=""bisomi {ll~ahi {lr~aHoma`ni {lr~aHiymi""/>" + vbCrLf
+                                    QStr += "    <aya index=""" + StrReverse(Str.Substring(Str.LastIndexOf(" "c) + 1)) + """ text=""" + IslamMetadata.Arabic.TransliterateFromBuckwalter(Str.Substring(Index, Str.LastIndexOf(" "c) - Index)).Trim() + """ " + "bismillah=""" + IslamMetadata.Arabic.TransliterateFromBuckwalter("bisomi {ll~ahi {lr~aHoma`ni {lr~aHiymi") + """/>" + vbCrLf
                                 Else
-                                    QStr += "    <aya index=""" + StrReverse(Str.Substring(Str.LastIndexOf(" "c) + 1)) + """ text=""" + IslamMetadata.HTTPCoding.XmlEncode(Str.Substring(0, Str.LastIndexOf(" "c))).Trim() + """ />" + vbCrLf
+                                    QStr += "    <aya index=""" + StrReverse(Str.Substring(Str.LastIndexOf(" "c) + 1)) + """ text=""" + IslamMetadata.Arabic.TransliterateFromBuckwalter(Str.Substring(0, Str.LastIndexOf(" "c))).Trim() + """ />" + vbCrLf
                                 End If
                                 Str = String.Empty
                             Else
@@ -565,7 +570,7 @@
 "#  Please check updates at: http://islamsource.info" + vbCrLf + _
 "# " + vbCrLf + _
 "#====================================================================" + vbCrLf + vbCrLf + _
-"-->" + "<quran>" + vbCrLf
+"-->" + vbCrLf + "<quran>" + vbCrLf
         Dim Strat As New TextExtractionStrategy
         For Cnt As Integer = 0 To Reader.NumberOfPages - 1
             Strat.Chunks.Clear()
@@ -583,6 +588,6 @@
             Str += iTextSharp.text.pdf.parser.PdfTextExtractor.GetTextFromPage(Reader, Cnt + 1, Strat)
         Next
         Str += "  </sura>" + vbCrLf + "</quran>" + vbCrLf
-        IO.File.WriteAllText("warsh.txt", Str)
+        IO.File.WriteAllText("warsh.xml", Str)
     End Sub
 End Class
