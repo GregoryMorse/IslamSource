@@ -3361,7 +3361,9 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 		<arabicsymbol symbolname="$ad~apN" uname="ArabicShadda" symbol="0651" ipavalue="" extendedbuckwalter="126" terminating="false" connecting="false" assimilate="false" />
 		<arabicsymbol symbolname="sukuwnN" uname="ArabicSukun" symbol="0652" ipavalue="∅" extendedbuckwalter="111" terminating="false" connecting="false" assimilate="false" />
 		<arabicsymbol symbolname="mad~apN" uname="ArabicMaddahAbove" symbol="0653" ipavalue="" extendedbuckwalter="94" terminating="false" connecting="false" assimilate="false" />
-		<arabicsymbol symbolname="hamozapN" uname="ArabicHamzaAbove" symbol="0654" ipavalue="ʔ" extendedbuckwalter="35" terminating="false" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="hamozapN" uname="ArabicHamzaAbove" symbol="0654" ipavalue="ɛ|e" extendedbuckwalter="35" terminating="false" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="hamozapN" uname="ArabicHamzaBelow" symbol="0655" ipavalue="ʔ" extendedbuckwalter="88" terminating="false" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="&lt;imaAlapN" uname="ArabicVowelSignDotBelow" symbol="065C" ipavalue="" extendedbuckwalter="87" terminating="false" connecting="false" assimilate="false" />
 		<arabicsymbol symbolname="SiforN" uname="ArabicIndicDigitZero" symbol="0660" ipavalue="" extendedbuckwalter="48" terminating="true" connecting="false" assimilate="false" />
 		<arabicsymbol symbolname="waAHidN" uname="ArabicIndicDigitOne" symbol="0661" ipavalue="" extendedbuckwalter="49" terminating="true" connecting="false" assimilate="false" />
 		<arabicsymbol symbolname="&lt;ivonaAnN" uname="ArabicIndicDigitTwo" symbol="0662" ipavalue="" extendedbuckwalter="50" terminating="true" connecting="false" assimilate="false" />
@@ -3444,7 +3446,6 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 		<arabicsymbol symbolname="riyaAlN" uname="RialSign" symbol="FDFC" ipavalue="" extendedbuckwalter="0" terminating="true" connecting="false" assimilate="false" />
 		<arabicsymbol symbolname="bisomi {ll~ahi {lr~aHoma`ni {lr~aHiymi" uname="ArabicLigatureBismillahArRahmanArRaheem" symbol="FDFD" ipavalue="" extendedbuckwalter="0" terminating="true" connecting="false" assimilate="false" />
 
-		<arabicsymbol symbolname="hamozapN" uname="ArabicHamzaBelow" symbol="0655" ipavalue="ʔ" extendedbuckwalter="88" terminating="false" connecting="false" assimilate="false" />
 		<arabicsymbol symbolname="PaY" uname="ArabicLetterPeh" symbol="067E" shaping="FB56,FB57,FB58,FB59" ipavalue="" extendedbuckwalter="80" terminating="false" connecting="false" assimilate="false" />
 		<arabicsymbol symbolname="JaY" uname="ArabicLetterTcheh" symbol="0686" shaping="FB7A,FB7B,FB7C,FB7D" ipavalue="" extendedbuckwalter="74" terminating="false" connecting="false" assimilate="false" />
 		<arabicsymbol symbolname="VaY" uname="ArabicLetterVeh" symbol="06A4" shaping="FB6A,FB6B,FB6C,FB6D" ipavalue="" extendedbuckwalter="86" terminating="false" connecting="false" assimilate="false" />

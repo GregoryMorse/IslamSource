@@ -33,28 +33,32 @@
 {"", New Integer() {&H105, &H106, &H107, &H109, &H10F}}
 } '109 + {105=b/n, 106=t/y, 107=v}, 10F + {105=f, 106=q}
     Shared Hamd2 As New Dictionary(Of String, Integer()) From {
-    {"<", New Integer() {&H3, &H74}},
-    {"i", New Integer() {&H7}},
+    {"AV", New Integer() {&H3, &H74}},
+    {"V", New Integer() {&H7, &HDB}},
     {"laA", New Integer() {&HD, &H1E, &H6C, &H6F, &H71}},
     {"l~uA", New Integer() {&H19}},
-    {"li>a", New Integer() {&H1A}},
+    {"liA%a", New Integer() {&H1A}},
     {"luA", New Integer() {&H1D}},
-    {"}i", New Integer() {&H22, &H23, &H79}},
-    {"'", New Integer() {&H24, &HDB}},
+    {"YV", New Integer() {&H22, &H23, &H79}},
+    {"%", New Integer() {&H24}},
     {"Yo", New Integer() {&H25}},
-    {"}a", New Integer() {&H27, &H81, &H221E}},
+    {"Y%a", New Integer() {&H27, &H81, &H221E}},
     {"|", New Integer() {&H4E}},
     {"liA", New Integer() {&H50, &H7E}},
-    {"&a", New Integer() {&H51}},
+    {"w%a", New Integer() {&H51}},
     {"w", New Integer() {&H53, &H55}},
+    {"w%", New Integer() {%H54}},
     {"LFA", New Integer() {&H5A, &H5B, &H5C, &H5D}},
     {"LF[A", New Integer() {&H60, &H61}},
     {"L~F[A", New Integer() {&H62}},
     {"L~FA", New Integer() {&H65, &H67, &H68}},
     {"L~aA", New Integer() {&H6B}},
     {"w^", New Integer() {&H70}},
-    {">a", New Integer() {&H75, &H77, &HDC, &HDD, &HDE}},
-    {"<i", New Integer() {&H76, &H7F}},
+    {"Aa", New Integer() {&H75, &H77}},
+    {"A%", New Integer() {&HDC, &HDD}},
+    {"A%a", New Integer() {&HDE}},
+    {"Ai", New Integer() {&H76}},
+    {"AVi", New Integer() {&H7F}},
     {"_", New Integer() {&H7B}},
     {"la", New Integer() {&H7D}},
     {"l", New Integer() {&H82}},
@@ -164,7 +168,7 @@
     {"v", New Integer() {&H239F}}
     }
     Shared Arr3 As New Dictionary(Of String, Integer()) From {
-            {"l", New Integer() {&H21, &H23, &H51}},
+            {"l", New Integer() {&H21, &H23, &H51, &H5E}},
             {"d", New Integer() {&H24}},
             {"*", New Integer() {&H25}},
             {"h", New Integer() {&H26, &H53, &H2026, &H2030}},
@@ -172,10 +176,11 @@
             {"t", New Integer() {&H29, &H56, &H6E}},
             {"y", New Integer() {&H2C, &H71}},
             {"Y", New Integer() {&H2E}},
-            {"m", New Integer() {&H2F}},
+            {"m", New Integer() {&H2F, &H201E}},
             {"`", New Integer() {&H31, &H38, &H39}},
             {"n", New Integer() {&H47}},
-            {"", New Integer() {&H52, &H5E, &H5F, &H201E, &H2020, &HF08E}},
+            {"Y", New Integer() {&H52, &H5F, &H2020}},
+            {"s", New Integer() {&HF08E}},
             {"llh", New Integer() {&H54}},
             {"b", New Integer() {&H55}},
             {"v", New Integer() {&H57}},
@@ -258,20 +263,6 @@
     Shared Arr7 As New Dictionary(Of String, Integer()) From {
     {"a", New Integer() {&H31, &H76, &H79, &H7D, &HF08D}}
     } '&H31 is an imalee fatha
-    Class CompareChar
-        Implements IComparer(Of ArrayList)
-        Public Function Compare(x As ArrayList, y As ArrayList) As Integer Implements IComparer(Of ArrayList).Compare
-            'If x(3) = y(3) Then Return 0
-            'Return If(x(3) > y(3), 1, -1)
-            If CSng(x(1)) = CSng(y(1)) Then
-                If CSng(x(0)) = CSng(y(0)) Then
-                    Return 1
-                End If
-                Return If(CSng(x(0)) > CSng(y(0)), -1, 1)
-            End If
-            Return If(CSng(x(1)) > CSng(y(1)), -1, 1)
-        End Function
-    End Class
     Class TextExtractionStrategy
         Implements iTextSharp.text.pdf.parser.ITextExtractionStrategy
         Class Chunk
@@ -287,6 +278,7 @@
             End Sub
         End Class
         Public Chunks As New Generic.List(Of Chunk)
+        Public Hamd2Strs As New List(Of Byte())
         Dim Chapter As Integer = 0
         Public Sub BeginTextBlock() Implements iTextSharp.text.pdf.parser.IRenderListener.BeginTextBlock
 
@@ -305,6 +297,12 @@
                 Dim Segment As iTextSharp.text.pdf.parser.LineSegment = renderInfo.GetCharacterRenderInfos(Count).GetBaseline()
                 Chunks.Add(New Chunk(renderInfo.GetCharacterRenderInfos(Count).GetText(), renderInfo.GetFont().PostscriptFontName, Segment.GetStartPoint(), Segment.GetEndPoint()))
             Next
+            If renderInfo.GetFont().PostscriptFontName = "BAMDAC+Hamd2" Then
+                Dim Segment As iTextSharp.text.pdf.parser.LineSegment = renderInfo.GetBaseline()
+                Array.Reverse(Hamd2Strs(0))
+                Chunks.Add(New Chunk((New System.Text.UnicodeEncoding).GetString(Hamd2Strs(0)), renderInfo.GetFont().PostscriptFontName, Segment.GetStartPoint(), Segment.GetEndPoint()))
+                Hamd2Strs.RemoveAt(0)
+            End If
             'Hamd2 must be read out of content stream directly as the encoding is non-standard
         End Sub
 
@@ -464,55 +462,49 @@
     Class ContOpText
         Implements iTextSharp.text.pdf.parser.IContentOperator
         Dim WaitForString As Boolean = False
-        Dim Res As iTextSharp.text.pdf.PdfDictionary
+        Public Hamd2Strs As New List(Of Byte())
+        Public Res As iTextSharp.text.pdf.PdfDictionary
+        Public Doc As iTextSharp.text.pdf.PdfReader
         Public Sub Invoke(processor As iTextSharp.text.pdf.parser.PdfContentStreamProcessor, oper As iTextSharp.text.pdf.PdfLiteral, operands As List(Of iTextSharp.text.pdf.PdfObject)) Implements iTextSharp.text.pdf.parser.IContentOperator.Invoke
             If operands.Count > 0 AndAlso operands(0).IsName Then
-                If CType(CType(Res.Get(New iTextSharp.text.pdf.PdfName("Font")), iTextSharp.text.pdf.PdfDictionary).Get(CType(operands(0), iTextSharp.text.pdf.PdfName)), iTextSharp.text.pdf.PdfDictionary).Get(New iTextSharp.text.pdf.PdfName("BaseFont")).ToString() = "BAMDAC+Hamd2" Then
+                Dim Ref As iTextSharp.text.pdf.PdfObject = CType(Res.Get(New iTextSharp.text.pdf.PdfName("Font")), iTextSharp.text.pdf.PdfDictionary).Get(CType(operands(0), iTextSharp.text.pdf.PdfName))
+                Dim Obj As iTextSharp.text.pdf.PdfObject = Doc.GetPdfObject(CType(Ref, iTextSharp.text.pdf.PRIndirectReference).Number)
+                If CType(Obj, iTextSharp.text.pdf.PdfDictionary).Get(New iTextSharp.text.pdf.PdfName("BaseFont")).ToString() = "/BAMDAC+Hamd2" Then
                     WaitForString = True
                 Else
                     WaitForString = False
                 End If
+                Return
             End If
             For Count As Integer = 0 To operands.Count - 1
-                '"/Resources/Font/<name>/BaseFont"
                 If operands(Count).IsString() Then
-                    Debug.Print(CType(operands(Count), iTextSharp.text.pdf.PdfString).ToUnicodeString())
+                    If WaitForString Then
+                        Hamd2Strs.Add(CType(operands(Count), iTextSharp.text.pdf.PdfString).GetOriginalBytes())
+                    End If
                 End If
             Next
         End Sub
     End Class
-    Class RenderListen
-        Implements iTextSharp.text.pdf.parser.IRenderListener
-
-        Public Sub BeginTextBlock() Implements iTextSharp.text.pdf.parser.IRenderListener.BeginTextBlock
-
-        End Sub
-
-        Public Sub EndTextBlock() Implements iTextSharp.text.pdf.parser.IRenderListener.EndTextBlock
-
-        End Sub
-
-        Public Sub RenderImage(renderInfo As iTextSharp.text.pdf.parser.ImageRenderInfo) Implements iTextSharp.text.pdf.parser.IRenderListener.RenderImage
-
-        End Sub
-
-        Public Sub RenderText(renderInfo As iTextSharp.text.pdf.parser.TextRenderInfo) Implements iTextSharp.text.pdf.parser.IRenderListener.RenderText
-
-        End Sub
-    End Class
-    Shared Function ParseQuran() As String
+    Shared Sub ParseQuran()
         Dim Reader As New iTextSharp.text.pdf.PdfReader("..\..\..\IslamMetadata\warsh.pdf")
         Dim Str As String = "<?xml version=""1.0"" encoding=""utf-8""?>" + vbCrLf + "<quran>" + vbCrLf
         Dim Strat As New TextExtractionStrategy
         For Cnt As Integer = 0 To Reader.NumberOfPages - 1
-            Dim parse As New iTextSharp.text.pdf.parser.PdfContentStreamProcessor(New RenderListen)
-            parse.RegisterContentOperator("Tf", New ContOpText)
-            parse.RegisterContentOperator("Tj", New ContOpText)
-            parse.ProcessContent(Reader.GetPageContent(Cnt + 1), Reader.GetPageResources(Cnt + 1))
             Strat.Chunks.Clear()
+            Dim parse As New iTextSharp.text.pdf.parser.PdfContentStreamProcessor(Strat)
+            Dim OpCont As New ContOpText
+            OpCont.Doc = Reader
+            OpCont.Res = Reader.GetPageResources(Cnt + 1)
+            parse.RegisterContentOperator("Tf", OpCont)
+            parse.RegisterContentOperator("Tj", OpCont)
+            parse.RegisterContentOperator("TJ", OpCont)
+            parse.ProcessContent(Reader.GetPageContent(Cnt + 1), Reader.GetPageResources(Cnt + 1))
+            Str += Strat.GetResultantText()
+            Strat.Chunks.Clear()
+            Strat.Hamd2Strs = OpCont.Hamd2Strs
             Str += iTextSharp.text.pdf.parser.PdfTextExtractor.GetTextFromPage(Reader, Cnt + 1, Strat)
         Next
         Str += "  </sura>" + vbCrLf + "</quran>" + vbCrLf
         IO.File.WriteAllText("warsh.txt", Str)
-    End Function
+    End Sub
 End Class
