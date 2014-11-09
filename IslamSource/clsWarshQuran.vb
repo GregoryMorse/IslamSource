@@ -76,7 +76,8 @@
     {"I", New Integer() {&H2217}},
     {"^", New Integer() {&H3A, &H3B}},
     {"]", New Integer() {&H3E}},
-    {"", New Integer() {&H3A7, &H2206}},
+    {"X", New Integer() {&H3A7}},
+    {"%", New Integer() {&H2206}},
     {"!", New Integer() {&H3A6}},
     {"`", New Integer() {&H397, &H3C5}},
     {"#", New Integer() {&H39A}},
@@ -88,7 +89,7 @@
     {"(", New Integer() {&H2248}},
     {")", New Integer() {&H2026}},
     {",", New Integer() {&H2287}},
-    {"X", New Integer() {&H222B}}
+    {"'", New Integer() {&H222B}}
     }
     Shared Arr1 As New Dictionary(Of String, Integer()) From {
 {" ", New Integer() {&H20}},
@@ -317,8 +318,15 @@
             Dim QStr As String = String.Empty
             Chunks.Sort(Function(First As Chunk, Second As Chunk)
                             If First.Start.Item(iTextSharp.text.pdf.parser.Vector.I2) = Second.Start.Item(iTextSharp.text.pdf.parser.Vector.I2) Or Math.Abs(First.Start.Item(iTextSharp.text.pdf.parser.Vector.I2) - Second.Start.Item(iTextSharp.text.pdf.parser.Vector.I2)) < 0.003 Then
-                                If First.Start.Item(iTextSharp.text.pdf.parser.Vector.I1) = Second.Start.Item(iTextSharp.text.pdf.parser.Vector.I1) Or Math.Abs(First.Start.Item(iTextSharp.text.pdf.parser.Vector.I1) - Second.Start.Item(iTextSharp.text.pdf.parser.Vector.I1)) < 0.003 Then
-                                    Return If(Second.FontName = "BAMCGA+HQPB4" Or Second.FontName = "BAMCHB+HQPB5" Or Second.FontName = "BAMDFB+HQPB7", -1, 1)
+                                If (First.FontName = "BAMCGA+HQPB4" Or First.FontName = "BAMCHB+HQPB5" Or First.FontName = "BAMDFB+HQPB7" Or First.FontName = "BAPFCA+MSH-Quraan1") AndAlso (Second.FontName = "BAMCGA+HQPB4" Or Second.FontName = "BAMCHB+HQPB5" Or Second.FontName = "BAMDFB+HQPB7" Or Second.FontName = "BAPFCA+MSH-Quraan1") Then
+                                    If First.Start.Item(iTextSharp.text.pdf.parser.Vector.I1) = Second.Start.Item(iTextSharp.text.pdf.parser.Vector.I1) Then Return First.Str.CompareTo(Second.Str)
+                                    Return If(First.Start.Item(iTextSharp.text.pdf.parser.Vector.I1) > Second.Start.Item(iTextSharp.text.pdf.parser.Vector.I1), -1, 1)
+                                End If
+                                If (First.FontName = "BAMCGA+HQPB4" Or First.FontName = "BAMCHB+HQPB5" Or First.FontName = "BAMDFB+HQPB7" Or First.FontName = "BAPFCA+MSH-Quraan1") And First.Start.Item(iTextSharp.text.pdf.parser.Vector.I1) - 0.003 <= Second.Start.Item(iTextSharp.text.pdf.parser.Vector.I1) Then
+                                    Return 1
+                                End If
+                                If (Second.FontName = "BAMCGA+HQPB4" Or Second.FontName = "BAMCHB+HQPB5" Or Second.FontName = "BAMDFB+HQPB7" Or Second.FontName = "BAPFCA+MSH-Quraan1") And First.Start.Item(iTextSharp.text.pdf.parser.Vector.I1) >= Second.Start.Item(iTextSharp.text.pdf.parser.Vector.I1) - 0.003 Then
+                                    Return -1
                                 End If
                                 Return If(First.Start.Item(iTextSharp.text.pdf.parser.Vector.I1) > Second.Start.Item(iTextSharp.text.pdf.parser.Vector.I1), -1, 1)
                             End If
@@ -382,7 +390,8 @@
                     For Each KeyValue As Collections.Generic.KeyValuePair(Of String, Integer()) In CurDict
                         Dim Match As Integer = Array.IndexOf(KeyValue.Value, System.Text.Encoding.Unicode.GetBytes(Chunks(Count).Str)(0) + 256 * System.Text.Encoding.Unicode.GetBytes(Chunks(Count).Str)(1))
                         If Match <> -1 Then
-                            'redundant value corrections
+                            'redundant value corrections using look behind
+                            If KeyValue.Value(Match) = &H2122 And KeyValue.Key = "YX" And Str.Length > 1 AndAlso Str.Chars(Str.Length - 1) = "X" Then Continue For
                             If KeyValue.Value(Match) = &H23AF And KeyValue.Key = "n" And Str.Length > 1 AndAlso Str.Chars(Str.Length - 1) = "i" AndAlso Str.Chars(Str.Length - 2) = "h" Then Continue For
                             If KeyValue.Value(Match) = &HAE And KeyValue.Key = "9" And Str.Length = 0 Then Continue For
                             If Str.Length <> 0 AndAlso Str.Chars(Str.Length - 1) = "A" AndAlso KeyValue.Key = "{" Then
@@ -415,7 +424,11 @@
                                     If Str.Chars(Str.Length - 2) <> "a" Then Str = Str.Insert(Str.Length - 1, KeyValue.Key)
                                 ElseIf Str.Length <> 0 AndAlso Str.Chars(Str.Length - 1) = "a" Then
                                 ElseIf Str.Length = 0 OrElse Str(Str.Length - 1) = " " Then
-
+                                    Dim Ch As Chunk = Chunks(Count + 1)
+                                    Chunks(Count + 1) = Chunks(Count)
+                                    Chunks(Count) = Ch
+                                    Count -= 1
+                                    Exit For
                                 Else
                                     Str += KeyValue.Key
                                 End If
@@ -431,6 +444,16 @@
                                 End If
                             ElseIf KeyValue.Key = "F" Then
                                 If Str.Length <> 0 AndAlso Str.Chars(Str.Length - 1) = "F" Then
+                                Else
+                                    Str += KeyValue.Key
+                                End If
+                            ElseIf KeyValue.Key = "X" Then
+                                If Str.Length <> 0 AndAlso Str.Chars(Str.Length - 1) = "X" Then
+                                Else
+                                    Str += KeyValue.Key
+                                End If
+                            ElseIf KeyValue.Key = "V" Then
+                                If Str.Length <> 0 AndAlso Str.Chars(Str.Length - 1) = "V" Then
                                 Else
                                     Str += KeyValue.Key
                                 End If
