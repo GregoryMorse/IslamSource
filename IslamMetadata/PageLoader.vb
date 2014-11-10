@@ -4051,8 +4051,9 @@ Public Class IslamData
             End Set
         End Property
     End Structure
-    <System.Xml.Serialization.XmlElement("versenumberschemes")> _
-    Public VerseNumberSchemes As VerseNumberScheme
+    <System.Xml.Serialization.XmlArray("versenumberschemes")> _
+    <System.Xml.Serialization.XmlArrayItem("versenumberscheme")> _
+    Public VerseNumberSchemes As VerseNumberScheme()
 
     <System.Xml.Serialization.XmlElement("translations")> _
     Public Translations As TranslationsInfo
@@ -5447,22 +5448,58 @@ Public Class TanzilReader
         Doc.DocumentElement.PreviousSibling.Value = Doc.DocumentElement.PreviousSibling.Value.Replace("Uthmani", QuranScriptNames(ScriptType))
         Verses = TanzilReader.GetQuranText(Doc, -1, -1, -1, -1)
         For Count As Integer = 0 To Verses.Count - 1
+            Dim VerseAdjust As Integer = 0
             Dim ChapterNode As System.Xml.XmlNode = GetTextChapter(Doc, Count + 1)
             If UseBuckwalter Then
                 ChapterNode.Attributes.GetNamedItem("name").Value = Arabic.TransliterateToScheme(ChapterNode.Attributes.GetNamedItem("name").Value, Arabic.TranslitScheme.Literal, String.Empty)
             End If
-            For SubCount As Integer = 0 To Verses(Count).Length - 1
-                If SubCount = 0 AndAlso Not GetTextVerse(ChapterNode, SubCount + 1).Attributes.GetNamedItem("bismillah") Is Nothing Then
-                    GetTextVerse(ChapterNode, SubCount + 1).Attributes.GetNamedItem("bismillah").Value = If(BaseText = TargetBaseText, Arabic.ChangeScript(GetTextVerse(ChapterNode, SubCount + 1).Attributes.GetNamedItem("bismillah").Value, ScriptType), Arabic.ChangeBaseScript(GetTextVerse(ChapterNode, SubCount + 1).Attributes.GetNamedItem("bismillah").Value, TargetBaseText))
+            Dim SubCount As Integer = 0
+            While SubCount <= Verses(Count).Length - 1 - VerseAdjust
+                Dim CurVerse As Xml.XmlNode = GetTextVerse(ChapterNode, SubCount + 1)
+                If SubCount = 0 AndAlso Not CurVerse.Attributes.GetNamedItem("bismillah") Is Nothing Then
+                    CurVerse.Attributes.GetNamedItem("bismillah").Value = If(BaseText = TargetBaseText, Arabic.ChangeScript(GetTextVerse(ChapterNode, SubCount + 1).Attributes.GetNamedItem("bismillah").Value, ScriptType), Arabic.ChangeBaseScript(GetTextVerse(ChapterNode, SubCount + 1).Attributes.GetNamedItem("bismillah").Value, TargetBaseText))
                     If UseBuckwalter Then
-                        GetTextVerse(ChapterNode, SubCount + 1).Attributes.GetNamedItem("bismillah").Value = Arabic.TransliterateToScheme(GetTextVerse(ChapterNode, SubCount + 1).Attributes.GetNamedItem("bismillah").Value, Arabic.TranslitScheme.Literal, String.Empty)
+                        CurVerse.Attributes.GetNamedItem("bismillah").Value = Arabic.TransliterateToScheme(CurVerse.Attributes.GetNamedItem("bismillah").Value, Arabic.TranslitScheme.Literal, String.Empty)
                     End If
                 End If
-                GetTextVerse(ChapterNode, SubCount + 1).Attributes.GetNamedItem("text").Value = If(BaseText = TargetBaseText, Arabic.ChangeScript(Verses(Count)(SubCount), ScriptType), Arabic.ChangeBaseScript(Verses(Count)(SubCount), TargetBaseText))
+                CurVerse.Attributes.GetNamedItem("text").Value = If(BaseText = TargetBaseText, Arabic.ChangeScript(CurVerse.Attributes.GetNamedItem("text").Value, ScriptType), Arabic.ChangeBaseScript(CurVerse.Attributes.GetNamedItem("text").Value, TargetBaseText))
                 If UseBuckwalter Then
-                    GetTextVerse(ChapterNode, SubCount + 1).Attributes.GetNamedItem("text").Value = Arabic.TransliterateToScheme(GetTextVerse(ChapterNode, SubCount + 1).Attributes.GetNamedItem("text").Value, Arabic.TranslitScheme.Literal, String.Empty)
+                    CurVerse.Attributes.GetNamedItem("text").Value = Arabic.TransliterateToScheme(CurVerse.Attributes.GetNamedItem("text").Value, Arabic.TranslitScheme.Literal, String.Empty)
                 End If
-            Next
+                If TargetBaseText = QuranTexts.Warsh Then
+                    Dim Index As Integer = Array.FindIndex(CachedData.IslamData.VerseNumberSchemes(0).CombinedVerses, Function(Ints As Integer()) Count + 1 = Ints(0) And SubCount + 1 + VerseAdjust - 1 = Ints(1))
+                    If Index <> -1 Then
+                        GetTextVerse(ChapterNode, SubCount).Attributes.GetNamedItem("text").Value = GetTextVerse(ChapterNode, SubCount).Attributes.GetNamedItem("text").Value + " " + CurVerse.Attributes.GetNamedItem("text").Value
+                        CurVerse.ParentNode.RemoveChild(CurVerse)
+                        VerseAdjust += 1
+                        SubCount -= 1
+                        For Index = SubCount + 2 To Verses(Count).Length - 1 - VerseAdjust + 1
+                            GetTextVerse(ChapterNode, Index + 1).Attributes.GetNamedItem("index").Value = CStr(CInt(GetTextVerse(ChapterNode, Index + 1).Attributes.GetNamedItem("index").Value) - 1)
+                        Next
+                    End If
+                    Index = Array.FindIndex(CachedData.IslamData.VerseNumberSchemes(0).ExtraVerses, Function(Ints As Integer()) Count + 1 = Ints(0) And SubCount + 1 + VerseAdjust = Ints(1))
+                    If Index <> -1 Then
+                        Dim NewNode As Xml.XmlNode = CurVerse.Clone()
+                        If Not NewNode.Attributes.GetNamedItem("bismillah") Is Nothing Then
+                            NewNode.Attributes.RemoveNamedItem("bismillah")
+                        End If
+                        Index = CachedData.IslamData.VerseNumberSchemes(0).ExtraVerses(Index)(2)
+                        While Index <> 1
+                            NewNode.Attributes.GetNamedItem("text").Value = NewNode.Attributes.GetNamedItem("text").Value.Substring(NewNode.Attributes.GetNamedItem("text").Value.IndexOf(" "c) + 1)
+                            Index -= 1
+                        End While
+                        CurVerse.Attributes.GetNamedItem("text").Value = CurVerse.Attributes.GetNamedItem("text").Value.Substring(0, CurVerse.Attributes.GetNamedItem("text").Value.Length - NewNode.Attributes.GetNamedItem("text").Value.Length - 1)
+                        CurVerse.ParentNode.InsertAfter(NewNode, CurVerse)
+                        VerseAdjust -= 1
+                        SubCount += 1
+                        For Index = Verses(Count).Length - 1 - VerseAdjust - 1 To SubCount Step -1
+                            GetTextVerse(ChapterNode, Index + 1).Attributes.GetNamedItem("index").Value = CStr(CInt(GetTextVerse(ChapterNode, Index + 1).Attributes.GetNamedItem("index").Value) + 1)
+                        Next
+                        NewNode.Attributes.GetNamedItem("index").Value = CStr(CInt(NewNode.Attributes.GetNamedItem("index").Value) + 1)
+                    End If
+                End If
+                SubCount += 1
+            End While
         Next
         Doc.Save(Path)
     End Sub
