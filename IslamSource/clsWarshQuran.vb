@@ -164,8 +164,8 @@
     {"7", New Integer() {&H2220}},
     {"8", New Integer() {&H2207}},
     {"H", New Integer() {&H220F, &H21D4}},
-    {"x", New Integer() {&H221A, &H21D0}},
-    {"j", New Integer() {&H2228}},
+    {"x", New Integer() {&H21D0}},
+    {"j", New Integer() {&H221A, &H2228}},
     {"S", New Integer() {&H21D1, &H21D2}},
     {"D", New Integer() {&H21D3}},
     {"(", New Integer() {&H2329}},
@@ -325,10 +325,10 @@
                                     If First.Start.Item(iTextSharp.text.pdf.parser.Vector.I1) = Second.Start.Item(iTextSharp.text.pdf.parser.Vector.I1) Then Return First.Str.CompareTo(Second.Str)
                                     Return If(First.Start.Item(iTextSharp.text.pdf.parser.Vector.I1) > Second.Start.Item(iTextSharp.text.pdf.parser.Vector.I1), -1, 1)
                                 End If
-                                If (First.FontName = "BAMCGA+HQPB4" Or First.FontName = "BAMCHB+HQPB5" Or First.FontName = "BAMDFB+HQPB7" Or First.FontName = "BAPFCA+MSH-Quraan1") And First.Start.Item(iTextSharp.text.pdf.parser.Vector.I1) - 0.003 <= Second.Start.Item(iTextSharp.text.pdf.parser.Vector.I1) Then
+                                If (First.FontName = "BAMCGA+HQPB4" Or First.FontName = "BAMCHB+HQPB5" Or First.FontName = "BAMDFB+HQPB7" Or First.FontName = "BAPFCA+MSH-Quraan1") And First.Start.Item(iTextSharp.text.pdf.parser.Vector.I1) - 0.007 <= Second.Start.Item(iTextSharp.text.pdf.parser.Vector.I1) Then
                                     Return 1
                                 End If
-                                If (Second.FontName = "BAMCGA+HQPB4" Or Second.FontName = "BAMCHB+HQPB5" Or Second.FontName = "BAMDFB+HQPB7" Or Second.FontName = "BAPFCA+MSH-Quraan1") And First.Start.Item(iTextSharp.text.pdf.parser.Vector.I1) >= Second.Start.Item(iTextSharp.text.pdf.parser.Vector.I1) - 0.003 Then
+                                If (Second.FontName = "BAMCGA+HQPB4" Or Second.FontName = "BAMCHB+HQPB5" Or Second.FontName = "BAMDFB+HQPB7" Or Second.FontName = "BAPFCA+MSH-Quraan1") And First.Start.Item(iTextSharp.text.pdf.parser.Vector.I1) >= Second.Start.Item(iTextSharp.text.pdf.parser.Vector.I1) - 0.007 Then
                                     Return -1
                                 End If
                                 Return If(First.Start.Item(iTextSharp.text.pdf.parser.Vector.I1) > Second.Start.Item(iTextSharp.text.pdf.parser.Vector.I1), -1, 1)
@@ -461,7 +461,7 @@
                                 Else
                                     Str += KeyValue.Key
                                 End If
-                            ElseIf KeyValue.Key = "i" Or KeyValue.Key = "u" Or KeyValue.Key = "o" Or KeyValue.Key = "^" Or KeyValue.Key = "N" Then
+                            ElseIf KeyValue.Key = "i" Or KeyValue.Key = "u" Or KeyValue.Key = "o" Or KeyValue.Key = "^" Or KeyValue.Key = "N" Or KeyValue.Key = "K" Then
                                 If (Str.Length = 0 OrElse Str(Str.Length - 1) = " ") Or (Str.Length <> 0 AndAlso (Str.Chars(Str.Length - 1) = "^"c Or Str.Chars(Str.Length - 1) = "a"c Or Str.Chars(Str.Length - 1) = "i"c Or Str.Chars(Str.Length - 1) = "u"c Or Str.Chars(Str.Length - 1) = "o"c)) Then
                                     Dim Ch As Chunk = Chunks(Count + 1)
                                     Chunks(Count + 1) = Chunks(Count)
@@ -472,7 +472,7 @@
                                     Str += KeyValue.Key
                                 End If
                             ElseIf KeyValue.Key = "~" Then
-                                If Str.Length <> 0 AndAlso (Str.Chars(Str.Length - 1) = "A"c Or Str.Chars(Str.Length - 1) = "K"c) Then
+                                If Str.Length <> 0 AndAlso (Str.Chars(Str.Length - 1) = "A"c Or Str.Chars(Str.Length - 1) = "K"c Or Str.Chars(Str.Length - 1) = "W"c) Then
                                     Str = Str.Insert(Str.Length - 1, KeyValue.Key)
                                 ElseIf Str.Length <> 0 AndAlso (Str.Chars(Str.Length - 1) = "a"c Or Str.Chars(Str.Length - 1) = "i"c Or Str.Chars(Str.Length - 1) = "u"c) Then
                                     If Str.Chars(Str.Length - 2) <> "~"c Then
