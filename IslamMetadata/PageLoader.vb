@@ -1408,7 +1408,7 @@ Public Class Arabic
     End Enum
     Public Shared Function TransliterateToScheme(ByVal ArabicString As String, SchemeType As TranslitScheme, Scheme As String) As String
         If SchemeType = TranslitScheme.RuleBased Then
-            Return TransliterateWithRules(ArabicString, Scheme)
+            Return TransliterateWithRules(ArabicString, Scheme, Nothing)
         ElseIf SchemeType = TranslitScheme.Literal Then
             Return TransliterateToRoman(ArabicString, Scheme)
         Else
@@ -1852,21 +1852,39 @@ Public Class Arabic
     '        .Evaluator = String.Empty}
     '    }
     Public Shared WarshScript As RuleTranslation() = { _
-        New RuleTranslation With {.Rule = "InitialAlefMadda", .Match = "(^\s*|\s+)" + MakeUniRegEx(ArabicLetterHamza) + "(?=" + MakeUniRegEx(ArabicFatha) + MakeUniRegEx(ArabicLetterAlef) + ")", _
-            .Evaluator = "$1" + ArabicLetterAlefMaksura + ArabicHamzaBelow}, _
+        New RuleTranslation With {.Rule = "InitialAlefMadda", .Match = MakeUniRegEx(ArabicSukun) + "(^\s*|\s+)" + MakeUniRegEx(ArabicLetterHamza) + MakeUniRegEx(ArabicFatha) + "(?=" + MakeUniRegEx(ArabicLetterAlef) + ")", _
+            .Evaluator = ArabicFatha + "$1" + ArabicTatweel}, _
+        New RuleTranslation With {.Rule = "InitialAlefMadda", .Match = "(" + MakeUniRegEx(ArabicSukun) + ")?(^\s*|\s+)" + MakeUniRegEx(ArabicLetterHamza) + "(?=" + MakeUniRegEx(ArabicFatha) + MakeUniRegEx(ArabicLetterAlef) + ")", _
+            .Evaluator = "$2" + ArabicLetterAlefMaksura + ArabicHamzaBelow, .NegativeMatch = "$1"}, _
         New RuleTranslation With {.Rule = "InitialAlefMadda", .Match = "(" + MakeUniRegEx(ArabicFatha) + ")" + MakeUniRegEx(ArabicLetterSuperscriptAlef) + MakeUniRegEx(ArabicMaddahAbove) + MakeUniRegEx(ArabicLetterHamza), _
             .Evaluator = "$1" + ArabicLetterAlefWithMaddaAbove + ArabicLetterAlefMaksura + ArabicHamzaBelow}, _
-        New RuleTranslation With {.Rule = "DroppedHamza", .Match = MakeUniRegEx(ArabicSukun) + "(?:" + MakeUniRegEx(ArabicLetterAlefWithHamzaAbove) + "|" + MakeUniRegEx(ArabicLetterAlefWithHamzaBelow) + ")|" + MakeUniRegEx(ArabicLetterAlefWithHamzaAbove) + MakeUniRegEx(ArabicSukun), _
+        New RuleTranslation With {.Rule = "LongVowelAddition", .Match = MakeUniRegEx(ArabicSukun) + "(?=\s+" + MakeUniRegEx(ArabicLetterAlefWithHamzaAbove) + MakeUniRegEx(ArabicDamma) + ")", _
+            .Evaluator = ArabicDamma + ArabicLetterWaw + ArabicMaddahAbove}, _
+        New RuleTranslation With {.Rule = "DroppedHamza", .Match = MakeUniRegEx(ArabicSukun) + "(\s+)" + MakeUniRegEx(ArabicLetterAlefWithHamzaAbove) + "(?=" + MakeUniRegEx(ArabicFatha) + ")", _
+            .Evaluator = ArabicFatha + "$1" + ArabicLetterAlef}, _
+        New RuleTranslation With {.Rule = "DroppedHamza", .Match = "((?:" + MakeUniRegEx(ArabicFathatan) + "|" + MakeUniRegEx(ArabicKasratan) + ")\s+)(?:" + MakeUniRegEx(ArabicLetterAlefWithHamzaAbove) + "(?=" + MakeUniRegEx(ArabicFatha) + ")|" + MakeUniRegEx(ArabicLetterAlefWithHamzaBelow) + "(?=" + MakeUniRegEx(ArabicKasra) + "))", _
+            .Evaluator = "$1" + ArabicLetterAlef}, _
+        New RuleTranslation With {.Rule = "DroppedHamza", .Match = MakeUniRegEx(ArabicSukun) + "(\s+)" + MakeUniRegEx(ArabicLetterAlefWithHamzaBelow) + "(?=" + MakeUniRegEx(ArabicKasra) + ")", _
+            .Evaluator = ArabicKasra + "$1" + ArabicLetterAlef}, _
+        New RuleTranslation With {.Rule = "DroppedHamza", .Match = MakeUniRegEx(ArabicSukun) + MakeUniRegEx(ArabicLetterAlefWithHamzaAbove) + "(" + MakeUniRegEx(ArabicFatha) + ")", _
+            .Evaluator = "$1" + ArabicLetterAlef}, _
+        New RuleTranslation With {.Rule = "DroppedHamza", .Match = MakeUniRegEx(ArabicSukun) + "(?:" + MakeUniRegEx(ArabicLetterAlefWithHamzaAbove) + "|" + MakeUniRegEx(ArabicLetterAlefWithHamzaBelow) + ")", _
+            .Evaluator = ArabicLetterAlef}, _
+        New RuleTranslation With {.Rule = "DroppedHamza", .Match = MakeUniRegEx(ArabicFatha) + MakeUniRegEx(ArabicTatweel) + MakeUniRegEx(ArabicLetterSuperscriptAlef) + MakeUniRegEx(ArabicMaddahAbove) + MakeUniRegEx(ArabicLetterAlefWithHamzaAbove) + MakeUniRegEx(ArabicFatha), _
+            .Evaluator = ArabicLetterAlefWithMaddaAbove}, _
+        New RuleTranslation With {.Rule = "DroppedHamza", .Match = MakeUniRegEx(ArabicLetterAlefWithHamzaAbove) + MakeUniRegEx(ArabicSukun), _
             .Evaluator = ArabicLetterAlef}, _
         New RuleTranslation With {.Rule = "DroppedHamza", .Match = MakeUniRegEx(ArabicLetterWawWithHamzaAbove) + MakeUniRegEx(ArabicSukun), _
             .Evaluator = ArabicLetterWaw}, _
-        New RuleTranslation With {.Rule = "HamzaBelow", .Match = MakeUniRegEx(ArabicLetterYehWithHamzaAbove) + MakeUniRegEx(ArabicKasra), _
+        New RuleTranslation With {.Rule = "HamzaBelow", .Match = MakeUniRegEx(ArabicLetterHamza) + "|" + MakeUniRegEx(ArabicLetterYehWithHamzaAbove) + MakeUniRegEx(ArabicKasra), _
             .Evaluator = ArabicLetterAlefMaksura + ArabicHamzaBelow}, _
-        New RuleTranslation With {.Rule = "Imaala", .Match = MakeUniRegEx(ArabicFatha) + "(?=" + MakeUniRegEx(ArabicLetterAlefMaksura) + MakeUniRegEx(ArabicLetterSuperscriptAlef) + ")", _
-            .Evaluator = ArabicVowelSignDotBelow}, _
-        New RuleTranslation With {.Rule = "Tatweel", .Match = "(" + MakeUniRegEx(ArabicLetterAlefMaksura) + ")?(?=" + MakeUniRegEx(ArabicLetterSuperscriptAlef) + ")", _
-            .Evaluator = ArabicTatweel, .NegativeMatch = "$1"}
+        New RuleTranslation With {.Rule = "HelperMeems", .Match = "(?:" + MakeUniRegEx(ArabicSmallHighMeemIsolatedForm) + "|" + MakeUniRegEx(ArabicSmallLowMeem) + ")(?!\s+" + MakeUniRegEx(ArabicLetterBeh) + ")", _
+            .Evaluator = String.Empty}, _
+        New RuleTranslation With {.Rule = "Tatweel", .Match = "(" + MakeUniRegEx(ArabicLetterAlefMaksura) + ")?(" + MakeUniRegEx(ArabicLetterSuperscriptAlef) + ")", _
+            .Evaluator = ArabicTatweel + "$2", .NegativeMatch = "$1"}
         }
+    'New RuleTranslation With {.Rule = "Imaala", .Match = MakeUniRegEx(ArabicFatha) + "(?=" + MakeUniRegEx(ArabicLetterAlefMaksura) + MakeUniRegEx(ArabicLetterSuperscriptAlef) + ")", _
+    '   .Evaluator = ArabicVowelSignDotBelow}, _
     'New RuleTranslation With {.Rule = "AlefWithHamzaBelow", .Match = "(^\s*|\s+)" + MakeUniRegEx(ArabicLetterAlefWithHamzaBelow) + "(?=" + MakeUniRegEx(ArabicKasra) + ")", _
     '    .Evaluator = "$1" + ArabicLetterAlef}, _
     'New RuleTranslation With {.Rule = "AlefWithHamzaAbove", .Match = "(^\s*|\s+)" + MakeUniRegEx(ArabicLetterAlefWithHamzaAbove) + "(?=" + MakeUniRegEx(ArabicFatha) + "|" + MakeUniRegEx(ArabicDamma) + ")", _
@@ -2089,7 +2107,7 @@ Public Class Arabic
     Public Delegate Function RuleFunction(Str As String, Scheme As String) As String()
     Public Shared RuleFunctions As RuleFunction() = {
         Function(Str As String, Scheme As String) {UCase(Str)},
-        Function(Str As String, Scheme As String) {TransliterateWithRules(TransliterateFromBuckwalter(ArabicWordFromNumber(CInt(TransliterateToScheme(Str, TranslitScheme.Literal, String.Empty)), True, False, False)), Scheme)},
+        Function(Str As String, Scheme As String) {TransliterateWithRules(TransliterateFromBuckwalter(ArabicWordFromNumber(CInt(TransliterateToScheme(Str, TranslitScheme.Literal, String.Empty)), True, False, False)), Scheme, Nothing)},
         Function(Str As String, Scheme As String) {ArabicLetterSpelling(Str)},
         Function(Str As String, Scheme As String) {GetSchemeValueFromSymbol(CachedData.IslamData.ArabicLetters(FindLetterBySymbol(Str.Chars(0))), Scheme)},
         Function(Str As String, Scheme As String) {GetSchemeLongVowelFromString(Str, Scheme)},
@@ -2428,48 +2446,36 @@ Public Class Arabic
                    Return If(NegativeMatch <> String.Empty AndAlso Match.Result(NegativeMatch) <> String.Empty, Match.Value, Match.Result(Evaluator))
                End Function
     End Function
+    Public Shared Function ProcessTransform(ArabicString As String, Rules As RuleTranslation()) As String
+        For Count = 0 To Rules.Length - 1
+            ArabicString = System.Text.RegularExpressions.Regex.Replace(ArabicString, Rules(Count).Match, NegativeMatchEliminator(Rules(Count).NegativeMatch, Rules(Count).Evaluator))
+        Next
+        Return ArabicString
+    End Function
     Public Shared Function ChangeBaseScript(ArabicString As String, BaseText As TanzilReader.QuranTexts) As String
         If BaseText = TanzilReader.QuranTexts.Warsh Then
-            For Count = 0 To WarshScript.Length - 1
-                ArabicString = System.Text.RegularExpressions.Regex.Replace(ArabicString, WarshScript(Count).Match, NegativeMatchEliminator(WarshScript(Count).NegativeMatch, WarshScript(Count).Evaluator))
-            Next
+            ArabicString = ProcessTransform(ArabicString, WarshScript)
         End If
         Return ArabicString
     End Function
     Public Shared Function ChangeScript(ArabicString As String, ScriptType As TanzilReader.QuranScripts) As String
         If ScriptType = TanzilReader.QuranScripts.UthmaniMin Then
-            For Count = 0 To UthmaniMinimalScript.Length - 1
-                ArabicString = System.Text.RegularExpressions.Regex.Replace(ArabicString, UthmaniMinimalScript(Count).Match, NegativeMatchEliminator(UthmaniMinimalScript(Count).NegativeMatch, UthmaniMinimalScript(Count).Evaluator))
-            Next
+            ArabicString = ProcessTransform(ArabicString, UthmaniMinimalScript)
         ElseIf ScriptType = TanzilReader.QuranScripts.SimpleEnhanced Then
-            For Count = 0 To SimpleEnhancedScript.Length - 1
-                ArabicString = System.Text.RegularExpressions.Regex.Replace(ArabicString, SimpleEnhancedScript(Count).Match, NegativeMatchEliminator(SimpleEnhancedScript(Count).NegativeMatch, SimpleEnhancedScript(Count).Evaluator))
-            Next
+            ArabicString = ProcessTransform(ArabicString, SimpleEnhancedScript)
         ElseIf ScriptType = TanzilReader.QuranScripts.Simple Then
-            For Count = 0 To SimpleEnhancedScript.Length - 1
-                ArabicString = System.Text.RegularExpressions.Regex.Replace(ArabicString, SimpleEnhancedScript(Count).Match, NegativeMatchEliminator(SimpleEnhancedScript(Count).NegativeMatch, SimpleEnhancedScript(Count).Evaluator))
-            Next
-            For Count = 0 To SimpleScript.Length - 1
-                ArabicString = System.Text.RegularExpressions.Regex.Replace(ArabicString, SimpleScript(Count).Match, NegativeMatchEliminator(SimpleScript(Count).NegativeMatch, SimpleScript(Count).Evaluator))
-            Next
+            ArabicString = ProcessTransform(ArabicString, SimpleEnhancedScript)
+            ArabicString = ProcessTransform(ArabicString, SimpleScript)
         ElseIf ScriptType = TanzilReader.QuranScripts.SimpleClean Then
-            For Count = 0 To SimpleEnhancedScript.Length - 1
-                ArabicString = System.Text.RegularExpressions.Regex.Replace(ArabicString, SimpleEnhancedScript(Count).Match, NegativeMatchEliminator(SimpleEnhancedScript(Count).NegativeMatch, SimpleEnhancedScript(Count).Evaluator))
-            Next
-            For Count = 0 To SimpleCleanScript.Length - 1
-                ArabicString = System.Text.RegularExpressions.Regex.Replace(ArabicString, SimpleCleanScript(Count).Match, NegativeMatchEliminator(SimpleCleanScript(Count).NegativeMatch, SimpleCleanScript(Count).Evaluator))
-            Next
+            ArabicString = ProcessTransform(ArabicString, SimpleEnhancedScript)
+            ArabicString = ProcessTransform(ArabicString, SimpleCleanScript)
         ElseIf ScriptType = TanzilReader.QuranScripts.SimpleMin Then
-            For Count = 0 To SimpleEnhancedScript.Length - 1
-                ArabicString = System.Text.RegularExpressions.Regex.Replace(ArabicString, SimpleEnhancedScript(Count).Match, NegativeMatchEliminator(SimpleEnhancedScript(Count).NegativeMatch, SimpleEnhancedScript(Count).Evaluator))
-            Next
-            For Count = 0 To SimpleMinimalScript.Length - 1
-                ArabicString = System.Text.RegularExpressions.Regex.Replace(ArabicString, SimpleMinimalScript(Count).Match, NegativeMatchEliminator(SimpleMinimalScript(Count).NegativeMatch, SimpleMinimalScript(Count).Evaluator))
-            Next
+            ArabicString = ProcessTransform(ArabicString, SimpleEnhancedScript)
+            ArabicString = ProcessTransform(ArabicString, SimpleMinimalScript)
         End If
         Return ArabicString
     End Function
-    Public Shared Function ReplaceMetadata(ArabicString As String, MetadataRule As RuleMetadata, Scheme As String) As String
+    Public Shared Function ReplaceMetadata(ArabicString As String, MetadataRule As RuleMetadata, Scheme As String, OptionalStops As Boolean()) As String
         For Count As Integer = 0 To ColoringSpelledOutRules.Length - 1
             Dim Match As String = Array.Find(ColoringSpelledOutRules(Count).Match.Split("|"c), Function(Str As String) Array.IndexOf(Array.ConvertAll(MetadataRule.Type.Split("|"c), Function(S As String) System.Text.RegularExpressions.Regex.Replace(S, "\(.*\)", String.Empty)), Str) <> -1)
             If Match <> Nothing Then
@@ -2482,7 +2488,7 @@ Public Class Arabic
                         Dim MetaArgs As String() = System.Text.RegularExpressions.Regex.Match(MetadataRule.Type, Match + "\((.*)\)").Groups(1).Value.Split(","c)
                         Str = String.Empty
                         For Index As Integer = 0 To Args.Length - 1
-                            Str += ReplaceMetadata(Args(Index), New RuleMetadata(0, Args(Index).Length, MetaArgs(Index).Replace(" "c, "|"c)), Scheme)
+                            Str += ReplaceMetadata(Args(Index), New RuleMetadata(0, Args(Index).Length, MetaArgs(Index).Replace(" "c, "|"c)), Scheme, OptionalStops)
                         Next
                     End If
                 End If
@@ -2503,7 +2509,22 @@ Public Class Arabic
             Next
         Next
     End Sub
-    Public Shared Function TransliterateWithRules(ByVal ArabicString As String, Scheme As String) As String
+    Public Shared Function TransliterateContigWithRules(ByVal ArabicString As String, ByVal PreString As String, ByVal PostString As String, Scheme As String, OptionalStops As Boolean(), PreOptionalStops As Boolean(), PostOptionalStops As Boolean()) As String
+        Dim Index As Integer = PreString.LastIndexOf(" "c)
+        'take last word of pre string and first word of post string
+        If Index <> -1 Then PreString = PreString.Substring(Index) 'keep the space
+        Index = PostString.IndexOf(" "c)
+        If Index <> -1 Then PostString = PostString.Substring(0, Index + 1) 'keep the space
+        ArabicString = TransliterateWithRules(PreString + ArabicString + PostString, Scheme, Nothing)
+        If PreString <> String.Empty AndAlso ArabicString.IndexOf(" "c) <> -1 Then
+            ArabicString = ArabicString.Substring(ArabicString.IndexOf(" "c) + 1)
+        End If
+        If PostString <> String.Empty AndAlso ArabicString.LastIndexOf(" "c) <> -1 Then
+            ArabicString = ArabicString.Substring(0, ArabicString.LastIndexOf(" "c))
+        End If
+        Return ArabicString
+    End Function
+    Public Shared Function TransliterateWithRules(ByVal ArabicString As String, Scheme As String, OptionalStops As Boolean()) As String
         Dim Count As Integer
         ArabicString.Replace(Arabic.RightToLeftMark, String.Empty)
         Dim MetadataList As New Generic.List(Of RuleMetadata)
@@ -2523,7 +2544,7 @@ Public Class Arabic
         MetadataList.Sort(New RuleMetadataComparer)
         Dim Index As Integer
         For Index = 0 To MetadataList.Count - 1
-            ArabicString = ReplaceMetadata(ArabicString, MetadataList(Index), Scheme)
+            ArabicString = ReplaceMetadata(ArabicString, MetadataList(Index), Scheme, OptionalStops)
         Next
         'redundant romanization rules should have -'s such as seen/teh/kaf-heh
         For Count = 0 To RomanizationRules.Length - 1

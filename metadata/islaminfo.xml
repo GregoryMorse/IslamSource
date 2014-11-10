@@ -3040,6 +3040,12 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 		</scriptfont>
 	</scriptfonts>
 	<arabiccombos>
+		<combo symbolname="_F" shaping="FE71,FE71,FE71,FE71"></combo>
+		<combo symbolname="l|" shaping="FEF5,FEF6,,"></combo>
+		<combo symbolname="l&gt;" shaping="FEF7,FEF8,,"></combo>
+		<combo symbolname="l&lt;" shaping="FEF9,FEFA,,"></combo>
+		<combo symbolname="lA" shaping="FEFB,FEFC,,"></combo>
+		
 		<combo symbolname="}A" shaping="FBEA,FBEB,,"></combo>
 		<combo symbolname="}w" shaping="FBEE,FBEF,,"></combo>
 		<combo symbolname="}j" shaping="FC00,,FC97,"></combo>
@@ -3307,6 +3313,9 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 	'ein + Dam~ap -> ou
 	'ein + kasorap -> oi
 	-->
+	<versenumberschemes>
+		<scheme name="Warsh" extraverses="106:4:5" combinedverses="107:6-7"></scheme>
+	</versenumberschemes>
 	<translitschemes>
 		<scheme name="RomanTranslit" alphabet="a|b|t|TH|h|HH|KH|d|DH|r|z|s|SH|S|D|T|Z|`|GH|f|q|k|l|m|n|h|w|y" hamza="|a~|a&apos;|w&apos;|i&apos;|y&apos;|&apos;||&apos;" tehmarbutaalefmaksuradaggeralefgunnah="t-|t-|t-|y-|a-|n" fathadammakasratanweenlongvowelsdipthongsshaddasukun="a|u|i|AN|UN|IN|aa|oo|ee|aw|ay|=|+|aa|a|oo|u|ee|i|an|un|in|aa|a|oo|u|ee|i" tajweed="s|m|s|w|y|n|m" punctuation=" |!|&quot;|,|-|.|:|[|]|{|}| |&quot;|&quot;|,|;|?| | |(|)" number="0|1|2|3|4|5|6|7|8|9" nonarabic="p|ZJ|v|g"></scheme>
 		<scheme name="HansWeir" alphabet="ā|b|t|ṯ|ǧ|ḥ|ḫ|d|ḏ|r|z|s|š|ṣ|ḍ|ṭ|ẓ|ʻ|ġ|f|q|k|l|m|n|h|w|y" hamza="ʼ|ā|ʼ|ʼ|ʼ|ʼ|ʼ||ʼ" tehmarbutaalefmaksuradaggeralefgunnah="|t|h|ā|ā|n" fathadammakasratanweenlongvowelsdipthongsshaddasukun="a|u|i|an|un|in|ā|ū|ī|au|ai|||aa|a|oo|u|ee|i|an|un|in|aa|a|oo|u|ee|i" tajweed="||||||" punctuation=" |!|&quot;|,|-|.|:|[|]|{|}| |&quot;|&quot;|,|;|?| | |(|)" number="0|1|2|3|4|5|6|7|8|9" nonarabic="p|ž|v|g"></scheme>
@@ -3341,7 +3350,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 		<arabicsymbol symbolname="ZaA^&apos;N" uname="ArabicLetterZah" symbol="0638" shaping="FEC5,FEC6,FEC7,FEC8" ipavalue="ðˠ" extendedbuckwalter="90" terminating="false" connecting="true" assimilate="true" />
 		<arabicsymbol symbolname="EayonN" uname="ArabicLetterAin" symbol="0639" shaping="FEC9,FECA,FECB,FECC" ipavalue="ʕ" extendedbuckwalter="69" terminating="false" connecting="true" assimilate="false" />
 		<arabicsymbol symbolname="gayonN" uname="ArabicLetterGhain" symbol="063A" shaping="FECD,FECE,FECF,FED0" ipavalue="ʁˠ" extendedbuckwalter="103" terminating="false" connecting="true" assimilate="false" />
-		<arabicsymbol symbolname="taTowiylN" uname="ArabicTatweel" symbol="0640" ipavalue="" extendedbuckwalter="95" terminating="false" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="taTowiylN" uname="ArabicTatweel" symbol="0640" ipavalue="" extendedbuckwalter="95" terminating="false" connecting="true" assimilate="false" />
 		<arabicsymbol symbolname="faA^&apos;N" uname="ArabicLetterFeh" symbol="0641" shaping="FED1,FED2,FED3,FED4" ipavalue="f" extendedbuckwalter="102" terminating="false" connecting="true" assimilate="false" />
 		<arabicsymbol symbolname="qaAfN" uname="ArabicLetterQaf" symbol="0642" shaping="FED5,FED6,FED7,FED8" ipavalue="qˠ" extendedbuckwalter="113" terminating="false" connecting="true" assimilate="false" />
 		<arabicsymbol symbolname="kaAfN" uname="ArabicLetterKaf" symbol="0643" shaping="FED9,FEDA,FEDB,FEDC" ipavalue="k" extendedbuckwalter="107" terminating="false" connecting="true" assimilate="false" />
@@ -3352,14 +3361,14 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 		<arabicsymbol symbolname="waAwN" uname="ArabicLetterWaw" symbol="0648" shaping="FEED,FEEE,," ipavalue="w" extendedbuckwalter="119" terminating="true" connecting="true" assimilate="false" />
 		<arabicsymbol symbolname="&gt;alifN maqoSuwrapN" uname="ArabicLetterAlefMaksura" symbol="0649" shaping="FEEF,FEF0,," ipavalue="a:" extendedbuckwalter="89" terminating="true" connecting="true" assimilate="false" />
 		<arabicsymbol symbolname="yaA^&apos;N" uname="ArabicLetterYeh" symbol="064A" shaping="FEF1,FEF2,FEF3,FEF4" ipavalue="j" extendedbuckwalter="121" terminating="false" connecting="true" assimilate="false" />
-		<arabicsymbol symbolname="tanowiynN fatoHapN" uname="ArabicFathatan" symbol="064B" ipavalue="an" extendedbuckwalter="70" terminating="true" connecting="false" assimilate="false" />
-		<arabicsymbol symbolname="tanowiynN Dam~apN" uname="ArabicDammatan" symbol="064C" ipavalue="un" extendedbuckwalter="78" terminating="true" connecting="false" assimilate="false" />
-		<arabicsymbol symbolname="tanowiynN kasorapN" uname="ArabicKasratan" symbol="064D" ipavalue="in" extendedbuckwalter="75" terminating="true" connecting="false" assimilate="false" />
-		<arabicsymbol symbolname="fatoHapN" uname="ArabicFatha" symbol="064E" ipavalue="a" extendedbuckwalter="97" terminating="false" connecting="false" assimilate="false" />
-		<arabicsymbol symbolname="Dam~apN" uname="ArabicDamma" symbol="064F" ipavalue="u" extendedbuckwalter="117" terminating="false" connecting="false" assimilate="false" />
-		<arabicsymbol symbolname="kasorapN" uname="ArabicKasra" symbol="0650" ipavalue="i" extendedbuckwalter="105" terminating="false" connecting="false" assimilate="false" />
-		<arabicsymbol symbolname="$ad~apN" uname="ArabicShadda" symbol="0651" ipavalue="" extendedbuckwalter="126" terminating="false" connecting="false" assimilate="false" />
-		<arabicsymbol symbolname="sukuwnN" uname="ArabicSukun" symbol="0652" ipavalue="∅" extendedbuckwalter="111" terminating="false" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="tanowiynN fatoHapN" uname="ArabicFathatan" symbol="064B" shaping="FE70,,," ipavalue="an" extendedbuckwalter="70" terminating="true" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="tanowiynN Dam~apN" uname="ArabicDammatan" symbol="064C" shaping="FE72,,," ipavalue="un" extendedbuckwalter="78" terminating="true" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="tanowiynN kasorapN" uname="ArabicKasratan" symbol="064D" shaping="FE74,,," ipavalue="in" extendedbuckwalter="75" terminating="true" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="fatoHapN" uname="ArabicFatha" symbol="064E" shaping="FE76,,,FE77" ipavalue="a" extendedbuckwalter="97" terminating="false" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="Dam~apN" uname="ArabicDamma" symbol="064F" shaping="FE78,,,FE79" ipavalue="u" extendedbuckwalter="117" terminating="false" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="kasorapN" uname="ArabicKasra" symbol="0650" shaping="FE7A,,,FE7B" ipavalue="i" extendedbuckwalter="105" terminating="false" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="$ad~apN" uname="ArabicShadda" symbol="0651" shaping="FE7C,,,FE7D" ipavalue="" extendedbuckwalter="126" terminating="false" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="sukuwnN" uname="ArabicSukun" symbol="0652" shaping="FE7E,,,FE7F" ipavalue="∅" extendedbuckwalter="111" terminating="false" connecting="false" assimilate="false" />
 		<arabicsymbol symbolname="mad~apN" uname="ArabicMaddahAbove" symbol="0653" ipavalue="" extendedbuckwalter="94" terminating="false" connecting="false" assimilate="false" />
 		<arabicsymbol symbolname="hamozapN" uname="ArabicHamzaAbove" symbol="0654" ipavalue="ɛ|e" extendedbuckwalter="35" terminating="false" connecting="false" assimilate="false" />
 		<arabicsymbol symbolname="hamozapN" uname="ArabicHamzaBelow" symbol="0655" ipavalue="ʔ" extendedbuckwalter="88" terminating="false" connecting="false" assimilate="false" />
@@ -3377,25 +3386,31 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 		<arabicsymbol symbolname="&gt;alifN xanjariyapN" uname="ArabicLetterSuperscriptAlef" symbol="0670" ipavalue="a:" extendedbuckwalter="96" terminating="false" connecting="false" assimilate="false" />
 		<arabicsymbol symbolname="&gt;alifN hamozapN waSolN" uname="ArabicLetterAlefWasla" symbol="0671" shaping="FB50,FB51,," ipavalue="" extendedbuckwalter="123" terminating="false" connecting="false" assimilate="false" />
 		<arabicsymbol symbolname="nuwnN gun~apN" uname="ArabicLetterNoonGhunna" symbol="06BA" shaping="FB9E,FB9F,," ipavalue="n" extendedbuckwalter="0" terminating="false" connecting="true" assimilate="true" />
+		<arabicsymbol symbolname="yaA^&apos;N bar~iyN" uname="ArabicLetterYehBarree" symbol="06D2" shaping="FBAE,FBAF,," ipavalue="j" extendedbuckwalter="0" terminating="false" connecting="true" assimilate="true" />
+		<arabicsymbol symbolname="yaA^&apos;N bar~iyN hamozapN" uname="ArabicLetterYehBarreeWithHamzaAbove" symbol="06D3" shaping="FBB0,FBB1,," ipavalue="ʔ" extendedbuckwalter="0" terminating="false" connecting="true" assimilate="true" />		
 		<arabicsymbol symbolname="&lt;imaAlapN" uname="Bullet" symbol="2022" shaping="" ipavalue="" extendedbuckwalter="85" terminating="false" connecting="true" assimilate="true" />
+		<!-- ARABIC VOWEL SIGN DOT LEFT not yet in Unicode - Instead of bullet can use combining symbol in wrong character range: 302E Hangul single dot tone mark
+			 ARABIC VOWEL SIGN DOT BELOW LEFT not yet in Unicode
+			 20E5 COMBINING REVERSE SOLIDUS OVERLAY could be used for Superscript Alef over Lams
+			 0335 CombiningShortStrokeOverlay -->
 
 		<arabicsymbol symbolname="tufiydu bi&gt;an~a {lowaSola &gt;awolaY maEa jawaAzK {lowaqufi" uname="ArabicSmallHighLigatureSadWithLamWithAlefMaksura" symbol="06D6" ipavalue="" extendedbuckwalter="76" terminating="false" connecting="false" assimilate="false" />
 		<arabicsymbol symbolname="tafiydu bi&gt;an~a {lowaqufa &gt;awolaY" uname="ArabicSmallHighLigatureQafWithLamWithAlefMaksura" symbol="06D7" ipavalue="" extendedbuckwalter="81" terminating="false" connecting="false" assimilate="false" />
 		<arabicsymbol symbolname="tufiydu lazuwma {lowaqufi" uname="ArabicSmallHighMeemInitialForm" symbol="06D8" ipavalue="" extendedbuckwalter="77" terminating="false" connecting="false" assimilate="false" />
-		<arabicsymbol symbolname="tufiydu {ln~ahoya Ean {lowaqufi" uname="ArabicSmallHighLamAlef" symbol="06D9" ipavalue="" extendedbuckwalter="73" terminating="false" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="tufiydu {ln~ahoya Eani {lowaqufi" uname="ArabicSmallHighLamAlef" symbol="06D9" ipavalue="" extendedbuckwalter="73" terminating="false" connecting="false" assimilate="false" />
 		<arabicsymbol symbolname="tufiydu jawaAza {lowaqufa" uname="ArabicSmallHighJeem" symbol="06DA" ipavalue="" extendedbuckwalter="67" terminating="false" connecting="false" assimilate="false" />
 		<arabicsymbol symbolname="tufiydu jawaAza {lowaqufi bi&gt;aHadi {lomuwaDiEayon waliysa fiy kilayohimaA" uname="ArabicSmallHighThreeDots" symbol="06DB" ipavalue="" extendedbuckwalter="79" terminating="false" connecting="false" assimilate="false" />
 		<arabicsymbol symbolname="lild~ilaAlapi EalaY wujuwbi {ln~uToqi baAls~iynK badali {lS~aAdi waA*aA wuDoEato bi{lo&gt;asofali fa{ln~uToqu baAlS~aAdi ma$ohuwr" uname="ArabicSmallHighSeen" symbol="06DC" ipavalue="" extendedbuckwalter="58" terminating="false" connecting="false" assimilate="false" />
 		<arabicsymbol symbolname="lild~ilaAlapi EalaY bihaA bapi {lo&apos;aAyapi waraqamuhaA" uname="ArabicEndOfAyah" symbol="06DD" ipavalue="" extendedbuckwalter="61" terminating="false" connecting="false" assimilate="false" />
 		<arabicsymbol symbolname="lild~ilaAlapi EalaY lild~ilaAlapi EalaY bidaA^}api {lo&gt;ajozaA^&apos;i wa{lo&gt;aHozaAbi waAnDaA fihaA wa&gt;arobaA EihaA" uname="ArabicStartOfRubElHizb" symbol="06DE" ipavalue="" extendedbuckwalter="66" terminating="false" connecting="false" assimilate="false" />
-		<arabicsymbol symbolname="lild~ilaAlapi EalaY sukuwn {loHarofi" uname="ArabicSmallHighRoundedZero" symbol="06DF" ipavalue="" extendedbuckwalter="64" terminating="false" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="lild~ilaAlapi EalaY sukuwni {loHarofi" uname="ArabicSmallHighRoundedZero" symbol="06DF" ipavalue="" extendedbuckwalter="64" terminating="false" connecting="false" assimilate="false" />
 		<arabicsymbol symbolname="" uname="ArabicSmallHighUprightRectangularZero" symbol="06E0" ipavalue="" extendedbuckwalter="34" terminating="false" connecting="false" assimilate="false" />
-		<arabicsymbol symbolname="lild~ilaAlapi EalaY wujuwd {lo&lt;iqolaAbi" uname="ArabicSmallHighMeemIsolatedForm" symbol="06E2" ipavalue="" extendedbuckwalter="91" terminating="false" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="lild~ilaAlapi EalaY wujuwdi {lo&lt;iqolaAbi" uname="ArabicSmallHighMeemIsolatedForm" symbol="06E2" ipavalue="" extendedbuckwalter="91" terminating="false" connecting="false" assimilate="false" />
 		<arabicsymbol symbolname="lild~ilaAlapi EalaY wujuwbi {ln~uToqi bils~iyni badoli {lD~aAdi waA*aA wuDoEato bi{lo&gt;asofali fa{ln~uToqu bilD~aAdi ma$ohuwr" uname="ArabicSmallLowSeen" symbol="06E3" ipavalue="" extendedbuckwalter="59" terminating="false" connecting="false" assimilate="false" />
 		<arabicsymbol symbolname="lild~ilaAlapi EalaY wujuwbi {ln~uToqi biHuruwfi {lt~ruwkapi" uname="ArabicSmallWaw" symbol="06E5" ipavalue="" extendedbuckwalter="44" terminating="false" connecting="false" assimilate="false" />
 		<arabicsymbol symbolname="lild~ilaAlapi EalaY wujuwbi {ln~uToqi biHuruwfi {lt~ruwkapi" uname="ArabicSmallYeh" symbol="06E6" ipavalue="" extendedbuckwalter="46" terminating="false" connecting="false" assimilate="false" />
 		<arabicsymbol symbolname="lild~ilaAlapi EalaY wujuwbi {ln~uToqi bihaA" uname="ArabicSmallHighNoon" symbol="06E8" ipavalue="" extendedbuckwalter="33" terminating="false" connecting="false" assimilate="false" />
-		<arabicsymbol symbolname="lild~ilaAlapi EalaY mawoDiE {ls~ujuwd, &gt;amaAkilomapN wujuwbi {ls~ujuwdi faqado wuDoEa fawoqahaA xaTo" uname="ArabicPlaceOfSajdah" symbol="06E9" ipavalue="" extendedbuckwalter="82" terminating="false" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="lild~ilaAlapi EalaY mawoDiEi {ls~ujuwdi\, &gt;amaAkilomapN wujuwbi {ls~ujuwdi faqado wuDoEa fawoqahaA xaTo" uname="ArabicPlaceOfSajdah" symbol="06E9" ipavalue="" extendedbuckwalter="82" terminating="false" connecting="false" assimilate="false" />
 		<arabicsymbol symbolname="lild~ilaAlapi EalaY ziyaAdapN {loHarofu Hiyna {lowaSol" uname="ArabicEmptyCentreLowStop" symbol="06EA" ipavalue="" extendedbuckwalter="45" terminating="false" connecting="false" assimilate="false" />
 		<arabicsymbol symbolname="lild~ilaAlapi EalaY ziyaAdapN {loHarofu waEadamu {ln~uToqi bihi" uname="ArabicEmptyCentreHighStop" symbol="06EB" ipavalue="" extendedbuckwalter="43" terminating="false" connecting="false" assimilate="false" />
 		<arabicsymbol symbolname="lild~ilaAlapi EalaY {lt~asohiyli" uname="ArabicRoundedHighStopWithFilledCentre" symbol="06EC" ipavalue="" extendedbuckwalter="37" terminating="false" connecting="false" assimilate="false" />

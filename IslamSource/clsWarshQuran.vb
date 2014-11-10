@@ -33,14 +33,14 @@
 {"", New Integer() {&H105, &H106, &H107, &H109, &H10F}}
 } '109 + {105=b/n, 106=t/y, 107=v}, 10F + {105=f, 106=q}
     Shared Hamd2 As New Dictionary(Of String, Integer()) From {
-    {"AW", New Integer() {&H3, &H74}},
-    {"W", New Integer() {&H7, &HDB}},
+    {"AW", New Integer() {&H3}},
+    {"U", New Integer() {&H7, &HDB}},
     {"laA", New Integer() {&HD, &H1E, &H6C, &H6F, &H71}},
     {"l~Au", New Integer() {&H19}},
     {"liA%a", New Integer() {&H1A}},
     {"lAu", New Integer() {&H1D}},
     {"YW", New Integer() {&H22, &H23, &H79}},
-    {"%", New Integer() {&H24}},
+    {"_%", New Integer() {&H24}},
     {"Yo", New Integer() {&H25}},
     {"Y%a", New Integer() {&H27, &H81, &H221E}},
     {"|", New Integer() {&H4E}},
@@ -54,7 +54,8 @@
     {"l~FA", New Integer() {&H65, &H67, &H68}},
     {"l~aA", New Integer() {&H6B}},
     {"w^", New Integer() {&H70}},
-    {"Aa", New Integer() {&H75, &H77}},
+    {"Aa", New Integer() {&H75}},
+    {"Au", New Integer() {&H77}},
     {"A%", New Integer() {&HDC, &HDD}},
     {"A%a", New Integer() {&HDE}},
     {"Ai", New Integer() {&H76}},
@@ -62,8 +63,9 @@
     {"_", New Integer() {&H7B}},
     {"la", New Integer() {&H7D}},
     {"l", New Integer() {&H82}},
-    {"`", New Integer() {&H97, &H98, &HA2}},
-    {".", New Integer() {&H9B}},
+    {"`", New Integer() {&H97, &HA2}},
+    {"_`", New Integer() {&H98}},
+    {"Y", New Integer() {&H9B}},
     {"`^", New Integer() {&HA0}},
     {"-", New Integer() {&HA5}}
     }
@@ -90,7 +92,7 @@
     {")", New Integer() {&H2026}},
     {",", New Integer() {&H2287}},
     {"'", New Integer() {&H222B}}
-    }
+    } '&H3A7 is actually left below and should have different symbol
     Shared Arr1 As New Dictionary(Of String, Integer()) From {
 {" ", New Integer() {&H20}},
 {"llh", New Integer() {&H21}},
@@ -267,7 +269,7 @@
     {"~i~ai", New Integer() {&HB0}}
     } '&H3A, &H3B, &H3C could be "~u^"
     Shared Arr7 As New Dictionary(Of String, Integer()) From {
-    {"U", New Integer() {&H31}},
+    {"W", New Integer() {&H31}},
     {"a", New Integer() {&H76, &H79, &H7D, &HF08D}}
     }
     Class TextExtractionStrategy
@@ -459,11 +461,8 @@
                                 Else
                                     Str += KeyValue.Key
                                 End If
-                            ElseIf KeyValue.Key = "i" Or KeyValue.Key = "u" Or KeyValue.Key = "o" Or KeyValue.Key = "^" Then
-                                If Str.Length <> 0 AndAlso (Str.Chars(Str.Length - 1) = "^"c Or Str.Chars(Str.Length - 1) = "a"c Or Str.Chars(Str.Length - 1) = "i"c Or Str.Chars(Str.Length - 1) = "u"c Or Str.Chars(Str.Length - 1) = "o"c) Then
-                                    While Chunks(Count + 1).Str = Chunks(Count).Str
-                                        Count += 1
-                                    End While
+                            ElseIf KeyValue.Key = "i" Or KeyValue.Key = "u" Or KeyValue.Key = "o" Or KeyValue.Key = "^" Or KeyValue.Key = "N" Then
+                                If (Str.Length = 0 OrElse Str(Str.Length - 1) = " ") Or (Str.Length <> 0 AndAlso (Str.Chars(Str.Length - 1) = "^"c Or Str.Chars(Str.Length - 1) = "a"c Or Str.Chars(Str.Length - 1) = "i"c Or Str.Chars(Str.Length - 1) = "u"c Or Str.Chars(Str.Length - 1) = "o"c)) Then
                                     Dim Ch As Chunk = Chunks(Count + 1)
                                     Chunks(Count + 1) = Chunks(Count)
                                     Chunks(Count) = Ch
@@ -511,12 +510,12 @@
                                             Index += "bisomi{ll~`hi {lr~aHoma`ni{lr~aHiymi ".Length
                                         End If
                                     Else
-                                        Index += "bisomi {ll~ahi {lr~aHoma`ni {lr~aHiymi ".Length
+                                        Index += "bisomi {ll~ahi {lr~aHoma_`ni {lr~aHiymi ".Length
                                     End If
                                 End If
                                 Verse = Verse + 1 'text has off by one error so better than StrReverse(Str.Substring(Str.LastIndexOf(" "c) + 1))
                                 If Str.Substring(Str.LastIndexOf(" "c) + 1) = "1" AndAlso Index <> -1 Then
-                                    QStr += "    <aya index=""" + CStr(Verse) + """ text=""" + IslamMetadata.Arabic.TransliterateFromBuckwalter(Str.Substring(Index, Str.LastIndexOf(" "c) - Index)).Trim() + """ " + "bismillah=""" + IslamMetadata.Arabic.TransliterateFromBuckwalter("bisomi {ll~ahi {lr~aHoma`ni {lr~aHiymi") + """/>" + vbCrLf
+                                    QStr += "    <aya index=""" + CStr(Verse) + """ text=""" + IslamMetadata.Arabic.TransliterateFromBuckwalter(Str.Substring(Index, Str.LastIndexOf(" "c) - Index)).Trim() + """ " + "bismillah=""" + IslamMetadata.Arabic.TransliterateFromBuckwalter("bisomi {ll~ahi {lr~aHoma_`ni {lr~aHiymi") + """/>" + vbCrLf
                                 Else
                                     QStr += "    <aya index=""" + CStr(Verse) + """ text=""" + IslamMetadata.Arabic.TransliterateFromBuckwalter(Str.Substring(0, Str.LastIndexOf(" "c))).Trim() + """ />" + vbCrLf
                                 End If
@@ -524,7 +523,7 @@
                             Else
                                 Str += KeyValue.Key
                             End If
-                                Exit For
+                            Exit For
                         End If
                     Next
                 End If
@@ -606,6 +605,6 @@
             Str += iTextSharp.text.pdf.parser.PdfTextExtractor.GetTextFromPage(Reader, Cnt + 1, Strat)
         Next
         Str += "  </sura>" + vbCrLf + "</quran>" + vbCrLf
-        IO.File.WriteAllText("quran-warsh.xml", Str)
+        IO.File.WriteAllText(IslamMetadata.Utility.GetFilePath("metadata\quran-warsh.xml"), Str)
     End Sub
 End Class
