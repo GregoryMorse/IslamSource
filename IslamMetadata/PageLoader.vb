@@ -1570,6 +1570,8 @@ Public Class Arabic
     Public Const ArabicMaddahAbove As Char = ChrW(1619)
     Public Const ArabicHamzaAbove As Char = ChrW(1620)
     Public Const ArabicHamzaBelow As Char = ChrW(1621)
+    Public Const ArabicVowelSignDotBelow As Char = ChrW(&H65C)
+    Public Const Bullet As Char = ChrW(&H2022)
     Public Const ArabicLetterSuperscriptAlef As Char = ChrW(1648)
     Public Const ArabicLetterAlefWasla As Char = ChrW(1649)
     Public Const ArabicSmallHighLigatureSadWithLamWithAlefMaksura As Char = ChrW(1750)
@@ -1839,16 +1841,37 @@ Public Class Arabic
     Public Shared UthmaniShortVowelsBeforeLongVowelsSmallWaw As String = ArabicDamma + ArabicSmallWaw
     Public Shared UthmaniShortVowelsBeforeLongVowelsYeh As String = ArabicKasra + ArabicLetterYeh
     Public Shared UthmaniShortVowelsBeforeLongVowelsSmallYeh As String = ArabicKasra + ArabicSmallYeh
+    'Public Shared WarshScript As RuleTranslation() = { _
+    '    New RuleTranslation With {.Rule = "InitialAlefMadda", .Match = "(^\s*|\s+)" + MakeUniRegEx(ArabicLetterAlefMaksura) + MakeUniRegEx(ArabicHamzaBelow) + "(?=" + MakeUniRegEx(ArabicFatha) + MakeUniRegEx(ArabicLetterAlef) + ")", _
+    '        .Evaluator = "$1" + ArabicLetterHamza}, _
+    '    New RuleTranslation With {.Rule = "AlefWithHamzaBelow", .Match = "(^\s*|\s+)" + MakeUniRegEx(ArabicLetterAlef) + "(?=" + MakeUniRegEx(ArabicKasra) + ")", _
+    '        .Evaluator = "$1" + ArabicLetterAlefWithHamzaBelow}, _
+    '    New RuleTranslation With {.Rule = "AlefWithHamzaAbove", .Match = "(^\s*|\s+)" + MakeUniRegEx(ArabicLetterAlef) + "(?=" + MakeUniRegEx(ArabicFatha) + "|" + MakeUniRegEx(ArabicDamma) + ")", _
+    '        .Evaluator = "$1" + ArabicLetterAlefWithHamzaAbove}, _
+    '    New RuleTranslation With {.Rule = "Tatweel", .Match = MakeUniRegEx(ArabicTatweel) + "(?=" + MakeUniRegEx(ArabicLetterSuperscriptAlef) + ")", _
+    '        .Evaluator = String.Empty}
+    '    }
     Public Shared WarshScript As RuleTranslation() = { _
-        New RuleTranslation With {.Rule = "InitialAlefMadda", .Match = "(^\s*|\s+)" + MakeUniRegEx(ArabicLetterAlefMaksura) + MakeUniRegEx(ArabicHamzaBelow) + "(?=" + MakeUniRegEx(ArabicFatha) + MakeUniRegEx(ArabicLetterAlef) + ")", _
-            .Evaluator = "$1" + ArabicLetterHamza}, _
-        New RuleTranslation With {.Rule = "AlefWithHamzaBelow", .Match = "(^\s*|\s+)" + MakeUniRegEx(ArabicLetterAlef) + "(?=" + MakeUniRegEx(ArabicKasra) + ")", _
-            .Evaluator = "$1" + ArabicLetterAlefWithHamzaBelow}, _
-        New RuleTranslation With {.Rule = "AlefWithHamzaAbove", .Match = "(^\s*|\s+)" + MakeUniRegEx(ArabicLetterAlef) + "(?=" + MakeUniRegEx(ArabicFatha) + "|" + MakeUniRegEx(ArabicDamma) + ")", _
-            .Evaluator = "$1" + ArabicLetterAlefWithHamzaAbove}, _
-        New RuleTranslation With {.Rule = "Tatweel", .Match = MakeUniRegEx(ArabicTatweel) + "(?=" + MakeUniRegEx(ArabicLetterSuperscriptAlef) + ")", _
-            .Evaluator = String.Empty}
+        New RuleTranslation With {.Rule = "InitialAlefMadda", .Match = "(^\s*|\s+)" + MakeUniRegEx(ArabicLetterHamza) + "(?=" + MakeUniRegEx(ArabicFatha) + MakeUniRegEx(ArabicLetterAlef) + ")", _
+            .Evaluator = "$1" + ArabicLetterAlefMaksura + ArabicHamzaBelow}, _
+        New RuleTranslation With {.Rule = "InitialAlefMadda", .Match = "(" + MakeUniRegEx(ArabicFatha) + ")" + MakeUniRegEx(ArabicLetterSuperscriptAlef) + MakeUniRegEx(ArabicMaddahAbove) + MakeUniRegEx(ArabicLetterHamza), _
+            .Evaluator = "$1" + ArabicLetterAlefWithMaddaAbove + ArabicLetterAlefMaksura + ArabicHamzaBelow}, _
+        New RuleTranslation With {.Rule = "DroppedHamza", .Match = MakeUniRegEx(ArabicSukun) + "(?:" + MakeUniRegEx(ArabicLetterAlefWithHamzaAbove) + "|" + MakeUniRegEx(ArabicLetterAlefWithHamzaBelow) + ")|" + MakeUniRegEx(ArabicLetterAlefWithHamzaAbove) + MakeUniRegEx(ArabicSukun), _
+            .Evaluator = ArabicLetterAlef}, _
+        New RuleTranslation With {.Rule = "DroppedHamza", .Match = MakeUniRegEx(ArabicLetterWawWithHamzaAbove) + MakeUniRegEx(ArabicSukun), _
+            .Evaluator = ArabicLetterWaw}, _
+        New RuleTranslation With {.Rule = "HamzaBelow", .Match = MakeUniRegEx(ArabicLetterYehWithHamzaAbove) + MakeUniRegEx(ArabicKasra), _
+            .Evaluator = ArabicLetterAlefMaksura + ArabicHamzaBelow}, _
+        New RuleTranslation With {.Rule = "Imaala", .Match = MakeUniRegEx(ArabicFatha) + "(?=" + MakeUniRegEx(ArabicLetterAlefMaksura) + MakeUniRegEx(ArabicLetterSuperscriptAlef) + ")", _
+            .Evaluator = ArabicVowelSignDotBelow}, _
+        New RuleTranslation With {.Rule = "Tatweel", .Match = "(" + MakeUniRegEx(ArabicLetterAlefMaksura) + ")?(?=" + MakeUniRegEx(ArabicLetterSuperscriptAlef) + ")", _
+            .Evaluator = ArabicTatweel, .NegativeMatch = "$1"}
         }
+    'New RuleTranslation With {.Rule = "AlefWithHamzaBelow", .Match = "(^\s*|\s+)" + MakeUniRegEx(ArabicLetterAlefWithHamzaBelow) + "(?=" + MakeUniRegEx(ArabicKasra) + ")", _
+    '    .Evaluator = "$1" + ArabicLetterAlef}, _
+    'New RuleTranslation With {.Rule = "AlefWithHamzaAbove", .Match = "(^\s*|\s+)" + MakeUniRegEx(ArabicLetterAlefWithHamzaAbove) + "(?=" + MakeUniRegEx(ArabicFatha) + "|" + MakeUniRegEx(ArabicDamma) + ")", _
+    '    .Evaluator = "$1" + ArabicLetterAlef}, _
+
     Public Shared UthmaniMinimalScript As RuleTranslation() = { _
         New RuleTranslation With {.Rule = "SmallYehSmallWawAfterPronounHeh", .Match = "(?:(" + MakeUniRegEx(ArabicLetterHeh) + MakeUniRegEx(ArabicKasra) + ")" + MakeUniRegEx(ArabicSmallYeh) + "|(" + MakeUniRegEx(ArabicLetterHeh) + MakeUniRegEx(ArabicDamma) + ")" + MakeUniRegEx(ArabicSmallWaw) + ")" + MakeUniRegEx(ArabicMaddahAbove) + "?(?=\s*$|\s+)", _
             .Evaluator = "$1$2"}, _
