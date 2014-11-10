@@ -43,7 +43,7 @@
     {"_%", New Integer() {&H24}},
     {"Yo", New Integer() {&H25}},
     {"Y%a", New Integer() {&H27, &H81, &H221E}},
-    {"|", New Integer() {&H4E}},
+    {"`^", New Integer() {&H4E, &HA0}},
     {"lAi", New Integer() {&H50, &H7E}},
     {"w%a", New Integer() {&H51}},
     {"w", New Integer() {&H53, &H55}},
@@ -66,7 +66,6 @@
     {"`", New Integer() {&H97, &HA2}},
     {"_`", New Integer() {&H98}},
     {"Y", New Integer() {&H9B}},
-    {"`^", New Integer() {&HA0}},
     {"-", New Integer() {&HA5}}
     }
 
@@ -401,8 +400,11 @@
                             If KeyValue.Value(Match) = &H2122 And KeyValue.Key = "YX" And Str.Length > 1 AndAlso Str.Chars(Str.Length - 1) = "W"c Then Continue For
                             If KeyValue.Value(Match) = &H23AF And (KeyValue.Key = "n" Or KeyValue.Key = "r") And Str.Length > 1 AndAlso Str.Chars(Str.Length - 1) = "i"c AndAlso Str.Chars(Str.Length - 2) = "h"c Then Continue For
                             If KeyValue.Value(Match) = &HAE And KeyValue.Key = "9" And Str.Length = 0 Then Continue For
-                            If Str.Length <> 0 AndAlso Str.Chars(Str.Length - 1) = "."c And KeyValue.Key <> "^" Then Str.Remove(Str.Length - 1).Insert(Str.Length - 1, "n")
-                            If Str.Length <> 0 AndAlso Str.Chars(Str.Length - 1) = "I"c Then Str += " "
+                            If Str.Length <> 0 AndAlso Str.Chars(Str.Length - 1) = "."c And KeyValue.Key <> "^" Then Str = Str.Remove(Str.Length - 1).Insert(Str.Length - 1, "n")
+                            If Str.Length <> 0 AndAlso (Str.Chars(Str.Length - 1) = "I"c Or Str.Chars(Str.Length - 1) = "C"c) Then Str += " "
+                            If (KeyValue.Key = "Y`" Or KeyValue.Key = "Y") And Str.Length > 2 AndAlso Str.Chars(Str.Length - 1) = "W"c AndAlso Str.Chars(Str.Length - 3) = " "c Then Str = Str.Remove(Str.Length - 3, 1)
+                            If KeyValue.Key = "k" And Str.Length > 2 AndAlso Str.Chars(Str.Length - 1) = " "c AndAlso Str.Chars(Str.Length - 2) = "a"c AndAlso Str.Chars(Str.Length - 3) = "A"c Then Str = Str.Remove(Str.Length - 1, 1)
+                            If (KeyValue.Key = "`^" Or KeyValue.Key = "Y%a") And Str.Length <> 0 AndAlso Str.Chars(Str.Length - 1) = " "c Then Str = Str.Remove(Str.Length - 1, 1)
                             If Str.Length <> 0 AndAlso Str.Chars(Str.Length - 1) = "A"c AndAlso (KeyValue.Key = "{" Or KeyValue.Key = "a{" Or KeyValue.Key = "~a{" Or KeyValue.Key = "i{") Then
                                 Str = Str.Remove(Str.Length - 1) + KeyValue.Key
                             ElseIf KeyValue.Key = "_" Then

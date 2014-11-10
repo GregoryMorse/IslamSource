@@ -5431,6 +5431,37 @@ Public Class TanzilReader
             Next
         Next
     End Function
+    Public Shared Sub CompareQuranFormats(BaseText As QuranTexts, TargetBaseText As QuranTexts, ScriptType As QuranScripts, Presentation As ArabicPresentation)
+        Dim Doc As New System.Xml.XmlDocument
+        Doc.Load(Utility.GetFilePath("metadata\" + QuranTextNames(BaseText) + ".xml"))
+        Dim TargetDoc As New System.Xml.XmlDocument
+        If BaseText = TargetBaseText Then
+            TargetDoc.Load(Utility.GetFilePath("metadata\" + QuranTextNames(TargetBaseText) + "-" + QuranFileNames(ScriptType) + If(Presentation <> ArabicPresentation.None, "-" + PresentationCacheNames(Presentation), String.Empty) + ".xml"))
+        Else
+            TargetDoc.Load(Utility.GetFilePath("metadata\" + QuranTextNames(TargetBaseText) + "-" + QuranFileNames(ScriptType) + If(Presentation <> ArabicPresentation.None, "-" + PresentationCacheNames(Presentation), String.Empty) + ".xml"))
+        End If
+        Dim Verses As Collections.Generic.List(Of String())
+        Dim TargetVerses As Collections.Generic.List(Of String())
+        Verses = TanzilReader.GetQuranText(Doc, -1, -1, -1, -1)
+        TargetVerses = TanzilReader.GetQuranText(TargetDoc, -1, -1, -1, -1)
+        For Count As Integer = 0 To Verses.Count - 1
+            Dim Totals As New List(Of Integer) From {0}
+            Dim TargetTotals As New List(Of Integer) From {0}
+            Dim Words As New List(Of Integer)
+            Dim TargetWords As New List(Of Integer)
+            For SubCount As Integer = 0 To Math.Max(Verses(Count).Length - 1, TargetVerses(Count).Length - 1)
+                Words.Add(If(SubCount <= Verses(Count).Length - 1, Verses(Count)(SubCount).Split(" "c).Length, 0))
+                TargetWords.Add(If(SubCount <= TargetVerses(Count).Length - 1, TargetVerses(Count)(SubCount).Split(" "c).Length, 0))
+                Totals.Add(Totals(Totals.Count - 1) + Words(Words.Count - 1))
+                TargetTotals.Add(TargetTotals(TargetTotals.Count - 1) + TargetWords(TargetWords.Count - 1))
+            Next
+            For SubCount As Integer = 0 To Math.Max(Verses(Count).Length - 1, TargetVerses(Count).Length - 1)
+                If Words(SubCount) <> TargetWords(SubCount) And (Not TargetTotals.Contains(Totals(SubCount + 1)) Or Not Totals.Contains(TargetTotals(SubCount + 1))) Then
+                    Debug.Print("Chapter: " + CStr(Count + 1) + " Verse: " + CStr(SubCount + 1) + " Words: " + CStr(Words(SubCount)) + " Words: " + CStr(TargetWords(SubCount)))
+                End If
+            Next
+        Next
+    End Sub
     Public Shared Sub ChangeQuranFormat(BaseText As QuranTexts, TargetBaseText As QuranTexts, ScriptType As QuranScripts, Presentation As ArabicPresentation)
         Dim Doc As New System.Xml.XmlDocument
         Doc.Load(Utility.GetFilePath("metadata\" + QuranTextNames(BaseText) + ".xml"))
@@ -5466,7 +5497,7 @@ Public Class TanzilReader
                 If UseBuckwalter Then
                     CurVerse.Attributes.GetNamedItem("text").Value = Arabic.TransliterateToScheme(CurVerse.Attributes.GetNamedItem("text").Value, Arabic.TranslitScheme.Literal, String.Empty)
                 End If
-                If TargetBaseText = QuranTexts.Warsh Then
+                If BaseText = QuranTexts.Hafs And TargetBaseText = QuranTexts.Warsh Then
                     Dim Index As Integer = Array.FindIndex(CachedData.IslamData.VerseNumberSchemes(0).CombinedVerses, Function(Ints As Integer()) Count + 1 = Ints(0) And SubCount + 1 + VerseAdjust - 1 = Ints(1))
                     If Index <> -1 Then
                         GetTextVerse(ChapterNode, SubCount).Attributes.GetNamedItem("text").Value = GetTextVerse(ChapterNode, SubCount).Attributes.GetNamedItem("text").Value + " " + CurVerse.Attributes.GetNamedItem("text").Value
