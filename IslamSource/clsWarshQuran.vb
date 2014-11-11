@@ -404,7 +404,7 @@
                             If KeyValue.Value(Match) = &H2122 And KeyValue.Key = "YX" And Str.Length > 1 AndAlso Str.Chars(Str.Length - 1) = "W"c Then Continue For
                             If KeyValue.Value(Match) = &H23AF And (KeyValue.Key = "n" Or KeyValue.Key = "r") And Str.Length > 1 AndAlso Str.Chars(Str.Length - 1) = "i"c AndAlso Str.Chars(Str.Length - 2) = "h"c Then Continue For
                             If KeyValue.Value(Match) = &HAE And KeyValue.Key = "9" And Str.Length = 0 Then Continue For
-                            If Str.Length <> 0 AndAlso Str.Chars(Str.Length - 1) = "."c And KeyValue.Key <> "^" Then Str = Str.Remove(Str.Length - 1).Insert(Str.Length - 1, "n")
+                            If Str.Length <> 0 AndAlso Str.Chars(Str.Length - 1) = "."c And (KeyValue.Key <> "^" Or Str.Length > 1 AndAlso (Str.Substring(Str.Length - 2) = "Yi" Or Str.Substring(Str.Length - 2) = "ni" Or Str.Substring(Str.Length - 2) = "di" Or Str.Substring(Str.Length - 2) = "ri")) Then Str = Str.Remove(Str.Length - 1).Insert(Str.Length - 1, "n")
                             If Str.Length <> 0 AndAlso (Str.Chars(Str.Length - 1) = "M"c Or Str.Chars(Str.Length - 1) = "Q"c Or Str.Chars(Str.Length - 1) = "I"c Or Str.Chars(Str.Length - 1) = "C"c Or Str.Chars(Str.Length - 1) = "L"c) Then Str += " "
                             If (KeyValue.Key = "Y`" Or KeyValue.Key = "Y") And Str.Length > 2 AndAlso Str.Chars(Str.Length - 1) = "W"c AndAlso Str.Chars(Str.Length - 3) = " "c Then Str = Str.Remove(Str.Length - 3, 1)
                             If KeyValue.Key = "k" And ((Str.Length > 2 AndAlso (Str.Substring(Str.Length - 3) = "Au " Or Str.Substring(Str.Length - 3) = ">a " Or Str.Substring(Str.Length - 3) = "Aa ")) Or (Str.Length > 3 AndAlso (Str.Substring(Str.Length - 4) = "z~a " Or Str.Substring(Str.Length - 4) = "yaA " Or Str.Substring(Str.Length - 4) = "taA ")) Or (Str.Length > 4 AndAlso Str.Substring(Str.Length - 5) = "vara ")) Then Str = Str.Remove(Str.Length - 1, 1)
@@ -420,6 +420,8 @@
                             ElseIf Str.Length > 2 AndAlso Str.Substring(Str.Length - 3) = "iya" And KeyValue.Key = "n" Then
                                 Str = Str.Remove(Str.Length - 1) + KeyValue.Key
                             ElseIf KeyValue.Key = "A" And Str.Length <> 0 AndAlso Str.Chars(Str.Length - 1) = "{" Then
+                            ElseIf KeyValue.Key = "F" And Str.Length <> 0 AndAlso Str.Chars(Str.Length - 1) = "A" Then
+                                Str = Str.Insert(Str.Length - 1, KeyValue.Key)
                             ElseIf KeyValue.Key = "_" Then
                                 If Str.Length = 0 OrElse Str.Chars(Str.Length - 1) <> "_"c Then
                                     Str += KeyValue.Key
