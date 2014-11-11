@@ -48,6 +48,7 @@
     {"w%a", New Integer() {&H51}},
     {"w", New Integer() {&H53, &H55}},
     {"w%", New Integer() {&H54}},
+    {"lA", New Integer() {&H58}},
     {"lFA", New Integer() {&H5A, &H5B, &H5C, &H5D}},
     {"lF[A", New Integer() {&H60, &H61}},
     {"l~F[A", New Integer() {&H62}},
@@ -111,7 +112,7 @@
 {"r", New Integer() {&HF08D, &HF08E, &HF08F, &HF090, &H2018, &H2019}},
 {"z", New Integer() {&H201C, &H201D, &H2022, &H2013, &H2014}},
 {"s", New Integer() {&H2122, &H203A, &H153, &HF09D, &HF09E, &HA0, &HA1, &HA3, &HA4, &HA6, &HA7, &HA8}},
-{"$", New Integer() {&HA9, &HAB, &HAC, &H2212, &HB0, &HB1, &HB3, &HB4, &HB5, &HB6, &HB7, &HB8}},
+{"$", New Integer() {&HA9, &HAB, &HAC, &H2212, &HB0, &HB1, &HB3, &HB4, &HB5, &HB6, &HB7, &HB8, &H3BC}},
 {"S", New Integer() {&HB9, &HBB, &HBC, &HBE, &HC0, &HC1, &HC2, &HC4, &HC7, &HC8, &HC9}},
 {"D", New Integer() {&HCA, &HCC, &HCE, &HCF, &HD1, &HD2, &HD3, &HD5, &HD6, &HD8, &HD9, &HDA}},
 {"T", New Integer() {&HDB, &HDC, &HDD, &HDE}},
@@ -406,11 +407,17 @@
                             If Str.Length <> 0 AndAlso Str.Chars(Str.Length - 1) = "."c And KeyValue.Key <> "^" Then Str = Str.Remove(Str.Length - 1).Insert(Str.Length - 1, "n")
                             If Str.Length <> 0 AndAlso (Str.Chars(Str.Length - 1) = "Q"c Or Str.Chars(Str.Length - 1) = "I"c Or Str.Chars(Str.Length - 1) = "C"c Or Str.Chars(Str.Length - 1) = "L"c) Then Str += " "
                             If (KeyValue.Key = "Y`" Or KeyValue.Key = "Y") And Str.Length > 2 AndAlso Str.Chars(Str.Length - 1) = "W"c AndAlso Str.Chars(Str.Length - 3) = " "c Then Str = Str.Remove(Str.Length - 3, 1)
-                            If KeyValue.Key = "k" And (Str.Length > 2 AndAlso (Str.Substring(Str.Length - 3) = ">a " Or Str.Substring(Str.Length - 3) = "Aa ")) Or (Str.Length > 3 AndAlso (Str.Substring(Str.Length - 4) = "yaA " Or Str.Substring(Str.Length - 4) = "taA ")) Then Str = Str.Remove(Str.Length - 1, 1)
+                            If KeyValue.Key = "k" And ((Str.Length > 2 AndAlso (Str.Substring(Str.Length - 3) = ">a " Or Str.Substring(Str.Length - 3) = "Aa ")) Or (Str.Length > 3 AndAlso (Str.Substring(Str.Length - 4) = "yaA " Or Str.Substring(Str.Length - 4) = "taA "))) Then Str = Str.Remove(Str.Length - 1, 1)
                             If (KeyValue.Key = "`" Or KeyValue.Key = "`^" Or KeyValue.Key = "Y%a") And Str.Length <> 0 AndAlso Str.Chars(Str.Length - 1) = " "c Then Str = Str.Remove(Str.Length - 1, 1)
+                            If Str.Length > 7 AndAlso Str.EndsWith("{vonataA") Then
+                                Dim Ch As Chunk = Chunks(Count - 1)
+                            End If
                             If Str.Length > 2 AndAlso Str.Substring(Str.Length - 3) = "'a " Then Str = Str.Remove(Str.Length - 1)
                             If Str.Length <> 0 AndAlso Str.Chars(Str.Length - 1) = "A"c AndAlso (KeyValue.Key = "{" Or KeyValue.Key = "a{" Or KeyValue.Key = "~a{" Or KeyValue.Key = "i{") Then
                                 Str = Str.Remove(Str.Length - 1) + KeyValue.Key
+                            ElseIf Str.Length > 2 AndAlso Str.Substring(Str.Length - 3) = "iya" And KeyValue.Key = "n" Then
+                                Str = Str.Remove(Str.Length - 1) + KeyValue.Key
+                            ElseIf KeyValue.Key = "A" And Str.Length <> 0 AndAlso Str.Chars(Str.Length - 1) = "{" Then
                             ElseIf KeyValue.Key = "_" Then
                                 If Str.Length = 0 OrElse Str.Chars(Str.Length - 1) <> "_"c Then
                                     Str += KeyValue.Key
@@ -459,12 +466,13 @@
                                 End If
                             ElseIf KeyValue.Key = "a" Then
                                 If (Chunks(Count + 1).FontName.EndsWith("+HQPB4") AndAlso Chunks(Count + 1).Str.Chars(0) = ChrW(&HE7)) Or _
-                                    (Chunks(Count + 1).FontName.EndsWith("+HQPB4") AndAlso Chunks(Count + 1).Str.Chars(0) = ChrW(&HF7)) Then
+                                    (Chunks(Count + 1).FontName.EndsWith("+HQPB4") AndAlso Chunks(Count + 1).Str.Chars(0) = ChrW(&HF7)) Or _
+                                    (Chunks(Count + 1).FontName.EndsWith("+HQPB5") AndAlso Chunks(Count + 1).Str.Chars(0) = ChrW(&HF0AF)) Then
                                 ElseIf (Chunks(Count + 1).FontName.EndsWith("+HQPB4") AndAlso Chunks(Count + 1).Str.Chars(0) = ChrW(&H28)) Or
                                     (Chunks(Count + 1).FontName.EndsWith("+MSH-Quraan1") AndAlso Chunks(Count + 1).Str.Chars(0) = ChrW(&H2203)) Then
                                 ElseIf Str.Length > 1 AndAlso Str.Chars(Str.Length - 1) = "A"c Then
                                     If Str.Chars(Str.Length - 2) <> "a"c Then Str = Str.Insert(Str.Length - 1, KeyValue.Key)
-                                ElseIf (Str.Length = 0 OrElse Str(Str.Length - 1) = " ") Or (Str.Length <> 0 AndAlso (Str.Chars(Str.Length - 1) = "^"c Or Str.Chars(Str.Length - 1) = "a"c Or Str.Chars(Str.Length - 1) = "i"c Or Str.Chars(Str.Length - 1) = "u"c Or Str.Chars(Str.Length - 1) = "o"c)) Then
+                                ElseIf (Str.Length = 0 OrElse Str(Str.Length - 1) = " ") Or (Str.Length <> 0 AndAlso (Str.Chars(Str.Length - 1) = "^"c Or Str.Chars(Str.Length - 1) = "a"c Or Str.Chars(Str.Length - 1) = "i"c Or Str.Chars(Str.Length - 1) = "u"c Or Str.Chars(Str.Length - 1) = "o"c Or Str.Chars(Str.Length - 1) = "`"c)) Then
                                     Dim Ch As Chunk = Chunks(Count + 1)
                                     Chunks(Count + 1) = Chunks(Count)
                                     Chunks(Count) = Ch
@@ -479,13 +487,21 @@
                                     (Chunks(Count + 1).FontName.EndsWith("+MSH-Quraan1") AndAlso Chunks(Count + 1).Str.Chars(0) = ChrW(&H2217)) Then
                                 ElseIf (Chunks(Count + 1).FontName.EndsWith("+HQPB4") AndAlso Chunks(Count + 1).Str.Chars(0) = ChrW(&H28)) Or
                                     (Chunks(Count + 1).FontName.EndsWith("+MSH-Quraan1") AndAlso Chunks(Count + 1).Str.Chars(0) = ChrW(&H2203)) Then
-                                ElseIf (Str.Length = 0 OrElse Str(Str.Length - 1) = " ") Or (Str.Length <> 0 AndAlso (Str.Chars(Str.Length - 1) = "^"c Or Str.Chars(Str.Length - 1) = "a"c Or Str.Chars(Str.Length - 1) = "i"c Or Str.Chars(Str.Length - 1) = "u"c Or Str.Chars(Str.Length - 1) = "o"c)) Then
+                                ElseIf (Str.Length = 0 OrElse Str(Str.Length - 1) = " ") Or (Str.Length <> 0 AndAlso (Str.Chars(Str.Length - 1) = "^"c Or Str.Chars(Str.Length - 1) = "a"c Or Str.Chars(Str.Length - 1) = "i"c Or Str.Chars(Str.Length - 1) = "u"c Or Str.Chars(Str.Length - 1) = "o"c Or (KeyValue.Key <> "^" And Str.Chars(Str.Length - 1) = "`"c))) Then
                                     Dim Ch As Chunk = Chunks(Count + 1)
                                     Chunks(Count + 1) = Chunks(Count)
                                     Chunks(Count) = Ch
                                     Count -= 1
                                 Else
                                     Str += KeyValue.Key
+                                End If
+                            ElseIf KeyValue.Key = "`" Then
+                                If Chunks(Count + 1).FontName.EndsWith("+HQPB2") AndAlso Chunks(Count + 1).Str.Chars(0) = ChrW(&H2211) Then
+                                ElseIf Str.Length <> 0 AndAlso Str.Chars(Str.Length - 1) = "W"c Then
+                                    Dim Ch As Chunk = Chunks(Count + 1)
+                                    Chunks(Count + 1) = Chunks(Count)
+                                    Chunks(Count) = Ch
+                                    Count -= 1
                                 End If
                             ElseIf KeyValue.Key = "~" Then
                                 If Str.Length <> 0 AndAlso (Str.Chars(Str.Length - 1) = "A"c Or Str.Chars(Str.Length - 1) = "K"c Or Str.Chars(Str.Length - 1) = "W"c) Then
@@ -505,7 +521,7 @@
                                     Dim Idx As Integer = Str.IndexOf(" (")
                                     If Idx = -1 Then Idx = Str.IndexOf(" madaniy~ap")
                                     If Idx = -1 Then Idx = Str.IndexOf(" ma_k~iy~apN")
-                                    QStr += "  <sura index=""" + CStr(Chapter) + """ name=""" + IslamMetadata.Arabic.TransliterateFromBuckwalter(Str.Substring(0, Idx).Replace("suwrapu ", String.Empty).Replace(")", String.Empty).Replace("(", String.Empty)).Trim() + """>" + vbCrLf
+                                    QStr += "  <sura index=""" + CStr(Chapter) + """ name=""" + IslamMetadata.Arabic.TransliterateFromBuckwalter(Str.Substring(0, Idx).Replace("suwrapu ", String.Empty).Replace("suwrap ", String.Empty).Replace(")", String.Empty).Replace("(", String.Empty)).Trim() + """>" + vbCrLf
                                 End If
                                 Dim Index As Integer = -1
                                 If Str.Substring(Str.LastIndexOf(" "c) + 1) = "1" Then

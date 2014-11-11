@@ -3314,7 +3314,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 	'ein + kasorap -> oi
 	-->
 	<versenumberschemes>
-		<versenumberscheme name="Warsh" extraverses="1:7:5,96:15:5,99:6:5,103:3:8,106:4:5" combinedverses="1:0:5,2:1:2,101:1:2,103:1:2,107:6:4"></versenumberscheme>
+		<versenumberscheme name="Warsh" extraverses="1:7:5,2:255:8,3:4:7,3:92:8,96:15:5,99:6:5,103:3:8,106:4:5" combinedverses="1:0:5,2:1:2,2:200:26,3:1:2,3:48:6,101:1:2,103:1:2,107:6:4"></versenumberscheme>
 	</versenumberschemes>
 	<translitschemes>
 		<scheme name="RomanTranslit" alphabet="a|b|t|TH|h|HH|KH|d|DH|r|z|s|SH|S|D|T|Z|`|GH|f|q|k|l|m|n|h|w|y" hamza="|a~|a&apos;|w&apos;|i&apos;|y&apos;|&apos;||&apos;" tehmarbutaalefmaksuradaggeralefgunnah="t-|t-|t-|y-|a-|n" fathadammakasratanweenlongvowelsdipthongsshaddasukun="a|u|i|AN|UN|IN|aa|oo|ee|aw|ay|=|+|aa|a|oo|u|ee|i|an|un|in|aa|a|oo|u|ee|i" tajweed="s|m|s|w|y|n|m" punctuation=" |!|&quot;|,|-|.|:|[|]|{|}| |&quot;|&quot;|,|;|?| | |(|)" number="0|1|2|3|4|5|6|7|8|9" nonarabic="p|ZJ|v|g"></scheme>

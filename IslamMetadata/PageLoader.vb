@@ -5445,21 +5445,61 @@ Public Class TanzilReader
         Verses = TanzilReader.GetQuranText(Doc, -1, -1, -1, -1)
         TargetVerses = TanzilReader.GetQuranText(TargetDoc, -1, -1, -1, -1)
         For Count As Integer = 0 To Verses.Count - 1
-            Dim Totals As New List(Of Integer) From {0}
-            Dim TargetTotals As New List(Of Integer) From {0}
-            Dim Words As New List(Of Integer)
-            Dim TargetWords As New List(Of Integer)
-            For SubCount As Integer = 0 To Math.Max(Verses(Count).Length - 1, TargetVerses(Count).Length - 1)
-                Words.Add(If(SubCount <= Verses(Count).Length - 1, Verses(Count)(SubCount).Split(" "c).Length, 0))
-                TargetWords.Add(If(SubCount <= TargetVerses(Count).Length - 1, TargetVerses(Count)(SubCount).Split(" "c).Length, 0))
-                Totals.Add(Totals(Totals.Count - 1) + Words(Words.Count - 1))
-                TargetTotals.Add(TargetTotals(TargetTotals.Count - 1) + TargetWords(TargetWords.Count - 1))
-            Next
-            For SubCount As Integer = 0 To Math.Max(Verses(Count).Length - 1, TargetVerses(Count).Length - 1)
-                If Words(SubCount) <> TargetWords(SubCount) And (Not TargetTotals.Contains(Totals(SubCount + 1)) Or Not Totals.Contains(TargetTotals(SubCount + 1))) Then
-                    Debug.Print("Chapter: " + CStr(Count + 1) + " Verse: " + CStr(SubCount + 1) + " Words: " + CStr(Words(SubCount)) + " Words: " + CStr(TargetWords(SubCount)))
+            Dim SubCount As Integer = 0
+            Dim TargetSubCount As Integer = 0
+            Dim Total As Integer = 0
+            Dim TargetTotal As Integer = 0
+            Do
+                Dim Words As String() = {}
+                Dim TargetWords As String() = {}
+                Dim HasStopSym As Boolean = False
+                If Total <= TargetTotal Then
+                    If Total <= TargetTotal And SubCount <= Verses(Count).Length - 1 Then
+                        Words = Verses(Count)(SubCount).Split(" "c)
+                        Total += Words.Length
+                        HasStopSym = Words(Words.Length - 1).Length = 1
+                        If Total = TargetTotal + 1 And HasStopSym Then
+                            Total -= 1
+                        End If
+                        SubCount += 1
+                    End If
+                    If (TargetTotal < Total Or TargetTotal = Total And SubCount = Verses(Count).Length) And TargetSubCount <= TargetVerses(Count).Length - 1 Then
+                        TargetWords = TargetVerses(Count)(TargetSubCount).Split(" "c)
+                        TargetTotal += TargetWords.Length
+                        If TargetTotal = Total + 1 Then
+                            If TargetWords(TargetWords.Length - 1).Length = 1 Then TargetTotal -= 1
+                        End If
+                        If Total = TargetTotal + 1 And HasStopSym Then
+                            Total -= 1
+                        End If
+                        TargetSubCount += 1
+                    End If
+                Else
+                    If TargetTotal <= Total And TargetSubCount <= TargetVerses(Count).Length - 1 Then
+                        TargetWords = TargetVerses(Count)(TargetSubCount).Split(" "c)
+                        TargetTotal += TargetWords.Length
+                        HasStopSym = TargetWords(TargetWords.Length - 1).Length = 1
+                        If TargetTotal = Total + 1 And HasStopSym Then
+                            TargetTotal -= 1
+                        End If
+                        TargetSubCount += 1
+                    End If
+                    If Total < TargetTotal And SubCount <= Verses(Count).Length - 1 Then
+                        Words = Verses(Count)(SubCount).Split(" "c)
+                        Total += Words.Length
+                        If Total = TargetTotal + 1 Then
+                            If Words(Words.Length - 1).Length = 1 Then Total -= 1
+                        End If
+                        If TargetTotal = Total + 1 And HasStopSym Then
+                            TargetTotal -= 1
+                        End If
+                        SubCount += 1
+                    End If
+                    End If
+                If Total <> TargetTotal Then
+                    Debug.Print("Chapter: " + CStr(Count + 1) + " Verse: " + CStr(SubCount) + " Words: " + CStr(Words.Length) + " Verse: " + CStr(TargetSubCount) + " Words: " + CStr(TargetWords.Length) + If(Words.Length > TargetWords.Length, "  +", "  -") + CStr(Count + 1) + ":" + CStr(Math.Max(SubCount, TargetSubCount)) + ":" + CStr(Math.Min(Words.Length, TargetWords.Length) + 1))
                 End If
-            Next
+            Loop While Total <= TargetTotal And SubCount <= Verses(Count).Length - 1 Or TargetTotal <= Total And TargetSubCount <= TargetVerses(Count).Length - 1
         Next
     End Sub
     Public Shared Sub ChangeQuranFormat(BaseText As QuranTexts, TargetBaseText As QuranTexts, ScriptType As QuranScripts, Presentation As ArabicPresentation)
@@ -5498,7 +5538,8 @@ Public Class TanzilReader
                     CurVerse.Attributes.GetNamedItem("text").Value = Arabic.TransliterateToScheme(CurVerse.Attributes.GetNamedItem("text").Value, Arabic.TranslitScheme.Literal, String.Empty)
                 End If
                 If BaseText = QuranTexts.Hafs And TargetBaseText = QuranTexts.Warsh Then
-                    Dim Index As Integer = Array.FindIndex(CachedData.IslamData.VerseNumberSchemes(0).CombinedVerses, Function(Ints As Integer()) Count + 1 = Ints(0) And SubCount + 1 + VerseAdjust - 1 = Ints(1))
+                    Dim TCount As Integer = Count
+                    Dim Index As Integer = Array.FindIndex(CachedData.IslamData.VerseNumberSchemes(0).CombinedVerses, Function(Ints As Integer()) TCount + 1 = Ints(0) And SubCount + 1 + VerseAdjust - 1 = Ints(1))
                     If Index <> -1 Then
                         GetTextVerse(ChapterNode, SubCount).Attributes.GetNamedItem("text").Value = GetTextVerse(ChapterNode, SubCount).Attributes.GetNamedItem("text").Value + " " + CurVerse.Attributes.GetNamedItem("text").Value
                         CurVerse.ParentNode.RemoveChild(CurVerse)
@@ -5508,7 +5549,7 @@ Public Class TanzilReader
                             GetTextVerse(ChapterNode, Index + 1).Attributes.GetNamedItem("index").Value = CStr(CInt(GetTextVerse(ChapterNode, Index + 1).Attributes.GetNamedItem("index").Value) - 1)
                         Next
                     End If
-                    Index = Array.FindIndex(CachedData.IslamData.VerseNumberSchemes(0).ExtraVerses, Function(Ints As Integer()) Count + 1 = Ints(0) And SubCount + 1 + VerseAdjust = Ints(1))
+                    Index = Array.FindIndex(CachedData.IslamData.VerseNumberSchemes(0).ExtraVerses, Function(Ints As Integer()) TCount + 1 = Ints(0) And SubCount + 1 + VerseAdjust = Ints(1))
                     If Index <> -1 Then
                         Dim NewNode As Xml.XmlNode = CurVerse.Clone()
                         If Not NewNode.Attributes.GetNamedItem("bismillah") Is Nothing Then
