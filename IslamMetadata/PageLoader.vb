@@ -5534,6 +5534,7 @@ Public Class TanzilReader
                             GetTextVerse(ChapterNode, SubCount).Attributes.GetNamedItem("text").Value = GetTextVerse(ChapterNode, SubCount).Attributes.GetNamedItem("text").Value + " " + CurVerse.Attributes.GetNamedItem("text").Value
                         End If
                         CurVerse.ParentNode.RemoveChild(CurVerse)
+                        CurVerse = GetTextVerse(ChapterNode, SubCount)
                         VerseAdjust += 1
                         SubCount -= 1
                         For Index = SubCount + 2 To Verses(Count).Length - 1 - VerseAdjust + 1
