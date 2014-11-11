@@ -5452,52 +5452,34 @@ Public Class TanzilReader
             Do
                 Dim Words As String() = {}
                 Dim TargetWords As String() = {}
-                Dim HasStopSym As Boolean = False
                 If Total <= TargetTotal Then
                     If Total <= TargetTotal And SubCount <= Verses(Count).Length - 1 Then
                         Words = Verses(Count)(SubCount).Split(" "c)
-                        Total += Words.Length
-                        HasStopSym = Words(Words.Length - 1).Length = 1
-                        If Total = TargetTotal + 1 And HasStopSym Then
-                            Total -= 1
-                        End If
+                        Total += Words.Length - Array.FindAll(Words, Function(Str As String) Str.Length = 1).Length
                         SubCount += 1
                     End If
-                    If (TargetTotal < Total Or TargetTotal = Total And SubCount = Verses(Count).Length) And TargetSubCount <= TargetVerses(Count).Length - 1 Then
+                    While (TargetTotal < Total Or TargetTotal = Total And SubCount = Verses(Count).Length) And TargetSubCount <= TargetVerses(Count).Length - 1
                         TargetWords = TargetVerses(Count)(TargetSubCount).Split(" "c)
-                        TargetTotal += TargetWords.Length
-                        If TargetTotal = Total + 1 Then
-                            If TargetWords(TargetWords.Length - 1).Length = 1 Then TargetTotal -= 1
-                        End If
-                        If Total = TargetTotal + 1 And HasStopSym Then
-                            Total -= 1
-                        End If
+                        TargetTotal += TargetWords.Length - Array.FindAll(TargetWords, Function(Str As String) Str.Length = 1).Length
                         TargetSubCount += 1
-                    End If
+                        If Total <> TargetTotal Then
+                            Debug.Print("Chapter: " + CStr(Count + 1) + " Verse: " + CStr(SubCount) + " Words: " + CStr(Words.Length) + " Verse: " + CStr(TargetSubCount) + " Words: " + CStr(TargetWords.Length) + If(Words.Length > TargetWords.Length, "  +", "  -") + CStr(Count + 1) + ":" + CStr(Math.Max(SubCount, TargetSubCount)) + ":" + CStr(Math.Min(Words.Length, TargetWords.Length) + 1))
+                        End If
+                    End While
                 Else
                     If TargetTotal <= Total And TargetSubCount <= TargetVerses(Count).Length - 1 Then
                         TargetWords = TargetVerses(Count)(TargetSubCount).Split(" "c)
-                        TargetTotal += TargetWords.Length
-                        HasStopSym = TargetWords(TargetWords.Length - 1).Length = 1
-                        If TargetTotal = Total + 1 And HasStopSym Then
-                            TargetTotal -= 1
-                        End If
+                        TargetTotal += TargetWords.Length - Array.FindAll(TargetWords, Function(Str As String) Str.Length = 1).Length
                         TargetSubCount += 1
                     End If
-                    If Total < TargetTotal And SubCount <= Verses(Count).Length - 1 Then
+                    While Total < TargetTotal And SubCount <= Verses(Count).Length - 1
                         Words = Verses(Count)(SubCount).Split(" "c)
-                        Total += Words.Length
-                        If Total = TargetTotal + 1 Then
-                            If Words(Words.Length - 1).Length = 1 Then Total -= 1
-                        End If
-                        If TargetTotal = Total + 1 And HasStopSym Then
-                            TargetTotal -= 1
-                        End If
+                        Total += Words.Length - Array.FindAll(Words, Function(Str As String) Str.Length = 1).Length
                         SubCount += 1
-                    End If
-                    End If
-                If Total <> TargetTotal Then
-                    Debug.Print("Chapter: " + CStr(Count + 1) + " Verse: " + CStr(SubCount) + " Words: " + CStr(Words.Length) + " Verse: " + CStr(TargetSubCount) + " Words: " + CStr(TargetWords.Length) + If(Words.Length > TargetWords.Length, "  +", "  -") + CStr(Count + 1) + ":" + CStr(Math.Max(SubCount, TargetSubCount)) + ":" + CStr(Math.Min(Words.Length, TargetWords.Length) + 1))
+                        If Total <> TargetTotal Then
+                            Debug.Print("Chapter: " + CStr(Count + 1) + " Verse: " + CStr(SubCount) + " Words: " + CStr(Words.Length) + " Verse: " + CStr(TargetSubCount) + " Words: " + CStr(TargetWords.Length) + If(Words.Length > TargetWords.Length, "  +", "  -") + CStr(Count + 1) + ":" + CStr(Math.Max(SubCount, TargetSubCount)) + ":" + CStr(Math.Min(Words.Length, TargetWords.Length) + 1))
+                        End If
+                    End While
                 End If
             Loop While Total <= TargetTotal And SubCount <= Verses(Count).Length - 1 Or TargetTotal <= Total And TargetSubCount <= TargetVerses(Count).Length - 1
         Next
@@ -5541,7 +5523,16 @@ Public Class TanzilReader
                     Dim TCount As Integer = Count
                     Dim Index As Integer = Array.FindIndex(CachedData.IslamData.VerseNumberSchemes(0).CombinedVerses, Function(Ints As Integer()) TCount + 1 = Ints(0) And SubCount + 1 + VerseAdjust - 1 = Ints(1))
                     If Index <> -1 Then
-                        GetTextVerse(ChapterNode, SubCount).Attributes.GetNamedItem("text").Value = GetTextVerse(ChapterNode, SubCount).Attributes.GetNamedItem("text").Value + " " + CurVerse.Attributes.GetNamedItem("text").Value
+                        If SubCount = 0 Then
+                            SubCount += 1
+                            CurVerse = GetTextVerse(ChapterNode, SubCount + 1)
+                            Dim NewAttr As Xml.XmlAttribute = Doc.CreateAttribute("bismillah")
+                            NewAttr.Value = GetTextVerse(ChapterNode, SubCount).Attributes.GetNamedItem("text").Value
+                            GetTextVerse(ChapterNode, SubCount).Attributes.InsertAfter(NewAttr, CType(GetTextVerse(ChapterNode, SubCount).Attributes.GetNamedItem("text"), Xml.XmlAttribute))
+                            GetTextVerse(ChapterNode, SubCount).Attributes.GetNamedItem("text").Value = CurVerse.Attributes.GetNamedItem("text").Value
+                        Else
+                            GetTextVerse(ChapterNode, SubCount).Attributes.GetNamedItem("text").Value = GetTextVerse(ChapterNode, SubCount).Attributes.GetNamedItem("text").Value + " " + CurVerse.Attributes.GetNamedItem("text").Value
+                        End If
                         CurVerse.ParentNode.RemoveChild(CurVerse)
                         VerseAdjust += 1
                         SubCount -= 1

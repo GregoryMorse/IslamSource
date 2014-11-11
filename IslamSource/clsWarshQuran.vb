@@ -289,6 +289,7 @@
         End Class
         Public Chunks As New Generic.List(Of Chunk)
         Public Hamd2Strs As New List(Of Byte())
+        Public Str As String = String.Empty
         Dim Chapter As Integer = 0
         Dim Verse As Integer = 0
         Public Sub BeginTextBlock() Implements iTextSharp.text.pdf.parser.IRenderListener.BeginTextBlock
@@ -319,7 +320,6 @@
         End Sub
 
         Public Function GetResultantText() As String Implements iTextSharp.text.pdf.parser.ITextExtractionStrategy.GetResultantText
-            Dim Str As String = String.Empty
             Dim QStr As String = String.Empty
             Chunks.Sort(Function(First As Chunk, Second As Chunk)
                             If First.Start.Item(iTextSharp.text.pdf.parser.Vector.I2) = Second.Start.Item(iTextSharp.text.pdf.parser.Vector.I2) Or Math.Abs(First.Start.Item(iTextSharp.text.pdf.parser.Vector.I2) - Second.Start.Item(iTextSharp.text.pdf.parser.Vector.I2)) < 0.003 Then
@@ -327,10 +327,10 @@
                                     If First.Start.Item(iTextSharp.text.pdf.parser.Vector.I1) = Second.Start.Item(iTextSharp.text.pdf.parser.Vector.I1) Then Return First.Str.CompareTo(Second.Str)
                                     Return If(First.Start.Item(iTextSharp.text.pdf.parser.Vector.I1) > Second.Start.Item(iTextSharp.text.pdf.parser.Vector.I1), -1, 1)
                                 End If
-                                If (First.FontName.EndsWith("+HQPB4") Or First.FontName.EndsWith("+HQPB5") Or First.FontName.EndsWith("+HQPB7") Or First.FontName.EndsWith("+MSH-Quraan1")) And First.Start.Item(iTextSharp.text.pdf.parser.Vector.I1) - 0.007 <= Second.Start.Item(iTextSharp.text.pdf.parser.Vector.I1) Then
+                                If (First.FontName.EndsWith("+HQPB4") Or First.FontName.EndsWith("+HQPB5") Or First.FontName.EndsWith("+HQPB7") Or First.FontName.EndsWith("+MSH-Quraan1")) And First.Start.Item(iTextSharp.text.pdf.parser.Vector.I1) - 0.013 <= Second.Start.Item(iTextSharp.text.pdf.parser.Vector.I1) Then
                                     Return 1
                                 End If
-                                If (Second.FontName.EndsWith("+HQPB4") Or Second.FontName.EndsWith("+HQPB5") Or Second.FontName.EndsWith("+HQPB7") Or Second.FontName.EndsWith("+MSH-Quraan1")) And First.Start.Item(iTextSharp.text.pdf.parser.Vector.I1) >= Second.Start.Item(iTextSharp.text.pdf.parser.Vector.I1) - 0.007 Then
+                                If (Second.FontName.EndsWith("+HQPB4") Or Second.FontName.EndsWith("+HQPB5") Or Second.FontName.EndsWith("+HQPB7") Or Second.FontName.EndsWith("+MSH-Quraan1")) And First.Start.Item(iTextSharp.text.pdf.parser.Vector.I1) >= Second.Start.Item(iTextSharp.text.pdf.parser.Vector.I1) - 0.013 Then
                                     Return -1
                                 End If
                                 Return If(First.Start.Item(iTextSharp.text.pdf.parser.Vector.I1) > Second.Start.Item(iTextSharp.text.pdf.parser.Vector.I1), -1, 1)
@@ -405,14 +405,16 @@
                             If KeyValue.Value(Match) = &H23AF And (KeyValue.Key = "n" Or KeyValue.Key = "r") And Str.Length > 1 AndAlso Str.Chars(Str.Length - 1) = "i"c AndAlso Str.Chars(Str.Length - 2) = "h"c Then Continue For
                             If KeyValue.Value(Match) = &HAE And KeyValue.Key = "9" And Str.Length = 0 Then Continue For
                             If Str.Length <> 0 AndAlso Str.Chars(Str.Length - 1) = "."c And KeyValue.Key <> "^" Then Str = Str.Remove(Str.Length - 1).Insert(Str.Length - 1, "n")
-                            If Str.Length <> 0 AndAlso (Str.Chars(Str.Length - 1) = "Q"c Or Str.Chars(Str.Length - 1) = "I"c Or Str.Chars(Str.Length - 1) = "C"c Or Str.Chars(Str.Length - 1) = "L"c) Then Str += " "
+                            If Str.Length <> 0 AndAlso (Str.Chars(Str.Length - 1) = "M"c Or Str.Chars(Str.Length - 1) = "Q"c Or Str.Chars(Str.Length - 1) = "I"c Or Str.Chars(Str.Length - 1) = "C"c Or Str.Chars(Str.Length - 1) = "L"c) Then Str += " "
                             If (KeyValue.Key = "Y`" Or KeyValue.Key = "Y") And Str.Length > 2 AndAlso Str.Chars(Str.Length - 1) = "W"c AndAlso Str.Chars(Str.Length - 3) = " "c Then Str = Str.Remove(Str.Length - 3, 1)
-                            If KeyValue.Key = "k" And ((Str.Length > 2 AndAlso (Str.Substring(Str.Length - 3) = ">a " Or Str.Substring(Str.Length - 3) = "Aa ")) Or (Str.Length > 3 AndAlso (Str.Substring(Str.Length - 4) = "yaA " Or Str.Substring(Str.Length - 4) = "taA "))) Then Str = Str.Remove(Str.Length - 1, 1)
+                            If KeyValue.Key = "k" And ((Str.Length > 2 AndAlso (Str.Substring(Str.Length - 3) = "Au " Or Str.Substring(Str.Length - 3) = ">a " Or Str.Substring(Str.Length - 3) = "Aa ")) Or (Str.Length > 3 AndAlso (Str.Substring(Str.Length - 4) = "z~a " Or Str.Substring(Str.Length - 4) = "yaA " Or Str.Substring(Str.Length - 4) = "taA ")) Or (Str.Length > 4 AndAlso Str.Substring(Str.Length - 5) = "vara ")) Then Str = Str.Remove(Str.Length - 1, 1)
                             If (KeyValue.Key = "`" Or KeyValue.Key = "`^" Or KeyValue.Key = "Y%a") And Str.Length <> 0 AndAlso Str.Chars(Str.Length - 1) = " "c Then Str = Str.Remove(Str.Length - 1, 1)
-                            If Str.Length > 7 AndAlso Str.EndsWith("{vonataA") Then
-                                Dim Ch As Chunk = Chunks(Count - 1)
-                            End If
+                            If KeyValue.Key = "A" AndAlso Str.Length > 5 AndAlso Str.Substring(Str.Length - 6) = "oda ma" Then Str = Str.Remove(Str.Length - 3, 1)
+                            If KeyValue.Key = "N" AndAlso Str.Length > 1 AndAlso Str.Substring(Str.Length - 2) = " '" Then Str = Str.Remove(Str.Length - 2, 1)
+                            If Str.EndsWith("wa Aami") Then Str = Str.Remove(Str.Length - 5, 1)
+                            If KeyValue.Key = "~" AndAlso Str.Length > 1 AndAlso Str.Substring(Str.Length - 2) = "d " Then Str = Str.Remove(Str.Length - 1, 1)
                             If Str.Length > 2 AndAlso Str.Substring(Str.Length - 3) = "'a " Then Str = Str.Remove(Str.Length - 1)
+                            If Str.Length > 2 AndAlso Str = "wa " Or Str.Length > 3 AndAlso Str.EndsWith(" wa ") Then Str = Str.Remove(Str.Length - 1)
                             If Str.Length <> 0 AndAlso Str.Chars(Str.Length - 1) = "A"c AndAlso (KeyValue.Key = "{" Or KeyValue.Key = "a{" Or KeyValue.Key = "~a{" Or KeyValue.Key = "i{") Then
                                 Str = Str.Remove(Str.Length - 1) + KeyValue.Key
                             ElseIf Str.Length > 2 AndAlso Str.Substring(Str.Length - 3) = "iya" And KeyValue.Key = "n" Then
@@ -422,7 +424,7 @@
                                 If Str.Length = 0 OrElse Str.Chars(Str.Length - 1) <> "_"c Then
                                     Str += KeyValue.Key
                                 End If
-                            ElseIf KeyValue.Key = "Q" Or KeyValue.Key = "I" Or KeyValue.Key = "C" Or KeyValue.Key = "L" Then
+                            ElseIf KeyValue.Key = "M" Or KeyValue.Key = "Q" Or KeyValue.Key = "I" Or KeyValue.Key = "C" Or KeyValue.Key = "L" Then
                                 If Str.Length <> 0 AndAlso Str.Chars(Str.Length - 1) <> " " Then
                                     Dim Ch As Chunk = Chunks(Count + 1)
                                     Chunks(Count + 1) = Chunks(Count)
@@ -432,15 +434,27 @@
                                     Str += KeyValue.Key
                                 End If
                             ElseIf KeyValue.Key = "i~ai" Or KeyValue.Key = "~i~ai" Then
-                                Str = Str.Insert(Str.Length - 2, KeyValue.Key.Chars(0))
-                                If KeyValue.Key.Chars(0) = "~"c Then
-                                    Str = Str.Insert(Str.Length - 2, KeyValue.Key.Chars(1))
+                                If (Str.Length = 0 OrElse Str(Str.Length - 1) = " ") Then
+                                    Dim Ch As Chunk = Chunks(Count + 1)
+                                    Chunks(Count + 1) = Chunks(Count)
+                                    Chunks(Count) = Ch
+                                    Count -= 1
+                                Else
+                                    Str = Str.Insert(Str.Length - 2, KeyValue.Key.Chars(0))
+                                    If KeyValue.Key.Chars(0) = "~"c Then
+                                        Str = Str.Insert(Str.Length - 2, KeyValue.Key.Chars(1))
+                                    End If
+                                    Str = Str.Insert(Str.Length - 1, KeyValue.Key.Chars(If(KeyValue.Key.Chars(0) = "~"c, 2, 1)) + KeyValue.Key.Chars(If(KeyValue.Key.Chars(0) = "~", 3, 2)))
+                                    Str += KeyValue.Key.Chars(If(KeyValue.Key.Chars(0) = "~", 4, 3))
                                 End If
-                                Str = Str.Insert(Str.Length - 1, KeyValue.Key.Chars(If(KeyValue.Key.Chars(0) = "~"c, 2, 1)) + KeyValue.Key.Chars(If(KeyValue.Key.Chars(0) = "~", 3, 2)))
-                                Str += KeyValue.Key.Chars(If(KeyValue.Key.Chars(0) = "~", 4, 3))
                             ElseIf KeyValue.Key <> String.Empty AndAlso KeyValue.Key.Length >= If(KeyValue.Key.Chars(0) = "~"c, 3, 2) AndAlso ("aiuo^".IndexOf(KeyValue.Key.Chars(1)) <> -1 And "aiuo^".IndexOf(KeyValue.Key.Chars(If(KeyValue.Key.Chars(0) = "~"c, 2, 0))) <> -1) Then
                                 '"oa", "ia", "oi", "iu", "aa", "~ia", "ai", "~iu", "ii", "au", "~aa", "~ii", "~au", "ao", "~ai"
-                                If KeyValue.Key.Chars(0) = "~"c AndAlso Str.Length > 2 AndAlso Str.Chars(Str.Length - 3) = KeyValue.Key.Chars(1) AndAlso Str.Chars(Str.Length - 1) = KeyValue.Key.Chars(2) Then
+                                If (Str.Length = 0 OrElse Str(Str.Length - 1) = " ") Then
+                                    Dim Ch As Chunk = Chunks(Count + 1)
+                                    Chunks(Count + 1) = Chunks(Count)
+                                    Chunks(Count) = Ch
+                                    Count -= 1
+                                ElseIf KeyValue.Key.Chars(0) = "~"c AndAlso Str.Length > 2 AndAlso Str.Chars(Str.Length - 3) = KeyValue.Key.Chars(1) AndAlso Str.Chars(Str.Length - 1) = KeyValue.Key.Chars(2) Then
                                     Str = Str.Insert(Str.Length - 3, KeyValue.Key.Chars(0))
                                 ElseIf KeyValue.Key.Chars(0) <> "~"c AndAlso Str.Length > 2 AndAlso Str.Chars(Str.Length - 3) = KeyValue.Key.Chars(0) AndAlso Str.Chars(Str.Length - 1) = KeyValue.Key.Chars(1) Then
                                 Else
@@ -456,7 +470,7 @@
                                 ElseIf Str.Length > 1 AndAlso Str.Chars(Str.Length - 1) = "A"c Then
                                     Str = Str.Insert(Str.Length - 1, KeyValue.Key)
                                 ElseIf Str.Length > 1 AndAlso Str.Chars(Str.Length - 1) = KeyValue.Key.Chars(1) AndAlso Str.Chars(Str.Length - 2) = KeyValue.Key.Chars(0) Then
-                                ElseIf Str.Length <> 0 AndAlso (Str.Chars(Str.Length - 1) = "a"c Or Str.Chars(Str.Length - 1) = "i"c Or Str.Chars(Str.Length - 1) = "u"c Or Str.Chars(Str.Length - 1) = "^"c) Then
+                                ElseIf (Str.Length = 0 OrElse Str(Str.Length - 1) = " ") Or Str.Length <> 0 AndAlso (Str.Chars(Str.Length - 1) = "a"c Or Str.Chars(Str.Length - 1) = "i"c Or Str.Chars(Str.Length - 1) = "u"c Or Str.Chars(Str.Length - 1) = "^"c) Then
                                     Dim Ch As Chunk = Chunks(Count + 1)
                                     Chunks(Count + 1) = Chunks(Count)
                                     Chunks(Count) = Ch
@@ -497,11 +511,13 @@
                                 End If
                             ElseIf KeyValue.Key = "`" Then
                                 If Chunks(Count + 1).FontName.EndsWith("+HQPB2") AndAlso Chunks(Count + 1).Str.Chars(0) = ChrW(&H2211) Then
-                                ElseIf Str.Length <> 0 AndAlso Str.Chars(Str.Length - 1) = "W"c Then
+                                ElseIf (Str.Length = 0 OrElse Str(Str.Length - 1) = " ") Or Str.Length <> 0 AndAlso Str.Chars(Str.Length - 1) = "W"c Then
                                     Dim Ch As Chunk = Chunks(Count + 1)
                                     Chunks(Count + 1) = Chunks(Count)
                                     Chunks(Count) = Ch
                                     Count -= 1
+                                Else
+                                    Str += KeyValue.Key
                                 End If
                             ElseIf KeyValue.Key = "~" Then
                                 If Str.Length <> 0 AndAlso (Str.Chars(Str.Length - 1) = "A"c Or Str.Chars(Str.Length - 1) = "K"c Or Str.Chars(Str.Length - 1) = "W"c) Then
@@ -561,6 +577,7 @@
                     If (Match = -1) Then Debug.Print(Chunks(Count).FontName + ": " + Chunks(Count).Str)
                 End If
             Next
+            If Str = "A " Or Str = "A 9 " Or Str = "A  " Then Str = String.Empty
             Return QStr
         End Function
     End Class
