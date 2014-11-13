@@ -3324,7 +3324,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 		<scheme name="InternetArabic" alphabet="a|b|t|th|j|7|kh|d|th|r|z|s|sh|s|dh|6|th|3|gh|f|9|k|l|m|n|h|w|y" hamza="2|2a|2|w2|2|y2||a|" tehmarbutaalefmaksuradaggeralefgunnah="|||y|a|n" fathadammakasratanweenlongvowelsdipthongsshaddasukun="a|u|i|an|un|in|aa|oo|ee|aw|ay|||aa|a|oo|u|ee|i|an|un|in|aa|a|oo|u|ee|i" tajweed="||||||" punctuation=" |!|&quot;|,|-|.|:|[|]|{|}| |&quot;|&quot;|,|;|?| | |(|)" number="0|1|2|3|4|5|6|7|8|9" nonarabic="p|j|v|g"></scheme>
 	</translitschemes>
 	<arabicletters>
-		<arabicsymbol symbolname="hamozapN" uname="ArabicLetterHamza" symbol="0621" shaping="FE80,,," ipavalue="ʔ" extendedbuckwalter="39" terminating="false" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="hamozapN" uname="ArabicLetterHamza" symbol="0621" shaping="FE80,,," ipavalue="ʔ" extendedbuckwalter="39" terminating="true" connecting="false" assimilate="false" />
 		<arabicsymbol symbolname="&gt;alifN mad~apN" uname="ArabicLetterAlefWithMaddaAbove" symbol="0622" shaping="FE81,FE82,," ipavalue="?a:" extendedbuckwalter="124" terminating="true" connecting="true" assimilate="false" />
 		<arabicsymbol symbolname="&gt;alifN hamozapN qaToE" uname="ArabicLetterAlefWithHamzaAbove" symbol="0623" shaping="FE83,FE84,," ipavalue="ʔ" extendedbuckwalter="62" terminating="true" connecting="true" assimilate="false" />
 		<arabicsymbol symbolname="waAwN hamozapN" uname="ArabicLetterWawWithHamzaAbove" symbol="0624" shaping="FE85,FE86,," ipavalue="ʔ" extendedbuckwalter="38" terminating="true" connecting="true" assimilate="false" />
@@ -3384,7 +3384,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 		<arabicsymbol symbolname="vamaAnoyapN" uname="ArabicIndicDigitEight" symbol="0668" ipavalue="" extendedbuckwalter="56" terminating="true" connecting="false" assimilate="false" />
 		<arabicsymbol symbolname="tisoEapN" uname="ArabicIndicDigitNine" symbol="0669" ipavalue="" extendedbuckwalter="57" terminating="true" connecting="false" assimilate="false" />
 		<arabicsymbol symbolname="&gt;alifN xanjariyapN" uname="ArabicLetterSuperscriptAlef" symbol="0670" ipavalue="a:" extendedbuckwalter="96" terminating="false" connecting="false" assimilate="false" />
-		<arabicsymbol symbolname="&gt;alifN hamozapN waSolN" uname="ArabicLetterAlefWasla" symbol="0671" shaping="FB50,FB51,," ipavalue="" extendedbuckwalter="123" terminating="false" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="&gt;alifN hamozapN waSolN" uname="ArabicLetterAlefWasla" symbol="0671" shaping="FB50,FB51,," ipavalue="" extendedbuckwalter="123" terminating="true" connecting="true" assimilate="false" />
 		<arabicsymbol symbolname="nuwnN gun~apN" uname="ArabicLetterNoonGhunna" symbol="06BA" shaping="FB9E,FB9F,," ipavalue="n" extendedbuckwalter="0" terminating="false" connecting="true" assimilate="true" />
 		<arabicsymbol symbolname="yaA^&apos;N bar~iyN" uname="ArabicLetterYehBarree" symbol="06D2" shaping="FBAE,FBAF,," ipavalue="j" extendedbuckwalter="0" terminating="false" connecting="true" assimilate="true" />
 		<arabicsymbol symbolname="yaA^&apos;N bar~iyN hamozapN" uname="ArabicLetterYehBarreeWithHamzaAbove" symbol="06D3" shaping="FBB0,FBB1,," ipavalue="ʔ" extendedbuckwalter="0" terminating="false" connecting="true" assimilate="true" />		
@@ -3435,14 +3435,14 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 		<arabicsymbol symbolname="faAsilapN manquwTapN" uname="ArabicSemicolon" symbol="061B" ipavalue="" extendedbuckwalter="0" terminating="true" connecting="false" assimilate="false" />
 		<arabicsymbol symbolname="Ealamapu &lt;isotifohaAmN" uname="ArabicQuestionMark" symbol="061F" ipavalue="" extendedbuckwalter="0" terminating="false" connecting="false" assimilate="false" />
 		<arabicsymbol symbolname="{lv~alaAvu" uname="ZeroWidthNonJoiner" symbol="200C" ipavalue="" extendedbuckwalter="0" terminating="false" connecting="false" assimilate="false" />
-		<arabicsymbol symbolname="" uname="LeftToRightMark" symbol="200E" ipavalue="" extendedbuckwalter="0" terminating="false" connecting="false" assimilate="false" />
-		<arabicsymbol symbolname="" uname="RightToLeftMark" symbol="200F" ipavalue="" extendedbuckwalter="0" terminating="false" connecting="false" assimilate="false" />
-		<arabicsymbol symbolname="" uname="LeftToRightEmbedding" symbol="202A" ipavalue="" extendedbuckwalter="0" terminating="false" connecting="false" assimilate="false" />
-		<arabicsymbol symbolname="" uname="RightToLeftEmbedding" symbol="202B" ipavalue="" extendedbuckwalter="0" terminating="false" connecting="false" assimilate="false" />
-		<arabicsymbol symbolname="" uname="PopDirectionalFormatting" symbol="202C" ipavalue="" extendedbuckwalter="0" terminating="false" connecting="false" assimilate="false" />
-		<arabicsymbol symbolname="" uname="LeftToRightOverride" symbol="202D" ipavalue="" extendedbuckwalter="0" terminating="false" connecting="false" assimilate="false" />
-		<arabicsymbol symbolname="" uname="RightToLeftOverride" symbol="202E" ipavalue="" extendedbuckwalter="0" terminating="false" connecting="false" assimilate="false" />
-		<arabicsymbol symbolname="{lv~alaAvu" uname="NarrowNoBreakSpace" symbol="202F" ipavalue="" extendedbuckwalter="0" terminating="false" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="" uname="LeftToRightMark" symbol="200E" ipavalue="" extendedbuckwalter="0" terminating="true" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="" uname="RightToLeftMark" symbol="200F" ipavalue="" extendedbuckwalter="0" terminating="true" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="" uname="LeftToRightEmbedding" symbol="202A" ipavalue="" extendedbuckwalter="0" terminating="true" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="" uname="RightToLeftEmbedding" symbol="202B" ipavalue="" extendedbuckwalter="0" terminating="true" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="" uname="PopDirectionalFormatting" symbol="202C" ipavalue="" extendedbuckwalter="0" terminating="true" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="" uname="LeftToRightOverride" symbol="202D" ipavalue="" extendedbuckwalter="0" terminating="true" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="" uname="RightToLeftOverride" symbol="202E" ipavalue="" extendedbuckwalter="0" terminating="true" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="{lv~alaAvu" uname="NarrowNoBreakSpace" symbol="202F" ipavalue="" extendedbuckwalter="0" terminating="true" connecting="false" assimilate="false" />
 		
 		<arabicsymbol symbolname="yamiynN {loqawosaAnu" uname="OrnateLeftParenthesis" symbol="FD3E" ipavalue="" extendedbuckwalter="41" terminating="true" connecting="false" assimilate="false" />
 		<arabicsymbol symbolname="yasaArN {loqawosaAnu" uname="OrnateRightParenthesis" symbol="FD3F" ipavalue="" extendedbuckwalter="40" terminating="true" connecting="false" assimilate="false" />
