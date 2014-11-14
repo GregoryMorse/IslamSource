@@ -33,9 +33,10 @@
     Private Shared Function GetTextWidthFromTextBox(NewText As TextBox, hdc As IntPtr) As IslamMetadata.RenderArray.GetTextWidth
         Dim ret As IntPtr = SendMessage(NewText.Handle, EM_GETMARGINS, IntPtr.Zero, IntPtr.Zero)
         Dim WidthOffset As Integer = (ret.ToInt32() And &HFFFF) + (ret.ToInt32() << 16) + GetSystemMetrics(SM_CXBORDER) * 2 + NewText.Margin.Left + NewText.Margin.Right
-        Return Function(Str As String, MaxWidth As Single, IsRTL As Boolean, ByRef s As SizeF)
+        Return Function(Str As String, MaxWidth As Single, IsRTL As Boolean, ByRef s As SizeF, ByRef Baseline As Single)
                    Dim nChar As Integer
                    Dim GetSize As Size
+                   Baseline = NewText.Font.FontFamily.GetCellAscent(NewText.Font.Style)
                    SetTextAlign(hdc, If(IsRTL, TA_RTLREADING, CUInt(0)))
                    GetTextExtentExPoint(hdc, Str, Str.Length, CInt(MaxWidth) - WidthOffset, nChar, Nothing, GetSize)
                    s = New SizeF(GetSize.Width, GetSize.Height)

@@ -3202,12 +3202,14 @@ Public Class RenderArray
     End Structure
     Public Items As New Collections.Generic.List(Of RenderItem)
     Structure LayoutInfo
-        Public Sub New(NewRect As RectangleF, NewNChar As Integer, NewBounds As Generic.List(Of Generic.List(Of Generic.List(Of LayoutInfo))))
+        Public Sub New(NewRect As RectangleF, NewBaseline As Single, NewNChar As Integer, NewBounds As Generic.List(Of Generic.List(Of Generic.List(Of LayoutInfo))))
             Rect = NewRect
+            Baseline = NewBaseline
             nChar = NewNChar
             Bounds = NewBounds
         End Sub
         Dim Rect As RectangleF
+        Dim Baseline As Single
         Dim nChar As Integer
         Dim Bounds As Generic.List(Of Generic.List(Of Generic.List(Of LayoutInfo)))
     End Structure
@@ -3233,9 +3235,9 @@ Public Class RenderArray
                         Rect.Offset(BaseOffset)
                         Rect.Offset(PageOffset)
                         MaxRect.X = Math.Min(MaxRect.Left, Rect.Left)
-                        MaxRect.Y = Math.Min(MaxRect.Top, Rect.Top - Font.BaseFont.GetAscentPoint(Text, Font.Size) - Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size))
+                        MaxRect.Y = Math.Min(MaxRect.Top, Rect.Top)
                         MaxRect.Width = Math.Max(MaxRect.Right, Rect.Right) - MaxRect.Left + 1
-                        MaxRect.Height = Math.Max(MaxRect.Bottom, Rect.Bottom - Font.BaseFont.GetAscentPoint(Text, Font.Size) - Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size)) - MaxRect.Top + 1
+                        MaxRect.Height = Math.Max(MaxRect.Bottom, Rect.Bottom) - MaxRect.Top + 1
                         Dim ct As iTextSharp.text.pdf.ColumnText
                         Dim Index As Integer = 0
                         Do
@@ -3246,15 +3248,16 @@ Public Class RenderArray
                                     NumCount += 1
                                 Loop
                                 Dim s As New SizeF
-                                GetTextWidthPdf(Font, Text.Substring(0, Index + 1 + NumCount), Doc.PageSize.Width, True, s)
+                                Dim Baseline As Single
+                                GetTextWidthPdf(Font, Text.Substring(0, Index + 1 + NumCount), Doc.PageSize.Width, True, s, Baseline)
                                 Dim ChBounds As Integer() = Font.BaseFont.GetCharBBox(AscW(Text(Index)))
                                 Dim n As New SizeF
-                                GetTextWidthPdf(Font, Text.Substring(Index + 1, NumCount), Doc.PageSize.Width, True, n)
+                                GetTextWidthPdf(Font, Text.Substring(Index + 1, NumCount), Doc.PageSize.Width, True, n, Baseline)
                                 ct = New iTextSharp.text.pdf.ColumnText(Writer.DirectContent)
                                 ct.RunDirection = iTextSharp.text.pdf.PdfWriter.RUN_DIRECTION_RTL
                                 ct.ArabicOptions = iTextSharp.text.pdf.ColumnText.AR_COMPOSEDTASHKEEL
                                 ct.UseAscender = False
-                                ct.SetSimpleColumn(Rect.Left + Doc.LeftMargin + (Rect.Width - 3 - s.Width + ((ChBounds(2) + ChBounds(0)) * 0.001F * Font.Size - n.Width) / 2), Doc.PageSize.Height - Doc.BottomMargin - Doc.TopMargin - Rect.Bottom, Rect.Right + 1 + Doc.LeftMargin - s.Width + ((ChBounds(2) + ChBounds(0)) * 0.001F * Font.Size - n.Width) / 2, Doc.PageSize.Height - Doc.BottomMargin - Doc.TopMargin - Rect.Top + 1, Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size), iTextSharp.text.Element.ALIGN_CENTER Or iTextSharp.text.Element.ALIGN_BOTTOM)
+                                ct.SetSimpleColumn(Rect.Left + Doc.LeftMargin + (Rect.Width - 3 - s.Width + ((ChBounds(2) + ChBounds(0)) * 0.001F * Font.Size - n.Width) / 2), Doc.PageSize.Height - Doc.TopMargin - Rect.Bottom - _Bounds(Count)(SubCount)(NextCount).Baseline, Rect.Right + 1 + Doc.LeftMargin - s.Width + ((ChBounds(2) + ChBounds(0)) * 0.001F * Font.Size - n.Width) / 2, Doc.PageSize.Height - Doc.TopMargin - Rect.Top + 1 - _Bounds(Count)(SubCount)(NextCount).Baseline, Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size), iTextSharp.text.Element.ALIGN_CENTER Or iTextSharp.text.Element.ALIGN_BASELINE)
                                 ct.AddText(New iTextSharp.text.Chunk(Text.Substring(Index + 1, NumCount), Font))
                                 ct.Go()
                                 Text = Text.Remove(Index + 1, NumCount)
@@ -3266,6 +3269,7 @@ Public Class RenderArray
                             Index = Text.IndexOfAny(Arabic.RecitationCombiningSymbols, Index)
                             If Index <> -1 Then
                                 Dim s As New SizeF
+                                Dim Baseline As Single
                                 Dim ChBounds As Integer()
                                 If (Text(Index - 1) = " "c) Then
                                     'stopping symbols
@@ -3278,7 +3282,7 @@ Public Class RenderArray
                                 End If
                                 'partial shaping will never work
                                 'must either convert all to shaped characters or subtract last character
-                                GetTextWidthPdf(Font, Text.Substring(0, Index), Doc.PageSize.Width, True, s)
+                                GetTextWidthPdf(Font, Text.Substring(0, Index), Doc.PageSize.Width, True, s, Baseline)
                                 If Text(Index - 1) <> " "c And Text(Index - 1) <> Arabic.ArabicTatweel And Arabic.GetShapeIndexFromString(Text, Index - 1, 1) = 2 Then
                                     s.Width -= Font.BaseFont.GetCharBBox(AscW(CachedData.IslamData.ArabicLetters(Arabic.FindLetterBySymbol(Text(Index - 1))).Shaping(0)))(2) * 0.001F * Font.Size
                                 ElseIf Text(Index - 1) <> " "c And Text(Index - 1) <> Arabic.ArabicTatweel And Arabic.GetShapeIndexFromString(Text, Index - 1, 1) = 3 Then
@@ -3295,7 +3299,7 @@ Public Class RenderArray
                                     ct.UseAscender = False
                                     Dim DiaBounds As Integer() = Font.BaseFont.GetCharBBox(AscW(Text(Index)))
                                     Offset = If(DiaBounds(1) < 0 And DiaBounds(3) > If(Offset < 0, Offset, ChBounds(1)), -(DiaBounds(3) - If(Offset < 0, Offset, ChBounds(1))), If(DiaBounds(1) >= 0 And DiaBounds(1) < If(Offset > 0, Offset, ChBounds(3)), -(DiaBounds(1) - If(Offset > 0, Offset, ChBounds(3))), 0))
-                                    ct.SetSimpleColumn(Rect.Left + Doc.LeftMargin + (Rect.Width - 3 - s.Width - (ChBounds(2) - If(LastCenter <> 0, LastCenter - (DiaBounds(2) - DiaBounds(0)) \ 2, 0)) * 0.001F * Font.Size), Doc.PageSize.Height - Doc.BottomMargin - Doc.TopMargin - Rect.Bottom + Offset * 0.001F * Font.Size, Rect.Right + 1 + Doc.LeftMargin - s.Width + If(LastCenter <> 0, LastCenter + (DiaBounds(2) - DiaBounds(0)) \ 2, 0) * 0.001F * Font.Size, Doc.PageSize.Height - Doc.BottomMargin - Doc.TopMargin - Rect.Top + 1 + Offset * 0.001F * Font.Size, Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size), iTextSharp.text.Element.ALIGN_RIGHT Or iTextSharp.text.Element.ALIGN_BOTTOM)
+                                    ct.SetSimpleColumn(Rect.Left + Doc.LeftMargin + (Rect.Width - 3 - s.Width - (ChBounds(2) - If(LastCenter <> 0, LastCenter - (DiaBounds(2) - DiaBounds(0)) \ 2, 0)) * 0.001F * Font.Size), Doc.PageSize.Height - Doc.TopMargin - Rect.Bottom - _Bounds(Count)(SubCount)(NextCount).Baseline + Offset * 0.001F * Font.Size, Rect.Right + 1 + Doc.LeftMargin - s.Width + If(LastCenter <> 0, LastCenter + (DiaBounds(2) - DiaBounds(0)) \ 2, 0) * 0.001F * Font.Size, Doc.PageSize.Height - Doc.TopMargin - Rect.Top + 1 - _Bounds(Count)(SubCount)(NextCount).Baseline + Offset * 0.001F * Font.Size, Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size), iTextSharp.text.Element.ALIGN_RIGHT Or iTextSharp.text.Element.ALIGN_BASELINE)
                                     ct.AddText(New iTextSharp.text.Chunk(Text(Index), Font))
                                     ct.Go()
                                     If DiaBounds(1) < 0 Then Offset = DiaBounds(1) - Offset
@@ -3314,7 +3318,7 @@ Public Class RenderArray
                         Else
                             ct.RunDirection = iTextSharp.text.pdf.PdfWriter.RUN_DIRECTION_LTR
                         End If
-                        ct.SetSimpleColumn(Rect.Left + Doc.LeftMargin, Doc.PageSize.Height - Doc.BottomMargin - Doc.TopMargin - Rect.Bottom, Rect.Right + 1 + Doc.LeftMargin, Doc.PageSize.Height - Doc.BottomMargin - Doc.TopMargin - Rect.Top + 1, Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size), iTextSharp.text.Element.ALIGN_RIGHT Or iTextSharp.text.Element.ALIGN_BOTTOM)
+                        ct.SetSimpleColumn(Rect.Left + Doc.LeftMargin, Doc.PageSize.Height - Doc.TopMargin - Rect.Bottom - _Bounds(Count)(SubCount)(NextCount).Baseline, Rect.Right + 1 + Doc.LeftMargin, Doc.PageSize.Height - Doc.TopMargin - Rect.Top + 1 - _Bounds(Count)(SubCount)(NextCount).Baseline, Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size), iTextSharp.text.Element.ALIGN_RIGHT Or iTextSharp.text.Element.ALIGN_BASELINE)
                         ct.AddText(New iTextSharp.text.Chunk(Text, Font))
                         ct.Go()
                         theText = theText.Substring(_Bounds(Count)(SubCount)(NextCount).nChar)
@@ -3322,7 +3326,7 @@ Public Class RenderArray
                 End If
             Next
             Writer.DirectContent.SetLineWidth(1)
-            Writer.DirectContent.Rectangle(MaxRect.Left + Doc.LeftMargin - 2, Doc.PageSize.Height - Doc.BottomMargin - Doc.TopMargin - MaxRect.Bottom, MaxRect.Width - 2, MaxRect.Height)
+            Writer.DirectContent.Rectangle(MaxRect.Left + Doc.LeftMargin - 2, Doc.PageSize.Height - Doc.TopMargin - MaxRect.Bottom, MaxRect.Width - 2, MaxRect.Height)
             Writer.DirectContent.Stroke()
         Next
     End Sub
@@ -3352,8 +3356,8 @@ Public Class RenderArray
         Writer.CloseStream = False
         Doc.Close()
     End Sub
-    Delegate Function GetTextWidth(Str As String, MaxWidth As Single, IsRTL As Boolean, ByRef s As SizeF) As Integer
-    Private Shared Function GetTextWidthPdf(Font As iTextSharp.text.Font, Str As String, MaxWidth As Single, IsRTL As Boolean, ByRef s As SizeF) As Integer
+    Delegate Function GetTextWidth(Str As String, MaxWidth As Single, IsRTL As Boolean, ByRef s As SizeF, ByRef Baseline As Single) As Integer
+    Private Shared Function GetTextWidthPdf(Font As iTextSharp.text.Font, Str As String, MaxWidth As Single, IsRTL As Boolean, ByRef s As SizeF, ByRef Baseline As Single) As Integer
         Font.BaseFont.CorrectArabicAdvance()
         Dim Index As Integer = 0
         Do
@@ -3419,12 +3423,13 @@ Public Class RenderArray
                 Loop While Index <> Text.Length AndAlso Array.IndexOf(Arabic.RecitationCombiningSymbols, Text(Index)) <> -1
             End If
         Loop While Index <> -1
-        s.Height = Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size) * 3 + Math.Max(MaxAscent * 0.001F * Font.Size, Font.BaseFont.GetAscentPoint(Text, Font.Size)) - Math.Min(MinAscent * 0.001F * Font.Size, Font.BaseFont.GetDescentPoint(Text, Font.Size))
+        Baseline = Math.Max(MaxAscent * 0.001F * Font.Size, Font.BaseFont.GetAscentPoint(Text, Font.Size))
+        s.Height = Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size) * 3 + Baseline - Math.Min(MinAscent * 0.001F * Font.Size, Font.BaseFont.GetDescentPoint(Text, Font.Size))
         Return Len
     End Function
     Private Shared Function GetTextWidthFromPdf(Font As iTextSharp.text.Font) As GetTextWidth
-        Return Function(Str As String, MaxWidth As Single, IsRTL As Boolean, ByRef s As SizeF)
-                   Dim Ret As Integer = GetTextWidthPdf(Font, Str, MaxWidth - 3, IsRTL, s)
+        Return Function(Str As String, MaxWidth As Single, IsRTL As Boolean, ByRef s As SizeF, ByRef Baseline As Single)
+                   Dim Ret As Integer = GetTextWidthPdf(Font, Str, MaxWidth - 3, IsRTL, s, Baseline)
                    s.Width += 3 '1 unit for line and 1 for spacing on each side
                    Return Ret
                End Function
@@ -3452,13 +3457,14 @@ Public Class RenderArray
                         IsOverflow = True
                     End If
                     Right = NextRight
-                    Bounds(Count)(SubCount).Add(New LayoutInfo(New RectangleF(Right, Top + CurTop, s.Width, s.Height), 0, SubBounds))
+                    Bounds(Count)(SubCount).Add(New LayoutInfo(New RectangleF(Right, Top + CurTop, s.Width, s.Height), 0, 0, SubBounds))
                     MaxWidth = Math.Max(MaxWidth, s.Width)
                 ElseIf CurRenderArray(Count).TextItems(SubCount).DisplayClass = IslamMetadata.RenderArray.RenderDisplayClass.eArabic Or CurRenderArray(Count).TextItems(SubCount).DisplayClass = IslamMetadata.RenderArray.RenderDisplayClass.eLTR Or CurRenderArray(Count).TextItems(SubCount).DisplayClass = IslamMetadata.RenderArray.RenderDisplayClass.eRTL Or CurRenderArray(Count).TextItems(SubCount).DisplayClass = IslamMetadata.RenderArray.RenderDisplayClass.eTransliteration Then
                     Dim theText As String = CStr(CurRenderArray(Count).TextItems(SubCount).Text)
                     While theText <> String.Empty
                         Dim nChar As Integer
-                        nChar = WidthFunc(theText, _Width, CurRenderArray(Count).TextItems(SubCount).DisplayClass = IslamMetadata.RenderArray.RenderDisplayClass.eArabic Or CurRenderArray(Count).TextItems(SubCount).DisplayClass = IslamMetadata.RenderArray.RenderDisplayClass.eRTL, s)
+                        Dim Baseline As Single
+                        nChar = WidthFunc(theText, _Width, CurRenderArray(Count).TextItems(SubCount).DisplayClass = IslamMetadata.RenderArray.RenderDisplayClass.eArabic Or CurRenderArray(Count).TextItems(SubCount).DisplayClass = IslamMetadata.RenderArray.RenderDisplayClass.eRTL, s, Baseline)
                         'break up string on previous word boundary unless beginning of string
                         'arabic strings cannot be broken up in the middle due to letters joining which would throw off calculations
                         If nChar = 0 Then
@@ -3468,7 +3474,7 @@ Public Class RenderArray
                             If idx <> -1 Then nChar = idx + 1
                         End If
                         If theText.Substring(nChar) <> String.Empty Then
-                            WidthFunc(theText.Substring(0, nChar), _Width, CurRenderArray(Count).TextItems(SubCount).DisplayClass = IslamMetadata.RenderArray.RenderDisplayClass.eArabic Or CurRenderArray(Count).TextItems(SubCount).DisplayClass = IslamMetadata.RenderArray.RenderDisplayClass.eRTL, s)
+                            WidthFunc(theText.Substring(0, nChar), _Width, CurRenderArray(Count).TextItems(SubCount).DisplayClass = IslamMetadata.RenderArray.RenderDisplayClass.eArabic Or CurRenderArray(Count).TextItems(SubCount).DisplayClass = IslamMetadata.RenderArray.RenderDisplayClass.eRTL, s, Baseline)
                         End If
                         theText = theText.Substring(nChar)
                         If theText <> String.Empty Or s.Width > NextRight Then
@@ -3476,7 +3482,7 @@ Public Class RenderArray
                             IsOverflow = True
                         End If
                         If theText = String.Empty Then Right = NextRight
-                        Bounds(Count)(SubCount).Add(New LayoutInfo(New RectangleF(Right, Top + CurTop, s.Width, s.Height), nChar, Nothing))
+                        Bounds(Count)(SubCount).Add(New LayoutInfo(New RectangleF(Right, Top + CurTop, s.Width, s.Height), Baseline, nChar, Nothing))
                         If theText <> String.Empty Then CurTop += s.Height
                         MaxWidth = Math.Max(MaxWidth, s.Width)
                     End While
@@ -3489,9 +3495,9 @@ Public Class RenderArray
             For SubCount = 0 To Bounds(Count).Count - 1
                 For NextCount = 0 To Bounds(Count)(SubCount).Count - 1
                     If NextCount <> Bounds(Count)(SubCount).Count - 1 Then
-                        Bounds(Count)(SubCount)(NextCount) = New LayoutInfo(New RectangleF(MaxWidth / 2 - Bounds(Count)(SubCount)(NextCount).Rect.Width / 2, Bounds(Count)(SubCount)(NextCount).Rect.Top + If(IsOverflow, LastCurTop, 0), Bounds(Count)(SubCount)(NextCount).Rect.Width, Bounds(Count)(SubCount)(NextCount).Rect.Height), Bounds(Count)(SubCount)(NextCount).nChar, Bounds(Count)(SubCount)(NextCount).Bounds)
+                        Bounds(Count)(SubCount)(NextCount) = New LayoutInfo(New RectangleF(MaxWidth / 2 - Bounds(Count)(SubCount)(NextCount).Rect.Width / 2, Bounds(Count)(SubCount)(NextCount).Rect.Top + If(IsOverflow, LastCurTop, 0), Bounds(Count)(SubCount)(NextCount).Rect.Width, Bounds(Count)(SubCount)(NextCount).Rect.Height), Bounds(Count)(SubCount)(NextCount).Baseline, Bounds(Count)(SubCount)(NextCount).nChar, Bounds(Count)(SubCount)(NextCount).Bounds)
                     Else
-                        Bounds(Count)(SubCount)(NextCount) = New LayoutInfo(New RectangleF(If(IsOverflow, _Width, Bounds(Count)(SubCount)(NextCount).Rect.Left) - CInt(MaxWidth - (MaxWidth / 2 - Bounds(Count)(SubCount)(NextCount).Rect.Width / 2)), Bounds(Count)(SubCount)(NextCount).Rect.Top + If(IsOverflow, LastCurTop, 0), Bounds(Count)(SubCount)(NextCount).Rect.Width, Bounds(Count)(SubCount)(NextCount).Rect.Height), Bounds(Count)(SubCount)(NextCount).nChar, Bounds(Count)(SubCount)(NextCount).Bounds)
+                        Bounds(Count)(SubCount)(NextCount) = New LayoutInfo(New RectangleF(If(IsOverflow, _Width, Bounds(Count)(SubCount)(NextCount).Rect.Left) - CInt(MaxWidth - (MaxWidth / 2 - Bounds(Count)(SubCount)(NextCount).Rect.Width / 2)), Bounds(Count)(SubCount)(NextCount).Rect.Top + If(IsOverflow, LastCurTop, 0), Bounds(Count)(SubCount)(NextCount).Rect.Width, Bounds(Count)(SubCount)(NextCount).Rect.Height), Bounds(Count)(SubCount)(NextCount).Baseline, Bounds(Count)(SubCount)(NextCount).nChar, Bounds(Count)(SubCount)(NextCount).Bounds)
                     End If
                 Next
             Next
@@ -3518,7 +3524,7 @@ Public Class RenderArray
             For SubCount = 0 To Bounds(Count).Count - 1
                 For NextCount = 0 To Bounds(Count)(SubCount).Count - 1
                     'overall centering can be done here though must calculate an overall line width
-                    Bounds(Count)(SubCount)(NextCount) = New LayoutInfo(New RectangleF(Bounds(Count)(SubCount)(NextCount).Rect.Left - CInt(_Width - MaxRight), Bounds(Count)(SubCount)(NextCount).Rect.Top, Bounds(Count)(SubCount)(NextCount).Rect.Width, Bounds(Count)(SubCount)(NextCount).Rect.Height), Bounds(Count)(SubCount)(NextCount).nChar, Bounds(Count)(SubCount)(NextCount).Bounds)
+                    Bounds(Count)(SubCount)(NextCount) = New LayoutInfo(New RectangleF(Bounds(Count)(SubCount)(NextCount).Rect.Left - CInt(_Width - MaxRight), Bounds(Count)(SubCount)(NextCount).Rect.Top, Bounds(Count)(SubCount)(NextCount).Rect.Width, Bounds(Count)(SubCount)(NextCount).Rect.Height), Bounds(Count)(SubCount)(NextCount).Baseline, Bounds(Count)(SubCount)(NextCount).nChar, Bounds(Count)(SubCount)(NextCount).Bounds)
                 Next
             Next
         Next
