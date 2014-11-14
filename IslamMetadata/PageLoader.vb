@@ -2229,6 +2229,8 @@ Public Class Arabic
                                     .Evaluator = ArabicLetterNoon}, _
         New RuleTranslation With {.Rule = "HelperSeen", .Match = "helperseen", _
                                     .Evaluator = ArabicLetterSeen}, _
+        New RuleTranslation With {.Rule = "HelperHamza", .Match = "helperhamza", _
+                                    .Evaluator = ArabicLetterHamza}, _
         New RuleTranslation With {.Rule = "HelperMadda", .Match = "helpermadda", _
                                     .Evaluator = ArabicLetterHamza + ArabicFatha + ArabicLetterAlef}, _
         New RuleTranslation With {.Rule = "Empty", .Match = "empty|compulsorystop|startofhizb|endofversestop|prostration|canstoporcontinue|prohibitedtostop|stopatfirstnotsecond|stopatsecondnotfirst|bettertostopbutpermissibletocontinue|bettertocontinuebutpermissibletostop|subtlestopwithoutbreath", _
@@ -2294,7 +2296,7 @@ Public Class Arabic
             .Evaluator = Nothing}, _
         New RuleMetadataTranslation With {.Rule = "AlefSmallHighRoundedZero", .Match = "(" + MakeUniRegEx(ArabicLetterAlef) + MakeUniRegEx(ArabicSmallHighRoundedZero) + ")(?=\s*$|\s+)",
             .Evaluator = New String() {"empty"}}, _
-        New RuleMetadataTranslation With {.Rule = "AlefSmallHighRoundedZero", .Match = "(" + MakeUniRegEx(ArabicLetterWaw) + MakeUniRegEx(ArabicSmallHighRoundedZero) + ")(?=\s*$|\s+)",
+        New RuleMetadataTranslation With {.Rule = "AlefSmallHighRoundedZero", .Match = "(" + MakeUniRegEx(ArabicLetterWaw) + MakeUniRegEx(ArabicSmallHighRoundedZero) + ")(?=" + MakeUniRegEx(ArabicLetterLam) + "|" + MakeUniRegEx(ArabicLetterReh) + ")",
             .Evaluator = New String() {"empty"}}, _
         New RuleMetadataTranslation With {.Rule = "SmallHighUprightRectangularZero", .Match = "(" + MakeUniRegEx(ArabicSmallHighUprightRectangularZero) + ")",
             .Evaluator = New String() {"empty"}}, _
@@ -2322,7 +2324,7 @@ Public Class Arabic
             .Evaluator = New String() {"helperfatha"}}, _
         New RuleMetadataTranslation With {.Rule = "AlefMaddah", .Match = "(" + MakeUniRegEx(ArabicLetterAlefWithMaddaAbove) + ")", _
             .Evaluator = New String() {"dividelettersymbol(helperalef,helpermadda)"}}, _
-        New RuleMetadataTranslation With {.Rule = "Maddah", .Match = "(" + MakeUniRegEx(ArabicLetterAlef) + ")(" + MakeUniRegEx(ArabicMaddahAbove) + ")", _
+        New RuleMetadataTranslation With {.Rule = "Maddah", .Match = "(" + MakeUniRegEx(ArabicLetterAlef) + "|" + MakeUniRegEx(ArabicLetterSuperscriptAlef) + ")(" + MakeUniRegEx(ArabicMaddahAbove) + ")", _
             .Evaluator = New String() {Nothing, "helpermadda"}}, _
         New RuleMetadataTranslation With {.Rule = "Maddah", .Match = "(" + MakeUniRegEx(ArabicLetterYeh) + "|" + MakeUniRegEx(ArabicSmallYeh) + "|" + MakeUniRegEx(ArabicKasra) + MakeUniRegEx(ArabicLetterAlefMaksura) + ")(" + MakeUniRegEx(ArabicMaddahAbove) + ")", _
             .Evaluator = New String() {Nothing, "permissibleprolong"}}, _
@@ -3259,19 +3261,27 @@ Public Class RenderArray
                                 Index = Index + 1
                             End If
                         Loop While Index <> -1
-                        Index = 0
+                        Index = 1
                         Do
                             Index = Text.IndexOfAny(Arabic.RecitationCombiningSymbols, Index)
                             If Index <> -1 Then
                                 Dim s As New SizeF
-                                Dim ShapeCh As Char = CachedData.IslamData.ArabicLetters(Arabic.FindLetterBySymbol(Text(Index - 1))).Shaping(Arabic.GetShapeIndexFromString(Text, Index - 1, 1))
+                                Dim ChBounds As Integer()
+                                If (Text(Index - 1) = " "c) Then
+                                    'stopping symbols
+                                    ChBounds = New Integer() {0, CInt(Font.BaseFont.GetDescentPoint(Text(Index - 1), Font.Size) / 0.001F / Font.Size), CInt(Font.BaseFont.GetWidthPoint(Text(Index - 1), Font.Size) / 0.001F / Font.Size), CInt(Font.BaseFont.GetAscentPoint(Text(Index - 1), Font.Size) / 0.001F / Font.Size)}
+                                ElseIf Text(Index - 1) = Arabic.ArabicTatweel Then
+                                    ChBounds = Font.BaseFont.GetCharBBox(AscW(Text(Index - 1)))
+                                Else
+                                    Dim ShapeCh As Char = CachedData.IslamData.ArabicLetters(Arabic.FindLetterBySymbol(Text(Index - 1))).Shaping(Arabic.GetShapeIndexFromString(Text, Index - 1, 1))
+                                    ChBounds = Font.BaseFont.GetCharBBox(AscW(ShapeCh))
+                                End If
                                 'partial shaping will never work
                                 'must either convert all to shaped characters or subtract last character
                                 GetTextWidthPdf(Font, Text.Substring(0, Index), Doc.PageSize.Width, True, s)
-                                Dim ChBounds As Integer() = Font.BaseFont.GetCharBBox(AscW(ShapeCh))
-                                If Arabic.GetShapeIndexFromString(Text, Index - 1, 1) = 2 Then
+                                If Text(Index - 1) <> " "c And Text(Index - 1) <> Arabic.ArabicTatweel And Arabic.GetShapeIndexFromString(Text, Index - 1, 1) = 2 Then
                                     s.Width -= Font.BaseFont.GetCharBBox(AscW(CachedData.IslamData.ArabicLetters(Arabic.FindLetterBySymbol(Text(Index - 1))).Shaping(0)))(2) * 0.001F * Font.Size
-                                ElseIf Arabic.GetShapeIndexFromString(Text, Index - 1, 1) = 3 Then
+                                ElseIf Text(Index - 1) <> " "c And Text(Index - 1) <> Arabic.ArabicTatweel And Arabic.GetShapeIndexFromString(Text, Index - 1, 1) = 3 Then
                                     s.Width -= Font.BaseFont.GetCharBBox(AscW(CachedData.IslamData.ArabicLetters(Arabic.FindLetterBySymbol(Text(Index - 1))).Shaping(1)))(2) * 0.001F * Font.Size
                                 Else
                                     s.Width -= ChBounds(2) * 0.001F * Font.Size
@@ -3381,14 +3391,22 @@ Public Class RenderArray
             End If
         End If
         Dim Text As String = Str.Substring(0, Len)
-        Index = 0
+        Index = 1
         Dim MaxAscent As Integer = 0
         Dim MinAscent As Integer = 0
         Do
             Index = Text.IndexOfAny(Arabic.RecitationCombiningSymbols, Index)
             If Index <> -1 Then
-                Dim ShapeCh As Char = CachedData.IslamData.ArabicLetters(Arabic.FindLetterBySymbol(Text(Index - 1))).Shaping(Arabic.GetShapeIndexFromString(Text, Index - 1, 1))
-                Dim ChBounds As Integer() = Font.BaseFont.GetCharBBox(AscW(ShapeCh))
+                Dim ChBounds As Integer()
+                If (Text(Index - 1) = " "c) Then
+                    'stopping symbols
+                    ChBounds = New Integer() {0, CInt(Font.BaseFont.GetDescentPoint(Text(Index - 1), Font.Size) / 0.001F / Font.Size), CInt(Font.BaseFont.GetWidthPoint(Text(Index - 1), Font.Size) / 0.001F / Font.Size), CInt(Font.BaseFont.GetAscentPoint(Text(Index - 1), Font.Size) / 0.001F / Font.Size)}
+                ElseIf Text(Index - 1) = Arabic.ArabicTatweel Then
+                    ChBounds = Font.BaseFont.GetCharBBox(AscW(Text(Index - 1)))
+                Else
+                    Dim ShapeCh As Char = CachedData.IslamData.ArabicLetters(Arabic.FindLetterBySymbol(Text(Index - 1))).Shaping(Arabic.GetShapeIndexFromString(Text, Index - 1, 1))
+                    ChBounds = Font.BaseFont.GetCharBBox(AscW(ShapeCh))
+                End If
                 Dim Offset As Integer = 0
                 Do
                     Dim DiaBounds As Integer() = Font.BaseFont.GetCharBBox(AscW(Text(Index)))
@@ -3477,7 +3495,7 @@ Public Class RenderArray
                     End If
                 Next
             Next
-            If CurRenderArray(Count).Type = RenderTypes.eHeaderRight Then
+            If Count <> 0 AndAlso ((CurRenderArray(Count).Type = RenderTypes.eHeaderLeft Or CurRenderArray(Count - 1).Type = RenderTypes.eHeaderRight) Or (CurRenderArray(Count).Type = RenderTypes.eHeaderCenter And CurRenderArray(Count - 1).Type <> RenderTypes.eHeaderLeft) Or (CurRenderArray(Count).Type <> RenderTypes.eHeaderRight And CurRenderArray(Count - 1).Type = RenderTypes.eHeaderCenter)) Then
                 Top += CurTop + LastCurTop
                 CurTop = 0
                 NextRight = _Width
@@ -5782,7 +5800,7 @@ Public Class TanzilReader
         For Count = 0 To Matches.Count - 1
             Dim BaseChapter As Integer = CInt(Matches(Count).Groups(1).Value)
             Dim BaseVerse As Integer = If(Matches(Count).Groups(2).Value = String.Empty, 0, CInt(Matches(Count).Groups(2).Value))
-            Dim WordNumber As Integer = If(Matches(Count).Groups(3).Value = String.Empty, 1, CInt(Matches(Count).Groups(3).Value))
+            Dim WordNumber As Integer = If(Matches(Count).Groups(3).Value = String.Empty, 0, CInt(Matches(Count).Groups(3).Value))
             Dim EndChapter As Integer = If(Matches(Count).Groups(4).Value = String.Empty, 0, CInt(Matches(Count).Groups(4).Value))
             Dim ExtraVerseNumber As Integer = If(Matches(Count).Groups(5).Value = String.Empty, 0, CInt(Matches(Count).Groups(5).Value))
             Dim EndWordNumber As Integer = If(Matches(Count).Groups(6).Value = String.Empty, 0, CInt(Matches(Count).Groups(6).Value))
@@ -5797,6 +5815,7 @@ Public Class TanzilReader
                 ExtraVerseNumber = EndChapter
                 EndChapter = 0
             End If
+            If WordNumber = 0 Then WordNumber += 1
             Renderer.Items.AddRange(DoGetRenderedQuranText(QuranTextRangeLookup(BaseChapter, BaseVerse, WordNumber, EndChapter, ExtraVerseNumber, EndWordNumber), BaseChapter, BaseVerse, CachedData.IslamData.Translations.TranslationList(TranslationIndex).Name, SchemeType, Scheme, TranslationIndex).Items)
             Reference = CStr(BaseChapter) + If(BaseVerse <> 0, ":" + CStr(BaseVerse), String.Empty) + If(EndChapter <> 0, "-" + CStr(EndChapter) + If(ExtraVerseNumber <> 0, ":" + CStr(ExtraVerseNumber), String.Empty), If(ExtraVerseNumber <> 0, "-" + CStr(ExtraVerseNumber), String.Empty))
             Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eHeaderCenter, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, "(Qur'an " + Reference + ")")}))

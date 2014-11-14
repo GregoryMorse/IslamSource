@@ -3040,7 +3040,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 		</scriptfont>
 	</scriptfonts>
 	<arabiccombos>
-		<combo symbolname="_F" shaping="FE71,FE71,FE71,FE71"></combo>
+		<combo symbolname="_F" shaping=",,,FE71"></combo>
 		<combo symbolname="l|" shaping="FEF5,FEF6,,"></combo>
 		<combo symbolname="l&gt;" shaping="FEF7,FEF8,,"></combo>
 		<combo symbolname="l&lt;" shaping="FEF9,FEFA,,"></combo>
