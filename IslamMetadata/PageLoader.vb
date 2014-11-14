@@ -1356,7 +1356,7 @@ Public Class Arabic
         'medial - connecting + connecting letter + not end
         Dim bIsEnd = IsTerminating(Str, Index + Length - 1)
         Dim bConnects As Boolean = Not CachedData.IslamData.ArabicLetters(FindLetterBySymbol(Str.Chars(Index + Length - 1))).Terminating
-        Dim bLastConnects As Boolean = IsLastConnecting(Str, Index)
+        Dim bLastConnects As Boolean = CachedData.IslamData.ArabicLetters(FindLetterBySymbol(Str.Chars(Index + Length - 1))).Connecting And IsLastConnecting(Str, Index)
         Return GetShapeIndex(bConnects, bLastConnects, bIsEnd)
     End Function
     Public Shared Function ConvertLigatures(Str As String, Dir As Boolean) As String
@@ -2660,10 +2660,11 @@ Public Class Arabic
             "function isStop(index) { return (" + String.Join("||", Array.ConvertAll(Arabic.ArabicStopLetters, Function(C As Char) "parseInt(arabicLetters[index].Symbol, 10) === 0x" + Hex(AscW(C)))) + "); }", _
             "function applyColorRules(sVal) {}", _
             "function changeScript(sVal, scriptType) {}", _
+            "function getSchemeGutteralFromString(str, scheme, leading) { return str; }", _
             "function arabicLetterSpelling(sVal) { var count, index, output = ''; for (count = 0; count < sVal.length; count++) { index = findLetterBySymbol(sVal.charCodeAt(count)); if (index !== -1 && isLetter(index)) { if (output !== '') output += ' '; output += arabicLetters[index].SymbolName; } else if (index !== -1 && arabicLetters[index].Symbol === 1619) { output += sVal.charCodeAt(count); } } return doTransliterate(output, false, 1); }", _
             "String.prototype.format = function() { var formatted = this; for (var i = 0; i < arguments.length; i++) { formatted = formatted.replace(new RegExp('\\{'+i+'\\}', 'gi'), arguments[i]); } return formatted; };", _
             "RegExp.matchResult = function(subexp, match, offset, str) { var args = arguments; return subexp.replace(/\$(\$|&|`|\'|[0-9]+)/g, function(m, p) { if (p === '$') return '$'; if (p === '`') return str.slice(0, offset); if (p === '\'') return str.slice(offset + match.length); if (p === '&' || parseInt(p, 10) <= 0 || parseInt(p, 10) >= args.length - 3) return match; return args[3 + parseInt(p, 10)]; }); };", _
-            "var ruleFunctions = [function(str, scheme) { return [str.toUpperCase()]; }, function(str, scheme) { return [transliterateWithRules(doTransliterate(arabicWordFromNumber(parseInt(doTransliterate(str, true, 1), 10), true, false, false), false, 1), scheme)]; }, function(str, scheme) { return [arabicLetterSpelling(str)]; }, function(str, scheme) { return [translitSchemes[scheme.toString()][str]]; }, function(str, scheme) { return [translitSchemes[scheme.toString()][str]]; }, function(str, scheme) { return [" + Utility.MakeJSArray(ArabicFathaDammaKasra) + "[" + Utility.MakeJSArray(ArabicTanweens) + ".indexOf(str)], '" + ArabicLetterNoon + "']; }, function (str, scheme) { return ['', '']; }];", _
+            "var ruleFunctions = [function(str, scheme) { return [str.toUpperCase()]; }, function(str, scheme) { return [transliterateWithRules(doTransliterate(arabicWordFromNumber(parseInt(doTransliterate(str, true, 1), 10), true, false, false), false, 1), scheme)]; }, function(str, scheme) { return [arabicLetterSpelling(str)]; }, function(str, scheme) { return [translitSchemes[scheme.toString()][str]]; }, function(str, scheme) { return [translitSchemes[scheme.toString()][str]]; }, function(str, scheme) { return [" + Utility.MakeJSArray(ArabicFathaDammaKasra) + "[" + Utility.MakeJSArray(ArabicTanweens) + ".indexOf(str)], '" + ArabicLetterNoon + "']; }, function (str, scheme) { return ['', '']; }, function (str, scheme) { return getSchemeGutteralFromString(str.slice(0, -1), scheme, true) + str[str.length - 1]; }, function(str, scheme) { return str[0] + getSchemeGutteralFromString(str.slice(1), scheme, false); }];", _
             "function isLetter(index) { return (" + String.Join("||", Array.ConvertAll(Arabic.RecitationLetters, Function(C As Char) "parseInt(arabicLetters[index].Symbol, 10) === 0x" + Hex(AscW(C)))) + "); }", _
             "function isSymbol(index) { return (" + String.Join("||", Array.ConvertAll(Arabic.GetRecitationSymbols(), Function(A As Array) "parseInt(arabicLetters[index].Symbol, 10) === 0x" + Hex(AscW(CachedData.IslamData.ArabicLetters(CInt(A.GetValue(1))).Symbol)))) + "); }", _
             "var uthmaniMinimalScript = " + Utility.MakeJSArray(New String() {Utility.MakeJSIndexedObject(New String() {"rule", "match", "evaluator", "ruleFunc"}, _
@@ -2730,7 +2731,7 @@ Public Class Arabic
     End Function
     Public Shared Function GetTransliterationSchemes() As Array()
         Dim Count As Integer
-        Dim Strings((CachedData.IslamData.TranslitSchemes.Length - 1) * 2 + 2) As Array
+        Dim Strings(CachedData.IslamData.TranslitSchemes.Length * 2 + 2 - 1) As Array
         Strings(0) = New String() {Utility.LoadResourceString("IslamSource_Off"), "0"}
         Strings(1) = New String() {Utility.LoadResourceString("IslamSource_ExtendedBuckwalter"), "1"}
         For Count = 0 To CachedData.IslamData.TranslitSchemes.Length - 1
@@ -2892,7 +2893,7 @@ Public Class Arabic
             Output(Count + 3) = New String() {String.Join(" ", Array.ConvertAll(TransliterateFromBuckwalter(CachedData.IslamData.ArabicCombos(Count).SymbolName).ToCharArray(), Function(Ch As Char) TransliterateFromBuckwalter(CachedData.IslamData.ArabicLetters(FindLetterBySymbol(Ch)).SymbolName))), _
                                        TransliterateFromBuckwalter(CachedData.IslamData.ArabicCombos(Count).SymbolName), _
                                        CachedData.IslamData.ArabicCombos(Count).SymbolName,
-                                       String.Join(vbCrLf, Array.ConvertAll(CachedData.IslamData.ArabicCombos(Count).Shaping, Function(Shape As Char) If(Shape = ChrW(0), String.Empty, Shape + " " + CStr(AscW(Shape)) + " " + If(CheckShapingOrder(Array.IndexOf(CachedData.IslamData.ArabicCombos(Count).Shaping, Shape), GetUnicodeName(Shape)), String.Empty, "!!!") + GetUnicodeName(Shape))))}
+                                       String.Join(vbCrLf, Array.ConvertAll(CachedData.IslamData.ArabicCombos(Count).Shaping, Function(Shape As Char) If(Shape = ChrW(0), String.Empty, Shape + " " + CStr(Hex(AscW(Shape))) + " " + If(CheckShapingOrder(Array.IndexOf(CachedData.IslamData.ArabicCombos(Count).Shaping, Shape), GetUnicodeName(Shape)), String.Empty, "!!!") + GetUnicodeName(Shape))))}
         Next
         Return Output
     End Function
@@ -2908,12 +2909,12 @@ Public Class Arabic
             Output(Count + 3) = New String() {TransliterateFromBuckwalter(Symbols(Count).SymbolName), _
                                               GetUnicodeName(Symbols(Count).Symbol), _
                                        CStr(Symbols(Count).Symbol), _
-                                       CStr(AscW(Symbols(Count).Symbol)), _
+                                       CStr(Hex(AscW(Symbols(Count).Symbol))), _
                                        CStr(IIf(Symbols(Count).ExtendedBuckwalterLetter = ChrW(0), String.Empty, Symbols(Count).ExtendedBuckwalterLetter)), _
                                        CStr(Symbols(Count).Terminating), _
                                        CStr(Symbols(Count).Connecting), _
                                        CStr(Symbols(Count).Assimilate),
-                                       If(Symbols(Count).Shaping = Nothing, String.Empty, String.Join(vbCrLf, Array.ConvertAll(Symbols(Count).Shaping, Function(Shape As Char) If(Shape = ChrW(0), String.Empty, Shape + " " + CStr(AscW(Shape)) + " " + If(CheckShapingOrder(Array.IndexOf(Symbols(Count).Shaping, Shape), GetUnicodeName(Shape)), String.Empty, "!!!") + GetUnicodeName(Shape)))))}
+                                       If(Symbols(Count).Shaping = Nothing, String.Empty, String.Join(vbCrLf, Array.ConvertAll(Symbols(Count).Shaping, Function(Shape As Char) If(Shape = ChrW(0), String.Empty, Shape + " " + CStr(Hex(AscW(Shape))) + " " + If(CheckShapingOrder(Array.IndexOf(Symbols(Count).Shaping, Shape), GetUnicodeName(Shape)), String.Empty, "!!!") + GetUnicodeName(Shape)))))}
         Next
         Return Output
     End Function
@@ -3339,6 +3340,7 @@ Public Class RenderArray
         GetLayout(CurRenderArray, Doc.PageSize.Width - Doc.LeftMargin - Doc.RightMargin, _Bounds, GetTextWidthFromPdf(Font))
         Dim PageOffset As New PointF(0, 0)
         DoRenderPdf(Doc, Writer, Font, DrawFont, CurRenderArray, _Bounds, PageOffset, New PointF(0, 0))
+        Writer.CloseStream = False
         Doc.Close()
     End Sub
     Delegate Function GetTextWidth(Str As String, MaxWidth As Single, IsRTL As Boolean, ByRef s As SizeF) As Integer

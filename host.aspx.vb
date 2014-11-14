@@ -352,7 +352,19 @@ Partial Class host
                 Dim MemStream As New IO.MemoryStream()
                 Index = PageSet.GetPageIndex(Request.QueryString.Get(PagePrintQuery))
                 For Count As Integer = 0 To PageSet.Pages(Index).Page.Count - 1
-                    If PageLoader.IsTextItem(PageSet.Pages(Index).Page(Count)) Then
+                    If PageLoader.IsListItem(PageSet.Pages(Index).Page(Count)) Then
+                        For SubIndex As Integer = 0 To DirectCast(PageSet.Pages(Index).Page(Count), PageLoader.ListItem).List.Count - 1
+                            If PageLoader.IsTextItem(DirectCast(PageSet.Pages(Index).Page(Count), PageLoader.ListItem).List.Item(SubIndex)) Then
+                                Dim Item As PageLoader.TextItem = CType(CType(PageSet.Pages(Index).Page(Count), PageLoader.ListItem).List.Item(SubIndex), PageLoader.TextItem)
+                                If Not Item.OnRenderFunction Is Nothing Then
+                                    Dim Output As Object = Item.OnRenderFunction.Invoke(Nothing, New Object() {Item})
+                                    If TypeOf Output Is RenderArray Then
+                                        RenderArray.OutputPdf(MemStream, CType(Output, RenderArray).Items)
+                                    End If
+                                End If
+                            End If
+                        Next
+                    ElseIf PageLoader.IsTextItem(PageSet.Pages(Index).Page(Count)) Then
                         Dim Item As PageLoader.TextItem = CType(PageSet.Pages(Index).Page(Count), PageLoader.TextItem)
                         If Not Item.OnRenderFunction Is Nothing Then
                             Dim Output As Object = Item.OnRenderFunction.Invoke(Nothing, New Object() {Item})
@@ -363,14 +375,16 @@ Partial Class host
                     End If
                 Next
                 Response.ContentType = "application/pdf"
-                Dim Bytes(4096) As Byte
-                Dim Read As Integer
-                Read = MemStream.Read(Bytes, 0, Bytes.Length)
-                While Read <> 0
-                    Response.OutputStream.Write(Bytes, 0, Read)
-                    Read = MemStream.Read(Bytes, 0, Bytes.Length)
-                End While
-
+                Response.OutputStream.Write(MemStream.ToArray(), 0, CInt(MemStream.Length))
+                'Dim Bytes(4096) As Byte
+                'Dim Read As Integer
+                'MemStream.Seek(0, IO.SeekOrigin.Begin)
+                'Read = MemStream.Read(Bytes, 0, Bytes.Length)
+                'While Read <> 0
+                '    Response.OutputStream.Write(Bytes, 0, Read)
+                '    Read = MemStream.Read(Bytes, 0, Bytes.Length)
+                'End While
+                Return
             ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_Register Then
                 UserAccounts.Register(PageSet, Request.Form.Get(UserAccounts.ID_Username), Request.Form.Get(UserAccounts.ID_Password), Request.Form.Get(UserAccounts.ID_ConfirmPassword), Request.Form.Get(UserAccounts.ID_EmailAddress), Request.Form.Get(UserAccounts.ID_ConfirmEmailAddress), Request.Form.Get(UserAccounts.ID_Register))
             ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_Login Then
