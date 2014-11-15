@@ -3293,8 +3293,9 @@ Public Class RenderArray
                                 Dim Baseline As Single
                                 Dim ChBounds As Integer()
                                 If (Text(Index - 1) = " "c) Then
-                                    'stopping symbols
-                                    ChBounds = New Integer() {0, CInt(Font.BaseFont.GetDescentPoint(Text(Index - 1), Font.Size) / 0.001F / Font.Size), CInt(Font.BaseFont.GetWidthPoint(Text(Index - 1), Font.Size) / 0.001F / Font.Size), CInt(Font.BaseFont.GetAscentPoint(Text(Index - 1), Font.Size) / 0.001F / Font.Size)}
+                                    'stopping symbols handled by normal rendering engine
+                                    Index += 1
+                                    Continue Do
                                 ElseIf Text(Index - 1) = Arabic.ArabicTatweel Then
                                     ChBounds = Font.BaseFont.GetCharBBox(AscW(Text(Index - 1)))
                                 Else
@@ -3330,7 +3331,7 @@ Public Class RenderArray
                                 Loop While Index <> Text.Length AndAlso Array.IndexOf(Arabic.RecitationCombiningSymbols, Text(Index)) <> -1
                             End If
                         Loop While Index <> -1
-                        Array.ForEach(Arabic.RecitationCombiningSymbols, Sub(Ch As Char) Text = Text.Replace(Ch, String.Empty))
+                        Text = System.Text.RegularExpressions.Regex.Replace(Text, "(?<!\s+)(?:" + Arabic.MakeRegMultiEx(Array.ConvertAll(Arabic.RecitationCombiningSymbols, Function(Ch As Char) CStr(Ch))) + ")", String.Empty)
                         ct = New iTextSharp.text.pdf.ColumnText(Writer.DirectContent)
                         If CurRenderArray(Count).TextItems(SubCount).DisplayClass = IslamMetadata.RenderArray.RenderDisplayClass.eArabic Or CurRenderArray(Count).TextItems(SubCount).DisplayClass = IslamMetadata.RenderArray.RenderDisplayClass.eRTL Then
                             ct.RunDirection = iTextSharp.text.pdf.PdfWriter.RUN_DIRECTION_RTL
@@ -3396,7 +3397,7 @@ Public Class RenderArray
         'although should not significantly effect calculation only the height in a generally absorbed way
         'use leading plus one extra leading up and down for extra spacing
         Dim Text As String = Str
-        Array.ForEach(Arabic.RecitationCombiningSymbols, Sub(Ch As Char) Str = Str.Replace(Ch, String.Empty))
+        Str = System.Text.RegularExpressions.Regex.Replace(Str, "(?<!\s+)(?:" + Arabic.MakeRegMultiEx(Array.ConvertAll(Arabic.RecitationCombiningSymbols, Function(Ch As Char) CStr(Ch))) + ")", String.Empty)
         s.Width = iTextSharp.text.pdf.ColumnText.GetWidth(New iTextSharp.text.Phrase(New iTextSharp.text.Chunk(Str, Font)), If(IsRTL, iTextSharp.text.pdf.PdfWriter.RUN_DIRECTION_RTL, iTextSharp.text.pdf.PdfWriter.RUN_DIRECTION_LTR), iTextSharp.text.pdf.ColumnText.AR_COMPOSEDTASHKEEL)
         Str = Text
         Dim Len As Integer = Str.Length
@@ -3412,7 +3413,7 @@ Public Class RenderArray
                 End If
                 'cannot split arabic words due to shaping issues
                 Str = Str.Substring(0, If(Str.IndexOf(" "c, Len - 1) = -1, Str.Length, Str.IndexOf(" "c, Len - 1) + 1))
-                Array.ForEach(Arabic.RecitationCombiningSymbols, Sub(Ch As Char) Str = Str.Replace(Ch, String.Empty))
+                Str = System.Text.RegularExpressions.Regex.Replace(Str, "(?<!\s+)(?:" + Arabic.MakeRegMultiEx(Array.ConvertAll(Arabic.RecitationCombiningSymbols, Function(Ch As Char) CStr(Ch))) + ")", String.Empty)
                 s.Width = iTextSharp.text.pdf.ColumnText.GetWidth(New iTextSharp.text.Phrase(Str, Font), If(IsRTL, iTextSharp.text.pdf.PdfWriter.RUN_DIRECTION_RTL, iTextSharp.text.pdf.PdfWriter.RUN_DIRECTION_LTR), iTextSharp.text.pdf.ColumnText.AR_COMPOSEDTASHKEEL)
                 Str = Text
             End While
@@ -3420,7 +3421,7 @@ Public Class RenderArray
             If s.Width > MaxWidth Then
                 Len = Str.LastIndexOf(" "c, Len - 1 - 1) + 1 'factor towards fitting not overflowing
                 Str = Str.Substring(0, Len)
-                Array.ForEach(Arabic.RecitationCombiningSymbols, Sub(Ch As Char) Str = Str.Replace(Ch, String.Empty))
+                Str = System.Text.RegularExpressions.Regex.Replace(Str, "(?<!\s+)(?:" + Arabic.MakeRegMultiEx(Array.ConvertAll(Arabic.RecitationCombiningSymbols, Function(Ch As Char) CStr(Ch))) + ")", String.Empty)
                 s.Width = iTextSharp.text.pdf.ColumnText.GetWidth(New iTextSharp.text.Phrase(Str, Font), If(IsRTL, iTextSharp.text.pdf.PdfWriter.RUN_DIRECTION_RTL, iTextSharp.text.pdf.PdfWriter.RUN_DIRECTION_LTR), iTextSharp.text.pdf.ColumnText.AR_COMPOSEDTASHKEEL)
                 Str = Text
             End If
@@ -3434,8 +3435,9 @@ Public Class RenderArray
             If Index <> -1 Then
                 Dim ChBounds As Integer()
                 If (Text(Index - 1) = " "c) Then
-                    'stopping symbols
-                    ChBounds = New Integer() {0, CInt(Font.BaseFont.GetDescentPoint(Text(Index - 1), Font.Size) / 0.001F / Font.Size), CInt(Font.BaseFont.GetWidthPoint(Text(Index - 1), Font.Size) / 0.001F / Font.Size), CInt(Font.BaseFont.GetAscentPoint(Text(Index - 1), Font.Size) / 0.001F / Font.Size)}
+                    'stopping symbols handled by normal rendering engine
+                    Index += 1
+                    Continue Do
                 ElseIf Text(Index - 1) = Arabic.ArabicTatweel Then
                     ChBounds = Font.BaseFont.GetCharBBox(AscW(Text(Index - 1)))
                 Else
@@ -3465,19 +3467,29 @@ Public Class RenderArray
                    Return Ret
                End Function
     End Function
+    Structure OverInfo
+        Sub New(NewIndex As Integer, NewSubIndex As Integer, NewMaxRight As Single)
+            Index = NewIndex
+            SubIndex = NewSubIndex
+            MaxRight = NewMaxRight
+        End Sub
+        Dim Index As Integer
+        Dim SubIndex As Integer
+        Dim MaxRight As Single
+    End Structure
     Public Shared Function GetLayout(CurRenderArray As List(Of IslamMetadata.RenderArray.RenderItem), _Width As Single, ByRef Bounds As Generic.List(Of Generic.List(Of Generic.List(Of LayoutInfo))), WidthFunc As GetTextWidth) As SizeF
         Dim MaxRight As Single = _Width
         Dim Top As Single = 0
         Dim NextRight As Single = _Width
         Dim LastCurTop As Single = 0
         Dim LastRight As Single = _Width
+        Dim OverIndexes As New List(Of OverInfo)
         For Count As Integer = 0 To CurRenderArray.Count - 1
             Dim IsOverflow As Boolean = False
             Dim MaxWidth As Single = 0
             Dim Right As Single = NextRight
             Dim CurTop As Single = 0
             Dim MaxTop As Single = 0
-            Dim OverIndexes As New List(Of Integer)
             Bounds.Add(New Generic.List(Of Generic.List(Of LayoutInfo)))
             For SubCount As Integer = 0 To CurRenderArray(Count).TextItems.Length - 1
                 Bounds(Count).Add(New Generic.List(Of LayoutInfo))
@@ -3486,9 +3498,9 @@ Public Class RenderArray
                     Dim SubBounds As New Generic.List(Of Generic.List(Of Generic.List(Of LayoutInfo)))
                     s = GetLayout(CType(CurRenderArray(Count).TextItems(SubCount).Text, List(Of IslamMetadata.RenderArray.RenderItem)), _Width, SubBounds, WidthFunc)
                     If s.Width > NextRight Then
+                        OverIndexes.Add(New OverInfo(Count, SubCount, NextRight))
                         NextRight = _Width
                         IsOverflow = True
-                        OverIndexes.Add(SubCount)
                     End If
                     Right = NextRight
                     Bounds(Count)(SubCount).Add(New LayoutInfo(New RectangleF(Right, Top + CurTop, s.Width, s.Height), 0, 0, SubBounds))
@@ -3512,9 +3524,9 @@ Public Class RenderArray
                         End If
                         theText = theText.Substring(nChar)
                         If theText <> String.Empty Or s.Width > NextRight Then
+                            If theText = String.Empty Then OverIndexes.Add(New OverInfo(Count, SubCount, NextRight))
                             NextRight = _Width
                             IsOverflow = True
-                            OverIndexes.Add(SubCount)
                         End If
                         If theText = String.Empty Then Right = NextRight
                         Bounds(Count)(SubCount).Add(New LayoutInfo(New RectangleF(Right, Top + CurTop, s.Width, s.Height), Baseline, nChar, Nothing))
@@ -3547,6 +3559,7 @@ Public Class RenderArray
                 CurTop = 0
                 MaxTop = 0
                 LastCurTop = 0
+                OverIndexes.Add(New OverInfo(Count + 1, 0, NextRight - MaxWidth))
                 NextRight = _Width
                 Right = NextRight
             ElseIf IsOverflow Then
@@ -3561,13 +3574,23 @@ Public Class RenderArray
             LastRight = NextRight
             If Count = CurRenderArray.Count - 1 Then
                 Top += CurTop + Bounds(Count)(CurRenderArray(Count).TextItems.Length - 1)(Bounds(Count)(CurRenderArray(Count).TextItems.Length - 1).Count - 1).Rect.Height
+                OverIndexes.Add(New OverInfo(Count + 1, 0, NextRight))
             End If
         Next
+        Dim NextOverIndex As Integer = 0
         For Count = 0 To Bounds.Count - 1
             For SubCount = 0 To Bounds(Count).Count - 1
+                Dim CenterAdj As Single = 0
+                If NextOverIndex <> OverIndexes.Count AndAlso (OverIndexes(NextOverIndex).Index < Count Or _
+                        OverIndexes(NextOverIndex).Index = Count And OverIndexes(NextOverIndex).SubIndex <= SubCount) Then
+                    NextOverIndex += 1
+                End If
+                If NextOverIndex <> OverIndexes.Count Then
+                    CenterAdj = (MaxRight - OverIndexes(NextOverIndex).MaxRight) / 2
+                End If
                 For NextCount = 0 To Bounds(Count)(SubCount).Count - 1
                     'overall centering can be done here though must calculate an overall line width
-                    Bounds(Count)(SubCount)(NextCount) = New LayoutInfo(New RectangleF(Bounds(Count)(SubCount)(NextCount).Rect.Left - CInt(MaxRight), Bounds(Count)(SubCount)(NextCount).Rect.Top, Bounds(Count)(SubCount)(NextCount).Rect.Width, Bounds(Count)(SubCount)(NextCount).Rect.Height), Bounds(Count)(SubCount)(NextCount).Baseline, Bounds(Count)(SubCount)(NextCount).nChar, Bounds(Count)(SubCount)(NextCount).Bounds)
+                    Bounds(Count)(SubCount)(NextCount) = New LayoutInfo(New RectangleF(Bounds(Count)(SubCount)(NextCount).Rect.Left - MaxRight + CenterAdj, Bounds(Count)(SubCount)(NextCount).Rect.Top, Bounds(Count)(SubCount)(NextCount).Rect.Width, Bounds(Count)(SubCount)(NextCount).Rect.Height), Bounds(Count)(SubCount)(NextCount).Baseline, Bounds(Count)(SubCount)(NextCount).nChar, Bounds(Count)(SubCount)(NextCount).Bounds)
                 Next
             Next
         Next
