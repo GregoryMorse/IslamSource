@@ -3221,7 +3221,7 @@ Public Class RenderArray
                 For NextCount = 0 To _Bounds(Count)(SubCount).Count - 1
                     If _Bounds(Count)(SubCount)(NextCount).Rect.Top + PageOffset.Y + BaseOffset.Y > Doc.PageSize.Height - Doc.BottomMargin - Doc.TopMargin Then
                         Writer.DirectContent.SetLineWidth(1)
-                        Writer.DirectContent.Rectangle(MaxRect.Left + Doc.LeftMargin + Doc.RightMargin - 2, Doc.PageSize.Height - Doc.TopMargin - MaxRect.Bottom + Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size) * 2, MaxRect.Width - 2, MaxRect.Height - Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size) * 2)
+                        Writer.DirectContent.Rectangle(MaxRect.Left + Doc.LeftMargin - 2, Doc.PageSize.Height - Doc.TopMargin - MaxRect.Bottom + Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size) * 2, MaxRect.Width - 2, MaxRect.Height - Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size) * 2)
                         Writer.DirectContent.Stroke()
                         MaxRect = New RectangleF(Doc.PageSize.Width, Doc.PageSize.Height, 0, 0)
                         Doc.NewPage()
@@ -3239,7 +3239,7 @@ Public Class RenderArray
                     For NextCount As Integer = 0 To _Bounds(Count)(SubCount).Count - 1
                         If _Bounds(Count)(SubCount)(NextCount).Rect.Top + PageOffset.Y + BaseOffset.Y > Doc.PageSize.Height - Doc.BottomMargin - Doc.TopMargin Then
                             Writer.DirectContent.SetLineWidth(1)
-                            Writer.DirectContent.Rectangle(MaxRect.Left + Doc.LeftMargin + Doc.RightMargin - 2, Doc.PageSize.Height - Doc.TopMargin - MaxRect.Bottom + Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size) * 2, MaxRect.Width - 2, MaxRect.Height - Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size) * 2)
+                            Writer.DirectContent.Rectangle(MaxRect.Left + Doc.LeftMargin - 2, Doc.PageSize.Height - Doc.TopMargin - MaxRect.Bottom + Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size) * 2, MaxRect.Width - 2, MaxRect.Height - Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size) * 2)
                             Writer.DirectContent.Stroke()
                             MaxRect = New RectangleF(Doc.PageSize.Width, Doc.PageSize.Height, 0, 0)
                             Doc.NewPage()
@@ -3278,7 +3278,7 @@ Public Class RenderArray
                                 Dim FitFont As New iTextSharp.text.Font(Font)
                                 FitFont.Size = (ChBounds(2) + ChBounds(0)) * 0.001F * Font.Size / n.Width * Font.Size
                                 GetTextWidthPdf(FitFont, Text.Substring(Index + 1, NumCount), Doc.PageSize.Width, True, n, Baseline)
-                                ct.SetSimpleColumn(Rect.Left + Doc.LeftMargin + Doc.RightMargin + Rect.Width + 1 - (ChBounds(2) - ChBounds(0)) * 0.001F * Font.Size / 4, Doc.PageSize.Height - Doc.TopMargin - Rect.Bottom - _Bounds(Count)(SubCount)(NextCount).Baseline, Rect.Right + 1 + Doc.LeftMargin + Doc.RightMargin - s.Width - (ChBounds(2) - ChBounds(0)) * 0.001F * Font.Size / 4, Doc.PageSize.Height - Doc.TopMargin - Rect.Top + 1 - _Bounds(Count)(SubCount)(NextCount).Baseline, Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size), iTextSharp.text.Element.ALIGN_CENTER Or iTextSharp.text.Element.ALIGN_BASELINE)
+                                ct.SetSimpleColumn(Rect.Left + Doc.LeftMargin + Rect.Width + 1 - (ChBounds(2) - ChBounds(0)) * 0.001F * Font.Size / 4, Doc.PageSize.Height - Doc.TopMargin - Rect.Bottom - _Bounds(Count)(SubCount)(NextCount).Baseline, Rect.Right + 1 + Doc.LeftMargin - s.Width - (ChBounds(2) - ChBounds(0)) * 0.001F * Font.Size / 4, Doc.PageSize.Height - Doc.TopMargin - Rect.Top + 1 - _Bounds(Count)(SubCount)(NextCount).Baseline, Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size), iTextSharp.text.Element.ALIGN_CENTER Or iTextSharp.text.Element.ALIGN_BASELINE)
                                 ct.AddText(New iTextSharp.text.Chunk(Text.Substring(Index + 1, NumCount), FitFont))
                                 ct.Go()
                                 Text = Text.Remove(Index + 1, NumCount)
@@ -3320,7 +3320,7 @@ Public Class RenderArray
                                     ct.UseAscender = False
                                     Dim DiaBounds As Integer() = Font.BaseFont.GetCharBBox(AscW(Text(Index)))
                                     Offset = If(DiaBounds(1) < 0 And DiaBounds(3) > If(Offset < 0, Offset, ChBounds(1)), -(DiaBounds(3) - If(Offset < 0, Offset, ChBounds(1))), If(DiaBounds(1) >= 0 And DiaBounds(1) < If(Offset > 0, Offset, ChBounds(3)), -(DiaBounds(1) - If(Offset > 0, Offset, ChBounds(3))), 0))
-                                    ct.SetSimpleColumn(Rect.Left + Doc.LeftMargin + Doc.RightMargin + (Rect.Width - 3 - s.Width - (ChBounds(2) - If(LastCenter <> 0, LastCenter - (DiaBounds(2) - DiaBounds(0)) \ 2, 0)) * 0.001F * Font.Size), Doc.PageSize.Height - Doc.TopMargin - Rect.Bottom - _Bounds(Count)(SubCount)(NextCount).Baseline + Offset * 0.001F * Font.Size, Rect.Right + 1 + Doc.LeftMargin + Doc.RightMargin - s.Width + If(LastCenter <> 0, LastCenter + (DiaBounds(2) - DiaBounds(0)) \ 2, 0) * 0.001F * Font.Size, Doc.PageSize.Height - Doc.TopMargin - Rect.Top + 1 - _Bounds(Count)(SubCount)(NextCount).Baseline + Offset * 0.001F * Font.Size, Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size), iTextSharp.text.Element.ALIGN_RIGHT Or iTextSharp.text.Element.ALIGN_BASELINE)
+                                    ct.SetSimpleColumn(Rect.Left + Doc.LeftMargin + (Rect.Width - 3 - s.Width - (ChBounds(2) - If(LastCenter <> 0, LastCenter - (DiaBounds(2) - DiaBounds(0)) \ 2, 0)) * 0.001F * Font.Size), Doc.PageSize.Height - Doc.TopMargin - Rect.Bottom - _Bounds(Count)(SubCount)(NextCount).Baseline + Offset * 0.001F * Font.Size, Rect.Right + 1 + Doc.LeftMargin - s.Width + If(LastCenter <> 0, LastCenter + (DiaBounds(2) - DiaBounds(0)) \ 2, 0) * 0.001F * Font.Size, Doc.PageSize.Height - Doc.TopMargin - Rect.Top + 1 - _Bounds(Count)(SubCount)(NextCount).Baseline + Offset * 0.001F * Font.Size, Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size), iTextSharp.text.Element.ALIGN_RIGHT Or iTextSharp.text.Element.ALIGN_BASELINE)
                                     ct.AddText(New iTextSharp.text.Chunk(Text(Index), Font))
                                     ct.Go()
                                     If DiaBounds(1) < 0 Then Offset = DiaBounds(1) - Offset
@@ -3339,7 +3339,7 @@ Public Class RenderArray
                         Else
                             ct.RunDirection = iTextSharp.text.pdf.PdfWriter.RUN_DIRECTION_LTR
                         End If
-                        ct.SetSimpleColumn(Rect.Left + Doc.LeftMargin + Doc.RightMargin, Doc.PageSize.Height - Doc.TopMargin - Rect.Bottom - _Bounds(Count)(SubCount)(NextCount).Baseline, Rect.Right + 1 + Doc.LeftMargin + Doc.RightMargin, Doc.PageSize.Height - Doc.TopMargin - Rect.Top + 1 - _Bounds(Count)(SubCount)(NextCount).Baseline, Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size), If(ct.RunDirection = iTextSharp.text.pdf.PdfWriter.RUN_DIRECTION_LTR, iTextSharp.text.Element.ALIGN_RIGHT, iTextSharp.text.Element.ALIGN_RIGHT) Or iTextSharp.text.Element.ALIGN_BASELINE)
+                        ct.SetSimpleColumn(Rect.Left + Doc.LeftMargin, Doc.PageSize.Height - Doc.TopMargin - Rect.Bottom - _Bounds(Count)(SubCount)(NextCount).Baseline, Rect.Right + 1 + Doc.LeftMargin, Doc.PageSize.Height - Doc.TopMargin - Rect.Top + 1 - _Bounds(Count)(SubCount)(NextCount).Baseline, Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size), If(ct.RunDirection = iTextSharp.text.pdf.PdfWriter.RUN_DIRECTION_LTR, iTextSharp.text.Element.ALIGN_RIGHT, iTextSharp.text.Element.ALIGN_RIGHT) Or iTextSharp.text.Element.ALIGN_BASELINE)
                         ct.AddText(New iTextSharp.text.Chunk(Text, Font))
                         ct.Go()
                         theText = theText.Substring(_Bounds(Count)(SubCount)(NextCount).nChar)
@@ -3347,7 +3347,7 @@ Public Class RenderArray
                 End If
             Next
             Writer.DirectContent.SetLineWidth(1)
-            Writer.DirectContent.Rectangle(MaxRect.Left + Doc.LeftMargin + Doc.RightMargin - 2, Doc.PageSize.Height - Doc.TopMargin - MaxRect.Bottom + Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size) * 2, MaxRect.Width - 2, MaxRect.Height - Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size) * 2)
+            Writer.DirectContent.Rectangle(MaxRect.Left + Doc.LeftMargin  - 2, Doc.PageSize.Height - Doc.TopMargin - MaxRect.Bottom + Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size) * 2, MaxRect.Width - 2, MaxRect.Height - Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size) * 2)
             Writer.DirectContent.Stroke()
         Next
     End Sub
@@ -3534,8 +3534,10 @@ Public Class RenderArray
             For SubCount = 0 To Bounds(Count).Count - 1
                 For NextCount = 0 To Bounds(Count)(SubCount).Count - 1
                     If NextCount <> Bounds(Count)(SubCount).Count - 1 Then
-                        Bounds(Count)(SubCount)(NextCount) = New LayoutInfo(New RectangleF(MaxWidth / 2 - Bounds(Count)(SubCount)(NextCount).Rect.Width / 2, Bounds(Count)(SubCount)(NextCount).Rect.Top + If(IsOverflow, LastCurTop, 0), Bounds(Count)(SubCount)(NextCount).Rect.Width, Bounds(Count)(SubCount)(NextCount).Rect.Height), Bounds(Count)(SubCount)(NextCount).Baseline, Bounds(Count)(SubCount)(NextCount).nChar, Bounds(Count)(SubCount)(NextCount).Bounds)
+                        MaxRight = Math.Min((MaxWidth - Bounds(Count)(SubCount)(NextCount).Rect.Width) / 2, MaxRight)
+                        Bounds(Count)(SubCount)(NextCount) = New LayoutInfo(New RectangleF((MaxWidth - Bounds(Count)(SubCount)(NextCount).Rect.Width) / 2, Bounds(Count)(SubCount)(NextCount).Rect.Top + If(IsOverflow, LastCurTop, 0), Bounds(Count)(SubCount)(NextCount).Rect.Width, Bounds(Count)(SubCount)(NextCount).Rect.Height), Bounds(Count)(SubCount)(NextCount).Baseline, Bounds(Count)(SubCount)(NextCount).nChar, Bounds(Count)(SubCount)(NextCount).Bounds)
                     Else
+                        MaxRight = Math.Min(If(IsOverflow, _Width, Bounds(Count)(SubCount)(NextCount).Rect.Left) - ((MaxWidth + Bounds(Count)(SubCount)(NextCount).Rect.Width) / 2), MaxRight)
                         Bounds(Count)(SubCount)(NextCount) = New LayoutInfo(New RectangleF(If(IsOverflow, _Width, Bounds(Count)(SubCount)(NextCount).Rect.Left) - ((MaxWidth + Bounds(Count)(SubCount)(NextCount).Rect.Width) / 2), Bounds(Count)(SubCount)(NextCount).Rect.Top + If(IsOverflow, LastCurTop, 0), Bounds(Count)(SubCount)(NextCount).Rect.Width, Bounds(Count)(SubCount)(NextCount).Rect.Height), Bounds(Count)(SubCount)(NextCount).Baseline, Bounds(Count)(SubCount)(NextCount).nChar, Bounds(Count)(SubCount)(NextCount).Bounds)
                     End If
                 Next
@@ -3560,17 +3562,16 @@ Public Class RenderArray
             If Count = CurRenderArray.Count - 1 Then
                 Top += CurTop + Bounds(Count)(CurRenderArray(Count).TextItems.Length - 1)(Bounds(Count)(CurRenderArray(Count).TextItems.Length - 1).Count - 1).Rect.Height
             End If
-            MaxRight = Math.Min(Math.Max(Math.Max(Right, _Width - MaxWidth), Right + MaxWidth), MaxRight)
         Next
         For Count = 0 To Bounds.Count - 1
             For SubCount = 0 To Bounds(Count).Count - 1
                 For NextCount = 0 To Bounds(Count)(SubCount).Count - 1
                     'overall centering can be done here though must calculate an overall line width
-                    Bounds(Count)(SubCount)(NextCount) = New LayoutInfo(New RectangleF(Bounds(Count)(SubCount)(NextCount).Rect.Left - CInt(_Width - MaxRight), Bounds(Count)(SubCount)(NextCount).Rect.Top, Bounds(Count)(SubCount)(NextCount).Rect.Width, Bounds(Count)(SubCount)(NextCount).Rect.Height), Bounds(Count)(SubCount)(NextCount).Baseline, Bounds(Count)(SubCount)(NextCount).nChar, Bounds(Count)(SubCount)(NextCount).Bounds)
+                    Bounds(Count)(SubCount)(NextCount) = New LayoutInfo(New RectangleF(Bounds(Count)(SubCount)(NextCount).Rect.Left - CInt(MaxRight), Bounds(Count)(SubCount)(NextCount).Rect.Top, Bounds(Count)(SubCount)(NextCount).Rect.Width, Bounds(Count)(SubCount)(NextCount).Rect.Height), Bounds(Count)(SubCount)(NextCount).Baseline, Bounds(Count)(SubCount)(NextCount).nChar, Bounds(Count)(SubCount)(NextCount).Bounds)
                 Next
             Next
         Next
-        Return New SizeF(MaxRight, Top)
+        Return New SizeF(_Width - MaxRight, Top)
     End Function
     Public Sub Render(ByVal writer As System.Web.UI.HtmlTextWriter, ByVal TabCount As Integer)
         DoRender(writer, TabCount, Items, String.Empty)
