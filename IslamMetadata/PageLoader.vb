@@ -3477,6 +3477,7 @@ Public Class RenderArray
             Dim Right As Single = NextRight
             Dim CurTop As Single = 0
             Dim MaxTop As Single = 0
+            Dim OverIndexes As New List(Of Integer)
             Bounds.Add(New Generic.List(Of Generic.List(Of LayoutInfo)))
             For SubCount As Integer = 0 To CurRenderArray(Count).TextItems.Length - 1
                 Bounds(Count).Add(New Generic.List(Of LayoutInfo))
@@ -3487,6 +3488,7 @@ Public Class RenderArray
                     If s.Width > NextRight Then
                         NextRight = _Width
                         IsOverflow = True
+                        OverIndexes.Add(SubCount)
                     End If
                     Right = NextRight
                     Bounds(Count)(SubCount).Add(New LayoutInfo(New RectangleF(Right, Top + CurTop, s.Width, s.Height), 0, 0, SubBounds))
@@ -3512,6 +3514,7 @@ Public Class RenderArray
                         If theText <> String.Empty Or s.Width > NextRight Then
                             NextRight = _Width
                             IsOverflow = True
+                            OverIndexes.Add(SubCount)
                         End If
                         If theText = String.Empty Then Right = NextRight
                         Bounds(Count)(SubCount).Add(New LayoutInfo(New RectangleF(Right, Top + CurTop, s.Width, s.Height), Baseline, nChar, Nothing))
@@ -3533,7 +3536,7 @@ Public Class RenderArray
                     If NextCount <> Bounds(Count)(SubCount).Count - 1 Then
                         Bounds(Count)(SubCount)(NextCount) = New LayoutInfo(New RectangleF(MaxWidth / 2 - Bounds(Count)(SubCount)(NextCount).Rect.Width / 2, Bounds(Count)(SubCount)(NextCount).Rect.Top + If(IsOverflow, LastCurTop, 0), Bounds(Count)(SubCount)(NextCount).Rect.Width, Bounds(Count)(SubCount)(NextCount).Rect.Height), Bounds(Count)(SubCount)(NextCount).Baseline, Bounds(Count)(SubCount)(NextCount).nChar, Bounds(Count)(SubCount)(NextCount).Bounds)
                     Else
-                        Bounds(Count)(SubCount)(NextCount) = New LayoutInfo(New RectangleF(If(IsOverflow, _Width - If(NextCount = 0, Bounds(Count)(SubCount)(NextCount).Rect.Width, CInt(MaxWidth - (MaxWidth / 2 - Bounds(Count)(SubCount)(NextCount).Rect.Width / 2))), Bounds(Count)(SubCount)(NextCount).Rect.Left - CInt(MaxWidth - (MaxWidth / 2 - Bounds(Count)(SubCount)(NextCount).Rect.Width / 2))), Bounds(Count)(SubCount)(NextCount).Rect.Top + If(IsOverflow, LastCurTop, 0), Bounds(Count)(SubCount)(NextCount).Rect.Width, Bounds(Count)(SubCount)(NextCount).Rect.Height), Bounds(Count)(SubCount)(NextCount).Baseline, Bounds(Count)(SubCount)(NextCount).nChar, Bounds(Count)(SubCount)(NextCount).Bounds)
+                        Bounds(Count)(SubCount)(NextCount) = New LayoutInfo(New RectangleF(If(IsOverflow, _Width, Bounds(Count)(SubCount)(NextCount).Rect.Left) - ((MaxWidth + Bounds(Count)(SubCount)(NextCount).Rect.Width) / 2), Bounds(Count)(SubCount)(NextCount).Rect.Top + If(IsOverflow, LastCurTop, 0), Bounds(Count)(SubCount)(NextCount).Rect.Width, Bounds(Count)(SubCount)(NextCount).Rect.Height), Bounds(Count)(SubCount)(NextCount).Baseline, Bounds(Count)(SubCount)(NextCount).nChar, Bounds(Count)(SubCount)(NextCount).Bounds)
                     End If
                 Next
             Next
