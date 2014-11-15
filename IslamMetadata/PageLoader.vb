@@ -3524,11 +3524,11 @@ Public Class RenderArray
                         End If
                         theText = theText.Substring(nChar)
                         If theText <> String.Empty Or s.Width > NextRight Then
-                            If theText = String.Empty Then OverIndexes.Add(New OverInfo(Count, SubCount, NextRight))
+                            If s.Width > NextRight Then OverIndexes.Add(New OverInfo(Count, SubCount, NextRight))
                             NextRight = _Width
                             IsOverflow = True
                         End If
-                        If theText = String.Empty Then Right = NextRight
+                        If s.Width > NextRight Then Right = NextRight
                         Bounds(Count)(SubCount).Add(New LayoutInfo(New RectangleF(Right, Top + CurTop, s.Width, s.Height), Baseline, nChar, Nothing))
                         MaxTop = Math.Max(CurTop + s.Height, MaxTop)
                         If theText <> String.Empty Then
@@ -3545,13 +3545,8 @@ Public Class RenderArray
             'centering must come after maximum width is calculated
             For SubCount = 0 To Bounds(Count).Count - 1
                 For NextCount = 0 To Bounds(Count)(SubCount).Count - 1
-                    If NextCount <> Bounds(Count)(SubCount).Count - 1 Then
-                        MaxRight = Math.Min((MaxWidth - Bounds(Count)(SubCount)(NextCount).Rect.Width) / 2, MaxRight)
-                        Bounds(Count)(SubCount)(NextCount) = New LayoutInfo(New RectangleF((MaxWidth - Bounds(Count)(SubCount)(NextCount).Rect.Width) / 2, Bounds(Count)(SubCount)(NextCount).Rect.Top + If(IsOverflow, LastCurTop, 0), Bounds(Count)(SubCount)(NextCount).Rect.Width, Bounds(Count)(SubCount)(NextCount).Rect.Height), Bounds(Count)(SubCount)(NextCount).Baseline, Bounds(Count)(SubCount)(NextCount).nChar, Bounds(Count)(SubCount)(NextCount).Bounds)
-                    Else
-                        MaxRight = Math.Min(If(IsOverflow, _Width, Bounds(Count)(SubCount)(NextCount).Rect.Left) - ((MaxWidth + Bounds(Count)(SubCount)(NextCount).Rect.Width) / 2), MaxRight)
-                        Bounds(Count)(SubCount)(NextCount) = New LayoutInfo(New RectangleF(If(IsOverflow, _Width, Bounds(Count)(SubCount)(NextCount).Rect.Left) - ((MaxWidth + Bounds(Count)(SubCount)(NextCount).Rect.Width) / 2), Bounds(Count)(SubCount)(NextCount).Rect.Top + If(IsOverflow, LastCurTop, 0), Bounds(Count)(SubCount)(NextCount).Rect.Width, Bounds(Count)(SubCount)(NextCount).Rect.Height), Bounds(Count)(SubCount)(NextCount).Baseline, Bounds(Count)(SubCount)(NextCount).nChar, Bounds(Count)(SubCount)(NextCount).Bounds)
-                    End If
+                    MaxRight = Math.Min(If(IsOverflow Or NextCount <> Bounds(Count)(SubCount).Count - 1, _Width, Bounds(Count)(SubCount)(NextCount).Rect.Left) - ((MaxWidth + Bounds(Count)(SubCount)(NextCount).Rect.Width) / 2), MaxRight)
+                    Bounds(Count)(SubCount)(NextCount) = New LayoutInfo(New RectangleF(If(IsOverflow Or NextCount <> Bounds(Count)(SubCount).Count - 1, _Width, Bounds(Count)(SubCount)(NextCount).Rect.Left) - ((MaxWidth + Bounds(Count)(SubCount)(NextCount).Rect.Width) / 2), Bounds(Count)(SubCount)(NextCount).Rect.Top + If(IsOverflow, LastCurTop, 0), Bounds(Count)(SubCount)(NextCount).Rect.Width, Bounds(Count)(SubCount)(NextCount).Rect.Height), Bounds(Count)(SubCount)(NextCount).Baseline, Bounds(Count)(SubCount)(NextCount).nChar, Bounds(Count)(SubCount)(NextCount).Bounds)
                 Next
             Next
             If Count <> 0 AndAlso ((CurRenderArray(Count).Type = RenderTypes.eHeaderLeft Or CurRenderArray(Count - 1).Type = RenderTypes.eHeaderRight) Or (CurRenderArray(Count).Type = RenderTypes.eHeaderCenter And CurRenderArray(Count - 1).Type <> RenderTypes.eHeaderLeft) Or (CurRenderArray(Count).Type <> RenderTypes.eHeaderRight And CurRenderArray(Count - 1).Type = RenderTypes.eHeaderCenter)) Then
@@ -3582,7 +3577,7 @@ Public Class RenderArray
             For SubCount = 0 To Bounds(Count).Count - 1
                 Dim CenterAdj As Single = 0
                 If NextOverIndex <> OverIndexes.Count AndAlso (OverIndexes(NextOverIndex).Index < Count Or _
-                        OverIndexes(NextOverIndex).Index = Count And OverIndexes(NextOverIndex).SubIndex <= SubCount) Then
+                        OverIndexes(NextOverIndex).Index = Count) Then
                     NextOverIndex += 1
                 End If
                 If NextOverIndex <> OverIndexes.Count Then
