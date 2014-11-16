@@ -215,8 +215,6 @@
     <Content Include="Menu.ascx" />
     <Content Include="metadata\ArabicData.xml" />
     <Content Include="Page.ascx" />
-    <None Include="My Project\PublishProfiles\gmorsecode.pubxml" />
-    <None Include="My Project\PublishProfiles\islamsource.pubxml" />
     <None Include="Scripts\jquery-1.11.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.11.1.js" />
     <Content Include="Scripts\jquery-1.11.1.min.js" />
@@ -255,6 +253,9 @@
       <Project>{9adb20ba-877e-4cb0-a12b-7babe3fedc27}</Project>
       <Name>HostPageUtility</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="My Project\PublishProfiles\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
