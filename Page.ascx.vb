@@ -1,5 +1,4 @@
 Imports IslamMetadata
-
 Partial Class Page
     Inherits System.Web.UI.UserControl
     Dim MyPage As PageLoader.PageItem

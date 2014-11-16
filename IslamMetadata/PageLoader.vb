@@ -165,6 +165,7 @@ Public Class Utility
         Return CInt((num + (num2 * &H5D588B65)) And &H800000007FFFFFFFL)
     End Function
     Public Shared Function LoadResourceString(resourceKey As String) As String
+        'must move all the strings into web.config 
         If resourceKey.StartsWith("Acct_") Or _
             resourceKey.StartsWith("Hadith_") Or _
             resourceKey.StartsWith("IslamInfo_") Or _
