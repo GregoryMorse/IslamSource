@@ -173,3 +173,6 @@ UpgradeLog*.htm
 # Microsoft Fakes
 FakesAssemblies/
 /App_GlobalResources
+/My Project/PublishProfiles/islamsource.pubxml
+*.pubxml
+*.pubxml

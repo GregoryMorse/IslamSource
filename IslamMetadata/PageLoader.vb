@@ -1066,7 +1066,7 @@ Public Class JSCoding
         'parsing javascript for beautification must ignore quotes and count the number of open braces
         'simple naive technique used for now
         Return New String() {"javascript: doJSCoding();", String.Empty, _
-        "function doJSCoding() { $('#jsresult').text($('#convjsdir0').prop('checked') ? $('#convjs').val().replace(/\r?\n|\r|\t/gm, ' '); : $('#convjs').val().replace(/(?:{|;|})\s+/g, '$1\r\n')); }"}
+        "function doJSCoding() { $('#jsresult').text($('#convjsdir0').prop('checked') ? $('#convjs').val().replace(/\r?\n|\r|\t/gm, ' ') : $('#convjs').val().replace(/(?:{|;|})\s+/g, '$1\r\n')); }"}
     End Function
 End Class
 Public Class Document
