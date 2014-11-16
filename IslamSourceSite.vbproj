@@ -307,6 +307,7 @@
     <Content Include="metadata\uz.sodik.txt" />
     <Content Include="metadata\zh.jian.txt" />
     <Content Include="metadata\zh.majian.txt" />
+    <None Include="islamsource.pubxml" />
     <None Include="Scripts\jquery-1.11.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.11.1.js" />
     <Content Include="Scripts\jquery-1.11.1.min.js" />
