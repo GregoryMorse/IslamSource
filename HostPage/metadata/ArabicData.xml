@@ -1,4 +1,5 @@
-﻿<arabicdata>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<arabicdata>
 	<arabiccombos>
 		<combo symbolname="_F" shaping=",,,FE71"></combo>
 		<combo symbolname="l|" shaping="FEF5,FEF6,,"></combo>

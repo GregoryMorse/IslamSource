@@ -170,13 +170,14 @@ Public Class Utility
         Return CInt((num + (num2 * &H5D588B65)) And &H800000007FFFFFFFL)
     End Function
     Public Shared Function LoadResourceString(resourceKey As String) As String
-        LoadResourceString = String.Empty
+        LoadResourceString = Nothing
         For Each Pair In ConnectionData.Resources
             If Array.FindIndex(Pair.Value, Function(Str As String) Str = resourceKey Or resourceKey.StartsWith(Str + "_")) <> -1 Then
                 LoadResourceString = New System.Resources.ResourceManager(Pair.Key + ".Resources", Reflection.Assembly.Load(Pair.Key)).GetString(resourceKey, Threading.Thread.CurrentThread.CurrentUICulture)
             End If
         Next
-        If LoadResourceString = String.Empty Then
+        If LoadResourceString = Nothing Then
+            LoadResourceString = String.Empty
             'System.Diagnostics.Debug.WriteLine("  <data name=""" + resourceKey + """ xml:space=""preserve"">" + vbCrLf + "    <value>" + System.Text.RegularExpressions.Regex.Replace(System.Text.RegularExpressions.Regex.Replace(resourceKey, ".*_", String.Empty), "(.+?)([A-Z])", "$1 $2") + "</value>" + vbCrLf + "  </data>")
         End If
     End Function
@@ -555,10 +556,13 @@ Public Class Utility
         LookupClassMember = Nothing
         If (ClassMember.Length = 3 AndAlso ClassMember(1) = String.Empty) Then
             For Each Key As String In ConnectionData.FuncLibs
-                Dim CheckType As Type = Type.GetType(Key + "." + ClassMember(0))
-                If Not CheckType Is Nothing Then
-                    LookupClassMember = CheckType.GetMethod(ClassMember(2))
-                    If Not LookupClassMember Is Nothing Then Exit For
+                Dim Asm As Reflection.Assembly = Reflection.Assembly.Load(Key)
+                If Not Asm Is Nothing Then
+                    Dim CheckType As Type = Asm.GetType(Key + "." + ClassMember(0))
+                    If Not CheckType Is Nothing Then
+                        LookupClassMember = CheckType.GetMethod(ClassMember(2))
+                        If Not LookupClassMember Is Nothing Then Exit For
+                    End If
                 End If
             Next
         End If
@@ -1154,6 +1158,7 @@ Public Class PageLoader
     End Sub
 End Class
 Public Class ArabicData
+    <System.Xml.Serialization.XmlRoot("arabicdata")> _
     Class ArabicXMLData
         Public Structure ArabicCombo
             <System.Xml.Serialization.XmlAttribute("symbolname")> _

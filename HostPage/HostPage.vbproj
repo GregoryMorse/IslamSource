@@ -215,6 +215,7 @@
     <Content Include="Menu.ascx" />
     <Content Include="metadata\ArabicData.xml" />
     <Content Include="Page.ascx" />
+    <None Include="My Project\PublishProfiles\Local Debug.pubxml" />
     <None Include="Scripts\jquery-1.11.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.11.1.js" />
     <Content Include="Scripts\jquery-1.11.1.min.js" />
@@ -235,7 +236,7 @@
     <Content Include="Scripts\jquery-1.11.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="packages.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="CERTENROLLLib">
@@ -254,9 +255,7 @@
       <Name>HostPageUtility</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="My Project\PublishProfiles\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
