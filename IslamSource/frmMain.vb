@@ -1,4 +1,5 @@
-﻿Imports IslamMetadata
+﻿Imports HostPageUtility
+Imports IslamMetadata
 
 Public Class frmMain
     Private PageSet As New PageLoader
@@ -10,8 +11,8 @@ Public Class frmMain
         'TanzilReader.ChangeQuranFormat(TanzilReader.QuranTexts.Hafs, TanzilReader.QuranTexts.Warsh, TanzilReader.QuranScripts.Uthmani, TanzilReader.ArabicPresentation.Buckwalter)
         'TanzilReader.CheckNotablePatterns()
         'CachedData.DoErrorCheck()
-        Dim RenderArr As RenderArray = Supplications.DoGetRenderedSuppText(Arabic.TranslitScheme.RuleBased, "PlainRoman", CachedData.IslamData.VerseCategories(0), 0)
-        IslamMetadata.RenderArray.OutputPdf("test.pdf", RenderArr.Items)
+        Dim RenderArr As RenderArray = Supplications.DoGetRenderedSuppText(ArabicData.TranslitScheme.RuleBased, "PlainRoman", CachedData.IslamData.VerseCategories(0), 0)
+        HostPageUtility.RenderArray.OutputPdf("test.pdf", RenderArr.Items)
         For Index = 0 To PageSet.Pages.Count - 1
             Dim newNode As TreeNode = tvwMain.Nodes.Add(PageSet.Pages.Item(Index).PageName, Utility.LoadResourceString(PageSet.Pages.Item(Index).Text))
             For SubIndex = 0 To PageSet.Pages.Item(Index).Page.Count - 1
@@ -24,7 +25,7 @@ Public Class frmMain
         Dim Renderer As New MultiLangRender
         Renderer.Anchor = AnchorStyles.Left Or AnchorStyles.Top Or AnchorStyles.Right Or AnchorStyles.Bottom
         Renderer.Size = New Size(gbMain.Width, gbMain.Height)
-        Renderer.RenderArray = TanzilReader.GetQuranTextBySelection(0, 1, String.Empty, Arabic.TranslitScheme.RuleBased, "PlainRoman", 0).Items
+        Renderer.RenderArray = TanzilReader.GetQuranTextBySelection(0, 1, String.Empty, ArabicData.TranslitScheme.RuleBased, "PlainRoman", 0).Items
         'IslamMetadata.RenderArray.OutputPdf("test.pdf", Renderer.RenderArray)
         gbMain.Controls.Add(Renderer)
     End Sub

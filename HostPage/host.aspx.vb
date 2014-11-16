@@ -1,4 +1,4 @@
-﻿Imports IslamMetadata
+﻿Imports HostPageUtility
 
 Partial Class host
     Inherits System.Web.UI.Page
@@ -96,8 +96,10 @@ Partial Class host
             Next
         ElseIf bIsAdmin And Request.QueryString.Get(PageQuery) = UserAccounts.ID_CreateDatabase Then
             SiteDatabase.CreateDatabase()
+            Utility.LookupClassMember("IslamSiteDatabase::CreateDatabase").Invoke(Nothing, Nothing)
         ElseIf bIsAdmin And Request.QueryString.Get(PageQuery) = UserAccounts.ID_RemoveDatabase Then
             SiteDatabase.RemoveDatabase()
+            Utility.LookupClassMember("IslamSiteDatabase::RemoveDatabase").Invoke(Nothing, Nothing)
         ElseIf bIsAdmin And Request.QueryString.Get(PageQuery) = UserAccounts.ID_CleanupState Then
             SiteDatabase.CleanupStaleLoginSessions()
             SiteDatabase.CleanupStaleActivations()
@@ -170,20 +172,9 @@ Partial Class host
             Response.Write("Http Context User: " + HttpContext.Current.User.Identity.Name() + vbCrLf)
         ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_HadithRanking Then
             If UserAccounts.IsLoggedIn() Then
-                If SiteDatabase.GetUserHadithRankingData(UserAccounts.GetUserID(), Request.Form.Get("Collection"), CInt(Request.Form.Get("Book")), CInt(Request.Form.Get("Hadith"))) = -1 Then
-                    If CInt(Request.Form.Get("Rating")) <> 0 Then
-                        SiteDatabase.SetUserHadithRankingData(UserAccounts.GetUserID(), Request.Form.Get("Collection"), CInt(Request.Form.Get("Book")), CInt(Request.Form.Get("Hadith")), CInt(Request.Form.Get("Rating")))
-                    End If
-                Else
-                    If CInt(Request.Form.Get("Rating")) <> 0 Then
-                        SiteDatabase.UpdateUserHadithRankingData(UserAccounts.GetUserID(), Request.Form.Get("Collection"), CInt(Request.Form.Get("Book")), CInt(Request.Form.Get("Hadith")), CInt(Request.Form.Get("Rating")))
-                    Else
-                        SiteDatabase.RemoveUserHadithRankingData(UserAccounts.GetUserID(), Request.Form.Get("Collection"), CInt(Request.Form.Get("Book")), CInt(Request.Form.Get("Hadith")))
-                    End If
-                End If
+                Utility.LookupClassMember("IslamSiteDatabase::ModifyRankingData").Invoke(Nothing, New Object() {UserAccounts.GetUserID()})
             End If
-            Dim Data As Integer() = SiteDatabase.GetHadithRankingData(Request.Form.Get("Collection"), CInt(Request.Form.Get("Book")), CInt(Request.Form.Get("Hadith")))
-            If Data(1) <> 0 Then Response.Write("Average of " + CStr(Data(0) / Data(1) / 2) + " out of " + CStr(Data(1)) + " rankings")
+            Utility.LookupClassMember("IslamSiteDatabase::WriteRankingData").Invoke(Nothing, Nothing)
         ElseIf (Request.QueryString.Get(PageQuery) = "Image.gif") Then
             Dim DateModified As Date = Now
             If Request.QueryString.Get("Image") = "EMailAddress" Or _

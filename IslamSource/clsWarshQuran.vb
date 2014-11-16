@@ -553,7 +553,7 @@
                                     Dim Idx As Integer = Str.IndexOf(" (")
                                     If Idx = -1 Then Idx = Str.IndexOf(" madaniy~ap")
                                     If Idx = -1 Then Idx = Str.IndexOf(" ma_k~iy~apN")
-                                    QStr += "  <sura index=""" + CStr(Chapter) + """ name=""" + IslamMetadata.Arabic.TransliterateFromBuckwalter(Str.Substring(0, Idx).Replace("suwrapu ", String.Empty).Replace("suwrap ", String.Empty).Replace(")", String.Empty).Replace("(", String.Empty)).Trim() + """>" + vbCrLf
+                                    QStr += "  <sura index=""" + CStr(Chapter) + """ name=""" + HostPageUtility.ArabicData.TransliterateFromBuckwalter(Str.Substring(0, Idx).Replace("suwrapu ", String.Empty).Replace("suwrap ", String.Empty).Replace(")", String.Empty).Replace("(", String.Empty)).Trim() + """>" + vbCrLf
                                 End If
                                 Dim Index As Integer = -1
                                 If Str.Substring(Str.LastIndexOf(" "c) + 1) = "1" Then
@@ -579,9 +579,9 @@
                                 End If
                                 Verse = Verse + 1 'text has off by one error so better than StrReverse(Str.Substring(Str.LastIndexOf(" "c) + 1))
                                 If Str.Substring(Str.LastIndexOf(" "c) + 1) = "1" AndAlso Index <> -1 Then
-                                    QStr += "    <aya index=""" + CStr(Verse) + """ text=""" + IslamMetadata.Arabic.TransliterateFromBuckwalter(Str.Substring(Index, Str.LastIndexOf(" "c) - Index)).Trim() + """ " + "bismillah=""" + IslamMetadata.Arabic.TransliterateFromBuckwalter("bisomi {ll~ahi {lr~aHoma_`ni {lr~aHiymi") + """/>" + vbCrLf
+                                    QStr += "    <aya index=""" + CStr(Verse) + """ text=""" + HostPageUtility.ArabicData.TransliterateFromBuckwalter(Str.Substring(Index, Str.LastIndexOf(" "c) - Index)).Trim() + """ " + "bismillah=""" + HostPageUtility.ArabicData.TransliterateFromBuckwalter("bisomi {ll~ahi {lr~aHoma_`ni {lr~aHiymi") + """/>" + vbCrLf
                                 Else
-                                    QStr += "    <aya index=""" + CStr(Verse) + """ text=""" + IslamMetadata.Arabic.TransliterateFromBuckwalter(Str.Trim("0"c, "1"c, "2"c, "3"c, "4"c, "5"c, "6"c, "7"c, "8"c, "9"c)).Trim() + """ />" + vbCrLf
+                                    QStr += "    <aya index=""" + CStr(Verse) + """ text=""" + HostPageUtility.ArabicData.TransliterateFromBuckwalter(Str.Trim("0"c, "1"c, "2"c, "3"c, "4"c, "5"c, "6"c, "7"c, "8"c, "9"c)).Trim() + """ />" + vbCrLf
                                 End If
                                 Str = String.Empty
                             Else
@@ -671,6 +671,6 @@
             Str += iTextSharp.text.pdf.parser.PdfTextExtractor.GetTextFromPage(Reader, Cnt + 1, Strat)
         Next
         Str += "  </sura>" + vbCrLf + "</quran>" + vbCrLf
-        IO.File.WriteAllText(IslamMetadata.Utility.GetFilePath("metadata\quran-warsh.xml"), Str)
+        IO.File.WriteAllText(HostPageUtility.Utility.GetFilePath("metadata\quran-warsh.xml"), Str)
     End Sub
 End Class

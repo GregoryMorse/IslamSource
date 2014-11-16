@@ -6,7 +6,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrayTime", "..\PrayTime\PrayTime.csproj", "{1C6D65F5-BC68-414D-9ED9-A0420016B95B}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "HostPage", "HostPage.vbproj", "{14D97CCB-7889-4ACC-BED0-1FDF0E8629EB}"
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "HostPage", "HostPage\HostPage.vbproj", "{14D97CCB-7889-4ACC-BED0-1FDF0E8629EB}"
 	ProjectSection(ProjectDependencies) = postProject
 		{8CEF3958-A8D0-4AFA-95F1-80568237F4EE} = {8CEF3958-A8D0-4AFA-95F1-80568237F4EE}
 	EndProjectSection
@@ -16,6 +16,14 @@ EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "IslamSource", "IslamSource\IslamSource.vbproj", "{28990B1C-834C-4164-8C69-B8A123CA40F1}"
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "IslamResources", "IslamResources\IslamResources.vbproj", "{0A2A299B-A9D7-4A06-B810-DE0FCD3BBDD7}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "IslamSourceSite", "IslamSourceSite.vbproj", "{F2CD2E3F-4119-46E6-9F10-4E93665EA990}"
+	ProjectSection(ProjectDependencies) = postProject
+		{8CEF3958-A8D0-4AFA-95F1-80568237F4EE} = {8CEF3958-A8D0-4AFA-95F1-80568237F4EE}
+		{14D97CCB-7889-4ACC-BED0-1FDF0E8629EB} = {14D97CCB-7889-4ACC-BED0-1FDF0E8629EB}
+	EndProjectSection
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "HostPageUtility", "HostPageUtility\HostPageUtility.vbproj", "{9ADB20BA-877E-4CB0-A12B-7BABE3FEDC27}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -77,6 +85,26 @@ Global
 		{0A2A299B-A9D7-4A06-B810-DE0FCD3BBDD7}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{0A2A299B-A9D7-4A06-B810-DE0FCD3BBDD7}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{0A2A299B-A9D7-4A06-B810-DE0FCD3BBDD7}.Release|Win32.ActiveCfg = Release|Any CPU
+		{F2CD2E3F-4119-46E6-9F10-4E93665EA990}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2CD2E3F-4119-46E6-9F10-4E93665EA990}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2CD2E3F-4119-46E6-9F10-4E93665EA990}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{F2CD2E3F-4119-46E6-9F10-4E93665EA990}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{F2CD2E3F-4119-46E6-9F10-4E93665EA990}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{F2CD2E3F-4119-46E6-9F10-4E93665EA990}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2CD2E3F-4119-46E6-9F10-4E93665EA990}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2CD2E3F-4119-46E6-9F10-4E93665EA990}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{F2CD2E3F-4119-46E6-9F10-4E93665EA990}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{F2CD2E3F-4119-46E6-9F10-4E93665EA990}.Release|Win32.ActiveCfg = Release|Any CPU
+		{9ADB20BA-877E-4CB0-A12B-7BABE3FEDC27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9ADB20BA-877E-4CB0-A12B-7BABE3FEDC27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9ADB20BA-877E-4CB0-A12B-7BABE3FEDC27}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{9ADB20BA-877E-4CB0-A12B-7BABE3FEDC27}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{9ADB20BA-877E-4CB0-A12B-7BABE3FEDC27}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{9ADB20BA-877E-4CB0-A12B-7BABE3FEDC27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9ADB20BA-877E-4CB0-A12B-7BABE3FEDC27}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9ADB20BA-877E-4CB0-A12B-7BABE3FEDC27}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{9ADB20BA-877E-4CB0-A12B-7BABE3FEDC27}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{9ADB20BA-877E-4CB0-A12B-7BABE3FEDC27}.Release|Win32.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

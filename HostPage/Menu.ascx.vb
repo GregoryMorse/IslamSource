@@ -1,4 +1,4 @@
-Imports IslamMetadata
+Imports HostPageUtility
 
 Partial Class Menu
     Inherits System.Web.UI.UserControl

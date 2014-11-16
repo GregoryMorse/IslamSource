@@ -87,7 +87,6 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="PageLoader.vb" />
-    <Compile Include="Quantizer.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -114,6 +113,10 @@
     <ProjectReference Include="..\..\PrayTime\PrayTime.csproj">
       <Project>{1c6d65f5-bc68-414d-9ed9-a0420016b95b}</Project>
       <Name>PrayTime</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HostPageUtility\HostPageUtility.vbproj">
+      <Project>{9adb20ba-877e-4cb0-a12b-7babe3fedc27}</Project>
+      <Name>HostPageUtility</Name>
     </ProjectReference>
     <ProjectReference Include="..\IslamResources\IslamResources.vbproj">
       <Project>{0a2a299b-a9d7-4a06-b810-de0fcd3bbdd7}</Project>

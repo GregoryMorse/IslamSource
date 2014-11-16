@@ -129,6 +129,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\HostPageUtility\HostPageUtility.vbproj">
+      <Project>{9adb20ba-877e-4cb0-a12b-7babe3fedc27}</Project>
+      <Name>HostPageUtility</Name>
+    </ProjectReference>
     <ProjectReference Include="..\IslamMetadata\IslamMetadata.vbproj">
       <Project>{8cef3958-a8d0-4afa-95f1-80568237f4ee}</Project>
       <Name>IslamMetadata</Name>
