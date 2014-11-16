@@ -111,10 +111,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\Documents\Visual Studio 2008\Projects\HostPage\GMorseCodeResources\GMorseCodeResources.vbproj">
-      <Project>{8d140fad-4c51-44c2-b94d-4f4c400b6e0a}</Project>
-      <Name>GMorseCodeResources</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\PrayTime\PrayTime.csproj">
       <Project>{1c6d65f5-bc68-414d-9ed9-a0420016b95b}</Project>
       <Name>PrayTime</Name>
