@@ -1,0 +1,4272 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Acct_AccountActivateSuccess" xml:space="preserve">
+    <value>Račun je uspješno aktiviran.</value>
+  </data>
+  <data name="Acct_AccountAlreadyActivated" xml:space="preserve">
+    <value>Račun je već aktivirana.</value>
+  </data>
+  <data name="Acct_AccountDeleteSuccess" xml:space="preserve">
+    <value>Račun je uspješno obrisan.</value>
+  </data>
+  <data name="Acct_AccountNotActivated" xml:space="preserve">
+    <value>Račun još nije aktiviran provjerite svoj e-mail ili zatražiti dodatnu aktivacijski kod.</value>
+  </data>
+  <data name="Acct_ActivateAccount" xml:space="preserve">
+    <value>Aktivirajte račun</value>
+  </data>
+  <data name="Acct_ActivationAccountBody" xml:space="preserve">
+    <value>Ovaj e-mail je zatražila aktivaciju svog {0} obzir: {1}.</value>
+  </data>
+  <data name="Acct_ActivationAccountSubject" xml:space="preserve">
+    <value>Aktivacija za račun na {0}</value>
+  </data>
+  <data name="Acct_ActivationCode" xml:space="preserve">
+    <value>Aktivacija Kod</value>
+  </data>
+  <data name="Acct_BadEmailFormat" xml:space="preserve">
+    <value>E-mail adresa nije u valjanom formatu.</value>
+  </data>
+  <data name="Acct_Certain" xml:space="preserve">
+    <value>Jeste li sigurni?</value>
+  </data>
+  <data name="Acct_ChangeEmailAddress" xml:space="preserve">
+    <value>Promjena e-mail adresa</value>
+  </data>
+  <data name="Acct_ChangePassword" xml:space="preserve">
+    <value>Promjena lozinke</value>
+  </data>
+  <data name="Acct_ChangeUsername" xml:space="preserve">
+    <value>Promijeniti ime</value>
+  </data>
+  <data name="Acct_CheckEmailNotice" xml:space="preserve">
+    <value>Aktivacija poslan na adresu pod uvjetom.</value>
+  </data>
+  <data name="Acct_ConfirmEmailAddress" xml:space="preserve">
+    <value>Potvrdi e-mail adresa</value>
+  </data>
+  <data name="Acct_ConfirmPassword" xml:space="preserve">
+    <value>Potvrda lozinke</value>
+  </data>
+  <data name="Acct_ControlPanel" xml:space="preserve">
+    <value>Upravljačka ploča</value>
+  </data>
+  <data name="Acct_DeleteAccount" xml:space="preserve">
+    <value>Izbriši račun</value>
+  </data>
+  <data name="Acct_DuplicateUser" xml:space="preserve">
+    <value>Korisnik s ovim imenom već postoji odaberite drugu.</value>
+  </data>
+  <data name="Acct_EmailAddress" xml:space="preserve">
+    <value>E-mail adresa</value>
+  </data>
+  <data name="Acct_EmailChangeReactivate" xml:space="preserve">
+    <value>E-mail adresa se promijenila i aktivacija e-mail poslan aktivirati račun.</value>
+  </data>
+  <data name="Acct_EmailInUse" xml:space="preserve">
+    <value>E-mail je već u uporabi molimo prijavite se s postojećim vjerodajnice.</value>
+  </data>
+  <data name="Acct_EmailsNotMatch" xml:space="preserve">
+    <value>E-mail adrese ne podudaraju</value>
+  </data>
+  <data name="Acct_ForgotPassword" xml:space="preserve">
+    <value>Zaboravljena lozinka</value>
+  </data>
+  <data name="Acct_ForgotUsername" xml:space="preserve">
+    <value>Zaboravili ime</value>
+  </data>
+  <data name="Acct_Home" xml:space="preserve">
+    <value>Dom</value>
+  </data>
+  <data name="Acct_IncorrectActivationCode" xml:space="preserve">
+    <value>Netočna aktivacijski kod.</value>
+  </data>
+  <data name="Acct_IncorrectPasswordResetCode" xml:space="preserve">
+    <value>Netočna resetiranje lozinke code.</value>
+  </data>
+  <data name="Acct_InvalidInput" xml:space="preserve">
+    <value>Pogrešan unos.</value>
+  </data>
+  <data name="Acct_InvalidUsernamePassword" xml:space="preserve">
+    <value>Neispravno korisničko ime i lozinka.</value>
+  </data>
+  <data name="Acct_Login" xml:space="preserve">
+    <value>Prijava</value>
+  </data>
+  <data name="Acct_LoginSuccess" xml:space="preserve">
+    <value>Prijavite uspješna.</value>
+  </data>
+  <data name="Acct_Logoff" xml:space="preserve">
+    <value>Odjava</value>
+  </data>
+  <data name="Acct_LogoffSuccess" xml:space="preserve">
+    <value>Odjava uspješna.</value>
+  </data>
+  <data name="Acct_MinimumPassword" xml:space="preserve">
+    <value>Lozinka mora biti najmanje 8 znakova.</value>
+  </data>
+  <data name="Acct_MinimumUsername" xml:space="preserve">
+    <value>Korisničko ime mora biti najmanje 4 znaka.</value>
+  </data>
+  <data name="Acct_No" xml:space="preserve">
+    <value>Ne</value>
+  </data>
+  <data name="Acct_NotConfirmDelete" xml:space="preserve">
+    <value>Mora potvrdu brisanja računa.</value>
+  </data>
+  <data name="Acct_NoUserExists" xml:space="preserve">
+    <value>Ne postoji korisnik koji je stupio na e-mail adresu.</value>
+  </data>
+  <data name="Acct_Password" xml:space="preserve">
+    <value>Lozinka</value>
+  </data>
+  <data name="Acct_PasswordAlreadyReset" xml:space="preserve">
+    <value>Lozinka već resetirati ili proces nije pokrenut.</value>
+  </data>
+  <data name="Acct_PasswordChangedBody" xml:space="preserve">
+    <value>Ovaj e-mail je obavijestiti o promjeni zaporke vašeg {0} obzir: {1}.</value>
+  </data>
+  <data name="Acct_PasswordChangedSubject" xml:space="preserve">
+    <value>Lozinka promijenio za račun na {0}</value>
+  </data>
+  <data name="Acct_PasswordChangeSuccess" xml:space="preserve">
+    <value>Lozinka je uspješno promijenjena.</value>
+  </data>
+  <data name="Acct_PasswordEmailSent" xml:space="preserve">
+    <value>E-mail je poslan na Vašu adresu na datoteku za pokretanje postupka poništavanja zaporke.</value>
+  </data>
+  <data name="Acct_PasswordResetBody" xml:space="preserve">
+    <value>Ovaj e-mail je za resetiranje lozinke vašeg {0} obzir: {1}.</value>
+  </data>
+  <data name="Acct_PasswordResetCode" xml:space="preserve">
+    <value>Password Reset Code</value>
+  </data>
+  <data name="Acct_PasswordResetSubject" xml:space="preserve">
+    <value>Resetiranje lozinke za račun na {0}</value>
+  </data>
+  <data name="Acct_PasswordResetSuccess" xml:space="preserve">
+    <value>Lozinka je uspješno vratili.</value>
+  </data>
+  <data name="Acct_PasswordsNotMatch" xml:space="preserve">
+    <value>Lozinke se ne podudaraju</value>
+  </data>
+  <data name="Acct_Register" xml:space="preserve">
+    <value>Prijaviti</value>
+  </data>
+  <data name="Acct_Remember" xml:space="preserve">
+    <value>Zapamti?</value>
+  </data>
+  <data name="Acct_ResendActivationEmail" xml:space="preserve">
+    <value>Pošalji ponovo aktivacijski e-mail</value>
+  </data>
+  <data name="Acct_ResetPassword" xml:space="preserve">
+    <value>Reset Password</value>
+  </data>
+  <data name="Acct_RetrievePassword" xml:space="preserve">
+    <value>Preuzeti lozinku</value>
+  </data>
+  <data name="Acct_RetrieveUsername" xml:space="preserve">
+    <value>Preuzeti ime</value>
+  </data>
+  <data name="Acct_SendActivationCode" xml:space="preserve">
+    <value>Pošalji aktivacijski kod</value>
+  </data>
+  <data name="Acct_Username" xml:space="preserve">
+    <value>Korisničko ime</value>
+  </data>
+  <data name="Acct_UsernameChangedBody" xml:space="preserve">
+    <value>Ovaj e-mail je informirati o računu ime promijeniti svoje {0} obzir: {1}.</value>
+  </data>
+  <data name="Acct_UsernameChangedSubject" xml:space="preserve">
+    <value>Korisničko ime promijenio za račun na {0}</value>
+  </data>
+  <data name="Acct_UsernameChangeSuccess" xml:space="preserve">
+    <value>Zaboravili ste uspješno promijenili.</value>
+  </data>
+  <data name="Acct_UsernameEmailSent" xml:space="preserve">
+    <value>E-mail je poslan na Vašu adresu na vaše korisničko ime.</value>
+  </data>
+  <data name="Acct_UsernameReminderBody" xml:space="preserve">
+    <value>Ovaj e-mail je podsjetnik na {0} obzir: {1}.</value>
+  </data>
+  <data name="Acct_UsernameReminderSubject" xml:space="preserve">
+    <value>Podsjetnik na korisničko ime za račun na {0}</value>
+  </data>
+  <data name="Acct_UserNotFound" xml:space="preserve">
+    <value>Korisnik ne postoji.</value>
+  </data>
+  <data name="Acct_Yes" xml:space="preserve">
+    <value>Da</value>
+  </data>
+  <data name="Acct_CleanupStale" xml:space="preserve">
+    <value>Čišćenje Stale</value>
+  </data>
+  <data name="Acct_ClearCache" xml:space="preserve">
+    <value>Clear Cache</value>
+  </data>
+  <data name="Acct_ClearDiskCache" xml:space="preserve">
+    <value>Jasno Disk Cache</value>
+  </data>
+  <data name="Acct_CreateDatabase" xml:space="preserve">
+    <value>Stvaranje baze podataka</value>
+  </data>
+  <data name="Acct_DotNetVersion" xml:space="preserve">
+    <value>Dot Net Version</value>
+  </data>
+  <data name="Acct_RemoveDatabase" xml:space="preserve">
+    <value>Uklonite Database</value>
+  </data>
+  <data name="Acct_ViewCache" xml:space="preserve">
+    <value>Pogledaj Cache</value>
+  </data>
+  <data name="Acct_ViewDiskCache" xml:space="preserve">
+    <value>Pogledaj Disk Cache</value>
+  </data>
+  <data name="Acct_ViewHeaders" xml:space="preserve">
+    <value>Pogledaj zaglavlja</value>
+  </data>
+  <data name="Hadith_Book" xml:space="preserve">
+    <value>Knjiga</value>
+  </data>
+  <data name="Hadith_Books" xml:space="preserve">
+    <value>Knjige</value>
+  </data>
+  <data name="Hadith_Chapters" xml:space="preserve">
+    <value>Poglavlja</value>
+  </data>
+  <data name="Hadith_Hadith" xml:space="preserve">
+    <value>Hadis</value>
+  </data>
+  <data name="Hadith_Hadiths" xml:space="preserve">
+    <value>Hadisi</value>
+  </data>
+  <data name="Hadith_IdenticalNumbering" xml:space="preserve">
+    <value>Identični numeriranja</value>
+  </data>
+  <data name="Hadith_Index" xml:space="preserve">
+    <value>Indeks</value>
+  </data>
+  <data name="Hadith_MappedOf" xml:space="preserve">
+    <value>{0} mapirani od {1}</value>
+  </data>
+  <data name="Hadith_NoTranslation" xml:space="preserve">
+    <value>Nema prijevoda</value>
+  </data>
+  <data name="Hadith_SourceHadithIndex" xml:space="preserve">
+    <value>Izvor Hadis Index</value>
+  </data>
+  <data name="Hadith_Translation" xml:space="preserve">
+    <value>Prijevod</value>
+  </data>
+  <data name="Hadith_TranslationBook" xml:space="preserve">
+    <value>Prijevod knjige</value>
+  </data>
+  <data name="Hadith_TranslationHadithCount" xml:space="preserve">
+    <value>Prevođenje Hadis Točka</value>
+  </data>
+  <data name="Hadith_TranslationHadithIndex" xml:space="preserve">
+    <value>Prevođenje Hadis Index</value>
+  </data>
+  <data name="Hadith_TranslationMapping" xml:space="preserve">
+    <value>Prevođenje Mapiranje</value>
+  </data>
+  <data name="Hadith_TranslationVolume" xml:space="preserve">
+    <value>Prevođenje Volume</value>
+  </data>
+  <data name="Hadith_Volume" xml:space="preserve">
+    <value>Volumen</value>
+  </data>
+  <data name="IslamSource_Apply" xml:space="preserve">
+    <value>Primijeniti</value>
+  </data>
+  <data name="IslamSource_ArabicAlphabet" xml:space="preserve">
+    <value>Arapski Abeceda</value>
+  </data>
+  <data name="IslamSource_ArabicToRoman" xml:space="preserve">
+    <value>Arapski rimskog</value>
+  </data>
+  <data name="IslamSource_Book" xml:space="preserve">
+    <value>Knjiga</value>
+  </data>
+  <data name="IslamSource_Collection" xml:space="preserve">
+    <value>Zbirka</value>
+  </data>
+  <data name="IslamSource_Credits" xml:space="preserve">
+    <value>Kredit za tekst Kur'ana ide u projekt Tanzil.</value>
+  </data>
+  <data name="IslamSource_Direction" xml:space="preserve">
+    <value>Smjer</value>
+  </data>
+  <data name="IslamSource_Disable" xml:space="preserve">
+    <value>Onesposobiti</value>
+  </data>
+  <data name="IslamSource_Display" xml:space="preserve">
+    <value>Prikaz</value>
+  </data>
+  <data name="IslamSource_Division" xml:space="preserve">
+    <value>Podjela</value>
+  </data>
+  <data name="IslamSource_DownloadMapping" xml:space="preserve">
+    <value>Preuzmite i Mapiranje</value>
+  </data>
+  <data name="IslamSource_EnglishRomanized" xml:space="preserve">
+    <value>Engleski romanized</value>
+  </data>
+  <data name="IslamSource_ExtendedBuckwalter" xml:space="preserve">
+    <value>Prošireni Buckwalter</value>
+  </data>
+  <data name="IslamSource_Font" xml:space="preserve">
+    <value>Krstionica</value>
+  </data>
+  <data name="IslamSource_Goal" xml:space="preserve">
+    <value>Ova web stranica ima za cilj pružiti izvor sirovine o islamu, uključujući Kur'ana, hadis zbirki, knjige, audio, video, vijesti, vokabular, transliteracija sustavima i programskom informacija.</value>
+  </data>
+  <data name="IslamSource_Hadiths" xml:space="preserve">
+    <value>Hadis zbirke</value>
+  </data>
+  <data name="IslamSource_HadithSourceText" xml:space="preserve">
+    <value>Hadis Izvor teksta</value>
+  </data>
+  <data name="IslamSource_Home" xml:space="preserve">
+    <value>Dom</value>
+  </data>
+  <data name="IslamSource_Information" xml:space="preserve">
+    <value>Informacije</value>
+  </data>
+  <data name="IslamSource_Intro" xml:space="preserve">
+    <value>Bilo kakva pitanja ili primjedbe ili pogreške, molimo pošaljite email me na:</value>
+  </data>
+  <data name="IslamSource_Introduction" xml:space="preserve">
+    <value>Uvod</value>
+  </data>
+  <data name="IslamSource_IslamicArticles" xml:space="preserve">
+    <value>Islamski članci</value>
+  </data>
+  <data name="IslamSource_IslamicCharity" xml:space="preserve">
+    <value>Islamska Charity</value>
+  </data>
+  <data name="IslamSource_IslamicFoundations" xml:space="preserve">
+    <value>Islamski Temelji</value>
+  </data>
+  <data name="IslamSource_IslamicInformation" xml:space="preserve">
+    <value>Islamska informacije</value>
+  </data>
+  <data name="IslamSource_IslamicNews" xml:space="preserve">
+    <value>Islamska News</value>
+  </data>
+  <data name="IslamSource_IslamicOrganizations" xml:space="preserve">
+    <value>Islamske organizacije</value>
+  </data>
+  <data name="IslamSource_IslamicQuotes" xml:space="preserve">
+    <value>Islamski Izreke</value>
+  </data>
+  <data name="IslamSource_IslamicShops" xml:space="preserve">
+    <value>Islamski Trgovine</value>
+  </data>
+  <data name="IslamSource_IslamicWebsites" xml:space="preserve">
+    <value>Islamski Web stranice</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesAhlulBaytAcademy" xml:space="preserve">
+    <value>AhlulBayt akademija</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesAlEman" xml:space="preserve">
+    <value>فصل: كتاب المقدمة | نداء الإيمان</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesAlHudaInternationalWelfareFoundation" xml:space="preserve">
+    <value>Al-Huda Zaklada Međunarodni skrbi</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesAllahsQuran" xml:space="preserve">
+    <value>Allahova Kur'an</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesCorpus" xml:space="preserve">
+    <value>Kur'anska Arapski Tijelovo</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesCouncilAmericanIslamicRelations" xml:space="preserve">
+    <value>Vijeće za američko-islamske odnose</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesDarusSalamPublications" xml:space="preserve">
+    <value>Dar-US-Salam Publikacije</value>
+  </data>
+  <data name="IslamSource_IslamicWebsiteseMuslim" xml:space="preserve">
+    <value>eMuslim</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesGuidedWaysTechnologies" xml:space="preserve">
+    <value>Vođen načina Technologies</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesHouseQuran" xml:space="preserve">
+    <value>Kuća Kur'ana</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesiQuran" xml:space="preserve">
+    <value>iQuran</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesIslamicCircleNorthAmerica" xml:space="preserve">
+    <value>Islamska krug Sjevernoj Americi</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesIslamicFinder" xml:space="preserve">
+    <value>Islamska Finder</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesIslamicInsights" xml:space="preserve">
+    <value>Islamski Insights</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesIslamicRelief" xml:space="preserve">
+    <value>Islamska Relief</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesIslamicReliefUSA" xml:space="preserve">
+    <value>Islamska Relief USA</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesIslamicSearchCenter" xml:space="preserve">
+    <value>Islamska Traži Centar</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesIslamicSocietyNorthAmerica" xml:space="preserve">
+    <value>Islamska društva Sjeverne Amerike</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesIslamicThinkersSociety" xml:space="preserve">
+    <value>Islamski mislioci društvo</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesIslamSpirit" xml:space="preserve">
+    <value>Islam Duh</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesKalamullah" xml:space="preserve">
+    <value>Kalamullah</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesMaktabahorgTheUltimateIslamicLibrary" xml:space="preserve">
+    <value>Maktabah.org Ultimate islamska knjižnica</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesOpenBurhan" xml:space="preserve">
+    <value>Otvorena Burhan</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesProfessorAnsarian" xml:space="preserve">
+    <value>Službena web stranica prof Ansarian</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesQuran" xml:space="preserve">
+    <value>Kuran</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesQuranDownload" xml:space="preserve">
+    <value>Kur'an Preuzimanje</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesQuranExplorer" xml:space="preserve">
+    <value>Kur'an Explorer</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesQuranicAudio" xml:space="preserve">
+    <value>Kur'anska Audio</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesQuranProject" xml:space="preserve">
+    <value>Online Kur'an Project</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesQuranTransliteration" xml:space="preserve">
+    <value>Kur'an Transliteracija</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesSalah" xml:space="preserve">
+    <value>Salah</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesStudyQuran" xml:space="preserve">
+    <value>Studija Kur'an</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesSunnahCom" xml:space="preserve">
+    <value>Sunnah.com izreke i učenja proroka Muhameda (صلى الله عليه و سلم)</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesTanzil" xml:space="preserve">
+    <value>Tanzil - Kur'an Navigator</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesTheAbsoluteReality" xml:space="preserve">
+    <value>Apsolutna Stvarnost</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesTheAwaitedOneFoundation" xml:space="preserve">
+    <value>Čekala Jedan Foundation</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesTheIslamicBulletin" xml:space="preserve">
+    <value>Islamska Bilten</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesTheIslamicFoundation" xml:space="preserve">
+    <value>Islamska Foundation</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesTheLahoreAhmadiyyaMovement" xml:space="preserve">
+    <value>Lahore Ahmadija pokret</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesTheLahoreAhmadiyyaMovementIslam" xml:space="preserve">
+    <value>Lahore Ahmadija pokret u islamu</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesUnderstandQuran" xml:space="preserve">
+    <value>Razumijevanje Kur'ana</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesVerseByVerseQuran" xml:space="preserve">
+    <value>Stih po stih Kur'ana</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesZakatFoundationAmerica" xml:space="preserve">
+    <value>Zekat Foundation of America</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesZekr" xml:space="preserve">
+    <value>Zekr Project</value>
+  </data>
+  <data name="IslamSource_LearningIslam" xml:space="preserve">
+    <value>Učenje islama</value>
+  </data>
+  <data name="IslamSource_Loading" xml:space="preserve">
+    <value>Utovar</value>
+  </data>
+  <data name="IslamSource_Lotus" xml:space="preserve">
+    <value>Lotos</value>
+  </data>
+  <data name="IslamSource_Mapping" xml:space="preserve">
+    <value>Kartografija</value>
+  </data>
+  <data name="IslamSource_NotableArticles" xml:space="preserve">
+    <value>Poznati članci</value>
+  </data>
+  <data name="IslamSource_NotableNews" xml:space="preserve">
+    <value>Značajna News</value>
+  </data>
+  <data name="IslamSource_NotableQuotes" xml:space="preserve">
+    <value>Poznati citati</value>
+  </data>
+  <data name="IslamSource_Off" xml:space="preserve">
+    <value>Isključen</value>
+  </data>
+  <data name="IslamSource_Operation" xml:space="preserve">
+    <value>Operacija</value>
+  </data>
+  <data name="IslamSource_Perform" xml:space="preserve">
+    <value>Izvoditi</value>
+  </data>
+  <data name="IslamSource_PlainRoman" xml:space="preserve">
+    <value>Običan Roman</value>
+  </data>
+  <data name="IslamSource_PrayerTimes" xml:space="preserve">
+    <value>Molitva Times</value>
+  </data>
+  <data name="IslamSource_QiblaDirectionFromTrueNorth" xml:space="preserve">
+    <value>Kibli smjeru od pravog sjevera</value>
+  </data>
+  <data name="IslamSource_Quote" xml:space="preserve">
+    <value>Citat</value>
+  </data>
+  <data name="IslamSource_QuoteMode" xml:space="preserve">
+    <value>Način Citat</value>
+  </data>
+  <data name="IslamSource_Quran" xml:space="preserve">
+    <value>Časni Kur'an</value>
+  </data>
+  <data name="IslamSource_QuranResources" xml:space="preserve">
+    <value>Kur'an resursi</value>
+  </data>
+  <data name="IslamSource_RomanToArabic" xml:space="preserve">
+    <value>Roman Da Arapski</value>
+  </data>
+  <data name="IslamSource_Scheme" xml:space="preserve">
+    <value>Shema</value>
+  </data>
+  <data name="IslamSource_Selection" xml:space="preserve">
+    <value>Izbor</value>
+  </data>
+  <data name="IslamSource_SubmissionNote" xml:space="preserve">
+    <value>Podnesci: izvorne zbirke izvor Hadis mora sadržavati datoteku XML metapodataka koja sadrži sve glasnoću, knjigu, poglavlje i Hadis informacije i XML datoteku koja sadrži sirova Hadis tekst.</value>
+  </data>
+  <data name="IslamSource_Supplications" xml:space="preserve">
+    <value>Prošnje</value>
+  </data>
+  <data name="IslamSource_Text" xml:space="preserve">
+    <value>Tekst</value>
+  </data>
+  <data name="IslamSource_Translation" xml:space="preserve">
+    <value>Prijevod</value>
+  </data>
+  <data name="IslamSource_Transliterate" xml:space="preserve">
+    <value>Transkribovati</value>
+  </data>
+  <data name="IslamSource_Transliteration" xml:space="preserve">
+    <value>Transkripcija</value>
+  </data>
+  <data name="IslamSource_TransliterationScheme" xml:space="preserve">
+    <value>Transliteracija Shema</value>
+  </data>
+  <data name="IslamSource_Viewer" xml:space="preserve">
+    <value>Preglednik</value>
+  </data>
+  <data name="IslamSource_Welcome" xml:space="preserve">
+    <value>Dobrodošli na IslamSource.info</value>
+  </data>
+  <data name="IslamSource_ModifyDiacritics" xml:space="preserve">
+    <value>Mijenjati dijakritičke znakove</value>
+  </data>
+  <data name="IslamSource_Add" xml:space="preserve">
+    <value>Dodati</value>
+  </data>
+  <data name="IslamSource_Remove" xml:space="preserve">
+    <value>Ukloniti</value>
+  </data>
+  <data name="IslamInfo_Chapters" xml:space="preserve">
+    <value>Poglavlja</value>
+  </data>
+  <data name="IslamInfo_ChaptersRevelationOrder" xml:space="preserve">
+    <value>Poglavlja u Otkrivenju Reda</value>
+  </data>
+  <data name="IslamInfo_Groups" xml:space="preserve">
+    <value>Grupe</value>
+  </data>
+  <data name="IslamInfo_ImportantSelections" xml:space="preserve">
+    <value>Važno Selekcije</value>
+  </data>
+  <data name="IslamInfo_Pages" xml:space="preserve">
+    <value>Stranice</value>
+  </data>
+  <data name="IslamInfo_Parts" xml:space="preserve">
+    <value>Dijelovi</value>
+  </data>
+  <data name="IslamInfo_Prostrations" xml:space="preserve">
+    <value>Prostrations</value>
+  </data>
+  <data name="IslamInfo_Sections" xml:space="preserve">
+    <value>Sekcije</value>
+  </data>
+  <data name="IslamInfo_Stations" xml:space="preserve">
+    <value>Stanice</value>
+  </data>
+  <data name="lang_localam" xml:space="preserve">
+    <value>Amharski</value>
+  </data>
+  <data name="lang_localar" xml:space="preserve">
+    <value>Arapski</value>
+  </data>
+  <data name="lang_localaz" xml:space="preserve">
+    <value>Azarbejdžanski</value>
+  </data>
+  <data name="lang_localber" xml:space="preserve">
+    <value>Amazigh</value>
+  </data>
+  <data name="lang_localbg" xml:space="preserve">
+    <value>Bugarski</value>
+  </data>
+  <data name="lang_localbn" xml:space="preserve">
+    <value>Bengalski</value>
+  </data>
+  <data name="lang_localbs" xml:space="preserve">
+    <value>Bosanski</value>
+  </data>
+  <data name="lang_localcs" xml:space="preserve">
+    <value>Češki</value>
+  </data>
+  <data name="lang_localde" xml:space="preserve">
+    <value>Njemački</value>
+  </data>
+  <data name="lang_localdv" xml:space="preserve">
+    <value>Divehi</value>
+  </data>
+  <data name="lang_localen" xml:space="preserve">
+    <value>Engleski</value>
+  </data>
+  <data name="lang_locales" xml:space="preserve">
+    <value>Španjolski</value>
+  </data>
+  <data name="lang_localfa" xml:space="preserve">
+    <value>Persian</value>
+  </data>
+  <data name="lang_localfr" xml:space="preserve">
+    <value>Francuzi</value>
+  </data>
+  <data name="lang_localha" xml:space="preserve">
+    <value>Hausa</value>
+  </data>
+  <data name="lang_localhi" xml:space="preserve">
+    <value>Hindski</value>
+  </data>
+  <data name="lang_localid" xml:space="preserve">
+    <value>Indonezijski</value>
+  </data>
+  <data name="lang_localit" xml:space="preserve">
+    <value>Talijanski</value>
+  </data>
+  <data name="lang_localja" xml:space="preserve">
+    <value>Japanski</value>
+  </data>
+  <data name="lang_localko" xml:space="preserve">
+    <value>Korejski</value>
+  </data>
+  <data name="lang_localku" xml:space="preserve">
+    <value>Kurdski</value>
+  </data>
+  <data name="lang_localml" xml:space="preserve">
+    <value>Malajam</value>
+  </data>
+  <data name="lang_localms" xml:space="preserve">
+    <value>Malajski</value>
+  </data>
+  <data name="lang_localnl" xml:space="preserve">
+    <value>Nizozemski</value>
+  </data>
+  <data name="lang_localno" xml:space="preserve">
+    <value>Norvežanin</value>
+  </data>
+  <data name="lang_localpl" xml:space="preserve">
+    <value>Politura</value>
+  </data>
+  <data name="lang_localpt" xml:space="preserve">
+    <value>Portugalski</value>
+  </data>
+  <data name="lang_localro" xml:space="preserve">
+    <value>Rumunjski</value>
+  </data>
+  <data name="lang_localru" xml:space="preserve">
+    <value>Ruski</value>
+  </data>
+  <data name="lang_localsd" xml:space="preserve">
+    <value>Sindi</value>
+  </data>
+  <data name="lang_localso" xml:space="preserve">
+    <value>Somalijski</value>
+  </data>
+  <data name="lang_localsq" xml:space="preserve">
+    <value>Albanski</value>
+  </data>
+  <data name="lang_localsv" xml:space="preserve">
+    <value>Švedski</value>
+  </data>
+  <data name="lang_localsw" xml:space="preserve">
+    <value>Svahili</value>
+  </data>
+  <data name="lang_localta" xml:space="preserve">
+    <value>Tamil</value>
+  </data>
+  <data name="lang_localtg" xml:space="preserve">
+    <value>Tadžik</value>
+  </data>
+  <data name="lang_localth" xml:space="preserve">
+    <value>Tajlandski</value>
+  </data>
+  <data name="lang_localtr" xml:space="preserve">
+    <value>Turski</value>
+  </data>
+  <data name="lang_localtt" xml:space="preserve">
+    <value>Tatar</value>
+  </data>
+  <data name="lang_localug" xml:space="preserve">
+    <value>Uyghur</value>
+  </data>
+  <data name="lang_localur" xml:space="preserve">
+    <value>Urdu</value>
+  </data>
+  <data name="lang_localuz" xml:space="preserve">
+    <value>Uzbek</value>
+  </data>
+  <data name="lang_localzh" xml:space="preserve">
+    <value>Kineski</value>
+  </data>
+  <data name="Acct_Download" xml:space="preserve">
+    <value>Preuzmite {0}</value>
+  </data>
+  <data name="IslamInfo_CelebrationDay" xml:space="preserve">
+    <value>Proslava dana</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek1" xml:space="preserve">
+    <value>Nedjelja</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek2" xml:space="preserve">
+    <value>Ponedjeljak</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek3" xml:space="preserve">
+    <value>Utorak</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek4" xml:space="preserve">
+    <value>Srijeda</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek5" xml:space="preserve">
+    <value>Četvrtak</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek6" xml:space="preserve">
+    <value>Petak</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek7" xml:space="preserve">
+    <value>Subota</value>
+  </data>
+  <data name="IslamInfo_DaysOfWeek" xml:space="preserve">
+    <value>Dani u tjednu</value>
+  </data>
+  <data name="IslamInfo_Disliked" xml:space="preserve">
+    <value>Nije mi se svidjelo</value>
+  </data>
+  <data name="IslamInfo_EnteringMosque" xml:space="preserve">
+    <value>Ulazak u džamiju</value>
+  </data>
+  <data name="IslamInfo_Fasting" xml:space="preserve">
+    <value>Post</value>
+  </data>
+  <data name="IslamInfo_FastingAfterFastingMonth" xml:space="preserve">
+    <value>Posta šest dana u obavljanju mjesec</value>
+  </data>
+  <data name="IslamInfo_FastingBeforeFastingMonth" xml:space="preserve">
+    <value>Posta prije mjesec posta</value>
+  </data>
+  <data name="IslamInfo_FastingBeginningPilgrimageMonth" xml:space="preserve">
+    <value>Posta prvih devet dana hodočašća mjeseca</value>
+  </data>
+  <data name="IslamInfo_FastingDayOfArafa" xml:space="preserve">
+    <value>Post Dan Arafa</value>
+  </data>
+  <data name="IslamInfo_FastingDayOfAshura" xml:space="preserve">
+    <value>Post Dan Ashura</value>
+  </data>
+  <data name="IslamInfo_FastingMiddleLunarDays" xml:space="preserve">
+    <value>Post 13., 14. i 15. lunarnih dana</value>
+  </data>
+  <data name="IslamInfo_FastingMondayThursday" xml:space="preserve">
+    <value>Posta ponedjeljkom i četvrtkom</value>
+  </data>
+  <data name="IslamInfo_FastingMonth" xml:space="preserve">
+    <value>Post mjeseca</value>
+  </data>
+  <data name="IslamInfo_FastingMonthPrayer" xml:space="preserve">
+    <value>Post mjeseca molitva</value>
+  </data>
+  <data name="IslamInfo_Fear" xml:space="preserve">
+    <value>Strah</value>
+  </data>
+  <data name="IslamInfo_Forbidden" xml:space="preserve">
+    <value>Zabranjen</value>
+  </data>
+  <data name="IslamInfo_Friday" xml:space="preserve">
+    <value>Petak</value>
+  </data>
+  <data name="IslamInfo_Fulfilling" xml:space="preserve">
+    <value>Ispunjavanje</value>
+  </data>
+  <data name="IslamInfo_Funeral" xml:space="preserve">
+    <value>Pogreb</value>
+  </data>
+  <data name="IslamInfo_Guidance" xml:space="preserve">
+    <value>Vođenje</value>
+  </data>
+  <data name="IslamInfo_Jurisprudence" xml:space="preserve">
+    <value>Jurisprudencija</value>
+  </data>
+  <data name="IslamInfo_LateNight" xml:space="preserve">
+    <value>Late night</value>
+  </data>
+  <data name="IslamInfo_LunarEclipse" xml:space="preserve">
+    <value>Pomrčina Mjeseca</value>
+  </data>
+  <data name="IslamInfo_Month1" xml:space="preserve">
+    <value>Zabranjeno je jedan</value>
+  </data>
+  <data name="IslamInfo_Month10" xml:space="preserve">
+    <value>Nošenje</value>
+  </data>
+  <data name="IslamInfo_Month11" xml:space="preserve">
+    <value>Jedan od primirja</value>
+  </data>
+  <data name="IslamInfo_Month12" xml:space="preserve">
+    <value>Jedan od hodočašća</value>
+  </data>
+  <data name="IslamInfo_Month2" xml:space="preserve">
+    <value>Praznina</value>
+  </data>
+  <data name="IslamInfo_Month3" xml:space="preserve">
+    <value>Prvo proljeće</value>
+  </data>
+  <data name="IslamInfo_Month4" xml:space="preserve">
+    <value>Drugo Proljeće</value>
+  </data>
+  <data name="IslamInfo_Month5" xml:space="preserve">
+    <value>Prvi mjesec isušenu zemlju</value>
+  </data>
+  <data name="IslamInfo_Month6" xml:space="preserve">
+    <value>Drugi mjesec isušenu zemlju</value>
+  </data>
+  <data name="IslamInfo_Month7" xml:space="preserve">
+    <value>Poštovanje</value>
+  </data>
+  <data name="IslamInfo_Month8" xml:space="preserve">
+    <value>Razbacan</value>
+  </data>
+  <data name="IslamInfo_Month9" xml:space="preserve">
+    <value>Izgorio</value>
+  </data>
+  <data name="IslamInfo_MorningLight" xml:space="preserve">
+    <value>Jutarnja svjetlost</value>
+  </data>
+  <data name="IslamInfo_Necessary" xml:space="preserve">
+    <value>Neophodan</value>
+  </data>
+  <data name="IslamInfo_Neutral" xml:space="preserve">
+    <value>Neutralan</value>
+  </data>
+  <data name="IslamInfo_ObligationOfSufficiency" xml:space="preserve">
+    <value>Obveza samodostatnost</value>
+  </data>
+  <data name="IslamInfo_ObligationOfTheSelf" xml:space="preserve">
+    <value>Obveza o sebi</value>
+  </data>
+  <data name="IslamInfo_Obligatory" xml:space="preserve">
+    <value>Obavezan</value>
+  </data>
+  <data name="IslamInfo_Odd" xml:space="preserve">
+    <value>Čudan</value>
+  </data>
+  <data name="IslamInfo_OftReturning" xml:space="preserve">
+    <value>Često se vraćaju</value>
+  </data>
+  <data name="IslamInfo_Permissible" xml:space="preserve">
+    <value>Dopustiv</value>
+  </data>
+  <data name="IslamInfo_Prayer" xml:space="preserve">
+    <value>Molitva</value>
+  </data>
+  <data name="IslamInfo_PrayTime6" xml:space="preserve">
+    <value>Trijeznost</value>
+  </data>
+  <data name="IslamInfo_PrayTime7" xml:space="preserve">
+    <value>Izlazak sunca</value>
+  </data>
+  <data name="IslamInfo_PrayTime8" xml:space="preserve">
+    <value>Izračunato sunset</value>
+  </data>
+  <data name="IslamInfo_PrayTime9" xml:space="preserve">
+    <value>Ponoć</value>
+  </data>
+  <data name="IslamInfo_PrayTime1" xml:space="preserve">
+    <value>Zora</value>
+  </data>
+  <data name="IslamInfo_PrayTime2" xml:space="preserve">
+    <value>Podne</value>
+  </data>
+  <data name="IslamInfo_PrayTime3" xml:space="preserve">
+    <value>Poslijepodne</value>
+  </data>
+  <data name="IslamInfo_PrayTime4" xml:space="preserve">
+    <value>Zalazak sunca</value>
+  </data>
+  <data name="IslamInfo_PrayTime5" xml:space="preserve">
+    <value>Noć</value>
+  </data>
+  <data name="IslamInfo_PrescribedTime" xml:space="preserve">
+    <value>Propisano vrijeme</value>
+  </data>
+  <data name="IslamInfo_RainForDraught" xml:space="preserve">
+    <value>Kiša na nacrtu</value>
+  </data>
+  <data name="IslamInfo_Recommended" xml:space="preserve">
+    <value>Preporučio</value>
+  </data>
+  <data name="IslamInfo_SacredState" xml:space="preserve">
+    <value>Sveto stanje</value>
+  </data>
+  <data name="IslamInfo_SolarEclipse" xml:space="preserve">
+    <value>Solarna eklipsa</value>
+  </data>
+  <data name="IslamInfo_Sunrise" xml:space="preserve">
+    <value>Izlazak sunca</value>
+  </data>
+  <data name="IslamInfo_Supererogatory" xml:space="preserve">
+    <value>Supererogatory</value>
+  </data>
+  <data name="IslamInfo_Tradition" xml:space="preserve">
+    <value>Tradicija</value>
+  </data>
+  <data name="IslamInfo_TraditionObligatory" xml:space="preserve">
+    <value>Tradicija Obvezna</value>
+  </data>
+  <data name="IslamInfo_TraditionVoluntary" xml:space="preserve">
+    <value>Tradicija dobrovoljnim</value>
+  </data>
+  <data name="IslamInfo_Travel" xml:space="preserve">
+    <value>Putovanje</value>
+  </data>
+  <data name="IslamInfo_Victory" xml:space="preserve">
+    <value>Pobjeda</value>
+  </data>
+  <data name="IslamInfo_Aaron" xml:space="preserve">
+    <value>Aaron</value>
+  </data>
+  <data name="IslamInfo_Ablution" xml:space="preserve">
+    <value>Pranje</value>
+  </data>
+  <data name="IslamInfo_Abraham" xml:space="preserve">
+    <value>Abraham</value>
+  </data>
+  <data name="IslamInfo_Adam" xml:space="preserve">
+    <value>Adam</value>
+  </data>
+  <data name="IslamInfo_AfterCallToPrayerFirstPart" xml:space="preserve">
+    <value>Nakon poziva na molitvu - prvi dio</value>
+  </data>
+  <data name="IslamInfo_AfterCallToPrayerFirstPartTrans" xml:space="preserve">
+    <value>O Allahu, gospodaru ovog poziva potpuni i molitva naša</value>
+  </data>
+  <data name="IslamInfo_AfterCallToPrayerFirstPartWordByWord" xml:space="preserve">
+    <value>O Allahu | Gospodin | ove | zovemo | potpuni | i molitve | od naših</value>
+  </data>
+  <data name="IslamInfo_AfterCallToPrayerSecondPart" xml:space="preserve">
+    <value>Nakon poziva na molitvu - drugi dio</value>
+  </data>
+  <data name="IslamInfo_AfterCallToPrayerSecondPartTrans" xml:space="preserve">
+    <value>Dajte Muhammedu svoje prava zagovoru i vrline</value>
+  </data>
+  <data name="IslamInfo_AfterCallToPrayerSecondPartWordByWord" xml:space="preserve">
+    <value>Dajte | Muhammedu | svoja prava zagovoru | i vrlinu</value>
+  </data>
+  <data name="IslamInfo_AfterCallToPrayerSupplication" xml:space="preserve">
+    <value>Nakon poziv na molitvu prošnje</value>
+  </data>
+  <data name="IslamInfo_AfterCallToPrayerThirdPart" xml:space="preserve">
+    <value>Nakon poziva na molitvu - treći dio</value>
+  </data>
+  <data name="IslamInfo_AfterCallToPrayerThirdPartTrans" xml:space="preserve">
+    <value>Te ga podići na povišenom čin koji ste mu obećao</value>
+  </data>
+  <data name="IslamInfo_AfterCallToPrayerThirdPartWordByWord" xml:space="preserve">
+    <value>Te ga podići | u čin | povišena | što | si mu obećao</value>
+  </data>
+  <data name="IslamInfo_Allah" xml:space="preserve">
+    <value>Jedan Bog</value>
+  </data>
+  <data name="IslamInfo_AllahIsGreatest" xml:space="preserve">
+    <value>Allah je najveći</value>
+  </data>
+  <data name="IslamInfo_AllPraiseAndThanksBeToAllah" xml:space="preserve">
+    <value>Sve pohvale i hvala Allahu</value>
+  </data>
+  <data name="IslamInfo_AlmsGiving" xml:space="preserve">
+    <value>Milostinja davanje</value>
+  </data>
+  <data name="IslamInfo_AndUponYouBePeace" xml:space="preserve">
+    <value>A nakon tebe biti mira</value>
+  </data>
+  <data name="IslamInfo_ArabicTypesetting" xml:space="preserve">
+    <value>Arapski Slaganje</value>
+  </data>
+  <data name="IslamInfo_Arial" xml:space="preserve">
+    <value>Arial</value>
+  </data>
+  <data name="IslamInfo_BeforeTravel" xml:space="preserve">
+    <value>Prije putovanja</value>
+  </data>
+  <data name="IslamInfo_BeforeTravelTrans" xml:space="preserve">
+    <value>Ovime vas ostaviti s tom religijom, Amanah (odgovornost) i prethodni djelom za Allaha.</value>
+  </data>
+  <data name="IslamInfo_BeforeTravelWordByWord" xml:space="preserve">
+    <value>Ovime vas ostaviti | za Allaha | s tom religijom | i što | odgovornost | i natrag | djelo</value>
+  </data>
+  <data name="IslamInfo_BowOfPrayer" xml:space="preserve">
+    <value>Bow molitve</value>
+  </data>
+  <data name="IslamInfo_CallToBeginPrayerSixthVerse" xml:space="preserve">
+    <value>Poziv za početak molitvu - šesti stih</value>
+  </data>
+  <data name="IslamInfo_CallToBeginPrayerSixthVerseTrans" xml:space="preserve">
+    <value>Doista je započeo molitvu</value>
+  </data>
+  <data name="IslamInfo_CallToBeginPrayerSixthVerseWordByWord" xml:space="preserve">
+    <value>Doista | je počela | molitva</value>
+  </data>
+  <data name="IslamInfo_CallToBeginThePrayer" xml:space="preserve">
+    <value>Poziv za početak molitvu</value>
+  </data>
+  <data name="IslamInfo_CallToPrayer" xml:space="preserve">
+    <value>Poziv na molitvu</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerEighthVerse" xml:space="preserve">
+    <value>Poziv na molitvu - osmi stih</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerEighthVerseTrans" xml:space="preserve">
+    <value>Nema drugog Boga osim Allaha</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerEighthVerseWordByWord" xml:space="preserve">
+    <value>Nema | Bog | osim | Allah</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerFifthVerse" xml:space="preserve">
+    <value>Poziv na molitvu - peti stih</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerFifthVerseTrans" xml:space="preserve">
+    <value>Dođite u uspjeh</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerFifthVerseWordByWord" xml:space="preserve">
+    <value>Dođi | na | uspjeh</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerFirstVerse" xml:space="preserve">
+    <value>Poziv na molitvu - prvi stih</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerFirstVerseTrans" xml:space="preserve">
+    <value>Allah je najveći</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerFirstVerseWordByWord" xml:space="preserve">
+    <value>Allah je | najveća</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerFourthVerse" xml:space="preserve">
+    <value>Poziv na molitvu - četvrti stih</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerFourthVerseTrans" xml:space="preserve">
+    <value>Dođite na molitvu</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerFourthVerseWordByWord" xml:space="preserve">
+    <value>Dođi | na | molitva</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerLeader" xml:space="preserve">
+    <value>Poziv na molitvu lidera</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerSecondVerse" xml:space="preserve">
+    <value>Poziv na molitvu - drugi stih</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerSecondVerseTrans" xml:space="preserve">
+    <value>Svjedočim da nema drugog Boga osim Allaha</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerSecondVerseWordByWord" xml:space="preserve">
+    <value>Svjedočim | da | nema | Bog | osim | Allah</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerSeventhVerse" xml:space="preserve">
+    <value>Poziv na molitvu - sedmi stihove</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerSeventhVerseTrans" xml:space="preserve">
+    <value>Allah je najveći</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerSeventhVerseWordByWord" xml:space="preserve">
+    <value>Allah je | najveća</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerSixthVerse" xml:space="preserve">
+    <value>Poziv na molitvu - šesti stih</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerSixthVerseTrans" xml:space="preserve">
+    <value>Molitva je bolja od spavanja</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerSixthVerseWordByWord" xml:space="preserve">
+    <value>Molitva je | bolje nego | | sleep</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerThirdVerse" xml:space="preserve">
+    <value>Poziv na molitvu - treći stih</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerThirdVerseTrans" xml:space="preserve">
+    <value>Svjedočim da je Muhammed je Allahov</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerThirdVerseWordByWord" xml:space="preserve">
+    <value>Svjedočim | da | Muhammed je | glasnik | Allahova</value>
+  </data>
+  <data name="IslamInfo_Chapter" xml:space="preserve">
+    <value>Poglavlje</value>
+  </data>
+  <data name="IslamInfo_Creed" xml:space="preserve">
+    <value>Vjera</value>
+  </data>
+  <data name="IslamInfo_Custom" xml:space="preserve">
+    <value>Običaj</value>
+  </data>
+  <data name="IslamInfo_David" xml:space="preserve">
+    <value>David</value>
+  </data>
+  <data name="IslamInfo_Default" xml:space="preserve">
+    <value>Default</value>
+  </data>
+  <data name="IslamInfo_DirectionOfprayer" xml:space="preserve">
+    <value>Smjer molitve</value>
+  </data>
+  <data name="IslamInfo_Dissertation" xml:space="preserve">
+    <value>Disertacija</value>
+  </data>
+  <data name="IslamInfo_Eber" xml:space="preserve">
+    <value>Eber</value>
+  </data>
+  <data name="IslamInfo_Elijah" xml:space="preserve">
+    <value>Ilija</value>
+  </data>
+  <data name="IslamInfo_Elisha" xml:space="preserve">
+    <value>Elisha</value>
+  </data>
+  <data name="IslamInfo_Enoch" xml:space="preserve">
+    <value>Enok</value>
+  </data>
+  <data name="IslamInfo_EnteringMasjidilHaram" xml:space="preserve">
+    <value>Unos Masjidil Haram</value>
+  </data>
+  <data name="IslamInfo_EnteringMasjidilHaramTrans" xml:space="preserve">
+    <value>O Allah!</value>
+  </data>
+  <data name="IslamInfo_EnteringMasjidilHaramWordByWord" xml:space="preserve">
+    <value>O Allah | Ti si | mir | i od Tebe | mir | uzrok da živimo | Naš Gospodin | mirom | i uzrokuju da unesete | Paradise | Kuća | mira | Vlasnik časti | Naš Gospodin i | Veličanstvo | Ti</value>
+  </data>
+  <data name="IslamInfo_Ezekiel" xml:space="preserve">
+    <value>Ezekiel</value>
+  </data>
+  <data name="IslamInfo_FifthCreed" xml:space="preserve">
+    <value>Peti Creed - riječ pokore (Astaghfar)</value>
+  </data>
+  <data name="IslamInfo_FifthCreedTrans" xml:space="preserve">
+    <value>Tražim oprost od Allaha, Gospodara moga, od svakog grijeha sam počinio svjesno ili nesvjesno, tajno ili javno, a ja se okreću prema njemu od grijeha koje znam i od grijeha koje ja ne znam.</value>
+  </data>
+  <data name="IslamInfo_FifthCreedWordByWord" xml:space="preserve">
+    <value>I tražiti oprost | od Allaha | Gospodine moj | iz | svakog | sin | sam počinio | svjesno ili | | unknowningly | potajno | ili | otvoreno | i ja okrenuti | Njega | iz | sin | da | znam | i od</value>
+  </data>
+  <data name="IslamInfo_FirstCreed" xml:space="preserve">
+    <value>Prvo vjera - Riječ čistoće (Tayyabah)</value>
+  </data>
+  <data name="IslamInfo_FirstCreedTrans" xml:space="preserve">
+    <value>Nema Boga osim Allah Muhammed je Allahov poslanik.</value>
+  </data>
+  <data name="IslamInfo_FirstCreedWordByWord" xml:space="preserve">
+    <value>Nema | Bog | osim | Allah | Muhammad | Glasnik | Allah</value>
+  </data>
+  <data name="IslamInfo_FortyOurLordSupplications" xml:space="preserve">
+    <value>40 Naš Gospodin zaklinjati</value>
+  </data>
+  <data name="IslamInfo_FourthCreed" xml:space="preserve">
+    <value>Četvrto Creed - Riječ jedinstva (Tauhid)</value>
+  </data>
+  <data name="IslamInfo_FourthCreedTrans" xml:space="preserve">
+    <value>(Postoji) nitko vrijedan obožavanja osim Allaha.</value>
+  </data>
+  <data name="IslamInfo_FourthCreedWordByWord" xml:space="preserve">
+    <value>Nema | Bog | osim | Allah | sama | nema | partner | je on za | njega | Kraljevstvo | i za njega | Pohvala | On daje život | i donosi smrt | i on je | uvijek žive | nije | sposobna</value>
+  </data>
+  <data name="IslamInfo_GloryBeToAllah" xml:space="preserve">
+    <value>Slava Allahu</value>
+  </data>
+  <data name="IslamInfo_IhramPrayerSupplication" xml:space="preserve">
+    <value>Ihram Molitva prošnje</value>
+  </data>
+  <data name="IslamInfo_IhramPrayerSupplicationTrans" xml:space="preserve">
+    <value>U ime Allaha, Most milostiv, Samilosnog!</value>
+  </data>
+  <data name="IslamInfo_IhramPrayerSupplicationWordByWord" xml:space="preserve">
+    <value>U ime Allaha | | Najviše milostiv | Milosrdnog | Allahom | je najveći | Allahom | je najveći | Allahom | je najveći | koliko savršeno | On je | onaj koji je stavio | to (prometnom) |</value>
+  </data>
+  <data name="IslamInfo_Imam" xml:space="preserve">
+    <value>Duhovni vođa</value>
+  </data>
+  <data name="IslamInfo_IntentionForIhramPrayer" xml:space="preserve">
+    <value>Namjera za ihram molitve</value>
+  </data>
+  <data name="IslamInfo_IntentionForIhramPrayerTrans" xml:space="preserve">
+    <value>Namjeravam napraviti Niat (dva rakaat Sunat ihram molitva) za Alaha.</value>
+  </data>
+  <data name="IslamInfo_IntentionForIhramPrayerWordByWord" xml:space="preserve">
+    <value>Nudim | preporuča | ihram Molitva | dva rakat | Allahu | Svevišnji</value>
+  </data>
+  <data name="IslamInfo_IntentionForIhramShower" xml:space="preserve">
+    <value>Namjera za ihram tušem</value>
+  </data>
+  <data name="IslamInfo_IntentionForIhramShowerTrans" xml:space="preserve">
+    <value>Namjeravam kadu (za preporučenu ihram tušem) Allahu.</value>
+  </data>
+  <data name="IslamInfo_IntentionForIhramShowerWordByWord" xml:space="preserve">
+    <value>Namjeravam | za kadu | preporuča | ihram tuš | Allahu | Svevišnji</value>
+  </data>
+  <data name="IslamInfo_IntentionForJourneyPrayer" xml:space="preserve">
+    <value>Namjera za putovanje molitve</value>
+  </data>
+  <data name="IslamInfo_IntentionForJourneyPrayerTrans" xml:space="preserve">
+    <value>Namjeravam napraviti Niat (dva rakaat Sunat Safar molitva) za Alaha.</value>
+  </data>
+  <data name="IslamInfo_IntentionForJourneyPrayerWordByWord" xml:space="preserve">
+    <value>Nudim | preporuča | Safar molitva | dva rakat | Allahu | Svevišnji</value>
+  </data>
+  <data name="IslamInfo_IntentionForJourneyShower" xml:space="preserve">
+    <value>Namjera za putovanje tušem</value>
+  </data>
+  <data name="IslamInfo_IntentionForJourneyShowerTrans" xml:space="preserve">
+    <value>Namjeravam kadu (za preporučene Musafir tušem) Allahu.</value>
+  </data>
+  <data name="IslamInfo_IntentionForJourneyShowerWordByWord" xml:space="preserve">
+    <value>Namjeravam | za kadu | Musafir tuš | preporuča | Allahu | Svevišnji</value>
+  </data>
+  <data name="IslamInfo_IntentionToPerformUmrah" xml:space="preserve">
+    <value>Namjera za obavljanje Umrah</value>
+  </data>
+  <data name="IslamInfo_IntentionToPerformUmrahTrans" xml:space="preserve">
+    <value>O Allah, ja odgovaram na Vaš poziv da Umrah, O Allahu, ja bi Umrah i ihram za Umrah samo za Vas.</value>
+  </data>
+  <data name="IslamInfo_IntentionToPerformUmrahWordByWord" xml:space="preserve">
+    <value>Namjeravam | Umrah | i ihram | samo | za Allaha | Svevišnji</value>
+  </data>
+  <data name="IslamInfo_InTheNameOfAllah" xml:space="preserve">
+    <value>U ime Allaha</value>
+  </data>
+  <data name="IslamInfo_Isaac" xml:space="preserve">
+    <value>Isaac</value>
+  </data>
+  <data name="IslamInfo_Ishmael" xml:space="preserve">
+    <value>Ishmael</value>
+  </data>
+  <data name="IslamInfo_Islam" xml:space="preserve">
+    <value>Podnošenje</value>
+  </data>
+  <data name="IslamInfo_IslamicWords" xml:space="preserve">
+    <value>Islamski riječi</value>
+  </data>
+  <data name="IslamInfo_Jacob" xml:space="preserve">
+    <value>Jakov</value>
+  </data>
+  <data name="IslamInfo_Jesus" xml:space="preserve">
+    <value>Isus</value>
+  </data>
+  <data name="IslamInfo_Jethro" xml:space="preserve">
+    <value>Jethro</value>
+  </data>
+  <data name="IslamInfo_Job" xml:space="preserve">
+    <value>Posao</value>
+  </data>
+  <data name="IslamInfo_JohnTheBaptist" xml:space="preserve">
+    <value>Jovan Krstitelj</value>
+  </data>
+  <data name="IslamInfo_Jonas" xml:space="preserve">
+    <value>Jonas</value>
+  </data>
+  <data name="IslamInfo_Joseph" xml:space="preserve">
+    <value>Joseph</value>
+  </data>
+  <data name="IslamInfo_Judge" xml:space="preserve">
+    <value>Sudac</value>
+  </data>
+  <data name="IslamInfo_KFGQPCNaskh" xml:space="preserve">
+    <value>KFGQPC nesh</value>
+  </data>
+  <data name="IslamInfo_Law" xml:space="preserve">
+    <value>Zakon</value>
+  </data>
+  <data name="IslamInfo_Lot" xml:space="preserve">
+    <value>Mnogo</value>
+  </data>
+  <data name="IslamInfo_MajorAblution" xml:space="preserve">
+    <value>Major pranju</value>
+  </data>
+  <data name="IslamInfo_MalikMuwatta" xml:space="preserve">
+    <value>Malik je Muwatta</value>
+  </data>
+  <data name="IslamInfo_MeQuran" xml:space="preserve">
+    <value>Me-Kur'an</value>
+  </data>
+  <data name="IslamInfo_Messenger" xml:space="preserve">
+    <value>Glasnik</value>
+  </data>
+  <data name="IslamInfo_Months" xml:space="preserve">
+    <value>Mjeseci</value>
+  </data>
+  <data name="IslamInfo_Moses" xml:space="preserve">
+    <value>Mojsije</value>
+  </data>
+  <data name="IslamInfo_MSUighur" xml:space="preserve">
+    <value>MS ujgur</value>
+  </data>
+  <data name="IslamInfo_Muhammad" xml:space="preserve">
+    <value>Muhammad</value>
+  </data>
+  <data name="IslamInfo_Muslim" xml:space="preserve">
+    <value>Onaj tko podnosi</value>
+  </data>
+  <data name="IslamInfo_NamesOfAllah" xml:space="preserve">
+    <value>Imena Allaha</value>
+  </data>
+  <data name="IslamInfo_Noah" xml:space="preserve">
+    <value>Noa</value>
+  </data>
+  <data name="IslamInfo_OnenessOfGod" xml:space="preserve">
+    <value>Jedinstvo Boga</value>
+  </data>
+  <data name="IslamInfo_Part" xml:space="preserve">
+    <value>Dio</value>
+  </data>
+  <data name="IslamInfo_PDMSSaleem" xml:space="preserve">
+    <value>PDMS Saleem</value>
+  </data>
+  <data name="IslamInfo_PeaceBeUponYou" xml:space="preserve">
+    <value>Mir s vama</value>
+  </data>
+  <data name="IslamInfo_PhraseForAllahIsGreatest" xml:space="preserve">
+    <value>Izraz za Allaha je najveća</value>
+  </data>
+  <data name="IslamInfo_PhraseForAllPraiseAndThanksBeToAllah" xml:space="preserve">
+    <value>Izraz za sve pohvale i zahvale Allahu</value>
+  </data>
+  <data name="IslamInfo_PhraseForGloryBeToAllah" xml:space="preserve">
+    <value>Izraz za slavu Allaha</value>
+  </data>
+  <data name="IslamInfo_PhraseForInTheNameOfAllah" xml:space="preserve">
+    <value>Izraz za u ime Allaha</value>
+  </data>
+  <data name="IslamInfo_Pilgrimage" xml:space="preserve">
+    <value>Hodočašće</value>
+  </data>
+  <data name="IslamInfo_Prayers" xml:space="preserve">
+    <value>Molitve</value>
+  </data>
+  <data name="IslamInfo_PrayerTimes" xml:space="preserve">
+    <value>Molitva puta</value>
+  </data>
+  <data name="IslamInfo_ProperPronunciationDuringRecitation" xml:space="preserve">
+    <value>Pravilno izgovor za vrijeme recitacije</value>
+  </data>
+  <data name="IslamInfo_Prophet" xml:space="preserve">
+    <value>Prorok</value>
+  </data>
+  <data name="IslamInfo_Prophets" xml:space="preserve">
+    <value>Proroci</value>
+  </data>
+  <data name="IslamInfo_Prostrating" xml:space="preserve">
+    <value>Klanjanje</value>
+  </data>
+  <data name="IslamInfo_Prostration" xml:space="preserve">
+    <value>Ispruženost</value>
+  </data>
+  <data name="IslamInfo_PurificationOfTheSoul" xml:space="preserve">
+    <value>Pročišćavanje duše</value>
+  </data>
+  <data name="IslamInfo_PurificationOfTheSoulTrans" xml:space="preserve">
+    <value>O Allahu, podari mojoj duši svoju pobožnost i pročistiti ga, Vi ste najbolje da ga očiste, Vi ste njezin čuvar i Master.</value>
+  </data>
+  <data name="IslamInfo_PurificationOfTheSoulWordByWord" xml:space="preserve">
+    <value>O Allah | You Give | My Soul | Njegova Pobožnost | I ti ga očiste | Vi (Alone) | Najbolji | tko | ga Čisti | Vi (Alone) | njegov skrbnik | i njegov gospodar</value>
+  </data>
+  <data name="IslamInfo_PurificationSupplication" xml:space="preserve">
+    <value>Pročišćavanje prošnju</value>
+  </data>
+  <data name="IslamInfo_Remembrance" xml:space="preserve">
+    <value>Sjećanje</value>
+  </data>
+  <data name="IslamInfo_RevelationOfAllah" xml:space="preserve">
+    <value>Objava Allaha</value>
+  </data>
+  <data name="IslamInfo_RevelationOfAllahInBookForm" xml:space="preserve">
+    <value>Objava Allaha u obliku knjige</value>
+  </data>
+  <data name="IslamInfo_RiyadhSaaliheen" xml:space="preserve">
+    <value>Rijad al-Saaliheen</value>
+  </data>
+  <data name="IslamInfo_SahihBukhari" xml:space="preserve">
+    <value>Sahih al-Buhari</value>
+  </data>
+  <data name="IslamInfo_SahihMuslim" xml:space="preserve">
+    <value>Sahih Muslim</value>
+  </data>
+  <data name="IslamInfo_SakkalMajalla" xml:space="preserve">
+    <value>Sakkal Majalla</value>
+  </data>
+  <data name="IslamInfo_SalawatSupplicationAfterTalbiah" xml:space="preserve">
+    <value>Salawat prošnju nakon Talbiah</value>
+  </data>
+  <data name="IslamInfo_SalawatSupplicationAfterTalbiahTrans" xml:space="preserve">
+    <value>O Allahu blagoslovi našu glavnu Muhameda i njegovu obitelj baš kao što je blagoslovio našu glavnu Abrahama i posvetiti naš majstor Muhammeda i obitelj Muhameda kao Vi posvetiti naš gospodara Abrahama i obitelj Abrahama u svim svjetovima jer si hvale moćni.</value>
+  </data>
+  <data name="IslamInfo_SalawatSupplicationAfterTalbiahWordByWord" xml:space="preserve">
+    <value>O Allah | poslati pozdrave | nakon | majstor | Muhammad | i nakon | obitelj | majstor | Muhammad | kao | šaljete pozdrave | nakon | Abraham i | nakon | obitelj | Abraham | i poslati blagoslove | nakon | gospodara</value>
+  </data>
+  <data name="IslamInfo_Saleh" xml:space="preserve">
+    <value>Saleh</value>
+  </data>
+  <data name="IslamInfo_Scheherazade" xml:space="preserve">
+    <value>Šeherezada</value>
+  </data>
+  <data name="IslamInfo_SchoolOfJurisprudence" xml:space="preserve">
+    <value>Škola sudske prakse</value>
+  </data>
+  <data name="IslamInfo_SecondCreed" xml:space="preserve">
+    <value>Druga vjera - riječ Svjedočanstvo (Shahaadat)</value>
+  </data>
+  <data name="IslamInfo_SecondCreedTrans" xml:space="preserve">
+    <value>Ja svjedočim da nitko nije vrijedan obožavanja osim Allaha, samo u jednom, bez partnera, i svjedočim da je Muhammed je Njegov sluga i Messenger.</value>
+  </data>
+  <data name="IslamInfo_SecondCreedWordByWord" xml:space="preserve">
+    <value>Ja svjedočim | da | nema | Bog | osim | Allah | sama | nema | partner | je on | i ja svjedočim | da | Muhammad | Njegov sluga | i Messenger</value>
+  </data>
+  <data name="IslamInfo_SixthCreed" xml:space="preserve">
+    <value>Šesti Creed - Riječi odbacuje nevjericu (Rud--Kuffer)</value>
+  </data>
+  <data name="IslamInfo_SixthCreedTrans" xml:space="preserve">
+    <value>O Allah!</value>
+  </data>
+  <data name="IslamInfo_SixthCreedWordByWord" xml:space="preserve">
+    <value>O Allah | Dakako | tražim zaštitu | s vama | od | da | sam povezati partner s vama | ništa | i ja | znam | što | i ja tražiti oprost od vas | za to | ne | znam | što | sam se pokajao</value>
+  </data>
+  <data name="IslamInfo_Solomon" xml:space="preserve">
+    <value>Solomon</value>
+  </data>
+  <data name="IslamInfo_Station" xml:space="preserve">
+    <value>Stanica</value>
+  </data>
+  <data name="IslamInfo_SunanAbuDawood" xml:space="preserve">
+    <value>Sunen Ebu Dawood</value>
+  </data>
+  <data name="IslamInfo_SunanIbnMaja" xml:space="preserve">
+    <value>Sunen Ibn Maja</value>
+  </data>
+  <data name="IslamInfo_SunanNasai" xml:space="preserve">
+    <value>Sunen-Nesa'ija Al-Sughra</value>
+  </data>
+  <data name="IslamInfo_SunanTirmidhi" xml:space="preserve">
+    <value>Sunen el-Tirmizi</value>
+  </data>
+  <data name="IslamInfo_Supplication" xml:space="preserve">
+    <value>Preklinjanje</value>
+  </data>
+  <data name="IslamInfo_SupplicationAfterSalawatSupplication" xml:space="preserve">
+    <value>Prošnja nakon Salawat prošnju</value>
+  </data>
+  <data name="IslamInfo_SupplicationAfterSalawatSupplicationTrans" xml:space="preserve">
+    <value>O Allah!</value>
+  </data>
+  <data name="IslamInfo_SupplicationAfterSalawatSupplicationWordByWord" xml:space="preserve">
+    <value>O Allah | doista | tražim od tebe | si blagoslove | i raj | ja tražim utočište kod Tebe od | | | ljutnje i pakla.</value>
+  </data>
+  <data name="IslamInfo_SupplicationForArrivingAtMakkah" xml:space="preserve">
+    <value>Molitvom za dolazak u Mekki</value>
+  </data>
+  <data name="IslamInfo_SupplicationForArrivingAtMakkahTrans" xml:space="preserve">
+    <value>O Bože!</value>
+  </data>
+  <data name="IslamInfo_SupplicationForArrivingAtMakkahWordByWord" xml:space="preserve">
+    <value>O Allah | doista | to | svetište | Tvoje sveto mjesto | i to Sveti grad je | tvoj grad | i therin Mir je | Umukni | Onda sačuvaj me | iz | pakao | i spasi me | iz | Tvoje kazne na |</value>
+  </data>
+  <data name="IslamInfo_Talbiah" xml:space="preserve">
+    <value>Talbiah</value>
+  </data>
+  <data name="IslamInfo_TalbiahTrans" xml:space="preserve">
+    <value>Ja sam odgovorio da se ti, Bože moj!</value>
+  </data>
+  <data name="IslamInfo_TalbiahWordByWord" xml:space="preserve">
+    <value>Ja sam odgovorio da vas | O Allah | sam odgovorila da vas | sam odgovorila da vas | ne postoji | partner | za tebe | ja sam odgovorila da vas | Truly | Sva Pohvala | i sve Bounty | za vas |</value>
+  </data>
+  <data name="IslamInfo_TheAbaser" xml:space="preserve">
+    <value>Abaser</value>
+  </data>
+  <data name="IslamInfo_TheAcknowledgingOne" xml:space="preserve">
+    <value>Priznajući Jedan</value>
+  </data>
+  <data name="IslamInfo_TheAllAuthoritativeOne" xml:space="preserve">
+    <value>Sve autoritativno Jedan</value>
+  </data>
+  <data name="IslamInfo_TheAllAwareOne" xml:space="preserve">
+    <value>All-Aware Jedan</value>
+  </data>
+  <data name="IslamInfo_TheAllCompelling" xml:space="preserve">
+    <value>Sve uvjerljiv</value>
+  </data>
+  <data name="IslamInfo_TheAllEnumeratingOne" xml:space="preserve">
+    <value>All-nabrajaju Jedan</value>
+  </data>
+  <data name="IslamInfo_TheAllHearer" xml:space="preserve">
+    <value>All-Slušatelj</value>
+  </data>
+  <data name="IslamInfo_TheAllKnowingOne" xml:space="preserve">
+    <value>Sveznajući Jedan</value>
+  </data>
+  <data name="IslamInfo_TheAllNobleOne" xml:space="preserve">
+    <value>All-Noble Jedan</value>
+  </data>
+  <data name="IslamInfo_TheAllObservingWitness" xml:space="preserve">
+    <value>Sve Promatranje svjedoka</value>
+  </data>
+  <data name="IslamInfo_TheAllPervadingOne" xml:space="preserve">
+    <value>Sveprožimajući Jedan</value>
+  </data>
+  <data name="IslamInfo_TheAllPrevailingOne" xml:space="preserve">
+    <value>All-Prevladavajući Jedan</value>
+  </data>
+  <data name="IslamInfo_TheAllSeeing" xml:space="preserve">
+    <value>Svevideće</value>
+  </data>
+  <data name="IslamInfo_TheAssemblerOfScatteredCreations" xml:space="preserve">
+    <value>Monter razasuti Creations</value>
+  </data>
+  <data name="IslamInfo_TheBeneficent" xml:space="preserve">
+    <value>Milostivi</value>
+  </data>
+  <data name="IslamInfo_TheBenignOne" xml:space="preserve">
+    <value>Benigni Jedan</value>
+  </data>
+  <data name="IslamInfo_TheBestowerOfBenefits" xml:space="preserve">
+    <value>Darovatelj Prednosti</value>
+  </data>
+  <data name="IslamInfo_TheBestowerOfSufficiency" xml:space="preserve">
+    <value>Darovatelj samodostatnost</value>
+  </data>
+  <data name="IslamInfo_TheBountifulOne" xml:space="preserve">
+    <value>Bountiful Jedan</value>
+  </data>
+  <data name="IslamInfo_TheClementOne" xml:space="preserve">
+    <value>Clement Jedan</value>
+  </data>
+  <data name="IslamInfo_TheCreator" xml:space="preserve">
+    <value>Stvoritelj</value>
+  </data>
+  <data name="IslamInfo_TheDistressor" xml:space="preserve">
+    <value>Distressor</value>
+  </data>
+  <data name="IslamInfo_TheDominantOne" xml:space="preserve">
+    <value>Dominantna Jedan</value>
+  </data>
+  <data name="IslamInfo_TheElevatingOne" xml:space="preserve">
+    <value>Podizanje Jedan</value>
+  </data>
+  <data name="IslamInfo_TheEmbodimentOfJustice" xml:space="preserve">
+    <value>Utjelovljenje pravosuđa</value>
+  </data>
+  <data name="IslamInfo_TheEmbodimentOfPeace" xml:space="preserve">
+    <value>Utjelovljenje mira</value>
+  </data>
+  <data name="IslamInfo_TheEmbodimentOfTruth" xml:space="preserve">
+    <value>Utjelovljenje istine</value>
+  </data>
+  <data name="IslamInfo_TheEternalInheritor" xml:space="preserve">
+    <value>Vječni nasljednik</value>
+  </data>
+  <data name="IslamInfo_TheEternalLord" xml:space="preserve">
+    <value>Vječni Gospodin</value>
+  </data>
+  <data name="IslamInfo_TheEternalPossessorOfSovereignty" xml:space="preserve">
+    <value>Vječni posjednik suverenosti</value>
+  </data>
+  <data name="IslamInfo_TheEverAcceptorOfRepentance" xml:space="preserve">
+    <value>Ever-akceptant pokajanja</value>
+  </data>
+  <data name="IslamInfo_TheEverSurvivingOne" xml:space="preserve">
+    <value>Ever Preživjeli Jedan</value>
+  </data>
+  <data name="IslamInfo_TheEvolver" xml:space="preserve">
+    <value>Evolver</value>
+  </data>
+  <data name="IslamInfo_TheExpeditingOne" xml:space="preserve">
+    <value>Ubrzanja Jedan</value>
+  </data>
+  <data name="IslamInfo_TheExtender" xml:space="preserve">
+    <value>Extender</value>
+  </data>
+  <data name="IslamInfo_TheExtensivelyEnduringOne" xml:space="preserve">
+    <value>Opsežno Enduring Jedan</value>
+  </data>
+  <data name="IslamInfo_TheExtremelyExaltedOne" xml:space="preserve">
+    <value>Izuzetno Uzvišeni Jedan</value>
+  </data>
+  <data name="IslamInfo_TheFirmOne" xml:space="preserve">
+    <value>Tvrtka Jedan</value>
+  </data>
+  <data name="IslamInfo_TheFlawlessShaper" xml:space="preserve">
+    <value>Flawless oblikovatelj</value>
+  </data>
+  <data name="IslamInfo_TheFountainHeadOfTruth" xml:space="preserve">
+    <value>Fontana-voditelj istine</value>
+  </data>
+  <data name="IslamInfo_TheGloriousOne" xml:space="preserve">
+    <value>Slavna Jedan</value>
+  </data>
+  <data name="IslamInfo_TheGreatForgiver" xml:space="preserve">
+    <value>Velika Forgiver</value>
+  </data>
+  <data name="IslamInfo_TheGreatOne" xml:space="preserve">
+    <value>Velika Jedan</value>
+  </data>
+  <data name="IslamInfo_TheGuardingOne" xml:space="preserve">
+    <value>Zaštita Jedan</value>
+  </data>
+  <data name="IslamInfo_TheGuideToPathOfRectitude" xml:space="preserve">
+    <value>Vodič putu čestitosti</value>
+  </data>
+  <data name="IslamInfo_TheHolderOfSupremeAuthority" xml:space="preserve">
+    <value>Nositelj vrhovni autoritet</value>
+  </data>
+  <data name="IslamInfo_TheHonourerBestower" xml:space="preserve">
+    <value>Honourer-Dobrostivi</value>
+  </data>
+  <data name="IslamInfo_TheImpartialJudge" xml:space="preserve">
+    <value>Nepristranog suca</value>
+  </data>
+  <data name="IslamInfo_TheImperceptible" xml:space="preserve">
+    <value>Neprimjetan</value>
+  </data>
+  <data name="IslamInfo_TheInfiniteLastOne" xml:space="preserve">
+    <value>Beskonačni posljednja</value>
+  </data>
+  <data name="IslamInfo_TheInflictorOfDeath" xml:space="preserve">
+    <value>Inflictor smrti</value>
+  </data>
+  <data name="IslamInfo_TheInfuserOfFaith" xml:space="preserve">
+    <value>Infuser vjere</value>
+  </data>
+  <data name="IslamInfo_TheInfuserOfNewLife" xml:space="preserve">
+    <value>Infuser novog života</value>
+  </data>
+  <data name="IslamInfo_TheJustOne" xml:space="preserve">
+    <value>Samo jedan</value>
+  </data>
+  <data name="IslamInfo_TheKnowerOfSubtleties" xml:space="preserve">
+    <value>On zna suptilnosti</value>
+  </data>
+  <data name="IslamInfo_TheLovingOne" xml:space="preserve">
+    <value>Voljeti Jedan</value>
+  </data>
+  <data name="IslamInfo_TheMagnificentOne" xml:space="preserve">
+    <value>Veličanstveni</value>
+  </data>
+  <data name="IslamInfo_TheMaintainerOflife" xml:space="preserve">
+    <value>Održavatelj života</value>
+  </data>
+  <data name="IslamInfo_TheMajesticOne" xml:space="preserve">
+    <value>Majestic Jedan</value>
+  </data>
+  <data name="IslamInfo_TheMerciful" xml:space="preserve">
+    <value>Milostivi</value>
+  </data>
+  <data name="IslamInfo_TheMightyOne" xml:space="preserve">
+    <value>Junak</value>
+  </data>
+  <data name="IslamInfo_TheMostSacred" xml:space="preserve">
+    <value>Presveto</value>
+  </data>
+  <data name="IslamInfo_TheOmnipotentOne" xml:space="preserve">
+    <value>Svemogući Jedan</value>
+  </data>
+  <data name="IslamInfo_TheOnlyOne" xml:space="preserve">
+    <value>Samo jedan</value>
+  </data>
+  <data name="IslamInfo_TheOriginator" xml:space="preserve">
+    <value>Začetnik</value>
+  </data>
+  <data name="IslamInfo_ThePardoner" xml:space="preserve">
+    <value>Oprostitelj</value>
+  </data>
+  <data name="IslamInfo_ThePerceptible" xml:space="preserve">
+    <value>Uočljive</value>
+  </data>
+  <data name="IslamInfo_ThePointingOne" xml:space="preserve">
+    <value>Ukazujući Jedan</value>
+  </data>
+  <data name="IslamInfo_ThePossessorOfMajestyAndHonour" xml:space="preserve">
+    <value>Posjednik veličanstva i časti</value>
+  </data>
+  <data name="IslamInfo_ThePrayersOfAllahUponHimAndPeace" xml:space="preserve">
+    <value>Molitve Allaha na njega i mir</value>
+  </data>
+  <data name="IslamInfo_ThePreserverOfSafety" xml:space="preserve">
+    <value>Spasavanje sigurnosti</value>
+  </data>
+  <data name="IslamInfo_ThePreventer" xml:space="preserve">
+    <value>Preventivni</value>
+  </data>
+  <data name="IslamInfo_ThePrimeLight" xml:space="preserve">
+    <value>Premijer Light</value>
+  </data>
+  <data name="IslamInfo_TheProcrastinator" xml:space="preserve">
+    <value>Oklijevalo</value>
+  </data>
+  <data name="IslamInfo_TheProtectingAssociate" xml:space="preserve">
+    <value>Zaštita suradnik</value>
+  </data>
+  <data name="IslamInfo_TheProviderOfGuidance" xml:space="preserve">
+    <value>Davatelj Vodica</value>
+  </data>
+  <data name="IslamInfo_TheReckoningOne" xml:space="preserve">
+    <value>Reckoning Jedan</value>
+  </data>
+  <data name="IslamInfo_TheReducer" xml:space="preserve">
+    <value>Redukcija</value>
+  </data>
+  <data name="IslamInfo_TheRespondingOne" xml:space="preserve">
+    <value>Odgovarajući Jedan</value>
+  </data>
+  <data name="IslamInfo_TheRestorer" xml:space="preserve">
+    <value>Restaurator</value>
+  </data>
+  <data name="IslamInfo_TheRestrictingOne" xml:space="preserve">
+    <value>Ograničavanje Jedan</value>
+  </data>
+  <data name="IslamInfo_TheRetaliator" xml:space="preserve">
+    <value>Retaliator</value>
+  </data>
+  <data name="IslamInfo_TheSelfSubsistingOne" xml:space="preserve">
+    <value>Samoopstojnoga Jedan</value>
+  </data>
+  <data name="IslamInfo_TheSelfSufficientOne" xml:space="preserve">
+    <value>Samodostatan Jedan</value>
+  </data>
+  <data name="IslamInfo_TheSoleLaudableOne" xml:space="preserve">
+    <value>Sole-pohvalno Jedan</value>
+  </data>
+  <data name="IslamInfo_TheSoleOne" xml:space="preserve">
+    <value>Sole Jedan</value>
+  </data>
+  <data name="IslamInfo_TheStrongOne" xml:space="preserve">
+    <value>Jaka Jedan</value>
+  </data>
+  <data name="IslamInfo_TheSublimeOne" xml:space="preserve">
+    <value>Sublime Jedan</value>
+  </data>
+  <data name="IslamInfo_TheSupremeBestower" xml:space="preserve">
+    <value>Vrhovni Dobrostivi</value>
+  </data>
+  <data name="IslamInfo_TheSupremePardoner" xml:space="preserve">
+    <value>Vrhovni oprostitelj</value>
+  </data>
+  <data name="IslamInfo_TheSupremeProvider" xml:space="preserve">
+    <value>Vrhovni Davatelj</value>
+  </data>
+  <data name="IslamInfo_TheSupremeSolver" xml:space="preserve">
+    <value>Vrhovni Solver</value>
+  </data>
+  <data name="IslamInfo_TheSustainingOne" xml:space="preserve">
+    <value>Održavanje Jedan</value>
+  </data>
+  <data name="IslamInfo_TheTotalProvider" xml:space="preserve">
+    <value>Ukupno Davatelj</value>
+  </data>
+  <data name="IslamInfo_TheUniqueOne" xml:space="preserve">
+    <value>Jedinstveni Jedan</value>
+  </data>
+  <data name="IslamInfo_TheUniversalTrustee" xml:space="preserve">
+    <value>Universal povjerenik</value>
+  </data>
+  <data name="IslamInfo_TheVeryFirst" xml:space="preserve">
+    <value>Prvi</value>
+  </data>
+  <data name="IslamInfo_TheWatchfulOne" xml:space="preserve">
+    <value>Budan Jedan</value>
+  </data>
+  <data name="IslamInfo_TheWiseOne" xml:space="preserve">
+    <value>Wise One</value>
+  </data>
+  <data name="IslamInfo_ThirdCreed" xml:space="preserve">
+    <value>Treće Creed - riječ veličanje (Tumjeed)</value>
+  </data>
+  <data name="IslamInfo_ThirdCreedTrans" xml:space="preserve">
+    <value>Slava Allahu i hvala Allahu, i nema Boga osim Allaha i Allah je najveći.</value>
+  </data>
+  <data name="IslamInfo_ThirdCreedWordByWord" xml:space="preserve">
+    <value>Slava | Allahu | i Pohvale | Allahu | i nema | Bog | osim | Allah | i Allah | najveći | i nitko ne | bi | ni | power | osim | sa Allahom | Svevišnjega | najveličanstveniji</value>
+  </data>
+  <data name="IslamInfo_TraditionalArabic" xml:space="preserve">
+    <value>Tradicionalna Arapski</value>
+  </data>
+  <data name="IslamInfo_TransmissionOfInformation" xml:space="preserve">
+    <value>Prijenos informacija</value>
+  </data>
+  <data name="IslamInfo_Umrah" xml:space="preserve">
+    <value>Umrah</value>
+  </data>
+  <data name="IslamInfo_UnitOfPrayer" xml:space="preserve">
+    <value>Jedinica molitve</value>
+  </data>
+  <data name="IslamInfo_UponHimBePeace" xml:space="preserve">
+    <value>Po njemu će mir</value>
+  </data>
+  <data name="IslamInfo_Verse" xml:space="preserve">
+    <value>Stih</value>
+  </data>
+  <data name="IslamInfo_VerseOfTheThrone" xml:space="preserve">
+    <value>Stih prijestolja</value>
+  </data>
+  <data name="IslamInfo_Zechariah" xml:space="preserve">
+    <value>Zaharija</value>
+  </data>
+  <data name="IslamInfo_TheEverLiving" xml:space="preserve">
+    <value>Ever Živjeti</value>
+  </data>
+  <data name="IslamInfo_After" xml:space="preserve">
+    <value>Nakon</value>
+  </data>
+  <data name="IslamInfo_Arabic" xml:space="preserve">
+    <value>Arapski</value>
+  </data>
+  <data name="IslamInfo_Assimilate" xml:space="preserve">
+    <value>Izjednačiti</value>
+  </data>
+  <data name="IslamInfo_Before" xml:space="preserve">
+    <value>Prije</value>
+  </data>
+  <data name="IslamInfo_bukhariBook1" xml:space="preserve">
+    <value>Otkrovenje</value>
+  </data>
+  <data name="IslamInfo_bukhariBook10" xml:space="preserve">
+    <value>Poziv na molitvu (Adhaan)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook11" xml:space="preserve">
+    <value>Petak molitva</value>
+  </data>
+  <data name="IslamInfo_bukhariBook12" xml:space="preserve">
+    <value>Strah Molitva</value>
+  </data>
+  <data name="IslamInfo_bukhariBook13" xml:space="preserve">
+    <value>Dvije Festivali (Eids)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook14" xml:space="preserve">
+    <value>Witr Molitva</value>
+  </data>
+  <data name="IslamInfo_bukhariBook15" xml:space="preserve">
+    <value>Pozivajući se Allahu kiša (Istisqaa)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook16" xml:space="preserve">
+    <value>Pomrčine</value>
+  </data>
+  <data name="IslamInfo_bukhariBook17" xml:space="preserve">
+    <value>Iscrpljavanje Tijekom Recital Kur'ana</value>
+  </data>
+  <data name="IslamInfo_bukhariBook18" xml:space="preserve">
+    <value>Skraćivanje molitvama (U-Taqseer)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook19" xml:space="preserve">
+    <value>Molitva u noći (Tahajjud)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook1Chapter1" xml:space="preserve">
+    <value>{Kako božanskog nadahnuća dolazi do izražaja na Allahovom Messenger (Pile).</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2" xml:space="preserve">
+    <value>Vjerovanje</value>
+  </data>
+  <data name="IslamInfo_bukhariBook20" xml:space="preserve">
+    <value>Vrline molitva u Masjid Mekke i Medine</value>
+  </data>
+  <data name="IslamInfo_bukhariBook21" xml:space="preserve">
+    <value>Akcije dok Molitva</value>
+  </data>
+  <data name="IslamInfo_bukhariBook22" xml:space="preserve">
+    <value>Zaboravljivost u molitvi</value>
+  </data>
+  <data name="IslamInfo_bukhariBook23" xml:space="preserve">
+    <value>Pogrebi (Al-Janaa'iz)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook24" xml:space="preserve">
+    <value>Obvezna Humanitarni Porezna (Zekat)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook25" xml:space="preserve">
+    <value>Hodočastili (Hajj)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook26" xml:space="preserve">
+    <value>Manji Pilgrammage (Umra)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook27" xml:space="preserve">
+    <value>Hodočasnici spriječen Dovršetak hodočastili</value>
+  </data>
+  <data name="IslamInfo_bukhariBook28" xml:space="preserve">
+    <value>Kazna Lov dok hodočastili</value>
+  </data>
+  <data name="IslamInfo_bukhariBook29" xml:space="preserve">
+    <value>Vrline Medini</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter1" xml:space="preserve">
+    <value>Izjava o Poslaniku (saws): 'Islam se temelji na pet principa. "</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter10" xml:space="preserve">
+    <value>Voljeti Ansar je znak vjere.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter12" xml:space="preserve">
+    <value>Pobjeći (pobjegao) iz Al-Fitan (kušnjama i afflications itd.) je dio religije.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter13" xml:space="preserve">
+    <value>Izjava o Poslaniku (saws): 'Znam Allaha (Azza wa JAL) bolji od svih vas učiniti'.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter14" xml:space="preserve">
+    <value>Tko god mrzi da se vrati u kufr.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter15" xml:space="preserve">
+    <value>U razredima u superiornosti vjernika će biti u skladu sa svojim dobrim djelima.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter16" xml:space="preserve">
+    <value>Al-Haya je dio vjere.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter17" xml:space="preserve">
+    <value>Izjava o Allahu (Azza wa JAL):</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter18" xml:space="preserve">
+    <value>Tko god kaže da je vjera akcije (dobra djela).</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter19" xml:space="preserve">
+    <value>Ako netko ne prihvaća islam uistinu, ali čini tako prisilom ili zbog straha da se ubio, itd.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter2" xml:space="preserve">
+    <value>Vaš zaziv znači svoju vjeru.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter20" xml:space="preserve">
+    <value>Za pozdraviti je dio islama.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter21" xml:space="preserve">
+    <value>Da bi nezahvalno mužu.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter22" xml:space="preserve">
+    <value>Grijesi su iz neznanja i grešnik nije nevjernik, osim ako on obožava drugima uz Allaha (Azza wa JAL).</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter23" xml:space="preserve">
+    <value>Izjava o Allahu (Azza wa Jal): {</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter24" xml:space="preserve">
+    <value>Zulm (pogrešno) od jedne vrste može biti veći ili manji od onog drugoga.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter25" xml:space="preserve">
+    <value>Znaci licemjer.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter26" xml:space="preserve">
+    <value>Da bi se uspostavila molitve u noći kadr je dio vjere.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter27" xml:space="preserve">
+    <value>Al-Džihad (sveti rat - boreći se u Allahovom uzrok) je dio vjere.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter28" xml:space="preserve">
+    <value>To je dio vjere utvrđivanja (Nawafil - dobrovoljne) molitve tijekom noći Ramazana.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter29" xml:space="preserve">
+    <value>Promatrati Saum [posti (prema islamskom učenju)] tijekom mjeseca ramazana (iskreno i vjerno) u nadi za Allahovim nagradama, samo je dio vjere.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter3" xml:space="preserve">
+    <value>(Što je rekao) u vezi djela vjere.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter30" xml:space="preserve">
+    <value>Religija je vrlo jednostavno.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter31" xml:space="preserve">
+    <value>(Ponuda) namaz (molitva) je dio vjere.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter32" xml:space="preserve">
+    <value>(Ono što je rečeno u vezi superiornosti) osoba koja prihvaća islam iskreno.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter33" xml:space="preserve">
+    <value>Ad-Din (dobri pravedni čin - čin obožavanja) volio najviše od Allaha (Azza wa JAL) je u tome što se radi redovito.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter34" xml:space="preserve">
+    <value>Vjera se povećava ili smanjuje.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter35" xml:space="preserve">
+    <value>Platiti Zekat je dio islama.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter36" xml:space="preserve">
+    <value>Za prate pogrebne povorke (do mjesta ukopa) je dio vjere.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter37" xml:space="preserve">
+    <value>Strah od vjernika da njegova dobra djela mogu biti poništene (izgubio), bez njegovog znanja.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter38" xml:space="preserve">
+    <value>U kojem traži (anđeo) Jibrael (Gabriel) od Poslanika (saws) o vjeri, Islam, Ihsan (savršenstvo).</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter4" xml:space="preserve">
+    <value>Musliman je onaj koji izbjegava šteti muslimanima svojim jezikom i rukama.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter40" xml:space="preserve">
+    <value>Superiornost te osobe koja ostavlja sve sumnjive (nejasnih) stvari zbog njegove vjere.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter41" xml:space="preserve">
+    <value>Platiti Al-Khumus (jedna petina ratnog plijena koji se daje u Allahovom uzrok) je dio vjere.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter42" xml:space="preserve">
+    <value>Ono što je rekao u vezi s izjavom: "Nagrada za djela ovisi o namjeri."</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter43" xml:space="preserve">
+    <value>Izjava o Poslaniku (saws): "Religija je-Nasiha [(da bude iskrena i istinita) Allahu, Njegovoj Messenger, do muslimanskih vladara, kao i svim muslimanima.] '</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter5" xml:space="preserve">
+    <value>Čija je islam najbolja (Tko je najbolji musliman)?</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter6" xml:space="preserve">
+    <value>Nahraniti (drugi) je dio islama.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter7" xml:space="preserve">
+    <value>Da bih za jedan brat (Muslimana) ono što ne voli za sebe je dio vjere.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter8" xml:space="preserve">
+    <value>Voljeti Poslanika (Muhameda) (Pile) je dio vjere.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter9" xml:space="preserve">
+    <value>Slast (užitak) vjere.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3" xml:space="preserve">
+    <value>Znanje</value>
+  </data>
+  <data name="IslamInfo_bukhariBook30" xml:space="preserve">
+    <value>Post</value>
+  </data>
+  <data name="IslamInfo_bukhariBook31" xml:space="preserve">
+    <value>Molitva u noći u Ramazana (Taraweeh)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook32" xml:space="preserve">
+    <value>Vrline Noći kadr</value>
+  </data>
+  <data name="IslamInfo_bukhariBook33" xml:space="preserve">
+    <value>Povučen u džamiju za spominjanjem Allaha (I'tikaf)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook34" xml:space="preserve">
+    <value>Prodaja i trgovina</value>
+  </data>
+  <data name="IslamInfo_bukhariBook35" xml:space="preserve">
+    <value>Prodaja u kojoj je cijena plaćena za robu koja će dostavljena poslije (As-Salam)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook36" xml:space="preserve">
+    <value>Shuf'a</value>
+  </data>
+  <data name="IslamInfo_bukhariBook37" xml:space="preserve">
+    <value>Unajmljivanje</value>
+  </data>
+  <data name="IslamInfo_bukhariBook38" xml:space="preserve">
+    <value>Transferance duga od jedne osobe na drugu (Al-Hawaala)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook39" xml:space="preserve">
+    <value>Kafalah</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter1" xml:space="preserve">
+    <value>Superiornost znanja.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter11" xml:space="preserve">
+    <value>Poslanik (savs) se koristi da se brine o ljudima u propovijedanju odabirom odgovarajućeg vremena, tako da oni ne bi mogli pobjeći (ili dosadi).</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter12" xml:space="preserve">
+    <value>Tko fiksna poseban dan za davanje (vjerski razgovor) za studente.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter13" xml:space="preserve">
+    <value>Ako Allah (Azza wa Jal) želi činiti dobro za osobu, on čini ga shvatiti religiju.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter14" xml:space="preserve">
+    <value>(Superiornost) Poimanje znanja.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter15" xml:space="preserve">
+    <value>Žele biti poput onoga koji ima znanje i Al-Hikmah (mudrost) [tj.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter16" xml:space="preserve">
+    <value>Što je rekao o putovanju Poslanika Musa (alejhi as-Salam) (kad je otišao) u more u susret Al-Khidr.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter17" xml:space="preserve">
+    <value>Izjava o Poslaniku (saws): "O Allah!</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter18" xml:space="preserve">
+    <value>U kojoj dobi može se mladi slušao (tj. Kotaciji hadisu od dječaka biti prihvatljivo).</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter19" xml:space="preserve">
+    <value>Ići u potragu za znanjem.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter2" xml:space="preserve">
+    <value>Tko god je pitao o znanju, a on je zauzet na neki razgovor, pa je završio razgovor, a zatim je odgovorio da ispitivač.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter20" xml:space="preserve">
+    <value>Superiornost osobe koja uči (islam, postaje religija znanstvenik), a zatim ga uči drugima.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter21" xml:space="preserve">
+    <value>(Ono što je rečeno u vezi) nestanka (vjerskog) znanja i izgledu (vjersku) neznanja.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter22" xml:space="preserve">
+    <value>Superiornost (vjerskog) znanja.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter23" xml:space="preserve">
+    <value>Kako bi vjerski presudu dok jaše životinju ili stojeći na bilo što drugo.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter24" xml:space="preserve">
+    <value>Tko je dao religijsku presudu Zovu ili površno.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter25" xml:space="preserve">
+    <value>Poslanik (saws) je pozvao ljude (misija) od 'Abdul Qais zapamtiti, uz vjeru i (vjerske) znanja (kako je objasnio im) i obavijestiti (prenijeti) svojim ljudima koje su ostavili za sobom (kod kuće).</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter26" xml:space="preserve">
+    <value>Putovati traži odgovor na problematično pitanje, te da ga uče prema obitelji.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter27" xml:space="preserve">
+    <value>Da fi?? X dužnosti u rotaciji za učenje (vjerski) znanje.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter28" xml:space="preserve">
+    <value>Biti bijesan dok je propovijedao ili podučavanje, ako netko vidi ono što se mrzi.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter29" xml:space="preserve">
+    <value>Tko je kleknuo pred imama ili (vjerskog) propovjednika.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter3" xml:space="preserve">
+    <value>Tko podiže svoj glas (transport) znanja.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter30" xml:space="preserve">
+    <value>Ponavljanje nečiji razgovor tri puta kako bi drugi razumjeli.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter31" xml:space="preserve">
+    <value>Čovjek podučavanje (religija) je njegova žena-rob i njegova obitelj.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter32" xml:space="preserve">
+    <value>Propovijedanje (i nastava) od (vjerskog) znanja i žena prema Imama (glavni):</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter33" xml:space="preserve">
+    <value>Žudnja (naučiti) hadisa.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter34" xml:space="preserve">
+    <value>Kako (vjerska) znanje će mu oduzeti?</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter35" xml:space="preserve">
+    <value>Ukoliko dan biti fiksna za žene kako bi ih naučiti religiju (osim ljudi)?</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter36" xml:space="preserve">
+    <value>Tko je još čuo nešto (ali ne razumijem), a zatim ponovno upita dok ju je u potpunosti razumio.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter37" xml:space="preserve">
+    <value>On se poziva na one koji su prisutni [u religijskom susretu (ili konferencije)] prenijeti znanje onima koji su odsutni.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter38" xml:space="preserve">
+    <value>Grijeh osobe koja govori laži protiv Poslanika (saws).</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter39" xml:space="preserve">
+    <value>Pisanje znanja.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter4" xml:space="preserve">
+    <value>S obzirom na razne riječi koje se koriste od strane pripovjedača prenošenje različitih značenja u vezi koncepta pripovijedanja i koji ima značaj za samo hadis učenjaci.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter40" xml:space="preserve">
+    <value>Znanje i njegov nauk i propovijedanje noću.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter41" xml:space="preserve">
+    <value>Govoriti o (vjerskoj) znanja noću.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter42" xml:space="preserve">
+    <value>(Ono što je rečeno u vezi) pamćenja na (vjerskog) znanja.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter43" xml:space="preserve">
+    <value>Da se smiri (i slušati) na vjerske učenih ljudi.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter44" xml:space="preserve">
+    <value>Kad vjerski učen čovjek je pitao.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter45" xml:space="preserve">
+    <value>Tko god, dok je stajao, upitao vjerski učen čovjek koji je sjedio (na propovjedaonicu ili sličnu stvar, o nečemu).</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter46" xml:space="preserve">
+    <value>Pitati o vjerskom pitanju i dati vjersku presudu (na Minu vrijeme hadža), a radi se o Rami Jimar (bacanje kamenčića na Jimar u Mini za vrijeme hadža).</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter47" xml:space="preserve">
+    <value>Izjava o Allahu (Azza wa JAL):</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter48" xml:space="preserve">
+    <value>Tko ostavio neke neobavezne stvari jednostavno za strah da neki ljudi ne može biti u mogućnosti da ih razumije i može pasti na nešto teže.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter49" xml:space="preserve">
+    <value>Tko bira neke ljude naučiti ih (vjerske) znanje ih preferiraju nad drugima zbog straha da drugi ne mogu to razumjeti.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter5" xml:space="preserve">
+    <value>Imam pitanje njegove drugove kako bi se testirati svoje znanje.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter50" xml:space="preserve">
+    <value>(Što je rekao što se tiče :-) Da se sramiti (Al-Haya '), a učenje (vjersko znanje).</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter51" xml:space="preserve">
+    <value>Tko god je osjetio sramiti (pitati nešto), a zatim je zatražio drugu osobu da traži u njegovo ime.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter52" xml:space="preserve">
+    <value>Nastava vjerskog znanja i davanje vjerske presude u džamiji.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter53" xml:space="preserve">
+    <value>Tko je odgovorio na ispitivač više od onoga što je pitao.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter6" xml:space="preserve">
+    <value>Što je rekao o znanju.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter7" xml:space="preserve">
+    <value>Ono što je rekao u vezi s rukom na razmjenu ruku (knjiga znanja), i pisanja znanja od strane vjerskih učenjaka u različitim zemljama.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter8" xml:space="preserve">
+    <value>Tko je sjedio na udaljenije kraju skupu.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter9" xml:space="preserve">
+    <value>Izjava o Poslaniku (saws): 'To je vjerojatno da osoba koja prima informaciju neizravno mogu ga shvatiti bolje nego onaj koji je to čuo izravno iz svojih izvora. "</value>
+  </data>
+  <data name="IslamInfo_bukhariBook4" xml:space="preserve">
+    <value>Ablutions (Wudu ')</value>
+  </data>
+  <data name="IslamInfo_bukhariBook40" xml:space="preserve">
+    <value>Zastupanje, autorizacije, Business by Proxy</value>
+  </data>
+  <data name="IslamInfo_bukhariBook41" xml:space="preserve">
+    <value>Poljoprivreda</value>
+  </data>
+  <data name="IslamInfo_bukhariBook42" xml:space="preserve">
+    <value>Distribucija vode</value>
+  </data>
+  <data name="IslamInfo_bukhariBook43" xml:space="preserve">
+    <value>Krediti, zajmova, zamrzavanje imovine stečajni</value>
+  </data>
+  <data name="IslamInfo_bukhariBook44" xml:space="preserve">
+    <value>Khusoomaat</value>
+  </data>
+  <data name="IslamInfo_bukhariBook45" xml:space="preserve">
+    <value>Izgubljeni Stvari pokupila nekoga (Luqaata)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook46" xml:space="preserve">
+    <value>Tlačenja</value>
+  </data>
+  <data name="IslamInfo_bukhariBook47" xml:space="preserve">
+    <value>Partnerstvo</value>
+  </data>
+  <data name="IslamInfo_bukhariBook48" xml:space="preserve">
+    <value>Hipoteke</value>
+  </data>
+  <data name="IslamInfo_bukhariBook49" xml:space="preserve">
+    <value>Oslobađanje roba u ropskom</value>
+  </data>
+  <data name="IslamInfo_bukhariBook5" xml:space="preserve">
+    <value>Kupanje (Ghusl)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook50" xml:space="preserve">
+    <value>Makaatib</value>
+  </data>
+  <data name="IslamInfo_bukhariBook51" xml:space="preserve">
+    <value>Darovi</value>
+  </data>
+  <data name="IslamInfo_bukhariBook52" xml:space="preserve">
+    <value>Svjedoci</value>
+  </data>
+  <data name="IslamInfo_bukhariBook53" xml:space="preserve">
+    <value>Uspostava mira</value>
+  </data>
+  <data name="IslamInfo_bukhariBook54" xml:space="preserve">
+    <value>Uvjeti</value>
+  </data>
+  <data name="IslamInfo_bukhariBook55" xml:space="preserve">
+    <value>Oporuke i zavjet (Wasaayaa)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook56" xml:space="preserve">
+    <value>Borba za Allahovom putu (Jihaad)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook57" xml:space="preserve">
+    <value>Jedna petina plijen na Allahovom putu (Khumus)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook58" xml:space="preserve">
+    <value>Jizyah i Mawaada'ah</value>
+  </data>
+  <data name="IslamInfo_bukhariBook59" xml:space="preserve">
+    <value>Početku stvaranja</value>
+  </data>
+  <data name="IslamInfo_bukhariBook6" xml:space="preserve">
+    <value>Menstruacije</value>
+  </data>
+  <data name="IslamInfo_bukhariBook60" xml:space="preserve">
+    <value>Proroci</value>
+  </data>
+  <data name="IslamInfo_bukhariBook61" xml:space="preserve">
+    <value>Vrline i meritumu Poslanika (savs) i njegovi drugovi</value>
+  </data>
+  <data name="IslamInfo_bukhariBook62" xml:space="preserve">
+    <value>Drugovi Poslanika</value>
+  </data>
+  <data name="IslamInfo_bukhariBook63" xml:space="preserve">
+    <value>Meritum pomagača u Medini (Ansaar)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook64" xml:space="preserve">
+    <value>Vojni Ekspedicije predvođeni Poslanika (savs) (Al-Maghaazi)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook65" xml:space="preserve">
+    <value>Proročki Komentar Kur'anu (Tafseer Poslanika (as))</value>
+  </data>
+  <data name="IslamInfo_bukhariBook66" xml:space="preserve">
+    <value>Vrline Kur'ana</value>
+  </data>
+  <data name="IslamInfo_bukhariBook67" xml:space="preserve">
+    <value>Braka, brak (Nikaah)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook68" xml:space="preserve">
+    <value>Razvod</value>
+  </data>
+  <data name="IslamInfo_bukhariBook69" xml:space="preserve">
+    <value>Potpora obitelji</value>
+  </data>
+  <data name="IslamInfo_bukhariBook7" xml:space="preserve">
+    <value>Trljanje ruke i noge s prašinom (Tayammum)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook70" xml:space="preserve">
+    <value>Hrana, Prehrana</value>
+  </data>
+  <data name="IslamInfo_bukhariBook71" xml:space="preserve">
+    <value>Žrtva povodom rođenja (`Aqiqa)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook72" xml:space="preserve">
+    <value>Lov, klanje</value>
+  </data>
+  <data name="IslamInfo_bukhariBook73" xml:space="preserve">
+    <value>Al-bajram festival Sacrifice (Adaahi)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook74" xml:space="preserve">
+    <value>Pića</value>
+  </data>
+  <data name="IslamInfo_bukhariBook75" xml:space="preserve">
+    <value>Pacijenti</value>
+  </data>
+  <data name="IslamInfo_bukhariBook76" xml:space="preserve">
+    <value>Lijek</value>
+  </data>
+  <data name="IslamInfo_bukhariBook77" xml:space="preserve">
+    <value>Haljina</value>
+  </data>
+  <data name="IslamInfo_bukhariBook78" xml:space="preserve">
+    <value>Dobre manire i obrazac (Al-Adab)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook79" xml:space="preserve">
+    <value>Traženja dopuštenja</value>
+  </data>
+  <data name="IslamInfo_bukhariBook8" xml:space="preserve">
+    <value>Molitve (Salat)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook80" xml:space="preserve">
+    <value>Zazivi</value>
+  </data>
+  <data name="IslamInfo_bukhariBook81" xml:space="preserve">
+    <value>Da bi srce Tender (Ar-Riqaq)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook82" xml:space="preserve">
+    <value>Divine Will (Al-Qadar)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook83" xml:space="preserve">
+    <value>Prisege i zavjete</value>
+  </data>
+  <data name="IslamInfo_bukhariBook84" xml:space="preserve">
+    <value>Pokora za neispunjena zakletve</value>
+  </data>
+  <data name="IslamInfo_bukhariBook85" xml:space="preserve">
+    <value>Zakoni o nasljeđivanju (Al-Faraa'id)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook86" xml:space="preserve">
+    <value>Granice i Kazne postavila Allaha (Hudood)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook87" xml:space="preserve">
+    <value>Kažnjavanje nevjernika u ratu sa Allahom i Njegovom Apostola</value>
+  </data>
+  <data name="IslamInfo_bukhariBook88" xml:space="preserve">
+    <value>Blood Money (Ad-Diyat)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook89" xml:space="preserve">
+    <value>Suočavanje s otpadnici</value>
+  </data>
+  <data name="IslamInfo_bukhariBook9" xml:space="preserve">
+    <value>Times molitvama</value>
+  </data>
+  <data name="IslamInfo_bukhariBook90" xml:space="preserve">
+    <value>Kaže nešto pod prisilom (Ikraah)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook91" xml:space="preserve">
+    <value>Trikovi</value>
+  </data>
+  <data name="IslamInfo_bukhariBook92" xml:space="preserve">
+    <value>Tumačenje snova</value>
+  </data>
+  <data name="IslamInfo_bukhariBook93" xml:space="preserve">
+    <value>Nevolje i End of the World</value>
+  </data>
+  <data name="IslamInfo_bukhariBook94" xml:space="preserve">
+    <value>Presude (Ahkaam)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook95" xml:space="preserve">
+    <value>Želje</value>
+  </data>
+  <data name="IslamInfo_bukhariBook96" xml:space="preserve">
+    <value>Prihvaćanje informacije dobivene od istinitoga osobe</value>
+  </data>
+  <data name="IslamInfo_bukhariBook97" xml:space="preserve">
+    <value>Drži se Kur'ana i Sunneta</value>
+  </data>
+  <data name="IslamInfo_bukhariBook98" xml:space="preserve">
+    <value>Jedinstvo, Jedinstvenost Allaha (Tewhid)</value>
+  </data>
+  <data name="IslamInfo_Classification" xml:space="preserve">
+    <value>Klasifikacija</value>
+  </data>
+  <data name="IslamInfo_Connecting" xml:space="preserve">
+    <value>Spojni</value>
+  </data>
+  <data name="IslamInfo_LetterName" xml:space="preserve">
+    <value>Pismo Ime</value>
+  </data>
+  <data name="IslamInfo_muslimBook1" xml:space="preserve">
+    <value>Uvod</value>
+  </data>
+  <data name="IslamInfo_muslimBook10" xml:space="preserve">
+    <value>Knjiga molitvi (kiša)</value>
+  </data>
+  <data name="IslamInfo_muslimBook11" xml:space="preserve">
+    <value>Knjiga molitvi (Eclipse)</value>
+  </data>
+  <data name="IslamInfo_muslimBook12" xml:space="preserve">
+    <value>Knjiga molitvi (Pogrebi)</value>
+  </data>
+  <data name="IslamInfo_muslimBook13" xml:space="preserve">
+    <value>Knjiga Zekat</value>
+  </data>
+  <data name="IslamInfo_muslimBook14" xml:space="preserve">
+    <value>Knjiga postu</value>
+  </data>
+  <data name="IslamInfo_muslimBook15" xml:space="preserve">
+    <value>Knjiga I'tikaf</value>
+  </data>
+  <data name="IslamInfo_muslimBook16" xml:space="preserve">
+    <value>Knjiga hodočašća</value>
+  </data>
+  <data name="IslamInfo_muslimBook17" xml:space="preserve">
+    <value>Knjiga brak</value>
+  </data>
+  <data name="IslamInfo_muslimBook18" xml:space="preserve">
+    <value>Knjiga sisanja</value>
+  </data>
+  <data name="IslamInfo_muslimBook19" xml:space="preserve">
+    <value>Knjiga Divorce</value>
+  </data>
+  <data name="IslamInfo_muslimBook2" xml:space="preserve">
+    <value>Knjiga vjere</value>
+  </data>
+  <data name="IslamInfo_muslimBook20" xml:space="preserve">
+    <value>Knjiga zazivajući uroka</value>
+  </data>
+  <data name="IslamInfo_muslimBook21" xml:space="preserve">
+    <value>Knjiga emancipaciji robova</value>
+  </data>
+  <data name="IslamInfo_muslimBook22" xml:space="preserve">
+    <value>Knjiga transakcija</value>
+  </data>
+  <data name="IslamInfo_muslimBook23" xml:space="preserve">
+    <value>Knjiga Masaaqah</value>
+  </data>
+  <data name="IslamInfo_muslimBook24" xml:space="preserve">
+    <value>Knjiga koja se odnosi na Poslovnika o nasljeđivanju</value>
+  </data>
+  <data name="IslamInfo_muslimBook25" xml:space="preserve">
+    <value>Knjiga darove</value>
+  </data>
+  <data name="IslamInfo_muslimBook26" xml:space="preserve">
+    <value>Knjiga ostavština</value>
+  </data>
+  <data name="IslamInfo_muslimBook27" xml:space="preserve">
+    <value>Knjiga zavjete</value>
+  </data>
+  <data name="IslamInfo_muslimBook28" xml:space="preserve">
+    <value>Knjiga zakletve</value>
+  </data>
+  <data name="IslamInfo_muslimBook29" xml:space="preserve">
+    <value>Knjiga se odnose na zakletve, za utvrđivanja odgovornosti za ubojstva, Borba, naknada</value>
+  </data>
+  <data name="IslamInfo_muslimBook3" xml:space="preserve">
+    <value>Knjiga pročišćavanje</value>
+  </data>
+  <data name="IslamInfo_muslimBook30" xml:space="preserve">
+    <value>Knjiga se odnose na propisano više kazni prema islamu</value>
+  </data>
+  <data name="IslamInfo_muslimBook31" xml:space="preserve">
+    <value>Knjiga se odnose na sudskih odluka</value>
+  </data>
+  <data name="IslamInfo_muslimBook32" xml:space="preserve">
+    <value>Knjiga Luqatah</value>
+  </data>
+  <data name="IslamInfo_muslimBook33" xml:space="preserve">
+    <value>Knjiga džihada i ekspedicije</value>
+  </data>
+  <data name="IslamInfo_muslimBook34" xml:space="preserve">
+    <value>Knjiga o Vladi</value>
+  </data>
+  <data name="IslamInfo_muslimBook35" xml:space="preserve">
+    <value>Knjiga igara i životinja koje se mogu zaklati i Aninals da se moraju pojesti</value>
+  </data>
+  <data name="IslamInfo_muslimBook36" xml:space="preserve">
+    <value>Knjiga žrtve</value>
+  </data>
+  <data name="IslamInfo_muslimBook37" xml:space="preserve">
+    <value>Knjiga pića</value>
+  </data>
+  <data name="IslamInfo_muslimBook38" xml:space="preserve">
+    <value>Knjiga se odnose na odjeću i dekoracija</value>
+  </data>
+  <data name="IslamInfo_muslimBook39" xml:space="preserve">
+    <value>Knjiga o općem ponašanju</value>
+  </data>
+  <data name="IslamInfo_muslimBook4" xml:space="preserve">
+    <value>Knjiga menstruacije</value>
+  </data>
+  <data name="IslamInfo_muslimBook40" xml:space="preserve">
+    <value>Knjiga o pozdrave i čestitke</value>
+  </data>
+  <data name="IslamInfo_muslimBook41" xml:space="preserve">
+    <value>Knjiga se odnose na korištenje ispravne riječi</value>
+  </data>
+  <data name="IslamInfo_muslimBook42" xml:space="preserve">
+    <value>Knjiga poezije</value>
+  </data>
+  <data name="IslamInfo_muslimBook43" xml:space="preserve">
+    <value>Knjiga Vision</value>
+  </data>
+  <data name="IslamInfo_muslimBook44" xml:space="preserve">
+    <value>Knjiga koja se odnosi na odlične kvalitete Poslanika (možda Mir nakon njih) i njegovi drugovi</value>
+  </data>
+  <data name="IslamInfo_muslimBook45" xml:space="preserve">
+    <value>Knjiga koja se odnose na meritum drugovima (Allah biti zadovoljan s njima) Časnog Poslanika</value>
+  </data>
+  <data name="IslamInfo_muslimBook46" xml:space="preserve">
+    <value>Knjiga Virtue, dobre manire i pridruživanje o vezama veze</value>
+  </data>
+  <data name="IslamInfo_muslimBook47" xml:space="preserve">
+    <value>Book of Destiny</value>
+  </data>
+  <data name="IslamInfo_muslimBook48" xml:space="preserve">
+    <value>Knjiga Znanja</value>
+  </data>
+  <data name="IslamInfo_muslimBook49" xml:space="preserve">
+    <value>Knjiga se odnose na sjećanja na Allaha, prošnju, pokajanje i Tražim oprost</value>
+  </data>
+  <data name="IslamInfo_muslimBook5" xml:space="preserve">
+    <value>Knjiga Molitve</value>
+  </data>
+  <data name="IslamInfo_muslimBook50" xml:space="preserve">
+    <value>Knjiga tradicija Heart-taljenja</value>
+  </data>
+  <data name="IslamInfo_muslimBook51" xml:space="preserve">
+    <value>Knjiga se odnose na pokajanje i poticaj na pokajanje</value>
+  </data>
+  <data name="IslamInfo_muslimBook52" xml:space="preserve">
+    <value>Koji se odnosi na Charateristics Of The licemjeri i zapovjedništva o njima</value>
+  </data>
+  <data name="IslamInfo_muslimBook53" xml:space="preserve">
+    <value>Knjiga Davanje Opis Sudnjeg dana, raj i pakao</value>
+  </data>
+  <data name="IslamInfo_muslimBook54" xml:space="preserve">
+    <value>Knjiga se odnose na raj, njegov opis, blagodatima i Njegove Intimates</value>
+  </data>
+  <data name="IslamInfo_muslimBook55" xml:space="preserve">
+    <value>Knjiga se odnose na previranja i znamenje u zadnjih sat vremena</value>
+  </data>
+  <data name="IslamInfo_muslimBook56" xml:space="preserve">
+    <value>Knjiga se odnose na pobožnosti i omekšavanje srca</value>
+  </data>
+  <data name="IslamInfo_muslimBook57" xml:space="preserve">
+    <value>Knjiga Komentar</value>
+  </data>
+  <data name="IslamInfo_muslimBook6" xml:space="preserve">
+    <value>Knjiga Džamije i mjesta molitve</value>
+  </data>
+  <data name="IslamInfo_muslimBook7" xml:space="preserve">
+    <value>Knjiga molitvi (Putnika)</value>
+  </data>
+  <data name="IslamInfo_muslimBook8" xml:space="preserve">
+    <value>Knjiga molitvi (petak)</value>
+  </data>
+  <data name="IslamInfo_muslimBook9" xml:space="preserve">
+    <value>Knjiga molitvi (Dva Eids)</value>
+  </data>
+  <data name="IslamInfo_PrayerUnits" xml:space="preserve">
+    <value>Molitva Jedinice</value>
+  </data>
+  <data name="IslamInfo_QuranChapter1" xml:space="preserve">
+    <value>Otvaranje</value>
+  </data>
+  <data name="IslamInfo_QuranChapter10" xml:space="preserve">
+    <value>Jonas</value>
+  </data>
+  <data name="IslamInfo_QuranChapter100" xml:space="preserve">
+    <value>Punjači</value>
+  </data>
+  <data name="IslamInfo_QuranChapter101" xml:space="preserve">
+    <value>Calamity</value>
+  </data>
+  <data name="IslamInfo_QuranChapter102" xml:space="preserve">
+    <value>Natječaj</value>
+  </data>
+  <data name="IslamInfo_QuranChapter103" xml:space="preserve">
+    <value>Pad dan, Epoha</value>
+  </data>
+  <data name="IslamInfo_QuranChapter104" xml:space="preserve">
+    <value>Traducer</value>
+  </data>
+  <data name="IslamInfo_QuranChapter105" xml:space="preserve">
+    <value>Slon</value>
+  </data>
+  <data name="IslamInfo_QuranChapter106" xml:space="preserve">
+    <value>Kurejšije</value>
+  </data>
+  <data name="IslamInfo_QuranChapter107" xml:space="preserve">
+    <value>Milostinja</value>
+  </data>
+  <data name="IslamInfo_QuranChapter108" xml:space="preserve">
+    <value>Obilje</value>
+  </data>
+  <data name="IslamInfo_QuranChapter109" xml:space="preserve">
+    <value>Nevjernici</value>
+  </data>
+  <data name="IslamInfo_QuranChapter11" xml:space="preserve">
+    <value>Hud</value>
+  </data>
+  <data name="IslamInfo_QuranChapter110" xml:space="preserve">
+    <value>Divine Podrška</value>
+  </data>
+  <data name="IslamInfo_QuranChapter111" xml:space="preserve">
+    <value>Palm Fibre</value>
+  </data>
+  <data name="IslamInfo_QuranChapter112" xml:space="preserve">
+    <value>Iskrenost</value>
+  </data>
+  <data name="IslamInfo_QuranChapter113" xml:space="preserve">
+    <value>Dawn</value>
+  </data>
+  <data name="IslamInfo_QuranChapter114" xml:space="preserve">
+    <value>Čovječanstvo</value>
+  </data>
+  <data name="IslamInfo_QuranChapter12" xml:space="preserve">
+    <value>Joseph</value>
+  </data>
+  <data name="IslamInfo_QuranChapter13" xml:space="preserve">
+    <value>Thunder</value>
+  </data>
+  <data name="IslamInfo_QuranChapter14" xml:space="preserve">
+    <value>Abraham</value>
+  </data>
+  <data name="IslamInfo_QuranChapter15" xml:space="preserve">
+    <value>Stijena</value>
+  </data>
+  <data name="IslamInfo_QuranChapter16" xml:space="preserve">
+    <value>Bee</value>
+  </data>
+  <data name="IslamInfo_QuranChapter17" xml:space="preserve">
+    <value>Noćno putovanje</value>
+  </data>
+  <data name="IslamInfo_QuranChapter18" xml:space="preserve">
+    <value>Špilja</value>
+  </data>
+  <data name="IslamInfo_QuranChapter19" xml:space="preserve">
+    <value>Mary</value>
+  </data>
+  <data name="IslamInfo_QuranChapter2" xml:space="preserve">
+    <value>Krava</value>
+  </data>
+  <data name="IslamInfo_QuranChapter20" xml:space="preserve">
+    <value>Taa-Haa</value>
+  </data>
+  <data name="IslamInfo_QuranChapter21" xml:space="preserve">
+    <value>Proroci</value>
+  </data>
+  <data name="IslamInfo_QuranChapter22" xml:space="preserve">
+    <value>Hodočašće</value>
+  </data>
+  <data name="IslamInfo_QuranChapter23" xml:space="preserve">
+    <value>Vjernici</value>
+  </data>
+  <data name="IslamInfo_QuranChapter24" xml:space="preserve">
+    <value>Svjetlo</value>
+  </data>
+  <data name="IslamInfo_QuranChapter25" xml:space="preserve">
+    <value>Kriterij</value>
+  </data>
+  <data name="IslamInfo_QuranChapter26" xml:space="preserve">
+    <value>Pjesnici</value>
+  </data>
+  <data name="IslamInfo_QuranChapter27" xml:space="preserve">
+    <value>Mrav</value>
+  </data>
+  <data name="IslamInfo_QuranChapter28" xml:space="preserve">
+    <value>Priče</value>
+  </data>
+  <data name="IslamInfo_QuranChapter29" xml:space="preserve">
+    <value>Spider</value>
+  </data>
+  <data name="IslamInfo_QuranChapter3" xml:space="preserve">
+    <value>Obitelj Imraan</value>
+  </data>
+  <data name="IslamInfo_QuranChapter30" xml:space="preserve">
+    <value>Rimljani</value>
+  </data>
+  <data name="IslamInfo_QuranChapter31" xml:space="preserve">
+    <value>Luqman</value>
+  </data>
+  <data name="IslamInfo_QuranChapter32" xml:space="preserve">
+    <value>Do nesvjestice</value>
+  </data>
+  <data name="IslamInfo_QuranChapter33" xml:space="preserve">
+    <value>Klanovi</value>
+  </data>
+  <data name="IslamInfo_QuranChapter34" xml:space="preserve">
+    <value>Sheba</value>
+  </data>
+  <data name="IslamInfo_QuranChapter35" xml:space="preserve">
+    <value>Začetnik</value>
+  </data>
+  <data name="IslamInfo_QuranChapter36" xml:space="preserve">
+    <value>Yaseen</value>
+  </data>
+  <data name="IslamInfo_QuranChapter37" xml:space="preserve">
+    <value>Oni sastavljen u redovima</value>
+  </data>
+  <data name="IslamInfo_QuranChapter38" xml:space="preserve">
+    <value>Pismo Saad</value>
+  </data>
+  <data name="IslamInfo_QuranChapter39" xml:space="preserve">
+    <value>Skupine</value>
+  </data>
+  <data name="IslamInfo_QuranChapter4" xml:space="preserve">
+    <value>Žene</value>
+  </data>
+  <data name="IslamInfo_QuranChapter40" xml:space="preserve">
+    <value>Forgiver</value>
+  </data>
+  <data name="IslamInfo_QuranChapter41" xml:space="preserve">
+    <value>Detaljno objašnjene</value>
+  </data>
+  <data name="IslamInfo_QuranChapter42" xml:space="preserve">
+    <value>Savjetovanje</value>
+  </data>
+  <data name="IslamInfo_QuranChapter43" xml:space="preserve">
+    <value>Ukrasi zlata</value>
+  </data>
+  <data name="IslamInfo_QuranChapter44" xml:space="preserve">
+    <value>Dim</value>
+  </data>
+  <data name="IslamInfo_QuranChapter45" xml:space="preserve">
+    <value>Čučeći</value>
+  </data>
+  <data name="IslamInfo_QuranChapter46" xml:space="preserve">
+    <value>Dinama</value>
+  </data>
+  <data name="IslamInfo_QuranChapter47" xml:space="preserve">
+    <value>Muhammad</value>
+  </data>
+  <data name="IslamInfo_QuranChapter48" xml:space="preserve">
+    <value>Pobjeda</value>
+  </data>
+  <data name="IslamInfo_QuranChapter49" xml:space="preserve">
+    <value>Unutarnjeg Apartmani</value>
+  </data>
+  <data name="IslamInfo_QuranChapter5" xml:space="preserve">
+    <value>Tablica</value>
+  </data>
+  <data name="IslamInfo_QuranChapter50" xml:space="preserve">
+    <value>Pismo Qaaf</value>
+  </data>
+  <data name="IslamInfo_QuranChapter51" xml:space="preserve">
+    <value>U vijati Vjetrovi</value>
+  </data>
+  <data name="IslamInfo_QuranChapter52" xml:space="preserve">
+    <value>Planina</value>
+  </data>
+  <data name="IslamInfo_QuranChapter53" xml:space="preserve">
+    <value>Star</value>
+  </data>
+  <data name="IslamInfo_QuranChapter54" xml:space="preserve">
+    <value>Mjesec</value>
+  </data>
+  <data name="IslamInfo_QuranChapter55" xml:space="preserve">
+    <value>Milostivi</value>
+  </data>
+  <data name="IslamInfo_QuranChapter56" xml:space="preserve">
+    <value>Nezaobilazan</value>
+  </data>
+  <data name="IslamInfo_QuranChapter57" xml:space="preserve">
+    <value>Željezo</value>
+  </data>
+  <data name="IslamInfo_QuranChapter58" xml:space="preserve">
+    <value>Moli Woman</value>
+  </data>
+  <data name="IslamInfo_QuranChapter59" xml:space="preserve">
+    <value>Exile</value>
+  </data>
+  <data name="IslamInfo_QuranChapter6" xml:space="preserve">
+    <value>Stoku</value>
+  </data>
+  <data name="IslamInfo_QuranChapter60" xml:space="preserve">
+    <value>Ona koja se treba ispitati</value>
+  </data>
+  <data name="IslamInfo_QuranChapter61" xml:space="preserve">
+    <value>Redova</value>
+  </data>
+  <data name="IslamInfo_QuranChapter62" xml:space="preserve">
+    <value>Petak</value>
+  </data>
+  <data name="IslamInfo_QuranChapter63" xml:space="preserve">
+    <value>Licemjeri</value>
+  </data>
+  <data name="IslamInfo_QuranChapter64" xml:space="preserve">
+    <value>Međusobno razočaranja</value>
+  </data>
+  <data name="IslamInfo_QuranChapter65" xml:space="preserve">
+    <value>Razvod</value>
+  </data>
+  <data name="IslamInfo_QuranChapter66" xml:space="preserve">
+    <value>Zabrana</value>
+  </data>
+  <data name="IslamInfo_QuranChapter67" xml:space="preserve">
+    <value>Suverenost</value>
+  </data>
+  <data name="IslamInfo_QuranChapter68" xml:space="preserve">
+    <value>Pen</value>
+  </data>
+  <data name="IslamInfo_QuranChapter69" xml:space="preserve">
+    <value>Stvarnost</value>
+  </data>
+  <data name="IslamInfo_QuranChapter7" xml:space="preserve">
+    <value>Visine</value>
+  </data>
+  <data name="IslamInfo_QuranChapter70" xml:space="preserve">
+    <value>Uzlaznom Stubišta</value>
+  </data>
+  <data name="IslamInfo_QuranChapter71" xml:space="preserve">
+    <value>Noa</value>
+  </data>
+  <data name="IslamInfo_QuranChapter72" xml:space="preserve">
+    <value>Jinn</value>
+  </data>
+  <data name="IslamInfo_QuranChapter73" xml:space="preserve">
+    <value>Prekrivenoj Jedan</value>
+  </data>
+  <data name="IslamInfo_QuranChapter74" xml:space="preserve">
+    <value>Maskirana Jedan</value>
+  </data>
+  <data name="IslamInfo_QuranChapter75" xml:space="preserve">
+    <value>Uskrsnuće</value>
+  </data>
+  <data name="IslamInfo_QuranChapter76" xml:space="preserve">
+    <value>Čovjek</value>
+  </data>
+  <data name="IslamInfo_QuranChapter77" xml:space="preserve">
+    <value>Je poslanik</value>
+  </data>
+  <data name="IslamInfo_QuranChapter78" xml:space="preserve">
+    <value>Najava</value>
+  </data>
+  <data name="IslamInfo_QuranChapter79" xml:space="preserve">
+    <value>Oni koji vući naprijed</value>
+  </data>
+  <data name="IslamInfo_QuranChapter8" xml:space="preserve">
+    <value>Ratni plijen</value>
+  </data>
+  <data name="IslamInfo_QuranChapter80" xml:space="preserve">
+    <value>On se namrštio</value>
+  </data>
+  <data name="IslamInfo_QuranChapter81" xml:space="preserve">
+    <value>Rušenjem</value>
+  </data>
+  <data name="IslamInfo_QuranChapter82" xml:space="preserve">
+    <value>Cepanje</value>
+  </data>
+  <data name="IslamInfo_QuranChapter83" xml:space="preserve">
+    <value>Zakinuo</value>
+  </data>
+  <data name="IslamInfo_QuranChapter84" xml:space="preserve">
+    <value>Cijepanje Otvoreno</value>
+  </data>
+  <data name="IslamInfo_QuranChapter85" xml:space="preserve">
+    <value>Zviježđa</value>
+  </data>
+  <data name="IslamInfo_QuranChapter86" xml:space="preserve">
+    <value>Morning Star</value>
+  </data>
+  <data name="IslamInfo_QuranChapter87" xml:space="preserve">
+    <value>Svevišnji</value>
+  </data>
+  <data name="IslamInfo_QuranChapter88" xml:space="preserve">
+    <value>Neodoljiv</value>
+  </data>
+  <data name="IslamInfo_QuranChapter89" xml:space="preserve">
+    <value>Dawn</value>
+  </data>
+  <data name="IslamInfo_QuranChapter9" xml:space="preserve">
+    <value>Pokajanje</value>
+  </data>
+  <data name="IslamInfo_QuranChapter90" xml:space="preserve">
+    <value>Grad</value>
+  </data>
+  <data name="IslamInfo_QuranChapter91" xml:space="preserve">
+    <value>Sun</value>
+  </data>
+  <data name="IslamInfo_QuranChapter92" xml:space="preserve">
+    <value>Noć</value>
+  </data>
+  <data name="IslamInfo_QuranChapter93" xml:space="preserve">
+    <value>U jutarnjim satima</value>
+  </data>
+  <data name="IslamInfo_QuranChapter94" xml:space="preserve">
+    <value>Utješna</value>
+  </data>
+  <data name="IslamInfo_QuranChapter95" xml:space="preserve">
+    <value>Slika</value>
+  </data>
+  <data name="IslamInfo_QuranChapter96" xml:space="preserve">
+    <value>Ugrušak</value>
+  </data>
+  <data name="IslamInfo_QuranChapter97" xml:space="preserve">
+    <value>Snaga, Sudbinu</value>
+  </data>
+  <data name="IslamInfo_QuranChapter98" xml:space="preserve">
+    <value>Dokazi</value>
+  </data>
+  <data name="IslamInfo_QuranChapter99" xml:space="preserve">
+    <value>Potres</value>
+  </data>
+  <data name="IslamInfo_Terminating" xml:space="preserve">
+    <value>Ukida</value>
+  </data>
+  <data name="IslamInfo_Translation" xml:space="preserve">
+    <value>Prijevod</value>
+  </data>
+  <data name="IslamInfo_Transliteration" xml:space="preserve">
+    <value>Transkripcija</value>
+  </data>
+  <data name="IslamInfo_UnicodeName" xml:space="preserve">
+    <value>Unicode Ime</value>
+  </data>
+  <data name="IslamInfo_UnicodeValue" xml:space="preserve">
+    <value>Unicode vrijednost</value>
+  </data>
+  <data name="unicode_ArabicComma" xml:space="preserve">
+    <value>Arapski Zarez</value>
+  </data>
+  <data name="unicode_ArabicDamma" xml:space="preserve">
+    <value>Arapski Damma</value>
+  </data>
+  <data name="unicode_ArabicDammatan" xml:space="preserve">
+    <value>Arapski Dammatan</value>
+  </data>
+  <data name="unicode_ArabicEmptyCentreHighStop" xml:space="preserve">
+    <value>Arapski Prazan centar visoke stop</value>
+  </data>
+  <data name="unicode_ArabicEmptyCentreLowStop" xml:space="preserve">
+    <value>Arapski Prazan centar Low stop</value>
+  </data>
+  <data name="unicode_ArabicEndOfAyah" xml:space="preserve">
+    <value>Arapski Kraj ayahe</value>
+  </data>
+  <data name="unicode_ArabicFatha" xml:space="preserve">
+    <value>Arapski Fatha</value>
+  </data>
+  <data name="unicode_ArabicFathatan" xml:space="preserve">
+    <value>Arapski Fathatan</value>
+  </data>
+  <data name="unicode_ArabicHamzaAbove" xml:space="preserve">
+    <value>Arapski Hamza Iznad</value>
+  </data>
+  <data name="unicode_ArabicHamzaBelow" xml:space="preserve">
+    <value>Arapski Hamza Ispod</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitEight" xml:space="preserve">
+    <value>Arapski-indijski Digit Osam</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitFive" xml:space="preserve">
+    <value>Arapski-indijski Digit Pet</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitFour" xml:space="preserve">
+    <value>Arapski-indijski Digit Four</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitNine" xml:space="preserve">
+    <value>Arapski-indijski Digit Nine</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitOne" xml:space="preserve">
+    <value>Arapski-indijski Digit Jedan</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitSeven" xml:space="preserve">
+    <value>Arapski-indijski Digit Sedam</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitSix" xml:space="preserve">
+    <value>Arapski-indijski Digit Six</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitThree" xml:space="preserve">
+    <value>Arapski-indijski Digit tri</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitTwo" xml:space="preserve">
+    <value>Arapski-indijski Digit Dvije</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitZero" xml:space="preserve">
+    <value>Arapski-indijski Digit Zero</value>
+  </data>
+  <data name="unicode_ArabicKasra" xml:space="preserve">
+    <value>Arapski Kasra</value>
+  </data>
+  <data name="unicode_ArabicKasratan" xml:space="preserve">
+    <value>Arapski Kasratan</value>
+  </data>
+  <data name="unicode_ArabicLetterAin" xml:space="preserve">
+    <value>Arapski Pismo Ain</value>
+  </data>
+  <data name="unicode_ArabicLetterAlef" xml:space="preserve">
+    <value>Arapski Pismo Alef</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefMaksura" xml:space="preserve">
+    <value>Arapski Pismo Alef Maksura</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefWasla" xml:space="preserve">
+    <value>Arapski Pismo Alef Wasla</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefWithHamzaAbove" xml:space="preserve">
+    <value>Arapski Pismo Alef S Hamza Above</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefWithHamzaBelow" xml:space="preserve">
+    <value>Arapski Pismo Alef S Hamza Below</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefWithMaddaAbove" xml:space="preserve">
+    <value>Arapski Pismo Alef S Madda Above</value>
+  </data>
+  <data name="unicode_ArabicLetterBeh" xml:space="preserve">
+    <value>Arapski Pismo Beh</value>
+  </data>
+  <data name="unicode_ArabicLetterDad" xml:space="preserve">
+    <value>Arapski Pismo tata</value>
+  </data>
+  <data name="unicode_ArabicLetterDal" xml:space="preserve">
+    <value>Arapski Pismo Dal</value>
+  </data>
+  <data name="unicode_ArabicLetterFeh" xml:space="preserve">
+    <value>Arapski Pismo feh</value>
+  </data>
+  <data name="unicode_ArabicLetterGaf" xml:space="preserve">
+    <value>Arapski Pismo GAF</value>
+  </data>
+  <data name="unicode_ArabicLetterGhain" xml:space="preserve">
+    <value>Arapski Pismo Ghain</value>
+  </data>
+  <data name="unicode_ArabicLetterHah" xml:space="preserve">
+    <value>Arapski Pismo Hah</value>
+  </data>
+  <data name="unicode_ArabicLetterHamza" xml:space="preserve">
+    <value>Arapski Pismo Hamza</value>
+  </data>
+  <data name="unicode_ArabicLetterHeh" xml:space="preserve">
+    <value>Arapski Pismo Heh</value>
+  </data>
+  <data name="unicode_ArabicLetterJeem" xml:space="preserve">
+    <value>Arapski Pismo Jeem</value>
+  </data>
+  <data name="unicode_ArabicLetterKaf" xml:space="preserve">
+    <value>Arapski Pismo Kaf</value>
+  </data>
+  <data name="unicode_ArabicLetterKhah" xml:space="preserve">
+    <value>Arapski Pismo Khah</value>
+  </data>
+  <data name="unicode_ArabicLetterLam" xml:space="preserve">
+    <value>Arapski Pismo Lam</value>
+  </data>
+  <data name="unicode_ArabicLetterMeem" xml:space="preserve">
+    <value>Arapski Pismo Meem</value>
+  </data>
+  <data name="unicode_ArabicLetterNoon" xml:space="preserve">
+    <value>Arapski Pismo podne</value>
+  </data>
+  <data name="unicode_ArabicLetterPeh" xml:space="preserve">
+    <value>Arapski Pismo Peh</value>
+  </data>
+  <data name="unicode_ArabicLetterQaf" xml:space="preserve">
+    <value>Arapski Pismo Qaf</value>
+  </data>
+  <data name="unicode_ArabicLetterReh" xml:space="preserve">
+    <value>Arapski Pismo Reh</value>
+  </data>
+  <data name="unicode_ArabicLetterSad" xml:space="preserve">
+    <value>Arapski Pismo Sadu</value>
+  </data>
+  <data name="unicode_ArabicLetterSeen" xml:space="preserve">
+    <value>Arapski Pismo Gledano</value>
+  </data>
+  <data name="unicode_ArabicLetterSheen" xml:space="preserve">
+    <value>Arapski Pismo Sheen</value>
+  </data>
+  <data name="unicode_ArabicLetterSuperscriptAlef" xml:space="preserve">
+    <value>Arapski Pismo eksponent Alef</value>
+  </data>
+  <data name="unicode_ArabicLetterTah" xml:space="preserve">
+    <value>Arapski Pismo Tah</value>
+  </data>
+  <data name="unicode_ArabicLetterTcheh" xml:space="preserve">
+    <value>Arapski Pismo Tcheh</value>
+  </data>
+  <data name="unicode_ArabicLetterTeh" xml:space="preserve">
+    <value>Arapski Pismo Teh</value>
+  </data>
+  <data name="unicode_ArabicLetterTehMarbuta" xml:space="preserve">
+    <value>Arapski Pismo Teh Marbuta</value>
+  </data>
+  <data name="unicode_ArabicLetterThal" xml:space="preserve">
+    <value>Arapski Pismo Thal</value>
+  </data>
+  <data name="unicode_ArabicLetterTheh" xml:space="preserve">
+    <value>Arapski Pismo Theh</value>
+  </data>
+  <data name="unicode_ArabicLetterVeh" xml:space="preserve">
+    <value>Arapski Pismo Veh</value>
+  </data>
+  <data name="unicode_ArabicLetterWaw" xml:space="preserve">
+    <value>Arapski Pismo WAW</value>
+  </data>
+  <data name="unicode_ArabicLetterWawWithHamzaAbove" xml:space="preserve">
+    <value>Arapski Pismo WaW S Hamza Above</value>
+  </data>
+  <data name="unicode_ArabicLetterYeh" xml:space="preserve">
+    <value>Arapski Pismo Yeh</value>
+  </data>
+  <data name="unicode_ArabicLetterYehWithHamzaAbove" xml:space="preserve">
+    <value>Arapski Pismo Yeh S Hamza Above</value>
+  </data>
+  <data name="unicode_ArabicLetterZah" xml:space="preserve">
+    <value>Arapski Pismo zah</value>
+  </data>
+  <data name="unicode_ArabicLetterZain" xml:space="preserve">
+    <value>Arapski Pismo Zain</value>
+  </data>
+  <data name="unicode_ArabicLigatureAkbarIsolatedForm" xml:space="preserve">
+    <value>Arapski Ligatura Akbar izdvojenom obliku</value>
+  </data>
+  <data name="unicode_ArabicLigatureAlayheIsolatedForm" xml:space="preserve">
+    <value>Arapski Ligatura Alayhe izdvojenom obliku</value>
+  </data>
+  <data name="unicode_ArabicLigatureAllahIsolatedForm" xml:space="preserve">
+    <value>Arapski Ligatura Allah izdvojenom obliku</value>
+  </data>
+  <data name="unicode_ArabicLigatureBismillahArRahmanArRaheem" xml:space="preserve">
+    <value>Arapski Ligatura Bismillah Ar-Rahman Ar-Raheem</value>
+  </data>
+  <data name="unicode_ArabicLigatureJallajalalouhou" xml:space="preserve">
+    <value>Arapski Ligatura Jallajalalouhou</value>
+  </data>
+  <data name="unicode_ArabicLigatureMohammadIsolatedForm" xml:space="preserve">
+    <value>Arapski Ligatura Mohammad izdvojenom obliku</value>
+  </data>
+  <data name="unicode_ArabicLigatureQalaUsedAsKoranicStopSignIsolatedForm" xml:space="preserve">
+    <value>Arapski Ligatura Qala koristiti kao roranski znak stop izdvojenom obliku</value>
+  </data>
+  <data name="unicode_ArabicLigatureRasoulIsolatedForm" xml:space="preserve">
+    <value>Arapski Ligatura Rasoul izdvojenom obliku</value>
+  </data>
+  <data name="unicode_ArabicLigatureSalamIsolatedForm" xml:space="preserve">
+    <value>Arapski Ligatura Salam izdvojenom obliku</value>
+  </data>
+  <data name="unicode_ArabicLigatureSallaIsolatedForm" xml:space="preserve">
+    <value>Arapski Ligatura Salla izdvojenom obliku</value>
+  </data>
+  <data name="unicode_ArabicLigatureSallallahouAlayheWasallam" xml:space="preserve">
+    <value>Arapski Ligatura Sallallahou Alayhe wasallam</value>
+  </data>
+  <data name="unicode_ArabicLigatureSallaUsedAsKoranicStopSignIsolatedForm" xml:space="preserve">
+    <value>Arapski Ligatura Salla koristiti kao roranski znak stop izdvojenom obliku</value>
+  </data>
+  <data name="unicode_ArabicLigatureWasallamIsolatedForm" xml:space="preserve">
+    <value>Arapski Ligatura wasallam izdvojenom obliku</value>
+  </data>
+  <data name="unicode_ArabicMaddahAbove" xml:space="preserve">
+    <value>Arapski Maddah Iznad</value>
+  </data>
+  <data name="unicode_ArabicPlaceOfSajdah" xml:space="preserve">
+    <value>Arapski Mjesto Od Sajdah</value>
+  </data>
+  <data name="unicode_ArabicQuestionMark" xml:space="preserve">
+    <value>Arapski Pitanje Mark</value>
+  </data>
+  <data name="unicode_ArabicRoundedHighStopWithFilledCentre" xml:space="preserve">
+    <value>Arapski Zaobljeni visoke Prestanite s ispunjenom centar</value>
+  </data>
+  <data name="unicode_ArabicSemicolon" xml:space="preserve">
+    <value>Arapski Točka-zarez</value>
+  </data>
+  <data name="unicode_ArabicShadda" xml:space="preserve">
+    <value>Arapski Shadda</value>
+  </data>
+  <data name="unicode_ArabicSmallHighJeem" xml:space="preserve">
+    <value>Arapski Mali visoke Jeem</value>
+  </data>
+  <data name="unicode_ArabicSmallHighLamAlef" xml:space="preserve">
+    <value>Arapski Mali visoke Lam Alef</value>
+  </data>
+  <data name="unicode_ArabicSmallHighLigatureQafWithLamWithAlefMaksura" xml:space="preserve">
+    <value>Arapski Mali visoke Ligatura Qaf S Lam s Alef Maksura</value>
+  </data>
+  <data name="unicode_ArabicSmallHighLigatureSadWithLamWithAlefMaksura" xml:space="preserve">
+    <value>Arapski Mali visoke Ligatura Sadu S Lam s Alef Maksura</value>
+  </data>
+  <data name="unicode_ArabicSmallHighMeemInitialForm" xml:space="preserve">
+    <value>Arapski Mali visoke Meem početni položaj</value>
+  </data>
+  <data name="unicode_ArabicSmallHighMeemIsolatedForm" xml:space="preserve">
+    <value>Arapski Mali visoke Meem izdvojenom obliku</value>
+  </data>
+  <data name="unicode_ArabicSmallHighNoon" xml:space="preserve">
+    <value>Arapski Mali Točno u podne</value>
+  </data>
+  <data name="unicode_ArabicSmallHighRoundedZero" xml:space="preserve">
+    <value>Arapski Mali visoke Zaobljeni Zero</value>
+  </data>
+  <data name="unicode_ArabicSmallHighSeen" xml:space="preserve">
+    <value>Arapski Mali visoke Gledano</value>
+  </data>
+  <data name="unicode_ArabicSmallHighThreeDots" xml:space="preserve">
+    <value>Arapski Mali visoke tri točkice</value>
+  </data>
+  <data name="unicode_ArabicSmallHighUprightRectangularZero" xml:space="preserve">
+    <value>Arapski Mali visoke pravokutan Zero</value>
+  </data>
+  <data name="unicode_ArabicSmallLowMeem" xml:space="preserve">
+    <value>Arapski Mali Low Meem</value>
+  </data>
+  <data name="unicode_ArabicSmallLowSeen" xml:space="preserve">
+    <value>Arapski Mali Low Gledano</value>
+  </data>
+  <data name="unicode_ArabicSmallWaw" xml:space="preserve">
+    <value>Arapski Mali WAW</value>
+  </data>
+  <data name="unicode_ArabicSmallYeh" xml:space="preserve">
+    <value>Arapski Mali Yeh</value>
+  </data>
+  <data name="unicode_ArabicStartOfRubElHizb" xml:space="preserve">
+    <value>Arapski početka Rub El Hizb</value>
+  </data>
+  <data name="unicode_ArabicSukun" xml:space="preserve">
+    <value>Arapski Sukun</value>
+  </data>
+  <data name="unicode_ArabicTatweel" xml:space="preserve">
+    <value>Arapski Tatweel</value>
+  </data>
+  <data name="unicode_Colon" xml:space="preserve">
+    <value>Dvotočka</value>
+  </data>
+  <data name="unicode_Comma" xml:space="preserve">
+    <value>Zarez</value>
+  </data>
+  <data name="unicode_ExclamationMark" xml:space="preserve">
+    <value>Znak uzvika</value>
+  </data>
+  <data name="unicode_FullStop" xml:space="preserve">
+    <value>Točka</value>
+  </data>
+  <data name="unicode_HyphenMinus" xml:space="preserve">
+    <value>Crtica-minus</value>
+  </data>
+  <data name="unicode_LeftCurlyBracket" xml:space="preserve">
+    <value>Lijevo Curly Bracket</value>
+  </data>
+  <data name="unicode_LeftPointingDoubleAngleQuotationMark" xml:space="preserve">
+    <value>Lijevo-Ukazujući Double Angle navodnik</value>
+  </data>
+  <data name="unicode_LeftSquareBracket" xml:space="preserve">
+    <value>Lijevo Trg Bracket</value>
+  </data>
+  <data name="unicode_OrnateLeftParenthesis" xml:space="preserve">
+    <value>Okićen Lijevo Zagrade</value>
+  </data>
+  <data name="unicode_OrnateRightParenthesis" xml:space="preserve">
+    <value>Okićen desna zagrada</value>
+  </data>
+  <data name="unicode_QuotationMark" xml:space="preserve">
+    <value>Navodnik</value>
+  </data>
+  <data name="unicode_RialSign" xml:space="preserve">
+    <value>Rial Prijavite</value>
+  </data>
+  <data name="unicode_RightCurlyBracket" xml:space="preserve">
+    <value>Pravo Curly Bracket</value>
+  </data>
+  <data name="unicode_RightPointingDoubleAngleQuotationMark" xml:space="preserve">
+    <value>Desno-Ukazujući Double Angle navodnik</value>
+  </data>
+  <data name="unicode_RightSquareBracket" xml:space="preserve">
+    <value>Pravo Trg Bracket</value>
+  </data>
+  <data name="unicode_Space" xml:space="preserve">
+    <value>Prostor</value>
+  </data>
+  <data name="IslamInfo_Date" xml:space="preserve">
+    <value>Datum</value>
+  </data>
+  <data name="IslamInfo_Day" xml:space="preserve">
+    <value>Dan</value>
+  </data>
+  <data name="IslamInfo_Final1" xml:space="preserve">
+    <value>Final 1.</value>
+  </data>
+  <data name="IslamInfo_Final1Trans" xml:space="preserve">
+    <value>što ništa nije kao On i On je Slušatelj, Vidjelac</value>
+  </data>
+  <data name="IslamInfo_Final1WordByWord" xml:space="preserve">
+    <value>koji | nije | je poput njega | nešto | i on je | Slušatelj | Vidovnjak</value>
+  </data>
+  <data name="IslamInfo_Final2" xml:space="preserve">
+    <value>Final 2.</value>
+  </data>
+  <data name="IslamInfo_Final2Trans" xml:space="preserve">
+    <value>O Allahu, poslati najbolji molitvu nakon svoje najbolje stvorenje Master Muhammad</value>
+  </data>
+  <data name="IslamInfo_Final2WordByWord" xml:space="preserve">
+    <value>O Allah | poslati | Najbolji | molitva | nakon | najbolji | od svog stvaranja | Majstor | Muhammad</value>
+  </data>
+  <data name="IslamInfo_Final3" xml:space="preserve">
+    <value>Final 3.</value>
+  </data>
+  <data name="IslamInfo_Final3Trans" xml:space="preserve">
+    <value>I mir i tinte njegovih riječi i kada god oni koji ga se učiniti i kad god oni koji zanemaruju da ga se učini</value>
+  </data>
+  <data name="IslamInfo_Final3WordByWord" xml:space="preserve">
+    <value>I mir | prepričavanja | njegovo znanje | i tinte | od njegovih riječi | kad god | ne zaboravite ga | učiniti | i kad oni koji zanemaruju | da | ne zaboravite ga | učiniti</value>
+  </data>
+  <data name="IslamInfo_OMasterSendPrayersAndPeace" xml:space="preserve">
+    <value>O moj Gospodaru, pošaljite svoje pozdrave i blagoslove</value>
+  </data>
+  <data name="IslamInfo_OMasterSendPrayersAndPeaceTrans" xml:space="preserve">
+    <value>O moj Gospodaru, pošaljite svoje pozdrave i blagoslove zauvijek Po svoju voljenu, najbolje od svega stvorenog</value>
+  </data>
+  <data name="IslamInfo_OMasterSendPrayersAndPeaceWordByWord" xml:space="preserve">
+    <value>O moj Majstor | poslati svoje pozdrave | i blagoslovi | uvijek | vječno | nakon | svoju voljenu | Najbolji | stvaranja | cjeline</value>
+  </data>
+  <data name="IslamInfo_PopularIslamicSongVerses" xml:space="preserve">
+    <value>Popularno islamskih stihova</value>
+  </data>
+  <data name="IslamInfo_RemembranceFirst" xml:space="preserve">
+    <value>Sjećanje Prvo</value>
+  </data>
+  <data name="IslamInfo_RemembranceFirstTrans" xml:space="preserve">
+    <value>Nitko nema pravo da se obožava, ali ti (O Allah)), proslavljen (i Uzvišeni) su ti (prije svega tog (zlo) oni povezati s vama).</value>
+  </data>
+  <data name="IslamInfo_RemembranceFirstWordByWord" xml:space="preserve">
+    <value>Nitko | ima pravo da se obožava | ali | ti | proslavljen su ti | Truly | sam | od | krivi-izvršitelji</value>
+  </data>
+  <data name="IslamInfo_RemembranceSecond" xml:space="preserve">
+    <value>Sjećanje Drugo</value>
+  </data>
+  <data name="IslamInfo_RemembranceSecondTrans" xml:space="preserve">
+    <value>Allah (Sam) dovoljna je za nama, a on je najbolji Raspolaže stvari (za nas);</value>
+  </data>
+  <data name="IslamInfo_RemembranceSecondWordByWord" xml:space="preserve">
+    <value>Dovoljna za nas | Allah | a On je najbolji | Raspolaže stvari | Što Odlična | Patron | i što Izvrsno | Pomoćnice</value>
+  </data>
+  <data name="IslamInfo_RemembranceThird" xml:space="preserve">
+    <value>Sjećanje Treće</value>
+  </data>
+  <data name="IslamInfo_RemembranceThirdTrans" xml:space="preserve">
+    <value>Nema snage (da se suzdrže od grijeha, ali uz zaštitu od Allaha) i nema snage (ostvariti dobra djela), ali uz pomoć Allaha, visok, Vrhovni</value>
+  </data>
+  <data name="IslamInfo_RemembranceThirdWordByWord" xml:space="preserve">
+    <value>Nema | | snaga i ne postoji | power | osim | sa Allahom | Visoka | Vrhovni</value>
+  </data>
+  <data name="IslamInfo_SendBlessingsFirst" xml:space="preserve">
+    <value>Pošalji Blagoslovi Prvo</value>
+  </data>
+  <data name="IslamInfo_SendBlessingsFirstTrans" xml:space="preserve">
+    <value>Allah, pošaljite svoju milost na Muhammeda i njegovu potomstvu, kao što je poslao svoju milost na Abrahamu i njegovu potomstvu.</value>
+  </data>
+  <data name="IslamInfo_SendBlessingsFirstWordByWord" xml:space="preserve">
+    <value>O Allah | poslati svoju milost na | | Muhammad | i nakon | potomstvo | Njega | što | ste poslali Svoju milost na | | Abraham i | nakon | potomstvo | Njega | doista ste | Najviše Hvaljen | najslavnijih |</value>
+  </data>
+  <data name="IslamInfo_SendBlessingsSecond" xml:space="preserve">
+    <value>Pošalji Blagoslovi Drugo</value>
+  </data>
+  <data name="IslamInfo_SendBlessingsSecondTrans" xml:space="preserve">
+    <value>Allah, pošaljite svoju milost na Muhammeda i njegovu potomstvu, kao što je poslao svoju milost na Abrahamu i njegovu potomstvu.</value>
+  </data>
+  <data name="IslamInfo_SendBlessingsSecondWordByWord" xml:space="preserve">
+    <value>O Allah | poslati svoju milost na | | Muhammad | i nakon | potomstvo | Njega | što | ste poslali Svoju milost na | | Abraham i | nakon | potomstvo | Njega | doista ste | Najviše Hvaljen | najslavnijih |</value>
+  </data>
+  <data name="IslamInfo_TheBestNames" xml:space="preserve">
+    <value>Najbolji imena</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoon" xml:space="preserve">
+    <value>White Moon</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonEighth" xml:space="preserve">
+    <value>Osmi</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonEighthTrans" xml:space="preserve">
+    <value>Dobrodošli vas koji nas poziva na dobrom putu</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonEighthWordByWord" xml:space="preserve">
+    <value>Dobrodošli | vi koji nas poziva | da dobri | način</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonFifth" xml:space="preserve">
+    <value>Peti</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonFifthTrans" xml:space="preserve">
+    <value>Oh naš Messenger (poslanik) među nama</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonFifthWordByWord" xml:space="preserve">
+    <value>Oh | naša Messenger | među nama</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonFirst" xml:space="preserve">
+    <value>Prvi</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonFirstTrans" xml:space="preserve">
+    <value>Oh bijeli mjesec porastao iznad nas</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonFirstWordByWord" xml:space="preserve">
+    <value>Oh ruža | bijeli mjesec | nad nama</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonFourth" xml:space="preserve">
+    <value>Četvrti</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonFourthTrans" xml:space="preserve">
+    <value>Za njega, koji nas poziva na Allahovom putu</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonFourthWordByWord" xml:space="preserve">
+    <value>Za njega | koji nas poziva | na Allahovom | način</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonSecond" xml:space="preserve">
+    <value>Drugi</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonSecondTrans" xml:space="preserve">
+    <value>Iz doline (gdje) se zove</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonSecondWordByWord" xml:space="preserve">
+    <value>Od | dolina | zove</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonSeventh" xml:space="preserve">
+    <value>Sedmi</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonSeventhTrans" xml:space="preserve">
+    <value>Vi ste doveli do ovog gradskog plemstva</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonSeventhWordByWord" xml:space="preserve">
+    <value>Vi ste donijeli | plemenitost | u ovaj grad</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonSixth" xml:space="preserve">
+    <value>Šesti</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonSixthTrans" xml:space="preserve">
+    <value>Tko dolazi s poticajima (naputke / zapovijedi) da se mogu uzeti</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonSixthWordByWord" xml:space="preserve">
+    <value>Tko dolazi | sa zapovijedima | biti poslušni</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonThird" xml:space="preserve">
+    <value>Treći</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonThirdTrans" xml:space="preserve">
+    <value>I to je sadašnji na nama pokazati zahvalnost</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonThirdWordByWord" xml:space="preserve">
+    <value>I to je sadašnji | pokazati zahvalnost | na nas</value>
+  </data>
+  <data name="IslamInfo_AllahKnowsBest" xml:space="preserve">
+    <value>Allah najbolje zna</value>
+  </data>
+  <data name="IslamInfo_AllahSaysTheTruth" xml:space="preserve">
+    <value>Istina je od Allaha, najveličanstveniji</value>
+  </data>
+  <data name="IslamInfo_AllahSufficesMe" xml:space="preserve">
+    <value>Dovoljna mi je Allah</value>
+  </data>
+  <data name="IslamInfo_AllahWilledItSo" xml:space="preserve">
+    <value>Allah je htio tako</value>
+  </data>
+  <data name="IslamInfo_AllahWilling" xml:space="preserve">
+    <value>Ako Allah to hoće tako</value>
+  </data>
+  <data name="IslamInfo_AndUponYouBePeaceAndMercyOfAllah" xml:space="preserve">
+    <value>I nakon vas bude mir i milost Allahova</value>
+  </data>
+  <data name="IslamInfo_AndUponYouBePeaceAndMercyOfAllahAndBlessings" xml:space="preserve">
+    <value>I nakon vas bude mir i milost Allaha i Njegove blagoslove</value>
+  </data>
+  <data name="IslamInfo_BlessingsOfAllah" xml:space="preserve">
+    <value>Blagoslov Allaha</value>
+  </data>
+  <data name="IslamInfo_GloriousAndExaltedBeHe" xml:space="preserve">
+    <value>Slavna i uzvišen On</value>
+  </data>
+  <data name="IslamInfo_IAskAllahForgiveness" xml:space="preserve">
+    <value>Tražim oprost od Allaha</value>
+  </data>
+  <data name="IslamInfo_InProtectionOfAllah" xml:space="preserve">
+    <value>U zaštiti od Allaha</value>
+  </data>
+  <data name="IslamInfo_InThePathOfAllah" xml:space="preserve">
+    <value>U Allahovom putu</value>
+  </data>
+  <data name="IslamInfo_MayAllahBePleased" xml:space="preserve">
+    <value>Neka Allah bude zadovoljan s njima</value>
+  </data>
+  <data name="IslamInfo_MayAllahBlessYou" xml:space="preserve">
+    <value>Blagoslov na vas od Allaha</value>
+  </data>
+  <data name="IslamInfo_MayAllahHaveMercy" xml:space="preserve">
+    <value>Allah smiluje njima</value>
+  </data>
+  <data name="IslamInfo_MayAllahProtectYou" xml:space="preserve">
+    <value>Neka vas Allah štiti</value>
+  </data>
+  <data name="IslamInfo_MayAllahWillItSo" xml:space="preserve">
+    <value>Allah će to tako</value>
+  </data>
+  <data name="IslamInfo_PeaceBeUponYouAndMercyOfAllah" xml:space="preserve">
+    <value>Mir s vama i milosti Allaha</value>
+  </data>
+  <data name="IslamInfo_PeaceBeUponYouAndMercyOfAllahAndBlessings" xml:space="preserve">
+    <value>Mir na vas i milost Allaha i Njegovi blagoslovi</value>
+  </data>
+  <data name="IslamInfo_SeekRefugeWithAllahFromSatanRejected" xml:space="preserve">
+    <value>Tražim utočište kod Allaha od Sotone odbijen</value>
+  </data>
+  <data name="IslamInfo_SublimeAndMighty" xml:space="preserve">
+    <value>Sublime i Mighty</value>
+  </data>
+  <data name="IslamInfo_TrulyFromAllahWeComeAndToHimWillReturn" xml:space="preserve">
+    <value>Zaista Allah smo došli, i doista se Njemu ćemo se vratiti</value>
+  </data>
+  <data name="Acct_CertRequest" xml:space="preserve">
+    <value>Zahtjev Potvrda</value>
+  </data>
+  <data name="Acct_Certificate" xml:space="preserve">
+    <value>Certifikat</value>
+  </data>
+  <data name="Acct_CertInstall" xml:space="preserve">
+    <value>Instalirajte potvrdu</value>
+  </data>
+  <data name="Acct_CurrentUser" xml:space="preserve">
+    <value>Trenutni korisnik</value>
+  </data>
+  <data name="Acct_DeleteCertRequest" xml:space="preserve">
+    <value>Izbrisati certifikat zahtjev</value>
+  </data>
+  <data name="Acct_EnableSSL" xml:space="preserve">
+    <value>Omogućite SSL</value>
+  </data>
+  <data name="Acct_PrivateKey" xml:space="preserve">
+    <value>Privatni ključ</value>
+  </data>
+  <data name="Acct_ViewCertRequests" xml:space="preserve">
+    <value>Zahtjevi View Certificate</value>
+  </data>
+  <data name="Acct_ViewSites" xml:space="preserve">
+    <value>Pogledaj sajtove</value>
+  </data>
+  <data name="Acct_CertInstallIntermed" xml:space="preserve">
+    <value>Instalirajte Intermedijarni uvjerenje o</value>
+  </data>
+  <data name="IslamInfo_UniqueLetters" xml:space="preserve">
+    <value>Jedinstvena Pisma</value>
+  </data>
+  <data name="IslamInfo_SoulStates" xml:space="preserve">
+    <value>Soul države</value>
+  </data>
+  <data name="IslamInfo_Abbreviations" xml:space="preserve">
+    <value>Kratice</value>
+  </data>
+  <data name="IslamInfo_Names" xml:space="preserve">
+    <value>Imena</value>
+  </data>
+  <data name="IslamInfo_Places" xml:space="preserve">
+    <value>Mjesta</value>
+  </data>
+  <data name="IslamInfo_Abbasid" xml:space="preserve">
+    <value>Abasidski</value>
+  </data>
+  <data name="IslamInfo_AbdullahBinMasood" xml:space="preserve">
+    <value>Abdullah bin Mesud</value>
+  </data>
+  <data name="IslamInfo_AbuBakrAlSaddiq" xml:space="preserve">
+    <value>Abu Bakr Al-Saddiq</value>
+  </data>
+  <data name="IslamInfo_AbuDahr" xml:space="preserve">
+    <value>Abu Dahr</value>
+  </data>
+  <data name="IslamInfo_AbuHanifa" xml:space="preserve">
+    <value>Abu Hanifa</value>
+  </data>
+  <data name="IslamInfo_AbuHurairah" xml:space="preserve">
+    <value>AbuHurairah</value>
+  </data>
+  <data name="IslamInfo_AbuJahal" xml:space="preserve">
+    <value>Abu Jahal</value>
+  </data>
+  <data name="IslamInfo_AbuLahab" xml:space="preserve">
+    <value>Abu Lahab</value>
+  </data>
+  <data name="IslamInfo_AbuSufyan" xml:space="preserve">
+    <value>Ebu Sufjan</value>
+  </data>
+  <data name="IslamInfo_Aisha" xml:space="preserve">
+    <value>Aisha</value>
+  </data>
+  <data name="IslamInfo_AliBinAbuTalib" xml:space="preserve">
+    <value>Ali bin Abu Talib</value>
+  </data>
+  <data name="IslamInfo_AlLaythBinSaad" xml:space="preserve">
+    <value>Al-Layth bin Saad</value>
+  </data>
+  <data name="IslamInfo_Allowed" xml:space="preserve">
+    <value>Dozvoljen</value>
+  </data>
+  <data name="IslamInfo_AlMansoor" xml:space="preserve">
+    <value>Al-Mansoor</value>
+  </data>
+  <data name="IslamInfo_AlMuwata" xml:space="preserve">
+    <value>Al-Muwata</value>
+  </data>
+  <data name="IslamInfo_AlWahsi" xml:space="preserve">
+    <value>Al-Wahsi</value>
+  </data>
+  <data name="IslamInfo_AmrBinAlAas" xml:space="preserve">
+    <value>Amr bin Al-Aas</value>
+  </data>
+  <data name="IslamInfo_AndEveryone" xml:space="preserve">
+    <value>I svatko</value>
+  </data>
+  <data name="IslamInfo_Angel" xml:space="preserve">
+    <value>Anđeo</value>
+  </data>
+  <data name="IslamInfo_Arrogance" xml:space="preserve">
+    <value>Arogancija</value>
+  </data>
+  <data name="IslamInfo_AskForgiveness" xml:space="preserve">
+    <value>Tražiti oprost</value>
+  </data>
+  <data name="IslamInfo_Azar" xml:space="preserve">
+    <value>Azar</value>
+  </data>
+  <data name="IslamInfo_Balance" xml:space="preserve">
+    <value>Ravnoteža</value>
+  </data>
+  <data name="IslamInfo_BaniHashim" xml:space="preserve">
+    <value>Bani Hashim</value>
+  </data>
+  <data name="IslamInfo_BaniThaqeef" xml:space="preserve">
+    <value>Bani Thaqeef</value>
+  </data>
+  <data name="IslamInfo_Biography" xml:space="preserve">
+    <value>Biografija</value>
+  </data>
+  <data name="IslamInfo_Bless" xml:space="preserve">
+    <value>Blagosloviti</value>
+  </data>
+  <data name="IslamInfo_Caliphate" xml:space="preserve">
+    <value>Kalifat</value>
+  </data>
+  <data name="IslamInfo_CallToIslam" xml:space="preserve">
+    <value>Poziv na islam</value>
+  </data>
+  <data name="IslamInfo_Certainty" xml:space="preserve">
+    <value>Izvjesnost</value>
+  </data>
+  <data name="IslamInfo_Cohabitation" xml:space="preserve">
+    <value>Kohabitaciju</value>
+  </data>
+  <data name="IslamInfo_Commentary" xml:space="preserve">
+    <value>Komentar</value>
+  </data>
+  <data name="IslamInfo_Community" xml:space="preserve">
+    <value>Zajednica</value>
+  </data>
+  <data name="IslamInfo_Companions" xml:space="preserve">
+    <value>Drugovi</value>
+  </data>
+  <data name="IslamInfo_Concensus" xml:space="preserve">
+    <value>Konsenzus</value>
+  </data>
+  <data name="IslamInfo_Concentration" xml:space="preserve">
+    <value>Koncentracija</value>
+  </data>
+  <data name="IslamInfo_Congregation" xml:space="preserve">
+    <value>Zajednica</value>
+  </data>
+  <data name="IslamInfo_Conquest" xml:space="preserve">
+    <value>Osvajanje</value>
+  </data>
+  <data name="IslamInfo_Deeds" xml:space="preserve">
+    <value>Deeds</value>
+  </data>
+  <data name="IslamInfo_Delivery" xml:space="preserve">
+    <value>Dostava</value>
+  </data>
+  <data name="IslamInfo_Dessertion" xml:space="preserve">
+    <value>Dessertion</value>
+  </data>
+  <data name="IslamInfo_Digger" xml:space="preserve">
+    <value>Kopač</value>
+  </data>
+  <data name="IslamInfo_Disbeliever" xml:space="preserve">
+    <value>Nevjernik</value>
+  </data>
+  <data name="IslamInfo_Division" xml:space="preserve">
+    <value>Podjela</value>
+  </data>
+  <data name="IslamInfo_Do" xml:space="preserve">
+    <value>Raditi</value>
+  </data>
+  <data name="IslamInfo_Doctrine" xml:space="preserve">
+    <value>Doktrina</value>
+  </data>
+  <data name="IslamInfo_Empowering" xml:space="preserve">
+    <value>Osnaživanje</value>
+  </data>
+  <data name="IslamInfo_Excellence" xml:space="preserve">
+    <value>Nadmoćnost</value>
+  </data>
+  <data name="IslamInfo_Faith" xml:space="preserve">
+    <value>Vjera</value>
+  </data>
+  <data name="IslamInfo_Faithful" xml:space="preserve">
+    <value>Vjeran</value>
+  </data>
+  <data name="IslamInfo_Fight" xml:space="preserve">
+    <value>Borba</value>
+  </data>
+  <data name="IslamInfo_Fighter" xml:space="preserve">
+    <value>Borac</value>
+  </data>
+  <data name="IslamInfo_Firdaus" xml:space="preserve">
+    <value>Firdaus</value>
+  </data>
+  <data name="IslamInfo_Forgiving" xml:space="preserve">
+    <value>Praštajući</value>
+  </data>
+  <data name="IslamInfo_Fornication" xml:space="preserve">
+    <value>Brakolomstvo</value>
+  </data>
+  <data name="IslamInfo_Gabriel" xml:space="preserve">
+    <value>Gabriel</value>
+  </data>
+  <data name="IslamInfo_Gardens" xml:space="preserve">
+    <value>Gardens</value>
+  </data>
+  <data name="IslamInfo_GloriousAndExaltedBeHeAbbr" xml:space="preserve">
+    <value>SWT</value>
+  </data>
+  <data name="IslamInfo_Goodness" xml:space="preserve">
+    <value>Dobrota</value>
+  </data>
+  <data name="IslamInfo_Guardian" xml:space="preserve">
+    <value>Staratelj</value>
+  </data>
+  <data name="IslamInfo_Guidance1" xml:space="preserve">
+    <value>Vođenje</value>
+  </data>
+  <data name="IslamInfo_Hammad" xml:space="preserve">
+    <value>Hammad</value>
+  </data>
+  <data name="IslamInfo_HamzaBinAbduAlMuttalib" xml:space="preserve">
+    <value>Hamza bin Abdu al-Muttalib</value>
+  </data>
+  <data name="IslamInfo_Hanbal" xml:space="preserve">
+    <value>Hanbal</value>
+  </data>
+  <data name="IslamInfo_Hasan" xml:space="preserve">
+    <value>Hasan</value>
+  </data>
+  <data name="IslamInfo_HeartSofteners" xml:space="preserve">
+    <value>Srce Omekšivači</value>
+  </data>
+  <data name="IslamInfo_Hell" xml:space="preserve">
+    <value>Pakao</value>
+  </data>
+  <data name="IslamInfo_Hereafter" xml:space="preserve">
+    <value>Budućnost</value>
+  </data>
+  <data name="IslamInfo_Hind" xml:space="preserve">
+    <value>Košuta</value>
+  </data>
+  <data name="IslamInfo_Hudabiyyah" xml:space="preserve">
+    <value>Hudabiyyah</value>
+  </data>
+  <data name="IslamInfo_Hunain" xml:space="preserve">
+    <value>Hunain</value>
+  </data>
+  <data name="IslamInfo_Hussein" xml:space="preserve">
+    <value>Husein</value>
+  </data>
+  <data name="IslamInfo_Hypocrite" xml:space="preserve">
+    <value>Licemjer</value>
+  </data>
+  <data name="IslamInfo_ImamNawawi40Hadith" xml:space="preserve">
+    <value>Imam Nawawi 40 Hadis</value>
+  </data>
+  <data name="IslamInfo_Impact" xml:space="preserve">
+    <value>Udar</value>
+  </data>
+  <data name="IslamInfo_Innovation" xml:space="preserve">
+    <value>Inovacija</value>
+  </data>
+  <data name="IslamInfo_Intention" xml:space="preserve">
+    <value>Namjera</value>
+  </data>
+  <data name="IslamInfo_Introduction" xml:space="preserve">
+    <value>Uvod</value>
+  </data>
+  <data name="IslamInfo_Invocation" xml:space="preserve">
+    <value>Prizivanje</value>
+  </data>
+  <data name="IslamInfo_Jinn" xml:space="preserve">
+    <value>Jinn</value>
+  </data>
+  <data name="IslamInfo_Kaaba" xml:space="preserve">
+    <value>Kaaba</value>
+  </data>
+  <data name="IslamInfo_KhadijahBintiKhuwaylid" xml:space="preserve">
+    <value>Hatidža binti Khooaylid</value>
+  </data>
+  <data name="IslamInfo_KhalidBinWalid" xml:space="preserve">
+    <value>Khalid bin Walid</value>
+  </data>
+  <data name="IslamInfo_Knowledgable" xml:space="preserve">
+    <value>Knowledgable</value>
+  </data>
+  <data name="IslamInfo_Latest" xml:space="preserve">
+    <value>Najnoviji</value>
+  </data>
+  <data name="IslamInfo_Leader" xml:space="preserve">
+    <value>Vođa</value>
+  </data>
+  <data name="IslamInfo_Lecture" xml:space="preserve">
+    <value>Predavanje</value>
+  </data>
+  <data name="IslamInfo_Limit" xml:space="preserve">
+    <value>Granica</value>
+  </data>
+  <data name="IslamInfo_Loudmouthed" xml:space="preserve">
+    <value>Galamdžijski</value>
+  </data>
+  <data name="IslamInfo_Lucifer" xml:space="preserve">
+    <value>Lucifer</value>
+  </data>
+  <data name="IslamInfo_Madame" xml:space="preserve">
+    <value>Madam</value>
+  </data>
+  <data name="IslamInfo_Malik" xml:space="preserve">
+    <value>Malik</value>
+  </data>
+  <data name="IslamInfo_Mankind" xml:space="preserve">
+    <value>Čovječanstvo</value>
+  </data>
+  <data name="IslamInfo_Manners" xml:space="preserve">
+    <value>Maniri</value>
+  </data>
+  <data name="IslamInfo_MannersOfDiffering" xml:space="preserve">
+    <value>Manners odstupaju</value>
+  </data>
+  <data name="IslamInfo_Master" xml:space="preserve">
+    <value>Majstor</value>
+  </data>
+  <data name="IslamInfo_MayAllahBePleasedAbbr" xml:space="preserve">
+    <value>RA</value>
+  </data>
+  <data name="IslamInfo_MayHisGloryBeGlorified" xml:space="preserve">
+    <value>MayHisGloryBeGlorified</value>
+  </data>
+  <data name="IslamInfo_Mecca" xml:space="preserve">
+    <value>Meka</value>
+  </data>
+  <data name="IslamInfo_Medina" xml:space="preserve">
+    <value>Medina</value>
+  </data>
+  <data name="IslamInfo_Mercy" xml:space="preserve">
+    <value>Milost</value>
+  </data>
+  <data name="IslamInfo_MinorPilgrimage" xml:space="preserve">
+    <value>Manje hodočašće</value>
+  </data>
+  <data name="IslamInfo_Mosque" xml:space="preserve">
+    <value>Džamija</value>
+  </data>
+  <data name="IslamInfo_Muawiyyah" xml:space="preserve">
+    <value>Muawiyyah</value>
+  </data>
+  <data name="IslamInfo_Mufti" xml:space="preserve">
+    <value>Muftija</value>
+  </data>
+  <data name="IslamInfo_MuhammadBinAbduAlMuttalib" xml:space="preserve">
+    <value>Muhammed bin Abdu al-Muttalib</value>
+  </data>
+  <data name="IslamInfo_Neck" xml:space="preserve">
+    <value>Vrat</value>
+  </data>
+  <data name="IslamInfo_Nurturing" xml:space="preserve">
+    <value>Njegovanje</value>
+  </data>
+  <data name="IslamInfo_OBelievers" xml:space="preserve">
+    <value>O vi koji vjerujete</value>
+  </data>
+  <data name="IslamInfo_Optimizer" xml:space="preserve">
+    <value>Optimizaciju</value>
+  </data>
+  <data name="IslamInfo_Paradise" xml:space="preserve">
+    <value>Raj</value>
+  </data>
+  <data name="IslamInfo_Patience" xml:space="preserve">
+    <value>Strpljenje</value>
+  </data>
+  <data name="IslamInfo_Permission" xml:space="preserve">
+    <value>Dopuštenje</value>
+  </data>
+  <data name="IslamInfo_Persecution" xml:space="preserve">
+    <value>Progon</value>
+  </data>
+  <data name="IslamInfo_Piety" xml:space="preserve">
+    <value>Pobožnost</value>
+  </data>
+  <data name="IslamInfo_PleasedWithDecree" xml:space="preserve">
+    <value>Zadovoljan Uredbe</value>
+  </data>
+  <data name="IslamInfo_Polythiest" xml:space="preserve">
+    <value>Polythiest</value>
+  </data>
+  <data name="IslamInfo_Practical" xml:space="preserve">
+    <value>Praktičan</value>
+  </data>
+  <data name="IslamInfo_Predestination" xml:space="preserve">
+    <value>Predodređenost</value>
+  </data>
+  <data name="IslamInfo_PrintedBook" xml:space="preserve">
+    <value>Tiskanih knjiga</value>
+  </data>
+  <data name="IslamInfo_Professor" xml:space="preserve">
+    <value>Profesor</value>
+  </data>
+  <data name="IslamInfo_Protector" xml:space="preserve">
+    <value>Zaštitnik</value>
+  </data>
+  <data name="IslamInfo_Punishment" xml:space="preserve">
+    <value>Kazna</value>
+  </data>
+  <data name="IslamInfo_Purification" xml:space="preserve">
+    <value>Pročišćavanje</value>
+  </data>
+  <data name="IslamInfo_Quraish" xml:space="preserve">
+    <value>Quraish</value>
+  </data>
+  <data name="IslamInfo_Rawdah" xml:space="preserve">
+    <value>Rawdah</value>
+  </data>
+  <data name="IslamInfo_Recite" xml:space="preserve">
+    <value>Recitovati</value>
+  </data>
+  <data name="IslamInfo_Religion" xml:space="preserve">
+    <value>Religija</value>
+  </data>
+  <data name="IslamInfo_Repentance" xml:space="preserve">
+    <value>Pokajanje</value>
+  </data>
+  <data name="IslamInfo_RiadAlJannah" xml:space="preserve">
+    <value>Riad Al-dženetu</value>
+  </data>
+  <data name="IslamInfo_RighteousDealings" xml:space="preserve">
+    <value>Pravedni Poslovanje</value>
+  </data>
+  <data name="IslamInfo_RighteousDeeds" xml:space="preserve">
+    <value>Dobra djela</value>
+  </data>
+  <data name="IslamInfo_SaadBinWaad" xml:space="preserve">
+    <value>Saad bin waad</value>
+  </data>
+  <data name="IslamInfo_Sacrifice" xml:space="preserve">
+    <value>Žrtva</value>
+  </data>
+  <data name="IslamInfo_Salafi" xml:space="preserve">
+    <value>Selefi</value>
+  </data>
+  <data name="IslamInfo_Satan" xml:space="preserve">
+    <value>Sotona</value>
+  </data>
+  <data name="IslamInfo_Satisfaction" xml:space="preserve">
+    <value>Zadovoljstvo</value>
+  </data>
+  <data name="IslamInfo_Self" xml:space="preserve">
+    <value>Sam</value>
+  </data>
+  <data name="IslamInfo_Shafii" xml:space="preserve">
+    <value>Shafii</value>
+  </data>
+  <data name="IslamInfo_Sheikh" xml:space="preserve">
+    <value>Šeik</value>
+  </data>
+  <data name="IslamInfo_ShowingOff" xml:space="preserve">
+    <value>Prikaz Off</value>
+  </data>
+  <data name="IslamInfo_Sin" xml:space="preserve">
+    <value>Grijeh</value>
+  </data>
+  <data name="IslamInfo_Sir" xml:space="preserve">
+    <value>Gospodin</value>
+  </data>
+  <data name="IslamInfo_Slaughter" xml:space="preserve">
+    <value>Klanje</value>
+  </data>
+  <data name="IslamInfo_Slave" xml:space="preserve">
+    <value>Rob</value>
+  </data>
+  <data name="IslamInfo_Speech" xml:space="preserve">
+    <value>Govor</value>
+  </data>
+  <data name="IslamInfo_Sporadic" xml:space="preserve">
+    <value>Sporadičan</value>
+  </data>
+  <data name="IslamInfo_Strangers" xml:space="preserve">
+    <value>Stranci</value>
+  </data>
+  <data name="IslamInfo_SupplicationsAndPrayers" xml:space="preserve">
+    <value>Prošnje i molitve</value>
+  </data>
+  <data name="IslamInfo_Taaif" xml:space="preserve">
+    <value>Taaif</value>
+  </data>
+  <data name="IslamInfo_Talkative" xml:space="preserve">
+    <value>Govorljiv</value>
+  </data>
+  <data name="IslamInfo_ThePrayersOfAllahUponHimAndPeaceAbbr" xml:space="preserve">
+    <value>PILA | savs</value>
+  </data>
+  <data name="IslamInfo_Throne" xml:space="preserve">
+    <value>Tron</value>
+  </data>
+  <data name="IslamInfo_Trustworthy" xml:space="preserve">
+    <value>Vjerodostojan</value>
+  </data>
+  <data name="IslamInfo_Truthful" xml:space="preserve">
+    <value>Istinoljubiv</value>
+  </data>
+  <data name="IslamInfo_UmarBinAlKhattab" xml:space="preserve">
+    <value>Omer bin el-Hattab</value>
+  </data>
+  <data name="IslamInfo_Umayyad" xml:space="preserve">
+    <value>Umayyad</value>
+  </data>
+  <data name="IslamInfo_Universal" xml:space="preserve">
+    <value>Sveopći</value>
+  </data>
+  <data name="IslamInfo_Unseen" xml:space="preserve">
+    <value>Neviđen</value>
+  </data>
+  <data name="IslamInfo_UponHimBePeaceAbbr" xml:space="preserve">
+    <value>AS</value>
+  </data>
+  <data name="IslamInfo_UthmanBinAfwan" xml:space="preserve">
+    <value>Osman bin Afwan</value>
+  </data>
+  <data name="IslamInfo_VoluntaryKindness" xml:space="preserve">
+    <value>Dobrovoljni Ljubaznost</value>
+  </data>
+  <data name="IslamInfo_Wahhabi" xml:space="preserve">
+    <value>Vehabije</value>
+  </data>
+  <data name="IslamInfo_Wisdom" xml:space="preserve">
+    <value>Mudrost</value>
+  </data>
+  <data name="IslamInfo_Witnessing" xml:space="preserve">
+    <value>Svjedočenje</value>
+  </data>
+  <data name="IslamInfo_World" xml:space="preserve">
+    <value>Svijet</value>
+  </data>
+  <data name="IslamInfo_Worship" xml:space="preserve">
+    <value>Obožavanje</value>
+  </data>
+  <data name="IslamInfo_IslamicPhrases" xml:space="preserve">
+    <value>Islamska Fraze</value>
+  </data>
+  <data name="IslamSource_QuranWords" xml:space="preserve">
+    <value>Kur'an riječi</value>
+  </data>
+  <data name="IslamSource_UniqueWordTotal" xml:space="preserve">
+    <value>Jedinstven Riječ Ukupno</value>
+  </data>
+  <data name="IslamSource_WordTotal" xml:space="preserve">
+    <value>Riječ Ukupno</value>
+  </data>
+  <data name="IslamSource_FixDirectionalMarkers" xml:space="preserve">
+    <value>Fix Usmjereni markere</value>
+  </data>
+  <data name="unicode_LeftToRightEmbedding" xml:space="preserve">
+    <value>Lijeva na desno ugrađivanje</value>
+  </data>
+  <data name="unicode_RightToLeftEmbedding" xml:space="preserve">
+    <value>Pravo na lijevo ugrađivanje</value>
+  </data>
+  <data name="unicode_LeftToRightMark" xml:space="preserve">
+    <value>Lijeva na desno Mark</value>
+  </data>
+  <data name="unicode_LeftToRightOverride" xml:space="preserve">
+    <value>Lijeva na desno Override</value>
+  </data>
+  <data name="unicode_PopDirectionalFormatting" xml:space="preserve">
+    <value>Pop usmjereno oblikovanje</value>
+  </data>
+  <data name="unicode_RightToLeftMark" xml:space="preserve">
+    <value>Pravo na lijevo Mark</value>
+  </data>
+  <data name="unicode_RightToLeftOverride" xml:space="preserve">
+    <value>Pravo na lijevo Override</value>
+  </data>
+  <data name="IslamSource_CurrentMonth" xml:space="preserve">
+    <value>Trenutni mjesec</value>
+  </data>
+  <data name="IslamSource_HijriCalendar" xml:space="preserve">
+    <value>Hijri kalendar</value>
+  </data>
+</root>

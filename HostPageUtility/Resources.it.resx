@@ -1,0 +1,4275 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Acct_AccountActivateSuccess" xml:space="preserve">
+    <value>Account attivato con successo.</value>
+  </data>
+  <data name="Acct_AccountAlreadyActivated" xml:space="preserve">
+    <value>Account già attivato.</value>
+  </data>
+  <data name="Acct_AccountDeleteSuccess" xml:space="preserve">
+    <value>Account eliminato correttamente.</value>
+  </data>
+  <data name="Acct_AccountNotActivated" xml:space="preserve">
+    <value>Conto non ancora attivato controlla la tua posta prima o richiedere un codice di attivazione aggiuntivo.</value>
+  </data>
+  <data name="Acct_ActivateAccount" xml:space="preserve">
+    <value>Attivazione Account</value>
+  </data>
+  <data name="Acct_ActivationAccountBody" xml:space="preserve">
+    <value>Questo indirizzo e-mail richiede l'attivazione del tuo account {0}: {1}.</value>
+  </data>
+  <data name="Acct_ActivationAccountSubject" xml:space="preserve">
+    <value>Attivazione per conto presso {0}</value>
+  </data>
+  <data name="Acct_ActivationCode" xml:space="preserve">
+    <value>Codice di attivazione</value>
+  </data>
+  <data name="Acct_BadEmailFormat" xml:space="preserve">
+    <value>Indirizzo e-mail non è in un formato valido.</value>
+  </data>
+  <data name="Acct_Certain" xml:space="preserve">
+    <value>Sei sicuro?</value>
+  </data>
+  <data name="Acct_ChangeEmailAddress" xml:space="preserve">
+    <value>Cambiare Indirizzo e-mail</value>
+  </data>
+  <data name="Acct_ChangePassword" xml:space="preserve">
+    <value>Cambia password</value>
+  </data>
+  <data name="Acct_ChangeUsername" xml:space="preserve">
+    <value>Modificare il nome utente</value>
+  </data>
+  <data name="Acct_CheckEmailNotice" xml:space="preserve">
+    <value>Attivazione inviata all'indirizzo fornito.</value>
+  </data>
+  <data name="Acct_ConfirmEmailAddress" xml:space="preserve">
+    <value>Conferma Indirizzo e-mail</value>
+  </data>
+  <data name="Acct_ConfirmPassword" xml:space="preserve">
+    <value>Conferma password</value>
+  </data>
+  <data name="Acct_ControlPanel" xml:space="preserve">
+    <value>Pannello di controllo</value>
+  </data>
+  <data name="Acct_DeleteAccount" xml:space="preserve">
+    <value>Elimina account</value>
+  </data>
+  <data name="Acct_DuplicateUser" xml:space="preserve">
+    <value>Utente con questo nome esiste già prega di scegliere un altro.</value>
+  </data>
+  <data name="Acct_EmailAddress" xml:space="preserve">
+    <value>Indirizzo e-mail</value>
+  </data>
+  <data name="Acct_EmailChangeReactivate" xml:space="preserve">
+    <value>Indirizzo e-mail è cambiato e l'attivazione e-mail inviata a riattivare account.</value>
+  </data>
+  <data name="Acct_EmailInUse" xml:space="preserve">
+    <value>E-mail già in uso effettua il login con le credenziali esistenti.</value>
+  </data>
+  <data name="Acct_EmailsNotMatch" xml:space="preserve">
+    <value>Indirizzi di posta elettronica non corrispondono</value>
+  </data>
+  <data name="Acct_ForgotPassword" xml:space="preserve">
+    <value>Password dimenticata</value>
+  </data>
+  <data name="Acct_ForgotUsername" xml:space="preserve">
+    <value>Hai dimenticato il nome utente</value>
+  </data>
+  <data name="Acct_Home" xml:space="preserve">
+    <value>Casa</value>
+  </data>
+  <data name="Acct_IncorrectActivationCode" xml:space="preserve">
+    <value>Codice di attivazione errato.</value>
+  </data>
+  <data name="Acct_IncorrectPasswordResetCode" xml:space="preserve">
+    <value>Errato codice di reset della password.</value>
+  </data>
+  <data name="Acct_InvalidInput" xml:space="preserve">
+    <value>Input non valido.</value>
+  </data>
+  <data name="Acct_InvalidUsernamePassword" xml:space="preserve">
+    <value>Nome utente o password non valida.</value>
+  </data>
+  <data name="Acct_Login" xml:space="preserve">
+    <value>Entra</value>
+  </data>
+  <data name="Acct_LoginSuccess" xml:space="preserve">
+    <value>Accedi successo.</value>
+  </data>
+  <data name="Acct_Logoff" xml:space="preserve">
+    <value>Logoff</value>
+  </data>
+  <data name="Acct_LogoffSuccess" xml:space="preserve">
+    <value>Logoff successo.</value>
+  </data>
+  <data name="Acct_MinimumPassword" xml:space="preserve">
+    <value>La password deve essere di almeno 8 caratteri.</value>
+  </data>
+  <data name="Acct_MinimumUsername" xml:space="preserve">
+    <value>Nome utente deve essere di almeno 4 caratteri.</value>
+  </data>
+  <data name="Acct_No" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="Acct_NotConfirmDelete" xml:space="preserve">
+    <value>Deve confermare la cancellazione dell'account.</value>
+  </data>
+  <data name="Acct_NoUserExists" xml:space="preserve">
+    <value>Non esiste alcun utente per l'indirizzo e-mail indicato.</value>
+  </data>
+  <data name="Acct_Password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="Acct_PasswordAlreadyReset" xml:space="preserve">
+    <value>Password già resettato o processo non avviato.</value>
+  </data>
+  <data name="Acct_PasswordChangedBody" xml:space="preserve">
+    <value>Questo indirizzo e-mail è quello di informare della modifica della password del vostro account {0}: {1}.</value>
+  </data>
+  <data name="Acct_PasswordChangedSubject" xml:space="preserve">
+    <value>Password cambiata per conto presso {0}</value>
+  </data>
+  <data name="Acct_PasswordChangeSuccess" xml:space="preserve">
+    <value>Password modificata con successo.</value>
+  </data>
+  <data name="Acct_PasswordEmailSent" xml:space="preserve">
+    <value>Una e-mail è stato inviato al tuo indirizzo su file per avviare il processo di reimpostazione della password.</value>
+  </data>
+  <data name="Acct_PasswordResetBody" xml:space="preserve">
+    <value>Questo indirizzo e-mail è quello di reimpostare la password del vostro account {0}: {1}.</value>
+  </data>
+  <data name="Acct_PasswordResetCode" xml:space="preserve">
+    <value>Password Reset Codice</value>
+  </data>
+  <data name="Acct_PasswordResetSubject" xml:space="preserve">
+    <value>Reimpostazione della password per account su {0}</value>
+  </data>
+  <data name="Acct_PasswordResetSuccess" xml:space="preserve">
+    <value>Reimpostazione della password con successo.</value>
+  </data>
+  <data name="Acct_PasswordsNotMatch" xml:space="preserve">
+    <value>Le password non corrispondono</value>
+  </data>
+  <data name="Acct_Register" xml:space="preserve">
+    <value>Registro</value>
+  </data>
+  <data name="Acct_Remember" xml:space="preserve">
+    <value>Ricordate?</value>
+  </data>
+  <data name="Acct_ResendActivationEmail" xml:space="preserve">
+    <value>Reinvia email di attivazione</value>
+  </data>
+  <data name="Acct_ResetPassword" xml:space="preserve">
+    <value>Resettare la password</value>
+  </data>
+  <data name="Acct_RetrievePassword" xml:space="preserve">
+    <value>Recupera password</value>
+  </data>
+  <data name="Acct_RetrieveUsername" xml:space="preserve">
+    <value>Recupera Nome utente</value>
+  </data>
+  <data name="Acct_SendActivationCode" xml:space="preserve">
+    <value>Invia codice di attivazione</value>
+  </data>
+  <data name="Acct_Username" xml:space="preserve">
+    <value>Nome utente</value>
+  </data>
+  <data name="Acct_UsernameChangedBody" xml:space="preserve">
+    <value>Questo indirizzo e-mail è quello di informare il conto cambio di nome del tuo account {0}: {1}.</value>
+  </data>
+  <data name="Acct_UsernameChangedSubject" xml:space="preserve">
+    <value>Nome cambiato per conto presso {0}</value>
+  </data>
+  <data name="Acct_UsernameChangeSuccess" xml:space="preserve">
+    <value>Nome utente modificata correttamente.</value>
+  </data>
+  <data name="Acct_UsernameEmailSent" xml:space="preserve">
+    <value>Una e-mail è stata inviata al vostro indirizzo sulla lima con il tuo username.</value>
+  </data>
+  <data name="Acct_UsernameReminderBody" xml:space="preserve">
+    <value>Questo indirizzo e-mail è un ricordo del tuo account {0}: {1}.</value>
+  </data>
+  <data name="Acct_UsernameReminderSubject" xml:space="preserve">
+    <value>Nome utente promemoria per conto presso {0}</value>
+  </data>
+  <data name="Acct_UserNotFound" xml:space="preserve">
+    <value>L'utente non esiste.</value>
+  </data>
+  <data name="Acct_Yes" xml:space="preserve">
+    <value>Sì</value>
+  </data>
+  <data name="Acct_CleanupStale" xml:space="preserve">
+    <value>Cleanup Stale</value>
+  </data>
+  <data name="Acct_ClearCache" xml:space="preserve">
+    <value>Cancella cache</value>
+  </data>
+  <data name="Acct_ClearDiskCache" xml:space="preserve">
+    <value>Cancella cache su disco</value>
+  </data>
+  <data name="Acct_CreateDatabase" xml:space="preserve">
+    <value>Crea database</value>
+  </data>
+  <data name="Acct_DotNetVersion" xml:space="preserve">
+    <value>Dot Net Version</value>
+  </data>
+  <data name="Acct_RemoveDatabase" xml:space="preserve">
+    <value>Rimuovere Database</value>
+  </data>
+  <data name="Acct_ViewCache" xml:space="preserve">
+    <value>Visualizza Cache</value>
+  </data>
+  <data name="Acct_ViewDiskCache" xml:space="preserve">
+    <value>Vista cache su disco</value>
+  </data>
+  <data name="Acct_ViewHeaders" xml:space="preserve">
+    <value>Visualizza intestazioni</value>
+  </data>
+  <data name="Hadith_Book" xml:space="preserve">
+    <value>Libro</value>
+  </data>
+  <data name="Hadith_Books" xml:space="preserve">
+    <value>Libri</value>
+  </data>
+  <data name="Hadith_Chapters" xml:space="preserve">
+    <value>Capitoli</value>
+  </data>
+  <data name="Hadith_Hadith" xml:space="preserve">
+    <value>Hadith</value>
+  </data>
+  <data name="Hadith_Hadiths" xml:space="preserve">
+    <value>Hadith</value>
+  </data>
+  <data name="Hadith_IdenticalNumbering" xml:space="preserve">
+    <value>Numerazione Identico</value>
+  </data>
+  <data name="Hadith_Index" xml:space="preserve">
+    <value>Indice</value>
+  </data>
+  <data name="Hadith_MappedOf" xml:space="preserve">
+    <value>{0} mappata di {1}</value>
+  </data>
+  <data name="Hadith_NoTranslation" xml:space="preserve">
+    <value>Nessuna traduzione</value>
+  </data>
+  <data name="Hadith_SourceHadithIndex" xml:space="preserve">
+    <value>Fonte Hadith Index</value>
+  </data>
+  <data name="Hadith_Translation" xml:space="preserve">
+    <value>Traduzione</value>
+  </data>
+  <data name="Hadith_TranslationBook" xml:space="preserve">
+    <value>Traduttore</value>
+  </data>
+  <data name="Hadith_TranslationHadithCount" xml:space="preserve">
+    <value>Traduzione Conte Hadith</value>
+  </data>
+  <data name="Hadith_TranslationHadithIndex" xml:space="preserve">
+    <value>Traduzione Hadith Index</value>
+  </data>
+  <data name="Hadith_TranslationMapping" xml:space="preserve">
+    <value>Mapping Traduzione</value>
+  </data>
+  <data name="Hadith_TranslationVolume" xml:space="preserve">
+    <value>Volume di traduzione</value>
+  </data>
+  <data name="Hadith_Volume" xml:space="preserve">
+    <value>Volume</value>
+  </data>
+  <data name="IslamSource_Apply" xml:space="preserve">
+    <value>Applicare</value>
+  </data>
+  <data name="IslamSource_ArabicAlphabet" xml:space="preserve">
+    <value>Alfabeto arabo</value>
+  </data>
+  <data name="IslamSource_ArabicToRoman" xml:space="preserve">
+    <value>Arabo a Roman</value>
+  </data>
+  <data name="IslamSource_Book" xml:space="preserve">
+    <value>Libro</value>
+  </data>
+  <data name="IslamSource_Collection" xml:space="preserve">
+    <value>Collezione</value>
+  </data>
+  <data name="IslamSource_Credits" xml:space="preserve">
+    <value>Credito per il testo Corano va al progetto Tanzil.</value>
+  </data>
+  <data name="IslamSource_Direction" xml:space="preserve">
+    <value>Direzione</value>
+  </data>
+  <data name="IslamSource_Disable" xml:space="preserve">
+    <value>Disattiva</value>
+  </data>
+  <data name="IslamSource_Display" xml:space="preserve">
+    <value>Visualizza</value>
+  </data>
+  <data name="IslamSource_Division" xml:space="preserve">
+    <value>Divisione</value>
+  </data>
+  <data name="IslamSource_DownloadMapping" xml:space="preserve">
+    <value>Scarica e Mapping</value>
+  </data>
+  <data name="IslamSource_EnglishRomanized" xml:space="preserve">
+    <value>English Romanized</value>
+  </data>
+  <data name="IslamSource_ExtendedBuckwalter" xml:space="preserve">
+    <value>Esteso Buckwalter</value>
+  </data>
+  <data name="IslamSource_Font" xml:space="preserve">
+    <value>Font</value>
+  </data>
+  <data name="IslamSource_Goal" xml:space="preserve">
+    <value>Questo sito ha l'obiettivo di fornire materiale di origine prima di Islam compreso il Corano, le collezioni di hadith, libri, informazioni sulla programmazione audio, video, news, vocabolario, sistemi di traslitterazione e.</value>
+  </data>
+  <data name="IslamSource_Hadiths" xml:space="preserve">
+    <value>Collezioni di hadith</value>
+  </data>
+  <data name="IslamSource_HadithSourceText" xml:space="preserve">
+    <value>Hadith testo sorgente</value>
+  </data>
+  <data name="IslamSource_Home" xml:space="preserve">
+    <value>Casa</value>
+  </data>
+  <data name="IslamSource_Information" xml:space="preserve">
+    <value>Informazioni</value>
+  </data>
+  <data name="IslamSource_Intro" xml:space="preserve">
+    <value>Hai domande o commenti o errori, scrivetemi a:</value>
+  </data>
+  <data name="IslamSource_Introduction" xml:space="preserve">
+    <value>Introduzione</value>
+  </data>
+  <data name="IslamSource_IslamicArticles" xml:space="preserve">
+    <value>Articoli islamici</value>
+  </data>
+  <data name="IslamSource_IslamicCharity" xml:space="preserve">
+    <value>Islamic Charity</value>
+  </data>
+  <data name="IslamSource_IslamicFoundations" xml:space="preserve">
+    <value>Fondazioni islamiche</value>
+  </data>
+  <data name="IslamSource_IslamicInformation" xml:space="preserve">
+    <value>Informazioni islamico</value>
+  </data>
+  <data name="IslamSource_IslamicNews" xml:space="preserve">
+    <value>Notizie islamico</value>
+  </data>
+  <data name="IslamSource_IslamicOrganizations" xml:space="preserve">
+    <value>Organizzazioni Islamiche</value>
+  </data>
+  <data name="IslamSource_IslamicQuotes" xml:space="preserve">
+    <value>Quotazioni islamici</value>
+  </data>
+  <data name="IslamSource_IslamicShops" xml:space="preserve">
+    <value>Negozi islamici</value>
+  </data>
+  <data name="IslamSource_IslamicWebsites" xml:space="preserve">
+    <value>Siti web islamici</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesAhlulBaytAcademy" xml:space="preserve">
+    <value>Ahlulbayt Academy</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesAlEman" xml:space="preserve">
+    <value>فصل: كتاب المقدمة | نداء الإيمان</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesAlHudaInternationalWelfareFoundation" xml:space="preserve">
+    <value>Al-Huda Internazionale Welfare Foundation</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesAllahsQuran" xml:space="preserve">
+    <value>Corano di Allah</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesCorpus" xml:space="preserve">
+    <value>Coranico arabo Corpus</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesCouncilAmericanIslamicRelations" xml:space="preserve">
+    <value>Council on American-Islamic</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesDarusSalamPublications" xml:space="preserve">
+    <value>Dar-us-Salam pubblicazioni</value>
+  </data>
+  <data name="IslamSource_IslamicWebsiteseMuslim" xml:space="preserve">
+    <value>eMuslim</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesGuidedWaysTechnologies" xml:space="preserve">
+    <value>Visite Ways Technologies</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesHouseQuran" xml:space="preserve">
+    <value>Casa del Corano</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesiQuran" xml:space="preserve">
+    <value>iQuran</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesIslamicCircleNorthAmerica" xml:space="preserve">
+    <value>Islamic Circle of America del Nord</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesIslamicFinder" xml:space="preserve">
+    <value>Islamic Finder</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesIslamicInsights" xml:space="preserve">
+    <value>Approfondimenti islamici</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesIslamicRelief" xml:space="preserve">
+    <value>Islamic Relief</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesIslamicReliefUSA" xml:space="preserve">
+    <value>Islamic Relief USA</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesIslamicSearchCenter" xml:space="preserve">
+    <value>Islamic Centro ricerche</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesIslamicSocietyNorthAmerica" xml:space="preserve">
+    <value>Società Islamica del Nord America</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesIslamicThinkersSociety" xml:space="preserve">
+    <value>Pensatori islamici Society</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesIslamSpirit" xml:space="preserve">
+    <value>Islam Spirit</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesKalamullah" xml:space="preserve">
+    <value>Kalamullah</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesMaktabahorgTheUltimateIslamicLibrary" xml:space="preserve">
+    <value>Maktabah.org The Ultimate Biblioteca islamica</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesOpenBurhan" xml:space="preserve">
+    <value>Aperto Burhan</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesProfessorAnsarian" xml:space="preserve">
+    <value>Il sito ufficiale del professor Ansarian</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesQuran" xml:space="preserve">
+    <value>Corano</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesQuranDownload" xml:space="preserve">
+    <value>Corano download</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesQuranExplorer" xml:space="preserve">
+    <value>Quran Explorer</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesQuranicAudio" xml:space="preserve">
+    <value>Coranica Audio</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesQuranProject" xml:space="preserve">
+    <value>Il Corano progetto online</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesQuranTransliteration" xml:space="preserve">
+    <value>Corano traslitterazione</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesSalah" xml:space="preserve">
+    <value>Salah</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesStudyQuran" xml:space="preserve">
+    <value>Studio Corano</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesSunnahCom" xml:space="preserve">
+    <value>Sunnah.com detti e gli insegnamenti del Profeta Muhammad (صلى الله عليه و سلم)</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesTanzil" xml:space="preserve">
+    <value>Tanzil - Quran Navigator</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesTheAbsoluteReality" xml:space="preserve">
+    <value>La Realtà Assoluta</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesTheAwaitedOneFoundation" xml:space="preserve">
+    <value>La One Foundation atteso</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesTheIslamicBulletin" xml:space="preserve">
+    <value>Il Bollettino islamico</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesTheIslamicFoundation" xml:space="preserve">
+    <value>La Fondazione islamica</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesTheLahoreAhmadiyyaMovement" xml:space="preserve">
+    <value>L'Ahmadiyya Movimento Lahore</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesTheLahoreAhmadiyyaMovementIslam" xml:space="preserve">
+    <value>La Lahore Ahmadiyya Movimento nell'Islam</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesUnderstandQuran" xml:space="preserve">
+    <value>Capire Corano</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesVerseByVerseQuran" xml:space="preserve">
+    <value>Versetto per versetto Corano</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesZakatFoundationAmerica" xml:space="preserve">
+    <value>Zakat Foundation of America</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesZekr" xml:space="preserve">
+    <value>Il Progetto Zekr</value>
+  </data>
+  <data name="IslamSource_LearningIslam" xml:space="preserve">
+    <value>Imparare l'Islam</value>
+  </data>
+  <data name="IslamSource_LetterSample" xml:space="preserve">
+    <value>La</value>
+  </data>
+  <data name="IslamSource_Loading" xml:space="preserve">
+    <value>Caricamento</value>
+  </data>
+  <data name="IslamSource_Lotus" xml:space="preserve">
+    <value>Loto</value>
+  </data>
+  <data name="IslamSource_Mapping" xml:space="preserve">
+    <value>Mapping</value>
+  </data>
+  <data name="IslamSource_NotableArticles" xml:space="preserve">
+    <value>Notevoli gli articoli</value>
+  </data>
+  <data name="IslamSource_NotableNews" xml:space="preserve">
+    <value>Notevole Notizie</value>
+  </data>
+  <data name="IslamSource_NotableQuotes" xml:space="preserve">
+    <value>Quotazioni notevoli</value>
+  </data>
+  <data name="IslamSource_Off" xml:space="preserve">
+    <value>Spento</value>
+  </data>
+  <data name="IslamSource_Operation" xml:space="preserve">
+    <value>Funzionamento</value>
+  </data>
+  <data name="IslamSource_Perform" xml:space="preserve">
+    <value>Eseguire</value>
+  </data>
+  <data name="IslamSource_PlainRoman" xml:space="preserve">
+    <value>Plain Roman</value>
+  </data>
+  <data name="IslamSource_PrayerTimes" xml:space="preserve">
+    <value>Tempi di preghiera</value>
+  </data>
+  <data name="IslamSource_QiblaDirectionFromTrueNorth" xml:space="preserve">
+    <value>Qibla Direzione Da True North</value>
+  </data>
+  <data name="IslamSource_Quote" xml:space="preserve">
+    <value>Citazione</value>
+  </data>
+  <data name="IslamSource_QuoteMode" xml:space="preserve">
+    <value>Modalità Citazione</value>
+  </data>
+  <data name="IslamSource_Quran" xml:space="preserve">
+    <value>Il Sacro Corano</value>
+  </data>
+  <data name="IslamSource_QuranResources" xml:space="preserve">
+    <value>Quran Risorse</value>
+  </data>
+  <data name="IslamSource_RomanToArabic" xml:space="preserve">
+    <value>Romana ad araba</value>
+  </data>
+  <data name="IslamSource_Scheme" xml:space="preserve">
+    <value>Schema</value>
+  </data>
+  <data name="IslamSource_Selection" xml:space="preserve">
+    <value>Selezione</value>
+  </data>
+  <data name="IslamSource_SubmissionNote" xml:space="preserve">
+    <value>Argomenti: raccolte di hadith fonte originale deve contenere un file di metadati XML contenente tutto il volume, libro, capitolo e le informazioni hadith e un file XML contenente il testo hadith crudo.</value>
+  </data>
+  <data name="IslamSource_Supplications" xml:space="preserve">
+    <value>Suppliche</value>
+  </data>
+  <data name="IslamSource_Text" xml:space="preserve">
+    <value>Testo</value>
+  </data>
+  <data name="IslamSource_Translation" xml:space="preserve">
+    <value>Traduzione</value>
+  </data>
+  <data name="IslamSource_Transliterate" xml:space="preserve">
+    <value>Traslitterare</value>
+  </data>
+  <data name="IslamSource_Transliteration" xml:space="preserve">
+    <value>Traslitterazione</value>
+  </data>
+  <data name="IslamSource_TransliterationScheme" xml:space="preserve">
+    <value>Schema di traslitterazione</value>
+  </data>
+  <data name="IslamSource_Viewer" xml:space="preserve">
+    <value>Spettatore</value>
+  </data>
+  <data name="IslamSource_Welcome" xml:space="preserve">
+    <value>Benvenuti a IslamSource.info</value>
+  </data>
+  <data name="IslamSource_ModifyDiacritics" xml:space="preserve">
+    <value>Modifica segni diacritici</value>
+  </data>
+  <data name="IslamSource_Add" xml:space="preserve">
+    <value>Aggiungere</value>
+  </data>
+  <data name="IslamSource_Remove" xml:space="preserve">
+    <value>Rimuovere</value>
+  </data>
+  <data name="IslamInfo_Chapters" xml:space="preserve">
+    <value>Capitoli</value>
+  </data>
+  <data name="IslamInfo_ChaptersRevelationOrder" xml:space="preserve">
+    <value>I capitoli nella rivelazione ordine</value>
+  </data>
+  <data name="IslamInfo_Groups" xml:space="preserve">
+    <value>Gruppi</value>
+  </data>
+  <data name="IslamInfo_ImportantSelections" xml:space="preserve">
+    <value>Selezioni Importanti</value>
+  </data>
+  <data name="IslamInfo_Pages" xml:space="preserve">
+    <value>Pagine</value>
+  </data>
+  <data name="IslamInfo_Parts" xml:space="preserve">
+    <value>Parts</value>
+  </data>
+  <data name="IslamInfo_Prostrations" xml:space="preserve">
+    <value>Prostrazioni</value>
+  </data>
+  <data name="IslamInfo_Sections" xml:space="preserve">
+    <value>Sezioni</value>
+  </data>
+  <data name="IslamInfo_Stations" xml:space="preserve">
+    <value>Stazioni</value>
+  </data>
+  <data name="lang_localam" xml:space="preserve">
+    <value>Amarico</value>
+  </data>
+  <data name="lang_localar" xml:space="preserve">
+    <value>Arabo</value>
+  </data>
+  <data name="lang_localaz" xml:space="preserve">
+    <value>Azero</value>
+  </data>
+  <data name="lang_localber" xml:space="preserve">
+    <value>Amazigh</value>
+  </data>
+  <data name="lang_localbg" xml:space="preserve">
+    <value>Bulgaro</value>
+  </data>
+  <data name="lang_localbn" xml:space="preserve">
+    <value>Bengalese</value>
+  </data>
+  <data name="lang_localbs" xml:space="preserve">
+    <value>Bosniaco</value>
+  </data>
+  <data name="lang_localcs" xml:space="preserve">
+    <value>Ceco</value>
+  </data>
+  <data name="lang_localde" xml:space="preserve">
+    <value>Tedesco</value>
+  </data>
+  <data name="lang_localdv" xml:space="preserve">
+    <value>Divehi</value>
+  </data>
+  <data name="lang_localen" xml:space="preserve">
+    <value>Inglese</value>
+  </data>
+  <data name="lang_locales" xml:space="preserve">
+    <value>Spagnolo</value>
+  </data>
+  <data name="lang_localfa" xml:space="preserve">
+    <value>Persiano</value>
+  </data>
+  <data name="lang_localfr" xml:space="preserve">
+    <value>Francese</value>
+  </data>
+  <data name="lang_localha" xml:space="preserve">
+    <value>Hausa</value>
+  </data>
+  <data name="lang_localhi" xml:space="preserve">
+    <value>Hindi</value>
+  </data>
+  <data name="lang_localid" xml:space="preserve">
+    <value>Indonesiano</value>
+  </data>
+  <data name="lang_localit" xml:space="preserve">
+    <value>Italiano</value>
+  </data>
+  <data name="lang_localja" xml:space="preserve">
+    <value>Giapponese</value>
+  </data>
+  <data name="lang_localko" xml:space="preserve">
+    <value>Coreano</value>
+  </data>
+  <data name="lang_localku" xml:space="preserve">
+    <value>Curdo</value>
+  </data>
+  <data name="lang_localml" xml:space="preserve">
+    <value>Malayalam</value>
+  </data>
+  <data name="lang_localms" xml:space="preserve">
+    <value>Malese</value>
+  </data>
+  <data name="lang_localnl" xml:space="preserve">
+    <value>Olandese</value>
+  </data>
+  <data name="lang_localno" xml:space="preserve">
+    <value>Norvegese</value>
+  </data>
+  <data name="lang_localpl" xml:space="preserve">
+    <value>Polacco</value>
+  </data>
+  <data name="lang_localpt" xml:space="preserve">
+    <value>Portoghese</value>
+  </data>
+  <data name="lang_localro" xml:space="preserve">
+    <value>Rumeno</value>
+  </data>
+  <data name="lang_localru" xml:space="preserve">
+    <value>Russo</value>
+  </data>
+  <data name="lang_localsd" xml:space="preserve">
+    <value>Sindhi</value>
+  </data>
+  <data name="lang_localso" xml:space="preserve">
+    <value>Somali</value>
+  </data>
+  <data name="lang_localsq" xml:space="preserve">
+    <value>Albanese</value>
+  </data>
+  <data name="lang_localsv" xml:space="preserve">
+    <value>Svedese</value>
+  </data>
+  <data name="lang_localsw" xml:space="preserve">
+    <value>Swahili</value>
+  </data>
+  <data name="lang_localta" xml:space="preserve">
+    <value>Tamil</value>
+  </data>
+  <data name="lang_localtg" xml:space="preserve">
+    <value>Tagiko</value>
+  </data>
+  <data name="lang_localth" xml:space="preserve">
+    <value>Thai</value>
+  </data>
+  <data name="lang_localtr" xml:space="preserve">
+    <value>Turco</value>
+  </data>
+  <data name="lang_localtt" xml:space="preserve">
+    <value>Tatar</value>
+  </data>
+  <data name="lang_localug" xml:space="preserve">
+    <value>Uigura</value>
+  </data>
+  <data name="lang_localur" xml:space="preserve">
+    <value>Urdu</value>
+  </data>
+  <data name="lang_localuz" xml:space="preserve">
+    <value>Uzbeko</value>
+  </data>
+  <data name="lang_localzh" xml:space="preserve">
+    <value>Cinese</value>
+  </data>
+  <data name="Acct_Download" xml:space="preserve">
+    <value>Scarica {0}</value>
+  </data>
+  <data name="IslamInfo_CelebrationDay" xml:space="preserve">
+    <value>Giorno di festa</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek1" xml:space="preserve">
+    <value>Domenica</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek2" xml:space="preserve">
+    <value>Lunedi</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek3" xml:space="preserve">
+    <value>Martedì</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek4" xml:space="preserve">
+    <value>Mercoledì</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek5" xml:space="preserve">
+    <value>Giovedi</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek6" xml:space="preserve">
+    <value>Venerdì</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek7" xml:space="preserve">
+    <value>Sabato</value>
+  </data>
+  <data name="IslamInfo_DaysOfWeek" xml:space="preserve">
+    <value>Giorni della Settimana</value>
+  </data>
+  <data name="IslamInfo_Disliked" xml:space="preserve">
+    <value>Malvisto</value>
+  </data>
+  <data name="IslamInfo_EnteringMosque" xml:space="preserve">
+    <value>Immissione di una moschea</value>
+  </data>
+  <data name="IslamInfo_Fasting" xml:space="preserve">
+    <value>Digiuno</value>
+  </data>
+  <data name="IslamInfo_FastingAfterFastingMonth" xml:space="preserve">
+    <value>Il digiuno 6 giorni in svolgimento mese</value>
+  </data>
+  <data name="IslamInfo_FastingBeforeFastingMonth" xml:space="preserve">
+    <value>Il digiuno prima del mese di digiuno</value>
+  </data>
+  <data name="IslamInfo_FastingBeginningPilgrimageMonth" xml:space="preserve">
+    <value>Il digiuno primi 9 giorni di pellegrinaggio mese</value>
+  </data>
+  <data name="IslamInfo_FastingDayOfArafa" xml:space="preserve">
+    <value>Il digiuno Giorno di Arafa</value>
+  </data>
+  <data name="IslamInfo_FastingDayOfAshura" xml:space="preserve">
+    <value>Il digiuno Giorno della Ashura</value>
+  </data>
+  <data name="IslamInfo_FastingMiddleLunarDays" xml:space="preserve">
+    <value>Il digiuno 13, 14 e 15 giorni lunari</value>
+  </data>
+  <data name="IslamInfo_FastingMondayThursday" xml:space="preserve">
+    <value>Il digiuno Lunedi e Giovedi</value>
+  </data>
+  <data name="IslamInfo_FastingMonth" xml:space="preserve">
+    <value>Mese di digiuno</value>
+  </data>
+  <data name="IslamInfo_FastingMonthPrayer" xml:space="preserve">
+    <value>Mese di digiuno di preghiera</value>
+  </data>
+  <data name="IslamInfo_Fear" xml:space="preserve">
+    <value>Paura</value>
+  </data>
+  <data name="IslamInfo_Forbidden" xml:space="preserve">
+    <value>Vietato</value>
+  </data>
+  <data name="IslamInfo_Friday" xml:space="preserve">
+    <value>Venerdì</value>
+  </data>
+  <data name="IslamInfo_Fulfilling" xml:space="preserve">
+    <value>Adempiere</value>
+  </data>
+  <data name="IslamInfo_Funeral" xml:space="preserve">
+    <value>Funerale</value>
+  </data>
+  <data name="IslamInfo_Guidance" xml:space="preserve">
+    <value>Guida</value>
+  </data>
+  <data name="IslamInfo_Jurisprudence" xml:space="preserve">
+    <value>Giurisprudenza</value>
+  </data>
+  <data name="IslamInfo_LateNight" xml:space="preserve">
+    <value>Late night</value>
+  </data>
+  <data name="IslamInfo_LunarEclipse" xml:space="preserve">
+    <value>Eclissi lunare</value>
+  </data>
+  <data name="IslamInfo_Month1" xml:space="preserve">
+    <value>Quella proibita</value>
+  </data>
+  <data name="IslamInfo_Month10" xml:space="preserve">
+    <value>Portare</value>
+  </data>
+  <data name="IslamInfo_Month11" xml:space="preserve">
+    <value>Uno di tregua</value>
+  </data>
+  <data name="IslamInfo_Month12" xml:space="preserve">
+    <value>Uno di pellegrinaggio</value>
+  </data>
+  <data name="IslamInfo_Month2" xml:space="preserve">
+    <value>Vuoto</value>
+  </data>
+  <data name="IslamInfo_Month3" xml:space="preserve">
+    <value>First Spring</value>
+  </data>
+  <data name="IslamInfo_Month4" xml:space="preserve">
+    <value>Second Spring</value>
+  </data>
+  <data name="IslamInfo_Month5" xml:space="preserve">
+    <value>Primo Mese di Parched Terra</value>
+  </data>
+  <data name="IslamInfo_Month6" xml:space="preserve">
+    <value>Secondo mese di Parched Terra</value>
+  </data>
+  <data name="IslamInfo_Month7" xml:space="preserve">
+    <value>Rispetto</value>
+  </data>
+  <data name="IslamInfo_Month8" xml:space="preserve">
+    <value>Sparpagliato</value>
+  </data>
+  <data name="IslamInfo_Month9" xml:space="preserve">
+    <value>Scorched</value>
+  </data>
+  <data name="IslamInfo_MorningLight" xml:space="preserve">
+    <value>Luce del mattino</value>
+  </data>
+  <data name="IslamInfo_Necessary" xml:space="preserve">
+    <value>Necessario</value>
+  </data>
+  <data name="IslamInfo_Neutral" xml:space="preserve">
+    <value>Neutro</value>
+  </data>
+  <data name="IslamInfo_ObligationOfSufficiency" xml:space="preserve">
+    <value>Obbligo di Sufficienza</value>
+  </data>
+  <data name="IslamInfo_ObligationOfTheSelf" xml:space="preserve">
+    <value>Obbligo del Sé</value>
+  </data>
+  <data name="IslamInfo_Obligatory" xml:space="preserve">
+    <value>Obbligatorio</value>
+  </data>
+  <data name="IslamInfo_Odd" xml:space="preserve">
+    <value>Dispari</value>
+  </data>
+  <data name="IslamInfo_OftReturning" xml:space="preserve">
+    <value>Oft-ritorno</value>
+  </data>
+  <data name="IslamInfo_Permissible" xml:space="preserve">
+    <value>Ammissibile</value>
+  </data>
+  <data name="IslamInfo_Prayer" xml:space="preserve">
+    <value>Preghiera</value>
+  </data>
+  <data name="IslamInfo_PrayTime6" xml:space="preserve">
+    <value>Astensione</value>
+  </data>
+  <data name="IslamInfo_PrayTime7" xml:space="preserve">
+    <value>Alba</value>
+  </data>
+  <data name="IslamInfo_PrayTime8" xml:space="preserve">
+    <value>Tramonto Calcolato</value>
+  </data>
+  <data name="IslamInfo_PrayTime9" xml:space="preserve">
+    <value>Mezzanotte</value>
+  </data>
+  <data name="IslamInfo_PrayTime1" xml:space="preserve">
+    <value>Alba</value>
+  </data>
+  <data name="IslamInfo_PrayTime2" xml:space="preserve">
+    <value>Mezzogiorno</value>
+  </data>
+  <data name="IslamInfo_PrayTime3" xml:space="preserve">
+    <value>Pomeriggio</value>
+  </data>
+  <data name="IslamInfo_PrayTime4" xml:space="preserve">
+    <value>Tramonto</value>
+  </data>
+  <data name="IslamInfo_PrayTime5" xml:space="preserve">
+    <value>Notte</value>
+  </data>
+  <data name="IslamInfo_PrescribedTime" xml:space="preserve">
+    <value>Tempo prescritto</value>
+  </data>
+  <data name="IslamInfo_RainForDraught" xml:space="preserve">
+    <value>Pioggia di progetto</value>
+  </data>
+  <data name="IslamInfo_Recommended" xml:space="preserve">
+    <value>Raccomandato</value>
+  </data>
+  <data name="IslamInfo_SacredState" xml:space="preserve">
+    <value>Stato Sacred</value>
+  </data>
+  <data name="IslamInfo_SolarEclipse" xml:space="preserve">
+    <value>Eclissi solare</value>
+  </data>
+  <data name="IslamInfo_Sunrise" xml:space="preserve">
+    <value>Alba</value>
+  </data>
+  <data name="IslamInfo_Supererogatory" xml:space="preserve">
+    <value>Troppo zelante</value>
+  </data>
+  <data name="IslamInfo_Tradition" xml:space="preserve">
+    <value>Tradizione</value>
+  </data>
+  <data name="IslamInfo_TraditionObligatory" xml:space="preserve">
+    <value>Tradizione obbligatorio</value>
+  </data>
+  <data name="IslamInfo_TraditionVoluntary" xml:space="preserve">
+    <value>Tradizione volontario</value>
+  </data>
+  <data name="IslamInfo_Travel" xml:space="preserve">
+    <value>Viaggi</value>
+  </data>
+  <data name="IslamInfo_Victory" xml:space="preserve">
+    <value>Vittoria</value>
+  </data>
+  <data name="IslamInfo_Aaron" xml:space="preserve">
+    <value>Aaron</value>
+  </data>
+  <data name="IslamInfo_Ablution" xml:space="preserve">
+    <value>Abluzione</value>
+  </data>
+  <data name="IslamInfo_Abraham" xml:space="preserve">
+    <value>Abraham</value>
+  </data>
+  <data name="IslamInfo_Adam" xml:space="preserve">
+    <value>Adamo</value>
+  </data>
+  <data name="IslamInfo_AfterCallToPrayerFirstPart" xml:space="preserve">
+    <value>Dopo la chiamata alla preghiera - prima parte</value>
+  </data>
+  <data name="IslamInfo_AfterCallToPrayerFirstPartTrans" xml:space="preserve">
+    <value>O Allah, Signore del presente bando completo e la nostra preghiera</value>
+  </data>
+  <data name="IslamInfo_AfterCallToPrayerFirstPartWordByWord" xml:space="preserve">
+    <value>O Allah | Signore | della | chiamare | completo | e di preghiera | nostra</value>
+  </data>
+  <data name="IslamInfo_AfterCallToPrayerSecondPart" xml:space="preserve">
+    <value>Dopo la chiamata alla preghiera - seconda parte</value>
+  </data>
+  <data name="IslamInfo_AfterCallToPrayerSecondPartTrans" xml:space="preserve">
+    <value>Dare a Muhammad suoi diritti di intercessione e di virtù</value>
+  </data>
+  <data name="IslamInfo_AfterCallToPrayerSecondPartWordByWord" xml:space="preserve">
+    <value>Dare | di Muhammad | suoi diritti di intercessione | e virtù</value>
+  </data>
+  <data name="IslamInfo_AfterCallToPrayerSupplication" xml:space="preserve">
+    <value>Dopo la chiamata alla preghiera Supplica</value>
+  </data>
+  <data name="IslamInfo_AfterCallToPrayerThirdPart" xml:space="preserve">
+    <value>Dopo la chiamata alla preghiera - terza parte</value>
+  </data>
+  <data name="IslamInfo_AfterCallToPrayerThirdPartTrans" xml:space="preserve">
+    <value>E lo risusciterò al rango elevato che lo hai promesso</value>
+  </data>
+  <data name="IslamInfo_AfterCallToPrayerThirdPartWordByWord" xml:space="preserve">
+    <value>E lo risusciterò | al rango | elevata | che | che gli hai promesso</value>
+  </data>
+  <data name="IslamInfo_Allah" xml:space="preserve">
+    <value>L'unico Dio</value>
+  </data>
+  <data name="IslamInfo_AllahIsGreatest" xml:space="preserve">
+    <value>Allah è più grande</value>
+  </data>
+  <data name="IslamInfo_AllPraiseAndThanksBeToAllah" xml:space="preserve">
+    <value>Tutte le lodi e grazie ad Allah</value>
+  </data>
+  <data name="IslamInfo_AlmsGiving" xml:space="preserve">
+    <value>Elemosina</value>
+  </data>
+  <data name="IslamInfo_AndUponYouBePeace" xml:space="preserve">
+    <value>E su di te sia pace</value>
+  </data>
+  <data name="IslamInfo_ArabicTypesetting" xml:space="preserve">
+    <value>Impaginazione arabo</value>
+  </data>
+  <data name="IslamInfo_Arial" xml:space="preserve">
+    <value>Arial</value>
+  </data>
+  <data name="IslamInfo_BeforeTravel" xml:space="preserve">
+    <value>Prima del viaggio</value>
+  </data>
+  <data name="IslamInfo_BeforeTravelTrans" xml:space="preserve">
+    <value>Con la presente vi lascio con questa religione Amanah (responsabilità) e il vostro atto precedente per Allah.</value>
+  </data>
+  <data name="IslamInfo_BeforeTravelWordByWord" xml:space="preserve">
+    <value>Con la presente vi lascio | Allah | con questa religione | e cosa | responsabilità | e precedenti | atto</value>
+  </data>
+  <data name="IslamInfo_BowOfPrayer" xml:space="preserve">
+    <value>Arco di preghiera</value>
+  </data>
+  <data name="IslamInfo_CallToBeginPrayerSixthVerse" xml:space="preserve">
+    <value>Chiama per iniziare la preghiera - sesto verso</value>
+  </data>
+  <data name="IslamInfo_CallToBeginPrayerSixthVerseTrans" xml:space="preserve">
+    <value>Infatti ha iniziato la preghiera</value>
+  </data>
+  <data name="IslamInfo_CallToBeginPrayerSixthVerseWordByWord" xml:space="preserve">
+    <value>Infatti | ha iniziato | la preghiera</value>
+  </data>
+  <data name="IslamInfo_CallToBeginThePrayer" xml:space="preserve">
+    <value>Chiamare per iniziare la preghiera</value>
+  </data>
+  <data name="IslamInfo_CallToPrayer" xml:space="preserve">
+    <value>Invito alla preghiera</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerEighthVerse" xml:space="preserve">
+    <value>Invito alla preghiera - ottavo versetto</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerEighthVerseTrans" xml:space="preserve">
+    <value>Non c'è Dio all'infuori di Allah</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerEighthVerseWordByWord" xml:space="preserve">
+    <value>Non c'è | Dio | salvo | Allah</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerFifthVerse" xml:space="preserve">
+    <value>Invito alla preghiera - quinto verso</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerFifthVerseTrans" xml:space="preserve">
+    <value>Venite al successo</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerFifthVerseWordByWord" xml:space="preserve">
+    <value>Vieni | a | successo</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerFirstVerse" xml:space="preserve">
+    <value>Invito alla preghiera - prima strofa</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerFirstVerseTrans" xml:space="preserve">
+    <value>Allah è più grande</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerFirstVerseWordByWord" xml:space="preserve">
+    <value>Allah è | grande</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerFourthVerse" xml:space="preserve">
+    <value>Invito alla preghiera - quarta strofa</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerFourthVerseTrans" xml:space="preserve">
+    <value>Venite alla preghiera</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerFourthVerseWordByWord" xml:space="preserve">
+    <value>Vieni | a | preghiera</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerLeader" xml:space="preserve">
+    <value>Chiama per il leader preghiera</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerSecondVerse" xml:space="preserve">
+    <value>Invito alla preghiera - seconda strofa</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerSecondVerseTrans" xml:space="preserve">
+    <value>Testimonio che non c'è Dio all'infuori di Allah</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerSecondVerseWordByWord" xml:space="preserve">
+    <value>Attesto | che | non c'è | Dio | eccezione | Allah</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerSeventhVerse" xml:space="preserve">
+    <value>Invito alla preghiera - settima strofa</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerSeventhVerseTrans" xml:space="preserve">
+    <value>Allah è più grande</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerSeventhVerseWordByWord" xml:space="preserve">
+    <value>Allah è | grande</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerSixthVerse" xml:space="preserve">
+    <value>Invito alla preghiera - sesto verso</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerSixthVerseTrans" xml:space="preserve">
+    <value>La preghiera è migliore del sonno</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerSixthVerseWordByWord" xml:space="preserve">
+    <value>La preghiera è | migliore | di | dormire</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerThirdVerse" xml:space="preserve">
+    <value>Invito alla preghiera - terza strofa</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerThirdVerseTrans" xml:space="preserve">
+    <value>Io testimonio che Muhammad è il messaggero di Allah</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerThirdVerseWordByWord" xml:space="preserve">
+    <value>Attesto | che | Muhammad è | il messaggero | di Allah</value>
+  </data>
+  <data name="IslamInfo_Chapter" xml:space="preserve">
+    <value>Capitolo</value>
+  </data>
+  <data name="IslamInfo_Creed" xml:space="preserve">
+    <value>Credo</value>
+  </data>
+  <data name="IslamInfo_Custom" xml:space="preserve">
+    <value>Costume</value>
+  </data>
+  <data name="IslamInfo_David" xml:space="preserve">
+    <value>David</value>
+  </data>
+  <data name="IslamInfo_Default" xml:space="preserve">
+    <value>Difetto</value>
+  </data>
+  <data name="IslamInfo_DirectionOfprayer" xml:space="preserve">
+    <value>Direzione di preghiera</value>
+  </data>
+  <data name="IslamInfo_Dissertation" xml:space="preserve">
+    <value>Dissertazione</value>
+  </data>
+  <data name="IslamInfo_Eber" xml:space="preserve">
+    <value>Eber</value>
+  </data>
+  <data name="IslamInfo_Elijah" xml:space="preserve">
+    <value>Elia</value>
+  </data>
+  <data name="IslamInfo_Elisha" xml:space="preserve">
+    <value>Eliseo</value>
+  </data>
+  <data name="IslamInfo_Enoch" xml:space="preserve">
+    <value>Enoch</value>
+  </data>
+  <data name="IslamInfo_EnteringMasjidilHaram" xml:space="preserve">
+    <value>Entrando Masjidil Haram</value>
+  </data>
+  <data name="IslamInfo_EnteringMasjidilHaramTrans" xml:space="preserve">
+    <value>O Allah!</value>
+  </data>
+  <data name="IslamInfo_EnteringMasjidilHaramWordByWord" xml:space="preserve">
+    <value>O Allah | Tu sei | pace | e da Te | pace | ci fanno vivere | Nostro Signore | pace | e farci entrare | Paradise | La Casa | della Pace | Proprietario d'Onore | Nostro Signore | e Majesty | Thou</value>
+  </data>
+  <data name="IslamInfo_Ezekiel" xml:space="preserve">
+    <value>Ezechiele</value>
+  </data>
+  <data name="IslamInfo_FifthCreed" xml:space="preserve">
+    <value>Quinto creed - La parola della Penitenza (Astaghfar)</value>
+  </data>
+  <data name="IslamInfo_FifthCreedTrans" xml:space="preserve">
+    <value>Io cerco il perdono di Allah, mio ​​Signore, da ogni peccato ho commesso consapevolmente o inconsapevolmente, segretamente o apertamente, e mi volto verso di Lui dal peccato che io conosco e dal peccato che io non lo so.</value>
+  </data>
+  <data name="IslamInfo_FifthCreedWordByWord" xml:space="preserve">
+    <value>Io cerco il perdono | Allah | mio Signore | da | ogni | peccato | I commesso | consapevolmente | o | unknowningly | segretamente | o | apertamente | e mi volto verso | Lui | da | peccato | che | so | e da</value>
+  </data>
+  <data name="IslamInfo_FirstCreed" xml:space="preserve">
+    <value>In primo luogo credo - La Parola di Purezza (Tayyabah)</value>
+  </data>
+  <data name="IslamInfo_FirstCreedTrans" xml:space="preserve">
+    <value>Non c'è Dio se non Allah Muhammad è il Messaggero di Allah.</value>
+  </data>
+  <data name="IslamInfo_FirstCreedWordByWord" xml:space="preserve">
+    <value>Non c'è | Dio | salvo | Allah | Muhammad | Messenger | Allah</value>
+  </data>
+  <data name="IslamInfo_FortyOurLordSupplications" xml:space="preserve">
+    <value>40 Nostro Signore Supplications</value>
+  </data>
+  <data name="IslamInfo_FourthCreed" xml:space="preserve">
+    <value>Quarto creed - La parola di Unity (Tauhid)</value>
+  </data>
+  <data name="IslamInfo_FourthCreedTrans" xml:space="preserve">
+    <value>(C'è) nessuno degno di culto tranne Allah.</value>
+  </data>
+  <data name="IslamInfo_FourthCreedWordByWord" xml:space="preserve">
+    <value>Non c'è | Dio | salvo | Allah | solo | no | partner | è Lui | Per lui | Italia | e per lui | Praise | Egli dà vita | e porta la morte | Egli è | sempre viva | non | in grado di</value>
+  </data>
+  <data name="IslamInfo_GloryBeToAllah" xml:space="preserve">
+    <value>Gloria ad Allah</value>
+  </data>
+  <data name="IslamInfo_IhramPrayerSupplication" xml:space="preserve">
+    <value>Ihram preghiera Supplica</value>
+  </data>
+  <data name="IslamInfo_IhramPrayerSupplicationTrans" xml:space="preserve">
+    <value>In nome di Allah, il Compassionevole, il Misericordioso!</value>
+  </data>
+  <data name="IslamInfo_IhramPrayerSupplicationWordByWord" xml:space="preserve">
+    <value>In nome di | Allah | il Compassionevole | il Misericordioso | Allah | è il più grande | Allah | è il più grande | Allah | è il più grande | come perfetto | Si | colui che ha messo | l'(trasporti) |</value>
+  </data>
+  <data name="IslamInfo_Imam" xml:space="preserve">
+    <value>Leader spirituale</value>
+  </data>
+  <data name="IslamInfo_IntentionForIhramPrayer" xml:space="preserve">
+    <value>Intenzione di preghiera Ihram</value>
+  </data>
+  <data name="IslamInfo_IntentionForIhramPrayerTrans" xml:space="preserve">
+    <value>Ho intenzione di fare un Niat (due rakaat Sunat Ihram Preghiera) per Allah.</value>
+  </data>
+  <data name="IslamInfo_IntentionForIhramPrayerWordByWord" xml:space="preserve">
+    <value>Offro | consigliato | Ihram Prayer | due rakat | per Allah | il più alto</value>
+  </data>
+  <data name="IslamInfo_IntentionForIhramShower" xml:space="preserve">
+    <value>Intenzione per doccia Ihram</value>
+  </data>
+  <data name="IslamInfo_IntentionForIhramShowerTrans" xml:space="preserve">
+    <value>Intendo bagno (per doccia Ihram consigliata) per Allah.</value>
+  </data>
+  <data name="IslamInfo_IntentionForIhramShowerWordByWord" xml:space="preserve">
+    <value>Intendo | da bagno | consigliato | Doccia Ihram | per Allah | il più alto</value>
+  </data>
+  <data name="IslamInfo_IntentionForJourneyPrayer" xml:space="preserve">
+    <value>Intenzione di preghiera viaggio</value>
+  </data>
+  <data name="IslamInfo_IntentionForJourneyPrayerTrans" xml:space="preserve">
+    <value>Ho intenzione di fare un Niat (due rakaat Sunat Safar Preghiera) per Allah.</value>
+  </data>
+  <data name="IslamInfo_IntentionForJourneyPrayerWordByWord" xml:space="preserve">
+    <value>Offro | consigliato | Safar preghiera | due rakat | per Allah | il più alto</value>
+  </data>
+  <data name="IslamInfo_IntentionForJourneyShower" xml:space="preserve">
+    <value>Intenzione per doccia viaggio</value>
+  </data>
+  <data name="IslamInfo_IntentionForJourneyShowerTrans" xml:space="preserve">
+    <value>Intendo bagno (per doccia consigliato Musafir) per Allah.</value>
+  </data>
+  <data name="IslamInfo_IntentionForJourneyShowerWordByWord" xml:space="preserve">
+    <value>Intendo | da bagno | Doccia Musafir | consigliato | per Allah | il più alto</value>
+  </data>
+  <data name="IslamInfo_IntentionToPerformUmrah" xml:space="preserve">
+    <value>Intenzione di eseguire Umrah</value>
+  </data>
+  <data name="IslamInfo_IntentionToPerformUmrahTrans" xml:space="preserve">
+    <value>O Allah, mi risponde sulla tua chiamata a fare Umra, O Allah, io faccio Umrah e Ihram per Umrah per te.</value>
+  </data>
+  <data name="IslamInfo_IntentionToPerformUmrahWordByWord" xml:space="preserve">
+    <value>Intendo | Umrah | e Ihram | solo | per Allah | il più alto</value>
+  </data>
+  <data name="IslamInfo_InTheNameOfAllah" xml:space="preserve">
+    <value>Nel nome di Allah</value>
+  </data>
+  <data name="IslamInfo_Isaac" xml:space="preserve">
+    <value>Isaac</value>
+  </data>
+  <data name="IslamInfo_Ishmael" xml:space="preserve">
+    <value>Ishmael</value>
+  </data>
+  <data name="IslamInfo_Islam" xml:space="preserve">
+    <value>Presentazione</value>
+  </data>
+  <data name="IslamInfo_IslamicWords" xml:space="preserve">
+    <value>Parole islamici</value>
+  </data>
+  <data name="IslamInfo_Jacob" xml:space="preserve">
+    <value>Giacobbe</value>
+  </data>
+  <data name="IslamInfo_Jesus" xml:space="preserve">
+    <value>Gesù</value>
+  </data>
+  <data name="IslamInfo_Jethro" xml:space="preserve">
+    <value>Jethro</value>
+  </data>
+  <data name="IslamInfo_Job" xml:space="preserve">
+    <value>Lavoro</value>
+  </data>
+  <data name="IslamInfo_JohnTheBaptist" xml:space="preserve">
+    <value>Giovanni il Battista</value>
+  </data>
+  <data name="IslamInfo_Jonas" xml:space="preserve">
+    <value>Jonas</value>
+  </data>
+  <data name="IslamInfo_Joseph" xml:space="preserve">
+    <value>Joseph</value>
+  </data>
+  <data name="IslamInfo_Judge" xml:space="preserve">
+    <value>Giudice</value>
+  </data>
+  <data name="IslamInfo_KFGQPCNaskh" xml:space="preserve">
+    <value>KFGQPC Naskh</value>
+  </data>
+  <data name="IslamInfo_Law" xml:space="preserve">
+    <value>Legge</value>
+  </data>
+  <data name="IslamInfo_Lot" xml:space="preserve">
+    <value>Lotto</value>
+  </data>
+  <data name="IslamInfo_MajorAblution" xml:space="preserve">
+    <value>Maggiore abluzione</value>
+  </data>
+  <data name="IslamInfo_MalikMuwatta" xml:space="preserve">
+    <value>Muwatta di Malik</value>
+  </data>
+  <data name="IslamInfo_MeQuran" xml:space="preserve">
+    <value>Me-Quran</value>
+  </data>
+  <data name="IslamInfo_Messenger" xml:space="preserve">
+    <value>Messaggero</value>
+  </data>
+  <data name="IslamInfo_Months" xml:space="preserve">
+    <value>Mesi</value>
+  </data>
+  <data name="IslamInfo_Moses" xml:space="preserve">
+    <value>Mosé</value>
+  </data>
+  <data name="IslamInfo_MSUighur" xml:space="preserve">
+    <value>MS Uighur</value>
+  </data>
+  <data name="IslamInfo_Muhammad" xml:space="preserve">
+    <value>Muhammad</value>
+  </data>
+  <data name="IslamInfo_Muslim" xml:space="preserve">
+    <value>Uno che sostiene</value>
+  </data>
+  <data name="IslamInfo_NamesOfAllah" xml:space="preserve">
+    <value>I nomi di Allah</value>
+  </data>
+  <data name="IslamInfo_Noah" xml:space="preserve">
+    <value>Noè</value>
+  </data>
+  <data name="IslamInfo_OnenessOfGod" xml:space="preserve">
+    <value>Unicità di Dio</value>
+  </data>
+  <data name="IslamInfo_Part" xml:space="preserve">
+    <value>Parte</value>
+  </data>
+  <data name="IslamInfo_PDMSSaleem" xml:space="preserve">
+    <value>PDMS Saleem</value>
+  </data>
+  <data name="IslamInfo_PeaceBeUponYou" xml:space="preserve">
+    <value>La pace sia su di voi</value>
+  </data>
+  <data name="IslamInfo_PhraseForAllahIsGreatest" xml:space="preserve">
+    <value>Frase Allah è grande</value>
+  </data>
+  <data name="IslamInfo_PhraseForAllPraiseAndThanksBeToAllah" xml:space="preserve">
+    <value>Frase per ogni lode e grazie ad Allah</value>
+  </data>
+  <data name="IslamInfo_PhraseForGloryBeToAllah" xml:space="preserve">
+    <value>Frase di gloria ad Allah</value>
+  </data>
+  <data name="IslamInfo_PhraseForInTheNameOfAllah" xml:space="preserve">
+    <value>Frase nel nome di Allah</value>
+  </data>
+  <data name="IslamInfo_Pilgrimage" xml:space="preserve">
+    <value>Pellegrinaggio</value>
+  </data>
+  <data name="IslamInfo_Prayers" xml:space="preserve">
+    <value>Preghiere</value>
+  </data>
+  <data name="IslamInfo_PrayerTimes" xml:space="preserve">
+    <value>Momenti di preghiera</value>
+  </data>
+  <data name="IslamInfo_ProperPronunciationDuringRecitation" xml:space="preserve">
+    <value>Pronuncia corretta durante la recitazione</value>
+  </data>
+  <data name="IslamInfo_Prophet" xml:space="preserve">
+    <value>Profeta</value>
+  </data>
+  <data name="IslamInfo_Prophets" xml:space="preserve">
+    <value>Profeti</value>
+  </data>
+  <data name="IslamInfo_Prostrating" xml:space="preserve">
+    <value>Prostrandosi</value>
+  </data>
+  <data name="IslamInfo_Prostration" xml:space="preserve">
+    <value>Prostrazione</value>
+  </data>
+  <data name="IslamInfo_PurificationOfTheSoul" xml:space="preserve">
+    <value>Purificazione dell'anima</value>
+  </data>
+  <data name="IslamInfo_PurificationOfTheSoulTrans" xml:space="preserve">
+    <value>O Allah, concedere la mia anima la sua pietà e purificarlo, Tu sei il migliore per purificarla, Tu sei il suo guardiano e maestro.</value>
+  </data>
+  <data name="IslamInfo_PurificationOfTheSoulWordByWord" xml:space="preserve">
+    <value>O Allah | You Give | My Soul | La Pietà | E Tu purificarlo | You (Alone) | I migliori | Chi | purifica | You (Alone) | Il Guardiano | e il suo padrone</value>
+  </data>
+  <data name="IslamInfo_PurificationSupplication" xml:space="preserve">
+    <value>Purificazione Supplica</value>
+  </data>
+  <data name="IslamInfo_Remembrance" xml:space="preserve">
+    <value>Ricordo</value>
+  </data>
+  <data name="IslamInfo_RevelationOfAllah" xml:space="preserve">
+    <value>Rivelazione di Allah</value>
+  </data>
+  <data name="IslamInfo_RevelationOfAllahInBookForm" xml:space="preserve">
+    <value>Rivelazione di Allah in forma di libro</value>
+  </data>
+  <data name="IslamInfo_RiyadhSaaliheen" xml:space="preserve">
+    <value>Riyadh al-Saaliheen</value>
+  </data>
+  <data name="IslamInfo_SahihBukhari" xml:space="preserve">
+    <value>Sahih al-Bukhari</value>
+  </data>
+  <data name="IslamInfo_SahihMuslim" xml:space="preserve">
+    <value>Sahih Muslim</value>
+  </data>
+  <data name="IslamInfo_SakkalMajalla" xml:space="preserve">
+    <value>Sakkal Majalla</value>
+  </data>
+  <data name="IslamInfo_SalawatSupplicationAfterTalbiah" xml:space="preserve">
+    <value>Salawat Supplica dopo Talbiah</value>
+  </data>
+  <data name="IslamInfo_SalawatSupplicationAfterTalbiahTrans" xml:space="preserve">
+    <value>O Allah benedica il nostro maestro Muhammad e la sua famiglia proprio come hai benedetto il nostro padrone Abramo e santificare il nostro maestro Muhammad e la famiglia di Muhammad come vi santifichi il nostro padrone Abramo e la famiglia di Abramo in tutti i mondi per Tu sei il Degno di lode il Potente.</value>
+  </data>
+  <data name="IslamInfo_SalawatSupplicationAfterTalbiahWordByWord" xml:space="preserve">
+    <value>O Allah | inviare saluti | su | Master | Muhammad | e su | la famiglia del | comandante | Muhammad | come | si inviano saluti | su | Abraham | e su | la famiglia di | Abraham | e inviare benedizioni | su | Master</value>
+  </data>
+  <data name="IslamInfo_Saleh" xml:space="preserve">
+    <value>Saleh</value>
+  </data>
+  <data name="IslamInfo_Scheherazade" xml:space="preserve">
+    <value>Scheherazade</value>
+  </data>
+  <data name="IslamInfo_SchoolOfJurisprudence" xml:space="preserve">
+    <value>Facoltà di giurisprudenza</value>
+  </data>
+  <data name="IslamInfo_SecondCreed" xml:space="preserve">
+    <value>In secondo luogo credo - La parola della testimonianza (Shahaadat)</value>
+  </data>
+  <data name="IslamInfo_SecondCreedTrans" xml:space="preserve">
+    <value>Rendo testimonianza che nessuno è degno di culto tranne Allah, solo l'Unico, senza associati, e testimonio che Muhammad è il Suo servo e Messaggero.</value>
+  </data>
+  <data name="IslamInfo_SecondCreedWordByWord" xml:space="preserve">
+    <value>Rendo testimonianza | che | non c'è | Dio | salvo | Allah | solo | no | partner | è Lui | Io e testimoniare | che | Muhammad | Suo servo | e Messenger</value>
+  </data>
+  <data name="IslamInfo_SixthCreed" xml:space="preserve">
+    <value>Sesta creed - Le parole di rigetto incredulità (Rud-A-Küffer)</value>
+  </data>
+  <data name="IslamInfo_SixthCreedTrans" xml:space="preserve">
+    <value>O Allah!</value>
+  </data>
+  <data name="IslamInfo_SixthCreedWordByWord" xml:space="preserve">
+    <value>O Allah | Certamente | cerco di protezione | con You | da | che | associo collaborare con voi | nulla | e | so | it | e cerco il perdono da te | per che | non | so | it | mi sono pentito</value>
+  </data>
+  <data name="IslamInfo_Solomon" xml:space="preserve">
+    <value>Salomone</value>
+  </data>
+  <data name="IslamInfo_Station" xml:space="preserve">
+    <value>Stazione</value>
+  </data>
+  <data name="IslamInfo_SunanAbuDawood" xml:space="preserve">
+    <value>Sunan Abu Dawood</value>
+  </data>
+  <data name="IslamInfo_SunanIbnMaja" xml:space="preserve">
+    <value>Sunan Ibn Maja</value>
+  </data>
+  <data name="IslamInfo_SunanNasai" xml:space="preserve">
+    <value>Sunan un-Nasa'i Al-Sughra</value>
+  </data>
+  <data name="IslamInfo_SunanTirmidhi" xml:space="preserve">
+    <value>Sunan al-Tirmidhi</value>
+  </data>
+  <data name="IslamInfo_Supplication" xml:space="preserve">
+    <value>Supplica</value>
+  </data>
+  <data name="IslamInfo_SupplicationAfterSalawatSupplication" xml:space="preserve">
+    <value>Supplica dopo Salawat Supplica</value>
+  </data>
+  <data name="IslamInfo_SupplicationAfterSalawatSupplicationTrans" xml:space="preserve">
+    <value>O Allah!</value>
+  </data>
+  <data name="IslamInfo_SupplicationAfterSalawatSupplicationWordByWord" xml:space="preserve">
+    <value>O Allah | anzi | cerco da Te | benedizioni Thou | e Paradise | mi rifugio in Te | da | rabbia | e l'Inferno.</value>
+  </data>
+  <data name="IslamInfo_SupplicationForArrivingAtMakkah" xml:space="preserve">
+    <value>Supplica per arrivare alla Mecca</value>
+  </data>
+  <data name="IslamInfo_SupplicationForArrivingAtMakkahTrans" xml:space="preserve">
+    <value>O Dio!</value>
+  </data>
+  <data name="IslamInfo_SupplicationForArrivingAtMakkahWordByWord" xml:space="preserve">
+    <value>O Allah | veramente | questa | santuario è | tuo Sacro Place | e questa Città Santa è | Tua Città | e therin pace è | Thy Peace | Poi guardi me | da | Inferno di fuoco | e salvami | da | Thy punizioni | su</value>
+  </data>
+  <data name="IslamInfo_Talbiah" xml:space="preserve">
+    <value>Talbiah</value>
+  </data>
+  <data name="IslamInfo_TalbiahTrans" xml:space="preserve">
+    <value>Ho risposto a Te, Dio mio!</value>
+  </data>
+  <data name="IslamInfo_TalbiahWordByWord" xml:space="preserve">
+    <value>Ho risposto a te | O Allah | Ho risposto a te | Ho risposto a te | non c'è | partner | per te | io ho risposto a te | Truly | All The Praise | e All The Bounty | per te |</value>
+  </data>
+  <data name="IslamInfo_TheAbaser" xml:space="preserve">
+    <value>La Colui che diminuisce</value>
+  </data>
+  <data name="IslamInfo_TheAcknowledgingOne" xml:space="preserve">
+    <value>La Riconoscendo One</value>
+  </data>
+  <data name="IslamInfo_TheAllAuthoritativeOne" xml:space="preserve">
+    <value>L'All autorevole One</value>
+  </data>
+  <data name="IslamInfo_TheAllAwareOne" xml:space="preserve">
+    <value>The All-Aware One</value>
+  </data>
+  <data name="IslamInfo_TheAllCompelling" xml:space="preserve">
+    <value>L'All avvincente</value>
+  </data>
+  <data name="IslamInfo_TheAllEnumeratingOne" xml:space="preserve">
+    <value>The All-enumerazione One</value>
+  </data>
+  <data name="IslamInfo_TheAllHearer" xml:space="preserve">
+    <value>Il tutto ascolta</value>
+  </data>
+  <data name="IslamInfo_TheAllKnowingOne" xml:space="preserve">
+    <value>The All-Knowing One</value>
+  </data>
+  <data name="IslamInfo_TheAllNobleOne" xml:space="preserve">
+    <value>The All-Noble One</value>
+  </data>
+  <data name="IslamInfo_TheAllObservingWitness" xml:space="preserve">
+    <value>L'All Observing Witness</value>
+  </data>
+  <data name="IslamInfo_TheAllPervadingOne" xml:space="preserve">
+    <value>Il Onnipervadente One</value>
+  </data>
+  <data name="IslamInfo_TheAllPrevailingOne" xml:space="preserve">
+    <value>Il One All-Prevalente</value>
+  </data>
+  <data name="IslamInfo_TheAllSeeing" xml:space="preserve">
+    <value>The All-Seeing</value>
+  </data>
+  <data name="IslamInfo_TheAssemblerOfScatteredCreations" xml:space="preserve">
+    <value>L'Assembler di sparse Creations</value>
+  </data>
+  <data name="IslamInfo_TheBeneficent" xml:space="preserve">
+    <value>Il Compassionevole</value>
+  </data>
+  <data name="IslamInfo_TheBenignOne" xml:space="preserve">
+    <value>The One benigna</value>
+  </data>
+  <data name="IslamInfo_TheBestowerOfBenefits" xml:space="preserve">
+    <value>La Bestower delle prestazioni</value>
+  </data>
+  <data name="IslamInfo_TheBestowerOfSufficiency" xml:space="preserve">
+    <value>Il Dispensatore di sufficienza</value>
+  </data>
+  <data name="IslamInfo_TheBountifulOne" xml:space="preserve">
+    <value>Il Bountiful One</value>
+  </data>
+  <data name="IslamInfo_TheClementOne" xml:space="preserve">
+    <value>Il Clement One</value>
+  </data>
+  <data name="IslamInfo_TheCreator" xml:space="preserve">
+    <value>Il Creatore</value>
+  </data>
+  <data name="IslamInfo_TheDistressor" xml:space="preserve">
+    <value>Il Distressor</value>
+  </data>
+  <data name="IslamInfo_TheDominantOne" xml:space="preserve">
+    <value>La Dominante One</value>
+  </data>
+  <data name="IslamInfo_TheElevatingOne" xml:space="preserve">
+    <value>Il elevare</value>
+  </data>
+  <data name="IslamInfo_TheEmbodimentOfJustice" xml:space="preserve">
+    <value>L'incarnazione della giustizia</value>
+  </data>
+  <data name="IslamInfo_TheEmbodimentOfPeace" xml:space="preserve">
+    <value>L'incarnazione della pace</value>
+  </data>
+  <data name="IslamInfo_TheEmbodimentOfTruth" xml:space="preserve">
+    <value>L'incarnazione della Verità</value>
+  </data>
+  <data name="IslamInfo_TheEternalInheritor" xml:space="preserve">
+    <value>L'Erede Eternal</value>
+  </data>
+  <data name="IslamInfo_TheEternalLord" xml:space="preserve">
+    <value>Il Signore, l'Eterno</value>
+  </data>
+  <data name="IslamInfo_TheEternalPossessorOfSovereignty" xml:space="preserve">
+    <value>Il possessore eterno di sovranità</value>
+  </data>
+  <data name="IslamInfo_TheEverAcceptorOfRepentance" xml:space="preserve">
+    <value>La sempre Acceptor del Pentimento</value>
+  </data>
+  <data name="IslamInfo_TheEverSurvivingOne" xml:space="preserve">
+    <value>Il mai Surviving</value>
+  </data>
+  <data name="IslamInfo_TheEvolver" xml:space="preserve">
+    <value>Il Evolver</value>
+  </data>
+  <data name="IslamInfo_TheExpeditingOne" xml:space="preserve">
+    <value>Il Expediting One</value>
+  </data>
+  <data name="IslamInfo_TheExtender" xml:space="preserve">
+    <value>L'Extender</value>
+  </data>
+  <data name="IslamInfo_TheExtensivelyEnduringOne" xml:space="preserve">
+    <value>Il Ampiamente Enduring One</value>
+  </data>
+  <data name="IslamInfo_TheExtremelyExaltedOne" xml:space="preserve">
+    <value>Il One Estremamente Exalted</value>
+  </data>
+  <data name="IslamInfo_TheFirmOne" xml:space="preserve">
+    <value>The One Firm</value>
+  </data>
+  <data name="IslamInfo_TheFlawlessShaper" xml:space="preserve">
+    <value>Il Flawless Shaper</value>
+  </data>
+  <data name="IslamInfo_TheFountainHeadOfTruth" xml:space="preserve">
+    <value>La Fontana-Head of Truth</value>
+  </data>
+  <data name="IslamInfo_TheGloriousOne" xml:space="preserve">
+    <value>Il Glorioso</value>
+  </data>
+  <data name="IslamInfo_TheGreatForgiver" xml:space="preserve">
+    <value>Il Grande Perdonatore</value>
+  </data>
+  <data name="IslamInfo_TheGreatOne" xml:space="preserve">
+    <value>The Great One</value>
+  </data>
+  <data name="IslamInfo_TheGuardingOne" xml:space="preserve">
+    <value>La Vigilanza One</value>
+  </data>
+  <data name="IslamInfo_TheGuideToPathOfRectitude" xml:space="preserve">
+    <value>La guida al percorso della rettitudine</value>
+  </data>
+  <data name="IslamInfo_TheHolderOfSupremeAuthority" xml:space="preserve">
+    <value>Il Titolare del Suprema Autorità</value>
+  </data>
+  <data name="IslamInfo_TheHonourerBestower" xml:space="preserve">
+    <value>Il Honourer-Bestower</value>
+  </data>
+  <data name="IslamInfo_TheImpartialJudge" xml:space="preserve">
+    <value>Il Giudice imparziale</value>
+  </data>
+  <data name="IslamInfo_TheImperceptible" xml:space="preserve">
+    <value>L'impercettibile</value>
+  </data>
+  <data name="IslamInfo_TheInfiniteLastOne" xml:space="preserve">
+    <value>L'Infinito Last One</value>
+  </data>
+  <data name="IslamInfo_TheInflictorOfDeath" xml:space="preserve">
+    <value>La infliggono morte</value>
+  </data>
+  <data name="IslamInfo_TheInfuserOfFaith" xml:space="preserve">
+    <value>L'infusore di Fede</value>
+  </data>
+  <data name="IslamInfo_TheInfuserOfNewLife" xml:space="preserve">
+    <value>L'infusore di New Life</value>
+  </data>
+  <data name="IslamInfo_TheJustOne" xml:space="preserve">
+    <value>Il Just One</value>
+  </data>
+  <data name="IslamInfo_TheKnowerOfSubtleties" xml:space="preserve">
+    <value>Il Conoscitore di sottigliezze</value>
+  </data>
+  <data name="IslamInfo_TheLovingOne" xml:space="preserve">
+    <value>The Loving One</value>
+  </data>
+  <data name="IslamInfo_TheMagnificentOne" xml:space="preserve">
+    <value>The Magnificent One</value>
+  </data>
+  <data name="IslamInfo_TheMaintainerOflife" xml:space="preserve">
+    <value>Il Maintainer della vita</value>
+  </data>
+  <data name="IslamInfo_TheMajesticOne" xml:space="preserve">
+    <value>Il Majestic One</value>
+  </data>
+  <data name="IslamInfo_TheMerciful" xml:space="preserve">
+    <value>Il Misericordioso</value>
+  </data>
+  <data name="IslamInfo_TheMightyOne" xml:space="preserve">
+    <value>The Mighty One</value>
+  </data>
+  <data name="IslamInfo_TheMostSacred" xml:space="preserve">
+    <value>Sacratissimo</value>
+  </data>
+  <data name="IslamInfo_TheOmnipotentOne" xml:space="preserve">
+    <value>L'Onnipotente</value>
+  </data>
+  <data name="IslamInfo_TheOnlyOne" xml:space="preserve">
+    <value>The Only One</value>
+  </data>
+  <data name="IslamInfo_TheOriginator" xml:space="preserve">
+    <value>L'Originator</value>
+  </data>
+  <data name="IslamInfo_ThePardoner" xml:space="preserve">
+    <value>Il Pardoner</value>
+  </data>
+  <data name="IslamInfo_ThePerceptible" xml:space="preserve">
+    <value>Il sensibile</value>
+  </data>
+  <data name="IslamInfo_ThePointingOne" xml:space="preserve">
+    <value>Il puntamento One</value>
+  </data>
+  <data name="IslamInfo_ThePossessorOfMajestyAndHonour" xml:space="preserve">
+    <value>Il possessore di Maestà e Onore</value>
+  </data>
+  <data name="IslamInfo_ThePrayersOfAllahUponHimAndPeace" xml:space="preserve">
+    <value>Le preghiere di Allah su di lui e la pace</value>
+  </data>
+  <data name="IslamInfo_ThePreserverOfSafety" xml:space="preserve">
+    <value>Il Conservatore di sicurezza</value>
+  </data>
+  <data name="IslamInfo_ThePreventer" xml:space="preserve">
+    <value>Il Preventer</value>
+  </data>
+  <data name="IslamInfo_ThePrimeLight" xml:space="preserve">
+    <value>Il Primo Luce</value>
+  </data>
+  <data name="IslamInfo_TheProcrastinator" xml:space="preserve">
+    <value>Il Procrastinator</value>
+  </data>
+  <data name="IslamInfo_TheProtectingAssociate" xml:space="preserve">
+    <value>Il Associate Protezione</value>
+  </data>
+  <data name="IslamInfo_TheProviderOfGuidance" xml:space="preserve">
+    <value>Il Fornitore di orientamento</value>
+  </data>
+  <data name="IslamInfo_TheReckoningOne" xml:space="preserve">
+    <value>The Reckoning One</value>
+  </data>
+  <data name="IslamInfo_TheReducer" xml:space="preserve">
+    <value>Il riduttore</value>
+  </data>
+  <data name="IslamInfo_TheRespondingOne" xml:space="preserve">
+    <value>The One risponde</value>
+  </data>
+  <data name="IslamInfo_TheRestorer" xml:space="preserve">
+    <value>Il Restauratore</value>
+  </data>
+  <data name="IslamInfo_TheRestrictingOne" xml:space="preserve">
+    <value>Il Limitazione One</value>
+  </data>
+  <data name="IslamInfo_TheRetaliator" xml:space="preserve">
+    <value>Il Retaliator</value>
+  </data>
+  <data name="IslamInfo_TheSelfSubsistingOne" xml:space="preserve">
+    <value>Che esiste da Sé One</value>
+  </data>
+  <data name="IslamInfo_TheSelfSufficientOne" xml:space="preserve">
+    <value>Il One Autosufficiente</value>
+  </data>
+  <data name="IslamInfo_TheSoleLaudableOne" xml:space="preserve">
+    <value>Il Sole-Lodevole One</value>
+  </data>
+  <data name="IslamInfo_TheSoleOne" xml:space="preserve">
+    <value>Il Sole One</value>
+  </data>
+  <data name="IslamInfo_TheStrongOne" xml:space="preserve">
+    <value>The Strong One</value>
+  </data>
+  <data name="IslamInfo_TheSublimeOne" xml:space="preserve">
+    <value>Il Sublime One</value>
+  </data>
+  <data name="IslamInfo_TheSupremeBestower" xml:space="preserve">
+    <value>Il Supremo Conferitore</value>
+  </data>
+  <data name="IslamInfo_TheSupremePardoner" xml:space="preserve">
+    <value>Il Supremo Pardoner</value>
+  </data>
+  <data name="IslamInfo_TheSupremeProvider" xml:space="preserve">
+    <value>Il provider Supreme</value>
+  </data>
+  <data name="IslamInfo_TheSupremeSolver" xml:space="preserve">
+    <value>Il Supremo Risolutore</value>
+  </data>
+  <data name="IslamInfo_TheSustainingOne" xml:space="preserve">
+    <value>Sostegno One</value>
+  </data>
+  <data name="IslamInfo_TheTotalProvider" xml:space="preserve">
+    <value>Il provider Total</value>
+  </data>
+  <data name="IslamInfo_TheUniqueOne" xml:space="preserve">
+    <value>The One Unique</value>
+  </data>
+  <data name="IslamInfo_TheUniversalTrustee" xml:space="preserve">
+    <value>Il fiduciario universale</value>
+  </data>
+  <data name="IslamInfo_TheVeryFirst" xml:space="preserve">
+    <value>The Very First</value>
+  </data>
+  <data name="IslamInfo_TheWatchfulOne" xml:space="preserve">
+    <value>Il vigile One</value>
+  </data>
+  <data name="IslamInfo_TheWiseOne" xml:space="preserve">
+    <value>The Wise One</value>
+  </data>
+  <data name="IslamInfo_ThirdCreed" xml:space="preserve">
+    <value>Terzo creed - La parola di Glorificazione (Tumjeed)</value>
+  </data>
+  <data name="IslamInfo_ThirdCreedTrans" xml:space="preserve">
+    <value>Gloria ad Allah e Lode ad Allah, e non c'è Dio all'infuori di Allah, e Allah è il più grande.</value>
+  </data>
+  <data name="IslamInfo_ThirdCreedWordByWord" xml:space="preserve">
+    <value>Glory | di Allah | e Lode | Allah | e non c'è | Dio | salvo | Allah | Allah | grande | e nessuno | Potrebbero | e no | potenza | salvo | con Allah | Altissimo | più Magnificent</value>
+  </data>
+  <data name="IslamInfo_TraditionalArabic" xml:space="preserve">
+    <value>Tradizionale araba</value>
+  </data>
+  <data name="IslamInfo_TransmissionOfInformation" xml:space="preserve">
+    <value>Trasmissione delle informazioni</value>
+  </data>
+  <data name="IslamInfo_Umrah" xml:space="preserve">
+    <value>Umrah</value>
+  </data>
+  <data name="IslamInfo_UnitOfPrayer" xml:space="preserve">
+    <value>Unità di preghiera</value>
+  </data>
+  <data name="IslamInfo_UponHimBePeace" xml:space="preserve">
+    <value>A lui sia la pace</value>
+  </data>
+  <data name="IslamInfo_Verse" xml:space="preserve">
+    <value>Versetto</value>
+  </data>
+  <data name="IslamInfo_VerseOfTheThrone" xml:space="preserve">
+    <value>Il versetto del Trono</value>
+  </data>
+  <data name="IslamInfo_Zechariah" xml:space="preserve">
+    <value>Zaccaria</value>
+  </data>
+  <data name="IslamInfo_TheEverLiving" xml:space="preserve">
+    <value>Il Vivente</value>
+  </data>
+  <data name="IslamInfo_After" xml:space="preserve">
+    <value>Dopo</value>
+  </data>
+  <data name="IslamInfo_Arabic" xml:space="preserve">
+    <value>Arabo</value>
+  </data>
+  <data name="IslamInfo_Assimilate" xml:space="preserve">
+    <value>Assimilare</value>
+  </data>
+  <data name="IslamInfo_Before" xml:space="preserve">
+    <value>Prima</value>
+  </data>
+  <data name="IslamInfo_bukhariBook1" xml:space="preserve">
+    <value>Rivelazione</value>
+  </data>
+  <data name="IslamInfo_bukhariBook10" xml:space="preserve">
+    <value>Call to Prayers (Adhaan)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook11" xml:space="preserve">
+    <value>Venerdì di preghiera</value>
+  </data>
+  <data name="IslamInfo_bukhariBook12" xml:space="preserve">
+    <value>Paura Preghiera</value>
+  </data>
+  <data name="IslamInfo_bukhariBook13" xml:space="preserve">
+    <value>I due festival (Eid)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook14" xml:space="preserve">
+    <value>Witr Preghiera</value>
+  </data>
+  <data name="IslamInfo_bukhariBook15" xml:space="preserve">
+    <value>Invocando Allah for Rain (Istisqaa)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook16" xml:space="preserve">
+    <value>Eclissi</value>
+  </data>
+  <data name="IslamInfo_bukhariBook17" xml:space="preserve">
+    <value>Prostrazione Durante Recital di Corano</value>
+  </data>
+  <data name="IslamInfo_bukhariBook18" xml:space="preserve">
+    <value>Accorciamento della preghiera (At-Taqseer)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook19" xml:space="preserve">
+    <value>Preghiera at Night (Tahajjud)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook1Chapter1" xml:space="preserve">
+    <value>{Come la Divina Ispirazione iniziato ad essere rivelato al Messaggero di Allah (pace).</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2" xml:space="preserve">
+    <value>Credenza</value>
+  </data>
+  <data name="IslamInfo_bukhariBook20" xml:space="preserve">
+    <value>Virtù di preghiera a Masjid Mecca e Medina</value>
+  </data>
+  <data name="IslamInfo_bukhariBook21" xml:space="preserve">
+    <value>Azioni mentre pregava</value>
+  </data>
+  <data name="IslamInfo_bukhariBook22" xml:space="preserve">
+    <value>Dimenticanza in preghiera</value>
+  </data>
+  <data name="IslamInfo_bukhariBook23" xml:space="preserve">
+    <value>Funerali (Al-Janaa'iz)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook24" xml:space="preserve">
+    <value>Tasse Charity obbligatoria (Zakat)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook25" xml:space="preserve">
+    <value>Pellegrinaggio (Hajj)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook26" xml:space="preserve">
+    <value>Minor Pilgrammage (Umra)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook27" xml:space="preserve">
+    <value>Pellegrini ha impedito di completare il Pellegrinaggio</value>
+  </data>
+  <data name="IslamInfo_bukhariBook28" xml:space="preserve">
+    <value>Pena di caccia durante il Pellegrinaggio</value>
+  </data>
+  <data name="IslamInfo_bukhariBook29" xml:space="preserve">
+    <value>Virtù di Madinah</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter1" xml:space="preserve">
+    <value>La dichiarazione del Profeta (pace e benedizioni): 'L'Islam si basa su cinque principi.'</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter10" xml:space="preserve">
+    <value>Amare la Ansar è un segno di fede.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter12" xml:space="preserve">
+    <value>Per fuggire (scappare) da Al-FITAN (prove e afflications ecc) è una parte della religione.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter13" xml:space="preserve">
+    <value>La dichiarazione del Profeta (pace e benedizioni): 'So che Allah (azza wa JAL) meglio di tutti voi fare'.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter14" xml:space="preserve">
+    <value>Chiunque odia per ripristinare Kufr.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter15" xml:space="preserve">
+    <value>I gradi di superiorità dei credenti sarà secondo le loro buone azioni.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter16" xml:space="preserve">
+    <value>Al-Haya è una parte della fede.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter17" xml:space="preserve">
+    <value>La dichiarazione di Allah (Azza wa JAL):</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter18" xml:space="preserve">
+    <value>Chi dice che la fede è l'azione (buone azioni).</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter19" xml:space="preserve">
+    <value>Se uno non abbracciare l'Islam vero, ma lo fa per costrizione o per paura di essere uccisi, ecc</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter2" xml:space="preserve">
+    <value>La tua invocazione significa che la vostra fede.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter20" xml:space="preserve">
+    <value>Per salutare è una parte dell'Islam.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter21" xml:space="preserve">
+    <value>Per essere ingrato al proprio marito.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter22" xml:space="preserve">
+    <value>Sins sono dall'ignoranza e un peccatore non è un miscredente a meno che adora altri insieme ad Allah (azza wa JAL).</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter23" xml:space="preserve">
+    <value>La dichiarazione di Allah (Azza wa JAL): {</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter24" xml:space="preserve">
+    <value>Zulm (errata) di un tipo può essere maggiore o minore di quella di un altro.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter25" xml:space="preserve">
+    <value>I segni di un ipocrita.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter26" xml:space="preserve">
+    <value>Per stabilire le preghiere nella notte di Qadr è una parte della fede.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter27" xml:space="preserve">
+    <value>Al-Jihad (guerra santa - la lotta per la causa di Allah) è una parte della fede.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter28" xml:space="preserve">
+    <value>Si tratta di una parte della fede per stabilire le (Nawafil - volontario) le preghiere durante le notti di Ramadan.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter29" xml:space="preserve">
+    <value>Per osservare Saum [digiuni (secondo gli insegnamenti islamici)] durante il mese di Ramadan (sinceramente e fedelmente) sperando di ricompense di Allah solo, è una parte della fede.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter3" xml:space="preserve">
+    <value>(Che si dice) per quanto riguarda gli atti di fede.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter30" xml:space="preserve">
+    <value>La religione è molto facile.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter31" xml:space="preserve">
+    <value>L'(offerta di) Salat (Preghiere) è una parte della fede.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter32" xml:space="preserve">
+    <value>(Ciò che viene detto riguardo la superiorità di) una persona che abbraccia l'Islam sinceramente.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter33" xml:space="preserve">
+    <value>Ad-Din (buona azione giusta - atto di culto) più amato da Allah (azza wa JAL) è quello che viene fatto regolarmente.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter34" xml:space="preserve">
+    <value>Fede aumenta e diminuisce.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter35" xml:space="preserve">
+    <value>Per pagare Zakat è una parte dell'Islam.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter36" xml:space="preserve">
+    <value>Per accompagnare i cortei funebri (fino al luogo di sepoltura) è una parte della fede.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter37" xml:space="preserve">
+    <value>La paura di un credente che le sue buone azioni possono essere annullate (persa) a sua insaputa.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter38" xml:space="preserve">
+    <value>La chiedendo di (angelo) Jibrael (Gabriel) dal Profeta (pace e benedizioni) sulla fede, l'Islam, Ihsan (perfezione).</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter4" xml:space="preserve">
+    <value>Un musulmano è colui che evita i musulmani danneggiando con la sua lingua e le mani.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter40" xml:space="preserve">
+    <value>La superiorità della persona che lascia tutti (poco chiari) le cose in sofferenza per il bene della sua religione.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter41" xml:space="preserve">
+    <value>Per pagare Al-Khumus (un quinto del bottino di guerra da dare per la causa di Allah) è una parte della fede.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter42" xml:space="preserve">
+    <value>Cosa si dice in riferimento alla dichiarazione: 'La ricompensa degli atti dipende l'intenzione.'</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter43" xml:space="preserve">
+    <value>La dichiarazione del Profeta (pace e benedizioni): 'La religione è An-Nasiha [(per essere sincero e vero) ad Allah, al Suo Messaggero, ai governanti musulmani, e per tutti i musulmani.]'</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter5" xml:space="preserve">
+    <value>Cui l'Islam è la migliore (Chi è il miglior musulmano)?</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter6" xml:space="preserve">
+    <value>Per alimentare (altri) è una parte dell'Islam.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter7" xml:space="preserve">
+    <value>Per scrivere per il fratello (di musulmani) ciò che si ama per se stesso è una parte della fede.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter8" xml:space="preserve">
+    <value>Amare il Messaggero (Maometto) (pace) è una parte della fede.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter9" xml:space="preserve">
+    <value>Dolcezza (delizia) di fede.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3" xml:space="preserve">
+    <value>Conoscenza</value>
+  </data>
+  <data name="IslamInfo_bukhariBook30" xml:space="preserve">
+    <value>Digiuno</value>
+  </data>
+  <data name="IslamInfo_bukhariBook31" xml:space="preserve">
+    <value>Pregare alla notte a Ramadan (Taraweeh)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook32" xml:space="preserve">
+    <value>Virtù della notte di Qadr</value>
+  </data>
+  <data name="IslamInfo_bukhariBook33" xml:space="preserve">
+    <value>Andare in pensione a una moschea per il ricordo di Allah (I'tikaf)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook34" xml:space="preserve">
+    <value>Vendite e Commercio</value>
+  </data>
+  <data name="IslamInfo_bukhariBook35" xml:space="preserve">
+    <value>Vendite in cui viene pagato un prezzo per beni da consegnare tardi (As-Salam)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook36" xml:space="preserve">
+    <value>Shuf'a</value>
+  </data>
+  <data name="IslamInfo_bukhariBook37" xml:space="preserve">
+    <value>Assunzione</value>
+  </data>
+  <data name="IslamInfo_bukhariBook38" xml:space="preserve">
+    <value>Transferance di un debito da una persona all'altra (Al-Hawaala)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook39" xml:space="preserve">
+    <value>Kafalah</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter1" xml:space="preserve">
+    <value>La superiorità della conoscenza.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter11" xml:space="preserve">
+    <value>Il Profeta (pace e benedizioni) usato per prendere cura delle persone nella predicazione selezionando un tempo adeguato, in modo che essi non potrebbero scappare (o annoiarsi).</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter12" xml:space="preserve">
+    <value>Chiunque fissato un giorno speciale per dare (un discorso religioso) agli studenti.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter13" xml:space="preserve">
+    <value>Se Allah (azza wa JAL) vuole fare del bene ad una persona, Egli lo fa comprendere la religione.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter14" xml:space="preserve">
+    <value>(La superiorità di) Comprendere conoscenza.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter15" xml:space="preserve">
+    <value>Desiderio di essere come colui che ha la conoscenza e Al-Hikmah (saggezza) [ie</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter16" xml:space="preserve">
+    <value>Ciò che è stato detto a proposito del viaggio del Profeta Musa ('alayhi as-salam) (quando è andato) in mare per incontrare Al-Khidr.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter17" xml:space="preserve">
+    <value>La dichiarazione del Profeta (pace e benedizioni): 'O Allah!</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter18" xml:space="preserve">
+    <value>A che età può giovanile essere ascoltato (ossia la quotazione del Hadith da un ragazzo accettabile).</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter19" xml:space="preserve">
+    <value>Per andare alla ricerca della conoscenza.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter2" xml:space="preserve">
+    <value>Chi viene chiesto di conoscenza, mentre lui è impegnato in una conversazione, così ha finito di parlare e poi rispose l'interrogante.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter20" xml:space="preserve">
+    <value>La superiorità di una persona che apprende (l'Islam, diviene uno studioso delle religioni) e poi insegna agli altri.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter21" xml:space="preserve">
+    <value>(Che si dice in merito) la scomparsa della conoscenza (religiosi) e la comparsa di (religiosa) ignoranza.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter22" xml:space="preserve">
+    <value>La superiorità della conoscenza (religiosa).</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter23" xml:space="preserve">
+    <value>Per dare un verdetto religioso durante la guida di un animale o in piedi su qualsiasi altra cosa.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter24" xml:space="preserve">
+    <value>Chi ha dato un verdetto religioso accennando o annuendo.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter25" xml:space="preserve">
+    <value>Il Profeta (saws) ha esortato il popolo (missione) di 'Abdul Qais per memorizzare la fede e la conoscenza (religioso) (come ha spiegato a loro) e di informare (trasmettere) ai loro persone che hanno lasciato (a casa).</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter26" xml:space="preserve">
+    <value>Per viaggiare in cerca di una risposta a una questione problematica, e di insegnare alla propria famiglia.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter27" xml:space="preserve">
+    <value>Per fi?? X le funzioni di rotazione per l'apprendimento della conoscenza (religiosa).</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter28" xml:space="preserve">
+    <value>Per essere furioso mentre la predicazione o l'insegnamento se uno vede ciò che si odia.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter29" xml:space="preserve">
+    <value>Chiunque si inginocchiò davanti al Imam o un (religioso) predicatore.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter3" xml:space="preserve">
+    <value>Chi alza la voce in (trasporto) conoscenza.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter30" xml:space="preserve">
+    <value>Ripetendo quello di parlare tre volte per far capire agli altri.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter31" xml:space="preserve">
+    <value>Un uomo di insegnamento (la religione), la sua donna-schiava e la sua famiglia.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter32" xml:space="preserve">
+    <value>La predicazione (e didattica) della conoscenza (religiosi) alle donne l'Imam (capo):</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter33" xml:space="preserve">
+    <value>Desiderio di (imparare) l'Hadith.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter34" xml:space="preserve">
+    <value>Come la conoscenza (religiosa) si ha tolto?</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter35" xml:space="preserve">
+    <value>Se un giorno essere fissato per le donne, al fine di insegnare loro la religione (a parte uomini)?</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter36" xml:space="preserve">
+    <value>Chiunque sentito qualcosa (ma non capirlo) e poi chiese di nuovo fino a quando non capiva completamente.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter37" xml:space="preserve">
+    <value>Spetta a coloro che sono presenti [in un incontro religioso (o conferenza)] per trasmettere la conoscenza a coloro che sono assenti.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter38" xml:space="preserve">
+    <value>Il peccato di una persona che dice una bugia contro il Profeta (pace e benedizioni).</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter39" xml:space="preserve">
+    <value>La scrittura della conoscenza.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter4" xml:space="preserve">
+    <value>Per quanto riguarda la varietà di parole usate da narratori di trasporto diversi significati in merito al concetto di narrare e che ha importanza solo per gli studiosi Hadith.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter40" xml:space="preserve">
+    <value>La conoscenza e il suo insegnamento e la predicazione di notte.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter41" xml:space="preserve">
+    <value>Per parlare di conoscenza (religioso) di notte.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter42" xml:space="preserve">
+    <value>(Che si dice in merito), la memorizzazione della conoscenza (religiosa).</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter43" xml:space="preserve">
+    <value>Per essere tranquillo (e ascoltare) per uomini dotti religiosi.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter44" xml:space="preserve">
+    <value>Quando un dotto religioso viene chiesto.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter45" xml:space="preserve">
+    <value>Chiunque, in piedi, ha chiesto un dotto religioso che era seduto (su un pulpito o una cosa simile, di qualcosa).</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter46" xml:space="preserve">
+    <value>Per chiedere una questione religiosa e di dare un verdetto religioso (a Mina durante Hajj), mentre si fa il Rami di Jimar (lancio di sassi al Jimar a Mina durante Hajj).</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter47" xml:space="preserve">
+    <value>La dichiarazione di Allah (Azza wa JAL):</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter48" xml:space="preserve">
+    <value>Chiunque lasciato alcune cose opzionali semplicemente per il timore che alcune persone potrebbero non essere in grado di capirle e possono cadere in qualcosa di più difficile.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter49" xml:space="preserve">
+    <value>Chiunque scelto alcune persone per insegnare loro conoscenza (religioso) li preferiscono rispetto ad altri per paura che gli altri non possono capire.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter5" xml:space="preserve">
+    <value>L'Imam in discussione i suoi compagni, al fine di testare la loro conoscenza.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter50" xml:space="preserve">
+    <value>(Ciò che viene detto per quanto riguarda :-) Per essere timido (Al-Haya '), mentre l'apprendimento (conoscenza religiosa).</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter51" xml:space="preserve">
+    <value>Chiunque feltro timida (chiedere qualcosa) e poi ha chiesto un'altra persona a chiedere a suo nome.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter52" xml:space="preserve">
+    <value>Insegnare conoscenza religiosa e dare verdetti religiosi in una moschea.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter53" xml:space="preserve">
+    <value>Chiunque risposto all'interrogante più di quello che ha chiesto.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter6" xml:space="preserve">
+    <value>Ciò che viene detto sulla conoscenza.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter7" xml:space="preserve">
+    <value>Ciò che viene detto per quanto riguarda la mano di scambio a mano (di libri di conoscenza), e la scrittura delle conoscenze da studiosi religiosi in diversi paesi.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter8" xml:space="preserve">
+    <value>Chi sedeva alla fine più di un incontro.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter9" xml:space="preserve">
+    <value>La dichiarazione del Profeta (pace e benedizioni): 'E' probabile che una persona che riceve un pezzo di informazione indirettamente può comprendere meglio di lui che ha sentito direttamente dalla sua fonte. '</value>
+  </data>
+  <data name="IslamInfo_bukhariBook4" xml:space="preserve">
+    <value>Abluzioni (Wudu ')</value>
+  </data>
+  <data name="IslamInfo_bukhariBook40" xml:space="preserve">
+    <value>Rappresentare, autorizzazione, Affari by Proxy</value>
+  </data>
+  <data name="IslamInfo_bukhariBook41" xml:space="preserve">
+    <value>Agricoltura</value>
+  </data>
+  <data name="IslamInfo_bukhariBook42" xml:space="preserve">
+    <value>Distribuzione di acqua</value>
+  </data>
+  <data name="IslamInfo_bukhariBook43" xml:space="preserve">
+    <value>Prestiti, pagamento dei crediti, congelamento dei beni, Fallimento</value>
+  </data>
+  <data name="IslamInfo_bukhariBook44" xml:space="preserve">
+    <value>Khusoomaat</value>
+  </data>
+  <data name="IslamInfo_bukhariBook45" xml:space="preserve">
+    <value>Cose perdute raccolto da qualcuno (Luqaata)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook46" xml:space="preserve">
+    <value>Oppressioni</value>
+  </data>
+  <data name="IslamInfo_bukhariBook47" xml:space="preserve">
+    <value>Associazione</value>
+  </data>
+  <data name="IslamInfo_bukhariBook48" xml:space="preserve">
+    <value>Ipoteca</value>
+  </data>
+  <data name="IslamInfo_bukhariBook49" xml:space="preserve">
+    <value>Manomissione degli schiavi</value>
+  </data>
+  <data name="IslamInfo_bukhariBook5" xml:space="preserve">
+    <value>Fare il bagno (Ghusl)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook50" xml:space="preserve">
+    <value>Makaatib</value>
+  </data>
+  <data name="IslamInfo_bukhariBook51" xml:space="preserve">
+    <value>Regali</value>
+  </data>
+  <data name="IslamInfo_bukhariBook52" xml:space="preserve">
+    <value>Testimoni</value>
+  </data>
+  <data name="IslamInfo_bukhariBook53" xml:space="preserve">
+    <value>Peacemaking</value>
+  </data>
+  <data name="IslamInfo_bukhariBook54" xml:space="preserve">
+    <value>Condizioni</value>
+  </data>
+  <data name="IslamInfo_bukhariBook55" xml:space="preserve">
+    <value>Testamenti (Wasaayaa)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook56" xml:space="preserve">
+    <value>Lottano per la causa di Allah (Jihad)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook57" xml:space="preserve">
+    <value>Un quinto of Booty per la causa di Allah (Khumus)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook58" xml:space="preserve">
+    <value>Jizyah e Mawaada'ah</value>
+  </data>
+  <data name="IslamInfo_bukhariBook59" xml:space="preserve">
+    <value>Inizio della Creazione</value>
+  </data>
+  <data name="IslamInfo_bukhariBook6" xml:space="preserve">
+    <value>Periodi mestruali</value>
+  </data>
+  <data name="IslamInfo_bukhariBook60" xml:space="preserve">
+    <value>Profeti</value>
+  </data>
+  <data name="IslamInfo_bukhariBook61" xml:space="preserve">
+    <value>Virtù e dei meriti del Profeta (pace su di lui) ei suoi Compagni</value>
+  </data>
+  <data name="IslamInfo_bukhariBook62" xml:space="preserve">
+    <value>Compagni del Profeta</value>
+  </data>
+  <data name="IslamInfo_bukhariBook63" xml:space="preserve">
+    <value>Merito delle Helpers a Medina (Ansar)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook64" xml:space="preserve">
+    <value>Spedizioni militari guidati dal Profeta (pace su di lui) (Al-Maghaazi)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook65" xml:space="preserve">
+    <value>Commento Profetico sul Corano (Tafsir del Profeta (pace su di lui))</value>
+  </data>
+  <data name="IslamInfo_bukhariBook66" xml:space="preserve">
+    <value>Virtù del Corano</value>
+  </data>
+  <data name="IslamInfo_bukhariBook67" xml:space="preserve">
+    <value>Wedlock, Matrimonio (Nikaah)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook68" xml:space="preserve">
+    <value>Divorzio</value>
+  </data>
+  <data name="IslamInfo_bukhariBook69" xml:space="preserve">
+    <value>Sostenere la famiglia</value>
+  </data>
+  <data name="IslamInfo_bukhariBook7" xml:space="preserve">
+    <value>Strofinare mani e piedi con la polvere (Tayammum)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook70" xml:space="preserve">
+    <value>Prodotti alimentari, pasti</value>
+  </data>
+  <data name="IslamInfo_bukhariBook71" xml:space="preserve">
+    <value>Sacrifica in occasione della nascita (`Aqiqa)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook72" xml:space="preserve">
+    <value>Caccia, Macellazione</value>
+  </data>
+  <data name="IslamInfo_bukhariBook73" xml:space="preserve">
+    <value>Al-Adha Festival Sacrifice (Adaahi)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook74" xml:space="preserve">
+    <value>Bevande</value>
+  </data>
+  <data name="IslamInfo_bukhariBook75" xml:space="preserve">
+    <value>Pazienti</value>
+  </data>
+  <data name="IslamInfo_bukhariBook76" xml:space="preserve">
+    <value>Medicina</value>
+  </data>
+  <data name="IslamInfo_bukhariBook77" xml:space="preserve">
+    <value>Dress</value>
+  </data>
+  <data name="IslamInfo_bukhariBook78" xml:space="preserve">
+    <value>Buone maniere e Form (Al-Adab)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook79" xml:space="preserve">
+    <value>Chiedere il permesso</value>
+  </data>
+  <data name="IslamInfo_bukhariBook8" xml:space="preserve">
+    <value>Preghiere (Salat)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook80" xml:space="preserve">
+    <value>Invocazioni</value>
+  </data>
+  <data name="IslamInfo_bukhariBook81" xml:space="preserve">
+    <value>Per rendere la Tender Cuore (Ar-Riqaq)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook82" xml:space="preserve">
+    <value>Volontà Divina (Al-Qadar)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook83" xml:space="preserve">
+    <value>Giuramenti e Voti</value>
+  </data>
+  <data name="IslamInfo_bukhariBook84" xml:space="preserve">
+    <value>Espiazione per i giuramenti non realizzati</value>
+  </data>
+  <data name="IslamInfo_bukhariBook85" xml:space="preserve">
+    <value>Leggi dell'ereditarietà (Al-Faraa'id)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook86" xml:space="preserve">
+    <value>Limiti e delle pene stabilite da Allah (Hudood)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook87" xml:space="preserve">
+    <value>Punizione dei miscredenti in guerra con Allah e il Suo Apostolo</value>
+  </data>
+  <data name="IslamInfo_bukhariBook88" xml:space="preserve">
+    <value>Blood Money (Ad-diyat)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook89" xml:space="preserve">
+    <value>Trattare con apostati</value>
+  </data>
+  <data name="IslamInfo_bukhariBook9" xml:space="preserve">
+    <value>Tempi della preghiera</value>
+  </data>
+  <data name="IslamInfo_bukhariBook90" xml:space="preserve">
+    <value>Dire qualcosa per forza (Ikraah)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook91" xml:space="preserve">
+    <value>Trucchi</value>
+  </data>
+  <data name="IslamInfo_bukhariBook92" xml:space="preserve">
+    <value>Interpretazione dei sogni</value>
+  </data>
+  <data name="IslamInfo_bukhariBook93" xml:space="preserve">
+    <value>Afflizioni e la fine del mondo</value>
+  </data>
+  <data name="IslamInfo_bukhariBook94" xml:space="preserve">
+    <value>Sentenze (Ahkaam)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook95" xml:space="preserve">
+    <value>Wishes</value>
+  </data>
+  <data name="IslamInfo_bukhariBook96" xml:space="preserve">
+    <value>Informazioni Accettare dato da una persona sincera</value>
+  </data>
+  <data name="IslamInfo_bukhariBook97" xml:space="preserve">
+    <value>Tenendo veloce al Corano e nella Sunnah</value>
+  </data>
+  <data name="IslamInfo_bukhariBook98" xml:space="preserve">
+    <value>Unicità, Unicità di Allah (Tawhid)</value>
+  </data>
+  <data name="IslamInfo_Classification" xml:space="preserve">
+    <value>Classificazione</value>
+  </data>
+  <data name="IslamInfo_Connecting" xml:space="preserve">
+    <value>Collegamento</value>
+  </data>
+  <data name="IslamInfo_LetterName" xml:space="preserve">
+    <value>Lettera Nome</value>
+  </data>
+  <data name="IslamInfo_muslimBook1" xml:space="preserve">
+    <value>Introduzione</value>
+  </data>
+  <data name="IslamInfo_muslimBook10" xml:space="preserve">
+    <value>The Book of Prayer (Rain)</value>
+  </data>
+  <data name="IslamInfo_muslimBook11" xml:space="preserve">
+    <value>The Book of Prayer (Eclipse)</value>
+  </data>
+  <data name="IslamInfo_muslimBook12" xml:space="preserve">
+    <value>The Book of Prayer (Funerali)</value>
+  </data>
+  <data name="IslamInfo_muslimBook13" xml:space="preserve">
+    <value>Il libro di Zakat</value>
+  </data>
+  <data name="IslamInfo_muslimBook14" xml:space="preserve">
+    <value>Il libro di digiuno</value>
+  </data>
+  <data name="IslamInfo_muslimBook15" xml:space="preserve">
+    <value>Il libro di I'tikaf</value>
+  </data>
+  <data name="IslamInfo_muslimBook16" xml:space="preserve">
+    <value>Il Libro di pellegrinaggio</value>
+  </data>
+  <data name="IslamInfo_muslimBook17" xml:space="preserve">
+    <value>Il libro di matrimonio</value>
+  </data>
+  <data name="IslamInfo_muslimBook18" xml:space="preserve">
+    <value>Il libro di Suckling</value>
+  </data>
+  <data name="IslamInfo_muslimBook19" xml:space="preserve">
+    <value>Il libro di divorzio</value>
+  </data>
+  <data name="IslamInfo_muslimBook2" xml:space="preserve">
+    <value>Il libro di Fede</value>
+  </data>
+  <data name="IslamInfo_muslimBook20" xml:space="preserve">
+    <value>Il Libro di invocare Maledizioni</value>
+  </data>
+  <data name="IslamInfo_muslimBook21" xml:space="preserve">
+    <value>Il libro di emancipazione Schiavi</value>
+  </data>
+  <data name="IslamInfo_muslimBook22" xml:space="preserve">
+    <value>Il libro di transazioni</value>
+  </data>
+  <data name="IslamInfo_muslimBook23" xml:space="preserve">
+    <value>Il libro di Masaaqah</value>
+  </data>
+  <data name="IslamInfo_muslimBook24" xml:space="preserve">
+    <value>Il Libro Di pertinenza del regolamento di ereditarietà</value>
+  </data>
+  <data name="IslamInfo_muslimBook25" xml:space="preserve">
+    <value>Il libro di Regali</value>
+  </data>
+  <data name="IslamInfo_muslimBook26" xml:space="preserve">
+    <value>Il libro dei Lasciti</value>
+  </data>
+  <data name="IslamInfo_muslimBook27" xml:space="preserve">
+    <value>Il Libro dei voti</value>
+  </data>
+  <data name="IslamInfo_muslimBook28" xml:space="preserve">
+    <value>Il Libro di Giuramenti</value>
+  </data>
+  <data name="IslamInfo_muslimBook29" xml:space="preserve">
+    <value>Il Libro di pertinenza del Giuramento, per stabilire la responsabilità degli omicidi, Lottare, Requital</value>
+  </data>
+  <data name="IslamInfo_muslimBook3" xml:space="preserve">
+    <value>Il Libro della Purificazione</value>
+  </data>
+  <data name="IslamInfo_muslimBook30" xml:space="preserve">
+    <value>Il Libro di pertinenza pene prescritte dall'Islam</value>
+  </data>
+  <data name="IslamInfo_muslimBook31" xml:space="preserve">
+    <value>Il Libro di pertinenza decisioni giudiziarie</value>
+  </data>
+  <data name="IslamInfo_muslimBook32" xml:space="preserve">
+    <value>Il libro di Luqatah</value>
+  </data>
+  <data name="IslamInfo_muslimBook33" xml:space="preserve">
+    <value>Il libro della Jihad e Expedition</value>
+  </data>
+  <data name="IslamInfo_muslimBook34" xml:space="preserve">
+    <value>Il Libro sul governo</value>
+  </data>
+  <data name="IslamInfo_muslimBook35" xml:space="preserve">
+    <value>Il libro dei giochi e degli animali che possono essere macellati e le Aninals che devono essere mangiati</value>
+  </data>
+  <data name="IslamInfo_muslimBook36" xml:space="preserve">
+    <value>Il libro di sacrifici</value>
+  </data>
+  <data name="IslamInfo_muslimBook37" xml:space="preserve">
+    <value>Il libro di bevande</value>
+  </data>
+  <data name="IslamInfo_muslimBook38" xml:space="preserve">
+    <value>Il Libro di pertinenza Abbigliamento e Decorazione</value>
+  </data>
+  <data name="IslamInfo_muslimBook39" xml:space="preserve">
+    <value>Il libro su General Comportamento</value>
+  </data>
+  <data name="IslamInfo_muslimBook4" xml:space="preserve">
+    <value>Il libro di mestruazioni</value>
+  </data>
+  <data name="IslamInfo_muslimBook40" xml:space="preserve">
+    <value>Il libro su Saluti e Auguri</value>
+  </data>
+  <data name="IslamInfo_muslimBook41" xml:space="preserve">
+    <value>Il Libro riguardanti l'uso di parole corrette</value>
+  </data>
+  <data name="IslamInfo_muslimBook42" xml:space="preserve">
+    <value>Il libro di poesia</value>
+  </data>
+  <data name="IslamInfo_muslimBook43" xml:space="preserve">
+    <value>Il libro di Vision</value>
+  </data>
+  <data name="IslamInfo_muslimBook44" xml:space="preserve">
+    <value>Il Libro pertinenza le qualità eccellenti del Santo Profeta (la pace sia su di loro) e dei suoi compagni</value>
+  </data>
+  <data name="IslamInfo_muslimBook45" xml:space="preserve">
+    <value>Il Libro pertinenza del Meriti dei Compagni (Allah si compiaccia di loro) del Santo Profeta</value>
+  </data>
+  <data name="IslamInfo_muslimBook46" xml:space="preserve">
+    <value>Il Libro della virtù, le buone maniere e partecipazione dei vincoli di parentela</value>
+  </data>
+  <data name="IslamInfo_muslimBook47" xml:space="preserve">
+    <value>Il Libro del Destino</value>
+  </data>
+  <data name="IslamInfo_muslimBook48" xml:space="preserve">
+    <value>Il Libro della Conoscenza</value>
+  </data>
+  <data name="IslamInfo_muslimBook49" xml:space="preserve">
+    <value>Il Libro di pertinenza del Ricordo di Allah, Supplica, Pentimento e la ricerca del perdono</value>
+  </data>
+  <data name="IslamInfo_muslimBook5" xml:space="preserve">
+    <value>Il Libro di Preghiere</value>
+  </data>
+  <data name="IslamInfo_muslimBook50" xml:space="preserve">
+    <value>Il Libro delle Tradizioni Heart-fusione</value>
+  </data>
+  <data name="IslamInfo_muslimBook51" xml:space="preserve">
+    <value>Il Libro di pertinenza pentimento e Esortazione al pentimento</value>
+  </data>
+  <data name="IslamInfo_muslimBook52" xml:space="preserve">
+    <value>Di pertinenza del Charateristics degli ipocriti e dei comandi che li riguardano</value>
+  </data>
+  <data name="IslamInfo_muslimBook53" xml:space="preserve">
+    <value>La Descrizione libro Dare del Giorno del Giudizio, Paradiso e Inferno</value>
+  </data>
+  <data name="IslamInfo_muslimBook54" xml:space="preserve">
+    <value>Il Libro pertinenza Paradiso, la sua descrizione, i suoi doni e le sue Intimates</value>
+  </data>
+  <data name="IslamInfo_muslimBook55" xml:space="preserve">
+    <value>Il Libro di pertinenza del Turmoil e portenti della ultima ora</value>
+  </data>
+  <data name="IslamInfo_muslimBook56" xml:space="preserve">
+    <value>Il Libro di pertinenza pietà e di rammollimento di Cuori</value>
+  </data>
+  <data name="IslamInfo_muslimBook57" xml:space="preserve">
+    <value>Il libro di Commentary</value>
+  </data>
+  <data name="IslamInfo_muslimBook6" xml:space="preserve">
+    <value>Il libro di moschee e luoghi di preghiera</value>
+  </data>
+  <data name="IslamInfo_muslimBook7" xml:space="preserve">
+    <value>The Book of Prayer (Travellers)</value>
+  </data>
+  <data name="IslamInfo_muslimBook8" xml:space="preserve">
+    <value>The Book of Prayer (Venerdì)</value>
+  </data>
+  <data name="IslamInfo_muslimBook9" xml:space="preserve">
+    <value>Il Libro della preghiera (due Eid)</value>
+  </data>
+  <data name="IslamInfo_PrayerUnits" xml:space="preserve">
+    <value>Unità di preghiera</value>
+  </data>
+  <data name="IslamInfo_QuranChapter1" xml:space="preserve">
+    <value>L'apertura</value>
+  </data>
+  <data name="IslamInfo_QuranChapter10" xml:space="preserve">
+    <value>Jonas</value>
+  </data>
+  <data name="IslamInfo_QuranChapter100" xml:space="preserve">
+    <value>I Chargers</value>
+  </data>
+  <data name="IslamInfo_QuranChapter101" xml:space="preserve">
+    <value>Il Calamity</value>
+  </data>
+  <data name="IslamInfo_QuranChapter102" xml:space="preserve">
+    <value>Concorso</value>
+  </data>
+  <data name="IslamInfo_QuranChapter103" xml:space="preserve">
+    <value>La Giornata declino, Epoch</value>
+  </data>
+  <data name="IslamInfo_QuranChapter104" xml:space="preserve">
+    <value>Il diffamatore</value>
+  </data>
+  <data name="IslamInfo_QuranChapter105" xml:space="preserve">
+    <value>The Elephant</value>
+  </data>
+  <data name="IslamInfo_QuranChapter106" xml:space="preserve">
+    <value>Quraysh</value>
+  </data>
+  <data name="IslamInfo_QuranChapter107" xml:space="preserve">
+    <value>L'elemosina</value>
+  </data>
+  <data name="IslamInfo_QuranChapter108" xml:space="preserve">
+    <value>Abbondanza</value>
+  </data>
+  <data name="IslamInfo_QuranChapter109" xml:space="preserve">
+    <value>I miscredenti</value>
+  </data>
+  <data name="IslamInfo_QuranChapter11" xml:space="preserve">
+    <value>Hud</value>
+  </data>
+  <data name="IslamInfo_QuranChapter110" xml:space="preserve">
+    <value>Supporto Divine</value>
+  </data>
+  <data name="IslamInfo_QuranChapter111" xml:space="preserve">
+    <value>La fibra Palm</value>
+  </data>
+  <data name="IslamInfo_QuranChapter112" xml:space="preserve">
+    <value>Sincerità</value>
+  </data>
+  <data name="IslamInfo_QuranChapter113" xml:space="preserve">
+    <value>The Dawn</value>
+  </data>
+  <data name="IslamInfo_QuranChapter114" xml:space="preserve">
+    <value>Umanità</value>
+  </data>
+  <data name="IslamInfo_QuranChapter12" xml:space="preserve">
+    <value>Joseph</value>
+  </data>
+  <data name="IslamInfo_QuranChapter13" xml:space="preserve">
+    <value>Il Tuono</value>
+  </data>
+  <data name="IslamInfo_QuranChapter14" xml:space="preserve">
+    <value>Abraham</value>
+  </data>
+  <data name="IslamInfo_QuranChapter15" xml:space="preserve">
+    <value>The Rock</value>
+  </data>
+  <data name="IslamInfo_QuranChapter16" xml:space="preserve">
+    <value>The Bee</value>
+  </data>
+  <data name="IslamInfo_QuranChapter17" xml:space="preserve">
+    <value>Il Viaggio Notturno</value>
+  </data>
+  <data name="IslamInfo_QuranChapter18" xml:space="preserve">
+    <value>The Cave</value>
+  </data>
+  <data name="IslamInfo_QuranChapter19" xml:space="preserve">
+    <value>Maria</value>
+  </data>
+  <data name="IslamInfo_QuranChapter2" xml:space="preserve">
+    <value>The Cow</value>
+  </data>
+  <data name="IslamInfo_QuranChapter20" xml:space="preserve">
+    <value>Taa-Haa</value>
+  </data>
+  <data name="IslamInfo_QuranChapter21" xml:space="preserve">
+    <value>I Profeti</value>
+  </data>
+  <data name="IslamInfo_QuranChapter22" xml:space="preserve">
+    <value>Il pellegrinaggio</value>
+  </data>
+  <data name="IslamInfo_QuranChapter23" xml:space="preserve">
+    <value>I Credenti</value>
+  </data>
+  <data name="IslamInfo_QuranChapter24" xml:space="preserve">
+    <value>La Luce</value>
+  </data>
+  <data name="IslamInfo_QuranChapter25" xml:space="preserve">
+    <value>Il criterio</value>
+  </data>
+  <data name="IslamInfo_QuranChapter26" xml:space="preserve">
+    <value>I Poeti</value>
+  </data>
+  <data name="IslamInfo_QuranChapter27" xml:space="preserve">
+    <value>The Ant</value>
+  </data>
+  <data name="IslamInfo_QuranChapter28" xml:space="preserve">
+    <value>Le storie</value>
+  </data>
+  <data name="IslamInfo_QuranChapter29" xml:space="preserve">
+    <value>Il Ragno</value>
+  </data>
+  <data name="IslamInfo_QuranChapter3" xml:space="preserve">
+    <value>La famiglia di Imraan</value>
+  </data>
+  <data name="IslamInfo_QuranChapter30" xml:space="preserve">
+    <value>I Romani</value>
+  </data>
+  <data name="IslamInfo_QuranChapter31" xml:space="preserve">
+    <value>Luqman</value>
+  </data>
+  <data name="IslamInfo_QuranChapter32" xml:space="preserve">
+    <value>La prostrazione</value>
+  </data>
+  <data name="IslamInfo_QuranChapter33" xml:space="preserve">
+    <value>I clan</value>
+  </data>
+  <data name="IslamInfo_QuranChapter34" xml:space="preserve">
+    <value>Sheba</value>
+  </data>
+  <data name="IslamInfo_QuranChapter35" xml:space="preserve">
+    <value>L'Originator</value>
+  </data>
+  <data name="IslamInfo_QuranChapter36" xml:space="preserve">
+    <value>Yaseen</value>
+  </data>
+  <data name="IslamInfo_QuranChapter37" xml:space="preserve">
+    <value>Quelli redatti in Ranks</value>
+  </data>
+  <data name="IslamInfo_QuranChapter38" xml:space="preserve">
+    <value>La lettera Saad</value>
+  </data>
+  <data name="IslamInfo_QuranChapter39" xml:space="preserve">
+    <value>I Gruppi</value>
+  </data>
+  <data name="IslamInfo_QuranChapter4" xml:space="preserve">
+    <value>Le Donne</value>
+  </data>
+  <data name="IslamInfo_QuranChapter40" xml:space="preserve">
+    <value>Il Perdonatore</value>
+  </data>
+  <data name="IslamInfo_QuranChapter41" xml:space="preserve">
+    <value>Spiegato in dettaglio</value>
+  </data>
+  <data name="IslamInfo_QuranChapter42" xml:space="preserve">
+    <value>Consultazione</value>
+  </data>
+  <data name="IslamInfo_QuranChapter43" xml:space="preserve">
+    <value>Ornamenti d'oro</value>
+  </data>
+  <data name="IslamInfo_QuranChapter44" xml:space="preserve">
+    <value>Il fumo</value>
+  </data>
+  <data name="IslamInfo_QuranChapter45" xml:space="preserve">
+    <value>Accovacciato</value>
+  </data>
+  <data name="IslamInfo_QuranChapter46" xml:space="preserve">
+    <value>The Dunes</value>
+  </data>
+  <data name="IslamInfo_QuranChapter47" xml:space="preserve">
+    <value>Muhammad</value>
+  </data>
+  <data name="IslamInfo_QuranChapter48" xml:space="preserve">
+    <value>La Vittoria</value>
+  </data>
+  <data name="IslamInfo_QuranChapter49" xml:space="preserve">
+    <value>Gli appartamenti interni</value>
+  </data>
+  <data name="IslamInfo_QuranChapter5" xml:space="preserve">
+    <value>Il Tavolo</value>
+  </data>
+  <data name="IslamInfo_QuranChapter50" xml:space="preserve">
+    <value>La lettera Qaaf</value>
+  </data>
+  <data name="IslamInfo_QuranChapter51" xml:space="preserve">
+    <value>I Venti vagliatura</value>
+  </data>
+  <data name="IslamInfo_QuranChapter52" xml:space="preserve">
+    <value>Il Monte</value>
+  </data>
+  <data name="IslamInfo_QuranChapter53" xml:space="preserve">
+    <value>The Star</value>
+  </data>
+  <data name="IslamInfo_QuranChapter54" xml:space="preserve">
+    <value>La Luna</value>
+  </data>
+  <data name="IslamInfo_QuranChapter55" xml:space="preserve">
+    <value>Il Compassionevole</value>
+  </data>
+  <data name="IslamInfo_QuranChapter56" xml:space="preserve">
+    <value>L'inevitabile</value>
+  </data>
+  <data name="IslamInfo_QuranChapter57" xml:space="preserve">
+    <value>The Iron</value>
+  </data>
+  <data name="IslamInfo_QuranChapter58" xml:space="preserve">
+    <value>La Supplica Woman</value>
+  </data>
+  <data name="IslamInfo_QuranChapter59" xml:space="preserve">
+    <value>The Exile</value>
+  </data>
+  <data name="IslamInfo_QuranChapter6" xml:space="preserve">
+    <value>Bovini</value>
+  </data>
+  <data name="IslamInfo_QuranChapter60" xml:space="preserve">
+    <value>Lei che deve essere esaminato</value>
+  </data>
+  <data name="IslamInfo_QuranChapter61" xml:space="preserve">
+    <value>I Ranks</value>
+  </data>
+  <data name="IslamInfo_QuranChapter62" xml:space="preserve">
+    <value>Venerdì</value>
+  </data>
+  <data name="IslamInfo_QuranChapter63" xml:space="preserve">
+    <value>Gli Ipocriti</value>
+  </data>
+  <data name="IslamInfo_QuranChapter64" xml:space="preserve">
+    <value>Disinganno Mutual</value>
+  </data>
+  <data name="IslamInfo_QuranChapter65" xml:space="preserve">
+    <value>Divorzio</value>
+  </data>
+  <data name="IslamInfo_QuranChapter66" xml:space="preserve">
+    <value>Il divieto</value>
+  </data>
+  <data name="IslamInfo_QuranChapter67" xml:space="preserve">
+    <value>La sovranità</value>
+  </data>
+  <data name="IslamInfo_QuranChapter68" xml:space="preserve">
+    <value>Il Pen</value>
+  </data>
+  <data name="IslamInfo_QuranChapter69" xml:space="preserve">
+    <value>La Realtà</value>
+  </data>
+  <data name="IslamInfo_QuranChapter7" xml:space="preserve">
+    <value>The Heights</value>
+  </data>
+  <data name="IslamInfo_QuranChapter70" xml:space="preserve">
+    <value>Le scale ascendenti</value>
+  </data>
+  <data name="IslamInfo_QuranChapter71" xml:space="preserve">
+    <value>Noè</value>
+  </data>
+  <data name="IslamInfo_QuranChapter72" xml:space="preserve">
+    <value>Il Jinn</value>
+  </data>
+  <data name="IslamInfo_QuranChapter73" xml:space="preserve">
+    <value>La avvolta One</value>
+  </data>
+  <data name="IslamInfo_QuranChapter74" xml:space="preserve">
+    <value>Il Cloaked One</value>
+  </data>
+  <data name="IslamInfo_QuranChapter75" xml:space="preserve">
+    <value>La Resurrezione</value>
+  </data>
+  <data name="IslamInfo_QuranChapter76" xml:space="preserve">
+    <value>Uomo</value>
+  </data>
+  <data name="IslamInfo_QuranChapter77" xml:space="preserve">
+    <value>Gli Emissari</value>
+  </data>
+  <data name="IslamInfo_QuranChapter78" xml:space="preserve">
+    <value>Il Bando</value>
+  </data>
+  <data name="IslamInfo_QuranChapter79" xml:space="preserve">
+    <value>Coloro che trascina via</value>
+  </data>
+  <data name="IslamInfo_QuranChapter8" xml:space="preserve">
+    <value>The Spoils of War</value>
+  </data>
+  <data name="IslamInfo_QuranChapter80" xml:space="preserve">
+    <value>Lui aggrottò la fronte</value>
+  </data>
+  <data name="IslamInfo_QuranChapter81" xml:space="preserve">
+    <value>Il rovesciamento</value>
+  </data>
+  <data name="IslamInfo_QuranChapter82" xml:space="preserve">
+    <value>Il Spaccatrici</value>
+  </data>
+  <data name="IslamInfo_QuranChapter83" xml:space="preserve">
+    <value>Defrauding</value>
+  </data>
+  <data name="IslamInfo_QuranChapter84" xml:space="preserve">
+    <value>La scissione aperta</value>
+  </data>
+  <data name="IslamInfo_QuranChapter85" xml:space="preserve">
+    <value>Le Costellazioni</value>
+  </data>
+  <data name="IslamInfo_QuranChapter86" xml:space="preserve">
+    <value>La Stella del Mattino</value>
+  </data>
+  <data name="IslamInfo_QuranChapter87" xml:space="preserve">
+    <value>L'Altissimo</value>
+  </data>
+  <data name="IslamInfo_QuranChapter88" xml:space="preserve">
+    <value>La stragrande</value>
+  </data>
+  <data name="IslamInfo_QuranChapter89" xml:space="preserve">
+    <value>The Dawn</value>
+  </data>
+  <data name="IslamInfo_QuranChapter9" xml:space="preserve">
+    <value>Il pentimento</value>
+  </data>
+  <data name="IslamInfo_QuranChapter90" xml:space="preserve">
+    <value>La Città</value>
+  </data>
+  <data name="IslamInfo_QuranChapter91" xml:space="preserve">
+    <value>Il Sole</value>
+  </data>
+  <data name="IslamInfo_QuranChapter92" xml:space="preserve">
+    <value>The Night</value>
+  </data>
+  <data name="IslamInfo_QuranChapter93" xml:space="preserve">
+    <value>Le ore del mattino</value>
+  </data>
+  <data name="IslamInfo_QuranChapter94" xml:space="preserve">
+    <value>La Consolazione</value>
+  </data>
+  <data name="IslamInfo_QuranChapter95" xml:space="preserve">
+    <value>La Fig</value>
+  </data>
+  <data name="IslamInfo_QuranChapter96" xml:space="preserve">
+    <value>Il Clot</value>
+  </data>
+  <data name="IslamInfo_QuranChapter97" xml:space="preserve">
+    <value>The Power, Fate</value>
+  </data>
+  <data name="IslamInfo_QuranChapter98" xml:space="preserve">
+    <value>The Evidence</value>
+  </data>
+  <data name="IslamInfo_QuranChapter99" xml:space="preserve">
+    <value>Il terremoto</value>
+  </data>
+  <data name="IslamInfo_Terminating" xml:space="preserve">
+    <value>Terminazione</value>
+  </data>
+  <data name="IslamInfo_Translation" xml:space="preserve">
+    <value>Traduzione</value>
+  </data>
+  <data name="IslamInfo_Transliteration" xml:space="preserve">
+    <value>Traslitterazione</value>
+  </data>
+  <data name="IslamInfo_UnicodeName" xml:space="preserve">
+    <value>Unicode Nome</value>
+  </data>
+  <data name="IslamInfo_UnicodeValue" xml:space="preserve">
+    <value>Valore Unicode</value>
+  </data>
+  <data name="unicode_ArabicComma" xml:space="preserve">
+    <value>Arabo Comma</value>
+  </data>
+  <data name="unicode_ArabicDamma" xml:space="preserve">
+    <value>Arabo Damma</value>
+  </data>
+  <data name="unicode_ArabicDammatan" xml:space="preserve">
+    <value>Arabo Dammatan</value>
+  </data>
+  <data name="unicode_ArabicEmptyCentreHighStop" xml:space="preserve">
+    <value>Arabo Empty conferenze arresto</value>
+  </data>
+  <data name="unicode_ArabicEmptyCentreLowStop" xml:space="preserve">
+    <value>Arabo Empty Centro arresto basso</value>
+  </data>
+  <data name="unicode_ArabicEndOfAyah" xml:space="preserve">
+    <value>Arabo End Of Ayah</value>
+  </data>
+  <data name="unicode_ArabicFatha" xml:space="preserve">
+    <value>Arabo Fatha</value>
+  </data>
+  <data name="unicode_ArabicFathatan" xml:space="preserve">
+    <value>Arabo Fathatan</value>
+  </data>
+  <data name="unicode_ArabicHamzaAbove" xml:space="preserve">
+    <value>Arabo Hamza Sopra</value>
+  </data>
+  <data name="unicode_ArabicHamzaBelow" xml:space="preserve">
+    <value>Arabo Hamza Sotto</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitEight" xml:space="preserve">
+    <value>Digit arabo-indi Eight</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitFive" xml:space="preserve">
+    <value>Digit arabo-indi Five</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitFour" xml:space="preserve">
+    <value>Digit arabo-indi Four</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitNine" xml:space="preserve">
+    <value>Digit arabo-indi Nine</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitOne" xml:space="preserve">
+    <value>Arabo-indi Digit One</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitSeven" xml:space="preserve">
+    <value>Digit arabo-indi Seven</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitSix" xml:space="preserve">
+    <value>Digit arabo-indi Six</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitThree" xml:space="preserve">
+    <value>Digit arabo-indi Tre</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitTwo" xml:space="preserve">
+    <value>Digit arabo-indi Two</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitZero" xml:space="preserve">
+    <value>Digit arabo-indi Zero</value>
+  </data>
+  <data name="unicode_ArabicKasra" xml:space="preserve">
+    <value>Arabo Kasra</value>
+  </data>
+  <data name="unicode_ArabicKasratan" xml:space="preserve">
+    <value>Arabo Kasratan</value>
+  </data>
+  <data name="unicode_ArabicLetterAin" xml:space="preserve">
+    <value>Arabo: lettera Ain</value>
+  </data>
+  <data name="unicode_ArabicLetterAlef" xml:space="preserve">
+    <value>Arabo: lettera Alef</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefMaksura" xml:space="preserve">
+    <value>Arabo: lettera Alef Maksura</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefWasla" xml:space="preserve">
+    <value>Arabo: lettera Alef Wasla</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefWithHamzaAbove" xml:space="preserve">
+    <value>Arabo Alef Lettera Con Hamza Sopra</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefWithHamzaBelow" xml:space="preserve">
+    <value>Arabo Alef Lettera Con Hamza Sotto</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefWithMaddaAbove" xml:space="preserve">
+    <value>Arabo Alef Lettera Con Madda Sopra</value>
+  </data>
+  <data name="unicode_ArabicLetterBeh" xml:space="preserve">
+    <value>Arabo: lettera Beh</value>
+  </data>
+  <data name="unicode_ArabicLetterDad" xml:space="preserve">
+    <value>Arabo: lettera papà</value>
+  </data>
+  <data name="unicode_ArabicLetterDal" xml:space="preserve">
+    <value>Arabo Lettera Dal</value>
+  </data>
+  <data name="unicode_ArabicLetterFeh" xml:space="preserve">
+    <value>Arabo: lettera Feh</value>
+  </data>
+  <data name="unicode_ArabicLetterGaf" xml:space="preserve">
+    <value>Arabo: lettera Gaf</value>
+  </data>
+  <data name="unicode_ArabicLetterGhain" xml:space="preserve">
+    <value>Arabo: lettera Ghain</value>
+  </data>
+  <data name="unicode_ArabicLetterHah" xml:space="preserve">
+    <value>Arabo: lettera Hah</value>
+  </data>
+  <data name="unicode_ArabicLetterHamza" xml:space="preserve">
+    <value>Arabo: lettera Hamza</value>
+  </data>
+  <data name="unicode_ArabicLetterHeh" xml:space="preserve">
+    <value>Arabo: lettera Heh</value>
+  </data>
+  <data name="unicode_ArabicLetterJeem" xml:space="preserve">
+    <value>Arabo: lettera Jeem</value>
+  </data>
+  <data name="unicode_ArabicLetterKaf" xml:space="preserve">
+    <value>Arabo: lettera Kaf</value>
+  </data>
+  <data name="unicode_ArabicLetterKhah" xml:space="preserve">
+    <value>Arabo: lettera Khah</value>
+  </data>
+  <data name="unicode_ArabicLetterLam" xml:space="preserve">
+    <value>Arabo: lettera Lam</value>
+  </data>
+  <data name="unicode_ArabicLetterMeem" xml:space="preserve">
+    <value>Arabo: lettera Meem</value>
+  </data>
+  <data name="unicode_ArabicLetterNoon" xml:space="preserve">
+    <value>Arabo: lettera Mezzogiorno</value>
+  </data>
+  <data name="unicode_ArabicLetterPeh" xml:space="preserve">
+    <value>Arabo: lettera Peh</value>
+  </data>
+  <data name="unicode_ArabicLetterQaf" xml:space="preserve">
+    <value>Arabo: lettera Qaf</value>
+  </data>
+  <data name="unicode_ArabicLetterReh" xml:space="preserve">
+    <value>Carattere alfabeto arabo</value>
+  </data>
+  <data name="unicode_ArabicLetterSad" xml:space="preserve">
+    <value>Lettera arabo Sad</value>
+  </data>
+  <data name="unicode_ArabicLetterSeen" xml:space="preserve">
+    <value>Lettera arabo Visto</value>
+  </data>
+  <data name="unicode_ArabicLetterSheen" xml:space="preserve">
+    <value>Arabo: lettera Sheen</value>
+  </data>
+  <data name="unicode_ArabicLetterSuperscriptAlef" xml:space="preserve">
+    <value>Arabo: lettera Apice Alef</value>
+  </data>
+  <data name="unicode_ArabicLetterTah" xml:space="preserve">
+    <value>Arabo: lettera Tah</value>
+  </data>
+  <data name="unicode_ArabicLetterTcheh" xml:space="preserve">
+    <value>Arabo: lettera Tcheh</value>
+  </data>
+  <data name="unicode_ArabicLetterTeh" xml:space="preserve">
+    <value>Arabo: lettera Teh</value>
+  </data>
+  <data name="unicode_ArabicLetterTehMarbuta" xml:space="preserve">
+    <value>Arabo: lettera Teh marbuta</value>
+  </data>
+  <data name="unicode_ArabicLetterThal" xml:space="preserve">
+    <value>Arabo: lettera Thal</value>
+  </data>
+  <data name="unicode_ArabicLetterTheh" xml:space="preserve">
+    <value>Arabo: lettera Theh</value>
+  </data>
+  <data name="unicode_ArabicLetterVeh" xml:space="preserve">
+    <value>Arabo: lettera Veh</value>
+  </data>
+  <data name="unicode_ArabicLetterWaw" xml:space="preserve">
+    <value>Arabo: lettera Waw</value>
+  </data>
+  <data name="unicode_ArabicLetterWawWithHamzaAbove" xml:space="preserve">
+    <value>Arabo Waw Lettera Con Hamza Sopra</value>
+  </data>
+  <data name="unicode_ArabicLetterYeh" xml:space="preserve">
+    <value>Arabo: lettera Yeh</value>
+  </data>
+  <data name="unicode_ArabicLetterYehWithHamzaAbove" xml:space="preserve">
+    <value>Arabo Yeh Lettera Con Hamza Sopra</value>
+  </data>
+  <data name="unicode_ArabicLetterZah" xml:space="preserve">
+    <value>Arabo: lettera Zah</value>
+  </data>
+  <data name="unicode_ArabicLetterZain" xml:space="preserve">
+    <value>Arabo: lettera Zain</value>
+  </data>
+  <data name="unicode_ArabicLigatureAkbarIsolatedForm" xml:space="preserve">
+    <value>Arabo alfabeto Akbar Isolato Form</value>
+  </data>
+  <data name="unicode_ArabicLigatureAlayheIsolatedForm" xml:space="preserve">
+    <value>Form arabo alfabeto alayhe Isolato</value>
+  </data>
+  <data name="unicode_ArabicLigatureAllahIsolatedForm" xml:space="preserve">
+    <value>Form arabo alfabeto Allah Isolato</value>
+  </data>
+  <data name="unicode_ArabicLigatureBismillahArRahmanArRaheem" xml:space="preserve">
+    <value>Arabo alfabeto Bismillah Ar-Rahman Ar-Raheem</value>
+  </data>
+  <data name="unicode_ArabicLigatureJallajalalouhou" xml:space="preserve">
+    <value>Alfabeto arabo Jallajalalouhou</value>
+  </data>
+  <data name="unicode_ArabicLigatureMohammadIsolatedForm" xml:space="preserve">
+    <value>Arabo alfabeto Mohammad Isolato Form</value>
+  </data>
+  <data name="unicode_ArabicLigatureQalaUsedAsKoranicStopSignIsolatedForm" xml:space="preserve">
+    <value>Arabo alfabeto Qala Utilizzato Come coranica stop isolato Form</value>
+  </data>
+  <data name="unicode_ArabicLigatureRasoulIsolatedForm" xml:space="preserve">
+    <value>Arabo alfabeto Rasoul Isolato Form</value>
+  </data>
+  <data name="unicode_ArabicLigatureSalamIsolatedForm" xml:space="preserve">
+    <value>Arabo alfabeto Salam Isolato Form</value>
+  </data>
+  <data name="unicode_ArabicLigatureSallaIsolatedForm" xml:space="preserve">
+    <value>Arabo alfabeto Salla Isolato Form</value>
+  </data>
+  <data name="unicode_ArabicLigatureSallallahouAlayheWasallam" xml:space="preserve">
+    <value>Arabo alfabeto Sallallahou alayhe Wasallam</value>
+  </data>
+  <data name="unicode_ArabicLigatureSallaUsedAsKoranicStopSignIsolatedForm" xml:space="preserve">
+    <value>Arabo alfabeto Salla Utilizzato Come coranica stop isolato Form</value>
+  </data>
+  <data name="unicode_ArabicLigatureWasallamIsolatedForm" xml:space="preserve">
+    <value>Form arabo alfabeto Wasallam Isolato</value>
+  </data>
+  <data name="unicode_ArabicMaddahAbove" xml:space="preserve">
+    <value>Arabo Maddah Sopra</value>
+  </data>
+  <data name="unicode_ArabicPlaceOfSajdah" xml:space="preserve">
+    <value>Arabo Luogo di Sajdah</value>
+  </data>
+  <data name="unicode_ArabicQuestionMark" xml:space="preserve">
+    <value>Arabo Question Mark</value>
+  </data>
+  <data name="unicode_ArabicRoundedHighStopWithFilledCentre" xml:space="preserve">
+    <value>Arabo arrotondato Alta Stop con Filled Centro</value>
+  </data>
+  <data name="unicode_ArabicSemicolon" xml:space="preserve">
+    <value>Arabo virgola</value>
+  </data>
+  <data name="unicode_ArabicShadda" xml:space="preserve">
+    <value>Arabo Shadda</value>
+  </data>
+  <data name="unicode_ArabicSmallHighJeem" xml:space="preserve">
+    <value>Arabo Piccolo Alta Jeem</value>
+  </data>
+  <data name="unicode_ArabicSmallHighLamAlef" xml:space="preserve">
+    <value>Arabo Piccolo Alta Lam Alef</value>
+  </data>
+  <data name="unicode_ArabicSmallHighLigatureQafWithLamWithAlefMaksura" xml:space="preserve">
+    <value>Arabo Piccolo alta alfabeto Qaf Con Lam Con Alef Maksura</value>
+  </data>
+  <data name="unicode_ArabicSmallHighLigatureSadWithLamWithAlefMaksura" xml:space="preserve">
+    <value>Arabo Piccolo alta alfabeto Triste Con Lam Con Alef Maksura</value>
+  </data>
+  <data name="unicode_ArabicSmallHighMeemInitialForm" xml:space="preserve">
+    <value>Arabo forma iniziale Piccolo alta Meem</value>
+  </data>
+  <data name="unicode_ArabicSmallHighMeemIsolatedForm" xml:space="preserve">
+    <value>Forma arabo Piccolo alta Meem Isolato</value>
+  </data>
+  <data name="unicode_ArabicSmallHighNoon" xml:space="preserve">
+    <value>Arabo Piccolo High Noon</value>
+  </data>
+  <data name="unicode_ArabicSmallHighRoundedZero" xml:space="preserve">
+    <value>Arabo Piccolo Alta arrotondato Zero</value>
+  </data>
+  <data name="unicode_ArabicSmallHighSeen" xml:space="preserve">
+    <value>Arabo Piccolo Alta Visto</value>
+  </data>
+  <data name="unicode_ArabicSmallHighThreeDots" xml:space="preserve">
+    <value>Arabo Piccolo Alta Three Dots</value>
+  </data>
+  <data name="unicode_ArabicSmallHighUprightRectangularZero" xml:space="preserve">
+    <value>Arabo Piccolo alta Montante Rettangolare Zero</value>
+  </data>
+  <data name="unicode_ArabicSmallLowMeem" xml:space="preserve">
+    <value>Arabo Piccolo Low Meem</value>
+  </data>
+  <data name="unicode_ArabicSmallLowSeen" xml:space="preserve">
+    <value>Arabo Piccolo Low Visto</value>
+  </data>
+  <data name="unicode_ArabicSmallWaw" xml:space="preserve">
+    <value>Arabo Piccolo Waw</value>
+  </data>
+  <data name="unicode_ArabicSmallYeh" xml:space="preserve">
+    <value>Arabo Piccolo Yeh</value>
+  </data>
+  <data name="unicode_ArabicStartOfRubElHizb" xml:space="preserve">
+    <value>Arabo Start Of Rub El Hizb</value>
+  </data>
+  <data name="unicode_ArabicSukun" xml:space="preserve">
+    <value>Arabo Sukun</value>
+  </data>
+  <data name="unicode_ArabicTatweel" xml:space="preserve">
+    <value>Arabo Tatweel</value>
+  </data>
+  <data name="unicode_Colon" xml:space="preserve">
+    <value>Colon</value>
+  </data>
+  <data name="unicode_Comma" xml:space="preserve">
+    <value>Virgola</value>
+  </data>
+  <data name="unicode_ExclamationMark" xml:space="preserve">
+    <value>Punto esclamativo</value>
+  </data>
+  <data name="unicode_FullStop" xml:space="preserve">
+    <value>Pieno di arresto</value>
+  </data>
+  <data name="unicode_HyphenMinus" xml:space="preserve">
+    <value>Hyphen-Minus</value>
+  </data>
+  <data name="unicode_LeftCurlyBracket" xml:space="preserve">
+    <value>Sinistra Curly Bracket</value>
+  </data>
+  <data name="unicode_LeftPointingDoubleAngleQuotationMark" xml:space="preserve">
+    <value>Rivolta verso sinistra Doppio angolo Virgoletta</value>
+  </data>
+  <data name="unicode_LeftSquareBracket" xml:space="preserve">
+    <value>Sinistra Quadrato Staffa</value>
+  </data>
+  <data name="unicode_OrnateLeftParenthesis" xml:space="preserve">
+    <value>Ornato parentesi sinistra</value>
+  </data>
+  <data name="unicode_OrnateRightParenthesis" xml:space="preserve">
+    <value>Ornato parentesi chiusa</value>
+  </data>
+  <data name="unicode_QuotationMark" xml:space="preserve">
+    <value>Virgoletta</value>
+  </data>
+  <data name="unicode_RialSign" xml:space="preserve">
+    <value>Rial Sign</value>
+  </data>
+  <data name="unicode_RightCurlyBracket" xml:space="preserve">
+    <value>Diritto Curly Bracket</value>
+  </data>
+  <data name="unicode_RightPointingDoubleAngleQuotationMark" xml:space="preserve">
+    <value>Destro di puntamento Angle doppia virgoletta</value>
+  </data>
+  <data name="unicode_RightSquareBracket" xml:space="preserve">
+    <value>Parentesi quadra</value>
+  </data>
+  <data name="unicode_Space" xml:space="preserve">
+    <value>Spazio</value>
+  </data>
+  <data name="IslamInfo_Date" xml:space="preserve">
+    <value>Data</value>
+  </data>
+  <data name="IslamInfo_Day" xml:space="preserve">
+    <value>Giorno</value>
+  </data>
+  <data name="IslamInfo_Final1" xml:space="preserve">
+    <value>Finale 1</value>
+  </data>
+  <data name="IslamInfo_Final1Trans" xml:space="preserve">
+    <value>che nulla è come Lui ed Egli è Colui che tutto ascolta, The Seer</value>
+  </data>
+  <data name="IslamInfo_Final1WordByWord" xml:space="preserve">
+    <value>che | non | è come Lui. | cosa | Egli è | The ascolta | The Seer</value>
+  </data>
+  <data name="IslamInfo_Final2" xml:space="preserve">
+    <value>2 ° finale</value>
+  </data>
+  <data name="IslamInfo_Final2Trans" xml:space="preserve">
+    <value>O Allah, invia la migliore preghiera al vostro migliore creatura Maestro Muhammad</value>
+  </data>
+  <data name="IslamInfo_Final2WordByWord" xml:space="preserve">
+    <value>O Allah | invia | il meglio | preghiera | su | meglio | della tua creazione | Master | Muhammad</value>
+  </data>
+  <data name="IslamInfo_Final3" xml:space="preserve">
+    <value>3 ° finale</value>
+  </data>
+  <data name="IslamInfo_Final3Trans" xml:space="preserve">
+    <value>E la pace e l'inchiostro delle sue parole e quando chi lo ricorda lo fanno e ogni volta che coloro che trascurano di ricordarlo farlo</value>
+  </data>
+  <data name="IslamInfo_Final3WordByWord" xml:space="preserve">
+    <value>E la pace | raccontando | sua conoscenza | e inchiostro | delle sue parole | quando | ricordarlo | farlo | e ogni volta che coloro che trascurano | a | ricordarci di Lui | farlo</value>
+  </data>
+  <data name="IslamInfo_OMasterSendPrayersAndPeace" xml:space="preserve">
+    <value>O mio Maestro, inviare i vostri saluti e benedizioni</value>
+  </data>
+  <data name="IslamInfo_OMasterSendPrayersAndPeaceTrans" xml:space="preserve">
+    <value>O mio Maestro, inviare i vostri saluti e benedizioni per sempre Upon Your Amato, il migliore di tutta la creazione</value>
+  </data>
+  <data name="IslamInfo_OMasterSendPrayersAndPeaceWordByWord" xml:space="preserve">
+    <value>O mio Maestro | inviare i vostri saluti e benedizioni | | sempre | eternamente | su | Il tuo Amato | il meglio | della creazione | di tutto</value>
+  </data>
+  <data name="IslamInfo_PopularIslamicSongVerses" xml:space="preserve">
+    <value>Popolari islamici canzone Verses</value>
+  </data>
+  <data name="IslamInfo_RemembranceFirst" xml:space="preserve">
+    <value>Ricordo Prima</value>
+  </data>
+  <data name="IslamInfo_RemembranceFirstTrans" xml:space="preserve">
+    <value>Nessuno ha il diritto di essere adorato, ma Tu (O Allah)), Gloria (e Exalted) sono Voi (soprattutto quello (il male) si associano con te).</value>
+  </data>
+  <data name="IslamInfo_RemembranceFirstWordByWord" xml:space="preserve">
+    <value>Nessuno | ha il diritto di essere adorato | ma | You | Glorificato sei Tu | Truly | Sono stato | di | ingiusti</value>
+  </data>
+  <data name="IslamInfo_RemembranceSecond" xml:space="preserve">
+    <value>Ricordo Seconda</value>
+  </data>
+  <data name="IslamInfo_RemembranceSecondTrans" xml:space="preserve">
+    <value>Allah (Alone) è sufficiente per noi, e Lui è il migliore Disposer di cose (per noi);</value>
+  </data>
+  <data name="IslamInfo_RemembranceSecondWordByWord" xml:space="preserve">
+    <value>Sufficiente per noi | Allah | e Lui è il migliore | Disposer degli affari | Che eccellente | Patron | e ciò che un eccellente | Helper</value>
+  </data>
+  <data name="IslamInfo_RemembranceThird" xml:space="preserve">
+    <value>Ricordo Terzo</value>
+  </data>
+  <data name="IslamInfo_RemembranceThirdTrans" xml:space="preserve">
+    <value>Non vi è alcuna forza (ad astenersi dai peccati, ma con la protezione di Allah) e non c'è potere (di compiere buone azioni), ma con l'aiuto di Allah, l'Altissimo, il Supremo</value>
+  </data>
+  <data name="IslamInfo_RemembranceThirdWordByWord" xml:space="preserve">
+    <value>Non c'è | forza | e non c'è | potenza | salvo | con Allah | High | Supremo</value>
+  </data>
+  <data name="IslamInfo_SendBlessingsFirst" xml:space="preserve">
+    <value>Invia Benedizioni First</value>
+  </data>
+  <data name="IslamInfo_SendBlessingsFirstTrans" xml:space="preserve">
+    <value>Allah, invia la Tua misericordia su Maometto e la sua posterità come hai inviato la Tua misericordia su Abramo e alla sua discendenza.</value>
+  </data>
+  <data name="IslamInfo_SendBlessingsFirstWordByWord" xml:space="preserve">
+    <value>O Allah | Invia la tua misericordia | in | Muhammad | e su | l'posteri | di Lui | as | hai inviato la Tua misericordia | in | Abraham | e su | l'posteri | di Colui | veramente Siete | Più Laudato | Più Glorioso |</value>
+  </data>
+  <data name="IslamInfo_SendBlessingsSecond" xml:space="preserve">
+    <value>Invia Benedizioni Seconda</value>
+  </data>
+  <data name="IslamInfo_SendBlessingsSecondTrans" xml:space="preserve">
+    <value>Allah, invia la Tua misericordia su Maometto e la sua posterità come hai inviato la Tua misericordia su Abramo e alla sua discendenza.</value>
+  </data>
+  <data name="IslamInfo_SendBlessingsSecondWordByWord" xml:space="preserve">
+    <value>O Allah | Invia la tua misericordia | in | Muhammad | e su | l'posteri | di Lui | as | hai inviato la Tua misericordia | in | Abraham | e su | l'posteri | di Colui | veramente Siete | Più Laudato | Più Glorioso |</value>
+  </data>
+  <data name="IslamInfo_TheBestNames" xml:space="preserve">
+    <value>I migliori nomi</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoon" xml:space="preserve">
+    <value>La Luna Bianca</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonEighth" xml:space="preserve">
+    <value>Ottavo</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonEighthTrans" xml:space="preserve">
+    <value>Benvenuto tu che ci chiamano a un buon modo</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonEighthWordByWord" xml:space="preserve">
+    <value>Benvenuti | tu che ci chiami | per un buon | modo</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonFifth" xml:space="preserve">
+    <value>Quinto</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonFifthTrans" xml:space="preserve">
+    <value>Oh nostro Messenger (Emissario) tra noi</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonFifthWordByWord" xml:space="preserve">
+    <value>Oh | il nostro Messenger | tra noi</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonFirst" xml:space="preserve">
+    <value>Primo</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonFirstTrans" xml:space="preserve">
+    <value>Oh, la luna rosa bianca su di noi</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonFirstWordByWord" xml:space="preserve">
+    <value>Oh rose | la luna bianca | su di noi</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonFourth" xml:space="preserve">
+    <value>Quarto</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonFourthTrans" xml:space="preserve">
+    <value>Per colui che ci invita al modo di Allah</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonFourthWordByWord" xml:space="preserve">
+    <value>Per lui | che ci invita | Allah | la via della</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonSecond" xml:space="preserve">
+    <value>Secondo</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonSecondTrans" xml:space="preserve">
+    <value>Dalla valle (dove) chiamato</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonSecondWordByWord" xml:space="preserve">
+    <value>Dal | la valle | chiamato</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonSeventh" xml:space="preserve">
+    <value>Settimo</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonSeventhTrans" xml:space="preserve">
+    <value>Avete portato a questa città nobiltà</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonSeventhWordByWord" xml:space="preserve">
+    <value>Avete portato | nobiltà | a questa città</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonSixth" xml:space="preserve">
+    <value>Sesto</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonSixthTrans" xml:space="preserve">
+    <value>Chi viene con le esortazioni (diffide / comandamenti) di essere ascoltati</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonSixthWordByWord" xml:space="preserve">
+    <value>Chi viene | con i comandamenti | essere rispettate</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonThird" xml:space="preserve">
+    <value>Terzo</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonThirdTrans" xml:space="preserve">
+    <value>Ed è nostro dovere mostrare gratitudine</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonThirdWordByWord" xml:space="preserve">
+    <value>Ed è doveroso | di mostrare graditude | su di noi</value>
+  </data>
+  <data name="IslamInfo_AllahKnowsBest" xml:space="preserve">
+    <value>Allah conosce meglio</value>
+  </data>
+  <data name="IslamInfo_AllahSaysTheTruth" xml:space="preserve">
+    <value>La verità è che da Allah, la maggior parte Magnifico</value>
+  </data>
+  <data name="IslamInfo_AllahSufficesMe" xml:space="preserve">
+    <value>Sufficiente per me è Allah</value>
+  </data>
+  <data name="IslamInfo_AllahWilledItSo" xml:space="preserve">
+    <value>Allah ha voluto così</value>
+  </data>
+  <data name="IslamInfo_AllahWilling" xml:space="preserve">
+    <value>Se Allah vuole così</value>
+  </data>
+  <data name="IslamInfo_AndUponYouBePeaceAndMercyOfAllah" xml:space="preserve">
+    <value>E su di te la pace e la misericordia di Allah</value>
+  </data>
+  <data name="IslamInfo_AndUponYouBePeaceAndMercyOfAllahAndBlessings" xml:space="preserve">
+    <value>E su di te la pace e la misericordia di Allah e le Sue benedizioni</value>
+  </data>
+  <data name="IslamInfo_BlessingsOfAllah" xml:space="preserve">
+    <value>Benedizioni di Allah</value>
+  </data>
+  <data name="IslamInfo_GloriousAndExaltedBeHe" xml:space="preserve">
+    <value>Glorioso e Esaltato Egli sia</value>
+  </data>
+  <data name="IslamInfo_IAskAllahForgiveness" xml:space="preserve">
+    <value>Chiedo perdono di Allah</value>
+  </data>
+  <data name="IslamInfo_InProtectionOfAllah" xml:space="preserve">
+    <value>Nella protezione di Allah</value>
+  </data>
+  <data name="IslamInfo_InThePathOfAllah" xml:space="preserve">
+    <value>Per la causa di Allah</value>
+  </data>
+  <data name="IslamInfo_MayAllahBePleased" xml:space="preserve">
+    <value>Che Allah si compiaccia di loro</value>
+  </data>
+  <data name="IslamInfo_MayAllahBlessYou" xml:space="preserve">
+    <value>Benedizioni su di voi da Allah</value>
+  </data>
+  <data name="IslamInfo_MayAllahHaveMercy" xml:space="preserve">
+    <value>Possa Allah abbia misericordia di loro</value>
+  </data>
+  <data name="IslamInfo_MayAllahProtectYou" xml:space="preserve">
+    <value>Che Allah vi protegga</value>
+  </data>
+  <data name="IslamInfo_MayAllahWillItSo" xml:space="preserve">
+    <value>Possa Allah sarà così</value>
+  </data>
+  <data name="IslamInfo_PeaceBeUponYouAndMercyOfAllah" xml:space="preserve">
+    <value>La pace sia su di voi e la misericordia di Allah</value>
+  </data>
+  <data name="IslamInfo_PeaceBeUponYouAndMercyOfAllahAndBlessings" xml:space="preserve">
+    <value>La pace sia su di voi e la misericordia di Allah e le Sue benedizioni</value>
+  </data>
+  <data name="IslamInfo_SeekRefugeWithAllahFromSatanRejected" xml:space="preserve">
+    <value>Mi rifugio in Allah da Satana il reietto</value>
+  </data>
+  <data name="IslamInfo_SublimeAndMighty" xml:space="preserve">
+    <value>Sublime e Mighty</value>
+  </data>
+  <data name="IslamInfo_TrulyFromAllahWeComeAndToHimWillReturn" xml:space="preserve">
+    <value>In verità Allah siamo venuti, e veramente a Lui torneremo</value>
+  </data>
+  <data name="Acct_CertRequest" xml:space="preserve">
+    <value>Richiesta di certificato</value>
+  </data>
+  <data name="Acct_Certificate" xml:space="preserve">
+    <value>Certificato</value>
+  </data>
+  <data name="Acct_CertInstall" xml:space="preserve">
+    <value>Installa certificato</value>
+  </data>
+  <data name="Acct_CurrentUser" xml:space="preserve">
+    <value>Utente corrente</value>
+  </data>
+  <data name="Acct_DeleteCertRequest" xml:space="preserve">
+    <value>Elimina richiesta di certificato</value>
+  </data>
+  <data name="Acct_EnableSSL" xml:space="preserve">
+    <value>Attiva SSL</value>
+  </data>
+  <data name="Acct_PrivateKey" xml:space="preserve">
+    <value>Chiave privata</value>
+  </data>
+  <data name="Acct_ViewCertRequests" xml:space="preserve">
+    <value>Richieste View certificati</value>
+  </data>
+  <data name="Acct_ViewSites" xml:space="preserve">
+    <value>Vedi Siti</value>
+  </data>
+  <data name="Acct_CertInstallIntermed" xml:space="preserve">
+    <value>Installa certificato Intermedio</value>
+  </data>
+  <data name="IslamInfo_UniqueLetters" xml:space="preserve">
+    <value>Unique Lettere</value>
+  </data>
+  <data name="IslamInfo_SoulStates" xml:space="preserve">
+    <value>Stati anima</value>
+  </data>
+  <data name="IslamInfo_Abbreviations" xml:space="preserve">
+    <value>Abbreviazioni</value>
+  </data>
+  <data name="IslamInfo_Names" xml:space="preserve">
+    <value>Nomi</value>
+  </data>
+  <data name="IslamInfo_Places" xml:space="preserve">
+    <value>Luoghi</value>
+  </data>
+  <data name="IslamInfo_Abbasid" xml:space="preserve">
+    <value>Abbaside</value>
+  </data>
+  <data name="IslamInfo_AbdullahBinMasood" xml:space="preserve">
+    <value>Abdullah bin Masood</value>
+  </data>
+  <data name="IslamInfo_AbuBakrAlSaddiq" xml:space="preserve">
+    <value>Abu Bakr Al-Saddiq</value>
+  </data>
+  <data name="IslamInfo_AbuDahr" xml:space="preserve">
+    <value>Abu Dahr</value>
+  </data>
+  <data name="IslamInfo_AbuHanifa" xml:space="preserve">
+    <value>Abu Hanifa</value>
+  </data>
+  <data name="IslamInfo_AbuHurairah" xml:space="preserve">
+    <value>AbuHurairah</value>
+  </data>
+  <data name="IslamInfo_AbuJahal" xml:space="preserve">
+    <value>Abu Jahal</value>
+  </data>
+  <data name="IslamInfo_AbuLahab" xml:space="preserve">
+    <value>Abu Lahab</value>
+  </data>
+  <data name="IslamInfo_AbuSufyan" xml:space="preserve">
+    <value>Abu Sufyan</value>
+  </data>
+  <data name="IslamInfo_Aisha" xml:space="preserve">
+    <value>Aisha</value>
+  </data>
+  <data name="IslamInfo_AliBinAbuTalib" xml:space="preserve">
+    <value>Ali bin Abu Talib</value>
+  </data>
+  <data name="IslamInfo_AlLaythBinSaad" xml:space="preserve">
+    <value>Al-Layth bin Saad</value>
+  </data>
+  <data name="IslamInfo_Allowed" xml:space="preserve">
+    <value>Ammessi</value>
+  </data>
+  <data name="IslamInfo_AlMansoor" xml:space="preserve">
+    <value>Al-Mansoor</value>
+  </data>
+  <data name="IslamInfo_AlMuwata" xml:space="preserve">
+    <value>Al-Muwata</value>
+  </data>
+  <data name="IslamInfo_AlWahsi" xml:space="preserve">
+    <value>Al-Wahsi</value>
+  </data>
+  <data name="IslamInfo_AmrBinAlAas" xml:space="preserve">
+    <value>Amr bin Al-Aas</value>
+  </data>
+  <data name="IslamInfo_AndEveryone" xml:space="preserve">
+    <value>E tutti</value>
+  </data>
+  <data name="IslamInfo_Angel" xml:space="preserve">
+    <value>Angelo</value>
+  </data>
+  <data name="IslamInfo_Arrogance" xml:space="preserve">
+    <value>Arroganza</value>
+  </data>
+  <data name="IslamInfo_AskForgiveness" xml:space="preserve">
+    <value>Chiedi perdono</value>
+  </data>
+  <data name="IslamInfo_Azar" xml:space="preserve">
+    <value>Azar</value>
+  </data>
+  <data name="IslamInfo_Balance" xml:space="preserve">
+    <value>Equilibrio</value>
+  </data>
+  <data name="IslamInfo_BaniHashim" xml:space="preserve">
+    <value>Bani Hashim</value>
+  </data>
+  <data name="IslamInfo_BaniThaqeef" xml:space="preserve">
+    <value>Bani Thaqeef</value>
+  </data>
+  <data name="IslamInfo_Biography" xml:space="preserve">
+    <value>Biografia</value>
+  </data>
+  <data name="IslamInfo_Bless" xml:space="preserve">
+    <value>Benedire</value>
+  </data>
+  <data name="IslamInfo_Caliphate" xml:space="preserve">
+    <value>Califfato</value>
+  </data>
+  <data name="IslamInfo_CallToIslam" xml:space="preserve">
+    <value>Call To Islam</value>
+  </data>
+  <data name="IslamInfo_Certainty" xml:space="preserve">
+    <value>Certezza</value>
+  </data>
+  <data name="IslamInfo_Cohabitation" xml:space="preserve">
+    <value>Convivenza</value>
+  </data>
+  <data name="IslamInfo_Commentary" xml:space="preserve">
+    <value>Commento</value>
+  </data>
+  <data name="IslamInfo_Community" xml:space="preserve">
+    <value>Comunità</value>
+  </data>
+  <data name="IslamInfo_Companions" xml:space="preserve">
+    <value>Compagni</value>
+  </data>
+  <data name="IslamInfo_Concensus" xml:space="preserve">
+    <value>Concensus</value>
+  </data>
+  <data name="IslamInfo_Concentration" xml:space="preserve">
+    <value>Concentrazione</value>
+  </data>
+  <data name="IslamInfo_Congregation" xml:space="preserve">
+    <value>Congregazione</value>
+  </data>
+  <data name="IslamInfo_Conquest" xml:space="preserve">
+    <value>Conquista</value>
+  </data>
+  <data name="IslamInfo_Deeds" xml:space="preserve">
+    <value>Gesta</value>
+  </data>
+  <data name="IslamInfo_Delivery" xml:space="preserve">
+    <value>Consegna</value>
+  </data>
+  <data name="IslamInfo_Dessertion" xml:space="preserve">
+    <value>Dessertion</value>
+  </data>
+  <data name="IslamInfo_Digger" xml:space="preserve">
+    <value>Scavatrice</value>
+  </data>
+  <data name="IslamInfo_Disbeliever" xml:space="preserve">
+    <value>Miscredente</value>
+  </data>
+  <data name="IslamInfo_Division" xml:space="preserve">
+    <value>Divisione</value>
+  </data>
+  <data name="IslamInfo_Do" xml:space="preserve">
+    <value>Fare</value>
+  </data>
+  <data name="IslamInfo_Doctrine" xml:space="preserve">
+    <value>Dottrina</value>
+  </data>
+  <data name="IslamInfo_Empowering" xml:space="preserve">
+    <value>Empowering</value>
+  </data>
+  <data name="IslamInfo_Excellence" xml:space="preserve">
+    <value>Eccellenza</value>
+  </data>
+  <data name="IslamInfo_Faith" xml:space="preserve">
+    <value>Fede</value>
+  </data>
+  <data name="IslamInfo_Faithful" xml:space="preserve">
+    <value>Fedele</value>
+  </data>
+  <data name="IslamInfo_Fight" xml:space="preserve">
+    <value>Combattimento</value>
+  </data>
+  <data name="IslamInfo_Fighter" xml:space="preserve">
+    <value>Combattente</value>
+  </data>
+  <data name="IslamInfo_Firdaus" xml:space="preserve">
+    <value>Firdaus</value>
+  </data>
+  <data name="IslamInfo_Forgiving" xml:space="preserve">
+    <value>Perdonare</value>
+  </data>
+  <data name="IslamInfo_Fornication" xml:space="preserve">
+    <value>Fornicazione</value>
+  </data>
+  <data name="IslamInfo_Gabriel" xml:space="preserve">
+    <value>Gabriel</value>
+  </data>
+  <data name="IslamInfo_Gardens" xml:space="preserve">
+    <value>Giardini</value>
+  </data>
+  <data name="IslamInfo_GloriousAndExaltedBeHeAbbr" xml:space="preserve">
+    <value>SWT</value>
+  </data>
+  <data name="IslamInfo_Goodness" xml:space="preserve">
+    <value>Bontà</value>
+  </data>
+  <data name="IslamInfo_Guardian" xml:space="preserve">
+    <value>Custode</value>
+  </data>
+  <data name="IslamInfo_Guidance1" xml:space="preserve">
+    <value>Guida</value>
+  </data>
+  <data name="IslamInfo_Hammad" xml:space="preserve">
+    <value>Hammad</value>
+  </data>
+  <data name="IslamInfo_HamzaBinAbduAlMuttalib" xml:space="preserve">
+    <value>Hamza bin Abdu Al-Muttalib</value>
+  </data>
+  <data name="IslamInfo_Hanbal" xml:space="preserve">
+    <value>Hanbal</value>
+  </data>
+  <data name="IslamInfo_Hasan" xml:space="preserve">
+    <value>Hasan</value>
+  </data>
+  <data name="IslamInfo_HeartSofteners" xml:space="preserve">
+    <value>Addolcitori Cuore</value>
+  </data>
+  <data name="IslamInfo_Hell" xml:space="preserve">
+    <value>Inferno</value>
+  </data>
+  <data name="IslamInfo_Hereafter" xml:space="preserve">
+    <value>In futuro</value>
+  </data>
+  <data name="IslamInfo_Hind" xml:space="preserve">
+    <value>Cerva</value>
+  </data>
+  <data name="IslamInfo_Hudabiyyah" xml:space="preserve">
+    <value>Hudabiyyah</value>
+  </data>
+  <data name="IslamInfo_Hunain" xml:space="preserve">
+    <value>Hunain</value>
+  </data>
+  <data name="IslamInfo_Hussein" xml:space="preserve">
+    <value>Hussein</value>
+  </data>
+  <data name="IslamInfo_Hypocrite" xml:space="preserve">
+    <value>Ipocrita</value>
+  </data>
+  <data name="IslamInfo_ImamNawawi40Hadith" xml:space="preserve">
+    <value>Imam Nawawi 40 Hadith</value>
+  </data>
+  <data name="IslamInfo_Impact" xml:space="preserve">
+    <value>Urto</value>
+  </data>
+  <data name="IslamInfo_Innovation" xml:space="preserve">
+    <value>Innovazione</value>
+  </data>
+  <data name="IslamInfo_Intention" xml:space="preserve">
+    <value>Intenzione</value>
+  </data>
+  <data name="IslamInfo_Introduction" xml:space="preserve">
+    <value>Introduzione</value>
+  </data>
+  <data name="IslamInfo_Invocation" xml:space="preserve">
+    <value>Invocazione</value>
+  </data>
+  <data name="IslamInfo_Jinn" xml:space="preserve">
+    <value>Jinn</value>
+  </data>
+  <data name="IslamInfo_Kaaba" xml:space="preserve">
+    <value>Kaaba</value>
+  </data>
+  <data name="IslamInfo_KhadijahBintiKhuwaylid" xml:space="preserve">
+    <value>Khadijah Binti Khooaylid</value>
+  </data>
+  <data name="IslamInfo_KhalidBinWalid" xml:space="preserve">
+    <value>Khalid bin Walid</value>
+  </data>
+  <data name="IslamInfo_Knowledgable" xml:space="preserve">
+    <value>Knowledgable</value>
+  </data>
+  <data name="IslamInfo_Latest" xml:space="preserve">
+    <value>Ultimo</value>
+  </data>
+  <data name="IslamInfo_Leader" xml:space="preserve">
+    <value>Leader</value>
+  </data>
+  <data name="IslamInfo_Lecture" xml:space="preserve">
+    <value>Conferenza</value>
+  </data>
+  <data name="IslamInfo_Limit" xml:space="preserve">
+    <value>Limite</value>
+  </data>
+  <data name="IslamInfo_Loudmouthed" xml:space="preserve">
+    <value>Loudmouthed</value>
+  </data>
+  <data name="IslamInfo_Lucifer" xml:space="preserve">
+    <value>Lucifero</value>
+  </data>
+  <data name="IslamInfo_Madame" xml:space="preserve">
+    <value>La signora</value>
+  </data>
+  <data name="IslamInfo_Malik" xml:space="preserve">
+    <value>Malik</value>
+  </data>
+  <data name="IslamInfo_Mankind" xml:space="preserve">
+    <value>Umanità</value>
+  </data>
+  <data name="IslamInfo_Manners" xml:space="preserve">
+    <value>Educazione</value>
+  </data>
+  <data name="IslamInfo_MannersOfDiffering" xml:space="preserve">
+    <value>Manners di diversa</value>
+  </data>
+  <data name="IslamInfo_Master" xml:space="preserve">
+    <value>Master</value>
+  </data>
+  <data name="IslamInfo_MayAllahBePleasedAbbr" xml:space="preserve">
+    <value>RA</value>
+  </data>
+  <data name="IslamInfo_MayHisGloryBeGlorified" xml:space="preserve">
+    <value>MayHisGloryBeGlorified</value>
+  </data>
+  <data name="IslamInfo_Mecca" xml:space="preserve">
+    <value>Mecca</value>
+  </data>
+  <data name="IslamInfo_Medina" xml:space="preserve">
+    <value>Medina</value>
+  </data>
+  <data name="IslamInfo_Mercy" xml:space="preserve">
+    <value>Misericordia</value>
+  </data>
+  <data name="IslamInfo_MinorPilgrimage" xml:space="preserve">
+    <value>Pellegrinaggio Minor</value>
+  </data>
+  <data name="IslamInfo_Mosque" xml:space="preserve">
+    <value>Moschea</value>
+  </data>
+  <data name="IslamInfo_Muawiyyah" xml:space="preserve">
+    <value>Muawiyyah</value>
+  </data>
+  <data name="IslamInfo_Mufti" xml:space="preserve">
+    <value>Mufti</value>
+  </data>
+  <data name="IslamInfo_MuhammadBinAbduAlMuttalib" xml:space="preserve">
+    <value>Muhammad bin Abdu Al-Muttalib</value>
+  </data>
+  <data name="IslamInfo_Neck" xml:space="preserve">
+    <value>Collo</value>
+  </data>
+  <data name="IslamInfo_Nurturing" xml:space="preserve">
+    <value>Coltivare</value>
+  </data>
+  <data name="IslamInfo_OBelievers" xml:space="preserve">
+    <value>O voi che credete</value>
+  </data>
+  <data name="IslamInfo_Optimizer" xml:space="preserve">
+    <value>Optimizer</value>
+  </data>
+  <data name="IslamInfo_Paradise" xml:space="preserve">
+    <value>Paradiso</value>
+  </data>
+  <data name="IslamInfo_Patience" xml:space="preserve">
+    <value>Pazienza</value>
+  </data>
+  <data name="IslamInfo_Permission" xml:space="preserve">
+    <value>Autorizzazione</value>
+  </data>
+  <data name="IslamInfo_Persecution" xml:space="preserve">
+    <value>Persecuzione</value>
+  </data>
+  <data name="IslamInfo_Piety" xml:space="preserve">
+    <value>Religiosità</value>
+  </data>
+  <data name="IslamInfo_PleasedWithDecree" xml:space="preserve">
+    <value>Soddisfatto Con il Decreto</value>
+  </data>
+  <data name="IslamInfo_Polythiest" xml:space="preserve">
+    <value>Polythiest</value>
+  </data>
+  <data name="IslamInfo_Practical" xml:space="preserve">
+    <value>Pratico</value>
+  </data>
+  <data name="IslamInfo_Predestination" xml:space="preserve">
+    <value>Predestinazione</value>
+  </data>
+  <data name="IslamInfo_PrintedBook" xml:space="preserve">
+    <value>Libro Stampato</value>
+  </data>
+  <data name="IslamInfo_Professor" xml:space="preserve">
+    <value>Professore</value>
+  </data>
+  <data name="IslamInfo_Protector" xml:space="preserve">
+    <value>Protettore</value>
+  </data>
+  <data name="IslamInfo_Punishment" xml:space="preserve">
+    <value>Punizione</value>
+  </data>
+  <data name="IslamInfo_Purification" xml:space="preserve">
+    <value>Purificazione</value>
+  </data>
+  <data name="IslamInfo_Quraish" xml:space="preserve">
+    <value>Quraish</value>
+  </data>
+  <data name="IslamInfo_Rawdah" xml:space="preserve">
+    <value>Rawdah</value>
+  </data>
+  <data name="IslamInfo_Recite" xml:space="preserve">
+    <value>Recitare</value>
+  </data>
+  <data name="IslamInfo_Religion" xml:space="preserve">
+    <value>Religione</value>
+  </data>
+  <data name="IslamInfo_Repentance" xml:space="preserve">
+    <value>Pentimento</value>
+  </data>
+  <data name="IslamInfo_RiadAlJannah" xml:space="preserve">
+    <value>Riad Al-Jannah</value>
+  </data>
+  <data name="IslamInfo_RighteousDealings" xml:space="preserve">
+    <value>Rapporti Righteous</value>
+  </data>
+  <data name="IslamInfo_RighteousDeeds" xml:space="preserve">
+    <value>Deeds Righteous</value>
+  </data>
+  <data name="IslamInfo_SaadBinWaad" xml:space="preserve">
+    <value>Saad bin Waad</value>
+  </data>
+  <data name="IslamInfo_Sacrifice" xml:space="preserve">
+    <value>Sacrificio</value>
+  </data>
+  <data name="IslamInfo_Salafi" xml:space="preserve">
+    <value>Salafita</value>
+  </data>
+  <data name="IslamInfo_Satan" xml:space="preserve">
+    <value>Satana</value>
+  </data>
+  <data name="IslamInfo_Satisfaction" xml:space="preserve">
+    <value>Soddisfazione</value>
+  </data>
+  <data name="IslamInfo_Self" xml:space="preserve">
+    <value>Se stesso</value>
+  </data>
+  <data name="IslamInfo_Shafii" xml:space="preserve">
+    <value>Shafii</value>
+  </data>
+  <data name="IslamInfo_Sheikh" xml:space="preserve">
+    <value>Sceicco</value>
+  </data>
+  <data name="IslamInfo_ShowingOff" xml:space="preserve">
+    <value>Ostentare</value>
+  </data>
+  <data name="IslamInfo_Sin" xml:space="preserve">
+    <value>Peccato</value>
+  </data>
+  <data name="IslamInfo_Sir" xml:space="preserve">
+    <value>Signore</value>
+  </data>
+  <data name="IslamInfo_Slaughter" xml:space="preserve">
+    <value>Macello</value>
+  </data>
+  <data name="IslamInfo_Slave" xml:space="preserve">
+    <value>Schiavo</value>
+  </data>
+  <data name="IslamInfo_Speech" xml:space="preserve">
+    <value>Discorso</value>
+  </data>
+  <data name="IslamInfo_Sporadic" xml:space="preserve">
+    <value>Sporadico</value>
+  </data>
+  <data name="IslamInfo_Strangers" xml:space="preserve">
+    <value>Estranei</value>
+  </data>
+  <data name="IslamInfo_SupplicationsAndPrayers" xml:space="preserve">
+    <value>Suppliche e preghiere</value>
+  </data>
+  <data name="IslamInfo_Taaif" xml:space="preserve">
+    <value>Taaif</value>
+  </data>
+  <data name="IslamInfo_Talkative" xml:space="preserve">
+    <value>Loquace</value>
+  </data>
+  <data name="IslamInfo_ThePrayersOfAllahUponHimAndPeaceAbbr" xml:space="preserve">
+    <value>SAW | SEGHE</value>
+  </data>
+  <data name="IslamInfo_Throne" xml:space="preserve">
+    <value>Trono</value>
+  </data>
+  <data name="IslamInfo_Trustworthy" xml:space="preserve">
+    <value>Fidato</value>
+  </data>
+  <data name="IslamInfo_Truthful" xml:space="preserve">
+    <value>Veritiero</value>
+  </data>
+  <data name="IslamInfo_UmarBinAlKhattab" xml:space="preserve">
+    <value>Umar bin Al-Khattab</value>
+  </data>
+  <data name="IslamInfo_Umayyad" xml:space="preserve">
+    <value>Omayyade</value>
+  </data>
+  <data name="IslamInfo_Universal" xml:space="preserve">
+    <value>Universale</value>
+  </data>
+  <data name="IslamInfo_Unseen" xml:space="preserve">
+    <value>Nascosto</value>
+  </data>
+  <data name="IslamInfo_UponHimBePeaceAbbr" xml:space="preserve">
+    <value>AS</value>
+  </data>
+  <data name="IslamInfo_UthmanBinAfwan" xml:space="preserve">
+    <value>Uthman bin Afwan</value>
+  </data>
+  <data name="IslamInfo_VoluntaryKindness" xml:space="preserve">
+    <value>Gentilezza volontario</value>
+  </data>
+  <data name="IslamInfo_Wahhabi" xml:space="preserve">
+    <value>Wahabita</value>
+  </data>
+  <data name="IslamInfo_Wisdom" xml:space="preserve">
+    <value>Saggezza</value>
+  </data>
+  <data name="IslamInfo_Witnessing" xml:space="preserve">
+    <value>Testimoniare</value>
+  </data>
+  <data name="IslamInfo_World" xml:space="preserve">
+    <value>Mondo</value>
+  </data>
+  <data name="IslamInfo_Worship" xml:space="preserve">
+    <value>Adorazione</value>
+  </data>
+  <data name="IslamInfo_IslamicPhrases" xml:space="preserve">
+    <value>Frasi islamico</value>
+  </data>
+  <data name="IslamSource_QuranWords" xml:space="preserve">
+    <value>Quran Parole</value>
+  </data>
+  <data name="IslamSource_UniqueWordTotal" xml:space="preserve">
+    <value>Unique Word Total</value>
+  </data>
+  <data name="IslamSource_WordTotal" xml:space="preserve">
+    <value>Parola Totale</value>
+  </data>
+  <data name="IslamSource_FixDirectionalMarkers" xml:space="preserve">
+    <value>Fix direzionale Marcatori</value>
+  </data>
+  <data name="unicode_LeftToRightEmbedding" xml:space="preserve">
+    <value>Da sinistra a destra Embedding</value>
+  </data>
+  <data name="unicode_RightToLeftEmbedding" xml:space="preserve">
+    <value>Da destra a sinistra Embedding</value>
+  </data>
+  <data name="unicode_LeftToRightMark" xml:space="preserve">
+    <value>Da sinistra a destra Mark</value>
+  </data>
+  <data name="unicode_LeftToRightOverride" xml:space="preserve">
+    <value>Override sinistra a destra</value>
+  </data>
+  <data name="unicode_PopDirectionalFormatting" xml:space="preserve">
+    <value>Pop direzionale Formattazione</value>
+  </data>
+  <data name="unicode_RightToLeftMark" xml:space="preserve">
+    <value>Right-To-Left Mark</value>
+  </data>
+  <data name="unicode_RightToLeftOverride" xml:space="preserve">
+    <value>Override destra a sinistra</value>
+  </data>
+  <data name="IslamSource_CurrentMonth" xml:space="preserve">
+    <value>Mese Corrente</value>
+  </data>
+  <data name="IslamSource_HijriCalendar" xml:space="preserve">
+    <value>Hijri Calendar</value>
+  </data>
+</root>

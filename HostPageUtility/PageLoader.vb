@@ -555,16 +555,22 @@ Public Class Utility
         Dim ClassMember As String() = Text.Split(":"c)
         LookupClassMember = Nothing
         If (ClassMember.Length = 3 AndAlso ClassMember(1) = String.Empty) Then
-            For Each Key As String In ConnectionData.FuncLibs
-                Dim Asm As Reflection.Assembly = Reflection.Assembly.Load(Key)
-                If Not Asm Is Nothing Then
-                    Dim CheckType As Type = Asm.GetType(Key + "." + ClassMember(0))
-                    If Not CheckType Is Nothing Then
-                        LookupClassMember = CheckType.GetMethod(ClassMember(2))
-                        If Not LookupClassMember Is Nothing Then Exit For
+            Dim CheckType As Type = Reflection.Assembly.GetExecutingAssembly().GetType("HostPageUtility." + ClassMember(0))
+            If Not CheckType Is Nothing Then
+                LookupClassMember = CheckType.GetMethod(ClassMember(2))
+            End If
+            If LookupClassMember Is Nothing Then
+                For Each Key As String In ConnectionData.FuncLibs
+                    Dim Asm As Reflection.Assembly = Reflection.Assembly.Load(Key)
+                    If Not Asm Is Nothing Then
+                        CheckType = Asm.GetType(Key + "." + ClassMember(0))
+                        If Not CheckType Is Nothing Then
+                            LookupClassMember = CheckType.GetMethod(ClassMember(2))
+                            If Not LookupClassMember Is Nothing Then Exit For
+                        End If
                     End If
-                End If
-            Next
+                Next
+            End If
         End If
     End Function
     Public Shared Function TextRender(ByVal Item As PageLoader.TextItem) As String

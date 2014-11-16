@@ -174,4 +174,9 @@ UpgradeLog*.htm
 FakesAssemblies/
 /App_GlobalResources
 *.pubxml
-/wwwroot
+/IslamSourceSite/Content
+/IslamSourceSite/files
+/IslamSourceSite/images
+/IslamSourceSite/metadata
+/IslamSourceSite/Scripts
+/IslamSourceSite/host.aspx

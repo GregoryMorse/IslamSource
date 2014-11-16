@@ -65,6 +65,73 @@
     <Import Include="System.Diagnostics" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Resources.af.resx" />
+    <EmbeddedResource Include="Resources.ar.resx" />
+    <EmbeddedResource Include="Resources.be.resx" />
+    <EmbeddedResource Include="Resources.bg.resx" />
+    <EmbeddedResource Include="Resources.ca.resx" />
+    <EmbeddedResource Include="Resources.cs.resx" />
+    <EmbeddedResource Include="Resources.cy.resx" />
+    <EmbeddedResource Include="Resources.da.resx" />
+    <EmbeddedResource Include="Resources.de.resx" />
+    <EmbeddedResource Include="Resources.el.resx" />
+    <EmbeddedResource Include="Resources.en.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.es.resx" />
+    <EmbeddedResource Include="Resources.et.resx" />
+    <EmbeddedResource Include="Resources.fa.resx" />
+    <EmbeddedResource Include="Resources.fi.resx" />
+    <EmbeddedResource Include="Resources.fr.resx" />
+    <EmbeddedResource Include="Resources.ga.resx" />
+    <EmbeddedResource Include="Resources.gl.resx" />
+    <EmbeddedResource Include="Resources.hi.resx" />
+    <EmbeddedResource Include="Resources.hr.resx" />
+    <EmbeddedResource Include="Resources.hu.resx" />
+    <EmbeddedResource Include="Resources.id.resx" />
+    <EmbeddedResource Include="Resources.is.resx" />
+    <EmbeddedResource Include="Resources.it.resx" />
+    <EmbeddedResource Include="Resources.iw.resx" />
+    <EmbeddedResource Include="Resources.ja.resx" />
+    <EmbeddedResource Include="Resources.ko.resx" />
+    <EmbeddedResource Include="Resources.lt.resx" />
+    <EmbeddedResource Include="Resources.lv.resx" />
+    <EmbeddedResource Include="Resources.mk.resx" />
+    <EmbeddedResource Include="Resources.ms.resx" />
+    <EmbeddedResource Include="Resources.mt.resx" />
+    <EmbeddedResource Include="Resources.nl.resx" />
+    <EmbeddedResource Include="Resources.no.resx" />
+    <EmbeddedResource Include="Resources.pl.resx" />
+    <EmbeddedResource Include="Resources.pt-pt.resx" />
+    <EmbeddedResource Include="Resources.ro.resx" />
+    <EmbeddedResource Include="Resources.ru.resx" />
+    <EmbeddedResource Include="Resources.sk.resx" />
+    <EmbeddedResource Include="Resources.sl.resx" />
+    <EmbeddedResource Include="Resources.sq.resx" />
+    <EmbeddedResource Include="Resources.sr.resx" />
+    <EmbeddedResource Include="Resources.sv.resx" />
+    <EmbeddedResource Include="Resources.sw.resx" />
+    <EmbeddedResource Include="Resources.th.resx" />
+    <EmbeddedResource Include="Resources.tl.resx" />
+    <EmbeddedResource Include="Resources.tr.resx" />
+    <EmbeddedResource Include="Resources.uk.resx" />
+    <EmbeddedResource Include="Resources.vi.resx" />
+    <EmbeddedResource Include="Resources.yi.resx" />
+    <EmbeddedResource Include="Resources.zh-cn.resx" />
+    <EmbeddedResource Include="Resources.zh-tw.resx" />
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>PublicVbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="PageLoader.vb" />
     <Compile Include="Quantizer.vb" />
   </ItemGroup>

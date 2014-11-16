@@ -1,0 +1,4275 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Acct_AccountActivateSuccess" xml:space="preserve">
+    <value>Tài khoản kích hoạt thành công.</value>
+  </data>
+  <data name="Acct_AccountAlreadyActivated" xml:space="preserve">
+    <value>Tài khoản đã được kích hoạt.</value>
+  </data>
+  <data name="Acct_AccountDeleteSuccess" xml:space="preserve">
+    <value>Tài khoản bị xóa thành công.</value>
+  </data>
+  <data name="Acct_AccountNotActivated" xml:space="preserve">
+    <value>Tài khoản chưa được kích hoạt vui lòng kiểm tra email của bạn đầu tiên hoặc yêu cầu một mã kích hoạt bổ sung.</value>
+  </data>
+  <data name="Acct_ActivateAccount" xml:space="preserve">
+    <value>Kích hoạt tài khoản</value>
+  </data>
+  <data name="Acct_ActivationAccountBody" xml:space="preserve">
+    <value>E-mail này được yêu cầu kích hoạt của {0} tài khoản của bạn: {1}.</value>
+  </data>
+  <data name="Acct_ActivationAccountSubject" xml:space="preserve">
+    <value>Kích hoạt cho tài khoản tại {0}</value>
+  </data>
+  <data name="Acct_ActivationCode" xml:space="preserve">
+    <value>Mã kích hoạt</value>
+  </data>
+  <data name="Acct_BadEmailFormat" xml:space="preserve">
+    <value>Địa chỉ E-mail không hợp lệ hay không.</value>
+  </data>
+  <data name="Acct_Certain" xml:space="preserve">
+    <value>Bạn có chắc chắn?</value>
+  </data>
+  <data name="Acct_ChangeEmailAddress" xml:space="preserve">
+    <value>Thay đổi E-mail Địa chỉ</value>
+  </data>
+  <data name="Acct_ChangePassword" xml:space="preserve">
+    <value>Thay đổi mật khẩu</value>
+  </data>
+  <data name="Acct_ChangeUsername" xml:space="preserve">
+    <value>Thay đổi Tên đăng nhập</value>
+  </data>
+  <data name="Acct_CheckEmailNotice" xml:space="preserve">
+    <value>Kích hoạt được gửi đến địa chỉ cung cấp.</value>
+  </data>
+  <data name="Acct_ConfirmEmailAddress" xml:space="preserve">
+    <value>Xác nhận E-mail Địa chỉ</value>
+  </data>
+  <data name="Acct_ConfirmPassword" xml:space="preserve">
+    <value>Xác nhận mật khẩu</value>
+  </data>
+  <data name="Acct_ControlPanel" xml:space="preserve">
+    <value>Bảng điều khiển</value>
+  </data>
+  <data name="Acct_DeleteAccount" xml:space="preserve">
+    <value>Xóa tài khoản</value>
+  </data>
+  <data name="Acct_DuplicateUser" xml:space="preserve">
+    <value>Người dùng với tên này đã tồn tại hãy chọn khác.</value>
+  </data>
+  <data name="Acct_EmailAddress" xml:space="preserve">
+    <value>E-mail Địa chỉ</value>
+  </data>
+  <data name="Acct_EmailChangeReactivate" xml:space="preserve">
+    <value>Địa chỉ E-mail thay đổi và kích hoạt e-mail được gửi để kích hoạt lại tài khoản.</value>
+  </data>
+  <data name="Acct_EmailInUse" xml:space="preserve">
+    <value>E-mail đã được sử dụng mời bạn đăng nhập với các thông tin hiện có.</value>
+  </data>
+  <data name="Acct_EmailsNotMatch" xml:space="preserve">
+    <value>Địa chỉ E-mail không phù hợp</value>
+  </data>
+  <data name="Acct_ForgotPassword" xml:space="preserve">
+    <value>Quên mật khẩu</value>
+  </data>
+  <data name="Acct_ForgotUsername" xml:space="preserve">
+    <value>Quên tên người dùng</value>
+  </data>
+  <data name="Acct_Home" xml:space="preserve">
+    <value>Quê hương</value>
+  </data>
+  <data name="Acct_IncorrectActivationCode" xml:space="preserve">
+    <value>Mã kích hoạt không chính xác.</value>
+  </data>
+  <data name="Acct_IncorrectPasswordResetCode" xml:space="preserve">
+    <value>Không chính xác đang thiết lập lại mật khẩu.</value>
+  </data>
+  <data name="Acct_InvalidInput" xml:space="preserve">
+    <value>Đầu vào không hợp lệ.</value>
+  </data>
+  <data name="Acct_InvalidUsernamePassword" xml:space="preserve">
+    <value>Tên đăng nhập hoặc mật khẩu không hợp lệ.</value>
+  </data>
+  <data name="Acct_Login" xml:space="preserve">
+    <value>Đăng nhập</value>
+  </data>
+  <data name="Acct_LoginSuccess" xml:space="preserve">
+    <value>Đăng nhập thành công.</value>
+  </data>
+  <data name="Acct_Logoff" xml:space="preserve">
+    <value>Logoff</value>
+  </data>
+  <data name="Acct_LogoffSuccess" xml:space="preserve">
+    <value>Logoff thành công.</value>
+  </data>
+  <data name="Acct_MinimumPassword" xml:space="preserve">
+    <value>Mật khẩu phải có ít nhất 8 ký tự.</value>
+  </data>
+  <data name="Acct_MinimumUsername" xml:space="preserve">
+    <value>Tên đăng nhập phải có ít nhất 4 ký tự.</value>
+  </data>
+  <data name="Acct_No" xml:space="preserve">
+    <value>Không</value>
+  </data>
+  <data name="Acct_NotConfirmDelete" xml:space="preserve">
+    <value>Phải xác nhận việc xóa tài khoản.</value>
+  </data>
+  <data name="Acct_NoUserExists" xml:space="preserve">
+    <value>Không có người dùng cho các địa chỉ e-mail vào.</value>
+  </data>
+  <data name="Acct_Password" xml:space="preserve">
+    <value>Mật khẩu</value>
+  </data>
+  <data name="Acct_PasswordAlreadyReset" xml:space="preserve">
+    <value>Mật khẩu đã thiết lập lại hoặc quá trình không bắt đầu.</value>
+  </data>
+  <data name="Acct_PasswordChangedBody" xml:space="preserve">
+    <value>E-mail này là để thông báo về việc thay đổi mật khẩu của {0} tài khoản của bạn: {1}.</value>
+  </data>
+  <data name="Acct_PasswordChangedSubject" xml:space="preserve">
+    <value>Mật khẩu thay đổi cho tài khoản tại {0}</value>
+  </data>
+  <data name="Acct_PasswordChangeSuccess" xml:space="preserve">
+    <value>Mật khẩu thay đổi thành công.</value>
+  </data>
+  <data name="Acct_PasswordEmailSent" xml:space="preserve">
+    <value>Một e-mail đã được gửi đến địa chỉ của bạn vào tập tin để bắt đầu quá trình thiết lập lại mật khẩu.</value>
+  </data>
+  <data name="Acct_PasswordResetBody" xml:space="preserve">
+    <value>E-mail này là để thiết lập lại mật khẩu của {0} tài khoản của bạn: {1}.</value>
+  </data>
+  <data name="Acct_PasswordResetCode" xml:space="preserve">
+    <value>Thiết lập lại mật khẩu Mã</value>
+  </data>
+  <data name="Acct_PasswordResetSubject" xml:space="preserve">
+    <value>Đặt lại mật khẩu cho tài khoản tại {0}</value>
+  </data>
+  <data name="Acct_PasswordResetSuccess" xml:space="preserve">
+    <value>Đặt lại mật khẩu thành công.</value>
+  </data>
+  <data name="Acct_PasswordsNotMatch" xml:space="preserve">
+    <value>Mật khẩu không phù hợp</value>
+  </data>
+  <data name="Acct_Register" xml:space="preserve">
+    <value>Đăng ký</value>
+  </data>
+  <data name="Acct_Remember" xml:space="preserve">
+    <value>Nhớ không?</value>
+  </data>
+  <data name="Acct_ResendActivationEmail" xml:space="preserve">
+    <value>Resend Activation E-mail</value>
+  </data>
+  <data name="Acct_ResetPassword" xml:space="preserve">
+    <value>Reset Password</value>
+  </data>
+  <data name="Acct_RetrievePassword" xml:space="preserve">
+    <value>Quên mật khẩu</value>
+  </data>
+  <data name="Acct_RetrieveUsername" xml:space="preserve">
+    <value>Lấy Tên đăng nhập</value>
+  </data>
+  <data name="Acct_SendActivationCode" xml:space="preserve">
+    <value>Gửi Activation Code</value>
+  </data>
+  <data name="Acct_Username" xml:space="preserve">
+    <value>Tên truy nhập</value>
+  </data>
+  <data name="Acct_UsernameChangedBody" xml:space="preserve">
+    <value>E-mail này là để thông báo cho các tài khoản thay đổi tên của {0} tài khoản của bạn: {1}.</value>
+  </data>
+  <data name="Acct_UsernameChangedSubject" xml:space="preserve">
+    <value>Tên đăng nhập thay đổi cho tài khoản tại {0}</value>
+  </data>
+  <data name="Acct_UsernameChangeSuccess" xml:space="preserve">
+    <value>Tên đăng nhập thay đổi thành công.</value>
+  </data>
+  <data name="Acct_UsernameEmailSent" xml:space="preserve">
+    <value>Một e-mail đã được gửi đến địa chỉ của bạn vào tập tin với tên truy cập của bạn.</value>
+  </data>
+  <data name="Acct_UsernameReminderBody" xml:space="preserve">
+    <value>E-mail này là một lời nhắc nhở của {0} tài khoản của bạn: {1}.</value>
+  </data>
+  <data name="Acct_UsernameReminderSubject" xml:space="preserve">
+    <value>Tên đăng nhập nhắc nhở cho tài khoản tại {0}</value>
+  </data>
+  <data name="Acct_UserNotFound" xml:space="preserve">
+    <value>Người sử dụng không tồn tại.</value>
+  </data>
+  <data name="Acct_Yes" xml:space="preserve">
+    <value>Vâng</value>
+  </data>
+  <data name="Acct_CleanupStale" xml:space="preserve">
+    <value>Dọn dẹp thiu</value>
+  </data>
+  <data name="Acct_ClearCache" xml:space="preserve">
+    <value>Clear Cache</value>
+  </data>
+  <data name="Acct_ClearDiskCache" xml:space="preserve">
+    <value>Rõ ràng Disk Cache</value>
+  </data>
+  <data name="Acct_CreateDatabase" xml:space="preserve">
+    <value>Tạo ra cơ sở dữ liệu</value>
+  </data>
+  <data name="Acct_DotNetVersion" xml:space="preserve">
+    <value>Dot Net Phiên bản</value>
+  </data>
+  <data name="Acct_RemoveDatabase" xml:space="preserve">
+    <value>Loại bỏ cơ sở dữ liệu</value>
+  </data>
+  <data name="Acct_ViewCache" xml:space="preserve">
+    <value>Xem cache</value>
+  </data>
+  <data name="Acct_ViewDiskCache" xml:space="preserve">
+    <value>Xem Disk Cache</value>
+  </data>
+  <data name="Acct_ViewHeaders" xml:space="preserve">
+    <value>Xem Headers</value>
+  </data>
+  <data name="Hadith_Book" xml:space="preserve">
+    <value>Cuốn sách</value>
+  </data>
+  <data name="Hadith_Books" xml:space="preserve">
+    <value>Sách</value>
+  </data>
+  <data name="Hadith_Chapters" xml:space="preserve">
+    <value>Chương</value>
+  </data>
+  <data name="Hadith_Hadith" xml:space="preserve">
+    <value>Hadith</value>
+  </data>
+  <data name="Hadith_Hadiths" xml:space="preserve">
+    <value>Hadiths</value>
+  </data>
+  <data name="Hadith_IdenticalNumbering" xml:space="preserve">
+    <value>Đánh số giống hệt nhau</value>
+  </data>
+  <data name="Hadith_Index" xml:space="preserve">
+    <value>Chỉ số</value>
+  </data>
+  <data name="Hadith_MappedOf" xml:space="preserve">
+    <value>{0} ánh xạ của {1}</value>
+  </data>
+  <data name="Hadith_NoTranslation" xml:space="preserve">
+    <value>Không có dịch</value>
+  </data>
+  <data name="Hadith_SourceHadithIndex" xml:space="preserve">
+    <value>Nguồn Hadith Index</value>
+  </data>
+  <data name="Hadith_Translation" xml:space="preserve">
+    <value>Dịch</value>
+  </data>
+  <data name="Hadith_TranslationBook" xml:space="preserve">
+    <value>Sách dịch</value>
+  </data>
+  <data name="Hadith_TranslationHadithCount" xml:space="preserve">
+    <value>Dịch Hadith Lượt</value>
+  </data>
+  <data name="Hadith_TranslationHadithIndex" xml:space="preserve">
+    <value>Dịch Hadith Index</value>
+  </data>
+  <data name="Hadith_TranslationMapping" xml:space="preserve">
+    <value>Dịch đồ</value>
+  </data>
+  <data name="Hadith_TranslationVolume" xml:space="preserve">
+    <value>Dịch Khối lượng</value>
+  </data>
+  <data name="Hadith_Volume" xml:space="preserve">
+    <value>Khối lượng</value>
+  </data>
+  <data name="IslamSource_Apply" xml:space="preserve">
+    <value>Áp dụng</value>
+  </data>
+  <data name="IslamSource_ArabicAlphabet" xml:space="preserve">
+    <value>Tiếng Ả Rập Bảng chữ cái</value>
+  </data>
+  <data name="IslamSource_ArabicToRoman" xml:space="preserve">
+    <value>Tiếng Ả Rập Để La Mã</value>
+  </data>
+  <data name="IslamSource_Book" xml:space="preserve">
+    <value>Cuốn sách</value>
+  </data>
+  <data name="IslamSource_Collection" xml:space="preserve">
+    <value>Bộ sưu tập</value>
+  </data>
+  <data name="IslamSource_Credits" xml:space="preserve">
+    <value>Tín dụng đối với các văn bản Kinh Qur'an đi vào dự án Tanzil.</value>
+  </data>
+  <data name="IslamSource_Direction" xml:space="preserve">
+    <value>Hướng</value>
+  </data>
+  <data name="IslamSource_Disable" xml:space="preserve">
+    <value>Vô hiệu hóa</value>
+  </data>
+  <data name="IslamSource_Display" xml:space="preserve">
+    <value>Màn hình hiển thị</value>
+  </data>
+  <data name="IslamSource_Division" xml:space="preserve">
+    <value>Phân công</value>
+  </data>
+  <data name="IslamSource_DownloadMapping" xml:space="preserve">
+    <value>Tải về và Bản đồ</value>
+  </data>
+  <data name="IslamSource_EnglishRomanized" xml:space="preserve">
+    <value>Anh Latinh</value>
+  </data>
+  <data name="IslamSource_ExtendedBuckwalter" xml:space="preserve">
+    <value>Mở rộng Buckwalter</value>
+  </data>
+  <data name="IslamSource_Font" xml:space="preserve">
+    <value>Font chữ</value>
+  </data>
+  <data name="IslamSource_Goal" xml:space="preserve">
+    <value>Trang web này nhằm cung cấp nguồn nguyên liệu thô về Hồi giáo bao gồm Kinh Qur'an, bộ sưu tập hadith, sách, âm thanh, video, tin tức, từ vựng, hệ thống phiên âm và thông tin chương trình.</value>
+  </data>
+  <data name="IslamSource_Hadiths" xml:space="preserve">
+    <value>Bộ sưu tập Hadith</value>
+  </data>
+  <data name="IslamSource_HadithSourceText" xml:space="preserve">
+    <value>Hadith Nguồn Tiêu đề</value>
+  </data>
+  <data name="IslamSource_Home" xml:space="preserve">
+    <value>Quê hương</value>
+  </data>
+  <data name="IslamSource_Information" xml:space="preserve">
+    <value>Thông tin</value>
+  </data>
+  <data name="IslamSource_Intro" xml:space="preserve">
+    <value>Bất kỳ câu hỏi hoặc nhận xét hoặc lỗi, xin vui lòng gửi email cho tôi tại địa chỉ:</value>
+  </data>
+  <data name="IslamSource_Introduction" xml:space="preserve">
+    <value>Giới thiệu</value>
+  </data>
+  <data name="IslamSource_IslamicArticles" xml:space="preserve">
+    <value>Điều Hồi giáo</value>
+  </data>
+  <data name="IslamSource_IslamicCharity" xml:space="preserve">
+    <value>Hồi giáo từ thiện</value>
+  </data>
+  <data name="IslamSource_IslamicFoundations" xml:space="preserve">
+    <value>Các cơ sở Hồi giáo</value>
+  </data>
+  <data name="IslamSource_IslamicInformation" xml:space="preserve">
+    <value>Thông tin Hồi giáo</value>
+  </data>
+  <data name="IslamSource_IslamicNews" xml:space="preserve">
+    <value>Hồi giáo Tin tức</value>
+  </data>
+  <data name="IslamSource_IslamicOrganizations" xml:space="preserve">
+    <value>Tổ chức Hồi giáo</value>
+  </data>
+  <data name="IslamSource_IslamicQuotes" xml:space="preserve">
+    <value>Trích dẫn Hồi giáo</value>
+  </data>
+  <data name="IslamSource_IslamicShops" xml:space="preserve">
+    <value>Cửa hàng Hồi giáo</value>
+  </data>
+  <data name="IslamSource_IslamicWebsites" xml:space="preserve">
+    <value>Trang web Hồi giáo</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesAhlulBaytAcademy" xml:space="preserve">
+    <value>AhlulBayt Học viện</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesAlEman" xml:space="preserve">
+    <value>فصل: كتاب المقدمة | نداء الإيمان</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesAlHudaInternationalWelfareFoundation" xml:space="preserve">
+    <value>Al-Huda phúc lợi quốc tế Foundation</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesAllahsQuran" xml:space="preserve">
+    <value>Kinh Qur'an Allah</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesCorpus" xml:space="preserve">
+    <value>Quranic Ả Rập Corpus</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesCouncilAmericanIslamicRelations" xml:space="preserve">
+    <value>Hội đồng Quan hệ Mỹ-Hồi giáo</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesDarusSalamPublications" xml:space="preserve">
+    <value>Dar-us-Salam Ấn phẩm</value>
+  </data>
+  <data name="IslamSource_IslamicWebsiteseMuslim" xml:space="preserve">
+    <value>eMuslim</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesGuidedWaysTechnologies" xml:space="preserve">
+    <value>Hướng dẫn cách công nghệ</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesHouseQuran" xml:space="preserve">
+    <value>Nhà của Kinh Qur'an</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesiQuran" xml:space="preserve">
+    <value>iQuran</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesIslamicCircleNorthAmerica" xml:space="preserve">
+    <value>Hồi giáo các mối Bắc Mỹ</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesIslamicFinder" xml:space="preserve">
+    <value>Hồi giáo Finder</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesIslamicInsights" xml:space="preserve">
+    <value>Insights Hồi giáo</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesIslamicRelief" xml:space="preserve">
+    <value>Hồi giáo cứu trợ</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesIslamicReliefUSA" xml:space="preserve">
+    <value>Hồi giáo cứu trợ Hoa Kỳ</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesIslamicSearchCenter" xml:space="preserve">
+    <value>Trung tâm Tìm kiếm Hồi giáo</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesIslamicSocietyNorthAmerica" xml:space="preserve">
+    <value>Hiệp hội Hồi giáo Bắc Mỹ</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesIslamicThinkersSociety" xml:space="preserve">
+    <value>Hồi giáo nhà tư tưởng xã hội</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesIslamSpirit" xml:space="preserve">
+    <value>Hồi giáo Thần</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesKalamullah" xml:space="preserve">
+    <value>Kalamullah</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesMaktabahorgTheUltimateIslamicLibrary" xml:space="preserve">
+    <value>Maktabah.org Thư viện cuối cùng Hồi giáo</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesOpenBurhan" xml:space="preserve">
+    <value>Mở Burhan</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesProfessorAnsarian" xml:space="preserve">
+    <value>Website chính thức của Giáo sư Ansarian</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesQuran" xml:space="preserve">
+    <value>Kinh Qur'an</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesQuranDownload" xml:space="preserve">
+    <value>Kinh Qur'an Tải về</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesQuranExplorer" xml:space="preserve">
+    <value>Kinh Qur'an Explorer</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesQuranicAudio" xml:space="preserve">
+    <value>Quranic âm thanh</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesQuranProject" xml:space="preserve">
+    <value>Dự án Kinh Qur'an trực tuyến</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesQuranTransliteration" xml:space="preserve">
+    <value>Qur'an Transliteration</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesSalah" xml:space="preserve">
+    <value>Salah</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesStudyQuran" xml:space="preserve">
+    <value>Nghiên cứu Kinh Qur'an</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesSunnahCom" xml:space="preserve">
+    <value>Sunnah.com Lời và giáo lý của nhà tiên tri Muhammad (صلى الله عليه و سلم)</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesTanzil" xml:space="preserve">
+    <value>Tanzil - Kinh Qur'an Navigator</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesTheAbsoluteReality" xml:space="preserve">
+    <value>Thực tế tuyệt đối</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesTheAwaitedOneFoundation" xml:space="preserve">
+    <value>Các được chờ đợi One Foundation</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesTheIslamicBulletin" xml:space="preserve">
+    <value>Hồi giáo tin</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesTheIslamicFoundation" xml:space="preserve">
+    <value>Hồi giáo Foundation</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesTheLahoreAhmadiyyaMovement" xml:space="preserve">
+    <value>Lahore Ahmadiyya Phong trào</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesTheLahoreAhmadiyyaMovementIslam" xml:space="preserve">
+    <value>Lahore Ahmadiyya Phong trào Hồi giáo trong</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesUnderstandQuran" xml:space="preserve">
+    <value>Hiểu Kinh Qur'an</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesVerseByVerseQuran" xml:space="preserve">
+    <value>By câu Câu Kinh Qur'an</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesZakatFoundationAmerica" xml:space="preserve">
+    <value>Zakat Foundation của Mỹ</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesZekr" xml:space="preserve">
+    <value>Dự án Zekr</value>
+  </data>
+  <data name="IslamSource_LearningIslam" xml:space="preserve">
+    <value>Học Hồi giáo</value>
+  </data>
+  <data name="IslamSource_LetterSample" xml:space="preserve">
+    <value>Một</value>
+  </data>
+  <data name="IslamSource_Loading" xml:space="preserve">
+    <value>Tải</value>
+  </data>
+  <data name="IslamSource_Lotus" xml:space="preserve">
+    <value>Lotus</value>
+  </data>
+  <data name="IslamSource_Mapping" xml:space="preserve">
+    <value>Lập bản đồ</value>
+  </data>
+  <data name="IslamSource_NotableArticles" xml:space="preserve">
+    <value>Điều đáng chú ý</value>
+  </data>
+  <data name="IslamSource_NotableNews" xml:space="preserve">
+    <value>Tin tức đáng chú ý</value>
+  </data>
+  <data name="IslamSource_NotableQuotes" xml:space="preserve">
+    <value>Báo giá đáng chú ý</value>
+  </data>
+  <data name="IslamSource_Off" xml:space="preserve">
+    <value>Tắt</value>
+  </data>
+  <data name="IslamSource_Operation" xml:space="preserve">
+    <value>Hoạt động</value>
+  </data>
+  <data name="IslamSource_Perform" xml:space="preserve">
+    <value>Thực hiện</value>
+  </data>
+  <data name="IslamSource_PlainRoman" xml:space="preserve">
+    <value>Roman đồng bằng</value>
+  </data>
+  <data name="IslamSource_PrayerTimes" xml:space="preserve">
+    <value>Cầu nguyện lần</value>
+  </data>
+  <data name="IslamSource_QiblaDirectionFromTrueNorth" xml:space="preserve">
+    <value>Hướng Qibla Từ True North</value>
+  </data>
+  <data name="IslamSource_Quote" xml:space="preserve">
+    <value>Trích dẫn</value>
+  </data>
+  <data name="IslamSource_QuoteMode" xml:space="preserve">
+    <value>Trích dẫn chế độ</value>
+  </data>
+  <data name="IslamSource_Quran" xml:space="preserve">
+    <value>Thánh Kinh Qur'an</value>
+  </data>
+  <data name="IslamSource_QuranResources" xml:space="preserve">
+    <value>Tài Kinh Qur'an</value>
+  </data>
+  <data name="IslamSource_RomanToArabic" xml:space="preserve">
+    <value>Roman Để Ả Rập</value>
+  </data>
+  <data name="IslamSource_Scheme" xml:space="preserve">
+    <value>Âm mưu</value>
+  </data>
+  <data name="IslamSource_Selection" xml:space="preserve">
+    <value>Lựa chọn</value>
+  </data>
+  <data name="IslamSource_SubmissionNote" xml:space="preserve">
+    <value>Hồ sơ: bộ sưu tập nguồn gốc hadith phải chứa một tập tin siêu dữ liệu XML có chứa tất cả các khối lượng, cuốn sách, chương và thông tin hadith và một tập tin XML chứa các văn bản hadith liệu.</value>
+  </data>
+  <data name="IslamSource_Supplications" xml:space="preserve">
+    <value>Khẩn</value>
+  </data>
+  <data name="IslamSource_Text" xml:space="preserve">
+    <value>Văn bản</value>
+  </data>
+  <data name="IslamSource_Translation" xml:space="preserve">
+    <value>Dịch</value>
+  </data>
+  <data name="IslamSource_Transliterate" xml:space="preserve">
+    <value>Chuyển dịch</value>
+  </data>
+  <data name="IslamSource_Transliteration" xml:space="preserve">
+    <value>Sự phiên dịch</value>
+  </data>
+  <data name="IslamSource_TransliterationScheme" xml:space="preserve">
+    <value>Đề án phiên âm</value>
+  </data>
+  <data name="IslamSource_Viewer" xml:space="preserve">
+    <value>Xem</value>
+  </data>
+  <data name="IslamSource_Welcome" xml:space="preserve">
+    <value>Chào mừng bạn đến IslamSource.info</value>
+  </data>
+  <data name="IslamSource_ModifyDiacritics" xml:space="preserve">
+    <value>Sửa đổi dấu</value>
+  </data>
+  <data name="IslamSource_Add" xml:space="preserve">
+    <value>Thêm</value>
+  </data>
+  <data name="IslamSource_Remove" xml:space="preserve">
+    <value>Hủy bỏ</value>
+  </data>
+  <data name="IslamInfo_Chapters" xml:space="preserve">
+    <value>Chương</value>
+  </data>
+  <data name="IslamInfo_ChaptersRevelationOrder" xml:space="preserve">
+    <value>Trong chương Khải Huyền Đặt hàng</value>
+  </data>
+  <data name="IslamInfo_Groups" xml:space="preserve">
+    <value>Nhóm</value>
+  </data>
+  <data name="IslamInfo_ImportantSelections" xml:space="preserve">
+    <value>Các lựa chọn quan trọng</value>
+  </data>
+  <data name="IslamInfo_Pages" xml:space="preserve">
+    <value>Trang</value>
+  </data>
+  <data name="IslamInfo_Parts" xml:space="preserve">
+    <value>Bộ phận</value>
+  </data>
+  <data name="IslamInfo_Prostrations" xml:space="preserve">
+    <value>Lễ lạy</value>
+  </data>
+  <data name="IslamInfo_Sections" xml:space="preserve">
+    <value>Phần</value>
+  </data>
+  <data name="IslamInfo_Stations" xml:space="preserve">
+    <value>Trạm</value>
+  </data>
+  <data name="lang_localam" xml:space="preserve">
+    <value>Amharic</value>
+  </data>
+  <data name="lang_localar" xml:space="preserve">
+    <value>Tiếng Ả Rập</value>
+  </data>
+  <data name="lang_localaz" xml:space="preserve">
+    <value>Azerbaijan</value>
+  </data>
+  <data name="lang_localber" xml:space="preserve">
+    <value>Amazigh</value>
+  </data>
+  <data name="lang_localbg" xml:space="preserve">
+    <value>Bungari</value>
+  </data>
+  <data name="lang_localbn" xml:space="preserve">
+    <value>Bengali</value>
+  </data>
+  <data name="lang_localbs" xml:space="preserve">
+    <value>Tiếng Bosnia</value>
+  </data>
+  <data name="lang_localcs" xml:space="preserve">
+    <value>Séc</value>
+  </data>
+  <data name="lang_localde" xml:space="preserve">
+    <value>Đức</value>
+  </data>
+  <data name="lang_localdv" xml:space="preserve">
+    <value>Divehi</value>
+  </data>
+  <data name="lang_localen" xml:space="preserve">
+    <value>Anh</value>
+  </data>
+  <data name="lang_locales" xml:space="preserve">
+    <value>Tây Ban Nha</value>
+  </data>
+  <data name="lang_localfa" xml:space="preserve">
+    <value>Tiếng Ba Tư</value>
+  </data>
+  <data name="lang_localfr" xml:space="preserve">
+    <value>Pháp</value>
+  </data>
+  <data name="lang_localha" xml:space="preserve">
+    <value>Hausa</value>
+  </data>
+  <data name="lang_localhi" xml:space="preserve">
+    <value>Tiếng Hin-ddi</value>
+  </data>
+  <data name="lang_localid" xml:space="preserve">
+    <value>Indonesia</value>
+  </data>
+  <data name="lang_localit" xml:space="preserve">
+    <value>Ý</value>
+  </data>
+  <data name="lang_localja" xml:space="preserve">
+    <value>Nhật Bản</value>
+  </data>
+  <data name="lang_localko" xml:space="preserve">
+    <value>Hàn Quốc</value>
+  </data>
+  <data name="lang_localku" xml:space="preserve">
+    <value>Người Kurd</value>
+  </data>
+  <data name="lang_localml" xml:space="preserve">
+    <value>Malayalam</value>
+  </data>
+  <data name="lang_localms" xml:space="preserve">
+    <value>Malay</value>
+  </data>
+  <data name="lang_localnl" xml:space="preserve">
+    <value>Hà Lan</value>
+  </data>
+  <data name="lang_localno" xml:space="preserve">
+    <value>Na Uy</value>
+  </data>
+  <data name="lang_localpl" xml:space="preserve">
+    <value>Ba Lan</value>
+  </data>
+  <data name="lang_localpt" xml:space="preserve">
+    <value>Bồ Đào Nha</value>
+  </data>
+  <data name="lang_localro" xml:space="preserve">
+    <value>Rumani</value>
+  </data>
+  <data name="lang_localru" xml:space="preserve">
+    <value>Nga</value>
+  </data>
+  <data name="lang_localsd" xml:space="preserve">
+    <value>Sindhi</value>
+  </data>
+  <data name="lang_localso" xml:space="preserve">
+    <value>Somali</value>
+  </data>
+  <data name="lang_localsq" xml:space="preserve">
+    <value>Albania</value>
+  </data>
+  <data name="lang_localsv" xml:space="preserve">
+    <value>Thụy Điển</value>
+  </data>
+  <data name="lang_localsw" xml:space="preserve">
+    <value>Swahili</value>
+  </data>
+  <data name="lang_localta" xml:space="preserve">
+    <value>Tamil</value>
+  </data>
+  <data name="lang_localtg" xml:space="preserve">
+    <value>Tajik</value>
+  </data>
+  <data name="lang_localth" xml:space="preserve">
+    <value>Thái Lan</value>
+  </data>
+  <data name="lang_localtr" xml:space="preserve">
+    <value>Thổ Nhĩ Kỳ</value>
+  </data>
+  <data name="lang_localtt" xml:space="preserve">
+    <value>Tatar</value>
+  </data>
+  <data name="lang_localug" xml:space="preserve">
+    <value>Duy Ngô Nhĩ</value>
+  </data>
+  <data name="lang_localur" xml:space="preserve">
+    <value>Urdu</value>
+  </data>
+  <data name="lang_localuz" xml:space="preserve">
+    <value>Tiếng Uzbek</value>
+  </data>
+  <data name="lang_localzh" xml:space="preserve">
+    <value>Trung Quốc</value>
+  </data>
+  <data name="Acct_Download" xml:space="preserve">
+    <value>Tải về {0}</value>
+  </data>
+  <data name="IslamInfo_CelebrationDay" xml:space="preserve">
+    <value>Ngày lễ kỷ niệm</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek1" xml:space="preserve">
+    <value>Chủ Nhật</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek2" xml:space="preserve">
+    <value>Thứ Hai</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek3" xml:space="preserve">
+    <value>Thứ ba</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek4" xml:space="preserve">
+    <value>Thứ tư</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek5" xml:space="preserve">
+    <value>Thứ năm</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek6" xml:space="preserve">
+    <value>Thứ sáu</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek7" xml:space="preserve">
+    <value>Thứ bảy</value>
+  </data>
+  <data name="IslamInfo_DaysOfWeek" xml:space="preserve">
+    <value>Ngày trong tuần</value>
+  </data>
+  <data name="IslamInfo_Disliked" xml:space="preserve">
+    <value>Không thích</value>
+  </data>
+  <data name="IslamInfo_EnteringMosque" xml:space="preserve">
+    <value>Bước vào một nhà thờ Hồi giáo</value>
+  </data>
+  <data name="IslamInfo_Fasting" xml:space="preserve">
+    <value>Ăn chay</value>
+  </data>
+  <data name="IslamInfo_FastingAfterFastingMonth" xml:space="preserve">
+    <value>Ăn chay 6 ngày trong việc thực hiện tháng</value>
+  </data>
+  <data name="IslamInfo_FastingBeforeFastingMonth" xml:space="preserve">
+    <value>Nhịn ăn trước khi ăn chay tháng</value>
+  </data>
+  <data name="IslamInfo_FastingBeginningPilgrimageMonth" xml:space="preserve">
+    <value>Ăn chay 9 ngày đầu tiên của cuộc hành hương tháng</value>
+  </data>
+  <data name="IslamInfo_FastingDayOfArafa" xml:space="preserve">
+    <value>Ăn chay ngày của Arafa</value>
+  </data>
+  <data name="IslamInfo_FastingDayOfAshura" xml:space="preserve">
+    <value>Ăn chay ngày của Ashura</value>
+  </data>
+  <data name="IslamInfo_FastingMiddleLunarDays" xml:space="preserve">
+    <value>Ăn chay 13, 14 và ngày 15 âm lịch</value>
+  </data>
+  <data name="IslamInfo_FastingMondayThursday" xml:space="preserve">
+    <value>Ăn chay thứ hai và thứ năm</value>
+  </data>
+  <data name="IslamInfo_FastingMonth" xml:space="preserve">
+    <value>Ăn chay tháng</value>
+  </data>
+  <data name="IslamInfo_FastingMonthPrayer" xml:space="preserve">
+    <value>Ăn chay cầu nguyện tháng</value>
+  </data>
+  <data name="IslamInfo_Fear" xml:space="preserve">
+    <value>Sợ</value>
+  </data>
+  <data name="IslamInfo_Forbidden" xml:space="preserve">
+    <value>Cấm</value>
+  </data>
+  <data name="IslamInfo_Friday" xml:space="preserve">
+    <value>Thứ sáu</value>
+  </data>
+  <data name="IslamInfo_Fulfilling" xml:space="preserve">
+    <value>Hoàn thành</value>
+  </data>
+  <data name="IslamInfo_Funeral" xml:space="preserve">
+    <value>Tang lễ</value>
+  </data>
+  <data name="IslamInfo_Guidance" xml:space="preserve">
+    <value>Hướng dẫn</value>
+  </data>
+  <data name="IslamInfo_Jurisprudence" xml:space="preserve">
+    <value>Luật học</value>
+  </data>
+  <data name="IslamInfo_LateNight" xml:space="preserve">
+    <value>Đêm</value>
+  </data>
+  <data name="IslamInfo_LunarEclipse" xml:space="preserve">
+    <value>Nguyệt thực</value>
+  </data>
+  <data name="IslamInfo_Month1" xml:space="preserve">
+    <value>Một trong những bị cấm</value>
+  </data>
+  <data name="IslamInfo_Month10" xml:space="preserve">
+    <value>Thực</value>
+  </data>
+  <data name="IslamInfo_Month11" xml:space="preserve">
+    <value>Một trong những thỏa thuận ngừng bắn</value>
+  </data>
+  <data name="IslamInfo_Month12" xml:space="preserve">
+    <value>Một trong những cuộc hành hương</value>
+  </data>
+  <data name="IslamInfo_Month2" xml:space="preserve">
+    <value>Void</value>
+  </data>
+  <data name="IslamInfo_Month3" xml:space="preserve">
+    <value>Mùa xuân đầu tiên</value>
+  </data>
+  <data name="IslamInfo_Month4" xml:space="preserve">
+    <value>Thứ hai mùa xuân</value>
+  </data>
+  <data name="IslamInfo_Month5" xml:space="preserve">
+    <value>Tháng đầu tiên của đất khô</value>
+  </data>
+  <data name="IslamInfo_Month6" xml:space="preserve">
+    <value>Tháng thứ hai của đất khô</value>
+  </data>
+  <data name="IslamInfo_Month7" xml:space="preserve">
+    <value>Tôn trọng</value>
+  </data>
+  <data name="IslamInfo_Month8" xml:space="preserve">
+    <value>Rải rác</value>
+  </data>
+  <data name="IslamInfo_Month9" xml:space="preserve">
+    <value>Chạy như điên</value>
+  </data>
+  <data name="IslamInfo_MorningLight" xml:space="preserve">
+    <value>Ánh sáng buổi sáng</value>
+  </data>
+  <data name="IslamInfo_Necessary" xml:space="preserve">
+    <value>Cần thiết</value>
+  </data>
+  <data name="IslamInfo_Neutral" xml:space="preserve">
+    <value>Trung lập</value>
+  </data>
+  <data name="IslamInfo_ObligationOfSufficiency" xml:space="preserve">
+    <value>Nghĩa vụ của túc</value>
+  </data>
+  <data name="IslamInfo_ObligationOfTheSelf" xml:space="preserve">
+    <value>Nghĩa vụ của bản thân</value>
+  </data>
+  <data name="IslamInfo_Obligatory" xml:space="preserve">
+    <value>Bắt buộc</value>
+  </data>
+  <data name="IslamInfo_Odd" xml:space="preserve">
+    <value>Lẻ</value>
+  </data>
+  <data name="IslamInfo_OftReturning" xml:space="preserve">
+    <value>Thường được trở về</value>
+  </data>
+  <data name="IslamInfo_Permissible" xml:space="preserve">
+    <value>Cho phép</value>
+  </data>
+  <data name="IslamInfo_Prayer" xml:space="preserve">
+    <value>Cầu nguyện</value>
+  </data>
+  <data name="IslamInfo_PrayTime6" xml:space="preserve">
+    <value>Sự kiêng cử</value>
+  </data>
+  <data name="IslamInfo_PrayTime7" xml:space="preserve">
+    <value>Mặt trời mọc</value>
+  </data>
+  <data name="IslamInfo_PrayTime8" xml:space="preserve">
+    <value>Tính hoàng hôn</value>
+  </data>
+  <data name="IslamInfo_PrayTime9" xml:space="preserve">
+    <value>Nửa đêm</value>
+  </data>
+  <data name="IslamInfo_PrayTime1" xml:space="preserve">
+    <value>Bình minh</value>
+  </data>
+  <data name="IslamInfo_PrayTime2" xml:space="preserve">
+    <value>Trưa</value>
+  </data>
+  <data name="IslamInfo_PrayTime3" xml:space="preserve">
+    <value>Buổi chiều</value>
+  </data>
+  <data name="IslamInfo_PrayTime4" xml:space="preserve">
+    <value>Hoàng hôn</value>
+  </data>
+  <data name="IslamInfo_PrayTime5" xml:space="preserve">
+    <value>Đêm</value>
+  </data>
+  <data name="IslamInfo_PrescribedTime" xml:space="preserve">
+    <value>Thời gian quy định</value>
+  </data>
+  <data name="IslamInfo_RainForDraught" xml:space="preserve">
+    <value>Mưa cho dự thảo</value>
+  </data>
+  <data name="IslamInfo_Recommended" xml:space="preserve">
+    <value>Đê</value>
+  </data>
+  <data name="IslamInfo_SacredState" xml:space="preserve">
+    <value>Nhà nước thiêng liêng</value>
+  </data>
+  <data name="IslamInfo_SolarEclipse" xml:space="preserve">
+    <value>Năng lượng mặt trời nhật thực</value>
+  </data>
+  <data name="IslamInfo_Sunrise" xml:space="preserve">
+    <value>Mặt trời mọc</value>
+  </data>
+  <data name="IslamInfo_Supererogatory" xml:space="preserve">
+    <value>Làm quá sức</value>
+  </data>
+  <data name="IslamInfo_Tradition" xml:space="preserve">
+    <value>Truyền thống</value>
+  </data>
+  <data name="IslamInfo_TraditionObligatory" xml:space="preserve">
+    <value>Truyền thống bắt buộc</value>
+  </data>
+  <data name="IslamInfo_TraditionVoluntary" xml:space="preserve">
+    <value>Truyền thống tự nguyện</value>
+  </data>
+  <data name="IslamInfo_Travel" xml:space="preserve">
+    <value>Du lịch</value>
+  </data>
+  <data name="IslamInfo_Victory" xml:space="preserve">
+    <value>Chiến thắng</value>
+  </data>
+  <data name="IslamInfo_Aaron" xml:space="preserve">
+    <value>Aaron</value>
+  </data>
+  <data name="IslamInfo_Ablution" xml:space="preserve">
+    <value>Lể rửa tội</value>
+  </data>
+  <data name="IslamInfo_Abraham" xml:space="preserve">
+    <value>Abraham</value>
+  </data>
+  <data name="IslamInfo_Adam" xml:space="preserve">
+    <value>Adam</value>
+  </data>
+  <data name="IslamInfo_AfterCallToPrayerFirstPart" xml:space="preserve">
+    <value>Sau khi cuộc gọi đến lời cầu nguyện - phần đầu tiên</value>
+  </data>
+  <data name="IslamInfo_AfterCallToPrayerFirstPartTrans" xml:space="preserve">
+    <value>O Allah, chúa tể của cuộc gọi này hoàn thành và lời cầu nguyện của chúng ta</value>
+  </data>
+  <data name="IslamInfo_AfterCallToPrayerFirstPartWordByWord" xml:space="preserve">
+    <value>O Allah | Chúa | này | gọi | hoàn thành | và cầu nguyện | của chúng ta</value>
+  </data>
+  <data name="IslamInfo_AfterCallToPrayerSecondPart" xml:space="preserve">
+    <value>Sau khi cuộc gọi đến lời cầu nguyện - phần thứ hai</value>
+  </data>
+  <data name="IslamInfo_AfterCallToPrayerSecondPartTrans" xml:space="preserve">
+    <value>Cung cấp cho Muhammad quyền của ông bầu và đức hạnh</value>
+  </data>
+  <data name="IslamInfo_AfterCallToPrayerSecondPartWordByWord" xml:space="preserve">
+    <value>Cho | Muhammad | quyền của ông bầu | đức</value>
+  </data>
+  <data name="IslamInfo_AfterCallToPrayerSupplication" xml:space="preserve">
+    <value>Sau khi cuộc gọi cầu nguyện khẩn</value>
+  </data>
+  <data name="IslamInfo_AfterCallToPrayerThirdPart" xml:space="preserve">
+    <value>Sau khi cuộc gọi đến lời cầu nguyện - phần thứ ba</value>
+  </data>
+  <data name="IslamInfo_AfterCallToPrayerThirdPartTrans" xml:space="preserve">
+    <value>Và cho người ấy đến cấp bậc cao mà bạn đã hứa với ông</value>
+  </data>
+  <data name="IslamInfo_AfterCallToPrayerThirdPartWordByWord" xml:space="preserve">
+    <value>Và cho người ấy | để xếp hạng | cao | mà | bạn đã hứa với ông</value>
+  </data>
+  <data name="IslamInfo_Allah" xml:space="preserve">
+    <value>Một Thiên Chúa</value>
+  </data>
+  <data name="IslamInfo_AllahIsGreatest" xml:space="preserve">
+    <value>Allah là vĩ đại nhất</value>
+  </data>
+  <data name="IslamInfo_AllPraiseAndThanksBeToAllah" xml:space="preserve">
+    <value>Tất cả lời khen ngợi và tạ ơn Allah</value>
+  </data>
+  <data name="IslamInfo_AlmsGiving" xml:space="preserve">
+    <value>Bố thí cho</value>
+  </data>
+  <data name="IslamInfo_AndUponYouBePeace" xml:space="preserve">
+    <value>Và khi bạn được hòa bình</value>
+  </data>
+  <data name="IslamInfo_ArabicTypesetting" xml:space="preserve">
+    <value>Sắp Chữ Ả Rập</value>
+  </data>
+  <data name="IslamInfo_Arial" xml:space="preserve">
+    <value>Arial</value>
+  </data>
+  <data name="IslamInfo_BeforeTravel" xml:space="preserve">
+    <value>Trước khi đi</value>
+  </data>
+  <data name="IslamInfo_BeforeTravelTrans" xml:space="preserve">
+    <value>Tôi xin để lại cho bạn với tôn giáo này, Amanah (trách nhiệm) và hành động trước đó của bạn cho Allah.</value>
+  </data>
+  <data name="IslamInfo_BeforeTravelWordByWord" xml:space="preserve">
+    <value>Tôi xin để lại cho bạn | cho Allah | với tôn giáo này | và những gì | trách nhiệm | và trước | hành động</value>
+  </data>
+  <data name="IslamInfo_BowOfPrayer" xml:space="preserve">
+    <value>Cung cầu nguyện</value>
+  </data>
+  <data name="IslamInfo_CallToBeginPrayerSixthVerse" xml:space="preserve">
+    <value>Gọi để bắt đầu cầu nguyện - thứ sáu câu</value>
+  </data>
+  <data name="IslamInfo_CallToBeginPrayerSixthVerseTrans" xml:space="preserve">
+    <value>Thực sự đã bắt đầu cầu nguyện</value>
+  </data>
+  <data name="IslamInfo_CallToBeginPrayerSixthVerseWordByWord" xml:space="preserve">
+    <value>Thực | đã bắt đầu | lời cầu nguyện</value>
+  </data>
+  <data name="IslamInfo_CallToBeginThePrayer" xml:space="preserve">
+    <value>Gọi để bắt đầu cầu nguyện</value>
+  </data>
+  <data name="IslamInfo_CallToPrayer" xml:space="preserve">
+    <value>Gọi để cầu nguyện</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerEighthVerse" xml:space="preserve">
+    <value>Gọi để cầu nguyện - câu thứ tám</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerEighthVerseTrans" xml:space="preserve">
+    <value>Không có Thiên Chúa, ngoại trừ Allah</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerEighthVerseWordByWord" xml:space="preserve">
+    <value>Không có | Thiên Chúa | trừ | Allah</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerFifthVerse" xml:space="preserve">
+    <value>Gọi để cầu nguyện - câu thứ năm</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerFifthVerseTrans" xml:space="preserve">
+    <value>Hãy đến với thành công</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerFifthVerseWordByWord" xml:space="preserve">
+    <value>Đến | để | thành công</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerFirstVerse" xml:space="preserve">
+    <value>Gọi để cầu nguyện - câu đầu tiên</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerFirstVerseTrans" xml:space="preserve">
+    <value>Allah là vĩ đại nhất</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerFirstVerseWordByWord" xml:space="preserve">
+    <value>Allah là | lớn nhất</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerFourthVerse" xml:space="preserve">
+    <value>Gọi để cầu nguyện - câu thứ tư</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerFourthVerseTrans" xml:space="preserve">
+    <value>Đến cầu nguyện</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerFourthVerseWordByWord" xml:space="preserve">
+    <value>Đến | để | cầu nguyện</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerLeader" xml:space="preserve">
+    <value>Gọi để lãnh đạo cầu nguyện</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerSecondVerse" xml:space="preserve">
+    <value>Gọi để cầu nguyện - câu thứ hai</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerSecondVerseTrans" xml:space="preserve">
+    <value>Tôi làm chứng rằng không có Thiên Chúa, ngoại trừ Allah</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerSecondVerseWordByWord" xml:space="preserve">
+    <value>Tôi làm chứng | mà | không có | Thiên Chúa | trừ | Allah</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerSeventhVerse" xml:space="preserve">
+    <value>Gọi để cầu nguyện - câu thứ bảy</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerSeventhVerseTrans" xml:space="preserve">
+    <value>Allah là vĩ đại nhất</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerSeventhVerseWordByWord" xml:space="preserve">
+    <value>Allah là | lớn nhất</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerSixthVerse" xml:space="preserve">
+    <value>Gọi để cầu nguyện - câu thứ sáu</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerSixthVerseTrans" xml:space="preserve">
+    <value>Cầu nguyện là tốt hơn so với giấc ngủ</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerSixthVerseWordByWord" xml:space="preserve">
+    <value>Cầu nguyện là | hơn | hơn | ngủ</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerThirdVerse" xml:space="preserve">
+    <value>Gọi để cầu nguyện - Câu thứ ba</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerThirdVerseTrans" xml:space="preserve">
+    <value>Tôi làm chứng rằng Muhammad là sứ giả của Allah</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerThirdVerseWordByWord" xml:space="preserve">
+    <value>Tôi làm chứng | mà | Muhammad là | sứ giả | của Allah</value>
+  </data>
+  <data name="IslamInfo_Chapter" xml:space="preserve">
+    <value>Chương</value>
+  </data>
+  <data name="IslamInfo_Creed" xml:space="preserve">
+    <value>Tín ngưỡng</value>
+  </data>
+  <data name="IslamInfo_Custom" xml:space="preserve">
+    <value>Tùy chỉnh</value>
+  </data>
+  <data name="IslamInfo_David" xml:space="preserve">
+    <value>David</value>
+  </data>
+  <data name="IslamInfo_Default" xml:space="preserve">
+    <value>Mặc định</value>
+  </data>
+  <data name="IslamInfo_DirectionOfprayer" xml:space="preserve">
+    <value>Hướng cầu nguyện</value>
+  </data>
+  <data name="IslamInfo_Dissertation" xml:space="preserve">
+    <value>Luận án</value>
+  </data>
+  <data name="IslamInfo_Eber" xml:space="preserve">
+    <value>Eber</value>
+  </data>
+  <data name="IslamInfo_Elijah" xml:space="preserve">
+    <value>Ê-li</value>
+  </data>
+  <data name="IslamInfo_Elisha" xml:space="preserve">
+    <value>Elisha</value>
+  </data>
+  <data name="IslamInfo_Enoch" xml:space="preserve">
+    <value>Enoch</value>
+  </data>
+  <data name="IslamInfo_EnteringMasjidilHaram" xml:space="preserve">
+    <value>Nhập Masjidil Haram</value>
+  </data>
+  <data name="IslamInfo_EnteringMasjidilHaramTrans" xml:space="preserve">
+    <value>O Allah!</value>
+  </data>
+  <data name="IslamInfo_EnteringMasjidilHaramWordByWord" xml:space="preserve">
+    <value>O Allah | Ngươi | hòa bình | và từ Ngài | hòa bình | nguyên nhân chúng ta sống | Chúa | với hòa bình | và khiến chúng ta nhập | Thiên đường | Nhà | Hòa Bình | chủ sở hữu của danh dự | Chúa | và Majesty | Thou</value>
+  </data>
+  <data name="IslamInfo_Ezekiel" xml:space="preserve">
+    <value>Ezekiel</value>
+  </data>
+  <data name="IslamInfo_FifthCreed" xml:space="preserve">
+    <value>Thứ năm tín ngưỡng - Lời Sám Hối (Astaghfar)</value>
+  </data>
+  <data name="IslamInfo_FifthCreedTrans" xml:space="preserve">
+    <value>Tôi tìm kiếm sự tha thứ từ Allah, Chúa của tôi, từ mọi tội lỗi tôi cam kết cố ý hay vô tình, bí mật hoặc công khai, và tôi trở về với Ngài từ tội lỗi mà tôi biết và từ tội lỗi mà tôi không biết.</value>
+  </data>
+  <data name="IslamInfo_FifthCreedWordByWord" xml:space="preserve">
+    <value>Tôi tìm kiếm sự tha thứ | từ Allah | Chúa của tôi | từ | mỗi | tội lỗi | tôi cam kết | cố | hoặc | unknowningly | bí mật | hoặc | công khai | và tôi trở về với | Ngài | từ | tội lỗi | rằng | tôi biết | và từ</value>
+  </data>
+  <data name="IslamInfo_FirstCreed" xml:space="preserve">
+    <value>Đầu tiên tín ngưỡng - Lời của Thanh Tịnh (Tayyabah)</value>
+  </data>
+  <data name="IslamInfo_FirstCreedTrans" xml:space="preserve">
+    <value>Không có Thiên Chúa, ngoại trừ Allah Muhammad là sứ của Allah.</value>
+  </data>
+  <data name="IslamInfo_FirstCreedWordByWord" xml:space="preserve">
+    <value>Không có | Thiên Chúa | trừ | Allah | Muhammad | bạn bè | Allah</value>
+  </data>
+  <data name="IslamInfo_FortyOurLordSupplications" xml:space="preserve">
+    <value>40 Chúa nài của chúng tôi</value>
+  </data>
+  <data name="IslamInfo_FourthCreed" xml:space="preserve">
+    <value>Thứ tư tín ngưỡng - Từ Thống nhất (Tauhid)</value>
+  </data>
+  <data name="IslamInfo_FourthCreedTrans" xml:space="preserve">
+    <value>(Có) không xứng đáng thờ phượng ngoại trừ Allah.</value>
+  </data>
+  <data name="IslamInfo_FourthCreedWordByWord" xml:space="preserve">
+    <value>Không có | Thiên Chúa | trừ | Allah | một mình | không | đối tác | Ngài đã | cho Ngài | Anh | và cho anh ta | Khen ngợi | Ngài ban cho cuộc sống | và mang lại cái chết | và Ngài là | luôn sống | không | có khả năng</value>
+  </data>
+  <data name="IslamInfo_GloryBeToAllah" xml:space="preserve">
+    <value>Vinh quang được Allah</value>
+  </data>
+  <data name="IslamInfo_IhramPrayerSupplication" xml:space="preserve">
+    <value>Ihram cầu nguyện khẩn</value>
+  </data>
+  <data name="IslamInfo_IhramPrayerSupplicationTrans" xml:space="preserve">
+    <value>Trong tên của Allah, Duyên dáng nhất, từ bi nhất!</value>
+  </data>
+  <data name="IslamInfo_IhramPrayerSupplicationWordByWord" xml:space="preserve">
+    <value>Trong tên của | Allah | các Duyên dáng nhất | các Xót thương nhất | Allah | là lớn nhất | Allah | là lớn nhất | Allah | là lớn nhất | cách hoàn hảo | Ông | The One Ai đã đặt | này (vận chuyển) |</value>
+  </data>
+  <data name="IslamInfo_Imam" xml:space="preserve">
+    <value>Lãnh đạo tinh thần</value>
+  </data>
+  <data name="IslamInfo_IntentionForIhramPrayer" xml:space="preserve">
+    <value>Ý định để cầu nguyện Ihram</value>
+  </data>
+  <data name="IslamInfo_IntentionForIhramPrayerTrans" xml:space="preserve">
+    <value>Tôi có ý định làm một Niat (hai rakaat Sunat Ihram Cầu nguyện) cho Allah.</value>
+  </data>
+  <data name="IslamInfo_IntentionForIhramPrayerWordByWord" xml:space="preserve">
+    <value>Tôi cung cấp | đề nghị | Ihram Cầu nguyện | hai rakat | cho Allah | cao nhất</value>
+  </data>
+  <data name="IslamInfo_IntentionForIhramShower" xml:space="preserve">
+    <value>Ý định cho Ihram tắm</value>
+  </data>
+  <data name="IslamInfo_IntentionForIhramShowerTrans" xml:space="preserve">
+    <value>Tôi có ý định tắm (đối với đề nghị Ihram tắm) cho Allah.</value>
+  </data>
+  <data name="IslamInfo_IntentionForIhramShowerWordByWord" xml:space="preserve">
+    <value>Tôi có ý định | để tắm | đề nghị | Ihram tắm | cho Allah | cao nhất</value>
+  </data>
+  <data name="IslamInfo_IntentionForJourneyPrayer" xml:space="preserve">
+    <value>Ý định để cầu nguyện cuộc hành trình</value>
+  </data>
+  <data name="IslamInfo_IntentionForJourneyPrayerTrans" xml:space="preserve">
+    <value>Tôi có ý định làm một Niat (hai rakaat Sunat Safar Cầu nguyện) cho Allah.</value>
+  </data>
+  <data name="IslamInfo_IntentionForJourneyPrayerWordByWord" xml:space="preserve">
+    <value>Tôi cung cấp | đề nghị | cầu nguyện Safar | hai rakat | cho Allah | cao nhất</value>
+  </data>
+  <data name="IslamInfo_IntentionForJourneyShower" xml:space="preserve">
+    <value>Ý định cho cuộc hành trình tắm</value>
+  </data>
+  <data name="IslamInfo_IntentionForJourneyShowerTrans" xml:space="preserve">
+    <value>Tôi có ý định tắm (đối với đề nghị Musafir tắm) cho Allah.</value>
+  </data>
+  <data name="IslamInfo_IntentionForJourneyShowerWordByWord" xml:space="preserve">
+    <value>Tôi có ý định | để tắm | Musafir tắm | đề nghị | cho Allah | cao nhất</value>
+  </data>
+  <data name="IslamInfo_IntentionToPerformUmrah" xml:space="preserve">
+    <value>Ý định thực hiện Umrah</value>
+  </data>
+  <data name="IslamInfo_IntentionToPerformUmrahTrans" xml:space="preserve">
+    <value>O Allah, tôi trả lời khi cuộc gọi của bạn để làm Umrah, O Allah, tôi làm Umrah và Ihram cho Umrah chỉ cho bạn.</value>
+  </data>
+  <data name="IslamInfo_IntentionToPerformUmrahWordByWord" xml:space="preserve">
+    <value>Tôi có ý định | Umrah | và Ihram | chỉ | cho Allah | cao nhất</value>
+  </data>
+  <data name="IslamInfo_InTheNameOfAllah" xml:space="preserve">
+    <value>Nhân danh Allah</value>
+  </data>
+  <data name="IslamInfo_Isaac" xml:space="preserve">
+    <value>Isaac</value>
+  </data>
+  <data name="IslamInfo_Ishmael" xml:space="preserve">
+    <value>Ishmael</value>
+  </data>
+  <data name="IslamInfo_Islam" xml:space="preserve">
+    <value>Trình</value>
+  </data>
+  <data name="IslamInfo_IslamicWords" xml:space="preserve">
+    <value>Từ Hồi giáo</value>
+  </data>
+  <data name="IslamInfo_Jacob" xml:space="preserve">
+    <value>Jacob</value>
+  </data>
+  <data name="IslamInfo_Jesus" xml:space="preserve">
+    <value>Chúa Giêsu</value>
+  </data>
+  <data name="IslamInfo_Jethro" xml:space="preserve">
+    <value>Jethro</value>
+  </data>
+  <data name="IslamInfo_Job" xml:space="preserve">
+    <value>Công việc</value>
+  </data>
+  <data name="IslamInfo_JohnTheBaptist" xml:space="preserve">
+    <value>Gioan Tẩy Giả</value>
+  </data>
+  <data name="IslamInfo_Jonas" xml:space="preserve">
+    <value>Jonas</value>
+  </data>
+  <data name="IslamInfo_Joseph" xml:space="preserve">
+    <value>Người đàn ông chay tịnh</value>
+  </data>
+  <data name="IslamInfo_Judge" xml:space="preserve">
+    <value>Thẩm phán</value>
+  </data>
+  <data name="IslamInfo_KFGQPCNaskh" xml:space="preserve">
+    <value>KFGQPC Naskh</value>
+  </data>
+  <data name="IslamInfo_Law" xml:space="preserve">
+    <value>Pháp luật</value>
+  </data>
+  <data name="IslamInfo_Lot" xml:space="preserve">
+    <value>Rất nhiều</value>
+  </data>
+  <data name="IslamInfo_MajorAblution" xml:space="preserve">
+    <value>Tắm gội lớn</value>
+  </data>
+  <data name="IslamInfo_MalikMuwatta" xml:space="preserve">
+    <value>Muwatta Malik</value>
+  </data>
+  <data name="IslamInfo_MeQuran" xml:space="preserve">
+    <value>Tôi-Quran</value>
+  </data>
+  <data name="IslamInfo_Messenger" xml:space="preserve">
+    <value>Tin</value>
+  </data>
+  <data name="IslamInfo_Months" xml:space="preserve">
+    <value>Tháng</value>
+  </data>
+  <data name="IslamInfo_Moses" xml:space="preserve">
+    <value>Môi-se</value>
+  </data>
+  <data name="IslamInfo_MSUighur" xml:space="preserve">
+    <value>MS Uighur</value>
+  </data>
+  <data name="IslamInfo_Muhammad" xml:space="preserve">
+    <value>Muhammad</value>
+  </data>
+  <data name="IslamInfo_Muslim" xml:space="preserve">
+    <value>Người nộp</value>
+  </data>
+  <data name="IslamInfo_NamesOfAllah" xml:space="preserve">
+    <value>Tên của Allah</value>
+  </data>
+  <data name="IslamInfo_Noah" xml:space="preserve">
+    <value>Noah</value>
+  </data>
+  <data name="IslamInfo_OnenessOfGod" xml:space="preserve">
+    <value>Sự hiệp nhất của Thiên Chúa</value>
+  </data>
+  <data name="IslamInfo_Part" xml:space="preserve">
+    <value>Phần</value>
+  </data>
+  <data name="IslamInfo_PDMSSaleem" xml:space="preserve">
+    <value>PDMS Saleem</value>
+  </data>
+  <data name="IslamInfo_PeaceBeUponYou" xml:space="preserve">
+    <value>Hòa bình được khi bạn</value>
+  </data>
+  <data name="IslamInfo_PhraseForAllahIsGreatest" xml:space="preserve">
+    <value>Cụm từ cho Allah là vĩ đại nhất</value>
+  </data>
+  <data name="IslamInfo_PhraseForAllPraiseAndThanksBeToAllah" xml:space="preserve">
+    <value>Cụm từ cho tất cả các lời khen ngợi và tạ ơn Allah</value>
+  </data>
+  <data name="IslamInfo_PhraseForGloryBeToAllah" xml:space="preserve">
+    <value>Cụm từ tìm kiếm vinh quang là Allah</value>
+  </data>
+  <data name="IslamInfo_PhraseForInTheNameOfAllah" xml:space="preserve">
+    <value>Cụm từ cho trong tên của Allah</value>
+  </data>
+  <data name="IslamInfo_Pilgrimage" xml:space="preserve">
+    <value>Hành hương</value>
+  </data>
+  <data name="IslamInfo_Prayers" xml:space="preserve">
+    <value>Lời cầu nguyện</value>
+  </data>
+  <data name="IslamInfo_PrayerTimes" xml:space="preserve">
+    <value>Cầu nguyện</value>
+  </data>
+  <data name="IslamInfo_ProperPronunciationDuringRecitation" xml:space="preserve">
+    <value>Đúng phát âm trong quá trình ngâm thơ</value>
+  </data>
+  <data name="IslamInfo_Prophet" xml:space="preserve">
+    <value>Tiên tri</value>
+  </data>
+  <data name="IslamInfo_Prophets" xml:space="preserve">
+    <value>Tiên tri</value>
+  </data>
+  <data name="IslamInfo_Prostrating" xml:space="preserve">
+    <value>Lễ lạy</value>
+  </data>
+  <data name="IslamInfo_Prostration" xml:space="preserve">
+    <value>Sự lạy</value>
+  </data>
+  <data name="IslamInfo_PurificationOfTheSoul" xml:space="preserve">
+    <value>Thanh lọc tâm hồn</value>
+  </data>
+  <data name="IslamInfo_PurificationOfTheSoulTrans" xml:space="preserve">
+    <value>O Allah, cấp linh hồn của tôi đạo đức của nó và làm sạch nó, bạn là tốt nhất để làm sạch nó, Bạn đang Guardian và Thạc sĩ của mình.</value>
+  </data>
+  <data name="IslamInfo_PurificationOfTheSoulWordByWord" xml:space="preserve">
+    <value>O Allah | Bạn Cho | My Soul | lòng mộ đạo của nó | Và bạn thanh lọc nó | Bạn (một mình) | nhất | Ai | thanh lọc nó | Bạn (một mình) | The Guardian của nó | và Master của nó</value>
+  </data>
+  <data name="IslamInfo_PurificationSupplication" xml:space="preserve">
+    <value>Thanh lọc khẩn</value>
+  </data>
+  <data name="IslamInfo_Remembrance" xml:space="preserve">
+    <value>Nhớ</value>
+  </data>
+  <data name="IslamInfo_RevelationOfAllah" xml:space="preserve">
+    <value>Mặc khải của Allah</value>
+  </data>
+  <data name="IslamInfo_RevelationOfAllahInBookForm" xml:space="preserve">
+    <value>Mặc khải của Allah thành sách</value>
+  </data>
+  <data name="IslamInfo_RiyadhSaaliheen" xml:space="preserve">
+    <value>Riyadh al-Saaliheen</value>
+  </data>
+  <data name="IslamInfo_SahihBukhari" xml:space="preserve">
+    <value>Sahih al-Bukhari</value>
+  </data>
+  <data name="IslamInfo_SahihMuslim" xml:space="preserve">
+    <value>Sahih Hồi giáo</value>
+  </data>
+  <data name="IslamInfo_SakkalMajalla" xml:space="preserve">
+    <value>Sakkal Majalla</value>
+  </data>
+  <data name="IslamInfo_SalawatSupplicationAfterTalbiah" xml:space="preserve">
+    <value>Salawat khẩn sau khi Talbiah</value>
+  </data>
+  <data name="IslamInfo_SalawatSupplicationAfterTalbiahTrans" xml:space="preserve">
+    <value>O Allah ban phước cho chủ Muhammad của chúng tôi và gia đình cũng như bạn may mắn chủ Abraham của chúng tôi và thánh chủ Muhammad của chúng tôi và gia đình của Muhammad chỉ như bạn thánh chủ của chúng tôi Abraham và gia đình của Abraham trong tất cả thế giới cho bạn là những Đáng mừng Mighty.</value>
+  </data>
+  <data name="IslamInfo_SalawatSupplicationAfterTalbiahWordByWord" xml:space="preserve">
+    <value>O Allah | gửi lời chào | khi | chủ | Muhammad | và khi | gia đình | chủ | Muhammad | như | bạn gửi lời chào | khi | Abraham | và khi | gia đình | Abraham | và gửi phước lành | khi | chủ</value>
+  </data>
+  <data name="IslamInfo_Saleh" xml:space="preserve">
+    <value>Saleh</value>
+  </data>
+  <data name="IslamInfo_Scheherazade" xml:space="preserve">
+    <value>Scheherazade</value>
+  </data>
+  <data name="IslamInfo_SchoolOfJurisprudence" xml:space="preserve">
+    <value>Trường luật học</value>
+  </data>
+  <data name="IslamInfo_SecondCreed" xml:space="preserve">
+    <value>Thứ hai tín ngưỡng - Lời Chứng (Shahaadat)</value>
+  </data>
+  <data name="IslamInfo_SecondCreedTrans" xml:space="preserve">
+    <value>Tôi làm chứng rằng không có ai xứng đáng để tôn thờ ngoại trừ Allah, Một mình, mà không có đối tác, và tôi làm chứng rằng Muhammad là người đầy tớ và Messenger của ông.</value>
+  </data>
+  <data name="IslamInfo_SecondCreedWordByWord" xml:space="preserve">
+    <value>Tôi làm chứng | mà | không có | Thiên Chúa | trừ | Allah | một mình | không | đối tác | Ông | và tôi làm chứng | mà | Muhammad | tôi tớ Ngài | và Messenger</value>
+  </data>
+  <data name="IslamInfo_SixthCreed" xml:space="preserve">
+    <value>Thứ sáu tín ngưỡng - Những lời của bác bỏ sự hoài nghi (Rud-A-Kuffer)</value>
+  </data>
+  <data name="IslamInfo_SixthCreedTrans" xml:space="preserve">
+    <value>O Allah!</value>
+  </data>
+  <data name="IslamInfo_SixthCreedWordByWord" xml:space="preserve">
+    <value>O Allah | Chắc chắn | tôi tìm kiếm sự bảo | với Bạn | từ | rằng | tôi liên kết hợp tác với Bạn | bất cứ điều gì | và tôi | biết | nó | và tôi tìm kiếm sự tha thứ từ bạn | cho rằng | không | Tôi biết | nó | Tôi ăn năn</value>
+  </data>
+  <data name="IslamInfo_Solomon" xml:space="preserve">
+    <value>Solomon</value>
+  </data>
+  <data name="IslamInfo_Station" xml:space="preserve">
+    <value>Trạm</value>
+  </data>
+  <data name="IslamInfo_SunanAbuDawood" xml:space="preserve">
+    <value>Sunan Abu Dawood</value>
+  </data>
+  <data name="IslamInfo_SunanIbnMaja" xml:space="preserve">
+    <value>Sunan Ibn Maja</value>
+  </data>
+  <data name="IslamInfo_SunanNasai" xml:space="preserve">
+    <value>Sunan một-Nasa'i Al-Sughra</value>
+  </data>
+  <data name="IslamInfo_SunanTirmidhi" xml:space="preserve">
+    <value>Sunan al-Tirmidhi</value>
+  </data>
+  <data name="IslamInfo_Supplication" xml:space="preserve">
+    <value>Đơn thỉnh nguyện</value>
+  </data>
+  <data name="IslamInfo_SupplicationAfterSalawatSupplication" xml:space="preserve">
+    <value>Khẩn sau khi Salawat khẩn</value>
+  </data>
+  <data name="IslamInfo_SupplicationAfterSalawatSupplicationTrans" xml:space="preserve">
+    <value>O Allah!</value>
+  </data>
+  <data name="IslamInfo_SupplicationAfterSalawatSupplicationWordByWord" xml:space="preserve">
+    <value>O Allah | thực | tôi tìm kiếm từ Ngài | Chúa ban phước | và Paradise | tôi tìm nơi ẩn náu với Ngài | từ | giận dữ | và địa ngục.</value>
+  </data>
+  <data name="IslamInfo_SupplicationForArrivingAtMakkah" xml:space="preserve">
+    <value>Khẩn cầu đến tại Makkah</value>
+  </data>
+  <data name="IslamInfo_SupplicationForArrivingAtMakkahTrans" xml:space="preserve">
+    <value>Lạy Chúa!</value>
+  </data>
+  <data name="IslamInfo_SupplicationForArrivingAtMakkahWordByWord" xml:space="preserve">
+    <value>O Allah | thực sự | này | khu bảo tồn là | Thy Thánh Địa | và Thành Thánh này là | Thy City | và Hòa bình là therin | Thy Hòa Bình | Sau đó cấm tôi | từ | địa ngục lửa | và tiết kiệm cho tôi | từ | trừng phạt Thy | trên</value>
+  </data>
+  <data name="IslamInfo_Talbiah" xml:space="preserve">
+    <value>Talbiah</value>
+  </data>
+  <data name="IslamInfo_TalbiahTrans" xml:space="preserve">
+    <value>Tôi đã trả lời cho bạn, Thiên Chúa của tôi!</value>
+  </data>
+  <data name="IslamInfo_TalbiahWordByWord" xml:space="preserve">
+    <value>Tôi đã trả lời cho bạn | O Allah | tôi đã trả lời cho bạn | tôi đã trả lời cho bạn | không có | đối tác | cho bạn | tôi đã trả lời cho bạn | thật | Tất cả các Khen ngợi | và All The Bounty | cho bạn |</value>
+  </data>
+  <data name="IslamInfo_TheAbaser" xml:space="preserve">
+    <value>Các Abaser</value>
+  </data>
+  <data name="IslamInfo_TheAcknowledgingOne" xml:space="preserve">
+    <value>Các Nhận Một</value>
+  </data>
+  <data name="IslamInfo_TheAllAuthoritativeOne" xml:space="preserve">
+    <value>Tất cả thẩm quyền Một</value>
+  </data>
+  <data name="IslamInfo_TheAllAwareOne" xml:space="preserve">
+    <value>All-Aware Một</value>
+  </data>
+  <data name="IslamInfo_TheAllCompelling" xml:space="preserve">
+    <value>Tất cả Buộc</value>
+  </data>
+  <data name="IslamInfo_TheAllEnumeratingOne" xml:space="preserve">
+    <value>All-liệt kê một</value>
+  </data>
+  <data name="IslamInfo_TheAllHearer" xml:space="preserve">
+    <value>All-Thanh Văn</value>
+  </data>
+  <data name="IslamInfo_TheAllKnowingOne" xml:space="preserve">
+    <value>All-Biết Một</value>
+  </data>
+  <data name="IslamInfo_TheAllNobleOne" xml:space="preserve">
+    <value>All-Noble Một</value>
+  </data>
+  <data name="IslamInfo_TheAllObservingWitness" xml:space="preserve">
+    <value>Tất cả Quan sát Nhân chứng</value>
+  </data>
+  <data name="IslamInfo_TheAllPervadingOne" xml:space="preserve">
+    <value>Tất cả Khắp Một</value>
+  </data>
+  <data name="IslamInfo_TheAllPrevailingOne" xml:space="preserve">
+    <value>Một All-hiện hành</value>
+  </data>
+  <data name="IslamInfo_TheAllSeeing" xml:space="preserve">
+    <value>All-Thấy</value>
+  </data>
+  <data name="IslamInfo_TheAssemblerOfScatteredCreations" xml:space="preserve">
+    <value>Assembler của Creations Mây</value>
+  </data>
+  <data name="IslamInfo_TheBeneficent" xml:space="preserve">
+    <value>Các từ tâm</value>
+  </data>
+  <data name="IslamInfo_TheBenignOne" xml:space="preserve">
+    <value>Một lành</value>
+  </data>
+  <data name="IslamInfo_TheBestowerOfBenefits" xml:space="preserve">
+    <value>Các Bestower của lợi ích</value>
+  </data>
+  <data name="IslamInfo_TheBestowerOfSufficiency" xml:space="preserve">
+    <value>Các Bestower của túc</value>
+  </data>
+  <data name="IslamInfo_TheBountifulOne" xml:space="preserve">
+    <value>Các Bountiful Một</value>
+  </data>
+  <data name="IslamInfo_TheClementOne" xml:space="preserve">
+    <value>Các Clement Một</value>
+  </data>
+  <data name="IslamInfo_TheCreator" xml:space="preserve">
+    <value>Đấng Tạo Hóa</value>
+  </data>
+  <data name="IslamInfo_TheDistressor" xml:space="preserve">
+    <value>Các Distressor</value>
+  </data>
+  <data name="IslamInfo_TheDominantOne" xml:space="preserve">
+    <value>Các chi phối Một</value>
+  </data>
+  <data name="IslamInfo_TheElevatingOne" xml:space="preserve">
+    <value>Các nâng cao Một</value>
+  </data>
+  <data name="IslamInfo_TheEmbodimentOfJustice" xml:space="preserve">
+    <value>Các sự hiện thân của Tư pháp</value>
+  </data>
+  <data name="IslamInfo_TheEmbodimentOfPeace" xml:space="preserve">
+    <value>Các sự hiện thân của hòa bình</value>
+  </data>
+  <data name="IslamInfo_TheEmbodimentOfTruth" xml:space="preserve">
+    <value>Các sự hiện thân của sự thật</value>
+  </data>
+  <data name="IslamInfo_TheEternalInheritor" xml:space="preserve">
+    <value>Eternal Inheritor</value>
+  </data>
+  <data name="IslamInfo_TheEternalLord" xml:space="preserve">
+    <value>Eternal Chúa</value>
+  </data>
+  <data name="IslamInfo_TheEternalPossessorOfSovereignty" xml:space="preserve">
+    <value>Eternal Chủ sở hữu của chủ quyền</value>
+  </data>
+  <data name="IslamInfo_TheEverAcceptorOfRepentance" xml:space="preserve">
+    <value>Các Ever-acceptor của ăn năn</value>
+  </data>
+  <data name="IslamInfo_TheEverSurvivingOne" xml:space="preserve">
+    <value>Một bao giờ còn sống</value>
+  </data>
+  <data name="IslamInfo_TheEvolver" xml:space="preserve">
+    <value>Các Evolver</value>
+  </data>
+  <data name="IslamInfo_TheExpeditingOne" xml:space="preserve">
+    <value>Các xúc tiến Một</value>
+  </data>
+  <data name="IslamInfo_TheExtender" xml:space="preserve">
+    <value>Extender</value>
+  </data>
+  <data name="IslamInfo_TheExtensivelyEnduringOne" xml:space="preserve">
+    <value>Các rộng rãi Enduring Một</value>
+  </data>
+  <data name="IslamInfo_TheExtremelyExaltedOne" xml:space="preserve">
+    <value>Một cực kỳ Thế Tôn</value>
+  </data>
+  <data name="IslamInfo_TheFirmOne" xml:space="preserve">
+    <value>Một Công ty</value>
+  </data>
+  <data name="IslamInfo_TheFlawlessShaper" xml:space="preserve">
+    <value>Các tuyệt hảo Shaper</value>
+  </data>
+  <data name="IslamInfo_TheFountainHeadOfTruth" xml:space="preserve">
+    <value>Đài phun nước, Trưởng Truth</value>
+  </data>
+  <data name="IslamInfo_TheGloriousOne" xml:space="preserve">
+    <value>Một Glorious</value>
+  </data>
+  <data name="IslamInfo_TheGreatForgiver" xml:space="preserve">
+    <value>Đại tha thứ</value>
+  </data>
+  <data name="IslamInfo_TheGreatOne" xml:space="preserve">
+    <value>Đại Một</value>
+  </data>
+  <data name="IslamInfo_TheGuardingOne" xml:space="preserve">
+    <value>Về che chắn Một</value>
+  </data>
+  <data name="IslamInfo_TheGuideToPathOfRectitude" xml:space="preserve">
+    <value>Hướng dẫn về con đường ngay thẳng của</value>
+  </data>
+  <data name="IslamInfo_TheHolderOfSupremeAuthority" xml:space="preserve">
+    <value>Chủ của Cơ quan tối cao</value>
+  </data>
+  <data name="IslamInfo_TheHonourerBestower" xml:space="preserve">
+    <value>Các Honourer-Bestower</value>
+  </data>
+  <data name="IslamInfo_TheImpartialJudge" xml:space="preserve">
+    <value>Thẩm phán thiên vị</value>
+  </data>
+  <data name="IslamInfo_TheImperceptible" xml:space="preserve">
+    <value>Các thể nhận thấy</value>
+  </data>
+  <data name="IslamInfo_TheInfiniteLastOne" xml:space="preserve">
+    <value>Vô cuối Một</value>
+  </data>
+  <data name="IslamInfo_TheInflictorOfDeath" xml:space="preserve">
+    <value>Người gây of Death</value>
+  </data>
+  <data name="IslamInfo_TheInfuserOfFaith" xml:space="preserve">
+    <value>Các Infuser của Faith</value>
+  </data>
+  <data name="IslamInfo_TheInfuserOfNewLife" xml:space="preserve">
+    <value>Các Infuser của cuộc sống mới</value>
+  </data>
+  <data name="IslamInfo_TheJustOne" xml:space="preserve">
+    <value>Just Một</value>
+  </data>
+  <data name="IslamInfo_TheKnowerOfSubtleties" xml:space="preserve">
+    <value>Người biết của sự tinh tế</value>
+  </data>
+  <data name="IslamInfo_TheLovingOne" xml:space="preserve">
+    <value>Một Loving</value>
+  </data>
+  <data name="IslamInfo_TheMagnificentOne" xml:space="preserve">
+    <value>Magnificent Một</value>
+  </data>
+  <data name="IslamInfo_TheMaintainerOflife" xml:space="preserve">
+    <value>Người duy trì cuộc sống</value>
+  </data>
+  <data name="IslamInfo_TheMajesticOne" xml:space="preserve">
+    <value>Majestic Một</value>
+  </data>
+  <data name="IslamInfo_TheMerciful" xml:space="preserve">
+    <value>Các thương xót</value>
+  </data>
+  <data name="IslamInfo_TheMightyOne" xml:space="preserve">
+    <value>Đức Chúa Trời,</value>
+  </data>
+  <data name="IslamInfo_TheMostSacred" xml:space="preserve">
+    <value>Thánh Đa</value>
+  </data>
+  <data name="IslamInfo_TheOmnipotentOne" xml:space="preserve">
+    <value>Các Toàn Năng Một</value>
+  </data>
+  <data name="IslamInfo_TheOnlyOne" xml:space="preserve">
+    <value>Là người duy nhất</value>
+  </data>
+  <data name="IslamInfo_TheOriginator" xml:space="preserve">
+    <value>Các Originator</value>
+  </data>
+  <data name="IslamInfo_ThePardoner" xml:space="preserve">
+    <value>Các người rửa tội</value>
+  </data>
+  <data name="IslamInfo_ThePerceptible" xml:space="preserve">
+    <value>Các cảm quan</value>
+  </data>
+  <data name="IslamInfo_ThePointingOne" xml:space="preserve">
+    <value>Các Chỉ Một</value>
+  </data>
+  <data name="IslamInfo_ThePossessorOfMajestyAndHonour" xml:space="preserve">
+    <value>Chủ sở hữu của các hoàng và danh dự</value>
+  </data>
+  <data name="IslamInfo_ThePrayersOfAllahUponHimAndPeace" xml:space="preserve">
+    <value>Những lời cầu nguyện của Allah khi anh ta và hòa bình</value>
+  </data>
+  <data name="IslamInfo_ThePreserverOfSafety" xml:space="preserve">
+    <value>Đấng Bảo vệ An toàn</value>
+  </data>
+  <data name="IslamInfo_ThePreventer" xml:space="preserve">
+    <value>Các ngăn ngừa</value>
+  </data>
+  <data name="IslamInfo_ThePrimeLight" xml:space="preserve">
+    <value>Thủ tướng Chính ánh sáng</value>
+  </data>
+  <data name="IslamInfo_TheProcrastinator" xml:space="preserve">
+    <value>Các Procrastinator</value>
+  </data>
+  <data name="IslamInfo_TheProtectingAssociate" xml:space="preserve">
+    <value>Associate Bảo vệ</value>
+  </data>
+  <data name="IslamInfo_TheProviderOfGuidance" xml:space="preserve">
+    <value>Các nhà cung cấp của Hướng dẫn</value>
+  </data>
+  <data name="IslamInfo_TheReckoningOne" xml:space="preserve">
+    <value>Các Reckoning Một</value>
+  </data>
+  <data name="IslamInfo_TheReducer" xml:space="preserve">
+    <value>Giảm các</value>
+  </data>
+  <data name="IslamInfo_TheRespondingOne" xml:space="preserve">
+    <value>Một Đáp ứng</value>
+  </data>
+  <data name="IslamInfo_TheRestorer" xml:space="preserve">
+    <value>Các Restorer</value>
+  </data>
+  <data name="IslamInfo_TheRestrictingOne" xml:space="preserve">
+    <value>Hạn chế các Một</value>
+  </data>
+  <data name="IslamInfo_TheRetaliator" xml:space="preserve">
+    <value>Các Retaliator</value>
+  </data>
+  <data name="IslamInfo_TheSelfSubsistingOne" xml:space="preserve">
+    <value>Tự đang tồn Một</value>
+  </data>
+  <data name="IslamInfo_TheSelfSufficientOne" xml:space="preserve">
+    <value>Một Tự đủ</value>
+  </data>
+  <data name="IslamInfo_TheSoleLaudableOne" xml:space="preserve">
+    <value>Các Sole-đáng khen ngợi Một</value>
+  </data>
+  <data name="IslamInfo_TheSoleOne" xml:space="preserve">
+    <value>Các Sole Một</value>
+  </data>
+  <data name="IslamInfo_TheStrongOne" xml:space="preserve">
+    <value>Một mạnh</value>
+  </data>
+  <data name="IslamInfo_TheSublimeOne" xml:space="preserve">
+    <value>Một cao siêu</value>
+  </data>
+  <data name="IslamInfo_TheSupremeBestower" xml:space="preserve">
+    <value>Các Bestower tối cao</value>
+  </data>
+  <data name="IslamInfo_TheSupremePardoner" xml:space="preserve">
+    <value>Các người rửa tội tối cao</value>
+  </data>
+  <data name="IslamInfo_TheSupremeProvider" xml:space="preserve">
+    <value>Nhà cung cấp tối cao</value>
+  </data>
+  <data name="IslamInfo_TheSupremeSolver" xml:space="preserve">
+    <value>Solver tối cao</value>
+  </data>
+  <data name="IslamInfo_TheSustainingOne" xml:space="preserve">
+    <value>Duy trì các Một</value>
+  </data>
+  <data name="IslamInfo_TheTotalProvider" xml:space="preserve">
+    <value>Tổng cung cấp</value>
+  </data>
+  <data name="IslamInfo_TheUniqueOne" xml:space="preserve">
+    <value>Một độc đáo</value>
+  </data>
+  <data name="IslamInfo_TheUniversalTrustee" xml:space="preserve">
+    <value>Universal Trustee</value>
+  </data>
+  <data name="IslamInfo_TheVeryFirst" xml:space="preserve">
+    <value>Rất Đầu tiên</value>
+  </data>
+  <data name="IslamInfo_TheWatchfulOne" xml:space="preserve">
+    <value>Theo dõi cẩn thận các Một</value>
+  </data>
+  <data name="IslamInfo_TheWiseOne" xml:space="preserve">
+    <value>Wise Một</value>
+  </data>
+  <data name="IslamInfo_ThirdCreed" xml:space="preserve">
+    <value>Tín ngưỡng thứ ba - Lời Ca Ngợi (Tumjeed)</value>
+  </data>
+  <data name="IslamInfo_ThirdCreedTrans" xml:space="preserve">
+    <value>Sáng danh Allah và Khen ngợi Allah, và không có Thiên Chúa, ngoại trừ Allah, và Allah là vĩ đại nhất.</value>
+  </data>
+  <data name="IslamInfo_ThirdCreedWordByWord" xml:space="preserve">
+    <value>Vinh quang | Allah | và Khen ngợi | Allah | và không có | Thiên Chúa | trừ | Allah | và Allah | nhất | và không | might | và không | điện | trừ | với Allah | nhất cao | Magnificent nhất</value>
+  </data>
+  <data name="IslamInfo_TraditionalArabic" xml:space="preserve">
+    <value>Tiếng Ả Rập truyền thống</value>
+  </data>
+  <data name="IslamInfo_TransmissionOfInformation" xml:space="preserve">
+    <value>Truyền thông tin</value>
+  </data>
+  <data name="IslamInfo_Umrah" xml:space="preserve">
+    <value>Umrah</value>
+  </data>
+  <data name="IslamInfo_UnitOfPrayer" xml:space="preserve">
+    <value>Đơn vị cầu nguyện</value>
+  </data>
+  <data name="IslamInfo_UponHimBePeace" xml:space="preserve">
+    <value>Khi anh ta có hòa bình</value>
+  </data>
+  <data name="IslamInfo_Verse" xml:space="preserve">
+    <value>Thơ</value>
+  </data>
+  <data name="IslamInfo_VerseOfTheThrone" xml:space="preserve">
+    <value>Các Câu của Throne</value>
+  </data>
+  <data name="IslamInfo_Zechariah" xml:space="preserve">
+    <value>Zechariah</value>
+  </data>
+  <data name="IslamInfo_TheEverLiving" xml:space="preserve">
+    <value>Ever sống</value>
+  </data>
+  <data name="IslamInfo_After" xml:space="preserve">
+    <value>Sau khi</value>
+  </data>
+  <data name="IslamInfo_Arabic" xml:space="preserve">
+    <value>Tiếng Ả Rập</value>
+  </data>
+  <data name="IslamInfo_Assimilate" xml:space="preserve">
+    <value>Làm cho tiêu</value>
+  </data>
+  <data name="IslamInfo_Before" xml:space="preserve">
+    <value>Trước</value>
+  </data>
+  <data name="IslamInfo_bukhariBook1" xml:space="preserve">
+    <value>Mặc khải</value>
+  </data>
+  <data name="IslamInfo_bukhariBook10" xml:space="preserve">
+    <value>Gọi để cầu nguyện (Adhaan)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook11" xml:space="preserve">
+    <value>Thứ sáu cầu nguyện</value>
+  </data>
+  <data name="IslamInfo_bukhariBook12" xml:space="preserve">
+    <value>Sợ hãi cầu nguyện</value>
+  </data>
+  <data name="IslamInfo_bukhariBook13" xml:space="preserve">
+    <value>Hai Lễ hội (Eids)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook14" xml:space="preserve">
+    <value>Witr cầu nguyện</value>
+  </data>
+  <data name="IslamInfo_bukhariBook15" xml:space="preserve">
+    <value>Gọi Allah cho Rain (Istisqaa)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook16" xml:space="preserve">
+    <value>Nhật thực</value>
+  </data>
+  <data name="IslamInfo_bukhariBook17" xml:space="preserve">
+    <value>Trong lễ lạy Recital của Qur'an</value>
+  </data>
+  <data name="IslamInfo_bukhariBook18" xml:space="preserve">
+    <value>Rút ngắn thời cầu nguyện (At-Taqseer)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook19" xml:space="preserve">
+    <value>Cầu nguyện tại Night (Tahajjud)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook1Chapter1" xml:space="preserve">
+    <value>{Làm thế nào Inspiration Divine bắt đầu được tiết lộ vào Messenger của Allah (cưa).</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2" xml:space="preserve">
+    <value>Niềm tin</value>
+  </data>
+  <data name="IslamInfo_bukhariBook20" xml:space="preserve">
+    <value>Đức cầu nguyện tại Masjid Makkah và Madinah</value>
+  </data>
+  <data name="IslamInfo_bukhariBook21" xml:space="preserve">
+    <value>Hành động trong khi cầu nguyện</value>
+  </data>
+  <data name="IslamInfo_bukhariBook22" xml:space="preserve">
+    <value>Quên cầu nguyện</value>
+  </data>
+  <data name="IslamInfo_bukhariBook23" xml:space="preserve">
+    <value>Đám tang (Al-Janaa'iz)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook24" xml:space="preserve">
+    <value>Thuế từ thiện bắt buộc (Zakat)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook25" xml:space="preserve">
+    <value>Hành hương (Hajj)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook26" xml:space="preserve">
+    <value>Nhỏ Pilgrammage (Umra)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook27" xml:space="preserve">
+    <value>Ngăn chặn hành hương từ Hoàn thiện hành hương</value>
+  </data>
+  <data name="IslamInfo_bukhariBook28" xml:space="preserve">
+    <value>Phạt Săn bắn trong khi hành hương</value>
+  </data>
+  <data name="IslamInfo_bukhariBook29" xml:space="preserve">
+    <value>Ưu điểm của Madinah</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter1" xml:space="preserve">
+    <value>Những tuyên bố của các tiên tri (cưa): "Hồi giáo là dựa trên năm nguyên tắc."</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter10" xml:space="preserve">
+    <value>Để yêu Ansar là một dấu hiệu của đức tin.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter12" xml:space="preserve">
+    <value>Bỏ chạy (chạy) từ Al-Fitan (thử nghiệm và afflications vv) là một phần của tôn giáo.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter13" xml:space="preserve">
+    <value>Những tuyên bố của các tiên tri (cưa): "Tôi biết Allah (Azza wa jal) tốt hơn so với tất cả các bạn làm.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter14" xml:space="preserve">
+    <value>Ai ghét để trở lại Kufr.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter15" xml:space="preserve">
+    <value>Các lớp trong tính ưu việt của các tín hữu sẽ được theo những việc làm tốt của họ.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter16" xml:space="preserve">
+    <value>Al-Haya là một phần của đức tin.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter17" xml:space="preserve">
+    <value>Báo cáo kết quả Allah (Azza wa jal):</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter18" xml:space="preserve">
+    <value>Bất cứ ai nói rằng đức tin là hành động (việc tốt).</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter19" xml:space="preserve">
+    <value>Nếu không theo Hồi giáo thực sự, nhưng như vậy bằng cách ép buộc hoặc vì sợ bị giết, vv</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter2" xml:space="preserve">
+    <value>Gọi của bạn có nghĩa là đức tin của bạn.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter20" xml:space="preserve">
+    <value>Để chào đón là một phần của Hồi giáo.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter21" xml:space="preserve">
+    <value>Là vô ơn với chồng của một người.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter22" xml:space="preserve">
+    <value>Tội lỗi là từ sự thiếu hiểu biết và một tội nhân không phải là một người không tin trừ khi anh ta tôn thờ những người khác cùng với Allah (Azza wa jal).</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter23" xml:space="preserve">
+    <value>Báo cáo kết quả Allah (Azza wa jal): {</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter24" xml:space="preserve">
+    <value>Zulm (sai) của một loại có thể lớn hơn hoặc ít hơn so với của người khác.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter25" xml:space="preserve">
+    <value>Các dấu hiệu của một kẻ đạo đức giả.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter26" xml:space="preserve">
+    <value>Thiết lập những lời cầu nguyện vào đêm Qadr là một phần của đức tin.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter27" xml:space="preserve">
+    <value>Al-Jihad (thánh chiến tranh - chiến đấu trong nguyên nhân của Allah) là một phần của đức tin.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter28" xml:space="preserve">
+    <value>Nó là một phần của đức tin thành lập (Nawafil - tự nguyện) lời cầu nguyện trong đêm Ramadan.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter29" xml:space="preserve">
+    <value>Để quan sát Saum [ăn chay (theo giáo lý Hồi giáo)] trong tháng Ramadan (chân thành và trung thực) với hy vọng cho phần thưởng của Allah duy nhất, là một phần của đức tin.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter3" xml:space="preserve">
+    <value>(Những gì được nói) về những hành động của đức tin.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter30" xml:space="preserve">
+    <value>Tôn giáo là rất dễ dàng.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter31" xml:space="preserve">
+    <value>Các (chào bán) Salat (cầu nguyện) là một phần của đức tin.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter32" xml:space="preserve">
+    <value>(Những gì được nói về tính ưu việt của) một người bao trùm Hồi giáo chân thành.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter33" xml:space="preserve">
+    <value>Ad-Din (hành chính tốt - hành động thờ phượng) người thân yêu nhất của Allah (Azza wa jal) là được thực hiện thường xuyên.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter34" xml:space="preserve">
+    <value>Đức tin tăng giảm.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter35" xml:space="preserve">
+    <value>Trả Zakat là một phần của Hồi giáo.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter36" xml:space="preserve">
+    <value>Để đi cùng với lễ tang (lên đến nơi chôn cất) là một phần của đức tin.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter37" xml:space="preserve">
+    <value>Nỗi sợ hãi của một người tin tưởng rằng những việc làm tốt của ông có thể được bãi bỏ (bị mất) mà không cần kiến ​​thức của mình.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter38" xml:space="preserve">
+    <value>Giá chào của (thiên thần) Jibrael (Gabriel) từ Tiên Tri (cưa) về tín ngưỡng, Hồi giáo, Ihsan (sự hoàn hảo).</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter4" xml:space="preserve">
+    <value>Một người Hồi giáo là một trong những người Hồi giáo tránh gây hại với lưỡi và tay.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter40" xml:space="preserve">
+    <value>Tính ưu việt của người đó đã để lại tất cả (không rõ ràng) điều nghi ngờ vì lợi ích của tôn giáo của mình.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter41" xml:space="preserve">
+    <value>Trả Al-Khumus (một phần năm các chiến lợi phẩm được đưa ra trong nguyên nhân của Allah) là một phần của đức tin.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter42" xml:space="preserve">
+    <value>Những gì được cho là liên quan đến tuyên bố: "Phần thưởng của việc phụ thuộc vào ý định."</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter43" xml:space="preserve">
+    <value>Những tuyên bố của các tiên tri (cưa): "Tôn giáo là An-Nasiha [(là chân thành và đúng) Allah, để Messenger của ông, để các nhà lãnh đạo Hồi giáo, và cho tất cả những người Hồi giáo.]</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter5" xml:space="preserve">
+    <value>Hồi giáo mà là tốt nhất (Ai là người Hồi giáo tốt nhất)?</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter6" xml:space="preserve">
+    <value>Để nuôi (những người khác) là một phần của Hồi giáo.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter7" xml:space="preserve">
+    <value>Thích cho anh em (Hồi giáo) của một người những gì người ta thích cho mình là một phần của đức tin.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter8" xml:space="preserve">
+    <value>Yêu Messenger (Muhammad) (cưa) là một phần của đức tin.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter9" xml:space="preserve">
+    <value>Ngọt ngào (niềm vui) của đức tin.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3" xml:space="preserve">
+    <value>Kiến thức</value>
+  </data>
+  <data name="IslamInfo_bukhariBook30" xml:space="preserve">
+    <value>Ăn chay</value>
+  </data>
+  <data name="IslamInfo_bukhariBook31" xml:space="preserve">
+    <value>Cầu nguyện tại Night trong Ramadaan (Taraweeh)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook32" xml:space="preserve">
+    <value>Ưu điểm của đêm của Qadr</value>
+  </data>
+  <data name="IslamInfo_bukhariBook33" xml:space="preserve">
+    <value>Nghỉ hưu vào một nhà thờ Hồi giáo cho Remembrance của Allah (I'tikaf)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook34" xml:space="preserve">
+    <value>Bán hàng và Thương mại</value>
+  </data>
+  <data name="IslamInfo_bukhariBook35" xml:space="preserve">
+    <value>Doanh số bán hàng trong đó một giá được trả cho hàng hóa được Delivered Sau đó (As-Salam)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook36" xml:space="preserve">
+    <value>Shuf'a</value>
+  </data>
+  <data name="IslamInfo_bukhariBook37" xml:space="preserve">
+    <value>Thuê</value>
+  </data>
+  <data name="IslamInfo_bukhariBook38" xml:space="preserve">
+    <value>Transferance của nợ từ người này sang người khác (Al-Hawaala)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook39" xml:space="preserve">
+    <value>Kafalah</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter1" xml:space="preserve">
+    <value>Tính ưu việt của kiến ​​thức.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter11" xml:space="preserve">
+    <value>Tiên Tri (cưa) được sử dụng để chăm sóc của người dân trong việc rao giảng bằng cách chọn một thời điểm thích hợp để họ có thể không chạy trốn (hoặc cảm thấy buồn chán).</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter12" xml:space="preserve">
+    <value>Bất cứ ai cố định một ngày đặc biệt cho cho (một cuộc nói chuyện tôn giáo) cho học sinh.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter13" xml:space="preserve">
+    <value>Nếu Allah (Azza wa jal) muốn làm điều tốt cho một người, Ngài làm cho anh ta hiểu các tôn giáo.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter14" xml:space="preserve">
+    <value>(Sự vượt trội của) Thấu hiểu kiến ​​thức.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter15" xml:space="preserve">
+    <value>Muốn được như một trong những người có kiến ​​thức và Al-Hikmah (trí tuệ) [tức là</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter16" xml:space="preserve">
+    <value>Những gì đã được nói về cuộc hành trình của Tiên Tri Musa (alaihi như-salam) (khi ông) trên biển để đáp ứng Al-Khidr.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter17" xml:space="preserve">
+    <value>Những tuyên bố của các tiên tri (cưa): "O Allah!</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter18" xml:space="preserve">
+    <value>Ở tuổi thanh thiếu niên có thể được lắng nghe (tức là báo giá của các Hadith từ một cậu bé được chấp nhận).</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter19" xml:space="preserve">
+    <value>Đi ra ngoài để tìm kiếm kiến ​​thức.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter2" xml:space="preserve">
+    <value>Bất cứ ai hỏi về kiến ​​thức trong khi ông đang bận rộn trong một số cuộc trò chuyện, vì vậy ông nói xong và sau đó trả lời người hỏi.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter20" xml:space="preserve">
+    <value>Tính ưu việt của một người học (Hồi giáo, trở thành một tôn giáo học giả) và sau đó dạy cho người khác.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter21" xml:space="preserve">
+    <value>(Những gì được nói về) sự biến mất của (tôn giáo) kiến ​​thức và sự xuất hiện của (tôn giáo) sự thiếu hiểu biết.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter22" xml:space="preserve">
+    <value>Tính ưu việt của (tôn giáo) kiến ​​thức.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter23" xml:space="preserve">
+    <value>Để cung cấp cho một bản án tôn giáo trong khi cưỡi một con vật hay đứng trên bất cứ điều gì khác.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter24" xml:space="preserve">
+    <value>Bất cứ ai đã đưa ra một phán quyết tôn giáo bằng cách vẫy tay gọi hoặc bằng cách gật đầu.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter25" xml:space="preserve">
+    <value>Tiên Tri (cưa) kêu gọi người dân (nhiệm vụ) của 'Abdul Qais để ghi nhớ đức tin và (tôn giáo) kiến ​​thức (như ông giải thích cho họ) và thông báo (truyền tải) để người dân của họ mà họ bỏ lại phía sau (ở nhà).</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter26" xml:space="preserve">
+    <value>Đi du lịch tìm kiếm một câu trả lời cho một vấn đề có vấn đề, và để dạy cho gia đình của một người.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter27" xml:space="preserve">
+    <value>Fi? X nhiệm vụ luân phiên cho việc học (tôn giáo) kiến ​​thức.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter28" xml:space="preserve">
+    <value>Là tức giận trong khi giảng dạy hoặc nếu người ta thấy những gì người ta ghét.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter29" xml:space="preserve">
+    <value>Bất cứ ai quỳ xuống trước khi Imam hoặc một (tôn giáo) thuyết giáo.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter3" xml:space="preserve">
+    <value>Bất cứ ai đặt ra tiếng nói của mình trong (vận chuyển) kiến ​​thức.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter30" xml:space="preserve">
+    <value>Lặp đi lặp lại của một người nói chuyện ba lần để làm cho người khác hiểu.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter31" xml:space="preserve">
+    <value>Một người đàn ông giảng dạy (tôn giáo) của người phụ nữ nô lệ và gia đình.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter32" xml:space="preserve">
+    <value>Việc rao giảng (và giảng dạy) của (tôn giáo) kiến ​​thức cho phụ nữ của Imam (trưởng):</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter33" xml:space="preserve">
+    <value>Háo hức (học) Hadith.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter34" xml:space="preserve">
+    <value>Như thế nào (tôn giáo) kiến ​​thức ông sẽ lấy đi?</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter35" xml:space="preserve">
+    <value>Một ngày cần được cố định cho phụ nữ để dạy họ tôn giáo (ngoài những người đàn ông)?</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter36" xml:space="preserve">
+    <value>Bất cứ ai nghe nói một cái gì đó (nhưng không hiểu nó) và sau đó hỏi một lần nữa cho đến khi hiểu nó hoàn toàn.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter37" xml:space="preserve">
+    <value>Bổn phận của những người có mặt [trong một cuộc họp tôn giáo (hoặc hội nghị)] để truyền đạt kiến ​​thức cho những người vắng mặt.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter38" xml:space="preserve">
+    <value>Tội lỗi của một người nói dối chống lại các tiên tri (cưa).</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter39" xml:space="preserve">
+    <value>Các văn bản của kiến ​​thức.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter4" xml:space="preserve">
+    <value>Liên quan đến sự đa dạng của từ được sử dụng bởi người kể chuyện truyền đạt significations khác nhau về khái niệm về thuật lại và có tầm quan trọng cho chỉ các học giả Hadith.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter40" xml:space="preserve">
+    <value>Kiến thức và giảng dạy và giảng dạy vào ban đêm.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter41" xml:space="preserve">
+    <value>Để nói về (tôn giáo) kiến ​​thức vào ban đêm.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter42" xml:space="preserve">
+    <value>(Những gì được nói về) các ghi nhớ của (tôn giáo) kiến ​​thức.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter43" xml:space="preserve">
+    <value>Để được yên tĩnh (và nghe) để người học tôn giáo.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter44" xml:space="preserve">
+    <value>Khi một người đàn ông học tôn giáo được yêu cầu.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter45" xml:space="preserve">
+    <value>Bất cứ ai, trong khi đứng, hỏi một người đàn ông học tôn giáo đang ngồi (trên bục giảng hay một điều tương tự, về một cái gì đó).</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter46" xml:space="preserve">
+    <value>Để hỏi về một vấn đề tôn giáo và để cung cấp cho một bản án tôn giáo (tại Mina trong Hajj) trong khi làm việc Rami của Jimar (ném sỏi vào Jimar trong Mina trong Hajj).</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter47" xml:space="preserve">
+    <value>Tuyên bố của Allah (Azza wa jal):</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter48" xml:space="preserve">
+    <value>Nếu ai để lại một số tùy chọn thứ chỉ đơn giản là vì sợ rằng một số người có thể không có khả năng hiểu và họ có thể rơi vào một cái gì đó khó khăn hơn.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter49" xml:space="preserve">
+    <value>Bất cứ ai lựa chọn một số người để dạy cho họ (tôn giáo) kiến ​​thức thích họ hơn những người khác vì sợ rằng những người khác có thể không hiểu được nó.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter5" xml:space="preserve">
+    <value>Imam vấn đồng hành của mình để kiểm tra kiến ​​thức của họ.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter50" xml:space="preserve">
+    <value>(Những gì được nói liên quan đến :-) Để có nhút nhát (Al-Haya ') trong khi học tập (kiến thức tôn giáo).</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter51" xml:space="preserve">
+    <value>Bất cứ ai cảm thấy xấu hổ (yêu cầu một cái gì đó) và sau đó yêu cầu người khác để yêu cầu thay mặt cho mình.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter52" xml:space="preserve">
+    <value>Giảng dạy kiến ​​thức tôn giáo và đưa ra phán quyết tôn giáo trong một nhà thờ Hồi giáo.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter53" xml:space="preserve">
+    <value>Hễ ai trả lời cho người hỏi nhiều hơn những gì ông yêu cầu.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter6" xml:space="preserve">
+    <value>Những gì được nói về kiến ​​thức.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter7" xml:space="preserve">
+    <value>Những gì được cho là liên quan đến việc tay để trao đổi tay (sách kiến ​​thức), và các văn bản của kiến ​​thức của các học giả tôn giáo các nước khác nhau.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter8" xml:space="preserve">
+    <value>Bất cứ ai ngồi ở cuối xa hơn của một tập hợp.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter9" xml:space="preserve">
+    <value>Những tuyên bố của các tiên tri (cưa): "Có thể là một người nhận được một mẩu thông tin gián tiếp có thể hiểu nó tốt hơn so với ông đã nghe trực tiếp từ nguồn của nó."</value>
+  </data>
+  <data name="IslamInfo_bukhariBook4" xml:space="preserve">
+    <value>Tẩy rửa (Wudu ')</value>
+  </data>
+  <data name="IslamInfo_bukhariBook40" xml:space="preserve">
+    <value>Đại diện, ủy quyền, kinh doanh của Proxy</value>
+  </data>
+  <data name="IslamInfo_bukhariBook41" xml:space="preserve">
+    <value>Nông nghiệp</value>
+  </data>
+  <data name="IslamInfo_bukhariBook42" xml:space="preserve">
+    <value>Phân phối nước</value>
+  </data>
+  <data name="IslamInfo_bukhariBook43" xml:space="preserve">
+    <value>Cho vay, thanh toán các khoản cho vay, đóng băng của bất động sản, phá sản</value>
+  </data>
+  <data name="IslamInfo_bukhariBook44" xml:space="preserve">
+    <value>Khusoomaat</value>
+  </data>
+  <data name="IslamInfo_bukhariBook45" xml:space="preserve">
+    <value>Những điều mất Đón bởi người (Luqaata)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook46" xml:space="preserve">
+    <value>Áp bức</value>
+  </data>
+  <data name="IslamInfo_bukhariBook47" xml:space="preserve">
+    <value>Công ty</value>
+  </data>
+  <data name="IslamInfo_bukhariBook48" xml:space="preserve">
+    <value>Thế chấp</value>
+  </data>
+  <data name="IslamInfo_bukhariBook49" xml:space="preserve">
+    <value>Sự giải phóng nô lệ</value>
+  </data>
+  <data name="IslamInfo_bukhariBook5" xml:space="preserve">
+    <value>Tắm (Ghusl)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook50" xml:space="preserve">
+    <value>Makaatib</value>
+  </data>
+  <data name="IslamInfo_bukhariBook51" xml:space="preserve">
+    <value>Quà tặng</value>
+  </data>
+  <data name="IslamInfo_bukhariBook52" xml:space="preserve">
+    <value>Nhân chứng</value>
+  </data>
+  <data name="IslamInfo_bukhariBook53" xml:space="preserve">
+    <value>Kiến tạo hòa bình</value>
+  </data>
+  <data name="IslamInfo_bukhariBook54" xml:space="preserve">
+    <value>Điều kiện</value>
+  </data>
+  <data name="IslamInfo_bukhariBook55" xml:space="preserve">
+    <value>Di chúc và Ước (Wasaayaa)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook56" xml:space="preserve">
+    <value>Chiến đấu cho Nguyên nhân của Allah (Jihaad)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook57" xml:space="preserve">
+    <value>Một phần năm số chiến lợi phẩm Nguyên nhân của Allah (Khumus)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook58" xml:space="preserve">
+    <value>Jizyah và Mawaada'ah</value>
+  </data>
+  <data name="IslamInfo_bukhariBook59" xml:space="preserve">
+    <value>Bắt đầu từ sáng tạo</value>
+  </data>
+  <data name="IslamInfo_bukhariBook6" xml:space="preserve">
+    <value>Thời kỳ kinh nguyệt</value>
+  </data>
+  <data name="IslamInfo_bukhariBook60" xml:space="preserve">
+    <value>Tiên tri</value>
+  </data>
+  <data name="IslamInfo_bukhariBook61" xml:space="preserve">
+    <value>Đức tính và Giá trị của Tiên Tri (PBUH) và đồng hành của mình</value>
+  </data>
+  <data name="IslamInfo_bukhariBook62" xml:space="preserve">
+    <value>Đồng của nhà tiên tri</value>
+  </data>
+  <data name="IslamInfo_bukhariBook63" xml:space="preserve">
+    <value>Giá trị của người trợ giúp trong Madinah (Ansaar)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook64" xml:space="preserve">
+    <value>Thám hiểm quân sự do các tiên tri (PBUH) (Al-Maghaazi)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook65" xml:space="preserve">
+    <value>Bình luận tiên tri về Kinh Koran (Tafseer của Tiên Tri (PBUH))</value>
+  </data>
+  <data name="IslamInfo_bukhariBook66" xml:space="preserve">
+    <value>Đức của Qur'an</value>
+  </data>
+  <data name="IslamInfo_bukhariBook67" xml:space="preserve">
+    <value>Con ngoài giá thú, kết hôn (Nikaah)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook68" xml:space="preserve">
+    <value>Ly hôn</value>
+  </data>
+  <data name="IslamInfo_bukhariBook69" xml:space="preserve">
+    <value>Hỗ trợ các gia đình</value>
+  </data>
+  <data name="IslamInfo_bukhariBook7" xml:space="preserve">
+    <value>Cọ xát tay và chân với bụi (Tayammum)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook70" xml:space="preserve">
+    <value>Thực phẩm, bữa ăn</value>
+  </data>
+  <data name="IslamInfo_bukhariBook71" xml:space="preserve">
+    <value>Hy sinh trên Dịp lễ sinh (`Aqiqa)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook72" xml:space="preserve">
+    <value>Săn bắn, giết mổ</value>
+  </data>
+  <data name="IslamInfo_bukhariBook73" xml:space="preserve">
+    <value>Al-Adha Liên hoan Sacrifice (Adaahi)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook74" xml:space="preserve">
+    <value>Đồ uống</value>
+  </data>
+  <data name="IslamInfo_bukhariBook75" xml:space="preserve">
+    <value>Bệnh nhân</value>
+  </data>
+  <data name="IslamInfo_bukhariBook76" xml:space="preserve">
+    <value>Y học</value>
+  </data>
+  <data name="IslamInfo_bukhariBook77" xml:space="preserve">
+    <value>Váy</value>
+  </data>
+  <data name="IslamInfo_bukhariBook78" xml:space="preserve">
+    <value>Cách cư xử tốt và Mẫu (Al-Adab)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook79" xml:space="preserve">
+    <value>Giấy phép hỏi</value>
+  </data>
+  <data name="IslamInfo_bukhariBook8" xml:space="preserve">
+    <value>Lời cầu nguyện (Salat)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook80" xml:space="preserve">
+    <value>Viện dẫn</value>
+  </data>
+  <data name="IslamInfo_bukhariBook81" xml:space="preserve">
+    <value>Để thực hiện đấu thầu Heart (Ar-Riqaq)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook82" xml:space="preserve">
+    <value>Thiên Chúa Will (Al-Qadar)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook83" xml:space="preserve">
+    <value>Tuyên thệ và nguyện</value>
+  </data>
+  <data name="IslamInfo_bukhariBook84" xml:space="preserve">
+    <value>Đền tội cho lời thề chưa được hoàn thành</value>
+  </data>
+  <data name="IslamInfo_bukhariBook85" xml:space="preserve">
+    <value>Pháp luật của thừa kế (Al-Faraa'id)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook86" xml:space="preserve">
+    <value>Giới hạn và trừng phạt do Allah (Hudood)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook87" xml:space="preserve">
+    <value>Trừng phạt không tin tưởng vào chiến tranh với Allah và Tông Đồ của ông</value>
+  </data>
+  <data name="IslamInfo_bukhariBook88" xml:space="preserve">
+    <value>Blood Money (Ad-Diyat)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook89" xml:space="preserve">
+    <value>Đối phó với người bỏ đạo</value>
+  </data>
+  <data name="IslamInfo_bukhariBook9" xml:space="preserve">
+    <value>Thời gian của lời cầu nguyện</value>
+  </data>
+  <data name="IslamInfo_bukhariBook90" xml:space="preserve">
+    <value>Nói cái gì đó dưới sức ép (Ikraah)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook91" xml:space="preserve">
+    <value>Thủ thuật</value>
+  </data>
+  <data name="IslamInfo_bukhariBook92" xml:space="preserve">
+    <value>Giải thích của những giấc mơ</value>
+  </data>
+  <data name="IslamInfo_bukhariBook93" xml:space="preserve">
+    <value>Phiền não và sự kết thúc của thế giới</value>
+  </data>
+  <data name="IslamInfo_bukhariBook94" xml:space="preserve">
+    <value>Án (Ahkaam)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook95" xml:space="preserve">
+    <value>Mong muốn</value>
+  </data>
+  <data name="IslamInfo_bukhariBook96" xml:space="preserve">
+    <value>Chấp nhận thông tin đưa ra bởi một người trung thực</value>
+  </data>
+  <data name="IslamInfo_bukhariBook97" xml:space="preserve">
+    <value>Giữ nhanh đến Qur'an và Sunnah</value>
+  </data>
+  <data name="IslamInfo_bukhariBook98" xml:space="preserve">
+    <value>Đồng nhất, độc đáo của Allah (Tawheed)</value>
+  </data>
+  <data name="IslamInfo_Classification" xml:space="preserve">
+    <value>Phân loại</value>
+  </data>
+  <data name="IslamInfo_Connecting" xml:space="preserve">
+    <value>Kết nối</value>
+  </data>
+  <data name="IslamInfo_LetterName" xml:space="preserve">
+    <value>Tên thư</value>
+  </data>
+  <data name="IslamInfo_muslimBook1" xml:space="preserve">
+    <value>Giới thiệu</value>
+  </data>
+  <data name="IslamInfo_muslimBook10" xml:space="preserve">
+    <value>Sách Cầu Nguyện (Rain)</value>
+  </data>
+  <data name="IslamInfo_muslimBook11" xml:space="preserve">
+    <value>Sách Cầu Nguyện (Eclipse)</value>
+  </data>
+  <data name="IslamInfo_muslimBook12" xml:space="preserve">
+    <value>Sách Cầu Nguyện (Ma chay)</value>
+  </data>
+  <data name="IslamInfo_muslimBook13" xml:space="preserve">
+    <value>Sách Zakat</value>
+  </data>
+  <data name="IslamInfo_muslimBook14" xml:space="preserve">
+    <value>Sách Ăn chay</value>
+  </data>
+  <data name="IslamInfo_muslimBook15" xml:space="preserve">
+    <value>Sách I'tikaf</value>
+  </data>
+  <data name="IslamInfo_muslimBook16" xml:space="preserve">
+    <value>Sách Hành hương</value>
+  </data>
+  <data name="IslamInfo_muslimBook17" xml:space="preserve">
+    <value>Sách Hôn nhân</value>
+  </data>
+  <data name="IslamInfo_muslimBook18" xml:space="preserve">
+    <value>Sách bú</value>
+  </data>
+  <data name="IslamInfo_muslimBook19" xml:space="preserve">
+    <value>Sách ly hôn</value>
+  </data>
+  <data name="IslamInfo_muslimBook2" xml:space="preserve">
+    <value>Sách Đức Tin</value>
+  </data>
+  <data name="IslamInfo_muslimBook20" xml:space="preserve">
+    <value>Sách Gọi lời nguyền</value>
+  </data>
+  <data name="IslamInfo_muslimBook21" xml:space="preserve">
+    <value>Sách của emancipating nô lệ</value>
+  </data>
+  <data name="IslamInfo_muslimBook22" xml:space="preserve">
+    <value>Sách Giao dịch</value>
+  </data>
+  <data name="IslamInfo_muslimBook23" xml:space="preserve">
+    <value>Sách Masaaqah</value>
+  </data>
+  <data name="IslamInfo_muslimBook24" xml:space="preserve">
+    <value>Sách Liên quan đến các quy tắc của thừa kế</value>
+  </data>
+  <data name="IslamInfo_muslimBook25" xml:space="preserve">
+    <value>Sách Quà tặng</value>
+  </data>
+  <data name="IslamInfo_muslimBook26" xml:space="preserve">
+    <value>Sách thừa kế</value>
+  </data>
+  <data name="IslamInfo_muslimBook27" xml:space="preserve">
+    <value>Sách nguyện</value>
+  </data>
+  <data name="IslamInfo_muslimBook28" xml:space="preserve">
+    <value>Sách lời thề</value>
+  </data>
+  <data name="IslamInfo_muslimBook29" xml:space="preserve">
+    <value>Sách Liên quan đến lời thề, cho Thành lập Trách nhiệm của Murders, Fighting, sự tưởng thưởng</value>
+  </data>
+  <data name="IslamInfo_muslimBook3" xml:space="preserve">
+    <value>Sách lọc</value>
+  </data>
+  <data name="IslamInfo_muslimBook30" xml:space="preserve">
+    <value>Sách Liên quan đến sự trừng phạt theo quy định của Hồi giáo</value>
+  </data>
+  <data name="IslamInfo_muslimBook31" xml:space="preserve">
+    <value>Sách Liên quan đến quyết định tư pháp</value>
+  </data>
+  <data name="IslamInfo_muslimBook32" xml:space="preserve">
+    <value>Sách Luqatah</value>
+  </data>
+  <data name="IslamInfo_muslimBook33" xml:space="preserve">
+    <value>Sách Jihad và thám hiểm</value>
+  </data>
+  <data name="IslamInfo_muslimBook34" xml:space="preserve">
+    <value>Sách về Chính phủ</value>
+  </data>
+  <data name="IslamInfo_muslimBook35" xml:space="preserve">
+    <value>Sách Trò chơi và các vật mà có thể được Bị giết và Aninals mà là để được ăn</value>
+  </data>
+  <data name="IslamInfo_muslimBook36" xml:space="preserve">
+    <value>Sách hy sinh</value>
+  </data>
+  <data name="IslamInfo_muslimBook37" xml:space="preserve">
+    <value>Sách Đồ uống</value>
+  </data>
+  <data name="IslamInfo_muslimBook38" xml:space="preserve">
+    <value>Sách Liên quan đến quần áo và trang trí</value>
+  </data>
+  <data name="IslamInfo_muslimBook39" xml:space="preserve">
+    <value>Sách về hành vi chung</value>
+  </data>
+  <data name="IslamInfo_muslimBook4" xml:space="preserve">
+    <value>Sách Kinh nguyệt</value>
+  </data>
+  <data name="IslamInfo_muslimBook40" xml:space="preserve">
+    <value>Sách về lời chào và Chúc mừng</value>
+  </data>
+  <data name="IslamInfo_muslimBook41" xml:space="preserve">
+    <value>Sách Liên quan đến việc sử dụng từ đúng</value>
+  </data>
+  <data name="IslamInfo_muslimBook42" xml:space="preserve">
+    <value>Sách Thơ</value>
+  </data>
+  <data name="IslamInfo_muslimBook43" xml:space="preserve">
+    <value>Sách Tầm nhìn</value>
+  </data>
+  <data name="IslamInfo_muslimBook44" xml:space="preserve">
+    <value>Sách Liên quan đến những phẩm chất xuất sắc của các tiên tri Thánh (có Hòa bình được khi chúng) và đồng hành của ông</value>
+  </data>
+  <data name="IslamInfo_muslimBook45" xml:space="preserve">
+    <value>Sách Liên quan đến các Giá trị của các đồng hành (Allah hài lòng với Them) của nhà tiên tri Thánh</value>
+  </data>
+  <data name="IslamInfo_muslimBook46" xml:space="preserve">
+    <value>Sách đức, ứng xử tốt và Tham gia của Mối quan hệ của mối quan hệ</value>
+  </data>
+  <data name="IslamInfo_muslimBook47" xml:space="preserve">
+    <value>Sách of Destiny</value>
+  </data>
+  <data name="IslamInfo_muslimBook48" xml:space="preserve">
+    <value>Sách kiến ​​thức</value>
+  </data>
+  <data name="IslamInfo_muslimBook49" xml:space="preserve">
+    <value>Sách Liên quan tới việc niệm của Allah, khẩn, ăn năn và Tìm kiếm sự tha thứ</value>
+  </data>
+  <data name="IslamInfo_muslimBook5" xml:space="preserve">
+    <value>Sách Cầu Nguyện</value>
+  </data>
+  <data name="IslamInfo_muslimBook50" xml:space="preserve">
+    <value>Sách truyền thống trái tim nóng chảy</value>
+  </data>
+  <data name="IslamInfo_muslimBook51" xml:space="preserve">
+    <value>Sách Liên quan đến ăn năn và huấn để ăn năn</value>
+  </data>
+  <data name="IslamInfo_muslimBook52" xml:space="preserve">
+    <value>Liên quan Để Đặc điểm Of The đạo đức giả và chỉ huy Liên quan đến Them</value>
+  </data>
+  <data name="IslamInfo_muslimBook53" xml:space="preserve">
+    <value>Mô tả Sách Cho của Ngày Phán Xét, Thiên đường và Địa ngục</value>
+  </data>
+  <data name="IslamInfo_muslimBook54" xml:space="preserve">
+    <value>Sách Liên quan đến thiên đường, mô tả của nó, Bounties của nó và Intimates của nó</value>
+  </data>
+  <data name="IslamInfo_muslimBook55" xml:space="preserve">
+    <value>Sách Liên quan đến khủng hoảng và điềm báo của Giờ cuối</value>
+  </data>
+  <data name="IslamInfo_muslimBook56" xml:space="preserve">
+    <value>Sách Liên quan đến lòng mộ đạo và làm mềm của Hearts</value>
+  </data>
+  <data name="IslamInfo_muslimBook57" xml:space="preserve">
+    <value>Sách Bình luận</value>
+  </data>
+  <data name="IslamInfo_muslimBook6" xml:space="preserve">
+    <value>Sách Nhà thờ Hồi giáo và các điểm cầu nguyện</value>
+  </data>
+  <data name="IslamInfo_muslimBook7" xml:space="preserve">
+    <value>Sách Cầu Nguyện (Du khách)</value>
+  </data>
+  <data name="IslamInfo_muslimBook8" xml:space="preserve">
+    <value>Sách Cầu Nguyện (thứ sáu)</value>
+  </data>
+  <data name="IslamInfo_muslimBook9" xml:space="preserve">
+    <value>Sách Cầu Nguyện (Hai Eids)</value>
+  </data>
+  <data name="IslamInfo_PrayerUnits" xml:space="preserve">
+    <value>Các đơn vị cầu nguyện</value>
+  </data>
+  <data name="IslamInfo_QuranChapter1" xml:space="preserve">
+    <value>Khai mạc</value>
+  </data>
+  <data name="IslamInfo_QuranChapter10" xml:space="preserve">
+    <value>Jonas</value>
+  </data>
+  <data name="IslamInfo_QuranChapter100" xml:space="preserve">
+    <value>Chargers</value>
+  </data>
+  <data name="IslamInfo_QuranChapter101" xml:space="preserve">
+    <value>Các Calamity</value>
+  </data>
+  <data name="IslamInfo_QuranChapter102" xml:space="preserve">
+    <value>Cạnh tranh</value>
+  </data>
+  <data name="IslamInfo_QuranChapter103" xml:space="preserve">
+    <value>Ngày Từ chối, báo Đại Kỷ Nguyên</value>
+  </data>
+  <data name="IslamInfo_QuranChapter104" xml:space="preserve">
+    <value>Các Traducer</value>
+  </data>
+  <data name="IslamInfo_QuranChapter105" xml:space="preserve">
+    <value>Voi</value>
+  </data>
+  <data name="IslamInfo_QuranChapter106" xml:space="preserve">
+    <value>Quraysh</value>
+  </data>
+  <data name="IslamInfo_QuranChapter107" xml:space="preserve">
+    <value>Bố thí</value>
+  </data>
+  <data name="IslamInfo_QuranChapter108" xml:space="preserve">
+    <value>Sự phong phú</value>
+  </data>
+  <data name="IslamInfo_QuranChapter109" xml:space="preserve">
+    <value>Các người không tin</value>
+  </data>
+  <data name="IslamInfo_QuranChapter11" xml:space="preserve">
+    <value>HUD</value>
+  </data>
+  <data name="IslamInfo_QuranChapter110" xml:space="preserve">
+    <value>Hỗ trợ của Thiên Chúa</value>
+  </data>
+  <data name="IslamInfo_QuranChapter111" xml:space="preserve">
+    <value>Palm Fibre</value>
+  </data>
+  <data name="IslamInfo_QuranChapter112" xml:space="preserve">
+    <value>Chân thành</value>
+  </data>
+  <data name="IslamInfo_QuranChapter113" xml:space="preserve">
+    <value>Dawn</value>
+  </data>
+  <data name="IslamInfo_QuranChapter114" xml:space="preserve">
+    <value>Nhân loại</value>
+  </data>
+  <data name="IslamInfo_QuranChapter12" xml:space="preserve">
+    <value>Người đàn ông chay tịnh</value>
+  </data>
+  <data name="IslamInfo_QuranChapter13" xml:space="preserve">
+    <value>Thunder</value>
+  </data>
+  <data name="IslamInfo_QuranChapter14" xml:space="preserve">
+    <value>Abraham</value>
+  </data>
+  <data name="IslamInfo_QuranChapter15" xml:space="preserve">
+    <value>Rock</value>
+  </data>
+  <data name="IslamInfo_QuranChapter16" xml:space="preserve">
+    <value>Bee</value>
+  </data>
+  <data name="IslamInfo_QuranChapter17" xml:space="preserve">
+    <value>Đêm Hành trình</value>
+  </data>
+  <data name="IslamInfo_QuranChapter18" xml:space="preserve">
+    <value>Cave</value>
+  </data>
+  <data name="IslamInfo_QuranChapter19" xml:space="preserve">
+    <value>Mary</value>
+  </data>
+  <data name="IslamInfo_QuranChapter2" xml:space="preserve">
+    <value>Cow</value>
+  </data>
+  <data name="IslamInfo_QuranChapter20" xml:space="preserve">
+    <value>Taa-Haa</value>
+  </data>
+  <data name="IslamInfo_QuranChapter21" xml:space="preserve">
+    <value>Các tiên tri</value>
+  </data>
+  <data name="IslamInfo_QuranChapter22" xml:space="preserve">
+    <value>Hành hương</value>
+  </data>
+  <data name="IslamInfo_QuranChapter23" xml:space="preserve">
+    <value>Các tín hữu</value>
+  </data>
+  <data name="IslamInfo_QuranChapter24" xml:space="preserve">
+    <value>Ánh Sáng</value>
+  </data>
+  <data name="IslamInfo_QuranChapter25" xml:space="preserve">
+    <value>Các tiêu chí</value>
+  </data>
+  <data name="IslamInfo_QuranChapter26" xml:space="preserve">
+    <value>Các nhà thơ</value>
+  </data>
+  <data name="IslamInfo_QuranChapter27" xml:space="preserve">
+    <value>Ant</value>
+  </data>
+  <data name="IslamInfo_QuranChapter28" xml:space="preserve">
+    <value>Stories</value>
+  </data>
+  <data name="IslamInfo_QuranChapter29" xml:space="preserve">
+    <value>Spider</value>
+  </data>
+  <data name="IslamInfo_QuranChapter3" xml:space="preserve">
+    <value>Gia đình của Imraan</value>
+  </data>
+  <data name="IslamInfo_QuranChapter30" xml:space="preserve">
+    <value>Người La Mã</value>
+  </data>
+  <data name="IslamInfo_QuranChapter31" xml:space="preserve">
+    <value>Luqman</value>
+  </data>
+  <data name="IslamInfo_QuranChapter32" xml:space="preserve">
+    <value>Các Lễ lạy</value>
+  </data>
+  <data name="IslamInfo_QuranChapter33" xml:space="preserve">
+    <value>Clans</value>
+  </data>
+  <data name="IslamInfo_QuranChapter34" xml:space="preserve">
+    <value>Sheba</value>
+  </data>
+  <data name="IslamInfo_QuranChapter35" xml:space="preserve">
+    <value>Khởi sự</value>
+  </data>
+  <data name="IslamInfo_QuranChapter36" xml:space="preserve">
+    <value>Yaseen</value>
+  </data>
+  <data name="IslamInfo_QuranChapter37" xml:space="preserve">
+    <value>Những soạn thảo bằng Hạng</value>
+  </data>
+  <data name="IslamInfo_QuranChapter38" xml:space="preserve">
+    <value>Các thư Saad</value>
+  </data>
+  <data name="IslamInfo_QuranChapter39" xml:space="preserve">
+    <value>Các nhóm</value>
+  </data>
+  <data name="IslamInfo_QuranChapter4" xml:space="preserve">
+    <value>Phụ nữ</value>
+  </data>
+  <data name="IslamInfo_QuranChapter40" xml:space="preserve">
+    <value>Các tha thứ</value>
+  </data>
+  <data name="IslamInfo_QuranChapter41" xml:space="preserve">
+    <value>Giải thích chi tiết</value>
+  </data>
+  <data name="IslamInfo_QuranChapter42" xml:space="preserve">
+    <value>Tư vấn</value>
+  </data>
+  <data name="IslamInfo_QuranChapter43" xml:space="preserve">
+    <value>Đồ trang trí bằng vàng</value>
+  </data>
+  <data name="IslamInfo_QuranChapter44" xml:space="preserve">
+    <value>Các khói</value>
+  </data>
+  <data name="IslamInfo_QuranChapter45" xml:space="preserve">
+    <value>Ngọa</value>
+  </data>
+  <data name="IslamInfo_QuranChapter46" xml:space="preserve">
+    <value>The Dunes</value>
+  </data>
+  <data name="IslamInfo_QuranChapter47" xml:space="preserve">
+    <value>Muhammad</value>
+  </data>
+  <data name="IslamInfo_QuranChapter48" xml:space="preserve">
+    <value>Victory</value>
+  </data>
+  <data name="IslamInfo_QuranChapter49" xml:space="preserve">
+    <value>Nội căn hộ</value>
+  </data>
+  <data name="IslamInfo_QuranChapter5" xml:space="preserve">
+    <value>Bảng</value>
+  </data>
+  <data name="IslamInfo_QuranChapter50" xml:space="preserve">
+    <value>Các thư Qaaf</value>
+  </data>
+  <data name="IslamInfo_QuranChapter51" xml:space="preserve">
+    <value>Gió sàng lọc</value>
+  </data>
+  <data name="IslamInfo_QuranChapter52" xml:space="preserve">
+    <value>Núi</value>
+  </data>
+  <data name="IslamInfo_QuranChapter53" xml:space="preserve">
+    <value>Star</value>
+  </data>
+  <data name="IslamInfo_QuranChapter54" xml:space="preserve">
+    <value>Mặt trăng</value>
+  </data>
+  <data name="IslamInfo_QuranChapter55" xml:space="preserve">
+    <value>Các từ tâm</value>
+  </data>
+  <data name="IslamInfo_QuranChapter56" xml:space="preserve">
+    <value>Các không thể tránh khỏi</value>
+  </data>
+  <data name="IslamInfo_QuranChapter57" xml:space="preserve">
+    <value>The Iron</value>
+  </data>
+  <data name="IslamInfo_QuranChapter58" xml:space="preserve">
+    <value>Các cầu xin phụ nữ</value>
+  </data>
+  <data name="IslamInfo_QuranChapter59" xml:space="preserve">
+    <value>Các Exile</value>
+  </data>
+  <data name="IslamInfo_QuranChapter6" xml:space="preserve">
+    <value>Gia súc</value>
+  </data>
+  <data name="IslamInfo_QuranChapter60" xml:space="preserve">
+    <value>Cô mà là để được kiểm tra</value>
+  </data>
+  <data name="IslamInfo_QuranChapter61" xml:space="preserve">
+    <value>Các Hạng</value>
+  </data>
+  <data name="IslamInfo_QuranChapter62" xml:space="preserve">
+    <value>Thứ sáu</value>
+  </data>
+  <data name="IslamInfo_QuranChapter63" xml:space="preserve">
+    <value>Các đạo đức giả</value>
+  </data>
+  <data name="IslamInfo_QuranChapter64" xml:space="preserve">
+    <value>Vỡ mộng lẫn nhau</value>
+  </data>
+  <data name="IslamInfo_QuranChapter65" xml:space="preserve">
+    <value>Ly hôn</value>
+  </data>
+  <data name="IslamInfo_QuranChapter66" xml:space="preserve">
+    <value>Cấm</value>
+  </data>
+  <data name="IslamInfo_QuranChapter67" xml:space="preserve">
+    <value>Chủ quyền</value>
+  </data>
+  <data name="IslamInfo_QuranChapter68" xml:space="preserve">
+    <value>Bút</value>
+  </data>
+  <data name="IslamInfo_QuranChapter69" xml:space="preserve">
+    <value>Thực tế</value>
+  </data>
+  <data name="IslamInfo_QuranChapter7" xml:space="preserve">
+    <value>The Heights</value>
+  </data>
+  <data name="IslamInfo_QuranChapter70" xml:space="preserve">
+    <value>Các cầu thang tăng dần</value>
+  </data>
+  <data name="IslamInfo_QuranChapter71" xml:space="preserve">
+    <value>Noah</value>
+  </data>
+  <data name="IslamInfo_QuranChapter72" xml:space="preserve">
+    <value>Các Jinn</value>
+  </data>
+  <data name="IslamInfo_QuranChapter73" xml:space="preserve">
+    <value>Các enshrouded Một</value>
+  </data>
+  <data name="IslamInfo_QuranChapter74" xml:space="preserve">
+    <value>Các Cloaked Một</value>
+  </data>
+  <data name="IslamInfo_QuranChapter75" xml:space="preserve">
+    <value>Phục Sinh</value>
+  </data>
+  <data name="IslamInfo_QuranChapter76" xml:space="preserve">
+    <value>Người đàn ông</value>
+  </data>
+  <data name="IslamInfo_QuranChapter77" xml:space="preserve">
+    <value>Các sứ giả</value>
+  </data>
+  <data name="IslamInfo_QuranChapter78" xml:space="preserve">
+    <value>Thông báo</value>
+  </data>
+  <data name="IslamInfo_QuranChapter79" xml:space="preserve">
+    <value>Những người kéo ra</value>
+  </data>
+  <data name="IslamInfo_QuranChapter8" xml:space="preserve">
+    <value>Chiến lợi phẩm</value>
+  </data>
+  <data name="IslamInfo_QuranChapter80" xml:space="preserve">
+    <value>Anh cau mày</value>
+  </data>
+  <data name="IslamInfo_QuranChapter81" xml:space="preserve">
+    <value>Lật đổ</value>
+  </data>
+  <data name="IslamInfo_QuranChapter82" xml:space="preserve">
+    <value>Các chẻ</value>
+  </data>
+  <data name="IslamInfo_QuranChapter83" xml:space="preserve">
+    <value>Gian lận, lừa</value>
+  </data>
+  <data name="IslamInfo_QuranChapter84" xml:space="preserve">
+    <value>Các Tách Mở</value>
+  </data>
+  <data name="IslamInfo_QuranChapter85" xml:space="preserve">
+    <value>Các chòm sao</value>
+  </data>
+  <data name="IslamInfo_QuranChapter86" xml:space="preserve">
+    <value>Các Sao Mai</value>
+  </data>
+  <data name="IslamInfo_QuranChapter87" xml:space="preserve">
+    <value>Tối Cao</value>
+  </data>
+  <data name="IslamInfo_QuranChapter88" xml:space="preserve">
+    <value>Các áp đảo</value>
+  </data>
+  <data name="IslamInfo_QuranChapter89" xml:space="preserve">
+    <value>Dawn</value>
+  </data>
+  <data name="IslamInfo_QuranChapter9" xml:space="preserve">
+    <value>Các ăn năn</value>
+  </data>
+  <data name="IslamInfo_QuranChapter90" xml:space="preserve">
+    <value>Thành phố</value>
+  </data>
+  <data name="IslamInfo_QuranChapter91" xml:space="preserve">
+    <value>Mặt Trời</value>
+  </data>
+  <data name="IslamInfo_QuranChapter92" xml:space="preserve">
+    <value>Đêm</value>
+  </data>
+  <data name="IslamInfo_QuranChapter93" xml:space="preserve">
+    <value>Giờ Sáng</value>
+  </data>
+  <data name="IslamInfo_QuranChapter94" xml:space="preserve">
+    <value>Các khích</value>
+  </data>
+  <data name="IslamInfo_QuranChapter95" xml:space="preserve">
+    <value>The Fig</value>
+  </data>
+  <data name="IslamInfo_QuranChapter96" xml:space="preserve">
+    <value>Cục máu đông</value>
+  </data>
+  <data name="IslamInfo_QuranChapter97" xml:space="preserve">
+    <value>Sức mạnh, Fate</value>
+  </data>
+  <data name="IslamInfo_QuranChapter98" xml:space="preserve">
+    <value>Bằng chứng</value>
+  </data>
+  <data name="IslamInfo_QuranChapter99" xml:space="preserve">
+    <value>Trận động đất</value>
+  </data>
+  <data name="IslamInfo_Terminating" xml:space="preserve">
+    <value>Chấm dứt</value>
+  </data>
+  <data name="IslamInfo_Translation" xml:space="preserve">
+    <value>Dịch</value>
+  </data>
+  <data name="IslamInfo_Transliteration" xml:space="preserve">
+    <value>Sự phiên dịch</value>
+  </data>
+  <data name="IslamInfo_UnicodeName" xml:space="preserve">
+    <value>Tên unicode</value>
+  </data>
+  <data name="IslamInfo_UnicodeValue" xml:space="preserve">
+    <value>Unicode Giá trị</value>
+  </data>
+  <data name="unicode_ArabicComma" xml:space="preserve">
+    <value>Tiếng Ả Rập Comma</value>
+  </data>
+  <data name="unicode_ArabicDamma" xml:space="preserve">
+    <value>Tiếng Ả Rập Damma</value>
+  </data>
+  <data name="unicode_ArabicDammatan" xml:space="preserve">
+    <value>Tiếng Ả Rập Dammatan</value>
+  </data>
+  <data name="unicode_ArabicEmptyCentreHighStop" xml:space="preserve">
+    <value>Tiếng Ả Rập Trung tâm rỗng cao Dừng</value>
+  </data>
+  <data name="unicode_ArabicEmptyCentreLowStop" xml:space="preserve">
+    <value>Tiếng Ả Rập Trung tâm rỗng thấp Dừng</value>
+  </data>
+  <data name="unicode_ArabicEndOfAyah" xml:space="preserve">
+    <value>Tiếng Ả Rập End Of ayah</value>
+  </data>
+  <data name="unicode_ArabicFatha" xml:space="preserve">
+    <value>Tiếng Ả Rập Fatha</value>
+  </data>
+  <data name="unicode_ArabicFathatan" xml:space="preserve">
+    <value>Tiếng Ả Rập Fathatan</value>
+  </data>
+  <data name="unicode_ArabicHamzaAbove" xml:space="preserve">
+    <value>Tiếng Ả Rập Hamza Trên</value>
+  </data>
+  <data name="unicode_ArabicHamzaBelow" xml:space="preserve">
+    <value>Tiếng Ả Rập Hamza Dưới đây</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitEight" xml:space="preserve">
+    <value>Ả Rập-Ấn Độ Digit Tám</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitFive" xml:space="preserve">
+    <value>Chữ số Ả Rập-Ấn Độ Five</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitFour" xml:space="preserve">
+    <value>Chữ số Ả Rập-Ấn Độ Bốn</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitNine" xml:space="preserve">
+    <value>Chữ số Ả Rập-Ấn Độ Nine</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitOne" xml:space="preserve">
+    <value>Ả Rập-Ấn Độ Một chữ số</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitSeven" xml:space="preserve">
+    <value>Chữ số Ả Rập-Ấn Độ Bảy</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitSix" xml:space="preserve">
+    <value>Chữ số Ả Rập-Ấn Độ Sáu</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitThree" xml:space="preserve">
+    <value>Chữ số Ả Rập-Ấn Độ Ba</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitTwo" xml:space="preserve">
+    <value>Chữ số Ả Rập-Ấn Độ Hai</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitZero" xml:space="preserve">
+    <value>Chữ số Ả Rập-Ấn Độ Zero,</value>
+  </data>
+  <data name="unicode_ArabicKasra" xml:space="preserve">
+    <value>Tiếng Ả Rập Kasra</value>
+  </data>
+  <data name="unicode_ArabicKasratan" xml:space="preserve">
+    <value>Tiếng Ả Rập Kasratan</value>
+  </data>
+  <data name="unicode_ArabicLetterAin" xml:space="preserve">
+    <value>Tiếng Ả Rập Thư Ain</value>
+  </data>
+  <data name="unicode_ArabicLetterAlef" xml:space="preserve">
+    <value>Tiếng Ả Rập Thư Alef</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefMaksura" xml:space="preserve">
+    <value>Tiếng Ả Rập Thư Alef Maksura</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefWasla" xml:space="preserve">
+    <value>Tiếng Ả Rập Thư Alef Wasla</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefWithHamzaAbove" xml:space="preserve">
+    <value>Tiếng Ả Rập Thư Alef Với Hamza Trên</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefWithHamzaBelow" xml:space="preserve">
+    <value>Tiếng Ả Rập Thư Alef Với Hamza Dưới đây</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefWithMaddaAbove" xml:space="preserve">
+    <value>Tiếng Ả Rập Thư Alef Với Madda Trên</value>
+  </data>
+  <data name="unicode_ArabicLetterBeh" xml:space="preserve">
+    <value>Tiếng Ả Rập Thư Beh</value>
+  </data>
+  <data name="unicode_ArabicLetterDad" xml:space="preserve">
+    <value>Tiếng Ả Rập Thư cha</value>
+  </data>
+  <data name="unicode_ArabicLetterDal" xml:space="preserve">
+    <value>Tiếng Ả Rập Thư Dal</value>
+  </data>
+  <data name="unicode_ArabicLetterFeh" xml:space="preserve">
+    <value>Tiếng Ả Rập Thư FEH</value>
+  </data>
+  <data name="unicode_ArabicLetterGaf" xml:space="preserve">
+    <value>Tiếng Ả Rập Thư GAF</value>
+  </data>
+  <data name="unicode_ArabicLetterGhain" xml:space="preserve">
+    <value>Tiếng Ả Rập Thư Ghain</value>
+  </data>
+  <data name="unicode_ArabicLetterHah" xml:space="preserve">
+    <value>Tiếng Ả Rập Thư Hah</value>
+  </data>
+  <data name="unicode_ArabicLetterHamza" xml:space="preserve">
+    <value>Tiếng Ả Rập Thư Hamza</value>
+  </data>
+  <data name="unicode_ArabicLetterHeh" xml:space="preserve">
+    <value>Tiếng Ả Rập Thư Heh</value>
+  </data>
+  <data name="unicode_ArabicLetterJeem" xml:space="preserve">
+    <value>Tiếng Ả Rập Thư Jeem</value>
+  </data>
+  <data name="unicode_ArabicLetterKaf" xml:space="preserve">
+    <value>Tiếng Ả Rập Thư Kaf</value>
+  </data>
+  <data name="unicode_ArabicLetterKhah" xml:space="preserve">
+    <value>Tiếng Ả Rập Thư Khah</value>
+  </data>
+  <data name="unicode_ArabicLetterLam" xml:space="preserve">
+    <value>Tiếng Ả Rập Thư Lâm</value>
+  </data>
+  <data name="unicode_ArabicLetterMeem" xml:space="preserve">
+    <value>Tiếng Ả Rập Thư Meem</value>
+  </data>
+  <data name="unicode_ArabicLetterNoon" xml:space="preserve">
+    <value>Tiếng Ả Rập Thư Noon</value>
+  </data>
+  <data name="unicode_ArabicLetterPeh" xml:space="preserve">
+    <value>Tiếng Ả Rập Thư Peh</value>
+  </data>
+  <data name="unicode_ArabicLetterQaf" xml:space="preserve">
+    <value>Tiếng Ả Rập Thư QAF</value>
+  </data>
+  <data name="unicode_ArabicLetterReh" xml:space="preserve">
+    <value>Tiếng Ả Rập Thư Reh</value>
+  </data>
+  <data name="unicode_ArabicLetterSad" xml:space="preserve">
+    <value>Thư Ả Rập Sad</value>
+  </data>
+  <data name="unicode_ArabicLetterSeen" xml:space="preserve">
+    <value>Thư Ả Rập Lần</value>
+  </data>
+  <data name="unicode_ArabicLetterSheen" xml:space="preserve">
+    <value>Tiếng Ả Rập Thư Sheen</value>
+  </data>
+  <data name="unicode_ArabicLetterSuperscriptAlef" xml:space="preserve">
+    <value>Tiếng Ả Rập Thư Superscript Alef</value>
+  </data>
+  <data name="unicode_ArabicLetterTah" xml:space="preserve">
+    <value>Tiếng Ả Rập Thư Tah</value>
+  </data>
+  <data name="unicode_ArabicLetterTcheh" xml:space="preserve">
+    <value>Tiếng Ả Rập Thư Tcheh</value>
+  </data>
+  <data name="unicode_ArabicLetterTeh" xml:space="preserve">
+    <value>Tiếng Ả Rập Thư Teh</value>
+  </data>
+  <data name="unicode_ArabicLetterTehMarbuta" xml:space="preserve">
+    <value>Tiếng Ả Rập Thư Teh Marbuta</value>
+  </data>
+  <data name="unicode_ArabicLetterThal" xml:space="preserve">
+    <value>Tiếng Ả Rập Thư Thal</value>
+  </data>
+  <data name="unicode_ArabicLetterTheh" xml:space="preserve">
+    <value>Tiếng Ả Rập Thư theh</value>
+  </data>
+  <data name="unicode_ArabicLetterVeh" xml:space="preserve">
+    <value>Tiếng Ả Rập Thư Veh</value>
+  </data>
+  <data name="unicode_ArabicLetterWaw" xml:space="preserve">
+    <value>Tiếng Ả Rập Thư Waw</value>
+  </data>
+  <data name="unicode_ArabicLetterWawWithHamzaAbove" xml:space="preserve">
+    <value>Tiếng Ả Rập Thư Waw Với Hamza Trên</value>
+  </data>
+  <data name="unicode_ArabicLetterYeh" xml:space="preserve">
+    <value>Tiếng Ả Rập Thư Yeh</value>
+  </data>
+  <data name="unicode_ArabicLetterYehWithHamzaAbove" xml:space="preserve">
+    <value>Tiếng Ả Rập Thư Yeh Với Hamza Trên</value>
+  </data>
+  <data name="unicode_ArabicLetterZah" xml:space="preserve">
+    <value>Tiếng Ả Rập Thư Zah</value>
+  </data>
+  <data name="unicode_ArabicLetterZain" xml:space="preserve">
+    <value>Tiếng Ả Rập Thư Zain</value>
+  </data>
+  <data name="unicode_ArabicLigatureAkbarIsolatedForm" xml:space="preserve">
+    <value>Tiếng Ả Rập lắp ghép Akbar Isolated Mẫu</value>
+  </data>
+  <data name="unicode_ArabicLigatureAlayheIsolatedForm" xml:space="preserve">
+    <value>Mẫu Ả Rập lắp ghép Alayhe Isolated</value>
+  </data>
+  <data name="unicode_ArabicLigatureAllahIsolatedForm" xml:space="preserve">
+    <value>Mẫu Ả Rập lắp ghép Allah Isolated</value>
+  </data>
+  <data name="unicode_ArabicLigatureBismillahArRahmanArRaheem" xml:space="preserve">
+    <value>Tiếng Ả Rập lắp ghép Bismillah Ar-Rahman Ar-Raheem</value>
+  </data>
+  <data name="unicode_ArabicLigatureJallajalalouhou" xml:space="preserve">
+    <value>Tiếng Ả Rập lắp ghép Jallajalalouhou</value>
+  </data>
+  <data name="unicode_ArabicLigatureMohammadIsolatedForm" xml:space="preserve">
+    <value>Tiếng Ả Rập lắp ghép Mohammad Isolated Mẫu</value>
+  </data>
+  <data name="unicode_ArabicLigatureQalaUsedAsKoranicStopSignIsolatedForm" xml:space="preserve">
+    <value>Tiếng Ả Rập lắp ghép Qala sử dụng như Koran Dừng Đăng Mẫu Isolated</value>
+  </data>
+  <data name="unicode_ArabicLigatureRasoulIsolatedForm" xml:space="preserve">
+    <value>Tiếng Ả Rập lắp ghép Rasoul Isolated Mẫu</value>
+  </data>
+  <data name="unicode_ArabicLigatureSalamIsolatedForm" xml:space="preserve">
+    <value>Tiếng Ả Rập lắp ghép Salam Isolated Mẫu</value>
+  </data>
+  <data name="unicode_ArabicLigatureSallaIsolatedForm" xml:space="preserve">
+    <value>Tiếng Ả Rập lắp ghép Salla Mẫu Isolated</value>
+  </data>
+  <data name="unicode_ArabicLigatureSallallahouAlayheWasallam" xml:space="preserve">
+    <value>Tiếng Ả Rập lắp ghép Sallallahou Alayhe Wasallam</value>
+  </data>
+  <data name="unicode_ArabicLigatureSallaUsedAsKoranicStopSignIsolatedForm" xml:space="preserve">
+    <value>Tiếng Ả Rập lắp ghép Salla sử dụng như Koran Dừng Đăng Isolated Mẫu</value>
+  </data>
+  <data name="unicode_ArabicLigatureWasallamIsolatedForm" xml:space="preserve">
+    <value>Mẫu Ả Rập lắp ghép Wasallam Isolated</value>
+  </data>
+  <data name="unicode_ArabicMaddahAbove" xml:space="preserve">
+    <value>Tiếng Ả Rập Maddah Trên</value>
+  </data>
+  <data name="unicode_ArabicPlaceOfSajdah" xml:space="preserve">
+    <value>Tiếng Ả Rập Nơi Sajdah</value>
+  </data>
+  <data name="unicode_ArabicQuestionMark" xml:space="preserve">
+    <value>Ả Rập Câu hỏi Đánh</value>
+  </data>
+  <data name="unicode_ArabicRoundedHighStopWithFilledCentre" xml:space="preserve">
+    <value>Tiếng Ả Rập tròn cao Dừng Với Đầy Trung tâm</value>
+  </data>
+  <data name="unicode_ArabicSemicolon" xml:space="preserve">
+    <value>Tiếng Ả Rập Dấu chấm phẩy</value>
+  </data>
+  <data name="unicode_ArabicShadda" xml:space="preserve">
+    <value>Tiếng Ả Rập Shadda</value>
+  </data>
+  <data name="unicode_ArabicSmallHighJeem" xml:space="preserve">
+    <value>Tiếng Ả Rập nhỏ cao Jeem</value>
+  </data>
+  <data name="unicode_ArabicSmallHighLamAlef" xml:space="preserve">
+    <value>Tiếng Ả Rập nhỏ Cao Lâm Alef</value>
+  </data>
+  <data name="unicode_ArabicSmallHighLigatureQafWithLamWithAlefMaksura" xml:space="preserve">
+    <value>Tiếng Ả Rập nhỏ cao lắp ghép QAF Với Lâm Với Alef Maksura</value>
+  </data>
+  <data name="unicode_ArabicSmallHighLigatureSadWithLamWithAlefMaksura" xml:space="preserve">
+    <value>Tiếng Ả Rập nhỏ cao lắp ghép Sad Với Lâm Với Alef Maksura</value>
+  </data>
+  <data name="unicode_ArabicSmallHighMeemInitialForm" xml:space="preserve">
+    <value>Tiếng Ả Rập nhỏ cao Meem mẫu ban đầu</value>
+  </data>
+  <data name="unicode_ArabicSmallHighMeemIsolatedForm" xml:space="preserve">
+    <value>Mẫu Ả Rập nhỏ cao Meem Isolated</value>
+  </data>
+  <data name="unicode_ArabicSmallHighNoon" xml:space="preserve">
+    <value>Tiếng Ả Rập High Noon nhỏ</value>
+  </data>
+  <data name="unicode_ArabicSmallHighRoundedZero" xml:space="preserve">
+    <value>Tiếng Ả Rập nhỏ cao Tròn Zero,</value>
+  </data>
+  <data name="unicode_ArabicSmallHighSeen" xml:space="preserve">
+    <value>Tiếng Ả Rập nhỏ cao Lần</value>
+  </data>
+  <data name="unicode_ArabicSmallHighThreeDots" xml:space="preserve">
+    <value>Tiếng Ả Rập nhỏ cao Ba chấm</value>
+  </data>
+  <data name="unicode_ArabicSmallHighUprightRectangularZero" xml:space="preserve">
+    <value>Tiếng Ả Rập nhỏ cao thẳng đứng hình chữ nhật của Zero</value>
+  </data>
+  <data name="unicode_ArabicSmallLowMeem" xml:space="preserve">
+    <value>Tiếng Ả Rập nhỏ thấp Meem</value>
+  </data>
+  <data name="unicode_ArabicSmallLowSeen" xml:space="preserve">
+    <value>Tiếng Ả Rập nhỏ thấp Lần</value>
+  </data>
+  <data name="unicode_ArabicSmallWaw" xml:space="preserve">
+    <value>Tiếng Ả Rập Waw nhỏ</value>
+  </data>
+  <data name="unicode_ArabicSmallYeh" xml:space="preserve">
+    <value>Tiếng Ả Rập Yeh nhỏ</value>
+  </data>
+  <data name="unicode_ArabicStartOfRubElHizb" xml:space="preserve">
+    <value>Tiếng Ả Rập Bắt đầu Trong Chà El Hizb</value>
+  </data>
+  <data name="unicode_ArabicSukun" xml:space="preserve">
+    <value>Tiếng Ả Rập Sukun</value>
+  </data>
+  <data name="unicode_ArabicTatweel" xml:space="preserve">
+    <value>Tiếng Ả Rập Tatweel</value>
+  </data>
+  <data name="unicode_Colon" xml:space="preserve">
+    <value>Colon</value>
+  </data>
+  <data name="unicode_Comma" xml:space="preserve">
+    <value>Dấu phẩy</value>
+  </data>
+  <data name="unicode_ExclamationMark" xml:space="preserve">
+    <value>Đánh dấu chấm than</value>
+  </data>
+  <data name="unicode_FullStop" xml:space="preserve">
+    <value>Ngừng hẳn</value>
+  </data>
+  <data name="unicode_HyphenMinus" xml:space="preserve">
+    <value>Dấu gạch ngang-Minus</value>
+  </data>
+  <data name="unicode_LeftCurlyBracket" xml:space="preserve">
+    <value>Trái Curly Bracket</value>
+  </data>
+  <data name="unicode_LeftPointingDoubleAngleQuotationMark" xml:space="preserve">
+    <value>Chỉ tay trái đôi Góc báo giá Đánh</value>
+  </data>
+  <data name="unicode_LeftSquareBracket" xml:space="preserve">
+    <value>Quảng trường trái đỡ</value>
+  </data>
+  <data name="unicode_OrnateLeftParenthesis" xml:space="preserve">
+    <value>Trang trí công phu trái ngoặc</value>
+  </data>
+  <data name="unicode_OrnateRightParenthesis" xml:space="preserve">
+    <value>Trang trí công phu phải ngoặc</value>
+  </data>
+  <data name="unicode_QuotationMark" xml:space="preserve">
+    <value>Báo giá Đánh</value>
+  </data>
+  <data name="unicode_RialSign" xml:space="preserve">
+    <value>Rial Đăng nhập</value>
+  </data>
+  <data name="unicode_RightCurlyBracket" xml:space="preserve">
+    <value>Ngay Curly Bracket</value>
+  </data>
+  <data name="unicode_RightPointingDoubleAngleQuotationMark" xml:space="preserve">
+    <value>Chỉ tay phải đôi Góc báo giá Đánh</value>
+  </data>
+  <data name="unicode_RightSquareBracket" xml:space="preserve">
+    <value>Khung bên phải quảng trường</value>
+  </data>
+  <data name="unicode_Space" xml:space="preserve">
+    <value>Không gian</value>
+  </data>
+  <data name="IslamInfo_Date" xml:space="preserve">
+    <value>Ngày</value>
+  </data>
+  <data name="IslamInfo_Day" xml:space="preserve">
+    <value>Ngày</value>
+  </data>
+  <data name="IslamInfo_Final1" xml:space="preserve">
+    <value>Thức 1</value>
+  </data>
+  <data name="IslamInfo_Final1Trans" xml:space="preserve">
+    <value>mà không có gì là giống như Ngài và Ngài là The Thanh Văn, Nhà tiên tri</value>
+  </data>
+  <data name="IslamInfo_Final1WordByWord" xml:space="preserve">
+    <value>mà | không | là giống như Ngài | một cái gì đó | và Ngài là | The Thanh Văn | Nhà tiên tri</value>
+  </data>
+  <data name="IslamInfo_Final2" xml:space="preserve">
+    <value>Thức 2</value>
+  </data>
+  <data name="IslamInfo_Final2Trans" xml:space="preserve">
+    <value>O Allah, gửi lời cầu nguyện tốt nhất khi sinh vật tốt nhất của bạn Thạc sĩ Muhammad</value>
+  </data>
+  <data name="IslamInfo_Final2WordByWord" xml:space="preserve">
+    <value>O Allah | gửi | tốt nhất | cầu nguyện | khi | tốt nhất | các sáng tạo của bạn | Thạc sĩ | Muhammad</value>
+  </data>
+  <data name="IslamInfo_Final3" xml:space="preserve">
+    <value>Thức thứ 3</value>
+  </data>
+  <data name="IslamInfo_Final3Trans" xml:space="preserve">
+    <value>Và hòa bình và mực của lời nói và bất cứ khi nào những người nhớ anh làm như vậy và bất cứ khi nào những người bỏ bê để nhớ anh làm như vậy</value>
+  </data>
+  <data name="IslamInfo_Final3WordByWord" xml:space="preserve">
+    <value>Và hòa bình | kể lại | kiến ​​thức của mình | và mực in | của lời nói của ông | bất cứ khi nào | nhớ Ngài | làm như vậy | và bất cứ khi nào những người bỏ bê | để | nhớ Ngài | làm như vậy</value>
+  </data>
+  <data name="IslamInfo_OMasterSendPrayersAndPeace" xml:space="preserve">
+    <value>O Thạc sĩ của tôi, gửi lời chào và phước lành của bạn</value>
+  </data>
+  <data name="IslamInfo_OMasterSendPrayersAndPeaceTrans" xml:space="preserve">
+    <value>O Thạc sĩ của tôi, gửi lời chào và phước lành của bạn mãi mãi Khi yêu dấu của bạn, tốt nhất của toàn thể tạo vật</value>
+  </data>
+  <data name="IslamInfo_OMasterSendPrayersAndPeaceWordByWord" xml:space="preserve">
+    <value>O Thạc sĩ của tôi | gửi lời chào của bạn | và phước lành | luôn | mãi mãi | khi | Yêu Dấu của bạn | tốt nhất | sáng tạo | của toàn</value>
+  </data>
+  <data name="IslamInfo_PopularIslamicSongVerses" xml:space="preserve">
+    <value>Phổ biến Hồi giáo Sông Câu</value>
+  </data>
+  <data name="IslamInfo_RemembranceFirst" xml:space="preserve">
+    <value>Nhớ đầu tiên</value>
+  </data>
+  <data name="IslamInfo_RemembranceFirstTrans" xml:space="preserve">
+    <value>Không ai có quyền được tôn thờ nhưng Bạn (O Allah)), Glorified (và Tôn) là bạn (trên tất cả những gì (ác) họ liên kết với bạn).</value>
+  </data>
+  <data name="IslamInfo_RemembranceFirstWordByWord" xml:space="preserve">
+    <value>Không | có quyền được tôn thờ | nhưng | Bạn | Glorified là Bạn | thật | Tôi đã | của | các sai kẻ</value>
+  </data>
+  <data name="IslamInfo_RemembranceSecond" xml:space="preserve">
+    <value>Nhớ thứ hai</value>
+  </data>
+  <data name="IslamInfo_RemembranceSecondTrans" xml:space="preserve">
+    <value>Allah (một mình) là đủ cho chúng ta, và Ngài là tiêu hủy nhất của công việc (đối với chúng tôi);</value>
+  </data>
+  <data name="IslamInfo_RemembranceSecondWordByWord" xml:space="preserve">
+    <value>Đủ cho chúng tôi | Allah | và Ngài là tốt nhất | tiêu hủy công việc | Thật là một Tuyệt vời | Bạn đọc | và những gì một sắc | Helper</value>
+  </data>
+  <data name="IslamInfo_RemembranceThird" xml:space="preserve">
+    <value>Nhớ thứ ba</value>
+  </data>
+  <data name="IslamInfo_RemembranceThirdTrans" xml:space="preserve">
+    <value>Không có sức mạnh (để tránh tội lỗi nhưng với sự bảo vệ từ Allah) và không có sức mạnh (để thực hiện những việc làm tốt), nhưng với sự giúp đỡ của Allah, cao, tối cao</value>
+  </data>
+  <data name="IslamInfo_RemembranceThirdWordByWord" xml:space="preserve">
+    <value>Không có | sức mạnh | và không có | điện | trừ | với Allah | Cao | tối cao</value>
+  </data>
+  <data name="IslamInfo_SendBlessingsFirst" xml:space="preserve">
+    <value>Gửi Blessings Đầu tiên</value>
+  </data>
+  <data name="IslamInfo_SendBlessingsFirstTrans" xml:space="preserve">
+    <value>Allah, gửi lòng thương xót của bạn trên Muhammad và con cháu của mình như là bạn gửi lòng thương xót của bạn trên Abraham và con cháu của mình.</value>
+  </data>
+  <data name="IslamInfo_SendBlessingsFirstWordByWord" xml:space="preserve">
+    <value>O Allah | gửi lòng thương xót của bạn | trên | Muhammad | và khi | các hậu | của Ngài | như | bạn gửi lòng thương xót của bạn | trên | Abraham | và khi | các hậu | của Ngài | Bạn đang thực sự | Hầu hết các ca ngợi | Vinh quang nhất |</value>
+  </data>
+  <data name="IslamInfo_SendBlessingsSecond" xml:space="preserve">
+    <value>Gửi Blessings thứ hai</value>
+  </data>
+  <data name="IslamInfo_SendBlessingsSecondTrans" xml:space="preserve">
+    <value>Allah, gửi lòng thương xót của bạn trên Muhammad và con cháu của mình như là bạn gửi lòng thương xót của bạn trên Abraham và con cháu của mình.</value>
+  </data>
+  <data name="IslamInfo_SendBlessingsSecondWordByWord" xml:space="preserve">
+    <value>O Allah | gửi lòng thương xót của bạn | trên | Muhammad | và khi | các hậu | của Ngài | như | bạn gửi lòng thương xót của bạn | trên | Abraham | và khi | các hậu | của Ngài | Bạn đang thực sự | Hầu hết các ca ngợi | Vinh quang nhất |</value>
+  </data>
+  <data name="IslamInfo_TheBestNames" xml:space="preserve">
+    <value>Các tên tốt nhất</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoon" xml:space="preserve">
+    <value>White mặt trăng</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonEighth" xml:space="preserve">
+    <value>Thứ tám</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonEighthTrans" xml:space="preserve">
+    <value>Chào mừng bạn đã gọi cho chúng tôi để một cách tốt</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonEighthWordByWord" xml:space="preserve">
+    <value>Chào mừng | bạn của những người gọi cho chúng tôi | một tốt | cách</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonFifth" xml:space="preserve">
+    <value>Thứ năm</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonFifthTrans" xml:space="preserve">
+    <value>Oh bạn bè của chúng tôi (sứ giả) trong số chúng tôi</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonFifthWordByWord" xml:space="preserve">
+    <value>Oh | bạn bè của chúng tôi | giữa chúng ta</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonFirst" xml:space="preserve">
+    <value>Đầu tiên</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonFirstTrans" xml:space="preserve">
+    <value>Oh trăng hoa hồng trắng trên chúng ta</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonFirstWordByWord" xml:space="preserve">
+    <value>Oh tăng | mặt trăng trắng | hơn chúng tôi</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonFourth" xml:space="preserve">
+    <value>Thứ tư</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonFourthTrans" xml:space="preserve">
+    <value>Cho Đấng mời gọi chúng ta con đường của Allah</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonFourthWordByWord" xml:space="preserve">
+    <value>Đối với ông | người mời gọi chúng ta | Allah | đường của</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonSecond" xml:space="preserve">
+    <value>Thứ hai</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonSecondTrans" xml:space="preserve">
+    <value>Từ thung lũng (nơi ông) được gọi là</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonSecondWordByWord" xml:space="preserve">
+    <value>Từ | thung lũng | gọi</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonSeventh" xml:space="preserve">
+    <value>Thứ bảy</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonSeventhTrans" xml:space="preserve">
+    <value>Bạn đã mang đến cho giới quý tộc thành phố này</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonSeventhWordByWord" xml:space="preserve">
+    <value>Bạn đã mang | giới quý tộc | đến thành phố này</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonSixth" xml:space="preserve">
+    <value>Thứ sáu</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonSixthTrans" xml:space="preserve">
+    <value>Ai đi kèm với những lời hô hào (huấn thị / răn) để được chú ý</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonSixthWordByWord" xml:space="preserve">
+    <value>Ai nói | với các điều răn | để được tuân theo</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonThird" xml:space="preserve">
+    <value>Thứ ba</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonThirdTrans" xml:space="preserve">
+    <value>Và nó là phận sự của chúng ta tỏ lòng biết ơn</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonThirdWordByWord" xml:space="preserve">
+    <value>Và nó là đương nhiệm | để hiển thị graditude | cho chúng ta</value>
+  </data>
+  <data name="IslamInfo_AllahKnowsBest" xml:space="preserve">
+    <value>Allah biết rõ nhất</value>
+  </data>
+  <data name="IslamInfo_AllahSaysTheTruth" xml:space="preserve">
+    <value>Sự thật là từ Allah, Magnificent nhất</value>
+  </data>
+  <data name="IslamInfo_AllahSufficesMe" xml:space="preserve">
+    <value>Đủ đối với tôi là Allah</value>
+  </data>
+  <data name="IslamInfo_AllahWilledItSo" xml:space="preserve">
+    <value>Allah đã muốn như thế</value>
+  </data>
+  <data name="IslamInfo_AllahWilling" xml:space="preserve">
+    <value>Nếu Allah di chúc nó để</value>
+  </data>
+  <data name="IslamInfo_AndUponYouBePeaceAndMercyOfAllah" xml:space="preserve">
+    <value>Và khi bạn được hòa bình và lòng thương xót của Allah</value>
+  </data>
+  <data name="IslamInfo_AndUponYouBePeaceAndMercyOfAllahAndBlessings" xml:space="preserve">
+    <value>Và khi bạn được hòa bình và lòng thương xót của Allah và ơn phước của Ngài</value>
+  </data>
+  <data name="IslamInfo_BlessingsOfAllah" xml:space="preserve">
+    <value>Phước lành của Allah</value>
+  </data>
+  <data name="IslamInfo_GloriousAndExaltedBeHe" xml:space="preserve">
+    <value>Tôn vinh quang và được Anh</value>
+  </data>
+  <data name="IslamInfo_IAskAllahForgiveness" xml:space="preserve">
+    <value>Tôi yêu cầu sự tha thứ từ Allah</value>
+  </data>
+  <data name="IslamInfo_InProtectionOfAllah" xml:space="preserve">
+    <value>Trong việc bảo vệ của Allah</value>
+  </data>
+  <data name="IslamInfo_InThePathOfAllah" xml:space="preserve">
+    <value>Trong sự nghiệp của Allah</value>
+  </data>
+  <data name="IslamInfo_MayAllahBePleased" xml:space="preserve">
+    <value>Có thể Allah hài lòng với họ</value>
+  </data>
+  <data name="IslamInfo_MayAllahBlessYou" xml:space="preserve">
+    <value>Phước lành khi bạn từ Allah</value>
+  </data>
+  <data name="IslamInfo_MayAllahHaveMercy" xml:space="preserve">
+    <value>Có thể Allah xin thương xót chúng</value>
+  </data>
+  <data name="IslamInfo_MayAllahProtectYou" xml:space="preserve">
+    <value>Allah có thể bảo vệ bạn</value>
+  </data>
+  <data name="IslamInfo_MayAllahWillItSo" xml:space="preserve">
+    <value>Allah có thể nó sẽ như vậy</value>
+  </data>
+  <data name="IslamInfo_PeaceBeUponYouAndMercyOfAllah" xml:space="preserve">
+    <value>Hòa bình được khi bạn và lòng thương xót của Allah</value>
+  </data>
+  <data name="IslamInfo_PeaceBeUponYouAndMercyOfAllahAndBlessings" xml:space="preserve">
+    <value>Hòa bình được khi bạn và lòng thương xót của Allah và ơn phước của Ngài</value>
+  </data>
+  <data name="IslamInfo_SeekRefugeWithAllahFromSatanRejected" xml:space="preserve">
+    <value>Tôi tìm nơi ẩn náu với Allah từ Satan từ chối các</value>
+  </data>
+  <data name="IslamInfo_SublimeAndMighty" xml:space="preserve">
+    <value>Tuyệt vời và Mighty</value>
+  </data>
+  <data name="IslamInfo_TrulyFromAllahWeComeAndToHimWillReturn" xml:space="preserve">
+    <value>Thực sự từ Allah, chúng tôi đã đến, và thật sự với Ngài, chúng ta sẽ quay trở lại</value>
+  </data>
+  <data name="Acct_CertRequest" xml:space="preserve">
+    <value>Giấy chứng nhận Yêu cầu</value>
+  </data>
+  <data name="Acct_Certificate" xml:space="preserve">
+    <value>Giấy chứng nhận</value>
+  </data>
+  <data name="Acct_CertInstall" xml:space="preserve">
+    <value>Giấy chứng nhận cài đặt</value>
+  </data>
+  <data name="Acct_CurrentUser" xml:space="preserve">
+    <value>Current User</value>
+  </data>
+  <data name="Acct_DeleteCertRequest" xml:space="preserve">
+    <value>Xóa Certificate Request</value>
+  </data>
+  <data name="Acct_EnableSSL" xml:space="preserve">
+    <value>Kích hoạt SSL</value>
+  </data>
+  <data name="Acct_PrivateKey" xml:space="preserve">
+    <value>Khóa riêng</value>
+  </data>
+  <data name="Acct_ViewCertRequests" xml:space="preserve">
+    <value>Các yêu cầu xem giấy chứng nhận</value>
+  </data>
+  <data name="Acct_ViewSites" xml:space="preserve">
+    <value>Xem trang web</value>
+  </data>
+  <data name="Acct_CertInstallIntermed" xml:space="preserve">
+    <value>Cài đặt chứng chỉ Trung cấp</value>
+  </data>
+  <data name="IslamInfo_UniqueLetters" xml:space="preserve">
+    <value>Thư độc đáo</value>
+  </data>
+  <data name="IslamInfo_SoulStates" xml:space="preserve">
+    <value>Trạng thái tâm hồn</value>
+  </data>
+  <data name="IslamInfo_Abbreviations" xml:space="preserve">
+    <value>Chữ viết tắt</value>
+  </data>
+  <data name="IslamInfo_Names" xml:space="preserve">
+    <value>Tên</value>
+  </data>
+  <data name="IslamInfo_Places" xml:space="preserve">
+    <value>Nơi</value>
+  </data>
+  <data name="IslamInfo_Abbasid" xml:space="preserve">
+    <value>Abbasid</value>
+  </data>
+  <data name="IslamInfo_AbdullahBinMasood" xml:space="preserve">
+    <value>Abdullah bin Masood</value>
+  </data>
+  <data name="IslamInfo_AbuBakrAlSaddiq" xml:space="preserve">
+    <value>Abu Bakr Al-Saddiq</value>
+  </data>
+  <data name="IslamInfo_AbuDahr" xml:space="preserve">
+    <value>Abu Dahr</value>
+  </data>
+  <data name="IslamInfo_AbuHanifa" xml:space="preserve">
+    <value>Abu Hanifa</value>
+  </data>
+  <data name="IslamInfo_AbuHurairah" xml:space="preserve">
+    <value>AbuHurairah</value>
+  </data>
+  <data name="IslamInfo_AbuJahal" xml:space="preserve">
+    <value>Abu Jahal</value>
+  </data>
+  <data name="IslamInfo_AbuLahab" xml:space="preserve">
+    <value>Abu Lahab</value>
+  </data>
+  <data name="IslamInfo_AbuSufyan" xml:space="preserve">
+    <value>Abu Sufyan</value>
+  </data>
+  <data name="IslamInfo_Aisha" xml:space="preserve">
+    <value>Aisha</value>
+  </data>
+  <data name="IslamInfo_AliBinAbuTalib" xml:space="preserve">
+    <value>Ali bin Abu Talib</value>
+  </data>
+  <data name="IslamInfo_AlLaythBinSaad" xml:space="preserve">
+    <value>Al-Saad bin Layth</value>
+  </data>
+  <data name="IslamInfo_Allowed" xml:space="preserve">
+    <value>Cho phép</value>
+  </data>
+  <data name="IslamInfo_AlMansoor" xml:space="preserve">
+    <value>Al-Mansoor</value>
+  </data>
+  <data name="IslamInfo_AlMuwata" xml:space="preserve">
+    <value>Al-Muwata</value>
+  </data>
+  <data name="IslamInfo_AlWahsi" xml:space="preserve">
+    <value>Al-Wahsi</value>
+  </data>
+  <data name="IslamInfo_AmrBinAlAas" xml:space="preserve">
+    <value>Amr bin Al-Aas</value>
+  </data>
+  <data name="IslamInfo_AndEveryone" xml:space="preserve">
+    <value>Và tất cả mọi người</value>
+  </data>
+  <data name="IslamInfo_Angel" xml:space="preserve">
+    <value>Thiên thần</value>
+  </data>
+  <data name="IslamInfo_Arrogance" xml:space="preserve">
+    <value>Kiêu căng</value>
+  </data>
+  <data name="IslamInfo_AskForgiveness" xml:space="preserve">
+    <value>Hỏi sự tha thứ</value>
+  </data>
+  <data name="IslamInfo_Azar" xml:space="preserve">
+    <value>Azar</value>
+  </data>
+  <data name="IslamInfo_Balance" xml:space="preserve">
+    <value>Cân bằng</value>
+  </data>
+  <data name="IslamInfo_BaniHashim" xml:space="preserve">
+    <value>Bani Hashim</value>
+  </data>
+  <data name="IslamInfo_BaniThaqeef" xml:space="preserve">
+    <value>Bani Thaqeef</value>
+  </data>
+  <data name="IslamInfo_Biography" xml:space="preserve">
+    <value>Tiểu sử</value>
+  </data>
+  <data name="IslamInfo_Bless" xml:space="preserve">
+    <value>Chúc lành cho</value>
+  </data>
+  <data name="IslamInfo_Caliphate" xml:space="preserve">
+    <value>Chức quốc vương của nước hồi giáo</value>
+  </data>
+  <data name="IslamInfo_CallToIslam" xml:space="preserve">
+    <value>Để gọi Hồi giáo</value>
+  </data>
+  <data name="IslamInfo_Certainty" xml:space="preserve">
+    <value>Chắc chắn</value>
+  </data>
+  <data name="IslamInfo_Cohabitation" xml:space="preserve">
+    <value>Sống chung nhau</value>
+  </data>
+  <data name="IslamInfo_Commentary" xml:space="preserve">
+    <value>Bình luận</value>
+  </data>
+  <data name="IslamInfo_Community" xml:space="preserve">
+    <value>Cộng đồng</value>
+  </data>
+  <data name="IslamInfo_Companions" xml:space="preserve">
+    <value>Đồng</value>
+  </data>
+  <data name="IslamInfo_Concensus" xml:space="preserve">
+    <value>Sự đồng</value>
+  </data>
+  <data name="IslamInfo_Concentration" xml:space="preserve">
+    <value>Tập trung</value>
+  </data>
+  <data name="IslamInfo_Congregation" xml:space="preserve">
+    <value>Đoàn</value>
+  </data>
+  <data name="IslamInfo_Conquest" xml:space="preserve">
+    <value>Chinh phục</value>
+  </data>
+  <data name="IslamInfo_Deeds" xml:space="preserve">
+    <value>Việc làm</value>
+  </data>
+  <data name="IslamInfo_Delivery" xml:space="preserve">
+    <value>Giao hàng tận nơi</value>
+  </data>
+  <data name="IslamInfo_Dessertion" xml:space="preserve">
+    <value>Dessertion</value>
+  </data>
+  <data name="IslamInfo_Digger" xml:space="preserve">
+    <value>Người đào</value>
+  </data>
+  <data name="IslamInfo_Disbeliever" xml:space="preserve">
+    <value>Người không tin ai</value>
+  </data>
+  <data name="IslamInfo_Division" xml:space="preserve">
+    <value>Phân công</value>
+  </data>
+  <data name="IslamInfo_Do" xml:space="preserve">
+    <value>Làm</value>
+  </data>
+  <data name="IslamInfo_Doctrine" xml:space="preserve">
+    <value>Học thuyết</value>
+  </data>
+  <data name="IslamInfo_Empowering" xml:space="preserve">
+    <value>Nâng cao vị thế</value>
+  </data>
+  <data name="IslamInfo_Excellence" xml:space="preserve">
+    <value>Xuất sắc</value>
+  </data>
+  <data name="IslamInfo_Faith" xml:space="preserve">
+    <value>Đức tin</value>
+  </data>
+  <data name="IslamInfo_Faithful" xml:space="preserve">
+    <value>Trung thành</value>
+  </data>
+  <data name="IslamInfo_Fight" xml:space="preserve">
+    <value>Cuộc chiến</value>
+  </data>
+  <data name="IslamInfo_Fighter" xml:space="preserve">
+    <value>Máy bay chiến đấu</value>
+  </data>
+  <data name="IslamInfo_Firdaus" xml:space="preserve">
+    <value>Firdaus</value>
+  </data>
+  <data name="IslamInfo_Forgiving" xml:space="preserve">
+    <value>Khoan dung</value>
+  </data>
+  <data name="IslamInfo_Fornication" xml:space="preserve">
+    <value>Tội gian dâm</value>
+  </data>
+  <data name="IslamInfo_Gabriel" xml:space="preserve">
+    <value>Gabriel</value>
+  </data>
+  <data name="IslamInfo_Gardens" xml:space="preserve">
+    <value>Vườn</value>
+  </data>
+  <data name="IslamInfo_GloriousAndExaltedBeHeAbbr" xml:space="preserve">
+    <value>SWT</value>
+  </data>
+  <data name="IslamInfo_Goodness" xml:space="preserve">
+    <value>Lòng tốt</value>
+  </data>
+  <data name="IslamInfo_Guardian" xml:space="preserve">
+    <value>Người giám hộ</value>
+  </data>
+  <data name="IslamInfo_Guidance1" xml:space="preserve">
+    <value>Hướng dẫn</value>
+  </data>
+  <data name="IslamInfo_Hammad" xml:space="preserve">
+    <value>Hammad</value>
+  </data>
+  <data name="IslamInfo_HamzaBinAbduAlMuttalib" xml:space="preserve">
+    <value>Hamza bin Abdu Al-Muttalib</value>
+  </data>
+  <data name="IslamInfo_Hanbal" xml:space="preserve">
+    <value>Hanbal</value>
+  </data>
+  <data name="IslamInfo_Hasan" xml:space="preserve">
+    <value>Hasan</value>
+  </data>
+  <data name="IslamInfo_HeartSofteners" xml:space="preserve">
+    <value>Làm mềm trái tim</value>
+  </data>
+  <data name="IslamInfo_Hell" xml:space="preserve">
+    <value>Địa ngục</value>
+  </data>
+  <data name="IslamInfo_Hereafter" xml:space="preserve">
+    <value>Sau đây</value>
+  </data>
+  <data name="IslamInfo_Hind" xml:space="preserve">
+    <value>Thô kịch</value>
+  </data>
+  <data name="IslamInfo_Hudabiyyah" xml:space="preserve">
+    <value>Hudabiyyah</value>
+  </data>
+  <data name="IslamInfo_Hunain" xml:space="preserve">
+    <value>Hunain</value>
+  </data>
+  <data name="IslamInfo_Hussein" xml:space="preserve">
+    <value>Hussein</value>
+  </data>
+  <data name="IslamInfo_Hypocrite" xml:space="preserve">
+    <value>Giả nhân nghia</value>
+  </data>
+  <data name="IslamInfo_ImamNawawi40Hadith" xml:space="preserve">
+    <value>Imam Nawawi 40 Hadith</value>
+  </data>
+  <data name="IslamInfo_Impact" xml:space="preserve">
+    <value>Tác động</value>
+  </data>
+  <data name="IslamInfo_Innovation" xml:space="preserve">
+    <value>Đổi mới</value>
+  </data>
+  <data name="IslamInfo_Intention" xml:space="preserve">
+    <value>Ý định</value>
+  </data>
+  <data name="IslamInfo_Introduction" xml:space="preserve">
+    <value>Giới thiệu</value>
+  </data>
+  <data name="IslamInfo_Invocation" xml:space="preserve">
+    <value>Sự thỉnh nguyện</value>
+  </data>
+  <data name="IslamInfo_Jinn" xml:space="preserve">
+    <value>Jinn</value>
+  </data>
+  <data name="IslamInfo_Kaaba" xml:space="preserve">
+    <value>Kaaba</value>
+  </data>
+  <data name="IslamInfo_KhadijahBintiKhuwaylid" xml:space="preserve">
+    <value>Khadijah Binti Khooaylid</value>
+  </data>
+  <data name="IslamInfo_KhalidBinWalid" xml:space="preserve">
+    <value>Khalid bin Walid</value>
+  </data>
+  <data name="IslamInfo_Knowledgable" xml:space="preserve">
+    <value>Knowledgable</value>
+  </data>
+  <data name="IslamInfo_Latest" xml:space="preserve">
+    <value>Mới nhất</value>
+  </data>
+  <data name="IslamInfo_Leader" xml:space="preserve">
+    <value>Lãnh đạo</value>
+  </data>
+  <data name="IslamInfo_Lecture" xml:space="preserve">
+    <value>Bài giảng</value>
+  </data>
+  <data name="IslamInfo_Limit" xml:space="preserve">
+    <value>Giới hạn</value>
+  </data>
+  <data name="IslamInfo_Loudmouthed" xml:space="preserve">
+    <value>Loudmouthed</value>
+  </data>
+  <data name="IslamInfo_Lucifer" xml:space="preserve">
+    <value>Ma vương</value>
+  </data>
+  <data name="IslamInfo_Madame" xml:space="preserve">
+    <value>Phu nhân</value>
+  </data>
+  <data name="IslamInfo_Malik" xml:space="preserve">
+    <value>Malik</value>
+  </data>
+  <data name="IslamInfo_Mankind" xml:space="preserve">
+    <value>Nhân loại</value>
+  </data>
+  <data name="IslamInfo_Manners" xml:space="preserve">
+    <value>Cách cư xử</value>
+  </data>
+  <data name="IslamInfo_MannersOfDiffering" xml:space="preserve">
+    <value>Cách cư xử của khác biệt của</value>
+  </data>
+  <data name="IslamInfo_Master" xml:space="preserve">
+    <value>Chủ</value>
+  </data>
+  <data name="IslamInfo_MayAllahBePleasedAbbr" xml:space="preserve">
+    <value>RA</value>
+  </data>
+  <data name="IslamInfo_MayHisGloryBeGlorified" xml:space="preserve">
+    <value>MayHisGloryBeGlorified</value>
+  </data>
+  <data name="IslamInfo_Mecca" xml:space="preserve">
+    <value>Mecca</value>
+  </data>
+  <data name="IslamInfo_Medina" xml:space="preserve">
+    <value>Medina</value>
+  </data>
+  <data name="IslamInfo_Mercy" xml:space="preserve">
+    <value>Lòng thương xót</value>
+  </data>
+  <data name="IslamInfo_MinorPilgrimage" xml:space="preserve">
+    <value>Hành hương nhỏ</value>
+  </data>
+  <data name="IslamInfo_Mosque" xml:space="preserve">
+    <value>Nhà thờ Hồi giáo</value>
+  </data>
+  <data name="IslamInfo_Muawiyyah" xml:space="preserve">
+    <value>Muawiyyah</value>
+  </data>
+  <data name="IslamInfo_Mufti" xml:space="preserve">
+    <value>Quần áo thường</value>
+  </data>
+  <data name="IslamInfo_MuhammadBinAbduAlMuttalib" xml:space="preserve">
+    <value>Muhammad bin Abdu Al-Muttalib</value>
+  </data>
+  <data name="IslamInfo_Neck" xml:space="preserve">
+    <value>Cổ</value>
+  </data>
+  <data name="IslamInfo_Nurturing" xml:space="preserve">
+    <value>Nuôi dưỡng</value>
+  </data>
+  <data name="IslamInfo_OBelievers" xml:space="preserve">
+    <value>O Bạn Ai tin</value>
+  </data>
+  <data name="IslamInfo_Optimizer" xml:space="preserve">
+    <value>Tối ưu hóa</value>
+  </data>
+  <data name="IslamInfo_Paradise" xml:space="preserve">
+    <value>Thiên đường</value>
+  </data>
+  <data name="IslamInfo_Patience" xml:space="preserve">
+    <value>Kiên nhẫn</value>
+  </data>
+  <data name="IslamInfo_Permission" xml:space="preserve">
+    <value>Cho phép</value>
+  </data>
+  <data name="IslamInfo_Persecution" xml:space="preserve">
+    <value>Đàn áp</value>
+  </data>
+  <data name="IslamInfo_Piety" xml:space="preserve">
+    <value>Đạo đức</value>
+  </data>
+  <data name="IslamInfo_PleasedWithDecree" xml:space="preserve">
+    <value>Hài lòng với Nghị định</value>
+  </data>
+  <data name="IslamInfo_Polythiest" xml:space="preserve">
+    <value>Polythiest</value>
+  </data>
+  <data name="IslamInfo_Practical" xml:space="preserve">
+    <value>Thực tế</value>
+  </data>
+  <data name="IslamInfo_Predestination" xml:space="preserve">
+    <value>Sự tiền định</value>
+  </data>
+  <data name="IslamInfo_PrintedBook" xml:space="preserve">
+    <value>Sách in</value>
+  </data>
+  <data name="IslamInfo_Professor" xml:space="preserve">
+    <value>Giáo sư</value>
+  </data>
+  <data name="IslamInfo_Protector" xml:space="preserve">
+    <value>Bảo vệ</value>
+  </data>
+  <data name="IslamInfo_Punishment" xml:space="preserve">
+    <value>Trừng phạt</value>
+  </data>
+  <data name="IslamInfo_Purification" xml:space="preserve">
+    <value>Lọc</value>
+  </data>
+  <data name="IslamInfo_Quraish" xml:space="preserve">
+    <value>Quraish</value>
+  </data>
+  <data name="IslamInfo_Rawdah" xml:space="preserve">
+    <value>Rawdah</value>
+  </data>
+  <data name="IslamInfo_Recite" xml:space="preserve">
+    <value>Đọc</value>
+  </data>
+  <data name="IslamInfo_Religion" xml:space="preserve">
+    <value>Tôn Giáo</value>
+  </data>
+  <data name="IslamInfo_Repentance" xml:space="preserve">
+    <value>Ăn năn</value>
+  </data>
+  <data name="IslamInfo_RiadAlJannah" xml:space="preserve">
+    <value>Riad Al-Jannah</value>
+  </data>
+  <data name="IslamInfo_RighteousDealings" xml:space="preserve">
+    <value>Giao dịch chính</value>
+  </data>
+  <data name="IslamInfo_RighteousDeeds" xml:space="preserve">
+    <value>Deeds chính</value>
+  </data>
+  <data name="IslamInfo_SaadBinWaad" xml:space="preserve">
+    <value>Saad bin Waad</value>
+  </data>
+  <data name="IslamInfo_Sacrifice" xml:space="preserve">
+    <value>Hy sinh</value>
+  </data>
+  <data name="IslamInfo_Salafi" xml:space="preserve">
+    <value>Salafi</value>
+  </data>
+  <data name="IslamInfo_Satan" xml:space="preserve">
+    <value>Sa-tan</value>
+  </data>
+  <data name="IslamInfo_Satisfaction" xml:space="preserve">
+    <value>Sự hài lòng</value>
+  </data>
+  <data name="IslamInfo_Self" xml:space="preserve">
+    <value>Tự</value>
+  </data>
+  <data name="IslamInfo_Shafii" xml:space="preserve">
+    <value>Shafii</value>
+  </data>
+  <data name="IslamInfo_Sheikh" xml:space="preserve">
+    <value>Tù trưởng</value>
+  </data>
+  <data name="IslamInfo_ShowingOff" xml:space="preserve">
+    <value>Hiện Tắt</value>
+  </data>
+  <data name="IslamInfo_Sin" xml:space="preserve">
+    <value>Tội lỗi</value>
+  </data>
+  <data name="IslamInfo_Sir" xml:space="preserve">
+    <value>Sir</value>
+  </data>
+  <data name="IslamInfo_Slaughter" xml:space="preserve">
+    <value>Giết mổ</value>
+  </data>
+  <data name="IslamInfo_Slave" xml:space="preserve">
+    <value>Nô lệ</value>
+  </data>
+  <data name="IslamInfo_Speech" xml:space="preserve">
+    <value>Bài phát biểu</value>
+  </data>
+  <data name="IslamInfo_Sporadic" xml:space="preserve">
+    <value>Không thường xuyên</value>
+  </data>
+  <data name="IslamInfo_Strangers" xml:space="preserve">
+    <value>Người lạ</value>
+  </data>
+  <data name="IslamInfo_SupplicationsAndPrayers" xml:space="preserve">
+    <value>Nài và cầu nguyện</value>
+  </data>
+  <data name="IslamInfo_Taaif" xml:space="preserve">
+    <value>Taaif</value>
+  </data>
+  <data name="IslamInfo_Talkative" xml:space="preserve">
+    <value>Hay nói chuyện</value>
+  </data>
+  <data name="IslamInfo_ThePrayersOfAllahUponHimAndPeaceAbbr" xml:space="preserve">
+    <value>SAW | cưa</value>
+  </data>
+  <data name="IslamInfo_Throne" xml:space="preserve">
+    <value>Ngôi vua</value>
+  </data>
+  <data name="IslamInfo_Trustworthy" xml:space="preserve">
+    <value>Đáng tin cậy</value>
+  </data>
+  <data name="IslamInfo_Truthful" xml:space="preserve">
+    <value>Trung thực</value>
+  </data>
+  <data name="IslamInfo_UmarBinAlKhattab" xml:space="preserve">
+    <value>Umar bin Al-Khattab</value>
+  </data>
+  <data name="IslamInfo_Umayyad" xml:space="preserve">
+    <value>Umayyad</value>
+  </data>
+  <data name="IslamInfo_Universal" xml:space="preserve">
+    <value>Phổ quát</value>
+  </data>
+  <data name="IslamInfo_Unseen" xml:space="preserve">
+    <value>Vô hình</value>
+  </data>
+  <data name="IslamInfo_UponHimBePeaceAbbr" xml:space="preserve">
+    <value>AS</value>
+  </data>
+  <data name="IslamInfo_UthmanBinAfwan" xml:space="preserve">
+    <value>Uthman bin Afwan</value>
+  </data>
+  <data name="IslamInfo_VoluntaryKindness" xml:space="preserve">
+    <value>Kindness tự nguyện</value>
+  </data>
+  <data name="IslamInfo_Wahhabi" xml:space="preserve">
+    <value>Wahhabi</value>
+  </data>
+  <data name="IslamInfo_Wisdom" xml:space="preserve">
+    <value>Trí tuệ</value>
+  </data>
+  <data name="IslamInfo_Witnessing" xml:space="preserve">
+    <value>Chứng kiến</value>
+  </data>
+  <data name="IslamInfo_World" xml:space="preserve">
+    <value>Thế giới</value>
+  </data>
+  <data name="IslamInfo_Worship" xml:space="preserve">
+    <value>Thờ phượng</value>
+  </data>
+  <data name="IslamInfo_IslamicPhrases" xml:space="preserve">
+    <value>Hồi giáo cụm từ</value>
+  </data>
+  <data name="IslamSource_QuranWords" xml:space="preserve">
+    <value>Kinh Qur'an từ</value>
+  </data>
+  <data name="IslamSource_UniqueWordTotal" xml:space="preserve">
+    <value>Lời độc đáo Tổng số</value>
+  </data>
+  <data name="IslamSource_WordTotal" xml:space="preserve">
+    <value>Từ Tổng</value>
+  </data>
+  <data name="IslamSource_FixDirectionalMarkers" xml:space="preserve">
+    <value>Sửa chữa hướng Markers</value>
+  </data>
+  <data name="unicode_LeftToRightEmbedding" xml:space="preserve">
+    <value>Trái-To-Ngay Nhúng</value>
+  </data>
+  <data name="unicode_RightToLeftEmbedding" xml:space="preserve">
+    <value>Ngay-To-Left Nhúng</value>
+  </data>
+  <data name="unicode_LeftToRightMark" xml:space="preserve">
+    <value>Trái-To-Ngay Đánh</value>
+  </data>
+  <data name="unicode_LeftToRightOverride" xml:space="preserve">
+    <value>Ghi đè trái sang phải</value>
+  </data>
+  <data name="unicode_PopDirectionalFormatting" xml:space="preserve">
+    <value>Pop hướng định dạng</value>
+  </data>
+  <data name="unicode_RightToLeftMark" xml:space="preserve">
+    <value>Ngay-To-Left Đánh</value>
+  </data>
+  <data name="unicode_RightToLeftOverride" xml:space="preserve">
+    <value>Ngay-To-Left Override</value>
+  </data>
+  <data name="IslamSource_CurrentMonth" xml:space="preserve">
+    <value>Tháng hiện tại</value>
+  </data>
+  <data name="IslamSource_HijriCalendar" xml:space="preserve">
+    <value>Hijri Calendar</value>
+  </data>
+</root>
