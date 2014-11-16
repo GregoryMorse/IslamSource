@@ -213,16 +213,15 @@
     <Content Include="Global.asax" />
     <Content Include="host.aspx" />
     <Content Include="Menu.ascx" />
+    <Content Include="metadata\ArabicData.xml" />
     <Content Include="Page.ascx" />
+    <None Include="My Project\PublishProfiles\gmorsecode.pubxml" />
     <None Include="My Project\PublishProfiles\islamsource.pubxml" />
     <None Include="Scripts\jquery-1.11.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.11.1.js" />
     <Content Include="Scripts\jquery-1.11.1.min.js" />
     <Content Include="Scripts\jquery-ui-1.10.4.js" />
     <Content Include="Scripts\jquery-ui-1.10.4.min.js" />
-    <Content Include="Web.config">
-      <SubType>Designer</SubType>
-    </Content>
     <EmbeddedResource Include="Global.asax.resx">
       <DependentUpon>Global.asax.vb</DependentUpon>
     </EmbeddedResource>
@@ -250,14 +249,6 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Web.Debug.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
-    <None Include="Web.Release.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\HostPageUtility\HostPageUtility.vbproj">

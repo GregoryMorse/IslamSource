@@ -555,8 +555,11 @@ Public Class Utility
         LookupClassMember = Nothing
         If (ClassMember.Length = 3 AndAlso ClassMember(1) = String.Empty) Then
             For Each Key As String In ConnectionData.FuncLibs
-                LookupClassMember = Type.GetType(Key + "." + ClassMember(0)).GetMethod(ClassMember(2))
-                If Not LookupClassMember Is Nothing Then Exit For
+                Dim CheckType As Type = Type.GetType(Key + "." + ClassMember(0))
+                If Not CheckType Is Nothing Then
+                    LookupClassMember = CheckType.GetMethod(ClassMember(2))
+                    If Not LookupClassMember Is Nothing Then Exit For
+                End If
             Next
         End If
     End Function
