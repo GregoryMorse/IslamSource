@@ -76,6 +76,7 @@
     <None Include="islamsource.pubxml" />
     <Content Include="Web.config" />
     <None Include="My Project\PublishProfiles\islamsource.pubxml" />
+    <None Include="My Project\PublishProfiles\iWebHosting.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
