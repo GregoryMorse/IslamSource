@@ -1233,7 +1233,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="$ariykN" plural="$urakaA^&apos;N" id="PartnerAssociate"></word>
 			<word text="Haq~N" plural="HuquwqN" id="TruthTrueRight"></word>
 			<word text="$aHaAdapN" plural="$aHaAdaAtN" id="Witness"></word>
-			<word text="baATilN" plural="" id="Falsehood"></word>
+			<word text="baATilN" plural="" id="FalsehoodVain"></word>
 			<word text="Earo$N" plural="Euruw$" id="Throne"></word>
 			<word text="HikomapN" plural="HikamN" id="Wisdom"></word>
 			<word text="EahodN" plural="EuhuwdN" id="TreatyCovenant"></word>
@@ -1549,7 +1549,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="kaAfuwrN" id="CoolRefreshingDrink"></word>
 			<word text="tasoniymN" id="FoundationOfParadise"></word>
 			<word text="EayonN" id="River"></word>
-			<word text="say~idN" id="Mister"></word>
+			<word text="say~idN" id="MisterLord"></word>
 			<word text="SiyaAmN" id="Fasting"></word>
 			<word text="gafuwrN" id="Forgiving"></word>
 			<word text="hajorN" id="Dessertion"></word>
@@ -1653,6 +1653,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="fawaAtiHN" id="Openers"></word>
 			<word text="&lt;isotigofaArN" id="AskForgiveness"></word>
 			<word text="tafosiyrN" id="Commentary"></word>
+			<word text="mufas~irN" id="Commentator"></word>
 			<word text="qiraA^&apos;&apos;aAtN" id="Recitations"></word>
 			<word text="mujaw~adN" id="MelodicRecitation"></word>
 			<word text="murat~alN" id="SlowPracticeRecitation"></word>
@@ -1840,6 +1841,32 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="murak~abN" id="Metaphor"></word>
 			<word text="Zan~iy" id="Assumed"></word>
 			<word text="qariynapN" id="Indication"></word>
+			<word text="&gt;aHorufN" id="Dialect"></word>
+			<word text="rifoqN" id="Courtesy"></word>
+			<word text="naqoSN" id="DiminishmentLoss"></word>
+			<word text="minobarN" id="MosquePulpit"></word>
+			<word text="&lt;irotibaAtN" id="StrongConnection"></word>
+			<word text="talaAzumN" id="StrongConnection"></word>
+			<word text="nid~N" plural="&gt;andaAdN" id="Rivals"></word>
+			<word text="tawofiyqN" id="DivineEmpowerment"></word>
+			<word text="walaAyatN" id="Sainthood"></word>
+			<word text="&gt;awotaAdN" id="Pegs"></word>
+			<word text="maErifapN" id="Gnosis"></word>
+			<word text="him~apN" id="Aspiration"></word>
+			<word text="jaAhiliy~apN" id="Ignorance"></word>
+			<word text="ka$ofN" id="Unveiling"></word>
+			<word text="EaArifN" id="DivineGnostic"></word>
+			<word text="tajal~iy~N" id="RevelatoryManifestations"></word>
+			<word text="quTobN" id="Pole"></word>
+			<word text="sirodaAbN" id="Tunnel"></word>
+			<word text="EiSomapN" id="ImmuneFromSinAndError"></word>
+			<word text="tuqoyapN" id="SayingWhatOpponentWantsToHearToDeflectSuspicionFromSelf"></word>
+			<word text="Suwfiy~N" id="Mystic"></word>
+			<word text="Suwfiy~apN" id="Mysticism"></word>
+			<word text="naZariy~N" id="MetaphysicalTheoretical"></word>
+			<word text="&lt;i$aArapN" id="GestureSignIndicatorTrafficSignalAllusionHintIntimation"></word>
+			<word text="&lt;i$aAriy~N" id="SymbolicInterpretationApparent"></word>
+			<word text="maTolaEN" id="PlaceOfEmergence"></word>
 			<word text="HakamapN" id="ToJudgePreventReform"></word>
 			<word text="$abaha" id="ToResemble"></word>
 			<word text="ta$aAbaha" id="TwoThingsResembleEachOther"></word>
@@ -1849,14 +1876,14 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="mukal~afN" id="AccountablePerson"></word>
 			<word text="marojuwHN" id="LessPredominate"></word>
 			<word text="mu$okilN" id="ApparentMeaningNotIntended"></word>
-			<word text="lafoZiy" id="Textual"></word>
-			<word text="qaToEiy" id="Definitive"></word>
+			<word text="lafoZiy~N" id="Textual"></word>
+			<word text="qaToEiy~N" id="Definitive"></word>
 			<word text="Mu$otarakN" id="Homonyms"></word>
 			<word text="muEaw~alN" id="Explained"></word>
 			<word text="&lt;iqotiDaA^&apos;N" id="Necessity"></word>
 			<word text="&lt;i$aArapN" id="Suggestion"></word>
 			<word text="$ubuhaAtN" id="DoubtsAboutExistence"></word>
-			<word text="badaA" id="AppearNewRealizationOccurToSomeone"></word>
+			<word text="badaA&apos;N" id="AppearNewRealizationOccurToSomeone"></word>
 			<word text="waSiyapN" plural="waSaAyaA" id="Bequest"></word>
 			<word text="&lt;ijotihaAdN" id="ReasonedDecision"></word>
 			<word text="fatowaY" id="Ruling"></word>
@@ -1943,17 +1970,14 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="*aAtiy~apN" id=""></word>
 			<word text="Hukomiy~apN" id=""></word>
 			<word text="qul~aY" id=""></word>
-			<word text="biduwinN" id=""></word>
+			<word text="badawiy badow" id="PredominantlyDesertDwellingArabianEthnicGroup"></word>
 			<word text="EaworapN" id="PrivatePartsOrPartsOfBodyForbiddenToExposeToOthers"></word>
 			<word text="&lt;isotinjaA^&apos;N" id="CleaningOnesStoolAndUrineExitsAfterDefecationOrUrinationWithWater"></word>
 			<word text="&lt;isotijomaArN" id="CleaningOnesStoolAndUrineExitsAfterDefecationOrUrinationWithStonesOrSubstitute"></word>
-			<word text="$ayaATiynN" id=""></word>
-			<word text="&gt;aHaAdiyvN" id=""></word>
 			<word text="masofuwhN" id=""></word>
 			<word text="mayotapN" id=""></word>
 			<word text="&lt;ihaAbN" id=""></word>
 			<word text="diybaArN" id=""></word>
-			<word text="HimaArN" id=""></word>
 			<word text="mahodiy" id="GuidedOne"></word>
 			<word text="waAdiy" id=""></word>
 			<word text="maniy" id=""></word>
@@ -2119,7 +2143,8 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="$iyEapN" id="Shia"></word>
 			<word text="qurayo$N" id="Quraish"></word>
 			<word text="{lo&gt;umawiy~ap‎u" id="Umayyad"></word>
-			<word text="{laEobaAsiy~apu" id="Abbasid"></word>
+			<word text="{loEabaAsiy~apu" id="Abbasid"></word>
+			<word text="{lofaATimiy~uwnu" id="Fatimid"></word>
 			<word text="{lomanSuwru" id="AlMansoor"></word>
 			<word text="{lomuwataY" id="AlMuwata"></word>
 			<word text="hindN" id="Hind"></word>
@@ -2128,6 +2153,10 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="&apos;aAzaArN" id="Azar"></word>			
 			<word text="wahaAbiyapN" id="Wahhabi"></word>
 			<word text="salafi" id="Salafi"></word>
+			<word text="&lt;ismaAEiliy~apN" id="Ismaili"></word>
+			<word text="nuSayoriy~apN" id="Alawites"></word>
+			<word text="duroziy" id="Druze"></word>
+			<word text="baATiniy" id="EsotericMeaningFollowers"></word>
 			<word text="muEotazilapN" id="Rationalists"></word>
 			<word text="quro&apos;aAniyuwna" id="QuranFollowers"></word>
 			<word text="jiboriylN" id="Gabriel"></word>
@@ -2251,6 +2280,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="Eaqada" id="ConsolidationAffirmationHoldingTogether"></word>
 			<word text="waH~ada" id="UniteUnifyConsolidate"></word>			
 			<word text="tuxorijuwA" id="Expel"></word>
+			<word text="lamaEa" id="GleamedGlitteredShone"></word>
 		</category>
 		<category title="RepresentativeStems">
 			<word text="fEl" id=""></word>
@@ -2436,6 +2466,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="{l {lt~aEoriyfu" id="AlOfDefiniteness"></word>
 			<word text="yaA^&apos;N {lomutakal~imu" id="FirstPersonAttachedPronoun"></word>
 			<word text="&lt;isomu {ln~isobapi" id="RelativeAdjective"></word>
+			<word text="maEaAniy~N Eaqoliy~apN" id="RationalInsights"></word>
 		</category>
 		<category title="RulesOfRecitation">
 			<word text="sif~aAtN" id="LetterCharacteristics"></word>
@@ -2802,13 +2833,17 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="ta{ll~ahi" id="ISwearByAllah"></word>
 			<word text="wa{ll~ahi" id="ISwearByAllah"></word>
 			<word text="&gt;asomaA^&apos;u {ld~uwali" id="NamesOfCountries"></word>
-			<word text="&gt;aholu {loHadiyvu" id="PeopleOfHadith"></word>
+			<word text="&gt;aholu {loHadiyvi" id="PeopleOfHadith"></word>
+			<word text="&gt;aholu {loHaqiyqapi" id="PeopleOfTrueReality"></word>
+			<word text="&gt;aholu {loHaq~aA&apos;iqi" id="PeopleOfRealities"></word>
 			<word text="&gt;aholu {lr~aA^&apos;i" id="PeopleOfReasoningOpinion"></word>
 			<word text="&lt;ijoma &gt;aholu madinapu" id="ConsensusOfThePeopleOfMedina"></word>
 			<word text="{lofiqohu {lowaqiEiy" id="RealisticJurisprudence"></word>
 			<word text="rafa {loyadayoni" id="RaisingHandsInPrayer"></word>
 			<word text="{lomasiyHu {ld~aj~aAlu" id="Antichrist"></word>
 			<word text="zakaw`pN {lofiTori" id="FastBreakingCharity"></word>
+			<word text="{ln~afosu {lo&gt;am~aArapu bi{ls~uw&apos;i" id="LowerSelf"></word>
+			<word text="faqado kafara" id="ThenHeHasDisbelieved"></word>
 		</category>
 		<category title="Names">
 			<word text="muHam~adN {bonu Eabodu {ll~ahi {bonu Eabodu {lomuT~alibu {bonu haA$im‎N" nickname="&gt;abuw {loqaAsim" id="MuhammadBinAbdullahBinAbduAlMuttalib"></word>
@@ -2939,6 +2974,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="RAaa" id="MayAllahBePleased"></word>
 			<word text="SWT" id="GloriousAndExaltedBeHe"></word>
 			<word text="BISMILLAH" id="InTheNameOfAllah"></word>
+			<word text="AH" value="h_" id="AfterMigration"></word>
 		</category>
 	</abbreviations>
 	<lists>

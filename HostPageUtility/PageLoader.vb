@@ -1308,6 +1308,7 @@ Public Class ArabicData
         Try
             GetUName(CUShort(AscW(Character)), Str)
         Catch e As System.DllNotFoundException
+            If FindLetterBySymbol(Character) = -1 Then Return String.Empty
             Return Utility.LoadResourceString("unicode_" + Data.ArabicLetters(FindLetterBySymbol(Character)).UnicodeName)
         End Try
         Return Str.ToString()
