@@ -173,10 +173,12 @@ UpgradeLog*.htm
 # Microsoft Fakes
 FakesAssemblies/
 /App_GlobalResources
-*.pubxml
 /IslamSourceSite/Content
 /IslamSourceSite/files
 /IslamSourceSite/images
 /IslamSourceSite/metadata
 /IslamSourceSite/Scripts
 /IslamSourceSite/host.aspx
+web.config
+*.pubxml
+/IslamSourceSite/*/PublishProfiles
