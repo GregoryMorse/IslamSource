@@ -21,12 +21,14 @@ Public Class frmMain
                 End If
             Next
         Next
-
         Dim Renderer As New MultiLangRender
         Renderer.Anchor = AnchorStyles.Left Or AnchorStyles.Top Or AnchorStyles.Right Or AnchorStyles.Bottom
         Renderer.Size = New Size(gbMain.Width, gbMain.Height)
+        For Count As Integer = 1 To TanzilReader.GetChapterCount()
+            Renderer.RenderArray = TanzilReader.GetQuranTextBySelection(0, Count, String.Empty, ArabicData.TranslitScheme.RuleBased, "PlainRoman", 0).Items
+            HostPageUtility.RenderArray.OutputPdf("test" + CStr(Count) + ".pdf", Renderer.RenderArray)
+        Next
         Renderer.RenderArray = TanzilReader.GetQuranTextBySelection(0, 1, String.Empty, ArabicData.TranslitScheme.RuleBased, "PlainRoman", 0).Items
-        'IslamMetadata.RenderArray.OutputPdf("test.pdf", Renderer.RenderArray)
         gbMain.Controls.Add(Renderer)
     End Sub
 

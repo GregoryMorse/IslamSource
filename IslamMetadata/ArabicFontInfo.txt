@@ -1,0 +1,1416 @@
+﻿-OpenType Tables
+  +'GDEF' Glyph Definition Table
+  +'GPOS' Glyph Positioning Table
+  -'GSUB' Glyph Substitution Table
+    -'arab' Arabic Script
+      -'dflt' Default Language
+	-'ccmp' Glyph Composition/Decomposition
+	  -'ccmp' Glyph Composition/Decomposition in Arabic lookup 4
+	    -'ccmp' Glyph Composition/Decomposition in Arabic lookup 4 subtable
+	       uni064B_uni0651.ccmp <= uni064B uni0651
+	       uni064B_uni0651.ccmp <= uni0651 uni064B
+	       uni064B_uni0654.ccmp <= uni064B uni0654
+	       uni064B_uni0654.ccmp <= uni0654 uni064B
+	       uni064C_uni0654.ccmp <= uni064C uni0654
+	       uni064C_uni0654.ccmp <= uni0654 uni064C
+	       uni064D_uni0655.ccmp <= uni064D uni0655
+	       uni064D_uni0655.ccmp <= uni0655 uni064D
+	       uni064E_uni0654.ccmp <= uni064E uni0654
+	       uni064E_uni0654.ccmp <= uni0654 uni064E
+	       uni064F_uni0654.ccmp <= uni064F uni0654
+	       uni064F_uni0654.ccmp <= uni0654 uni064F
+	       uni0650_uni0655.ccmp <= uni0650 uni0655
+	       uni0650_uni0655.ccmp <= uni0655 uni0650
+	       uni0652_uni0654.ccmp <= uni0652 uni0654
+	       uni0652_uni0654.ccmp <= uni0654 uni0652
+	       uniFC5E <= uni064C uni0651
+	       uniFC5E <= uni0651 uni064C
+	       uniFC60 <= uni064E uni0651
+	       uniFC60 <= uni0651 uni064E
+	       uniFC61 <= uni064F uni0651
+	       uniFC61 <= uni0651 uni064F
+	       uniFC63 <= uni0651 uni0670
+	       uniFC63 <= uni0670 uni0651
+	  -'ccmp' Glyph Composition/Decomposition in Arabic lookup 8
+	    -'ccmp' Glyph Composition/Decomposition in Arabic lookup 8 contextual 0
+	       Chaining Substitution by coverage
+	      -Rule 0
+		 Back coverage -1: uni06DD
+		 Coverage 0: uni0660 uni0661 uni0662 uni0663 uni0664 uni0665 uni0666 uni0667 uni0668 uni0669 uni06F4 uni06F5 uni06F6 uni06F4.locl uni0667.locl
+		-Apply at 0 Single Substitution lookup 68
+		  -Single Substitution lookup 68 subtable
+		     uni0660 => glyph3687
+		     uni0661 => glyph3688
+		     uni0662 => glyph3689
+		     uni0663 => glyph3690
+		     uni0664 => glyph3691
+		     uni0665 => glyph3692
+		     uni0666 => glyph3693
+		     uni0667 => glyph3694
+		     uni0667.locl => glyph3701
+		     uni0668 => glyph3695
+		     uni0669 => glyph3696
+		     uni06F4 => glyph3697
+		     uni06F4.locl => glyph3700
+		     uni06F5 => glyph3698
+		     uni06F6 => glyph3699
+	    -'ccmp' Glyph Composition/Decomposition in Arabic lookup 8 contextual 1
+	       Chaining Substitution by coverage
+	      -Rule 0
+		 Back coverage -2: uni06DD
+		 Back coverage -1: glyph3687 glyph3688 glyph3689 glyph3690 glyph3691 glyph3692 glyph3693 glyph3694 glyph3695 glyph3696 glyph3697 glyph3698 glyph3699 glyph3700 glyph3701
+		 Coverage 0: uni0660 uni0661 uni0662 uni0663 uni0664 uni0665 uni0666 uni0667 uni0668 uni0669 uni06F4 uni06F5 uni06F6 uni06F4.locl uni0667.locl
+		-Apply at 0 Single Substitution lookup 68
+		  -Single Substitution lookup 68 subtable
+		     uni0660 => glyph3687
+		     uni0661 => glyph3688
+		     uni0662 => glyph3689
+		     uni0663 => glyph3690
+		     uni0664 => glyph3691
+		     uni0665 => glyph3692
+		     uni0666 => glyph3693
+		     uni0667 => glyph3694
+		     uni0667.locl => glyph3701
+		     uni0668 => glyph3695
+		     uni0669 => glyph3696
+		     uni06F4 => glyph3697
+		     uni06F4.locl => glyph3700
+		     uni06F5 => glyph3698
+		     uni06F6 => glyph3699
+	    -'ccmp' Glyph Composition/Decomposition in Arabic lookup 8 contextual 2
+	       Chaining Substitution by coverage
+	      -Rule 0
+		 Back coverage -3: uni06DD
+		 Back coverage -2: glyph3687 glyph3688 glyph3689 glyph3690 glyph3691 glyph3692 glyph3693 glyph3694 glyph3695 glyph3696 glyph3697 glyph3698 glyph3699 glyph3700 glyph3701
+		 Back coverage -1: glyph3687 glyph3688 glyph3689 glyph3690 glyph3691 glyph3692 glyph3693 glyph3694 glyph3695 glyph3696 glyph3697 glyph3698 glyph3699 glyph3700 glyph3701
+		 Coverage 0: uni0660 uni0661 uni0662 uni0663 uni0664 uni0665 uni0666 uni0667 uni0668 uni0669 uni06F4 uni06F5 uni06F6 uni06F4.locl uni0667.locl
+		-Apply at 0 Single Substitution lookup 68
+		  -Single Substitution lookup 68 subtable
+		     uni0660 => glyph3687
+		     uni0661 => glyph3688
+		     uni0662 => glyph3689
+		     uni0663 => glyph3690
+		     uni0664 => glyph3691
+		     uni0665 => glyph3692
+		     uni0666 => glyph3693
+		     uni0667 => glyph3694
+		     uni0667.locl => glyph3701
+		     uni0668 => glyph3695
+		     uni0669 => glyph3696
+		     uni06F4 => glyph3697
+		     uni06F4.locl => glyph3700
+		     uni06F5 => glyph3698
+		     uni06F6 => glyph3699
+	    -'ccmp' Glyph Composition/Decomposition in Arabic lookup 8 contextual 3
+	       Chaining Substitution by coverage
+	      -Rule 0
+		 Back coverage -1: uni0600
+		 Coverage 0: uni0660 uni0661 uni0662 uni0663 uni0664 uni0665 uni0666 uni0667 uni0668 uni0669 uni06F4 uni06F5 uni06F6 uni06F4.locl uni0667.locl
+		-Apply at 0 Single Substitution lookup 68
+		  -Single Substitution lookup 68 subtable
+		     uni0660 => glyph3687
+		     uni0661 => glyph3688
+		     uni0662 => glyph3689
+		     uni0663 => glyph3690
+		     uni0664 => glyph3691
+		     uni0665 => glyph3692
+		     uni0666 => glyph3693
+		     uni0667 => glyph3694
+		     uni0667.locl => glyph3701
+		     uni0668 => glyph3695
+		     uni0669 => glyph3696
+		     uni06F4 => glyph3697
+		     uni06F4.locl => glyph3700
+		     uni06F5 => glyph3698
+		     uni06F6 => glyph3699
+	    -'ccmp' Glyph Composition/Decomposition in Arabic lookup 8 contextual 4
+	       Chaining Substitution by coverage
+	      -Rule 0
+		 Back coverage -2: uni0600
+		 Back coverage -1: glyph3687 glyph3688 glyph3689 glyph3690 glyph3691 glyph3692 glyph3693 glyph3694 glyph3695 glyph3696 glyph3697 glyph3698 glyph3699 glyph3700 glyph3701
+		 Coverage 0: uni0660 uni0661 uni0662 uni0663 uni0664 uni0665 uni0666 uni0667 uni0668 uni0669 uni06F4 uni06F5 uni06F6 uni06F4.locl uni0667.locl
+		-Apply at 0 Single Substitution lookup 68
+		  -Single Substitution lookup 68 subtable
+		     uni0660 => glyph3687
+		     uni0661 => glyph3688
+		     uni0662 => glyph3689
+		     uni0663 => glyph3690
+		     uni0664 => glyph3691
+		     uni0665 => glyph3692
+		     uni0666 => glyph3693
+		     uni0667 => glyph3694
+		     uni0667.locl => glyph3701
+		     uni0668 => glyph3695
+		     uni0669 => glyph3696
+		     uni06F4 => glyph3697
+		     uni06F4.locl => glyph3700
+		     uni06F5 => glyph3698
+		     uni06F6 => glyph3699
+	    -'ccmp' Glyph Composition/Decomposition in Arabic lookup 8 contextual 5
+	       Chaining Substitution by coverage
+	      -Rule 0
+		 Back coverage -3: uni0600
+		 Back coverage -2: glyph3687 glyph3688 glyph3689 glyph3690 glyph3691 glyph3692 glyph3693 glyph3694 glyph3695 glyph3696 glyph3697 glyph3698 glyph3699 glyph3700 glyph3701
+		 Back coverage -1: glyph3687 glyph3688 glyph3689 glyph3690 glyph3691 glyph3692 glyph3693 glyph3694 glyph3695 glyph3696 glyph3697 glyph3698 glyph3699 glyph3700 glyph3701
+		 Coverage 0: uni0660 uni0661 uni0662 uni0663 uni0664 uni0665 uni0666 uni0667 uni0668 uni0669 uni06F4 uni06F5 uni06F6 uni06F4.locl uni0667.locl
+		-Apply at 0 Single Substitution lookup 68
+		  -Single Substitution lookup 68 subtable
+		     uni0660 => glyph3687
+		     uni0661 => glyph3688
+		     uni0662 => glyph3689
+		     uni0663 => glyph3690
+		     uni0664 => glyph3691
+		     uni0665 => glyph3692
+		     uni0666 => glyph3693
+		     uni0667 => glyph3694
+		     uni0667.locl => glyph3701
+		     uni0668 => glyph3695
+		     uni0669 => glyph3696
+		     uni06F4 => glyph3697
+		     uni06F4.locl => glyph3700
+		     uni06F5 => glyph3698
+		     uni06F6 => glyph3699
+	    -'ccmp' Glyph Composition/Decomposition in Arabic lookup 8 contextual 6
+	       Chaining Substitution by coverage
+	      -Rule 0
+		 Back coverage -4: uni0600
+		 Back coverage -3: glyph3687 glyph3688 glyph3689 glyph3690 glyph3691 glyph3692 glyph3693 glyph3694 glyph3695 glyph3696 glyph3697 glyph3698 glyph3699 glyph3700 glyph3701
+		 Back coverage -2: glyph3687 glyph3688 glyph3689 glyph3690 glyph3691 glyph3692 glyph3693 glyph3694 glyph3695 glyph3696 glyph3697 glyph3698 glyph3699 glyph3700 glyph3701
+		 Back coverage -1: glyph3687 glyph3688 glyph3689 glyph3690 glyph3691 glyph3692 glyph3693 glyph3694 glyph3695 glyph3696 glyph3697 glyph3698 glyph3699 glyph3700 glyph3701
+		 Coverage 0: uni0660 uni0661 uni0662 uni0663 uni0664 uni0665 uni0666 uni0667 uni0668 uni0669 uni06F4 uni06F5 uni06F6 uni06F4.locl uni0667.locl
+		-Apply at 0 Single Substitution lookup 68
+		  -Single Substitution lookup 68 subtable
+		     uni0660 => glyph3687
+		     uni0661 => glyph3688
+		     uni0662 => glyph3689
+		     uni0663 => glyph3690
+		     uni0664 => glyph3691
+		     uni0665 => glyph3692
+		     uni0666 => glyph3693
+		     uni0667 => glyph3694
+		     uni0667.locl => glyph3701
+		     uni0668 => glyph3695
+		     uni0669 => glyph3696
+		     uni06F4 => glyph3697
+		     uni06F4.locl => glyph3700
+		     uni06F5 => glyph3698
+		     uni06F6 => glyph3699
+	    -'ccmp' Glyph Composition/Decomposition in Arabic lookup 8 contextual 7
+	       Chaining Substitution by coverage
+	      -Rule 0
+		 Back coverage -1: uni0601
+		 Coverage 0: uni0660 uni0661 uni0662 uni0663 uni0664 uni0665 uni0666 uni0667 uni0668 uni0669 uni06F4 uni06F5 uni06F6 uni06F4.locl uni0667.locl
+		-Apply at 0 Single Substitution lookup 68
+		  -Single Substitution lookup 68 subtable
+		     uni0660 => glyph3687
+		     uni0661 => glyph3688
+		     uni0662 => glyph3689
+		     uni0663 => glyph3690
+		     uni0664 => glyph3691
+		     uni0665 => glyph3692
+		     uni0666 => glyph3693
+		     uni0667 => glyph3694
+		     uni0667.locl => glyph3701
+		     uni0668 => glyph3695
+		     uni0669 => glyph3696
+		     uni06F4 => glyph3697
+		     uni06F4.locl => glyph3700
+		     uni06F5 => glyph3698
+		     uni06F6 => glyph3699
+	    -'ccmp' Glyph Composition/Decomposition in Arabic lookup 8 contextual 8
+	       Chaining Substitution by coverage
+	      -Rule 0
+		 Back coverage -2: uni0601
+		 Back coverage -1: glyph3687 glyph3688 glyph3689 glyph3690 glyph3691 glyph3692 glyph3693 glyph3694 glyph3695 glyph3696 glyph3697 glyph3698 glyph3699 glyph3700 glyph3701
+		 Coverage 0: uni0660 uni0661 uni0662 uni0663 uni0664 uni0665 uni0666 uni0667 uni0668 uni0669 uni06F4 uni06F5 uni06F6 uni06F4.locl uni0667.locl
+		-Apply at 0 Single Substitution lookup 68
+		  -Single Substitution lookup 68 subtable
+		     uni0660 => glyph3687
+		     uni0661 => glyph3688
+		     uni0662 => glyph3689
+		     uni0663 => glyph3690
+		     uni0664 => glyph3691
+		     uni0665 => glyph3692
+		     uni0666 => glyph3693
+		     uni0667 => glyph3694
+		     uni0667.locl => glyph3701
+		     uni0668 => glyph3695
+		     uni0669 => glyph3696
+		     uni06F4 => glyph3697
+		     uni06F4.locl => glyph3700
+		     uni06F5 => glyph3698
+		     uni06F6 => glyph3699
+	    -'ccmp' Glyph Composition/Decomposition in Arabic lookup 8 contextual 9
+	       Chaining Substitution by coverage
+	      -Rule 0
+		 Back coverage -3: uni0601
+		 Back coverage -2: glyph3687 glyph3688 glyph3689 glyph3690 glyph3691 glyph3692 glyph3693 glyph3694 glyph3695 glyph3696 glyph3697 glyph3698 glyph3699 glyph3700 glyph3701
+		 Back coverage -1: glyph3687 glyph3688 glyph3689 glyph3690 glyph3691 glyph3692 glyph3693 glyph3694 glyph3695 glyph3696 glyph3697 glyph3698 glyph3699 glyph3700 glyph3701
+		 Coverage 0: uni0660 uni0661 uni0662 uni0663 uni0664 uni0665 uni0666 uni0667 uni0668 uni0669 uni06F4 uni06F5 uni06F6 uni06F4.locl uni0667.locl
+		-Apply at 0 Single Substitution lookup 68
+		  -Single Substitution lookup 68 subtable
+		     uni0660 => glyph3687
+		     uni0661 => glyph3688
+		     uni0662 => glyph3689
+		     uni0663 => glyph3690
+		     uni0664 => glyph3691
+		     uni0665 => glyph3692
+		     uni0666 => glyph3693
+		     uni0667 => glyph3694
+		     uni0667.locl => glyph3701
+		     uni0668 => glyph3695
+		     uni0669 => glyph3696
+		     uni06F4 => glyph3697
+		     uni06F4.locl => glyph3700
+		     uni06F5 => glyph3698
+		     uni06F6 => glyph3699
+	    -'ccmp' Glyph Composition/Decomposition in Arabic lookup 8 contextual 10
+	       Chaining Substitution by coverage
+	      -Rule 0
+		 Back coverage -4: uni0601
+		 Back coverage -3: glyph3687 glyph3688 glyph3689 glyph3690 glyph3691 glyph3692 glyph3693 glyph3694 glyph3695 glyph3696 glyph3697 glyph3698 glyph3699 glyph3700 glyph3701
+		 Back coverage -2: glyph3687 glyph3688 glyph3689 glyph3690 glyph3691 glyph3692 glyph3693 glyph3694 glyph3695 glyph3696 glyph3697 glyph3698 glyph3699 glyph3700 glyph3701
+		 Back coverage -1: glyph3687 glyph3688 glyph3689 glyph3690 glyph3691 glyph3692 glyph3693 glyph3694 glyph3695 glyph3696 glyph3697 glyph3698 glyph3699 glyph3700 glyph3701
+		 Coverage 0: uni0660 uni0661 uni0662 uni0663 uni0664 uni0665 uni0666 uni0667 uni0668 uni0669 uni06F4 uni06F5 uni06F6 uni06F4.locl uni0667.locl
+		-Apply at 0 Single Substitution lookup 68
+		  -Single Substitution lookup 68 subtable
+		     uni0660 => glyph3687
+		     uni0661 => glyph3688
+		     uni0662 => glyph3689
+		     uni0663 => glyph3690
+		     uni0664 => glyph3691
+		     uni0665 => glyph3692
+		     uni0666 => glyph3693
+		     uni0667 => glyph3694
+		     uni0667.locl => glyph3701
+		     uni0668 => glyph3695
+		     uni0669 => glyph3696
+		     uni06F4 => glyph3697
+		     uni06F4.locl => glyph3700
+		     uni06F5 => glyph3698
+		     uni06F6 => glyph3699
+	    -'ccmp' Glyph Composition/Decomposition in Arabic lookup 8 contextual 11
+	       Chaining Substitution by coverage
+	      -Rule 0
+		 Back coverage -1: glyph3703
+		 Coverage 0: uni0660 uni0661 uni0662 uni0663 uni0664 uni0665 uni0666 uni0667 uni0668 uni0669 uni06F4 uni06F5 uni06F6 uni06F4.locl uni0667.locl
+		-Apply at 0 Single Substitution lookup 68
+		  -Single Substitution lookup 68 subtable
+		     uni0660 => glyph3687
+		     uni0661 => glyph3688
+		     uni0662 => glyph3689
+		     uni0663 => glyph3690
+		     uni0664 => glyph3691
+		     uni0665 => glyph3692
+		     uni0666 => glyph3693
+		     uni0667 => glyph3694
+		     uni0667.locl => glyph3701
+		     uni0668 => glyph3695
+		     uni0669 => glyph3696
+		     uni06F4 => glyph3697
+		     uni06F4.locl => glyph3700
+		     uni06F5 => glyph3698
+		     uni06F6 => glyph3699
+	    -'ccmp' Glyph Composition/Decomposition in Arabic lookup 8 contextual 12
+	       Chaining Substitution by coverage
+	      -Rule 0
+		 Back coverage -2: glyph3703
+		 Back coverage -1: glyph3687 glyph3688 glyph3689 glyph3690 glyph3691 glyph3692 glyph3693 glyph3694 glyph3695 glyph3696 glyph3697 glyph3698 glyph3699 glyph3700 glyph3701
+		 Coverage 0: uni0660 uni0661 uni0662 uni0663 uni0664 uni0665 uni0666 uni0667 uni0668 uni0669 uni06F4 uni06F5 uni06F6 uni06F4.locl uni0667.locl
+		-Apply at 0 Single Substitution lookup 68
+		  -Single Substitution lookup 68 subtable
+		     uni0660 => glyph3687
+		     uni0661 => glyph3688
+		     uni0662 => glyph3689
+		     uni0663 => glyph3690
+		     uni0664 => glyph3691
+		     uni0665 => glyph3692
+		     uni0666 => glyph3693
+		     uni0667 => glyph3694
+		     uni0667.locl => glyph3701
+		     uni0668 => glyph3695
+		     uni0669 => glyph3696
+		     uni06F4 => glyph3697
+		     uni06F4.locl => glyph3700
+		     uni06F5 => glyph3698
+		     uni06F6 => glyph3699
+	    -'ccmp' Glyph Composition/Decomposition in Arabic lookup 8 contextual 13
+	       Chaining Substitution by coverage
+	      -Rule 0
+		 Back coverage -3: glyph3703
+		 Back coverage -2: glyph3687 glyph3688 glyph3689 glyph3690 glyph3691 glyph3692 glyph3693 glyph3694 glyph3695 glyph3696 glyph3697 glyph3698 glyph3699 glyph3700 glyph3701
+		 Back coverage -1: glyph3687 glyph3688 glyph3689 glyph3690 glyph3691 glyph3692 glyph3693 glyph3694 glyph3695 glyph3696 glyph3697 glyph3698 glyph3699 glyph3700 glyph3701
+		 Coverage 0: uni0660 uni0661 uni0662 uni0663 uni0664 uni0665 uni0666 uni0667 uni0668 uni0669 uni06F4 uni06F5 uni06F6 uni06F4.locl uni0667.locl
+		-Apply at 0 Single Substitution lookup 68
+		  -Single Substitution lookup 68 subtable
+		     uni0660 => glyph3687
+		     uni0661 => glyph3688
+		     uni0662 => glyph3689
+		     uni0663 => glyph3690
+		     uni0664 => glyph3691
+		     uni0665 => glyph3692
+		     uni0666 => glyph3693
+		     uni0667 => glyph3694
+		     uni0667.locl => glyph3701
+		     uni0668 => glyph3695
+		     uni0669 => glyph3696
+		     uni06F4 => glyph3697
+		     uni06F4.locl => glyph3700
+		     uni06F5 => glyph3698
+		     uni06F6 => glyph3699
+	    -'ccmp' Glyph Composition/Decomposition in Arabic lookup 8 contextual 14
+	       Chaining Substitution by coverage
+	      -Rule 0
+		 Back coverage -4: glyph3703
+		 Back coverage -3: glyph3687 glyph3688 glyph3689 glyph3690 glyph3691 glyph3692 glyph3693 glyph3694 glyph3695 glyph3696 glyph3697 glyph3698 glyph3699 glyph3700 glyph3701
+		 Back coverage -2: glyph3687 glyph3688 glyph3689 glyph3690 glyph3691 glyph3692 glyph3693 glyph3694 glyph3695 glyph3696 glyph3697 glyph3698 glyph3699 glyph3700 glyph3701
+		 Back coverage -1: glyph3687 glyph3688 glyph3689 glyph3690 glyph3691 glyph3692 glyph3693 glyph3694 glyph3695 glyph3696 glyph3697 glyph3698 glyph3699 glyph3700 glyph3701
+		 Coverage 0: uni0660 uni0661 uni0662 uni0663 uni0664 uni0665 uni0666 uni0667 uni0668 uni0669 uni06F4 uni06F5 uni06F6 uni06F4.locl uni0667.locl
+		-Apply at 0 Single Substitution lookup 68
+		  -Single Substitution lookup 68 subtable
+		     uni0660 => glyph3687
+		     uni0661 => glyph3688
+		     uni0662 => glyph3689
+		     uni0663 => glyph3690
+		     uni0664 => glyph3691
+		     uni0665 => glyph3692
+		     uni0666 => glyph3693
+		     uni0667 => glyph3694
+		     uni0667.locl => glyph3701
+		     uni0668 => glyph3695
+		     uni0669 => glyph3696
+		     uni06F4 => glyph3697
+		     uni06F4.locl => glyph3700
+		     uni06F5 => glyph3698
+		     uni06F6 => glyph3699
+	    -'ccmp' Glyph Composition/Decomposition in Arabic lookup 8 contextual 15
+	       Chaining Substitution by coverage
+	      -Rule 0
+		 Back coverage -1: uni0603
+		 Coverage 0: uni0660 uni0661 uni0662 uni0663 uni0664 uni0665 uni0666 uni0667 uni0668 uni0669 uni06F4 uni06F5 uni06F6 uni06F4.locl uni0667.locl
+		-Apply at 0 Single Substitution lookup 68
+		  -Single Substitution lookup 68 subtable
+		     uni0660 => glyph3687
+		     uni0661 => glyph3688
+		     uni0662 => glyph3689
+		     uni0663 => glyph3690
+		     uni0664 => glyph3691
+		     uni0665 => glyph3692
+		     uni0666 => glyph3693
+		     uni0667 => glyph3694
+		     uni0667.locl => glyph3701
+		     uni0668 => glyph3695
+		     uni0669 => glyph3696
+		     uni06F4 => glyph3697
+		     uni06F4.locl => glyph3700
+		     uni06F5 => glyph3698
+		     uni06F6 => glyph3699
+	    -'ccmp' Glyph Composition/Decomposition in Arabic lookup 8 contextual 16
+	       Chaining Substitution by coverage
+	      -Rule 0
+		 Back coverage -2: uni0603
+		 Back coverage -1: glyph3687 glyph3688 glyph3689 glyph3690 glyph3691 glyph3692 glyph3693 glyph3694 glyph3695 glyph3696 glyph3697 glyph3698 glyph3699 glyph3700 glyph3701
+		 Coverage 0: uni0660 uni0661 uni0662 uni0663 uni0664 uni0665 uni0666 uni0667 uni0668 uni0669 uni06F4 uni06F5 uni06F6 uni06F4.locl uni0667.locl
+		-Apply at 0 Single Substitution lookup 68
+		  -Single Substitution lookup 68 subtable
+		     uni0660 => glyph3687
+		     uni0661 => glyph3688
+		     uni0662 => glyph3689
+		     uni0663 => glyph3690
+		     uni0664 => glyph3691
+		     uni0665 => glyph3692
+		     uni0666 => glyph3693
+		     uni0667 => glyph3694
+		     uni0667.locl => glyph3701
+		     uni0668 => glyph3695
+		     uni0669 => glyph3696
+		     uni06F4 => glyph3697
+		     uni06F4.locl => glyph3700
+		     uni06F5 => glyph3698
+		     uni06F6 => glyph3699
+	    -'ccmp' Glyph Composition/Decomposition in Arabic lookup 8 contextual 17
+	       Chaining Substitution by coverage
+	      -Rule 0
+		 Back coverage -3: uni0603
+		 Back coverage -2: glyph3687 glyph3688 glyph3689 glyph3690 glyph3691 glyph3692 glyph3693 glyph3694 glyph3695 glyph3696 glyph3697 glyph3698 glyph3699 glyph3700 glyph3701
+		 Back coverage -1: glyph3687 glyph3688 glyph3689 glyph3690 glyph3691 glyph3692 glyph3693 glyph3694 glyph3695 glyph3696 glyph3697 glyph3698 glyph3699 glyph3700 glyph3701
+		 Coverage 0: uni0660 uni0661 uni0662 uni0663 uni0664 uni0665 uni0666 uni0667 uni0668 uni0669 uni06F4 uni06F5 uni06F6 uni06F4.locl uni0667.locl
+		-Apply at 0 Single Substitution lookup 68
+		  -Single Substitution lookup 68 subtable
+		     uni0660 => glyph3687
+		     uni0661 => glyph3688
+		     uni0662 => glyph3689
+		     uni0663 => glyph3690
+		     uni0664 => glyph3691
+		     uni0665 => glyph3692
+		     uni0666 => glyph3693
+		     uni0667 => glyph3694
+		     uni0667.locl => glyph3701
+		     uni0668 => glyph3695
+		     uni0669 => glyph3696
+		     uni06F4 => glyph3697
+		     uni06F4.locl => glyph3700
+		     uni06F5 => glyph3698
+		     uni06F6 => glyph3699
+	    -'ccmp' Glyph Composition/Decomposition in Arabic lookup 8 contextual 18
+	       Chaining Substitution by coverage
+	      -Rule 0
+		 Back coverage -4: uni0603
+		 Back coverage -3: glyph3687 glyph3688 glyph3689 glyph3690 glyph3691 glyph3692 glyph3693 glyph3694 glyph3695 glyph3696 glyph3697 glyph3698 glyph3699 glyph3700 glyph3701
+		 Back coverage -2: glyph3687 glyph3688 glyph3689 glyph3690 glyph3691 glyph3692 glyph3693 glyph3694 glyph3695 glyph3696 glyph3697 glyph3698 glyph3699 glyph3700 glyph3701
+		 Back coverage -1: glyph3687 glyph3688 glyph3689 glyph3690 glyph3691 glyph3692 glyph3693 glyph3694 glyph3695 glyph3696 glyph3697 glyph3698 glyph3699 glyph3700 glyph3701
+		 Coverage 0: uni0660 uni0661 uni0662 uni0663 uni0664 uni0665 uni0666 uni0667 uni0668 uni0669 uni06F4 uni06F5 uni06F6 uni06F4.locl uni0667.locl
+		-Apply at 0 Single Substitution lookup 68
+		  -Single Substitution lookup 68 subtable
+		     uni0660 => glyph3687
+		     uni0661 => glyph3688
+		     uni0662 => glyph3689
+		     uni0663 => glyph3690
+		     uni0664 => glyph3691
+		     uni0665 => glyph3692
+		     uni0666 => glyph3693
+		     uni0667 => glyph3694
+		     uni0667.locl => glyph3701
+		     uni0668 => glyph3695
+		     uni0669 => glyph3696
+		     uni06F4 => glyph3697
+		     uni06F4.locl => glyph3700
+		     uni06F5 => glyph3698
+		     uni06F6 => glyph3699
+	    -'ccmp' Glyph Composition/Decomposition in Arabic lookup 8 contextual 19
+	       Chaining Substitution by coverage
+	      -Rule 0
+		 Back coverage -1: uni0604
+		 Coverage 0: uni0660 uni0661 uni0662 uni0663 uni0664 uni0665 uni0666 uni0667 uni0668 uni0669 uni06F4 uni06F5 uni06F6 uni06F4.locl uni0667.locl
+		-Apply at 0 Single Substitution lookup 68
+		  -Single Substitution lookup 68 subtable
+		     uni0660 => glyph3687
+		     uni0661 => glyph3688
+		     uni0662 => glyph3689
+		     uni0663 => glyph3690
+		     uni0664 => glyph3691
+		     uni0665 => glyph3692
+		     uni0666 => glyph3693
+		     uni0667 => glyph3694
+		     uni0667.locl => glyph3701
+		     uni0668 => glyph3695
+		     uni0669 => glyph3696
+		     uni06F4 => glyph3697
+		     uni06F4.locl => glyph3700
+		     uni06F5 => glyph3698
+		     uni06F6 => glyph3699
+	    -'ccmp' Glyph Composition/Decomposition in Arabic lookup 8 contextual 20
+	       Chaining Substitution by coverage
+	      -Rule 0
+		 Back coverage -2: uni0604
+		 Back coverage -1: glyph3687 glyph3688 glyph3689 glyph3690 glyph3691 glyph3692 glyph3693 glyph3694 glyph3695 glyph3696 glyph3697 glyph3698 glyph3699 glyph3700 glyph3701
+		 Coverage 0: uni0660 uni0661 uni0662 uni0663 uni0664 uni0665 uni0666 uni0667 uni0668 uni0669 uni06F4 uni06F5 uni06F6 uni06F4.locl uni0667.locl
+		-Apply at 0 Single Substitution lookup 68
+		  -Single Substitution lookup 68 subtable
+		     uni0660 => glyph3687
+		     uni0661 => glyph3688
+		     uni0662 => glyph3689
+		     uni0663 => glyph3690
+		     uni0664 => glyph3691
+		     uni0665 => glyph3692
+		     uni0666 => glyph3693
+		     uni0667 => glyph3694
+		     uni0667.locl => glyph3701
+		     uni0668 => glyph3695
+		     uni0669 => glyph3696
+		     uni06F4 => glyph3697
+		     uni06F4.locl => glyph3700
+		     uni06F5 => glyph3698
+		     uni06F6 => glyph3699
+	    -'ccmp' Glyph Composition/Decomposition in Arabic lookup 8 contextual 21
+	       Chaining Substitution by coverage
+	      -Rule 0
+		 Back coverage -3: uni0604
+		 Back coverage -2: glyph3687 glyph3688 glyph3689 glyph3690 glyph3691 glyph3692 glyph3693 glyph3694 glyph3695 glyph3696 glyph3697 glyph3698 glyph3699 glyph3700 glyph3701
+		 Back coverage -1: glyph3687 glyph3688 glyph3689 glyph3690 glyph3691 glyph3692 glyph3693 glyph3694 glyph3695 glyph3696 glyph3697 glyph3698 glyph3699 glyph3700 glyph3701
+		 Coverage 0: uni0660 uni0661 uni0662 uni0663 uni0664 uni0665 uni0666 uni0667 uni0668 uni0669 uni06F4 uni06F5 uni06F6 uni06F4.locl uni0667.locl
+		-Apply at 0 Single Substitution lookup 68
+		  -Single Substitution lookup 68 subtable
+		     uni0660 => glyph3687
+		     uni0661 => glyph3688
+		     uni0662 => glyph3689
+		     uni0663 => glyph3690
+		     uni0664 => glyph3691
+		     uni0665 => glyph3692
+		     uni0666 => glyph3693
+		     uni0667 => glyph3694
+		     uni0667.locl => glyph3701
+		     uni0668 => glyph3695
+		     uni0669 => glyph3696
+		     uni06F4 => glyph3697
+		     uni06F4.locl => glyph3700
+		     uni06F5 => glyph3698
+		     uni06F6 => glyph3699
+	    -'ccmp' Glyph Composition/Decomposition in Arabic lookup 8 contextual 22
+	       Chaining Substitution by coverage
+	      -Rule 0
+		 Back coverage -4: uni0604
+		 Back coverage -3: glyph3687 glyph3688 glyph3689 glyph3690 glyph3691 glyph3692 glyph3693 glyph3694 glyph3695 glyph3696 glyph3697 glyph3698 glyph3699 glyph3700 glyph3701
+		 Back coverage -2: glyph3687 glyph3688 glyph3689 glyph3690 glyph3691 glyph3692 glyph3693 glyph3694 glyph3695 glyph3696 glyph3697 glyph3698 glyph3699 glyph3700 glyph3701
+		 Back coverage -1: glyph3687 glyph3688 glyph3689 glyph3690 glyph3691 glyph3692 glyph3693 glyph3694 glyph3695 glyph3696 glyph3697 glyph3698 glyph3699 glyph3700 glyph3701
+		 Coverage 0: uni0660 uni0661 uni0662 uni0663 uni0664 uni0665 uni0666 uni0667 uni0668 uni0669 uni06F4 uni06F5 uni06F6 uni06F4.locl uni0667.locl
+		-Apply at 0 Single Substitution lookup 68
+		  -Single Substitution lookup 68 subtable
+		     uni0660 => glyph3687
+		     uni0661 => glyph3688
+		     uni0662 => glyph3689
+		     uni0663 => glyph3690
+		     uni0664 => glyph3691
+		     uni0665 => glyph3692
+		     uni0666 => glyph3693
+		     uni0667 => glyph3694
+		     uni0667.locl => glyph3701
+		     uni0668 => glyph3695
+		     uni0669 => glyph3696
+		     uni06F4 => glyph3697
+		     uni06F4.locl => glyph3700
+		     uni06F5 => glyph3698
+		     uni06F6 => glyph3699
+	  -'ccmp' Glyph Composition/Decomposition in Arabic lookup 9
+	    -'ccmp' Glyph Composition/Decomposition in Arabic lookup 9 contextual 0
+	       Chaining Substitution by coverage
+	      -Rule 0
+		 Back coverage -1: uni0602
+		 Coverage 0: uni0660 uni0661 uni0662 uni0663 uni0664 uni0665 uni0666 uni0667 uni0668 uni0669 uni06F4 uni06F5 uni06F6 uni06F4.locl uni0667.locl
+		-Apply at 0 Multiple Substitution lookup 69
+		  -Multiple Substitution lookup 69 subtable
+		     uni0660 => glyph3704 glyph3687
+		     uni0661 => glyph3704 glyph3688
+		     uni0662 => glyph3704 glyph3689
+		     uni0663 => glyph3704 glyph3690
+		     uni0664 => glyph3704 glyph3691
+		     uni0665 => glyph3704 glyph3692
+		     uni0666 => glyph3704 glyph3693
+		     uni0667 => glyph3704 glyph3694
+		     uni0667.locl => glyph3704 glyph3701
+		     uni0668 => glyph3704 glyph3695
+		     uni0669 => glyph3704 glyph3696
+		     uni06F4 => glyph3704 glyph3697
+		     uni06F4.locl => glyph3704 glyph3700
+		     uni06F5 => glyph3704 glyph3698
+		     uni06F6 => glyph3704 glyph3699
+	    +'ccmp' Glyph Composition/Decomposition in Arabic lookup 9 contextual 1
+	-'isol' Isolated Forms
+	  -'isol' Isolated Forms in Arabic lookup 10
+	    -'isol' Isolated Forms in Arabic lookup 10 subtable
+	       uni06C1 => uni0647
+	       uni06C2 => uni06C0
+	       uni06C3 => uni0629
+	-'fina' Terminal Forms
+	  -'fina' Terminal Forms in Arabic lookup 11
+	    -'fina' Terminal Forms in Arabic lookup 11 subtable
+	       glyph1650 => glyph1651
+	       uni0620 => uni0620.fina
+	       uni0622 => uniFE82
+	       uni0623 => uniFE84
+	       uni0624 => uniFE86
+	       uni0625 => uniFE88
+	       uni0626 => uniFE8A
+	       uni0627 => uniFE8E
+	       uni0628 => uniFE90
+	       uni0629 => uniFE94
+	       uni062A => uniFE96
+	       uni062B => uniFE9A
+	       uni062C => uniFE9E
+	       uni062D => uniFEA2
+	       uni062E => uniFEA6
+	       uni062F => uniFEAA
+	       uni0630 => uniFEAC
+	       uni0631 => uniFEAE
+	       uni0632 => uniFEB0
+	       uni0633 => uniFEB2
+	       uni0634 => uniFEB6
+	       uni0635 => uniFEBA
+	       uni0636 => uniFEBE
+	       uni0637 => uniFEC2
+	       uni0638 => uniFEC6
+	       uni0639 => uniFECA
+	       uni063A => uniFECE
+	       uni063B => uni063B.fina
+	       uni063C => uni063C.fina
+	       uni063D => uni063D.fina
+	       uni063E => uni063E.fina
+	       uni063F => uni063F.fina
+	       uni0641 => uniFED2
+	       uni0642 => uniFED6
+	       uni0643 => uniFEDA
+	       uni0644 => uniFEDE
+	       uni0645 => uniFEE2
+	       uni0646 => uniFEE6
+	       uni0647 => uniFBAB
+	       uni0648 => uniFEEE
+	       uni0649 => uniFEF0
+	       uni064A => uniFEF2
+	       uni066E => uni066E
+	       uni066F => uni066F.fina
+	       uni0671 => uniFB51
+	       uni0672 => uni0672.fina
+	       uni0673 => uni0673.fina
+	       uni0675 => uni0675.fina
+	       uni0676 => uni0676.fina
+	       uni0677 => uni0677.fina
+	       uni0678 => uni0678.fina
+	       uni0679 => uniFB67
+	       uni067A => uniFB5F
+	       uni067B => uniFB53
+	       uni067C => uni067C.fina
+	       uni067D => uni067D.fina
+	       uni067E => uniFB57
+	       uni067F => uniFB63
+	       uni0680 => uniFB5B
+	       uni0681 => uni0681.fina
+	       uni0682 => uni0682.fina
+	       uni0683 => uniFB77
+	       uni0684 => uniFB73
+	       uni0685 => uni0685.fina
+	       uni0686 => uniFB7B
+	       uni0687 => uniFB7F
+	       uni0688 => uniFB89
+	       uni0689 => uni0689.fina
+	       uni068A => uni068A.fina
+	       uni068B => uni068B.fina
+	       uni068C => uniFB85
+	       uni068D => uniFB83
+	       uni068E => uniFB87
+	       uni068F => uni068F.fina
+	       uni0690 => uni0690.fina
+	       uni0691 => uniFB8D
+	       uni0692 => uni0692.fina
+	       uni0693 => uni0693.fina
+	       uni0694 => uni0694.fina
+	       uni0695 => uni0695.fina
+	       uni0696 => uni0696.fina
+	       uni0697 => uni0697.fina
+	       uni0698 => uniFB8B
+	       uni0699 => uni0699.fina
+	       uni069A => uni069A.fina
+	       uni069B => uni069B.fina
+	       uni069C => uni069C.fina
+	       uni069D => uni069D.fina
+	       uni069E => uni069E.fina
+	       uni069F => uni069F.fina
+	       uni06A0 => uni06A0.fina
+	       uni06A1 => uni06A1
+	       uni06A2 => uni06A2.fina
+	       uni06A3 => uni06A3.fina
+	       uni06A4 => uniFB6B
+	       uni06A5 => uni06A5.fina
+	       uni06A6 => uniFB6F
+	       uni06A7 => uni06A7.fina
+	       uni06A8 => uni06A8.fina
+	       uni06A9 => uniFB8F
+	       uni06AA => uni06AA.fina
+	       uni06AB => uni06AB
+	       uni06AC => uni06AC.fina
+	       uni06AD => uniFBD4
+	       uni06AE => uni06AE.fina
+	       uni06AF => uniFB93
+	       uni06B0 => uni06B0.fina
+	       uni06B1 => uniFB9B
+	       uni06B2 => uni06B2.fina
+	       uni06B3 => uniFB97
+	       uni06B4 => uni06B4.fina
+	       uni06B5 => uni06B5.fina
+	       uni06B6 => uni06B6.fina
+	       uni06B7 => uni06B7.fina
+	       uni06B8 => uni06B8.fina
+	       uni06B9 => uni06B9.fina
+	       uni06BA => uniFB9F
+	       uni06BB => uniFBA1
+	       uni06BC => uni06BC.fina
+	       uni06BD => uni06BD.fina
+	       uni06BE => uniFBAD
+	       uni06BF => uni06BF.fina
+	       uni06C0 => uniFBA5
+	       uni06C4 => uni06C4.fina
+	       uni06C5 => uniFBE1
+	       uni06C6 => uniFBDA
+	       uni06C7 => uniFBD8
+	       uni06C8 => uniFBDC
+	       uni06C9 => uniFBE3
+	       uni06CA => uni06CA.fina
+	       uni06CB => uniFBDF
+	       uni06CC => uniFBFD
+	       uni06CD => uni06CD.fina
+	       uni06CE => uni06CE.fina
+	       uni06CF => uni06CF.fina
+	       uni06D0 => uniFBE5
+	       uni06D1 => uni06D1.fina
+	       uni06D2 => uniFBAF
+	       uni06D3 => uniFBB1
+	       uni06D5 => uniFBAB
+	       uni06EE => uni06EE.fina
+	       uni06EF => uni06EF.fina
+	       uni06FA => uni06FA.fina
+	       uni06FB => uni06FB.fina
+	       uni06FC => uni06FC.fina
+	       uni06FF => uni06FF.fina
+	       uni0750 => uni0750.fina
+	       uni0751 => uni0751.fina
+	       uni0752 => uni0752.fina
+	       uni0753 => uni0753.fina
+	       uni0754 => uni0754.fina
+	       uni0755 => uni0755.fina
+	       uni0756 => uni0756.fina
+	       uni0757 => uni0757.fina
+	       uni0758 => uni0758.fina
+	       uni0759 => uni0759.fina
+	       uni075A => uni075A.fina
+	       uni075B => uni075B.fina
+	       uni075C => uni075C.fina
+	       uni075D => uni075D.fina
+	       uni075E => uni075E.fina
+	       uni075F => uni075F.fina
+	       uni0760 => uni0760.fina
+	       uni0761 => uni0761.fina
+	       uni0762 => uni0762.fina
+	       uni0763 => uni0763.fina
+	       uni0764 => uni0764.fina
+	       uni0765 => uni0765.fina
+	       uni0766 => uni0766.fina
+	       uni0767 => uni0767.fina
+	       uni0768 => uni0768.fina
+	       uni0769 => uni0769.fina
+	       uni076A => uni076A.fina
+	       uni076B => uni076B.fina
+	       uni076C => uni076C.fina
+	       uni076D => uni076D.fina
+	       uni076E => uni076E.fina
+	       uni076F => uni076F.fina
+	       uni0770 => uni0770.fina
+	       uni0771 => uni0771.fina
+	       uni0772 => uni0772.fina
+	       uni0773 => uni0773.fina
+	       uni0774 => uni0774.fina
+	       uni0775 => uni0775.fina
+	       uni0776 => uni0776.fina
+	       uni0777 => uni0777.fina
+	       uni0778 => uni0778.fina
+	       uni0779 => uni0779.fina
+	       uni077A => uni077A.fina
+	       uni077B => uni077B.fina
+	       uni077C => uni077C.fina
+	       uni077D => uni077D.fina
+	       uni077E => uni077E.fina
+	       uni077F => uni077F.fina
+	       uni08A0 => uni08A0.fina
+	       uni08A2 => uni08A2.fina
+	       uni08A3 => uni08A3.fina
+	       uni08A4 => uni08A4.fina
+	       uni08A5 => uni08A5.fina
+	       uni08A6 => uni08A6.fina
+	       uni08A7 => uni08A7.fina
+	       uni08A8 => uni08A8.fina
+	       uni08A9 => uni08A9.fina
+	       uni08AA => uni08AA.fina
+	       uni08AB => uni08AB.fina
+	       uni08AC => uni08AC.fina
+	-'medi' Medial Forms
+	  -'medi' Medial Forms in Arabic lookup 12
+	    -'medi' Medial Forms in Arabic lookup 12 subtable
+	       uni0620 => uni0620.medi
+	       uni0626 => uniFE8C
+	       uni0628 => uniFE92
+	       uni062A => uniFE98
+	       uni062B => uniFE9C
+	       uni062C => uniFEA0
+	       uni062D => uniFEA4
+	       uni062E => uniFEA8
+	       uni0633 => uniFEB4
+	       uni0634 => uniFEB8
+	       uni0635 => uniFEBC
+	       uni0636 => uniFEC0
+	       uni0637 => uniFEC4
+	       uni0638 => uniFEC8
+	       uni0639 => uniFECC
+	       uni063A => uniFED0
+	       uni063B => uni063B.medi
+	       uni063C => uni063C.medi
+	       uni063D => uni063D.medi
+	       uni063E => uni063E.medi
+	       uni063F => uni063F.medi
+	       uni0641 => uniFED4
+	       uni0642 => uniFED8
+	       uni0643 => uniFEDC
+	       uni0644 => uniFEE0
+	       uni0645 => uniFEE4
+	       uni0646 => uniFEE8
+	       uni0647 => uniFBAD
+	       uni0649 => uniFBE8
+	       uni064A => uniFBFF
+	       uni066E => uniFBE8
+	       uni066F => uni066F.medi
+	       uni0678 => uniFE8B
+	       uni0679 => uniFB69
+	       uni067A => uniFB61
+	       uni067B => uniFB55
+	       uni067C => uni067C.medi
+	       uni067D => uni067D.medi
+	       uni067E => uniFB59
+	       uni067F => uniFB65
+	       uni0680 => uniFB5D
+	       uni0681 => uni0681.medi
+	       uni0682 => uni0682.medi
+	       uni0683 => uniFB79
+	       uni0684 => uniFB75
+	       uni0685 => uni0685.medi
+	       uni0686 => uniFB7D
+	       uni0687 => uniFB81
+	       uni069A => uni069A.medi
+	       uni069B => uni069B.medi
+	       uni069C => uni069C.medi
+	       uni069D => uni069D.medi
+	       uni069E => uni069E.medi
+	       uni069F => uni069F
+	       uni06A0 => uni06A0.medi
+	       uni06A1 => uni066F.medi
+	       uni06A2 => uni06A2.medi
+	       uni06A3 => uni06A3.medi
+	       uni06A4 => uniFB6D
+	       uni06A5 => uni06A5.medi
+	       uni06A6 => uniFB71
+	       uni06A7 => uniFED4
+	       uni06A8 => uniFB6D
+	       uni06A9 => uniFB91
+	       uni06AA => uni06AA.medi
+	       uni06AB => uni06AB.medi
+	       uni06AC => uni06AC.medi
+	       uni06AD => uniFBD6
+	       uni06AE => uni06AE.medi
+	       uni06AF => uniFB95
+	       uni06B0 => uni06B0.medi
+	       uni06B1 => uniFB9D
+	       uni06B2 => uni06B2.medi
+	       uni06B3 => uniFB99
+	       uni06B4 => uni06B4.medi
+	       uni06B5 => uni06B5.medi
+	       uni06B6 => uni06B6.medi
+	       uni06B7 => uni06B7.medi
+	       uni06B8 => uni06B8.medi
+	       uni06B9 => uni06B9.medi
+	       uni06BA => uniFEE8
+	       uni06BB => uniFB69
+	       uni06BC => uni06BC.medi
+	       uni06BD => uniFB59
+	       uni06BE => uniFBAD
+	       uni06BF => uni06BF.medi
+	       uni06C1 => uniFBA9
+	       uni06CC => uniFBFF
+	       uni06CE => uni06CE.medi
+	       uni06D0 => uniFBE7
+	       uni06D1 => uniFB58
+	       uni06FA => uni06FA.medi
+	       uni06FB => uni06FB.medi
+	       uni06FC => uni06FC.medi
+	       uni06FF => uni06FF.medi
+	       uni0750 => uni0750.medi
+	       uni0751 => uni0751.medi
+	       uni0752 => uni0752.medi
+	       uni0753 => uni0753.medi
+	       uni0754 => uni0754.medi
+	       uni0755 => uni0755.medi
+	       uni0756 => uni0756.medi
+	       uni0757 => uni0757.medi
+	       uni0758 => uni0758.medi
+	       uni075C => uni075C.medi
+	       uni075D => uni075D.medi
+	       uni075E => uni075E.medi
+	       uni075F => uni075F.medi
+	       uni0760 => uni0760.medi
+	       uni0761 => uni0761.medi
+	       uni0762 => uni0762.medi
+	       uni0763 => uni0763.medi
+	       uni0764 => uni0764.medi
+	       uni0765 => uni0765.medi
+	       uni0766 => uni0766.medi
+	       uni0767 => uni0767.medi
+	       uni0768 => uni0768.medi
+	       uni0769 => uni0769.medi
+	       uni076A => uni076A.medi
+	       uni076D => uni076D.medi
+	       uni076E => uni076E.medi
+	       uni076F => uni076F.medi
+	       uni0770 => uni0770.medi
+	       uni0772 => uni0772.medi
+	       uni0775 => uni0775.medi
+	       uni0776 => uni0776.medi
+	       uni0777 => uni0777.medi
+	       uni077A => uni0775.medi
+	       uni077B => uni0776.medi
+	       uni077C => uni077C.medi
+	       uni077D => uni077D.medi
+	       uni077E => uni077E.medi
+	       uni077F => uni077F.medi
+	       uni08A0 => uni08A0.medi
+	       uni08A2 => uni08A2.medi
+	       uni08A3 => uni08A3.medi
+	       uni08A4 => uni08A4.medi
+	       uni08A5 => uni08A5.medi
+	       uni08A6 => uni08A6.medi
+	       uni08A7 => uni08A7.medi
+	       uni08A8 => uni08A8.medi
+	       uni08A9 => uni08A9.medi
+	-'init' Initial Forms
+	  -'init' Initial Forms in Arabic lookup 13
+	    -'init' Initial Forms in Arabic lookup 13 subtable
+	       glyph1650 => uniFBD5
+	       uni0620 => uni0620.init
+	       uni0626 => uniFE8B
+	       uni0628 => uniFE91
+	       uni062A => uniFE97
+	       uni062B => uniFE9B
+	       uni062C => uniFE9F
+	       uni062D => uniFEA3
+	       uni062E => uniFEA7
+	       uni0633 => uniFEB3
+	       uni0634 => uniFEB7
+	       uni0635 => uniFEBB
+	       uni0636 => uniFEBF
+	       uni0637 => uni0637
+	       uni0638 => uni0638
+	       uni0639 => uniFECB
+	       uni063A => uniFECF
+	       uni063B => uni063B.init
+	       uni063C => uni063C.init
+	       uni063D => uni063D.init
+	       uni063E => uni063E.init
+	       uni063F => uni063F.init
+	       uni0641 => uniFED3
+	       uni0642 => uniFED7
+	       uni0643 => uniFEDB
+	       uni0644 => uniFEDF
+	       uni0645 => uniFEE3
+	       uni0646 => uniFEE7
+	       uni0647 => uni06BE
+	       uni0649 => uniFBE8
+	       uni064A => uniFBFE
+	       uni066E => uniFBE8
+	       uni066F => uni066F.init
+	       uni0678 => uniFE8B
+	       uni0679 => uniFB68
+	       uni067A => uniFB60
+	       uni067B => uniFB54
+	       uni067C => uni067C.init
+	       uni067D => uni067D.init
+	       uni067E => uniFB58
+	       uni067F => uniFB64
+	       uni0680 => uniFB5C
+	       uni0681 => uni0681.init
+	       uni0682 => uni0682.init
+	       uni0683 => uniFB78
+	       uni0684 => uniFB74
+	       uni0685 => uni0685.init
+	       uni0686 => uniFB7C
+	       uni0687 => uniFB80
+	       uni069A => uni069A.init
+	       uni069B => uni069B.init
+	       uni069C => uni069C.init
+	       uni069D => uni069D.init
+	       uni069E => uni069E.init
+	       uni069F => uni069F
+	       uni06A0 => uni06A0.init
+	       uni06A1 => uni066F.init
+	       uni06A2 => uni06A2.init
+	       uni06A3 => uni06A3.init
+	       uni06A4 => uniFB6C
+	       uni06A5 => uni06A5.init
+	       uni06A6 => uniFB70
+	       uni06A7 => uniFED3
+	       uni06A8 => uniFB6C
+	       uni06A9 => uniFB90
+	       uni06AA => uni06AA.init
+	       uni06AB => uni06AB.init
+	       uni06AC => uni06AC.init
+	       uni06AD => uniFBD5
+	       uni06AE => uni06AE.init
+	       uni06AF => uniFB94
+	       uni06B0 => uni06B0.init
+	       uni06B1 => uniFB9C
+	       uni06B2 => uni06B2.init
+	       uni06B3 => uniFB98
+	       uni06B4 => uni06B4.init
+	       uni06B5 => uni06B5.init
+	       uni06B6 => uni06B6.init
+	       uni06B7 => uni06B7.init
+	       uni06B8 => uni06B8.init
+	       uni06B9 => uni06B9.init
+	       uni06BA => uniFEE7
+	       uni06BB => uniFB68
+	       uni06BC => uni06BC.init
+	       uni06BD => uniFB58
+	       uni06BE => uni06BE
+	       uni06BF => uni06BF.init
+	       uni06C1 => uniFBA8
+	       uni06CC => uniFBFE
+	       uni06CE => uni06CE.medi
+	       uni06D0 => uniFB54
+	       uni06D1 => uniFB58
+	       uni06FA => uni06FA.init
+	       uni06FB => uni06FB.init
+	       uni06FC => uni06FC.init
+	       uni06FF => uni06FF.init
+	       uni0750 => uni0750.init
+	       uni0751 => uni0751.init
+	       uni0752 => uni0752.init
+	       uni0753 => uni0753.init
+	       uni0754 => uni0754.init
+	       uni0755 => uni0755.init
+	       uni0756 => uni0756.init
+	       uni0757 => uni0757.init
+	       uni0758 => uni0758.init
+	       uni075C => uni075C.init
+	       uni075D => uni075D.init
+	       uni075E => uni075E.init
+	       uni075F => uni075F.init
+	       uni0760 => uni0760.init
+	       uni0761 => uni0761.init
+	       uni0762 => uni0762.init
+	       uni0763 => uni0763.init
+	       uni0764 => uni0764.init
+	       uni0765 => uni0765.init
+	       uni0766 => uni0766.init
+	       uni0767 => uni0767.init
+	       uni0768 => uni0768.init
+	       uni0769 => uni0769.init
+	       uni076A => uni076A.init
+	       uni076D => uni076D.init
+	       uni076E => uni076E.init
+	       uni076F => uni076F.init
+	       uni0770 => uni0770.init
+	       uni0772 => uni0772.init
+	       uni0775 => uni0775.init
+	       uni0776 => uni0776.init
+	       uni0777 => uni0777.init
+	       uni077A => uni0775.init
+	       uni077B => uni0776.init
+	       uni077C => uni077C.init
+	       uni077D => uni077D.init
+	       uni077E => uni077E.init
+	       uni077F => uni077F.init
+	       uni08A0 => uni08A0.init
+	       uni08A2 => uni08A2.init
+	       uni08A3 => uni08A3.init
+	       uni08A4 => uni08A4.init
+	       uni08A5 => uni08A5.init
+	       uni08A6 => uni08A6.init
+	       uni08A7 => uni08A7.init
+	       uni08A8 => uni08A8.init
+	       uni08A9 => uni08A9.init
+	-'rlig' Required Ligatures
+	  -'rlig' Required Ligatures in Arabic lookup 15
+	    -'rlig' Required Ligatures in Arabic lookup 15 subtable
+	       uni06B5.init_uniFE8E.rlig <= uni06B5.init uniFE8E
+	       uni06B5.medi_uniFE8E.rlig <= uni06B5.medi uniFE8E
+	       uni06B6.init_uniFE8E.rlig <= uni06B6.init uniFE8E
+	       uni06B6.medi_uniFE8E.rlig <= uni06B6.medi uniFE8E
+	       uni06B7.init_uniFE8E.rlig <= uni06B7.init uniFE8E
+	       uni06B7.medi_uniFE8E.rlig <= uni06B7.medi uniFE8E
+	       uni06B8.init_uniFE8E.rlig <= uni06B8.init uniFE8E
+	       uni06B8.medi_uniFE8E.rlig <= uni06B8.medi uniFE8E
+	       uni076A.init_uniFE8E.rlig <= uni076A.init uniFE8E
+	       uni076A.medi_uniFE8E.rlig <= uni076A.medi uniFE8E
+	       uni08A6.init_uniFE8E.rlig <= uni08A6.init uniFE8E
+	       uni08A6.medi_uniFE8E.rlig <= uni08A6.medi uniFE8E
+	       uniFEDF_uni0672.fina.rlig <= uniFEDF uni0672.fina
+	       uniFEDF_uni0673.fina.rlig <= uniFEDF uni0673.fina
+	       uniFEDF_uni0675.fina.rlig <= uniFEDF uni0675.fina
+	       uniFEDF_uni0773.fina.rlig <= uniFEDF uni0773.fina
+	       uniFEDF_uni0774.fina.rlig <= uniFEDF uni0774.fina
+	       uniFEDF_uniFB51.rlig <= uniFEDF uniFB51
+	       uniFEE0_uni0672.fina.rlig <= uniFEE0 uni0672.fina
+	       uniFEE0_uni0673.fina.rlig <= uniFEE0 uni0673.fina
+	       uniFEE0_uni0675.fina.rlig <= uniFEE0 uni0675.fina
+	       uniFEE0_uni0773.fina.rlig <= uniFEE0 uni0773.fina
+	       uniFEE0_uni0774.fina.rlig <= uniFEE0 uni0774.fina
+	       uniFEE0_uniFB51.rlig <= uniFEE0 uniFB51
+	       uniFEF5 <= uniFEDF uniFE82
+	       uniFEF6 <= uniFEE0 uniFE82
+	       uniFEF7 <= uniFEDF uniFE84
+	       uniFEF8 <= uniFEE0 uniFE84
+	       uniFEF9 <= uniFEDF uniFE88
+	       uniFEFA <= uniFEE0 uniFE88
+	       uniFEFB <= uniFEDF uniFE8E
+	       uniFEFC <= uniFEE0 uniFE8E
+	-'liga' Standard Ligatures
+	  -'liga' Standard Ligatures in Arabic lookup 16
+	    -'liga' Standard Ligatures in Arabic lookup 16 subtable
+	       uniFDF2 <= uni0627 uni0627 uniFEDF uniFEE0 uni06C1
+	       uniFDF2 <= uni0627 uni0627 uniFEDF uniFEE0 uniFBAB
+	  -'liga' Standard Ligatures in Arabic lookup 17
+	    -'liga' Standard Ligatures in Arabic lookup 17 subtable
+	       uniFDF2 <= uni0627 uniFEDF uniFEE0 uni06C1
+	       uniFDF2 <= uni0627 uniFEDF uniFEE0 uniFBAB
+	       uniFEDF_uniFEE0_uniFBAB.liga <= uniFEDF uniFEE0 uni06C1
+	       uniFEDF_uniFEE0_uniFBAB.liga <= uniFEDF uniFEE0 uniFBAB
+	  -'liga' Standard Ligatures in Arabic lookup 18
+	    -'liga' Standard Ligatures in Arabic lookup 18 subtable
+	       uniFDFC <= uni0631 uniFBFE uniFE8E uni0644
+	       uniFEDF_uniFEE0_uni06C1.liga <= uniFEDF uniFEE0 uni06C1
+	       uniFEDF_uniFEE0_uni06C1.liga <= uniFEDF uniFEE0 uniFBAB
+	  -'liga' Standard Ligatures in Arabic lookup 20
+	    -'liga' Standard Ligatures in Arabic lookup 20 contextual 0
+	       Chaining Substitution by coverage
+	      -Rule 0
+		 Coverage 0: uniFDFD
+		 Lookahead coverage 1: glyph3855
+	    -'liga' Standard Ligatures in Arabic lookup 20 contextual 1
+	       Chaining Substitution by coverage
+	      -Rule 0
+		 Coverage 0: uniFDFD
+		+Apply at 0 Multiple Substitution lookup 75
+	-'dlig' Discretionary Ligatures
+	  -'dlig' Discretionary Ligatures in Arabic lookup 19
+	    -'dlig' Discretionary Ligatures in Arabic lookup 19 contextual 0
+	       Chaining Substitution by coverage
+	      -Rule 0
+		 Coverage 0: uniFEE3
+		 Coverage 1: uniFEA4
+		 Coverage 2: uniFEE4
+		 Coverage 3: uniFEAA
+		 Lookahead coverage 4: uni064B uni064C uni064D uni064E uni064F uni0650 uni0651 uni0652 uni064B_uni0651.ccmp uniFC5E uniFC5F uniFC60 uniFC61 uniFC62 uni0615 glyph1332 uni0653 uni0654 uni0655 uni0670 uni06D6 uni06D7 uni06D8 uni06D9 uni06DA uni06DB uni06DC uni06DF uni06E0 uni06E1 uni06E2 uni06E3 uni06E4 uni06E7 uni06E8 uni06EA uni06EB uni06ED uni0610 uni0611 uni0612 uni0613 uni0614 uni0656 uni0657 uni0658 glyph2992 uni0659 uni065A uni065B uni065C uni065D uni065E uniFC63 uni064E_uni0654.ccmp uni064B_uni0654.ccmp uni064F_uni0654.ccmp uni064C_uni0654.ccmp uni0652_uni0654.ccmp uni0650_uni0655.ccmp uni064D_uni0655.ccmp uni0616 uni0617 uni0618 uni0619 uni061A uni065F uni08E4 uni08E5 uni08E6 uni08E7 uni08E8 uni08E9 uni08F0 uni08F1 uni08F2 uni08F3 uni08F4 uni08F5 uni08F6 uni08F7 uni08F8 uni08F9 uni08FA uni08FB uni08FC uni08FD uni08FE uni06EC
+	    -'dlig' Discretionary Ligatures in Arabic lookup 19 contextual 1
+	       Chaining Substitution by coverage
+	      -Rule 0
+		 Coverage 0: uniFEE3
+		 Coverage 1: uniFEA4
+		 Coverage 2: uniFEE4
+		 Coverage 3: uniFEAA
+		-Apply at 0 Ligature Substitution lookup 70
+		  -Ligature Substitution lookup 70 subtable
+		     uniFDF4 <= uniFEE3 uniFEA4 uniFEE4 uniFEAA
+	    -'dlig' Discretionary Ligatures in Arabic lookup 19 contextual 2
+	       Chaining Substitution by coverage
+	      -Rule 0
+		 Coverage 0: uniFE9F
+		 Coverage 1: uniFEDE
+		 Coverage 2: space
+		 Coverage 3: uniFE9F
+		 Coverage 4: uniFEFC
+		 Coverage 5: uniFEDF
+		 Coverage 6: uniFBAB uni06C1
+		 Lookahead coverage 7: uni064B uni064C uni064D uni064E uni064F uni0650 uni0651 uni0652 uni064B_uni0651.ccmp uniFC5E uniFC5F uniFC60 uniFC61 uniFC62 uni0615 glyph1332 uni0653 uni0654 uni0655 uni0670 uni06D6 uni06D7 uni06D8 uni06D9 uni06DA uni06DB uni06DC uni06DF uni06E0 uni06E1 uni06E2 uni06E3 uni06E4 uni06E7 uni06E8 uni06EA uni06EB uni06ED uni0610 uni0611 uni0612 uni0613 uni0614 uni0656 uni0657 uni0658 glyph2992 uni0659 uni065A uni065B uni065C uni065D uni065E uniFC63 uni064E_uni0654.ccmp uni064B_uni0654.ccmp uni064F_uni0654.ccmp uni064C_uni0654.ccmp uni0652_uni0654.ccmp uni0650_uni0655.ccmp uni064D_uni0655.ccmp uni0616 uni0617 uni0618 uni0619 uni061A uni065F uni08E4 uni08E5 uni08E6 uni08E7 uni08E8 uni08E9 uni08F0 uni08F1 uni08F2 uni08F3 uni08F4 uni08F5 uni08F6 uni08F7 uni08F8 uni08F9 uni08FA uni08FB uni08FC uni08FD uni08FE uni06EC
+	    -'dlig' Discretionary Ligatures in Arabic lookup 19 contextual 3
+	       Chaining Substitution by coverage
+	      -Rule 0
+		 Coverage 0: uniFE9F
+		 Coverage 1: uniFEDE
+		 Coverage 2: space
+		 Coverage 3: uniFE9F
+		 Coverage 4: uniFEFC
+		 Coverage 5: uniFEDF
+		 Coverage 6: uniFBAB uni06C1
+		-Apply at 0 Ligature Substitution lookup 71
+		  -Ligature Substitution lookup 71 subtable
+		     uniFDFB <= uniFE9F uniFEDE space uniFE9F uniFEFC uniFEDF uni06C1
+		     uniFDFB <= uniFE9F uniFEDE space uniFE9F uniFEFC uniFEDF uniFBAB
+	    -'dlig' Discretionary Ligatures in Arabic lookup 19 contextual 4
+	       Chaining Substitution by coverage
+	      -Rule 0
+		 Coverage 0: uniFEBB
+		 Coverage 1: uniFEE0
+		 Coverage 2: uniFBFD uniFEF0
+		 Coverage 3: space
+		 Coverage 4: uniFDF2
+		 Coverage 5: space
+		 Coverage 6: uniFECB
+		 Coverage 7: uniFEE0
+		 Coverage 8: uniFBFF
+		 Coverage 9: uniFBAB uni06C1
+		 Coverage 10: space
+		 Coverage 11: uni0648
+		 Coverage 12: uniFEB3
+		 Coverage 13: uniFEE0
+		 Coverage 14: uniFEE2
+		 Lookahead coverage 15: uni064B uni064C uni064D uni064E uni064F uni0650 uni0651 uni0652 uni064B_uni0651.ccmp uniFC5E uniFC5F uniFC60 uniFC61 uniFC62 uni0615 glyph1332 uni0653 uni0654 uni0655 uni0670 uni06D6 uni06D7 uni06D8 uni06D9 uni06DA uni06DB uni06DC uni06DF uni06E0 uni06E1 uni06E2 uni06E3 uni06E4 uni06E7 uni06E8 uni06EA uni06EB uni06ED uni0610 uni0611 uni0612 uni0613 uni0614 uni0656 uni0657 uni0658 glyph2992 uni0659 uni065A uni065B uni065C uni065D uni065E uniFC63 uni064E_uni0654.ccmp uni064B_uni0654.ccmp uni064F_uni0654.ccmp uni064C_uni0654.ccmp uni0652_uni0654.ccmp uni0650_uni0655.ccmp uni064D_uni0655.ccmp uni0616 uni0617 uni0618 uni0619 uni061A uni065F uni08E4 uni08E5 uni08E6 uni08E7 uni08E8 uni08E9 uni08F0 uni08F1 uni08F2 uni08F3 uni08F4 uni08F5 uni08F6 uni08F7 uni08F8 uni08F9 uni08FA uni08FB uni08FC uni08FD uni08FE uni06EC
+	    -'dlig' Discretionary Ligatures in Arabic lookup 19 contextual 5
+	       Chaining Substitution by coverage
+	      -Rule 0
+		 Coverage 0: uniFEBB
+		 Coverage 1: uniFEE0
+		 Coverage 2: uniFBFD uniFEF0
+		 Coverage 3: space
+		 Coverage 4: uniFDF2
+		 Coverage 5: space
+		 Coverage 6: uniFECB
+		 Coverage 7: uniFEE0
+		 Coverage 8: uniFBFF
+		 Coverage 9: uniFBAB uni06C1
+		 Coverage 10: space
+		 Coverage 11: uni0648
+		 Coverage 12: uniFEB3
+		 Coverage 13: uniFEE0
+		 Coverage 14: uniFEE2
+		-Apply at 0 Ligature Substitution lookup 72
+		  -Ligature Substitution lookup 72 subtable
+		     uniFDFA <= uniFEBB uniFEE0 uniFBFD space uniFDF2 space uniFECB uniFEE0 uniFBFF uni06C1 space uni0648 uniFEB3 uniFEE0 uniFEE2
+		     uniFDFA <= uniFEBB uniFEE0 uniFBFD space uniFDF2 space uniFECB uniFEE0 uniFBFF uniFBAB space uni0648 uniFEB3 uniFEE0 uniFEE2
+		     uniFDFA <= uniFEBB uniFEE0 uniFEF0 space uniFDF2 space uniFECB uniFEE0 uniFBFF uniFBAB space uni0648 uniFEB3 uniFEE0 uniFEE2
+	    -'dlig' Discretionary Ligatures in Arabic lookup 19 contextual 6
+	       Chaining Substitution by coverage
+	      -Rule 0
+		 Coverage 0: uniFEBB
+		 Coverage 1: uniFEE0
+		 Coverage 2: uniFBFD uniFEF0
+		 Coverage 3: space
+		 Coverage 4: uniFDF2
+		 Coverage 5: space
+		 Coverage 6: uniFECB
+		 Coverage 7: uniFEE0
+		 Coverage 8: uniFBFF
+		 Coverage 9: uniFBAB uni06C1
+		 Coverage 10: space
+		 Coverage 11: uni0648
+		 Coverage 12: uni0622
+		 Coverage 13: uniFEDF
+		 Coverage 14: uniFBAB uni06C1
+		 Coverage 15: space
+		 Coverage 16: uni0648
+		 Coverage 17: uniFEB3
+		 Coverage 18: uniFEE0
+		 Coverage 19: uniFEE2
+		 Lookahead coverage 20: uni064B uni064C uni064D uni064E uni064F uni0650 uni0651 uni0652 uni064B_uni0651.ccmp uniFC5E uniFC5F uniFC60 uniFC61 uniFC62 uni0615 glyph1332 uni0653 uni0654 uni0655 uni0670 uni06D6 uni06D7 uni06D8 uni06D9 uni06DA uni06DB uni06DC uni06DF uni06E0 uni06E1 uni06E2 uni06E3 uni06E4 uni06E7 uni06E8 uni06EA uni06EB uni06ED uni0610 uni0611 uni0612 uni0613 uni0614 uni0656 uni0657 uni0658 glyph2992 uni0659 uni065A uni065B uni065C uni065D uni065E uniFC63 uni064E_uni0654.ccmp uni064B_uni0654.ccmp uni064F_uni0654.ccmp uni064C_uni0654.ccmp uni0652_uni0654.ccmp uni0650_uni0655.ccmp uni064D_uni0655.ccmp uni0616 uni0617 uni0618 uni0619 uni061A uni065F uni08E4 uni08E5 uni08E6 uni08E7 uni08E8 uni08E9 uni08F0 uni08F1 uni08F2 uni08F3 uni08F4 uni08F5 uni08F6 uni08F7 uni08F8 uni08F9 uni08FA uni08FB uni08FC uni08FD uni08FE uni06EC
+	    -'dlig' Discretionary Ligatures in Arabic lookup 19 contextual 7
+	       Chaining Substitution by coverage
+	      -Rule 0
+		 Coverage 0: uniFEBB
+		 Coverage 1: uniFEE0
+		 Coverage 2: uniFBFD uniFEF0
+		 Coverage 3: space
+		 Coverage 4: uniFDF2
+		 Coverage 5: space
+		 Coverage 6: uniFECB
+		 Coverage 7: uniFEE0
+		 Coverage 8: uniFBFF
+		 Coverage 9: uniFBAB uni06C1
+		 Coverage 10: space
+		 Coverage 11: uni0648
+		 Coverage 12: uni0622
+		 Coverage 13: uniFEDF
+		 Coverage 14: uniFBAB uni06C1
+		 Coverage 15: space
+		 Coverage 16: uni0648
+		 Coverage 17: uniFEB3
+		 Coverage 18: uniFEE0
+		 Coverage 19: uniFEE2
+		-Apply at 0 Ligature Substitution lookup 73
+		  -Ligature Substitution lookup 73 subtable
+		     glyph3774 <= uniFEBB uniFEE0 uniFBFD space uniFDF2 space uniFECB uniFEE0 uniFBFF uni06C1 space uni0648 uni0622 uniFEDF uni06C1 space uni0648 uniFEB3 uniFEE0 uniFEE2
+		     glyph3774 <= uniFEBB uniFEE0 uniFBFD space uniFDF2 space uniFECB uniFEE0 uniFBFF uniFBAB space uni0648 uni0622 uniFEDF uniFBAB space uni0648 uniFEB3 uniFEE0 uniFEE2
+		     glyph3774 <= uniFEBB uniFEE0 uniFEF0 space uniFDF2 space uniFECB uniFEE0 uniFBFF uniFBAB space uni0648 uni0622 uniFEDF uniFBAB space uni0648 uniFEB3 uniFEE0 uniFEE2
+	    -'dlig' Discretionary Ligatures in Arabic lookup 19 contextual 8
+	       Chaining Substitution by coverage
+	      -Rule 0
+		 Coverage 0: uniFE91
+		 Coverage 1: uniFEB4
+		 Coverage 2: uniFEE2
+		 Coverage 3: space
+		 Coverage 4: uniFDF2
+		 Coverage 5: space
+		 Coverage 6: uni0627
+		 Coverage 7: uniFEDF
+		 Coverage 8: uniFEAE
+		 Coverage 9: uniFEA3
+		 Coverage 10: uniFEE4
+		 Coverage 11: uniFEE6
+		 Coverage 12: space
+		 Coverage 13: uni0627
+		 Coverage 14: uniFEDF
+		 Coverage 15: uniFEAE
+		 Coverage 16: uniFEA3
+		 Coverage 17: uniFBFF
+		 Coverage 18: uniFEE2
+		 Lookahead coverage 19: uni064B uni064C uni064D uni064E uni064F uni0650 uni0651 uni0652 uni064B_uni0651.ccmp uniFC5E uniFC5F uniFC60 uniFC61 uniFC62 uni0615 glyph1332 uni0653 uni0654 uni0655 uni0670 uni06D6 uni06D7 uni06D8 uni06D9 uni06DA uni06DB uni06DC uni06DF uni06E0 uni06E1 uni06E2 uni06E3 uni06E4 uni06E7 uni06E8 uni06EA uni06EB uni06ED uni0610 uni0611 uni0612 uni0613 uni0614 uni0656 uni0657 uni0658 glyph2992 uni0659 uni065A uni065B uni065C uni065D uni065E uniFC63 uni064E_uni0654.ccmp uni064B_uni0654.ccmp uni064F_uni0654.ccmp uni064C_uni0654.ccmp uni0652_uni0654.ccmp uni0650_uni0655.ccmp uni064D_uni0655.ccmp uni0616 uni0617 uni0618 uni0619 uni061A uni065F uni08E4 uni08E5 uni08E6 uni08E7 uni08E8 uni08E9 uni08F0 uni08F1 uni08F2 uni08F3 uni08F4 uni08F5 uni08F6 uni08F7 uni08F8 uni08F9 uni08FA uni08FB uni08FC uni08FD uni08FE uni06EC
+	    -'dlig' Discretionary Ligatures in Arabic lookup 19 contextual 9
+	       Chaining Substitution by coverage
+	      -Rule 0
+		 Coverage 0: uniFE91
+		 Coverage 1: uniFEB4
+		 Coverage 2: uniFEE2
+		 Coverage 3: space
+		 Coverage 4: uniFDF2
+		 Coverage 5: space
+		 Coverage 6: uni0627
+		 Coverage 7: uniFEDF
+		 Coverage 8: uniFEAE
+		 Coverage 9: uniFEA3
+		 Coverage 10: uniFEE4
+		 Coverage 11: uniFEE6
+		 Coverage 12: space
+		 Coverage 13: uni0627
+		 Coverage 14: uniFEDF
+		 Coverage 15: uniFEAE
+		 Coverage 16: uniFEA3
+		 Coverage 17: uniFBFF
+		 Coverage 18: uniFEE2
+		-Apply at 0 Ligature Substitution lookup 74
+		  -Ligature Substitution lookup 74 subtable
+		     uniFDFD <= uniFE91 uniFEB4 uniFEE2 space uniFDF2 space uni0627 uniFEDF uniFEAE uniFEA3 uniFEE4 uniFEE6 space uni0627 uniFEDF uniFEAE uniFEA3 uniFBFF uniFEE2
+	  -'liga' Standard Ligatures in Arabic lookup 20
+	    -'liga' Standard Ligatures in Arabic lookup 20 contextual 0
+	       Chaining Substitution by coverage
+	      -Rule 0
+		 Coverage 0: uniFDFD
+		 Lookahead coverage 1: glyph3855
+	    -'liga' Standard Ligatures in Arabic lookup 20 contextual 1
+	       Chaining Substitution by coverage
+	      -Rule 0
+		 Coverage 0: uniFDFD
+		-Apply at 0 Multiple Substitution lookup 75
+		  -Multiple Substitution lookup 75 subtable
+		     uniFDFD => uniFDFD glyph3855 glyph3856 glyph3857 glyph3858
+	-'calt' Contextual Alternates
+	  -'calt' Contextual Alternates in Arabic lookup 21
+	    -'calt' Contextual Alternates in Arabic lookup 21 contextual 0
+	       Chaining Substitution by coverage
+	      -Rule 0
+		 Coverage 0: uni0600 uni0601 uni0603 uni0604
+		 Lookahead coverage 1: glyph3687 glyph3688 glyph3689 glyph3690 glyph3691 glyph3692 glyph3693 glyph3694 glyph3695 glyph3696 glyph3697 glyph3698 glyph3699 glyph3700 glyph3701
+		 Lookahead coverage 2: glyph3687 glyph3688 glyph3689 glyph3690 glyph3691 glyph3692 glyph3693 glyph3694 glyph3695 glyph3696 glyph3697 glyph3698 glyph3699 glyph3700 glyph3701
+		 Lookahead coverage 3: glyph3687 glyph3688 glyph3689 glyph3690 glyph3691 glyph3692 glyph3693 glyph3694 glyph3695 glyph3696 glyph3697 glyph3698 glyph3699 glyph3700 glyph3701
+		-Apply at 0 Single Substitution lookup 76
+		  -Single Substitution lookup 76 subtable
+		     uni0600 => glyph3702
+		     uni0601 => glyph3703
+		     uni0603 => glyph3705
+		     uni0604 => glyph3859
+	    -'calt' Contextual Alternates in Arabic lookup 21 contextual 1
+	       Chaining Substitution by coverage
+	      -Rule 0
+		 Coverage 0: uni0600 uni0601 uni0603 uni0604
+		 Lookahead coverage 1: glyph3687 glyph3688 glyph3689 glyph3690 glyph3691 glyph3692 glyph3693 glyph3694 glyph3695 glyph3696 glyph3697 glyph3698 glyph3699 glyph3700 glyph3701
+		 Lookahead coverage 2: glyph3687 glyph3688 glyph3689 glyph3690 glyph3691 glyph3692 glyph3693 glyph3694 glyph3695 glyph3696 glyph3697 glyph3698 glyph3699 glyph3700 glyph3701
+		 Lookahead coverage 3: glyph3687 glyph3688 glyph3689 glyph3690 glyph3691 glyph3692 glyph3693 glyph3694 glyph3695 glyph3696 glyph3697 glyph3698 glyph3699 glyph3700 glyph3701
+		 Lookahead coverage 4: glyph3687 glyph3688 glyph3689 glyph3690 glyph3691 glyph3692 glyph3693 glyph3694 glyph3695 glyph3696 glyph3697 glyph3698 glyph3699 glyph3700 glyph3701
+		-Apply at 0 Single Substitution lookup 76
+		  -Single Substitution lookup 76 subtable
+		     uni0600 => glyph3702
+		     uni0601 => glyph3703
+		     uni0603 => glyph3705
+		     uni0604 => glyph3859
+	-'ss01' Style Set 1
+	  -'ss01' Style Set 1 in Arabic lookup 22
+	    -'ss01' Style Set 1 in Arabic lookup 22 subtable
+	       uni0645 => uni0645.locl
+	       uni06FE => uni06FE.locl
+	       uni0765 => uni0765.ss01
+	       uni0765.fina => uni0765.fina.ss01
+	       uni0766 => uni0766.ss01
+	       uni0766.fina => uni0766.fina.ss01
+	       uni08A7 => uni08A7.ss01
+	       uni08A7.fina => uni08A7.fina.ss01
+	       uniFEE2 => uniFEE2.locl
+      +'FAR ' Farsi Language
+      +'MLY ' Malay Language
+      +'SND ' Sindhi Language
+      +'URD ' Urdu Language
+    +'cyrl' Cyrillic Script
+    +'grek' Greek Script
+    +'hebr' Hebrew Script
+    +'latn' Latin Script
+  +'JSTF' Justification Table
++Apple Advanced Typography

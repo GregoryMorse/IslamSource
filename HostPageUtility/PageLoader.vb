@@ -171,7 +171,7 @@ Public Class Utility
     End Function
     Public Shared Function LoadResourceString(resourceKey As String) As String
         LoadResourceString = Nothing
-        For Each Pair In ConnectionData.Resources
+        For Each Pair In If(IsDesktopApp(), Array.ConvertAll("HostPageUtility=Acct,lang,unicode;IslamResources=Hadith,IslamInfo,IslamSource".Split(";"c), Function(Str As String) New KeyValuePair(Of String, String())(Str.Split("="c)(0), Str.Split("="c)(1).Split(","c))), ConnectionData.Resources)
             If Array.FindIndex(Pair.Value, Function(Str As String) Str = resourceKey Or resourceKey.StartsWith(Str + "_")) <> -1 Then
                 LoadResourceString = New System.Resources.ResourceManager(Pair.Key + ".Resources", Reflection.Assembly.Load(Pair.Key)).GetString(resourceKey, Threading.Thread.CurrentThread.CurrentUICulture)
             End If
@@ -560,7 +560,7 @@ Public Class Utility
                 LookupClassMember = CheckType.GetMethod(ClassMember(2))
             End If
             If LookupClassMember Is Nothing Then
-                For Each Key As String In ConnectionData.FuncLibs
+                For Each Key As String In If(IsDesktopApp(), {"IslamMetadata"}, ConnectionData.FuncLibs)
                     Dim Asm As Reflection.Assembly = Reflection.Assembly.Load(Key)
                     If Not Asm Is Nothing Then
                         CheckType = Asm.GetType(Key + "." + ClassMember(0))
@@ -1235,7 +1235,7 @@ Public Class ArabicData
     Public Shared ReadOnly Property Data As ArabicXMLData
         Get
             If _ArabicXMLData Is Nothing Then
-                Dim fs As IO.FileStream = New IO.FileStream(Utility.GetFilePath("metadata\arabicdata.xml"), IO.FileMode.Open, IO.FileAccess.Read)
+                Dim fs As IO.FileStream = New IO.FileStream(Utility.GetFilePath(If(Utility.IsDesktopApp(), "HostPage\metadata\arabicdata.xml", "metadata\arabicdata.xml")), IO.FileMode.Open, IO.FileAccess.Read)
                 Dim xs As System.Xml.Serialization.XmlSerializer = New System.Xml.Serialization.XmlSerializer(GetType(ArabicXMLData))
                 _ArabicXMLData = CType(xs.Deserialize(fs), ArabicXMLData)
                 fs.Close()
@@ -1318,7 +1318,8 @@ Public Class ArabicData
         'should probably check for any non-arabic letters also
         For CharCount As Integer = Index + 1 To Str.Length - 1
             If Array.IndexOf(RecitationCombiningSymbols, Str(CharCount)) = -1 Then
-                bIsEnd = False
+                Dim Idx As Integer = FindLetterBySymbol(Str(CharCount))
+                bIsEnd = Idx = -1 OrElse Not Data.ArabicLetters(Idx).Connecting
                 Exit For
             End If
         Next
@@ -1328,7 +1329,8 @@ Public Class ArabicData
         Dim bLastConnects = False 'default to non-connecting beginning 
         For CharCount As Integer = Index - 1 To 0 Step -1
             If Array.IndexOf(RecitationCombiningSymbols, Str(CharCount)) = -1 Then
-                bLastConnects = Not Data.ArabicLetters(FindLetterBySymbol(Str(CharCount))).Terminating
+                Dim Idx As Integer = FindLetterBySymbol(Str(CharCount))
+                bLastConnects = Idx <> -1 AndAlso Not Data.ArabicLetters(Idx).Terminating
                 Exit For
             End If
         Next
@@ -1832,9 +1834,9 @@ Public Class RenderArray
                                 ct.ArabicOptions = iTextSharp.text.pdf.ColumnText.AR_COMPOSEDTASHKEEL
                                 ct.UseAscender = False
                                 Dim FitFont As New iTextSharp.text.Font(Font)
-                                FitFont.Size = (ChBounds(2) + ChBounds(0)) * 0.001F * Font.Size / n.Width * Font.Size
+                                FitFont.Size = Math.Min((ChBounds(2) - ChBounds(0)) * 0.001F * Font.Size * 2 / 3 / n.Width * Font.Size, Font.Size)
                                 GetTextWidthPdf(FitFont, Text.Substring(Index + 1, NumCount), Doc.PageSize.Width, True, n, Baseline)
-                                ct.SetSimpleColumn(Rect.Left + Doc.LeftMargin + Rect.Width + 1 - (ChBounds(2) - ChBounds(0)) * 0.001F * Font.Size / 4, Doc.PageSize.Height - Doc.TopMargin - Rect.Bottom - _Bounds(Count)(SubCount)(NextCount).Baseline, Rect.Right + 1 + Doc.LeftMargin - s.Width - (ChBounds(2) - ChBounds(0)) * 0.001F * Font.Size / 4, Doc.PageSize.Height - Doc.TopMargin - Rect.Top + 1 - _Bounds(Count)(SubCount)(NextCount).Baseline, Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size), iTextSharp.text.Element.ALIGN_CENTER Or iTextSharp.text.Element.ALIGN_BASELINE)
+                                ct.SetSimpleColumn(Rect.Left + Doc.LeftMargin + Rect.Width - 3 - s.Width, Doc.PageSize.Height - Doc.TopMargin - Rect.Bottom - _Bounds(Count)(SubCount)(NextCount).Baseline, Rect.Right - 3 + Doc.LeftMargin - s.Width + (ChBounds(2) - ChBounds(0)) * 0.001F * Font.Size, Doc.PageSize.Height - Doc.TopMargin - Rect.Top + 1 - _Bounds(Count)(SubCount)(NextCount).Baseline, Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size), iTextSharp.text.Element.ALIGN_CENTER Or iTextSharp.text.Element.ALIGN_BASELINE)
                                 ct.AddText(New iTextSharp.text.Chunk(Text.Substring(Index + 1, NumCount), FitFont))
                                 ct.Go()
                                 Text = Text.Remove(Index + 1, NumCount)
@@ -1843,6 +1845,9 @@ Public Class RenderArray
                         Loop While Index <> -1
                         Index = 1
                         Do
+                            'GetCharacterPlacement is the only way to get accurate rendering positions
+                            'without decompiling the truetype font and writing an entire truetype rendering engine
+                            'initial/medial/final tables, ligature tables, combination tables and others are in the font
                             Index = Text.IndexOfAny(ArabicData.RecitationCombiningSymbols, Index)
                             If Index <> -1 Then
                                 Dim s As New SizeF
@@ -1855,7 +1860,8 @@ Public Class RenderArray
                                 ElseIf Text(Index - 1) = ArabicData.ArabicTatweel Then
                                     ChBounds = Font.BaseFont.GetCharBBox(AscW(Text(Index - 1)))
                                 Else
-                                    Dim ShapeCh As Char = ArabicData.Data.ArabicLetters(ArabicData.FindLetterBySymbol(Text(Index - 1))).Shaping(ArabicData.GetShapeIndexFromString(Text, Index - 1, 1))
+                                    Dim ShIndex As Integer = ArabicData.GetShapeIndexFromString(Text, Index - 1, 1)
+                                    Dim ShapeCh As Char = If(ShIndex = -1 Or ArabicData.Data.ArabicLetters(ArabicData.FindLetterBySymbol(Text(Index - 1))).Shaping = Nothing, Text(Index - 1), ArabicData.Data.ArabicLetters(ArabicData.FindLetterBySymbol(Text(Index - 1))).Shaping(ShIndex))
                                     ChBounds = Font.BaseFont.GetCharBBox(AscW(ShapeCh))
                                 End If
                                 'partial shaping will never work
@@ -1876,8 +1882,8 @@ Public Class RenderArray
                                     ct.ArabicOptions = iTextSharp.text.pdf.ColumnText.AR_COMPOSEDTASHKEEL
                                     ct.UseAscender = False
                                     Dim DiaBounds As Integer() = Font.BaseFont.GetCharBBox(AscW(Text(Index)))
-                                    Offset = If(DiaBounds(1) < 0 And DiaBounds(3) > If(Offset < 0, Offset, ChBounds(1)), -(DiaBounds(3) - If(Offset < 0, Offset, ChBounds(1))), If(DiaBounds(1) >= 0 And DiaBounds(1) < If(Offset > 0, Offset, ChBounds(3)), -(DiaBounds(1) - If(Offset > 0, Offset, ChBounds(3))), 0))
-                                    ct.SetSimpleColumn(Rect.Left + Doc.LeftMargin + (Rect.Width - 3 - s.Width - (ChBounds(2) - If(LastCenter <> 0, LastCenter - (DiaBounds(2) - DiaBounds(0)) \ 2, 0)) * 0.001F * Font.Size), Doc.PageSize.Height - Doc.TopMargin - Rect.Bottom - _Bounds(Count)(SubCount)(NextCount).Baseline + Offset * 0.001F * Font.Size, Rect.Right + 1 + Doc.LeftMargin - s.Width + If(LastCenter <> 0, LastCenter + (DiaBounds(2) - DiaBounds(0)) \ 2, 0) * 0.001F * Font.Size, Doc.PageSize.Height - Doc.TopMargin - Rect.Top + 1 - _Bounds(Count)(SubCount)(NextCount).Baseline + Offset * 0.001F * Font.Size, Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size), iTextSharp.text.Element.ALIGN_RIGHT Or iTextSharp.text.Element.ALIGN_BASELINE)
+                                    Offset = If(DiaBounds(1) < 0 And DiaBounds(3) > If(Offset < 0, Offset, ChBounds(1)), -(DiaBounds(3) - If(Offset < 0, Offset, ChBounds(1) - CInt(Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size) / 0.001F / Font.Size))), If(DiaBounds(1) >= 0 And DiaBounds(1) < If(Offset > 0, Offset, ChBounds(3)), -(DiaBounds(1) - If(Offset > 0, Offset, ChBounds(3) + CInt(Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size) / 0.001F / Font.Size))), 0))
+                                    ct.SetSimpleColumn(Rect.Left + Doc.LeftMargin + (Rect.Width - 3 - s.Width - (ChBounds(2) - If(LastCenter <> 0, LastCenter - (DiaBounds(2) - DiaBounds(0)) \ 2, -DiaBounds(0))) * 0.001F * Font.Size), Doc.PageSize.Height - Doc.TopMargin - Rect.Bottom - _Bounds(Count)(SubCount)(NextCount).Baseline + Offset * 0.001F * Font.Size, Rect.Right - 3 + Doc.LeftMargin - s.Width + If(LastCenter <> 0, LastCenter + (DiaBounds(2) - DiaBounds(0)) \ 2, -DiaBounds(0)) * 0.001F * Font.Size, Doc.PageSize.Height - Doc.TopMargin - Rect.Top + 1 - _Bounds(Count)(SubCount)(NextCount).Baseline + Offset * 0.001F * Font.Size, Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size), iTextSharp.text.Element.ALIGN_RIGHT Or iTextSharp.text.Element.ALIGN_BASELINE)
                                     ct.AddText(New iTextSharp.text.Chunk(Text(Index), Font))
                                     ct.Go()
                                     If DiaBounds(1) < 0 Then Offset = DiaBounds(1) - Offset
@@ -1896,7 +1902,7 @@ Public Class RenderArray
                         Else
                             ct.RunDirection = iTextSharp.text.pdf.PdfWriter.RUN_DIRECTION_LTR
                         End If
-                        ct.SetSimpleColumn(Rect.Left + Doc.LeftMargin, Doc.PageSize.Height - Doc.TopMargin - Rect.Bottom - _Bounds(Count)(SubCount)(NextCount).Baseline, Rect.Right + 1 + Doc.LeftMargin, Doc.PageSize.Height - Doc.TopMargin - Rect.Top + 1 - _Bounds(Count)(SubCount)(NextCount).Baseline, Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size), If(ct.RunDirection = iTextSharp.text.pdf.PdfWriter.RUN_DIRECTION_LTR, iTextSharp.text.Element.ALIGN_RIGHT, iTextSharp.text.Element.ALIGN_RIGHT) Or iTextSharp.text.Element.ALIGN_BASELINE)
+                        ct.SetSimpleColumn(Rect.Left + Doc.LeftMargin, Doc.PageSize.Height - Doc.TopMargin - Rect.Bottom - _Bounds(Count)(SubCount)(NextCount).Baseline, Rect.Right - 3 + Doc.LeftMargin, Doc.PageSize.Height - Doc.TopMargin - Rect.Top + 1 - _Bounds(Count)(SubCount)(NextCount).Baseline, Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size), If(ct.RunDirection = iTextSharp.text.pdf.PdfWriter.RUN_DIRECTION_LTR, iTextSharp.text.Element.ALIGN_RIGHT, iTextSharp.text.Element.ALIGN_RIGHT) Or iTextSharp.text.Element.ALIGN_BASELINE)
                         ct.AddText(New iTextSharp.text.Chunk(Text, Font))
                         ct.Go()
                         theText = theText.Substring(_Bounds(Count)(SubCount)(NextCount).nChar)
@@ -1914,7 +1920,9 @@ Public Class RenderArray
         Return If(Index < 1 Or Index > 4, IO.Path.Combine(Environment.GetEnvironmentVariable("windir"), "Fonts\" + Fonts(Index)), Utility.GetFilePath("files\" + Fonts(Index)))
     End Function
     Public Shared Sub OutputPdf(Path As String, CurRenderArray As List(Of RenderArray.RenderItem))
-        OutputPdf(New IO.FileStream(Path, IO.FileMode.Create, IO.FileAccess.Write, IO.FileShare.None), CurRenderArray)
+        Dim fs As New IO.FileStream(Path, IO.FileMode.Create, IO.FileAccess.Write, IO.FileShare.None)
+        OutputPdf(fs, CurRenderArray)
+        fs.Close()
     End Sub
     Public Shared Sub OutputPdf(Stream As IO.Stream, CurRenderArray As List(Of RenderArray.RenderItem))
         Dim Doc As New iTextSharp.text.Document
@@ -1922,11 +1930,11 @@ Public Class RenderArray
         Doc.Open()
         Doc.NewPage()
         Dim BaseFont As iTextSharp.text.pdf.BaseFont = iTextSharp.text.pdf.BaseFont.CreateFont(GetFontPath(0), iTextSharp.text.pdf.BaseFont.IDENTITY_H, iTextSharp.text.pdf.BaseFont.NOT_EMBEDDED)
-        Dim Font As New iTextSharp.text.Font(BaseFont, 20, iTextSharp.text.Font.BOLD)
+        Dim Font As New iTextSharp.text.Font(BaseFont, 20, iTextSharp.text.Font.NORMAL)
         Dim _Bounds As New Generic.List(Of Generic.List(Of Generic.List(Of LayoutInfo)))
         Dim PrivateFontColl As New Drawing.Text.PrivateFontCollection
         PrivateFontColl.AddFontFile(GetFontPath(0))
-        Dim DrawFont As New Drawing.Font(PrivateFontColl.Families(0), 20, FontStyle.Bold, GraphicsUnit.Point)
+        Dim DrawFont As New Drawing.Font(PrivateFontColl.Families(0), 20, FontStyle.Regular, GraphicsUnit.Point)
         'divide into pages by heights
         GetLayout(CurRenderArray, Doc.PageSize.Width - Doc.LeftMargin - Doc.RightMargin, _Bounds, GetTextWidthFromPdf(Font))
         Dim PageOffset As New PointF(0, 0)
@@ -2006,13 +2014,14 @@ Public Class RenderArray
                 ElseIf Text(Index - 1) = ArabicData.ArabicTatweel Then
                     ChBounds = Font.BaseFont.GetCharBBox(AscW(Text(Index - 1)))
                 Else
-                    Dim ShapeCh As Char = ArabicData.Data.ArabicLetters(ArabicData.FindLetterBySymbol(Text(Index - 1))).Shaping(ArabicData.GetShapeIndexFromString(Text, Index - 1, 1))
+                    Dim ShIndex As Integer = ArabicData.GetShapeIndexFromString(Text, Index - 1, 1)
+                    Dim ShapeCh As Char = If(ShIndex = -1 Or ArabicData.Data.ArabicLetters(ArabicData.FindLetterBySymbol(Text(Index - 1))).Shaping = Nothing, Text(Index - 1), ArabicData.Data.ArabicLetters(ArabicData.FindLetterBySymbol(Text(Index - 1))).Shaping(ShIndex))
                     ChBounds = Font.BaseFont.GetCharBBox(AscW(ShapeCh))
                 End If
                 Dim Offset As Integer = 0
                 Do
                     Dim DiaBounds As Integer() = Font.BaseFont.GetCharBBox(AscW(Text(Index)))
-                    Offset = If(DiaBounds(1) < 0 And DiaBounds(3) > If(Offset < 0, Offset, ChBounds(1)), -(DiaBounds(3) - If(Offset < 0, Offset, ChBounds(1))), If(DiaBounds(1) >= 0 And DiaBounds(1) < If(Offset > 0, Offset, ChBounds(3)), -(DiaBounds(1) - If(Offset > 0, Offset, ChBounds(3))), 0))
+                    Offset = If(DiaBounds(1) < 0 And DiaBounds(3) > If(Offset < 0, Offset, ChBounds(1)), -(DiaBounds(3) - If(Offset < 0, Offset, ChBounds(1) - CInt(Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size) / 0.001F / Font.Size))), If(DiaBounds(1) >= 0 And DiaBounds(1) < If(Offset > 0, Offset, ChBounds(3)), -(DiaBounds(1) - If(Offset > 0, Offset, ChBounds(3) + CInt(Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size) / 0.001F / Font.Size))), 0))
                     If DiaBounds(1) < 0 Then Offset = DiaBounds(1) - Offset
                     If DiaBounds(1) >= 0 Then Offset = DiaBounds(3) + Offset
                     If Offset > 0 Then MaxAscent = Math.Max(Offset, MaxAscent)
