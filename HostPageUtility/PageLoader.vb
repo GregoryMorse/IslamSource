@@ -1775,6 +1775,7 @@ Public Class RenderArray
         For Count As Integer = 0 To CurRenderArray.Count - 1
             Dim MaxRect As New RectangleF(Doc.PageSize.Width, Doc.PageSize.Height, 0, 0)
             For SubCount As Integer = 0 To CurRenderArray(Count).TextItems.Length - 1
+                If CurRenderArray(Count).TextItems(SubCount).DisplayClass = RenderArray.RenderDisplayClass.eNested Then Continue For
                 Dim NextCount As Integer
                 For NextCount = 0 To _Bounds(Count)(SubCount).Count - 1
                     If _Bounds(Count)(SubCount)(NextCount).Rect.Top + PageOffset.Y + BaseOffset.Y > Doc.PageSize.Height - Doc.BottomMargin - Doc.TopMargin Then
@@ -1867,9 +1868,9 @@ Public Class RenderArray
                                 'partial shaping will never work
                                 'must either convert all to shaped characters or subtract last character
                                 GetTextWidthPdf(Font, Text.Substring(0, Index), Doc.PageSize.Width, True, s, Baseline)
-                                If Text(Index - 1) <> " "c And Text(Index - 1) <> ArabicData.ArabicTatweel And ArabicData.GetShapeIndexFromString(Text, Index - 1, 1) = 2 Then
+                                If Text(Index - 1) <> " "c And Text(Index - 1) <> ArabicData.ArabicTatweel And ArabicData.GetShapeIndexFromString(Text, Index - 1, 1) = 2 AndAlso Not ArabicData.Data.ArabicLetters(ArabicData.FindLetterBySymbol(Text(Index - 1))).Shaping = Nothing Then
                                     s.Width -= Font.BaseFont.GetCharBBox(AscW(ArabicData.Data.ArabicLetters(ArabicData.FindLetterBySymbol(Text(Index - 1))).Shaping(0)))(2) * 0.001F * Font.Size
-                                ElseIf Text(Index - 1) <> " "c And Text(Index - 1) <> ArabicData.ArabicTatweel And ArabicData.GetShapeIndexFromString(Text, Index - 1, 1) = 3 Then
+                                ElseIf Text(Index - 1) <> " "c And Text(Index - 1) <> ArabicData.ArabicTatweel And ArabicData.GetShapeIndexFromString(Text, Index - 1, 1) = 3 AndAlso Not ArabicData.Data.ArabicLetters(ArabicData.FindLetterBySymbol(Text(Index - 1))).Shaping = Nothing Then
                                     s.Width -= Font.BaseFont.GetCharBBox(AscW(ArabicData.Data.ArabicLetters(ArabicData.FindLetterBySymbol(Text(Index - 1))).Shaping(1)))(2) * 0.001F * Font.Size
                                 Else
                                     s.Width -= ChBounds(2) * 0.001F * Font.Size
@@ -1963,6 +1964,10 @@ Public Class RenderArray
         Dim Text As String = Str
         Str = System.Text.RegularExpressions.Regex.Replace(Str, "(?<!\s+)(?:" + ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicData.RecitationCombiningSymbols, Function(Ch As Char) CStr(Ch))) + ")", String.Empty)
         s.Width = iTextSharp.text.pdf.ColumnText.GetWidth(New iTextSharp.text.Phrase(New iTextSharp.text.Chunk(Str, Font)), If(IsRTL, iTextSharp.text.pdf.PdfWriter.RUN_DIRECTION_RTL, iTextSharp.text.pdf.PdfWriter.RUN_DIRECTION_LTR), iTextSharp.text.pdf.ColumnText.AR_COMPOSEDTASHKEEL)
+        If System.Text.RegularExpressions.Regex.Match(Str, "\s+(?:" + ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicData.RecitationCombiningSymbols, Function(Ch As Char) CStr(Ch))) + ")\s*$").Success Then
+            Dim ChBounds As Integer() = Font.BaseFont.GetCharBBox(AscW(Str(Str.LastIndexOfAny(ArabicData.RecitationCombiningSymbols))))
+            s.Width += (ChBounds(2) - ChBounds(0)) * 0.001F * Font.Size
+        End If
         Str = Text
         Dim Len As Integer = Str.Length
         Dim Search As Integer = Len
@@ -1979,9 +1984,9 @@ Public Class RenderArray
                 Str = Str.Substring(0, If(Str.IndexOf(" "c, Len - 1) = -1, Str.Length, Str.IndexOf(" "c, Len - 1) + 1))
                 Str = System.Text.RegularExpressions.Regex.Replace(Str, "(?<!\s+)(?:" + ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicData.RecitationCombiningSymbols, Function(Ch As Char) CStr(Ch))) + ")", String.Empty)
                 s.Width = iTextSharp.text.pdf.ColumnText.GetWidth(New iTextSharp.text.Phrase(Str, Font), If(IsRTL, iTextSharp.text.pdf.PdfWriter.RUN_DIRECTION_RTL, iTextSharp.text.pdf.PdfWriter.RUN_DIRECTION_LTR), iTextSharp.text.pdf.ColumnText.AR_COMPOSEDTASHKEEL)
-                Dim SpecLen As Integer = System.Text.RegularExpressions.Regex.Match(Str, "\s+(?:" + ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicData.RecitationCombiningSymbols, Function(Ch As Char) CStr(Ch))) + ")\s+$").Length
-                If SpecLen <> 0 Then
-                    s.Width += iTextSharp.text.pdf.ColumnText.GetWidth(New iTextSharp.text.Phrase(Str.Substring(Str.Length - SpecLen), Font), If(IsRTL, iTextSharp.text.pdf.PdfWriter.RUN_DIRECTION_RTL, iTextSharp.text.pdf.PdfWriter.RUN_DIRECTION_LTR), iTextSharp.text.pdf.ColumnText.AR_COMPOSEDTASHKEEL)
+                If System.Text.RegularExpressions.Regex.Match(Str, "\s+(?:" + ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicData.RecitationCombiningSymbols, Function(Ch As Char) CStr(Ch))) + ")\s*$").Success Then
+                    Dim ChBounds As Integer() = Font.BaseFont.GetCharBBox(AscW(Str(Str.LastIndexOfAny(ArabicData.RecitationCombiningSymbols))))
+                    s.Width += (ChBounds(2) - ChBounds(0)) * 0.001F * Font.Size
                 End If
                 Str = Text
             End While
@@ -1991,9 +1996,9 @@ Public Class RenderArray
                 Str = Str.Substring(0, Len)
                 Str = System.Text.RegularExpressions.Regex.Replace(Str, "(?<!\s+)(?:" + ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicData.RecitationCombiningSymbols, Function(Ch As Char) CStr(Ch))) + ")", String.Empty)
                 s.Width = iTextSharp.text.pdf.ColumnText.GetWidth(New iTextSharp.text.Phrase(Str, Font), If(IsRTL, iTextSharp.text.pdf.PdfWriter.RUN_DIRECTION_RTL, iTextSharp.text.pdf.PdfWriter.RUN_DIRECTION_LTR), iTextSharp.text.pdf.ColumnText.AR_COMPOSEDTASHKEEL)
-                Dim SpecLen As Integer = System.Text.RegularExpressions.Regex.Match(Str, "\s+(?:" + ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicData.RecitationCombiningSymbols, Function(Ch As Char) CStr(Ch))) + ")\s+$").Length
-                If SpecLen <> 0 Then
-                    s.Width += iTextSharp.text.pdf.ColumnText.GetWidth(New iTextSharp.text.Phrase(Str.Substring(Str.Length - SpecLen), Font), If(IsRTL, iTextSharp.text.pdf.PdfWriter.RUN_DIRECTION_RTL, iTextSharp.text.pdf.PdfWriter.RUN_DIRECTION_LTR), iTextSharp.text.pdf.ColumnText.AR_COMPOSEDTASHKEEL)
+                If System.Text.RegularExpressions.Regex.Match(Str, "\s+(?:" + ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicData.RecitationCombiningSymbols, Function(Ch As Char) CStr(Ch))) + ")\s*$").Success Then
+                    Dim ChBounds As Integer() = Font.BaseFont.GetCharBBox(AscW(Str(Str.LastIndexOfAny(ArabicData.RecitationCombiningSymbols))))
+                    s.Width += (ChBounds(2) - ChBounds(0)) * 0.001F * Font.Size
                 End If
                 Str = Text
             End If
