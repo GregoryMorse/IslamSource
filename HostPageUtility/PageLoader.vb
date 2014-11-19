@@ -1771,6 +1771,160 @@ Public Class RenderArray
         Dim nChar As Integer
         Dim Bounds As Generic.List(Of Generic.List(Of Generic.List(Of LayoutInfo)))
     End Structure
+    <Runtime.InteropServices.StructLayout(Runtime.InteropServices.LayoutKind.Sequential)> _
+    Public Structure GCP_RESULTS
+        Public StructSize As UInteger
+        <Runtime.InteropServices.MarshalAs(Runtime.InteropServices.UnmanagedType.LPTStr)> _
+        Public OutString As String
+        Public Order As IntPtr
+        Public Dx As IntPtr
+        Public CaretPos As IntPtr
+        Public [Class] As IntPtr
+        Public Glyphs As IntPtr
+        Public GlyphCount As UInteger
+        Public MaxFit As Integer
+    End Structure
+    <Runtime.InteropServices.StructLayout(Runtime.InteropServices.LayoutKind.Sequential)> _
+    Public Structure SCRIPT_CONTROL
+        Public ScriptControlFlags As UInteger
+    End Structure
+    <Runtime.InteropServices.StructLayout(Runtime.InteropServices.LayoutKind.Sequential)> _
+    Public Structure SCRIPT_STATE
+        Public ScriptStateFlags As UShort
+    End Structure
+    <Runtime.InteropServices.StructLayout(Runtime.InteropServices.LayoutKind.Sequential)> _
+    Public Structure SCRIPT_ANALYSIS
+        Public ScriptAnalysisFlags As UShort
+        Public s As SCRIPT_STATE
+    End Structure
+    <Runtime.InteropServices.StructLayout(Runtime.InteropServices.LayoutKind.Sequential)> _
+    Public Structure SCRIPT_VISATTR
+        Public ScriptVisAttrFlags As UShort
+    End Structure
+    <Runtime.InteropServices.StructLayout(Runtime.InteropServices.LayoutKind.Sequential)> _
+    Public Structure SCRIPT_ITEM
+        Public iCharPos As Integer
+        Public a As SCRIPT_ANALYSIS
+    End Structure
+    <Runtime.InteropServices.StructLayout(Runtime.InteropServices.LayoutKind.Sequential)> _
+    Public Structure GOFFSET
+        Public du As Integer
+        Public dv As Integer
+    End Structure
+    <Runtime.InteropServices.StructLayout(Runtime.InteropServices.LayoutKind.Sequential)> _
+    Public Structure ABC
+        Public abcA As Integer
+        Public abcB As UInteger
+        Public abcC As Integer
+    End Structure
+    Public Const E_OUTOFMEMORY As Integer = &H8007000E
+    Public Const E_PENDING As Integer = &H8000000A
+    Public Const USP_E_SCRIPT_NOT_IN_FONT As Integer = &H80040200
+    <Runtime.InteropServices.DllImport("gdi32.dll", EntryPoint:="GetCharacterPlacement", SetLastError:=True, CharSet:=Runtime.InteropServices.CharSet.Auto)> _
+    Public Shared Function GetCharacterPlacement(hdc As IntPtr, <Runtime.InteropServices.MarshalAs(Runtime.InteropServices.UnmanagedType.LPTStr)> lpString As String, nCount As Integer, nMaxExtent As Integer, <Runtime.InteropServices.In(), Runtime.InteropServices.Out()> ByRef lpResults As GCP_RESULTS, dwFlags As UInteger) As UInteger
+    End Function
+    <Runtime.InteropServices.DllImport("Usp10.dll", EntryPoint:="ScriptItemize")> _
+    Public Shared Function ScriptItemize(<Runtime.InteropServices.MarshalAs(Runtime.InteropServices.UnmanagedType.LPWStr)> wcInChars As String, cInChars As Integer, cMaxItems As Integer, psControl As SCRIPT_CONTROL, psState As SCRIPT_STATE, <Runtime.InteropServices.MarshalAs(Runtime.InteropServices.UnmanagedType.LPArray, SizeParamIndex:=2), Runtime.InteropServices.Out()> pItems() As SCRIPT_ITEM, <Runtime.InteropServices.Out()> ByRef pcItems As Integer) As Integer
+    End Function
+    <Runtime.InteropServices.DllImport("Usp10.dll", EntryPoint:="ScriptShape")> _
+    Public Shared Function ScriptShape(hdc As IntPtr, ByRef psc As IntPtr, <Runtime.InteropServices.MarshalAs(Runtime.InteropServices.UnmanagedType.LPWStr)> wcChars As String, cChars As Integer, cMaxGlyphs As Integer, ByRef psa As SCRIPT_ANALYSIS, <Runtime.InteropServices.MarshalAs(Runtime.InteropServices.UnmanagedType.LPArray, SizeParamIndex:=4), Runtime.InteropServices.Out()> wOutGlyphs() As UShort, <Runtime.InteropServices.MarshalAs(Runtime.InteropServices.UnmanagedType.LPArray, SizeParamIndex:=3), Runtime.InteropServices.Out()> wLogClust() As UShort, <Runtime.InteropServices.MarshalAs(Runtime.InteropServices.UnmanagedType.LPArray, SizeParamIndex:=4), Runtime.InteropServices.Out()> psva() As SCRIPT_VISATTR, <Runtime.InteropServices.Out()> ByRef cGlyphs As Integer) As Integer
+    End Function
+    <Runtime.InteropServices.DllImport("Usp10.dll", EntryPoint:="ScriptPlace")> _
+    Public Shared Function ScriptPlace(hdc As IntPtr, ByRef psc As IntPtr, wGlyphs() As UShort, cGlyphs As Integer, psva() As SCRIPT_VISATTR, ByRef psa As SCRIPT_ANALYSIS, <Runtime.InteropServices.MarshalAs(Runtime.InteropServices.UnmanagedType.LPArray, SizeParamIndex:=3), Runtime.InteropServices.Out()> iAdvance() As Integer, <Runtime.InteropServices.MarshalAs(Runtime.InteropServices.UnmanagedType.LPArray, SizeParamIndex:=3), Runtime.InteropServices.Out()> pGoffset() As GOFFSET, <Runtime.InteropServices.Out()> ByRef pABC As ABC) As Integer
+    End Function
+    <Runtime.InteropServices.DllImport("Usp10.dll", EntryPoint:="ScriptFreeCache")> _
+    Public Shared Function ScriptFreeCache(ByRef psc As IntPtr) As Integer
+    End Function
+    <Runtime.InteropServices.DllImport("User32.dll", EntryPoint:="GetDC")> _
+    Public Shared Function GetDC(hWnd As IntPtr) As IntPtr
+    End Function
+    <Runtime.InteropServices.DllImport("User32.dll", EntryPoint:="ReleaseDC")> _
+    Public Shared Function ReleaseDC(hWnd As IntPtr, hdc As IntPtr) As Integer
+    End Function
+    <Runtime.InteropServices.DllImport("gdi32.dll", EntryPoint:="SelectObject")> _
+    Private Shared Function SelectObject(ByVal hdc As IntPtr, ByVal hObject As IntPtr) As IntPtr
+    End Function
+    Structure CharPosInfo
+        Public Index As Integer
+        Public X As Integer
+        Public Y As Integer
+    End Structure
+    Public Shared Function GetWordDiacriticPositions(Str As String, useFont As Font) As CharPosInfo()
+        Dim hdc As IntPtr
+        Dim CharPosInfos As New List(Of CharPosInfo)
+        hdc = GetDC(IntPtr.Zero)
+        Dim oldFont As IntPtr = SelectObject(hdc, useFont.ToHfont())
+        Dim MaxItems As Integer = 16
+        Dim Control As New SCRIPT_CONTROL With {.ScriptControlFlags = 0}
+        Dim State As New SCRIPT_STATE With {.ScriptStateFlags = 1} '0 LTR, 1 RTL
+        Dim Items() As SCRIPT_ITEM = Nothing
+        Dim ItemCount As Integer
+        Dim Result As Integer
+        Do
+            ReDim Items(MaxItems - 1)
+            Result = ScriptItemize(Str, Str.Length, MaxItems, Control, State, Items, ItemCount)
+            If Result = 0 Then
+                ReDim Preserve Items(ItemCount) 'there is a dummy last item so adding one here
+                Exit Do
+            ElseIf Result = E_OUTOFMEMORY Then
+            End If
+            MaxItems *= 2
+        Loop While True
+        If Result = 0 Then
+            'last item is dummy item pointing to end of string
+            Dim Cache As IntPtr = IntPtr.Zero
+            For Count = 0 To ItemCount - 2
+                Dim Logs() As UShort = Nothing
+                Dim Glyphs() As UShort = Nothing
+                Dim VisAttrs() As SCRIPT_VISATTR = Nothing
+                ReDim Glyphs((Items(Count + 1).iCharPos - Items(Count).iCharPos) * 3 \ 2 + 16 - 1)
+                ReDim VisAttrs((Items(Count + 1).iCharPos - Items(Count).iCharPos) * 3 \ 2 + 16 - 1)
+                ReDim Logs(Items(Count + 1).iCharPos - Items(Count).iCharPos - 1)
+                Dim dc As IntPtr = IntPtr.Zero
+                Do
+                    Dim GlyphsUsed As Integer
+                    Result = ScriptShape(dc, Cache, Str.Substring(Items(Count).iCharPos), Items(Count + 1).iCharPos - Items(Count).iCharPos, Glyphs.Length, Items(Count).a, Glyphs, Logs, VisAttrs, GlyphsUsed)
+                    If Result = 0 Then
+                        ReDim Preserve Glyphs(GlyphsUsed - 1)
+                        ReDim Preserve VisAttrs(GlyphsUsed - 1)
+                        Exit Do
+                    ElseIf Result = E_PENDING Then
+                        dc = hdc
+                    ElseIf Result = E_OUTOFMEMORY Then
+                        ReDim Glyphs(Glyphs.Length * 2 - 1)
+                        ReDim VisAttrs(VisAttrs.Length * 2 - 1)
+                    ElseIf Result = USP_E_SCRIPT_NOT_IN_FONT Then
+                    Else
+                    End If
+                Loop While True
+                If Result = 0 Then
+                    Dim Advances(Glyphs.Length - 1) As Integer
+                    Dim Offsets(Glyphs.Length - 1) As GOFFSET
+                    Dim abc As New ABC With {.abcA = 0, .abcB = 0, .abcC = 0}
+                    dc = IntPtr.Zero
+                    Do
+                        Result = ScriptPlace(dc, Cache, Glyphs, Glyphs.Length, VisAttrs, Items(Count).a, Advances, Offsets, abc)
+                        If Result <> E_PENDING Then Exit Do
+                        dc = hdc
+                    Loop While True
+                    If Result = 0 Then
+                        For CharCount = Logs.Length - 1 To 0 Step -1
+                            For ResCount As Integer = Logs(CharCount) To If(CharCount = 0, Glyphs.Length - 1, Logs(CharCount - 1) - 1)
+                                'fDiacritic or fZeroWidth
+                                If (VisAttrs(ResCount).ScriptVisAttrFlags And (32 Or 64)) <> 0 Then
+                                    CharPosInfos.Add(New CharPosInfo With {.Index = Logs.Length - 1 - CharCount, .X = Offsets(ResCount).du, .Y = Offsets(ResCount).dv})
+                                End If
+                            Next
+                        Next
+                    End If
+                End If
+            Next
+            ScriptFreeCache(Cache)
+        End If
+        SelectObject(hdc, oldFont)
+        ReleaseDC(IntPtr.Zero, hdc)
+        Return CharPosInfos.ToArray()
+    End Function
     Public Shared Sub DoRenderPdf(Doc As iTextSharp.text.Document, Writer As iTextSharp.text.pdf.PdfWriter, Font As iTextSharp.text.Font, DrawFont As Drawing.Font, CurRenderArray As List(Of HostPageUtility.RenderArray.RenderItem), _Bounds As Generic.List(Of Generic.List(Of Generic.List(Of LayoutInfo))), ByRef PageOffset As PointF, BaseOffset As PointF)
         For Count As Integer = 0 To CurRenderArray.Count - 1
             Dim MaxRect As New RectangleF(Doc.PageSize.Width, Doc.PageSize.Height, 0, 0)
@@ -1816,84 +1970,88 @@ Public Class RenderArray
                         MaxRect.Width = Math.Max(MaxRect.Right, Rect.Right) - MaxRect.Left + 1
                         MaxRect.Height = Math.Max(MaxRect.Bottom, Rect.Bottom) - MaxRect.Top + 1
                         Dim ct As iTextSharp.text.pdf.ColumnText
-                        Dim Index As Integer = 0
-                        Do
-                            Index = Text.IndexOf(ArabicData.ArabicEndOfAyah, Index)
-                            If Index <> -1 Then
-                                Dim NumCount As Integer = 0
-                                Do While NumCount <> 3 And (Index + NumCount + 1) <= Text.Length - 1 AndAlso Char.IsDigit(Text(Index + NumCount + 1))
-                                    NumCount += 1
-                                Loop
-                                Dim s As New SizeF
-                                Dim Baseline As Single
-                                GetTextWidthPdf(Font, Text.Substring(0, Index + 1 + NumCount), Doc.PageSize.Width, True, s, Baseline)
-                                Dim ChBounds As Integer() = Font.BaseFont.GetCharBBox(AscW(Text(Index)))
-                                Dim n As New SizeF
-                                GetTextWidthPdf(Font, Text.Substring(Index + 1, NumCount), Doc.PageSize.Width, True, n, Baseline)
-                                ct = New iTextSharp.text.pdf.ColumnText(Writer.DirectContent)
-                                ct.RunDirection = iTextSharp.text.pdf.PdfWriter.RUN_DIRECTION_RTL
-                                ct.ArabicOptions = iTextSharp.text.pdf.ColumnText.AR_COMPOSEDTASHKEEL
-                                ct.UseAscender = False
-                                Dim FitFont As New iTextSharp.text.Font(Font)
-                                FitFont.Size = Math.Min((ChBounds(2) - ChBounds(0)) * 0.001F * Font.Size * 2 / 3 / n.Width * Font.Size, Font.Size)
-                                GetTextWidthPdf(FitFont, Text.Substring(Index + 1, NumCount), Doc.PageSize.Width, True, n, Baseline)
-                                ct.SetSimpleColumn(Rect.Left + Doc.LeftMargin + Rect.Width - 3 - s.Width, Doc.PageSize.Height - Doc.TopMargin - Rect.Bottom - _Bounds(Count)(SubCount)(NextCount).Baseline, Rect.Right - 3 + Doc.LeftMargin - s.Width + (ChBounds(2) - ChBounds(0)) * 0.001F * Font.Size, Doc.PageSize.Height - Doc.TopMargin - Rect.Top + 1 - _Bounds(Count)(SubCount)(NextCount).Baseline, Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size), iTextSharp.text.Element.ALIGN_CENTER Or iTextSharp.text.Element.ALIGN_BASELINE)
-                                ct.AddText(New iTextSharp.text.Chunk(Text.Substring(Index + 1, NumCount), FitFont))
-                                ct.Go()
-                                Text = Text.Remove(Index + 1, NumCount)
-                                Index = Index + 1
-                            End If
-                        Loop While Index <> -1
-                        Index = 1
-                        Do
-                            'GetCharacterPlacement is the only way to get accurate rendering positions
-                            'without decompiling the truetype font and writing an entire truetype rendering engine
-                            'initial/medial/final tables, ligature tables, combination tables and others are in the font
-                            Index = Text.IndexOfAny(ArabicData.RecitationCombiningSymbols, Index)
-                            If Index <> -1 Then
-                                Dim s As New SizeF
-                                Dim Baseline As Single
-                                Dim ChBounds As Integer()
-                                If (Text(Index - 1) = " "c) Then
-                                    'stopping symbols handled by normal rendering engine
-                                    Index += 1
-                                    Continue Do
-                                ElseIf Text(Index - 1) = ArabicData.ArabicTatweel Then
-                                    ChBounds = Font.BaseFont.GetCharBBox(AscW(Text(Index - 1)))
-                                Else
-                                    Dim ShIndex As Integer = ArabicData.GetShapeIndexFromString(Text, Index - 1, 1)
-                                    Dim ShapeCh As Char = If(ShIndex = -1 Or ArabicData.Data.ArabicLetters(ArabicData.FindLetterBySymbol(Text(Index - 1))).Shaping = Nothing, Text(Index - 1), ArabicData.Data.ArabicLetters(ArabicData.FindLetterBySymbol(Text(Index - 1))).Shaping(ShIndex))
-                                    ChBounds = Font.BaseFont.GetCharBBox(AscW(ShapeCh))
-                                End If
-                                'partial shaping will never work
-                                'must either convert all to shaped characters or subtract last character
-                                GetTextWidthPdf(Font, Text.Substring(0, Index), Doc.PageSize.Width, True, s, Baseline)
-                                If Text(Index - 1) <> " "c And Text(Index - 1) <> ArabicData.ArabicTatweel And ArabicData.GetShapeIndexFromString(Text, Index - 1, 1) = 2 AndAlso Not ArabicData.Data.ArabicLetters(ArabicData.FindLetterBySymbol(Text(Index - 1))).Shaping = Nothing Then
-                                    s.Width -= Font.BaseFont.GetCharBBox(AscW(ArabicData.Data.ArabicLetters(ArabicData.FindLetterBySymbol(Text(Index - 1))).Shaping(0)))(2) * 0.001F * Font.Size
-                                ElseIf Text(Index - 1) <> " "c And Text(Index - 1) <> ArabicData.ArabicTatweel And ArabicData.GetShapeIndexFromString(Text, Index - 1, 1) = 3 AndAlso Not ArabicData.Data.ArabicLetters(ArabicData.FindLetterBySymbol(Text(Index - 1))).Shaping = Nothing Then
-                                    s.Width -= Font.BaseFont.GetCharBBox(AscW(ArabicData.Data.ArabicLetters(ArabicData.FindLetterBySymbol(Text(Index - 1))).Shaping(1)))(2) * 0.001F * Font.Size
-                                Else
-                                    s.Width -= ChBounds(2) * 0.001F * Font.Size
-                                End If
-                                Dim LastCenter As Integer = 0
-                                Dim Offset As Integer = 0
-                                Do
-                                    ct = New iTextSharp.text.pdf.ColumnText(Writer.DirectContent)
-                                    ct.RunDirection = iTextSharp.text.pdf.PdfWriter.RUN_DIRECTION_RTL
-                                    ct.ArabicOptions = iTextSharp.text.pdf.ColumnText.AR_COMPOSEDTASHKEEL
-                                    ct.UseAscender = False
-                                    Dim DiaBounds As Integer() = Font.BaseFont.GetCharBBox(AscW(Text(Index)))
-                                    Offset = If(DiaBounds(1) < 0 And DiaBounds(3) > If(Offset < 0, Offset, ChBounds(1)), -(DiaBounds(3) - If(Offset < 0, Offset, ChBounds(1) - CInt(Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size) / 0.001F / Font.Size))), If(DiaBounds(1) >= 0 And DiaBounds(1) < If(Offset > 0, Offset, ChBounds(3)), -(DiaBounds(1) - If(Offset > 0, Offset, ChBounds(3) + CInt(Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size) / 0.001F / Font.Size))), 0))
-                                    ct.SetSimpleColumn(Rect.Left + Doc.LeftMargin + (Rect.Width - 3 - s.Width - (ChBounds(2) - If(LastCenter <> 0, LastCenter - (DiaBounds(2) - DiaBounds(0)) \ 2, -DiaBounds(0))) * 0.001F * Font.Size), Doc.PageSize.Height - Doc.TopMargin - Rect.Bottom - _Bounds(Count)(SubCount)(NextCount).Baseline + Offset * 0.001F * Font.Size, Rect.Right - 3 + Doc.LeftMargin - s.Width + If(LastCenter <> 0, LastCenter + (DiaBounds(2) - DiaBounds(0)) \ 2, -DiaBounds(0)) * 0.001F * Font.Size, Doc.PageSize.Height - Doc.TopMargin - Rect.Top + 1 - _Bounds(Count)(SubCount)(NextCount).Baseline + Offset * 0.001F * Font.Size, Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size), iTextSharp.text.Element.ALIGN_RIGHT Or iTextSharp.text.Element.ALIGN_BASELINE)
-                                    ct.AddText(New iTextSharp.text.Chunk(Text(Index), Font))
-                                    ct.Go()
-                                    If DiaBounds(1) < 0 Then Offset = DiaBounds(1) - Offset
-                                    If DiaBounds(1) >= 0 Then Offset = DiaBounds(3) + Offset
-                                    LastCenter += (DiaBounds(2) - DiaBounds(0)) \ 2
-                                    Index += 1
-                                Loop While Index <> Text.Length AndAlso Array.IndexOf(ArabicData.RecitationCombiningSymbols, Text(Index)) <> -1
-                            End If
-                        Loop While Index <> -1
+                        Dim CharPosInfos() As CharPosInfo = GetWordDiacriticPositions(Text, DrawFont)
+                        For Index As Integer = 0 To CharPosInfos.Length - 1
+                            'CharPosInfos(Index).Index()
+                        Next
+                        'Dim Index As Integer = 0
+                        'Do
+                        '    Index = Text.IndexOf(ArabicData.ArabicEndOfAyah, Index)
+                        '    If Index <> -1 Then
+                        '        Dim NumCount As Integer = 0
+                        '        Do While NumCount <> 3 And (Index + NumCount + 1) <= Text.Length - 1 AndAlso Char.IsDigit(Text(Index + NumCount + 1))
+                        '            NumCount += 1
+                        '        Loop
+                        '        Dim s As New SizeF
+                        '        Dim Baseline As Single
+                        '        GetTextWidthPdf(Font, DrawFont, Text.Substring(0, Index + 1 + NumCount), Doc.PageSize.Width, True, s, Baseline)
+                        '        Dim ChBounds As Integer() = Font.BaseFont.GetCharBBox(AscW(Text(Index)))
+                        '        Dim n As New SizeF
+                        '        GetTextWidthPdf(Font, DrawFont, Text.Substring(Index + 1, NumCount), Doc.PageSize.Width, True, n, Baseline)
+                        '        ct = New iTextSharp.text.pdf.ColumnText(Writer.DirectContent)
+                        '        ct.RunDirection = iTextSharp.text.pdf.PdfWriter.RUN_DIRECTION_RTL
+                        '        ct.ArabicOptions = iTextSharp.text.pdf.ColumnText.AR_COMPOSEDTASHKEEL
+                        '        ct.UseAscender = False
+                        '        Dim FitFont As New iTextSharp.text.Font(Font)
+                        '        FitFont.Size = Math.Min((ChBounds(2) - ChBounds(0)) * 0.001F * Font.Size * 2 / 3 / n.Width * Font.Size, Font.Size)
+                        '        GetTextWidthPdf(FitFont, DrawFont, Text.Substring(Index + 1, NumCount), Doc.PageSize.Width, True, n, Baseline)
+                        '        ct.SetSimpleColumn(Rect.Left + Doc.LeftMargin + Rect.Width - 3 - s.Width, Doc.PageSize.Height - Doc.TopMargin - Rect.Bottom - _Bounds(Count)(SubCount)(NextCount).Baseline, Rect.Right - 3 + Doc.LeftMargin - s.Width + (ChBounds(2) - ChBounds(0)) * 0.001F * Font.Size, Doc.PageSize.Height - Doc.TopMargin - Rect.Top + 1 - _Bounds(Count)(SubCount)(NextCount).Baseline, Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size), iTextSharp.text.Element.ALIGN_CENTER Or iTextSharp.text.Element.ALIGN_BASELINE)
+                        '        ct.AddText(New iTextSharp.text.Chunk(Text.Substring(Index + 1, NumCount), FitFont))
+                        '        ct.Go()
+                        '        Text = Text.Remove(Index + 1, NumCount)
+                        '        Index = Index + 1
+                        '    End If
+                        'Loop While Index <> -1
+                        'Index = 1
+                        'Do
+                        '    'GetCharacterPlacement is the only way to get accurate rendering positions
+                        '    'without decompiling the truetype font and writing an entire truetype rendering engine
+                        '    'initial/medial/final tables, ligature tables, combination tables and others are in the font
+                        '    Index = Text.IndexOfAny(ArabicData.RecitationCombiningSymbols, Index)
+                        '    If Index <> -1 Then
+                        '        Dim s As New SizeF
+                        '        Dim Baseline As Single
+                        '        Dim ChBounds As Integer()
+                        '        If (Text(Index - 1) = " "c) Then
+                        '            'stopping symbols handled by normal rendering engine
+                        '            Index += 1
+                        '            Continue Do
+                        '        ElseIf Text(Index - 1) = ArabicData.ArabicTatweel Then
+                        '            ChBounds = Font.BaseFont.GetCharBBox(AscW(Text(Index - 1)))
+                        '        Else
+                        '            Dim ShIndex As Integer = ArabicData.GetShapeIndexFromString(Text, Index - 1, 1)
+                        '            Dim ShapeCh As Char = If(ShIndex = -1 Or ArabicData.Data.ArabicLetters(ArabicData.FindLetterBySymbol(Text(Index - 1))).Shaping = Nothing, Text(Index - 1), ArabicData.Data.ArabicLetters(ArabicData.FindLetterBySymbol(Text(Index - 1))).Shaping(ShIndex))
+                        '            ChBounds = Font.BaseFont.GetCharBBox(AscW(ShapeCh))
+                        '        End If
+                        '        'partial shaping will never work
+                        '        'must either convert all to shaped characters or subtract last character
+                        '        GetTextWidthPdf(Font, DrawFont, Text.Substring(0, Index), Doc.PageSize.Width, True, s, Baseline)
+                        '        If Text(Index - 1) <> " "c And Text(Index - 1) <> ArabicData.ArabicTatweel And ArabicData.GetShapeIndexFromString(Text, Index - 1, 1) = 2 AndAlso Not ArabicData.Data.ArabicLetters(ArabicData.FindLetterBySymbol(Text(Index - 1))).Shaping = Nothing Then
+                        '            s.Width -= Font.BaseFont.GetCharBBox(AscW(ArabicData.Data.ArabicLetters(ArabicData.FindLetterBySymbol(Text(Index - 1))).Shaping(0)))(2) * 0.001F * Font.Size
+                        '        ElseIf Text(Index - 1) <> " "c And Text(Index - 1) <> ArabicData.ArabicTatweel And ArabicData.GetShapeIndexFromString(Text, Index - 1, 1) = 3 AndAlso Not ArabicData.Data.ArabicLetters(ArabicData.FindLetterBySymbol(Text(Index - 1))).Shaping = Nothing Then
+                        '            s.Width -= Font.BaseFont.GetCharBBox(AscW(ArabicData.Data.ArabicLetters(ArabicData.FindLetterBySymbol(Text(Index - 1))).Shaping(1)))(2) * 0.001F * Font.Size
+                        '        Else
+                        '            s.Width -= ChBounds(2) * 0.001F * Font.Size
+                        '        End If
+                        '        Dim LastCenter As Integer = 0
+                        '        Dim Offset As Integer = 0
+                        '        Do
+                        '            ct = New iTextSharp.text.pdf.ColumnText(Writer.DirectContent)
+                        '            ct.RunDirection = iTextSharp.text.pdf.PdfWriter.RUN_DIRECTION_RTL
+                        '            ct.ArabicOptions = iTextSharp.text.pdf.ColumnText.AR_COMPOSEDTASHKEEL
+                        '            ct.UseAscender = False
+                        '            Dim DiaBounds As Integer() = Font.BaseFont.GetCharBBox(AscW(Text(Index)))
+                        '            Offset = If(DiaBounds(1) < 0 And DiaBounds(3) > If(Offset < 0, Offset, ChBounds(1)), -(DiaBounds(3) - If(Offset < 0, Offset, ChBounds(1) - CInt(Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size) / 0.001F / Font.Size))), If(DiaBounds(1) >= 0 And DiaBounds(1) < If(Offset > 0, Offset, ChBounds(3)), -(DiaBounds(1) - If(Offset > 0, Offset, ChBounds(3) + CInt(Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size) / 0.001F / Font.Size))), 0))
+                        '            ct.SetSimpleColumn(Rect.Left + Doc.LeftMargin + (Rect.Width - 3 - s.Width - (ChBounds(2) - If(LastCenter <> 0, LastCenter - (DiaBounds(2) - DiaBounds(0)) \ 2, -DiaBounds(0))) * 0.001F * Font.Size), Doc.PageSize.Height - Doc.TopMargin - Rect.Bottom - _Bounds(Count)(SubCount)(NextCount).Baseline + Offset * 0.001F * Font.Size, Rect.Right - 3 + Doc.LeftMargin - s.Width + If(LastCenter <> 0, LastCenter + (DiaBounds(2) - DiaBounds(0)) \ 2, -DiaBounds(0)) * 0.001F * Font.Size, Doc.PageSize.Height - Doc.TopMargin - Rect.Top + 1 - _Bounds(Count)(SubCount)(NextCount).Baseline + Offset * 0.001F * Font.Size, Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size), iTextSharp.text.Element.ALIGN_RIGHT Or iTextSharp.text.Element.ALIGN_BASELINE)
+                        '            ct.AddText(New iTextSharp.text.Chunk(Text(Index), Font))
+                        '            ct.Go()
+                        '            If DiaBounds(1) < 0 Then Offset = DiaBounds(1) - Offset
+                        '            If DiaBounds(1) >= 0 Then Offset = DiaBounds(3) + Offset
+                        '            LastCenter += (DiaBounds(2) - DiaBounds(0)) \ 2
+                        '            Index += 1
+                        '        Loop While Index <> Text.Length AndAlso Array.IndexOf(ArabicData.RecitationCombiningSymbols, Text(Index)) <> -1
+                        '    End If
+                        'Loop While Index <> -1
                         Text = System.Text.RegularExpressions.Regex.Replace(Text, "(?<!\s+)(?:" + ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicData.RecitationCombiningSymbols, Function(Ch As Char) CStr(Ch))) + ")", String.Empty)
                         ct = New iTextSharp.text.pdf.ColumnText(Writer.DirectContent)
                         If CurRenderArray(Count).TextItems(SubCount).DisplayClass = RenderArray.RenderDisplayClass.eArabic Or CurRenderArray(Count).TextItems(SubCount).DisplayClass = RenderArray.RenderDisplayClass.eRTL Then
@@ -1937,14 +2095,14 @@ Public Class RenderArray
         PrivateFontColl.AddFontFile(GetFontPath(0))
         Dim DrawFont As New Drawing.Font(PrivateFontColl.Families(0), 20, FontStyle.Regular, GraphicsUnit.Point)
         'divide into pages by heights
-        GetLayout(CurRenderArray, Doc.PageSize.Width - Doc.LeftMargin - Doc.RightMargin, _Bounds, GetTextWidthFromPdf(Font))
+        GetLayout(CurRenderArray, Doc.PageSize.Width - Doc.LeftMargin - Doc.RightMargin, _Bounds, GetTextWidthFromPdf(Font, DrawFont))
         Dim PageOffset As New PointF(0, 0)
         DoRenderPdf(Doc, Writer, Font, DrawFont, CurRenderArray, _Bounds, PageOffset, New PointF(0, 0))
         Writer.CloseStream = False
         Doc.Close()
     End Sub
     Delegate Function GetTextWidth(Str As String, MaxWidth As Single, IsRTL As Boolean, ByRef s As SizeF, ByRef Baseline As Single) As Integer
-    Private Shared Function GetTextWidthPdf(Font As iTextSharp.text.Font, Str As String, MaxWidth As Single, IsRTL As Boolean, ByRef s As SizeF, ByRef Baseline As Single) As Integer
+    Private Shared Function GetTextWidthPdf(Font As iTextSharp.text.Font, DrawFont As Font, Str As String, MaxWidth As Single, IsRTL As Boolean, ByRef s As SizeF, ByRef Baseline As Single) As Integer
         Font.BaseFont.CorrectArabicAdvance()
         Dim Index As Integer = 0
         Do
@@ -2039,9 +2197,9 @@ Public Class RenderArray
         s.Height = Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size) * 4 + Baseline - Math.Min(MinAscent * 0.001F * Font.Size, Font.BaseFont.GetDescentPoint(Text, Font.Size))
         Return Len
     End Function
-    Private Shared Function GetTextWidthFromPdf(Font As iTextSharp.text.Font) As GetTextWidth
+    Private Shared Function GetTextWidthFromPdf(Font As iTextSharp.text.Font, DrawFont As Font, ) As GetTextWidth
         Return Function(Str As String, MaxWidth As Single, IsRTL As Boolean, ByRef s As SizeF, ByRef Baseline As Single)
-                   Dim Ret As Integer = GetTextWidthPdf(Font, Str, MaxWidth - 4, IsRTL, s, Baseline)
+                   Dim Ret As Integer = GetTextWidthPdf(Font, DrawFont, Str, MaxWidth - 4, IsRTL, s, Baseline)
                    s.Width += 4 '1 unit for line and 1 for spacing on each side
                    Return Ret
                End Function
@@ -2455,285 +2613,285 @@ Public Class RenderArray
         Next
     End Sub
 End Class
-Public Class MailDispatcher
-    Public Shared Sub SendEMail(ByVal EMail As String, ByVal Subject As String, ByVal Body As String)
-        Dim SmtpClient As New Net.Mail.SmtpClient
-        'encrypt and unencrypt password credential
-        SmtpClient.Credentials = New Net.NetworkCredential(Utility.ConnectionData.IslamSourceAdminEMail, Utility.ConnectionData.IslamSourceAdminEMailPass)
-        SmtpClient.Port = 587
-        SmtpClient.Host = Utility.ConnectionData.IslamSourceMailServer
-        Dim SmtpMail As New Net.Mail.MailMessage
-        SmtpMail.From = New Net.Mail.MailAddress(Utility.ConnectionData.IslamSourceAdminEMail, Utility.ConnectionData.IslamSourceAdminName)
-        SmtpMail.To.Add(EMail)
-        SmtpMail.Subject = Subject
-        SmtpMail.Body = Body
-        Try
-            SmtpClient.Send(SmtpMail)
-        Catch eException As Net.Mail.SmtpException
-        End Try
-    End Sub
-    Public Shared Sub SendActivationEMail(ByVal UserName As String, ByVal EMail As String, ByVal UserID As Integer, ByVal ActivationCode As Integer)
-        SendEMail(EMail, String.Format(Utility.LoadResourceString("Acct_ActivationAccountSubject"), HttpContext.Current.Request.Url.Host), _
-            String.Format(Utility.LoadResourceString("Acct_ActivationAccountBody"), HttpContext.Current.Request.Url.Host, UserName, "http://" + HttpContext.Current.Request.Url.Host + "/" + Utility.GetPageString("ActivateAccount&UserID=" + CStr(UserID) + "&ActivationCode=" + CStr(ActivationCode)), "http://" + HttpContext.Current.Request.Url.Host + "/" + Utility.GetPageString("ActivateAccount"), CStr(ActivationCode)))
-    End Sub
-    Public Shared Sub SendUserNameReminderEMail(ByVal UserName As String, ByVal EMail As String)
-        SendEMail(EMail, String.Format(Utility.LoadResourceString("Acct_UsernameReminderSubject"), HttpContext.Current.Request.Url.Host), _
-            String.Format(Utility.LoadResourceString("Acct_UsernameReminderBody"), HttpContext.Current.Request.Url.Host, UserName))
-    End Sub
-    Public Shared Sub SendPasswordResetEMail(ByVal UserName As String, ByVal EMail As String, ByVal UserID As Integer, ByVal PasswordResetCode As UInteger)
-        SendEMail(EMail, String.Format(Utility.LoadResourceString("Acct_PasswordResetSubject"), HttpContext.Current.Request.Url.Host), _
-            String.Format(Utility.LoadResourceString("Acct_PasswordResetBody"), HttpContext.Current.Request.Url.Host, UserName, "http://" + HttpContext.Current.Request.Url.Host + "/" + Utility.GetPageString("ResetPassword&UserID=" + CStr(UserID) + "&PasswordResetCode=" + CStr(PasswordResetCode)), "http://" + HttpContext.Current.Request.Url.Host + "/" + Utility.GetPageString("ResetPassword"), CStr(PasswordResetCode)))
-    End Sub
-    Public Shared Sub SendUserNameChangedEMail(ByVal UserName As String, ByVal EMail As String)
-        SendEMail(EMail, String.Format(Utility.LoadResourceString("Acct_UsernameChangedSubject"), HttpContext.Current.Request.Url.Host), _
-            String.Format(Utility.LoadResourceString("Acct_UsernameChangedBody"), HttpContext.Current.Request.Url.Host, UserName))
-    End Sub
-    Public Shared Sub SendPasswordChangedEMail(ByVal UserName As String, ByVal EMail As String)
-        SendEMail(EMail, String.Format(Utility.LoadResourceString("Acct_PasswordChangedSubject"), HttpContext.Current.Request.Url.Host), _
-            String.Format(Utility.LoadResourceString("Acct_PasswordChangedBody"), HttpContext.Current.Request.Url.Host, UserName))
-    End Sub
-End Class
-Public Class SiteDatabase
-    Public Shared Function GetConnection() As MySql.Data.MySqlClient.MySqlConnection
-        Dim Connection As MySql.Data.MySqlClient.MySqlConnection = New MySql.Data.MySqlClient.MySqlConnection("Server=" + Utility.ConnectionData.DbConnServer + ";Uid=" + Utility.ConnectionData.DbConnUid + ";Pwd=" + Utility.ConnectionData.DbConnPwd + ";Database=" + Utility.ConnectionData.DbConnDatabase + ";")
-        Try
-            Connection.Open()
-        Catch e As MySql.Data.MySqlClient.MySqlException
-            Return Nothing
-        Catch e As TimeoutException
-            Return Nothing
-        End Try
-        Return Connection
-    End Function
-    Public Shared Sub ExecuteNonQuery(ByVal Connection As MySql.Data.MySqlClient.MySqlConnection, ByVal Query As String, Optional Parameters As Generic.Dictionary(Of String, Object) = Nothing)
-        Dim Command As MySql.Data.MySqlClient.MySqlCommand = Connection.CreateCommand()
-        Command.CommandText = Query
-        If Not Parameters Is Nothing Then
-            For Each Key As String In Parameters.Keys
-                Command.Parameters.AddWithValue(Key, Parameters(Key))
-            Next
-        End If
-        Command.ExecuteNonQuery()
-    End Sub
-    Public Shared Sub CreateDatabase()
-        Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
-        If Connection Is Nothing Then Return
-        'SHA1 produces 20 bytes not available in MySQL 5.1
-        'should salt the password
-        ExecuteNonQuery(Connection, "CREATE TABLE Users (UserID int NOT NULL AUTO_INCREMENT, " + _
-        "PRIMARY KEY(UserID), " + _
-        "UserName VARCHAR(15) UNIQUE, " + _
-        "Password BINARY(20), " + _
-        "EMail VARCHAR(254) UNIQUE, " + _
-        "Access int NOT NULL DEFAULT 0, " + _
-        "ActivationCode int, " + _
-        "LoginSecret int DEFAULT NULL, " + _
-        "LoginTime TIMESTAMP NULL)")
-        Connection.Close()
-    End Sub
-    Public Shared Sub RemoveDatabase()
-        Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
-        If Connection Is Nothing Then Return
-        Dim Command As MySql.Data.MySqlClient.MySqlCommand = Connection.CreateCommand()
-        ExecuteNonQuery(Connection, "DROP TABLE Users")
-        Connection.Close()
-    End Sub
-    Public Shared Sub CleanupStaleActivations()
-        Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
-        If Connection Is Nothing Then Return
-        ExecuteNonQuery(Connection, "DELETE FROM Users WHERE ActivationCode IS NOT NULL AND (LoginTime IS NULL OR UTC_TIMESTAMP > TIMESTAMPADD(DAY, 10, LoginTime))")
-        Connection.Close()
-    End Sub
-    Public Shared Sub CleanupStaleLoginSessions()
-        Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
-        If Connection Is Nothing Then Return
-        ExecuteNonQuery(Connection, "UPDATE Users SET LoginSecret=NULL, LoginTime=NULL WHERE ActivationCode IS NOT NULL AND (LoginTime IS NOT NULL AND UTC_TIMESTAMP > TIMESTAMPADD(HOUR, 1, LoginTime))")
-        Connection.Close()
-    End Sub
-    Public Shared Sub AddUser(ByVal UserName As String, ByVal Password As String, ByVal EMail As String)
-        Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
-        If Connection Is Nothing Then Return
-        Dim Generator As New System.Random()
-        ExecuteNonQuery(Connection, "INSERT INTO Users (UserName, Password, EMail, ActivationCode, LoginTime) VALUES (@UserName, UNHEX(SHA1(@Password)), @EMail, @Code, UTC_TIMESTAMP)", _
-                        New Generic.Dictionary(Of String, Object) From {{"@UserName", UserName}, {"@Password", Password}, {"@EMail", EMail}, {"@Code", CStr(Generator.Next(0, 99999999))}})
-        Connection.Close()
-    End Sub
-    Public Shared Function GetUserID(ByVal UserName As String, ByVal Password As String) As Integer
-        Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
-        If Connection Is Nothing Then Return -1
-        Dim Command As MySql.Data.MySqlClient.MySqlCommand = Connection.CreateCommand()
-        Command.CommandText = "SELECT UserID FROM Users WHERE UserName=@UserName AND Password=UNHEX(SHA1(@Password))"
-        Command.Parameters.AddWithValue("@UserName", UserName)
-        Command.Parameters.AddWithValue("@Password", Password)
-        Dim Reader As MySql.Data.MySqlClient.MySqlDataReader = Command.ExecuteReader()
-        If Reader.Read() AndAlso Not Reader.IsDBNull(0) Then
-            GetUserID = Reader.GetInt32("UserID")
-        Else
-            GetUserID = -1
-        End If
-        Reader.Close()
-        Connection.Close()
-    End Function
-    Public Shared Function GetUserID(ByVal UserName As String) As Integer
-        Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
-        If Connection Is Nothing Then Return -1
-        Dim Command As MySql.Data.MySqlClient.MySqlCommand = Connection.CreateCommand()
-        Command.CommandText = "SELECT UserID FROM Users WHERE UserName=@UserName"
-        Command.Parameters.AddWithValue("@UserName", UserName)
-        Dim Reader As MySql.Data.MySqlClient.MySqlDataReader = Command.ExecuteReader()
-        If Reader.Read() AndAlso Not Reader.IsDBNull(0) Then
-            GetUserID = Reader.GetInt32("UserID")
-        Else
-            GetUserID = -1
-        End If
-        Reader.Close()
-        Connection.Close()
-    End Function
-    Public Shared Function GetUserIDByEMail(ByVal EMail As String) As Integer
-        Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
-        If Connection Is Nothing Then Return -1
-        Dim Command As MySql.Data.MySqlClient.MySqlCommand = Connection.CreateCommand()
-        Command.CommandText = "SELECT UserID FROM Users WHERE EMail=@EMail"
-        Command.Parameters.AddWithValue("@EMail", EMail)
-        Dim Reader As MySql.Data.MySqlClient.MySqlDataReader = Command.ExecuteReader()
-        If Reader.Read() AndAlso Not Reader.IsDBNull(0) Then
-            GetUserIDByEMail = Reader.GetInt32("UserID")
-        Else
-            GetUserIDByEMail = -1
-        End If
-        Reader.Close()
-        Connection.Close()
-    End Function
-    Public Shared Function GetUserResetCode(ByVal UserID As Integer) As UInteger
-        Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
-        If Connection Is Nothing Then Return &HFFFFFFFFL
-        Dim Command As MySql.Data.MySqlClient.MySqlCommand = Connection.CreateCommand()
-        Command.CommandText = "SELECT CRC32(Password) FROM Users WHERE UserID=" + CStr(UserID)
-        Dim Reader As MySql.Data.MySqlClient.MySqlDataReader = Command.ExecuteReader()
-        If Reader.Read() AndAlso Not Reader.IsDBNull(0) Then
-            GetUserResetCode = Reader.GetUInt32("CRC32(Password)")
-        Else
-            GetUserResetCode = &HFFFFFFFFL
-        End If
-        Reader.Close()
-        Connection.Close()
-    End Function
-    Public Shared Function CheckLogin(ByVal UserID As Integer, ByVal Secret As Integer) As Boolean
-        Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
-        If Connection Is Nothing Then Return False
-        Dim Command As MySql.Data.MySqlClient.MySqlCommand = Connection.CreateCommand()
-        Command.CommandText = "SELECT UserID FROM Users WHERE UserID=" + CStr(UserID) + " AND ActivationCode IS NULL AND LoginSecret=" + CStr(Secret) + CStr(IIf(Secret Mod 2 = 0, " AND LoginTime IS NULL", " AND LoginTime IS NOT NULL AND UTC_TIMESTAMP < TIMESTAMPADD(HOUR, 1, LoginTime)"))
-        Dim Reader As MySql.Data.MySqlClient.MySqlDataReader = Command.ExecuteReader()
-        If Reader.Read() AndAlso Not Reader.IsDBNull(0) Then
-            CheckLogin = CInt(Reader.Item("UserID")) = UserID
-        Else
-            CheckLogin = False
-        End If
-        Reader.Close()
-        Connection.Close()
-    End Function
-    Public Shared Function CheckAccess(ByVal UserID As Integer) As Integer
-        Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
-        If Connection Is Nothing Then Return 0
-        Dim Command As MySql.Data.MySqlClient.MySqlCommand = Connection.CreateCommand()
-        Command.CommandText = "SELECT Access FROM Users WHERE UserID=" + CStr(UserID)
-        Dim Reader As MySql.Data.MySqlClient.MySqlDataReader = Command.ExecuteReader()
-        If Reader.Read() AndAlso Not Reader.IsDBNull(0) Then
-            CheckAccess = CInt(Reader.Item("Access"))
-        Else
-            CheckAccess = 0
-        End If
-        Reader.Close()
-        Connection.Close()
-    End Function
-    Public Shared Function SetLogin(ByVal UserID As Integer, ByVal Persist As Boolean) As Integer
-        Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
-        If Connection Is Nothing Then Return -1
-        Dim Generator As New System.Random()
-        'Persistant login secret is even, non-persistant is odd
-        SetLogin = (Generator.Next(0, 99999999) \ 2) * 2 + CInt(IIf(Persist, 0, 1))
-        ExecuteNonQuery(Connection, "UPDATE Users SET LoginSecret=" + CStr(SetLogin) + ", LoginTime=" + CStr(IIf(Persist, "NULL", "UTC_TIMESTAMP")) + " WHERE UserID=" + CStr(UserID))
-        Connection.Close()
-    End Function
-    Public Shared Sub ClearLogin(ByVal UserID As Integer)
-        Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
-        If Connection Is Nothing Then Return
-        ExecuteNonQuery(Connection, "UPDATE Users SET LoginSecret=NULL, LoginTime=NULL WHERE UserID=" + CStr(UserID))
-        Connection.Close()
-    End Sub
-    Public Shared Function GetUserActivated(ByVal UserID As Integer) As Integer
-        Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
-        If Connection Is Nothing Then Return -1
-        Dim Command As MySql.Data.MySqlClient.MySqlCommand = Connection.CreateCommand()
-        Command.CommandText = "SELECT ActivationCode FROM Users WHERE UserID=" + CStr(UserID)
-        Dim Reader As MySql.Data.MySqlClient.MySqlDataReader = Command.ExecuteReader()
-        'If Reader.IsDBNull(0) Then Return -1 'NULL is activated
-        If Not Reader.Read() OrElse Reader.IsDBNull(0) Then
-            GetUserActivated = -1 'NULL is activated
-        Else
-            GetUserActivated = Reader.GetInt32("ActivationCode")
-        End If
-        Reader.Close()
-        Connection.Close()
-    End Function
-    Public Shared Function GetUserName(ByVal UserID As Integer) As String
-        Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
-        If Connection Is Nothing Then Return String.Empty
-        Dim Command As MySql.Data.MySqlClient.MySqlCommand = Connection.CreateCommand()
-        Command.CommandText = "SELECT UserName FROM Users WHERE UserID=" + CStr(UserID)
-        Dim Reader As MySql.Data.MySqlClient.MySqlDataReader = Command.ExecuteReader()
-        If Reader.Read() AndAlso Not Reader.IsDBNull(0) Then
-            GetUserName = Reader.GetString("UserName")
-        Else
-            GetUserName = String.Empty
-        End If
-        Reader.Close()
-        Connection.Close()
-    End Function
-    Public Shared Function GetUserEMail(ByVal UserID As Integer) As String
-        Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
-        If Connection Is Nothing Then Return String.Empty
-        Dim Command As MySql.Data.MySqlClient.MySqlCommand = Connection.CreateCommand()
-        Command.CommandText = "SELECT EMail FROM Users WHERE UserID=" + CStr(UserID)
-        Dim Reader As MySql.Data.MySqlClient.MySqlDataReader = Command.ExecuteReader()
-        If Reader.Read() AndAlso Not Reader.IsDBNull(0) Then
-            GetUserEMail = Reader.GetString("EMail")
-        Else
-            GetUserEMail = String.Empty
-        End If
-        Reader.Close()
-        Connection.Close()
-    End Function
-    Public Shared Sub ChangeUserName(ByVal UserID As Integer, ByVal UserName As String)
-        Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
-        If Connection Is Nothing Then Return
-        ExecuteNonQuery(Connection, "UPDATE Users SET UserName=@UserName WHERE UserID=" + CStr(UserID), New Generic.Dictionary(Of String, Object) From {{"@UserName", UserName}})
-        Connection.Close()
-    End Sub
-    Public Shared Sub ChangeUserPassword(ByVal UserID As Integer, ByVal Password As String)
-        Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
-        If Connection Is Nothing Then Return
-        ExecuteNonQuery(Connection, "UPDATE Users SET Password=UNHEX(SHA1(@Password)) WHERE UserID=" + CStr(UserID), New Generic.Dictionary(Of String, Object) From {{"@Password", Password}})
-        Connection.Close()
-    End Sub
-    Public Shared Sub ChangeUserEMail(ByVal UserID As Integer, ByVal EMail As String)
-        Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
-        If Connection Is Nothing Then Return
-        Dim Generator As New System.Random()
-        ExecuteNonQuery(Connection, "UPDATE Users SET EMail=@EMail, ActivationCode='" + CStr(Generator.Next(0, 99999999)) + "' WHERE UserID=" + CStr(UserID), New Generic.Dictionary(Of String, Object) From {{"@EMail", EMail}})
-        Connection.Close()
-    End Sub
-    Public Shared Sub SetUserActivated(ByVal UserID As Integer)
-        Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
-        If Connection Is Nothing Then Return
-        Dim Generator As New System.Random()
-        ExecuteNonQuery(Connection, "UPDATE Users SET ActivationCode=NULL, LoginTime=NULL WHERE UserID=" + CStr(UserID))
-        Connection.Close()
-    End Sub
-    Public Shared Sub RemoveUser(ByVal UserID As Integer)
-        Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
-        If Connection Is Nothing Then Return
-        ExecuteNonQuery(Connection, "DELETE FROM Users WHERE UserID=" + CStr(UserID))
-        Connection.Close()
-    End Sub
-End Class
+        Public Class MailDispatcher
+            Public Shared Sub SendEMail(ByVal EMail As String, ByVal Subject As String, ByVal Body As String)
+                Dim SmtpClient As New Net.Mail.SmtpClient
+                'encrypt and unencrypt password credential
+                SmtpClient.Credentials = New Net.NetworkCredential(Utility.ConnectionData.IslamSourceAdminEMail, Utility.ConnectionData.IslamSourceAdminEMailPass)
+                SmtpClient.Port = 587
+                SmtpClient.Host = Utility.ConnectionData.IslamSourceMailServer
+                Dim SmtpMail As New Net.Mail.MailMessage
+                SmtpMail.From = New Net.Mail.MailAddress(Utility.ConnectionData.IslamSourceAdminEMail, Utility.ConnectionData.IslamSourceAdminName)
+                SmtpMail.To.Add(EMail)
+                SmtpMail.Subject = Subject
+                SmtpMail.Body = Body
+                Try
+                    SmtpClient.Send(SmtpMail)
+                Catch eException As Net.Mail.SmtpException
+                End Try
+            End Sub
+            Public Shared Sub SendActivationEMail(ByVal UserName As String, ByVal EMail As String, ByVal UserID As Integer, ByVal ActivationCode As Integer)
+                SendEMail(EMail, String.Format(Utility.LoadResourceString("Acct_ActivationAccountSubject"), HttpContext.Current.Request.Url.Host), _
+                    String.Format(Utility.LoadResourceString("Acct_ActivationAccountBody"), HttpContext.Current.Request.Url.Host, UserName, "http://" + HttpContext.Current.Request.Url.Host + "/" + Utility.GetPageString("ActivateAccount&UserID=" + CStr(UserID) + "&ActivationCode=" + CStr(ActivationCode)), "http://" + HttpContext.Current.Request.Url.Host + "/" + Utility.GetPageString("ActivateAccount"), CStr(ActivationCode)))
+            End Sub
+            Public Shared Sub SendUserNameReminderEMail(ByVal UserName As String, ByVal EMail As String)
+                SendEMail(EMail, String.Format(Utility.LoadResourceString("Acct_UsernameReminderSubject"), HttpContext.Current.Request.Url.Host), _
+                    String.Format(Utility.LoadResourceString("Acct_UsernameReminderBody"), HttpContext.Current.Request.Url.Host, UserName))
+            End Sub
+            Public Shared Sub SendPasswordResetEMail(ByVal UserName As String, ByVal EMail As String, ByVal UserID As Integer, ByVal PasswordResetCode As UInteger)
+                SendEMail(EMail, String.Format(Utility.LoadResourceString("Acct_PasswordResetSubject"), HttpContext.Current.Request.Url.Host), _
+                    String.Format(Utility.LoadResourceString("Acct_PasswordResetBody"), HttpContext.Current.Request.Url.Host, UserName, "http://" + HttpContext.Current.Request.Url.Host + "/" + Utility.GetPageString("ResetPassword&UserID=" + CStr(UserID) + "&PasswordResetCode=" + CStr(PasswordResetCode)), "http://" + HttpContext.Current.Request.Url.Host + "/" + Utility.GetPageString("ResetPassword"), CStr(PasswordResetCode)))
+            End Sub
+            Public Shared Sub SendUserNameChangedEMail(ByVal UserName As String, ByVal EMail As String)
+                SendEMail(EMail, String.Format(Utility.LoadResourceString("Acct_UsernameChangedSubject"), HttpContext.Current.Request.Url.Host), _
+                    String.Format(Utility.LoadResourceString("Acct_UsernameChangedBody"), HttpContext.Current.Request.Url.Host, UserName))
+            End Sub
+            Public Shared Sub SendPasswordChangedEMail(ByVal UserName As String, ByVal EMail As String)
+                SendEMail(EMail, String.Format(Utility.LoadResourceString("Acct_PasswordChangedSubject"), HttpContext.Current.Request.Url.Host), _
+                    String.Format(Utility.LoadResourceString("Acct_PasswordChangedBody"), HttpContext.Current.Request.Url.Host, UserName))
+            End Sub
+        End Class
+        Public Class SiteDatabase
+            Public Shared Function GetConnection() As MySql.Data.MySqlClient.MySqlConnection
+                Dim Connection As MySql.Data.MySqlClient.MySqlConnection = New MySql.Data.MySqlClient.MySqlConnection("Server=" + Utility.ConnectionData.DbConnServer + ";Uid=" + Utility.ConnectionData.DbConnUid + ";Pwd=" + Utility.ConnectionData.DbConnPwd + ";Database=" + Utility.ConnectionData.DbConnDatabase + ";")
+                Try
+                    Connection.Open()
+                Catch e As MySql.Data.MySqlClient.MySqlException
+                    Return Nothing
+                Catch e As TimeoutException
+                    Return Nothing
+                End Try
+                Return Connection
+            End Function
+            Public Shared Sub ExecuteNonQuery(ByVal Connection As MySql.Data.MySqlClient.MySqlConnection, ByVal Query As String, Optional Parameters As Generic.Dictionary(Of String, Object) = Nothing)
+                Dim Command As MySql.Data.MySqlClient.MySqlCommand = Connection.CreateCommand()
+                Command.CommandText = Query
+                If Not Parameters Is Nothing Then
+                    For Each Key As String In Parameters.Keys
+                        Command.Parameters.AddWithValue(Key, Parameters(Key))
+                    Next
+                End If
+                Command.ExecuteNonQuery()
+            End Sub
+            Public Shared Sub CreateDatabase()
+                Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
+                If Connection Is Nothing Then Return
+                'SHA1 produces 20 bytes not available in MySQL 5.1
+                'should salt the password
+                ExecuteNonQuery(Connection, "CREATE TABLE Users (UserID int NOT NULL AUTO_INCREMENT, " + _
+                "PRIMARY KEY(UserID), " + _
+                "UserName VARCHAR(15) UNIQUE, " + _
+                "Password BINARY(20), " + _
+                "EMail VARCHAR(254) UNIQUE, " + _
+                "Access int NOT NULL DEFAULT 0, " + _
+                "ActivationCode int, " + _
+                "LoginSecret int DEFAULT NULL, " + _
+                "LoginTime TIMESTAMP NULL)")
+                Connection.Close()
+            End Sub
+            Public Shared Sub RemoveDatabase()
+                Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
+                If Connection Is Nothing Then Return
+                Dim Command As MySql.Data.MySqlClient.MySqlCommand = Connection.CreateCommand()
+                ExecuteNonQuery(Connection, "DROP TABLE Users")
+                Connection.Close()
+            End Sub
+            Public Shared Sub CleanupStaleActivations()
+                Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
+                If Connection Is Nothing Then Return
+                ExecuteNonQuery(Connection, "DELETE FROM Users WHERE ActivationCode IS NOT NULL AND (LoginTime IS NULL OR UTC_TIMESTAMP > TIMESTAMPADD(DAY, 10, LoginTime))")
+                Connection.Close()
+            End Sub
+            Public Shared Sub CleanupStaleLoginSessions()
+                Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
+                If Connection Is Nothing Then Return
+                ExecuteNonQuery(Connection, "UPDATE Users SET LoginSecret=NULL, LoginTime=NULL WHERE ActivationCode IS NOT NULL AND (LoginTime IS NOT NULL AND UTC_TIMESTAMP > TIMESTAMPADD(HOUR, 1, LoginTime))")
+                Connection.Close()
+            End Sub
+            Public Shared Sub AddUser(ByVal UserName As String, ByVal Password As String, ByVal EMail As String)
+                Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
+                If Connection Is Nothing Then Return
+                Dim Generator As New System.Random()
+                ExecuteNonQuery(Connection, "INSERT INTO Users (UserName, Password, EMail, ActivationCode, LoginTime) VALUES (@UserName, UNHEX(SHA1(@Password)), @EMail, @Code, UTC_TIMESTAMP)", _
+                                New Generic.Dictionary(Of String, Object) From {{"@UserName", UserName}, {"@Password", Password}, {"@EMail", EMail}, {"@Code", CStr(Generator.Next(0, 99999999))}})
+                Connection.Close()
+            End Sub
+            Public Shared Function GetUserID(ByVal UserName As String, ByVal Password As String) As Integer
+                Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
+                If Connection Is Nothing Then Return -1
+                Dim Command As MySql.Data.MySqlClient.MySqlCommand = Connection.CreateCommand()
+                Command.CommandText = "SELECT UserID FROM Users WHERE UserName=@UserName AND Password=UNHEX(SHA1(@Password))"
+                Command.Parameters.AddWithValue("@UserName", UserName)
+                Command.Parameters.AddWithValue("@Password", Password)
+                Dim Reader As MySql.Data.MySqlClient.MySqlDataReader = Command.ExecuteReader()
+                If Reader.Read() AndAlso Not Reader.IsDBNull(0) Then
+                    GetUserID = Reader.GetInt32("UserID")
+                Else
+                    GetUserID = -1
+                End If
+                Reader.Close()
+                Connection.Close()
+            End Function
+            Public Shared Function GetUserID(ByVal UserName As String) As Integer
+                Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
+                If Connection Is Nothing Then Return -1
+                Dim Command As MySql.Data.MySqlClient.MySqlCommand = Connection.CreateCommand()
+                Command.CommandText = "SELECT UserID FROM Users WHERE UserName=@UserName"
+                Command.Parameters.AddWithValue("@UserName", UserName)
+                Dim Reader As MySql.Data.MySqlClient.MySqlDataReader = Command.ExecuteReader()
+                If Reader.Read() AndAlso Not Reader.IsDBNull(0) Then
+                    GetUserID = Reader.GetInt32("UserID")
+                Else
+                    GetUserID = -1
+                End If
+                Reader.Close()
+                Connection.Close()
+            End Function
+            Public Shared Function GetUserIDByEMail(ByVal EMail As String) As Integer
+                Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
+                If Connection Is Nothing Then Return -1
+                Dim Command As MySql.Data.MySqlClient.MySqlCommand = Connection.CreateCommand()
+                Command.CommandText = "SELECT UserID FROM Users WHERE EMail=@EMail"
+                Command.Parameters.AddWithValue("@EMail", EMail)
+                Dim Reader As MySql.Data.MySqlClient.MySqlDataReader = Command.ExecuteReader()
+                If Reader.Read() AndAlso Not Reader.IsDBNull(0) Then
+                    GetUserIDByEMail = Reader.GetInt32("UserID")
+                Else
+                    GetUserIDByEMail = -1
+                End If
+                Reader.Close()
+                Connection.Close()
+            End Function
+            Public Shared Function GetUserResetCode(ByVal UserID As Integer) As UInteger
+                Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
+                If Connection Is Nothing Then Return &HFFFFFFFFL
+                Dim Command As MySql.Data.MySqlClient.MySqlCommand = Connection.CreateCommand()
+                Command.CommandText = "SELECT CRC32(Password) FROM Users WHERE UserID=" + CStr(UserID)
+                Dim Reader As MySql.Data.MySqlClient.MySqlDataReader = Command.ExecuteReader()
+                If Reader.Read() AndAlso Not Reader.IsDBNull(0) Then
+                    GetUserResetCode = Reader.GetUInt32("CRC32(Password)")
+                Else
+                    GetUserResetCode = &HFFFFFFFFL
+                End If
+                Reader.Close()
+                Connection.Close()
+            End Function
+            Public Shared Function CheckLogin(ByVal UserID As Integer, ByVal Secret As Integer) As Boolean
+                Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
+                If Connection Is Nothing Then Return False
+                Dim Command As MySql.Data.MySqlClient.MySqlCommand = Connection.CreateCommand()
+                Command.CommandText = "SELECT UserID FROM Users WHERE UserID=" + CStr(UserID) + " AND ActivationCode IS NULL AND LoginSecret=" + CStr(Secret) + CStr(IIf(Secret Mod 2 = 0, " AND LoginTime IS NULL", " AND LoginTime IS NOT NULL AND UTC_TIMESTAMP < TIMESTAMPADD(HOUR, 1, LoginTime)"))
+                Dim Reader As MySql.Data.MySqlClient.MySqlDataReader = Command.ExecuteReader()
+                If Reader.Read() AndAlso Not Reader.IsDBNull(0) Then
+                    CheckLogin = CInt(Reader.Item("UserID")) = UserID
+                Else
+                    CheckLogin = False
+                End If
+                Reader.Close()
+                Connection.Close()
+            End Function
+            Public Shared Function CheckAccess(ByVal UserID As Integer) As Integer
+                Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
+                If Connection Is Nothing Then Return 0
+                Dim Command As MySql.Data.MySqlClient.MySqlCommand = Connection.CreateCommand()
+                Command.CommandText = "SELECT Access FROM Users WHERE UserID=" + CStr(UserID)
+                Dim Reader As MySql.Data.MySqlClient.MySqlDataReader = Command.ExecuteReader()
+                If Reader.Read() AndAlso Not Reader.IsDBNull(0) Then
+                    CheckAccess = CInt(Reader.Item("Access"))
+                Else
+                    CheckAccess = 0
+                End If
+                Reader.Close()
+                Connection.Close()
+            End Function
+            Public Shared Function SetLogin(ByVal UserID As Integer, ByVal Persist As Boolean) As Integer
+                Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
+                If Connection Is Nothing Then Return -1
+                Dim Generator As New System.Random()
+                'Persistant login secret is even, non-persistant is odd
+                SetLogin = (Generator.Next(0, 99999999) \ 2) * 2 + CInt(IIf(Persist, 0, 1))
+                ExecuteNonQuery(Connection, "UPDATE Users SET LoginSecret=" + CStr(SetLogin) + ", LoginTime=" + CStr(IIf(Persist, "NULL", "UTC_TIMESTAMP")) + " WHERE UserID=" + CStr(UserID))
+                Connection.Close()
+            End Function
+            Public Shared Sub ClearLogin(ByVal UserID As Integer)
+                Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
+                If Connection Is Nothing Then Return
+                ExecuteNonQuery(Connection, "UPDATE Users SET LoginSecret=NULL, LoginTime=NULL WHERE UserID=" + CStr(UserID))
+                Connection.Close()
+            End Sub
+            Public Shared Function GetUserActivated(ByVal UserID As Integer) As Integer
+                Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
+                If Connection Is Nothing Then Return -1
+                Dim Command As MySql.Data.MySqlClient.MySqlCommand = Connection.CreateCommand()
+                Command.CommandText = "SELECT ActivationCode FROM Users WHERE UserID=" + CStr(UserID)
+                Dim Reader As MySql.Data.MySqlClient.MySqlDataReader = Command.ExecuteReader()
+                'If Reader.IsDBNull(0) Then Return -1 'NULL is activated
+                If Not Reader.Read() OrElse Reader.IsDBNull(0) Then
+                    GetUserActivated = -1 'NULL is activated
+                Else
+                    GetUserActivated = Reader.GetInt32("ActivationCode")
+                End If
+                Reader.Close()
+                Connection.Close()
+            End Function
+            Public Shared Function GetUserName(ByVal UserID As Integer) As String
+                Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
+                If Connection Is Nothing Then Return String.Empty
+                Dim Command As MySql.Data.MySqlClient.MySqlCommand = Connection.CreateCommand()
+                Command.CommandText = "SELECT UserName FROM Users WHERE UserID=" + CStr(UserID)
+                Dim Reader As MySql.Data.MySqlClient.MySqlDataReader = Command.ExecuteReader()
+                If Reader.Read() AndAlso Not Reader.IsDBNull(0) Then
+                    GetUserName = Reader.GetString("UserName")
+                Else
+                    GetUserName = String.Empty
+                End If
+                Reader.Close()
+                Connection.Close()
+            End Function
+            Public Shared Function GetUserEMail(ByVal UserID As Integer) As String
+                Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
+                If Connection Is Nothing Then Return String.Empty
+                Dim Command As MySql.Data.MySqlClient.MySqlCommand = Connection.CreateCommand()
+                Command.CommandText = "SELECT EMail FROM Users WHERE UserID=" + CStr(UserID)
+                Dim Reader As MySql.Data.MySqlClient.MySqlDataReader = Command.ExecuteReader()
+                If Reader.Read() AndAlso Not Reader.IsDBNull(0) Then
+                    GetUserEMail = Reader.GetString("EMail")
+                Else
+                    GetUserEMail = String.Empty
+                End If
+                Reader.Close()
+                Connection.Close()
+            End Function
+            Public Shared Sub ChangeUserName(ByVal UserID As Integer, ByVal UserName As String)
+                Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
+                If Connection Is Nothing Then Return
+                ExecuteNonQuery(Connection, "UPDATE Users SET UserName=@UserName WHERE UserID=" + CStr(UserID), New Generic.Dictionary(Of String, Object) From {{"@UserName", UserName}})
+                Connection.Close()
+            End Sub
+            Public Shared Sub ChangeUserPassword(ByVal UserID As Integer, ByVal Password As String)
+                Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
+                If Connection Is Nothing Then Return
+                ExecuteNonQuery(Connection, "UPDATE Users SET Password=UNHEX(SHA1(@Password)) WHERE UserID=" + CStr(UserID), New Generic.Dictionary(Of String, Object) From {{"@Password", Password}})
+                Connection.Close()
+            End Sub
+            Public Shared Sub ChangeUserEMail(ByVal UserID As Integer, ByVal EMail As String)
+                Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
+                If Connection Is Nothing Then Return
+                Dim Generator As New System.Random()
+                ExecuteNonQuery(Connection, "UPDATE Users SET EMail=@EMail, ActivationCode='" + CStr(Generator.Next(0, 99999999)) + "' WHERE UserID=" + CStr(UserID), New Generic.Dictionary(Of String, Object) From {{"@EMail", EMail}})
+                Connection.Close()
+            End Sub
+            Public Shared Sub SetUserActivated(ByVal UserID As Integer)
+                Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
+                If Connection Is Nothing Then Return
+                Dim Generator As New System.Random()
+                ExecuteNonQuery(Connection, "UPDATE Users SET ActivationCode=NULL, LoginTime=NULL WHERE UserID=" + CStr(UserID))
+                Connection.Close()
+            End Sub
+            Public Shared Sub RemoveUser(ByVal UserID As Integer)
+                Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
+                If Connection Is Nothing Then Return
+                ExecuteNonQuery(Connection, "DELETE FROM Users WHERE UserID=" + CStr(UserID))
+                Connection.Close()
+            End Sub
+        End Class

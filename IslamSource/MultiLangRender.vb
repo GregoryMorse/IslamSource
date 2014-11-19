@@ -8,8 +8,8 @@
     <Runtime.InteropServices.DllImport("gdi32.dll", EntryPoint:="SelectObject")> _
     Private Shared Function SelectObject(ByVal hdc As IntPtr, ByVal hObject As IntPtr) As IntPtr
     End Function
-    <Runtime.InteropServices.DllImport("gdi32.dll", EntryPoint:="GetTextExtentExPointW")> _
-    Private Shared Function GetTextExtentExPoint(ByVal hdc As IntPtr, <Runtime.InteropServices.MarshalAs(Runtime.InteropServices.UnmanagedType.LPWStr)> ByVal lpszStr As String, ByVal cchString As Integer, ByVal nMaxExtent As Integer, ByRef lpnFit As Integer, ByVal alpDx As Integer(), ByRef lpSize As Size) As Boolean
+    <Runtime.InteropServices.DllImport("gdi32.dll", EntryPoint:="GetTextExtentExPoint", SetLastError:=True, CharSet:=Runtime.InteropServices.CharSet.Auto)> _
+    Private Shared Function GetTextExtentExPoint(ByVal hdc As IntPtr, <Runtime.InteropServices.MarshalAs(Runtime.InteropServices.UnmanagedType.LPTStr)> ByVal lpszStr As String, ByVal cchString As Integer, ByVal nMaxExtent As Integer, ByRef lpnFit As Integer, ByVal alpDx As Integer(), ByRef lpSize As Size) As Boolean
     End Function
     <Runtime.InteropServices.DllImport("gdi32.dll", EntryPoint:="SetTextAlign")> _
     Private Shared Function SetTextAlign(ByVal hdc As IntPtr, ByVal fMode As UInteger) As UInteger
@@ -43,6 +43,7 @@
                    s.Width += WidthOffset
                    NewText.Text = Str
                    s.Height = NewText.PreferredSize.Height
+                   HostPageUtility.RenderArray.GetWordDiacriticPositions(Str, Font.FromHdc(hdc))
                    Return nChar
                End Function
     End Function
