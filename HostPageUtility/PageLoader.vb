@@ -1784,6 +1784,9 @@ Public Class RenderArray
         Public GlyphCount As UInteger
         Public MaxFit As Integer
     End Structure
+    <Runtime.InteropServices.DllImport("gdi32.dll", EntryPoint:="GetCharacterPlacement", SetLastError:=True, CharSet:=Runtime.InteropServices.CharSet.Auto)> _
+    Public Shared Function GetCharacterPlacement(hdc As IntPtr, <Runtime.InteropServices.MarshalAs(Runtime.InteropServices.UnmanagedType.LPTStr)> lpString As String, nCount As Integer, nMaxExtent As Integer, <Runtime.InteropServices.In(), Runtime.InteropServices.Out()> ByRef lpResults As GCP_RESULTS, dwFlags As UInteger) As UInteger
+    End Function
     <Runtime.InteropServices.StructLayout(Runtime.InteropServices.LayoutKind.Sequential)> _
     Public Structure SCRIPT_CONTROL
         Public ScriptControlFlags As UInteger
@@ -1820,9 +1823,6 @@ Public Class RenderArray
     Public Const E_OUTOFMEMORY As Integer = &H8007000E
     Public Const E_PENDING As Integer = &H8000000A
     Public Const USP_E_SCRIPT_NOT_IN_FONT As Integer = &H80040200
-    <Runtime.InteropServices.DllImport("gdi32.dll", EntryPoint:="GetCharacterPlacement", SetLastError:=True, CharSet:=Runtime.InteropServices.CharSet.Auto)> _
-    Public Shared Function GetCharacterPlacement(hdc As IntPtr, <Runtime.InteropServices.MarshalAs(Runtime.InteropServices.UnmanagedType.LPTStr)> lpString As String, nCount As Integer, nMaxExtent As Integer, <Runtime.InteropServices.In(), Runtime.InteropServices.Out()> ByRef lpResults As GCP_RESULTS, dwFlags As UInteger) As UInteger
-    End Function
     <Runtime.InteropServices.DllImport("Usp10.dll", EntryPoint:="ScriptItemize")> _
     Public Shared Function ScriptItemize(<Runtime.InteropServices.MarshalAs(Runtime.InteropServices.UnmanagedType.LPWStr)> wcInChars As String, cInChars As Integer, cMaxItems As Integer, psControl As SCRIPT_CONTROL, psState As SCRIPT_STATE, <Runtime.InteropServices.MarshalAs(Runtime.InteropServices.UnmanagedType.LPArray, SizeParamIndex:=2), Runtime.InteropServices.Out()> pItems() As SCRIPT_ITEM, <Runtime.InteropServices.Out()> ByRef pcItems As Integer) As Integer
     End Function
@@ -1842,17 +1842,24 @@ Public Class RenderArray
     Public Shared Function ReleaseDC(hWnd As IntPtr, hdc As IntPtr) As Integer
     End Function
     <Runtime.InteropServices.DllImport("gdi32.dll", EntryPoint:="SelectObject")> _
-    Private Shared Function SelectObject(ByVal hdc As IntPtr, ByVal hObject As IntPtr) As IntPtr
+    Public Shared Function SelectObject(ByVal hdc As IntPtr, ByVal hObject As IntPtr) As IntPtr
     End Function
+    <Runtime.InteropServices.DllImport("gdi32.dll", EntryPoint:="SetMapMode")> _
+    Public Shared Function SetMapMode(hdc As IntPtr, fnMapMode As Integer) As Integer
+    End Function
+    Const MM_TEXT As Integer = 5
     Structure CharPosInfo
         Public Index As Integer
+        Public Width As Integer
+        Public PriorWidth As Integer
         Public X As Integer
         Public Y As Integer
     End Structure
     Public Shared Function GetWordDiacriticPositions(Str As String, useFont As Font) As CharPosInfo()
         Dim hdc As IntPtr
         Dim CharPosInfos As New List(Of CharPosInfo)
-        hdc = GetDC(IntPtr.Zero)
+        hdc = GetDC(IntPtr.Zero) 'desktop device context
+        Dim oldMapMode As Integer = SetMapMode(hdc, MM_TEXT)
         Dim oldFont As IntPtr = SelectObject(hdc, useFont.ToHfont())
         Dim MaxItems As Integer = 16
         Dim Control As New SCRIPT_CONTROL With {.ScriptControlFlags = 0}
@@ -1908,19 +1915,32 @@ Public Class RenderArray
                         dc = hdc
                     Loop While True
                     If Result = 0 Then
-                        For CharCount = Logs.Length - 1 To 0 Step -1
-                            For ResCount As Integer = Logs(CharCount) To If(CharCount = 0, Glyphs.Length - 1, Logs(CharCount - 1) - 1)
+                        Dim LastPriorWidth As Integer = 0
+                        Dim RunStart As Integer = 0
+                        For CharCount = 0 To Logs.Length - 1
+                            Dim PriorWidth As Integer = 0
+                            Dim RunCount As Integer = 0
+                            For ResCount As Integer = Logs(CharCount) To If(CharCount = Logs.Length - 1, 0, Logs(CharCount + 1)) Step -1
                                 'fDiacritic or fZeroWidth
                                 If (VisAttrs(ResCount).ScriptVisAttrFlags And (32 Or 64)) <> 0 Then
-                                    CharPosInfos.Add(New CharPosInfo With {.Index = Logs.Length - 1 - CharCount, .X = Offsets(ResCount).du, .Y = Offsets(ResCount).dv})
+                                    CharPosInfos.Add(New CharPosInfo With {.Index = RunStart + RunCount, .PriorWidth = LastPriorWidth, .Width = Advances(Logs(RunStart)), .X = Offsets(ResCount).du, .Y = Offsets(ResCount).dv})
+                                End If
+                                If CharCount = Logs.Length - 1 OrElse Logs(CharCount) <> Logs(CharCount + 1) Then
+                                    PriorWidth += Advances(ResCount)
+                                    RunCount += 1
                                 End If
                             Next
+                            LastPriorWidth += PriorWidth
+                            If CharCount = Logs.Length - 1 OrElse Logs(CharCount) <> Logs(CharCount + 1) Then
+                                RunStart = CharCount + 1
+                            End If
                         Next
                     End If
                 End If
             Next
             ScriptFreeCache(Cache)
         End If
+        SetMapMode(hdc, oldMapMode)
         SelectObject(hdc, oldFont)
         ReleaseDC(IntPtr.Zero, hdc)
         Return CharPosInfos.ToArray()
@@ -1972,7 +1992,13 @@ Public Class RenderArray
                         Dim ct As iTextSharp.text.pdf.ColumnText
                         Dim CharPosInfos() As CharPosInfo = GetWordDiacriticPositions(Text, DrawFont)
                         For Index As Integer = 0 To CharPosInfos.Length - 1
-                            'CharPosInfos(Index).Index()
+                            ct = New iTextSharp.text.pdf.ColumnText(Writer.DirectContent)
+                            ct.RunDirection = iTextSharp.text.pdf.PdfWriter.RUN_DIRECTION_RTL
+                            ct.ArabicOptions = iTextSharp.text.pdf.ColumnText.AR_COMPOSEDTASHKEEL
+                            ct.UseAscender = False
+                            ct.SetSimpleColumn(Rect.Left + Doc.LeftMargin + Rect.Width - 3 - CharPosInfos(Index).PriorWidth - CharPosInfos(Index).Width + CharPosInfos(Index).X, Doc.PageSize.Height - Doc.TopMargin - Rect.Bottom - _Bounds(Count)(SubCount)(NextCount).Baseline + CharPosInfos(Index).Y, Rect.Right - 3 + Doc.LeftMargin - CharPosInfos(Index).PriorWidth + CharPosInfos(Index).X, Doc.PageSize.Height - Doc.TopMargin - Rect.Top + 1 - _Bounds(Count)(SubCount)(NextCount).Baseline + CharPosInfos(Index).Y, Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size), iTextSharp.text.Element.ALIGN_RIGHT Or iTextSharp.text.Element.ALIGN_BASELINE)
+                            ct.AddText(New iTextSharp.text.Chunk(Text.Substring(CharPosInfos(Index).Index, 1), Font))
+                            ct.Go()
                         Next
                         'Dim Index As Integer = 0
                         'Do
@@ -2197,7 +2223,7 @@ Public Class RenderArray
         s.Height = Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size) * 4 + Baseline - Math.Min(MinAscent * 0.001F * Font.Size, Font.BaseFont.GetDescentPoint(Text, Font.Size))
         Return Len
     End Function
-    Private Shared Function GetTextWidthFromPdf(Font As iTextSharp.text.Font, DrawFont As Font, ) As GetTextWidth
+    Private Shared Function GetTextWidthFromPdf(Font As iTextSharp.text.Font, DrawFont As Font) As GetTextWidth
         Return Function(Str As String, MaxWidth As Single, IsRTL As Boolean, ByRef s As SizeF, ByRef Baseline As Single)
                    Dim Ret As Integer = GetTextWidthPdf(Font, DrawFont, Str, MaxWidth - 4, IsRTL, s, Baseline)
                    s.Width += 4 '1 unit for line and 1 for spacing on each side
