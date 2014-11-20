@@ -1850,18 +1850,177 @@ Public Class RenderArray
     Const MM_TEXT As Integer = 5
     Structure CharPosInfo
         Public Index As Integer
-        Public Width As Integer
-        Public PriorWidth As Integer
-        Public X As Integer
-        Public Y As Integer
+        Public Width As Single
+        Public PriorWidth As Single
+        Public X As Single
+        Public Y As Single
     End Structure
+    Const ERROR_INSUFFICIENT_BUFFER As Integer = 122
+    Class TextSource
+        Implements SharpDX.DirectWrite.TextAnalysisSource
+        Public Sub New(Str As String, Factory As SharpDX.DirectWrite.Factory)
+            _Str = Str
+            _Factory = Factory
+        End Sub
+        Dim _Str As String
+        Dim _Factory As SharpDX.DirectWrite.Factory
+        Public Function GetLocaleName(textPosition As Integer, ByRef textLength As Integer) As String Implements SharpDX.DirectWrite.TextAnalysisSource.GetLocaleName
+            Return Threading.Thread.CurrentThread.CurrentCulture.Name
+        End Function
+        Public Function GetNumberSubstitution(textPosition As Integer, ByRef textLength As Integer) As SharpDX.DirectWrite.NumberSubstitution Implements SharpDX.DirectWrite.TextAnalysisSource.GetNumberSubstitution
+            Return New SharpDX.DirectWrite.NumberSubstitution(_Factory, SharpDX.DirectWrite.NumberSubstitutionMethod.None, Nothing, True)
+        End Function
+        Public Function GetTextAtPosition(textPosition As Integer) As String Implements SharpDX.DirectWrite.TextAnalysisSource.GetTextAtPosition
+            Return _Str.Substring(textPosition)
+        End Function
+        Public Function GetTextBeforePosition(textPosition As Integer) As String Implements SharpDX.DirectWrite.TextAnalysisSource.GetTextBeforePosition
+            Return _Str.Substring(0, textPosition - 1)
+        End Function
+        Public ReadOnly Property ReadingDirection As SharpDX.DirectWrite.ReadingDirection Implements SharpDX.DirectWrite.TextAnalysisSource.ReadingDirection
+            Get
+                Return SharpDX.DirectWrite.ReadingDirection.RightToLeft
+            End Get
+        End Property
+        Public Property Shadow As IDisposable Implements SharpDX.ICallbackable.Shadow
+#Region "IDisposable Support"
+        Private disposedValue As Boolean ' To detect redundant calls
+
+        ' IDisposable
+        Protected Overridable Sub Dispose(disposing As Boolean)
+            If Not Me.disposedValue Then
+                If disposing Then
+                    ' TODO: dispose managed state (managed objects).
+                End If
+
+                ' TODO: free unmanaged resources (unmanaged objects) and override Finalize() below.
+                ' TODO: set large fields to null.
+            End If
+            Me.disposedValue = True
+        End Sub
+
+        ' TODO: override Finalize() only if Dispose(ByVal disposing As Boolean) above has code to free unmanaged resources.
+        'Protected Overrides Sub Finalize()
+        '    ' Do not change this code.  Put cleanup code in Dispose(ByVal disposing As Boolean) above.
+        '    Dispose(False)
+        '    MyBase.Finalize()
+        'End Sub
+
+        ' This code added by Visual Basic to correctly implement the disposable pattern.
+        Public Sub Dispose() Implements IDisposable.Dispose
+            ' Do not change this code.  Put cleanup code in Dispose(disposing As Boolean) above.
+            Dispose(True)
+            GC.SuppressFinalize(Me)
+        End Sub
+#End Region
+    End Class
+    Class TextSink
+        Implements SharpDX.DirectWrite.TextAnalysisSink
+        Public Sub SetBidiLevel(textPosition As Integer, textLength As Integer, explicitLevel As Byte, resolvedLevel As Byte) Implements SharpDX.DirectWrite.TextAnalysisSink.SetBidiLevel
+            _explicitLevel = explicitLevel
+            _resolvedLevel = resolvedLevel
+        End Sub
+        Public Sub SetLineBreakpoints(textPosition As Integer, textLength As Integer, lineBreakpoints() As SharpDX.DirectWrite.LineBreakpoint) Implements SharpDX.DirectWrite.TextAnalysisSink.SetLineBreakpoints
+            _lineBreakpoints = lineBreakpoints
+        End Sub
+        Public Sub SetNumberSubstitution(textPosition As Integer, textLength As Integer, numberSubstitution As SharpDX.DirectWrite.NumberSubstitution) Implements SharpDX.DirectWrite.TextAnalysisSink.SetNumberSubstitution
+            _numberSubstitution = numberSubstitution
+        End Sub
+        Public Sub SetScriptAnalysis(textPosition As Integer, textLength As Integer, scriptAnalysis As SharpDX.DirectWrite.ScriptAnalysis) Implements SharpDX.DirectWrite.TextAnalysisSink.SetScriptAnalysis
+            _scriptAnalysis = scriptAnalysis
+        End Sub
+        Public _scriptAnalysis As SharpDX.DirectWrite.ScriptAnalysis
+        Public _numberSubstitution As SharpDX.DirectWrite.NumberSubstitution
+        Public _lineBreakpoints() As SharpDX.DirectWrite.LineBreakpoint
+        Public _explicitLevel As Byte
+        Public _resolvedLevel As Byte
+        Public Property Shadow As IDisposable Implements SharpDX.ICallbackable.Shadow
+#Region "IDisposable Support"
+        Private disposedValue As Boolean ' To detect redundant calls
+
+        ' IDisposable
+        Protected Overridable Sub Dispose(disposing As Boolean)
+            If Not Me.disposedValue Then
+                If disposing Then
+                    ' TODO: dispose managed state (managed objects).
+                End If
+
+                ' TODO: free unmanaged resources (unmanaged objects) and override Finalize() below.
+                ' TODO: set large fields to null.
+            End If
+            Me.disposedValue = True
+        End Sub
+
+        ' TODO: override Finalize() only if Dispose(ByVal disposing As Boolean) above has code to free unmanaged resources.
+        'Protected Overrides Sub Finalize()
+        '    ' Do not change this code.  Put cleanup code in Dispose(ByVal disposing As Boolean) above.
+        '    Dispose(False)
+        '    MyBase.Finalize()
+        'End Sub
+
+        ' This code added by Visual Basic to correctly implement the disposable pattern.
+        Public Sub Dispose() Implements IDisposable.Dispose
+            ' Do not change this code.  Put cleanup code in Dispose(disposing As Boolean) above.
+            Dispose(True)
+            GC.SuppressFinalize(Me)
+        End Sub
+#End Region
+    End Class
     Public Shared Function GetWordDiacriticPositionsDWrite(Str As String, useFont As Font) As CharPosInfo()
         Dim Factory As New SharpDX.DirectWrite.Factory()
         Dim Analyze As New SharpDX.DirectWrite.TextAnalyzer(Factory)
-        'Dim FontFace As New SharpDX.DirectWrite.FontFace()
-        'Analyze.GetGlyphs(Str, Str.Length, FontFace, False, True, )
-        'Analyze.GetGlyphPlacements(Str, )
-        Return Nothing
+        Dim FontFace As New SharpDX.DirectWrite.FontFace(Factory.GdiInterop.FromSystemDrawingFont(useFont))
+        Dim Analysis As New SharpDX.DirectWrite.ScriptAnalysis
+        Dim Sink As New TextSink
+        Dim Source As New TextSource(Str, Factory)
+        Analyze.AnalyzeScript(Source, 0, Str.Length, Sink)
+        Analysis = Sink._scriptAnalysis
+        Dim GlyphCount As Integer = Str.Length * 3 \ 2 + 16
+        Dim ClusterMap(Str.Length - 1) As Short
+        Dim TextProps(Str.Length - 1) As SharpDX.DirectWrite.ShapingTextProperties
+        Dim GlyphIndices(GlyphCount - 1) As Short
+        Dim GlyphProps(GlyphCount - 1) As SharpDX.DirectWrite.ShapingGlyphProperties
+        Dim ActualGlyphCount As Integer
+        Do
+            Try
+                Analyze.GetGlyphs(Str, Str.Length, FontFace, False, True, Analysis, Nothing, Nothing, Nothing, Nothing, GlyphCount, ClusterMap, TextProps, GlyphIndices, GlyphProps, ActualGlyphCount)
+                Exit Do
+            Catch ex As SharpDX.SharpDXException
+                If ex.ResultCode = SharpDX.Result.GetResultFromWin32Error(ERROR_INSUFFICIENT_BUFFER) Then
+                    GlyphCount *= 2
+                    ReDim GlyphIndices(GlyphCount - 1)
+                    ReDim GlyphProps(GlyphCount - 1)
+                End If
+            End Try
+        Loop While True
+        ReDim Preserve ClusterMap(ActualGlyphCount - 1)
+        ReDim Preserve TextProps(ActualGlyphCount - 1)
+        ReDim Preserve GlyphIndices(ActualGlyphCount - 1)
+        ReDim Preserve GlyphProps(ActualGlyphCount - 1)
+        Dim GlyphAdvances(ActualGlyphCount - 1) As Single
+        Dim GlyphOffsets(ActualGlyphCount - 1) As SharpDX.DirectWrite.GlyphOffset
+        Analyze.GetGlyphPlacements(Str, ClusterMap, TextProps, Str.Length, GlyphIndices, GlyphProps, ActualGlyphCount, FontFace, useFont.Size, False, True, Analysis, Nothing, Nothing, Nothing, GlyphAdvances, GlyphOffsets)
+        Dim CharPosInfos As New List(Of CharPosInfo)
+        Dim LastPriorWidth As Single = 0
+        Dim RunStart As Integer = 0
+        For CharCount = 0 To ClusterMap.Length - 1
+            Dim PriorWidth As Single = 0
+            Dim RunCount As Integer = 0
+            For ResCount As Integer = ClusterMap(CharCount) To If(CharCount = ClusterMap.Length - 1, ActualGlyphCount - 1, ClusterMap(CharCount + 1) - 1)
+                'fDiacritic or fZeroWidth
+                If GlyphProps(ResCount).IsDiacritic Or GlyphProps(ResCount).IsZeroWidthSpace Then
+                    CharPosInfos.Add(New CharPosInfo With {.Index = RunStart + RunCount, .PriorWidth = LastPriorWidth, .Width = GlyphAdvances(ClusterMap(RunStart)), .X = GlyphOffsets(ResCount).AdvanceOffset, .Y = GlyphOffsets(ResCount).AscenderOffset})
+                End If
+                If CharCount = ClusterMap.Length - 1 OrElse ClusterMap(CharCount) <> ClusterMap(CharCount + 1) Then
+                    PriorWidth += GlyphAdvances(ResCount)
+                    RunCount += 1
+                End If
+            Next
+            LastPriorWidth += PriorWidth
+            If CharCount = ClusterMap.Length - 1 OrElse ClusterMap(CharCount) <> ClusterMap(CharCount + 1) Then
+                RunStart = CharCount + 1
+            End If
+        Next
+        Return CharPosInfos.ToArray()
     End Function
     Public Shared Function GetWordDiacriticPositions(Str As String, useFont As Font) As CharPosInfo()
         Dim hdc As IntPtr
@@ -1998,13 +2157,13 @@ Public Class RenderArray
                         MaxRect.Width = Math.Max(MaxRect.Right, Rect.Right) - MaxRect.Left + 1
                         MaxRect.Height = Math.Max(MaxRect.Bottom, Rect.Bottom) - MaxRect.Top + 1
                         Dim ct As iTextSharp.text.pdf.ColumnText
-                        Dim CharPosInfos() As CharPosInfo = GetWordDiacriticPositions(Text, DrawFont)
+                        Dim CharPosInfos() As CharPosInfo = GetWordDiacriticPositionsDWrite(Text, DrawFont)
                         For Index As Integer = 0 To CharPosInfos.Length - 1
                             ct = New iTextSharp.text.pdf.ColumnText(Writer.DirectContent)
                             ct.RunDirection = iTextSharp.text.pdf.PdfWriter.RUN_DIRECTION_RTL
                             ct.ArabicOptions = iTextSharp.text.pdf.ColumnText.AR_COMPOSEDTASHKEEL
                             ct.UseAscender = False
-                            ct.SetSimpleColumn(Rect.Left + Doc.LeftMargin + Rect.Width - 3 - CharPosInfos(Index).PriorWidth - CharPosInfos(Index).Width + CharPosInfos(Index).X, Doc.PageSize.Height - Doc.TopMargin - Rect.Bottom - _Bounds(Count)(SubCount)(NextCount).Baseline + CharPosInfos(Index).Y, Rect.Right - 3 + Doc.LeftMargin - CharPosInfos(Index).PriorWidth + CharPosInfos(Index).X, Doc.PageSize.Height - Doc.TopMargin - Rect.Top + 1 - _Bounds(Count)(SubCount)(NextCount).Baseline + CharPosInfos(Index).Y, Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size), iTextSharp.text.Element.ALIGN_RIGHT Or iTextSharp.text.Element.ALIGN_BASELINE)
+                            ct.SetSimpleColumn(Rect.Left + Doc.LeftMargin + Rect.Width - 3 - CharPosInfos(Index).PriorWidth - CharPosInfos(Index).Width - CharPosInfos(Index).X, Doc.PageSize.Height - Doc.TopMargin - Rect.Bottom - _Bounds(Count)(SubCount)(NextCount).Baseline + CharPosInfos(Index).Y, Rect.Right - 3 + Doc.LeftMargin - CharPosInfos(Index).PriorWidth - CharPosInfos(Index).X, Doc.PageSize.Height - Doc.TopMargin - Rect.Top + 1 - _Bounds(Count)(SubCount)(NextCount).Baseline + CharPosInfos(Index).Y, Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size), iTextSharp.text.Element.ALIGN_RIGHT Or iTextSharp.text.Element.ALIGN_BASELINE)
                             ct.AddText(New iTextSharp.text.Chunk(Text.Substring(CharPosInfos(Index).Index, 1), Font))
                             ct.Go()
                         Next
@@ -2138,18 +2297,18 @@ Public Class RenderArray
     Delegate Function GetTextWidth(Str As String, MaxWidth As Single, IsRTL As Boolean, ByRef s As SizeF, ByRef Baseline As Single) As Integer
     Private Shared Function GetTextWidthPdf(Font As iTextSharp.text.Font, DrawFont As Font, Str As String, MaxWidth As Single, IsRTL As Boolean, ByRef s As SizeF, ByRef Baseline As Single) As Integer
         Font.BaseFont.CorrectArabicAdvance()
-        Dim Index As Integer = 0
-        Do
-            Index = Str.IndexOf(ArabicData.ArabicEndOfAyah, Index)
-            If Index <> -1 Then
-                Dim NumCount As Integer = 0
-                Do While NumCount <> 3 And (Index + NumCount + 1) <= Str.Length - 1 AndAlso Char.IsDigit(Str(Index + NumCount + 1))
-                    Str = Str.Remove(Index + NumCount + 1, 1).Insert(Index + NumCount + 1, ArabicData.ZeroWidthSpace)
-                    NumCount += 1
-                Loop
-                Index = Index + 1
-            End If
-        Loop While Index <> -1
+        'Dim Index As Integer = 0
+        'Do
+        '    Index = Str.IndexOf(ArabicData.ArabicEndOfAyah, Index)
+        '    If Index <> -1 Then
+        '        Dim NumCount As Integer = 0
+        '        Do While NumCount <> 3 And (Index + NumCount + 1) <= Str.Length - 1 AndAlso Char.IsDigit(Str(Index + NumCount + 1))
+        '            Str = Str.Remove(Index + NumCount + 1, 1).Insert(Index + NumCount + 1, ArabicData.ZeroWidthSpace)
+        '            NumCount += 1
+        '        Loop
+        '        Index = Index + 1
+        '    End If
+        'Loop While Index <> -1
         'must count removed characters or convert to shaping characters
         'although should not significantly effect calculation only the height in a generally absorbed way
         'use leading plus one extra leading up and down for extra spacing
@@ -2197,38 +2356,42 @@ Public Class RenderArray
         End If
         If Len <> Text.Length AndAlso Array.IndexOf(ArabicData.RecitationCombiningSymbols, Text(Len)) <> -1 Then Len -= 1
         Text = Text.Substring(0, Len)
-        Index = 1
-        Dim MaxAscent As Integer = 0
-        Dim MinAscent As Integer = 0
-        Do
-            Index = Text.IndexOfAny(ArabicData.RecitationCombiningSymbols, Index)
-            If Index <> -1 Then
-                Dim ChBounds As Integer()
-                If (Text(Index - 1) = " "c) Then
-                    'stopping symbols handled by normal rendering engine
-                    Index += 1
-                    Continue Do
-                ElseIf Text(Index - 1) = ArabicData.ArabicTatweel Then
-                    ChBounds = Font.BaseFont.GetCharBBox(AscW(Text(Index - 1)))
-                Else
-                    Dim ShIndex As Integer = ArabicData.GetShapeIndexFromString(Text, Index - 1, 1)
-                    Dim ShapeCh As Char = If(ShIndex = -1 Or ArabicData.Data.ArabicLetters(ArabicData.FindLetterBySymbol(Text(Index - 1))).Shaping = Nothing, Text(Index - 1), ArabicData.Data.ArabicLetters(ArabicData.FindLetterBySymbol(Text(Index - 1))).Shaping(ShIndex))
-                    ChBounds = Font.BaseFont.GetCharBBox(AscW(ShapeCh))
-                End If
-                Dim Offset As Integer = 0
-                Do
-                    Dim DiaBounds As Integer() = Font.BaseFont.GetCharBBox(AscW(Text(Index)))
-                    Offset = If(DiaBounds(1) < 0 And DiaBounds(3) > If(Offset < 0, Offset, ChBounds(1)), -(DiaBounds(3) - If(Offset < 0, Offset, ChBounds(1) - CInt(Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size) / 0.001F / Font.Size))), If(DiaBounds(1) >= 0 And DiaBounds(1) < If(Offset > 0, Offset, ChBounds(3)), -(DiaBounds(1) - If(Offset > 0, Offset, ChBounds(3) + CInt(Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size) / 0.001F / Font.Size))), 0))
-                    If DiaBounds(1) < 0 Then Offset = DiaBounds(1) - Offset
-                    If DiaBounds(1) >= 0 Then Offset = DiaBounds(3) + Offset
-                    If Offset > 0 Then MaxAscent = Math.Max(Offset, MaxAscent)
-                    If Offset < 0 Then MinAscent = Math.Min(Offset, MinAscent)
-                    Index += 1
-                Loop While Index <> Text.Length AndAlso Array.IndexOf(ArabicData.RecitationCombiningSymbols, Text(Index)) <> -1
-            End If
-        Loop While Index <> -1
-        Baseline = Math.Max(MaxAscent * 0.001F * Font.Size, Font.BaseFont.GetAscentPoint(Text, Font.Size)) + Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size) * 2
-        s.Height = Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size) * 4 + Baseline - Math.Min(MinAscent * 0.001F * Font.Size, Font.BaseFont.GetDescentPoint(Text, Font.Size))
+        'Index = 1
+        Dim MaxAscent As Single = 0
+        Dim MinAscent As Single = 0
+        For Each CharPosInfo As CharPosInfo In GetWordDiacriticPositionsDWrite(Text, DrawFont)
+            MaxAscent = Math.Max(CharPosInfo.Y, MaxAscent)
+            MinAscent = Math.Max(CharPosInfo.Y, MinAscent)
+        Next
+        'Do
+        '    Index = Text.IndexOfAny(ArabicData.RecitationCombiningSymbols, Index)
+        '    If Index <> -1 Then
+        '        Dim ChBounds As Integer()
+        '        If (Text(Index - 1) = " "c) Then
+        '            'stopping symbols handled by normal rendering engine
+        '            Index += 1
+        '            Continue Do
+        '        ElseIf Text(Index - 1) = ArabicData.ArabicTatweel Then
+        '            ChBounds = Font.BaseFont.GetCharBBox(AscW(Text(Index - 1)))
+        '        Else
+        '            Dim ShIndex As Integer = ArabicData.GetShapeIndexFromString(Text, Index - 1, 1)
+        '            Dim ShapeCh As Char = If(ShIndex = -1 Or ArabicData.Data.ArabicLetters(ArabicData.FindLetterBySymbol(Text(Index - 1))).Shaping = Nothing, Text(Index - 1), ArabicData.Data.ArabicLetters(ArabicData.FindLetterBySymbol(Text(Index - 1))).Shaping(ShIndex))
+        '            ChBounds = Font.BaseFont.GetCharBBox(AscW(ShapeCh))
+        '        End If
+        '        Dim Offset As Integer = 0
+        '        Do
+        '            Dim DiaBounds As Integer() = Font.BaseFont.GetCharBBox(AscW(Text(Index)))
+        '            Offset = If(DiaBounds(1) < 0 And DiaBounds(3) > If(Offset < 0, Offset, ChBounds(1)), -(DiaBounds(3) - If(Offset < 0, Offset, ChBounds(1) - CInt(Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size) / 0.001F / Font.Size))), If(DiaBounds(1) >= 0 And DiaBounds(1) < If(Offset > 0, Offset, ChBounds(3)), -(DiaBounds(1) - If(Offset > 0, Offset, ChBounds(3) + CInt(Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size) / 0.001F / Font.Size))), 0))
+        '            If DiaBounds(1) < 0 Then Offset = DiaBounds(1) - Offset
+        '            If DiaBounds(1) >= 0 Then Offset = DiaBounds(3) + Offset
+        '            If Offset > 0 Then MaxAscent = Math.Max(Offset, MaxAscent)
+        '            If Offset < 0 Then MinAscent = Math.Min(Offset, MinAscent)
+        '            Index += 1
+        '        Loop While Index <> Text.Length AndAlso Array.IndexOf(ArabicData.RecitationCombiningSymbols, Text(Index)) <> -1
+        '    End If
+        'Loop While Index <> -1
+        Baseline = MaxAscent + Font.BaseFont.GetAscentPoint(Text, Font.Size) + Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size) * 2
+        s.Height = Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size) * 4 + Baseline - MinAscent - Font.BaseFont.GetDescentPoint(Text, Font.Size)
         Return Len
     End Function
     Private Shared Function GetTextWidthFromPdf(Font As iTextSharp.text.Font, DrawFont As Font) As GetTextWidth
