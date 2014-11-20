@@ -1855,6 +1855,14 @@ Public Class RenderArray
         Public X As Integer
         Public Y As Integer
     End Structure
+    Public Shared Function GetWordDiacriticPositionsDWrite(Str As String, useFont As Font) As CharPosInfo()
+        Dim Factory As New SharpDX.DirectWrite.Factory()
+        Dim Analyze As New SharpDX.DirectWrite.TextAnalyzer(Factory)
+        'Dim FontFace As New SharpDX.DirectWrite.FontFace()
+        'Analyze.GetGlyphs(Str, Str.Length, FontFace, False, True, )
+        'Analyze.GetGlyphPlacements(Str, )
+        Return Nothing
+    End Function
     Public Shared Function GetWordDiacriticPositions(Str As String, useFont As Font) As CharPosInfo()
         Dim hdc As IntPtr
         Dim CharPosInfos As New List(Of CharPosInfo)
