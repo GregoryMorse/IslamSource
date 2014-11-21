@@ -43,7 +43,6 @@
                    s.Width += WidthOffset
                    NewText.Text = Str
                    s.Height = NewText.PreferredSize.Height
-                   HostPageUtility.RenderArray.GetWordDiacriticPositions(Str, Font.FromHdc(hdc))
                    Return nChar
                End Function
     End Function
