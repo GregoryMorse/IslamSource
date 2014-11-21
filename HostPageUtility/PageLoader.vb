@@ -1905,7 +1905,7 @@ Public Class RenderArray
         Dim ActualGlyphCount As Integer
         Do
             Try
-                Analyze.GetGlyphs(Str, Str.Length, FontFace, False, True, Analysis, Nothing, Nothing, Nothing, Nothing, GlyphCount, ClusterMap, TextProps, GlyphIndices, GlyphProps, ActualGlyphCount)
+                Analyze.GetGlyphs(Str, Str.Length, FontFace, False, True, Analysis, Nothing, Nothing, New SharpDX.DirectWrite.FontFeature()() {New SharpDX.DirectWrite.FontFeature() {}}, New Integer() {Str.Length}, GlyphCount, ClusterMap, TextProps, GlyphIndices, GlyphProps, ActualGlyphCount)
                 Exit Do
             Catch ex As SharpDX.SharpDXException
                 If ex.ResultCode = SharpDX.Result.GetResultFromWin32Error(ERROR_INSUFFICIENT_BUFFER) Then
@@ -1915,8 +1915,6 @@ Public Class RenderArray
                 End If
             End Try
         Loop While True
-        ReDim Preserve ClusterMap(ActualGlyphCount - 1)
-        ReDim Preserve TextProps(ActualGlyphCount - 1)
         ReDim Preserve GlyphIndices(ActualGlyphCount - 1)
         ReDim Preserve GlyphProps(ActualGlyphCount - 1)
         Dim GlyphAdvances(ActualGlyphCount - 1) As Single
@@ -1924,23 +1922,28 @@ Public Class RenderArray
         Analyze.GetGlyphPlacements(Str, ClusterMap, TextProps, Str.Length, GlyphIndices, GlyphProps, ActualGlyphCount, FontFace, useFont.Size, False, True, Analysis, Nothing, Nothing, Nothing, GlyphAdvances, GlyphOffsets)
         Dim CharPosInfos As New List(Of CharPosInfo)
         Dim LastPriorWidth As Single = 0
+        Dim PriorWidth As Single = 0
         Dim RunStart As Integer = 0
+        Dim RunRes As Integer = ClusterMap(0)
         For CharCount = 0 To ClusterMap.Length - 1
-            Dim PriorWidth As Single = 0
             Dim RunCount As Integer = 0
             For ResCount As Integer = ClusterMap(CharCount) To If(CharCount = ClusterMap.Length - 1, ActualGlyphCount - 1, ClusterMap(CharCount + 1) - 1)
-                'fDiacritic or fZeroWidth
-                If GlyphProps(ResCount).IsDiacritic Or GlyphProps(ResCount).IsZeroWidthSpace Then
-                    CharPosInfos.Add(New CharPosInfo With {.Index = RunStart + RunCount, .PriorWidth = LastPriorWidth, .Width = GlyphAdvances(ClusterMap(RunStart)), .X = GlyphOffsets(ResCount).AdvanceOffset, .Y = GlyphOffsets(ResCount).AscenderOffset})
+                'GlyphProps(ResCount).IsDiacritic Or GlyphProps(ResCount).IsZeroWidthSpace
+                If GlyphAdvances(ResCount) = 0 Then
+                    CharPosInfos.Add(New CharPosInfo With {.Index = RunStart + RunCount, .PriorWidth = PriorWidth, .Width = GlyphAdvances(RunRes), .X = GlyphOffsets(ResCount).AdvanceOffset, .Y = GlyphOffsets(ResCount).AscenderOffset})
                 End If
                 If CharCount = ClusterMap.Length - 1 OrElse ClusterMap(CharCount) <> ClusterMap(CharCount + 1) Then
                     PriorWidth += GlyphAdvances(ResCount)
                     RunCount += 1
+                    If ClusterMap(CharCount) <> ResCount And GlyphAdvances(ResCount) <> 0 Then
+                        RunStart = CharCount
+                        RunRes = ResCount
+                    End If
                 End If
             Next
-            LastPriorWidth += PriorWidth
-            If CharCount = ClusterMap.Length - 1 OrElse ClusterMap(CharCount) <> ClusterMap(CharCount + 1) Then
+            If CharCount <> ClusterMap.Length - 1 AndAlso ClusterMap(CharCount) <> ClusterMap(CharCount + 1) Then
                 RunStart = CharCount + 1
+                RunRes = ClusterMap(CharCount + 1)
             End If
         Next
         Return CharPosInfos.ToArray()
@@ -1996,7 +1999,7 @@ Public Class RenderArray
                             ct.RunDirection = iTextSharp.text.pdf.PdfWriter.RUN_DIRECTION_RTL
                             ct.ArabicOptions = iTextSharp.text.pdf.ColumnText.AR_COMPOSEDTASHKEEL
                             ct.UseAscender = False
-                            ct.SetSimpleColumn(Rect.Left + Doc.LeftMargin + Rect.Width - 3 - CharPosInfos(Index).PriorWidth - CharPosInfos(Index).Width - CharPosInfos(Index).X, Doc.PageSize.Height - Doc.TopMargin - Rect.Bottom - _Bounds(Count)(SubCount)(NextCount).Baseline + CharPosInfos(Index).Y, Rect.Right - 3 + Doc.LeftMargin - CharPosInfos(Index).PriorWidth - CharPosInfos(Index).X, Doc.PageSize.Height - Doc.TopMargin - Rect.Top + 1 - _Bounds(Count)(SubCount)(NextCount).Baseline + CharPosInfos(Index).Y, Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size), iTextSharp.text.Element.ALIGN_RIGHT Or iTextSharp.text.Element.ALIGN_BASELINE)
+                            ct.SetSimpleColumn(Rect.Left + Doc.LeftMargin + Rect.Width - 3 - CharPosInfos(Index).PriorWidth + CharPosInfos(Index).Width - CharPosInfos(Index).X - 1, Doc.PageSize.Height - Doc.TopMargin - Rect.Bottom - _Bounds(Count)(SubCount)(NextCount).Baseline + CharPosInfos(Index).Y, Rect.Right - 3 + Doc.LeftMargin - CharPosInfos(Index).PriorWidth - CharPosInfos(Index).X - 1, Doc.PageSize.Height - Doc.TopMargin - Rect.Top + 1 - _Bounds(Count)(SubCount)(NextCount).Baseline + CharPosInfos(Index).Y, Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size), iTextSharp.text.Element.ALIGN_RIGHT Or iTextSharp.text.Element.ALIGN_BASELINE)
                             ct.AddText(New iTextSharp.text.Chunk(Text.Substring(CharPosInfos(Index).Index, 1), Font))
                             ct.Go()
                         Next
