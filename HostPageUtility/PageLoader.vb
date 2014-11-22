@@ -2160,8 +2160,8 @@ Public Class RenderArray
                         Rect.Offset(PageOffset)
                         MaxRect.X = Math.Min(MaxRect.Left, Rect.Left)
                         MaxRect.Y = Math.Min(MaxRect.Top, Rect.Top)
-                        MaxRect.Width = Math.Max(MaxRect.Right, Rect.Right) - MaxRect.Left + 1
-                        MaxRect.Height = Math.Max(MaxRect.Bottom, Rect.Bottom) - MaxRect.Top + 1
+                        MaxRect.Width = Math.Max(MaxRect.Right, Rect.Right) - MaxRect.Left
+                        MaxRect.Height = Math.Max(MaxRect.Bottom, Rect.Bottom) - MaxRect.Top
                         Dim ct As iTextSharp.text.pdf.ColumnText
                         Dim CharPosInfos() As CharPosInfo = GetWordDiacriticPositionsDWrite(Text, DrawFont)
                         For Index As Integer = 0 To CharPosInfos.Length - 1
@@ -2169,7 +2169,7 @@ Public Class RenderArray
                             ct.RunDirection = iTextSharp.text.pdf.PdfWriter.RUN_DIRECTION_RTL
                             ct.ArabicOptions = iTextSharp.text.pdf.ColumnText.AR_COMPOSEDTASHKEEL Or iTextSharp.text.pdf.ColumnText.AR_LIG
                             ct.UseAscender = False
-                            ct.SetSimpleColumn(Rect.Left + Doc.LeftMargin + Rect.Width - 3 - CharPosInfos(Index).PriorWidth + CharPosInfos(Index).Width - CharPosInfos(Index).X, Doc.PageSize.Height - Doc.TopMargin - Rect.Bottom - _Bounds(Count)(SubCount)(NextCount).Baseline + CharPosInfos(Index).Y, Rect.Right - 3 + Doc.LeftMargin - CharPosInfos(Index).PriorWidth - CharPosInfos(Index).X, Doc.PageSize.Height - Doc.TopMargin - Rect.Top + 1 - _Bounds(Count)(SubCount)(NextCount).Baseline + CharPosInfos(Index).Y, Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size), iTextSharp.text.Element.ALIGN_RIGHT Or iTextSharp.text.Element.ALIGN_BASELINE)
+                            ct.SetSimpleColumn(Rect.Left + Doc.LeftMargin + Rect.Width - 3 - CharPosInfos(Index).PriorWidth + CharPosInfos(Index).Width + If(Array.IndexOf(Array.ConvertAll(ArabicData.ArabicNumbers, Function(Str As String) ArabicData.TransliterateFromBuckwalter(Str).Chars(0)), Text(CharPosInfos(Index).Index)) <> -1, CharPosInfos(Index).X - 3.0F, -CharPosInfos(Index).X - 1.5F), Doc.PageSize.Height - Doc.TopMargin - Rect.Bottom - _Bounds(Count)(SubCount)(NextCount).Baseline + CharPosInfos(Index).Y, Rect.Right - 3 + Doc.LeftMargin - CharPosInfos(Index).PriorWidth + If(Array.IndexOf(Array.ConvertAll(ArabicData.ArabicNumbers, Function(Str As String) ArabicData.TransliterateFromBuckwalter(Str).Chars(0)), Text(CharPosInfos(Index).Index)) <> -1, CharPosInfos(Index).X - 3.0F, -CharPosInfos(Index).X - 1.5F), Doc.PageSize.Height - Doc.TopMargin - Rect.Top + 1 - _Bounds(Count)(SubCount)(NextCount).Baseline + CharPosInfos(Index).Y, Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size), iTextSharp.text.Element.ALIGN_RIGHT Or iTextSharp.text.Element.ALIGN_BASELINE)
                             ct.AddText(New iTextSharp.text.Chunk(Text.Substring(CharPosInfos(Index).Index, CharPosInfos(Index).Length), Font))
                             ct.Go()
                         Next
