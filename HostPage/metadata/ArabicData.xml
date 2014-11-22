@@ -1,7 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <arabicdata>
+	<arabictransforms>
+		<transform symbolname="lAX" form="l&lt;"></transform>
+		<transform symbolname="AX" form="&lt;"></transform>
+		<transform symbolname="lA#" form="l&gt;"></transform>
+		<transform symbolname="A#" form="&gt;"></transform>
+		<transform symbolname="w#" form="&amp;"></transform>
+		<transform symbolname="Y#" form="}"></transform>
+		<transform symbolname="A^" form="|"></transform>
+	</arabictransforms>
 	<arabiccombos>
+		<!-- Presentation Forms A FB50-FDFF -->
+		<!-- Presentation Forms B FE70-FEFF -->
 		<combo symbolname="_F" shaping=",,,FE71"></combo>
+		<combo symbolname="_a" shaping=",,,FE77"></combo>
+		<combo symbolname="_u" shaping=",,,FE79"></combo>
+		<combo symbolname="_i" shaping=",,,FE7B"></combo>
+		<combo symbolname="_~" shaping=",,,FE7D"></combo>
+		<combo symbolname="_o" shaping=",,,FE7F"></combo>
 		<combo symbolname="l|" shaping="FEF5,FEF6,,"></combo>
 		<combo symbolname="l&gt;" shaping="FEF7,FEF8,,"></combo>
 		<combo symbolname="l&lt;" shaping="FEF9,FEFA,,"></combo>
@@ -105,9 +121,12 @@
 		<combo symbolname="Y`" shaping="FC5D,FC90,,"></combo>
 		<combo symbolname="~N" shaping="FC5E,,,"></combo>
 		<combo symbolname="~K" shaping="FC5F,,,"></combo>
-		<combo symbolname="~a" shaping="FC60,,,FCF2"></combo>
-		<combo symbolname="~u" shaping="FC61,,,FCF3"></combo>
-		<combo symbolname="~i" shaping="FC62,,,FCF4"></combo>
+		<combo symbolname="~a" shaping="FC60,,,"></combo>
+		<combo symbolname="~u" shaping="FC61,,,"></combo>
+		<combo symbolname="~i" shaping="FC62,,,"></combo>
+		<combo symbolname="_~a" shaping=",,,FCF2"></combo>
+		<combo symbolname="_~u" shaping=",,,FCF3"></combo>
+		<combo symbolname="_~i" shaping=",,,FCF4"></combo>
 		<combo symbolname="~`" shaping="FC63,,,"></combo>
 		<combo symbolname="}r" shaping=",FC64,,"></combo>
 		<combo symbolname="}z" shaping=",FC65,,"></combo>
@@ -305,11 +324,11 @@
 		<arabicsymbol symbolname="tanowiynN fatoHapN" uname="ArabicFathatan" symbol="064B" shaping="FE70,,," ipavalue="an" extendedbuckwalter="70" terminating="true" connecting="false" assimilate="false" />
 		<arabicsymbol symbolname="tanowiynN Dam~apN" uname="ArabicDammatan" symbol="064C" shaping="FE72,,," ipavalue="un" extendedbuckwalter="78" terminating="true" connecting="false" assimilate="false" />
 		<arabicsymbol symbolname="tanowiynN kasorapN" uname="ArabicKasratan" symbol="064D" shaping="FE74,,," ipavalue="in" extendedbuckwalter="75" terminating="true" connecting="false" assimilate="false" />
-		<arabicsymbol symbolname="fatoHapN" uname="ArabicFatha" symbol="064E" shaping="FE76,,,FE77" ipavalue="a" extendedbuckwalter="97" terminating="false" connecting="false" assimilate="false" />
-		<arabicsymbol symbolname="Dam~apN" uname="ArabicDamma" symbol="064F" shaping="FE78,,,FE79" ipavalue="u" extendedbuckwalter="117" terminating="false" connecting="false" assimilate="false" />
-		<arabicsymbol symbolname="kasorapN" uname="ArabicKasra" symbol="0650" shaping="FE7A,,,FE7B" ipavalue="i" extendedbuckwalter="105" terminating="false" connecting="false" assimilate="false" />
-		<arabicsymbol symbolname="$ad~apN" uname="ArabicShadda" symbol="0651" shaping="FE7C,,,FE7D" ipavalue="" extendedbuckwalter="126" terminating="false" connecting="false" assimilate="false" />
-		<arabicsymbol symbolname="sukuwnN" uname="ArabicSukun" symbol="0652" shaping="FE7E,,,FE7F" ipavalue="Ø" extendedbuckwalter="111" terminating="false" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="fatoHapN" uname="ArabicFatha" symbol="064E" shaping="FE76,,," ipavalue="a" extendedbuckwalter="97" terminating="false" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="Dam~apN" uname="ArabicDamma" symbol="064F" shaping="FE78,,," ipavalue="u" extendedbuckwalter="117" terminating="false" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="kasorapN" uname="ArabicKasra" symbol="0650" shaping="FE7A,,," ipavalue="i" extendedbuckwalter="105" terminating="false" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="$ad~apN" uname="ArabicShadda" symbol="0651" shaping="FE7C,,," ipavalue="" extendedbuckwalter="126" terminating="false" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="sukuwnN" uname="ArabicSukun" symbol="0652" shaping="FE7E,,," ipavalue="Ø" extendedbuckwalter="111" terminating="false" connecting="false" assimilate="false" />
 		<arabicsymbol symbolname="mad~apN" uname="ArabicMaddahAbove" symbol="0653" ipavalue="" extendedbuckwalter="94" terminating="false" connecting="false" assimilate="false" />
 		<arabicsymbol symbolname="hamozapN" uname="ArabicHamzaAbove" symbol="0654" ipavalue="?|e" extendedbuckwalter="35" terminating="false" connecting="false" assimilate="false" />
 		<arabicsymbol symbolname="hamozapN" uname="ArabicHamzaBelow" symbol="0655" ipavalue="?" extendedbuckwalter="88" terminating="false" connecting="false" assimilate="false" />
