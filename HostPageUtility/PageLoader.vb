@@ -1394,18 +1394,36 @@ Public Class ArabicData
         Next
         Return Forms.ToArray()
     End Function
-    Public Shared Function GetPresentationForms() As Char()
-        Dim Forms As New List(Of Char)
-        Forms.AddRange(GetPresentationFormsA())
-        Forms.AddRange(GetPresentationFormsB())
-        Return Forms.ToArray()
-    End Function
-    Public Shared Function GetPresentationFormsA() As Char()
-        Return GetFormsRange(ChrW(&HFB50), ChrW(&HFDFF))
-    End Function
-    Public Shared Function GetPresentationFormsB() As Char()
-        Return GetFormsRange(ChrW(&HFE70), ChrW(&HFEFF))
-    End Function
+    Public Shared _PresentationForms() As Char
+    Public Shared _PresentationFormsA() As Char
+    Public Shared _PresentationFormsB() As Char
+    Public Shared ReadOnly Property GetPresentationForms As Char()
+        Get
+            If _PresentationForms Is Nothing Then
+                Dim Forms As New List(Of Char)
+                Forms.AddRange(GetPresentationFormsA())
+                Forms.AddRange(GetPresentationFormsB())
+                _PresentationForms = Forms.ToArray()
+            End If
+            Return _PresentationForms
+        End Get
+    End Property
+    Public Shared ReadOnly Property GetPresentationFormsA() As Char()
+        Get
+            If _PresentationFormsA Is Nothing Then
+                _PresentationFormsA = GetFormsRange(ChrW(&HFB50), ChrW(&HFDFF))
+            End If
+            Return _PresentationFormsA
+        End Get
+    End Property
+    Public Shared ReadOnly Property GetPresentationFormsB() As Char()
+        Get
+            If _PresentationFormsB Is Nothing Then
+                _PresentationFormsB = GetFormsRange(ChrW(&HFE70), ChrW(&HFEFF))
+            End If
+            Return _PresentationFormsB
+        End Get
+    End Property
     Public Shared Function CheckLigatureMatch(Str As String, Position As Integer, Lig As String) As Integer()
         Dim Count As Integer
         Dim Indexes As New List(Of Integer)
@@ -1431,19 +1449,28 @@ Public Class ArabicData
         End If
         Return Indexes.ToArray()
     End Function
+    Public Shared _LigatureCombos() As ArabicXMLData.ArabicCombo
+    Public Shared ReadOnly Property GetLigatureCombos As ArabicXMLData.ArabicCombo()
+        Get
+            If _LigatureCombos Is Nothing Then
+                ReDim _LigatureCombos(Data.ArabicLetters.Length + Data.ArabicCombos.Length - 1)
+                Data.ArabicCombos.CopyTo(_LigatureCombos, 0)
+                For Count = 0 To Data.ArabicLetters.Length - 1
+                    'do not need to transfer UnicodeName as it is not used here
+                    _LigatureCombos(Data.ArabicCombos.Length + Count).SymbolName = Data.ArabicLetters(Count).Symbol
+                    _LigatureCombos(Data.ArabicCombos.Length + Count).Shaping = Data.ArabicLetters(Count).Shaping
+                Next
+                Array.Sort(_LigatureCombos, Function(Com1 As ArabicXMLData.ArabicCombo, Com2 As ArabicXMLData.ArabicCombo) If(Com1.SymbolName.Length = Com2.SymbolName.Length, Com1.SymbolName.CompareTo(Com2.SymbolName), If(Com1.SymbolName.Length > Com2.SymbolName.Length, -1, 1)))
+            End If
+            Return _LigatureCombos
+        End Get
+    End Property
     Public Shared Function GetLigatures(Str As String, Dir As Boolean, SupportedForms As Char()) As LigatureInfo()
         Dim Count As Integer
         Dim SubCount As Integer
         Dim Ligatures As New List(Of LigatureInfo)
+        Dim Combos As ArabicXMLData.ArabicCombo() = GetLigatureCombos
         'Division seleciton between Presentation A and B forms can be done here though wasl and gunnah need consideration
-        Dim Combos(ArabicData.Data.ArabicLetters.Length + ArabicData.Data.ArabicCombos.Length - 1) As ArabicXMLData.ArabicCombo
-        Data.ArabicCombos.CopyTo(Combos, 0)
-        For Count = 0 To Data.ArabicLetters.Length - 1
-            'do not need to transfer UnicodeName as it is not used here
-            Combos(Data.ArabicCombos.Length + Count).SymbolName = Data.ArabicLetters(Count).Symbol
-            Combos(Data.ArabicCombos.Length + Count).Shaping = Data.ArabicLetters(Count).Shaping
-        Next
-        Array.Sort(Combos, Function(Com1 As ArabicXMLData.ArabicCombo, Com2 As ArabicXMLData.ArabicCombo) If(Com1.SymbolName.Length = Com2.SymbolName.Length, Com1.SymbolName.CompareTo(Com2.SymbolName), If(Com1.SymbolName.Length > Com2.SymbolName.Length, -1, 1)))
         Count = 0
         While Count <> Str.Length
             For SubCount = 0 To Combos.Length - 1
