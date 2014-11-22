@@ -1474,7 +1474,7 @@ Public Class ArabicData
     Public Shared Function ConvertLigatures(Str As String, Dir As Boolean, SupportedForms As Char()) As String
         Dim Ligatures() As LigatureInfo = GetLigatures(Str, Dir, SupportedForms)
         For Count = Ligatures.Length - 1 To 0 Step -1
-            For Index = 0 To Ligatures(Count).Indexes.Length
+            For Index = 0 To Ligatures(Count).Indexes.Length - 1
                 Str = Str.Remove(Ligatures(Count).Indexes(Index), 1).Insert(Ligatures(Count).Indexes(0), Ligatures(Count).Ligature)
             Next
         Next
@@ -2085,6 +2085,7 @@ Public Class RenderArray
                             LigLen += 1
                         End While
                         If LigLen <> 1 Then
+                            'the case of multiple ligaturized diacritics in a row needs to be studied
                             Dim CheckGlyphCount As Integer = 0
                             Dim CheckClusterMap(RunCount + LigLen - 1) As Short
                             Dim CheckTextProps(RunCount + LigLen - 1) As SharpDX.DirectWrite.ShapingTextProperties
@@ -2264,14 +2265,21 @@ Public Class RenderArray
             End If
         End If
         Text = Text.Substring(0, Len)
-        Dim MaxAscent As Single = 0
-        Dim MinAscent As Single = 0
-        For Each CharPosInfo As CharPosInfo In CharPosInfos
-            MaxAscent = Math.Max(CharPosInfo.Y, MaxAscent)
-            MinAscent = Math.Min(CharPosInfo.Y, MinAscent)
+        Dim MaxAscent As Single = Font.BaseFont.GetAscentPoint(Text, Font.Size)
+        Dim MaxDescent As Single = Font.BaseFont.GetDescentPoint(Text, Font.Size)
+        Dim Forms As Char() = ArabicData.GetPresentationForms()
+        For Count = 0 To Forms.Length - 1
+            If Not Font.BaseFont.CharExists(AscW(Forms(Count))) Then Forms(Count) = ChrW(0)
         Next
-        Baseline = MaxAscent + Font.BaseFont.GetAscentPoint(Text, Font.Size) + Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size) * 2
-        s.Height = Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size) * 4 + Baseline - MinAscent - Font.BaseFont.GetDescentPoint(Text, Font.Size)
+        For Each CharPosInfo As CharPosInfo In CharPosInfos
+            If CharPosInfo.Index < Len Then
+                Dim Box As Integer() = Font.BaseFont.GetCharBBox(AscW(ArabicData.ConvertLigatures(Text.Substring(CharPosInfo.Index, CharPosInfo.Length), False, Forms)(0)))
+                MaxAscent = Math.Max(CharPosInfo.Y + Box(3) * 0.001F * Font.Size, MaxAscent)
+                MaxDescent = Math.Min(CharPosInfo.Y + Box(1) * 0.001F * Font.Size, MaxDescent)
+            End If
+        Next
+        Baseline = MaxAscent + Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size) * 4
+        s.Height = Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size) * 4 + MaxAscent - MaxDescent
         Return Len
     End Function
     Private Shared Function GetTextWidthFromPdf(Font As iTextSharp.text.Font, DrawFont As Font) As GetTextWidth
@@ -2382,7 +2390,7 @@ Public Class RenderArray
             LastCurTop = Math.Max(MaxTop, LastCurTop)
             LastRight = NextRight
             If Count = CurRenderArray.Count - 1 Then
-                Top += CurTop + Bounds(Count)(CurRenderArray(Count).TextItems.Length - 1)(Bounds(Count)(CurRenderArray(Count).TextItems.Length - 1).Count - 1).Rect.Height
+                Top += LastCurTop
                 OverIndexes.Add(New OverInfo(Count + 1, 0, NextRight))
             End If
         Next
