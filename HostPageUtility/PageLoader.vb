@@ -2249,7 +2249,9 @@ Public Class RenderArray
                 'cannot split arabic words except on word boundaries without thinking about shaping issues
                 Str = Str.Substring(0, If(Str.IndexOf(" "c, Len - 1) = -1, Str.Length, Str.IndexOf(" "c, Len - 1) + 1))
                 For Count As Integer = CharPosInfos.Length - 1 To 0 Step -1
-                    Str = Str.Remove(CharPosInfos(Count).Index, CharPosInfos(Count).Length)
+                    If CharPosInfos(Count).Index < Len Then
+                        Str = Str.Remove(CharPosInfos(Count).Index, CharPosInfos(Count).Length)
+                    End If
                 Next
                 s.Width = iTextSharp.text.pdf.ColumnText.GetWidth(New iTextSharp.text.Phrase(Str, Font), If(IsRTL, iTextSharp.text.pdf.PdfWriter.RUN_DIRECTION_RTL, iTextSharp.text.pdf.PdfWriter.RUN_DIRECTION_LTR), iTextSharp.text.pdf.ColumnText.AR_COMPOSEDTASHKEEL Or iTextSharp.text.pdf.ColumnText.AR_LIG)
                 Str = Text
@@ -2259,7 +2261,9 @@ Public Class RenderArray
                 Len = Str.LastIndexOf(" "c, Len - 1 - 1) + 1 'factor towards fitting not overflowing
                 Str = Str.Substring(0, Len)
                 For Count As Integer = CharPosInfos.Length - 1 To 0 Step -1
-                    Str = Str.Remove(CharPosInfos(Count).Index, CharPosInfos(Count).Length)
+                    If CharPosInfos(Count).Index < Len Then
+                        Str = Str.Remove(CharPosInfos(Count).Index, CharPosInfos(Count).Length)
+                    End If
                 Next
                 s.Width = iTextSharp.text.pdf.ColumnText.GetWidth(New iTextSharp.text.Phrase(Str, Font), If(IsRTL, iTextSharp.text.pdf.PdfWriter.RUN_DIRECTION_RTL, iTextSharp.text.pdf.PdfWriter.RUN_DIRECTION_LTR), iTextSharp.text.pdf.ColumnText.AR_COMPOSEDTASHKEEL Or iTextSharp.text.pdf.ColumnText.AR_LIG)
             End If
@@ -2274,8 +2278,8 @@ Public Class RenderArray
         For Each CharPosInfo As CharPosInfo In CharPosInfos
             If CharPosInfo.Index < Len Then
                 Dim Box As Integer() = Font.BaseFont.GetCharBBox(AscW(ArabicData.ConvertLigatures(Text.Substring(CharPosInfo.Index, CharPosInfo.Length), False, Forms)(0)))
-                MaxAscent = Math.Max(CharPosInfo.Y + Box(3) * 0.001F * Font.Size, MaxAscent)
-                MaxDescent = Math.Min(CharPosInfo.Y + Box(1) * 0.001F * Font.Size, MaxDescent)
+                MaxAscent = Math.Max(CharPosInfo.Y + If(Box Is Nothing, 0, Box(3) * 0.001F * Font.Size), MaxAscent)
+                MaxDescent = Math.Min(CharPosInfo.Y + If(Box Is Nothing, 0, Box(1) * 0.001F * Font.Size), MaxDescent)
             End If
         Next
         Baseline = MaxAscent + Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size) * 4
