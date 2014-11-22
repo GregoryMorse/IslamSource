@@ -99,7 +99,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 		<word value="jihaAdN" id="Jihad"></word>
 		<word value="zakaw`pN" id="Zakah"></word>
 		<word value="SadaqapN" id="Sadaqat"></word>
-		<word value="wuduw&apos;N" id="Wudu"></word>
+		<word value="wuDuw&apos;N" id="Wudu"></word>
 		<word value="SawomN" id="Sawm"></word>
 		<word value="&gt;a*~aAnN" id="Adhan"></word>
 		<word value="xuTbah" id="Khutbah"></word>
@@ -971,8 +971,8 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="&lt;ifEalona" grammar="fp"></word>
 		</category>
 		<category title="ResponseParticles">
-			<word text="&lt;ilaha" id="God"></word>
-			<word text="{ll~ah" id="Allah"></word>
+			<word text="&lt;ila`ha" id="God"></word>
+			<word text="{ll~ahu" id="Allah"></word>
 
 			<word text="kal~aA" id="NeverCertainlyNot"></word>
 			<word text="lano" id="NotFutureWillNever" grammar="acc"></word>
@@ -980,8 +980,8 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="laA" id="ThereIsNo"></word>
 			<word text="maA" id="Not"></word>
 			<word text="layosa" id="Not"></word>
-			<word text="layosato" id="Not"></word>
-			<word text="balaY" id="YesIndeed"></word>
+			<word text="layosati" id="Not"></word>
+			<word text="balaY`" id="YesIndeed"></word>
 			<word text="duwna" id="BesidesOtherThanLessThan" grammar="pos"></word>
 			<word text="naEamo" id="Yes"></word>
 
@@ -989,8 +989,8 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="gayoru" id="NotOtherThan" grammar="except"></word>
 			<word text="sawiY" id="" grammar="except"></word>
 			<word text="xalaA" id="" grammar="except"></word>
-			<word text="EadaA" id="" grammar="except"></word>
-			<word text="HaA$aA" id="" grammar="except"></word>
+			<word text="EaAda" id="" grammar="except"></word>
+			<word text="Ha`$a" id="" grammar="except"></word>
 		</category>
 		<category title="Interogatives">	
 			<word text="maA" id="WhatThatWhich" grammar="prespos"></word>
@@ -1051,14 +1051,14 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="kul~amaA" id="Whenever"></word>
 			<word text="bi" id="WithInFrom" grammar="pos"></word>
 			<word text="Eano" id="FromAbout" grammar="pos"></word>
-			<word text="fiy" id="In" grammar="pos"></word>
+			<word text="fiY" id="In" grammar="pos"></word>
 			<word text="ka" id="AsLikeSimilarity" grammar="pos"></word>
 			<word text="li" id="ForTo" grammar="pos"></word>
 			<word text="la" id="For" grammar="prespos"></word>
 			<word text="mino mina" id="From" grammar="pos"></word>
-			<word text="&lt;ilaY" id="ToTowards" grammar="pos"></word>
+			<word text="&lt;ilaY" id="ToTowardsUpToNotIncluding" grammar="pos"></word>
 			<word text="ta ti" id="ByOfOath" grammar="pos"></word>
-			<word text="Hat~aY" id="Until" grammar="pos|acc"></word>
+			<word text="Hat~aY`" id="Until" grammar="pos|acc"></word>
 			<word text="EalaY" id="UponOn" grammar="pos"></word>
 			<word text="maEa" id="With" grammar="pos"></word>
 			<word text="wa" id="AndByOfOath" grammar="pos"></word>
@@ -1066,17 +1066,17 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="&lt;in~a" id="VerilyTrulySurely" grammar="acc"></word>
 			<word text="&gt;an~a" id="ThatSurelyVerily" grammar="acc"></word>
 			<word text="ka&gt;an~a" id="AsIfAsThough" grammar="acc"></word>
-			<word text="lakin~a" id="ButHoweverOnTheContraryActually" grammar="acc"></word>
-			<word text="lakino" id="ButHowever" grammar="acc"></word>
+			<word text="la`kin~a" id="ButHoweverOnTheContraryActually" grammar="acc"></word>
+			<word text="la`kino" id="ButHowever" grammar="acc"></word>
 			<word text="laEal~a" id="PerhapsMayBeSoAsTo" grammar="acc"></word>
 			<word text="layota" id="WishIfOnly" grammar="acc"></word>
 
 			<word text="&gt;ano" id="ThatTo" grammar="acc"></word>
 			<word text="&lt;iy~aA" id="AloneOnly"></word>
 			<word text="EasaY" id="PossiblyPerhaps"></word>
-			<word text="lam~aA mataY" id="When"></word>
+			<word text="lam~aA mataY`" id="When"></word>
 			<word text="lawo" id="If"></word>
-			<word text="yaA ya`^&gt;ay~uhaA" id="O"></word>
+			<word text="ya` ya`^&gt;ay~uhaA" id="O"></word>
 
 			<word text="qad fEl" id="HasSurely"></word>
 			<word text="sa fEl" id="WillNearFuture"></word>
@@ -1533,7 +1533,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="ZahiyrN" id="Patron"></word>
 			<word text="faAHi$oha" id="EvilDeeds"></word>
 			<word text="ribaA" id="Usury"></word>
-			<word text="bayoEN" id="Trade"></word>
+			<word text="bayoEN" id="TradeBusinessTransactions"></word>
 			<word text="rafavN" id="VulgarWord"></word>
 			<word text="fusuwqN" id="Obscenity"></word>
 			<word text="jidaAlN" id="Argument"></word>
@@ -1570,7 +1570,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="mawolaAnaA" id="Master"></word>
 			<word text="&gt;um~ahN" id="Community"></word>
 			<word text="SaHaAbapN" id="Companions"></word>
-			<word text="taAbiEuwna" id="Followers"></word>
+			<word text="taAbiEN" id="Follower"></word>
 			<word text="&gt;anSaArN" id="Helpers"></word>
 			<word text="{lomuhaAjiriyna" id="Emigrants"></word>
 			<word text="fuSila" id="Division"></word>
@@ -1579,8 +1579,6 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="&lt;iqoraA" id="Recite"></word>
 			<word text="SaborN" id="Patience"></word>
 			<word text="SaboriynN" id="Satisfaction"></word>
-			<word text="&lt;ijomaAEN" id="Concensus"></word>
-			<word text="&gt;amaAlN" id="Deeds"></word>
 			<word text="&gt;anohaArN" id="Sacrifice"></word>
 			<word text="qurobaAnN" id="Slaughter"></word>
 			<word text="SadaqapN" id="VoluntaryKindness"></word>
@@ -1628,7 +1626,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="*anobN" id="Sin"></word>
 			<word text="zinaA" id="Fornication"></word>
 			<word text="kiborN" id="Arrogance"></word>
-			<word text="bidaEapN" id="Innovation"></word>
+			<word text="bidoEapN" id="Innovation"></word>
 			<word text="riyaA^&apos;N" id="ShowingOff"></word>
 			<word text="qadarN" id="Predestination"></word>
 			<word text="nutofapN" id="DropOfLiquidOfManAndWoman"></word>
@@ -1826,7 +1824,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="manTuwqN" id="Stated"></word>
 			<word text="mafohuwmN" id="ImpliedUnderstoodMeaning"></word>
 			<word text="naS~N" id="Explicit"></word>
-			<word text="ZaAhirN" id="ObviousApparent"></word>
+			<word text="ZaAhirN" plural="ZawaAhirN" id="ObviousApparent"></word>
 			<word text="baAtinN" id="Hidden"></word>
 			<word text="HaqiyqapN" id="LiteralMeaningInnerMeaning"></word>
 			<word text="Haqiyqiy" id="Actual"></word>
@@ -1886,7 +1884,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="badaA&apos;N" id="AppearNewRealizationOccurToSomeone"></word>
 			<word text="waSiyapN" plural="waSaAyaA" id="Bequest"></word>
 			<word text="&lt;ijotihaAdN" id="ReasonedDecision"></word>
-			<word text="fatowaY" id="Ruling"></word>
+			<word text="fatowaY" plural="fataAwaY" id="Ruling"></word>
 			<word text="qiyaAsN" id="AnalogicalDeduction"></word>
 			<word text="&lt;ijomaAEN" id="Concensus"></word>
 			<word text="$uwraY" id="Consultation"></word>
@@ -1894,17 +1892,21 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="waHoYN" id="Revelation"></word>
 			<word text="munaA*araAtN" id="CourtDebates"></word>
 			<word text="taqoliydN" id="BlindFollowing"></word>
-			<word text="quro&apos;N" id="Menses"></word>
+			<word text="&lt;it~ibaA&apos;N" id="FollowingBasedOnKnowledgeInquiry"></word>
+			<word text="quro&apos;N" plural="quruw&apos;N &gt;aqoraA&apos;" id="Menses"></word>
 			<word text="&lt;id~apN" id="WaitingPeriod"></word>
 			<word text="lamosN" id="Touch"></word>
+			<word text="&gt;adabN" plural="&apos;aAdaAbN" id="IslamicEtiquette"></word>
 			<word text="qayo&apos;N" id="Vomit"></word>
 			<word text="ma$ohuwrN" id="WellKnown"></word>
 			<word text="murosalN" id="UnknownSourceNarrator"></word>
 			<word text="tarojiyHN" id="GivingPreference"></word>
+			<word text="taSoHiyHN" id="AuthenticationClassificationOfStatements"></word>
+			<word text="munaA*araAtN" id="CompetitiveDebates"></word>
 			<word text="EurofN" id="LocalCustom"></word>
 			<word text="{lr~aA^&apos;i" id="Opinion"></word>
 			<word text="&gt;aqowaAlN" id="RulingsNotPartOfTradition"></word>
-			<word text="EaqolN" id="HumanIntellect"></word>
+			<word text="EaqolN" plural="EuquwlN" id="HumanIntellect"></word>
 			<word text="Huj~apN" id="Evidence"></word>
 			<word text="&gt;um~N" id="Essence"></word>
 			<word text="&lt;isotiSolaAHN" id="DeemProper"></word>
@@ -2142,7 +2144,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="{loxawaAriju" id="Khawarij"></word>
 			<word text="$iyEapN" id="Shia"></word>
 			<word text="qurayo$N" id="Quraish"></word>
-			<word text="{lo&gt;umawiy~ap‎u" id="Umayyad"></word>
+			<word text="{lo&gt;amawiy~ap‎u" id="Umayyad"></word>
 			<word text="{loEabaAsiy~apu" id="Abbasid"></word>
 			<word text="{lofaATimiy~uwnu" id="Fatimid"></word>
 			<word text="{lomanSuwru" id="AlMansoor"></word>
@@ -2347,18 +2349,18 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="ta$okiylN" id="Diacritics"></word>
 			<word text="ka$iydapN" id="ScriptLengthening"></word>
 			<word text="{lokalimapu" id="Word"></word>
-			<word text="&lt;isomu {lS~ilapu" id="RelativePronoun"></word>
-			<word text="&lt;isomu {lofaAEilu" id="ActiveParticipleVerbalDoer"></word>
-			<word text="&lt;isomu {lomafoEuwlu" id="PassiveParticiplePassiveNoun"></word>
+			<word text="&lt;isomu {lS~ilapi" id="RelativePronoun"></word>
+			<word text="&lt;isomu {lofaAEili" id="ActiveParticipleVerbalDoer"></word>
+			<word text="&lt;isomu {lomafoEuwli" id="PassiveParticiplePassiveNoun"></word>
 			<word text="&lt;isomu tafoDiylu" id="ComparativeDerivedNoun"></word>
-			<word text="&lt;isomu {lZ~arofu" id="PossessionConstructionLikeNounsForTimePlace"></word>
+			<word text="&lt;isomu {lZ~arofi" id="PossessionConstructionLikeNounsForTimePlace"></word>
 			<word text="&lt;isomu mu$otaq~N" id="DerivedNouns"></word>
-			<word text="&lt;isomu {lo&gt;alapu" id="InstrumentOfAction"></word>
+			<word text="&lt;isomu {lo&gt;alapi" id="InstrumentOfAction"></word>
 			<word text="&gt;asomaA^&apos;u {lo&lt;i$aArapi" id="PointingNouns"></word>
 			<word text="&gt;asomaA^&apos;u {lo&lt;i$aArapi {lobaEiyd" id="FarPointingNouns"></word>
 			<word text="{lo&gt;asomaA^&apos;u {loxamosapu" id="FiveSpecialNouns"></word>
-			<word text="Zarofu {lomakaAnu" id="ParticlesOfPlace"></word>
-			<word text="Zarofu {lz~amaAnu" id="ParticlesOfTime"></word>
+			<word text="Zarofu {lomakaAni" id="ParticlesOfPlace"></word>
+			<word text="Zarofu {lz~amaAni" id="ParticlesOfTime"></word>
 			<word text="siygapN mubaAlagapN" id="DerivedIntensiveAdjectivesIntransitive"></word>
 			<word text="sifapN mu$ab~ahapN" id="DerivedSuperlativeAdjectivesTransitive"></word>
 			<word text="SilapN" id="DescriptionAfterRelativePronoun"></word>
@@ -2385,48 +2387,48 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="&lt;iDaAfapN" id="Possession"></word>
 			<word text="Eajamiy" id="Illiterate"></word>
 			<word text="{lofuSoHa`Y" id="ClassicArabic"></word>
-			<word text="kitaAbu {loEayonu" id="ArabicDictionary"></word>
+			<word text="kitaAbu {loEayoni" id="ArabicDictionary"></word>
 			<word text="muEorabN" id="Flexible"></word>
 			<word text="maboniy" id="CompletelyInflexible"></word>
 			<word text="gayoru munSarifN" id="PartiallyFlexible"></word>
 			<word text="{lS~arofu" id="Phonation"></word>
 			<word text="{loqariybu" id="Near"></word>
 			<word text="{lobaEiydu" id="Far"></word>
-			<word text="nuwnu {lowiqaAyapu" id="FirstPersonSingularVerbalAttachedPronoun"></word>
-			<word text="HuruwfN {ln~aSobu" id="AccusativeParticles"></word>
-			<word text="HuruwfN {lojar~u" id="PossessionParticles"></word>
-			<word text="HuruwfN {lojazomu" id="PresentTensePossessionParticles"></word>
+			<word text="nuwnu {lowiqaAyapi" id="FirstPersonSingularVerbalAttachedPronoun"></word>
+			<word text="Huruwfu {ln~aSobi" id="AccusativeParticles"></word>
+			<word text="Huruwfu {lojar~i" id="PossessionParticles"></word>
+			<word text="Huruwfu {lojazomi" id="PresentTensePossessionParticles"></word>
 			<word text="HuruwfN gayoru EaAmilapK" id="ParticlesWithoutDeclension"></word>
-			<word text="HuruwfN {lomakaAnu" id="ParticlesOfPlace"></word>
-			<word text="HuruwfN {lz~amaAnu" id="ParticlesOfTime"></word>
-			<word text="HuruwfN {loqasamu" id="ParticlesForOaths"></word>
-			<word text="HuruwfN {ln~afiy" id="ParticlesOfNegation"></word>
-			<word text="HuruwfN {loEaTofu" id="ConnectingParticles"></word>
-			<word text="HuruwfN {lt~awokiydu" id="ParticlesOfEmphasis"></word>
-			<word text="HuruwfN {l$~aroTu" id="ParticlesOfCondition"></word>
-			<word text="HuruwfN {lo&gt;asotifohaAmu" id="ParticlesOfInterogation"></word>
-			<word text="HuruwfN {loEil~apu" id="VowelLetter"></word>
+			<word text="Huruwfu {lomakaAni" id="ParticlesOfPlace"></word>
+			<word text="Huruwfu {lz~amaAni" id="ParticlesOfTime"></word>
+			<word text="Huruwfu {loqasami" id="ParticlesForOaths"></word>
+			<word text="Huruwfu {ln~afiy" id="ParticlesOfNegation"></word>
+			<word text="Huruwfu {loEaTofi" id="ConnectingParticles"></word>
+			<word text="Huruwfu {lt~awokiydi" id="ParticlesOfEmphasis"></word>
+			<word text="Huruwfu {l$~aroTi" id="ParticlesOfCondition"></word>
+			<word text="Huruwfu {lo&gt;asotifohaAmi" id="ParticlesOfInterogation"></word>
+			<word text="Huruwfu {loEil~api" id="VowelLetter"></word>
 			<word text="&lt;in~a wa &gt;axawaAtuhaA" id="VerilyAndItsSisters"></word>
 			<word text="muDaAriEN" id="PresentTense"></word>
 			<word text="muforadN" id="SingularNoun"></word>
 			<word text="&lt;isotiqobaAlN" id="Future"></word>
 			<word text="{lobolaAgapu" id="StudyOfRhetoricEloquence"></word>
-			<word text="taA^&apos;N {lomarobuwtapu" id="TheTaaOfFemininity"></word>
+			<word text="taA^&apos;u {lomarobuwtapi" id="TheTaaOfFemininity"></word>
 			<word text="{lojar~u wa {lomajoruwru" id="PossessiveConstruction"></word>
 			<word text="{lojumolapu {lo&lt;isomiy~apu" id="NominalSentence"></word>
-			<word text="&gt;anowaAEu {lojumalu" id="NominalSentence"></word>
+			<word text="&gt;anowaAEu {lojumali" id="NominalSentence"></word>
 			<word text="jumolapN fiEoliy~apN" id="VerbalSentence"></word>
-			<word text="jawaAbN {l$~aroTu" id="ResponseStatementAfterCondition"></word>
+			<word text="jawaAbu {l$~aroTi" id="ResponseStatementAfterCondition"></word>
 			<word text="{loxabaru" id="Predicate"></word>
 			<word text="ZuruwfN" id="PossessionConstructionLikeNouns"></word>
-			<word text="Zarofu {lomakaAnu" id="RelativePlaceNouns"></word>
-			<word text="Zarofu {lr~amaAnu" id="RelativeTimeNouns"></word>
-			<word text="$ibohu {lojumolapu" id="EssentiallyPossessiveConstruction"></word>
+			<word text="Zarofu {lomakaAni" id="RelativePlaceNouns"></word>
+			<word text="Zarofu {lr~amaAni" id="RelativeTimeNouns"></word>
+			<word text="$ibohu {lojumolapi" id="EssentiallyPossessiveConstruction"></word>
 			<word text="{l$~aroTu" id="ConditionDenotedByConditionParticle"></word>
 			<word text="Damiyro mut~aSilN" id="ConnectedPronoun"></word>
 			<word text="Damiyro munfaSilN" id="DetachedPronoun"></word>
-			<word text="Zarofu {lz~amaAnu" id="AccusativeNounIndicatingTimeWhenActionOccurs"></word>
-			<word text="Zarofu {lomakaAnu" id="AccusativeNounIndicatingPlaceWhereActionOccurs"></word>
+			<word text="Zarofu {lz~amaAni" id="AccusativeNounIndicatingTimeWhenActionOccurs"></word>
+			<word text="Zarofu {lomakaAni" id="AccusativeNounIndicatingPlaceWhereActionOccurs"></word>
 			<word text="EaA^}idN" id="PronounConnectingToWordItDescribes"></word>
 			<word text="gaA^}ibN" id="ThirdPerson"></word>
 			<word text="{lofiEolu {lo&gt;amoru" id="CommandTenseVerb"></word>
@@ -2439,8 +2441,8 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="fiEolu muDaAriEN" id="PresentOrFutureTenseVerb"></word>
 			<word text="{lofiEolu {lomutaEad~iy" id="TransitiveVerb"></word>
 			<word text="{lofiEolu {lolaAzimu" id="IntransitiveVerb"></word>
-			<word text="laA {ln~aAfiyapu" id="NegationParticle"></word>
-			<word text="laA {ln~ahiy~apu" id="NegativeCommand"></word>
+			<word text="laA {ln~aAfiyapi" id="NegationParticle"></word>
+			<word text="laA {ln~ahiy~api" id="NegativeCommand"></word>
 			<word text="{lomu}an~avu" id="Feminine"></word>
 			<word text="{lomubotada&gt;u" id="SubjectNominalSentence"></word>
 			<word text="muvanaY" id="Dual"></word>
@@ -2460,13 +2462,12 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="mafoEuwlN bihi" id="DirectObjectOfVerb"></word>
 			<word text="$ibohu jumolapN" id="IndirectObject"></word>
 			<word text="mawoSuwfN" id="WordBeingDescribed"></word>
-			<word text="naA^}ibu {lofaAEilu" id="DeputyDoer"></word>
+			<word text="naA^}ibu {lofaAEili" id="DeputyDoer"></word>
 			<word text="mutaEal~iqN" id="ParticleAssociatedVerbs"></word>
-			<word text="la&apos;aAmu {lt~awokiydu" id="LaamOfEmphasis"></word>
-			<word text="{l {lt~aEoriyfu" id="AlOfDefiniteness"></word>
-			<word text="yaA^&apos;N {lomutakal~imu" id="FirstPersonAttachedPronoun"></word>
+			<word text="la&apos;aAmu {lt~awokiydi" id="LaamOfEmphasis"></word>
+			<word text="{lo {lt~aEoriyfi" id="AlOfDefiniteness"></word>
+			<word text="yaA^&apos;u {lomutakal~imi" id="FirstPersonAttachedPronoun"></word>
 			<word text="&lt;isomu {ln~isobapi" id="RelativeAdjective"></word>
-			<word text="maEaAniy~N Eaqoliy~apN" id="RationalInsights"></word>
 		</category>
 		<category title="RulesOfRecitation">
 			<word text="sif~aAtN" id="LetterCharacteristics"></word>
@@ -2497,22 +2498,22 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="miymN saAkinapN &lt;idogaAmN mutamaAviliyna SagiyrN" id="VowellessMeemAssimilatingSmallIdentical"></word>
 			<word text="miymN saAkinapN &lt;iZohaArN $afawiy" id="VowellessMeemClear"></word>
 			<word text="miymN saAkinapN &lt;iZohaArN &gt;a$ad~ $afawiy" id="VowellessMeemClearGreater"></word>
-			<word text="hamozapN {lowaSolu" id="EmptyHamza"></word>
-			<word text="la&apos;aAmN {lofaEolu" id="LaamVerb"></word>
-			<word text="la&apos;aAmN {loHarofu" id="LaamParticle"></word>
-			<word text="&lt;idogaAmu {ll~a&apos;aAmu $~amosiy~a" id="AssimilateLaamSunLetter"></word>
-			<word text="&lt;iZohaAru {ll~a&apos;aAmu qamariy~N" id="ClearLaamMoonLetter"></word>
+			<word text="hamozapu {lowaSoli" id="EmptyHamza"></word>
+			<word text="la&apos;aAmu {lofaEoli" id="LaamVerb"></word>
+			<word text="la&apos;aAmu {loHarofi" id="LaamParticle"></word>
+			<word text="&lt;idogaAmu {ll~a&apos;aAmi $~amosiy~a" id="AssimilateLaamSunLetter"></word>
+			<word text="&lt;iZohaAru {ll~a&apos;aAmi qamariy~a" id="ClearLaamMoonLetter"></word>
 			<word text="la&apos;aAmN tafoxiymN" id="LaamHeaviness"></word>
 			<word text="la&apos;aAmN taroqiyqN" id="LaamLightness"></word>
 			<word text="raA^&apos;N tafoxiymN" id="RaaHeaviness"></word>
 			<word text="raA^&apos;N taroqiyqN" id="RaaLightness"></word>
-			<word text="&lt;idogaAmN {lomutamavilaAnu {lS~agiyru" id="AssimilateSmallIdentical"></word>
-			<word text="&lt;idogaAmN {lomutamavilaAnu {lokabiyru" id="AssimilateGreatIdentical"></word>
+			<word text="&lt;idogaAmu {lomutamavilaAni {lS~agiyri" id="AssimilateSmallIdentical"></word>
+			<word text="&lt;idogaAmu {lomutamavilaAni {lokabiyri" id="AssimilateGreatIdentical"></word>
 			<word text="{lomutamavilaAnu {lomuTolaqu" id="AbsoluteIdentical"></word>
-			<word text="&lt;idogaAmN {lomutajaAnisaAnu {lS~agiyru" id="AssimilateSmallSimilar"></word>
+			<word text="&lt;idogaAmu {lomutajaAnisaAni {lS~agiyri" id="AssimilateSmallSimilar"></word>
 			<word text="{lomutajaAnisaAnu {lokabiyru" id="GreatSimilar"></word>
 			<word text="{lomutajaAnisaAnu {lomuTolaqu" id="AbsoluteSimilar"></word>
-			<word text="&lt;idogaAmN {lomutaqaAribaAnu {lS~agiyru" id="AssimilateSmallProximate"></word>
+			<word text="&lt;idogaAmu {lomutaqaAribaAni {lS~agiyri" id="AssimilateSmallProximate"></word>
 			<word text="{lomutaqaAribaAnu {lokabiyru" id="GreatProximate"></word>
 			<word text="{lomutaqaAribaAnu {lomuTolaqu" id="AbsoluteProximate"></word>
 			<word text="{lomutabaAEidaAnu" id="Distanced"></word>
@@ -2530,7 +2531,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="mad~N munfaSilN silaY kuboraY" id="SeparatedLengtheningSmallConnection"></word>
 			<word text="mad~N badalN" id="ExchangeLengthening"></word>
 			<word text="mad~N EiwaAdN" id="SubstituteLengthening"></word>
-			<word text="mad~N {lofaroqu" id="DistinctionLengthening"></word>
+			<word text="mad~u {lofaroqi" id="DistinctionLengthening"></word>
 			<word text="mad~N tamokiyna" id="StablizationLengthening"></word>
 			<word text="siynN waAjibN" id="SeenRequired"></word>
 			<word text="siynN ma$ohuwrN" id="SeenNoted"></word>
@@ -2695,10 +2696,10 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="{lS~abuwru" id="TheExtensivelyEnduringOne"></word>
 		</category>
 		<category title="Concepts">
-			<word text="tawoHiydN {lr~ubuwbiy~apu" id="OnenessOfLordshipDominion"></word>
-			<word text="tawoHiydN {loEuluwhiy~apu EibaAdapN" id="OnenessOfDivinityAndWorship"></word>
-			<word text="tawoHiydN {loEibaAdapu" id="OnenessOfDivinityAndWorship"></word>
-			<word text="tawoHiydN {lo&gt;asomaA^&apos;u wa{lS~ifaAtu" id="OnenessOfNamesAndAttributes"></word>
+			<word text="tawoHiydu {lr~ubuwbiy~api" id="OnenessOfLordshipDominion"></word>
+			<word text="tawoHiydu {loEuluwhiy~api EibaAdapK" id="OnenessOfDivinityAndWorship"></word>
+			<word text="tawoHiydu {loEibaAdapi" id="OnenessOfDivinityAndWorship"></word>
+			<word text="tawoHiydu {lo&gt;asomaA^&apos;i wa{lS~ifaAti" id="OnenessOfNamesAndAttributes"></word>
 			<word text="{l$~iroku {lo&gt;akobaru" id="MajorAssociation"></word>
 			<word text="{l$~iroku {lo&gt;asogaru" id="MajorAssociation"></word>
 			<word text="kitaAbapN kawoniy~apN" id="UniversalPrescription"></word>
@@ -2708,8 +2709,8 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="{loqadaru {loyawomi" id="DailyPredestination"></word>
 			<word text="{loqadaru {ls~anawi" id="YearlyPredestination"></word>
 			<word text="{loqadaru {loEumori" id="LifePredestination"></word>
-			<word text="{loqadaru {ls~aAbiqu" id="AbsolutePredestination"></word>
-			<word text="{ll~awoHu {lomahofuwZu" id="PreservedTablet"></word>
+			<word text="{loqadaru {ls~aAbiqi" id="AbsolutePredestination"></word>
+			<word text="{ll~awoHu {lomaHofuwZi" id="PreservedTablet"></word>
 		</category>
 		<category title="IslamicPhrases">
 			<word text="{ls~alaAmu Ealayokumu" id="PeaceBeUponYou"></word>
@@ -2724,7 +2725,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="&gt;aEuw*u bi{ll~ahi mina {l$~ayoTani {lr~ajiymi" id="SeekRefugeWithAllahFromSatanRejected"></word>
 			<word text="&lt;in $aA^&apos; {ll~ahu" id="AllahWilling"></word>
 			<word text="maA $aA^&apos; {ll~ahu" id="AllahWilledItSo"></word>
-			<word text="fiy &gt;amaAni {ll~ahi" id="InProtectionOfAllah"></word>
+			<word text="fiY &gt;amaAni {ll~ahi" id="InProtectionOfAllah"></word>
 			<word text="jazaAkumu {ll~ahu xayorFA" id="MayAllahProtectYou"></word>
 			<word text="raHimahum {ll~ahu" id="MayAllahHaveMercy"></word>
 			<word text="raDiy {ll~ahu Eanohum" id="MayAllahBePleased"></word>
@@ -2753,71 +2754,70 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="{loHamodu lil~ahi" id="AllPraiseAndThanksBeToAllah"></word>
 			<word text="suboHaAnu {ll~ahu" id="GloryBeToAllah"></word>
 			<word text="sidorapu {lomuntahaY" id="LoteTree"></word>
-			<word text="EibaAdaAtN {lt~a&gt;amalu" id="WorshipOfMeditation"></word>
+			<word text="EibaAdaAtu {lt~a&gt;amali" id="WorshipOfMeditation"></word>
 			<word text="xaAladiyna fiyhaA" id="AbidingTherein"></word>
-			<word text="&gt;aholN {l*~im~apu" id="DisbelievingPeople"></word>
-			<word text="baAbN {lS~alaw`pu" id="GateOfPrayer"></word>
-			<word text="baAbN {lojihaAdu" id="GateOfJihad"></word>
-			<word text="baAbN {lS~adaqapu" id="GateOfCharity"></word>
-			<word text="baAbN {lr~ay~aAnu" id="GateOfFasting"></word>
-			<word text="baAbN {loHaj~u" id="GateOfPilgrimage"></word>
-			<word text="baAbN {lokaAZimiyna {logayoZa wa{loEaAfiyna Ean {ln~aAsi" id="GateOfWithholdingAngerAndForgivness"></word>
-			<word text="baAbN {lo&gt;ayomaAnu" id="GateOfFaith"></word>
-			<word text="baAbN {l*~ikoru" id="GateOfRemembrance"></word>
-			<word text="baAbN bir~ {lowaAlidayonu" id="GateOfRighteousnessToParents"></word>
-			<word text="HuwrN {loEayonu" id="FairLadiesOfTheRiver"></word>
+			<word text="&gt;aholu {l*~im~api" id="DisbelievingPeople"></word>
+			<word text="baAbu {lS~alaw`pi" id="GateOfPrayer"></word>
+			<word text="baAbu {lojihaAdi" id="GateOfJihad"></word>
+			<word text="baAbu {lS~adaqapi" id="GateOfCharity"></word>
+			<word text="baAbu {lr~ay~aAni" id="GateOfFasting"></word>
+			<word text="baAbu {loHaj~i" id="GateOfPilgrimage"></word>
+			<word text="baAbu {lokaAZimiyna {logayoZa wa{loEaAfiyna Ean {ln~aAsi" id="GateOfWithholdingAngerAndForgivness"></word>
+			<word text="baAbu {lo&gt;ayomaAni" id="GateOfFaith"></word>
+			<word text="baAbu {l*~ikori" id="GateOfRemembrance"></word>
+			<word text="baAbu bir~ {lowaAlidayoni" id="GateOfRighteousnessToParents"></word>
+			<word text="Huwru {loEayoni" id="FairLadiesOfTheRiver"></word>
 			<word text="taAbiEu {lt~aAbiEiyna" id="FollowersOfFollowers"></word>
-			<word text="qiyaAsN {l$~abapu" id="DeductionByResemblance"></word>
-			<word text="&gt;uSuwlN {lofiqohu" id="LegalMethodologyFundamentalPrinciplesOfIslamicLaw"></word>
-			<word text="EilomN {lokalaAmu" id="Theology"></word>
-			<word text="EilomN {lo&gt;axolaAqu" id="Ethics"></word>
-			<word text="Haq~N {ll~ahu" id="RightOfAllah"></word>
+			<word text="qiyaAsu {l$~abapi" id="DeductionByResemblance"></word>
+			<word text="&gt;uSuwlu {lofiqohi" id="LegalMethodologyFundamentalPrinciplesOfIslamicLaw"></word>
+			<word text="Eilomu {lokalaAmi" id="Theology"></word>
+			<word text="Eilomu {lo&gt;axolaAqi" id="Ethics"></word>
+			<word text="Haq~u {ll~ahi" id="RightOfAllah"></word>
 			<word text="qaroDN HasanN" id="InterestFreeLoan"></word>
-			<word text="tawoHiydu {ll~ahu" id="UnityOfAllah"></word>
-			<word text="yuwaH~iduw {ll~ahu" id="OnenessOfAllah"></word>
-			<word text="&gt;uSuwlN {lt~afosiyru" id="FundamentalPrinciplesOfQuranicInterpretation"></word>
-			<word text="EuluwmN {loquro&apos;aAnu" id="QuranicSciences"></word>
+			<word text="tawoHiydu {ll~ahi" id="UnityOfAllah"></word>
+			<word text="yuwaH~iduw {ll~ahi" id="OnenessOfAllah"></word>
+			<word text="&gt;uSuwlu {lt~afosiyri" id="FundamentalPrinciplesOfQuranicInterpretation"></word>
+			<word text="Euluwmu {loquro&apos;aAni" id="QuranicSciences"></word>
 			<word text="rasomu {lo&gt;uvomaAniy" id="UthmanicScript"></word>
-			<word text="&lt;iEojaAzN {loquro&apos;aAnu" id="MiraculousAspectsOfTheQuran"></word>
-			<word text="&gt;asobaAbN {ln~uzuwlu" id="ReasonsForRevelation"></word>
+			<word text="&lt;iEojaAzu {loquro&apos;aAni" id="MiraculousAspectsOfTheQuran"></word>
+			<word text="&gt;asobaAbu {ln~uzuwli" id="ReasonsForRevelation"></word>
 			<word text="{ln~aAsixu wa{lomansuwxu" id="AbrogatingAndAbrogatedVerses"></word>
-			<word text="&lt;ieraAbN {loquro&apos;aAnu" id="QuranicGrammar"></word>
-			<word text="gariybN {loquro&apos;aAnu" id="UnusualQuranicTerms"></word>
-			<word text="majaAzN {loquro&apos;aAnu" id="QuranicMetaphor"></word>
+			<word text="&lt;ieraAbu {loquro&apos;aAni" id="QuranicGrammar"></word>
+			<word text="gariybu {loquro&apos;aAni" id="UnusualQuranicTerms"></word>
+			<word text="majaAzu {loquro&apos;aAni" id="QuranicMetaphor"></word>
 			<word text="&gt;aholu {lokitaAbi" id="PeopleOfTheBook"></word>
-			<word text="manaAhijN {lotafosiyru" id="MethodologyOfQuranicInterpretation"></word>
-			<word text="haAlatulN janaAbapN" id="StateofMajorRitualImpurity"></word>
+			<word text="manaAhiju {lotafosiyri" id="MethodologyOfQuranicInterpretation"></word>
+			<word text="haAlatulu janaAbapi" id="StateofMajorRitualImpurity"></word>
 			<word text="TaAharapu {loxabavu" id=""></word>
 			<word text="TaAharapu {loHadiyvu" id=""></word>
 			<word text="Hur~imapN Ealayokum {lomayotapu" id=""></word>
 			<word text="{loEayonu wika`s~aholu" id=""></word>
-			<word text="{ll~a&gt;uhu {lomaHofuwZu" id=""></word>
 			<word text="&lt;iqaAma {lS~alaw`pi" id="EstablishPrayer"></word>
 			<word text="&lt;iytaA^&apos;a {lz~akaw`pi" id="EstablishCharity"></word>
-			<word text="kuforN Eamaliy" id=""></word>
+			<word text="kuforN Eamaliy" id="ActsOfDisbelief"></word>
 			<word text="kuforN &lt;itaqaAliy" id=""></word>
-			<word text="takobiyrN {lo&lt;iHoraAmu" id=""></word>
-			<word text="takobiyrN {lt~aHoriymiy" id=""></word>
-			<word text="takobiyrN {lo&lt;intiqaAlu" id=""></word>
+			<word text="takobiyru {lo&lt;iHoraAmi" id=""></word>
+			<word text="takobiyru {lt~aHoriymiy" id=""></word>
+			<word text="takobiyru {lo&lt;intiqaAli" id=""></word>
 			<word text="sajodapu {ls~uhuw" id=""></word>
-			<word text="duEaA^&apos; &lt;isotifotaA^&apos;" id=""></word>
+			<word text="duEaA^&apos;u &lt;isotifotaA^&apos;i" id=""></word>
 			<word text="{lS~alaw`pu EalaY {lonabiy" id=""></word>
-			<word text="taxoSiySN {loEaAm~u" id="PartialAbrogation"></word>
-			<word text="taqoliydN {lomuTolaqu" id=""></word>
-			<word text="taboyiynN {lomujomalu" id=""></word>
-			<word text="&apos;aAyapu {losayof" id="VerseOfTheSword"></word>
+			<word text="taxoSiySu {loEaAm~i" id="PartialAbrogation"></word>
+			<word text="taqoliydu {lomuTolaqi" id=""></word>
+			<word text="taboyiynu {lomujomali" id=""></word>
+			<word text="&apos;aAyapu {losayofi" id="VerseOfTheSword"></word>
 			<word text="&apos;aAyapu {lokurosiy" id="VerseOfTheThrone"></word>
-			<word text="&gt;asomaA^&apos;N {l$~aroTu" id="SubordinatorsBeginningConditionalClauses"></word>
-			<word text="&lt;isomu {lojinsu" id="GenericNounInPossessiveConstructionWithDefiniteNounOrPronoun"></word>
+			<word text="&gt;asomaA^&apos;u {l$~aroTi" id="SubordinatorsBeginningConditionalClauses"></word>
+			<word text="&lt;isomu {lojinsi" id="GenericNounInPossessiveConstructionWithDefiniteNounOrPronoun"></word>
 			<word text="badalN {lobaEoDu mina {lokul~i" id="SubstitutionOfAPartForAWhole"></word>
-			<word text="dalaAlapN {lo&lt;iqotiDaA^&apos;u" id="IndictationOfMeaningByNecessarySupposition"></word>
-			<word text="dilaAlapN {lo&lt;i$aArapu" id="IndictationOfMeaningBySuggestion"></word>
-			<word text="mafohuwmN {lomuwaAfaqapu" id="RuleInImpliedMeaningAgreesWithStatedMeaning"></word>
+			<word text="dalaAlapu {lo&lt;iqotiDaA^&apos;i" id="IndictationOfMeaningByNecessarySupposition"></word>
+			<word text="dilaAlapu {lo&lt;i$aArapi" id="IndictationOfMeaningBySuggestion"></word>
+			<word text="mafohuwmu {lomuwaAfaqapi" id="RuleInImpliedMeaningAgreesWithStatedMeaning"></word>
 			<word text="{loqiyaAsu {lojaliy" id="ObviousAnalogy"></word>
-			<word text="mafohuwmN {lomuxaAlafapu" id="RuleInImpliedMeaningIsContrapositiveToStatedMeaning"></word>
-			<word text="&gt;um~N {lokitaAbu" id="EssenceOfTheBook"></word>
-			<word text="&gt;aHokamN {lofarasu" id="BridleIt"></word>
-			<word text="naqolN {ll~ugaAtu" id="BasisOfTransmissionOfLanguage"></word>
+			<word text="mafohuwmu {lomuxaAlafapi" id="RuleInImpliedMeaningIsContrapositiveToStatedMeaning"></word>
+			<word text="&gt;um~u {lokitaAbi" id="EssenceOfTheBook"></word>
+			<word text="&gt;aHokamu {lofarasi" id="BridleIt"></word>
+			<word text="naqolu {ll~ugaAti" id="BasisOfTransmissionOfLanguage"></word>
 			<word text="{loHuruwfu {lomuqaT~aEaAt" id="DisjointedLetters"></word>
 			<word text="majaAzN Eaqoliy" id="RationalLogicalMetaphorMetonymy"></word>
 			<word text="majaAzN lugawiy" id="LinguisticMetaphorMetonymy"></word>
@@ -2836,8 +2836,10 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="&gt;aholu {loHadiyvi" id="PeopleOfHadith"></word>
 			<word text="&gt;aholu {loHaqiyqapi" id="PeopleOfTrueReality"></word>
 			<word text="&gt;aholu {loHaq~aA&apos;iqi" id="PeopleOfRealities"></word>
-			<word text="&gt;aholu {lr~aA^&apos;i" id="PeopleOfReasoningOpinion"></word>
-			<word text="&lt;ijoma &gt;aholu madinapu" id="ConsensusOfThePeopleOfMedina"></word>
+			<word text="&gt;aholu {lr~aA^&apos;iy~i" id="PeopleOfReasoningOpinion"></word>
+			<word text="maEaAniy~N Eaqoliy~apN" id="RationalInsights"></word>
+			<word text="Eamalu &gt;aholi madinapa" id="PracticesOfThePeopleOfMedina"></word>
+			<word text="&lt;ijomaAEu &gt;aholi madinapa" id="ConsensusOfThePeopleOfMedina"></word>
 			<word text="{lofiqohu {lowaqiEiy" id="RealisticJurisprudence"></word>
 			<word text="rafa {loyadayoni" id="RaisingHandsInPrayer"></word>
 			<word text="{lomasiyHu {ld~aj~aAlu" id="Antichrist"></word>
