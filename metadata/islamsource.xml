@@ -153,6 +153,7 @@
 		<frame name="docbuild" description="IslamSource_Viewer" hasform="true">
 			<edit name="docedit" rows="4"></edit>
 			<button name="selectiondisplay" description="IslamSource_Display"></button>
+			<button name="print" description="IslamSource_Print" onclick="Utility::GetOnPrintJS"></button>
 			<radio name="translitscheme" description="IslamSource_TransliterationScheme" uselist="true" onchange="Arabic::GetChangeTransliterationJS" onpopulate="Arabic::GetTransliterationSchemes"></radio>
 			<button name="fontsmaller" description="IslamSource_Smaller" onclick="ArabicFont::GetFontSmallerJS"></button>
 			<button name="fontdefaultsize" description="IslamSource_LetterSample" onclick="ArabicFont::GetFontDefaultSizeJS"></button>
@@ -258,6 +259,7 @@
 		<frame name="lists" description="IslamSource_Viewer" hasform="true">
 			<radio name="selection" description="IslamSource_Selection" uselist="true" defaultvalue="0" onpopulate="DocBuilder::GetListCategories"></radio>
 			<button name="selectiondisplay" description="IslamSource_Display"></button>
+			<button name="print" description="IslamSource_Print" onclick="Utility::GetOnPrintJS"></button>
 			<radio name="translitscheme" description="IslamSource_TransliterationScheme" uselist="true" onchange="Arabic::GetChangeTransliterationJS" onpopulate="Arabic::GetTransliterationSchemes"></radio>
 			<button name="fontsmaller" description="IslamSource_Smaller" onclick="ArabicFont::GetFontSmallerJS"></button>
 			<button name="fontdefaultsize" description="IslamSource_LetterSample" onclick="ArabicFont::GetFontDefaultSizeJS"></button>
@@ -329,6 +331,7 @@
 			<radio name="quranselection" description="IslamSource_Selection" uselist="true" onpopulate="TanzilReader::GetSelectionNames"></radio>
 			<radio name="qurantranslation" description="IslamSource_Translation" uselist="true" defaultvalue="en-maulana_ali" onpopulate="TanzilReader::GetTranslationList"></radio>
 			<button name="qurandisplay" description="IslamSource_Display"></button>
+			<button name="print" description="IslamSource_Print" onclick="Utility::GetOnPrintJS"></button>
 			<radio name="translitscheme" description="IslamSource_TransliterationScheme" uselist="true" onchange="Arabic::GetChangeTransliterationJS" onpopulate="Arabic::GetTransliterationSchemes"></radio>
 			<button name="fontsmaller" description="IslamSource_Smaller" onclick="ArabicFont::GetFontSmallerJS"></button>
 			<button name="fontdefaultsize" description="IslamSource_LetterSample" onclick="ArabicFont::GetFontDefaultSizeJS"></button>
@@ -348,6 +351,7 @@
 			<radio name="hadithbook" description="IslamSource_Book" uselist="true" onpopulate="HadithReader::GetBookNames"></radio>
 			<radio name="hadithtranslation" description="IslamSource_Translation" uselist="true" defaultvalue="" onpopulate="HadithReader::GetTranslationList"></radio>
 			<button name="hadithdisplay" description="IslamSource_Display"></button>
+			<button name="print" description="IslamSource_Print" onclick="Utility::GetOnPrintJS"></button>
 			<radio name="translitscheme" description="IslamSource_TransliterationScheme" uselist="true" onchange="Arabic::GetChangeTransliterationJS" onpopulate="Arabic::GetTransliterationSchemes"></radio>
 			<button name="fontsmaller" description="IslamSource_Smaller" onclick="ArabicFont::GetFontSmallerJS"></button>
 			<button name="fontdefaultsize" description="IslamSource_LetterSample" onclick="ArabicFont::GetFontDefaultSizeJS"></button>

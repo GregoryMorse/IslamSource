@@ -161,8 +161,17 @@ Partial Class Page
             If Not UsePrint And DirectCast(Item, PageLoader.ListItem).HasForm Then
                 writer.Write(vbCrLf + BaseTabs + vbTab)
                 writer.WriteBeginTag("form")
+                Dim bHasMultiEdit As Boolean = False
+                For Count As Integer = 0 To DirectCast(Item, PageLoader.ListItem).List.Count - 1
+                    If PageLoader.IsEditItem(DirectCast(Item, PageLoader.ListItem).List(Count)) Then
+                        If DirectCast(DirectCast(Item, PageLoader.ListItem).List(Count), PageLoader.EditItem).Rows > 1 Then
+                            bHasMultiEdit = True
+                            Exit For
+                        End If
+                    End If
+                Next
                 writer.WriteAttribute("action", CStr(IIf(DirectCast(Item, PageLoader.ListItem).FormPostURL <> String.Empty, DirectCast(Item, PageLoader.ListItem).FormPostURL, host.MainPage)))
-                writer.WriteAttribute("method", CStr(IIf(DirectCast(Item, PageLoader.ListItem).FormPostURL <> String.Empty, "post", "get")))
+                writer.WriteAttribute("method", CStr(IIf(DirectCast(Item, PageLoader.ListItem).FormPostURL <> String.Empty Or bHasMultiEdit, "post", "get")))
                 writer.Write(HtmlTextWriter.TagRightChar)
                 writer.Write(vbCrLf + BaseTabs + vbTab + vbTab)
                 writer.WriteBeginTag("div")
