@@ -163,6 +163,7 @@ Partial Class Page
                 writer.WriteBeginTag("form")
                 Dim bHasMultiEdit As Boolean = False
                 For Count As Integer = 0 To DirectCast(Item, PageLoader.ListItem).List.Count - 1
+                    'will not work if nested Edit
                     If PageLoader.IsEditItem(DirectCast(Item, PageLoader.ListItem).List(Count)) Then
                         If DirectCast(DirectCast(Item, PageLoader.ListItem).List(Count), PageLoader.EditItem).Rows > 1 Then
                             bHasMultiEdit = True

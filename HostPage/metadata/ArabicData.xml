@@ -10,7 +10,6 @@
 		<transform symbolname="A^" form="|"></transform>
 	</arabictransforms>
 	<arabiccombos>
-		<!-- Presentation Forms A FB50-FDFF -->
 		<!-- Presentation Forms B FE70-FEFF -->
 		<combo symbolname="_F" shaping=",,,FE71"></combo>
 		<combo symbolname="_a" shaping=",,,FE77"></combo>
@@ -23,6 +22,7 @@
 		<combo symbolname="l&lt;" shaping="FEF9,FEFA,,"></combo>
 		<combo symbolname="lA" shaping="FEFB,FEFC,,"></combo>
 		
+		<!-- Presentation Forms A FB50-FDFF -->
 		<combo symbolname="}A" shaping="FBEA,FBEB,,"></combo>
 		<combo symbolname="}w" shaping="FBEE,FBEF,,"></combo>
 		<combo symbolname="}j" shaping="FC00,,FC97,"></combo>
@@ -282,6 +282,19 @@
 		<combo symbolname="bHy" shaping=",FDC2,,"></combo>
 		<combo symbolname="sxy" shaping=",FDC6,,"></combo>
 		<combo symbolname="njy" shaping=",FDC7,,"></combo>
+		<combo symbolname="SlY" shaping="FDF0,,,"></combo>
+		<combo symbolname="qlY" shaping="FDF1,,,"></combo>
+		<combo symbolname="Allh" shaping="FDF2,,,"></combo>
+		<combo symbolname="Akbr" shaping="FDF3,,,"></combo>
+		<combo symbolname="mHmd" shaping="FDF4,,,"></combo>
+		<combo symbolname="SlEm" shaping="FDF5,,,"></combo>
+		<combo symbolname="rswl" shaping="FDF6,,,"></combo>
+		<combo symbolname="Elyh" shaping="FDF7,,,"></combo>
+		<combo symbolname="wslm" shaping="FDF8,,,"></combo>
+		<combo symbolname="SlY" shaping="FDF9,,,"></combo>
+		<combo symbolname="SlY Allh Elyh wslm" shaping="FDFA,,,"></combo>
+		<combo symbolname="jl jlAlh" shaping="FDFB,,,"></combo>
+		<combo symbolname="ryAl" shaping="FDFC,,,"></combo>
 	</arabiccombos>
 	<arabicletters>
 		<arabicsymbol symbolname="hamozapN" uname="ArabicLetterHamza" symbol="0621" shaping="FE80,,," ipavalue="?" extendedbuckwalter="39" terminating="true" connecting="false" assimilate="false" />
@@ -412,7 +425,7 @@
 		<arabicsymbol symbolname="{ll~ahu" uname="ArabicLigatureAllahIsolatedForm" symbol="FDF2" ipavalue="" extendedbuckwalter="0" terminating="true" connecting="false" assimilate="false" />
 		<arabicsymbol symbolname="&gt;akobaru" uname="ArabicLigatureAkbarIsolatedForm" symbol="FDF3" ipavalue="" extendedbuckwalter="0" terminating="true" connecting="false" assimilate="false" />
 		<arabicsymbol symbolname="muHam~adN" uname="ArabicLigatureMohammadIsolatedForm" symbol="FDF4" ipavalue="" extendedbuckwalter="0" terminating="true" connecting="false" assimilate="false" />
-		<arabicsymbol symbolname="salaAmN" uname="ArabicLigatureSalamIsolatedForm" symbol="FDF5" ipavalue="" extendedbuckwalter="0" terminating="true" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="Sal~aY {ll~ahu Ealayohi wasalaAmN" uname="ArabicLigatureSalamIsolatedForm" symbol="FDF5" ipavalue="" extendedbuckwalter="0" terminating="true" connecting="false" assimilate="false" />
 		<arabicsymbol symbolname="rasuwlN" uname="ArabicLigatureRasoulIsolatedForm" symbol="FDF6" ipavalue="" extendedbuckwalter="0" terminating="true" connecting="false" assimilate="false" />
 		<arabicsymbol symbolname="Ealayohi" uname="ArabicLigatureAlayheIsolatedForm" symbol="FDF7" ipavalue="" extendedbuckwalter="0" terminating="true" connecting="false" assimilate="false" />
 		<arabicsymbol symbolname="wasalaAmN" uname="ArabicLigatureWasallamIsolatedForm" symbol="FDF8" ipavalue="" extendedbuckwalter="0" terminating="true" connecting="false" assimilate="false" />

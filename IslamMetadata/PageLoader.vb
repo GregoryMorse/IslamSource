@@ -187,6 +187,10 @@ Public Class Arabic
                 Count += 1
                 If ArabicString(Count) = "," Then
                     RomanString += ArabicData.ArabicComma
+                ElseIf ArabicString(Count) = ";" Then
+                    RomanString += ArabicData.ArabicSemicolon
+                ElseIf ArabicString(Count) = "?" Then
+                    RomanString += ArabicData.ArabicQuestionMark
                 Else
                     RomanString += ArabicString(Count)
                 End If

@@ -341,6 +341,7 @@ Partial Class host
                 IsPrint = True
             ElseIf Request.QueryString.Get(PageQuery) = "PrintPdf" Then
                 Dim MemStream As New IO.MemoryStream()
+                Dim RenderItems As New Generic.List(Of RenderArray.RenderItem)
                 Index = PageSet.GetPageIndex(Request.QueryString.Get(PagePrintQuery))
                 For Count As Integer = 0 To PageSet.Pages(Index).Page.Count - 1
                     If PageLoader.IsListItem(PageSet.Pages(Index).Page(Count)) Then
@@ -350,7 +351,7 @@ Partial Class host
                                 If Not Item.OnRenderFunction Is Nothing Then
                                     Dim Output As Object = Item.OnRenderFunction.Invoke(Nothing, New Object() {Item})
                                     If TypeOf Output Is RenderArray Then
-                                        RenderArray.OutputPdf(MemStream, CType(Output, RenderArray).Items)
+                                        RenderItems.AddRange(CType(Output, RenderArray).Items)
                                     End If
                                 End If
                             End If
@@ -360,11 +361,12 @@ Partial Class host
                         If Not Item.OnRenderFunction Is Nothing Then
                             Dim Output As Object = Item.OnRenderFunction.Invoke(Nothing, New Object() {Item})
                             If TypeOf Output Is RenderArray Then
-                                RenderArray.OutputPdf(MemStream, CType(Output, RenderArray).Items)
+                                RenderItems.AddRange(CType(Output, RenderArray).Items)
                             End If
                         End If
                     End If
                 Next
+                RenderArray.OutputPdf(MemStream, RenderItems)
                 Response.ContentType = "application/pdf"
                 Response.OutputStream.Write(MemStream.ToArray(), 0, CInt(MemStream.Length))
                 'Dim Bytes(4096) As Byte
