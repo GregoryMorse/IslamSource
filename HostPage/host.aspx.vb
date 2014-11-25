@@ -316,13 +316,17 @@ Partial Class host
                     Dim quantizer As ImageQuantization.OctreeQuantizer = New ImageQuantization.OctreeQuantizer(255, 8, Not Bitmap.IsAlphaPixelFormat(bmp.PixelFormat), Color.White)
                     ResultBmp = quantizer.QuantizeBitmap(bmp)
                     bmp.Dispose()
-                    Dim MemStream As New IO.MemoryStream()
-                    ResultBmp.Save(MemStream, CType(IIf(Object.Equals(ResultBmp.RawFormat, Drawing.Imaging.ImageFormat.MemoryBmp), Drawing.Imaging.ImageFormat.Gif, ResultBmp.RawFormat), Drawing.Imaging.ImageFormat))
-                    DiskCache.CacheItem(Request.Url.Host + "_" + Request.QueryString().ToString(), DateModified, MemStream.GetBuffer())
                 End If
             End If
-            Response.ContentType = "image/gif"
-            ResultBmp.Save(Response.OutputStream, System.Drawing.Imaging.ImageFormat.Gif)
+            If Not ResultBmp Is Nothing Then
+                Response.ContentType = "image/gif"
+                'Save crashes because it calls get_Position on the stream
+                'ResultBmp.Save(Response.OutputStream, System.Drawing.Imaging.ImageFormat.Gif)
+                Dim MemStream As New IO.MemoryStream()
+                ResultBmp.Save(MemStream, CType(IIf(Object.Equals(ResultBmp.RawFormat, Drawing.Imaging.ImageFormat.MemoryBmp), Drawing.Imaging.ImageFormat.Gif, ResultBmp.RawFormat), Drawing.Imaging.ImageFormat))
+                If Bytes Is Nothing Then DiskCache.CacheItem(Request.Url.Host + "_" + Request.QueryString().ToString(), DateModified, MemStream.GetBuffer())
+                Response.OutputStream.Write(MemStream.ToArray(), 0, CInt(MemStream.Length))
+            End If
             ResultBmp.Dispose()
             GC.Collect()
         ElseIf Request.QueryString.Get(PageQuery) = "Source" Then
@@ -334,8 +338,8 @@ Partial Class host
                 encoding = System.Text.Encoding.ASCII
             End If
             'Convert tabs to spaces
-            Response.Write(Utility.SourceTextEncode(encoding.GetChars(buffer, encoding.GetPreamble().Length, count - encoding.GetPreamble().Length)))
             Response.ContentType = "text/plain;charset=" + encoding.WebName
+            Response.Write(Utility.SourceTextEncode(encoding.GetChars(buffer, encoding.GetPreamble().Length, count - encoding.GetPreamble().Length)))
         Else
             If Request.QueryString.Get(PageQuery) = "Print" Then
                 IsPrint = True

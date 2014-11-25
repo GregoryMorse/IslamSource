@@ -1095,10 +1095,13 @@
   <data name="IslamInfo_UponCompletingAblution3" xml:space="preserve">
     <value>Upon Completing Ablution</value>
   </data>
-  <data name="IslamInfo_UponCompletingAblution3Trans" xml:space="preserve">
+  <data name="IslamInfo_ForExpiationOfSinsAtTheConclusionOfSittingOrGathering1" xml:space="preserve">
+    <value>For Expiation Of Sins At The Conclusion Of Sitting Or Gathering</value>
+  </data>
+  <data name="IslamInfo_ForExpiationOfSinsAtTheConclusionOfSittingOrGathering1Trans" xml:space="preserve">
     <value>Glory is to You, O Allah, and praise; I bear witness that there is none worthy of worship but You.  I seek Your forgiveness and turn to You in repentance.</value>
   </data>
-  <data name="IslamInfo_UponCompletingAblution3WordByWord" xml:space="preserve">
+  <data name="IslamInfo_ForExpiationOfSinsAtTheConclusionOfSittingOrGathering1WordByWord" xml:space="preserve">
     <value>Glory is to You|O Allah|and praise|I bear witness|that|there is none|worthy of worship|but|You|I seek Your forgiveness|and turn in repentance|to You</value>
   </data>
   <data name="IslamInfo_WhenLeavingTheHome" xml:space="preserve">
@@ -3246,6 +3249,87 @@
   <data name="IslamInfo_RemembranceThirdWordByWord" xml:space="preserve">
     <value>There is no|strength|and there is no|power|except|with Allah|the High|the Supreme</value>
   </data>
+  <data name="IslamInfo_RemembranceFourth" xml:space="preserve">
+    <value>Remembrance Fourth</value>
+  </data>
+  <data name="IslamInfo_RemembranceFourthTrans" xml:space="preserve">
+    <value>O Allah! Exalt and have mercy on Muhammad (peace and blessings upon him), your servant, your Prophet, and your Messenger, and upon his family and companions, and grant them peace.</value>
+  </data>
+  <data name="IslamInfo_RemembranceFourthWordByWord" xml:space="preserve">
+    <value>O Allah!|Exalt and have mercy|on||Muhammad (peace and blessings upon him),|your servant,|your Prophet,|and your Messenger,|the Prophet|illiterate|and upon|his family|and companions,|and grant them peace.</value>
+  </data>
+  <data name="IslamInfo_RemembranceFifth" xml:space="preserve">
+    <value>Remembrance Fifth</value>
+  </data>
+  <data name="IslamInfo_RemembranceFifthTrans" xml:space="preserve">
+    <value>I have accepted Allah as a Lord, Islam as a way of life, and Muhammad (peace be upon him) as a prophet of Allah.  (Recite in Arabic three times).</value>
+  </data>
+  <data name="IslamInfo_RemembranceFifthWordByWord" xml:space="preserve">
+    <value>I have accepted|Allah|as a Lord,|Islam|as a way of life,|and Muhammad (peace be upon him)|as a prophet|and messenger (of Allah).|(Recite in Arabic three times).</value>
+  </data>
+  <data name="IslamInfo_RemembranceSixth" xml:space="preserve">
+    <value>Remembrance Sixth</value>
+  </data>
+  <data name="IslamInfo_RemembranceSixthTrans" xml:space="preserve">
+    <value>O my Lord! All praise is due to you as is befitting to your glorious presence and your great sovereignty.</value>
+  </data>
+  <data name="IslamInfo_RemembranceSixthWordByWord" xml:space="preserve">
+    <value>O|my Lord!|to you|All praise is due|as|is befitting|to your glorious|presence|and your great|sovereignty.</value>
+  </data>
+  <data name="IslamInfo_RemembranceSeventh" xml:space="preserve">
+    <value>Remembrance Seventh</value>
+  </data>
+  <data name="IslamInfo_RemembranceSeventhTrans" xml:space="preserve">
+    <value>O Allah! We seek refuge in You from associating anything other with you while we know it, and we seek repentance for associating something other with you while we don’t know it.</value>
+  </data>
+  <data name="IslamInfo_RemembranceSeventhWordByWord" xml:space="preserve">
+    <value>O Allah!||We seek refuge|in You|from||associating other|with you|anything|while we know it,|and we seek repentance|for associating something other with you|not|while we know it.</value>
+  </data>
+  <data name="IslamInfo_SeekingForgivenessAndRepentance3" xml:space="preserve">
+    <value>Seeking Forgiveness And Repentance</value>
+  </data>
+  <data name="IslamInfo_SeekingForgivenessAndRepentance3Trans" xml:space="preserve">
+    <value>I seek the forgiveness of Allah the Mighty, Whom there is none worthy of worship except Him, the Living, the Eternal, and I repent to Him.</value>
+  </data>
+  <data name="IslamInfo_SeekingForgivenessAndRepentance3WordByWord" xml:space="preserve">
+    <value>I seek the forgiveness|of Allah|the Mighty,|Whom|there is none|worthy of worship|except|Him,|the Living,|the Eternal,|and I repent|to Him.</value>
+  </data>
+  <data name="IslamInfo_ForAnxietyAndSorrow2" xml:space="preserve">
+    <value>For Anxiety And Sorrow</value>
+  </data>
+  <data name="IslamInfo_ForAnxietyAndSorrow2Trans" xml:space="preserve">
+    <value>O Allah, I seek refuge in You from grief and sadness, from weakness and from laziness, from miserliness and from cowardice, from being overcome by debt and overpowered by men (i.e. others).</value>
+  </data>
+  <data name="IslamInfo_ForAnxietyAndSorrow2WordByWord" xml:space="preserve">
+    <value>O Allah,||I seek refuge|in You|from|grief|and sadness,|from weakness|and from laziness,|from miserliness|and from cowardice,|from being overcome|by debt|and overpowered|by men (i.e. others).</value>
+  </data>
+  <data name="IslamInfo_InTheMorningOrEvening3" xml:space="preserve">
+    <value>In The Morning Or Evening</value>
+  </data>
+  <data name="IslamInfo_InTheMorningOrEvening3Trans" xml:space="preserve">
+    <value>O Allah, You are my Lord, there is none worthy of worship but You.  You created me and I am your slave.  I keep Your covenant, and my pledge to You so far as I am able, I seek refuge in You from the evil of what I have done, I admit to Your blessings upon me, and I admit to my misdeeds.  Forgive me, for there is none who may forgive sins but You.</value>
+  </data>
+  <data name="IslamInfo_InTheMorningOrEvening3WordByWord" xml:space="preserve">
+    <value>O Allah,|You|are my Lord,|there is none|worthy of worship|but|You.|You created me|and I am|your slave.|I|keep|Your covenant,|and my pledge to You|so far as|I am able,|I seek refuge|in You|from|the evil|of what|I have done,|I admit|to|Your blessings|upon me,|and I admit to|my misdeeds.|Forgive|me,|for|there is none|who may forgive|sins|but|You.</value>
+  </data>
+  <data name="IslamInfo_InTheMorningOrEvening4" xml:space="preserve">
+    <value>In The Morning Or Evening</value>
+  </data>
+  <data name="IslamInfo_InTheMorningOrEvening4Trans" xml:space="preserve">
+    <value>O Allah, make me healthy in my body.  O Allah, preserve for me my hearing.  O Allah, preserve for me my sight.  There is none worthy of worship but You.  O Allah, I seek refuge in You from disbelief and poverty and I seek refuge in You from the punishment of the grave.  There is none worthy of worship but You.  (Recite three times in Arabic).</value>
+  </data>
+  <data name="IslamInfo_InTheMorningOrEvening4WordByWord" xml:space="preserve">
+    <value>O Allah,|make me healthy|in|my body.|O Allah,|preserve|for me|my hearing.|O Allah,|preserve|for me|my sight.|There is none|worthy of worship|but|You.|(Recite three times in Arabic).|O Allah,||I seek refuge|in You|from|disbelief|and poverty|and I seek refuge|in You|from|the punishment|of the grave.|There is none|worthy of worship|but|You.|(Recite three times in Arabic).</value>
+  </data>
+  <data name="IslamInfo_InTheMorningOrEvening8" xml:space="preserve">
+    <value>In The Morning Or Evening</value>
+  </data>
+  <data name="IslamInfo_InTheMorningOrEvening8Trans" xml:space="preserve">
+    <value>In the Name of Allah, Who with His Name nothing can cause harm in the earth nor in the heavens, and He is the All-Hearing, the All-Knowing.  (Recite three times in Arabic).</value>
+  </data>
+  <data name="IslamInfo_InTheMorningOrEvening8WordByWord" xml:space="preserve">
+    <value>In the Name|of Allah,|Who|not|can cause harm|with|His Name|anything|in|the earth|nor|in|the heavens,|and He is|the All-Hearing,|the All-Knowing.|(Recite three times in Arabic).</value>
+  </data>
   <data name="IslamInfo_SendBlessingsFirst" xml:space="preserve">
     <value>Send Blessings First</value>
   </data>
@@ -4894,7 +4978,25 @@
     <value>I seek refuge in the Perfect Words of Allah from the evil of what He has created.  (Recite three times in Arabic).</value>
   </data>
   <data name="IslamInfo_InTheEvening7WordByWord" xml:space="preserve">
-    <value>I seek refuge|in the Perfect Words|of Allah|from|the evil|of what|He has created.|(Recite three times in Arabic).</value>
+    <value>I seek refuge|in the Words|of Allah|Perfect|from|the evil|of what|He has created.|(Recite three times in Arabic).</value>
+  </data>
+  <data name="IslamInfo_InTheEvening8" xml:space="preserve">
+    <value>In The Evening</value>
+  </data>
+  <data name="IslamInfo_InTheEvening8Trans" xml:space="preserve">
+    <value>We have risen this evening and sovereignty is all Allah’s. Praise is due to Allah alone, He has no partner, there is no God but Him, unto whom is our fate.</value>
+  </data>
+  <data name="IslamInfo_InTheEvening8WordByWord" xml:space="preserve">
+    <value>We have risen this evening|and|sovereignty is all|Allah’s.|Praise is due to|Allah alone,|no|partner|He has,|there is no|God|but|Him,|unto whom|is our fate.</value>
+  </data>
+  <data name="IslamInfo_InTheEvening9" xml:space="preserve">
+    <value>In The Evening</value>
+  </data>
+  <data name="IslamInfo_InTheEvening9Trans" xml:space="preserve">
+    <value>O Allah! I rise up in the evening with the blessing, strength, and protection, all of which you have bestowed upon me. Complete your blessing, the strength (you bestowed upon me) and your protection, in this life and the hereafter.</value>
+  </data>
+  <data name="IslamInfo_InTheEvening9WordByWord" xml:space="preserve">
+    <value>O Allah!||I rise up in the evening|with|,all of which you have bestowed upon me|the blessing,|strength,|and protection.|Complete|your blessing,|(you bestowed upon me)|the strength|and your protection,|in|this life|and the hereafter.</value>
   </data>
   <data name="IslamInfo_InTheMorning" xml:space="preserve">
     <value>In The Morning</value>
@@ -4961,5 +5063,365 @@
   </data>
   <data name="IslamInfo_InTheMorning7WordByWord" xml:space="preserve">
     <value>Glory|is to Allah|and praise is to Him,|by the multitude|of His creation,|by Pleasure,|His|by the weight|of His Throne,|and by the extent|of His Words.|(Recite three times in Arabic).</value>
+  </data>
+  <data name="IslamInfo_InTheMorning8" xml:space="preserve">
+    <value>In The Morning</value>
+  </data>
+  <data name="IslamInfo_InTheMorning8Trans" xml:space="preserve">
+    <value>We have risen this morning and sovereignty is all Allah’s. Praise is due to Allah alone, He has no partner, there is no God but Him, unto whom is the return.</value>
+  </data>
+  <data name="IslamInfo_InTheMorning8WordByWord" xml:space="preserve">
+    <value>We have risen this morning|and|sovereignty is all|Allah’s.|Praise is due to|Allah alone,|no|partner|He has,|there is no|God|but|Him,|unto whom|is the return.</value>
+  </data>
+  <data name="IslamInfo_InTheMorning9" xml:space="preserve">
+    <value>In The Morning</value>
+  </data>
+  <data name="IslamInfo_InTheMorning9Trans" xml:space="preserve">
+    <value>O Allah! I rise up in the morning with the blessing, strength, and protection, all of which you have bestowed upon me. Complete your blessing, the strength (you bestowed upon me) and your protection, in this life and the hereafter.</value>
+  </data>
+  <data name="IslamInfo_InTheMorning9WordByWord" xml:space="preserve">
+    <value>O Allah!||I rise up in the morning|with|,all of which you have bestowed upon me|the blessing,|strength,|and protection.|Complete|your blessing,|(you bestowed upon me)|the strength|and your protection,|in|this life|and the hereafter.</value>
+  </data>
+  <data name="IslamInfo_UponRisingFromBowing" xml:space="preserve">
+    <value>Upon Rising From Bowing</value>
+  </data>
+  <data name="IslamInfo_WhileProstrating" xml:space="preserve">
+    <value>While Prostrating</value>
+  </data>
+  <data name="IslamInfo_BetweenTwoProstrations" xml:space="preserve">
+    <value>Between Two Prostrations</value>
+  </data>
+  <data name="IslamInfo_ProstratingDueToQuranRecitation" xml:space="preserve">
+    <value>Prostrating Due To Quran Recitation</value>
+  </data>
+  <data name="IslamInfo_DeclarationWhenSittingInPrayer" xml:space="preserve">
+    <value>Declaration When Sitting In Prayer</value>
+  </data>
+  <data name="IslamInfo_InvocationAfterDeclarationWhenSittingInPrayer" xml:space="preserve">
+    <value>Invocation After Declaration When Sitting In Prayer</value>
+  </data>
+  <data name="IslamInfo_BeforeGivingPeaceOfPrayer" xml:space="preserve">
+    <value>Before Giving Peace Of Prayer</value>
+  </data>
+  <data name="IslamInfo_RemembranceAfterGivingPeaceOfPrayer" xml:space="preserve">
+    <value>Remembrance After Giving Peace Of Prayer</value>
+  </data>
+  <data name="IslamInfo_ForSeekingGuidance" xml:space="preserve">
+    <value>For Seeking Guidance</value>
+  </data>
+  <data name="IslamInfo_InTheMorningOrEvening" xml:space="preserve">
+    <value>In The Morning Or Evening</value>
+  </data>
+  <data name="IslamInfo_RemembranceBeforeSleeping" xml:space="preserve">
+    <value>Remembrance Before Sleeping</value>
+  </data>
+  <data name="IslamInfo_WhenTurningOverInTheNight" xml:space="preserve">
+    <value>When Turning Over In The Night</value>
+  </data>
+  <data name="IslamInfo_UponExperiencingFearUnrestApprehensivenessDuringSleep" xml:space="preserve">
+    <value>Upon Experiencing Fear Unrest Apprehensiveness During Sleep</value>
+  </data>
+  <data name="IslamInfo_UponSeeingABadDream" xml:space="preserve">
+    <value>Upon Seeing A Bad Dream</value>
+  </data>
+  <data name="IslamInfo_DesperateOddPrayer" xml:space="preserve">
+    <value>Desperate Odd Prayer</value>
+  </data>
+  <data name="IslamInfo_OddPrayerAndAfter" xml:space="preserve">
+    <value>Odd Prayer And After</value>
+  </data>
+  <data name="IslamInfo_ForAnxietyAndSorrow" xml:space="preserve">
+    <value>For Anxiety And Sorrow</value>
+  </data>
+  <data name="IslamInfo_ForOneInDistress" xml:space="preserve">
+    <value>For One In Distress</value>
+  </data>
+  <data name="IslamInfo_UponEncounteringAnEnemyOrThoseOfAuthority" xml:space="preserve">
+    <value>Upon Encountering An Enemy Or Those Of Authority</value>
+  </data>
+  <data name="IslamInfo_ForOneAfflictedWithDoubtInFaith" xml:space="preserve">
+    <value>For One Afflicted With Doubt In Faith</value>
+  </data>
+  <data name="IslamInfo_SettlingADebt" xml:space="preserve">
+    <value>Settling A Debt</value>
+  </data>
+  <data name="IslamInfo_ForOneAffectedByWhisperingsInPrayerOrSupplication" xml:space="preserve">
+    <value>For One Affected By Whisperings In Prayer Or Supplication</value>
+  </data>
+  <data name="IslamInfo_ForOneWhoseAffairsHaveBecomeDifficult" xml:space="preserve">
+    <value>For One Whose Affairs Have Become Difficult</value>
+  </data>
+  <data name="IslamInfo_UponCommittingASin" xml:space="preserve">
+    <value>Upon Committing A Sin</value>
+  </data>
+  <data name="IslamInfo_ForExpellingTheDevilAndHisWhisperings" xml:space="preserve">
+    <value>For Expelling The Devil And His Whisperings</value>
+  </data>
+  <data name="IslamInfo_WhenStrickenWithAMishapOrOvertakenByAnAffair" xml:space="preserve">
+    <value>When Stricken With A Mishap Or Overtaken By An Affair</value>
+  </data>
+  <data name="IslamInfo_PlacingChildrenUnderAllahsProtection" xml:space="preserve">
+    <value>Placing Children Under Allahs Protection</value>
+  </data>
+  <data name="IslamInfo_WhenVisitingTheSick" xml:space="preserve">
+    <value>When Visiting The Sick</value>
+  </data>
+  <data name="IslamInfo_ExcellenceOfVisitingTheSick" xml:space="preserve">
+    <value>Excellence Of Visiting The Sick</value>
+  </data>
+  <data name="IslamInfo_TheSickWhoHaveRenouncedAllHopeOfLife" xml:space="preserve">
+    <value>The Sick Who Have Renounced All Hope Of Life</value>
+  </data>
+  <data name="IslamInfo_InstructionForTheOneNearingDeath" xml:space="preserve">
+    <value>Instruction For The One Nearing Death</value>
+  </data>
+  <data name="IslamInfo_InstructionForOneAfflictedByCalamity" xml:space="preserve">
+    <value>Instruction For One Afflicted By Calamity</value>
+  </data>
+  <data name="IslamInfo_WhenClosingTheEyesOfTheDeceased" xml:space="preserve">
+    <value>When Closing The Eyes Of The Deceased</value>
+  </data>
+  <data name="IslamInfo_ForTheDeceasedAtFuneralPrayer" xml:space="preserve">
+    <value>For The Deceased At Funeral Prayer</value>
+  </data>
+  <data name="IslamInfo_ForTheAdvancementOfRewardDuringTheFuneralPrayer" xml:space="preserve">
+    <value>For The Advancement Of Reward During The Funeral Prayer</value>
+  </data>
+  <data name="IslamInfo_Condolence" xml:space="preserve">
+    <value>Condolence</value>
+  </data>
+  <data name="IslamInfo_PlacingTheDeceasedInTheGrave" xml:space="preserve">
+    <value>Placing The Deceased In The Grave</value>
+  </data>
+  <data name="IslamInfo_AfterBuryingTheDeceased" xml:space="preserve">
+    <value>After Burying The Deceased</value>
+  </data>
+  <data name="IslamInfo_VisitingTheGraves" xml:space="preserve">
+    <value>Visiting The Graves</value>
+  </data>
+  <data name="IslamInfo_PrayerSaidDuringAWindStorm" xml:space="preserve">
+    <value>Prayer Said During A Wind Storm</value>
+  </data>
+  <data name="IslamInfo_UponHearingThunder" xml:space="preserve">
+    <value>Upon Hearing Thunder</value>
+  </data>
+  <data name="IslamInfo_ForRain" xml:space="preserve">
+    <value>For Rain</value>
+  </data>
+  <data name="IslamInfo_WhenItRains" xml:space="preserve">
+    <value>When It Rains</value>
+  </data>
+  <data name="IslamInfo_AfterRainfall" xml:space="preserve">
+    <value>After Rainfall</value>
+  </data>
+  <data name="IslamInfo_AskingForClearSkies" xml:space="preserve">
+    <value>Asking For Clear Skies</value>
+  </data>
+  <data name="IslamInfo_UponSightingTheCrescentMoon" xml:space="preserve">
+    <value>Upon Sighting The Crescent Moon</value>
+  </data>
+  <data name="IslamInfo_UponBreakingFast" xml:space="preserve">
+    <value>Upon Breaking Fast</value>
+  </data>
+  <data name="IslamInfo_BeforeEating" xml:space="preserve">
+    <value>Before Eating</value>
+  </data>
+  <data name="IslamInfo_UponCompletingTheMeal" xml:space="preserve">
+    <value>Upon Completing The Meal</value>
+  </data>
+  <data name="IslamInfo_OfTheGuestForTheHost" xml:space="preserve">
+    <value>Of The Guest For The Host</value>
+  </data>
+  <data name="IslamInfo_SaidToOneOfferingADrinkOrTheOneWhoIntendedToDoThat" xml:space="preserve">
+    <value>Said To One Offering A Drink Or The One Who Intended To Do That</value>
+  </data>
+  <data name="IslamInfo_WhenBreakingFastInSomeonesHome" xml:space="preserve">
+    <value>When Breaking Fast In Someones Home</value>
+  </data>
+  <data name="IslamInfo_ByOneFastingWhenPresentedWithFoodAndDoesNotBreakFast" xml:space="preserve">
+    <value>By One Fasting When Presented With Food And Does Not Break Fast</value>
+  </data>
+  <data name="IslamInfo_UponSeeingEarlyOrPrematureFruit" xml:space="preserve">
+    <value>Upon Seeing Early Or Premature Fruit</value>
+  </data>
+  <data name="IslamInfo_UponSneezing" xml:space="preserve">
+    <value>Upon Sneezing</value>
+  </data>
+  <data name="IslamInfo_ToTheNewlyWed" xml:space="preserve">
+    <value>To The Newly Wed</value>
+  </data>
+  <data name="IslamInfo_GroomOnWeddingNightOrWhenBuyingAnimal" xml:space="preserve">
+    <value>Groom On Wedding Night Or When Buying Animal</value>
+  </data>
+  <data name="IslamInfo_BeforeSexualIntercourse" xml:space="preserve">
+    <value>Before Sexual Intercourse</value>
+  </data>
+  <data name="IslamInfo_WhenAngry" xml:space="preserve">
+    <value>When Angry</value>
+  </data>
+  <data name="IslamInfo_UponSeeingSomeoneInTrialOrTribulation" xml:space="preserve">
+    <value>Upon Seeing Someone In Trial Or Tribulation</value>
+  </data>
+  <data name="IslamInfo_RemembranceAtSittingOrGathering" xml:space="preserve">
+    <value>Remembrance At Sitting Or Gathering</value>
+  </data>
+  <data name="IslamInfo_ForExpiationOfSinsAtTheConclusionOfSittingOrGathering" xml:space="preserve">
+    <value>For Expiation Of Sins At The Conclusion Of Sitting Or Gathering</value>
+  </data>
+  <data name="IslamInfo_ForConcludingAllSittings" xml:space="preserve">
+    <value>For Concluding All Sittings</value>
+  </data>
+  <data name="IslamInfo_ReturningSupplicationForForgiveness" xml:space="preserve">
+    <value>Returning Supplication For Forgiveness</value>
+  </data>
+  <data name="IslamInfo_ToOneWhoDoesYouAFavor" xml:space="preserve">
+    <value>To One Who Does You A Favor</value>
+  </data>
+  <data name="IslamInfo_ProtectionFromTheDajjal" xml:space="preserve">
+    <value>Protection From The Dajjal</value>
+  </data>
+  <data name="IslamInfo_ToOneWhoPronouncesLoveForYouForAllahsSake" xml:space="preserve">
+    <value>To One Who Pronounces Love For You For Allahs Sake</value>
+  </data>
+  <data name="IslamInfo_ToOneWhoHasOfferedYouSomeOfHisWealth" xml:space="preserve">
+    <value>To One Who Has Offered You Some Of His Wealth</value>
+  </data>
+  <data name="IslamInfo_ToTheDebtorWhenHisDebtIsSettled" xml:space="preserve">
+    <value>To The Debtor When His Debt Is Settled</value>
+  </data>
+  <data name="IslamInfo_ForFearOfShirk" xml:space="preserve">
+    <value>For Fear Of Shirk</value>
+  </data>
+  <data name="IslamInfo_ReturningASupplicationAfterHavingBestowedAGiftOrCharityUponSomeone" xml:space="preserve">
+    <value>Returning A Supplication After Having Bestowed A Gift Or Charity Upon Someone</value>
+  </data>
+  <data name="IslamInfo_ForbiddanceOfAscribingThingsToOmens" xml:space="preserve">
+    <value>Forbiddance Of Ascribing Things To Omens</value>
+  </data>
+  <data name="IslamInfo_WhenMountingAnAnimalOrAnyMeansOfTransport" xml:space="preserve">
+    <value>When Mounting An Animal Or Any Means Of Transport</value>
+  </data>
+  <data name="IslamInfo_ForTravel" xml:space="preserve">
+    <value>For Travel</value>
+  </data>
+  <data name="IslamInfo_UponEnteringATownOrVillage" xml:space="preserve">
+    <value>Upon Entering A Town Or Village</value>
+  </data>
+  <data name="IslamInfo_WhenEnteringTheMarket" xml:space="preserve">
+    <value>When Entering The Market</value>
+  </data>
+  <data name="IslamInfo_WhenTheMountedAnimalOrMeansOfTransportStumbles" xml:space="preserve">
+    <value>When The Mounted Animal Or Means Of Transport Stumbles</value>
+  </data>
+  <data name="IslamInfo_OfTheTravellerForTheResident" xml:space="preserve">
+    <value>Of The Traveller For The Resident</value>
+  </data>
+  <data name="IslamInfo_OfTheResidentForTheTraveller" xml:space="preserve">
+    <value>Of The Resident For The Traveller</value>
+  </data>
+  <data name="IslamInfo_WhileAscendingOrDescending" xml:space="preserve">
+    <value>While Ascending Or Descending</value>
+  </data>
+  <data name="IslamInfo_OfTheTravellerAsDawnApproaches" xml:space="preserve">
+    <value>Of The Traveller As Dawn Approaches</value>
+  </data>
+  <data name="IslamInfo_StoppingOrLodgingSomewhere" xml:space="preserve">
+    <value>Stopping Or Lodging Somewhere</value>
+  </data>
+  <data name="IslamInfo_WhileReturningFromTravel" xml:space="preserve">
+    <value>While Returning From Travel</value>
+  </data>
+  <data name="IslamInfo_UponReceivingPleasingOrDispleasingNews" xml:space="preserve">
+    <value>Upon Receiving Pleasing Or Displeasing News</value>
+  </data>
+  <data name="IslamInfo_ExcellenceOfSendingPrayersUponTheProphet" xml:space="preserve">
+    <value>Excellence Of Sending Prayers Upon The Prophet</value>
+  </data>
+  <data name="IslamInfo_ExcellenceOfSpreadingTheIslamicGreeting" xml:space="preserve">
+    <value>Excellence Of Spreading The Islamic Greeting</value>
+  </data>
+  <data name="IslamInfo_UponHearingARoosterCrowOrTheBrayingOfADonkey" xml:space="preserve">
+    <value>Upon Hearing A Rooster Crow Or The Braying Of A Donkey</value>
+  </data>
+  <data name="IslamInfo_UponHearingTheBarkingOfDogsAtNight" xml:space="preserve">
+    <value>Upon Hearing The Barking Of Dogs At Night</value>
+  </data>
+  <data name="IslamInfo_ForTheOneYouHaveInsulted" xml:space="preserve">
+    <value>For The One You Have Insulted</value>
+  </data>
+  <data name="IslamInfo_TheEtiquetteOfPraisingAFellowMuslim" xml:space="preserve">
+    <value>The Etiquette Of Praising A Fellow Muslim</value>
+  </data>
+  <data name="IslamInfo_BetweenTheYemeniCornerAndTheBlackStoneAtTheKaaba" xml:space="preserve">
+    <value>Between The Yemeni Corner And The Black Stone At The Kaaba</value>
+  </data>
+  <data name="IslamInfo_WhenAtMountSafaAndMountMarwah" xml:space="preserve">
+    <value>When At Mount Safa And Mount Marwah</value>
+  </data>
+  <data name="IslamInfo_TheDayOfArafah" xml:space="preserve">
+    <value>The Day Of Arafah</value>
+  </data>
+  <data name="IslamInfo_AtTheSacredSite" xml:space="preserve">
+    <value>At The Sacred Site</value>
+  </data>
+  <data name="IslamInfo_WhenThrowingEachPebbleAtTheJamaraat" xml:space="preserve">
+    <value>When Throwing Each Pebble At The Jamaraat</value>
+  </data>
+  <data name="IslamInfo_AtTheBlackStone" xml:space="preserve">
+    <value>At The Black Stone</value>
+  </data>
+  <data name="IslamInfo_MadeAgainstAnEnemy" xml:space="preserve">
+    <value>Made Against An Enemy</value>
+  </data>
+  <data name="IslamInfo_WhenInFearOfAPeople" xml:space="preserve">
+    <value>When In Fear Of A People</value>
+  </data>
+  <data name="IslamInfo_AtTimesOfAmazementAndDelight" xml:space="preserve">
+    <value>At Times Of Amazement And Delight</value>
+  </data>
+  <data name="IslamInfo_UponReceivingPleasantNews" xml:space="preserve">
+    <value>Upon Receiving Pleasant News</value>
+  </data>
+  <data name="IslamInfo_WhenFeelingSomePainInTheBody" xml:space="preserve">
+    <value>When Feeling Some Pain In The Body</value>
+  </data>
+  <data name="IslamInfo_WhenInFearOfAfflictingSomethingOrSomeoneWithOnesEye" xml:space="preserve">
+    <value>When In Fear Of Afflicting Something Or Someone With Ones Eye</value>
+  </data>
+  <data name="IslamInfo_EtiquetteOfRetiringForTheNight" xml:space="preserve">
+    <value>Etiquette Of Retiring For The Night</value>
+  </data>
+  <data name="IslamInfo_TheTalbiyah" xml:space="preserve">
+    <value>The Talbiyah</value>
+  </data>
+  <data name="IslamInfo_WhenStartled" xml:space="preserve">
+    <value>When Startled</value>
+  </data>
+  <data name="IslamInfo_ToADisbelieverWhenSneezes" xml:space="preserve">
+    <value>To A Disbeliever When Sneezes</value>
+  </data>
+  <data name="IslamInfo_ReturningAGreetingToADisbeliever" xml:space="preserve">
+    <value>Returning A Greeting To A Disbeliever</value>
+  </data>
+  <data name="IslamInfo_WhenInsultedWhileFasting" xml:space="preserve">
+    <value>When Insulted While Fasting</value>
+  </data>
+  <data name="IslamInfo_WhenSlaughteringOrOfferingASacrifice" xml:space="preserve">
+    <value>When Slaughtering Or Offering A Sacrifice</value>
+  </data>
+  <data name="IslamInfo_ToWardOffTheDeceptionOfTheObstinateDevils" xml:space="preserve">
+    <value>To Ward Off The Deception Of The Obstinate Devils</value>
+  </data>
+  <data name="IslamInfo_SeekingForgivenessAndRepentance" xml:space="preserve">
+    <value>Seeking Forgiveness And Repentance</value>
+  </data>
+  <data name="IslamInfo_ExcellenceOfRemembranceAndGlorificationOfAllah" xml:space="preserve">
+    <value>Excellence Of Remembrance And Glorification Of Allah</value>
+  </data>
+  <data name="IslamInfo_HowTheProphetMadeTasbeeh" xml:space="preserve">
+    <value>How The Prophet Made Tasbeeh</value>
+  </data>
+  <data name="IslamInfo_SupplicationAndPrayersForMorningAndAfternoon" xml:space="preserve">
+    <value>Supplication And Prayers For Morning And Afternoon</value>
   </data>
 </root>

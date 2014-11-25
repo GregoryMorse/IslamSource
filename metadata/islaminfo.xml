@@ -235,7 +235,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 	</prayertimes>
 	<verses>
 		<category title="WhenWakingUp">
-			<verse title="WhenWakingUp1" text="{loHamodu lil~ahi {l~a*iyo &gt;aHoyaAnaA baEoda maA^ &gt;amaAtanaA wa&lt;ilayohi {ln~u$uwru \{Al-Bukhari, cf. Al-Asqalani, Fathul-Bari 11/113; Muslim 4/2083\}"></verse>
+			<verse title="WhenWakingUp1" text="{loHamodu lil~ahi {l~a*iyo &gt;aHoyaAnaA baEoda maA^ &gt;amaAtanaA wa&lt;ilayohi {ln~u$uwru \{reference:Al-Bukhari, cf. Al-Asqalani, Fathul-Bari 11/113; Muslim 4/2083\}"></verse>
 			<verse title="WhenWakingUp2" text="laA^ &lt;ilaha &lt;il~aA {ll~ahu waHodahu laA $ariyka lahu\, lahu {lomuloku walahu {loHamodu\, wahuwa EalaY kul~i $ayo&apos;K qadiyrN\. suboHaAna {ll~ahi\, wa{loHamodu lil~ahi\, walaA^ &lt;ilaha &lt;il~aA {ll~ahu\, wa{ll~ahu &gt;akobaru\, walaA Hawola walaA quw~apa &lt;il~aA bi{ll~ahi {loEaliy~i {loEaZiymi\, rab~i {gofiroliy"></verse>
 			<verse title="WhenWakingUp3" text="{loHamodu lil~ahi {l~a*iyo EaAfaAniy fiY jasadiy\, warad~a Ealay~a ruwHiy\, wa&gt;a*ina liy bi*ikorihi"></verse>
 			<verse title="WhenWakingUp4" text="\{3:190-200\}"></verse>
@@ -265,7 +265,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 		<category title="UponCompletingAblution">
 			<verse title="UponCompletingAblution1" text="&gt;a$ohadu &gt;ano laA^ &lt;ilaha &lt;il~aA {ll~ahu waHodahu laA $ariyka lahu\, wa&gt;a$ohadu &gt;an~a muHam~adFA Eaboduhu warasuwluhu"></verse>
 			<verse title="UponCompletingAblution2" text="{ll~ahum~a {joEaloniy mina {lt~aw~aAbiyna waAjoEaloniy mina {lomutaTah~iriyna"></verse>
-			<verse title="UponCompletingAblution3" text="suboHaAnaka {ll~ahum~a wabiHamodika\, &gt;a$ohadu &gt;ano laA^ &lt;ilaha &lt;il~aA^ &gt;anta\, &gt;asotagofiruka wa&gt;atuwbu &lt;ilayoka"></verse>
+			<verse title="UponCompletingAblution3" text="\{supp:ForExpiationOfSinsAtTheConclusionOfSittingOrGathering1\}"></verse>
 		</category>
 		<category title="WhenLeavingTheHome">
 			<verse title="WhenLeavingTheHome1" text="bisomi {ll~ahi\, tawak~alotu EalaY {ll~ahi\, walaA Hawola walaA quw~apa &lt;il~aA bi{ll~ahi"></verse>
@@ -275,7 +275,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<verse title="UponEnteringTheHome1" text="bisomi {ll~ahi walajonaA\, wabisomi {ll~ahi xarajonaA\, waEalaY rab~inaA tawak~alonaA"></verse>
 		</category>
 		<category title="WhenGoingToTheMosque">
-			<verse title="WhenGoingToTheMosque1" text="{ll~ahum~a {joEalo fiY qalobiy nuwrFA\, wafiY lisaAniy nuwrFA\, wafiY samoEiy nuwrFA\, wafiY baSariy nuwrFA\, wamin fawoqiy nuwrFA\, wamin taHotiy nuwrFA\, waEan yamiyniy nuwrFA\, waEan $imaAliy nuwrFA\, wamino &gt;amaAmiy nuwrFA\, wamino xalofiY nuwrFA\, waAjoEalo fiY nafosiy nuwrFA\, wa&gt;aEoZimo liy nuwrFA\, waEaZ~imo liy nuwrFA\, waAjoEalo liy nuwrFA\, waAjoEaloniy nuwrFA\, {ll~ahum~a &gt;aEoTiniy nuwrFA\, waAjoEalo fiY EaSabiy nuwrFA\, wafiY laHomiy nuwrFA\, wafiY damiy nuwrFA\, wafiY $aEoriy nuwrFA\, wafiY ba$ariy nuwrFA ({ll~ahum~a {joEalo liy nuwrFA fiY qaboriy\. wanuwrFA fiY EiZaAmiy) (wazidoniy nuwrFA\, wazidoniy nuwrFA\, wazidoniy nuwrFA) (wahabo liy nuwrFA EalaY nuwrK) \{Al-Bukhari 11/116 (Hadith no. 6316) and by Muslim 1/526,529-530 (Hadith no. 763). Al-Tirmidhi 5/483 (Hadith no. 3419). Al-Bukhari in Al-Adab Al-Mufrad (Hadith no. 695), p. 258.  See also Al-Albani, Sahih Al-Adab Al-Mufrad (no. 536), Al-Bukhari, cf. Al-Asqalani, Fathul-Bari 11/118.\}"></verse>
+			<verse title="WhenGoingToTheMosque1" text="{ll~ahum~a {joEalo fiY qalobiy nuwrFA\, wafiY lisaAniy nuwrFA\, wafiY samoEiy nuwrFA\, wafiY baSariy nuwrFA\, wamin fawoqiy nuwrFA\, wamin taHotiy nuwrFA\, waEan yamiyniy nuwrFA\, waEan $imaAliy nuwrFA\, wamino &gt;amaAmiy nuwrFA\, wamino xalofiY nuwrFA\, waAjoEalo fiY nafosiy nuwrFA\, wa&gt;aEoZimo liy nuwrFA\, waEaZ~imo liy nuwrFA\, waAjoEalo liy nuwrFA\, waAjoEaloniy nuwrFA\, {ll~ahum~a &gt;aEoTiniy nuwrFA\, waAjoEalo fiY EaSabiy nuwrFA\, wafiY laHomiy nuwrFA\, wafiY damiy nuwrFA\, wafiY $aEoriy nuwrFA\, wafiY ba$ariy nuwrFA ({ll~ahum~a {joEalo liy nuwrFA fiY qaboriy\. wanuwrFA fiY EiZaAmiy) (wazidoniy nuwrFA\, wazidoniy nuwrFA\, wazidoniy nuwrFA) (wahabo liy nuwrFA EalaY nuwrK) \{reference:Al-Bukhari 11/116 (Hadith no. 6316) and by Muslim 1/526,529-530 (Hadith no. 763). Al-Tirmidhi 5/483 (Hadith no. 3419). Al-Bukhari in Al-Adab Al-Mufrad (Hadith no. 695), p. 258.  See also Al-Albani, Sahih Al-Adab Al-Mufrad (no. 536), Al-Bukhari, cf. Al-Asqalani, Fathul-Bari 11/118.\}"></verse>
 		</category>
 		<category title="UponEnteringTheMosque">
 			<verse title="UponEnteringTheMosque1" text="&gt;aEuw*u bi{ll~ahi {loEaZiymi\, wabiwajohihi {lokariymi wasuloTaAnihi {loqadiymi\, mina {l$~ayoTaAni {lr~ajiymi (bisomi {ll~ahi\, wa{lS~alaw`pu) (wa{ls~alaAmu EalaY rasuwli {ll~ahi) ({ll~ahum~a {fotaHo liY^ &gt;abowaAba raHomatika)"></verse>
@@ -290,7 +290,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<verse title="AtTheStartOfPrayer1" text="{ll~ahum~a baAEido bayoniy wabayona xaTaAyaAya kamaA baAEadota bayona {loma$oriqi wa{lomagoribi\, {ll~ahum~a naq~iniy mino xaTaAyaAya kamaA yunaq~aY {lv~awobu {lo&gt;aboyaDu mina {ld~anasi\, {ll~ahum~a {gosiloniy mino xaTaAyaAya bi{lv~aloji wa{lomaA^&apos;i wa{lobaradi"></verse>
 			<verse title="AtTheStartOfPrayer2" text="suboHaAnaka {ll~ahum~a wabiHamodika\, watabaAraka {somuka\, wataEaAlaY jad~uka\, walaA^ &lt;ilaha gayoruka"></verse>
 			<verse title="AtTheStartOfPrayer3" text="waj~ahotu wajohiYa lil~a*iy faTara {ls~ama`wa`ti wa{lo&gt;aroDa HaniyfFA wamaA^ &gt;anaA mina {lomu$orikiyna\, &lt;in~a SalaAtiy\, wanusukiy\, wamaHoyaAya\, wamamaAtiy lil~ahi rab~i {loEaAlamiyna\, laA $ariyka lahu wabi*alika &gt;umirotu wa&gt;anaA mina {lomusolimiyna\. {ll~ahum~a &gt;anta {lomaliku laA^ &lt;ilaha &lt;il~aA^ &gt;anta\. &gt;anta rab~iy wa&gt;anaA Eaboduka\, Zalamotu nafosiy waAEotarafotu bi*anobiy fa{gofiro liy *unuwbiy jamiyEFA &lt;in~ahu laA yagofiru {l*~unuwba &lt;il~aA^ &gt;anta\. waAhodiniy l&gt;aHosani {lo&gt;axolaAqi laA yahodiy l&gt;aHosanihaA^ &lt;il~aA^ &gt;anta\, waASorifo Ean~iy say~i}ahaA laA yaSorifu Ean~iy say~i}ahaA^ &lt;il~aA^ &gt;anta\, lab~ayoka wasaEodayoka\, wa{loxayoru kul~uhu biyadayoka\, wa{l$~ar~u layosa &lt;ilayoka\, &gt;anaA bika wa&lt;ilayoka\, tabaArakota wataEaAlayota\, &gt;asotagofiruka wa&gt;atuwbu &lt;ilayoka"></verse>
-			<verse title="AtTheStartOfPrayer4" text="{ll~ahum~a rab~a jiboraA^}iyla\, wamiykaA^}iyla\, wa&lt;isoraAfiyla\, faATira {ls~ama`wa`ti wa{lo&gt;aroDi\, EaAlima {logayobi wa{l$~ahaAdapi &gt;anta taHokumu bayona EibaAdika fiymaA kaAnuwA fiyhi yaxotalifuwna\. {hdiniy limaA {xotulifa fiyhi mina {loHaq~i bi&lt;i*onika &lt;in~aka tahodiy man ta$aA^&apos;u &lt;ilaY SiraATK musotaqiymK"></verse>
+			<verse title="AtTheStartOfPrayer4" text="{ll~ahum~a rab~a jiboraA^}iyla\, wamiykaA^}iyla\, wa&lt;isoraAfiyla\, faATira {ls~ama`wa`ti wa{lo&gt;aroDi\, EaAlima {logayobi wa{l$~ahaAdapi &gt;anta taHokumu bayona EibaAdika fiymaA kaAnuwaA fiyhi yaxotalifuwna\. {hdiniy limaA {xotulifa fiyhi mina {loHaq~i bi&lt;i*onika &lt;in~aka tahodiy man ta$aA^&apos;u &lt;ilaY SiraATK musotaqiymK"></verse>
 			<verse title="AtTheStartOfPrayer5" text="{ll~ahu &gt;akobaru kabiyrFA\, {ll~ahu &gt;akobaru kabiyrFA\, {ll~ahu &gt;akobaru kabiyrFA\, wa{loHamodu lil~ahi kaviyrFA\, wa{loHamodu lil~ahi kaviyrFA\, wa{loHamodu lil~ahi kaviyrFA\, wasuboHaAna {ll~ahi bukorapFA\, wa&gt;aSiylFA (valaAvFA) &gt;aEuw*u bi{ll~ahi mina {l$~ayoTaAni\: mino nafoxihi\, wanafovihi\, wahamozihi"></verse>
 			<verse title="AtTheStartOfPrayer6" text="{ll~ahum~a laka {loHamodu &gt;anta nuwru {ls~ama`wa`ti wa{lo&gt;aroDi waman fiyhin~a\, walaka {loHamodu &gt;anta qay~imu {ls~ama`wa`ti wa{lo&gt;aroDi waman fiyhin~a\, walaka {loHamodu &gt;anta rab~u {ls~ama`wa`ti wa{lo&gt;aroDi waman fiyhin~a\, walaka {loHamodu laka muloku {ls~ama`wa`ti wa{lo&gt;aroDi waman fiyhin~a\, walaka {loHamodu &gt;anta maliku {ls~ama`wa`ti wa{lo&gt;aroDi\, walaka {loHamodu\, &gt;anta {loHaq~u\, wawaEoduka {loHaq~u\, waqawoluka {loHaq~u\, waliqaA&amp;uka {loHaq~u\, wa{lojan~apu Haq~N\, wa{ln~aAru Haq~N\, wa{ln~abiy~uwna Haq~N\, wamuHam~adN Haq~N\, wa{ls~aAEapu Haq~N\, {ll~ahum~a laka &gt;asolamotu\, waEalayoka tawak~alotu\, wabika &apos;aAmantu\, wa&lt;ilayoka &gt;anabotu\, wabika xaASamotu\, wa&lt;ilayoka HaAkamotu\, fa{gofiro liy maA qad~amotu wamaA^ &gt;ax~arotu\, wamaA^ &gt;asorarotu\, wamaA^ &gt;aEolantu\, &gt;anta {lomuqad~imu\, wa&gt;anta {lomu&amp;ax~iru laA^ &lt;ilaha &lt;il~aA^ &gt;anta\, &gt;anta &lt;ilahiy laA^ &lt;ilaha &lt;il~aA^ &gt;anta"></verse>
 		</category>
@@ -361,7 +361,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<verse title="InTheEvening2" text="{ll~ahum~a bika &gt;amosayonaA\, wabika &gt;aSobaHonaA\, wabika naHoyaA\, wabika namuwtu wa&lt;ilayoka {lomaSiyru\."></verse>
 			<verse title="InTheEvening3" text="{ll~ahum~a &lt;in~iY^ &gt;amosayotu &gt;u$ohiduka wa&gt;u$ohidu Hamalapa Earo$ika\, wamala`^}ikataka wajamiyEa xaloqika\, &gt;an~aka &gt;anta {ll~ahu laA^ &lt;ilaha &lt;il~aA^ &gt;anta waHodaka laA $ariyka laka\, wa&gt;an~a muHam~dFA Eaboduka warasuwluka (&gt;arobaEFA mar~aAtFA Hiyna)"></verse>
 			<verse title="InTheEvening4" text="{ll~ahum~a maA^ &gt;amosaA biy mino niEomapK &gt;awo bi&gt;aHadK mino xaloqika faminka waHodaka laA $ariyka laka\, falaka {loHamodu walaka {l$~ukoru\."></verse>
-			<verse title="InTheEvening5" text="&gt;amosayonaA wa&gt;amosiY {lomuloku lil~ahi rab~i {loEaAlamiyna\, {ll~ahum~a &lt;in~iY^ &gt;aso&gt;aluka xayora ha`*ihi {l~ayolapi\: fatoHahaA\, wanaSorahaA waunwrahaA\, wabarakatahaA\, wahudaAhaA\, wa&gt;aEuw*u bika min $ar~i maA fiyhaA wa$ar~i maA baEodahaA\."></verse>
+			<verse title="InTheEvening5" text="&gt;amosayonaA wa&gt;amosiY {lomuloku lil~ahi rab~i {loEaAlamiyna\, {ll~ahum~a &lt;in~iY^ &gt;aso&gt;aluka xayora ha`*ihi {l~ayolapi\: fatoHahaA\, wanaSorahaA wanuwrahaA\, wabarakatahaA\, wahudaAhaA\, wa&gt;aEuw*u bika min $ar~i maA fiyhaA wa$ar~i maA baEodahaA\."></verse>
 			<verse title="InTheEvening6" text="&gt;amosayonaA EalaY fiTorapi {lo&lt;isolaAmi waEalaY kalimapi {lo&lt;ixolaASi\, waEalaY diyni nabiy~inaA muHam~adK\, waEalaY mil~api &gt;abiynaA^ &lt;ibora`hiyma\, HaniyfFA musolimFA wamaA kaAna mina {lomu$orikiyna\."></verse>
 			<verse title="InTheEvening7" text="&gt;aEuw*u bikalimaAti {ll~ahi {lt~aAm~aAti min $ar~i maA xalaqa (valaAvFA)\."></verse>
 			<verse title="InTheEvening8" text="&gt;amosayonaA wa&gt;amosaY {lomuloku lil~ahi wa{loHamodu lil~ahi\, laA $ariyka lahu\, laA^ &lt;ilaha &lt;il~aA huwa wa&lt;ilayoka {lomaSiyru\."></verse>
@@ -427,7 +427,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 		</category>
 		<category title="ForAnxietyAndSorrow">
 			<verse title="ForAnxietyAndSorrow1" text="{ll~ahum~a &lt;in~iy Eaboduka {bonu Eabodika {bonu &gt;amatika naASiyatiy biyadika maADK fiy~a Hukomuka EadolN fiy~a qaDaA&amp;ka &gt;aso&gt;aluka bikul~i {somK huwa laka sam~ayota bihi nafosaka &gt;iwo &gt;anzalotahu fiY kitaAbika &gt;awo Eal~amotahu &gt;aHadFA mino xaloqika &gt;awi {sota&gt;ovarota bihi fiY Eilomi {logayobi Eindaka &gt;an tajoEala {loquro&apos;aAna rabiyEa qalobiy wanwra Sadoriy wjalaA^&apos;a Huzoniy wa*ahaAba ham~iy"></verse>
-			<verse title="ForAnxietyAndSorrow2" text="{ll~ahum~a &lt;in~iY^ &gt;aEuw*u bika mina {loham~i wa {loHuzoni wa{loEajozi wa{lokasali wa{lobuxoli wa{lojuboni waDaloEi {ld~ayoni wagalabapi {lr~ijaAl"></verse>
+			<verse title="ForAnxietyAndSorrow2" text="{ll~ahum~a &lt;in~iY^ &gt;aEuw*u bika mina {loham~i wa{loHazani\, wa{loEajozi wa{lokasali\, wa{lobuxoli wa{lojuboni\, waDalaEi {ld~ayoni wagalabapi {lr~ijaAli"></verse>
 		</category>
 		<category title="ForOneInDistress">
 			<verse title="" text="laA^ &lt;ilaha &lt;il~aA {ll~ahu {loEaZiymu {loHaliymo laA^ &lt;ilaha &lt;il~aA {ll~ahu rab~u {loEaro$i {loEaZiymi laA^ &lt;ilaha &lt;il~aA {ll~aho rab~u {ls~amaw~aAti wr~b~u {lo&gt;aroDi wrab~u {loEaro$i {lokariym"></verse>
@@ -447,7 +447,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 		</category>
 		<category title="SettlingADebt">
 			<verse title="" text="{ll~ahum~a {kofiniy biHalaAlika Eano HaraAmiko wa&gt;agoniniy bifaDoliki Eam~ano siwAk"></verse>
-			<verse title="" text="{ll~ahum~a &lt;in~iY^ &gt;aEuw*u bika mina {loham~i wa {loHuzoni wa{loEajozi wa{lokasali wa{lobuxoli wa{lojuboni waDaloEi {ld~ayoni wagalabapi {lr~ijaAl"></verse>
+			<verse title="" text="{ll~ahum~a &lt;in~iY^ &gt;aEuw*u bika mina {loham~i wa{loHuzoni wa{loEajozi wa{lokasali wa{lobuxoli wa{lojuboni waDaloEi {ld~ayoni wagalabapi {lr~ijaAl"></verse>
 		</category>
 		<category title="ForOneAffectedByWhisperingsInPrayerOrSupplication">
 			<verse title="" text="&gt;aEuw*u bi{ll~ahi mina {l$~ayoTaAni {lr~ajiymi"></verse>
@@ -542,7 +542,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<verse title="" text="{ll~ahum~a &lt;in~iY^ &gt;aso&gt;aluka biraHomatika {l~atiy wasiEat kul~a $ay&apos;o &gt;an tagofira liy"></verse>
 		</category>
 		<category title="BeforeEating">
-			<verse title="" text="bisomi {ll~ahi fiY^ &gt;aw~alihi wa&apos;aAxirih"></verse>
+			<verse title="" text="bisomi {ll~ahi fiY^ &gt;aw~alihi wa&apos;aAxirihi"></verse>
 			<verse title="" text="{ll~ahum~a baAriko lanaA fiyhi wa&gt;aToEimonaA xayorFA minoh"></verse>
 		</category>
 		<category title="UponCompletingTheMeal">
@@ -831,7 +831,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 		</category>
 		<category title="PopularIslamicSongVerses">
 			<verse title="OMasterSendPrayersAndPeace" text="mawolaAya Sal~iy wasal~imo daAi}mFA &gt;abadFA EalaY Habiybika xayori {loxuloqi kul~ihimi"></verse>
-			<verse title="SalutationsUponYouOfAllah" text="SalaY Ealayoka {ll~ahu yaA EadonaAni yaA muSoTafaY yaA Safowapu {lr~aHomaAni {loHamodulil~ahi {l~a*iY^ &gt;aEoTaAniy ha`*aA {logulaAmi {lT~ayobi {lo&gt;ardaAni ha`*aA {logulaAmi {l~Tayobi {lo&gt;ardaAni qado saAdo fiY {lomahodi EalaY {logilomaAni &gt;aEiy*ihu bi{lobayoti *iy {lo&gt;arokaAni HataY &gt;araAhu bi{logi {lobunyaAni &gt;anta {l~a*iy sumiyapa fiY {loquro&apos;aAni &gt;anta {l~a*iy sumiypa fiY {loquro&apos;aAni &gt;aHomadu makotuwbu EalaY {lojinaAni SalaY Ealayoka {ll~ahu fiY {lo&gt;aHiyaAni &gt;aHomadohu fiY {ls~iri wa{lobirohaAni Haq~aA EalaY {lo&lt;isolaAmi wa {lo&lt;iymaAni Haq~aA EalaY {lo&lt;isolaAmi wa {lo&lt;iymaAni"></verse>
+			<verse title="SalutationsUponYouOfAllah" text="SalaY Ealayoka {ll~ahu yaA EadonaAni yaA muSoTafaY yaA Safowapu {lr~aHomaAni {loHamodulil~ahi {l~a*iY^ &gt;aEoTaAniy ha`*aA {logulaAmi {lT~ayobi {lo&gt;ardaAni ha`*aA {logulaAmi {l~Tayobi {lo&gt;ardaAni qado saAdo fiY {lomahodi EalaY {logilomaAni &gt;aEiy*ihu bi{lobayoti *iy {lo&gt;arokaAni HataY &gt;araAhu bi{logi {lobunyaAni &gt;anta {l~a*iy sumiyapa fiY {loquro&apos;aAni &gt;anta {l~a*iy sumiypa fiY {loquro&apos;aAni &gt;aHomadu makotuwbu EalaY {lojinaAni SalaY Ealayoka {ll~ahu fiY {lo&gt;aHiyaAni &gt;aHomadohu fiY {ls~iri wa{lobirohaAni Haq~aA EalaY {lo&lt;isolaAmi wa{lo&lt;iymaAni Haq~aA EalaY {lo&lt;isolaAmi wa{lo&lt;iymaAni"></verse>
 		</category>
 		<category title="Remembrance">
 			<verse title="RemembranceFirst" text="\{21:87:15-23\}"></verse>
@@ -839,13 +839,15 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<verse title="RemembranceThird" text="laA hawola walaA quw~apK &lt;il~aA bi{ll~ahi {loEaliY~i {loEaZiymi"></verse>
 			<verse title="SendBlessingsFirst" text="{ll~ahum~a Sal~i EalaY muHam~adK waEalaY &apos;aAli muHam~adK kamaA Sal~ayota EalaY &lt;iboraAhiyma waEalaY &apos;aAli &lt;iboraAhiyma &lt;in~aka HamiydN majiydN wabaAriko EalaY muHam~adK waEalaY &apos;aAli muHam~adK kamaA baArakota EalaY &lt;iboraAhiyma waEalaY &apos;aAli &lt;iboraAhiyma fiY {loEaAlamiyna &lt;in~aka HamiydN majiydN"></verse>
 			<verse title="SendBlessingsSecond" text="{ll~ahum~a Sal~i EalaY muHam~adK waEalaY &apos;aAli muHam~adK kamaA Sal~ayota EalaY &lt;iboraAhiyma waEalaY &apos;aAli &lt;iboraAhiyma &lt;in~aka HamiydN majiydN {ll~ahum~a baAriko EalaY muHam~adK waEalaY &apos;aAli muHam~adK kamaA baArakota EalaY &lt;iboraAhiyma waEalaY &apos;aAli &lt;iboraAhiyma &lt;in~aka HamiydN majiydN"></verse>
-			<verse title="IntroductionFirst" text="&lt;in~a {loHamoda lil~ahi naHomaduhu wanasotaEiynuhu wanasotagofiruhu wanaEuw*u bi{ll~ahi min $uruwri &gt;anfusinaA wamin say~i}aAti &gt;aEomaAlinaA min yahodi {ll~ahu falaA muDil~a lahu waman yuDolilo falaA haAdiYa lahu\, wa&gt;a$ohadu &gt;ano laA^ &lt;ilaha &lt;il~aA {ll~ahu waHodahu laA $ariyka lahu\, wa&gt;a$ohadu &gt;an~a muHam~adFA Eaboduhu warasuwluhu \{3:182\}\{4:1\}\{70:71\}"></verse>
+			<verse title="IntroductionFirst" text="&lt;in~a {loHamoda lil~ahi naHomaduhu wanasotaEiynuhu wanasotagofiruhu wanaEuw*u bi{ll~ahi min $uruwri &gt;anfusinaA wamin say~i}aAti &gt;aEomaAlinaA min yahodi {ll~ahu falaA muDil~a lahu waman yuDolilo falaA haAdiYa lahu\, wa&gt;a$ohadu &gt;ano laA^ &lt;ilaha &lt;il~aA {ll~ahu waHodahu laA $ariyka lahu\, wa&gt;a$ohadu &gt;an~a muHam~adFA Eaboduhu warasuwluhu \{3:102\}\{4:1\}\{33:70-71\}"></verse>
 			<verse title="IntroductionSecond" text="&gt;amaA baEad\: fa&lt;in~a &gt;aSodaqa {loHadiyvi kitaAbu {ll~ahi\, waxayora {lohadoyi hadoyu muHam~adK Sal~aY {ll~ahu Ealayohi wasal~am\, wa$ar~a {lo&gt;umuwri muHodavaAtuhaA\, wakul~a muHodavapK bidoEapN\, wakul~a bidoEapK DalaAlapN\, wakul~a DalaAlapK fiY {ln~aAri"></verse>
 			<verse title="ForKnowledge" text="\{20:114:17-19\}"></verse>
 			<verse title="RemembranceFourth" text="{ll~ahum~a Sal~i EalaY sayidinaA muHam~adK Eabodika wanabiyka warasuwlika {ln~abiy~i {lo&gt;um~iy\, waEalaY &apos;aAlihi waSaHabihi wasal~imo"></verse>
 			<verse title="RemembranceFifth" text="raDiytu bi{ll~ahi rab~FA\, wabi{lo&lt;isolaAmi diynFA\, wabimuHam~adK nabiy~FA warasuwlFA (valaAvFA)\."></verse>
 			<verse title="RemembranceSixth" text="yaA rab~iy laka {loHamodu kamaA yanobagiy lijalaAli wajohika waEaZiymi suloTaAnika\."></verse>
 			<verse title="RemembranceSeventh" text="{ll~ahum~a &lt;in~aA naEuw*u bika min &gt;an nu$orika bika $ayo&apos;F naEolamuhu\, wanasotagofiruka limaA laA naEolamuhu\."></verse>
+		</category>
+		<category title="SupplicationAndPrayersForMorningAndAfternoon">
 			<verse title="SupplicationAndPrayersForMorningAndAfternoon" text="\{1,2:1-5,2:255-257,2:284-286,112,113,114\}\{supp:InTheMorning8,InTheEvening8,InTheMorning6,InTheEvening6,InTheMorning9,InTheEvening9,InTheMorning4,InTheEvening4,RemembranceSixth,RemembranceFifth,InTheMorning7,InTheMorningOrEvening8,RemembranceSeventh,InTheEvening7,ForAnxietyAndSorrow2,InTheMorningOrEvening4,InTheMorningOrEvening3,SeekingForgivenessAndRepentance3,ForExpiationOfSinsAtTheConclusionOfSittingOrGathering1,RemembranceFourth\}"></verse>
 		</category>
 	</verses>
@@ -2418,13 +2420,13 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="Huruwfu {l$~aroTi" id="ParticlesOfCondition"></word>
 			<word text="Huruwfu {lo&gt;asotifohaAmi" id="ParticlesOfInterogation"></word>
 			<word text="Huruwfu {loEil~api" id="VowelLetter"></word>
-			<word text="&lt;in~a wa &gt;axawaAtuhaA" id="VerilyAndItsSisters"></word>
+			<word text="&lt;in~a wa&gt;axawaAtuhaA" id="VerilyAndItsSisters"></word>
 			<word text="muDaAriEN" id="PresentTense"></word>
 			<word text="muforadN" id="SingularNoun"></word>
 			<word text="&lt;isotiqobaAlN" id="Future"></word>
 			<word text="{lobolaAgapu" id="StudyOfRhetoricEloquence"></word>
 			<word text="taA^&apos;u {lomarobuwtapi" id="TheTaaOfFemininity"></word>
-			<word text="{lojar~u wa {lomajoruwru" id="PossessiveConstruction"></word>
+			<word text="{lojar~u wa{lomajoruwru" id="PossessiveConstruction"></word>
 			<word text="{lojumolapu {lo&lt;isomiy~apu" id="NominalSentence"></word>
 			<word text="&gt;anowaAEu {lojumali" id="NominalSentence"></word>
 			<word text="jumolapN fiEoliy~apN" id="VerbalSentence"></word>
@@ -2955,7 +2957,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="banuw vaqiyfN" id="BaniThaqeef"></word>
 			<word text="banuw haA$imN" id="BaniHashim"></word>
 			<word text="banuw maxozuwmN" id="BaniHashim"></word>
-			<word text="yaAjuwjN wa maAjuwjN" id="GogAndMagog"></word>
+			<word text="yaAjuwjN wamaAjuwjN" id="GogAndMagog"></word>
 			<word text="{lobuxaAriy" id="ImamBukhari"></word>
 			<word text="musolimN" id="ImamMuslim"></word>
 			<word text="{lo&lt;imaAmu {ln~awawiy 40 HadiyvN" id="ImamNawawi40Hadith"></word>

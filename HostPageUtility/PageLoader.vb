@@ -218,7 +218,11 @@ Public Class Utility
             Bytes(DecryptStr.Length \ 2 - 1 - Count \ 2) = Byte.Parse(DecryptStr.Substring(Count, 2), Globalization.NumberStyles.HexNumber)
         Next
         Dim Str As String = System.Text.Encoding.UTF8.GetString(Transform.Decrypt(Bytes, False)).TrimEnd(Chr(0)) 'not using OAEP when calling CryptDe/Encrypt
-        Transform.Clear()
+        Try
+            Transform.Clear()
+            Transform = Nothing
+        Catch ex As System.Security.Cryptography.CryptographicException
+        End Try
         Return Str
     End Function
     Public Shared Function ConvertSpaces(ByVal Text As String) As String
@@ -628,7 +632,7 @@ Public Class Utility
         Dim AttributeNode As System.Xml.XmlNode
         If Index - 1 < ChildNodes.Count Then
             XMLNode = ChildNodes.Item(Index - 1)
-            If XMLNode.Name = NodeName Then
+            If Not XMLNode Is Nothing AndAlso XMLNode.Name = NodeName Then
                 AttributeNode = XMLNode.Attributes.GetNamedItem(IndexName)
                 If Not AttributeNode Is Nothing AndAlso CInt(AttributeNode.Value) = Index Then
                     Return XMLNode
@@ -1516,7 +1520,7 @@ Public Class ArabicData
         While Count <> Str.Length
             If Dir Then
                 If LigatureShapes.ContainsKey(Str.Chars(Count)) Then
-                        'ZWJ and ZWNJ could be used to preserve deliberately improper shaped Arabic or other strategies beyond just default shaping
+                    'ZWJ and ZWNJ could be used to preserve deliberately improper shaped Arabic or other strategies beyond just default shaping
                     Ligatures.Add(New LigatureInfo With {.Ligature = Combos(LigatureShapes.Item(Str.Chars(Count))).SymbolName, .Indexes = {Count}})
                 End If
             Else
@@ -2836,285 +2840,290 @@ Public Class RenderArray
         Next
     End Sub
 End Class
-        Public Class MailDispatcher
-            Public Shared Sub SendEMail(ByVal EMail As String, ByVal Subject As String, ByVal Body As String)
-                Dim SmtpClient As New Net.Mail.SmtpClient
-                'encrypt and unencrypt password credential
-                SmtpClient.Credentials = New Net.NetworkCredential(Utility.ConnectionData.IslamSourceAdminEMail, Utility.ConnectionData.IslamSourceAdminEMailPass)
-                SmtpClient.Port = 587
-                SmtpClient.Host = Utility.ConnectionData.IslamSourceMailServer
-                Dim SmtpMail As New Net.Mail.MailMessage
-                SmtpMail.From = New Net.Mail.MailAddress(Utility.ConnectionData.IslamSourceAdminEMail, Utility.ConnectionData.IslamSourceAdminName)
-                SmtpMail.To.Add(EMail)
-                SmtpMail.Subject = Subject
-                SmtpMail.Body = Body
-                Try
-                    SmtpClient.Send(SmtpMail)
-                Catch eException As Net.Mail.SmtpException
-                End Try
-            End Sub
-            Public Shared Sub SendActivationEMail(ByVal UserName As String, ByVal EMail As String, ByVal UserID As Integer, ByVal ActivationCode As Integer)
-                SendEMail(EMail, String.Format(Utility.LoadResourceString("Acct_ActivationAccountSubject"), HttpContext.Current.Request.Url.Host), _
-                    String.Format(Utility.LoadResourceString("Acct_ActivationAccountBody"), HttpContext.Current.Request.Url.Host, UserName, "http://" + HttpContext.Current.Request.Url.Host + "/" + Utility.GetPageString("ActivateAccount&UserID=" + CStr(UserID) + "&ActivationCode=" + CStr(ActivationCode)), "http://" + HttpContext.Current.Request.Url.Host + "/" + Utility.GetPageString("ActivateAccount"), CStr(ActivationCode)))
-            End Sub
-            Public Shared Sub SendUserNameReminderEMail(ByVal UserName As String, ByVal EMail As String)
-                SendEMail(EMail, String.Format(Utility.LoadResourceString("Acct_UsernameReminderSubject"), HttpContext.Current.Request.Url.Host), _
-                    String.Format(Utility.LoadResourceString("Acct_UsernameReminderBody"), HttpContext.Current.Request.Url.Host, UserName))
-            End Sub
-            Public Shared Sub SendPasswordResetEMail(ByVal UserName As String, ByVal EMail As String, ByVal UserID As Integer, ByVal PasswordResetCode As UInteger)
-                SendEMail(EMail, String.Format(Utility.LoadResourceString("Acct_PasswordResetSubject"), HttpContext.Current.Request.Url.Host), _
-                    String.Format(Utility.LoadResourceString("Acct_PasswordResetBody"), HttpContext.Current.Request.Url.Host, UserName, "http://" + HttpContext.Current.Request.Url.Host + "/" + Utility.GetPageString("ResetPassword&UserID=" + CStr(UserID) + "&PasswordResetCode=" + CStr(PasswordResetCode)), "http://" + HttpContext.Current.Request.Url.Host + "/" + Utility.GetPageString("ResetPassword"), CStr(PasswordResetCode)))
-            End Sub
-            Public Shared Sub SendUserNameChangedEMail(ByVal UserName As String, ByVal EMail As String)
-                SendEMail(EMail, String.Format(Utility.LoadResourceString("Acct_UsernameChangedSubject"), HttpContext.Current.Request.Url.Host), _
-                    String.Format(Utility.LoadResourceString("Acct_UsernameChangedBody"), HttpContext.Current.Request.Url.Host, UserName))
-            End Sub
-            Public Shared Sub SendPasswordChangedEMail(ByVal UserName As String, ByVal EMail As String)
-                SendEMail(EMail, String.Format(Utility.LoadResourceString("Acct_PasswordChangedSubject"), HttpContext.Current.Request.Url.Host), _
-                    String.Format(Utility.LoadResourceString("Acct_PasswordChangedBody"), HttpContext.Current.Request.Url.Host, UserName))
-            End Sub
-        End Class
-        Public Class SiteDatabase
-            Public Shared Function GetConnection() As MySql.Data.MySqlClient.MySqlConnection
-                Dim Connection As MySql.Data.MySqlClient.MySqlConnection = New MySql.Data.MySqlClient.MySqlConnection("Server=" + Utility.ConnectionData.DbConnServer + ";Uid=" + Utility.ConnectionData.DbConnUid + ";Pwd=" + Utility.ConnectionData.DbConnPwd + ";Database=" + Utility.ConnectionData.DbConnDatabase + ";")
-                Try
-                    Connection.Open()
-                Catch e As MySql.Data.MySqlClient.MySqlException
-                    Return Nothing
-                Catch e As TimeoutException
-                    Return Nothing
-                End Try
-                Return Connection
-            End Function
-            Public Shared Sub ExecuteNonQuery(ByVal Connection As MySql.Data.MySqlClient.MySqlConnection, ByVal Query As String, Optional Parameters As Generic.Dictionary(Of String, Object) = Nothing)
-                Dim Command As MySql.Data.MySqlClient.MySqlCommand = Connection.CreateCommand()
-                Command.CommandText = Query
-                If Not Parameters Is Nothing Then
-                    For Each Key As String In Parameters.Keys
-                        Command.Parameters.AddWithValue(Key, Parameters(Key))
-                    Next
-                End If
-                Command.ExecuteNonQuery()
-            End Sub
-            Public Shared Sub CreateDatabase()
-                Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
-                If Connection Is Nothing Then Return
-                'SHA1 produces 20 bytes not available in MySQL 5.1
-                'should salt the password
-                ExecuteNonQuery(Connection, "CREATE TABLE Users (UserID int NOT NULL AUTO_INCREMENT, " + _
-                "PRIMARY KEY(UserID), " + _
-                "UserName VARCHAR(15) UNIQUE, " + _
-                "Password BINARY(20), " + _
-                "EMail VARCHAR(254) UNIQUE, " + _
-                "Access int NOT NULL DEFAULT 0, " + _
-                "ActivationCode int, " + _
-                "LoginSecret int DEFAULT NULL, " + _
-                "LoginTime TIMESTAMP NULL)")
-                Connection.Close()
-            End Sub
-            Public Shared Sub RemoveDatabase()
-                Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
-                If Connection Is Nothing Then Return
-                Dim Command As MySql.Data.MySqlClient.MySqlCommand = Connection.CreateCommand()
-                ExecuteNonQuery(Connection, "DROP TABLE Users")
-                Connection.Close()
-            End Sub
-            Public Shared Sub CleanupStaleActivations()
-                Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
-                If Connection Is Nothing Then Return
-                ExecuteNonQuery(Connection, "DELETE FROM Users WHERE ActivationCode IS NOT NULL AND (LoginTime IS NULL OR UTC_TIMESTAMP > TIMESTAMPADD(DAY, 10, LoginTime))")
-                Connection.Close()
-            End Sub
-            Public Shared Sub CleanupStaleLoginSessions()
-                Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
-                If Connection Is Nothing Then Return
-                ExecuteNonQuery(Connection, "UPDATE Users SET LoginSecret=NULL, LoginTime=NULL WHERE ActivationCode IS NOT NULL AND (LoginTime IS NOT NULL AND UTC_TIMESTAMP > TIMESTAMPADD(HOUR, 1, LoginTime))")
-                Connection.Close()
-            End Sub
-            Public Shared Sub AddUser(ByVal UserName As String, ByVal Password As String, ByVal EMail As String)
-                Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
-                If Connection Is Nothing Then Return
-                Dim Generator As New System.Random()
-                ExecuteNonQuery(Connection, "INSERT INTO Users (UserName, Password, EMail, ActivationCode, LoginTime) VALUES (@UserName, UNHEX(SHA1(@Password)), @EMail, @Code, UTC_TIMESTAMP)", _
-                                New Generic.Dictionary(Of String, Object) From {{"@UserName", UserName}, {"@Password", Password}, {"@EMail", EMail}, {"@Code", CStr(Generator.Next(0, 99999999))}})
-                Connection.Close()
-            End Sub
-            Public Shared Function GetUserID(ByVal UserName As String, ByVal Password As String) As Integer
-                Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
-                If Connection Is Nothing Then Return -1
-                Dim Command As MySql.Data.MySqlClient.MySqlCommand = Connection.CreateCommand()
-                Command.CommandText = "SELECT UserID FROM Users WHERE UserName=@UserName AND Password=UNHEX(SHA1(@Password))"
-                Command.Parameters.AddWithValue("@UserName", UserName)
-                Command.Parameters.AddWithValue("@Password", Password)
-                Dim Reader As MySql.Data.MySqlClient.MySqlDataReader = Command.ExecuteReader()
-                If Reader.Read() AndAlso Not Reader.IsDBNull(0) Then
-                    GetUserID = Reader.GetInt32("UserID")
-                Else
-                    GetUserID = -1
-                End If
-                Reader.Close()
-                Connection.Close()
-            End Function
-            Public Shared Function GetUserID(ByVal UserName As String) As Integer
-                Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
-                If Connection Is Nothing Then Return -1
-                Dim Command As MySql.Data.MySqlClient.MySqlCommand = Connection.CreateCommand()
-                Command.CommandText = "SELECT UserID FROM Users WHERE UserName=@UserName"
-                Command.Parameters.AddWithValue("@UserName", UserName)
-                Dim Reader As MySql.Data.MySqlClient.MySqlDataReader = Command.ExecuteReader()
-                If Reader.Read() AndAlso Not Reader.IsDBNull(0) Then
-                    GetUserID = Reader.GetInt32("UserID")
-                Else
-                    GetUserID = -1
-                End If
-                Reader.Close()
-                Connection.Close()
-            End Function
-            Public Shared Function GetUserIDByEMail(ByVal EMail As String) As Integer
-                Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
-                If Connection Is Nothing Then Return -1
-                Dim Command As MySql.Data.MySqlClient.MySqlCommand = Connection.CreateCommand()
-                Command.CommandText = "SELECT UserID FROM Users WHERE EMail=@EMail"
-                Command.Parameters.AddWithValue("@EMail", EMail)
-                Dim Reader As MySql.Data.MySqlClient.MySqlDataReader = Command.ExecuteReader()
-                If Reader.Read() AndAlso Not Reader.IsDBNull(0) Then
-                    GetUserIDByEMail = Reader.GetInt32("UserID")
-                Else
-                    GetUserIDByEMail = -1
-                End If
-                Reader.Close()
-                Connection.Close()
-            End Function
-            Public Shared Function GetUserResetCode(ByVal UserID As Integer) As UInteger
-                Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
-                If Connection Is Nothing Then Return &HFFFFFFFFL
-                Dim Command As MySql.Data.MySqlClient.MySqlCommand = Connection.CreateCommand()
-                Command.CommandText = "SELECT CRC32(Password) FROM Users WHERE UserID=" + CStr(UserID)
-                Dim Reader As MySql.Data.MySqlClient.MySqlDataReader = Command.ExecuteReader()
-                If Reader.Read() AndAlso Not Reader.IsDBNull(0) Then
-                    GetUserResetCode = Reader.GetUInt32("CRC32(Password)")
-                Else
-                    GetUserResetCode = &HFFFFFFFFL
-                End If
-                Reader.Close()
-                Connection.Close()
-            End Function
-            Public Shared Function CheckLogin(ByVal UserID As Integer, ByVal Secret As Integer) As Boolean
-                Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
-                If Connection Is Nothing Then Return False
-                Dim Command As MySql.Data.MySqlClient.MySqlCommand = Connection.CreateCommand()
-                Command.CommandText = "SELECT UserID FROM Users WHERE UserID=" + CStr(UserID) + " AND ActivationCode IS NULL AND LoginSecret=" + CStr(Secret) + CStr(IIf(Secret Mod 2 = 0, " AND LoginTime IS NULL", " AND LoginTime IS NOT NULL AND UTC_TIMESTAMP < TIMESTAMPADD(HOUR, 1, LoginTime)"))
-                Dim Reader As MySql.Data.MySqlClient.MySqlDataReader = Command.ExecuteReader()
-                If Reader.Read() AndAlso Not Reader.IsDBNull(0) Then
-                    CheckLogin = CInt(Reader.Item("UserID")) = UserID
-                Else
-                    CheckLogin = False
-                End If
-                Reader.Close()
-                Connection.Close()
-            End Function
-            Public Shared Function CheckAccess(ByVal UserID As Integer) As Integer
-                Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
-                If Connection Is Nothing Then Return 0
-                Dim Command As MySql.Data.MySqlClient.MySqlCommand = Connection.CreateCommand()
-                Command.CommandText = "SELECT Access FROM Users WHERE UserID=" + CStr(UserID)
-                Dim Reader As MySql.Data.MySqlClient.MySqlDataReader = Command.ExecuteReader()
-                If Reader.Read() AndAlso Not Reader.IsDBNull(0) Then
-                    CheckAccess = CInt(Reader.Item("Access"))
-                Else
-                    CheckAccess = 0
-                End If
-                Reader.Close()
-                Connection.Close()
-            End Function
-            Public Shared Function SetLogin(ByVal UserID As Integer, ByVal Persist As Boolean) As Integer
-                Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
-                If Connection Is Nothing Then Return -1
-                Dim Generator As New System.Random()
-                'Persistant login secret is even, non-persistant is odd
-                SetLogin = (Generator.Next(0, 99999999) \ 2) * 2 + CInt(IIf(Persist, 0, 1))
-                ExecuteNonQuery(Connection, "UPDATE Users SET LoginSecret=" + CStr(SetLogin) + ", LoginTime=" + CStr(IIf(Persist, "NULL", "UTC_TIMESTAMP")) + " WHERE UserID=" + CStr(UserID))
-                Connection.Close()
-            End Function
-            Public Shared Sub ClearLogin(ByVal UserID As Integer)
-                Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
-                If Connection Is Nothing Then Return
-                ExecuteNonQuery(Connection, "UPDATE Users SET LoginSecret=NULL, LoginTime=NULL WHERE UserID=" + CStr(UserID))
-                Connection.Close()
-            End Sub
-            Public Shared Function GetUserActivated(ByVal UserID As Integer) As Integer
-                Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
-                If Connection Is Nothing Then Return -1
-                Dim Command As MySql.Data.MySqlClient.MySqlCommand = Connection.CreateCommand()
-                Command.CommandText = "SELECT ActivationCode FROM Users WHERE UserID=" + CStr(UserID)
-                Dim Reader As MySql.Data.MySqlClient.MySqlDataReader = Command.ExecuteReader()
-                'If Reader.IsDBNull(0) Then Return -1 'NULL is activated
-                If Not Reader.Read() OrElse Reader.IsDBNull(0) Then
-                    GetUserActivated = -1 'NULL is activated
-                Else
-                    GetUserActivated = Reader.GetInt32("ActivationCode")
-                End If
-                Reader.Close()
-                Connection.Close()
-            End Function
-            Public Shared Function GetUserName(ByVal UserID As Integer) As String
-                Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
-                If Connection Is Nothing Then Return String.Empty
-                Dim Command As MySql.Data.MySqlClient.MySqlCommand = Connection.CreateCommand()
-                Command.CommandText = "SELECT UserName FROM Users WHERE UserID=" + CStr(UserID)
-                Dim Reader As MySql.Data.MySqlClient.MySqlDataReader = Command.ExecuteReader()
-                If Reader.Read() AndAlso Not Reader.IsDBNull(0) Then
-                    GetUserName = Reader.GetString("UserName")
-                Else
-                    GetUserName = String.Empty
-                End If
-                Reader.Close()
-                Connection.Close()
-            End Function
-            Public Shared Function GetUserEMail(ByVal UserID As Integer) As String
-                Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
-                If Connection Is Nothing Then Return String.Empty
-                Dim Command As MySql.Data.MySqlClient.MySqlCommand = Connection.CreateCommand()
-                Command.CommandText = "SELECT EMail FROM Users WHERE UserID=" + CStr(UserID)
-                Dim Reader As MySql.Data.MySqlClient.MySqlDataReader = Command.ExecuteReader()
-                If Reader.Read() AndAlso Not Reader.IsDBNull(0) Then
-                    GetUserEMail = Reader.GetString("EMail")
-                Else
-                    GetUserEMail = String.Empty
-                End If
-                Reader.Close()
-                Connection.Close()
-            End Function
-            Public Shared Sub ChangeUserName(ByVal UserID As Integer, ByVal UserName As String)
-                Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
-                If Connection Is Nothing Then Return
-                ExecuteNonQuery(Connection, "UPDATE Users SET UserName=@UserName WHERE UserID=" + CStr(UserID), New Generic.Dictionary(Of String, Object) From {{"@UserName", UserName}})
-                Connection.Close()
-            End Sub
-            Public Shared Sub ChangeUserPassword(ByVal UserID As Integer, ByVal Password As String)
-                Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
-                If Connection Is Nothing Then Return
-                ExecuteNonQuery(Connection, "UPDATE Users SET Password=UNHEX(SHA1(@Password)) WHERE UserID=" + CStr(UserID), New Generic.Dictionary(Of String, Object) From {{"@Password", Password}})
-                Connection.Close()
-            End Sub
-            Public Shared Sub ChangeUserEMail(ByVal UserID As Integer, ByVal EMail As String)
-                Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
-                If Connection Is Nothing Then Return
-                Dim Generator As New System.Random()
-                ExecuteNonQuery(Connection, "UPDATE Users SET EMail=@EMail, ActivationCode='" + CStr(Generator.Next(0, 99999999)) + "' WHERE UserID=" + CStr(UserID), New Generic.Dictionary(Of String, Object) From {{"@EMail", EMail}})
-                Connection.Close()
-            End Sub
-            Public Shared Sub SetUserActivated(ByVal UserID As Integer)
-                Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
-                If Connection Is Nothing Then Return
-                Dim Generator As New System.Random()
-                ExecuteNonQuery(Connection, "UPDATE Users SET ActivationCode=NULL, LoginTime=NULL WHERE UserID=" + CStr(UserID))
-                Connection.Close()
-            End Sub
-            Public Shared Sub RemoveUser(ByVal UserID As Integer)
-                Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
-                If Connection Is Nothing Then Return
-                ExecuteNonQuery(Connection, "DELETE FROM Users WHERE UserID=" + CStr(UserID))
-                Connection.Close()
-            End Sub
-        End Class
+Public Class MailDispatcher
+    Public Shared Sub SendEMail(ByVal EMail As String, ByVal Subject As String, ByVal Body As String)
+        Dim SmtpClient As New Net.Mail.SmtpClient
+        'encrypt and unencrypt password credential
+        SmtpClient.Credentials = New Net.NetworkCredential(Utility.ConnectionData.IslamSourceAdminEMail, Utility.ConnectionData.IslamSourceAdminEMailPass)
+        SmtpClient.Port = 587
+        SmtpClient.Host = Utility.ConnectionData.IslamSourceMailServer
+        Dim SmtpMail As New Net.Mail.MailMessage
+        SmtpMail.From = New Net.Mail.MailAddress(Utility.ConnectionData.IslamSourceAdminEMail, Utility.ConnectionData.IslamSourceAdminName)
+        SmtpMail.To.Add(EMail)
+        SmtpMail.Subject = Subject
+        SmtpMail.Body = Body
+        Try
+            SmtpClient.Send(SmtpMail)
+        Catch eException As Net.Mail.SmtpException
+        End Try
+    End Sub
+    Public Shared Sub SendActivationEMail(ByVal UserName As String, ByVal EMail As String, ByVal UserID As Integer, ByVal ActivationCode As Integer)
+        SendEMail(EMail, String.Format(Utility.LoadResourceString("Acct_ActivationAccountSubject"), HttpContext.Current.Request.Url.Host), _
+            String.Format(Utility.LoadResourceString("Acct_ActivationAccountBody"), HttpContext.Current.Request.Url.Host, UserName, "http://" + HttpContext.Current.Request.Url.Host + "/" + Utility.GetPageString("ActivateAccount&UserID=" + CStr(UserID) + "&ActivationCode=" + CStr(ActivationCode)), "http://" + HttpContext.Current.Request.Url.Host + "/" + Utility.GetPageString("ActivateAccount"), CStr(ActivationCode)))
+    End Sub
+    Public Shared Sub SendUserNameReminderEMail(ByVal UserName As String, ByVal EMail As String)
+        SendEMail(EMail, String.Format(Utility.LoadResourceString("Acct_UsernameReminderSubject"), HttpContext.Current.Request.Url.Host), _
+            String.Format(Utility.LoadResourceString("Acct_UsernameReminderBody"), HttpContext.Current.Request.Url.Host, UserName))
+    End Sub
+    Public Shared Sub SendPasswordResetEMail(ByVal UserName As String, ByVal EMail As String, ByVal UserID As Integer, ByVal PasswordResetCode As UInteger)
+        SendEMail(EMail, String.Format(Utility.LoadResourceString("Acct_PasswordResetSubject"), HttpContext.Current.Request.Url.Host), _
+            String.Format(Utility.LoadResourceString("Acct_PasswordResetBody"), HttpContext.Current.Request.Url.Host, UserName, "http://" + HttpContext.Current.Request.Url.Host + "/" + Utility.GetPageString("ResetPassword&UserID=" + CStr(UserID) + "&PasswordResetCode=" + CStr(PasswordResetCode)), "http://" + HttpContext.Current.Request.Url.Host + "/" + Utility.GetPageString("ResetPassword"), CStr(PasswordResetCode)))
+    End Sub
+    Public Shared Sub SendUserNameChangedEMail(ByVal UserName As String, ByVal EMail As String)
+        SendEMail(EMail, String.Format(Utility.LoadResourceString("Acct_UsernameChangedSubject"), HttpContext.Current.Request.Url.Host), _
+            String.Format(Utility.LoadResourceString("Acct_UsernameChangedBody"), HttpContext.Current.Request.Url.Host, UserName))
+    End Sub
+    Public Shared Sub SendPasswordChangedEMail(ByVal UserName As String, ByVal EMail As String)
+        SendEMail(EMail, String.Format(Utility.LoadResourceString("Acct_PasswordChangedSubject"), HttpContext.Current.Request.Url.Host), _
+            String.Format(Utility.LoadResourceString("Acct_PasswordChangedBody"), HttpContext.Current.Request.Url.Host, UserName))
+    End Sub
+End Class
+Public Class SiteDatabase
+    Public Shared Function GetConnection() As MySql.Data.MySqlClient.MySqlConnection
+        Dim Connection As MySql.Data.MySqlClient.MySqlConnection = New MySql.Data.MySqlClient.MySqlConnection("Server=" + Utility.ConnectionData.DbConnServer + ";Uid=" + Utility.ConnectionData.DbConnUid + ";Pwd=" + Utility.ConnectionData.DbConnPwd + ";Database=" + Utility.ConnectionData.DbConnDatabase + ";")
+        Try
+            Connection.Open()
+        Catch e As MySql.Data.MySqlClient.MySqlException
+            Return Nothing
+        Catch e As Net.Sockets.SocketException
+        Catch e As ArgumentOutOfRangeException
+            Return Nothing
+        Catch e As InvalidOperationException
+            Return Nothing
+        Catch e As TimeoutException
+            Return Nothing
+        End Try
+        Return Connection
+    End Function
+    Public Shared Sub ExecuteNonQuery(ByVal Connection As MySql.Data.MySqlClient.MySqlConnection, ByVal Query As String, Optional Parameters As Generic.Dictionary(Of String, Object) = Nothing)
+        Dim Command As MySql.Data.MySqlClient.MySqlCommand = Connection.CreateCommand()
+        Command.CommandText = Query
+        If Not Parameters Is Nothing Then
+            For Each Key As String In Parameters.Keys
+                Command.Parameters.AddWithValue(Key, Parameters(Key))
+            Next
+        End If
+        Command.ExecuteNonQuery()
+    End Sub
+    Public Shared Sub CreateDatabase()
+        Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
+        If Connection Is Nothing Then Return
+        'SHA1 produces 20 bytes not available in MySQL 5.1
+        'should salt the password
+        ExecuteNonQuery(Connection, "CREATE TABLE Users (UserID int NOT NULL AUTO_INCREMENT, " + _
+        "PRIMARY KEY(UserID), " + _
+        "UserName VARCHAR(15) UNIQUE, " + _
+        "Password BINARY(20), " + _
+        "EMail VARCHAR(254) UNIQUE, " + _
+        "Access int NOT NULL DEFAULT 0, " + _
+        "ActivationCode int, " + _
+        "LoginSecret int DEFAULT NULL, " + _
+        "LoginTime TIMESTAMP NULL)")
+        Connection.Close()
+    End Sub
+    Public Shared Sub RemoveDatabase()
+        Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
+        If Connection Is Nothing Then Return
+        Dim Command As MySql.Data.MySqlClient.MySqlCommand = Connection.CreateCommand()
+        ExecuteNonQuery(Connection, "DROP TABLE Users")
+        Connection.Close()
+    End Sub
+    Public Shared Sub CleanupStaleActivations()
+        Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
+        If Connection Is Nothing Then Return
+        ExecuteNonQuery(Connection, "DELETE FROM Users WHERE ActivationCode IS NOT NULL AND (LoginTime IS NULL OR UTC_TIMESTAMP > TIMESTAMPADD(DAY, 10, LoginTime))")
+        Connection.Close()
+    End Sub
+    Public Shared Sub CleanupStaleLoginSessions()
+        Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
+        If Connection Is Nothing Then Return
+        ExecuteNonQuery(Connection, "UPDATE Users SET LoginSecret=NULL, LoginTime=NULL WHERE ActivationCode IS NOT NULL AND (LoginTime IS NOT NULL AND UTC_TIMESTAMP > TIMESTAMPADD(HOUR, 1, LoginTime))")
+        Connection.Close()
+    End Sub
+    Public Shared Sub AddUser(ByVal UserName As String, ByVal Password As String, ByVal EMail As String)
+        Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
+        If Connection Is Nothing Then Return
+        Dim Generator As New System.Random()
+        ExecuteNonQuery(Connection, "INSERT INTO Users (UserName, Password, EMail, ActivationCode, LoginTime) VALUES (@UserName, UNHEX(SHA1(@Password)), @EMail, @Code, UTC_TIMESTAMP)", _
+                        New Generic.Dictionary(Of String, Object) From {{"@UserName", UserName}, {"@Password", Password}, {"@EMail", EMail}, {"@Code", CStr(Generator.Next(0, 99999999))}})
+        Connection.Close()
+    End Sub
+    Public Shared Function GetUserID(ByVal UserName As String, ByVal Password As String) As Integer
+        Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
+        If Connection Is Nothing Then Return -1
+        Dim Command As MySql.Data.MySqlClient.MySqlCommand = Connection.CreateCommand()
+        Command.CommandText = "SELECT UserID FROM Users WHERE UserName=@UserName AND Password=UNHEX(SHA1(@Password))"
+        Command.Parameters.AddWithValue("@UserName", UserName)
+        Command.Parameters.AddWithValue("@Password", Password)
+        Dim Reader As MySql.Data.MySqlClient.MySqlDataReader = Command.ExecuteReader()
+        If Reader.Read() AndAlso Not Reader.IsDBNull(0) Then
+            GetUserID = Reader.GetInt32("UserID")
+        Else
+            GetUserID = -1
+        End If
+        Reader.Close()
+        Connection.Close()
+    End Function
+    Public Shared Function GetUserID(ByVal UserName As String) As Integer
+        Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
+        If Connection Is Nothing Then Return -1
+        Dim Command As MySql.Data.MySqlClient.MySqlCommand = Connection.CreateCommand()
+        Command.CommandText = "SELECT UserID FROM Users WHERE UserName=@UserName"
+        Command.Parameters.AddWithValue("@UserName", UserName)
+        Dim Reader As MySql.Data.MySqlClient.MySqlDataReader = Command.ExecuteReader()
+        If Reader.Read() AndAlso Not Reader.IsDBNull(0) Then
+            GetUserID = Reader.GetInt32("UserID")
+        Else
+            GetUserID = -1
+        End If
+        Reader.Close()
+        Connection.Close()
+    End Function
+    Public Shared Function GetUserIDByEMail(ByVal EMail As String) As Integer
+        Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
+        If Connection Is Nothing Then Return -1
+        Dim Command As MySql.Data.MySqlClient.MySqlCommand = Connection.CreateCommand()
+        Command.CommandText = "SELECT UserID FROM Users WHERE EMail=@EMail"
+        Command.Parameters.AddWithValue("@EMail", EMail)
+        Dim Reader As MySql.Data.MySqlClient.MySqlDataReader = Command.ExecuteReader()
+        If Reader.Read() AndAlso Not Reader.IsDBNull(0) Then
+            GetUserIDByEMail = Reader.GetInt32("UserID")
+        Else
+            GetUserIDByEMail = -1
+        End If
+        Reader.Close()
+        Connection.Close()
+    End Function
+    Public Shared Function GetUserResetCode(ByVal UserID As Integer) As UInteger
+        Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
+        If Connection Is Nothing Then Return &HFFFFFFFFL
+        Dim Command As MySql.Data.MySqlClient.MySqlCommand = Connection.CreateCommand()
+        Command.CommandText = "SELECT CRC32(Password) FROM Users WHERE UserID=" + CStr(UserID)
+        Dim Reader As MySql.Data.MySqlClient.MySqlDataReader = Command.ExecuteReader()
+        If Reader.Read() AndAlso Not Reader.IsDBNull(0) Then
+            GetUserResetCode = Reader.GetUInt32("CRC32(Password)")
+        Else
+            GetUserResetCode = &HFFFFFFFFL
+        End If
+        Reader.Close()
+        Connection.Close()
+    End Function
+    Public Shared Function CheckLogin(ByVal UserID As Integer, ByVal Secret As Integer) As Boolean
+        Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
+        If Connection Is Nothing Then Return False
+        Dim Command As MySql.Data.MySqlClient.MySqlCommand = Connection.CreateCommand()
+        Command.CommandText = "SELECT UserID FROM Users WHERE UserID=" + CStr(UserID) + " AND ActivationCode IS NULL AND LoginSecret=" + CStr(Secret) + CStr(IIf(Secret Mod 2 = 0, " AND LoginTime IS NULL", " AND LoginTime IS NOT NULL AND UTC_TIMESTAMP < TIMESTAMPADD(HOUR, 1, LoginTime)"))
+        Dim Reader As MySql.Data.MySqlClient.MySqlDataReader = Command.ExecuteReader()
+        If Reader.Read() AndAlso Not Reader.IsDBNull(0) Then
+            CheckLogin = CInt(Reader.Item("UserID")) = UserID
+        Else
+            CheckLogin = False
+        End If
+        Reader.Close()
+        Connection.Close()
+    End Function
+    Public Shared Function CheckAccess(ByVal UserID As Integer) As Integer
+        Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
+        If Connection Is Nothing Then Return 0
+        Dim Command As MySql.Data.MySqlClient.MySqlCommand = Connection.CreateCommand()
+        Command.CommandText = "SELECT Access FROM Users WHERE UserID=" + CStr(UserID)
+        Dim Reader As MySql.Data.MySqlClient.MySqlDataReader = Command.ExecuteReader()
+        If Reader.Read() AndAlso Not Reader.IsDBNull(0) Then
+            CheckAccess = CInt(Reader.Item("Access"))
+        Else
+            CheckAccess = 0
+        End If
+        Reader.Close()
+        Connection.Close()
+    End Function
+    Public Shared Function SetLogin(ByVal UserID As Integer, ByVal Persist As Boolean) As Integer
+        Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
+        If Connection Is Nothing Then Return -1
+        Dim Generator As New System.Random()
+        'Persistant login secret is even, non-persistant is odd
+        SetLogin = (Generator.Next(0, 99999999) \ 2) * 2 + CInt(IIf(Persist, 0, 1))
+        ExecuteNonQuery(Connection, "UPDATE Users SET LoginSecret=" + CStr(SetLogin) + ", LoginTime=" + CStr(IIf(Persist, "NULL", "UTC_TIMESTAMP")) + " WHERE UserID=" + CStr(UserID))
+        Connection.Close()
+    End Function
+    Public Shared Sub ClearLogin(ByVal UserID As Integer)
+        Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
+        If Connection Is Nothing Then Return
+        ExecuteNonQuery(Connection, "UPDATE Users SET LoginSecret=NULL, LoginTime=NULL WHERE UserID=" + CStr(UserID))
+        Connection.Close()
+    End Sub
+    Public Shared Function GetUserActivated(ByVal UserID As Integer) As Integer
+        Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
+        If Connection Is Nothing Then Return -1
+        Dim Command As MySql.Data.MySqlClient.MySqlCommand = Connection.CreateCommand()
+        Command.CommandText = "SELECT ActivationCode FROM Users WHERE UserID=" + CStr(UserID)
+        Dim Reader As MySql.Data.MySqlClient.MySqlDataReader = Command.ExecuteReader()
+        'If Reader.IsDBNull(0) Then Return -1 'NULL is activated
+        If Not Reader.Read() OrElse Reader.IsDBNull(0) Then
+            GetUserActivated = -1 'NULL is activated
+        Else
+            GetUserActivated = Reader.GetInt32("ActivationCode")
+        End If
+        Reader.Close()
+        Connection.Close()
+    End Function
+    Public Shared Function GetUserName(ByVal UserID As Integer) As String
+        Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
+        If Connection Is Nothing Then Return String.Empty
+        Dim Command As MySql.Data.MySqlClient.MySqlCommand = Connection.CreateCommand()
+        Command.CommandText = "SELECT UserName FROM Users WHERE UserID=" + CStr(UserID)
+        Dim Reader As MySql.Data.MySqlClient.MySqlDataReader = Command.ExecuteReader()
+        If Reader.Read() AndAlso Not Reader.IsDBNull(0) Then
+            GetUserName = Reader.GetString("UserName")
+        Else
+            GetUserName = String.Empty
+        End If
+        Reader.Close()
+        Connection.Close()
+    End Function
+    Public Shared Function GetUserEMail(ByVal UserID As Integer) As String
+        Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
+        If Connection Is Nothing Then Return String.Empty
+        Dim Command As MySql.Data.MySqlClient.MySqlCommand = Connection.CreateCommand()
+        Command.CommandText = "SELECT EMail FROM Users WHERE UserID=" + CStr(UserID)
+        Dim Reader As MySql.Data.MySqlClient.MySqlDataReader = Command.ExecuteReader()
+        If Reader.Read() AndAlso Not Reader.IsDBNull(0) Then
+            GetUserEMail = Reader.GetString("EMail")
+        Else
+            GetUserEMail = String.Empty
+        End If
+        Reader.Close()
+        Connection.Close()
+    End Function
+    Public Shared Sub ChangeUserName(ByVal UserID As Integer, ByVal UserName As String)
+        Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
+        If Connection Is Nothing Then Return
+        ExecuteNonQuery(Connection, "UPDATE Users SET UserName=@UserName WHERE UserID=" + CStr(UserID), New Generic.Dictionary(Of String, Object) From {{"@UserName", UserName}})
+        Connection.Close()
+    End Sub
+    Public Shared Sub ChangeUserPassword(ByVal UserID As Integer, ByVal Password As String)
+        Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
+        If Connection Is Nothing Then Return
+        ExecuteNonQuery(Connection, "UPDATE Users SET Password=UNHEX(SHA1(@Password)) WHERE UserID=" + CStr(UserID), New Generic.Dictionary(Of String, Object) From {{"@Password", Password}})
+        Connection.Close()
+    End Sub
+    Public Shared Sub ChangeUserEMail(ByVal UserID As Integer, ByVal EMail As String)
+        Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
+        If Connection Is Nothing Then Return
+        Dim Generator As New System.Random()
+        ExecuteNonQuery(Connection, "UPDATE Users SET EMail=@EMail, ActivationCode='" + CStr(Generator.Next(0, 99999999)) + "' WHERE UserID=" + CStr(UserID), New Generic.Dictionary(Of String, Object) From {{"@EMail", EMail}})
+        Connection.Close()
+    End Sub
+    Public Shared Sub SetUserActivated(ByVal UserID As Integer)
+        Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
+        If Connection Is Nothing Then Return
+        Dim Generator As New System.Random()
+        ExecuteNonQuery(Connection, "UPDATE Users SET ActivationCode=NULL, LoginTime=NULL WHERE UserID=" + CStr(UserID))
+        Connection.Close()
+    End Sub
+    Public Shared Sub RemoveUser(ByVal UserID As Integer)
+        Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
+        If Connection Is Nothing Then Return
+        ExecuteNonQuery(Connection, "DELETE FROM Users WHERE UserID=" + CStr(UserID))
+        Connection.Close()
+    End Sub
+End Class

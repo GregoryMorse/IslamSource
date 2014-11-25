@@ -1064,7 +1064,7 @@ Public Class Arabic
             "function changeScript(sVal, scriptType) {}", _
             "var arabicLeadingGutterals = " + Utility.MakeJSArray(ArabicData.ArabicLeadingGutterals) + ";", _
             "function getSchemeGutteralFromString(str, scheme, leading) { if (arabicLeadingGutterals.indexOf(str) !== -1) { return translitSchemes[scheme].gutteral[arabicLeadingGutterals.indexOf(str) + " + CStr(ArabicData.ArabicVowels.Length) + " + (leading ? arabicLeadingGutterals.length : 0)]; } return ''; }", _
-            "function ArabicLetterSpelling(sVal) { var count, index, output = ''; for (count = 0; count < sVal.length; count++) { index = findLetterBySymbol(sVal.charCodeAt(count)); if (index !== -1 && isLetter(index)) { if (output !== '') output += ' '; output += arabicLetters[index].SymbolName; } else if (index !== -1 && arabicLetters[index].Symbol === 1619) { output += sVal.charCodeAt(count); } } return doTransliterate(output, false, 1); }", _
+            "function arabicLetterSpelling(sVal) { var count, index, output = ''; for (count = 0; count < sVal.length; count++) { index = findLetterBySymbol(sVal.charCodeAt(count)); if (index !== -1 && isLetter(index)) { if (output !== '') output += ' '; output += arabicLetters[index].SymbolName; } else if (index !== -1 && arabicLetters[index].Symbol === 1619) { output += sVal.charCodeAt(count); } } return doTransliterate(output, false, 1); }", _
             "String.prototype.format = function() { var formatted = this; for (var i = 0; i < arguments.length; i++) { formatted = formatted.replace(new RegExp('\\{'+i+'\\}', 'gi'), arguments[i]); } return formatted; };", _
             "RegExp.matchResult = function(subexp, match, offset, str) { var args = arguments; return subexp.replace(/\$(\$|&|`|\'|[0-9]+)/g, function(m, p) { if (p === '$') return '$'; if (p === '`') return str.slice(0, offset); if (p === '\'') return str.slice(offset + match.length); if (p === '&' || parseInt(p, 10) <= 0 || parseInt(p, 10) >= args.length - 3) return match; return args[3 + parseInt(p, 10)]; }); };", _
             "var ruleFunctions = [function(str, scheme) { return [str.toUpperCase()]; }, function(str, scheme) { return [transliterateWithRules(doTransliterate(arabicWordFromNumber(parseInt(doTransliterate(str, true, 1), 10), true, false, false), false, 1), scheme)]; }, function(str, scheme) { return [arabicLetterSpelling(str)]; }, function(str, scheme) { return [translitSchemes[scheme.toString()].standard[str]]; }, function(str, scheme) { return [translitSchemes[scheme.toString()].standard[str]]; }, function(str, scheme) { return [" + Utility.MakeJSArray(ArabicData.ArabicFathaDammaKasra) + "[" + Utility.MakeJSArray(ArabicData.ArabicTanweens) + ".indexOf(str)], '" + ArabicData.ArabicLetterNoon + "']; }, function (str, scheme) { return ['', '']; }, function (str, scheme) { return ['']; }, function (str, scheme) { return [getSchemeGutteralFromString(str.slice(0, -1), scheme, true) + str[str.length - 1]]; }, function(str, scheme) { return [str[0] + getSchemeGutteralFromString(str.slice(1), scheme, false)]; }];", _
@@ -1147,7 +1147,7 @@ Public Class Arabic
     End Function
     Public Shared Function GetChangeTransliterationJS() As String()
         Dim GetJS As New List(Of String) From {"javascript: changeTransliteration();", String.Empty, Utility.GetLookupStyleSheetJS(), GetArabicSymbolJSArray(), GetTranslitSchemeJSArray(), _
-        "function changeTransliteration() { var k, child, iSubCount, text; $('span.transliteration').each(function() { $(this).css('display', $('#translitscheme').val() === '0' ? 'none' : 'block'); }); for (k in renderList) { text = ''; for (child in renderList[k]['children']) { for (iSubCount = 0; iSubCount < renderList[k]['children'][child]['arabic'].length; iSubCount++) { if ($('#translitscheme').val() !== '0' && $('#translitscheme').val() !== '1' && renderList[k]['children'][child]['arabic'][iSubCount] !== '') && renderList[k]['children'][child]['translit'][iSubCount] !== '') { if (text !== '') text += ' '; text += $('#' + renderList[k]['children'][child]['arabic'][iSubCount]).text(); } else { if (renderList[k]['children'][child]['translit'][iSubCount] !== '') $('#' + renderList[k]['children'][child]['translit'][iSubCount]).text(($('#translitscheme').val() === '0' || renderList[k]['children'][child]['arabic'][iSubCount] === '') ? '' : doTransliterate($('#' + renderList[k]['children'][child]['arabic'][iSubCount]).text(), true, parseInt($('#translitscheme').val(), 10))); } } } if ($('#translitscheme').val() !== '0' && $('#translitscheme').val() !== '1') { text = transliterateWithRules(text, Math.floor((parseInt($('#translitscheme').val(), 10) - 2) / 2) + 2).split(' '); for (child in renderList[k]['children']) { for (iSubCount = 0; iSubCount < renderList[k]['children'][child]['translit'].length; iSubCount++) { if (renderList[k]['children'][child]['translit'][iSubCount] !== '') $('#' + renderList[k]['children'][child]['translit'][iSubCount]).text(text.shift()); } } } for (iSubCount = 0; iSubCount < renderList[k]['arabic'].length; iSubCount++) { if (renderList[k]['translit'][iSubCount] !== '') $('#' + renderList[k]['translit'][iSubCount]).text(($('#translitscheme').val() === '0' || renderList[k]['arabic'][iSubCount] === '') ? '' : (($('#translitscheme').val() !== '0' && $('#translitscheme').val() !== '1') ? transliterateWithRules($('#' + renderList[k]['arabic'][iSubCount]).text(), parseInt($('#translitscheme').val(), 10) >= 2 ? Math.floor((parseInt($('#translitscheme').val(), 10) - 2) / 2) + 2 : parseInt($('#translitscheme').val(), 10)) : doTransliterate($('#' + renderList[k]['arabic'][iSubCount]).text(), true, parseInt($('#translitscheme').val(), 10)))); } } }"}
+        "function changeTransliteration() { var k, child, iSubCount, text; $('span.transliteration').each(function() { $(this).css('display', $('#translitscheme').val() === '0' ? 'none' : 'block'); }); for (k in renderList) { text = ''; for (child in renderList[k]['children']) { for (iSubCount = 0; iSubCount < renderList[k]['children'][child]['arabic'].length; iSubCount++) { if ($('#translitscheme').val() !== '0' && $('#translitscheme').val() !== '1' && renderList[k]['children'][child]['arabic'][iSubCount] !== '' && renderList[k]['children'][child]['translit'][iSubCount] !== '') { if (text !== '') text += ' '; text += $('#' + renderList[k]['children'][child]['arabic'][iSubCount]).text(); } else { if (renderList[k]['children'][child]['translit'][iSubCount] !== '') $('#' + renderList[k]['children'][child]['translit'][iSubCount]).text(($('#translitscheme').val() === '0' || renderList[k]['children'][child]['arabic'][iSubCount] === '') ? '' : doTransliterate($('#' + renderList[k]['children'][child]['arabic'][iSubCount]).text(), true, parseInt($('#translitscheme').val(), 10))); } } } if ($('#translitscheme').val() !== '0' && $('#translitscheme').val() !== '1') { text = transliterateWithRules(text, Math.floor((parseInt($('#translitscheme').val(), 10) - 2) / 2) + 2).split(' '); for (child in renderList[k]['children']) { for (iSubCount = 0; iSubCount < renderList[k]['children'][child]['translit'].length; iSubCount++) { if (renderList[k]['children'][child]['translit'][iSubCount] !== '') $('#' + renderList[k]['children'][child]['translit'][iSubCount]).text(text.shift()); } } } for (iSubCount = 0; iSubCount < renderList[k]['arabic'].length; iSubCount++) { if (renderList[k]['translit'][iSubCount] !== '') $('#' + renderList[k]['translit'][iSubCount]).text(($('#translitscheme').val() === '0' || renderList[k]['arabic'][iSubCount] === '') ? '' : (($('#translitscheme').val() !== '0' && $('#translitscheme').val() !== '1') ? transliterateWithRules($('#' + renderList[k]['arabic'][iSubCount]).text(), parseInt($('#translitscheme').val(), 10) >= 2 ? Math.floor((parseInt($('#translitscheme').val(), 10) - 2) / 2) + 2 : parseInt($('#translitscheme').val(), 10)) : doTransliterate($('#' + renderList[k]['arabic'][iSubCount]).text(), true, parseInt($('#translitscheme').val(), 10)))); } } }"}
         GetJS.AddRange(PlainTransliterateGenJS)
         GetJS.AddRange(TransliterateGenJS)
         GetJS.AddRange(NumberGenJS)
@@ -2600,12 +2600,23 @@ Public Class DocBuilder
         ElseIf Strings.StartsWith("phrase:") Then
             Dim SelArr As String() = Strings.Replace("phrase:", String.Empty).Split(","c)
             'Arabic.DoDisplayTranslation()
-        ElseIf Strings.StartsWith("reference:") Then
-            Dim SelArr As String() = Strings.Replace("reference:", String.Empty).Split(","c)
-            'Supplications.DoGetRenderedSuppText()
+        ElseIf Strings.StartsWith("supp:") Then
+            Dim SelArr As String() = Strings.Replace("supp:", String.Empty).Split(","c)
+            For SelCount As Integer = 0 To SelArr.Length - 1
+                For Count As Integer = 0 To CachedData.IslamData.VerseCategories.Length - 1
+                    For SubCount As Integer = 0 To CachedData.IslamData.VerseCategories(Count).Verses.Length - 1
+                        If SelArr(SelCount) = CachedData.IslamData.VerseCategories(Count).Verses(SubCount).TranslationID Then
+                            Renderer.Items.AddRange(Supplications.DoGetRenderedVerseText(SchemeType, Scheme, CachedData.IslamData.VerseCategories(Count).Verses(SubCount), TranslationIndex))
+                        End If
+                    Next
+                Next
+            Next
         ElseIf Array.IndexOf(CachedData.IslamData.Abbreviations, Strings) <> 0 Then
+        ElseIf Strings.StartsWith("reference:") Then
+            Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eHeaderCenter, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, "(" + Strings.Replace("reference:", String.Empty) + ")")}))
+            'ElseIf Strings.StartsWith("text:") Then
         Else
-            Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eHeaderCenter, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, "(" + Strings + ")")}))
+                Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, Strings)}))
         End If
         Return Renderer
     End Function
@@ -2621,10 +2632,13 @@ Public Class Supplications
         If Count = -1 Then Count = 0
         Return DoGetRenderedSuppText(SchemeType, Scheme, CachedData.IslamData.VerseCategories(Count), TanzilReader.GetTranslationIndex(HttpContext.Current.Request.QueryString.Get("qurantranslation")))
     End Function
+    Public Shared Function DoGetRenderedVerseText(SchemeType As ArabicData.TranslitScheme, Scheme As String, Verse As IslamData.VerseCategory.Verse, TranslationIndex As Integer) As List(Of RenderArray.RenderItem)
+        Return DocBuilder.BuckwalterTextFromReferences(SchemeType, Scheme, Verse.Arabic, Verse.TranslationID, TranslationIndex).Items
+    End Function
     Public Shared Function DoGetRenderedSuppText(SchemeType As ArabicData.TranslitScheme, Scheme As String, Category As IslamData.VerseCategory, TranslationIndex As Integer) As RenderArray
         Dim Renderer As New RenderArray
         For SubCount As Integer = 0 To Category.Verses.Length - 1
-            Renderer.Items.AddRange(DocBuilder.BuckwalterTextFromReferences(SchemeType, Scheme, Category.Verses(SubCount).Arabic, Category.Verses(SubCount).TranslationID, TranslationIndex).Items)
+            Renderer.Items.AddRange(DoGetRenderedVerseText(SchemeType, Scheme, Category.Verses(SubCount), TranslationIndex))
         Next
         Return Renderer
     End Function
@@ -3517,6 +3531,10 @@ Public Class TanzilReader
                 ExtraVerseNumber = EndChapter
                 EndChapter = 0
             End If
+            If BaseVerse = 0 Then
+                BaseVerse += 1
+                ExtraVerseNumber = GetTextChapter(CachedData.XMLDocMain, BaseChapter).ChildNodes.Count
+            End If
             If WordNumber = 0 Then WordNumber += 1
             Renderer.Items.AddRange(DoGetRenderedQuranText(QuranTextRangeLookup(BaseChapter, BaseVerse, WordNumber, EndChapter, ExtraVerseNumber, EndWordNumber), BaseChapter, BaseVerse, CachedData.IslamData.Translations.TranslationList(TranslationIndex).Name, SchemeType, Scheme, TranslationIndex).Items)
             Reference = CStr(BaseChapter) + If(BaseVerse <> 0, ":" + CStr(BaseVerse), String.Empty) + If(EndChapter <> 0, "-" + CStr(EndChapter) + If(ExtraVerseNumber <> 0, ":" + CStr(ExtraVerseNumber), String.Empty), If(ExtraVerseNumber <> 0, "-" + CStr(ExtraVerseNumber), String.Empty))
@@ -3716,7 +3734,7 @@ Public Class TanzilReader
                             Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Node.Value + " "), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, Arabic.TransliterateToScheme(Node.Value, SchemeType, Scheme).Trim()), New RenderArray.RenderText(DirectCast(IIf(IsTranslationTextLTR(TranslationIndex), RenderArray.RenderDisplayClass.eLTR, RenderArray.RenderDisplayClass.eRTL), RenderArray.RenderDisplayClass), TanzilReader.GetTranslationVerse(Lines, 1, 1))}))
                         End If
                     End If
-                    Dim Words As String() = QuranText(Chapter)(Verse).Split(" "c)
+                    Dim Words As String() = If(QuranText(Chapter)(Verse) Is Nothing, {}, QuranText(Chapter)(Verse).Split(" "c))
                     Dim TranslitWords As String() = Arabic.TransliterateToScheme(QuranText(Chapter)(Verse), SchemeType, Scheme).Split(" "c)
                     Dim PauseMarks As Integer = 0
                     For Count As Integer = 0 To Words.Length - 1
@@ -3763,7 +3781,13 @@ Public Class TanzilReader
         If EndVerse = -1 Then EndVerse = GetTextChapter(XMLDocMain, Chapter).ChildNodes.Count 'GetVerseCount(Chapter)
         Dim Verses(EndVerse - StartVerse) As String
         For Count = StartVerse To EndVerse
-            Verses(Count - StartVerse) = GetTextVerse(GetTextChapter(XMLDocMain, Chapter), Count).Attributes.GetNamedItem("text").Value
+            Dim VerseNode As Xml.XmlNode = GetTextVerse(GetTextChapter(XMLDocMain, Chapter), Count)
+            If Not VerseNode Is Nothing Then
+                Dim AttrNode As Xml.XmlNode = VerseNode.Attributes.GetNamedItem("text")
+                If Not AttrNode Is Nothing Then
+                    Verses(Count - StartVerse) = AttrNode.Value
+                End If
+            End If
         Next
         Return Verses
     End Function
