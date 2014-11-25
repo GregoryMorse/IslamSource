@@ -10,7 +10,7 @@ Public Class frmMain
         'TanzilReader.CompareQuranFormats(TanzilReader.QuranTexts.Hafs, TanzilReader.QuranTexts.Warsh, TanzilReader.QuranScripts.Uthmani, TanzilReader.ArabicPresentation.Buckwalter)
         'TanzilReader.ChangeQuranFormat(TanzilReader.QuranTexts.Hafs, TanzilReader.QuranTexts.Warsh, TanzilReader.QuranScripts.Uthmani, TanzilReader.ArabicPresentation.Buckwalter)
         'TanzilReader.CheckNotablePatterns()
-        'CachedData.DoErrorCheck()
+        CachedData.DoErrorCheck()
         Dim RenderArr As RenderArray = Supplications.DoGetRenderedSuppText(ArabicData.TranslitScheme.RuleBased, "PlainRoman", CachedData.IslamData.VerseCategories(0), 0)
         'HostPageUtility.RenderArray.OutputPdf("test.pdf", RenderArr.Items)
         For Index = 0 To PageSet.Pages.Count - 1
