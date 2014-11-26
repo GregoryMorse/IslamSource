@@ -2216,40 +2216,38 @@ Public Class RenderArray
         Return CharPosInfos.ToArray()
     End Function
     Public Shared Sub DoRenderPdf(Doc As iTextSharp.text.Document, Writer As iTextSharp.text.pdf.PdfWriter, Font As iTextSharp.text.Font, DrawFont As Drawing.Font, Forms As Char(), CurRenderArray As List(Of HostPageUtility.RenderArray.RenderItem), _Bounds As Generic.List(Of Generic.List(Of Generic.List(Of LayoutInfo))), ByRef PageOffset As PointF, BaseOffset As PointF)
+        Dim RowTop As Single = Single.NaN
         For Count As Integer = 0 To CurRenderArray.Count - 1
             Dim MaxRect As New RectangleF(Doc.PageSize.Width, Doc.PageSize.Height, 0, 0)
-            For SubCount As Integer = 0 To CurRenderArray(Count).TextItems.Length - 1
-                If CurRenderArray(Count).TextItems(SubCount).DisplayClass = RenderArray.RenderDisplayClass.eNested Then Continue For
-                Dim NextCount As Integer
-                For NextCount = 0 To _Bounds(Count)(SubCount).Count - 1
-                    If _Bounds(Count)(SubCount)(NextCount).Rect.Top + PageOffset.Y + BaseOffset.Y > Doc.PageSize.Height - Doc.BottomMargin - Doc.TopMargin Then
-                        Writer.DirectContent.SetLineWidth(1)
-                        Writer.DirectContent.Rectangle(MaxRect.Left + Doc.LeftMargin - 2, Doc.PageSize.Height - Doc.TopMargin - MaxRect.Bottom + Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size) * 2, MaxRect.Width - 2, MaxRect.Height - Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size) * 2)
-                        Writer.DirectContent.Stroke()
-                        MaxRect = New RectangleF(Doc.PageSize.Width, Doc.PageSize.Height, 0, 0)
-                        Doc.NewPage()
-                        PageOffset.Y = -_Bounds(Count)(0)(0).Rect.Top - BaseOffset.Y
-                        Exit For
-                    End If
-                Next
-                If NextCount <> _Bounds(Count)(SubCount).Count Then Exit For
-            Next
             For SubCount As Integer = 0 To CurRenderArray(Count).TextItems.Length - 1
                 If CurRenderArray(Count).TextItems(SubCount).DisplayClass = RenderArray.RenderDisplayClass.eNested Then
                     DoRenderPdf(Doc, Writer, Font, DrawFont, Forms, CType(CurRenderArray(Count).TextItems(SubCount).Text, List(Of RenderArray.RenderItem)), _Bounds(Count)(SubCount)(0).Bounds, PageOffset, New PointF(_Bounds(Count)(SubCount)(0).Rect.Location.X, _Bounds(Count)(SubCount)(0).Rect.Location.Y))
                 ElseIf CurRenderArray(Count).TextItems(SubCount).DisplayClass = RenderArray.RenderDisplayClass.eArabic Or CurRenderArray(Count).TextItems(SubCount).DisplayClass = HostPageUtility.RenderArray.RenderDisplayClass.eLTR Or CurRenderArray(Count).TextItems(SubCount).DisplayClass = RenderArray.RenderDisplayClass.eRTL Or CurRenderArray(Count).TextItems(SubCount).DisplayClass = RenderArray.RenderDisplayClass.eTransliteration Then
+                    If _Bounds(Count)(SubCount).Count <> 0 AndAlso RowTop <> _Bounds(Count)(SubCount)(0).Rect.Top Then
+                        For TestCount As Integer = Count To CurRenderArray.Count - 1
+                            If Count = TestCount Then RowTop = _Bounds(TestCount)(SubCount)(0).Rect.Top
+                            If Count = TestCount AndAlso CurRenderArray(TestCount).TextItems(SubCount).DisplayClass = RenderDisplayClass.eNested Then Exit For
+                            If Count <> TestCount AndAlso _Bounds(TestCount)(0).Count <> 0 AndAlso RowTop <> _Bounds(TestCount)(0)(0).Rect.Top Then Exit For
+                            Dim TestSubCount As Integer
+                            For TestSubCount = If(Count = TestCount, SubCount, 0) To CurRenderArray(TestCount).TextItems.Length - 1
+                                Dim NextCount As Integer
+                                For NextCount = 0 To _Bounds(TestCount)(TestSubCount).Count - 1
+                                    If _Bounds(TestCount)(TestSubCount)(NextCount).Rect.Top + PageOffset.Y + BaseOffset.Y > Doc.PageSize.Height - Doc.BottomMargin - Doc.TopMargin Then
+                                        Writer.DirectContent.SetLineWidth(1)
+                                        Writer.DirectContent.Rectangle(MaxRect.Left + Doc.LeftMargin - 2, Doc.PageSize.Height - Doc.TopMargin - MaxRect.Bottom + Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size) * 2, MaxRect.Width - 2, MaxRect.Height - Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size) * 2)
+                                        Writer.DirectContent.Stroke()
+                                        MaxRect = New RectangleF(Doc.PageSize.Width, Doc.PageSize.Height, 0, 0)
+                                        Doc.NewPage()
+                                        PageOffset.Y = -_Bounds(Count)(SubCount)(0).Rect.Top - BaseOffset.Y
+                                        Exit For
+                                    End If
+                                Next
+                                If NextCount <> _Bounds(TestCount)(TestSubCount).Count Then Exit For
+                            Next
+                            If TestSubCount <> CurRenderArray(TestCount).TextItems.Length Then Exit For
+                        Next
+                    End If
                     Dim theText As String = CStr(CurRenderArray(Count).TextItems(SubCount).Text)
-                    For NextCount As Integer = 0 To _Bounds(Count)(SubCount).Count - 1
-                        If _Bounds(Count)(SubCount)(NextCount).Rect.Top + PageOffset.Y + BaseOffset.Y > Doc.PageSize.Height - Doc.BottomMargin - Doc.TopMargin Then
-                            Writer.DirectContent.SetLineWidth(1)
-                            Writer.DirectContent.Rectangle(MaxRect.Left + Doc.LeftMargin - 2, Doc.PageSize.Height - Doc.TopMargin - MaxRect.Bottom + Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size) * 2, MaxRect.Width - 2, MaxRect.Height - Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size) * 2)
-                            Writer.DirectContent.Stroke()
-                            MaxRect = New RectangleF(Doc.PageSize.Width, Doc.PageSize.Height, 0, 0)
-                            Doc.NewPage()
-                            PageOffset.Y = -_Bounds(Count)(SubCount)(0).Rect.Top - BaseOffset.Y
-                            Exit For
-                        End If
-                    Next
                     For NextCount As Integer = 0 To _Bounds(Count)(SubCount).Count - 1
                         Dim Rect As RectangleF = _Bounds(Count)(SubCount)(NextCount).Rect
                         Dim Text As String = theText.Substring(0, _Bounds(Count)(SubCount)(NextCount).nChar)
