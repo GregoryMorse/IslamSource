@@ -359,8 +359,8 @@
 		<arabicsymbol symbolname="&gt;alifN xanjariyapN" uname="ArabicLetterSuperscriptAlef" symbol="0670" ipavalue="a:" extendedbuckwalter="96" terminating="false" connecting="false" assimilate="false" />
 		<arabicsymbol symbolname="&gt;alifN hamozapN waSolN" uname="ArabicLetterAlefWasla" symbol="0671" shaping="FB50,FB51,," ipavalue="" extendedbuckwalter="123" terminating="true" connecting="true" assimilate="false" />
 		<arabicsymbol symbolname="nuwnN gun~apN" uname="ArabicLetterNoonGhunna" symbol="06BA" shaping="FB9E,FB9F,," ipavalue="n" extendedbuckwalter="0" terminating="false" connecting="true" assimilate="true" />
-		<arabicsymbol symbolname="yaA^&apos;N bar~iyN" uname="ArabicLetterYehBarree" symbol="06D2" shaping="FBAE,FBAF,," ipavalue="j" extendedbuckwalter="0" terminating="false" connecting="true" assimilate="true" />
-		<arabicsymbol symbolname="yaA^&apos;N bar~iyN hamozapN" uname="ArabicLetterYehBarreeWithHamzaAbove" symbol="06D3" shaping="FBB0,FBB1,," ipavalue="?" extendedbuckwalter="0" terminating="false" connecting="true" assimilate="true" />		
+		<arabicsymbol symbolname="yaA^&apos;N bar~iYN" uname="ArabicLetterYehBarree" symbol="06D2" shaping="FBAE,FBAF,," ipavalue="j" extendedbuckwalter="0" terminating="false" connecting="true" assimilate="true" />
+		<arabicsymbol symbolname="yaA^&apos;N bar~iYN hamozapN" uname="ArabicLetterYehBarreeWithHamzaAbove" symbol="06D3" shaping="FBB0,FBB1,," ipavalue="?" extendedbuckwalter="0" terminating="false" connecting="true" assimilate="true" />		
 		<arabicsymbol symbolname="&lt;imaAlapN" uname="Bullet" symbol="2022" shaping="" ipavalue="" extendedbuckwalter="85" terminating="false" connecting="true" assimilate="true" />
 		<!-- ARABIC VOWEL SIGN DOT LEFT not yet in Unicode - Instead of bullet can use combining symbol in wrong character range: 302E Hangul single dot tone mark
 			 ARABIC VOWEL SIGN DOT BELOW LEFT not yet in Unicode
