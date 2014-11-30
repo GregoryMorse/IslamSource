@@ -1703,6 +1703,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="jihaAdN" id="Fight"></word>
 			<word text="mujaAhidN" id="Fighter"></word>
 			<word text="sun~apN" id="Tradition"></word>
+			<word text="sunanN" id="Collection"></word>
 			<word text="tahaj~udN" id="LateNight"></word>
 			<word text="DuHaY" id="MorningLight"></word>
 			<word text="witorN" id="Odd"></word>
@@ -1748,6 +1749,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="magaziy" id="Battles"></word>
 			<word text="buroquEN" id="VeilCoveringFaceWithTwoHolesToPermitVision"></word>
 			<word text="ximaArN" id="ShawlLikeClothCoveringHeadAndShouldersWornByMuslimWomen"></word>
+			<word text="nisaAbN" id="MinimumCharitableAmount"></word>
 			<word text="dinarN" id="GoldCoinOf2.975Grams"></word>
 			<word text="dirohamN" id="SilverOf2.975Grams"></word>
 			<word text="mivoqaAlN" id="WeightMeasureOf4.25Grams"></word>
@@ -1761,6 +1763,16 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="EibaAdapN" id="Worship"></word>
 			<word text="SawomN" id="Fasting"></word>
 			<word text="Haj~N" id="Pilgrimage"></word>
+			<word text="sidorN" id="ExtractOfLoteTrees"></word>
+			<word text="muHorimN" id="OneInAStateOfRitualConsecrationForPilgrimage"></word>
+			<word text="HijaAbN" id="ClothingCoveringAuraOfWoman"></word>
+			<word text="niqaAbN" id="FaceCoveringVeil"></word>
+			<word text="&lt;iHoraAmN" id="StateOfRitualConsecrationForPilgrimage"></word>
+			<word text="miyqaAtN" id="FixedTimesAndPlacesForEnteringStateOfRitualConsecration"></word>
+			<word text="muHal~N" id="SiteForEnteringStateOfRitualConsecration"></word>
+			<word text="tamat~uEN" id="EnteringStateOfRitualConsecrationForPerformingMinorPilgirimageFollowedByASeperateEntranceForMajorPilgrimage"></word>
+			<word text="&lt;ifraAdN" id="EnteringStateOfRitualConsecrationForPerformingMajorPilgrimage"></word>
+			<word text="qiraAnN" id="EnteringStateOfRitualConsecrationForPerformingMinorPilgirimageAndMajorPilgrimageTogether"></word>
 			<word text="quro&apos;aAnN" id="RevelationOfAllah"></word>
 			<word text="&lt;injiylN" id="Gospels"></word>
 			<word text="zabuwrN" id="Psalms"></word>
@@ -2853,6 +2865,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="tafosiyrN Eilomiy" id="ScientificExegisis"></word>
 			<word text="tafosiyrN lafoZiy" id="LiteralExegesis"></word>
 			<word text="tafosiyrN bi{loma&gt;ovuwri" id="NarrationBasedExegesis"></word>
+			<word text="tafosiyrN bi{ld~iraAyapi" id="OpinionBasedExegesis"></word>
 			<word text="tafosiyrN bi{loraA^&apos;iy~i" id="OpinionBasedExegesis"></word>
 			<word text="bi{ll~ahi" id="ISwearByAllah"></word>
 			<word text="ta{ll~ahi" id="ISwearByAllah"></word>
