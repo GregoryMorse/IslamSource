@@ -420,6 +420,11 @@
 		<arabicsymbol symbolname="yamiynN {loqawosaAnu" uname="OrnateLeftParenthesis" symbol="FD3E" ipavalue="" extendedbuckwalter="41" terminating="true" connecting="false" assimilate="false" />
 		<arabicsymbol symbolname="yasaArN {loqawosaAnu" uname="OrnateRightParenthesis" symbol="FD3F" ipavalue="" extendedbuckwalter="40" terminating="true" connecting="false" assimilate="false" />
 
+		<arabicsymbol symbolname="Sal~aY {ll~ahu Ealayohi wasalaAmo" uname="ArabicSignSallallahouAlayheWassallam" symbol="0610" ipavalue="" extendedbuckwalter="0" terminating="true" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="Ealayohi {ls~alaAmu" uname="ArabicSignAlayheAssallam" symbol="0611" ipavalue="" extendedbuckwalter="0" terminating="true" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="raHomapu {ll~ahu Ealayohi" uname="ArabicSignRahmatullahAlayhe" symbol="0612" ipavalue="" extendedbuckwalter="0" terminating="true" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="raDiYa {ll~ahu Eanohu" uname="ArabicSignRadiAllahouAnhu" symbol="0613" ipavalue="" extendedbuckwalter="0" terminating="true" connecting="false" assimilate="false" />
+
 		<arabicsymbol symbolname="Sal~aY" uname="ArabicLigatureSallaUsedAsKoranicStopSignIsolatedForm" symbol="FDF0" ipavalue="" extendedbuckwalter="0" terminating="true" connecting="false" assimilate="false" />
 		<arabicsymbol symbolname="qalaY" uname="ArabicLigatureQalaUsedAsKoranicStopSignIsolatedForm" symbol="FDF1" ipavalue="" extendedbuckwalter="0" terminating="true" connecting="false" assimilate="false" />
 		<arabicsymbol symbolname="{ll~ahu" uname="ArabicLigatureAllahIsolatedForm" symbol="FDF2" ipavalue="" extendedbuckwalter="0" terminating="true" connecting="false" assimilate="false" />
