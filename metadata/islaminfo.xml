@@ -415,7 +415,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<verse title="" text="&gt;aEuw*u bikalimaAti {ll~ahi {lt~aAm~aAti min gaDabihi waEiqaAbihi wa$ar~i EibaAdihi wamino hamazaAti {l$~ayaATiyni wa&gt;an yaHoDuruwna"></verse>
 		</category>
 		<category title="UponSeeingABadDream">
-			<verse title="" text="&gt;aEuw*u bi{ll~ahi mina {l$~ayoTaAni {lr~ajiymi"></verse>
+			<verse title="" text="\{phrase:SeekRefugeWithAllahFromSatanRejected\}"></verse>
 		</category>
 		<category title="DesperateOddPrayer">
 			<verse title="" text="{ll~ahum~a {hodiniy fiymano hadayota waEaAfiniy fiymano EaAfayota watawal~aniy fiyman tawal~ayota wabaAriko liy fiymaA^ &gt;aEoTayota waqiniy $ar~a maA qaDayota fa&lt;in~aka taqoDiy walaA yuqoDaY Ealayoka &lt;in~ahu laA ya*il~u man wa{layota walaA yaEiz~u mano EaAdayota tabaArakota rab~anaA wataEaAlayota"></verse>
@@ -447,7 +447,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<verse title="" text="{ll~ahum~a {kofiniyhim bimaA $i}ota"></verse>
 		</category>
 		<category title="ForOneAfflictedWithDoubtInFaith">
-			<verse title="" text="&gt;aEuw*u bi{ll~ahi mina {l$~ayoTaAni {lr~ajiymi"></verse>
+			<verse title="" text="\{phrase:SeekRefugeWithAllahFromSatanRejected\}"></verse>
 			<verse title="" text="&apos;aAmantu bi{ll~ahi warusulihi"></verse>
 			<verse title="" text="\{57:3\}"></verse>
 		</category>
@@ -456,7 +456,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<verse title="" text="{ll~ahum~a &lt;in~iY^ &gt;aEuw*u bika mina {loham~i wa{loHazani wa{loEajozi wa{lokasali wa{lobuxoli wa{lojuboni waDalaEi {ld~ayoni wagalabapi {lr~ijaAli"></verse>
 		</category>
 		<category title="ForOneAffectedByWhisperingsInPrayerOrSupplication">
-			<verse title="" text="&gt;aEuw*u bi{ll~ahi mina {l$~ayoTaAni {lr~ajiymi"></verse>
+			<verse title="" text="\{phrase:SeekRefugeWithAllahFromSatanRejected\}"></verse>
 		</category>
 		<category title="ForOneWhoseAffairsHaveBecomeDifficult">
 			<verse title="" text="{ll~ahum~a laA sahola &lt;il~aA maA jaEalotahu saholFA wa&gt;anta tajoEalu {loHazana &lt;i*aA $i}ota saholFA"></verse>
@@ -465,7 +465,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<verse title="" text=""></verse>
 		</category>
 		<category title="ForExpellingTheDevilAndHisWhisperings">
-			<verse title="" text="&gt;aEuw*u bi{ll~ahi mina {l$~ayoTaAni {lr~ajiymi"></verse>
+			<verse title="" text="\{phrase:SeekRefugeWithAllahFromSatanRejected\}"></verse>
 			<verse title="" text=""></verse>
 			<verse title="" text=""></verse>
 		</category>
@@ -591,7 +591,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<verse title="" text="bisomi {ll~ahi\. {ll~ahum~a jan~ibonaA {l$~ayoTaAna wajan~ibi {l$~ayoTaAna maA razaqotanaA"></verse>
 		</category>
 		<category title="WhenAngry">
-			<verse title="" text="&gt;aEuw*u bi{ll~ahi mina {l$~ayoTaAni {lr~ajiymi"></verse>
+			<verse title="" text="\{phrase:SeekRefugeWithAllahFromSatanRejected\}"></verse>
 		</category>
 		<category title="UponSeeingSomeoneInTrialOrTribulation">
 			<verse title="UponSeeingSomeoneInTrialOrTribulation1" text="{loHamodu lil~ahi {l~a*iy EaAfaAniy mim~aA {botalaAka bihi wafaD~alaniy EalaY kaviyrK mim~ano xalaqa tafoDiylFA"></verse>
@@ -1667,7 +1667,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="qadariy~apN" id="ThoseBelievingNoPredestination"></word>
 			<word text="jabariy~apN" id="ThoseBelievingNoFreedomOfChoice"></word>
 			<word text="jamaEapN" id="Congregation"></word>
-			<word text="tasoliymN" id="Delivery"></word>
+			<word text="tasoliymN" id="EndOfPrayerGreetingDelivery"></word>
 			<word text="ta$ah~udN" id="Witnessing"></word>
 			<word text="&gt;a*okaArN" id="SupplicationsAndPrayers"></word>
 			<word text="SalawaAtN" id="Invocation"></word>
@@ -1830,7 +1830,6 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="mahorN" id="Dowry"></word>
 			<word text="mutoEapN" id="TemporaryMarriage"></word>
 			<word text="&lt;ixolaASN" id="Sincerity"></word>
-			<word text="tasoliymN" id="EndOfPrayer"></word>
 			<word text="nasoxN" id="Abrogation"></word>
 			<word text="nukoxapN" id="Copy"></word>
 			<word text="naAsixN" id="Abrogating"></word>
@@ -2048,7 +2047,6 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="Diro&apos;N" id="AdditionOfSecondWifeToHousehold"></word>
 			<word text="&lt;izaArN" id=""></word>
 			<word text="ma&gt;amuwnN" id=""></word>
-			<word text="tasoliymN" id="Greeting"></word>
 			<word text="ZaAhiriyapN" id="Zaahiree"></word>
 			<word text="jariyriy" id="Jareeree"></word>
 			<word text="qunuwtN" id="DevoutnessPietyObedienceHumilityToGod"></word>
@@ -2758,18 +2756,28 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="waEalayokumu {ls~alaAmu waraHomapu {ll~ahi" id="AndUponYouBePeaceAndMercyOfAllah"></word>
 			<word text="{ls~alaAmu Ealayokumu waraHomapu {ll~ahi wabarakaAtuhu" id="PeaceBeUponYouAndMercyOfAllahAndBlessings"></word>
 			<word text="waEalayokumu {ls~alaAmu waraHomapu {ll~ahi wabarakaAtuhu" id="AndUponYouBePeaceAndMercyOfAllahAndBlessings"></word>
-			<word text="Sal~aY {ll~ahu Ealayohi wasalaAmu" id="ThePrayersOfAllahUponHimAndPeace"></word>
+			<word text="Sal~aY {ll~ahu Ealayohi wasalaAmo" id="ThePrayersOfAllahUponHimAndPeace"></word>
 			<word text="Ealayohi {ls~alaAmu" id="UponHimBePeace"></word>
-			<word text="Ealayohi &gt;alofi Salaw`pu wasalaAmu" id="UponHimOneThousandPrayersAndPeace"></word>
+			<word text="Ealayohi &gt;alofi Salaw`pu wasalaAmo" id="UponHimOneThousandPrayersAndPeace"></word>
 			<word text="&gt;aEuw*u bi{ll~ahi mina {l$~ayoTaAni {lr~ajiymi" id="SeekRefugeWithAllahFromSatanRejected"></word>
 			<word text="&lt;in $aA^&apos; {ll~ahu" id="AllahWilling"></word>
 			<word text="maA $aA^&apos; {ll~ahu" id="AllahWilledItSo"></word>
 			<word text="fiY^ &gt;amaAni {ll~ahi" id="InProtectionOfAllah"></word>
-			<word text="jazaAkumu {ll~ahu xayorFA" id="MayAllahProtectYou"></word>
-			<word text="raHimahum {ll~ahu" id="MayAllahHaveMercy"></word>
-			<word text="raDiy {ll~ahu Eanohum" id="MayAllahBePleased"></word>
-			<word text="raDiy {ll~ahu Eanohu" id="MayAllahBePleased"></word>
-			<word text="raDiy {ll~ahu EanohaA" id="MayAllahBePleased"></word>
+			<word text="jazaAkumu {ll~ahu xayorFA" id="MayAllahProtectYouAllMasculine"></word>
+			<word text="jazaAkun~a {ll~ahu xayorFA" id="MayAllahProtectYouAllFeminine"></word>
+			<word text="jazaAkumaA {ll~ahu xayorFA" id="MayAllahProtectYouBoth"></word>
+			<word text="jazaAka {ll~ahu xayorFA" id="MayAllahProtectYouMasculine"></word>
+			<word text="jazaAki {ll~ahu xayorFA" id="MayAllahProtectYouFeminine"></word>
+			<word text="raHimahumu {ll~ahu" id="MayAllahHaveMercyOnThemMasculine"></word>
+			<word text="raHimahun~a {ll~ahu" id="MayAllahHaveMercyOnThemFeminine"></word>
+			<word text="raHimahumaA {ll~ahu" id="MayAllahHaveMercyOnBothOfThem"></word>
+			<word text="raHimahu {ll~ahu" id="MayAllahHaveMercyOnHim"></word>
+			<word text="raHimahaA {ll~ahu" id="MayAllahHaveMercyOnHer"></word>
+			<word text="raDiy {ll~ahu Eanohumo" id="MayAllahBePleasedWithThemMasculine"></word>
+			<word text="raDiy {ll~ahu Eanohun~a" id="MayAllahBePleasedWithThemFeminine"></word>
+			<word text="raDiy {ll~ahu EanohumaA" id="MayAllahBePleasedWithBothOfThem"></word>
+			<word text="raDiy {ll~ahu Eanohu" id="MayAllahBePleasedWithHim"></word>
+			<word text="raDiy {ll~ahu EanohaA" id="MayAllahBePleasedWithHer"></word>
 			<word text="suboHanahu watoEaAlaY" id="GloriousAndExaltedBeHe"></word>
 			<word text="Ea*~a wajal~" id="SublimeAndMighty"></word>
 			<word text="jal~a jalaAluhu" id="MayHisGloryBeGlorified"></word>
@@ -2778,7 +2786,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="baAraka {ll~ahu" id="BlessingsOfAllah"></word>
 			<word text="Sadaqu {ll~ahu {loEaZiym" id="AllahSaysTheTruth"></word>
 			<word text="fiY sabiyli {ll~ahi" id="InThePathOfAllah"></word>
-			<word text="&lt;in~aA lil~ahi wa&lt;in~aA^ &lt;ilayohi raAjiEuwn" id="TrulyFromAllahWeComeAndToHimWillReturn"></word>
+			<word text="&lt;in~aA lil~ahi wa&lt;in~aA^ &lt;ilayohi raAjiEuwno" id="TrulyFromAllahWeComeAndToHimWillReturn"></word>
 			<word text="yaroHamuka {ll~ahu" id="MayAllahBlessYou"></word>
 			<word text="{ll~ahu &gt;aEolamu" id="AllahKnowsBest"></word>
 			<word text="riDaA bi&apos;aAloEawodapN" id="PleasedWithDecree"></word>
@@ -3014,12 +3022,35 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 	<abbreviations>
 		<category title="Categories">
 			<word text="AS" id="UponHimBePeace"></word>
-			<word text="SAWS|SAW" id="ThePrayersOfAllahUponHimAndPeace"></word>
-			<word text="RAum|RA" id="MayAllahBePleased"></word>
-			<word text="RAu" id="MayAllahBePleased"></word>
-			<word text="RAaa" id="MayAllahBePleased"></word>
+			<word text="SAWS|SAW|PBUH" id="ThePrayersOfAllahUponHimAndPeace"></word>
+			<word text="RAum|RA" id="MayAllahBePleasedWithThemMasculine"></word>
+			<word text="RAun~a" id="MayAllahBePleasedWithThemFeminine"></word>
+			<word text="RAumaa" id="MayAllahBePleasedWithBothOfThem"></word>
+			<word text="RAu" id="MayAllahBePleasedWithHim"></word>
+			<word text="RAaa" id="MayAllahBePleasedWithHer"></word>
+			<word text="Rum|R" id="MayAllahHaveMercyOnThemMasculine"></word>
+			<word text="Run~a" id="MayAllahHaveMercyOnThemFeminine"></word>
+			<word text="Rumaa" id="MayAllahHaveMercyOnBothOfThem"></word>
+			<word text="Ru" id="MayAllahHaveMercyOnHim"></word>
+			<word text="Raa" id="MayAllahHaveMercyOnHim"></word>
+			<word text="JKum|JK" id="MayAllahProtectYouAllMasculine"></word>
+			<word text="JKunna" id="MayAllahProtectYouAllFeminine"></word>
+			<word text="JKumaa" id="MayAllahProtectYouBoth"></word>
+			<word text="JKu" id="MayAllahProtectYouMasculine"></word>
+			<word text="JKaa" id="MayAllahProtectYouFeminine"></word>
 			<word text="SWT" id="GloriousAndExaltedBeHe"></word>
+			<word text="AWJ" id="SublimeAndMighty"></word>
+			<word text="JJ" id="MayHisGloryBeGlorified"></word>
+			<word text="SEEKREFUGE" id="SeekRefugeWithAllahFromSatanRejected"></word>
 			<word text="BISMILLAH" id="InTheNameOfAllah"></word>
+			<word text="INSHALLAH" id="AllahWilling"></word>
+			<word text="MASHALLAH" id="AllahWilledItSo"></word>
+			<word text="SUBHANALLAH" id="GloryBeToAllah"></word>
+			<word text="ALHAMDULILLAH" id="AllPraiseAndThanksBeToAllah"></word>
+			<word text="ASTAGFIRULLAH" id="IAskAllahForgiveness"></word>
+			<word text="HASBIALLAH" id="AllahSufficesMe"></word>
+			<word text="MAYALLAHBLESSYOU" id="MayAllahBlessYou"></word>
+			<Word text="ALLAHKNOWNSBEST" id="AllahKnowsBest"></Word>
 			<word text="AH" value="h_" id="AfterMigration"></word>
 		</category>
 	</abbreviations>

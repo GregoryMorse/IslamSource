@@ -425,12 +425,12 @@
 		<arabicsymbol symbolname="{ll~ahu" uname="ArabicLigatureAllahIsolatedForm" symbol="FDF2" ipavalue="" extendedbuckwalter="0" terminating="true" connecting="false" assimilate="false" />
 		<arabicsymbol symbolname="&gt;akobaru" uname="ArabicLigatureAkbarIsolatedForm" symbol="FDF3" ipavalue="" extendedbuckwalter="0" terminating="true" connecting="false" assimilate="false" />
 		<arabicsymbol symbolname="muHam~adN" uname="ArabicLigatureMohammadIsolatedForm" symbol="FDF4" ipavalue="" extendedbuckwalter="0" terminating="true" connecting="false" assimilate="false" />
-		<arabicsymbol symbolname="Sal~aY {ll~ahu Ealayohi wasalaAmN" uname="ArabicLigatureSalamIsolatedForm" symbol="FDF5" ipavalue="" extendedbuckwalter="0" terminating="true" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="Sal~aY {ll~ahu Ealayohi wasalaAmo" uname="ArabicLigatureSalamIsolatedForm" symbol="FDF5" ipavalue="" extendedbuckwalter="0" terminating="true" connecting="false" assimilate="false" />
 		<arabicsymbol symbolname="rasuwlN" uname="ArabicLigatureRasoulIsolatedForm" symbol="FDF6" ipavalue="" extendedbuckwalter="0" terminating="true" connecting="false" assimilate="false" />
 		<arabicsymbol symbolname="Ealayohi" uname="ArabicLigatureAlayheIsolatedForm" symbol="FDF7" ipavalue="" extendedbuckwalter="0" terminating="true" connecting="false" assimilate="false" />
-		<arabicsymbol symbolname="wasalaAmN" uname="ArabicLigatureWasallamIsolatedForm" symbol="FDF8" ipavalue="" extendedbuckwalter="0" terminating="true" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="wasalaAmo" uname="ArabicLigatureWasallamIsolatedForm" symbol="FDF8" ipavalue="" extendedbuckwalter="0" terminating="true" connecting="false" assimilate="false" />
 		<arabicsymbol symbolname="Sal~aY" uname="ArabicLigatureSallaIsolatedForm" symbol="FDF9" ipavalue="" extendedbuckwalter="0" terminating="true" connecting="false" assimilate="false" />
-		<arabicsymbol symbolname="Sal~aY {ll~ahu Ealayohi wasalaAmN" uname="ArabicLigatureSallallahouAlayheWasallam" symbol="FDFA" ipavalue="" extendedbuckwalter="0" terminating="true" connecting="false" assimilate="false" />
+		<arabicsymbol symbolname="Sal~aY {ll~ahu Ealayohi wasalaAmo" uname="ArabicLigatureSallallahouAlayheWasallam" symbol="FDFA" ipavalue="" extendedbuckwalter="0" terminating="true" connecting="false" assimilate="false" />
 		<arabicsymbol symbolname="jal~a jalaAluhu" uname="ArabicLigatureJallajalalouhou" symbol="FDFB" ipavalue="" extendedbuckwalter="0" terminating="true" connecting="false" assimilate="false" />
 		<arabicsymbol symbolname="riyaAlN" uname="RialSign" symbol="FDFC" ipavalue="" extendedbuckwalter="0" terminating="true" connecting="false" assimilate="false" />
 		<arabicsymbol symbolname="bisomi {ll~ahi {lr~aHoma`ni {lr~aHiymi" uname="ArabicLigatureBismillahArRahmanArRaheem" symbol="FDFD" ipavalue="" extendedbuckwalter="0" terminating="true" connecting="false" assimilate="false" />

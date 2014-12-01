@@ -2625,12 +2625,21 @@ Public Class DocBuilder
                     Next
                 Next
             Next
-        ElseIf Array.IndexOf(CachedData.IslamData.Abbreviations, Strings) <> 0 Then
+        ElseIf Array.FindIndex(CachedData.IslamData.Abbreviations, Function(Match As IslamData.VocabCategory) Array.FindIndex(Match.Words, Function(Word As IslamData.VocabCategory.Word) Array.IndexOf(Word.Text.Split("|"c), Strings) <> -1) <> -1) <> -1 Then
+            Dim Index As Integer = Array.FindIndex(CachedData.IslamData.Abbreviations, Function(Match As IslamData.VocabCategory) Array.FindIndex(Match.Words, Function(Word As IslamData.VocabCategory.Word) Array.IndexOf(Word.Text.Split("|"c), Strings) <> -1) <> -1)
+            Dim SubIndex As Integer = Array.FindIndex(CachedData.IslamData.Abbreviations(Index).Words, Function(Word As IslamData.VocabCategory.Word) Array.IndexOf(Word.Text.Split("|"c), Strings) <> -1)
+            For Count As Integer = 0 To CachedData.IslamData.VocabularyCategories.Length - 1
+                For SubCount As Integer = 0 To CachedData.IslamData.VocabularyCategories(Count).Words.Length - 1
+                    If CachedData.IslamData.VocabularyCategories(Count).Words(SubCount).TranslationID = CachedData.IslamData.Abbreviations(Index).Words(SubIndex).TranslationID Then
+                        'Renderer.Items.AddRange(ArabicData.TransliterateFromBuckwalter(CachedData.IslamData.VocabularyCategories(Count).Words(SubCount).Text), Arabic.TransliterateToScheme(CachedData.IslamData.VocabularyCategories(Count).Words(SubCount).Text, SchemeType, Scheme).Trim(), Utility.LoadResourceString("IslamInfo_" + CachedData.IslamData.VocabularyCategories(Count).Words(SubCount).TranslationID))
+                    End If
+                Next
+            Next
         ElseIf Strings.StartsWith("reference:") Then
             Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eHeaderCenter, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, "(" + Strings.Replace("reference:", String.Empty) + ")")}))
             'ElseIf Strings.StartsWith("text:") Then
         Else
-                Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, Strings)}))
+            Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, Strings)}))
         End If
         Return Renderer
     End Function
