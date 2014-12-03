@@ -1922,10 +1922,12 @@ Public Class RenderArray
         Public DisplayClass As RenderDisplayClass
         Public Clr As Color
         Public Text As Object
+        Public Font As String
         Sub New(ByVal NewDisplayClass As RenderDisplayClass, ByVal NewText As Object)
             DisplayClass = NewDisplayClass
             Text = NewText
             Clr = Color.Black 'default
+            Font = String.Empty
         End Sub
     End Structure
     Structure RenderItem
@@ -2730,21 +2732,24 @@ Public Class RenderArray
             For Index = 0 To Items(Count).TextItems.Length - 1
                 writer.Write(vbCrLf + BaseTabs + vbTab)
                 writer.WriteBeginTag(CStr(IIf(Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eNested Or Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eRanking Or Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eList, "div", "span")))
-                If Items(Count).TextItems(Index).DisplayClass <> RenderDisplayClass.eList And (Items(Count).Type = RenderTypes.eHeaderCenter Or (Items(Count).Type = RenderTypes.eText And (Count - Base) Mod 2 = 1)) Then writer.WriteAttribute("style", "background-color: 0xD0D0D0;")
+                Dim Style As String = String.Empty
+                If Items(Count).TextItems(Index).DisplayClass <> RenderDisplayClass.eList And (Items(Count).Type = RenderTypes.eHeaderCenter Or (Items(Count).Type = RenderTypes.eText And (Count - Base) Mod 2 = 1)) Then Style = "background-color: 0xD0D0D0;"
                 If Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eNested Then
+                    If Style <> String.Empty Then writer.WriteAttribute("style", Style)
                     writer.Write(HtmlTextWriter.TagRightChar)
                     DoRender(writer, TabCount, CType(Items(Count).TextItems(Index).Text, Collections.Generic.List(Of RenderItem)), CStr(Count))
                 ElseIf Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eList Then
-                    writer.WriteAttribute("style", "direction: ltr;")
+                    writer.WriteAttribute("style", "direction: ltr;" + Style)
                     writer.Write(HtmlTextWriter.TagRightChar)
                     WriteTable(writer, CType(Items(Count).TextItems(Index).Text, Object()), TabCount, CStr(Count))
                 ElseIf Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eContinueStop Then
                     'U+2BC3 is horizontal stop sign make red color, U+2B45/6 is left/rightwards quadruple arrow make green color
-                    writer.WriteAttribute("style", "color: " + If(CStr(Items(Count).TextItems(Index).Text) <> String.Empty, "#ff0000", "#00ff00") + ";")
+                    writer.WriteAttribute("style", "color: " + If(CStr(Items(Count).TextItems(Index).Text) <> String.Empty, "#ff0000", "#00ff00") + ";" + Style)
                     writer.WriteAttribute("onclick", "javascript: changeContinueStop(event, this, {Reference:'" + String.Empty + "'});")
                     writer.Write(HtmlTextWriter.TagRightChar + If(CStr(Items(Count).TextItems(Index).Text) <> String.Empty, "&#2BC3;", "&#x2B45;"))
                 ElseIf Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eRanking Then
                     Dim Data As String() = CStr(Items(Count).TextItems(Index).Text).Split("|"c)
+                    If Style <> String.Empty Then writer.WriteAttribute("style", Style)
                     writer.Write(HtmlTextWriter.TagRightChar)
                     writer.WriteBeginTag("div")
 
@@ -2800,17 +2805,17 @@ Public Class RenderArray
                         writer.WriteAttribute("class", "arabic")
                         writer.WriteAttribute("dir", "rtl")
                         writer.WriteAttribute("id", "arabic" + CStr(IIf(NestPrefix = String.Empty, String.Empty, NestPrefix + "_")) + CStr(Count) + "_" + CStr(Index))
-                        writer.WriteAttribute("style", "color: " + System.Drawing.ColorTranslator.ToHtml(Items(Count).TextItems(Index).Clr) + ";")
+                        writer.WriteAttribute("style", "color: " + System.Drawing.ColorTranslator.ToHtml(Items(Count).TextItems(Index).Clr) + ";" + If(Items(Count).TextItems(Index).Font <> String.Empty, "font-family:" + Items(Count).TextItems(Index).Font + ";", String.Empty) + Style)
                     ElseIf Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eTransliteration Then
                         writer.WriteAttribute("class", "transliteration")
                         writer.WriteAttribute("dir", "ltr")
-                        writer.WriteAttribute("style", "color: " + System.Drawing.ColorTranslator.ToHtml(Items(Count).TextItems(Index).Clr) + "; display: " + CStr(IIf(CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) <> ArabicData.TranslitScheme.None, "block", "none")) + ";")
+                        writer.WriteAttribute("style", "color: " + System.Drawing.ColorTranslator.ToHtml(Items(Count).TextItems(Index).Clr) + "; display: " + CStr(IIf(CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) <> ArabicData.TranslitScheme.None, "block", "none")) + ";" + If(Items(Count).TextItems(Index).Font <> String.Empty, "font-family:" + Items(Count).TextItems(Index).Font + ";", String.Empty) + Style)
                         writer.WriteAttribute("id", "translit" + CStr(IIf(NestPrefix = String.Empty, String.Empty, NestPrefix + "_")) + CStr(Count) + "_" + CStr(Index))
                     Else
                         writer.WriteAttribute("class", "translation")
                         writer.WriteAttribute("dir", CStr(IIf(Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eRTL, "rtl", "ltr")))
                         writer.WriteAttribute("id", "translate" + CStr(IIf(NestPrefix = String.Empty, String.Empty, NestPrefix + "_")) + CStr(Count) + "_" + CStr(Index))
-                        writer.WriteAttribute("style", "color: " + System.Drawing.ColorTranslator.ToHtml(Items(Count).TextItems(Index).Clr) + ";")
+                        writer.WriteAttribute("style", "color: " + System.Drawing.ColorTranslator.ToHtml(Items(Count).TextItems(Index).Clr) + ";" + If(Items(Count).TextItems(Index).Font <> String.Empty, "font-family:" + Items(Count).TextItems(Index).Font + ";", String.Empty) + Style)
                     End If
                     writer.Write(HtmlTextWriter.TagRightChar)
                     writer.Write(Utility.HtmlTextEncode(CStr(Items(Count).TextItems(Index).Text)).Replace(vbCrLf, "<br>"))

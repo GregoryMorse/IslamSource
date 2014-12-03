@@ -10,6 +10,14 @@
     }
 }
 
+@font-face
+{
+    font-family: AGAIslamicPhrases;
+    src: url(/files/AGA_Islamic_Phrases.eot);
+    src: local(AGAIslamicPhrases);
+    src: url(/files/AGA_Islamic_Phrases.TTF) format('truetype');
+}
+
 BODY
 {
     background-color: #d3d3d3;

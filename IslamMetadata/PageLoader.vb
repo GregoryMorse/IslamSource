@@ -1600,7 +1600,7 @@ Public Class ArabicFont
                                                           New Array() {Array.ConvertAll(Of IslamData.ScriptFont, String)(CachedData.IslamData.ScriptFonts, Function(Convert As IslamData.ScriptFont) Utility.MakeJSArray(Array.ConvertAll(Of IslamData.ScriptFont.Font, String)(Convert.FontList, Function(SubConv As IslamData.ScriptFont.Font) SubConv.ID)))}, True) + ";"
     End Function
     Public Shared Function GetFontEmbedJS() As String
-        Return "function embedFontStyle(fontID) { if (isInArray(embeddedFonts, fontID)) return; embeddedFonts.push(fontID); var font=fontList[fontID]; var style = 'font-family: \'' + font.embed + '\';' + 'src: url(\'/files/\' + font.file + \'.eot\');' + 'src: local(\'' + font.family + '\'), url(\'/files/' + font.file + ((font.file == 'KFC_naskh') ? '.otf\') format(\'opentype\');' : '.ttf\') format(\'truetype\');'); addStyleSheetRule(newStyleSheet(), '@font-face', style);  }"
+        Return "function embedFontStyle(fontID) { if (isInArray(embeddedFonts, fontID)) return; embeddedFonts.push(fontID); var font=fontList[fontID]; var style = 'font-family: \'' + font.embed + '\';' + 'src: url(\'/files/' + font.file + '.eot\');' + 'src: local(\'' + font.family + '\'), url(\'/files/' + font.file + ((font.file == 'KFC_naskh') ? '.otf\') format(\'opentype\');' : '.ttf\') format(\'truetype\');'); addStyleSheetRule(newStyleSheet(), '@font-face', style);  }"
     End Function
     Public Shared Function GetFontInitJS() As String
         Return "var tryFontCounter = 0; var embeddedFonts = " + Utility.MakeJSArray(New String() {"null"}, True) + "; var baseFont = 'Times New Roman';"
@@ -1738,9 +1738,24 @@ Public Class IslamData
     <System.Xml.Serialization.XmlArrayItem("category")> _
     Public VocabularyCategories() As VocabCategory
 
+    Public Structure AbbrevCategory
+        Public Structure AbbrevWord
+            <System.Xml.Serialization.XmlAttribute("text")> _
+            Public Text As String
+            <System.Xml.Serialization.XmlAttribute("font")> _
+            Public Font As String
+            <System.Xml.Serialization.XmlAttribute("id")> _
+            Public TranslationID As String
+        End Structure
+        <System.Xml.Serialization.XmlAttribute("title")> _
+        Public Title As String
+        <System.Xml.Serialization.XmlElement("word")> _
+        Public Words() As AbbrevWord
+    End Structure
+
     <System.Xml.Serialization.XmlArray("abbreviations")> _
     <System.Xml.Serialization.XmlArrayItem("category")> _
-    Public Abbreviations() As VocabCategory
+    Public Abbreviations() As AbbrevCategory
 
     <System.Xml.Serialization.XmlArray("lists")> _
     <System.Xml.Serialization.XmlArrayItem("category")> _
@@ -2625,13 +2640,27 @@ Public Class DocBuilder
                     Next
                 Next
             Next
-        ElseIf Array.FindIndex(CachedData.IslamData.Abbreviations, Function(Match As IslamData.VocabCategory) Array.FindIndex(Match.Words, Function(Word As IslamData.VocabCategory.Word) Array.IndexOf(Word.Text.Split("|"c), Strings) <> -1) <> -1) <> -1 Then
-            Dim Index As Integer = Array.FindIndex(CachedData.IslamData.Abbreviations, Function(Match As IslamData.VocabCategory) Array.FindIndex(Match.Words, Function(Word As IslamData.VocabCategory.Word) Array.IndexOf(Word.Text.Split("|"c), Strings) <> -1) <> -1)
-            Dim SubIndex As Integer = Array.FindIndex(CachedData.IslamData.Abbreviations(Index).Words, Function(Word As IslamData.VocabCategory.Word) Array.IndexOf(Word.Text.Split("|"c), Strings) <> -1)
+        ElseIf Array.FindIndex(CachedData.IslamData.Abbreviations, Function(Match As IslamData.AbbrevCategory) Array.FindIndex(Match.Words, Function(Word As IslamData.AbbrevCategory.AbbrevWord) Array.IndexOf(Word.Text.Split("|"c), Strings) <> -1) <> -1) <> -1 Then
+            Dim Index As Integer = Array.FindIndex(CachedData.IslamData.Abbreviations, Function(Match As IslamData.AbbrevCategory) Array.FindIndex(Match.Words, Function(Word As IslamData.AbbrevCategory.AbbrevWord) Array.IndexOf(Word.Text.Split("|"c), Strings) <> -1) <> -1)
+            Dim SubIndex As Integer = Array.FindIndex(CachedData.IslamData.Abbreviations(Index).Words, Function(Word As IslamData.AbbrevCategory.AbbrevWord) Array.IndexOf(Word.Text.Split("|"c), Strings) <> -1)
             For Count As Integer = 0 To CachedData.IslamData.VocabularyCategories.Length - 1
                 For SubCount As Integer = 0 To CachedData.IslamData.VocabularyCategories(Count).Words.Length - 1
                     If CachedData.IslamData.VocabularyCategories(Count).Words(SubCount).TranslationID = CachedData.IslamData.Abbreviations(Index).Words(SubIndex).TranslationID Then
                         Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, ArabicData.TransliterateFromBuckwalter(CachedData.IslamData.VocabularyCategories(Count).Words(SubCount).Text)), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, Arabic.TransliterateToScheme(ArabicData.TransliterateFromBuckwalter(CachedData.IslamData.VocabularyCategories(Count).Words(SubCount).Text), SchemeType, Scheme).Trim()), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, Utility.LoadResourceString("IslamInfo_" + CachedData.IslamData.VocabularyCategories(Count).Words(SubCount).TranslationID))}))
+                        If CachedData.IslamData.Abbreviations(Index).Words(SubIndex).Font <> String.Empty Then
+                            Array.ForEach(CachedData.IslamData.Abbreviations(Index).Words(SubIndex).Font.Split("|"c), Sub(Str As String)
+                                                                                                                          Dim Font As String = String.Empty
+                                                                                                                          If Str.Contains(";") Then
+                                                                                                                              Font = Str.Split(";"c)(0)
+                                                                                                                              Str = Str.Split(";"c)(1)
+                                                                                                                          End If
+                                                                                                                          Array.ForEach(Str.Split(","c), Sub(SubStr As String)
+                                                                                                                                                             Dim RendText As New RenderArray.RenderText(If(System.Text.RegularExpressions.Regex.Match(ChrW(Integer.Parse(SubStr.Split("+"c)(0), System.Globalization.NumberStyles.HexNumber)), "(?:\p{IsArabic}|\p{IsArabicPresentationForms-A}|\p{IsArabicPresentationForms-B})+").Success, RenderArray.RenderDisplayClass.eArabic, RenderArray.RenderDisplayClass.eLTR), String.Join(String.Empty, Array.ConvertAll(SubStr.Split("+"c), Function(Split As String) CStr(ChrW(Integer.Parse(Split, System.Globalization.NumberStyles.HexNumber))))))
+                                                                                                                                                             RendText.Font = Font
+                                                                                                                                                             Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {RendText}))
+                                                                                                                                                         End Sub)
+                                                                                                                      End Sub)
+                        End If
                     End If
                 Next
             Next
