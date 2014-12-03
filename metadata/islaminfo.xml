@@ -856,6 +856,12 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<verse title="RemembranceSixth" text="ya`rab~iy laka {loHamodu kamaA yanobagiy lijalaAli wajohika waEaZiymi suloTaAnika\."></verse>
 			<verse title="RemembranceSeventh" text="{ll~ahum~a &lt;in~aA naEuw*u bika min &gt;ano nu$orika bika $ayo&apos;F naEolamuhu\, wanasotagofiruka limaA laA naEolamuhu\."></verse>
 			<verse id="TrulyWithHardshipIsEase" text="\{94:6\}"></verse>
+			<verse id="RepelTheirEvilByMeansOfWhatIsBest" text="\{23:96:1-4\}"></verse>
+			<verse id="AndOfHisSignsIsThatHeCreatedForYouFromYourselvesMatesThatYouMayFindTranquillityInThem" text="\{30:21:1-10\}"></verse>
+			<verse id="AndHePlacedBetweenYouAffectionAndMercy" text="\{30:21:11-14\}"></verse>
+			<verse id="EnterItWithPeaceAndSafety" text="\{15:46\}"></verse>
+			<verse id="TaughtMankindWhatNotHeKnew" text="\{96:5\}"></verse>
+			<verse id="AllahLightHeavensAndEarth" text="\{25:35:2-5\}"></verse>
 			<verse id="TrulyAllahIsWithThePatient" text="\{2:153:8-11\}"></verse>
 			<verse id="InTheNameOfAllah" text="\{1:1:1-2\}"></verse>
 			<verse id="InTheNameOfAllahMostBeneficentMostMerciful" text="\{1:1\}"></verse>
@@ -2780,6 +2786,10 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="&gt;a$ohadu &gt;ano laA^ &lt;ilaha &lt;il~aA {ll~ahu\, wa&gt;a$ohadu &gt;an~a muHam~adFA Eaboduhu warasuwluhu" id="TestifyingCreedOfIslam"></word>
 			<word text="&gt;a$ohadu &gt;ano laA^ &lt;ilaha &lt;il~aA {ll~ahu" id="TestifyingCreedOfIslamFirstPart"></word>
 			<word text="&gt;a$ohadu &gt;an~a muHam~adFA rasuwlu {ll~ahi" id="TestifyingCreedOfIslamSecondPart"></word>
+			<word text="{t~aqi $ar~a man &gt;aHosanta &lt;ilayohi" id="SafeguardYourselfFromHeWhoYouHaveBeenGoodTo"></word>
+			<word text="&lt;in~a {ll~aha yuHib~u &lt;i*aA Eamila &gt;aHadukumo EamalFA &gt;an yutoqinahu" id="TrulyAllahLovesWhenOneWhoWorksDoesTheWorkWell"></word>
+			<word text="$ahorN ramaDaAnN {l~*iY &gt;anzala fiyhi {loquro&apos;aAni hudFY liln~aAsi" id="MonthOfRamadanWhichWasRevealedThereinTheQuranGuidanceToMankind"></word>
+			<word text="&gt;alaA bi*ikori {ll~ahi taTomo}inu {loquluwbu" id="InRemembranceOfAllahHeartsFindPeace"></word>
 			<word text="rasuwlu {ll~ahi" id="MessengerOfAllah"></word>
 			<word text="Hay~a EalaY {lS~alaw`pi" id="ComeToPrayer"></word>
 			<word text="Hay~a EalaY {lofalaAHi" id="ComeToSuccess"></word>
@@ -3169,6 +3179,10 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="BEWITHALLAH" font="AGAIslamicPhrases;002A" id="BeWithAllah"></word>
 			<word text="THENOBLEQURAN" font="AGAIslamicPhrases;0049,0050" id="TheNobleQuran"></word>
 			<word text="NOBLEQURAN" font="AGAIslamicPhrases;004F,007B" id="NobleQuran"></word>
+			<word text="MONTHOFRAMADANWHICHWASREVEALEDTHEREINTHEQURANGUIDANCETOMANKIND" font="AGAIslamicPhrases;0027" id="MonthOfRamadanWhichWasRevealedThereinTheQuranGuidanceToMankind"></word>
+			<word text="INREMEMBRANCEOFALLAHHEARTSFINDPEACE" font="AGAIslamicPhrases;002E" id="InRemembranceOfAllahHeartsFindPeace"></word>
+			<word text="SafeguardYourselfFromHeWhoYouHaveBeenGoodTo" font="AGAIslamicPhrases;0078" id="SafeguardYourselfFromHeWhoYouHaveBeenGoodTo"></word>
+			<word text="TrulyAllahLovesWhenOneWhoWorksDoesTheWorkWell" font="AGAIslamicPhrases;002C" id="TrulyAllahLovesWhenOneWhoWorksDoesTheWorkWell"></word>
 
 			<word text="AH" id="AfterMigration"></word>
 			<word text="ISLAM" font="AGAIslamicPhrases;0022,0068" id="Islam"></word>
@@ -3180,8 +3194,13 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="BISMILLAHIRAHMANIRAHEEM" font="FDFD|AGAIslamicPhrases;0021,0023,0024,0025,0026,002D,0030,0031,0032,0033,0034,0035,0036,0037,0038,0039,0040,005E" id="InTheNameOfAllahMostBeneficentMostMerciful"></word>
 			<word text="ALHAMDULILLAHIRABBILALAMEEN" font="AGAIslamicPhrases;0029,005F" id="AllPraiseAndThanksBeToAllahLordOfTheWorlds"></word>
 			<word text="TRULYWITHHARDSHIPISEASE" font="AGAIslamicPhrases;0063" id="TrulyWithHardshipIsEase"></word>
+			<word text="RepelTheirEvilByMeansOfWhatIsBest" font="AGAIslamicPhrases;006B" id="RepelTheirEvilByMeansOfWhatIsBest"></word>
+			<word text="AndOfHisSignsIsThatHeCreatedForYouFromYourselvesMatesThatYouMayFindTranquillityInThem" font="AGAIslamicPhrases;006D" id="AndOfHisSignsIsThatHeCreatedForYouFromYourselvesMatesThatYouMayFindTranquillityInThem"></word>
+			<word text="AndHePlacedBetweenYouAffectionAndMercy" font="AGAIslamicPhrases;0076" id="AndHePlacedBetweenYouAffectionAndMercy"></word>
+			<word text="TaughtMankindWhatNotHeKnew" font="AGAIslamicPhrases;0062" id="TaughtMankindWhatNotHeKnew"></word>
+			<word text="AllahLightHeavensAndEarth" font="AGAIslamicPhrases;006E" id="AllahLightHeavensAndEarth"></word>
+			<word text="EnterItWithPeaceAndSafety" font="AGAIslamicPhrases;007A" id="EnterItWithPeaceAndSafety"></word>
 			<word text="FALAQ" font="AGAIslamicPhrases;002F" id="TheDaybreak"></word>
-			<!-- AGAIslamicPhrases Unknown: 0027,002C,002E,0062,006B,006D,006E,0076,0078,007A -->
 		</category>
 	</abbreviations>
 	<lists>
