@@ -209,7 +209,7 @@ Partial Class host
                 If Request.QueryString.Get("Image") = "EMailAddress" Then
                     Dim oFont As New Font("Arial", 13)
                     Dim TextExtent As SizeF = Utility.GetTextExtent(Utility.ConnectionData.EMailAddress, oFont)
-                    bmp = New Bitmap(CInt(Math.Ceiling(TextExtent.Width * 96 / 72)), CInt(Math.Ceiling(TextExtent.Height * 96 / 72)))
+                    bmp = New Bitmap(CInt(Math.Ceiling(Math.Ceiling(TextExtent.Width + 1) * 96.0F / 72.0F)), CInt(Math.Ceiling(Math.Ceiling(TextExtent.Height + 1) * 96.0F / 72.0F)))
                     Dim g As Graphics = Graphics.FromImage(bmp)
                     g.PageUnit = GraphicsUnit.Point
                     g.TextRenderingHint = Drawing.Text.TextRenderingHint.AntiAliasGridFit
