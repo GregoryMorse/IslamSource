@@ -209,16 +209,16 @@ Partial Class host
                 If Request.QueryString.Get("Image") = "EMailAddress" Then
                     Dim oFont As New Font("Arial", 13)
                     Dim TextExtent As SizeF = Utility.GetTextExtent(Utility.ConnectionData.EMailAddress, oFont)
-                    bmp = New Bitmap(CInt(Math.Ceiling(TextExtent.Width)), CInt(Math.Ceiling(TextExtent.Height)))
+                    bmp = New Bitmap(CInt(Math.Ceiling(TextExtent.Width * 96 / 72)), CInt(Math.Ceiling(TextExtent.Height * 96 / 72)))
                     Dim g As Graphics = Graphics.FromImage(bmp)
-                    g.PageUnit = GraphicsUnit.Pixel
-                    g.TextRenderingHint = Drawing.Text.TextRenderingHint.SystemDefault
+                    g.PageUnit = GraphicsUnit.Point
+                    g.TextRenderingHint = Drawing.Text.TextRenderingHint.AntiAliasGridFit
                     g.TextContrast = 12
-                    g.FillRectangle(Brushes.White, New RectangleF(0, 0, CSng(Math.Ceiling(TextExtent.Width)), CSng(Math.Ceiling(TextExtent.Height))))
+                    g.FillRectangle(Brushes.White, New RectangleF(0, 0, CInt(Math.Ceiling(Math.Ceiling(TextExtent.Width + 1) * 96.0F / 72.0F)), CInt(Math.Ceiling(Math.Ceiling(TextExtent.Height + 1) * 96.0F / 72.0F))))
                     Dim Format As StringFormat = Drawing.StringFormat.GenericTypographic
-                    Format.LineAlignment = StringAlignment.Center
-                    Format.Alignment = StringAlignment.Center
-                    g.DrawString(Utility.ConnectionData.EMailAddress, oFont, Brushes.Black, New RectangleF(0, 0, CSng(Math.Ceiling(TextExtent.Width)), CSng(Math.Ceiling(TextExtent.Height))), Format)
+                    'Format.LineAlignment = StringAlignment.Center
+                    'Format.Alignment = StringAlignment.Center
+                    g.DrawString(Utility.ConnectionData.EMailAddress, oFont, Brushes.Black, New RectangleF(0, 0, CSng(Math.Ceiling(TextExtent.Width + 1)), CSng(Math.Ceiling(TextExtent.Height + 1))), Format)
                     bmp.MakeTransparent(Color.White)
                     oFont.Dispose()
                 ElseIf Request.QueryString.Get("Image") = "MandelbrotFractal" Or Request.QueryString.Get("Image") = "JuliaFractal" Then
@@ -294,18 +294,31 @@ Partial Class host
                         Utility.ApplyTransparencyFilter(bmp, Color.FromArgb(&HFFF0F0F0), Color.White)
                     End If
                 ElseIf Request.QueryString.Get("Image") = "UnicodeChar" Then
-                    Dim oFont As New Font("Arial Unicode MS", 13)
+                    Dim oFont As Font
+                    Dim Size As Integer
+                    If Request.QueryString.Get("Size") = Nothing Then
+                        Size = 13
+                    Else
+                        Size = CInt(Request.QueryString.Get("Size"))
+                    End If
+                    If Request.QueryString.Get("Font") = "AGAIslamicPhrases" Then
+                        Dim PrivateFontColl As New Drawing.Text.PrivateFontCollection
+                        PrivateFontColl.AddFontFile(Utility.GetFilePath("files\AGA_Islamic_Phrases.TTF"))
+                        oFont = New Drawing.Font(PrivateFontColl.Families(0), Size)
+                    Else
+                        oFont = New Font("Arial Unicode MS", Size)
+                    End If
                     Dim TextExtent As SizeF = Utility.GetTextExtent(ChrW(CInt(Request.QueryString.Get("Char"))), oFont)
-                    bmp = New Bitmap(CInt(Math.Ceiling(TextExtent.Width)), CInt(Math.Ceiling(TextExtent.Height)))
+                    bmp = New Bitmap(CInt(Math.Ceiling(Math.Ceiling(TextExtent.Width + 1) * 96.0F / 72.0F)), CInt(Math.Ceiling(Math.Ceiling(TextExtent.Height + 1) * 96.0F / 72.0F)))
                     Dim g As Graphics = Graphics.FromImage(bmp)
-                    g.PageUnit = GraphicsUnit.Pixel
-                    g.TextRenderingHint = Drawing.Text.TextRenderingHint.SystemDefault
+                    g.PageUnit = GraphicsUnit.Point
+                    g.TextRenderingHint = Drawing.Text.TextRenderingHint.AntiAliasGridFit
                     g.TextContrast = 12
-                    g.FillRectangle(Brushes.White, New RectangleF(0, 0, CSng(Math.Ceiling(TextExtent.Width)), CSng(Math.Ceiling(TextExtent.Height))))
+                    g.FillRectangle(Brushes.White, New RectangleF(0, 0, CSng(Math.Ceiling(TextExtent.Width + 1)), CSng(Math.Ceiling(TextExtent.Height + 1))))
                     Dim Format As StringFormat = Drawing.StringFormat.GenericTypographic
-                    Format.LineAlignment = StringAlignment.Center
-                    Format.Alignment = StringAlignment.Center
-                    g.DrawString(ChrW(CInt(Request.QueryString.Get("Char"))), oFont, Brushes.Black, New RectangleF(0, 0, CSng(Math.Ceiling(TextExtent.Width)), CSng(Math.Ceiling(TextExtent.Height))), Format)
+                    'Format.LineAlignment = StringAlignment.Center
+                    'Format.Alignment = StringAlignment.Center
+                    g.DrawString(ChrW(CInt(Request.QueryString.Get("Char"))), oFont, Brushes.Black, New RectangleF(0, 0, CSng(Math.Ceiling(TextExtent.Width + 1)), CSng(Math.Ceiling(TextExtent.Height + 1))), Format)
                     bmp.MakeTransparent(Color.White)
                     oFont.Dispose()
                 ElseIf Request.QueryString.Get("Image") = "Thumb" Then
@@ -384,57 +397,57 @@ Partial Class host
                 '    Read = MemStream.Read(Bytes, 0, Bytes.Length)
                 'End While
                 Return
-                ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_Register Then
-                    UserAccounts.Register(PageSet, Request.Form.Get(UserAccounts.ID_Username), Request.Form.Get(UserAccounts.ID_Password), Request.Form.Get(UserAccounts.ID_ConfirmPassword), Request.Form.Get(UserAccounts.ID_EmailAddress), Request.Form.Get(UserAccounts.ID_ConfirmEmailAddress), Request.Form.Get(UserAccounts.ID_Register))
-                ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_Login Then
-                    UserAccounts.Login(PageSet, Request.Form.Get(UserAccounts.ID_Username), Request.Form.Get(UserAccounts.ID_Password), Request.Form.Get(UserAccounts.ID_Remember), Request.Form.Get(UserAccounts.ID_Login))
-                ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_Logoff Then
-                    UserAccounts.Logoff(PageSet)
-                ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_ForgotUsername Then
-                    UserAccounts.ForgotUserName(PageSet, Request.Form.Get(UserAccounts.ID_EmailAddress), Request.Form.Get(UserAccounts.ID_RetrieveUsername))
-                ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_ForgotPassword Then
-                    UserAccounts.ForgotPassword(PageSet, Request.Form.Get(UserAccounts.ID_Username), Request.Form.Get(UserAccounts.ID_RetrievePassword))
-                ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_ResetPassword Then
-                    If Request.HttpMethod = "POST" Then
-                        UserAccounts.ResetPassword(PageSet, String.Empty, Request.Form.Get(UserAccounts.ID_Username), Request.Form.Get(UserAccounts.ID_PasswordResetCode), Request.Form.Get(UserAccounts.ID_Password), Request.Form.Get(UserAccounts.ID_ConfirmPassword), Request.Form.Get(UserAccounts.ID_ResetPassword))
-                    Else
-                        UserAccounts.ResetPassword(PageSet, Request.QueryString.Get(UserAccounts.ID_UserID), String.Empty, Request.QueryString.Get(UserAccounts.ID_PasswordResetCode), String.Empty, String.Empty, UserAccounts.ID_ResetPassword)
-                    End If
-                ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_ActivateAccount Then
-                    If Request.HttpMethod = "POST" Then
-                        UserAccounts.ActivateAccount(PageSet, String.Empty, Request.Form.Get(UserAccounts.ID_Username), Request.Form.Get(UserAccounts.ID_ActivationCode), Request.Form.Get(UserAccounts.ID_ActivateAccount))
-                    Else
-                        UserAccounts.ActivateAccount(PageSet, Request.QueryString.Get(UserAccounts.ID_UserID), String.Empty, Request.QueryString.Get(UserAccounts.ID_ActivationCode), UserAccounts.ID_ActivateAccount)
-                    End If
-                ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_SendActivationCode Then
-                    UserAccounts.SendActivation(PageSet, Request.Form.Get(UserAccounts.ID_Username), Request.Form.Get(UserAccounts.ID_SendActivationCode))
-                ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_ControlPanel Then
-                    UserAccounts.ControlPanel(PageSet)
-                ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_DeleteAccount Then
-                    UserAccounts.DeleteAccount(PageSet, Request.Form.Get(UserAccounts.ID_Certain), Request.Form.Get(UserAccounts.ID_DeleteAccount))
-                ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_ChangeEMailAddress Then
-                    UserAccounts.ChangeEMailAddress(PageSet, Request.Form.Get(UserAccounts.ID_EmailAddress), Request.Form.Get(UserAccounts.ID_ConfirmEmailAddress), Request.Form.Get(UserAccounts.ID_ChangeEMailAddress))
-                ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_ChangePassword Then
-                    UserAccounts.ChangePassword(PageSet, Request.Form.Get(UserAccounts.ID_Password), Request.Form.Get(UserAccounts.ID_ConfirmPassword), Request.Form.Get(UserAccounts.ID_ChangePassword))
-                ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_ChangeUsername Then
-                    UserAccounts.ChangeUserName(PageSet, Request.Form.Get(UserAccounts.ID_Username), Request.Form.Get(UserAccounts.ID_ChangeUsername))
-                ElseIf bIsAdmin And Request.QueryString.Get(PageQuery) = UserAccounts.ID_CertInstall Then
-                    UserAccounts.UploadCertificate(PageSet, Request.Form.Get(UserAccounts.ID_CertInstall), Request.Form.Get(UserAccounts.ID_Certificate), Request.Form.Get(UserAccounts.ID_CertRequest))
-                ElseIf bIsAdmin And Request.QueryString.Get(PageQuery) = UserAccounts.ID_CertInstallIntermed Then
-                    UserAccounts.InstallIntermediateCert(PageSet, Request.Form.Get(UserAccounts.ID_CertInstallIntermed), Request.Form.Get(UserAccounts.ID_Certificate))
-                ElseIf bIsAdmin And Request.QueryString.Get(PageQuery) = UserAccounts.ID_CertRequest Then
-                    UserAccounts.CreateCertificateRequest(PageSet, Request.Form.Get(UserAccounts.ID_CertRequest), Request.Form.Get(UserAccounts.ID_PrivateKey))
-                ElseIf bIsAdmin And Request.QueryString.Get(PageQuery) = UserAccounts.ID_DeleteCertRequest Then
-                    UserAccounts.DeleteCertificateRequest(PageSet, Request.Form.Get(UserAccounts.ID_DeleteCertRequest), Request.Form.Get(UserAccounts.ID_Certificate))
+            ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_Register Then
+                UserAccounts.Register(PageSet, Request.Form.Get(UserAccounts.ID_Username), Request.Form.Get(UserAccounts.ID_Password), Request.Form.Get(UserAccounts.ID_ConfirmPassword), Request.Form.Get(UserAccounts.ID_EmailAddress), Request.Form.Get(UserAccounts.ID_ConfirmEmailAddress), Request.Form.Get(UserAccounts.ID_Register))
+            ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_Login Then
+                UserAccounts.Login(PageSet, Request.Form.Get(UserAccounts.ID_Username), Request.Form.Get(UserAccounts.ID_Password), Request.Form.Get(UserAccounts.ID_Remember), Request.Form.Get(UserAccounts.ID_Login))
+            ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_Logoff Then
+                UserAccounts.Logoff(PageSet)
+            ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_ForgotUsername Then
+                UserAccounts.ForgotUserName(PageSet, Request.Form.Get(UserAccounts.ID_EmailAddress), Request.Form.Get(UserAccounts.ID_RetrieveUsername))
+            ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_ForgotPassword Then
+                UserAccounts.ForgotPassword(PageSet, Request.Form.Get(UserAccounts.ID_Username), Request.Form.Get(UserAccounts.ID_RetrievePassword))
+            ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_ResetPassword Then
+                If Request.HttpMethod = "POST" Then
+                    UserAccounts.ResetPassword(PageSet, String.Empty, Request.Form.Get(UserAccounts.ID_Username), Request.Form.Get(UserAccounts.ID_PasswordResetCode), Request.Form.Get(UserAccounts.ID_Password), Request.Form.Get(UserAccounts.ID_ConfirmPassword), Request.Form.Get(UserAccounts.ID_ResetPassword))
+                Else
+                    UserAccounts.ResetPassword(PageSet, Request.QueryString.Get(UserAccounts.ID_UserID), String.Empty, Request.QueryString.Get(UserAccounts.ID_PasswordResetCode), String.Empty, String.Empty, UserAccounts.ID_ResetPassword)
                 End If
-                _IsHtml = True
-                Index = PageSet.GetPageIndex(Request.Params(If(IsPrint, PagePrintQuery, PageQuery)))
-                If Not IsPrint Then
-                    Controls.Add(New Menu(PageSet, Index))
+            ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_ActivateAccount Then
+                If Request.HttpMethod = "POST" Then
+                    UserAccounts.ActivateAccount(PageSet, String.Empty, Request.Form.Get(UserAccounts.ID_Username), Request.Form.Get(UserAccounts.ID_ActivationCode), Request.Form.Get(UserAccounts.ID_ActivateAccount))
+                Else
+                    UserAccounts.ActivateAccount(PageSet, Request.QueryString.Get(UserAccounts.ID_UserID), String.Empty, Request.QueryString.Get(UserAccounts.ID_ActivationCode), UserAccounts.ID_ActivateAccount)
                 End If
-                Controls.Add(New Page(PageSet.Pages.Item(Index), True, IsPrint))
-                Response.ContentType = "text/html;charset=" + System.Text.Encoding.UTF8.WebName
+            ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_SendActivationCode Then
+                UserAccounts.SendActivation(PageSet, Request.Form.Get(UserAccounts.ID_Username), Request.Form.Get(UserAccounts.ID_SendActivationCode))
+            ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_ControlPanel Then
+                UserAccounts.ControlPanel(PageSet)
+            ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_DeleteAccount Then
+                UserAccounts.DeleteAccount(PageSet, Request.Form.Get(UserAccounts.ID_Certain), Request.Form.Get(UserAccounts.ID_DeleteAccount))
+            ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_ChangeEMailAddress Then
+                UserAccounts.ChangeEMailAddress(PageSet, Request.Form.Get(UserAccounts.ID_EmailAddress), Request.Form.Get(UserAccounts.ID_ConfirmEmailAddress), Request.Form.Get(UserAccounts.ID_ChangeEMailAddress))
+            ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_ChangePassword Then
+                UserAccounts.ChangePassword(PageSet, Request.Form.Get(UserAccounts.ID_Password), Request.Form.Get(UserAccounts.ID_ConfirmPassword), Request.Form.Get(UserAccounts.ID_ChangePassword))
+            ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_ChangeUsername Then
+                UserAccounts.ChangeUserName(PageSet, Request.Form.Get(UserAccounts.ID_Username), Request.Form.Get(UserAccounts.ID_ChangeUsername))
+            ElseIf bIsAdmin And Request.QueryString.Get(PageQuery) = UserAccounts.ID_CertInstall Then
+                UserAccounts.UploadCertificate(PageSet, Request.Form.Get(UserAccounts.ID_CertInstall), Request.Form.Get(UserAccounts.ID_Certificate), Request.Form.Get(UserAccounts.ID_CertRequest))
+            ElseIf bIsAdmin And Request.QueryString.Get(PageQuery) = UserAccounts.ID_CertInstallIntermed Then
+                UserAccounts.InstallIntermediateCert(PageSet, Request.Form.Get(UserAccounts.ID_CertInstallIntermed), Request.Form.Get(UserAccounts.ID_Certificate))
+            ElseIf bIsAdmin And Request.QueryString.Get(PageQuery) = UserAccounts.ID_CertRequest Then
+                UserAccounts.CreateCertificateRequest(PageSet, Request.Form.Get(UserAccounts.ID_CertRequest), Request.Form.Get(UserAccounts.ID_PrivateKey))
+            ElseIf bIsAdmin And Request.QueryString.Get(PageQuery) = UserAccounts.ID_DeleteCertRequest Then
+                UserAccounts.DeleteCertificateRequest(PageSet, Request.Form.Get(UserAccounts.ID_DeleteCertRequest), Request.Form.Get(UserAccounts.ID_Certificate))
             End If
+            _IsHtml = True
+            Index = PageSet.GetPageIndex(Request.Params(If(IsPrint, PagePrintQuery, PageQuery)))
+            If Not IsPrint Then
+                Controls.Add(New Menu(PageSet, Index))
+            End If
+            Controls.Add(New Page(PageSet.Pages.Item(Index), True, IsPrint))
+            Response.ContentType = "text/html;charset=" + System.Text.Encoding.UTF8.WebName
+        End If
     End Sub
     Protected Overrides Sub Render(ByVal writer As System.Web.UI.HtmlTextWriter)
         Dim Count As Integer

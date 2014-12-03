@@ -336,8 +336,9 @@ Public Class Utility
     Public Shared Function GetTextExtent(ByVal Text As String, ByVal MeasureFont As Font) As SizeF
         Dim bmp As New Bitmap(1, 1)
         Dim g As Graphics = Graphics.FromImage(bmp)
-        g.PageUnit = GraphicsUnit.Pixel
-        g.TextRenderingHint = Drawing.Text.TextRenderingHint.SystemDefault
+        g.PageUnit = GraphicsUnit.Point
+        g.TextRenderingHint = Drawing.Text.TextRenderingHint.AntiAliasGridFit
+        g.TextContrast = 12
         GetTextExtent = g.MeasureString(Text, MeasureFont, New PointF(0, 0), Drawing.StringFormat.GenericTypographic)
         g.Dispose()
         bmp.Dispose()
