@@ -3068,11 +3068,11 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="AS|UHPB" id="UponHimBePeace"></word>
 			<word text="STAWW|PBUHHF" id="ThePrayersOfGloriousAllahUponHimHisFamilyAndPeace"></word>
 			<word text="SAWS|SAW|PBUH" id="ThePrayersOfAllahUponHimAndPeace"></word>
-			<word text="RAum|RA" id="MayAllahBePleasedWithThemMasculine"></word>
+			<word text="RAum|RA" font="AGAIslamicPhrases;0066" id="MayAllahBePleasedWithThemMasculine"></word>
 			<word text="RAun~a" id="MayAllahBePleasedWithThemFeminine"></word>
 			<word text="RAumaa" id="MayAllahBePleasedWithBothOfThem"></word>
-			<word text="RAu" id="MayAllahBePleasedWithHim"></word>
-			<word text="RAaa" id="MayAllahBePleasedWithHer"></word>
+			<word text="RAu" font="AGAIslamicPhrases;0064" id="MayAllahBePleasedWithHim"></word>
+			<word text="RAaa" font="AGAIslamicPhrases;0067" id="MayAllahBePleasedWithHer"></word>
 			<word text="RATum|RAT" id="MayGloriousAllahBePleasedWithThemMasculine"></word>
 			<word text="RATun~a" id="MayGloriousAllahBePleasedWithThemFeminine"></word>
 			<word text="RATumaa" id="MayGloriousAllahBePleasedWithBothOfThem"></word>
@@ -3108,15 +3108,15 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="ASa" id="MayAllahKeepYouCheerful"></word>
 			<word text="SWT" id="GloriousAndExaltedBeHe"></word>
 			<word text="AWJ" id="SublimeAndMighty"></word>
-			<word text="JJ" id="MayHisGloryBeGlorified"></word>
+			<word text="JJ" font="AGAIslamicPhrases;0075" id="MayHisGloryBeGlorified"></word>
 			<word text="BLESSINGSOFALLAH" id="BlessingsOfAllah"></word>
 			<word text="SEEKREFUGE" id="SeekRefugeWithAllahFromSatanRejected"></word>
 			<word text="BISMILLAH" id="InTheNameOfAllah"></word>
 			<word text="INSHALLAH" id="AllahWilling"></word>
 			<word text="INSHALLAHTAALA" id="GloriousAllahWilling"></word>
-			<word text="MASHALLAH" id="AllahWilledItSo"></word>
+			<word text="MASHALLAH" font="AGAIslamicPhrases;0028" id="AllahWilledItSo"></word>
 			<word text="SUBHANALLAH" id="GloryBeToAllah"></word>
-			<word text="ALHAMDULILLAH" id="AllPraiseAndThanksBeToAllah"></word>
+			<word text="ALHAMDULILLAH" font="AGAIslamicPhrases;002B" id="AllPraiseAndThanksBeToAllah"></word>
 			<word text="THANKSALHAMDULILLAH" id="ThanksAllPraiseAndThanksIsToAllah"></word>
 			<word text="ALLAHUAKBAR" id="AllahIsGreatest"></word>
 			<word text="ASTAGFIRULLAH" id="IAskAllahForgiveness"></word>
@@ -3138,7 +3138,14 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="MUHAMMADURRASOOLULLAH" id="CreedOfIslamSecondPart"></word>
 			<word text="NOPOWERNOMIGHTEXCEPTALLAH" id="ThereIsNoPowerAndNoMightExceptWithAllah"></word>
 			<word text="NOPOWERNOMIGHTEXCEPTALLAHMOSTHIGHMOSTMAGNIFICENT" id="ThereIsNoPowerAndNoMightExceptWithAllahMostHighMostMagnificent"></word>
+
 			<word text="AH" id="AfterMigration"></word>
+			<word text="Islam" font="AGAIslamicPhrases;0022" id="Islam"></word>
+			<word text="AAMEEN" id="MayAllahWillItSo"></word>
+
+			<word text="BISMILLAHIRAHMANIRAHEEM" font="AGAIslamicPhrases;0021,0023,0024,0025,0026,002D,0030,0031,0032,0033,0034,0035,0036,0037,0040" id="InTheNameOfAllahMostBeneficentMostMerciful"></word>
+			<word text="ALHAMDULILLAHIRABBILALAMEEN" font="AGAIslamicPhrases;0029" id="AllPraiseAndThanksBeToAllahTheLordOfTheWorlds"></word>
+			<word text="FALAQ" font="AGAIslamicPhrases;002F" id="{113}"></word>
 		</category>
 	</abbreviations>
 	<lists>
