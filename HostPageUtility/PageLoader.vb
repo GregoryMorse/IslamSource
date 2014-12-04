@@ -2802,9 +2802,14 @@ Public Class RenderArray
                     If (CInt(Data(4)) <> 0) Then writer.Write("Average of " + CStr(CInt(Data(3)) / CInt(Data(4)) / 2) + " out of " + Data(4) + " rankings")
                     writer.WriteEndTag("span")
                 Else
-                    If Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eArabic Then
+                    If Items(Count).TextItems(Index).Font = "AGAIslamicPhrases" Or Items(Count).TextItems(Index).Font = "AGAArabesque" Or Items(Count).TextItems(Index).Font = "IslamicLogo" Then
+                        writer.Write(HtmlTextWriter.TagRightChar)
+                        writer.WriteBeginTag("img")
+                        writer.WriteAttribute("src", HttpUtility.HtmlEncode("host.aspx?Page=Image.gif&Image=UnicodeChar&Size=32&Char=" + Hex(AscW(CStr(Items(Count).TextItems(Index).Text)(0))) + "&Font=" + Items(Count).TextItems(Index).Font))
+                        writer.WriteAttribute("alt", String.Empty)
+                    ElseIf Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eArabic Then
                         writer.WriteAttribute("class", "arabic")
-                        writer.WriteAttribute("dir", "rtl")
+                        writer.WriteAttribute("dir", If(System.Text.RegularExpressions.Regex.Match(CStr(Items(Count).TextItems(Index).Text), "(?:\p{IsArabic}|\p{IsArabicPresentationForms-A}|\p{IsArabicPresentationForms-B})+").Success, "rtl", "ltr"))
                         writer.WriteAttribute("id", "arabic" + CStr(IIf(NestPrefix = String.Empty, String.Empty, NestPrefix + "_")) + CStr(Count) + "_" + CStr(Index))
                         writer.WriteAttribute("style", "color: " + System.Drawing.ColorTranslator.ToHtml(Items(Count).TextItems(Index).Clr) + ";" + If(Items(Count).TextItems(Index).Font <> String.Empty, "font-family:" + Items(Count).TextItems(Index).Font + ";", String.Empty) + Style)
                     ElseIf Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eTransliteration Then
@@ -2819,7 +2824,7 @@ Public Class RenderArray
                         writer.WriteAttribute("style", "color: " + System.Drawing.ColorTranslator.ToHtml(Items(Count).TextItems(Index).Clr) + ";" + If(Items(Count).TextItems(Index).Font <> String.Empty, "font-family:" + Items(Count).TextItems(Index).Font + ";", String.Empty) + Style)
                     End If
                     writer.Write(HtmlTextWriter.TagRightChar)
-                    writer.Write(Utility.HtmlTextEncode(CStr(Items(Count).TextItems(Index).Text)).Replace(vbCrLf, "<br>"))
+                    If Not (Items(Count).TextItems(Index).Font = "AGAIslamicPhrases" Or Items(Count).TextItems(Index).Font = "AGAArabesque" Or Items(Count).TextItems(Index).Font = "IslamicLogo") Then writer.Write(Utility.HtmlTextEncode(CStr(Items(Count).TextItems(Index).Text)).Replace(vbCrLf, "<br>"))
                 End If
                 writer.WriteEndTag(CStr(IIf(Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eNested Or Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eRanking Or Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eList, "div", "span")))
             Next

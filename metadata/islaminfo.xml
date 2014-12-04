@@ -205,7 +205,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 		<prayertype name="waqotN" id="PrescribedTime" classification="TraditionObligatory" prayerunits="-Dawn=2,-Noon=4,+Noon=2,+Sunset=2,+Night=2"></prayertype>
 		<prayertype name="jumuEapN" id="Friday" classification="TraditionObligatory" prayerunits="-Noon=4,+Noon=4"></prayertype>
 		<prayertype name="witorN" id="Odd" classification="Necessary" prayerunits="+Night=3"></prayertype>
-		<prayertype name="EayodN" id="CelebrationDay" classification="Necessary" prayerunits="2"></prayertype>
+		<prayertype name="EiydN" id="CelebrationDay" classification="Necessary" prayerunits="2"></prayertype>
 		<prayertype name="waqotN" id="PrescribedTime" classification="TraditionVoluntary" prayerunits="-Noon=2,+Noon=4,-Afternoon=2|4,-Sunset=2,-Night=2|4"></prayertype>
 		<prayertype name="jumuEapN" id="Friday" classification="TraditionVoluntary" prayerunits="-Noon=2,+Noon=2"></prayertype>
 		<prayertype name="&lt;isotixaArapN" id="Guidance" classification="Tradition" prayerunits="2"></prayertype>
@@ -235,13 +235,13 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 	</prayertimes>
 	<verses>
 		<category title="WhenWakingUp">
-			<verse title="WhenWakingUp1" text="{loHamodu lil~ahi {l~a*iyo &gt;aHoyaAnaA baEoda maA^ &gt;amaAtanaA wa&lt;ilayohi {ln~u$uwru \{reference:Al-Bukhari, cf. Al-Asqalani, Fathul-Bari 11/113; Muslim 4/2083\}"></verse>
+			<verse title="WhenWakingUp1" text="{loHamodu lil~ahi {l~a*iy &gt;aHoyaAnaA baEoda maA^ &gt;amaAtanaA wa&lt;ilayohi {ln~u$uwru \{reference:Al-Bukhari, cf. Al-Asqalani, Fathul-Bari 11/113; Muslim 4/2083\}"></verse>
 			<verse title="WhenWakingUp2" text="laA^ &lt;ilaha &lt;il~aA {ll~ahu waHodahu laA $ariyka lahu\, lahu {lomuloku walahu {loHamodu\, wahuwa EalaY kul~i $ayo&apos;K qadiyrN\. suboHa`na {ll~ahi\, wa{loHamodu lil~ahi\, walaA^ &lt;ilaha &lt;il~aA {ll~ahu\, wa{ll~ahu &gt;akobaru\, walaA Hawola walaA quw~apa &lt;il~aA bi{ll~ahi {loEaliy~i {loEaZiymi\, rab~i {gofiroliy"></verse>
-			<verse title="WhenWakingUp3" text="{loHamodu lil~ahi {l~a*iyo EaAfaAniy fiY jasadiy\, warad~a Ealay~a ruwHiy\, wa&gt;a*ina liy bi*ikorihi"></verse>
+			<verse title="WhenWakingUp3" text="{loHamodu lil~ahi {l~a*iy EaAfaAniy fiY jasadiy\, warad~a Ealay~a ruwHiy\, wa&gt;a*ina liy bi*ikorihi"></verse>
 			<verse title="WhenWakingUp4" text="\{3:190-200\}"></verse>
 		</category>
 		<category title="WhenWearingAGarment">
-			<verse title="WhenWearingAGarment1" text="{loHamodu lil~ahi {l~a*iyo kasaAniyo ha`*aA ({lv~awoba) warazaqaniyhi mino gayori HawolK min~iyo walaA quw~apK"></verse>
+			<verse title="WhenWearingAGarment1" text="{loHamodu lil~ahi {l~a*iy kasaAniy ha`*aA ({lv~awoba) warazaqaniyhi mino gayori HawolK min~iy walaA quw~apK"></verse>
 		</category>
 		<category title="WhenWearingANewGarment">
 			<verse title="WhenWearingANewGarment1" text="{ll~ahum~a laka {loHamodu &gt;anta kasawotaniyhi\, &gt;aso&gt;aluka mino xayorihi waxayori maA SuniEa lahu\, wa&gt;aEuw*u bika min $ar~ihi wa$ar~i maA SuniEa lahu"></verse>
@@ -799,23 +799,23 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<verse title="FirstCreed" text="laA^ &lt;ilaha &lt;il~aA {ll~ahu\, muHam~adN rasuwulu {ll~ahi"></verse>
 			<verse title="SecondCreed" text="{$ohadu &gt;ano laA^ &lt;ilaha &lt;il~aA {ll~ahu waHodahu laA $ariyka lahu wa&gt;a$ohadu &gt;an~a muHam~adFA Eaboduhu warasuwluhu"></verse>
 			<verse title="ThirdCreed" text="suboHa`nu lil~ahu wa{loHamodu lil~ahi walaA^ &lt;ilaha &lt;il~aA {ll~ahu wa{ll~ahu &gt;akobaru walaA Hawola walaA quw~apa &lt;il~aA bi{ll~ahi {loEaliY~i {loEaZiymi"></verse>
-			<verse title="FourthCreed" text="laA^ &lt;ilaha &lt;il~aA {ll~ahu waHodahu laA $ariyka lahu\, lahu {lomuloku walahu {loHamodu yuHoY wayumiyotu wahuwa HaY~u l~aA yamuwotu &gt;abadFA &gt;abadFA *uw {lojalaAli wa{loAikoraAmi biyadihi {loxayoru wahuwa EalaY kul~i $a}KA qadiyorN"></verse>
-			<verse title="FifthCreed" text="&gt;asotagofiru {ll~aha rab~iY min kul~i *anobK &gt;a*onabotuhu EamadFA &gt;awo xaTFA sir~FA &gt;awo EalaAniyapF wa&gt;atuwobu &lt;ilayohi min {l*~anobi {l~a*iYo &gt;aEolamu wamin {l*~anobi {l~a*iYo laA^ &gt;aEolamu &lt;in~aka &gt;anta Eal~aAmu {loguyubi wasat~aAru {loEuyuwobi wagaf~aAru {l*~unuwobi walaA Hawola walaA quw~apa &lt;il~aA bi{ll~ahi {loEaliY~i {loEaZiyom"></verse>		
-			<verse title="SixthCreed" text="{ll~ahum~a &lt;in~iY^ &gt;aEuw*u bika mino &gt;ano &gt;u$orika $a}FA wa&gt;anaA^ &gt;aEolamu bihi wa&gt;asotagofiruka limaA laA^ &gt;aEolamu bihi tubotu Eanohu watabar~aAtu mina {lokufori wa{l$~aroki wa{loki*obi wa{logiyobapi wa{lobidoEapi wa{ln~amiyomapi wa{lofawaAHi$i wa{lobuhotaAni wa{lomaEaASiYo kul~ihaA wa&gt;asolamotu wa&gt;aquwolu laA^ &lt;ilaha &lt;il~aA {ll~ahu muHam~adu r~asuwolu {ll~ahi"></verse>
+			<verse title="FourthCreed" text="laA^ &lt;ilaha &lt;il~aA {ll~ahu waHodahu laA $ariyka lahu\, lahu {lomuloku walahu {loHamodu yuHoY wayumiytu wahuwa HaY~u l~aA yamuwotu &gt;abadFA &gt;abadFA *uw {lojalaAli wa{loAikoraAmi biyadihi {loxayoru wahuwa EalaY kul~i $a}KA qadiyrN"></verse>
+			<verse title="FifthCreed" text="&gt;asotagofiru {ll~aha rab~iY min kul~i *anobK &gt;a*onabotuhu EamadFA &gt;awo xaTFA sir~FA &gt;awo EalaAniyapF wa&gt;atuwobu &lt;ilayohi min {l*~anobi {l~a*iYo &gt;aEolamu wamin {l*~anobi {l~a*iYo laA^ &gt;aEolamu &lt;in~aka &gt;anta Eal~aAmu {loguyubi wasat~aAru {loEuyuwobi wagaf~aAru {l*~unuwobi walaA Hawola walaA quw~apa &lt;il~aA bi{ll~ahi {loEaliY~i {loEaZiym"></verse>		
+			<verse title="SixthCreed" text="{ll~ahum~a &lt;in~iY^ &gt;aEuw*u bika mino &gt;ano &gt;u$orika $a}FA wa&gt;anaA^ &gt;aEolamu bihi wa&gt;asotagofiruka limaA laA^ &gt;aEolamu bihi tubotu Eanohu watabar~aAtu mina {lokufori wa{l$~aroki wa{loki*obi wa{logiybapi wa{lobidoEapi wa{ln~amiymapi wa{lofawaAHi$i wa{lobuhotaAni wa{lomaEaASiYo kul~ihaA wa&gt;asolamotu wa&gt;aquwolu laA^ &lt;ilaha &lt;il~aA {ll~ahu muHam~adu r~asuwolu {ll~ahi"></verse>
 		</category>
 		<category title="Umrah">
-			<verse title="BeforeTravel" text="&gt;asotawodiEuka {ll~aha diyonaka wa&gt;amaA nataka waxawaAtima Eamalika\."></verse>
+			<verse title="BeforeTravel" text="&gt;asotawodiEuka {ll~aha diynaka wa&gt;amaA nataka waxawaAtima Eamalika\."></verse>
 			<verse title="IntentionForJourneyShower" text="nawayotu {lofusola lils~afari sun~apF lil~ahi taEaAlaY"></verse>
 			<verse title="IntentionForIhramShower" text="nawayotu {lofusola sun~apa {lo&lt;iHoraAmi lil~ahi taEaAlaY"></verse>
 			<verse title="IntentionForJourneyPrayer" text="&gt;uSal~iY sun~apa {ls~afari rakoEatayoni lil~ahi taEaAlaY"></verse>
 			<verse title="IntentionForIhramPrayer" text="&gt;uSal~iY sun~apa {lo&lt;iHoraAmi rakoEatayoni lil~ahi taEaAlaY"></verse>
-			<verse title="IhramPrayerSupplication" text="bisomi {ll~ahi {lr~aHomani {lr~aHiyomi\. {ll~ahu &gt;akobaru\, {ll~ahu &gt;akobaru\, {ll~ahu &gt;akobaru\, suboHa`na {l~a*iyo sax~ar&gt;anaA ha`*aA wamaA kun~aA lahu muqoriniyona\. wa&lt;in~aA^ &lt;ilaY rab~inaA lamunqalibuwona\. {ll~ahum~a &lt;in~aA naso&gt;aluka fiY safarinaA ha`*aA {lobir~a wa{lt~aqowaY wamina {loEamali maA taroDiY\. {ll~ahum~a huw~ino EaliyonaA safaranaA ha`*aA wa&gt;aTowi Ean~aA buEodapu\. {ll~ahum~a &gt;anta {lS~aAHibu fiY {ls~afari wa{loxaliyofatu fiY {lo&gt;aholi {ll~ahum~a &lt;in~iY^ &gt;aEuw*u bika min waEovaA^&apos;i {ls~afari wakaAbati {lomanZari wasuw^&apos;i {lomunqalabi fiY {lomaAli wa{lo&gt;aholi\."></verse>
+			<verse title="IhramPrayerSupplication" text="bisomi {ll~ahi {lr~aHomani {lr~aHiymi\. {ll~ahu &gt;akobaru\, {ll~ahu &gt;akobaru\, {ll~ahu &gt;akobaru\, suboHa`na {l~a*iy sax~ar&gt;anaA ha`*aA wamaA kun~aA lahu muqoriniyna\. wa&lt;in~aA^ &lt;ilaY rab~inaA lamunqalibuwona\. {ll~ahum~a &lt;in~aA naso&gt;aluka fiY safarinaA ha`*aA {lobir~a wa{lt~aqowaY wamina {loEamali maA taroDiY\. {ll~ahum~a huw~ino EaliynaA safaranaA ha`*aA wa&gt;aTowi Ean~aA buEodapu\. {ll~ahum~a &gt;anta {lS~aAHibu fiY {ls~afari wa{loxaliyfatu fiY {lo&gt;aholi {ll~ahum~a &lt;in~iY^ &gt;aEuw*u bika min waEovaA^&apos;i {ls~afari wakaAbati {lomanZari wasuw^&apos;i {lomunqalabi fiY {lomaAli wa{lo&gt;aholi\."></verse>
 			<verse title="IntentionToPerformUmrah" text="nawayotu {loEumorata wa&gt;aHoramotu bihaA lil~ahi taEaAlaY\."></verse>
 			<verse title="Talbiah" text="lab~ayoka {ll~ahum~a lab~ayoka\, lab~ayoka laA $ariyka laka lab~ayoka\, &lt;in~a {loHamoda wa{ln~iEomata laka wa{lomuloka\, laA $ariyka laka\."></verse>
-			<verse title="SalawatSupplicationAfterTalbiah" text="{ll~ahum~a Sal~i EalaY say~idinaA muHam~adK waEalaY &gt;ali say~idinaA muHam~adK\. kamaA Sal~ayota EalaY &lt;ibora`hiymi waEalaY &gt;ali &lt;ibora`hiymi\. wabaAriko EalaY say~idinaA muHam~adK waEalaY &gt;ali say~idinaA muHam~adK kamaA baArakota EalaY &lt;ibora`hiyma waEalaY &gt;ali &lt;ibora`hiyma\, fiY {loEaAlamiyona &lt;in~aka HamiyodN majiyodN\."></verse>
+			<verse title="SalawatSupplicationAfterTalbiah" text="{ll~ahum~a Sal~i EalaY say~idinaA muHam~adK waEalaY &gt;ali say~idinaA muHam~adK\. kamaA Sal~ayota EalaY &lt;ibora`hiymi waEalaY &gt;ali &lt;ibora`hiymi\. wabaAriko EalaY say~idinaA muHam~adK waEalaY &gt;ali say~idinaA muHam~adK kamaA baArakota EalaY &lt;ibora`hiyma waEalaY &gt;ali &lt;ibora`hiyma\, fiY {loEaAlamiyna &lt;in~aka HamiydN majiydN\."></verse>
 			<verse title="SupplicationAfterSalawatSupplication" text="{ll~ahum~a &lt;in~iY^ &gt;aso&gt;aluka riDaAka wa{lojan~ata\, wa&gt;aEuw*u bika min saxaTika wa{ln~aAri\."></verse>
 			<verse title="SupplicationForArrivingAtMakkah" text="{ll~ahum~a &lt;in~a ha`*aA {loHaraAma Haramuka\, wa{lobalada baladuka walaAlo&gt;amona &gt;amanuka\, faHar~imoniy EalaY {ln~aAri wa&gt;amin~iy mino Ea*aAbika yawoma taboEa$u EibaAdaka\."></verse>
-			<verse title="EnteringMasjidilHaram" text="{ll~ahum~a &gt;anta {ls~alaAmu waminka {ls~alaAmu faHay~inaA rab~anaA bi{ls~alaAmi wa&gt;adoxilonaA {lojan~ata daAra {ls~alaAmi tabaArakota rab~anaA wataEaAlayota ya`*aA {loxala&gt;ali wa{lo&lt;ikoraAmi\. {ll~ahum~a {fotaHo liyo &gt;abowaAba raHomatka wamagoofiratika wa&gt;adoxiloniyo fiyohaA\, bisomi {ll~ahi wa{loHamodu lil~ahi wa{lS~alaAtu wa{ls~alaAmu EalaY rasuwoli {ll~ahi Sal~aY {ll~ahu Ealayopi wasal~ama\."></verse>
+			<verse title="EnteringMasjidilHaram" text="{ll~ahum~a &gt;anta {ls~alaAmu waminka {ls~alaAmu faHay~inaA rab~anaA bi{ls~alaAmi wa&gt;adoxilonaA {lojan~ata daAra {ls~alaAmi tabaArakota rab~anaA wataEaAlayota ya`*aA {loxala&gt;ali wa{lo&lt;ikoraAmi\. {ll~ahum~a {fotaHo liy &gt;abowaAba raHomatka wamagoofiratika wa&gt;adoxiloniy fiyhaA\, bisomi {ll~ahi wa{loHamodu lil~ahi wa{lS~alaAtu wa{ls~alaAmu EalaY rasuwoli {ll~ahi Sal~aY {ll~ahu Ealayopi wasal~ama\."></verse>
 		</category>
 		<category title="Celebration">
 			<verse title="Celebration1" text="{ll~ahu &gt;akobaru\, {ll~ahu &gt;akobaru\, {ll~ahu &gt;akobaru\, laA^ &lt;ilaha &lt;il~aA {ll~ahu\, wa{ll~ahu &gt;akobaru\, {ll~ahu &gt;akobaru\, wa{ll~ahi {loHamodu"></verse>
@@ -841,6 +841,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 		<category title="PopularIslamicSongVerses">
 			<verse title="OMasterSendPrayersAndPeace" text="mawolaAya Sal~iy wasal~imo daAi}amFA &gt;abadFA EalaY Habiybika xayori {loxuloqi kul~ihimi"></verse>
 			<verse title="SalutationsUponYouOfAllah" text="SalaY Ealayoka {ll~ahu ya`EadonaAni ya`muSoTafaY ya`Safowapu {lr~aHomaAni {loHamodulil~ahi {l~a*iY^ &gt;aEoTaAniy ha`*aA {logulaAmi {lT~ayobi {lo&gt;arodaAni ha`*aA {logulaAmi {l~Tayobi {lo&gt;ardaAni qado saAdo fiY {lomahodi EalaY {logilomaAni &gt;aEiy*ihu bi{lobayoti *iy {lo&gt;arokaAni HataY &gt;araAhu bi{logi {lobunoyaAni &gt;anta {l~a*iy sumiyapa fiY {loquro&apos;aAni &gt;anta {l~a*iy sumiyapa fiY {loquro&apos;aAni &gt;aHomadu makotuwbu EalaY {lojinaAni SalaY Ealayoka {ll~ahu fiY {lo&gt;aHiyaAni &gt;aHomadohu fiY {ls~iri wa{lobirohaAni Haq~aA EalaY {lo&lt;isolaAmi wa{lo&lt;iymaAni Haq~aA EalaY {lo&lt;isolaAmi wa{lo&lt;iymaAni"></verse>
+			<verse title="O" text="yaA hanaAnaA Zahara Aldi~ynu Almu&amp;aya~d biZuhuwriAlna~biY AaHmad yaA hanaAnaA bimuHama~d *alika AlfaDlu mina Allh yaA hanaAnaA xuSa~ biAlsa~bEi AlmavaAniY waHawY luTfa AlmaEa&gt;niY maAlahu fiY Alxalqi vaAniY waEalayhi Aanzala Allh yaA hanaAnaA Zahara Aldi~ynu Almu&amp;aya~d biZuhuwriAlna~biY AaHmad yaA hanaAnaA bimuHama~d *alika AlfaDlu mina Allh yaA hanaAnaA min maka~pK lama~A Zahar liAajlihi An$aqa Alqamar waAftxarat Alu muDar bihi EalY kuli~ AlAanaAm yaAhaAnaAna&gt; Zahara Aldi~ynu Almu&amp;aya~d biZuhuwriAlna~biY AaHmad yaA hanaAnaA bimuHama~d *alika AlfaDlu mina Allh yaA hanaAnaA AaTyabu Alna~Asi xalqFA waAajalu~ Alna~Asi xuluquA *ikruhu garbFA wa$arqFA saA}irN waAlHamdu lilh yaAhanaAnaA Zahara Aldi~ynu Almu&amp;aya~d biZuhuwriAlna~biY AaHmad yaA hanaAnaA bimuHama~d *alika AlfaDlu mina Allh yaA hanaAnaA Salu~wA EalY xayri AlAanaAm AlmuSTafaY badriAlta~maAm Salu~wA Ealayhi wasali~muwA ya$faE lana&gt; yawma Alzi~HaAm yaA hanaAnaA Zahara Aldi~ynu Almu&amp;aya~d biZuhuwriAlna~biY AaHmad yaA hanaAnaA bimuHama~d *alika AlfaDlu mina Allh yaA hanaAnaA"></verse>
 		</category>
 		<category title="Remembrance">
 			<verse title="RemembranceFirst" text="\{21:87:15-23\}"></verse>
@@ -1054,7 +1055,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="$imaAlN $amaA^}ilN" id="Left"></word>
 			<word text="bayona" id="Between" grammar="pos"></word>
 			<word text="Hawola" id="Around" grammar="pos"></word>
-			<word text="Hiyovu" id="Wherever"></word>
+			<word text="Hiyvu" id="Wherever"></word>
 			<word text="&gt;ayonamaA" id="Wherever"></word>
 		</category>
 		<category title="TimePrepositions">
@@ -2021,27 +2022,33 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="TaAhirN" id="PurifiedClean"></word>
 			<word text="najisN" id="Impure"></word>
 			<word text="najaAsapN" id="Impurity"></word>
-			<word text="*aAtiy~apN" id=""></word>
-			<word text="Hukomiy~apN" id=""></word>
-			<word text="qul~aY" id=""></word>
+			<word text="HabiybN" id="Beloved"></word>
+			<word text="xaliylN" id="CloseFriend"></word>
+			<word text="najaAsapN" id="Impurity"></word>
+			<word text="muqad~imapN" id="Introduction"></word>
+			<word text="fahorasN" id="Index"></word>
+			<word text="muHotawayaAtN" id="Contents"></word>
+			<word text="*aAtiy~apN" id="Subjective"></word>
+			<word text="Hukomiy~apN" id="Judgmental"></word>
+			<word text="qul~aY" id="Fry"></word>
 			<word text="badawiy badow" id="PredominantlyDesertDwellingArabianEthnicGroup"></word>
 			<word text="EaworapN" id="PrivatePartsOrPartsOfBodyForbiddenToExposeToOthers"></word>
 			<word text="&lt;isotinjaA^&apos;N" id="CleaningOnesStoolAndUrineExitsAfterDefecationOrUrinationWithWater"></word>
 			<word text="&lt;isotijomaArN" id="CleaningOnesStoolAndUrineExitsAfterDefecationOrUrinationWithStonesOrSubstitute"></word>
 			<word text="masofuwhN" id=""></word>
-			<word text="mayotapN" id=""></word>
-			<word text="&lt;ihaAbN" id=""></word>
-			<word text="diybaArN" id=""></word>
+			<word text="mayotapN" id="Dead"></word>
+			<word text="&lt;ihaAbN" id="Cuticle"></word>
+			<word text="diybaArN" id="Debar"></word>
 			<word text="mahodiy" id="GuidedOne"></word>
-			<word text="waAdiy" id=""></word>
-			<word text="maniy" id=""></word>
+			<word text="waAdiy" id="Valley"></word>
+			<word text="maniy" id="Semen"></word>
 			<word text="janaAbapN" id="MajorImpurity"></word>
 			<word text="xamorN" plural="xumuwr" id="Wine"></word>
 			<word text="mayosirN" id="AncientArabianGameOfChanceGambling"></word>
 			<word text="&gt;azolaAmN" id="FortuneTelling"></word>
 			<word text="{lomuTal~aqaAtu" id="DivorcedWomen"></word>
 			<word text="&gt;atoha" id=""></word>
-			<word text="{lokuholu" id=""></word>
+			<word text="kuholu" id="Elderly"></word>
 			<word text="rijosN" plural="&gt;arojaAsN" id="DirtFilth"></word>
 			<word text="{ln~iyapu" id="Intention"></word>
 			<word text="taEaAmN" id="Food"></word>
@@ -2051,26 +2058,26 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="fuqaAhapN" id="Knowledgable"></word>
 			<word text="mu&amp;alaAqaAtN" id=""></word>
 			<word text="lamosahN" plural="lamosaAtN" id="Touch"></word>
-			<word text="xuwf~N" id=""></word>
+			<word text="xuwf~N" id="Fear"></word>
 			<word text="juwaAriybN" id=""></word>
-			<word text="xumora" id=""></word>
-			<word text="qiraA^&apos;apN" id=""></word>
+			<word text="xumora" id="Wine"></word>
+			<word text="qiraA^&apos;apN" id="Reading"></word>
 			<word text="$ahadapN" id="Testimony"></word>
 			<word text="sutorapN" plural="sutarN" id="GuardCovering"></word>
 			<word text="xamaArN" id="WineMerchant"></word>
 			<word text="Diro&apos;N" id="AdditionOfSecondWifeToHousehold"></word>
-			<word text="&lt;izaArN" id=""></word>
-			<word text="ma&gt;amuwnN" id=""></word>
+			<word text="&lt;izaArN" id="Wrapper"></word>
+			<word text="ma&gt;amuwnN" id="Safe"></word>
 			<word text="ZaAhiriyapN" id="Zaahiree"></word>
 			<word text="jariyriy" id="Jareeree"></word>
 			<word text="qunuwtN" id="DevoutnessPietyObedienceHumilityToGod"></word>
 			<word text="qanaATapN" id="Desperateness"></word>
 			<word text="HukomN" id="IslamicRuling"></word>
 			<word text="tilaAwapN" id="Reciting"></word>
-			<word text="&lt;ifotiraA$N" id=""></word>
-			<word text="tawar~ukN" id=""></word>
-			<word text="{lt~aHar~uju" id=""></word>
-			<word text="mu&apos;ak~adapN" id=""></word>
+			<word text="&lt;ifotiraA$N" id="Squatting"></word>
+			<word text="tawar~ukN" id="Turk"></word>
+			<word text="{lt~aHar~uju" id="Embarass"></word>
+			<word text="mu&apos;ak~adapN" id="Uncertain"></word>
 			<word text="jaworabN" plural="jawaAribN" id="SockStocking"></word>
 			<word text="fitorapN" id="NaturalBeliefInGod"></word>
 			<word text="{lomuEaw~i*atayonu" id="VersesOfRefuge"></word>
@@ -2770,10 +2777,14 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="waEalayokumu {ls~alaAmu waraHomapu {ll~ahi" id="AndUponYouBePeaceAndMercyOfAllah"></word>
 			<word text="{ls~alaAmu Ealayokumu waraHomapu {ll~ahi wabarakaAtuhu" id="PeaceBeUponYouAndMercyOfAllahAndBlessings"></word>
 			<word text="waEalayokumu {ls~alaAmu waraHomapu {ll~ahi wabarakaAtuhu" id="AndUponYouBePeaceAndMercyOfAllahAndBlessings"></word>
-			<word text="Sal~aY {ll~ahu Ealayohi wasalaAmo" id="ThePrayersOfAllahUponHimAndPeace"></word>
-			<word text="Sal~aY {ll~ahu toEaAlaY Ealayohi wa&apos;aAlihi wasalaAmo" id="ThePrayersOfGloriousAllahUponHimHisFamilyAndPeace"></word>
+			<word text="Sal~aY {ll~ahu Ealayohi wasalaAma" id="ThePrayersOfAllahUponHimAndPeace"></word>
+			<word text="Sal~aY {ll~ahu toEaAlaY Ealayohi wa&apos;aAlihi wasalaAma" id="ThePrayersOfGloriousAllahUponHimHisFamilyAndPeace"></word>
 			<word text="Ealayohi {ls~alaAmu" id="UponHimBePeace"></word>
-			<word text="Ealayohi &gt;alofi Salaw`pu wasalaAmo" id="UponHimOneThousandPrayersAndPeace"></word>
+			<word text="EalayohimaA {ls~alaAmu" id="UponBothOfThemBePeace"></word>
+			<word text="EalayohaA {ls~alaAmu" id="UponHerBePeace"></word>
+			<word text="Ealayohimo {ls~alaAmu" id="UponThemBePeaceMasculine"></word>
+			<word text="Ealayohin~a {ls~alaAmu" id="UponThemBePeaceFeminine"></word>
+			<word text="Ealayohi &gt;alofi Salaw`pu wasalaAma" id="UponHimOneThousandPrayersAndPeace"></word>
 			<word text="&gt;aEuw*u bi{ll~ahi mina {l$~ayoTaAni {lr~ajiymi" id="SeekRefugeWithAllahFromSatanRejected"></word>
 			<word text="wabi {lowalidayoni &lt;iHosaAnaA" id="AndForParentsKindness"></word>
 			<word text="naEuw*u bi{ll~ahi" id="WeSeekRefugeWithAllah"></word>
@@ -2783,6 +2794,8 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="laA^ &lt;ilaha &lt;il~aA {ll~ahu\, muHam~adN rasuwulu {ll~ahi" id="CreedOfIslam"></word>
 			<word text="laA^ &lt;ilaha &lt;il~aA {ll~ahu" id="CreedOfIslamFirstPart"></word>
 			<word text="muHam~adN rasuwulu {ll~ahi" id="CreedOfIslamSecondPart"></word>
+			<word text="EiydN mubaArakN" id="BlessedFeastCelebration"></word>
+			<word text="EiydN saEiydN" id="HappyFeastCelebration"></word>
 			<word text="&gt;a$ohadu &gt;ano laA^ &lt;ilaha &lt;il~aA {ll~ahu\, wa&gt;a$ohadu &gt;an~a muHam~adFA Eaboduhu warasuwluhu" id="TestifyingCreedOfIslam"></word>
 			<word text="&gt;a$ohadu &gt;ano laA^ &lt;ilaha &lt;il~aA {ll~ahu" id="TestifyingCreedOfIslamFirstPart"></word>
 			<word text="&gt;a$ohadu &gt;an~a muHam~adFA rasuwlu {ll~ahi" id="TestifyingCreedOfIslamSecondPart"></word>
@@ -2790,6 +2803,8 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="&lt;in~a {ll~aha yuHib~u &lt;i*aA Eamila &gt;aHadukumo EamalFA &gt;an yutoqinahu" id="TrulyAllahLovesWhenOneWhoWorksDoesTheWorkWell"></word>
 			<word text="$ahorN ramaDaAnN {l~*iY &gt;anzala fiyhi {loquro&apos;aAni hudFY liln~aAsi" id="MonthOfRamadanWhichWasRevealedThereinTheQuranGuidanceToMankind"></word>
 			<word text="&gt;alaA bi*ikori {ll~ahi taTomo}inu {loquluwbu" id="InRemembranceOfAllahHeartsFindPeace"></word>
+			<word text="nabiY~u {ll~ahi" id="ProphetOfAllah"></word>
+			<word text="&gt;anbiyaA^&apos;u {ll~ahi" id="ProphetsOfAllah"></word>
 			<word text="rasuwlu {ll~ahi" id="MessengerOfAllah"></word>
 			<word text="Hay~a EalaY {lS~alaw`pi" id="ComeToPrayer"></word>
 			<word text="Hay~a EalaY {lofalaAHi" id="ComeToSuccess"></word>
@@ -2965,6 +2980,11 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="zakaw`pN {lofiTori" id="FastBreakingCharity"></word>
 			<word text="{ln~afosu {lo&gt;am~aArapu bi{ls~uw^&apos;i" id="LowerSelf"></word>
 			<word text="faqado kafara" id="ThenHeHasDisbelieved"></word>
+			<word text="$irokN &gt;akobarN" id="MajorPolythiesm"></word>
+			<word text="tamamo biHamod {ll~ahi" id="GreatWithPraiseToAllah"></word>
+			<word text="kul~u EaAm wa&gt;antumo bixayori" id="MayEveryYearYouBeInGoodHealthAndBlessings"></word>
+			<word text="kul~i sanapN wa&gt;antumo Tay~ibuwna" id="MayEveryYearYouHaveGoodness"></word>
+			<word text="kul~i Huq~uwqN maHofuwZapN" id="AllRightsReserved"></word>
 		</category>
 		<category title="Names">
 			<word text="muHam~adN {bonu Eabodu {ll~ahi {bonu Eabodu {lomuT~alibu {bonu haA$im‎N" nickname="&gt;abuw {loqaAsim" id="MuhammadBinAbdullahBinAbduAlMuttalib"></word>
@@ -3078,8 +3098,8 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="{lomasojidu {lo&gt;aqoSaY‎" id="FarthestMosque"></word>
 			<word text="bayotu {lomaqodisi" id="HolyHouse"></word> 
 			<word text="bayotu {lomaAli" id="CentralTreasury"></word>
-			<word text="EiyodN {lofiTor‎i" id="FestivalOfBreakingFast"></word>
-			<word text="EiyodN {lo&gt;aDoHaY‎" id="FestivalOfSacrifice"></word>
+			<word text="Eiydu {lofiTor‎i" id="FestivalOfBreakingFast"></word>
+			<word text="Eiydu {lo&gt;aDoHaY‎" id="FestivalOfSacrifice"></word>
 			<word text="ra&gt;asN {ls~anapu {lohijoriy~ap‎u" id="IslamicNewYear"></word> 
 			<word text="EaA$uwraA^&apos;" id="Ashura"></word>
 			<word text="mawolidN {ln~abiy" id="BirthdayOfTheProphet"></word>
@@ -3094,28 +3114,32 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="AndUponYouBePeaceWR|AndUponYouBePeaceAndMercyOfAllah" id="AndUponYouBePeaceAndMercyOfAllah"></word>
 			<word text="PeaceBeUponYouWRWB|PeaceBeUponYouAndMercyOfAllahAndBlessings" id="PeaceBeUponYouAndMercyOfAllahAndBlessings"></word>
 			<word text="AndUponYouBePeaceWRWB|AndUponYouBePeaceAndMercyOfAllahAndBlessings" id="AndUponYouBePeaceAndMercyOfAllahAndBlessings"></word>
-			<word text="AS|UHPB" font="0611|AGAIslamicPhrases;0061" id="UponHimBePeace"></word>
-			<word text="STAWW|PBUHHF" id="ThePrayersOfGloriousAllahUponHimHisFamilyAndPeace"></word>
-			<word text="SAWS|SAW|PBUH" font="FDFA,FDF9+FDF2+FDF7+FDF8,0610,FDF5|AGAIslamicPhrases;0073" id="ThePrayersOfAllahUponHimAndPeace"></word>
-			<word text="RAum|RA" font="AGAIslamicPhrases;0066" id="MayAllahBePleasedWithThemMasculine"></word>
-			<word text="RAun~a" id="MayAllahBePleasedWithThemFeminine"></word>
-			<word text="RAumaa" id="MayAllahBePleasedWithBothOfThem"></word>
-			<word text="RAu" font="0613|AGAIslamicPhrases;0064" id="MayAllahBePleasedWithHim"></word>
-			<word text="RAaa" font="AGAIslamicPhrases;0067" id="MayAllahBePleasedWithHer"></word>
+			<word text="AS|AiS|UHPB" font="0611|AGAArabesque;F075|AGAIslamicPhrases;0061|IslamicLogo;0070,0071" id="UponHimBePeace"></word>
+			<word text="AimaaS" font="IslamicLogo;0065,0069" id="UponBothOfThemBePeace"></word>
+			<word text="AaaS" font="IslamicLogo;006F,0077" id="UponHerBePeace"></word>
+			<word text="AimS" font="IslamicLogo;0072,0075" id="UponThemBePeaceMasculine"></word>
+			<word text="AinnaS" id="UponThemBePeaceFeminine"></word>
+			<word text="STAWW|PBUHHF" font="IslamicLogo;0062,0079" id="ThePrayersOfGloriousAllahUponHimHisFamilyAndPeace"></word>
+			<word text="SAWS|SAW|PBUH" font="FDFA,FDF9+FDF2+FDF7+FDF8,0610,FDF5|AGAArabesque;F065,F072|AGAIslamicPhrases;0073|IslamicLogo;0060,006E" id="ThePrayersOfAllahUponHimAndPeace"></word>
+			<word text="RAum|RA" font="AGAArabesque;F079|AGAIslamicPhrases;0066|IslamicLogo;0067" id="MayAllahBePleasedWithThemMasculine"></word>
+			<word text="RAunna" id="MayAllahBePleasedWithThemFeminine"></word>
+			<word text="RAumaa" font="IslamicLogo;0063,0068" id="MayAllahBePleasedWithBothOfThem"></word>
+			<word text="RAu" font="0613|AGAArabesque;F074|AGAIslamicPhrases;0064|IslamicLogo;0061,007A" id="MayAllahBePleasedWithHim"></word>
+			<word text="RAaa" font="AGAIslamicPhrases;0067|IslamicLogo;0064,006A,0073,0078" id="MayAllahBePleasedWithHer"></word>
 			<word text="RATum|RAT" id="MayGloriousAllahBePleasedWithThemMasculine"></word>
-			<word text="RATun~a" id="MayGloriousAllahBePleasedWithThemFeminine"></word>
+			<word text="RATunna" id="MayGloriousAllahBePleasedWithThemFeminine"></word>
 			<word text="RATumaa" id="MayGloriousAllahBePleasedWithBothOfThem"></word>
 			<word text="RATu" id="MayGloriousAllahBePleasedWithHim"></word>
 			<word text="RATaa" id="MayGloriousAllahBePleasedWithHer"></word>
 			<word text="RAAim|RAA" id="MayAllahHaveMercyOnThemMasculine"></word>
-			<word text="RAAin~a" id="MayAllahHaveMercyOnThemFeminine"></word>
+			<word text="RAAinna" id="MayAllahHaveMercyOnThemFeminine"></word>
 			<word text="RAAimaa" id="MayAllahHaveMercyOnBothOfThem"></word>
 			<word text="RAAi" font="0612" id="MayAllahHaveMercyOnHim"></word>
 			<word text="RAAaa" id="MayAllahHaveMercyOnHer"></word>
 			<word text="Rum|R" id="AllahHaveMercyOnThemMasculine"></word>
-			<word text="Run~a" id="AllahHaveMercyOnThemFeminine"></word>
+			<word text="Runna" id="AllahHaveMercyOnThemFeminine"></word>
 			<word text="Rumaa" id="AllahHaveMercyOnBothOfThem"></word>
-			<word text="Ru" id="AllahHaveMercyOnHim"></word>
+			<word text="Ru" font="IslamicLogo;0074,0076" id="AllahHaveMercyOnHim"></word>
 			<word text="Raa" id="AllahHaveMercyOnHer"></word>
 			<word text="JKum|JK" id="MayAllahProtectYouAllMasculine"></word>
 			<word text="JKunna" id="MayAllahProtectYouAllFeminine"></word>
@@ -3135,9 +3159,9 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="AAum" id="MayAllahMakeYourRewardGreat"></word>
 			<word text="ShSum" id="MayAllahAcceptYourEffort"></word>
 			<word text="ASa" id="MayAllahKeepYouCheerful"></word>
-			<word text="SWT" id="GloriousAndExaltedBeHe"></word>
-			<word text="AWJ" font="AGAIslamicPhrases;0079" id="SublimeAndMighty"></word>
-			<word text="JJ" font="FDFB|AGAIslamicPhrases;0075" id="MayHisGloryBeGlorified"></word>
+			<word text="SWT" font="AGAArabesque;F049|IslamicLogo;006C" id="GloriousAndExaltedBeHe"></word>
+			<word text="AWJ" font="AGAArabesque;F055|AGAIslamicPhrases;0079|IslamicLogo;006B" id="SublimeAndMighty"></word>
+			<word text="JJ" font="FDFB|AGAArabesque;F059|AGAIslamicPhrases;0075|IslamicLogo;0066" id="MayHisGloryBeGlorified"></word>
 			<word text="BLESSINGSOFALLAH" id="BlessingsOfAllah"></word>
 			<word text="SEEKREFUGE" id="SeekRefugeWithAllahFromSatanRejected"></word>
 			<word text="BISMILLAH" id="InTheNameOfAllah"></word>
@@ -3148,7 +3172,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="SUBHANAKALLAH" font="AGAIslamicPhrases;003A" id="GloryBeToYouAllah"></word>
 			<word text="ALHAMDULILLAH" font="AGAIslamicPhrases;002B,0052" id="AllPraiseAndThanksBeToAllah"></word>
 			<word text="THANKSALHAMDULILLAH" id="ThanksAllPraiseAndThanksIsToAllah"></word>
-			<word text="ALLAHUAKBAR" font="FDF2+FDF3|AGAIslamicPhrases;0045,0054,0055,0057,0059" id="AllahIsGreatest"></word>
+			<word text="ALLAHUAKBAR" font="FDF2+FDF3|AGAArabesque;F052,F054|AGAIslamicPhrases;0045,0054,0055,0057,0059" id="AllahIsGreatest"></word>
 			<word text="ALLAHUAKBARALLAHUAKBAR" font="FDF2+FDF3+FDF2+FDF3|AGAIslamicPhrases;004C" id="AllahIsGreatestAllahIsGreatest"></word>
 			<word text="ASTAGFIRULLAH" id="IAskAllahForgiveness"></word>
 			<word text="HASBIALLAH" id="AllahSufficesMe"></word>
@@ -3162,7 +3186,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="SWEARBYALLAH" id="ISwearByAllah"></word>
 			<word text="RIGHTOFALLAH" id="RightOfAllah"></word>
 			<word text="MAYALLAHWILLITSOOLORDOFTHEWORLDS" id="MayAllahWillItSoOLordOfTheWorlds"></word>
-			<word text="ALLAHSAYSTHETRUTH" font="AGAIslamicPhrases;0041,0044,0053" id="AllahSaysTheTruth"></word>
+			<word text="ALLAHSAYSTHETRUTH" font="AGAArabesque;F077|AGAIslamicPhrases;0041,0044,0053" id="AllahSaysTheTruth"></word>
 			<word text="INPATHOFALLAH" id="InThePathOfAllah"></word>
 			<word text="TRULYFROMALLAHWECOMEANDTOHIMWILLRETURN" id="TrulyFromAllahWeComeAndToHimWillReturn"></word>
 			<word text="LAILAHAILLALLAH" font="AGAIslamicPhrases;0046" id="CreedOfIslamFirstPart"></word>
@@ -3178,20 +3202,22 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="ANDFORPARENTSKINDNESS" font="AGAIslamicPhrases;006C" id="AndForParentsKindness"></word>
 			<word text="BEWITHALLAH" font="AGAIslamicPhrases;002A" id="BeWithAllah"></word>
 			<word text="THENOBLEQURAN" font="AGAIslamicPhrases;0049,0050" id="TheNobleQuran"></word>
-			<word text="NOBLEQURAN" font="AGAIslamicPhrases;004F,007B" id="NobleQuran"></word>
+			<word text="NOBLEQURAN" font="AGAArabesque;F071|AGAIslamicPhrases;004F,007B" id="NobleQuran"></word>
 			<word text="MONTHOFRAMADANWHICHWASREVEALEDTHEREINTHEQURANGUIDANCETOMANKIND" font="AGAIslamicPhrases;0027" id="MonthOfRamadanWhichWasRevealedThereinTheQuranGuidanceToMankind"></word>
 			<word text="INREMEMBRANCEOFALLAHHEARTSFINDPEACE" font="AGAIslamicPhrases;002E" id="InRemembranceOfAllahHeartsFindPeace"></word>
 			<word text="SafeguardYourselfFromHeWhoYouHaveBeenGoodTo" font="AGAIslamicPhrases;0078" id="SafeguardYourselfFromHeWhoYouHaveBeenGoodTo"></word>
 			<word text="TrulyAllahLovesWhenOneWhoWorksDoesTheWorkWell" font="AGAIslamicPhrases;002C" id="TrulyAllahLovesWhenOneWhoWorksDoesTheWorkWell"></word>
+			<word text="BlessedFeastCelebration" font="AGAArabesque;F05A" id="BlessedFeastCelebration"></word>
+			<word text="HappyFeastCelebration" font="AGAArabesque;F07A" id="HappyFeastCelebration"></word>
 
 			<word text="AH" id="AfterMigration"></word>
 			<word text="ISLAM" font="AGAIslamicPhrases;0022,0068" id="Islam"></word>
 			<word text="PEACE" font="AGAIslamicPhrases;0069" id="Peace"></word>
-			<word text="ALLAH" font="FDF2|AGAIslamicPhrases;0065,0071,0072,0077" id="Allah"></word>
+			<word text="ALLAH" font="FDF2|AGAArabesque;F045,F051,F057|AGAIslamicPhrases;0065,0071,0072,0077" id="Allah"></word>
 			<word text="AAMEEN" id="MayAllahWillItSo"></word>
 			<word text="MUHAMMAD" font="FDF4|AGAIslamicPhrases;005D" id="Muhammad"></word>
 
-			<word text="BISMILLAHIRAHMANIRAHEEM" font="FDFD|AGAIslamicPhrases;0021,0023,0024,0025,0026,002D,0030,0031,0032,0033,0034,0035,0036,0037,0038,0039,0040,005E" id="InTheNameOfAllahMostBeneficentMostMerciful"></word>
+			<word text="BISMILLAHIRAHMANIRAHEEM" font="FDFD|AGAArabesque;F04F,F050|AGAIslamicPhrases;0021,0023,0024,0025,0026,002D,0030,0031,0032,0033,0034,0035,0036,0037,0038,0039,0040,005E" id="InTheNameOfAllahMostBeneficentMostMerciful"></word>
 			<word text="ALHAMDULILLAHIRABBILALAMEEN" font="AGAIslamicPhrases;0029,005F" id="AllPraiseAndThanksBeToAllahLordOfTheWorlds"></word>
 			<word text="TRULYWITHHARDSHIPISEASE" font="AGAIslamicPhrases;0063" id="TrulyWithHardshipIsEase"></word>
 			<word text="RepelTheirEvilByMeansOfWhatIsBest" font="AGAIslamicPhrases;006B" id="RepelTheirEvilByMeansOfWhatIsBest"></word>
@@ -3211,7 +3237,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="\{word:\}" id="IslamicTheology"></word>
 			<word text="\{word:\}" id="PropheticBiography"></word>
 			<word text="\{word:\}" id="QuranicExegesis"></word>
-			<word text="\{PeaceBeUponYou\}\{AndUponYouBePeace\}\{PeaceBeUponYouWR\}\{AndUponYouBePeaceWR\}\{PeaceBeUponYouWRWB\}\{AndUponYouBePeaceWRWB\}\{AS\}\{STAWW\}\{SAWS\}\{RA\}\{RAun~a\}\{RAumaa\}\{RAu\}\{RAaa\}\{RAT\}\{RATun~a\}\{RATumaa\}\{RATu\}\{RATaa\}\{RAA\}\{RAAin~a\}\{RAAimaa\}\{RAAi\}\{RAAaa\}\{R\}\{Run~a\}\{Rumaa\}\{Ru\}\{Raa\}\{JK\}\{JKunna\}\{JKumaa\}\{JKa\}\{JKi\}\{BF\}\{BFunna\}\{BFumaa\}\{BFa\}\{BFi\}\{H\}\{Hunna\}\{Humaa\}\{Ha\}\{Hi\}\{AAum\}\{ShSum\}\{ASa\}\{SWT\}\{AWJ\}\{JJ\}\{BLESSINGSOFALLAH\}\{SEEKREFUGE\}\{BISMILLAH\}\{INSHALLAH\}\{INSHALLAHTAALA\}\{MASHALLAH\}\{SUBHANALLAH\}\{ALHAMDULILLAH\}\{THANKSALHAMDULILLAH\}\{ALLAHUAKBAR\}\{ASTAGFIRULLAH\}\{HASBIALLAH\}\{MAYALLAHBLESSYOU\}\{ALLAHKNOWNSBEST\}\{INPROTECTIONOFALLAH\}\{IHAVEPUTTRUSTINALLAH\}\{WEHAVEPUTTRUSTINALLAH\}\{FEARALLAH\}\{SPEECHOFALLAH\}\{SWEARBYALLAH\}\{RIGHTOFALLAH\}\{MAYALLAHWILLITSOOLORDOFTHEWORLDS\}\{ALLAHSAYSTHETRUTH\}\{INPATHOFALLAH\}\{TRULYFROMALLAHWECOMEANDTOHIMWILLRETURN\}\{LAILAHAILLALLAH\}\{RASOOLULLAH\}\{MUHAMMADURRASOOLULLAH\}\{LAILALAILLALLAHMUHAMMADURRASOOLULLAH\}\{ASHHADUANLAILAHAILLALLAH\}\{ASHHADUANNAMUHAMMADARRASOOLULLAH\}\{ASHHADUANLAILAHAILLALLAHASHHADUANNAMUHAMMADABDUHUWARASULUH\}\{NOPOWERNOMIGHTEXCEPTALLAH\}\{NOPOWERNOMIGHTEXCEPTALLAHMOSTHIGHMOSTMAGNIFICENT\}\{TRULYALLAHISWITHTHEPATIENT\}\{ANDFORPARENTSKINDNESS\}\{BEWITHALLAH\}\{THENOBLEQURAN\}\{NOBLEQURAN\}\{AH\}\{ISLAM\}\{PEACE\}\{ALLAH\}\{AAMEEN\}\{MUHAMMAD\}\{BISMILLAHIRAHMANIRAHEEM\}\{ALHAMDULILLAHIRABBILALAMEEN\}\{TRULYWITHHARDSHIPISEASE\}\{FALAQ\}" id="Abbreviations"></word>
+			<word text="\{PeaceBeUponYou\}\{AndUponYouBePeace\}\{PeaceBeUponYouWR\}\{AndUponYouBePeaceWR\}\{PeaceBeUponYouWRWB\}\{AndUponYouBePeaceWRWB\}\{AS\}\{STAWW\}\{SAWS\}\{RA\}\{RAunna\}\{RAumaa\}\{RAu\}\{RAaa\}\{RAT\}\{RATunna\}\{RATumaa\}\{RATu\}\{RATaa\}\{RAA\}\{RAAinna\}\{RAAimaa\}\{RAAi\}\{RAAaa\}\{R\}\{Runna\}\{Rumaa\}\{Ru\}\{Raa\}\{JK\}\{JKunna\}\{JKumaa\}\{JKa\}\{JKi\}\{BF\}\{BFunna\}\{BFumaa\}\{BFa\}\{BFi\}\{H\}\{Hunna\}\{Humaa\}\{Ha\}\{Hi\}\{AAum\}\{ShSum\}\{ASa\}\{SWT\}\{AWJ\}\{JJ\}\{BLESSINGSOFALLAH\}\{SEEKREFUGE\}\{BISMILLAH\}\{INSHALLAH\}\{INSHALLAHTAALA\}\{MASHALLAH\}\{SUBHANALLAH\}\{ALHAMDULILLAH\}\{THANKSALHAMDULILLAH\}\{ALLAHUAKBAR\}\{ASTAGFIRULLAH\}\{HASBIALLAH\}\{MAYALLAHBLESSYOU\}\{ALLAHKNOWNSBEST\}\{INPROTECTIONOFALLAH\}\{IHAVEPUTTRUSTINALLAH\}\{WEHAVEPUTTRUSTINALLAH\}\{FEARALLAH\}\{SPEECHOFALLAH\}\{SWEARBYALLAH\}\{RIGHTOFALLAH\}\{MAYALLAHWILLITSOOLORDOFTHEWORLDS\}\{ALLAHSAYSTHETRUTH\}\{INPATHOFALLAH\}\{TRULYFROMALLAHWECOMEANDTOHIMWILLRETURN\}\{LAILAHAILLALLAH\}\{RASOOLULLAH\}\{MUHAMMADURRASOOLULLAH\}\{LAILALAILLALLAHMUHAMMADURRASOOLULLAH\}\{ASHHADUANLAILAHAILLALLAH\}\{ASHHADUANNAMUHAMMADARRASOOLULLAH\}\{ASHHADUANLAILAHAILLALLAHASHHADUANNAMUHAMMADABDUHUWARASULUH\}\{NOPOWERNOMIGHTEXCEPTALLAH\}\{NOPOWERNOMIGHTEXCEPTALLAHMOSTHIGHMOSTMAGNIFICENT\}\{TRULYALLAHISWITHTHEPATIENT\}\{ANDFORPARENTSKINDNESS\}\{BEWITHALLAH\}\{THENOBLEQURAN\}\{NOBLEQURAN\}\{AH\}\{ISLAM\}\{PEACE\}\{ALLAH\}\{AAMEEN\}\{MUHAMMAD\}\{BISMILLAHIRAHMANIRAHEEM\}\{ALHAMDULILLAHIRABBILALAMEEN\}\{TRULYWITHHARDSHIPISEASE\}\{FALAQ\}" id="Abbreviations"></word>
 		</category>
 	</lists>
 	<languages>
@@ -3396,6 +3422,12 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 		</quranselection>
 		<quranselection description="VerseOfTheSword">
 			<verse chapter="9" startverse="5"></verse>
+		</quranselection>
+		<quranselection description="VerseOfTheTenRights">
+			<verse chapter="4" startverse="36"></verse>
+		</quranselection>
+		<quranselection>
+			<verse chapter="59" startverse="22" endverse="24"></verse>
 		</quranselection>
 		<quranselection description="LongestVerse">
 			<verse chapter="2" startverse="282"></verse>
