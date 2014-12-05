@@ -2027,7 +2027,9 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="najaAsapN" id="Impurity"></word>
 			<word text="muqad~imapN" id="Introduction"></word>
 			<word text="fahorasN" id="Index"></word>
+			<word text="tamohiydN" id="Preface"></word>
 			<word text="muHotawayaAtN" id="Contents"></word>
+			<word text="tam~atN" id="End"></word>
 			<word text="*aAtiy~apN" id="Subjective"></word>
 			<word text="Hukomiy~apN" id="Judgmental"></word>
 			<word text="qul~aY" id="Fry"></word>
@@ -3210,14 +3212,39 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="TrulyAllahLovesWhenOneWhoWorksDoesTheWorkWell" font="AGAIslamicPhrases;002C" id="TrulyAllahLovesWhenOneWhoWorksDoesTheWorkWell"></word>
 			<word text="BlessedFeastCelebration" font="AGAArabesque;F05A" id="BlessedFeastCelebration"></word>
 			<word text="HappyFeastCelebration" font="AGAArabesque;F07A" id="HappyFeastCelebration"></word>
+			<word text="MayEveryYearYouBeInGoodHealthAndBlessings" font="AGAArabesque;F058" id="MayEveryYearYouBeInGoodHealthAndBlessings"></word>
+			<word text="MAYEVERYYEARYOUHAVEGOODNESS" font="AGAArabesque;F078" id="MayEveryYearYouHaveGoodness"></word>
+			<word text="ALLRIGHTSRESERVED" font="AGAArabesque;F076" id="AllRightsReserved"></word>
 
 			<word text="AH" id="AfterMigration"></word>
-			<word text="ISLAM" font="AGAIslamicPhrases;0022,0068" id="Islam"></word>
-			<word text="PEACE" font="AGAIslamicPhrases;0069" id="Peace"></word>
+			<word text="PREFACE" font="AGAArabesque;F04E" id="Preface"></word>
+			<word text="CONTENTS" font="AGAArabesque;F04F" id="Contents"></word>
+			<word text="END" font="AGAArabesque;F062" id="End"></word>
+			<word text="INTRODUCTION" font="AGAArabesque;F06D" id="Introduction"></word>
+			<word text="INDEX" font="AGAArabesque;F06E" id="Index"></word>
+			<word text="ISLAM" font="AGAArabesque;F043,F063|AGAIslamicPhrases;0022,0068" id="Islam"></word>
+			<word text="MOSQUE" font="AGAArabesque;F02C,F03C" id="Mosque"></word>
+			<word text="WORLD" font="AGAArabesque;F02E,F03E" id="World"></word>
+			<word text="BOOK" font="AGAArabesque;F02F" id="Book"></word>
+			<word text="LIGHT" font="AGAArabesque;F03F" id="Light"></word>
+			<word text="PEACE" font="AGAIslamicPhrases;F069" id="Peace"></word>
 			<word text="ALLAH" font="FDF2|AGAArabesque;F045,F051,F057|AGAIslamicPhrases;0065,0071,0072,0077" id="Allah"></word>
 			<word text="AAMEEN" id="MayAllahWillItSo"></word>
 			<word text="MUHAMMAD" font="FDF4|AGAIslamicPhrases;005D" id="Muhammad"></word>
 
+			<word text="MUHARRAM" font="AGAArabesque;F031" id="Month1"></word>
+			<word text="SAFAR" font="AGAArabesque;F032" id="Month2"></word>
+			<word text="RABEEAWWAL" font="AGAArabesque;F033" id="Month3"></word>
+			<word text="RABEETHAANEE" font="AGAArabesque;F034" id="Month4"></word>
+			<word text="JUMADAALUWLAA" font="AGAArabesque;F035" id="Month5"></word>
+			<word text="JUMADAATHAANEEAH" font="AGAArabesque;F036" id="Month6"></word>
+			<word text="RAJAB" font="AGAArabesque;F037" id="Month7"></word>
+			<word text="SHABAAN" font="AGAArabesque;F038" id="Month8"></word>
+			<word text="RAMADAN" font="AGAArabesque;F039" id="Month9"></word>
+			<word text="SHAWAAL" font="AGAArabesque;F030" id="Month10"></word>
+			<word text="THULQADAH" font="AGAArabesque;F02D" id="Month11"></word>
+			<word text="THULHIJJAH" font="AGAArabesque;F03D" id="Month12"></word>
+			
 			<word text="BISMILLAHIRAHMANIRAHEEM" font="FDFD|AGAArabesque;F04F,F050|AGAIslamicPhrases;0021,0023,0024,0025,0026,002D,0030,0031,0032,0033,0034,0035,0036,0037,0038,0039,0040,005E" id="InTheNameOfAllahMostBeneficentMostMerciful"></word>
 			<word text="ALHAMDULILLAHIRABBILALAMEEN" font="AGAIslamicPhrases;0029,005F" id="AllPraiseAndThanksBeToAllahLordOfTheWorlds"></word>
 			<word text="TRULYWITHHARDSHIPISEASE" font="AGAIslamicPhrases;0063" id="TrulyWithHardshipIsEase"></word>
