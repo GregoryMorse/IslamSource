@@ -2803,6 +2803,7 @@ Public Class RenderArray
                     writer.WriteEndTag("span")
                 Else
                     If Items(Count).TextItems(Index).Font = "AGAIslamicPhrases" Or Items(Count).TextItems(Index).Font = "AGAArabesque" Or Items(Count).TextItems(Index).Font = "IslamicLogo" Then
+                        writer.WriteAttribute("class", "arabic")
                         writer.Write(HtmlTextWriter.TagRightChar)
                         writer.WriteBeginTag("img")
                         writer.WriteAttribute("src", HttpUtility.HtmlEncode("host.aspx?Page=Image.gif&Image=UnicodeChar&Size=32&Char=" + Hex(AscW(CStr(Items(Count).TextItems(Index).Text)(0))) + "&Font=" + Items(Count).TextItems(Index).Font))

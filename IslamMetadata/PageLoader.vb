@@ -1652,7 +1652,7 @@ Public Class ArabicFont
     End Function
     Public Shared Function GetFontBiggerJS() As String()
         Return New String() {"javascript: increaseFontSize();", String.Empty, Utility.GetLookupStyleSheetJS(), _
-        "function increaseFontSize() { rule = findStyleSheetRule('span.arabic'); rule.style.fontSize = (parseInt(rule.style.fontSize.replace('px', ''), 10) + 1) + 'px'; }"}
+        "function increaseFontSize() { rule = findStyleSheetRule('span.arabic'); rule.style.fontSize = (parseInt(rule.style.fontSize.replace('px', ''), 10) + 1) + 'px'; $('.arabic > img').each(function (i) { this.src = this.src.replace(/Size=(\d+)/g, function (mat, e, d, p) { return 'Size=' + (parseInt(p) + 1).toString(); }); }); }"}
     End Function
 End Class
 Class AudioRecitation
