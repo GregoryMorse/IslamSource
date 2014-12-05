@@ -194,8 +194,10 @@ Public Class Utility
         End If
         Return DefaultValue
     End Function
+    'Cannot use named container for machine store without critical section
+    'Caching needed for efficiency...
     Public Shared Function DoEncrypt(EncodeStr As String) As String
-        Dim cspParams As New System.Security.Cryptography.CspParameters(1, "Microsoft Base Cryptographic Provider v1.0", Utility.ConnectionData.KeyContainerName)
+        Dim cspParams As New System.Security.Cryptography.CspParameters(1, "Microsoft Base Cryptographic Provider v1.0")
         cspParams.KeyNumber = System.Security.Cryptography.KeyNumber.Exchange
         cspParams.Flags = System.Security.Cryptography.CspProviderFlags.NoFlags
         Dim Transform As New System.Security.Cryptography.RSACryptoServiceProvider(512, cspParams)
@@ -206,9 +208,9 @@ Public Class Utility
         Return String.Join(String.Empty, Array.ConvertAll(EncodeBytes, Function(Convert As Byte) Convert.ToString("X2")))
     End Function
     Public Shared Function DoDecrypt(DecryptStr As String) As String
-        Dim cspParams As New System.Security.Cryptography.CspParameters(1, "Microsoft Base Cryptographic Provider v1.0", Utility.ConnectionData.KeyContainerName)
+        Dim cspParams As New System.Security.Cryptography.CspParameters(1, "Microsoft Base Cryptographic Provider v1.0")
         cspParams.KeyNumber = System.Security.Cryptography.KeyNumber.Exchange
-        cspParams.Flags = System.Security.Cryptography.CspProviderFlags.UseMachineKeyStore 'user may change to must use machine store
+        cspParams.Flags = System.Security.Cryptography.CspProviderFlags.NoFlags 'user may change to must use machine store
         Dim Transform As New System.Security.Cryptography.RSACryptoServiceProvider(512, cspParams)
         Dim CspBlob As Byte() = IO.File.ReadAllBytes(Utility.GetFilePath("bin\" + Utility.ConnectionData.KeyFileName))
         Transform.PersistKeyInCsp = False
@@ -218,11 +220,7 @@ Public Class Utility
             Bytes(DecryptStr.Length \ 2 - 1 - Count \ 2) = Byte.Parse(DecryptStr.Substring(Count, 2), Globalization.NumberStyles.HexNumber)
         Next
         Dim Str As String = System.Text.Encoding.UTF8.GetString(Transform.Decrypt(Bytes, False)).TrimEnd(Chr(0)) 'not using OAEP when calling CryptDe/Encrypt
-        Try
-            Transform.Clear()
-            Transform = Nothing
-        Catch ex As System.Security.Cryptography.CryptographicException
-        End Try
+        Transform.Clear()
         Return Str
     End Function
     Public Shared Function ConvertSpaces(ByVal Text As String) As String
