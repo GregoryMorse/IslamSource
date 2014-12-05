@@ -2745,7 +2745,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="{lowaAliy" id="TheHolderOfSupremeAuthority"></word>
 			<word text="{lomutaEaAliy" id="TheExtremelyExaltedOne"></word>
 			<word text="{lobar~u" id="TheFountainHeadOfTruth"></word>
-			<word text="{lt~awAbu" id="TheEverAcceptorOfRepentance"></word>
+			<word text="{lt~awaAbu" id="TheEverAcceptorOfRepentance"></word>
 			<word text="{lomuntaqimu" id="TheRetaliator"></word>
 			<word text="{loEafuw~u" id="TheSupremePardoner"></word>
 			<word text="{lr~a&amp;uwfu" id="TheBenignOne"></word>
@@ -2765,6 +2765,38 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="{lowaArivu" id="TheEternalInheritor"></word>
 			<word text="{lr~a$iydu" id="TheGuideToPathOfRectitude"></word>
 			<word text="{lS~abuwru" id="TheExtensivelyEnduringOne"></word>
+			
+			<word text="{ln~aSiyru" id="TheHelper"></word>
+			<word text="{lomawolaY" id="TheMaster"></word>
+			<word text="{loqadiyru" id="ThePowerful"></word>
+			<word text="{lowitoru" id="TheOdd"></word>
+			<word text="{lojamiylu" id="TheBeautiful"></word>
+			<word text="{lohayiy~u" id="TheShy"></word>
+			<word text="{losit~iyru" id="TheCoverer"></word>
+			<word text="{lomubiynu" id="TheClear"></word>
+			<word text="{loqariybu" id="TheClose"></word>
+			<word text="{lomaliyku" id="TheOmnipotentKing"></word>
+			<word text="{lomasaE~aru" id="TheBrilliant"></word>
+			<word text="{loqaAbidu" id="TheTaker"></word>
+			<word text="{lr~aAziqu" id="TheProvider"></word>
+			<word text="{loqaAhiru" id="TheIrresistable"></word>
+			<word text="{ld~ay~aAnu" id="TheOneWhoRecompenses"></word>
+			<word text="{l$~aAkiru" id="TheRecognizer"></word>
+			<word text="{loman~aAnu" id="TheBestower"></word>
+			<word text="{loxalaAqu" id="TheContinuousCreator"></word>
+			<word text="{lomaAliku" id="TheOwner"></word>
+			<word text="{lomuHosinu" id="TheDoerOfGood"></word>
+			<word text="{l$~aAfiy" id="TheOneWhoCures"></word>
+			<word text="{lr~aAfiqu" id="TheGentle"></word>
+			<word text="{lomuEoTiy" id="TheGiver"></word>
+			<word text="{ls~ay~idu" id="TheLord"></word>
+			<word text="{lT~ay~ibu" id="TheGood"></word>
+			<word text="{lo&lt;akoramu" id="TheSupremeInHonour"></word>
+			<word text="{lojawaAdu" id="TheMostGenerous"></word>
+			<word text="{ls~ub~uwHu" id="TheMostHolyFromAllWeakness"></word>
+			<word text="{lr~ab~u" id="TheMaster"></word>
+			<word text="{loEalaY" id="TheMostHigh"></word>
+			<word text="{lo&lt;ilahu" id="TheOneGod"></word>
 		</category>
 		<category title="Concepts">
 			<word text="tawoHiydu {lr~ubuwbiy~api" id="OnenessOfLordshipDominion"></word>
@@ -2820,6 +2852,8 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="$ahorN ramaDaAnN {l~*iY &gt;anzala fiyhi {loquro&apos;aAni hudFY liln~aAsi" id="MonthOfRamadanWhichWasRevealedThereinTheQuranGuidanceToMankind"></word>
 			<word text="&gt;alaA bi*ikori {ll~ahi taTomo}inu {loquluwbu" id="InRemembranceOfAllahHeartsFindPeace"></word>
 			<word text="&gt;asomaA^'u {ll~ahi {loHusonaY`" id="TheNamesOfAllahAreBest"></word>
+			<word text="&gt;asomaA^'u {ll~ahi {loHusonaY` {lv~aAbotapu fiY {lokitaAbi wa{ls~un~api" id="TheNamesOfAllahAreBestFixedInTheBookAndTradition"></word>
+			<word text="wa{ll~ahi {lo&gt;asmaA&apos;u {loHusonaY faAdEuwhu bihaA wa*aruwA {l~a*iyna yuloHiduwna fiY &gt;asmaA}ihi sayujozawna maA kaAnuwA yaEomaluwna" id="AndAllahHasTheBestNamesCallUponHimAndLeaveThemInPlaceThoseNamesNotablyCutOffWhatTheyDo"></word>
 			<word text="nabiY~u {ll~ahi" id="ProphetOfAllah"></word>
 			<word text="&gt;anbiyaA^&apos;u {ll~ahi" id="ProphetsOfAllah"></word>
 			<word text="rasuwlu {ll~ahi" id="MessengerOfAllah"></word>
@@ -3190,8 +3224,8 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="AWJ" font="KFGQPCArabicSymbols01;F044,F062|AGAArabesque;F055|AGAIslamicPhrases;0079|IslamicLogo;006B" id="SublimeAndMighty"></word>
 			<word text="JJ" font="FDFB|KFGQPCArabicSymbols01;F042,F064|AGAArabesque;F059|AGAIslamicPhrases;0075|IslamicLogo;0066" id="MayHisGloryBeGlorified"></word>
 			<word text="JWA" font="KFGQPCArabicSymbols01;F043,F065" id="MayHisGloryBeRaised"></word>
-			<word text="BLESSINGSOFALLAH" id="BlessingsOfAllah"></word>
-			<word text="SEEKREFUGE" id="SeekRefugeWithAllahFromSatanRejected"></word>
+			<word text="BlessingsOfAllah" id="BlessingsOfAllah"></word>
+			<word text="SeekRefugeWithAllahFromSatanRejected" id="SeekRefugeWithAllahFromSatanRejected"></word>
 			<word text="BISMILLAH" font="Shia;0031" id="InTheNameOfAllah"></word>
 			<word text="INSHALLAH" id="AllahWilling"></word>
 			<word text="INSHALLAHTAALA" id="GloriousAllahWilling"></word>
@@ -3199,24 +3233,24 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="SUBHANALLAH" id="GloryBeToAllah"></word>
 			<word text="SUBHANAKALLAH" font="AGAIslamicPhrases;003A" id="GloryBeToYouAllah"></word>
 			<word text="ALHAMDULILLAH" font="AGAIslamicPhrases;002B,0052" id="AllPraiseAndThanksBeToAllah"></word>
-			<word text="THANKSALHAMDULILLAH" id="ThanksAllPraiseAndThanksIsToAllah"></word>
+			<word text="ThanksALHAMDULILLAH" id="ThanksAllPraiseAndThanksIsToAllah"></word>
 			<word text="ALLAHUAKBAR" font="FDF2+FDF3|KFGQPCArabicSymbols01;F041,F061|AGAArabesque;F052,F054|AGAIslamicPhrases;0045,0054,0055,0057,0059" id="AllahIsGreatest"></word>
 			<word text="ALLAHUAKBARALLAHUAKBAR" font="FDF2+FDF3+FDF2+FDF3|AGAIslamicPhrases;004C" id="AllahIsGreatestAllahIsGreatest"></word>
 			<word text="ASTAGFIRULLAH" id="IAskAllahForgiveness"></word>
 			<word text="HASBIALLAH" id="AllahSufficesMe"></word>
-			<word text="MAYALLAHBLESSYOU" id="MayAllahBlessYou"></word>
-			<word text="ALLAHKNOWNSBEST" id="AllahKnowsBest"></word>
-			<word text="INPROTECTIONOFALLAH" id="InProtectionOfAllah"></word>
-			<word text="IHAVEPUTTRUSTINALLAH" id="IHavePutTrustInAllah"></word>
-			<word text="WEHAVEPUTTRUSTINALLAH" id="WeHavePutTrustInAllah"></word>
-			<word text="FEARALLAH" id="FearAllah"></word>
-			<word text="SPEECHOFALLAH" id="SpeechOfAllah"></word>
-			<word text="SWEARBYALLAH" id="ISwearByAllah"></word>
-			<word text="RIGHTOFALLAH" id="RightOfAllah"></word>
-			<word text="MAYALLAHWILLITSOOLORDOFTHEWORLDS" id="MayAllahWillItSoOLordOfTheWorlds"></word>
-			<word text="ALLAHSAYSTHETRUTH" font="KFGQPCArabicSymbols01;F028|AGAArabesque;F077|AGAIslamicPhrases;0041,0044,0053" id="AllahSaysTheTruth"></word>
-			<word text="INPATHOFALLAH" id="InThePathOfAllah"></word>
-			<word text="TRULYFROMALLAHWECOMEANDTOHIMWILLRETURN" id="TrulyFromAllahWeComeAndToHimWillReturn"></word>
+			<word text="MayAllahBlessYou" id="MayAllahBlessYou"></word>
+			<word text="AllahKnowsBest" id="AllahKnowsBest"></word>
+			<word text="InProtectionOfAllah" id="InProtectionOfAllah"></word>
+			<word text="IHavePutTrustInAllah" id="IHavePutTrustInAllah"></word>
+			<word text="WeHavePutTrustInAllah" id="WeHavePutTrustInAllah"></word>
+			<word text="FearAllah" id="FearAllah"></word>
+			<word text="SpeechOfAllah" id="SpeechOfAllah"></word>
+			<word text="ISwearByAllah" id="ISwearByAllah"></word>
+			<word text="RightOfAllah" id="RightOfAllah"></word>
+			<word text="MayAllahWillItSoOLordOfTheWorlds" id="MayAllahWillItSoOLordOfTheWorlds"></word>
+			<word text="AllahSaysTheTruth" font="KFGQPCArabicSymbols01;F028|AGAArabesque;F077|AGAIslamicPhrases;0041,0044,0053" id="AllahSaysTheTruth"></word>
+			<word text="InThePathOfAllah" id="InThePathOfAllah"></word>
+			<word text="TrulyFromAllahWeComeAndToHimWillReturn" id="TrulyFromAllahWeComeAndToHimWillReturn"></word>
 			<word text="LAILAHAILLALLAH" font="AGAIslamicPhrases;0046|Shia;0036" id="CreedOfIslamFirstPart"></word>
 			<word text="RASOOLULLAH" font="FDF6+FDF2" id="MessengerOfAllah"></word>
 			<word text="ALLAHUMMASALLAALAMUHAMMADWAALAAALIMUHAMMAD" font="Shia;0079" id="OAllahSendPrayersUponMuhammadAndTheFamilyOfMuhammad"></word>
@@ -3226,65 +3260,66 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="ASHHADUANLAILAHAILLALLAH" font="AGAIslamicPhrases;004B" id="TestifyingCreedOfIslamFirstPart"></word>
 			<word text="ASHHADUANNAMUHAMMADARRASOOLULLAH" font="AGAIslamicPhrases;004A" id="TestifyingCreedOfIslamSecondPart"></word>
 			<word text="ASHHADUANLAILAHAILLALLAHASHHADUANNAMUHAMMADABDUHUWARASULUH" font="AGAIslamicPhrases;0070" id="TestifyingCreedOfIslam"></word>
-			<word text="NOPOWERNOMIGHTEXCEPTALLAH" id="ThereIsNoPowerAndNoMightExceptWithAllah"></word>
-			<word text="NOPOWERNOMIGHTEXCEPTALLAHMOSTHIGHMOSTMAGNIFICENT" font="Shia;0039" id="ThereIsNoPowerAndNoMightExceptWithAllahMostHighMostMagnificent"></word>
-			<word text="TRULYALLAHISWITHTHEPATIENT" font="AGAIslamicPhrases;003B" id="TrulyAllahIsWithThePatient"></word>
-			<word text="ANDFORPARENTSKINDNESS" font="AGAIslamicPhrases;006C" id="AndForParentsKindness"></word>
-			<word text="BEWITHALLAH" font="AGAIslamicPhrases;002A" id="BeWithAllah"></word>
-			<word text="THENOBLEQURAN" font="AGAIslamicPhrases;0049,0050" id="TheNobleQuran"></word>
-			<word text="NOBLEQURAN" font="KFGQPCArabicSymbols01;F027|AGAArabesque;F071|AGAIslamicPhrases;004F,007B" id="NobleQuran"></word>
-			<word text="MONTHOFRAMADANWHICHWASREVEALEDTHEREINTHEQURANGUIDANCETOMANKIND" font="AGAIslamicPhrases;0027" id="MonthOfRamadanWhichWasRevealedThereinTheQuranGuidanceToMankind"></word>
-			<word text="INREMEMBRANCEOFALLAHHEARTSFINDPEACE" font="AGAIslamicPhrases;002E" id="InRemembranceOfAllahHeartsFindPeace"></word>
+			<word text="ThereIsNoPowerAndNoMightExceptWithAllah" id="ThereIsNoPowerAndNoMightExceptWithAllah"></word>
+			<word text="ThereIsNoPowerAndNoMightExceptWithAllahMostHighMostMagnificent" font="Shia;0039" id="ThereIsNoPowerAndNoMightExceptWithAllahMostHighMostMagnificent"></word>
+			<word text="TrulyAllahIsWithThePatient" font="AGAIslamicPhrases;003B" id="TrulyAllahIsWithThePatient"></word>
+			<word text="AndForParentsKindness" font="AGAIslamicPhrases;006C" id="AndForParentsKindness"></word>
+			<word text="BeWithAllah" font="AGAIslamicPhrases;002A" id="BeWithAllah"></word>
+			<word text="TheNobleQuran" font="AGAIslamicPhrases;0049,0050" id="TheNobleQuran"></word>
+			<word text="NobleQuran" font="KFGQPCArabicSymbols01;F027|AGAArabesque;F071|AGAIslamicPhrases;004F,007B" id="NobleQuran"></word>
+			<word text="MonthOfRamadanWhichWasRevealedThereinTheQuranGuidanceToMankind" font="AGAIslamicPhrases;0027" id="MonthOfRamadanWhichWasRevealedThereinTheQuranGuidanceToMankind"></word>
+			<word text="InRemembranceOfAllahHeartsFindPeace" font="AGAIslamicPhrases;002E" id="InRemembranceOfAllahHeartsFindPeace"></word>
 			<word text="SafeguardYourselfFromHeWhoYouHaveBeenGoodTo" font="AGAIslamicPhrases;0078" id="SafeguardYourselfFromHeWhoYouHaveBeenGoodTo"></word>
 			<word text="TrulyAllahLovesWhenOneWhoWorksDoesTheWorkWell" font="AGAIslamicPhrases;002C" id="TrulyAllahLovesWhenOneWhoWorksDoesTheWorkWell"></word>
 			<word text="BlessedFeastCelebration" font="KFGQPCArabicSymbols01;F03D|AGAArabesque;F05A" id="BlessedFeastCelebration"></word>
 			<word text="HappyFeastCelebration" font="KFGQPCArabicSymbols01;F03E|AGAArabesque;F07A" id="HappyFeastCelebration"></word>
 			<word text="GreatWithPraiseToAllah" font="KFGQPCArabicSymbols01;F040|AGAArabesque;F042" id="GreatWithPraiseToAllah"></word>
 			<word text="MayEveryYearYouBeInGoodHealthAndBlessings" font="KFGQPCArabicSymbols01;F029|AGAArabesque;F058" id="MayEveryYearYouBeInGoodHealthAndBlessings"></word>
-			<word text="MAYEVERYYEARYOUHAVEGOODNESS" font="AGAArabesque;F078" id="MayEveryYearYouHaveGoodness"></word>
-			<word text="ALLRIGHTSRESERVED" font="AGAArabesque;F076" id="AllRightsReserved"></word>
+			<word text="MayEveryYearYouHaveGoodness" font="AGAArabesque;F078" id="MayEveryYearYouHaveGoodness"></word>
+			<word text="AllRightsReserved" font="AGAArabesque;F076" id="AllRightsReserved"></word>
 			<word text="TheNamesOfAllahAreBest" font="KFGQPCArabicSymbols01;F024" id="TheNamesOfAllahAreBest"></word>
+			<word text="TheNamesOfAllahAreBestFixedInTheBookAndTradition" font="Quranic;0021,00E7" id="TheNamesOfAllahAreBestFixedInTheBookAndTradition"></word>
 			<word text="ThenTrulyThePartyOfAllahAreTheTriumphant" font="Shia;003A" id="ThenTrulyThePartyOfAllahAreTheTriumphant"></word>
 
 			<word text="AH" id="AfterMigration"></word>
-			<word text="PREFACE" font="KFGQPCArabicSymbols01;F05C|AGAArabesque;F04E" id="Preface"></word>
-			<word text="CONTENTS" font="KFGQPCArabicSymbols01;F03F|AGAArabesque;F04F" id="Contents"></word>
-			<word text="END" font="KFGQPCArabicSymbols01;F05D|AGAArabesque;F062" id="End"></word>
-			<word text="INTRODUCTION" font="KFGQPCArabicSymbols01;F059|AGAArabesque;F06D" id="Introduction"></word>
-			<word text="CLASSROOM" font="KFGQPCArabicSymbols01;F05B" id="ClassClassroomSeason"></word>
-			<word text="DOOR" font="KFGQPCArabicSymbols01;F05E" id="GateDoor"></word>
-			<word text="PART" font="KFGQPCArabicSymbols01;F05F" id="Part"></word>
-			<word text="CONGRATULATIONS" font="KFGQPCArabicSymbols01;F060" id="Congratulations"></word>
-			<word text="INDEX" font="KFGQPCArabicSymbols01;F05A|AGAArabesque;F06E" id="Index"></word>
-			<word text="ISLAM" font="AGAArabesque;F043,F063|AGAIslamicPhrases;0022,0068" id="Islam"></word>
-			<word text="MOSQUE" font="AGAArabesque;F02C,F03C" id="Mosque"></word>
-			<word text="WORLD" font="AGAArabesque;F02E,F03E|Shia;006B" id="World"></word>
-			<word text="BOOK" font="AGAArabesque;F02F" id="Book"></word>
-			<word text="LIGHT" font="AGAArabesque;F03F" id="Light"></word>
-			<word text="PEACE" font="AGAIslamicPhrases;F069" id="Peace"></word>
-			<word text="ALLAH" font="FDF2|KFGQPCArabicSymbols01;F025|AGAArabesque;F045,F051,F057|AGAIslamicPhrases;0065,0071,0072,0077|Shia;0033" id="Allah"></word>
+			<word text="Preface" font="KFGQPCArabicSymbols01;F05C|AGAArabesque;F04E" id="Preface"></word>
+			<word text="Contents" font="KFGQPCArabicSymbols01;F03F|AGAArabesque;F04F" id="Contents"></word>
+			<word text="End" font="KFGQPCArabicSymbols01;F05D|AGAArabesque;F062" id="End"></word>
+			<word text="Introduction" font="KFGQPCArabicSymbols01;F059|AGAArabesque;F06D" id="Introduction"></word>
+			<word text="Classroom" font="KFGQPCArabicSymbols01;F05B" id="ClassClassroomSeason"></word>
+			<word text="Door" font="KFGQPCArabicSymbols01;F05E" id="GateDoor"></word>
+			<word text="Part" font="KFGQPCArabicSymbols01;F05F" id="Part"></word>
+			<word text="Congratulations" font="KFGQPCArabicSymbols01;F060" id="Congratulations"></word>
+			<word text="Index" font="KFGQPCArabicSymbols01;F05A|AGAArabesque;F06E" id="Index"></word>
+			<word text="Islam" font="AGAArabesque;F043,F063|AGAIslamicPhrases;0022,0068" id="Islam"></word>
+			<word text="Mosque" font="AGAArabesque;F02C,F03C" id="Mosque"></word>
+			<word text="World" font="AGAArabesque;F02E,F03E|Shia;006B" id="World"></word>
+			<word text="Book" font="AGAArabesque;F02F" id="Book"></word>
+			<word text="Light" font="AGAArabesque;F03F" id="Light"></word>
+			<word text="Peace" font="AGAIslamicPhrases;F069" id="Peace"></word>
+			<word text="Allah" font="FDF2|KFGQPCArabicSymbols01;F025|AGAArabesque;F045,F051,F057|AGAIslamicPhrases;0065,0071,0072,0077|Quranic;0028,00E9|Shia;0033" id="Allah"></word>
 			<word text="AAMEEN" id="MayAllahWillItSo"></word>
-			<word text="MUHAMMAD" font="FDF4|KFGQPCArabicSymbols01;F026|AGAIslamicPhrases;005D|Shia;0044" id="Muhammad"></word>
-			<word text="ALI" font="Shia;0046,005B,005C,005E,0066" id="HighExalted"></word>
-			<word text="FATIMA" font="Shia;0047" id="Fatima"></word>
+			<word text="Muhammad" font="FDF4|KFGQPCArabicSymbols01;F026|AGAIslamicPhrases;005D|Shia;0044" id="Muhammad"></word>
+			<word text="Ali" font="Shia;0046,005B,005C,005E,0066" id="HighExalted"></word>
+			<word text="Fatima" font="Shia;0047" id="Fatima"></word>
 			<word text="HADI" font="Shia;0042" id="TheProviderOfGuidance"></word>
 			<word text="RIDAA" font="Shia;0043" id="Ridaa"></word>
-			<word text="HASAN" font="Shia;0048" id="Hasan"></word>
-			<word text="HUSSEIN" font="Shia;004A" id="Hussein"></word>
+			<word text="Hasan" font="Shia;0048" id="Hasan"></word>
+			<word text="Hussein" font="Shia;004A" id="Hussein"></word>
 			<word text="BAAQIR" font="Shia;004C" id="Baaqir"></word>
-			<word text="GUIDEDONE" font="Shia;004D" id="GuidedOne"></word>
+			<word text="GuidedOne" font="Shia;004D" id="GuidedOne"></word>
 			<word text="ASKAREE" font="Shia;004E" id="Askaree"></word>
-			<word text="RIAL" font="FDFC|KFGQPCArabicSymbols01;F077" id="Rial"></word>
-			<word text="OUNCE" font="KFGQPCArabicSymbols01;F078" id="Ounce"></word>
-			<word text="SHILLING" font="KFGQPCArabicSymbols01;F079" id="Shilling"></word>
-			<word text="POUND" font="KFGQPCArabicSymbols01;F07A" id="Pound"></word>
-			<word text="DIRHAM" font="KFGQPCArabicSymbols01;F07B" id="SilverOf2.975Grams"></word>
-			<word text="DINAR" font="KFGQPCArabicSymbols01;F07C" id="GoldCoinOf2.975Grams"></word>
-			<word text="LIRA" font="KFGQPCArabicSymbols01;F07D" id="Lira"></word>
-			<word text="GROUP" font="KFGQPCArabicSymbols01;F07E" id="Group"></word>
-			<word text="QUARTER" font="KFGQPCArabicSymbols01;F083" id="Quarter"></word>
-			<word text="EIGHTH" font="KFGQPCArabicSymbols01;F084" id="Eighth"></word>
-			<word text="FIGHT" font="Shia;0022,003B,005D,0067" id="Fight"></word>
+			<word text="Rial" font="FDFC|KFGQPCArabicSymbols01;F077" id="Rial"></word>
+			<word text="Ounce" font="KFGQPCArabicSymbols01;F078" id="Ounce"></word>
+			<word text="Shilling" font="KFGQPCArabicSymbols01;F079" id="Shilling"></word>
+			<word text="Pound" font="KFGQPCArabicSymbols01;F07A" id="Pound"></word>
+			<word text="Dinham" font="KFGQPCArabicSymbols01;F07B" id="SilverOf2.975Grams"></word>
+			<word text="Dinar" font="KFGQPCArabicSymbols01;F07C" id="GoldCoinOf2.975Grams"></word>
+			<word text="Lira" font="KFGQPCArabicSymbols01;F07D" id="Lira"></word>
+			<word text="Group" font="KFGQPCArabicSymbols01;F07E" id="Group"></word>
+			<word text="Quarter" font="KFGQPCArabicSymbols01;F083" id="Quarter"></word>
+			<word text="Eighth" font="KFGQPCArabicSymbols01;F084" id="Eighth"></word>
+			<word text="Fight" font="Shia;0022,003B,005D,0067" id="Fight"></word>
 
 			<word text="AHAD" font="KFGQPCArabicSymbols01;F02B" id="DayOfWeek1"></word>
 			<word text="ITHNAYN" font="KFGQPCArabicSymbols01;F02C" id="DayOfWeek2"></word>
@@ -3293,6 +3328,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="KHAMEES" font="KFGQPCArabicSymbols01;F02F" id="DayOfWeek5"></word>
 			<word text="JUMUAH" font="KFGQPCArabicSymbols01;F030" id="DayOfWeek6"></word>
 			<word text="SABT" font="KFGQPCArabicSymbols01;F02A" id="DayOfWeek7"></word>
+			
 			<word text="MUHARRAM" font="KFGQPCArabicSymbols01;F031|AGAArabesque;F031" id="Month1"></word>
 			<word text="SAFAR" font="KFGQPCArabicSymbols01;F032|AGAArabesque;F032" id="Month2"></word>
 			<word text="RABEEAWWAL" font="KFGQPCArabicSymbols01;F033|AGAArabesque;F033" id="Month3"></word>
@@ -3305,10 +3341,149 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="SHAWAAL" font="KFGQPCArabicSymbols01;F03A|AGAArabesque;F03A" id="Month10"></word>
 			<word text="THULQADAH" font="KFGQPCArabicSymbols01;F03B|AGAArabesque;F02D" id="Month11"></word>
 			<word text="THULHIJJAH" font="KFGQPCArabicSymbols01;F03C|AGAArabesque;F03D" id="Month12"></word>
+
+			<word text="TheBeneficent" font="Quranic;0029" id="TheBeneficent"></word>
+			<word text="TheMerciful" font="Quranic;002A" id="TheMerciful"></word>
+			<word text="TheEternalLord" font="Quranic;002B" id="TheEternalLord"></word>
+			<word text="TheMostSacred" font="Quranic;002C" id="TheMostSacred"></word>
+			<word text="TheEmbodimentOfPeace" font="Quranic;002D" id="TheEmbodimentOfPeace"></word>
+			<word text="TheInfuserOfFaith" font="Quranic;002E" id="TheInfuserOfFaith"></word>
+			<word text="ThePreserverOfSafety" font="Quranic;002F" id="ThePreserverOfSafety"></word>
+			<word text="TheMightyOne" font="Quranic;0030" id="TheMightyOne"></word>
+			<word text="TheAllCompelling" font="Quranic;0031" id="TheAllCompelling"></word>
+			<word text="TheDominantOne" font="Quranic;0032" id="TheDominantOne"></word>
+			<word text="TheCreator" font="Quranic;0033" id="TheCreator"></word>
+			<word text="TheEvolver" font="Quranic;0034" id="TheEvolver"></word>
+			<word text="TheFlawlessShaper" font="Quranic;0035" id="TheFlawlessShaper"></word>
+			<word text="TheGreatForgiver" font="Quranic;00D1" id="TheGreatForgiver"></word>
+			<word text="TheAllPrevailingOne" font="Quranic;0049" id="TheAllPrevailingOne"></word>
+			<word text="TheSupremeBestower" font="Quranic;00DC" id="TheSupremeBestower"></word>
+			<word text="TheTotalProvider" font="Quranic;0075" id="TheTotalProvider"></word>
+			<word text="TheSupremeSolver" font="Quranic;0064" id="TheSupremeSolver"></word>
+			<word text="TheAllKnowingOne" font="Quranic;0055" id="TheAllKnowingOne"></word>
+			<word text="TheRestrictingOne" id="TheRestrictingOne"></word>
+			<word text="TheExtender" font="Quranic;006C" id="TheExtender"></word>
+			<word text="TheReducer" id="TheReducer"></word>
+			<word text="TheElevatingOne" id="TheElevatingOne"></word>
+			<word text="TheHonourerBestower" id="TheHonourerBestower"></word>
+			<word text="TheAbaser" id="TheAbaser"></word>
+			<word text="TheAllHearer" font="Quranic;003A" id="TheAllHearer"></word>
+			<word text="TheAllSeeing" font="Quranic;003B" id="TheAllSeeing"></word>
+			<word text="TheImpartialJudge" font="Quranic;00C5" id="TheImpartialJudge"></word>
+			<word text="TheEmbodimentOfJustice" id="TheEmbodimentOfJustice"></word>
+			<word text="TheKnowerOfSubtleties" font="Quranic;0040" id="TheKnowerOfSubtleties"></word>
+			<word text="TheAllAwareOne" font="Quranic;0041" id="TheAllAwareOne"></word>
+			<word text="TheClementOne" font="Quranic;0053" id="TheClementOne"></word>
+			<word text="TheMagnificentOne" font="Quranic;0051" id="TheMagnificentOne"></word>
+			<word text="ThePardoner" font="Quranic;005E" id="ThePardoner"></word>
+			<word text="TheAcknowledgingOne" font="Quranic;0052" id="TheAcknowledgingOne"></word>
+			<word text="TheSublimeOne" font="Quranic;0050" id="TheSublimeOne"></word>
+			<word text="TheGreatOne" font="Quranic;0046" id="TheGreatOne"></word>
+			<word text="TheGuardingOne" font="Quranic;0062" id="TheGuardingOne"></word>
+			<word text="TheSustainingOne" font="Quranic;007D" id="TheSustainingOne"></word>
+			<word text="TheReckoningOne" font="Quranic;0079" id="TheReckoningOne"></word>
+			<word text="TheMajesticOne" id="TheMajesticOne"></word>
+			<word text="TheBountifulOne" font="Quranic;0059" id="TheBountifulOne"></word>
+			<word text="TheWatchfulOne" font="Quranic;0077" id="TheWatchfulOne"></word>
+			<word text="TheRespondingOne" font="Quranic;005D" id="TheRespondingOne"></word>
+			<word text="TheAllPervadingOne" font="Quranic;0054" id="TheAllPervadingOne"></word>
+			<word text="TheWiseOne" font="Quranic;0057" id="TheWiseOne"></word>
+			<word text="TheLovingOne" font="Quranic;005F" id="TheLovingOne"></word>
+			<word text="TheGloriousOne" font="Quranic;0063" id="TheGloriousOne"></word>
+			<word text="TheInfuserOfNewLife" id="TheInfuserOfNewLife"></word>
+			<word text="TheAllObservingWitness" font="Quranic;0065" id="TheAllObservingWitness"></word>
+			<word text="TheEmbodimentOfTruth" font="Quranic;004A" id="TheEmbodimentOfTruth"></word>
+			<word text="TheUniversalTrustee" font="Quranic;0076" id="TheUniversalTrustee"></word>
+			<word text="TheStrongOne" font="Quranic;004C" id="TheStrongOne"></word>
+			<word text="TheFirmOne" font="Quranic;004D" id="TheFirmOne"></word>
+			<word text="TheProtectingAssociate" font="Quranic;0060" id="TheProtectingAssociate"></word>
+			<word text="TheSoleLaudableOne" font="Quranic;0061" id="TheSoleLaudableOne"></word>
+			<word text="TheAllEnumeratingOne" id="TheAllEnumeratingOne"></word>
+			<word text="TheOriginator" id="TheOriginator"></word>
+			<word text="TheRestorer" id="TheRestorer"></word>
+			<word text="TheMaintainerOflife" id="TheMaintainerOflife"></word>
+			<word text="TheInflictorOfDeath" id="TheInflictorOfDeath"></word>
+			<word text="TheEverLiving" font="Quranic;004E" id="TheEverLiving"></word>
+			<word text="TheSelfSubsistingOne" font="Quranic;004F" id="TheSelfSubsistingOne"></word>
+			<word text="ThePointingOne" id="ThePointingOne"></word>
+			<word text="TheAllNobleOne" id="TheAllNobleOne"></word>
+			<word text="TheOnlyOne" font="Quranic;0048" id="TheOnlyOne"></word>
+			<word text="TheSoleOne" font="Quranic;005A" id="TheSoleOne"></word>
+			<word text="TheSupremeProvider" font="Quranic;005B" id="TheSupremeProvider"></word>
+			<word text="TheOmnipotentOne" font="Quranic;0072" id="TheOmnipotentOne"></word>
+			<word text="TheAllAuthoritativeOne" font="Quranic;0069" id="TheAllAuthoritativeOne"></word>
+			<word text="TheExpeditingOne" font="Quranic;0066" id="TheExpeditingOne"></word>
+			<word text="TheProcrastinator" font="Quranic;0067" id="TheProcrastinator"></word>
+			<word text="TheVeryFirst" font="Quranic;0036" id="TheVeryFirst"></word>
+			<word text="TheInfiniteLastOne" font="Quranic;0037" id="TheInfiniteLastOne"></word>
+			<word text="ThePerceptible" font="Quranic;0038" id="ThePerceptible"></word>
+			<word text="TheImperceptible" font="Quranic;0039" id="TheImperceptible"></word>
+			<word text="TheHolderOfSupremeAuthority" id="TheHolderOfSupremeAuthority"></word>
+			<word text="TheExtremelyExaltedOne" font="Quranic;0047" id="TheExtremelyExaltedOne"></word>
+			<word text="TheFountainHeadOfTruth" font="Quranic;00C9" id="TheFountainHeadOfTruth"></word>
+			<word text="TheEverAcceptorOfRepentance" font="Quranic;0056" id="TheEverAcceptorOfRepentance"></word>
+			<word text="TheRetaliator" id="TheRetaliator"></word>
+			<word text="TheSupremePardoner" font="Quranic;003E" id="TheSupremePardoner"></word>
+			<word text="TheBenignOne" font="Quranic;00D6" id="TheBenignOne"></word>
+			<word text="TheEternalPossessorOfSovereignty" id="TheEternalPossessorOfSovereignty"></word>
+			<word text="ThePossessorOfMajestyAndHonour" id="ThePossessorOfMajestyAndHonour"></word>
+			<word text="TheJustOne" id="TheJustOne"></word>
+			<word text="TheAssemblerOfScatteredCreations" id="TheAssemblerOfScatteredCreations"></word>
+			<word text="TheSelfSufficientOne" font="Quranic;0058" id="TheSelfSufficientOne"></word>
+			<word text="TheBestowerOfSufficiency" id="TheBestowerOfSufficiency"></word>
+			<word text="ThePreventer" id="ThePreventer"></word>
+			<word text="TheDistressor" id="TheDistressor"></word>
+			<word text="TheBestowerOfBenefits" id="TheBestowerOfBenefits"></word>
+			<word text="ThePrimeLight" id="ThePrimeLight"></word>
+			<word text="TheProviderOfGuidance" id="TheProviderOfGuidance"></word>
+			<word text="TheUniqueOne" id="TheUniqueOne"></word>
+			<word text="TheEverSurvivingOne" id="TheEverSurvivingOne"></word>
+			<word text="TheEternalInheritor" font="Quranic;00E2" id="TheEternalInheritor"></word>
+			<word text="TheGuideToPathOfRectitude" id="TheGuideToPathOfRectitude"></word>
+			<word text="TheExtensivelyEnduringOne" id="TheExtensivelyEnduringOne"></word>
 			
-			<word text="BISMILLAHIRAHMANIRAHEEM" font="FDFD|KFGQPCArabicSymbols01;F021,F022,F023|AGAArabesque;F04F,F050|AGAIslamicPhrases;0021,0023,0024,0025,0026,002D,0030,0031,0032,0033,0034,0035,0036,0037,0038,0039,0040,005E|Shia;0030,0032,0034,0035,0037,0060" id="InTheNameOfAllahMostBeneficentMostMerciful"></word>
+			<word text="TheHelper" font="Quranic;003C" id="TheHelper"></word>
+			<word text="TheMaster" font="Quranic;003D" id="TheMaster"></word>
+			<word text="ThePowerful" font="Quranic;003F" id="ThePowerful"></word>
+			<word text="TheOdd" font="Quranic;0042" id="TheOdd"></word>
+			<word text="TheBeautiful" font="Quranic;0043" id="TheBeautiful"></word>
+			<word text="TheShy" font="Quranic;0044" id="TheShy"></word>
+			<word text="TheCoverer" font="Quranic;0045" id="TheCoverer"></word>
+			<word text="TheClear" font="Quranic;004B" id="TheClear"></word>
+			<word text="TheClose" font="Quranic;005C" id="TheClose"></word>
+			<word text="TheOmnipotentKing" font="Quranic;0068" id="TheOmnipotentKing"></word>
+			<word text="TheBrilliant" font="Quranic;006A" id="TheBrilliant"></word>
+			<word text="TheTaker" font="Quranic;006B" id="TheTaker"></word>
+			<word text="TheProvider" font="Quranic;006D" id="TheProvider"></word>
+			<word text="TheIrresistable" font="Quranic;006E" id="TheIrresistable"></word>
+			<word text="TheOneWhoRecompenses" font="Quranic;006F" id="TheOneWhoRecompenses"></word>
+			<word text="TheRecognizer" font="Quranic;0070" id="TheRecognizer"></word>
+			<word text="TheBestower" font="Quranic;0071" id="TheBestower"></word>
+			<word text="TheContinuousCreator" font="Quranic;0073" id="TheContinuousCreator"></word>
+			<word text="TheOwner" font="Quranic;0074" id="TheOwner"></word>
+			<word text="TheDoerOfGood" font="Quranic;0078" id="TheDoerOfGood"></word>
+			<word text="TheOneWhoCures" font="Quranic;007A" id="TheOneWhoCures"></word>
+			<word text="TheGentle" font="Quranic;007B" id="TheGentle"></word>
+			<word text="TheGiver" font="Quranic;007C" id="TheGiver"></word>
+			<word text="TheLord" font="Quranic;007E" id="TheLord"></word>
+			<word text="TheGood" font="Quranic;00C4" id="TheGood"></word>
+			<word text="TheSupremeInHonour" font="Quranic;00C7" id="TheSupremeInHonour"></word>
+			<word text="TheMostGenerous" font="Quranic;00E1" id="TheMostGenerous"></word>
+			<word text="TheMostHolyFromAllWeakness" font="Quranic;00E0" id="TheMostHolyFromAllWeakness"></word>
+			<word text="TheMaster" font="Quranic;00E4" id="TheMaster"></word>
+			<word text="TheMostHigh" font="Quranic;00E3" id="TheMostHigh"></word>
+			<word text="TheOneGod" font="Quranic;00E5" id="TheOneGod"></word>
+			<word text="" font="Quranic;0022" id="TheBeneficentTheMercifulTheEternalLordTheMostSacredTheEmbodimentOfPeaceTheInfuserOfFaithThePreserverOfSafetyTheMightyOneTheAllCompellingTheDominantOneTheCreatorTheEvolverTheFlawlessShaperTheVeryFirstTheInfiniteLastOneThePerceptibleTheImperceptible"></word>
+			<word text="" font="Quranic;0023" id=""></word>
+			<word text="" font="Quranic;0024" id=""></word>
+			<word text="" font="Quranic;0025" id=""></word>
+			<word text="" font="Quranic;0026" id=""></word>
+			<word text="" font="Quranic;0027" id=""></word>
+			<word text="AndAllahHasTheBestNamesCallUponHimAndLeaveThemInPlaceThoseNamesNotablyCutOffWhatTheyDo" font="Quranic;00E8" id="AndAllahHasTheBestNamesCallUponHimAndLeaveThemInPlaceThoseNamesNotablyCutOffWhatTheyDo"></word>
+			
+			<word text="BISMILLAHIRAHMANIRAHEEM" font="FDFD|KFGQPCArabicSymbols01;F021,F022,F023|AGAArabesque;F04F,F050|AGAIslamicPhrases;0021,0023,0024,0025,0026,002D,0030,0031,0032,0033,0034,0035,0036,0037,0038,0039,0040,005E|Quranic;0009,0020|Shia;0030,0032,0034,0035,0037,0060" id="InTheNameOfAllahMostBeneficentMostMerciful"></word>
 			<word text="ALHAMDULILLAHIRABBILALAMEEN" font="AGAIslamicPhrases;0029,005F|Shia;003D" id="AllPraiseAndThanksBeToAllahLordOfTheWorlds"></word>
-			<word text="TRULYWITHHARDSHIPISEASE" font="AGAIslamicPhrases;0063" id="TrulyWithHardshipIsEase"></word>
+			<word text="TrulyWithHardshipIsEase" font="AGAIslamicPhrases;0063" id="TrulyWithHardshipIsEase"></word>
 			<word text="RepelTheirEvilByMeansOfWhatIsBest" font="AGAIslamicPhrases;006B" id="RepelTheirEvilByMeansOfWhatIsBest"></word>
 			<word text="AndOfHisSignsIsThatHeCreatedForYouFromYourselvesMatesThatYouMayFindTranquillityInThem" font="AGAIslamicPhrases;006D" id="AndOfHisSignsIsThatHeCreatedForYouFromYourselvesMatesThatYouMayFindTranquillityInThem"></word>
 			<word text="AndHePlacedBetweenYouAffectionAndMercy" font="AGAIslamicPhrases;0076" id="AndHePlacedBetweenYouAffectionAndMercy"></word>
