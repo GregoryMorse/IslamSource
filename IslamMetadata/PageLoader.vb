@@ -1044,6 +1044,10 @@ Public Class Arabic
         'process loanwords and names
         Return ArabicString
     End Function
+    Shared Function GetTransliterationTable(Scheme As String) As RenderArray.RenderItem()
+        Dim Items As New List(Of RenderArray.RenderItem) From {New RenderArray.RenderItem(RenderArray.RenderTypes.eText, Array.ConvertAll(ArabicData.ArabicLettersInOrder, Function(Letter As Char) New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, CStr(Letter)))), New RenderArray.RenderItem(RenderArray.RenderTypes.eText, Array.ConvertAll(ArabicData.ArabicLettersInOrder, Function(Letter As Char) New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, GetSchemeValueFromSymbol(ArabicData.Data.ArabicLetters(ArabicData.FindLetterBySymbol(Letter)), Scheme))))}
+        Return Items.ToArray()
+    End Function
     Shared Function GetTranslitSchemeJSArray() As String
         'Dim Letters(ArabicData.Data.ArabicLetters.Length - 1) As IslamData.ArabicSymbol
         'ArabicData.Data.ArabicLetters.CopyTo(Letters, 0)
