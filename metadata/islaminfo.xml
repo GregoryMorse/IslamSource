@@ -1610,7 +1610,6 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="&gt;anSaArN" id="Helpers"></word>
 			<word text="{lomuhaAjiriyna" id="Emigrants"></word>
 			<word text="fuSila" id="Division"></word>
-			<word text="HasanahN" id="Goodness"></word>
 			<word text="{logayobu" id="Unseen"></word>
 			<word text="&lt;iqoraA" id="Recite"></word>
 			<word text="SaborN" id="Patience"></word>
@@ -1823,6 +1822,11 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="musonadN" id="CompilationByNameReferenced"></word>
 			<word text="SaHiyHN" id="Authentic"></word>
 			<word text="HasanN" id="Good"></word>
+			<word text="{loHasanu" id="Hasan"></word>
+			<word text="{loHus~ayonu" id="Hussein"></word>
+			<word text="{lr~iDaA" id="Ridaa"></word>
+			<word text="{lobaAqiru" id="Baaqir"></word>
+			<word text="{loEasokariy" id="Askaree"></word>
 			<word text="DaEiyfN" id="Weak"></word>
 			<word text="munqaTi" id="NameInChainOfNarrationOmittedOrUnknownNameMentioned"></word>
 			<word text="muEad~alN" id="TwoOrMoreNamesMissingFromChainOfNarration"></word>
@@ -3002,99 +3006,101 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="kul~i sanapN wa&gt;antumo Tay~ibuwna" id="MayEveryYearYouHaveGoodness"></word>
 			<word text="kul~i Huq~uwqN maHofuwZapN" id="AllRightsReserved"></word>
 			<word text="Ealiy~N waliy {lla~hi" id="AliFriendOfAllah"></word>
+			<word text="fa&lt;in~a Hizobu {lla~hi humo {logaAlibuwna" id="ThenTrulyThePartyOfAllahAreTheTriumphant"></word>
+			<word text="ya` &gt;abaA SaAliH {lomahodiy" id="OFatherOfTheRighteousTheGuidedOne"></word>
 			<word text="huwa {ll~ahu" id="HeIsAllah"></word>
 		</category>
 		<category title="Names">
-			<word text="muHam~adN {bonu Eabodu {ll~ahi {bonu Eabodu {lomuT~alibu {bonu haA$im‎N" nickname="&gt;abuw {loqaAsim" id="MuhammadBinAbdullahBinAbduAlMuttalib"></word>
-			<word text="qaAsimN {bonu muHam~adN" nickname="{lT~aAhiru" id="QaasimBinMuhammad"></word>
-			<word text="Eabodu {ll~ahi {bonu muHam~adN" nickname="{lTay~ibu" id="AbdullahBinMuhammad"></word>
-			<word text="zayonabu {bonatu muHam~adN" id="ZaynabBintiMuhammad"></word>
-			<word text="ruqay~apu {bonatu muHam~adN" id="RuqayyahBintiMuhammad"></word>
-			<word text="&gt;um~N kulovumN {bonatu muHam~adN" id="UmmKulthumBintiMuhammad"></word>
-			<word text="faATimapu {bonatu muHam~adN" id="FatimaBintiMuhammad"></word>
-			<word text="HamozapN {bonu Eabodu {lomuT~alibu" id="HamzaBinAbduAlMuttalib"></word>
-			<word text="{loEabaAsu {bonu Eabodu {lomuT~alibu" id="AlAbbasBinAbduAlMuttalib"></word>
-			<word text="Eabodu {ll~ahi {bonu Eabodu {lomuT~alibu" id="AbdullahBinAbduAlMuttalib"></word>
-			<word text="&apos;aAminapu {bonatu wahobN" id="AaminaBintiWahb"></word>
-			<word text="{bonu Eabodu {lomuT~alibu" nickname="&gt;abuw TaAlibN" id="AbuTalib"></word>
-			<word text="{bonu Eabodu {lomuT~alibu" nickname="&gt;abuw lahabN" id="AbuLahab"></word>
-			<word text="sumay~apu {bonatu xayaAT~N" id="SumayyaBintiKhayatt"></word>
-			<word text="yaAsirN {bonu EaAmirN {loEansiy" id="YaasirBinAmir"></word>
-			<word text="EamaArN {bonu yaAsirN {bonu EaAmirN {bonu maAlikN &gt;abuw {loyaqoZaAnu" id="AmaarBinYaasir"></word>
-			<word text="suhayolN {bonu EamorN" id="SuhaylBinAmr"></word>
-			<word text="faAtimapu {bonatu EamorN" id="FatimaBintiAmr"></word>
-			<word text="Eamoruw {bonu hi$aAmN" nickname="&gt;abuw jaholN &gt;abuw {loHakamu" id="AbuJahl"></word>
-			<word text="Eabodu {ll~ahi {bonu &gt;abiy quHaAfapN" nickname="&gt;abuw bakr {lSad~iyq" id="AbuBakrAlSaddiqAbdullahBinAbiQuhafah"></word>
-			<word text="EumarN {bonu {loxaT~aAbu" nickname="{lofuroqanu" id="UmarBinAlKhattab"></word>
-			<word text="EuvomaAnN {bonu EafaAnN" id="UthmanBinAffan"></word>
-			<word text="jaEofarN {bonu &gt;abiy TaAlibN" id="JafarBinAbiTalib"></word>
-			<word text="Ealiy~N {bonu &gt;abiy TaAlibN" id="AliBinAbiTalib"></word>
-			<word text="{loHasanu {bonu Ealiy~N {bonu &gt;abiy TaAlib‎" id="HasanBinAli"></word>
-			<word text="{loHus~ayonu {bonu Ealiy~N {bonu &gt;abiy TaAlib" id="HusseinBinAli"></word>
-			<word text="Ealiy~N {bonu {loHus~ayon" id="AliBinHussein"></word>
-			<word text="muHam~adN {bonu Ealiy~N {lobaAqiru" id="MuhammadBinAli"></word> 
-			<word text="jaEofarN {bonu muHam~adN {lS~aAdiq‎u" id="JafarBinMuhammad"></word>
-			<word text="muwsaY {bonu jaEofarN {lokaAZim‎u" id="MusaBinJafar"></word>
-			<word text="faATimapu {bonatu muHam~adN" id="FatimaBintiMuhammad"></word>
+			<word text="muHam~adN {bonu Eabodi {ll~ahi {boni Eabodi {lomuT~alibi {boni haA$im‎K" nickname="&gt;abuw {loqaAsim" id="MuhammadBinAbdullahBinAbduAlMuttalib"></word>
+			<word text="qaAsimN {bonu muHam~adK" nickname="{lT~aAhiru" id="QaasimBinMuhammad"></word>
+			<word text="Eabodu {ll~ahi {bonu muHam~adK" nickname="{lTay~ibu" id="AbdullahBinMuhammad"></word>
+			<word text="zayonabu {bonatu muHam~adK" id="ZaynabBintiMuhammad"></word>
+			<word text="ruqay~apu {bonatu muHam~adK" id="RuqayyahBintiMuhammad"></word>
+			<word text="&gt;um~N kulovumN {bonatu muHam~adK" id="UmmKulthumBintiMuhammad"></word>
+			<word text="faATimapu {bonatu muHam~adK" id="FatimaBintiMuhammad"></word>
+			<word text="HamozapN {bonu Eabodi {lomuT~alibi" id="HamzaBinAbduAlMuttalib"></word>
+			<word text="{loEabaAsu {bonu Eabodi {lomuT~alibi" id="AlAbbasBinAbduAlMuttalib"></word>
+			<word text="Eabodu {ll~ahi {bonu Eabodi {lomuT~alibi" id="AbdullahBinAbduAlMuttalib"></word>
+			<word text="&apos;aAminapu {bonatu wahobK" id="AaminaBintiWahb"></word>
+			<word text="{bonu Eabodi {lomuT~alibi" nickname="&gt;abuw TaAlibN" id="AbuTalib"></word>
+			<word text="{bonu Eabodi {lomuT~alibi" nickname="&gt;abuw lahabN" id="AbuLahab"></word>
+			<word text="sumay~apu {bonatu xayaAT~K" id="SumayyaBintiKhayatt"></word>
+			<word text="yaAsirN {bonu EaAmirK {loEansiy" id="YaasirBinAmir"></word>
+			<word text="EamaArN {bonu yaAsirK {boni EaAmirK {boni maAlikK &gt;abuw {loyaqoZaAni" id="AmaarBinYaasir"></word>
+			<word text="suhayolN {bonu EamorK" id="SuhaylBinAmr"></word>
+			<word text="faATimapu {bonatu EamorK" id="FatimaBintiAmr"></word>
+			<word text="Eamoruw {bonu hi$aAmK" nickname="&gt;abuw jaholN &gt;abuw {loHakamu" id="AbuJahl"></word>
+			<word text="Eabodu {ll~ahi {bonu &gt;abiy quHaAfapK" nickname="&gt;abuw bakr {lSad~iyq" id="AbuBakrAlSaddiqAbdullahBinAbiQuhafah"></word>
+			<word text="EumarN {bonu {loxaT~aAbi" nickname="{lofuroqanu" id="UmarBinAlKhattab"></word>
+			<word text="EuvomaAnN {bonu EafaAnK" id="UthmanBinAffan"></word>
+			<word text="jaEofarN {bonu &gt;abiy TaAlibK" id="JafarBinAbiTalib"></word>
+			<word text="Ealiy~N {bonu &gt;abiy TaAlibK" id="AliBinAbiTalib"></word>
+			<word text="{loHasanu {bonu Ealiy~K {boni &gt;abiy TaAlib‎K" id="HasanBinAli"></word>
+			<word text="{loHus~ayonu {bonu Ealiy~K {boni &gt;abiy TaAlibK" id="HusseinBinAli"></word>
+			<word text="Ealiy~N {bonu {loHus~ayoni" id="AliBinHussein"></word>
+			<word text="muHam~adN {bonu Ealiy~N {lobaAqiri" id="MuhammadBinAli"></word> 
+			<word text="jaEofarN {bonu muHam~adK {lS~aAdiq‎i" id="JafarBinMuhammad"></word>
+			<word text="muwsaY {bonu jaEofarK {lokaAZim‎i" id="MusaBinJafar"></word>
+			<word text="faATimapu {bonatu muHam~adK" id="FatimaBintiMuhammad"></word>
 			<word text="Ealiy~N {bonu muwsaY {lr~iDaA‎" id="AliBinMusa"></word>
 			<word text="{lo&lt;imaAmu muHam~adN {lt~aqiy {lojawaAdu" id="MuhammadBinAli"></word>
 			<word text="Ealiy~N {lohaAdiy {ln~aqiy‎" id="AliBinMuhammad"></word>
-			<word text="{loHasanu {loEasokariy {bonu Ealiy~N {bonu muHam~adN" id="HasanBinAli"></word>
-			<word text="muHam~adN {bonu {loHasan {lomahodiy" id="MuhammadBinAlHasan"></word>
-			<word text="TaloHapN {bonu EabayodN {ll~ahi‎" id="TalhaBinObaidullah"></word>
-			<word text="{lz~ubayoru {bonu {loEawaAmu {bonu xuwayolidN" id="AzZubayrbinAlAwam"></word>
-			<word text="saEodN {bonu malikN" id="SadBinMalik"></word>
-			<word text="saEodN {bonu &gt;abiy waq~aASN‎" id="SadBinAbiWaqqas"></word>
-			<word text="Eabodu {lr~aHomani {bonu Eawof‎N" id="AbdurRahmanBinAwf"></word>
-			<word text="&gt;abuw EubayodapN EaAmirN {bonu Eabodi {ll~ahi {bonu {lojar~aAH‎" id="AbuUbaidahBinAlJarrah"></word>
-			<word text="saEiydN {bonu zayodN" id="SaeedBinZaid"></word>
-			<word text="xadiyjapu {bonatu xuwayolidN" id="KhadijahBintKhuwaylid"></word>
-			<word text="waraqapu {bonu nawofalN {bonu &gt;asadN {bonu Eabodu {loEuz~aY {bonu quSay~N {loqura$iy" id="WaraqahBinNawfal"></word>
-			<word text="sawodapu {bonatu zamoEap‎N" id="SawdaBintZama"></word>
-			<word text="EaA^}i$apN {bonatu &gt;abiy‎ bakorN" id="AishaBintAbiBakr"></word>
-			<word text="HafoSapN {bonatu EumarN" id="HafsaBintUmar"></word>
-			<word text="zayonabu {bonatu xuzayomap‎N" id="ZaynabBintKhuzayma"></word>
-			<word text="hindN {bonatu &gt;abiy &gt;umay~ap‎N" id="HindBintAbiUmayya"></word>
-			<word text="zayonabu {bonatu jaHo$N" id="ZaynabBintJahsh"></word>
-			<word text="juwayoriy~apN {bonatu {loHaAriv‎u" id="JuwayriyaBintAlHarith"></word>
-			<word text="Safiy~apN {bonatu Huyay‎~N" id="SafiyyaBintHuyayy"></word>
-			<word text="ramolapN {bonatu &gt;abiy sufoyaAnN" id="RamlahBintAbiSufyan"></word>
-			<word text="mayomuwnapu {bonatu {loHaAriv‎u" id="MaymunaBintAlHarith"></word>
+			<word text="{loHasanu {loEasokariy {bonu Ealiy~K {boni muHam~adK" id="HasanBinAli"></word>
+			<word text="muHam~adN {bonu {loHasani {lomahodiy" id="MuhammadBinAlHasan"></word>
+			<word text="TaloHapN {bonu Eabayodi {ll~ahi‎" id="TalhaBinObaidullah"></word>
+			<word text="{lz~ubayoru {bonu {loEawaAmi {boni xuwayolidK" id="AzZubayrbinAlAwam"></word>
+			<word text="saEodN {bonu malikK" id="SadBinMalik"></word>
+			<word text="saEodN {bonu &gt;abiy waq~aASNK" id="SadBinAbiWaqqas"></word>
+			<word text="Eabodu {lr~aHomani {bonu Eawof‎K" id="AbdurRahmanBinAwf"></word>
+			<word text="&gt;abuw EubayodapN EaAmirN {bonu Eabodi {ll~ahi {boni {lojar~aAH‎i" id="AbuUbaidahBinAlJarrah"></word>
+			<word text="saEiydN {bonu zayodK" id="SaeedBinZaid"></word>
+			<word text="xadiyjapu {bonatu xuwayolidK" id="KhadijahBintKhuwaylid"></word>
+			<word text="waraqapu {bonu nawofalK {boni &gt;asadK {boni Eabodi {loEuz~aY {boni quSay~K {loqura$iy" id="WaraqahBinNawfal"></word>
+			<word text="sawodapu {bonatu zamoEap‎K" id="SawdaBintZama"></word>
+			<word text="EaA^}i$apN {bonatu &gt;abiy‎ bakorK" id="AishaBintAbiBakr"></word>
+			<word text="HafoSapN {bonatu EumarK" id="HafsaBintUmar"></word>
+			<word text="zayonabu {bonatu xuzayomap‎K" id="ZaynabBintKhuzayma"></word>
+			<word text="hindN {bonatu &gt;abiy &gt;umay~ap‎K" id="HindBintAbiUmayya"></word>
+			<word text="zayonabu {bonatu jaHo$K" id="ZaynabBintJahsh"></word>
+			<word text="juwayoriy~apN {bonatu {loHaAriv‎i" id="JuwayriyaBintAlHarith"></word>
+			<word text="Safiy~apN {bonatu Huyay‎~K" id="SafiyyaBintHuyayy"></word>
+			<word text="ramolapN {bonatu &gt;abiy sufoyaAnK" id="RamlahBintAbiSufyan"></word>
+			<word text="mayomuwnapu {bonatu {loHaAriv‎i" id="MaymunaBintAlHarith"></word>
 			<word text="maAroyapN {loquboTiy~ap‎u" id="MariaAlQibtiyya"></word>
-			<word text="rayoHaAnapN {bonatu zayodN‎" id="RayhanaBintZayd"></word>
+			<word text="rayoHaAnapN {bonatu zayodK" id="RayhanaBintZayd"></word>
 			<word text="&gt;abuw hurayorapN" id="AbuHurairah"></word>
-			<word text="xaAlidN {bonu {lowaliydu" id="KhalidBinWalid"></word>
-			<word text="Eabodu {ll~ahi {bonu masoEuwdu" id="AbdullahBinMasood"></word>
-			<word text="Eabodu {ll~ahi {bonu Eab~aAsN" id="AbdullahBinAbbas"></word>
-			<word text="Eabodu {ll~ahi {bonu EumarN" id="AbdullahBinUmar"></word>
-			<word text="Eabodu {ll~ahi {bonu EamorN {bonu {loEaASu" id="AbdullahBinAmrBinAlAas"></word>
-			<word text="zayodN {bonu vaAbitN" id="ZaydBinThaabit"></word>
-			<word text="&gt;ubay~N {bonu kaEobN" id="UbayyBinKab"></word>
-			<word text="&gt;anasN {bonu maAlikN" id="AnasBinMaalik"></word>
-			<word text="jaAbirN {bonu Eabodu {ll~ahi" id="JaabirBinAbdullah"></word>
+			<word text="xaAlidN {bonu {lowaliydi" id="KhalidBinWalid"></word>
+			<word text="Eabodu {ll~ahi {bonu masoEuwdK" id="AbdullahBinMasood"></word>
+			<word text="Eabodu {ll~ahi {bonu Eab~aAsK" id="AbdullahBinAbbas"></word>
+			<word text="Eabodu {ll~ahi {bonu EumarK" id="AbdullahBinUmar"></word>
+			<word text="Eabodu {ll~ahi {bonu EamorK {bonu {loEaASu" id="AbdullahBinAmrBinAlAas"></word>
+			<word text="zayodN {bonu vaAbitK" id="ZaydBinThaabit"></word>
+			<word text="&gt;ubay~N {bonu kaEobK" id="UbayyBinKab"></word>
+			<word text="&gt;anasN {bonu maAlikK" id="AnasBinMaalik"></word>
+			<word text="jaAbirN {bonu Eabodi {ll~ahi" id="JaabirBinAbdullah"></word>
 			<word text="&gt;abuw muwsaY {lo&gt;a$oEariy" id="AbooMoosaaAlAsharee"></word>
-			<word text="muEaA*N {bonu jabalN" id="MuathBinJabal"></word>
-			<word text="saAlimN mawolaY &gt;abiy Hu*ayofapN" id="SaalimMawlaaAbeeHuthayfah"></word>
-			<word text="Eabodu {ll~ahi {bonu {lz~ubayoru" id="AbdullahBinAlZubayr"></word>
+			<word text="muEaA*N {bonu jabalK" id="MuathBinJabal"></word>
+			<word text="saAlimN mawolaY &gt;abiy Hu*ayofapK" id="SaalimMawlaaAbeeHuthayfah"></word>
+			<word text="Eabodu {ll~ahi {bonu {lz~ubayori" id="AbdullahBinAlZubayr"></word>
 			<word text="&gt;abuw zayodN" id="AbooZayd"></word>
 			<word text="&gt;abuw {ld~aroda&apos;u" id="AbooDarda"></word>
-			<word text="&gt;abuw sufoyaAnN {bonu HarofN" id="AbuSufyan"></word>
-			<word text="muEaAwiyapN {bonu &gt;abiy sufoyaAnN" id="Muawiyyah"></word>
-			<word text="nuEomaAnN {bonu vaAbitN" nickname="&gt;abuw HaniyfapN" id="ImamAbuHanifa"></word>
-			<word text="maAlikN {bonu &gt;anasN {bonu EamorN" id="ImamMalik"></word>
-			<word text="Eabodu {lr~aHoma`ni {bonu {lo&gt;awozaAEiy" id="ImamAwzaee"></word>
-			<word text="zayodN {bonu Ealiy~N" id="ImamZayd"></word>
-			<word text="DaAwudN {bonu Ealiy~N" id="ImamDawood"></word>
-			<word text="muHam~adN {bonu jariyrN {bonu yaziydN {lT~abariy" id="ImamAtTabari"></word>
-			<word text="{l~ayovu {bonu SaEodN" id="ImamAlLayth"></word>
+			<word text="&gt;abuw sufoyaAnN {bonu HarofK" id="AbuSufyan"></word>
+			<word text="muEaAwiyapN {bonu &gt;abiy sufoyaAnK" id="Muawiyyah"></word>
+			<word text="nuEomaAnN {bonu vaAbitK" nickname="&gt;abuw HaniyfapN" id="ImamAbuHanifa"></word>
+			<word text="maAlikN {bonu &gt;anasK {boni EamorK" id="ImamMalik"></word>
+			<word text="Eabodu {lr~aHoma`ni {boni {lo&gt;awozaAEiy" id="ImamAwzaee"></word>
+			<word text="zayodN {bonu Ealiy~K" id="ImamZayd"></word>
+			<word text="DaAwudN {bonu Ealiy~K" id="ImamDawood"></word>
+			<word text="muHam~adN {bonu jariyrK {boni yaziydK {lT~abariy" id="ImamAtTabari"></word>
+			<word text="{l~ayovu {bonu SaEodK" id="ImamAlLayth"></word>
 			<word text="sufoyaAnN {lv~aworiy" id="ImamAthThawri"></word>
-			<word text="muHam~adN {bonu &lt;idoriysu {l$~aAfiEiy" id="ImamShafiee"></word>
-			<word text="&gt;aHomadN {bonu HanobalN {l$~ayobaAniy" id="ImamHanbal"></word>
+			<word text="muHam~adN {bonu &lt;idoriysi {l$~aAfiEiy" id="ImamShafiee"></word>
+			<word text="&gt;aHomadN {bonu HanobalK {l$~ayobaAniy" id="ImamHanbal"></word>
 
 			<word text="&gt;abuw dahorN" id="AbuDahr"></word>
-			<word text="EamorN {bonu {loEaASu" id="AmrBinAlAas"></word>
-			<word text="{l~ayovu {bonu saAdN" id="AlLaythBinSaad"></word>
-			<word text="saEodN {bonu waEodN" id="SaadBinWaad"></word>
+			<word text="EamorN {bonu {loEaASi" id="AmrBinAlAas"></word>
+			<word text="{l~ayovu {bonu saAdK" id="AlLaythBinSaad"></word>
+			<word text="saEodN {bonu waEodK" id="SaadBinWaad"></word>
 			<word text="banuw vaqiyfN" id="BaniThaqeef"></word>
 			<word text="banuw haA$imN" id="BaniHashim"></word>
 			<word text="banuw maxozuwmN" id="BaniHashim"></word>
@@ -3186,7 +3192,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="JWA" font="KFGQPCArabicSymbols01;F043,F065" id="MayHisGloryBeRaised"></word>
 			<word text="BLESSINGSOFALLAH" id="BlessingsOfAllah"></word>
 			<word text="SEEKREFUGE" id="SeekRefugeWithAllahFromSatanRejected"></word>
-			<word text="BISMILLAH" id="InTheNameOfAllah"></word>
+			<word text="BISMILLAH" font="Shia;0031" id="InTheNameOfAllah"></word>
 			<word text="INSHALLAH" id="AllahWilling"></word>
 			<word text="INSHALLAHTAALA" id="GloriousAllahWilling"></word>
 			<word text="MASHALLAH" font="AGAIslamicPhrases;0028" id="AllahWilledItSo"></word>
@@ -3215,7 +3221,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="RASOOLULLAH" font="FDF6+FDF2" id="MessengerOfAllah"></word>
 			<word text="ALLAHUMMASALLAALAMUHAMMADWAALAAALIMUHAMMAD" font="Shia;0079" id="OAllahSendPrayersUponMuhammadAndTheFamilyOfMuhammad"></word>
 			<word text="TrulyYouAreOnAnExaltedStandardOfCharacter" font="Shia;0072" id="TrulyYouAreOnAnExaltedStandardOfCharacter"></word>
-			<word text="MUHAMMADURRASOOLULLAH" font="FDF4+FDF6+FDF2|AGAIslamicPhrases;005B|Shia;0071,0075" id="CreedOfIslamSecondPart"></word>
+			<word text="MUHAMMADURRASOOLULLAH" font="FDF4+FDF6+FDF2|AGAIslamicPhrases;005B|Shia;0065,0071,0075" id="CreedOfIslamSecondPart"></word>
 			<word text="LAILALAILLALLAHMUHAMMADURRASOOLULLAH" font="AGAIslamicPhrases;0069,006F" id="CreedOfIslam"></word>
 			<word text="ASHHADUANLAILAHAILLALLAH" font="AGAIslamicPhrases;004B" id="TestifyingCreedOfIslamFirstPart"></word>
 			<word text="ASHHADUANNAMUHAMMADARRASOOLULLAH" font="AGAIslamicPhrases;004A" id="TestifyingCreedOfIslamSecondPart"></word>
@@ -3238,6 +3244,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="MAYEVERYYEARYOUHAVEGOODNESS" font="AGAArabesque;F078" id="MayEveryYearYouHaveGoodness"></word>
 			<word text="ALLRIGHTSRESERVED" font="AGAArabesque;F076" id="AllRightsReserved"></word>
 			<word text="TheNamesOfAllahAreBest" font="KFGQPCArabicSymbols01;F024" id="TheNamesOfAllahAreBest"></word>
+			<word text="ThenTrulyThePartyOfAllahAreTheTriumphant" font="Shia;003A" id="ThenTrulyThePartyOfAllahAreTheTriumphant"></word>
 
 			<word text="AH" id="AfterMigration"></word>
 			<word text="PREFACE" font="KFGQPCArabicSymbols01;F05C|AGAArabesque;F04E" id="Preface"></word>
@@ -3255,9 +3262,18 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="BOOK" font="AGAArabesque;F02F" id="Book"></word>
 			<word text="LIGHT" font="AGAArabesque;F03F" id="Light"></word>
 			<word text="PEACE" font="AGAIslamicPhrases;F069" id="Peace"></word>
-			<word text="ALLAH" font="FDF2|KFGQPCArabicSymbols01;F025|AGAArabesque;F045,F051,F057|AGAIslamicPhrases;0065,0071,0072,0077" id="Allah"></word>
+			<word text="ALLAH" font="FDF2|KFGQPCArabicSymbols01;F025|AGAArabesque;F045,F051,F057|AGAIslamicPhrases;0065,0071,0072,0077|Shia;0033" id="Allah"></word>
 			<word text="AAMEEN" id="MayAllahWillItSo"></word>
 			<word text="MUHAMMAD" font="FDF4|KFGQPCArabicSymbols01;F026|AGAIslamicPhrases;005D|Shia;0044" id="Muhammad"></word>
+			<word text="ALI" font="Shia;0046,005B,005C,005E,0066" id="HighExalted"></word>
+			<word text="FATIMA" font="Shia;0047" id="Fatima"></word>
+			<word text="HADI" font="Shia;0042" id="TheProviderOfGuidance"></word>
+			<word text="RIDAA" font="Shia;0043" id="Ridaa"></word>
+			<word text="HASAN" font="Shia;0048" id="Hasan"></word>
+			<word text="HUSSEIN" font="Shia;004A" id="Hussein"></word>
+			<word text="BAAQIR" font="Shia;004C" id="Baaqir"></word>
+			<word text="GUIDEDONE" font="Shia;004D" id="GuidedOne"></word>
+			<word text="ASKAREE" font="Shia;004E" id="Askaree"></word>
 			<word text="RIAL" font="FDFC|KFGQPCArabicSymbols01;F077" id="Rial"></word>
 			<word text="OUNCE" font="KFGQPCArabicSymbols01;F078" id="Ounce"></word>
 			<word text="SHILLING" font="KFGQPCArabicSymbols01;F079" id="Shilling"></word>
@@ -3268,7 +3284,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="GROUP" font="KFGQPCArabicSymbols01;F07E" id="Group"></word>
 			<word text="QUARTER" font="KFGQPCArabicSymbols01;F083" id="Quarter"></word>
 			<word text="EIGHTH" font="KFGQPCArabicSymbols01;F084" id="Eighth"></word>
-			<word text="FIGHT" font="Shia;0022,003A,003B,005D,0067" id="Fight"></word>
+			<word text="FIGHT" font="Shia;0022,003B,005D,0067" id="Fight"></word>
 
 			<word text="AHAD" font="KFGQPCArabicSymbols01;F02B" id="DayOfWeek1"></word>
 			<word text="ITHNAYN" font="KFGQPCArabicSymbols01;F02C" id="DayOfWeek2"></word>
@@ -3290,7 +3306,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="THULQADAH" font="KFGQPCArabicSymbols01;F03B|AGAArabesque;F02D" id="Month11"></word>
 			<word text="THULHIJJAH" font="KFGQPCArabicSymbols01;F03C|AGAArabesque;F03D" id="Month12"></word>
 			
-			<word text="BISMILLAHIRAHMANIRAHEEM" font="FDFD|KFGQPCArabicSymbols01;F021,F022,F023|AGAArabesque;F04F,F050|AGAIslamicPhrases;0021,0023,0024,0025,0026,002D,0030,0031,0032,0033,0034,0035,0036,0037,0038,0039,0040,005E|Shia;0034,0035,0037,0060" id="InTheNameOfAllahMostBeneficentMostMerciful"></word>
+			<word text="BISMILLAHIRAHMANIRAHEEM" font="FDFD|KFGQPCArabicSymbols01;F021,F022,F023|AGAArabesque;F04F,F050|AGAIslamicPhrases;0021,0023,0024,0025,0026,002D,0030,0031,0032,0033,0034,0035,0036,0037,0038,0039,0040,005E|Shia;0030,0032,0034,0035,0037,0060" id="InTheNameOfAllahMostBeneficentMostMerciful"></word>
 			<word text="ALHAMDULILLAHIRABBILALAMEEN" font="AGAIslamicPhrases;0029,005F|Shia;003D" id="AllPraiseAndThanksBeToAllahLordOfTheWorlds"></word>
 			<word text="TRULYWITHHARDSHIPISEASE" font="AGAIslamicPhrases;0063" id="TrulyWithHardshipIsEase"></word>
 			<word text="RepelTheirEvilByMeansOfWhatIsBest" font="AGAIslamicPhrases;006B" id="RepelTheirEvilByMeansOfWhatIsBest"></word>
