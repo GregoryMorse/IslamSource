@@ -8790,9 +8790,6 @@
   <data name="IslamInfo_Collection" xml:space="preserve">
     <value>Collection</value>
   </data>
-  <data name="IslamInfo_DirectionOfPrayer" xml:space="preserve">
-    <value>Direction Of Prayer</value>
-  </data>
   <data name="IslamInfo_DustAblution" xml:space="preserve">
     <value>Dust Ablution</value>
   </data>
@@ -10220,8 +10217,5 @@
   </data>
   <data name="IslamInfo_ExtendStretch" xml:space="preserve">
     <value>Extend Stretch</value>
-  </data>
-  <data name="IslamInfo_DirectionOfPrayer" xml:space="preserve">
-    <value>Direction Of Prayer</value>
   </data>
 </root>

@@ -2981,6 +2981,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="{ln~afosu {lo&gt;am~aArapu bi{ls~uw^&apos;i" id="LowerSelf"></word>
 			<word text="faqado kafara" id="ThenHeHasDisbelieved"></word>
 			<word text="$irokN &gt;akobarN" id="MajorPolythiesm"></word>
+			<word text="waHodatu {lowujuwdi" id="DoctrineOfUnityOfExistence"></word>
 			<word text="tamamo biHamod {ll~ahi" id="GreatWithPraiseToAllah"></word>
 			<word text="kul~u EaAm wa&gt;antumo bixayori" id="MayEveryYearYouBeInGoodHealthAndBlessings"></word>
 			<word text="kul~i sanapN wa&gt;antumo Tay~ibuwna" id="MayEveryYearYouHaveGoodness"></word>
@@ -3194,7 +3195,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="MUHAMMADURRASOOLULLAH" font="FDF4+FDF6+FDF2|AGAIslamicPhrases;005B" id="CreedOfIslamSecondPart"></word>
 			<word text="LAILALAILLALLAHMUHAMMADURRASOOLULLAH" font="AGAIslamicPhrases;0069,006F" id="CreedOfIslam"></word>
 			<word text="ASHHADUANLAILAHAILLALLAH" font="AGAIslamicPhrases;004B" id="TestifyingCreedOfIslamFirstPart"></word>
-			<word text="ASHHADUANNAMUHAMMADARRASOOLULLAH" font="AGAIslamicPhrases;004A" id="TestifyingCreedOfIslamFirstPart"></word>
+			<word text="ASHHADUANNAMUHAMMADARRASOOLULLAH" font="AGAIslamicPhrases;004A" id="TestifyingCreedOfIslamSecondPart"></word>
 			<word text="ASHHADUANLAILAHAILLALLAHASHHADUANNAMUHAMMADABDUHUWARASULUH" font="AGAIslamicPhrases;0070" id="TestifyingCreedOfIslam"></word>
 			<word text="NOPOWERNOMIGHTEXCEPTALLAH" id="ThereIsNoPowerAndNoMightExceptWithAllah"></word>
 			<word text="NOPOWERNOMIGHTEXCEPTALLAHMOSTHIGHMOSTMAGNIFICENT" id="ThereIsNoPowerAndNoMightExceptWithAllahMostHighMostMagnificent"></word>

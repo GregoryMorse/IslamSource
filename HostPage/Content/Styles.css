@@ -12,9 +12,16 @@
 
 @font-face
 {
-    font-family: IslamicLogo;
-    src: local(IslamicLogo);
-    src: url(/files/islamic.ttf) format('truetype');
+    font-family: SHia;
+    src: local(SHia);
+    src: url(/files/SHIA.TTF) format('truetype');
+}
+
+@font-face
+{
+    font-family: KFGQPC Arabic Symbols 01;
+    src: local(KFGQPC Arabic Symbols 01);
+    src: url(/files/Symbols1_Ver02.otf) format('opentype');
 }
 
 BODY

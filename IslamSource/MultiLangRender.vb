@@ -33,7 +33,7 @@
     Private Shared Function GetTextWidthFromTextBox(NewText As TextBox, hdc As IntPtr) As HostPageUtility.RenderArray.GetTextWidth
         Dim ret As IntPtr = SendMessage(NewText.Handle, EM_GETMARGINS, IntPtr.Zero, IntPtr.Zero)
         Dim WidthOffset As Integer = (ret.ToInt32() And &HFFFF) + (ret.ToInt32() << 16) + GetSystemMetrics(SM_CXBORDER) * 2 + NewText.Margin.Left + NewText.Margin.Right
-        Return Function(Str As String, MaxWidth As Single, IsRTL As Boolean, ByRef s As SizeF, ByRef Baseline As Single)
+        Return Function(Str As String, FontName As String, MaxWidth As Single, IsRTL As Boolean, ByRef s As SizeF, ByRef Baseline As Single)
                    Dim nChar As Integer
                    Dim GetSize As Size
                    Baseline = NewText.Font.FontFamily.GetCellAscent(NewText.Font.Style)

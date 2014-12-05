@@ -214,6 +214,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Aamina Binti Wahb.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_AaminaBintiWahb() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_AaminaBintiWahb", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Aaron.
         '''</summary>
         Public ReadOnly Property IslamInfo_Aaron() As String
@@ -241,6 +250,24 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Abdullah Bin Abbas.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_AbdullahBinAbbas() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_AbdullahBinAbbas", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Abdullah Bin Abdu Al Muttalib.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_AbdullahBinAbduAlMuttalib() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_AbdullahBinAbduAlMuttalib", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Abdullah Bin Abi Quhafah.
         '''</summary>
         Public ReadOnly Property IslamInfo_AbdullahBinAbiQuhafah() As String
@@ -250,11 +277,47 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Abdullah Bin Al Zubayr.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_AbdullahBinAlZubayr() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_AbdullahBinAlZubayr", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Abdullah Bin Amr Bin Al Aas.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_AbdullahBinAmrBinAlAas() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_AbdullahBinAmrBinAlAas", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Abdullah bin Masood.
         '''</summary>
         Public ReadOnly Property IslamInfo_AbdullahBinMasood() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_AbdullahBinMasood", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Abdullah Bin Muhammad.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_AbdullahBinMuhammad() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_AbdullahBinMuhammad", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Abdullah Bin Umar.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_AbdullahBinUmar() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_AbdullahBinUmar", resourceCulture)
             End Get
         End Property
         
@@ -286,6 +349,69 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Abode.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Abode() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Abode", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Aboo Darda.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_AbooDarda() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_AbooDarda", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Aboo Moosaa Al Asharee.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_AbooMoosaaAlAsharee() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_AbooMoosaaAlAsharee", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Aboo Zayd.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_AbooZayd() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_AbooZayd", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to About What.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_AboutWhat() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_AboutWhat", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Above.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Above() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Above", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Above Up.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_AboveUp() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_AboveUp", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Abraham.
         '''</summary>
         Public ReadOnly Property IslamInfo_Abraham() As String
@@ -295,11 +421,65 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Abrogated.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Abrogated() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Abrogated", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Abrogating.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Abrogating() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Abrogating", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Abrogating And Abrogated Verses.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_AbrogatingAndAbrogatedVerses() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_AbrogatingAndAbrogatedVerses", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Abrogation.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Abrogation() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Abrogation", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Absolute.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Absolute() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Absolute", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Absolute Identical.
         '''</summary>
         Public ReadOnly Property IslamInfo_AbsoluteIdentical() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_AbsoluteIdentical", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Absolute Predestination.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_AbsolutePredestination() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_AbsolutePredestination", resourceCulture)
             End Get
         End Property
         
@@ -327,6 +507,15 @@ Namespace My.Resources
         Public ReadOnly Property IslamInfo_AbuBakrAlSaddiq() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_AbuBakrAlSaddiq", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Abu Bakr Al Saddiq Abdullah Bin Abi Quhafah.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_AbuBakrAlSaddiqAbdullahBinAbiQuhafah() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_AbuBakrAlSaddiqAbdullahBinAbiQuhafah", resourceCulture)
             End Get
         End Property
         
@@ -367,6 +556,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Abu Jahl.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_AbuJahl() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_AbuJahl", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Abu Lahab.
         '''</summary>
         Public ReadOnly Property IslamInfo_AbuLahab() As String
@@ -381,6 +579,15 @@ Namespace My.Resources
         Public ReadOnly Property IslamInfo_AbuSufyan() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_AbuSufyan", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Abu Talib.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_AbuTalib() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_AbuTalib", resourceCulture)
             End Get
         End Property
         
@@ -412,11 +619,65 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Accepting Without Understanding.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_AcceptingWithoutUnderstanding() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_AcceptingWithoutUnderstanding", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Account.
         '''</summary>
         Public ReadOnly Property IslamInfo_Account() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_Account", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Accountable Person.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_AccountablePerson() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_AccountablePerson", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Account Reckoning Questioning.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_AccountReckoningQuestioning() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_AccountReckoningQuestioning", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Accusative Case.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_AccusativeCase() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_AccusativeCase", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Accusative Noun Indicating Place Where Action Occurs.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_AccusativeNounIndicatingPlaceWhereActionOccurs() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_AccusativeNounIndicatingPlaceWhereActionOccurs", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Accusative Noun Indicating Time When Action Occurs.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_AccusativeNounIndicatingTimeWhenActionOccurs() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_AccusativeNounIndicatingTimeWhenActionOccurs", resourceCulture)
             End Get
         End Property
         
@@ -430,11 +691,83 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Accusative Particles.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_AccusativeParticles() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_AccusativeParticles", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Accusative State.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_AccusativeState() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_AccusativeState", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Actions Deeds Works.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ActionsDeedsWorks() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ActionsDeedsWorks", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Active Participle Verbal Doer.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ActiveParticipleVerbalDoer() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ActiveParticipleVerbalDoer", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Act Righteously.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ActRighteously() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ActRighteously", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Acts Of Disbelief.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ActsOfDisbelief() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ActsOfDisbelief", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Actual.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Actual() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Actual", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Adam.
         '''</summary>
         Public ReadOnly Property IslamInfo_Adam() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_Adam", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Addition Of Second Wife To Household.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_AdditionOfSecondWifeToHousehold() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_AdditionOfSecondWifeToHousehold", resourceCulture)
             End Get
         End Property
         
@@ -448,11 +781,47 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Admonition.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Admonition() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Admonition", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Advancement.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Advancement() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Advancement", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Adverbs Denoting Detail.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_AdverbsDenotingDetail() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_AdverbsDenotingDetail", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to After.
         '''</summary>
         Public ReadOnly Property IslamInfo_After() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_After", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to After Burying The Deceased.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_AfterBuryingTheDeceased() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_AfterBuryingTheDeceased", resourceCulture)
             End Get
         End Property
         
@@ -583,6 +952,24 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to After Migration.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_AfterMigration() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_AfterMigration", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to After Rainfall.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_AfterRainfall() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_AfterRainfall", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Aisha.
         '''</summary>
         Public ReadOnly Property IslamInfo_Aisha() As String
@@ -597,6 +984,51 @@ Namespace My.Resources
         Public ReadOnly Property IslamInfo_AishaBintAbiBakr() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_AishaBintAbiBakr", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Al Abbas Bin Abdu Al Muttalib.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_AlAbbasBinAbduAlMuttalib() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_AlAbbasBinAbduAlMuttalib", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Alawites.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Alawites() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Alawites", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Al Awzaai.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_AlAwzaai() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_AlAwzaai", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Algeria.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Algeria() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Algeria", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Ali.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Ali() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Ali", resourceCulture)
             End Get
         End Property
         
@@ -646,11 +1078,92 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Alif Laam Meem.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_AlifLaamMeem() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_AlifLaamMeem", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to All.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_All() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_All", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to The one God.
         '''</summary>
         Public ReadOnly Property IslamInfo_Allah() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_Allah", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Allah Does Not Like.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_AllahDoesNotLike() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_AllahDoesNotLike", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Allah Has Heard.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_AllahHasHeard() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_AllahHasHeard", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Allah Have Mercy On Both Of Them.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_AllahHaveMercyOnBothOfThem() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_AllahHaveMercyOnBothOfThem", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Allah Have Mercy On Her.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_AllahHaveMercyOnHer() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_AllahHaveMercyOnHer", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Allah Have Mercy On Him.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_AllahHaveMercyOnHim() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_AllahHaveMercyOnHim", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Allah Have Mercy On Them Feminine.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_AllahHaveMercyOnThemFeminine() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_AllahHaveMercyOnThemFeminine", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Allah Have Mercy On Them Masculine.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_AllahHaveMercyOnThemMasculine() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_AllahHaveMercyOnThemMasculine", resourceCulture)
             End Get
         End Property
         
@@ -718,6 +1231,24 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to All Everybody.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_AllEverybody() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_AllEverybody", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to All Every Each.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_AllEveryEach() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_AllEveryEach", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Allowed.
         '''</summary>
         Public ReadOnly Property IslamInfo_Allowed() As String
@@ -736,11 +1267,29 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to All Powerful.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_AllPowerful() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_AllPowerful", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to All praise and thanks be to Allah.
         '''</summary>
         Public ReadOnly Property IslamInfo_AllPraiseAndThanksBeToAllah() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_AllPraiseAndThanksBeToAllah", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Allusion Euphemism.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_AllusionEuphemism() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_AllusionEuphemism", resourceCulture)
             End Get
         End Property
         
@@ -772,11 +1321,56 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Al Of Definiteness.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_AlOfDefiniteness() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_AlOfDefiniteness", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Alone Only.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_AloneOnly() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_AloneOnly", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Al-Wahsi.
         '''</summary>
         Public ReadOnly Property IslamInfo_AlWahsi() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_AlWahsi", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Always.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Always() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Always", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Amaar Bin Yaasir.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_AmaarBinYaasir() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_AmaarBinYaasir", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Ameenah.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Ameenah() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Ameenah", resourceCulture)
             End Get
         End Property
         
@@ -790,6 +1384,24 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to America.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_America() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_America", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Amman.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Amman() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Amman", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Amr bin Al-Aas.
         '''</summary>
         Public ReadOnly Property IslamInfo_AmrBinAlAas() As String
@@ -799,11 +1411,83 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Analogical Deduction.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_AnalogicalDeduction() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_AnalogicalDeduction", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Anas Bin Maalik.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_AnasBinMaalik() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_AnasBinMaalik", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Ancient Arabian Game Of Chance Gambling.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_AncientArabianGameOfChanceGambling() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_AncientArabianGameOfChanceGambling", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to And Acquitted.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_AndAcquitted() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_AndAcquitted", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to And By Of Oath.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_AndByOfOath() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_AndByOfOath", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to And Chaste.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_AndChaste() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_AndChaste", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to And Everyone.
         '''</summary>
         Public ReadOnly Property IslamInfo_AndEveryone() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_AndEveryone", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to And Me.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_AndMe() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_AndMe", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to And The Desperate One.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_AndTheDesperateOne() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_AndTheDesperateOne", resourceCulture)
             End Get
         End Property
         
@@ -844,11 +1528,29 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Angry.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Angry() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Angry", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Answer Particle.
         '''</summary>
         Public ReadOnly Property IslamInfo_AnswerParticle() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_AnswerParticle", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Antichrist.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Antichrist() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Antichrist", resourceCulture)
             End Get
         End Property
         
@@ -862,11 +1564,1037 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Apologizing.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Apologizing() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Apologizing", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Apparent Meaning Not Intended.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ApparentMeaningNotIntended() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ApparentMeaningNotIntended", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Appear New Realization Occur To Someone.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_AppearNewRealizationOccurToSomeone() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_AppearNewRealizationOccurToSomeone", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Appointment.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Appointment() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Appointment", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arab.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Arab() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Arab", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Arabic.
         '''</summary>
         Public ReadOnly Property IslamInfo_Arabic() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_Arabic", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic Comma.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicComma() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicComma", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic Damma.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicDamma() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicDamma", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic Dammatan.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicDammatan() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicDammatan", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic Dictionary.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicDictionary() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicDictionary", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic Empty Centre High Stop.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicEmptyCentreHighStop() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicEmptyCentreHighStop", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic Empty Centre Low Stop.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicEmptyCentreLowStop() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicEmptyCentreLowStop", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic End Of Ayah.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicEndOfAyah() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicEndOfAyah", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic Fatha.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicFatha() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicFatha", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic Fathatan.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicFathatan() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicFathatan", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic Hamza Above.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicHamzaAbove() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicHamzaAbove", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic Hamza Below.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicHamzaBelow() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicHamzaBelow", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic Indic Digit Eight.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicIndicDigitEight() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicIndicDigitEight", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic Indic Digit Five.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicIndicDigitFive() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicIndicDigitFive", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic Indic Digit Four.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicIndicDigitFour() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicIndicDigitFour", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic Indic Digit Nine.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicIndicDigitNine() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicIndicDigitNine", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic Indic Digit One.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicIndicDigitOne() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicIndicDigitOne", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic Indic Digit Seven.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicIndicDigitSeven() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicIndicDigitSeven", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic Indic Digit Six.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicIndicDigitSix() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicIndicDigitSix", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic Indic Digit Three.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicIndicDigitThree() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicIndicDigitThree", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic Indic Digit Two.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicIndicDigitTwo() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicIndicDigitTwo", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic Indic Digit Zero.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicIndicDigitZero() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicIndicDigitZero", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic Kasra.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicKasra() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicKasra", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic Kasratan.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicKasratan() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicKasratan", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic Letter Ain.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicLetterAin() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicLetterAin", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic Letter Alef.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicLetterAlef() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicLetterAlef", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic Letter Alef Maksura.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicLetterAlefMaksura() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicLetterAlefMaksura", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic Letter Alef Wasla.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicLetterAlefWasla() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicLetterAlefWasla", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic Letter Alef With Hamza Above.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicLetterAlefWithHamzaAbove() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicLetterAlefWithHamzaAbove", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic Letter Alef With Hamza Below.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicLetterAlefWithHamzaBelow() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicLetterAlefWithHamzaBelow", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic Letter Alef With Madda Above.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicLetterAlefWithMaddaAbove() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicLetterAlefWithMaddaAbove", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic Letter Beh.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicLetterBeh() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicLetterBeh", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic Letter Dad.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicLetterDad() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicLetterDad", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic Letter Dal.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicLetterDal() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicLetterDal", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic Letter Feh.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicLetterFeh() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicLetterFeh", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic Letter Gaf.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicLetterGaf() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicLetterGaf", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic Letter Ghain.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicLetterGhain() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicLetterGhain", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic Letter Hah.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicLetterHah() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicLetterHah", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic Letter Hamza.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicLetterHamza() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicLetterHamza", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic Letter Heh.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicLetterHeh() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicLetterHeh", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic Letter Jeem.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicLetterJeem() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicLetterJeem", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic Letter Kaf.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicLetterKaf() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicLetterKaf", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic Letter Khah.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicLetterKhah() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicLetterKhah", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic Letter Lam.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicLetterLam() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicLetterLam", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic Letter Meem.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicLetterMeem() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicLetterMeem", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic Letter Noon.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicLetterNoon() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicLetterNoon", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic Letter Noon Ghunna.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicLetterNoonGhunna() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicLetterNoonGhunna", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic Letter Peh.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicLetterPeh() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicLetterPeh", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic Letter Qaf.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicLetterQaf() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicLetterQaf", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic Letter Reh.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicLetterReh() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicLetterReh", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic Letter Sad.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicLetterSad() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicLetterSad", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic Letter Seen.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicLetterSeen() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicLetterSeen", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic Letter Sheen.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicLetterSheen() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicLetterSheen", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic Letter Superscript Alef.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicLetterSuperscriptAlef() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicLetterSuperscriptAlef", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic Letter Tah.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicLetterTah() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicLetterTah", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic Letter Tcheh.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicLetterTcheh() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicLetterTcheh", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic Letter Teh.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicLetterTeh() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicLetterTeh", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic Letter Teh Marbuta.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicLetterTehMarbuta() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicLetterTehMarbuta", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic Letter Thal.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicLetterThal() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicLetterThal", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic Letter Theh.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicLetterTheh() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicLetterTheh", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic Letter Veh.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicLetterVeh() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicLetterVeh", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic Letter Waw.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicLetterWaw() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicLetterWaw", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic Letter Waw With Hamza Above.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicLetterWawWithHamzaAbove() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicLetterWawWithHamzaAbove", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic Letter Yeh.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicLetterYeh() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicLetterYeh", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic Letter Yeh Barree.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicLetterYehBarree() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicLetterYehBarree", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic Letter Yeh Barree With Hamza Above.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicLetterYehBarreeWithHamzaAbove() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicLetterYehBarreeWithHamzaAbove", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic Letter Yeh With Hamza Above.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicLetterYehWithHamzaAbove() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicLetterYehWithHamzaAbove", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic Letter Zah.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicLetterZah() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicLetterZah", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic Letter Zain.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicLetterZain() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicLetterZain", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic Ligature Akbar Isolated Form.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicLigatureAkbarIsolatedForm() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicLigatureAkbarIsolatedForm", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic Ligature Alayhe Isolated Form.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicLigatureAlayheIsolatedForm() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicLigatureAlayheIsolatedForm", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic Ligature Allah Isolated Form.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicLigatureAllahIsolatedForm() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicLigatureAllahIsolatedForm", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic Ligature Bismillah Ar Rahman Ar Raheem.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicLigatureBismillahArRahmanArRaheem() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicLigatureBismillahArRahmanArRaheem", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic Ligature Jallajalalouhou.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicLigatureJallajalalouhou() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicLigatureJallajalalouhou", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic Ligature Mohammad Isolated Form.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicLigatureMohammadIsolatedForm() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicLigatureMohammadIsolatedForm", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic Ligature Qala Used As Koranic Stop Sign Isolated Form.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicLigatureQalaUsedAsKoranicStopSignIsolatedForm() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicLigatureQalaUsedAsKoranicStopSignIsolatedForm", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic Ligature Rasoul Isolated Form.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicLigatureRasoulIsolatedForm() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicLigatureRasoulIsolatedForm", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic Ligature Salam Isolated Form.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicLigatureSalamIsolatedForm() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicLigatureSalamIsolatedForm", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic Ligature Salla Isolated Form.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicLigatureSallaIsolatedForm() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicLigatureSallaIsolatedForm", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic Ligature Sallallahou Alayhe Wasallam.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicLigatureSallallahouAlayheWasallam() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicLigatureSallallahouAlayheWasallam", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic Ligature Salla Used As Koranic Stop Sign Isolated Form.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicLigatureSallaUsedAsKoranicStopSignIsolatedForm() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicLigatureSallaUsedAsKoranicStopSignIsolatedForm", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic Ligature Wasallam Isolated Form.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicLigatureWasallamIsolatedForm() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicLigatureWasallamIsolatedForm", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic Maddah Above.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicMaddahAbove() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicMaddahAbove", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic Place Of Sajdah.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicPlaceOfSajdah() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicPlaceOfSajdah", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic Question Mark.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicQuestionMark() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicQuestionMark", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic Rounded High Stop With Filled Centre.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicRoundedHighStopWithFilledCentre() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicRoundedHighStopWithFilledCentre", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic Semicolon.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicSemicolon() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicSemicolon", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic Shadda.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicShadda() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicShadda", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic Sign Alayhe Assallam.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicSignAlayheAssallam() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicSignAlayheAssallam", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic Sign Radi Allahou Anhu.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicSignRadiAllahouAnhu() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicSignRadiAllahouAnhu", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic Sign Rahmatullah Alayhe.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicSignRahmatullahAlayhe() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicSignRahmatullahAlayhe", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic Sign Sallallahou Alayhe Wassallam.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicSignSallallahouAlayheWassallam() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicSignSallallahouAlayheWassallam", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic Small High Jeem.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicSmallHighJeem() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicSmallHighJeem", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic Small High Lam Alef.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicSmallHighLamAlef() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicSmallHighLamAlef", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic Small High Ligature Qaf With Lam With Alef Maksura.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicSmallHighLigatureQafWithLamWithAlefMaksura() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicSmallHighLigatureQafWithLamWithAlefMaksura", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic Small High Ligature Sad With Lam With Alef Maksura.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicSmallHighLigatureSadWithLamWithAlefMaksura() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicSmallHighLigatureSadWithLamWithAlefMaksura", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic Small High Meem Initial Form.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicSmallHighMeemInitialForm() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicSmallHighMeemInitialForm", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic Small High Meem Isolated Form.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicSmallHighMeemIsolatedForm() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicSmallHighMeemIsolatedForm", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic Small High Noon.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicSmallHighNoon() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicSmallHighNoon", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic Small High Rounded Zero.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicSmallHighRoundedZero() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicSmallHighRoundedZero", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic Small High Seen.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicSmallHighSeen() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicSmallHighSeen", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic Small High Three Dots.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicSmallHighThreeDots() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicSmallHighThreeDots", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic Small High Upright Rectangular Zero.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicSmallHighUprightRectangularZero() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicSmallHighUprightRectangularZero", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic Small Low Meem.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicSmallLowMeem() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicSmallLowMeem", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic Small Low Seen.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicSmallLowSeen() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicSmallLowSeen", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic Small Waw.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicSmallWaw() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicSmallWaw", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic Small Yeh.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicSmallYeh() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicSmallYeh", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic Start Of Rub El Hizb.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicStartOfRubElHizb() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicStartOfRubElHizb", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic Sukun.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicSukun() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicSukun", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arabic Tatweel.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicTatweel() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicTatweel", resourceCulture)
             End Get
         End Property
         
@@ -880,11 +2608,56 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Arabic Vowel Sign Dot Below.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ArabicVowelSignDotBelow() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ArabicVowelSignDotBelow", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Arafah.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Arafah() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Arafah", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Argument.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Argument() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Argument", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Arial.
         '''</summary>
         Public ReadOnly Property IslamInfo_Arial() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_Arial", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Army.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Army() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Army", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Around.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Around() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Around", resourceCulture)
             End Get
         End Property
         
@@ -907,11 +2680,74 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to As If.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_AsIf() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_AsIf", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to As If As Though.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_AsIfAsThough() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_AsIfAsThough", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to As Just As.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_AsJustAs() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_AsJustAs", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Ask Forgiveness.
         '''</summary>
         Public ReadOnly Property IslamInfo_AskForgiveness() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_AskForgiveness", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Asking For Clear Skies.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_AskingForClearSkies() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_AskingForClearSkies", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Asking How.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_AskingHow() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_AskingHow", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to As Like Similarity.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_AsLikeSimilarity() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_AsLikeSimilarity", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Aspiration.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Aspiration() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Aspiration", resourceCulture)
             End Get
         End Property
         
@@ -970,11 +2806,65 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Associating Partners.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_AssociatingPartners() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_AssociatingPartners", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Assumed.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Assumed() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Assumed", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to As To As For.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_AsToAsFor() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_AsToAsFor", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Astray.
         '''</summary>
         Public ReadOnly Property IslamInfo_Astray() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_Astray", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Attached Pronouns.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_AttachedPronouns() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_AttachedPronouns", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to At The Black Stone.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_AtTheBlackStone() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_AtTheBlackStone", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to At The Sacred Site.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_AtTheSacredSite() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_AtTheSacredSite", resourceCulture)
             End Get
         End Property
         
@@ -1150,11 +3040,65 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to At Times Of Amazement And Delight.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_AtTimesOfAmazementAndDelight() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_AtTimesOfAmazementAndDelight", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Attributes.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Attributes() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Attributes", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Attribute Singular Pattern.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_AttributeSingularPattern() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_AttributeSingularPattern", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Audible.
         '''</summary>
         Public ReadOnly Property IslamInfo_Audible() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_Audible", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Authentic.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Authentic() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Authentic", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Authentication Classification Of Statements.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_AuthenticationClassificationOfStatements() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_AuthenticationClassificationOfStatements", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Authority Warrant.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_AuthorityWarrant() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_AuthorityWarrant", resourceCulture)
             End Get
         End Property
         
@@ -1186,11 +3130,38 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Back.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Back() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Back", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Back After.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_BackAfter() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_BackAfter", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Balance.
         '''</summary>
         Public ReadOnly Property IslamInfo_Balance() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_Balance", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Balance Scale.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_BalanceScale() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_BalanceScale", resourceCulture)
             End Get
         End Property
         
@@ -1213,6 +3184,60 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Basis Of Transmission Of Language.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_BasisOfTransmissionOfLanguage() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_BasisOfTransmissionOfLanguage", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Battles.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Battles() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Battles", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Be.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Be() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Be", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Bear With Patience.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_BearWithPatience() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_BearWithPatience", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Bear Witness Be Present.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_BearWitnessBePresent() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_BearWitnessBePresent", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Become Worthless.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_BecomeWorthless() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_BecomeWorthless", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Bed.
         '''</summary>
         Public ReadOnly Property IslamInfo_Bed() As String
@@ -1222,11 +3247,29 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Bed Couch.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_BedCouch() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_BedCouch", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Before.
         '''</summary>
         Public ReadOnly Property IslamInfo_Before() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_Before", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Before Eating.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_BeforeEating() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_BeforeEating", resourceCulture)
             End Get
         End Property
         
@@ -1263,6 +3306,24 @@ Namespace My.Resources
         Public ReadOnly Property IslamInfo_BeforeEnteringTheToilet1WordByWord() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_BeforeEnteringTheToilet1WordByWord", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Before Giving Peace Of Prayer.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_BeforeGivingPeaceOfPrayer() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_BeforeGivingPeaceOfPrayer", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Before Sexual Intercourse.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_BeforeSexualIntercourse() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_BeforeSexualIntercourse", resourceCulture)
             End Get
         End Property
         
@@ -1330,6 +3391,168 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Be Grateful.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_BeGrateful() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_BeGrateful", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Be Grieved.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_BeGrieved() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_BeGrieved", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Behind.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Behind() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Behind", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Beirut.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Beirut() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Beirut", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Be Just.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_BeJust() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_BeJust", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Be Pleased Be Pleased With.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_BePleasedBePleasedWith() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_BePleasedBePleasedWith", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Bequest.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Bequest() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Bequest", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Besides Other Than Less Than.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_BesidesOtherThanLessThan() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_BesidesOtherThanLessThan", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Be True Say The Truth.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_BeTrueSayTheTruth() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_BeTrueSayTheTruth", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Better.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Better() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Better", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Better Guided.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_BetterGuided() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_BetterGuided", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Better Knowing More Informed.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_BetterKnowingMoreInformed() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_BetterKnowingMoreInformed", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Between.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Between() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Between", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Between The Yemeni Corner And The Black Stone At The Kaaba.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_BetweenTheYemeniCornerAndTheBlackStoneAtTheKaaba() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_BetweenTheYemeniCornerAndTheBlackStoneAtTheKaaba", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Between Two Prostrations.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_BetweenTwoProstrations() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_BetweenTwoProstrations", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Beware Fear.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_BewareFear() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_BewareFear", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Big.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Big() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Big", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Bigger.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Bigger() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Bigger", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Biography.
         '''</summary>
         Public ReadOnly Property IslamInfo_Biography() As String
@@ -1366,6 +3589,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Black.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Black() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Black", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Blazing Fire.
         '''</summary>
         Public ReadOnly Property IslamInfo_BlazingFire() As String
@@ -1393,11 +3625,128 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Blessed Be Those.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_BlessedBeThose() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_BlessedBeThose", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Blessings.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Blessings() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Blessings", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Blessings of Allah.
         '''</summary>
         Public ReadOnly Property IslamInfo_BlessingsOfAllah() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_BlessingsOfAllah", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Blessings Of Allah Upon Both Of Them.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_BlessingsOfAllahUponBothOfThem() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_BlessingsOfAllahUponBothOfThem", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Blessings Of Allah Upon Her.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_BlessingsOfAllahUponHer() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_BlessingsOfAllahUponHer", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Blessings Of Allah Upon Him.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_BlessingsOfAllahUponHim() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_BlessingsOfAllahUponHim", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Blessings Of Allah Upon Them Feminine.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_BlessingsOfAllahUponThemFeminine() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_BlessingsOfAllahUponThemFeminine", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Blessings Of Allah Upon Them Masculine.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_BlessingsOfAllahUponThemMasculine() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_BlessingsOfAllahUponThemMasculine", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Blind.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Blind() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Blind", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Blind Following.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_BlindFollowing() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_BlindFollowing", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Blood.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Blood() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Blood", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Body.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Body() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Body", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Body Necessary.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_BodyNecessary() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_BodyNecessary", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Boiling Oil.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_BoilingOil() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_BoilingOil", resourceCulture)
             End Get
         End Property
         
@@ -1411,6 +3760,42 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Bone.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Bone() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Bone", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Book.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Book() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Book", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Booty.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Booty() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Booty", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Borrowing Expression From Situation For Other.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_BorrowingExpressionFromSituationForOther() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_BorrowingExpressionFromSituationForOther", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Bow of prayer.
         '''</summary>
         Public ReadOnly Property IslamInfo_BowOfPrayer() As String
@@ -1420,11 +3805,74 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Boy Son Child.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_BoySonChild() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_BoySonChild", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Bread.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Bread() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Bread", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Breast.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Breast() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Breast", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Breathe.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Breathe() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Breathe", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Bridle It.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_BridleIt() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_BridleIt", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Broken Plural.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_BrokenPlural() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_BrokenPlural", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Broken To Pieces.
         '''</summary>
         Public ReadOnly Property IslamInfo_BrokenToPieces() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_BrokenToPieces", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Brother.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Brother() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Brother", resourceCulture)
             End Get
         End Property
         
@@ -3184,11 +5632,92 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Bullet.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Bullet() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Bullet", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to But However.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ButHowever() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ButHowever", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to But However On The Contrary Actually.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ButHoweverOnTheContraryActually() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ButHoweverOnTheContraryActually", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Buy.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Buy() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Buy", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to By Of Oath.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ByOfOath() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ByOfOath", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to By One Fasting When Presented With Food And Does Not Break Fast.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ByOneFastingWhenPresentedWithFoodAndDoesNotBreakFast() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ByOneFastingWhenPresentedWithFoodAndDoesNotBreakFast", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Caliph.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Caliph() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Caliph", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Caliphate.
         '''</summary>
         Public ReadOnly Property IslamInfo_Caliphate() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_Caliphate", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Call.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Call() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Call", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Caller.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Caller() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Caller", resourceCulture)
             End Get
         End Property
         
@@ -3472,6 +6001,51 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Camel.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Camel() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Camel", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Canada.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Canada() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Canada", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Carry Bear.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_CarryBear() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_CarryBear", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Cattle.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Cattle() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Cattle", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Causality.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Causality() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Causality", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Cave Of Hira.
         '''</summary>
         Public ReadOnly Property IslamInfo_CaveOfHira() As String
@@ -3535,6 +6109,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Central Treasury.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_CentralTreasury() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_CentralTreasury", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Certainty.
         '''</summary>
         Public ReadOnly Property IslamInfo_Certainty() As String
@@ -3544,11 +6127,38 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Chain.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Chain() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Chain", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Chair.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Chair() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Chair", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Chapter.
         '''</summary>
         Public ReadOnly Property IslamInfo_Chapter() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_Chapter", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Chapter From Quran.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ChapterFromQuran() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ChapterFromQuran", resourceCulture)
             End Get
         End Property
         
@@ -3598,11 +6208,56 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Chastisement From Sin.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ChastisementFromSin() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ChastisementFromSin", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Chest Interior.
         '''</summary>
         Public ReadOnly Property IslamInfo_ChestInterior() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_ChestInterior", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Chiefs Leaders.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ChiefsLeaders() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ChiefsLeaders", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to China.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_China() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_China", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Circumambulation.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Circumambulation() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Circumambulation", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Circumcision.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Circumcision() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Circumcision", resourceCulture)
             End Get
         End Property
         
@@ -3616,11 +6271,102 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Claim.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Claim() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Claim", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Class Classroom Season.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ClassClassroomSeason() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ClassClassroomSeason", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Classic Arabic.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ClassicArabic() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ClassicArabic", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Classification.
         '''</summary>
         Public ReadOnly Property IslamInfo_Classification() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_Classification", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Classified Organized Work.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ClassifiedOrganizedWork() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ClassifiedOrganizedWork", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Clauses Of Time.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ClausesOfTime() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ClausesOfTime", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Cleaning Ones Stool And Urine Exits After Defecation Or Urination With Stones Or Substitute.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_CleaningOnesStoolAndUrineExitsAfterDefecationOrUrinationWithStonesOrSubstitute() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_CleaningOnesStoolAndUrineExitsAfterDefecationOrUrinationWithStonesOrSub"& _ 
+                        "stitute", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Cleaning Ones Stool And Urine Exits After Defecation Or Urination With Water.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_CleaningOnesStoolAndUrineExitsAfterDefecationOrUrinationWithWater() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_CleaningOnesStoolAndUrineExitsAfterDefecationOrUrinationWithWater", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Clear.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Clear() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Clear", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Clear Cut.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ClearCut() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ClearCut", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Clear Evidence.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ClearEvidence() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ClearEvidence", resourceCulture)
             End Get
         End Property
         
@@ -3634,11 +6380,65 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Clear Self Expressive.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ClearSelfExpressive() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ClearSelfExpressive", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Close Friend.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_CloseFriend() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_CloseFriend", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Close Relative.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_CloseRelative() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_CloseRelative", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Closing.
         '''</summary>
         Public ReadOnly Property IslamInfo_Closing() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_Closing", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Clothes Garment.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ClothesGarment() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ClothesGarment", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Clothing Covering Aura Of Woman.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ClothingCoveringAuraOfWoman() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ClothingCoveringAuraOfWoman", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Clot Of Blood Clinging To Womb.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ClotOfBloodClingingToWomb() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ClotOfBloodClingingToWomb", resourceCulture)
             End Get
         End Property
         
@@ -3652,6 +6452,69 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Collection.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Collection() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Collection", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Collective Obligation.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_CollectiveObligation() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_CollectiveObligation", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Colon.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Colon() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Colon", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Come Arrive Bring.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ComeArriveBring() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ComeArriveBring", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Come Bring.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ComeBring() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ComeBring", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Come Out.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ComeOut() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ComeOut", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Coming.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Coming() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Coming", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Comitative Particle.
         '''</summary>
         Public ReadOnly Property IslamInfo_ComitativeParticle() As String
@@ -3661,11 +6524,56 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Comma.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Comma() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Comma", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Command Tense Verb.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_CommandTenseVerb() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_CommandTenseVerb", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Command Tense Verbs Family I.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_CommandTenseVerbsFamilyI() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_CommandTenseVerbsFamilyI", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Commentary.
         '''</summary>
         Public ReadOnly Property IslamInfo_Commentary() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_Commentary", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Commentary By Contemplation.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_CommentaryByContemplation() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_CommentaryByContemplation", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Commentator.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Commentator() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Commentator", resourceCulture)
             End Get
         End Property
         
@@ -3688,6 +6596,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Companion Fellow.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_CompanionFellow() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_CompanionFellow", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Companions.
         '''</summary>
         Public ReadOnly Property IslamInfo_Companions() As String
@@ -3697,11 +6614,74 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Comparative Derived Noun.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ComparativeDerivedNoun() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ComparativeDerivedNoun", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Compassionate.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Compassionate() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Compassionate", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Competitive Debates.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_CompetitiveDebates() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_CompetitiveDebates", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Compilation By Name Referenced.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_CompilationByNameReferenced() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_CompilationByNameReferenced", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Complete.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Complete() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Complete", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Completely Inflexible.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_CompletelyInflexible() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_CompletelyInflexible", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Comprehensive Verse.
         '''</summary>
         Public ReadOnly Property IslamInfo_ComprehensiveVerse() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_ComprehensiveVerse", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Conceal Hide.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ConcealHide() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ConcealHide", resourceCulture)
             End Get
         End Property
         
@@ -3724,11 +6704,65 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Concepts.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Concepts() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Concepts", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Condition.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Condition() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Condition", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Conditional Particle.
         '''</summary>
         Public ReadOnly Property IslamInfo_ConditionalParticle() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_ConditionalParticle", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Condition Denoted By Condition Particle.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ConditionDenotedByConditionParticle() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ConditionDenotedByConditionParticle", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Condition Of Oath.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ConditionOfOath() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ConditionOfOath", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Condition Sign.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ConditionSign() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ConditionSign", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Condolence.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Condolence() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Condolence", resourceCulture)
             End Get
         End Property
         
@@ -3751,11 +6785,29 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Conjecture.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Conjecture() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Conjecture", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Connected Lengthening Essential.
         '''</summary>
         Public ReadOnly Property IslamInfo_ConnectedLengtheningEssential() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_ConnectedLengtheningEssential", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Connected Pronoun.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ConnectedPronoun() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ConnectedPronoun", resourceCulture)
             End Get
         End Property
         
@@ -3769,11 +6821,74 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Connecting Particles.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ConnectingParticles() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ConnectingParticles", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Conquest.
         '''</summary>
         Public ReadOnly Property IslamInfo_Conquest() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_Conquest", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Consecrated.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Consecrated() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Consecrated", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Consensus Of The People Of Medina.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ConsensusOfThePeopleOfMedina() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ConsensusOfThePeopleOfMedina", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Consistent Similar Mutually Resembling One Another.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ConsistentSimilarMutuallyResemblingOneAnother() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ConsistentSimilarMutuallyResemblingOneAnother", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Consolidation Affirmation Holding Together.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ConsolidationAffirmationHoldingTogether() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ConsolidationAffirmationHoldingTogether", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Construction.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Construction() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Construction", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Consultation.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Consultation() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Consultation", resourceCulture)
             End Get
         End Property
         
@@ -3796,6 +6911,60 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Copy.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Copy() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Copy", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Council.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Council() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Council", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Court Debates.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_CourtDebates() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_CourtDebates", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Courtesy.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Courtesy() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Courtesy", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Covenant Pact.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_CovenantPact() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_CovenantPact", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Covenant Treaty.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_CovenantTreaty() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_CovenantTreaty", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Cover.
         '''</summary>
         Public ReadOnly Property IslamInfo_Cover() As String
@@ -3805,11 +6974,83 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Create Out Of Nothing.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_CreateOutOfNothing() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_CreateOutOfNothing", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Create Security.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_CreateSecurity() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_CreateSecurity", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Creature Four Legged Horse Riding Animal.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_CreatureFourLeggedHorseRidingAnimal() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_CreatureFourLeggedHorseRidingAnimal", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Credible Report.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_CredibleReport() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_CredibleReport", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Creed.
         '''</summary>
         Public ReadOnly Property IslamInfo_Creed() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_Creed", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Creed Of Islam First Part.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_CreedOfIslamFirstPart() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_CreedOfIslamFirstPart", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Creed Of Islam Second Part.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_CreedOfIslamSecondPart() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_CreedOfIslamSecondPart", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Criminal.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Criminal() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Criminal", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Curse.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Curse() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Curse", resourceCulture)
             End Get
         End Property
         
@@ -3832,11 +7073,29 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Daily Predestination.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_DailyPredestination() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_DailyPredestination", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Date.
         '''</summary>
         Public ReadOnly Property IslamInfo_Date() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_Date", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Date Palm.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_DatePalm() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_DatePalm", resourceCulture)
             End Get
         End Property
         
@@ -3931,11 +7190,74 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Dead.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Dead() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Dead", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Deadlines.
         '''</summary>
         Public ReadOnly Property IslamInfo_Deadlines() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_Deadlines", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Debate.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Debate() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Debate", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Declaration When Sitting In Prayer.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_DeclarationWhenSittingInPrayer() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_DeclarationWhenSittingInPrayer", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Declension.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Declension() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Declension", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Decree Fulfill Judge Between Kill.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_DecreeFulfillJudgeBetweenKill() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_DecreeFulfillJudgeBetweenKill", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Decree Have Power.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_DecreeHavePower() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_DecreeHavePower", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Deduction By Resemblance.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_DeductionByResemblance() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_DeductionByResemblance", resourceCulture)
             End Get
         End Property
         
@@ -3949,11 +7271,47 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Deem Proper.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_DeemProper() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_DeemProper", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Default.
         '''</summary>
         Public ReadOnly Property IslamInfo_Default() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_Default", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Definite.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Definite() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Definite", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Definiteness.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Definiteness() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Definiteness", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Definitive.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Definitive() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Definitive", resourceCulture)
             End Get
         End Property
         
@@ -3976,11 +7334,29 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Delay.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Delay() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Delay", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Delivery.
         '''</summary>
         Public ReadOnly Property IslamInfo_Delivery() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_Delivery", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Delude Turn Away.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_DeludeTurnAway() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_DeludeTurnAway", resourceCulture)
             End Get
         End Property
         
@@ -3994,6 +7370,96 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Denial.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Denial() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Denial", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Deputy Doer.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_DeputyDoer() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_DeputyDoer", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Derived Intensive Adjectives Intransitive.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_DerivedIntensiveAdjectivesIntransitive() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_DerivedIntensiveAdjectivesIntransitive", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Derived Nouns.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_DerivedNouns() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_DerivedNouns", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Derived Superlative Adjectives Transitive.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_DerivedSuperlativeAdjectivesTransitive() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_DerivedSuperlativeAdjectivesTransitive", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Descendents Children.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_DescendentsChildren() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_DescendentsChildren", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Describing Construction.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_DescribingConstruction() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_DescribingConstruction", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Description After Relative Pronoun.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_DescriptionAfterRelativePronoun() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_DescriptionAfterRelativePronoun", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Desperateness.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Desperateness() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Desperateness", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Desperate Odd Prayer.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_DesperateOddPrayer() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_DesperateOddPrayer", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Dessertion.
         '''</summary>
         Public ReadOnly Property IslamInfo_Dessertion() As String
@@ -4003,11 +7469,83 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Detached Pronoun.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_DetachedPronoun() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_DetachedPronoun", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Detached Pronouns.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_DetachedPronouns() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_DetachedPronouns", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Details.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Details() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Details", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Determiner Prefix.
         '''</summary>
         Public ReadOnly Property IslamInfo_DeterminerPrefix() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_DeterminerPrefix", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Deviant People.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_DeviantPeople() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_DeviantPeople", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Devoutness Piety Obedience Humility To God.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_DevoutnessPietyObedienceHumilityToGod() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_DevoutnessPietyObedienceHumilityToGod", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Diacritics.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Diacritics() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Diacritics", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Dialect.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Dialect() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Dialect", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Differences Disagreement.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_DifferencesDisagreement() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_DifferencesDisagreement", resourceCulture)
             End Get
         End Property
         
@@ -4030,6 +7568,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Diminishment Loss.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_DiminishmentLoss() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_DiminishmentLoss", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Dipthong.
         '''</summary>
         Public ReadOnly Property IslamInfo_Dipthong() As String
@@ -4048,6 +7595,24 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Direct Object Of Verb.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_DirectObjectOfVerb() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_DirectObjectOfVerb", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Dirt Filth.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_DirtFilth() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_DirtFilth", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Disbelief.
         '''</summary>
         Public ReadOnly Property IslamInfo_Disbelief() As String
@@ -4057,11 +7622,29 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Disbelieve Be Ungrateful.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_DisbelieveBeUngrateful() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_DisbelieveBeUngrateful", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Disbeliever.
         '''</summary>
         Public ReadOnly Property IslamInfo_Disbeliever() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_Disbeliever", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Disbelievers.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Disbelievers() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Disbelievers", resourceCulture)
             End Get
         End Property
         
@@ -4084,11 +7667,56 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Discourse Speech.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_DiscourseSpeech() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_DiscourseSpeech", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Discretionary.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Discretionary() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Discretionary", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Disjointed Letters.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_DisjointedLetters() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_DisjointedLetters", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Disliked.
         '''</summary>
         Public ReadOnly Property IslamInfo_Disliked() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_Disliked", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Dislike Detest.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_DislikeDetest() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_DislikeDetest", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Display Turn Away.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_DisplayTurnAway() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_DisplayTurnAway", resourceCulture)
             End Get
         End Property
         
@@ -4102,11 +7730,29 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Distal Demonstratives.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_DistalDemonstratives() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_DistalDemonstratives", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Distanced.
         '''</summary>
         Public ReadOnly Property IslamInfo_Distanced() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_Distanced", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Distinction Criterion.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_DistinctionCriterion() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_DistinctionCriterion", resourceCulture)
             End Get
         End Property
         
@@ -4120,11 +7766,56 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Distortion.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Distortion() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Distortion", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Divine Empowerment.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_DivineEmpowerment() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_DivineEmpowerment", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Divine Gnostic.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_DivineGnostic() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_DivineGnostic", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Divinity.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Divinity() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Divinity", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Division.
         '''</summary>
         Public ReadOnly Property IslamInfo_Division() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_Division", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Divorced Women.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_DivorcedWomen() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_DivorcedWomen", resourceCulture)
             End Get
         End Property
         
@@ -4147,6 +7838,96 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Doctrine Theology Principle Of Belief.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_DoctrineTheologyPrincipleOfBelief() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_DoctrineTheologyPrincipleOfBelief", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Dog.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Dog() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Dog", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Dominant Victorious.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_DominantVictorious() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_DominantVictorious", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Domininion.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Domininion() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Domininion", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Dominion Reign.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_DominionReign() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_DominionReign", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Donkey.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Donkey() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Donkey", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Doubt.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Doubt() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Doubt", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Doubtful Matters.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_DoubtfulMatters() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_DoubtfulMatters", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Doubts About Existence.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_DoubtsAboutExistence() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_DoubtsAboutExistence", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Dowry.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Dowry() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Dowry", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Dragging.
         '''</summary>
         Public ReadOnly Property IslamInfo_Dragging() As String
@@ -4156,11 +7937,137 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Dream.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Dream() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Dream", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Drill.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Drill() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Drill", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Drink.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Drink() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Drink", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Drop Of Liquid Of Man And Woman.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_DropOfLiquidOfManAndWoman() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_DropOfLiquidOfManAndWoman", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Druze.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Druze() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Druze", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Dual.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Dual() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Dual", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Dual Accusative Possessive.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_DualAccusativePossessive() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_DualAccusativePossessive", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Dual Nominative.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_DualNominative() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_DualNominative", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Dumb.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Dumb() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Dumb", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Dusk.
         '''</summary>
         Public ReadOnly Property IslamInfo_Dusk() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_Dusk", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Dust Ablution.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_DustAblution() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_DustAblution", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Each All.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_EachAll() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_EachAll", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Ear.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Ear() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Ear", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Early Morning.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_EarlyMorning() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_EarlyMorning", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Earn.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Earn() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Earn", resourceCulture)
             End Get
         End Property
         
@@ -4179,6 +8086,24 @@ Namespace My.Resources
         Public ReadOnly Property IslamInfo_Eber() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_Eber", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Egypt.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Egypt() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Egypt", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Eighth Day Of Month Of Pilgrimage.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_EighthDayOfMonthOfPilgrimage() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_EighthDayOfMonthOfPilgrimage", resourceCulture)
             End Get
         End Property
         
@@ -4228,6 +8153,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Emirates.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Emirates() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Emirates", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Emphatic Laam Prefix.
         '''</summary>
         Public ReadOnly Property IslamInfo_EmphaticLaamPrefix() As String
@@ -4255,11 +8189,65 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Enchant Bewitch.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_EnchantBewitch() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_EnchantBewitch", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to End.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_End() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_End", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to End Of Prayer Greeting Delivery.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_EndOfPrayerGreetingDelivery() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_EndOfPrayerGreetingDelivery", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Endowed With Owner.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_EndowedWithOwner() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_EndowedWithOwner", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Enemy.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Enemy() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Enemy", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Enoch.
         '''</summary>
         Public ReadOnly Property IslamInfo_Enoch() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_Enoch", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Enter.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Enter() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Enter", resourceCulture)
             End Get
         End Property
         
@@ -4300,6 +8288,44 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Entering State Of Ritual Consecration For Performing Major Pilgrimage.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_EnteringStateOfRitualConsecrationForPerformingMajorPilgrimage() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_EnteringStateOfRitualConsecrationForPerformingMajorPilgrimage", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Entering State Of Ritual Consecration For Performing Minor Pilgirimage And Major Pilgrimage Together.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_EnteringStateOfRitualConsecrationForPerformingMinorPilgirimageAndMajorPilgrimageTogether() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_EnteringStateOfRitualConsecrationForPerformingMinorPilgirimageAndMajorP"& _ 
+                        "ilgrimageTogether", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Entering State Of Ritual Consecration For Performing Minor Pilgirimage Followed By ASeperate Entrance For Major Pilgrimage.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_EnteringStateOfRitualConsecrationForPerformingMinorPilgirimageFollowedByASeperateEntranceForMajorPilgrimage() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_EnteringStateOfRitualConsecrationForPerformingMinorPilgirimageFollowedB"& _ 
+                        "yASeperateEntranceForMajorPilgrimage", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Entertainment.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Entertainment() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Entertainment", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Envy.
         '''</summary>
         Public ReadOnly Property IslamInfo_Envy() As String
@@ -4318,11 +8344,146 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Esoteric Meaning Followers.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_EsotericMeaningFollowers() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_EsotericMeaningFollowers", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Essence.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Essence() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Essence", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Essence Of The Book.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_EssenceOfTheBook() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_EssenceOfTheBook", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Essence Verse.
         '''</summary>
         Public ReadOnly Property IslamInfo_EssenceVerse() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_EssenceVerse", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Essentially Possessive Construction.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_EssentiallyPossessiveConstruction() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_EssentiallyPossessiveConstruction", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Establish Charity.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_EstablishCharity() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_EstablishCharity", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Establish Prayer.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_EstablishPrayer() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_EstablishPrayer", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Ethics.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Ethics() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Ethics", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Etiquette Of Retiring For The Night.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_EtiquetteOfRetiringForTheNight() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_EtiquetteOfRetiringForTheNight", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Etymology.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Etymology() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Etymology", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Everyone All.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_EveryoneAll() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_EveryoneAll", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Evidence.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Evidence() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Evidence", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Evidence Guidance.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_EvidenceGuidance() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_EvidenceGuidance", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Evil.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Evil() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Evil", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Evil Bad.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_EvilBad() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_EvilBad", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Evil Bad Worse.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_EvilBadWorse() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_EvilBadWorse", resourceCulture)
             End Get
         End Property
         
@@ -4336,11 +8497,74 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Evil Is That Which.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_EvilIsThatWhich() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_EvilIsThatWhich", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Excellence.
         '''</summary>
         Public ReadOnly Property IslamInfo_Excellence() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_Excellence", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Excellence Of Remembrance And Glorification Of Allah.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ExcellenceOfRemembranceAndGlorificationOfAllah() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ExcellenceOfRemembranceAndGlorificationOfAllah", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Excellence Of Sending Prayers Upon The Prophet.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ExcellenceOfSendingPrayersUponTheProphet() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ExcellenceOfSendingPrayersUponTheProphet", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Excellence Of Spreading The Islamic Greeting.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ExcellenceOfSpreadingTheIslamicGreeting() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ExcellenceOfSpreadingTheIslamicGreeting", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Excellence Of Visiting The Sick.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ExcellenceOfVisitingTheSick() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ExcellenceOfVisitingTheSick", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Excellent Beautiful.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ExcellentBeautiful() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ExcellentBeautiful", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Exception.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Exception() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Exception", resourceCulture)
             End Get
         End Property
         
@@ -4354,11 +8578,38 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Except Unless If Not.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ExceptUnlessIfNot() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ExceptUnlessIfNot", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Exchange Lengthening.
         '''</summary>
         Public ReadOnly Property IslamInfo_ExchangeLengthening() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_ExchangeLengthening", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Exclamation Mark.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ExclamationMark() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ExclamationMark", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Exercise.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Exercise() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Exercise", resourceCulture)
             End Get
         End Property
         
@@ -4372,6 +8623,24 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Expel.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Expel() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Expel", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Explained.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Explained() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Explained", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Explanation Particle.
         '''</summary>
         Public ReadOnly Property IslamInfo_ExplanationParticle() As String
@@ -4381,11 +8650,83 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Explicit.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Explicit() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Explicit", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Extend Stretch.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ExtendStretch() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ExtendStretch", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Extract Of Lote Trees.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ExtractOfLoteTrees() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ExtractOfLoteTrees", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Extremely Weak.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ExtremelyWeak() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ExtremelyWeak", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Eye Spring.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_EyeSpring() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_EyeSpring", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Ezekiel.
         '''</summary>
         Public ReadOnly Property IslamInfo_Ezekiel() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_Ezekiel", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Fabricated.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Fabricated() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Fabricated", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Face.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Face() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Face", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Face Covering Veil.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_FaceCoveringVeil() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_FaceCoveringVeil", resourceCulture)
             End Get
         End Property
         
@@ -4417,11 +8758,83 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to False.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_False() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_False", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to False God.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_FalseGod() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_FalseGod", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Falsehood Vain.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_FalsehoodVain() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_FalsehoodVain", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to False Hope.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_FalseHope() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_FalseHope", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Family Relatives People.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_FamilyRelativesPeople() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_FamilyRelativesPeople", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Far.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Far() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Far", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Far Pointing Nouns.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_FarPointingNouns() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_FarPointingNouns", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Farthest Mosque.
         '''</summary>
         Public ReadOnly Property IslamInfo_FarthestMosque() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_FarthestMosque", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Fast Breaking Charity.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_FastBreakingCharity() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_FastBreakingCharity", resourceCulture)
             End Get
         End Property
         
@@ -4516,6 +8929,24 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Father.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Father() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Father", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Fatima.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Fatima() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Fatima", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Fatima Bin Muhammad.
         '''</summary>
         Public ReadOnly Property IslamInfo_FatimaBinMuhammad() As String
@@ -4525,11 +8956,92 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Fatima Binti Amr.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_FatimaBintiAmr() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_FatimaBintiAmr", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Fatima Binti Muhammad.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_FatimaBintiMuhammad() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_FatimaBintiMuhammad", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Fatimid.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Fatimid() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Fatimid", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Favor.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Favor() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Favor", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Favors.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Favors() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Favors", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Fear.
         '''</summary>
         Public ReadOnly Property IslamInfo_Fear() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_Fear", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Fear Allah.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_FearAllah() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_FearAllah", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Female.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Female() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Female", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Female Slave.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_FemaleSlave() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_FemaleSlave", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Feminine.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Feminine() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Feminine", resourceCulture)
             End Get
         End Property
         
@@ -4678,6 +9190,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Finger.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Finger() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Finger", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Firdaus.
         '''</summary>
         Public ReadOnly Property IslamInfo_Firdaus() As String
@@ -4692,6 +9213,15 @@ Namespace My.Resources
         Public ReadOnly Property IslamInfo_Fire() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_Fire", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to First.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_First() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_First", resourceCulture)
             End Get
         End Property
         
@@ -4723,11 +9253,272 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to First Family Root Verb.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_FirstFamilyRootVerb() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_FirstFamilyRootVerb", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to First Particle Possession Construction.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_FirstParticlePossessionConstruction() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_FirstParticlePossessionConstruction", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to First Person Attached Pronoun.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_FirstPersonAttachedPronoun() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_FirstPersonAttachedPronoun", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to First Person Singular Verbal Attached Pronoun.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_FirstPersonSingularVerbalAttachedPronoun() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_FirstPersonSingularVerbalAttachedPronoun", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Five Special Nouns.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_FiveSpecialNouns() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_FiveSpecialNouns", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Fixed.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Fixed() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Fixed", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Fixed Stationary.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_FixedStationary() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_FixedStationary", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Fixed Times And Places For Entering State Of Ritual Consecration.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_FixedTimesAndPlacesForEnteringStateOfRitualConsecration() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_FixedTimesAndPlacesForEnteringStateOfRitualConsecration", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Flame.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Flame() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Flame", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Flexible.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Flexible() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Flexible", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Flexible Definite Accusative.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_FlexibleDefiniteAccusative() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_FlexibleDefiniteAccusative", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Flexible Definite Nominative.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_FlexibleDefiniteNominative() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_FlexibleDefiniteNominative", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Flexible Definite Possessive.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_FlexibleDefinitePossessive() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_FlexibleDefinitePossessive", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Flexible Indefinite Accusative.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_FlexibleIndefiniteAccusative() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_FlexibleIndefiniteAccusative", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Flexible Indefinite Nominative.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_FlexibleIndefiniteNominative() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_FlexibleIndefiniteNominative", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Flexible Indefinite Possessive.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_FlexibleIndefinitePossessive() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_FlexibleIndefinitePossessive", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Fluency.
         '''</summary>
         Public ReadOnly Property IslamInfo_Fluency() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_Fluency", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Follower.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Follower() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Follower", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Followers Of Followers.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_FollowersOfFollowers() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_FollowersOfFollowers", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Following Based On Knowledge Inquiry.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_FollowingBasedOnKnowledgeInquiry() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_FollowingBasedOnKnowledgeInquiry", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Food.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Food() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Food", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Foot.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Foot() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Foot", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to For.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_For() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_For", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to For Anxiety And Sorrow.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ForAnxietyAndSorrow() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ForAnxietyAndSorrow", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to For Anxiety And Sorrow.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ForAnxietyAndSorrow1() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ForAnxietyAndSorrow1", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to For Anxiety And Sorrow.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ForAnxietyAndSorrow2() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ForAnxietyAndSorrow2", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to O Allah, I seek refuge in You from grief and sadness, from weakness and from laziness, from miserliness and from cowardice, from being overcome by debt and overpowered by men (i.e. others)..
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ForAnxietyAndSorrow2Trans() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ForAnxietyAndSorrow2Trans", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to O Allah,||I seek refuge|in You|from|grief|and sadness,|from weakness|and from laziness,|from miserliness|and from cowardice,|from being overcome|by debt|and overpowered|by men (i.e. others)..
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ForAnxietyAndSorrow2WordByWord() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ForAnxietyAndSorrow2WordByWord", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Forbearing.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Forbearing() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Forbearing", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Forbiddance Of Ascribing Things To Omens.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ForbiddanceOfAscribingThingsToOmens() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ForbiddanceOfAscribingThingsToOmens", resourceCulture)
             End Get
         End Property
         
@@ -4741,11 +9532,128 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to For Concluding All Sittings.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ForConcludingAllSittings() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ForConcludingAllSittings", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Forever Ever.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ForeverEver() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ForeverEver", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to For Expelling The Devil And His Whisperings.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ForExpellingTheDevilAndHisWhisperings() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ForExpellingTheDevilAndHisWhisperings", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to For Expiation Of Sins At The Conclusion Of Sitting Or Gathering.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ForExpiationOfSinsAtTheConclusionOfSittingOrGathering() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ForExpiationOfSinsAtTheConclusionOfSittingOrGathering", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to For Expiation Of Sins At The Conclusion Of Sitting Or Gathering.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ForExpiationOfSinsAtTheConclusionOfSittingOrGathering1() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ForExpiationOfSinsAtTheConclusionOfSittingOrGathering1", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Glory is to You, O Allah, and praise; I bear witness that there is none worthy of worship but You.  I seek Your forgiveness and turn to You in repentance..
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ForExpiationOfSinsAtTheConclusionOfSittingOrGathering1Trans() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ForExpiationOfSinsAtTheConclusionOfSittingOrGathering1Trans", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Glory is to You|O Allah|and praise|I bear witness|that|there is none|worthy of worship|but|You|I seek Your forgiveness|and turn in repentance|to You.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ForExpiationOfSinsAtTheConclusionOfSittingOrGathering1WordByWord() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ForExpiationOfSinsAtTheConclusionOfSittingOrGathering1WordByWord", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to For Expiation Of Sins At The Conclusion Of Sitting Or Gathering.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ForExpiationOfSinsAtTheConclusionOfSittingOrGathering2() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ForExpiationOfSinsAtTheConclusionOfSittingOrGathering2", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to For Fear Of Shirk.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ForFearOfShirk() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ForFearOfShirk", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Forgive Cover.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ForgiveCover() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ForgiveCover", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Forgiving.
         '''</summary>
         Public ReadOnly Property IslamInfo_Forgiving() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_Forgiving", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Forgo Pardon Forgive.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ForgoPardonForgive() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ForgoPardonForgive", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to For Knowledge.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ForKnowledge() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ForKnowledge", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Formless Metaphor.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_FormlessMetaphor() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_FormlessMetaphor", resourceCulture)
             End Get
         End Property
         
@@ -4759,11 +9667,137 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to For One Affected By Whisperings In Prayer Or Supplication.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ForOneAffectedByWhisperingsInPrayerOrSupplication() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ForOneAffectedByWhisperingsInPrayerOrSupplication", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to For One Afflicted With Doubt In Faith.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ForOneAfflictedWithDoubtInFaith() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ForOneAfflictedWithDoubtInFaith", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to For One In Distress.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ForOneInDistress() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ForOneInDistress", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to For One Whose Affairs Have Become Difficult.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ForOneWhoseAffairsHaveBecomeDifficult() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ForOneWhoseAffairsHaveBecomeDifficult", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to For Rain.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ForRain() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ForRain", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to For Seeking Guidance.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ForSeekingGuidance() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ForSeekingGuidance", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to For That.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ForThat() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ForThat", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to For The Advancement Of Reward During The Funeral Prayer.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ForTheAdvancementOfRewardDuringTheFuneralPrayer() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ForTheAdvancementOfRewardDuringTheFuneralPrayer", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to For The Deceased At Funeral Prayer.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ForTheDeceasedAtFuneralPrayer() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ForTheDeceasedAtFuneralPrayer", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to For The One You Have Insulted.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ForTheOneYouHaveInsulted() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ForTheOneYouHaveInsulted", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to For To.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ForTo() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ForTo", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to For Travel.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ForTravel() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ForTravel", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Fortune Telling.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_FortuneTelling() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_FortuneTelling", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to 40 Our Lord Supplications.
         '''</summary>
         Public ReadOnly Property IslamInfo_FortyOurLordSupplications() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_FortyOurLordSupplications", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to For What For That Which.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ForWhatForThatWhich() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ForWhatForThatWhich", resourceCulture)
             End Get
         End Property
         
@@ -4777,11 +9811,38 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Foul Nourishment Pus Discharge.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_FoulNourishmentPusDischarge() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_FoulNourishmentPusDischarge", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Foundation Of Paradise.
         '''</summary>
         Public ReadOnly Property IslamInfo_FoundationOfParadise() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_FoundationOfParadise", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Foundations.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Foundations() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Foundations", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Four Letter Root Verb.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_FourLetterRootVerb() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_FourLetterRootVerb", resourceCulture)
             End Get
         End Property
         
@@ -4813,11 +9874,74 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to France.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_France() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_France", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Frank Candid.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_FrankCandid() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_FrankCandid", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Friday.
         '''</summary>
         Public ReadOnly Property IslamInfo_Friday() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_Friday", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to From.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_From() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_From", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to From About.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_FromAbout() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_FromAbout", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to From With.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_FromWith() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_FromWith", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Front.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Front() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Front", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Fruit.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Fruit() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Fruit", resourceCulture)
             End Get
         End Property
         
@@ -4840,11 +9964,47 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Full Stop.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_FullStop() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_FullStop", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Fully Flexible Verb Or Noun.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_FullyFlexibleVerbOrNoun() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_FullyFlexibleVerbOrNoun", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Fundamental Principles Of Quranic Interpretation.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_FundamentalPrinciplesOfQuranicInterpretation() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_FundamentalPrinciplesOfQuranicInterpretation", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Funeral.
         '''</summary>
         Public ReadOnly Property IslamInfo_Funeral() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_Funeral", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Future.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Future() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Future", resourceCulture)
             End Get
         End Property
         
@@ -4858,11 +10018,29 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Future Tense.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_FutureTense() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_FutureTense", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Gabriel.
         '''</summary>
         Public ReadOnly Property IslamInfo_Gabriel() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_Gabriel", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Garden.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Garden() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Garden", resourceCulture)
             End Get
         End Property
         
@@ -4957,11 +10135,119 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Gather Bring Together.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_GatherBringTogether() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_GatherBringTogether", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Gather Collect.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_GatherCollect() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_GatherCollect", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Gathering.
         '''</summary>
         Public ReadOnly Property IslamInfo_Gathering() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_Gathering", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Gender.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Gender() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Gender", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to General.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_General() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_General", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Generation.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Generation() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Generation", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Generic Noun In Possessive Construction With Definite Noun Or Pronoun.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_GenericNounInPossessiveConstructionWithDefiniteNounOrPronoun() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_GenericNounInPossessiveConstructionWithDefiniteNounOrPronoun", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Germany.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Germany() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Germany", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Gesture Sign Indicator Traffic Signal Allusion Hint Intimation.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_GestureSignIndicatorTrafficSignalAllusionHintIntimation() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_GestureSignIndicatorTrafficSignalAllusionHintIntimation", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Girl Daughter.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_GirlDaughter() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_GirlDaughter", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Giving Preference.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_GivingPreference() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_GivingPreference", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Gleamed Glittered Shone.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_GleamedGlitteredShone() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_GleamedGlitteredShone", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Glorious Allah Willing.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_GloriousAllahWilling() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_GloriousAllahWilling", resourceCulture)
             End Get
         End Property
         
@@ -4993,11 +10279,128 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Glory To Those.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_GloryToThose() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_GloryToThose", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Gnosis.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Gnosis() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Gnosis", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to God.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_God() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_God", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to God Diety.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_GodDiety() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_GodDiety", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Gog And Magog.
         '''</summary>
         Public ReadOnly Property IslamInfo_GogAndMagog() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_GogAndMagog", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Going.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Going() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Going", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Going Between Safa And Marwa.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_GoingBetweenSafaAndMarwa() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_GoingBetweenSafaAndMarwa", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Going Forth.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_GoingForth() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_GoingForth", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Gold.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Gold() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Gold", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Gold Coin Of2.975 Grams.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_GoldCoinOf2_975Grams() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_GoldCoinOf2.975Grams", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Good.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Good() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Good", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Good And One Part Of Chain Has Single Narrator.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_GoodAndOnePartOfChainHasSingleNarrator() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_GoodAndOnePartOfChainHasSingleNarrator", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Good Better.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_GoodBetter() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_GoodBetter", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Good Deed.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_GoodDeed() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_GoodDeed", resourceCulture)
             End Get
         End Property
         
@@ -5011,6 +10414,87 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Gospels.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Gospels() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Gospels", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Go Take Away Go Toward Go Away.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_GoTakeAwayGoTowardGoAway() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_GoTakeAwayGoTowardGoAway", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Grace.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Grace() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Grace", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Grammar.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Grammar() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Grammar", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Grammar Rules.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_GrammarRules() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_GrammarRules", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Grammatical Terms.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_GrammaticalTerms() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_GrammaticalTerms", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Grand Word.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_GrandWord() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_GrandWord", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Grape.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Grape() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Grape", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Grateful.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Grateful() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Grateful", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Grave.
         '''</summary>
         Public ReadOnly Property IslamInfo_Grave() As String
@@ -5020,11 +10504,29 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Grave Worship.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_GraveWorship() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_GraveWorship", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Great Bounce.
         '''</summary>
         Public ReadOnly Property IslamInfo_GreatBounce() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_GreatBounce", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Great Britain.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_GreatBritain() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_GreatBritain", resourceCulture)
             End Get
         End Property
         
@@ -5047,6 +10549,24 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Groom On Wedding Night Or When Buying Animal.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_GroomOnWeddingNightOrWhenBuyingAnimal() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_GroomOnWeddingNightOrWhenBuyingAnimal", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Ground Earth.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_GroundEarth() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_GroundEarth", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Groups.
         '''</summary>
         Public ReadOnly Property IslamInfo_Groups() As String
@@ -5056,11 +10576,29 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Guard Covering.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_GuardCovering() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_GuardCovering", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Guardian.
         '''</summary>
         Public ReadOnly Property IslamInfo_Guardian() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_Guardian", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Guard Protect.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_GuardProtect() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_GuardProtect", resourceCulture)
             End Get
         End Property
         
@@ -5083,11 +10621,38 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Guided One.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_GuidedOne() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_GuidedOne", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Haa Meem.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_HaaMeem() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_HaaMeem", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Hafsa Bint Umar.
         '''</summary>
         Public ReadOnly Property IslamInfo_HafsaBintUmar() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_HafsaBintUmar", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Hair.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Hair() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Hair", resourceCulture)
             End Get
         End Property
         
@@ -5119,6 +10684,24 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Hand.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Hand() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Hand", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Happiness.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Happiness() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Happiness", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Hasan.
         '''</summary>
         Public ReadOnly Property IslamInfo_Hasan() As String
@@ -5133,6 +10716,78 @@ Namespace My.Resources
         Public ReadOnly Property IslamInfo_HasanBinAli() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_HasanBinAli", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Has Surely.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_HasSurely() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_HasSurely", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Have Mercy On Someone.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_HaveMercyOnSomeone() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_HaveMercyOnSomeone", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Have Returned.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_HaveReturned() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_HaveReturned", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Head.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Head() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Head", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Head Bound Subservient.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_HeadBoundSubservient() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_HeadBoundSubservient", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Head Tax For Non Muslims.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_HeadTaxForNonMuslims() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_HeadTaxForNonMuslims", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Hear.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Hear() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Hear", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Heart.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Heart() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Heart", resourceCulture)
             End Get
         End Property
         
@@ -5155,11 +10810,38 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to He Him It.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_HeHimIt() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_HeHimIt", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Hell.
         '''</summary>
         Public ReadOnly Property IslamInfo_Hell() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_Hell", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Hellfire.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Hellfire() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Hellfire", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Help Deliver.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_HelpDeliver() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_HelpDeliver", resourceCulture)
             End Get
         End Property
         
@@ -5173,11 +10855,92 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Her.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Her() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Her", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Here.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Here() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Here", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Hereafter.
         '''</summary>
         Public ReadOnly Property IslamInfo_Hereafter() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_Hereafter", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to He Who.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_HeWho() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_HeWho", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Hidden.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Hidden() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Hidden", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Hidden Metaphor.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_HiddenMetaphor() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_HiddenMetaphor", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Hidden Weakness.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_HiddenWeakness() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_HiddenWeakness", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Higher Superior.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_HigherSuperior() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_HigherSuperior", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Higher Verb Families Derived From First Family.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_HigherVerbFamiliesDerivedFromFirstFamily() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_HigherVerbFamiliesDerivedFromFirstFamily", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to High Exalted.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_HighExalted() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_HighExalted", resourceCulture)
             End Get
         End Property
         
@@ -5200,6 +10963,60 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Hint.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Hint() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Hint", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to His.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_His() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_His", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Holy House.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_HolyHouse() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_HolyHouse", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Homonyms.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Homonyms() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Homonyms", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Honor.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Honor() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Honor", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Hoping.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Hoping() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Hoping", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Horrible Tree Of Hell.
         '''</summary>
         Public ReadOnly Property IslamInfo_HorribleTreeOfHell() As String
@@ -5218,11 +11035,83 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Hot Food Grease Sweat.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_HotFoodGreaseSweat() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_HotFoodGreaseSweat", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Hour.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Hour() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Hour", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Hour On Day Of Resurrection.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_HourOnDayOfResurrection() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_HourOnDayOfResurrection", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to House Home.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_HouseHome() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_HouseHome", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to How.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_How() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_How", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to How Many.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_HowMany() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_HowMany", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to How The Prophet Made Tasbeeh.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_HowTheProphetMadeTasbeeh() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_HowTheProphetMadeTasbeeh", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Hudabiyyah.
         '''</summary>
         Public ReadOnly Property IslamInfo_Hudabiyyah() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_Hudabiyyah", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Human Intellect.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_HumanIntellect() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_HumanIntellect", resourceCulture)
             End Get
         End Property
         
@@ -5254,6 +11143,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Hyphen Minus.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_HyphenMinus() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_HyphenMinus", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Hypocrisy.
         '''</summary>
         Public ReadOnly Property IslamInfo_Hypocrisy() As String
@@ -5277,6 +11175,78 @@ Namespace My.Resources
         Public ReadOnly Property IslamInfo_IAskAllahForgiveness() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_IAskAllahForgiveness", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Idol.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Idol() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Idol", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to If.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_If() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_If", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to If Either Or.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_IfEitherOr() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_IfEitherOr", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to If Not Why Not.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_IfNotWhyNot() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_IfNotWhyNot", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to If They Heard.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_IfTheyHeard() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_IfTheyHeard", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to If We.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_IfWe() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_IfWe", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Ignorance.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Ignorance() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Ignorance", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to I Have Put Trust In Allah.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_IHavePutTrustInAllah() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_IHavePutTrustInAllah", resourceCulture)
             End Get
         End Property
         
@@ -5308,6 +11278,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Illiterate.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Illiterate() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Illiterate", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Spiritual leader.
         '''</summary>
         Public ReadOnly Property IslamInfo_Imam() As String
@@ -5317,11 +11296,128 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Imam Abu Hanifa.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ImamAbuHanifa() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ImamAbuHanifa", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Imam Al Layth.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ImamAlLayth() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ImamAlLayth", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Imam Ath Thawri.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ImamAthThawri() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ImamAthThawri", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Imam At Tabari.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ImamAtTabari() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ImamAtTabari", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Imam Awzaee.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ImamAwzaee() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ImamAwzaee", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Imam Bukhari.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ImamBukhari() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ImamBukhari", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Imam Dawood.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ImamDawood() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ImamDawood", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Imam Hanbal.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ImamHanbal() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ImamHanbal", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Imam Malik.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ImamMalik() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ImamMalik", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Imam Muslim.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ImamMuslim() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ImamMuslim", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Imam Nawawi 40 Hadith.
         '''</summary>
         Public ReadOnly Property IslamInfo_ImamNawawi40Hadith() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_ImamNawawi40Hadith", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Imam Shafiee.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ImamShafiee() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ImamShafiee", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Imam Zayd.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ImamZayd() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ImamZayd", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to I Me.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_IMe() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_IMe", resourceCulture)
             End Get
         End Property
         
@@ -5362,6 +11458,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Immune From Sin And Error.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ImmuneFromSinAndError() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ImmuneFromSinAndError", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Impact.
         '''</summary>
         Public ReadOnly Property IslamInfo_Impact() As String
@@ -5389,11 +11494,56 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Implied Understood Meaning.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ImpliedUnderstoodMeaning() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ImpliedUnderstoodMeaning", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Important Selections.
         '''</summary>
         Public ReadOnly Property IslamInfo_ImportantSelections() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_ImportantSelections", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Impure.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Impure() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Impure", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Impurity.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Impurity() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Impurity", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to In.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_In() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_In", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to In Between Recitation.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_InBetweenRecitation() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_InBetweenRecitation", resourceCulture)
             End Get
         End Property
         
@@ -5425,6 +11575,150 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Incontrovertible.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Incontrovertible() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Incontrovertible", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Indeed.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Indeed() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Indeed", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Indeed Surely.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_IndeedSurely() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_IndeedSurely", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Indefinite.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Indefinite() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Indefinite", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Indefinite In Negative Or Prohibitive Construction.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_IndefiniteInNegativeOrProhibitiveConstruction() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_IndefiniteInNegativeOrProhibitiveConstruction", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to India.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_India() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_India", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Indication.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Indication() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Indication", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Indictation Of Meaning By Necessary Supposition.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_IndictationOfMeaningByNecessarySupposition() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_IndictationOfMeaningByNecessarySupposition", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Indictation Of Meaning By Suggestion.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_IndictationOfMeaningBySuggestion() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_IndictationOfMeaningBySuggestion", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Indirect Object.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_IndirectObject() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_IndirectObject", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Individual Obligation.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_IndividualObligation() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_IndividualObligation", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Indonesia.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Indonesia() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Indonesia", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to In Front Of.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_InFrontOf() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_InFrontOf", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to In Front Of Before.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_InFrontOfBefore() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_InFrontOfBefore", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Injury.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Injury() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Injury", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Innocent.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Innocent() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Innocent", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Innovation.
         '''</summary>
         Public ReadOnly Property IslamInfo_Innovation() As String
@@ -5439,6 +11733,42 @@ Namespace My.Resources
         Public ReadOnly Property IslamInfo_InProtectionOfAllah() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_InProtectionOfAllah", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Instruction For One Afflicted By Calamity.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_InstructionForOneAfflictedByCalamity() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_InstructionForOneAfflictedByCalamity", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Instruction For The One Nearing Death.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_InstructionForTheOneNearingDeath() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_InstructionForTheOneNearingDeath", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Instrument Of Action.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_InstrumentOfAction() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_InstrumentOfAction", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Intellect.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Intellect() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Intellect", resourceCulture)
             End Get
         End Property
         
@@ -5596,11 +11926,722 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Intercession.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Intercession() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Intercession", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Interest Free Loan.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_InterestFreeLoan() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_InterestFreeLoan", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Interogative Particle.
         '''</summary>
         Public ReadOnly Property IslamInfo_InterogativeParticle() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_InterogativeParticle", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Interogatives.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Interogatives() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Interogatives", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Interpretation.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Interpretation() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Interpretation", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to In The Evening.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_InTheEvening() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_InTheEvening", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to In The Evening.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_InTheEvening1() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_InTheEvening1", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to We have ended a new day and with it all dominion is Allah&apos;s.  Praise is to Allah.  None has the right to be worshipped but Allah alone, Who has no partner.  To Allah belongs the dominion, and to Him is the praise and He is Able to do all things.  My Lord, I ask You for the good things of this night and of the nights that come after it, and I seek refuge in You from the evil of this night and of the nights that come after it.  My lord, I seek refuge in You from laziness and helpless old age.  My Lord, I seek [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_InTheEvening1Trans() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_InTheEvening1Trans", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to We have ended a new day|and with it|all dominion|is Allah&apos;s.|Praise|is to Allah.|None|has the right to be worshipped|but|Allah|alone,|no|partner|has He.|To Allah|belongs the dominion,|and to Him|is the praise|and He is|upon|all|things|Able to do.|My Lord,|I ask You for|the good things||of|this|night|and|of the nights that come|after it,|and I seek refuge|in You|from|the evil||of|this|night|and|of the nights that come|after it.|My lord,|I seek refuge|in You|from|laziness|and helpless|old age.|My Lord,|I seek [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_InTheEvening1WordByWord() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_InTheEvening1WordByWord", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to In The Evening.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_InTheEvening2() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_InTheEvening2", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to O Allah, You bring us the end of the day as You bring us its beginning, You bring us life and You bring us death, and to You is our fate..
+        '''</summary>
+        Public ReadOnly Property IslamInfo_InTheEvening2Trans() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_InTheEvening2Trans", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to O Allah,|You|bring us the end of the day|as You|bring us its beginning,|You|bring us life|and You|bring us death,|and to You|is our fate..
+        '''</summary>
+        Public ReadOnly Property IslamInfo_InTheEvening2WordByWord() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_InTheEvening2WordByWord", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to In The Evening.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_InTheEvening3() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_InTheEvening3", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to O Allah, I have ended another day and call upon You and upon the bearers of Your Throne, upon Your angels and all creation to bear witness that surely You are Allah, there is none worthy of worship but You alone, You have no partners, and that Muhammad is Your slave and Your messenger.  (Recite four times in Arabic)..
+        '''</summary>
+        Public ReadOnly Property IslamInfo_InTheEvening3Trans() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_InTheEvening3Trans", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to O Allah,||I have ended another day|and call upon You|and upon|the bearers|of Your Throne,|upon Your angels|and all|creation|to bear witness that surely|You|are Allah,|there is none|worthy of worship|but|You|alone,|no|partners|You have,|and that|Muhammad|is Your slave|and Your messenger.|(four|times|recite in Arabic)..
+        '''</summary>
+        Public ReadOnly Property IslamInfo_InTheEvening3WordByWord() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_InTheEvening3WordByWord", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to In The Evening.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_InTheEvening4() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_InTheEvening4", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to O Allah, as I enter this evening whatever blessing has been received by me or anyone of Your creation is from You alone, You have no partner.  All praise is for You and thanks is to You..
+        '''</summary>
+        Public ReadOnly Property IslamInfo_InTheEvening4Trans() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_InTheEvening4Trans", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to O Allah,|as|I enter this evening||whatever|blessing has been received by me|or|anyone|of|Your creation|is from You|alone,|no|partner|You have.|for You|All praise is|and to You|thanks is..
+        '''</summary>
+        Public ReadOnly Property IslamInfo_InTheEvening4WordByWord() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_InTheEvening4WordByWord", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to In The Evening.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_InTheEvening5() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_InTheEvening5", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to We have ended a new day and with it all the dominion which belongs to Allah, Lord of all that exists.  O Allah, I ask You for the good things of this night, its victory, its help, its light, its blessings, and its guidance.  I seek refuge in You from the evil that is in it and from the evil that follows it..
+        '''</summary>
+        Public ReadOnly Property IslamInfo_InTheEvening5Trans() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_InTheEvening5Trans", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to We have ended a new day|and with it|all the dominion|which belongs to Allah,|Lord|of all that exists.|O Allah,||I ask You for|the good things|of this|night,|its victory,|its help,|its light,|its blessings,|and its guidance.|I seek refuge|in You|from|the evil|that is|in it|and from the evil|that|follows it..
+        '''</summary>
+        Public ReadOnly Property IslamInfo_InTheEvening5WordByWord() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_InTheEvening5WordByWord", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to In The Evening.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_InTheEvening6() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_InTheEvening6", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to We end this day upon the natural religion of Islam, the word of sincere devotion, the religion of our Prophet Muhammad (peace and blessings of Allah be upon him), and the faith of our father Ibrahim.  He was upright (in worshipping Allah), and a Muslim.  He was not of those who worship others besides Allah..
+        '''</summary>
+        Public ReadOnly Property IslamInfo_InTheEvening6Trans() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_InTheEvening6Trans", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to We end this day|upon|the natural religion|of Islam,||the word|of sincere devotion,||the religion|of our Prophet|Muhammad (peace and blessings of Allah be upon him),|and|the faith|of our father|Ibrahim.|He was upright (in worshipping Allah),|and a Muslim.|not|He was|of those|who worship others besides Allah..
+        '''</summary>
+        Public ReadOnly Property IslamInfo_InTheEvening6WordByWord() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_InTheEvening6WordByWord", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to In The Evening.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_InTheEvening7() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_InTheEvening7", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to I seek refuge in the Perfect Words of Allah from the evil of what He has created.  (Recite three times in Arabic)..
+        '''</summary>
+        Public ReadOnly Property IslamInfo_InTheEvening7Trans() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_InTheEvening7Trans", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to I seek refuge|in the Words|of Allah|Perfect|from|the evil|of what|He has created.|(Recite three times in Arabic)..
+        '''</summary>
+        Public ReadOnly Property IslamInfo_InTheEvening7WordByWord() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_InTheEvening7WordByWord", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to In The Evening.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_InTheEvening8() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_InTheEvening8", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to We have risen this evening and sovereignty is all Allah’s. Praise is due to Allah alone, He has no partner, there is no God but Him, unto whom is our fate..
+        '''</summary>
+        Public ReadOnly Property IslamInfo_InTheEvening8Trans() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_InTheEvening8Trans", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to We have risen this evening|and|sovereignty is all|Allah’s.|Praise is due to|Allah alone,|no|partner|He has,|there is no|God|but|Him,|unto whom|is our fate..
+        '''</summary>
+        Public ReadOnly Property IslamInfo_InTheEvening8WordByWord() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_InTheEvening8WordByWord", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to In The Evening.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_InTheEvening9() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_InTheEvening9", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to O Allah! I rise up in the evening with the blessing, strength, and protection, all of which you have bestowed upon me. Complete your blessing, the strength (you bestowed upon me) and your protection, in this life and the hereafter..
+        '''</summary>
+        Public ReadOnly Property IslamInfo_InTheEvening9Trans() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_InTheEvening9Trans", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to O Allah!||I rise up in the evening|with|,all of which you have bestowed upon me|the blessing,|strength,|and protection.|Complete|your blessing,|(you bestowed upon me)|the strength|and your protection,|in|this life|and the hereafter..
+        '''</summary>
+        Public ReadOnly Property IslamInfo_InTheEvening9WordByWord() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_InTheEvening9WordByWord", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to In The Morning.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_InTheMorning() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_InTheMorning", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to In The Morning.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_InTheMorning1() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_InTheMorning1", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to We have entered a new day and with it all dominion is Allah&apos;s.  Praise is to Allah.  None has the right to be worshipped but Allah alone, Who has no partner.  To Allah belongs the dominion, and to Him is the praise and He is Able to do all things.  My Lord, I ask You for the goodness of this day and of the days that come after it, and I seek refuge in You from the evil of this day and of the days that come after it.  My lord, I seek refuge in You from laziness and helpless old age.  My Lord, I seek refuge i [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_InTheMorning1Trans() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_InTheMorning1Trans", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to We have entered a new day|and with it|all dominion|is Allah&apos;s.|Praise|is to Allah.|None|has the right to be worshipped|but|Allah|alone,|no|partner|has He.|To Allah|belongs the dominion,|and to Him|is the praise|and He is|upon|all|things|Able to do.|My Lord,|I ask You for|the goodness||of|this|day|and|of the days that come|after it,|and I seek refuge|in You|from|the evil||of|this|day|and|of the days that come|after it.|My lord,|I seek refuge|in You|from|laziness|and helpless|old age.|My Lord,|I seek refuge|i [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_InTheMorning1WordByWord() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_InTheMorning1WordByWord", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to In The Morning.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_InTheMorning2() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_InTheMorning2", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to O Allah, by You we enter the morning and by You we enter the evening, by You we live and by You we die, and to You is the Final Return..
+        '''</summary>
+        Public ReadOnly Property IslamInfo_InTheMorning2Trans() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_InTheMorning2Trans", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to O Allah,|by You|we enter the morning|and by You|we enter the evening,|by You|we live|and by You|we die,|and to You|is the Final Return..
+        '''</summary>
+        Public ReadOnly Property IslamInfo_InTheMorning2WordByWord() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_InTheMorning2WordByWord", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to In The Morning.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_InTheMorning3() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_InTheMorning3", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to O Allah, I have entered a new morning and call upon You and upon the bearers of Your Throne, upon Your angels and all creation to bear witness that surely You are Allah, there is none worthy of worship but You alone, You have no partners, and that Muhammad is Your slave and Your messenger.  (Recite four times in Arabic)..
+        '''</summary>
+        Public ReadOnly Property IslamInfo_InTheMorning3Trans() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_InTheMorning3Trans", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to O Allah,||I have entered a new morning|and call upon You|and upon|the bearers|of Your Throne,|upon Your angels|and all|creation|to bear witness that surely|You|are Allah,|there is none|worthy of worship|but|You|alone,|no|partners|You have,|and that|Muhammad|is Your slave|and Your messenger.|(four|times|recite in Arabic)..
+        '''</summary>
+        Public ReadOnly Property IslamInfo_InTheMorning3WordByWord() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_InTheMorning3WordByWord", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to In The Morning.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_InTheMorning4() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_InTheMorning4", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to O Allah, as I enter this morning whatever blessing has been received by me or anyone of Your creation is from You alone, You have no partner.  All praise is for You and thanks is to You..
+        '''</summary>
+        Public ReadOnly Property IslamInfo_InTheMorning4Trans() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_InTheMorning4Trans", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to O Allah,|as|I enter this morning||whatever|blessing has been received by me|or|anyone|of|Your creation|is from You|alone,|no|partner|You have.|for You|All praise is|and to You|thanks is..
+        '''</summary>
+        Public ReadOnly Property IslamInfo_InTheMorning4WordByWord() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_InTheMorning4WordByWord", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to In The Morning.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_InTheMorning5() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_InTheMorning5", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to We have entered a new day and with it all the dominion which belongs to Allah, Lord of all that exists.  O Allah, I ask You for the goodness of this day, its victory, its help, its light, its blessings, and its guidance.  I seek refuge in You from the evil that is in it and from the evil that follows it..
+        '''</summary>
+        Public ReadOnly Property IslamInfo_InTheMorning5Trans() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_InTheMorning5Trans", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to We have entered a new day|and with it|all the dominion|which belongs to Allah,|Lord|of all that exists.|O Allah,||I ask You for|the goodness|of this|day,|its victory,|its help,|its light,|its blessings,|and its guidance.|I seek refuge|in You|from|the evil|that is|in it|and from the evil|that|follows it..
+        '''</summary>
+        Public ReadOnly Property IslamInfo_InTheMorning5WordByWord() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_InTheMorning5WordByWord", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to In The Morning.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_InTheMorning6() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_InTheMorning6", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to We have entered a new day upon the natural religion of Islam, the word of sincere devotion, the religion of our Prophet Muhammad (peace and blessings of Allah be upon him), and the faith of our father Ibrahim.  He was upright (in worshipping Allah), and a Muslim.  He was not of those who worship others besides Allah..
+        '''</summary>
+        Public ReadOnly Property IslamInfo_InTheMorning6Trans() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_InTheMorning6Trans", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to We have entered a new day|upon|the natural religion|of Islam,||the word|of sincere devotion,||the religion|of our Prophet|Muhammad (peace and blessings of Allah be upon him),|and|the faith|of our father|Ibrahim.|He was upright (in worshipping Allah),|and a Muslim.|not|He was|of those|who worship others besides Allah..
+        '''</summary>
+        Public ReadOnly Property IslamInfo_InTheMorning6WordByWord() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_InTheMorning6WordByWord", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to In The Morning.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_InTheMorning7() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_InTheMorning7", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Glory is to Allah and praise is to Him, by the multitude of His creation, by His Pleasure, by the weight of His Throne, and by the extent of His Words.  (Recite three times in Arabic)..
+        '''</summary>
+        Public ReadOnly Property IslamInfo_InTheMorning7Trans() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_InTheMorning7Trans", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Glory|is to Allah|and praise is to Him,|by the multitude|of His creation,|by Pleasure,|His|by the weight|of His Throne,|and by the extent|of His Words.|(Recite three times in Arabic)..
+        '''</summary>
+        Public ReadOnly Property IslamInfo_InTheMorning7WordByWord() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_InTheMorning7WordByWord", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to In The Morning.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_InTheMorning8() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_InTheMorning8", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to We have risen this morning and sovereignty is all Allah’s. Praise is due to Allah alone, He has no partner, there is no God but Him, unto whom is the return..
+        '''</summary>
+        Public ReadOnly Property IslamInfo_InTheMorning8Trans() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_InTheMorning8Trans", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to We have risen this morning|and|sovereignty is all|Allah’s.|Praise is due to|Allah alone,|no|partner|He has,|there is no|God|but|Him,|unto whom|is the return..
+        '''</summary>
+        Public ReadOnly Property IslamInfo_InTheMorning8WordByWord() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_InTheMorning8WordByWord", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to In The Morning.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_InTheMorning9() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_InTheMorning9", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to O Allah! I rise up in the morning with the blessing, strength, and protection, all of which you have bestowed upon me. Complete your blessing, the strength (you bestowed upon me) and your protection, in this life and the hereafter..
+        '''</summary>
+        Public ReadOnly Property IslamInfo_InTheMorning9Trans() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_InTheMorning9Trans", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to O Allah!||I rise up in the morning|with|,all of which you have bestowed upon me|the blessing,|strength,|and protection.|Complete|your blessing,|(you bestowed upon me)|the strength|and your protection,|in|this life|and the hereafter..
+        '''</summary>
+        Public ReadOnly Property IslamInfo_InTheMorning9WordByWord() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_InTheMorning9WordByWord", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to In The Morning Or Evening.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_InTheMorningOrEvening() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_InTheMorningOrEvening", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to In The Morning Or Evening.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_InTheMorningOrEvening1() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_InTheMorningOrEvening1", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to In The Morning Or Evening.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_InTheMorningOrEvening10() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_InTheMorningOrEvening10", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to In The Morning Or Evening.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_InTheMorningOrEvening11() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_InTheMorningOrEvening11", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to In The Morning Or Evening.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_InTheMorningOrEvening12() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_InTheMorningOrEvening12", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to In The Morning Or Evening.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_InTheMorningOrEvening2() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_InTheMorningOrEvening2", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to In The Morning Or Evening.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_InTheMorningOrEvening3() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_InTheMorningOrEvening3", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to O Allah, You are my Lord, there is none worthy of worship but You.  You created me and I am your slave.  I keep Your covenant, and my pledge to You so far as I am able, I seek refuge in You from the evil of what I have done, I admit to Your blessings upon me, and I admit to my misdeeds.  Forgive me, for there is none who may forgive sins but You..
+        '''</summary>
+        Public ReadOnly Property IslamInfo_InTheMorningOrEvening3Trans() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_InTheMorningOrEvening3Trans", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to O Allah,|You|are my Lord,|there is none|worthy of worship|but|You.|You created me|and I am|your slave.|I|keep|Your covenant,|and my pledge to You|so far as|I am able,|I seek refuge|in You|from|the evil|of what|I have done,|I admit|to|Your blessings|upon me,|and I admit to|my misdeeds.|Forgive|me,|for|there is none|who may forgive|sins|but|You..
+        '''</summary>
+        Public ReadOnly Property IslamInfo_InTheMorningOrEvening3WordByWord() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_InTheMorningOrEvening3WordByWord", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to In The Morning Or Evening.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_InTheMorningOrEvening4() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_InTheMorningOrEvening4", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to O Allah, make me healthy in my body.  O Allah, preserve for me my hearing.  O Allah, preserve for me my sight.  There is none worthy of worship but You.  O Allah, I seek refuge in You from disbelief and poverty and I seek refuge in You from the punishment of the grave.  There is none worthy of worship but You.  (Recite three times in Arabic)..
+        '''</summary>
+        Public ReadOnly Property IslamInfo_InTheMorningOrEvening4Trans() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_InTheMorningOrEvening4Trans", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to O Allah,|make me healthy|in|my body.|O Allah,|preserve|for me|my hearing.|O Allah,|preserve|for me|my sight.|There is none|worthy of worship|but|You.|(Recite three times in Arabic).|O Allah,||I seek refuge|in You|from|disbelief|and poverty|and I seek refuge|in You|from|the punishment|of the grave.|There is none|worthy of worship|but|You.|(Recite three times in Arabic)..
+        '''</summary>
+        Public ReadOnly Property IslamInfo_InTheMorningOrEvening4WordByWord() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_InTheMorningOrEvening4WordByWord", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to In The Morning Or Evening.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_InTheMorningOrEvening5() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_InTheMorningOrEvening5", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to In The Morning Or Evening.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_InTheMorningOrEvening6() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_InTheMorningOrEvening6", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to In The Morning Or Evening.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_InTheMorningOrEvening7() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_InTheMorningOrEvening7", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to In The Morning Or Evening.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_InTheMorningOrEvening8() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_InTheMorningOrEvening8", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to In the Name of Allah, Who with His Name nothing can cause harm in the earth nor in the heavens, and He is the All-Hearing, the All-Knowing.  (Recite three times in Arabic)..
+        '''</summary>
+        Public ReadOnly Property IslamInfo_InTheMorningOrEvening8Trans() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_InTheMorningOrEvening8Trans", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to In the Name|of Allah,|Who|not|can cause harm|with|His Name|anything|in|the earth|nor|in|the heavens,|and He is|the All-Hearing,|the All-Knowing.|(Recite three times in Arabic)..
+        '''</summary>
+        Public ReadOnly Property IslamInfo_InTheMorningOrEvening8WordByWord() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_InTheMorningOrEvening8WordByWord", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to In The Morning Or Evening.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_InTheMorningOrEvening9() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_InTheMorningOrEvening9", resourceCulture)
             End Get
         End Property
         
@@ -5619,6 +12660,24 @@ Namespace My.Resources
         Public ReadOnly Property IslamInfo_InThePathOfAllah() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_InThePathOfAllah", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to In This Way.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_InThisWay() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_InThisWay", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Intransitive Verb.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_IntransitiveVerb() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_IntransitiveVerb", resourceCulture)
             End Get
         End Property
         
@@ -5722,11 +12781,56 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Invocation After Declaration When Sitting In Prayer.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_InvocationAfterDeclarationWhenSittingInPrayer() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_InvocationAfterDeclarationWhenSittingInPrayer", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to In What.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_InWhat() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_InWhat", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Iraq.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Iraq() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Iraq", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Irregular Narrated By Single Trustworthy Person Contrary To Other Sources.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_IrregularNarratedBySingleTrustworthyPersonContraryToOtherSources() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_IrregularNarratedBySingleTrustworthyPersonContraryToOtherSources", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Isaac.
         '''</summary>
         Public ReadOnly Property IslamInfo_Isaac() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_Isaac", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Is Am Are Do Have.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_IsAmAreDoHave() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_IsAmAreDoHave", resourceCulture)
             End Get
         End Property
         
@@ -5749,6 +12853,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Islamic Etiquette.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_IslamicEtiquette() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_IslamicEtiquette", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Islamic New Year.
         '''</summary>
         Public ReadOnly Property IslamInfo_IslamicNewYear() As String
@@ -5767,11 +12880,29 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Islamic Ruling.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_IslamicRuling() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_IslamicRuling", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Islamic words.
         '''</summary>
         Public ReadOnly Property IslamInfo_IslamicWords() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_IslamicWords", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Ismaili.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Ismaili() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Ismaili", resourceCulture)
             End Get
         End Property
         
@@ -5785,11 +12916,65 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Isolation.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Isolation() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Isolation", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Isra And Miraj.
         '''</summary>
         Public ReadOnly Property IslamInfo_IsraAndMiraj() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_IsraAndMiraj", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Israel.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Israel() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Israel", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to I Swear By Allah.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ISwearByAllah() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ISwearByAllah", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to It Is Darker.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ItIsDarker() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ItIsDarker", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to It Is Given.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ItIsGiven() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ItIsGiven", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Jaabir Bin Abdullah.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_JaabirBinAbdullah() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_JaabirBinAbdullah", resourceCulture)
             End Get
         End Property
         
@@ -5803,6 +12988,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Jafar Bin Abi Talib.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_JafarBinAbiTalib() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_JafarBinAbiTalib", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Jafar Bin Muhammad.
         '''</summary>
         Public ReadOnly Property IslamInfo_JafarBinMuhammad() As String
@@ -5812,11 +13006,38 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Jareeree.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Jareeree() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Jareeree", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Jeddah.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Jeddah() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Jeddah", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Jesus.
         '''</summary>
         Public ReadOnly Property IslamInfo_Jesus() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_Jesus", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Jesus Son Of Mary.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_JesusSonOfMary() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_JesusSonOfMary", resourceCulture)
             End Get
         End Property
         
@@ -5866,6 +13087,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Jordon.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Jordon() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Jordon", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Joseph.
         '''</summary>
         Public ReadOnly Property IslamInfo_Joseph() As String
@@ -5880,6 +13110,15 @@ Namespace My.Resources
         Public ReadOnly Property IslamInfo_Judge() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_Judge", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Judge Rule.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_JudgeRule() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_JudgeRule", resourceCulture)
             End Get
         End Property
         
@@ -5911,11 +13150,38 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Kenya.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Kenya() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Kenya", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to KFGQPC Naskh.
         '''</summary>
         Public ReadOnly Property IslamInfo_KFGQPCNaskh() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_KFGQPCNaskh", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Khaalid.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Khaalid() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Khaalid", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Khadeejah.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Khadeejah() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Khadeejah", resourceCulture)
             End Get
         End Property
         
@@ -5956,6 +13222,33 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Khaybar.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Khaybar() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Khaybar", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Kill Slay.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_KillSlay() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_KillSlay", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to King.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_King() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_King", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Kinship.
         '''</summary>
         Public ReadOnly Property IslamInfo_Kinship() As String
@@ -5965,11 +13258,56 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Know.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Know() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Know", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Knower.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Knower() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Knower", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Knowing Ever Aware.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_KnowingEverAware() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_KnowingEverAware", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Knowledgable.
         '''</summary>
         Public ReadOnly Property IslamInfo_Knowledgable() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_Knowledgable", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Knowledge Science.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_KnowledgeScience() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_KnowledgeScience", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Kuwait.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Kuwait() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Kuwait", resourceCulture)
             End Get
         End Property
         
@@ -5992,6 +13330,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Laam Of Emphasis.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_LaamOfEmphasis() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_LaamOfEmphasis", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Laam Particle.
         '''</summary>
         Public ReadOnly Property IslamInfo_LaamParticle() As String
@@ -6006,6 +13353,42 @@ Namespace My.Resources
         Public ReadOnly Property IslamInfo_LaamVerb() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_LaamVerb", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Land Of The Dead.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_LandOfTheDead() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_LandOfTheDead", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Large Amount Of Gold.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_LargeAmountOfGold() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_LargeAmountOfGold", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Large Old.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_LargeOld() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_LargeOld", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Last.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Last() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Last", resourceCulture)
             End Get
         End Property
         
@@ -6037,11 +13420,47 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Lazy.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Lazy() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Lazy", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Leader.
         '''</summary>
         Public ReadOnly Property IslamInfo_Leader() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_Leader", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Leasing.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Leasing() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Leasing", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Leave.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Leave() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Leave", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Lebanon.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Lebanon() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Lebanon", resourceCulture)
             End Get
         End Property
         
@@ -6055,11 +13474,155 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Left.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Left() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Left", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Left Curly Bracket.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_LeftCurlyBracket() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_LeftCurlyBracket", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Left Pointing Double Angle Quotation Mark.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_LeftPointingDoubleAngleQuotationMark() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_LeftPointingDoubleAngleQuotationMark", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Left Square Bracket.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_LeftSquareBracket() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_LeftSquareBracket", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Left To Right Embedding.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_LeftToRightEmbedding() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_LeftToRightEmbedding", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Left To Right Mark.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_LeftToRightMark() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_LeftToRightMark", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Left To Right Override.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_LeftToRightOverride() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_LeftToRightOverride", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Legally Edible Animal Brought To Sacred Mosque For Sacrifice.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_LegallyEdibleAnimalBroughtToSacredMosqueForSacrifice() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_LegallyEdibleAnimalBroughtToSacredMosqueForSacrifice", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Legally Edible Animal Slaughtered On Day Of Sacrifice Or Tashriq.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_LegallyEdibleAnimalSlaughteredOnDayOfSacrificeOrTashriq() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_LegallyEdibleAnimalSlaughteredOnDayOfSacrificeOrTashriq", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Legal Methodology Fundamental Principles Of Islamic Law.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_LegalMethodologyFundamentalPrinciplesOfIslamicLaw() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_LegalMethodologyFundamentalPrinciplesOfIslamicLaw", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Legal Preference.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_LegalPreference() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_LegalPreference", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Legislation.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Legislation() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Legislation", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Legislative Prescription.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_LegislativePrescription() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_LegislativePrescription", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Lengthening Presented To Sukoon.
         '''</summary>
         Public ReadOnly Property IslamInfo_LengtheningPresentedToSukoon() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_LengtheningPresentedToSukoon", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Lesson.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Lesson() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Lesson", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Less Predominate.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_LessPredominate() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_LessPredominate", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Let Do.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_LetDo() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_LetDo", resourceCulture)
             End Get
         End Property
         
@@ -6100,6 +13663,60 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Level.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Level() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Level", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Liar.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Liar() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Liar", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Lie.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Lie() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Lie", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Life.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Life() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Life", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Life Predestination.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_LifePredestination() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_LifePredestination", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Light.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Light() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Light", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Lightened Compulsory Lengthening Letters.
         '''</summary>
         Public ReadOnly Property IslamInfo_LightenedCompulsoryLengtheningLetters() As String
@@ -6118,6 +13735,42 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Light In Weight.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_LightInWeight() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_LightInWeight", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Like ISaid.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_LikeISaid() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_LikeISaid", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Likening.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Likening() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Likening", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Like This.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_LikeThis() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_LikeThis", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Limit.
         '''</summary>
         Public ReadOnly Property IslamInfo_Limit() As String
@@ -6127,11 +13780,155 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Limiting Expression.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_LimitingExpression() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_LimitingExpression", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Linguistic Metaphor Metonymy.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_LinguisticMetaphorMetonymy() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_LinguisticMetaphorMetonymy", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Linking.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Linking() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Linking", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Lion.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Lion() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Lion", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to List Of Narrators.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ListOfNarrators() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ListOfNarrators", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Literal Exegesis.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_LiteralExegesis() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_LiteralExegesis", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Literal Meaning Inner Meaning.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_LiteralMeaningInnerMeaning() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_LiteralMeaningInnerMeaning", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Little.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Little() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Little", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Little Quantity.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_LittleQuantity() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_LittleQuantity", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Live Forever.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_LiveForever() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_LiveForever", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Live Rest Dwell.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_LiveRestDwell() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_LiveRestDwell", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Living.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Living() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Living", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Load Burden.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_LoadBurden() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_LoadBurden", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Local Custom.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_LocalCustom() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_LocalCustom", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Location Adverb.
         '''</summary>
         Public ReadOnly Property IslamInfo_LocationAdverb() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_LocationAdverb", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Location Prepositions.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_LocationPrepositions() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_LocationPrepositions", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Lo Do Not Will Not.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_LoDoNotWillNot() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_LoDoNotWillNot", resourceCulture)
             End Get
         End Property
         
@@ -6181,6 +13978,33 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Look Wait.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_LookWait() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_LookWait", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Lord Sustainer.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_LordSustainer() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_LordSustainer", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Lose.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Lose() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Lose", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Lot.
         '''</summary>
         Public ReadOnly Property IslamInfo_Lot() As String
@@ -6226,6 +14050,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Lower Self.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_LowerSelf() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_LowerSelf", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Lucifer.
         '''</summary>
         Public ReadOnly Property IslamInfo_Lucifer() As String
@@ -6253,6 +14086,24 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Made Against An Enemy.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_MadeAgainstAnEnemy() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_MadeAgainstAnEnemy", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Maiden Of Paradise.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_MaidenOfParadise() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_MaidenOfParadise", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Major ablution.
         '''</summary>
         Public ReadOnly Property IslamInfo_MajorAblution() As String
@@ -6262,11 +14113,83 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Major Association.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_MajorAssociation() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_MajorAssociation", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Major Impurity.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_MajorImpurity() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_MajorImpurity", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Major Incorrect Pronounciation.
         '''</summary>
         Public ReadOnly Property IslamInfo_MajorIncorrectPronounciation() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_MajorIncorrectPronounciation", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Major Ritual Impurity.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_MajorRitualImpurity() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_MajorRitualImpurity", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Make Construct.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_MakeConstruct() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_MakeConstruct", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Make Place Set Up.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_MakePlaceSetUp() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_MakePlaceSetUp", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Making Examples.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_MakingExamples() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_MakingExamples", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Makkah.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Makkah() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Makkah", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Male.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Male() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Male", resourceCulture)
             End Get
         End Property
         
@@ -6285,6 +14208,15 @@ Namespace My.Resources
         Public ReadOnly Property IslamInfo_MalikMuwatta() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_MalikMuwatta", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Man.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Man() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Man", resourceCulture)
             End Get
         End Property
         
@@ -6316,6 +14248,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Many.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Many() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Many", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Maria Al Qibtiyya.
         '''</summary>
         Public ReadOnly Property IslamInfo_MariaAlQibtiyya() As String
@@ -6334,11 +14275,101 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Mark Of Stopping On Letter.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_MarkOfStoppingOnLetter() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_MarkOfStoppingOnLetter", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Mark Up Financing.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_MarkUpFinancing() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_MarkUpFinancing", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Marry.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Marry() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Marry", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Marwa.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Marwa() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Marwa", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Mary.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Mary() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Mary", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Masculine.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Masculine() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Masculine", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Master.
         '''</summary>
         Public ReadOnly Property IslamInfo_Master() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_Master", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Matter.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Matter() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Matter", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Matter Affair.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_MatterAffair() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_MatterAffair", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to May Allah Accept From Us And From You.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_MayAllahAcceptFromUsAndFromYou() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_MayAllahAcceptFromUsAndFromYou", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to May Allah Accept Your Effort.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_MayAllahAcceptYourEffort() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_MayAllahAcceptYourEffort", resourceCulture)
             End Get
         End Property
         
@@ -6361,6 +14392,51 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to May Allah Be Pleased With Both Of Them.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_MayAllahBePleasedWithBothOfThem() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_MayAllahBePleasedWithBothOfThem", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to May Allah Be Pleased With Her.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_MayAllahBePleasedWithHer() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_MayAllahBePleasedWithHer", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to May Allah Be Pleased With Him.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_MayAllahBePleasedWithHim() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_MayAllahBePleasedWithHim", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to May Allah Be Pleased With Them Feminine.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_MayAllahBePleasedWithThemFeminine() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_MayAllahBePleasedWithThemFeminine", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to May Allah Be Pleased With Them Masculine.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_MayAllahBePleasedWithThemMasculine() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_MayAllahBePleasedWithThemMasculine", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Blessings upon you from Allah.
         '''</summary>
         Public ReadOnly Property IslamInfo_MayAllahBlessYou() As String
@@ -6379,6 +14455,114 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to May Allah Have Mercy On Both Of Them.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_MayAllahHaveMercyOnBothOfThem() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_MayAllahHaveMercyOnBothOfThem", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to May Allah Have Mercy On Her.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_MayAllahHaveMercyOnHer() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_MayAllahHaveMercyOnHer", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to May Allah Have Mercy On Him.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_MayAllahHaveMercyOnHim() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_MayAllahHaveMercyOnHim", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to May Allah Have Mercy On Them Feminine.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_MayAllahHaveMercyOnThemFeminine() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_MayAllahHaveMercyOnThemFeminine", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to May Allah Have Mercy On Them Masculine.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_MayAllahHaveMercyOnThemMasculine() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_MayAllahHaveMercyOnThemMasculine", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to May Allah Keep You Cheerful.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_MayAllahKeepYouCheerful() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_MayAllahKeepYouCheerful", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to May Allah Maintain All Your Life Feminine.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_MayAllahMaintainAllYourLifeFeminine() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_MayAllahMaintainAllYourLifeFeminine", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to May Allah Maintain All Your Life Masculine.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_MayAllahMaintainAllYourLifeMasculine() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_MayAllahMaintainAllYourLifeMasculine", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to May Allah Maintain All Your Lives Feminine.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_MayAllahMaintainAllYourLivesFeminine() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_MayAllahMaintainAllYourLivesFeminine", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to May Allah Maintain All Your Lives Masculine.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_MayAllahMaintainAllYourLivesMasculine() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_MayAllahMaintainAllYourLivesMasculine", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to May Allah Maintain Both Of Your Lives.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_MayAllahMaintainBothOfYourLives() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_MayAllahMaintainBothOfYourLives", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to May Allah Make Your Reward Great.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_MayAllahMakeYourRewardGreat() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_MayAllahMakeYourRewardGreat", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to May Allah protect you.
         '''</summary>
         Public ReadOnly Property IslamInfo_MayAllahProtectYou() As String
@@ -6388,11 +14572,110 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to May Allah Protect You All Feminine.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_MayAllahProtectYouAllFeminine() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_MayAllahProtectYouAllFeminine", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to May Allah Protect You All Masculine.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_MayAllahProtectYouAllMasculine() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_MayAllahProtectYouAllMasculine", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to May Allah Protect You Both.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_MayAllahProtectYouBoth() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_MayAllahProtectYouBoth", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to May Allah Protect You Feminine.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_MayAllahProtectYouFeminine() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_MayAllahProtectYouFeminine", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to May Allah Protect You Masculine.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_MayAllahProtectYouMasculine() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_MayAllahProtectYouMasculine", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to May Allah will it so.
         '''</summary>
         Public ReadOnly Property IslamInfo_MayAllahWillItSo() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_MayAllahWillItSo", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to May Allah Will It So OLord Of The Worlds.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_MayAllahWillItSoOLordOfTheWorlds() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_MayAllahWillItSoOLordOfTheWorlds", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to May Glorious Allah Be Pleased With Both Of Them.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_MayGloriousAllahBePleasedWithBothOfThem() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_MayGloriousAllahBePleasedWithBothOfThem", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to May Glorious Allah Be Pleased With Her.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_MayGloriousAllahBePleasedWithHer() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_MayGloriousAllahBePleasedWithHer", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to May Glorious Allah Be Pleased With Him.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_MayGloriousAllahBePleasedWithHim() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_MayGloriousAllahBePleasedWithHim", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to May Glorious Allah Be Pleased With Them Feminine.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_MayGloriousAllahBePleasedWithThemFeminine() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_MayGloriousAllahBePleasedWithThemFeminine", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to May Glorious Allah Be Pleased With Them Masculine.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_MayGloriousAllahBePleasedWithThemMasculine() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_MayGloriousAllahBePleasedWithThemMasculine", resourceCulture)
             End Get
         End Property
         
@@ -6415,6 +14698,24 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Meaning.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Meaning() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Meaning", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Measure.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Measure() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Measure", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Mecca.
         '''</summary>
         Public ReadOnly Property IslamInfo_Mecca() As String
@@ -6433,6 +14734,24 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Meeting.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Meeting() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Meeting", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Melodic Recitation.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_MelodicRecitation() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_MelodicRecitation", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Melting.
         '''</summary>
         Public ReadOnly Property IslamInfo_Melting() As String
@@ -6442,11 +14761,47 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Memorizer Of Quran.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_MemorizerOfQuran() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_MemorizerOfQuran", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Men People.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_MenPeople() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_MenPeople", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Menses.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Menses() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Menses", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Me-Quran.
         '''</summary>
         Public ReadOnly Property IslamInfo_MeQuran() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_MeQuran", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Merciful.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Merciful() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Merciful", resourceCulture)
             End Get
         End Property
         
@@ -6469,11 +14824,83 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Metaphor.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Metaphor() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Metaphor", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Metaphorical.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Metaphorical() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Metaphorical", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Metaphysical Theoretical.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_MetaphysicalTheoretical() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_MetaphysicalTheoretical", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Methodology.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Methodology() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Methodology", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Methodology Of Quranic Interpretation.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_MethodologyOfQuranicInterpretation() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_MethodologyOfQuranicInterpretation", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Metonymy Metaphor.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_MetonymyMetaphor() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_MetonymyMetaphor", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Mid Shaban.
         '''</summary>
         Public ReadOnly Property IslamInfo_MidShaban() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_MidShaban", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Mighty.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Mighty() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Mighty", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Minimum Charitable Amount.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_MinimumCharitableAmount() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_MinimumCharitableAmount", resourceCulture)
             End Get
         End Property
         
@@ -6496,11 +14923,47 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Minute.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Minute() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Minute", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Miracle.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Miracle() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Miracle", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Miraculous Aspects Of The Quran.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_MiraculousAspectsOfTheQuran() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_MiraculousAspectsOfTheQuran", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Mister.
         '''</summary>
         Public ReadOnly Property IslamInfo_Mister() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_Mister", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Mister Lord.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_MisterLord() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_MisterLord", resourceCulture)
             End Get
         End Property
         
@@ -6519,6 +14982,33 @@ Namespace My.Resources
         Public ReadOnly Property IslamInfo_Moderation() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_Moderation", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Modification.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Modification() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Modification", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Money.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Money() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Money", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Month.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Month() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Month", resourceCulture)
             End Get
         End Property
         
@@ -6640,11 +15130,74 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Moon.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Moon() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Moon", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to More Entitled More Worthy.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_MoreEntitledMoreWorthy() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_MoreEntitledMoreWorthy", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to More Most.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_MoreMost() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_MoreMost", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to More Unjust.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_MoreUnjust() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_MoreUnjust", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Morning.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Morning() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Morning", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Morning light.
         '''</summary>
         Public ReadOnly Property IslamInfo_MorningLight() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_MorningLight", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Morocco.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Morocco() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Morocco", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Morphology Word Patterns.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_MorphologyWordPatterns() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_MorphologyWordPatterns", resourceCulture)
             End Get
         End Property
         
@@ -6676,6 +15229,51 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Mosque Pulpit.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_MosquePulpit() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_MosquePulpit", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Most Forgiving.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_MostForgiving() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_MostForgiving", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Most Severe.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_MostSevere() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_MostSevere", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Mother.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Mother() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Mother", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Mountain.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Mountain() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Mountain", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Mount Nour.
         '''</summary>
         Public ReadOnly Property IslamInfo_MountNour() As String
@@ -6694,11 +15292,29 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Mouth.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Mouth() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Mouth", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to MS Uighur.
         '''</summary>
         Public ReadOnly Property IslamInfo_MSUighur() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_MSUighur", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Muath Bin Jabal.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_MuathBinJabal() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_MuathBinJabal", resourceCulture)
             End Get
         End Property
         
@@ -7297,6 +15913,42 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to My.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_My() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_My", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Mystic.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Mystic() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Mystic", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Mysticism.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Mysticism() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Mysticism", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Name In Chain Of Narration Omitted Or Unknown Name Mentioned.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_NameInChainOfNarrationOmittedOrUnknownNameMentioned() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_NameInChainOfNarrationOmittedOrUnknownNameMentioned", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Names.
         '''</summary>
         Public ReadOnly Property IslamInfo_Names() As String
@@ -7306,11 +15958,83 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Names And Attributes.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_NamesAndAttributes() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_NamesAndAttributes", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to The names of Allah.
         '''</summary>
         Public ReadOnly Property IslamInfo_NamesOfAllah() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_NamesOfAllah", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Names Of Countries.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_NamesOfCountries() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_NamesOfCountries", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Narrated By Untrustworthy Person Denounced.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_NarratedByUntrustworthyPersonDenounced() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_NarratedByUntrustworthyPersonDenounced", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Narration Based Exegesis.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_NarrationBasedExegesis() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_NarrationBasedExegesis", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Narrative.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Narrative() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Narrative", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Narrative Tale Story.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_NarrativeTaleStory() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_NarrativeTaleStory", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Narrator Makes False Claim.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_NarratorMakesFalseClaim() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_NarratorMakesFalseClaim", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Narrow No Break Space.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_NarrowNoBreakSpace() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_NarrowNoBreakSpace", resourceCulture)
             End Get
         End Property
         
@@ -7342,6 +16066,78 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Nation.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Nation() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Nation", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Natural Belief In God.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_NaturalBeliefInGod() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_NaturalBeliefInGod", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Nay Rather But However.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_NayRatherButHowever() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_NayRatherButHowever", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Near.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Near() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Near", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Nearer.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Nearer() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Nearer", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Nearer Closer Woe.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_NearerCloserWoe() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_NearerCloserWoe", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Nearer More Likely Lower Less.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_NearerMoreLikelyLowerLess() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_NearerMoreLikelyLowerLess", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Near With.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_NearWith() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_NearWith", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Necessary.
         '''</summary>
         Public ReadOnly Property IslamInfo_Necessary() As String
@@ -7351,11 +16147,56 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Necessity.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Necessity() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Necessity", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Neck.
         '''</summary>
         Public ReadOnly Property IslamInfo_Neck() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_Neck", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Neck Slave.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_NeckSlave() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_NeckSlave", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Negation.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Negation() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Negation", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Negation Particle.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_NegationParticle() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_NegationParticle", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Negative Command.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_NegativeCommand() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_NegativeCommand", resourceCulture)
             End Get
         End Property
         
@@ -7378,6 +16219,51 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Never Certainly Not.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_NeverCertainlyNot() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_NeverCertainlyNot", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to New.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_New() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_New", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Newly Existent.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_NewlyExistent() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_NewlyExistent", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to News.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_News() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_News", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Night.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Night() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Night", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Noah.
         '''</summary>
         Public ReadOnly Property IslamInfo_Noah() As String
@@ -7387,11 +16273,173 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Noble Honorable Generous.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_NobleHonorableGenerous() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_NobleHonorableGenerous", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to No Break Space.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_NoBreakSpace() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_NoBreakSpace", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Nominal Sentence.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_NominalSentence() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_NominalSentence", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Nominative Case.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_NominativeCase() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_NominativeCase", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Nominative State.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_NominativeState() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_NominativeState", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Nose.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Nose() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Nose", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Not.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Not() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Not", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Not Future Will Never.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_NotFutureWillNever() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_NotFutureWillNever", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Nothing But.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_NothingBut() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_NothingBut", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Not Other Than.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_NotOtherThan() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_NotOtherThan", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Not Past Did Not.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_NotPastDidNot() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_NotPastDidNot", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Not Yet When.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_NotYetWhen() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_NotYetWhen", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Noun.
         '''</summary>
         Public ReadOnly Property IslamInfo_Noun() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_Noun", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Noun Being Modified.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_NounBeingModified() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_NounBeingModified", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Noun In Possessive State.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_NounInPossessiveState() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_NounInPossessiveState", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Noun Name.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_NounName() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_NounName", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Nouns.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Nouns() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Nouns", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Number Plurality.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_NumberPlurality() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_NumberPlurality", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Nunation.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Nunation() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Nunation", resourceCulture)
             End Get
         End Property
         
@@ -7410,6 +16458,24 @@ Namespace My.Resources
         Public ReadOnly Property IslamInfo_O() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_O", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Oath.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Oath() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Oath", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Oath Topics.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_OathTopics() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_OathTopics", resourceCulture)
             End Get
         End Property
         
@@ -7450,6 +16516,51 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Obscenity.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Obscenity() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Obscenity", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Obvious Analogy.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ObviousAnalogy() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ObviousAnalogy", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Obvious Apparent.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ObviousApparent() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ObviousApparent", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to O Calamity Of The Morning.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_OCalamityOfTheMorning() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_OCalamityOfTheMorning", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to O Chiefs.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_OChiefs() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_OChiefs", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Odd.
         '''</summary>
         Public ReadOnly Property IslamInfo_Odd() As String
@@ -7459,11 +16570,83 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Odd Prayer And After.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_OddPrayerAndAfter() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_OddPrayerAndAfter", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Offspring Generation.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_OffspringGeneration() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_OffspringGeneration", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Of The Guest For The Host.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_OfTheGuestForTheHost() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_OfTheGuestForTheHost", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Of The Resident For The Traveller.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_OfTheResidentForTheTraveller() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_OfTheResidentForTheTraveller", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Of The Traveller As Dawn Approaches.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_OfTheTravellerAsDawnApproaches() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_OfTheTravellerAsDawnApproaches", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Of The Traveller For The Resident.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_OfTheTravellerForTheResident() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_OfTheTravellerForTheResident", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Oft-returning.
         '''</summary>
         Public ReadOnly Property IslamInfo_OftReturning() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_OftReturning", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Old.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Old() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Old", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Old Man.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_OldMan() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_OldMan", resourceCulture)
             End Get
         End Property
         
@@ -7495,11 +16678,155 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Once One Time.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_OnceOneTime() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_OnceOneTime", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to One.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_One() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_One", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to One In AState Of Ritual Consecration For Pilgrimage.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_OneInAStateOfRitualConsecrationForPilgrimage() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_OneInAStateOfRitualConsecrationForPilgrimage", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Oneness Of Allah.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_OnenessOfAllah() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_OnenessOfAllah", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Oneness Of Divinity And Worship.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_OnenessOfDivinityAndWorship() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_OnenessOfDivinityAndWorship", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Oneness of God.
         '''</summary>
         Public ReadOnly Property IslamInfo_OnenessOfGod() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_OnenessOfGod", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Oneness Of Lordship Dominion.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_OnenessOfLordshipDominion() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_OnenessOfLordshipDominion", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Oneness Of Names And Attributes.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_OnenessOfNamesAndAttributes() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_OnenessOfNamesAndAttributes", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to One Part Of Chain Has Single Narrator.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_OnePartOfChainHasSingleNarrator() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_OnePartOfChainHasSingleNarrator", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to One Who Does Good Deeds And Abandons Prohibitions.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_OneWhoDoesGoodDeedsAndAbandonsProhibitions() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_OneWhoDoesGoodDeedsAndAbandonsProhibitions", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to One Who Is Seen.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_OneWhoIsSeen() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_OneWhoIsSeen", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to One Who Listens.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_OneWhoListens() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_OneWhoListens", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to One Who Sees Clearly.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_OneWhoSeesClearly() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_OneWhoSeesClearly", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to One Who Takes Care Of AThing For Another.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_OneWhoTakesCareOfAThingForAnother() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_OneWhoTakesCareOfAThingForAnother", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to One Who Witnesses.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_OneWhoWitnesses() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_OneWhoWitnesses", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Openers.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Openers() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Openers", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Open Give Victory.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_OpenGiveVictory() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_OpenGiveVictory", resourceCulture)
             End Get
         End Property
         
@@ -7513,11 +16840,47 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Open Sinner.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_OpenSinner() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_OpenSinner", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Opinion.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Opinion() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Opinion", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Opinion Based Exegesis.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_OpinionBasedExegesis() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_OpinionBasedExegesis", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Oppression.
         '''</summary>
         Public ReadOnly Property IslamInfo_Oppression() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_Oppression", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to O Prophet.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_OProphet() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_OProphet", resourceCulture)
             End Get
         End Property
         
@@ -7531,11 +16894,137 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Or.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Or() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Or", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Original Lengthening.
         '''</summary>
         Public ReadOnly Property IslamInfo_OriginalLengthening() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_OriginalLengthening", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Ornate Left Parenthesis.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_OrnateLeftParenthesis() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_OrnateLeftParenthesis", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Ornate Right Parenthesis.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_OrnateRightParenthesis() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_OrnateRightParenthesis", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Orphan.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Orphan() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Orphan", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Orwa.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Orwa() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Orwa", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Other.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Other() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Other", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Other Than.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_OtherThan() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_OtherThan", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Our.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Our() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Our", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Out Of What.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_OutOfWhat() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_OutOfWhat", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Overcome.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Overcome() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Overcome", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Owner Of Possessor.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_OwnerOfPossessor() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_OwnerOfPossessor", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to O You Mankind.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_OYouMankind() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_OYouMankind", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to O You Who Believe.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_OYouWhoBelieve() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_OYouWhoBelieve", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Page.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Page() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Page", resourceCulture)
             End Get
         End Property
         
@@ -7558,6 +17047,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Pakistan.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Pakistan() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Pakistan", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Paradise.
         '''</summary>
         Public ReadOnly Property IslamInfo_Paradise() As String
@@ -7572,6 +17070,60 @@ Namespace My.Resources
         Public ReadOnly Property IslamInfo_Part() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_Part", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Partial Abrogation.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_PartialAbrogation() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_PartialAbrogation", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Partially Flexible.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_PartiallyFlexible() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_PartiallyFlexible", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Partially Flexible Accusative Possessive.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_PartiallyFlexibleAccusativePossessive() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_PartiallyFlexibleAccusativePossessive", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Partially Flexible Nominative.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_PartiallyFlexibleNominative() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_PartiallyFlexibleNominative", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Particle.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Particle() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Particle", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Particle Associated Verbs.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ParticleAssociatedVerbs() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ParticleAssociatedVerbs", resourceCulture)
             End Get
         End Property
         
@@ -7603,11 +17155,200 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Particles.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Particles() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Particles", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Particles For Oaths.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ParticlesForOaths() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ParticlesForOaths", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Particles Of Condition.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ParticlesOfCondition() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ParticlesOfCondition", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Particles Of Emphasis.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ParticlesOfEmphasis() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ParticlesOfEmphasis", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Particles Of Interogation.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ParticlesOfInterogation() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ParticlesOfInterogation", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Particles Of Negation.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ParticlesOfNegation() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ParticlesOfNegation", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Particles Of Place.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ParticlesOfPlace() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ParticlesOfPlace", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Particles Of Time.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ParticlesOfTime() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ParticlesOfTime", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Particles Without Declension.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ParticlesWithoutDeclension() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ParticlesWithoutDeclension", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Partner.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Partner() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Partner", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Partner Associate.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_PartnerAssociate() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_PartnerAssociate", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Partnership.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Partnership() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Partnership", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Parts.
         '''</summary>
         Public ReadOnly Property IslamInfo_Parts() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_Parts", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Party.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Party() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Party", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Party Group.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_PartyGroup() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_PartyGroup", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Passive.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Passive() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Passive", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Passive Participle Passive Noun.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_PassiveParticiplePassiveNoun() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_PassiveParticiplePassiveNoun", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Passive Past Tense.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_PassivePastTense() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_PassivePastTense", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Passive Present Tense.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_PassivePresentTense() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_PassivePresentTense", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Passive Verb.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_PassiveVerb() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_PassiveVerb", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Past Tense Verbs Family I.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_PastTenseVerbsFamilyI() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_PastTenseVerbsFamilyI", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Paternal Uncle.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_PaternalUncle() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_PaternalUncle", resourceCulture)
             End Get
         End Property
         
@@ -7648,6 +17389,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Peace.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Peace() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Peace", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Peace be upon you.
         '''</summary>
         Public ReadOnly Property IslamInfo_PeaceBeUponYou() As String
@@ -7675,6 +17425,150 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Peace Secure.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_PeaceSecure() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_PeaceSecure", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Pegs.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Pegs() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Pegs", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Pen.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Pen() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Pen", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to People.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_People() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_People", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to People Of Hadith.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_PeopleOfHadith() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_PeopleOfHadith", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to People Of Hud.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_PeopleOfHud() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_PeopleOfHud", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to People Of Owners Of.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_PeopleOfOwnersOf() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_PeopleOfOwnersOf", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to People Of Realities.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_PeopleOfRealities() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_PeopleOfRealities", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to People Of Reasoning Opinion.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_PeopleOfReasoningOpinion() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_PeopleOfReasoningOpinion", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to People Of Relatives.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_PeopleOfRelatives() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_PeopleOfRelatives", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to People Of Salih.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_PeopleOfSalih() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_PeopleOfSalih", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to People Of The Book.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_PeopleOfTheBook() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_PeopleOfTheBook", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to People Of True Reality.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_PeopleOfTrueReality() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_PeopleOfTrueReality", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Perceive.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Perceive() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Perceive", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Perfected Completely Formed.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_PerfectedCompletelyFormed() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_PerfectedCompletelyFormed", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Perhaps May Be So As To.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_PerhapsMayBeSoAsTo() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_PerhapsMayBeSoAsTo", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Permissible.
         '''</summary>
         Public ReadOnly Property IslamInfo_Permissible() As String
@@ -7689,6 +17583,15 @@ Namespace My.Resources
         Public ReadOnly Property IslamInfo_Permission() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_Permission", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Persecute Try Test.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_PersecuteTryTest() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_PersecuteTryTest", resourceCulture)
             End Get
         End Property
         
@@ -7711,6 +17614,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Personal Pronouns.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_PersonalPronouns() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_PersonalPronouns", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Pharoah.
         '''</summary>
         Public ReadOnly Property IslamInfo_Pharoah() As String
@@ -7720,11 +17632,38 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Philippines.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Philippines() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Philippines", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Phonation.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Phonation() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Phonation", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Phrase for Allah is greatest.
         '''</summary>
         Public ReadOnly Property IslamInfo_PhraseForAllahIsGreatest() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_PhraseForAllahIsGreatest", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Phrase For Allah Listens To The One Who Praises Him.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_PhraseForAllahListensToTheOneWhoPraisesHim() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_PhraseForAllahListensToTheOneWhoPraisesHim", resourceCulture)
             End Get
         End Property
         
@@ -7756,11 +17695,47 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Phrase For May Allah Will It So.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_PhraseForMayAllahWillItSo() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_PhraseForMayAllahWillItSo", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Phrase For There Is No God Except Allah.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_PhraseForThereIsNoGodExceptAllah() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_PhraseForThereIsNoGodExceptAllah", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Piece Chewed Flesh.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_PieceChewedFlesh() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_PieceChewedFlesh", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Piety.
         '''</summary>
         Public ReadOnly Property IslamInfo_Piety() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_Piety", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Piety Fear Protection.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_PietyFearProtection() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_PietyFearProtection", resourceCulture)
             End Get
         End Property
         
@@ -7774,6 +17749,42 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Pillar.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Pillar() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Pillar", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Place.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Place() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Place", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Place Abode.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_PlaceAbode() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_PlaceAbode", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Place Of Emergence.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_PlaceOfEmergence() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_PlaceOfEmergence", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Places.
         '''</summary>
         Public ReadOnly Property IslamInfo_Places() As String
@@ -7783,11 +17794,101 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Placing Children Under Allahs Protection.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_PlacingChildrenUnderAllahsProtection() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_PlacingChildrenUnderAllahsProtection", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Placing The Deceased In The Grave.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_PlacingTheDeceasedInTheGrave() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_PlacingTheDeceasedInTheGrave", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Play Amusement.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_PlayAmusement() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_PlayAmusement", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Pleased With Decree.
         '''</summary>
         Public ReadOnly Property IslamInfo_PleasedWithDecree() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_PleasedWithDecree", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Plenty Much.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_PlentyMuch() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_PlentyMuch", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Plot.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Plot() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Plot", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Plural.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Plural() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Plural", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Plurals.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Plurals() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Plurals", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Poet.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Poet() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Poet", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Pointing Construction.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_PointingConstruction() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_PointingConstruction", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Pointing Nouns.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_PointingNouns() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_PointingNouns", resourceCulture)
             End Get
         End Property
         
@@ -7810,11 +17911,56 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Pole.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Pole() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Pole", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Polythiest.
         '''</summary>
         Public ReadOnly Property IslamInfo_Polythiest() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_Polythiest", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Pomegranate.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Pomegranate() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Pomegranate", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Poor Due Charity Alms Giving.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_PoorDueCharityAlmsGiving() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_PoorDueCharityAlmsGiving", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Poor Person.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_PoorPerson() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_PoorPerson", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Pop Directional Formatting.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_PopDirectionalFormatting() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_PopDirectionalFormatting", resourceCulture)
             End Get
         End Property
         
@@ -7828,11 +17974,146 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Possess.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Possess() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Possess", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Possession.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Possession() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Possession", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Possession Construction.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_PossessionConstruction() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_PossessionConstruction", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Possession Construction Like Nouns.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_PossessionConstructionLikeNouns() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_PossessionConstructionLikeNouns", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Possession Construction Like Nouns For Time Place.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_PossessionConstructionLikeNounsForTimePlace() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_PossessionConstructionLikeNounsForTimePlace", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Possession Particles.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_PossessionParticles() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_PossessionParticles", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Possessive Case.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_PossessiveCase() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_PossessiveCase", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Possessive Construction.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_PossessiveConstruction() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_PossessiveConstruction", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Possessive Determiner Personal Pronouns.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_PossessiveDeterminerPersonalPronouns() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_PossessiveDeterminerPersonalPronouns", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Possessive State.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_PossessiveState() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_PossessiveState", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Possibly Perhaps.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_PossiblyPerhaps() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_PossiblyPerhaps", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Power Strength.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_PowerStrength() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_PowerStrength", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Practical.
         '''</summary>
         Public ReadOnly Property IslamInfo_Practical() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_Practical", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Practices Of The People Of Medina.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_PracticesOfThePeopleOfMedina() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_PracticesOfThePeopleOfMedina", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Praise.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Praise() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Praise", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Praiseworthy.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Praiseworthy() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Praiseworthy", resourceCulture)
             End Get
         End Property
         
@@ -7846,11 +18127,29 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Prayer Chamber.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_PrayerChamber() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_PrayerChamber", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Prayers.
         '''</summary>
         Public ReadOnly Property IslamInfo_Prayers() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_Prayers", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Prayer Said During A Wind Storm.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_PrayerSaidDuringAWindStorm() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_PrayerSaidDuringAWindStorm", resourceCulture)
             End Get
         End Property
         
@@ -7954,11 +18253,47 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Precede.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Precede() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Precede", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Precise Methodical Recitation.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_PreciseMethodicalRecitation() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_PreciseMethodicalRecitation", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Predestination.
         '''</summary>
         Public ReadOnly Property IslamInfo_Predestination() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_Predestination", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Predicate.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Predicate() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Predicate", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Predominantly Desert Dwelling Arabian Ethnic Group.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_PredominantlyDesertDwellingArabianEthnicGroup() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_PredominantlyDesertDwellingArabianEthnicGroup", resourceCulture)
             End Get
         End Property
         
@@ -7972,11 +18307,29 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Preponderate.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Preponderate() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Preponderate", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Preposition.
         '''</summary>
         Public ReadOnly Property IslamInfo_Preposition() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_Preposition", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Prepositions.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Prepositions() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Prepositions", resourceCulture)
             End Get
         End Property
         
@@ -7990,11 +18343,74 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Prescribe Write.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_PrescribeWrite() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_PrescribeWrite", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Present Or Future Tense Verb.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_PresentOrFutureTenseVerb() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_PresentOrFutureTenseVerb", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Present Tense.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_PresentTense() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_PresentTense", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Present Tense Possession Particles.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_PresentTensePossessionParticles() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_PresentTensePossessionParticles", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Present Tense Verbs Family I.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_PresentTenseVerbsFamilyI() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_PresentTenseVerbsFamilyI", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Preserved Tablet.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_PreservedTablet() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_PreservedTablet", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Preventive Particle.
         '''</summary>
         Public ReadOnly Property IslamInfo_PreventiveParticle() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_PreventiveParticle", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Principle Method.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_PrincipleMethod() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_PrincipleMethod", resourceCulture)
             End Get
         End Property
         
@@ -8008,11 +18424,65 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Printed Book Codex.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_PrintedBookCodex() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_PrintedBookCodex", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Private Parts Or Parts Of Body Forbidden To Expose To Others.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_PrivatePartsOrPartsOfBodyForbiddenToExposeToOthers() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_PrivatePartsOrPartsOfBodyForbiddenToExposeToOthers", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Probably.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Probably() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Probably", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Process Of Credible Reporting.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ProcessOfCredibleReporting() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ProcessOfCredibleReporting", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Professor.
         '''</summary>
         Public ReadOnly Property IslamInfo_Professor() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_Professor", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Profit.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Profit() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Profit", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Profit Sharing.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ProfitSharing() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ProfitSharing", resourceCulture)
             End Get
         End Property
         
@@ -8031,6 +18501,24 @@ Namespace My.Resources
         Public ReadOnly Property IslamInfo_ProhibitionParticle() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_ProhibitionParticle", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Pronoun.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Pronoun() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Pronoun", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Pronoun Connecting To Word It Describes.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_PronounConnectingToWordItDescribes() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_PronounConnectingToWordItDescribes", resourceCulture)
             End Get
         End Property
         
@@ -8071,11 +18559,29 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Prostrate.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Prostrate() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Prostrate", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Prostrating.
         '''</summary>
         Public ReadOnly Property IslamInfo_Prostrating() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_Prostrating", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Prostrating Due To Quran Recitation.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ProstratingDueToQuranRecitation() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ProstratingDueToQuranRecitation", resourceCulture)
             End Get
         End Property
         
@@ -8098,11 +18604,29 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Protecting Friend Guardian.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ProtectingFriendGuardian() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ProtectingFriendGuardian", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Protection.
         '''</summary>
         Public ReadOnly Property IslamInfo_Protection() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_Protection", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Protection From The Dajjal.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ProtectionFromTheDajjal() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ProtectionFromTheDajjal", resourceCulture)
             End Get
         End Property
         
@@ -8116,11 +18640,92 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Prove Make Clear.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ProveMakeClear() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ProveMakeClear", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Provide.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Provide() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Provide", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Provision Enjoyment.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ProvisionEnjoyment() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ProvisionEnjoyment", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Proximal Demonstratives.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ProximalDemonstratives() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ProximalDemonstratives", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Psalms.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Psalms() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Psalms", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Punishment.
         '''</summary>
         Public ReadOnly Property IslamInfo_Punishment() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_Punishment", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Punishment Power Adversity.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_PunishmentPowerAdversity() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_PunishmentPowerAdversity", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Pure.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Pure() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Pure", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Pure And Purifying.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_PureAndPurifying() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_PureAndPurifying", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Pure Monotheism.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_PureMonotheism() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_PureMonotheism", resourceCulture)
             End Get
         End Property
         
@@ -8170,6 +18775,24 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Purified Clean.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_PurifiedClean() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_PurifiedClean", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Purifying Finger Toes Beard.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_PurifyingFingerToesBeard() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_PurifyingFingerToesBeard", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Purpose Laam Prefix.
         '''</summary>
         Public ReadOnly Property IslamInfo_PurposeLaamPrefix() As String
@@ -8184,6 +18807,51 @@ Namespace My.Resources
         Public ReadOnly Property IslamInfo_Pus() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_Pus", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Put Lay Down Place Remove.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_PutLayDownPlaceRemove() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_PutLayDownPlaceRemove", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Qaasim Bin Muhammad.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_QaasimBinMuhammad() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_QaasimBinMuhammad", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Qualified.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Qualified() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Qualified", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Quick Swift Fast.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_QuickSwiftFast() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_QuickSwiftFast", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Quotation Mark.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_QuotationMark() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_QuotationMark", resourceCulture)
             End Get
         End Property
         
@@ -9223,11 +19891,65 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Quran Followers.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_QuranFollowers() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_QuranFollowers", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Quranic Grammar.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_QuranicGrammar() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_QuranicGrammar", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Quranic Initials.
         '''</summary>
         Public ReadOnly Property IslamInfo_QuranicInitials() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_QuranicInitials", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Quranic Metaphor.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_QuranicMetaphor() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_QuranicMetaphor", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Quranic Sciences.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_QuranicSciences() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_QuranicSciences", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Quran Preserved In Uthmani Script.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_QuranPreservedInUthmaniScript() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_QuranPreservedInUthmaniScript", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Quran Reading Recitation.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_QuranReadingRecitation() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_QuranReadingRecitation", resourceCulture)
             End Get
         End Property
         
@@ -9250,11 +19972,47 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Radiant Fresh.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_RadiantFresh() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_RadiantFresh", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Rain for draught.
         '''</summary>
         Public ReadOnly Property IslamInfo_RainForDraught() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_RainForDraught", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Raise.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Raise() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Raise", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Raise Resurrect.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_RaiseResurrect() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_RaiseResurrect", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Raising Hands In Prayer.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_RaisingHandsInPrayer() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_RaisingHandsInPrayer", resourceCulture)
             End Get
         End Property
         
@@ -9277,6 +20035,42 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Rapid Recitation.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_RapidRecitation() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_RapidRecitation", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Rational Insights.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_RationalInsights() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_RationalInsights", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Rationalists.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Rationalists() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Rationalists", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Rational Logical Metaphor Metonymy.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_RationalLogicalMetaphorMetonymy() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_RationalLogicalMetaphorMetonymy", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Rawdah.
         '''</summary>
         Public ReadOnly Property IslamInfo_Rawdah() As String
@@ -9295,11 +20089,110 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Reach.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Reach() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Reach", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Realistic Jurisprudence.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_RealisticJurisprudence() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_RealisticJurisprudence", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Reason Breaking An Oath Taken In Allahs Name.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ReasonBreakingAnOathTakenInAllahsName() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ReasonBreakingAnOathTakenInAllahsName", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Reasoned Decision.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ReasonedDecision() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ReasonedDecision", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Reasons For Revelation.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ReasonsForRevelation() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ReasonsForRevelation", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Recitation Pilgrimage.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_RecitationPilgrimage() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_RecitationPilgrimage", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Recitations.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Recitations() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Recitations", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Recite.
         '''</summary>
         Public ReadOnly Property IslamInfo_Recite() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_Recite", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Recite What Has Been Revealed.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ReciteWhatHasBeenRevealed() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ReciteWhatHasBeenRevealed", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Reciting.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Reciting() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Reciting", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Reckoning.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Reckoning() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Reckoning", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Recognize.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Recognize() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Recognize", resourceCulture)
             End Get
         End Property
         
@@ -9313,11 +20206,74 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Reference Without Name.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ReferenceWithoutName() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ReferenceWithoutName", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Reinterpretation.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Reinterpretation() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Reinterpretation", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Rejoice.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Rejoice() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Rejoice", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Relative Adjective.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_RelativeAdjective() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_RelativeAdjective", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Relative Place Nouns.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_RelativePlaceNouns() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_RelativePlaceNouns", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Relative Pronoun.
         '''</summary>
         Public ReadOnly Property IslamInfo_RelativePronoun() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_RelativePronoun", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Relative Pronouns.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_RelativePronouns() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_RelativePronouns", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Relative Time Nouns.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_RelativeTimeNouns() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_RelativeTimeNouns", resourceCulture)
             End Get
         End Property
         
@@ -9331,11 +20287,227 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Religion Law Judgment.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ReligionLawJudgment() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ReligionLawJudgment", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Religious Donation.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ReligiousDonation() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ReligiousDonation", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Religious Donation Expiation.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ReligiousDonationExpiation() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ReligiousDonationExpiation", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Remember.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Remember() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Remember", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Remembrance.
         '''</summary>
         Public ReadOnly Property IslamInfo_Remembrance() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_Remembrance", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Remembrance After Giving Peace Of Prayer.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_RemembranceAfterGivingPeaceOfPrayer() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_RemembranceAfterGivingPeaceOfPrayer", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Remembrance At Sitting Or Gathering.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_RemembranceAtSittingOrGathering() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_RemembranceAtSittingOrGathering", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Remembrance At Sitting Or Gathering.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_RemembranceAtSittingOrGathering1() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_RemembranceAtSittingOrGathering1", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Remembrance Before Sleeping.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_RemembranceBeforeSleeping() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_RemembranceBeforeSleeping", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Remembrance Before Sleeping.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_RemembranceBeforeSleeping1() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_RemembranceBeforeSleeping1", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Remembrance Before Sleeping.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_RemembranceBeforeSleeping10() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_RemembranceBeforeSleeping10", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Remembrance Before Sleeping.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_RemembranceBeforeSleeping11() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_RemembranceBeforeSleeping11", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Remembrance Before Sleeping.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_RemembranceBeforeSleeping12() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_RemembranceBeforeSleeping12", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Remembrance Before Sleeping.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_RemembranceBeforeSleeping13() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_RemembranceBeforeSleeping13", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Remembrance Before Sleeping.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_RemembranceBeforeSleeping2() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_RemembranceBeforeSleeping2", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Remembrance Before Sleeping.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_RemembranceBeforeSleeping3() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_RemembranceBeforeSleeping3", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Remembrance Before Sleeping.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_RemembranceBeforeSleeping4() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_RemembranceBeforeSleeping4", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Remembrance Before Sleeping.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_RemembranceBeforeSleeping5() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_RemembranceBeforeSleeping5", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Remembrance Before Sleeping.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_RemembranceBeforeSleeping6() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_RemembranceBeforeSleeping6", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Remembrance Before Sleeping.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_RemembranceBeforeSleeping7() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_RemembranceBeforeSleeping7", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Remembrance Before Sleeping.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_RemembranceBeforeSleeping8() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_RemembranceBeforeSleeping8", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Remembrance Before Sleeping.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_RemembranceBeforeSleeping9() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_RemembranceBeforeSleeping9", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Remembrance Fifth.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_RemembranceFifth() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_RemembranceFifth", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to I have accepted Allah as a Lord, Islam as a way of life, and Muhammad (peace be upon him) as a prophet of Allah.  (Recite in Arabic three times)..
+        '''</summary>
+        Public ReadOnly Property IslamInfo_RemembranceFifthTrans() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_RemembranceFifthTrans", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to I have accepted|Allah|as a Lord,|Islam|as a way of life,|and Muhammad (peace be upon him)|as a prophet|and messenger (of Allah).|(Recite in Arabic three times)..
+        '''</summary>
+        Public ReadOnly Property IslamInfo_RemembranceFifthWordByWord() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_RemembranceFifthWordByWord", resourceCulture)
             End Get
         End Property
         
@@ -9367,6 +20539,33 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Remembrance Fourth.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_RemembranceFourth() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_RemembranceFourth", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to O Allah! Exalt and have mercy on Muhammad (peace and blessings upon him), your servant, your Prophet, and your Messenger, and upon his family and companions, and grant them peace..
+        '''</summary>
+        Public ReadOnly Property IslamInfo_RemembranceFourthTrans() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_RemembranceFourthTrans", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to O Allah!|Exalt and have mercy|on||Muhammad (peace and blessings upon him),|your servant,|your Prophet,|and your Messenger,|the Prophet|illiterate|and upon|his family|and companions,|and grant them peace..
+        '''</summary>
+        Public ReadOnly Property IslamInfo_RemembranceFourthWordByWord() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_RemembranceFourthWordByWord", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Remembrance Second.
         '''</summary>
         Public ReadOnly Property IslamInfo_RemembranceSecond() As String
@@ -9390,6 +20589,60 @@ Namespace My.Resources
         Public ReadOnly Property IslamInfo_RemembranceSecondWordByWord() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_RemembranceSecondWordByWord", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Remembrance Seventh.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_RemembranceSeventh() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_RemembranceSeventh", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to O Allah! We seek refuge in You from associating anything other with you while we know it, and we seek repentance for associating something other with you while we don’t know it..
+        '''</summary>
+        Public ReadOnly Property IslamInfo_RemembranceSeventhTrans() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_RemembranceSeventhTrans", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to O Allah!||We seek refuge|in You|from||associating other|with you|anything|while we know it,|and we seek repentance|for associating something other with you|not|while we know it..
+        '''</summary>
+        Public ReadOnly Property IslamInfo_RemembranceSeventhWordByWord() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_RemembranceSeventhWordByWord", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Remembrance Sixth.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_RemembranceSixth() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_RemembranceSixth", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to O my Lord! All praise is due to you as is befitting to your glorious presence and your great sovereignty..
+        '''</summary>
+        Public ReadOnly Property IslamInfo_RemembranceSixthTrans() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_RemembranceSixthTrans", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to O|my Lord!|to you|All praise is due|as|is befitting|to your glorious|presence|and your great|sovereignty..
+        '''</summary>
+        Public ReadOnly Property IslamInfo_RemembranceSixthWordByWord() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_RemembranceSixthWordByWord", resourceCulture)
             End Get
         End Property
         
@@ -9421,6 +20674,42 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Reminder Remembrance.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ReminderRemembrance() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ReminderRemembrance", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Rendering Incapable Powerless.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_RenderingIncapablePowerless() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_RenderingIncapablePowerless", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Repeatedly.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Repeatedly() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Repeatedly", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Repent Accept Repentance.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_RepentAcceptRepentance() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_RepentAcceptRepentance", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Repentance.
         '''</summary>
         Public ReadOnly Property IslamInfo_Repentance() As String
@@ -9435,6 +20724,69 @@ Namespace My.Resources
         Public ReadOnly Property IslamInfo_Repetition() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_Repetition", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Reporters Of Many Traditions.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ReportersOfManyTraditions() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ReportersOfManyTraditions", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Representative Stem.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_RepresentativeStem() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_RepresentativeStem", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Representative Stems.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_RepresentativeStems() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_RepresentativeStems", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Requirement.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Requirement() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Requirement", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Respect.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Respect() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Respect", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Response Particles.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ResponseParticles() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ResponseParticles", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Response Statement After Condition.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ResponseStatementAfterCondition() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ResponseStatementAfterCondition", resourceCulture)
             End Get
         End Property
         
@@ -9484,11 +20836,74 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Resurrection.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Resurrection() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Resurrection", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Retaliation.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Retaliation() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Retaliation", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Retraction Particle.
         '''</summary>
         Public ReadOnly Property IslamInfo_RetractionParticle() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_RetractionParticle", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Returning A Greeting To A Disbeliever.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ReturningAGreetingToADisbeliever() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ReturningAGreetingToADisbeliever", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Returning A Supplication After Having Bestowed A Gift Or Charity Upon Someone.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ReturningASupplicationAfterHavingBestowedAGiftOrCharityUponSomeone() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ReturningASupplicationAfterHavingBestowedAGiftOrCharityUponSomeone", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Returning Supplication For Forgiveness.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ReturningSupplicationForForgiveness() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ReturningSupplicationForForgiveness", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Returning Supplication For Forgiveness.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ReturningSupplicationForForgiveness1() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ReturningSupplicationForForgiveness1", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Revelation.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Revelation() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Revelation", resourceCulture)
             End Get
         End Property
         
@@ -9511,11 +20926,74 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Revelatory Manifestations.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_RevelatoryManifestations() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_RevelatoryManifestations", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Reward.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Reward() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Reward", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Rhyming Prose.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_RhymingProse() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_RhymingProse", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Riad Al-Jannah.
         '''</summary>
         Public ReadOnly Property IslamInfo_RiadAlJannah() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_RiadAlJannah", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Rial Sign.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_RialSign() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_RialSign", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Ridicule Mock.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_RidiculeMock() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_RidiculeMock", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Right.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Right() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Right", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Right Curly Bracket.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_RightCurlyBracket() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_RightCurlyBracket", resourceCulture)
             End Get
         End Property
         
@@ -9538,6 +21016,114 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Righteous Person.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_RighteousPerson() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_RighteousPerson", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Right Oath.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_RightOath() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_RightOath", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Right Of Allah.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_RightOfAllah() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_RightOfAllah", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Right Pointing Double Angle Quotation Mark.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_RightPointingDoubleAngleQuotationMark() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_RightPointingDoubleAngleQuotationMark", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Right Square Bracket.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_RightSquareBracket() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_RightSquareBracket", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Right To Left Embedding.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_RightToLeftEmbedding() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_RightToLeftEmbedding", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Right To Left Mark.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_RightToLeftMark() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_RightToLeftMark", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Right To Left Override.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_RightToLeftOverride() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_RightToLeftOverride", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Ritually Cleaning Head Feet.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_RituallyCleaningHeadFeet() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_RituallyCleaningHeadFeet", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Ritually Impure.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_RituallyImpure() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_RituallyImpure", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Ritual Purity.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_RitualPurity() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_RitualPurity", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Rivals.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Rivals() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Rivals", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to River.
         '''</summary>
         Public ReadOnly Property IslamInfo_River() As String
@@ -9556,6 +21142,42 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Room Quarter.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_RoomQuarter() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_RoomQuarter", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Rope.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Rope() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Rope", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Rule In Implied Meaning Agrees With Stated Meaning.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_RuleInImpliedMeaningAgreesWithStatedMeaning() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_RuleInImpliedMeaningAgreesWithStatedMeaning", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Rule In Implied Meaning Is Contrapositive To Stated Meaning.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_RuleInImpliedMeaningIsContrapositiveToStatedMeaning() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_RuleInImpliedMeaningIsContrapositiveToStatedMeaning", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Rules Of Recitation.
         '''</summary>
         Public ReadOnly Property IslamInfo_RulesOfRecitation() As String
@@ -9565,11 +21187,56 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Ruling.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Ruling() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Ruling", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Rulings Not Part Of Tradition.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_RulingsNotPartOfTradition() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_RulingsNotPartOfTradition", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Ruqayyah Binti Muhammad.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_RuqayyahBintiMuhammad() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_RuqayyahBintiMuhammad", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Saad bin Waad.
         '''</summary>
         Public ReadOnly Property IslamInfo_SaadBinWaad() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_SaadBinWaad", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Saalim.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Saalim() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Saalim", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Saalim Mawlaa Abee Huthayfah.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_SaalimMawlaaAbeeHuthayfah() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_SaalimMawlaaAbeeHuthayfah", resourceCulture)
             End Get
         End Property
         
@@ -9601,6 +21268,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Sacrificial Animal For Newborn.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_SacrificialAnimalForNewborn() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_SacrificialAnimalForNewborn", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Sad Bin Abi Waqqas.
         '''</summary>
         Public ReadOnly Property IslamInfo_SadBinAbiWaqqas() As String
@@ -9624,6 +21300,24 @@ Namespace My.Resources
         Public ReadOnly Property IslamInfo_SaeedBinZaid() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_SaeedBinZaid", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Safa.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Safa() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Safa", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Safeeyah.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Safeeyah() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Safeeyah", resourceCulture)
             End Get
         End Property
         
@@ -9660,6 +21354,33 @@ Namespace My.Resources
         Public ReadOnly Property IslamInfo_SahihMuslim() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_SahihMuslim", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Said Publicly.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_SaidPublicly() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_SaidPublicly", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Said To One Offering A Drink Or The One Who Intended To Do That.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_SaidToOneOfferingADrinkOrTheOneWhoIntendedToDoThat() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_SaidToOneOfferingADrinkOrTheOneWhoIntendedToDoThat", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Sainthood.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Sainthood() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Sainthood", resourceCulture)
             End Get
         End Property
         
@@ -9718,6 +21439,24 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Salutations Upon You Of Allah.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_SalutationsUponYouOfAllah() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_SalutationsUponYouOfAllah", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Same Equal Level Fair.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_SameEqualLevelFair() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_SameEqualLevelFair", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Satan.
         '''</summary>
         Public ReadOnly Property IslamInfo_Satan() As String
@@ -9736,11 +21475,38 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Saudi Arabia.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_SaudiArabia() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_SaudiArabia", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Sawda Bint Zama.
         '''</summary>
         Public ReadOnly Property IslamInfo_SawdaBintZama() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_SawdaBintZama", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Saying What Opponent Wants To Hear To Deflect Suspicion From Self.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_SayingWhatOpponentWantsToHearToDeflectSuspicionFromSelf() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_SayingWhatOpponentWantsToHearToDeflectSuspicionFromSelf", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Say Speak.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_SaySpeak() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_SaySpeak", resourceCulture)
             End Get
         End Property
         
@@ -9772,6 +21538,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to School.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_School() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_School", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to School of jurisprudence.
         '''</summary>
         Public ReadOnly Property IslamInfo_SchoolOfJurisprudence() As String
@@ -9781,11 +21556,65 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Science Of Grammar.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ScienceOfGrammar() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ScienceOfGrammar", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Scientific Exegisis.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ScientificExegisis() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ScientificExegisis", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Scorching.
         '''</summary>
         Public ReadOnly Property IslamInfo_Scorching() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_Scorching", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Script Lengthening.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ScriptLengthening() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ScriptLengthening", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Sea.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Sea() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Sea", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Sea Large River.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_SeaLargeRiver() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_SeaLargeRiver", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Second.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Second() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Second", resourceCulture)
             End Get
         End Property
         
@@ -9817,11 +21646,74 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Second Particle Possession Construction.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_SecondParticlePossessionConstruction() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_SecondParticlePossessionConstruction", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Second Person.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_SecondPerson() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_SecondPerson", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Sections.
         '''</summary>
         Public ReadOnly Property IslamInfo_Sections() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_Sections", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Seeking Forgiveness And Repentance.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_SeekingForgivenessAndRepentance() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_SeekingForgivenessAndRepentance", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Seeking Forgiveness And Repentance.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_SeekingForgivenessAndRepentance3() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_SeekingForgivenessAndRepentance3", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to I seek the forgiveness of Allah the Mighty, Whom there is none worthy of worship except Him, the Living, the Eternal, and I repent to Him..
+        '''</summary>
+        Public ReadOnly Property IslamInfo_SeekingForgivenessAndRepentance3Trans() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_SeekingForgivenessAndRepentance3Trans", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to I seek the forgiveness|of Allah|the Mighty,|Whom|there is none|worthy of worship|except|Him,|the Living,|the Eternal,|and I repent|to Him..
+        '''</summary>
+        Public ReadOnly Property IslamInfo_SeekingForgivenessAndRepentance3WordByWord() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_SeekingForgivenessAndRepentance3WordByWord", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Seek Oppress Is Unjust.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_SeekOppressIsUnjust() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_SeekOppressIsUnjust", resourceCulture)
             End Get
         End Property
         
@@ -9858,6 +21750,15 @@ Namespace My.Resources
         Public ReadOnly Property IslamInfo_Self() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_Self", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Sell.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Sell() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Sell", resourceCulture)
             End Get
         End Property
         
@@ -9943,6 +21844,51 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Servant Boy.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ServantBoy() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ServantBoy", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Settling A Debt.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_SettlingADebt() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_SettlingADebt", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Settling Of Rights Between Believers.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_SettlingOfRightsBetweenBelievers() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_SettlingOfRightsBetweenBelievers", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Severe Strong.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_SevereStrong() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_SevereStrong", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Shade.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Shade() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Shade", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Shafii.
         '''</summary>
         Public ReadOnly Property IslamInfo_Shafii() As String
@@ -9952,11 +21898,74 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Shaky.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Shaky() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Shaky", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Shaving The Pubic Hair.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ShavingThePubicHair() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ShavingThePubicHair", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Shawl Like Cloth Covering Head And Shoulders Worn By Muslim Women.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ShawlLikeClothCoveringHeadAndShouldersWornByMuslimWomen() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ShawlLikeClothCoveringHeadAndShouldersWornByMuslimWomen", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to She Her It.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_SheHerIt() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_SheHerIt", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Sheikh.
         '''</summary>
         Public ReadOnly Property IslamInfo_Sheikh() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_Sheikh", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to She Who.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_SheWho() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_SheWho", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Shia.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Shia() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Shia", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Short.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Short() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Short", resourceCulture)
             End Get
         End Property
         
@@ -9979,11 +21988,101 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Should.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Should() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Should", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Showing Off.
         '''</summary>
         Public ReadOnly Property IslamInfo_ShowingOff() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_ShowingOff", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Sick Person.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_SickPerson() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_SickPerson", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Side.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Side() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Side", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Sight.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Sight() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Sight", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Sign.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Sign() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Sign", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Silver.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Silver() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Silver", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Silver Of2.975 Grams.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_SilverOf2_975Grams() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_SilverOf2.975Grams", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Simile.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Simile() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Simile", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Simile Proverb Metaphor.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_SimileProverbMetaphor() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_SimileProverbMetaphor", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Similitude.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Similitude() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Similitude", resourceCulture)
             End Get
         End Property
         
@@ -9997,11 +22096,56 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Sincerity.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Sincerity() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Sincerity", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Singular Noun.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_SingularNoun() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_SingularNoun", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Sir.
         '''</summary>
         Public ReadOnly Property IslamInfo_Sir() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_Sir", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Site For Entering State Of Ritual Consecration.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_SiteForEnteringStateOfRitualConsecration() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_SiteForEnteringStateOfRitualConsecration", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Sit Remain Behind.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_SitRemainBehind() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_SitRemainBehind", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Sitting.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Sitting() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Sitting", resourceCulture)
             End Get
         End Property
         
@@ -10033,6 +22177,24 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Skin.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Skin() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Skin", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Sky.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Sky() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Sky", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Slaughter.
         '''</summary>
         Public ReadOnly Property IslamInfo_Slaughter() As String
@@ -10051,6 +22213,24 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Slow Measured Rhythmic Tones.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_SlowMeasuredRhythmicTones() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_SlowMeasuredRhythmicTones", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Slow Practice Recitation.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_SlowPracticeRecitation() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_SlowPracticeRecitation", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Small Bounce.
         '''</summary>
         Public ReadOnly Property IslamInfo_SmallBounce() As String
@@ -10060,11 +22240,56 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Small Curl Like Diacritic Placed Above Letter To Represent Short U.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_SmallCurlLikeDiacriticPlacedAboveLetterToRepresentShortU() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_SmallCurlLikeDiacriticPlacedAboveLetterToRepresentShortU", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Small Diagonal Line Placed Above Letter To Represent Short A.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_SmallDiagonalLinePlacedAboveLetterToRepresentShortA() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_SmallDiagonalLinePlacedAboveLetterToRepresentShortA", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Small Diagonal Line Placed Below Letter To Represent Short I.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_SmallDiagonalLinePlacedBelowLetterToRepresentShortI() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_SmallDiagonalLinePlacedBelowLetterToRepresentShortI", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Small Young.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_SmallYoung() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_SmallYoung", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Smoke Of Hell.
         '''</summary>
         Public ReadOnly Property IslamInfo_SmokeOfHell() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_SmokeOfHell", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Sock Stocking.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_SockStocking() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_SockStocking", resourceCulture)
             End Get
         End Property
         
@@ -10096,11 +22321,155 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Some Of After.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_SomeOfAfter() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_SomeOfAfter", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Something Similar.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_SomethingSimilar() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_SomethingSimilar", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Son.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Son() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Son", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to So That.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_SoThat() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_SoThat", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Soul.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Soul() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Soul", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Soul Spirit.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_SoulSpirit() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_SoulSpirit", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Soul states.
         '''</summary>
         Public ReadOnly Property IslamInfo_SoulStates() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_SoulStates", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Sound Feminine Plural.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_SoundFemininePlural() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_SoundFemininePlural", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Sound Feminine Plural Accusative Possessive.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_SoundFemininePluralAccusativePossessive() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_SoundFemininePluralAccusativePossessive", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Sound Feminine Plural Nominative.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_SoundFemininePluralNominative() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_SoundFemininePluralNominative", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Sound Masculine Plural.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_SoundMasculinePlural() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_SoundMasculinePlural", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Sound Masculine Plural Accusative Possessive.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_SoundMasculinePluralAccusativePossessive() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_SoundMasculinePluralAccusativePossessive", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Sound Masculine Plural Nominative.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_SoundMasculinePluralNominative() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_SoundMasculinePluralNominative", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Space.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Space() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Space", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Special Feminine.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_SpecialFeminine() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_SpecialFeminine", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Specific.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Specific() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Specific", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Specification.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Specification() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Specification", resourceCulture)
             End Get
         End Property
         
@@ -10114,6 +22483,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Speech Of Allah.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_SpeechOfAllah() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_SpeechOfAllah", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Sporadic.
         '''</summary>
         Public ReadOnly Property IslamInfo_Sporadic() As String
@@ -10123,11 +22501,83 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Sri Lanka.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_SriLanka() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_SriLanka", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Stablization Lengthening.
         '''</summary>
         Public ReadOnly Property IslamInfo_StablizationLengthening() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_StablizationLengthening", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Standing.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Standing() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Standing", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Star.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Star() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Star", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Stated.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Stated() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Stated", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Stated Simile.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_StatedSimile() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_StatedSimile", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Stateof Major Ritual Impurity.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_StateofMajorRitualImpurity() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_StateofMajorRitualImpurity", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to State Of Ritual Consecration For Pilgrimage.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_StateOfRitualConsecrationForPilgrimage() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_StateOfRitualConsecrationForPilgrimage", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to State Of Ritual Impurity.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_StateOfRitualImpurity() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_StateOfRitualImpurity", resourceCulture)
             End Get
         End Property
         
@@ -10159,6 +22609,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Step Foot.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_StepFoot() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_StepFoot", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Stingy.
         '''</summary>
         Public ReadOnly Property IslamInfo_Stingy() As String
@@ -10168,11 +22627,29 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Stomach.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Stomach() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Stomach", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Stopping.
         '''</summary>
         Public ReadOnly Property IslamInfo_Stopping() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_Stopping", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Stopping Or Lodging Somewhere.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_StoppingOrLodgingSomewhere() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_StoppingOrLodgingSomewhere", resourceCulture)
             End Get
         End Property
         
@@ -10204,6 +22681,70 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Strike Hit Travel In Through Went Forth Strove Give Example Impose Upon Struck Upon Overshadow Mention Give Example.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_StrikeHitTravelInThroughWentForthStroveGiveExampleImposeUponStruckUponOvershadowMentionGiveExample() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_StrikeHitTravelInThroughWentForthStroveGiveExampleImposeUponStruckUponO"& _ 
+                        "vershadowMentionGiveExample", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Strong Connection.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_StrongConnection() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_StrongConnection", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Stronger Reason Argument.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_StrongerReasonArgument() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_StrongerReasonArgument", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Strong Helper.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_StrongHelper() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_StrongHelper", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Student.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Student() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Student", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Study Of Rhetoric Eloquence.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_StudyOfRhetoricEloquence() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_StudyOfRhetoricEloquence", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Subject Nominal Sentence.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_SubjectNominalSentence() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_SubjectNominalSentence", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Sublime and Mighty.
         '''</summary>
         Public ReadOnly Property IslamInfo_SublimeAndMighty() As String
@@ -10222,11 +22763,56 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Subordinators Beginning Conditional Clauses.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_SubordinatorsBeginningConditionalClauses() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_SubordinatorsBeginningConditionalClauses", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Substitute Lengthening.
         '''</summary>
         Public ReadOnly Property IslamInfo_SubstituteLengthening() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_SubstituteLengthening", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Substitution Of APart For AWhole.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_SubstitutionOfAPartForAWhole() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_SubstitutionOfAPartForAWhole", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Subtle.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Subtle() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Subtle", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Sudan.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Sudan() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Sudan", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Sudden Shifts In Grammatical Constructions.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_SuddenShiftsInGrammaticalConstructions() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_SuddenShiftsInGrammaticalConstructions", resourceCulture)
             End Get
         End Property
         
@@ -10240,11 +22826,47 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Suggestion.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Suggestion() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Suggestion", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Suhayl Bin Amr.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_SuhaylBinAmr() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_SuhaylBinAmr", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Sukoon.
         '''</summary>
         Public ReadOnly Property IslamInfo_Sukoon() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_Sukoon", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Sumayya Binti Khayatt.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_SumayyaBintiKhayatt() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_SumayyaBintiKhayatt", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Sun.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Sun() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Sun", resourceCulture)
             End Get
         End Property
         
@@ -10303,6 +22925,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Supererogatory Performance.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_SupererogatoryPerformance() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_SupererogatoryPerformance", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Supplemental Particle.
         '''</summary>
         Public ReadOnly Property IslamInfo_SupplementalParticle() As String
@@ -10348,6 +22979,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Supplication And Prayers For Morning And Afternoon.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_SupplicationAndPrayersForMorningAndAfternoon() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_SupplicationAndPrayersForMorningAndAfternoon", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Supplication for arriving at Makkah.
         '''</summary>
         Public ReadOnly Property IslamInfo_SupplicationForArrivingAtMakkah() As String
@@ -10384,6 +23024,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Supreme.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Supreme() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Supreme", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Surprise Particle.
         '''</summary>
         Public ReadOnly Property IslamInfo_SurpriseParticle() As String
@@ -10393,11 +23042,56 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Swear.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Swear() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Swear", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Swearing Off Ones Wife.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_SwearingOffOnesWife() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_SwearingOffOnesWife", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Symbolic Interpretation Apparent.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_SymbolicInterpretationApparent() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_SymbolicInterpretationApparent", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to System Of Melodic Modes.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_SystemOfMelodicModes() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_SystemOfMelodicModes", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Taaif.
         '''</summary>
         Public ReadOnly Property IslamInfo_Taaif() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_Taaif", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Table.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Table() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Table", resourceCulture)
             End Get
         End Property
         
@@ -10429,6 +23123,24 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Tale Story.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_TaleStory() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_TaleStory", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Talha.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Talha() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Talha", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Talha Bin Obaidullah.
         '''</summary>
         Public ReadOnly Property IslamInfo_TalhaBinObaidullah() As String
@@ -10447,11 +23159,155 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Tall.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Tall() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Tall", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Teacher.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Teacher() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Teacher", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Tear.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Tear() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Tear", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Temporary Marriage.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_TemporaryMarriage() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_TemporaryMarriage", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Term.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Term() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Term", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Terminating.
         '''</summary>
         Public ReadOnly Property IslamInfo_Terminating() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_Terminating", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Testimony.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Testimony() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Testimony", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Text.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Text() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Text", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Textual.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Textual() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Textual", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Thanks All Praise And Thanks Is To Allah.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ThanksAllPraiseAndThanksIsToAllah() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ThanksAllPraiseAndThanksIsToAllah", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Than The One Who From Those Who.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ThanTheOneWhoFromThoseWho() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ThanTheOneWhoFromThoseWho", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to That.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_That() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_That", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to That Day.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ThatDay() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ThatDay", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to That Not So As Not To May Not.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ThatNotSoAsNotToMayNot() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ThatNotSoAsNotToMayNot", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to That Surely Verily.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ThatSurelyVerily() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ThatSurelyVerily", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to That To.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ThatTo() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ThatTo", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to The.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_The() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_The", resourceCulture)
             End Get
         End Property
         
@@ -10654,6 +23510,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to The Day Of Arafah.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_TheDayOfArafah() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_TheDayOfArafah", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to The Distressor.
         '''</summary>
         Public ReadOnly Property IslamInfo_TheDistressor() As String
@@ -10731,6 +23596,15 @@ Namespace My.Resources
         Public ReadOnly Property IslamInfo_TheEternalPossessorOfSovereignty() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_TheEternalPossessorOfSovereignty", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to The Etiquette Of Praising A Fellow Muslim.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_TheEtiquetteOfPraisingAFellowMuslim() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_TheEtiquetteOfPraisingAFellowMuslim", resourceCulture)
             End Get
         End Property
         
@@ -10951,6 +23825,24 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Their.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Their() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Their", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Their Two.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_TheirTwo() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_TheirTwo", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to The Just One.
         '''</summary>
         Public ReadOnly Property IslamInfo_TheJustOne() As String
@@ -11028,6 +23920,42 @@ Namespace My.Resources
         Public ReadOnly Property IslamInfo_TheMostSacred() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_TheMostSacred", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Then.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Then() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Then", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Then He Has Disbelieved.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ThenHeHasDisbelieved() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ThenHeHasDisbelieved", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Then Thus Therefore.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ThenThusTherefore() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ThenThusTherefore", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Theology.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Theology() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Theology", resourceCulture)
             End Get
         End Property
         
@@ -11113,6 +24041,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to The Prayers Of Glorious Allah Upon Him His Family And Peace.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ThePrayersOfGloriousAllahUponHimHisFamilyAndPeace() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ThePrayersOfGloriousAllahUponHimHisFamilyAndPeace", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to The Preserver of Safety.
         '''</summary>
         Public ReadOnly Property IslamInfo_ThePreserverOfSafety() As String
@@ -11167,6 +24104,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to There.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_There() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_There", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to The Reckoning One.
         '''</summary>
         Public ReadOnly Property IslamInfo_TheReckoningOne() As String
@@ -11181,6 +24127,51 @@ Namespace My.Resources
         Public ReadOnly Property IslamInfo_TheReducer() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_TheReducer", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to There Is No.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ThereIsNo() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ThereIsNo", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to There Is No Beast.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ThereIsNoBeast() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ThereIsNoBeast", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to There Is No Power And No Might Except With Allah.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ThereIsNoPowerAndNoMightExceptWithAllah() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ThereIsNoPowerAndNoMightExceptWithAllah", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to There Is No Power And No Might Except With Allah Most High Most Magnificent.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ThereIsNoPowerAndNoMightExceptWithAllahMostHighMostMagnificent() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ThereIsNoPowerAndNoMightExceptWithAllahMostHighMostMagnificent", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to There Over There.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ThereOverThere() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ThereOverThere", resourceCulture)
             End Get
         End Property
         
@@ -11230,6 +24221,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to These.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_These() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_These", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to The Self-Subsisting One.
         '''</summary>
         Public ReadOnly Property IslamInfo_TheSelfSubsistingOne() As String
@@ -11244,6 +24244,33 @@ Namespace My.Resources
         Public ReadOnly Property IslamInfo_TheSelfSufficientOne() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_TheSelfSufficientOne", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to These Two.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_TheseTwo() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_TheseTwo", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to These Two Who.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_TheseTwoWho() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_TheseTwoWho", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to The Sick Who Have Renounced All Hope Of Life.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_TheSickWhoHaveRenouncedAllHopeOfLife() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_TheSickWhoHaveRenouncedAllHopeOfLife", resourceCulture)
             End Get
         End Property
         
@@ -11334,6 +24361,24 @@ Namespace My.Resources
         Public ReadOnly Property IslamInfo_TheSustainingOne() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_TheSustainingOne", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to The Taa Of Femininity.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_TheTaaOfFemininity() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_TheTaaOfFemininity", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to The Talbiyah.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_TheTalbiyah() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_TheTalbiyah", resourceCulture)
             End Get
         End Property
         
@@ -11617,6 +24662,33 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to They Them.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_TheyThem() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_TheyThem", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to They Will Say.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_TheyWillSay() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_TheyWillSay", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Think Listen.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ThinkListen() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ThinkListen", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Third creed - The word of Glorification (Tumjeed).
         '''</summary>
         Public ReadOnly Property IslamInfo_ThirdCreed() As String
@@ -11644,6 +24716,87 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Third Person.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ThirdPerson() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ThirdPerson", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to This.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_This() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_This", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Those.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Those() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Those", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Those Apostles.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ThoseApostles() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ThoseApostles", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Those Believing No Freedom Of Choice.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ThoseBelievingNoFreedomOfChoice() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ThoseBelievingNoFreedomOfChoice", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Those Believing No Predestination.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ThoseBelievingNoPredestination() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ThoseBelievingNoPredestination", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Those Two.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ThoseTwo() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ThoseTwo", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Those Who.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ThoseWho() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ThoseWho", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Three Letter Root Verb.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ThreeLetterRootVerb() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ThreeLetterRootVerb", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Throat.
         '''</summary>
         Public ReadOnly Property IslamInfo_Throat() As String
@@ -11662,6 +24815,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Time.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Time() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Time", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Time Adverb.
         '''</summary>
         Public ReadOnly Property IslamInfo_TimeAdverb() As String
@@ -11671,11 +24833,227 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Time Period At The Time Of For APeriod Of Time.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_TimePeriodAtTheTimeOfForAPeriodOfTime() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_TimePeriodAtTheTimeOfForAPeriodOfTime", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Time Prepositions.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_TimePrepositions() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_TimePrepositions", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to To A Disbeliever When Sneezes.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ToADisbelieverWhenSneezes() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ToADisbelieverWhenSneezes", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Today.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Today() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Today", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to To Judge Prevent Reform.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ToJudgePreventReform() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ToJudgePreventReform", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Tongue.
         '''</summary>
         Public ReadOnly Property IslamInfo_Tongue() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_Tongue", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Tongue Language.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_TongueLanguage() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_TongueLanguage", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to To One Who Does You A Favor.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ToOneWhoDoesYouAFavor() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ToOneWhoDoesYouAFavor", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to To One Who Does You A Favor.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ToOneWhoDoesYouAFavor1() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ToOneWhoDoesYouAFavor1", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to To One Who Has Offered You Some Of His Wealth.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ToOneWhoHasOfferedYouSomeOfHisWealth() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ToOneWhoHasOfferedYouSomeOfHisWealth", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to To One Who Pronounces Love For You For Allahs Sake.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ToOneWhoPronouncesLoveForYouForAllahsSake() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ToOneWhoPronouncesLoveForYouForAllahsSake", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Tooth Stick.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ToothStick() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ToothStick", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Torah.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Torah() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Torah", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to To Resemble.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ToResemble() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ToResemble", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Torment.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Torment() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Torment", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Total Negation.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_TotalNegation() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_TotalNegation", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to To The Debtor When His Debt Is Settled.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ToTheDebtorWhenHisDebtIsSettled() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ToTheDebtorWhenHisDebtIsSettled", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to To The Newly Wed.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ToTheNewlyWed() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ToTheNewlyWed", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to To Towards Up To Not Including.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ToTowardsUpToNotIncluding() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ToTowardsUpToNotIncluding", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Touch.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Touch() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Touch", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to To Ward Off The Deception Of The Obstinate Devils.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ToWardOffTheDeceptionOfTheObstinateDevils() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ToWardOffTheDeceptionOfTheObstinateDevils", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Town.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Town() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Town", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Town City.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_TownCity() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_TownCity", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Trace.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Trace() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Trace", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Trade Business Transactions.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_TradeBusinessTransactions() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_TradeBusinessTransactions", resourceCulture)
             End Get
         End Property
         
@@ -11716,6 +25094,51 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Transcendence.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Transcendence() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Transcendence", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Transcendent.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Transcendent() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Transcendent", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Transgress.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Transgress() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Transgress", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Transgression.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Transgression() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Transgression", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Transitive Verb.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_TransitiveVerb() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_TransitiveVerb", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Translation.
         '''</summary>
         Public ReadOnly Property IslamInfo_Translation() As String
@@ -11752,6 +25175,60 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Travelling.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Travelling() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Travelling", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Tread APath Insert.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_TreadAPathInsert() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_TreadAPathInsert", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Treasure.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Treasure() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Treasure", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Treaty Covenant.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_TreatyCovenant() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_TreatyCovenant", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Trial Persecution.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_TrialPersecution() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_TrialPersecution", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Tribe.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Tribe() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Tribe", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Truly from Allah we have come, and truly to Him we shall return.
         '''</summary>
         Public ReadOnly Property IslamInfo_TrulyFromAllahWeComeAndToHimWillReturn() As String
@@ -11779,11 +25256,101 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Truthful Person.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_TruthfulPerson() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_TruthfulPerson", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Truth True Right.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_TruthTrueRight() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_TruthTrueRight", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Tunisia.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Tunisia() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Tunisia", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Tunnel.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Tunnel() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Tunnel", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Turn Cause To Turn Turn To Turn Away From.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_TurnCauseToTurnTurnToTurnAwayFrom() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_TurnCauseToTurnTurnToTurnAwayFrom", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Turn Divert.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_TurnDivert() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_TurnDivert", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Turning Away.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_TurningAway() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_TurningAway", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Two Lips.
         '''</summary>
         Public ReadOnly Property IslamInfo_TwoLips() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_TwoLips", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Two Or More Names Missing From Chain Of Narration.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_TwoOrMoreNamesMissingFromChainOfNarration() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_TwoOrMoreNamesMissingFromChainOfNarration", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Two Things Resemble Each Other.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_TwoThingsResembleEachOther() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_TwoThingsResembleEachOther", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Ubayy Bin Kab.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_UbayyBinKab() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_UbayyBinKab", resourceCulture)
             End Get
         End Property
         
@@ -11806,11 +25373,56 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Umm Kulthum Binti Muhammad.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_UmmKulthumBintiMuhammad() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_UmmKulthumBintiMuhammad", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Umrah.
         '''</summary>
         Public ReadOnly Property IslamInfo_Umrah() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_Umrah", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Uncover.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Uncover() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Uncover", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Under.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Under() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Under", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Understand.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Understand() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Understand", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Understand Comprehend.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_UnderstandComprehend() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_UnderstandComprehend", resourceCulture)
             End Get
         End Property
         
@@ -11869,11 +25481,29 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Unite Unify Consolidate.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_UniteUnifyConsolidate() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_UniteUnifyConsolidate", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Unit of prayer.
         '''</summary>
         Public ReadOnly Property IslamInfo_UnitOfPrayer() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_UnitOfPrayer", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Unity Of Allah.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_UnityOfAllah() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_UnityOfAllah", resourceCulture)
             End Get
         End Property
         
@@ -11887,11 +25517,92 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Universal Prescription.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_UniversalPrescription() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_UniversalPrescription", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Unknown.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Unknown() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Unknown", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Unknown Source Narrator.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_UnknownSourceNarrator() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_UnknownSourceNarrator", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Unlawful.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Unlawful() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Unlawful", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Unseen.
         '''</summary>
         Public ReadOnly Property IslamInfo_Unseen() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_Unseen", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Until.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Until() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Until", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Unusual Quranic Terms.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_UnusualQuranicTerms() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_UnusualQuranicTerms", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Unveiling.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Unveiling() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Unveiling", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Upon Breaking Fast.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_UponBreakingFast() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_UponBreakingFast", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Upon Committing A Sin.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_UponCommittingASin() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_UponCommittingASin", resourceCulture)
             End Get
         End Property
         
@@ -11968,20 +25679,29 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Glory is to You, O Allah, and praise; I bear witness that there is none worthy of worship but You.  I seek Your forgiveness and turn to You in repentance..
+        '''  Looks up a localized string similar to Upon Completing The Meal.
         '''</summary>
-        Public ReadOnly Property IslamInfo_UponCompletingAblution3Trans() As String
+        Public ReadOnly Property IslamInfo_UponCompletingTheMeal() As String
             Get
-                Return ResourceManager.GetString("IslamInfo_UponCompletingAblution3Trans", resourceCulture)
+                Return ResourceManager.GetString("IslamInfo_UponCompletingTheMeal", resourceCulture)
             End Get
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Glory is to You|O Allah|and praise|I bear witness|that|there is none|worthy of worship|but|You|I seek Your forgiveness|and turn in repentance|to You.
+        '''  Looks up a localized string similar to Upon Encountering An Enemy Or Those Of Authority.
         '''</summary>
-        Public ReadOnly Property IslamInfo_UponCompletingAblution3WordByWord() As String
+        Public ReadOnly Property IslamInfo_UponEncounteringAnEnemyOrThoseOfAuthority() As String
             Get
-                Return ResourceManager.GetString("IslamInfo_UponCompletingAblution3WordByWord", resourceCulture)
+                Return ResourceManager.GetString("IslamInfo_UponEncounteringAnEnemyOrThoseOfAuthority", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Upon Entering A Town Or Village.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_UponEnteringATownOrVillage() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_UponEnteringATownOrVillage", resourceCulture)
             End Get
         End Property
         
@@ -12058,6 +25778,42 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Upon Experiencing Fear Unrest Apprehensiveness During Sleep.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_UponExperiencingFearUnrestApprehensivenessDuringSleep() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_UponExperiencingFearUnrestApprehensivenessDuringSleep", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Upon Hearing A Rooster Crow Or The Braying Of A Donkey.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_UponHearingARoosterCrowOrTheBrayingOfADonkey() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_UponHearingARoosterCrowOrTheBrayingOfADonkey", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Upon Hearing The Barking Of Dogs At Night.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_UponHearingTheBarkingOfDogsAtNight() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_UponHearingTheBarkingOfDogsAtNight", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Upon Hearing Thunder.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_UponHearingThunder() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_UponHearingThunder", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Upon him be peace.
         '''</summary>
         Public ReadOnly Property IslamInfo_UponHimBePeace() As String
@@ -12072,6 +25828,15 @@ Namespace My.Resources
         Public ReadOnly Property IslamInfo_UponHimBePeaceAbbr() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_UponHimBePeaceAbbr", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Upon Him One Thousand Prayers And Peace.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_UponHimOneThousandPrayersAndPeace() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_UponHimOneThousandPrayersAndPeace", resourceCulture)
             End Get
         End Property
         
@@ -12112,6 +25877,96 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Upon On.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_UponOn() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_UponOn", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Upon Receiving Pleasant News.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_UponReceivingPleasantNews() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_UponReceivingPleasantNews", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Upon Receiving Pleasing Or Displeasing News.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_UponReceivingPleasingOrDispleasingNews() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_UponReceivingPleasingOrDispleasingNews", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Upon Rising From Bowing.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_UponRisingFromBowing() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_UponRisingFromBowing", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Upon Seeing A Bad Dream.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_UponSeeingABadDream() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_UponSeeingABadDream", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Upon Seeing Early Or Premature Fruit.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_UponSeeingEarlyOrPrematureFruit() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_UponSeeingEarlyOrPrematureFruit", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Upon Seeing Someone In Trial Or Tribulation.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_UponSeeingSomeoneInTrialOrTribulation() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_UponSeeingSomeoneInTrialOrTribulation", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Upon Seeing Someone In Trial Or Tribulation.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_UponSeeingSomeoneInTrialOrTribulation1() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_UponSeeingSomeoneInTrialOrTribulation1", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Upon Sighting The Crescent Moon.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_UponSightingTheCrescentMoon() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_UponSightingTheCrescentMoon", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Upon Sneezing.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_UponSneezing() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_UponSneezing", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Usury.
         '''</summary>
         Public ReadOnly Property IslamInfo_Usury() As String
@@ -12139,11 +25994,209 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Uthmanic Script.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_UthmanicScript() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_UthmanicScript", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Vaginal Bleeding Other Than Menstruation.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_VaginalBleedingOtherThanMenstruation() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_VaginalBleedingOtherThanMenstruation", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Vegetation Plant.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_VegetationPlant() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_VegetationPlant", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Veil Covering Face With Two Holes To Permit Vision.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_VeilCoveringFaceWithTwoHolesToPermitVision() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_VeilCoveringFaceWithTwoHolesToPermitVision", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Verb.
         '''</summary>
         Public ReadOnly Property IslamInfo_Verb() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_Verb", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Verbal Noun.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_VerbalNoun() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_VerbalNoun", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Verbal Sentence.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_VerbalSentence() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_VerbalSentence", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Verb Family I.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_VerbFamilyI() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_VerbFamilyI", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Verb Family IDoer Noun.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_VerbFamilyIDoerNoun() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_VerbFamilyIDoerNoun", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Verb Family II.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_VerbFamilyII() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_VerbFamilyII", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Verb Family III.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_VerbFamilyIII() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_VerbFamilyIII", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Verb Family IV.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_VerbFamilyIV() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_VerbFamilyIV", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Verb Family V.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_VerbFamilyV() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_VerbFamilyV", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Verb Family VI.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_VerbFamilyVI() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_VerbFamilyVI", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Verb Family VII.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_VerbFamilyVII() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_VerbFamilyVII", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Verb Family VIII.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_VerbFamilyVIII() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_VerbFamilyVIII", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Verb Family X.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_VerbFamilyX() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_VerbFamilyX", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Verb Family XI.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_VerbFamilyXI() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_VerbFamilyXI", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Verb In The Past Tense.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_VerbInThePastTense() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_VerbInThePastTense", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Verbs.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Verbs() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Verbs", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Verily And Its Sisters.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_VerilyAndItsSisters() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_VerilyAndItsSisters", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Verily Is But.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_VerilyIsBut() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_VerilyIsBut", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Verily Truly Surely.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_VerilyTrulySurely() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_VerilyTrulySurely", resourceCulture)
             End Get
         End Property
         
@@ -12193,6 +26246,33 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Verses Of Refuge.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_VersesOfRefuge() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_VersesOfRefuge", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Very.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Very() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Very", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Very Family IPassive Noun.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_VeryFamilyIPassiveNoun() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_VeryFamilyIPassiveNoun", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Vibration.
         '''</summary>
         Public ReadOnly Property IslamInfo_Vibration() As String
@@ -12211,6 +26291,24 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Visiting The Graves.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_VisitingTheGraves() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_VisitingTheGraves", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Vocabulary.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Vocabulary() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Vocabulary", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Vocative Particle.
         '''</summary>
         Public ReadOnly Property IslamInfo_VocativeParticle() As String
@@ -12220,11 +26318,38 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Voice.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Voice() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Voice", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Voluntary Kindness.
         '''</summary>
         Public ReadOnly Property IslamInfo_VoluntaryKindness() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_VoluntaryKindness", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Vomit.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Vomit() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Vomit", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Vow.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Vow() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Vow", resourceCulture)
             End Get
         End Property
         
@@ -12319,6 +26444,33 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Vowel Letter.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_VowelLetter() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_VowelLetter", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Vowels.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Vowels() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Vowels", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Vulgar Word.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_VulgarWord() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_VulgarWord", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Wahhabi.
         '''</summary>
         Public ReadOnly Property IslamInfo_Wahhabi() As String
@@ -12328,11 +26480,128 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Waiting Period.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_WaitingPeriod() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_WaitingPeriod", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Wall.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Wall() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Wall", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Waraqah Bin Nawfal.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_WaraqahBinNawfal() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_WaraqahBinNawfal", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Warm Friend Boiling Water.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_WarmFriendBoilingWater() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_WarmFriendBoilingWater", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Warner.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Warner() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Warner", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Watch See.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_WatchSee() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_WatchSee", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Water.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Water() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Water", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Way.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Way() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Way", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Way Path.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_WayPath() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_WayPath", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Weak.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Weak() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Weak", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Weakness.
         '''</summary>
         Public ReadOnly Property IslamInfo_Weakness() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_Weakness", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Wealth.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Wealth() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Wealth", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Week.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Week() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Week", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to We Have Put Trust In Allah.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_WeHavePutTrustInAllah() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_WeHavePutTrustInAllah", resourceCulture)
             End Get
         End Property
         
@@ -12351,6 +26620,213 @@ Namespace My.Resources
         Public ReadOnly Property IslamInfo_WeightedCompulsoryLengtheningWords() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_WeightedCompulsoryLengtheningWords", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Weight Measure Of130320 Grams.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_WeightMeasureOf130320Grams() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_WeightMeasureOf130320Grams", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Weight Measure Of2172 Grams.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_WeightMeasureOf2172Grams() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_WeightMeasureOf2172Grams", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Weight Measure Of4.25 Grams.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_WeightMeasureOf4_25Grams() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_WeightMeasureOf4.25Grams", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Weight Measure Of543 Grams.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_WeightMeasureOf543Grams() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_WeightMeasureOf543Grams", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Well Known.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_WellKnown() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_WellKnown", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to We Seek Refuge With Allah.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_WeSeekRefugeWithAllah() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_WeSeekRefugeWithAllah", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Western Coast Of Arabian Peninsula.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_WesternCoastOfArabianPeninsula() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_WesternCoastOfArabianPeninsula", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to We Us.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_WeUs() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_WeUs", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to What.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_What() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_What", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to What An Evil.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_WhatAnEvil() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_WhatAnEvil", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to What An Excellent.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_WhatAnExcellent() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_WhatAnExcellent", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to What Is The Matter.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_WhatIsTheMatter() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_WhatIsTheMatter", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to What That Which.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_WhatThatWhich() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_WhatThatWhich", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to When.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_When() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_When", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to When Angry.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_WhenAngry() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_WhenAngry", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to When At Mount Safa And Mount Marwah.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_WhenAtMountSafaAndMountMarwah() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_WhenAtMountSafaAndMountMarwah", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to When Breaking Fast In Someones Home.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_WhenBreakingFastInSomeonesHome() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_WhenBreakingFastInSomeonesHome", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to When Closing The Eyes Of The Deceased.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_WhenClosingTheEyesOfTheDeceased() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_WhenClosingTheEyesOfTheDeceased", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to When Entering The Market.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_WhenEnteringTheMarket() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_WhenEnteringTheMarket", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Whenever.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Whenever() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Whenever", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to When Feeling Some Pain In The Body.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_WhenFeelingSomePainInTheBody() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_WhenFeelingSomePainInTheBody", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to When For Future Therefore.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_WhenForFutureTherefore() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_WhenForFutureTherefore", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to When For Past.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_WhenForPast() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_WhenForPast", resourceCulture)
             End Get
         End Property
         
@@ -12387,6 +26863,42 @@ Namespace My.Resources
         Public ReadOnly Property IslamInfo_WhenGoingToTheMosque1WordByWord() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_WhenGoingToTheMosque1WordByWord", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to When In Fear Of Afflicting Something Or Someone With Ones Eye.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_WhenInFearOfAfflictingSomethingOrSomeoneWithOnesEye() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_WhenInFearOfAfflictingSomethingOrSomeoneWithOnesEye", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to When In Fear Of A People.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_WhenInFearOfAPeople() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_WhenInFearOfAPeople", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to When Insulted While Fasting.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_WhenInsultedWhileFasting() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_WhenInsultedWhileFasting", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to When It Rains.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_WhenItRains() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_WhenItRains", resourceCulture)
             End Get
         End Property
         
@@ -12450,6 +26962,42 @@ Namespace My.Resources
         Public ReadOnly Property IslamInfo_WhenLeavingTheHome2WordByWord() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_WhenLeavingTheHome2WordByWord", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to When Mounting An Animal Or Any Means Of Transport.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_WhenMountingAnAnimalOrAnyMeansOfTransport() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_WhenMountingAnAnimalOrAnyMeansOfTransport", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to When Praised.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_WhenPraised() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_WhenPraised", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to When Slaughtering Or Offering A Sacrifice.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_WhenSlaughteringOrOfferingASacrifice() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_WhenSlaughteringOrOfferingASacrifice", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to When Someone Blesses You.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_WhenSomeoneBlessesYou() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_WhenSomeoneBlessesYou", resourceCulture)
             End Get
         End Property
         
@@ -12553,6 +27101,78 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to When Startled.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_WhenStartled() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_WhenStartled", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to When Stricken With A Mishap Or Overtaken By An Affair.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_WhenStrickenWithAMishapOrOvertakenByAnAffair() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_WhenStrickenWithAMishapOrOvertakenByAnAffair", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to When The Mounted Animal Or Means Of Transport Stumbles.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_WhenTheMountedAnimalOrMeansOfTransportStumbles() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_WhenTheMountedAnimalOrMeansOfTransportStumbles", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to When The Time When.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_WhenTheTimeWhen() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_WhenTheTimeWhen", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to When Throwing Each Pebble At The Jamaraat.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_WhenThrowingEachPebbleAtTheJamaraat() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_WhenThrowingEachPebbleAtTheJamaraat", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to When Turning Over In The Night.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_WhenTurningOverInTheNight() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_WhenTurningOverInTheNight", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to When Turning Over In The Night.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_WhenTurningOverInTheNight1() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_WhenTurningOverInTheNight1", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to When Visiting The Sick.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_WhenVisitingTheSick() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_WhenVisitingTheSick", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to When Waking Up.
         '''</summary>
         Public ReadOnly Property IslamInfo_WhenWakingUp() As String
@@ -12643,6 +27263,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to When Waking Up.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_WhenWakingUp4() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_WhenWakingUp4", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to When Wearing A Garment.
         '''</summary>
         Public ReadOnly Property IslamInfo_WhenWearingAGarment() As String
@@ -12711,6 +27340,51 @@ Namespace My.Resources
         Public ReadOnly Property IslamInfo_WhenWearingANewGarment1WordByWord() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_WhenWearingANewGarment1WordByWord", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Where.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Where() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Where", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Where From Why.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_WhereFromWhy() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_WhereFromWhy", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Wherever.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Wherever() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Wherever", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Which.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Which() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Which", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to While Ascending Or Descending.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_WhileAscendingOrDescending() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_WhileAscendingOrDescending", resourceCulture)
             End Get
         End Property
         
@@ -12859,6 +27533,24 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to While Prostrating.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_WhileProstrating() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_WhileProstrating", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to While Returning From Travel.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_WhileReturningFromTravel() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_WhileReturningFromTravel", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Whispers.
         '''</summary>
         Public ReadOnly Property IslamInfo_Whispers() As String
@@ -12877,11 +27569,128 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Who Said.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_WhoSaid() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_WhoSaid", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Who The One Who.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_WhoTheOneWho() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_WhoTheOneWho", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Why.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Why() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Why", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Wife Husband.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_WifeHusband() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_WifeHusband", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Willful Disobedience Ignorant.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_WillfulDisobedienceIgnorant() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_WillfulDisobedienceIgnorant", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Will Future.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_WillFuture() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_WillFuture", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Will Near Future.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_WillNearFuture() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_WillNearFuture", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Will Not Attain Unto.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_WillNotAttainUnto() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_WillNotAttainUnto", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Will Surely.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_WillSurely() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_WillSurely", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Wind Smell.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_WindSmell() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_WindSmell", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Wine.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Wine() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Wine", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Wine Merchant.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_WineMerchant() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_WineMerchant", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Wisdom.
         '''</summary>
         Public ReadOnly Property IslamInfo_Wisdom() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_Wisdom", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Wise.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Wise() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Wise", resourceCulture)
             End Get
         End Property
         
@@ -12895,11 +27704,137 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Wish If Only.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_WishIfOnly() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_WishIfOnly", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to With.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_With() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_With", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to With In From.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_WithInFrom() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_WithInFrom", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to With Near.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_WithNear() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_WithNear", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to With What Because.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_WithWhatBecause() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_WithWhatBecause", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to With Wonder.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_WithWonder() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_WithWonder", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Witness.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Witness() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Witness", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Witnessing.
         '''</summary>
         Public ReadOnly Property IslamInfo_Witnessing() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_Witnessing", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Witness Present.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_WitnessPresent() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_WitnessPresent", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Woe Unto.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_WoeUnto() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_WoeUnto", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Woman.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Woman() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Woman", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Woman With Vaginal Bleeding Other Than Menstruation.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_WomanWithVaginalBleedingOtherThanMenstruation() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_WomanWithVaginalBleedingOtherThanMenstruation", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Word.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Word() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Word", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Word Being Described.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_WordBeingDescribed() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_WordBeingDescribed", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Wording Intent Cannot Be Determined Without Further Clarification.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_WordingIntentCannotBeDeterminedWithoutFurtherClarification() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_WordingIntentCannotBeDeterminedWithoutFurtherClarification", resourceCulture)
             End Get
         End Property
         
@@ -12931,6 +27866,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Work Do.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_WorkDo() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_WorkDo", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to World.
         '''</summary>
         Public ReadOnly Property IslamInfo_World() As String
@@ -12958,6 +27902,159 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Worship Serve.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_WorshipServe() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_WorshipServe", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Writing Material.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_WritingMaterial() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_WritingMaterial", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Wrong.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Wrong() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Wrong", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Yaasir Bin Amir.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_YaasirBinAmir() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_YaasirBinAmir", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Year.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Year() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Year", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Yearly Predestination.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_YearlyPredestination() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_YearlyPredestination", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Yes.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Yes() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Yes", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Yes Indeed.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_YesIndeed() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_YesIndeed", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to You.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_You() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_You", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to You All.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_YouAll() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_YouAll", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Young.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Young() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Young", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Your.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Your() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Your", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Your Two.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_YourTwo() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_YourTwo", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to You Two.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_YouTwo() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_YouTwo", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Zaahiree.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_Zaahiree() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Zaahiree", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Zayd Bin Thaabit.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ZaydBinThaabit() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ZaydBinThaabit", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Zaynab Binti Muhammad.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ZaynabBintiMuhammad() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ZaynabBintiMuhammad", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Zaynab Bint Jahsh.
         '''</summary>
         Public ReadOnly Property IslamInfo_ZaynabBintJahsh() As String
@@ -12981,6 +28078,15 @@ Namespace My.Resources
         Public ReadOnly Property IslamInfo_Zechariah() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_Zechariah", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Zero Width Non Joiner.
+        '''</summary>
+        Public ReadOnly Property IslamInfo_ZeroWidthNonJoiner() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_ZeroWidthNonJoiner", resourceCulture)
             End Get
         End Property
         

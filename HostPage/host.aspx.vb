@@ -294,51 +294,7 @@ Partial Class host
                         Utility.ApplyTransparencyFilter(bmp, Color.FromArgb(&HFFF0F0F0), Color.White)
                     End If
                 ElseIf Request.QueryString.Get("Image") = "UnicodeChar" Then
-                    Dim oFont As Font
-                    Dim Size As Integer
-                    If Request.QueryString.Get("Size") = Nothing Then
-                        Size = 13
-                    Else
-                        Size = CInt(Request.QueryString.Get("Size"))
-                    End If
-                    If Request.QueryString.Get("Font") = "AGAIslamicPhrases" Then
-                        Dim PrivateFontColl As New Drawing.Text.PrivateFontCollection
-                        PrivateFontColl.AddFontFile(Utility.GetFilePath("files\AGA_Islamic_Phrases.TTF"))
-                        oFont = New Drawing.Font(PrivateFontColl.Families(0), Size)
-                    ElseIf Request.QueryString.Get("Font") = "AGAArabesque" Then
-                        Dim PrivateFontColl As New Drawing.Text.PrivateFontCollection
-                        PrivateFontColl.AddFontFile(Utility.GetFilePath("files\aga-arabesque.ttf"))
-                        oFont = New Drawing.Font(PrivateFontColl.Families(0), Size)
-                    ElseIf Request.QueryString.Get("Font") = "Shia" Then
-                        Dim PrivateFontColl As New Drawing.Text.PrivateFontCollection
-                        PrivateFontColl.AddFontFile(Utility.GetFilePath("files\SHIA.TTF"))
-                        oFont = New Drawing.Font(PrivateFontColl.Families(0), Size)
-                    ElseIf Request.QueryString.Get("Font") = "IslamicLogo" Then
-                        Dim PrivateFontColl As New Drawing.Text.PrivateFontCollection
-                        PrivateFontColl.AddFontFile(Utility.GetFilePath("files\islamic.ttf"))
-                        oFont = New Drawing.Font(PrivateFontColl.Families(0), Size)
-                    ElseIf Request.QueryString.Get("Font") = "KFGQPCArabicSymbols01" Then
-                        Dim PrivateFontColl As New Drawing.Text.PrivateFontCollection
-                        PrivateFontColl.AddFontFile(Utility.GetFilePath("files\Symbols1_Ver02.otf"))
-                        oFont = New Drawing.Font(PrivateFontColl.Families(0), Size)
-                    ElseIf Request.QueryString.Get("Font") <> String.Empty Then
-                        oFont = New Font(Request.QueryString.Get("Font"), Size)
-                    Else
-                        oFont = New Font("Arial Unicode MS", Size)
-                    End If
-                    Dim TextExtent As SizeF = Utility.GetTextExtent(ChrW(Integer.Parse(Request.QueryString.Get("Char"), Globalization.NumberStyles.HexNumber)), oFont)
-                    bmp = New Bitmap(CInt(Math.Ceiling(Math.Ceiling(TextExtent.Width + 1) * 96.0F / 72.0F)), CInt(Math.Ceiling(Math.Ceiling(TextExtent.Height + 1) * 96.0F / 72.0F)))
-                    Dim g As Graphics = Graphics.FromImage(bmp)
-                    g.PageUnit = GraphicsUnit.Point
-                    g.TextRenderingHint = Drawing.Text.TextRenderingHint.AntiAliasGridFit
-                    g.TextContrast = 0
-                    g.FillRectangle(Brushes.White, New RectangleF(0, 0, CSng(Math.Ceiling(TextExtent.Width + 1)), CSng(Math.Ceiling(TextExtent.Height + 1))))
-                    Dim Format As StringFormat = Drawing.StringFormat.GenericTypographic
-                    'Format.LineAlignment = StringAlignment.Center
-                    'Format.Alignment = StringAlignment.Center
-                    g.DrawString(ChrW(Integer.Parse(Request.QueryString.Get("Char"), Globalization.NumberStyles.HexNumber)), oFont, Brushes.Black, New RectangleF(0, 0, CSng(Math.Ceiling(TextExtent.Width + 1)), CSng(Math.Ceiling(TextExtent.Height + 1))), Format)
-                    bmp.MakeTransparent(Color.White)
-                    oFont.Dispose()
+                    bmp = Utility.GetUnicodeChar(If(Request.QueryString.Get("Size") = Nothing, 13, CInt(Request.QueryString.Get("Size"))), Request.QueryString.Get("Font"), ChrW(Integer.Parse(Request.QueryString.Get("Char"), Globalization.NumberStyles.HexNumber)))
                 ElseIf Request.QueryString.Get("Image") = "Thumb" Then
                     Dim FetchImageItem As PageLoader.TextItem = DirectCast(PageSet.GetPageItem(Request.QueryString.Get("p")), PageLoader.TextItem)
                     bmp = Utility.MakeThumbFromURL(FetchImageItem.ImageURL, 121)
