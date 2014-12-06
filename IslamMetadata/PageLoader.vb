@@ -1202,6 +1202,16 @@ Public Class Arabic
         Next
         Return New String() {String.Empty, String.Empty, "var renderList = " + Utility.MakeJSIndexedObject(CType(CType(Objects(0), ArrayList).ToArray(GetType(String)), String()), New Array() {CType(CType(Objects(1), ArrayList).ToArray(GetType(String)), String())}, True) + ";"}
     End Function
+    Public Shared Function GetCategoryWord(ByVal ID As String) As IslamData.VocabCategory.Word?
+        For Count As Integer = 0 To CachedData.IslamData.VocabularyCategories.Length - 1
+            For SubCount As Integer = 0 To CachedData.IslamData.VocabularyCategories(Count).Words.Length - 1
+                If CachedData.IslamData.VocabularyCategories(Count).Words(SubCount).TranslationID = ID Then
+                    Return CachedData.IslamData.VocabularyCategories(Count).Words(SubCount)
+                End If
+            Next
+        Next
+        Return Nothing
+    End Function
     Public Shared Function DisplayTranslation(ByVal Item As PageLoader.TextItem) As Array()
         Dim Count As Integer = CInt(HttpContext.Current.Request.QueryString.Get("selection"))
         If Count = -1 Then Count = 0
@@ -1472,6 +1482,26 @@ Public Class Arabic
             End If
         End If
         Return Output
+    End Function
+    Public Shared Function GetCatWords(SelArr As String()) As IslamData.GrammarCategory
+        Dim GrammarCat As New IslamData.GrammarCategory
+        Dim Words As New List(Of IslamData.GrammarCategory.GrammarWord)
+        GrammarCat.Title = CachedData.IslamData.GrammarCategories(17).Title
+        For SubCount As Integer = 0 To CachedData.IslamData.GrammarCategories(17).Words.Length - 1
+            If Array.IndexOf(SelArr, CachedData.IslamData.GrammarCategories(17).Words(SubCount).TranslationID) <> -1 Then
+                Words.Add(CachedData.IslamData.GrammarCategories(17).Words(SubCount))
+            End If
+        Next
+        GrammarCat.Words = Words.ToArray()
+        Return GrammarCat
+    End Function
+    Public Shared Function GetCatWord(ID As String) As IslamData.GrammarCategory.GrammarWord?
+        For SubCount As Integer = 0 To CachedData.IslamData.GrammarCategories(17).Words.Length - 1
+            If ID = CachedData.IslamData.GrammarCategories(17).Words(SubCount).TranslationID Then
+                Return CachedData.IslamData.GrammarCategories(17).Words(SubCount)
+            End If
+        Next
+        Return Nothing
     End Function
     Public Shared Function DisplayProximals(ByVal Item As PageLoader.TextItem) As Array()
         Return DisplayPronoun(CachedData.IslamData.GrammarCategories(1), False)
@@ -2615,17 +2645,7 @@ Public Class DocBuilder
             Dim SelArr As String() = Strings.Replace("particle:", String.Empty).Split(","c)
             'Arabic.DisplayParticle()
         ElseIf Strings.StartsWith("noun:") Then
-            Dim GrammarCat As New IslamData.GrammarCategory
-            Dim Words As New List(Of IslamData.GrammarCategory.GrammarWord)
-            Dim SelArr As String() = Strings.Replace("noun:", String.Empty).Split(","c)
-            GrammarCat.Title = CachedData.IslamData.GrammarCategories(17).Title
-            Strings.Replace("noun:", String.Empty).Split(","c)
-            For SubCount = 0 To CachedData.IslamData.GrammarCategories(17).Words.Length - 1
-                If Array.IndexOf(SelArr, CachedData.IslamData.GrammarCategories(17).Words(SubCount).TranslationID) <> -1 Then
-                    Words.Add(CachedData.IslamData.GrammarCategories(17).Words(SubCount))
-                End If
-            Next
-            GrammarCat.Words = Words.ToArray()
+            Dim GrammarCat As IslamData.GrammarCategory = Arabic.GetCatWords(Strings.Replace("noun:", String.Empty).Split(","c))
             Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eList, Arabic.NounDisplay(GrammarCat))}))
         ElseIf Strings.StartsWith("verb:") Then
             Dim SelArr As String() = Strings.Replace("verb:", String.Empty).Split(","c)
@@ -2634,40 +2654,51 @@ Public Class DocBuilder
             Dim SelArr As String() = Strings.Replace("phrase:", String.Empty).Split(","c)
             'Arabic.DoDisplayTranslation()
         ElseIf Strings.StartsWith("supp:") Then
-            Dim SelArr As String() = Strings.Replace("supp:", String.Empty).Split(","c)
-            For SelCount As Integer = 0 To SelArr.Length - 1
-                For Count As Integer = 0 To CachedData.IslamData.VerseCategories.Length - 1
-                    For SubCount As Integer = 0 To CachedData.IslamData.VerseCategories(Count).Verses.Length - 1
-                        If SelArr(SelCount) = CachedData.IslamData.VerseCategories(Count).Verses(SubCount).TranslationID Then
-                            Renderer.Items.AddRange(Supplications.DoGetRenderedVerseText(SchemeType, Scheme, CachedData.IslamData.VerseCategories(Count).Verses(SubCount), TranslationIndex))
-                        End If
-                    Next
-                Next
+            Dim VerseCats As IslamData.VerseCategory.Verse() = Supplications.GetSuppCats(Strings.Replace("supp:", String.Empty).Split(","c))
+            For Count As Integer = 0 To VerseCats.Length - 1
+                Renderer.Items.AddRange(Supplications.DoGetRenderedVerseText(SchemeType, Scheme, VerseCats(Count), TranslationIndex))
             Next
         ElseIf Array.FindIndex(CachedData.IslamData.Abbreviations, Function(Match As IslamData.AbbrevCategory) Array.FindIndex(Match.Words, Function(Word As IslamData.AbbrevCategory.AbbrevWord) Array.IndexOf(Word.Text.Split("|"c), Strings) <> -1) <> -1) <> -1 Then
             Dim Index As Integer = Array.FindIndex(CachedData.IslamData.Abbreviations, Function(Match As IslamData.AbbrevCategory) Array.FindIndex(Match.Words, Function(Word As IslamData.AbbrevCategory.AbbrevWord) Array.IndexOf(Word.Text.Split("|"c), Strings) <> -1) <> -1)
             Dim SubIndex As Integer = Array.FindIndex(CachedData.IslamData.Abbreviations(Index).Words, Function(Word As IslamData.AbbrevCategory.AbbrevWord) Array.IndexOf(Word.Text.Split("|"c), Strings) <> -1)
-            For Count As Integer = 0 To CachedData.IslamData.VocabularyCategories.Length - 1
-                For SubCount As Integer = 0 To CachedData.IslamData.VocabularyCategories(Count).Words.Length - 1
-                    If CachedData.IslamData.VocabularyCategories(Count).Words(SubCount).TranslationID = CachedData.IslamData.Abbreviations(Index).Words(SubIndex).TranslationID Then
-                        Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, ArabicData.TransliterateFromBuckwalter(CachedData.IslamData.VocabularyCategories(Count).Words(SubCount).Text)), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, Arabic.TransliterateToScheme(ArabicData.TransliterateFromBuckwalter(CachedData.IslamData.VocabularyCategories(Count).Words(SubCount).Text), SchemeType, Scheme).Trim()), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, Utility.LoadResourceString("IslamInfo_" + CachedData.IslamData.VocabularyCategories(Count).Words(SubCount).TranslationID))}))
-                        If CachedData.IslamData.Abbreviations(Index).Words(SubIndex).Font <> String.Empty Then
-                            Array.ForEach(CachedData.IslamData.Abbreviations(Index).Words(SubIndex).Font.Split("|"c), Sub(Str As String)
-                                                                                                                          Dim Font As String = String.Empty
-                                                                                                                          If Str.Contains(";") Then
-                                                                                                                              Font = Str.Split(";"c)(0)
-                                                                                                                              Str = Str.Split(";"c)(1)
-                                                                                                                          End If
-                                                                                                                          Array.ForEach(Str.Split(","c), Sub(SubStr As String)
-                                                                                                                                                             Dim RendText As New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, String.Join(String.Empty, Array.ConvertAll(SubStr.Split("+"c), Function(Split As String) CStr(ChrW(Integer.Parse(Split, System.Globalization.NumberStyles.HexNumber))))))
-                                                                                                                                                             RendText.Font = Font
-                                                                                                                                                             Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {RendText}))
-                                                                                                                                                         End Sub)
-                                                                                                                      End Sub)
+            Dim VocWord As IslamData.VocabCategory.Word? = Arabic.GetCategoryWord(CachedData.IslamData.Abbreviations(Index).Words(SubIndex).TranslationID)
+            Dim VerseCat As IslamData.VerseCategory.Verse? = Supplications.GetSuppCat(CachedData.IslamData.Abbreviations(Index).Words(SubIndex).TranslationID)
+            Dim GrammarWord As IslamData.GrammarCategory.GrammarWord? = Arabic.GetCatWord(CachedData.IslamData.Abbreviations(Index).Words(SubIndex).TranslationID)
+            Dim Items As New List(Of RenderArray.RenderItem)
+            If CachedData.IslamData.Abbreviations(Index).Words(SubIndex).Font <> String.Empty Then
+                Array.ForEach(CachedData.IslamData.Abbreviations(Index).Words(SubIndex).Font.Split("|"c),
+                    Sub(Str As String)
+                        Dim Font As String = String.Empty
+                        If Str.Contains(";") Then
+                            Font = Str.Split(";"c)(0)
+                            Str = Str.Split(";"c)(1)
                         End If
-                    End If
-                Next
-            Next
+                        Array.ForEach(Str.Split(","c),
+                            Sub(SubStr As String)
+                                Dim RendText As New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, String.Join(String.Empty, Array.ConvertAll(SubStr.Split("+"c), Function(Split As String) CStr(ChrW(Integer.Parse(Split, System.Globalization.NumberStyles.HexNumber))))))
+                                RendText.Font = Font
+                                Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {RendText}))
+                            End Sub)
+                    End Sub)
+            End If
+            If VocWord.HasValue Then
+                If CachedData.IslamData.Abbreviations(Index).Words(SubIndex).Font <> String.Empty Then
+                    Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, ArabicData.TransliterateFromBuckwalter(VocWord.Value.Text)), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, Arabic.TransliterateToScheme(ArabicData.TransliterateFromBuckwalter(VocWord.Value.Text), SchemeType, Scheme).Trim()), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, Utility.LoadResourceString("IslamInfo_" + VocWord.Value.TranslationID)), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eNested, Items)}))
+                Else
+                    Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, ArabicData.TransliterateFromBuckwalter(VocWord.Value.Text)), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, Arabic.TransliterateToScheme(ArabicData.TransliterateFromBuckwalter(VocWord.Value.Text), SchemeType, Scheme).Trim()), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, Utility.LoadResourceString("IslamInfo_" + VocWord.Value.TranslationID))}))
+                End If
+            End If
+            If VerseCat.HasValue Then
+                Renderer.Items.AddRange(Supplications.DoGetRenderedVerseText(SchemeType, Scheme, VerseCat.Value, TranslationIndex))
+                Renderer.Items.AddRange(Items)
+            End If
+            If GrammarWord.HasValue Then
+                If CachedData.IslamData.Abbreviations(Index).Words(SubIndex).Font <> String.Empty Then
+                    Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, ArabicData.TransliterateFromBuckwalter(GrammarWord.Value.Text)), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, Arabic.TransliterateToScheme(ArabicData.TransliterateFromBuckwalter(GrammarWord.Value.Text), SchemeType, Scheme).Trim()), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, Utility.LoadResourceString("IslamInfo_" + GrammarWord.Value.TranslationID)), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eNested, Items)}))
+                Else
+                    Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, ArabicData.TransliterateFromBuckwalter(GrammarWord.Value.Text)), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, Arabic.TransliterateToScheme(ArabicData.TransliterateFromBuckwalter(GrammarWord.Value.Text), SchemeType, Scheme).Trim()), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, Utility.LoadResourceString("IslamInfo_" + GrammarWord.Value.TranslationID))}))
+                End If
+            End If
         ElseIf Strings.StartsWith("reference:") Then
             Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eHeaderCenter, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, "(" + Strings.Replace("reference:", String.Empty) + ")")}))
             'ElseIf Strings.StartsWith("text:") Then
@@ -2680,6 +2711,29 @@ End Class
 Public Class Supplications
     Public Shared Function GetSuppCategories() As String()
         Return Array.ConvertAll(CachedData.IslamData.VerseCategories, Function(Convert As IslamData.VerseCategory) Utility.LoadResourceString("IslamInfo_" + Convert.Title))
+    End Function
+    Public Shared Function GetSuppCat(ID As String) As IslamData.VerseCategory.Verse?
+        For Count As Integer = 0 To CachedData.IslamData.VerseCategories.Length - 1
+            For SubCount As Integer = 0 To CachedData.IslamData.VerseCategories(Count).Verses.Length - 1
+                If ID = CachedData.IslamData.VerseCategories(Count).Verses(SubCount).TranslationID Then
+                    Return CachedData.IslamData.VerseCategories(Count).Verses(SubCount)
+                End If
+            Next
+        Next
+        Return Nothing
+    End Function
+    Public Shared Function GetSuppCats(SelArr As String()) As IslamData.VerseCategory.Verse()
+        Dim VerseCats As New List(Of IslamData.VerseCategory.Verse)
+        For SelCount As Integer = 0 To SelArr.Length - 1
+            For Count As Integer = 0 To CachedData.IslamData.VerseCategories.Length - 1
+                For SubCount As Integer = 0 To CachedData.IslamData.VerseCategories(Count).Verses.Length - 1
+                    If SelArr(SelCount) = CachedData.IslamData.VerseCategories(Count).Verses(SubCount).TranslationID Then
+                        VerseCats.Add(CachedData.IslamData.VerseCategories(Count).Verses(SubCount))
+                    End If
+                Next
+            Next
+        Next
+        Return VerseCats.ToArray()
     End Function
     Public Shared Function GetRenderedSuppText(ByVal Item As PageLoader.TextItem) As RenderArray
         Dim SchemeType As ArabicData.TranslitScheme = CType(If(CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) >= 2, 2 - CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) Mod 2, CInt(HttpContext.Current.Request.QueryString.Get("translitscheme"))), ArabicData.TranslitScheme)
