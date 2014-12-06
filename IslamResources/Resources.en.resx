@@ -3744,6 +3744,12 @@
   <data name="IslamInfo_Introduction" xml:space="preserve">
     <value>Introduction</value>
   </data>
+  <data name="IslamInfo_IntroductionTrans" xml:space="preserve">
+    <value>We ask you O that He is Allah who there is no God except He</value>
+  </data>
+  <data name="IslamInfo_IntroductionWordByWord" xml:space="preserve">
+    <value>We ask you|O that|He|is Allah|who|there is no|God|except|He</value>
+  </data>
   <data name="IslamInfo_Invocation" xml:space="preserve">
     <value>Invocation</value>
   </data>
