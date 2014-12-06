@@ -1825,6 +1825,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="{loHasanu" id="Hasan"></word>
 			<word text="{loHus~ayonu" id="Hussein"></word>
 			<word text="{lr~iDaA" id="Ridaa"></word>
+			<word text="{ls~aj~adu" id="TheProstratingOne"></word>
 			<word text="{lobaAqiru" id="Baaqir"></word>
 			<word text="{loEasokariy" id="Askaree"></word>
 			<word text="DaEiyfN" id="Weak"></word>
@@ -2797,6 +2798,69 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="{lr~ab~u" id="TheMaster"></word>
 			<word text="{loEalaY" id="TheMostHigh"></word>
 			<word text="{lo&lt;ilahu" id="TheOneGod"></word>
+			
+			<word text="*uw {lojabaruwtu wa{lomalakuwtu wa{lokiboriyaA&apos;u waloEaZamapu" id="TheSupremeOwnerOfSovereigntyAndGreatestThingsAndSupremeGlory"></word>
+			<word text="{ln~uwru {ls~ama`wa`ti wa{lo&gt;aroDi" id="LightOfTheHeavensAndEarth"></word>
+			<word text="{lobadiyEu {ls~ama`wa`ti wa{lo&gt;aroDi" id="TheUniqueOneOfTheHeavensAndEarth"></word>
+			<word text="{lr~a&amp;uwfu {lr~aHiymu" id="TheBenignOneTheMerciful"></word>
+			<word text="{lr~aHiymu {lowaduwdu" id="TheMercifulTheLovingOne"></word>
+			<word text="{lr~aHiymu {logafuwru" id="TheMercifulThePardoner"></word>
+			<word text="{lr~aHiymu {loEafuw~u" id="TheMercifulTheSupremePardoner"></word>
+			<word text="{loEaziyzu {loHakiymu" id="TheMightyOneTheWiseOne"></word>
+			<word text="{loEaziyzu {logafuwru" id="TheMightyOneThePardoner"></word>
+			<word text="{loEaziyzu {loEaliymu" id="TheMightyOneTheAllKnowingOne"></word>
+			<word text="{loEaziyzu {lr~aHiymu" id="TheMightyOneTheMerciful"></word>
+			<word text="{loEaziyzu {loHamiydu" id="TheMightyOneTheSoleLaudableOne"></word>
+			<word text="{loEaziyzu {lomuqotadiru" id="TheMightyOneTheAllAuthoritativeOne"></word>
+			<word text="{loEaziyzu {lowah~aAbu" id="TheMightyOneTheSupremeBestower"></word>
+			<word text="{loHaliymu {lr~aHiymu" id="TheClementOneTheMerciful"></word>
+			<word text="{loHaliymu {logafuwru" id="TheClementOneThePardoner"></word>
+			<word text="{logafuwru {lr~aHiymu" id="ThePardonerTheMerciful"></word>
+			<word text="{logafuwru {lowaduwdu" id="ThePardonerTheLovingOne"></word>
+			<word text="{logafuwru {loHaliymu" id="ThePardonerTheClementOne"></word>
+			<word text="{logafuwru {l$~akuwru" id="ThePardonerTheAcknowledgingOne"></word>
+			<word text="{loganiy~u {loHamiydu" id="TheSelfSufficientOneTheSoleLaudableOne"></word>
+			<word text="{loganiy~u {lokariymu" id="TheSelfSufficientOneTheBountifulOne"></word>
+			<word text="{loganiy~u {loHaliymu" id="TheSelfSufficientOneTheClementOne"></word>
+			<word text="{loEaliymu {loHakiymu" id="TheAllKnowingOneTheWiseOne"></word>
+			<word text="{loEaliymu {loHaliymu" id="TheAllKnowingOneTheClementOne"></word>
+			<word text="{loEaliymu {loqaAdiru" id="TheAllKnowingOneTheOmnipotentOne"></word>
+			<word text="{loEaliymu {loxabiyru" id="TheAllKnowingOneTheAllAwareOne"></word>
+			<word text="{loHakiymu {loHamiydu" id="TheWiseOneTheSoleLaudableOne"></word>
+			<word text="{loHakiymu {loxabiyru" id="TheWiseOneTheAllAwareOne"></word>
+			<word text="{loHakiymu {loEaliymu" id="TheWiseOneTheAllKnowingOne"></word>
+			<word text="{loHamiydu {lomajiydu" id="TheSoleLaudableOneTheGloriousOne"></word>
+			<word text="{lofat~aAHu {loEaliymu" id="TheSupremeSolverTheAllKnowingOne"></word>
+			<word text="{lomaliku {loqud~uwsu" id="TheEternalLordTheMostSacred"></word>
+			<word text="{lomaliku {loHaq~u" id="TheEternalLordTheEmbodimentOfTruth"></word>
+			<word text="{lomaliku {lomuqotadiru" id="TheEternalLordTheAllAuthoritativeOne"></word>
+			<word text="{loEaliy~u {loEaZiymu" id="TheSublimeOneTheMagnificentOne"></word>
+			<word text="{loEaliy~u {lokabiyru" id="TheSublimeOneTheGreatOne"></word>
+			<word text="{loEaliy~u {loHakiymu" id="TheSublimeOneTheWiseOne"></word>
+			<word text="{loEaliy~u {loxabiyru" id="TheSublimeOneTheAllAwareOne"></word>
+			<word text="{loEafuw~u {loqaAdiru" id="TheSupremePardonerTheOmnipotentOne"></word>
+			<word text="{loEafuw~u {logafuwru" id="TheSupremePardonerThePardoner"></word>
+			<word text="{loxaAliqu {loEaliymu" id="TheCreatorTheAllKnowingOne"></word>
+			<word text="{ls~amiyEu {loqariybu" id="TheAllHearerTheClose"></word>
+			<word text="{ls~amiyEu {loEaliymu" id="TheAllHearerTheAllKnowingOne"></word>
+			<word text="{ls~amiyEu {lobaSiyru" id="TheAllHearerTheAllSeeing"></word>
+			<word text="{lt~awaAbu {lr~aHiymu" id="TheEverAcceptorOfRepentanceTheMerciful"></word>
+			<word text="{lt~awaAbu {loHakiymu" id="TheEverAcceptorOfRepentanceTheWiseOne"></word>
+			<word text="{lt~awaAbu {logafuwru" id="TheEverAcceptorOfRepentanceThePardoner"></word>
+			<word text="{l$~aAkiru {loHaliymu" id="TheRecognizerTheClementOne"></word>
+			<word text="{l$~aAkiru {loEaliymu" id="TheRecognizerTheAllKnowingOne"></word>
+			<word text="{loHay~u {loqayuwm" id="TheEverLivingTheSelfSubsistingOne"></word>
+			<word text="{l~aTiyfu {loxabiyru" id="TheKnowerOfSubtletiesTheAllAwareOne"></word>
+			<word text="{lobar~u {lr~aHiymu" id="TheFountainHeadOfTruthTheMerciful"></word>
+			<word text="{loEaZiymu {loHaliymu" id="TheMagnificentOneTheClementOne"></word>
+			<word text="{lowaAHidu {loqah~aAru" id="TheOnlyOneTheAllPrevailingOne"></word>
+			<word text="{loxabiyru {lobaSiyru" id="TheAllAwareOneTheAllSeeing"></word>
+			<word text="{loqawiy~u {loEaziyzu" id="TheStrongOneTheMightyOne"></word>
+			<word text="{lojaAmiEu {ln~aAsi" id="TheGathererOfMankind"></word>
+			<word text="{lowaAsiEu {loEaliymu" id="TheAllPervadingOneTheAllKnowingOne"></word>
+			<word text="{lowaAsiEu {loHakiymu" id="TheAllPervadingOneTheWiseOne"></word>
+			<word text="{loHay~u {lokariymu" id="TheEverLivingTheBountifulOne"></word>
+			<word text="{loHay~u {losit~iyru" id="TheEverLivingTheCoverer"></word>
 		</category>
 		<category title="Concepts">
 			<word text="tawoHiydu {lr~ubuwbiy~api" id="OnenessOfLordshipDominion"></word>
@@ -3041,8 +3105,25 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="kul~i Huq~uwqN maHofuwZapN" id="AllRightsReserved"></word>
 			<word text="Ealiy~N waliy {lla~hi" id="AliFriendOfAllah"></word>
 			<word text="fa&lt;in~a Hizobu {lla~hi humo {logaAlibuwna" id="ThenTrulyThePartyOfAllahAreTheTriumphant"></word>
-			<word text="ya` &gt;abaA SaAliH {lomahodiy" id="OFatherOfTheRighteousTheGuidedOne"></word>
 			<word text="huwa {ll~ahu" id="HeIsAllah"></word>
+
+			<word text="ya` &gt;abaA SaAliH {lomahodiy" id="OFatherOfTheRighteousTheGuidedOne"></word>
+			<word text="Sal~aY {ll~ahu Ealayoka" id="ThePrayersOfAllahUponYou"></word>
+			<word text="{ls~alaAmu Ealayoka ya` &gt;abaA SaAliH {lomahodiy Eajala {ll~ahi farajaka" id="PeaceBeUponYouOFatherOfTheRighteousTheGuidedOneHurryAllahYourHiddenOne"></word>
+			<word text="laA fataY &lt;il~aA Ealiy~K walaA sayofu &lt;il~aA *uw {lfiqaAri" id="NoBraveYouthExceptAliAndNoSwordExceptThePossessorOfTheSpineSplitter"></word>
+			<word text="{lomahodiy TAwws &gt;aholu {lojan~api"></word>
+			<word text="mHbAn mahodiy &gt;awo xwAhd Amd"></word>
+			<word text="&gt;anaA majonuwnu {loHus~ayonu"></word>
+			<word text="yaA &gt;abaA Eabodu {ll~ahi Sal~aY {ll~ahu Ealayoka" text="OFatherOfTheServantOfAllahPrayersOfAllahUponYou"></word>
+			<word text="qmr bny hA$m Elyk AlslAm"></word>
+			<word text="yAqA}m Al mHmd"></word>
+			<word text="yA Hjh Abn AlHsn AlEskry"></word>
+			<word text="AlslAm Elyk yA Ely bn mHmd AyhA AlhAdy Alnqy Elyk AlslAm"></word>
+			<word text="yAEly AlAkbr"></word>
+			<word text="Ely mE AlHq"></word>
+			<word text="Allh mHmd Ely"></word>
+			<word text="yA fATmh AlzhrA&apos;"></word>
+			<word text="fATmh AlzhrA' E"></word>
 		</category>
 		<category title="Names">
 			<word text="muHam~adN {bonu Eabodi {ll~ahi {boni Eabodi {lomuT~alibi {boni haA$im‎K" nickname="&gt;abuw {loqaAsim" id="MuhammadBinAbdullahBinAbduAlMuttalib"></word>
@@ -3071,7 +3152,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="Ealiy~N {bonu &gt;abiy TaAlibK" id="AliBinAbiTalib"></word>
 			<word text="{loHasanu {bonu Ealiy~K {boni &gt;abiy TaAlib‎K" id="HasanBinAli"></word>
 			<word text="{loHus~ayonu {bonu Ealiy~K {boni &gt;abiy TaAlibK" id="HusseinBinAli"></word>
-			<word text="Ealiy~N {bonu {loHus~ayoni" id="AliBinHussein"></word>
+			<word text="Ealiy~N {bonu {loHus~ayoni {ls~aj~adi" id="AliBinHussein"></word>
 			<word text="muHam~adN {bonu Ealiy~N {lobaAqiri" id="MuhammadBinAli"></word> 
 			<word text="jaEofarN {bonu muHam~adK {lS~aAdiq‎i" id="JafarBinMuhammad"></word>
 			<word text="muwsaY {bonu jaEofarK {lokaAZim‎i" id="MusaBinJafar"></word>
@@ -3309,6 +3390,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="BAAQIR" font="Shia;004C" id="Baaqir"></word>
 			<word text="GuidedOne" font="Shia;004D" id="GuidedOne"></word>
 			<word text="ASKAREE" font="Shia;004E" id="Askaree"></word>
+			<word text="Sajjad" font="Shia;004B" id="TheProstratingOne"></word>
 			<word text="Rial" font="FDFC|KFGQPCArabicSymbols01;F077" id="Rial"></word>
 			<word text="Ounce" font="KFGQPCArabicSymbols01;F078" id="Ounce"></word>
 			<word text="Shilling" font="KFGQPCArabicSymbols01;F079" id="Shilling"></word>
@@ -3474,11 +3556,11 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="TheMostHigh" font="Quranic;00E3" id="TheMostHigh"></word>
 			<word text="TheOneGod" font="Quranic;00E5" id="TheOneGod"></word>
 			<word text="" font="Quranic;0022" id="TheBeneficentTheMercifulTheEternalLordTheMostSacredTheEmbodimentOfPeaceTheInfuserOfFaithThePreserverOfSafetyTheMightyOneTheAllCompellingTheDominantOneTheCreatorTheEvolverTheFlawlessShaperTheVeryFirstTheInfiniteLastOneThePerceptibleTheImperceptible"></word>
-			<word text="" font="Quranic;0023" id=""></word>
-			<word text="" font="Quranic;0024" id=""></word>
-			<word text="" font="Quranic;0025" id=""></word>
-			<word text="" font="Quranic;0026" id=""></word>
-			<word text="" font="Quranic;0027" id=""></word>
+			<word text="" font="Quranic;0023" id="TheAllHearer...TheAllPrevailingOne"></word>
+			<word text="" font="Quranic;0024" id="TheEmbodimentOfTruth...TheLovingOne"></word>
+			<word text="" font="Quranic;0025" id="TheProtectingAssociate...TheOneWhoRecompenses"></word>
+			<word text="" font="Quranic;0026" id="TheRecognizer...TheSupremeInHonour"></word>
+			<word text="" font="Quranic;0027" id="TheGreatForgiver...TheOneGod...Final1"></word>
 			<word text="AndAllahHasTheBestNamesCallUponHimAndLeaveThemInPlaceThoseNamesNotablyCutOffWhatTheyDo" font="Quranic;00E8" id="AndAllahHasTheBestNamesCallUponHimAndLeaveThemInPlaceThoseNamesNotablyCutOffWhatTheyDo"></word>
 			
 			<word text="BISMILLAHIRAHMANIRAHEEM" font="FDFD|KFGQPCArabicSymbols01;F021,F022,F023|AGAArabesque;F04F,F050|AGAIslamicPhrases;0021,0023,0024,0025,0026,002D,0030,0031,0032,0033,0034,0035,0036,0037,0038,0039,0040,005E|Quranic;0009,0020|Shia;0030,0032,0034,0035,0037,0060" id="InTheNameOfAllahMostBeneficentMostMerciful"></word>
