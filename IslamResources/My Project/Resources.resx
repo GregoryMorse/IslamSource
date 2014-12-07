@@ -978,9 +978,6 @@
   <data name="IslamInfo_Default" xml:space="preserve">
     <value>Default</value>
   </data>
-  <data name="IslamInfo_DirectionOfprayer" xml:space="preserve">
-    <value>Direction of prayer</value>
-  </data>
   <data name="IslamInfo_Dissertation" xml:space="preserve">
     <value>Dissertation</value>
   </data>
@@ -1856,9 +1853,6 @@
   </data>
   <data name="IslamInfo_TheMagnificentOne" xml:space="preserve">
     <value>The Magnificent One</value>
-  </data>
-  <data name="IslamInfo_TheMaintainerOflife" xml:space="preserve">
-    <value>The Maintainer of life</value>
   </data>
   <data name="IslamInfo_TheMajesticOne" xml:space="preserve">
     <value>The Majestic One</value>
@@ -10895,5 +10889,29 @@
   </data>
   <data name="IslamInfo_VerseOfTheTenRights" xml:space="preserve">
     <value>Verse Of The Ten Rights</value>
+  </data>
+  <data name="IslamInfo_ScienceOfIslamicJurisprudence" xml:space="preserve">
+    <value>Science Of Islamic Jurisprudence</value>
+  </data>
+  <data name="IslamInfo_RulesOfIslamicJurisprudence" xml:space="preserve">
+    <value>Rules Of Islamic Jurisprudence</value>
+  </data>
+  <data name="IslamInfo_IslamicTheology" xml:space="preserve">
+    <value>Islamic Theology</value>
+  </data>
+  <data name="IslamInfo_PropheticBiography" xml:space="preserve">
+    <value>Prophetic Biography</value>
+  </data>
+  <data name="IslamInfo_QuranicExegesis" xml:space="preserve">
+    <value>Quranic Exegesis</value>
+  </data>
+  <data name="IslamInfo_TheBestNamesOfAllah" xml:space="preserve">
+    <value>The Best Names Of Allah</value>
+  </data>
+  <data name="IslamInfo_Shaping" xml:space="preserve">
+    <value>Shaping</value>
+  </data>
+  <data name="IslamSource_InternetArabic" xml:space="preserve">
+    <value>Internet Arabic</value>
   </data>
 </root>
