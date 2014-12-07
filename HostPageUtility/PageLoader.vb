@@ -2540,6 +2540,7 @@ Public Class RenderArray
                         If theText <> String.Empty Or s.Width > NextRight Then
                             If s.Width > NextRight Then OverIndexes.Add(New OverInfo(Count, SubCount, NextRight))
                             NextRight = _Width
+                            If s.Width > NextRight Then s.Width = NextRight
                             IsOverflow = True
                         End If
                         If s.Width > NextRight Then Right = NextRight

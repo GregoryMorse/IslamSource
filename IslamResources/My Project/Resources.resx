@@ -10218,4 +10218,682 @@
   <data name="IslamInfo_ExtendStretch" xml:space="preserve">
     <value>Extend Stretch</value>
   </data>
+  <data name="IslamInfo_TrulyWithHardshipIsEase" xml:space="preserve">
+    <value>Truly With Hardship Is Ease</value>
+  </data>
+  <data name="IslamInfo_RepelTheirEvilByMeansOfWhatIsBest" xml:space="preserve">
+    <value>Repel Their Evil By Means Of What Is Best</value>
+  </data>
+  <data name="IslamInfo_AndOfHisSignsIsThatHeCreatedForYouFromYourselvesMatesThatYouMayFindTranquillityInThem" xml:space="preserve">
+    <value>And Of His Signs Is That He Created For You From Yourselves Mates That You May Find Tranquillity In Them</value>
+  </data>
+  <data name="IslamInfo_AndHePlacedBetweenYouAffectionAndMercy" xml:space="preserve">
+    <value>And He Placed Between You Affection And Mercy</value>
+  </data>
+  <data name="IslamInfo_EnterItWithPeaceAndSafety" xml:space="preserve">
+    <value>Enter It With Peace And Safety</value>
+  </data>
+  <data name="IslamInfo_TaughtMankindWhatNotHeKnew" xml:space="preserve">
+    <value>Taught Mankind What Not He Knew</value>
+  </data>
+  <data name="IslamInfo_AllahLightHeavensAndEarth" xml:space="preserve">
+    <value>Allah Light Heavens And Earth</value>
+  </data>
+  <data name="IslamInfo_TrulyAllahIsWithThePatient" xml:space="preserve">
+    <value>Truly Allah Is With The Patient</value>
+  </data>
+  <data name="IslamInfo_InTheNameOfAllahMostBeneficentMostMerciful" xml:space="preserve">
+    <value>In The Name Of Allah Most Beneficent Most Merciful</value>
+  </data>
+  <data name="IslamInfo_AllPraiseAndThanksBeToAllahLordOfTheWorlds" xml:space="preserve">
+    <value>All Praise And Thanks Be To Allah Lord Of The Worlds</value>
+  </data>
+  <data name="IslamInfo_TheDaybreak" xml:space="preserve">
+    <value>The Daybreak</value>
+  </data>
+  <data name="IslamInfo_TrulyYouAreOnAnExaltedStandardOfCharacter" xml:space="preserve">
+    <value>Truly You Are On An Exalted Standard Of Character</value>
+  </data>
+  <data name="IslamInfo_AndPrepareAgainstThemWhateverYouAreAbleOfPower" xml:space="preserve">
+    <value>And Prepare Against Them Whatever You Are Able Of Power</value>
+  </data>
+  <data name="IslamInfo_AndAllahHasTheBestNamesSoCallOnThem" xml:space="preserve">
+    <value>And Allah Has The Best Names So Call On Them</value>
+  </data>
+  <data name="IslamInfo_AndAllahHasTheBestNamesSoCallOnThemLeaveThoseWhoPracticeDeviationConcerningHisNamesTheyWillBeRecompensedForWhatTheyHaveBeenDoing" xml:space="preserve">
+    <value>And Allah Has The Best Names So Call On Them Leave Those Who Practice Deviation Concerning His Names They Will Be Recompensed For What They Have Been Doing</value>
+  </data>
+  <data name="IslamInfo_SayCallUponAllahOrCallUponTheMostMercifulWhicheverNameYouCallToHimBelongTheBestNames" xml:space="preserve">
+    <value>Say Call Upon Allah Or Call Upon The Most Merciful Whichever Name You Call To Him Belong The Best Names</value>
+  </data>
+  <data name="IslamInfo_InRemembranceOfAllahHeartsFindPeace" xml:space="preserve">
+    <value>In Remembrance Of Allah Hearts Find Peace</value>
+  </data>
+  <data name="IslamInfo_DirectionOfPrayer" xml:space="preserve">
+    <value>Direction Of Prayer</value>
+  </data>
+  <data name="IslamInfo_Ridaa" xml:space="preserve">
+    <value>Ridaa</value>
+  </data>
+  <data name="IslamInfo_TheProstratingOne" xml:space="preserve">
+    <value>The Prostrating One</value>
+  </data>
+  <data name="IslamInfo_Baaqir" xml:space="preserve">
+    <value>Baaqir</value>
+  </data>
+  <data name="IslamInfo_Askaree" xml:space="preserve">
+    <value>Askaree</value>
+  </data>
+  <data name="IslamInfo_Jawaad" xml:space="preserve">
+    <value>Jawaad</value>
+  </data>
+  <data name="IslamInfo_Kadhim" xml:space="preserve">
+    <value>Kadhim</value>
+  </data>
+  <data name="IslamInfo_TheTruthfulOne" xml:space="preserve">
+    <value>The Truthful One</value>
+  </data>
+  <data name="IslamInfo_Beloved" xml:space="preserve">
+    <value>Beloved</value>
+  </data>
+  <data name="IslamInfo_Introduction" xml:space="preserve">
+    <value>Introduction</value>
+  </data>
+  <data name="IslamInfo_Index" xml:space="preserve">
+    <value>Index</value>
+  </data>
+  <data name="IslamInfo_Preface" xml:space="preserve">
+    <value>Preface</value>
+  </data>
+  <data name="IslamInfo_Contents" xml:space="preserve">
+    <value>Contents</value>
+  </data>
+  <data name="IslamInfo_Subjective" xml:space="preserve">
+    <value>Subjective</value>
+  </data>
+  <data name="IslamInfo_Judgmental" xml:space="preserve">
+    <value>Judgmental</value>
+  </data>
+  <data name="IslamInfo_Fry" xml:space="preserve">
+    <value>Fry</value>
+  </data>
+  <data name="IslamInfo_Cuticle" xml:space="preserve">
+    <value>Cuticle</value>
+  </data>
+  <data name="IslamInfo_Debar" xml:space="preserve">
+    <value>Debar</value>
+  </data>
+  <data name="IslamInfo_Valley" xml:space="preserve">
+    <value>Valley</value>
+  </data>
+  <data name="IslamInfo_Semen" xml:space="preserve">
+    <value>Semen</value>
+  </data>
+  <data name="IslamInfo_Elderly" xml:space="preserve">
+    <value>Elderly</value>
+  </data>
+  <data name="IslamInfo_Reading" xml:space="preserve">
+    <value>Reading</value>
+  </data>
+  <data name="IslamInfo_Wrapper" xml:space="preserve">
+    <value>Wrapper</value>
+  </data>
+  <data name="IslamInfo_Safe" xml:space="preserve">
+    <value>Safe</value>
+  </data>
+  <data name="IslamInfo_Squatting" xml:space="preserve">
+    <value>Squatting</value>
+  </data>
+  <data name="IslamInfo_Turk" xml:space="preserve">
+    <value>Turk</value>
+  </data>
+  <data name="IslamInfo_Embarass" xml:space="preserve">
+    <value>Embarass</value>
+  </data>
+  <data name="IslamInfo_Uncertain" xml:space="preserve">
+    <value>Uncertain</value>
+  </data>
+  <data name="IslamInfo_GateDoor" xml:space="preserve">
+    <value>Gate Door</value>
+  </data>
+  <data name="IslamInfo_Congratulations" xml:space="preserve">
+    <value>Congratulations</value>
+  </data>
+  <data name="IslamInfo_Rial" xml:space="preserve">
+    <value>Rial</value>
+  </data>
+  <data name="IslamInfo_Ounce" xml:space="preserve">
+    <value>Ounce</value>
+  </data>
+  <data name="IslamInfo_Shilling" xml:space="preserve">
+    <value>Shilling</value>
+  </data>
+  <data name="IslamInfo_Pound" xml:space="preserve">
+    <value>Pound</value>
+  </data>
+  <data name="IslamInfo_Lira" xml:space="preserve">
+    <value>Lira</value>
+  </data>
+  <data name="IslamInfo_Group" xml:space="preserve">
+    <value>Group</value>
+  </data>
+  <data name="IslamInfo_Quarter" xml:space="preserve">
+    <value>Quarter</value>
+  </data>
+  <data name="IslamInfo_Eighth" xml:space="preserve">
+    <value>Eighth</value>
+  </data>
+  <data name="IslamInfo_TheMaintainerOfLife" xml:space="preserve">
+    <value>The Maintainer Of Life</value>
+  </data>
+  <data name="IslamInfo_TheHelper" xml:space="preserve">
+    <value>The Helper</value>
+  </data>
+  <data name="IslamInfo_TheMaster" xml:space="preserve">
+    <value>The Master</value>
+  </data>
+  <data name="IslamInfo_ThePowerful" xml:space="preserve">
+    <value>The Powerful</value>
+  </data>
+  <data name="IslamInfo_TheOdd" xml:space="preserve">
+    <value>The Odd</value>
+  </data>
+  <data name="IslamInfo_TheBeautiful" xml:space="preserve">
+    <value>The Beautiful</value>
+  </data>
+  <data name="IslamInfo_TheShy" xml:space="preserve">
+    <value>The Shy</value>
+  </data>
+  <data name="IslamInfo_TheCoverer" xml:space="preserve">
+    <value>The Coverer</value>
+  </data>
+  <data name="IslamInfo_TheClear" xml:space="preserve">
+    <value>The Clear</value>
+  </data>
+  <data name="IslamInfo_TheClose" xml:space="preserve">
+    <value>The Close</value>
+  </data>
+  <data name="IslamInfo_TheOmnipotentKing" xml:space="preserve">
+    <value>The Omnipotent King</value>
+  </data>
+  <data name="IslamInfo_TheBrilliant" xml:space="preserve">
+    <value>The Brilliant</value>
+  </data>
+  <data name="IslamInfo_TheTaker" xml:space="preserve">
+    <value>The Taker</value>
+  </data>
+  <data name="IslamInfo_TheProvider" xml:space="preserve">
+    <value>The Provider</value>
+  </data>
+  <data name="IslamInfo_TheIrresistable" xml:space="preserve">
+    <value>The Irresistable</value>
+  </data>
+  <data name="IslamInfo_TheOneWhoRecompenses" xml:space="preserve">
+    <value>The One Who Recompenses</value>
+  </data>
+  <data name="IslamInfo_TheRecognizer" xml:space="preserve">
+    <value>The Recognizer</value>
+  </data>
+  <data name="IslamInfo_TheBestower" xml:space="preserve">
+    <value>The Bestower</value>
+  </data>
+  <data name="IslamInfo_TheContinuousCreator" xml:space="preserve">
+    <value>The Continuous Creator</value>
+  </data>
+  <data name="IslamInfo_TheOwner" xml:space="preserve">
+    <value>The Owner</value>
+  </data>
+  <data name="IslamInfo_TheDoerOfGood" xml:space="preserve">
+    <value>The Doer Of Good</value>
+  </data>
+  <data name="IslamInfo_TheOneWhoCures" xml:space="preserve">
+    <value>The One Who Cures</value>
+  </data>
+  <data name="IslamInfo_TheGentle" xml:space="preserve">
+    <value>The Gentle</value>
+  </data>
+  <data name="IslamInfo_TheGiver" xml:space="preserve">
+    <value>The Giver</value>
+  </data>
+  <data name="IslamInfo_TheLord" xml:space="preserve">
+    <value>The Lord</value>
+  </data>
+  <data name="IslamInfo_TheGood" xml:space="preserve">
+    <value>The Good</value>
+  </data>
+  <data name="IslamInfo_TheSupremeInHonour" xml:space="preserve">
+    <value>The Supreme In Honour</value>
+  </data>
+  <data name="IslamInfo_TheMostGenerous" xml:space="preserve">
+    <value>The Most Generous</value>
+  </data>
+  <data name="IslamInfo_TheMostHolyFromAllWeakness" xml:space="preserve">
+    <value>The Most Holy From All Weakness</value>
+  </data>
+  <data name="IslamInfo_TheMaster" xml:space="preserve">
+    <value>The Master</value>
+  </data>
+  <data name="IslamInfo_TheMostHigh" xml:space="preserve">
+    <value>The Most High</value>
+  </data>
+  <data name="IslamInfo_TheOneGod" xml:space="preserve">
+    <value>The One God</value>
+  </data>
+  <data name="IslamInfo_TheSupremeOwnerOfSovereigntyAndGreatestThingsAndSupremeGlory" xml:space="preserve">
+    <value>The Supreme Owner Of Sovereignty And Greatest Things And Supreme Glory</value>
+  </data>
+  <data name="IslamInfo_LightOfTheHeavensAndEarth" xml:space="preserve">
+    <value>Light Of The Heavens And Earth</value>
+  </data>
+  <data name="IslamInfo_TheUniqueOneOfTheHeavensAndEarth" xml:space="preserve">
+    <value>The Unique One Of The Heavens And Earth</value>
+  </data>
+  <data name="IslamInfo_TheBenignOneTheMerciful" xml:space="preserve">
+    <value>The Benign One The Merciful</value>
+  </data>
+  <data name="IslamInfo_TheMercifulTheLovingOne" xml:space="preserve">
+    <value>The Merciful The Loving One</value>
+  </data>
+  <data name="IslamInfo_TheMercifulThePardoner" xml:space="preserve">
+    <value>The Merciful The Pardoner</value>
+  </data>
+  <data name="IslamInfo_TheMercifulTheSupremePardoner" xml:space="preserve">
+    <value>The Merciful The Supreme Pardoner</value>
+  </data>
+  <data name="IslamInfo_TheMightyOneTheWiseOne" xml:space="preserve">
+    <value>The Mighty One The Wise One</value>
+  </data>
+  <data name="IslamInfo_TheMightyOneThePardoner" xml:space="preserve">
+    <value>The Mighty One The Pardoner</value>
+  </data>
+  <data name="IslamInfo_TheMightyOneTheAllKnowingOne" xml:space="preserve">
+    <value>The Mighty One The All Knowing One</value>
+  </data>
+  <data name="IslamInfo_TheMightyOneTheMerciful" xml:space="preserve">
+    <value>The Mighty One The Merciful</value>
+  </data>
+  <data name="IslamInfo_TheMightyOneTheSoleLaudableOne" xml:space="preserve">
+    <value>The Mighty One The Sole Laudable One</value>
+  </data>
+  <data name="IslamInfo_TheMightyOneTheAllAuthoritativeOne" xml:space="preserve">
+    <value>The Mighty One The All Authoritative One</value>
+  </data>
+  <data name="IslamInfo_TheMightyOneTheSupremeBestower" xml:space="preserve">
+    <value>The Mighty One The Supreme Bestower</value>
+  </data>
+  <data name="IslamInfo_TheClementOneTheMerciful" xml:space="preserve">
+    <value>The Clement One The Merciful</value>
+  </data>
+  <data name="IslamInfo_TheClementOneThePardoner" xml:space="preserve">
+    <value>The Clement One The Pardoner</value>
+  </data>
+  <data name="IslamInfo_ThePardonerTheMerciful" xml:space="preserve">
+    <value>The Pardoner The Merciful</value>
+  </data>
+  <data name="IslamInfo_ThePardonerTheLovingOne" xml:space="preserve">
+    <value>The Pardoner The Loving One</value>
+  </data>
+  <data name="IslamInfo_ThePardonerTheClementOne" xml:space="preserve">
+    <value>The Pardoner The Clement One</value>
+  </data>
+  <data name="IslamInfo_ThePardonerTheAcknowledgingOne" xml:space="preserve">
+    <value>The Pardoner The Acknowledging One</value>
+  </data>
+  <data name="IslamInfo_TheSelfSufficientOneTheSoleLaudableOne" xml:space="preserve">
+    <value>The Self Sufficient One The Sole Laudable One</value>
+  </data>
+  <data name="IslamInfo_TheSelfSufficientOneTheBountifulOne" xml:space="preserve">
+    <value>The Self Sufficient One The Bountiful One</value>
+  </data>
+  <data name="IslamInfo_TheSelfSufficientOneTheClementOne" xml:space="preserve">
+    <value>The Self Sufficient One The Clement One</value>
+  </data>
+  <data name="IslamInfo_TheAllKnowingOneTheWiseOne" xml:space="preserve">
+    <value>The All Knowing One The Wise One</value>
+  </data>
+  <data name="IslamInfo_TheAllKnowingOneTheClementOne" xml:space="preserve">
+    <value>The All Knowing One The Clement One</value>
+  </data>
+  <data name="IslamInfo_TheAllKnowingOneTheOmnipotentOne" xml:space="preserve">
+    <value>The All Knowing One The Omnipotent One</value>
+  </data>
+  <data name="IslamInfo_TheAllKnowingOneTheAllAwareOne" xml:space="preserve">
+    <value>The All Knowing One The All Aware One</value>
+  </data>
+  <data name="IslamInfo_TheWiseOneTheSoleLaudableOne" xml:space="preserve">
+    <value>The Wise One The Sole Laudable One</value>
+  </data>
+  <data name="IslamInfo_TheWiseOneTheAllAwareOne" xml:space="preserve">
+    <value>The Wise One The All Aware One</value>
+  </data>
+  <data name="IslamInfo_TheWiseOneTheAllKnowingOne" xml:space="preserve">
+    <value>The Wise One The All Knowing One</value>
+  </data>
+  <data name="IslamInfo_TheSoleLaudableOneTheGloriousOne" xml:space="preserve">
+    <value>The Sole Laudable One The Glorious One</value>
+  </data>
+  <data name="IslamInfo_TheSupremeSolverTheAllKnowingOne" xml:space="preserve">
+    <value>The Supreme Solver The All Knowing One</value>
+  </data>
+  <data name="IslamInfo_TheEternalLordTheMostSacred" xml:space="preserve">
+    <value>The Eternal Lord The Most Sacred</value>
+  </data>
+  <data name="IslamInfo_TheEternalLordTheEmbodimentOfTruth" xml:space="preserve">
+    <value>The Eternal Lord The Embodiment Of Truth</value>
+  </data>
+  <data name="IslamInfo_TheEternalLordTheAllAuthoritativeOne" xml:space="preserve">
+    <value>The Eternal Lord The All Authoritative One</value>
+  </data>
+  <data name="IslamInfo_TheSublimeOneTheMagnificentOne" xml:space="preserve">
+    <value>The Sublime One The Magnificent One</value>
+  </data>
+  <data name="IslamInfo_TheSublimeOneTheGreatOne" xml:space="preserve">
+    <value>The Sublime One The Great One</value>
+  </data>
+  <data name="IslamInfo_TheSublimeOneTheWiseOne" xml:space="preserve">
+    <value>The Sublime One The Wise One</value>
+  </data>
+  <data name="IslamInfo_TheSublimeOneTheAllAwareOne" xml:space="preserve">
+    <value>The Sublime One The All Aware One</value>
+  </data>
+  <data name="IslamInfo_TheSupremePardonerTheOmnipotentOne" xml:space="preserve">
+    <value>The Supreme Pardoner The Omnipotent One</value>
+  </data>
+  <data name="IslamInfo_TheSupremePardonerThePardoner" xml:space="preserve">
+    <value>The Supreme Pardoner The Pardoner</value>
+  </data>
+  <data name="IslamInfo_TheCreatorTheAllKnowingOne" xml:space="preserve">
+    <value>The Creator The All Knowing One</value>
+  </data>
+  <data name="IslamInfo_TheAllHearerTheClose" xml:space="preserve">
+    <value>The All Hearer The Close</value>
+  </data>
+  <data name="IslamInfo_TheAllHearerTheAllKnowingOne" xml:space="preserve">
+    <value>The All Hearer The All Knowing One</value>
+  </data>
+  <data name="IslamInfo_TheAllHearerTheAllSeeing" xml:space="preserve">
+    <value>The All Hearer The All Seeing</value>
+  </data>
+  <data name="IslamInfo_TheEverAcceptorOfRepentanceTheMerciful" xml:space="preserve">
+    <value>The Ever Acceptor Of Repentance The Merciful</value>
+  </data>
+  <data name="IslamInfo_TheEverAcceptorOfRepentanceTheWiseOne" xml:space="preserve">
+    <value>The Ever Acceptor Of Repentance The Wise One</value>
+  </data>
+  <data name="IslamInfo_TheEverAcceptorOfRepentanceThePardoner" xml:space="preserve">
+    <value>The Ever Acceptor Of Repentance The Pardoner</value>
+  </data>
+  <data name="IslamInfo_TheRecognizerTheClementOne" xml:space="preserve">
+    <value>The Recognizer The Clement One</value>
+  </data>
+  <data name="IslamInfo_TheRecognizerTheAllKnowingOne" xml:space="preserve">
+    <value>The Recognizer The All Knowing One</value>
+  </data>
+  <data name="IslamInfo_TheEverLivingTheSelfSubsistingOne" xml:space="preserve">
+    <value>The Ever Living The Self Subsisting One</value>
+  </data>
+  <data name="IslamInfo_TheKnowerOfSubtletiesTheAllAwareOne" xml:space="preserve">
+    <value>The Knower Of Subtleties The All Aware One</value>
+  </data>
+  <data name="IslamInfo_TheFountainHeadOfTruthTheMerciful" xml:space="preserve">
+    <value>The Fountain Head Of Truth The Merciful</value>
+  </data>
+  <data name="IslamInfo_TheMagnificentOneTheClementOne" xml:space="preserve">
+    <value>The Magnificent One The Clement One</value>
+  </data>
+  <data name="IslamInfo_TheOnlyOneTheAllPrevailingOne" xml:space="preserve">
+    <value>The Only One The All Prevailing One</value>
+  </data>
+  <data name="IslamInfo_TheAllAwareOneTheAllSeeing" xml:space="preserve">
+    <value>The All Aware One The All Seeing</value>
+  </data>
+  <data name="IslamInfo_TheStrongOneTheMightyOne" xml:space="preserve">
+    <value>The Strong One The Mighty One</value>
+  </data>
+  <data name="IslamInfo_TheGathererOfMankind" xml:space="preserve">
+    <value>The Gatherer Of Mankind</value>
+  </data>
+  <data name="IslamInfo_TheAllPervadingOneTheAllKnowingOne" xml:space="preserve">
+    <value>The All Pervading One The All Knowing One</value>
+  </data>
+  <data name="IslamInfo_TheAllPervadingOneTheWiseOne" xml:space="preserve">
+    <value>The All Pervading One The Wise One</value>
+  </data>
+  <data name="IslamInfo_TheEverLivingTheBountifulOne" xml:space="preserve">
+    <value>The Ever Living The Bountiful One</value>
+  </data>
+  <data name="IslamInfo_TheEverLivingTheCoverer" xml:space="preserve">
+    <value>The Ever Living The Coverer</value>
+  </data>
+  <data name="IslamInfo_ThePrayersOfAllahUponHimHisFamilyAndPeace" xml:space="preserve">
+    <value>The Prayers Of Allah Upon Him His Family And Peace</value>
+  </data>
+  <data name="IslamInfo_UponHimPrayersAndPeace" xml:space="preserve">
+    <value>Upon Him Prayers And Peace</value>
+  </data>
+  <data name="IslamInfo_UponHimHisFamilyPrayersAndPeace" xml:space="preserve">
+    <value>Upon Him His Family Prayers And Peace</value>
+  </data>
+  <data name="IslamInfo_UponBothOfThemBePeace" xml:space="preserve">
+    <value>Upon Both Of Them Be Peace</value>
+  </data>
+  <data name="IslamInfo_UponHerBePeace" xml:space="preserve">
+    <value>Upon Her Be Peace</value>
+  </data>
+  <data name="IslamInfo_UponThemBePeaceMasculine" xml:space="preserve">
+    <value>Upon Them Be Peace Masculine</value>
+  </data>
+  <data name="IslamInfo_UponThemBePeaceFeminine" xml:space="preserve">
+    <value>Upon Them Be Peace Feminine</value>
+  </data>
+  <data name="IslamInfo_AndForParentsKindness" xml:space="preserve">
+    <value>And For Parents Kindness</value>
+  </data>
+  <data name="IslamInfo_CreedOfIslam" xml:space="preserve">
+    <value>Creed Of Islam</value>
+  </data>
+  <data name="IslamInfo_BlessedFeastCelebration" xml:space="preserve">
+    <value>Blessed Feast Celebration</value>
+  </data>
+  <data name="IslamInfo_HappyFeastCelebration" xml:space="preserve">
+    <value>Happy Feast Celebration</value>
+  </data>
+  <data name="IslamInfo_OAllahSendPrayersUponMuhammadAndTheFamilyOfMuhammad" xml:space="preserve">
+    <value>O Allah Send Prayers Upon Muhammad And The Family Of Muhammad</value>
+  </data>
+  <data name="IslamInfo_TestifyingCreedOfIslam" xml:space="preserve">
+    <value>Testifying Creed Of Islam</value>
+  </data>
+  <data name="IslamInfo_TestifyingCreedOfIslamFirstPart" xml:space="preserve">
+    <value>Testifying Creed Of Islam First Part</value>
+  </data>
+  <data name="IslamInfo_TestifyingCreedOfIslamSecondPart" xml:space="preserve">
+    <value>Testifying Creed Of Islam Second Part</value>
+  </data>
+  <data name="IslamInfo_SafeguardYourselfFromHeWhoYouHaveBeenGoodTo" xml:space="preserve">
+    <value>Safeguard Yourself From He Who You Have Been Good To</value>
+  </data>
+  <data name="IslamInfo_TrulyAllahLovesWhenOneWhoWorksDoesTheWorkWell" xml:space="preserve">
+    <value>Truly Allah Loves When One Who Works Does The Work Well</value>
+  </data>
+  <data name="IslamInfo_MonthOfRamadanWhichWasRevealedThereinTheQuranGuidanceToMankind" xml:space="preserve">
+    <value>Month Of Ramadan Which Was Revealed Therein The Quran Guidance To Mankind</value>
+  </data>
+  <data name="IslamInfo_TheNamesOfAllahAreBest" xml:space="preserve">
+    <value>The Names Of Allah Are Best</value>
+  </data>
+  <data name="IslamInfo_TheNamesOfAllahAreBestFixedInTheBookAndTradition" xml:space="preserve">
+    <value>The Names Of Allah Are Best Fixed In The Book And Tradition</value>
+  </data>
+  <data name="IslamInfo_FixedInTheBookAndTradition" xml:space="preserve">
+    <value>Fixed In The Book And Tradition</value>
+  </data>
+  <data name="IslamInfo_AndAllahHasTheBestNamesCallUponHimAndLeaveThemInPlaceThoseNamesNotablyCutOffWhatTheyDo" xml:space="preserve">
+    <value>And Allah Has The Best Names Call Upon Him And Leave Them In Place Those Names Notably Cut Off What They Do</value>
+  </data>
+  <data name="IslamInfo_WhoeverMemorizesThemWillEnterParadise" xml:space="preserve">
+    <value>Whoever Memorizes Them Will Enter Paradise</value>
+  </data>
+  <data name="IslamInfo_TheologyOfThePeopleOfTraditionAndTheGroup" xml:space="preserve">
+    <value>Theology Of The People Of Tradition And The Group</value>
+  </data>
+  <data name="IslamInfo_ProphetOfAllah" xml:space="preserve">
+    <value>Prophet Of Allah</value>
+  </data>
+  <data name="IslamInfo_ProphetsOfAllah" xml:space="preserve">
+    <value>Prophets Of Allah</value>
+  </data>
+  <data name="IslamInfo_MessengerOfAllah" xml:space="preserve">
+    <value>Messenger Of Allah</value>
+  </data>
+  <data name="IslamInfo_ComeToPrayer" xml:space="preserve">
+    <value>Come To Prayer</value>
+  </data>
+  <data name="IslamInfo_ComeToSuccess" xml:space="preserve">
+    <value>Come To Success</value>
+  </data>
+  <data name="IslamInfo_BlessedAndExaltedBeHe" xml:space="preserve">
+    <value>Blessed And Exalted Be He</value>
+  </data>
+  <data name="IslamInfo_MayHisGloryBeRaised" xml:space="preserve">
+    <value>May His Glory Be Raised</value>
+  </data>
+  <data name="IslamInfo_TheNobleQuran" xml:space="preserve">
+    <value>The Noble Quran</value>
+  </data>
+  <data name="IslamInfo_NobleQuran" xml:space="preserve">
+    <value>Noble Quran</value>
+  </data>
+  <data name="IslamInfo_BeWithAllah" xml:space="preserve">
+    <value>Be With Allah</value>
+  </data>
+  <data name="IslamInfo_AllahIsGreatestAllahIsGreatest" xml:space="preserve">
+    <value>Allah Is Greatest Allah Is Greatest</value>
+  </data>
+  <data name="IslamInfo_GloryBeToYouAllah" xml:space="preserve">
+    <value>Glory Be To You Allah</value>
+  </data>
+  <data name="IslamInfo_MajorPolythiesm" xml:space="preserve">
+    <value>Major Polythiesm</value>
+  </data>
+  <data name="IslamInfo_DoctrineOfUnityOfExistence" xml:space="preserve">
+    <value>Doctrine Of Unity Of Existence</value>
+  </data>
+  <data name="IslamInfo_GreatWithPraiseToAllah" xml:space="preserve">
+    <value>Great With Praise To Allah</value>
+  </data>
+  <data name="IslamInfo_MayEveryYearYouBeInGoodHealthAndBlessings" xml:space="preserve">
+    <value>May Every Year You Be In Good Health And Blessings</value>
+  </data>
+  <data name="IslamInfo_MayEveryYearYouHaveGoodness" xml:space="preserve">
+    <value>May Every Year You Have Goodness</value>
+  </data>
+  <data name="IslamInfo_AllRightsReserved" xml:space="preserve">
+    <value>All Rights Reserved</value>
+  </data>
+  <data name="IslamInfo_ThenTrulyThePartyOfAllahAreTheTriumphant" xml:space="preserve">
+    <value>Then Truly The Party Of Allah Are The Triumphant</value>
+  </data>
+  <data name="IslamInfo_HeIsAllah" xml:space="preserve">
+    <value>He Is Allah</value>
+  </data>
+  <data name="IslamInfo_OnWithTheTruth" xml:space="preserve">
+    <value>On With The Truth</value>
+  </data>
+  <data name="IslamInfo_OLordGiveMeKnowledge" xml:space="preserve">
+    <value>O Lord Give Me Knowledge</value>
+  </data>
+  <data name="IslamInfo_AliFriendOfAllah" xml:space="preserve">
+    <value>Ali Friend Of Allah</value>
+  </data>
+  <data name="IslamInfo_PeaceBeUponYouAliSonOfMuhammadOTheGuideThePureUponYouBePeace" xml:space="preserve">
+    <value>Peace Be Upon You Ali Son Of Muhammad OThe Guide The Pure Upon You Be Peace</value>
+  </data>
+  <data name="IslamInfo_OTheGreatAliThePrayersOfAllahUponYou" xml:space="preserve">
+    <value>O The Great Ali The Prayers Of Allah Upon You</value>
+  </data>
+  <data name="IslamInfo_OFatimahThePrayersOfAllahUponYou" xml:space="preserve">
+    <value>O Fatimah The Prayers Of Allah Upon You</value>
+  </data>
+  <data name="IslamInfo_OGenerousPeopleOfTheHouse" xml:space="preserve">
+    <value>O Generous People Of The House</value>
+  </data>
+  <data name="IslamInfo_PeaceBeUponYouOFatherOfMuhammadHasanSonOfAli" xml:space="preserve">
+    <value>Peace Be Upon You OFather Of Muhammad Hasan Son Of Ali</value>
+  </data>
+  <data name="IslamInfo_OFatherOfTheRighteousTheGuidedOne" xml:space="preserve">
+    <value>O Father Of The Righteous The Guided One</value>
+  </data>
+  <data name="IslamInfo_HusseinThePrayersOfAllahUponYou" xml:space="preserve">
+    <value>Hussein The Prayers Of Allah Upon You</value>
+  </data>
+  <data name="IslamInfo_PeaceBeUponYouOFatherOfTheRighteousTheGuidedOneHurryAllahYourHiddenOne" xml:space="preserve">
+    <value>Peace Be Upon You OFather Of The Righteous The Guided One Hurry Allah Your Hidden One</value>
+  </data>
+  <data name="IslamInfo_TheGuidedOneThePeacockOfThePeopleOfJannah" xml:space="preserve">
+    <value>The Guided One The Peacock Of The People Of Jannah</value>
+  </data>
+  <data name="IslamInfo_IAmCrazyHussein" xml:space="preserve">
+    <value>I Am Crazy Hussein</value>
+  </data>
+  <data name="IslamInfo_OFatherOfTheServantOfAllahPrayersOfAllahUponYou" xml:space="preserve">
+    <value>O Father Of The Servant Of Allah Prayers Of Allah Upon You</value>
+  </data>
+  <data name="IslamInfo_TheMoonOfTheTribeOfHashimUponYouBePeace" xml:space="preserve">
+    <value>The Moon Of The Tribe Of Hashim Upon You Be Peace</value>
+  </data>
+  <data name="IslamInfo_OUprightFamilyOfMuhammad" xml:space="preserve">
+    <value>O Upright Family Of Muhammad</value>
+  </data>
+  <data name="IslamInfo_OReasonedSonOfHasanAlAskari" xml:space="preserve">
+    <value>O Reasoned Son Of Hasan Al Askari</value>
+  </data>
+  <data name="IslamInfo_OUprightFamilyOfMuhammadHurryAllahYourHiddenOnePeaceBeUponYou" xml:space="preserve">
+    <value>O Upright Family Of Muhammad Hurry Allah Your Hidden One Peace Be Upon You</value>
+  </data>
+  <data name="IslamInfo_NoBraveYouthExceptAliAndNoSwordExceptThePossessorOfTheSpineSplitter" xml:space="preserve">
+    <value>No Brave Youth Except Ali And No Sword Except The Possessor Of The Spine Splitter</value>
+  </data>
+  <data name="IslamInfo_OFatimahZahara" xml:space="preserve">
+    <value>O Fatimah Zahara</value>
+  </data>
+  <data name="IslamInfo_FatimahZahara" xml:space="preserve">
+    <value>Fatimah Zahara</value>
+  </data>
+  <data name="IslamInfo_AllahMuhammadAli" xml:space="preserve">
+    <value>Allah Muhammad Ali</value>
+  </data>
+  <data name="IslamInfo_OZaynabKubra" xml:space="preserve">
+    <value>O Zaynab Kubra</value>
+  </data>
+  <data name="IslamInfo_PeaceBeUponYouOFatherOfTheServantOfAllah" xml:space="preserve">
+    <value>Peace Be Upon You O Father Of The Servant Of Allah</value>
+  </data>
+  <data name="IslamInfo_PeaceBeUponYouORuqiyaDaughterOfHussein" xml:space="preserve">
+    <value>Peace Be Upon You O Ruqiya Daughter Of Hussein</value>
+  </data>
+  <data name="IslamInfo_AliSonOfAbuTalibUponYouBePeace" xml:space="preserve">
+    <value>Ali Son Of Abu Talib Upon You Be Peace</value>
+  </data>
+  <data name="IslamInfo_WhoEverIsKingThenThatKingIsAli" xml:space="preserve">
+    <value>Who Ever Is King Then That King Is Ali</value>
+  </data>
+  <data name="IslamInfo_AliLionOfGod" xml:space="preserve">
+    <value>Ali Lion Of God</value>
+  </data>
+  <data name="IslamInfo_FatimahZaharaUponHerBePeace" xml:space="preserve">
+    <value>Fatimah Zahara Upon Her Be Peace</value>
+  </data>
+  <data name="IslamInfo_OAliRememberTheReappearanceOfOffice" xml:space="preserve">
+    <value>O Ali Remember The Reappearance Of Office</value>
+  </data>
+  <data name="IslamInfo_AliSonOfMusaRidaUponHimBePeace" xml:space="preserve">
+    <value>Ali Son Of Musa Rida Upon Him Be Peace</value>
+  </data>
+  <data name="IslamInfo_ThePrayersOfAllahUponYou" xml:space="preserve">
+    <value>The Prayers Of Allah Upon You</value>
+  </data>
+  <data name="IslamInfo_VerseOfTheTenRights" xml:space="preserve">
+    <value>Verse Of The Ten Rights</value>
+  </data>
 </root>

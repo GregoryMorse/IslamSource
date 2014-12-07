@@ -874,6 +874,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<verse title="AndAllahHasTheBestNamesSoCallOnThem" text="\{7:180:1-5\}"></verse>
 			<verse title="AndAllahHasTheBestNamesSoCallOnThemLeaveThoseWhoPracticeDeviationConcerningHisNamesTheyWillBeRecompensedForWhatTheyHaveBeenDoing" text="\{7:180\}"></verse>
 			<verse title="SayCallUponAllahOrCallUponTheMostMercifulWhicheverNameYouCallToHimBelongTheBestNames" text="\{17:110:1-13\}"></verse>
+			<verse title="InRemembranceOfAllahHeartsFindPeace" text="\{13:28:8-12\}"></verse>
 		</category>
 		<category title="SupplicationAndPrayersForMorningAndAfternoon">
 			<verse title="SupplicationAndPrayersForMorningAndAfternoon" text="\{1,2:1-5,2:255-257,2:284-286,112,113,114\}\{supp:InTheMorning8,InTheEvening8,InTheMorning6,InTheEvening6,InTheMorning9,InTheEvening9,InTheMorning4,InTheEvening4,RemembranceSixth,RemembranceFifth,InTheMorning7,InTheMorningOrEvening8,RemembranceSeventh,InTheEvening7,ForAnxietyAndSorrow2,InTheMorningOrEvening4,InTheMorningOrEvening3,SeekingForgivenessAndRepentance3,ForExpiationOfSinsAtTheConclusionOfSittingOrGathering1,RemembranceFourth\}"></verse>
@@ -1012,7 +1013,6 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 		</category>
 		<category title="ResponseParticles">
 			<word text="&lt;ila`ha" id="God"></word>
-			<word text="{ll~ahu" id="Allah"></word>
 
 			<word text="kal~aA" id="NeverCertainlyNot"></word>
 			<word text="lano" id="NotFutureWillNever" grammar="acc"></word>
@@ -2670,10 +2670,8 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="zakariy~aA" id="Zechariah"></word>
 			<word text="yaHoyaY`" id="JohnTheBaptist"></word>
 			<word text="EiysaY {bonu maroyama" id="JesusSonOfMary"></word>
-			<word text="muHam~adN" id="Muhammad"></word>
 		</category>
 		<category title="NamesOfAllah">
-			<word text="{ll~ahu" id="Allah"></word>
 			<word text="{lr~aHomanu" id="TheBeneficent"></word>
 			<word text="{lr~aHiymu" id="TheMerciful"></word>
 			<word text="{lomaliku" id="TheEternalLord"></word>
@@ -2921,7 +2919,6 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="{t~aqi $ar~a man &gt;aHosanta &lt;ilayohi" id="SafeguardYourselfFromHeWhoYouHaveBeenGoodTo"></word>
 			<word text="&lt;in~a {ll~aha yuHib~u &lt;i*aA Eamila &gt;aHadukumo EamalFA &gt;an yutoqinahu" id="TrulyAllahLovesWhenOneWhoWorksDoesTheWorkWell"></word>
 			<word text="$ahorN ramaDaAnN {l~a*iY &gt;anzala fiyhi {loquro&apos;aAni hudFY liln~aAsi" id="MonthOfRamadanWhichWasRevealedThereinTheQuranGuidanceToMankind"></word>
-			<word text="&gt;alaA bi*ikori {ll~ahi taTomo}inu {loquluwbu" id="InRemembranceOfAllahHeartsFindPeace"></word>
 			<word text="&gt;asomaA^'u {ll~ahi {loHusonaY`" id="TheNamesOfAllahAreBest"></word>
 			<word text="&gt;asomaA^'u {ll~ahi {loHusonaY` {lv~aAbotapu fiY {lokitaAbi wa{ls~un~api" id="TheNamesOfAllahAreBestFixedInTheBookAndTradition"></word>
 			<word text="{lv~aAbotapu fiY {lokitaAbi wa{ls~un~api" id="FixedInTheBookAndTradition"></word>

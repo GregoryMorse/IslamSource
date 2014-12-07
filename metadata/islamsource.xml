@@ -164,6 +164,7 @@
 			<image name="fontloading" text="IslamSource_Loading" source="loading-h.gif"></image>
 			<radio name="quotemode" description="IslamSource_QuoteMode" usecheck="true" onchange="RenderArray::GetQuoteModeJS"><option name="IslamSource_Quote"></option><option name="IslamSource_Disable" defaultvalue="true"></option></radio>
 			<static name="doctext" description="IslamSource_Text" onrender="DocBuilder::GetRenderedText"></static>
+			<static name="translitschemetext" description="IslamSource_Text" onrender="Arabic::GetTransliterationSchemeTable"></static>
 			<static name="font-tester" description=""></static>
 		</frame>		
 	</page>
@@ -180,6 +181,7 @@
 			<button name="fontcustomapply" description="IslamSource_Apply" onclick="ArabicFont::GetChangeCustomFontJS"></button>
 			<image name="fontloading" text="IslamSource_Loading" source="loading-h.gif"></image>
 			<static name="islaminfotext" description="IslamSource_Text" onrender="Arabic::DisplayTranslation"></static>
+			<static name="translitschemetext" description="IslamSource_Text" onrender="Arabic::GetTransliterationSchemeTable"></static>
 			<static name="font-tester" description=""></static>
 		</frame>
 	</page>
@@ -198,6 +200,7 @@
 			<image name="fontloading" text="IslamSource_Loading" source="loading-h.gif"></image>
 			<radio name="quotemode" description="IslamSource_QuoteMode" usecheck="true" onchange="RenderArray::GetQuoteModeJS"><option name="IslamSource_Quote"></option><option name="IslamSource_Disable" defaultvalue="true"></option></radio>
 			<static name="supptext" description="IslamSource_Text" onrender="Supplications::GetRenderedSuppText"></static>
+			<static name="translitschemetext" description="IslamSource_Text" onrender="Arabic::GetTransliterationSchemeTable"></static>
 			<static name="font-tester" description=""></static>
 		</frame>
 	</page>
@@ -218,6 +221,7 @@
 			<radio name="direction" description="IslamSource_Direction"><option name="IslamSource_ArabicToRoman" defaultvalue="true"></option><option name="IslamSource_RomanToArabic"></option></radio>
 			<button name="transliterate" description="IslamSource_Perform" onclick="Arabic::GetTransliterateJS"></button>
 			<static name="translitvalue" description=""></static>
+			<static name="translitschemetext" description="IslamSource_Text" onrender="Arabic::GetTransliterationSchemeTable"></static>
 		</frame>
 		<frame name="arabicalphabet" description="IslamSource_ArabicAlphabet">
 			<static name="alphabet" description="" onrender="Arabic::DisplayAll"></static>
@@ -253,6 +257,7 @@
 			<button name="answer2" description="" onrender="Quiz::DisplayAnswer" onclick="Quiz::VerifyAnswer"></button>
 			<button name="answer3" description="" onrender="Quiz::DisplayAnswer" onclick="Quiz::VerifyAnswer"></button>
 			<button name="answer4" description="" onrender="Quiz::DisplayAnswer" onclick="Quiz::VerifyAnswer"></button>
+			<static name="translitschemetext" description="IslamSource_Text" onrender="Arabic::GetTransliterationSchemeTable"></static>
 		</frame>
 	</page>
 	<page name="IslamicLists" description="IslamSource_Lists">
@@ -270,6 +275,7 @@
 			<image name="fontloading" text="IslamSource_Loading" source="loading-h.gif"></image>
 			<radio name="quotemode" description="IslamSource_QuoteMode" usecheck="true" onchange="RenderArray::GetQuoteModeJS"><option name="IslamSource_Quote"></option><option name="IslamSource_Disable" defaultvalue="true"></option></radio>
 			<static name="doctext" description="" onrender="DocBuilder::GetListRenderedText"></static>
+			<static name="translitschemetext" description="IslamSource_Text" onrender="Arabic::GetTransliterationSchemeTable"></static>
 			<static name="font-tester" description=""></static>
 		</frame>	
 	</page>
@@ -322,6 +328,7 @@
 			<radio name="quotemode" description="IslamSource_QuoteMode" usecheck="true" onchange="RenderArray::GetQuoteModeJS"><option name="IslamSource_Quote"></option><option name="IslamSource_Disable" defaultvalue="true"></option></radio>
 			<static name="quranwordtotal" description="IslamSource_WordTotal" onrender="TanzilReader::GetQuranWordTotal"></static>
 			<static name="quranwords" description="IslamSource_Text" onrender="TanzilReader::GetQuranWordFrequency"></static>
+			<static name="translitschemetext" description="IslamSource_Text" onrender="Arabic::GetTransliterationSchemeTable"></static>
 			<static name="font-tester" description=""></static>
 		</frame>
 	</page>
@@ -342,6 +349,7 @@
 			<image name="fontloading" text="IslamSource_Loading" source="loading-h.gif"></image>
 			<radio name="quotemode" description="IslamSource_QuoteMode" usecheck="true" onchange="RenderArray::GetQuoteModeJS"><option name="Quote"></option><option name="Disable" defaultvalue="true"></option></radio>
 			<static name="qurantext" description="IslamSource_Text" onrender="TanzilReader::GetRenderedQuranText"></static>
+			<static name="translitschemetext" description="IslamSource_Text" onrender="Arabic::GetTransliterationSchemeTable"></static>
 			<static name="font-tester" description=""></static>
 		</frame>
 	</page>
@@ -362,6 +370,7 @@
 			<image name="fontloading" text="IslamSource_Loading" source="loading-h.gif"></image>
 			<radio name="quotemode" description="IslamSource_QuoteMode" usecheck="true" onchange="RenderArray::GetQuoteModeJS"><option name="Quote"></option><option name="Disable" defaultvalue="true"></option></radio>
 			<static name="hadithtext" description="IslamSource_Text" onrender="HadithReader::GetRenderedText"></static>
+			<static name="translitschemetext" description="IslamSource_Text" onrender="Arabic::GetTransliterationSchemeTable"></static>
 			<static name="font-tester" description=""></static>
 		</frame>
 	</page>
