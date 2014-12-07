@@ -2073,13 +2073,13 @@
   <data name="IslamInfo_Final3WordByWord" xml:space="preserve">
     <value>And peace|recounting|his knowledge|and ink|of his words|whenever|remember Him|do so|and whenever those who neglect|to|remember Him|do so</value>
   </data>
-  <data name="IslamInfo_Introduction" xml:space="preserve">
+  <data name="IslamInfo_IntroductionBestNames" xml:space="preserve">
     <value>Introduction</value>
   </data>
-  <data name="IslamInfo_IntroductionTrans" xml:space="preserve">
+  <data name="IslamInfo_IntroductionBestNamesTrans" xml:space="preserve">
     <value>We ask you O that He is Allah who there is no God except He</value>
   </data>
-  <data name="IslamInfo_IntroductionWordByWord" xml:space="preserve">
+  <data name="IslamInfo_IntroductionBestNamesWordByWord" xml:space="preserve">
     <value>We ask you|O that|He|is Allah|who|there is no|God|except|He</value>
   </data>
   <data name="IslamInfo_TheBestNames" xml:space="preserve">

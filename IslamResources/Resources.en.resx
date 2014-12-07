@@ -3741,13 +3741,13 @@
   <data name="IslamInfo_Intention" xml:space="preserve">
     <value>Intention</value>
   </data>
-  <data name="IslamInfo_Introduction" xml:space="preserve">
+  <data name="IslamInfo_IntroductionBestNames" xml:space="preserve">
     <value>Introduction</value>
   </data>
-  <data name="IslamInfo_IntroductionTrans" xml:space="preserve">
+  <data name="IslamInfo_IntroductionBestNamesTrans" xml:space="preserve">
     <value>We ask you O that He is Allah who there is no God except He</value>
   </data>
-  <data name="IslamInfo_IntroductionWordByWord" xml:space="preserve">
+  <data name="IslamInfo_IntroductionBestNamesWordByWord" xml:space="preserve">
     <value>We ask you|O that|He|is Allah|who|there is no|God|except|He</value>
   </data>
   <data name="IslamInfo_Invocation" xml:space="preserve">

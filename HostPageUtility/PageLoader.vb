@@ -2335,7 +2335,7 @@ Public Class RenderArray
                             'ct.AddText(New iTextSharp.text.Chunk(Text, SpecFont))
                             'preservation of quality on zoom factor must be specified
                             ct.SetSimpleColumn(Rect.Left + Doc.LeftMargin - 1 + ExtraWidth, Doc.PageSize.Height - Doc.TopMargin - Rect.Bottom - _Bounds(Count)(SubCount)(NextCount).Baseline - Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size) * 2, Rect.Right - 4 + Doc.LeftMargin + ExtraWidth, Doc.PageSize.Height - Doc.TopMargin - Rect.Top + 1 - _Bounds(Count)(SubCount)(NextCount).Baseline - Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size) * 2, Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size), If(ct.RunDirection = iTextSharp.text.pdf.PdfWriter.RUN_DIRECTION_LTR, iTextSharp.text.Element.ALIGN_RIGHT, iTextSharp.text.Element.ALIGN_RIGHT) Or iTextSharp.text.Element.ALIGN_BASELINE)
-                            ct.AddElement(iTextSharp.text.Image.GetInstance((Utility.GetUnicodeChar(20 * 8, CurRenderArray(Count).TextItems(SubCount).Font, Text(0))), iTextSharp.text.BaseColor.WHITE))
+                            ct.AddElement(iTextSharp.text.Image.GetInstance((Utility.GetUnicodeChar(100 * 8, CurRenderArray(Count).TextItems(SubCount).Font, Text(0))), iTextSharp.text.BaseColor.WHITE))
                         Else
                             ct.SetSimpleColumn(Rect.Left + Doc.LeftMargin + ExtraWidth, Doc.PageSize.Height - Doc.TopMargin - Rect.Bottom - _Bounds(Count)(SubCount)(NextCount).Baseline - Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size) * 2, Rect.Right - 3 + Doc.LeftMargin + ExtraWidth, Doc.PageSize.Height - Doc.TopMargin - Rect.Top + 1 - _Bounds(Count)(SubCount)(NextCount).Baseline - Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size) * 2, Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size), If(ct.RunDirection = iTextSharp.text.pdf.PdfWriter.RUN_DIRECTION_LTR, iTextSharp.text.Element.ALIGN_RIGHT, iTextSharp.text.Element.ALIGN_RIGHT) Or iTextSharp.text.Element.ALIGN_BASELINE)
                             ct.AddText(New iTextSharp.text.Chunk(Text, Font))
@@ -2389,7 +2389,7 @@ Public Class RenderArray
             'Font = New iTextSharp.text.Font(BaseFont, 20, iTextSharp.text.Font.NORMAL)
             Dim PrivateFontColl As New Drawing.Text.PrivateFontCollection
             PrivateFontColl.AddFontFile(Utility.GetFilePath("files\" + Utility.FontFile(Array.IndexOf(Utility.FontList, FontName))))
-            s = Utility.GetTextExtent(Str, New Drawing.Font(PrivateFontColl.Families(0), 20))
+            s = Utility.GetTextExtent(Str, New Drawing.Font(PrivateFontColl.Families(0), 100))
             s.Width = CInt(Math.Ceiling(Math.Ceiling(s.Width + 1) * 96.0F / 72.0F))
             s.Height = CInt(Math.Ceiling(Math.Ceiling(s.Height + 1) * 96.0F / 72.0F)) + Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size) * 4
             Baseline = 0
@@ -2848,11 +2848,11 @@ Public Class RenderArray
                     If (CInt(Data(4)) <> 0) Then writer.Write("Average of " + CStr(CInt(Data(3)) / CInt(Data(4)) / 2) + " out of " + Data(4) + " rankings")
                     writer.WriteEndTag("span")
                 Else
-                    If Items(Count).TextItems(Index).Font = "AGAIslamicPhrases" Or Items(Count).TextItems(Index).Font = "AGAArabesque" Or Items(Count).TextItems(Index).Font = "IslamicLogo" Then
+                    If Array.IndexOf(Utility.FontList, Items(Count).TextItems(Index).Font) <> -1 Then
                         writer.WriteAttribute("class", "arabic")
                         writer.Write(HtmlTextWriter.TagRightChar)
                         writer.WriteBeginTag("img")
-                        writer.WriteAttribute("src", HttpUtility.HtmlEncode("host.aspx?Page=Image.gif&Image=UnicodeChar&Size=32&Char=" + Hex(AscW(CStr(Items(Count).TextItems(Index).Text)(0))) + "&Font=" + Items(Count).TextItems(Index).Font))
+                        writer.WriteAttribute("src", HttpUtility.HtmlEncode("host.aspx?Page=Image.gif&Image=UnicodeChar&Size=160&Char=" + Hex(AscW(CStr(Items(Count).TextItems(Index).Text)(0))) + "&Font=" + Items(Count).TextItems(Index).Font))
                         writer.WriteAttribute("alt", String.Empty)
                     ElseIf Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eArabic Then
                         writer.WriteAttribute("class", "arabic")
@@ -2871,7 +2871,7 @@ Public Class RenderArray
                         writer.WriteAttribute("style", "color: " + System.Drawing.ColorTranslator.ToHtml(Items(Count).TextItems(Index).Clr) + ";" + If(Items(Count).TextItems(Index).Font <> String.Empty, "font-family:" + Items(Count).TextItems(Index).Font + ";", String.Empty) + Style)
                     End If
                     writer.Write(HtmlTextWriter.TagRightChar)
-                    If Not (Items(Count).TextItems(Index).Font = "AGAIslamicPhrases" Or Items(Count).TextItems(Index).Font = "AGAArabesque" Or Items(Count).TextItems(Index).Font = "IslamicLogo") Then writer.Write(Utility.HtmlTextEncode(CStr(Items(Count).TextItems(Index).Text)).Replace(vbCrLf, "<br>"))
+                    If Array.IndexOf(Utility.FontList, Items(Count).TextItems(Index).Font) = -1 Then writer.Write(Utility.HtmlTextEncode(CStr(Items(Count).TextItems(Index).Text)).Replace(vbCrLf, "<br>"))
                 End If
                 writer.WriteEndTag(CStr(IIf(Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eNested Or Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eRanking Or Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eList, "div", "span")))
             Next
