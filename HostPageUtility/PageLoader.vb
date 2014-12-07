@@ -331,9 +331,9 @@ Public Class Utility
     Public Shared Function MakeTabString(ByVal Index As Integer) As String
         MakeTabString = StrDup(Index, vbTab)
     End Function
-    Public Shared FontList As String() = {"AGAIslamicPhrases", "AGAArabesque", "Shia", "IslamicLogo", "KFGQPCArabicSymbols01", "Quranic", "Tulth", "Farsi"}
-    Public Shared FontFile As String() = {"AGA_Islamic_Phrases.TTF", "aga-arabesque.ttf", "SHIA.TTF", "islamic.ttf", "Symbols1_Ver02.otf", "Quranic.ttf", "Tulth.ttf", "Farsi.ttf"}
-    Public Shared Function GetUnicodeChar(Size As Integer, Font As String, Ch As Char) As Drawing.Bitmap
+    Public Shared FontList As String() = {"AGAIslamicPhrases", "AGAArabesque", "Shia", "IslamicLogo", "KFGQPCArabicSymbols01", "Quranic", "Tulth", "Farsi", "Asmaul-Husna", "Asmaul-Husna_2"}
+    Public Shared FontFile As String() = {"AGA_Islamic_Phrases.TTF", "aga-arabesque.ttf", "SHIA.TTF", "islamic.ttf", "Symbols1_Ver02.otf", "Quranic.ttf", "Tulth.ttf", "Farsi.ttf", "Asmaul-Husna_1.ttf", "Asmaul-Husna_2.ttf"}
+    Public Shared Function GetUnicodeChar(Size As Integer, Font As String, Ch As String) As Drawing.Bitmap
         Dim oFont As Font
         If Array.IndexOf(Utility.FontList, Font) <> -1 Then
             Dim PrivateFontColl As New Drawing.Text.PrivateFontCollection

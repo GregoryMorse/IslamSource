@@ -2730,7 +2730,7 @@ Public Class DocBuilder
                         End If
                         Array.ForEach(Str.Split(","c),
                             Sub(SubStr As String)
-                                Dim RendText As New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, String.Join(String.Empty, Array.ConvertAll(SubStr.Split("+"c), Function(Split As String) CStr(ChrW(Integer.Parse(Split, System.Globalization.NumberStyles.HexNumber))))))
+                                Dim RendText As New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, String.Join(String.Empty, Array.ConvertAll(SubStr.Split("+"c), Function(Split As String) Char.ConvertFromUtf32(Integer.Parse(Split, System.Globalization.NumberStyles.HexNumber)))))
                                 RendText.Font = Font
                                 Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {RendText}))
                             End Sub)

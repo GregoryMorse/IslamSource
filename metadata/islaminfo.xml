@@ -824,6 +824,12 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 		</category>
 		<category title="TheBestNames">
 			<verse title="IntroductionBestNames" text="naso&gt;aluka ya`mano huwa {ll~ahu {l~a*iy laA^ &lt;ilaha &lt;il~aA huwa"></verse>
+			<verse title="TheBeneficentTheMercifulTheEternalLordTheMostSacredTheEmbodimentOfPeaceTheInfuserOfFaithThePreserverOfSafetyTheMightyOneTheAllCompellingTheDominantOneTheCreatorTheEvolverTheFlawlessShaperTheVeryFirstTheInfiniteLastOneThePerceptibleTheImperceptible" text="\{phrase:TheBeneficent,TheMerciful,TheEternalLord,TheMostSacred,TheEmbodimentOfPeace,TheInfuserOfFaith,ThePreserverOfSafety,TheMightyOne,TheAllCompelling,TheDominantOne,TheCreator,TheEvolver,TheFlawlessShaper,TheVeryFirst,TheInfiniteLastOne,ThePerceptible,TheImperceptible\}"></verse>
+			<verse title="TheAllHearerTheAllSeeingTheMasterTheHelperTheSupremePardonerThePowerfulTheKnowerOfSubtletiesTheAllAwareOneTheOddTheBeautifulTheShyTheCovererTheGreatOneTheExtremelyExaltedOneTheOnlyOneTheAllPrevailingOne" text="\{phrase:TheAllHearer,TheAllSeeing,TheMaster,TheHelper,TheSupremePardoner,ThePowerful,TheKnowerOfSubtleties,TheAllAwareOne,TheOdd,TheBeautiful,TheShy,TheCoverer,TheGreatOne,TheExtremelyExaltedOne,TheOnlyOne,TheAllPrevailingOne\}"></verse>
+			<verse title="TheEmbodimentOfTruthTheClearTheStrongOneTheFirmOneTheEverLivingTheSelfSubsistingOneTheSublimeOneTheMagnificentOneTheAcknowledgingOneTheClementOneTheAllPervadingOneTheAllKnowingOneTheEverAcceptorOfRepentanceTheWiseOneTheSelfSufficientOneTheBountifulOneTheSoleOneTheSupremeProviderTheCloseTheRespondingOneThePardonerTheLovingOne" text="\{phrase:TheEmbodimentOfTruth,TheClear,TheStrongOne,TheFirmOne,TheEverLiving,TheSelfSubsistingOne,TheSublimeOne,TheMagnificentOne,TheAcknowledgingOne,TheClementOne,TheAllPervadingOne,TheAllKnowingOne,TheEverAcceptorOfRepentance,TheWiseOne,TheSelfSufficientOne,TheBountifulOne,TheSoleOne,TheSupremeProvider,TheClose,TheRespondingOne,ThePardoner,TheLovingOne\}"></verse>
+			<verse title="TheProtectingAssociateTheSoleLaudableOneTheGuardingOneTheGloriousOneTheSupremeSolverTheAllObservingWitnessTheExpeditingOneTheProcrastinatorTheOmnipotentKingTheAllAuthoritativeOneTheBrilliantTheTakerTheExtenderTheProviderTheIrresistableTheOneWhoRecompenses" text="\{phrase:TheProtectingAssociate,TheSoleLaudableOne,TheGuardingOne,TheGloriousOne,TheSupremeSolver,TheAllObservingWitness,TheExpeditingOne,TheProcrastinator,TheOmnipotentKing,TheAllAuthoritativeOne,TheBrilliant,TheTaker,TheExtender,TheProvider,TheIrresistable,TheOneWhoRecompenses\}"></verse>
+			<verse title="TheRecognizerTheBestowerTheOmnipotentOneTheContinuousCreatorTheOwnerTheTotalProviderTheUniversalTrusteeTheWatchfulOneTheDoerOfGoodTheReckoningOneTheOneWhoCuresTheGentleTheGiverTheSustainingOneTheLordTheGoodTheImpartialJudgeTheSupremeInHonourTheFountainHeadOfTruth" text="\{phrase:TheRecognizer,TheBestower,TheOmnipotentOne,TheContinuousCreator,TheOwner,TheTotalProvider,TheUniversalTrustee,TheWatchfulOne,TheDoerOfGood,TheReckoningOne,TheOneWhoCures,TheGentle,TheGiver,TheSustainingOne,TheLord,TheGood,TheImpartialJudge,TheSupremeInHonour,TheFountainHeadOfTruth\}"></verse>
+			<verse title="TheGreatForgiverTheBenignOneTheSupremeBestowerTheMostGenerousTheMostHolyFromAllWeaknessTheEternalInheritorTheMasterTheMostHighTheOneGodFinal1" text="\{phrase:TheGreatForgiver,TheBenignOne,TheSupremeBestower,TheMostGenerous,TheMostHolyFromAllWeakness,TheEternalInheritor,TheMaster,TheMostHigh,TheOneGod\}\{supp:Final1\}"></verse>
 			<verse title="Final1" text="{l~a*iy layosa kamivolihi $ayo&apos;N wahuwa {ls~amiyEu {lobaSiyru"></verse>
 			<verse title="Final2" text="{ll~ahum~a Sal~iY {foDal~a S~alaw`pi EalaY {soEadi maxoluwqaAtika sayidinaA muHam~adi"></verse>
 			<verse title="Final3" text="wasal~imo Eadada maEoluwmaAtika wamidaAda kalimaAtika kul~amaA *akaraka {l*~aAkiruwna wagafala Ean *ikoriki {logaAfiluwna"></verse>
@@ -1834,7 +1840,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="{loEasokariy" id="Askaree"></word>
 			<word text="{lojawaAdu" id="Jawaad"></word>
 			<word text="{lokaAZimu" id="Kadhim"></word>
-			<word text="{loSaAdiqu" id="TheTruthfulOne"></word>
+			<word text="{lS~aAdiqu" id="TheTruthfulOne"></word>
 			<word text="DaEiyfN" id="Weak"></word>
 			<word text="munqaTi" id="NameInChainOfNarrationOmittedOrUnknownNameMentioned"></word>
 			<word text="muEad~alN" id="TwoOrMoreNamesMissingFromChainOfNarration"></word>
@@ -2519,7 +2525,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="fiEolu majohuwlN" id="PassiveVerb"></word>
 			<word text="fiEolu muDaAriEN" id="PresentOrFutureTenseVerb"></word>
 			<word text="{lofiEolu {lomutaEad~iy" id="TransitiveVerb"></word>
-			<word text="{lofiEolu {lolaAzimu" id="IntransitiveVerb"></word>
+			<word text="{lofiEolu {l~aAzimu" id="IntransitiveVerb"></word>
 			<word text="laA {ln~aAfiyapi" id="NegationParticle"></word>
 			<word text="laA {ln~ahiy~api" id="NegativeCommand"></word>
 			<word text="{lomu}an~avu" id="Feminine"></word>
@@ -2620,7 +2626,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 		<category title="PointsOfArticulation">
 			<word text="{loxayo$uwmu" id="NasalPassage"></word>
 			<word text="{l$~afatayonu" id="TwoLips"></word>
-			<word text="{ll~isaAnu" id="Tongue"></word>
+			<word text="{l~isaAnu" id="Tongue"></word>
 			<word text="{loHaloqu" id="Throat"></word>
 			<word text="{lojawofu" id="ChestInterior"></word>
 		</category>
@@ -2638,7 +2644,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="{lo&lt;iSamaAtu" id="Restraint"></word>
 			<word text="{lS~afiyru" id="Whistling"></word>
 			<word text="{loqaloqalapu" id="Vibration"></word>
-			<word text="{ll~iynu" id="Ease"></word>
+			<word text="{l~iynu" id="Ease"></word>
 			<word text="{lo&lt;inoHiraAfu" id="InclinationDrifting"></word>
 			<word text="{lt~akoriyru" id="Repetition"></word>
 			<word text="{lt~afa$~iy" id="Diffusion"></word>
@@ -2772,13 +2778,13 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="{lr~a$iydu" id="TheGuideToPathOfRectitude"></word>
 			<word text="{lS~abuwru" id="TheExtensivelyEnduringOne"></word>
 			
-			<word text="{ln~aSiyru" id="TheHelper"></word>
 			<word text="{lomawolaY" id="TheMaster"></word>
+			<word text="{ln~aSiyru" id="TheHelper"></word>
 			<word text="{loqadiyru" id="ThePowerful"></word>
 			<word text="{lowitoru" id="TheOdd"></word>
 			<word text="{lojamiylu" id="TheBeautiful"></word>
 			<word text="{lohayiy~u" id="TheShy"></word>
-			<word text="{losit~iyru" id="TheCoverer"></word>
+			<word text="{ls~it~iyru" id="TheCoverer"></word>
 			<word text="{lomubiynu" id="TheClear"></word>
 			<word text="{loqariybu" id="TheClose"></word>
 			<word text="{lomaliyku" id="TheOmnipotentKing"></word>
@@ -2800,7 +2806,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="{lo&lt;akoramu" id="TheSupremeInHonour"></word>
 			<word text="{lojawaAdu" id="TheMostGenerous"></word>
 			<word text="{ls~ub~uwHu" id="TheMostHolyFromAllWeakness"></word>
-			<word text="{lr~ab~u" id="TheMaster"></word>
+			<word text="{lr~ab~u" id="TheMasterLord"></word>
 			<word text="{loEalaY" id="TheMostHigh"></word>
 			<word text="{lo&lt;ilahu" id="TheOneGod"></word>
 			
@@ -2865,7 +2871,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="{lowaAsiEu {loEaliymu" id="TheAllPervadingOneTheAllKnowingOne"></word>
 			<word text="{lowaAsiEu {loHakiymu" id="TheAllPervadingOneTheWiseOne"></word>
 			<word text="{loHay~u {lokariymu" id="TheEverLivingTheBountifulOne"></word>
-			<word text="{loHay~u {losit~iyru" id="TheEverLivingTheCoverer"></word>
+			<word text="{loHay~u {ls~it~iyru" id="TheEverLivingTheCoverer"></word>
 		</category>
 		<category title="Concepts">
 			<word text="tawoHiydu {lr~ubuwbiy~api" id="OnenessOfLordshipDominion"></word>
@@ -2882,7 +2888,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="{loqadaru {ls~anawi" id="YearlyPredestination"></word>
 			<word text="{loqadaru {loEumori" id="LifePredestination"></word>
 			<word text="{loqadaru {ls~aAbiqi" id="AbsolutePredestination"></word>
-			<word text="{ll~awoHu {lomaHofuwZi" id="PreservedTablet"></word>
+			<word text="{l~awoHu {lomaHofuwZi" id="PreservedTablet"></word>
 		</category>
 		<category title="IslamicPhrases">
 			<word text="{ls~alaAmu Ealayokumu" id="PeaceBeUponYou"></word>
@@ -3043,7 +3049,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="gariybu {loquro&apos;aAni" id="UnusualQuranicTerms"></word>
 			<word text="majaAzu {loquro&apos;aAni" id="QuranicMetaphor"></word>
 			<word text="&gt;aholu {lokitaAbi" id="PeopleOfTheBook"></word>
-			<word text="manaAhiju {lotafosiyri" id="MethodologyOfQuranicInterpretation"></word>
+			<word text="manaAhiju {lt~afosiyri" id="MethodologyOfQuranicInterpretation"></word>
 			<word text="haAlatulu janaAbapi" id="StateofMajorRitualImpurity"></word>
 			<word text="TaAharapu {loxabavu" id=""></word>
 			<word text="TaAharapu {loHadiyvu" id=""></word>
@@ -3058,11 +3064,11 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="takobiyru {lo&lt;intiqaAli" id=""></word>
 			<word text="sajodapu {ls~uhuw" id=""></word>
 			<word text="duEaA^&apos;u &lt;isotifotaA^&apos;i" id=""></word>
-			<word text="{lS~alaw`pu EalaY {lonabiy" id=""></word>
+			<word text="{lS~alaw`pu EalaY {ln~abiy" id=""></word>
 			<word text="taxoSiySu {loEaAm~i" id="PartialAbrogation"></word>
 			<word text="taqoliydu {lomuTolaqi" id=""></word>
 			<word text="taboyiynu {lomujomali" id=""></word>
-			<word text="&apos;aAyapu {losayofi" id="VerseOfTheSword"></word>
+			<word text="&apos;aAyapu {ls~ayofi" id="VerseOfTheSword"></word>
 			<word text="&apos;aAyapu {lokurosiy" id="VerseOfTheThrone"></word>
 			<word text="&gt;asomaA^&apos;u {l$~aroTi" id="SubordinatorsBeginningConditionalClauses"></word>
 			<word text="&lt;isomu {lojinsi" id="GenericNounInPossessiveConstructionWithDefiniteNounOrPronoun"></word>
@@ -3089,7 +3095,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="tafosiyrN lafoZiy" id="LiteralExegesis"></word>
 			<word text="tafosiyrN bi{loma&gt;ovuwri" id="NarrationBasedExegesis"></word>
 			<word text="tafosiyrN bi{ld~iraAyapi" id="OpinionBasedExegesis"></word>
-			<word text="tafosiyrN bi{loraA^&apos;iy~i" id="OpinionBasedExegesis"></word>
+			<word text="tafosiyrN bi{lr~aA^&apos;iy~i" id="OpinionBasedExegesis"></word>
 			<word text="&gt;asomaA^&apos;u {ld~uwali" id="NamesOfCountries"></word>
 			<word text="&gt;aholu {loHadiyvi" id="PeopleOfHadith"></word>
 			<word text="&gt;aholu {loHaqiyqapi" id="PeopleOfTrueReality"></word>
@@ -3381,22 +3387,13 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="MayEveryYearYouBeInGoodHealthAndBlessings" font="KFGQPCArabicSymbols01;F029|AGAArabesque;F058" id="MayEveryYearYouBeInGoodHealthAndBlessings"></word>
 			<word text="MayEveryYearYouHaveGoodness" font="AGAArabesque;F078" id="MayEveryYearYouHaveGoodness"></word>
 			<word text="AllRightsReserved" font="AGAArabesque;F076" id="AllRightsReserved"></word>
-			<word text="TheNamesOfAllahAreBest" font="KFGQPCArabicSymbols01;F024|Tulth;0087|Farsi;0088" id="TheNamesOfAllahAreBest"></word>
-			<word text="TheNamesOfAllahAreBestFixedInTheBookAndTradition" font="Quranic;0021,008D" id="TheNamesOfAllahAreBestFixedInTheBookAndTradition"></word>
-			<word text="AndAllahHasTheBestNamesSoCallOnThem" font="Tulth;0089" id="AndAllahHasTheBestNamesSoCallOnThem"></word>
-			<word text="AndAllahHasTheBestNamesSoCallOnThemLeaveThoseWhoPracticeDeviationConcerningHisNamesTheyWillBeRecompensedForWhatTheyHaveBeenDoing" font="Farsi;0085" id="AndAllahHasTheBestNamesSoCallOnThemLeaveThoseWhoPracticeDeviationConcerningHisNamesTheyWillBeRecompensedForWhatTheyHaveBeenDoing"></word>
-			<word text="SayCallUponAllahOrCallUponTheMostMercifulWhicheverNameYouCallToHimBelongTheBestNames" font="Tulth;008A" id="SayCallUponAllahOrCallUponTheMostMercifulWhicheverNameYouCallToHimBelongTheBestNames"></word>
-			<word text="FixedInTheBookAndTradition" font="Tulth;008B" id="FixedInTheBookAndTradition"></word>
-			<word text="WhoeverMemorizesThemWillEnterParadise" font="Tulth;008C|Farsi;0089" id="WhoeverMemorizesThemWillEnterParadise"></word>
 			<word text="ThenTrulyThePartyOfAllahAreTheTriumphant" font="Shia;003A" id="ThenTrulyThePartyOfAllahAreTheTriumphant"></word>
-			<word text="TheologyOfThePeopleOfTraditionAndTheGroup" font="Farsi;0086" id="TheologyOfThePeopleOfTraditionAndTheGroup"></word>
-			<word text="HeIsAllah" font="Tulth;0009,0020,0085,0086;Shia;0038" id="HeIsAllah"></word>
 			<word text="OnWithTheTruth" font="Shia;0061" id="OnWithTheTruth"></word>
 			<word text="OLordGiveMeKnowledge" font="Shia;0070" id="OLordGiveMeKnowledge"></word>
 
 			<word text="AH" id="AfterMigration"></word>
-			<word text="Preface" font="KFGQPCArabicSymbols01;F05C|AGAArabesque;F04E" id="Preface"></word>
-			<word text="Contents" font="KFGQPCArabicSymbols01;F03F|AGAArabesque;F04F" id="Contents"></word>
+			<word text="Preface" font="KFGQPCArabicSymbols01;F05C|AGAArabesque;F04D" id="Preface"></word>
+			<word text="Contents" font="KFGQPCArabicSymbols01;F03F|AGAArabesque;F04E" id="Contents"></word>
 			<word text="End" font="KFGQPCArabicSymbols01;F05D|AGAArabesque;F062" id="End"></word>
 			<word text="Introduction" font="KFGQPCArabicSymbols01;F059|AGAArabesque;F06D" id="Introduction"></word>
 			<word text="Classroom" font="KFGQPCArabicSymbols01;F05B" id="ClassClassroomSeason"></word>
@@ -3410,7 +3407,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="Book" font="AGAArabesque;F02F" id="Book"></word>
 			<word text="Light" font="AGAArabesque;F03F" id="Light"></word>
 			<word text="Peace" font="AGAIslamicPhrases;0069" id="Peace"></word>
-			<word text="Allah" font="FDF2|KFGQPCArabicSymbols01;F025|AGAArabesque;F045,F051,F057|AGAIslamicPhrases;0065,0071,0072,0077|Quranic;0028,008E|Shia;002D,0033|Farsi;0009,0020" id="Allah"></word>
+			<word text="Allah" font="FDF2|KFGQPCArabicSymbols01;F025|AGAArabesque;F045,F051,F057|AGAIslamicPhrases;0065,0071,0072,0077|Quranic;0028,008E|Asmaul-Husna;0041|Shia;002D,0033|Farsi;0009,0020" id="Allah"></word>
 			<word text="AAMEEN" id="MayAllahWillItSo"></word>
 			<word text="Muhammad" font="FDF4|KFGQPCArabicSymbols01;F026|AGAIslamicPhrases;005D|Shia;0044" id="Muhammad"></word>
 			<word text="Ali" font="Shia;0046,005B,005C,005E,0066" id="HighExalted"></word>
@@ -3459,108 +3456,108 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="THULQADAH" font="KFGQPCArabicSymbols01;F03B|AGAArabesque;F02D" id="Month11"></word>
 			<word text="THULHIJJAH" font="KFGQPCArabicSymbols01;F03C|AGAArabesque;F03D" id="Month12"></word>
 
-			<word text="TheBeneficent" font="Quranic;0029|Tulth;0021|Farsi;0021" id="TheBeneficent"></word>
-			<word text="TheMerciful" font="Quranic;002A|Tulth;0022|Farsi;0022" id="TheMerciful"></word>
-			<word text="TheEternalLord" font="Quranic;002B|Tulth;0023|Farsi;0023" id="TheEternalLord"></word>
-			<word text="TheMostSacred" font="Quranic;002C|Tulth;0024|Farsi;0024" id="TheMostSacred"></word>
-			<word text="TheEmbodimentOfPeace" font="Quranic;002D|Tulth;0025|Farsi;0025" id="TheEmbodimentOfPeace"></word>
-			<word text="TheInfuserOfFaith" font="Quranic;002E|Tulth;0026|Farsi;0026" id="TheInfuserOfFaith"></word>
-			<word text="ThePreserverOfSafety" font="Quranic;002F|Tulth;0027|Farsi;0027" id="ThePreserverOfSafety"></word>
-			<word text="TheMightyOne" font="Quranic;0030|Tulth;0028|Farsi;0028" id="TheMightyOne"></word>
-			<word text="TheAllCompelling" font="Quranic;0031|Tulth;0029|Farsi;0029" id="TheAllCompelling"></word>
-			<word text="TheDominantOne" font="Quranic;0032|Tulth;002A|Farsi;002A" id="TheDominantOne"></word>
-			<word text="TheCreator" font="Quranic;0033|Tulth;002B|Farsi;002B" id="TheCreator"></word>
-			<word text="TheEvolver" font="Quranic;0034|Tulth;002C|Farsi;002C" id="TheEvolver"></word>
-			<word text="TheFlawlessShaper" font="Quranic;0035|Tulth;002D|Farsi;002D" id="TheFlawlessShaper"></word>
-			<word text="TheGreatForgiver" font="Quranic;0084|Tulth;007B|Farsi;007B" id="TheGreatForgiver"></word>
-			<word text="TheAllPrevailingOne" font="Quranic;0049|Tulth;0041|Farsi;0041" id="TheAllPrevailingOne"></word>
-			<word text="TheSupremeBestower" font="Quranic;0086|Tulth;007D|Farsi;007D" id="TheSupremeBestower"></word>
-			<word text="TheTotalProvider" font="Quranic;0075|Tulth;006D|Farsi;006D" id="TheTotalProvider"></word>
-			<word text="TheSupremeSolver" font="Quranic;0064|Tulth;005C|Farsi;005C" id="TheSupremeSolver"></word>
-			<word text="TheAllKnowingOne" font="Quranic;0055|Tulth;004D|Farsi;004D" id="TheAllKnowingOne"></word>
-			<word text="TheRestrictingOne" id="TheRestrictingOne"></word>
-			<word text="TheExtender" font="Quranic;006C|Tulth;0064|Farsi;0064" id="TheExtender"></word>
-			<word text="TheReducer" id="TheReducer"></word>
-			<word text="TheElevatingOne" id="TheElevatingOne"></word>
-			<word text="TheHonourerBestower" id="TheHonourerBestower"></word>
-			<word text="TheAbaser" id="TheAbaser"></word>
-			<word text="TheAllHearer" font="Quranic;003A|Tulth;0032|Farsi;0032" id="TheAllHearer"></word>
-			<word text="TheAllSeeing" font="Quranic;003B|Tulth;0033|Farsi;0033" id="TheAllSeeing"></word>
-			<word text="TheImpartialJudge" font="Quranic;0081|Tulth;0078|Farsi;0078" id="TheImpartialJudge"></word>
-			<word text="TheEmbodimentOfJustice" id="TheEmbodimentOfJustice"></word>
-			<word text="TheKnowerOfSubtleties" font="Quranic;0040|Tulth;0038|Farsi;0038" id="TheKnowerOfSubtleties"></word>
-			<word text="TheAllAwareOne" font="Quranic;0041|Tulth;0039|Farsi;0039" id="TheAllAwareOne"></word>
-			<word text="TheClementOne" font="Quranic;0053|Tulth;004B|Farsi;004B" id="TheClementOne"></word>
-			<word text="TheMagnificentOne" font="Quranic;0051|Tulth;0049|Farsi;0049" id="TheMagnificentOne"></word>
-			<word text="ThePardoner" font="Quranic;005E|Tulth;0056|Farsi;0056" id="ThePardoner"></word>
-			<word text="TheAcknowledgingOne" font="Quranic;0052|Tulth;004A|Farsi;004A" id="TheAcknowledgingOne"></word>
-			<word text="TheSublimeOne" font="Quranic;0050|Tulth;0048|Farsi;0048" id="TheSublimeOne"></word>
-			<word text="TheGreatOne" font="Quranic;0046|Tulth;003E|Farsi;003E" id="TheGreatOne"></word>
-			<word text="TheGuardingOne" font="Quranic;0062|Tulth;005A|Farsi;005A" id="TheGuardingOne"></word>
-			<word text="TheSustainingOne" font="Quranic;007D|Tulth;0075|Farsi;0075" id="TheSustainingOne"></word>
-			<word text="TheReckoningOne" font="Quranic;0079|Tulth;0071|Farsi;0071" id="TheReckoningOne"></word>
-			<word text="TheMajesticOne" id="TheMajesticOne"></word>
-			<word text="TheBountifulOne" font="Quranic;0059|Tulth;0051|Farsi;0051" id="TheBountifulOne"></word>
-			<word text="TheWatchfulOne" font="Quranic;0077|Tulth;006F|Farsi;006F" id="TheWatchfulOne"></word>
-			<word text="TheRespondingOne" font="Quranic;005D|Tulth;0055|Farsi;0055" id="TheRespondingOne"></word>
-			<word text="TheAllPervadingOne" font="Quranic;0054|Tulth;004C|Farsi;004C" id="TheAllPervadingOne"></word>
-			<word text="TheWiseOne" font="Quranic;0057|Tulth;004F|Farsi;004F" id="TheWiseOne"></word>
-			<word text="TheLovingOne" font="Quranic;005F|Tulth;0057|Farsi;0057" id="TheLovingOne"></word>
-			<word text="TheGloriousOne" font="Quranic;0063|Tulth;005B|Farsi;005B" id="TheGloriousOne"></word>
-			<word text="TheInfuserOfNewLife" id="TheInfuserOfNewLife"></word>
-			<word text="TheAllObservingWitness" font="Quranic;0065|Tulth;005D|Farsi;005D" id="TheAllObservingWitness"></word>
-			<word text="TheEmbodimentOfTruth" font="Quranic;004A|Tulth;0042|Farsi;0042" id="TheEmbodimentOfTruth"></word>
-			<word text="TheUniversalTrustee" font="Quranic;0076|Tulth;006E|Farsi;006E" id="TheUniversalTrustee"></word>
-			<word text="TheStrongOne" font="Quranic;004C|Tulth;0044|Farsi;0044" id="TheStrongOne"></word>
-			<word text="TheFirmOne" font="Quranic;004D|Tulth;0045|Farsi;0045" id="TheFirmOne"></word>
-			<word text="TheProtectingAssociate" font="Quranic;0060|Tulth;0058|Farsi;0058" id="TheProtectingAssociate"></word>
-			<word text="TheSoleLaudableOne" font="Quranic;0061|Tulth;0059|Farsi;0059" id="TheSoleLaudableOne"></word>
-			<word text="TheAllEnumeratingOne" id="TheAllEnumeratingOne"></word>
-			<word text="TheOriginator" id="TheOriginator"></word>
-			<word text="TheRestorer" id="TheRestorer"></word>
-			<word text="TheMaintainerOfLife" id="TheMaintainerOfLife"></word>
-			<word text="TheInflictorOfDeath" id="TheInflictorOfDeath"></word>
-			<word text="TheEverLiving" font="Quranic;004E|Tulth;0046|Farsi;0046" id="TheEverLiving"></word>
-			<word text="TheSelfSubsistingOne" font="Quranic;004F|Tulth;0047|Farsi;0047" id="TheSelfSubsistingOne"></word>
-			<word text="ThePointingOne" id="ThePointingOne"></word>
-			<word text="TheAllNobleOne" id="TheAllNobleOne"></word>
-			<word text="TheOnlyOne" font="Quranic;0048|Tulth;0040|Farsi;0040" id="TheOnlyOne"></word>
-			<word text="TheSoleOne" font="Quranic;005A|Tulth;0052|Farsi;0052" id="TheSoleOne"></word>
-			<word text="TheSupremeProvider" font="Quranic;005B|Tulth;0053|Farsi;0053" id="TheSupremeProvider"></word>
-			<word text="TheOmnipotentOne" font="Quranic;0072|Tulth;006A|Farsi;006A" id="TheOmnipotentOne"></word>
-			<word text="TheAllAuthoritativeOne" font="Quranic;0069|Tulth;0061|Farsi;0061" id="TheAllAuthoritativeOne"></word>
-			<word text="TheExpeditingOne" font="Quranic;0066|Tulth;005E|Farsi;005E" id="TheExpeditingOne"></word>
-			<word text="TheProcrastinator" font="Quranic;0067|Tulth;005F|Farsi;005F" id="TheProcrastinator"></word>
-			<word text="TheVeryFirst" font="Quranic;0036|Tulth;002E|Farsi;002E" id="TheVeryFirst"></word>
-			<word text="TheInfiniteLastOne" font="Quranic;0037|Tulth;002F|Farsi;002F" id="TheInfiniteLastOne"></word>
-			<word text="ThePerceptible" font="Quranic;0038|Tulth;0030|Farsi;0030" id="ThePerceptible"></word>
-			<word text="TheImperceptible" font="Quranic;0039|Tulth;0031|Farsi;0031" id="TheImperceptible"></word>
-			<word text="TheHolderOfSupremeAuthority" id="TheHolderOfSupremeAuthority"></word>
-			<word text="TheExtremelyExaltedOne" font="Quranic;0047|Tulth;003F|Farsi;003F" id="TheExtremelyExaltedOne"></word>
-			<word text="TheFountainHeadOfTruth" font="Quranic;0083|Tulth;007A|Farsi;007A" id="TheFountainHeadOfTruth"></word>
-			<word text="TheEverAcceptorOfRepentance" font="Quranic;0056|Tulth;004E|Farsi;004E" id="TheEverAcceptorOfRepentance"></word>
-			<word text="TheRetaliator" id="TheRetaliator"></word>
-			<word text="TheSupremePardoner" font="Quranic;003E|Tulth;0036|Farsi;0036" id="TheSupremePardoner"></word>
-			<word text="TheBenignOne" font="Quranic;0085|Tulth;007C|Farsi;007C" id="TheBenignOne"></word>
-			<word text="TheEternalPossessorOfSovereignty" id="TheEternalPossessorOfSovereignty"></word>
-			<word text="ThePossessorOfMajestyAndHonour" id="ThePossessorOfMajestyAndHonour"></word>
-			<word text="TheJustOne" id="TheJustOne"></word>
-			<word text="TheAssemblerOfScatteredCreations" id="TheAssemblerOfScatteredCreations"></word>
-			<word text="TheSelfSufficientOne" font="Quranic;0058|Tulth;0050|Farsi;0050" id="TheSelfSufficientOne"></word>
-			<word text="TheBestowerOfSufficiency" id="TheBestowerOfSufficiency"></word>
-			<word text="ThePreventer" id="ThePreventer"></word>
-			<word text="TheDistressor" id="TheDistressor"></word>
-			<word text="TheBestowerOfBenefits" id="TheBestowerOfBenefits"></word>
-			<word text="ThePrimeLight" id="ThePrimeLight"></word>
-			<word text="TheProviderOfGuidance" id="TheProviderOfGuidance"></word>
-			<word text="TheUniqueOne" id="TheUniqueOne"></word>
-			<word text="TheEverSurvivingOne" id="TheEverSurvivingOne"></word>
-			<word text="TheEternalInheritor" font="Quranic;0089|Tulth;0081|Farsi;0081" id="TheEternalInheritor"></word>
-			<word text="TheGuideToPathOfRectitude" id="TheGuideToPathOfRectitude"></word>
-			<word text="TheExtensivelyEnduringOne" id="TheExtensivelyEnduringOne"></word>
+			<word text="TheBeneficent" font="Quranic;0029|Tulth;0021|Farsi;0021|Asmaul-Husna;0042" id="TheBeneficent"></word>
+			<word text="TheMerciful" font="Quranic;002A|Tulth;0022|Farsi;0022|Asmaul-Husna;0043" id="TheMerciful"></word>
+			<word text="TheEternalLord" font="Quranic;002B|Tulth;0023|Farsi;0023|Asmaul-Husna;0044" id="TheEternalLord"></word>
+			<word text="TheMostSacred" font="Quranic;002C|Tulth;0024|Farsi;0024|Asmaul-Husna;0045" id="TheMostSacred"></word>
+			<word text="TheEmbodimentOfPeace" font="Quranic;002D|Tulth;0025|Farsi;0025|Asmaul-Husna;0046" id="TheEmbodimentOfPeace"></word>
+			<word text="TheInfuserOfFaith" font="Quranic;002E|Tulth;0026|Farsi;0026|Asmaul-Husna;0047" id="TheInfuserOfFaith"></word>
+			<word text="ThePreserverOfSafety" font="Quranic;002F|Tulth;0027|Farsi;0027|Asmaul-Husna;0048" id="ThePreserverOfSafety"></word>
+			<word text="TheMightyOne" font="Quranic;0030|Tulth;0028|Farsi;0028|Asmaul-Husna;0049" id="TheMightyOne"></word>
+			<word text="TheAllCompelling" font="Quranic;0031|Tulth;0029|Farsi;0029|Asmaul-Husna;004A" id="TheAllCompelling"></word>
+			<word text="TheDominantOne" font="Quranic;0032|Tulth;002A|Farsi;002A|Asmaul-Husna;004B" id="TheDominantOne"></word>
+			<word text="TheCreator" font="Quranic;0033|Tulth;002B|Farsi;002B|Asmaul-Husna;004C" id="TheCreator"></word>
+			<word text="TheEvolver" font="Quranic;0034|Tulth;002C|Farsi;002C|Asmaul-Husna;004D" id="TheEvolver"></word>
+			<word text="TheFlawlessShaper" font="Quranic;0035|Tulth;002D|Farsi;002D|Asmaul-Husna;004E" id="TheFlawlessShaper"></word>
+			<word text="TheGreatForgiver" font="Quranic;0084|Tulth;007B|Farsi;007B|Asmaul-Husna;004F" id="TheGreatForgiver"></word>
+			<word text="TheAllPrevailingOne" font="Quranic;0049|Tulth;0041|Farsi;0041|Asmaul-Husna;0050" id="TheAllPrevailingOne"></word>
+			<word text="TheSupremeBestower" font="Quranic;0086|Tulth;007D|Farsi;007D|Asmaul-Husna;0051" id="TheSupremeBestower"></word>
+			<word text="TheTotalProvider" font="Quranic;0075|Tulth;006D|Farsi;006D|Asmaul-Husna;0052" id="TheTotalProvider"></word>
+			<word text="TheSupremeSolver" font="Quranic;0064|Tulth;005C|Farsi;005C|Asmaul-Husna;0053" id="TheSupremeSolver"></word>
+			<word text="TheAllKnowingOne" font="Quranic;0055|Tulth;004D|Farsi;004D|Asmaul-Husna;0054" id="TheAllKnowingOne"></word>
+			<word text="TheRestrictingOne" font="Asmaul-Husna;0055" id="TheRestrictingOne"></word>
+			<word text="TheExtender" font="Quranic;006C|Tulth;0064|Farsi;0064|Asmaul-Husna;0056" id="TheExtender"></word>
+			<word text="TheReducer" font="Asmaul-Husna;0057" id="TheReducer"></word>
+			<word text="TheElevatingOne" font="Asmaul-Husna;0058" id="TheElevatingOne"></word>
+			<word text="TheHonourerBestower" font="Asmaul-Husna;0059" id="TheHonourerBestower"></word>
+			<word text="TheAbaser" font="Asmaul-Husna;005A" id="TheAbaser"></word>
+			<word text="TheAllHearer" font="Quranic;003A|Tulth;0032|Farsi;0032|Asmaul-Husna;0061" id="TheAllHearer"></word>
+			<word text="TheAllSeeing" font="Quranic;003B|Tulth;0033|Farsi;0033|Asmaul-Husna;0062" id="TheAllSeeing"></word>
+			<word text="TheImpartialJudge" font="Quranic;0081|Tulth;0078|Farsi;0078|Asmaul-Husna;0063" id="TheImpartialJudge"></word>
+			<word text="TheEmbodimentOfJustice" font="Asmaul-Husna;0064" id="TheEmbodimentOfJustice"></word>
+			<word text="TheKnowerOfSubtleties" font="Quranic;0040|Tulth;0038|Farsi;0038|Asmaul-Husna;0065" id="TheKnowerOfSubtleties"></word>
+			<word text="TheAllAwareOne" font="Quranic;0041|Tulth;0039|Farsi;0039|Asmaul-Husna;0066" id="TheAllAwareOne"></word>
+			<word text="TheClementOne" font="Quranic;0053|Tulth;004B|Farsi;004B|Asmaul-Husna;0067" id="TheClementOne"></word>
+			<word text="TheMagnificentOne" font="Quranic;0051|Tulth;0049|Farsi;0049|Asmaul-Husna;0068" id="TheMagnificentOne"></word>
+			<word text="ThePardoner" font="Quranic;005E|Tulth;0056|Farsi;0056|Asmaul-Husna;0069" id="ThePardoner"></word>
+			<word text="TheAcknowledgingOne" font="Quranic;0052|Tulth;004A|Farsi;004A|Asmaul-Husna;006A" id="TheAcknowledgingOne"></word>
+			<word text="TheSublimeOne" font="Quranic;0050|Tulth;0048|Farsi;0048|Asmaul-Husna;006B" id="TheSublimeOne"></word>
+			<word text="TheGreatOne" font="Quranic;0046|Tulth;003E|Farsi;003E|Asmaul-Husna;006C" id="TheGreatOne"></word>
+			<word text="TheGuardingOne" font="Quranic;0062|Tulth;005A|Farsi;005A|Asmaul-Husna;006D" id="TheGuardingOne"></word>
+			<word text="TheSustainingOne" font="Quranic;007D|Tulth;0075|Farsi;0075|Asmaul-Husna;006E" id="TheSustainingOne"></word>
+			<word text="TheReckoningOne" font="Quranic;0079|Tulth;0071|Farsi;0071|Asmaul-Husna;006F" id="TheReckoningOne"></word>
+			<word text="TheMajesticOne" font="Asmaul-Husna;0070" id="TheMajesticOne"></word>
+			<word text="TheBountifulOne" font="Quranic;0059|Tulth;0051|Farsi;0051|Asmaul-Husna;0071" id="TheBountifulOne"></word>
+			<word text="TheWatchfulOne" font="Quranic;0077|Tulth;006F|Farsi;006F|Asmaul-Husna;0072" id="TheWatchfulOne"></word>
+			<word text="TheRespondingOne" font="Quranic;005D|Tulth;0055|Farsi;0055|Asmaul-Husna;0073" id="TheRespondingOne"></word>
+			<word text="TheAllPervadingOne" font="Quranic;0054|Tulth;004C|Farsi;004C|Asmaul-Husna;0074" id="TheAllPervadingOne"></word>
+			<word text="TheWiseOne" font="Quranic;0057|Tulth;004F|Farsi;004F|Asmaul-Husna;0075" id="TheWiseOne"></word>
+			<word text="TheLovingOne" font="Quranic;005F|Tulth;0057|Farsi;0057|Asmaul-Husna;0076" id="TheLovingOne"></word>
+			<word text="TheGloriousOne" font="Quranic;0063|Tulth;005B|Farsi;005B|Asmaul-Husna;0077" id="TheGloriousOne"></word>
+			<word text="TheInfuserOfNewLife" font="Asmaul-Husna;0078" id="TheInfuserOfNewLife"></word>
+			<word text="TheAllObservingWitness" font="Quranic;0065|Tulth;005D|Farsi;005D|Asmaul-Husna;0079" id="TheAllObservingWitness"></word>
+			<word text="TheEmbodimentOfTruth" font="Quranic;004A|Tulth;0042|Farsi;0042|Asmaul-Husna;007A" id="TheEmbodimentOfTruth"></word>
+			<word text="TheUniversalTrustee" font="Quranic;0076|Tulth;006E|Farsi;006E|Asmaul-Husna_2;0041" id="TheUniversalTrustee"></word>
+			<word text="TheStrongOne" font="Quranic;004C|Tulth;0044|Farsi;0044|Asmaul-Husna_2;0042" id="TheStrongOne"></word>
+			<word text="TheFirmOne" font="Quranic;004D|Tulth;0045|Farsi;0045|Asmaul-Husna_2;0043" id="TheFirmOne"></word>
+			<word text="TheProtectingAssociate" font="Quranic;0060|Tulth;0058|Farsi;0058|Asmaul-Husna_2;0044" id="TheProtectingAssociate"></word>
+			<word text="TheSoleLaudableOne" font="Quranic;0061|Tulth;0059|Farsi;0059|Asmaul-Husna_2;0045" id="TheSoleLaudableOne"></word>
+			<word text="TheAllEnumeratingOne" font="Asmaul-Husna_2;0046" id="TheAllEnumeratingOne"></word>
+			<word text="TheOriginator" font="Asmaul-Husna_2;0047" id="TheOriginator"></word>
+			<word text="TheRestorer" font="Asmaul-Husna_2;0048" id="TheRestorer"></word>
+			<word text="TheMaintainerOfLife" font="Asmaul-Husna_2;0049" id="TheMaintainerOfLife"></word>
+			<word text="TheInflictorOfDeath" font="Asmaul-Husna_2;004A" id="TheInflictorOfDeath"></word>
+			<word text="TheEverLiving" font="Quranic;004E|Tulth;0046|Farsi;0046|Asmaul-Husna_2;004B" id="TheEverLiving"></word>
+			<word text="TheSelfSubsistingOne" font="Quranic;004F|Tulth;0047|Farsi;0047|Asmaul-Husna_2;004C" id="TheSelfSubsistingOne"></word>
+			<word text="ThePointingOne" font="Asmaul-Husna_2;004D" id="ThePointingOne"></word>
+			<word text="TheAllNobleOne" font="Asmaul-Husna_2;004E" id="TheAllNobleOne"></word>
+			<word text="TheOnlyOne" font="Quranic;0048|Tulth;0040|Farsi;0040|Asmaul-Husna_2;004F" id="TheOnlyOne"></word>
+			<word text="TheSoleOne" font="Quranic;005A|Tulth;0052|Farsi;0052|Asmaul-Husna_2;0050" id="TheSoleOne"></word>
+			<word text="TheSupremeProvider" font="Quranic;005B|Tulth;0053|Farsi;0053|Asmaul-Husna_2;0051" id="TheSupremeProvider"></word>
+			<word text="TheOmnipotentOne" font="Quranic;0072|Tulth;006A|Farsi;006A|Asmaul-Husna_2;0052" id="TheOmnipotentOne"></word>
+			<word text="TheAllAuthoritativeOne" font="Quranic;0069|Tulth;0061|Farsi;0061|Asmaul-Husna_2;0053" id="TheAllAuthoritativeOne"></word>
+			<word text="TheExpeditingOne" font="Quranic;0066|Tulth;005E|Farsi;005E|Asmaul-Husna_2;0054" id="TheExpeditingOne"></word>
+			<word text="TheProcrastinator" font="Quranic;0067|Tulth;005F|Farsi;005F|Asmaul-Husna_2;0055" id="TheProcrastinator"></word>
+			<word text="TheVeryFirst" font="Quranic;0036|Tulth;002E|Farsi;002E|Asmaul-Husna_2;0056" id="TheVeryFirst"></word>
+			<word text="TheInfiniteLastOne" font="Quranic;0037|Tulth;002F|Farsi;002F|Asmaul-Husna_2;0057" id="TheInfiniteLastOne"></word>
+			<word text="ThePerceptible" font="Quranic;0038|Tulth;0030|Farsi;0030|Asmaul-Husna_2;0058" id="ThePerceptible"></word>
+			<word text="TheImperceptible" font="Quranic;0039|Tulth;0031|Farsi;0031|Asmaul-Husna_2;0059" id="TheImperceptible"></word>
+			<word text="TheHolderOfSupremeAuthority" font="Asmaul-Husna_2;005A" id="TheHolderOfSupremeAuthority"></word>
+			<word text="TheExtremelyExaltedOne" font="Quranic;0047|Tulth;003F|Farsi;003F|Asmaul-Husna_2;0061" id="TheExtremelyExaltedOne"></word>
+			<word text="TheFountainHeadOfTruth" font="Quranic;0083|Tulth;007A|Farsi;007A|Asmaul-Husna_2;0062" id="TheFountainHeadOfTruth"></word>
+			<word text="TheEverAcceptorOfRepentance" font="Quranic;0056|Tulth;004E|Farsi;004E|Asmaul-Husna_2;0063" id="TheEverAcceptorOfRepentance"></word>
+			<word text="TheRetaliator" font="Asmaul-Husna_2;0064" id="TheRetaliator"></word>
+			<word text="TheSupremePardoner" font="Quranic;003E|Tulth;0036|Farsi;0036|Asmaul-Husna_2;0065" id="TheSupremePardoner"></word>
+			<word text="TheBenignOne" font="Quranic;0085|Tulth;007C|Farsi;007C|Asmaul-Husna_2;0066" id="TheBenignOne"></word>
+			<word text="TheEternalPossessorOfSovereignty" font="Asmaul-Husna_2;0067" id="TheEternalPossessorOfSovereignty"></word>
+			<word text="ThePossessorOfMajestyAndHonour" font="Asmaul-Husna_2;0068" id="ThePossessorOfMajestyAndHonour"></word>
+			<word text="TheJustOne" font="Asmaul-Husna_2;0069" id="TheJustOne"></word>
+			<word text="TheAssemblerOfScatteredCreations" font="Asmaul-Husna_2;006A" id="TheAssemblerOfScatteredCreations"></word>
+			<word text="TheSelfSufficientOne" font="Quranic;0058|Tulth;0050|Farsi;0050|Asmaul-Husna_2;006B" id="TheSelfSufficientOne"></word>
+			<word text="TheBestowerOfSufficiency" font="Asmaul-Husna_2;006C" id="TheBestowerOfSufficiency"></word>
+			<word text="ThePreventer" font="Asmaul-Husna_2;006D" id="ThePreventer"></word>
+			<word text="TheDistressor" font="Asmaul-Husna_2;00010003" id="TheDistressor"></word>
+			<word text="TheBestowerOfBenefits" font="Asmaul-Husna_2;006F" id="TheBestowerOfBenefits"></word>
+			<word text="ThePrimeLight" font="Asmaul-Husna_2;0070" id="ThePrimeLight"></word>
+			<word text="TheProviderOfGuidance" font="Asmaul-Husna_2;0071" id="TheProviderOfGuidance"></word>
+			<word text="TheUniqueOne" font="Asmaul-Husna_2;0076" id="TheUniqueOne"></word>
+			<word text="TheEverSurvivingOne" font="Asmaul-Husna_2;0072" id="TheEverSurvivingOne"></word>
+			<word text="TheEternalInheritor" font="Quranic;0089|Tulth;0081|Farsi;0081|Asmaul-Husna_2;0073" id="TheEternalInheritor"></word>
+			<word text="TheGuideToPathOfRectitude" font="Asmaul-Husna_2;0074" id="TheGuideToPathOfRectitude"></word>
+			<word text="TheExtensivelyEnduringOne" font="Asmaul-Husna_2;0075" id="TheExtensivelyEnduringOne"></word>
 			
-			<word text="TheHelper" font="Quranic;003C|Tulth;0034|Farsi;0034" id="TheHelper"></word>
-			<word text="TheMaster" font="Quranic;003D|Tulth;0035|Farsi;0035" id="TheMaster"></word>
+			<word text="TheMaster" font="Quranic;003C|Tulth;0034|Farsi;0034" id="TheMaster"></word>
+			<word text="TheHelper" font="Quranic;003D|Tulth;0035|Farsi;0035" id="TheHelper"></word>
 			<word text="ThePowerful" font="Quranic;003F|Tulth;0037|Farsi;0037" id="ThePowerful"></word>
 			<word text="TheOdd" font="Quranic;0042|Tulth;003A|Farsi;003A" id="TheOdd"></word>
 			<word text="TheBeautiful" font="Quranic;0043|Tulth;003B|Farsi;003B" id="TheBeautiful"></word>
@@ -3587,16 +3584,25 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="TheSupremeInHonour" font="Quranic;0082|Tulth;0079|Farsi;0079" id="TheSupremeInHonour"></word>
 			<word text="TheMostGenerous" font="Quranic;0087|Tulth;007E|Farsi;007E" id="TheMostGenerous"></word>
 			<word text="TheMostHolyFromAllWeakness" font="Quranic;0088|Tulth;0080|Farsi;0080" id="TheMostHolyFromAllWeakness"></word>
-			<word text="TheMaster" font="Quranic;008A|Tulth;0082|Farsi;0082" id="TheMaster"></word>
+			<word text="TheMasterLord" font="Quranic;008A|Tulth;0082|Farsi;0082" id="TheMasterLord"></word>
 			<word text="TheMostHigh" font="Quranic;008B|Tulth;0083|Farsi;0083" id="TheMostHigh"></word>
 			<word text="TheOneGod" font="Quranic;008C|Tulth;0084|Farsi;0084" id="TheOneGod"></word>
-			<word text="" font="Quranic;0022" id="TheBeneficentTheMercifulTheEternalLordTheMostSacredTheEmbodimentOfPeaceTheInfuserOfFaithThePreserverOfSafetyTheMightyOneTheAllCompellingTheDominantOneTheCreatorTheEvolverTheFlawlessShaperTheVeryFirstTheInfiniteLastOneThePerceptibleTheImperceptible"></word>
-			<word text="" font="Quranic;0023" id="TheAllHearerTheAllSeeingTheHelperTheMasterTheSupremePardonerThePowerfulTheKnowerOfSubtletiesTheAllAwareOneTheOddTheBeautifulTheShyTheCovererTheGreatOneTheExtremelyExaltedOneTheOnlyOneTheAllPrevailingOne"></word>
-			<word text="" font="Quranic;0024" id="TheEmbodimentOfTruthTheClearTheStrongOneTheFirmOneTheEverLivingTheSelfSubsistingOneTheSublimeOneTheMagnificentOneTheAcknowledgingOneTheClementOneTheAllPervadingOneTheAllKnowingOneTheEverAcceptorOfRepentanceTheWiseOneTheSelfSufficientOneTheBountifulOneTheSoleOneTheSupremeProviderTheCloseTheRespondingOneThePardonerTheLovingOne"></word>
-			<word text="" font="Quranic;0025" id="TheProtectingAssociateTheSoleLaudableOneTheGuardingOneTheGloriousOneTheSupremeSolverTheAllObservingWitnessTheExpeditingOneTheProcrastinatorTheOmnipotentKingTheAllAuthoritativeOneTheBrilliantTheTakerTheExtenderTheProviderTheIrresistableTheOneWhoRecompenses"></word>
-			<word text="" font="Quranic;0026" id="TheRecognizerTheBestowerTheOmnipotentOneTheContinuousCreatorTheOwnerTheTotalProviderTheUniversalTrusteeTheWatchfulOneTheDoerOfGoodTheReckoningOneTheOneWhoCuresTheGentleTheGiverTheSustainingOneTheLordTheGoodTheImpartialJudgeTheSupremeInHonourTheFountainHeadOfTruth"></word>
-			<word text="" font="Quranic;0027" id="TheGreatForgiverTheBenignOneTheSupremeBestowerTheMostGenerousTheMostHolyFromAllWeaknessTheEternalInheritorTheMasterTheMostHighTheOneGodFinal1"></word>
+			<word text="AsmaAlHusnaBatch1" font="Quranic;0022" id="TheBeneficentTheMercifulTheEternalLordTheMostSacredTheEmbodimentOfPeaceTheInfuserOfFaithThePreserverOfSafetyTheMightyOneTheAllCompellingTheDominantOneTheCreatorTheEvolverTheFlawlessShaperTheVeryFirstTheInfiniteLastOneThePerceptibleTheImperceptible"></word>
+			<word text="AsmaAlHusnaBatch2" font="Quranic;0023" id="TheAllHearerTheAllSeeingTheMasterTheHelperTheSupremePardonerThePowerfulTheKnowerOfSubtletiesTheAllAwareOneTheOddTheBeautifulTheShyTheCovererTheGreatOneTheExtremelyExaltedOneTheOnlyOneTheAllPrevailingOne"></word>
+			<word text="AsmaAlHusnaBatch3" font="Quranic;0024" id="TheEmbodimentOfTruthTheClearTheStrongOneTheFirmOneTheEverLivingTheSelfSubsistingOneTheSublimeOneTheMagnificentOneTheAcknowledgingOneTheClementOneTheAllPervadingOneTheAllKnowingOneTheEverAcceptorOfRepentanceTheWiseOneTheSelfSufficientOneTheBountifulOneTheSoleOneTheSupremeProviderTheCloseTheRespondingOneThePardonerTheLovingOne"></word>
+			<word text="AsmaAlHusnaBatch4" font="Quranic;0025" id="TheProtectingAssociateTheSoleLaudableOneTheGuardingOneTheGloriousOneTheSupremeSolverTheAllObservingWitnessTheExpeditingOneTheProcrastinatorTheOmnipotentKingTheAllAuthoritativeOneTheBrilliantTheTakerTheExtenderTheProviderTheIrresistableTheOneWhoRecompenses"></word>
+			<word text="AsmaAlHusnaBatch5" font="Quranic;0026" id="TheRecognizerTheBestowerTheOmnipotentOneTheContinuousCreatorTheOwnerTheTotalProviderTheUniversalTrusteeTheWatchfulOneTheDoerOfGoodTheReckoningOneTheOneWhoCuresTheGentleTheGiverTheSustainingOneTheLordTheGoodTheImpartialJudgeTheSupremeInHonourTheFountainHeadOfTruth"></word>
+			<word text="AsmaAlHusnaBatch6" font="Quranic;0027" id="TheGreatForgiverTheBenignOneTheSupremeBestowerTheMostGenerousTheMostHolyFromAllWeaknessTheEternalInheritorTheMasterTheMostHighTheOneGodFinal1"></word>
+			<word text="HeIsAllah" font="Tulth;0009,0020,0085,0086;Shia;0038" id="HeIsAllah"></word>
 			<word text="AndAllahHasTheBestNamesCallUponHimAndLeaveThemInPlaceThoseNamesNotablyCutOffWhatTheyDo" font="Quranic;008F" id="AndAllahHasTheBestNamesCallUponHimAndLeaveThemInPlaceThoseNamesNotablyCutOffWhatTheyDo"></word>
+			<word text="TheNamesOfAllahAreBest" font="KFGQPCArabicSymbols01;F024|Tulth;0087|Farsi;0088" id="TheNamesOfAllahAreBest"></word>
+			<word text="TheNamesOfAllahAreBestFixedInTheBookAndTradition" font="Quranic;0021,008D" id="TheNamesOfAllahAreBestFixedInTheBookAndTradition"></word>
+			<word text="AndAllahHasTheBestNamesSoCallOnThem" font="Tulth;0089" id="AndAllahHasTheBestNamesSoCallOnThem"></word>
+			<word text="AndAllahHasTheBestNamesSoCallOnThemLeaveThoseWhoPracticeDeviationConcerningHisNamesTheyWillBeRecompensedForWhatTheyHaveBeenDoing" font="Farsi;0085" id="AndAllahHasTheBestNamesSoCallOnThemLeaveThoseWhoPracticeDeviationConcerningHisNamesTheyWillBeRecompensedForWhatTheyHaveBeenDoing"></word>
+			<word text="SayCallUponAllahOrCallUponTheMostMercifulWhicheverNameYouCallToHimBelongTheBestNames" font="Tulth;008A" id="SayCallUponAllahOrCallUponTheMostMercifulWhicheverNameYouCallToHimBelongTheBestNames"></word>
+			<word text="FixedInTheBookAndTradition" font="Tulth;008B" id="FixedInTheBookAndTradition"></word>
+			<word text="WhoeverMemorizesThemWillEnterParadise" font="Tulth;008C|Farsi;0089" id="WhoeverMemorizesThemWillEnterParadise"></word>
+			<word text="TheologyOfThePeopleOfTraditionAndTheGroup" font="Farsi;0086" id="TheologyOfThePeopleOfTraditionAndTheGroup"></word>
 			
 			<word text="BISMILLAHIRAHMANIRAHEEM" font="FDFD|KFGQPCArabicSymbols01;F021,F022,F023|AGAArabesque;F04F,F050|AGAIslamicPhrases;0021,0023,0024,0025,0026,002D,0030,0031,0032,0033,0034,0035,0036,0037,0038,0039,0040,005E|Quranic;0009,0020|Farsi;0087|Shia;0030,0032,0034,0035,0037,0060" id="InTheNameOfAllahMostBeneficentMostMerciful"></word>
 			<word text="ALHAMDULILLAHIRABBILALAMEEN" font="AGAIslamicPhrases;0029,005F|Shia;003D" id="AllPraiseAndThanksBeToAllahLordOfTheWorlds"></word>
@@ -3649,8 +3655,8 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="\{word:\}" id="IslamicTheology"></word>
 			<word text="\{word:\}" id="PropheticBiography"></word>
 			<word text="\{word:\}" id="QuranicExegesis"></word>
-			<word text="\{PeaceBeUponYou\}\{AndUponYouBePeace\}\{PeaceBeUponYouWR\}\{AndUponYouBePeaceWR\}\{PeaceBeUponYouWRWB\}\{AndUponYouBePeaceWRWB\}\{AS\}\{AimaaS\}\{AaaS\}\{AimS\}\{AinnaS\}\{SAWAWS\}\{SAWS\}\{ASW\}\{AWAWW\}\{RA\}\{RAunna\}\{RAumaa\}\{RAu\}\{RAaa\}\{RAT\}\{RATunna\}\{RATumaa\}\{RATu\}\{RATaa\}\{RAA\}\{RAAinna\}\{RAAimaa\}\{RAAi\}\{RAAaa\}\{R\}\{Runna\}\{Rumaa\}\{Ru\}\{Raa\}\{JK\}\{JKunna\}\{JKumaa\}\{JKa\}\{JKi\}\{BF\}\{BFunna\}\{BFumaa\}\{BFa\}\{BFi\}\{H\}\{Hunna\}\{Humaa\}\{Ha\}\{Hi\}\{AAum\}\{ShSum\}\{ASa\}\{SWT\}\{AWJ\}\{JJ\}\{JWA\}\{BlessingsOfAllah\}\{SeekRefugeWithAllahFromSatanRejected\}\{BISMILLAH\}\{INSHALLAH\}\{INSHALLAHTAALA\}\{MASHALLAH\}\{SUBHANALLAH\}\{SUBHANAKALLAH\}\{ALHAMDULILLAH\}\{ThanksALHAMDULILLAH\}\{ALLAHUAKBAR\}\{ALLAHUAKBARALLAHUAKBAR\}\{ASTAGFIRULLAH\}\{HASBIALLAH\}\{MayAllahBlessYou\}\{AllahKnowsBest\}\{InProtectionOfAllah\}\{IHavePutTrustInAllah\}\{WeHavePutTrustInAllah\}\{FearAllah\}\{SpeechOfAllah\}\{ISwearByAllah\}\{RightOfAllah\}\{MayAllahWillItSoOLordOfTheWorlds\}\{AllahSaysTheTruth\}\{InThePathOfAllah\}\{TrulyFromAllahWeComeAndToHimWillReturn\}\{LAILAHAILLALLAH\}\{RASOOLULLAH\}\{ALLAHUMMASALLAALAMUHAMMADWAALAAALIMUHAMMAD\}\{TrulyYouAreOnAnExaltedStandardOfCharacter\}\{AndPrepareAgainstThemWhateverYouAreAbleOfPower\}\{MUHAMMADURRASOOLULLAH\}\{LAILALAILLALLAHMUHAMMADURRASOOLULLAH\}\{ASHHADUANLAILAHAILLALLAH\}\{ASHHADUANNAMUHAMMADARRASOOLULLAH\}\{ASHHADUANLAILAHAILLALLAHASHHADUANNAMUHAMMADABDUHUWARASULUH\}\{ThereIsNoPowerAndNoMightExceptWithAllah\}\{ThereIsNoPowerAndNoMightExceptWithAllahMostHighMostMagnificent\}\{TrulyAllahIsWithThePatient\}\{AndForParentsKindness\}\{BeWithAllah\}\{TheNobleQuran\}\{NobleQuran\}\{MonthOfRamadanWhichWasRevealedThereinTheQuranGuidanceToMankind\}\{InRemembranceOfAllahHeartsFindPeace\}\{SafeguardYourselfFromHeWhoYouHaveBeenGoodTo\}\{TrulyAllahLovesWhenOneWhoWorksDoesTheWorkWell\}\{BlessedFeastCelebration\}\{HappyFeastCelebration\}\{GreatWithPraiseToAllah\}\{MayEveryYearYouBeInGoodHealthAndBlessings\}\{MayEveryYearYouHaveGoodness\}\{AllRightsReserved\}\{TheNamesOfAllahAreBest\}\{TheNamesOfAllahAreBestFixedInTheBookAndTradition\}\{AndAllahHasTheBestNamesSoCallOnThem\}\{AndAllahHasTheBestNamesSoCallOnThemLeaveThoseWhoPracticeDeviationConcerningHisNamesTheyWillBeRecompensedForWhatTheyHaveBeenDoing\}\{SayCallUponAllahOrCallUponTheMostMercifulWhicheverNameYouCallToHimBelongTheBestNames\}\{FixedInTheBookAndTradition\}\{WhoeverMemorizesThemWillEnterParadise\}\{ThenTrulyThePartyOfAllahAreTheTriumphant\}\{TheologyOfThePeopleOfTraditionAndTheGroup\}\{HeIsAllah\}\{OnWithTheTruth\}\{OLordGiveMeKnowledge\}\{AH\}\{Preface\}\{Contents\}\{End\}\{Introduction\}\{Classroom\}\{Door\}\{Part\}\{Congratulations\}\{Index\}\{Islam\}\{Mosque\}\{World\}\{Book\}\{Light\}\{Peace\}\{Allah\}\{AAMEEN\}\{Muhammad\}\{Ali\}\{Fatima\}\{HADI\}\{RIDAA\}\{Hasan\}\{Hussein\}\{BAAQIR\}\{GuidedOne\}\{ASKAREE\}\{JAWAAD\}\{KADHIM\}\{SAADIQ\}\{Sajjad\}\{Rial\}\{Ounce\}\{Shilling\}\{Pound\}\{Dirham\}\{Dinar\}\{Lira\}\{Group\}\{Quarter\}\{Eighth\}\{Fight\}\{AHAD\}\{ITHNAYN\}\{THULAATHAA\}\{ARBAA\}\{KHAMEES\}\{JUMUAH\}\{SABT\}\{MUHARRAM\}\{SAFAR\}\{RABEEAWWAL\}\{RABEETHAANEE\}\{JUMADAALUWLAA\}\{JUMADAATHAANEEAH\}\{RAJAB\}\{SHABAAN\}\{RAMADAN\}\{SHAWAAL\}\{THULQADAH\}\{THULHIJJAH\}\{BISMILLAHIRAHMANIRAHEEM\}\{ALHAMDULILLAHIRABBILALAMEEN\}\{TrulyWithHardshipIsEase\}\{RepelTheirEvilByMeansOfWhatIsBest\}\{AndOfHisSignsIsThatHeCreatedForYouFromYourselvesMatesThatYouMayFindTranquillityInThem\}\{AndHePlacedBetweenYouAffectionAndMercy\}\{TaughtMankindWhatNotHeKnew\}\{AllahLightHeavensAndEarth\}\{EnterItWithPeaceAndSafety\}\{FALAQ\}" id="Abbreviations"></word>
-			<word text="\{TheBeneficent\}\{TheMerciful\}\{TheEternalLord\}\{TheMostSacred\}\{TheEmbodimentOfPeace\}\{TheInfuserOfFaith\}\{ThePreserverOfSafety\}\{TheMightyOne\}\{TheAllCompelling\}\{TheDominantOne\}\{TheCreator\}\{TheEvolver\}\{TheFlawlessShaper\}\{TheGreatForgiver\}\{TheAllPrevailingOne\}\{TheSupremeBestower\}\{TheTotalProvider\}\{TheSupremeSolver\}\{TheAllKnowingOne\}\{TheRestrictingOne\}\{TheExtender\}\{TheReducer\}\{TheElevatingOne\}\{TheHonourerBestower\}\{TheAbaser\}\{TheAllHearer\}\{TheAllSeeing\}\{TheImpartialJudge\}\{TheEmbodimentOfJustice\}\{TheKnowerOfSubtleties\}\{TheAllAwareOne\}\{TheClementOne\}\{TheMagnificentOne\}\{ThePardoner\}\{TheAcknowledgingOne\}\{TheSublimeOne\}\{TheGreatOne\}\{TheGuardingOne\}\{TheSustainingOne\}\{TheReckoningOne\}\{TheMajesticOne\}\{TheBountifulOne\}\{TheWatchfulOne\}\{TheRespondingOne\}\{TheAllPervadingOne\}\{TheWiseOne\}\{TheLovingOne\}\{TheGloriousOne\}\{TheInfuserOfNewLife\}\{TheAllObservingWitness\}\{TheEmbodimentOfTruth\}\{TheUniversalTrustee\}\{TheStrongOne\}\{TheFirmOne\}\{TheProtectingAssociate\}\{TheSoleLaudableOne\}\{TheAllEnumeratingOne\}\{TheOriginator\}\{TheRestorer\}\{TheMaintainerOfLife\}\{TheInflictorOfDeath\}\{TheEverLiving\}\{TheSelfSubsistingOne\}\{ThePointingOne\}\{TheAllNobleOne\}\{TheOnlyOne\}\{TheSoleOne\}\{TheSupremeProvider\}\{TheOmnipotentOne\}\{TheAllAuthoritativeOne\}\{TheExpeditingOne\}\{TheProcrastinator\}\{TheVeryFirst\}\{TheInfiniteLastOne\}\{ThePerceptible\}\{TheImperceptible\}\{TheHolderOfSupremeAuthority\}\{TheExtremelyExaltedOne\}\{TheFountainHeadOfTruth\}\{TheEverAcceptorOfRepentance\}\{TheRetaliator\}\{TheSupremePardoner\}\{TheBenignOne\}\{TheEternalPossessorOfSovereignty\}\{ThePossessorOfMajestyAndHonour\}\{TheJustOne\}\{TheAssemblerOfScatteredCreations\}\{TheSelfSufficientOne\}\{TheBestowerOfSufficiency\}\{ThePreventer\}\{TheDistressor\}\{TheBestowerOfBenefits\}\{ThePrimeLight\}\{TheProviderOfGuidance\}\{TheUniqueOne\}\{TheEverSurvivingOne\}\{TheEternalInheritor\}\{TheGuideToPathOfRectitude\}\{TheExtensivelyEnduringOne\}\{TheHelper\}\{TheMaster\}\{ThePowerful\}\{TheOdd\}\{TheBeautiful\}\{TheShy\}\{TheCoverer\}\{TheClear\}\{TheClose\}\{TheOmnipotentKing\}\{TheBrilliant\}\{TheTaker\}\{TheProvider\}\{TheIrresistable\}\{TheOneWhoRecompenses\}\{TheRecognizer\}\{TheBestower\}\{TheContinuousCreator\}\{TheOwner\}\{TheDoerOfGood\}\{TheOneWhoCures\}\{TheGentle\}\{TheGiver\}\{TheLord\}\{TheGood\}\{TheSupremeInHonour\}\{TheMostGenerous\}\{TheMostHolyFromAllWeakness\}\{TheMaster\}\{TheMostHigh\}\{TheOneGod\}" id="TheBestNamesOfAllah"></word>
+			<word text="\{PeaceBeUponYou\}\{AndUponYouBePeace\}\{PeaceBeUponYouWR\}\{AndUponYouBePeaceWR\}\{PeaceBeUponYouWRWB\}\{AndUponYouBePeaceWRWB\}\{AS\}\{AimaaS\}\{AaaS\}\{AimS\}\{AinnaS\}\{SAWAWS\}\{SAWS\}\{ASW\}\{AWAWW\}\{RA\}\{RAunna\}\{RAumaa\}\{RAu\}\{RAaa\}\{RAT\}\{RATunna\}\{RATumaa\}\{RATu\}\{RATaa\}\{RAA\}\{RAAinna\}\{RAAimaa\}\{RAAi\}\{RAAaa\}\{R\}\{Runna\}\{Rumaa\}\{Ru\}\{Raa\}\{JK\}\{JKunna\}\{JKumaa\}\{JKa\}\{JKi\}\{BF\}\{BFunna\}\{BFumaa\}\{BFa\}\{BFi\}\{H\}\{Hunna\}\{Humaa\}\{Ha\}\{Hi\}\{AAum\}\{ShSum\}\{ASa\}\{SWT\}\{AWJ\}\{JJ\}\{JWA\}\{BlessingsOfAllah\}\{SeekRefugeWithAllahFromSatanRejected\}\{BISMILLAH\}\{INSHALLAH\}\{INSHALLAHTAALA\}\{MASHALLAH\}\{SUBHANALLAH\}\{SUBHANAKALLAH\}\{ALHAMDULILLAH\}\{ThanksALHAMDULILLAH\}\{ALLAHUAKBAR\}\{ALLAHUAKBARALLAHUAKBAR\}\{ASTAGFIRULLAH\}\{HASBIALLAH\}\{MayAllahBlessYou\}\{AllahKnowsBest\}\{InProtectionOfAllah\}\{IHavePutTrustInAllah\}\{WeHavePutTrustInAllah\}\{FearAllah\}\{SpeechOfAllah\}\{ISwearByAllah\}\{RightOfAllah\}\{MayAllahWillItSoOLordOfTheWorlds\}\{AllahSaysTheTruth\}\{InThePathOfAllah\}\{TrulyFromAllahWeComeAndToHimWillReturn\}\{LAILAHAILLALLAH\}\{RASOOLULLAH\}\{ALLAHUMMASALLAALAMUHAMMADWAALAAALIMUHAMMAD\}\{TrulyYouAreOnAnExaltedStandardOfCharacter\}\{AndPrepareAgainstThemWhateverYouAreAbleOfPower\}\{MUHAMMADURRASOOLULLAH\}\{LAILALAILLALLAHMUHAMMADURRASOOLULLAH\}\{ASHHADUANLAILAHAILLALLAH\}\{ASHHADUANNAMUHAMMADARRASOOLULLAH\}\{ASHHADUANLAILAHAILLALLAHASHHADUANNAMUHAMMADABDUHUWARASULUH\}\{ThereIsNoPowerAndNoMightExceptWithAllah\}\{ThereIsNoPowerAndNoMightExceptWithAllahMostHighMostMagnificent\}\{TrulyAllahIsWithThePatient\}\{AndForParentsKindness\}\{BeWithAllah\}\{TheNobleQuran\}\{NobleQuran\}\{MonthOfRamadanWhichWasRevealedThereinTheQuranGuidanceToMankind\}\{InRemembranceOfAllahHeartsFindPeace\}\{SafeguardYourselfFromHeWhoYouHaveBeenGoodTo\}\{TrulyAllahLovesWhenOneWhoWorksDoesTheWorkWell\}\{BlessedFeastCelebration\}\{HappyFeastCelebration\}\{GreatWithPraiseToAllah\}\{MayEveryYearYouBeInGoodHealthAndBlessings\}\{MayEveryYearYouHaveGoodness\}\{AllRightsReserved\}\{ThenTrulyThePartyOfAllahAreTheTriumphant\}\{OnWithTheTruth\}\{OLordGiveMeKnowledge\}\{AH\}\{Preface\}\{Contents\}\{End\}\{Introduction\}\{Classroom\}\{Door\}\{Part\}\{Congratulations\}\{Index\}\{Islam\}\{Mosque\}\{World\}\{Book\}\{Light\}\{Peace\}\{Allah\}\{AAMEEN\}\{Muhammad\}\{Ali\}\{Fatima\}\{HADI\}\{RIDAA\}\{Hasan\}\{Hussein\}\{BAAQIR\}\{GuidedOne\}\{ASKAREE\}\{JAWAAD\}\{KADHIM\}\{SAADIQ\}\{Sajjad\}\{Rial\}\{Ounce\}\{Shilling\}\{Pound\}\{Dirham\}\{Dinar\}\{Lira\}\{Group\}\{Quarter\}\{Eighth\}\{Fight\}\{AHAD\}\{ITHNAYN\}\{THULAATHAA\}\{ARBAA\}\{KHAMEES\}\{JUMUAH\}\{SABT\}\{MUHARRAM\}\{SAFAR\}\{RABEEAWWAL\}\{RABEETHAANEE\}\{JUMADAALUWLAA\}\{JUMADAATHAANEEAH\}\{RAJAB\}\{SHABAAN\}\{RAMADAN\}\{SHAWAAL\}\{THULQADAH\}\{THULHIJJAH\}\{BISMILLAHIRAHMANIRAHEEM\}\{ALHAMDULILLAHIRABBILALAMEEN\}\{TrulyWithHardshipIsEase\}\{RepelTheirEvilByMeansOfWhatIsBest\}\{AndOfHisSignsIsThatHeCreatedForYouFromYourselvesMatesThatYouMayFindTranquillityInThem\}\{AndHePlacedBetweenYouAffectionAndMercy\}\{TaughtMankindWhatNotHeKnew\}\{AllahLightHeavensAndEarth\}\{EnterItWithPeaceAndSafety\}\{FALAQ\}" id="Abbreviations"></word>
+			<word text="\{TheBeneficent\}\{TheMerciful\}\{TheEternalLord\}\{TheMostSacred\}\{TheEmbodimentOfPeace\}\{TheInfuserOfFaith\}\{ThePreserverOfSafety\}\{TheMightyOne\}\{TheAllCompelling\}\{TheDominantOne\}\{TheCreator\}\{TheEvolver\}\{TheFlawlessShaper\}\{TheGreatForgiver\}\{TheAllPrevailingOne\}\{TheSupremeBestower\}\{TheTotalProvider\}\{TheSupremeSolver\}\{TheAllKnowingOne\}\{TheRestrictingOne\}\{TheExtender\}\{TheReducer\}\{TheElevatingOne\}\{TheHonourerBestower\}\{TheAbaser\}\{TheAllHearer\}\{TheAllSeeing\}\{TheImpartialJudge\}\{TheEmbodimentOfJustice\}\{TheKnowerOfSubtleties\}\{TheAllAwareOne\}\{TheClementOne\}\{TheMagnificentOne\}\{ThePardoner\}\{TheAcknowledgingOne\}\{TheSublimeOne\}\{TheGreatOne\}\{TheGuardingOne\}\{TheSustainingOne\}\{TheReckoningOne\}\{TheMajesticOne\}\{TheBountifulOne\}\{TheWatchfulOne\}\{TheRespondingOne\}\{TheAllPervadingOne\}\{TheWiseOne\}\{TheLovingOne\}\{TheGloriousOne\}\{TheInfuserOfNewLife\}\{TheAllObservingWitness\}\{TheEmbodimentOfTruth\}\{TheUniversalTrustee\}\{TheStrongOne\}\{TheFirmOne\}\{TheProtectingAssociate\}\{TheSoleLaudableOne\}\{TheAllEnumeratingOne\}\{TheOriginator\}\{TheRestorer\}\{TheMaintainerOfLife\}\{TheInflictorOfDeath\}\{TheEverLiving\}\{TheSelfSubsistingOne\}\{ThePointingOne\}\{TheAllNobleOne\}\{TheOnlyOne\}\{TheSoleOne\}\{TheSupremeProvider\}\{TheOmnipotentOne\}\{TheAllAuthoritativeOne\}\{TheExpeditingOne\}\{TheProcrastinator\}\{TheVeryFirst\}\{TheInfiniteLastOne\}\{ThePerceptible\}\{TheImperceptible\}\{TheHolderOfSupremeAuthority\}\{TheExtremelyExaltedOne\}\{TheFountainHeadOfTruth\}\{TheEverAcceptorOfRepentance\}\{TheRetaliator\}\{TheSupremePardoner\}\{TheBenignOne\}\{TheEternalPossessorOfSovereignty\}\{ThePossessorOfMajestyAndHonour\}\{TheJustOne\}\{TheAssemblerOfScatteredCreations\}\{TheSelfSufficientOne\}\{TheBestowerOfSufficiency\}\{ThePreventer\}\{TheDistressor\}\{TheBestowerOfBenefits\}\{ThePrimeLight\}\{TheProviderOfGuidance\}\{TheUniqueOne\}\{TheEverSurvivingOne\}\{TheEternalInheritor\}\{TheGuideToPathOfRectitude\}\{TheExtensivelyEnduringOne\}\{TheHelper\}\{TheMaster\}\{ThePowerful\}\{TheOdd\}\{TheBeautiful\}\{TheShy\}\{TheCoverer\}\{TheClear\}\{TheClose\}\{TheOmnipotentKing\}\{TheBrilliant\}\{TheTaker\}\{TheProvider\}\{TheIrresistable\}\{TheOneWhoRecompenses\}\{TheRecognizer\}\{TheBestower\}\{TheContinuousCreator\}\{TheOwner\}\{TheDoerOfGood\}\{TheOneWhoCures\}\{TheGentle\}\{TheGiver\}\{TheLord\}\{TheGood\}\{TheSupremeInHonour\}\{TheMostGenerous\}\{TheMostHolyFromAllWeakness\}\{TheMaster\}\{TheMostHigh\}\{TheOneGod\}\{HeIsAllah\}\{AndAllahHasTheBestNamesCallUponHimAndLeaveThemInPlaceThoseNamesNotablyCutOffWhatTheyDo\}\{TheNamesOfAllahAreBest\}\{TheNamesOfAllahAreBestFixedInTheBookAndTradition\}\{AndAllahHasTheBestNamesSoCallOnThem\}\{AndAllahHasTheBestNamesSoCallOnThemLeaveThoseWhoPracticeDeviationConcerningHisNamesTheyWillBeRecompensedForWhatTheyHaveBeenDoing\}\{SayCallUponAllahOrCallUponTheMostMercifulWhicheverNameYouCallToHimBelongTheBestNames\}\{FixedInTheBookAndTradition\}\{WhoeverMemorizesThemWillEnterParadise\}\{TheologyOfThePeopleOfTraditionAndTheGroup\}" id="TheBestNamesOfAllah"></word>
 		</category>
 	</lists>
 	<languages>

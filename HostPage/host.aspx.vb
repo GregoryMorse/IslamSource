@@ -294,7 +294,7 @@ Partial Class host
                         Utility.ApplyTransparencyFilter(bmp, Color.FromArgb(&HFFF0F0F0), Color.White)
                     End If
                 ElseIf Request.QueryString.Get("Image") = "UnicodeChar" Then
-                    bmp = Utility.GetUnicodeChar(If(Request.QueryString.Get("Size") = Nothing, 13, CInt(Request.QueryString.Get("Size"))), Request.QueryString.Get("Font"), ChrW(Integer.Parse(Request.QueryString.Get("Char"), Globalization.NumberStyles.HexNumber)))
+                    bmp = Utility.GetUnicodeChar(If(Request.QueryString.Get("Size") = Nothing, 13, CInt(Request.QueryString.Get("Size"))), Request.QueryString.Get("Font"), Char.ConvertFromUtf32(Integer.Parse(Request.QueryString.Get("Char"), Globalization.NumberStyles.HexNumber)))
                 ElseIf Request.QueryString.Get("Image") = "Thumb" Then
                     Dim FetchImageItem As PageLoader.TextItem = DirectCast(PageSet.GetPageItem(Request.QueryString.Get("p")), PageLoader.TextItem)
                     bmp = Utility.MakeThumbFromURL(FetchImageItem.ImageURL, 121)

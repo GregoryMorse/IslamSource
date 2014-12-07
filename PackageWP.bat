@@ -1,0 +1,1 @@
+"%ProgramFiles%\7-Zip\7z.exe" a IslamSourceWP.zip IslamSourceWP.php "IslamResources\My Project\Resources.resx" metadata\ArabicData.xml metadata\islaminfo.xml IslamResources\*.resx files\*.ttf
