@@ -11,150 +11,60 @@ Author URI: http://islamsource.info
 /* OPTIONS PAGE */
 
 // Add admin actions
-add_action('admin_menu', 'islamic_graphics_menu');
-add_action('admin_init', 'islamic_graphics_init');
-
-// Add sub-menu to Settings Top Menu
-function islamic_graphics_menu() {
-	add_options_page('Islamic Graphics - Options', 'Islamic Graphics', 'manage_options', 'islamic-graphics', 'islamic_graphics_options');
-}
+add_action('admin_init', 'islamic_source_init');
 
 // Register settings
-function islamic_graphics_init(){
-    add_settings_section('islamic_graphics_main', 'Main Settings', 'islamic_graphics_section_text', 'islamic-graphics');
-    add_settings_field('islamic_graphics_default_height', 'Default height (pixels)', 'add_field_default_height', 'islamic-graphics', 'islamic_graphics_main');
-    add_settings_field('islamic_graphics_default_colour', 'Default colour', 'add_field_default_colour', 'islamic-graphics', 'islamic_graphics_main');
-    add_settings_field('islamic_graphics_display_type', 'Display type', 'add_field_display_type', 'islamic-graphics', 'islamic_graphics_main');
-    
-    register_setting( 'islamic-graphics-option-group', 'islamic_graphics_default_height', 'validate_default_height' );
-    register_setting( 'islamic-graphics-option-group', 'islamic_graphics_display_type' );
-    register_setting( 'islamic-graphics-option-group', 'islamic_graphics_default_colour' );
+function islamic_source_init(){
+   if ( ! current_user_can('edit_posts') && ! current_user_can('edit_pages') ) {
+     return;
+   }
+ 
+   if ( get_user_option('rich_editing') == 'true' ) {
+     add_filter( 'mce_external_plugins', 'is_add_plugin' );
+     
+	 $rowvalue = '';
+	 add_filter( 'mce_buttons'.$rowvalue, 'is_register_button' );
+   }
  }
  
-function islamic_graphics_section_text(){
-    echo '<p>Use the following options to alter the display of Islamic Graphics in your posts and pages.</p>';
-}
-
-function add_field_default_height(){   
-    echo '<input type="text" name="islamic_graphics_default_height" value="';
-    echo get_option('islamic_graphics_default_height', 20);
-    echo '" />';           
-}
-
-function add_field_default_colour(){   
-    echo '<select name="islamic_graphics_default_colour" id="islamic_graphics_default_colour">';
-    
-    $display_type_options = array(
-            "black" => "Black",
-            "white" => "White");
-
-    $stored_type = get_option('islamic_graphics_default_colour', 'black');
-
-    foreach ($display_type_options as $key => $row) {
-        echo '<option value="' . $key . '"';
-        if ($stored_type == $key) { echo 'selected="selected"'; }
-        echo '>'. $row .'</option>';
-    }
-    
-    echo '</select>';        
-}
-
-function add_field_display_type(){   
-    echo '<select name="islamic_graphics_display_type" id="islamic_graphics_display_type">';
-    
-        $display_type_options = array(
-                "images" => "Images only",
-                "images_trans" => "Images (with translation)",
-                "text_rom_trans" => "Romanized text (with translation)",
-                "text_rom" => "Romanized text only",
-                "text_trans" => "Translation only");
-
-        $stored_type = get_option('islamic_graphics_display_type', 'images');
-
-        foreach ($display_type_options as $key => $row) {
-            echo '<option value="' . $key . '"';
-            if ($stored_type == $key) { echo 'selected="selected"'; }
-            echo '>'. $row .'</option>';
-        } 
-    
-    echo '</select>';        
-}
-
-// Validate height input
-function validate_default_height($input) {
-    $newinput = trim($input);
-    
-    if (!is_numeric($newinput)){
-        $newinput = 20; // if not numeric, then use 20 as default value
-    }
-    return $newinput;
-}
-
-// HTML for options page
-function islamic_graphics_options() {
-	if (!current_user_can('manage_options'))  {
-		wp_die( __('You do not have sufficient permissions to access this page.') );
-	}
-?>
-    <div class="wrap">
-        <h2>Islamic Graphics - Options Page</h2>
-        <form method="post" action="options.php">
-        <?php settings_fields( 'islamic-graphics-option-group' ); ?>
-        <?php do_settings_sections('islamic-graphics'); ?>
-        <!-- Submit Button -->
-        <p class="submit"> <input type="submit" class="button-primary" value="<?php _e('Save Changes') ?>" /></p>
-        </form>
-    </div>
-        
-<?php }
-
-
-
-/* GLOBAL ARRAY OF SHORTCODES + ALT TEXT VALUES */
-
-$alt_text = array();
-
-function add_to_alt_text($code, $romanized, $translation){
-    $GLOBALS['alt_text'][$code] = array("romanized" => $romanized, "translation" => $translation); 
-}
-
-/*add_to_alt_text("alayhis", "'alayhi'l-salam", "peace be upon him");
-add_to_alt_text("rahimaha", "ra?imaha Allah", "may Allah have mercy upon her");
-add_to_alt_text("rahimahu", "ra?imahullah","may Allah have mercy upon him");
-add_to_alt_text("rahimahum", "ra?imahum Allah","may Allah have mercy upon them");
-add_to_alt_text("ranha", "ra?yAllahu 'anha","may Allah be pleased with her");
-add_to_alt_text("ranhu", "ra?yAllahu 'anhu","may Allah be pleased with him");
-add_to_alt_text("ranhum", "ra?yAllahu 'anhum","may Allah be pleased with them");
-add_to_alt_text("saw", "?allallahu 'alayhi wa sallam","peace and blessings of Allah be upon him");
-add_to_alt_text("swt", "sub?anahu wa ta'ala","glorified and exalted be He");
+ /**
+Register Button
 */
 
-/* ADD SHORTCODES */
-        
-foreach ($alt_text as $key => $row) {
-    add_shortcode( $key, 'insert_islamic_graphic' );
-    add_shortcode( $key.'_w', 'insert_islamic_graphic' ); // to be compatible with pre-v1.1 shortcodes
-}   
+function is_register_button( $buttons ) {
+	array_push( $buttons, "is_button");
+	return $buttons;
+}
+ 
+/**
+Register IS Plugin
+*/
+ 
+function is_add_plugin( $plugin_array ) {
+ 	$url = plugins_url().""; 
+   	$plugin_array['is_button'] = $url.'/IslamSource/isbutton.js';
+  	return $plugin_array;
+}
 
+/* ADD SHORTCODES */
+
+function is_shortcode() {
+    global $wp_query;	
+    $posts = $wp_query->posts;
+    foreach ($posts as $post){
+		$post->post_content = preg_replace_callback( '/(?:,?(\d+)(?:\:(\d+))?(?:\:(\d+))?(?:-(\d+)(?:\:(\d+))?(?:\:(\d+))?)?)/s', function () {
+			return "<span>Quran Reference</span>";
+		}, $post->post_content);
+    }
+}
+add_action( 'wp', 'is_shortcode' );
 
 /* ISLAMIC GRAPHIC SHORTCODE FUNCTION */
 
 function insert_islamic_graphic( $atts, $content=null, $code="" ) {
         $code = preg_replace("/_w/", "", $code); // to be compatible with pre-v1.1 shortcodes   
-    
-        // fetch display type from wp options (default to images)
-        $display_type = get_option('islamic_graphics_display_type', 'images');
-        
-        // Fetch alt_text
-        $romanized = $GLOBALS['alt_text'][$code]['romanized'];
-        $translation = $GLOBALS['alt_text'][$code]['translation'];
         
         if ($display_type == 'images' || $display_type == 'images_trans'){
-            // fetch default height from wp options (default of 20 if not set)
-            $default_height = get_option('islamic_graphics_default_height', 20);
-            
-            // fetch default colour from wp_options (default to black if not set)
-            $default_colour = get_option('islamic_graphics_default_colour', 'black');
 
             // extract attributes
             extract( shortcode_atts( array(
@@ -163,7 +73,7 @@ function insert_islamic_graphic( $atts, $content=null, $code="" ) {
             ), $atts ) );
             
             // plugin URL
-            $plugin_url = plugin_dir_url( "islamic_graphics.php" );
+            $plugin_url = plugin_dir_url( "IslamSourceWP.php" );
             
             // Construct alt_text
             $alt_text_str =  $romanized . ' (' . $translation . ')';
@@ -172,7 +82,7 @@ function insert_islamic_graphic( $atts, $content=null, $code="" ) {
             $html  = '<img title="' . $alt_text_str . '"';
             $html .= ' alt="' . $alt_text_str . '"';
             $html .= ' class="islamic_graphic"';
-            $html .= ' src="'. $plugin_url . 'islamic-graphics/img/' . "{$c}" . '/';
+            $html .= ' src="'. $plugin_url . 'islam-source/img/' . "{$c}" . '/';
 
             if ("{$h}" <= 20) { $html .= "20"; }
             else { $html .= "40"; }
@@ -334,15 +244,4 @@ function insert_islamic_graphic( $atts, $content=null, $code="" ) {
 //metadata/islaminfo.xml
 //metadata/ArabicData.xml
 //IslamResources/My Project/Resources.resx, IslamResources/Resources.en.resx, etc...
-
-//GD library and FreeType library
-//header('Content-Type: image/png');
-//$font = './files/.ttf';
-//$bbox = imagettfbbox(0, 0, $font, $text);
-//$im = imagecreatetruecolor($bbox[4] - $bbox[0], $bbox[5] - $bbox[1]);
-//$white = imagecolorallocate($im, 255, 255, 255);
-//imagefilledrectangle($im, $bbox[0], $bbox[1], $bbox[4], $bbox[5], $white);
-//imagettftext($im, $bbox[0], $bbox[1], $bbox[4], $bbox[5], $black, $font, $text);
-//imagepng($im);
-//imagedestroy($im);
 ?>
