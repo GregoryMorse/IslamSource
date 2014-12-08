@@ -351,24 +351,74 @@ Public Class Utility
         g.TextRenderingHint = Drawing.Text.TextRenderingHint.AntiAliasGridFit
         g.TextContrast = 0
         g.FillRectangle(Brushes.White, New RectangleF(0, 0, CSng(Math.Ceiling(TextExtent.Width + 1)), CSng(Math.Ceiling(TextExtent.Height + 1))))
-        Dim Format As New StringFormat(StringFormat.GenericTypographic)
-        Format.FormatFlags = StringFormatFlags.DisplayFormatControl Or StringFormatFlags.MeasureTrailingSpaces
-        'Format.LineAlignment = StringAlignment.Center
-        'Format.Alignment = StringAlignment.Center
+        Dim Format As New StringFormat
+        Format.FormatFlags = StringFormatFlags.DisplayFormatControl Or StringFormatFlags.MeasureTrailingSpaces Or StringFormatFlags.LineLimit Or StringFormatFlags.NoClip Or StringFormatFlags.FitBlackBox Or StringFormatFlags.NoWrap
+        Format.LineAlignment = StringAlignment.Near
+        Format.Alignment = StringAlignment.Near
+        Format.Trimming = StringTrimming.None
         g.DrawString(Ch, oFont, Brushes.Black, New RectangleF(0, 0, CSng(Math.Ceiling(TextExtent.Width + 1)), CSng(Math.Ceiling(TextExtent.Height + 1))), Format)
         bmp.MakeTransparent(Color.White)
         oFont.Dispose()
         Return bmp
+    End Function
+    Public Structure FIXED
+        Public fract As Short
+        Public value As Short
+    End Structure
+    Public Structure MAT2
+        <Runtime.InteropServices.MarshalAs(Runtime.InteropServices.UnmanagedType.Struct)> Public eM11 As FIXED
+        <Runtime.InteropServices.MarshalAs(Runtime.InteropServices.UnmanagedType.Struct)> Public eM12 As FIXED
+        <Runtime.InteropServices.MarshalAs(Runtime.InteropServices.UnmanagedType.Struct)> Public eM21 As FIXED
+        <Runtime.InteropServices.MarshalAs(Runtime.InteropServices.UnmanagedType.Struct)> Public eM22 As FIXED
+    End Structure
+    Public Structure POINT
+        Public x As Integer
+        Public y As Integer
+    End Structure
+    Public Structure GLYPHMETRICS
+        Public gmBlackBoxX As Integer
+        Public gmBlackBoxY As Integer
+        <Runtime.InteropServices.MarshalAs(Runtime.InteropServices.UnmanagedType.Struct)> Public gmptGlyphOrigin As POINT
+        Public gmCellIncX As Short
+        Public gmCellIncY As Short
+    End Structure
+    Public Declare Function GetGlyphOutline Lib "gdi32.dll" (hdc As IntPtr, uChar As UInteger, uFormat As UInteger, ByRef lpgm As GLYPHMETRICS, cbBuffer As UInteger, lpvBuffer As IntPtr, ByRef lpmat2 As MAT2) As Integer
+    Public Structure ABCFLOAT
+        Public abcfA As Single
+        Public abcfB As Single
+        Public abcfC As Single
+    End Structure
+    <Runtime.InteropServices.DllImport("gdi32", EntryPoint:="GetCharABCWidthsFloat")> Public Shared Function GetCharABCWidthsFloat(hDC As IntPtr, iFirstChar As Integer, iLastChar As Integer, ByRef lpABCF As ABCFLOAT) As Integer
+    End Function
+    <Runtime.InteropServices.DllImport("gdi32.dll", EntryPoint:="SelectObject")> _
+    Private Shared Function SelectObject(ByVal hdc As IntPtr, ByVal hObject As IntPtr) As IntPtr
     End Function
     Public Shared Function GetTextExtent(ByVal Text As String, ByVal MeasureFont As Font) As SizeF
         Dim bmp As New Bitmap(1, 1)
         Dim g As Graphics = Graphics.FromImage(bmp)
         g.PageUnit = GraphicsUnit.Point
         g.TextRenderingHint = Drawing.Text.TextRenderingHint.AntiAliasGridFit
-        g.TextContrast = 12
-        Dim Format As New StringFormat(StringFormat.GenericTypographic)
-        Format.FormatFlags = StringFormatFlags.DisplayFormatControl Or StringFormatFlags.MeasureTrailingSpaces
+        g.TextContrast = 0
+        Dim Format As New StringFormat
+        Format.FormatFlags = StringFormatFlags.DisplayFormatControl Or StringFormatFlags.MeasureTrailingSpaces Or StringFormatFlags.LineLimit Or StringFormatFlags.NoClip Or StringFormatFlags.FitBlackBox Or StringFormatFlags.NoWrap
+        Format.LineAlignment = StringAlignment.Near
+        Format.Alignment = StringAlignment.Near
+        Format.Trimming = StringTrimming.None
+        'Format.SetMeasurableCharacterRanges(New Drawing.CharacterRange() {New Drawing.CharacterRange(0, Text.Length)})
         GetTextExtent = g.MeasureString(Text, MeasureFont, New PointF(0, 0), Format)
+        'GetTextExtent.Width = g.MeasureCharacterRanges(Text, MeasureFont, New RectangleF(0, 0, 2048, 2048), Format)(0).GetBounds(g).Width
+        'GetTextExtent.Height = g.MeasureCharacterRanges(Text, MeasureFont, New RectangleF(0, 0, 2048, 2048), Format)(0).GetBounds(g).Height
+        'Dim Matrix As MAT2 = {1, 0, 0, 1}
+        'GetGlyphOutline()
+        If Text.Length = 1 Then
+            Dim hdc As IntPtr = g.GetHdc()
+            Dim ABC As ABCFLOAT
+            Dim OldFont As IntPtr = SelectObject(hdc, MeasureFont.ToHfont())
+            GetCharABCWidthsFloat(hdc, AscW(Text(0)), AscW(Text(0)), ABC)
+            SelectObject(hdc, OldFont)
+            g.ReleaseHdc(hdc)
+            GetTextExtent.Width = ABC.abcfA + ABC.abcfB + Math.Abs(ABC.abcfC)
+        End If
         g.Dispose()
         bmp.Dispose()
     End Function
@@ -565,20 +615,20 @@ Public Class Utility
         Dim oFont As Font
         Dim TextExtent As SizeF
         g.PageUnit = GraphicsUnit.Pixel
-        g.TextRenderingHint = Drawing.Text.TextRenderingHint.SystemDefault
+        g.TextRenderingHint = Drawing.Text.TextRenderingHint.ClearTypeGridFit
         g.TextContrast = 0
         Do
             FontSize += 1
             oFont = New Font("Arial", FontSize, FontStyle.Regular, GraphicsUnit.Pixel)
-            TextExtent = g.MeasureString(Text, oFont, New PointF(0, 0), Drawing.StringFormat.GenericTypographic)
+            TextExtent = g.MeasureString(Text, oFont, New PointF(0, 0), New StringFormat(Drawing.StringFormat.GenericTypographic))
             If TextExtent.Width > bmp.GetBounds(Drawing.GraphicsUnit.Pixel).Size.Width Then
                 oFont.Dispose()
                 oFont = New Font("Arial", FontSize - 1, FontStyle.Regular, GraphicsUnit.Pixel)
-                TextExtent = g.MeasureString(Text, oFont, New PointF(0, 0), Drawing.StringFormat.GenericTypographic)
+                TextExtent = g.MeasureString(Text, oFont, New PointF(0, 0), New StringFormat(Drawing.StringFormat.GenericTypographic))
                 Exit Do
             End If
         Loop While TextExtent.Width < bmp.GetBounds(Drawing.GraphicsUnit.Pixel).Size.Width * 4 / 5
-        Dim Format As StringFormat = Drawing.StringFormat.GenericTypographic
+        Dim Format As StringFormat = CType(StringFormat.GenericTypographic.Clone(), StringFormat)
         Format.LineAlignment = StringAlignment.Center
         Format.Alignment = StringAlignment.Center
         g.DrawString(Text, oFont, New SolidBrush(Color.FromArgb(128, Color.MintCream)), New RectangleF(0, CSng(bmp.GetBounds(Drawing.GraphicsUnit.Pixel).Size.Height - Math.Ceiling(TextExtent.Height) - 2), bmp.GetBounds(Drawing.GraphicsUnit.Pixel).Size.Width, CSng(Math.Ceiling(TextExtent.Height))), Format)
