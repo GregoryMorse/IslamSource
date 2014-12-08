@@ -334,9 +334,9 @@ Public Class Utility
     Public Shared FontList As String() = {"AGAIslamicPhrases", "AGAArabesque", "Shia", "IslamicLogo", "KFGQPCArabicSymbols01", "Quranic", "Tulth", "Farsi", "Asmaul-Husna", "Asmaul-Husna_2"}
     Public Shared FontFile As String() = {"AGA_Islamic_Phrases.TTF", "aga-arabesque.ttf", "SHIA.TTF", "islamic.ttf", "Symbols1_Ver02.otf", "Quranic.ttf", "Tulth.ttf", "Farsi.ttf", "Asmaul-Husna_1.ttf", "Asmaul-Husna_2.ttf"}
     Public Shared Function GetUnicodeChar(Size As Integer, Font As String, Ch As String) As Drawing.Bitmap
+        Dim PrivateFontColl As New Drawing.Text.PrivateFontCollection
         Dim oFont As Font
         If Array.IndexOf(Utility.FontList, Font) <> -1 Then
-            Dim PrivateFontColl As New Drawing.Text.PrivateFontCollection
             PrivateFontColl.AddFontFile(Utility.GetFilePath("files\" + Utility.FontFile(Array.IndexOf(Utility.FontList, Font))))
             oFont = New Drawing.Font(PrivateFontColl.Families(0), Size)
         ElseIf Font <> String.Empty Then
@@ -359,6 +359,8 @@ Public Class Utility
         g.DrawString(Ch, oFont, Brushes.Black, New RectangleF(0, 0, CSng(Math.Ceiling(TextExtent.Width + 1)), CSng(Math.Ceiling(TextExtent.Height + 1))), Format)
         bmp.MakeTransparent(Color.White)
         oFont.Dispose()
+        PrivateFontColl.Dispose()
+        g.Dispose()
         Return bmp
     End Function
     Public Structure FIXED
@@ -417,7 +419,7 @@ Public Class Utility
             GetCharABCWidthsFloat(hdc, AscW(Text(0)), AscW(Text(0)), ABC)
             SelectObject(hdc, OldFont)
             g.ReleaseHdc(hdc)
-            GetTextExtent.Width = ABC.abcfA + ABC.abcfB + Math.Abs(ABC.abcfC)
+            GetTextExtent.Width = Math.Max(GetTextExtent.Width, ABC.abcfA + ABC.abcfB + Math.Abs(ABC.abcfC))
         End If
         g.Dispose()
         bmp.Dispose()
@@ -632,8 +634,8 @@ Public Class Utility
         Format.LineAlignment = StringAlignment.Center
         Format.Alignment = StringAlignment.Center
         g.DrawString(Text, oFont, New SolidBrush(Color.FromArgb(128, Color.MintCream)), New RectangleF(0, CSng(bmp.GetBounds(Drawing.GraphicsUnit.Pixel).Size.Height - Math.Ceiling(TextExtent.Height) - 2), bmp.GetBounds(Drawing.GraphicsUnit.Pixel).Size.Width, CSng(Math.Ceiling(TextExtent.Height))), Format)
-        g.Dispose()
         oFont.Dispose()
+        g.Dispose()
     End Sub
     Public Shared Function LookupClassMember(ByVal Text As String) As Reflection.MethodInfo
         Dim ClassMember As String() = Text.Split(":"c)
@@ -2316,12 +2318,11 @@ Public Class RenderArray
                     Dim theText As String = CStr(CurRenderArray(Count).TextItems(SubCount).Text)
                     For NextCount As Integer = 0 To _Bounds(Count)(SubCount).Count - 1
                         If _Bounds(Count)(SubCount).Count <> 0 AndAlso RowTop <> _Bounds(Count)(SubCount)(NextCount).Rect.Top Then
+                            RowTop = _Bounds(Count)(SubCount)(NextCount).Rect.Top
                             For TestCount As Integer = Count To CurRenderArray.Count - 1
-                                If Count = TestCount Then RowTop = _Bounds(TestCount)(SubCount)(NextCount).Rect.Top
-                                If Count = TestCount AndAlso CurRenderArray(TestCount).TextItems(SubCount).DisplayClass = RenderDisplayClass.eNested Then Exit For
-                                If Count <> TestCount AndAlso _Bounds(TestCount)(0).Count <> 0 AndAlso RowTop <> _Bounds(TestCount)(0)(0).Rect.Top Then Exit For
                                 Dim TestSubCount As Integer
                                 For TestSubCount = If(Count = TestCount, SubCount, 0) To CurRenderArray(TestCount).TextItems.Length - 1
+                                    If (Count <> TestCount Or SubCount <> TestSubCount) AndAlso _Bounds(TestCount)(TestSubCount).Count <> 0 AndAlso RowTop <> _Bounds(TestCount)(TestSubCount)(0).Rect.Top Then Exit For
                                     Dim TestNextCount As Integer
                                     For TestNextCount = If(SubCount = TestSubCount, NextCount, 0) To _Bounds(TestCount)(TestSubCount).Count - 1
                                         If _Bounds(TestCount)(TestSubCount)(TestNextCount).Rect.Bottom + PageOffset.Y + BaseOffset.Y > Doc.PageSize.Height - Doc.BottomMargin - Doc.TopMargin Then
@@ -2390,18 +2391,21 @@ Public Class RenderArray
                         Else
                             ct.RunDirection = iTextSharp.text.pdf.PdfWriter.RUN_DIRECTION_LTR
                         End If
+                        Dim bmp As Bitmap = Nothing
                         If CurRenderArray(Count).TextItems(SubCount).Font <> String.Empty Then
                             'Dim BaseFont As iTextSharp.text.pdf.BaseFont = iTextSharp.text.pdf.BaseFont.CreateFont(Utility.GetFilePath("files\" + Utility.FontFile(Array.IndexOf(Utility.FontList, CurRenderArray(Count).TextItems(SubCount).Font))), iTextSharp.text.pdf.BaseFont.IDENTITY_H, iTextSharp.text.pdf.BaseFont.NOT_EMBEDDED)
                             'Dim SpecFont As New iTextSharp.text.Font(BaseFont, 20, iTextSharp.text.Font.NORMAL)
                             'ct.AddText(New iTextSharp.text.Chunk(Text, SpecFont))
                             'preservation of quality on zoom factor must be specified
                             ct.SetSimpleColumn(Rect.Left + Doc.LeftMargin - 1 + ExtraWidth, Doc.PageSize.Height - Doc.TopMargin - Rect.Bottom - _Bounds(Count)(SubCount)(NextCount).Baseline - Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size) * 2, Rect.Right - 4 + Doc.LeftMargin + ExtraWidth, Doc.PageSize.Height - Doc.TopMargin - Rect.Top + 1 - _Bounds(Count)(SubCount)(NextCount).Baseline - Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size) * 2, Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size), If(ct.RunDirection = iTextSharp.text.pdf.PdfWriter.RUN_DIRECTION_LTR, iTextSharp.text.Element.ALIGN_RIGHT, iTextSharp.text.Element.ALIGN_RIGHT) Or iTextSharp.text.Element.ALIGN_BASELINE)
-                            ct.AddElement(iTextSharp.text.Image.GetInstance((Utility.GetUnicodeChar(100 * 8, CurRenderArray(Count).TextItems(SubCount).Font, Text(0))), iTextSharp.text.BaseColor.WHITE))
+                            bmp = Utility.GetUnicodeChar(100 * 8, CurRenderArray(Count).TextItems(SubCount).Font, Text(0))
+                            ct.AddElement(iTextSharp.text.Image.GetInstance(bmp, iTextSharp.text.BaseColor.WHITE))
                         Else
                             ct.SetSimpleColumn(Rect.Left + Doc.LeftMargin + ExtraWidth, Doc.PageSize.Height - Doc.TopMargin - Rect.Bottom - _Bounds(Count)(SubCount)(NextCount).Baseline - Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size) * 2, Rect.Right - 3 + Doc.LeftMargin + ExtraWidth, Doc.PageSize.Height - Doc.TopMargin - Rect.Top + 1 - _Bounds(Count)(SubCount)(NextCount).Baseline - Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size) * 2, Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size), If(ct.RunDirection = iTextSharp.text.pdf.PdfWriter.RUN_DIRECTION_LTR, iTextSharp.text.Element.ALIGN_RIGHT, iTextSharp.text.Element.ALIGN_RIGHT) Or iTextSharp.text.Element.ALIGN_BASELINE)
                             ct.AddText(New iTextSharp.text.Chunk(Text, Font))
                         End If
                         ct.Go()
+                        If Not bmp Is Nothing Then bmp.Dispose()
                         theText = theText.Substring(_Bounds(Count)(SubCount)(NextCount).nChar)
                     Next
                 End If
@@ -2440,6 +2444,8 @@ Public Class RenderArray
         GetLayout(CurRenderArray, Doc.PageSize.Width - Doc.LeftMargin - Doc.RightMargin, _Bounds, GetTextWidthFromPdf(Font, DrawFont, Forms))
         Dim PageOffset As New PointF(0, 0)
         DoRenderPdf(Doc, Writer, Font, DrawFont, Forms, CurRenderArray, _Bounds, PageOffset, New PointF(0, 0))
+        DrawFont.Dispose()
+        PrivateFontColl.Dispose()
         Writer.CloseStream = False
         Doc.Close()
     End Sub
@@ -2450,10 +2456,13 @@ Public Class RenderArray
             'Font = New iTextSharp.text.Font(BaseFont, 20, iTextSharp.text.Font.NORMAL)
             Dim PrivateFontColl As New Drawing.Text.PrivateFontCollection
             PrivateFontColl.AddFontFile(Utility.GetFilePath("files\" + Utility.FontFile(Array.IndexOf(Utility.FontList, FontName))))
-            s = Utility.GetTextExtent(Str, New Drawing.Font(PrivateFontColl.Families(0), 100))
+            Dim PrivFont As New Drawing.Font(PrivateFontColl.Families(0), 100)
+            s = Utility.GetTextExtent(Str, PrivFont)
             s.Width = CInt(Math.Ceiling(Math.Ceiling(s.Width + 1) * 96.0F / 72.0F))
             s.Height = CInt(Math.Ceiling(Math.Ceiling(s.Height + 1) * 96.0F / 72.0F)) + Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size) * 4
             Baseline = 0
+            PrivFont.Dispose()
+            PrivateFontColl.Dispose()
             Return Str.Length
         End If
         Font.BaseFont.CorrectArabicAdvance()
@@ -2598,7 +2607,10 @@ Public Class RenderArray
                         If theText <> String.Empty Or s.Width > NextRight Then
                             If s.Width > NextRight Then OverIndexes.Add(New OverInfo(Count, SubCount, NextRight))
                             NextRight = _Width
-                            If s.Width > NextRight Then s.Width = NextRight
+                            If s.Width > _Width Then
+                                s.Width = _Width
+                                Right = NextRight
+                            End If
                             IsOverflow = True
                         End If
                         If s.Width > NextRight Then Right = NextRight
