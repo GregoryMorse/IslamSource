@@ -182,3 +182,4 @@ FakesAssemblies/
 web.config
 *.pubxml
 /IslamSourceSite/*/PublishProfiles
+/MySQLTestEnv.txt
