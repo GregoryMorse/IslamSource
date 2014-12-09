@@ -48,7 +48,8 @@ function is_add_plugin( $plugin_array ) {
 
 class CachedData
 {
-	public static function XMLDocMain() { return simplexml_load_file(dirname(__FILE__) . "\\metadata\\" . TanzilReader::$QuranTextNames[0] . ".xml"); }
+	public static $_XMLDocMain = null;
+	public static function XMLDocMain() { if ($_XMLDocMain === null) $_XMLDocMain = simplexml_load_file(dirname(__FILE__) . "\\metadata\\" . TanzilReader::$QuranTextNames[0] . ".xml"); return $_XMLDocMain; }
 };
 
 class TanzilReader
