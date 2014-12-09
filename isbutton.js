@@ -10,7 +10,7 @@ function getBaseURL () {
         init : function(ed, url) {
             ed.addButton('is_button', {
                 title : 'IslamSource',
-                image : url+'/render.php',
+                image : url+'/render.php?Size=32&Char=22&Font=AGAIslamicPhrases',
       			onclick : function() {
       				ed.selection.setContent('{}');
                 }
