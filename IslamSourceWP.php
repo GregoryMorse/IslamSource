@@ -46,14 +46,148 @@ function is_add_plugin( $plugin_array ) {
   	return $plugin_array;
 }
 
-/* ADD SHORTCODES */
+class CachedData
+{
+	public static function XMLDocMain() { return simplexml_load_file(dirname(__FILE__) . "\\metadata\\" . TanzilReader::$QuranTextNames[0] . ".xml"); }
+};
+
+class TanzilReader
+{
+	public static function IsQuranTextReference($str) { return preg_match("/^(?:,?(\d+)(?:\:(\d+))?(?:\:(\d+))?(?:-(\d+)(?:\:(\d+))?(?:\:(\d+))?)?)+$/s", $str); }
+	public static function QuranTextFromReference($str)
+	{
+		return preg_replace_callback('/(?:,?(\d+)(?:\:(\d+))?(?:\:(\d+))?(?:-(\d+)(?:\:(\d+))?(?:\:(\d+))?)?)/s', function ($matches) {
+			$basechapter = $matches[1];
+			$baseverse = $matches[2];
+			$wordnumber = $matches[3];
+			$endchapter = $matches[4];
+			$extraversenumber = $matches[5];
+			$endwordnumber = $matches[6];
+			if ($baseverse != 0 && $wordnumber == 0 && $endchapter != 0 && $extraversenumber == 0 && $endwordnumber == 0) {
+	            $extraversenumber = $endchapter;
+	            $endchapter = 0;
+	        } elseif ($baseverse != 0 && $wordnumber != 0 && $endchapter != 0 && $extraversenumber == 0 && $endwordnumber == 0) {
+	            $endwordnumber = $endchapter;
+	            $endchapter = 0;
+	        } elseif ($baseverse != 0 && $wordnumber != 0 && $endchapter != 0 && $extraversenumber != 0 && $endwordnumber == 0) {
+	            $endwordnumber = $extraversenumber;
+	            $extraversenumber = $endchapter;
+	            $endchapter = 0;
+	        }
+	        if ($baseverse == 0) {
+	            $baseverse += 1;
+	            $extraversenumber = count(TanzilReader::GetTextChapter(CachedData::XMLDocMain(), BaseChapter)->children());
+	        }
+	        if ($wordnumber == 0) $wordnumber += 1;
+	        return TanzilReader::DoGetRenderedQuranText(TanzilReader::QuranTextRangeLookup($basechapter, $baseverse, $wordnumber, $endchapter, $extraversenumber, $endwordnumber), $basechapter, $baseverse, null, null, null, null);
+		}, $str);
+	}
+	public static function QuranTextRangeLookup($basechapter, $baseverse, $wordnumber, $endchapter, $extraversenumber, $endwordnumber)
+	{
+		$qurantext = array();
+		if ($endchapter == 0 Or $endchapter == $basechapter) {
+			array_push($qurantext, TanzilReader::GetQuranText(CachedData::XMLDocMain(), $basechapter, $baseverse, $extraversenumber != 0 ? $extraversenumber : $baseverse));
+		} else {
+			array_push($qurantext, TanzilReader::GetQuranTextRange(CachedData::XMLDocMain(), $basechapter, $baseverse, $endchapter, $extraversenumber));
+		}
+		if ($wordnumber > 1) {
+		}
+		if ($endwordnumber != 0) {
+		}
+		return $qurantext;
+	}
+	public static function GetQuranTextRange($xmldoc, $startchapter, $startverse, $endchapter, $endverse)
+	{
+		if ($startchapter == -1) $startchapter = 1;
+		if ($endchapter == -1) $endchapter = TanzilReader::GetChapterCount();
+		$chapterverses = array();
+        for ($count = $startchapter; $count <= $endchapter; $count++) {
+            $chapterverses.push(TanzilReader::GetQuranText($xmldoc, $count, $startchapter == $count ? $startverse : -1, $endchapter == $count ? $endverse : -1));
+        }
+        return $chapterverses;
+	}
+	public static function GetQuranText($xmldoc, $chapter, $startverse, $endverse)
+	{
+		if ($startverse == -1) $startverse = 1;
+		if ($endverse == -1) $endverse = count(TanzilReader::GetTextChapter($xmldoc, $chapter)->children());
+		$verses = array();
+		for ($count = $startverse; $count <= $endverse; $count++) {
+			$versenode = TanzilReader::GetTextVerse(TanzilReader::GetTextChapter($xmldoc, $chapter), $count);
+			if ($versenode !== null) {
+				if (isset($versenode->attributes()["text"])) {
+					array_push($verses, (string)$versenode->attributes()["text"]);
+				}
+			}
+		}
+		return $verses;
+	}
+	public static function DoGetRenderedQuranText($qurantext, $basechapter, $baseverse, $translation, $schemetype, $scheme, $translationindex)
+	{
+		$text = "";
+		if ($qurantext !== null) {
+			for ($chapter = 0; $chapter < count($qurantext); $chapter++) {
+				for ($verse = 0; $verse < count($qurantext[$chapter]); $verse++) {
+					$text .= $qurantext[$chapter][$verse];
+				}
+			}
+		}
+		return $text;
+	}
+	public static function GetChildNodeByIndex($nodename, $indexname, $index, $childnodes)
+	{
+		$xmlnode = $childnodes[$index];
+		if ($index - 1 < count($childnodes)) {
+			$xmlnode = $childnodes[$index - 1];
+			if ($xmlnode !== null && $xmlnode->getName() == $nodename) {
+				if (isset($xmlnode->attributes()[$indexname]) && (string)$xmlnode->attributes()[$indexname] == $index) {
+					return $xmlnode;
+				}
+			}
+		}
+		foreach ($childnodes as $xmlnode) {
+			if ($xmlnode->getName() == $nodename) {
+				if (isset($xmlnode->attributes()[$indexname]) && (string)$xmlnode->attributes()[$indexname] == $index) {
+					return $xmlnode;
+				}				
+			}
+		}
+		return null;
+	}
+	public static function GetChildNodeCount($nodename, $node)
+	{
+		$count = 0;
+		for ($index = 0; $index < count($node->children()); $index++) {
+            if ($node->children()[$index]->getName() == $nodename) $count += 1;
+        }
+        return $count;
+    }
+	public static function GetTextChapter($xmldoc, $chapter)
+	{
+		return TanzilReader::GetChildNodeByIndex("sura", "index", $chapter, $xmldoc->children());
+	}
+	public static function GetTextVerse($chapternode, $verse)
+	{
+		return TanzilReader::GetChildNodeByIndex("aya", "index", $verse, $chapternode->children());
+	}
+	public static function GetChapterCount()
+	{
+        return TanzilReader::GetChildNodeCount("sura", CachedData.XMLDocInfo()->children()["suras"]);
+    }
+    public static $QuranTextNames = array("quran-hafs", "quran-warsh", "quran-alduri");
+};
+
+/* REPLACE SHORTCODES */
 
 function is_shortcode() {
     global $wp_query;	
     $posts = $wp_query->posts;
     foreach ($posts as $post){
-		$post->post_content = preg_replace_callback( '/(?:,?(\d+)(?:\:(\d+))?(?:\:(\d+))?(?:-(\d+)(?:\:(\d+))?(?:\:(\d+))?)?)/s', function () {
-			return "<span>Quran Reference</span>";
+		$post->post_content = preg_replace_callback('/(.*?)(?:(\{)(.*?)(\})|$)/s', function ($matches) {
+			if (TanzilReader::IsQuranTextReference($matches[3])) {
+				return $matches[1] . TanzilReader::QuranTextFromReference($matches[3]);
+			} else {
+				return $matches[0];
+			}
 		}, $post->post_content);
     }
 }

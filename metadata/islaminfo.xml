@@ -3412,12 +3412,12 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="Muhammad" font="FDF4|KFGQPCArabicSymbols01;F026|AGAIslamicPhrases;005D|Shia;0044" id="Muhammad"></word>
 			<word text="Ali" font="Shia;0046,005B,005C,005E,0066" id="HighExalted"></word>
 			<word text="Fatima" font="Shia;0047" id="Fatima"></word>
-			<word text="HADI" font="Shia;0042" id="TheProviderOfGuidance"></word>
-			<word text="RIDAA" font="Shia;0043" id="Ridaa"></word>
 			<word text="Hasan" font="Shia;0048" id="Hasan"></word>
 			<word text="Hussein" font="Shia;004A" id="Hussein"></word>
+			<word text="HADI" font="Shia;0042" id="TheProviderOfGuidance"></word>
+			<word text="RIDAA" font="Shia;0043" id="Ridaa"></word>
 			<word text="BAAQIR" font="Shia;004C" id="Baaqir"></word>
-			<word text="GuidedOne" font="Shia;004D" id="GuidedOne"></word>
+			<word text="MAHDI|GuidedOne" font="Shia;004D" id="GuidedOne"></word>
 			<word text="ASKAREE" font="Shia;004E" id="Askaree"></word>
 			<word text="JAWAAD" font="Shia;0056" id="Jawaad"></word>
 			<word text="KADHIM" font="Shia;0058" id="Kadhim"></word>
