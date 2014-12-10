@@ -18,18 +18,19 @@ function getBaseURL () {
 			    		var val = [], getClickFunc = function (paste) {
 		    					return function(e) {
 				      				ed.selection.setContent('{' + paste + '}');
-		      					}
+		      					};
 			    			}, getMenuClickFunc = function (v) {
 					    		return function () {
 				      				ed.windowManager.open({
 				      					title: 'Choose Items',
 				      					body: v
 				      				});
-				      			}
-					    	};
+				      			};
+					    	}, getOnPostRender = function(u) { return function () { this.getEl().style.width = "auto"; this.getEl().style.height = "auto"; this.getEl().innerHTML = "<img src=\"" + u + "\" style=\"width=" + this.getEl().style.width + ";height=auto;\">"; }; };
 				    	for (var pancount = 0; pancount < data[count].menu[subcount].values.length; pancount++) {
 				    		if (data[count].menu[subcount].values[pancount] !== null) {
-					    		val.push({type: 'panelbutton', name: 'category' + pancount, image: url + '/render.php?Size=100&Font=' + data[count].menu[subcount].values[pancount].font + '&Char=' + data[count].menu[subcount].values[pancount].char, onclick: getClickFunc(data[count].menu[subcount].text + ";" + 'Font=' + data[count].menu[subcount].values[pancount].font + '&Char=' + data[count].menu[subcount].values[pancount].char)
+					    		val.push({type: 'button', name: 'category' + pancount, title: '', onclick: getClickFunc(data[count].menu[subcount].values[pancount].value + ";" + 'Font=' + data[count].menu[subcount].values[pancount].font + ';Char=' + data[count].menu[subcount].values[pancount].char),
+					    			onPostRender: getOnPostRender(url + '/render.php?Size=100&Font=' + data[count].menu[subcount].values[pancount].font + '&Char=' + data[count].menu[subcount].values[pancount].char)
 					    			});
 		                    }
 				    	}
@@ -38,10 +39,11 @@ function getBaseURL () {
 			    }
 		    }
             ed.addButton('is_button', {
-                title : 'Islam Source',
-                image : url+'/render.php?Size=32&Char=22&Font=AGAIslamicPhrases',
-                icon: true,
                 type: 'menubutton',
+                title: 'Islam Source',
+                image: url+'/render.php?Size=32&Char=22&Font=AGAIslamicPhrases',
+                style: 'background-image: url(' + url+'/render.php?Size=32&Char=22&Font=AGAIslamicPhrases); background-size: contain; background-repeat: no-repeat;',
+                icons: false,
                 //text: 'Islam Source',
                 menu: data
 			});
