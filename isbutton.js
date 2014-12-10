@@ -26,7 +26,7 @@ function getBaseURL () {
 				      					body: v
 				      				});
 				      			};
-					    	}, getOnPostRender = function(u) { return function () { this.getEl().style.width = "auto"; this.getEl().style.height = "auto"; this.getEl().innerHTML = "<img src=\"" + u + "\" style=\"width=" + this.getEl().style.width + ";height=auto;\">"; }; };
+					    	}, getOnPostRender = function(u) { return function () { this.getEl().style.height = "auto"; this.getEl().firstChild.innerHTML = "<img src=\"" + u + "\" style=\"width=" + this.getEl().style.width + ";height=auto;\">"; }; };
 				    	for (var pancount = 0; pancount < data[count].menu[subcount].values.length; pancount++) {
 				    		if (data[count].menu[subcount].values[pancount] !== null) {
 					    		val.push({type: 'button', name: 'category' + pancount, title: '', onclick: getClickFunc(data[count].menu[subcount].values[pancount].value + ";" + 'Font=' + data[count].menu[subcount].values[pancount].font + ';Char=' + data[count].menu[subcount].values[pancount].char),

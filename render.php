@@ -15,7 +15,7 @@ $im = imagecreatetruecolor(ceil($bbox[4] - $bbox[0]), ceil($bbox[1] - $bbox[5]))
 $white = imagecolorallocate($im, 255, 255, 255);
 $black = imagecolorallocate($im, 0, 0, 0);
 imagefilledrectangle($im, 0, 0, ceil($bbox[4] - $bbox[0]), ceil($bbox[1] - $bbox[5]), $white);
-imagefttext($im, $size, 0, 0, $bbox[1], $black, $font, $chr);
+imagefttext($im, $size, 0, 0, -$bbox[5], $black, $font, $chr);
 header('Content-Type: image/png');
 imagepng($im);
 imagedestroy($im);
