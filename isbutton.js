@@ -15,23 +15,30 @@ function getBaseURL () {
 		    for (var count = 0; count < data.length; count++) {
 		    	for (var subcount = 0; subcount < data[count].menu.length; subcount++) {
 		    		if (data[count].menu[subcount] !== undefined && data[count].menu[subcount] !== null) {
-			    		var val = [], getClickFunc = function (paste) {
+			    		var val = [], getClickFunc = function(paste, ch) {
 		    					return function(e) {
-				      				ed.selection.setContent('{' + paste + '}');
+				      				ed.selection.setContent((ch ? '' : '{') + paste + (ch ? '' : '}'));
 		      					};
-			    			}, getMenuClickFunc = function (v) {
+			    			}, getMenuClickFunc = function(v) {
 					    		return function () {
 				      				ed.windowManager.open({
-				      					title: 'Choose Items',
+				      					scrollbars: true,
+				      					title: 'Choose Item(s)',
 				      					body: v
 				      				});
 				      			};
-					    	}, getOnPostRender = function(u) { return function () { this.getEl().style.height = "auto"; this.getEl().firstChild.innerHTML = "<img src=\"" + u + "\" style=\"width=" + this.getEl().style.width + ";height=auto;\">"; }; };
+					    	}, getOnPostRender = function(u, ch) { return function () { this.getEl().style.height = "auto"; this.getEl().firstChild.innerHTML = ch ? "<div style=\"font-size: 100px; display: inline-block;\">" + u + "</div>" : "<img src=\"" + u + "\" style=\"width=" + this.getEl().style.width + ";height=auto;\" onload=\"" + "\">"; }; };
 				    	for (var pancount = 0; pancount < data[count].menu[subcount].values.length; pancount++) {
 				    		if (data[count].menu[subcount].values[pancount] !== null) {
-					    		val.push({type: 'button', name: 'category' + pancount, title: '', onclick: getClickFunc(data[count].menu[subcount].values[pancount].value + ";" + 'Font=' + data[count].menu[subcount].values[pancount].font + ';Char=' + data[count].menu[subcount].values[pancount].char),
-					    			onPostRender: getOnPostRender(url + '/render.php?Size=100&Font=' + data[count].menu[subcount].values[pancount].font + '&Char=' + data[count].menu[subcount].values[pancount].char)
-					    			});
+				    			if (data[count].menu[subcount].values[pancount].font !== "") {
+						    		val.push({type: 'button', name: 'category' + pancount, onclick: getClickFunc(data[count].menu[subcount].values[pancount].value + ";" + 'Font=' + data[count].menu[subcount].values[pancount].font + ';Char=' + data[count].menu[subcount].values[pancount].char, false),
+						    			onPostRender: getOnPostRender(url + '/render.php?Size=100&Font=' + data[count].menu[subcount].values[pancount].font + '&Char=' + data[count].menu[subcount].values[pancount].char, false)
+						    			});
+						    	} else {
+						    		val.push({type: 'button', name: 'category' + pancount, onclick: getClickFunc('&#x' + data[count].menu[subcount].values[pancount].char + ';', true), style: "text-align: center;",
+						    			onPostRender: getOnPostRender(String.fromCharCode(parseInt(data[count].menu[subcount].values[pancount].char, 16)), true)
+						    			});
+						    	}
 		                    }
 				    	}
 				    	data[count].menu[subcount].onclick = getMenuClickFunc(val);

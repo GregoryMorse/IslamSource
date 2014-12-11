@@ -2,6 +2,19 @@
 /*
 IslamSource image render tool
 */
+function fontFolder() {
+    $osName = php_uname( 's' );
+    if (strtoupper(substr($osName, 0, 3)) === 'WIN') {
+        return '/Windows/Fonts/';
+    }
+    if (strtoupper(substr($osName, 0, 5)) === 'LINUX') {
+        return '/usr/share/fonts/truetype/';
+    }
+    if (strtoupper(substr($osName, 0, 7)) === 'FREEBSD') {
+        //This is not tested
+        return '/usr/share/fonts/truetype/';
+    }
+}
 if (!array_key_exists("Cat", $_GET)) {
 //GD library and FreeType library
 $size = $_GET["Size"];
@@ -28,9 +41,16 @@ class CachedData
 	public static function IslamData() { if (CachedData::$_IslamData === null) CachedData::$_IslamData = simplexml_load_file(dirname(__FILE__) . "\\metadata\\islaminfo.xml"); return CachedData::$_IslamData; }
 };
 
-function LoadResourceString($resourcekey)
+class Utility
 {
-	$resxml = simplexml_load_file(dirname(__FILE__) . "\\IslamResources\\My Project\\Resources.resx");
+	public static $_resxml = null;
+	public static function LoadResourceString($resourcekey)
+	{
+		if (Utility::$_resxml === null) Utility::$_resxml = simplexml_load_file(dirname(__FILE__) . "\\IslamResources\\My Project\\Resources.resx");
+		$arr = Utility::$_resxml->xpath("/root/data[@name='" . $resourcekey . "']");
+		if (count($arr) !== 0) return (string)$arr[0]->value;
+		return null;
+	}
 }
 
 function TextFromReferences($str)
@@ -39,7 +59,7 @@ function TextFromReferences($str)
 	for ($count = 0; $count < count(CachedData::IslamData()->abbreviations->children()); $count++) {
 		for ($subcount = 0; $subcount < count(CachedData::IslamData()->abbreviations->children()[$count]->children()); $subcount++) {
 			if (array_search($str, explode("|", (string)CachedData::IslamData()->abbreviations->children()[$count]->children()[$subcount]->attributes()["text"])) !== false) {
-				$val = "{\"text\": \"" . (string)CachedData::IslamData()->abbreviations->children()[$count]->children()[$subcount]->attributes()["id"] . "\", \"values\":[";
+				$val = "{\"text\": \"" . Utility::LoadResourceString("IslamInfo_" . (string)CachedData::IslamData()->abbreviations->children()[$count]->children()[$subcount]->attributes()["id"]) . "\", \"values\":[";
 				if ((string)CachedData::IslamData()->abbreviations->children()[$count]->children()[$subcount]->attributes()["font"] != "") {
 					foreach (explode("|", (string)CachedData::IslamData()->abbreviations->children()[$count]->children()[$subcount]->attributes()["font"]) as $part) {
 						$font = "";
@@ -64,7 +84,7 @@ for ($count = 0; $count < count(CachedData::IslamData()->lists->category->childr
 	$matches = array();
 	if (preg_match_all('/(.*?)(?:(\\\{)(.*?)(\\\})|$)/s', CachedData::IslamData()->lists->category->children()[$count]["text"], $matches, PREG_SET_ORDER) !== 0) {
 		if ($count !== 0) echo ",";
-		echo "{\"text\": \"" . CachedData::IslamData()->lists->category->children()[$count]["id"] . "\", \"menu\":[";
+		echo "{\"text\": \"" . Utility::LoadResourceString("IslamInfo_" . (string)CachedData::IslamData()->lists->category->children()[$count]["id"]) . "\", \"menu\":[";
 		for ($matchcount = 0; $matchcount < count($matches); $matchcount++) {
 			if (count($matches[$matchcount]) >= 4) {
 				if ($matchcount !== 0) echo ",";
