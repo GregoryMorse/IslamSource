@@ -1,53 +1,55 @@
 <?php
 /*
 Plugin Name: IslamSource
-Description: Islam Source Phrase Plugin
+Description: Islam Source Quranic Verse and Islamic Phrase Plugin - Allows for Quranic chapters, verses even specified down through the word to be inserted easily by using formats {a:b:c-x:y:z} where b, c, x, y and z are optional depending on if a chapter, verse or particular word of a verse is desired or a range is desired so it could be in forms {a:b-y} or {a:b-x:y} such as the opening chapter which could be specified as {1:1-7}.  The Arabic is automatically displayed when posts are viewed.  It also allows for various calligraphy and Unicode Islamic words or phrases to be easily inserted through a button on the visual editor which are displayed when the posts are later viewed.
 Version: 1.0.0
 Author: IslamSource
 Author URI: http://islamsource.info
-
 */
-
-/* OPTIONS PAGE */
-
-// Add admin actions
-add_action('admin_init', 'islamic_source_init');
-
-// Register settings
-function islamic_source_init(){
-   if ( ! current_user_can('edit_posts') && ! current_user_can('edit_pages') ) {
-     return;
-   }
- 
-   if ( get_user_option('rich_editing') == 'true' ) {
-     add_filter( 'mce_external_plugins', 'is_add_plugin' );
-     
-	 $rowvalue = '';
-	 add_filter( 'mce_buttons'.$rowvalue, 'is_register_button' );
-   }
- }
- 
- /**
-Register Button
-*/
-
-function is_register_button( $buttons ) {
-	array_push( $buttons, "is_button");
-	return $buttons;
-}
- 
-/**
-Register IS Plugin
-*/
- 
-function is_add_plugin( $plugin_array ) {
- 	$url = plugins_url().""; 
-   	$plugin_array['is_button'] = $url.'/IslamSource/isbutton.js';
-  	return $plugin_array;
+class Utility
+{
+	public static $_resxml = null;
+	public static function LoadResourceString($resourcekey)
+	{
+		if (Utility::$_resxml === null) Utility::$_resxml = simplexml_load_file(dirname(__FILE__) . "\\IslamResources\\My Project\\Resources.resx");
+		$arr = Utility::$_resxml->xpath("/root/data[@name='" . $resourcekey . "']");
+		if (count($arr) !== 0) return (string)$arr[0]->value;
+		return null;
+	}
+	public static function GetChildNodeByIndex($nodename, $indexname, $index, $childnodes)
+	{
+		$xmlnode = $childnodes[$index];
+		if ($index - 1 < count($childnodes)) {
+			$xmlnode = $childnodes[$index - 1];
+			if ($xmlnode !== null && $xmlnode->getName() == $nodename) {
+				if (isset($xmlnode->attributes()[$indexname]) && (string)$xmlnode->attributes()[$indexname] == $index) {
+					return $xmlnode;
+				}
+			}
+		}
+		foreach ($childnodes as $xmlnode) {
+			if ($xmlnode->getName() == $nodename) {
+				if (isset($xmlnode->attributes()[$indexname]) && (string)$xmlnode->attributes()[$indexname] == $index) {
+					return $xmlnode;
+				}				
+			}
+		}
+		return null;
+	}
+	public static function GetChildNodeCount($nodename, $node)
+	{
+		$count = 0;
+		for ($index = 0; $index < count($node->children()); $index++) {
+            if ($node->children()[$index]->getName() == $nodename) $count += 1;
+        }
+        return $count;
+    }
 }
 
 class CachedData
 {
+	public static $_IslamData = null;
+	public static function IslamData() { if (CachedData::$_IslamData === null) CachedData::$_IslamData = simplexml_load_file(dirname(__FILE__) . "\\metadata\\islaminfo.xml"); return CachedData::$_IslamData; }
 	public static $_XMLDocMain = null;
 	public static function XMLDocMain() { if ($_XMLDocMain === null) $_XMLDocMain = simplexml_load_file(dirname(__FILE__) . "\\metadata\\" . TanzilReader::$QuranTextNames[0] . ".xml"); return $_XMLDocMain; }
 };
@@ -134,48 +136,139 @@ class TanzilReader
 		}
 		return $text;
 	}
-	public static function GetChildNodeByIndex($nodename, $indexname, $index, $childnodes)
-	{
-		$xmlnode = $childnodes[$index];
-		if ($index - 1 < count($childnodes)) {
-			$xmlnode = $childnodes[$index - 1];
-			if ($xmlnode !== null && $xmlnode->getName() == $nodename) {
-				if (isset($xmlnode->attributes()[$indexname]) && (string)$xmlnode->attributes()[$indexname] == $index) {
-					return $xmlnode;
-				}
-			}
-		}
-		foreach ($childnodes as $xmlnode) {
-			if ($xmlnode->getName() == $nodename) {
-				if (isset($xmlnode->attributes()[$indexname]) && (string)$xmlnode->attributes()[$indexname] == $index) {
-					return $xmlnode;
-				}				
-			}
-		}
-		return null;
-	}
-	public static function GetChildNodeCount($nodename, $node)
-	{
-		$count = 0;
-		for ($index = 0; $index < count($node->children()); $index++) {
-            if ($node->children()[$index]->getName() == $nodename) $count += 1;
-        }
-        return $count;
-    }
 	public static function GetTextChapter($xmldoc, $chapter)
 	{
-		return TanzilReader::GetChildNodeByIndex("sura", "index", $chapter, $xmldoc->children());
+		return Utility::GetChildNodeByIndex("sura", "index", $chapter, $xmldoc->children());
 	}
 	public static function GetTextVerse($chapternode, $verse)
 	{
-		return TanzilReader::GetChildNodeByIndex("aya", "index", $verse, $chapternode->children());
+		return Utility::GetChildNodeByIndex("aya", "index", $verse, $chapternode->children());
 	}
 	public static function GetChapterCount()
 	{
-        return TanzilReader::GetChildNodeCount("sura", CachedData.XMLDocInfo()->children()["suras"]);
+        return Utility::GetChildNodeCount("sura", CachedData.XMLDocInfo()->children()["suras"]);
     }
     public static $QuranTextNames = array("quran-hafs", "quran-warsh", "quran-alduri");
 };
+
+function TextFromReferences($str)
+{
+	$val = "";
+	for ($count = 0; $count < count(CachedData::IslamData()->abbreviations->children()); $count++) {
+		for ($subcount = 0; $subcount < count(CachedData::IslamData()->abbreviations->children()[$count]->children()); $subcount++) {
+			if (array_search($str, explode("|", (string)CachedData::IslamData()->abbreviations->children()[$count]->children()[$subcount]->attributes()["text"])) !== false) {
+				$val = "";
+				if ((string)CachedData::IslamData()->abbreviations->children()[$count]->children()[$subcount]->attributes()["font"] != "") {
+					foreach (explode("|", (string)CachedData::IslamData()->abbreviations->children()[$count]->children()[$subcount]->attributes()["font"]) as $part) {
+						$font = "";
+						if (strpos($part, ';') !== false) {
+							$font = explode(';', $part)[0];
+							$part = explode(';', $part)[1];
+						}
+						foreach (explode(",", $part) as $substr) {
+							$val .= "{\"value\":\"" . $str . "\", \"font\": \"" . $font . "\", \"char\": \"" . implode(",", explode("+", $substr)) . "\"},";
+						}
+					}
+				}
+				if ($val !== "") {
+					$val = "{\"text\": \"" . Utility::LoadResourceString("IslamInfo_" . (string)CachedData::IslamData()->abbreviations->children()[$count]->children()[$subcount]->attributes()["id"]) . "\", \"values\":[" . substr($val, 0, -1) . "]}";
+				}
+				break;
+			}
+		}
+	}
+	return $val;
+}
+
+/*
+IslamSource image render tool
+*/
+function fontFolder() {
+    $osName = php_uname( 's' );
+    if (strtoupper(substr($osName, 0, 3)) === 'WIN') {
+        return '/Windows/Fonts/';
+    }
+    if (strtoupper(substr($osName, 0, 5)) === 'LINUX') {
+        return '/usr/share/fonts/truetype/';
+    }
+    if (strtoupper(substr($osName, 0, 7)) === 'FREEBSD') {
+        //This is not tested
+        return '/usr/share/fonts/truetype/';
+    }
+}
+if (array_key_exists("Char", $_GET)) {
+//GD library and FreeType library
+$size = $_GET["Size"];
+if ($size === null) $size = 32;
+$chr = mb_convert_encoding("&#" . hexdec($_GET["Char"]) . ";", 'UTF-8', 'HTML-ENTITIES');
+$fonts = array("AGAIslamicPhrases", "AGAArabesque", "Shia", "IslamicLogo", "KFGQPCArabicSymbols01", "Quranic", "Tulth", "Farsi", "Asmaul-Husna", "Asmaul-Husna_2");
+$fontfiles = array("AGA_Islamic_Phrases.TTF", "aga-arabesque.ttf", "SHIA.TTF", "islamic.ttf", "Symbols1_Ver02.otf", "Quranic.ttf", "Tulth.ttf", "Farsi.ttf", "Asmaul-Husna_1.ttf", "Asmaul-Husna_2.ttf");
+$font = dirname(__FILE__) . '\\files\\' . (array_key_exists("Font", $_GET) && array_search($_GET["Font"], $fonts) !== false ? $fontfiles[array_search($_GET["Font"], $fonts)] : 'me_quran.ttf');
+$bbox = imageftbbox($size, 0, $font, $chr);
+$im = imagecreatetruecolor(ceil($bbox[4] - $bbox[0]), ceil($bbox[1] - $bbox[5]));
+$white = imagecolorallocate($im, 255, 255, 255);
+$black = imagecolorallocate($im, 0, 0, 0);
+imagefilledrectangle($im, 0, 0, ceil($bbox[4] - $bbox[0]), ceil($bbox[1] - $bbox[5]), $white);
+imagefttext($im, $size, 0, $bbox[0], -$bbox[5], $black, $font, $chr);
+header('Content-Type: image/png');
+imagepng($im);
+imagedestroy($im);
+} elseif (array_key_exists("Cat", $_GET)) {
+$json = "";
+for ($count = 0; $count < count(CachedData::IslamData()->lists->category->children()); $count++) {
+	$matches = array();
+	$out = "";
+	if (preg_match_all('/(.*?)(?:(\\\{)(.*?)(\\\})|$)/s', CachedData::IslamData()->lists->category->children()[$count]["text"], $matches, PREG_SET_ORDER) !== 0) {
+		$val = "";
+		for ($matchcount = 0; $matchcount < count($matches); $matchcount++) {
+			if (count($matches[$matchcount]) >= 4) {
+				$check = TextFromReferences($matches[$matchcount][3]);
+				if ($check !== "") $val .= (($val !== "") ? "," : "") . $check;
+			}
+		}
+		if ($val !== "") $out .= (($out !== "") ? "," : "") . "{\"text\": \"" . Utility::LoadResourceString("IslamInfo_" . (string)CachedData::IslamData()->lists->category->children()[$count]["id"]) . "\", \"menu\":[" . $val . "]}";
+	}
+	$json .= (($json !== "") ? "," : "") . $out;
+}
+echo "[" . $json . "]";
+} else {
+/* OPTIONS PAGE */
+
+// Add admin actions
+add_action('admin_init', 'islamic_source_init');
+
+// Register settings
+function islamic_source_init() {
+   if ( ! current_user_can('edit_posts') && ! current_user_can('edit_pages') ) {
+     return;
+   }
+ 
+   if ( get_user_option('rich_editing') == 'true' ) {
+     add_filter( 'mce_external_plugins', 'is_add_plugin' );
+     
+	 $rowvalue = '';
+	 add_filter( 'mce_buttons'.$rowvalue, 'is_register_button' );
+   }
+}
+ 
+ /**
+Register Button
+*/
+
+function is_register_button( $buttons ) {
+	array_push( $buttons, "is_button");
+	return $buttons;
+}
+ 
+/**
+Register IS Plugin
+*/
+ 
+function is_add_plugin( $plugin_array ) {
+ 	$url = plugins_url().""; 
+   	$plugin_array['is_button'] = $url.'/IslamSource/isbutton.js';
+  	return $plugin_array;
+}
 
 /* REPLACE SHORTCODES */
 
@@ -185,7 +278,9 @@ function is_shortcode() {
     foreach ($posts as $post){
 		$post->post_content = preg_replace_callback('/(.*?)(?:(\{)(.*?)(\})|$)/s', function ($matches) {
 			if (TanzilReader::IsQuranTextReference($matches[3])) {
-				return $matches[1] . TanzilReader::QuranTextFromReference($matches[3]);
+				return $matches[1] . "<div style=\"direction: rtl\"><span dir=\"rtl\" style=\"font-size: 40px;\">&#xFD3F;" . TanzilReader::QuranTextFromReference($matches[3]) . "&#xFD3E;</span>&nbsp;(" . $matches[3] . ")</div>";
+			} else if (strpos($matches[3], ";Char=") !== false) {
+				return "<img src=\"" . plugins_url()."" . "/IslamSource/IslamSourceWP.php?Size=100&" . str_replace(';', '&', substr($matches[3], strpos($matches[3], ';') + 1)) . "\">";
 			} else {
 				return $matches[0];
 			}
@@ -374,9 +469,5 @@ function insert_islamic_graphic( $atts, $content=null, $code="" ) {
 
 		return $id;
 	}
-
-//simplexml_load_string
-//metadata/islaminfo.xml
-//metadata/ArabicData.xml
-//IslamResources/My Project/Resources.resx, IslamResources/Resources.en.resx, etc...
+}
 ?>
