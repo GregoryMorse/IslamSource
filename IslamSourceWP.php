@@ -179,7 +179,41 @@ function TextFromReferences($str)
 	}
 	return $val;
 }
-
+function getcacheitem()
+{
+	// Settings
+	$cachedir = dirname(__FILE__) . '\\cache\\'; // Directory to cache files in (keep outside web root)
+	$cachetime = 600; // Seconds to cache files for
+	$cacheext = 'cache'; // Extension to give cached files (usually 
+	$page = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; // Requested page
+	$cachefile = $cachedir . md5($page) . '.' . $cacheext; // Cache file to either load or create
+	$cachefile_created = (@file_exists($cachefile)) ? @filemtime($cachefile) : 0;
+	@clearstatcache();
+	if (time() - $cachetime < $cachefile_created) {
+		@readfile($cachefile);
+		return true;
+	}
+	return false;
+}
+function cacheitemimg($img)
+{
+	$cachedir = dirname(__FILE__) . '\\cache\\'; // Directory to cache files in (keep outside web root)
+	$cacheext = 'cache'; // Extension to give cached files (usually 
+	$page = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; // Requested page
+	$cachefile = $cachedir . md5($page) . '.' . $cacheext; // Cache file to either load or create
+	imagepng($img, $cachefile);
+}
+function cacheitem($item)
+{
+	$cachedir = dirname(__FILE__) . '\\cache\\'; // Directory to cache files in (keep outside web root)
+	$cacheext = 'cache'; // Extension to give cached files (usually 
+	$page = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; // Requested page
+	$cachefile = $cachedir . md5($page) . '.' . $cacheext; // Cache file to either load or create
+	$fp = @fopen($cachefile, 'w'); 
+    // save the contents of output buffer to the file
+    @fwrite($fp, $item);
+    @fclose($fp);
+}
 /*
 IslamSource image render tool
 */
@@ -197,40 +231,47 @@ function fontFolder() {
     }
 }
 if (array_key_exists("Char", $_GET)) {
-//GD library and FreeType library
-$size = $_GET["Size"];
-if ($size === null) $size = 32;
-$chr = mb_convert_encoding("&#" . hexdec($_GET["Char"]) . ";", 'UTF-8', 'HTML-ENTITIES');
-$fonts = array("AGAIslamicPhrases", "AGAArabesque", "Shia", "IslamicLogo", "KFGQPCArabicSymbols01", "Quranic", "Tulth", "Farsi", "Asmaul-Husna", "Asmaul-Husna_2");
-$fontfiles = array("AGA_Islamic_Phrases.TTF", "aga-arabesque.ttf", "SHIA.TTF", "islamic.ttf", "Symbols1_Ver02.otf", "Quranic.ttf", "Tulth.ttf", "Farsi.ttf", "Asmaul-Husna_1.ttf", "Asmaul-Husna_2.ttf");
-$font = dirname(__FILE__) . '\\files\\' . (array_key_exists("Font", $_GET) && array_search($_GET["Font"], $fonts) !== false ? $fontfiles[array_search($_GET["Font"], $fonts)] : 'me_quran.ttf');
-$bbox = imageftbbox($size, 0, $font, $chr);
-$im = imagecreatetruecolor(ceil($bbox[4] - $bbox[0]), ceil($bbox[1] - $bbox[5]));
-$white = imagecolorallocate($im, 255, 255, 255);
-$black = imagecolorallocate($im, 0, 0, 0);
-imagefilledrectangle($im, 0, 0, ceil($bbox[4] - $bbox[0]), ceil($bbox[1] - $bbox[5]), $white);
-imagefttext($im, $size, 0, $bbox[0], -$bbox[5], $black, $font, $chr);
-header('Content-Type: image/png');
-imagepng($im);
-imagedestroy($im);
-} elseif (array_key_exists("Cat", $_GET)) {
-$json = "";
-for ($count = 0; $count < count(CachedData::IslamData()->lists->category->children()); $count++) {
-	$matches = array();
-	$out = "";
-	if (preg_match_all('/(.*?)(?:(\\\{)(.*?)(\\\})|$)/s', CachedData::IslamData()->lists->category->children()[$count]["text"], $matches, PREG_SET_ORDER) !== 0) {
-		$val = "";
-		for ($matchcount = 0; $matchcount < count($matches); $matchcount++) {
-			if (count($matches[$matchcount]) >= 4) {
-				$check = TextFromReferences($matches[$matchcount][3]);
-				if ($check !== "") $val .= (($val !== "") ? "," : "") . $check;
-			}
-		}
-		if ($val !== "") $out .= (($out !== "") ? "," : "") . "{\"text\": \"" . Utility::LoadResourceString("IslamInfo_" . (string)CachedData::IslamData()->lists->category->children()[$count]["id"]) . "\", \"menu\":[" . $val . "]}";
+	if (!getcacheitem()) {
+		//GD library and FreeType library
+		$size = $_GET["Size"];
+		if ($size === null) $size = 32;
+		$chr = mb_convert_encoding("&#" . hexdec($_GET["Char"]) . ";", 'UTF-8', 'HTML-ENTITIES');
+		$fonts = array("AGAIslamicPhrases", "AGAArabesque", "Shia", "IslamicLogo", "KFGQPCArabicSymbols01", "Quranic", "Tulth", "Farsi", "Asmaul-Husna", "Asmaul-Husna_2");
+		$fontfiles = array("AGA_Islamic_Phrases.TTF", "aga-arabesque.ttf", "SHIA.TTF", "islamic.ttf", "Symbols1_Ver02.otf", "Quranic.ttf", "Tulth.ttf", "Farsi.ttf", "Asmaul-Husna_1.ttf", "Asmaul-Husna_2.ttf");
+		$font = dirname(__FILE__) . '\\files\\' . (array_key_exists("Font", $_GET) && array_search($_GET["Font"], $fonts) !== false ? $fontfiles[array_search($_GET["Font"], $fonts)] : 'me_quran.ttf');
+		$bbox = imageftbbox($size, 0, $font, $chr);
+		$im = imagecreatetruecolor(ceil($bbox[4] - $bbox[0]), ceil($bbox[1] - $bbox[5]));
+		$white = imagecolorallocate($im, 255, 255, 255);
+		$black = imagecolorallocate($im, 0, 0, 0);
+		imagefilledrectangle($im, 0, 0, ceil($bbox[4] - $bbox[0]), ceil($bbox[1] - $bbox[5]), $white);
+		imagefttext($im, $size, 0, $bbox[0], -$bbox[5], $black, $font, $chr);
+		header('Content-Type: image/png');
+		imagepng($im);
+		cacheitemimg($im);
+		imagedestroy($im);
 	}
-	$json .= (($json !== "") ? "," : "") . $out;
-}
-echo "[" . $json . "]";
+} elseif (array_key_exists("Cat", $_GET)) {
+	if (!getcacheitem()) {
+		$json = "";
+		for ($count = 0; $count < count(CachedData::IslamData()->lists->category->children()); $count++) {
+			$matches = array();
+			$out = "";
+			if (preg_match_all('/(.*?)(?:(\\\{)(.*?)(\\\})|$)/s', CachedData::IslamData()->lists->category->children()[$count]["text"], $matches, PREG_SET_ORDER) !== 0) {
+				$val = "";
+				for ($matchcount = 0; $matchcount < count($matches); $matchcount++) {
+					if (count($matches[$matchcount]) >= 4) {
+						$check = TextFromReferences($matches[$matchcount][3]);
+						if ($check !== "") $val .= (($val !== "") ? "," : "") . $check;
+					}
+				}
+				if ($val !== "") $out .= (($out !== "") ? "," : "") . "{\"text\": \"" . Utility::LoadResourceString("IslamInfo_" . (string)CachedData::IslamData()->lists->category->children()[$count]["id"]) . "\", \"menu\":[" . $val . "]}";
+			}
+			$json .= (($json !== "") ? "," : "") . $out;
+		}
+		$json = "[" . $json . "]";
+		echo $json;
+		cacheitem($json);
+	}
 } else {
 /* OPTIONS PAGE */
 
