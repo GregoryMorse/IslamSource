@@ -11,7 +11,7 @@ Public Class frmMain
         'TanzilReader.ChangeQuranFormat(TanzilReader.QuranTexts.Hafs, TanzilReader.QuranTexts.Warsh, TanzilReader.QuranScripts.Uthmani, TanzilReader.ArabicPresentation.Buckwalter)
         'TanzilReader.CheckNotablePatterns()
         CachedData.DoErrorCheck()
-        Dim RenderArr As RenderArray = Supplications.DoGetRenderedSuppText(ArabicData.TranslitScheme.RuleBased, "PlainRoman", CachedData.IslamData.VerseCategories(0), 0)
+        Dim RenderArr As RenderArray = Supplications.DoGetRenderedSuppText(String.Empty, ArabicData.TranslitScheme.RuleBased, "PlainRoman", CachedData.IslamData.VerseCategories(0), 0)
         'HostPageUtility.RenderArray.OutputPdf("test.pdf", RenderArr.Items)
         For Index = 0 To PageSet.Pages.Count - 1
             Dim newNode As TreeNode = tvwMain.Nodes.Add(PageSet.Pages.Item(Index).PageName, Utility.LoadResourceString(PageSet.Pages.Item(Index).Text))
@@ -25,10 +25,10 @@ Public Class frmMain
         Renderer.Anchor = AnchorStyles.Left Or AnchorStyles.Top Or AnchorStyles.Right Or AnchorStyles.Bottom
         Renderer.Size = New Size(gbMain.Width, gbMain.Height)
         For Count As Integer = 1 To TanzilReader.GetChapterCount()
-            Renderer.RenderArray = TanzilReader.GetQuranTextBySelection(0, Count, String.Empty, ArabicData.TranslitScheme.RuleBased, "PlainRoman", 0).Items
+            Renderer.RenderArray = TanzilReader.GetQuranTextBySelection(String.Empty, 0, Count, String.Empty, ArabicData.TranslitScheme.RuleBased, "PlainRoman", 0).Items
             HostPageUtility.RenderArray.OutputPdf("test" + CStr(Count) + ".pdf", Renderer.RenderArray)
         Next
-        Renderer.RenderArray = TanzilReader.GetQuranTextBySelection(0, 1, String.Empty, ArabicData.TranslitScheme.RuleBased, "PlainRoman", 0).Items
+        Renderer.RenderArray = TanzilReader.GetQuranTextBySelection(String.Empty, 0, 1, String.Empty, ArabicData.TranslitScheme.RuleBased, "PlainRoman", 0).Items
         gbMain.Controls.Add(Renderer)
     End Sub
 

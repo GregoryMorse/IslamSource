@@ -2028,7 +2028,11 @@ Public Class RenderArray
             TextItems = NewTextItems
         End Sub
     End Structure
+    Public Sub New(ID As String)
+        _ID = ID
+    End Sub
     Public Items As New Collections.Generic.List(Of RenderItem)
+    Public _ID As String
     Structure LayoutInfo
         Public Sub New(NewRect As RectangleF, NewBaseline As Single, NewNChar As Integer, NewBounds As Generic.List(Of Generic.List(Of Generic.List(Of LayoutInfo))))
             Rect = NewRect
@@ -2697,7 +2701,7 @@ Public Class RenderArray
         Return New SizeF(_Width - MaxRight, Top)
     End Function
     Public Sub Render(ByVal writer As System.Web.UI.HtmlTextWriter, ByVal TabCount As Integer)
-        DoRender(writer, TabCount, Items, String.Empty)
+        DoRender(writer, TabCount, _ID, Items, String.Empty)
     End Sub
     Public Shared Function GetQuoteModeJS() As String()
         Return New String() {"javascript: quoteMode();", String.Empty, Utility.GetLookupStyleSheetJS(), "function quoteMode() { var rule = findStyleSheetRule('span.copy'); rule.style.display = $('#quotemode').prop('checked') === true ? 'block' : 'none'; }"}
@@ -2720,10 +2724,10 @@ Public Class RenderArray
         Return "function getText(top, child) { var iCount, item = child === '' ? renderList[top] : renderList[top].children[child], text, chtxt, str; text = String.fromCharCode(0x200E) + (item['title'] === '' ? '' : (getText(item['title'], '') + '\t')); for (iCount = 0; iCount < item['arabic'].length; iCount++) { if (item['arabic'][iCount] !== '') text += String.fromCharCode(0x202E) + $('#' + item['arabic'][iCount]).text() + '\t' + String.fromCharCode(0x202C); } for (iCount = 0; iCount < item['translit'].length; iCount++) { if (item['translit'][iCount] !== '') text += $('#' + item['translit'][iCount]).text() + '\t'; } for (iCount = 0; iCount < item['translate'].length; iCount++) { if (item['translate'][iCount] !== '') text += $('#' + item['translate'][iCount]).text() + '\t'; } chtxt = ''; for (k in item['children']) { if (chtxt !== '') chtxt += ' '; for (iCount = 0; iCount < item['children'][k]['arabic'].length; iCount++) { if (item['children'][k]['arabic'][iCount] !== '') chtxt += String.fromCharCode(0x202E) + $('#' + item['children'][k]['arabic'][iCount]).text() + String.fromCharCode(0x202C); } str = ''; for (iCount = 0; iCount < item['children'][k]['translit'].length; iCount++) { if (item['children'][k]['translit'][iCount] !== '') str += $('#' + item['children'][k]['translit'][iCount]).text(); } chtxt += (str !== '' ? '(' + str + ')' : '') + '='; for (iCount = 0; iCount < item['children'][k]['translate'].length; iCount++) { if (item['children'][k]['translate'][iCount] !== '') chtxt += $('#' + item['children'][k]['translate'][iCount]).text(); }; } if (chtxt !== '') text += '[' + chtxt + ']'; return text; }"
     End Function
     Public Function GetRenderJS() As String()
-        Return DoGetRenderJS(Items)
+        Return DoGetRenderJS(_ID, Items)
     End Function
-    Public Shared Function GetInitJS(Items As Collections.Generic.List(Of RenderItem)) As String
-        Dim Objects As Object() = GetInitJSItems(Items, String.Empty, String.Empty)
+    Public Shared Function GetInitJS(ID As String, Items As Collections.Generic.List(Of RenderItem)) As String
+        Dim Objects As Object() = GetInitJSItems(ID, Items, String.Empty, String.Empty)
         Dim ListJS As String()() = CType(Objects(2), List(Of String())).ToArray()
         Dim ListJSInit As New List(Of String)
         Dim ListJSAfter As New List(Of String)
@@ -2736,9 +2740,9 @@ Public Class RenderArray
                 End If
             Next
         Next
-        Return "var renderList = " + Utility.MakeJSIndexedObject(CType(CType(Objects(0), ArrayList).ToArray(GetType(String)), String()), New Array() {CType(CType(Objects(1), ArrayList).ToArray(GetType(String)), String())}, True) + ";" + String.Join(String.Empty, ListJSInit.ToArray()) + String.Join(String.Empty, ListJSAfter.ToArray())
+        Return "if (renderList == undefined) { renderList = []; } renderList.push(" + Utility.MakeJSIndexedObject(CType(CType(Objects(0), ArrayList).ToArray(GetType(String)), String()), New Array() {CType(CType(Objects(1), ArrayList).ToArray(GetType(String)), String())}, True) + ";" + String.Join(String.Empty, ListJSInit.ToArray()) + String.Join(String.Empty, ListJSAfter.ToArray()) + ");"
     End Function
-    Public Shared Function GetInitJSItems(Items As Collections.Generic.List(Of RenderItem), Title As String, NestPrefix As String) As Object()
+    Public Shared Function GetInitJSItems(ID As String, Items As Collections.Generic.List(Of RenderItem), Title As String, NestPrefix As String) As Object()
         Dim Count As Integer
         Dim Index As Integer
         Dim Objects As ArrayList = New ArrayList From {New ArrayList, New ArrayList, New List(Of String())}
@@ -2751,7 +2755,7 @@ Public Class RenderArray
             Dim Children As ArrayList = New ArrayList From {New ArrayList, New ArrayList}
             For Index = 0 To Items(Count).TextItems.Length - 1
                 If Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eNested Then
-                    Dim Objs As Object() = GetInitJSItems(CType(Items(Count).TextItems(Index).Text, Collections.Generic.List(Of RenderItem)), LastTitle, CStr(Count))
+                    Dim Objs As Object() = GetInitJSItems(ID, CType(Items(Count).TextItems(Index).Text, Collections.Generic.List(Of RenderItem)), LastTitle, CStr(Count))
                     CType(Children(0), ArrayList).AddRange(CType(Objs(0), ArrayList))
                     CType(Children(1), ArrayList).AddRange(CType(Objs(1), ArrayList))
                 ElseIf Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eList Then
@@ -2760,11 +2764,11 @@ Public Class RenderArray
                     Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eContinueStop Then
                 Else
                     If Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eArabic Then
-                        Arabic.Add("arabic" + CStr(IIf(NestPrefix = String.Empty, String.Empty, NestPrefix + "_")) + CStr(Count) + "_" + CStr(Index))
+                        Arabic.Add("arabic" + ID + CStr(IIf(NestPrefix = String.Empty, String.Empty, NestPrefix + "_")) + CStr(Count) + "_" + CStr(Index))
                     ElseIf Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eTransliteration Then
-                        Translit.Add("translit" + CStr(IIf(NestPrefix = String.Empty, String.Empty, NestPrefix + "_")) + CStr(Count) + "_" + CStr(Index))
+                        Translit.Add("translit" + ID + CStr(IIf(NestPrefix = String.Empty, String.Empty, NestPrefix + "_")) + CStr(Count) + "_" + CStr(Index))
                     Else
-                        Translate.Add("translate" + CStr(IIf(NestPrefix = String.Empty, String.Empty, NestPrefix + "_")) + CStr(Count) + "_" + CStr(Index))
+                        Translate.Add("translate" + ID + CStr(IIf(NestPrefix = String.Empty, String.Empty, NestPrefix + "_")) + CStr(Count) + "_" + CStr(Index))
                     End If
                 End If
             Next
@@ -2781,8 +2785,8 @@ Public Class RenderArray
         Next
         Return CType(Objects.ToArray(GetType(Object)), Object())
     End Function
-    Public Shared Function DoGetRenderJS(Items As Collections.Generic.List(Of RenderItem)) As String()
-        Return New String() {String.Empty, String.Empty, GetInitJS(Items), GetCopyClipboardJS(), GetSetClipboardJS(), GetStarRatingJS(), GetContinueStopJS()}
+    Public Shared Function DoGetRenderJS(ID As String, Items As Collections.Generic.List(Of RenderItem)) As String()
+        Return New String() {String.Empty, String.Empty, GetInitJS(ID, Items), GetCopyClipboardJS(), GetSetClipboardJS(), GetStarRatingJS(), GetContinueStopJS()}
     End Function
     Public Shared Function GetTableJSFunctions(ByVal Output As Object()) As String()()
         Dim Count As Integer
@@ -2855,7 +2859,7 @@ Public Class RenderArray
         writer.Write(vbCrLf + BaseTabs)
         writer.WriteEndTag("table")
     End Sub
-    Public Shared Sub DoRender(ByVal writer As System.Web.UI.HtmlTextWriter, ByVal TabCount As Integer, Items As Collections.Generic.List(Of RenderItem), NestPrefix As String)
+    Public Shared Sub DoRender(ByVal writer As System.Web.UI.HtmlTextWriter, ByVal TabCount As Integer, ID As String, Items As Collections.Generic.List(Of RenderItem), NestPrefix As String)
         Dim BaseTabs As String = Utility.MakeTabString(TabCount)
         Dim Count As Integer
         Dim Index As Integer
@@ -2878,7 +2882,7 @@ Public Class RenderArray
                 If Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eNested Then
                     If Style <> String.Empty Then writer.WriteAttribute("style", Style)
                     writer.Write(HtmlTextWriter.TagRightChar)
-                    DoRender(writer, TabCount, CType(Items(Count).TextItems(Index).Text, Collections.Generic.List(Of RenderItem)), CStr(Count))
+                    DoRender(writer, TabCount, ID, CType(Items(Count).TextItems(Index).Text, Collections.Generic.List(Of RenderItem)), CStr(Count))
                 ElseIf Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eList Then
                     writer.WriteAttribute("style", "direction: ltr;" + Style)
                     writer.Write(HtmlTextWriter.TagRightChar)
@@ -2951,17 +2955,17 @@ Public Class RenderArray
                     ElseIf Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eArabic Then
                         writer.WriteAttribute("class", "arabic")
                         writer.WriteAttribute("dir", If(System.Text.RegularExpressions.Regex.Match(CStr(Items(Count).TextItems(Index).Text), "(?:\p{IsArabic}|\p{IsArabicPresentationForms-A}|\p{IsArabicPresentationForms-B})+").Success, "rtl", "ltr"))
-                        writer.WriteAttribute("id", "arabic" + CStr(IIf(NestPrefix = String.Empty, String.Empty, NestPrefix + "_")) + CStr(Count) + "_" + CStr(Index))
+                        writer.WriteAttribute("id", "arabic" + ID + CStr(IIf(NestPrefix = String.Empty, String.Empty, NestPrefix + "_")) + CStr(Count) + "_" + CStr(Index))
                         writer.WriteAttribute("style", "color: " + System.Drawing.ColorTranslator.ToHtml(Items(Count).TextItems(Index).Clr) + ";" + If(Items(Count).TextItems(Index).Font <> String.Empty, "font-family:" + Items(Count).TextItems(Index).Font + ";", String.Empty) + Style)
                     ElseIf Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eTransliteration Then
                         writer.WriteAttribute("class", "transliteration")
                         writer.WriteAttribute("dir", "ltr")
                         writer.WriteAttribute("style", "color: " + System.Drawing.ColorTranslator.ToHtml(Items(Count).TextItems(Index).Clr) + "; display: " + CStr(IIf(CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) <> ArabicData.TranslitScheme.None, "block", "none")) + ";" + If(Items(Count).TextItems(Index).Font <> String.Empty, "font-family:" + Items(Count).TextItems(Index).Font + ";", String.Empty) + Style)
-                        writer.WriteAttribute("id", "translit" + CStr(IIf(NestPrefix = String.Empty, String.Empty, NestPrefix + "_")) + CStr(Count) + "_" + CStr(Index))
+                        writer.WriteAttribute("id", "translit" + ID + CStr(IIf(NestPrefix = String.Empty, String.Empty, NestPrefix + "_")) + CStr(Count) + "_" + CStr(Index))
                     Else
                         writer.WriteAttribute("class", "translation")
                         writer.WriteAttribute("dir", CStr(IIf(Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eRTL, "rtl", "ltr")))
-                        writer.WriteAttribute("id", "translate" + CStr(IIf(NestPrefix = String.Empty, String.Empty, NestPrefix + "_")) + CStr(Count) + "_" + CStr(Index))
+                        writer.WriteAttribute("id", "translate" + ID + CStr(IIf(NestPrefix = String.Empty, String.Empty, NestPrefix + "_")) + CStr(Count) + "_" + CStr(Index))
                         writer.WriteAttribute("style", "color: " + System.Drawing.ColorTranslator.ToHtml(Items(Count).TextItems(Index).Clr) + ";" + If(Items(Count).TextItems(Index).Font <> String.Empty, "font-family:" + Items(Count).TextItems(Index).Font + ";", String.Empty) + Style)
                     End If
                     writer.Write(HtmlTextWriter.TagRightChar)

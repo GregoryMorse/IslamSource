@@ -1072,7 +1072,7 @@ Public Class Arabic
     End Function
     Public Shared Function GetTransliterationSchemeTable(ByVal Item As PageLoader.TextItem) As RenderArray
         Dim Scheme As String = If(CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) >= 2, CachedData.IslamData.TranslitSchemes((CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) - 2) \ 2).Name, String.Empty)
-        Return New RenderArray With {.Items = GetTransliterationTable(Scheme)}
+        Return New RenderArray("translitscheme") With {.Items = GetTransliterationTable(Scheme)}
     End Function
     Shared Function GetTransliterationTable(Scheme As String) As List(Of RenderArray.RenderItem)
         Dim Items As New List(Of RenderArray.RenderItem)
@@ -2597,7 +2597,7 @@ Public Class DocBuilder
         Dim Scheme As String = If(CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) >= 2, CachedData.IslamData.TranslitSchemes((CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) - 2) \ 2).Name, String.Empty)
         Dim Count As Integer = CInt(HttpContext.Current.Request.QueryString.Get("selection"))
         If Count = -1 Then Count = 0
-        Return BuckwalterTextFromReferences(SchemeType, Scheme, CachedData.IslamData.Lists(0).Words(Count).Text, String.Empty, TanzilReader.GetTranslationIndex(HttpContext.Current.Request.QueryString.Get("qurantranslation")))
+        Return BuckwalterTextFromReferences(Item.Name, SchemeType, Scheme, CachedData.IslamData.Lists(0).Words(Count).Text, String.Empty, TanzilReader.GetTranslationIndex(HttpContext.Current.Request.QueryString.Get("qurantranslation")))
     End Function
     Public Shared Function GetListCategories() As String()
         Return Array.ConvertAll(CachedData.IslamData.Lists(0).Words, Function(Convert As IslamData.VocabCategory.Word) Utility.LoadResourceString("IslamInfo_" + Convert.TranslationID))
@@ -2605,7 +2605,7 @@ Public Class DocBuilder
     Public Shared Function GetRenderedText(ByVal Item As PageLoader.TextItem) As RenderArray
         Dim SchemeType As ArabicData.TranslitScheme = CType(If(CInt(HttpContext.Current.Request.Params("translitscheme")) >= 2, 2 - CInt(HttpContext.Current.Request.Params("translitscheme")) Mod 2, CInt(HttpContext.Current.Request.Params("translitscheme"))), ArabicData.TranslitScheme)
         Dim Scheme As String = If(CInt(HttpContext.Current.Request.Params("translitscheme")) >= 2, CachedData.IslamData.TranslitSchemes((CInt(HttpContext.Current.Request.Params("translitscheme")) - 2) \ 2).Name, String.Empty)
-        Return NormalTextFromReferences(HttpContext.Current.Request.Params("docedit"), SchemeType, Scheme, TanzilReader.GetTranslationIndex(HttpContext.Current.Request.Params("qurantranslation")))
+        Return NormalTextFromReferences(Item.Name, HttpContext.Current.Request.Params("docedit"), SchemeType, Scheme, TanzilReader.GetTranslationIndex(HttpContext.Current.Request.Params("qurantranslation")))
     End Function
     Public Shared Sub DoErrorCheckBuckwalterText(Strings As String)
         If Strings = Nothing Then Return
@@ -2620,8 +2620,8 @@ Public Class DocBuilder
             End If
         Next
     End Sub
-    Public Shared Function BuckwalterTextFromReferences(SchemeType As ArabicData.TranslitScheme, Scheme As String, Strings As String, TranslationID As String, TranslationIndex As Integer) As RenderArray
-        Dim Renderer As New RenderArray
+    Public Shared Function BuckwalterTextFromReferences(ID As String, SchemeType As ArabicData.TranslitScheme, Scheme As String, Strings As String, TranslationID As String, TranslationIndex As Integer) As RenderArray
+        Dim Renderer As New RenderArray(ID)
         If Strings = Nothing Then Return Renderer
         Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(Strings, "(.*?)(?:(\\\{)(.*?)(\\\})|$)")
         For MatchCount As Integer = 0 To Matches.Count - 1
@@ -2644,8 +2644,8 @@ Public Class DocBuilder
         Next
         Return Renderer
     End Function
-    Public Shared Function NormalTextFromReferences(Strings As String, SchemeType As ArabicData.TranslitScheme, Scheme As String, TranslationIndex As Integer) As RenderArray
-        Dim Renderer As New RenderArray
+    Public Shared Function NormalTextFromReferences(ID As String, Strings As String, SchemeType As ArabicData.TranslitScheme, Scheme As String, TranslationIndex As Integer) As RenderArray
+        Dim Renderer As New RenderArray(ID)
         If Strings = Nothing Then Return Renderer
         Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(Strings, "(.*?)(?:(\{)(.*?)(\})|$)")
         For Count As Integer = 0 To Matches.Count - 1
@@ -2661,7 +2661,7 @@ Public Class DocBuilder
         Return Renderer
     End Function
     Public Shared Function TextFromReferences(Strings As String, SchemeType As ArabicData.TranslitScheme, Scheme As String, TranslationIndex As Integer) As RenderArray
-        Dim Renderer As New RenderArray
+        Dim Renderer As New RenderArray(String.Empty)
         If Strings = Nothing Then Return Renderer
         'text before and after reference matches needs rendering
         'hadith reference matching {name,book/hadith}
@@ -2795,13 +2795,13 @@ Public Class Supplications
         Dim Scheme As String = If(CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) >= 2, CachedData.IslamData.TranslitSchemes((CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) - 2) \ 2).Name, String.Empty)
         Dim Count As Integer = CInt(HttpContext.Current.Request.QueryString.Get("selection"))
         If Count = -1 Then Count = 0
-        Return DoGetRenderedSuppText(SchemeType, Scheme, CachedData.IslamData.VerseCategories(Count), TanzilReader.GetTranslationIndex(HttpContext.Current.Request.QueryString.Get("qurantranslation")))
+        Return DoGetRenderedSuppText(Item.Name, SchemeType, Scheme, CachedData.IslamData.VerseCategories(Count), TanzilReader.GetTranslationIndex(HttpContext.Current.Request.QueryString.Get("qurantranslation")))
     End Function
     Public Shared Function DoGetRenderedVerseText(SchemeType As ArabicData.TranslitScheme, Scheme As String, Verse As IslamData.VerseCategory.Verse, TranslationIndex As Integer) As List(Of RenderArray.RenderItem)
-        Return DocBuilder.BuckwalterTextFromReferences(SchemeType, Scheme, Verse.Arabic, Verse.TranslationID, TranslationIndex).Items
+        Return DocBuilder.BuckwalterTextFromReferences(String.Empty, SchemeType, Scheme, Verse.Arabic, Verse.TranslationID, TranslationIndex).Items
     End Function
-    Public Shared Function DoGetRenderedSuppText(SchemeType As ArabicData.TranslitScheme, Scheme As String, Category As IslamData.VerseCategory, TranslationIndex As Integer) As RenderArray
-        Dim Renderer As New RenderArray
+    Public Shared Function DoGetRenderedSuppText(ID As String, SchemeType As ArabicData.TranslitScheme, Scheme As String, Category As IslamData.VerseCategory, TranslationIndex As Integer) As RenderArray
+        Dim Renderer As New RenderArray(ID)
         For SubCount As Integer = 0 To Category.Verses.Length - 1
             Renderer.Items.AddRange(DoGetRenderedVerseText(SchemeType, Scheme, Category.Verses(SubCount), TranslationIndex))
         Next
@@ -3675,7 +3675,7 @@ Public Class TanzilReader
         Return System.Text.RegularExpressions.Regex.Match(Str, "^(?:,?(\d+)(?:\:(\d+))?(?:\:(\d+))?(?:-(\d+)(?:\:(\d+))?(?:\:(\d+))?)?)+$").Success
     End Function
     Public Shared Function QuranTextFromReference(Str As String, SchemeType As ArabicData.TranslitScheme, Scheme As String, TranslationIndex As Integer) As RenderArray
-        Dim Renderer As New RenderArray
+        Dim Renderer As New RenderArray(String.Empty)
         Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(Str, "(?:,?(\d+)(?:\:(\d+))?(?:\:(\d+))?(?:-(\d+)(?:\:(\d+))?(?:\:(\d+))?)?)")
         Dim Reference As String
         For Count = 0 To Matches.Count - 1
@@ -3737,13 +3737,13 @@ Public Class TanzilReader
         End If
         Return QuranText
     End Function
-    Public Shared Function GetQuranTextBySelection(Division As Integer, Index As Integer, Translation As String, SchemeType As ArabicData.TranslitScheme, Scheme As String, TranslationIndex As Integer) As RenderArray
+    Public Shared Function GetQuranTextBySelection(ID As String, Division As Integer, Index As Integer, Translation As String, SchemeType As ArabicData.TranslitScheme, Scheme As String, TranslationIndex As Integer) As RenderArray
         Dim Chapter As Integer
         Dim Verse As Integer
         Dim BaseChapter As Integer
         Dim BaseVerse As Integer
         Dim Node As System.Xml.XmlNode
-        Dim Renderer As New RenderArray
+        Dim Renderer As New RenderArray(ID)
         Dim QuranText As Collections.Generic.List(Of String())
         Dim SeperateSectionCount As Integer = 1
         Dim Keys() As String = Nothing
@@ -3871,12 +3871,12 @@ Public Class TanzilReader
         Dim SchemeType As ArabicData.TranslitScheme = CType(If(CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) >= 2, 2 - CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) Mod 2, CInt(HttpContext.Current.Request.QueryString.Get("translitscheme"))), ArabicData.TranslitScheme)
         Dim Scheme As String = If(CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) >= 2, CachedData.IslamData.TranslitSchemes((CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) - 2) \ 2).Name, String.Empty)
         Dim TranslationIndex As Integer = GetTranslationIndex(HttpContext.Current.Request.QueryString.Get("qurantranslation"))
-        Return GetQuranTextBySelection(Division, Index, HttpContext.Current.Request.QueryString.Get("qurantranslation"), SchemeType, Scheme, TranslationIndex)
+        Return GetQuranTextBySelection(Item.Name, Division, Index, HttpContext.Current.Request.QueryString.Get("qurantranslation"), SchemeType, Scheme, TranslationIndex)
     End Function
     Public Shared Function DoGetRenderedQuranText(QuranText As Collections.Generic.List(Of String()), BaseChapter As Integer, BaseVerse As Integer, Translation As String, SchemeType As ArabicData.TranslitScheme, Scheme As String, TranslationIndex As Integer) As RenderArray
         Dim Text As String
         Dim Node As System.Xml.XmlNode
-        Dim Renderer As New RenderArray
+        Dim Renderer As New RenderArray(String.Empty)
         Dim Lines As String() = IO.File.ReadAllLines(Utility.GetFilePath("metadata\" + GetTranslationFileName(Translation)))
         Dim W4WLines As String() = IO.File.ReadAllLines(Utility.GetFilePath("metadata\en.w4w.shehnazshaikh.txt"))
         If Not QuranText Is Nothing Then
@@ -4239,10 +4239,10 @@ Public Class HadithReader
         Dim SchemeType As ArabicData.TranslitScheme = CType(If(CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) >= 2, 2 - CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) Mod 2, CInt(HttpContext.Current.Request.QueryString.Get("translitscheme"))), ArabicData.TranslitScheme)
         Dim Scheme As String = If(CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) >= 2, CachedData.IslamData.TranslitSchemes((CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) - 2) \ 2).Name, String.Empty)
         Dim Translation As String = HttpContext.Current.Request.QueryString.Get("hadithtranslation")
-        Return DoGetRenderedText(SchemeType, Scheme, Translation)
+        Return DoGetRenderedText(Item.Name, SchemeType, Scheme, Translation)
     End Function
-    Public Shared Function DoGetRenderedText(SchemeType As ArabicData.TranslitScheme, Scheme As String, Translation As String) As RenderArray
-        Dim Renderer As New RenderArray
+    Public Shared Function DoGetRenderedText(ID As String, SchemeType As ArabicData.TranslitScheme, Scheme As String, Translation As String) As RenderArray
+        Dim Renderer As New RenderArray(ID)
         Dim Hadith As Integer
         Dim Index As Integer = GetCurrentCollection()
         Dim BookIndex As Integer = GetCurrentBook()
