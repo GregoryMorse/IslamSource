@@ -2943,6 +2943,23 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="tawak~alona EalaY {ll~ahi" id="WeHavePutTrustInAllah"></word>
 			<word text="kalamu {ll~ahi" id="SpeechOfAllah"></word>
 			<word text="{t~aqi {ll~aha" id="FearAllah"></word>
+			<word text="HafiZahumu {ll~ahu" id="MayAllahProtectThemMasculine"></word>
+			<word text="HafiZahun~a {ll~ahu" id="MayAllahProtectThemFeminine"></word>
+			<word text="HafiZahumaA {ll~ahu" id="MayAllahProtectBothOfThem"></word>
+			<word text="HafiZahu {ll~ahu" id="MayAllahProtectHim"></word>
+			<word text="HafiZahaA {ll~ahu" id="MayAllahProtectHer"></word>
+			<word text="sal~amahumu taEalaY {ll~ahu" id="MayAllahKeepThemMasculineWell"></word>
+			<word text="sal~amahun~a taEalaY {ll~ahu" id="MayAllahKeepThemFeminineWell"></word>
+			<word text="sal~amahumaA taEalaY {ll~ahu" id="MayAllahKeepBothOfThemWell"></word>
+			<word text="sal~amahu taEalaY {ll~ahu" id="MayAllahKeepHimWell"></word>
+			<word text="sal~amahaA taEalaY {ll~ahu" id="MayAllahKeepHerWell"></word>
+			<word text="daAmato barakaAtuhumo" id="MayAllahContinuouslyShowerBlessingsUponThemMasculine"></word>
+			<word text="daAmato barakaAtuhun~a" id="MayAllahContinuouslyShowerBlessingsUponThemFeminine"></word>
+			<word text="daAmato barakaAtuhumaA" id="MayAllahContinuouslyShowerBlessingsUponBothOfThem"></word>
+			<word text="daAmato barakaAtuhu" id="MayAllahContinuouslyShowerBlessingsUponHim"></word>
+			<word text="daAmato barakaAtuhaA" id="MayAllahContinuouslyShowerBlessingsUponHer"></word>
+			<word text="{ll~ahu HaAfiZN" id="AllahProtection"></word>
+			<word text="{ll~ahu HaAfiZN wanaAsirN" id="AllahProtectionAndHelp"></word>
 			<word text="EaZama {ll~ahu {jorakumo" id="MayAllahMakeYourRewardGreat"></word>
 			<word text="$akara {ll~ahu saEoyikumo" id="MayAllahAcceptYourEffort"></word>
 			<word text="{DoHaka {ll~ahu sin~aka" id="MayAllahKeepYouCheerful"></word>

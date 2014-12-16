@@ -7,3 +7,16 @@ COPY "IslamSource\IslamResources\My Project\Resources.resx" IslamSource\IslamRes
 DEL IslamSource\IslamResources\MyProject\Resources.resx
 RMDIR IslamSource\IslamResources\MyProject
 CD IslamSource
+
+svn checkout http://plugins.svn.wordpress.org/islamsource/trunk/
+"%ProgramFiles%\7-Zip\7z.exe" x -otrunk IslamSourceWP.zip
+move trunk\IslamSource\*.* trunk
+for /D %F in (trunk\IslamSource\*) do move /Y %F trunk
+svn add trunk\*
+svn commit trunk -m "%1"
+rmdir /s /q assets
+svn checkout http://plugins.svn.wordpress.org/islamsource/assets
+copy *.jpg assets
+svn add assets\*.jpg
+svn commit assets -m "%1"
+rmdir /s /q assets
