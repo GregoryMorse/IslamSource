@@ -285,7 +285,7 @@ Public Class Utility
         Return Str.Replace("\", "\\")
     End Function
     Public Shared Function EncodeJS(Str As String) As String
-        Return Str.Replace("'", "\'")
+        Return String.Join(String.Empty, Array.ConvertAll(Str.ToCharArray(), Function(Ch As Char) If(AscW(Ch) < &H100, CStr(Ch), "\u" + AscW(Ch).ToString("X4")))).Replace("'", "\'")
     End Function
     Public Shared Function MakeJSString(Str As String) As String
         Return "'" + EncodeJS(Str) + "'"

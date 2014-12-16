@@ -25,8 +25,8 @@ None
 
 == Screenshots ==
 
-1. IslamSource.jpg
-2. IslamSource2.jpg
+1. The visual editor showing the toolbar, popup and style of tags.
+2. The rendered result when viewing the post.
 
 == Changelog ==
 

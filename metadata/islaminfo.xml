@@ -3337,6 +3337,23 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="BFumaa" id="BlessingsOfAllahUponBothOfThem"></word>
 			<word text="BFa" id="BlessingsOfAllahUponHim"></word>
 			<word text="BFi" id="BlessingsOfAllahUponHer"></word>
+			<word text="HZum|HZ" id="MayAllahProtectThemMasculine"></word>
+			<word text="HZunna" id="MayAllahProtectThemFeminine"></word>
+			<word text="HZumaa" id="MayAllahProtectBothOfThem"></word>
+			<word text="HZu" id="MayAllahProtectHim"></word>
+			<word text="HZaA" id="MayAllahProtectHer"></word>
+			<word text="STum|ST" id="MayAllahKeepThemMasculineWell"></word>
+			<word text="STunna" id="MayAllahKeepThemFeminineWell"></word>
+			<word text="STumaa" id="MayAllahKeepBothOfThemWell"></word>
+			<word text="STu" id="MayAllahKeepHimWell"></word>
+			<word text="STaA" id="MayAllahKeepHerWell"></word>
+			<word text="DBum|DB" id="MayAllahContinuouslyShowerBlessingsUponThemMasculine"></word>
+			<word text="DBunna" id="MayAllahContinuouslyShowerBlessingsUponThemFeminine"></word>
+			<word text="DBumaa" id="MayAllahContinuouslyShowerBlessingsUponBothOfThem"></word>
+			<word text="DBu" id="MayAllahContinuouslyShowerBlessingsUponHim"></word>
+			<word text="DBaA" id="MayAllahContinuouslyShowerBlessingsUponHer"></word>
+			<word text="AllahHaafiz" id="AllahProtection"></word>
+			<word text="AllahHaafizWanaasir" id="AllahProtectionAndHelp"></word>
 			<word text="Hum|H" id="MayAllahMaintainAllYourLivesMasculine"></word>
 			<word text="Hunna" id="MayAllahMaintainAllYourLivesFeminine"></word>
 			<word text="Humaa" id="MayAllahMaintainBothOfYourLives"></word>
