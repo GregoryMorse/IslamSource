@@ -124,17 +124,48 @@ class TanzilReader
 		}
 		return $verses;
 	}
+	public static function GetTranslationIndex($translation)
+	{
+		if (!$translation) $translation = CachedData::IslamData()->translations->attributes()["default"];
+		for ($count = 0; $count < count(CachedData::IslamData()->translations->children()); $count++) {
+			if (CachedData::IslamData()->translations->children()[$count]->attributes()["file"] == $translation) return $count;
+		}
+		$translation = CachedData::IslamData()->translations->attributes()["default"];
+		for ($count = 0; $count < count(CachedData::IslamData()->translations->children()); $count++) {
+			if (CachedData::IslamData()->translations->children()[$count]->attributes()["file"] == $translation) return $count;
+		}
+		return -1;
+	}
+	public static function GetTranslationFileName($translation)
+	{
+		$index = TanzilReader::GetTranslationIndex($translation);
+		return CachedData::IslamData()->translations->children()[$index]->attributes()["file"] + ".txt"
+	}
 	public static function DoGetRenderedQuranText($qurantext, $basechapter, $baseverse, $translation, $schemetype, $scheme, $translationindex)
 	{
 		$text = "";
+		$lines = explode("\n", file_get_contents(dirname(__FILE__) . "/metadata/" . TanzilReader::GetTranslationFileName($translation)));
 		if ($qurantext !== null) {
 			for ($chapter = 0; $chapter < count($qurantext); $chapter++) {
 				for ($verse = 0; $verse < count($qurantext[$chapter]); $verse++) {
 					$text .= $qurantext[$chapter][$verse];
+					//TanzilReader::GetTranslationVerse($lines, $basechapter + $chapter, ($chapter == 0 ? $baseverse : 1) + $verse);
 				}
 			}
 		}
 		return $text;
+	}
+	public static function GetTranslationVerse($lines, $chapter, $verse)
+	{
+		return $lines[TanzilReader::GetVerseNumber($chapter, $verse) - 1];
+	}
+	public static function GetVerseNumber($chapter, $verse)
+	{
+		return TanzilReader::GetChapterByIndex($chapter)->attributes()["start"] + $verse;
+	}
+	public static function GetChapterByIndex($index)
+	{
+		return Utility::GetChildNodeByIndex("sura", "index", $index, CachedData.XMLDocInfo()->children()["suras"]->children());
 	}
 	public static function GetTextChapter($xmldoc, $chapter)
 	{
