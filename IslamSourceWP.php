@@ -54,6 +54,63 @@ class CachedData
 	public static function XMLDocMain() { if ($_XMLDocMain === null) $_XMLDocMain = simplexml_load_file(dirname(__FILE__) . "/metadata/" . TanzilReader::$QuranTextNames[0] . ".xml"); return $_XMLDocMain; }
 };
 
+class RenderArray
+{
+	abstract class RenderTypes {
+		const eHeaderLeft = 0;
+		const eHeaderCenter = 1;
+		const eHeaderRight = 2;
+		const eText = 3;
+		const eInteractive = 4;
+	}
+	abstract class RenderDisplayClass {
+		const eNested = 0;
+		const eArabic = 1;
+		const eTransliteration = 2;
+		const eLTR = 3;
+		const eRTL = 4;
+		const eContinueStop = 5;
+		const eRanking = 6;
+		const eList = 7;
+	}
+	class RenderText
+	{
+		public $displayClass;
+		public $clr;
+		public $text;
+		public $font;
+		void __construct($_displayClass, $_clr, $_text, $_font)
+		{
+			$displayClass = $_displayClass;
+			$clr = $_clr;
+			$text = $_text;
+			$font = $_font;
+		}
+	};
+	class RenderItem
+	{
+		public $type;
+		public $textitems;
+		void __construct($_type, $_textitems)
+		{
+			$type = $_type;
+			$textitems = $_textitems;
+		}
+	};
+	public static $items = null;
+	public static function DoRender($items)
+	{
+		for ($count = 0; $count < count($items); $count++) {
+			for ($index = 0; $index < count($items[count]->textitems); $index++) {
+				if ($items[count]->textitems[$index]->displayClass == RenderDisplayClass::eArabic) {
+				} elseif ($items[count]->textitems[$index]->displayClass == RenderDisplayClass::eTransliteration) {
+				} else {
+				}
+			}
+		}
+	}
+};
+
 class TanzilReader
 {
 	public static function IsQuranTextReference($str) { return preg_match("/^(?:,?(\d+)(?:\:(\d+))?(?:\:(\d+))?(?:-(\d+)(?:\:(\d+))?(?:\:(\d+))?)?)+$/s", $str); }
@@ -145,6 +202,7 @@ class TanzilReader
 	{
 		$text = "";
 		$lines = explode("\n", file_get_contents(dirname(__FILE__) . "/metadata/" . TanzilReader::GetTranslationFileName($translation)));
+		$w4wlines = explode("\n", file_get_contents(dirname(__FILE__) . "/metadata/en.w4w.shehnazshaikh.txt"));
 		if ($qurantext !== null) {
 			for ($chapter = 0; $chapter < count($qurantext); $chapter++) {
 				for ($verse = 0; $verse < count($qurantext[$chapter]); $verse++) {
