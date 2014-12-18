@@ -191,18 +191,18 @@ Public Class Arabic
             End If
         Next
         If Count = CachedData.IslamData.TranslitSchemes.Length Then Return String.Empty
-        If Array.IndexOf(CachedData.ArabicLettersInOrder, Symbol.Symbol) <> -1 Then
-            Return Sch.Alphabet(Array.IndexOf(CachedData.ArabicLettersInOrder, Symbol.Symbol))
-        ElseIf Array.IndexOf(CachedData.ArabicHamzas, Symbol.Symbol) <> -1 Then
-            Return Sch.Hamza(Array.IndexOf(CachedData.ArabicHamzas, Symbol.Symbol))
+        If Array.IndexOf(CachedData.ArabicLettersInOrder, CStr(Symbol.Symbol)) <> -1 Then
+            Return Sch.Alphabet(Array.IndexOf(CachedData.ArabicLettersInOrder, CStr(Symbol.Symbol)))
+        ElseIf Array.IndexOf(CachedData.ArabicHamzas, CStr(Symbol.Symbol)) <> -1 Then
+            Return Sch.Hamza(Array.IndexOf(CachedData.ArabicHamzas, CStr(Symbol.Symbol)))
         ElseIf Array.IndexOf(CachedData.ArabicVowels, CStr(Symbol.Symbol)) <> -1 Then
             Return Sch.Vowels(Array.IndexOf(CachedData.ArabicVowels, CStr(Symbol.Symbol)))
-        ElseIf Array.IndexOf(CachedData.ArabicTajweed, Symbol.Symbol) <> -1 Then
-            Return Sch.Tajweed(Array.IndexOf(CachedData.ArabicTajweed, Symbol.Symbol))
-        ElseIf Array.IndexOf(CachedData.ArabicPunctuation, Symbol.Symbol) <> -1 Then
-            Return Sch.Punctuation(Array.IndexOf(CachedData.ArabicPunctuation, Symbol.Symbol))
-        ElseIf Array.IndexOf(CachedData.NonArabicLetters, Symbol.Symbol) <> -1 Then
-            Return Sch.NonArabic(Array.IndexOf(CachedData.NonArabicLetters, Symbol.Symbol))
+        ElseIf Array.IndexOf(CachedData.ArabicTajweed, CStr(Symbol.Symbol)) <> -1 Then
+            Return Sch.Tajweed(Array.IndexOf(CachedData.ArabicTajweed, CStr(Symbol.Symbol)))
+        ElseIf Array.IndexOf(CachedData.ArabicPunctuation, CStr(Symbol.Symbol)) <> -1 Then
+            Return Sch.Punctuation(Array.IndexOf(CachedData.ArabicPunctuation, CStr(Symbol.Symbol)))
+        ElseIf Array.IndexOf(CachedData.NonArabicLetters, CStr(Symbol.Symbol)) <> -1 Then
+            Return Sch.NonArabic(Array.IndexOf(CachedData.NonArabicLetters, CStr(Symbol.Symbol)))
         End If
         Return String.Empty
     End Function
@@ -1812,7 +1812,7 @@ Public Class CachedData
         Dim Count As Integer
         For Count = 0 To CachedData.IslamData.ArabicPatterns.Length - 1
             If CachedData.IslamData.ArabicPatterns(Count).Name = Name Then
-                Return TranslateRegEx(CachedData.IslamData.ArabicPatterns(Count).Match)
+                Return TranslateRegEx(CachedData.IslamData.ArabicPatterns(Count).Match, True)
             End If
         Next
         Return String.Empty
@@ -1821,7 +1821,7 @@ Public Class CachedData
         Dim Count As Integer
         For Count = 0 To CachedData.IslamData.ArabicGroups.Length - 1
             If CachedData.IslamData.ArabicGroups(Count).Name = Name Then
-                Return Array.ConvertAll(CachedData.IslamData.ArabicGroups(Count).Text, Function(Str As String) TranslateRegEx(Str))
+                Return Array.ConvertAll(CachedData.IslamData.ArabicGroups(Count).Text, Function(Str As String) TranslateRegEx(Str, Name = "ArabicSpecialLetters"))
             End If
         Next
         Return {}
@@ -1832,16 +1832,17 @@ Public Class CachedData
             If CachedData.IslamData.RuleSets(Count).Name = Name Then
                 Dim RuleSet As IslamData.RuleTranslationCategory.RuleTranslation() = CachedData.IslamData.RuleSets(Count).Rules
                 For SubCount As Integer = 0 To RuleSet.Length - 1
-                    RuleSet(SubCount).Match = TranslateRegEx(RuleSet(SubCount).Match)
-                    For LetCount As Integer = 0 To ArabicData.Data.ArabicLetters.Length - 1
-                        RuleSet(SubCount).Evaluator = RuleSet(SubCount).Evaluator.Replace("{" + ArabicData.Data.ArabicLetters(LetCount).UnicodeName + "}", ArabicData.MakeUniRegEx(ArabicData.Data.ArabicLetters(LetCount).Symbol))
-                    Next
+                    RuleSet(SubCount).Match = TranslateRegEx(RuleSet(SubCount).Match, True)
+                    RuleSet(SubCount).Evaluator = TranslateRegEx(RuleSet(SubCount).Evaluator, False)
                 Next
                 Return RuleSet
             End If
         Next
         Return Nothing
     End Function
+    Shared _ArabicUniqueLetters As String()
+    Shared _ArabicNumbers As String()
+    Shared _ArabicWaslKasraExceptions As String()
     Shared _ArabicBaseNumbers As String()
     Shared _ArabicBaseExtraNumbers As String()
     Shared _ArabicBaseTenNumbers As String()
@@ -1854,6 +1855,30 @@ Public Class CachedData
     Shared _ArabicFractionNumbers As String()
     Shared _ArabicOrdinalNumbers As String()
     Shared _ArabicOrdinalExtraNumbers As String()
+    Public Shared ReadOnly Property ArabicUniqueLetters As String()
+        Get
+            If _ArabicUniqueLetters Is Nothing Then
+                _ArabicUniqueLetters = GetNum("ArabicUniqueLetters")
+            End If
+            Return _ArabicUniqueLetters
+        End Get
+    End Property
+    Public Shared ReadOnly Property ArabicNumbers As String()
+        Get
+            If _ArabicNumbers Is Nothing Then
+                _ArabicNumbers = GetNum("ArabicNumbers")
+            End If
+            Return _ArabicNumbers
+        End Get
+    End Property
+    Public Shared ReadOnly Property ArabicWaslKasraExceptions As String()
+        Get
+            If _ArabicWaslKasraExceptions Is Nothing Then
+                _ArabicWaslKasraExceptions = GetNum("ArabicWaslKasraExceptions")
+            End If
+            Return _ArabicWaslKasraExceptions
+        End Get
+    End Property
     Public Shared ReadOnly Property ArabicBaseNumbers As String()
         Get
             If _ArabicBaseNumbers Is Nothing Then
@@ -2013,9 +2038,6 @@ Public Class CachedData
             Return _TehMarbutaContinueRule
         End Get
     End Property
-    Shared _ArabicUniqueLetters As String()
-    Shared _ArabicNumbers As String()
-    Shared _ArabicWaslKasraExceptions As String()
     Shared _ArabicLongVowels As String()
     Shared _ArabicTanweens As String()
     Shared _ArabicFathaDammaKasra As String()
@@ -2046,31 +2068,7 @@ Public Class CachedData
     Shared _ArabicLeadingGutterals As String()
     Shared _RecitationLetters As String()
     Shared _ArabicTrailingGutterals As String()
-
-    Public Shared ReadOnly Property ArabicUniqueLetters As String()
-        Get
-            If _ArabicUniqueLetters Is Nothing Then
-                _ArabicUniqueLetters = GetGroup("ArabicUniqueLetters")
-            End If
-            Return _ArabicUniqueLetters
-        End Get
-    End Property
-    Public Shared ReadOnly Property ArabicNumbers As String()
-        Get
-            If _ArabicNumbers Is Nothing Then
-                _ArabicNumbers = GetGroup("ArabicNumbers")
-            End If
-            Return _ArabicNumbers
-        End Get
-    End Property
-    Public Shared ReadOnly Property ArabicWaslKasraExceptions As String()
-        Get
-            If _ArabicWaslKasraExceptions Is Nothing Then
-                _ArabicWaslKasraExceptions = GetGroup("ArabicWaslKasraExceptions")
-            End If
-            Return _ArabicWaslKasraExceptions
-        End Get
-    End Property
+    Shared _RecitationSpecialSymbolsNotStop As String()
     Public Shared ReadOnly Property ArabicLongVowels As String()
         Get
             If _ArabicLongVowels Is Nothing Then
@@ -2311,43 +2309,58 @@ Public Class CachedData
             Return _ArabicTrailingGutterals
         End Get
     End Property
-    Public Shared Function TranslateRegEx(Value As String) As String
+    Public Shared ReadOnly Property RecitationSpecialSymbolsNotStop As String()
+        Get
+            If _RecitationSpecialSymbolsNotStop Is Nothing Then
+                _RecitationSpecialSymbolsNotStop = GetGroup("RecitationSpecialSymbolsNotStop")
+            End If
+            Return _RecitationSpecialSymbolsNotStop
+        End Get
+    End Property
+    Public Shared Function TranslateRegEx(Value As String, bAll As Boolean) As String
         Return System.Text.RegularExpressions.Regex.Replace(Value, "\{(.*?)\}",
             Function(Match As System.Text.RegularExpressions.Match)
-                If Match.Groups(1).Value = "CertainStopPattern" Then Return CertainStopPattern
-                If Match.Groups(1).Value = "OptionalStopPattern" Then Return OptionalStopPattern
-                If Match.Groups(1).Value = "OptionalStopPatternNotEndOfAyah" Then Return OptionalStopPatternNotEndOfAyah
-                If Match.Groups(1).Value = "CertainNotStopPattern" Then Return CertainNotStopPattern
-                If Match.Groups(1).Value = "OptionalNotStopPattern" Then Return OptionalNotStopPattern
-                If Match.Groups(1).Value = "TehMarbutaStopRule" Then Return TehMarbutaStopRule
-                If Match.Groups(1).Value = "TehMarbutaContinueRule" Then Return TehMarbutaContinueRule
+                If bAll Then
+                    If Match.Groups(1).Value = "CertainStopPattern" Then Return CertainStopPattern
+                    If Match.Groups(1).Value = "OptionalStopPattern" Then Return OptionalStopPattern
+                    If Match.Groups(1).Value = "OptionalStopPatternNotEndOfAyah" Then Return OptionalStopPatternNotEndOfAyah
+                    If Match.Groups(1).Value = "CertainNotStopPattern" Then Return CertainNotStopPattern
+                    If Match.Groups(1).Value = "OptionalNotStopPattern" Then Return OptionalNotStopPattern
+                    If Match.Groups(1).Value = "TehMarbutaStopRule" Then Return TehMarbutaStopRule
+                    If Match.Groups(1).Value = "TehMarbutaContinueRule" Then Return TehMarbutaContinueRule
 
-                If Match.Groups(1).Value = "ArabicUniqueLetters" Then Return ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicUniqueLetters, Function(Str As String) ArabicData.TransliterateFromBuckwalter(Str).Replace(CStr(ArabicData.ArabicMaddahAbove), String.Empty)))
-                If Match.Groups(1).Value = "ArabicNumbers" Then Return ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicNumbers, Function(Str As String) ArabicData.TransliterateFromBuckwalter(Str)))
-                If Match.Groups(1).Value = "ArabicWaslKasraExceptions" Then Return ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicWaslKasraExceptions, Function(Str As String) ArabicData.TransliterateFromBuckwalter(Str)))
-                'If Match.Groups(1).Value = "SimpleSuperscriptAlefBefore" Then Return ArabicData.MakeRegMultiEx(Array.ConvertAll(Arabic.SimpleSuperscriptAlefBefore, Function(Str As String) ArabicData.TransliterateFromBuckwalter(Str.Replace(".", String.Empty).Replace("""", String.Empty).Replace("@", String.Empty).Replace("[", String.Empty).Replace("]", String.Empty).Replace("-", String.Empty).Replace("^", String.Empty))))
-                'If Match.Groups(1).Value = "SimpleSuperscriptAlefNotBefore" Then Return ArabicData.MakeRegMultiEx(Array.ConvertAll(Arabic.SimpleSuperscriptAlefNotBefore, Function(Str As String) ArabicData.TransliterateFromBuckwalter(Str.Replace(".", String.Empty).Replace("""", String.Empty).Replace("@", String.Empty).Replace("[", String.Empty).Replace("]", String.Empty).Replace("-", String.Empty).Replace("^", String.Empty))))
-                'If Match.Groups(1).Value = "SimpleSuperscriptAlefAfter" Then Return ArabicData.MakeRegMultiEx(Array.ConvertAll(Arabic.SimpleSuperscriptAlefAfter, Function(Str As String) ArabicData.TransliterateFromBuckwalter(Str.Replace(".", String.Empty).Replace("""", String.Empty).Replace("@", String.Empty).Replace("[", String.Empty).Replace("]", String.Empty).Replace("-", String.Empty).Replace("^", String.Empty))))
-                'If Match.Groups(1).Value = "SimpleSuperscriptAlefNotAfter" Then Return ArabicData.MakeRegMultiEx(Array.ConvertAll(Arabic.SimpleSuperscriptAlefNotAfter, Function(Str As String) ArabicData.TransliterateFromBuckwalter(Str.Replace(".", String.Empty).Replace("""", String.Empty).Replace("@", String.Empty).Replace("[", String.Empty).Replace("]", String.Empty).Replace("-", String.Empty).Replace("^", String.Empty))))
-                If Match.Groups(1).Value = "ArabicLongShortVowels" Then Return ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicLongVowels, Function(StrV As String) ArabicData.MakeUniRegEx(StrV(0) + "(?=" + ArabicData.MakeUniRegEx(StrV(1)) + ")")))
-                If Match.Groups(1).Value = "ArabicTanweens" Then Return ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicTanweens, Function(Str As String) ArabicData.MakeUniRegEx(Str)))
-                If Match.Groups(1).Value = "ArabicFathaDammaKasra" Then Return ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicFathaDammaKasra, Function(Str As String) ArabicData.MakeUniRegEx(Str)))
-                If Match.Groups(1).Value = "ArabicStopLetters" Then Return ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicStopLetters, Function(Str As String) ArabicData.MakeUniRegEx(Str)))
-                If Match.Groups(1).Value = "ArabicSpecialGutteral" Then Return ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicSpecialGutteral, Function(Str As String) ArabicData.MakeUniRegEx(Str)))
-                If Match.Groups(1).Value = "ArabicSpecialLeadingGutteral" Then Return ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicSpecialLeadingGutteral, Function(Str As String) ArabicData.MakeUniRegEx(Str)))
-                If Match.Groups(1).Value = "ArabicPunctuationSymbols" Then Return ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicPunctuationSymbols, Function(Str As String) ArabicData.MakeUniRegEx(Str)))
-                If Match.Groups(1).Value = "ArabicLetters" Then Return ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicLetters, Function(Str As String) ArabicData.MakeUniRegEx(Str)))
-                If Match.Groups(1).Value = "ArabicSunLettersNoLam" Then Return ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicSunLettersNoLam, Function(Str As String) ArabicData.MakeUniRegEx(Str)))
-                If Match.Groups(1).Value = "ArabicSunLetters" Then Return ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicSunLetters, Function(Str As String) ArabicData.MakeUniRegEx(Str)))
-                If Match.Groups(1).Value = "ArabicMoonLettersNoVowels" Then Return ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicMoonLettersNoVowels, Function(Str As String) ArabicData.MakeUniRegEx(Str)))
-                If Match.Groups(1).Value = "ArabicMoonLetters" Then Return ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicMoonLetters, Function(Str As String) ArabicData.MakeUniRegEx(Str)))
-                If Match.Groups(1).Value = "RecitationCombiningSymbols" Then Return ArabicData.MakeRegMultiEx(Array.ConvertAll(RecitationCombiningSymbols, Function(Str As String) ArabicData.MakeUniRegEx(Str)))
-                If Match.Groups(1).Value = "RecitationConnectingFollowerSymbols" Then Return ArabicData.MakeRegMultiEx(Array.ConvertAll(RecitationConnectingFollowerSymbols, Function(Str As String) ArabicData.MakeUniRegEx(Str)))
-                '{0} ignore
+                    If Match.Groups(1).Value = "ArabicUniqueLetters" Then Return ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicUniqueLetters, Function(Str As String) ArabicData.TransliterateFromBuckwalter(Str).Replace(CStr(ArabicData.ArabicMaddahAbove), String.Empty)))
+                    If Match.Groups(1).Value = "ArabicNumbers" Then Return ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicNumbers, Function(Str As String) ArabicData.TransliterateFromBuckwalter(Str)))
+                    If Match.Groups(1).Value = "ArabicWaslKasraExceptions" Then Return ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicWaslKasraExceptions, Function(Str As String) ArabicData.TransliterateFromBuckwalter(Str)))
+                    'If Match.Groups(1).Value = "SimpleSuperscriptAlefBefore" Then Return ArabicData.MakeRegMultiEx(Array.ConvertAll(Arabic.SimpleSuperscriptAlefBefore, Function(Str As String) ArabicData.TransliterateFromBuckwalter(Str.Replace(".", String.Empty).Replace("""", String.Empty).Replace("@", String.Empty).Replace("[", String.Empty).Replace("]", String.Empty).Replace("-", String.Empty).Replace("^", String.Empty))))
+                    'If Match.Groups(1).Value = "SimpleSuperscriptAlefNotBefore" Then Return ArabicData.MakeRegMultiEx(Array.ConvertAll(Arabic.SimpleSuperscriptAlefNotBefore, Function(Str As String) ArabicData.TransliterateFromBuckwalter(Str.Replace(".", String.Empty).Replace("""", String.Empty).Replace("@", String.Empty).Replace("[", String.Empty).Replace("]", String.Empty).Replace("-", String.Empty).Replace("^", String.Empty))))
+                    'If Match.Groups(1).Value = "SimpleSuperscriptAlefAfter" Then Return ArabicData.MakeRegMultiEx(Array.ConvertAll(Arabic.SimpleSuperscriptAlefAfter, Function(Str As String) ArabicData.TransliterateFromBuckwalter(Str.Replace(".", String.Empty).Replace("""", String.Empty).Replace("@", String.Empty).Replace("[", String.Empty).Replace("]", String.Empty).Replace("-", String.Empty).Replace("^", String.Empty))))
+                    'If Match.Groups(1).Value = "SimpleSuperscriptAlefNotAfter" Then Return ArabicData.MakeRegMultiEx(Array.ConvertAll(Arabic.SimpleSuperscriptAlefNotAfter, Function(Str As String) ArabicData.TransliterateFromBuckwalter(Str.Replace(".", String.Empty).Replace("""", String.Empty).Replace("@", String.Empty).Replace("[", String.Empty).Replace("]", String.Empty).Replace("-", String.Empty).Replace("^", String.Empty))))
+                    If Match.Groups(1).Value = "ArabicLongShortVowels" Then Return ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicLongVowels, Function(StrV As String) ArabicData.MakeUniRegEx(StrV(0) + "(?=" + ArabicData.MakeUniRegEx(StrV(1)) + ")")))
+                    If Match.Groups(1).Value = "ArabicTanweens" Then Return ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicTanweens, Function(Str As String) ArabicData.MakeUniRegEx(Str)))
+                    If Match.Groups(1).Value = "ArabicFathaDammaKasra" Then Return ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicFathaDammaKasra, Function(Str As String) ArabicData.MakeUniRegEx(Str)))
+                    If Match.Groups(1).Value = "ArabicStopLetters" Then Return ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicStopLetters, Function(Str As String) ArabicData.MakeUniRegEx(Str)))
+                    If Match.Groups(1).Value = "ArabicSpecialGutteral" Then Return ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicSpecialGutteral, Function(Str As String) ArabicData.MakeUniRegEx(Str)))
+                    If Match.Groups(1).Value = "ArabicSpecialLeadingGutteral" Then Return ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicSpecialLeadingGutteral, Function(Str As String) ArabicData.MakeUniRegEx(Str)))
+                    If Match.Groups(1).Value = "ArabicPunctuationSymbols" Then Return ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicPunctuationSymbols, Function(Str As String) ArabicData.MakeUniRegEx(Str)))
+                    If Match.Groups(1).Value = "ArabicLetters" Then Return ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicLetters, Function(Str As String) ArabicData.MakeUniRegEx(Str)))
+                    If Match.Groups(1).Value = "ArabicSunLettersNoLam" Then Return ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicSunLettersNoLam, Function(Str As String) ArabicData.MakeUniRegEx(Str)))
+                    If Match.Groups(1).Value = "ArabicSunLetters" Then Return ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicSunLetters, Function(Str As String) ArabicData.MakeUniRegEx(Str)))
+                    If Match.Groups(1).Value = "ArabicMoonLettersNoVowels" Then Return ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicMoonLettersNoVowels, Function(Str As String) ArabicData.MakeUniRegEx(Str)))
+                    If Match.Groups(1).Value = "ArabicMoonLetters" Then Return ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicMoonLetters, Function(Str As String) ArabicData.MakeUniRegEx(Str)))
+                    If Match.Groups(1).Value = "RecitationCombiningSymbols" Then Return ArabicData.MakeRegMultiEx(Array.ConvertAll(RecitationCombiningSymbols, Function(Str As String) ArabicData.MakeUniRegEx(Str)))
+                    If Match.Groups(1).Value = "RecitationConnectingFollowerSymbols" Then Return ArabicData.MakeRegMultiEx(Array.ConvertAll(RecitationConnectingFollowerSymbols, Function(Str As String) ArabicData.MakeUniRegEx(Str)))
+                    If Match.Groups(1).Value = "PunctuationSymbols" Then Return ArabicData.MakeRegMultiEx(Array.ConvertAll(PunctuationSymbols, Function(Str As String) ArabicData.MakeUniRegEx(Str)))
+                    If Match.Groups(1).Value = "RecitationLettersDiacritics" Then Return ArabicData.MakeRegMultiEx(Array.ConvertAll(RecitationLettersDiacritics, Function(Str As String) ArabicData.MakeUniRegEx(Str)))
+                    If Match.Groups(1).Value = "RecitationSpecialSymbolsNotStop" Then Return ArabicData.MakeRegMultiEx(Array.ConvertAll(RecitationSpecialSymbolsNotStop, Function(Str As String) ArabicData.MakeUniRegEx(Str)))
+                End If
+                If Match.Groups(1).Value.Length = 6 And Match.Groups(1).Value.StartsWith("0x") Then
+                    Return If(bAll, ArabicData.MakeUniRegEx(ChrW(Integer.Parse(Match.Groups(1).Value.Substring(2), System.Globalization.NumberStyles.HexNumber))), ChrW(Integer.Parse(Match.Groups(1).Value.Substring(2), System.Globalization.NumberStyles.HexNumber)))
+                End If
                 For Count = 0 To ArabicData.Data.ArabicLetters.Length - 1
-                    If Match.Groups(1).Value = ArabicData.Data.ArabicLetters(Count).UnicodeName Then Return ArabicData.MakeUniRegEx(ArabicData.Data.ArabicLetters(Count).Symbol)
+                    If Match.Groups(1).Value = ArabicData.Data.ArabicLetters(Count).UnicodeName Then Return If(bAll, ArabicData.MakeUniRegEx(ArabicData.Data.ArabicLetters(Count).Symbol), ArabicData.Data.ArabicLetters(Count).Symbol)
                 Next
-                Debug.Print(Match.Value)
+                '{0} ignore
                 Return Match.Value
             End Function)
     End Function
@@ -2356,7 +2369,7 @@ Public Class CachedData
             If _RulesOfRecitationRegEx Is Nothing Then
                 _RulesOfRecitationRegEx = CachedData.IslamData.MetaRules
                 For SubCount As Integer = 0 To _RulesOfRecitationRegEx.Length - 1
-                    _RulesOfRecitationRegEx(SubCount).Match = TranslateRegEx(_RulesOfRecitationRegEx(SubCount).Match)
+                    _RulesOfRecitationRegEx(SubCount).Match = TranslateRegEx(_RulesOfRecitationRegEx(SubCount).Match, True)
                 Next
             End If
             Return _RulesOfRecitationRegEx
