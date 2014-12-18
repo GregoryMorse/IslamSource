@@ -46,860 +46,909 @@ class Utility
     }
 }
 
+abstract class TranslitScheme
+{
+    const None = 0;
+    const Literal = 1;
+    const RuleBased = 2;
+};
+
 class Arabic
 {
-    Shared _ArabicXMLData As ArabicXMLData
-    Public Shared ReadOnly Property Data As ArabicXMLData
-        Get
-            If _ArabicXMLData Is Nothing Then
-                Dim fs As IO.FileStream = New IO.FileStream(Utility.GetFilePath(If(Utility.IsDesktopApp(), "HostPage\metadata\arabicdata.xml", "metadata\arabicdata.xml")), IO.FileMode.Open, IO.FileAccess.Read)
-                Dim xs As System.Xml.Serialization.XmlSerializer = New System.Xml.Serialization.XmlSerializer(GetType(ArabicXMLData))
-                _ArabicXMLData = CType(xs.Deserialize(fs), ArabicXMLData)
-                fs.Close()
-            End If
-            Return _ArabicXMLData
-        End Get
-    End Property
-	Public Shared _BuckwalterMap As Dictionary(Of Char, Integer)
-    Public Shared ReadOnly Property BuckwalterMap As Dictionary(Of Char, Integer)
-        Get
-            If _BuckwalterMap Is Nothing Then
-                _BuckwalterMap = New Dictionary(Of Char, Integer)
-                For Index = 0 To Data.ArabicLetters.Length - 1
-                    If Data.ArabicLetters(Index).ExtendedBuckwalterLetter <> ChrW(0) Then
-                        _BuckwalterMap.Add(Data.ArabicLetters(Index).ExtendedBuckwalterLetter, Index)
-                    End If
-                Next
-            End If
-            Return _BuckwalterMap
-        End Get
-    End Property
-    Public Shared Function TransliterateFromBuckwalter(ByVal Buckwalter As String) As String
-        Dim ArabicString As String = String.Empty
-        Dim Count As Integer
-        For Count = 0 To Buckwalter.Length - 1
-            If Buckwalter(Count) = "\" Then
-                Count += 1
-                If Buckwalter(Count) = "," Then
-                    ArabicString += ArabicData.ArabicComma
-                Else
-                    ArabicString += Buckwalter(Count)
-                End If
-            Else
-                If BuckwalterMap.ContainsKey(Buckwalter(Count)) Then
-                    ArabicString += Data.ArabicLetters(BuckwalterMap.Item(Buckwalter(Count))).Symbol
-                Else
-                    ArabicString += Buckwalter(Count)
-                End If
-            End If
-        Next
-        Return ArabicString
-    End Function
-    Public Shared _ArabicLetterMap As Dictionary(Of Char, Integer)
-    Public Shared ReadOnly Property ArabicLetterMap As Dictionary(Of Char, Integer)
-        Get
-            If _ArabicLetterMap Is Nothing Then
-                _ArabicLetterMap = New Dictionary(Of Char, Integer)
-                For Index = 0 To Data.ArabicLetters.Length - 1
-                    If Data.ArabicLetters(Index).Symbol <> ChrW(0) Then
-                        _ArabicLetterMap.Add(Data.ArabicLetters(Index).Symbol, Index)
-                    End If
-                Next
-            End If
-            Return _ArabicLetterMap
-        End Get
-    End Property
-    Public Shared Function FindLetterBySymbol(Symbol As Char) As Integer
-        Return If(ArabicLetterMap.ContainsKey(Symbol), ArabicLetterMap.Item(Symbol), -1)
-    End Function
-    Public Const Space As Char = ChrW(&H20)
-    Public Const ExclamationMark As Char = ChrW(&H21)
-    Public Const QuotationMark As Char = ChrW(&H22)
-    Public Const Comma As Char = ChrW(&H2C)
-    Public Const FullStop As Char = ChrW(&H2E)
-    Public Const HyphenMinus As Char = ChrW(&H2D)
-    Public Const Colon As Char = ChrW(&H3A)
-    Public Const LeftParenthesis As Char = ChrW(&H5B)
-    Public Const RightParenthesis As Char = ChrW(&H5D)
-    Public Const LeftSquareBracket As Char = ChrW(&H5B)
-    Public Const RightSquareBracket As Char = ChrW(&H5D)
-    Public Const LeftCurlyBracket As Char = ChrW(&H7B)
-    Public Const RightCurlyBracket As Char = ChrW(&H7D)
-    Public Const NoBreakSpace As Char = ChrW(&HA0)
-    Public Const LeftPointingDoubleAngleQuotationMark As Char = ChrW(&HAB)
-    Public Const RightPointingDoubleAngleQuotationMark As Char = ChrW(&HBB)
-    Public Const ArabicComma As Char = ChrW(&H60C)
-    Public Const ArabicLetterHamza As Char = ChrW(&H621)
-    Public Const ArabicLetterAlefWithMaddaAbove As Char = ChrW(&H622)
-    Public Const ArabicLetterAlefWithHamzaAbove As Char = ChrW(&H623)
-    Public Const ArabicLetterWawWithHamzaAbove As Char = ChrW(&H624)
-    Public Const ArabicLetterAlefWithHamzaBelow As Char = ChrW(&H625)
-    Public Const ArabicLetterYehWithHamzaAbove As Char = ChrW(&H626)
-    Public Const ArabicLetterAlef As Char = ChrW(&H627)
-    Public Const ArabicLetterBeh As Char = ChrW(&H628)
-    Public Const ArabicLetterTehMarbuta As Char = ChrW(&H629)
-    Public Const ArabicLetterTeh As Char = ChrW(&H62A)
-    Public Const ArabicLetterTheh As Char = ChrW(&H62B)
-    Public Const ArabicLetterJeem As Char = ChrW(&H62C)
-    Public Const ArabicLetterHah As Char = ChrW(&H62D)
-    Public Const ArabicLetterKhah As Char = ChrW(&H62E)
-    Public Const ArabicLetterDal As Char = ChrW(&H62F)
-    Public Const ArabicLetterThal As Char = ChrW(&H630)
-    Public Const ArabicLetterReh As Char = ChrW(&H631)
-    Public Const ArabicLetterZain As Char = ChrW(&H632)
-    Public Const ArabicLetterSeen As Char = ChrW(&H633)
-    Public Const ArabicLetterSheen As Char = ChrW(&H634)
-    Public Const ArabicLetterSad As Char = ChrW(&H635)
-    Public Const ArabicLetterDad As Char = ChrW(&H636)
-    Public Const ArabicLetterTah As Char = ChrW(&H637)
-    Public Const ArabicLetterZah As Char = ChrW(&H638)
-    Public Const ArabicLetterAin As Char = ChrW(&H639)
-    Public Const ArabicLetterGhain As Char = ChrW(&H63A)
-    Public Const ArabicTatweel As Char = ChrW(&H640)
-    Public Const ArabicLetterFeh As Char = ChrW(&H641)
-    Public Const ArabicLetterQaf As Char = ChrW(&H642)
-    Public Const ArabicLetterKaf As Char = ChrW(&H643)
-    Public Const ArabicLetterLam As Char = ChrW(&H644)
-    Public Const ArabicLetterMeem As Char = ChrW(&H645)
-    Public Const ArabicLetterNoon As Char = ChrW(&H646)
-    Public Const ArabicLetterHeh As Char = ChrW(&H647)
-    Public Const ArabicLetterWaw As Char = ChrW(&H648)
-    Public Const ArabicLetterAlefMaksura As Char = ChrW(&H649)
-    Public Const ArabicLetterYeh As Char = ChrW(&H64A)
+    static $_ArabicXMLData = null;
+    public static function Data()
+    {
+        if (Arabic::$_ArabicXMLData == null) {
+            Arabic::$_ArabicXMLData = simplexml_load_file(dirname(__FILE__) . "/HostPage/metadata/arabicdata.xml");
+        }
+        return Arabic::$_ArabicXMLData;
+    }
+	public static $_BuckwalterMap = null;
+    public static function BuckwalterMap()
+	{
+        if (Arabic::$_BuckwalterMap == null) {
+            Arabic::$_BuckwalterMap = array();
+            for ($index = 0; $index < count(Arabic::Data()->ArabicLetters); $index++) {
+                if (Arabic::Data()->ArabicLetters[$index]->ExtendedBuckwalterLetter != 0) {
+                    Arabic::$_BuckwalterMap[Arabic::Data()->ArabicLetters[$index]->ExtendedBuckwalterLetter] = $index;
+                }
+            }
+        }
+        return Arabic::$_BuckwalterMap;
+    }
+    public static function TransliterateFromBuckwalter($buckwalter)
+    {
+    	$arabicString = "";
+        for ($count = 0; $count < strlen($buckwalter); $count++) {
+            if ($buckwalter[$count] == "\\") {
+                $count += 1;
+                if ($buckwalter[$count] == ",") {
+                    $arabicString += ArabicData::ArabicComma;
+                } else {
+                    $arabicString += $buckwalter[$count];
+                }
+            } else {
+                if (array_key_exists($buckwalter[$count], Arabic::BuckwalterMap())) {
+                    $arabicString += Arabic::Data()->ArabicLetters(Arabic::BuckwalterMap()[$buckwalter[$count]])->Symbol;
+                } else {
+                    $arabicString += $buckwalter[$count];
+                }
+            }
+        }
+        return $arabicString;
+    }
+    public static $_ArabicLetterMap = null;
+    public static function ArabicLetterMap()
+    {
+        if (Arabic::$_ArabicLetterMap == null) {
+            Arabic::$_ArabicLetterMap = array();
+            for ($index = 0; $index < count(Arabic::Data()->ArabicLetters); $index++) {
+                if (Arabic::Data()->ArabicLetters[$index]->Symbol != 0) {
+                    Arabic::$_ArabicLetterMap[Arabic::Data()->ArabicLetters[$index]->Symbol] = $index;
+                }
+            }
+        }
+        return Arabic::$_ArabicLetterMap;
+	}
+    public static function FindLetterBySymbol($symbol)
+    {
+        return array_key_exists($symbol, Arabic::ArabicLetterMap()) ? Arabic::ArabicLetterMap()[$symbol] : -1;
+    }
+    public static function init() {
+        Arabic::$Space = mb_convert_encoding('&#x0020;', 'UTF-8', 'HTML-ENTITIES');
+        Arabic::$ExclamationMark = mb_convert_encoding('&#x0021;', 'UTF-8', 'HTML-ENTITIES');
+        Arabic::$QuotationMark = mb_convert_encoding('&#x0022;', 'UTF-8', 'HTML-ENTITIES');
+        Arabic::$Comma = mb_convert_encoding('&#x002C;', 'UTF-8', 'HTML-ENTITIES');
+        Arabic::$FullStop = mb_convert_encoding('&#x002E;', 'UTF-8', 'HTML-ENTITIES');
+        Arabic::$HyphenMinus = mb_convert_encoding('&#x002D;', 'UTF-8', 'HTML-ENTITIES');
+        Arabic::$Colon = mb_convert_encoding('&#x003A;', 'UTF-8', 'HTML-ENTITIES');
+        Arabic::$LeftParenthesis = mb_convert_encoding('&#x005B;', 'UTF-8', 'HTML-ENTITIES');
+        Arabic::$RightParenthesis = mb_convert_encoding('&#x005D;', 'UTF-8', 'HTML-ENTITIES');
+        Arabic::$LeftSquareBracket = mb_convert_encoding('&#x005B;', 'UTF-8', 'HTML-ENTITIES');
+        Arabic::$RightSquareBracket = mb_convert_encoding('&#x005D;', 'UTF-8', 'HTML-ENTITIES');
+        Arabic::$LeftCurlyBracket = mb_convert_encoding('&#x007B;', 'UTF-8', 'HTML-ENTITIES');
+        Arabic::$RightCurlyBracket = mb_convert_encoding('&#x007D;', 'UTF-8', 'HTML-ENTITIES');
+        Arabic::$NoBreakSpace = mb_convert_encoding('&#x00A0;', 'UTF-8', 'HTML-ENTITIES');
+        Arabic::$LeftPointingDoubleAngleQuotationMark = mb_convert_encoding('&#x00AB;', 'UTF-8', 'HTML-ENTITIES');
+        Arabic::$RightPointingDoubleAngleQuotationMark = mb_convert_encoding('&#x00BB;', 'UTF-8', 'HTML-ENTITIES');
+        Arabic::$ArabicComma = mb_convert_encoding('&#x060C;', 'UTF-8', 'HTML-ENTITIES');
+        Arabic::$ArabicLetterHamza = mb_convert_encoding('&#x0621;', 'UTF-8', 'HTML-ENTITIES');
+        Arabic::$ArabicLetterAlefWithMaddaAbove = mb_convert_encoding('&#x0622;', 'UTF-8', 'HTML-ENTITIES');
+        Arabic::$ArabicLetterAlefWithHamzaAbove = mb_convert_encoding('&#x0623;', 'UTF-8', 'HTML-ENTITIES');
+        Arabic::$ArabicLetterWawWithHamzaAbove = mb_convert_encoding('&#x0624;', 'UTF-8', 'HTML-ENTITIES');
+        Arabic::$ArabicLetterAlefWithHamzaBelow = mb_convert_encoding('&#x0625;', 'UTF-8', 'HTML-ENTITIES');
+        Arabic::$ArabicLetterYehWithHamzaAbove = mb_convert_encoding('&#x0626;', 'UTF-8', 'HTML-ENTITIES');
+        Arabic::$ArabicLetterAlef = mb_convert_encoding('&#x0627;', 'UTF-8', 'HTML-ENTITIES');
+        Arabic::$ArabicLetterBeh = mb_convert_encoding('&#x0628;', 'UTF-8', 'HTML-ENTITIES');
+        Arabic::$ArabicLetterTehMarbuta = mb_convert_encoding('&#x0629;', 'UTF-8', 'HTML-ENTITIES');
+        Arabic::$ArabicLetterTeh = mb_convert_encoding('&#x062A;', 'UTF-8', 'HTML-ENTITIES');
+        Arabic::$ArabicLetterTheh = mb_convert_encoding('&#x062B;', 'UTF-8', 'HTML-ENTITIES');
+        Arabic::$ArabicLetterJeem = mb_convert_encoding('&#x062C;', 'UTF-8', 'HTML-ENTITIES');
+        Arabic::$ArabicLetterHah = mb_convert_encoding('&#x062D;', 'UTF-8', 'HTML-ENTITIES');
+        Arabic::$ArabicLetterKhah = mb_convert_encoding('&#x062E;', 'UTF-8', 'HTML-ENTITIES');
+        Arabic::$ArabicLetterDal = mb_convert_encoding('&#x062F;', 'UTF-8', 'HTML-ENTITIES');
+        Arabic::$ArabicLetterThal = mb_convert_encoding('&#x0630;', 'UTF-8', 'HTML-ENTITIES');
+        Arabic::$ArabicLetterReh = mb_convert_encoding('&#x0631;', 'UTF-8', 'HTML-ENTITIES');
+        Arabic::$ArabicLetterZain = mb_convert_encoding('&#x0632;', 'UTF-8', 'HTML-ENTITIES');
+        Arabic::$ArabicLetterSeen = mb_convert_encoding('&#x0633;', 'UTF-8', 'HTML-ENTITIES');
+        Arabic::$ArabicLetterSheen = mb_convert_encoding('&#x0634;', 'UTF-8', 'HTML-ENTITIES');
+        Arabic::$ArabicLetterSad = mb_convert_encoding('&#x0635;', 'UTF-8', 'HTML-ENTITIES');
+        Arabic::$ArabicLetterDad = mb_convert_encoding('&#x0636;', 'UTF-8', 'HTML-ENTITIES');
+        Arabic::$ArabicLetterTah = mb_convert_encoding('&#x0637;', 'UTF-8', 'HTML-ENTITIES');
+        Arabic::$ArabicLetterZah = mb_convert_encoding('&#x0638;', 'UTF-8', 'HTML-ENTITIES');
+        Arabic::$ArabicLetterAin = mb_convert_encoding('&#x0639;', 'UTF-8', 'HTML-ENTITIES');
+        Arabic::$ArabicLetterGhain = mb_convert_encoding('&#x063A;', 'UTF-8', 'HTML-ENTITIES');
+        Arabic::$ArabicTatweel = mb_convert_encoding('&#x0640;', 'UTF-8', 'HTML-ENTITIES');
+        Arabic::$ArabicLetterFeh = mb_convert_encoding('&#x0641;', 'UTF-8', 'HTML-ENTITIES');
+        Arabic::$ArabicLetterQaf = mb_convert_encoding('&#x0642;', 'UTF-8', 'HTML-ENTITIES');
+        Arabic::$ArabicLetterKaf = mb_convert_encoding('&#x0643;', 'UTF-8', 'HTML-ENTITIES');
+        Arabic::$ArabicLetterLam = mb_convert_encoding('&#x0644;', 'UTF-8', 'HTML-ENTITIES');
+        Arabic::$ArabicLetterMeem = mb_convert_encoding('&#x0645;', 'UTF-8', 'HTML-ENTITIES');
+        Arabic::$ArabicLetterNoon = mb_convert_encoding('&#x0646;', 'UTF-8', 'HTML-ENTITIES');
+        Arabic::$ArabicLetterHeh = mb_convert_encoding('&#x0647;', 'UTF-8', 'HTML-ENTITIES');
+        Arabic::$ArabicLetterWaw = mb_convert_encoding('&#x0648;', 'UTF-8', 'HTML-ENTITIES');
+        Arabic::$ArabicLetterAlefMaksura = mb_convert_encoding('&#x0649;', 'UTF-8', 'HTML-ENTITIES');
+        Arabic::$ArabicLetterYeh = mb_convert_encoding('&#x064A;', 'UTF-8', 'HTML-ENTITIES');
 
-    Public Const ArabicFathatan As Char = ChrW(&H64B)
-    Public Const ArabicDammatan As Char = ChrW(&H64C)
-    Public Const ArabicKasratan As Char = ChrW(&H64D)
-    Public Const ArabicFatha As Char = ChrW(&H64E)
-    Public Const ArabicDamma As Char = ChrW(&H64F)
-    Public Const ArabicKasra As Char = ChrW(&H650)
-    Public Const ArabicShadda As Char = ChrW(&H651)
-    Public Const ArabicSukun As Char = ChrW(&H652)
-    Public Const ArabicMaddahAbove As Char = ChrW(&H653)
-    Public Const ArabicHamzaAbove As Char = ChrW(&H654)
-    Public Const ArabicHamzaBelow As Char = ChrW(&H655)
-    Public Const ArabicVowelSignDotBelow As Char = ChrW(&H65C)
-    Public Const Bullet As Char = ChrW(&H2022)
-    Public Const ArabicLetterSuperscriptAlef As Char = ChrW(&H670)
-    Public Const ArabicLetterAlefWasla As Char = ChrW(&H671)
-    Public Const ArabicSmallHighLigatureSadWithLamWithAlefMaksura As Char = ChrW(&H6D6)
-    Public Const ArabicSmallHighLigatureQafWithLamWithAlefMaksura As Char = ChrW(&H6D7)
-    Public Const ArabicSmallHighMeemInitialForm As Char = ChrW(&H6D8)
-    Public Const ArabicSmallHighLamAlef As Char = ChrW(&H6D9)
-    Public Const ArabicSmallHighJeem As Char = ChrW(&H6DA)
-    Public Const ArabicSmallHighThreeDots As Char = ChrW(&H6DB)
-    Public Const ArabicSmallHighSeen As Char = ChrW(&H6DC)
-    Public Const ArabicEndOfAyah As Char = ChrW(&H6DD)
-    Public Const ArabicStartOfRubElHizb As Char = ChrW(&H6DE)
-    Public Const ArabicSmallHighRoundedZero As Char = ChrW(&H6DF)
-    Public Const ArabicSmallHighUprightRectangularZero As Char = ChrW(&H6E0)
-    Public Const ArabicSmallHighMeemIsolatedForm As Char = ChrW(&H6E2)
-    Public Const ArabicSmallLowSeen As Char = ChrW(&H6E3)
-    Public Const ArabicSmallWaw As Char = ChrW(&H6E5)
-    Public Const ArabicSmallYeh As Char = ChrW(&H6E6)
-    Public Const ArabicSmallHighNoon As Char = ChrW(&H6E8)
-    Public Const ArabicPlaceOfSajdah As Char = ChrW(&H6E9)
-    Public Const ArabicEmptyCentreLowStop As Char = ChrW(&H6EA)
-    Public Const ArabicEmptyCentreHighStop As Char = ChrW(&H6EB)
-    Public Const ArabicRoundedHighStopWithFilledCentre As Char = ChrW(&H6EC)
-    Public Const ArabicSmallLowMeem As Char = ChrW(&H6ED)
-    Public Const ArabicSemicolon As Char = ChrW(&H61B)
-    Public Const ArabicLetterMark As Char = ChrW(&H61C)
-    Public Const ArabicQuestionMark As Char = ChrW(&H61F)
-    Public Const ArabicLetterPeh As Char = ChrW(&H67E)
-    Public Const ArabicLetterTcheh As Char = ChrW(&H686)
-    Public Const ArabicLetterVeh As Char = ChrW(&H6A4)
-    Public Const ArabicLetterGaf As Char = ChrW(&H6AF)
-    Public Const ArabicLetterNoonGhunna As Char = ChrW(&H6BA)
-    Public Const ZeroWidthSpace As Char = ChrW(&H200B)
-    Public Const ZeroWidthNonJoiner As Char = ChrW(&H200C)
-    Public Const ZeroWidthJoiner As Char = ChrW(&H200D)
-    Public Const LeftToRightMark As Char = ChrW(&H200E)
-    Public Const RightToLeftMark As Char = ChrW(&H200F)
-    Public Const PopDirectionalFormatting As Char = ChrW(&H202C)
-    Public Const LeftToRightOverride As Char = ChrW(&H202D)
-    Public Const RightToLeftOverride As Char = ChrW(&H202E)
-    Public Const NarrowNoBreakSpace As Char = ChrW(&H202F)
-    Public Const DottedCircle As Char = ChrW(&H25CC)
-    Public Const OrnateLeftParenthesis As Char = ChrW(&HFD3E)
-    Public Const OrnateRightParenthesis As Char = ChrW(&HFD3F)
-    Public Shared Function MakeUniRegEx(Input As String) As String
-        Return String.Join(String.Empty, Array.ConvertAll(Of Char, String)(Input.ToCharArray(), Function(Ch As Char) "\u" + AscW(Ch).ToString("X4")))
-    End Function
-    Public Shared Function MakeRegMultiEx(Input As String()) As String
-        Return String.Join("|", Input)
-    End Function
-    Public Enum TranslitScheme
-        None = 0
-        Literal = 1
-        RuleBased = 2
-    End Enum
+        Arabic::$ArabicFathatan = mb_convert_encoding('&#x064B;', 'UTF-8', 'HTML-ENTITIES');
+        Arabic::$ArabicDammatan = mb_convert_encoding('&#x064C;', 'UTF-8', 'HTML-ENTITIES');
+        Arabic::$ArabicKasratan = mb_convert_encoding('&#x064D;', 'UTF-8', 'HTML-ENTITIES');
+        Arabic::$ArabicFatha = mb_convert_encoding('&#x064E;', 'UTF-8', 'HTML-ENTITIES');
+        Arabic::$ArabicDamma = mb_convert_encoding('&#x064F;', 'UTF-8', 'HTML-ENTITIES');
+        Arabic::$ArabicKasra = mb_convert_encoding('&#x0650;', 'UTF-8', 'HTML-ENTITIES');
+        Arabic::$ArabicShadda = mb_convert_encoding('&#x0651;', 'UTF-8', 'HTML-ENTITIES');
+        Arabic::$ArabicSukun = mb_convert_encoding('&#x0652;', 'UTF-8', 'HTML-ENTITIES');
+        Arabic::$ArabicMaddahAbove = mb_convert_encoding('&#x0653;', 'UTF-8', 'HTML-ENTITIES');
+        Arabic::$ArabicHamzaAbove = mb_convert_encoding('&#x0654;', 'UTF-8', 'HTML-ENTITIES');
+        Arabic::$ArabicHamzaBelow = mb_convert_encoding('&#x0655;', 'UTF-8', 'HTML-ENTITIES');
+        Arabic::$ArabicVowelSignDotBelow = mb_convert_encoding('&#x065C;', 'UTF-8', 'HTML-ENTITIES');
+        Arabic::$Bullet = mb_convert_encoding('&#x2022;', 'UTF-8', 'HTML-ENTITIES');
+        Arabic::$ArabicLetterSuperscriptAlef = mb_convert_encoding('&#x0670;', 'UTF-8', 'HTML-ENTITIES');
+        Arabic::$ArabicLetterAlefWasla = mb_convert_encoding('&#x0671;', 'UTF-8', 'HTML-ENTITIES');
+        Arabic::$ArabicSmallHighLigatureSadWithLamWithAlefMaksura = mb_convert_encoding('&#x06D6;', 'UTF-8', 'HTML-ENTITIES');
+        Arabic::$ArabicSmallHighLigatureQafWithLamWithAlefMaksura = mb_convert_encoding('&#x06D7;', 'UTF-8', 'HTML-ENTITIES');
+        Arabic::$ArabicSmallHighMeemInitialForm = mb_convert_encoding('&#x06D8;', 'UTF-8', 'HTML-ENTITIES');
+        Arabic::$ArabicSmallHighLamAlef = mb_convert_encoding('&#x06D9;', 'UTF-8', 'HTML-ENTITIES');
+        Arabic::$ArabicSmallHighJeem = mb_convert_encoding('&#x06DA;', 'UTF-8', 'HTML-ENTITIES');
+        Arabic::$ArabicSmallHighThreeDots = mb_convert_encoding('&#x06DB;', 'UTF-8', 'HTML-ENTITIES');
+        Arabic::$ArabicSmallHighSeen = mb_convert_encoding('&#x06DC;', 'UTF-8', 'HTML-ENTITIES');
+        Arabic::$ArabicEndOfAyah = mb_convert_encoding('&#x06DD;', 'UTF-8', 'HTML-ENTITIES');
+        Arabic::$ArabicStartOfRubElHizb = mb_convert_encoding('&#x06DE;', 'UTF-8', 'HTML-ENTITIES');
+        Arabic::$ArabicSmallHighRoundedZero = mb_convert_encoding('&#x06DF;', 'UTF-8', 'HTML-ENTITIES');
+        Arabic::$ArabicSmallHighUprightRectangularZero = mb_convert_encoding('&#x06E0;', 'UTF-8', 'HTML-ENTITIES');
+        Arabic::$ArabicSmallHighMeemIsolatedForm = mb_convert_encoding('&#x06E2;', 'UTF-8', 'HTML-ENTITIES');
+        Arabic::$ArabicSmallLowSeen = mb_convert_encoding('&#x06E3;', 'UTF-8', 'HTML-ENTITIES');
+        Arabic::$ArabicSmallWaw = mb_convert_encoding('&#x06E5;', 'UTF-8', 'HTML-ENTITIES');
+        Arabic::$ArabicSmallYeh = mb_convert_encoding('&#x06E6;', 'UTF-8', 'HTML-ENTITIES');
+        Arabic::$ArabicSmallHighNoon = mb_convert_encoding('&#x06E8;', 'UTF-8', 'HTML-ENTITIES');
+        Arabic::$ArabicPlaceOfSajdah = mb_convert_encoding('&#x06E9;', 'UTF-8', 'HTML-ENTITIES');
+        Arabic::$ArabicEmptyCentreLowStop = mb_convert_encoding('&#x06EA;', 'UTF-8', 'HTML-ENTITIES');
+        Arabic::$ArabicEmptyCentreHighStop = mb_convert_encoding('&#x06EB;', 'UTF-8', 'HTML-ENTITIES');
+        Arabic::$ArabicRoundedHighStopWithFilledCentre = mb_convert_encoding('&#x06EC;', 'UTF-8', 'HTML-ENTITIES');
+        Arabic::$ArabicSmallLowMeem = mb_convert_encoding('&#x06ED;', 'UTF-8', 'HTML-ENTITIES');
+        Arabic::$ArabicSemicolon = mb_convert_encoding('&#x061B;', 'UTF-8', 'HTML-ENTITIES');
+        Arabic::$ArabicLetterMark = mb_convert_encoding('&#x061C;', 'UTF-8', 'HTML-ENTITIES');
+        Arabic::$ArabicQuestionMark = mb_convert_encoding('&#x061F;', 'UTF-8', 'HTML-ENTITIES');
+        Arabic::$ArabicLetterPeh = mb_convert_encoding('&#x067E;', 'UTF-8', 'HTML-ENTITIES');
+        Arabic::$ArabicLetterTcheh = mb_convert_encoding('&#x0686;', 'UTF-8', 'HTML-ENTITIES');
+        Arabic::$ArabicLetterVeh = mb_convert_encoding('&#x06A4;', 'UTF-8', 'HTML-ENTITIES');
+        Arabic::$ArabicLetterGaf = mb_convert_encoding('&#x06AF;', 'UTF-8', 'HTML-ENTITIES');
+        Arabic::$ArabicLetterNoonGhunna = mb_convert_encoding('&#x06BA;', 'UTF-8', 'HTML-ENTITIES');
+        Arabic::$ZeroWidthSpace = mb_convert_encoding('&#x200B;', 'UTF-8', 'HTML-ENTITIES');
+        Arabic::$ZeroWidthNonJoiner = mb_convert_encoding('&#x200C;', 'UTF-8', 'HTML-ENTITIES');
+        Arabic::$ZeroWidthJoiner = mb_convert_encoding('&#x200D;', 'UTF-8', 'HTML-ENTITIES');
+        Arabic::$LeftToRightMark = mb_convert_encoding('&#x200E;', 'UTF-8', 'HTML-ENTITIES');
+        Arabic::$RightToLeftMark = mb_convert_encoding('&#x200F;', 'UTF-8', 'HTML-ENTITIES');
+        Arabic::$PopDirectionalFormatting = mb_convert_encoding('&#x202C;', 'UTF-8', 'HTML-ENTITIES');
+        Arabic::$LeftToRightOverride = mb_convert_encoding('&#x202D;', 'UTF-8', 'HTML-ENTITIES');
+        Arabic::$RightToLeftOverride = mb_convert_encoding('&#x202E;', 'UTF-8', 'HTML-ENTITIES');
+        Arabic::$NarrowNoBreakSpace = mb_convert_encoding('&#x202F;', 'UTF-8', 'HTML-ENTITIES');
+        Arabic::$DottedCircle = mb_convert_encoding('&#x25CC;', 'UTF-8', 'HTML-ENTITIES');
+        Arabic::$OrnateLeftParenthesis = mb_convert_encoding('&#xFD3E;', 'UTF-8', 'HTML-ENTITIES');
+        Arabic::$OrnateRightParenthesis = mb_convert_encoding('&#xFD3F;', 'UTF-8', 'HTML-ENTITIES');
+    }
+    public static $Space;
+    public static $ExclamationMark;
+    public static $QuotationMark;
+    public static $Comma;
+    public static $FullStop;
+    public static $HyphenMinus;
+    public static $Colon;
+    public static $LeftParenthesis;
+    public static $RightParenthesis;
+    public static $LeftSquareBracket;
+    public static $RightSquareBracket;
+    public static $LeftCurlyBracket;
+    public static $RightCurlyBracket;
+    public static $NoBreakSpace;
+    public static $LeftPointingDoubleAngleQuotationMark;
+    public static $RightPointingDoubleAngleQuotationMark;
+    public static $ArabicComma;
+    public static $ArabicLetterHamza;
+    public static $ArabicLetterAlefWithMaddaAbove;
+    public static $ArabicLetterAlefWithHamzaAbove;
+    public static $ArabicLetterWawWithHamzaAbove;
+    public static $ArabicLetterAlefWithHamzaBelow;
+    public static $ArabicLetterYehWithHamzaAbove;
+    public static $ArabicLetterAlef;
+    public static $ArabicLetterBeh;
+    public static $ArabicLetterTehMarbuta;
+    public static $ArabicLetterTeh;
+    public static $ArabicLetterTheh;
+    public static $ArabicLetterJeem;
+    public static $ArabicLetterHah;
+    public static $ArabicLetterKhah;
+    public static $ArabicLetterDal;
+    public static $ArabicLetterThal;
+    public static $ArabicLetterReh;
+    public static $ArabicLetterZain;
+    public static $ArabicLetterSeen;
+    public static $ArabicLetterSheen;
+    public static $ArabicLetterSad;
+    public static $ArabicLetterDad;
+    public static $ArabicLetterTah;
+    public static $ArabicLetterZah;
+    public static $ArabicLetterAin;
+    public static $ArabicLetterGhain;
+    public static $ArabicTatweel;
+    public static $ArabicLetterFeh;
+    public static $ArabicLetterQaf;
+    public static $ArabicLetterKaf;
+    public static $ArabicLetterLam;
+    public static $ArabicLetterMeem;
+    public static $ArabicLetterNoon;
+    public static $ArabicLetterHeh;
+    public static $ArabicLetterWaw;
+    public static $ArabicLetterAlefMaksura;
+    public static $ArabicLetterYeh;
+
+    public static $ArabicFathatan;
+    public static $ArabicDammatan;
+    public static $ArabicKasratan;
+    public static $ArabicFatha;
+    public static $ArabicDamma;
+    public static $ArabicKasra;
+    public static $ArabicShadda;
+    public static $ArabicSukun;
+    public static $ArabicMaddahAbove;
+    public static $ArabicHamzaAbove;
+    public static $ArabicHamzaBelow;
+    public static $ArabicVowelSignDotBelow;
+    public static $Bullet;
+    public static $ArabicLetterSuperscriptAlef;
+    public static $ArabicLetterAlefWasla;
+    public static $ArabicSmallHighLigatureSadWithLamWithAlefMaksura;
+    public static $ArabicSmallHighLigatureQafWithLamWithAlefMaksura;
+    public static $ArabicSmallHighMeemInitialForm;
+    public static $ArabicSmallHighLamAlef;
+    public static $ArabicSmallHighJeem;
+    public static $ArabicSmallHighThreeDots;
+    public static $ArabicSmallHighSeen;
+    public static $ArabicEndOfAyah;
+    public static $ArabicStartOfRubElHizb;
+    public static $ArabicSmallHighRoundedZero;
+    public static $ArabicSmallHighUprightRectangularZero;
+    public static $ArabicSmallHighMeemIsolatedForm;
+    public static $ArabicSmallLowSeen;
+    public static $ArabicSmallWaw;
+    public static $ArabicSmallYeh;
+    public static $ArabicSmallHighNoon;
+    public static $ArabicPlaceOfSajdah;
+    public static $ArabicEmptyCentreLowStop;
+    public static $ArabicEmptyCentreHighStop;
+    public static $ArabicRoundedHighStopWithFilledCentre;
+    public static $ArabicSmallLowMeem;
+    public static $ArabicSemicolon;
+    public static $ArabicLetterMark;
+    public static $ArabicQuestionMark;
+    public static $ArabicLetterPeh;
+    public static $ArabicLetterTcheh;
+    public static $ArabicLetterVeh;
+    public static $ArabicLetterGaf;
+    public static $ArabicLetterNoonGhunna;
+    public static $ZeroWidthSpace;
+    public static $ZeroWidthNonJoiner;
+    public static $ZeroWidthJoiner;
+    public static $LeftToRightMark;
+    public static $RightToLeftMark;
+    public static $PopDirectionalFormatting;
+    public static $LeftToRightOverride;
+    public static $RightToLeftOverride;
+    public static $NarrowNoBreakSpace;
+    public static $DottedCircle;
+    public static $OrnateLeftParenthesis;
+    public static $OrnateRightParenthesis;
+    public static function MakeUniRegEx($input)
+    {
+        return implode(array_map(explode($input), function($ch) { return "\\u" . substr("0000" . bin2hex($ch), -4); }));
+    }
+    public static function MakeRegMultiEx($input)
+	{
+        return implode("|", $input);
+    }
 };
 
 class CachedData
 {
 	public static $_IslamData = null;
 	public static function IslamData() { if (CachedData::$_IslamData === null) CachedData::$_IslamData = simplexml_load_file(dirname(__FILE__) . "/metadata/islaminfo.xml"); return CachedData::$_IslamData; }
-    Shared _AlDuri As IslamData.RuleTranslationCategory.RuleTranslation()
-    Shared _Warsh As IslamData.RuleTranslationCategory.RuleTranslation()
-    Shared _WarshScript As IslamData.RuleTranslationCategory.RuleTranslation()
-    Shared _UthmaniMinimalScript As IslamData.RuleTranslationCategory.RuleTranslation()
-    Shared _SimpleEnhancedScript As IslamData.RuleTranslationCategory.RuleTranslation()
-    Shared _SimpleScript As IslamData.RuleTranslationCategory.RuleTranslation()
-    Shared _SimpleCleanScript As IslamData.RuleTranslationCategory.RuleTranslation()
-    Shared _SimpleMinimalScript As IslamData.RuleTranslationCategory.RuleTranslation()
-    Shared _RomanizationRules As IslamData.RuleTranslationCategory.RuleTranslation()
-    Shared _ColoringSpelledOutRules As IslamData.RuleTranslationCategory.RuleTranslation()
-    Shared _ErrorCheck As IslamData.RuleTranslationCategory.RuleTranslation()
-    Shared _RulesOfRecitationRegEx As IslamData.RuleMetadataTranslation()
-    Public Shared Function GetNum(Name As String) As String()
-        Dim Count As Integer
-        For Count = 0 To CachedData.IslamData.ArabicNumbers.Length - 1
-            If CachedData.IslamData.ArabicNumbers(Count).Name = Name Then
-                Return CachedData.IslamData.ArabicNumbers(Count).Text
-            End If
-        Next
-        Return {}
-    End Function
-    Public Shared Function GetPattern(Name As String) As String
-        Dim Count As Integer
-        For Count = 0 To CachedData.IslamData.ArabicPatterns.Length - 1
-            If CachedData.IslamData.ArabicPatterns(Count).Name = Name Then
-                Return TranslateRegEx(CachedData.IslamData.ArabicPatterns(Count).Match, True)
-            End If
-        Next
-        Return String.Empty
-    End Function
-    Public Shared Function GetGroup(Name As String) As String()
-        Dim Count As Integer
-        For Count = 0 To CachedData.IslamData.ArabicGroups.Length - 1
-            If CachedData.IslamData.ArabicGroups(Count).Name = Name Then
-                Return Array.ConvertAll(CachedData.IslamData.ArabicGroups(Count).Text, Function(Str As String) TranslateRegEx(Str, Name = "ArabicSpecialLetters"))
-            End If
-        Next
-        Return {}
-    End Function
-    Public Shared Function GetRuleSet(Name As String) As IslamData.RuleTranslationCategory.RuleTranslation()
-        Dim Count As Integer
-        For Count = 0 To CachedData.IslamData.RuleSets.Length - 1
-            If CachedData.IslamData.RuleSets(Count).Name = Name Then
-                Dim RuleSet As IslamData.RuleTranslationCategory.RuleTranslation() = CachedData.IslamData.RuleSets(Count).Rules
-                For SubCount As Integer = 0 To RuleSet.Length - 1
-                    RuleSet(SubCount).Match = TranslateRegEx(RuleSet(SubCount).Match, True)
-                    RuleSet(SubCount).Evaluator = TranslateRegEx(RuleSet(SubCount).Evaluator, False)
-                Next
-                Return RuleSet
-            End If
-        Next
-        Return Nothing
-    End Function
-    Shared _ArabicUniqueLetters As String()
-    Shared _ArabicNumbers As String()
-    Shared _ArabicWaslKasraExceptions As String()
-    Shared _ArabicBaseNumbers As String()
-    Shared _ArabicBaseExtraNumbers As String()
-    Shared _ArabicBaseTenNumbers As String()
-    Shared _ArabicBaseHundredNumbers As String()
-    Shared _ArabicBaseThousandNumbers As String()
-    Shared _ArabicBaseMillionNumbers As String()
-    Shared _ArabicBaseMilliardNumbers As String()
-    Shared _ArabicBaseBillionNumbers As String()
-    Shared _ArabicBaseTrillionNumbers As String()
-    Shared _ArabicFractionNumbers As String()
-    Shared _ArabicOrdinalNumbers As String()
-    Shared _ArabicOrdinalExtraNumbers As String()
-    Public Shared ReadOnly Property ArabicUniqueLetters As String()
-        Get
-            If _ArabicUniqueLetters Is Nothing Then
-                _ArabicUniqueLetters = GetNum("ArabicUniqueLetters")
-            End If
-            Return _ArabicUniqueLetters
-        End Get
-    End Property
-    Public Shared ReadOnly Property ArabicNumbers As String()
-        Get
-            If _ArabicNumbers Is Nothing Then
-                _ArabicNumbers = GetNum("ArabicNumbers")
-            End If
-            Return _ArabicNumbers
-        End Get
-    End Property
-    Public Shared ReadOnly Property ArabicWaslKasraExceptions As String()
-        Get
-            If _ArabicWaslKasraExceptions Is Nothing Then
-                _ArabicWaslKasraExceptions = GetNum("ArabicWaslKasraExceptions")
-            End If
-            Return _ArabicWaslKasraExceptions
-        End Get
-    End Property
-    Public Shared ReadOnly Property ArabicBaseNumbers As String()
-        Get
-            If _ArabicBaseNumbers Is Nothing Then
-                _ArabicBaseNumbers = GetNum("base")
-            End If
-            Return _ArabicBaseNumbers
-        End Get
-    End Property
-    Public Shared ReadOnly Property ArabicBaseExtraNumbers As String()
-        Get
-            If _ArabicBaseExtraNumbers Is Nothing Then
-                _ArabicBaseExtraNumbers = GetNum("baseextras")
-            End If
-            Return _ArabicBaseExtraNumbers
-        End Get
-    End Property
-    Public Shared ReadOnly Property ArabicBaseTenNumbers As String()
-        Get
-            If _ArabicBaseTenNumbers Is Nothing Then
-                _ArabicBaseTenNumbers = GetNum("baseten")
-            End If
-            Return _ArabicBaseTenNumbers
-        End Get
-    End Property
-    Public Shared ReadOnly Property ArabicBaseHundredNumbers As String()
-        Get
-            If _ArabicBaseHundredNumbers Is Nothing Then
-                _ArabicBaseHundredNumbers = GetNum("basehundred")
-            End If
-            Return _ArabicBaseHundredNumbers
-        End Get
-    End Property
-    Public Shared ReadOnly Property ArabicBaseThousandNumbers As String()
-        Get
-            If _ArabicBaseThousandNumbers Is Nothing Then
-                _ArabicBaseThousandNumbers = GetNum("thousands")
-            End If
-            Return _ArabicBaseThousandNumbers
-        End Get
-    End Property
-    Public Shared ReadOnly Property ArabicBaseMillionNumbers As String()
-        Get
-            If _ArabicBaseMillionNumbers Is Nothing Then
-                _ArabicBaseMillionNumbers = GetNum("millions")
-            End If
-            Return _ArabicBaseMillionNumbers
-        End Get
-    End Property
-    Public Shared ReadOnly Property ArabicBaseMilliardNumbers As String()
-        Get
-            If _ArabicBaseMilliardNumbers Is Nothing Then
-                _ArabicBaseMilliardNumbers = GetNum("milliard")
-            End If
-            Return _ArabicBaseMilliardNumbers
-        End Get
-    End Property
-    Public Shared ReadOnly Property ArabicBaseBillionNumbers As String()
-        Get
-            If _ArabicBaseBillionNumbers Is Nothing Then
-                _ArabicBaseBillionNumbers = GetNum("billions")
-            End If
-            Return _ArabicBaseBillionNumbers
-        End Get
-    End Property
-    Public Shared ReadOnly Property ArabicBaseTrillionNumbers As String()
-        Get
-            If _ArabicBaseTrillionNumbers Is Nothing Then
-                _ArabicBaseTrillionNumbers = GetNum("trillions")
-            End If
-            Return _ArabicBaseTrillionNumbers
-        End Get
-    End Property
-    Public Shared ReadOnly Property ArabicFractionNumbers As String()
-        Get
-            If _ArabicFractionNumbers Is Nothing Then
-                _ArabicFractionNumbers = GetNum("fractions")
-            End If
-            Return _ArabicFractionNumbers
-        End Get
-    End Property
-    Public Shared ReadOnly Property ArabicOrdinalNumbers As String()
-        Get
-            If _ArabicOrdinalNumbers Is Nothing Then
-                _ArabicOrdinalNumbers = GetNum("ordinals")
-            End If
-            Return _ArabicOrdinalNumbers
-        End Get
-    End Property
-    Public Shared ReadOnly Property ArabicOrdinalExtraNumbers As String()
-        Get
-            If _ArabicOrdinalExtraNumbers Is Nothing Then
-                _ArabicOrdinalExtraNumbers = GetNum("ordinalextras")
-            End If
-            Return _ArabicOrdinalExtraNumbers
-        End Get
-    End Property
-    Shared _CertainStopPattern As String
-    Shared _OptionalStopPattern As String
-    Shared _OptionalStopPatternNotEndOfAyah As String
-    Shared _CertainNotStopPattern As String
-    Shared _OptionalNotStopPattern As String
-    Shared _TehMarbutaStopRule As String
-    Shared _TehMarbutaContinueRule As String
-    Public Shared ReadOnly Property CertainStopPattern As String
-        Get
-            If _CertainStopPattern Is Nothing Then
-                _CertainStopPattern = GetPattern("CertainStopPattern")
-            End If
-            Return _CertainStopPattern
-        End Get
-    End Property
-    Public Shared ReadOnly Property OptionalStopPattern As String
-        Get
-            If _OptionalStopPattern Is Nothing Then
-                _OptionalStopPattern = GetPattern("OptionalStopPattern")
-            End If
-            Return _OptionalStopPattern
-        End Get
-    End Property
-    Public Shared ReadOnly Property OptionalStopPatternNotEndOfAyah As String
-        Get
-            If _OptionalStopPatternNotEndOfAyah Is Nothing Then
-                _OptionalStopPatternNotEndOfAyah = GetPattern("OptionalStopPatternNotEndOfAyah")
-            End If
-            Return _OptionalStopPatternNotEndOfAyah
-        End Get
-    End Property
-    Public Shared ReadOnly Property CertainNotStopPattern As String
-        Get
-            If _CertainNotStopPattern Is Nothing Then
-                _CertainNotStopPattern = GetPattern("CertainNotStopPattern")
-            End If
-            Return _CertainNotStopPattern
-        End Get
-    End Property
-    Public Shared ReadOnly Property OptionalNotStopPattern As String
-        Get
-            If _OptionalNotStopPattern Is Nothing Then
-                _OptionalNotStopPattern = GetPattern("OptionalNotStopPattern")
-            End If
-            Return _OptionalNotStopPattern
-        End Get
-    End Property
-    Public Shared ReadOnly Property TehMarbutaStopRule As String
-        Get
-            If _TehMarbutaStopRule Is Nothing Then
-                _TehMarbutaStopRule = GetPattern("TehMarbutaStopRule")
-            End If
-            Return _TehMarbutaStopRule
-        End Get
-    End Property
-    Public Shared ReadOnly Property TehMarbutaContinueRule As String
-        Get
-            If _TehMarbutaContinueRule Is Nothing Then
-                _TehMarbutaContinueRule = GetPattern("TehMarbutaContinueRule")
-            End If
-            Return _TehMarbutaContinueRule
-        End Get
-    End Property
-    Shared _ArabicLongVowels As String()
-    Shared _ArabicTanweens As String()
-    Shared _ArabicFathaDammaKasra As String()
-    Shared _ArabicStopLetters As String()
-    Shared _ArabicSpecialGutteral As String()
-    Shared _ArabicSpecialLeadingGutteral As String()
-    Shared _ArabicPunctuationSymbols As String()
-    Shared _ArabicLetters As String()
-    Shared _ArabicSunLettersNoLam As String()
-    Shared _ArabicSunLetters As String()
-    Shared _ArabicMoonLettersNoVowels As String()
-    Shared _ArabicMoonLetters As String()
-    Shared _RecitationCombiningSymbols As String()
-    Shared _RecitationConnectingFollowerSymbols As String()
-    Shared _RecitationSymbols As String()
-    Shared _ArabicLettersInOrder As String()
-    Shared _ArabicSpecialLetters As String()
-    Shared _ArabicHamzas As String()
-    Shared _ArabicVowels As String()
-    Shared _ArabicTajweed As String()
-    Shared _ArabicPunctuation As String()
-    Shared _NonArabicLetters As String()
-    Shared _WhitespaceSymbols As String()
-    Shared _PunctuationSymbols As String()
-    Shared _RecitationDiacritics As String()
-    Shared _RecitationLettersDiacritics As String()
-    Shared _RecitationSpecialSymbols As String()
-    Shared _ArabicLeadingGutterals As String()
-    Shared _RecitationLetters As String()
-    Shared _ArabicTrailingGutterals As String()
-    Shared _RecitationSpecialSymbolsNotStop As String()
-    Public Shared ReadOnly Property ArabicLongVowels As String()
-        Get
-            If _ArabicLongVowels Is Nothing Then
-                _ArabicLongVowels = GetGroup("ArabicLongVowels")
-            End If
-            Return _ArabicLongVowels
-        End Get
-    End Property
-    Public Shared ReadOnly Property ArabicTanweens As String()
-        Get
-            If _ArabicTanweens Is Nothing Then
-                _ArabicTanweens = GetGroup("ArabicTanweens")
-            End If
-            Return _ArabicTanweens
-        End Get
-    End Property
-    Public Shared ReadOnly Property ArabicFathaDammaKasra As String()
-        Get
-            If _ArabicFathaDammaKasra Is Nothing Then
-                _ArabicFathaDammaKasra = GetGroup("ArabicFathaDammaKasra")
-            End If
-            Return _ArabicFathaDammaKasra
-        End Get
-    End Property
-    Public Shared ReadOnly Property ArabicStopLetters As String()
-        Get
-            If _ArabicStopLetters Is Nothing Then
-                _ArabicStopLetters = GetGroup("ArabicStopLetters")
-            End If
-            Return _ArabicStopLetters
-        End Get
-    End Property
-    Public Shared ReadOnly Property ArabicSpecialGutteral As String()
-        Get
-            If _ArabicSpecialGutteral Is Nothing Then
-                _ArabicSpecialGutteral = GetGroup("ArabicSpecialGutteral")
-            End If
-            Return _ArabicSpecialGutteral
-        End Get
-    End Property
-    Public Shared ReadOnly Property ArabicSpecialLeadingGutteral As String()
-        Get
-            If _ArabicSpecialLeadingGutteral Is Nothing Then
-                _ArabicSpecialLeadingGutteral = GetGroup("ArabicSpecialLeadingGutteral")
-            End If
-            Return _ArabicSpecialLeadingGutteral
-        End Get
-    End Property
-    Public Shared ReadOnly Property ArabicPunctuationSymbols As String()
-        Get
-            If _ArabicPunctuationSymbols Is Nothing Then
-                _ArabicPunctuationSymbols = GetGroup("ArabicPunctuationSymbols")
-            End If
-            Return _ArabicPunctuationSymbols
-        End Get
-    End Property
-    Public Shared ReadOnly Property ArabicLetters As String()
-        Get
-            If _ArabicLetters Is Nothing Then
-                _ArabicLetters = GetGroup("ArabicLetters")
-            End If
-            Return _ArabicLetters
-        End Get
-    End Property
-    Public Shared ReadOnly Property ArabicSunLettersNoLam As String()
-        Get
-            If _ArabicSunLettersNoLam Is Nothing Then
-                _ArabicSunLettersNoLam = GetGroup("ArabicSunLettersNoLam")
-            End If
-            Return _ArabicSunLettersNoLam
-        End Get
-    End Property
-    Public Shared ReadOnly Property ArabicSunLetters As String()
-        Get
-            If _ArabicSunLetters Is Nothing Then
-                _ArabicSunLetters = GetGroup("ArabicSunLetters")
-            End If
-            Return _ArabicSunLetters
-        End Get
-    End Property
-    Public Shared ReadOnly Property ArabicMoonLettersNoVowels As String()
-        Get
-            If _ArabicMoonLettersNoVowels Is Nothing Then
-                _ArabicMoonLettersNoVowels = GetGroup("ArabicMoonLettersNoVowels")
-            End If
-            Return _ArabicMoonLettersNoVowels
-        End Get
-    End Property
-    Public Shared ReadOnly Property ArabicMoonLetters As String()
-        Get
-            If _ArabicMoonLetters Is Nothing Then
-                _ArabicMoonLetters = GetGroup("ArabicMoonLetters")
-            End If
-            Return _ArabicMoonLetters
-        End Get
-    End Property
-    Public Shared ReadOnly Property RecitationCombiningSymbols As String()
-        Get
-            If _RecitationCombiningSymbols Is Nothing Then
-                _RecitationCombiningSymbols = GetGroup("RecitationCombiningSymbols")
-            End If
-            Return _RecitationCombiningSymbols
-        End Get
-    End Property
-    Public Shared ReadOnly Property RecitationConnectingFollowerSymbols As String()
-        Get
-            If _RecitationConnectingFollowerSymbols Is Nothing Then
-                _RecitationConnectingFollowerSymbols = GetGroup("RecitationConnectingFollowerSymbols")
-            End If
-            Return _RecitationConnectingFollowerSymbols
-        End Get
-    End Property
-    Public Shared ReadOnly Property RecitationSymbols As String()
-        Get
-            If _RecitationSymbols Is Nothing Then
-                _RecitationSymbols = GetGroup("RecitationSymbols")
-            End If
-            Return _RecitationSymbols
-        End Get
-    End Property
-    Public Shared ReadOnly Property ArabicLettersInOrder As String()
-        Get
-            If _ArabicLettersInOrder Is Nothing Then
-                _ArabicLettersInOrder = GetGroup("ArabicLettersInOrder")
-            End If
-            Return _ArabicLettersInOrder
-        End Get
-    End Property
-    Public Shared ReadOnly Property ArabicSpecialLetters As String()
-        Get
-            If _ArabicSpecialLetters Is Nothing Then
-                _ArabicSpecialLetters = GetGroup("ArabicSpecialLetters")
-            End If
-            Return _ArabicSpecialLetters
-        End Get
-    End Property
-    Public Shared ReadOnly Property ArabicHamzas As String()
-        Get
-            If _ArabicHamzas Is Nothing Then
-                _ArabicHamzas = GetGroup("ArabicHamzas")
-            End If
-            Return _ArabicHamzas
-        End Get
-    End Property
-    Public Shared ReadOnly Property ArabicVowels As String()
-        Get
-            If _ArabicVowels Is Nothing Then
-                _ArabicVowels = GetGroup("ArabicVowels")
-            End If
-            Return _ArabicVowels
-        End Get
-    End Property
-    Public Shared ReadOnly Property ArabicTajweed As String()
-        Get
-            If _ArabicTajweed Is Nothing Then
-                _ArabicTajweed = GetGroup("ArabicTajweed")
-            End If
-            Return _ArabicTajweed
-        End Get
-    End Property
-    Public Shared ReadOnly Property ArabicPunctuation As String()
-        Get
-            If _ArabicPunctuation Is Nothing Then
-                _ArabicPunctuation = GetGroup("ArabicPunctuation")
-            End If
-            Return _ArabicPunctuation
-        End Get
-    End Property
-    Public Shared ReadOnly Property NonArabicLetters As String()
-        Get
-            If _NonArabicLetters Is Nothing Then
-                _NonArabicLetters = GetGroup("NonArabicLetters")
-            End If
-            Return _NonArabicLetters
-        End Get
-    End Property
-    Public Shared ReadOnly Property WhitespaceSymbols As String()
-        Get
-            If _WhitespaceSymbols Is Nothing Then
-                _WhitespaceSymbols = GetGroup("WhitespaceSymbols")
-            End If
-            Return _WhitespaceSymbols
-        End Get
-    End Property
-    Public Shared ReadOnly Property PunctuationSymbols As String()
-        Get
-            If _PunctuationSymbols Is Nothing Then
-                _PunctuationSymbols = GetGroup("PunctuationSymbols")
-            End If
-            Return _PunctuationSymbols
-        End Get
-    End Property
-    Public Shared ReadOnly Property RecitationDiacritics As String()
-        Get
-            If _RecitationDiacritics Is Nothing Then
-                _RecitationDiacritics = GetGroup("RecitationDiacritics")
-            End If
-            Return _RecitationDiacritics
-        End Get
-    End Property
-    Public Shared ReadOnly Property RecitationLettersDiacritics As String()
-        Get
-            If _RecitationLettersDiacritics Is Nothing Then
-                _RecitationLettersDiacritics = GetGroup("RecitationLettersDiacritics")
-            End If
-            Return _RecitationLettersDiacritics
-        End Get
-    End Property
-    Public Shared ReadOnly Property RecitationSpecialSymbols As String()
-        Get
-            If _RecitationSpecialSymbols Is Nothing Then
-                _RecitationSpecialSymbols = GetGroup("RecitationSpecialSymbols")
-            End If
-            Return _RecitationSpecialSymbols
-        End Get
-    End Property
-    Public Shared ReadOnly Property ArabicLeadingGutterals As String()
-        Get
-            If _ArabicLeadingGutterals Is Nothing Then
-                _ArabicLeadingGutterals = GetGroup("ArabicLeadingGutterals")
-            End If
-            Return _ArabicLeadingGutterals
-        End Get
-    End Property
-    Public Shared ReadOnly Property RecitationLetters As String()
-        Get
-            If _RecitationLetters Is Nothing Then
-                _RecitationLetters = GetGroup("RecitationLetters")
-            End If
-            Return _RecitationLetters
-        End Get
-    End Property
-    Public Shared ReadOnly Property ArabicTrailingGutterals As String()
-        Get
-            If _ArabicTrailingGutterals Is Nothing Then
-                _ArabicTrailingGutterals = GetGroup("ArabicTrailingGutterals")
-            End If
-            Return _ArabicTrailingGutterals
-        End Get
-    End Property
-    Public Shared ReadOnly Property RecitationSpecialSymbolsNotStop As String()
-        Get
-            If _RecitationSpecialSymbolsNotStop Is Nothing Then
-                _RecitationSpecialSymbolsNotStop = GetGroup("RecitationSpecialSymbolsNotStop")
-            End If
-            Return _RecitationSpecialSymbolsNotStop
-        End Get
-    End Property
-    Public Shared Function TranslateRegEx(Value As String, bAll As Boolean) As String
-        Return System.Text.RegularExpressions.Regex.Replace(Value, "\{(.*?)\}",
-            Function(Match As System.Text.RegularExpressions.Match)
-                If bAll Then
-                    If Match.Groups(1).Value = "CertainStopPattern" Then Return CertainStopPattern
-                    If Match.Groups(1).Value = "OptionalStopPattern" Then Return OptionalStopPattern
-                    If Match.Groups(1).Value = "OptionalStopPatternNotEndOfAyah" Then Return OptionalStopPatternNotEndOfAyah
-                    If Match.Groups(1).Value = "CertainNotStopPattern" Then Return CertainNotStopPattern
-                    If Match.Groups(1).Value = "OptionalNotStopPattern" Then Return OptionalNotStopPattern
-                    If Match.Groups(1).Value = "TehMarbutaStopRule" Then Return TehMarbutaStopRule
-                    If Match.Groups(1).Value = "TehMarbutaContinueRule" Then Return TehMarbutaContinueRule
+    static $_AlDuri = null;
+    static $_Warsh = null;
+    static $_WarshScript = null;
+    static $_UthmaniMinimalScript = null;
+    static $_SimpleEnhancedScript = null;
+    static $_SimpleScript = null;
+    static $_SimpleCleanScript = null;
+    static $_SimpleMinimalScript = null;
+    static $_RomanizationRules = null;
+    static $_ColoringSpelledOutRules = null;
+    static $_ErrorCheck = null;
+    static $_RulesOfRecitationRegEx = null;
+    public static function GetNum($name)
+    {
+        for ($count = 0; $count < count(CachedData::IslamData()->ArabicNumbers); $count++) {
+            if (CachedData::IslamData()->ArabicNumbers[$count]->Name == $name) {
+                return CachedData::IslamData()->ArabicNumbers[$count]->Text;
+            }
+        }
+        return [];
+    }
+    public static function GetPattern($name)
+    {
+        for ($count = 0; $count < count(CachedData::IslamData()->ArabicPatterns); $count++) {
+            if (CachedData::IslamData()->ArabicPatterns[$count]->Name == $name) {
+                return CachedData::TranslateRegEx(CachedData::IslamData()->ArabicPatterns[$count]->Match, true);
+            }
+        }
+        return "";
+    }
+    public static function GetGroup($name)
+    {
+        for ($count = 0; $count < count(CachedData::IslamData()->ArabicGroups); $count++) {
+            if (CachedData::IslamData()->ArabicGroups[$count]->Name == $name) {
+                return array_map(CachedData::IslamData()->ArabicGroups[$count]->Text, function($str) { return CachedData::TranslateRegEx($str, $name == "ArabicSpecialLetters"); });
+            }
+        }
+        return [];
+    }
+    public static function GetRuleSet($name)
+    {
+        for ($count = 0; $count < count(CachedData::IslamData()->RuleSets); $count++) {
+            if (CachedData::IslamData()->RuleSets[$count]->Name == $name) {
+                $ruleSet = CachedData::IslamData()->RuleSets[$count]->Rules;
+                for ($subCount = 0; $subCount < count($ruleSet); $subCount++) {
+                    $ruleSet[$subCount]->Match = CachedData::TranslateRegEx($ruleSet[$subCount]->Match, true);
+                    $ruleSet[$subCount]->Evaluator = CachedData::TranslateRegEx($ruleSet[$subCount]->Evaluator, false);
+                }
+                return $ruleSet;
+            }
+        }
+        return null;
+    }
+    static $_ArabicUniqueLetters = null;
+    static $_ArabicNumbers = null;
+    static $_ArabicWaslKasraExceptions = null;
+    static $_ArabicBaseNumbers = null;
+    static $_ArabicBaseExtraNumbers = null;
+    static $_ArabicBaseTenNumbers = null;
+    static $_ArabicBaseHundredNumbers = null;
+    static $_ArabicBaseThousandNumbers = null;
+    static $_ArabicBaseMillionNumbers = null;
+    static $_ArabicBaseMilliardNumbers = null;
+    static $_ArabicBaseBillionNumbers = null;
+    static $_ArabicBaseTrillionNumbers = null;
+    static $_ArabicFractionNumbers = null;
+    static $_ArabicOrdinalNumbers = null;
+    static $_ArabicOrdinalExtraNumbers = null;
+    public static function ArabicUniqueLetters()
+	{
+        if (CachedData::$_ArabicUniqueLetters == null) {
+            CachedData::$_ArabicUniqueLetters = CachedData::GetNum("ArabicUniqueLetters");
+        }
+    	return CachedData::$_ArabicUniqueLetters;
+    }
+    public static function ArabicNumbers()
+	{
+        if (CachedData::$_ArabicNumbers == null) {
+            CachedData::$_ArabicNumbers = CachedData::GetNum("ArabicNumbers");
+        }
+        return CachedData::$_ArabicNumbers;
+    }
+    public static function ArabicWaslKasraExceptions()
+	{
+        if (CachedData::$_ArabicWaslKasraExceptions == null) {
+            CachedData::$_ArabicWaslKasraExceptions = CachedData::GetNum("ArabicWaslKasraExceptions");
+        }
+        return CachedData::$_ArabicWaslKasraExceptions;
+    }
+    public static function ArabicBaseNumbers()
+	{
+        if (CachedData::$_ArabicBaseNumbers == null) {
+            CachedData::$_ArabicBaseNumbers = CachedData::GetNum("base");
+        }
+        return CachedData::$_ArabicBaseNumbers;
+    }
+    public static function ArabicBaseExtraNumbers()
+	{
+        if (CachedData::$_ArabicBaseExtraNumbers == null) {
+            CachedData::$_ArabicBaseExtraNumbers = CachedData::GetNum("baseextras");
+        }
+        return CachedData::$_ArabicBaseExtraNumbers;
+    }
+    public static function ArabicBaseTenNumbers()
+	{
+        if (CachedData::$_ArabicBaseTenNumbers == null) {
+            CachedData::$_ArabicBaseTenNumbers = CachedData::GetNum("baseten");
+        }
+        return CachedData::$_ArabicBaseTenNumbers;
+    }
+    public static function ArabicBaseHundredNumbers()
+	{
+        if (CachedData::$_ArabicBaseHundredNumbers == null) {
+            CachedData::$_ArabicBaseHundredNumbers = CachedData::GetNum("basehundred");
+        }
+        return CachedData::$_ArabicBaseHundredNumbers;
+    }
+    public static function ArabicBaseThousandNumbers()
+	{
+        if (CachedData::$_ArabicBaseThousandNumbers == null) {
+            CachedData::$_ArabicBaseThousandNumbers = CachedData::GetNum("thousands");
+        }
+        return CachedData::$_ArabicBaseThousandNumbers;
+    }
+    public static function ArabicBaseMillionNumbers()
+	{
+        if (CachedData::$_ArabicBaseMillionNumbers == null) {
+            CachedData::$_ArabicBaseMillionNumbers = CachedData::GetNum("millions");
+        }
+        return CachedData::$_ArabicBaseMillionNumbers;
+    }
+    public static function ArabicBaseMilliardNumbers()
+	{
+        if (CachedData::$_ArabicBaseMilliardNumbers == null) {
+            CachedData::$_ArabicBaseMilliardNumbers = CachedData::GetNum("milliard");
+        }
+        return CachedData::$_ArabicBaseMilliardNumbers;
+    }
+    public static function ArabicBaseBillionNumbers()
+	{
+        if (CachedData::$_ArabicBaseBillionNumbers == null) {
+            CachedData::$_ArabicBaseBillionNumbers = CachedData::GetNum("billions");
+        }
+        return CachedData::$_ArabicBaseBillionNumbers;
+    }
+    public static function ArabicBaseTrillionNumbers()
+	{
+        if (CachedData::$_ArabicBaseTrillionNumbers == null) {
+            CachedData::$_ArabicBaseTrillionNumbers = CachedData::GetNum("trillions");
+        }
+        return CachedData::$_ArabicBaseTrillionNumbers;
+    }
+    public static function ArabicFractionNumbers()
+	{
+        if (CachedData::$_ArabicFractionNumbers == null) {
+            CachedData::$_ArabicFractionNumbers = CachedData::GetNum("fractions");
+        }
+        return CachedData::$_ArabicFractionNumbers;
+    }
+    public static function ArabicOrdinalNumbers()
+	{
+        if (CachedData::$_ArabicOrdinalNumbers == null) {
+            CachedData::$_ArabicOrdinalNumbers = CachedData::GetNum("ordinals");
+        }
+        return CachedData::$_ArabicOrdinalNumbers;
+    }
+    public static function ArabicOrdinalExtraNumbers()
+	{
+        if (CachedData::$_ArabicOrdinalExtraNumbers == null) {
+            CachedData::$_ArabicOrdinalExtraNumbers = CachedData::GetNum("ordinalextras");
+        }
+        return CachedData::$_ArabicOrdinalExtraNumbers;
+    }
+    static $_CertainStopPattern = null;
+    static $_OptionalStopPattern = null;
+    static $_OptionalStopPatternNotEndOfAyah = null;
+    static $_CertainNotStopPattern = null;
+    static $_OptionalNotStopPattern = null;
+    static $_TehMarbutaStopRule = null;
+    static $_TehMarbutaContinueRule = null;
+    public static function CertainStopPattern()
+	{
+        if (CachedData::$_CertainStopPattern == null) {
+            CachedData::$_CertainStopPattern = CachedData::GetPattern("CertainStopPattern");
+        }
+        return CachedData::$_CertainStopPattern;
+    }
+    public static function OptionalStopPattern()
+	{
+        if (CachedData::$_OptionalStopPattern == null) {
+            CachedData::$_OptionalStopPattern = CachedData::GetPattern("OptionalStopPattern");
+        }
+        return CachedData::$_OptionalStopPattern;
+    }
+    public static function OptionalStopPatternNotEndOfAyah()
+	{
+        if (CachedData::$_OptionalStopPatternNotEndOfAyah == null) {
+            CachedData::$_OptionalStopPatternNotEndOfAyah = CachedData::GetPattern("OptionalStopPatternNotEndOfAyah");
+        }
+        return CachedData::$_OptionalStopPatternNotEndOfAyah;
+    }
+    public static function CertainNotStopPattern()
+	{
+        if (CachedData::$_CertainNotStopPattern == null) {
+            CachedData::$_CertainNotStopPattern = CachedData::GetPattern("CertainNotStopPattern");
+        }
+        return CachedData::$_CertainNotStopPattern;
+    }
+    public static function OptionalNotStopPattern()
+	{
+        if (CachedData::$_OptionalNotStopPattern == null) {
+            CachedData::$_OptionalNotStopPattern = CachedData::GetPattern("OptionalNotStopPattern");
+        }
+        return CachedData::$_OptionalNotStopPattern;
+    }
+    public static function TehMarbutaStopRule()
+	{
+        if (CachedData::$_TehMarbutaStopRule == null) {
+            CachedData::$_TehMarbutaStopRule = CachedData::GetPattern("TehMarbutaStopRule");
+        }
+        return CachedData::$_TehMarbutaStopRule;
+    }
+    public static function TehMarbutaContinueRule()
+	{
+        if (CachedData::$_TehMarbutaContinueRule == null) {
+            CachedData::$_TehMarbutaContinueRule = CachedData::GetPattern("TehMarbutaContinueRule");
+        }
+        return CachedData::$_TehMarbutaContinueRule;
+    }
+    static $_ArabicLongVowels = null;
+    static $_ArabicTanweens = null;
+    static $_ArabicFathaDammaKasra = null;
+    static $_ArabicStopLetters = null;
+    static $_ArabicSpecialGutteral = null;
+    static $_ArabicSpecialLeadingGutteral = null;
+    static $_ArabicPunctuationSymbols = null;
+    static $_ArabicLetters = null;
+    static $_ArabicSunLettersNoLam = null;
+    static $_ArabicSunLetters = null;
+    static $_ArabicMoonLettersNoVowels = null;
+    static $_ArabicMoonLetters = null;
+    static $_RecitationCombiningSymbols = null;
+    static $_RecitationConnectingFollowerSymbols = null;
+    static $_RecitationSymbols = null;
+    static $_ArabicLettersInOrder = null;
+    static $_ArabicSpecialLetters = null;
+    static $_ArabicHamzas = null;
+    static $_ArabicVowels = null;
+    static $_ArabicTajweed = null;
+    static $_ArabicPunctuation = null;
+    static $_NonArabicLetters = null;
+    static $_WhitespaceSymbols = null;
+    static $_PunctuationSymbols = null;
+    static $_RecitationDiacritics = null;
+    static $_RecitationLettersDiacritics = null;
+    static $_RecitationSpecialSymbols = null;
+    static $_ArabicLeadingGutterals = null;
+    static $_RecitationLetters = null;
+    static $_ArabicTrailingGutterals = null;
+    static $_RecitationSpecialSymbolsNotStop = null;
+    public static function ArabicLongVowels()
+	{
+        if (CachedData::$_ArabicLongVowels == null) {
+            CachedData::$_ArabicLongVowels = CachedData::GetGroup("ArabicLongVowels");
+        }
+        return CachedData::$_ArabicLongVowels;
+    }
+    public static function ArabicTanweens()
+	{
+        if (CachedData::$_ArabicTanweens == null) {
+            CachedData::$_ArabicTanweens = CachedData::GetGroup("ArabicTanweens");
+        }
+        return CachedData::$_ArabicTanweens;
+    }
+    public static function ArabicFathaDammaKasra()
+	{
+        if (CachedData::$_ArabicFathaDammaKasra == null) {
+            CachedData::$_ArabicFathaDammaKasra = CachedData::GetGroup("ArabicFathaDammaKasra");
+        }
+        return CachedData::$_ArabicFathaDammaKasra;
+    }
+    public static function ArabicStopLetters()
+	{
+        if (CachedData::$_ArabicStopLetters == null) {
+            CachedData::$_ArabicStopLetters = CachedData::GetGroup("ArabicStopLetters");
+        }
+        return CachedData::$_ArabicStopLetters;
+    }
+    public static function ArabicSpecialGutteral()
+	{
+        if (CachedData::$_ArabicSpecialGutteral == null) {
+            CachedData::$_ArabicSpecialGutteral = CachedData::GetGroup("ArabicSpecialGutteral");
+        }
+        return CachedData::$_ArabicSpecialGutteral;
+    }
+    public static function ArabicSpecialLeadingGutteral()
+	{
+        if (CachedData::$_ArabicSpecialLeadingGutteral == null) {
+            CachedData::$_ArabicSpecialLeadingGutteral = CachedData::GetGroup("ArabicSpecialLeadingGutteral");
+        }
+        return CachedData::$_ArabicSpecialLeadingGutteral;
+    }
+    public static function ArabicPunctuationSymbols()
+	{
+        if (CachedData::$_ArabicPunctuationSymbols == null) {
+            CachedData::$_ArabicPunctuationSymbols = CachedData::GetGroup("ArabicPunctuationSymbols");
+        }
+        return CachedData::$_ArabicPunctuationSymbols;
+    }
+    public static function ArabicLetters()
+	{
+        if (CachedData::$_ArabicLetters == null) {
+            CachedData::$_ArabicLetters = CachedData::GetGroup("ArabicLetters");
+        }
+        return CachedData::$_ArabicLetters;
+    }
+    public static function ArabicSunLettersNoLam()
+	{
+        if (CachedData::$_ArabicSunLettersNoLam == null) {
+            CachedData::$_ArabicSunLettersNoLam = CachedData::GetGroup("ArabicSunLettersNoLam");
+        }
+        return CachedData::$_ArabicSunLettersNoLam;
+    }
+    public static function ArabicSunLetters()
+	{
+        if (CachedData::$_ArabicSunLetters == null) {
+            CachedData::$_ArabicSunLetters = CachedData::GetGroup("ArabicSunLetters");
+        }
+        return CachedData::$_ArabicSunLetters;
+    }
+    public static function ArabicMoonLettersNoVowels()
+	{
+        if (CachedData::$_ArabicMoonLettersNoVowels == null) {
+            CachedData::$_ArabicMoonLettersNoVowels = CachedData::GetGroup("ArabicMoonLettersNoVowels");
+        }
+        return CachedData::$_ArabicMoonLettersNoVowels;
+    }
+    public static function ArabicMoonLetters()
+	{
+        if (CachedData::$_ArabicMoonLetters == null) {
+            CachedData::$_ArabicMoonLetters = CachedData::GetGroup("ArabicMoonLetters");
+        }
+        return CachedData::$_ArabicMoonLetters;
+    }
+    public static function RecitationCombiningSymbols()
+	{
+        if (CachedData::$_RecitationCombiningSymbols == null) {
+            CachedData::$_RecitationCombiningSymbols = CachedData::GetGroup("RecitationCombiningSymbols");
+        }
+        return CachedData::$_RecitationCombiningSymbols;
+    }
+    public static function RecitationConnectingFollowerSymbols()
+	{
+        if (CachedData::$_RecitationConnectingFollowerSymbols == null) {
+            CachedData::$_RecitationConnectingFollowerSymbols = CachedData::GetGroup("RecitationConnectingFollowerSymbols");
+        }
+        return CachedData::$_RecitationConnectingFollowerSymbols;
+    }
+    public static function RecitationSymbols()
+	{
+        if (CachedData::$_RecitationSymbols == null) {
+            CachedData::$_RecitationSymbols = CachedData::GetGroup("RecitationSymbols");
+        }
+        return CachedData::$_RecitationSymbols;
+    }
+    public static function ArabicLettersInOrder()
+	{
+        if (CachedData::$_ArabicLettersInOrder == null) {
+            CachedData::$_ArabicLettersInOrder = CachedData::GetGroup("ArabicLettersInOrder");
+        }
+        return CachedData::$_ArabicLettersInOrder;
+    }
+    public static function ArabicSpecialLetters()
+	{
+        if (CachedData::$_ArabicSpecialLetters == null) {
+            CachedData::$_ArabicSpecialLetters = CachedData::GetGroup("ArabicSpecialLetters");
+        }
+        return CachedData::$_ArabicSpecialLetters;
+    }
+    public static function ArabicHamzas()
+	{
+        if (CachedData::$_ArabicHamzas == null) {
+            CachedData::$_ArabicHamzas = CachedData::GetGroup("ArabicHamzas");
+        }
+        return CachedData::$_ArabicHamzas;
+    }
+    public static function ArabicVowels()
+	{
+        if (CachedData::$_ArabicVowels == null) {
+            CachedData::$_ArabicVowels = CachedData::GetGroup("ArabicVowels");
+        }
+        return CachedData::$_ArabicVowels;
+    }
+    public static function ArabicTajweed()
+	{
+        if (CachedData::$_ArabicTajweed == null) {
+            CachedData::$_ArabicTajweed = CachedData::GetGroup("ArabicTajweed");
+        }
+        return CachedData::$_ArabicTajweed;
+    }
+    public static function ArabicPunctuation()
+	{
+        if (CachedData::$_ArabicPunctuation == null) {
+            CachedData::$_ArabicPunctuation = CachedData::GetGroup("ArabicPunctuation");
+        }
+        return CachedData::$_ArabicPunctuation;
+    }
+    public static function NonArabicLetters()
+	{
+        if (CachedData::$_NonArabicLetters == null) {
+            CachedData::$_NonArabicLetters = CachedData::GetGroup("NonArabicLetters");
+        }
+        return CachedData::$_NonArabicLetters;
+    }
+    public static function WhitespaceSymbols()
+	{
+        if (CachedData::$_WhitespaceSymbols == null) {
+            CachedData::$_WhitespaceSymbols = CachedData::GetGroup("WhitespaceSymbols");
+        }
+        return CachedData::$_WhitespaceSymbols;
+    }
+    public static function PunctuationSymbols()
+	{
+        if (CachedData::$_PunctuationSymbols == null) {
+            CachedData::$_PunctuationSymbols = CachedData::GetGroup("PunctuationSymbols");
+        }
+        return CachedData::$_PunctuationSymbols;
+    }
+    public static function RecitationDiacritics()
+	{
+        if (CachedData::$_RecitationDiacritics == null) {
+            CachedData::$_RecitationDiacritics = CachedData::GetGroup("RecitationDiacritics");
+        }
+        return CachedData::$_RecitationDiacritics;
+    }
+    public static function RecitationLettersDiacritics()
+	{
+        if (CachedData::$_RecitationLettersDiacritics == null) {
+            CachedData::$_RecitationLettersDiacritics = CachedData::GetGroup("RecitationLettersDiacritics");
+        }
+        return CachedData::$_RecitationLettersDiacritics;
+    }
+    public static function RecitationSpecialSymbols()
+	{
+        if (CachedData::$_RecitationSpecialSymbols == null) {
+            CachedData::$_RecitationSpecialSymbols = CachedData::GetGroup("RecitationSpecialSymbols");
+        }
+        return CachedData::$_RecitationSpecialSymbols;
+    }
+    public static function ArabicLeadingGutterals()
+	{
+        if (CachedData::$_ArabicLeadingGutterals == null) {
+            CachedData::$_ArabicLeadingGutterals = CachedData::GetGroup("ArabicLeadingGutterals");
+        }
+        return CachedData::$_ArabicLeadingGutterals;
+    }
+    public static function RecitationLetters()
+	{
+        if (CachedData::$_RecitationLetters == null) {
+            CachedData::$_RecitationLetters = CachedData::GetGroup("RecitationLetters");
+        }
+        return CachedData::$_RecitationLetters;
+    }
+    public static function ArabicTrailingGutterals()
+	{
+        if (CachedData::$_ArabicTrailingGutterals == null) {
+            CachedData::$_ArabicTrailingGutterals = CachedData::GetGroup("ArabicTrailingGutterals");
+        }
+        return CachedData::$_ArabicTrailingGutterals;
+    }
+    public static function RecitationSpecialSymbolsNotStop()
+	{
+        if (CachedData::$_RecitationSpecialSymbolsNotStop == null) {
+            CachedData::$_RecitationSpecialSymbolsNotStop = CachedData::GetGroup("RecitationSpecialSymbolsNotStop");
+        }
+        return CachedData::$_RecitationSpecialSymbolsNotStop;
+    }
+    public static function TranslateRegEx($value, $bAll)
+    {
+        return preg_replace_callback($value, "\{(.*?)\}", function($matches) {
+            if (bAll) {
+                if (Match.Groups(1).Value = "CertainStopPattern") { return CachedData::CertainStopPattern(); }
+                if (Match.Groups(1).Value = "OptionalStopPattern") { return CachedData::OptionalStopPattern(); }
+                if (Match.Groups(1).Value = "OptionalStopPatternNotEndOfAyah") { return CachedData::OptionalStopPatternNotEndOfAyah(); }
+                if (Match.Groups(1).Value = "CertainNotStopPattern") { return CachedData::CertainNotStopPattern(); }
+                if (Match.Groups(1).Value = "OptionalNotStopPattern") { return CachedData::OptionalNotStopPattern(); }
+                if (Match.Groups(1).Value = "TehMarbutaStopRule") { return CachedData::TehMarbutaStopRule(); }
+                if (Match.Groups(1).Value = "TehMarbutaContinueRule") { return CachedData::TehMarbutaContinueRule(); }
 
-                    If Match.Groups(1).Value = "ArabicUniqueLetters" Then Return ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicUniqueLetters, Function(Str As String) ArabicData.TransliterateFromBuckwalter(Str).Replace(CStr(ArabicData.ArabicMaddahAbove), String.Empty)))
-                    If Match.Groups(1).Value = "ArabicNumbers" Then Return ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicNumbers, Function(Str As String) ArabicData.TransliterateFromBuckwalter(Str)))
-                    If Match.Groups(1).Value = "ArabicWaslKasraExceptions" Then Return ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicWaslKasraExceptions, Function(Str As String) ArabicData.TransliterateFromBuckwalter(Str)))
-                    'If Match.Groups(1).Value = "SimpleSuperscriptAlefBefore" Then Return ArabicData.MakeRegMultiEx(Array.ConvertAll(Arabic.SimpleSuperscriptAlefBefore, Function(Str As String) ArabicData.TransliterateFromBuckwalter(Str.Replace(".", String.Empty).Replace("""", String.Empty).Replace("@", String.Empty).Replace("[", String.Empty).Replace("]", String.Empty).Replace("-", String.Empty).Replace("^", String.Empty))))
-                    'If Match.Groups(1).Value = "SimpleSuperscriptAlefNotBefore" Then Return ArabicData.MakeRegMultiEx(Array.ConvertAll(Arabic.SimpleSuperscriptAlefNotBefore, Function(Str As String) ArabicData.TransliterateFromBuckwalter(Str.Replace(".", String.Empty).Replace("""", String.Empty).Replace("@", String.Empty).Replace("[", String.Empty).Replace("]", String.Empty).Replace("-", String.Empty).Replace("^", String.Empty))))
-                    'If Match.Groups(1).Value = "SimpleSuperscriptAlefAfter" Then Return ArabicData.MakeRegMultiEx(Array.ConvertAll(Arabic.SimpleSuperscriptAlefAfter, Function(Str As String) ArabicData.TransliterateFromBuckwalter(Str.Replace(".", String.Empty).Replace("""", String.Empty).Replace("@", String.Empty).Replace("[", String.Empty).Replace("]", String.Empty).Replace("-", String.Empty).Replace("^", String.Empty))))
-                    'If Match.Groups(1).Value = "SimpleSuperscriptAlefNotAfter" Then Return ArabicData.MakeRegMultiEx(Array.ConvertAll(Arabic.SimpleSuperscriptAlefNotAfter, Function(Str As String) ArabicData.TransliterateFromBuckwalter(Str.Replace(".", String.Empty).Replace("""", String.Empty).Replace("@", String.Empty).Replace("[", String.Empty).Replace("]", String.Empty).Replace("-", String.Empty).Replace("^", String.Empty))))
-                    If Match.Groups(1).Value = "ArabicLongShortVowels" Then Return ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicLongVowels, Function(StrV As String) ArabicData.MakeUniRegEx(StrV(0) + "(?=" + ArabicData.MakeUniRegEx(StrV(1)) + ")")))
-                    If Match.Groups(1).Value = "ArabicTanweens" Then Return ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicTanweens, Function(Str As String) ArabicData.MakeUniRegEx(Str)))
-                    If Match.Groups(1).Value = "ArabicFathaDammaKasra" Then Return ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicFathaDammaKasra, Function(Str As String) ArabicData.MakeUniRegEx(Str)))
-                    If Match.Groups(1).Value = "ArabicStopLetters" Then Return ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicStopLetters, Function(Str As String) ArabicData.MakeUniRegEx(Str)))
-                    If Match.Groups(1).Value = "ArabicSpecialGutteral" Then Return ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicSpecialGutteral, Function(Str As String) ArabicData.MakeUniRegEx(Str)))
-                    If Match.Groups(1).Value = "ArabicSpecialLeadingGutteral" Then Return ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicSpecialLeadingGutteral, Function(Str As String) ArabicData.MakeUniRegEx(Str)))
-                    If Match.Groups(1).Value = "ArabicPunctuationSymbols" Then Return ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicPunctuationSymbols, Function(Str As String) ArabicData.MakeUniRegEx(Str)))
-                    If Match.Groups(1).Value = "ArabicLetters" Then Return ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicLetters, Function(Str As String) ArabicData.MakeUniRegEx(Str)))
-                    If Match.Groups(1).Value = "ArabicSunLettersNoLam" Then Return ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicSunLettersNoLam, Function(Str As String) ArabicData.MakeUniRegEx(Str)))
-                    If Match.Groups(1).Value = "ArabicSunLetters" Then Return ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicSunLetters, Function(Str As String) ArabicData.MakeUniRegEx(Str)))
-                    If Match.Groups(1).Value = "ArabicMoonLettersNoVowels" Then Return ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicMoonLettersNoVowels, Function(Str As String) ArabicData.MakeUniRegEx(Str)))
-                    If Match.Groups(1).Value = "ArabicMoonLetters" Then Return ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicMoonLetters, Function(Str As String) ArabicData.MakeUniRegEx(Str)))
-                    If Match.Groups(1).Value = "RecitationCombiningSymbols" Then Return ArabicData.MakeRegMultiEx(Array.ConvertAll(RecitationCombiningSymbols, Function(Str As String) ArabicData.MakeUniRegEx(Str)))
-                    If Match.Groups(1).Value = "RecitationConnectingFollowerSymbols" Then Return ArabicData.MakeRegMultiEx(Array.ConvertAll(RecitationConnectingFollowerSymbols, Function(Str As String) ArabicData.MakeUniRegEx(Str)))
-                    If Match.Groups(1).Value = "PunctuationSymbols" Then Return ArabicData.MakeRegMultiEx(Array.ConvertAll(PunctuationSymbols, Function(Str As String) ArabicData.MakeUniRegEx(Str)))
-                    If Match.Groups(1).Value = "RecitationLettersDiacritics" Then Return ArabicData.MakeRegMultiEx(Array.ConvertAll(RecitationLettersDiacritics, Function(Str As String) ArabicData.MakeUniRegEx(Str)))
-                    If Match.Groups(1).Value = "RecitationSpecialSymbolsNotStop" Then Return ArabicData.MakeRegMultiEx(Array.ConvertAll(RecitationSpecialSymbolsNotStop, Function(Str As String) ArabicData.MakeUniRegEx(Str)))
-                End If
-                If System.Text.RegularExpressions.Regex.Match(Match.Groups(1).Value, "0x([0-9a-fA-F]{4})").Success Then
-                    Return If(bAll, ArabicData.MakeUniRegEx(ChrW(Integer.Parse(Match.Groups(1).Value.Substring(2), System.Globalization.NumberStyles.HexNumber))), ChrW(Integer.Parse(Match.Groups(1).Value.Substring(2), System.Globalization.NumberStyles.HexNumber)))
-                End If
-                For Count = 0 To ArabicData.Data.ArabicLetters.Length - 1
-                    If Match.Groups(1).Value = ArabicData.Data.ArabicLetters(Count).UnicodeName Then Return If(bAll, ArabicData.MakeUniRegEx(ArabicData.Data.ArabicLetters(Count).Symbol), ArabicData.Data.ArabicLetters(Count).Symbol)
-                Next
-                '{0} ignore
-                Return Match.Value
-            End Function)
-    End Function
-    Public Shared ReadOnly Property RulesOfRecitationRegEx As IslamData.RuleMetadataTranslation()
-        Get
-            If _RulesOfRecitationRegEx Is Nothing Then
-                _RulesOfRecitationRegEx = CachedData.IslamData.MetaRules
-                For SubCount As Integer = 0 To _RulesOfRecitationRegEx.Length - 1
-                    _RulesOfRecitationRegEx(SubCount).Match = TranslateRegEx(_RulesOfRecitationRegEx(SubCount).Match, True)
-                Next
-            End If
-            Return _RulesOfRecitationRegEx
-        End Get
-    End Property
-    Public Shared ReadOnly Property WarshScript As IslamData.RuleTranslationCategory.RuleTranslation()
-        Get
-            If _WarshScript Is Nothing Then
-                _WarshScript = GetRuleSet("WarshScript")
-            End If
-            Return _WarshScript
-        End Get
-    End Property
-    Public Shared ReadOnly Property UthmaniMinimalScript As IslamData.RuleTranslationCategory.RuleTranslation()
-        Get
-            If _UthmaniMinimalScript Is Nothing Then
-                _UthmaniMinimalScript = GetRuleSet("UthmaniMinimalScript")
-            End If
-            Return _UthmaniMinimalScript
-        End Get
-    End Property
-    Public Shared ReadOnly Property SimpleEnhancedScript As IslamData.RuleTranslationCategory.RuleTranslation()
-        Get
-            If _SimpleEnhancedScript Is Nothing Then
-                _SimpleEnhancedScript = GetRuleSet("SimpleEnhancedScript")
-            End If
-            Return _SimpleEnhancedScript
-        End Get
-    End Property
-    Public Shared ReadOnly Property SimpleScript As IslamData.RuleTranslationCategory.RuleTranslation()
-        Get
-            If _SimpleScript Is Nothing Then
-                _SimpleScript = GetRuleSet("SimpleScript")
-            End If
-            Return _SimpleScript
-        End Get
-    End Property
-    Public Shared ReadOnly Property SimpleCleanScript As IslamData.RuleTranslationCategory.RuleTranslation()
-        Get
-            If _SimpleCleanScript Is Nothing Then
-                _SimpleCleanScript = GetRuleSet("SimpleCleanScript")
-            End If
-            Return _SimpleCleanScript
-        End Get
-    End Property
-    Public Shared ReadOnly Property SimpleMinimalScript As IslamData.RuleTranslationCategory.RuleTranslation()
-        Get
-            If _SimpleMinimalScript Is Nothing Then
-                _SimpleMinimalScript = GetRuleSet("SimpleMinimalScript")
-            End If
-            Return _SimpleMinimalScript
-        End Get
-    End Property
-    Public Shared ReadOnly Property RomanizationRules As IslamData.RuleTranslationCategory.RuleTranslation()
-        Get
-            If _RomanizationRules Is Nothing Then
-                _RomanizationRules = GetRuleSet("RomanizationRules")
-            End If
-            Return _RomanizationRules
-        End Get
-    End Property
-    Public Shared ReadOnly Property ColoringSpelledOutRules As IslamData.RuleTranslationCategory.RuleTranslation()
-        Get
-            If _ColoringSpelledOutRules Is Nothing Then
-                _ColoringSpelledOutRules = GetRuleSet("ColoringSpelledOutRules")
-            End If
-            Return _ColoringSpelledOutRules
-        End Get
-    End Property
-    Public Shared ReadOnly Property ErrorCheckRules As IslamData.RuleTranslationCategory.RuleTranslation()
-        Get
-            If _ErrorCheck Is Nothing Then
-                _ErrorCheck = GetRuleSet("ErrorCheck")
-            End If
-            Return _ErrorCheck
-        End Get
-    End Property
+                if (Match.Groups(1).Value = "ArabicUniqueLetters") { return ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicUniqueLetters, Function($str) ArabicData.TransliterateFromBuckwalter(Str).Replace(CStr(ArabicData.ArabicMaddahAbove), String.Empty))); }
+                if (Match.Groups(1).Value = "ArabicNumbers") { return ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicNumbers, Function($str) ArabicData.TransliterateFromBuckwalter(Str))); }
+                if (Match.Groups(1).Value = "ArabicWaslKasraExceptions") { return ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicWaslKasraExceptions, Function($str) ArabicData.TransliterateFromBuckwalter(Str))); }
+                //if (Match.Groups(1).Value = "SimpleSuperscriptAlefBefore") { return ArabicData.MakeRegMultiEx(Array.ConvertAll(Arabic.SimpleSuperscriptAlefBefore, Function($str) ArabicData.TransliterateFromBuckwalter(Str.Replace(".", String.Empty).Replace("""", String.Empty).Replace("@", String.Empty).Replace("[", String.Empty).Replace("]", String.Empty).Replace("-", String.Empty).Replace("^", String.Empty)))); }
+                //if (Match.Groups(1).Value = "SimpleSuperscriptAlefNotBefore") { return ArabicData.MakeRegMultiEx(Array.ConvertAll(Arabic.SimpleSuperscriptAlefNotBefore, Function($str) ArabicData.TransliterateFromBuckwalter(Str.Replace(".", String.Empty).Replace("""", String.Empty).Replace("@", String.Empty).Replace("[", String.Empty).Replace("]", String.Empty).Replace("-", String.Empty).Replace("^", String.Empty)))); }
+                //if (Match.Groups(1).Value = "SimpleSuperscriptAlefAfter") { return ArabicData.MakeRegMultiEx(Array.ConvertAll(Arabic.SimpleSuperscriptAlefAfter, Function($str) ArabicData.TransliterateFromBuckwalter(Str.Replace(".", String.Empty).Replace("""", String.Empty).Replace("@", String.Empty).Replace("[", String.Empty).Replace("]", String.Empty).Replace("-", String.Empty).Replace("^", String.Empty)))); }
+                //if (Match.Groups(1).Value = "SimpleSuperscriptAlefNotAfter") { return ArabicData.MakeRegMultiEx(Array.ConvertAll(Arabic.SimpleSuperscriptAlefNotAfter, Function($str) ArabicData.TransliterateFromBuckwalter(Str.Replace(".", String.Empty).Replace("""", String.Empty).Replace("@", String.Empty).Replace("[", String.Empty).Replace("]", String.Empty).Replace("-", String.Empty).Replace("^", String.Empty)))); }
+                if (Match.Groups(1).Value = "ArabicLongShortVowels") { return ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicLongVowels, Function($strV) ArabicData.MakeUniRegEx(StrV(0) + "(?=" + ArabicData.MakeUniRegEx(StrV(1)) + ")"))); }
+                if (Match.Groups(1).Value = "ArabicTanweens") { return ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicTanweens, Function($str) ArabicData.MakeUniRegEx(Str))); }
+                if (Match.Groups(1).Value = "ArabicFathaDammaKasra") { return ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicFathaDammaKasra, Function($str) ArabicData.MakeUniRegEx(Str))); }
+                if (Match.Groups(1).Value = "ArabicStopLetters") { return ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicStopLetters, Function($str) ArabicData.MakeUniRegEx(Str))); }
+                if (Match.Groups(1).Value = "ArabicSpecialGutteral") { return ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicSpecialGutteral, Function($str) ArabicData.MakeUniRegEx(Str))); }
+                if (Match.Groups(1).Value = "ArabicSpecialLeadingGutteral") { return ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicSpecialLeadingGutteral, Function($str) ArabicData.MakeUniRegEx(Str))); }
+                if (Match.Groups(1).Value = "ArabicPunctuationSymbols") { return ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicPunctuationSymbols, Function($str) ArabicData.MakeUniRegEx(Str))); }
+                if (Match.Groups(1).Value = "ArabicLetters") { return ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicLetters, Function($str) ArabicData.MakeUniRegEx(Str))); }
+                if (Match.Groups(1).Value = "ArabicSunLettersNoLam") { return ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicSunLettersNoLam, Function($str) ArabicData.MakeUniRegEx(Str))); }
+                if (Match.Groups(1).Value = "ArabicSunLetters") { return ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicSunLetters, Function($str) ArabicData.MakeUniRegEx(Str))); }
+                if (Match.Groups(1).Value = "ArabicMoonLettersNoVowels") { return ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicMoonLettersNoVowels, Function($str) ArabicData.MakeUniRegEx(Str))); }
+                if (Match.Groups(1).Value = "ArabicMoonLetters") { return ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicMoonLetters, Function($str) ArabicData.MakeUniRegEx(Str))); }
+                if (Match.Groups(1).Value = "RecitationCombiningSymbols") { return ArabicData.MakeRegMultiEx(Array.ConvertAll(RecitationCombiningSymbols, Function($str) ArabicData.MakeUniRegEx(Str))); }
+                if (Match.Groups(1).Value = "RecitationConnectingFollowerSymbols") { return ArabicData.MakeRegMultiEx(Array.ConvertAll(RecitationConnectingFollowerSymbols, Function($str) ArabicData.MakeUniRegEx(Str))); }
+                if (Match.Groups(1).Value = "PunctuationSymbols") { return ArabicData.MakeRegMultiEx(Array.ConvertAll(PunctuationSymbols, Function($str) ArabicData.MakeUniRegEx(Str))); }
+                if (Match.Groups(1).Value = "RecitationLettersDiacritics") { return ArabicData.MakeRegMultiEx(Array.ConvertAll(RecitationLettersDiacritics, Function($str) ArabicData.MakeUniRegEx(Str))); }
+                if (Match.Groups(1).Value = "RecitationSpecialSymbolsNotStop") { return ArabicData.MakeRegMultiEx(Array.ConvertAll(RecitationSpecialSymbolsNotStop, Function($str) ArabicData.MakeUniRegEx(Str))); }
+            }
+            if (preg_match(Match.Groups(1).Value, "0x([0-9a-fA-F]{4})").Success) {
+                return bAll ? ArabicData.MakeUniRegEx(ChrW(Integer.Parse(Match.Groups(1).Value.Substring(2), System.Globalization.NumberStyles.HexNumber))) : ChrW(Integer.Parse(Match.Groups(1).Value.Substring(2), System.Globalization.NumberStyles.HexNumber)));
+            }
+            for ($count = 0; $count < count(ArabicData::Data::ArabicLetters); $count++) {
+                if (Match.Groups(1).Value = ArabicData.Data.ArabicLetters(Count).UnicodeName) { return If(bAll, ArabicData.MakeUniRegEx(ArabicData.Data.ArabicLetters(Count).Symbol), ArabicData.Data.ArabicLetters(Count).Symbol)
+            }
+           	//{0} ignore
+            return Match.Value;
+        });
+    }
+    public static function RulesOfRecitationRegEx()
+	{
+        if (CachedData::$_RulesOfRecitationRegEx == null) {
+            CachedData::$_RulesOfRecitationRegEx = CachedData::IslamData()->MetaRules;
+            for ($subCount = 0; $subCount < count(_RulesOfRecitationRegEx); $subCount++) {
+                CachedData::$_RulesOfRecitationRegEx[$subCount]->Match = TranslateRegEx(CachedData::$_RulesOfRecitationRegEx[$subCount]->Match, true);
+            }
+        }
+        return CachedData::$_RulesOfRecitationRegEx;
+    }
+    public static function WarshScript()
+	{
+        if (CachedData::$_WarshScript == null) {
+            CachedData::$_WarshScript = CachedData::GetRuleSet("WarshScript");
+        }
+        return CachedData::$_WarshScript;
+    }
+    public static function UthmaniMinimalScript()
+	{
+        if (CachedData::$_UthmaniMinimalScript == null) {
+            CachedData::$_UthmaniMinimalScript = CachedData::GetRuleSet("UthmaniMinimalScript");
+        }
+        return CachedData::$_UthmaniMinimalScript;
+    }
+    public static function SimpleEnhancedScript()
+	{
+        if (CachedData::$_SimpleEnhancedScript == null) {
+            CachedData::$_SimpleEnhancedScript = CachedData::GetRuleSet("SimpleEnhancedScript");
+        }
+        return CachedData::$_SimpleEnhancedScript;
+    }
+    public static function SimpleScript()
+	{
+        if (CachedData::$_SimpleScript == null) {
+            CachedData::$_SimpleScript = CachedData::GetRuleSet("SimpleScript");
+        }
+        return CachedData::$_SimpleScript;
+    }
+    public static function SimpleCleanScript()
+	{
+        if (CachedData::$_SimpleCleanScript == null) {
+            CachedData::$_SimpleCleanScript = CachedData::GetRuleSet("SimpleCleanScript");
+        }
+        return CachedData::$_SimpleCleanScript;
+    }
+    public static function SimpleMinimalScript()
+	{
+        if (CachedData::$_SimpleMinimalScript == null) {
+            CachedData::$_SimpleMinimalScript = CachedData::GetRuleSet("SimpleMinimalScript");
+        }
+        return CachedData::$_SimpleMinimalScript;
+    }
+    public static function RomanizationRules()
+	{
+        if (CachedData::$_RomanizationRules == null) {
+            CachedData::$_RomanizationRules = CachedData::GetRuleSet("RomanizationRules");
+        }
+        return CachedData::$_RomanizationRules;
+    }
+    public static function ColoringSpelledOutRules()
+	{
+        if (CachedData::$_ColoringSpelledOutRules == null) {
+            CachedData::$_ColoringSpelledOutRules = CachedData::GetRuleSet("ColoringSpelledOutRules");
+        }
+        return CachedData::$_ColoringSpelledOutRules;
+    }
+    public static function ErrorCheckRules()
+	{
+        if (CachedData::$_ErrorCheck == null) {
+            CachedData::$_ErrorCheck = CachedData::GetRuleSet("ErrorCheck");
+        }
+        return CachedData::$_ErrorCheck;
+    }
 	public static $_XMLDocMain = null;
 	public static function XMLDocMain() { if ($_XMLDocMain === null) $_XMLDocMain = simplexml_load_file(dirname(__FILE__) . "/metadata/" . TanzilReader::$QuranTextNames[0] . ".xml"); return $_XMLDocMain; }
 };
@@ -912,7 +961,7 @@ class RenderArray
 		const eHeaderRight = 2;
 		const eText = 3;
 		const eInteractive = 4;
-	}
+	};
 	abstract class RenderDisplayClass {
 		const eNested = 0;
 		const eArabic = 1;
@@ -922,7 +971,7 @@ class RenderArray
 		const eContinueStop = 5;
 		const eRanking = 6;
 		const eList = 7;
-	}
+	};
 	class RenderText
 	{
 		public $displayClass;
@@ -982,25 +1031,25 @@ class Arabic
     public static function GetSchemeSpecialValue($index, $scheme)
     {
         $sch = null;
-        for ($count = 0; $count < count(CachedData::IslamData::TranslitSchemes); $count++) {
-            if (CachedData::IslamData::TranslitSchemes[$count]->Name == $scheme) {
-                $sch = CachedData::IslamData::TranslitSchemes[$count];
+        for ($count = 0; $count < count(CachedData::IslamData()->TranslitSchemes); $count++) {
+            if (CachedData::IslamData()->TranslitSchemes[$count]->Name == $scheme) {
+                $sch = CachedData::IslamData()->TranslitSchemes[$count];
                 break;
             }
         }
-        if ($count == count(CachedData::IslamData::TranslitSchemes) { return ""; }
+        if ($count == count(CachedData::IslamData()->TranslitSchemes) { return ""; }
         return $sch->SpecialLetters[$index];
     }
     public static function GetSchemeSpecialFromMatch($str, $scheme, $bExp)
     {
     	$sch = null;
-        for ($count = 0; $count < count(CachedData::IslamData::TranslitSchemes); $count++) {
-            if (CachedData::IslamData::TranslitSchemes[$count]->Name == $scheme) {
-                $sch = CachedData::IslamData::TranslitSchemes[$count];
+        for ($count = 0; $count < count(CachedData::IslamData()->TranslitSchemes); $count++) {
+            if (CachedData::IslamData()->TranslitSchemes[$count]->Name == $scheme) {
+                $sch = CachedData::IslamData()->TranslitSchemes[$count];
                 break;
             }
         }
-        if ($count == count(CachedData::IslamData::TranslitSchemes)) { return -1; }
+        if ($count == count(CachedData::IslamData()->TranslitSchemes)) { return -1; }
         if ($bExp) {
             for ($count = 0; $count < count(CachedData::ArabicSpecialLetters); $count++) {
                 if (preg_match(CachedData::ArabicSpecialLetters[$count], $str) == 1) { return $count; }
@@ -1015,13 +1064,13 @@ class Arabic
     public static function GetSchemeLongVowelFromString($str, $scheme)
     {
         $sch = null;
-        for ($count = 0; $count < count(CachedData::IslamData::TranslitSchemes); $count++) {
-            if (CachedData::IslamData::TranslitSchemes[$count]->Name == $scheme) {
-                $sch = CachedData::IslamData::TranslitSchemes[$count];
+        for ($count = 0; $count < count(CachedData::IslamData()->TranslitSchemes); $count++) {
+            if (CachedData::IslamData()->TranslitSchemes[$count]->Name == $scheme) {
+                $sch = CachedData::IslamData()->TranslitSchemes[$count];
                 break;
             }
         }
-        if ($count == count(CachedData::IslamData::TranslitSchemes)) { return ""; }
+        if ($count == count(CachedData::IslamData()->TranslitSchemes)) { return ""; }
         if (array_search($str, CachedData::ArabicVowels) !== false) {
             return $sch->Vowels(array_search($str, CachedData::ArabicVowels));
         }
@@ -1030,13 +1079,13 @@ class Arabic
     public static function GetSchemeGutteralFromString($str, $scheme, $leading)
     {
         $sch = null;
-        for ($count = 0; $count < count(CachedData::IslamData::TranslitSchemes); $count++) {
-            if (CachedData::IslamData::TranslitSchemes[$count]->Name == $scheme) {
-                $sch = CachedData::IslamData::TranslitSchemes[$count];
+        for ($count = 0; $count < count(CachedData::IslamData()->TranslitSchemes); $count++) {
+            if (CachedData::IslamData()->TranslitSchemes[$count]->Name == $scheme) {
+                $sch = CachedData::IslamData()->TranslitSchemes[$count];
                 break;
             }
         }
-        if ($count == count(CachedData::IslamData::TranslitSchemes)) { return ""; }
+        if ($count == count(CachedData::IslamData()->TranslitSchemes)) { return ""; }
         if (array_search($str, CachedData::ArabicLeadingGutterals) !== false) {
             return $sch->Vowels(array_search($str, CachedData::ArabicLeadingGutterals) + count(CachedData::ArabicVowels) + ($leading ? count(CachedData::ArabicLeadingGutterals) : 0));
         }
@@ -1045,13 +1094,13 @@ class Arabic
     public static function GetSchemeValueFromSymbol($symbol, $scheme)
     {
         $sch = null;
-        for ($count = 0; $count < count(CachedData::IslamData::TranslitSchemes); $count++) {
-            if (CachedData::IslamData::TranslitSchemes[$count]->Name == $scheme) {
-                $sch = CachedData::IslamData::TranslitSchemes[$count];
+        for ($count = 0; $count < count(CachedData::IslamData()->TranslitSchemes); $count++) {
+            if (CachedData::IslamData()->TranslitSchemes[$count]->Name == $scheme) {
+                $sch = CachedData::IslamData()->TranslitSchemes[$count];
                 break;
             }
         }
-        if ($count == count(CachedData::IslamData::TranslitSchemes)) { return ""; }
+        if ($count == count(CachedData::IslamData()->TranslitSchemes)) { return ""; }
         if (array_search($symbol->Symbol, CachedData::ArabicLettersInOrder) !== false) {
             return $sch->Alphabet(array_search($symbol->Symbol, CachedData::ArabicLettersInOrder));
         } elseif (array_search($symbol->Symbol, CachedData::ArabicHamzas) !== false) {
@@ -1111,7 +1160,7 @@ class Arabic
         public $type;
         public $children;
     };
-	public class RuleFuncs
+	abstract class RuleFuncs
 	{
         const eNone = 0;
         const eUpperCase = 1;
@@ -1139,17 +1188,17 @@ class Arabic
     ];
     public static function ArabicLetterSpelling($input, $quranic)
     {
-        Dim Output As String = String.Empty
-        For Each Ch As Char In Input
-            Dim Index As Integer = ArabicData.FindLetterBySymbol(Ch)
-            If Index <> -1 AndAlso IsLetter(Index) Then
-                If Output <> String.Empty And Not Quranic Then Output += " "
-                Output += If(Quranic, ArabicData.Data.ArabicLetters(Index).SymbolName.Remove(ArabicData.Data.ArabicLetters(Index).SymbolName.Length - 1) + If(ArabicData.Data.ArabicLetters(Index).SymbolName.EndsWith("n"), String.Empty, "o"), ArabicData.Data.ArabicLetters(Index).SymbolName)
-            ElseIf Index <> -1 AndAlso ArabicData.Data.ArabicLetters(Index).Symbol = ArabicData.ArabicMaddahAbove Then
-                If Not Quranic Then Output += Ch
-            End If
-        Next
-        Return ArabicData.TransliterateFromBuckwalter(Output)
+        $output = "";
+        foreach ($ch => $input) {
+            $index = ArabicData::FindLetterBySymbol($ch);
+            if ($index != -1 && Arabic::IsLetter($index)) {
+                if ($output != "" && !$quranic) { $output .= " "; }
+                Output .= $quranic ? ArabicData::Data::ArabicLetters[$index]->SymbolName.Remove(strlen(ArabicData::Data::ArabicLetters[$index]->SymbolName) - 1) + (ArabicData::Data::ArabicLetters[$index]->SymbolName.EndsWith("n") ? "" : "o"), ArabicData::Data::ArabicLetters[$index]->SymbolName);
+            } elseif ($index != -1 && ArabicData::Data::ArabicLetters[$index]->Symbol == ArabicData::ArabicMaddahAbove) {
+                if (!$quranic) { $output += $ch; }
+            }
+        }
+        return ArabicData::TransliterateFromBuckwalter($output);
     }
     class RuleMetadataComparer
         public function Compare($x, $y)
@@ -1163,126 +1212,125 @@ class Arabic
     };
     public static function ArabicWordForLessThanThousand($number, $useClassic, $useAlefHundred)
     {
-        Dim Str As String = String.Empty
-        Dim HundStr As String = String.Empty
-        If Number >= 100 Then
-            HundStr = If(UseAlefHundred, CachedData.ArabicBaseHundredNumbers((Number \ 100) - 1).Insert(2, "A"), CachedData.ArabicBaseHundredNumbers((Number \ 100) - 1))
-            If (Number Mod 100) = 0 Then Return HundStr
-            Number = Number Mod 100
-        End If
-        If (Number Mod 10) <> 0 And Number <> 11 And Number <> 12 Then
-            Str = CachedData.ArabicBaseNumbers((Number Mod 10) - 1)
-        End If
-        If Number >= 11 AndAlso Number < 20 Then
-            If Number = 11 Or Number = 12 Then
-                Str += CachedData.ArabicBaseExtraNumbers(Number - 11)
+        $str = "";
+        $hundStr = "";
+        if ($number >= 100) {
+            $hundStr = $useAlefHundred ? CachedData::ArabicBaseHundredNumbers(($number \ 100) - 1).Insert(2, "A") : CachedData::ArabicBaseHundredNumbers(($number \ 100) - 1);
+            if ((Number % 100) = 0) { return $hundStr; }
+            $number = $number % 100;
+        }
+        if (($number % 10) != 0 && $number != 11 && $number != 12) {
+            $str = CachedData::ArabicBaseNumbers(($number % 10) - 1);
+        }
+        if ($number >= 11 && $number < 20) {
+            if ($number == 11 || $number == 12) {
+                $str .= CachedData::ArabicBaseExtraNumbers($number - 11);
             Else
-                Str = Str.Remove(Str.Length - 1) + "a"
-            End If
-            Str += " Ea$ara"
-        ElseIf (Number = 0 And Str = String.Empty) Or Number = 10 Or Number >= 20 Then
-            Str = If(Str = String.Empty, String.Empty, Str + " wa") + CachedData.ArabicBaseTenNumbers(Number \ 10)
-        End If
-        Return If(UseClassic, If(Str = String.Empty, String.Empty, Str + If(HundStr = String.Empty, String.Empty, " wa")) + HundStr, If(HundStr = String.Empty, String.Empty, HundStr + If(Str = String.Empty, String.Empty, " wa")) + Str)
+                $str = Str.Remove(Str.Length - 1) . "a";
+            }
+            $str .= " Ea$ara";
+        } elseif (($number == 0 && $str == "") || $number == 10 || &number >= 20) {
+            $str = ($str == "" ? "" : $str . " wa") . CachedData::ArabicBaseTenNumbers($number \ 10);
+        }
+        return $useClassic ? ($str == "" ? "" : $str . ($hundStr == "", "", " wa")) . $hundStr : ($hundStr == "" ? "" : $hundStr . ($str == "" ? "" : " wa")) . $str;
     }
     public static function ArabicWordFromNumber($number, $useClassic, $useAlefHundred, $useMilliard)
     {
-        Dim Str As String = String.Empty
-        Dim NextStr As String = String.Empty
-        Dim CurBase As Integer = 3
-        Dim BaseNums As Long() = {1000, 1000000, 1000000000, 1000000000000}
-        Dim Bases As String()() = {CachedData.ArabicBaseThousandNumbers, CachedData.ArabicBaseMillionNumbers, If(UseMilliard, CachedData.ArabicBaseMilliardNumbers, CachedData.ArabicBaseBillionNumbers), CachedData.ArabicBaseTrillionNumbers}
-        Do
-            If Number >= BaseNums(CurBase) And Number < 2 * BaseNums(CurBase) Then
-                NextStr = Bases(CurBase)(0)
-            ElseIf Number >= 2 * BaseNums(CurBase) And Number < 3 * BaseNums(CurBase) Then
-                NextStr = Bases(CurBase)(1)
-            ElseIf Number >= 3 * BaseNums(CurBase) And Number < 10 * BaseNums(CurBase) Then
-                NextStr = CachedData.ArabicBaseNumbers(CInt(Number \ BaseNums(CurBase) - 1)).Remove(CachedData.ArabicBaseNumbers(CInt(Number \ BaseNums(CurBase) - 1)).Length - 1) + "u " + Bases(CurBase)(2)
-            ElseIf Number >= 10 * BaseNums(CurBase) And Number < 11 * BaseNums(CurBase) Then
-                NextStr = CachedData.ArabicBaseTenNumbers(1).Remove(CachedData.ArabicBaseTenNumbers(1).Length - 1) + "u " + Bases(CurBase)(2)
-            ElseIf Number >= BaseNums(CurBase) Then
-                NextStr = Arabic.ArabicWordForLessThanThousand(CInt((Number \ BaseNums(CurBase)) Mod 100), UseClassic, UseAlefHundred)
-                If Number >= 100 * BaseNums(CurBase) And Number < If(UseClassic, 200, 101) * BaseNums(CurBase) Then
-                    NextStr = NextStr.Remove(NextStr.Length - 1) + "u " + Bases(CurBase)(0).Remove(Bases(CurBase)(0).Length - 1) + "K"
-                ElseIf Number >= 200 * BaseNums(CurBase) And Number < If(UseClassic, 300, 201) * BaseNums(CurBase) Then
-                    NextStr = NextStr.Remove(NextStr.Length - 2) + " " + Bases(CurBase)(0).Remove(Bases(CurBase)(0).Length - 1) + "K"
-                ElseIf Number >= 300 * BaseNums(CurBase) And (UseClassic Or (Number \ BaseNums(CurBase)) Mod 100 = 0) Then
-                    NextStr = NextStr.Remove(NextStr.Length - 1) + "i " + Bases(CurBase)(0).Remove(Bases(CurBase)(0).Length - 1) + "K"
-                Else
-                    NextStr += " " + Bases(CurBase)(0).Remove(Bases(CurBase)(0).Length - 1) + "FA"
-                End If
-            End If
-            Number = Number Mod BaseNums(CurBase)
-            CurBase -= 1
-            Str = If(UseClassic, If(NextStr = String.Empty, String.Empty, NextStr + If(Str = String.Empty, String.Empty, " wa")) + Str, If(Str = String.Empty, String.Empty, Str + If(NextStr = String.Empty, String.Empty, " wa")) + NextStr)
-            NextStr = String.Empty
-        Loop While CurBase >= 0
-        If Number <> 0 Or Str = String.Empty Then NextStr = Arabic.ArabicWordForLessThanThousand(CInt(Number), UseClassic, UseAlefHundred)
-        Return If(UseClassic, If(NextStr = String.Empty, String.Empty, NextStr + If(Str = String.Empty, String.Empty, " wa")) + Str, If(Str = String.Empty, String.Empty, Str + If(NextStr = String.Empty, String.Empty, " wa")) + NextStr)
+        $str = "";
+        $nextStr = "";
+        $curBase = 3;
+        $baseNums = [1000, 1000000, 1000000000, 1000000000000];
+        $bases = [CachedData::ArabicBaseThousandNumbers, CachedData::ArabicBaseMillionNumbers, $useMilliard ? CachedData::ArabicBaseMilliardNumbers : CachedData::ArabicBaseBillionNumbers, CachedData::ArabicBaseTrillionNumbers];
+        do {
+            if ($number >= $baseNums[$curBase] && $number < 2 * $baseNums[$curBase]) {
+                $nextStr = $bases[$curBase][0];
+            } elseif ($number >= 2 * $baseNums[$curBase] && $number < 3 * $baseNums[$curBase]) {
+                $nextStr = $bases[$curBase][1];
+            } elseif ($number >= 3 * $baseNums[$curBase] && $number < 10 * $baseNums[$curBase]) {
+                $nextStr = CachedData::ArabicBaseNumbers(CInt($number \ $baseNums[$curBase] - 1)).Remove(CachedData::ArabicBaseNumbers(CInt($number \ $baseNums[$curBase] - 1)).Length - 1) . "u " . $bases[$curBase][2];
+            } elseif ($number >= 10 * $baseNums[$curBase] && $number < 11 * $baseNums[$curBase]) {
+                $nextStr = CachedData::ArabicBaseTenNumbers[1].Remove(strlen(CachedData::ArabicBaseTenNumbers[1]) - 1) . "u " . $bases[$curBase][2];
+            } elseif ($number >= $baseNums[$curBase]) {
+                $nextStr = Arabic::ArabicWordForLessThanThousand(CInt(($number \ $baseNums[$curBase]) % 100), $useClassic, $useAlefHundred);
+                if ($number >= 100 * $baseNums[$curBase] && $number < If(UseClassic, 200, 101) * $baseNums[$curBase]) {
+                    $nextStr = $nextStr.Remove(strlen($nextStr) - 1) + "u " + $bases[$curBase][0].Remove(strlen($bases[$curBase][0]) - 1) + "K"
+                } elseif ($number >= 200 * $baseNums[$curBase] && $number < If($useClassic, 300, 201) * $baseNums[$curBase]) {
+                    $nextStr = $nextStr.Remove(strlen($nextStr) - 2) + " " + $bases[$curBase][0].Remove(strlen($bases[$curBase][0]) - 1) + "K"
+                } elseif ($number >= 300 * $baseNums[$curBase] && ($useClassic Or ($number \ $baseNums[$curBase]) Mod 100 = 0)) {
+                    $nextStr = $nextStr.Remove(strlen($nextStr) - 1) + "i " + $bases[$curBase][0].Remove(strlen($bases[$curBase][0]) - 1) + "K"
+                } else {
+                    $nextStr .= " " . $bases[$curBase][0].Remove(strlen($bases[$curBase][0]) - 1) + "FA"
+                }
+            }
+            $number = $number % $baseNums[$curBase];
+            $curBase -= 1;
+            $str = $useClassic ? ($nextStr == "" ? "" : $nextStr . ($str == "" ? "" : " wa")) . $str : ($str == "" ? "" : $str + ($nextStr == "" ? "" : " wa")) . $nextStr;
+            $nextStr = "";
+        } while ($curBase >= 0);
+        if ($number <> 0 || $str == "") { $nextStr = Arabic::ArabicWordForLessThanThousand(CInt($number), $useClassic, $useAlefHundred); }
+        return $useClassic ? ($nextStr == "" ? "" : $nextStr + ($str == "" ? "" : " wa")) . $str, ($str == "" ? "" : $str . ($nextStr == "" ? "" : " wa")) . $nextStr;
     }
-    public shared function ReplaceMetadata($arabicString, $metadataRule, $scheme, $optionalStops)
+    public static function ReplaceMetadata($arabicString, $metadataRule, $scheme, $optionalStops)
     {
-        For Count As Integer = 0 To CachedData.ColoringSpelledOutRules.Length - 1
-            Dim Match As String = Array.Find(CachedData.ColoringSpelledOutRules(Count).Match.Split("|"c), Function(Str As String) Array.IndexOf(Array.ConvertAll(MetadataRule.Type.Split("|"c), Function(S As String) System.Text.RegularExpressions.Regex.Replace(S, "\(.*\)", String.Empty)), Str) <> -1)
-            If Match <> Nothing Then
-                Dim Str As String = String.Format(CachedData.ColoringSpelledOutRules(Count).Evaluator, ArabicString.Substring(MetadataRule.Index, MetadataRule.Length))
-                If CachedData.ColoringSpelledOutRules(Count).RuleFunc <> RuleFuncs.eNone Then
-                    Dim Args As String() = RuleFunctions(CachedData.ColoringSpelledOutRules(Count).RuleFunc - 1)(Str, Scheme)
-                    If Args.Length = 1 Then
-                        Str = Args(0)
+        for ($count = 0; $count < count(CachedData.ColoringSpelledOutRules); $count++) {
+            $match = Array.Find(CachedData.ColoringSpelledOutRules(Count).Match.Split("|"c), Function($str) Array.IndexOf(Array.ConvertAll(MetadataRule.Type.Split("|"c), Function($s) System.Text.RegularExpressions.Regex.Replace(S, "\(.*\)", String.Empty)), Str) <> -1)
+            if ($match != null) {
+                $str = String.Format(CachedData.ColoringSpelledOutRules(Count).Evaluator, ArabicString.Substring(MetadataRule.Index, MetadataRule.Length))
+                if (CachedData.ColoringSpelledOutRules(Count).RuleFunc <> RuleFuncs.eNone) {
+                    $args = RuleFunctions(CachedData.ColoringSpelledOutRules(Count).RuleFunc - 1)(Str, Scheme)
+                    if (Args.Length = 1) {
+                        $str = $args(0)
                     Else
-                        Dim MetaArgs As String() = System.Text.RegularExpressions.Regex.Match(MetadataRule.Type, Match + "\((.*)\)").Groups(1).Value.Split(","c)
-                        Str = String.Empty
-                        For Index As Integer = 0 To Args.Length - 1
-                            If Not Args(Index) Is Nothing Then
+                        $MetaArgs = System.Text.RegularExpressions.Regex.Match(MetadataRule.Type, Match + "\((.*)\)").Groups(1).Value.Split(","c)
+                        $str = "";
+                        for ($index = 0; $index < count($args); $index++) {
+                            if ($args(Index) != null) {
                                 Str += ReplaceMetadata(Args(Index), New RuleMetadata(0, Args(Index).Length, MetaArgs(Index).Replace(" "c, "|"c)), Scheme, OptionalStops)
-                            End If
-                        Next
-                    End If
-                End If
-                ArabicString = ArabicString.Insert(MetadataRule.Index + MetadataRule.Length, Str).Remove(MetadataRule.Index, MetadataRule.Length)
-            End If
-        Next
-        Return ArabicString
+                            }
+                        }
+                    }
+                }
+                $arabicString = $arabicString.Insert(MetadataRule.Index + MetadataRule.Length, Str).Remove(MetadataRule.Index, MetadataRule.Length)
+            }
+        }
+        return $arabicString;
     }
     public static function DoErrorCheck($arabicString)
     {
         //need to check for decomposed first
-        Dim Count As Integer
-        For Count = 0 To CachedData.ErrorCheckRules.Length - 1
-            Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(ArabicString, CachedData.ErrorCheckRules(Count).Match)
-            For MatchIndex As Integer = 0 To Matches.Count - 1
-                If CachedData.ErrorCheckRules(Count).NegativeMatch Is Nothing OrElse Matches(MatchIndex).Result(CachedData.ErrorCheckRules(Count).NegativeMatch) = String.Empty Then
-                    //Debug.Print(ErrorCheckRules(Count).Rule + ": " + TransliterateToScheme(ArabicString, ArabicData.TranslitScheme.Literal, String.Empty).Insert(Matches(MatchIndex).Index, "<!-- -->"))
-                End If
-            Next
-        Next
+        for ($count = 0; $count < count(CachedData::ErrorCheckRules); $count++) {
+            $matches = preg_match_all($arabicString, CachedData::ErrorCheckRules[$count]->Match);
+            for ($matchIndex = 0; $matchIndex < count($matches); $matchIndex++) {
+                if (CachedData::ErrorCheckRules[$count]->NegativeMatch == null || $matches[$matchIndex]->Result(CachedData::ErrorCheckRules[$count]->NegativeMatch) == "") {
+                    //Debug.Print(ErrorCheckRules[$count]->Rule . ": " . Arabic::TransliterateToScheme($arabicString, ArabicData::TranslitScheme::Literal, "").Insert($matches[$matchIndex]->Index, "<!-- -->"))
+                }
+            }
+        }
     }
-    public shared function JoinContig($arabicString, $preString, $postString)
+    public static function JoinContig($arabicString, $preString, $postString)
     {
-        Dim Index As Integer = PreString.LastIndexOf(" "c)
-        'take last word of pre string and first word of post string or another if it is a pause marker
-        'end of ayah sign without number is used as a proper place holder
-        If Index <> -1 And PreString.Length - 2 = Index Then Index = PreString.LastIndexOf(" "c, Index - 1)
-        If Index <> -1 Then PreString = PreString.Substring(Index + 1)
-        If PreString <> String.Empty Then PreString += " " + ArabicData.ArabicEndOfAyah + " "
-        Index = PostString.IndexOf(" "c)
-        If Index = 2 Then Index = PreString.IndexOf(" "c, Index + 1)
-        If Index <> -1 Then PostString = PostString.Substring(0, Index)
-        If PostString <> String.Empty Then PostString = " " + ArabicData.ArabicEndOfAyah + " " + PostString
-        Return PreString + ArabicString + PostString
+        $index = $preString.LastIndexOf(" "c)
+        //take last word of pre string and first word of post string or another if it is a pause marker
+        //end of ayah sign without number is used as a proper place holder
+        if ($index != -1 && strlen($preString) - 2 == $index) { $index = $preString.LastIndexOf(" "c, $index - 1); }
+        if ($index != -1) { $preString = substr($preString, $index + 1); }
+        if ($preString != "") { $preString .= " " + ArabicData::ArabicEndOfAyah . " "; }
+        $index = $postString.IndexOf(" "c);
+        if ($index == 2) { $index = $preString.IndexOf(" "c, $index + 1); }
+        if ($index != -1) { $postString = substr($postString, 0, $index); }
+        if ($postString != "") { $postString = " " . ArabicData::ArabicEndOfAyah . " " . $postString; }
+        return $preString . $arabicString . $postString;
     }
     public static function UnjoinContig($arabicString, $preString, $postString)
     {
         $index = $arabicString.IndexOf(ArabicData::ArabicEndOfAyah)
-        If PreString <> String.Empty AndAlso Index <> -1 Then
+        if (PreString <> String.Empty AndAlso Index <> -1) {
             ArabicString = ArabicString.Substring(Index + 1 + 1)
-        End If
+        }
         Index = ArabicString.LastIndexOf(ArabicData::ArabicEndOfAyah)
-        If PostString <> String.Empty AndAlso Index <> -1 Then
+        if (PostString <> String.Empty AndAlso Index <> -1) {
             $arabicString = $arabicString.Substring(0, Index - 1);
-        End If
+        }
         return $arabicString;
     }
     public static function TransliterateContigWithRules($arabicString, $preString, $postString, $scheme, $optionalStops, $preOptionalStops, $postOptionalStops)
@@ -1336,9 +1384,9 @@ class Arabic
         $strings = array();
         $strings[0] = [Utility::LoadResourceString("IslamSource_Off"), "0"];
         $strings[1] = [Utility::LoadResourceString("IslamSource_ExtendedBuckwalter"), "1"];
-        for ($count = 0; $count < count(CachedData::IslamData::TranslitSchemes); $count++) {
-            $strings[$count * 2 + 2] = [Utility::LoadResourceString("IslamSource_" . CachedData::IslamData::TranslitSchemes[$count]->Name), CStr($count * 2 + 2)];
-            $strings[$count * 2 + 1 + 2] = [Utility::LoadResourceString("IslamSource_" . CachedData::IslamData::TranslitSchemes[$count]->Name) . " Literal", CStr($count * 2 + 1 + 2)];
+        for ($count = 0; $count < count(CachedData::IslamData()->TranslitSchemes); $count++) {
+            $strings[$count * 2 + 2] = [Utility::LoadResourceString("IslamSource_" . CachedData::IslamData()->TranslitSchemes[$count]->Name), CStr($count * 2 + 2)];
+            $strings[$count * 2 + 1 + 2] = [Utility::LoadResourceString("IslamSource_" . CachedData::IslamData()->TranslitSchemes[$count]->Name) . " Literal", CStr($count * 2 + 1 + 2)];
         }
         return $strings;
     }
