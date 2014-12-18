@@ -107,6 +107,7 @@ Public Class Arabic
             Implements Collections.IComparer.Compare
             Compare = GetSchemeValueFromSymbol(DirectCast(x, ArabicData.ArabicXMLData.ArabicSymbol), _Scheme).Length - _
                 GetSchemeValueFromSymbol(DirectCast(y, ArabicData.ArabicXMLData.ArabicSymbol), _Scheme).Length
+            If Compare = 0 Then Compare = GetSchemeValueFromSymbol(DirectCast(x, ArabicData.ArabicXMLData.ArabicSymbol), _Scheme).CompareTo(GetSchemeValueFromSymbol(DirectCast(y, ArabicData.ArabicXMLData.ArabicSymbol), _Scheme))
         End Function
     End Class
     Public Shared Function TransliterateToScheme(ByVal ArabicString As String, SchemeType As ArabicData.TranslitScheme, Scheme As String) As String
