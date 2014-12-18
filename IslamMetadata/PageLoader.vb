@@ -141,12 +141,12 @@ Public Class Arabic
         Next
         If Count = CachedData.IslamData.TranslitSchemes.Length Then Return -1
         If bExp Then
-            For Count = 0 To ArabicData.ArabicSpecialLetters.Length - 1
-                If System.Text.RegularExpressions.Regex.Match(ArabicData.ArabicSpecialLetters(Count), Str).Success Then Return Count
+            For Count = 0 To CachedData.ArabicSpecialLetters.Length - 1
+                If System.Text.RegularExpressions.Regex.Match(CachedData.ArabicSpecialLetters(Count), Str).Success Then Return Count
             Next
         Else
-            If Array.IndexOf(ArabicData.ArabicSpecialLetters, Str) <> -1 Then
-                Return Array.IndexOf(ArabicData.ArabicSpecialLetters, Str)
+            If Array.IndexOf(CachedData.ArabicSpecialLetters, Str) <> -1 Then
+                Return Array.IndexOf(CachedData.ArabicSpecialLetters, Str)
             End If
         End If
         Return -1
@@ -161,8 +161,8 @@ Public Class Arabic
             End If
         Next
         If Count = CachedData.IslamData.TranslitSchemes.Length Then Return String.Empty
-        If Array.IndexOf(ArabicData.ArabicVowels, Str) <> -1 Then
-            Return Sch.Vowels(Array.IndexOf(ArabicData.ArabicVowels, Str))
+        If Array.IndexOf(CachedData.ArabicVowels, Str) <> -1 Then
+            Return Sch.Vowels(Array.IndexOf(CachedData.ArabicVowels, Str))
         End If
         Return String.Empty
     End Function
@@ -176,8 +176,8 @@ Public Class Arabic
             End If
         Next
         If Count = CachedData.IslamData.TranslitSchemes.Length Then Return String.Empty
-        If Array.IndexOf(ArabicData.ArabicLeadingGutterals, Str) <> -1 Then
-            Return Sch.Vowels(Array.IndexOf(ArabicData.ArabicLeadingGutterals, Str) + ArabicData.ArabicVowels.Length + If(Leading, ArabicData.ArabicLeadingGutterals.Length, 0))
+        If Array.IndexOf(CachedData.ArabicLeadingGutterals, Str) <> -1 Then
+            Return Sch.Vowels(Array.IndexOf(CachedData.ArabicLeadingGutterals, Str) + CachedData.ArabicVowels.Length + If(Leading, CachedData.ArabicLeadingGutterals.Length, 0))
         End If
         Return String.Empty
     End Function
@@ -191,18 +191,18 @@ Public Class Arabic
             End If
         Next
         If Count = CachedData.IslamData.TranslitSchemes.Length Then Return String.Empty
-        If Array.IndexOf(ArabicData.ArabicLettersInOrder, Symbol.Symbol) <> -1 Then
-            Return Sch.Alphabet(Array.IndexOf(ArabicData.ArabicLettersInOrder, Symbol.Symbol))
-        ElseIf Array.IndexOf(ArabicData.ArabicHamzas, Symbol.Symbol) <> -1 Then
-            Return Sch.Hamza(Array.IndexOf(ArabicData.ArabicHamzas, Symbol.Symbol))
-        ElseIf Array.IndexOf(ArabicData.ArabicVowels, CStr(Symbol.Symbol)) <> -1 Then
-            Return Sch.Vowels(Array.IndexOf(ArabicData.ArabicVowels, CStr(Symbol.Symbol)))
-        ElseIf Array.IndexOf(ArabicData.ArabicTajweed, Symbol.Symbol) <> -1 Then
-            Return Sch.Tajweed(Array.IndexOf(ArabicData.ArabicTajweed, Symbol.Symbol))
-        ElseIf Array.IndexOf(ArabicData.ArabicPunctuation, Symbol.Symbol) <> -1 Then
-            Return Sch.Punctuation(Array.IndexOf(ArabicData.ArabicPunctuation, Symbol.Symbol))
-        ElseIf Array.IndexOf(ArabicData.NonArabicLetters, Symbol.Symbol) <> -1 Then
-            Return Sch.NonArabic(Array.IndexOf(ArabicData.NonArabicLetters, Symbol.Symbol))
+        If Array.IndexOf(CachedData.ArabicLettersInOrder, Symbol.Symbol) <> -1 Then
+            Return Sch.Alphabet(Array.IndexOf(CachedData.ArabicLettersInOrder, Symbol.Symbol))
+        ElseIf Array.IndexOf(CachedData.ArabicHamzas, Symbol.Symbol) <> -1 Then
+            Return Sch.Hamza(Array.IndexOf(CachedData.ArabicHamzas, Symbol.Symbol))
+        ElseIf Array.IndexOf(CachedData.ArabicVowels, CStr(Symbol.Symbol)) <> -1 Then
+            Return Sch.Vowels(Array.IndexOf(CachedData.ArabicVowels, CStr(Symbol.Symbol)))
+        ElseIf Array.IndexOf(CachedData.ArabicTajweed, Symbol.Symbol) <> -1 Then
+            Return Sch.Tajweed(Array.IndexOf(CachedData.ArabicTajweed, Symbol.Symbol))
+        ElseIf Array.IndexOf(CachedData.ArabicPunctuation, Symbol.Symbol) <> -1 Then
+            Return Sch.Punctuation(Array.IndexOf(CachedData.ArabicPunctuation, Symbol.Symbol))
+        ElseIf Array.IndexOf(CachedData.NonArabicLetters, Symbol.Symbol) <> -1 Then
+            Return Sch.NonArabic(Array.IndexOf(CachedData.NonArabicLetters, Symbol.Symbol))
         End If
         Return String.Empty
     End Function
@@ -284,7 +284,7 @@ Public Class Arabic
         Function(Str As String, Scheme As String) {TransliterateWithRules(ArabicLetterSpelling(Str, True), Scheme, Nothing)},
         Function(Str As String, Scheme As String) {GetSchemeValueFromSymbol(ArabicData.Data.ArabicLetters(ArabicData.FindLetterBySymbol(Str.Chars(0))), Scheme)},
         Function(Str As String, Scheme As String) {GetSchemeLongVowelFromString(Str, Scheme)},
-        Function(Str As String, Scheme As String) {ArabicData.ArabicFathaDammaKasra(Array.IndexOf(ArabicData.ArabicTanweens, Str)), ArabicData.ArabicLetterNoon},
+        Function(Str As String, Scheme As String) {CachedData.ArabicFathaDammaKasra(Array.IndexOf(CachedData.ArabicTanweens, Str)), ArabicData.ArabicLetterNoon},
         Function(Str As String, Scheme As String) {String.Empty, String.Empty},
         Function(Str As String, Scheme As String) {String.Empty},
         Function(Str As String, Scheme As String) {GetSchemeGutteralFromString(Str.Remove(Str.Length - 1), Scheme, True) + Str.Chars(Str.Length - 1)},
@@ -292,11 +292,23 @@ Public Class Arabic
     }
     'Javascript does not support negative or positive lookbehind in regular expressions
     Public Shared AllowZeroLength As String() = {"helperlparen", "helperrparen"}
+    Public Shared Function IsLetter(Index As Integer) As Boolean
+        Return Array.FindIndex(CachedData.ArabicLetters, Function(Str As String) Str = ArabicData.Data.ArabicLetters(Index).Symbol) <> -1
+    End Function
+    Public Shared Function IsPunctuation(Index As Integer) As Boolean
+        Return Array.FindIndex(CachedData.PunctuationSymbols, Function(Str As String) Str = ArabicData.Data.ArabicLetters(Index).Symbol) <> -1
+    End Function
+    Public Shared Function IsStop(Index As Integer) As Boolean
+        Return Array.FindIndex(CachedData.ArabicStopLetters, Function(Str As String) Str = ArabicData.Data.ArabicLetters(Index).Symbol) <> -1
+    End Function
+    Public Shared Function IsWhitespace(Index As Integer) As Boolean
+        Return Array.FindIndex(CachedData.WhitespaceSymbols, Function(Str As String) Str = ArabicData.Data.ArabicLetters(Index).Symbol) <> -1
+    End Function
     Public Shared Function ArabicLetterSpelling(Input As String, Quranic As Boolean) As String
         Dim Output As String = String.Empty
         For Each Ch As Char In Input
             Dim Index As Integer = ArabicData.FindLetterBySymbol(Ch)
-            If Index <> -1 AndAlso ArabicData.IsLetter(Index) Then
+            If Index <> -1 AndAlso IsLetter(Index) Then
                 If Output <> String.Empty And Not Quranic Then Output += " "
                 Output += If(Quranic, ArabicData.Data.ArabicLetters(Index).SymbolName.Remove(ArabicData.Data.ArabicLetters(Index).SymbolName.Length - 1) + If(ArabicData.Data.ArabicLetters(Index).SymbolName.EndsWith("n"), String.Empty, "o"), ArabicData.Data.ArabicLetters(Index).SymbolName)
             ElseIf Index <> -1 AndAlso ArabicData.Data.ArabicLetters(Index).Symbol = ArabicData.ArabicMaddahAbove Then
@@ -353,38 +365,38 @@ Public Class Arabic
         End If
         Return Strings.ToArray()
     End Function
-    Public Shared ArabicOrdinalNumbers As String() = {">aw~alN", "vaAniyN", "vaAlivN", "raAbiEN", "xaAmisN", "saAdisN", "saAbiEN", "vaAminN", "taAsiEN", "EaA$irN"}
-    Public Shared ArabicOrdinalExtraNumbers As String() = {"HaAdiy"} '">uwalaY" "ap"
-    Public Shared ArabicFractionNumbers As String() = {"nisof", "vuluv", "rubuE", "xumus"}
-    Public Shared ArabicBaseNumbers As String() = {"waAHidN", "<ivonaAni", "valaAvapN", ">arobaEapN", "xamosapN", "sit~apN", "saboEapN", "vamaAnoyapN", "tisoEapN"}
-    Public Shared ArabicBaseExtraNumbers As String() = {">aHada", "<ivonaA"}
-    Public Shared ArabicBaseTenNumbers As String() = {"SiforN", "Ea$arapN", "Ei$oruwna", "valaAvuwna", ">arobaEuwna", "xamosuwna", "sit~uwna", "saboEuwna", "vamaAnuwna", "tisoEuwna"}
-    Public Shared ArabicBaseHundredNumbers As String() = {"mi}apN", "mi}ataAni", "valaAvumi}apK", ">arobaEumi}apK", "xamosumi}apK", "sit~umi}apK", "saboEumi}apK", "vamaAnumi}apK", "tisoEumi}apK"} '"miA}apN"
-    Public Shared ArabicBaseThousandNumbers As String() = {">alofN", ">alofaAni", "|laAfK"}
-    Public Shared ArabicBaseMillionNumbers As String() = {"miloyuwnu", "miloyuwnaAni", "malaAyiyna"}
-    Public Shared ArabicBaseBillionNumbers As String() = {"biloyuwnu", "biloyuwnaAni", "balaAyiyna"}
-    Public Shared ArabicBaseMilliardNumbers As String() = {"miloyaAru", "miloyaAraAni", "miloyaAraAtK"}
-    Public Shared ArabicBaseTrillionNumbers As String() = {"toriloyuwnu", "toriloyuwnaAni", "triloyuwnaAtK"}
+    'Public Shared ArabicOrdinalNumbers As String() = {">aw~alN", "vaAniyN", "vaAlivN", "raAbiEN", "xaAmisN", "saAdisN", "saAbiEN", "vaAminN", "taAsiEN", "EaA$irN"}
+    'Public Shared ArabicOrdinalExtraNumbers As String() = {"HaAdiy"} '">uwalaY" "ap"
+    'Public Shared ArabicFractionNumbers As String() = {"nisof", "vuluv", "rubuE", "xumus"}
+    'Public Shared ArabicBaseNumbers As String() = {"waAHidN", "<ivonaAni", "valaAvapN", ">arobaEapN", "xamosapN", "sit~apN", "saboEapN", "vamaAnoyapN", "tisoEapN"}
+    'Public Shared ArabicBaseExtraNumbers As String() = {">aHada", "<ivonaA"}
+    'Public Shared ArabicBaseTenNumbers As String() = {"SiforN", "Ea$arapN", "Ei$oruwna", "valaAvuwna", ">arobaEuwna", "xamosuwna", "sit~uwna", "saboEuwna", "vamaAnuwna", "tisoEuwna"}
+    'Public Shared ArabicBaseHundredNumbers As String() = {"mi}apN", "mi}ataAni", "valaAvumi}apK", ">arobaEumi}apK", "xamosumi}apK", "sit~umi}apK", "saboEumi}apK", "vamaAnumi}apK", "tisoEumi}apK"} '"miA}apN"
+    'Public Shared ArabicBaseThousandNumbers As String() = {">alofN", ">alofaAni", "|laAfK"}
+    'Public Shared ArabicBaseMillionNumbers As String() = {"miloyuwnu", "miloyuwnaAni", "malaAyiyna"}
+    'Public Shared ArabicBaseBillionNumbers As String() = {"biloyuwnu", "biloyuwnaAni", "balaAyiyna"}
+    'Public Shared ArabicBaseMilliardNumbers As String() = {"miloyaAru", "miloyaAraAni", "miloyaAraAtK"}
+    'Public Shared ArabicBaseTrillionNumbers As String() = {"toriloyuwnu", "toriloyuwnaAni", "triloyuwnaAtK"}
     Public Shared Function ArabicWordForLessThanThousand(ByVal Number As Integer, UseClassic As Boolean, UseAlefHundred As Boolean) As String
         Dim Str As String = String.Empty
         Dim HundStr As String = String.Empty
         If Number >= 100 Then
-            HundStr = If(UseAlefHundred, Arabic.ArabicBaseHundredNumbers((Number \ 100) - 1).Insert(2, "A"), Arabic.ArabicBaseHundredNumbers((Number \ 100) - 1))
+            HundStr = If(UseAlefHundred, CachedData.ArabicBaseHundredNumbers((Number \ 100) - 1).Insert(2, "A"), CachedData.ArabicBaseHundredNumbers((Number \ 100) - 1))
             If (Number Mod 100) = 0 Then Return HundStr
             Number = Number Mod 100
         End If
         If (Number Mod 10) <> 0 And Number <> 11 And Number <> 12 Then
-            Str = Arabic.ArabicBaseNumbers((Number Mod 10) - 1)
+            Str = CachedData.ArabicBaseNumbers((Number Mod 10) - 1)
         End If
         If Number >= 11 AndAlso Number < 20 Then
             If Number = 11 Or Number = 12 Then
-                Str += Arabic.ArabicBaseExtraNumbers(Number - 11)
+                Str += CachedData.ArabicBaseExtraNumbers(Number - 11)
             Else
                 Str = Str.Remove(Str.Length - 1) + "a"
             End If
             Str += " Ea$ara"
         ElseIf (Number = 0 And Str = String.Empty) Or Number = 10 Or Number >= 20 Then
-            Str = If(Str = String.Empty, String.Empty, Str + " wa") + Arabic.ArabicBaseTenNumbers(Number \ 10)
+            Str = If(Str = String.Empty, String.Empty, Str + " wa") + CachedData.ArabicBaseTenNumbers(Number \ 10)
         End If
         Return If(UseClassic, If(Str = String.Empty, String.Empty, Str + If(HundStr = String.Empty, String.Empty, " wa")) + HundStr, If(HundStr = String.Empty, String.Empty, HundStr + If(Str = String.Empty, String.Empty, " wa")) + Str)
     End Function
@@ -393,16 +405,16 @@ Public Class Arabic
         Dim NextStr As String = String.Empty
         Dim CurBase As Integer = 3
         Dim BaseNums As Long() = {1000, 1000000, 1000000000, 1000000000000}
-        Dim Bases As String()() = {ArabicBaseThousandNumbers, Arabic.ArabicBaseMillionNumbers, If(UseMilliard, Arabic.ArabicBaseMilliardNumbers, Arabic.ArabicBaseBillionNumbers), Arabic.ArabicBaseTrillionNumbers}
+        Dim Bases As String()() = {CachedData.ArabicBaseThousandNumbers, CachedData.ArabicBaseMillionNumbers, If(UseMilliard, CachedData.ArabicBaseMilliardNumbers, CachedData.ArabicBaseBillionNumbers), CachedData.ArabicBaseTrillionNumbers}
         Do
             If Number >= BaseNums(CurBase) And Number < 2 * BaseNums(CurBase) Then
                 NextStr = Bases(CurBase)(0)
             ElseIf Number >= 2 * BaseNums(CurBase) And Number < 3 * BaseNums(CurBase) Then
                 NextStr = Bases(CurBase)(1)
             ElseIf Number >= 3 * BaseNums(CurBase) And Number < 10 * BaseNums(CurBase) Then
-                NextStr = Arabic.ArabicBaseNumbers(CInt(Number \ BaseNums(CurBase) - 1)).Remove(Arabic.ArabicBaseNumbers(CInt(Number \ BaseNums(CurBase) - 1)).Length - 1) + "u " + Bases(CurBase)(2)
+                NextStr = CachedData.ArabicBaseNumbers(CInt(Number \ BaseNums(CurBase) - 1)).Remove(CachedData.ArabicBaseNumbers(CInt(Number \ BaseNums(CurBase) - 1)).Length - 1) + "u " + Bases(CurBase)(2)
             ElseIf Number >= 10 * BaseNums(CurBase) And Number < 11 * BaseNums(CurBase) Then
-                NextStr = Arabic.ArabicBaseTenNumbers(1).Remove(Arabic.ArabicBaseTenNumbers(1).Length - 1) + "u " + Bases(CurBase)(2)
+                NextStr = CachedData.ArabicBaseTenNumbers(1).Remove(CachedData.ArabicBaseTenNumbers(1).Length - 1) + "u " + Bases(CurBase)(2)
             ElseIf Number >= BaseNums(CurBase) Then
                 NextStr = Arabic.ArabicWordForLessThanThousand(CInt((Number \ BaseNums(CurBase)) Mod 100), UseClassic, UseAlefHundred)
                 If Number >= 100 * BaseNums(CurBase) And Number < If(UseClassic, 200, 101) * BaseNums(CurBase) Then
@@ -560,19 +572,32 @@ Public Class Arabic
     End Function
     Shared Function GetTransliterationTable(Scheme As String) As List(Of RenderArray.RenderItem)
         Dim Items As New List(Of RenderArray.RenderItem)
-        Items.AddRange(Array.ConvertAll(ArabicData.ArabicLettersInOrder, Function(Letter As Char) New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, CStr(Letter)), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, GetSchemeValueFromSymbol(ArabicData.Data.ArabicLetters(ArabicData.FindLetterBySymbol(Letter)), Scheme))})))
-        Items.AddRange(Array.ConvertAll(ArabicData.ArabicSpecialLetters, Function(Combo As String) New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Combo.Replace("(" + ArabicData.MakeUniRegEx(ArabicData.ArabicLetterTehMarbuta) + ")", ArabicData.ArabicLetterTehMarbuta).Replace(ArabicData.TehMarbutaStopRule, String.Empty).Replace(ArabicData.TehMarbutaContinueRule, "...")), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, GetSchemeSpecialValue(GetSchemeSpecialFromMatch(Combo, Scheme, False), Scheme))})))
-        Items.AddRange(Array.ConvertAll(ArabicData.ArabicHamzas, Function(Letter As Char) New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, CStr(Letter)), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, GetSchemeValueFromSymbol(ArabicData.Data.ArabicLetters(ArabicData.FindLetterBySymbol(Letter)), Scheme))})))
-        Items.AddRange(Array.ConvertAll(ArabicData.ArabicVowels, Function(Combo As String) New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Combo), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, GetSchemeLongVowelFromString(Combo, Scheme))})))
-        Items.AddRange(Array.ConvertAll(ArabicData.ArabicTajweed, Function(Letter As Char) New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, CStr(Letter)), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, GetSchemeValueFromSymbol(ArabicData.Data.ArabicLetters(ArabicData.FindLetterBySymbol(Letter)), Scheme))})))
+        Items.AddRange(Array.ConvertAll(CachedData.ArabicLettersInOrder, Function(Letter As String) New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Letter), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, GetSchemeValueFromSymbol(ArabicData.Data.ArabicLetters(ArabicData.FindLetterBySymbol(Letter.Chars(0))), Scheme))})))
+        Items.AddRange(Array.ConvertAll(CachedData.ArabicSpecialLetters, Function(Combo As String) New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Combo.Replace("(" + ArabicData.MakeUniRegEx(ArabicData.ArabicLetterTehMarbuta) + ")", ArabicData.ArabicLetterTehMarbuta).Replace(CachedData.TehMarbutaStopRule, String.Empty).Replace(CachedData.TehMarbutaContinueRule, "...")), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, GetSchemeSpecialValue(GetSchemeSpecialFromMatch(Combo, Scheme, False), Scheme))})))
+        Items.AddRange(Array.ConvertAll(CachedData.ArabicHamzas, Function(Letter As String) New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Letter), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, GetSchemeValueFromSymbol(ArabicData.Data.ArabicLetters(ArabicData.FindLetterBySymbol(Letter.Chars(0))), Scheme))})))
+        Items.AddRange(Array.ConvertAll(CachedData.ArabicVowels, Function(Combo As String) New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Combo), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, GetSchemeLongVowelFromString(Combo, Scheme))})))
+        Items.AddRange(Array.ConvertAll(CachedData.ArabicTajweed, Function(Letter As String) New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Letter), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, GetSchemeValueFromSymbol(ArabicData.Data.ArabicLetters(ArabicData.FindLetterBySymbol(Letter.Chars(0))), Scheme))})))
         Return Items
+    End Function
+    Public Shared Function ArabicTranslitLetters() As String()
+        Dim Lets As New List(Of String)
+        Lets.AddRange(Array.ConvertAll(CachedData.ArabicLettersInOrder, Function(Ch As String) Ch))
+        Lets.AddRange(Array.ConvertAll(CachedData.ArabicHamzas, Function(Ch As String) Ch))
+        Lets.AddRange(CachedData.ArabicSpecialLetters)
+        Lets.AddRange(CachedData.ArabicVowels)
+        Lets.AddRange(CachedData.ArabicLeadingGutterals)
+        Lets.AddRange(CachedData.ArabicTrailingGutterals)
+        Lets.AddRange(Array.ConvertAll(CachedData.ArabicTajweed, Function(Ch As String) Ch))
+        Lets.AddRange(Array.ConvertAll(CachedData.ArabicPunctuation, Function(Ch As String) Ch))
+        Lets.AddRange(Array.ConvertAll(CachedData.NonArabicLetters, Function(Ch As String) Ch))
+        Return Lets.ToArray()
     End Function
     Shared Function GetTranslitSchemeJSArray() As String
         'Dim Letters(ArabicData.Data.ArabicLetters.Length - 1) As IslamData.ArabicSymbol
         'ArabicData.Data.ArabicLetters.CopyTo(Letters, 0)
         'Array.Sort(Letters, New StringLengthComparer("RomanTranslit"))
         Return "var translitSchemes = " + Utility.MakeJSIndexedObject(Array.ConvertAll(CachedData.IslamData.TranslitSchemes, Function(TranslitScheme As IslamData.TranslitScheme) CStr(Array.IndexOf(CachedData.IslamData.TranslitSchemes, TranslitScheme) + 2)), _
-                                                                          New Array() {Array.ConvertAll(Of IslamData.TranslitScheme, String)(CachedData.IslamData.TranslitSchemes, Function(TranslitScheme As IslamData.TranslitScheme) Utility.MakeJSIndexedObject({"standard", "gutteral"}, New Array() {New String() {Utility.MakeJSIndexedObject(Array.ConvertAll(ArabicData.ArabicTranslitLetters(), Function(Str As String) Str.Replace("(" + ArabicData.MakeUniRegEx(ArabicData.ArabicLetterTehMarbuta) + ")", ArabicData.ArabicLetterTehMarbuta).Replace(ArabicData.TehMarbutaStopRule, String.Empty).Replace(ArabicData.TehMarbutaContinueRule, "...")), New Array() {Array.ConvertAll(Of String, String)(ArabicData.ArabicTranslitLetters(),
+                                                                          New Array() {Array.ConvertAll(Of IslamData.TranslitScheme, String)(CachedData.IslamData.TranslitSchemes, Function(TranslitScheme As IslamData.TranslitScheme) Utility.MakeJSIndexedObject({"standard", "gutteral"}, New Array() {New String() {Utility.MakeJSIndexedObject(Array.ConvertAll(ArabicTranslitLetters(), Function(Str As String) Str.Replace("(" + ArabicData.MakeUniRegEx(ArabicData.ArabicLetterTehMarbuta) + ")", ArabicData.ArabicLetterTehMarbuta).Replace(CachedData.TehMarbutaStopRule, String.Empty).Replace(CachedData.TehMarbutaContinueRule, "...")), New Array() {Array.ConvertAll(Of String, String)(ArabicTranslitLetters(),
                                                                             Function(Str As String)
                                                                                 If GetSchemeSpecialFromMatch(Str, TranslitScheme.Name, False) <> -1 Then
                                                                                     Return GetSchemeSpecialValue(GetSchemeSpecialFromMatch(Str, TranslitScheme.Name, False), TranslitScheme.Name)
@@ -591,29 +616,29 @@ Public Class Arabic
     Public Shared FindLetterBySymbolJS As String = "function findLetterBySymbol(chVal) { var iSubCount; for (iSubCount = 0; iSubCount < arabicLetters.length; iSubCount++) { if (chVal === parseInt(arabicLetters[iSubCount].Symbol, 10)) return iSubCount; for (var iShapeCount = 0; iShapeCount < arabicLetters[iSubCount].Shaping.length; iShapeCount++) { if (chVal === parseInt(arabicLetters[iSubCount].Shaping[iShapeCount], 10)) return iSubCount; } } return -1; }"
     Public Shared TransliterateGenJS As String() = {
         FindLetterBySymbolJS,
-        "function isLetterDiacritic(index) { return (" + String.Join("||", Array.ConvertAll(ArabicData.RecitationLettersDiacritics, Function(C As Char) "parseInt(arabicLetters[index].Symbol, 10) === 0x" + Hex(AscW(C)))) + "); }", _
-        "function isSpecialSymbol(index) { return (" + String.Join("||", Array.ConvertAll(ArabicData.RecitationSpecialSymbols, Function(C As Char) "parseInt(arabicLetters[index].Symbol, 10) === 0x" + Hex(AscW(C)))) + "); }", _
-        "function isCombiningSymbol(index) { return (" + String.Join("||", Array.ConvertAll(ArabicData.RecitationCombiningSymbols, Function(C As Char) "parseInt(arabicLetters[index].Symbol, 10) === 0x" + Hex(AscW(C)))) + "); }", _
+        "function isLetterDiacritic(index) { return (" + String.Join("||", Array.ConvertAll(CachedData.RecitationLettersDiacritics, Function(C As String) "parseInt(arabicLetters[index].Symbol, 10) === 0x" + Hex(AscW(C.Chars(0))))) + "); }", _
+        "function isSpecialSymbol(index) { return (" + String.Join("||", Array.ConvertAll(CachedData.RecitationSpecialSymbols, Function(C As String) "parseInt(arabicLetters[index].Symbol, 10) === 0x" + Hex(AscW(C.Chars(0))))) + "); }", _
+        "function isCombiningSymbol(index) { return (" + String.Join("||", Array.ConvertAll(CachedData.RecitationCombiningSymbols, Function(C As String) "parseInt(arabicLetters[index].Symbol, 10) === 0x" + Hex(AscW(C.Chars(0))))) + "); }", _
         "function doTransliterate(sVal, direction, conversion) { var iCount, iSubCount, sOutVal = ''; if (conversion === 0) return sVal; if (direction && (conversion % 2) === 0) return transliterateWithRules(sVal, Math.floor((conversion - 2) / 2) + 2); for (iCount = 0; iCount < sVal.length; iCount++) { if (sVal.charAt(iCount) === '\\') { iCount++; if (sVal.charAt(iCount) === ',') { sOutVal += String.fromCharCode(1548); } else { sOutVal += sVal.charAt(iCount); } } else { for (iSubCount = 0; iSubCount < arabicLetters.length; iSubCount++) { if (direction ? sVal.charCodeAt(iCount) === parseInt(arabicLetters[iSubCount].Symbol, 10) : sVal.charAt(iCount) === unescape((conversion === 1 ? arabicLetters[iSubCount].TranslitLetter : translitSchemes[(Math.floor((conversion - 2) / 2) + 2).toString()].standard[String.fromCharCode(arabicLetters[iSubCount].Symbol)]))) { sOutVal += (direction ? (conversion === 1 ? arabicLetters[iSubCount].TranslitLetter : translitSchemes[(Math.floor((conversion - 2) / 2) + 2).toString()].standard[String.fromCharCode(arabicLetters[iSubCount].Symbol)]) : ((isCombiningSymbol(iSubCount) && (iSubCount === 0 || findLetterBySymbol(sOutVal.charCodeAt(sOutVal.length - 1)) === -1 || !isLetterDiacritic(findLetterBySymbol(sOutVal.charCodeAt(sOutVal.length - 1))) && !isSpecialSymbol(findLetterBySymbol(sOutVal.charCodeAt(sOutVal.length - 1))))) ? String.fromCharCode(0x202D) + String.fromCharCode(0x25CC) : '') + String.fromCharCode(arabicLetters[iSubCount].Symbol) + ((isCombiningSymbol(iSubCount) && (iSubCount === 0 || findLetterBySymbol(sOutVal.charCodeAt(sOutVal.length - 1)) === -1 || !isLetterDiacritic(findLetterBySymbol(sOutVal.charCodeAt(sOutVal.length - 1))) && !isSpecialSymbol(findLetterBySymbol(sOutVal.charCodeAt(sOutVal.length - 1))))) ? String.fromCharCode(0x202C) : '')); break; } } if (iSubCount === arabicLetters.length) sOutVal += sVal.charAt(iCount); } } return unescape(sOutVal); }"
     }
-    Public Shared IsDiacriticJS As String = "function isDiacritic(index) { return (" + String.Join("||", Array.ConvertAll(ArabicData.RecitationDiacritics, Function(C As Char) "parseInt(arabicLetters[index].Symbol, 10) === 0x" + Hex(AscW(C)))) + "); }"
+    Public Shared IsDiacriticJS As String = "function isDiacritic(index) { return (" + String.Join("||", Array.ConvertAll(CachedData.RecitationDiacritics, Function(C As String) "parseInt(arabicLetters[index].Symbol, 10) === 0x" + Hex(AscW(C.Chars(0))))) + "); }"
     Public Shared DiacriticJS As String() =
         {"function doDiacritics(sVal, direction) { var iCount, sOutVal = ''; for (iCount = 0; iCount < sVal.length; iCount++) { sOutVal += findLetterBySymbol(sVal.charCodeAt(iCount)) === -1 || !isDiacritic(findLetterBySymbol(sVal.charCodeAt(iCount))) ? sVal[iCount] : ''; } return sOutVal; }", _
             IsDiacriticJS, _
             FindLetterBySymbolJS}
     Public Shared PlainTransliterateGenJS As String() = {FindLetterBySymbolJS, IsDiacriticJS, _
-            "function isWhitespace(index) { return (" + String.Join("||", Array.ConvertAll(ArabicData.WhitespaceSymbols, Function(C As Char) "parseInt(arabicLetters[index].Symbol, 10) === 0x" + Hex(AscW(C)))) + "); }", _
-            "function isPunctuation(index) { return (" + String.Join("||", Array.ConvertAll(ArabicData.PunctuationSymbols, Function(C As Char) "parseInt(arabicLetters[index].Symbol, 10) === 0x" + Hex(AscW(C)))) + "); }", _
-            "function isStop(index) { return (" + String.Join("||", Array.ConvertAll(ArabicData.ArabicStopLetters, Function(C As Char) "parseInt(arabicLetters[index].Symbol, 10) === 0x" + Hex(AscW(C)))) + "); }", _
+            "function isWhitespace(index) { return (" + String.Join("||", Array.ConvertAll(CachedData.WhitespaceSymbols, Function(C As String) "parseInt(arabicLetters[index].Symbol, 10) === 0x" + Hex(AscW(C.Chars(0))))) + "); }", _
+            "function isPunctuation(index) { return (" + String.Join("||", Array.ConvertAll(CachedData.PunctuationSymbols, Function(C As String) "parseInt(arabicLetters[index].Symbol, 10) === 0x" + Hex(AscW(C.Chars(0))))) + "); }", _
+            "function isStop(index) { return (" + String.Join("||", Array.ConvertAll(CachedData.ArabicStopLetters, Function(C As String) "parseInt(arabicLetters[index].Symbol, 10) === 0x" + Hex(AscW(C.Chars(0))))) + "); }", _
             "function applyColorRules(sVal) {}", _
             "function changeScript(sVal, scriptType) {}", _
-            "var arabicLeadingGutterals = " + Utility.MakeJSArray(ArabicData.ArabicLeadingGutterals) + ";", _
-            "function getSchemeGutteralFromString(str, scheme, leading) { if (arabicLeadingGutterals.indexOf(str) !== -1) { return translitSchemes[scheme].gutteral[arabicLeadingGutterals.indexOf(str) + " + CStr(ArabicData.ArabicVowels.Length) + " + (leading ? arabicLeadingGutterals.length : 0)]; } return ''; }", _
+            "var arabicLeadingGutterals = " + Utility.MakeJSArray(CachedData.ArabicLeadingGutterals) + ";", _
+            "function getSchemeGutteralFromString(str, scheme, leading) { if (arabicLeadingGutterals.indexOf(str) !== -1) { return translitSchemes[scheme].gutteral[arabicLeadingGutterals.indexOf(str) + " + CStr(CachedData.ArabicVowels.Length) + " + (leading ? arabicLeadingGutterals.length : 0)]; } return ''; }", _
             "function arabicLetterSpelling(sVal) { var count, index, output = ''; for (count = 0; count < sVal.length; count++) { index = findLetterBySymbol(sVal.charCodeAt(count)); if (index !== -1 && isLetter(index)) { if (output !== '') output += ' '; output += arabicLetters[index].SymbolName; } else if (index !== -1 && arabicLetters[index].Symbol === 1619) { output += sVal.charCodeAt(count); } } return doTransliterate(output, false, 1); }", _
             "String.prototype.format = function() { var formatted = this; for (var i = 0; i < arguments.length; i++) { formatted = formatted.replace(new RegExp('\\{'+i+'\\}', 'gi'), arguments[i]); } return formatted; };", _
             "RegExp.matchResult = function(subexp, match, offset, str) { var args = arguments; return subexp.replace(/\$(\$|&|`|\'|[0-9]+)/g, function(m, p) { if (p === '$') return '$'; if (p === '`') return str.slice(0, offset); if (p === '\'') return str.slice(offset + match.length); if (p === '&' || parseInt(p, 10) <= 0 || parseInt(p, 10) >= args.length - 3) return match; return args[3 + parseInt(p, 10)]; }); };", _
-            "var ruleFunctions = [function(str, scheme) { return [str.toUpperCase()]; }, function(str, scheme) { return [transliterateWithRules(doTransliterate(arabicWordFromNumber(parseInt(doTransliterate(str, true, 1), 10), true, false, false), false, 1), scheme)]; }, function(str, scheme) { return [arabicLetterSpelling(str)]; }, function(str, scheme) { return [translitSchemes[scheme.toString()].standard[str]]; }, function(str, scheme) { return [translitSchemes[scheme.toString()].standard[str]]; }, function(str, scheme) { return [" + Utility.MakeJSArray(ArabicData.ArabicFathaDammaKasra) + "[" + Utility.MakeJSArray(ArabicData.ArabicTanweens) + ".indexOf(str)], '" + ArabicData.ArabicLetterNoon + "']; }, function (str, scheme) { return ['', '']; }, function (str, scheme) { return ['']; }, function (str, scheme) { return [getSchemeGutteralFromString(str.slice(0, -1), scheme, true) + str[str.length - 1]]; }, function(str, scheme) { return [str[0] + getSchemeGutteralFromString(str.slice(1), scheme, false)]; }];", _
-            "function isLetter(index) { return (" + String.Join("||", Array.ConvertAll(ArabicData.RecitationLetters, Function(C As Char) "parseInt(arabicLetters[index].Symbol, 10) === 0x" + Hex(AscW(C)))) + "); }", _
+            "var ruleFunctions = [function(str, scheme) { return [str.toUpperCase()]; }, function(str, scheme) { return [transliterateWithRules(doTransliterate(arabicWordFromNumber(parseInt(doTransliterate(str, true, 1), 10), true, false, false), false, 1), scheme)]; }, function(str, scheme) { return [arabicLetterSpelling(str)]; }, function(str, scheme) { return [translitSchemes[scheme.toString()].standard[str]]; }, function(str, scheme) { return [translitSchemes[scheme.toString()].standard[str]]; }, function(str, scheme) { return [" + Utility.MakeJSArray(CachedData.ArabicFathaDammaKasra) + "[" + Utility.MakeJSArray(CachedData.ArabicTanweens) + ".indexOf(str)], '" + ArabicData.ArabicLetterNoon + "']; }, function (str, scheme) { return ['', '']; }, function (str, scheme) { return ['']; }, function (str, scheme) { return [getSchemeGutteralFromString(str.slice(0, -1), scheme, true) + str[str.length - 1]]; }, function(str, scheme) { return [str[0] + getSchemeGutteralFromString(str.slice(1), scheme, false)]; }];", _
+            "function isLetter(index) { return (" + String.Join("||", Array.ConvertAll(CachedData.RecitationLetters, Function(C As String) "parseInt(arabicLetters[index].Symbol, 10) === 0x" + Hex(AscW(C.Chars(0))))) + "); }", _
             "function isSymbol(index) { return (" + String.Join("||", Array.ConvertAll(ArabicData.GetRecitationSymbols(), Function(A As Array) "parseInt(arabicLetters[index].Symbol, 10) === 0x" + Hex(AscW(ArabicData.Data.ArabicLetters(CInt(A.GetValue(1))).Symbol)))) + "); }", _
             "var uthmaniMinimalScript = " + Utility.MakeJSArray(New String() {Utility.MakeJSIndexedObject(New String() {"rule", "match", "evaluator", "ruleFunc"}, _
                                     Array.ConvertAll(Of IslamData.RuleTranslationCategory.RuleTranslation, Object())(CachedData.UthmaniMinimalScript, Function(Convert As IslamData.RuleTranslationCategory.RuleTranslation) New Object() {Utility.MakeJSString(Convert.Name), Utility.MakeJSString(Utility.EscapeJS(Convert.Match)), Utility.MakeJSString(Convert.Evaluator), Convert.RuleFunc}), True)}, True) + ";", _
@@ -639,18 +664,18 @@ Public Class Arabic
             "function ruleMetadataComparer(a, b) { return (a.index === b.index) ? b.length - a.length : b.index - a.index; }", _
             "function replaceMetadata(sVal, metadataRule, scheme) { var count, elimParen = function(s) { return s.replace(/\(.*\)/, ''); }; for (count = 0; count < coloringSpelledOutRules.length; count++) { var index, match = null; for (index = 0; index < coloringSpelledOutRules[count].match.split('|').length; index++) { if (metadataRule.type.split('|').map(elimParen).indexOf(coloringSpelledOutRules[count].match.split('|')[index]) !== -1) { match = coloringSpelledOutRules[count].match.split('|')[index]; break; } } if (match !== null) { var str = coloringSpelledOutRules[count].evaluator.format(sVal.substr(metadataRule.index, metadataRule.length)); if (coloringSpelledOutRules[count].ruleFunc !== 0) { var args = ruleFunctions[coloringSpelledOutRules[count].ruleFunc - 1](str, scheme); if (args.length === 1) { str = args[0]; } else { var metaArgs = metadataRule.type.match(/\((.*)\)/)[1].split(','); str = ''; for (index = 0; index < args.length; index++) { if (args[index] !== undefined && args[index] !== null) str += replaceMetadata(args[index], {index: 0, length: args[index].length, type: metaArgs[index].replace(' ', '|')}, scheme); } } } sVal = sVal.substr(0, metadataRule.index) + str + sVal.substr(metadataRule.index + metadataRule.length); } } return sVal; }", _
             "function transliterateWithRules(sVal, scheme) { var count, index, arr, re, metadataList = [], replaceFunc = function(f, e) { return function(m) { return f(RegExp.matchResult(e, m, arguments[arguments.length - 2], arguments[arguments.length - 1]), scheme)[0]; }; }; sVal = sVal.replace(/\u200F/g, ''); for (count = 0; count < errorCheckRules.length; count++) { re = new RegExp(errorCheckRules[count].match, 'g'); while ((arr = re.exec(sVal)) !== null) { console.log(errorCheckRules[count].rule + ': ' + doTransliterate(sVal.substr(0, arr.index), true, 1) + '<!-- -->' + doTransliterate(sVal.substr(arr.index), true, 1)); } } for (count = 0; count < rulesOfRecitationRegEx.length; count++) { if (rulesOfRecitationRegEx[count].evaluator !== null) { var subcount, lindex; re = new RegExp(rulesOfRecitationRegEx[count].match, 'g'); while ((arr = re.exec(sVal)) !== null) { lindex = arr.index; for (subcount = 0; subcount < rulesOfRecitationRegEx[count].evaluator.length; subcount++) { if (rulesOfRecitationRegEx[count].evaluator[subcount] !== null && (arr[subcount + 1] && arr[subcount + 1].length !== 0 || allowZeroLength.indexOf(rulesOfRecitationRegEx[count].evaluator[subcount]) !== -1)) { metadataList.push({index: lindex, length: arr[subcount + 1] ? arr[subcount + 1].length : 0, type: rulesOfRecitationRegEx[count].evaluator[subcount]}); } lindex += (arr[subcount + 1] ? arr[subcount + 1].length : 0); } } } } metadataList.sort(ruleMetadataComparer); for (index = 0; index < metadataList.length; index++) { sVal = replaceMetadata(sVal, metadataList[index], scheme); } for (count = 0; count < romanizationRules.length; count++) { sVal = sVal.replace(new RegExp(romanizationRules[count].match, 'g'), (romanizationRules[count].ruleFunc === 0) ? romanizationRules[count].evaluator : replaceFunc(ruleFunctions[romanizationRules[count].ruleFunc - 1], romanizationRules[count].evaluator)); } return sVal; }"}
-    Public Shared NumberGenJS As String() = {"var arabicOrdinalNumbers = " + Utility.MakeJSArray(Arabic.ArabicOrdinalNumbers) + ";", _
-                "var arabicOrdinalExtraNumbers = " + Utility.MakeJSArray(Arabic.ArabicOrdinalExtraNumbers) + ";", _
-                "var arabicFractionNumbers = " + Utility.MakeJSArray(Arabic.ArabicFractionNumbers) + ";", _
-                "var arabicBaseNumbers = " + Utility.MakeJSArray(Arabic.ArabicBaseNumbers) + ";", _
-                "var arabicBaseExtraNumbers = " + Utility.MakeJSArray(Arabic.ArabicBaseExtraNumbers) + ";", _
-                "var arabicBaseTenNumbers = " + Utility.MakeJSArray(Arabic.ArabicBaseTenNumbers) + ";", _
-                "var arabicBaseHundredNumbers = " + Utility.MakeJSArray(Arabic.ArabicBaseHundredNumbers) + ";", _
-                "var arabicBaseThousandNumbers = " + Utility.MakeJSArray(Arabic.ArabicBaseThousandNumbers) + ";", _
-                "var arabicBaseMillionNumbers = " + Utility.MakeJSArray(Arabic.ArabicBaseMillionNumbers) + ";", _
-                "var arabicBaseBillionNumbers = " + Utility.MakeJSArray(Arabic.ArabicBaseBillionNumbers) + ";", _
-                "var arabicBaseMilliardNumbers = " + Utility.MakeJSArray(Arabic.ArabicBaseMilliardNumbers) + ";", _
-                "var arabicBaseTrillionNumbers = " + Utility.MakeJSArray(Arabic.ArabicBaseTrillionNumbers) + ";", _
+    Public Shared NumberGenJS As String() = {"var arabicOrdinalNumbers = " + Utility.MakeJSArray(CachedData.ArabicOrdinalNumbers) + ";", _
+                "var arabicOrdinalExtraNumbers = " + Utility.MakeJSArray(CachedData.ArabicOrdinalExtraNumbers) + ";", _
+                "var arabicFractionNumbers = " + Utility.MakeJSArray(CachedData.ArabicFractionNumbers) + ";", _
+                "var arabicBaseNumbers = " + Utility.MakeJSArray(CachedData.ArabicBaseNumbers) + ";", _
+                "var arabicBaseExtraNumbers = " + Utility.MakeJSArray(CachedData.ArabicBaseExtraNumbers) + ";", _
+                "var arabicBaseTenNumbers = " + Utility.MakeJSArray(CachedData.ArabicBaseTenNumbers) + ";", _
+                "var arabicBaseHundredNumbers = " + Utility.MakeJSArray(CachedData.ArabicBaseHundredNumbers) + ";", _
+                "var arabicBaseThousandNumbers = " + Utility.MakeJSArray(CachedData.ArabicBaseThousandNumbers) + ";", _
+                "var arabicBaseMillionNumbers = " + Utility.MakeJSArray(CachedData.ArabicBaseMillionNumbers) + ";", _
+                "var arabicBaseBillionNumbers = " + Utility.MakeJSArray(CachedData.ArabicBaseBillionNumbers) + ";", _
+                "var arabicBaseMilliardNumbers = " + Utility.MakeJSArray(CachedData.ArabicBaseMilliardNumbers) + ";", _
+                "var arabicBaseTrillionNumbers = " + Utility.MakeJSArray(CachedData.ArabicBaseTrillionNumbers) + ";", _
                 "function doTransliterateNum() { $('#translitvalue').text(doTransliterate(arabicWordFromNumber($('#translitedit').val(), $('#useclassic0').prop('checked'), $('#usehundredform0').prop('checked'), $('#usemilliard0').prop('checked')), false, 1)); }", _
                 "function arabicWordForLessThanThousand(number, useclassic, usealefhundred) { var str = '', hundstr = ''; if (number >= 100) { hundstr = usealefhundred ? arabicBaseHundredNumbers[Math.floor(number / 100) - 1].substr(0, 2) + 'A' + arabicBaseHundredNumbers[Math.floor(number / 100) - 1].substr(2) : arabicBaseHundredNumbers[Math.floor(number / 100) - 1]; if ((number % 100) === 0) { return hundstr; } number = number % 100; } if ((number % 10) !== 0 && number !== 11 && number !== 12) { str = arabicBaseNumbers[number % 10 - 1]; } if (number >= 11 && number < 20) { if (number == 11 || number == 12) { str += arabicBaseExtraNumbers[number - 11]; } else { str = str.slice(0, -1) + 'a'; } str += ' Ea$ara'; } else if ((number === 0 && str === '') || number === 10 || number >= 20) { str = ((str === '') ? '' : str + ' wa') + arabicBaseTenNumbers[Math.floor(number / 10)]; } return useclassic ? (((str === '') ? '' : str + ((hundstr === '') ? '' : ' wa')) + hundstr) : (((hundstr === '') ? '' : hundstr + ((str === '') ? '' : ' wa')) + str); }", _
                 "function arabicWordFromNumber(number, useclassic, usealefhundred, usemilliard) { var str = '', nextstr = '', curbase = 3, basenums = [1000, 1000000, 1000000000, 1000000000000], bases = [arabicBaseThousandNumbers, arabicBaseMillionNumbers, usemilliard ? arabicBaseMilliardNumbers : arabicBaseBillionNumbers, arabicBaseTrillionNumbers]; do { if (number >= basenums[curbase] && number < 2 * basenums[curbase]) { nextstr = bases[curbase][0]; } else if (number >= 2 * basenums[curbase] && number < 3 * basenums[curbase]) { nextstr = bases[curbase][1]; } else if (number >= 3 * basenums[curbase] && number < 10 * basenums[curbase]) { nextstr = arabicBaseNumbers[Math.floor(Number / basenums[curbase]) - 1].slice(0, -1) + 'u ' + bases[curbase][2]; } else if (number >= 10 * basenums[curbase] && number < 11 * basenums[curbase]) { nextstr = arabicBaseTenNumbers[1].slice(0, -1) + 'u ' + bases[curbase][2]; } else if (number >= basenums[curbase]) { nextstr = arabicWordForLessThanThousand(Math.floor(number / basenums[curbase]) % 100, useclassic, usealefhundred); if (number >= 100 * basenums[curbase] && number < (useclassic ? 200 : 101) * basenums[curbase]) { nextstr = nextstr.slice(0, -1) + 'u ' + bases[curbase][0].slice(0, -1) + 'K'; } else if (number >= 200 * basenums[curbase] && number < (useclassic ? 300 : 201) * basenums[curbase]) { nextstr = nextstr.slice(0, -2) + ' ' + bases[curbase][0].slice(0, -1) + 'K'; } else if (number >= 300 * basenums[curbase] && (useclassic || Math.floor(number / basenums[curbase]) % 100 === 0)) { nextstr = nextstr.slice(0, -1) + 'i ' + bases[curbase][0].slice(0, -1) + 'K'; } else { nextstr += ' ' + bases[curbase][0].slice(0, -1) + 'FA'; } } number = number % basenums[curbase]; curbase--; str = useclassic ? (((nextstr === '') ? '' : nextstr + ((str === '') ? '' : ' wa')) + str) : (((str === '') ? '' : str + ((nextstr === '') ? '' : ' wa')) + nextstr); nextstr = ''; } while (curbase >= 0); if (number !== 0 || str === '') { nextstr = arabicWordForLessThanThousand(number, useclassic, usealefhundred); } return useclassic ? (((nextstr === '') ? '' : nextstr + ((str === '') ? '' : ' wa')) + str) : (((str === '') ? '' : str + ((nextstr === '') ? '' : ' wa')) + nextstr); }"}
@@ -883,7 +908,7 @@ Public Class Arabic
     End Function
     Public Shared Function DisplayTranslitSchemes(ByVal Item As PageLoader.TextItem) As Array()
         Dim Count As Integer
-        Dim Output(ArabicData.ArabicSpecialLetters.Length + ArabicData.Data.ArabicLetters.Length + ArabicData.ArabicLongVowels.Length + 2) As Array
+        Dim Output(CachedData.ArabicSpecialLetters.Length + ArabicData.Data.ArabicLetters.Length + CachedData.ArabicLongVowels.Length + 2) As Array
         'Dim oFont As New Font(DefaultValue(HttpContext.Current.Request.QueryString.Get("fontcustom"), "Arial"), 13)
         'CheckIfCharInFont(ArabicData.Data.ArabicLetters(Count).Symbol, oFont)
         Output(0) = New String() {}
@@ -908,28 +933,28 @@ Public Class Arabic
             Next
             Output(Count + 3) = Strs
         Next
-        For Count = 0 To ArabicData.ArabicSpecialLetters.Length - 1
-            Dim Str As String = ArabicData.ArabicSpecialLetters(Count).Replace("(" + ArabicData.MakeUniRegEx(ArabicData.ArabicLetterTehMarbuta) + ")", ArabicData.ArabicLetterTehMarbuta).Replace(ArabicData.TehMarbutaStopRule, String.Empty).Replace(ArabicData.TehMarbutaContinueRule, "...")
+        For Count = 0 To CachedData.ArabicSpecialLetters.Length - 1
+            Dim Str As String = CachedData.ArabicSpecialLetters(Count).Replace("(" + ArabicData.MakeUniRegEx(ArabicData.ArabicLetterTehMarbuta) + ")", ArabicData.ArabicLetterTehMarbuta).Replace(CachedData.TehMarbutaStopRule, String.Empty).Replace(CachedData.TehMarbutaContinueRule, "...")
             Strs = New String() {String.Join(" ", Array.ConvertAll(Str.ToCharArray(), Function(Ch As Char) ArabicData.TransliterateFromBuckwalter(ArabicData.Data.ArabicLetters(ArabicData.FindLetterBySymbol(Ch)).SymbolName))), _
                                               String.Empty, _
                                        Str, _
                                        TransliterateToScheme(Str, ArabicData.TranslitScheme.Literal, String.Empty)}
             Array.Resize(Of String)(Strs, 4 + CachedData.IslamData.TranslitSchemes.Length)
             For SchemeCount = 0 To CachedData.IslamData.TranslitSchemes.Length - 1
-                Strs(4 + SchemeCount) = GetSchemeSpecialValue(GetSchemeSpecialFromMatch(ArabicData.ArabicSpecialLetters(Count), CachedData.IslamData.TranslitSchemes(SchemeCount).Name, False), CachedData.IslamData.TranslitSchemes(SchemeCount).Name)
+                Strs(4 + SchemeCount) = GetSchemeSpecialValue(GetSchemeSpecialFromMatch(CachedData.ArabicSpecialLetters(Count), CachedData.IslamData.TranslitSchemes(SchemeCount).Name, False), CachedData.IslamData.TranslitSchemes(SchemeCount).Name)
             Next
             Output(ArabicData.Data.ArabicLetters.Length + Count + 3) = Strs
         Next
-        For Count = 0 To ArabicData.ArabicLongVowels.Length - 1
-            Strs = New String() {String.Join(" ", Array.ConvertAll(ArabicData.ArabicLongVowels(Count).ToCharArray(), Function(Ch As Char) ArabicData.TransliterateFromBuckwalter(ArabicData.Data.ArabicLetters(ArabicData.FindLetterBySymbol(Ch)).SymbolName))), _
+        For Count = 0 To CachedData.ArabicLongVowels.Length - 1
+            Strs = New String() {String.Join(" ", Array.ConvertAll(CachedData.ArabicLongVowels(Count).ToCharArray(), Function(Ch As Char) ArabicData.TransliterateFromBuckwalter(ArabicData.Data.ArabicLetters(ArabicData.FindLetterBySymbol(Ch)).SymbolName))), _
                                               String.Empty, _
-                                       ArabicData.ArabicLongVowels(Count), _
-                                       TransliterateToScheme(ArabicData.ArabicLongVowels(Count), ArabicData.TranslitScheme.Literal, String.Empty)}
+                                       CachedData.ArabicLongVowels(Count), _
+                                       TransliterateToScheme(CachedData.ArabicLongVowels(Count), ArabicData.TranslitScheme.Literal, String.Empty)}
             Array.Resize(Of String)(Strs, 4 + CachedData.IslamData.TranslitSchemes.Length)
             For SchemeCount = 0 To CachedData.IslamData.TranslitSchemes.Length - 1
-                Strs(4 + SchemeCount) = GetSchemeLongVowelFromString(ArabicData.ArabicLongVowels(Count), CachedData.IslamData.TranslitSchemes(SchemeCount).Name)
+                Strs(4 + SchemeCount) = GetSchemeLongVowelFromString(CachedData.ArabicLongVowels(Count), CachedData.IslamData.TranslitSchemes(SchemeCount).Name)
             Next
-            Output(ArabicData.ArabicSpecialLetters.Length + ArabicData.Data.ArabicLetters.Length + Count + 3) = Strs
+            Output(CachedData.ArabicSpecialLetters.Length + ArabicData.Data.ArabicLetters.Length + Count + 3) = Strs
         Next
         Return Output
     End Function
@@ -1463,6 +1488,43 @@ Public Class IslamData
     <System.Xml.Serialization.XmlArray("translitschemes")> _
     <System.Xml.Serialization.XmlArrayItem("scheme")> _
     Public TranslitSchemes() As TranslitScheme
+    Structure ArabicNumInfo
+        <System.Xml.Serialization.XmlAttribute("name")> _
+        Public Name As String
+        <System.Xml.Serialization.XmlAttribute("text")> _
+        Public _Text As String
+        ReadOnly Property Text As String()
+            Get
+                Return _Text.Split(" "c)
+            End Get
+        End Property
+    End Structure
+    <System.Xml.Serialization.XmlArray("arabicnumbers")> _
+    <System.Xml.Serialization.XmlArrayItem("nums")> _
+    Public ArabicNumbers() As ArabicNumInfo
+    Structure ArabicPattern
+        <System.Xml.Serialization.XmlAttribute("name")> _
+        Public Name As String
+        <System.Xml.Serialization.XmlAttribute("match")> _
+        Public Match As String
+    End Structure
+    <System.Xml.Serialization.XmlArray("arabicpatterns")> _
+    <System.Xml.Serialization.XmlArrayItem("pattern")> _
+    Public ArabicPatterns() As ArabicPattern
+    Structure ArabicGroup
+        <System.Xml.Serialization.XmlAttribute("name")> _
+        Public Name As String
+        <System.Xml.Serialization.XmlAttribute("text")> _
+        Public _Text As String
+        ReadOnly Property Text As String()
+            Get
+                Return _Text.Split(" "c)
+            End Get
+        End Property
+    End Structure
+    <System.Xml.Serialization.XmlArray("arabicgroups")> _
+    <System.Xml.Serialization.XmlArrayItem("group")> _
+    Public ArabicGroups() As ArabicGroup
     Structure ColorRule
         <System.Xml.Serialization.XmlAttribute("name")> _
         Public Name As String
@@ -1737,6 +1799,33 @@ Public Class CachedData
     Shared _ColoringSpelledOutRules As IslamData.RuleTranslationCategory.RuleTranslation()
     Shared _ErrorCheck As IslamData.RuleTranslationCategory.RuleTranslation()
     Shared _RulesOfRecitationRegEx As IslamData.RuleMetadataTranslation()
+    Public Shared Function GetNum(Name As String) As String()
+        Dim Count As Integer
+        For Count = 0 To CachedData.IslamData.ArabicNumbers.Length - 1
+            If CachedData.IslamData.ArabicNumbers(Count).Name = Name Then
+                Return CachedData.IslamData.ArabicNumbers(Count).Text
+            End If
+        Next
+        Return {}
+    End Function
+    Public Shared Function GetPattern(Name As String) As String
+        Dim Count As Integer
+        For Count = 0 To CachedData.IslamData.ArabicPatterns.Length - 1
+            If CachedData.IslamData.ArabicPatterns(Count).Name = Name Then
+                Return TranslateRegEx(CachedData.IslamData.ArabicPatterns(Count).Match)
+            End If
+        Next
+        Return String.Empty
+    End Function
+    Public Shared Function GetGroup(Name As String) As String()
+        Dim Count As Integer
+        For Count = 0 To CachedData.IslamData.ArabicGroups.Length - 1
+            If CachedData.IslamData.ArabicGroups(Count).Name = Name Then
+                Return Array.ConvertAll(CachedData.IslamData.ArabicGroups(Count).Text, Function(Str As String) TranslateRegEx(Str))
+            End If
+        Next
+        Return {}
+    End Function
     Public Shared Function GetRuleSet(Name As String) As IslamData.RuleTranslationCategory.RuleTranslation()
         Dim Count As Integer
         For Count = 0 To CachedData.IslamData.RuleSets.Length - 1
@@ -1753,35 +1842,505 @@ Public Class CachedData
         Next
         Return Nothing
     End Function
+    Shared _ArabicBaseNumbers As String()
+    Shared _ArabicBaseExtraNumbers As String()
+    Shared _ArabicBaseTenNumbers As String()
+    Shared _ArabicBaseHundredNumbers As String()
+    Shared _ArabicBaseThousandNumbers As String()
+    Shared _ArabicBaseMillionNumbers As String()
+    Shared _ArabicBaseMilliardNumbers As String()
+    Shared _ArabicBaseBillionNumbers As String()
+    Shared _ArabicBaseTrillionNumbers As String()
+    Shared _ArabicFractionNumbers As String()
+    Shared _ArabicOrdinalNumbers As String()
+    Shared _ArabicOrdinalExtraNumbers As String()
+    Public Shared ReadOnly Property ArabicBaseNumbers As String()
+        Get
+            If _ArabicBaseNumbers Is Nothing Then
+                _ArabicBaseNumbers = GetNum("base")
+            End If
+            Return _ArabicBaseNumbers
+        End Get
+    End Property
+    Public Shared ReadOnly Property ArabicBaseExtraNumbers As String()
+        Get
+            If _ArabicBaseExtraNumbers Is Nothing Then
+                _ArabicBaseExtraNumbers = GetNum("baseextras")
+            End If
+            Return _ArabicBaseExtraNumbers
+        End Get
+    End Property
+    Public Shared ReadOnly Property ArabicBaseTenNumbers As String()
+        Get
+            If _ArabicBaseTenNumbers Is Nothing Then
+                _ArabicBaseTenNumbers = GetNum("baseten")
+            End If
+            Return _ArabicBaseTenNumbers
+        End Get
+    End Property
+    Public Shared ReadOnly Property ArabicBaseHundredNumbers As String()
+        Get
+            If _ArabicBaseHundredNumbers Is Nothing Then
+                _ArabicBaseHundredNumbers = GetNum("basehundred")
+            End If
+            Return _ArabicBaseHundredNumbers
+        End Get
+    End Property
+    Public Shared ReadOnly Property ArabicBaseThousandNumbers As String()
+        Get
+            If _ArabicBaseThousandNumbers Is Nothing Then
+                _ArabicBaseThousandNumbers = GetNum("thousands")
+            End If
+            Return _ArabicBaseThousandNumbers
+        End Get
+    End Property
+    Public Shared ReadOnly Property ArabicBaseMillionNumbers As String()
+        Get
+            If _ArabicBaseMillionNumbers Is Nothing Then
+                _ArabicBaseMillionNumbers = GetNum("millions")
+            End If
+            Return _ArabicBaseMillionNumbers
+        End Get
+    End Property
+    Public Shared ReadOnly Property ArabicBaseMilliardNumbers As String()
+        Get
+            If _ArabicBaseMilliardNumbers Is Nothing Then
+                _ArabicBaseMilliardNumbers = GetNum("milliard")
+            End If
+            Return _ArabicBaseMilliardNumbers
+        End Get
+    End Property
+    Public Shared ReadOnly Property ArabicBaseBillionNumbers As String()
+        Get
+            If _ArabicBaseBillionNumbers Is Nothing Then
+                _ArabicBaseBillionNumbers = GetNum("billions")
+            End If
+            Return _ArabicBaseBillionNumbers
+        End Get
+    End Property
+    Public Shared ReadOnly Property ArabicBaseTrillionNumbers As String()
+        Get
+            If _ArabicBaseTrillionNumbers Is Nothing Then
+                _ArabicBaseTrillionNumbers = GetNum("trillions")
+            End If
+            Return _ArabicBaseTrillionNumbers
+        End Get
+    End Property
+    Public Shared ReadOnly Property ArabicFractionNumbers As String()
+        Get
+            If _ArabicFractionNumbers Is Nothing Then
+                _ArabicFractionNumbers = GetNum("fractions")
+            End If
+            Return _ArabicFractionNumbers
+        End Get
+    End Property
+    Public Shared ReadOnly Property ArabicOrdinalNumbers As String()
+        Get
+            If _ArabicOrdinalNumbers Is Nothing Then
+                _ArabicOrdinalNumbers = GetNum("ordinals")
+            End If
+            Return _ArabicOrdinalNumbers
+        End Get
+    End Property
+    Public Shared ReadOnly Property ArabicOrdinalExtraNumbers As String()
+        Get
+            If _ArabicOrdinalExtraNumbers Is Nothing Then
+                _ArabicOrdinalExtraNumbers = GetNum("ordinalextras")
+            End If
+            Return _ArabicOrdinalExtraNumbers
+        End Get
+    End Property
+    Shared _CertainStopPattern As String
+    Shared _OptionalStopPattern As String
+    Shared _OptionalStopPatternNotEndOfAyah As String
+    Shared _CertainNotStopPattern As String
+    Shared _OptionalNotStopPattern As String
+    Shared _TehMarbutaStopRule As String
+    Shared _TehMarbutaContinueRule As String
+    Public Shared ReadOnly Property CertainStopPattern As String
+        Get
+            If _CertainStopPattern Is Nothing Then
+                _CertainStopPattern = GetPattern("CertainStopPattern")
+            End If
+            Return _CertainStopPattern
+        End Get
+    End Property
+    Public Shared ReadOnly Property OptionalStopPattern As String
+        Get
+            If _OptionalStopPattern Is Nothing Then
+                _OptionalStopPattern = GetPattern("OptionalStopPattern")
+            End If
+            Return _OptionalStopPattern
+        End Get
+    End Property
+    Public Shared ReadOnly Property OptionalStopPatternNotEndOfAyah As String
+        Get
+            If _OptionalStopPatternNotEndOfAyah Is Nothing Then
+                _OptionalStopPatternNotEndOfAyah = GetPattern("OptionalStopPatternNotEndOfAyah")
+            End If
+            Return _OptionalStopPatternNotEndOfAyah
+        End Get
+    End Property
+    Public Shared ReadOnly Property CertainNotStopPattern As String
+        Get
+            If _CertainNotStopPattern Is Nothing Then
+                _CertainNotStopPattern = GetPattern("CertainNotStopPattern")
+            End If
+            Return _CertainNotStopPattern
+        End Get
+    End Property
+    Public Shared ReadOnly Property OptionalNotStopPattern As String
+        Get
+            If _OptionalNotStopPattern Is Nothing Then
+                _OptionalNotStopPattern = GetPattern("OptionalNotStopPattern")
+            End If
+            Return _OptionalNotStopPattern
+        End Get
+    End Property
+    Public Shared ReadOnly Property TehMarbutaStopRule As String
+        Get
+            If _TehMarbutaStopRule Is Nothing Then
+                _TehMarbutaStopRule = GetPattern("TehMarbutaStopRule")
+            End If
+            Return _TehMarbutaStopRule
+        End Get
+    End Property
+    Public Shared ReadOnly Property TehMarbutaContinueRule As String
+        Get
+            If _TehMarbutaContinueRule Is Nothing Then
+                _TehMarbutaContinueRule = GetPattern("TehMarbutaContinueRule")
+            End If
+            Return _TehMarbutaContinueRule
+        End Get
+    End Property
+    Shared _ArabicUniqueLetters As String()
+    Shared _ArabicNumbers As String()
+    Shared _ArabicWaslKasraExceptions As String()
+    Shared _ArabicLongVowels As String()
+    Shared _ArabicTanweens As String()
+    Shared _ArabicFathaDammaKasra As String()
+    Shared _ArabicStopLetters As String()
+    Shared _ArabicSpecialGutteral As String()
+    Shared _ArabicSpecialLeadingGutteral As String()
+    Shared _ArabicPunctuationSymbols As String()
+    Shared _ArabicLetters As String()
+    Shared _ArabicSunLettersNoLam As String()
+    Shared _ArabicSunLetters As String()
+    Shared _ArabicMoonLettersNoVowels As String()
+    Shared _ArabicMoonLetters As String()
+    Shared _RecitationCombiningSymbols As String()
+    Shared _RecitationConnectingFollowerSymbols As String()
+    Shared _RecitationSymbols As String()
+    Shared _ArabicLettersInOrder As String()
+    Shared _ArabicSpecialLetters As String()
+    Shared _ArabicHamzas As String()
+    Shared _ArabicVowels As String()
+    Shared _ArabicTajweed As String()
+    Shared _ArabicPunctuation As String()
+    Shared _NonArabicLetters As String()
+    Shared _WhitespaceSymbols As String()
+    Shared _PunctuationSymbols As String()
+    Shared _RecitationDiacritics As String()
+    Shared _RecitationLettersDiacritics As String()
+    Shared _RecitationSpecialSymbols As String()
+    Shared _ArabicLeadingGutterals As String()
+    Shared _RecitationLetters As String()
+    Shared _ArabicTrailingGutterals As String()
+
+    Public Shared ReadOnly Property ArabicUniqueLetters As String()
+        Get
+            If _ArabicUniqueLetters Is Nothing Then
+                _ArabicUniqueLetters = GetGroup("ArabicUniqueLetters")
+            End If
+            Return _ArabicUniqueLetters
+        End Get
+    End Property
+    Public Shared ReadOnly Property ArabicNumbers As String()
+        Get
+            If _ArabicNumbers Is Nothing Then
+                _ArabicNumbers = GetGroup("ArabicNumbers")
+            End If
+            Return _ArabicNumbers
+        End Get
+    End Property
+    Public Shared ReadOnly Property ArabicWaslKasraExceptions As String()
+        Get
+            If _ArabicWaslKasraExceptions Is Nothing Then
+                _ArabicWaslKasraExceptions = GetGroup("ArabicWaslKasraExceptions")
+            End If
+            Return _ArabicWaslKasraExceptions
+        End Get
+    End Property
+    Public Shared ReadOnly Property ArabicLongVowels As String()
+        Get
+            If _ArabicLongVowels Is Nothing Then
+                _ArabicLongVowels = GetGroup("ArabicLongVowels")
+            End If
+            Return _ArabicLongVowels
+        End Get
+    End Property
+    Public Shared ReadOnly Property ArabicTanweens As String()
+        Get
+            If _ArabicTanweens Is Nothing Then
+                _ArabicTanweens = GetGroup("ArabicTanweens")
+            End If
+            Return _ArabicTanweens
+        End Get
+    End Property
+    Public Shared ReadOnly Property ArabicFathaDammaKasra As String()
+        Get
+            If _ArabicFathaDammaKasra Is Nothing Then
+                _ArabicFathaDammaKasra = GetGroup("ArabicFathaDammaKasra")
+            End If
+            Return _ArabicFathaDammaKasra
+        End Get
+    End Property
+    Public Shared ReadOnly Property ArabicStopLetters As String()
+        Get
+            If _ArabicStopLetters Is Nothing Then
+                _ArabicStopLetters = GetGroup("ArabicStopLetters")
+            End If
+            Return _ArabicStopLetters
+        End Get
+    End Property
+    Public Shared ReadOnly Property ArabicSpecialGutteral As String()
+        Get
+            If _ArabicSpecialGutteral Is Nothing Then
+                _ArabicSpecialGutteral = GetGroup("ArabicSpecialGutteral")
+            End If
+            Return _ArabicSpecialGutteral
+        End Get
+    End Property
+    Public Shared ReadOnly Property ArabicSpecialLeadingGutteral As String()
+        Get
+            If _ArabicSpecialLeadingGutteral Is Nothing Then
+                _ArabicSpecialLeadingGutteral = GetGroup("ArabicSpecialLeadingGutteral")
+            End If
+            Return _ArabicSpecialLeadingGutteral
+        End Get
+    End Property
+    Public Shared ReadOnly Property ArabicPunctuationSymbols As String()
+        Get
+            If _ArabicPunctuationSymbols Is Nothing Then
+                _ArabicPunctuationSymbols = GetGroup("ArabicPunctuationSymbols")
+            End If
+            Return _ArabicPunctuationSymbols
+        End Get
+    End Property
+    Public Shared ReadOnly Property ArabicLetters As String()
+        Get
+            If _ArabicLetters Is Nothing Then
+                _ArabicLetters = GetGroup("ArabicLetters")
+            End If
+            Return _ArabicLetters
+        End Get
+    End Property
+    Public Shared ReadOnly Property ArabicSunLettersNoLam As String()
+        Get
+            If _ArabicSunLettersNoLam Is Nothing Then
+                _ArabicSunLettersNoLam = GetGroup("ArabicSunLettersNoLam")
+            End If
+            Return _ArabicSunLettersNoLam
+        End Get
+    End Property
+    Public Shared ReadOnly Property ArabicSunLetters As String()
+        Get
+            If _ArabicSunLetters Is Nothing Then
+                _ArabicSunLetters = GetGroup("ArabicSunLetters")
+            End If
+            Return _ArabicSunLetters
+        End Get
+    End Property
+    Public Shared ReadOnly Property ArabicMoonLettersNoVowels As String()
+        Get
+            If _ArabicMoonLettersNoVowels Is Nothing Then
+                _ArabicMoonLettersNoVowels = GetGroup("ArabicMoonLettersNoVowels")
+            End If
+            Return _ArabicMoonLettersNoVowels
+        End Get
+    End Property
+    Public Shared ReadOnly Property ArabicMoonLetters As String()
+        Get
+            If _ArabicMoonLetters Is Nothing Then
+                _ArabicMoonLetters = GetGroup("ArabicMoonLetters")
+            End If
+            Return _ArabicMoonLetters
+        End Get
+    End Property
+    Public Shared ReadOnly Property RecitationCombiningSymbols As String()
+        Get
+            If _RecitationCombiningSymbols Is Nothing Then
+                _RecitationCombiningSymbols = GetGroup("RecitationCombiningSymbols")
+            End If
+            Return _RecitationCombiningSymbols
+        End Get
+    End Property
+    Public Shared ReadOnly Property RecitationConnectingFollowerSymbols As String()
+        Get
+            If _RecitationConnectingFollowerSymbols Is Nothing Then
+                _RecitationConnectingFollowerSymbols = GetGroup("RecitationConnectingFollowerSymbols")
+            End If
+            Return _RecitationConnectingFollowerSymbols
+        End Get
+    End Property
+    Public Shared ReadOnly Property RecitationSymbols As String()
+        Get
+            If _RecitationSymbols Is Nothing Then
+                _RecitationSymbols = GetGroup("RecitationSymbols")
+            End If
+            Return _RecitationSymbols
+        End Get
+    End Property
+    Public Shared ReadOnly Property ArabicLettersInOrder As String()
+        Get
+            If _ArabicLettersInOrder Is Nothing Then
+                _ArabicLettersInOrder = GetGroup("ArabicLettersInOrder")
+            End If
+            Return _ArabicLettersInOrder
+        End Get
+    End Property
+    Public Shared ReadOnly Property ArabicSpecialLetters As String()
+        Get
+            If _ArabicSpecialLetters Is Nothing Then
+                _ArabicSpecialLetters = GetGroup("ArabicSpecialLetters")
+            End If
+            Return _ArabicSpecialLetters
+        End Get
+    End Property
+    Public Shared ReadOnly Property ArabicHamzas As String()
+        Get
+            If _ArabicHamzas Is Nothing Then
+                _ArabicHamzas = GetGroup("ArabicHamzas")
+            End If
+            Return _ArabicHamzas
+        End Get
+    End Property
+    Public Shared ReadOnly Property ArabicVowels As String()
+        Get
+            If _ArabicVowels Is Nothing Then
+                _ArabicVowels = GetGroup("ArabicVowels")
+            End If
+            Return _ArabicVowels
+        End Get
+    End Property
+    Public Shared ReadOnly Property ArabicTajweed As String()
+        Get
+            If _ArabicTajweed Is Nothing Then
+                _ArabicTajweed = GetGroup("ArabicTajweed")
+            End If
+            Return _ArabicTajweed
+        End Get
+    End Property
+    Public Shared ReadOnly Property ArabicPunctuation As String()
+        Get
+            If _ArabicPunctuation Is Nothing Then
+                _ArabicPunctuation = GetGroup("ArabicPunctuation")
+            End If
+            Return _ArabicPunctuation
+        End Get
+    End Property
+    Public Shared ReadOnly Property NonArabicLetters As String()
+        Get
+            If _NonArabicLetters Is Nothing Then
+                _NonArabicLetters = GetGroup("NonArabicLetters")
+            End If
+            Return _NonArabicLetters
+        End Get
+    End Property
+    Public Shared ReadOnly Property WhitespaceSymbols As String()
+        Get
+            If _WhitespaceSymbols Is Nothing Then
+                _WhitespaceSymbols = GetGroup("WhitespaceSymbols")
+            End If
+            Return _WhitespaceSymbols
+        End Get
+    End Property
+    Public Shared ReadOnly Property PunctuationSymbols As String()
+        Get
+            If _PunctuationSymbols Is Nothing Then
+                _PunctuationSymbols = GetGroup("PunctuationSymbols")
+            End If
+            Return _PunctuationSymbols
+        End Get
+    End Property
+    Public Shared ReadOnly Property RecitationDiacritics As String()
+        Get
+            If _RecitationDiacritics Is Nothing Then
+                _RecitationDiacritics = GetGroup("RecitationDiacritics")
+            End If
+            Return _RecitationDiacritics
+        End Get
+    End Property
+    Public Shared ReadOnly Property RecitationLettersDiacritics As String()
+        Get
+            If _RecitationLettersDiacritics Is Nothing Then
+                _RecitationLettersDiacritics = GetGroup("RecitationLettersDiacritics")
+            End If
+            Return _RecitationLettersDiacritics
+        End Get
+    End Property
+    Public Shared ReadOnly Property RecitationSpecialSymbols As String()
+        Get
+            If _RecitationSpecialSymbols Is Nothing Then
+                _RecitationSpecialSymbols = GetGroup("RecitationSpecialSymbols")
+            End If
+            Return _RecitationSpecialSymbols
+        End Get
+    End Property
+    Public Shared ReadOnly Property ArabicLeadingGutterals As String()
+        Get
+            If _ArabicLeadingGutterals Is Nothing Then
+                _ArabicLeadingGutterals = GetGroup("ArabicLeadingGutterals")
+            End If
+            Return _ArabicLeadingGutterals
+        End Get
+    End Property
+    Public Shared ReadOnly Property RecitationLetters As String()
+        Get
+            If _RecitationLetters Is Nothing Then
+                _RecitationLetters = GetGroup("RecitationLetters")
+            End If
+            Return _RecitationLetters
+        End Get
+    End Property
+    Public Shared ReadOnly Property ArabicTrailingGutterals As String()
+        Get
+            If _ArabicTrailingGutterals Is Nothing Then
+                _ArabicTrailingGutterals = GetGroup("ArabicTrailingGutterals")
+            End If
+            Return _ArabicTrailingGutterals
+        End Get
+    End Property
     Public Shared Function TranslateRegEx(Value As String) As String
-        Value = Value.Replace("{CertainStopPattern}", ArabicData.CertainStopPattern)
-        Value = Value.Replace("{OptionalStopPattern}", ArabicData.OptionalStopPattern)
-        Value = Value.Replace("{OptionalStopPatternNotEndOfAyah}", ArabicData.OptionalStopPatternNotEndOfAyah)
-        Value = Value.Replace("{CertainNotStopPattern}", ArabicData.CertainNotStopPattern)
-        Value = Value.Replace("{OptionalNotStopPattern}", ArabicData.OptionalNotStopPattern)
-        Value = Value.Replace("{TehMarbutaStopRule}", ArabicData.TehMarbutaStopRule)
-        Value = Value.Replace("{TehMarbutaContinueRule}", ArabicData.TehMarbutaContinueRule)
-        Value = Value.Replace("{ArabicUniqueLetters}", ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicData.ArabicUniqueLetters, Function(Str As String) ArabicData.TransliterateFromBuckwalter(Str).Replace(CStr(ArabicData.ArabicMaddahAbove), String.Empty))))
-        Value = Value.Replace("{ArabicNumbers}", ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicData.ArabicNumbers, Function(Str As String) ArabicData.TransliterateFromBuckwalter(Str))))
-        Value = Value.Replace("{ArabicWaslKasraExceptions}", ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicData.ArabicWaslKasraExceptions, Function(Str As String) ArabicData.TransliterateFromBuckwalter(Str))))
+        Value = Value.Replace("{CertainStopPattern}", CertainStopPattern)
+        Value = Value.Replace("{OptionalStopPattern}", OptionalStopPattern)
+        Value = Value.Replace("{OptionalStopPatternNotEndOfAyah}", OptionalStopPatternNotEndOfAyah)
+        Value = Value.Replace("{CertainNotStopPattern}", CertainNotStopPattern)
+        Value = Value.Replace("{OptionalNotStopPattern}", OptionalNotStopPattern)
+        Value = Value.Replace("{TehMarbutaStopRule}", TehMarbutaStopRule)
+        Value = Value.Replace("{TehMarbutaContinueRule}", TehMarbutaContinueRule)
+
+        Value = Value.Replace("{ArabicUniqueLetters}", ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicUniqueLetters, Function(Str As String) ArabicData.TransliterateFromBuckwalter(Str).Replace(CStr(ArabicData.ArabicMaddahAbove), String.Empty))))
+        Value = Value.Replace("{ArabicNumbers}", ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicNumbers, Function(Str As String) ArabicData.TransliterateFromBuckwalter(Str))))
+        Value = Value.Replace("{ArabicWaslKasraExceptions}", ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicWaslKasraExceptions, Function(Str As String) ArabicData.TransliterateFromBuckwalter(Str))))
         'Value = Value.Replace("{SimpleSuperscriptAlefBefore}", ArabicData.MakeRegMultiEx(Array.ConvertAll(Arabic.SimpleSuperscriptAlefBefore, Function(Str As String) ArabicData.TransliterateFromBuckwalter(Str.Replace(".", String.Empty).Replace("""", String.Empty).Replace("@", String.Empty).Replace("[", String.Empty).Replace("]", String.Empty).Replace("-", String.Empty).Replace("^", String.Empty)))))
         'Value = Value.Replace("{SimpleSuperscriptAlefNotBefore}", ArabicData.MakeRegMultiEx(Array.ConvertAll(Arabic.SimpleSuperscriptAlefNotBefore, Function(Str As String) ArabicData.TransliterateFromBuckwalter(Str.Replace(".", String.Empty).Replace("""", String.Empty).Replace("@", String.Empty).Replace("[", String.Empty).Replace("]", String.Empty).Replace("-", String.Empty).Replace("^", String.Empty)))))
         'Value = Value.Replace("{SimpleSuperscriptAlefAfter}", ArabicData.MakeRegMultiEx(Array.ConvertAll(Arabic.SimpleSuperscriptAlefAfter, Function(Str As String) ArabicData.TransliterateFromBuckwalter(Str.Replace(".", String.Empty).Replace("""", String.Empty).Replace("@", String.Empty).Replace("[", String.Empty).Replace("]", String.Empty).Replace("-", String.Empty).Replace("^", String.Empty)))))
         'Value = Value.Replace("{SimpleSuperscriptAlefNotAfter}", ArabicData.MakeRegMultiEx(Array.ConvertAll(Arabic.SimpleSuperscriptAlefNotAfter, Function(Str As String) ArabicData.TransliterateFromBuckwalter(Str.Replace(".", String.Empty).Replace("""", String.Empty).Replace("@", String.Empty).Replace("[", String.Empty).Replace("]", String.Empty).Replace("-", String.Empty).Replace("^", String.Empty)))))
-        Value = Value.Replace("{ArabicLongShortVowels}", ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicData.ArabicLongVowels, Function(StrV As String) ArabicData.MakeUniRegEx(StrV(0) + "(?=" + ArabicData.MakeUniRegEx(StrV(1)) + ")"))))
-        Value = Value.Replace("{ArabicTanweens}", ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicData.ArabicTanweens, Function(Str As String) ArabicData.MakeUniRegEx(Str))))
-        Value = Value.Replace("{ArabicFathaDammaKasra}", ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicData.ArabicFathaDammaKasra, Function(Str As String) ArabicData.MakeUniRegEx(Str))))
-        Value = Value.Replace("{ArabicStopLetters}", ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicData.ArabicStopLetters, Function(Str As String) ArabicData.MakeUniRegEx(Str))))
-        Value = Value.Replace("{ArabicSpecialGutteral}", ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicData.ArabicSpecialGutteral, Function(Str As String) ArabicData.MakeUniRegEx(Str))))
-        Value = Value.Replace("{ArabicSpecialLeadingGutteral}", ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicData.ArabicSpecialLeadingGutteral, Function(Str As String) ArabicData.MakeUniRegEx(Str))))
-        Value = Value.Replace("{ArabicPunctuationSymbols}", ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicData.ArabicPunctuationSymbols, Function(Str As String) ArabicData.MakeUniRegEx(Str))))
-        Value = Value.Replace("{ArabicLetters}", ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicData.ArabicLetters, Function(Str As String) ArabicData.MakeUniRegEx(Str))))
-        Value = Value.Replace("{ArabicSunLettersNoLam}", ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicData.ArabicSunLettersNoLam, Function(Str As String) ArabicData.MakeUniRegEx(Str))))
-        Value = Value.Replace("{ArabicSunLetters}", ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicData.ArabicSunLetters, Function(Str As String) ArabicData.MakeUniRegEx(Str))))
-        Value = Value.Replace("{ArabicMoonLettersNoVowels}", ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicData.ArabicMoonLettersNoVowels, Function(Str As String) ArabicData.MakeUniRegEx(Str))))
-        Value = Value.Replace("{ArabicMoonLetters}", ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicData.ArabicMoonLetters, Function(Str As String) ArabicData.MakeUniRegEx(Str))))
-        Value = Value.Replace("{RecitationCombiningSymbols}", ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicData.RecitationCombiningSymbols, Function(Str As String) ArabicData.MakeUniRegEx(Str))))
-        Value = Value.Replace("{RecitationConnectingFollowerSymbols}", ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicData.RecitationConnectingFollowerSymbols, Function(Str As String) ArabicData.MakeUniRegEx(Str))))
+        Value = Value.Replace("{ArabicLongShortVowels}", ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicLongVowels, Function(StrV As String) ArabicData.MakeUniRegEx(StrV(0) + "(?=" + ArabicData.MakeUniRegEx(StrV(1)) + ")"))))
+        Value = Value.Replace("{ArabicTanweens}", ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicTanweens, Function(Str As String) ArabicData.MakeUniRegEx(Str))))
+        Value = Value.Replace("{ArabicFathaDammaKasra}", ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicFathaDammaKasra, Function(Str As String) ArabicData.MakeUniRegEx(Str))))
+        Value = Value.Replace("{ArabicStopLetters}", ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicStopLetters, Function(Str As String) ArabicData.MakeUniRegEx(Str))))
+        Value = Value.Replace("{ArabicSpecialGutteral}", ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicSpecialGutteral, Function(Str As String) ArabicData.MakeUniRegEx(Str))))
+        Value = Value.Replace("{ArabicSpecialLeadingGutteral}", ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicSpecialLeadingGutteral, Function(Str As String) ArabicData.MakeUniRegEx(Str))))
+        Value = Value.Replace("{ArabicPunctuationSymbols}", ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicPunctuationSymbols, Function(Str As String) ArabicData.MakeUniRegEx(Str))))
+        Value = Value.Replace("{ArabicLetters}", ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicLetters, Function(Str As String) ArabicData.MakeUniRegEx(Str))))
+        Value = Value.Replace("{ArabicSunLettersNoLam}", ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicSunLettersNoLam, Function(Str As String) ArabicData.MakeUniRegEx(Str))))
+        Value = Value.Replace("{ArabicSunLetters}", ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicSunLetters, Function(Str As String) ArabicData.MakeUniRegEx(Str))))
+        Value = Value.Replace("{ArabicMoonLettersNoVowels}", ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicMoonLettersNoVowels, Function(Str As String) ArabicData.MakeUniRegEx(Str))))
+        Value = Value.Replace("{ArabicMoonLetters}", ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicMoonLetters, Function(Str As String) ArabicData.MakeUniRegEx(Str))))
+        Value = Value.Replace("{RecitationCombiningSymbols}", ArabicData.MakeRegMultiEx(Array.ConvertAll(RecitationCombiningSymbols, Function(Str As String) ArabicData.MakeUniRegEx(Str))))
+        Value = Value.Replace("{RecitationConnectingFollowerSymbols}", ArabicData.MakeRegMultiEx(Array.ConvertAll(RecitationConnectingFollowerSymbols, Function(Str As String) ArabicData.MakeUniRegEx(Str))))
         '{0} ignore
         For Count = 0 To ArabicData.Data.ArabicLetters.Length - 1
             Value = Value.Replace("{" + ArabicData.Data.ArabicLetters(Count).UnicodeName + "}", ArabicData.MakeUniRegEx(ArabicData.Data.ArabicLetters(Count).Symbol))
@@ -2535,19 +3094,19 @@ Public Class Quiz
     Public Shared Function GetQuizSet() As String()
         Dim Quiz As Integer = CInt(HttpContext.Current.Request.QueryString.Get("quizselection"))
         If Quiz = 0 Then
-            Return ArabicData.ArabicLetters
+            Return CachedData.ArabicLetters
         ElseIf Quiz = 1 Then
             Dim CurList As New Generic.List(Of String)
             For Count As Integer = 0 To ArabicDiacriticsBefore.Length - 1
                 Dim CurLet As String = ArabicDiacriticsBefore(Count)
-                CurList.AddRange(Array.ConvertAll(ArabicData.ArabicLetters, Function(Str As String) CurLet + Str))
+                CurList.AddRange(Array.ConvertAll(CachedData.ArabicLetters, Function(Str As String) CurLet + Str))
             Next
             Return CurList.ToArray()
         ElseIf Quiz = 2 Then
             Dim CurList As New Generic.List(Of String)
             For Count As Integer = 0 To ArabicDiacriticsAfter.Length - 1
                 Dim CurLet As String = ArabicDiacriticsAfter(Count)
-                CurList.AddRange(Array.ConvertAll(ArabicData.ArabicLetters, Function(Str As String) Str + CurLet))
+                CurList.AddRange(Array.ConvertAll(CachedData.ArabicLetters, Function(Str As String) Str + CurLet))
             Next
             Return CurList.ToArray()
         Else
@@ -2589,7 +3148,7 @@ Public Class Quiz
     Public Shared Function VerifyAnswer() As String()
         Dim JSList As New List(Of String) From {"javascript: verifyAnswer(this);", String.Empty, _
             Arabic.GetArabicSymbolJSArray(), Arabic.GetTranslitSchemeJSArray(), Arabic.FindLetterBySymbolJS, _
-            "var arabicLets = " + Utility.MakeJSArray(ArabicData.ArabicLetters, False) + ";", _
+            "var arabicLets = " + Utility.MakeJSArray(CachedData.ArabicLetters, False) + ";", _
             "var arabicDiacriticsBefore = " + Utility.MakeJSArray(ArabicDiacriticsBefore, False) + ";", _
             "var arabicDiacriticsAfter = " + Utility.MakeJSArray(ArabicDiacriticsAfter, False) + ";", _
             "var qtype = 'arabicletters', qwrong = 0, qright = 0; if (typeof renderList == 'undefined') { renderList = []; }", _
@@ -2640,9 +3199,9 @@ Public Class TanzilReader
     Public Shared Function GetWordPartitions() As String()
         Dim Parts As New Generic.List(Of String) From {Utility.LoadResourceString("IslamInfo_Letters"), Utility.LoadResourceString("IslamInfo_Words"), Utility.LoadResourceString("IslamInfo_UniqueWords"), Utility.LoadResourceString("IslamInfo_UniqueWordsPerPart"), Utility.LoadResourceString("IslamInfo_WordsPerPart"), Utility.LoadResourceString("IslamInfo_UniqueWordsPerStation"), Utility.LoadResourceString("IslamInfo_WordsPerStation"), Utility.LoadResourceString("IslamInfo_IsolatedLetters"), Utility.LoadResourceString("IslamInfo_LetterPatterns"), Utility.LoadResourceString("IslamInfo_Prefix"), Utility.LoadResourceString("IslamInfo_Suffix")}
         Parts.AddRange(Array.ConvertAll(CachedData.IslamData.PartsOfSpeech, Function(POS As IslamData.PartOfSpeechInfo) Utility.LoadResourceString("IslamInfo_" + POS.Id)))
-        Parts.AddRange(Array.ConvertAll(ArabicData.RecitationSymbols, Function(Sym As Char) ArabicData.GetUnicodeName(Sym)))
-        Parts.AddRange(Array.ConvertAll(ArabicData.RecitationSymbols, Function(Sym As Char) "Prefix of " + ArabicData.GetUnicodeName(Sym)))
-        Parts.AddRange(Array.ConvertAll(ArabicData.RecitationSymbols, Function(Sym As Char) "Suffix of " + ArabicData.GetUnicodeName(Sym)))
+        Parts.AddRange(Array.ConvertAll(CachedData.RecitationSymbols, Function(Sym As String) ArabicData.GetUnicodeName(Sym.Chars(0))))
+        Parts.AddRange(Array.ConvertAll(CachedData.RecitationSymbols, Function(Sym As String) "Prefix of " + ArabicData.GetUnicodeName(Sym.Chars(0))))
+        Parts.AddRange(Array.ConvertAll(CachedData.RecitationSymbols, Function(Sym As String) "Suffix of " + ArabicData.GetUnicodeName(Sym.Chars(0))))
         Return Parts.ToArray()
     End Function
     Public Shared Function GetQuranWordTotalNumber() As Integer
@@ -2681,12 +3240,12 @@ Public Class TanzilReader
             Return CStr(CachedData.SufDictionary.Count)
         ElseIf Index >= 11 And Index < 11 + CachedData.IslamData.PartsOfSpeech.Length Then
             Return CStr(CachedData.TagDictionary.Item(CachedData.IslamData.PartsOfSpeech(Index - 11).Symbol).Count)
-        ElseIf Index >= 11 + CachedData.IslamData.PartsOfSpeech.Length And Index < 11 + CachedData.IslamData.PartsOfSpeech.Length + ArabicData.RecitationSymbols.Length Then
-            Return CStr(CachedData.LetterDictionary.Item(ArabicData.RecitationSymbols(Index - 11 - CachedData.IslamData.PartsOfSpeech.Length)).Count)
-        ElseIf Index >= 11 + CachedData.IslamData.PartsOfSpeech.Length + ArabicData.RecitationSymbols.Length And Index < 11 + CachedData.IslamData.PartsOfSpeech.Length + ArabicData.RecitationSymbols.Length + ArabicData.RecitationSymbols.Length Then
-            Return CStr(CachedData.LetterPreDictionary.Item(ArabicData.RecitationSymbols(Index - 11 - CachedData.IslamData.PartsOfSpeech.Length - ArabicData.RecitationSymbols.Length)).Count)
-        ElseIf Index >= 11 + CachedData.IslamData.PartsOfSpeech.Length + ArabicData.RecitationSymbols.Length + ArabicData.RecitationSymbols.Length And Index < 11 + CachedData.IslamData.PartsOfSpeech.Length + ArabicData.RecitationSymbols.Length + ArabicData.RecitationSymbols.Length + ArabicData.RecitationSymbols.Length Then
-            Return CStr(CachedData.LetterSufDictionary.Item(ArabicData.RecitationSymbols(Index - 11 - CachedData.IslamData.PartsOfSpeech.Length - ArabicData.RecitationSymbols.Length - ArabicData.RecitationSymbols.Length)).Count)
+        ElseIf Index >= 11 + CachedData.IslamData.PartsOfSpeech.Length And Index < 11 + CachedData.IslamData.PartsOfSpeech.Length + CachedData.RecitationSymbols.Length Then
+            Return CStr(CachedData.LetterDictionary.Item(CachedData.RecitationSymbols(Index - 11 - CachedData.IslamData.PartsOfSpeech.Length).Chars(0)).Count)
+        ElseIf Index >= 11 + CachedData.IslamData.PartsOfSpeech.Length + CachedData.RecitationSymbols.Length And Index < 11 + CachedData.IslamData.PartsOfSpeech.Length + CachedData.RecitationSymbols.Length + CachedData.RecitationSymbols.Length Then
+            Return CStr(CachedData.LetterPreDictionary.Item(CachedData.RecitationSymbols(Index - 11 - CachedData.IslamData.PartsOfSpeech.Length - CachedData.RecitationSymbols.Length).Chars(0)).Count)
+        ElseIf Index >= 11 + CachedData.IslamData.PartsOfSpeech.Length + CachedData.RecitationSymbols.Length + CachedData.RecitationSymbols.Length And Index < 11 + CachedData.IslamData.PartsOfSpeech.Length + CachedData.RecitationSymbols.Length + CachedData.RecitationSymbols.Length + CachedData.RecitationSymbols.Length Then
+            Return CStr(CachedData.LetterSufDictionary.Item(CachedData.RecitationSymbols(Index - 11 - CachedData.IslamData.PartsOfSpeech.Length - CachedData.RecitationSymbols.Length - CachedData.RecitationSymbols.Length).Chars(0)).Count)
         Else
             Return String.Empty
         End If
@@ -2720,7 +3279,7 @@ Public Class TanzilReader
                 Total += CachedData.IsolatedLetterDictionary.Item(LetterFreqArray(Count)).Count
                 Output.Add(New String() {ArabicData.LeftToRightOverride + ArabicData.GetUnicodeName(LetterFreqArray(Count)) + " ( " + ArabicData.PopDirectionalFormatting + ArabicData.FixStartingCombiningSymbol(LetterFreqArray(Count)) + ArabicData.LeftToRightOverride + " )" + ArabicData.PopDirectionalFormatting, String.Empty, CStr(CachedData.IsolatedLetterDictionary.Item(LetterFreqArray(Count)).Count), (CDbl(CachedData.IsolatedLetterDictionary.Item(LetterFreqArray(Count)).Count) * 100 / All).ToString("n2"), (CDbl(Total) * 100 / All).ToString("n2")})
             Next
-        ElseIf Index = 1 Or Index = 9 Or Index = 10 Or Index >= 11 And Index < 11 + CachedData.IslamData.PartsOfSpeech.Length + ArabicData.RecitationSymbols.Length + ArabicData.RecitationSymbols.Length + ArabicData.RecitationSymbols.Length Then
+        ElseIf Index = 1 Or Index = 9 Or Index = 10 Or Index >= 11 And Index < 11 + CachedData.IslamData.PartsOfSpeech.Length + CachedData.RecitationSymbols.Length + CachedData.RecitationSymbols.Length + CachedData.RecitationSymbols.Length Then
             Dim Dict As Generic.Dictionary(Of String, ArrayList)
             If Index = 1 Then
                 Dict = CachedData.WordDictionary
@@ -2730,12 +3289,12 @@ Public Class TanzilReader
                 Dict = CachedData.SufDictionary
             ElseIf Index >= 11 And Index < 11 + CachedData.IslamData.PartsOfSpeech.Length Then
                 Dict = CachedData.TagDictionary(CachedData.IslamData.PartsOfSpeech(Index - 11).Symbol)
-            ElseIf Index >= 11 + CachedData.IslamData.PartsOfSpeech.Length And Index < 11 + CachedData.IslamData.PartsOfSpeech.Length + ArabicData.RecitationSymbols.Length Then
-                Dict = CachedData.LetterDictionary(ArabicData.RecitationSymbols(Index - 11 - CachedData.IslamData.PartsOfSpeech.Length))
-            ElseIf Index >= 11 + CachedData.IslamData.PartsOfSpeech.Length + ArabicData.RecitationSymbols.Length And Index < 11 + CachedData.IslamData.PartsOfSpeech.Length + ArabicData.RecitationSymbols.Length + ArabicData.RecitationSymbols.Length Then
-                Dict = CachedData.LetterPreDictionary(ArabicData.RecitationSymbols(Index - 11 - CachedData.IslamData.PartsOfSpeech.Length - ArabicData.RecitationSymbols.Length))
-            ElseIf Index >= 11 + CachedData.IslamData.PartsOfSpeech.Length + ArabicData.RecitationSymbols.Length + ArabicData.RecitationSymbols.Length And Index < 11 + CachedData.IslamData.PartsOfSpeech.Length + ArabicData.RecitationSymbols.Length + ArabicData.RecitationSymbols.Length + ArabicData.RecitationSymbols.Length Then
-                Dict = CachedData.LetterSufDictionary(ArabicData.RecitationSymbols(Index - 11 - CachedData.IslamData.PartsOfSpeech.Length - ArabicData.RecitationSymbols.Length - ArabicData.RecitationSymbols.Length))
+            ElseIf Index >= 11 + CachedData.IslamData.PartsOfSpeech.Length And Index < 11 + CachedData.IslamData.PartsOfSpeech.Length + CachedData.RecitationSymbols.Length Then
+                Dict = CachedData.LetterDictionary(CachedData.RecitationSymbols(Index - 11 - CachedData.IslamData.PartsOfSpeech.Length).Chars(0))
+            ElseIf Index >= 11 + CachedData.IslamData.PartsOfSpeech.Length + CachedData.RecitationSymbols.Length And Index < 11 + CachedData.IslamData.PartsOfSpeech.Length + CachedData.RecitationSymbols.Length + CachedData.RecitationSymbols.Length Then
+                Dict = CachedData.LetterPreDictionary(CachedData.RecitationSymbols(Index - 11 - CachedData.IslamData.PartsOfSpeech.Length - CachedData.RecitationSymbols.Length).Chars(0))
+            ElseIf Index >= 11 + CachedData.IslamData.PartsOfSpeech.Length + CachedData.RecitationSymbols.Length + CachedData.RecitationSymbols.Length And Index < 11 + CachedData.IslamData.PartsOfSpeech.Length + CachedData.RecitationSymbols.Length + CachedData.RecitationSymbols.Length + CachedData.RecitationSymbols.Length Then
+                Dict = CachedData.LetterSufDictionary(CachedData.RecitationSymbols(Index - 11 - CachedData.IslamData.PartsOfSpeech.Length - CachedData.RecitationSymbols.Length - CachedData.RecitationSymbols.Length).Chars(0))
             Else
                 Dict = Nothing
             End If
@@ -2772,31 +3331,31 @@ Public Class TanzilReader
         Return CType(Output.ToArray(GetType(Array)), Array())
     End Function
     Public Shared Function GetQuranLetterPatterns() As String()
-        Dim RecSymbols As String = String.Join(String.Empty, Array.ConvertAll(ArabicData.RecitationSpecialSymbols, Function(C As Char) CStr(C)))
-        Dim LtrSymbols As String = String.Join(String.Empty, Array.ConvertAll(ArabicData.RecitationLetters, Function(C As Char) CStr(C)))
-        Dim DiaSymbols As String = String.Join(String.Empty, Array.ConvertAll(ArabicData.RecitationDiacritics, Function(C As Char) CStr(C)))
+        Dim RecSymbols As String = String.Join(String.Empty, Array.ConvertAll(CachedData.RecitationSpecialSymbols, Function(C As String) C))
+        Dim LtrSymbols As String = String.Join(String.Empty, Array.ConvertAll(CachedData.RecitationLetters, Function(C As String) C))
+        Dim DiaSymbols As String = String.Join(String.Empty, Array.ConvertAll(CachedData.RecitationDiacritics, Function(C As String) C))
         Dim StartWordMultiOnly As New Generic.Dictionary(Of String, String)
         Dim EndWordMultiOnly As New Generic.Dictionary(Of String, String)
         Dim MiddleWordMultiOnly As New Generic.Dictionary(Of String, String)
-        Dim StartWordOnly As String = String.Join(String.Empty, Array.ConvertAll(ArabicData.RecitationLettersDiacritics, Function(C As Char) CStr(C)))
-        Dim NotStartWord As String = String.Join(String.Empty, Array.ConvertAll(ArabicData.RecitationLettersDiacritics, Function(C As Char) CStr(C)))
-        Dim EndWordOnly As String = String.Join(String.Empty, Array.ConvertAll(ArabicData.RecitationLettersDiacritics, Function(C As Char) CStr(C)))
-        Dim NotEndWord As String = String.Join(String.Empty, Array.ConvertAll(ArabicData.RecitationLettersDiacritics, Function(C As Char) CStr(C)))
-        Dim EndWordOnlyNoDia As String = String.Join(String.Empty, Array.ConvertAll(ArabicData.RecitationLetters, Function(C As Char) CStr(C)))
-        Dim NotEndWordNoDia As String = String.Join(String.Empty, Array.ConvertAll(ArabicData.RecitationLetters, Function(C As Char) CStr(C)))
-        Dim MiddleWordOnlyNoDia As String = String.Join(String.Empty, Array.ConvertAll(ArabicData.RecitationLetters, Function(C As Char) CStr(C)))
-        Dim NotMiddleWordNoDia As String = String.Join(String.Empty, Array.ConvertAll(ArabicData.RecitationLetters, Function(C As Char) CStr(C)))
-        Dim MiddleWordOnly As String = String.Join(String.Empty, Array.ConvertAll(ArabicData.RecitationLettersDiacritics, Function(C As Char) CStr(C)))
-        Dim NotMiddleWord As String = String.Join(String.Empty, Array.ConvertAll(ArabicData.RecitationLettersDiacritics, Function(C As Char) CStr(C)))
-        Dim DiaStartWordOnly As String = String.Join(String.Empty, Array.ConvertAll(ArabicData.RecitationDiacritics, Function(C As Char) CStr(C)))
-        Dim DiaNotStartWord As String = String.Join(String.Empty, Array.ConvertAll(ArabicData.RecitationDiacritics, Function(C As Char) CStr(C)))
-        Dim DiaEndWordOnly As String = String.Join(String.Empty, Array.ConvertAll(ArabicData.RecitationDiacritics, Function(C As Char) CStr(C)))
-        Dim DiaNotEndWord As String = String.Join(String.Empty, Array.ConvertAll(ArabicData.RecitationDiacritics, Function(C As Char) CStr(C)))
-        Dim DiaMiddleWordOnly As String = String.Join(String.Empty, Array.ConvertAll(ArabicData.RecitationDiacritics, Function(C As Char) CStr(C)))
-        Dim DiaNotMiddleWord As String = String.Join(String.Empty, Array.ConvertAll(ArabicData.RecitationDiacritics, Function(C As Char) CStr(C)))
-        Dim Combos As String() = String.Join("|", Array.ConvertAll(ArabicData.RecitationLettersDiacritics, Function(C As Char) String.Join("|", Array.ConvertAll(ArabicData.RecitationLettersDiacritics, Function(Nxt As Char) C + Nxt)))).Split("|"c)
-        Dim DiaCombos As String() = String.Join("|", Array.ConvertAll(ArabicData.RecitationDiacritics, Function(C As Char) String.Join("|", Array.ConvertAll(ArabicData.RecitationDiacritics, Function(Nxt As Char) C + Nxt)))).Split("|"c)
-        Dim LetCombos As String() = String.Join("|", Array.ConvertAll(ArabicData.RecitationLetters, Function(C As Char) String.Join("|", Array.ConvertAll(ArabicData.RecitationLetters, Function(Nxt As Char) C + Nxt)))).Split("|"c)
+        Dim StartWordOnly As String = String.Join(String.Empty, Array.ConvertAll(CachedData.RecitationLettersDiacritics, Function(C As String) C))
+        Dim NotStartWord As String = String.Join(String.Empty, Array.ConvertAll(CachedData.RecitationLettersDiacritics, Function(C As String) C))
+        Dim EndWordOnly As String = String.Join(String.Empty, Array.ConvertAll(CachedData.RecitationLettersDiacritics, Function(C As String) C))
+        Dim NotEndWord As String = String.Join(String.Empty, Array.ConvertAll(CachedData.RecitationLettersDiacritics, Function(C As String) C))
+        Dim EndWordOnlyNoDia As String = String.Join(String.Empty, Array.ConvertAll(CachedData.RecitationLetters, Function(C As String) C))
+        Dim NotEndWordNoDia As String = String.Join(String.Empty, Array.ConvertAll(CachedData.RecitationLetters, Function(C As String) C))
+        Dim MiddleWordOnlyNoDia As String = String.Join(String.Empty, Array.ConvertAll(CachedData.RecitationLetters, Function(C As String) C))
+        Dim NotMiddleWordNoDia As String = String.Join(String.Empty, Array.ConvertAll(CachedData.RecitationLetters, Function(C As String) C))
+        Dim MiddleWordOnly As String = String.Join(String.Empty, Array.ConvertAll(CachedData.RecitationLettersDiacritics, Function(C As String) C))
+        Dim NotMiddleWord As String = String.Join(String.Empty, Array.ConvertAll(CachedData.RecitationLettersDiacritics, Function(C As String) C))
+        Dim DiaStartWordOnly As String = String.Join(String.Empty, Array.ConvertAll(CachedData.RecitationDiacritics, Function(C As String) C))
+        Dim DiaNotStartWord As String = String.Join(String.Empty, Array.ConvertAll(CachedData.RecitationDiacritics, Function(C As String) C))
+        Dim DiaEndWordOnly As String = String.Join(String.Empty, Array.ConvertAll(CachedData.RecitationDiacritics, Function(C As String) C))
+        Dim DiaNotEndWord As String = String.Join(String.Empty, Array.ConvertAll(CachedData.RecitationDiacritics, Function(C As String) C))
+        Dim DiaMiddleWordOnly As String = String.Join(String.Empty, Array.ConvertAll(CachedData.RecitationDiacritics, Function(C As String) C))
+        Dim DiaNotMiddleWord As String = String.Join(String.Empty, Array.ConvertAll(CachedData.RecitationDiacritics, Function(C As String) C))
+        Dim Combos As String() = String.Join("|", Array.ConvertAll(CachedData.RecitationLettersDiacritics, Function(C As String) String.Join("|", Array.ConvertAll(CachedData.RecitationLettersDiacritics, Function(Nxt As String) C + Nxt)))).Split("|"c)
+        Dim DiaCombos As String() = String.Join("|", Array.ConvertAll(CachedData.RecitationDiacritics, Function(C As String) String.Join("|", Array.ConvertAll(CachedData.RecitationDiacritics, Function(Nxt As String) C + Nxt)))).Split("|"c)
+        Dim LetCombos As String() = String.Join("|", Array.ConvertAll(CachedData.RecitationLetters, Function(C As String) String.Join("|", Array.ConvertAll(CachedData.RecitationLetters, Function(Nxt As String) C + Nxt)))).Split("|"c)
         For Each Key As String In CachedData.FormDictionary.Keys
             Dim Str As String = New String(Array.FindAll(Key.ToCharArray(), Function(Ch As Char) Not RecSymbols.Contains(CStr(Ch))))
             For Count = 1 To Str.Length - 2
@@ -3425,7 +3984,7 @@ Public Class TanzilReader
             For WordCount As Integer = 1 To WordNumber - 1
                 VerseIndex = QuranText(0)(0).IndexOf(" "c, VerseIndex) + 1
             Next
-            QuranText(0)(0) = System.Text.RegularExpressions.Regex.Replace(System.Text.RegularExpressions.Regex.Replace(QuranText(0)(0).Substring(0, VerseIndex), "(^\s*|\s+)[^\s" + String.Join(String.Empty, Array.ConvertAll(ArabicData.ArabicStopLetters, Function(Str As String) ArabicData.MakeUniRegEx(Str))) + ArabicData.ArabicStartOfRubElHizb + ArabicData.ArabicPlaceOfSajdah + "]+(?=\s*$|\s+)", "$1"), String.Join("|", Array.ConvertAll(ArabicData.ArabicStopLetters, Function(Str As String) ArabicData.MakeUniRegEx(Str))) + "|" + ArabicData.ArabicStartOfRubElHizb + "|" + ArabicData.ArabicPlaceOfSajdah, ChrW(0)) + QuranText(0)(0).Substring(VerseIndex)
+            QuranText(0)(0) = System.Text.RegularExpressions.Regex.Replace(System.Text.RegularExpressions.Regex.Replace(QuranText(0)(0).Substring(0, VerseIndex), "(^\s*|\s+)[^\s" + String.Join(String.Empty, Array.ConvertAll(CachedData.ArabicStopLetters, Function(Str As String) ArabicData.MakeUniRegEx(Str))) + ArabicData.ArabicStartOfRubElHizb + ArabicData.ArabicPlaceOfSajdah + "]+(?=\s*$|\s+)", "$1"), String.Join("|", Array.ConvertAll(CachedData.ArabicStopLetters, Function(Str As String) ArabicData.MakeUniRegEx(Str))) + "|" + ArabicData.ArabicStartOfRubElHizb + "|" + ArabicData.ArabicPlaceOfSajdah, ChrW(0)) + QuranText(0)(0).Substring(VerseIndex)
         End If
         If (EndWordNumber <> 0) Then
             Dim VerseIndex As Integer = 0
@@ -3439,7 +3998,7 @@ Public Class TanzilReader
                 VerseIndex = QuranText(LastChapter)(LastVerse).IndexOf(" "c, VerseIndex) + 1
             Next
             If VerseIndex = 0 Then VerseIndex = QuranText(LastChapter)(LastVerse).Length
-            QuranText(LastChapter)(LastVerse) = QuranText(LastChapter)(LastVerse).Substring(0, VerseIndex) + System.Text.RegularExpressions.Regex.Replace(System.Text.RegularExpressions.Regex.Replace(QuranText(LastChapter)(LastVerse).Substring(VerseIndex), "(^\s*|\s+)[^\s" + String.Join(String.Empty, Array.ConvertAll(ArabicData.ArabicStopLetters, Function(Str As String) ArabicData.MakeUniRegEx(Str))) + ArabicData.ArabicStartOfRubElHizb + ArabicData.ArabicPlaceOfSajdah + "]+(?=\s*$|\s+)", "$1"), String.Join("|", Array.ConvertAll(ArabicData.ArabicStopLetters, Function(Str As String) ArabicData.MakeUniRegEx(Str))) + "|" + ArabicData.ArabicStartOfRubElHizb + "|" + ArabicData.ArabicPlaceOfSajdah, ChrW(0))
+            QuranText(LastChapter)(LastVerse) = QuranText(LastChapter)(LastVerse).Substring(0, VerseIndex) + System.Text.RegularExpressions.Regex.Replace(System.Text.RegularExpressions.Regex.Replace(QuranText(LastChapter)(LastVerse).Substring(VerseIndex), "(^\s*|\s+)[^\s" + String.Join(String.Empty, Array.ConvertAll(CachedData.ArabicStopLetters, Function(Str As String) ArabicData.MakeUniRegEx(Str))) + ArabicData.ArabicStartOfRubElHizb + ArabicData.ArabicPlaceOfSajdah + "]+(?=\s*$|\s+)", "$1"), String.Join("|", Array.ConvertAll(CachedData.ArabicStopLetters, Function(Str As String) ArabicData.MakeUniRegEx(Str))) + "|" + ArabicData.ArabicStartOfRubElHizb + "|" + ArabicData.ArabicPlaceOfSajdah, ChrW(0))
         End If
         Return QuranText
     End Function
@@ -3614,7 +4173,7 @@ Public Class TanzilReader
                             Words(Count)(0) = ChrW(0) Then
                             PauseMarks += 1
                         ElseIf Words(Count).Length = 1 AndAlso _
-                            (ArabicData.IsStop(ArabicData.FindLetterBySymbol(Words(Count)(0))) Or Words(Count)(0) = ArabicData.ArabicStartOfRubElHizb Or Words(Count)(0) = ArabicData.ArabicPlaceOfSajdah) Then
+                            (Arabic.IsStop(ArabicData.FindLetterBySymbol(Words(Count)(0))) Or Words(Count)(0) = ArabicData.ArabicStartOfRubElHizb Or Words(Count)(0) = ArabicData.ArabicPlaceOfSajdah) Then
                             PauseMarks += 1
                             Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, " " + Words(Count)), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, TranslitWords(Count))}))
                         ElseIf Words(Count).Length <> 0 Then
