@@ -841,33 +841,33 @@ class CachedData
                 if ($matches[1] == "TehMarbutaStopRule") { return CachedData::TehMarbutaStopRule(); }
                 if ($matches[1] == "TehMarbutaContinueRule") { return CachedData::TehMarbutaContinueRule(); }
 
-                if ($matches[1] == "ArabicUniqueLetters") { return ArabicData::MakeRegMultiEx(array_map(ArabicUniqueLetters, function($str) { return ArabicData::TransliterateFromBuckwalter(Str).Replace(CStr(ArabicData.ArabicMaddahAbove), ""); })); }
-                if ($matches[1] == "ArabicNumbers") { return ArabicData::MakeRegMultiEx(array_map(ArabicNumbers, function($str) { return ArabicData.TransliterateFromBuckwalter(Str); })); }
-                if ($matches[1] == "ArabicWaslKasraExceptions") { return ArabicData::MakeRegMultiEx(array_map(ArabicWaslKasraExceptions, function($str) { return ArabicData.TransliterateFromBuckwalter(Str); })); }
-                //if ($matches[1] == "SimpleSuperscriptAlefBefore") { return ArabicData::MakeRegMultiEx(array_map(Arabic.SimpleSuperscriptAlefBefore, function($str) { return ArabicData.TransliterateFromBuckwalter(Str.Replace(".", "").Replace("""", "").Replace("@", "").Replace("[", "").Replace("]", "").Replace("-", "").Replace("^", "")); })); }
-                //if ($matches[1] == "SimpleSuperscriptAlefNotBefore") { return ArabicData::MakeRegMultiEx(array_map(Arabic.SimpleSuperscriptAlefNotBefore, function($str) { return ArabicData.TransliterateFromBuckwalter(Str.Replace(".", "").Replace("""", "").Replace("@", "").Replace("[", "").Replace("]", "").Replace("-", "").Replace("^", "")); })); }
-                //if ($matches[1] == "SimpleSuperscriptAlefAfter") { return ArabicData::MakeRegMultiEx(array_map(Arabic.SimpleSuperscriptAlefAfter, function($str) { return ArabicData.TransliterateFromBuckwalter(Str.Replace(".", "").Replace("""", "").Replace("@", "").Replace("[", "").Replace("]", "").Replace("-", "").Replace("^", "")); })); }
-                //if ($matches[1] == "SimpleSuperscriptAlefNotAfter") { return ArabicData::MakeRegMultiEx(array_map(Arabic.SimpleSuperscriptAlefNotAfter, function($str) { return ArabicData.TransliterateFromBuckwalter(Str.Replace(".", "").Replace("""", "").Replace("@", "").Replace("[", "").Replace("]", "").Replace("-", "").Replace("^", "")); })); }
-                if ($matches[1] == "ArabicLongShortVowels") { return ArabicData::MakeRegMultiEx(array_map(ArabicLongVowels, function($strV) { return ArabicData::MakeUniRegEx(StrV(0) + "(?=" + ArabicData::MakeUniRegEx(StrV(1)) + ")"); })); }
-                if ($matches[1] == "ArabicTanweens") { return ArabicData::MakeRegMultiEx(array_map(ArabicTanweens, function($str) { return ArabicData::MakeUniRegEx(Str); })); }
-                if ($matches[1] == "ArabicFathaDammaKasra") { return ArabicData::MakeRegMultiEx(array_map(ArabicFathaDammaKasra, function($str) { return ArabicData::MakeUniRegEx(Str); })); }
-                if ($matches[1] == "ArabicStopLetters") { return ArabicData::MakeRegMultiEx(array_map(ArabicStopLetters, function($str) { return ArabicData::MakeUniRegEx(Str); })); }
-                if ($matches[1] == "ArabicSpecialGutteral") { return ArabicData::MakeRegMultiEx(array_map(ArabicSpecialGutteral, function($str) { return ArabicData::MakeUniRegEx(Str); })); }
-                if ($matches[1] == "ArabicSpecialLeadingGutteral") { return ArabicData::MakeRegMultiEx(array_map(ArabicSpecialLeadingGutteral, function($str) { return ArabicData::MakeUniRegEx(Str); })); }
-                if ($matches[1] == "ArabicPunctuationSymbols") { return ArabicData::MakeRegMultiEx(array_map(ArabicPunctuationSymbols, function($str) { return ArabicData::MakeUniRegEx(Str); })); }
-                if ($matches[1] == "ArabicLetters") { return ArabicData::MakeRegMultiEx(array_map(ArabicLetters, function($str) { return ArabicData::MakeUniRegEx(Str); })); }
-                if ($matches[1] == "ArabicSunLettersNoLam") { return ArabicData::MakeRegMultiEx(array_map(ArabicSunLettersNoLam, function($str) { return ArabicData::MakeUniRegEx(Str); })); }
-                if ($matches[1] == "ArabicSunLetters") { return ArabicData::MakeRegMultiEx(array_map(ArabicSunLetters, function($str) { return ArabicData::MakeUniRegEx(Str); })); }
-                if ($matches[1] == "ArabicMoonLettersNoVowels") { return ArabicData::MakeRegMultiEx(array_map(ArabicMoonLettersNoVowels, function($str) { return ArabicData::MakeUniRegEx(Str); })); }
-                if ($matches[1] == "ArabicMoonLetters") { return ArabicData::MakeRegMultiEx(array_map(ArabicMoonLetters, function($str) { return ArabicData::MakeUniRegEx(Str); })); }
-                if ($matches[1] == "RecitationCombiningSymbols") { return ArabicData::MakeRegMultiEx(array_map(RecitationCombiningSymbols, function($str) { return ArabicData::MakeUniRegEx(Str); })); }
-                if ($matches[1] == "RecitationConnectingFollowerSymbols") { return ArabicData::MakeRegMultiEx(array_map(RecitationConnectingFollowerSymbols, function($str) { return ArabicData::MakeUniRegEx(Str); })); }
-                if ($matches[1] == "PunctuationSymbols") { return ArabicData::MakeRegMultiEx(array_map(PunctuationSymbols, function($str) { return ArabicData::MakeUniRegEx(Str); })); }
-                if ($matches[1] == "RecitationLettersDiacritics") { return ArabicData::MakeRegMultiEx(array_map(RecitationLettersDiacritics, function($str) { return ArabicData::MakeUniRegEx(Str); })); }
-                if ($matches[1] == "RecitationSpecialSymbolsNotStop") { return ArabicData::MakeRegMultiEx(array_map(RecitationSpecialSymbolsNotStop, function($str) { return ArabicData::MakeUniRegEx(Str); })); }
+                if ($matches[1] == "ArabicUniqueLetters") { return ArabicData::MakeRegMultiEx(array_map(ArabicUniqueLetters, function($str) { return ArabicData::TransliterateFromBuckwalter($str).Replace(CStr(ArabicData.ArabicMaddahAbove), ""); })); }
+                if ($matches[1] == "ArabicNumbers") { return ArabicData::MakeRegMultiEx(array_map(ArabicNumbers, function($str) { return ArabicData::TransliterateFromBuckwalter($str); })); }
+                if ($matches[1] == "ArabicWaslKasraExceptions") { return ArabicData::MakeRegMultiEx(array_map(ArabicWaslKasraExceptions, function($str) { return ArabicData::TransliterateFromBuckwalter($str); })); }
+                //if ($matches[1] == "SimpleSuperscriptAlefBefore") { return ArabicData::MakeRegMultiEx(array_map(Arabic.SimpleSuperscriptAlefBefore, function($str) { return ArabicData::TransliterateFromBuckwalter($str.Replace(".", "").Replace("""", "").Replace("@", "").Replace("[", "").Replace("]", "").Replace("-", "").Replace("^", "")); })); }
+                //if ($matches[1] == "SimpleSuperscriptAlefNotBefore") { return ArabicData::MakeRegMultiEx(array_map(Arabic.SimpleSuperscriptAlefNotBefore, function($str) { return ArabicData::TransliterateFromBuckwalter($str.Replace(".", "").Replace("""", "").Replace("@", "").Replace("[", "").Replace("]", "").Replace("-", "").Replace("^", "")); })); }
+                //if ($matches[1] == "SimpleSuperscriptAlefAfter") { return ArabicData::MakeRegMultiEx(array_map(Arabic.SimpleSuperscriptAlefAfter, function($str) { return ArabicData::TransliterateFromBuckwalter($str.Replace(".", "").Replace("""", "").Replace("@", "").Replace("[", "").Replace("]", "").Replace("-", "").Replace("^", "")); })); }
+                //if ($matches[1] == "SimpleSuperscriptAlefNotAfter") { return ArabicData::MakeRegMultiEx(array_map(Arabic.SimpleSuperscriptAlefNotAfter, function($str) { return ArabicData::TransliterateFromBuckwalter($str.Replace(".", "").Replace("""", "").Replace("@", "").Replace("[", "").Replace("]", "").Replace("-", "").Replace("^", "")); })); }
+                if ($matches[1] == "ArabicLongShortVowels") { return ArabicData::MakeRegMultiEx(array_map(ArabicLongVowels, function($strV) { return ArabicData::MakeUniRegEx($strV[0] + "(?=" + ArabicData::MakeUniRegEx($strV[1]) + ")"); })); }
+                if ($matches[1] == "ArabicTanweens") { return ArabicData::MakeRegMultiEx(array_map(ArabicTanweens, function($str) { return ArabicData::MakeUniRegEx($str); })); }
+                if ($matches[1] == "ArabicFathaDammaKasra") { return ArabicData::MakeRegMultiEx(array_map(ArabicFathaDammaKasra, function($str) { return ArabicData::MakeUniRegEx($str); })); }
+                if ($matches[1] == "ArabicStopLetters") { return ArabicData::MakeRegMultiEx(array_map(ArabicStopLetters, function($str) { return ArabicData::MakeUniRegEx($str); })); }
+                if ($matches[1] == "ArabicSpecialGutteral") { return ArabicData::MakeRegMultiEx(array_map(ArabicSpecialGutteral, function($str) { return ArabicData::MakeUniRegEx($str); })); }
+                if ($matches[1] == "ArabicSpecialLeadingGutteral") { return ArabicData::MakeRegMultiEx(array_map(ArabicSpecialLeadingGutteral, function($str) { return ArabicData::MakeUniRegEx($str); })); }
+                if ($matches[1] == "ArabicPunctuationSymbols") { return ArabicData::MakeRegMultiEx(array_map(ArabicPunctuationSymbols, function($str) { return ArabicData::MakeUniRegEx($str); })); }
+                if ($matches[1] == "ArabicLetters") { return ArabicData::MakeRegMultiEx(array_map(ArabicLetters, function($str) { return ArabicData::MakeUniRegEx($str); })); }
+                if ($matches[1] == "ArabicSunLettersNoLam") { return ArabicData::MakeRegMultiEx(array_map(ArabicSunLettersNoLam, function($str) { return ArabicData::MakeUniRegEx($str); })); }
+                if ($matches[1] == "ArabicSunLetters") { return ArabicData::MakeRegMultiEx(array_map(ArabicSunLetters, function($str) { return ArabicData::MakeUniRegEx($str); })); }
+                if ($matches[1] == "ArabicMoonLettersNoVowels") { return ArabicData::MakeRegMultiEx(array_map(ArabicMoonLettersNoVowels, function($str) { return ArabicData::MakeUniRegEx($str); })); }
+                if ($matches[1] == "ArabicMoonLetters") { return ArabicData::MakeRegMultiEx(array_map(ArabicMoonLetters, function($str) { return ArabicData::MakeUniRegEx($str); })); }
+                if ($matches[1] == "RecitationCombiningSymbols") { return ArabicData::MakeRegMultiEx(array_map(RecitationCombiningSymbols, function($str) { return ArabicData::MakeUniRegEx($str); })); }
+                if ($matches[1] == "RecitationConnectingFollowerSymbols") { return ArabicData::MakeRegMultiEx(array_map(RecitationConnectingFollowerSymbols, function($str) { return ArabicData::MakeUniRegEx($str); })); }
+                if ($matches[1] == "PunctuationSymbols") { return ArabicData::MakeRegMultiEx(array_map(PunctuationSymbols, function($str) { return ArabicData::MakeUniRegEx($str); })); }
+                if ($matches[1] == "RecitationLettersDiacritics") { return ArabicData::MakeRegMultiEx(array_map(RecitationLettersDiacritics, function($str) { return ArabicData::MakeUniRegEx($str); })); }
+                if ($matches[1] == "RecitationSpecialSymbolsNotStop") { return ArabicData::MakeRegMultiEx(array_map(RecitationSpecialSymbolsNotStop, function($str) { return ArabicData::MakeUniRegEx($str); })); }
             }
             if (preg_match(Match.Groups(1).Value, "0x([0-9a-fA-F]{4})") === 1) {
-                return $bAll ? ArabicData::MakeUniRegEx(ChrW(bin2hex(substr($matches[1], 2)))) : ChrW(bin2hex(substr($matches[1], 2)));
+                return $bAll ? ArabicData::MakeUniRegEx(mb_convert_encoding('&#x' + substr($matches[1], 2) + ';', 'UTF-8', 'HTML-ENTITIES')) : mb_convert_encoding('&#x' + substr($matches[1], 2) + ';', 'UTF-8', 'HTML-ENTITIES');
             }
             for ($count = 0; $count < count(ArabicData::Data()->ArabicLetters); $count++) {
                 if ($matches[1] == ArabicData::Data()->ArabicLetters[$count]->UnicodeName) { return $bAll ? ArabicData::MakeUniRegEx(ArabicData::Data()->ArabicLetters[$count]->Symbol) : ArabicData::Data()->ArabicLetters[$count]->Symbol; }
@@ -1186,18 +1186,21 @@ class ArabicData
         }
         return $romanString;
 	}
-    /*public static $rulefunctions = [
-        function($str, $scheme) { return [strtoupper($str)]; },
-        function($str, $scheme) { return [Arabic::TransliterateWithRules(ArabicData::TransliterateFromBuckwalter(Arabic::ArabicWordFromNumber(CInt(Arabic::TransliterateToScheme($str, ArabicData::TranslitScheme::Literal, "")), true, false, false)), $scheme, null)]; },
-        function($str, $scheme) { return [Arabic::TransliterateWithRules(ArabicLetterSpelling($str, true), $scheme, null)]; },
-        function($str, $scheme) { return [Arabic::GetSchemeValueFromSymbol(ArabicData::Data()->ArabicLetters(ArabicData::FindLetterBySymbol($str[0])), $scheme)]; },
-        function($str, $scheme) { return [Arabic::GetSchemeLongVowelFromString($str, $scheme)]; },
-        function($str, $scheme) { return [CachedData::ArabicFathaDammaKasra[array_search($str, CachedData::ArabicTanweens)], ArabicData::ArabicLetterNoon]; },
-        function($str, $scheme) { return ["", ""]; },
-        function($str, $scheme) { return [""]; },
-        function($str, $scheme) { return [Arabic::GetSchemeGutteralFromString($str.Remove(strlen($str) - 1), $scheme, true) + $str[strlen($str) - 1]]; },
-        function($str, $scheme) { return [$str[0] + Arabic::GetSchemeGutteralFromString($str.Remove(0, 1), $scheme, false)]; }
-    ];*/
+    public static function RuleFunctions()
+    {
+    	return [
+		    function($str, $scheme) { return [strtoupper($str)]; },
+		    function($str, $scheme) { return [ArabicData::TransliterateWithRules(ArabicData::TransliterateFromBuckwalter(Arabic::ArabicWordFromNumber(CInt(Arabic::TransliterateToScheme($str, TranslitScheme::Literal, "")), true, false, false)), $scheme, null)]; },
+		    function($str, $scheme) { return [ArabicData::TransliterateWithRules(ArabicLetterSpelling($str, true), $scheme, null)]; },
+		    function($str, $scheme) { return [ArabicData::GetSchemeValueFromSymbol(ArabicData::Data()->ArabicLetters(ArabicData::FindLetterBySymbol($str[0])), $scheme)]; },
+		    function($str, $scheme) { return [ArabicData::GetSchemeLongVowelFromString($str, $scheme)]; },
+		    function($str, $scheme) { return [CachedData::ArabicFathaDammaKasra()[array_search($str, CachedData::ArabicTanweens)], ArabicData::ArabicLetterNoon]; },
+		    function($str, $scheme) { return ["", ""]; },
+		    function($str, $scheme) { return [""]; },
+		    function($str, $scheme) { return [Arabic::GetSchemeGutteralFromString($str.Remove(strlen($str) - 1), $scheme, true) + $str[strlen($str) - 1]]; },
+		    function($str, $scheme) { return [$str[0] + Arabic::GetSchemeGutteralFromString($str.Remove(0, 1), $scheme, false)]; }
+			];
+    }
     public static function ArabicLetterSpelling($input, $quranic)
     {
         $output = "";
@@ -1275,11 +1278,12 @@ class ArabicData
     public static function ReplaceMetadata($arabicString, $metadataRule, $scheme, $optionalStops)
     {
         for ($count = 0; $count < count(CachedData::ColoringSpelledOutRules); $count++) {
-            $match = array_search(CachedData::ColoringSpelledOutRules(Count).Match.Split("|"), function($str) { return array_search(array_map(MetadataRule.Type.Split("|"), function($s) { return preg_replace($s, "\(.*\)", ""); }), $str) != false; });
+            $match = array_search(CachedData::ColoringSpelledOutRules()[$count]->Match.Split("|"), function($str) { return array_search(array_map(MetadataRule.Type.Split("|"), function($s) { return preg_replace($s, "\(.*\)", ""); }), $str) != false; });
             if ($match != null) {
                 $str = String.Format(CachedData::ColoringSpelledOutRules()[$count]->Evaluator, ArabicString.Substring(MetadataRule.Index, MetadataRule.Length));
                 if (CachedData::ColoringSpelledOutRules()[$count]->RuleFunc != RuleFuncs::eNone) {
-                    $args = $rulefunctions[CachedData.ColoringSpelledOutRules()[$count]->RuleFunc - 1](Str, Scheme);
+                    $args = ArabicData::RuleFunctions()[CachedData.ColoringSpelledOutRules()[$count]->RuleFunc - 1];
+                    $args = $args(Str, Scheme);
                     if (count($args) == 1) {
                         $str = $args(0);
                     } else {
@@ -1339,6 +1343,10 @@ class ArabicData
     {
         return Arabic::UnjoinContig(Arabic::TransliterateWithRules(Arabic::JoinContig($arabicString, $preString, $postString), $scheme, null), $preString, $postString);
     }
+    public static function MatchResult($subexp, $match, $offset, $str)
+    {
+    	return preg_replace_callback("/\$(\$|&|`|\'|[0-9]+)/g", function($m, $p) { if ($p === '$') return '$'; if ($p === '`') return $str.slice(0, $offset); if ($p === '\'') return $str.slice($offset + $match.length); if ($p === '&' || parseInt($p, 10) <= 0 || parseInt($p, 10) >= $args.length - 3) return $match; return $args[3 + parseInt($p, 10)]; }, $subexp);
+    }
     public static function TransliterateWithRules($arabicString, $scheme, $optionalStops)
     {
         $metadataList = array();
@@ -1364,7 +1372,7 @@ class ArabicData
             if (CachedData::RomanizationRules()[$count]->RuleFunc == RuleFuncs::eNone) {
                 $arabicString = preg_replace(CachedData::RomanizationRules()[$count]->Match, CachedData::RomanizationRules()[$count]->Evaluator, $arabicString);
             } else {
-                //$arabicString = preg_replace_callback(CachedData::RomanizationRules()[$count]->Match, function($matches) { return Arabic::$rulefunctions[CachedData::RomanizationRules()[$count]->RuleFunc - 1](MatchResult(CachedData::RomanizationRules()[$count]->Evaluator), $scheme)(0); }, $arabicString);
+                $arabicString = preg_replace_callback(CachedData::RomanizationRules()[$count]->Match, function($matches) { $func = ArabicData::RuleFunctions()[CachedData::RomanizationRules()[$count]->RuleFunc - 1]; return $func(ArabicData::MatchResult(CachedData::RomanizationRules()[$count]->Evaluator), $scheme)[0]; }, $arabicString);
             }
         }
 
@@ -1375,11 +1383,11 @@ class ArabicData
     static function GetTransliterationTable($scheme)
     {
         $items = array();
-        $items.AddRange(array_map(CachedData::ArabicLettersInOrder, function($letter) { return new RenderItem(RenderTypes::eText, [ new RenderText(RenderDisplayClass::eArabic, Letter), new RenderText(RenderDisplayClass::eTransliteration, GetSchemeValueFromSymbol(ArabicData::Data()->ArabicLetters(ArabicData::FindLetterBySymbol(Letter.Chars(0))), Scheme))]); }));
-        $items.AddRange(array_map(CachedData::ArabicSpecialLetters, function($combo) { return new RenderItem(RenderTypes::eText, [ new RenderText(RenderDisplayClass::eArabic, System.Text.RegularExpressions.Regex.Replace(Combo.Replace(CachedData::TehMarbutaStopRule, "").Replace(CachedData::TehMarbutaContinueRule, "..."), "\(?\\u([0-9a-fA-F]{4})\)?", function($match) { return ChrW(Integer.Parse(Match.Groups(1).Value, Globalization.NumberStyles.HexNumber)); } )), new RenderArray.RenderText(RenderDisplayClass::eTransliteration, GetSchemeSpecialValue(GetSchemeSpecialFromMatch(Combo, Scheme, False), Scheme))]); }));
-        $items.AddRange(array_map(CachedData::ArabicHamzas, function($letter) { return new RenderItem(RenderTypes::eText, [ new RenderText(RenderDisplayClass::eArabic, Letter), new RenderText(RenderDisplayClass::eTransliteration, GetSchemeValueFromSymbol(ArabicData::Data()->ArabicLetters(ArabicData::FindLetterBySymbol(Letter.Chars(0))), Scheme))]); }));
-        $items.AddRange(array_map(CachedData::ArabicVowels, function($combo) { return new RenderItem(RenderTypes::eText, [ new RenderText(RenderDisplayClass::eArabic, Combo), new RenderText(RenderDisplayClass::eTransliteration, GetSchemeLongVowelFromString(Combo, Scheme))]); }));
-        $items.AddRange(array_map(CachedData::ArabicTajweed, function($letter) { return new RenderItem(RenderTypes::eText, [ new RenderText(RenderDisplayClass::eArabic, Letter), new RenderText(RenderDisplayClass::eTransliteration, GetSchemeValueFromSymbol(ArabicData::Data()->ArabicLetters(ArabicData::FindLetterBySymbol(Letter.Chars(0))), Scheme))]); }));
+        $items.AddRange(array_map(CachedData::ArabicLettersInOrder, function($letter) { return new RenderItem(RenderTypes::eText, [ new RenderText(RenderDisplayClass::eArabic, Letter), new RenderText(RenderDisplayClass::eTransliteration, GetSchemeValueFromSymbol(ArabicData::Data()->ArabicLetters(ArabicData::FindLetterBySymbol($letter[0])), $scheme))]); }));
+        $items.AddRange(array_map(CachedData::ArabicSpecialLetters, function($combo) { return new RenderItem(RenderTypes::eText, [ new RenderText(RenderDisplayClass::eArabic, preg_replace($combo.Replace(CachedData::TehMarbutaStopRule, "").Replace(CachedData::TehMarbutaContinueRule, "..."), "\(?\\u([0-9a-fA-F]{4})\)?", function($match) { return mb_convert_encoding('&#x' + $match[1] + ';', 'UTF-8', 'HTML-ENTITIES'); } )), new RenderText(RenderDisplayClass::eTransliteration, ArabicData::GetSchemeSpecialValue(ArabicData::GetSchemeSpecialFromMatch($combo, $scheme, false), $scheme))]); }));
+        $items.AddRange(array_map(CachedData::ArabicHamzas, function($letter) { return new RenderItem(RenderTypes::eText, [ new RenderText(RenderDisplayClass::eArabic, Letter), new RenderText(RenderDisplayClass::eTransliteration, GetSchemeValueFromSymbol(ArabicData::Data()->ArabicLetters(ArabicData::FindLetterBySymbol($letter[0])), $scheme))]); }));
+        $items.AddRange(array_map(CachedData::ArabicVowels, function($combo) { return new RenderItem(RenderTypes::eText, [ new RenderText(RenderDisplayClass::eArabic, Combo), new RenderText(RenderDisplayClass::eTransliteration, ArabicData::GetSchemeLongVowelFromString($combo, $scheme))]); }));
+        $items.AddRange(array_map(CachedData::ArabicTajweed, function($letter) { return new RenderItem(RenderTypes::eText, [ new RenderText(RenderDisplayClass::eArabic, Letter), new RenderText(RenderDisplayClass::eTransliteration, ArabicData::GetSchemeValueFromSymbol(ArabicData::Data()->ArabicLetters(ArabicData::FindLetterBySymbol($letter[0])), Scheme))]); }));
         return $items;
     }
     public static function GetTransliterationSchemes()
