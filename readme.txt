@@ -3,8 +3,8 @@ Contributors: GregoryMorse
 Donate link: http://www.islamSource.info/
 Tags: Islam,Quran,calligraphy,phrases,verses
 Requires at least: 3.0.1
-Tested up to: 4.0.1
-Stable tag: 4.0.1
+Tested up to: 4.1.0
+Stable tag: 4.1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -18,6 +18,9 @@ Islam Source Quranic Verse and Islamic Phrase Plugin - Allows for Quranic chapte
 
 1. Extract `http://www.islamsource.info/IslamSource.zip` to the `/wp-content/plugins/` directory
 1. Activate the plugin through the 'Plugins' menu in WordPress
+Difficulties due to the large size of the plugin for the metadata, translation and Quran resources may require adjusting the web server at least temporarily to upload the plugin:
+PHP in php.ini: post_max_size = 128M and upload_max_filesize = 128M
+IIS in applicationhost.config or web.config: configuration -> system.webServer -> security -> requestFiltering -> add or change <requestLimits maxAllowedContentLength="134217728" />
 
 == Frequently Asked Questions ==
 
