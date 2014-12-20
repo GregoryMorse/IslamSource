@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="description" content="Changelog for Quran translations in Tanzil translations repository. This changelog is for Józefa Bielawskiego." /> 
+	<meta name="keywords" content="Quran, Tanzil, Translation, Authentic, Qur'an, Al-Qur'an, Kuran, Koran, قرآن, تنزیل، تنزيل, قرءان مجيد, قرآن كريم, ترجمه "/>
+	<title>Translation Changelog - Józefa Bielawskiego - Tanzil</title>
+	<link href="/pub/common/css/page.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+	
+<div class="header">
+	<div class="content">
+		<a href="http://tanzil.net/" title="Tanzil.net" class="item logo">TANZIL</a>
+		<div class="sep">&bull;</div>
+		<a href="http://tanzil.net/wiki/" class="item">Documents</a>
+		<a href="http://tanzil.net/download/" class="item">Quran Text</a>
+		<a href="http://tanzil.net/trans/" class="item">Translations</a>
+		<div class="clear"></div>
+	</div>
+</div>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<style>
+	.result { color:#444; }
+	.del { background-color: #faa; color: #333; }
+	.ins { background-color: #afa; color: #333; }
+	.date { color: green; margin-top: 15px;}
+	.info { color: #f66; }
+	.more { padding-top: 8px;}
+	.subtitle { font-size: 50%; color: gray; }
+	.text { padding: 2px 7px; background-color: #f6f6f6; margin: 4px 0;}
+	.text.ltr { border-left: 2px solid #ddd; direction: ltr; }
+	.text.rtl { border-right: 2px solid #ddd; direction: rtl; }
+</style>
+
+<div class="body">
+	<div class="content">
+	
+	<h1>
+		Józefa Bielawskiego		<!--span class="subtitle">(Change Log)<span-->
+	</h1>
+
+	<hr>
+	<h3>Change Log</h3>
+	
+	<!--p><b>Change Log</b><br/> Last Update: August 16, 2010</p>
+	<hr-->
+	
+	<div class="result">
+		<div class="date"> Several fixes <br/> Tue, 14 Sep 2010 00:38:47 -0400 </div>
+<div class="info"> -1 +1 </div>
+<div class="text ltr"><span class="del">﻿W</span> <span class="ins">W</span> Imię Boga Miłosiernego i Litościwego!</div>
+
+
+<div class="date"> Duplicate lines removed <br/> Fri, 4 Jun 2010 20:00:03 -0400 </div>
+<div class="info"> -832 +831,0 </div>
+<div class="text ltr"><span class="del">Wysyłaliśmy już przed tobą posłania do narodów i dosięgaliśmy ich nieszczęściem i udręką - być może, oni się upokorzą!</span> </div>
+
+<div class="info"> -4326 +4325,2 </div>
+<div class="text ltr">Ku drodze prostej - drodze Boga, do którego należy to, co jest w niebiosach i co jest na ziemi. Czyż nie do Boga zmierzają wszystkie sprawy?<span class="del">43: 1</span> </div>
+
+<div class="text ltr">Ha. Mim.</div>
+
+<div class="info"> -4878 +4878 </div>
+<div class="text ltr"><span class="del">Oto wysłaliśmy przeciw nim jeden krzyk, a oni stali</span> <span class="ins">My uczyniliśmy łatwym Koran dla przypomnienia. Lecz czy znajdzie</span> się <span class="del">jak zeschłe witki budującego ogrodzenie.</span> <span class="ins">ktoś, kto będzie pamiętał?</span></div>
+
+<div class="info"> -5493 +5493 </div>
+<div class="text ltr"><span class="del">Jakże wy się uchronicie</span> <span class="ins">Niebo rozerwie sie wtedy</span> - <span class="del">jeśli pozostaniecie niewiernymi - tego Dnia, który dzieci uczyni siwowłosymi?</span> <span class="ins">dopelni sie Jego obietnica.</span></div>
+
+<div class="info"> -5509 +5509 </div>
+<div class="text ltr">I <span class="del">synów tu obecnych.</span> <span class="ins">wyrównałem dla niego wszystko,</span></div>
+
+<div class="info"> -5778 +5778 </div>
+<div class="text ltr"><span class="del">On go stworzył z kropli spermy i wyznaczył</span> <span class="ins">następnie uczynił</span> jego <span class="del">los;</span> <span class="ins">drogę łatwą.</span></div>
+
+<div class="info"> -6236 +6236 </div>
+<div class="text ltr">- spośród dżinów i ludzi."</div>
+
+
+<div class="date"> Major spacing and punctuation fixes <br/> Fri, 4 Jun 2010 19:56:23 -0400 </div>
+<div class="info"> -20 +20 </div>
+<div class="text ltr">A kiedy im mówią: "Uwierzcie tak, jak wierzą ci ludzie!" oni mówią: "Czyż my mamy wierzyć, jak <span class="del">wierzący .</span> <span class="ins">wierzący.</span> Czyżby? Zaprawdę, to oni są, <span class="del">głupcami ,</span> <span class="ins">głupcami,</span> lecz oni nie wiedzą!</div>
+
+<div class="info"> -27 +27 </div>
+<div class="text ltr">Błyskawica omal nie odbiera im wzroku. Za każdym razem, kiedy ona daje im światło, oni idą w nim; a kiedy ogarnia ich <span class="del">ciemność ,</span> <span class="ins">ciemność,</span> oni się zatrzymują. Jeśliby zechciał Bóg, to zabrałby im słuch i wzrok. Zaprawdę, Bóg jest nad każdą rzeczą wszechwładny!</div>
+
+<div class="info"> -61 +61 </div>
+<div class="text ltr">Powiedział Mojżesz do swego ludu: "O ludu <span class="del">mój!.Wyrządziliście</span> <span class="ins">mój!. Wyrządziliście</span> niesprawiedliwość sami sobie, wybierając cielca. Nawróćcie się więc do waszego Stwórcy, i zabijajcie się! Tak będzie dla was lepiej w obliczu waszego Stwórcy, i On się ku wam nawróci. Zaprawdę, On jest Przebaczający, Litościwy!"</div>
+
+<div class="info"> -78 +78 </div>
+<div class="text ltr">On powiedział: "Pan mówi: To ma być krowa nie nosząca jarzma, która <span class="del">nie .orze</span> <span class="ins">nie. orze</span> ziemi ani nie nawadnia pola, zdrowa i cała, nie posiadająca znamienia." Oni powiedzieli: "Teraz przyniosłeś nam prawdę!" I zabili ją na ofiarę, ale omal tego nie zaniechali.</div>
+
+<div class="info"> -149 +149 </div>
+<div class="text ltr">Głupcy spośród ludzi będą mówili: Co odwróciło ich od kierunku <span class="del">" ,</span> <span class="ins">",</span> którego oni się trzymali?" Powiedz: "Do Boga należy Wschód i Zachód! On prowadzi ku drodze prostej tego, kogo chce!"</div>
+
+<div class="info"> -220 +220 </div>
+<div class="text ltr">Ludzie byli jednym narodem. I posłał Bóg proroków jako zwiastunów dobrej wieści, ostrzegających. On zesłał wraz z nimi Księgę z prawdą, aby rozsądzać między ludźmi to, w czym oni się różnili. Ci, którym ona była dana, z zawiści poróżnili się między sobą, kiedy otrzymali jasne dowody. I Bóg poprowadził tych, którzy uwierzyli, ku prawdzie, co do której oni się różnili, za Swoim zezwoleniem. A Bóg prowadzi, kogo chce, ku drodze <span class="del">prostej .</span> <span class="ins">prostej.</span></div>
+
+<div class="info"> -267 +267 </div>	</div>
+	
+	<div class="more" style="display: block;">
+		<a href="http://tanzil.net/trans/log/pl.bielawskiego/2">See more...</a>
+	</div>
+	
+	</div>
+
+</div>
+
+<div class="footer">
+	<div class="content">
+		<div style="margin: 0 -20px">
+			<a href="http://tanzil.net/">Tanzil</a> &copy 2014 
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

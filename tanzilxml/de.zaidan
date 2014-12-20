@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="description" content="Changelog for Quran translations in Tanzil translations repository. This changelog is for Amir Zaidan." /> 
+	<meta name="keywords" content="Quran, Tanzil, Translation, Authentic, Qur'an, Al-Qur'an, Kuran, Koran, قرآن, تنزیل، تنزيل, قرءان مجيد, قرآن كريم, ترجمه "/>
+	<title>Translation Changelog - Amir Zaidan - Tanzil</title>
+	<link href="/pub/common/css/page.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+	
+<div class="header">
+	<div class="content">
+		<a href="http://tanzil.net/" title="Tanzil.net" class="item logo">TANZIL</a>
+		<div class="sep">&bull;</div>
+		<a href="http://tanzil.net/wiki/" class="item">Documents</a>
+		<a href="http://tanzil.net/download/" class="item">Quran Text</a>
+		<a href="http://tanzil.net/trans/" class="item">Translations</a>
+		<div class="clear"></div>
+	</div>
+</div>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<style>
+	.result { color:#444; }
+	.del { background-color: #faa; color: #333; }
+	.ins { background-color: #afa; color: #333; }
+	.date { color: green; margin-top: 15px;}
+	.info { color: #f66; }
+	.more { padding-top: 8px;}
+	.subtitle { font-size: 50%; color: gray; }
+	.text { padding: 2px 7px; background-color: #f6f6f6; margin: 4px 0;}
+	.text.ltr { border-left: 2px solid #ddd; direction: ltr; }
+	.text.rtl { border-right: 2px solid #ddd; direction: rtl; }
+</style>
+
+<div class="body">
+	<div class="content">
+	
+	<h1>
+		Amir Zaidan		<!--span class="subtitle">(Change Log)<span-->
+	</h1>
+
+	<hr>
+	<h3>Change Log</h3>
+	
+	<!--p><b>Change Log</b><br/> Last Update: June 4, 2010</p>
+	<hr-->
+	
+	<div class="result">
+		<div class="date"> Major spacing and punctuation fixes <br/> Fri, 4 Jun 2010 19:56:23 -0400 </div>
+<div class="info"> -138 +138 </div>
+<div class="text ltr">Und (erinnere daran), als sein HERR ihm sagte: "Praktiziere den <span class="del">Islam !"</span> <span class="ins">Islam!"</span> Er sagte: "Ich praktiziere den Islam Dem HERRN aller Geschöpfe."</div>
+
+<div class="info"> -263 +263 </div>
+<div class="text ltr">Kein Zwang gilt im <span class="del">Din !</span> <span class="ins">Din!</span> Bereits ist das Richtige dem Irren gegenüber deutlich geworden. Also wer dem Taghut gegenüber Kufr betreibt und den Iman an ALLAH verinnerlicht, der hielt sich bereits am sichersten Griff, bei dem es kein Abreißen gibt. Und ALLAH ist allhörend, allwissend.</div>
+
+<div class="info"> -317 +317 </div>
+<div class="text ltr">Dies war so, weil sie sagten: "Das Feuer wird uns nie berühren außer für abgezählte <span class="del">Tage.</span> <span class="ins">Tage. </span> Und täuschte sie in ihrem Din das, was sie zu erlügen pflegten.</div>
+
+<div class="info"> -442 +442 </div>
+<div class="text ltr">Ihr, die den Iman verinnerlicht <span class="del">habt!Wenn</span> <span class="ins">habt! Wenn</span> ihr denjenigen, die Kufr betrieben haben, gehorcht, werden sie euch auf euren Fersen (zum Kufr) umkehren, dann werdet ihr als Verlierer zurückkehren.</div>
+
+<div class="info"> -505 +505 </div>
+<div class="text ltr">Und ihr bekommt die Hälfte dessen, was eure Ehefrauen hinterlassen haben, wenn sie keine Kinder haben. Sollten sie jedoch Kinder haben, dann bekommt ihr das Viertel von dem, was sie hinterlassen haben, nach (der Vollstreckung) des Testaments, das sie hinterlegt haben, und nach (der Begleichung) der Schulden. Und sie (die Ehefrauen) bekommen das Viertel von dem, was ihr hinterlassen habt, wenn ihr keine Kinder habt. Solltet ihr aber Kinder haben, dann bekommen sie das Achtel von dem, was ihr hinterlassen habt, nach (der Vollstreckung) des Testaments, das ihr hinterlegt habt, und nach (der Begleichung) der <span class="del">Schulden.Und</span> <span class="ins">Schulden. Und</span> sollte (der Verstorbene) ein Mann gewesen sein, der als Kalala beerbt wird - oder eine Frau, und er (oder sie) (mütterlicherseits) einen Bruder oder eine Schwester haben, dann bekommt jeder von ihnen das Sechstel. Sollten sie jedoch mehr als das vorher Erwähnte sein, dann sind sie Partner im Drittel. (Dieses erfolgt erst) nach (der Vollstreckung) des Testaments, das ihr hinterlegt habt, und nach (der Begleichung) der Schulden, ohne (die Erbberechtigten) zu schädigen. Dies ist ein Gebot von ALLAH. Und ALLAH ist allwissend, allnachsichtig.</div>
+
+<div class="info"> -527 +527 </div>
+<div class="text ltr">Die Ehemänner tragen Verantwortung den Ehefrauen gegenüber wegen dem, womit ALLAH die einen vor den anderen ausgezeichnet hat, und wegen dem, was sie von ihrem Vermögen ausgegeben haben. Die gottgefällig guttuenden Frauen sind (ALLAH gegenüber) ergeben und bewahren das vom Verborgenen (zwischen ihnen und ihren Ehemännern), was ALLAH zu bewahren auferlegt hat. Und diejenigen Ehefrauen, deren böswillige trotzige Auflehnung ihr fürchtet, diese sollt ihr (zunächst) ermahnen, dann in den Ehebetten meiden und (erst danach) einen (leichten) Klaps <span class="del">geben !</span> <span class="ins">geben!</span> Und sollten sie wieder auf euch hören, dann unternehmt nichts mehr gegen sie! Gewiß, ALLAH bleibt immer allhöchst, allgrößt.</div>
+
+<div class="info"> -539 +539 </div>
+<div class="text ltr">Unter den Juden gibt es einige, welche die Worte (der Schrift) verdrehen und sagen: "Wir haben gehört und widersprochen, höre, hättest du doch nie gehört und ra'ina ", als Verdrehung mit ihren Zungen und als Beschimpfung des Din. Und hätten sie doch gesagt: "Wir haben gehört und gehorcht, höre uns zu und <span class="del">unzurna !",</span> <span class="ins">unzurna!",</span> wäre das besser für sie und verantwortungsvoller. Aber ALLAH hat sie wegen ihres Kufr verflucht, so verinnerlichen sie den Iman nur ein wenig.</div>
+
+<div class="info"> -719 +719 </div>
+<div class="text ltr">Erstreben sie etwa das Richten nach der <span class="del">Dschahiliya ?!</span> <span class="ins">Dschahiliya?!</span> Und wer ist besser im Richten als ALLAH für Menschen, die über Gewißheit verfügen?!</div>
+
+<div class="info"> -787 +787 </div>
+<div class="text ltr">Solltest DU sie peinigen, so sind sie doch Deine Diener. Doch solltest DU ihnen vergeben, so bist DU gewiß Der Allwürdige, Der <span class="del">Allweise.</span> <span class="ins">Allweise. </span></div>
+
+<div class="info"> -998 +998 </div>
+<div class="text ltr">Und die Weggenossen der Dschanna haben den Weggenossen des Feuers zugerufen: "Wir haben das, was unser HERR uns versprochen hat, bereits als Wahrhaftiges vorgefunden. Habt ihr etwa das, was euer HERR versprochen hat, als Wahrhaftiges vorgefunden?" Sie sagten: <span class="del">"Ja!</span> <span class="ins">"Ja! </span> Dann rief ein Ausrufender unter ihnen aus: "ALLAHs Fluch laste auf den <span class="del">Unrecht-Begehenden!</span> <span class="ins">Unrecht-Begehenden! </span></div>
+
+<div class="info"> -1044 +1044 </div>
+<div class="text ltr">Die Entscheidungsträger seiner Leute, die Kufr betrieben haben, sagten: "Solltet ihr Schu'aib folgen, gewiß wäret ihr dann doch <span class="del">Verlierer.</span> <span class="ins">Verlierer. </span></div>
+
+<div class="info"> -1126 +1126 </div>
+<div class="text ltr">Und (erinnere daran), als dein HERR von den Kindern Adams, aus ihren Rücken (Becken) ihre Nachkommenschaft entnahm und sie gegen sich selbst Zeugnis ablegen ließ: "Bin ICH etwa nicht euer HERR?!" Sie sagten: "Doch mit <span class="del">Sicherheit!Wir</span> <span class="ins">Sicherheit! Wir</span> bezeugen es." Also, damit ihr am Tag der Auferstehung nicht sagt: "Gewiß, wir waren demgegenüber achtlos",</div>
+
+<div class="info"> -1154 +1154 </div>
+<div class="text ltr">Und sollte dich eine Versuchung des Satans (vom Wahren) ablenken, so suche Zuflucht bei <span class="del">ALLAH !</span> <span class="ins">ALLAH!</span> Gewiß, ER ist allhörend, allwissend.</div>
+
+<div class="info"> -1273 +1273 </div>
+<div class="text ltr">Ihr, die den Iman verinnerlicht <span class="del">habt!Weshalb,</span> <span class="ins">habt! Weshalb,</span> wenn euch gesagt wird: "Brecht auf fi-sabilillah", werdet ihr träge an der Stelle haftend?! Seid ihr etwa zufrieden mit dem diesseitigen Leben anstelle des Jenseits?! Die Freuden und Gebrauchsgüter des diesseitigen Lebens sind neben dem Jenseits sicherlich unbedeutend.</div>
+
+<div class="info"> -1305 +1305 </div>
+<div class="text ltr">Kam zu ihnen etwa nicht dieMitteilung über diejenigen vor ihnen: die Leute von Nuh, 'Aad, Thamud, die Leute von Ibrahim, die Bewohner von Madyan und von den <span class="del">Umgewandten ?!</span> <span class="ins">Umgewandten?!</span> Ihre Gesandten kamen zu ihnen mit den deutlichen Zeichen, so gebührt ALLAH niemals, ihnen Unrecht anzutun. Doch sie pflegten sich selbst Unrecht anzutun.</div>
+
+<div class="info"> -1441 +1441 </div>
+<div class="text ltr">Musa sagte: "Sagt ihr etwa über die Wahrheit, als sie zu euch kam, dies sei Magie? Aber dieMagier werden nicht erfolgreich <span class="del">sein!</span> <span class="ins">sein! </span></div>
+
+<div class="info"> -1508 +1508 </div>
+<div class="text ltr">Oder sagen sie etwa: "Er hat ihn (den Quran) erdichtet." Sag: "Sollte ich ihn erdichtet haben, so bleibt meine schwere Verfehlung an mir hängen, doch ich bin schuldlos dem gegenüber, was ihr an schweren Verfehlungen <span class="del">verübt!</span> <span class="ins">verübt! </span></div>
+
+<div class="info"> -1554 +1554 </div>
+<div class="text ltr">Sie (die Gäste) sagten: <span class="del">"Lut!Wir</span> <span class="ins">"Lut! Wir</span> sind doch Gesandte deines HERRN, sie werden dir nichts antun können. Also brich nachts mit deiner Familie auf und keiner von euch soll sich umsehen - außer deiner Ehefrau, denn gewiß, sie wird das treffen, was diese trifft. Gewiß, das ihnen Angedrohte trifft am Morgen ein. Kommt der Morgen etwa nicht bald?!"</div>
+
+<div class="info"> -2140 +2140 </div>
+<div class="text ltr">Und sag: "Alhamdulillah: Alles Lob gebührt ALLAH, Der sich keinen Sohn nahm, Der nie einen Teilhaber in der Herrschaft hat, und Der nie einen Wali (als Schutz) vor Erniedrigung hat." Und verherrliche Ihn mit <span class="del">allahu-akbar !</span> <span class="ins">allahu-akbar!</span></div>
+
+<div class="info"> -2308 +2308 </div>
+<div class="text ltr">Diese sind diejenigen, denen ALLAH Gaben zuteil werden ließ von den Propheten aus der Nachkommenschaft Adams, und von denjenigen, die WIR mit Nuh trugen, und aus der Nachkommenschaft Ibrahims und Israils, und von denjenigen, dieWIR rechtgeleitet und auserwählt <span class="del">haben.Wenn</span> <span class="ins">haben. Wenn</span> ihnen die Ayat des Allgnade Erweisenden vorgetragen wurden, fielen sie sudschud-vollziehend und weinend nieder.</div>
+
+<div class="info"> -2312 +2312 </div>
+<div class="text ltr">Darin hören sie nichts Unnützes - (sie hören) nur den <span class="del">Salam-Gruß !</span> <span class="ins">Salam-Gruß!</span> Und ihnen ist ihre Versorgung darin morgens und abends gesichert!</div>
+
+<div class="info"> -2946 +2946 </div>
+<div class="text ltr">Auch schulde ich ihnen noch (die Sühne) einer Verfehlung, so fürchte ich, daß sie mich <span class="del">töten!</span> <span class="ins">töten! </span></div>
+	</div>
+	
+	<div class="more" style="display: block;">
+		<a href="http://tanzil.net/trans/log/de.zaidan/2">See more...</a>
+	</div>
+	
+	</div>
+
+</div>
+
+<div class="footer">
+	<div class="content">
+		<div style="margin: 0 -20px">
+			<a href="http://tanzil.net/">Tanzil</a> &copy 2014 
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

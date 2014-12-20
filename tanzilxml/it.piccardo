@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="description" content="Changelog for Quran translations in Tanzil translations repository. This changelog is for Hamza Roberto Piccardo." /> 
+	<meta name="keywords" content="Quran, Tanzil, Translation, Authentic, Qur'an, Al-Qur'an, Kuran, Koran, قرآن, تنزیل، تنزيل, قرءان مجيد, قرآن كريم, ترجمه "/>
+	<title>Translation Changelog - Hamza Roberto Piccardo - Tanzil</title>
+	<link href="/pub/common/css/page.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+	
+<div class="header">
+	<div class="content">
+		<a href="http://tanzil.net/" title="Tanzil.net" class="item logo">TANZIL</a>
+		<div class="sep">&bull;</div>
+		<a href="http://tanzil.net/wiki/" class="item">Documents</a>
+		<a href="http://tanzil.net/download/" class="item">Quran Text</a>
+		<a href="http://tanzil.net/trans/" class="item">Translations</a>
+		<div class="clear"></div>
+	</div>
+</div>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<style>
+	.result { color:#444; }
+	.del { background-color: #faa; color: #333; }
+	.ins { background-color: #afa; color: #333; }
+	.date { color: green; margin-top: 15px;}
+	.info { color: #f66; }
+	.more { padding-top: 8px;}
+	.subtitle { font-size: 50%; color: gray; }
+	.text { padding: 2px 7px; background-color: #f6f6f6; margin: 4px 0;}
+	.text.ltr { border-left: 2px solid #ddd; direction: ltr; }
+	.text.rtl { border-right: 2px solid #ddd; direction: rtl; }
+</style>
+
+<div class="body">
+	<div class="content">
+	
+	<h1>
+		Hamza Roberto Piccardo		<!--span class="subtitle">(Change Log)<span-->
+	</h1>
+
+	<hr>
+	<h3>Change Log</h3>
+	
+	<!--p><b>Change Log</b><br/> Last Update: January 2, 2011</p>
+	<hr-->
+	
+	<div class="result">
+		<div class="date"> ch.jian renamed to zh.jian + minor fixes <br/> Sun, 2 Jan 2011 04:33:35 -0500 </div>
+<div class="info"> -719 +719 </div>
+<div class="text ltr">È la giustizia dell'ignoranza che cercano? <span class="ins">Chi è migliore di Allah nel giudizio, per un popolo che crede con fermezza?</span></div>
+
+
+<div class="date"> Duplicate lines removed <br/> Fri, 4 Jun 2010 20:00:03 -0400 </div>
+<div class="info"> -1,2 +1,2 </div>
+<div class="text ltr">In nome di <span class="del">Allah ,</span> <span class="ins">Allah,</span> il Compassionevole, il Misericordioso</div>
+
+<div class="text ltr">La lode [appartiene] ad Allah, Signore dei <span class="del">mondi,</span> <span class="ins">mondi</span></div>
+
+<div class="info"> -11 +11 </div>
+<div class="text ltr">coloro che credono in ciò che è stato fatto scendere su di te e in ciò che <span class="ins">è</span> stato fatto scendere prima di te e che credono fermamente all'altra vita.</div>
+
+<div class="info"> -14,2 +14,2 </div>
+<div class="text ltr">Allah ha posto un sigillo sui loro cuori <span class="del">esulle</span> <span class="ins">e sulle</span> loro orecchie e sui loro occhi c'è un velo; avranno un castigo immenso.</div>
+
+<div class="text ltr">Tra gli uomini vi è chi dice: <span class="del">"Crediamo</span> <span class="ins">“Crediamo</span> in Allah e nel Giorno <span class="del">Ultimo!"e</span> <span class="ins">Ultimo!” e</span> invece non sono credenti.</div>
+
+<div class="info"> -18 +18 </div>
+<div class="text ltr">E quando si dice loro: <span class="del">"Non</span> <span class="ins">“Non</span> spargete la corruzione sulla <span class="del">terra",</span> <span class="ins">terra”,</span> dicono: <span class="del">"Anzi,</span> <span class="ins">“Anzi,</span> noi siamo dei <span class="del">conciliatori!".</span> <span class="ins">conciliatori!”.</span></div>
+
+<div class="info"> -20,2 +20,2 </div>
+<div class="text ltr">E quando si dice loro: <span class="del">"Credete</span> <span class="ins">“Credete</span> come hanno creduto gli altri <span class="del">uomini",</span> <span class="ins">uomini”,</span> rispondono: <span class="del">"Dovremmo</span> <span class="ins">“Dovremmo</span> credere come hanno creduto gli <span class="del">stolti?".</span> <span class="ins">stolti?”.</span> Non sono forse loro gli stolti? Ma non lo sanno.</div>
+
+<div class="text ltr">Quando incontrano i credenti, dicono: <span class="del">"Crediamo";</span> <span class="ins">“Crediamo”;</span> ma quando sono soli con i loro <span class="del">demoni,</span> <span class="ins">dèmoni,</span> dicono: <span class="del">"Invero</span> <span class="ins">“Invero</span> siamo dei vostri; non facciamo che burlarci di <span class="del">loro".</span> <span class="ins">loro”.</span></div>
+
+<div class="info"> -29,2 +29,2 </div>
+<div class="text ltr">[Egli è] Colui <span class="del">che</span> <span class="ins">Che</span> della terra ha fatto un letto e del cielo un edificio, e che dal cielo fa scendere l'acqua con la quale produce i frutti che sono il vostro cibo. Non attribuite consimili ad Allah ora che sapete.</div>
+
+<div class="text ltr">E se avete qualche dubbio in merito a quello che abbiamo fatto scendere sul Nostro Servo, portate allora una <span class="del">Sura</span> <span class="ins">sura</span> simile a questa e chiamate altri testimoni all'infuori di Allah, se siete veritieri.</div>
+
+<div class="info"> -32,2 +32,2 </div>
+<div class="text ltr">E annuncia a coloro che credono e compiono il bene, che avranno i Giardini in cui scorrono i ruscelli. Ogni volta che sarà loro dato un frutto diranno: <span class="del">"Già</span> <span class="ins">“Già</span> ci era stato <span class="del">concesso!".</span> <span class="ins">concesso!”.</span> Ma è qualcosa di simile che verrà loro dato; avranno spose purissime e colà rimarranno in eterno.</div>
+
+<div class="text ltr">In <span class="del">verità</span> <span class="ins">verità,</span> Allah non esita a prendere ad esempio un moscerino o qualsiasi altra cosa superiore. Coloro che credono sanno che si tratta della verità che proviene dal loro Signore; i miscredenti invece dicono: <span class="del">"Cosa</span> <span class="ins">“Cosa</span> vuol dire Allah con un simile <span class="del">esempio?".</span> <span class="ins">esempio?”.</span> [Con esso] ne allontana molti, e molti ne guida. Ma non allontana che gli iniqui,</div>
+
+<div class="info"> -37,9 +37,9 </div>
+<div class="text ltr">E quando il tuo Signore disse agli Angeli: <span class="del">"Porrò</span> <span class="ins">“Porrò</span> un vicario sulla <span class="del">terra",</span> <span class="ins">terra”,</span> essi dissero: <span class="del">"Metterai</span> <span class="ins">“Metterai</span> su di essa qualcuno che vi spargerà la corruzione e vi verserà il sangue, mentre noi Ti glorifichiamo lodandoTi e Ti <span class="del">santifichiamo?".</span> <span class="ins">santifichiamo?”.</span> Egli disse: <span class="del">"In verità</span> <span class="ins">“In verità,</span> Io conosco quello che voi non <span class="del">conoscete… "</span> <span class="ins">conoscete...”.</span></div>
+
+<div class="text ltr">Ed insegnò ad Adamo i nomi di tutte le cose, quindi le presentò agli Angeli e disse: <span class="del">"Ditemi</span> <span class="ins">“Ditemi</span> i loro nomi, se siete <span class="del">veritieri".</span> <span class="ins">veritieri”.</span></div>
+
+<div class="text ltr">Essi dissero: <span class="del">"Gloria</span> <span class="ins">“Gloria</span> a Te. Non conosciamo se non quello che Tu ci hai insegnato: in verità Tu sei il Saggio, il <span class="del">Sapiente.</span> <span class="ins">Sapiente”.</span></div>
+
+<div class="text ltr">Disse: <span class="del">"O</span> <span class="ins">“O</span> Adamo, informali sui<span class="del">i</span>  nomi di tutte [le <span class="del">cose]"Dopo</span> <span class="ins">cose]”. Dopo</span> che li ebbe informati sui nomi, Egli disse: <span class="del">"Non</span> <span class="ins">“Non</span> vi avevo forse detto che conosco il segreto dei cieli e della terra e che conosco ciò che manifestate e ciò che <span class="del">nascondete?".</span> <span class="ins">nascondete?”.</span></div>
+
+<div class="text ltr">E quando dicemmo agli Angeli: <span class="del">"Prosternatevi</span> <span class="ins">“Prosternatevi</span> ad <span class="del">Adamo",</span> <span class="ins">Adamo”,</span> tutti si prosternarono, eccetto Iblîs, che rifiutò per orgoglio e fu tra i miscredenti.</div>
+
+<div class="text ltr">E dicemmo: <span class="del">"O</span> <span class="ins">“O</span> Adamo, abita il Paradiso, tu e la tua sposa. Saziatevene ovunque a vostro piacere, ma non avvicinatevi a <span class="del">quest'albero</span> <span class="ins">quest'albero,</span> ché in tal caso sareste tra gli <span class="del">empi".</span> <span class="ins">empi”.</span></div>
+
+<div class="text ltr">Poi Iblîs li fece inciampare e scacciare dal luogo in cui si trovavano. E Noi dicemmo: <span class="del">"Andatevene</span> <span class="ins">“Andatevene</span> via, nemici gli uni degli altri. Avrete una dimora sulla terra e ne godrete per un tempo <span class="del">stabilito".</span> <span class="ins">stabilito”.</span></div>
+
+<div class="text ltr">Adamo ricevette parole dal suo Signore e Allah accolse il suo [pentimento]. In verità Egli è Colui <span class="del">che</span> <span class="ins">Che</span> accetta il pentimento, il Misericordioso.</div>
+
+<div class="text ltr">Dicemmo: <span class="del">"Andatevene</span> <span class="ins">“Andatevene</span> via tutti [quanti]! Se mai vi giungerà una guida da parte Mia, coloro che la seguiranno non avranno nulla da temere e non saranno <span class="del">afflitti</span> <span class="ins">afflitti”.</span></div>
+
+<div class="info"> -47 +47 </div>
+<div class="text ltr">O figli di Israele, ricordate i favori di cui vi ho colmati e rispettate il Mio patto e<span class="del">Io</span>  rispetterò il vostro. Solo Me dovete temere.</div>
+
+<div class="info"> -56 +56 </div>
+<div class="text ltr">E [ricordate] quando vi abbiamo liberato dalla gente di Faraone che vi infliggeva le torture più atroci!... Sgozzavano i vostri figli e lasciavano in vita le vostre femmine. In ciò vi fu un'immensa prova da [parte del] vostro <span class="del">Signore</span> <span class="ins">Signore.</span></div>
+
+<div class="info"> -58 +58 </div>
+<div class="text ltr">E quando stabilimmo con Mosè [un patto in] quaranta <span class="del">notti..</span> <span class="ins">notti...</span> e voi vi prendeste il Vitello e agiste da iniqui.</div>
+	</div>
+	
+	<div class="more" style="display: block;">
+		<a href="http://tanzil.net/trans/log/it.piccardo/2">See more...</a>
+	</div>
+	
+	</div>
+
+</div>
+
+<div class="footer">
+	<div class="content">
+		<div style="margin: 0 -20px">
+			<a href="http://tanzil.net/">Tanzil</a> &copy 2014 
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

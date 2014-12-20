@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="description" content="Changelog for Quran translations in Tanzil translations repository. This changelog is for Ahmed Raza Khan." /> 
+	<meta name="keywords" content="Quran, Tanzil, Translation, Authentic, Qur'an, Al-Qur'an, Kuran, Koran, قرآن, تنزیل، تنزيل, قرءان مجيد, قرآن كريم, ترجمه "/>
+	<title>Translation Changelog - Ahmed Raza Khan - Tanzil</title>
+	<link href="/pub/common/css/page.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+	
+<div class="header">
+	<div class="content">
+		<a href="http://tanzil.net/" title="Tanzil.net" class="item logo">TANZIL</a>
+		<div class="sep">&bull;</div>
+		<a href="http://tanzil.net/wiki/" class="item">Documents</a>
+		<a href="http://tanzil.net/download/" class="item">Quran Text</a>
+		<a href="http://tanzil.net/trans/" class="item">Translations</a>
+		<div class="clear"></div>
+	</div>
+</div>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<style>
+	.result { color:#444; }
+	.del { background-color: #faa; color: #333; }
+	.ins { background-color: #afa; color: #333; }
+	.date { color: green; margin-top: 15px;}
+	.info { color: #f66; }
+	.more { padding-top: 8px;}
+	.subtitle { font-size: 50%; color: gray; }
+	.text { padding: 2px 7px; background-color: #f6f6f6; margin: 4px 0;}
+	.text.ltr { border-left: 2px solid #ddd; direction: ltr; }
+	.text.rtl { border-right: 2px solid #ddd; direction: rtl; }
+</style>
+
+<div class="body">
+	<div class="content">
+	
+	<h1>
+		Ahmed Raza Khan		<!--span class="subtitle">(Change Log)<span-->
+	</h1>
+
+	<hr>
+	<h3>Change Log</h3>
+	
+	<!--p><b>Change Log</b><br/> Last Update: March 17, 2011</p>
+	<hr-->
+	
+	<div class="result">
+		<div class="date"> Minor fixes <br/> Fri, 1 Apr 2011 00:00:02 -0400 </div>
+<div class="info"> -3492 +3492 </div>
+<div class="text rtl">اور جو کفر کرے تو تم اس کے کفر سے غم نہ کھاؤ، انھیں ہماری<span class="del">ہماری</span>  ہی طرف پھرنا ہے ہم انہیں بتادیں گے جو کرتے تھے بیشک اللہ <span class="del">والوں</span> <span class="ins">دلوں</span> کی بات جانتا ہے،</div>
+
+
+<div class="date"> Minor fixes <br/> Wed, 2 Mar 2011 16:21:37 -0500 </div>
+<div class="info"> -339,2 +339,2 </div>
+<div class="text rtl">اور لوگوں سے بات کرے گا پالنے میں اور پکی عمر میں اور خاصوں میں ہوگا،</div>
+
+<div class="text rtl">بولی اے میرے رب! میرے بچہ کہاں سے ہوگا مجھے تو کسی شخص نے ہاتھ نہ لگایا فرمایا اللہ یوں ہی پیدا کرتا ہے جو چاہے جب، کسی کام کا حکم فرمائے تو اس سے یہی کہتا ہے کہ ہوجا وہ فوراً ہوجاتا ہے،</div>
+
+
+<div class="date"> Several fixes <br/> Tue, 14 Sep 2010 00:38:47 -0400 </div>
+<div class="info"> -1 +1 </div>
+<div class="text rtl"><span class="del">﻿اللہ</span> <span class="ins">اللہ</span> کے نام سے شروع جو بہت مہربان رحمت والا</div>
+
+<div class="info"> -449 +449 </div>
+<div class="text rtl">اے ایمان والو! ان کافروں کی طرح نہ ہونا جنہوں نے اپنے بھائیوں کی نسبت کہا کہ جب وہ سفر یا جہاد کو گئے کہ ہمارے پاس ہوتے تو نہ مرتے اور نہ مارے <span class="del">اتے</span> <span class="ins">جاتے</span> اس لئے اللہ ان کے دلوں میں اس کا افسوس رکھے، اور اللہ جِلاتا اور مارتا ہے اور اللہ تمہارے کام دیکھ رہا ہے،</div>
+
+
+<div class="date"> Major spacing and punctuation fixes <br/> Fri, 4 Jun 2010 19:56:23 -0400 </div>
+<div class="info"> -150 +150 </div>
+<div class="text rtl">اور بات یوں ہی ہے کہ ہم نے تمہیں کیا سب امتوں میں افضل، کہ تم لوگوں پر گواہ ہو اور یہ رسول تمہارے نگہبان و گواہ اور اے <span class="del">محبوب!تم</span> <span class="ins">محبوب! تم</span> پہلے جس قبلہ پر تھے ہم نے وہ اسی لئے مقرر کیا تھا کہ دیکھیں کون رسول کی پیروی کرتا ہے اور کون الٹے پاؤں پھر جاتا ہے۔ اور بیشک یہ بھاری تھی مگر ان پر، جنہیں اللہ نے ہدایت کی اور اللہ کی شان نہیں کہ تمہارا ایمان اکارت کرے بیشک اللہ آدمیوں پر بہت مہربان، رحم والا ہے۔</div>
+
+<div class="info"> -253 +253 </div>
+<div class="text rtl">اے <span class="del">محبوب !کیا</span> <span class="ins">محبوب! کیا</span> تم نے نہ دیکھا بنی اسرائیل کے ایک گروہ کو جو موسیٰ کے بعد ہوا جب اپنے ایک پیغمبر سے بولے ہمارے لیے کھڑا کردو ایک بادشاہ کہ ہم خدا کی راہ میں لڑیں، نبی نے فرمایا کیا تمہارے انداز ایسے ہیں کہ تم پر جہاد فرض کیا جائے تو پھر نہ کرو، بولے ہمیں کیا ہوا کہ ہم اللہ کی راہ میں نہ لڑیں حالانکہ ہم نکالے گئے ہیں اپنے وطن اور اپنی اولاد سے تو پھر جب ان پر جہاد فرض کیا گیا منہ پھیر گئے مگر ان میں کے تھوڑے اور اللہ خوب جانتا ہے ظالموں کو،</div>
+
+<div class="info"> -374 +374 </div>
+<div class="text rtl">اور یاد کرو جب اللہ نے پیغمبروں سے ان کا عہد لیا جو میں تم کو کتاب اور حکمت دوں پھر تشریف لائے تمہارے پاس وہ رسول کہ تمہاری کتابوں کی تصدیق فرمائے تو تم ضرور ضرور اس پر ایمان لانا اور ضرور ضرور اس کی مدد کرنا، فرمایا کیوں تم نے اقرار کیا اور اس پر میرا بھاری ذمہ <span class="del">لیا ؟</span> <span class="ins">لیا؟</span> سب نے عرض کی، ہم نے اقرار کیا، فرمایا تو ایک دوسرے پر گواہ ہوجاؤ اور میں آپ تمہارے ساتھ گواہوں میں ہوں،</div>
+
+<div class="info"> -494 +494 </div>
+<div class="text rtl">اے <span class="del">لوگو !</span> <span class="ins">لوگو!</span> اپنے رب سے ڈرو جس نے تمہیں ایک جان سے پیدا کیا اور اسی میں سے اس کا جوڑا بنایا اور ان دونوں سے بہت سے مرد و عورت پھیلا دیئے اور اللہ سے ڈرو جس کے نام پر مانگتے ہو اور رشتوں کا لحاظ رکھو بیشک اللہ ہر وقت تمہیں دیکھ رہا ہے،</div>
+
+<div class="info"> -781 +781 </div>
+<div class="text rtl">جب حواریوں نے کہا اے عیسیٰ بن مریم! کیا آپ کا رب ایسا کرے گا کہ ہم پر آسمان سے ایک خوان اُتارے کہا اللہ سے <span class="del">ڈرو !</span> <span class="ins">ڈرو!</span> اگر ایمان رکھتے ہو</div>
+
+<div class="info"> -937 +937 </div>
+<div class="text rtl">اب کہیں گے مشرک کہ اللہ چاہتا تو نہ ہم شرک کرتے نہ ہمارے باپ دادا نہ ہم کچھ حرام ٹھہراتے ایسا ہی ان کے اگلوں نے جھٹلایا تھا یہاں تک کہ ہمارا عذاب چکھا تم فرماؤ کیا تمہارے پاس کوئی علم ہے کہ اسے ہمارے لیے نکالو، تم تو نرے گمان (خام <span class="del">خیال)کے</span> <span class="ins">خیال) کے</span> پیچھے ہو اور تم یونہی تخمینے کرتے ہو</div>
+
+<div class="info"> -948 +948 </div>
+<div class="text rtl">وہ جنہوں نے اپنے دین میں جُدا جُدا راہیں نکالیں او رکئی گروہ ہوگئے اے <span class="del">محبوب !</span> <span class="ins">محبوب!</span> تمہیں ان سے کچھ علا قہ نہیں ان کا معاملہ اللہ ہی کے حوالے ہے پھر وہ انہیں بتادے گا جو کچھ وہ کرتے تھے</div>
+	</div>
+	
+	<div class="more" style="display: block;">
+		<a href="http://tanzil.net/trans/log/ur.kanzuliman/2">See more...</a>
+	</div>
+	
+	</div>
+
+</div>
+
+<div class="footer">
+	<div class="content">
+		<div style="margin: 0 -20px">
+			<a href="http://tanzil.net/">Tanzil</a> &copy 2014 
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

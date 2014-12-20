@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="description" content="Changelog for Quran translations in Tanzil translations repository. This changelog is for Mostafa Khorramdel." /> 
+	<meta name="keywords" content="Quran, Tanzil, Translation, Authentic, Qur'an, Al-Qur'an, Kuran, Koran, قرآن, تنزیل، تنزيل, قرءان مجيد, قرآن كريم, ترجمه "/>
+	<title>Translation Changelog - Mostafa Khorramdel - Tanzil</title>
+	<link href="/pub/common/css/page.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+	
+<div class="header">
+	<div class="content">
+		<a href="http://tanzil.net/" title="Tanzil.net" class="item logo">TANZIL</a>
+		<div class="sep">&bull;</div>
+		<a href="http://tanzil.net/wiki/" class="item">Documents</a>
+		<a href="http://tanzil.net/download/" class="item">Quran Text</a>
+		<a href="http://tanzil.net/trans/" class="item">Translations</a>
+		<div class="clear"></div>
+	</div>
+</div>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<style>
+	.result { color:#444; }
+	.del { background-color: #faa; color: #333; }
+	.ins { background-color: #afa; color: #333; }
+	.date { color: green; margin-top: 15px;}
+	.info { color: #f66; }
+	.more { padding-top: 8px;}
+	.subtitle { font-size: 50%; color: gray; }
+	.text { padding: 2px 7px; background-color: #f6f6f6; margin: 4px 0;}
+	.text.ltr { border-left: 2px solid #ddd; direction: ltr; }
+	.text.rtl { border-right: 2px solid #ddd; direction: rtl; }
+</style>
+
+<div class="body">
+	<div class="content">
+	
+	<h1>
+		Mostafa Khorramdel		<!--span class="subtitle">(Change Log)<span-->
+	</h1>
+
+	<hr>
+	<h3>Change Log</h3>
+	
+	<!--p><b>Change Log</b><br/> Last Update: March 19, 2011</p>
+	<hr-->
+	
+	<div class="result">
+		<div class="date"> Removed empty footnontes from fa.khorramdel <br/> Sat, 19 Mar 2011 16:35:53 -0400 </div>
+<div class="info"> -298 +298 </div>
+<div class="text rtl">شکّی نیست که هیچ‌چیز نه در زمین و نه در آسمان بر خدا پنهان نمی‌ماند (کوچک باشد یا بزرگ، پدیدار باشد یا پنهان، دور باشد یا نزدیک).<span class="del">[[...]]</span> </div>
+
+<div class="info"> -324 +324 </div>
+<div class="text rtl">بگو: اگر خدا را دوست می‌دارید، از من پیروی کنید تا خدا شما را دوست بدارد و گناهانتان را ببخشاید، و خداوند آمرزنده‌ی مهربان است.<span class="del">[[....]]</span> </div>
+
+<div class="info"> -349,2 +349,2 </div>
+<div class="text rtl">امّا کافران را در دنیا (با مسلّط کردن ملّتها بر آنان) و در آخرت (با جاودانگی در آتش دوزخ) به عذاب سختی گرفتار و مجازات خواهم کرد، و هیچ گونه یاورانی نخواهند داشت (که ایشان را از عذاب خدا برهانند).<span class="del">[[...]]</span> </div>
+
+<div class="text rtl">و امّا کسانی که ایمان می‌آورند و کارهای شایسته انجام می‌دهند، خداوند پاداش آنان را به طور کامل خواهد داد، و خداوند ستمکاران را دوست نمی‌دارد.<span class="del">[[...]]</span> </div>
+
+<div class="info"> -362 +362 </div>
+<div class="text rtl">گروهی از اهل کتاب آرزو داشتند کاش می‌شد شما را گمراه کنند! و (با القاء شبهه‌هائی در دینتان، شما را از اسلام برگردانند، ولی با این کارها) جز خویشتن را گمراه نمی‌سازند و نمی‌فهمند.<span class="del">[[...]]</span> </div>
+
+<div class="info"> -367 +367 </div>
+<div class="text rtl">هر کس را که بخواهد به رحمت خود مخصوص می‌گرداند. خداوند دارای فضل عظیم و لطف عمیم است.<span class="del">[[...]]</span> </div>
+
+<div class="info"> -382 +382 </div>
+<div class="text rtl">مگر کسانی که بعد از آن، توبه کنند و به اصلاح بپردازند (یعنی به سوی خدا برگردند و در مقام جبران گذشته برآیند، که توبه‌ی آنان پذیرفتنی است) زیرا خداوند آمرزنده و مهربان است.<span class="del">[[...]]</span> </div>
+
+<div class="info"> -401,2 +401,2 </div>
+<div class="text rtl">اینها آیات خدا هستند که (درباره پاداش نیکوکاران و پادافره بدکاران نازل شده‌اند و) آن هارا برایت می خوانیم ومشتمل بر حق و حقیقتند، و خداوند (هیچ گاه) ستمی برای جهانیان نمی‌خواهد.<span class="del">[[...]]</span> </div>
+
+<div class="text rtl">و (چگونه ممکن است خدا ستم کند در حالی که آفرینش و فرمانروائی و تصرّف امور) آنچه در آسمانها و آنچه در زمین است از آن خدا است و کارها (ی مردمان سرانجام) به سوی خدا برگردانده می‌شود (و پاداش و پادافره هر یک را خواهد داد).<span class="del">[[...]]</span> </div>
+
+<div class="info"> -422 +422 </div>
+<div class="text rtl">و از آن خدا است آنچه در آسمانها و زمین است. هر که را بخواهد می‌آمرزد، و هر که را بخواهد عذاب می‌دهد، و خدا بخشنده و مهربان است.<span class="del">[[...]]</span> </div>
+
+<div class="info"> -425 +425 </div>
+<div class="text rtl">و از خدا و پیغمبر اطاعت کنید تا که (در دنیا و آخرت) مورد رحمت و مرحمت قرار گیرید.<span class="del">[[...]]</span> </div>
+
+<div class="info"> -453 +453 </div>
+<div class="text rtl">اگر خداوند شما را یاری کند (همان گونه که در جنگ بدر یاری کرد) هیچ کس بر شما چیره نخواهد شد، و اگر خوارتان گرداند (و دست از یاریتان بردارد، همان گونه که در جنگ احد چنین شد) کیست که پس از او شما را یاری دهد؟ و مؤمنان باید تنها بر خدا توکّل کنند و بس.<span class="del">[[...]]</span> </div>
+
+<div class="info"> -464 +464 </div>
+<div class="text rtl">شاد و خوشحالند به خاطر نعمتی که خدا بدانان داده است و فضل و کرمی که او بدیشان روا دیده است، و خوشوقت و مسرورند از این که (می‌بینند) خداوند اجر و پاداش مؤمنان را ضائع نکرده و هدر نمی‌دهد.<span class="del">[[...]]</span> </div>
+
+<div class="info"> -525 +525 </div>
+<div class="text rtl">آرزوی چیزی نکنید که خداوند برخی از شما را با (اعطای) آن بر برخی دیگر برتری داده است (و مردان را در بعضی از چیزها بر زنان، و زنان را در بعضی از چیزها بر مردان فضیلت داده و مرحمت روا دیده است). مردان نصیبی دارند از آنچه فراچنگ می‌آورند و زنان (هم) نصیبی دارند از آنچه به دست می‌آورند (و هر یک از زنان و مردان دارای سرشتی و حقوقی فراخور حال خود می‌باشند. پس با تلاش و کوشش شبانه‌روزی رحمت و برکت خدای را بجوئید) و ازخدا طلب فضل او کنید. بیگمان خداوند (کاملاً) آگاه از هر چیزی بوده (و به هر نوعی، چیزی بخشیده است که شایسته‌اش بوده است).<span class="del">[[...]]</span> </div>
+
+<div class="info"> -557 +557 </div>
+<div class="text rtl">و هیچ پیغمبری را نفرستاده‌ایم مگر بدین منظور که به فرمان خدا از او اطاعت شود (پس اطاعت از او، اطاعت از خدا، و سرکشی از دستور او، سرکشی از دستور خدا بوده است). و اگر آنان بدان هنگام که (با نفاق و دروغگوئی و زیر پاگذاشتن فرمان خدا) به خود ستم می‌کردند، به نزد تو می‌آمدند و از خدا طلب آمرزش می‌نمودند و پیغمبر هم برای آنان درخواست بخشش می‌کرد، بیگمان خدا را بس توبه‌پذیر و مهربان می‌یافتند.<span class="del">[[...]]</span> </div>
+
+<div class="info"> -561 +561 </div>
+<div class="text rtl">و هر آینه آنان را به راه راستی (که افراط و تفریطی در آن نمی‌باشد و به بهشت منتهی می‌شود) رهنمود می‌کردیم.<span class="del">[[...]]</span> </div>
+
+<div class="info"> -630 +630 </div>
+<div class="text rtl">بیگمان کسانی که ایمان می‌آورند و سپس کافر می‌شوند، و باز هم ایمان می‌آورند و دیگر بار کافر می‌شوند، و سپس بر کفر خود می‌افزایند (و با کفر چشم از جهان می‌پوشند، واقعاً کارشان جای شگفت است و) هرگز خداوند ایشان را نمی‌بخشد و راهی (به سوی بهشت) بدیشان نمی‌نماید.<span class="del">[[...]]</span> </div>
+
+<div class="info"> -678 +678 </div>
+<div class="text rtl">خداوند به کسانی که ایمان بیاورند و کارهای شایسته انجام دهند، وعده می‌دهد که آمرزش (او گناهانشان را دریابد) و پاداش بزرگی (و ثواب فراوانی) از آن ایشان باشد.<span class="del">[[...]]</span> </div>
+
+<div class="info"> -692 +692 </div>
+<div class="text rtl">دو نفر (سردار) از مردان خداترس که خداوند بدیشان نعمت (عقل و ایمان و شهامت) داده بود، گفتند: شما (از قیافه‌ی درشت این مردمان نترسید و ناگهانی یورش برید و) از دروازه بر آنان وارد شوید. اگر وارد دروازه شوید (به سبب دل ضعیفی که دارند) شما پیروز خواهید شد. اگر مؤمن هستید، بر خدا توکّل کنید.<span class="del">[[...]]</span> </div>
+
+<div class="info"> -708 +708 </div>
+<div class="text rtl">امّا کسی که پس از ارتکاب ستم (دزدی) پشیمان شود و (از دزدی) توبه کند و (با انجام اعمال نیکو و پس‌دادن اموال مسروقه یا قیمت آنها) به اصلاح (حال خود) پردازد، خداوند توبه‌ی او را می‌پذیرد، بیگمان خداوند بس آمرزنده و مهربان است.<span class="del">[[...]]</span> </div>
+
+<div class="info"> -767 +767 </div>
+<div class="text rtl">بدانید که خداوند دارای مجازات شدید است، و در عین حال بس آمرزنده و مهربان است.<span class="del">[[...]]</span> </div>
+
+<div class="info"> -804,2 +804,2 </div>
+<div class="text rtl">بگو: من (هم مانند سائر انسانهای مآل‌اندیش) اگر نافرمانی پروردگار کنم از عذاب روز بزرگ (قیامت) می‌ترسم.<span class="del">[[...]]</span> </div>
+
+<div class="text rtl">کسی که (چنین عذابی) بدان هنگام از او به دور داشته شود، به حقیقت خدا بدو رحم کرده است، و این پیروزی آشکاری است.<span class="del">[[...]]</span> </div>
+
+<div class="info"> -977 +977 </div>	</div>
+	
+	<div class="more" style="display: block;">
+		<a href="http://tanzil.net/trans/log/fa.khorramdel/2">See more...</a>
+	</div>
+	
+	</div>
+
+</div>
+
+<div class="footer">
+	<div class="content">
+		<div style="margin: 0 -20px">
+			<a href="http://tanzil.net/">Tanzil</a> &copy 2014 
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

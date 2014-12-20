@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="description" content="Changelog for Quran translations in Tanzil translations repository. This changelog is for Samir El-Hayek ." /> 
+	<meta name="keywords" content="Quran, Tanzil, Translation, Authentic, Qur'an, Al-Qur'an, Kuran, Koran, قرآن, تنزیل، تنزيل, قرءان مجيد, قرآن كريم, ترجمه "/>
+	<title>Translation Changelog - Samir El-Hayek  - Tanzil</title>
+	<link href="/pub/common/css/page.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+	
+<div class="header">
+	<div class="content">
+		<a href="http://tanzil.net/" title="Tanzil.net" class="item logo">TANZIL</a>
+		<div class="sep">&bull;</div>
+		<a href="http://tanzil.net/wiki/" class="item">Documents</a>
+		<a href="http://tanzil.net/download/" class="item">Quran Text</a>
+		<a href="http://tanzil.net/trans/" class="item">Translations</a>
+		<div class="clear"></div>
+	</div>
+</div>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<style>
+	.result { color:#444; }
+	.del { background-color: #faa; color: #333; }
+	.ins { background-color: #afa; color: #333; }
+	.date { color: green; margin-top: 15px;}
+	.info { color: #f66; }
+	.more { padding-top: 8px;}
+	.subtitle { font-size: 50%; color: gray; }
+	.text { padding: 2px 7px; background-color: #f6f6f6; margin: 4px 0;}
+	.text.ltr { border-left: 2px solid #ddd; direction: ltr; }
+	.text.rtl { border-right: 2px solid #ddd; direction: rtl; }
+</style>
+
+<div class="body">
+	<div class="content">
+	
+	<h1>
+		Samir El-Hayek 		<!--span class="subtitle">(Change Log)<span-->
+	</h1>
+
+	<hr>
+	<h3>Change Log</h3>
+	
+	<!--p><b>Change Log</b><br/> Last Update: June 4, 2010</p>
+	<hr-->
+	
+	<div class="result">
+		<div class="date"> Major spacing and punctuation fixes <br/> Fri, 4 Jun 2010 19:56:23 -0400 </div>
+<div class="info"> -24 +24 </div>
+<div class="text ltr">Parecem-se com aqueles que fez arder um fogo; mas, quando este iluminou tudo que o rodeava, Deus extinguiu-lhes a <span class="del">luz,deixando-os</span> <span class="ins">luz, deixando-os</span> sem ver, nas trevas.</div>
+
+<div class="info"> -26 +26 </div>
+<div class="text ltr">Ou como (aquele que, surpreendidos por) nuvens do céu, carregadas de chuva, causando trevas, trovões e <span class="del">relâmpagos,tapam</span> <span class="ins">relâmpagos, tapam</span> os seus ouvidos com os dedos, devido aos estrondos, por temor à morte; mas Deus está inteirado dos incrédulos.</div>
+
+<div class="info"> -30 +30 </div>
+<div class="text ltr">E se tendes dúvidas a respeito do que revelamos ao Nosso servo (Mohammad), componde uma surata semelhante à <span class="del">dele(o</span> <span class="ins">dele (o</span> Alcorão), e apresentai as vossas testemunhas, independentemente de Deus, se estiverdes certos.</div>
+
+<div class="info"> -36,2 +36,2 </div>
+<div class="text ltr">Ele foi Quem vos criou tudo quando existe na terra; então, dirigiu Sua vontade até o firmamento do qual <span class="del">fez,ordenadamente,</span> <span class="ins">fez, ordenadamente,</span> sete céus, porque é Onisciente.</div>
+
+<div class="text ltr">(Recorda-te ó Profeta) de quando teu Senhor disse aos anjos: Vou instituir um legatário na terra! <span class="del">Perguntaram-Lhe:Estabelecerás</span> <span class="ins">Perguntaram-Lhe: Estabelecerás</span> nela quem alí fará corrupção, derramando sangue, enquanto nós celebramos Teus louvores, <span class="del">glorificando-Te?Disse</span> <span class="ins">glorificando-Te? Disse</span> (o Senhor): Eu sei o que vós ignorais.</div>
+
+<div class="info"> -42,2 +42,2 </div>
+<div class="text ltr">Determinamos: Ó Adão, habita o Paraíso com a tua esposa e desfrutai dele com a prodigalidade que vos <span class="del">aprouver;porém,</span> <span class="ins">aprouver; porém,</span> não vos aproximeis desta árvore, porque vos contareis entre os iníquos.</div>
+
+<div class="text ltr">Todavia, Satã os seduziu, fazendo com que saíssem do estado (de felicidade) em que se encontravam. Então <span class="del">dissemos:Descei!</span> <span class="ins">dissemos: Descei!</span> Sereis inimigos uns dos outros, e, na terra, tereis residência e gozo transitórios.</div>
+
+<div class="info"> -58 +58 </div>
+<div class="text ltr">E de quando instituímos o pacto das quarenta noites de Moisés e que vós, em sua ausência, adorastes do <span class="del">bezerro,condenando-vos.</span> <span class="ins">bezerro, condenando-vos.</span></div>
+
+<div class="info"> -61,2 +61,2 </div>
+<div class="text ltr">E de quando Moisés disse ao seu povo: Ó povo meu, por certo que vos condenastes, ao adorardes o bezerro. <span class="del">Voltai,portanto,</span> <span class="ins">Voltai, portanto,</span> contritos, penitenciando-vos para o vosso Criador, e imolai-vos mutuamente. Isso será preferível, aos olhos dovosso Criador. Ele vos absolverá, porque é o Remissório, o Misericordioso.</div>
+
+<div class="text ltr">E de quando dissestes: Ó Moisés, não creremos em ti até que vejamos Deus claramente! E a centelha vos <span class="del">fulminou,enquanto</span> <span class="ins">fulminou, enquanto</span> olháveis.</div>
+
+<div class="info"> -65 +65 </div>
+<div class="text ltr">E quando vos dissemos: Entrai nessa cidade e comei com prodigalidade do que vos aprouver, mas entrai pela <span class="del">porta,prostrando-vos,</span> <span class="ins">porta, prostrando-vos,</span> e dizei: Remissão! Então, perdoaremos as vossas faltas e aumentaremos a recompensa dos benfeitores.</div>
+
+<div class="info"> -68,2 +68,2 </div>
+<div class="text ltr">E de quando dissestes: Ó Moisés, jamais nos conformaremos com um só tipo de alimento! Roga ao teu Senhor que nosproporcione tudo quanto a terra produz: suas hortaliças, seus pepinos, seus alhos, suas lentilhas e suas <span class="del">cebolas!Perguntou-lhes:</span> <span class="ins">cebolas! Perguntou-lhes:</span> Quereis trocar o melhor pelo pior? Pois bem: Voltai para o Egito, onde terei que implorais! E foramcondenados à humilhação e à indigência, e incorreram na abominação de Deus; isso, porque negaram os versículos osversículos de Deus e assassinaram injustamente os profetas. E também porque se rebelaram e foram agressores.</div>
+
+<div class="text ltr">Os fiéis, os judeus, os cristãos, e os sabeus, enfim todos os que crêem em Deus, no Dia do Juízo Final, e praticam o <span class="del">bem,receberão</span> <span class="ins">bem, receberão</span> a sua recompensa do seu Senhor e não serão presas do temor, nem se atribuirão.</div>
+
+<div class="info"> -71 +71 </div>
+<div class="text ltr">Apesar disso, recusaste-lo depois e, se não fosse pela graça de Deus e pela Sua misericórdia para <span class="del">convosco,contar-vos-íeis</span> <span class="ins">convosco, contar-vos-íeis</span> entre os desventurados.</div>
+
+<div class="info"> -74 +74 </div>
+<div class="text ltr">E de quando Moisés disse ao seu povo: Deus vos ordena sacrificar uma vaca. Disseram: Zombas, acaso, de <span class="del">nós?Respondeu:</span> <span class="ins">nós? Respondeu:</span> Guarda-me Deus de contar-me entre os insipientes!</div>
+
+<div class="info"> -104 +104 </div>
+<div class="text ltr">Dize-lhes Quem for inimigo de Gabriel, saiba que ele, com o beneplácito de Deus, impregnou-te (o Alcorão) no <span class="del">coração,para</span> <span class="ins">coração, para</span> corroborar o que foi revelado antes; é orientação e alvíssaras de boas novas para os fiéis.</div>
+
+<div class="info"> -109 +109 </div>
+<div class="text ltr">E seguiram o que os demônios apregoavam, acerca do Reinado de Salomão. Porém, Salomão nunca foi <span class="del">incrédulo,outrossim</span> <span class="ins">incrédulo, outrossim</span> foram os demônios que incorreram na incredulidade. Ensinaram aos homens a magia e o que foi revelado aos doisanjos, Harut e Marut, na Babilônia. Ambos, a ninguém instruíram, se quem dissessem: Somos tão somente uma prova; nãovos torneis incrédulos! Porém, os homens aprendiam de ambos como desunir o marido da sua esposa. Mas, com isso nãopodiam prejudicar ninguém, a não ser com a anuência de Deus. Os homens aprendiam o que lhes era prejudicial e não o quelhes era benéfico, sabendo que aquele que assim agisse, jamais participaria da ventura da outra vida. A que vil preço sevenderam! Se soubessem...</div>
+
+<div class="info"> -116,3 +116,3 </div>
+<div class="text ltr">Muitos dos adeptos do Livro, por inveja, desejariam fazer-vos voltar à incredulidade, depois de terdes <span class="del">acreditado,apesar</span> <span class="ins">acreditado, apesar</span> de lhes ter sido evidenciada a verdade. Tolerai e perdoai, até que Deus faça cumprir os Seus desígnios, porque Deusé Onipotente.</div>
+
+<div class="text ltr">Observai a oração, pagai o zakat e sabei que todo o bem que apresentardes para vós mesmo, encontrareis em <span class="del">Deus,porque</span> <span class="ins">Deus, porque</span> Ele bem vê tudo quando fazeis.</div>
+
+<div class="text ltr">Disseram: Ninguém entrará no Paraíso, a não ser que seja judeu ou cristão. Tais são as suas idéias fictícias. <span class="del">Dize-lhes:Mostrai</span> <span class="ins">Dize-lhes: Mostrai</span> vossa prova se estiverdes certos.</div>
+
+<div class="info"> -120 +120 </div>
+<div class="text ltr">Os judeus dizem: Os cristãos não têm em que se apoiar! E os cristãos dizem: O judeus não têm em que se <span class="del">apoiar!,apesar</span> <span class="ins">apoiar!, apesar</span> de ambos lerem o Livro. Assim também os néscios dizem coisas semelhantes. Porém, Deus julgará entre eles, quantoàs suas divergências, no Dia da Ressurreição.</div>
+
+<div class="info"> -127 +127 </div>
+<div class="text ltr">Nem os judeus, nem os cristãos, jamais estão satisfeitos contigo, a menos que abraces os seus credos. Dize-lhes: "Porcerto que a orientação de Deus é a Orientação!" Se te renderes aos seus desejos, depois de te Ter chegado o <span class="del">conhecimento,fica</span> <span class="ins">conhecimento, fica</span> sabendo que não terás, em Deus, Protetor, nem Defensor.</div>
+
+<div class="info"> -137 +137 </div>
+<div class="text ltr">E quem rejeitaria o credo de Abraão, a não ser o insensato? Já o escolhemos (Abraão), neste mundo e, no <span class="del">outro,contrar-se-á</span> <span class="ins">outro, contrar-se-á</span> entre os virtuosos.</div>
+
+<div class="info"> -139 +139 </div>
+<div class="text ltr">Abraão legou esta crença aos seus filhos, e Jacó aos seus, dizendo-lhes: Ó filhos meus, Deus vos legou esta <span class="del">religião;apegai-nos</span> <span class="ins">religião; apegai-nos</span> a ela, e não morrais sem serdes submissos (a Deus).</div>
+
+<div class="info"> -144 +144 </div>
+<div class="text ltr">Se crerem no que vós credes, iluminar-se-ão; se se recusarem, estarão em cisma. Deus ser-vos-á suficiente contra <span class="del">eles,e</span> <span class="ins">eles, e</span> Ele é o Oniouvinte, o Sapientíssimo.</div>
+	</div>
+	
+	<div class="more" style="display: block;">
+		<a href="http://tanzil.net/trans/log/pt.elhayek/2">See more...</a>
+	</div>
+	
+	</div>
+
+</div>
+
+<div class="footer">
+	<div class="content">
+		<div style="margin: 0 -20px">
+			<a href="http://tanzil.net/">Tanzil</a> &copy 2014 
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

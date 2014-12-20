@@ -61,7 +61,7 @@ class ArabicData
     public static function Data()
     {
         if (ArabicData::$_ArabicXMLData == null) {
-            ArabicData::$_ArabicXMLData = simplexml_load_file(dirname(__FILE__) . "/HostPage/metadata/arabicdata.xml");
+            ArabicData::$_ArabicXMLData = simplexml_load_file(dirname(__FILE__) . "/HostPage/metadata/ArabicData.xml");
         }
         return ArabicData::$_ArabicXMLData;
     }
@@ -1012,7 +1012,7 @@ class RenderArray
 					$text .= RenderArray::DoRender($items[$count]->textitems[$index]->Text);
 				} else {
 					if (array_search($items[$count]->textitems[$index]->font, Utility::$FontList) !== false) {
-						$text .= "<span dir=\"rtl\" style=\"display: block;\"><img src=\"" . plugins_url() . "" . "/IslamSource/IslamSourceWP.php?Size=100&Char=" . bin2hex(mb_convert_encoding($items[$count]->textitems[$index]->Text, 'UCS-4BE', 'UTF-8')) . "&Font=" . $items[$count]->textitems[$index]->font . "\">";
+						$text .= "<span dir=\"rtl\" style=\"display: block;\"><img src=\"" . plugins_url() . "" . "/islamsource/IslamSourceWP.php?Size=100&Char=" . bin2hex(mb_convert_encoding($items[$count]->textitems[$index]->Text, 'UCS-4BE', 'UTF-8')) . "&Font=" . $items[$count]->textitems[$index]->font . "\">";
 					} elseif ($items[$count]->textitems[$index]->displayClass == RenderDisplayClass::eArabic) {
 						$text .= "<span dir=\"rtl\" style=\"display: block; font-size: 32px;\">";
 					} elseif ($items[$count]->textitems[$index]->displayClass == RenderDisplayClass::eTransliteration) {
@@ -1745,7 +1745,7 @@ class DocBuilder
 };
 function getcacheitem()
 {
-	return false; //disable for debugging
+	//return false; //disable for debugging
 	// Settings
 	$cachedir = dirname(__FILE__) . '/cache/'; // Directory to cache files in (keep outside web root)
 	$cachetime = 600; // Seconds to cache files for
@@ -1881,7 +1881,7 @@ Register IS Plugin
  
 function is_add_plugin( $plugin_array ) {
  	$url = plugins_url().""; 
-   	$plugin_array['is_button'] = $url.'/IslamSource/isbutton.js';
+   	$plugin_array['is_button'] = $url.'/islamsource/isbutton.js';
   	return $plugin_array;
 }
 

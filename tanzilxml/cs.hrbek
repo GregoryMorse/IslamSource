@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="description" content="Changelog for Quran translations in Tanzil translations repository. This changelog is for Preklad I. Hrbek." /> 
+	<meta name="keywords" content="Quran, Tanzil, Translation, Authentic, Qur'an, Al-Qur'an, Kuran, Koran, قرآن, تنزیل، تنزيل, قرءان مجيد, قرآن كريم, ترجمه "/>
+	<title>Translation Changelog - Preklad I. Hrbek - Tanzil</title>
+	<link href="/pub/common/css/page.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+	
+<div class="header">
+	<div class="content">
+		<a href="http://tanzil.net/" title="Tanzil.net" class="item logo">TANZIL</a>
+		<div class="sep">&bull;</div>
+		<a href="http://tanzil.net/wiki/" class="item">Documents</a>
+		<a href="http://tanzil.net/download/" class="item">Quran Text</a>
+		<a href="http://tanzil.net/trans/" class="item">Translations</a>
+		<div class="clear"></div>
+	</div>
+</div>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<style>
+	.result { color:#444; }
+	.del { background-color: #faa; color: #333; }
+	.ins { background-color: #afa; color: #333; }
+	.date { color: green; margin-top: 15px;}
+	.info { color: #f66; }
+	.more { padding-top: 8px;}
+	.subtitle { font-size: 50%; color: gray; }
+	.text { padding: 2px 7px; background-color: #f6f6f6; margin: 4px 0;}
+	.text.ltr { border-left: 2px solid #ddd; direction: ltr; }
+	.text.rtl { border-right: 2px solid #ddd; direction: rtl; }
+</style>
+
+<div class="body">
+	<div class="content">
+	
+	<h1>
+		Preklad I. Hrbek		<!--span class="subtitle">(Change Log)<span-->
+	</h1>
+
+	<hr>
+	<h3>Change Log</h3>
+	
+	<!--p><b>Change Log</b><br/> Last Update: August 16, 2010</p>
+	<hr-->
+	
+	<div class="result">
+		<div class="date"> Several fixes <br/> Tue, 14 Sep 2010 00:38:47 -0400 </div>
+<div class="info"> -1 +1 </div>
+<div class="text ltr"><span class="del">﻿Ve</span> <span class="ins">Ve</span> jménu Boha milosrdného, slitovného.</div>
+
+
+<div class="date"> Duplicate lines removed <br/> Fri, 4 Jun 2010 20:00:03 -0400 </div>
+<div class="info"> -2060,0 +2061 </div>
+<div class="text ltr"><span class="ins">A nepřibližujte se k cizoložství, neboť to ohavnost je i špatná cesta.</span></div>
+
+<div class="info"> -2111 +2111,0 </div>
+<div class="text ltr"><span class="del">A sesíláme v Koránu to, co lékem je i milosrdenstvím pro věřící, však nespravedlivým to jen ztrátu zvětšuje.</span> </div>
+
+<div class="info"> -6236 +6236 </div>
+<div class="text ltr">ať již je z džinů či z lidí!"</div>
+
+
+<div class="date"> Major spacing and punctuation fixes <br/> Fri, 4 Jun 2010 19:56:23 -0400 </div>
+<div class="info"> -32 +32 </div>
+<div class="text ltr">Oznam radostnou zvěst těm, kdož uvěřili a zbožné skutky konali, že pro ně jsou připraveny zahrady, pod nimiž řeky tekou. A kdykoliv se jim za odměnu dostane z nich ovoce, tu řeknou: "Toto je jako to, co nám již dříve bylo uštědřeno," avšak dostalo se jim jen něco podobného. A budou tam mít manželky <span class="del">čisté ?</span> <span class="ins">čisté?</span> a budou tam nesmrtelní.</div>
+
+<div class="info"> -50 +50 </div>
+<div class="text ltr">Dodržujte modlitbu, rozdávejte almužnu a sklánějte se s <span class="del">těmi ,</span> <span class="ins">těmi,</span> kdož se sklánějí!</div>
+
+<div class="info"> -65 +65 </div>
+<div class="text ltr">A hle, pravili jsme: "Vejděte do města tohoto a pojídejte tam, kdekoliv se vám zachce, až dosyta. Vejděte do bran, skloňte se a <span class="del">rcete: ,Odpuštění!?</span> <span class="ins">rcete:, Odpuštění!?</span> A My odpustíme vám hříchy vaše a rozmnožíme dobrodiní těm, kdož dobré konali."</div>
+
+<div class="info"> -105 +105 </div>
+<div class="text ltr">Ten, kdo je nepřítelem Boha a andělů a poslů Jeho a Gabriela a <span class="del">Michaela. . .</span> <span class="ins">Michaela...</span> vždyť i Bůh je nepřítelem nevěřících!"</div>
+
+<div class="info"> -180 +180 </div>
+<div class="text ltr">Bůh zakázal vám jedině zdechliny, krev, vepřové maso a to, co bylo zasvěceno někomu jinému než <span class="del">Bohu.v</span> <span class="ins">Bohu.</span> Kdo však byl donucen jísti toto, aniž po tom toužil nebo přestupníkem byl, na tom nebude hříchu, vždyť Bůh je odpouštějící, slitovný.</div>
+
+<div class="info"> -199 +199 </div>
+<div class="text ltr">Jestliže však <span class="del">přestanou. . .</span> <span class="ins">přestanou...</span> tedy Bůh věru je odpouštějící, slitovný!</div>
+
+<div class="info"> -254 +254 </div>
+<div class="text ltr">A řekl jim prorok jejich: "Bůh vám posílá Saula <span class="del">(Talút )</span> <span class="ins">(Talút)</span> jako krále." Pravili: "Jak by nám tento mohl vládnout, když my máme větší nárok na vládu než on, jenž nemá dostatek majetku?" Odvětil: "Bůh jej pro vás vyvolil a obohatil jej ve vědění i v síle tělesné. Bůh dává vládu Svou tomu, komu chce, a Bůh je nesmírný, vševědoucí."</div>
+
+<div class="info"> -272 +272 </div>
+<div class="text ltr">Avšak ti, kdož rozdávají ze jmění svého usilujíce získat zalíbení Boží a pro upevnění duší svých, ti podobají se zahradě na kopci: když přijde liják, přinese plody své dvakrát, když liják nepřijde, je zde alespoň <span class="del">rosa. . .</span> <span class="ins">rosa...</span> A Bůh věru jasně vidí vše, co děláte.</div>
+
+<div class="info"> -309 +309 </div>
+<div class="text ltr">kteří <span class="del">hovoří: ,Pane</span> <span class="ins">hovoří:, Pane</span> náš, uvěřili jsme; odpusť nám naše viny a ochraň nás před trestem ohně pekelného,</div>
+
+<div class="info"> -313 +313 </div>
+<div class="text ltr">A jestliže se s tebou hádají, rci: "Odevzdal jsem se do vůle Boží stejně jako ti, kdož mne následují." A zeptej se těch, jimž dostalo se Písma, a lidu <span class="del">neučeného:v</span> <span class="ins">neučeného: v</span> "Odevzdáváte se do vůle Boží?" A jestliže se odevzdají do vůle Boží, pak budou vedeni cestou správnou, avšak jestliže se <span class="del">odvrátí. . .</span> <span class="ins">odvrátí...</span> vždyť tobě přísluší jen předání poselství. A Bůh jasně zří služebníky Své.</div>
+
+<div class="info"> -325 +325 </div>
+<div class="text ltr">Rci: "Poslouchejte Boha a posla Jeho! Jestliže se obrátíte <span class="del">zády. . .</span> <span class="ins">zády...</span> Bůh věru nemá rád nevěřící."</div>
+	</div>
+	
+	<div class="more" style="display: block;">
+		<a href="http://tanzil.net/trans/log/cs.hrbek/2">See more...</a>
+	</div>
+	
+	</div>
+
+</div>
+
+<div class="footer">
+	<div class="content">
+		<div style="margin: 0 -20px">
+			<a href="http://tanzil.net/">Tanzil</a> &copy 2014 
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

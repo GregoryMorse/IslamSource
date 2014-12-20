@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="description" content="Changelog for Quran translations in Tanzil translations repository. This changelog is for Abolfazl Bahrampour." /> 
+	<meta name="keywords" content="Quran, Tanzil, Translation, Authentic, Qur'an, Al-Qur'an, Kuran, Koran, قرآن, تنزیل، تنزيل, قرءان مجيد, قرآن كريم, ترجمه "/>
+	<title>Translation Changelog - Abolfazl Bahrampour - Tanzil</title>
+	<link href="/pub/common/css/page.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+	
+<div class="header">
+	<div class="content">
+		<a href="http://tanzil.net/" title="Tanzil.net" class="item logo">TANZIL</a>
+		<div class="sep">&bull;</div>
+		<a href="http://tanzil.net/wiki/" class="item">Documents</a>
+		<a href="http://tanzil.net/download/" class="item">Quran Text</a>
+		<a href="http://tanzil.net/trans/" class="item">Translations</a>
+		<div class="clear"></div>
+	</div>
+</div>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<style>
+	.result { color:#444; }
+	.del { background-color: #faa; color: #333; }
+	.ins { background-color: #afa; color: #333; }
+	.date { color: green; margin-top: 15px;}
+	.info { color: #f66; }
+	.more { padding-top: 8px;}
+	.subtitle { font-size: 50%; color: gray; }
+	.text { padding: 2px 7px; background-color: #f6f6f6; margin: 4px 0;}
+	.text.ltr { border-left: 2px solid #ddd; direction: ltr; }
+	.text.rtl { border-right: 2px solid #ddd; direction: rtl; }
+</style>
+
+<div class="body">
+	<div class="content">
+	
+	<h1>
+		Abolfazl Bahrampour		<!--span class="subtitle">(Change Log)<span-->
+	</h1>
+
+	<hr>
+	<h3>Change Log</h3>
+	
+	<!--p><b>Change Log</b><br/> Last Update: November 29, 2013</p>
+	<hr-->
+	
+	<div class="result">
+		<div class="date"> Fixes to fa.bahrampour and fa.mojtabavi <br/> Thu, 14 Apr 2011 06:09:03 -0400 </div>
+<div class="info"> -1897,104 +1896,0 </div>
+<div class="text rtl"><span class="del">و اگر مى‌خواستيم، قطعا آنان را بر جاى خود مسخ مى‌كرديم [و مى‌خشكانديم‌] كه نتوانند پيش بروند و نه به عقب برگردند</span> </div>
+
+<div class="text rtl"><span class="del">و هر كه را عمر دراز دهيم، در آفرينش دگرگونش كنيم [كه ناتوان شود]، پس آيا نمى‌انديشند</span> </div>
+
+<div class="text rtl"><span class="del">و [ما] به او شعر نياموختيم و در خور وى نيست. اين [سخن‌] جز يادآورى و قرآنى روشن نيست</span> </div>
+
+<div class="text rtl"><span class="del">تا آن را كه [دلش‌] زنده است بيم دهد و گفتار [وعده‌ى جهنم‌] بر كافران تحقق يابد</span> </div>
+
+<div class="text rtl"><span class="del">آيا نديدند كه ما با دستان [قدرت‌] خود براى ايشان چهارپايانى آفريديم كه آنها را در اختيار دارند</span> </div>
+
+<div class="text rtl"><span class="del">و آنها را برايشان رام كرديم كه هم سوارشان مى‌شوند و هم از آنها تغذيه مى‌كنند</span> </div>
+
+<div class="text rtl"><span class="del">و از آنها بهره‌ها و نوشيدنى‌ها دارند. پس چرا شكر نمى‌گزارند</span> </div>
+
+<div class="text rtl"><span class="del">و به جاى خدا معبودانى گرفتند به اميد آن كه يارى داده شوند</span> </div>
+
+<div class="text rtl"><span class="del">[ولى اين معبودان‌] نمى‌توانند آنها را يارى كنند، و اينان براى آنها سپاهى احضار شده‌اند [كه با هم به دوزخ در خواهند آمد]</span> </div>
+
+<div class="text rtl"><span class="del">پس گفتار آنها تو را محزون نكند. قطعا ما آنچه را پنهان مى‌دارند و آنچه را آشكار مى‌سازند مى‌دانيم</span> </div>
+
+<div class="text rtl"><span class="del">آيا اين انسان نمى‌داند كه او را از نطفه‌اى آفريديم كه هم اكنون دشمنى آشكار شده است</span> </div>
+
+<div class="text rtl"><span class="del">و براى ما مثلى آورد و آفرينش خود را فراموش كرد، گفت: چه كسى استخوان‌ها را كه چنين پوسيده است زنده مى‌كند</span> </div>
+
+<div class="text rtl"><span class="del">بگو: همان كسى كه نخستين بار آن را آفريد زنده‌اش مى‌كند، و او به هر گونه آفرينشى آگاه است</span> </div>
+
+<div class="text rtl"><span class="del">همان [خدايى‌] كه برايتان از درخت سبز آتش آفريد و به ناگاه شما از آن آتش مى‌افروزيد</span> </div>
+
+<div class="text rtl"><span class="del">آيا كسى كه آسمان‌ها و زمين را آفريده قادر نيست كه مانند ايشان را بيافريند؟ چرا، و او آفريدگار آگاه است</span> </div>
+
+<div class="text rtl"><span class="del">فرمان او هرگاه چيزى را اراده كند، تنها اين است كه به آن بگويد: باش، پس مى‌شود</span> </div>
+
+<div class="text rtl"><span class="del">پس منزه است خدايى كه مالكيت و حاكميت هر چيزى به دست اوست و به سوى او بازگردانده مى‌شويد</span> </div>
+
+<div class="text rtl"><span class="del">سوگند به صف بستگان، صفى [عظيم‌]</span> </div>
+
+<div class="text rtl"><span class="del">و سوگند به نهى كنندگان كه به سختى طرد مى‌كنند</span> </div>
+
+<div class="text rtl"><span class="del">و سوگند به تلاوت كنندگان ذكر (و آيات الهى)</span> </div>
+
+<div class="text rtl"><span class="del">كه قطعا معبود شما يگانه است</span> </div>
+
+<div class="text rtl"><span class="del">پروردگار آسمان‌ها و زمين و آنچه ميان آنهاست و پروردگار مشرق‌هاست</span> </div>
+
+<div class="text rtl"><span class="del">ما آسمان نزديك‌تر را به زيور اختران آراستيم</span> </div>
+
+<div class="text rtl"><span class="del">و [آن را] از هر شيطان سركشى محفوظ داشتيم</span> </div>
+
+<div class="text rtl"><span class="del">[به طورى كه‌] نمى‌توانند به [سخن‌] ساكنان عالم بالا گوش فرا دهند، و از هر سويى پرتاب مى‌شوند</span> </div>
+
+<div class="text rtl"><span class="del">با شدت به عقب رانده مى‌شوند، و برايشان عذابى پيوسته است</span> </div>
+
+<div class="text rtl"><span class="del">مگر كسى كه [از سخن بالاييان‌] چيزى بربايد كه شهابى سوراخ كننده دنبالش مى‌كند</span> </div>
+
+<div class="text rtl"><span class="del">پس [از مشركان‌] بپرس: آيا آنها از لحاظ آفرينش سخت‌ترند يا كسانى كه [از فرشتگان و غيره‌] خلق كرده‌ايم؟ آنها را از گلى چسبنده پديد آورديم [كه ضعيفند]</span> </div>
+
+<div class="text rtl"><span class="del">بلكه [تو از انكارشان‌] تعجب مى‌كنى، و آنها استهزا مى‌كنند</span> </div>
+
+<div class="text rtl"><span class="del">و چون به آنها پند داده شود پند نمى‌گيرند</span> </div>
+
+<div class="text rtl"><span class="del">و چون آيتى ببينند آن را به مسخره مى‌گيرند</span> </div>
+
+<div class="text rtl"><span class="del">و مى‌گويند: اين جز سحرى آشكار نيست</span> </div>
+
+<div class="text rtl"><span class="del">آيا چون مرديم و خاك و استخوان‌هايى شديم، به راستى دوباره زنده مى‌شويم</span> </div>
+
+<div class="text rtl"><span class="del">و آيا نياكان ما نيز [زنده مى‌شوند]</span> </div>
+
+<div class="text rtl"><span class="del">بگو: آرى، و شما [زنده مى‌شويد] در حالى كه خوار خواهيد بود</span> </div>
+
+<div class="text rtl"><span class="del">پس آن تنها يك صيحه است و بس، و به ناگاه همه آنها [برخيزند و] بنگرند</span> </div>
+
+<div class="text rtl"><span class="del">و مى‌گويند: واى بر ما! اين روز جزاست</span> </div>
+
+<div class="text rtl"><span class="del">اين همان روز داورى است كه تكذيبش مى‌كرديد</span> </div>
+
+<div class="text rtl"><span class="del">[اى فرشتگان!] گرد آوريد ظالمان و همگنانشان و آنچه را كه پرستش مى‌كردند</span> </div>
+
+<div class="text rtl"><span class="del">[آرى آنچه را] جز خدا [مى‌پرستيدند گرد آوريد] و به راه جهنم هدايتشان كنيد</span> </div>
+
+<div class="text rtl"><span class="del">و آنها را نگه داريد كه بازخواست خواهند شد</span> </div>
+
+<div class="text rtl"><span class="del">شما را چه شده است كه يكديگر را يارى نمى‌كنيد</span> </div>
+
+<div class="text rtl"><span class="del">بلكه امروز آنها تسليم شدگانند</span> </div>
+	</div>
+	
+	<div class="more" style="display: block;">
+		<a href="http://tanzil.net/trans/log/fa.bahrampour/2">See more...</a>
+	</div>
+	
+	</div>
+
+</div>
+
+<div class="footer">
+	<div class="content">
+		<div style="margin: 0 -20px">
+			<a href="http://tanzil.net/">Tanzil</a> &copy 2014 
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

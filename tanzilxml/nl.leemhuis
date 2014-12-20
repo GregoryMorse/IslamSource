@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="description" content="Changelog for Quran translations in Tanzil translations repository. This changelog is for Fred Leemhuis." /> 
+	<meta name="keywords" content="Quran, Tanzil, Translation, Authentic, Qur'an, Al-Qur'an, Kuran, Koran, قرآن, تنزیل، تنزيل, قرءان مجيد, قرآن كريم, ترجمه "/>
+	<title>Translation Changelog - Fred Leemhuis - Tanzil</title>
+	<link href="/pub/common/css/page.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+	
+<div class="header">
+	<div class="content">
+		<a href="http://tanzil.net/" title="Tanzil.net" class="item logo">TANZIL</a>
+		<div class="sep">&bull;</div>
+		<a href="http://tanzil.net/wiki/" class="item">Documents</a>
+		<a href="http://tanzil.net/download/" class="item">Quran Text</a>
+		<a href="http://tanzil.net/trans/" class="item">Translations</a>
+		<div class="clear"></div>
+	</div>
+</div>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<style>
+	.result { color:#444; }
+	.del { background-color: #faa; color: #333; }
+	.ins { background-color: #afa; color: #333; }
+	.date { color: green; margin-top: 15px;}
+	.info { color: #f66; }
+	.more { padding-top: 8px;}
+	.subtitle { font-size: 50%; color: gray; }
+	.text { padding: 2px 7px; background-color: #f6f6f6; margin: 4px 0;}
+	.text.ltr { border-left: 2px solid #ddd; direction: ltr; }
+	.text.rtl { border-right: 2px solid #ddd; direction: rtl; }
+</style>
+
+<div class="body">
+	<div class="content">
+	
+	<h1>
+		Fred Leemhuis		<!--span class="subtitle">(Change Log)<span-->
+	</h1>
+
+	<hr>
+	<h3>Change Log</h3>
+	
+	<!--p><b>Change Log</b><br/> Last Update: August 5, 2012</p>
+	<hr-->
+	
+	<div class="result">
+		<div class="date"> Two Dutch translations nl.leemhuis and nl.siregar added <br/> Sun, 5 Aug 2012 21:44:53 +0430 </div>
+<div class="info"> -0,0 +1,6236 </div>
+<div class="text ltr"><span class="ins">In de naam van God, de erbarmer, de barmhartige.</span></div>
+
+<div class="text ltr"><span class="ins">Lof zij God, de Heer van de wereldbewoners,</span></div>
+
+<div class="text ltr"><span class="ins">de erbarmer, de barmhartige,</span></div>
+
+<div class="text ltr"><span class="ins">de heerser op de oordeelsdag.</span></div>
+
+<div class="text ltr"><span class="ins">U dienen wij en U vragen wij om hulp.</span></div>
+
+<div class="text ltr"><span class="ins">Leid ons op de juiste weg,</span></div>
+
+<div class="text ltr"><span class="ins">de weg van hen aan wie U genade geschonken hebt, op wie geen toorn rust en die niet dwalen.</span></div>
+
+<div class="text ltr"><span class="ins">A[lif] Lfaam] M[iem].</span></div>
+
+<div class="text ltr"><span class="ins">Dat is het boek, waaraan geen twijfel is, een leidraad voor de godvrezenden,</span></div>
+
+<div class="text ltr"><span class="ins">die geloven in het verborgene, de salaat verrichten en bijdragen geven van wat Wij hun voor hun levensonderhoud gegeven hebben</span></div>
+
+<div class="text ltr"><span class="ins">en die geloven in wat naar jou neergezonden is en in wat voor jouw tijd is neergezonden; van het hiernamaals zijn zij vast overtuigd.</span></div>
+
+<div class="text ltr"><span class="ins">Zij volgen de leidraad van hun Heer en zij zijn het die het welgaat.</span></div>
+
+<div class="text ltr"><span class="ins">Zij die ongelovig zijn, voor hen maakt het niet uit of je hen waarschuwt of niet; zij geloven niet.</span></div>
+
+<div class="text ltr"><span class="ins">God heeft hun harten en hun gehoor verzegeld en over hun ogen is een sluier; voor hen is er een geweldige bestraffing.</span></div>
+
+<div class="text ltr"><span class="ins">Er zijn mensen die zeggen: "Wij geloven in God en de laatste dag", maar zij zijn geen gelovigen.</span></div>
+
+<div class="text ltr"><span class="ins">Zij denken God en hen die geloven te misleiden, maar zij misleiden slechts zichzelf zonder het te beseffen.</span></div>
+
+<div class="text ltr"><span class="ins">In hun harten is een ziekte en God heeft hun ziekte verergerd; voor de leugens die zij spraken krijgen zij een pijnlijke bestraffing.</span></div>
+
+<div class="text ltr"><span class="ins">Als men tot hen zegt: "Brengt geen verderf op de aarde", zeggen zij: "Wij scheppen slechts orde."</span></div>
+
+<div class="text ltr"><span class="ins">Toch zijn zij het die verderf brengen, maar zij beseffen het niet.</span></div>
+
+<div class="text ltr"><span class="ins">Als men tot hen zegt: "Gelooft zoals de mensen geloven", zeggen zij: "Zullen wij dan geloven zoals de dwazen geloven?" Toch zijn zij de dwazen, maar zij weten het niet.</span></div>
+
+<div class="text ltr"><span class="ins">Als zij hen die geloven ontmoeten zeggen zij: "Wij geloven", maar als zij met hun satanische makkers alleen zijn zeggen zij: "Wij horen bij jullie. Wij waren enkel aan het spotten."</span></div>
+
+<div class="text ltr"><span class="ins">God drijft de spot met hen en laat hen in hun onbeschaamdheid doorgaan met dwalen.</span></div>
+
+<div class="text ltr"><span class="ins">Zij zijn het die de dwaalweg ten koste van de leidraad gekocht hebben, maar hun handel zal hun niets opleveren en zij volgen het goede pad niet.</span></div>
+
+<div class="text ltr"><span class="ins">Zij lijken bijvoorbeeld op iemand die een vuur aangestoken heeft. Als het dan alles rondom hem verlicht, neemt God hun licht weg en laat hen achter in de duisternis, zodat zij niets zien.</span></div>
+
+<div class="text ltr"><span class="ins">Doof, stom en blind zijn zij. Zij keren dan ook niet terug.</span></div>
+
+<div class="text ltr"><span class="ins">Of als een wolkbreuk uit de hemel waarin duisternis, donder en bliksem is. Uit doodsangst steken zij voor de donderslagen hun vingers in de oren, maar God heeft de ongelovigen omsingeld.</span></div>
+
+<div class="text ltr"><span class="ins">Bijna ontneemt de bliksem hun het gezichtsvermogen. Telkens als hij hun licht geeft lopen zij erin, maar als het weer donker is, staan zij stil. Als God het wilde ontnam Hij hun gehoor en gezichtsvermogen. God is almachtig.</span></div>
+
+<div class="text ltr"><span class="ins">O mensen, dient jullie Heer die jullie en hen die er voor jullie waren geschapen heeft -- misschien zullen jullie godvrezend worden --</span></div>
+
+<div class="text ltr"><span class="ins">die voor jullie de aarde tot een rustbed heeft gemaakt en de hemel tot een gebouw en die uit de hemel water heeft laten neerdalen en daarmee vruchten heeft voortgebracht voor jullie levensonderhoud. Schrijft aan God geen gelijken toe, terwijl jullie beter weten.</span></div>
+
+<div class="text ltr"><span class="ins">Als jullie in twijfel verkeren over wat Wij tot Onze dienaar hebben neergezonden, komt dan met een overeenkomstige soera en roept buiten God om jullie getuigen op, als jullie gelijk hebben.</span></div>
+
+<div class="text ltr"><span class="ins">Als jullie dat niet doen -- en jullie zullen het niet doen -- vreest dan het vuur waarvan mensen en stenen de brandstof zijn en dat voor de ongelovigen is klaargemaakt.</span></div>
+
+<div class="text ltr"><span class="ins">Verkondig het goede nieuws aan hen die geloven en de deugdelijke daden doen dat er voor hen tuinen zijn, waar de rivieren onderdoor stromen. Telkens als zij daaruit met vruchten gevoed worden zeggen zij: "Dit kregen wij vroeger ook al als levensonderhoud." Het wordt hun zo gegeven dat het er precies op lijkt. Voor hen zijn er daar reingemaakte echtgenotes en zij zullen daar altijd blijven.</span></div>
+
+<div class="text ltr"><span class="ins">God schaamt zich niet een voorbeeld te geven met behulp van een mug of wat daarbovenuit gaat. Zij die geloven weten, dat het de waarheid is die van hun Heer komt. Zij die ongelovig zijn zeggen echter: "Wat bedoelt God toch met een dergelijk voorbeeld?" Hij misleidt daarmee velen en Hij wijst daarmee velen de goede richting. Hij misleidt slechts de verdorvenen,</span></div>
+
+<div class="text ltr"><span class="ins">die de verbintenis met God, nadat zij is overeengekomen, verbreken, wat God geboden heeft samen te voegen scheiden en verderf op de aarde brengen. Dat zijn zij, de verliezers.</span></div>
+
+<div class="text ltr"><span class="ins">Hoe zouden jullie niet in God geloven? Jullie waren toch dood en Hij heeft jullie leven gegeven. Hij zal jullie laten sterven en vervolgens weer tot leven brengen, waarop jullie tot Hem terug zullen keren.</span></div>
+
+<div class="text ltr"><span class="ins">Hij is het die voor jullie al wat er op de aarde is geschapen heeft. Toen wendde Hij zich tot de hemel en fatsoeneerde hem tot zeven hemelen. Hij is alwetend.</span></div>
+
+<div class="text ltr"><span class="ins">Toen jouw Heer tot de engelen zei: "Ik ga op aarde een plaatsvervanger aanstellen", zeiden zij: "Gaat U daar iemand aanstellen die er verderf brengt en bloed vergiet, terwijl wij U lofprijzen en Uw heiligheid eren?" Hij zei: "Ik weet wat jullie niet weten."</span></div>
+
+<div class="text ltr"><span class="ins">En Hij onderwees Adam alle namen. Toen legde Hij hen aan de engelen voor en zei: "Deelt mij de namen van dezen maar mee, als jullie gelijk hebben."</span></div>
+
+<div class="text ltr"><span class="ins">Zij zeiden: "U zij geprezen! Wij weten slechts wat U ons hebt onderwezen. U bent de wetende, de wijze</span></div>
+
+<div class="text ltr"><span class="ins">Hij zei: "Adam, deel hun hun namen mee." Toen hij hun dan hun namen meedeelde zei Hij: "Had Ik jullie niet gezegd dat Ik het onzichtbare van de hemelen en de aarde ken en weet, wat jullie openlijk en in het verborgene doen."</span></div>
+
+<div class="text ltr"><span class="ins">Toen Wij tot de engelen zeiden: "Buigt eerbiedig neer voor Adam", bogen zij zich eerbiedig neer, behalve Iblies; hij weigerde en was hoogmoedig, want hij was een van de ongelovigen.</span></div>
+
+<div class="text ltr"><span class="ins">En Wij zeiden: "Adam, jij en je echtgenote mogen de tuin bewonen en jullie mogen ervan in overvloed eten waar jullie maar willen, maar jullie mogen deze boom niet benaderen, want dan behoren jullie tot de onrechtplegers."</span></div>
+	</div>
+	
+	<div class="more" style="display: block;">
+		<a href="http://tanzil.net/trans/log/nl.leemhuis/2">See more...</a>
+	</div>
+	
+	</div>
+
+</div>
+
+<div class="footer">
+	<div class="content">
+		<div style="margin: 0 -20px">
+			<a href="http://tanzil.net/">Tanzil</a> &copy 2014 
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

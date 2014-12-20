@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="description" content="Changelog for Quran translations in Tanzil translations repository. This changelog is for Elmir Kuliev." /> 
+	<meta name="keywords" content="Quran, Tanzil, Translation, Authentic, Qur'an, Al-Qur'an, Kuran, Koran, قرآن, تنزیل، تنزيل, قرءان مجيد, قرآن كريم, ترجمه "/>
+	<title>Translation Changelog - Elmir Kuliev - Tanzil</title>
+	<link href="/pub/common/css/page.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+	
+<div class="header">
+	<div class="content">
+		<a href="http://tanzil.net/" title="Tanzil.net" class="item logo">TANZIL</a>
+		<div class="sep">&bull;</div>
+		<a href="http://tanzil.net/wiki/" class="item">Documents</a>
+		<a href="http://tanzil.net/download/" class="item">Quran Text</a>
+		<a href="http://tanzil.net/trans/" class="item">Translations</a>
+		<div class="clear"></div>
+	</div>
+</div>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<style>
+	.result { color:#444; }
+	.del { background-color: #faa; color: #333; }
+	.ins { background-color: #afa; color: #333; }
+	.date { color: green; margin-top: 15px;}
+	.info { color: #f66; }
+	.more { padding-top: 8px;}
+	.subtitle { font-size: 50%; color: gray; }
+	.text { padding: 2px 7px; background-color: #f6f6f6; margin: 4px 0;}
+	.text.ltr { border-left: 2px solid #ddd; direction: ltr; }
+	.text.rtl { border-right: 2px solid #ddd; direction: rtl; }
+</style>
+
+<div class="body">
+	<div class="content">
+	
+	<h1>
+		Elmir Kuliev		<!--span class="subtitle">(Change Log)<span-->
+	</h1>
+
+	<hr>
+	<h3>Change Log</h3>
+	
+	<!--p><b>Change Log</b><br/> Last Update: May 29, 2011</p>
+	<hr-->
+	
+	<div class="result">
+		<div class="date"> Minor fixes <br/> Wed, 1 Jun 2011 00:00:01 -0400 </div>
+<div class="info"> -2216 +2216 </div>
+<div class="text ltr">Муса (Моисей) сказал: «Если я спрошу тебя о <span class="del">чемлибо</span> <span class="ins">чем-либо</span> после этого, то не продолжай путь вместе со мной. Твой поступок по отношению ко мне уже оправдан».</div>
+
+<div class="info"> -4348 +4348 </div>
+<div class="text ltr">Таким же образом, какого бы предостерегающего увещевателя Мы ни отправляли до тебя в <span class="del">какоелибо</span> <span class="ins">какое-либо</span> селение, его изнеженные роскошью жители обязательно говорили: «Воистину, мы нашли своих отцов на этом пути, и мы верно следуем по их стопам».</div>
+
+
+<div class="date"> Minor fixes <br/> Fri, 1 Apr 2011 00:00:02 -0400 </div>
+<div class="info"> -3887 +3887 </div>
+<div class="text ltr">Он сказал: «Я ухожу к моему Господу, Который <span class="del">поведем</span> <span class="ins">поведет</span> меня прямым путем.</div>
+
+
+<div class="date"> Minor fixes <br/> Wed, 2 Mar 2011 16:21:37 -0500 </div>
+<div class="info"> -784 +784 </div>
+<div class="text ltr">Аллах ответил: «Я ниспошлю ее вам, но если <span class="del">ктолибо</span> <span class="ins">кто-либо</span> после этого не уверует, то Я подвергну его таким мучениям, которым Я не подвергал никого из миров».</div>
+
+
+<div class="date"> Minor fixes <br/> Tue, 1 Feb 2011 23:17:06 -0500 </div>
+<div class="info"> -536 +536 </div>
+<div class="text ltr">О те, которые уверовали! Не приближайтесь к намазу, будучи пьяными, пока не станете понимать то, что произносите, и, будучи в состоянии полового осквернения, пока не искупаетесь, если только вы не являетесь путником. Если же вы больны или находитесь в путешествии, если <span class="del">ктолибо</span> <span class="ins">кто-либо</span> из вас пришел из уборной или если вы имели близость с женщинами, и вы не нашли воды, то направьтесь к чистой земле и оботрите ваши лица и руки. Воистину, Аллах - Снисходительный, Прощающий.</div>
+
+<div class="info"> -552 +552 </div>
+<div class="text ltr">О те, которые уверовали! Повинуйтесь Аллаху, повинуйтесь Посланнику и обладающим влиянием среди вас. Если же вы станете препираться о <span class="del">чемнибудь,</span> <span class="ins">чем-нибудь,</span> то обратитесь с этим к Аллаху и Посланнику, если вы веруете в Аллаха и Последний день. Так будет лучше и прекраснее по значению (или по исходу; или по вознаграждению)!</div>
+
+<div class="info"> -992 +992 </div>
+<div class="text ltr">Аллах скажет: «Войдите <span class="del">вАд</span> <span class="ins">в Ад</span> вместе с народами из числа людей и джиннов, которые прожили до вас». Каждый раз, когда один народ будет входить туда, он будет проклинать родственный ему народ. Когда же они будут собраны там вместе, то последние из них скажут о первых: «Господь наш! Это они ввели нас в заблуждение. Удвой же их мучения в Огне». Он скажет: «Всем воздастся вдвойне, но вы не знаете этого».</div>
+
+
+<div class="date"> New ru.krachkovsky and revised ru.kuliev <br/> Mon, 20 Sep 2010 01:33:44 -0400 </div>
+<div class="info"> -15 +15 </div>
+<div class="text ltr">Среди людей есть такие, которые говорят: <span class="del">"Мы</span> <span class="ins">«Мы</span> уверовали в Аллаха и в Последний <span class="del">день".</span> <span class="ins">день».</span> Однако они суть неверующие.</div>
+	</div>
+	
+	<div class="more" style="display: block;">
+		<a href="http://tanzil.net/trans/log/ru.kuliev/2">See more...</a>
+	</div>
+	
+	</div>
+
+</div>
+
+<div class="footer">
+	<div class="content">
+		<div style="margin: 0 -20px">
+			<a href="http://tanzil.net/">Tanzil</a> &copy 2014 
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

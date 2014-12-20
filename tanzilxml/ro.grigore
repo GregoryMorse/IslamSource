@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="description" content="Changelog for Quran translations in Tanzil translations repository. This changelog is for George Grigore." /> 
+	<meta name="keywords" content="Quran, Tanzil, Translation, Authentic, Qur'an, Al-Qur'an, Kuran, Koran, قرآن, تنزیل، تنزيل, قرءان مجيد, قرآن كريم, ترجمه "/>
+	<title>Translation Changelog - George Grigore - Tanzil</title>
+	<link href="/pub/common/css/page.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+	
+<div class="header">
+	<div class="content">
+		<a href="http://tanzil.net/" title="Tanzil.net" class="item logo">TANZIL</a>
+		<div class="sep">&bull;</div>
+		<a href="http://tanzil.net/wiki/" class="item">Documents</a>
+		<a href="http://tanzil.net/download/" class="item">Quran Text</a>
+		<a href="http://tanzil.net/trans/" class="item">Translations</a>
+		<div class="clear"></div>
+	</div>
+</div>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<style>
+	.result { color:#444; }
+	.del { background-color: #faa; color: #333; }
+	.ins { background-color: #afa; color: #333; }
+	.date { color: green; margin-top: 15px;}
+	.info { color: #f66; }
+	.more { padding-top: 8px;}
+	.subtitle { font-size: 50%; color: gray; }
+	.text { padding: 2px 7px; background-color: #f6f6f6; margin: 4px 0;}
+	.text.ltr { border-left: 2px solid #ddd; direction: ltr; }
+	.text.rtl { border-right: 2px solid #ddd; direction: rtl; }
+</style>
+
+<div class="body">
+	<div class="content">
+	
+	<h1>
+		George Grigore		<!--span class="subtitle">(Change Log)<span-->
+	</h1>
+
+	<hr>
+	<h3>Change Log</h3>
+	
+	<!--p><b>Change Log</b><br/> Last Update: August 16, 2010</p>
+	<hr-->
+	
+	<div class="result">
+		<div class="date"> Several fixes <br/> Tue, 14 Sep 2010 00:38:47 -0400 </div>
+<div class="info"> -1 +1 </div>
+<div class="text ltr"><span class="del">﻿În</span> <span class="ins">În</span> numele lui Dumnezeu cel Milos şi Milostiv.</div>
+
+
+<div class="date"> Duplicate lines removed <br/> Fri, 4 Jun 2010 20:00:03 -0400 </div>
+<div class="info"> -1219 +1219,2 </div>
+<div class="text ltr">Să nu socoată cei care tăgăduiesc că vă vor întrece, căci ei nu vor putea scăpa.<span class="del">(60)</span> </div>
+
+<div class="text ltr">Pregătiţi-le tot ce puteţi, forţă şi cai înşăuaţi, ca să-l îngroziţi pe vrăjmaşul lui Dumnezeu şi al vostru şi pe alţii pe care încă nu-i cunoaşteţi, însă îi cunoaşte Dumnezeu. Tot ce aţi dat pentru calea lui Dumnezeu, vă va fi înapoiat şi nu veţi fi nedreptăţiţi.</div>
+
+<div class="info"> -1760 +1761 </div>
+<div class="text ltr"><span class="del">Trimişii lor spuseră: “Oare este vreo îndoială asupra lui Dumnezeu, Creatorul cerurilor şi al pământului? El vă cheamă ca să vă ierte vouă din păcate şi ca să vă mai păsuiască până la un anumit soroc.” Ei spuseră: “Voi sunteţi doar oameni asemenea nouă. Vreţi să ne îndepărtaţi de cei cărora taţii noştri li se închinau. Aduceţi-ne o împuternicire desluşită!”</span> <span class="ins">=</span></div>
+
+<div class="info"> -4910 +4911 </div>
+<div class="text ltr"><span class="del">El a hotărnicit făpturilor Sale pământul</span> <span class="ins">=</span></div>
+
+<div class="info"> -6015,2 +6016 </div>
+<div class="text ltr">în Ziua aceea, va veni Gheena şi în Ziua aceea, omul îşi va aminti... La ce-i mai foloseşte însă să-şi amintească atunci?</div>
+
+<div class="info"> -6236 +6236 </div>
+<div class="text ltr">fie el dintre ginni ori dintre oameni!”</div>
+
+
+<div class="date"> Major spacing and punctuation fixes <br/> Fri, 4 Jun 2010 19:56:23 -0400 </div>
+<div class="info"> -8 +8 </div>
+<div class="text ltr">Alif. <span class="del">Lam.Mim.</span> <span class="ins">Lam. Mim.</span></div>
+
+<div class="info"> -40 +40 </div>
+<div class="text ltr">El spuse: <span class="del">“ Adame,</span> <span class="ins">“Adame,</span> dă-le de ştire numele lor!” După ce Adam le-a dat de ştire numele lor, Domnul spuse: “Nu v-am spus că Eu cunosc Taina cerurilor şi a pământului, că Eu cunosc ceea ce arătaţi şi ceea ce ascundeţi?”</div>
+
+<div class="info"> -62 +62 </div>
+<div class="text ltr">Voi aţi spus: <span class="del">“ O,</span> <span class="ins">“O,</span> Moise! Noi nu te credem pe tine până ce nu-L vom vedea pe Dumnezeu aievea.” Şi trăsnetul v-a luat, pe când vă uitaţi.</div>
+
+<div class="info"> -480 +480 </div>
+<div class="text ltr">Când Dumnezeu a făcut legământ cu cei cărora Cartea le-a fost dată, le-a <span class="del">spus:”Să</span> <span class="ins">spus: “Să</span> o lămuriţi oamenilor, să nu o ascundeţi!”, însă ei au dosit-o şi au vândut-o pe un preţ mărunt. Rău este ceea ce au cumpărat!</div>
+
+<div class="info"> -494 +494 </div>
+<div class="text ltr">Voi, oameni! Temeţi-vă de Domnul vostru care v-a creat dintr-un singur suflet, din care a creat şi perechea, apoi din amândoi a răspândit mulţime de bărbaţi şi <span class="del">femei.Temeţi-vă</span> <span class="ins">femei. Temeţi-vă</span> de Dumnezeu asupra căruia vă întrebaţi şi cinstiţi pântecele ce v-au purtat, căci Dumnezeu veghează asupra voastră.</div>
+
+<div class="info"> -566 +566 </div>
+<div class="text ltr">Dacă Dumnezeu vă dă însă înlesniri, el spune ca şi cum nici o prietenie n-ar fi între voi şi <span class="del">el :</span> <span class="ins">el:</span> “O, de-aş fi fost cu ei, aş fi căpătat un mare câştig!”</div>
+
+<div class="info"> -624 +624 </div>
+<div class="text ltr">Ale lui Dumnezeu sunt cele din ceruri şi de pe pământ. Noi le-am poruncit celor care li s-a dat Cartea înaintea voastră, precum şi vouă înşivă: “Temeţi-vă de Dumnezeu!” Dacă sunteţi însă <span class="del">tăgăduitori...Ale</span> <span class="ins">tăgăduitori... Ale</span> lui Dumnezeu sunt cele din ceruri şi de pe pământ. Dumnezeu este Bogat, Lăudat!</div>
+
+<div class="info"> -765 +765 </div>
+<div class="text ltr">Vânatul mării şi bucatele ei vă sunt îngăduite: este o desfătare pentru voi şi pentru călători. Vânatul uscatului vă este oprit în vremea <span class="del">pelerinajului.Temeţi-vă</span> <span class="ins">pelerinajului. Temeţi-vă</span> de Dumnezeu la care veţi fi adunaţi!</div>
+
+<div class="info"> -819 +819 </div>	</div>
+	
+	<div class="more" style="display: block;">
+		<a href="http://tanzil.net/trans/log/ro.grigore/2">See more...</a>
+	</div>
+	
+	</div>
+
+</div>
+
+<div class="footer">
+	<div class="content">
+		<div style="margin: 0 -20px">
+			<a href="http://tanzil.net/">Tanzil</a> &copy 2014 
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

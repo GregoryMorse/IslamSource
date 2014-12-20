@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="description" content="Changelog for Quran translations in Tanzil translations repository. This changelog is for Sherif Ahmeti." /> 
+	<meta name="keywords" content="Quran, Tanzil, Translation, Authentic, Qur'an, Al-Qur'an, Kuran, Koran, قرآن, تنزیل، تنزيل, قرءان مجيد, قرآن كريم, ترجمه "/>
+	<title>Translation Changelog - Sherif Ahmeti - Tanzil</title>
+	<link href="/pub/common/css/page.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+	
+<div class="header">
+	<div class="content">
+		<a href="http://tanzil.net/" title="Tanzil.net" class="item logo">TANZIL</a>
+		<div class="sep">&bull;</div>
+		<a href="http://tanzil.net/wiki/" class="item">Documents</a>
+		<a href="http://tanzil.net/download/" class="item">Quran Text</a>
+		<a href="http://tanzil.net/trans/" class="item">Translations</a>
+		<div class="clear"></div>
+	</div>
+</div>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<style>
+	.result { color:#444; }
+	.del { background-color: #faa; color: #333; }
+	.ins { background-color: #afa; color: #333; }
+	.date { color: green; margin-top: 15px;}
+	.info { color: #f66; }
+	.more { padding-top: 8px;}
+	.subtitle { font-size: 50%; color: gray; }
+	.text { padding: 2px 7px; background-color: #f6f6f6; margin: 4px 0;}
+	.text.ltr { border-left: 2px solid #ddd; direction: ltr; }
+	.text.rtl { border-right: 2px solid #ddd; direction: rtl; }
+</style>
+
+<div class="body">
+	<div class="content">
+	
+	<h1>
+		Sherif Ahmeti		<!--span class="subtitle">(Change Log)<span-->
+	</h1>
+
+	<hr>
+	<h3>Change Log</h3>
+	
+	<!--p><b>Change Log</b><br/> Last Update: August 16, 2010</p>
+	<hr-->
+	
+	<div class="result">
+		<div class="date"> Several fixes <br/> Tue, 14 Sep 2010 00:38:47 -0400 </div>
+<div class="info"> -1 +1 </div>
+<div class="text ltr"><span class="del">﻿Me</span> <span class="ins">Me</span> emrin e All-llahut, Mëshiruesit, Mëshirëbërësit!</div>
+
+
+<div class="date"> Duplicate lines removed <br/> Fri, 4 Jun 2010 20:00:03 -0400 </div>
+<div class="info"> -451,2 +451,2 </div>
+<div class="text ltr"><span class="del">158-159. Ti ishe ibutë ndaj atyre, ngase All-llahu të dhuroi mëshirë, e sikur të ishe i vrazhdë e zemërfortë, ata do shkapërderdheshin prej teje, andaj ti falju atyre dhe kërko ndjesë për ta, e konsultohu me ta në të gjitha çështjet, e kur të vendosësh, atherë mbështetu në Allhun, se All-llahu ido ata që mbështeten.</span> </div>
+
+<div class="text ltr"><span class="del">158-159.</span> Ti ishe ibutë ndaj atyre, ngase All-llahu të dhuroi mëshirë, e sikur të ishe i vrazhdë e zemërfortë, ata do shkapërderdheshin prej teje, andaj ti falju atyre dhe kërko ndjesë për ta, e konsultohu me ta në të gjitha çështjet, e kur të vendosësh, atherë mbështetu në Allhun, se All-llahu ido ata që mbështeten.</div>
+
+<div class="text ltr"><span class="ins">=</span></div>
+
+<div class="info"> -1150,2 +1150,2 </div>
+<div class="text ltr"><span class="del">196-197. Mbrojtësi i im është All-llahu që zbriti librin. Ai kujdeset për të mirët.</span> </div>
+
+<div class="text ltr"><span class="del">196-197.</span> Mbrojtësi i im është All-llahu që zbriti librin. Ai kujdeset për të mirët.</div>
+
+<div class="text ltr"><span class="ins">=</span></div>
+
+<div class="info"> -2188,2 +2188,2 </div>
+<div class="text ltr"><span class="del">48-49. Dhe vihet libri (i veprave), e i sheh mëkatarët të frikësuar nga shënimet që janë në të dh thonë: “Të mjerët ne, ç’është puna e këtij libri që nuk ka lënë as (mëkat) të vogël e as të madh pa e përfshirë?” dhe atë që vepruan e gjejnë të gatshme - prezente, e Zoti yt nuk i bën padrejt askujt.</span> </div>
+
+<div class="text ltr"><span class="del">48-49.</span> Dhe vihet libri (i veprave), e i sheh mëkatarët të frikësuar nga shënimet që janë në të dh thonë: “Të mjerët ne, ç’është puna e këtij libri që nuk ka lënë as (mëkat) të vogël e as të madh pa e përfshirë?” dhe atë që vepruan e gjejnë të gatshme - prezente, e Zoti yt nuk i bën padrejt askujt.</div>
+
+<div class="text ltr"><span class="ins">=</span></div>
+
+<div class="info"> -2327,2 +2327,2 </div>
+<div class="text ltr"><span class="del">77-78. A je i njoftyar për atë që mohoi argumentet Tona e tha: “Mua githqysh do të më jepet pasuri e fëmijë (në botën tjetër)?”</span> </div>
+
+<div class="text ltr"><span class="del">77-78.</span> A je i njoftyar për atë që mohoi argumentet Tona e tha: “Mua githqysh do të më jepet pasuri e fëmijë (në botën tjetër)?”</div>
+
+<div class="text ltr"><span class="ins">=</span></div>
+
+<div class="info"> -3459,2 +3459,2 </div>
+<div class="text ltr"><span class="del">50-51. E sikur Ne të lëshojmë një erë e ta shohin atë (të mbjellat) e zverdhura, pa dyshim ata pas kësaj do të jenë mohues (përbuzës).</span> </div>
+
+<div class="text ltr"><span class="del">50-51.</span> E sikur Ne të lëshojmë një erë e ta shohin atë (të mbjellat) e zverdhura, pa dyshim ata pas kësaj do të jenë mohues (përbuzës).</div>
+
+<div class="text ltr"><span class="ins">=</span></div>
+
+<div class="info"> -4203,2 +4203,2 </div>
+<div class="text ltr"><span class="del">70-71. Ata janë që përgënjeshtruan librin (Kur’anin) dhe atë me çka Ne i dërguam të dërguarit tanë, e më vonë ata do të kuptojnë.</span> </div>
+
+<div class="text ltr"><span class="del">70-71.</span> Ata janë që përgënjeshtruan librin (Kur’anin) dhe atë me çka Ne i dërguam të dërguarit tanë, e më vonë ata do të kuptojnë.</div>
+
+<div class="text ltr"><span class="ins">=</span></div>
+
+<div class="info"> -4971,3 +4971,3 </div>
+<div class="text ltr"><span class="del">70-72. Ato janë hyri që e kufizojnë ndejën vetëm në shtëpinë (tënde).</span> </div>
+
+<div class="text ltr"><span class="del">70-72. Ato janë hyri që e kufizojnë ndejën vetëm në shtëpinë (tënde).</span> </div>
+
+<div class="text ltr"><span class="del">70-72.</span> Ato janë hyri që e kufizojnë ndejën vetëm në shtëpinë (tënde).</div>
+
+<div class="text ltr"><span class="ins">=</span></div>
+
+<div class="text ltr"><span class="ins">=</span></div>
+
+<div class="info"> -5295,2 +5295,2 </div>
+<div class="text ltr"><span class="del">24-25. Të mos lejojnë të afrohet sot në të asnjë i varfër.</span> </div>
+
+<div class="text ltr"><span class="del">24-25.</span> Të mos lejojnë të afrohet sot në të asnjë i varfër.</div>
+
+<div class="text ltr"><span class="ins">=</span></div>
+
+<div class="info"> -5980,2 +5980,2 </div>	</div>
+	
+	<div class="more" style="display: block;">
+		<a href="http://tanzil.net/trans/log/sq.ahmeti/2">See more...</a>
+	</div>
+	
+	</div>
+
+</div>
+
+<div class="footer">
+	<div class="content">
+		<div style="margin: 0 -20px">
+			<a href="http://tanzil.net/">Tanzil</a> &copy 2014 
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

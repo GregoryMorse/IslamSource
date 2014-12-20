@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="description" content="Changelog for Quran translations in Tanzil translations repository. This changelog is for Korean." /> 
+	<meta name="keywords" content="Quran, Tanzil, Translation, Authentic, Qur'an, Al-Qur'an, Kuran, Koran, قرآن, تنزیل، تنزيل, قرءان مجيد, قرآن كريم, ترجمه "/>
+	<title>Translation Changelog - Korean - Tanzil</title>
+	<link href="/pub/common/css/page.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+	
+<div class="header">
+	<div class="content">
+		<a href="http://tanzil.net/" title="Tanzil.net" class="item logo">TANZIL</a>
+		<div class="sep">&bull;</div>
+		<a href="http://tanzil.net/wiki/" class="item">Documents</a>
+		<a href="http://tanzil.net/download/" class="item">Quran Text</a>
+		<a href="http://tanzil.net/trans/" class="item">Translations</a>
+		<div class="clear"></div>
+	</div>
+</div>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<style>
+	.result { color:#444; }
+	.del { background-color: #faa; color: #333; }
+	.ins { background-color: #afa; color: #333; }
+	.date { color: green; margin-top: 15px;}
+	.info { color: #f66; }
+	.more { padding-top: 8px;}
+	.subtitle { font-size: 50%; color: gray; }
+	.text { padding: 2px 7px; background-color: #f6f6f6; margin: 4px 0;}
+	.text.ltr { border-left: 2px solid #ddd; direction: ltr; }
+	.text.rtl { border-right: 2px solid #ddd; direction: rtl; }
+</style>
+
+<div class="body">
+	<div class="content">
+	
+	<h1>
+		Korean		<!--span class="subtitle">(Change Log)<span-->
+	</h1>
+
+	<hr>
+	<h3>Change Log</h3>
+	
+	<!--p><b>Change Log</b><br/> Last Update: July 15, 2011</p>
+	<hr-->
+	
+	<div class="result">
+		<div class="date"> Minor fixes <br/> Mon, 1 Aug 2011 00:00:02 -0400 </div>
+<div class="info"> -4214 +4214 </div>
+<div class="text ltr"><span class="ins">하나님은 너희에게 항상 그 분의 예증을 보이고 있으나 그래 도 너희는 하나님의 예증을 거역 하느뇨</span></div>
+
+
+<div class="date"> Major spacing and punctuation fixes <br/> Fri, 4 Jun 2010 19:56:23 -0400 </div>
+<div class="info"> -1214 +1214 </div>
+<div class="text ltr">파라오의 백성처럼 또 그들 이전의 백성들처럼 그들은 주님의말씀을 부정하였으매 <span class="del">나(하나님)는</span> <span class="ins">나 (하나님) 는</span> 그들의 죄지음으로 말미암아 그들을 멸망케 하사 파라오의 백 성을 익사하게 하였으니 이들 모 두는 우매했더라</div>
+
+<div class="info"> -1623 +1623 </div>
+<div class="text ltr">그러나 그의 웃 <span class="del">됫부분이 ???</span> <span class="ins">됫부분이???</span> 어졌다면 그녀가 거짓이며 그가 정직한 자 입니다</div>
+
+<div class="info"> -6091,2 +6091,2 </div>
+<div class="text ltr">하나님이 그대의 마음을 <span class="del">펼치사[1])</span> <span class="ins">펼치사 [1])</span></div>
+
+<div class="text ltr">그대의 무거운 짐을 덜어 <span class="del">주었으며[1])</span> <span class="ins">주었으며 [1])</span></div>
+
+<div class="info"> -6095 +6095 </div>
+<div class="text ltr">고난이 있으되 구원을 받을 <span class="del">것이라[1])</span> <span class="ins">것이라 [1])</span></div>
+
+
+<div class="date"> First version <br/> Fri, 4 Jun 2010 19:54:20 -0400 </div>
+<div class="info"> -0,0 +1,6236 </div>
+<div class="text ltr"><span class="ins">자비로우시고 자애로우신 하나님의 이름으로</span></div>
+
+<div class="text ltr"><span class="ins">온 우주의 주님이신 하나님께찬미를 드리나이다</span></div>
+
+<div class="text ltr"><span class="ins">그분은 자애로우시고 자비로 우시며</span></div>
+
+<div class="text ltr"><span class="ins">심판의 날을 주관하시도다</span></div>
+
+<div class="text ltr"><span class="ins">우리는 당신만을 경배하오며 당신에게만 구원을 비노니</span></div>
+
+<div class="text ltr"><span class="ins">저희들을 올바른 길로 인도하여 주시옵소서</span></div>
+
+<div class="text ltr"><span class="ins">그 길은 당신께서 축복을 내리신 길이며 노여움을 받은 자나방황하는 자들이 걷지않는 가장 올바른 길이옵니다</span></div>
+
+<div class="text ltr"><span class="ins">알리프 람 밈</span></div>
+
+<div class="text ltr"><span class="ins">의심할 바 없는 이 성서는 하나님을 공경하는 자들의 이정 표요</span></div>
+
+<div class="text ltr"><span class="ins">보이지 않는 하나님의 영역을믿고 예배를 드리며 그들에게 베 풀어 준 양식을 선용하는 사람들 의 이정표이며</span></div>
+
+<div class="text ltr"><span class="ins">그대에게 계시된 것과 그 이 전에 계시된 것과 또한 내세를 믿는 사람들의 이정표이며</span></div>
+
+<div class="text ltr"><span class="ins">그들이 바로 주님의 안내를 받아 영화를 누릴 사람들이라</span></div>
+
+<div class="text ltr"><span class="ins">믿음을 부정하는 사람들은 그대가 그들에게 경고하던 또는 경고하지 아니하던 믿으려 하지 아니하매</span></div>
+
+<div class="text ltr"><span class="ins">하나님께서 그들에게 벌을 내리사 그들의 마음을 봉하고 그들 의 귀를 붕하고 그들의 눈을 봉 하여 버릴 것이라</span></div>
+
+<div class="text ltr"><span class="ins">사람들 중에는 하나님과 내세를 믿는척 말하는 무리가 있으나 실로 그들은 신앙인들이 아니거늘</span></div>
+
+<div class="text ltr"><span class="ins">믿는 척 하나님을 속이는 것 은 스스로를 배반하는 것과 같으 나 그들이 알지 못할 뿐이라</span></div>
+
+<div class="text ltr"><span class="ins">그들 마음에는 병이 있나니하나님께서 그 병을 더하게 하시 매 그들은 고통스러운 벌을 받을 것이라 이는 고들이 스스로를 배 반했기 때문이라</span></div>
+	</div>
+	
+	<div class="more" style="display: block;">
+		<a href="http://tanzil.net/trans/log/ko.korean/2">See more...</a>
+	</div>
+	
+	</div>
+
+</div>
+
+<div class="footer">
+	<div class="content">
+		<div style="margin: 0 -20px">
+			<a href="http://tanzil.net/">Tanzil</a> &copy 2014 
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

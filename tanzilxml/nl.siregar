@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="description" content="Changelog for Quran translations in Tanzil translations repository. This changelog is for Sofian S. Siregar." /> 
+	<meta name="keywords" content="Quran, Tanzil, Translation, Authentic, Qur'an, Al-Qur'an, Kuran, Koran, قرآن, تنزیل، تنزيل, قرءان مجيد, قرآن كريم, ترجمه "/>
+	<title>Translation Changelog - Sofian S. Siregar - Tanzil</title>
+	<link href="/pub/common/css/page.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+	
+<div class="header">
+	<div class="content">
+		<a href="http://tanzil.net/" title="Tanzil.net" class="item logo">TANZIL</a>
+		<div class="sep">&bull;</div>
+		<a href="http://tanzil.net/wiki/" class="item">Documents</a>
+		<a href="http://tanzil.net/download/" class="item">Quran Text</a>
+		<a href="http://tanzil.net/trans/" class="item">Translations</a>
+		<div class="clear"></div>
+	</div>
+</div>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<style>
+	.result { color:#444; }
+	.del { background-color: #faa; color: #333; }
+	.ins { background-color: #afa; color: #333; }
+	.date { color: green; margin-top: 15px;}
+	.info { color: #f66; }
+	.more { padding-top: 8px;}
+	.subtitle { font-size: 50%; color: gray; }
+	.text { padding: 2px 7px; background-color: #f6f6f6; margin: 4px 0;}
+	.text.ltr { border-left: 2px solid #ddd; direction: ltr; }
+	.text.rtl { border-right: 2px solid #ddd; direction: rtl; }
+</style>
+
+<div class="body">
+	<div class="content">
+	
+	<h1>
+		Sofian S. Siregar		<!--span class="subtitle">(Change Log)<span-->
+	</h1>
+
+	<hr>
+	<h3>Change Log</h3>
+	
+	<!--p><b>Change Log</b><br/> Last Update: August 5, 2012</p>
+	<hr-->
+	
+	<div class="result">
+		<div class="date"> Two Dutch translations nl.leemhuis and nl.siregar added <br/> Sun, 5 Aug 2012 21:44:53 +0430 </div>
+<div class="info"> -0,0 +1,6236 </div>
+<div class="text ltr"><span class="ins">In de naam van Allah, de Erbarmer, de Meest Barmhartige.</span></div>
+
+<div class="text ltr"><span class="ins">Alle lof zij Allah, de Heer der Werelden.</span></div>
+
+<div class="text ltr"><span class="ins">De Erbarmer, de Meest Barmhartige.</span></div>
+
+<div class="text ltr"><span class="ins">De Heerser op de Dag des Oordeels.</span></div>
+
+<div class="text ltr"><span class="ins">U alleen aanbidden wij en U alleen vragen wij om hulp.</span></div>
+
+<div class="text ltr"><span class="ins">Leid ons op het rechte Pad.</span></div>
+
+<div class="text ltr"><span class="ins">Het Pad van degenen aan wie U gunsten hebt geschonken, niet van degenen op wie de toorn rust en niet dat van de dwalenden.</span></div>
+
+<div class="text ltr"><span class="ins">Alif Lâm Mîm.</span></div>
+
+<div class="text ltr"><span class="ins">Dit is het Boek (de Koran) waaraan geen twijfel is, een leidraad voor de Moettaqôen.</span></div>
+
+<div class="text ltr"><span class="ins">Degenen die in het onwaarneembare geloven en de shalât onderhouden en die bijdragen geven van waar Wij hun mee hebben voorzien.</span></div>
+
+<div class="text ltr"><span class="ins">En degenen die geloven in wat aan jou (O Moehammad) is neergezonden (de Koran) en in wat vóór jou is neergezonden en die van het (bestaan van het) Hiernamaals overtuigd zijn.</span></div>
+
+<div class="text ltr"><span class="ins">Zij zijn depenen die Leiding van hun Heer ontvangen en zij zijn degenen die welslagen.</span></div>
+
+<div class="text ltr"><span class="ins">Voorwaar, voor degenen die niet geloven, maakt het geen verschil of jij hen waarschuwt of dat jij hen niet waarschuwt: zij zullen niet geloven.</span></div>
+
+<div class="text ltr"><span class="ins">Allah heeft hun harten en hun gehoor verzegeld en over hun ogen ligt een bedekking en voor hen is er een geweldige bestraffing.</span></div>
+
+<div class="text ltr"><span class="ins">En er zijn er onder de mensen die zeggen: "Wij geloven in Allah en in de Laatste Dag," terwijl zij geen gelovigen zijn.</span></div>
+
+<div class="text ltr"><span class="ins">Zij trachten Allah en degenen die geloven te bedriegen, maar zij bedriegen niemand dan zichzelf, terwijl zij het niet beseffen.</span></div>
+
+<div class="text ltr"><span class="ins">In hun hart is een ziekte (twijfel en huichelarij) en Allah heeft deze ziekte doen verergeren, en voor hen is er een pijnlijke bestratting vanwege wat zij plachten te loochenen.</span></div>
+
+<div class="text ltr"><span class="ins">En als er tot hen wordt gezegd: "Zaait geen verderf op aarde," dan zeggen zij: "Voorwaar, wij zijn slechts verbeteraars." (van de juiste normen en waarden)</span></div>
+
+<div class="text ltr"><span class="ins">Weet: voorwaar, zij zijn de verderfzaaiers, maar zij beseffen liet niet.</span></div>
+
+<div class="text ltr"><span class="ins">En als er tot hen wordt gezegd: "Gelooft zoals de mensen gcloven," dan zeggen zij: "Zullen wij geloven zoals dc dwazen geloven?" Voorwaar, zij zkin dc dwazen, maar zij weten het niet.</span></div>
+
+<div class="text ltr"><span class="ins">En als zij degenen die geloven ontmoeten, dan zeggen zij: "Wij geloven." Maar wanneer zij terugkeren naar hun Satans (die hun leiders zijn) dan zeggen zij: "Voorwaar, wij staan aan jullie kant. Voorwaar, wij zijn slechts spotters."</span></div>
+
+<div class="text ltr"><span class="ins">Allah spot met hen en laat ben rusteloos in hun overtredingen verkeren.</span></div>
+
+<div class="text ltr"><span class="ins">Zij zijn degenen die de Leiding voor de dwaling hebben verruild, daarom levert hun handel geen winst op, en zij zijn geen rechtgeleidenen.</span></div>
+
+<div class="text ltr"><span class="ins">Hun gelijkenis is als de gelijkenis van degene die een vuur ontsteekt: wanneer het (vuur) zijn omgeving verlicht, dan neemt Allah hun licht weg en laat Hij hen in de duisternissen achter. Zij zien niet.</span></div>
+
+<div class="text ltr"><span class="ins">(Zij zijn) doof, stom, en blind (van hart), daarom keren zij niet terug.</span></div>
+
+<div class="text ltr"><span class="ins">Of als (de gelijkenis, met) een regenstorm uit de hemel met daarin duisternissen, donder en bliksem. Zij stoppen hun vingers in hun oren voor de donderslagen, uit doodsangst. En Allah omvat de ongelovigen.</span></div>
+
+<div class="text ltr"><span class="ins">Bijna rukt de bliksem hun gezicht weg. Telkens wanneer deze hen verlicht, dan lopen zij in (het licht), maar wanneer hij hen in de duisternis laat, dan blijven ze staan. En als Allah het had gewild, dan had Hij hun gehoor en hun gezicht weggenomen. Voorwaar. Allah is Almachtig over alle zaken.</span></div>
+
+<div class="text ltr"><span class="ins">O mensen, aanbid jullie Heer, Degenen Die jullie heeft geschapen en degenen vóór jullie. Hopelijk zullen jullie (Allah) vrezen.</span></div>
+
+<div class="text ltr"><span class="ins">Degene Die de aarde voor jullie heeft gemaakt tot een tapijt en de hemel tot een gewelf en Hij zendt water uit de hemel neer, waarmee Hij vervolgens vruchten voortbrengt als voorziening voor jullie. Ken daarom geen deelgenoten toe aan Allah, terwijl jullie (het) wegen.</span></div>
+
+<div class="text ltr"><span class="ins">En als jullie in twijfel verkeren over wat Wij hebben neergezonden aan Onze dienaar (Moehammad), brengt dan een gelijkwaardige Soerah voort, en roept jullie getuigen buiten Allah op, als jullie waarachtigen zijn.</span></div>
+
+<div class="text ltr"><span class="ins">Als jullie dan daartoe niet in staat zijn, en jullie zullen er nooit toe in staat zijn, vreest dan de Hel; haar brandstof bestaat uit mensen en stenen, (zij is) gereedgemaakt voor de ongelovigen.</span></div>
+
+<div class="text ltr"><span class="ins">En geef (O Moehammad) goede tijdingen aan degenen die geloven en goede werken verrichten: dat er voor hen Tuinen (in het Paradijs) zijn waar onder door de rivieren stromen. Telkens wanneer hun daaruit een vrucht wordt gegeven als voorziening, zeggen zij: "Dit is waarmee wij vroeger zijn voorzien." en het soortgelijke zal hun gegeven worden en er zijn daarin reine echtgenoten voor hen, en zij zijn daarin eeuwig levenden.</span></div>
+
+<div class="text ltr"><span class="ins">Voorwaar, Allah acht het niet beneden Zich om een mug tot gelijkenis te stellen, of iets dat nietiger is dan dat. Wat betreft degenen die geloven, zij weten dat het de Waarheid van hun Heer is. En wat degenen betreft die niet geloven, zij zeggen: "Wat bedoelt Allah met deze gelijkenis?" Hij (Allah) doet er velen mee dwalen en Hij leidt er velen mee, en Hij doet er niemand door dwalen dan de grote zondaren.</span></div>
+
+<div class="text ltr"><span class="ins">(Zij zijn) degenen die het verbond met Allah verbreken na de bekrachtiging ervan, en die verbreken wat Allah bevolen heeft om te verbinden en die verderf op aarde zaaien. Zij zijn degenen die de verliezers zijn.</span></div>
+
+<div class="text ltr"><span class="ins">Hoe kunnen jullie niet in Allah geloven, terwijl jullie levenloos waren en Hij jullie toen tot leven bracht; waarop Hij jullie deed sterven, daarna doet Hij jullie herleven, en tenslotte zullen jullie tot hem terugkeren.</span></div>
+
+<div class="text ltr"><span class="ins">Hij is het Degeme Doe vppr jullie alles wat op aarde is geschapen heeft, daarna wendde Hij Zich tot de hemel en vormde deze tot zeven hemelen. En Hij is Alwetend over alle zaken.</span></div>
+
+<div class="text ltr"><span class="ins">En toen jouw Heer tot de Engelen zei: "Voorwaar, Ik zal op aarde een gevolmachtigde aanstellen," zeiden zij: "Gaat U daarop iemand aanstellen," zeiden zij: "Gaat U daarop iemand aanstellen die verderf zal zaaien en bloed zal vergieten, terwijl wij U roemen met de lofprijzing die U toekomt en wij U heiligen?" Hij zei: "Voorwaar, Ik weet wat jullie niet weten".</span></div>
+
+<div class="text ltr"><span class="ins">En Hij onderwees Adam de namen van alle dingen en vervolgens toonde Hij deze aan de Engelen en zei: "Noem Mij de namen van deze (dingen), als jullie waarachtig zijn."</span></div>
+
+<div class="text ltr"><span class="ins">Zij zeiden: "Heilig bent U, wij hebben geen kennis, behalve wat U ons onderwezen hebt: voorwaar, U bent de Alwetende, de Alwijze."</span></div>
+
+<div class="text ltr"><span class="ins">Hij zei: "O Adam, noem hun de namen ervan." En toen hij hun de namen ervan had genoemd, zei Hij: "Zei Ik jullie niet, dat Ik het onwaarneembare van de hemelen en de aarde ken, en weet wat jullie openlijk doen en wat jullie plachten te verbergen?"</span></div>
+
+<div class="text ltr"><span class="ins">En toen Wij tot de Engelen zeiden: "Buigt jullie voor Adam," toen bogen zij, bhalve Iblis (de Satan). Hij weigerde en was hooghartig en hij werd één van de ongelogigen.</span></div>
+
+<div class="text ltr"><span class="ins">En Wij zeiden: "O Adam, verblijft in het Paradijs, jij en je vrouw, en eet daaruit overloedig, zoals jullie willen, maar nadert deze boom niet, anders zullen jullie tot de onrechtplegers behoren."</span></div>
+	</div>
+	
+	<div class="more" style="display: block;">
+		<a href="http://tanzil.net/trans/log/nl.siregar/2">See more...</a>
+	</div>
+	
+	</div>
+
+</div>
+
+<div class="footer">
+	<div class="content">
+		<div style="margin: 0 -20px">
+			<a href="http://tanzil.net/">Tanzil</a> &copy 2014 
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

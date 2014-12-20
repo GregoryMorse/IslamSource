@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="description" content="Changelog for Quran translations in Tanzil translations repository. This changelog is for Abu Rida Muhammad ibn Ahmad ibn Rassoul." /> 
+	<meta name="keywords" content="Quran, Tanzil, Translation, Authentic, Qur'an, Al-Qur'an, Kuran, Koran, قرآن, تنزیل، تنزيل, قرءان مجيد, قرآن كريم, ترجمه "/>
+	<title>Translation Changelog - Abu Rida Muhammad ibn Ahmad ibn Rassoul - Tanzil</title>
+	<link href="/pub/common/css/page.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+	
+<div class="header">
+	<div class="content">
+		<a href="http://tanzil.net/" title="Tanzil.net" class="item logo">TANZIL</a>
+		<div class="sep">&bull;</div>
+		<a href="http://tanzil.net/wiki/" class="item">Documents</a>
+		<a href="http://tanzil.net/download/" class="item">Quran Text</a>
+		<a href="http://tanzil.net/trans/" class="item">Translations</a>
+		<div class="clear"></div>
+	</div>
+</div>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<style>
+	.result { color:#444; }
+	.del { background-color: #faa; color: #333; }
+	.ins { background-color: #afa; color: #333; }
+	.date { color: green; margin-top: 15px;}
+	.info { color: #f66; }
+	.more { padding-top: 8px;}
+	.subtitle { font-size: 50%; color: gray; }
+	.text { padding: 2px 7px; background-color: #f6f6f6; margin: 4px 0;}
+	.text.ltr { border-left: 2px solid #ddd; direction: ltr; }
+	.text.rtl { border-right: 2px solid #ddd; direction: rtl; }
+</style>
+
+<div class="body">
+	<div class="content">
+	
+	<h1>
+		Abu Rida Muhammad ibn Ahmad ibn Rassoul		<!--span class="subtitle">(Change Log)<span-->
+	</h1>
+
+	<hr>
+	<h3>Change Log</h3>
+	
+	<!--p><b>Change Log</b><br/> Last Update: August 19, 2011</p>
+	<hr-->
+	
+	<div class="result">
+		<div class="date"> New Urdu translation ur.najafi added <br/> Fri, 19 Aug 2011 15:57:00 +0430 </div>
+<div class="info"> -1468 +1468 </div>
+<div class="text ltr">Sprich: <span class="del">"0</span> <span class="ins">"O</span> ihr Menschen, wenn ihr über meine Religion im Zweifel seid, dann (wisset), ich verehre nicht die, welche ihr statt Allah verehrt, sondern ich verehre Allah allein, Der euch abberufen wird; und mir wurde befohlen, einer der Gläubigen zu sein."</div>
+
+<div class="info"> -1472 +1472 </div>
+<div class="text ltr">Sprich: <span class="del">"0</span> <span class="ins">"O</span> ihr Menschen, nun ist die Wahrheit von eurem Herrn zu euch gekommen. Wer nun dem rechten Weg folgt, der folge ihm allein zum Heil seiner eigenen Seele; und wer in die Irre geht, der geht nur zu seinem eigenen Schaden irre. Und ich bin nicht euer Hüter."</div>
+
+<div class="info"> -1501,3 +1501,3 </div>
+<div class="text ltr">Er sprach: <span class="del">"0</span> <span class="ins">"O</span> mein Volk, (ihr) seht nicht ein, daß ich einen klaren Beweis von meinem Herrn habe; und Er hat mir Seine Barmherzigkeit gewährt, die euch aber verborgen geblieben ist. Sollen wir sie euch da aufzwingen, wo sie euch zuwider ist?</div>
+
+<div class="text ltr"><span class="del">0</span> <span class="ins">O</span> mein Volk, ich verlange von euch kein Entgelt dafür. Mein Lohn ist allein bei Allah. Und ich werde gewiß nicht jene, die glauben, verstoßen. Sie werden ihrem Herrn begegnen. Allein, ich erachte euch für ein Volk, das unwissend ist.</div>
+
+<div class="text ltr"><span class="del">0</span> <span class="ins">O</span> mein Volk, wer würde mir gegen Allah helfen, wenn ich sie verstieße? Wollt ihr (das) denn nicht einsehen?</div>
+
+<div class="info"> -1505 +1505 </div>
+<div class="text ltr">Sie sagten: <span class="del">"0</span> <span class="ins">"O</span> Noah, du hast schon (genug) mit uns gehadert und gar lange mit uns gehadert; so bring uns denn her, was du uns androhst, wenn du zu den Wahrhaftigen gehörst."</div>
+
+<div class="info"> -1515 +1515 </div>
+<div class="text ltr">Und es (das Schiff) fuhr mit ihnen über Wogen gleich Bergen einher, und Noah rief zu seinem Sohn, der sich abseits hielt: <span class="del">"0</span> <span class="ins">"O</span> mein Sohn, steig mit uns ein und bleibe nicht bei den Ungläubigen!"</div>
+
+<div class="info"> -1517 +1517 </div>
+<div class="text ltr">Und es wurde befohlen: <span class="del">"0</span> <span class="ins">"O</span> Erde, verschlinge dein Wasser, o Himmel, höre auf (zu regnen)!" Und das Wasser begann zu sinken, und die Angelegenheit war entschieden. Und das Schiff kam auf dem Güdyy zur Rast. Und es wurde befohlen: "Fort mit dem Volk der Frevler!"</div>
+
+<div class="info"> -1519 +1519 </div>
+<div class="text ltr">Er sprach: <span class="del">"0</span> <span class="ins">"O</span> Noah, er gehört nicht zu deiner Familie; siehe, dies ist kein rechtschaffenes Benehmen. So frage Mich nicht nach dem, von dem du keine Kenntnis hast. Ich ermahne dich, damit du nicht einer der Toren wirst."</div>
+
+<div class="info"> -1521 +1521 </div>
+<div class="text ltr">Es wurde befohlen: <span class="del">"0</span> <span class="ins">"O</span> Noah, geh an Land, (und sei) mit Unserem Frieden begleitet! Und Segnungen (seien) über dir und über den Geschlechtern, die bei dir sind! Und es werden andere Geschlechter kommen, denen Wir Versorgung gewähren; dann aber wird Unsere schmerzliche Strafe sie treffen."</div>
+
+<div class="info"> -1523,4 +1523,4 </div>
+<div class="text ltr">Und zu den `Ad (entsandten Wir) ihren Bruder Hud. Er sagte: <span class="del">"0</span> <span class="ins">"O</span> mein Volk, dient Allah. Ihr habt keinen anderen Gott außer Ihm. Ihr seid nichts anderes als Lügner.</div>
+
+<div class="text ltr"><span class="del">0</span> <span class="ins">O</span> mein Volk, ich verlange von euch keinen Lohn dafür; seht, mein Lohn ist einzig bei Dem, Der mich erschuf. Wollt ihr es denn nicht begreifen?</div>
+
+<div class="text ltr"><span class="del">0</span> <span class="ins">O</span> mein Volk, erfleht Vergebung von eurem Herrn, dann bekehrt euch reumütig zu Ihm; Er wird (den Segen) in reichlicher Weise vom Himmel über euch schicken und wird euch Kraft zu eurer Kraft hinzugeben. So wendet euch nicht als Schuldige ab."</div>
+
+<div class="text ltr">Sie sagten: <span class="del">"0</span> <span class="ins">"O</span> Hud, du hast uns kein deutliches Zeichen gebracht, und wir wollen unsere Götter nicht auf dein Wort hin verlassen, noch wollen wir dir glauben.</div>
+
+<div class="info"> -1534,4 +1534,4 </div>
+<div class="text ltr">Und zu den Tamud (entsandten Wir) ihren Bruder Sälih; er sagte: <span class="del">"0</span> <span class="ins">"O</span> mein Volk, dient Allah; ihr habt keinen anderen Gott außer Ihm. Er hat euch aus der Erde hervorgebracht und ließ euch darauf ansiedeln. So erfleht Seine Vergebung, dann bekehrt euch zu Ihm. Wahrlich, mein Herr ist nahe (und) erhört die Gebete."</div>
+
+<div class="text ltr">Sie sagten: <span class="del">"0</span> <span class="ins">"O</span> Salih, du warst zuvor unter uns der Mittelpunkt der Hoffnung. Willst du uns verwehren, das anzubeten, was unsere Väter anbeteten? Und wir befinden uns wahrhaftig in beunruhigendem Zweifel über das, wozu du uns aufforderst."</div>
+
+<div class="text ltr">Er sagte: <span class="del">"0</span> <span class="ins">"O</span> mein Volk, was meint ihr, wenn ich einen klaren Beweis von meinem Herrn habe und Er hat mir Seine Barmherzigkeit erwiesen -, wer wird mir dann gegen Allah helfen, wenn ich Ihm ungehorsam bin? So würdet ihr mein Verderben nur fördern.</div>
+
+<div class="text ltr"><span class="del">0</span> <span class="ins">O</span> mein Volk, dies ist die Kamelstute Allahs als ein Zeichen für euch; so lasset sie auf Allahs Erde weiden und fügt ihr kein Leid zu, damit euch nicht baldige Strafe erfasse."</div>
+
+<div class="info"> -1549 +1549 </div>
+<div class="text ltr"><span class="del">"0</span> <span class="ins">"O</span> Abraham, laß von diesem (Streit) ab. Siehe, schon ist der Befehl deines Herrn ergangen, und über sie bricht ganz gewiß die unabwendbare Strafe herein."</div>
+
+<div class="info"> -1551 +1551 </div>
+<div class="text ltr">Und sein Volk kam eilends zu ihm gelaufen; und schon zuvor hatten sie Schlechtigkeiten verübt. Er sagte: <span class="del">"0</span> <span class="ins">"O</span> mein Volk, dies hier sind meine Töchter; sie sind reiner für euch (als meine Gäste) So fürchtet Allah und bringt keine Schande hinsichtlich meiner Gäste über mich. Ist denn kein redlicher Mann unter euch?"</div>
+
+<div class="info"> -1554 +1554 </div>
+<div class="text ltr">Sie sprachen: <span class="del">"0</span> <span class="ins">"O</span> Lot, wir sind Gesandte deines Herrn. Sie sollen dich nimmermehr erreichen. So mache dich mit den Deinen in einer Phase der Nacht auf; und niemand von euch wende sich um, außer deiner Frau. Gewiß, was jene dort treffen wird, das wird auch sie treffen. Siehe, am Morgen ist ihr Termin. Ist nicht der Morgen nahe?"</div>
+
+<div class="info"> -1557,2 +1557,2 </div>
+<div class="text ltr">Und zu den Madyan (entsandten Wir) ihren Bruder Suaib. Er sagte: <span class="del">"0</span> <span class="ins">"O</span> mein Volk, dient Allah. Ihr habt keinen anderen Gott außer Ihm. Und verkürzt nicht Maß und Gewicht. Ich sehe euch im Wohlsein, aber ich fürchte für euch die Strafe eines völlig vernichtenden Tages.</div>
+
+<div class="text ltr"><span class="del">0</span> <span class="ins">O</span> mein Volk, gebt volles Maß und Gewicht nach Richtigkeit und betrügt die Menschen nicht um ihr Eigentum und treibt im Land nicht euer Unwesen, indem ihr Unheil anrichtet.</div>
+
+<div class="info"> -1560,3 +1560,3 </div>
+<div class="text ltr">Sie sagten: <span class="del">"0</span> <span class="ins">"O</span> Suaib, heißt dein Gebet, daß wir das verlassen sollen, was unsere Väter anbeteten, oder daß wir aufhören sollen, mit unserem Besitz zu tun, was uns gefällt? Du bist doch wahrlich der Milde und der Mündige!"</div>
+
+<div class="text ltr">Er sagte: <span class="del">"0</span> <span class="ins">"O</span> mein Volk, seht ihr nicht ein, daß ich einen deutlichen Beweis von meinem Herrn habe und (daß) Er mir Seine Sorge angedeihen ließ? Und ich will gegen euch nicht so handeln, wie ich es euch zu unterlassen bitte. Ich will nur Besse rung, soweit ich (es erreichen) kann. Es ist keine Macht in mir als durch Allah. Auf Ihn vertraue ich und an Ihn wende ich mich.</div>
+
+<div class="text ltr"><span class="del">0</span> <span class="ins">O</span> mein Volk, möge die Feindseligkeit gegen mich euch nicht dazu führen, daß euch das gleiche wie das trifft, was das Volk Noahs oder das Volk Huds oder das Volk Salihs getroffen hat; und das (Schicksal) des Volkes Lots ist euch nicht fern.</div>
+
+<div class="info"> -1564,3 +1564,3 </div>
+<div class="text ltr">Sie sagten: <span class="del">"0</span> <span class="ins">"O</span> Suaib, wir verstehen nicht viel von dem, was du sprichst, und wir sehen nur, daß du unter uns schwach bist. Und wäre nicht dein Stamm, würden wir dich steinigen. Und du wirst kein Mitleid in uns wecken."</div>
+
+<div class="text ltr">Er sagte: <span class="del">"0</span> <span class="ins">"O</span> mein Volk, ist mein Stamm bei euch geehrter als Allah? Und ihr nehmt Ihn nicht ernst. Doch wahrlich, mein Herr umfaßt alles, was ihr tut.</div>
+	</div>
+	
+	<div class="more" style="display: block;">
+		<a href="http://tanzil.net/trans/log/de.aburida/2">See more...</a>
+	</div>
+	
+	</div>
+
+</div>
+
+<div class="footer">
+	<div class="content">
+		<div style="margin: 0 -20px">
+			<a href="http://tanzil.net/">Tanzil</a> &copy 2014 
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

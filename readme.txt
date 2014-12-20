@@ -4,7 +4,7 @@ Donate link: http://www.islamSource.info/
 Tags: Islam,Quran,calligraphy,phrases,verses
 Requires at least: 3.0.1
 Tested up to: 4.1.0
-Stable tag: 4.1.0
+Stable tag: 1.1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -31,6 +31,9 @@ None
 2. The rendered result when viewing the post.
 
 == Changelog ==
+
+= 1.1 =
+Fixes and translations.
 
 = 1.0 =
 Initial version.

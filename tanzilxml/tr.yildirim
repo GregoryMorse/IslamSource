@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="description" content="Changelog for Quran translations in Tanzil translations repository. This changelog is for Suat Yildirim." /> 
+	<meta name="keywords" content="Quran, Tanzil, Translation, Authentic, Qur'an, Al-Qur'an, Kuran, Koran, قرآن, تنزیل، تنزيل, قرءان مجيد, قرآن كريم, ترجمه "/>
+	<title>Translation Changelog - Suat Yildirim - Tanzil</title>
+	<link href="/pub/common/css/page.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+	
+<div class="header">
+	<div class="content">
+		<a href="http://tanzil.net/" title="Tanzil.net" class="item logo">TANZIL</a>
+		<div class="sep">&bull;</div>
+		<a href="http://tanzil.net/wiki/" class="item">Documents</a>
+		<a href="http://tanzil.net/download/" class="item">Quran Text</a>
+		<a href="http://tanzil.net/trans/" class="item">Translations</a>
+		<div class="clear"></div>
+	</div>
+</div>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<style>
+	.result { color:#444; }
+	.del { background-color: #faa; color: #333; }
+	.ins { background-color: #afa; color: #333; }
+	.date { color: green; margin-top: 15px;}
+	.info { color: #f66; }
+	.more { padding-top: 8px;}
+	.subtitle { font-size: 50%; color: gray; }
+	.text { padding: 2px 7px; background-color: #f6f6f6; margin: 4px 0;}
+	.text.ltr { border-left: 2px solid #ddd; direction: ltr; }
+	.text.rtl { border-right: 2px solid #ddd; direction: rtl; }
+</style>
+
+<div class="body">
+	<div class="content">
+	
+	<h1>
+		Suat Yildirim		<!--span class="subtitle">(Change Log)<span-->
+	</h1>
+
+	<hr>
+	<h3>Change Log</h3>
+	
+	<!--p><b>Change Log</b><br/> Last Update: September 14, 2010</p>
+	<hr-->
+	
+	<div class="result">
+		<div class="date"> Duplicate lines removed <br/> Fri, 4 Jun 2010 20:00:03 -0400 </div>
+<div class="info"> -45,2 +45,2 </div>
+<div class="text ltr"><span class="del">38,39. -Dedik ki: “İnin oradan hepiniz! Artık ne zaman Ben'den size doğru yolu gösteren rehber gelir de kim ona uyarsa, onlara hiç bir korku olmayacak, hiç üzülmeyecekler de. İnkâr edip âyetlerimizi yalan sayanlar ise cehennemliktirler, hem de orada ebedî kalacaklardır.” [20,123; 7,24-35]</span> </div>
+
+<div class="text ltr"><span class="del">38,39.</span> -Dedik ki: “İnin oradan hepiniz! Artık ne zaman Ben'den size doğru yolu gösteren rehber gelir de kim ona uyarsa, onlara hiç bir korku olmayacak, hiç üzülmeyecekler de. İnkâr edip âyetlerimizi yalan sayanlar ise cehennemliktirler, hem de orada ebedî kalacaklardır.” [20,123; 7,24-35]</div>
+
+<div class="text ltr"><span class="ins">=</span></div>
+
+<div class="info"> -326,2 +326,2 </div>
+<div class="text ltr"><span class="del">33,34. Gerçek şu ki Allah Âdem'i, Nûh’u, İbrâhim ailesi ile İmran ailesini, birbirinden gelen tek zürriyet halinde bütün insanlardan süzüp onlara üstün kılmıştır. Allah semî’dir, alîmdir (her şeyi hakkıyla işitir, mükemmel tarzda bilir). [2,47; 66,12] {KM, Çıkış 2,1; 6,20; 15,20}</span> </div>
+
+<div class="text ltr"><span class="del">33,34.</span> Gerçek şu ki Allah Âdem'i, Nûh’u, İbrâhim ailesi ile İmran ailesini, birbirinden gelen tek zürriyet halinde bütün insanlardan süzüp onlara üstün kılmıştır. Allah semî’dir, alîmdir (her şeyi hakkıyla işitir, mükemmel tarzda bilir). [2,47; 66,12] {KM, Çıkış 2,1; 6,20; 15,20}</div>
+
+<div class="text ltr"><span class="ins">=</span></div>
+
+<div class="info"> -341,2 +341,2 </div>
+<div class="text ltr"><span class="del">48,49. (Melekler Hz. Îsâ hakkında Meryem ile konuşurken onun şu sıfatlarını da ilâve ettiler:) “Allah ona kitabı (yazmayı), hikmeti, Tevrat ve İncîl'i öğretecektir. Onu İsrailoğullarına resul olarak gönderecek, o da onlara şöyle diyecektir: “Size Rabbiniz tarafından bir mûcizeyle gönderildim: Ben size çamurdan kuş şekline benzer bir şey yapar içine üflerim, o da Allah’ın izniyle hemen kuş oluverir. Keza ben anadan doğma körü ve abraşı iyileştirir, hatta Allah’ın izniyle ölüleri diriltirim. Evlerinizde ne yediğinizi ve biriktirip sakladıklarınızı da bilirim. Eğer inanmaya niyetiniz varsa, elbette bunlarda sizin için alacak dersler vardır. [5,110; 19,21.30] {KM, Markos 7,32-35; Matta 15,30; 8,1-3; Luka 17,12-14}</span> </div>
+
+<div class="text ltr"><span class="del">48,49.</span> (Melekler Hz. Îsâ hakkında Meryem ile konuşurken onun şu sıfatlarını da ilâve ettiler:) “Allah ona kitabı (yazmayı), hikmeti, Tevrat ve İncîl'i öğretecektir. Onu İsrailoğullarına resul olarak gönderecek, o da onlara şöyle diyecektir: “Size Rabbiniz tarafından bir mûcizeyle gönderildim: Ben size çamurdan kuş şekline benzer bir şey yapar içine üflerim, o da Allah’ın izniyle hemen kuş oluverir. Keza ben anadan doğma körü ve abraşı iyileştirir, hatta Allah’ın izniyle ölüleri diriltirim. Evlerinizde ne yediğinizi ve biriktirip sakladıklarınızı da bilirim. Eğer inanmaya niyetiniz varsa, elbette bunlarda sizin için alacak dersler vardır. [5,110; 19,21.30] {KM, Markos 7,32-35; Matta 15,30; 8,1-3; Luka 17,12-14}</div>
+
+<div class="text ltr"><span class="ins">=</span></div>
+
+<div class="info"> -365,2 +365,2 </div>
+<div class="text ltr"><span class="del">72,73. Ehl-i kitaptan bir güruh birbirlerine, şöyle dediler: “Şu Müslümanlara indirilen kitaba günün başlangıcında (zahiren) iman edin, sonunda da inkâr edin, olur ki onlar da şüpheye düşüp dinlerinden dönerler. Ve bir de kendi dininize tâbi olandan başkasına sakın ha güvenmeyin!” Ey Resulüm, de ki: “Doğru yol, Allah'ın yoludur,” Yine onlar kendi aralarında: “Size verilen vahyin, başkalarına da verildiğine veya Rabbinizin huzurunda Müslümanların karşı delil getirip sizi mağlup edeceklerine inanmayın!” derler. De ki: “Lütuf Allah’ın elindedir, dilediğine ihsan eder. Allah vâsi ve alîmdir (lütfu boldur, her şeyi hakkıyla bilir). [57,29]</span> </div>
+
+<div class="text ltr"><span class="del">72,73.</span> Ehl-i kitaptan bir güruh birbirlerine, şöyle dediler: “Şu Müslümanlara indirilen kitaba günün başlangıcında (zahiren) iman edin, sonunda da inkâr edin, olur ki onlar da şüpheye düşüp dinlerinden dönerler. Ve bir de kendi dininize tâbi olandan başkasına sakın ha güvenmeyin!” Ey Resulüm, de ki: “Doğru yol, Allah'ın yoludur,” Yine onlar kendi aralarında: “Size verilen vahyin, başkalarına da verildiğine veya Rabbinizin huzurunda Müslümanların karşı delil getirip sizi mağlup edeceklerine inanmayın!” derler. De ki: “Lütuf Allah’ın elindedir, dilediğine ihsan eder. Allah vâsi ve alîmdir (lütfu boldur, her şeyi hakkıyla bilir). [57,29]</div>
+
+<div class="text ltr"><span class="ins">=</span></div>
+
+<div class="info"> -433,2 +433,2 </div>
+<div class="text ltr"><span class="del">140,141. Şayet siz yara aldı iseniz, karşınızdaki düşman topluluğu da benzeri bir yara aldı. İşte Biz, Allah'ın gerçek müminleri ortaya çıkarması, sizden şehitler edinmesi, müminleri tertemiz yapıp kâfirleri imhâ etmesi için, zafer günlerini insanlar arasında nöbetleşe döndürür dururuz. Allah zalimleri sevmez.</span> </div>
+
+<div class="text ltr"><span class="del">140,141.</span> Şayet siz yara aldı iseniz, karşınızdaki düşman topluluğu da benzeri bir yara aldı. İşte Biz, Allah'ın gerçek müminleri ortaya çıkarması, sizden şehitler edinmesi, müminleri tertemiz yapıp kâfirleri imhâ etmesi için, zafer günlerini insanlar arasında nöbetleşe döndürür dururuz. Allah zalimleri sevmez.</div>
+
+<div class="text ltr"><span class="ins">=</span></div>
+
+<div class="info"> -459,2 +459,2 </div>
+<div class="text ltr"><span class="del">166,167. İki ordunun karşılaştığı gün başınıza gelen musîbet Allah'ın izniyle olmuştu. Bu da O’nun müminleri ayırd etmesi, münafıklık yapanları da meydana çıkarması için idi. O münafıklara: “Gelin, Allah yolunda savaşın veya hiç olmazsa düşmanınızın size ve ailelerinize saldırmasını önleyin!” denildiğinde: “Biz savaş olacağını bilseydik size katılırdık.” dediler. Doğrusu o gün onlar imandan ziyade küfre yakın idiler. Onlar, ağızlarıyla, kalplerinde olmayan şeyleri söylüyorlardı. Ama Allah onların gizlediklerini pek iyi bilir.</span> </div>
+
+<div class="text ltr"><span class="del">166,167.</span> İki ordunun karşılaştığı gün başınıza gelen musîbet Allah'ın izniyle olmuştu. Bu da O’nun müminleri ayırd etmesi, münafıklık yapanları da meydana çıkarması için idi. O münafıklara: “Gelin, Allah yolunda savaşın veya hiç olmazsa düşmanınızın size ve ailelerinize saldırmasını önleyin!” denildiğinde: “Biz savaş olacağını bilseydik size katılırdık.” dediler. Doğrusu o gün onlar imandan ziyade küfre yakın idiler. Onlar, ağızlarıyla, kalplerinde olmayan şeyleri söylüyorlardı. Ama Allah onların gizlediklerini pek iyi bilir.</div>
+
+<div class="text ltr"><span class="ins">=</span></div>
+
+<div class="info"> -588,2 +588,2 </div>
+<div class="text ltr"><span class="del">95,96. Özür sahibi olmaksızın cihaddan geri kalan müminlerle, Allah yolunda mallarıyla ve canlarıyla cihad eden müminler elbette bir olmaz. Allah malları ve canları ile mücahede edenleri, derece bakımından cihada gitmeyenlerden üstün kılmıştır.Gerçi Allah hepsine de en güzel yurt olan cenneti vâd etmiştir, ama mücahede edenleri, cihada katılmayanlardan çok daha büyük mükâfatlarla, tarafından derece derece rütbeler, hususi bir mağfiret ve rahmetle mümtaz kılmıştır. Değil mi ki Allah gafurdur, rahimdir (affı, merhamet ve ihsanı boldur).</span> </div>
+
+<div class="text ltr"><span class="del">95,96.</span> Özür sahibi olmaksızın cihaddan geri kalan müminlerle, Allah yolunda mallarıyla ve canlarıyla cihad eden müminler elbette bir olmaz. Allah malları ve canları ile mücahede edenleri, derece bakımından cihada gitmeyenlerden üstün kılmıştır.Gerçi Allah hepsine de en güzel yurt olan cenneti vâd etmiştir, ama mücahede edenleri, cihada katılmayanlardan çok daha büyük mükâfatlarla, tarafından derece derece rütbeler, hususi bir mağfiret ve rahmetle mümtaz kılmıştır. Değil mi ki Allah gafurdur, rahimdir (affı, merhamet ve ihsanı boldur).</div>
+
+<div class="text ltr"><span class="ins">=</span></div>
+
+<div class="info"> -591,2 +591,2 </div>
+<div class="text ltr"><span class="del">98,99. Ancak, her türlü imkândan mahrum ve hicret için yol bulamayan erkekler, kadınlar ve çocuklar bu hükmün dışındadırlar. Çünkü bunları Allah'ın affedeceği umulur. Allah gerçekten afüv ve gafurdur (affı ve mağfireti boldur).</span> </div>
+
+<div class="text ltr"><span class="del">98,99.</span> Ancak, her türlü imkândan mahrum ve hicret için yol bulamayan erkekler, kadınlar ve çocuklar bu hükmün dışındadırlar. Çünkü bunları Allah'ın affedeceği umulur. Allah gerçekten afüv ve gafurdur (affı ve mağfireti boldur).</div>
+
+<div class="text ltr"><span class="ins">=</span></div>
+
+<div class="info"> -611,2 +611,2 </div>
+<div class="text ltr"><span class="del">118,119. O şeytana ki: “Ya Rabbî, Senin kullarından mutlaka bir pay edineceğim. Mutlaka onları saptıracağım, onları birtakım temennilerle oyalayacağım. Onlara davarlarının kulaklarını yarmalarını emredeceğim de Allah'ın yarattığını değiştirecekler.” dedi. Her kim Allah’ın yerine şeytanı dost edinirse, şüphesiz besbelli bir ziyana girmiştir. [5,103; 7,30; 16,63]</span> </div>
+
+<div class="text ltr"><span class="del">118,119.</span> O şeytana ki: “Ya Rabbî, Senin kullarından mutlaka bir pay edineceğim. Mutlaka onları saptıracağım, onları birtakım temennilerle oyalayacağım. Onlara davarlarının kulaklarını yarmalarını emredeceğim de Allah'ın yarattığını değiştirecekler.” dedi. Her kim Allah’ın yerine şeytanı dost edinirse, şüphesiz besbelli bir ziyana girmiştir. [5,103; 7,30; 16,63]</div>
+
+<div class="text ltr"><span class="ins">=</span></div>
+
+<div class="info"> -643,2 +643,2 </div>
+<div class="text ltr"><span class="del">150,151. O kimseler ki ne Allah'ı tanırlar ne resullerini, ve o kimseler ki Allah’ı tanıdığını iddia edip resullerini tanımayarak, Allah ile resullerini birbirinden ayırmak isterler Ve o kimseler ki “resullerin bazısına iman ederiz, bazısını reddederiz” derler, ve böylece iman ile küfür arasında bir yol tutmak isterler,İşte bunlar gerçek kâfirlerin ta kendileridir. Biz de kâfirler için zelil ve perişan eden bir ceza hazırladık. [2,8]</span> </div>
+
+<div class="text ltr"><span class="del">150,151.</span> O kimseler ki ne Allah'ı tanırlar ne resullerini, ve o kimseler ki Allah’ı tanıdığını iddia edip resullerini tanımayarak, Allah ile resullerini birbirinden ayırmak isterler Ve o kimseler ki “resullerin bazısına iman ederiz, bazısını reddederiz” derler, ve böylece iman ile küfür arasında bir yol tutmak isterler,İşte bunlar gerçek kâfirlerin ta kendileridir. Biz de kâfirler için zelil ve perişan eden bir ceza hazırladık. [2,8]</div>
+
+<div class="text ltr"><span class="ins">=</span></div>
+
+<div class="info"> -648,4 +648,4 </div>
+<div class="text ltr"><span class="del">155,156,157,158. İşte sözleşmelerini bozmaları, Allah'ın âyetlerini inkâr etmeleri, peygamberleri haksız yere öldürmeleri ve “kalplerimiz perdelidir” demeleri -ki kalpleri perdeli yaratılmış olmayıp, Allah inkârcılıkları sebebiyle kalplerini mühürledi de artık onlar pek az inanırlar- yine inkârları ve Meryem aleyhinde müthiş bir iftira atmaları ve “Biz Allah’ın resulü(!) Meryem oğlu Mesih Îsâ’yı katlettik!” demeleri yüzünden, onların başlarına belalar vererek cezalandırdık, kalplerini mühürledik,Oysa onlar Îsâ’yı öldüremediler, asamadılar da; öldürülen başkası idi, lâkin kendilerine ona benzer gösterildi.Îsâ hakkında ihtilâfa düşenler de bu hususta şüphe içindedirler. Bu konuda kesin bilgileri yoktur, zanna tâbi olmaktan başka bir şeye dayanmazlar.Onu kesinlikle öldüremediler. Doğrusu Allah onu kendi katına yükseltti. Allah aziz ve hakimdir (mutlak galiptir, tam hüküm ve hikmet sahibidir). [2,88; 41,5; 3,55; 19,30; 3,49] {KM, Levililer 26,41; Tesniye 30,6}</span> </div>
+
+<div class="text ltr"><span class="del">155,156,157,158. İşte sözleşmelerini bozmaları, Allah'ın âyetlerini inkâr etmeleri, peygamberleri haksız yere öldürmeleri ve “kalplerimiz perdelidir” demeleri -ki kalpleri perdeli yaratılmış olmayıp, Allah inkârcılıkları sebebiyle kalplerini mühürledi de artık onlar pek az inanırlar- yine inkârları ve Meryem aleyhinde müthiş bir iftira atmaları ve “Biz Allah’ın resulü(!) Meryem oğlu Mesih Îsâ’yı katlettik!” demeleri yüzünden, onların başlarına belalar vererek cezalandırdık, kalplerini mühürledik,Oysa onlar Îsâ’yı öldüremediler, asamadılar da; öldürülen başkası idi, lâkin kendilerine ona benzer gösterildi.Îsâ hakkında ihtilâfa düşenler de bu hususta şüphe içindedirler. Bu konuda kesin bilgileri yoktur, zanna tâbi olmaktan başka bir şeye dayanmazlar.Onu kesinlikle öldüremediler. Doğrusu Allah onu kendi katına yükseltti. Allah aziz ve hakimdir (mutlak galiptir, tam hüküm ve hikmet sahibidir). [2,88; 41,5; 3,55; 19,30; 3,49] {KM, Levililer 26,41; Tesniye 30,6}</span> </div>
+
+<div class="text ltr"><span class="del">155,156,157,158. İşte sözleşmelerini bozmaları, Allah'ın âyetlerini inkâr etmeleri, peygamberleri haksız yere öldürmeleri ve “kalplerimiz perdelidir” demeleri -ki kalpleri perdeli yaratılmış olmayıp, Allah inkârcılıkları sebebiyle kalplerini mühürledi de artık onlar pek az inanırlar- yine inkârları ve Meryem aleyhinde müthiş bir iftira atmaları ve “Biz Allah’ın resulü(!) Meryem oğlu Mesih Îsâ’yı katlettik!” demeleri yüzünden, onların başlarına belalar vererek cezalandırdık, kalplerini mühürledik,Oysa onlar Îsâ’yı öldüremediler, asamadılar da; öldürülen başkası idi, lâkin kendilerine ona benzer gösterildi.Îsâ hakkında ihtilâfa düşenler de bu hususta şüphe içindedirler. Bu konuda kesin bilgileri yoktur, zanna tâbi olmaktan başka bir şeye dayanmazlar.Onu kesinlikle öldüremediler. Doğrusu Allah onu kendi katına yükseltti. Allah aziz ve hakimdir (mutlak galiptir, tam hüküm ve hikmet sahibidir). [2,88; 41,5; 3,55; 19,30; 3,49] {KM, Levililer 26,41; Tesniye 30,6}</span> </div>
+	</div>
+	
+	<div class="more" style="display: block;">
+		<a href="http://tanzil.net/trans/log/tr.yildirim/2">See more...</a>
+	</div>
+	
+	</div>
+
+</div>
+
+<div class="footer">
+	<div class="content">
+		<div style="margin: 0 -20px">
+			<a href="http://tanzil.net/">Tanzil</a> &copy 2014 
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

@@ -12,9 +12,10 @@ IF NOT "%1"=="" (
 svn checkout http://plugins.svn.wordpress.org/islamsource/trunk/
 "%ProgramFiles%\7-Zip\7z.exe" x -otrunk IslamSourceWP.zip
 move /Y trunk\IslamSource\*.* trunk
-for /D %%F in (trunk\IslamSource\*) do move /Y %%F trunk
-rmdir trunk\IslamSource
+for /D %%F in (trunk\IslamSource\*) do if EXIST %%F (move /Y %%F\*.* trunk\%%~nxF && rmdir /s /q %%F) else (move /Y %%F trunk)
+rmdir /s /q trunk\IslamSource
 svn add trunk\*
+for /D %%F in (trunk\*) do svn add %%F\*
 svn commit trunk -m "%1"
 rmdir /s /q trunk
 svn checkout http://plugins.svn.wordpress.org/islamsource/assets

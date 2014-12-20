@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="description" content="Changelog for Quran translations in Tanzil translations repository. This changelog is for Hasan al-Fatih Qaribullah and Ahmad Darwish." /> 
+	<meta name="keywords" content="Quran, Tanzil, Translation, Authentic, Qur'an, Al-Qur'an, Kuran, Koran, قرآن, تنزیل، تنزيل, قرءان مجيد, قرآن كريم, ترجمه "/>
+	<title>Translation Changelog - Hasan al-Fatih Qaribullah and Ahmad Darwish - Tanzil</title>
+	<link href="/pub/common/css/page.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+	
+<div class="header">
+	<div class="content">
+		<a href="http://tanzil.net/" title="Tanzil.net" class="item logo">TANZIL</a>
+		<div class="sep">&bull;</div>
+		<a href="http://tanzil.net/wiki/" class="item">Documents</a>
+		<a href="http://tanzil.net/download/" class="item">Quran Text</a>
+		<a href="http://tanzil.net/trans/" class="item">Translations</a>
+		<div class="clear"></div>
+	</div>
+</div>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<style>
+	.result { color:#444; }
+	.del { background-color: #faa; color: #333; }
+	.ins { background-color: #afa; color: #333; }
+	.date { color: green; margin-top: 15px;}
+	.info { color: #f66; }
+	.more { padding-top: 8px;}
+	.subtitle { font-size: 50%; color: gray; }
+	.text { padding: 2px 7px; background-color: #f6f6f6; margin: 4px 0;}
+	.text.ltr { border-left: 2px solid #ddd; direction: ltr; }
+	.text.rtl { border-right: 2px solid #ddd; direction: rtl; }
+</style>
+
+<div class="body">
+	<div class="content">
+	
+	<h1>
+		Hasan al-Fatih Qaribullah and Ahmad Darwish		<!--span class="subtitle">(Change Log)<span-->
+	</h1>
+
+	<hr>
+	<h3>Change Log</h3>
+	
+	<!--p><b>Change Log</b><br/> Last Update: June 4, 2010</p>
+	<hr-->
+	
+	<div class="result">
+		<div class="date"> Major spacing and punctuation fixes <br/> Fri, 4 Jun 2010 19:56:23 -0400 </div>
+<div class="info"> -228 +228 </div>
+<div class="text ltr">Do not wed idolatresses, until they believe. A believing slavegirl is better than a (free) idolatress, even if she pleases you. And do not wed idolaters, until they believe. A believing slave is better than a (free) idolater, even though he pleases you. Those call to the Fire; but Allah calls to Paradise and pardon by His <span class="del">permission.He</span> <span class="ins">permission. He</span> makes plain His verses to the people, in order that they will remember.</div>
+
+<div class="info"> -368 +368 </div>
+<div class="text ltr">Among the People of the Book there are some, who, if you trust him with a Qintar <span class="del">(98,841.6</span> <span class="ins">(98, 841. 6</span> lbs.), will return it to you, and there are others, who, if you trust him with a dinar will not hand it back unless you stand over him, for they say: 'As for the common people, they have no recourse to us' They say lies against Allah while they know.</div>
+
+<div class="info"> -433 +433 </div>
+<div class="text ltr">If a wound touches you, a similar wound already has touched the nation. Such days We alternate between the people so that Allah knows those who <span class="del">believe,and</span> <span class="ins">believe, and</span> that He will take witnesses from among you, for Allah does not love the harmdoers,</div>
+
+<div class="info"> -513 +513 </div>
+<div class="text ltr">If you wish to take a wife in the place of another wife, and you have given to one a Qintar <span class="del">(98,841.6</span> <span class="ins">(98, 841. 6</span> lbs.) so do not take from it anything. What, will you take it by way of calumny and a clear sin!</div>
+
+<div class="info"> -744 +744 </div>
+<div class="text ltr">The Messiah, the son of Mary, was not except a Messenger, other Messengers had gone before <span class="del">him.His</span> <span class="ins">him. His</span> mother was in the state of sincerity, they both ate food. See how We make plain to them Our <span class="del">signs.Then,</span> <span class="ins">signs. Then,</span> see how perverted they are.</div>
+
+<div class="info"> -779 +779 </div>
+<div class="text ltr">When Allah said: <span class="del">'( Prophet)</span> <span class="ins">'(Prophet)</span> Jesus, son of Mary, remember the favor upon you and on your mother; how I strengthened you with the Holy Spirit (Gabriel), to speak to people in your cradle and of age (when he descends and dies); how I taught you the Book and Wisdom, the Torah and the Gospel; and how, by My permission, you fashioned from clay the likeness of a bird, and breathed into it so that, by My permission, it became a living bird. How, by My permission, you healed the blind man and the leper, and by My permission you brought the dead forth; and how I protected you from the Children of Israel when you brought them clear signs; whereupon the unbelievers among them said: "This is nothing but plain magic".</div>
+
+<div class="info"> -785 +785 </div>
+<div class="text ltr">And when Allah said: <span class="del">'( Prophet)</span> <span class="ins">'(Prophet)</span> Jesus, son of Mary, did you ever say to the people: "Take me and my mother for two gods, other than Allah?" 'Exaltations to You' he said, 'how could I say that to which I have no right? If I had said that, You would have surely known. You know what is in my self, but I do not know what is in Yours. Indeed, You are the Knowledgeable of the unseen.</div>
+
+<div class="info"> -1029 +1029 </div>
+<div class="text ltr">The proud assembly of his nation said to the <span class="del">weak ?</span> <span class="ins">weak?</span> amongst them who believed: 'Do you really believe that Salih is sent from his Lord' They answered: 'We believe in that with which he was sent'</div>
+
+<div class="info"> -1161 +1161 </div>
+<div class="text ltr">They ask you about the spoils (of war). Say: 'The spoils belong to Allah and the Messenger. Therefore, have fear of Allah and set things right between <span class="del">you.Obey</span> <span class="ins">you. Obey</span> Allah and His Messenger, if you are believers'</div>
+
+<div class="info"> -1454 +1454 </div>
+<div class="text ltr">We brought the Children of Israel through the sea, and Pharaoh and his legions pursued them arrogantly and frantically. But as he was drowning he cried out: <span class="del">'( Now)</span> <span class="ins">'(Now)</span> I believe that there is no god except He in whom the Children of Israel believe. I am of those that surrender (Muslims)'</div>
+
+<div class="info"> -1502 +1502 </div>
+<div class="text ltr">My nation, for this I do not ask you for your wealth for my wage is only with Allah. Nor will I drive away the believers, for they will surely meet their <span class="del">Lord.But,</span> <span class="ins">Lord. But,</span> I can see that you are ignorant.</div>
+
+<div class="info"> -1532 +1532 </div>
+<div class="text ltr">Such was Aad. They disbelieved the verses of their Lord, rebelled against His Messengers, and did the bidding of every rebellious <span class="del">tyrant .</span> <span class="ins">tyrant.</span></div>
+
+<div class="info"> -1536 +1536 </div>
+<div class="text ltr">He said: 'My nation, think! If I have a clear proof from my Lord and He has given me His Mercy, who would help me against Allah if I rebel against <span class="del">Him?Indeed,</span> <span class="ins">Him? Indeed,</span> you would do nothing for me except increase my loss'</div>
+
+<div class="info"> -1596 +1596 </div>
+<div class="text ltr">To Allah belongs the unseen in the heavens and in the earth; to Him the matter, in its entirety, shall be returned. Worship Him, and put your trust in <span class="del">Him.Your</span> <span class="ins">Him. Your</span> Lord is not inattentive of the things you do.</div>
+
+<div class="info"> -1927 +1927 </div>
+<div class="text ltr">Those who have gone before them also plotted. Then, Allah came upon their building from the foundations, and the roof fell down on them from above <span class="del">them.And</span> <span class="ins">them. And</span> the punishment overtook them from where they did not know.</div>
+
+<div class="info"> -2011 +2011 </div>
+<div class="text ltr">Then indeed your <span class="del">Lord ?</span> <span class="ins">Lord?</span> to those who emigrated, after they were persecuted, and then strove and were patient, surely, your Lord is thereafter Forgiving, the Most Merciful.</div>
+
+<div class="info"> -2020 +2020 </div>
+<div class="text ltr">Surely, your Lord to those who commit evil through ignorance and afterwards repent, and mend their ways your Lord thereafter is surely <span class="del">Forgiving,Merciful.</span> <span class="ins">Forgiving, Merciful.</span></div>
+
+<div class="info"> -2042 +2042 </div>
+<div class="text ltr">And to every <span class="del">human ?</span> <span class="ins">human?</span> We have fastened to him his bird of deeds upon his neck; and on the Day of Resurrection We shall bring forth to him a book spread open wide.</div>
+
+<div class="info"> -2098 +2098 </div>
+<div class="text ltr">Or, do you feel secure that He will not send you back into it a second time, and send against you a violent tempest and drown you because of <span class="del">disbelief?Then</span> <span class="ins">disbelief? Then</span> you shall find no prosecutor (to help) you against Us.</div>
+
+<div class="info"> -2166 +2166 </div>
+<div class="text ltr">Say: 'None but Allah knows how long they stayed. To Him belong the Unseen in the heavens and the earth. How well He sees, and how well He <span class="del">hears!They</span> <span class="ins">hears! They</span> have no other guardian, other than Him, and He allows no one (to share) His rule'</div>
+
+<div class="info"> -2469 +2469 </div>
+<div class="text ltr">They both ate of it, and their shameful parts appeared to them, whereupon they began to stitch upon themselves leaves from the Garden. And so it <span class="del">was,Adam</span> <span class="ins">was, Adam</span> erred and disobeyed his Lord.</div>
+
+<div class="info"> -2527 +2527 </div>
+<div class="text ltr">We gave days of enjoyment to them and their fathers until their life became long. Are they unable to see how We come to their land and reduce its <span class="del">borders.Or,</span> <span class="ins">borders. Or,</span> is it they who are the victors?</div>
+	</div>
+	
+	<div class="more" style="display: block;">
+		<a href="http://tanzil.net/trans/log/en.qaribullah/2">See more...</a>
+	</div>
+	
+	</div>
+
+</div>
+
+<div class="footer">
+	<div class="content">
+		<div style="margin: 0 -20px">
+			<a href="http://tanzil.net/">Tanzil</a> &copy 2014 
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

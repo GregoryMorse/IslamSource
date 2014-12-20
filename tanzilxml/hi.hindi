@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="description" content="Changelog for Quran translations in Tanzil translations repository. This changelog is for Suhel Farooq Khan and Saifur Rahman Nadwi." /> 
+	<meta name="keywords" content="Quran, Tanzil, Translation, Authentic, Qur'an, Al-Qur'an, Kuran, Koran, قرآن, تنزیل، تنزيل, قرءان مجيد, قرآن كريم, ترجمه "/>
+	<title>Translation Changelog - Suhel Farooq Khan and Saifur Rahman Nadwi - Tanzil</title>
+	<link href="/pub/common/css/page.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+	
+<div class="header">
+	<div class="content">
+		<a href="http://tanzil.net/" title="Tanzil.net" class="item logo">TANZIL</a>
+		<div class="sep">&bull;</div>
+		<a href="http://tanzil.net/wiki/" class="item">Documents</a>
+		<a href="http://tanzil.net/download/" class="item">Quran Text</a>
+		<a href="http://tanzil.net/trans/" class="item">Translations</a>
+		<div class="clear"></div>
+	</div>
+</div>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<style>
+	.result { color:#444; }
+	.del { background-color: #faa; color: #333; }
+	.ins { background-color: #afa; color: #333; }
+	.date { color: green; margin-top: 15px;}
+	.info { color: #f66; }
+	.more { padding-top: 8px;}
+	.subtitle { font-size: 50%; color: gray; }
+	.text { padding: 2px 7px; background-color: #f6f6f6; margin: 4px 0;}
+	.text.ltr { border-left: 2px solid #ddd; direction: ltr; }
+	.text.rtl { border-right: 2px solid #ddd; direction: rtl; }
+</style>
+
+<div class="body">
+	<div class="content">
+	
+	<h1>
+		Suhel Farooq Khan and Saifur Rahman Nadwi		<!--span class="subtitle">(Change Log)<span-->
+	</h1>
+
+	<hr>
+	<h3>Change Log</h3>
+	
+	<!--p><b>Change Log</b><br/> Last Update: January 12, 2011</p>
+	<hr-->
+	
+	<div class="result">
+		<div class="date"> Updates to hi.hindi <br/> Wed, 12 Jan 2011 01:38:59 -0500 </div>
+<div class="info"> -692 +692 </div>
+<div class="text ltr">(मगर) वह आदमी <span class="del">(मूशा</span> <span class="ins">(यूशा</span> कालिब) जो ख़ुदा का ख़ौफ़ रखते थे और जिनपर ख़ुदा ने ख़ास अपना फ़ज़ल (करम) किया था बेधड़क बोल उठे कि (अरे) उनपर हमला करके (बैतुल मुक़दस के फाटक में तो घुस पड़ो फिर देखो तो यह ऐसे बोदे हैं कि) इधर तुम फाटक में घुसे और (ये सब भाग खड़े हुए और) तुम्हारी जीत हो गयी और अगर सच्चे ईमानदार हो तो ख़ुदा ही पर भरोसा रखो</div>
+
+<div class="info"> -1982 +1982 </div>
+<div class="text ltr">और ख़ुदा ही ने तुम्हारे आराम के लिए अपनी पैदा की हुईचीज़ों के साए बनाए और उसी ने तुम्हारे (छिपने बैठने) के वास्ते पहाड़ों में घरौन्दे (ग़ार वग़ैरह) बनाए और उसी ने तुम्हारे लिए कपड़े बनाए जो तुम्हें (सर्दी) गर्मी से महफूज़ रखें और (लोहे) के कुर्ते जो तुम्हें हाथियों की ज़द (मार) से बचा <span class="del">लें</span> <span class="ins">लंग़</span> यूँ ख़ुदा अपनी नेअमत तुम पर पूरी करता है</div>
+
+<div class="info"> -2200 +2200 </div>
+<div class="text ltr">(ऐ रसूल) वह वाक़या याद करो जब मूसा खिज़्र की मुलाक़ात को चले तो अपने जवान वसी <span class="del">मूशा</span> <span class="ins">यूशा</span> से बोले कि जब तक में दोनों दरियाओं के मिलने की जगह न पहुँच जाऊँ (चलने से) बाज़ न आऊँगा</div>
+
+<div class="info"> -2203 +2203 </div>
+<div class="text ltr"><span class="del">(मूशा</span> <span class="ins">(यूशा</span> ने) कहा क्या आप ने देखा भी कि जब हम लोग (दरिया के किनारे) उस पत्थर के पास ठहरे तो मै (उसी जगह) मछली छोड़ आया और मुझे आप से उसका ज़िक्र करना शैतान ने भुला दिया और मछली ने अजीब तरह से दरिया में अपनी राह ली</div>
+
+<div class="info"> -2419 +2419 </div>
+<div class="text ltr">फिरऔन ने उन लोगों से कहा (हाए) इससे पहले कि हम तुमको इजाज़त दें तुम उस पर ईमान ले आए इसमें शक नहीं कि ये तुम सबका बड़ा (गुरू) है जिसने तुमको जादू सिखाया है तो मैं तुम्हारा एक तरफ़ के हाथ और दूसरी तरफ़ के पाँव ज़रूर काट डालूँगा और तुम्हें यक़ीनन खुरमे की शाख़ों पर सूली चढ़ा दूँगा और उस वक्त तुमको (अच्छी तरह) मालूम हो जाएगा कि हम (दोनों) फरीक़ों से अज़ाब में ज्यादा बढ़ा हुआ कौन और किसको <span class="del">क़शाम</span> <span class="ins">क़याम</span> ज्यादा है</div>
+
+<div class="info"> -2422 +2422 </div>
+<div class="text ltr">और (उसी को) सबसे ज्यादा <span class="del">क़शाम</span> <span class="ins">क़याम</span> है इसमें शक नहीं कि जो शख्स मुजरिम होकर अपने परवरदिगार के सामने हाज़िर होगा तो उसके लिए यक़ीनन जहन्नुम (धरा हुआ) है जिसमें न तो वह मरे ही गा और न ज़िन्दा ही रहेगा</div>
+
+<div class="info"> -2568 +2568 </div>
+<div class="text ltr">और (ऐ रसूल) इसमाईल और इदरीस और <span class="del">जुलकिफ्. ल</span> <span class="ins">जुलकिफ्ल</span> (के वाक़यात से याद करो) ये सब साबिर बन्दे थे</div>
+
+<div class="info"> -2621 +2621 </div>
+<div class="text ltr">और (ऐ रसूल वह वक्त याद करो) जब हमने इबराहीम के ज़रिये से इबरहीम के वास्ते ख़ानए काबा की जगह ज़ाहिर कर दी (और उनसे कहा कि) मेरा किसी चीज़ को शरीक न बनाना और मेरे घर को तवाफ और <span class="del">क़शाम</span> <span class="ins">क़याम</span> और रूकू सुजूद करने वालों के वास्ते साफ सुथरा रखना</div>
+
+<div class="info"> -2919 +2919 </div>
+<div class="text ltr">और वह लोग जो अपने परवरदिगार के वास्ते सज़दे और <span class="del">क़शाम</span> <span class="ins">क़याम</span> में रात काट देते हैं</div>
+
+
+<div class="date"> Many fixes to hi.hindi <br/> Mon, 10 Jan 2011 01:21:12 -0500 </div>
+<div class="info"> -159 +159 </div>
+<div class="text ltr">पस तुम हमारी याद रखो तो मै भी तुम्हारा ज़िक्र (खैर) किया करुगाँ और मेरा <span class="del">युक्रिया</span> <span class="ins">शुक्रिया</span> अदा करते रहो और नाशुक्री न करो</div>
+
+<div class="info"> -161 +161 </div>
+<div class="text ltr">और जो लोग ख़ुदा की राह में मारे गए उन्हें कभी मुर्दा न कहना बल्कि वह लोग ज़िन्दा हैं मगर तुम उनकी ज़िन्दगी की हक़ीकत का कुछ भी <span class="del">यऊर</span> <span class="ins">शऊर</span> नहीं रखते</div>
+
+<div class="info"> -181 +181 </div>
+<div class="text ltr">बेशक जो लोग इन बातों को जो ख़ुदा ने किताब में नाज़िल की है छिपाते हैं और उसके बदले थोड़ी सी क़ीमत (दुनयावी नफ़ा) ले लेतें है ये लोग बस <span class="del">ऍंगारों</span> <span class="ins">अंगारों</span> से अपने पेट भरते हैं और क़यामत के दिन ख़ुदा उन से बात तक तो करेगा नहीं और न उन्हें (गुनाहों से) पाक करेगा और उन्हीं के लिए दर्दनाक अज़ाब है</div>
+
+<div class="info"> -192 +192 </div>
+<div class="text ltr">(रोज़ों का) महीना रमज़ान है जिस में क़ुरान नाज़िल किया गया जो लोगों का रहनुमा है और उसमें रहनुमाई और (हक़ व बातिल के) तमीज़ की रौशन निशानियाँ हैं (मुसलमानों) तुम में से जो शख्स इस महीनें में अपनी जगह पर हो तो उसको चाहिए कि रोज़ा रखे और जो शख्स बीमार हो या फिर सफ़र में हो तो और दिनों में रोज़े की गिनती पूरी करे ख़ुदा तुम्हारे साथ आसानी करना चाहता है और तुम्हारे साथ सख्ती करनी नहीं चाहता और <span class="del">(युमार</span> <span class="ins">(शुमार</span> का हुक्म इस लिए दिया है) ताकि तुम (रोज़ो की) गिनती पूरी करो और ताकि ख़ुदा ने जो तुम को राह पर लगा दिया है उस नेअमत पर उस की बड़ाई करो और ताकि तुम शुक्र गुज़ार बनो</div>
+
+<div class="info"> -596 +596 </div>
+<div class="text ltr">फिर जब तुम नमाज़ अदा कर चुको तो उठते बैठते लेटते (ग़रज़ हर हाल में) ख़ुदा को याद करो फिर जब तुम (दुश्मनों से) मुतमईन हो जाओ तो (अपने मअमूल) के मुताबिक़ नमाज़ पढ़ा करो क्योंकि नमाज़ तो ईमानदारों पर वक्त <span class="del">मुय्यन</span> <span class="ins">मुतय्यन</span> करके फ़र्ज़ की गयी है</div>
+
+<div class="info"> -692 +692 </div>
+<div class="text ltr">(मगर) वह आदमी <span class="del">(यूशा</span> <span class="ins">(मूशा</span> कालिब) जो ख़ुदा का ख़ौफ़ रखते थे और जिनपर ख़ुदा ने ख़ास अपना फ़ज़ल (करम) किया था बेधड़क बोल उठे कि (अरे) उनपर हमला करके (बैतुल मुक़दस के फाटक में तो घुस पड़ो फिर देखो तो यह ऐसे बोदे हैं कि) इधर तुम फाटक में घुसे और (ये सब भाग खड़े हुए और) तुम्हारी जीत हो गयी और अगर सच्चे ईमानदार हो तो ख़ुदा ही पर भरोसा रखो</div>
+
+<div class="info"> -790 +790 </div>
+<div class="text ltr">सब तारीफ ख़ुदा ही को (सज़ावार) है जिसने <span class="del">वहुतेरे</span> <span class="ins">बहुतेरे</span> आसमान और ज़मीन को पैदा किया और उसमें मुख्तलिफ क़िस्मों की तारीकी रोशनी बनाई फिर (बावजूद उसके) कुफ्फार (औरों को) अपने परवरदिगार के बराबर करते हैं</div>
+
+<div class="info"> -798 +798 </div>
+<div class="text ltr">और अगर हम फरिश्ते को नबी बनाते तो (आख़िर) उसको भी मर्द सूरत बनाते और जो <span class="del">युबहे</span> <span class="ins">शुबहे</span> ये लोग कर रहे हैं वही <span class="del">युबहे</span> <span class="ins">शुबहे</span> (गोया) हम ख़ुद उन पर (उस वक्त भी) उठा देते</div>
+
+<div class="info"> -841 +841 </div>
+<div class="text ltr">और (ऐ रसूल) जो लोग सुबह व शाम अपने परवरदिगार से उसकी ख़ुशनूदी की तमन्ना में दुऑए मॉगा करते हैं- उनको अपने पास से न धुत्कारो-न उनके (हिसाब किताब की) जवाब देही कुछ उनके ज़िम्मे है ताकि तुम उन्हें (इस ख्याल से) धुत्कार बताओ तो तुम ज़ालिम (के <span class="del">युमार)</span> <span class="ins">शुमार)</span> में हो जाओगे</div>
+
+<div class="info"> -911 +911 </div>	</div>
+	
+	<div class="more" style="display: block;">
+		<a href="http://tanzil.net/trans/log/hi.hindi/2">See more...</a>
+	</div>
+	
+	</div>
+
+</div>
+
+<div class="footer">
+	<div class="content">
+		<div style="margin: 0 -20px">
+			<a href="http://tanzil.net/">Tanzil</a> &copy 2014 
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

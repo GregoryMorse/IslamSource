@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="description" content="Changelog for Quran translations in Tanzil translations repository. This changelog is for Japanese." /> 
+	<meta name="keywords" content="Quran, Tanzil, Translation, Authentic, Qur'an, Al-Qur'an, Kuran, Koran, قرآن, تنزیل، تنزيل, قرءان مجيد, قرآن كريم, ترجمه "/>
+	<title>Translation Changelog - Japanese - Tanzil</title>
+	<link href="/pub/common/css/page.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+	
+<div class="header">
+	<div class="content">
+		<a href="http://tanzil.net/" title="Tanzil.net" class="item logo">TANZIL</a>
+		<div class="sep">&bull;</div>
+		<a href="http://tanzil.net/wiki/" class="item">Documents</a>
+		<a href="http://tanzil.net/download/" class="item">Quran Text</a>
+		<a href="http://tanzil.net/trans/" class="item">Translations</a>
+		<div class="clear"></div>
+	</div>
+</div>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<style>
+	.result { color:#444; }
+	.del { background-color: #faa; color: #333; }
+	.ins { background-color: #afa; color: #333; }
+	.date { color: green; margin-top: 15px;}
+	.info { color: #f66; }
+	.more { padding-top: 8px;}
+	.subtitle { font-size: 50%; color: gray; }
+	.text { padding: 2px 7px; background-color: #f6f6f6; margin: 4px 0;}
+	.text.ltr { border-left: 2px solid #ddd; direction: ltr; }
+	.text.rtl { border-right: 2px solid #ddd; direction: rtl; }
+</style>
+
+<div class="body">
+	<div class="content">
+	
+	<h1>
+		Japanese		<!--span class="subtitle">(Change Log)<span-->
+	</h1>
+
+	<hr>
+	<h3>Change Log</h3>
+	
+	<!--p><b>Change Log</b><br/> Last Update: June 4, 2010</p>
+	<hr-->
+	
+	<div class="result">
+		<div class="date"> First version <br/> Fri, 4 Jun 2010 19:54:20 -0400 </div>
+<div class="info"> -0,0 +1,6236 </div>
+<div class="text ltr"><span class="ins">慈悲あまねく慈愛深きアッラーの御名において。</span></div>
+
+<div class="text ltr"><span class="ins">万有の主，アッラーにこそ凡ての称讃あれ，</span></div>
+
+<div class="text ltr"><span class="ins">慈悲あまねく慈愛深き御方，</span></div>
+
+<div class="text ltr"><span class="ins">最後の審きの日の主宰者に。</span></div>
+
+<div class="text ltr"><span class="ins">わたしたちはあなたにのみ崇め仕え，あなたにのみ御助けを請い願う。</span></div>
+
+<div class="text ltr"><span class="ins">わたしたちを正しい道に導きたまえ，</span></div>
+
+<div class="text ltr"><span class="ins">あなたが御恵みを下された人々の道に，あなたの怒りを受けし者，また踏み迷える人々の道ではなく。</span></div>
+
+<div class="text ltr"><span class="ins">アリフ・ラーム・ミーム。</span></div>
+
+<div class="text ltr"><span class="ins">それこそは，疑いの余地のない啓典である。その中には，主を畏れる者たちへの導きがある。</span></div>
+
+<div class="text ltr"><span class="ins">主を畏れる者たちとは，幽玄界を信じ，礼拝の務めを守り，またわれが授けたものを施す者，</span></div>
+
+<div class="text ltr"><span class="ins">またわれがあなた（ムハンマド）に啓示したもの，またあなた以前（の預言者たち）に啓示したものを信じ，また来世を堅く信じる者たちである。</span></div>
+
+<div class="text ltr"><span class="ins">これらの者は，主から導かれた者であり，また至上の幸福を成就する者である。</span></div>
+
+<div class="text ltr"><span class="ins">本当に信仰を拒否する者は，あなたが警告しても，また警告しなくても同じで，（頑固に）信じようとはしないであろう。</span></div>
+
+<div class="text ltr"><span class="ins">アッラーは，かれらの心も耳をも封じられる。また目には覆いをされ，重い懲罰を科せられよう。</span></div>
+
+<div class="text ltr"><span class="ins">また人びとの中，「わたしたちはアッラーを信じ，最後の（審判の）日を信じる。」と言う者がある。だがかれらは信者ではない。</span></div>
+
+<div class="text ltr"><span class="ins">かれらはアッラーと信仰する者たちを，欺こうとしている。（実際は）自分を欺いているのに過ぎないのだが，かれらは（それに）気付かない。</span></div>
+
+<div class="text ltr"><span class="ins">かれらの心には病が宿っている。アッラーは，その病を重くする。この偽りのために，かれらには手痛い懲罰が下されよう。</span></div>
+
+<div class="text ltr"><span class="ins">「あなたがたは，地上を退廃させてはならない。」と言われると，かれらは，「わたしたちは矯正するだけのものである。」と言う。</span></div>
+
+<div class="text ltr"><span class="ins">いゃ，本当にかれらこそ，退廃を引き起こす者である。だがかれらは（それに）気付かない。</span></div>
+
+<div class="text ltr"><span class="ins">「人びとが信仰するよう，信仰しなさい。」と言われると，かれらは，「わたしたちは愚か者が信仰するように，信じられようか。」と言う。いや，本当にかれらこそ愚か者である。だがかれらは，（それが）分らない。</span></div>
+
+<div class="text ltr"><span class="ins">かれらは信仰する者に会えば，「わたしたちは信仰する。」と言う。だがかれらが仲間の悪魔〔シャイターン〕たちだけになると，「本当はあなたがたと一緒なのだ。わたしたちは，只（信者たちを）愚弄していただけだ。」と言う。</span></div>
+
+<div class="text ltr"><span class="ins">だがアッラーは，このような連中を愚弄し，不信心のままに放置し，当てもなくさ迷わせられる。</span></div>
+
+<div class="text ltr"><span class="ins">これらの者は導きの代わりに，迷いを購った者で，かれらの取引は利益なく，また決して正しく導かれるい。</span></div>
+
+<div class="text ltr"><span class="ins">かれらを譬えれば火を灯す者のようで，折角火が辺りを照らしたのに，アッラーはかれらの光を取り上げられ，暗闇の中に取り残されたので，何二つ見ることが出来ない。</span></div>
+
+<div class="text ltr"><span class="ins">聾唖で盲人なので，かれらは引き返すことも出来ないであろう。</span></div>
+
+<div class="text ltr"><span class="ins">また（譬えば）暗闇の中で雷鳴と稲妻を伴なう豪雨が天から降ってきたようなもので，落雷の忍さから死を忍れて，（威らに）耳に指を差し込む。だがアッラーは，不信心者たちを全部取り囲まれる。</span></div>
+
+<div class="text ltr"><span class="ins">稲妻はほとんどかれらの視覚を奪わんばかりである。閃く度にその中で歩みを進めるが，暗闇になれば立ち止まる。もしもアッラーが御望みならば，かれらの聴覚も視覚も必ず取り上げられる。本当にアッラーは，凡てのことに全能であられる。</span></div>
+
+<div class="text ltr"><span class="ins">人びとよ。あなたがた，またあなたがた以前の者を創られた主に仕えなさい。恐らくあなたがたは（悪魔に対し）その身を守るであろう。</span></div>
+
+<div class="text ltr"><span class="ins">（かれは）あなたがたのために大地を臥所とし，また大空を天蓋とされ，天から雨を降らせ，あなたがたのために糧として種々の果実を実らせられる方である。だからあなたがたは（真理を）知った上は，（唯一なる）アッラーの外に同じような神があるなどと唱えてはならない。</span></div>
+
+<div class="text ltr"><span class="ins">もしあなたがたが，わがしもべ（ムハンマド）に下した啓示を疑うならば，それに類する1章〔スーラ〕でも作ってみなさい。もしあなたがたが正しければ，アッラー以外のあなたがたの証人を呼んでみなさい。</span></div>
+
+<div class="text ltr"><span class="ins">もしあなたがたが出来ないならば，いや，出来るはずもないのだが，それならば，人間と石を燃料とする地獄の業火を恐れなさい。それは不信心者のために用意されている。</span></div>
+
+<div class="text ltr"><span class="ins">信仰して善行に勤しむ者たちには，かれらのために，川が下を流れる楽園に就いての吉報を伝えなさい。かれらはそこで，糧の果実を与えられる度に，「これはわたしたちが以前に与えられた物だ。」と言う。かれらには，それ程似たものが授けられる。また純潔な配偶者を授けられ，永遠にその中に住むのである。</span></div>
+
+<div class="text ltr"><span class="ins">本当にアッラーは，蚊または更に小さいものをも，比喩に挙げることを厭われない。信仰する者はそれが主から下された真理であることを知る。だが不信心者は，「アッラーは，この比喩で一体何を御望みだろう。」と言う。かれは，このように多くの者を迷うに任せ，また多くの者を（正しい道に）導かれる。かれは，主の掟に背く者の外は，（誰も）迷わさない。</span></div>
+
+<div class="text ltr"><span class="ins">確約して置きながらアッラーとの約束を破る者，アッラーが結ぺと命じられたものから離れ，地上で悪を行う者， これらの者は（等しく）失敗者である。</span></div>
+
+<div class="text ltr"><span class="ins">あなたがたはどうしてアッラーを拒否出来ようか。かれこそは生命のないあなたがたに，生命を授けられた御方。それからあなたがたを死なせ，更に匙らせ，更にまたかれの御許に帰らせられる御方。</span></div>
+
+<div class="text ltr"><span class="ins">かれこそは，あなたがたのために，地上の凡てのものを創られた方であり，更に天の創造に向かい， 7つの天を完成された御方。またかれは凡てのことを熟知される。</span></div>
+
+<div class="text ltr"><span class="ins">またあなたの主が（先に）天使たちに向かって，「本当にわれは，地上に代理者を置くであろう。」と仰せられた時を思い起せ。かれらは申し上げた。「あなたは地上で悪を行い，血を流す者を置かれるのですか。わたしたちは，あなたを讃えて唱念し，またあなたの神聖を譲美していますのに。」かれは仰せられた。「本当にわれはあなたがたが知らないことを知っている。」</span></div>
+
+<div class="text ltr"><span class="ins">かれはアーダムに凡てのものの名を教え，次にそれらを天使たちに示され，「もし，あなたがた（の言葉）が真実なら，これらのものの名をわれに言ってみなさい。」と仰せられた。</span></div>
+
+<div class="text ltr"><span class="ins">かれらは（答えて）申し上げた。「あなたの栄光を讃えます。あなたが，わたしたちに教えられたものの外には，何も知らないのです。本当にあなたは，全知にして英明であられます。」</span></div>
+
+<div class="text ltr"><span class="ins">かれは仰せられた。「アーダムよ，それらの名をかれら（天使）に告げよ。」そこでアーダムがそれらの名をかれらに告げると，かれは，「われは天と地の奥義を知っているとあなたがたに告げたではないか。あなたがたが現わすことも，隠すことも知っている。」と仰せられた。</span></div>
+
+<div class="text ltr"><span class="ins">またわれが天使たちに，「あなたがた，アーダムにサジダしなさい。」と言った時を思い起せ。その時，皆サジダしたが，悪魔〔イブリース〕だけは承知せず，これを拒否したので，高慢で不信の徒となった。</span></div>
+
+<div class="text ltr"><span class="ins">われは言った。「アーダムよ，あなたとあなたの妻とはこの園に住み，何処でも望む所で，思う存分食べなさい。だが，この木に近付いてはならない。不義を働く者となるであろうから。」</span></div>
+	</div>
+	
+	<div class="more" style="display: block;">
+		<a href="http://tanzil.net/trans/log/ja.japanese/2">See more...</a>
+	</div>
+	
+	</div>
+
+</div>
+
+<div class="footer">
+	<div class="content">
+		<div style="margin: 0 -20px">
+			<a href="http://tanzil.net/">Tanzil</a> &copy 2014 
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

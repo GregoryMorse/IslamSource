@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="description" content="Changelog for Quran translations in Tanzil translations repository. This changelog is for Divehi." /> 
+	<meta name="keywords" content="Quran, Tanzil, Translation, Authentic, Qur'an, Al-Qur'an, Kuran, Koran, قرآن, تنزیل، تنزيل, قرءان مجيد, قرآن كريم, ترجمه "/>
+	<title>Translation Changelog - Divehi - Tanzil</title>
+	<link href="/pub/common/css/page.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+	
+<div class="header">
+	<div class="content">
+		<a href="http://tanzil.net/" title="Tanzil.net" class="item logo">TANZIL</a>
+		<div class="sep">&bull;</div>
+		<a href="http://tanzil.net/wiki/" class="item">Documents</a>
+		<a href="http://tanzil.net/download/" class="item">Quran Text</a>
+		<a href="http://tanzil.net/trans/" class="item">Translations</a>
+		<div class="clear"></div>
+	</div>
+</div>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<style>
+	.result { color:#444; }
+	.del { background-color: #faa; color: #333; }
+	.ins { background-color: #afa; color: #333; }
+	.date { color: green; margin-top: 15px;}
+	.info { color: #f66; }
+	.more { padding-top: 8px;}
+	.subtitle { font-size: 50%; color: gray; }
+	.text { padding: 2px 7px; background-color: #f6f6f6; margin: 4px 0;}
+	.text.ltr { border-left: 2px solid #ddd; direction: ltr; }
+	.text.rtl { border-right: 2px solid #ddd; direction: rtl; }
+</style>
+
+<div class="body">
+	<div class="content">
+	
+	<h1>
+		Divehi		<!--span class="subtitle">(Change Log)<span-->
+	</h1>
+
+	<hr>
+	<h3>Change Log</h3>
+	
+	<!--p><b>Change Log</b><br/> Last Update: February 7, 2011</p>
+	<hr-->
+	
+	<div class="result">
+		<div class="date"> Minor fixes <br/> Wed, 2 Mar 2011 16:21:37 -0500 </div>
+<div class="info"> -5760,0 +5761 </div>
+<div class="text rtl"><span class="ins">އަދި އޭނާ ކުށްތަކުން ސާފުވެ، طاهر ވެދާނެކަން، ނުވަތަ އޭނާ ހަނދުމަކޮށް، ދެން އެ ހަނދުމަކުޅައުން އޭނާޔަށް މަންފާކޮށްފާނެކަން ކަލޭގެފާނަށް އަންގައިދެނީ ކޮންއެއްޗެއްތޯއެވެ؟</span></div>
+
+<div class="info"> -5762 +5762,0 </div>
+<div class="text rtl"><span class="del">އަދި އޭނާ ކުށްތަކުން ސާފުވެ، طاهر ވެދާނެކަން، ނުވަތަ އޭނާ ހަނދުމަކޮށް، ދެން އެ ހަނދުމަކުޅައުން އޭނާޔަށް މަންފާކޮށްފާނެކަން ކަލޭގެފާނަށް އަންގައިދެނީ ކޮންއެއްޗެއްތޯއެވެ؟ 	</span> </div>
+
+
+<div class="date"> Replace - by = in dv.divehi <br/> Mon, 4 Oct 2010 22:34:46 -0400 </div>
+<div class="info"> -643 +643 </div>
+<div class="text rtl"><span class="del">-</span> <span class="ins">=</span></div>
+
+<div class="info"> -1371 +1371 </div>
+<div class="text rtl"><span class="del">-</span> <span class="ins">=</span></div>
+
+<div class="info"> -1460 +1460 </div>
+<div class="text rtl"><span class="del">-</span> <span class="ins">=</span></div>
+
+<div class="info"> -1816 +1816 </div>
+<div class="text rtl"><span class="del">-</span> <span class="ins">=</span></div>
+
+<div class="info"> -1863 +1863 </div>
+<div class="text rtl"><span class="del">-</span> <span class="ins">=</span></div>
+
+<div class="info"> -2179 +2179 </div>
+<div class="text rtl"><span class="del">-</span> <span class="ins">=</span></div>
+
+<div class="info"> -2440 +2440 </div>
+<div class="text rtl"><span class="del">-</span> <span class="ins">=</span></div>
+
+<div class="info"> -2728 +2728 </div>
+<div class="text rtl"><span class="del">-</span> <span class="ins">=</span></div>
+
+<div class="info"> -2766 +2766 </div>
+<div class="text rtl"><span class="del">-</span> <span class="ins">=</span></div>
+
+<div class="info"> -2989 +2989 </div>
+<div class="text rtl"><span class="del">-</span> <span class="ins">=</span></div>
+
+<div class="info"> -3007 +3007 </div>
+<div class="text rtl"><span class="del">-</span> <span class="ins">=</span></div>
+
+<div class="info"> -3024 +3024 </div>
+<div class="text rtl"><span class="del">-</span> <span class="ins">=</span></div>
+
+<div class="info"> -3026 +3026 </div>
+<div class="text rtl"><span class="del">-</span> <span class="ins">=</span></div>
+
+<div class="info"> -3065 +3065 </div>
+<div class="text rtl"><span class="del">-</span> <span class="ins">=</span></div>
+
+<div class="info"> -3125 +3125 </div>
+<div class="text rtl"><span class="del">-</span> <span class="ins">=</span></div>
+
+<div class="info"> -3130 +3130 </div>
+<div class="text rtl"><span class="del">-</span> <span class="ins">=</span></div>
+
+<div class="info"> -3137,2 +3137,2 </div>	</div>
+	
+	<div class="more" style="display: block;">
+		<a href="http://tanzil.net/trans/log/dv.divehi/2">See more...</a>
+	</div>
+	
+	</div>
+
+</div>
+
+<div class="footer">
+	<div class="content">
+		<div style="margin: 0 -20px">
+			<a href="http://tanzil.net/">Tanzil</a> &copy 2014 
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

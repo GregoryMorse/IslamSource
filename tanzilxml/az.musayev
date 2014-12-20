@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="description" content="Changelog for Quran translations in Tanzil translations repository. This changelog is for Alikhan Musayev." /> 
+	<meta name="keywords" content="Quran, Tanzil, Translation, Authentic, Qur'an, Al-Qur'an, Kuran, Koran, قرآن, تنزیل، تنزيل, قرءان مجيد, قرآن كريم, ترجمه "/>
+	<title>Translation Changelog - Alikhan Musayev - Tanzil</title>
+	<link href="/pub/common/css/page.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+	
+<div class="header">
+	<div class="content">
+		<a href="http://tanzil.net/" title="Tanzil.net" class="item logo">TANZIL</a>
+		<div class="sep">&bull;</div>
+		<a href="http://tanzil.net/wiki/" class="item">Documents</a>
+		<a href="http://tanzil.net/download/" class="item">Quran Text</a>
+		<a href="http://tanzil.net/trans/" class="item">Translations</a>
+		<div class="clear"></div>
+	</div>
+</div>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<style>
+	.result { color:#444; }
+	.del { background-color: #faa; color: #333; }
+	.ins { background-color: #afa; color: #333; }
+	.date { color: green; margin-top: 15px;}
+	.info { color: #f66; }
+	.more { padding-top: 8px;}
+	.subtitle { font-size: 50%; color: gray; }
+	.text { padding: 2px 7px; background-color: #f6f6f6; margin: 4px 0;}
+	.text.ltr { border-left: 2px solid #ddd; direction: ltr; }
+	.text.rtl { border-right: 2px solid #ddd; direction: rtl; }
+</style>
+
+<div class="body">
+	<div class="content">
+	
+	<h1>
+		Alikhan Musayev		<!--span class="subtitle">(Change Log)<span-->
+	</h1>
+
+	<hr>
+	<h3>Change Log</h3>
+	
+	<!--p><b>Change Log</b><br/> Last Update: August 16, 2010</p>
+	<hr-->
+	
+	<div class="result">
+		<div class="date"> Several fixes <br/> Tue, 14 Sep 2010 00:38:47 -0400 </div>
+<div class="info"> -1 +1 </div>
+<div class="text ltr"><span class="del">﻿Mərhəmətli</span> <span class="ins">Mərhəmətli</span> və Rəhmli Allahın adı ilə!</div>
+
+
+<div class="date"> Duplicate lines removed <br/> Fri, 4 Jun 2010 20:00:03 -0400 </div>
+<div class="info"> -4522 +4522 </div>
+<div class="text ltr">Ondan əvvəl Musanın rəhbər və mərhəmət olan Kitabı var idi. Bu isə zalımları qorxutmaq və yaxşı iş görənlərə müjdə vermək üçün ərəb dilində nazil edilmiş, əvvəlkiləri təsdiq edən bir Kitabdır.</div>
+
+
+<div class="date"> Major spacing and punctuation fixes <br/> Fri, 4 Jun 2010 19:56:23 -0400 </div>
+<div class="info"> -4522 +4522 </div>
+<div class="text ltr">Ondan əvvəl Musanın rəhbər və mərhəmət olan Kitabı var idi. Bu isə zalımları qorxutmaq və yaxşı iş görənlərə müjdə vermək üçün ərəb dilində nazil edilmiş, əvvəlkiləri təsdiq edən bir Kitabdır.</div>
+
+
+<div class="date"> First version <br/> Fri, 4 Jun 2010 19:54:20 -0400 </div>
+<div class="info"> -0,0 +1,6236 </div>
+<div class="text ltr"><span class="ins">﻿Mərhəmətli və Rəhmli Allahın adı ilə!</span></div>
+
+<div class="text ltr"><span class="ins">Həmd olsun aləmlərin Rəbbi Allaha,</span></div>
+
+<div class="text ltr"><span class="ins">Mərhəmətli və Rəhmliyə,</span></div>
+
+<div class="text ltr"><span class="ins">Haqq-hesab gününün Hökmdarına!</span></div>
+
+<div class="text ltr"><span class="ins">Biz yalnız Sənə ibadət edir və yalnız Səndən kömək diləyirik.</span></div>
+
+<div class="text ltr"><span class="ins">Bizi doğru yola yönəlt –</span></div>
+
+<div class="text ltr"><span class="ins">nemət bəxş etdiyin şəxslərin yoluna, qəzəbə uğramışların və azmışların yoluna yox!</span></div>
+
+<div class="text ltr"><span class="ins">Əlif. Ləm. Mim.</span></div>
+
+<div class="text ltr"><span class="ins">Bu, qətiyyən şübhə doğurmayan, müttəqilərə doğru yol göstərən bir Kitabdır.</span></div>
+
+<div class="text ltr"><span class="ins">O kəslər ki, qeybə iman gətirir, namaz qılır və Bizim onlara verdiyimiz ruzidən Allah yolunda xərcləyirlər;</span></div>
+
+<div class="text ltr"><span class="ins">O kəslər ki, sənə nazil olana və səndən əvvəl nazil olanlara iman gətirir, axirətə də yəqinliklə inanırlar.</span></div>
+
+<div class="text ltr"><span class="ins">Onlar öz Rəbbindən gələn doğru yoldadırlar. Məhz onlar nicat tapanlardır.</span></div>
+
+<div class="text ltr"><span class="ins">Həqiqətən, kafirləri qorxutsan da, qorxutmasan da, onlar üçün fərqi yoxdur, iman gətirməzlər.</span></div>
+
+<div class="text ltr"><span class="ins">Allah onların qəlblərini və qulaqlarını möhürləmiş, gözlərinə də pərdə çəkmişdir. Onlar üçün böyük bir əzab vardır.</span></div>
+
+<div class="text ltr"><span class="ins">İnsanlar arasında elələri də vardır ki, mömin olmadıqları halda: “Allaha və Axirət gününə inanırıq”– deyirlər.</span></div>
+	</div>
+	
+	<div class="more" style="display: block;">
+		<a href="http://tanzil.net/trans/log/az.musayev/2">See more...</a>
+	</div>
+	
+	</div>
+
+</div>
+
+<div class="footer">
+	<div class="content">
+		<div style="margin: 0 -20px">
+			<a href="http://tanzil.net/">Tanzil</a> &copy 2014 
+		</div>
+	</div>
+</div>
+
+</body>
+</html>
