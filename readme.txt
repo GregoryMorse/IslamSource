@@ -16,11 +16,10 @@ Islam Source Quranic Verse and Islamic Phrase Plugin - Allows for Quranic chapte
 
 == Installation ==
 
-1. Extract `http://www.islamsource.info/IslamSource.zip` to the `/wp-content/plugins/` directory
-1. Activate the plugin through the 'Plugins' menu in WordPress
-Difficulties due to the large size of the plugin for the metadata, translation and Quran resources may require adjusting the web server at least temporarily to upload the plugin:
-PHP in php.ini: post_max_size = 128M and upload_max_filesize = 128M
-IIS in applicationhost.config or web.config: configuration -> system.webServer -> security -> requestFiltering -> add or change <requestLimits maxAllowedContentLength="134217728" />
+1. Automated installation through the plugin menu, at which point the icon will appear in the Visual editor and any matching tags will be shown.
+2. Manual installation: Difficulties due to the large size of the plugin for the metadata, translation and Quran resources may require adjusting the web server at least temporarily to upload the plugin: PHP in php.ini: post_max_size = 128M and upload_max_filesize = 128M, IIS in applicationhost.config or web.config: configuration -> system.webServer -> security -> requestFiltering -> add or change <requestLimits maxAllowedContentLength="134217728" />
+3. Extract `http://www.islamsource.info/IslamSource.zip` to the `/wp-content/plugins/` directory.
+4. Activate the plugin through the 'Plugins' menu in WordPress.
 
 == Frequently Asked Questions ==
 

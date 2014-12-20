@@ -285,6 +285,7 @@ Public Class Utility
         Return Str.Replace("\", "\\")
     End Function
     Public Shared Function EncodeJS(Str As String) As String
+        If Str Is Nothing Then Return Str
         Return String.Join(String.Empty, Array.ConvertAll(Str.ToCharArray(), Function(Ch As Char) If(AscW(Ch) < &H100, CStr(Ch), "\u" + AscW(Ch).ToString("X4")))).Replace("'", "\'")
     End Function
     Public Shared Function MakeJSString(Str As String) As String
@@ -1982,6 +1983,7 @@ Public Class RenderArray
         eContinueStop
         eRanking
         eList
+        eTag
     End Enum
     Structure RenderText
         Public DisplayClass As RenderDisplayClass
