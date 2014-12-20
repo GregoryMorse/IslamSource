@@ -44,7 +44,9 @@ class Utility
         }
         return $count;
     }
-}
+    public static $FontList = ["AGAIslamicPhrases", "AGAArabesque", "Shia", "IslamicLogo", "KFGQPCArabicSymbols01", "Quranic", "Tulth", "Farsi", "Asmaul-Husna", "Asmaul-Husna_2"];
+    public static $FontFile = ["AGA_Islamic_Phrases.TTF", "aga-arabesque.ttf", "SHIA.TTF", "islamic.ttf", "Symbols1_Ver02.otf", "Quranic.ttf", "Tulth.ttf", "Farsi.ttf", "Asmaul-Husna_1.ttf", "Asmaul-Husna_2.ttf"];
+};
 
 abstract class TranslitScheme
 {
@@ -841,7 +843,7 @@ class CachedData
                 if ($matches[1] == "TehMarbutaStopRule") { return CachedData::TehMarbutaStopRule(); }
                 if ($matches[1] == "TehMarbutaContinueRule") { return CachedData::TehMarbutaContinueRule(); }
 
-                if ($matches[1] == "ArabicUniqueLetters") { return ArabicData::MakeRegMultiEx(array_map(function($str) { return str_replace(ArabicData.ArabicMaddahAbove, "", Arabic::TransliterateFromBuckwalter($str)); }, CachedData::ArabicUniqueLetters())); }
+                if ($matches[1] == "ArabicUniqueLetters") { return ArabicData::MakeRegMultiEx(array_map(function($str) { return str_replace(ArabicData::ArabicMaddahAbove, "", Arabic::TransliterateFromBuckwalter($str)); }, CachedData::ArabicUniqueLetters())); }
                 if ($matches[1] == "ArabicNumbers") { return ArabicData::MakeRegMultiEx(array_map(function($str) { return Arabic::TransliterateFromBuckwalter($str); }, CachedData::ArabicNumbers)); }
                 if ($matches[1] == "ArabicWaslKasraExceptions") { return ArabicData::MakeRegMultiEx(array_map(function($str) { return Arabic::TransliterateFromBuckwalter($str); }, CachedData::ArabicWaslKasraExceptions)); }
                 //if ($matches[1] == "SimpleSuperscriptAlefBefore") { return ArabicData::MakeRegMultiEx(array_map(function($str) { return Arabic::TransliterateFromBuckwalter(str_replace([".", """", "@", "[", "]", "-", "^"], "", $str)); }, CachedData::Arabic::SimpleSuperscriptAlefBefore)); }
@@ -950,9 +952,9 @@ class CachedData
         return CachedData::$_ErrorCheck;
     }
 	public static $_XMLDocInfo = null;
-	public static function XMLDocInfo() { if ($_XMLDocInfo === null) $_XMLDocInfo = simplexml_load_file(dirname(__FILE__) . "/metadata/quran-data.xml"); return $_XMLDocInfo; }
+	public static function XMLDocInfo() { if (CachedData::$_XMLDocInfo === null) CachedData::$_XMLDocInfo = simplexml_load_file(dirname(__FILE__) . "/metadata/quran-data.xml"); return CachedData::$_XMLDocInfo; }
 	public static $_XMLDocMain = null;
-	public static function XMLDocMain() { if ($_XMLDocMain === null) $_XMLDocMain = simplexml_load_file(dirname(__FILE__) . "/metadata/" . TanzilReader::$QuranTextNames[0] . ".xml"); return $_XMLDocMain; }
+	public static function XMLDocMain() { if (CachedData::$_XMLDocMain === null) CachedData::$_XMLDocMain = simplexml_load_file(dirname(__FILE__) . "/metadata/" . TanzilReader::$QuranTextNames[0] . ".xml"); return CachedData::$_XMLDocMain; }
 };
 
 abstract class RenderTypes {
@@ -976,7 +978,7 @@ class RenderText
 {
 	public $displayClass;
 	public $clr;
-	public $text;
+	public $Text;
 	public $font;
 	function __construct($_displayClass, $_text)
 	{
@@ -1004,15 +1006,17 @@ class RenderArray
 		$text = "";
 		for ($count = 0; $count < count($items); $count++) {
 			$text .= "<div style=\"direction: rtl\">";
-			for ($index = 0; $index < count($items[$count]->$textitems); $index++) {
-				if ($items[$count]->$textitems[$index]->$displayClass == RenderDisplayClass::eArabic) {
+			for ($index = 0; $index < count($items[$count]->textitems); $index++) {
+				if (array_search(Utility::FontList, $items[$count]->textitems[$index]->font) !== false) {
+					$text .= "<img src=\"" . plugins_url() . "" . "/IslamSource/IslamSourceWP.php?Size=100&Char=" . bin2hex($items[$count]->textitems[$index]->Text[0]) . "&Font=" . $items[$count]->textitems[$index]->font . "\">";
+				} elseif ($items[$count]->textitems[$index]->displayClass == RenderDisplayClass::eArabic) {
 					$text .= "<span dir=\"rtl\" style=\"font-size: 40px;\">";
-				} elseif ($items[$count]->$textitems[$index]->$displayClass == RenderDisplayClass::eTransliteration) {
+				} elseif ($items[$count]->textitems[$index]->displayClass == RenderDisplayClass::eTransliteration) {
 					$text .= "<span dir=\"\" style=\"font-size: 40px;\">";
 				} else {
 					$text .= "<span dir=\"\" style=\"font-size: 40px;\">";
 				}
-				$text .= $items[$count]->$textitems[$index]->$text . "</span>";
+				if (array_search(Utility::FontList, $items[$count]->textitems[$index]->font) === false) $text .= $items[$count]->textitems[$index]->Text . "</span>";
 			}
 			$text .= "</div>";
 		}
@@ -1417,7 +1421,7 @@ class Languages
     public static function GetLanguageInfoByCode($code)
     {
         for ($count = 0; $count < count(CachedData::IslamData()->languages); $count++) {
-            if (CachedData::IslamData()->languages->children()[$count]->Attributes["code"] == $code) { return CachedData::IslamData()->languages->children[$count]; }
+            if (CachedData::IslamData()->languages->children()[$count]->attributes()["code"] == $code) { return CachedData::IslamData()->languages->children()[$count]; }
         }
         return null;
     }
@@ -1425,15 +1429,17 @@ class Languages
 class TanzilReader
 {
 	public static function IsQuranTextReference($str) { return preg_match("/^(?:,?(\d+)(?:\:(\d+))?(?:\:(\d+))?(?:-(\d+)(?:\:(\d+))?(?:\:(\d+))?)?)+$/s", $str); }
-	public static function QuranTextFromReference($str)
+	public static function QuranTextFromReference($str, $schemetype, $scheme, $translationindex)
 	{
-		return preg_replace_callback('/(?:,?(\d+)(?:\:(\d+))?(?:\:(\d+))?(?:-(\d+)(?:\:(\d+))?(?:\:(\d+))?)?)/s', function ($matches) {
-			$basechapter = $matches[1];
-			$baseverse = $matches[2];
-			$wordnumber = $matches[3];
-			$endchapter = $matches[4];
-			$extraversenumber = $matches[5];
-			$endwordnumber = $matches[6];
+		$renderer = new RenderArray("");
+		preg_match_all('/(?:,?(\d+)(?:\:(\d+))?(?:\:(\d+))?(?:-(\d+)(?:\:(\d+))?(?:\:(\d+))?)?)/s', $str, $matches, PREG_SET_ORDER);
+		for ($count = 0; $count < count($matches); $count++) {
+			$basechapter = $matches[$count][1];
+			$baseverse = array_key_exists(2, $matches[$count]) ? $matches[$count][2] : 0;
+			$wordnumber = array_key_exists(3, $matches[$count]) ? $matches[$count][3] : 0;
+			$endchapter = array_key_exists(4, $matches[$count]) ? $matches[$count][4] : 0;
+			$extraversenumber = array_key_exists(5, $matches[$count]) ? $matches[$count][5] : 0;
+			$endwordnumber = array_key_exists(6, $matches[$count]) ? $matches[$count][6] : 0;
 			if ($baseverse != 0 && $wordnumber == 0 && $endchapter != 0 && $extraversenumber == 0 && $endwordnumber == 0) {
 	            $extraversenumber = $endchapter;
 	            $endchapter = 0;
@@ -1450,8 +1456,11 @@ class TanzilReader
 	            $extraversenumber = count(TanzilReader::GetTextChapter(CachedData::XMLDocMain(), BaseChapter)->children());
 	        }
 	        if ($wordnumber == 0) $wordnumber += 1;
-	        return TanzilReader::DoGetRenderedQuranText(TanzilReader::QuranTextRangeLookup($basechapter, $baseverse, $wordnumber, $endchapter, $extraversenumber, $endwordnumber), $basechapter, $baseverse, null, null, null, null);
-		}, $str);
+	        array_push($renderer->Items, TanzilReader::DoGetRenderedQuranText(TanzilReader::QuranTextRangeLookup($basechapter, $baseverse, $wordnumber, $endchapter, $extraversenumber, $endwordnumber), $basechapter, $baseverse, CachedData::IslamData()->translations->children()[$translationindex]->attributes()["name"], $schemetype, $scheme, $translationindex)->Items);
+            $reference = (string)($basechapter) . ($baseverse != 0 ? ":" . (string)($baseverse) : "") . ($endchapter != 0 ? "-" . (string)($endchapter) . ($extraversenumber != 0 ? ":" . (string)($extraversenumber) : "") : ($extraversenumber != 0 ? "-" . (string)($extraversenumber) : ""));
+            array_push($renderer->Items, new RenderItem(RenderTypes::eHeaderCenter, [new RenderText(RenderDisplayClass::eLTR, "(Qur'an " . $reference . ")")]));
+	    }
+		return $renderer;
 	}
 	public static function QuranTextRangeLookup($basechapter, $baseverse, $wordnumber, $endchapter, $extraversenumber, $endwordnumber)
 	{
@@ -1462,8 +1471,25 @@ class TanzilReader
 			array_push($qurantext, TanzilReader::GetQuranTextRange(CachedData::XMLDocMain(), $basechapter, $baseverse, $endchapter, $extraversenumber));
 		}
 		if ($wordnumber > 1) {
+            $verseIndex = 0;
+            for ($wordcount = 1; $wordcount <= $wordnumber - 1; $wordcount++) {
+                $verseIndex = strpos($qurantext[0][0], " ", $verseIndex) + 1;
+            }
+            $quranText[0][0] = preg_replace(preg_replace(substr($quranText[0][0], 0, $verseIndex), "(^\s*|\s+)[^\s" . implode(array_map(function($str) { return ArabicData::MakeUniRegEx($str); }, CachedData::ArabicStopLetters())) . ArabicData::ArabicStartOfRubElHizb . ArabicData::ArabicPlaceOfSajdah . "]+(?=\s*$|\s+)", "$1"), implode("|", array_map(function($str) { return ArabicData::MakeUniRegEx($str); }, CachedData::ArabicStopLetters())) . "|" . ArabicData::ArabicStartOfRubElHizb . "|" . ArabicData::ArabicPlaceOfSajdah, 0) . substr($qurantext[0][0], $verseIndex);
 		}
 		if ($endwordnumber != 0) {
+            $verseIndex = 0;
+            //selections are always within the same chapter
+            $lastChapter = count($qurantext);
+            $lastVerse = (int)($extraversenumber != 0 ? count($qurantext[$lastChapter]) - 1 : 0);
+            while ($qurantext[$lastChapter][$lastVerse][$verseIndex] == 0 || $qurantext[$lastChapter][$lastVerse][$verseIndex] == " ") {
+                $verseIndex += 1;
+            }
+            for ($wordcount = $wordnumber - 1; $wordcount <= $endwordnumber - 1; $wordcount++) {
+                $verseIndex = strpos($qurantext[$lastChapter][$lastVerse], " ", $verseIndex) + 1;
+            }
+            if ($verseIndex == 0) { $verseIndex = strlen($qurantext[$lastChapter][$lastVerse]); }
+            $qurantext[$lastChapter][$lastVerse] = substr($qurantext[$lastChapter][$lastVerse], 0, $verseIndex) . preg_replace(preg_replace(substr($qurantext[$lastChapter][$lastVerse], $verseIndex), "(^\s*|\s+)[^\s" . implode(array_map(function($str) { return ArabicData::MakeUniRegEx($str); }, CachedData::ArabicStopLetters())) . ArabicData::ArabicStartOfRubElHizb . ArabicData::ArabicPlaceOfSajdah . "]+(?=\s*$|\s+)", "$1"), implode("|", array_map(function($str) { return ArabicData::MakeUniRegEx(Str); }, CachedData::ArabicStopLetters())) . "|" . ArabicData::ArabicStartOfRubElHizb . "|" . ArabicData::ArabicPlaceOfSajdah, 0);
 		}
 		return $qurantext;
 	}
@@ -1517,9 +1543,9 @@ class TanzilReader
 		if ($qurantext !== null) {
 			for ($chapter = 0; $chapter < count($qurantext); $chapter++) {
                 $chapterNode = TanzilReader::GetChapterByIndex($basechapter + $chapter);
-                array_push($renderer->Items, new RenderItem(RenderTypes::eHeaderLeft, [new RenderText(RenderDisplayClass::eArabic, Arabic::TransliterateFromBuckwalter("'aAya`tuhaA " . $chapterNode->Attributes["ayas"] . " ")), new RenderText(RenderDisplayClass::eTransliteration, trim(ArabicData::TransliterateToScheme(Arabic::TransliterateFromBuckwalter("'aAya`tuhaA " . $chapterNode->Attributes["ayas"] . " "), $schemetype, $scheme))), new RenderText(RenderArray.RenderDisplayClass.eLTR, "Verses " . $chapterNode->Attributes["ayas"] . " ")]));
-                array_push($renderer->Items, new RenderItem(RenderTypes::eHeaderCenter, [new RenderText(RenderDisplayClass::eArabic, Arabic::TransliterateFromBuckwalter("suwrapu " . CachedData::IslamData()->quranchapters->children()[(int)($chapterNode->Attributes["index"]) - 1]->Attributes["name"] . " ")), new RenderText(RenderDisplayClass::eTransliteration, trim(ArabicData::TransliterateToScheme(Arabic::TransliterateFromBuckwalter("suwrapu " . CachedData::IslamData()->quranchapters->children()[(int)($chapterNode->Attributes["index"]) - 1]->Attributes["name"] . " "), $schemetype, $scheme))), new RenderText(RenderDisplayClass::eLTR, "Chapter " . TanzilReader::GetChapterEName($chapterNode) . " ")]));
-                array_push($renderer->Items, new RenderItem(RenderTypes::eHeaderRight, [new RenderText(RenderDisplayClass::eArabic, Arabic::TransliterateFromBuckwalter("rukuwEaAtuhaA " . $chapterNode->Attributes["rukus"] . " ")), new RenderText(RenderDisplayClass::eTransliteration, trim(ArabicData::TransliterateToScheme(Arabic::TransliterateFromBuckwalter("rukuwEaAtuhaA " . $chapterNode->Attributes["rukus"] . " "), $schemetype, $scheme))), new RenderText(RenderArray.RenderDisplayClass.eLTR, "Rukus " . $chapterNode->Attributes["rukus"] . " ")]));
+                array_push($renderer->Items, new RenderItem(RenderTypes::eHeaderLeft, [new RenderText(RenderDisplayClass::eArabic, Arabic::TransliterateFromBuckwalter("'aAya`tuhaA " . $chapterNode->attributes()["ayas"] . " ")), new RenderText(RenderDisplayClass::eTransliteration, trim(ArabicData::TransliterateToScheme(Arabic::TransliterateFromBuckwalter("'aAya`tuhaA " . $chapterNode->attributes()["ayas"] . " "), $schemetype, $scheme))), new RenderText(RenderDisplayClass::eLTR, "Verses " . $chapterNode->attributes()["ayas"] . " ")]));
+                array_push($renderer->Items, new RenderItem(RenderTypes::eHeaderCenter, [new RenderText(RenderDisplayClass::eArabic, Arabic::TransliterateFromBuckwalter("suwrapu " . CachedData::IslamData()->quranchapters->children()[(int)($chapterNode->attributes()["index"]) - 1]->attributes()["name"] . " ")), new RenderText(RenderDisplayClass::eTransliteration, trim(ArabicData::TransliterateToScheme(Arabic::TransliterateFromBuckwalter("suwrapu " . CachedData::IslamData()->quranchapters->children()[(int)($chapterNode->attributes()["index"]) - 1]->attributes()["name"] . " "), $schemetype, $scheme))), new RenderText(RenderDisplayClass::eLTR, "Chapter " . TanzilReader::GetChapterEName($chapterNode) . " ")]));
+                array_push($renderer->Items, new RenderItem(RenderTypes::eHeaderRight, [new RenderText(RenderDisplayClass::eArabic, Arabic::TransliterateFromBuckwalter("rukuwEaAtuhaA " . $chapterNode->attributes()["rukus"] . " ")), new RenderText(RenderDisplayClass::eTransliteration, trim(ArabicData::TransliterateToScheme(Arabic::TransliterateFromBuckwalter("rukuwEaAtuhaA " . $chapterNode->attributes()["rukus"] . " "), $schemetype, $scheme))), new RenderText(RenderDisplayClass::eLTR, "Rukus " . $chapterNode->attributes()["rukus"] . " ")]));
 				for ($verse = 0; $verse < count($qurantext[$chapter]); $verse++) {
                     $items = array();
                     $text = "";
@@ -1529,7 +1555,7 @@ class TanzilReader
                     //    array_push($items, new RenderItem(RenderTypes::eText, [new RenderText(RenderDisplayClass::eArabic, Arabic::TransliterateFromBuckwalter("B"))]));
                     //}
                     if ((int)($chapter == 0 ? $baseverse : 1) + $verse == 1) {
-                        $node = TanzilReader::GetTextVerse(TanzilReader::GetTextChapter(CachedData::XMLDocMain(), $basechapter + $chapter), 1)->Attributes["bismillah"];
+                        $node = TanzilReader::GetTextVerse(TanzilReader::GetTextChapter(CachedData::XMLDocMain(), $basechapter + $chapter), 1)->attributes()["bismillah"];
                         if ($node != null) {
                             array_push($renderer->Items, new RenderItem(RenderTypes::eText, [new RenderText(RenderDisplayClass::eArabic, $node . " "), new RenderText(RenderDisplayClass::eTransliteration, trim(ArabicData::TransliterateToScheme($node, $schemetype, $scheme))), new RenderText((TanzilReader::IsTranslationTextLTR($translationindex) ? RenderDisplayClass::eLTR : RenderDisplayClass::eRTL), TanzilReader::GetTranslationVerse($lines, 1, 1))]));
                         }
@@ -1542,7 +1568,7 @@ class TanzilReader
                         if (strlen($words[$count]) == 1 && $words[$count][0] == 0) {
                             $pauseMarks += 1;
                         } elseif (strlen($words[$count]) == 1 &&
-                            (Arabic::IsStop(ArabicData::FindLetterBySymbol($Words[$Count][0])) || $Words[$count][0] == ArabicData::ArabicStartOfRubElHizb || $words[$count][0] == ArabicData::ArabicPlaceOfSajdah)) {
+                            (Arabic::IsStop(ArabicData::FindLetterBySymbol($words[$count][0])) || $words[$count][0] == ArabicData::ArabicStartOfRubElHizb || $words[$count][0] == ArabicData::ArabicPlaceOfSajdah)) {
                             $pauseMarks += 1;
                             array_push($items, new RenderItem(RenderTypes::eText, [new RenderText(RenderDisplayClass::eArabic, " " . $words[$count]), new RenderText(RenderDisplayClass::eTransliteration, $translitWords[$count])]));
                         } elseif (strlen($words[$count]) != 0) {
@@ -1558,7 +1584,7 @@ class TanzilReader
                     $text .= Arabic::TransliterateFromBuckwalter("=" . strval((int)(($chapter == 0 ? $baseverse : 1)) + $verse)) . " ";
                     array_push($items, new RenderItem(RenderTypes::eText, [new RenderText(RenderDisplayClass::eArabic, Arabic::TransliterateFromBuckwalter("=" . strval((int)(($chapter == 0 ? $baseverse : 1)) + $verse))), new RenderText((TanzilReader::IsTranslationTextLTR($translationindex) ? RenderDisplayClass::eLTR : RenderDisplayClass::eRTL), "(" . strval((int)($chapter == 0 ? $baseverse : 1) + $verse) . ")")]));
                     //$text .= Arabic::TransliterateFromBuckwalter("(" . strval(($chapter == 0 ? $baseverse : 1) + $verse) . ") ")
-                    array_push($renderer->Items, new RenderItem(RenderTypes::eText, [new RenderText(RenderDisplayClass::eNested, $items), new RenderText(RenderDisplayClass::eArabic, $text), new RenderText(RenderDisplayClass::eTransliteration, trim(ArabicData::TransliterateToScheme($qurantext[$chapter][$verse] . " " . ArabicData.TransliterateFromBuckwalter("=" . strval((int)($chapter == 0 ? $baseverse : 1) + $verse)) . " ", $schemetype, $scheme))), new RenderText((IsTranslationTextLTR(TranslationIndex) ? RenderDisplayClass::eLTR : RenderDisplayClass::eRTL), "(" . strval((int)($chapter == 0 ? $baseverse : 1) + $verse) . ") " . TanzilReader::GetTranslationVerse($lines, $basechapter + $chapter, (int)($chapter == 0 ? $baseverse : 1) + $verse))]));
+                    array_push($renderer->Items, new RenderItem(RenderTypes::eText, [new RenderText(RenderDisplayClass::eNested, $items), new RenderText(RenderDisplayClass::eArabic, $text), new RenderText(RenderDisplayClass::eTransliteration, trim(ArabicData::TransliterateToScheme($qurantext[$chapter][$verse] . " " . Arabic::TransliterateFromBuckwalter("=" . strval((int)($chapter == 0 ? $baseverse : 1) + $verse)) . " ", $schemetype, $scheme))), new RenderText((TanzilReader::IsTranslationTextLTR($translationindex) ? RenderDisplayClass::eLTR : RenderDisplayClass::eRTL), "(" . strval((int)($chapter == 0 ? $baseverse : 1) + $verse) . ") " . TanzilReader::GetTranslationVerse($lines, $basechapter + $chapter, (int)($chapter == 0 ? $baseverse : 1) + $verse))]));
 				}
 			}
 		}
@@ -1586,15 +1612,15 @@ class TanzilReader
 	}
 	public static function GetChapterCount()
 	{
-        return Utility::GetChildNodeCount("sura", CachedData::XMLDocInfo()->children()["suras"]);
+        return Utility::GetChildNodeCount("sura", CachedData::XMLDocInfo()->children()->suras->children());
     }
     public static function IsTranslationTextLTR($index)
     {
-        return !Languages::GetLanguageInfoByCode(substr(CachedData::IslamData()->translations->children()[$index]->Attributes["file"], 0, 2))->IsRTL;
+        return !Languages::GetLanguageInfoByCode(substr(CachedData::IslamData()->translations->children()[$index]->attributes()["file"], 0, 2))->IsRTL;
     }
     public static function GetChapterEName($chapterNode)
     {
-        return Utility::LoadResourceString("IslamInfo_QuranChapter" . $chapterNode->Attributes()["index"]);
+        return Utility::LoadResourceString("IslamInfo_QuranChapter" . $chapterNode->attributes()["index"]);
     }
     public static function GetW4WTranslationVerse($lines, $chapter, $verse, $word)
     {
@@ -1605,34 +1631,77 @@ class TanzilReader
             return $words[$word];
         }
     }
+    public static function IsSajda($chapter, $verse)
+    {
+        for ($count = 0; $count < count(CachedData::XMLDocInfo()->children()->sajdas->children()); $count++) {
+            $node = CachedData::XMLDocInfo()->children()->sajdas->children()[$count];
+            if ($node->getName() == "sajda" &&
+                (int)($node->attributes()["sura"]) == $chapter &&
+                (int)($node->attributes()["aya"]) == $verse) {
+                return true;
+            }
+        }
+        return false;
+    }
     public static $QuranTextNames = array("quran-hafs", "quran-warsh", "quran-alduri");
 };
 
 class DocBuilder
 {
-	public static function BuckwalterTextFromReferences($str)
+	public static function BuckwalterTextFromReferences($ID, $schemetype, $scheme, $strings, $translationID, $translationindex)
 	{
-		$matches = array();
-		$out = "";
-		if (preg_match_all('/(.*?)(?:(\\\{)(.*?)(\\\})|$)/s', CachedData::IslamData()->lists->category->children()[$count]["text"], $matches, PREG_SET_ORDER) !== 0) {
-			$val = "";
+        $renderer = new RenderArray($ID);
+        if ($strings == null) { return $renderer; }
+		if (preg_match_all('/(.*?)(?:(\\\{)(.*?)(\\\})|$)/s', $strings, $matches, PREG_SET_ORDER) !== 0) {
 			for ($matchcount = 0; $matchcount < count($matches); $matchcount++) {
-				if (count($matches[$matchcount]) >= 4) {
-					$check = DocBuilder::TextFromReferences($matches[$matchcount][3]);
-					if ($check !== "") $val .= (($val !== "") ? "," : "") . $check;
-				}
+	            if (count($matches[$matchcount])) {
+	                if (array_key_exists(1, $matches[$matchcount])) {
+	                    $englishByWord = explode("|", Utility::LoadResourceString("IslamInfo_" . $translationID . "WordByWord"));
+	                    $arabicText = explode(" ", $matches[$matchcount][1]);
+	                    $transliteration = explode(" ", ArabicData::TransliterateToScheme(Arabic::TransliterateFromBuckwalter($matches[$matchcount][1]), $schemetype, $scheme));
+	                    array_push($renderer->Items, new RenderItem(RenderTypes::eHeaderCenter, [new RenderText(RenderDisplayClass::eLTR, Utility::LoadResourceString("IslamInfo_" . $translationID))]));
+	                    $items = array();
+	                    for ($wordcount = 0; $wordcount < count($englishByWord); $wordcount++) {
+	                        array_push($items, new RenderItem(RenderTypes::eText, [new RenderText(RenderDisplayClass::eArabic, Arabic::TransliterateFromBuckwalter($arabicText[$wordcount])), new RenderText(RenderDisplayClass::eTransliteration, $transliteration[$wordcount]), new RenderText(RenderDisplayClass::eLTR, $englishByWord[$wordcount])]));
+	                    }
+	                    array_push($renderer->Items, new RenderItem(RenderTypes::eText, [new RenderText(RenderDisplayClass::eNested, $items), new RenderText(RenderDisplayClass::eArabic, Arabic::TransliterateFromBuckwalter($matches[$matchcount][1])), new RenderText(RenderDisplayClass::eTransliteration, ArabicData::TransliterateToScheme(Arabic::TransliterateFromBuckwalter($matches[$matchcount][1]), $schemetype, $scheme)), new RenderText(RenderDisplayClass::eLTR, Utility::LoadResourceString("IslamInfo_" . $translationID . "Trans"))]));
+	                }
+	                if (array_key_exists(3, $matches[$matchcount])) {
+	                    array_push($renderer->Items, DocBuilder::TextFromReferences($matches[$matchcount][3], $schemetype, $scheme, $translationindex)->Items);
+	                }
+	            }
 			}
-			if ($val !== "") $out .= (($out !== "") ? "," : "") . "{\"text\": \"" . Utility::LoadResourceString("IslamInfo_" . (string)CachedData::IslamData()->lists->category->children()[$count]["id"]) . "\", \"menu\":[" . $val . "]}";
 		}
-		return $out;
+		return $renderer;
 	}
-	public static function TextFromReferences($str)
+    public static function NormalTextFromReferences($ID, $strings, $schemetype, $scheme, $translationindex)
+    {
+        $renderer = new RenderArray($ID);
+        if ($strings == null) { return $renderer; }
+        if (preg_match_all("/(.*?)(?:(\{)(.*?)(\})|$)/s", $strings, $matches, PREG_SET_ORDER) !== 0) {
+	        for ($count = 0; $count < count($matches); $count++) {
+	            if (count($matches[$count]) != 0) {
+	                if (strlen($matches[$count][1]) != 0) {
+	
+	            	}
+	                if (strlen($matches[$count][3]) != 0) {
+	                    array_push($renderer->Items, DocBuilder::TextFromReferences($matches[$count][3], $schemetype, $scheme, $translationindex)->Items);
+	                }
+	            }
+	        }
+    	}
+        return $renderer;
+    }
+	public static function TextFromReferences($strings, $schemetype, $scheme, $translationindex)
 	{
-		$val = "";
+		$renderer = new RenderArray("");
+		if (TanzilReader::IsQuranTextReference($strings)) {
+            array_push($renderer->Items, TanzilReader::QuranTextFromReference($strings, $schemetype, $scheme, $translationindex)->Items);
+        }
 		for ($count = 0; $count < count(CachedData::IslamData()->abbreviations->children()); $count++) {
 			for ($subcount = 0; $subcount < count(CachedData::IslamData()->abbreviations->children()[$count]->children()); $subcount++) {
-				if (array_search($str, explode("|", (string)CachedData::IslamData()->abbreviations->children()[$count]->children()[$subcount]->attributes()["text"])) !== false) {
-					$val = "";
+				if (array_search($strings, explode("|", (string)CachedData::IslamData()->abbreviations->children()[$count]->children()[$subcount]->attributes()["text"])) !== false) {
+					$items = array();
 					if ((string)CachedData::IslamData()->abbreviations->children()[$count]->children()[$subcount]->attributes()["font"] != "") {
 						foreach (explode("|", (string)CachedData::IslamData()->abbreviations->children()[$count]->children()[$subcount]->attributes()["font"]) as $part) {
 							$font = "";
@@ -1641,18 +1710,18 @@ class DocBuilder
 								$part = explode(';', $part)[1];
 							}
 							foreach (explode(",", $part) as $substr) {
-								$val .= "{\"value\":\"" . $str . "\", \"font\": \"" . $font . "\", \"char\": \"" . implode(",", explode("+", $substr)) . "\"},";
+                                $rendText = new RenderText(RenderDisplayClass::eArabic, implode(array_map(explode("+", $substr), function($split) { return mb_convert_encoding('&#x' . $split . ';', 'UTF-8', 'HTML-ENTITIES'); })));
+                                $rendText->font = $font;
+                                array_push($items, new RenderItem(RenderTypes::eText, [RendText]));
 							}
 						}
 					}
-					if ($val !== "") {
-						$val = "{\"text\": \"" . Utility::LoadResourceString("IslamInfo_" . (string)CachedData::IslamData()->abbreviations->children()[$count]->children()[$subcount]->attributes()["id"]) . "\", \"values\":[" . substr($val, 0, -1) . "]}";
-					}
+					array_push($renderer->Items, $items);
 					break;
 				}
 			}
 		}
-		return $val;
+		return $renderer;
 	}
 };
 function getcacheitem()
@@ -1730,7 +1799,18 @@ if (array_key_exists("Char", $_GET)) {
 	if (!getcacheitem()) {
 		$json = "";
 		for ($count = 0; $count < count(CachedData::IslamData()->lists->category->children()); $count++) {
-			$json .= (($json !== "") ? "," : "") . DocBuilder::BuckwalterTextFromReference(CachedData::IslamData()->lists->category->children()[$count]["text"]);
+			$val = "";
+			$renderer = DocBuilder::BuckwalterTextFromReferences(null, null, null, CachedData::IslamData()->lists->category->children()[$count]["text"], null, 0);
+			for ($matchcount = 0; $matchcount < count($renderer->Items); $matchcount++) {
+				//$val .= "{\"value\":\"" . $str . "\", \"font\": \"" . $font . "\", \"char\": \"" . implode(",", explode("+", $substr)) . "\"},";
+				//if ($val !== "") {
+					//$val = "{\"text\": \"" . Utility::LoadResourceString("IslamInfo_" . (string)CachedData::IslamData()->abbreviations->children()[$count]->children()[$subcount]->attributes()["id"]) . "\", \"values\":[" . substr($val, 0, -1) . "]}";
+				//}
+				//$check = $renderer->Items[$matchcount]->textitems;
+				//if ($check !== "") $val .= (($val !== "") ? "," : "") . $check;
+			}
+			if ($val !== "") $out .= (($out !== "") ? "," : "") . "{\"text\": \"" . Utility::LoadResourceString("IslamInfo_" . (string)CachedData::IslamData()->lists->category->children()[$count]["id"]) . "\", \"menu\":[" . $val . "]}";
+			$json .= (($json !== "") ? "," : "") . $val;
 		}
 		$json = "[" . $json . "]";
 		echo $json;
@@ -1781,15 +1861,7 @@ function is_shortcode() {
     global $wp_query;	
     $posts = $wp_query->posts;
     foreach ($posts as $post){
-		$post->post_content = preg_replace_callback('/(.*?)(?:(\{)(.*?)(\})|$)/s', function ($matches) {
-			if (TanzilReader::IsQuranTextReference($matches[3])) {
-				return $matches[1] . RenderArray::DoRender(TanzilReader::QuranTextFromReference($matches[3]));
-			} else if (strpos($matches[3], ";Char=") !== false) {
-				return "<img src=\"" . plugins_url()."" . "/IslamSource/IslamSourceWP.php?Size=100&" . str_replace(';', '&', substr($matches[3], strpos($matches[3], ';') + 1)) . "\">";
-			} else {
-				return $matches[0];
-			}
-		}, $post->post_content);
+		$post->post_content = RenderArray::DoRender(DocBuilder::NormalTextFromReferences(null, $post->post_content, null, null, 0)->Items);
     }
 }
 add_action( 'wp', 'is_shortcode' );

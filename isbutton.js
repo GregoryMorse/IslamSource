@@ -52,8 +52,7 @@ function getBaseURL () {
             ed.addButton('is_button', {
                 type: 'menubutton',
                 title: 'Islam Source',
-                image: url+'/IslamSourceWP.php?Size=32&Char=22&Font=AGAIslamicPhrases',
-                style: 'background-image: url(' + url+'/IslamSourceWP.php?Size=32&Char=22&Font=AGAIslamicPhrases); background-size: contain; background-repeat: no-repeat;',
+                image: url + '/IslamSourceWP.php?Size=32&Char=22&Font=AGAIslamicPhrases',
                 icons: false,
                 //text: 'Islam Source',
                 menu: data
