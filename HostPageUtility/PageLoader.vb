@@ -426,6 +426,7 @@ Public Class Utility
         bmp.Dispose()
     End Function
     Public Shared Function HtmlTextEncode(ByVal Text As String) As String
+        If Text Is Nothing Then Return String.Empty
         HtmlTextEncode = ConvertSpaces(HttpUtility.HtmlEncode(New System.Text.UTF8Encoding().GetString(System.Text.Encoding.UTF8.GetBytes(Text))))
     End Function
     Public Shared Function SourceTextEncode(ByVal Text As String) As String
