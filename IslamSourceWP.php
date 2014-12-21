@@ -1111,13 +1111,13 @@ class Arabic
     public static function GetSchemeLongVowelFromString($str, $scheme)
     {
         $sch = null;
-        for ($count = 0; $count < count(CachedData::IslamData()->TranslitSchemes); $count++) {
-            if (CachedData::IslamData()->TranslitSchemes[$count]->Name == $scheme) {
-                $sch = CachedData::IslamData()->TranslitSchemes[$count];
+        for ($count = 0; $count < count(CachedData::IslamData()->translitschemes->children()); $count++) {
+            if (CachedData::IslamData()->translitschemes->children()[$count]->attributes()["name"] == $scheme) {
+                $sch = CachedData::IslamData()->translitschemes->children()[$count];
                 break;
             }
         }
-        if ($count == count(CachedData::IslamData()->TranslitSchemes)) { return ""; }
+        if ($count == count(CachedData::IslamData()->translitschemes->children())) { return ""; }
         if (array_search($str, CachedData::ArabicVowels) !== false) {
             return $sch->Vowels(array_search($str, CachedData::ArabicVowels));
         }
@@ -1126,13 +1126,13 @@ class Arabic
     public static function GetSchemeGutteralFromString($str, $scheme, $leading)
     {
         $sch = null;
-        for ($count = 0; $count < count(CachedData::IslamData()->TranslitSchemes); $count++) {
-            if (CachedData::IslamData()->TranslitSchemes[$count]->Name == $scheme) {
-                $sch = CachedData::IslamData()->TranslitSchemes[$count];
+        for ($count = 0; $count < count(CachedData::IslamData()->translitschemes->children()); $count++) {
+            if (CachedData::IslamData()->translitschemes->children()[$count]->attributes()["name"] == $scheme) {
+                $sch = CachedData::IslamData()->translitschemes->children()[$count];
                 break;
             }
         }
-        if ($count == count(CachedData::IslamData()->TranslitSchemes)) { return ""; }
+        if ($count == count(CachedData::IslamData()->translitschemes->children())) { return ""; }
         if (array_search($str, CachedData::ArabicLeadingGutterals) !== false) {
             return $sch->Vowels(array_search($str, CachedData::ArabicLeadingGutterals) + count(CachedData::ArabicVowels) + ($leading ? count(CachedData::ArabicLeadingGutterals) : 0));
         }
@@ -1141,25 +1141,25 @@ class Arabic
     public static function GetSchemeValueFromSymbol($symbol, $scheme)
     {
         $sch = null;
-        for ($count = 0; $count < count(CachedData::IslamData()->TranslitSchemes); $count++) {
-            if (CachedData::IslamData()->TranslitSchemes[$count]->Name == $scheme) {
-                $sch = CachedData::IslamData()->TranslitSchemes[$count];
+        for ($count = 0; $count < count(CachedData::IslamData()->translitschemes->children()); $count++) {
+            if (CachedData::IslamData()->translitschemes->children()[$count]->attributes()["name"] == $scheme) {
+                $sch = CachedData::IslamData()->translitschemes->children()[$count];
                 break;
             }
         }
-        if ($count == count(CachedData::IslamData()->TranslitSchemes)) { return ""; }
-        if (array_search($symbol->Symbol, CachedData::ArabicLettersInOrder) !== false) {
-            return $sch->Alphabet(array_search($symbol->Symbol, CachedData::ArabicLettersInOrder));
-        } elseif (array_search($symbol->Symbol, CachedData::ArabicHamzas) !== false) {
-            return $sch->Hamza(array_search($symbol->Symbol, CachedData::ArabicHamzas));
-        } elseif (array_search($symbol->Symbol, CachedData::ArabicVowels) !== false) {
-            return $sch->Vowels(array_search($symbol->Symbol, CachedData::ArabicVowels));
-        } elseif (array_search($symbol->Symbol, CachedData::ArabicTajweed) !== false) {
-            return $sch->Tajweed(array_search($symbol->Symbol, CachedData::ArabicTajweed));
-        } elseif (array_search($symbol->Symbol, CachedData::ArabicPunctuation) !== false) {
-            return $sch->Punctuation(array_search($symbol->Symbol, CachedData::ArabicPunctuation));
-        } elseif (array_search($symbol->Symbol, CachedData::NonArabicLetters) !== false) {
-            return $sch->NonArabic(array_search($symbol->Symbol, CachedData::NonArabicLetters));
+        if ($count == count(CachedData::IslamData()->translitschemes->children())) { return ""; }
+        if (array_search($symbol->Symbol, CachedData::ArabicLettersInOrder()) !== false) {
+            return $sch->Alphabet(array_search($symbol->Symbol, CachedData::ArabicLettersInOrder()));
+        } elseif (array_search($symbol->Symbol, CachedData::ArabicHamzas()) !== false) {
+            return $sch->Hamza(array_search($symbol->Symbol, CachedData::ArabicHamzas()));
+        } elseif (array_search($symbol->Symbol, CachedData::ArabicVowels()) !== false) {
+            return $sch->Vowels(array_search($symbol->Symbol, CachedData::ArabicVowels()));
+        } elseif (array_search($symbol->Symbol, CachedData::ArabicTajweed()) !== false) {
+            return $sch->Tajweed(array_search($symbol->Symbol, CachedData::ArabicTajweed()));
+        } elseif (array_search($symbol->Symbol, CachedData::ArabicPunctuation()) !== false) {
+            return $sch->Punctuation(array_search($symbol->Symbol, CachedData::ArabicPunctuation()));
+        } elseif (array_search($symbol->Symbol, CachedData::NonArabicLetters()) !== false) {
+            return $sch->NonArabic(array_search($symbol->Symbol, CachedData::NonArabicLetters()));
         }
         return "";
     }
@@ -1216,8 +1216,8 @@ class Arabic
             $index = Arabic::FindLetterBySymbol($ch);
             if ($index != -1 && ArabicData::IsLetter($index)) {
                 if ($output != "" && !$quranic) { $output .= " "; }
-                $output .= $quranic ? substr(ArabicData::Data()->ArabicLetters[$index]->SymbolName, 0, strlen(ArabicData::Data()->ArabicLetters[$index]->SymbolName) - 1) . (ArabicData::Data()->ArabicLetters[$index]->SymbolName.EndsWith("n") ? "" : "o") : ArabicData::Data()->ArabicLetters[$index]->SymbolName;
-            } elseif ($index != -1 && ArabicData::Data()->ArabicLetters[$index]->Symbol == ArabicData::$ArabicMaddahAbove) {
+                $output .= $quranic ? substr(ArabicData::Data()->arabicletters->children()[$index]->attributes()["symbolname"], 0, strlen(ArabicData::Data()->arabicletters->children()[$index]->attributes()["symbolname"]) - 1) . ((substr(ArabicData::Data()->arabicletters->children()[$index]->attributes()["symbolname"], -1) == "n") ? "" : "o") : ArabicData::Data()->arabicletters->children()[$index]->attributes()["symbolname"];
+            } elseif ($index != -1 && ArabicData::Data()->arabicletters->children()[$index]->attributes()["symbol"] == ArabicData::$ArabicMaddahAbove) {
                 if (!$quranic) { $output += $ch; }
             }
         }
