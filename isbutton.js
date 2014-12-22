@@ -31,7 +31,7 @@ function getBaseURL () {
 				      					body: v
 				      				});
 				      			};
-					    	}, getOnPostRender = function(u, ch) { return function () { var el = document.createElement(ch ? "span" : "img"); if (ch) { el.style.fontSize = "100px"; el.style.display = "inline-block"; el.innerText = u; } else { el.style.maxWidth = "280px"; el.style.width = "auto"; el.style.height = "auto"; var f = function() { if (!el.complete) { window.setTimeout(f.bind(el), 1000); } else { this.parentNode.style.maxWidth = '300px'; this.style.maxWidth = '280px'; this.style.width = 'auto'; } }; el.onload = f; el.src = u; } this.getEl().style.maxWidth = '300px'; this.getEl().style.height = "auto"; this.getEl().firstChild.appendChild(el); }; };
+					    	}, getOnPostRender = function(u, ch) { return function () { var el = document.createElement(ch ? "span" : "img"); if (ch) { el.style.fontSize = "100px"; el.style.display = "inline-block"; el.innerText = u; } else { el.style.maxWidth = "280px"; el.style.width = "auto"; el.style.height = "auto"; var f = function() { if (!this.complete) { window.setTimeout(f.bind(this), 1000); } else { this.parentNode.style.maxWidth = '300px'; this.style.maxWidth = '280px'; this.style.width = 'auto'; } }; el.onload = f; el.src = u; } this.getEl().style.maxWidth = '300px'; this.getEl().style.height = "auto"; this.getEl().firstChild.appendChild(el); if(!ch) el.onload(); }; };
 				    	for (var pancount = 0; pancount < data[count].menu[subcount].values.length; pancount++) {
 				    		if (data[count].menu[subcount].values[pancount] !== null) {
 				    			if (data[count].menu[subcount].values[pancount].font !== "") {
