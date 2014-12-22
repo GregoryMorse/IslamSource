@@ -3317,7 +3317,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="RAum|RA" font="KFGQPCArabicSymbols01;F04D,F06A|AGAArabesque;F079|AGAIslamicPhrases;0066|IslamicLogo;0067" id="MayAllahBePleasedWithThemMasculine"></word>
 			<word text="RAunna" font="KFGQPCArabicSymbols01;F04B,F06C" id="MayAllahBePleasedWithThemFeminine"></word>
 			<word text="RAumaa" font="KFGQPCArabicSymbols01;F04C,F06B|IslamicLogo;0063,0068" id="MayAllahBePleasedWithBothOfThem"></word>
-			<word text="RAu" font="0613|KFGQPCArabicSymbols01;F049,F068|AGAArabesque;F074|AGAIslamicPhrases;0064|IslamicLogo;0061,007A" id="MayAllahBePleasedWithHim"></word>
+			<word text="RAu|MAPH" font="0613|KFGQPCArabicSymbols01;F049,F068|AGAArabesque;F074|AGAIslamicPhrases;0064|IslamicLogo;0061,007A" id="MayAllahBePleasedWithHim"></word>
 			<word text="RAaa" font="KFGQPCArabicSymbols01;F04A,F069|AGAIslamicPhrases;0067|IslamicLogo;0064,006A,0073,0078" id="MayAllahBePleasedWithHer"></word>
 			<word text="RATum|RAT" id="MayGloriousAllahBePleasedWithThemMasculine"></word>
 			<word text="RATunna" id="MayGloriousAllahBePleasedWithThemFeminine"></word>
