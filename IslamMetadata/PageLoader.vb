@@ -2959,12 +2959,21 @@ Public Class DocBuilder
                 End If
             Next
             Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eList, Arabic.SymbolDisplay(Symbols.ToArray()))}))
-        ElseIf Strings.StartsWith("personalpronoun:") Or Strings.StartsWith("possessivedeterminerpersonalpronoun:") Then
+        ElseIf Strings.StartsWith("plurals:") Or Strings.StartsWith("personalpronoun:") Or Strings.StartsWith("possessivedeterminerpersonalpronoun:") Or Strings.StartsWith("proximaldemonstratives:") Or Strings.StartsWith("distaldemonstratives:") Then
             Dim GrammarCat As New IslamData.GrammarCategory
             Dim Cat As IslamData.GrammarCategory
             Dim Words As New List(Of IslamData.GrammarCategory.GrammarWord)
             Dim SelArr As String()
-            If Strings.StartsWith("personalpronoun:") Then
+            If Strings.StartsWith("plurals") Then
+                Cat = CachedData.IslamData.GrammarCategories(0)
+                SelArr = Strings.Replace("plurals:", String.Empty).Split(","c)
+            ElseIf Strings.StartsWith("proximaldemonstratives") Then
+                Cat = CachedData.IslamData.GrammarCategories(1)
+                SelArr = Strings.Replace("proximaldemonstratives:", String.Empty).Split(","c)
+            ElseIf Strings.StartsWith("distaldemonstratives") Then
+                Cat = CachedData.IslamData.GrammarCategories(2)
+                SelArr = Strings.Replace("distaldemonstratives:", String.Empty).Split(","c)
+            ElseIf Strings.StartsWith("personalpronoun:") Then
                 Cat = CachedData.IslamData.GrammarCategories(5)
                 SelArr = Strings.Replace("personalpronoun:", String.Empty).Split(","c)
             Else
@@ -3006,18 +3015,18 @@ Public Class DocBuilder
             If CachedData.IslamData.Abbreviations(Index).Words(SubIndex).Font <> String.Empty Then
                 Array.ForEach(CachedData.IslamData.Abbreviations(Index).Words(SubIndex).Font.Split("|"c),
                     Sub(Str As String)
-                        Dim Font As String = String.Empty
-                        If Str.Contains(";") Then
-                            Font = Str.Split(";"c)(0)
-                            Str = Str.Split(";"c)(1)
-                        End If
-                        Array.ForEach(Str.Split(","c),
-                            Sub(SubStr As String)
+                            Dim Font As String = String.Empty
+                            If Str.Contains(";") Then
+                                Font = Str.Split(";"c)(0)
+                                Str = Str.Split(";"c)(1)
+                            End If
+                            Array.ForEach(Str.Split(","c),
+                                Sub(SubStr As String)
                                 Dim RendText As New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, String.Join(String.Empty, Array.ConvertAll(SubStr.Split("+"c), Function(Split As String) Char.ConvertFromUtf32(Integer.Parse(Split, System.Globalization.NumberStyles.HexNumber)))))
                                 RendText.Font = Font
                                 Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {RendText}))
                             End Sub)
-                    End Sub)
+                        End Sub)
             End If
             If VocWord.HasValue Then
                 If CachedData.IslamData.Abbreviations(Index).Words(SubIndex).Font <> String.Empty Then
@@ -3043,7 +3052,7 @@ Public Class DocBuilder
         Else
             Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, Strings)}))
         End If
-        Return Renderer
+            Return Renderer
     End Function
 End Class
 Public Class Supplications
