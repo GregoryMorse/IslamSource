@@ -881,6 +881,8 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<verse title="AndAllahHasTheBestNamesSoCallOnThemLeaveThoseWhoPracticeDeviationConcerningHisNamesTheyWillBeRecompensedForWhatTheyHaveBeenDoing" text="\{7:180\}"></verse>
 			<verse title="SayCallUponAllahOrCallUponTheMostMercifulWhicheverNameYouCallToHimBelongTheBestNames" text="\{17:110:1-13\}"></verse>
 			<verse title="InRemembranceOfAllahHeartsFindPeace" text="\{13:28:8-12\}"></verse>
+			<verse title="WhenSomethingIsDifficult" text="{ll~ahum~a laA saholAF &lt;il~aA maA jaEalotahN saholAF wa&gt;anta tajoEala {loHazana &lt;i*aA $i}ta saholAF"></verse>
+			<!-- Oh Allah! Nothing is easy except what You have made easy. If You wish, You can make the difficult easy. -->
 		</category>
 		<category title="SupplicationAndPrayersForMorningAndAfternoon">
 			<verse title="SupplicationAndPrayersForMorningAndAfternoon" text="\{1,2:1-5,2:255-257,2:284-286,112,113,114\}\{supp:InTheMorning8,InTheEvening8,InTheMorning6,InTheEvening6,InTheMorning9,InTheEvening9,InTheMorning4,InTheEvening4,RemembranceSixth,RemembranceFifth,InTheMorning7,InTheMorningOrEvening8,RemembranceSeventh,InTheEvening7,ForAnxietyAndSorrow2,InTheMorningOrEvening4,InTheMorningOrEvening3,SeekingForgivenessAndRepentance3,ForExpiationOfSinsAtTheConclusionOfSittingOrGathering1,RemembranceFourth\}"></verse>
@@ -896,12 +898,14 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="F" id="FlexibleIndefiniteAccusative" grammar="ms|fs,flex,indef,acc"></word>
 			<word text="aAni" id="DualNominative" grammar="md|fd,flex,nom"></word>
 			<word text="ayoni" id="DualAccusativePossessive" grammar="md|fd,flex,acc|pos"></word>
-			<word text="p \-\> &gt;atN &gt;atu" id="SoundFemininePluralNominative" grammar="fp,flex,nom"></word>
-			<word text="p \-\> &gt;atK &gt;ati" id="SoundFemininePluralAccusativePossessive" grammar="fp,flex,acc|pos"></word>
+			<word text="p \-\&gt; &gt;atN &gt;atu" id="SoundFemininePluralNominative" grammar="fp,flex,nom"></word>
+			<word text="p \-\&gt; &gt;atK &gt;ati" id="SoundFemininePluralAccusativePossessive" grammar="fp,flex,acc|pos"></word>
 			<word text="uwna" id="SoundMasculinePluralNominative" grammar="mp,flex,nom"></word>
 			<word text="iyna" id="SoundMasculinePluralAccusativePossessive" grammar="mp,flex,acc|pos"></word>
 			<word text="u" id="PartiallyFlexibleNominative" grammar="ms|fs|faEolaAn|bp(fuEalaA^&apos;,mafaAEil),pflex,nom"></word>
 			<word text="a" id="PartiallyFlexibleAccusativePossessive" grammar="ms|fs|bp,pflex,acc|pos"></word>
+			
+			<word text="{l p aA \-\&gt; iy~N iy~apN" id="RelativeAdjective" grammar=""></word>
 		</category>
 		<category title="ProximalDemonstratives">
 			<word text="ha`*aA" id="This" grammar="ms"></word>
@@ -1207,7 +1211,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="$adiydN" id="SevereStrong"></word>
 			<word text="Ealiy~N" id="HighExalted"></word>
 			<word text="EaliymN" id="Knower"></word>
-			<word text="qariybN" id="Near"></word>
+			<word text="qariybN" id="NearClose"></word>
 			<word text="kabiyrN kabiyrapN" id="Big"></word>
 			<word text="kaviyrN kaviyrapN" id="PlentyMuch"></word>
 			<word text="sariyEN" id="QuickSwiftFast"></word>
@@ -1638,12 +1642,10 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="saEoyN" id="GoingBetweenSafaAndMarwa"></word>
 			<word text="TarwiyapN" id="EighthDayOfMonthOfPilgrimage"></word>
 			<word text="&lt;ifaAdDapN" id="GoingForth"></word>
-			<word text="EabodN" id="Slave"></word>
 			<word text="&gt;amatN" id="FemaleSlave"></word>
 			<word text="rakabapN" id="Neck"></word>
 			<word text="taqowaY" id="Piety"></word>
-			<word text="$ayoxN" id="Sheikh"></word>
-			<word text="&gt;usotaA*" id="Professor"></word>
+			<word text="&gt;usotaA*N" plural="&gt;asaAti*apN" id="Professor"></word>
 			<word text="waliy" id="Guardian"></word>
 			<word text="dunoyaA" id="World"></word>
 			<word text="&gt;axirapN" id="Hereafter"></word>
@@ -1786,7 +1788,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="SaAEN" id="WeightMeasureOf2172Grams"></word>
 			<word text="wasoqN" id="WeightMeasureOf130320Grams"></word>
 			<word text="rubuwbiy~apN" id="Domininion"></word>
-			<word text="{lo&gt;asomaA^&apos;u" id="Names"></word>
+			<word text="&lt;isomN" text="&gt;asomaA^&apos;N" id="Name"></word>
 			<word text="{lS~ifaAtu" id="Attributes"></word>
 			<word text="{loEuluwhiy~apu" id="Divinity"></word>
 			<word text="EibaAdapN" id="Worship"></word>
@@ -2033,7 +2035,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="{lt~a$oriyEu" plural="" id="Legislation"></word>
 			<word text="manduwbN" id="Recommended"></word>
 			<word text="maA^&apos;N" id="Water"></word>
-			<word text="TahuwrN" id="PureAndPurifying"></word>
+			<word text="TahuwrN" plural="&gt;aToharN" id="PureAndPurifying"></word>
 			<word text="TaAhirN" id="PurifiedClean"></word>
 			<word text="najisN" id="Impure"></word>
 			<word text="najaAsapN" id="Impurity"></word>
@@ -2098,7 +2100,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="jaworabN" plural="jawaAribN" id="SockStocking"></word>
 			<word text="fitorapN" id="NaturalBeliefInGod"></word>
 			<word text="{lomuEaw~i*atayonu" id="VersesOfRefuge"></word>
-			<word text="baAbN" id="GateDoor"></word>
+			<word text="baAbN" plural="&gt;abowaAbN" id="GateDoor"></word>
 			<word text="tahaAniynaA" id="Congratulations"></word>
 			<word text="riyaAlN" id="Rial"></word>
 			<word text="&gt;awaqiyapN" id="Ounce"></word>
@@ -2154,6 +2156,16 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="qaAdimN" id="Coming"></word>
 			<word text="*aAhibN" id="Going"></word>
 			<word text="jid~FA" id="Very"></word>
+			<word text="&gt;ayoDFA" id="Also"></word>
+			<word text="muwaZ~afN" id="Employee"></word>
+			<word text="mudiyrN" id="DirectorPrincipal"></word>
+			<word text="$arikapN" id="Company"></word>
+			<word text="&gt;uxotN" plural="&gt;axawaAtN" id="Sister"></word>
+			<word text="jaAmiEapN" id="University"></word>
+			<word text="li&gt;an~a" id="Because"></word>
+			<word text="raAsixN" id="WellGrounded"></word>
+			<word text="makotabN" plural="makaAtibN" id="Office"></word>
+			<word text="makotabapN" id="Library"></word>
 			<word text="muHam~adN" id="Muhammad"></word>
 			<word text="HasanN" id="Hasan"></word>
 			<word text="&gt;aliy~N" id="Ali"></word>
@@ -2218,12 +2230,13 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="kaviyrN" id="Many"></word>
 			<word text="biAxotiSaArN" id="Short"></word>
 			<word text="TawiylN {loqaAmapu" id="Tall"></word>
-			<word text="jamiylN" id="Young"></word>
+			<word text="jamiylN" id="YoungBeautiful"></word>
 			<word text="saAkinN" id="Living"></word>
 			<word text="qaSiyrN" id="Short"></word>
 			<word text="bintN" plural="banaAtN" id="GirlDaughter"></word>
 			<word text="&gt;a$otaraY" id="Buy"></word>
 			<word text="baAEotN" id="Sell"></word>
+			<word text="Eabodu {ll~ahi" id="Abdullah"></word>
 			
 			<word text="{lo&gt;awozaAEi" id="AlAwzaai"></word>
 			<word text="{loxawaAriju" id="Khawarij"></word>
@@ -2368,6 +2381,9 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="waH~ada" id="UniteUnifyConsolidate"></word>			
 			<word text="tuxorijuwA" id="Expel"></word>
 			<word text="lamaEa" id="GleamedGlitteredShone"></word>
+			<word text="tajoriY" id="Flow"></word>
+			<word text="yadoEuw" id="Call"></word>
+			<word text="liyajoziya" id="Reward"></word>
 		</category>
 		<category title="RepresentativeStems">
 			<word text="fEl" id=""></word>
@@ -2441,6 +2457,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="&lt;isomu {lZ~arofi" id="PossessionConstructionLikeNounsForTimePlace"></word>
 			<word text="&lt;isomu mu$otaq~N" id="DerivedNouns"></word>
 			<word text="&lt;isomu {lo&gt;alapi" id="InstrumentOfAction"></word>
+			<word text="&lt;isomu {lo&lt;i$aArapi" id="PointingNoun"></word>
 			<word text="&gt;asomaA^&apos;u {lo&lt;i$aArapi" id="PointingNouns"></word>
 			<word text="&gt;asomaA^&apos;u {lo&lt;i$aArapi {lobaEiyd" id="FarPointingNouns"></word>
 			<word text="{lo&gt;asomaA^&apos;u {loxamosapu" id="FiveSpecialNouns"></word>
@@ -3700,6 +3717,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="\{text:Foundation,Establishment,Building,Flowering,Consolidation,Stagnation and Decline\}\{word:Allah,Law,Jurisprudence,SchoolOfJurisprudence,RevelationOfAllah,Tradition,OnenessOfGod,LegalMethodologyFundamentalPrinciplesOfIslamicLaw,PeopleOfTheBook,Community,Hereafter,Prayer,Fight,Hypocrite,Quraish,Theology,Ethics,DoctrineTheologyPrincipleOfBelief,Hajj,Usury,Satan,Abrogation,Bequest,Unlawful,Piety,ReasonedDecision,Concensus,Companions,Dowry,TemporaryMarriage,Consultation,PeopleOfReasoningOpinion,PeopleOfHadith,RealisticJurisprudence,AnalogicalDeduction,Khawarij,Shia,Umayyad,Abbasid,CentralTreasury,Medina,Makkah,Kufa,WesternCoastOfArabianPeninsula,Ruling,PrincipleMethod,Details,Wine,Commentary,Grammar,LegalPreference,DeemProper,Linking,LocalCustom,Opinion,Judge,WellKnown,Followers,Trace,ActionsDeedsWorks,Mufti,Imam,Caliph,RulingsNotPartOfTradition,HumanIntellect,Rationalists,Evidence,Essence,Authentic,NominativeCase,Liar,OpenSinner,Weak,ObviousApparent,ImpliedUnderstoodMeaning,NewlyExistent,Menses,Touch,GivingPreference,Congregation,PrayTime3,UnitOfPrayer,UponOn,ImamAbuHanifa,ImamMalik,ImamShafiee,ImamHanbal,ImamAwzaee,ImamZayd,ImamDawood,ImamAlLayth,ImamAthThawri,Zaahiree,ConsensusOfThePeopleOfMedina,ImamBukhari,ImamMuslim\}\{45:18,11:91,2:286,2:185,22:78,4:28,4:23-24,5:3-5,5:101,5:1,2:275,4:29,34:28,7:158,2:180,2:240,2:234,4:15-16,2:183,9:103,5:91,16:90,4:58,5:8,53:3-4,16:44,59:7\}" id="ScienceOfIslamicJurisprudence"></word>
 			<word text="\{word:\}" id="RulesOfIslamicJurisprudence"></word>
 			<word text="\{symbol:Alef,Beh,Teh,Theh,Jeem,Hah,Khah,Dal,Thal,Reh,Zain,Seen,Sheen,Sad,Dad,Tah,Zah,Ain,Ghain,Feh,Qaf,Kaf,Lam,Meem,Noon,Heh,Waw,Yeh,AlefWasla,AlefMaksura,TehMarbuta,Fathatan,Dammatan,Kasratan,Fatha,Damma,Kasra,Sukun\}\{personalpronoun:IMe,WeUs,You,YouAll,HeHimIt,SheHerIt,TheyThem\}\{possessivedeterminerpersonalpronoun:My,Our,Your,His,Her,Their\}\{noun:Lesson,First,Meaning,NounName,Vocabulary,Drill,Nunation,NominativeCase,PossessiveCase,SmallCurlLikeDiacriticPlacedAboveLetterToRepresentShortU,SmallDiagonalLinePlacedBelowLetterToRepresentShortI,SmallDiagonalLinePlacedAboveLetterToRepresentShortA,SubjectNominalSentence,Predicate,Adjective,WordBeingDescribed,Possession,GrammarRules,Masculine,Feminine,NamesOfCountries,In,The,From,UponOn,IsAmAreDoHave,Where,WhoTheOneWho,OutOfWhat,WithNear,No,Yes,HouseHome,ClassClassroomSeason,Student,Teacher,School,Book,Pen,TownCity,GroundEarth,Sun,Hand,Chair,Peace,Muslim,Table,Money,Transcendent,Consecrated,LargeOld,SmallYoung,New,Old,Very,Muhammad,Hasan,Ali,Khaalid,Saalim,Talha,Orwa,Safeeyah,Khadeejah,Ameenah,Mary,Fatima,Aisha,Pharoah,Moses,China,GreatBritain,Philippines,Jordan,Iraq,Pakistan,Kenya,SaudiArabia,France,Sudan,America,SriLanka,Canada,India,Algeria,Indonesia,Germany,Emirates,Kuwait,Morocco,Egypt,Tunisia,Lebanon,Jeddah,Makkah,Beirut,Amman\}\{verb:Expel\}\{phrase:PeaceBeUponYou,NominalSentence,EmptyHamza\}\{17:93:1-6,24:36:1-4,4:15:13-15,20:14:1-3,4:156:2-4,12:21:1-6,3:78:10-13,65:1:15-18,45:29:1-5,12:23:3-5,3:49:37-40,4:100:14-17,10:90:27-29,67:12:8-9,31:30:14-16,11:6:15-18,14:37:10-12,27:64:12-14,2:221:21-25\}" id="Arabic"></word>
+			<word text="\{word:RelativeAdjective,Possession,FirstParticlePossessionConstruction,SecondParticlePossessionConstruction,PointingNoun,FiveSpecialNouns,VerilyTrulySurely,Mighty,Wise,Knower,IndeedSurely,Sitting,Standing,Travelling,Coming,Going,ToTowardsUpToNotIncluding,Allah,Man,Woman,Living,Short,Slave,BoySonChild,GirlDaughter,Tall,YoungBeautiful,Abdullah,WhatThatWhich,Also,Employee,GateDoor,Name,DirectorPrincipal,Company,Mother,Sister,Son,WifeHusband,University,ButHoweverOnTheContraryActually,ButHowever,Because,Why,PureAndPurifying,River,Under,Punishment,SevereStrong,WellGrounded,KnowledgeScience,Father,Brother,NearClose,Far,Professor,Office,Library,FromAbout,Joseph,Flow,Call,Reward,ForgiveCover\}\{plurals\}\{proximaldemonstratives\}\{distaldemonstratives\}\{2:220:29-32,2:32:10-13,103:2,20:71:9-10,76:23:1-5,31:30:12-16,33:35:1-3,37:99:2-5,19:30:2-4,12:95:3-6,6:92:1-2,8:32:6-8,27:28:1-3,106:3,11:78:13-17,31:5:1-5,43:51:11-15,22:2:19-22,4:162:1-5,2:214:29-32,10:69:10-12,12:90:7-10,28:25:7-10,7:151:3-5\}" id="Arabic"></word>
 			<word text="\{word:\}" id="IslamicTheology"></word>
 			<word text="\{word:\}" id="PropheticBiography"></word>
 			<word text="\{word:\}" id="QuranicExegesis"></word>
