@@ -890,22 +890,64 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 	</verses>
 	<grammar>
 		<category title="Plurals">
-			<word text="u" id="FlexibleDefiniteNominative" grammar="ms|fs,flex,def,nom"></word>
+			<word text="u" id="FlexibleDefiniteNominative" grammar="ms|fs,flex,def|const,nom"></word>
 			<word text="N" id="FlexibleIndefiniteNominative" grammar="ms|fs,flex,indef,nom"></word>
-			<word text="i" id="FlexibleDefinitePossessive" grammar="ms|fs,flex,def,pos"></word>
+			<word text="i" id="FlexibleDefinitePossessive" grammar="ms|fs,flex,def|const,pos"></word>
 			<word text="K" id="FlexibleIndefinitePossessive" grammar="ms|fs,flex,indef,pos"></word>
-			<word text="a" id="FlexibleDefiniteAccusative" grammar="ms|fs,flex,def,acc"></word>
-			<word text="F" id="FlexibleIndefiniteAccusative" grammar="ms|fs,flex,indef,acc"></word>
-			<word text="aAni" id="DualNominative" grammar="md|fd,flex,nom"></word>
-			<word text="ayoni" id="DualAccusativePossessive" grammar="md|fd,flex,acc|pos"></word>
-			<word text="p \-\&gt; &gt;atN &gt;atu" id="SoundFemininePluralNominative" grammar="fp,flex,nom"></word>
-			<word text="p \-\&gt; &gt;atK &gt;ati" id="SoundFemininePluralAccusativePossessive" grammar="fp,flex,acc|pos"></word>
-			<word text="uwna" id="SoundMasculinePluralNominative" grammar="mp,flex,nom"></word>
-			<word text="iyna" id="SoundMasculinePluralAccusativePossessive" grammar="mp,flex,acc|pos"></word>
+			<word text="a" id="FlexibleDefiniteAccusative" grammar="ms|fs,flex,def|const,acc"></word>
+			<word text="FA" id="FlexibleIndefiniteAccusative" grammar="ms,flex,indef,acc"></word>
+			<word text="F" id="SoundFeminineFlexibleIndefiniteAccusative" grammar="fs,flex,indef,acc"></word>
+			<word text="aAni" id="DualNominative" grammar="md|fd,flex|pflex,def|indef,nom"></word>
+			<word text="ayoni" id="DualAccusativePossessive" grammar="md|fd,flex|pflex,def|indef,acc|pos"></word>
+			<word text="aA" id="FlexibleConstantDualNominative" grammar="md|fd,flex|long,const,nom"></word>
+			<word text="aY" id="FlexibleConstantDualAccusativePossessive" grammar="md|fd,flex|long,const,acc|pos"></word>
+			<word from="p" text="tu" id="SoundFeminineDefinitePluralNominative" grammar="fp,flex,def|const,nom"></word>
+			<word from="p" text="tN" id="SoundFeminineIndefinitePluralNominative" grammar="fp,flex,indef,nom"></word>
+			<word from="p" text="ti" id="SoundFeminineDefinitePluralAccusativePossessive" grammar="fp,flex,def|const,acc|pos"></word>
+			<word from="p" text="tK" id="SoundFeminineIndefinitePluralAccusativePossessive" grammar="fp,flex,indef,acc|pos"></word>
+			<word text="uwna" id="SoundMasculinePluralNominative" grammar="mp,flex|pflex|defectpos,def|indef,nom"></word>
+			<word text="iyna" id="SoundMasculinePluralAccusativePossessive" grammar="mp,flex|pflex|defectpos,def|indef,acc|pos"></word>
+			<word text="uw" id="SoundMasculineConstantPluralNominative" grammar="mp,flex|long|defectpos,const,nom"></word>
+			<word text="iY" id="SoundMasculineConstantPluralAccusativePossessive" grammar="mp,flex|long|defectpos,const,acc|pos"></word>
+
+			<word text="uw" id="LongConstantSingularNominative" grammar="ms|fs,long,const,nom"></word>
+			<word text="aA" id="LongConstantSingularPossessive" grammar="ms|fs,long,const,acc"></word>
+			<word text="iY" id="LongConstantSingularAccusative" grammar="ms|fs,long,const,pos"></word>
+
 			<word text="u" id="PartiallyFlexibleNominative" grammar="ms|fs|faEolaAn|bp(fuEalaA^&apos;,mafaAEil),pflex,nom"></word>
-			<word text="a" id="PartiallyFlexibleAccusativePossessive" grammar="ms|fs|bp,pflex,acc|pos"></word>
+			<word text="a" id="PartiallyFlexibleAccusativePossessive" grammar="ms|fs|bp(fuEalaA^&apos;,mafaAEil),pflex,acc|pos"></word>
+
+			<word text="K" id="" grammar="ms,defectpos,indef,nom|pos"></word>
+			<word text="iY" id="" grammar="ms,defectpos,def|const,nom|pos"></word>
+			<word text="iyFA" id="" grammar="ms,defectpos,indef,acc"></word>
+			<word text="iYa" id="" grammar="bp,defectpos,indef,acc"></word>
+			<word text="iYa" id="" grammar="ms,defectpos,def|const,acc"></word>
+			<word text="iyaAni" id="" grammar="md,defectpos,def|indef,nom"></word>
+			<word text="iyaA" id="" grammar="md,defectpos,const,nom"></word>
+			<word text="iyayoni" id="" grammar="md,defectpos,def|indef,acc|pos"></word>
+			<word text="iyaY" id="" grammar="md,defectpos,const,acc|pos"></word>
+
+			<word text="FA" id="" grammar="ms,defectacc,indef,nom|pos|acc"></word>
+			<word text="aA" id="" grammar="ms,defectacc,def|const,nom|pos|acc"></word>
+			<word text="ayaAni" id="" grammar="md,defectacc,indef|def,nom"></word>
+			<word text="awaAni" id="" grammar="md2cs,defectacc,indef|def,nom"></word>
+			<word text="ayaA awaA" id="" grammar="md,defectacc,const,nom"></word>
+			<word text="ayayoni" id="" grammar="md,defectacc,indef|def,pos|acc"></word>
+			<word text="awayoni" id="" grammar="md2cs,defectacc,indef|def,pos|acc"></word>
+			<word text="ayaY awaY" id="" grammar="md,defectacc,const,pos|acc"></word>
+			<word text="awona" id="" grammar="mp,defectacc,indef|def,nom"></word>
+			<word text="aw" id="" grammar="mp,defectacc,const,nom"></word>
+			<word text="ayona" id="" grammar="mp,defectacc,indef|def,pos|acc"></word>
+			<word text="aY" id="" grammar="mp,defectacc,const,pos|acc"></word>
 			
-			<word text="{l p aA \-\&gt; iy~N iy~apN" id="RelativeAdjective" grammar=""></word>
+			<word text="aA" id="" grammar="ms|fs,invar,def|indef|const,nom|pos|acc"></word>
+			<word text="ayaAni" id="" grammar="md,invar,indef|def,nom"></word>
+			<word text="ayaA" id="" grammar="md,invar,const,nom"></word>
+			<word text="ayayoni" id="" grammar="md,invar,indef|def,pos|acc"></word>
+			<word text="ayaY" id="" grammar="md,invar,const,pos|acc"></word>
+			
+			<word text="apN" id="FeminineForm" grammar=""></word>
+			<word from="({ArabicLetterAlefWasla}{ArabicLetterLam}(?={ArabicSunLetters}{ArabicShadda}|{ArabicSukun}?(?:{ArabicMoonLetters}|{ArabicLetterAlefWithHamzaAbove}|{ArabicLetterAlefWithHamzaBelow}|{ArabicLetterHamza}|{ArabicTatweel}{ArabicHamzaAbove})))?{ArabicFatha}{ArabicLetterTehMarbuta}|{ArabicFatha}{ArabicLetterAlef}" text="iy~N" id="RelativeAdjective" grammar=""></word>
 		</category>
 		<category title="ProximalDemonstratives">
 			<word text="ha`*aA" id="This" grammar="ms"></word>
@@ -4134,7 +4176,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 	    <metarule name="EmptyHamza" match="((?:^|{CertainStopPattern}|{OptionalStopPattern})\s*)({ArabicLetterAlefWasla})(?=(?:{ArabicMoonLetters}|{ArabicSunLettersNoLam})(?:{ArabicSukun}|{ArabicShadda}?(?:{ArabicFathaDammaKasra}))?(?:{ArabicLetters}){ArabicDamma})" evaluator=";helperdamma"></metarule>
 	    <metarule name="EmptyHamza" match="((?:{CertainNotStopPattern}|{OptionalNotStopPattern})\s*)({ArabicLetterAlefWasla})" evaluator=";empty"></metarule>
 	    <metarule name="AssimilateLaamSunLetter" match="((?:(?:^|{CertainStopPattern}|{OptionalStopPattern})\s*|\s+)(?:{ArabicLetterWaw}{ArabicFatha}|{ArabicLetterBeh}{ArabicKasra}|{ArabicLetterTeh}{ArabicFatha}|{ArabicLetterKaf}{ArabicFatha}|{ArabicLetterLam}{ArabicKasra})?{ArabicLetterAlefWasla})({ArabicLetterLam})({ArabicSunLetters})(?={ArabicShadda})" evaluator=";assimilate;assimilator"></metarule>
-	    <metarule name="ClearLaamMoonLetter" match="((?:(?:^|{CertainStopPattern}|{OptionalStopPattern})\s*|\s+)(?:{ArabicLetterWaw}{ArabicFatha}|{ArabicLetterBeh}{ArabicKasra}|{ArabicLetterTeh}{ArabicFatha}|{ArabicLetterKaf}{ArabicFatha}|{ArabicLetterLam}{ArabicKasra})?{ArabicLetterAlefWasla})({ArabicLetterLam})(?={ArabicSukun}?(?:{ArabicMoonLetters}))" evaluator=";helperprefix;"></metarule>
+	    <metarule name="ClearLaamMoonLetter" match="((?:(?:^|{CertainStopPattern}|{OptionalStopPattern})\s*|\s+)(?:{ArabicLetterWaw}{ArabicFatha}|{ArabicLetterBeh}{ArabicKasra}|{ArabicLetterTeh}{ArabicFatha}|{ArabicLetterKaf}{ArabicFatha}|{ArabicLetterLam}{ArabicKasra})?{ArabicLetterAlefWasla})({ArabicLetterLam})(?={ArabicSukun}?(?:{ArabicMoonLetters}|{ArabicLetterAlefWithHamzaAbove}|{ArabicLetterAlefWithHamzaBelow}|{ArabicLetterHamza}|{ArabicTatweel}{ArabicHamzaAbove}))" evaluator=";helperprefix;"></metarule>
 	    <metarule name="Sukun" match="({ArabicSukun})" evaluator="empty"></metarule>
 	    <metarule name="AlefMaksuraDaggerAlef" match="({ArabicLetterAlefMaksura})(?={ArabicLetterSuperscriptAlef})" evaluator="helperfatha"></metarule>
 	    <metarule name="AlefMaddah" match="({ArabicLetterAlefWithMaddaAbove})" evaluator="dividelettersymbol(helperalef permissibleprolong,empty)"></metarule>
