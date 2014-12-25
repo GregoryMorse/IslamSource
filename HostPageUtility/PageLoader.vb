@@ -171,6 +171,7 @@ Public Class Utility
     End Function
     Public Shared Function LoadResourceString(resourceKey As String) As String
         LoadResourceString = Nothing
+        If resourceKey Is Nothing Then Return Nothing
         For Each Pair In If(IsDesktopApp(), Array.ConvertAll("HostPageUtility=Acct,lang,unicode;IslamResources=Hadith,IslamInfo,IslamSource".Split(";"c), Function(Str As String) New KeyValuePair(Of String, String())(Str.Split("="c)(0), Str.Split("="c)(1).Split(","c))), ConnectionData.Resources)
             If Array.FindIndex(Pair.Value, Function(Str As String) Str = resourceKey Or resourceKey.StartsWith(Str + "_")) <> -1 Then
                 LoadResourceString = New System.Resources.ResourceManager(Pair.Key + ".Resources", Reflection.Assembly.Load(Pair.Key)).GetString(resourceKey, Threading.Thread.CurrentThread.CurrentUICulture)
@@ -1826,9 +1827,6 @@ Public Class ArabicData
         Next
         Return "return " + String.Join("||", Array.ConvertAll(Of ArrayList, String)(CType(Ranges.ToArray(GetType(ArrayList)), ArrayList()), Function(Arr As ArrayList) If(Arr.Count = 1, "c===0x" + Hex(Arr(0)), "(c>=0x" + Hex(Arr(0)) + "&&c<=0x" + Hex(Arr(Arr.Count - 1)) + ")"))) + ";"
     End Function
-    'ArabicLetterAlefWithMaddahAbove is used in simple script but not uthmani
-    'ArabicEndOfAyah is added later
-    'ArabicHamzaBelow never used along with ArabicLetterPeh, ArabicLetterTcheh, ArabicLetterVeh, ArabicLetterGaf
     Public Shared RecitationSymbols() As Char = {Space, _
         ArabicLetterHamza, ArabicLetterAlefWithHamzaAbove, ArabicLetterWawWithHamzaAbove, _
         ArabicLetterAlefWithHamzaBelow, ArabicLetterYehWithHamzaAbove, _
@@ -1852,53 +1850,9 @@ Public Class ArabicData
     Public Shared Function GetRecitationSymbols() As Array()
         Return Array.ConvertAll(RecitationSymbols, Function(Ch As Char) New Object() {Data.ArabicLetters(FindLetterBySymbol(Ch)).UnicodeName + " (" + FixStartingCombiningSymbol(Ch) + LeftToRightOverride + ")" + PopDirectionalFormatting, FindLetterBySymbol(Ch)})
     End Function
-    'Public Shared RecitationLetters As Char() = {ArabicLetterHamza, ArabicLetterAlefWithHamzaAbove, ArabicLetterWawWithHamzaAbove, _
-    '    ArabicLetterAlefWithHamzaBelow, ArabicLetterYehWithHamzaAbove, _
-    '    ArabicLetterAlef, ArabicLetterBeh, ArabicLetterTehMarbuta, ArabicLetterTeh, _
-    '    ArabicLetterTheh, ArabicLetterJeem, ArabicLetterHah, ArabicLetterKhah, ArabicLetterDal,
-    '    ArabicLetterThal, ArabicLetterReh, ArabicLetterZain, ArabicLetterSeen, ArabicLetterSheen, _
-    '    ArabicLetterSad, ArabicLetterDad, ArabicLetterTah, ArabicLetterZah, ArabicLetterAin, _
-    '    ArabicLetterGhain, ArabicTatweel, ArabicLetterFeh, ArabicLetterQaf, ArabicLetterKaf, _
-    '    ArabicLetterLam, ArabicLetterMeem, ArabicLetterNoon, ArabicLetterHeh, ArabicLetterWaw, _
-    '    ArabicLetterAlefMaksura, ArabicLetterYeh, ArabicLetterAlefWasla}
-    'Public Shared RecitationDiacritics As Char() = {ArabicFathatan, ArabicDammatan, ArabicKasratan, _
-    '    ArabicFatha, ArabicDamma, ArabicKasra, ArabicShadda, ArabicSukun, ArabicMaddahAbove, _
-    '    ArabicHamzaAbove, ArabicLetterSuperscriptAlef}
-    'Public Shared RecitationAlefs As Char() = {ArabicLetterAlefWithHamzaAbove, ArabicLetterAlefWithHamzaBelow, ArabicLetterAlef, _
-    '                    ArabicLetterAlefWithMaddaAbove, ArabicLetterAlefMaksura, ArabicLetterAlefWasla, ArabicLetterSuperscriptAlef}
-    'Public Shared RecitationHamzas As Char() = {ArabicLetterAlefWithHamzaAbove, ArabicLetterAlefWithHamzaBelow, ArabicLetterWawWithHamzaAbove, _
-    '                    ArabicLetterYehWithHamzaAbove, ArabicLetterHamza, ArabicHamzaAbove}
-    'Public Shared RecitationSpecialSymbols As Char() = {ArabicSmallHighLigatureSadWithLamWithAlefMaksura, _
-    '    ArabicSmallHighLigatureQafWithLamWithAlefMaksura, ArabicSmallHighMeemInitialForm, _
-    '    ArabicSmallHighLamAlef, ArabicSmallHighJeem, ArabicSmallHighThreeDots, _
-    '    ArabicSmallHighSeen, ArabicStartOfRubElHizb, ArabicSmallHighRoundedZero, _
-    '    ArabicSmallHighUprightRectangularZero, ArabicSmallHighMeemIsolatedForm, _
-    '    ArabicSmallLowSeen, ArabicSmallWaw, ArabicSmallYeh, ArabicSmallHighNoon, _
-    '    ArabicPlaceOfSajdah, ArabicEmptyCentreLowStop, ArabicEmptyCentreHighStop, _
-    '    ArabicRoundedHighStopWithFilledCentre, ArabicSmallLowMeem}
-    'Public Shared RecitationSpecialSymbolsNotStop As Char() = {
-    '    ArabicSmallHighLamAlef, _
-    '    ArabicSmallHighSeen, ArabicStartOfRubElHizb, ArabicSmallHighRoundedZero, _
-    '    ArabicSmallHighUprightRectangularZero, ArabicSmallHighMeemIsolatedForm, _
-    '    ArabicSmallLowSeen, ArabicSmallWaw, ArabicSmallYeh, ArabicSmallHighNoon, _
-    '    ArabicPlaceOfSajdah, ArabicEmptyCentreLowStop, ArabicEmptyCentreHighStop, _
-    '    ArabicRoundedHighStopWithFilledCentre, ArabicSmallLowMeem}
-    'Public Shared RecitationLettersDiacritics As Char() = {ArabicLetterHamza, ArabicLetterAlefWithHamzaAbove, ArabicLetterWawWithHamzaAbove, _
-    '    ArabicLetterAlefWithHamzaBelow, ArabicLetterYehWithHamzaAbove, _
-    '    ArabicLetterAlef, ArabicLetterBeh, ArabicLetterTehMarbuta, ArabicLetterTeh, _
-    '    ArabicLetterTheh, ArabicLetterJeem, ArabicLetterHah, ArabicLetterKhah, ArabicLetterDal,
-    '    ArabicLetterThal, ArabicLetterReh, ArabicLetterZain, ArabicLetterSeen, ArabicLetterSheen, _
-    '    ArabicLetterSad, ArabicLetterDad, ArabicLetterTah, ArabicLetterZah, ArabicLetterAin, _
-    '    ArabicLetterGhain, ArabicTatweel, ArabicLetterFeh, ArabicLetterQaf, ArabicLetterKaf, _
-    '    ArabicLetterLam, ArabicLetterMeem, ArabicLetterNoon, ArabicLetterHeh, ArabicLetterWaw, _
-    '    ArabicLetterAlefMaksura, ArabicLetterYeh, ArabicFathatan, ArabicDammatan, ArabicKasratan, _
-    '    ArabicFatha, ArabicDamma, ArabicKasra, ArabicShadda, ArabicSukun, ArabicMaddahAbove, _
-    '    ArabicHamzaAbove, ArabicLetterSuperscriptAlef, ArabicLetterAlefWasla}
     Public Shared Function FixStartingCombiningSymbol(Str As String) As String
         Return If(Array.IndexOf(RecitationCombiningSymbols, Str.Chars(0)) <> -1 Or Str.Length = 1, LeftToRightOverride + Str + PopDirectionalFormatting, Str)
     End Function
-    'Kasra when following shadda may actually be below the shadda but above the character
-    'Public Shared RecitationCombiningSymbolsBelow As Char() = {ArabicKasratan, ArabicKasra, ArabicSmallLowSeen, ArabicEmptyCentreLowStop, ArabicSmallLowMeem, ArabicHamzaBelow}
     Public Shared RecitationCombiningSymbols As Char() = {ChrW(&H610), ChrW(&H611), ChrW(&H612), ChrW(&H613), ArabicFathatan, ArabicDammatan, ArabicKasratan, _
         ArabicFatha, ArabicDamma, ArabicKasra, ArabicShadda, ArabicSukun, ArabicMaddahAbove, _
         ArabicHamzaAbove, ArabicLetterSuperscriptAlef, _
@@ -1909,52 +1863,7 @@ Public Class ArabicData
         ArabicSmallHighUprightRectangularZero, ArabicSmallHighMeemIsolatedForm, _
         ArabicSmallLowSeen, ArabicSmallHighNoon, ArabicEmptyCentreLowStop, ArabicEmptyCentreHighStop, _
         ArabicRoundedHighStopWithFilledCentre, ArabicSmallLowMeem}
-    'Public Shared RecitationConnectingFollowerSymbols As Char() = {ArabicLetterAlefWithHamzaAbove, ArabicLetterWawWithHamzaAbove, _
-    '    ArabicLetterAlefWithHamzaBelow, ArabicLetterYehWithHamzaAbove, _
-    '    ArabicLetterAlef, ArabicLetterBeh, ArabicLetterTehMarbuta, ArabicLetterTeh, _
-    '    ArabicLetterTheh, ArabicLetterJeem, ArabicLetterHah, ArabicLetterKhah, ArabicLetterDal,
-    '    ArabicLetterThal, ArabicLetterReh, ArabicLetterZain, ArabicLetterSeen, ArabicLetterSheen, _
-    '    ArabicLetterSad, ArabicLetterDad, ArabicLetterTah, ArabicLetterZah, ArabicLetterAin, _
-    '    ArabicLetterGhain, ArabicTatweel, ArabicLetterFeh, ArabicLetterQaf, ArabicLetterKaf, _
-    '    ArabicLetterLam, ArabicLetterMeem, ArabicLetterNoon, ArabicLetterHeh, ArabicLetterWaw, _
-    '    ArabicLetterAlefMaksura, ArabicLetterYeh}
-    'Public Shared ArabicUniqueLetters As String() = {"Al^m^", "Al^m^S^", "Al^r", "Al^m^r", "k^hyE^S^", "Th", "Ts^m^", "Ts^", "ys^", "S^", "Hm^", "E^s^q^", "q^", "n^"}
     Public Shared ArabicNumbers As String() = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"}
-    'Public Shared ArabicWaslKasraExceptions As String() = {"{mo$uwA", "{}otuwA", "{qoDuwA", "{bonuwA", "{moDuwA", "{mora>ata", "{somu", "{vonatayni", "{vonayni", "{bonatu", "{bonu", "{moru&NA"}
-    'Public Shared ArabicFathaDammaKasra As String() = {ArabicFatha, ArabicDamma, ArabicKasra}
-    'Public Shared ArabicTanweens As String() = {ArabicFathatan, ArabicDammatan, ArabicKasratan}
-    'Public Shared ArabicLongVowels As String() = {ArabicFatha + ArabicLetterAlef, ArabicDamma + ArabicLetterWaw, ArabicKasra + ArabicLetterYeh}
-    'Public Shared ArabicSunLetters As String() = {ArabicLetterTeh, ArabicLetterTheh, ArabicLetterDal, ArabicLetterThal, ArabicLetterReh, ArabicLetterZain, ArabicLetterSeen, ArabicLetterSheen, ArabicLetterSad, ArabicLetterDad, ArabicLetterTah, ArabicLetterZah, ArabicLetterLam, ArabicLetterNoon}
-    'Public Shared ArabicSunLettersNoLam As String() = {ArabicLetterTeh, ArabicLetterTheh, ArabicLetterDal, ArabicLetterThal, ArabicLetterReh, ArabicLetterZain, ArabicLetterSeen, ArabicLetterSheen, ArabicLetterSad, ArabicLetterDad, ArabicLetterTah, ArabicLetterZah, ArabicLetterNoon}
-    'Public Shared ArabicMoonLetters As String() = {ArabicLetterAlef, ArabicLetterBeh, ArabicLetterJeem, ArabicLetterHah, ArabicLetterKhah, ArabicLetterAin, ArabicLetterGhain, ArabicLetterFeh, ArabicLetterQaf, ArabicLetterKaf, ArabicLetterMeem, ArabicLetterHeh, ArabicLetterWaw, ArabicLetterYeh}
-    'Public Shared ArabicMoonLettersNoVowels As String() = {ArabicLetterBeh, ArabicLetterJeem, ArabicLetterHah, ArabicLetterKhah, ArabicLetterAin, ArabicLetterGhain, ArabicLetterFeh, ArabicLetterQaf, ArabicLetterKaf, ArabicLetterMeem, ArabicLetterHeh}
-    'Public Shared ArabicSpecialLeadingGutteral As String() = {ArabicLetterHamza, ArabicLetterHah, ArabicLetterAin}
-    'Public Shared ArabicSpecialGutteral As String() = {ArabicLetterHah, ArabicLetterAin, ArabicLetterSad, ArabicLetterDad, ArabicLetterTah, ArabicLetterZah}
-    'Public Shared ArabicLetters As String() = {ArabicLetterTeh, ArabicLetterTheh, ArabicLetterDal, ArabicLetterThal, ArabicLetterReh, ArabicLetterZain, ArabicLetterSeen, ArabicLetterSheen, ArabicLetterSad, ArabicLetterDad, ArabicLetterTah, ArabicLetterZah, ArabicLetterLam, ArabicLetterNoon, ArabicLetterAlef, ArabicLetterBeh, ArabicLetterJeem, ArabicLetterHah, ArabicLetterKhah, ArabicLetterAin, ArabicLetterGhain, ArabicLetterFeh, ArabicLetterQaf, ArabicLetterKaf, ArabicLetterMeem, ArabicLetterHeh, ArabicLetterWaw, ArabicLetterYeh}
-    'Public Shared ArabicLettersInOrder As Char() = {ArabicLetterAlef, ArabicLetterBeh, ArabicLetterTeh, ArabicLetterTheh, ArabicLetterJeem, ArabicLetterHah, ArabicLetterKhah, ArabicLetterDal, ArabicLetterThal, ArabicLetterReh, ArabicLetterZain, ArabicLetterSeen, ArabicLetterSheen, ArabicLetterSad, ArabicLetterDad, ArabicLetterTah, ArabicLetterZah, ArabicLetterAin, ArabicLetterGhain, ArabicLetterFeh, ArabicLetterQaf, ArabicLetterKaf, ArabicLetterLam, ArabicLetterMeem, ArabicLetterNoon, ArabicLetterHeh, ArabicLetterWaw, ArabicLetterYeh}
-    'Public Shared ArabicHamzas As Char() = {ArabicLetterHamza, ArabicLetterAlefWithMaddaAbove, ArabicLetterAlefWithHamzaAbove, ArabicLetterWawWithHamzaAbove, ArabicLetterAlefWithHamzaBelow, ArabicLetterYehWithHamzaAbove, ArabicHamzaAbove, ArabicLetterAlefWasla, ArabicHamzaBelow}
-    'Public Shared ArabicVowels As String() = {ArabicFatha, ArabicDamma, ArabicKasra, ArabicFathatan, ArabicDammatan, ArabicKasratan, ArabicFatha + ArabicLetterAlef, ArabicDamma + ArabicLetterWaw, ArabicKasra + ArabicLetterYeh, ArabicFatha + ArabicLetterWaw, ArabicFatha + ArabicLetterYeh, ArabicShadda, ArabicSukun}
-    'Public Shared ArabicLeadingGutterals As String() = {ArabicFatha + ArabicLetterAlef, ArabicFatha, ArabicDamma + ArabicLetterWaw, ArabicDamma, ArabicKasra + ArabicLetterYeh, ArabicKasra, ArabicFathatan, ArabicDammatan, ArabicKasratan, ArabicSukun}
-    'Public Shared ArabicTrailingGutterals As String() = {ArabicFatha + ArabicLetterAlef, ArabicFatha, ArabicDamma + ArabicLetterWaw, ArabicDamma, ArabicKasra + ArabicLetterYeh, ArabicKasra}
-    'Public Shared ArabicTajweed As Char() = {ArabicSmallHighSeen, ArabicSmallHighMeemIsolatedForm, ArabicSmallLowSeen, ArabicSmallWaw, ArabicSmallYeh, ArabicSmallHighNoon, ArabicSmallLowMeem}
-    'Public Shared ArabicPunctuation As Char() = {Space, ExclamationMark, QuotationMark, Comma, HyphenMinus, FullStop, Colon, LeftSquareBracket, RightSquareBracket, LeftCurlyBracket, RightCurlyBracket, NoBreakSpace, LeftPointingDoubleAngleQuotationMark, RightPointingDoubleAngleQuotationMark, ArabicComma, ArabicSemicolon, ArabicQuestionMark, ZeroWidthNonJoiner, NarrowNoBreakSpace, OrnateLeftParenthesis, OrnateRightParenthesis}
-    'Public Shared NonArabicLetters As Char() = {ArabicLetterPeh, ArabicLetterTcheh, ArabicLetterVeh, ArabicLetterGaf}
-    'Public Shared PunctuationSymbols As Char() = {ExclamationMark, QuotationMark, FullStop, Comma, ArabicComma, OrnateLeftParenthesis, OrnateRightParenthesis}
-    'Public Shared ArabicPunctuationSymbols As String() = {ArabicComma, OrnateLeftParenthesis, OrnateRightParenthesis}
-
-    'Public Shared CertainStopPattern As String = ArabicData.MakeUniRegEx(ArabicData.ArabicSmallHighMeemInitialForm) + "|" + ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicData.PunctuationSymbols, Function(Ch As Char) ArabicData.MakeUniRegEx(Ch)))
-    'Public Shared CertainNotStopPattern As String = ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicData.RecitationLettersDiacritics, Function(Str As String) ArabicData.MakeUniRegEx(Str))) + "|" + ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicData.RecitationSpecialSymbolsNotStop, Function(Str As String) ArabicData.MakeUniRegEx(Str)))
-    'Public Shared OptionalStopPattern As String = ArabicData.MakeUniRegEx(ArabicData.ArabicEndOfAyah) + "|" + ArabicData.MakeUniRegEx(ArabicData.ArabicSmallHighJeem) + "|" + ArabicData.MakeUniRegEx(ArabicData.ArabicSmallHighThreeDots) + "|" + ArabicData.MakeUniRegEx(ArabicData.ArabicSmallHighLigatureQafWithLamWithAlefMaksura)
-    'Public Shared OptionalStopPatternNotEndOfAyah As String = ArabicData.MakeUniRegEx(ArabicData.ArabicSmallHighJeem) + "|" + ArabicData.MakeUniRegEx(ArabicData.ArabicSmallHighThreeDots) + "|" + ArabicData.MakeUniRegEx(ArabicData.ArabicSmallHighLigatureQafWithLamWithAlefMaksura) + "|" + ArabicData.MakeUniRegEx(ArabicData.ArabicSmallHighLigatureSadWithLamWithAlefMaksura)
-    'Public Shared OptionalNotStopPattern As String = ArabicData.MakeUniRegEx(ArabicData.ArabicSmallHighLigatureSadWithLamWithAlefMaksura)
-    'Public Shared TehMarbutaStopRule As String = "(?:(" + ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicData.ArabicFathaDammaKasra, Function(Str As String) ArabicData.MakeUniRegEx(Str))) + ")|(" + ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicData.ArabicTanweens, Function(Str As String) ArabicData.MakeUniRegEx(Str))) + ")(" + ArabicData.MakeUniRegEx(ArabicData.ArabicSmallLowMeem) + "|" + ArabicData.MakeUniRegEx(ArabicData.ArabicSmallHighMeemIsolatedForm) + ")?)(?=\s*(?:" + ArabicData.MakeUniRegEx(ArabicData.ArabicPlaceOfSajdah) + "?\s*(?:$|" + ArabicData.MakeUniRegEx(ArabicData.ArabicEndOfAyah) + ")|" + CertainStopPattern + "|" + OptionalStopPattern + "))"
-    'Public Shared TehMarbutaContinueRule As String = "(?:(?:" + ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicData.ArabicFathaDammaKasra, Function(Str As String) ArabicData.MakeUniRegEx(Str))) + ")|(?:" + ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicData.ArabicTanweens, Function(Str As String) ArabicData.MakeUniRegEx(Str))) + ")(?:" + ArabicData.MakeUniRegEx(ArabicData.ArabicSmallLowMeem) + "|" + ArabicData.MakeUniRegEx(ArabicData.ArabicSmallHighMeemIsolatedForm) + ")?)(?!\s*(?:" + ArabicData.MakeUniRegEx(ArabicData.ArabicPlaceOfSajdah) + "?\s*(?:$|" + ArabicData.MakeUniRegEx(ArabicData.ArabicEndOfAyah) + ")|" + CertainStopPattern + "|" + OptionalStopPattern + "))"
-    'Public Shared ArabicSpecialLetters As String() = {"(" + ArabicData.MakeUniRegEx(ArabicData.ArabicLetterTehMarbuta) + ")" + TehMarbutaStopRule, "(" + ArabicData.MakeUniRegEx(ArabicData.ArabicLetterTehMarbuta) + ")" + TehMarbutaContinueRule, ArabicData.ArabicLetterSuperscriptAlef + ArabicData.ArabicLetterTehMarbuta, ArabicData.ArabicLetterAlefMaksura, ArabicData.ArabicLetterSuperscriptAlef, ArabicData.ArabicLetterNoonGhunna}
-    'Public Shared WhitespaceSymbols As Char() = {Space}
-    'Public Shared ArabicStopLetters As Char() = {ArabicSmallHighLigatureSadWithLamWithAlefMaksura, _
-    '                                               ArabicSmallHighLigatureQafWithLamWithAlefMaksura, _
-    '                            ArabicSmallHighMeemInitialForm, ArabicSmallHighLamAlef, _
-    '                            ArabicSmallHighJeem, ArabicSmallHighThreeDots, ArabicSmallHighSeen}
     Public Shared Function MakeUniRegEx(Input As String) As String
         Return String.Join(String.Empty, Array.ConvertAll(Of Char, String)(Input.ToCharArray(), Function(Ch As Char) "\u" + AscW(Ch).ToString("X4")))
     End Function
@@ -2718,7 +2627,7 @@ Public Class RenderArray
                 End If
             Next
         Next
-        Return "if (typeof renderList == 'undefined') { renderList = []; } renderList.push(" + Utility.MakeJSIndexedObject(CType(CType(Objects(0), ArrayList).ToArray(GetType(String)), String()), New Array() {CType(CType(Objects(1), ArrayList).ToArray(GetType(String)), String())}, True) + "); " + String.Join(String.Empty, ListJSInit.ToArray()) + String.Join(String.Empty, ListJSAfter.ToArray())
+        Return "if (typeof renderList == 'undefined') { renderList = []; } renderList = renderList.concat(" + Utility.MakeJSIndexedObject(CType(CType(Objects(0), ArrayList).ToArray(GetType(String)), String()), New Array() {CType(CType(Objects(1), ArrayList).ToArray(GetType(String)), String())}, True) + "); " + String.Join(String.Empty, ListJSInit.ToArray()) + String.Join(String.Empty, ListJSAfter.ToArray())
     End Function
     Public Shared Function GetInitJSItems(ID As String, Items As Collections.Generic.List(Of RenderItem), Title As String, NestPrefix As String) As Object()
         Dim Count As Integer
@@ -2784,6 +2693,49 @@ Public Class RenderArray
         Next
         Return JSFuncs.ToArray()
     End Function
+    Public Shared Function MakeTableJSFunctions(ByRef Output As Array(), ID As String) As Array()
+        Dim Objects As ArrayList = MakeTableJSFuncs(Output, ID)
+        Output(0) = {String.Empty, String.Empty, "if (typeof renderList == 'undefined') { renderList = []; } renderList = renderList.concat(" + Utility.MakeJSIndexedObject(CType(CType(Objects(0), ArrayList).ToArray(GetType(String)), String()), New Array() {CType(CType(Objects(1), ArrayList).ToArray(GetType(String)), String())}, True) + ");"}
+        Return Output
+    End Function
+    Public Shared Function MakeTableJSFuncs(ByVal Output As Object(), Prefix As String) As ArrayList
+        '2 dimensional array for table
+        Dim Objects As ArrayList = New ArrayList From {New ArrayList, New ArrayList}
+        Dim Count As Integer
+        Dim Index As Integer
+        If Output.Length = 0 Then Return Nothing
+        Dim OutArray As Object() = Output
+        For Count = 2 To OutArray.Length - 1
+            If TypeOf OutArray(Count) Is Object() Then
+                Dim Arabics As New ArrayList
+                Dim Translits As New ArrayList
+                Dim Translations As New ArrayList
+                Dim Children As ArrayList = New ArrayList From {New ArrayList, New ArrayList}
+                Dim InnerArray As Object() = DirectCast(OutArray(Count), Object())
+                For Index = 0 To InnerArray.Length - 1
+                    If Count <> 2 Then
+                        If (CStr(DirectCast(OutArray(1), Object())(Index)) <> String.Empty) Then
+                            If CStr(DirectCast(OutArray(1), Object())(Index)) = "arabic" Then
+                                Arabics.Add("arabic" + CStr(IIf(Prefix <> String.Empty, Prefix + "_", String.Empty)) + CStr(Count - 3) + "_" + CStr(Index))
+                            ElseIf CStr(DirectCast(OutArray(1), Object())(Index)) = "transliteration" Then
+                                Translits.Add("translit" + CStr(IIf(Prefix <> String.Empty, Prefix + "_", String.Empty)) + CStr(Count - 3) + "_" + CStr(Index))
+                            ElseIf CStr(DirectCast(OutArray(1), Object())(Index)) = "translation" Then
+                                Translations.Add("translate" + CStr(IIf(Prefix <> String.Empty, Prefix + "_", String.Empty)) + CStr(Count - 3) + "_" + CStr(Index))
+                            End If
+                        End If
+                    End If
+                    If TypeOf InnerArray(Index) Is Object() Then
+                        Dim NextChild As ArrayList = MakeTableJSFuncs(DirectCast(InnerArray(Index), Object()), Prefix + CStr(Count - 3) + "_" + CStr(Index))
+                        CType(Children(0), ArrayList).Add(CType(NextChild(0), ArrayList))
+                        CType(Children(1), ArrayList).Add(CType(NextChild(1), ArrayList))
+                    End If
+                Next
+                CType(Objects(0), ArrayList).Add("ri" + Prefix + CStr(Count))
+                CType(Objects(1), ArrayList).Add(Utility.MakeJSIndexedObject(New String() {"title", "arabic", "translit", "translate", "children"}, New Array() {New String() {"''", Utility.MakeJSArray(CType(Arabics.ToArray(GetType(String)), String())), Utility.MakeJSArray(CType(Translits.ToArray(GetType(String)), String())), Utility.MakeJSArray(CType(Translations.ToArray(GetType(String)), String())), Utility.MakeJSIndexedObject(CType(CType(Children(0), ArrayList).ToArray(GetType(String)), String()), New Array() {CType(CType(Children(1), ArrayList).ToArray(GetType(String)), String())}, True)}}, True))
+            End If
+        Next
+        Return Objects
+    End Function
     Public Shared Sub WriteTable(ByVal writer As System.Web.UI.HtmlTextWriter, ByVal Output As Object(), ByVal TabCount As Integer, Prefix As String)
         '2 dimensional array for table
         Dim BaseTabs As String = Utility.MakeTabString(TabCount)
@@ -2793,7 +2745,7 @@ Public Class RenderArray
         Dim OutArray As Object() = Output
         writer.Write(vbCrLf + BaseTabs)
         writer.WriteBeginTag("table")
-        writer.WriteAttribute("id", "render" + Prefix)
+        'writer.WriteAttribute("id", "ri" + Prefix)
         writer.Write(HtmlTextWriter.TagRightChar)
         For Count = 2 To OutArray.Length - 1
             writer.Write(vbCrLf + BaseTabs + vbTab)
@@ -2805,7 +2757,17 @@ Public Class RenderArray
                     writer.WriteFullBeginTag(CStr(IIf(Count = 2, "th", "td")))
                     writer.Write(vbCrLf + BaseTabs + vbTab + vbTab + vbTab)
                     writer.WriteBeginTag("span")
-                    If Count <> 2 Then writer.WriteAttribute("id", "render" + CStr(IIf(Prefix <> String.Empty, Prefix + "_", String.Empty)) + CStr(Count - 3) + "_" + CStr(Index))
+                    If Count <> 2 Then
+                        If (CStr(DirectCast(OutArray(1), Object())(Index)) <> String.Empty) Then
+                            If CStr(DirectCast(OutArray(1), Object())(Index)) = "arabic" Then
+                                writer.WriteAttribute("id", "arabic" + CStr(IIf(Prefix <> String.Empty, Prefix + "_", String.Empty)) + CStr(Count - 3) + "_" + CStr(Index))
+                            ElseIf CStr(DirectCast(OutArray(1), Object())(Index)) = "transliteration" Then
+                                writer.WriteAttribute("id", "translit" + CStr(IIf(Prefix <> String.Empty, Prefix + "_", String.Empty)) + CStr(Count - 3) + "_" + CStr(Index))
+                            ElseIf CStr(DirectCast(OutArray(1), Object())(Index)) = "translation" Then
+                                writer.WriteAttribute("id", "translate" + CStr(IIf(Prefix <> String.Empty, Prefix + "_", String.Empty)) + CStr(Count - 3) + "_" + CStr(Index))
+                            End If
+                        End If
+                    End If
                     If (CStr(DirectCast(OutArray(1), Object())(Index)) <> String.Empty) Then
                         writer.WriteAttribute("class", CStr(DirectCast(OutArray(1), Object())(Index)))
                         If CStr(DirectCast(OutArray(1), Object())(Index)) = "transliteration" Then
@@ -2822,7 +2784,7 @@ Public Class RenderArray
                     End If
                     writer.Write(HtmlTextWriter.TagRightChar)
                     If TypeOf InnerArray(Index) Is Object() Then
-                        WriteTable(writer, DirectCast(InnerArray(Index), Object()), TabCount + 4, CStr(Count - 3) + "_" + CStr(Index))
+                        WriteTable(writer, DirectCast(InnerArray(Index), Object()), TabCount + 4, Prefix + CStr(Count - 3) + "_" + CStr(Index))
                     Else
                         writer.Write(Utility.HtmlTextEncode(CStr(InnerArray(Index))).Replace(vbCrLf, "<br>"))
                     End If
@@ -2864,7 +2826,7 @@ Public Class RenderArray
                 ElseIf Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eList Then
                     writer.WriteAttribute("style", "direction: ltr;" + Style)
                     writer.Write(HtmlTextWriter.TagRightChar)
-                    WriteTable(writer, CType(Items(Count).TextItems(Index).Text, Object()), TabCount, CStr(Count))
+                    WriteTable(writer, CType(Items(Count).TextItems(Index).Text, Object()), TabCount, ID + CStr(Count))
                 ElseIf Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eContinueStop Then
                     'U+2BC3 is horizontal stop sign make red color, U+2B45/6 is left/rightwards quadruple arrow make green color
                     writer.WriteAttribute("style", "color: " + If(CStr(Items(Count).TextItems(Index).Text) <> String.Empty, "#ff0000", "#00ff00") + ";" + Style)

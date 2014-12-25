@@ -116,7 +116,7 @@ Partial Class Page
                 DirectCast(Output, RenderArray).Render(writer, TabCount + 1)
                 AddToJSFunctions(DirectCast(Output, RenderArray).GetRenderJS())
             Else
-                RenderArray.WriteTable(writer, DirectCast(Output, Object()), TabCount + 1, String.Empty)
+                RenderArray.WriteTable(writer, DirectCast(Output, Object()), TabCount + 1, Item.Name)
                 Array.ForEach(RenderArray.GetTableJSFunctions(DirectCast(Output, Object())), Sub(Strs As String()) AddToJSFunctions(Strs))
             End If
         End If

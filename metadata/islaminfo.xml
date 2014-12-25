@@ -901,10 +901,10 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="ayoni" id="DualAccusativePossessive" grammar="md|fd,flex|pflex,def|indef,acc|pos"></word>
 			<word text="aA" id="FlexibleConstantDualNominative" grammar="md|fd,flex|long,const,nom"></word>
 			<word text="aY" id="FlexibleConstantDualAccusativePossessive" grammar="md|fd,flex|long,const,acc|pos"></word>
-			<word from="p" text="tu" id="SoundFeminineDefinitePluralNominative" grammar="fp,flex,def|const,nom"></word>
-			<word from="p" text="tN" id="SoundFeminineIndefinitePluralNominative" grammar="fp,flex,indef,nom"></word>
-			<word from="p" text="ti" id="SoundFeminineDefinitePluralAccusativePossessive" grammar="fp,flex,def|const,acc|pos"></word>
-			<word from="p" text="tK" id="SoundFeminineIndefinitePluralAccusativePossessive" grammar="fp,flex,indef,acc|pos"></word>
+			<word from="{MatchTehMarbuta}" text="tu" id="SoundFeminineDefinitePluralNominative" grammar="fp,flex,def|const,nom"></word>
+			<word from="{MatchTehMarbuta}" text="tN" id="SoundFeminineIndefinitePluralNominative" grammar="fp,flex,indef,nom"></word>
+			<word from="{MatchTehMarbuta}" text="ti" id="SoundFeminineDefinitePluralAccusativePossessive" grammar="fp,flex,def|const,acc|pos"></word>
+			<word from="{MatchTehMarbuta}" text="tK" id="SoundFeminineIndefinitePluralAccusativePossessive" grammar="fp,flex,indef,acc|pos"></word>
 			<word text="uwna" id="SoundMasculinePluralNominative" grammar="mp,flex|pflex|defectpos,def|indef,nom"></word>
 			<word text="iyna" id="SoundMasculinePluralAccusativePossessive" grammar="mp,flex|pflex|defectpos,def|indef,acc|pos"></word>
 			<word text="uw" id="SoundMasculineConstantPluralNominative" grammar="mp,flex|long|defectpos,const,nom"></word>
@@ -946,24 +946,31 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="ayayoni" id="" grammar="md,invar,indef|def,pos|acc"></word>
 			<word text="ayaY" id="" grammar="md,invar,const,pos|acc"></word>
 			
-			<word text="apN" id="FeminineForm" grammar=""></word>
-			<word from="({ArabicLetterAlefWasla}{ArabicLetterLam}(?={ArabicSunLetters}{ArabicShadda}|{ArabicSukun}?(?:{ArabicMoonLetters}|{ArabicLetterAlefWithHamzaAbove}|{ArabicLetterAlefWithHamzaBelow}|{ArabicLetterHamza}|{ArabicTatweel}{ArabicHamzaAbove})))?{ArabicFatha}{ArabicLetterTehMarbuta}|{ArabicFatha}{ArabicLetterAlef}" text="iy~N" id="RelativeAdjective" grammar=""></word>
+			<word text="apN" id="FeminineForm" grammar="ms,fem"></word>
+			<word from="{MatchDefiniteness}" text="" id="RelativeAdjective" grammar="ms|fs,reladj"></word>
+			<word from="{MatchFathaAlef}|{MatchFemininity}" text="iy~N" id="RelativeAdjective" grammar="ms|fs,reladj"></word>
+			
+			<word from="{MatchAlefMaksura}" text="y" id="ParticleAttachPronoun" grammar="1ms|1fs|1md|1fd|1mp|1fp|2ms|2fs|2md|2fd|2mp|2fp|3ms|3fs|3md|3fd|3mp|3fp"></word>
+			<word match="{MatchYeh}  {MatchKasra} {MatchFirstPerson} {MatchNoon} " id="ParticleFirstPersonAttachPronoun" grammar="1ms|1fs"></word>
+			<word match="{MatchYeh}|{MatchKasra} {MatchThirdPerson}" id="ParticleThirdPersonAttachPronoun" grammar="3ms|3md|3fd|3mp|3fp"></word>
 		</category>
 		<category title="ProximalDemonstratives">
-			<word text="ha`*aA" id="This" grammar="ms"></word>
-			<word text="ha`*ihi" id="This" grammar="fs"></word>
-			<word text="ha`*a`ni ha`*aAni ha`*ayoni" id="TheseTwo" grammar="md"></word>
-			<word text="hataAni hatayoni" id="TheseTwo" grammar="fd"></word>
-			<word text="ha`^&amp;ulaA^&apos;i" id="These" grammar="mp|fp"></word>
-			<word text="ha`*ihi" id="These" grammar="bp"></word>
+			<word text="ha`*aA" id="This" grammar="ms,nom|pos|acc"></word>
+			<word text="ha`*ihi" id="This" grammar="fs|bp,nom|pos|acc"></word>
+			<word text="ha`*a`ni ha`*aAni" id="TheseTwo" grammar="md,nom"></word>
+			<word text="ha`*ayoni" id="TheseTwo" grammar="md,pos|acc"></word>
+			<word text="hata`ni hataAni" id="TheseTwo" grammar="fd,nom"></word>
+			<word text="hatayoni" id="TheseTwo" grammar="fd,pos|acc"></word>
+			<word text="ha`^&amp;ulaA^&apos;i" id="These" grammar="mp|fp,nom|pos|acc"></word>
 		</category>
 		<category title="DistalDemonstratives">
-			<word text="*a`lika" id="That" grammar="ms"></word>
-			<word text="tiloka" id="That" grammar="fs"></word>
-			<word text="*a`nika *ayonika" id="ThoseTwo" grammar="md"></word>
-			<word text="taAnika tayonika" id="ThoseTwo" grammar="fd"></word>
-			<word text="&gt;uw@la`^}ika" id="Those" grammar="mp|fp"></word>
-			<word text="tiloka" id="Those" grammar="bp"></word>
+			<word text="*a`lika" id="That" grammar="ms,nom|pos|acc"></word>
+			<word text="tiloka" id="That" grammar="fs|bp,nom|pos|acc"></word>
+			<word text="*a`nika *aAnika" id="ThoseTwo" grammar="md,nom"></word>
+			<word text="*ayonika" id="ThoseTwo" grammar="md,pos|acc"></word>
+			<word text="ta`nika taAnika" id="ThoseTwo" grammar="fd,nom"></word>
+			<word text="tayonika" id="ThoseTwo" grammar="fd,pos|acc"></word>
+			<word text="&gt;uw@la`^}ika" id="Those" grammar="mp|fp,nom|pos|acc"></word>
 		</category>
 		<category title="PointingNouns">
 			<word text="ka*alika" id="LikeThis"></word>
@@ -973,13 +980,14 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="tam~a" id="ThereOverThere"></word>
 		</category>
 		<category title="RelativePronouns">
-			<word text="{l~a*iy" id="HeWho" grammar="ms"></word>
-			<word text="{l~atiy" id="SheWho" grammar="fs"></word>
-			<word text="{l~a*aAni {l~a*ayoni" id="TheseTwoWho" grammar="md"></word>
-			<word text="{l~ataAni {l~atayoni" id="TheseTwoWho" grammar="fd"></word>
-			<word text="{l~a*iyna" id="ThoseWho" grammar="mp"></word>
-			<word text="{l~a`^_#iY {l~a`tiY" id="ThoseWho" grammar="fp"></word>
-			<word text="{l~atiy" id="ThoseWho" grammar="bp"></word>
+			<word text="{l~a*iy" id="HeWho" grammar="ms,nom|pos|acc"></word>
+			<word text="{l~atiy" id="SheWho" grammar="fs|bp,nom|pos|acc"></word>
+			<word text="{l~a*aAni" id="TheseTwoWho" grammar="md,nom"></word>
+			<word text="{l~a*ayoni" id="TheseTwoWho" grammar="md,pos|acc"></word>
+			<word text="{l~ataAni" id="TheseTwoWho" grammar="fd,nom"></word>
+			<word text="{l~atayoni" id="TheseTwoWho" grammar="fd,pos|acc"></word>
+			<word text="{l~a*iyna" id="ThoseWho" grammar="mp,nom|pos|acc"></word>
+			<word text="{l~a`^_#iY {l~a`tiY" id="ThoseWho" grammar="fp,nom|pos|acc"></word>
 		</category>
 		<category title="PersonalPronouns">
 			<word text="&gt;anaA" id="IMe" grammar="1ms|1fs"></word>
@@ -990,24 +998,23 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="&gt;antum" id="YouAll" grammar="2mp"></word>
 			<word text="&gt;antun~a" id="YouAll" grammar="2fp"></word>
 			<word text="huwa" id="HeHimIt" grammar="3ms"></word>
-			<word text="hiYa" id="SheHerIt" grammar="3fs"></word>
+			<word text="hiYa" id="SheHerIt" grammar="3fs|3bp"></word>
 			<word text="humaA" id="ThoseTwo" grammar="3md|3fd"></word>
 			<word text="humo" id="TheyThem" grammar="3mp"></word>
 			<word text="hun~a" id="TheyThem" grammar="3fp"></word>
-			<word text="hiYa" id="TheyThem" grammar="3bp"></word>
 		</category>
 		<category title="PossessiveDeterminerPersonalPronouns">
-			<word text="yo iy niy" id="My" grammar="1ms|1fs"></word>
+			<word text="~a Ya Y iY ~iY niY" id="My" grammar="1ms|1fs"></word>
 			<word text="naA" id="Our" grammar="1md|1fd|1mp|1fp"></word>
 			<word text="ka" id="Your" grammar="2ms"></word>
 			<word text="ki" id="Your" grammar="2fs"></word>
 			<word text="kumaA" id="YourTwo" grammar="2md|2fd"></word>
 			<word text="kumo" id="Your" grammar="2mp"></word>
 			<word text="kun~a" id="Your" grammar="2fp"></word>
-			<word text="hu" id="His" grammar="3ms,nom|acc"></word>
+			<word text="hu hi" id="His" grammar="3ms,nom|acc"></word>
 			<word text="hi" id="His" grammar="3ms,pos"></word>
 			<word text="haA" id="Her" grammar="3fs"></word>
-			<word text="humaA" id="TheirTwo" grammar="3md|3fd,nom|acc"></word>
+			<word text="humaA himaA" id="TheirTwo" grammar="3md|3fd,nom|acc"></word>
 			<word text="himaA" id="TheirTwo" grammar="3md|3fd,pos"></word>
 			<word text="humo" id="Their" grammar="3mp,nom|acc"></word>
 			<word text="himo" id="Their" grammar="3mp,pos"></word>
@@ -1830,7 +1837,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="SaAEN" id="WeightMeasureOf2172Grams"></word>
 			<word text="wasoqN" id="WeightMeasureOf130320Grams"></word>
 			<word text="rubuwbiy~apN" id="Domininion"></word>
-			<word text="&lt;isomN" text="&gt;asomaA^&apos;N" id="Name"></word>
+			<word text="&lt;isomN" plural="&gt;asomaA^&apos;N" id="Name"></word>
 			<word text="{lS~ifaAtu" id="Attributes"></word>
 			<word text="{loEuluwhiy~apu" id="Divinity"></word>
 			<word text="EibaAdapN" id="Worship"></word>
@@ -3759,7 +3766,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="\{text:Foundation,Establishment,Building,Flowering,Consolidation,Stagnation and Decline\}\{word:Allah,Law,Jurisprudence,SchoolOfJurisprudence,RevelationOfAllah,Tradition,OnenessOfGod,LegalMethodologyFundamentalPrinciplesOfIslamicLaw,PeopleOfTheBook,Community,Hereafter,Prayer,Fight,Hypocrite,Quraish,Theology,Ethics,DoctrineTheologyPrincipleOfBelief,Hajj,Usury,Satan,Abrogation,Bequest,Unlawful,Piety,ReasonedDecision,Concensus,Companions,Dowry,TemporaryMarriage,Consultation,PeopleOfReasoningOpinion,PeopleOfHadith,RealisticJurisprudence,AnalogicalDeduction,Khawarij,Shia,Umayyad,Abbasid,CentralTreasury,Medina,Makkah,Kufa,WesternCoastOfArabianPeninsula,Ruling,PrincipleMethod,Details,Wine,Commentary,Grammar,LegalPreference,DeemProper,Linking,LocalCustom,Opinion,Judge,WellKnown,Followers,Trace,ActionsDeedsWorks,Mufti,Imam,Caliph,RulingsNotPartOfTradition,HumanIntellect,Rationalists,Evidence,Essence,Authentic,NominativeCase,Liar,OpenSinner,Weak,ObviousApparent,ImpliedUnderstoodMeaning,NewlyExistent,Menses,Touch,GivingPreference,Congregation,PrayTime3,UnitOfPrayer,UponOn,ImamAbuHanifa,ImamMalik,ImamShafiee,ImamHanbal,ImamAwzaee,ImamZayd,ImamDawood,ImamAlLayth,ImamAthThawri,Zaahiree,ConsensusOfThePeopleOfMedina,ImamBukhari,ImamMuslim\}\{45:18,11:91,2:286,2:185,22:78,4:28,4:23-24,5:3-5,5:101,5:1,2:275,4:29,34:28,7:158,2:180,2:240,2:234,4:15-16,2:183,9:103,5:91,16:90,4:58,5:8,53:3-4,16:44,59:7\}" id="ScienceOfIslamicJurisprudence"></word>
 			<word text="\{word:\}" id="RulesOfIslamicJurisprudence"></word>
 			<word text="\{symbol:Alef,Beh,Teh,Theh,Jeem,Hah,Khah,Dal,Thal,Reh,Zain,Seen,Sheen,Sad,Dad,Tah,Zah,Ain,Ghain,Feh,Qaf,Kaf,Lam,Meem,Noon,Heh,Waw,Yeh,AlefWasla,AlefMaksura,TehMarbuta,Fathatan,Dammatan,Kasratan,Fatha,Damma,Kasra,Sukun\}\{personalpronoun:IMe,WeUs,You,YouAll,HeHimIt,SheHerIt,TheyThem\}\{possessivedeterminerpersonalpronoun:My,Our,Your,His,Her,Their\}\{noun:Lesson,First,Meaning,NounName,Vocabulary,Drill,Nunation,NominativeCase,PossessiveCase,SmallCurlLikeDiacriticPlacedAboveLetterToRepresentShortU,SmallDiagonalLinePlacedBelowLetterToRepresentShortI,SmallDiagonalLinePlacedAboveLetterToRepresentShortA,SubjectNominalSentence,Predicate,Adjective,WordBeingDescribed,Possession,GrammarRules,Masculine,Feminine,NamesOfCountries,In,The,From,UponOn,IsAmAreDoHave,Where,WhoTheOneWho,OutOfWhat,WithNear,No,Yes,HouseHome,ClassClassroomSeason,Student,Teacher,School,Book,Pen,TownCity,GroundEarth,Sun,Hand,Chair,Peace,Muslim,Table,Money,Transcendent,Consecrated,LargeOld,SmallYoung,New,Old,Very,Muhammad,Hasan,Ali,Khaalid,Saalim,Talha,Orwa,Safeeyah,Khadeejah,Ameenah,Mary,Fatima,Aisha,Pharoah,Moses,China,GreatBritain,Philippines,Jordan,Iraq,Pakistan,Kenya,SaudiArabia,France,Sudan,America,SriLanka,Canada,India,Algeria,Indonesia,Germany,Emirates,Kuwait,Morocco,Egypt,Tunisia,Lebanon,Jeddah,Makkah,Beirut,Amman\}\{verb:Expel\}\{phrase:PeaceBeUponYou,NominalSentence,EmptyHamza\}\{17:93:1-6,24:36:1-4,4:15:13-15,20:14:1-3,4:156:2-4,12:21:1-6,3:78:10-13,65:1:15-18,45:29:1-5,12:23:3-5,3:49:37-40,4:100:14-17,10:90:27-29,67:12:8-9,31:30:14-16,11:6:15-18,14:37:10-12,27:64:12-14,2:221:21-25\}" id="Arabic"></word>
-			<word text="\{word:RelativeAdjective,Possession,FirstParticlePossessionConstruction,SecondParticlePossessionConstruction,PointingNoun,FiveSpecialNouns,VerilyTrulySurely,Mighty,Wise,Knower,IndeedSurely,Sitting,Standing,Travelling,Coming,Going,ToTowardsUpToNotIncluding,Allah,Man,Woman,Living,Short,Slave,BoySonChild,GirlDaughter,Tall,YoungBeautiful,Abdullah,WhatThatWhich,Also,Employee,GateDoor,Name,DirectorPrincipal,Company,Mother,Sister,Son,WifeHusband,University,ButHoweverOnTheContraryActually,ButHowever,Because,Why,PureAndPurifying,River,Under,Punishment,SevereStrong,WellGrounded,KnowledgeScience,Father,Brother,NearClose,Far,Professor,Office,Library,FromAbout,Joseph,Flow,Call,Reward,ForgiveCover\}\{plurals:\}\{proximaldemonstratives:This,These\}\{distaldemonstratives:That,Those\}\{2:220:29-32,2:32:10-13,103:2,20:71:9-10,76:23:1-5,31:30:12-16,33:35:1-3,37:99:2-5,19:30:2-4,12:95:3-6,6:92:1-2,8:32:6-8,27:28:1-3,106:3,11:78:13-17,31:5:1-5,43:51:11-15,22:2:19-22,4:162:1-5,2:214:29-32,10:69:10-12,12:90:7-10,28:25:7-10,7:151:3-5\}" id="Arabic"></word>
+			<word text="\{word:RelativeAdjective,Possession,FirstParticlePossessionConstruction,SecondParticlePossessionConstruction,PointingNoun,FiveSpecialNouns,VerilyTrulySurely,Mighty,Wise,Knower,IndeedSurely,Sitting,Standing,Travelling,Coming,Going,ToTowardsUpToNotIncluding,Allah,Man,Woman,Living,Short,Slave,BoySonChild,GirlDaughter,Tall,YoungBeautiful,Abdullah,WhatThatWhich,Also,Employee,GateDoor,Name,DirectorPrincipal,Company,Mother,Sister,Son,WifeHusband,University,ButHoweverOnTheContraryActually,ButHowever,Because,Why,PureAndPurifying,River,Under,Punishment,SevereStrong,WellGrounded,KnowledgeScience,Father,Brother,NearClose,Far,Professor,Office,Library,FromAbout,Joseph,Flow,Call,Reward,ForgiveCover\}\{plurals:\}\{proximaldemonstratives:This,These\}\{distaldemonstratives:That,Those\}\{2:220:29-32,2:32:10-13,103:2,20:71:9-10,76:23:1-5,31:30:12-16,33:35:1-3,37:99:2-5,19:30:2-4,12:95:3-6,6:92:1-2,8:32:6-8,27:28:1-3,106:3,11:78:13-17,31:5:1-5,43:51:11-15,22:2:19-22,4:162:1-5,2:214:29-32,10:69:10-12,12:90:7-10,28:25:7-10,48:29:1-3,7:151:3-5\}" id="Arabic"></word>
 			<word text="\{word:\}" id="IslamicTheology"></word>
 			<word text="\{word:\}" id="PropheticBiography"></word>
 			<word text="\{word:\}" id="QuranicExegesis"></word>
@@ -3875,7 +3882,8 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 		<nums name="billions" text="biloyuwnu biloyuwnaAni balaAyiyna"></nums>
 		<nums name="milliard" text="miloyaAru miloyaAraAni miloyaAraAtK"></nums>
 		<nums name="trillions" text="toriloyuwnu toriloyuwnaAni triloyuwnaAtK"></nums>
-		<nums name="combiners" text="A Ea$ara wa a i u K FA"></nums>
+		<nums name="combiners" text="wa"></nums>
+		<nums name="quranheaders" text="&apos;aAya`tuhaA suwrapu rukuwEaAtuhaA"></nums>
 	</arabicnumbers>
 	<arabicpatterns>
 		<pattern name="CertainStopPattern" match="{ArabicSmallHighMeemInitialForm}|{PunctuationSymbols}"></pattern>
@@ -3885,6 +3893,17 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 		<pattern name="OptionalNotStopPattern" match="{ArabicSmallHighLigatureSadWithLamWithAlefMaksura}"></pattern>
 		<pattern name="TehMarbutaStopRule" match="(?:({ArabicFathaDammaKasra})|({ArabicTanweens})({ArabicSmallLowMeem}|{ArabicSmallHighMeemIsolatedForm})?)(?=\s*(?:{ArabicPlaceOfSajdah}?\s*(?:$|{ArabicEndOfAyah})|{CertainStopPattern}|{OptionalStopPattern}))"></pattern>
 		<pattern name="TehMarbutaContinueRule" match="(?:(?:{ArabicFathaDammaKasra})|(?:{ArabicTanweens})(?:{ArabicSmallLowMeem}|{ArabicSmallHighMeemIsolatedForm})?)(?!\s*(?:{ArabicPlaceOfSajdah}?\s*(?:$|{ArabicEndOfAyah})|{CertainStopPattern}|{OptionalStopPattern}))"></pattern>
+		<pattern name="MatchCaseEnding" match="(?:{ArabicLetterTehMarbuta}){TehMarbutaStopRule}|(?:(?:[^{ArabicLetterTehMarbuta}])(?:({ArabicFathaDammaKasra})|({ArabicKasratan}|{ArabicDammatan})({ArabicSmallLowMeem}|{ArabicSmallHighMeemIsolatedForm})?)|(?:{ArabicLetterHamza})({ArabicFathatan})({ArabicSmallLowMeem}|{ArabicSmallHighMeemIsolatedForm})?|({ArabicLetterNoon})({ArabicSmallLowMeem}))(?=$|\s+)"></pattern>
+		<pattern name="MatchDefiniteness" match="{ArabicLetterAlefWasla}{ArabicLetterLam}(?={ArabicSunLetters}{ArabicShadda}|{ArabicSukun}?(?:{ArabicMoonLetters}|{ArabicLetterAlefWithHamzaAbove}|{ArabicLetterAlefWithHamzaBelow}|{ArabicLetterHamza}|{ArabicTatweel}{ArabicHamzaAbove}))"></pattern>
+		<pattern name="MatchFathaAlef" match="{ArabicFatha}{ArabicLetterAlef}(?=$|\s+)"></pattern>
+		<pattern name="MatchTehMarbuta" match="{ArabicLetterTehMarbuta}(?=$|\s+)"></pattern>
+		<pattern name="MatchFemininity" match="{ArabicFatha}{StripTehMarbuta}"></pattern>
+		<pattern name="MatchAlefMaksura" match="{ArabicLetterAlefMaksura}(?=$|\s+)"></pattern>
+		<pattern name="MatchYeh" match="{ArabicLetterYeh}(?=$|\s+)"></pattern>
+		<pattern name="MatchKasra" match="{ArabicKasra}(?=$|\s+)"></pattern>
+		<pattern name="MatchNoon" match="{ArabicNoon}(?=$|\s+)"></pattern>
+		<pattern name="MatchFirstPerson" match="[^{ArabicLetterYeh}{ArabicKasra}{ArabicNoon}](?=$|\s+)"></pattern>
+		<pattern name="MatchThirdPerson" match="[^{ArabicLetterYeh}{ArabicKasra}](?=$|\s+)"></pattern>
 	</arabicpatterns>
 	<arabicgroups>
 		<group name="ArabicFathaDammaKasra" text="{ArabicFatha} {ArabicDamma} {ArabicKasra}"></group>
@@ -3910,6 +3929,11 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 		<group name="ArabicSpecialLetters" text="({ArabicLetterTehMarbuta}){TehMarbutaStopRule} ({ArabicLetterTehMarbuta}){TehMarbutaContinueRule} {ArabicLetterSuperscriptAlef}{ArabicLetterTehMarbuta} {ArabicLetterAlefMaksura} {ArabicLetterSuperscriptAlef} {ArabicLetterNoonGhunna}"></group>
 		<group name="WhitespaceSymbols" text="{Space}"></group>
 		<group name="ArabicStopLetters" text="{ArabicSmallHighLigatureSadWithLamWithAlefMaksura} {ArabicSmallHighLigatureQafWithLamWithAlefMaksura} {ArabicSmallHighMeemInitialForm} {ArabicSmallHighLamAlef} {ArabicSmallHighJeem} {ArabicSmallHighThreeDots} {ArabicSmallHighSeen}"></group>
+		<!--
+    		ArabicLetterAlefWithMaddahAbove is used in simple script but not uthmani
+    		ArabicEndOfAyah is added later
+    		ArabicHamzaBelow never used along with ArabicLetterPeh, ArabicLetterTcheh, ArabicLetterVeh, ArabicLetterGaf
+   		-->
 		<group name="RecitationSymbols" text="{Space} {ArabicLetterHamza} {ArabicLetterAlefWithHamzaAbove} {ArabicLetterWawWithHamzaAbove} {ArabicLetterAlefWithHamzaBelow} {ArabicLetterYehWithHamzaAbove} {ArabicLetterAlef} {ArabicLetterBeh} {ArabicLetterTehMarbuta} {ArabicLetterTeh} {ArabicLetterTheh} {ArabicLetterJeem} {ArabicLetterHah} {ArabicLetterKhah} {ArabicLetterDal} {ArabicLetterThal} {ArabicLetterReh} {ArabicLetterZain} {ArabicLetterSeen} {ArabicLetterSheen} {ArabicLetterSad} {ArabicLetterDad} {ArabicLetterTah} {ArabicLetterZah} {ArabicLetterAin} {ArabicLetterGhain} {ArabicTatweel} {ArabicLetterFeh} {ArabicLetterQaf} {ArabicLetterKaf} {ArabicLetterLam} {ArabicLetterMeem} {ArabicLetterNoon} {ArabicLetterHeh} {ArabicLetterWaw} {ArabicLetterAlefMaksura} {ArabicLetterYeh} {ArabicFathatan} {ArabicDammatan} {ArabicKasratan} {ArabicFatha} {ArabicDamma} {ArabicKasra} {ArabicShadda} {ArabicSukun} {ArabicMaddahAbove} {ArabicHamzaAbove} {ArabicLetterSuperscriptAlef} {ArabicLetterAlefWasla} {ArabicSmallHighLigatureSadWithLamWithAlefMaksura} {ArabicSmallHighLigatureQafWithLamWithAlefMaksura} {ArabicSmallHighMeemInitialForm} {ArabicSmallHighLamAlef} {ArabicSmallHighJeem} {ArabicSmallHighThreeDots} {ArabicSmallHighSeen} {ArabicStartOfRubElHizb} {ArabicSmallHighRoundedZero} {ArabicSmallHighUprightRectangularZero} {ArabicSmallHighMeemIsolatedForm} {ArabicSmallLowSeen} {ArabicSmallWaw} {ArabicSmallYeh} {ArabicSmallHighNoon} {ArabicPlaceOfSajdah} {ArabicEmptyCentreLowStop} {ArabicEmptyCentreHighStop} {ArabicRoundedHighStopWithFilledCentre} {ArabicSmallLowMeem}"></group>
 		<group name="RecitationLetters" text="{ArabicLetterHamza} {ArabicLetterAlefWithHamzaAbove} {ArabicLetterWawWithHamzaAbove} {ArabicLetterAlefWithHamzaBelow} {ArabicLetterYehWithHamzaAbove} {ArabicLetterAlef} {ArabicLetterBeh} {ArabicLetterTehMarbuta} {ArabicLetterTeh} {ArabicLetterTheh} {ArabicLetterJeem} {ArabicLetterHah} {ArabicLetterKhah} {ArabicLetterDal} {ArabicLetterThal} {ArabicLetterReh} {ArabicLetterZain} {ArabicLetterSeen} {ArabicLetterSheen} {ArabicLetterSad} {ArabicLetterDad} {ArabicLetterTah} {ArabicLetterZah} {ArabicLetterAin} {ArabicLetterGhain} {ArabicTatweel} {ArabicLetterFeh} {ArabicLetterQaf} {ArabicLetterKaf} {ArabicLetterLam} {ArabicLetterMeem} {ArabicLetterNoon} {ArabicLetterHeh} {ArabicLetterWaw} {ArabicLetterAlefMaksura} {ArabicLetterYeh} {ArabicLetterAlefWasla}"></group>
 		<group name="RecitationDiacritics" text="{ArabicFathatan} {ArabicDammatan} {ArabicKasratan} {ArabicFatha} {ArabicDamma} {ArabicKasra} {ArabicShadda} {ArabicSukun} {ArabicMaddahAbove} {ArabicHamzaAbove} {ArabicLetterSuperscriptAlef}"></group>
@@ -3918,6 +3942,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 		<group name="RecitationSpecialSymbols" text="{ArabicSmallHighLigatureSadWithLamWithAlefMaksura} {ArabicSmallHighLigatureQafWithLamWithAlefMaksura} {ArabicSmallHighMeemInitialForm} {ArabicSmallHighLamAlef} {ArabicSmallHighJeem} {ArabicSmallHighThreeDots} {ArabicSmallHighSeen} {ArabicStartOfRubElHizb} {ArabicSmallHighRoundedZero} {ArabicSmallHighUprightRectangularZero} {ArabicSmallHighMeemIsolatedForm} {ArabicSmallLowSeen} {ArabicSmallWaw} {ArabicSmallYeh} {ArabicSmallHighNoon} {ArabicPlaceOfSajdah} {ArabicEmptyCentreLowStop} {ArabicEmptyCentreHighStop} {ArabicRoundedHighStopWithFilledCentre} {ArabicSmallLowMeem}"></group>
 		<group name="RecitationSpecialSymbolsNotStop" text="{ArabicSmallHighLamAlef} {ArabicSmallHighSeen} {ArabicStartOfRubElHizb} {ArabicSmallHighRoundedZero} {ArabicSmallHighUprightRectangularZero} {ArabicSmallHighMeemIsolatedForm} {ArabicSmallLowSeen} {ArabicSmallWaw} {ArabicSmallYeh} {ArabicSmallHighNoon} {ArabicPlaceOfSajdah} {ArabicEmptyCentreLowStop} {ArabicEmptyCentreHighStop} {ArabicRoundedHighStopWithFilledCentre} {ArabicSmallLowMeem}"></group>
 		<group name="RecitationLettersDiacritics" text="{ArabicLetterHamza} {ArabicLetterAlefWithHamzaAbove} {ArabicLetterWawWithHamzaAbove} {ArabicLetterAlefWithHamzaBelow} {ArabicLetterYehWithHamzaAbove} {ArabicLetterAlef} {ArabicLetterBeh} {ArabicLetterTehMarbuta} {ArabicLetterTeh} {ArabicLetterTheh} {ArabicLetterJeem} {ArabicLetterHah} {ArabicLetterKhah} {ArabicLetterDal} {ArabicLetterThal} {ArabicLetterReh} {ArabicLetterZain} {ArabicLetterSeen} {ArabicLetterSheen} {ArabicLetterSad} {ArabicLetterDad} {ArabicLetterTah} {ArabicLetterZah} {ArabicLetterAin} {ArabicLetterGhain} {ArabicTatweel} {ArabicLetterFeh} {ArabicLetterQaf} {ArabicLetterKaf} {ArabicLetterLam} {ArabicLetterMeem} {ArabicLetterNoon} {ArabicLetterHeh} {ArabicLetterWaw} {ArabicLetterAlefMaksura} {ArabicLetterYeh} {ArabicFathatan} {ArabicDammatan} {ArabicKasratan} {ArabicFatha} {ArabicDamma} {ArabicKasra} {ArabicShadda} {ArabicSukun} {ArabicMaddahAbove} {ArabicHamzaAbove} {ArabicLetterSuperscriptAlef} {ArabicLetterAlefWasla}"></group>
+		<!-- Kasra when following shadda may actually be below the shadda but above the character but it depends on the font -->
 		<group name="RecitationCombiningSymbolsBelow" text="{ArabicKasratan} {ArabicKasra} {ArabicSmallLowSeen} {ArabicEmptyCentreLowStop} {ArabicSmallLowMeem} {ArabicHamzaBelow}"></group>
 		<group name="RecitationCombiningSymbols" text="{0x0610} {0x0611} {0x0612} {0x0613} {ArabicFathatan} {ArabicDammatan} {ArabicKasratan} {ArabicFatha} {ArabicDamma} {ArabicKasra} {ArabicShadda} {ArabicSukun} {ArabicMaddahAbove} {ArabicHamzaAbove} {ArabicLetterSuperscriptAlef} {ArabicSmallHighLigatureSadWithLamWithAlefMaksura} {ArabicSmallHighLigatureQafWithLamWithAlefMaksura} {ArabicSmallHighMeemInitialForm} {ArabicSmallHighLamAlef} {ArabicSmallHighJeem} {ArabicSmallHighThreeDots} {ArabicSmallHighSeen} {ArabicSmallHighRoundedZero} {ArabicSmallHighUprightRectangularZero} {ArabicSmallHighMeemIsolatedForm} {ArabicSmallLowSeen} {ArabicSmallHighNoon} {ArabicEmptyCentreLowStop} {ArabicEmptyCentreHighStop} {ArabicRoundedHighStopWithFilledCentre} {ArabicSmallLowMeem}"></group>
 		<group name="RecitationConnectingFollowerSymbols" text="{ArabicLetterAlefWithHamzaAbove} {ArabicLetterWawWithHamzaAbove} {ArabicLetterAlefWithHamzaBelow} {ArabicLetterYehWithHamzaAbove} {ArabicLetterAlef} {ArabicLetterBeh} {ArabicLetterTehMarbuta} {ArabicLetterTeh} {ArabicLetterTheh} {ArabicLetterJeem} {ArabicLetterHah} {ArabicLetterKhah} {ArabicLetterDal} {ArabicLetterThal} {ArabicLetterReh} {ArabicLetterZain} {ArabicLetterSeen} {ArabicLetterSheen} {ArabicLetterSad} {ArabicLetterDad} {ArabicLetterTah} {ArabicLetterZah} {ArabicLetterAin} {ArabicLetterGhain} {ArabicTatweel} {ArabicLetterFeh} {ArabicLetterQaf} {ArabicLetterKaf} {ArabicLetterLam} {ArabicLetterMeem} {ArabicLetterNoon} {ArabicLetterHeh} {ArabicLetterWaw} {ArabicLetterAlefMaksura} {ArabicLetterYeh}"></group>

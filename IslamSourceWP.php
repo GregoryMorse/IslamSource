@@ -445,6 +445,8 @@ class CachedData
     static $_ArabicFractionNumbers = null;
     static $_ArabicOrdinalNumbers = null;
     static $_ArabicOrdinalExtraNumbers = null;
+    static $_ArabicCombiners = null;
+    static $_QuranHeaders = null;
     public static function ArabicUniqueLetters()
 	{
         if (CachedData::$_ArabicUniqueLetters == null) {
@@ -549,6 +551,20 @@ class CachedData
             CachedData::$_ArabicOrdinalExtraNumbers = CachedData::GetNum("ordinalextras");
         }
         return CachedData::$_ArabicOrdinalExtraNumbers;
+    }
+    public static function ArabicCombiners()
+	{
+        if (CachedData::$_ArabicCombiners == null) {
+            CachedData::$_ArabicCombiners = CachedData::GetNum("combiners");
+        }
+        return CachedData::$_ArabicCombiners;
+    }
+    public static function QuranHeaders()
+	{
+        if (CachedData::$_QuranHeaders == null) {
+            CachedData::$_QuranHeaders = CachedData::GetNum("quranheaders");
+        }
+        return CachedData::$_QuranHeaders;
     }
     static $_CertainStopPattern = null;
     static $_OptionalStopPattern = null;
@@ -1278,11 +1294,11 @@ class Arabic
             } else {
                 $str = substr($str, 0, strlen($str) - 1) . "a";
             }
-            $str .= " Ea\$ara";
+            $str .= " " . substr(CachedData::ArabicBaseTenNumbers()[1], 0, -2);
         } elseif (($number == 0 && $str == "") || $number == 10 || $number >= 20) {
-            $str = ($str == "" ? "" : $str . " wa") . CachedData::ArabicBaseTenNumbers()[(int)($number / 10)];
+            $str = ($str == "" ? "" : $str . " " . CachedData::ArabicCombiners()[0]) . CachedData::ArabicBaseTenNumbers()[(int)($number / 10)];
         }
-        return $useClassic ? ($str == "" ? "" : $str . ($hundStr == "" ? "" : " wa")) . $hundStr : ($hundStr == "" ? "" : $hundStr . ($str == "" ? "" : " wa")) . $str;
+        return $useClassic ? ($str == "" ? "" : $str . ($hundStr == "" ? "" : (" " . CachedData::ArabicCombiners()[0]))) . $hundStr : ($hundStr == "" ? "" : $hundStr . ($str == "" ? "" : (" " . CachedData::ArabicCombiners()[0]))) . $str;
     }
     public static function ArabicWordFromNumber($number, $useClassic, $useAlefHundred, $useMilliard)
     {
@@ -1314,11 +1330,11 @@ class Arabic
             }
             $number = $number % $baseNums[$curBase];
             $curBase -= 1;
-            $str = $useClassic ? ($nextStr == "" ? "" : $nextStr . ($str == "" ? "" : " wa")) . $str : ($str == "" ? "" : $str . ($nextStr == "" ? "" : " wa")) . $nextStr;
+            $str = $useClassic ? ($nextStr == "" ? "" : $nextStr . ($str == "" ? "" : (" " . CachedData::ArabicCombiners()[0]))) . $str : ($str == "" ? "" : $str . ($nextStr == "" ? "" : (" " . CachedData::ArabicCombiners()[0]))) . $nextStr;
             $nextStr = "";
         } while ($curBase >= 0);
         if ($number != 0 || $str == "") { $nextStr = Arabic::ArabicWordForLessThanThousand((int)($number), $useClassic, $useAlefHundred); }
-        return $useClassic ? ($nextStr == "" ? "" : $nextStr . ($str == "" ? "" : " wa")) . $str : ($str == "" ? "" : $str . ($nextStr == "" ? "" : " wa")) . $nextStr;
+        return $useClassic ? ($nextStr == "" ? "" : $nextStr . ($str == "" ? "" : (" " . CachedData::ArabicCombiners()[0]))) . $str : ($str == "" ? "" : $str . ($nextStr == "" ? "" : (" " . CachedData::ArabicCombiners()[0]))) . $nextStr;
     }
     public static function ReplaceMetadata($arabicString, $metadataRule, $scheme, $optionalStops)
     {
@@ -1580,9 +1596,9 @@ class TanzilReader
 		if ($qurantext !== null) {
 			for ($chapter = 0; $chapter < count($qurantext); $chapter++) {
                 $chapterNode = TanzilReader::GetChapterByIndex($basechapter + $chapter);
-                array_push($renderer->Items, new RenderItem(RenderTypes::eHeaderLeft, [new RenderText(RenderDisplayClass::eArabic, ArabicData::TransliterateFromBuckwalter("'aAya`tuhaA " . $chapterNode->attributes()["ayas"] . " ")), new RenderText(RenderDisplayClass::eTransliteration, trim(Arabic::TransliterateToScheme(ArabicData::TransliterateFromBuckwalter("'aAya`tuhaA " . $chapterNode->attributes()["ayas"] . " "), $schemetype, $scheme))), new RenderText(RenderDisplayClass::eLTR, "Verses " . $chapterNode->attributes()["ayas"] . " ")]));
-                array_push($renderer->Items, new RenderItem(RenderTypes::eHeaderCenter, [new RenderText(RenderDisplayClass::eArabic, ArabicData::TransliterateFromBuckwalter("suwrapu " . CachedData::IslamData()->quranchapters->children()[(int)($chapterNode->attributes()["index"]) - 1]->attributes()["name"] . " ")), new RenderText(RenderDisplayClass::eTransliteration, trim(Arabic::TransliterateToScheme(ArabicData::TransliterateFromBuckwalter("suwrapu " . CachedData::IslamData()->quranchapters->children()[(int)($chapterNode->attributes()["index"]) - 1]->attributes()["name"] . " "), $schemetype, $scheme))), new RenderText(RenderDisplayClass::eLTR, "Chapter " . TanzilReader::GetChapterEName($chapterNode) . " ")]));
-                array_push($renderer->Items, new RenderItem(RenderTypes::eHeaderRight, [new RenderText(RenderDisplayClass::eArabic, ArabicData::TransliterateFromBuckwalter("rukuwEaAtuhaA " . $chapterNode->attributes()["rukus"] . " ")), new RenderText(RenderDisplayClass::eTransliteration, trim(Arabic::TransliterateToScheme(ArabicData::TransliterateFromBuckwalter("rukuwEaAtuhaA " . $chapterNode->attributes()["rukus"] . " "), $schemetype, $scheme))), new RenderText(RenderDisplayClass::eLTR, "Rukus " . $chapterNode->attributes()["rukus"] . " ")]));
+                array_push($renderer->Items, new RenderItem(RenderTypes::eHeaderLeft, [new RenderText(RenderDisplayClass::eArabic, ArabicData::TransliterateFromBuckwalter(CachedData::QuranHeaders()[0] . " " . $chapterNode->attributes()["ayas"] . " ")), new RenderText(RenderDisplayClass::eTransliteration, trim(Arabic::TransliterateToScheme(ArabicData::TransliterateFromBuckwalter(CachedData::QuranHeaders()[0] . " " . $chapterNode->attributes()["ayas"] . " "), $schemetype, $scheme))), new RenderText(RenderDisplayClass::eLTR, "Verses " . $chapterNode->attributes()["ayas"] . " ")]));
+                array_push($renderer->Items, new RenderItem(RenderTypes::eHeaderCenter, [new RenderText(RenderDisplayClass::eArabic, ArabicData::TransliterateFromBuckwalter(CachedData::QuranHeaders()[1] . " " . CachedData::IslamData()->quranchapters->children()[(int)($chapterNode->attributes()["index"]) - 1]->attributes()["name"] . " ")), new RenderText(RenderDisplayClass::eTransliteration, trim(Arabic::TransliterateToScheme(ArabicData::TransliterateFromBuckwalter(CachedData::QuranHeaders()[1] . " " . CachedData::IslamData()->quranchapters->children()[(int)($chapterNode->attributes()["index"]) - 1]->attributes()["name"] . " "), $schemetype, $scheme))), new RenderText(RenderDisplayClass::eLTR, "Chapter " . TanzilReader::GetChapterEName($chapterNode) . " ")]));
+                array_push($renderer->Items, new RenderItem(RenderTypes::eHeaderRight, [new RenderText(RenderDisplayClass::eArabic, ArabicData::TransliterateFromBuckwalter(CachedData::QuranHeaders()[2] . " " . $chapterNode->attributes()["rukus"] . " ")), new RenderText(RenderDisplayClass::eTransliteration, trim(Arabic::TransliterateToScheme(ArabicData::TransliterateFromBuckwalter(CachedData::QuranHeaders()[2] . " " . $chapterNode->attributes()["rukus"] . " "), $schemetype, $scheme))), new RenderText(RenderDisplayClass::eLTR, "Rukus " . $chapterNode->attributes()["rukus"] . " ")]));
 				for ($verse = 0; $verse < count($qurantext[$chapter]); $verse++) {
                     $items = array();
                     $text = "";

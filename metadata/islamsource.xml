@@ -286,6 +286,7 @@
 	</page>
 	<page name="grammar" description="IslamSource_Grammar">
 		<frame name="arabicgrammar" description="IslamSource_Grammar">
+			<radio name="translitscheme" description="IslamSource_TransliterationScheme" uselist="true" onchange="Arabic::GetChangeTransliterationJS" onpopulate="Arabic::GetTransliterationSchemes"></radio>
 			<button name="fontsmaller" description="IslamSource_Smaller" onclick="ArabicFont::GetFontSmallerJS"></button>
 			<button name="fontdefaultsize" description="IslamSource_LetterSample" onclick="ArabicFont::GetFontDefaultSizeJS"></button>
 			<button name="fontbigger" description="IslamSource_Bigger" onclick="ArabicFont::GetFontBiggerJS"></button>
@@ -311,6 +312,7 @@
 			<static name="otherparticles" description="IslamSource_Text" onrender="Arabic::DisplayOtherParticles"></static>
 			<static name="nouns" description="IslamSource_Text" onrender="Arabic::DisplayNouns"></static>
 			<static name="verbs" description="IslamSource_Text" onrender="Arabic::DisplayVerbs"></static>
+			<static name="translitschemetext" description="IslamSource_Text" onrender="Arabic::GetTransliterationSchemeTable"></static>
 		</frame>
 	</page>
 	<page name="quranwords" description="IslamSource_QuranWords">

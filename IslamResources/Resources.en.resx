@@ -10884,4 +10884,82 @@
   <data name="IslamSource_InternetArabic" xml:space="preserve">
     <value>Internet Arabic</value>
   </data>
+  <data name="IslamInfo_IMe" xml:space="preserve">
+    <value>I Me</value>
+  </data>
+  <data name="IslamInfo_WeUs" xml:space="preserve">
+    <value>We Us</value>
+  </data>
+  <data name="IslamInfo_You" xml:space="preserve">
+    <value>You</value>
+  </data>
+  <data name="IslamInfo_YouAll" xml:space="preserve">
+    <value>You All</value>
+  </data>
+  <data name="IslamInfo_HeHimIt" xml:space="preserve">
+    <value>He Him It</value>
+  </data>
+  <data name="IslamInfo_SheHerIt" xml:space="preserve">
+    <value>She Her It</value>
+  </data>
+  <data name="IslamInfo_TheyThem" xml:space="preserve">
+    <value>They Them</value>
+  </data>
+  <data name="IslamInfo_This" xml:space="preserve">
+    <value>This</value>
+  </data>
+  <data name="IslamInfo_TheseTwo" xml:space="preserve">
+    <value>These Two</value>
+  </data>
+  <data name="IslamInfo_These" xml:space="preserve">
+    <value>These</value>
+  </data>
+  <data name="IslamInfo_That" xml:space="preserve">
+    <value>That</value>
+  </data>
+  <data name="IslamInfo_ThoseTwo" xml:space="preserve">
+    <value>Those Two</value>
+  </data>
+  <data name="IslamInfo_Those" xml:space="preserve">
+    <value>Those</value>
+  </data>
+  <data name="IslamInfo_HeWho" xml:space="preserve">
+    <value>He Who</value>
+  </data>
+  <data name="IslamInfo_SheWho" xml:space="preserve">
+    <value>She Who</value>
+  </data>
+  <data name="IslamInfo_TheseTwoWho" xml:space="preserve">
+    <value>These Two Who</value>
+  </data>
+  <data name="IslamInfo_ThoseWho" xml:space="preserve">
+    <value>Those Who</value>
+  </data>
+  <data name="IslamInfo_YouTwo" xml:space="preserve">
+    <value>You Two</value>
+  </data>
+  <data name="IslamInfo_My" xml:space="preserve">
+    <value>My</value>
+  </data>
+  <data name="IslamInfo_Our" xml:space="preserve">
+    <value>Our</value>
+  </data>
+  <data name="IslamInfo_Your" xml:space="preserve">
+    <value>Your</value>
+  </data>
+  <data name="IslamInfo_YourTwo" xml:space="preserve">
+    <value>Your Two</value>
+  </data>
+  <data name="IslamInfo_His" xml:space="preserve">
+    <value>His</value>
+  </data>
+  <data name="IslamInfo_Her" xml:space="preserve">
+    <value>Her</value>
+  </data>
+  <data name="IslamInfo_TheirTwo" xml:space="preserve">
+    <value>Their Two</value>
+  </data>
+  <data name="IslamInfo_Their" xml:space="preserve">
+    <value>Their</value>
+  </data>
 </root>

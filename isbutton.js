@@ -12,6 +12,9 @@ function getBaseURL () {
 			xmlhttp.open("GET", url + '/IslamSourceWP.php?Cat=', false);
 			xmlhttp.send();
 		    var data = JSON.parse(xmlhttp.responseText);
+		    var size = parseInt(ed.queryCommandValue('FontSize'));
+		    var fontName = ed.queryCommandValue('FontName');
+		    console.log(size);
 		    for (var count = 0; count < data.length; count++) {
 		    	for (var subcount = 0; subcount < data[count].menu.length; subcount++) {
 		    		if (data[count].menu[subcount] !== undefined && data[count].menu[subcount] !== null) {
