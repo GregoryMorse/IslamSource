@@ -890,12 +890,12 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 	</verses>
 	<grammar>
 		<category title="Plurals">
-			<word text="u" id="FlexibleDefiniteNominative" grammar="ms|fs,flex,def|const,nom"></word>
-			<word text="N" id="FlexibleIndefiniteNominative" grammar="ms|fs,flex,indef,nom"></word>
-			<word text="i" id="FlexibleDefinitePossessive" grammar="ms|fs,flex,def|const,pos"></word>
-			<word text="K" id="FlexibleIndefinitePossessive" grammar="ms|fs,flex,indef,pos"></word>
-			<word text="a" id="FlexibleDefiniteAccusative" grammar="ms|fs,flex,def|const,acc"></word>
-			<word text="FA" id="FlexibleIndefiniteAccusative" grammar="ms,flex,indef,acc"></word>
+			<word text="u" id="FlexibleDefiniteNominative" grammar="ms|fs|bp,flex,def|const,nom"></word>
+			<word text="N" id="FlexibleIndefiniteNominative" grammar="ms|fs|bp,flex,indef,nom"></word>
+			<word text="i" id="FlexibleDefinitePossessive" grammar="ms|fs|bp,flex,def|const,pos"></word>
+			<word text="K" id="FlexibleIndefinitePossessive" grammar="ms|fs|bp,flex,indef,pos"></word>
+			<word text="a" id="FlexibleDefiniteAccusative" grammar="ms|fs|bp,flex,def|const,acc"></word>
+			<word text="FA" id="FlexibleIndefiniteAccusative" grammar="ms|bp,flex,indef,acc"></word>
 			<word text="F" id="SoundFeminineFlexibleIndefiniteAccusative" grammar="fs,flex,indef,acc"></word>
 			<word text="aAni" id="DualNominative" grammar="md|fd,flex|pflex,def|indef,nom"></word>
 			<word text="ayoni" id="DualAccusativePossessive" grammar="md|fd,flex|pflex,def|indef,acc|pos"></word>
@@ -950,8 +950,8 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word from="{MatchDefiniteness}" text="" id="RelativeAdjective" grammar="ms|fs,reladj"></word>
 			<word from="{MatchFathaAlef}|{MatchFemininity}" text="iy~N" id="RelativeAdjective" grammar="ms|fs,reladj"></word>
 			
-			<word from="{MatchAlefMaksura}" text="y" id="ParticleAttachPronoun" grammar="1ms|1fs|1md|1fd|1mp|1fp|2ms|2fs|2md|2fd|2mp|2fp|3ms|3fs|3md|3fd|3mp|3fp"></word>
-			<word match="{MatchYeh}  {MatchKasra} {MatchFirstPerson} {MatchNoon} " id="ParticleFirstPersonAttachPronoun" grammar="1ms|1fs"></word>
+			<word from="{MatchAlefMaksura}" text="y" id="ParticleAttachPronoun" grammar="1ms|1fs|1md|1fd|1mp|1fp|2ms|2fs|2md|2fd|2mp|2fp|3ms|3fs|3md|3fd|3mp|3fp|3bp"></word>
+			<word match="{MatchYeh}  {MatchKasra} {MatchFirstPerson} {MatchNoon} " id="ParticleFirstPersonAttachPronoun" grammar="1ms|1fs|3bp"></word>
 			<word match="{MatchYeh}|{MatchKasra} {MatchThirdPerson}" id="ParticleThirdPersonAttachPronoun" grammar="3ms|3md|3fd|3mp|3fp"></word>
 		</category>
 		<category title="ProximalDemonstratives">
@@ -1013,14 +1013,13 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="kun~a" id="Your" grammar="2fp"></word>
 			<word text="hu hi" id="His" grammar="3ms,nom|acc"></word>
 			<word text="hi" id="His" grammar="3ms,pos"></word>
-			<word text="haA" id="Her" grammar="3fs"></word>
+			<word text="haA" id="Her" grammar="3fs|3bp"></word>
 			<word text="humaA himaA" id="TheirTwo" grammar="3md|3fd,nom|acc"></word>
 			<word text="himaA" id="TheirTwo" grammar="3md|3fd,pos"></word>
 			<word text="humo" id="Their" grammar="3mp,nom|acc"></word>
 			<word text="himo" id="Their" grammar="3mp,pos"></word>
 			<word text="hun~a" id="Their" grammar="3fp,nom|acc"></word>
 			<word text="hin~a" id="Their" grammar="3fp,pos"></word>
-			<word text="haA" id="Their" grammar="3bp"></word>
 		</category>
 		<category title="PastTenseVerbsFamilyI">
 			<word text="faEala" grammar="3ms"></word>

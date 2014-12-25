@@ -1020,12 +1020,14 @@ class RenderText
 	public $clr;
 	public $Text;
 	public $font;
+	public $Size;
 	function __construct($_displayClass, $_text)
 	{
 		$this->displayClass = $_displayClass;
 		$this->Text = $_text;
 		$this->clr = "Black";
 		$this->font = "";
+		$this->Size = 0;
 	}
 };
 class RenderItem
@@ -1051,7 +1053,7 @@ class RenderArray
 					$text .= RenderArray::DoRender($items[$count]->textitems[$index]->Text);
 				} else {
 					if (array_search($items[$count]->textitems[$index]->font, Utility::$FontList) !== false) {
-						$text .= "<span dir=\"rtl\" style=\"display: block;\"><img src=\"" . plugins_url() . "" . "/islamsource/IslamSourceWP.php?Size=100&Char=" . bin2hex(mb_convert_encoding($items[$count]->textitems[$index]->Text, 'UCS-4BE', 'UTF-8')) . "&Font=" . $items[$count]->textitems[$index]->font . "\">";
+						$text .= "<span dir=\"rtl\" style=\"display: block;\"><img src=\"" . plugins_url() . "" . "/islamsource/IslamSourceWP.php?Size=" . ($items[$count]->textitems[$index]->Size == 0 ? "100" : $items[$count]->textitems[$index]->Size) . "&Char=" . bin2hex(mb_convert_encoding($items[$count]->textitems[$index]->Text, 'UCS-4BE', 'UTF-8')) . "&Font=" . $items[$count]->textitems[$index]->font . "\">";
 					} elseif ($items[$count]->textitems[$index]->displayClass == RenderDisplayClass::eArabic) {
 						$text .= "<span dir=\"rtl\" style=\"display: block; font-size: 32px;\">";
 					} elseif ($items[$count]->textitems[$index]->displayClass == RenderDisplayClass::eTransliteration) {
@@ -1787,6 +1789,7 @@ class DocBuilder
 									if (!array_key_exists("Char", $options) || array_search(bin2hex(mb_convert_encoding(implode(array_map(function($split) { return mb_convert_encoding('&#x' . $split . ';', 'UTF-8', 'HTML-ENTITIES'); }, explode("+", $substr))), 'UCS-4BE', 'UTF-8')), $options["Char"]) !== false) {
 		                                $rendText = new RenderText(RenderDisplayClass::eArabic, implode(array_map(function($split) { return mb_convert_encoding('&#x' . $split . ';', 'UTF-8', 'HTML-ENTITIES'); }, explode("+", $substr))));
 		                                $rendText->font = $font;
+		                                if (array_key_exists("Size", $options)) $rendText->Size = $options["Size"][0];
 		                                array_push($items, new RenderItem(RenderTypes::eText, [$rendText]));
 		                            }
 								}

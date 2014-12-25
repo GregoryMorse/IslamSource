@@ -750,7 +750,7 @@ Public Class Arabic
     End Function
     Public Shared Function DoDisplayTranslation(Category As Object, ID As String, SchemeType As ArabicData.TranslitScheme, Scheme As String) As Array()
         Dim Output As New ArrayList
-        Output.Add(Nothing)
+        Output.Add(New String() {})
         If TypeOf Category Is IslamData.PrayerTime Then
             Output.Add(New String() {"arabic", "transliteration", String.Empty, String.Empty, String.Empty, String.Empty})
             Output.Add(New String() {Utility.LoadResourceString("IslamInfo_Arabic"), Utility.LoadResourceString("IslamInfo_Transliteration"), Utility.LoadResourceString("IslamInfo_Translation"), Utility.LoadResourceString("IslamInfo_Before"), Utility.LoadResourceString("IslamInfo_PrescribedTime"), Utility.LoadResourceString("IslamInfo_After")})
@@ -784,7 +784,7 @@ Public Class Arabic
                 Output.Add(New String() {ArabicData.TransliterateFromBuckwalter(CType(Category, IslamData.VocabCategory).Words(SubCount).Text), TransliterateToScheme(ArabicData.TransliterateFromBuckwalter(CType(Category, IslamData.VocabCategory).Words(SubCount).Text), SchemeType, Scheme).Trim(), Utility.LoadResourceString("IslamInfo_" + CType(Category, IslamData.VocabCategory).Words(SubCount).TranslationID)})
             Next
         End If
-        Return RenderArray.MakeTableJSFunctions(CType(Output.ToArray(GetType(Array())), Array()), ID)
+        Return RenderArray.MakeTableJSFunctions(CType(Output.ToArray(GetType(Array)), Array()), ID)
     End Function
     Public Shared Function DisplayDict(ByVal Item As PageLoader.TextItem) As Array()
         Dim Lines As String() = IO.File.ReadAllLines(Utility.GetFilePath("metadata\HansWeir.txt"))
@@ -925,15 +925,15 @@ Public Class Arabic
         Next
         Return Output
     End Function
-    Public Shared Function DisplayParticle(Category As IslamData.GrammarCategory, ID As String) As Array()
+    Public Shared Function DisplayParticle(Category As IslamData.GrammarCategory, ID As String, SchemeType As ArabicData.TranslitScheme, Scheme As String) As Array()
         Dim Count As Integer
         Dim Output(2 + Category.Words.Length) As Array
         Dim Build As New Generic.Dictionary(Of String, Generic.Dictionary(Of String, String))
         Output(0) = New String() {}
-        Output(1) = New String() {"arabic", "translation", String.Empty}
-        Output(2) = New String() {"Particle", "Translation", "Grammar Feature"}
+        Output(1) = New String() {"arabic", "transliteration", "translation", String.Empty}
+        Output(2) = New String() {"Particle", Utility.LoadResourceString("IslamInfo_Transliteration"), Utility.LoadResourceString("IslamInfo_Translation"), "Grammar Feature"}
         For Count = 0 To Category.Words.Length - 1
-            Output(3 + Count) = New String() {ArabicData.TransliterateFromBuckwalter(Category.Words(Count).Text), Category.Words(Count).TranslationID, Utility.DefaultValue(Category.Words(Count).Grammar, String.Empty)}
+            Output(3 + Count) = New String() {ArabicData.TransliterateFromBuckwalter(Category.Words(Count).Text), Arabic.TransliterateToScheme(ArabicData.TransliterateFromBuckwalter(Category.Words(Count).Text), SchemeType, Scheme), Category.Words(Count).TranslationID, Utility.DefaultValue(Category.Words(Count).Grammar, String.Empty)}
         Next
         Return RenderArray.MakeTableJSFunctions(CType(Output, Array()), ID)
     End Function
@@ -1048,55 +1048,79 @@ Public Class Arabic
         Return DisplayPronoun(CachedData.IslamData.GrammarCategories(9), Item.Name, False, SchemeType, Scheme)
     End Function
     Public Shared Function DisplayResponseParticles(ByVal Item As PageLoader.TextItem) As Array()
-        Return DisplayParticle(CachedData.IslamData.GrammarCategories(10), Item.Name)
+        Dim SchemeType As ArabicData.TranslitScheme = CType(If(CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) >= 2, 2 - CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) Mod 2, CInt(HttpContext.Current.Request.QueryString.Get("translitscheme"))), ArabicData.TranslitScheme)
+        Dim Scheme As String = If(CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) >= 2, CachedData.IslamData.TranslitSchemes((CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) - 2) \ 2).Name, String.Empty)
+        Return DisplayParticle(CachedData.IslamData.GrammarCategories(10), Item.Name, SchemeType, Scheme)
     End Function
     Public Shared Function DisplayInterogativeParticles(ByVal Item As PageLoader.TextItem) As Array()
-        Return DisplayParticle(CachedData.IslamData.GrammarCategories(11), Item.Name)
+        Dim SchemeType As ArabicData.TranslitScheme = CType(If(CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) >= 2, 2 - CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) Mod 2, CInt(HttpContext.Current.Request.QueryString.Get("translitscheme"))), ArabicData.TranslitScheme)
+        Dim Scheme As String = If(CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) >= 2, CachedData.IslamData.TranslitSchemes((CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) - 2) \ 2).Name, String.Empty)
+        Return DisplayParticle(CachedData.IslamData.GrammarCategories(11), Item.Name, SchemeType, Scheme)
     End Function
     Public Shared Function DisplayLocationParticles(ByVal Item As PageLoader.TextItem) As Array()
-        Return DisplayParticle(CachedData.IslamData.GrammarCategories(12), Item.Name)
+        Dim SchemeType As ArabicData.TranslitScheme = CType(If(CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) >= 2, 2 - CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) Mod 2, CInt(HttpContext.Current.Request.QueryString.Get("translitscheme"))), ArabicData.TranslitScheme)
+        Dim Scheme As String = If(CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) >= 2, CachedData.IslamData.TranslitSchemes((CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) - 2) \ 2).Name, String.Empty)
+        Return DisplayParticle(CachedData.IslamData.GrammarCategories(12), Item.Name, SchemeType, Scheme)
     End Function
     Public Shared Function DisplayTimeParticles(ByVal Item As PageLoader.TextItem) As Array()
-        Return DisplayParticle(CachedData.IslamData.GrammarCategories(13), Item.Name)
+        Dim SchemeType As ArabicData.TranslitScheme = CType(If(CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) >= 2, 2 - CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) Mod 2, CInt(HttpContext.Current.Request.QueryString.Get("translitscheme"))), ArabicData.TranslitScheme)
+        Dim Scheme As String = If(CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) >= 2, CachedData.IslamData.TranslitSchemes((CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) - 2) \ 2).Name, String.Empty)
+        Return DisplayParticle(CachedData.IslamData.GrammarCategories(13), Item.Name, SchemeType, Scheme)
     End Function
     Public Shared Function DisplayPrepositions(ByVal Item As PageLoader.TextItem) As Array()
-        Return DisplayParticle(CachedData.IslamData.GrammarCategories(14), Item.Name)
+        Dim SchemeType As ArabicData.TranslitScheme = CType(If(CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) >= 2, 2 - CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) Mod 2, CInt(HttpContext.Current.Request.QueryString.Get("translitscheme"))), ArabicData.TranslitScheme)
+        Dim Scheme As String = If(CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) >= 2, CachedData.IslamData.TranslitSchemes((CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) - 2) \ 2).Name, String.Empty)
+        Return DisplayParticle(CachedData.IslamData.GrammarCategories(14), Item.Name, SchemeType, Scheme)
     End Function
     Public Shared Function DisplayParticles(ByVal Item As PageLoader.TextItem) As Array()
-        Return DisplayParticle(CachedData.IslamData.GrammarCategories(15), Item.Name)
+        Dim SchemeType As ArabicData.TranslitScheme = CType(If(CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) >= 2, 2 - CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) Mod 2, CInt(HttpContext.Current.Request.QueryString.Get("translitscheme"))), ArabicData.TranslitScheme)
+        Dim Scheme As String = If(CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) >= 2, CachedData.IslamData.TranslitSchemes((CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) - 2) \ 2).Name, String.Empty)
+        Return DisplayParticle(CachedData.IslamData.GrammarCategories(15), Item.Name, SchemeType, Scheme)
     End Function
     Public Shared Function DisplayOtherParticles(ByVal Item As PageLoader.TextItem) As Array()
-        Return DisplayParticle(CachedData.IslamData.GrammarCategories(16), Item.Name)
+        Dim SchemeType As ArabicData.TranslitScheme = CType(If(CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) >= 2, 2 - CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) Mod 2, CInt(HttpContext.Current.Request.QueryString.Get("translitscheme"))), ArabicData.TranslitScheme)
+        Dim Scheme As String = If(CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) >= 2, CachedData.IslamData.TranslitSchemes((CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) - 2) \ 2).Name, String.Empty)
+        Return DisplayParticle(CachedData.IslamData.GrammarCategories(16), Item.Name, SchemeType, Scheme)
     End Function
-    Public Shared Function NounDisplay(Category As IslamData.GrammarCategory, ID As String) As Array()
+    Public Shared Function NounDisplay(Category As IslamData.GrammarCategory, ID As String, SchemeType As ArabicData.TranslitScheme, Scheme As String) As Array()
         Dim Count As Integer
         Dim Output(2 + Category.Words.Length) As Array
         Dim Build As New Generic.Dictionary(Of String, Generic.Dictionary(Of String, String))
         Output(0) = New String() {}
-        Output(1) = New String() {"arabic", "transliteration", "translation", "arabic", "arabic", String.Empty}
-        Output(2) = New String() {"Noun", "Dual", "Plural", "Singular Translation"}
+        Output(1) = New String() {"arabic", "transliteration", "translation", "arabic", "transliteration", "translation", "arabic", "transliteration", "translation"}
+        Output(2) = New String() {"Noun Singular " + Utility.LoadResourceString("IslamInfo_Arabic"), "Singular " + Utility.LoadResourceString("IslamInfo_Transliteration"), "Singular " + Utility.LoadResourceString("IslamInfo_Translation"), "Noun Dual " + Utility.LoadResourceString("IslamInfo_Arabic"), "Dual " + Utility.LoadResourceString("IslamInfo_Transliteration"), "Dual " + Utility.LoadResourceString("IslamInfo_Translation"), "Noun Plural " + Utility.LoadResourceString("IslamInfo_Arabic"), "Plural " + Utility.LoadResourceString("IslamInfo_Transliteration"), "Plural " + Utility.LoadResourceString("IslamInfo_Translation")}
         For Count = 0 To Category.Words.Length - 1
-            Output(3 + Count) = New String() {ArabicData.TransliterateFromBuckwalter(Category.Words(Count).Text), String.Empty, String.Empty, Category.Words(Count).TranslationID}
+            Output(3 + Count) = New String() {ArabicData.TransliterateFromBuckwalter(Category.Words(Count).Text), Arabic.TransliterateToScheme(ArabicData.TransliterateFromBuckwalter(Category.Words(Count).Text), SchemeType, Scheme), String.Empty, String.Empty, "Two " + Utility.LoadResourceString("IslamInfo_" + Category.Words(Count).TranslationID) + "s", String.Empty, String.Empty, Utility.LoadResourceString("IslamInfo_" + Category.Words(Count).TranslationID) + "s"}
         Next
         Return RenderArray.MakeTableJSFunctions(CType(Output, Array()), ID)
     End Function
     Public Shared Function DisplayNouns(ByVal Item As PageLoader.TextItem) As Array()
-        Return NounDisplay(CachedData.IslamData.GrammarCategories(17), Item.Name)
+        Dim SchemeType As ArabicData.TranslitScheme = CType(If(CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) >= 2, 2 - CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) Mod 2, CInt(HttpContext.Current.Request.QueryString.Get("translitscheme"))), ArabicData.TranslitScheme)
+        Dim Scheme As String = If(CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) >= 2, CachedData.IslamData.TranslitSchemes((CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) - 2) \ 2).Name, String.Empty)
+        Return NounDisplay(CachedData.IslamData.GrammarCategories(17), Item.Name, SchemeType, Scheme)
     End Function
-    Public Shared Function DisplayAttachedPronoun(Category As IslamData.GrammarCategory, ID As String, Word As String) As Array()
+    Public Shared Function DeclineNoun(Category As IslamData.GrammarCategory, ID As String, Word As String, SchemeType As ArabicData.TranslitScheme, Scheme As String) As Array()
         Dim Output(2 + Category.Words.Length) As Array
         Output(0) = New String() {}
-        Output(1) = New String() {"arabic", "arabic", "arabic", String.Empty}
-        Output(2) = New String() {"Plural", "Dual", "Singular", String.Empty}
+        Output(1) = New String() {"arabic", "transliteration", "translation", "arabic", "transliteration", "translation", "arabic", "transliteration", "translation"}
+        Output(2) = New String() {"Plural", Utility.LoadResourceString("IslamInfo_Transliteration"), Utility.LoadResourceString("IslamInfo_Translation"), "Dual", Utility.LoadResourceString("IslamInfo_Transliteration"), Utility.LoadResourceString("IslamInfo_Translation"), "Singular", Utility.LoadResourceString("IslamInfo_Transliteration"), Utility.LoadResourceString("IslamInfo_Translation")}
 
         Return RenderArray.MakeTableJSFunctions(CType(Output, Array()), ID)
     End Function
-    Public Shared Function VerbDisplay(Category As IslamData.GrammarCategory, ID As String) As Array()
+    Public Shared Function DisplayAttachedPronoun(Category As IslamData.GrammarCategory, ID As String, Word As String, SchemeType As ArabicData.TranslitScheme, Scheme As String) As Array()
+        Dim Output(2 + Category.Words.Length) As Array
+        Output(0) = New String() {}
+        Output(1) = New String() {"arabic", "transliteration", "translation", "arabic", "transliteration", "translation", "arabic", "transliteration", "translation"}
+        Output(2) = New String() {"Plural", Utility.LoadResourceString("IslamInfo_Transliteration"), Utility.LoadResourceString("IslamInfo_Translation"), "Dual", Utility.LoadResourceString("IslamInfo_Transliteration"), Utility.LoadResourceString("IslamInfo_Translation"), "Singular", Utility.LoadResourceString("IslamInfo_Transliteration"), Utility.LoadResourceString("IslamInfo_Translation")}
+
+        Return RenderArray.MakeTableJSFunctions(CType(Output, Array()), ID)
+    End Function
+    Public Shared Function VerbDisplay(Category As IslamData.GrammarCategory, ID As String, SchemeType As ArabicData.TranslitScheme, Scheme As String) As Array()
         Dim Count As Integer
         Dim Output(2 + Category.Words.Length) As Array
         Dim Build As New Generic.Dictionary(Of String, Generic.Dictionary(Of String, String))
         Output(0) = New String() {}
-        Output(1) = New String() {"arabic", "arabic", "arabic", "arabic", "arabic", "arabic", "arabic", "arabic", "arabic"}
+        Output(1) = New String() {"arabic", "transliteration", "translation", "arabic", "transliteration", "translation", "arabic", "transliteration", "translation", "arabic", "transliteration", "translation", "arabic", "transliteration", "translation", "arabic", "transliteration", "translation", "arabic", "transliteration", "translation", "arabic", "transliteration", "translation", "arabic", "transliteration", "translation"}
         Output(2) = New String() {"Past Root", "Present Root", "Command Root", "Forbidding Root", "Passive Past Root", "Passive Present Root", "Verbal Doer", "Passive Noun", "Particles"}
         For Count = 0 To Category.Words.Length - 1
             Dim Grammar As String
@@ -1136,12 +1160,14 @@ Public Class Arabic
                 PassiveNoun = String.Empty
                 Grammar = Utility.DefaultValue(Category.Words(Count).Grammar, String.Empty)
             End If
-            Output(3 + Count) = New String() {Text, Present, Command, Forbidding, PassivePast, PassivePresent, VerbalDoer, PassiveNoun, Grammar}
+            Output(3 + Count) = New String() {Text, TransliterateToScheme(Text, SchemeType, Scheme), Utility.LoadResourceString("IslamInfo_" + Category.Words(Count).TranslationID), Present, TransliterateToScheme(Present, SchemeType, Scheme), String.Empty, Command, TransliterateToScheme(Command, SchemeType, Scheme), String.Empty, Forbidding, TransliterateToScheme(Forbidding, SchemeType, Scheme), String.Empty, PassivePast, TransliterateToScheme(PassivePast, SchemeType, Scheme), String.Empty, PassivePresent, TransliterateToScheme(PassivePresent, SchemeType, Scheme), String.Empty, VerbalDoer, TransliterateToScheme(VerbalDoer, SchemeType, Scheme), String.Empty, PassiveNoun, TransliterateToScheme(PassiveNoun, SchemeType, Scheme), String.Empty, Grammar, TransliterateToScheme(Grammar, SchemeType, Scheme), String.Empty}
         Next
         Return RenderArray.MakeTableJSFunctions(CType(Output, Array()), ID)
     End Function
     Public Shared Function DisplayVerbs(ByVal Item As PageLoader.TextItem) As Array()
-        Return VerbDisplay(CachedData.IslamData.GrammarCategories(18), Item.Name)
+        Dim SchemeType As ArabicData.TranslitScheme = CType(If(CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) >= 2, 2 - CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) Mod 2, CInt(HttpContext.Current.Request.QueryString.Get("translitscheme"))), ArabicData.TranslitScheme)
+        Dim Scheme As String = If(CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) >= 2, CachedData.IslamData.TranslitSchemes((CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) - 2) \ 2).Name, String.Empty)
+        Return VerbDisplay(CachedData.IslamData.GrammarCategories(18), Item.Name, SchemeType, Scheme)
     End Function
 End Class
 Public Class ArabicFont
@@ -2974,7 +3000,7 @@ Public Class DocBuilder
             'Arabic.DisplayParticle()
         ElseIf Strings.StartsWith("noun:") Then
             Dim GrammarCat As IslamData.GrammarCategory = Arabic.GetCatWords(Strings.Replace("noun:", String.Empty).Split(","c))
-            Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eList, Arabic.NounDisplay(GrammarCat, ID))}))
+            Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eList, Arabic.NounDisplay(GrammarCat, ID, SchemeType, Scheme))}))
         ElseIf Strings.StartsWith("verb:") Then
             Dim SelArr As String() = Strings.Replace("verb:", String.Empty).Split(","c)
             'Arabic.VerbDisplay()

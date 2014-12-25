@@ -2695,7 +2695,7 @@ Public Class RenderArray
     End Function
     Public Shared Function MakeTableJSFunctions(ByRef Output As Array(), ID As String) As Array()
         Dim Objects As ArrayList = MakeTableJSFuncs(Output, ID)
-        Output(0) = {String.Empty, String.Empty, "if (typeof renderList == 'undefined') { renderList = []; } renderList = renderList.concat(" + Utility.MakeJSIndexedObject(CType(CType(Objects(0), ArrayList).ToArray(GetType(String)), String()), New Array() {CType(CType(Objects(1), ArrayList).ToArray(GetType(String)), String())}, True) + ");"}
+        Output(0) = New String() {String.Empty, String.Empty, "if (typeof renderList == 'undefined') { renderList = []; } renderList = renderList.concat(" + Utility.MakeJSIndexedObject(CType(CType(Objects(0), ArrayList).ToArray(GetType(String)), String()), New Array() {CType(CType(Objects(1), ArrayList).ToArray(GetType(String)), String())}, True) + ");"}
         Return Output
     End Function
     Public Shared Function MakeTableJSFuncs(ByVal Output As Object(), Prefix As String) As ArrayList
