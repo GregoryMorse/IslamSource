@@ -102,7 +102,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 		<word value="wuDuw^&apos;N" id="Wudu"></word>
 		<word value="SawomN" id="Sawm"></word>
 		<word value="&gt;a*~aAnN" id="Adhan"></word>
-		<word value="xuTbah" id="Khutbah"></word>
+		<word value="xuTobah" id="Khutbah"></word>
 		<word value="miEoraAjN" id="Miraj"></word>
 		<word value="hijorapN" id="Hijrah"></word>
 		<word value="$ahaAdapN" id="Shahada"></word>
@@ -186,15 +186,15 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 		<day name="{lojumuEapu" id="DayOfWeek6"></day>
 		<day name="{ls~abotu" id="DayOfWeek7"></day>
 	</daysofweek>
-	<fasting name="sawomN" id="Fasting">
-		<fastingtype name="sawomN" id="FastingMonth" classification="Obligatory"></fastingtype>
-		<fastingtype name="sawomN" id="FastingMondayThursday" classification="Tradition Obligatory"></fastingtype>
-		<fastingtype name="sawomN" id="FastingMiddleLunarDays" classification="Tradition Obligatory"></fastingtype>
-		<fastingtype name="sawomN" id="FastingAfterFastingMonth" classification="Tradition Obligatory"></fastingtype>
-		<fastingtype name="sawomN" id="FastingDayOfArafa" classification="Tradition Obligatory"></fastingtype>
-		<fastingtype name="sawomN" id="FastingDayOfAshura" classification="Tradition Obligatory"></fastingtype>
-		<fastingtype name="sawomN" id="FastingBeforeFastingMonth" classification="Tradition Obligatory"></fastingtype>
-		<fastingtype name="sawomN" id="FastingBeginningPilgrimageMonth" classification="Tradition Obligatory"></fastingtype>
+	<fasting name="SawomN" id="Fasting">
+		<fastingtype name="SawomN" id="FastingMonth" classification="Obligatory"></fastingtype>
+		<fastingtype name="SawomN" id="FastingMondayThursday" classification="Tradition Obligatory"></fastingtype>
+		<fastingtype name="SawomN" id="FastingMiddleLunarDays" classification="Tradition Obligatory"></fastingtype>
+		<fastingtype name="SawomN" id="FastingAfterFastingMonth" classification="Tradition Obligatory"></fastingtype>
+		<fastingtype name="SawomN" id="FastingDayOfArafa" classification="Tradition Obligatory"></fastingtype>
+		<fastingtype name="SawomN" id="FastingDayOfAshura" classification="Tradition Obligatory"></fastingtype>
+		<fastingtype name="SawomN" id="FastingBeforeFastingMonth" classification="Tradition Obligatory"></fastingtype>
+		<fastingtype name="SawomN" id="FastingBeginningPilgrimageMonth" classification="Tradition Obligatory"></fastingtype>
 	</fasting>
 	<prayers name="Salaw`pN" id="Prayer">
 		<prayertype name="waqotN" id="PrescribedTime" classification="Obligatory" prayerunits="Dawn=2,Noon=4,Afternoon=4,Sunset=3,Night=4"></prayertype>
@@ -1776,6 +1776,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="sayodinaA" id="Madame"></word>
 			<word text="fataAHN" id="Conquest"></word>
 			<word text="&gt;amiyrN" id="Leader"></word>
+			<word text="hijorapN" id="Emmigration"></word>
 			<word text="xuTobapN" id="Lecture"></word>
 			<word text="raHomapN" id="Mercy"></word>
 			<word text="nafosN" id="Self"></word>
@@ -1871,7 +1872,6 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="Hay~N" id="Life"></word>
 			<word text="mawotaY" id="Dead"></word>
 			<word text="{loEuluw" id="Transcendence"></word>
-			<word text="&gt;uSuwlN" id="Foundations"></word>
 			<word text="furuw^&apos;N" id="Details"></word>
 			<word text="sanadN" id="ListOfNarrators"></word>
 			<word text="&lt;isonaAdN" id="ListOfNarrators"></word>
@@ -1884,6 +1884,11 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="HasanN" id="Good"></word>
 			<word text="{loHasanu" id="Hasan"></word>
 			<word text="{loHus~ayonu" id="Hussein"></word>
+			<word text="TaAluwtN" id="Saul"></word>
+			<word text="jaAluwtN" id="Goliath"></word>
+			<word text="*uw {loqaronayoni" id="ThePossessorOfTwoHorns"></word>
+			<word text="qaAruwnN" id="Korah"></word>
+			<word text="isoraA^&apos;N" id="NightJourney"></word>
 			<word text="{lr~iDaA" id="Ridaa"></word>
 			<word text="{ls~aj~adu" id="TheProstratingOne"></word>
 			<word text="{lobaAqiru" id="Baaqir"></word>
@@ -1965,12 +1970,16 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="talaAzumN" id="StrongConnection"></word>
 			<word text="nid~N" plural="&gt;andaAdN" id="Rivals"></word>
 			<word text="tawofiyqN" id="DivineEmpowerment"></word>
-			<word text="walaAyatN" id="Sainthood"></word>
+			<word text="walaAyapN" id="GovernorshipSainthood"></word>
 			<word text="&gt;awotaAdN" id="Pegs"></word>
 			<word text="maEorifapN" id="Gnosis"></word>
 			<word text="him~apN" id="Aspiration"></word>
 			<word text="jaAhiliy~apN" id="Ignorance"></word>
-			<word text="ka$ofN" id="Unveiling"></word>
+			<word text="xaAtamN" id="RingSeal"></word>
+			<word text="buruwjN" id="StarConfiguration"></word>
+			<word text="zuroqN" id="BlueBlearyEyed"></word>
+			<word text="&lt;ilohaAmN" id="Inspiration"></word>
+			<word text="ka$ofN" id="UnveilingIllumination"></word>
 			<word text="EaArifN" id="DivineGnostic"></word>
 			<word text="tajal~iy~N" id="RevelatoryManifestations"></word>
 			<word text="quTobN" id="Pole"></word>
@@ -2078,7 +2087,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="SarofapN" id="TurningAway"></word>
 			<word text="sajoEN" id="RhymingProse"></word>
 			<word text="EilomN" plural="EuluwmN" id="KnowledgeScience"></word>
-			<word text="&gt;asolN" plural="&gt;usuwlN" id="PrincipleMethod"></word>
+			<word text="&gt;aSolN" plural="&gt;uSuwlN" id="PrincipleMethodFoundation"></word>
 			<word text="manohajN" plural="manaAhijN" id="Methodology"></word>
 			<word text="{lt~a$oriyEu" plural="" id="Legislation"></word>
 			<word text="manduwbN" id="Recommended"></word>
@@ -2215,7 +2224,6 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="makotabN" plural="makaAtibN" id="Office"></word>
 			<word text="makotabapN" id="Library"></word>
 			<word text="muHam~adN" id="Muhammad"></word>
-			<word text="HasanN" id="Hasan"></word>
 			<word text="&gt;aliy~N" id="Ali"></word>
 			<word text="xaAlidN" id="Khaalid"></word>
 			<word text="saAlimN" id="Saalim"></word>
@@ -2300,12 +2308,14 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="Ham~adN" id="Hammad"></word>
 			<word text="&apos;aAzaArN" id="Azar"></word>			
 			<word text="wahaAbiyapN" id="Wahhabi"></word>
-			<word text="salafi" id="Salafi"></word>
+			<word text="salafiy~N" id="Salafi"></word>
 			<word text="&lt;isomaAEiliy~apN" id="Ismaili"></word>
 			<word text="nuSayoriy~apN" id="Alawites"></word>
 			<word text="duroziy" id="Druze"></word>
 			<word text="baATiniy" id="EsotericMeaningFollowers"></word>
 			<word text="muEotazilapN" id="Rationalists"></word>
+			<word text="&lt;isora`^&apos;iyliy~aAtN" id="NarrationsFromJewishAndChristianSources"></word>
+			<word text="qaAdiyaniy~N" id="QadianSect"></word>
 			<word text="quro&apos;aAniyuwna" id="QuranFollowers"></word>
 			<word text="jiboriylN" id="Gabriel"></word>
 			<word text="&lt;iboliysN" id="Lucifer"></word>
@@ -2432,6 +2442,9 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="tajoriY" id="Flow"></word>
 			<word text="yadoEuw" id="Call"></word>
 			<word text="liyajoziya" id="Reward"></word>
+			<word text="fas~ara" id="Explain"></word>
+			<word text="&gt;aw~ala" id="Interpret"></word>
+			<word text="yata&gt;aw~al" id="Implement"></word>
 		</category>
 		<category title="RepresentativeStems">
 			<word text="fEl" id=""></word>
@@ -2740,6 +2753,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="yuwnusu" id="Jonas"></word>
 			<word text="zakariy~aA" id="Zechariah"></word>
 			<word text="yaHoyaY`" id="JohnTheBaptist"></word>
+			<word text="EiysaY" id="Jesus"></word>
 			<word text="EiysaY {bonu maroyama" id="JesusSonOfMary"></word>
 		</category>
 		<category title="NamesOfAllah">
@@ -2940,7 +2954,8 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 		</category>
 		<category title="Concepts">
 			<word text="tawoHiydu {lr~ubuwbiy~api" id="OnenessOfLordshipDominion"></word>
-			<word text="tawoHiydu {loEuluwhiy~api EibaAdapK" id="OnenessOfDivinityAndWorship"></word>
+			<word text="tawoHiydu {loEuluwhiy~api" id="OnenessOfDivinity"></word>
+			<word text="tawoHiydu {loEuluwhiy~api waEibaAdapK" id="OnenessOfDivinityAndWorship"></word>
 			<word text="tawoHiydu {loEibaAdapi" id="OnenessOfDivinityAndWorship"></word>
 			<word text="tawoHiydu {lo&gt;asomaA^&apos;i wa{lS~ifaAti" id="OnenessOfNamesAndAttributes"></word>
 			<word text="{l$~iroku {lo&gt;akobaru" id="MajorAssociation"></word>
@@ -2996,6 +3011,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="wa{ll~ahi {lo&gt;asmaA&apos;u {loHusonaY faAdEuwhu bihaA wa*aruwA {l~a*iyna yuloHiduwna fiY &gt;asmaA}ihi sayujozawna maA kaAnuwA yaEomaluwna" id="AndAllahHasTheBestNamesCallUponHimAndLeaveThemInPlaceThoseNamesNotablyCutOffWhatTheyDo"></word>
 			<word text="man {HoSaAhaA duxulu {lojan~api" id="WhoeverMemorizesThemWillEnterParadise"></word>
 			<word text="Eaqiydapu {holi {ls~unapi wa{lojamaAEapi" id="TheologyOfThePeopleOfTraditionAndTheGroup"></word>
+			<word text="{holi {ls~unapi wa{lojamaAEapi" id="ThePeopleOfTraditionAndTheGroup"></word>
 			<word text="nabiY~u {ll~ahi" id="ProphetOfAllah"></word>
 			<word text="&gt;anbiyaA^&apos;u {ll~ahi" id="ProphetsOfAllah"></word>
 			<word text="rasuwlu {ll~ahi" id="MessengerOfAllah"></word>
@@ -3120,8 +3136,10 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="baAbu {l*~ikori" id="GateOfRemembrance"></word>
 			<word text="baAbu bir~ {lowaAlidayoni" id="GateOfRighteousnessToParents"></word>
 			<word text="Huwru {loEayoni" id="FairLadiesOfTheRiver"></word>
-			<word text="taAbiEu {lt~aAbiEiyna" id="FollowersOfFollowers"></word>
+			<word text="taAbiEu {lt~aAbiEiyna" id="FollowerOfFollowers"></word>
+			<word text="&gt;atobaAEu {lt~aAbiEiyna" id="StudentsOfFollowers"></word>
 			<word text="qiyaAsu {l$~abapi" id="DeductionByResemblance"></word>
+			<word text="&gt;uSuwlu {ld~iyni" id="IslamicDisciplines"></word>
 			<word text="&gt;uSuwlu {lofiqohi" id="LegalMethodologyFundamentalPrinciplesOfIslamicLaw"></word>
 			<word text="Eilomu {lokalaAmi" id="Theology"></word>
 			<word text="Eilomu {lo&gt;axolaAqi" id="Ethics"></word>
@@ -3130,11 +3148,12 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="yuwaH~iduw {ll~ahi" id="OnenessOfAllah"></word>
 			<word text="&gt;uSuwlu {lt~afosiyri" id="FundamentalPrinciplesOfQuranicInterpretation"></word>
 			<word text="Euluwmu {loquro&apos;aAni" id="QuranicSciences"></word>
+			<word text="Euluwmu {loHadiyvi" id="HadithSciences"></word>
 			<word text="rasomu {lo&gt;uvomaAniy" id="UthmanicScript"></word>
 			<word text="&lt;iEojaAzu {loquro&apos;aAni" id="MiraculousAspectsOfTheQuran"></word>
 			<word text="&gt;asobaAbu {ln~uzuwli" id="ReasonsForRevelation"></word>
 			<word text="{ln~aAsixu wa{lomansuwxu" id="AbrogatingAndAbrogatedVerses"></word>
-			<word text="&lt;ieraAbu {loquro&apos;aAni" id="QuranicGrammar"></word>
+			<word text="&lt;iEraAbu {loquro&apos;aAni" id="QuranicGrammar"></word>
 			<word text="gariybu {loquro&apos;aAni" id="UnusualQuranicTerms"></word>
 			<word text="majaAzu {loquro&apos;aAni" id="QuranicMetaphor"></word>
 			<word text="&gt;aholu {lokitaAbi" id="PeopleOfTheBook"></word>
@@ -3180,11 +3199,13 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="jawaAbN {loqasamu" id="ConditionOfOath"></word>
 			<word text="{loqiyaAsu {lo&gt;awolaA" id="StrongerReasonArgument"></word>
 			<word text="&lt;i$aAriy tafosiyrN" id="CommentaryByContemplation"></word>
+			<word text="Suwfiy~N tafosiyrN" id="MysticCommentary"></word>
 			<word text="tafosiyrN Eilomiy" id="ScientificExegisis"></word>
 			<word text="tafosiyrN lafoZiy" id="LiteralExegesis"></word>
 			<word text="tafosiyrN bi{loma&gt;ovuwri" id="NarrationBasedExegesis"></word>
 			<word text="tafosiyrN bi{ld~iraAyapi" id="OpinionBasedExegesis"></word>
 			<word text="tafosiyrN bi{lr~aA^&apos;iy~i" id="OpinionBasedExegesis"></word>
+			<word text="tafosiyrN bi{lr~iwaAyapi" id="OpinionBasedExegesis"></word>
 			<word text="&gt;asomaA^&apos;u {ld~uwali" id="NamesOfCountries"></word>
 			<word text="&gt;aholu {loHadiyvi" id="PeopleOfHadith"></word>
 			<word text="&gt;aholu {loHaqiyqapi" id="PeopleOfTrueReality"></word>
@@ -3209,6 +3230,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="huwa {ll~ahu" id="HeIsAllah"></word>
 			<word text="EalaY maEa {loHaq~i" id="OnWithTheTruth"></word>
 			<word text="ya`rab~i zidoniY EilomFA" id="OLordGiveMeKnowledge"></word>
+			<word text="qudiY {lo&gt;amor" id="TheMatterHasBeenDecreed"></word>
 
 			<word text="Ealiy~N waliy {ll~ahi" id="AliFriendOfAllah"></word>
 			<word text="{ls~alaAmu Ealayoka ya`Ealiy~N {bonu muHam~adN &gt;ay~uhaA {lohaAdiy {ln~aqiy Ealayoka {ls~alaAmu" id="PeaceBeUponYouAliSonOfMuhammadOTheGuideThePureUponYouBePeace"></word>
@@ -3357,7 +3379,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="Eiydu {lofiTor‎i" id="FestivalOfBreakingFast"></word>
 			<word text="Eiydu {lo&gt;aDoHaY‎" id="FestivalOfSacrifice"></word>
 			<word text="ra&gt;asN {ls~anapu {lohijoriy~ap‎u" id="IslamicNewYear"></word> 
-			<word text="EaA$uwraA^&apos;" id="Ashura"></word>
+			<word text="EaA$uwraA^&apos;N" id="Ashura"></word>
 			<word text="mawolidN {ln~abiy" id="BirthdayOfTheProphet"></word>
 			<word text="layolapu {ln~iSofi min $aEobaAnK" id="MidShaban"></word>
 		</category>		
@@ -3768,7 +3790,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="\{word:RelativeAdjective,Possession,FirstParticlePossessionConstruction,SecondParticlePossessionConstruction,PointingNoun,FiveSpecialNouns,VerilyTrulySurely,Mighty,Wise,Knower,IndeedSurely,Sitting,Standing,Travelling,Coming,Going,ToTowardsUpToNotIncluding,Allah,Man,Woman,Living,Short,Slave,BoySonChild,GirlDaughter,Tall,YoungBeautiful,Abdullah,WhatThatWhich,Also,Employee,GateDoor,Name,DirectorPrincipal,Company,Mother,Sister,Son,WifeHusband,University,ButHoweverOnTheContraryActually,ButHowever,Because,Why,PureAndPurifying,River,Under,Punishment,SevereStrong,WellGrounded,KnowledgeScience,Father,Brother,NearClose,Far,Professor,Office,Library,FromAbout,Joseph,Flow,Call,Reward,ForgiveCover\}\{plurals:\}\{proximaldemonstratives:This,These\}\{distaldemonstratives:That,Those\}\{2:220:29-32,2:32:10-13,103:2,20:71:9-10,76:23:1-5,31:30:12-16,33:35:1-3,37:99:2-5,19:30:2-4,12:95:3-6,6:92:1-2,8:32:6-8,27:28:1-3,106:3,11:78:13-17,31:5:1-5,43:51:11-15,22:2:19-22,4:162:1-5,2:214:29-32,10:69:10-12,12:90:7-10,28:25:7-10,48:29:1-3,7:151:3-5\}" id="Arabic"></word>
 			<word text="\{word:\}" id="IslamicTheology"></word>
 			<word text="\{word:\}" id="PropheticBiography"></word>
-			<word text="\{word:\}" id="QuranicExegesis"></word>
+			<word text="\{word:QuranReadingRecitation,Commentary,Recitations,Companions,Follower,PerfectedCompletelyFormed,ConsistentSimilarMutuallyResemblingOneAnother,Advancement,Delay,Abrogating,Abrogated,Oppression,AssociatingPartners,DiscourseSpeech,GovernorshipSainthood,Imam,Jurisprudence,SchoolOfJurisprudence,BlindFollowing,OnenessOfGod,Law,Reinterpretation,Explain,Interpret,Implement,BowOfPrayer,Prostrating,Prayer,Rationalists,TheEverLiving,PoorDueCharityAlmsGiving,Fasting,Pilgrimage,Tradition,Authentic,Good,Trace,Disbeliever,Disbelief,NarrationsFromJewishAndChristianSources,Salafi,Touch,DustAblution,Mystic,Shia,QadianSect,Commentator,Inspiration,UnveilingIllumination,BlueBlearyEyed,RingSeal,StarConfiguration,CallToIslam,Biography,DoctrineTheologyPrincipleOfBelief,Worship,RighteousDealings,Ramadan,Unlawful,Specification,Concensus,StateOfRitualConsecrationForPilgrimage,ReasonedDecision,Medina,Abraham,Moses,Ashura,CredibleReport,Emmigration,Ablution,AnalogicalDeduction,VoluntaryKindness,DistinctionCriterion,Community,ClearCut,DoubtfulMatters,ChapterFromQuran,SoulSpirit,TheAllSeeing,TheAllHearer,ObviousApparent,Hidden,OldMan,SimileProverbMetaphor,Oath,Debate,NarrativeTaleStory,Kaaba,Noah,Aaron,Jesus,Muhammad,Ali,Hasan,Hussein,Saul,Goliath,Adam,ThePossessorOfTwoHorns,Korah,Mary,Party,NightJourney\}\{phrase:QuranicSciences,FundamentalPrinciplesOfQuranicInterpretation,LegalMethodologyFundamentalPrinciplesOfIslamicLaw,UthmanicScript,MiraculousAspectsOfTheQuran,ReasonsForRevelation,AbrogatingAndAbrogatedVerses,QuranicGrammar,UnusualQuranicTerms,QuranicMetaphor,IslamicDisciplines,HadithSciences,StudentsOfFollowers,MysticCommentary,OnenessOfLordshipDominion,OnenessOfDivinity,ThePeopleOfTraditionAndTheGroup,NarrationBasedExegesis,OpinionBasedExegesis,SacredMosque,EssenceOfTheBook,TheMatterHasBeenDecreed,StatedSimile,HiddenMetaphor,FormlessMetaphor,ISwearByAllah\}\{75:17-19,16:44,6:82,31:13,98:1,1:7,25:33,110:3,7:52-53,3:7,48:10,15:9,86:1-3,5:1,5:3,6:103,75:23,83:15,16:44,16:64,8:60,108:1,75:19,24:31,5:44,4:43,79:17,27:10,2:260,55:19,55:22,33:40,4:157-158,94:4,20:102,49:13,17:36\}\{21:25,21:23,16:101,2:106,2:184,2:185,4:15,24:2,2:180,2:144,2:240,2:234,58:12-13,2:183,2:187,2:144\}\{41:3,50:1,17:85,32:11,11:1,39:23,3:7,42:11\}\{2:17-20,13:17,25:67,17:110,2:260,2:216,55:60,5:100,2:249,59:14,2:264,2:261,49:12,39:27,3:186,91:1-2,64:7,4:65,75:1-3,18:54,16:125,29:46,21:22,75:36-40,30:27,22:62,5:48,35:31,28:3,12:111\}" id="QuranicExegesis"></word>
 			<word text="\{PeaceBeUponYou\}\{AndUponYouBePeace\}\{PeaceBeUponYouWR\}\{AndUponYouBePeaceWR\}\{PeaceBeUponYouWRWB\}\{AndUponYouBePeaceWRWB\}\{AS\}\{AimaaS\}\{AaaS\}\{AimS\}\{AinnaS\}\{SAWAWS\}\{SAWS\}\{ASW\}\{AWAWW\}\{RA\}\{RAunna\}\{RAumaa\}\{RAu\}\{RAaa\}\{RAT\}\{RATunna\}\{RATumaa\}\{RATu\}\{RATaa\}\{RAA\}\{RAAinna\}\{RAAimaa\}\{RAAi\}\{RAAaa\}\{R\}\{Runna\}\{Rumaa\}\{Ru\}\{Raa\}\{JK\}\{JKunna\}\{JKumaa\}\{JKa\}\{JKi\}\{JKK\}\{JKKunna\}\{JKKumaa\}\{JKKa\}\{JKKi\}\{BF\}\{BFunna\}\{BFumaa\}\{BFa\}\{BFi\}\{HZ\}\{HZunna\}\{HZumaa\}\{HZu\}\{HZaA\}\{ST\}\{STunna\}\{STumaa\}\{STu\}\{STaA\}\{DB\}\{DBunna\}\{DBumaa\}\{DBu\}\{DBaA\}\{AllahHaafiz\}\{AllahHaafizWanaasir\}\{WithDivineSuccess\}\{WithDivineSuccessInExam\}\{H\}\{Hunna\}\{Humaa\}\{Ha\}\{Hi\}\{AAum\}\{ShSum\}\{ASa\}\{SWT\}\{AWJ\}\{JJ\}\{JWA\}\{BlessingsOfAllah\}\{SeekRefugeWithAllahFromSatanRejected\}\{BISMILLAH\}\{INSHALLAH\}\{INSHALLAHTAALA\}\{MASHALLAH\}\{SUBHANALLAH\}\{SUBHANAKALLAH\}\{ALHAMDULILLAH\}\{ThanksALHAMDULILLAH\}\{ALLAHUAKBAR\}\{ALLAHUAKBARALLAHUAKBAR\}\{ASTAGFIRULLAH\}\{HASBIALLAH\}\{MayAllahBlessYou\}\{AllahKnowsBest\}\{InProtectionOfAllah\}\{IHavePutTrustInAllah\}\{WeHavePutTrustInAllah\}\{FearAllah\}\{SpeechOfAllah\}\{ISwearByAllah\}\{RightOfAllah\}\{MayAllahWillItSoOLordOfTheWorlds\}\{AllahSaysTheTruth\}\{InThePathOfAllah\}\{TrulyFromAllahWeComeAndToHimWillReturn\}\{LAILAHAILLALLAH\}\{RASOOLULLAH\}\{ALLAHUMMASALLAALAMUHAMMADWAALAAALIMUHAMMAD\}\{TrulyYouAreOnAnExaltedStandardOfCharacter\}\{AndPrepareAgainstThemWhateverYouAreAbleOfPower\}\{MUHAMMADURRASOOLULLAH\}\{LAILALAILLALLAHMUHAMMADURRASOOLULLAH\}\{ASHHADUANLAILAHAILLALLAH\}\{ASHHADUANNAMUHAMMADARRASOOLULLAH\}\{ASHHADUANLAILAHAILLALLAHASHHADUANNAMUHAMMADABDUHUWARASULUH\}\{ThereIsNoPowerAndNoMightExceptWithAllah\}\{ThereIsNoPowerAndNoMightExceptWithAllahMostHighMostMagnificent\}\{TrulyAllahIsWithThePatient\}\{AndForParentsKindness\}\{BeWithAllah\}\{TheNobleQuran\}\{NobleQuran\}\{MonthOfRamadanWhichWasRevealedThereinTheQuranGuidanceToMankind\}\{InRemembranceOfAllahHeartsFindPeace\}\{SafeguardYourselfFromHeWhoYouHaveBeenGoodTo\}\{TrulyAllahLovesWhenOneWhoWorksDoesTheWorkWell\}\{BlessedFeastCelebration\}\{HappyFeastCelebration\}\{GreatWithPraiseToAllah\}\{MayEveryYearYouBeInGoodHealthAndBlessings\}\{MayEveryYearYouHaveGoodness\}\{AllRightsReserved\}\{ThenTrulyThePartyOfAllahAreTheTriumphant\}\{OnWithTheTruth\}\{OLordGiveMeKnowledge\}\{AH\}\{Preface\}\{Contents\}\{End\}\{Introduction\}\{Classroom\}\{Door\}\{Part\}\{Congratulations\}\{Index\}\{Islam\}\{Mosque\}\{World\}\{Book\}\{Light\}\{Peace\}\{Allah\}\{AAMEEN\}\{Muhammad\}\{Ali\}\{Fatima\}\{HADI\}\{RIDAA\}\{Hasan\}\{Hussein\}\{BAAQIR\}\{GuidedOne\}\{ASKAREE\}\{JAWAAD\}\{KADHIM\}\{SAADIQ\}\{Sajjad\}\{Rial\}\{Ounce\}\{Shilling\}\{Pound\}\{Dirham\}\{Dinar\}\{Lira\}\{Group\}\{Quarter\}\{Eighth\}\{Fight\}\{AHAD\}\{ITHNAYN\}\{THULAATHAA\}\{ARBAA\}\{KHAMEES\}\{JUMUAH\}\{SABT\}\{MUHARRAM\}\{SAFAR\}\{RABEEAWWAL\}\{RABEETHAANEE\}\{JUMADAALUWLAA\}\{JUMADAATHAANEEAH\}\{RAJAB\}\{SHABAAN\}\{RAMADAN\}\{SHAWAAL\}\{THULQADAH\}\{THULHIJJAH\}\{BISMILLAHIRAHMANIRAHEEM\}\{ALHAMDULILLAHIRABBILALAMEEN\}\{TrulyWithHardshipIsEase\}\{RepelTheirEvilByMeansOfWhatIsBest\}\{AndOfHisSignsIsThatHeCreatedForYouFromYourselvesMatesThatYouMayFindTranquillityInThem\}\{AndHePlacedBetweenYouAffectionAndMercy\}\{TaughtMankindWhatNotHeKnew\}\{AllahLightHeavensAndEarth\}\{EnterItWithPeaceAndSafety\}\{FALAQ\}" id="Abbreviations"></word>
 			<word text="\{TheBeneficent\}\{TheMerciful\}\{TheEternalLord\}\{TheMostSacred\}\{TheEmbodimentOfPeace\}\{TheInfuserOfFaith\}\{ThePreserverOfSafety\}\{TheMightyOne\}\{TheAllCompelling\}\{TheDominantOne\}\{TheCreator\}\{TheEvolver\}\{TheFlawlessShaper\}\{TheGreatForgiver\}\{TheAllPrevailingOne\}\{TheSupremeBestower\}\{TheTotalProvider\}\{TheSupremeSolver\}\{TheAllKnowingOne\}\{TheRestrictingOne\}\{TheExtender\}\{TheReducer\}\{TheElevatingOne\}\{TheHonourerBestower\}\{TheAbaser\}\{TheAllHearer\}\{TheAllSeeing\}\{TheImpartialJudge\}\{TheEmbodimentOfJustice\}\{TheKnowerOfSubtleties\}\{TheAllAwareOne\}\{TheClementOne\}\{TheMagnificentOne\}\{ThePardoner\}\{TheAcknowledgingOne\}\{TheSublimeOne\}\{TheGreatOne\}\{TheGuardingOne\}\{TheSustainingOne\}\{TheReckoningOne\}\{TheMajesticOne\}\{TheBountifulOne\}\{TheWatchfulOne\}\{TheRespondingOne\}\{TheAllPervadingOne\}\{TheWiseOne\}\{TheLovingOne\}\{TheGloriousOne\}\{TheInfuserOfNewLife\}\{TheAllObservingWitness\}\{TheEmbodimentOfTruth\}\{TheUniversalTrustee\}\{TheStrongOne\}\{TheFirmOne\}\{TheProtectingAssociate\}\{TheSoleLaudableOne\}\{TheAllEnumeratingOne\}\{TheOriginator\}\{TheRestorer\}\{TheMaintainerOfLife\}\{TheInflictorOfDeath\}\{TheEverLiving\}\{TheSelfSubsistingOne\}\{ThePointingOne\}\{TheAllNobleOne\}\{TheOnlyOne\}\{TheSoleOne\}\{TheSupremeProvider\}\{TheOmnipotentOne\}\{TheAllAuthoritativeOne\}\{TheExpeditingOne\}\{TheProcrastinator\}\{TheVeryFirst\}\{TheInfiniteLastOne\}\{ThePerceptible\}\{TheImperceptible\}\{TheHolderOfSupremeAuthority\}\{TheExtremelyExaltedOne\}\{TheFountainHeadOfTruth\}\{TheEverAcceptorOfRepentance\}\{TheRetaliator\}\{TheSupremePardoner\}\{TheBenignOne\}\{TheEternalPossessorOfSovereignty\}\{ThePossessorOfMajestyAndHonour\}\{TheJustOne\}\{TheAssemblerOfScatteredCreations\}\{TheSelfSufficientOne\}\{TheBestowerOfSufficiency\}\{ThePreventer\}\{TheDistressor\}\{TheBestowerOfBenefits\}\{ThePrimeLight\}\{TheProviderOfGuidance\}\{TheUniqueOne\}\{TheEverSurvivingOne\}\{TheEternalInheritor\}\{TheGuideToPathOfRectitude\}\{TheExtensivelyEnduringOne\}\{TheHelper\}\{TheMaster\}\{ThePowerful\}\{TheOdd\}\{TheBeautiful\}\{TheShy\}\{TheCoverer\}\{TheClear\}\{TheClose\}\{TheOmnipotentKing\}\{TheBrilliant\}\{TheTaker\}\{TheProvider\}\{TheIrresistable\}\{TheOneWhoRecompenses\}\{TheRecognizer\}\{TheBestower\}\{TheContinuousCreator\}\{TheOwner\}\{TheDoerOfGood\}\{TheOneWhoCures\}\{TheGentle\}\{TheGiver\}\{TheLord\}\{TheGood\}\{TheSupremeInHonour\}\{TheMostGenerous\}\{TheMostHolyFromAllWeakness\}\{TheMaster\}\{TheMostHigh\}\{TheOneGod\}\{AsmaAlHusnaBatch1\}\{AsmaAlHusnaBatch2\}\{AsmaAlHusnaBatch3\}\{AsmaAlHusnaBatch4\}\{AsmaAlHusnaBatch5\}\{AsmaAlHusnaBatch6\}\{HeIsAllah\}\{AndAllahHasTheBestNamesCallUponHimAndLeaveThemInPlaceThoseNamesNotablyCutOffWhatTheyDo\}\{TheNamesOfAllahAreBest\}\{TheNamesOfAllahAreBestFixedInTheBookAndTradition\}\{AndAllahHasTheBestNamesSoCallOnThem\}\{AndAllahHasTheBestNamesSoCallOnThemLeaveThoseWhoPracticeDeviationConcerningHisNamesTheyWillBeRecompensedForWhatTheyHaveBeenDoing\}\{SayCallUponAllahOrCallUponTheMostMercifulWhicheverNameYouCallToHimBelongTheBestNames\}\{FixedInTheBookAndTradition\}\{WhoeverMemorizesThemWillEnterParadise\}\{TheologyOfThePeopleOfTraditionAndTheGroup\}\{supp:IntroductionBestNames,Final1,Final2,Final3\}" id="TheBestNamesOfAllah"></word>
 		</category>
@@ -4295,6 +4317,8 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 	<islamicbooks>
 		<book title="Ulum Al-Qur&apos;an" author="Ahmad Von Denffer"></book>
 		<book title="An Introduction to the Sciences of the Qur&apos;an" author="Yasir Qadh"></book>
+		
+		<book title="An Introduction to the Principles of Tafseer" arabic="muqad~imapu fiY &gt;uSuwlu {lt~afosiyri" author="&lt;ibonu Tayomiy~api"></book>
 	</islamicbooks>
 	<qurandivisions>
 		<division description="Chapters"></division>
