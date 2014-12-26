@@ -1804,29 +1804,88 @@ Public Class ArabicData
     Public Shared NeutralCategories As String() = New String() {"B", "S", "WS", "ON"}
     Public Shared WeakCategories As String() = New String() {"EN", "ES", "ET", "AN", "CS", "NSM", "BN"}
     Public Shared ExplicitCategories As String() = New String() {"LRE", "LRO", "RLE", "RLO", "PDF", "LRI", "RLI", "FSI", "PDI"}
-    Public Shared Function GetUniCats() As String
-        Return "function IsLTR(c) { " + MakeUniCategory(LTRCategories) + " }" + vbCrLf + _
-        "function IsRTL(c) { " + MakeUniCategory(RTLCategories) + " }" + vbCrLf + _
-        "function IsAL(c) { " + MakeUniCategory(ALCategories) + " }" + vbCrLf + _
-        "function IsNeutral(c) { " + MakeUniCategory(NeutralCategories) + " }" + vbCrLf + _
-        "function IsWeak(c) { " + MakeUniCategory(WeakCategories) + " }" + vbCrLf + _
-        "function IsExplicit(c) { " + MakeUniCategory(ExplicitCategories) + " }"
+    Public Shared Function GetUniCats() As String()
+        Return {"function IsLTR(c) { " + MakeUniCategoryJS(LTRCategories) + " }", _
+        "function IsRTL(c) { " + MakeUniCategoryJS(RTLCategories) + " }", _
+        "function IsAL(c) { " + MakeUniCategoryJS(ALCategories) + " }", _
+        "function IsNeutral(c) { " + MakeUniCategoryJS(NeutralCategories) + " }", _
+        "function IsWeak(c) { " + MakeUniCategoryJS(WeakCategories) + " }", _
+        "function IsExplicit(c) { " + MakeUniCategoryJS(ExplicitCategories) + " }"}
     End Function
-    Public Shared Function MakeUniCategory(Cats As String()) As String
-        Dim Strs As String() = IO.File.ReadAllLines("..\..\..\IslamMetadata\UnicodeData.txt")
-        Dim Ranges As New ArrayList
+    Public Shared Function GetJoiningData() As Dictionary(Of Char, String)
+        Dim Strs As String() = IO.File.ReadAllLines("..\..\..\IslamMetadata\ArabicShaping.txt")
+        Dim Joiners As New Dictionary(Of Char, String)
         For Count = 0 To Strs.Length - 1
-            If Array.IndexOf(Cats, Strs(Count).Split(";"c)(4)) <> -1 Then
-                Dim NewRangeMatch As Integer = Integer.Parse(Strs(Count).Split(";"c)(0), Globalization.NumberStyles.AllowHexSpecifier)
-                If Ranges.Count <> 0 AndAlso CInt(CType(Ranges(Ranges.Count - 1), ArrayList)(CType(Ranges(Ranges.Count - 1), ArrayList).Count - 1)) + 1 = NewRangeMatch Then
-                    CType(Ranges(Ranges.Count - 1), ArrayList).Add(NewRangeMatch)
-                Else
-                    Ranges.Add(New ArrayList From {NewRangeMatch})
-                End If
+            If Strs(Count)(0) <> "#" Then
+                Dim Vals As String() = Strs(Count).Split(";"c)
+                'C Join_Causing on Tatweel and ZeroWidthJoiner could be considered as Dual_Joining
+                'General Category Mn, Me, or Cf are T Transparent and all others are U Non_Joining
+                Joiners.Add(ChrW(Integer.Parse(Vals(0), Globalization.NumberStyles.AllowHexSpecifier)), Vals(4))
             End If
         Next
+        Return Joiners
+    End Function
+    Structure DecCombData
+        Public JoiningStyle As String
+        Public Chars As Char()
+        Public Shapes As Char()
+    End Structure
+    Public Shared ShapePositions As String() = {"isolated", "final", "initial", "medial"}
+    Public Shared _CombPos As Dictionary(Of Char, Integer)
+    Public Shared _DecData As Dictionary(Of Char, DecCombData)
+    Public Shared _Ranges As Dictionary(Of String, ArrayList)
+    Public Shared Sub GetDecompositionCombiningCatData()
+        Dim Strs As String() = IO.File.ReadAllLines("..\..\..\IslamMetadata\UnicodeData.txt")
+        _CombPos = New Dictionary(Of Char, Integer)
+        _Ranges = New Dictionary(Of String, ArrayList)
+        _DecData = New Dictionary(Of Char, DecCombData)
+        For Count = 0 To Strs.Length - 1
+            Dim Vals As String() = Strs(Count).Split(";"c)
+            If Vals(5) <> "" Then
+                Dim Ch As Char = ChrW(Integer.Parse(Vals(0), Globalization.NumberStyles.AllowHexSpecifier))
+                Dim CombData As String() = Vals(5).Split(" "c)
+                If Not _DecData.ContainsKey(Ch) Then _DecData.Add(Ch, New DecCombData With {.Shapes = New Char() {Nothing, Nothing, Nothing, Nothing}})
+                Dim Data As DecCombData = _DecData(Ch)
+                Data.JoiningStyle = CombData(0).Trim("<"c, ">"c)
+                ReDim Data.Chars(CombData.Length - 2)
+                For SubCount = 0 To CombData.Length - 2
+                    Data.Chars(SubCount) = ChrW(Integer.Parse(CombData(SubCount + 1), Globalization.NumberStyles.AllowHexSpecifier))
+                Next
+                _DecData(Ch) = Data
+                If CombData.Length = 2 Then
+                    If Not _DecData.ContainsKey(Data.Chars(0)) Then _DecData.Add(Data.Chars(0), New DecCombData With {.Shapes = New Char() {Nothing, Nothing, Nothing, Nothing}})
+                    Dim ShapeData As DecCombData = _DecData(Data.Chars(0))
+                    ShapeData.Shapes(Array.IndexOf(ShapePositions, Data.JoiningStyle)) = Ch
+                End If
+            End If
+            If (Vals(3)) <> "" Then
+                Dim Ch As Char = ChrW(Integer.Parse(Vals(0), Globalization.NumberStyles.AllowHexSpecifier))
+                _CombPos.Add(Ch, Integer.Parse(Vals(3), Globalization.NumberStyles.Integer))
+            End If
+            Dim NewRangeMatch As Integer = Integer.Parse(Vals(0), Globalization.NumberStyles.AllowHexSpecifier)
+            If Not _Ranges.ContainsKey(Vals(4)) Then _Ranges.Add(Vals(4), New ArrayList)
+            If _Ranges(Vals(4)).Count <> 0 AndAlso CInt(CType(_Ranges(Vals(4))(_Ranges(Vals(4)).Count - 1), ArrayList)(CType(_Ranges(Vals(4))(_Ranges(Vals(4)).Count - 1), ArrayList).Count - 1)) + 1 = NewRangeMatch Then
+                CType(_Ranges(Vals(4))(_Ranges(Vals(4)).Count - 1), ArrayList).Add(NewRangeMatch)
+            Else
+                _Ranges(Vals(4)).Add(New ArrayList From {NewRangeMatch})
+            End If
+        Next
+    End Sub
+    Public Shared Function MakeUniCategory(Cats As String()) As ArrayList
+        If _Ranges Is Nothing Then GetDecompositionCombiningCatData()
+        Dim Ranges As New ArrayList
+        For Count = 0 To Cats.Length - 1
+            If _Ranges.ContainsKey(Cats(Count)) Then
+                Ranges.AddRange(_Ranges(Cats(Count)))
+            End If
+        Next
+        Return Ranges
+    End Function
+    Public Shared Function MakeUniCategoryJS(Cats As String()) As String
+        Dim Ranges As ArrayList = MakeUniCategory(Cats)
         Return "return " + String.Join("||", Array.ConvertAll(Of ArrayList, String)(CType(Ranges.ToArray(GetType(ArrayList)), ArrayList()), Function(Arr As ArrayList) If(Arr.Count = 1, "c===0x" + Hex(Arr(0)), "(c>=0x" + Hex(Arr(0)) + "&&c<=0x" + Hex(Arr(Arr.Count - 1)) + ")"))) + ";"
     End Function
+
     Public Shared RecitationSymbols() As Char = {Space, _
         ArabicLetterHamza, ArabicLetterAlefWithHamzaAbove, ArabicLetterWawWithHamzaAbove, _
         ArabicLetterAlefWithHamzaBelow, ArabicLetterYehWithHamzaAbove, _

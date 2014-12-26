@@ -1092,7 +1092,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 		</category>
 		<category title="Interogatives">	
 			<word text="maA" id="WhatThatWhich" grammar="prespos"></word>
-			<word text="mano" id="WhoTheOneWho" grammar="prespos"></word>
+			<word text="man" id="WhoTheOneWho" grammar="prespos"></word>
 			<word text="mataY" id="WhenTheTimeWhen" grammar="prespos"></word>
 			<word text="&gt;ayona" id="Where" grammar="prespos"></word>
 			<word text="kayofa" id="How"></word>
@@ -1231,6 +1231,8 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="lam~a" id="NotYetWhen" grammar="prespos"></word>
 			<word text="&gt;alam~aA" id="" grammar="prespos"></word>
 			<word text="&gt;alamo" id="" grammar="prespos"></word>
+			
+			<word text="&gt;ay~umaA" id="Whichever" grammar=""></word>
 		</category>
 		<category title="Nouns">			
 			<word text="&gt;aw~alN &gt;uwalaY" id="First"></word>
@@ -1631,10 +1633,12 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="ZahiyrN" id="Patron"></word>
 			<word text="faAHi$oha" id="EvilDeeds"></word>
 			<word text="ribaA" id="Usury"></word>
+			<word text="saAriqN" id="Thief"></word>
 			<word text="bayoEN" id="TradeBusinessTransactions"></word>
 			<word text="rafavN" id="VulgarWord"></word>
 			<word text="fusuwqN" id="Obscenity"></word>
 			<word text="jidaAlN" id="Argument"></word>
+			<word text="&gt;uf~N" id="DirtInEarsOrUnderFingernailsSighUff"></word>
 			<word text="nifaAqN" id="Hypocrisy"></word>
 			<word text="HasadN" id="Envy"></word>
 			<word text="ZulomN" id="Oppression"></word>
@@ -1691,6 +1695,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="TarwiyapN" id="EighthDayOfMonthOfPilgrimage"></word>
 			<word text="&lt;ifaAdDapN" id="GoingForth"></word>
 			<word text="&gt;amatN" id="FemaleSlave"></word>
+			<word text="raba`^}ibN" id="StepDaughter"></word>
 			<word text="rakabapN" id="Neck"></word>
 			<word text="taqowaY" id="Piety"></word>
 			<word text="&gt;usotaA*N" plural="&gt;asaAti*apN" id="Professor"></word>
@@ -1922,7 +1927,6 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="taxoSiySN" id="Specification"></word>
 			<word text="&lt;isotivonaA^&apos;N" id="Exception"></word>
 			<word text="SifapN" id="Modification"></word>
-			<word text="$aroTN" id="Condition"></word>
 			<word text="gaAyapN" id="ClausesOfTime"></word>
 			<word text="mubohamaAtN" id="ReferenceWithoutName"></word>
 			<word text="matohalN" id="SimileProverbMetaphor"></word>
@@ -1939,6 +1943,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="&lt;ilotifaAtN" id="SuddenShiftsInGrammaticalConstructions"></word>
 			<word text="muTolaqN" id="Absolute"></word>
 			<word text="muqay~adN" id="Qualified"></word>
+			<word text="diyapN" id="Fine"></word>
 			<word text="sabaAbN" id="ReasonBreakingAnOathTakenInAllahsName"></word>
 			<word text="ZihaArN" id="SwearingOffOnesWife"></word>
 			<word text="kaAmilapN" id="Complete"></word>
@@ -2445,6 +2450,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="fas~ara" id="Explain"></word>
 			<word text="&gt;aw~ala" id="Interpret"></word>
 			<word text="yata&gt;aw~al" id="Implement"></word>
+			<word text="yaTohuron" id="BecomePure"></word>
 		</category>
 		<category title="RepresentativeStems">
 			<word text="fEl" id=""></word>
@@ -3008,10 +3014,12 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="&gt;asomaA^'u {ll~ahi {loHusonaY`" id="TheNamesOfAllahAreBest"></word>
 			<word text="&gt;asomaA^'u {ll~ahi {loHusonaY` {lv~aAbotapu fiY {lokitaAbi wa{ls~un~api" id="TheNamesOfAllahAreBestFixedInTheBookAndTradition"></word>
 			<word text="{lv~aAbotapu fiY {lokitaAbi wa{ls~un~api" id="FixedInTheBookAndTradition"></word>
-			<word text="wa{ll~ahi {lo&gt;asmaA&apos;u {loHusonaY faAdEuwhu bihaA wa*aruwA {l~a*iyna yuloHiduwna fiY &gt;asmaA}ihi sayujozawna maA kaAnuwA yaEomaluwna" id="AndAllahHasTheBestNamesCallUponHimAndLeaveThemInPlaceThoseNamesNotablyCutOffWhatTheyDo"></word>
+			<word text="wa{ll~ahi {lo&gt;asomaA&apos;u {loHusonaY faAdEuwhu bihaA wa*aruwA {l~a*iyna yuloHiduwna fiY &gt;asomaA}ihi sayujozawna maA kaAnuwA yaEomaluwna" id="AndAllahHasTheBestNamesCallUponHimAndLeaveThemInPlaceThoseNamesNotablyCutOffWhatTheyDo"></word>
 			<word text="man {HoSaAhaA duxulu {lojan~api" id="WhoeverMemorizesThemWillEnterParadise"></word>
 			<word text="Eaqiydapu {holi {ls~unapi wa{lojamaAEapi" id="TheologyOfThePeopleOfTraditionAndTheGroup"></word>
 			<word text="{holi {ls~unapi wa{lojamaAEapi" id="ThePeopleOfTraditionAndTheGroup"></word>
+			<word text="fa&gt;afoTara" id="AndBreaksFast"></word>
+			<word text="badalu {lobaEodi min {lokul~i" id="SubstitutionOfPartForTheWhole"></word>
 			<word text="nabiY~u {ll~ahi" id="ProphetOfAllah"></word>
 			<word text="&gt;anbiyaA^&apos;u {ll~ahi" id="ProphetsOfAllah"></word>
 			<word text="rasuwlu {ll~ahi" id="MessengerOfAllah"></word>
@@ -3181,8 +3189,8 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="&gt;asomaA^&apos;u {l$~aroTi" id="SubordinatorsBeginningConditionalClauses"></word>
 			<word text="&lt;isomu {lojinsi" id="GenericNounInPossessiveConstructionWithDefiniteNounOrPronoun"></word>
 			<word text="badalN {lobaEoDu mina {lokul~i" id="SubstitutionOfAPartForAWhole"></word>
-			<word text="dalaAlapu {lo&lt;iqotiDaA^&apos;i" id="IndictationOfMeaningByNecessarySupposition"></word>
-			<word text="dilaAlapu {lo&lt;i$aArapi" id="IndictationOfMeaningBySuggestion"></word>
+			<word text="dalaAlapu {lo&lt;iqotiDaA^&apos;i" id="IndicationOfMeaningByNecessarySupposition"></word>
+			<word text="dilaAlapu {lo&lt;i$aArapi" id="IndicationOfMeaningBySuggestion"></word>
 			<word text="mafohuwmu {lomuwaAfaqapi" id="RuleInImpliedMeaningAgreesWithStatedMeaning"></word>
 			<word text="{loqiyaAsu {lojaliy" id="ObviousAnalogy"></word>
 			<word text="mafohuwmu {lomuxaAlafapi" id="RuleInImpliedMeaningIsContrapositiveToStatedMeaning"></word>
@@ -3257,7 +3265,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="{ls~alaAmu Ealayoka ya`^&gt;abaA Eabodi {ll~ahi" id="PeaceBeUponYouOFatherOfTheServantOfAllah"></word>
 			<word text="{ls~alaAmu Ealayoki ya`ruqiyapu binti {loHus~ayoni" id="PeaceBeUponYouORuqiyaDaughterOfHussein"></word>
 			<word text="Ealiy~N {bonu &gt;abiy TaAlibi Ealayohi {ls~alaAmu" id="AliSonOfAbuTalibUponYouBePeace"></word>
-			<word text="man kuntu mawolaAhu faha`*aA Ealiy~N mawlaAh" id="WhoEverIsKingThenThatKingIsAli"></word>
+			<word text="man kuntu mawolaAhu faha`*aA Ealiy~N mawlaAh" id="WhoeverIsKingThenThatKingIsAli"></word>
 			<word text="Ealiy~N $aAhi marodaAnu" id="AliLionOfGod"></word>
 			<word text="faATimapu {lz~haraA&apos;u EalayohaA {ls~alaAmu" id="FatimahZaharaUponHerBePeace"></word>
 			<word text="ya`Ealiy~N *ikr qiyaAmu qaA}imu sit~i" id="OAliRememberTheReappearanceOfOffice"></word>
@@ -3775,7 +3783,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="AliSonOfAbuTalibUponYouBePeace" font="Shia;0064" id="AliSonOfAbuTalibUponYouBePeace"></word>
 			<word text="AllahMuhammadAli" font="Shia;006C" id="AllahMuhammadAli"></word>
 			<word text="OZaynabKubra" font="Shia;007B" id="OZaynabKubra"></word>
-			<word text="WhoEverIsKingThenThatKingIsAli" font="Shia;0068" id="WhoEverIsKingThenThatKingIsAli"></word>
+			<word text="WhoeverIsKingThenThatKingIsAli" font="Shia;0068" id="WhoeverIsKingThenThatKingIsAli"></word>
 			<word text="AliLionOfGod" font="Shia;006A" id="AliLionOfGod"></word>
 			<word text="FatimahZaharaUponHerBePeace" font="Shia;0076" id="FatimahZaharaUponHerBePeace"></word>
 			<word text="" font="Shia;0078" id=""></word>
@@ -3790,7 +3798,7 @@ borrowed from Christianity like supplication, Lord, Heaven, Hell)
 			<word text="\{word:RelativeAdjective,Possession,FirstParticlePossessionConstruction,SecondParticlePossessionConstruction,PointingNoun,FiveSpecialNouns,VerilyTrulySurely,Mighty,Wise,Knower,IndeedSurely,Sitting,Standing,Travelling,Coming,Going,ToTowardsUpToNotIncluding,Allah,Man,Woman,Living,Short,Slave,BoySonChild,GirlDaughter,Tall,YoungBeautiful,Abdullah,WhatThatWhich,Also,Employee,GateDoor,Name,DirectorPrincipal,Company,Mother,Sister,Son,WifeHusband,University,ButHoweverOnTheContraryActually,ButHowever,Because,Why,PureAndPurifying,River,Under,Punishment,SevereStrong,WellGrounded,KnowledgeScience,Father,Brother,NearClose,Far,Professor,Office,Library,FromAbout,Joseph,Flow,Call,Reward,ForgiveCover\}\{plurals:\}\{proximaldemonstratives:This,These\}\{distaldemonstratives:That,Those\}\{2:220:29-32,2:32:10-13,103:2,20:71:9-10,76:23:1-5,31:30:12-16,33:35:1-3,37:99:2-5,19:30:2-4,12:95:3-6,6:92:1-2,8:32:6-8,27:28:1-3,106:3,11:78:13-17,31:5:1-5,43:51:11-15,22:2:19-22,4:162:1-5,2:214:29-32,10:69:10-12,12:90:7-10,28:25:7-10,48:29:1-3,7:151:3-5\}" id="Arabic"></word>
 			<word text="\{word:\}" id="IslamicTheology"></word>
 			<word text="\{word:\}" id="PropheticBiography"></word>
-			<word text="\{word:QuranReadingRecitation,Commentary,Recitations,Companions,Follower,PerfectedCompletelyFormed,ConsistentSimilarMutuallyResemblingOneAnother,Advancement,Delay,Abrogating,Abrogated,Oppression,AssociatingPartners,DiscourseSpeech,GovernorshipSainthood,Imam,Jurisprudence,SchoolOfJurisprudence,BlindFollowing,OnenessOfGod,Law,Reinterpretation,Explain,Interpret,Implement,BowOfPrayer,Prostrating,Prayer,Rationalists,TheEverLiving,PoorDueCharityAlmsGiving,Fasting,Pilgrimage,Tradition,Authentic,Good,Trace,Disbeliever,Disbelief,NarrationsFromJewishAndChristianSources,Salafi,Touch,DustAblution,Mystic,Shia,QadianSect,Commentator,Inspiration,UnveilingIllumination,BlueBlearyEyed,RingSeal,StarConfiguration,CallToIslam,Biography,DoctrineTheologyPrincipleOfBelief,Worship,RighteousDealings,Ramadan,Unlawful,Specification,Concensus,StateOfRitualConsecrationForPilgrimage,ReasonedDecision,Medina,Abraham,Moses,Ashura,CredibleReport,Emmigration,Ablution,AnalogicalDeduction,VoluntaryKindness,DistinctionCriterion,Community,ClearCut,DoubtfulMatters,ChapterFromQuran,SoulSpirit,TheAllSeeing,TheAllHearer,ObviousApparent,Hidden,OldMan,SimileProverbMetaphor,Oath,Debate,NarrativeTaleStory,Kaaba,Noah,Aaron,Jesus,Muhammad,Ali,Hasan,Hussein,Saul,Goliath,Adam,ThePossessorOfTwoHorns,Korah,Mary,Party,NightJourney\}\{phrase:QuranicSciences,FundamentalPrinciplesOfQuranicInterpretation,LegalMethodologyFundamentalPrinciplesOfIslamicLaw,UthmanicScript,MiraculousAspectsOfTheQuran,ReasonsForRevelation,AbrogatingAndAbrogatedVerses,QuranicGrammar,UnusualQuranicTerms,QuranicMetaphor,IslamicDisciplines,HadithSciences,StudentsOfFollowers,MysticCommentary,OnenessOfLordshipDominion,OnenessOfDivinity,ThePeopleOfTraditionAndTheGroup,NarrationBasedExegesis,OpinionBasedExegesis,SacredMosque,EssenceOfTheBook,TheMatterHasBeenDecreed,StatedSimile,HiddenMetaphor,FormlessMetaphor,ISwearByAllah\}\{75:17-19,16:44,6:82,31:13,98:1,1:7,25:33,110:3,7:52-53,3:7,48:10,15:9,86:1-3,5:1,5:3,6:103,75:23,83:15,16:44,16:64,8:60,108:1,75:19,24:31,5:44,4:43,79:17,27:10,2:260,55:19,55:22,33:40,4:157-158,94:4,20:102,49:13,17:36\}\{21:25,21:23,16:101,2:106,2:184,2:185,4:15,24:2,2:180,2:144,2:240,2:234,58:12-13,2:183,2:187,2:144\}\{41:3,50:1,17:85,32:11,11:1,39:23,3:7,42:11\}\{2:17-20,13:17,25:67,17:110,2:260,2:216,55:60,5:100,2:249,59:14,2:264,2:261,49:12,39:27,3:186,91:1-2,64:7,4:65,75:1-3,18:54,16:125,29:46,21:22,75:36-40,30:27,22:62,5:48,35:31,28:3,12:111\}" id="QuranicExegesis"></word>
+			<word text="\{word:QuranReadingRecitation,Commentary,Recitations,Companions,Follower,PerfectedCompletelyFormed,ConsistentSimilarMutuallyResemblingOneAnother,Advancement,Delay,Abrogating,Abrogated,Oppression,AssociatingPartners,DiscourseSpeech,GovernorshipSainthood,Imam,Jurisprudence,SchoolOfJurisprudence,BlindFollowing,OnenessOfGod,Law,Reinterpretation,Explain,Interpret,Implement,BowOfPrayer,Prostrating,Prayer,Rationalists,TheEverLiving,PoorDueCharityAlmsGiving,Fasting,Pilgrimage,Tradition,Authentic,Good,Trace,Disbeliever,Disbelief,NarrationsFromJewishAndChristianSources,Salafi,Touch,DustAblution,Mystic,Shia,QadianSect,Commentator,Inspiration,UnveilingIllumination,BlueBlearyEyed,RingSeal,StarConfiguration,CallToIslam,Biography,DoctrineTheologyPrincipleOfBelief,Worship,RighteousDealings,Ramadan,Unlawful,Specification,Concensus,StateOfRitualConsecrationForPilgrimage,ReasonedDecision,Medina,Abraham,Moses,Ashura,CredibleReport,Emmigration,Ablution,AnalogicalDeduction,VoluntaryKindness,DistinctionCriterion,Community,ClearCut,DoubtfulMatters,ChapterFromQuran,SoulSpirit,TheAllSeeing,TheAllHearer,ObviousApparent,Hidden,OldMan,SimileProverbMetaphor,Oath,Debate,NarrativeTaleStory,Kaaba,Noah,Aaron,Jesus,Muhammad,Ali,Hasan,Hussein,Saul,Goliath,Adam,ThePossessorOfTwoHorns,Korah,Mary,Party,NightJourney,General,Specific,LimitingExpression,AllEveryEach,TradeBusinessTransactions,Usury,Thief,VulgarWord,Obscenity,Argument,One,IndefiniteInNegativeOrProhibitiveConstruction,HeWho,DirtInEarsOrUnderFingernailsSighUff,WhoTheOneWho,WhatThatWhich,Wherever,Whichever,MinorPilgrimage,Allah,FirstParticlePossessionConstruction,MatterAffair,BoySonChild,Mother,MenPeople,Quraish,Exception,ThoseWho,Modification,SheWho,ConditionSign,StepDaughter,If,ClausesOfTime,Until,DivorcedWomen,WaitingPeriod,Absolute,Qualified,PoorPerson,Fine,ReasonBreakingAnOathTakenInAllahsName,IslamicRuling,ReligiousDonationExpiation,Hand,SwearingOffOnesWife,Stated,ImpliedUnderstoodMeaning,Explicit,Explained,Necessity,Suggestion,Complete,WillfulDisobedienceIgnorant,MajorAblution,BecomePure,Garden,CallToBeginThePrayer,Zaahiree,MajorImpurity,ReligionLawJudgment\}\{phrase:QuranicSciences,FundamentalPrinciplesOfQuranicInterpretation,LegalMethodologyFundamentalPrinciplesOfIslamicLaw,UthmanicScript,MiraculousAspectsOfTheQuran,ReasonsForRevelation,AbrogatingAndAbrogatedVerses,QuranicGrammar,UnusualQuranicTerms,QuranicMetaphor,IslamicDisciplines,HadithSciences,StudentsOfFollowers,MysticCommentary,OnenessOfLordshipDominion,OnenessOfDivinity,ThePeopleOfTraditionAndTheGroup,NarrationBasedExegesis,OpinionBasedExegesis,SacredMosque,EssenceOfTheBook,TheMatterHasBeenDecreed,StatedSimile,HiddenMetaphor,FormlessMetaphor,ISwearByAllah,LaamOfEmphasis,AlOfDefiniteness,SubordinatorsBeginningConditionalClauses,GenericNounInPossessiveConstructionWithDefiniteNounOrPronoun,SubstitutionOfPartForTheWhole,IndicationOfMeaningByNecessarySupposition,IndicationOfMeaningBySuggestion,AndBreaksFast,RuleInImpliedMeaningAgreesWithStatedMeaning,RuleInImpliedMeaningIsContrapositiveToStatedMeaning,ObviousAnalogy\}\{75:17-19,16:44,6:82,31:13,98:1,1:7,25:33,110:3,7:52-53,3:7,48:10,15:9,86:1-3,5:1,5:3,6:103,75:23,83:15,16:44,16:64,8:60,108:1,75:19,24:31,5:44,4:43,79:17,27:10,2:260,55:19,55:22,33:40,4:157-158,94:4,20:102,49:13,17:36\}\{21:25,21:23,16:101,2:106,2:184,2:185,4:15,24:2,2:180,2:144,2:240,2:234,58:12-13,2:183,2:187,2:144\}\{41:3,50:1,17:85,32:11,11:1,39:23,3:7,42:11\}\{2:17-20,13:17,25:67,17:110,2:260,2:216,55:60,5:100,2:249,59:14,2:264,2:261,49:12,39:27,3:186,91:1-2,64:7,4:65,75:1-3,18:54,16:125,29:46,21:22,75:36-40,30:27,22:62,5:48,35:31,28:3,12:111\}\{3:185,39:62,2:275,5:38,2:197,18:49,46:17,2:158,2:197,2:150,24:63,4:11,4:176,4:23,3:173,3:97,5:33-34,4:23,2:180,2:196,2:222,3:97,2:228,65:4,33:49,2:275,16:80,5:89,4:92,6:145,2:173,5:6,58:3,5:38,2:196,2:173,2:222,17:24,5:6,2:184,2:187,17:23,4:10,49:6,24:4,5:95,4:23,23:117\}\{9:31,2:62,4:150-151\}" id="QuranicExegesis"></word>
 			<word text="\{PeaceBeUponYou\}\{AndUponYouBePeace\}\{PeaceBeUponYouWR\}\{AndUponYouBePeaceWR\}\{PeaceBeUponYouWRWB\}\{AndUponYouBePeaceWRWB\}\{AS\}\{AimaaS\}\{AaaS\}\{AimS\}\{AinnaS\}\{SAWAWS\}\{SAWS\}\{ASW\}\{AWAWW\}\{RA\}\{RAunna\}\{RAumaa\}\{RAu\}\{RAaa\}\{RAT\}\{RATunna\}\{RATumaa\}\{RATu\}\{RATaa\}\{RAA\}\{RAAinna\}\{RAAimaa\}\{RAAi\}\{RAAaa\}\{R\}\{Runna\}\{Rumaa\}\{Ru\}\{Raa\}\{JK\}\{JKunna\}\{JKumaa\}\{JKa\}\{JKi\}\{JKK\}\{JKKunna\}\{JKKumaa\}\{JKKa\}\{JKKi\}\{BF\}\{BFunna\}\{BFumaa\}\{BFa\}\{BFi\}\{HZ\}\{HZunna\}\{HZumaa\}\{HZu\}\{HZaA\}\{ST\}\{STunna\}\{STumaa\}\{STu\}\{STaA\}\{DB\}\{DBunna\}\{DBumaa\}\{DBu\}\{DBaA\}\{AllahHaafiz\}\{AllahHaafizWanaasir\}\{WithDivineSuccess\}\{WithDivineSuccessInExam\}\{H\}\{Hunna\}\{Humaa\}\{Ha\}\{Hi\}\{AAum\}\{ShSum\}\{ASa\}\{SWT\}\{AWJ\}\{JJ\}\{JWA\}\{BlessingsOfAllah\}\{SeekRefugeWithAllahFromSatanRejected\}\{BISMILLAH\}\{INSHALLAH\}\{INSHALLAHTAALA\}\{MASHALLAH\}\{SUBHANALLAH\}\{SUBHANAKALLAH\}\{ALHAMDULILLAH\}\{ThanksALHAMDULILLAH\}\{ALLAHUAKBAR\}\{ALLAHUAKBARALLAHUAKBAR\}\{ASTAGFIRULLAH\}\{HASBIALLAH\}\{MayAllahBlessYou\}\{AllahKnowsBest\}\{InProtectionOfAllah\}\{IHavePutTrustInAllah\}\{WeHavePutTrustInAllah\}\{FearAllah\}\{SpeechOfAllah\}\{ISwearByAllah\}\{RightOfAllah\}\{MayAllahWillItSoOLordOfTheWorlds\}\{AllahSaysTheTruth\}\{InThePathOfAllah\}\{TrulyFromAllahWeComeAndToHimWillReturn\}\{LAILAHAILLALLAH\}\{RASOOLULLAH\}\{ALLAHUMMASALLAALAMUHAMMADWAALAAALIMUHAMMAD\}\{TrulyYouAreOnAnExaltedStandardOfCharacter\}\{AndPrepareAgainstThemWhateverYouAreAbleOfPower\}\{MUHAMMADURRASOOLULLAH\}\{LAILALAILLALLAHMUHAMMADURRASOOLULLAH\}\{ASHHADUANLAILAHAILLALLAH\}\{ASHHADUANNAMUHAMMADARRASOOLULLAH\}\{ASHHADUANLAILAHAILLALLAHASHHADUANNAMUHAMMADABDUHUWARASULUH\}\{ThereIsNoPowerAndNoMightExceptWithAllah\}\{ThereIsNoPowerAndNoMightExceptWithAllahMostHighMostMagnificent\}\{TrulyAllahIsWithThePatient\}\{AndForParentsKindness\}\{BeWithAllah\}\{TheNobleQuran\}\{NobleQuran\}\{MonthOfRamadanWhichWasRevealedThereinTheQuranGuidanceToMankind\}\{InRemembranceOfAllahHeartsFindPeace\}\{SafeguardYourselfFromHeWhoYouHaveBeenGoodTo\}\{TrulyAllahLovesWhenOneWhoWorksDoesTheWorkWell\}\{BlessedFeastCelebration\}\{HappyFeastCelebration\}\{GreatWithPraiseToAllah\}\{MayEveryYearYouBeInGoodHealthAndBlessings\}\{MayEveryYearYouHaveGoodness\}\{AllRightsReserved\}\{ThenTrulyThePartyOfAllahAreTheTriumphant\}\{OnWithTheTruth\}\{OLordGiveMeKnowledge\}\{AH\}\{Preface\}\{Contents\}\{End\}\{Introduction\}\{Classroom\}\{Door\}\{Part\}\{Congratulations\}\{Index\}\{Islam\}\{Mosque\}\{World\}\{Book\}\{Light\}\{Peace\}\{Allah\}\{AAMEEN\}\{Muhammad\}\{Ali\}\{Fatima\}\{HADI\}\{RIDAA\}\{Hasan\}\{Hussein\}\{BAAQIR\}\{GuidedOne\}\{ASKAREE\}\{JAWAAD\}\{KADHIM\}\{SAADIQ\}\{Sajjad\}\{Rial\}\{Ounce\}\{Shilling\}\{Pound\}\{Dirham\}\{Dinar\}\{Lira\}\{Group\}\{Quarter\}\{Eighth\}\{Fight\}\{AHAD\}\{ITHNAYN\}\{THULAATHAA\}\{ARBAA\}\{KHAMEES\}\{JUMUAH\}\{SABT\}\{MUHARRAM\}\{SAFAR\}\{RABEEAWWAL\}\{RABEETHAANEE\}\{JUMADAALUWLAA\}\{JUMADAATHAANEEAH\}\{RAJAB\}\{SHABAAN\}\{RAMADAN\}\{SHAWAAL\}\{THULQADAH\}\{THULHIJJAH\}\{BISMILLAHIRAHMANIRAHEEM\}\{ALHAMDULILLAHIRABBILALAMEEN\}\{TrulyWithHardshipIsEase\}\{RepelTheirEvilByMeansOfWhatIsBest\}\{AndOfHisSignsIsThatHeCreatedForYouFromYourselvesMatesThatYouMayFindTranquillityInThem\}\{AndHePlacedBetweenYouAffectionAndMercy\}\{TaughtMankindWhatNotHeKnew\}\{AllahLightHeavensAndEarth\}\{EnterItWithPeaceAndSafety\}\{FALAQ\}" id="Abbreviations"></word>
 			<word text="\{TheBeneficent\}\{TheMerciful\}\{TheEternalLord\}\{TheMostSacred\}\{TheEmbodimentOfPeace\}\{TheInfuserOfFaith\}\{ThePreserverOfSafety\}\{TheMightyOne\}\{TheAllCompelling\}\{TheDominantOne\}\{TheCreator\}\{TheEvolver\}\{TheFlawlessShaper\}\{TheGreatForgiver\}\{TheAllPrevailingOne\}\{TheSupremeBestower\}\{TheTotalProvider\}\{TheSupremeSolver\}\{TheAllKnowingOne\}\{TheRestrictingOne\}\{TheExtender\}\{TheReducer\}\{TheElevatingOne\}\{TheHonourerBestower\}\{TheAbaser\}\{TheAllHearer\}\{TheAllSeeing\}\{TheImpartialJudge\}\{TheEmbodimentOfJustice\}\{TheKnowerOfSubtleties\}\{TheAllAwareOne\}\{TheClementOne\}\{TheMagnificentOne\}\{ThePardoner\}\{TheAcknowledgingOne\}\{TheSublimeOne\}\{TheGreatOne\}\{TheGuardingOne\}\{TheSustainingOne\}\{TheReckoningOne\}\{TheMajesticOne\}\{TheBountifulOne\}\{TheWatchfulOne\}\{TheRespondingOne\}\{TheAllPervadingOne\}\{TheWiseOne\}\{TheLovingOne\}\{TheGloriousOne\}\{TheInfuserOfNewLife\}\{TheAllObservingWitness\}\{TheEmbodimentOfTruth\}\{TheUniversalTrustee\}\{TheStrongOne\}\{TheFirmOne\}\{TheProtectingAssociate\}\{TheSoleLaudableOne\}\{TheAllEnumeratingOne\}\{TheOriginator\}\{TheRestorer\}\{TheMaintainerOfLife\}\{TheInflictorOfDeath\}\{TheEverLiving\}\{TheSelfSubsistingOne\}\{ThePointingOne\}\{TheAllNobleOne\}\{TheOnlyOne\}\{TheSoleOne\}\{TheSupremeProvider\}\{TheOmnipotentOne\}\{TheAllAuthoritativeOne\}\{TheExpeditingOne\}\{TheProcrastinator\}\{TheVeryFirst\}\{TheInfiniteLastOne\}\{ThePerceptible\}\{TheImperceptible\}\{TheHolderOfSupremeAuthority\}\{TheExtremelyExaltedOne\}\{TheFountainHeadOfTruth\}\{TheEverAcceptorOfRepentance\}\{TheRetaliator\}\{TheSupremePardoner\}\{TheBenignOne\}\{TheEternalPossessorOfSovereignty\}\{ThePossessorOfMajestyAndHonour\}\{TheJustOne\}\{TheAssemblerOfScatteredCreations\}\{TheSelfSufficientOne\}\{TheBestowerOfSufficiency\}\{ThePreventer\}\{TheDistressor\}\{TheBestowerOfBenefits\}\{ThePrimeLight\}\{TheProviderOfGuidance\}\{TheUniqueOne\}\{TheEverSurvivingOne\}\{TheEternalInheritor\}\{TheGuideToPathOfRectitude\}\{TheExtensivelyEnduringOne\}\{TheHelper\}\{TheMaster\}\{ThePowerful\}\{TheOdd\}\{TheBeautiful\}\{TheShy\}\{TheCoverer\}\{TheClear\}\{TheClose\}\{TheOmnipotentKing\}\{TheBrilliant\}\{TheTaker\}\{TheProvider\}\{TheIrresistable\}\{TheOneWhoRecompenses\}\{TheRecognizer\}\{TheBestower\}\{TheContinuousCreator\}\{TheOwner\}\{TheDoerOfGood\}\{TheOneWhoCures\}\{TheGentle\}\{TheGiver\}\{TheLord\}\{TheGood\}\{TheSupremeInHonour\}\{TheMostGenerous\}\{TheMostHolyFromAllWeakness\}\{TheMaster\}\{TheMostHigh\}\{TheOneGod\}\{AsmaAlHusnaBatch1\}\{AsmaAlHusnaBatch2\}\{AsmaAlHusnaBatch3\}\{AsmaAlHusnaBatch4\}\{AsmaAlHusnaBatch5\}\{AsmaAlHusnaBatch6\}\{HeIsAllah\}\{AndAllahHasTheBestNamesCallUponHimAndLeaveThemInPlaceThoseNamesNotablyCutOffWhatTheyDo\}\{TheNamesOfAllahAreBest\}\{TheNamesOfAllahAreBestFixedInTheBookAndTradition\}\{AndAllahHasTheBestNamesSoCallOnThem\}\{AndAllahHasTheBestNamesSoCallOnThemLeaveThoseWhoPracticeDeviationConcerningHisNamesTheyWillBeRecompensedForWhatTheyHaveBeenDoing\}\{SayCallUponAllahOrCallUponTheMostMercifulWhicheverNameYouCallToHimBelongTheBestNames\}\{FixedInTheBookAndTradition\}\{WhoeverMemorizesThemWillEnterParadise\}\{TheologyOfThePeopleOfTraditionAndTheGroup\}\{supp:IntroductionBestNames,Final1,Final2,Final3\}" id="TheBestNamesOfAllah"></word>
 		</category>
