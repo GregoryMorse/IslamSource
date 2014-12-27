@@ -1354,6 +1354,25 @@ Public Class ArabicData
             End If
         Next
         CharArr = New ArrayList
+        Ranges = MakeUniCategory(ANCategories)
+        For Count = 0 To Ranges.Count - 1
+            Dim Range As ArrayList = CType(Ranges(Count), ArrayList)
+            If Range.Count = 1 Then
+                CharArr.Add(Range(0))
+            Else
+                For SubCount = 0 To Range.Count - 1
+                    CharArr.Add(Range(SubCount))
+                Next
+            End If
+        Next
+        For Count = 0 To CharArr.Count - 1
+            Dim ArabicLet As New ArabicSymbol
+            ArabicLet.Symbol = ChrW(CInt(CharArr(Count)))
+            ArabicLet.JoiningStyle = If(Array.IndexOf(CausesJoining, ArabicLet.Symbol) <> -1, "C", "U")
+            ArabicLet.UnicodeName = _Names.Item(ArabicLet.Symbol)(0)
+            Letters.Add(ArabicLet)
+        Next
+        CharArr = New ArrayList
         Ranges = MakeUniCategory(WeakCategories)
         For Count = 0 To Ranges.Count - 1
             Dim Range As ArrayList = CType(Ranges(Count), ArrayList)
@@ -1841,6 +1860,7 @@ Public Class ArabicData
     Public Shared LTRCategories As String() = New String() {"L"}
     Public Shared RTLCategories As String() = New String() {"R", "AL"}
     Public Shared ALCategories As String() = New String() {"AL"}
+    Public Shared ANCategories As String() = New String() {"AN"}
     Public Shared CombineCategories As String() = New String() {"Mn", "Me", "Cf"}
     Public Shared NeutralCategories As String() = New String() {"B", "S", "WS", "ON"}
     Public Shared WeakCategories As String() = New String() {"EN", "ES", "ET", "AN", "CS", "NSM", "BN"}

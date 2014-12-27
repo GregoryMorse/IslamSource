@@ -135,6 +135,10 @@ Public Class Arabic
                 Count += 1
                 If Buckwalter(Count) = "," Then
                     ArabicString += ArabicData.ArabicComma
+                ElseIf Buckwalter(Count) = ";" Then
+                    ArabicString += ArabicData.ArabicSemicolon
+                ElseIf Buckwalter(Count) = "?" Then
+                    ArabicString += ArabicData.ArabicQuestionMark
                 Else
                     ArabicString += Buckwalter(Count)
                 End If
@@ -238,8 +242,12 @@ Public Class Arabic
             Return Sch.Vowels(Array.IndexOf(CachedData.ArabicVowels, CStr(Symbol.Symbol)))
         ElseIf Array.IndexOf(CachedData.ArabicTajweed, CStr(Symbol.Symbol)) <> -1 Then
             Return Sch.Tajweed(Array.IndexOf(CachedData.ArabicTajweed, CStr(Symbol.Symbol)))
+        ElseIf Array.IndexOf(CachedData.ArabicSilent, CStr(Symbol.Symbol)) <> -1 Then
+            Return Sch.Silent(Array.IndexOf(CachedData.ArabicSilent, CStr(Symbol.Symbol)))
         ElseIf Array.IndexOf(CachedData.ArabicPunctuation, CStr(Symbol.Symbol)) <> -1 Then
             Return Sch.Punctuation(Array.IndexOf(CachedData.ArabicPunctuation, CStr(Symbol.Symbol)))
+        ElseIf Array.IndexOf(CachedData.ArabicNums, CStr(Symbol.Symbol)) <> -1 Then
+            Return Sch.Numbers(Array.IndexOf(CachedData.ArabicNums, CStr(Symbol.Symbol)))
         ElseIf Array.IndexOf(CachedData.NonArabicLetters, CStr(Symbol.Symbol)) <> -1 Then
             Return Sch.NonArabic(Array.IndexOf(CachedData.NonArabicLetters, CStr(Symbol.Symbol)))
         End If
@@ -621,6 +629,7 @@ Public Class Arabic
         Lets.AddRange(Array.ConvertAll(CachedData.ArabicTajweed, Function(Ch As String) Ch))
         Lets.AddRange(Array.ConvertAll(CachedData.ArabicSilent, Function(Ch As String) Ch))
         Lets.AddRange(Array.ConvertAll(CachedData.ArabicPunctuation, Function(Ch As String) Ch))
+        Lets.AddRange(Array.ConvertAll(CachedData.ArabicNums, Function(Ch As String) Ch))
         Lets.AddRange(Array.ConvertAll(CachedData.NonArabicLetters, Function(Ch As String) Ch))
         Return Lets.ToArray()
     End Function
@@ -628,7 +637,7 @@ Public Class Arabic
         'Dim Letters(ArabicData.ArabicLetters.Length - 1) As IslamData.ArabicSymbol
         'ArabicData.ArabicLetters.CopyTo(Letters, 0)
         'Array.Sort(Letters, New StringLengthComparer("RomanTranslit"))
-        Return "var translitSchemes = " + Utility.MakeJSIndexedObject(Array.ConvertAll(CachedData.IslamData.TranslitSchemes, Function(TranslitScheme As IslamData.TranslitScheme) CStr(Array.IndexOf(CachedData.IslamData.TranslitSchemes, TranslitScheme) + 2)), _
+        Return "var translitSchemes = " + Utility.MakeJSIndexedObject(Array.ConvertAll(CachedData.IslamData.TranslitSchemes, Function(TranslitScheme As IslamData.TranslitScheme) CStr(Array.IndexOf(CachedData.IslamData.TranslitSchemes, TranslitScheme) + 1)), _
                                                                           New Array() {Array.ConvertAll(Of IslamData.TranslitScheme, String)(CachedData.IslamData.TranslitSchemes, Function(TranslitScheme As IslamData.TranslitScheme) Utility.MakeJSIndexedObject({"standard", "gutteral"}, New Array() {New String() {Utility.MakeJSIndexedObject(Array.ConvertAll(ArabicTranslitLetters(), Function(Str As String) System.Text.RegularExpressions.Regex.Replace(Str.Replace(CachedData.TehMarbutaStopRule, String.Empty).Replace(CachedData.TehMarbutaContinueRule, "..."), "\(?\\u([0-9a-fA-F]{4})\)?", Function(Match As System.Text.RegularExpressions.Match) ChrW(Integer.Parse(Match.Groups(1).Value, Globalization.NumberStyles.HexNumber)))), New Array() {Array.ConvertAll(Of String, String)(ArabicTranslitLetters(),
                                                                             Function(Str As String)
                                                                                 If GetSchemeSpecialFromMatch(Str, TranslitScheme.Name, False) <> -1 Then
@@ -734,12 +743,12 @@ Public Class Arabic
     End Function
     Public Shared Function GetTransliterationSchemes() As Array()
         Dim Count As Integer
-        Dim Strings(CachedData.IslamData.TranslitSchemes.Length * 2 + 2 - 1) As Array
+        Dim Strings(CachedData.IslamData.TranslitSchemes.Length * 2 + 2 - 2 - 1) As Array
         Strings(0) = New String() {Utility.LoadResourceString("IslamSource_Off"), "0"}
         Strings(1) = New String() {Utility.LoadResourceString("IslamSource_ExtendedBuckwalter"), "1"}
-        For Count = 0 To CachedData.IslamData.TranslitSchemes.Length - 1
-            Strings(Count * 2 + 2) = New String() {Utility.LoadResourceString("IslamSource_" + CachedData.IslamData.TranslitSchemes(Count).Name), CStr(Count * 2 + 2)}
-            Strings(Count * 2 + 1 + 2) = New String() {Utility.LoadResourceString("IslamSource_" + CachedData.IslamData.TranslitSchemes(Count).Name) + " Literal", CStr(Count * 2 + 1 + 2)}
+        For Count = 0 To CachedData.IslamData.TranslitSchemes.Length - 2
+            Strings(Count * 2 + 2) = New String() {Utility.LoadResourceString("IslamSource_" + CachedData.IslamData.TranslitSchemes(Count + 1).Name), CStr(Count * 2 + 2)}
+            Strings(Count * 2 + 1 + 2) = New String() {Utility.LoadResourceString("IslamSource_" + CachedData.IslamData.TranslitSchemes(Count + 1).Name) + " Literal", CStr(Count * 2 + 1 + 2)}
         Next
         Return Strings
     End Function
@@ -1473,6 +1482,19 @@ Public Class IslamData
                 End If
             End Set
         End Property
+        Public Silent() As String
+        <System.Xml.Serialization.XmlAttribute("silent")> _
+        Property SilentParse As String
+            Get
+                If Silent.Length = 0 Then Return String.Empty
+                Return String.Join("|"c, Silent)
+            End Get
+            Set(value As String)
+                If Not value Is Nothing Then
+                    Silent = value.Split("|"c)
+                End If
+            End Set
+        End Property
         Public Punctuation() As String
         <System.Xml.Serialization.XmlAttribute("punctuation")> _
         Property PunctuationParse As String
@@ -2115,6 +2137,7 @@ Public Class CachedData
     Shared _ArabicTajweed As String()
     Shared _ArabicSilent As String()
     Shared _ArabicPunctuation As String()
+    Shared _ArabicNums As String()
     Shared _NonArabicLetters As String()
     Shared _WhitespaceSymbols As String()
     Shared _PunctuationSymbols As String()
@@ -2299,6 +2322,14 @@ Public Class CachedData
                 _ArabicPunctuation = GetGroup("ArabicPunctuation")
             End If
             Return _ArabicPunctuation
+        End Get
+    End Property
+    Public Shared ReadOnly Property ArabicNums As String()
+        Get
+            If _ArabicNums Is Nothing Then
+                _ArabicNums = GetGroup("ArabicNums")
+            End If
+            Return _ArabicNums
         End Get
     End Property
     Public Shared ReadOnly Property NonArabicLetters As String()
