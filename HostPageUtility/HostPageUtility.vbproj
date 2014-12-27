@@ -44,8 +44,9 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="itextsharp">
-      <HintPath>..\packages\iTextSharp.5.5.3\lib\itextsharp.dll</HintPath>
+    <Reference Include="itextsharp, Version=5.5.4.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\iTextSharp.5.5.4\lib\itextsharp.dll</HintPath>
     </Reference>
     <Reference Include="MySql.Data">
       <HintPath>..\packages\MySql.Data.6.9.5\lib\net20\MySql.Data.dll</HintPath>

@@ -362,10 +362,6 @@
 		<arabicsymbol symbolname="yaA^&apos;N bar~iYN" uname="ArabicLetterYehBarree" symbol="06D2" shaping="FBAE,FBAF,," ipavalue="j" extendedbuckwalter="0" terminating="false" connecting="true" assimilate="true" />
 		<arabicsymbol symbolname="yaA^&apos;N bar~iYN hamozapN" uname="ArabicLetterYehBarreeWithHamzaAbove" symbol="06D3" shaping="FBB0,FBB1,," ipavalue="?" extendedbuckwalter="0" terminating="false" connecting="true" assimilate="true" />		
 		<arabicsymbol symbolname="&lt;imaAlapN" uname="Bullet" symbol="2022" shaping="" ipavalue="" extendedbuckwalter="85" terminating="false" connecting="true" assimilate="true" />
-		<!-- ARABIC VOWEL SIGN DOT LEFT not yet in Unicode - Instead of bullet can use combining symbol in wrong character range: 302E Hangul single dot tone mark
-			 ARABIC VOWEL SIGN DOT BELOW LEFT not yet in Unicode
-			 20E5 COMBINING REVERSE SOLIDUS OVERLAY could be used for Superscript Alef over Lams
-			 0335 CombiningShortStrokeOverlay -->
 
 		<arabicsymbol symbolname="tufiydu bi&gt;an~a {lowaSola &gt;awolaY maEa jawaAzK {lowaqufi" uname="ArabicSmallHighLigatureSadWithLamWithAlefMaksura" symbol="06D6" ipavalue="" extendedbuckwalter="76" terminating="false" connecting="false" assimilate="false" />
 		<arabicsymbol symbolname="tafiydu bi&gt;an~a {lowaqufa &gt;awolaY" uname="ArabicSmallHighLigatureQafWithLamWithAlefMaksura" symbol="06D7" ipavalue="" extendedbuckwalter="81" terminating="false" connecting="false" assimilate="false" />

@@ -1264,73 +1264,125 @@ Public Class ArabicData
         <System.Xml.Serialization.XmlArray("arabictransforms")> _
         <System.Xml.Serialization.XmlArrayItem("transform")> _
         Public ArabicTransforms() As Transform
-
-        Public Structure ArabicCombo
-            <System.Xml.Serialization.XmlAttribute("symbolname")> _
-            Public SymbolName As String
-            <System.Xml.Serialization.XmlAttribute("uname")> _
-            Public UnicodeName As String
-            Public Shaping() As Char
-            <System.Xml.Serialization.XmlAttribute("shaping")> _
-            Property ShapingParse As String
-                Get
-                    If Shaping.Length = 0 Then Return String.Empty
-                    Return String.Join(","c, Array.ConvertAll(Shaping, Function(Ch As Char) AscW(Ch).ToString("X4")))
-                End Get
-                Set(value As String)
-                    If Not value Is Nothing Then
-                        Shaping = Array.ConvertAll(value.Split(","c), Function(Str As String) If(Str = String.Empty, ChrW(0), ChrW(Integer.Parse(Str, System.Globalization.NumberStyles.HexNumber))))
-                    End If
-                End Set
-            End Property
-        End Structure
-        <System.Xml.Serialization.XmlArray("arabiccombos")> _
-        <System.Xml.Serialization.XmlArrayItem("combo")> _
-        Public ArabicCombos() As ArabicCombo
-
-        Public Structure ArabicSymbol
-            <System.Xml.Serialization.XmlAttribute("symbolname")> _
-            Public SymbolName As String
-            <System.Xml.Serialization.XmlAttribute("uname")> _
-            Public UnicodeName As String
-            Public Symbol As Char
-            <System.Xml.Serialization.XmlAttribute("symbol")> _
-            Property SymbolParse As String
-                Get
-                    Return Asc(Symbol).ToString("X2")
-                End Get
-                Set(value As String)
-                    Symbol = ChrW(Integer.Parse(value, System.Globalization.NumberStyles.HexNumber))
-                End Set
-            End Property
-            Public Shaping() As Char
-            <System.Xml.Serialization.XmlAttribute("shaping")> _
-            Property ShapingParse As String
-                Get
-                    If Shaping.Length = 0 Then Return String.Empty
-                    Return String.Join(","c, Array.ConvertAll(Shaping, Function(Ch As Char) AscW(Ch).ToString("X4")))
-                End Get
-                Set(value As String)
-                    If Not value Is Nothing Then
-                        Shaping = Array.ConvertAll(value.Split(","c), Function(Str As String) If(Str = String.Empty, ChrW(0), ChrW(Integer.Parse(Str, System.Globalization.NumberStyles.HexNumber))))
-                    End If
-                End Set
-            End Property
-            <System.Xml.Serialization.XmlAttribute("ipavalue")> _
-            Public IPAValue As String
-            <System.Xml.Serialization.XmlAttribute("extendedbuckwalter")> _
-            Public ExtendedBuckwalterLetter As Char
-            <System.Xml.Serialization.XmlAttribute("terminating")> _
-            Public Terminating As Boolean
-            <System.Xml.Serialization.XmlAttribute("connecting")> _
-            Public Connecting As Boolean
-            <System.Xml.Serialization.XmlAttribute("assimilate")> _
-            Public Assimilate As Boolean
-        End Structure
-        <System.Xml.Serialization.XmlArray("arabicletters")> _
-        <System.Xml.Serialization.XmlArrayItem("arabicsymbol")> _
-        Public ArabicLetters() As ArabicSymbol
     End Class
+    Public Structure ArabicCombo
+        Public UnicodeName As String
+        Public Symbol As Char()
+        Public Shaping() As Char
+    End Structure
+    Public Shared _ArabicCombos() As ArabicCombo
+    Public Structure ArabicSymbol
+        Public UnicodeName As String
+        Public Symbol As Char
+        Public Shaping() As Char
+        Public JoiningStyle As String
+        Public CombiningClass As Integer
+    End Structure
+    Public Shared _ArabicLetters() As ArabicSymbol
+    Public Shared Sub LoadArabic()
+        Dim CharArr As New ArrayList
+        Dim Letters As New ArrayList
+        Dim Combos As New ArrayList
+        Dim Ranges As ArrayList = MakeUniCategory(CombineCategories)
+        For Count = 0 To Ranges.Count - 1
+            Dim Range As ArrayList = CType(Ranges(Count), ArrayList)
+            If Range.Count = 1 Then
+                CharArr.Add(Range(0))
+            Else
+                For SubCount = Range(0) To Range(1)
+                    CharArr.Add(SubCount)
+                Next
+            End If
+        Next
+        For Count = 0 To CharArr.Count - 1
+            Dim ArabicLet As New ArabicSymbol
+            ArabicLet.Symbol = ChrW(CInt(CharArr(Count)))
+            ArabicLet.CombiningClass = _CombPos(ArabicLet.Symbol)
+            ArabicLet.JoiningStyle = "T"
+            ArabicLet.UnicodeName = _Names.Item(ChrW(CInt(CharArr(Count))))(0)
+            Letters.Add(ArabicLet)
+        Next
+        CharArr = New ArrayList
+        Ranges = MakeUniCategory(ALCategories)
+        For Count = 0 To Ranges.Count - 1
+            Dim Range As ArrayList = CType(Ranges(Count), ArrayList)
+            If Range.Count = 1 Then
+                CharArr.Add(Range(0))
+            Else
+                For SubCount = Range(0) To Range(1)
+                    CharArr.Add(SubCount)
+                Next
+            End If
+        Next
+        For Count = 0 To CharArr.Count - 1
+            If _DecData.Item(ChrW(CInt(CharArr(Count)))).Chars.Length <> 0 Then
+                Combos.Add(New ArabicCombo With {.Shaping = _DecData.Item(ChrW(CInt(CharArr(Count)))).Shapes, .Symbol = _DecData.Item(ChrW(CInt(CharArr(Count)))).Chars, .UnicodeName = _Names.Item(ChrW(CInt(CharArr(Count))))(0)})
+            Else
+                Dim ArabicLet As New ArabicSymbol
+                ArabicLet.Symbol = ChrW(CInt(CharArr(Count)))
+                ArabicLet.JoiningStyle = _DecData.Item(ArabicLet.Symbol).JoiningStyle
+                ArabicLet.Shaping = _DecData.Item(ArabicLet.Symbol).Shapes
+                ArabicLet.UnicodeName = _Names.Item(ArabicLet.Symbol)(0)
+                Letters.Add(ArabicLet)
+            End If
+        Next
+        CharArr = New ArrayList
+        Ranges = MakeUniCategory(WeakCategories)
+        For Count = 0 To Ranges.Count - 1
+            Dim Range As ArrayList = CType(Ranges(Count), ArrayList)
+            If Range.Count = 1 Then
+                CharArr.Add(Range(0))
+            Else
+                For SubCount = Range(0) To Range(1)
+                    CharArr.Add(SubCount)
+                Next
+            End If
+        Next
+        For Count = 0 To Ranges.Count - 1
+            Dim ArabicLet As New ArabicSymbol
+            ArabicLet.Symbol = ChrW(CInt(CharArr(Count)))
+            ArabicLet.JoiningStyle = If(Array.IndexOf(CausesJoining, ArabicLet.Symbol) <> -1, "C", "U")
+            ArabicLet.UnicodeName = _Names.Item(ArabicLet.Symbol)(0)
+            Letters.Add(ArabicLet)
+        Next
+        CharArr = New ArrayList
+        Ranges = MakeUniCategory(NeutralCategories)
+        For Count = 0 To Ranges.Count - 1
+            Dim Range As ArrayList = CType(Ranges(Count), ArrayList)
+            If Range.Count = 1 Then
+                CharArr.Add(Range(0))
+            Else
+                For SubCount = Range(0) To Range(1)
+                    CharArr.Add(SubCount)
+                Next
+            End If
+        Next
+        For Count = 0 To Ranges.Count - 1
+            Dim ArabicLet As New ArabicSymbol
+            ArabicLet.Symbol = ChrW(CInt(CharArr(Count)))
+            ArabicLet.JoiningStyle = If(Array.IndexOf(CausesJoining, ArabicLet.Symbol) <> -1, "C", "U")
+            ArabicLet.UnicodeName = _Names.Item(ArabicLet.Symbol)(0)
+            Letters.Add(ArabicLet)
+        Next
+        _ArabicLetters = CType(Letters.ToArray(GetType(ArabicSymbol)), ArabicSymbol())
+        _ArabicCombos = CType(Combos.ToArray(GetType(ArabicCombo)), ArabicCombo())
+    End Sub
+    Public Shared ReadOnly Property ArabicCombos As ArabicCombo()
+        Get
+            If _ArabicCombos Is Nothing Then
+                LoadArabic()
+            End If
+            Return _ArabicCombos
+        End Get
+    End Property
+    Public Shared ReadOnly Property ArabicLetters As ArabicSymbol()
+        Get
+            If _ArabicLetters Is Nothing Then
+                LoadArabic()
+            End If
+            Return _ArabicLetters
+        End Get
+    End Property
     Shared _ArabicXMLData As ArabicXMLData
     Public Shared ReadOnly Property Data As ArabicXMLData
         Get
@@ -1409,7 +1461,7 @@ Public Class ArabicData
             GetUName(CUShort(AscW(Character)), Str)
         Catch e As System.DllNotFoundException
             If FindLetterBySymbol(Character) = -1 Then Return String.Empty
-            Return Utility.LoadResourceString("unicode_" + Data.ArabicLetters(FindLetterBySymbol(Character)).UnicodeName)
+            Return Utility.LoadResourceString("unicode_" + ArabicLetters(FindLetterBySymbol(Character)).UnicodeName)
         End Try
         Return Str.ToString()
     End Function
@@ -1419,7 +1471,7 @@ Public Class ArabicData
         For CharCount As Integer = Index + 1 To Str.Length - 1
             If Array.IndexOf(RecitationCombiningSymbols, Str(CharCount)) = -1 Then
                 Dim Idx As Integer = FindLetterBySymbol(Str(CharCount))
-                bIsEnd = Idx = -1 OrElse Not Data.ArabicLetters(Idx).Connecting
+                bIsEnd = Idx = -1 OrElse Not ArabicLetters(Idx).Connecting
                 Exit For
             End If
         Next
@@ -1430,7 +1482,7 @@ Public Class ArabicData
         For CharCount As Integer = Index - 1 To 0 Step -1
             If Array.IndexOf(RecitationCombiningSymbols, Str(CharCount)) = -1 Then
                 Dim Idx As Integer = FindLetterBySymbol(Str(CharCount))
-                bLastConnects = Idx <> -1 AndAlso Not Data.ArabicLetters(Idx).Terminating
+                bLastConnects = Idx <> -1 AndAlso Not ArabicLetters(Idx).Terminating
                 Exit For
             End If
         Next
@@ -1455,8 +1507,8 @@ Public Class ArabicData
         'initial - non-connecting + connecting letter + not end
         'medial - connecting + connecting letter + not end
         Dim bIsEnd = IsTerminating(Str, Index + Length - 1)
-        Dim bConnects As Boolean = Not Data.ArabicLetters(FindLetterBySymbol(Str.Chars(Index + Length - 1))).Terminating
-        Dim bLastConnects As Boolean = Data.ArabicLetters(FindLetterBySymbol(Str.Chars(Index + Length - 1))).Connecting And IsLastConnecting(Str, Index)
+        Dim bConnects As Boolean = Not ArabicLetters(FindLetterBySymbol(Str.Chars(Index + Length - 1))).Terminating
+        Dim bLastConnects As Boolean = ArabicLetters(FindLetterBySymbol(Str.Chars(Index + Length - 1))).Connecting And IsLastConnecting(Str, Index)
         Return GetShapeIndex(bConnects, bLastConnects, bIsEnd)
     End Function
     Public Shared Function TransformChars(Str As String) As String
@@ -1471,14 +1523,14 @@ Public Class ArabicData
     End Structure
     Public Shared Function GetFormsRange(BeginIndex As Char, EndIndex As Char) As Char()
         Dim Forms As New List(Of Char)
-        For Count As Integer = 0 To Data.ArabicCombos.Length - 1
-            If Not Data.ArabicCombos(Count).Shaping Is Nothing Then
-                Array.ForEach(Data.ArabicCombos(Count).Shaping, Sub(Shape As Char) If Shape >= BeginIndex AndAlso Shape <= EndIndex Then Forms.Add(Shape))
+        For Count As Integer = 0 To ArabicCombos.Length - 1
+            If Not ArabicCombos(Count).Shaping Is Nothing Then
+                Array.ForEach(ArabicCombos(Count).Shaping, Sub(Shape As Char) If Shape >= BeginIndex AndAlso Shape <= EndIndex Then Forms.Add(Shape))
             End If
         Next
-        For Count As Integer = 0 To Data.ArabicLetters.Length - 1
-            If Not Data.ArabicLetters(Count).Shaping Is Nothing Then
-                Array.ForEach(Data.ArabicLetters(Count).Shaping, Sub(Shape As Char) If Shape >= BeginIndex AndAlso Shape <= EndIndex Then Forms.Add(Shape))
+        For Count As Integer = 0 To ArabicLetters.Length - 1
+            If Not ArabicLetters(Count).Shaping Is Nothing Then
+                Array.ForEach(ArabicLetters(Count).Shaping, Sub(Shape As Char) If Shape >= BeginIndex AndAlso Shape <= EndIndex Then Forms.Add(Shape))
             End If
         Next
         Return Forms.ToArray()
@@ -1547,18 +1599,18 @@ Public Class ArabicData
         End If
         Return -1
     End Function
-    Public Shared _LigatureCombos() As ArabicXMLData.ArabicCombo
-    Public Shared ReadOnly Property LigatureCombos As ArabicXMLData.ArabicCombo()
+    Public Shared _LigatureCombos() As ArabicCombo
+    Public Shared ReadOnly Property LigatureCombos As ArabicCombo()
         Get
             If _LigatureCombos Is Nothing Then
-                ReDim _LigatureCombos(Data.ArabicLetters.Length + Data.ArabicCombos.Length - 1)
-                Array.ConvertAll(Data.ArabicCombos, Function(Combo As ArabicXMLData.ArabicCombo) New ArabicXMLData.ArabicCombo With {.Shaping = Combo.Shaping, .SymbolName = TransliterateFromBuckwalter(Combo.SymbolName)}).CopyTo(_LigatureCombos, 0)
-                For Count = 0 To Data.ArabicLetters.Length - 1
+                ReDim _LigatureCombos(ArabicLetters.Length + ArabicCombos.Length - 1)
+                Array.ConvertAll(ArabicCombos, Function(Combo As ArabicCombo) New ArabicCombo With {.Shaping = Combo.Shaping, .SymbolName = TransliterateFromBuckwalter(Combo.SymbolName)}).CopyTo(_LigatureCombos, 0)
+                For Count = 0 To ArabicLetters.Length - 1
                     'do not need to transfer UnicodeName as it is not used here
-                    _LigatureCombos(Data.ArabicCombos.Length + Count).SymbolName = Data.ArabicLetters(Count).Symbol
-                    _LigatureCombos(Data.ArabicCombos.Length + Count).Shaping = Data.ArabicLetters(Count).Shaping
+                    _LigatureCombos(ArabicCombos.Length + Count).SymbolName = ArabicLetters(Count).Symbol
+                    _LigatureCombos(ArabicCombos.Length + Count).Shaping = ArabicLetters(Count).Shaping
                 Next
-                Array.Sort(_LigatureCombos, Function(Com1 As ArabicXMLData.ArabicCombo, Com2 As ArabicXMLData.ArabicCombo) If(Com1.SymbolName.Length = Com2.SymbolName.Length, Com1.SymbolName.CompareTo(Com2.SymbolName), If(Com1.SymbolName.Length > Com2.SymbolName.Length, -1, 1)))
+                Array.Sort(_LigatureCombos, Function(Com1 As ArabicCombo, Com2 As ArabicCombo) If(Com1.SymbolName.Length = Com2.SymbolName.Length, Com1.SymbolName.CompareTo(Com2.SymbolName), If(Com1.SymbolName.Length > Com2.SymbolName.Length, -1, 1)))
             End If
             Return _LigatureCombos
         End Get
@@ -1567,7 +1619,7 @@ Public Class ArabicData
     Public Shared ReadOnly Property LigatureShapes As Dictionary(Of Char, Integer)
         Get
             If _LigatureShapes Is Nothing Then
-                Dim Combos As ArabicXMLData.ArabicCombo() = LigatureCombos
+                Dim Combos As ArabicCombo() = LigatureCombos
                 _LigatureShapes = New Dictionary(Of Char, Integer)
                 For Count As Integer = 0 To Combos.Length - 1
                     If Not Combos(Count).Shaping Is Nothing Then
@@ -1585,7 +1637,7 @@ Public Class ArabicData
         Get
             If _LigatureLookups Is Nothing Then
                 _LigatureLookups = New Dictionary(Of String, Integer)
-                Dim Combos As ArabicXMLData.ArabicCombo() = LigatureCombos
+                Dim Combos As ArabicCombo() = LigatureCombos
                 For Count = 0 To Combos.Length - 1
                     If Not Combos(Count).Shaping Is Nothing Then
                         _LigatureLookups.Add(Combos(Count).SymbolName, Count)
@@ -1599,7 +1651,7 @@ Public Class ArabicData
         Dim Count As Integer
         Dim SubCount As Integer
         Dim Ligatures As New List(Of LigatureInfo)
-        Dim Combos As ArabicXMLData.ArabicCombo() = LigatureCombos
+        Dim Combos As ArabicCombo() = LigatureCombos
         'Division seleciton between Presentation A and B forms can be done here though wasl and gunnah need consideration
         Count = 0
         While Count <> Str.Length
@@ -1639,9 +1691,9 @@ Public Class ArabicData
         Get
             If _BuckwalterMap Is Nothing Then
                 _BuckwalterMap = New Dictionary(Of Char, Integer)
-                For Index = 0 To Data.ArabicLetters.Length - 1
-                    If Data.ArabicLetters(Index).ExtendedBuckwalterLetter <> ChrW(0) Then
-                        _BuckwalterMap.Add(Data.ArabicLetters(Index).ExtendedBuckwalterLetter, Index)
+                For Index = 0 To ArabicLetters.Length - 1
+                    If ArabicLetters(Index).ExtendedBuckwalterLetter <> ChrW(0) Then
+                        _BuckwalterMap.Add(ArabicLetters(Index).ExtendedBuckwalterLetter, Index)
                     End If
                 Next
             End If
@@ -1661,7 +1713,7 @@ Public Class ArabicData
                 End If
             Else
                 If BuckwalterMap.ContainsKey(Buckwalter(Count)) Then
-                    ArabicString += Data.ArabicLetters(BuckwalterMap.Item(Buckwalter(Count))).Symbol
+                    ArabicString += ArabicLetters(BuckwalterMap.Item(Buckwalter(Count))).Symbol
                 Else
                     ArabicString += Buckwalter(Count)
                 End If
@@ -1674,9 +1726,9 @@ Public Class ArabicData
         Get
             If _ArabicLetterMap Is Nothing Then
                 _ArabicLetterMap = New Dictionary(Of Char, Integer)
-                For Index = 0 To Data.ArabicLetters.Length - 1
-                    If Data.ArabicLetters(Index).Symbol <> ChrW(0) Then
-                        _ArabicLetterMap.Add(Data.ArabicLetters(Index).Symbol, Index)
+                For Index = 0 To ArabicLetters.Length - 1
+                    If ArabicLetters(Index).Symbol <> ChrW(0) Then
+                        _ArabicLetterMap.Add(ArabicLetters(Index).Symbol, Index)
                     End If
                 Next
             End If
@@ -1801,9 +1853,11 @@ Public Class ArabicData
     Public Shared LTRCategories As String() = New String() {"L"}
     Public Shared RTLCategories As String() = New String() {"R", "AL"}
     Public Shared ALCategories As String() = New String() {"AL"}
+    Public Shared CombineCategories As String() = New String() {"Mn", "Me", "Cf"}
     Public Shared NeutralCategories As String() = New String() {"B", "S", "WS", "ON"}
     Public Shared WeakCategories As String() = New String() {"EN", "ES", "ET", "AN", "CS", "NSM", "BN"}
     Public Shared ExplicitCategories As String() = New String() {"LRE", "LRO", "RLE", "RLO", "PDF", "LRI", "RLI", "FSI", "PDI"}
+    Public Shared CausesJoining As Char() = New Char() {ChrW(&H640), ChrW(&H200D)}
     Public Shared Function GetUniCats() As String()
         Return {"function IsLTR(c) { " + MakeUniCategoryJS(LTRCategories) + " }", _
         "function IsRTL(c) { " + MakeUniCategoryJS(RTLCategories) + " }", _
@@ -1825,27 +1879,28 @@ Public Class ArabicData
         Next
         Return Joiners
     End Function
-    Structure DecCombData
+    Structure DecData
         Public JoiningStyle As String
         Public Chars As Char()
         Public Shapes As Char()
     End Structure
     Public Shared ShapePositions As String() = {"isolated", "final", "initial", "medial"}
     Public Shared _CombPos As Dictionary(Of Char, Integer)
-    Public Shared _DecData As Dictionary(Of Char, DecCombData)
+    Public Shared _DecData As Dictionary(Of Char, DecData)
     Public Shared _Ranges As Dictionary(Of String, ArrayList)
+    Public Shared _Names As Dictionary(Of Char, String())
     Public Shared Sub GetDecompositionCombiningCatData()
         Dim Strs As String() = IO.File.ReadAllLines("..\..\..\IslamMetadata\UnicodeData.txt")
         _CombPos = New Dictionary(Of Char, Integer)
         _Ranges = New Dictionary(Of String, ArrayList)
-        _DecData = New Dictionary(Of Char, DecCombData)
+        _DecData = New Dictionary(Of Char, DecData)
         For Count = 0 To Strs.Length - 1
             Dim Vals As String() = Strs(Count).Split(";"c)
+            Dim Ch As Char = ChrW(Integer.Parse(Vals(0), Globalization.NumberStyles.AllowHexSpecifier))
             If Vals(5) <> "" Then
-                Dim Ch As Char = ChrW(Integer.Parse(Vals(0), Globalization.NumberStyles.AllowHexSpecifier))
                 Dim CombData As String() = Vals(5).Split(" "c)
-                If Not _DecData.ContainsKey(Ch) Then _DecData.Add(Ch, New DecCombData With {.Shapes = New Char() {Nothing, Nothing, Nothing, Nothing}})
-                Dim Data As DecCombData = _DecData(Ch)
+                If Not _DecData.ContainsKey(Ch) Then _DecData.Add(Ch, New DecData With {.Shapes = New Char() {Nothing, Nothing, Nothing, Nothing}})
+                Dim Data As DecData = _DecData(Ch)
                 Data.JoiningStyle = CombData(0).Trim("<"c, ">"c)
                 ReDim Data.Chars(CombData.Length - 2)
                 For SubCount = 0 To CombData.Length - 2
@@ -1853,14 +1908,18 @@ Public Class ArabicData
                 Next
                 _DecData(Ch) = Data
                 If CombData.Length = 2 Then
-                    If Not _DecData.ContainsKey(Data.Chars(0)) Then _DecData.Add(Data.Chars(0), New DecCombData With {.Shapes = New Char() {Nothing, Nothing, Nothing, Nothing}})
-                    Dim ShapeData As DecCombData = _DecData(Data.Chars(0))
+                    If Not _DecData.ContainsKey(Data.Chars(0)) Then _DecData.Add(Data.Chars(0), New DecData With {.Shapes = New Char() {Nothing, Nothing, Nothing, Nothing}})
+                    Dim ShapeData As DecData = _DecData(Data.Chars(0))
                     ShapeData.Shapes(Array.IndexOf(ShapePositions, Data.JoiningStyle)) = Ch
                 End If
             End If
-            If (Vals(3)) <> "" Then
-                Dim Ch As Char = ChrW(Integer.Parse(Vals(0), Globalization.NumberStyles.AllowHexSpecifier))
+            If Vals(3) <> "" Then
                 _CombPos.Add(Ch, Integer.Parse(Vals(3), Globalization.NumberStyles.Integer))
+            End If
+            If Vals(10) <> "" Then
+                _Names.Add(Ch, {Vals(1), Vals(10)})
+            Else
+                _Names.Add(Ch, {Vals(1)})
             End If
             Dim NewRangeMatch As Integer = Integer.Parse(Vals(0), Globalization.NumberStyles.AllowHexSpecifier)
             If Not _Ranges.ContainsKey(Vals(4)) Then _Ranges.Add(Vals(4), New ArrayList)
@@ -1885,44 +1944,9 @@ Public Class ArabicData
         Dim Ranges As ArrayList = MakeUniCategory(Cats)
         Return "return " + String.Join("||", Array.ConvertAll(Of ArrayList, String)(CType(Ranges.ToArray(GetType(ArrayList)), ArrayList()), Function(Arr As ArrayList) If(Arr.Count = 1, "c===0x" + Hex(Arr(0)), "(c>=0x" + Hex(Arr(0)) + "&&c<=0x" + Hex(Arr(Arr.Count - 1)) + ")"))) + ";"
     End Function
-
-    Public Shared RecitationSymbols() As Char = {Space, _
-        ArabicLetterHamza, ArabicLetterAlefWithHamzaAbove, ArabicLetterWawWithHamzaAbove, _
-        ArabicLetterAlefWithHamzaBelow, ArabicLetterYehWithHamzaAbove, _
-        ArabicLetterAlef, ArabicLetterBeh, ArabicLetterTehMarbuta, ArabicLetterTeh, _
-        ArabicLetterTheh, ArabicLetterJeem, ArabicLetterHah, ArabicLetterKhah, ArabicLetterDal,
-        ArabicLetterThal, ArabicLetterReh, ArabicLetterZain, ArabicLetterSeen, ArabicLetterSheen, _
-        ArabicLetterSad, ArabicLetterDad, ArabicLetterTah, ArabicLetterZah, ArabicLetterAin, _
-        ArabicLetterGhain, ArabicTatweel, ArabicLetterFeh, ArabicLetterQaf, ArabicLetterKaf, _
-        ArabicLetterLam, ArabicLetterMeem, ArabicLetterNoon, ArabicLetterHeh, ArabicLetterWaw, _
-        ArabicLetterAlefMaksura, ArabicLetterYeh, ArabicFathatan, ArabicDammatan, ArabicKasratan, _
-        ArabicFatha, ArabicDamma, ArabicKasra, ArabicShadda, ArabicSukun, ArabicMaddahAbove, _
-        ArabicHamzaAbove, ArabicLetterSuperscriptAlef, ArabicLetterAlefWasla, _
-        ArabicSmallHighLigatureSadWithLamWithAlefMaksura, _
-        ArabicSmallHighLigatureQafWithLamWithAlefMaksura, ArabicSmallHighMeemInitialForm, _
-        ArabicSmallHighLamAlef, ArabicSmallHighJeem, ArabicSmallHighThreeDots, _
-        ArabicSmallHighSeen, ArabicStartOfRubElHizb, ArabicSmallHighRoundedZero, _
-        ArabicSmallHighUprightRectangularZero, ArabicSmallHighMeemIsolatedForm, _
-        ArabicSmallLowSeen, ArabicSmallWaw, ArabicSmallYeh, ArabicSmallHighNoon, _
-        ArabicPlaceOfSajdah, ArabicEmptyCentreLowStop, ArabicEmptyCentreHighStop, _
-        ArabicRoundedHighStopWithFilledCentre, ArabicSmallLowMeem}
-    Public Shared Function GetRecitationSymbols() As Array()
-        Return Array.ConvertAll(RecitationSymbols, Function(Ch As Char) New Object() {Data.ArabicLetters(FindLetterBySymbol(Ch)).UnicodeName + " (" + FixStartingCombiningSymbol(Ch) + LeftToRightOverride + ")" + PopDirectionalFormatting, FindLetterBySymbol(Ch)})
-    End Function
     Public Shared Function FixStartingCombiningSymbol(Str As String) As String
         Return If(Array.IndexOf(RecitationCombiningSymbols, Str.Chars(0)) <> -1 Or Str.Length = 1, LeftToRightOverride + Str + PopDirectionalFormatting, Str)
     End Function
-    Public Shared RecitationCombiningSymbols As Char() = {ChrW(&H610), ChrW(&H611), ChrW(&H612), ChrW(&H613), ArabicFathatan, ArabicDammatan, ArabicKasratan, _
-        ArabicFatha, ArabicDamma, ArabicKasra, ArabicShadda, ArabicSukun, ArabicMaddahAbove, _
-        ArabicHamzaAbove, ArabicLetterSuperscriptAlef, _
-        ArabicSmallHighLigatureSadWithLamWithAlefMaksura, _
-        ArabicSmallHighLigatureQafWithLamWithAlefMaksura, ArabicSmallHighMeemInitialForm, _
-        ArabicSmallHighLamAlef, ArabicSmallHighJeem, ArabicSmallHighThreeDots, _
-        ArabicSmallHighSeen, ArabicSmallHighRoundedZero, _
-        ArabicSmallHighUprightRectangularZero, ArabicSmallHighMeemIsolatedForm, _
-        ArabicSmallLowSeen, ArabicSmallHighNoon, ArabicEmptyCentreLowStop, ArabicEmptyCentreHighStop, _
-        ArabicRoundedHighStopWithFilledCentre, ArabicSmallLowMeem}
-    Public Shared ArabicNumbers As String() = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"}
     Public Shared Function MakeUniRegEx(Input As String) As String
         Return String.Join(String.Empty, Array.ConvertAll(Of Char, String)(Input.ToCharArray(), Function(Ch As Char) "\u" + AscW(Ch).ToString("X4")))
     End Function
