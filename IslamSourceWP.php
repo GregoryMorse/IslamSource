@@ -55,49 +55,240 @@ abstract class TranslitScheme
     const RuleBased = 2;
 };
 
+class ArabicCombo
+{
+    public $UnicodeName;
+    public $Symbol;
+    public $Shaping;
+};
+class ArabicSymbol
+{
+    public $UnicodeName;
+    public $Symbol;
+    public $Shaping;
+    public $JoiningStyle;
+    public $CombiningClass;
+    public function Connecting()
+    {
+        return $this->JoiningStyle == "initial" || $this->JoiningStyle == "medial" || $this->JoiningStyle == "C";
+    }
+    public function Terminating()
+    {
+        return $this->JoiningStyle == "isolated" || $this->JoiningStyle == "final" || $this->JoiningStyle = "U";
+	}
+};
+class DecData
+{
+    public $JoiningStyle;
+    public $Chars;
+    public $Shapes;
+};
 class ArabicData
 {
-    static $_ArabicXMLData = null;
-    public static function Data()
+	public static $ALCategories = ["AL"];
+    public static $CombineCategories = ["Mn", "Me", "Cf"];
+    public static $NeutralCategories = ["B", "S", "WS", "ON"];
+    public static $WeakCategories = ["EN", "ES", "ET", "AN", "CS", "NSM", "BN"];
+    public static $CausesJoining;
+    public static $_ArabicCombos = null;
+    public static $_ArabicLetters = null;
+    public function LoadArabic()
     {
-        if (ArabicData::$_ArabicXMLData == null) {
-            ArabicData::$_ArabicXMLData = simplexml_load_file(dirname(__FILE__) . "/HostPage/metadata/ArabicData.xml");
-        }
-        return ArabicData::$_ArabicXMLData;
-    }
-	public static $_BuckwalterMap = null;
-    public static function BuckwalterMap()
-	{
-        if (ArabicData::$_BuckwalterMap == null) {
-            ArabicData::$_BuckwalterMap = array();
-            for ($index = 0; $index < count(ArabicData::Data()->arabicletters->children()); $index++) {
-                if ((string)ArabicData::Data()->arabicletters->children()[$index]->attributes()["extendedbuckwalter"] != "") {
-                    ArabicData::$_BuckwalterMap[mb_convert_encoding('&#' . ArabicData::Data()->arabicletters->children()[$index]->attributes()["extendedbuckwalter"] . ';', 'UTF-8', 'HTML-ENTITIES')] = $index;
-                }
-            }
-        }
-        return ArabicData::$_BuckwalterMap;
-    }
-    public static function TransliterateFromBuckwalter($buckwalter)
-    {
-    	$arabicString = "";
-        for ($count = 0; $count < strlen($buckwalter); $count++) {
-            if ($buckwalter[$count] == "\\" && $count != strlen($buckwalter) - 1) {
-                $count += 1;
-                if ($buckwalter[$count] == ",") {
-                    $arabicString .= ArabicData::$ArabicComma;
-                } else {
-                    $arabicString .= $buckwalter[$count];
-                }
+        $CharArr = array();
+        $Letters = array();
+        $Combos = array();
+        $Ranges = ArabicData::MakeUniCategory(ArabicData::$CombineCategories);
+        for ($count = 0; $count < count($Ranges); $count++) {
+            $Range = $Ranges[$count];
+            if (count($Range) == 1) {
+                array_push($CharArr, $Range[0]);
             } else {
-                if (array_key_exists($buckwalter[$count], ArabicData::BuckwalterMap())) {
-                    $arabicString .= mb_convert_encoding('&#x' . ArabicData::Data()->arabicletters->children()[ArabicData::BuckwalterMap()[$buckwalter[$count]]]->attributes()["symbol"] . ';', 'UTF-8', 'HTML-ENTITIES');
-                } else {
-                    $arabicString .= $buckwalter[$count];
+            	for ($subcount = 0; $subcount < count($Range); $subcount++) {
+                    array_push($CharArr, $Range[$subcount]);
                 }
             }
         }
-        return $arabicString;
+        for ($count = 0; $count < count($CharArr); $count++) {
+            $ArabicLet = new ArabicSymbol;
+            $ArabicLet->Symbol = mb_convert_encoding('&#' . $CharArr[$count] . ';', 'UTF-8', 'HTML-ENTITIES');
+            $ArabicLet->CombiningClass = ArabicData::$_CombPos[$ArabicLet->Symbol];
+            $ArabicLet->JoiningStyle = "T";
+            $ArabicLet->UnicodeName = ArabicData::$_Names[$ArabicLet->Symbol][0];
+            array_push($Letters, $ArabicLet);
+        }
+        $CharArr = array();
+        $Ranges = ArabicData::MakeUniCategory(ArabicData::$ALCategories);
+        for ($count = 0; $count < count($Ranges); $count++) {
+            $Range = $Ranges[$count];
+            if (count($Range) == 1) {
+                array_push($CharArr, $Range[0]);
+            } else {
+            	for ($subcount = 0; $subcount < count($Range); $subcount++) {
+                    array_push($CharArr, $Range[$subcount]);
+                }
+            }
+        }
+        for ($count = 0; $count < count($CharArr); $count++) {
+            if (array_key_exists(mb_convert_encoding('&#' . $CharArr[$count] . ';', 'UTF-8', 'HTML-ENTITIES'), ArabicData::$_DecData) && ArabicData::$_DecData[ChrW(CInt(CharArr(Count)))]->Chars != null && ArabicData::$_DecData[ChrW(CInt(CharArr(Count)))]->Chars.Length != 0) {
+                $comcount = 0;
+                for (; $comcount < count($Combos); $comcount++) {
+                    if ($Combos[$comcount]->Symbol == ArabicData::$_DecData[mb_convert_encoding('&#' . $CharArr[$count] . ';', 'UTF-8', 'HTML-ENTITIES')]->Chars) { break; }
+                }
+                $ArComb = null;
+                if ($comcount == count($Combos)) {
+                    $ArComb = new ArabicCombo;
+                    $ArComb->Shaping = [null, null, null, null];
+                    $ArComb->UnicodeName = [null, null, null, null];
+                    $ArComb->Symbol = ArabicData::$_DecData[mb_convert_encoding('&#' . $CharArr[$count] . ';', 'UTF-8', 'HTML-ENTITIES')]->Chars;
+                } else {
+                    $ArComb = $Combos[$comcount];
+                }
+                $Idx = array_search(ArabicData::$_DecData[mb_convert_encoding('&#' . $CharArr[$count] . ';', 'UTF-8', 'HTML-ENTITIES')]->JoiningStyle, $ShapePositions);
+                if ($Idx === false) {
+                    $ArComb->UnicodeName = [ArabicData::$_Names[mb_convert_encoding('&#' . $CharArr[$count] . ';', 'UTF-8', 'HTML-ENTITIES')][0]];
+                    $ArComb->Shaping = [mb_convert_encoding('&#' . $CharArr[$count] . ';', 'UTF-8', 'HTML-ENTITIES')];
+                    $ArabicLet = new ArabicSymbol;
+                    $ArabicLet->Symbol = mb_convert_encoding('&#' . $CharArr[$count] . ';', 'UTF-8', 'HTML-ENTITIES');
+                    $ArabicLet->UnicodeName = ArabicData::$_Names[$ArabicLet->Symbol][0];
+                    $ArabicLet->JoiningStyle = ArabicData::$_DecData[$ArabicLet->Symbol]->JoiningStyle;
+                    $ArabicLet->Shaping = ArabicData::$_DecData[$ArabicLet->Symbol]->Shapes;
+                    array_push($Letters, $ArabicLet);
+                } else {
+                    $ArComb->UnicodeName[$Idx] = ArabicData::$_Names[mb_convert_encoding('&#' . $CharArr[$count] . ';', 'UTF-8', 'HTML-ENTITIES')][0];
+                    $ArComb->Shaping[$Idx] = mb_convert_encoding('&#' . $CharArr[$count] . ';', 'UTF-8', 'HTML-ENTITIES');
+                }
+                array_push($Combos, $ArComb);
+            } else {
+                $ArabicLet = new ArabicSymbol;
+                $ArabicLet->Symbol = mb_convert_encoding('&#' . $CharArr[$count] . ';', 'UTF-8', 'HTML-ENTITIES');
+                if (array_key_exists(mb_convert_encoding('&#' . $CharArr[$count] . ';', 'UTF-8', 'HTML-ENTITIES'), ArabicData::$_DecData)) {
+                    $ArabicLet->JoiningStyle = ArabicData::$_DecData[$ArabicLet->Symbol]->JoiningStyle;
+                    $ArabicLet->Shaping = ArabicData::$_DecData[ArabicLet.Symbol]->Shapes;
+                }
+                $ArabicLet->UnicodeName = ArabicData::$_Names[$ArabicLet->Symbol][0];
+                array_push($Letters, $ArabicLet);
+            }
+        }
+        $CharArr = array();
+        $Ranges = ArabicData::MakeUniCategory(ArabicData::$WeakCategories);
+        for ($count = 0; $count < count($Ranges); $count++) {
+            $Range = $Ranges[$count];
+            if (count($Range) == 1) {
+                array_push($CharArr, $Range[0]);
+            } else {
+            	for ($subcount = 0; $subcount < count($Range); $subcount++) {
+                    array_push($CharArr, $Range[$subcount]);
+                }
+            }
+        }
+        for ($count = 0; $count < count($CharArr); $count++) {
+            $ArabicLet = new ArabicSymbol;
+            $ArabicLet->Symbol = mb_convert_encoding('&#' . $CharArr[$count] . ';', 'UTF-8', 'HTML-ENTITIES');
+            $ArabicLet->JoiningStyle = array_search($ArabicLet->Symbol, ArabicData::$CausesJoining) !== false ? "C" : "U";
+            $ArabicLet->UnicodeName = ArabicData::$_Names[$ArabicLet->Symbol][0];
+            array_push($Letters, $ArabicLet);
+        }
+        $CharArr = array();
+        $Ranges = ArabicData::MakeUniCategory(ArabicData::$NeutralCategories);
+        for ($count = 0; $count < count($Ranges); $count++) {
+            $Range = $Ranges[$count];
+            if (count($Range) == 1) {
+                array_push($CharArr, $Range[0]);
+            } else {
+            	for ($subcount = 0; $subcount < count($Range); $subcount++) {
+                    array_push($CharArr, $Range[$subcount]);
+                }
+            }
+        }
+        for ($count = 0; $count < count($CharArr); $count++) {
+            $ArabicLet = new ArabicSymbol;
+            $ArabicLet->Symbol = mb_convert_encoding('&#' . $CharArr[$count] . ';', 'UTF-8', 'HTML-ENTITIES');
+            $ArabicLet->JoiningStyle = array_search($ArabicLet->Symbol, ArabicData::$CausesJoining) !== false ? "C" : "U";
+            $ArabicLet->UnicodeName = ArabicData::$_Names[$ArabicLet->Symbol][0];
+            array_push($Letters, $ArabicLet);
+        }
+        ArabicData::$_ArabicLetters = $Letters;
+        ArabicData::$_ArabicCombos = $Combos;
+    }
+    public function ArabicCombos()
+	{
+        if (ArabicData::$_ArabicCombos == null) {
+            ArabicData::LoadArabic();
+        }
+        return ArabicData::$_ArabicCombos;
+    }
+    public function ArabicLetters()
+	{
+		if (ArabicData::$_ArabicLetters == null) {
+            ArabicData::LoadArabic();
+        }
+        return ArabicData::$_ArabicLetters;
+    }
+    public static $ShapePositions = ["isolated", "final", "initial", "medial"];
+    public static $_CombPos = null;
+    public static $_DecData = null;
+    public static $_Ranges = null;
+    public static $_Names = null;
+    public static function GetDecompositionCombiningCatData()
+    {
+        $Strs = explode("\n", file_get_contents(dirname(__FILE__) . "/metadata/UnicodeData.txt"));
+        ArabicData::$_CombPos = array();
+        ArabicData::$_Ranges = array();
+        ArabicData::$_DecData = array();
+        ArabicData::$_Names = array();
+        for ($count = 0; $count < Count($Strs); $count++) {
+            $Vals = explode(";", $Strs[$count]);
+            //All symbol categories not needed
+            if (($Vals[2][0] == "S" && $Vals[4] != "ON") || hexdec($Vals[0]) >= 0x10000) { continue; }
+            $Ch = mb_convert_encoding('&#x' . $Vals[0] . ';', 'UTF-8', 'HTML-ENTITIES');
+            if ($Vals[5] != "") {
+                $CombData = explode(" ", $Vals[5]);
+                if (!array_key_exists($Ch, ArabicData::$_DecData)) { $NewData = new DecData; $NewData->Shapes = [null, null, null, null]; ArabicData::$_DecData[$Ch] = $NewData; }
+                $Data = ArabicData::$_DecData[$Ch];
+                if (substr($CombData, 0, 1) == "<" && substr($CombData, 0, 1) == ">") {
+                    $Data->JoiningStyle = trim($CombData[0], "<>");
+                    $Data->Chars = array();
+                    for ($subcount = 0; $subcount < count($CombData) - 2; $subcount++) {
+                        $Data->Chars[$subcount] = mb_convert_encoding('&#x' . $CombData[$subcount + 1] . ';', 'UTF-8', 'HTML-ENTITIES');
+                    }
+                    ArabicData::$_DecData[$Ch] = $Data;
+                    if (count($CombData.Length) == 2) {
+                        if (!array_key_exists($Data->Chars[0], ArabicData::$_DecData)) { $NewData = new DecData; $NewData->Shapes = [null, null, null, null]; ArabicData::$_DecData[$Data->Chars[0]] = $NewData; }
+                        $ShapeData = ArabicData::$_DecData[$Data->Chars[0]];
+                        if (array_search($Data->JoiningStyle, $ShapePositions) !== false) { $ShapeData->Shapes[array_search($Data->JoiningStyle, $ShapePositions)] = $Ch; }
+                    }
+                } else {
+                	$Data->Chars = array_map(function($Dat) { return mb_convert_encoding('&#x' . (hexdec($Dat) >= 0x10000 ? 0 : $Dat) . ';', 'UTF-8', 'HTML-ENTITIES'); }, $CombData);
+                    ArabicData::$_DecData[$Ch] = $Data;
+                }
+            }
+            if ($Vals[3] != "") {
+                ArabicData::$_CombPos[$Ch] = (int)($Vals[3]);
+            }
+            if ($Vals[10] != "") {
+                ArabicData::$_Names[$Ch] = [$Vals[1], $Vals[10]];
+            } else {
+                ArabicData::$_Names[$Ch] = [$Vals[1]];
+            }
+            $NewRangeMatch = hexdec($Vals[0]);
+            if (!array_key_exists($Vals[4], ArabicData::$_Ranges)) { ArabicData::$_Ranges[$Vals[4]] = array(); }
+            if (count(ArabicData::$_Ranges(Vals(4))) != 0 && (int)(ArabicData::$_Ranges[$Vals[4]][count(ArabicData::$_Ranges[$Vals[4]]) - 1][count(ArabicData::$_Ranges[$Vals[4]][count(ArabicData::$_Ranges[$Vals[4]]) - 1]) - 1]) + 1 == $NewRangeMatch) {
+                array_push(ArabicData::$_Ranges[$Vals[4]][count(ArabicData::$_Ranges[$Vals[4]]) - 1], $NewRangeMatch);
+            } else {
+                array_push(ArabicData::$_Ranges[$Vals[4]], [NewRangeMatch]);
+            }
+        }
+    }
+    public static function MakeUniCategory($Cats)
+    {
+        if (ArabicData::$_Ranges == null) { ArabicData::GetDecompositionCombiningCatData(); }
+        $Ranges = array();
+        for ($count = 0; $count < count($Cats); $count++) {
+            if (array_key_exists($Cats[$count], ArabicData::$_Ranges)) {
+                $Ranges = array_merge($Ranges, ArabicData::$_Ranges[$Cats[$count]]);
+            }
+        }
+        return $Ranges;
     }
     public static $_ArabicLetterMap = null;
     public static function ArabicLetterMap()
@@ -117,6 +308,7 @@ class ArabicData
         return array_key_exists($symbol, ArabicData::ArabicLetterMap()) ? ArabicData::ArabicLetterMap()[$symbol] : -1;
     }
     public static function init() {
+    	ArabicData::$CausesJoining = [mb_convert_encoding('&#x0640;', 'UTF-8', 'HTML-ENTITIES'), mb_convert_encoding('&#x200D;', 'UTF-8', 'HTML-ENTITIES')];
         ArabicData::$Space = mb_convert_encoding('&#x0020;', 'UTF-8', 'HTML-ENTITIES');
         ArabicData::$ExclamationMark = mb_convert_encoding('&#x0021;', 'UTF-8', 'HTML-ENTITIES');
         ArabicData::$QuotationMark = mb_convert_encoding('&#x0022;', 'UTF-8', 'HTML-ENTITIES');
@@ -1099,6 +1291,40 @@ abstract class RuleFuncs
 };
 class Arabic
 {
+	public static $_BuckwalterMap = null;
+    public static function BuckwalterMap()
+	{
+        if (ArabicData::$_BuckwalterMap == null) {
+            ArabicData::$_BuckwalterMap = array();
+            for ($index = 0; $index < count(ArabicData::Data()->arabicletters->children()); $index++) {
+                if ((string)ArabicData::Data()->arabicletters->children()[$index]->attributes()["extendedbuckwalter"] != "") {
+                    ArabicData::$_BuckwalterMap[mb_convert_encoding('&#' . ArabicData::Data()->arabicletters->children()[$index]->attributes()["extendedbuckwalter"] . ';', 'UTF-8', 'HTML-ENTITIES')] = $index;
+                }
+            }
+        }
+        return ArabicData::$_BuckwalterMap;
+    }
+    public static function TransliterateFromBuckwalter($buckwalter)
+    {
+    	$arabicString = "";
+        for ($count = 0; $count < strlen($buckwalter); $count++) {
+            if ($buckwalter[$count] == "\\" && $count != strlen($buckwalter) - 1) {
+                $count += 1;
+                if ($buckwalter[$count] == ",") {
+                    $arabicString .= ArabicData::$ArabicComma;
+                } else {
+                    $arabicString .= $buckwalter[$count];
+                }
+            } else {
+                if (array_key_exists($buckwalter[$count], ArabicData::BuckwalterMap())) {
+                    $arabicString .= mb_convert_encoding('&#x' . ArabicData::Data()->arabicletters->children()[ArabicData::BuckwalterMap()[$buckwalter[$count]]]->attributes()["symbol"] . ';', 'UTF-8', 'HTML-ENTITIES');
+                } else {
+                    $arabicString .= $buckwalter[$count];
+                }
+            }
+        }
+        return $arabicString;
+    }
 	public static function TransliterateToScheme($arabicString, $schemeType, $scheme)
 	{
 		if ($schemeType == TranslitScheme::RuleBased) {

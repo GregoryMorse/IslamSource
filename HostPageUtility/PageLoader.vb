@@ -1253,20 +1253,8 @@ Public Class PageLoader
     End Sub
 End Class
 Public Class ArabicData
-    <System.Xml.Serialization.XmlRoot("arabicdata")> _
-    Class ArabicXMLData
-        Public Structure Transform
-            <System.Xml.Serialization.XmlAttribute("symbolname")> _
-            Public SymbolName As String
-            <System.Xml.Serialization.XmlAttribute("form")> _
-            Public Form As String
-        End Structure
-        <System.Xml.Serialization.XmlArray("arabictransforms")> _
-        <System.Xml.Serialization.XmlArrayItem("transform")> _
-        Public ArabicTransforms() As Transform
-    End Class
     Public Structure ArabicCombo
-        Public UnicodeName As String
+        Public UnicodeName As String()
         Public Symbol As Char()
         Public Shaping() As Char
     End Structure
@@ -1309,7 +1297,7 @@ Public Class ArabicData
             ArabicLet.Symbol = ChrW(CInt(CharArr(Count)))
             ArabicLet.CombiningClass = _CombPos(ArabicLet.Symbol)
             ArabicLet.JoiningStyle = "T"
-            ArabicLet.UnicodeName = _Names.Item(ChrW(CInt(CharArr(Count))))(0)
+            ArabicLet.UnicodeName = _Names.Item(ArabicLet.Symbol)(0)
             Letters.Add(ArabicLet)
         Next
         CharArr = New ArrayList
@@ -1326,7 +1314,34 @@ Public Class ArabicData
         Next
         For Count = 0 To CharArr.Count - 1
             If _DecData.ContainsKey(ChrW(CInt(CharArr(Count)))) AndAlso Not _DecData.Item(ChrW(CInt(CharArr(Count)))).Chars Is Nothing AndAlso _DecData.Item(ChrW(CInt(CharArr(Count)))).Chars.Length <> 0 Then
-                Combos.Add(New ArabicCombo With {.Shaping = _DecData.Item(ChrW(CInt(CharArr(Count)))).Shapes, .Symbol = _DecData.Item(ChrW(CInt(CharArr(Count)))).Chars, .UnicodeName = _Names.Item(ChrW(CInt(CharArr(Count))))(0)})
+                Dim ComCount As Integer
+                For ComCount = 0 To Combos.Count - 1
+                    If CType(Combos(ComCount), ArabicCombo).Symbol = _DecData.Item(ChrW(CInt(CharArr(Count)))).Chars Then Exit For
+                Next
+                Dim ArComb As ArabicCombo
+                If ComCount = Combos.Count Then
+                    ArComb = New ArabicCombo
+                    ArComb.Shaping = {Nothing, Nothing, Nothing, Nothing}
+                    ArComb.UnicodeName = {Nothing, Nothing, Nothing, Nothing}
+                    ArComb.Symbol = _DecData.Item(ChrW(CInt(CharArr(Count)))).Chars
+                Else
+                    ArComb = CType(Combos(ComCount), ArabicCombo)
+                End If
+                Dim Idx As Integer = Array.IndexOf(ShapePositions, _DecData.Item(ChrW(CInt(CharArr(Count)))).JoiningStyle)
+                If Idx = -1 Then
+                    ArComb.UnicodeName = {_Names.Item(ChrW(CInt(CharArr(Count))))(0)}
+                    ArComb.Shaping = {ChrW(CInt(CharArr(Count)))}
+                    Dim ArabicLet As New ArabicSymbol
+                    ArabicLet.Symbol = ChrW(CInt(CharArr(Count)))
+                    ArabicLet.UnicodeName = _Names.Item(ArabicLet.Symbol)(0)
+                    ArabicLet.JoiningStyle = _DecData.Item(ArabicLet.Symbol).JoiningStyle
+                    ArabicLet.Shaping = _DecData.Item(ArabicLet.Symbol).Shapes
+                    Letters.Add(ArabicLet)
+                Else
+                    ArComb.UnicodeName(Idx) = _Names.Item(ChrW(CInt(CharArr(Count))))(0)
+                    ArComb.Shaping(Idx) = ChrW(CInt(CharArr(Count)))
+                End If
+                Combos.Add(ArComb)
             Else
                 Dim ArabicLet As New ArabicSymbol
                 ArabicLet.Symbol = ChrW(CInt(CharArr(Count)))
@@ -1395,18 +1410,6 @@ Public Class ArabicData
             Return _ArabicLetters
         End Get
     End Property
-    Shared _ArabicXMLData As ArabicXMLData
-    Public Shared ReadOnly Property Data As ArabicXMLData
-        Get
-            If _ArabicXMLData Is Nothing Then
-                Dim fs As IO.FileStream = New IO.FileStream(Utility.GetFilePath(If(Utility.IsDesktopApp(), "HostPage\metadata\arabicdata.xml", "metadata\arabicdata.xml")), IO.FileMode.Open, IO.FileAccess.Read)
-                Dim xs As System.Xml.Serialization.XmlSerializer = New System.Xml.Serialization.XmlSerializer(GetType(ArabicXMLData))
-                _ArabicXMLData = CType(xs.Deserialize(fs), ArabicXMLData)
-                fs.Close()
-            End If
-            Return _ArabicXMLData
-        End Get
-    End Property
     <CLSCompliant(False)> _
     Declare Function GetFontUnicodeRanges Lib "gdi32.dll" (ByVal hds As IntPtr, ByVal lpgs As IntPtr) As UInteger
     <CLSCompliant(False)> _
@@ -1473,9 +1476,14 @@ Public Class ArabicData
             GetUName(CUShort(AscW(Character)), Str)
         Catch e As System.DllNotFoundException
             If FindLetterBySymbol(Character) = -1 Then Return String.Empty
-            Return Utility.LoadResourceString("unicode_" + ArabicLetters(FindLetterBySymbol(Character)).UnicodeName)
+            Dim Res As String = Utility.LoadResourceString("unicode_" + ArabicLetters(FindLetterBySymbol(Character)).UnicodeName)
+            If Res.Length <> 0 Then Return Res
+            Return ArabicLetters(FindLetterBySymbol(Character)).UnicodeName
         End Try
         Return Str.ToString()
+    End Function
+    Public Shared Function ToCamelCase(Str As String) As String
+        Return System.Text.RegularExpressions.Regex.Replace(Str, "([A-Z])([A-Z]+)(-| |$)", Function(CamCase As System.Text.RegularExpressions.Match) CamCase.Groups(1).Value + CamCase.Groups(2).Value.ToLower())
     End Function
     Public Shared Function IsTerminating(Str As String, Index As Integer) As Boolean
         Dim bIsEnd = True 'default to non-connecting end
@@ -1525,8 +1533,10 @@ Public Class ArabicData
         Return GetShapeIndex(bConnects, bLastConnects, bIsEnd)
     End Function
     Public Shared Function TransformChars(Str As String) As String
-        For Count As Integer = 0 To Data.ArabicTransforms.Length - 1
-            Str = Str.Replace(Data.ArabicTransforms(Count).SymbolName, Data.ArabicTransforms(Count).Form)
+        For Count As Integer = 0 To ArabicCombos.Length - 1
+            If ArabicCombos(Count).Shaping.Length = 1 Then
+                Str = Str.Replace(String.Join(String.Empty, Array.ConvertAll(ArabicCombos(Count).Symbol, Function(Sym As Char) CStr(Sym))), ArabicCombos(Count).Shaping(0))
+            End If
         Next
         Return Str
     End Function
@@ -1875,22 +1885,28 @@ Public Class ArabicData
         _Names = New Dictionary(Of Char, String())
         For Count = 0 To Strs.Length - 1
             Dim Vals As String() = Strs(Count).Split(";"c)
-            If Integer.Parse(Vals(0), Globalization.NumberStyles.AllowHexSpecifier) >= &H10000 Then Continue For
+            'All symbol categories not needed
+            If (Vals(2)(0) = "S" And Vals(4) <> "ON") Or Integer.Parse(Vals(0), Globalization.NumberStyles.AllowHexSpecifier) >= &H10000 Then Continue For
             Dim Ch As Char = ChrW(Integer.Parse(Vals(0), Globalization.NumberStyles.AllowHexSpecifier))
             If Vals(5) <> "" Then
                 Dim CombData As String() = Vals(5).Split(" "c)
                 If Not _DecData.ContainsKey(Ch) Then _DecData.Add(Ch, New DecData With {.Shapes = New Char() {Nothing, Nothing, Nothing, Nothing}})
                 Dim Data As DecData = _DecData(Ch)
-                Data.JoiningStyle = CombData(0).Trim("<"c, ">"c)
-                ReDim Data.Chars(CombData.Length - 2)
-                For SubCount = 0 To CombData.Length - 2
-                    Data.Chars(SubCount) = ChrW(Integer.Parse(CombData(SubCount + 1), Globalization.NumberStyles.AllowHexSpecifier))
-                Next
-                _DecData(Ch) = Data
-                If CombData.Length = 2 Then
-                    If Not _DecData.ContainsKey(Data.Chars(0)) Then _DecData.Add(Data.Chars(0), New DecData With {.Shapes = New Char() {Nothing, Nothing, Nothing, Nothing}})
-                    Dim ShapeData As DecData = _DecData(Data.Chars(0))
-                    If Array.IndexOf(ShapePositions, Data.JoiningStyle) <> -1 Then ShapeData.Shapes(Array.IndexOf(ShapePositions, Data.JoiningStyle)) = Ch
+                If CombData(0).StartsWith("<") And CombData(0).EndsWith(">") Then
+                    Data.JoiningStyle = CombData(0).Trim("<"c, ">"c)
+                    ReDim Data.Chars(CombData.Length - 2)
+                    For SubCount = 0 To CombData.Length - 2
+                        Data.Chars(SubCount) = ChrW(Integer.Parse(CombData(SubCount + 1), Globalization.NumberStyles.AllowHexSpecifier))
+                    Next
+                    _DecData(Ch) = Data
+                    If CombData.Length = 2 Then
+                        If Not _DecData.ContainsKey(Data.Chars(0)) Then _DecData.Add(Data.Chars(0), New DecData With {.Shapes = New Char() {Nothing, Nothing, Nothing, Nothing}})
+                        Dim ShapeData As DecData = _DecData(Data.Chars(0))
+                        If Array.IndexOf(ShapePositions, Data.JoiningStyle) <> -1 Then ShapeData.Shapes(Array.IndexOf(ShapePositions, Data.JoiningStyle)) = Ch
+                    End If
+                Else
+                    Data.Chars = Array.ConvertAll(CombData, Function(Dat As String) ChrW(If(Integer.Parse(Dat, Globalization.NumberStyles.AllowHexSpecifier) >= &H10000, 0, Integer.Parse(Dat, Globalization.NumberStyles.AllowHexSpecifier))))
+                    _DecData(Ch) = Data
                 End If
             End If
             If Vals(3) <> "" Then

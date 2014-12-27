@@ -2537,6 +2537,8 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 		<word text="*uw {loqaEodapu" id="Month11"></word>
 		<word text="*uw {loHij~apu" id="Month12"></word>
 		<word text="Tahiy~atulN masojidN" id="EnteringMosque"></word>
+		<word text="&lt;ixotilaAfN ta*aAdN" id="ContradictoryDifferences"></word>
+		<word text="&lt;ixotilaAfN tanawoEN" id="VarianceDifferences"></word>
 
 		<word text="Ealiy~N waliy {ll~ahi" id="AliFriendOfAllah"></word>
 		<word text="{ls~alaAmu Ealayoka ya`Ealiy~N {bonu muHam~adN &gt;ay~uhaA {lohaAdiy {ln~aqiy Ealayoka {ls~alaAmu" id="PeaceBeUponYouAliSonOfMuhammadOTheGuideThePureUponYouBePeace"></word>
