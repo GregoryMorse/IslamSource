@@ -1277,6 +1277,16 @@ Public Class ArabicData
         Public Shaping() As Char
         Public JoiningStyle As String
         Public CombiningClass As Integer
+        Public ReadOnly Property Connecting As Boolean
+            Get
+                Return JoiningStyle = "initial" Or JoiningStyle = "medial" Or JoiningStyle = "C"
+            End Get
+        End Property
+        Public ReadOnly Property Terminating As Boolean
+            Get
+                Return JoiningStyle = "isolated" Or JoiningStyle = "final" Or JoiningStyle = "U"
+            End Get
+        End Property
     End Structure
     Public Shared _ArabicLetters() As ArabicSymbol
     Public Shared Sub LoadArabic()
@@ -1469,8 +1479,8 @@ Public Class ArabicData
         Dim bIsEnd = True 'default to non-connecting end
         'should probably check for any non-arabic letters also
         For CharCount As Integer = Index + 1 To Str.Length - 1
-            If Array.IndexOf(RecitationCombiningSymbols, Str(CharCount)) = -1 Then
-                Dim Idx As Integer = FindLetterBySymbol(Str(CharCount))
+            Dim Idx As Integer = FindLetterBySymbol(Str(CharCount))
+            If Idx = -1 OrElse ArabicLetters(Idx).JoiningStyle <> "T" Then
                 bIsEnd = Idx = -1 OrElse Not ArabicLetters(Idx).Connecting
                 Exit For
             End If
@@ -1480,8 +1490,8 @@ Public Class ArabicData
     Public Shared Function IsLastConnecting(Str As String, Index As Integer) As Boolean
         Dim bLastConnects = False 'default to non-connecting beginning 
         For CharCount As Integer = Index - 1 To 0 Step -1
-            If Array.IndexOf(RecitationCombiningSymbols, Str(CharCount)) = -1 Then
-                Dim Idx As Integer = FindLetterBySymbol(Str(CharCount))
+            Dim Idx As Integer = FindLetterBySymbol(Str(CharCount))
+            If Idx <> -1 AndAlso ArabicLetters(Idx).JoiningStyle <> "T" Then
                 bLastConnects = Idx <> -1 AndAlso Not ArabicLetters(Idx).Terminating
                 Exit For
             End If
@@ -1507,8 +1517,9 @@ Public Class ArabicData
         'initial - non-connecting + connecting letter + not end
         'medial - connecting + connecting letter + not end
         Dim bIsEnd = IsTerminating(Str, Index + Length - 1)
-        Dim bConnects As Boolean = Not ArabicLetters(FindLetterBySymbol(Str.Chars(Index + Length - 1))).Terminating
-        Dim bLastConnects As Boolean = ArabicLetters(FindLetterBySymbol(Str.Chars(Index + Length - 1))).Connecting And IsLastConnecting(Str, Index)
+        Dim Idx As Integer = FindLetterBySymbol(Str.Chars(Index + Length - 1))
+        Dim bConnects As Boolean = Not ArabicLetters(Idx).Terminating
+        Dim bLastConnects As Boolean = ArabicLetters(Idx).Connecting And IsLastConnecting(Str, Index)
         Return GetShapeIndex(bConnects, bLastConnects, bIsEnd)
     End Function
     Public Shared Function TransformChars(Str As String) As String
@@ -1568,19 +1579,19 @@ Public Class ArabicData
     Public Shared Function CheckLigatureMatch(Str As String, CurPos As Integer, ByRef Positions As Integer()) As Integer
         'if first is 2 diacritics or letter + diacritic
         'letter + 2 diacritics where 2 diacritics are match and letter + diacritic is match gives precence to letter + diacritic currently
-        If Str.Length > 1 AndAlso Array.IndexOf(RecitationCombiningSymbols, Str(1)) <> -1 AndAlso LigatureLookups.ContainsKey(Str.Substring(0, 2)) Then
+        If Str.Length > 1 AndAlso FindLetterBySymbol(Str(1)) <> -1 AndAlso ArabicLetters(FindLetterBySymbol(Str(1))).JoiningStyle = "T" AndAlso LigatureLookups.ContainsKey(Str.Substring(0, 2)) Then
             Positions = {CurPos, CurPos + 1}
             Return LigatureLookups.Item(Str.Substring(0, 2))
         End If
-        If Array.IndexOf(RecitationCombiningSymbols, Str(0)) = -1 Then
+        If FindLetterBySymbol(Str(0)) <> -1 AndAlso ArabicLetters(FindLetterBySymbol(Str(0))).JoiningStyle <> "T" Then
             'only 3 letters or 2 letters has possible parsing
             Dim StrCount = 1
-            While StrCount <> Str.Length AndAlso Array.IndexOf(RecitationCombiningSymbols, Str(StrCount)) <> -1
+            While StrCount <> Str.Length AndAlso FindLetterBySymbol(Str(StrCount)) <> -1 AndAlso ArabicLetters(FindLetterBySymbol(Str(StrCount))).JoiningStyle = "T"
                 StrCount += 1
             End While
             If StrCount <> Str.Length Then
                 Dim StrLast = StrCount + 1
-                While StrLast <> Str.Length AndAlso Array.IndexOf(RecitationCombiningSymbols, Str(StrLast)) <> -1
+                While StrLast <> Str.Length AndAlso FindLetterBySymbol(Str(StrCount)) <> -1 AndAlso ArabicLetters(FindLetterBySymbol(Str(StrCount))).JoiningStyle = "T"
                     StrLast += 1
                 End While
                 If StrLast <> Str.Length AndAlso LigatureLookups.ContainsKey(Str(0) + Str(StrCount) + Str(StrLast)) Then
@@ -1604,13 +1615,13 @@ Public Class ArabicData
         Get
             If _LigatureCombos Is Nothing Then
                 ReDim _LigatureCombos(ArabicLetters.Length + ArabicCombos.Length - 1)
-                Array.ConvertAll(ArabicCombos, Function(Combo As ArabicCombo) New ArabicCombo With {.Shaping = Combo.Shaping, .SymbolName = TransliterateFromBuckwalter(Combo.SymbolName)}).CopyTo(_LigatureCombos, 0)
+                ArabicCombos.CopyTo(_LigatureCombos, 0)
                 For Count = 0 To ArabicLetters.Length - 1
                     'do not need to transfer UnicodeName as it is not used here
-                    _LigatureCombos(ArabicCombos.Length + Count).SymbolName = ArabicLetters(Count).Symbol
+                    _LigatureCombos(ArabicCombos.Length + Count).Symbol = {ArabicLetters(Count).Symbol}
                     _LigatureCombos(ArabicCombos.Length + Count).Shaping = ArabicLetters(Count).Shaping
                 Next
-                Array.Sort(_LigatureCombos, Function(Com1 As ArabicCombo, Com2 As ArabicCombo) If(Com1.SymbolName.Length = Com2.SymbolName.Length, Com1.SymbolName.CompareTo(Com2.SymbolName), If(Com1.SymbolName.Length > Com2.SymbolName.Length, -1, 1)))
+                Array.Sort(_LigatureCombos, Function(Com1 As ArabicCombo, Com2 As ArabicCombo) If(Com1.Symbol.Length = Com2.Symbol.Length, String.Join(String.Empty, Array.ConvertAll(Com1.Symbol, Function(Sym As Char) CStr(Sym))).CompareTo(String.Join(String.Empty, Array.ConvertAll(Com2.Symbol, Function(Sym As Char) CStr(Sym)))), If(Com1.Symbol.Length > Com2.Symbol.Length, -1, 1)))
             End If
             Return _LigatureCombos
         End Get
@@ -1640,7 +1651,7 @@ Public Class ArabicData
                 Dim Combos As ArabicCombo() = LigatureCombos
                 For Count = 0 To Combos.Length - 1
                     If Not Combos(Count).Shaping Is Nothing Then
-                        _LigatureLookups.Add(Combos(Count).SymbolName, Count)
+                        _LigatureLookups.Add(String.Join(String.Empty, Array.ConvertAll(Combos(Count).Symbol, Function(Sym As Char) CStr(Sym))), Count)
                     End If
                 Next
             End If
@@ -1658,18 +1669,18 @@ Public Class ArabicData
             If Dir Then
                 If LigatureShapes.ContainsKey(Str.Chars(Count)) Then
                     'ZWJ and ZWNJ could be used to preserve deliberately improper shaped Arabic or other strategies beyond just default shaping
-                    Ligatures.Add(New LigatureInfo With {.Ligature = Combos(LigatureShapes.Item(Str.Chars(Count))).SymbolName, .Indexes = {Count}})
+                    Ligatures.Add(New LigatureInfo With {.Ligature = Combos(LigatureShapes.Item(Str.Chars(Count))).Symbol, .Indexes = {Count}})
                 End If
             Else
                 Dim Indexes As Integer() = Nothing
                 SubCount = CheckLigatureMatch(Str.Substring(Count), Count, Indexes)
                 If SubCount <> -1 Then
-                    Dim Index As Integer = Array.FindIndex(Combos(SubCount).SymbolName.ToCharArray(), Function(Ch As Char) Array.IndexOf(RecitationCombiningSymbols, Ch) <> -1)
+                    Dim Index As Integer = Array.FindIndex(Combos(SubCount).Symbol, Function(Ch As Char) FindLetterBySymbol(Ch) <> -1 AndAlso ArabicLetters(FindLetterBySymbol(Ch)).JoiningStyle = "T")
                     'diacritics always use isolated form
                     Dim Shape As Integer = If(Index = 0, 0, GetShapeIndexFromString(Str, Count, Indexes(Indexes.Length - 1) - Count + 1 - If(Index = -1, 0, Index)))
                     If Combos(SubCount).Shaping <> Nothing AndAlso Combos(SubCount).Shaping(Shape) <> ChrW(0) AndAlso Array.IndexOf(SupportedForms, Combos(SubCount).Shaping(Shape)) <> -1 Then
                         Ligatures.Add(New LigatureInfo With {.Ligature = Combos(SubCount).Shaping(Shape), .Indexes = Indexes})
-                        Count += Combos(SubCount).SymbolName.Length - 1
+                        Count += Combos(SubCount).Symbol.Length - 1
                     End If
                 End If
             End If
@@ -1685,41 +1696,6 @@ Public Class ArabicData
             Next
         Next
         Return Str
-    End Function
-    Public Shared _BuckwalterMap As Dictionary(Of Char, Integer)
-    Public Shared ReadOnly Property BuckwalterMap As Dictionary(Of Char, Integer)
-        Get
-            If _BuckwalterMap Is Nothing Then
-                _BuckwalterMap = New Dictionary(Of Char, Integer)
-                For Index = 0 To ArabicLetters.Length - 1
-                    If ArabicLetters(Index).ExtendedBuckwalterLetter <> ChrW(0) Then
-                        _BuckwalterMap.Add(ArabicLetters(Index).ExtendedBuckwalterLetter, Index)
-                    End If
-                Next
-            End If
-            Return _BuckwalterMap
-        End Get
-    End Property
-    Public Shared Function TransliterateFromBuckwalter(ByVal Buckwalter As String) As String
-        Dim ArabicString As String = String.Empty
-        Dim Count As Integer
-        For Count = 0 To Buckwalter.Length - 1
-            If Buckwalter(Count) = "\" Then
-                Count += 1
-                If Buckwalter(Count) = "," Then
-                    ArabicString += ArabicData.ArabicComma
-                Else
-                    ArabicString += Buckwalter(Count)
-                End If
-            Else
-                If BuckwalterMap.ContainsKey(Buckwalter(Count)) Then
-                    ArabicString += ArabicLetters(BuckwalterMap.Item(Buckwalter(Count))).Symbol
-                Else
-                    ArabicString += Buckwalter(Count)
-                End If
-            End If
-        Next
-        Return ArabicString
     End Function
     Public Shared _ArabicLetterMap As Dictionary(Of Char, Integer)
     Public Shared ReadOnly Property ArabicLetterMap As Dictionary(Of Char, Integer)
@@ -1945,7 +1921,7 @@ Public Class ArabicData
         Return "return " + String.Join("||", Array.ConvertAll(Of ArrayList, String)(CType(Ranges.ToArray(GetType(ArrayList)), ArrayList()), Function(Arr As ArrayList) If(Arr.Count = 1, "c===0x" + Hex(Arr(0)), "(c>=0x" + Hex(Arr(0)) + "&&c<=0x" + Hex(Arr(Arr.Count - 1)) + ")"))) + ";"
     End Function
     Public Shared Function FixStartingCombiningSymbol(Str As String) As String
-        Return If(Array.IndexOf(RecitationCombiningSymbols, Str.Chars(0)) <> -1 Or Str.Length = 1, LeftToRightOverride + Str + PopDirectionalFormatting, Str)
+        Return If((FindLetterBySymbol(Str.Chars(0)) <> -1 AndAlso ArabicLetters(FindLetterBySymbol(Str.Chars(0))).JoiningStyle = "T") Or Str.Length = 1, LeftToRightOverride + Str + PopDirectionalFormatting, Str)
     End Function
     Public Shared Function MakeUniRegEx(Input As String) As String
         Return String.Join(String.Empty, Array.ConvertAll(Of Char, String)(Input.ToCharArray(), Function(Ch As Char) "\u" + AscW(Ch).ToString("X4")))
@@ -2331,7 +2307,7 @@ Public Class RenderArray
                         Dim Rect As RectangleF = _Bounds(Count)(SubCount)(NextCount).Rect
                         Dim Text As String = theText.Substring(0, _Bounds(Count)(SubCount)(NextCount).nChar)
                         Dim bSpace As Boolean = False
-                        If Array.IndexOf(ArabicData.RecitationCombiningSymbols, Text(0)) <> -1 Then
+                        If ArabicData.FindLetterBySymbol(Text(0)) <> -1 AndAlso ArabicData.ArabicLetters(ArabicData.FindLetterBySymbol(Text(0))).JoiningStyle = "T" Then
                             Text = " "c + Text
                             bSpace = True
                         End If
@@ -2358,7 +2334,7 @@ Public Class RenderArray
                             End If
                             Dim Box As Integer() = Font.BaseFont.GetCharBBox(AscW(ArabicData.ConvertLigatures(Text.Substring(CharPosInfos(Index).Index, CharPosInfos(Index).Length), False, Forms)(0)))
                             If Not Box Is Nothing Then
-                                ct.SetSimpleColumn(Rect.Left + Doc.LeftMargin + Rect.Width - 3 - CharPosInfos(Index).PriorWidth + CharPosInfos(Index).Width + If(Array.IndexOf(Array.ConvertAll(ArabicData.ArabicNumbers, Function(Str As String) ArabicData.TransliterateFromBuckwalter(Str).Chars(0)), Text(CharPosInfos(Index).Index)) <> -1, CharPosInfos(Index).X - 3.0F, -CharPosInfos(Index).X - 1.5F), Doc.PageSize.Height - Doc.TopMargin - Rect.Bottom - _Bounds(Count)(SubCount)(NextCount).Baseline - Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size) * 2 + CharPosInfos(Index).Y, Rect.Right - 3 + Doc.LeftMargin - CharPosInfos(Index).PriorWidth + If(Array.IndexOf(Array.ConvertAll(ArabicData.ArabicNumbers, Function(Str As String) ArabicData.TransliterateFromBuckwalter(Str).Chars(0)), Text(CharPosInfos(Index).Index)) <> -1, CharPosInfos(Index).X - 3.0F, -CharPosInfos(Index).X - 1.5F), Doc.PageSize.Height - Doc.TopMargin - Rect.Top + 1 - _Bounds(Count)(SubCount)(NextCount).Baseline - Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size) * 2 + CharPosInfos(Index).Y, Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size), iTextSharp.text.Element.ALIGN_RIGHT Or iTextSharp.text.Element.ALIGN_BASELINE)
+                                ct.SetSimpleColumn(Rect.Left + Doc.LeftMargin + Rect.Width - 3 - CharPosInfos(Index).PriorWidth + CharPosInfos(Index).Width + If(System.Text.RegularExpressions.Regex.Match(Text(CharPosInfos(Index).Index), "[\p{IsArabic}]").Success And Char.GetUnicodeCategory(Text(CharPosInfos(Index).Index)) = Globalization.UnicodeCategory.DecimalDigitNumber, CharPosInfos(Index).X - 3.0F, -CharPosInfos(Index).X - 1.5F), Doc.PageSize.Height - Doc.TopMargin - Rect.Bottom - _Bounds(Count)(SubCount)(NextCount).Baseline - Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size) * 2 + CharPosInfos(Index).Y, Rect.Right - 3 + Doc.LeftMargin - CharPosInfos(Index).PriorWidth + If(System.Text.RegularExpressions.Regex.Match(Text(CharPosInfos(Index).Index), "[\p{IsArabic}]").Success And Char.GetUnicodeCategory(Text(CharPosInfos(Index).Index)) = Globalization.UnicodeCategory.DecimalDigitNumber, CharPosInfos(Index).X - 3.0F, -CharPosInfos(Index).X - 1.5F), Doc.PageSize.Height - Doc.TopMargin - Rect.Top + 1 - _Bounds(Count)(SubCount)(NextCount).Baseline - Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size) * 2 + CharPosInfos(Index).Y, Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size), iTextSharp.text.Element.ALIGN_RIGHT Or iTextSharp.text.Element.ALIGN_BASELINE)
                                 ct.AddText(New iTextSharp.text.Chunk(Text.Substring(CharPosInfos(Index).Index, CharPosInfos(Index).Length), NewFont))
                                 ct.Go()
                             End If
@@ -2461,7 +2437,7 @@ Public Class RenderArray
         End If
         Font.BaseFont.CorrectArabicAdvance()
         Dim bSpace As Boolean = False
-        If Array.IndexOf(ArabicData.RecitationCombiningSymbols, Str(0)) <> -1 Then
+        If ArabicData.FindLetterBySymbol(Str(0)) <> -1 AndAlso ArabicData.ArabicLetters(ArabicData.FindLetterBySymbol(Str(0))).JoiningStyle = "T" Then
             Str = " "c + Str
             bSpace = True
         End If
