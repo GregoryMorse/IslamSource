@@ -1299,8 +1299,8 @@ Public Class ArabicData
             If Range.Count = 1 Then
                 CharArr.Add(Range(0))
             Else
-                For SubCount = Range(0) To Range(1)
-                    CharArr.Add(SubCount)
+                For SubCount = 0 To Range.Count - 1
+                    CharArr.Add(Range(SubCount))
                 Next
             End If
         Next
@@ -1319,19 +1319,21 @@ Public Class ArabicData
             If Range.Count = 1 Then
                 CharArr.Add(Range(0))
             Else
-                For SubCount = Range(0) To Range(1)
-                    CharArr.Add(SubCount)
+                For SubCount = 0 To Range.Count - 1
+                    CharArr.Add(Range(SubCount))
                 Next
             End If
         Next
         For Count = 0 To CharArr.Count - 1
-            If _DecData.Item(ChrW(CInt(CharArr(Count)))).Chars.Length <> 0 Then
+            If _DecData.ContainsKey(ChrW(CInt(CharArr(Count)))) AndAlso Not _DecData.Item(ChrW(CInt(CharArr(Count)))).Chars Is Nothing AndAlso _DecData.Item(ChrW(CInt(CharArr(Count)))).Chars.Length <> 0 Then
                 Combos.Add(New ArabicCombo With {.Shaping = _DecData.Item(ChrW(CInt(CharArr(Count)))).Shapes, .Symbol = _DecData.Item(ChrW(CInt(CharArr(Count)))).Chars, .UnicodeName = _Names.Item(ChrW(CInt(CharArr(Count))))(0)})
             Else
                 Dim ArabicLet As New ArabicSymbol
                 ArabicLet.Symbol = ChrW(CInt(CharArr(Count)))
-                ArabicLet.JoiningStyle = _DecData.Item(ArabicLet.Symbol).JoiningStyle
-                ArabicLet.Shaping = _DecData.Item(ArabicLet.Symbol).Shapes
+                If _DecData.ContainsKey(ChrW(CInt(CharArr(Count)))) Then
+                    ArabicLet.JoiningStyle = _DecData.Item(ArabicLet.Symbol).JoiningStyle
+                    ArabicLet.Shaping = _DecData.Item(ArabicLet.Symbol).Shapes
+                End If
                 ArabicLet.UnicodeName = _Names.Item(ArabicLet.Symbol)(0)
                 Letters.Add(ArabicLet)
             End If
@@ -1343,12 +1345,12 @@ Public Class ArabicData
             If Range.Count = 1 Then
                 CharArr.Add(Range(0))
             Else
-                For SubCount = Range(0) To Range(1)
-                    CharArr.Add(SubCount)
+                For SubCount = 0 To Range.Count - 1
+                    CharArr.Add(Range(SubCount))
                 Next
             End If
         Next
-        For Count = 0 To Ranges.Count - 1
+        For Count = 0 To CharArr.Count - 1
             Dim ArabicLet As New ArabicSymbol
             ArabicLet.Symbol = ChrW(CInt(CharArr(Count)))
             ArabicLet.JoiningStyle = If(Array.IndexOf(CausesJoining, ArabicLet.Symbol) <> -1, "C", "U")
@@ -1362,12 +1364,12 @@ Public Class ArabicData
             If Range.Count = 1 Then
                 CharArr.Add(Range(0))
             Else
-                For SubCount = Range(0) To Range(1)
-                    CharArr.Add(SubCount)
+                For SubCount = 0 To Range.Count - 1
+                    CharArr.Add(Range(SubCount))
                 Next
             End If
         Next
-        For Count = 0 To Ranges.Count - 1
+        For Count = 0 To CharArr.Count - 1
             Dim ArabicLet As New ArabicSymbol
             ArabicLet.Symbol = ChrW(CInt(CharArr(Count)))
             ArabicLet.JoiningStyle = If(Array.IndexOf(CausesJoining, ArabicLet.Symbol) <> -1, "C", "U")
@@ -1843,7 +1845,7 @@ Public Class ArabicData
         "function IsExplicit(c) { " + MakeUniCategoryJS(ExplicitCategories) + " }"}
     End Function
     Public Shared Function GetJoiningData() As Dictionary(Of Char, String)
-        Dim Strs As String() = IO.File.ReadAllLines("..\..\..\IslamMetadata\ArabicShaping.txt")
+        Dim Strs As String() = IO.File.ReadAllLines(Utility.GetFilePath("metadata\ArabicShaping.txt"))
         Dim Joiners As New Dictionary(Of Char, String)
         For Count = 0 To Strs.Length - 1
             If Strs(Count)(0) <> "#" Then
@@ -1866,12 +1868,14 @@ Public Class ArabicData
     Public Shared _Ranges As Dictionary(Of String, ArrayList)
     Public Shared _Names As Dictionary(Of Char, String())
     Public Shared Sub GetDecompositionCombiningCatData()
-        Dim Strs As String() = IO.File.ReadAllLines("..\..\..\IslamMetadata\UnicodeData.txt")
+        Dim Strs As String() = IO.File.ReadAllLines(Utility.GetFilePath("metadata\UnicodeData.txt"))
         _CombPos = New Dictionary(Of Char, Integer)
         _Ranges = New Dictionary(Of String, ArrayList)
         _DecData = New Dictionary(Of Char, DecData)
+        _Names = New Dictionary(Of Char, String())
         For Count = 0 To Strs.Length - 1
             Dim Vals As String() = Strs(Count).Split(";"c)
+            If Integer.Parse(Vals(0), Globalization.NumberStyles.AllowHexSpecifier) >= &H10000 Then Continue For
             Dim Ch As Char = ChrW(Integer.Parse(Vals(0), Globalization.NumberStyles.AllowHexSpecifier))
             If Vals(5) <> "" Then
                 Dim CombData As String() = Vals(5).Split(" "c)
@@ -1886,7 +1890,7 @@ Public Class ArabicData
                 If CombData.Length = 2 Then
                     If Not _DecData.ContainsKey(Data.Chars(0)) Then _DecData.Add(Data.Chars(0), New DecData With {.Shapes = New Char() {Nothing, Nothing, Nothing, Nothing}})
                     Dim ShapeData As DecData = _DecData(Data.Chars(0))
-                    ShapeData.Shapes(Array.IndexOf(ShapePositions, Data.JoiningStyle)) = Ch
+                    If Array.IndexOf(ShapePositions, Data.JoiningStyle) <> -1 Then ShapeData.Shapes(Array.IndexOf(ShapePositions, Data.JoiningStyle)) = Ch
                 End If
             End If
             If Vals(3) <> "" Then

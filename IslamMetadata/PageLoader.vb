@@ -119,7 +119,7 @@ Public Class Arabic
             If _BuckwalterMap Is Nothing Then
                 _BuckwalterMap = New Dictionary(Of Char, Integer)
                 For Index = 0 To ArabicData.ArabicLetters.Length - 1
-                    If GetSchemeValueFromSymbol(ArabicData.ArabicLetters(Index), "ExtendedBuckwalter").Chars(0) <> ChrW(0) Then
+                    If GetSchemeValueFromSymbol(ArabicData.ArabicLetters(Index), "ExtendedBuckwalter").Length <> 0 Then
                         _BuckwalterMap.Add(GetSchemeValueFromSymbol(ArabicData.ArabicLetters(Index), "ExtendedBuckwalter").Chars(0), Index)
                     End If
                 Next
@@ -638,7 +638,7 @@ Public Class Arabic
     Shared Function GetArabicSymbolJSArray() As String
         GetArabicSymbolJSArray = "var arabicLetters = " + _
                                 Utility.MakeJSArray(New String() {Utility.MakeJSIndexedObject(New String() {"Symbol", "Shaping", "TranslitLetter"}, _
-                                Array.ConvertAll(Of ArabicData.ArabicSymbol, String())(ArabicData.ArabicLetters, Function(Convert As ArabicData.ArabicSymbol) New String() {CStr(AscW(Convert.Symbol)), If(Convert.Shaping = Nothing, String.Empty, Utility.MakeJSArray(Array.ConvertAll(Convert.Shaping, Function(Ch As Char) CStr(AscW(Ch))))), CStr(IIf(GetSchemeValueFromSymbol(Convert, "ExtendedBuckwalter").Chars(0) = ChrW(0), String.Empty, GetSchemeValueFromSymbol(Convert, "ExtendedBuckwalter").Chars(0)))}), False)}, True) + ";"
+                                Array.ConvertAll(Of ArabicData.ArabicSymbol, String())(ArabicData.ArabicLetters, Function(Convert As ArabicData.ArabicSymbol) New String() {CStr(AscW(Convert.Symbol)), If(Convert.Shaping = Nothing, String.Empty, Utility.MakeJSArray(Array.ConvertAll(Convert.Shaping, Function(Ch As Char) CStr(AscW(Ch))))), CStr(If(GetSchemeValueFromSymbol(Convert, "ExtendedBuckwalter").Length = 0, String.Empty, GetSchemeValueFromSymbol(Convert, "ExtendedBuckwalter").Chars(0)))}), False)}, True) + ";"
     End Function
     Public Shared FindLetterBySymbolJS As String = "function findLetterBySymbol(chVal) { var iSubCount; for (iSubCount = 0; iSubCount < arabicLetters.length; iSubCount++) { if (chVal === parseInt(arabicLetters[iSubCount].Symbol, 10)) return iSubCount; for (var iShapeCount = 0; iShapeCount < arabicLetters[iSubCount].Shaping.length; iShapeCount++) { if (chVal === parseInt(arabicLetters[iSubCount].Shaping[iShapeCount], 10)) return iSubCount; } } return -1; }"
     Public Shared TransliterateGenJS As String() = {
@@ -899,7 +899,7 @@ Public Class Arabic
             Output(Count + 3) = New String() {ArabicData.GetUnicodeName(Symbols(Count).Symbol), _
                                        CStr(Symbols(Count).Symbol), _
                                        CStr(Hex(AscW(Symbols(Count).Symbol))), _
-                                       CStr(IIf(GetSchemeValueFromSymbol(Symbols(Count), "ExtendedBuckwalter").Chars(0) = ChrW(0), String.Empty, GetSchemeValueFromSymbol(Symbols(Count), "ExtendedBuckwalter").Chars(0))), _
+                                       CStr(If(GetSchemeValueFromSymbol(Symbols(Count), "ExtendedBuckwalter").Length = 0, String.Empty, GetSchemeValueFromSymbol(Symbols(Count), "ExtendedBuckwalter").Chars(0))), _
                                        CStr(Symbols(Count).Terminating), _
                                        CStr(Symbols(Count).Connecting), _
                                        If(Symbols(Count).Shaping = Nothing, String.Empty, String.Join(vbCrLf, Array.ConvertAll(Symbols(Count).Shaping, Function(Shape As Char) If(Shape = ChrW(0), String.Empty, Shape + " " + CStr(Hex(AscW(Shape))) + " " + If(CheckShapingOrder(Array.IndexOf(Symbols(Count).Shaping, Shape), ArabicData.GetUnicodeName(Shape)), String.Empty, "!!!") + ArabicData.GetUnicodeName(Shape)))))}
@@ -929,7 +929,7 @@ Public Class Arabic
             Strs = New String() {ArabicLetterSpelling(ArabicData.ArabicLetters(Count).Symbol, False),
                                        ArabicData.GetUnicodeName(ArabicData.ArabicLetters(Count).Symbol), _
                                        CStr(ArabicData.ArabicLetters(Count).Symbol), _
-                                       If(GetSchemeValueFromSymbol(ArabicData.ArabicLetters(Count), "ExtendedBuckwalter").Chars(0) = ChrW(0), String.Empty, GetSchemeValueFromSymbol(ArabicData.ArabicLetters(Count), "ExtendedBuckwalter").Chars(0))}
+                                       If(GetSchemeValueFromSymbol(ArabicData.ArabicLetters(Count), "ExtendedBuckwalter").Length = 0, String.Empty, GetSchemeValueFromSymbol(ArabicData.ArabicLetters(Count), "ExtendedBuckwalter").Chars(0))}
             Array.Resize(Of String)(Strs, 4 + CachedData.IslamData.TranslitSchemes.Length)
             For SchemeCount = 0 To CachedData.IslamData.TranslitSchemes.Length - 1
                 Strs(4 + SchemeCount) = GetSchemeValueFromSymbol(ArabicData.ArabicLetters(Count), CachedData.IslamData.TranslitSchemes(SchemeCount).Name)
