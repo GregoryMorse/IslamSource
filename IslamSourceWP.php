@@ -6,6 +6,10 @@ Version: 1.1.0
 Author: IslamSource
 Author URI: http://www.islamsource.info
 */
+if (array_key_exists("ShowError", $_GET)) {
+	error_reporting(E_ALL);
+	ini_set('display_errors', 1);
+}
 class Utility
 {
 	public static $_resxml = null;
@@ -1498,14 +1502,25 @@ class Arabic
         }
         return "";
     }
+    static $_letters = null;
+    public static function GetSortedLetters($scheme)
+    {
+    	if (Arabic::$_letters == null) {
+	        $letters = array();
+	        for ($count = 0; $count < count(ArabicData::ArabicLetters()); $count++) {
+	        	$letters[] = ArabicData::ArabicLetters()[$count];
+	        }
+	        usort($letters, function($x, $y) use($scheme) { $compare = strlen(Arabic::GetSchemeValueFromSymbol($x, $scheme)) - strlen(Arabic::GetSchemeValueFromSymbol($y, $scheme)); if ($compare == 0) { $compare = strcmp(Arabic::GetSchemeValueFromSymbol($x, $scheme), Arabic::GetSchemeValueFromSymbol($y, $scheme)); } return $compare; });
+	        Arabic::$_letters = array();
+	        for ($count = 0; $count < count($letters); $count++) {
+	        	Arabic::$_letters[$letters[$count]->Symbol] = $count;
+	        }
+	    }
+	    return Arabic::$_letters;
+    }
 	public static function TransliterateToRoman($arabicString, $scheme)
 	{
         $romanString = "";
-        $letters = array();
-        for ($count = 0; $count < count(ArabicData::ArabicLetters()); $count++) {
-        	$letters[] = ArabicData::ArabicLetters()[$count];
-        }
-        usort($letters, function($x, $y) use($scheme) { $compare = strlen(Arabic::GetSchemeValueFromSymbol($x, $scheme)) - strlen(Arabic::GetSchemeValueFromSymbol($y, $scheme)); if ($compare == 0) { $compare = strcmp(Arabic::GetSchemeValueFromSymbol($x, $scheme), Arabic::GetSchemeValueFromSymbol($y, $scheme)); } return $compare; });
         for ($count = 0; $count < mb_strlen($arabicString); $count++) {
             if (mb_substr($arabicString, $count, 1) == "\\") {
                 $count += 1;
@@ -1519,17 +1534,13 @@ class Arabic
                     $romanString .= mb_substr($arabicString, $count, 1);
                 }
             } else {
-                for ($index = 0; $index < count($letters); $index++) {
-                    if (mb_substr($arabicString, $count, 1) == $letters[$index]->Symbol) {
-                        if (Arabic::GetSchemeSpecialFromMatch($letters[$index]->Symbol, false) != -1) {
-                            $romanString .= Arabic::GetSchemeSpecialValue(Arabic::GetSchemeSpecialFromMatch($letters[$index]->Symbol, false), $scheme == "" ? "ExtendedBuckwalter" : $scheme);
-                        } else {
-                            $romanString .= Arabic::GetSchemeValueFromSymbol($letters[$index], $scheme == "" ? "ExtendedBuckwalter" : $scheme);
-                        }
-                        break;
+                if (array_key_exists(mb_substr($arabicString, $count, 1), Arabic::GetSortedLetters($scheme))) {
+                    if (Arabic::GetSchemeSpecialFromMatch(mb_substr($arabicString, $count, 1), false) != -1) {
+                        $romanString .= Arabic::GetSchemeSpecialValue(Arabic::GetSchemeSpecialFromMatch(mb_substr($arabicString, $count, 1), false), $scheme == "" ? "ExtendedBuckwalter" : $scheme);
+                    } else {
+                        $romanString .= Arabic::GetSchemeValueFromSymbol(ArabicData::ArabicLetters()[ArabicData::FindLetterBySymbol(mb_substr($arabicString, $count, 1))], $scheme == "" ? "ExtendedBuckwalter" : $scheme);
                     }
-                }
-                if ($index == count($letters)) {
+                } else {
                     $romanString .= mb_substr($arabicString, $count, 1);
                 }
             }
@@ -1656,7 +1667,8 @@ class Arabic
                     if (count($args) == 1) {
                         $str = $args[0];
                     } else {
-                        $metaArgs = explode(",", preg_match("/" . $match . "\\((.*)\\)" . "/u", $metadataRule->type)[1]);
+                    	preg_match("/" . $match . "\\((.*)\\)" . "/u", $metadataRule->type, $matches);
+                        $metaArgs = explode(",", $matches[1]);
                         $str = "";
                         for ($index = 0; $index < count($args); $index++) {
                             if ($args[$index] != null) {
@@ -1725,7 +1737,7 @@ class Arabic
                 preg_match_all("/" . CachedData::RulesOfRecitationRegEx()[$count]->attributes()["match"] . "/u", $arabicString, $matches, PREG_OFFSET_CAPTURE | PREG_SET_ORDER);
                 for ($matchIndex = 0; $matchIndex < count($matches); $matchIndex++) {
                     for ($subCount = 0; $subCount < count(explode(";", CachedData::RulesOfRecitationRegEx()[$count]->attributes()["evaluator"])); $subCount++) {
-                        if (explode(";", CachedData::RulesOfRecitationRegEx()[$count]->attributes()["evaluator"])[$subCount] != null && (strlen($matches[$matchIndex][$subCount + 1][0]) != 0 || array_search(explode(";", CachedData::RulesOfRecitationRegEx()[$count]->attributes()["evaluator"])[$subCount], Arabic::$AllowZeroLength) !== false)) {
+                        if (explode(";", CachedData::RulesOfRecitationRegEx()[$count]->attributes()["evaluator"])[$subCount] != null && (isset($matches[$matchIndex][$subCount + 1]) && strlen($matches[$matchIndex][$subCount + 1][0]) != 0 || array_search(explode(";", CachedData::RulesOfRecitationRegEx()[$count]->attributes()["evaluator"])[$subCount], Arabic::$AllowZeroLength) !== false)) {
                             array_push($metadataList, new RuleMetadata(mb_strlen(substr($arabicString, 0, $matches[$matchIndex][$subCount + 1][1])), mb_strlen($matches[$matchIndex][$subCount + 1][0]), explode(";", CachedData::RulesOfRecitationRegEx()[$count]->attributes()["evaluator"])[$subCount]));
                         }
                     }
@@ -2045,7 +2057,7 @@ class DocBuilder
 	                if (strlen($matches[$count][1]) != 0) {
 	                	array_push($renderer->Items, new RenderItem(RenderTypes::eText, [new RenderText(RenderDisplayClass::eLTR, $matches[$count][1])]));
 	            	}
-	                if (strlen($matches[$count][3]) != 0) {
+	                if (isset($matches[$count][3]) && strlen($matches[$count][3]) != 0) {
 	                    $renderer->Items = array_merge($renderer->Items, DocBuilder::TextFromReferences($matches[$count][3], $schemetype, $scheme, $translationindex)->Items);
 	                }
 	            }

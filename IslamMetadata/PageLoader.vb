@@ -235,13 +235,21 @@ Public Class Arabic
         End If
         Return String.Empty
     End Function
+    Shared _Letters As Dictionary(Of Char, Integer)
+    Public Shared Function GetSortedLetters(Scheme As String) As Dictionary(Of Char, Integer)
+        If _Letters Is Nothing Then
+            Dim Letters(ArabicData.ArabicLetters.Length - 1) As ArabicData.ArabicSymbol
+            ArabicData.ArabicLetters.CopyTo(Letters, 0)
+            Array.Sort(Letters, New StringLengthComparer(Scheme))
+            For Count = 0 To Letters.Length - 1
+                _Letters.Add(Letters(Count).Symbol, Count)
+            Next
+        End If
+        Return _Letters
+    End Function
     Public Shared Function TransliterateToRoman(ByVal ArabicString As String, Scheme As String) As String
         Dim RomanString As String = String.Empty
         Dim Count As Integer
-        Dim Index As Integer
-        Dim Letters(ArabicData.ArabicLetters.Length - 1) As ArabicData.ArabicSymbol
-        ArabicData.ArabicLetters.CopyTo(Letters, 0)
-        Array.Sort(Letters, New StringLengthComparer(Scheme))
         For Count = 0 To ArabicString.Length - 1
             If ArabicString(Count) = "\" Then
                 Count += 1
@@ -255,17 +263,13 @@ Public Class Arabic
                     RomanString += ArabicString(Count)
                 End If
             Else
-                For Index = 0 To Letters.Length - 1
-                    If ArabicString(Count) = Letters(Index).Symbol Then
-                        If GetSchemeSpecialFromMatch(Letters(Index).Symbol, False) <> -1 Then
-                            RomanString += GetSchemeSpecialValue(GetSchemeSpecialFromMatch(Letters(Index).Symbol, False), If(Scheme = String.Empty, "ExtendedBuckwalter", Scheme))
-                        Else
-                            RomanString += GetSchemeValueFromSymbol(Letters(Index), If(Scheme = String.Empty, "ExtendedBuckwalter", Scheme))
-                        End If
-                        Exit For
+                If GetSortedLetters(Scheme).ContainsKey(ArabicString(Count)) Then
+                    If GetSchemeSpecialFromMatch(ArabicString(Count), False) <> -1 Then
+                        RomanString += GetSchemeSpecialValue(GetSchemeSpecialFromMatch(ArabicString(Count), False), If(Scheme = String.Empty, "ExtendedBuckwalter", Scheme))
+                    Else
+                        RomanString += GetSchemeValueFromSymbol(ArabicData.ArabicLetters(ArabicData.FindLetterBySymbol(ArabicString(Count))), If(Scheme = String.Empty, "ExtendedBuckwalter", Scheme))
                     End If
-                Next
-                If Index = Letters.Length Then
+                Else
                     RomanString += ArabicString(Count)
                 End If
             End If
