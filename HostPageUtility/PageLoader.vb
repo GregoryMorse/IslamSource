@@ -2771,7 +2771,7 @@ Public Class RenderArray
         Dim Count As Integer
         Dim JSFuncs As New List(Of String())
         Dim OutArray As Object() = Output
-        If Output.Length = 0 Then Return JSFuncs.ToArray()
+        If Output Is Nothing OrElse Output.Length = 0 Then Return JSFuncs.ToArray()
         JSFuncs.Add(CType(OutArray(0), String()))
         For Count = 2 To OutArray.Length - 1
             If TypeOf OutArray(Count) Is Object() Then
@@ -2833,7 +2833,7 @@ Public Class RenderArray
         Dim BaseTabs As String = Utility.MakeTabString(TabCount)
         Dim Count As Integer
         Dim Index As Integer
-        If Output.Length = 0 Then Return
+        If Output Is Nothing OrElse Output.Length = 0 Then Return
         Dim OutArray As Object() = Output
         writer.Write(vbCrLf + BaseTabs)
         writer.WriteBeginTag("table")

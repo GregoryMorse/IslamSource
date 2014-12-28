@@ -309,7 +309,6 @@
 			<static name="timeparticles" description="IslamSource_Text" onrender="Arabic::DisplayTimeParticles"></static>
 			<static name="prepositions" description="IslamSource_Text" onrender="Arabic::DisplayPrepositions"></static>
 			<static name="particles" description="IslamSource_Text" onrender="Arabic::DisplayParticles"></static>
-			<static name="otherparticles" description="IslamSource_Text" onrender="Arabic::DisplayOtherParticles"></static>
 			<static name="nouns" description="IslamSource_Text" onrender="Arabic::DisplayNouns"></static>
 			<static name="verbs" description="IslamSource_Text" onrender="Arabic::DisplayVerbs"></static>
 			<static name="translitschemetext" description="IslamSource_Text" onrender="Arabic::GetTransliterationSchemeTable"></static>

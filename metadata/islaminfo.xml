@@ -324,102 +324,102 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<particle text="maA^ &lt;il~aA" id="NothingBut" grammar="time"></particle>
 			<particle text="&gt;al~aA" basis="&gt;ano laA" id="ThatNotSoAsNotToMayNot" grammar="time,acc"></particle>
 
-			<particle text="bimaA" id="WithWhatBecause"></particle>
-			<particle text="Eam~aA" id="AboutWhat"></particle>
-			<particle text="fiymaA" id="InWhat"></particle>
-			<particle text="kamaA" id="AsJustAs"></particle>
-			<particle text="limaA" id="ForWhatForThatWhich"></particle>
-			<particle text="mim~aA" basis="mino maA" id="OutOfWhat"></particle>
-			<particle text="&gt;am~aA" id="AsToAsFor"></particle>
-			<particle text="&lt;im~aA" id="IfEitherOr"></particle>
-			<particle text="&gt;an~amaA" id="That"></particle>
-			<particle text="&lt;in~amaA" id="VerilyIsBut"></particle>
-			<particle text="ka&gt;an~amaA" id="AsIf"></particle>
-			<particle text="kul~amaA" id="Whenever"></particle>
-			<particle text="bi" id="WithInFrom" grammar="pos"></particle>
-			<particle text="Eano" id="FromAbout" grammar="pos"></particle>
-			<particle text="fiY" id="In" grammar="pos"></particle>
-			<particle text="ka" id="AsLikeSimilarity" grammar="pos"></particle>
-			<particle text="li" id="ForTo" grammar="pos"></particle>
-			<particle text="la" id="For" grammar="prespos"></particle>
-			<particle text="mino mina" id="From" grammar="pos"></particle>
-			<particle text="&lt;ilaY" id="ToTowardsUpToNotIncluding" grammar="pos"></particle>
-			<particle text="ta ti" id="ByOfOath" grammar="pos"></particle>
-			<particle text="Hat~aY`" id="Until" grammar="pos|acc"></particle>
-			<particle text="EalaY" id="UponOn" grammar="pos"></particle>
-			<particle text="maEa" id="With" grammar="pos"></particle>
-			<particle text="wa" id="AndByOfOath" grammar="pos"></particle>
+			<particle text="bimaA" id="WithWhatBecause" grammar="prep"></particle>
+			<particle text="Eam~aA" id="AboutWhat" grammar="prep"></particle>
+			<particle text="fiymaA" id="InWhat" grammar="prep"></particle>
+			<particle text="kamaA" id="AsJustAs" grammar="prep"></particle>
+			<particle text="limaA" id="ForWhatForThatWhich" grammar="prep"></particle>
+			<particle text="mim~aA" basis="mino maA" id="OutOfWhat" grammar="prep"></particle>
+			<particle text="&gt;am~aA" id="AsToAsFor" grammar="prep"></particle>
+			<particle text="&lt;im~aA" id="IfEitherOr" grammar="prep"></particle>
+			<particle text="&gt;an~amaA" id="That" grammar="prep"></particle>
+			<particle text="&lt;in~amaA" id="VerilyIsBut" grammar="prep"></particle>
+			<particle text="ka&gt;an~amaA" id="AsIf" grammar="prep"></particle>
+			<particle text="kul~amaA" id="Whenever" grammar="prep"></particle>
+			<particle text="bi" id="WithInFrom" grammar="prep,pos"></particle>
+			<particle text="Eano" id="FromAbout" grammar="prep,pos"></particle>
+			<particle text="fiY" id="In" grammar="prep,pos"></particle>
+			<particle text="ka" id="AsLikeSimilarity" grammar="prep,pos"></particle>
+			<particle text="li" id="ForTo" grammar="prep,pos"></particle>
+			<particle text="la" id="For" grammar="prep,prespos"></particle>
+			<particle text="mino mina" id="From" grammar="prep,pos"></particle>
+			<particle text="&lt;ilaY" id="ToTowardsUpToNotIncluding" grammar="prep,pos"></particle>
+			<particle text="ta ti" id="ByOfOath" grammar="prep,pos"></particle>
+			<particle text="Hat~aY`" id="Until" grammar="prep,pos|acc"></particle>
+			<particle text="EalaY" id="UponOn" grammar="prep,pos"></particle>
+			<particle text="maEa" id="With" grammar="prep,pos"></particle>
+			<particle text="wa" id="AndByOfOath" grammar="prep,pos"></particle>
 			
-			<particle text="&lt;in~a" id="VerilyTrulySurely" grammar="acc"></particle>
-			<particle text="&gt;an~a" id="ThatSurelyVerily" grammar="acc"></particle>
-			<particle text="ka&gt;an~a" id="AsIfAsThough" grammar="acc"></particle>
-			<particle text="la`kin~a" id="ButHoweverOnTheContraryActually" grammar="acc"></particle>
-			<particle text="la`kino" id="ButHowever" grammar="acc"></particle>
-			<particle text="laEal~a" id="PerhapsMayBeSoAsTo" grammar="acc"></particle>
-			<particle text="layota" id="WishIfOnly" grammar="acc"></particle>
+			<particle text="&lt;in~a" id="VerilyTrulySurely" grammar="particle,acc"></particle>
+			<particle text="&gt;an~a" id="ThatSurelyVerily" grammar="particle,acc"></particle>
+			<particle text="ka&gt;an~a" id="AsIfAsThough" grammar="particle,acc"></particle>
+			<particle text="la`kin~a" id="ButHoweverOnTheContraryActually" grammar="particle,acc"></particle>
+			<particle text="la`kino" id="ButHowever" grammar="particle,acc"></particle>
+			<particle text="laEal~a" id="PerhapsMayBeSoAsTo" grammar="particle,acc"></particle>
+			<particle text="layota" id="WishIfOnly" grammar="particle,acc"></particle>
 
-			<particle text="&gt;ano" id="ThatTo" grammar="acc"></particle>
-			<particle text="&lt;iy~aA" id="AloneOnly"></particle>
-			<particle text="EasaY" id="PossiblyPerhaps"></particle>
-			<particle text="lam~aA mataY`" id="When"></particle>
-			<particle text="lawo" id="If"></particle>
-			<particle text="ya` ya`^&gt;ay~uhaA" id="O"></particle>
+			<particle text="&gt;ano" id="ThatTo" grammar="particle,acc"></particle>
+			<particle text="&lt;iy~aA" id="AloneOnly" grammar="particle"></particle>
+			<particle text="EasaY" id="PossiblyPerhaps" grammar="particle"></particle>
+			<particle text="lam~aA mataY`" id="When" grammar="particle"></particle>
+			<particle text="lawo" id="If" grammar="particle"></particle>
+			<particle text="ya` ya`^&gt;ay~uhaA" id="O" grammar="particle"></particle>
 
-			<particle text="qado fEl" id="HasSurely"></particle>
-			<particle text="sa fEl" id="WillNearFuture"></particle>
-			<particle text="sawofa fEl" id="WillFuture"></particle>
-			<particle text="la fEl n~a" id="WillSurely"></particle>
-			<particle text="laqado fEl" id="Indeed"></particle>
-			<particle text="la" id="IndeedSurely"></particle>
-			<particle text="li lo &gt;amoro" id="LetDo"></particle>
-			<particle text="{lo" id="The"></particle>
-			<particle text="&gt;amo" id="Or"></particle>
-			<particle text="&gt;awo" id="Or"></particle>
-			<particle text="baEoDo" id="SomeOfAfter" grammar="pos"></particle>
-			<particle text="kul~u kilaA" id="EveryoneAll"></particle>
+			<particle text="qado fEl" id="HasSurely" grammar="particle"></particle>
+			<particle text="sa fEl" id="WillNearFuture" grammar="particle"></particle>
+			<particle text="sawofa fEl" id="WillFuture" grammar="particle"></particle>
+			<particle text="la fEl n~a" id="WillSurely" grammar="particle"></particle>
+			<particle text="laqado fEl" id="Indeed" grammar="particle"></particle>
+			<particle text="la" id="IndeedSurely" grammar="particle"></particle>
+			<particle text="li lo &gt;amoro" id="LetDo" grammar="particle"></particle>
+			<particle text="{lo" id="The" grammar="particle"></particle>
+			<particle text="&gt;amo" id="Or" grammar="particle"></particle>
+			<particle text="&gt;awo" id="Or" grammar="particle"></particle>
+			<particle text="baEoDo" id="SomeOfAfter" grammar="particle,pos"></particle>
+			<particle text="kul~u kilaA" id="EveryoneAll" grammar="particle"></particle>
 
-			<particle text="*uw *aA *iy" id="EndowedWithOwner"></particle>			
-			<particle text="*aAt" id="EndowedWithOwner"></particle>			
-			<particle text="&gt;uwoluwaA^ &gt;uwoliy" id="PeopleOfOwnersOf"></particle>			
-			<particle text="&gt;ahol &gt;ahaAlK" id="PeopleOfRelatives"></particle>			
-			<particle text="&apos;aAl" id="FamilyRelativesPeople"></particle>			
-			<particle text="&gt;alaA" id="LoDoNotWillNot"></particle>			
-			<particle text="niEoma" id="WhatAnExcellent"></particle>			
-			<particle text="bi}sa" id="WhatAnEvil"></particle>			
-			<particle text="bi}samaA" id="EvilIsThatWhich"></particle>			
-			<particle text="mivol" id="SomethingSimilar"></particle>			
-			<particle text="maval &gt;amovaAl" id="Similitude"></particle>			
-			<particle text="mim~ano" basis="mino mano" id="ThanTheOneWhoFromThoseWho"></particle>			
+			<particle text="*uw *aA *iy" id="EndowedWithOwner" grammar="particle"></particle>			
+			<particle text="*aAt" id="EndowedWithOwner" grammar="particle"></particle>			
+			<particle text="&gt;uwoluwaA^ &gt;uwoliy" id="PeopleOfOwnersOf" grammar="particle"></particle>			
+			<particle text="&gt;ahol &gt;ahaAlK" id="PeopleOfRelatives" grammar="particle"></particle>			
+			<particle text="&apos;aAl" id="FamilyRelativesPeople" grammar="particle"></particle>			
+			<particle text="&gt;alaA" id="LoDoNotWillNot" grammar="particle"></particle>			
+			<particle text="niEoma" id="WhatAnExcellent" grammar="particle"></particle>			
+			<particle text="bi}sa" id="WhatAnEvil" grammar="particle"></particle>			
+			<particle text="bi}samaA" id="EvilIsThatWhich" grammar="particle"></particle>			
+			<particle text="mivol" id="SomethingSimilar" grammar="particle"></particle>			
+			<particle text="maval &gt;amovaAl" id="Similitude" grammar="particle"></particle>			
+			<particle text="mim~ano" basis="mino mano" id="ThanTheOneWhoFromThoseWho" grammar="particle"></particle>			
 
-			<particle text="Hay~a" id="Until" grammar="pos"></particle>
+			<particle text="Hay~a" id="Until" grammar="particle,pos"></particle>
 
-			<particle text="Hawola" id="Around" grammar="pos"></particle>
-			<particle text="gayoru min duwna" id="OtherThan" grammar="pos"></particle>
-			<particle text="ladaY laduno" id="FromWith" grammar="pos"></particle>
+			<particle text="Hawola" id="Around" grammar="particle,pos"></particle>
+			<particle text="gayoru min duwna" id="OtherThan" grammar="particle,pos"></particle>
+			<particle text="ladaY laduno" id="FromWith" grammar="particle,pos"></particle>
 
-			<particle text="waraA^&apos;a" id="Behind" grammar="pos"></particle>
-			<particle text="fawoqa" id="Above" grammar="pos"></particle>
-			<particle text="Einda" id="WithNear" grammar="pos"></particle>
+			<particle text="waraA^&apos;a" id="Behind" grammar="particle,pos"></particle>
+			<particle text="fawoqa" id="Above" grammar="particle,pos"></particle>
+			<particle text="Einda" id="WithNear" grammar="particle,pos"></particle>
 
-			<particle text="SabaAHFA" id="Morning" grammar="pos"></particle>
-			<particle text="baEoda" id="After" grammar="pos"></particle>
-			<particle text="bukorapF" id="EarlyMorning" grammar="pos"></particle>
-			<particle text="{loyawoma" id="Today" grammar="pos"></particle>
-			<particle text="saHarFA" id="EarlyMorning" grammar="pos"></particle>
-			<particle text="&gt;abadFA" id="Always" grammar="pos"></particle>
+			<particle text="SabaAHFA" id="Morning" grammar="particle,pos"></particle>
+			<particle text="baEoda" id="After" grammar="particle,pos"></particle>
+			<particle text="bukorapF" id="EarlyMorning" grammar="particle,pos"></particle>
+			<particle text="{loyawoma" id="Today" grammar="particle,pos"></particle>
+			<particle text="saHarFA" id="EarlyMorning" grammar="particle,pos"></particle>
+			<particle text="&gt;abadFA" id="Always" grammar="particle,pos"></particle>
 			
-			<particle text="li" id="SoThat" grammar="acc"></particle>
-			<particle text="kayo likayo" id="SoThat" grammar="acc"></particle>
-			<particle text="li&gt;ano" id="ForThat" grammar="acc"></particle>
+			<particle text="li" id="SoThat" grammar="particle,acc"></particle>
+			<particle text="kayo likayo" id="SoThat" grammar="particle,acc"></particle>
+			<particle text="li&gt;ano" id="ForThat" grammar="particle,acc"></particle>
 			
-			<particle text="li lo" id="Should" grammar="prespos"></particle>
-			<particle text="laA" id="Negation" grammar="prespos"></particle>
-			<particle text="&lt;ino" id="If" grammar="prespos"></particle>
-			<particle text="lam~a" id="NotYetWhen" grammar="prespos"></particle>
-			<particle text="&gt;alam~aA" id="" grammar="prespos"></particle>
-			<particle text="&gt;alamo" id="" grammar="prespos"></particle>
+			<particle text="li lo" id="Should" grammar="particle,prespos"></particle>
+			<particle text="laA" id="Negation" grammar="particle,prespos"></particle>
+			<particle text="&lt;ino" id="If" grammar="particle,prespos"></particle>
+			<particle text="lam~a" id="NotYetWhen" grammar="particle,prespos"></particle>
+			<particle text="&gt;alam~aA" id="" grammar="particle,prespos"></particle>
+			<particle text="&gt;alamo" id="" grammar="particle,prespos"></particle>
 			
-			<particle text="&gt;ay~umaA" id="Whichever" grammar=""></particle>
+			<particle text="&gt;ay~umaA" id="Whichever" grammar="particle"></particle>
 		</particles>
 		<nouns>
 			<noun text="ha`*aA" id="This" grammar="proxdemo,ms,nom|pos|acc"></noun>
