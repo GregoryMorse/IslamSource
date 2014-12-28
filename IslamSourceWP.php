@@ -249,7 +249,7 @@ class ArabicData
         ArabicData::$_Ranges = array();
         ArabicData::$_DecData = array();
         ArabicData::$_Names = array();
-        for ($count = 0; $count < Count($Strs); $count++) {
+        for ($count = 0; $count < count($Strs) - 1; $count++) {
             $Vals = explode(";", $Strs[$count]);
             //All symbol categories not needed
             if (($Vals[2][0] == "S" && $Vals[4] != "ON") || hexdec($Vals[0]) >= 0x10000) { continue; }
@@ -261,11 +261,11 @@ class ArabicData
                 if (substr($CombData[0], 0, 1) == "<" && substr($CombData[0], -1) == ">") {
                     $Data->JoiningStyle = trim($CombData[0], "<>");
                     $Data->Chars = array();
-                    for ($subcount = 0; $subcount < count($CombData) - 2; $subcount++) {
+                    for ($subcount = 0; $subcount < count($CombData) - 1; $subcount++) {
                         $Data->Chars[$subcount] = mb_convert_encoding('&#x' . $CombData[$subcount + 1] . ';', 'UTF-8', 'HTML-ENTITIES');
                     }
                     ArabicData::$_DecData[$Ch] = $Data;
-                    if (count($CombData.Length) == 2) {
+                    if (count($CombData) == 2) {
                         if (!array_key_exists($Data->Chars[0], ArabicData::$_DecData)) { $NewData = new DecData; $NewData->Shapes = [null, null, null, null]; ArabicData::$_DecData[$Data->Chars[0]] = $NewData; }
                         $ShapeData = ArabicData::$_DecData[$Data->Chars[0]];
                         if (array_search($Data->JoiningStyle, ArabicData::$ShapePositions) !== false) { $ShapeData->Shapes[array_search($Data->JoiningStyle, ArabicData::$ShapePositions)] = $Ch; }
@@ -1099,6 +1099,30 @@ class CachedData
         }
         return CachedData::$_RecitationSpecialSymbolsNotStop;
     }
+    static $_ArabicCamelCaseDict = null;
+    static $_ArabicComboCamelCaseDict = null;
+    public static function ArabicCamelCaseDict()
+    {
+        if (CachedData::$_ArabicCamelCaseDict == null) {
+            CachedData::$_ArabicCamelCaseDict = array();
+            for ($count = 0; $count < count(ArabicData::ArabicLetters()); $count++) {
+                if (substr(ArabicData::ArabicLetters()[$count]->UnicodeName, 0, 1) != "<") CachedData::$_ArabicCamelCaseDict[ArabicData::ToCamelCase(ArabicData::ArabicLetters()[$count]->UnicodeName)] = $count;
+            }
+        }
+        return CachedData::$_ArabicCamelCaseDict;
+    }
+    public static function ArabicComboCamelCaseDict()
+    {
+        if (CachedData::$_ArabicComboCamelCaseDict == null) {
+            CachedData::$_ArabicComboCamelCaseDict = array();
+            for ($count = 0; $count < count(ArabicData::ArabicCombos()); $count++) {
+            	for ($subcount = 0; $subcount < count(ArabicData::ArabicCombos()[$count]->UnicodeName); $subcount++) {
+                	if (ArabicData::ArabicCombos()[$count]->UnicodeName[$subcount] != null && strlen(ArabicData::ArabicCombos()[$count]->UnicodeName[$subcount]) != 0) CachedData::$_ArabicComboCamelCaseDict[ArabicData::ToCamelCase(ArabicData::ArabicCombos()[$count]->UnicodeName[$subcount])] = $count;
+            	}
+            }
+        }
+        return CachedData::$_ArabicComboCamelCaseDict;
+    }
     public static function TranslateRegEx($value, $bAll)
     {
         return preg_replace_callback("/\\{(.*?)\\}/u", function($matches) use($bAll) {
@@ -1139,11 +1163,11 @@ class CachedData
             if (preg_match("/0x([0-9a-fA-F]{4})/u", $matches[1]) === 1) {
                 return $bAll ? ArabicData::MakeUniRegEx(mb_convert_encoding('&#x' . substr($matches[1], 2) . ';', 'UTF-8', 'HTML-ENTITIES')) : mb_convert_encoding('&#x' . substr($matches[1], 2) . ';', 'UTF-8', 'HTML-ENTITIES');
             }
-            for ($count = 0; $count < count(ArabicData::ArabicLetters()); $count++) {
-                if ($matches[1] == ArabicData::ToCamelCase(ArabicData::ArabicLetters()[$count]->UnicodeName)) { return $bAll ? ArabicData::MakeUniRegEx(ArabicData::ArabicLetters()[$count]->Symbol) : ArabicData::ArabicLetters()[$count]->Symbol; }
+            if (array_key_exists($matches[1], CachedData::ArabicCamelCaseDict())) {
+                return $bAll ? ArabicData::MakeUniRegEx(ArabicData::ArabicLetters()[CachedData::ArabicCamelCaseDict()[$matches[1]]]->Symbol) : ArabicData::ArabicLetters()[CachedData::ArabicCamelCaseDict()[$matches[1]]]->Symbol;
             }
-            for ($count = 0; $count < count(ArabicData::ArabicCombos()); $count++) {
-                if (array_search($matches[1], array_map(function($str) { return ArabicData::ToCamelCase($str); }, ArabicData::ArabicCombos()[$count]->UnicodeName)) !== false) return $bAll ? ArabicData::MakeUniRegEx(count(ArabicData::ArabicCombos()[$count]->Shaping) == 1 ? ArabicData::ArabicCombos()[$count]->Shaping[0] : implode(ArabicData::ArabicCombos()[$count]->Symbol)) : (count(ArabicData::ArabicCombos()[$count]->Shaping) == 1 ? ArabicData::ArabicCombos()[$count]->Shaping[0] : implode(ArabicData::ArabicCombos()[$count]->Symbol));
+            if (array_key_exists($matches[1], CachedData::ArabicComboCamelCaseDict())) {
+                return $bAll ? ArabicData::MakeUniRegEx(count(ArabicData::ArabicCombos()[CachedData::ArabicComboCamelCaseDict()[$matches[1]]]->Shaping) == 1 ? ArabicData::ArabicCombos()[CachedData::ArabicComboCamelCaseDict()[$matches[1]]]->Shaping[0] : implode(ArabicData::ArabicCombos()[CachedData::ArabicComboCamelCaseDict()[$matches[1]]]->Symbol)) : (count(ArabicData::ArabicCombos()[CachedData::ArabicComboCamelCaseDict()[$matches[1]]]->Shaping) == 1 ? ArabicData::ArabicCombos()[CachedData::ArabicComboCamelCaseDict()[$matches[1]]]->Shaping[0] : implode(ArabicData::ArabicCombos()[CachedData::ArabicComboCamelCaseDict()[$matches[1]]]->Symbol));
             }
            	//{0} ignore
             return $matches[0];
@@ -1507,7 +1531,7 @@ class Arabic
                 for ($index = 0; $index < count($letters); $index++) {
                     if (mb_substr($arabicString, $count, 1) == $letters[$index]->Symbol) {
                         if (Arabic::GetSchemeSpecialFromMatch($letters[$index]->Symbol, $scheme, false) != -1) {
-                            $romanString .= Arabic::GetSchemeSpecialValue(Arabic::GetSchemeSpecialFromMatch($letters[$index]->Symbol, $scheme, false), $scheme);
+                            $romanString .= Arabic::GetSchemeSpecialValue(Arabic::GetSchemeSpecialFromMatch($letters[$index]->Symbol, $scheme == "" ? "ExtendedBuckwalter" : $scheme, false), $scheme == "" ? "ExtendedBuckwalter" : $scheme);
                         } else {
                             $romanString .= Arabic::GetSchemeValueFromSymbol($letters[$index], $scheme == "" ? "ExtendedBuckwalter" : $scheme);
                         }
@@ -2164,31 +2188,33 @@ if (array_key_exists("Char", $_GET)) {
 } elseif (array_key_exists("Cat", $_GET)) {
 	if (!getcacheitem('http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'], false)) {
 		$json = "";
-		for ($count = 0; $count < count(CachedData::IslamData()->lists->category->children()); $count++) {
-			$out = "";
-			$renderer = DocBuilder::BuckwalterTextFromReferences(null, null, null, CachedData::IslamData()->lists->category->children()[$count]["text"], null, 0);
-			for ($matchcount = 0; $matchcount < count($renderer->Items); $matchcount++) {
-				$val = "";
-				$id = "";
-				for ($textcount = 0; $textcount < count($renderer->Items[$matchcount]->textitems); $textcount++) {
-					if ($renderer->Items[$matchcount]->textitems[$textcount]->displayClass == RenderDisplayClass::eNested) {
-						for ($nestcount = 0; $nestcount < count($renderer->Items[$matchcount]->textitems[$textcount]->Text); $nestcount++) {
-							for ($nesttextcount = 0; $nesttextcount < count($renderer->Items[$matchcount]->textitems[$textcount]->Text[$nestcount]->textitems); $nesttextcount++) {
-								if ($renderer->Items[$matchcount]->textitems[$textcount]->Text[$nestcount]->textitems[$nesttextcount]->font != "") {
-									$val .= "{\"value\":" . json_encode(explode("|", $id)[1]) . ", \"font\": \"" . $renderer->Items[$matchcount]->textitems[$textcount]->Text[$nestcount]->textitems[$nesttextcount]->font . "\", \"char\": \"" . bin2hex(mb_convert_encoding($renderer->Items[$matchcount]->textitems[$textcount]->Text[$nestcount]->textitems[$nesttextcount]->Text, 'UCS-4BE', 'UTF-8')) . "\"},";
-								} else if ($renderer->Items[$matchcount]->textitems[$textcount]->Text[$nestcount]->textitems[$nesttextcount]->displayClass == RenderDisplayClass::eTag) {
-									$id = $renderer->Items[$matchcount]->textitems[$textcount]->Text[$nestcount]->textitems[$nesttextcount]->Text;
+		for ($count = 0; $count < count(CachedData::IslamData()->lists->children()); $count++) {
+			for ($subcount = 0; $subcount < count(CachedData::IslamData()->lists->children()[$count]->children()); $subcount++) {
+				$out = "";
+				$renderer = DocBuilder::BuckwalterTextFromReferences(null, TranslitScheme::Literal, "", CachedData::IslamData()->lists->children()[$count]->children()[$subcount]->attributes()["text"], null, 0);
+				for ($matchcount = 0; $matchcount < count($renderer->Items); $matchcount++) {
+					$val = "";
+					$id = "";
+					for ($textcount = 0; $textcount < count($renderer->Items[$matchcount]->textitems); $textcount++) {
+						if ($renderer->Items[$matchcount]->textitems[$textcount]->displayClass == RenderDisplayClass::eNested) {
+							for ($nestcount = 0; $nestcount < count($renderer->Items[$matchcount]->textitems[$textcount]->Text); $nestcount++) {
+								for ($nesttextcount = 0; $nesttextcount < count($renderer->Items[$matchcount]->textitems[$textcount]->Text[$nestcount]->textitems); $nesttextcount++) {
+									if ($renderer->Items[$matchcount]->textitems[$textcount]->Text[$nestcount]->textitems[$nesttextcount]->font != "") {
+										$val .= "{\"value\":" . json_encode(explode("|", $id)[1]) . ", \"font\": \"" . $renderer->Items[$matchcount]->textitems[$textcount]->Text[$nestcount]->textitems[$nesttextcount]->font . "\", \"char\": \"" . bin2hex(mb_convert_encoding($renderer->Items[$matchcount]->textitems[$textcount]->Text[$nestcount]->textitems[$nesttextcount]->Text, 'UCS-4BE', 'UTF-8')) . "\"},";
+									} else if ($renderer->Items[$matchcount]->textitems[$textcount]->Text[$nestcount]->textitems[$nesttextcount]->displayClass == RenderDisplayClass::eTag) {
+										$id = $renderer->Items[$matchcount]->textitems[$textcount]->Text[$nestcount]->textitems[$nesttextcount]->Text;
+									}
 								}
 							}
 						}
 					}
+					if ($val !== "") {
+						$val = "{\"text\": \"" . Utility::LoadResourceString("IslamInfo_" . explode("|", $id)[0]) . "\", \"values\":[" . substr($val, 0, -1) . "]}";
+					}
+					if ($val !== "") $out .= (($out !== "") ? "," : "") . $val;
 				}
-				if ($val !== "") {
-					$val = "{\"text\": \"" . Utility::LoadResourceString("IslamInfo_" . explode("|", $id)[0]) . "\", \"values\":[" . substr($val, 0, -1) . "]}";
-				}
-				if ($val !== "") $out .= (($out !== "") ? "," : "") . $val;
+				if ($out !== "") $json .= (($json !== "") ? "," : "") . "{\"text\": \"" . Utility::LoadResourceString("IslamInfo_" . (string)CachedData::IslamData()->lists->children()[$count]->children()[$subcount]->attributes()["id"]) . "\", \"menu\":[" . $out . "]}";
 			}
-			if ($out !== "") $json .= (($json !== "") ? "," : "") . "{\"text\": \"" . Utility::LoadResourceString("IslamInfo_" . (string)CachedData::IslamData()->lists->category->children()[$count]["id"]) . "\", \"menu\":[" . $out . "]}";
 		}
 		$json = "[" . $json . "]";
 		echo $json;
@@ -2239,7 +2265,7 @@ function is_shortcode() {
     global $wp_query;	
     $posts = $wp_query->posts;
     foreach ($posts as $post){
-		$post->post_content = RenderArray::DoRender(DocBuilder::NormalTextFromReferences(null, $post->post_content, null, null, 0)->Items);
+		$post->post_content = RenderArray::DoRender(DocBuilder::NormalTextFromReferences(null, $post->post_content, TranslitScheme::Literal, "", 0)->Items);
     }
 }
 add_action( 'wp', 'is_shortcode' );

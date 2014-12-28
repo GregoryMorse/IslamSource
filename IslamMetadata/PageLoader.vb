@@ -282,7 +282,7 @@ Public Class Arabic
                 For Index = 0 To Letters.Length - 1
                     If ArabicString(Count) = Letters(Index).Symbol Then
                         If GetSchemeSpecialFromMatch(Letters(Index).Symbol, Scheme, False) <> -1 Then
-                            RomanString += GetSchemeSpecialValue(GetSchemeSpecialFromMatch(Letters(Index).Symbol, Scheme, False), Scheme)
+                            RomanString += GetSchemeSpecialValue(GetSchemeSpecialFromMatch(Letters(Index).Symbol, If(Scheme = String.Empty, "ExtendedBuckwalter", Scheme), False), If(Scheme = String.Empty, "ExtendedBuckwalter", Scheme))
                         Else
                             RomanString += GetSchemeValueFromSymbol(Letters(Index), If(Scheme = String.Empty, "ExtendedBuckwalter", Scheme))
                         End If
@@ -2401,6 +2401,32 @@ Public Class CachedData
             Return _RecitationSpecialSymbolsNotStop
         End Get
     End Property
+    Shared _ArabicCamelCaseDict As Dictionary(Of String, Integer)
+    Shared _ArabicComboCamelCaseDict As Dictionary(Of String, Integer)
+    Public Shared ReadOnly Property ArabicCamelCaseDict As Dictionary(Of String, Integer)
+        Get
+            If _ArabicCamelCaseDict Is Nothing Then
+                _ArabicCamelCaseDict = New Dictionary(Of String, Integer)
+                For Count = 0 To ArabicData.ArabicLetters.Length - 1
+                    If Not ArabicData.ArabicLetters(Count).UnicodeName.StartsWith("<") Then _ArabicCamelCaseDict.Add(ArabicData.ToCamelCase(ArabicData.ArabicLetters(Count).UnicodeName), Count)
+                Next
+            End If
+            Return _ArabicCamelCaseDict
+        End Get
+    End Property
+    Public Shared ReadOnly Property ArabicComboCamelCaseDict As Dictionary(Of String, Integer)
+        Get
+            If _ArabicComboCamelCaseDict Is Nothing Then
+                _ArabicComboCamelCaseDict = New Dictionary(Of String, Integer)
+                For Count = 0 To ArabicData.ArabicCombos.Length - 1
+                    For SubCount = 0 To ArabicData.ArabicCombos(Count).UnicodeName.Length - 1
+                        If Not ArabicData.ArabicCombos(Count).UnicodeName(SubCount) Is Nothing AndAlso ArabicData.ArabicCombos(Count).UnicodeName(SubCount).Length <> 0 Then _ArabicComboCamelCaseDict.Add(ArabicData.ToCamelCase(ArabicData.ArabicCombos(Count).UnicodeName(SubCount)), Count)
+                    Next
+                Next
+            End If
+            Return _ArabicComboCamelCaseDict
+        End Get
+    End Property
     Public Shared Function TranslateRegEx(Value As String, bAll As Boolean) As String
         Return System.Text.RegularExpressions.Regex.Replace(Value, "\{(.*?)\}",
             Function(Match As System.Text.RegularExpressions.Match)
@@ -2441,12 +2467,12 @@ Public Class CachedData
                 If System.Text.RegularExpressions.Regex.Match(Match.Groups(1).Value, "0x([0-9a-fA-F]{4})").Success Then
                     Return If(bAll, ArabicData.MakeUniRegEx(ChrW(Integer.Parse(Match.Groups(1).Value.Substring(2), System.Globalization.NumberStyles.HexNumber))), ChrW(Integer.Parse(Match.Groups(1).Value.Substring(2), System.Globalization.NumberStyles.HexNumber)))
                 End If
-                For Count = 0 To ArabicData.ArabicLetters.Length - 1
-                    If Match.Groups(1).Value = ArabicData.ToCamelCase(ArabicData.ArabicLetters(Count).UnicodeName) Then Return If(bAll, ArabicData.MakeUniRegEx(ArabicData.ArabicLetters(Count).Symbol), ArabicData.ArabicLetters(Count).Symbol)
-                Next
-                For Count = 0 To ArabicData.ArabicCombos.Length - 1
-                    If Array.FindIndex(ArabicData.ArabicCombos(Count).UnicodeName, Function(Str As String) Not Str Is Nothing AndAlso Match.Groups(1).Value = ArabicData.ToCamelCase(Str)) <> -1 Then Return If(bAll, ArabicData.MakeUniRegEx(If(ArabicData.ArabicCombos(Count).Shaping.Length = 1, ArabicData.ArabicCombos(Count).Shaping(0), String.Join(String.Empty, Array.ConvertAll(ArabicData.ArabicCombos(Count).Symbol, Function(Sym As Char) CStr(Sym))))), If(ArabicData.ArabicCombos(Count).Shaping.Length = 1, ArabicData.ArabicCombos(Count).Shaping(0), String.Join(String.Empty, Array.ConvertAll(ArabicData.ArabicCombos(Count).Symbol, Function(Sym As Char) CStr(Sym)))))
-                Next
+                If ArabicCamelCaseDict.ContainsKey(Match.Groups(1).Value) Then
+                    Return If(bAll, ArabicData.MakeUniRegEx(ArabicData.ArabicLetters(ArabicCamelCaseDict(Match.Groups(1).Value)).Symbol), ArabicData.ArabicLetters(ArabicCamelCaseDict(Match.Groups(1).Value)).Symbol)
+                End If
+                If ArabicComboCamelCaseDict.ContainsKey(Match.Groups(1).Value) Then
+                    Return If(bAll, ArabicData.MakeUniRegEx(If(ArabicData.ArabicCombos(ArabicComboCamelCaseDict(Match.Groups(1).Value)).Shaping.Length = 1, ArabicData.ArabicCombos(ArabicComboCamelCaseDict(Match.Groups(1).Value)).Shaping(0), String.Join(String.Empty, Array.ConvertAll(ArabicData.ArabicCombos(ArabicComboCamelCaseDict(Match.Groups(1).Value)).Symbol, Function(Sym As Char) CStr(Sym))))), If(ArabicData.ArabicCombos(ArabicComboCamelCaseDict(Match.Groups(1).Value)).Shaping.Length = 1, ArabicData.ArabicCombos(ArabicComboCamelCaseDict(Match.Groups(1).Value)).Shaping(0), String.Join(String.Empty, Array.ConvertAll(ArabicData.ArabicCombos(ArabicComboCamelCaseDict(Match.Groups(1).Value)).Symbol, Function(Sym As Char) CStr(Sym)))))
+                End If
                 '{0} ignore
                 Return Match.Value
             End Function)

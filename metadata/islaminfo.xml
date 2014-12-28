@@ -273,7 +273,7 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<particle text="layosa" id="Not" grammar="resp"></particle>
 			<particle text="layosati" id="Not" grammar="resp"></particle>
 			<particle text="balaY`" id="YesIndeed" grammar="resp"></particle>
-			<particle text="duwna" id="BesidesOtherThanLessThan" grammar="pos" grammar="resp"></particle>
+			<particle text="duwna" id="BesidesOtherThanLessThan" grammar="resp,pos"></particle>
 			<particle text="naEamo" id="Yes" grammar="resp"></particle>
 
 			<particle text="&lt;il~aA" id="ExceptUnlessIfNot" grammar="except"></particle>
