@@ -1506,7 +1506,9 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<noun text="&gt;amiynapu" grammar="f" id="Ameenah"></noun>
 			<noun text="maroyamu" grammar="f" id="Mary"></noun>
 			<noun text="faATimapu" grammar="f" id="Fatima"></noun>
+			<noun text="&apos;aAminapu" grammar="f" id="Amina"></noun>
 			<noun text="EaA^}i$apu" grammar="f" id="Aisha"></noun>
+			<noun text="siyaArapN" grammar="f" id="Car"></noun>
 			<noun text="EarabN" id="Arab"></noun>
 			<noun text="Earabiy~N" id="Arabic"></noun>
 			<noun text="&gt;amoriykaA" id="America"></noun>
@@ -2543,7 +2545,7 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 		<word text="Ealiy~N waliy {ll~ahi" id="AliFriendOfAllah"></word>
 		<word text="{ls~alaAmu Ealayoka ya`Ealiy~N {bonu muHam~adN &gt;ay~uhaA {lohaAdiy {ln~aqiy Ealayoka {ls~alaAmu" id="PeaceBeUponYouAliSonOfMuhammadOTheGuideThePureUponYouBePeace"></word>
 		<word text="ya`Ealiy~N {lo&gt;akobaru Sal~aY {ll~ahu Ealayoka" id="OTheGreatAliThePrayersOfAllahUponYou"></word>
-		<word text="ya`faTimapu Sal~aY {ll~ahu Ealayoki" id="OFatimahThePrayersOfAllahUponYou"></word>
+		<word text="ya`faATimapu Sal~aY {ll~ahu Ealayoki" id="OFatimahThePrayersOfAllahUponYou"></word>
 		<word text="ya`kariymu {holu {lobayotu" id="OGenerousPeopleOfTheHouse"></word> 
 		<word text="{ls~alaAmu Ealayoka ya`^&gt;abaA muHam~adK {loHasana {bona Ealiy~K" id="PeaceBeUponYouOFatherOfMuhammadHasanSonOfAli"></word>
 		<word text="ya`^&gt;abaA SaAliHi {lomahodiy" id="OFatherOfTheRighteousTheGuidedOne"></word>

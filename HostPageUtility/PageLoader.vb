@@ -1257,6 +1257,18 @@ Public Class ArabicData
         Public UnicodeName As String()
         Public Symbol As Char()
         Public Shaping() As Char
+        Public ReadOnly Property Connecting As Boolean
+            Get
+                If Not Shaping Is Nothing And Shaping.Length = 1 Then Return ArabicLetters(FindLetterBySymbol(Shaping(0))).Connecting
+                Return (Not Shaping Is Nothing AndAlso (Shaping(1) <> Nothing Or Shaping(3) <> Nothing))
+            End Get
+        End Property
+        Public ReadOnly Property Terminating As Boolean
+            Get
+                If Not Shaping Is Nothing And Shaping.Length = 1 Then Return ArabicLetters(FindLetterBySymbol(Shaping(0))).Terminating
+                Return (Not Shaping Is Nothing AndAlso ((Shaping(0) <> Nothing Or Shaping(1) <> Nothing) And Shaping(2) = Nothing And Shaping(3) = Nothing))
+            End Get
+        End Property
     End Structure
     Public Shared _ArabicCombos() As ArabicCombo
     Public Structure ArabicSymbol
@@ -1267,12 +1279,12 @@ Public Class ArabicData
         Public CombiningClass As Integer
         Public ReadOnly Property Connecting As Boolean
             Get
-                Return JoiningStyle = "initial" Or JoiningStyle = "medial" Or JoiningStyle = "C" Or Not Shaping Is Nothing AndAlso (Shaping(2) <> Nothing Or Shaping(3) <> Nothing)
+                Return JoiningStyle = "final" Or JoiningStyle = "medial" Or JoiningStyle = "C" Or (Not Shaping Is Nothing AndAlso (Shaping(1) <> Nothing Or Shaping(3) <> Nothing))
             End Get
         End Property
         Public ReadOnly Property Terminating As Boolean
             Get
-                Return JoiningStyle = "isolated" Or JoiningStyle = "final" Or JoiningStyle = "U" Or Not Shaping Is Nothing AndAlso (Shaping(2) = Nothing And Shaping(3) = Nothing)
+                Return JoiningStyle = "isolated" Or JoiningStyle = "final" Or JoiningStyle = "U" Or (Not Shaping Is Nothing AndAlso ((Shaping(0) <> Nothing Or Shaping(1) <> Nothing) And Shaping(2) = Nothing And Shaping(3) = Nothing))
             End Get
         End Property
     End Structure
@@ -1345,6 +1357,7 @@ Public Class ArabicData
             Else
                 Dim ArabicLet As New ArabicSymbol
                 ArabicLet.Symbol = ChrW(CInt(CharArr(Count)))
+                If Array.IndexOf(CausesJoining, ArabicLet.Symbol) <> -1 Then ArabicLet.JoiningStyle = "C"
                 If _DecData.ContainsKey(ChrW(CInt(CharArr(Count)))) Then
                     ArabicLet.JoiningStyle = _DecData.Item(ArabicLet.Symbol).JoiningStyle
                     ArabicLet.Shaping = _DecData.Item(ArabicLet.Symbol).Shapes
@@ -1845,7 +1858,7 @@ Public Class ArabicData
     Public Shared NeutralCategories As String() = New String() {"B", "S", "WS", "ON"}
     Public Shared WeakCategories As String() = New String() {"EN", "ES", "ET", "AN", "CS", "NSM", "BN"}
     Public Shared ExplicitCategories As String() = New String() {"LRE", "LRO", "RLE", "RLO", "PDF", "LRI", "RLI", "FSI", "PDI"}
-    Public Shared CausesJoining As Char() = New Char() {ChrW(&H640), ChrW(&H200D)}
+    Public Shared CausesJoining As Char() = New Char() {ArabicTatweel, ZeroWidthJoiner}
     Public Shared Function GetUniCats() As String()
         Return {"function IsLTR(c) { " + MakeUniCategoryJS(LTRCategories) + " }", _
         "function IsRTL(c) { " + MakeUniCategoryJS(RTLCategories) + " }", _
