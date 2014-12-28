@@ -1267,12 +1267,12 @@ Public Class ArabicData
         Public CombiningClass As Integer
         Public ReadOnly Property Connecting As Boolean
             Get
-                Return JoiningStyle = "initial" Or JoiningStyle = "medial" Or JoiningStyle = "C"
+                Return JoiningStyle = "initial" Or JoiningStyle = "medial" Or JoiningStyle = "C" Or Not Shaping Is Nothing AndAlso (Shaping(2) <> Nothing Or Shaping(3) <> Nothing)
             End Get
         End Property
         Public ReadOnly Property Terminating As Boolean
             Get
-                Return JoiningStyle = "isolated" Or JoiningStyle = "final" Or JoiningStyle = "U"
+                Return JoiningStyle = "isolated" Or JoiningStyle = "final" Or JoiningStyle = "U" Or Not Shaping Is Nothing AndAlso (Shaping(2) = Nothing And Shaping(3) = Nothing)
             End Get
         End Property
     End Structure
@@ -1316,7 +1316,7 @@ Public Class ArabicData
             If _DecData.ContainsKey(ChrW(CInt(CharArr(Count)))) AndAlso Not _DecData.Item(ChrW(CInt(CharArr(Count)))).Chars Is Nothing AndAlso _DecData.Item(ChrW(CInt(CharArr(Count)))).Chars.Length <> 0 Then
                 Dim ComCount As Integer
                 For ComCount = 0 To Combos.Count - 1
-                    If CType(Combos(ComCount), ArabicCombo).Symbol = _DecData.Item(ChrW(CInt(CharArr(Count)))).Chars Then Exit For
+                    If String.Join(String.Empty, Array.ConvertAll(CType(Combos(ComCount), ArabicCombo).Symbol, Function(Sym As Char) CStr(Sym))) = String.Join(String.Empty, Array.ConvertAll(_DecData.Item(ChrW(CInt(CharArr(Count)))).Chars, Function(Sym As Char) CStr(Sym))) Then Exit For
                 Next
                 Dim ArComb As ArabicCombo
                 If ComCount = Combos.Count Then
@@ -1341,7 +1341,7 @@ Public Class ArabicData
                     ArComb.UnicodeName(Idx) = _Names.Item(ChrW(CInt(CharArr(Count))))(0)
                     ArComb.Shaping(Idx) = ChrW(CInt(CharArr(Count)))
                 End If
-                Combos.Add(ArComb)
+                If ComCount = Combos.Count Then Combos.Add(ArComb)
             Else
                 Dim ArabicLet As New ArabicSymbol
                 ArabicLet.Symbol = ChrW(CInt(CharArr(Count)))
@@ -1352,25 +1352,6 @@ Public Class ArabicData
                 ArabicLet.UnicodeName = _Names.Item(ArabicLet.Symbol)(0)
                 Letters.Add(ArabicLet)
             End If
-        Next
-        CharArr = New ArrayList
-        Ranges = MakeUniCategory(ANCategories)
-        For Count = 0 To Ranges.Count - 1
-            Dim Range As ArrayList = CType(Ranges(Count), ArrayList)
-            If Range.Count = 1 Then
-                CharArr.Add(Range(0))
-            Else
-                For SubCount = 0 To Range.Count - 1
-                    CharArr.Add(Range(SubCount))
-                Next
-            End If
-        Next
-        For Count = 0 To CharArr.Count - 1
-            Dim ArabicLet As New ArabicSymbol
-            ArabicLet.Symbol = ChrW(CInt(CharArr(Count)))
-            ArabicLet.JoiningStyle = If(Array.IndexOf(CausesJoining, ArabicLet.Symbol) <> -1, "C", "U")
-            ArabicLet.UnicodeName = _Names.Item(ArabicLet.Symbol)(0)
-            Letters.Add(ArabicLet)
         Next
         CharArr = New ArrayList
         Ranges = MakeUniCategory(WeakCategories)
@@ -1860,7 +1841,6 @@ Public Class ArabicData
     Public Shared LTRCategories As String() = New String() {"L"}
     Public Shared RTLCategories As String() = New String() {"R", "AL"}
     Public Shared ALCategories As String() = New String() {"AL"}
-    Public Shared ANCategories As String() = New String() {"AN"}
     Public Shared CombineCategories As String() = New String() {"Mn", "Me", "Cf"}
     Public Shared NeutralCategories As String() = New String() {"B", "S", "WS", "ON"}
     Public Shared WeakCategories As String() = New String() {"EN", "ES", "ET", "AN", "CS", "NSM", "BN"}

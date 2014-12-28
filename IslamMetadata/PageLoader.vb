@@ -250,6 +250,12 @@ Public Class Arabic
             Return Sch.Numbers(Array.IndexOf(CachedData.ArabicNums, CStr(Symbol.Symbol)))
         ElseIf Array.IndexOf(CachedData.NonArabicLetters, CStr(Symbol.Symbol)) <> -1 Then
             Return Sch.NonArabic(Array.IndexOf(CachedData.NonArabicLetters, CStr(Symbol.Symbol)))
+        ElseIf Symbol.Symbol = ArabicData.ArabicLetterTehMarbuta And Sch.SpecialLetters(0) = Sch.SpecialLetters(1) And Sch.SpecialLetters(0) = Sch.SpecialLetters(2) Then
+            Return Sch.SpecialLetters(0)
+        ElseIf Symbol.Symbol = ArabicData.ArabicLetterAlefMaksura Then
+            Return Sch.SpecialLetters(3)
+        ElseIf Symbol.Symbol = ArabicData.ArabicLetterSuperscriptAlef Then
+            Return Sch.SpecialLetters(4)
         End If
         Return String.Empty
     End Function

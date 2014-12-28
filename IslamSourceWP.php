@@ -86,20 +86,19 @@ class DecData
 class ArabicData
 {
 	public static $ALCategories = ["AL"];
-	public static $ANCategories = ["AN"];
     public static $CombineCategories = ["Mn", "Me", "Cf"];
     public static $NeutralCategories = ["B", "S", "WS", "ON"];
     public static $WeakCategories = ["EN", "ES", "ET", "AN", "CS", "NSM", "BN"];
     public static $CausesJoining;
     public static $_ArabicCombos = null;
     public static $_ArabicLetters = null;
-    public function LoadArabic()
+    public static function LoadArabic()
     {
-    	$itc = getcacheitem("ArabicLetters");
-    	$itl = getcacheitem("ArabicCombos");
-    	if ($itc && $itl) {
-    		ArabicData::$_ArabicCombos = unserialize($itc);
+    	$itl = getcacheitem("ArabicLetters", true);
+    	$itc = getcacheitem("ArabicCombos", true);
+    	if ($itl && $itc) {
     		ArabicData::$_ArabicLetters = unserialize($itl);
+    		ArabicData::$_ArabicCombos = unserialize($itc);
     		return;
     	}
         $CharArr = array();
@@ -140,7 +139,7 @@ class ArabicData
             if (array_key_exists(mb_convert_encoding('&#' . $CharArr[$count] . ';', 'UTF-8', 'HTML-ENTITIES'), ArabicData::$_DecData) && ArabicData::$_DecData[mb_convert_encoding('&#' . $CharArr[$count] . ';', 'UTF-8', 'HTML-ENTITIES')]->Chars != null && count(ArabicData::$_DecData[mb_convert_encoding('&#' . $CharArr[$count] . ';', 'UTF-8', 'HTML-ENTITIES')]->Chars) != 0) {
                 $comcount = 0;
                 for (; $comcount < count($Combos); $comcount++) {
-                    if ($Combos[$comcount]->Symbol == ArabicData::$_DecData[mb_convert_encoding('&#' . $CharArr[$count] . ';', 'UTF-8', 'HTML-ENTITIES')]->Chars) { break; }
+                    if (implode($Combos[$comcount]->Symbol) == implode(ArabicData::$_DecData[mb_convert_encoding('&#' . $CharArr[$count] . ';', 'UTF-8', 'HTML-ENTITIES')]->Chars)) { break; }
                 }
                 $ArComb = null;
                 if ($comcount == count($Combos)) {
@@ -165,36 +164,17 @@ class ArabicData
                     $ArComb->UnicodeName[$Idx] = ArabicData::$_Names[mb_convert_encoding('&#' . $CharArr[$count] . ';', 'UTF-8', 'HTML-ENTITIES')][0];
                     $ArComb->Shaping[$Idx] = mb_convert_encoding('&#' . $CharArr[$count] . ';', 'UTF-8', 'HTML-ENTITIES');
                 }
-                array_push($Combos, $ArComb);
+                if ($comcount == count($Combos)) array_push($Combos, $ArComb);
             } else {
                 $ArabicLet = new ArabicSymbol;
                 $ArabicLet->Symbol = mb_convert_encoding('&#' . $CharArr[$count] . ';', 'UTF-8', 'HTML-ENTITIES');
                 if (array_key_exists(mb_convert_encoding('&#' . $CharArr[$count] . ';', 'UTF-8', 'HTML-ENTITIES'), ArabicData::$_DecData)) {
                     $ArabicLet->JoiningStyle = ArabicData::$_DecData[$ArabicLet->Symbol]->JoiningStyle;
-                    $ArabicLet->Shaping = ArabicData::$_DecData[ArabicLet.Symbol]->Shapes;
+                    $ArabicLet->Shaping = ArabicData::$_DecData[$ArabicLet->Symbol]->Shapes;
                 }
                 $ArabicLet->UnicodeName = ArabicData::$_Names[$ArabicLet->Symbol][0];
                 array_push($Letters, $ArabicLet);
             }
-        }
-        $CharArr = array();
-        $Ranges = ArabicData::MakeUniCategory(ArabicData::$ANCategories);
-        for ($count = 0; $count < count($Ranges); $count++) {
-            $Range = $Ranges[$count];
-            if (count($Range) == 1) {
-                array_push($CharArr, $Range[0]);
-            } else {
-            	for ($subcount = 0; $subcount < count($Range); $subcount++) {
-                    array_push($CharArr, $Range[$subcount]);
-                }
-            }
-        }
-        for ($count = 0; $count < count($CharArr); $count++) {
-            $ArabicLet = new ArabicSymbol;
-            $ArabicLet->Symbol = mb_convert_encoding('&#' . $CharArr[$count] . ';', 'UTF-8', 'HTML-ENTITIES');
-            $ArabicLet->JoiningStyle = array_search($ArabicLet->Symbol, ArabicData::$CausesJoining) !== false ? "C" : "U";
-            $ArabicLet->UnicodeName = ArabicData::$_Names[$ArabicLet->Symbol][0];
-            array_push($Letters, $ArabicLet);
         }
         $CharArr = array();
         $Ranges = ArabicData::MakeUniCategory(ArabicData::$WeakCategories);
@@ -239,19 +219,23 @@ class ArabicData
         cacheitem(serialize(ArabicData::$_ArabicLetters), "ArabicLetters");
         cacheitem(serialize(ArabicData::$_ArabicCombos), "ArabicCombos");
     }
-    public function ArabicCombos()
+    public static function ArabicCombos()
 	{
         if (ArabicData::$_ArabicCombos == null) {
             ArabicData::LoadArabic();
         }
         return ArabicData::$_ArabicCombos;
     }
-    public function ArabicLetters()
+    public static function ArabicLetters()
 	{
 		if (ArabicData::$_ArabicLetters == null) {
             ArabicData::LoadArabic();
         }
         return ArabicData::$_ArabicLetters;
+    }
+    public static function ToCamelCase($str)
+    {
+        return preg_replace_callback("/([A-Z])([A-Z]+)(-| |$)/u", function($CamCase) { return $CamCase[1] . strtolower($CamCase[2]); }, $str);
     }
     public static $ShapePositions = ["isolated", "final", "initial", "medial"];
     public static $_CombPos = null;
@@ -274,7 +258,7 @@ class ArabicData
                 $CombData = explode(" ", $Vals[5]);
                 if (!array_key_exists($Ch, ArabicData::$_DecData)) { $NewData = new DecData; $NewData->Shapes = [null, null, null, null]; ArabicData::$_DecData[$Ch] = $NewData; }
                 $Data = ArabicData::$_DecData[$Ch];
-                if (substr($CombData[0], 0, 1) == "<" && substr($CombData[0], 0, 1) == ">") {
+                if (substr($CombData[0], 0, 1) == "<" && substr($CombData[0], -1) == ">") {
                     $Data->JoiningStyle = trim($CombData[0], "<>");
                     $Data->Chars = array();
                     for ($subcount = 0; $subcount < count($CombData) - 2; $subcount++) {
@@ -1156,7 +1140,10 @@ class CachedData
                 return $bAll ? ArabicData::MakeUniRegEx(mb_convert_encoding('&#x' . substr($matches[1], 2) . ';', 'UTF-8', 'HTML-ENTITIES')) : mb_convert_encoding('&#x' . substr($matches[1], 2) . ';', 'UTF-8', 'HTML-ENTITIES');
             }
             for ($count = 0; $count < count(ArabicData::ArabicLetters()); $count++) {
-                if ($matches[1] == ArabicData::ArabicLetters()[$count]->UnicodeName) { return $bAll ? ArabicData::MakeUniRegEx(ArabicData::ArabicLetters()[$count]->Symbol) : ArabicData::ArabicLetters()[$count]->Symbol; }
+                if ($matches[1] == ArabicData::ToCamelCase(ArabicData::ArabicLetters()[$count]->UnicodeName)) { return $bAll ? ArabicData::MakeUniRegEx(ArabicData::ArabicLetters()[$count]->Symbol) : ArabicData::ArabicLetters()[$count]->Symbol; }
+            }
+            for ($count = 0; $count < count(ArabicData::ArabicCombos()); $count++) {
+                if (array_search($matches[1], array_map(function($str) { return ArabicData::ToCamelCase($str); }, ArabicData::ArabicCombos()[$count]->UnicodeName)) !== false) return $bAll ? ArabicData::MakeUniRegEx(count(ArabicData::ArabicCombos()[$count]->Shaping) == 1 ? ArabicData::ArabicCombos()[$count]->Shaping[0] : implode(ArabicData::ArabicCombos()[$count]->Symbol)) : (count(ArabicData::ArabicCombos()[$count]->Shaping) == 1 ? ArabicData::ArabicCombos()[$count]->Shaping[0] : implode(ArabicData::ArabicCombos()[$count]->Symbol));
             }
            	//{0} ignore
             return $matches[0];
@@ -1481,6 +1468,12 @@ class Arabic
             return explode("|", $sch->attributes()["number"])[array_search($symbol->Symbol, CachedData::ArabicNums())];
         } elseif (array_search($symbol->Symbol, CachedData::NonArabicLetters()) !== false) {
             return explode("|", $sch->attributes()["nonarabic"])[array_search($symbol->Symbol, CachedData::NonArabicLetters())];
+        } elseif ($symbol->Symbol == ArabicData::$ArabicLetterTehMarbuta && explode("|", $sch->attributes()["tehmarbutaalefmaksuradaggeralefgunnah"])[0] == explode("|", $sch->attributes()["tehmarbutaalefmaksuradaggeralefgunnah"])[1] && explode("|", $sch->attributes()["tehmarbutaalefmaksuradaggeralefgunnah"])[0] == explode("|", $sch->attributes()["tehmarbutaalefmaksuradaggeralefgunnah"])[2]) {
+            return explode("|", $sch->attributes()["tehmarbutaalefmaksuradaggeralefgunnah"])[0];
+        } elseif ($symbol->Symbol == ArabicData::$ArabicLetterAlefMaksura) {
+            return explode("|", $sch->attributes()["tehmarbutaalefmaksuradaggeralefgunnah"])[3];
+        } elseif ($symbol->Symbol == ArabicData::$ArabicLetterSuperscriptAlef) {
+            return explode("|", $sch->attributes()["tehmarbutaalefmaksuradaggeralefgunnah"])[4];
         }
         return "";
     }
@@ -2096,7 +2089,7 @@ class DocBuilder
 		return $renderer;
 	}
 };
-function getcacheitem($page) // Requested page
+function getcacheitem($page, $fetch) // Requested page
 {
 	//return false; //disable for debugging
 	// Settings
@@ -2107,6 +2100,7 @@ function getcacheitem($page) // Requested page
 	$cachefile_created = (@file_exists($cachefile)) ? @filemtime($cachefile) : 0;
 	@clearstatcache();
 	if (time() - $cachetime < $cachefile_created) {
+		if ($fetch) return file_get_contents($cachefile);
 		@readfile($cachefile);
 		return true;
 	}
@@ -2146,7 +2140,7 @@ function fontFolder() {
     }
 }
 if (array_key_exists("Char", $_GET)) {
-	if (!getcacheitem('http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'])) {
+	if (!getcacheitem('http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'], false)) {
 		//GD library and FreeType library
 		$size = $_GET["Size"];
 		if ($size === null) $size = 32;
@@ -2164,7 +2158,7 @@ if (array_key_exists("Char", $_GET)) {
 		imagedestroy($im);
 	}
 } elseif (array_key_exists("Cat", $_GET)) {
-	if (!getcacheitem('http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'])) {
+	if (!getcacheitem('http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'], false)) {
 		$json = "";
 		for ($count = 0; $count < count(CachedData::IslamData()->lists->category->children()); $count++) {
 			$out = "";
