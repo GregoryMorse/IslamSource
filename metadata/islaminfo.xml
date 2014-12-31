@@ -280,8 +280,8 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<particle text="lamo" id="NotPastDidNot" grammar="resp,prespos"></particle>
 			<particle text="laA" id="ThereIsNo" grammar="resp"></particle>
 			<particle text="maA" id="Not" grammar="resp"></particle>
-			<particle text="layosa" id="Not" grammar="resp"></particle>
-			<particle text="layosati" id="Not" grammar="resp"></particle>
+			<particle text="layosa" id="NotVerbalMasculine" grammar="resp"></particle>
+			<particle text="layosati" id="NotVerbalFeminine" grammar="resp"></particle>
 			<particle text="balaY`" id="YesIndeed" grammar="resp"></particle>
 			<particle text="duwna" id="BesidesOtherThanLessThan" grammar="resp,pos"></particle>
 			<particle text="naEamo" id="Yes" grammar="resp"></particle>
@@ -635,6 +635,7 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<noun text="*ur~iy~apN" plural="*uriy~aAtN" id="DescendentsChildren"></noun>
 			<noun text="rijolN" plural="&gt;arojulN" id="Foot"></noun>
 			<noun text="&lt;ibonN" plural="banuwna baniyna &gt;abonaA^&apos;N" id="Son"></noun>
+			<noun text="&lt;ibonatN" plural="" id="Daughter"></noun>
 			<noun text="nafosN" plural="&gt;anfusN" id="Soul"></noun>
 			<noun text="ruwHN" plural="&gt;arowaAHN" id="SoulSpirit"></noun>
 			<noun text="&gt;axN" plural="&gt;axuw &gt;axaA^ &gt;axiy &lt;ixowaAnN" id="Brother"></noun>
@@ -2406,7 +2407,7 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 		<word text="{ll~ahu &gt;akobaru" id="AllahIsGreatest"></word>
 		<word text="{ll~ahu &gt;akobaru\, {ll~ahu &gt;akobaru" id="AllahIsGreatestAllahIsGreatest"></word>
 		<word text="$ukorFA {loHamodu lil~ahi" id="ThanksAllPraiseAndThanksIsToAllah"></word>
-		<word text="suboHa`nu {ll~ahu" id="GloryBeToAllah"></word>
+		<word text="suboHa`na {ll~ahu" id="GloryBeToAllah"></word>
 		<word text="suboHa`naka {ll~ahu" id="GloryBeToYouAllah"></word>
 		<word text="Haq~u {ll~ahi" id="RightOfAllah"></word>
 		<word text="&gt;aqosimu bi{ll~ahi" id="ISwearByAllah"></word>
@@ -2655,6 +2656,117 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 		<word text="{ll~ahum~a &gt;asolamotu nafosiY^ &lt;ilayoka\, wafaw~aDotu &gt;amoriY^ &lt;ilayoka\, wawaj~ahotu wajohiY^ &lt;ilayoka\, wa&gt;aloja&gt;otu ZahoriY^ &lt;ilayoka\, ragobapF warahobapF &lt;ilayoka\, laA maloja&gt;a walaA manjaA minka &lt;il~aA^ &lt;ilayoka\, &apos;aAmantu bikitaAbika {l~a*iY^ &gt;anzalota wabinabiy~ika {l~a*iY^ &gt;arosalota\." id="RemembranceBeforeSleeping13"></word>
 		<word text="laA^ &lt;ilaha &lt;il~aA {ll~ahu {lowaAHidu {loqah~aAru\, rab~u {ls~ama`wa`ti wa{lo&gt;aroDi wamaA bayonahumaA {loEaziyzu {logaf~aAru\." id="WhenTurningOverInTheNight1"></word>
 		<word text="&gt;aEuw*u bikalimaAti {ll~ahi {lt~aAm~aAti min gaDabihi waEiqaAbihi wa$ar~i EibaAdihi wamino hamazaAti {l$~ayaATiyni wa&gt;an yaHoDuruwna" id="UponExperiencingFearUnrestApprehensivenessDuringSleep1"></word>
+		<word text="{ll~ahum~a {hodiniy fiymano hadayota waEaAfiniy fiymano EaAfayota watawal~aniy fiyman tawal~ayota wabaAriko liy fiymaA^ &gt;aEoTayota waqiniy $ar~a maA qaDayota fa&lt;in~aka taqoDiy walaA yuqoDaY Ealayoka &lt;in~ahu laA ya*il~u man wa{layota walaA yaEiz~u mano EaAdayota tabaArakota rab~anaA wataEaAlayota" id="DesperateOddPrayer1"></word>
+		<word text="{ll~ahum~a &lt;in~iY^ &gt;aEuw*u biriDaAka min saxaTika wabimuEaAfaAtika mino Euquwbatika wa&gt;aEuw*u bika minka laA^ &gt;uHoSiy vanaA^&apos;F Ealayoka &gt;anta kamaA^ &gt;avonayota EalaY nafosika" id="DesperateOddPrayer2"></word>
+		<word text="{ll~ahum~a &lt;iy~aAka naEobudo walaka nuSal~iy wanasojudu wa&lt;ilayoka nasoEaY wanaHofidu narojuw raHomataka wanaxo$aY Ea*aAbaka &lt;in~a Ea*aAbaka bi{lokaAfiriyna muloHaqN\. {ll~ahum~a &lt;in~aA nasotaEiynuka wanasotagofiruka wanuvoniy Ealayoka {loxayora\, walaA nakofuruka wanu&amp;ominu bika wanaxoDaEu laka wanaxolaEu man yakofuruka" id="DesperateOddPrayer3"></word>
+		<word text="suboHa`na {lomaliki {loqud~uwsi (valaAvFA mar~aAtFA)\. rab~i {lomala`^}ikapi wa{lr~uwHi\." id="OddPrayerAndAfter1"></word>
+		<word text="{ll~ahum~a &lt;in~iy Eaboduka {bonu Eabodika {bonu &gt;amatika naASiyatiy biyadika maADK fiy~a Hukomuka EadolN fiy~a qaDaA^&amp;uka &gt;aso&gt;aluka bikul~i {somK huwa laka sam~ayota bihi nafosaka &gt;awo &gt;anzalotahu fiY kitaAbika &gt;awo Eal~amotahu &gt;aHadFA mino xaloqika &gt;awi {sota&gt;ovarota bihi fiY Eilomi {logayobi Eindaka &gt;an tajoEala {loquro&apos;aAna rabiyEa qalobiy wanuwra Sadoriy wjalaA^&apos;a Huzoniy wa*ahaAba ham~iy" id="ForAnxietyAndSorrow1"></word>
+		<word text="{ll~ahum~a &lt;in~iY^ &gt;aEuw*u bika mina {loham~i wa{loHazani\, wa{loEajozi wa{lokasali\, wa{lobuxoli wa{lojuboni\, waDalaEi {ld~ayoni wagalabapi {lr~ijaAli" id="ForAnxietyAndSorrow2"></word>
+		<word text="laA^ &lt;ilaha &lt;il~aA {ll~ahu {loEaZiymu {loHaliymu\, laA^ &lt;ilaha &lt;il~aA {ll~ahu rab~u {loEaro$i {loEaZiymi\, laA^ &lt;ilaha &lt;il~aA {ll~ahu rab~u {ls~ama`w~aAti warab~u {lo&gt;aroDi warab~u {loEaro$i {lokariymi" id="ForOneInDistress1"></word>
+		<word text="{ll~ahum~a raHomataka &gt;arojuw falaA takiloniY^ &lt;ilaY nafosiy Tarofapa EayonK wa&gt;aSoliHo liy $a&gt;oniy kul~ahu laA^ &lt;ilaha &lt;il~aA^ &gt;anta" id="ForOneInDistress2"></word>
+		<word text="{ll~ahu {ll~ahu rab~i laA^ &gt;u$orika bihi $ayo}FA" id="ForOneInDistress4"></word>
+		<word text="{ll~ahum~a &lt;in~aA najoEaluka fiY nuHuwrihimo wanaEuw*u bika min $uruwrihimo" id="UponEncounteringAnEnemyOrThoseOfAuthority1"></word>
+		<word text="{ll~ahum~a &gt;anta EaDudiy\, wa&gt;anta naSiyriy bika &gt;ajuwlu wabika &gt;aSuwlu wabika &gt;uqaAtilu" id="UponEncounteringAnEnemyOrThoseOfAuthority2"></word>
+		<word text="{ll~ahum~a munzila {lokitaAbi sariyEa {loHisaAbi {hozimi {lo&gt;aHozaAba {ll~ahum~a {hozimohumo wazalozilohumo" id="MadeAgainstAnEnemy1"></word>
+		<word text="{ll~ahum~a {kofiniyhim bimaA $i}ota" id="WhenInFearOfAPeople1"></word>
+		<word text="&apos;aAmantu bi{ll~ahi warusulihi" id="ForOneAfflictedWithDoubtInFaith2"></word>
+		<word text="{ll~ahum~a {kofiniy biHalaAlika Eano HaraAmika wa&gt;agoniniy bifaDolika Eam~an siwaAka" id="SettlingADebt1"></word>
+		<word text="{ll~ahum~a &lt;in~iY^ &gt;aEuw*u bika mina {loham~i wa{loHazani wa{loEajozi wa{lokasali wa{lobuxoli wa{lojuboni waDalaEi {ld~ayoni wagalabapi {lr~ijaAli" id="SettlingADebt2"></word>
+		<word text="{ll~ahum~a laA sahola &lt;il~aA maA jaEalotahu saholFA wa&gt;anta tajoEalu {loHazana &lt;i*aA $i}ota saholFA" id="ForOneWhoseAffairsHaveBecomeDifficult1"></word>
+		<word text="qad~aru {ll~ahi wamaA $aA^&apos;a faEala" id="WhenStrickenWithAMishapOrOvertakenByAnAffair1"></word>
+		<word text="&gt;uEiy*ukumaA bikalimaAti {ll~ahi {lt~aAm~apu min kul~i $ayoTaAnK wahaAm~apK wamin kul~i EayonK laAm~apK" id="PlacingChildrenUnderAllahsProtection1"></word>
+		<word text="laA ba&gt;osa TahuwrN &lt;in $aA^&apos;a {ll~ahu" id="WhenVisitingTheSick1"></word>
+		<word text="&gt;aso&gt;alu {ll~aha {loEaZiyma rab~a {loEaro$i {loEaZiymi &gt;an ya$ofiyka" id="WhenVisitingTheSick2"></word>
+		<word text="{ll~ahum~a {gofiro liy wa{roHamoniy wa&gt;aloHiqoniy bi{lr~afiyqi {lo&gt;aEolaY" id="TheSickWhoHaveRenouncedAllHopeOfLife1"></word>
+		<word text="laA^ &lt;ilaha &lt;il~aA {ll~ahu &lt;in~a lilomawoti lasakaraAtK" id="TheSickWhoHaveRenouncedAllHopeOfLife2"></word>
+		<word text="laA^ &lt;ilaha &lt;il~aA {ll~ahu wa{ll~ahu &gt;akobaru laA^ &lt;ilaha &lt;il~aA {ll~ahu waHodahu laA^ &lt;ilaha &lt;il~aA {ll~ahu waHodahu laA $ariyka lahu laA^ &lt;ilaha &lt;il~aA {ll~ahu lahu {lomuloku walahu {loHamodu laA^ &lt;ilaha &lt;il~aA {ll~ahu walaA Hawola walaA quw~apa &lt;il~aA bi{ll~ahi" id="TheSickWhoHaveRenouncedAllHopeOfLife3"></word>
+		<word text="&lt;in~aA lil~ahi wa&lt;in~aA^ &lt;ilayohi raAjiEuwna\, {ll~ahum~a &gt;ojuroniy fiY muSiybatiy wa{xolifo liy xayorFA minohaA" id="InstructionForOneAfflictedByCalamity1"></word>
+		<word text="{ll~ahum~a {gofiro lifulaAnK (bi{somihi) wa{rofaEo darajatahu fiY {lomahodiy~iyna wa{xolufohu fiY Eaqibihi fiY {logaAbiriyna wa{gofiro lanaA walahu ya`rab~a {loEaAlamiyna wa{fosaHo lahu fiY qaborihi wanaw~iro lahu fiyhi" id="WhenClosingTheEyesOfTheDeceased1"></word>
+		<word text="{ll~ahum~a {gofiro lahu wa{roHamohu waEaAfihi wa{Eofu Eanohu wa&gt;akorimo nuzulahu wawas~iEo mudoxalahu wa{gosilohu bi{lomaA^&apos;i wa{lv~aloji wa{lobaradi wanaq~ihi mina {loxaTaAyaA kamaA naq~ayota {lv~awoba {lo&gt;aboyaDa mina {ld~anasi wa&gt;abodilohu daArFA xayorFA min daArihi wa&gt;aholFA xayorFA mino &gt;aholihi wazawojFA xayorFA min zawojihi wa&gt;adoxilohu {lojan~apa wa&gt;aEi*ohu mino Ea*aAbi {loqabori waEa*aAbi {ln~aAri" id="ForTheDeceasedAtFuneralPrayer1"></word>
+		<word text="{ll~ahum~a {gofiro liHay~inaA\, wamay~itinaA\, wa$aAhidinaA\, wagaA^}ibinaA\, waSagiyrinaA wakabiyrinaA\, wa*akarinaA wa&gt;unvaAnaA\. {ll~ahum~a mano &gt;aHoyayotahu min~aA fa&gt;aHoyihi EalaY {lo&lt;isolaAmi waman tawaf~ayotahu min~aA fatawaf~ahu EalaY {lo&lt;iymaAni {ll~ahum~a laA taHorimonaA^ &gt;ajorahu walaA tuDil~anaA baEodahu" id="ForTheDeceasedAtFuneralPrayer2"></word>
+		<word text="{ll~ahum~a &lt;in~a fulaAna bona fulaAnK fiY *im~atika waHaboli jiwaAriko faqihi min fitonapi {loqabori waEa*aAbi {ln~aAri wa&gt;anta &gt;aholu {lowafaA^&apos;i wa{loHaq~i fa{gofiro lahu wa{roHamohu &lt;in~aka &gt;anta {logafuwru {lr~aHiymu" id="ForTheDeceasedAtFuneralPrayer3"></word>
+		<word text="{ll~ahum~a Eaboduka wa{bonu &gt;amatika {HotaAja &lt;ilaY raHomatika wa&gt;anta ganiy~N Eano Ea*aAbihi &lt;in kaAna muHosinFA fazido fiY HasanaAtihi wa&lt;in kaAna musi}FA fatajaAwazo Eanohu" id="ForTheDeceasedAtFuneralPrayer4"></word>
+		<word text="{ll~ahum~a {joEalohu faraTFA wa*uxorFA liwaAlidayohi wa$afiyEFA mujaAbFA {ll~ahum~a vaq~ilo bihi muwaAziynahumaA wa&gt;aEoZim bihi &gt;ujuwrahumaA\, wa&gt;aloHiqohu biSaAliHi {lomu&amp;ominiyna wa{joEalohu fiY kafaAlapi &lt;ibora`hiyma waqihi biraHomatika Ea*aAba {lojaHiymi" id="ForTheAdvancementOfRewardDuringTheFuneralPrayer1"></word>
+		<word text="&lt;in~a lil~ahi maA^ &gt;axa*a walahu maA^ &gt;aEoTaY wakul~u $ayo&apos;K Eindahu bi&gt;ajalK musam~FY falotaSobiro walotaHotasibo" id="Condolence1"></word>
+		<word text="bisomi {ll~ahi waEalaY sun~api rasuwli {ll~ahi" id="PlacingTheDeceasedInTheGrave1"></word>
+		<word text="{ll~ahum~a {gofiro lahu {ll~ahum~a vab~itohu" id="AfterBuryingTheDeceased1"></word>
+		<word text="{ls~alaAmu Ealayokumo &gt;ahola {ld~iyaAri mina {lomu&amp;ominiyna wa{lomusolimiyna wa&lt;in~aA^ &lt;in $aA^&apos;a {ll~ahu bikumo laAHiquwna (wayaroHamu {ll~ahu {lomusotaqodimiyna min~aA wa{lomusota&gt;oxiriyna) &gt;aso&gt;alu {ll~aha lanaA walakumu {loEaAfiyapa" id="VisitingTheGraves1"></word>
+		<word text="{ll~ahum~a &lt;in~iY^ &gt;aso&gt;aluka xayorahaA\, wa&gt;aEuw*u bika min $ar~ihaA" id="PrayerSaidDuringAWindStorm1"></word>
+		<word text="{ll~ahum~a &lt;in~iY^ &gt;aso&gt;aluka xayorahaA\, waxayora maA fiyhaA\, waxayora maA^ &gt;urosilato bihi wa&gt;aEuw*u bika min $ar~ihaA\, wa$ar~i maA fiyhaA\, wa$ar~i maA^ &gt;urosilato bihi" id="PrayerSaidDuringAWindStorm2"></word>
+		<word text="suboHa`na {l~a*iy yusab~iHu {lr~aEodu biHamodihi wa{lomalaA^}ikapu mino xiyfatihi" id="UponHearingThunder1"></word>
+		<word text="{ll~ahum~a &gt;asoqinaA gayovFA mugiyvFA mari}FA mariyEFA naAfiEFA gayora DaAr~K EaAjilFA gayora &apos;aAjilK" id="ForRain1"></word>
+		<word text="{ll~ahum~a &gt;agivonaA\, {ll~ahum~a &gt;agivonaA\, {ll~ahum~a &gt;agivonaA" id="ForRain2"></word>
+		<word text="{ll~ahum~a {soqi EibaAdaka wabahaA^}imaka wa{n$uro raHomataka wa&gt;aHoyiY baladaka {lomay~ita" id="ForRain3"></word>
+		<word text="{ll~ahum~a Say~ibFA naAfiEFA" id="WhenItRains1"></word>
+		<word text="muTironaA bifaDoli {ll~ahi waraHomatihi" id="AfterRainfall1"></word>
+		<word text="{ll~ahum~a HawaAlayonaA walaA EalayonaA\. {ll~ahum~a EalaY {lo&apos;aAkaAmi wa{lZ~iraAbi wabuTuwni {lo&gt;awodiyapi wamanaAbiti {l$~ajari" id="AskingForClearSkies1"></word>
+		<word text="{ll~ahu &gt;akobaru {ll~ahum~a &gt;ahil~ahu EalayonaA bi{lo&gt;amoni wa{lo&lt;iymaAni wa{ls~alaAmapi wa{lo&lt;isolaAmi wa{lt~awofiyqi limaA tuHib~u rab~anaA wataroDaY rab~unaA warab~uka {ll~ahu" id="UponSightingTheCrescentMoon1"></word>
+		<word text="*ahaba {lZ~ama&gt;u wa{botal~ati {loEuruwqu wavabata {lo&gt;ajoru &lt;in $aA^&apos;a {ll~ahu" id="UponBreakingFast1"></word>
+		<word text="{ll~ahum~a &lt;in~iY^ &gt;aso&gt;aluka biraHomatika {l~atiy wasiEato kul~a $ayo&apos;K &gt;an tagofira liy" id="UponBreakingFast2"></word>
+		<word text="bisomi {ll~ahi fiY^ &gt;aw~alihi wa&apos;aAxirihi" id="BeforeEating2"></word>
+		<word text="{ll~ahum~a baAriko lanaA fiyhi wa&gt;aToEimonaA xayorFA minohu" id="BeforeEating3"></word>
+		<word text="{ll~ahum~a baAriko lanaA fiyhi wazidonaA minohu" id="BeforeEating4"></word>
+		<word text="{loHamodu lil~ahi {l~a*iY^ &gt;aToEamaniy ha`*aA warazaqaniyhi mino gayori HawolK min~iy walaA quw~apK" id="UponCompletingTheMeal1"></word>
+		<word text="{loHamodu lil~ahi HamodFA kaviyrFA Tay~ibFA mubaArakFA fiyhi gayora makofiy~K walaA muwad~aEK walaA musotagonFY Eanohu rab~anaA" id="UponCompletingTheMeal2"></word>
+		<word text="{ll~ahum~a baAriko lahumo fiymaA razaqotahumo\, wa{gofiro lahumo wa{roHamohumo" id="OfTheGuestForTheHost1"></word>
+		<word text="{ll~ahum~a &gt;aToEimo man &gt;aToEamaniy waAsoqi man saqaAniy" id="SaidToOneOfferingADrinkOrTheOneWhoIntendedToDoThat1"></word>
+		<word text="&gt;afoTara Eindakumu {lS~aA^}imuwna wa&gt;akala TaEaAmakumu {lo&gt;aboraAru waSal~ato Ealayokumu {lomala`^}ikapu" id="WhenBreakingFastInSomeonesHome1"></word>
+		<word text="&lt;in~iy SaA^}imN &lt;in~iy SaA^}imN" id="WhenInsultedWhileFasting1"></word>
+		<word text="{ll~ahum~a baAriko lanaA fiY vamarinaA wabaAriko lanaA fiY madiynatinaA wabaAriko lanaA fiY SaAEinaA wabaAriko lanaA fiY mud~inaA" id="UponSeeingEarlyOrPrematureFruit1"></word>
+		<word text="{loHamodu lil~ahi\. yaroHamuka {ll~ahu\. yahodiykumu {ll~ahu wayuSoliHu baAlakumo" id="UponSneezing1"></word>
+		<word text="yahodiykumu {ll~ahu wayuSoliHu baAlakumo" id="ToADisbelieverWhenSneezes1"></word>
+		<word text="baAraka {ll~ahu laka wabaAraka Ealayoka wajamaEa bayonakumaA fiY xayorK" id="ToTheNewlyWed1"></word>
+		<word text="{ll~ahum~a &lt;in~iY^ &gt;aso&gt;aluka xayorahaA waxayora maA jabalotahaA Ealayohi wa&gt;aEuw*u bika min $ar~ihaA wa$ar~i maA jabalotahaA Ealayohi" id="GroomOnWeddingNightOrWhenBuyingAnimal1"></word>
+		<word text="bisomi {ll~ahi\. {ll~ahum~a jan~ibonaA {l$~ayoTaAna wajan~ibi {l$~ayoTaAna maA razaqotanaA" id="BeforeSexualIntercourse1"></word>
+		<word text="{loHamodu lil~ahi {l~a*iy EaAfaAniy mim~aA {botalaAka bihi wafaD~alaniy EalaY kaviyrK mim~ano xalaqa tafoDiylFA" id="UponSeeingSomeoneInTrialOrTribulation1"></word>
+		<word text="rab~i {gofiro liy watubo Ealay~a &lt;in~aka &gt;anta {lt~aw~aAbu {logafuwru" id="RemembranceAtSittingOrGathering1"></word>
+		<word text="suboHa`naka {ll~ahum~a wabiHamodika\, &gt;a$ohadu &gt;ano laA^ &lt;ilaha &lt;il~aA^ &gt;anta\, &gt;asotagofiruka wa&gt;atuwbu &lt;ilayoka" id="ForExpiationOfSinsAtTheConclusionOfSittingOrGathering1"></word>
+		<word text="suboHa`naka wabiHamodika\, laA^ &lt;ilaha &lt;il~aA^ &gt;anta\, &gt;asotagofiruka wa&gt;atuwbu &lt;ilayoka" id="ForExpiationOfSinsAtTheConclusionOfSittingOrGathering2"></word>
+		<word text="walaka" id="ReturningSupplicationForForgiveness1"></word>
+		<word text="jazaAka {ll~ahu xayorFA" id="ToOneWhoDoesYouAFavor1"></word>
+		<word text="&gt;aHab~aka {l~a*iY^ &gt;aHobabotaniy lahu" id="ToOneWhoPronouncesLoveForYouForAllahsSake1"></word>
+		<word text="baAraka {ll~ahu laka fiY^ &gt;aholika wamaAlika" id="ToOneWhoHasOfferedYouSomeOfHisWealth1"></word>
+		<word text="baAraka {ll~ahu laka fiY^ &gt;aholika wamaAlika &lt;in~amaA jazaA^&apos;u {ls~alafi {loHamodu wa{lo&gt;adaA^&apos;u" id="ToTheDebtorWhenHisDebtIsSettled1"></word>
+		<word text="{ll~ahum~a &lt;in~iY^ &gt;aEuw*u bika &gt;ano &gt;u$orika bika wa&gt;anaA^ &gt;aEolamu wa&gt;asotagofiruka limaA laA^ &gt;aEolamu" id="ForFearOfShirk1"></word>
+		<word text="wafiyka baAraka {ll~ahu" id="WhenSomeoneBlessesYou1"></word>
+		<word text="bisomi {ll~ahi wa{loHamodu lil~ahi \{43:13:12-14:4\} {loHamodu lil~ahi {loHamodu lil~ahi {loHamodu lil~ahi {ll~ahu &gt;akobaru {ll~ahu &gt;akobaru {ll~ahu &gt;akobaru suboHa`naka {ll~ahum~a &lt;in~iy Zalamotu nafosiy fa{gofiro liy fa&lt;in~ahu laA yagofiru {l*~unuwba &lt;il~aA^ &gt;anta" id="WhenMountingAnAnimalOrAnyMeansOfTransport1"></word>
+		<word text="{ll~ahu &gt;akobaru {ll~ahu &gt;akobaru {ll~ahu &gt;akobaru \{43:13:12-14:4\} {ll~ahum~a &lt;in~aA nasa&gt;aluka fiY safarinaA ha`*aA {lobir~a wa{lt~aqowaY wamina {loEamali maA taroDaY {ll~ahum~a haw~ino EalayonaA safaranaA ha`*aA waATowi Ean~aA buEodahu {ll~ahum~a &gt;anta {lS~aAHibu fiY {ls~afari wa{loxaliyfapu fiY {lo&gt;aholi {ll~ahum~a &lt;in~iY^ &gt;aEuw*u bika min waEovaA^&apos;i {ls~afari waka&apos;aAbapi {lomanZari wasuw^&apos;i {lomunqalabi fiY {lomaAli wa{lo&gt;aholi &apos;aAyibuwna taA}ibuwna EaAbiduwna lirab~inaA HaAmiduwna" id="ForTravel1"></word>
+		<word text="{ll~ahum~a rab~a {ls~ama`wa`ti {ls~aboEi wamaA^ &gt;aZolalona warab~a {lo&gt;araDiyna {ls~aboEi wamaA^ &gt;aqolalona warab~a {l$~ayaATiyni wamaA^ &gt;aDolalona warab~a {lr~iyaAHi wamaA *arayona &gt;aso&gt;aluka xayora ha*ihi {loqaroyapi waxayora &gt;aholihaA waxayora maA fiyhaA wa&gt;aEuw*u bika min $ar~ihaA wa$ar~i &gt;aholihaA wa$ar~i maA fiyhaA" id="UponEnteringATownOrVillage1"></word>
+		<word text="laA^ &lt;ilaha &lt;il~aA {ll~ahu waHodahu laA $ariyka lahu\, lahu {lomuloku walahu {loHamodu yuHoyiy wayumiytu wahuwa Hay~N laA yamuwtu biyadihi {loxayoru wahuwa EalaY kul~i $ayo&apos;K qadiyrN" id="WhenEnteringTheMarket1"></word>
+		<word text="&gt;asotawodiEu {ll~aha diynaka wa&gt;amaAnataka waxawaAtiyma Eamalika" id="OfTheResidentForTheTraveller1"></word>
+		<word text="zaw~adaka {ll~ahu {lt~aqowaY wagafara *anobaka wayas~ara laka {loxayora Hayovu maA kunta" id="OfTheResidentForTheTraveller2"></word>
+		<word text="{ll~ahu &gt;akobaru suboHa`na {ll~ahi" id="WhileAscendingOrDescending1"></word>
+		<word text="samiEa saAmiEN biHamodi {ll~ahi waHusoni balaA^}ihi EalayonaA\. rab~anaA SaAHibonaA\, wa&gt;afoDilo EalayonaA EaA}i*FA bi{ll~ahi mina {ln~aAri" id="OfTheTravellerAsDawnApproaches1"></word>
+		<word text="&gt;aEuw*u bikalimaAti {ll~ahi {lt~aAm~aAti min $ar~i maA xalaqa" id="StoppingOrLodgingSomewhere1"></word>
+		<word text="{ll~ahu &gt;akobaru {ll~ahu &gt;akobaru {ll~ahu &gt;akobaru laA^ &lt;ilaha &lt;il~aA {ll~ahu waHodahu laA $ariyka lahu\, lahu {lomuloku walahu {loHamodu wahuwa EalaY kul~i $ayo&apos;K qadiyrN &apos;aAyibuwna taA}ibuwna EaAbiduwna lirab~inaA HaAmiduwna Sadaqa {ll~ahu waEodahu wanaSara Eabodahu wahazama {lo&gt;aHozaAba waHodahu" id="WhileReturningFromTravel1"></word>
+		<word text="{loHamodu lil~ahi {l~a*iy biniEomatihi tatim~u {lS~aAliHaAtu {loHamodu lil~ahi EalaY kul~i HaAlK" id="UponReceivingPleasingOrDispleasingNews1"></word>
+		<word text="waEalayokumo" id="ReturningAGreetingToADisbeliever1"></word>
+		<word text="{ll~ahum~a fa&gt;ay~umaA mu&amp;ominK sababotuhu fa{joEalo *alika lahu qurobapF &lt;ilayoka yawoma {loqiyaAmapi" id="ForTheOneYouHaveInsulted1"></word>
+		<word text="&gt;aHosibu fulaAnFA wa{ll~ahu Hasiybuhu" id="TheEtiquetteOfPraisingAFellowMuslim1"></word>
+		<word text="walaA^ &gt;uzak~iy EalaY {ll~ahi &gt;aHadFA" id="TheEtiquetteOfPraisingAFellowMuslim2"></word>
+		<word text="{ll~ahum~a laA tu&amp;aAxi*oniy bimaA yaquwluwna wa{gofiro liy maA laA yaEolamuwna (wa{joEaloniy xayorFA mim~aA yaZun~uwna)" id="WhenPraised1"></word>
+		<word text="lab~ayoka {ll~ahum~a lab~ayoka\, lab~ayoka laA $ariyka laka lab~ayoka\, &lt;in~a {loHamoda wa{ln~iEomapa laka wa{lomuloka\, laA $ariyka laka" id="TheTalbiyah1"></word>
+		<word text="&gt;aboda&gt;u bimaA bada&gt;a {ll~ahu bihi {ll~ahu &gt;akobaru {ll~ahu &gt;akobaru {ll~ahu &gt;akobaru laA^ &lt;ilaha &lt;il~aA {ll~ahu waHodahu laA $ariyka lahu\, lahu {lomuloku walahu {loHamodu wahuwa EalaY kul~i $ayo&apos;K qadiyrN laA^ &lt;ilaha &lt;il~aA {ll~ahu waHodahu &gt;anjaza waEodahu wanaSara Eabodahu wahazama {lo&gt;aHozaAba waHodahu" id="WhenAtMountSafaAndMountMarwah1"></word>
+		<word text="laA^ &lt;ilaha &lt;il~aA {ll~ahu waHodahu laA $ariyka lahu\, lahu {lomuloku walahu {loHamodu wahuwa EalaY kul~i $ayo&apos;K qadiyrN" id="TheDayOfArafah1"></word>
+		<word text="bisomi {ll~ahi (valaAvFA) &gt;aEuw*u bi{ll~ahi waqudoratihi min $ar~i maA^ &gt;ajidu wa&gt;uHaA*iru" id="WhenFeelingSomePainInTheBody1"></word>
+		<word text="{ll~ahum~a baAriko Ealayohi maA $aA^&apos;a {ll~ahu laA quw~apa &lt;il~aA bi{ll~ahi" id="WhenInFearOfAfflictingSomethingOrSomeoneWithOnesEye1"></word>
+		<word text="bisomi {ll~ahi wa{ll~ahu &gt;akobaru {ll~ahum~a minka walaka {ll~ahum~a taqab~alo min~iy" id="WhenSlaughteringOrOfferingASacrifice1"></word>
+		<word text="&gt;aEuw*u bikalimaAti {ll~ahi {lt~aAm~aAti {l~atiy laA yujaAwizuhun~a bar~N walaA faAjirN min $ar~i maA xalaqa wabara&gt;a wa*ara&gt;a wamin $ar~i maA yanzilu mina {ls~amaA^&apos;i wamin $ar~i maA yaEoruju fiyhaA wamin $ar~i maA *ara&gt;a fiY {lo&gt;aroDi wamin $ar~i maA yaxoruju minohaA wimin $ar~i fitani {l~ayoli wa{ln~ahaAri wamin $ar~i kul~i TaAriqK &lt;il~aA TaAriqFA yaToruqu bixayorK ya`raHoma`nu" id="ToWardOffTheDeceptionOfTheObstinateDevils1"></word>
+		<word text="&gt;asotagofiru {ll~aha {loEaZiyma {l~a*iy laA^ &lt;ilaha &lt;il~aA huwa {loHay~u {loqay~uwumu wa&gt;atuwbu &lt;ilayohi\." id="SeekingForgivenessAndRepentance3"></word>
+		<word text="laA^ &lt;ilaha &lt;il~aA {ll~ahu waHodahu laA $ariyka lahu\, lahu {lomuloku walahu {loHamodu wahuwa EalaY kul~i $ayo&apos;K qadiyrN" id="ExcellenceOfRemembranceAndGlorificationOfAllah1"></word>
+		<word text="suboHa`na {ll~ahi wabiHamodihi" id="ExcellenceOfRemembranceAndGlorificationOfAllah2"></word>
+		<word text="suboHa`na {ll~ahi {loEaZiymi" id="ExcellenceOfRemembranceAndGlorificationOfAllah5"></word>
+		<word text="suboHa`na {ll~ahi wa{loHamodu lil~ahi walaA^ &lt;ilaha &lt;il~aA {ll~ahu wa{ll~ahu &gt;akobaru" id="ExcellenceOfRemembranceAndGlorificationOfAllah6"></word>
+		<word text="suboHa`na {ll~ahi {loEaZiymi wabiHamodihi" id="ExcellenceOfRemembranceAndGlorificationOfAllah8"></word>
+		<word text="laA Hawola walaA quw~apa &lt;il~aA bi{ll~ahi" id="ExcellenceOfRemembranceAndGlorificationOfAllah9"></word>
+		<word text="suboHa`na {ll~ahi\, wa{loHamodu lil~ahi\, walaA^ &lt;ilaha &lt;il~aA {ll~ahu\, wa{ll~ahu &gt;akobaru" id="ExcellenceOfRemembranceAndGlorificationOfAllah10"></word>
+		<word text="laA^ &lt;ilaha &lt;il~aA {ll~ahu waHodahu laA $ariyka lahu\, {ll~ahu &gt;akobaru kabiyrFA wa{loHamodu lil~ahi kaviyrFA suboHa`na {ll~ahi rab~i {loEaAlamiyna\, laA Hawola walaA quw~apa &lt;il~aA bi{ll~ahi {loEaziyzi {loHakiymi\, {ll~ahum~a {gofiri liy\, wa{roHamoniy\, wa{hodiniy\, wa{rozuqoniy" id="ExcellenceOfRemembranceAndGlorificationOfAllah11"></word>
+		<word text="{ll~ahum~a {gofiri liy\, wa{roHamoniy\, wa{hodiniy\, waEaAfiniy\, wa{rozuqoniy" id="ExcellenceOfRemembranceAndGlorificationOfAllah12"></word>
+		<word text="{loHamodu lil~ahi laA^ &lt;ilaha &lt;il~aA {ll~ahu" id="ExcellenceOfRemembranceAndGlorificationOfAllah13"></word>
+		<word text="suboHa`na {ll~ahi wa{loHamodu lil~ahi walaA^ &lt;ilaha &lt;il~aA {ll~ahu wa{ll~ahu &gt;akobaru walaA Hawola walaA quw~apa &lt;il~aA bi{ll~ahi" id="ExcellenceOfRemembranceAndGlorificationOfAllah14"></word>
+		<word text="gafara {ll~ahu laka ya`rasuwla {ll~ahi walaka" id="ForConcludingAllSittings1"></word>
+		<word text="baAraka {ll~ahu fiykumo wafiyhim baAraka {ll~ah" id="ReturningASupplicationAfterHavingBestowedAGiftOrCharityUponSomeone1"></word>
+		
 		<word text="\{1:1:1-2\}" id="InTheNameOfAllah"></word>
 		<word text="\{113\}" id="TheDaybreak"></word>
 		<word text="\{94:6\}" id="TrulyWithHardshipIsEase"></word>
@@ -3480,360 +3592,360 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<word id="UponExperiencingFearUnrestApprehensivenessDuringSleep1" text="\{phrase:UponExperiencingFearUnrestApprehensivenessDuringSleep1\}"></word>
 		</category>
 		<category title="UponSeeingABadDream">
-			<word id="" text="\{phrase:SeekRefugeWithAllahFromSatanRejected\}"></word>
+			<word id="UponSeeingABadDream1" text="\{phrase:SeekRefugeWithAllahFromSatanRejected\}"></word>
 		</category>
 		<category title="DesperateOddPrayer">
-			<word id="" text="{ll~ahum~a {hodiniy fiymano hadayota waEaAfiniy fiymano EaAfayota watawal~aniy fiyman tawal~ayota wabaAriko liy fiymaA^ &gt;aEoTayota waqiniy $ar~a maA qaDayota fa&lt;in~aka taqoDiy walaA yuqoDaY Ealayoka &lt;in~ahu laA ya*il~u man wa{layota walaA yaEiz~u mano EaAdayota tabaArakota rab~anaA wataEaAlayota"></word>
-			<word id="" text="{ll~ahum~a &lt;in~iY^ &gt;aEuw*u biriDaAka min saxaTika wabimuEaAfaAtika mino Euquwbatika wa&gt;aEuw*u bika minka laA^ &gt;uHoSiy vanaA^&apos;F Ealayoka &gt;anta kamaA^ &gt;avonayota EalaY nafosika"></word>
-			<word id="" text="{ll~ahum~a &lt;iy~aAka naEobudo walaka nuSal~iy wanasojudu wa&lt;ilayoka nasoEaY wanaHofidu narojuw raHomataka wanaxo$aY Ea*aAbaka &lt;in~a Ea*aAbaka bi{lokaAfiriyna muloHaqN\. {ll~ahum~a &lt;in~aA nasotaEiynuka wanasotagofiruka wanuvoniy Ealayoka {loxayora\, walaA nakofuruka wanu&amp;ominu bika wanaxoDaEu laka wanaxolaEu man yakofuruka"></word>
+			<word id="DesperateOddPrayer1" text="\{phrase:DesperateOddPrayer1\}"></word>
+			<word id="DesperateOddPrayer2" text="\{phrase:DesperateOddPrayer2\}"></word>
+			<word id="DesperateOddPrayer3" text="\{phrase:DesperateOddPrayer3\}"></word>
 		</category>
 		<category title="OddPrayerAndAfter">
-			<word id="" text="\{87\}\{109\}\{112\} suboHa`na {lomaliki {loqud~uwsi (valaAvFA mar~aAtFA)\. rab~i {lomala`^}ikapi wa{lr~uwHi\."></word>
+			<word id="OddPrayerAndAfter1" text="\{87\}\{109\}\{112\} \{phrase:OddPrayerAndAfter1\}"></word>
 		</category>
 		<category title="ForAnxietyAndSorrow">
-			<word id="ForAnxietyAndSorrow1" text="{ll~ahum~a &lt;in~iy Eaboduka {bonu Eabodika {bonu &gt;amatika naASiyatiy biyadika maADK fiy~a Hukomuka EadolN fiy~a qaDaA^&amp;uka &gt;aso&gt;aluka bikul~i {somK huwa laka sam~ayota bihi nafosaka &gt;awo &gt;anzalotahu fiY kitaAbika &gt;awo Eal~amotahu &gt;aHadFA mino xaloqika &gt;awi {sota&gt;ovarota bihi fiY Eilomi {logayobi Eindaka &gt;an tajoEala {loquro&apos;aAna rabiyEa qalobiy wanuwra Sadoriy wjalaA^&apos;a Huzoniy wa*ahaAba ham~iy"></word>
-			<word id="ForAnxietyAndSorrow2" text="{ll~ahum~a &lt;in~iY^ &gt;aEuw*u bika mina {loham~i wa{loHazani\, wa{loEajozi wa{lokasali\, wa{lobuxoli wa{lojuboni\, waDalaEi {ld~ayoni wagalabapi {lr~ijaAli"></word>
+			<word id="ForAnxietyAndSorrow1" text="\{phrase:ForAnxietyAndSorrow1\}"></word>
+			<word id="ForAnxietyAndSorrow2" text="\{phrase:ForAnxietyAndSorrow2\}"></word>
 		</category>
 		<category title="ForOneInDistress">
-			<word id="" text="laA^ &lt;ilaha &lt;il~aA {ll~ahu {loEaZiymu {loHaliymu\, laA^ &lt;ilaha &lt;il~aA {ll~ahu rab~u {loEaro$i {loEaZiymi\, laA^ &lt;ilaha &lt;il~aA {ll~ahu rab~u {ls~ama`w~aAti warab~u {lo&gt;aroDi warab~u {loEaro$i {lokariymi"></word>
-			<word id="" text="{ll~ahum~a raHomataka &gt;arojuw falaA takiloniY^ &lt;ilaY nafosiy Tarofapa EayonK wa&gt;aSoliHo liy $a&gt;oniy kul~ahu laA^ &lt;ilaha &lt;il~aA^ &gt;anta"></word>
-			<word id="" text="\{21:87:15-23\}"></word>
-			<word id="" text="{ll~ahu {ll~ahu rab~i laA^ &gt;u$orika bihi $ayo}FA"></word>
+			<word id="ForOneInDistress1" text="\{phrase:ForOneInDistress1\}"></word>
+			<word id="ForOneInDistress2" text="\{phrase:ForOneInDistress2\}"></word>
+			<word id="ForOneInDistress3" text="\{21:87:15-23\}"></word>
+			<word id="ForOneInDistress4" text="\{phrase:ForOneInDistress4\}"></word>
 		</category>
 		<category title="UponEncounteringAnEnemyOrThoseOfAuthority">
-			<word id="" text="{ll~ahum~a &lt;in~aA najoEaluka fiY nuHuwrihimo wanaEuw*u bika min $uruwrihimo"></word>
-			<word id="" text="{ll~ahum~a &gt;anta EaDudiy\, wa&gt;anta naSiyriy bika &gt;ajuwlu wabika &gt;aSuwlu wabika &gt;uqaAtilu"></word>
-			<word id="" text="\{3:173:14-17\}"></word>
+			<word id="UponEncounteringAnEnemyOrThoseOfAuthority1" text="\{phrase:UponEncounteringAnEnemyOrThoseOfAuthority1\}"></word>
+			<word id="UponEncounteringAnEnemyOrThoseOfAuthority2" text="\{phrase:UponEncounteringAnEnemyOrThoseOfAuthority2\}"></word>
+			<word id="UponEncounteringAnEnemyOrThoseOfAuthority3" text="\{3:173:14-17\}"></word>
 		</category>
 		<category title="MadeAgainstAnEnemy">
-			<word id="" text="{ll~ahum~a munzila {lokitaAbi sariyEa {loHisaAbi {hozimi {lo&gt;aHozaAba {ll~ahum~a {hozimohumo wazalozilohumo"></word>
+			<word id="MadeAgainstAnEnemy1" text="\{phrase:MadeAgainstAnEnemy1\}"></word>
 		</category>		
 		<category title="WhenInFearOfAPeople">
-			<word id="" text="{ll~ahum~a {kofiniyhim bimaA $i}ota"></word>
+			<word id="WhenInFearOfAPeople1" text="\{phrase:WhenInFearOfAPeople1\}"></word>
 		</category>
 		<category title="ForOneAfflictedWithDoubtInFaith">
-			<word id="" text="\{phrase:SeekRefugeWithAllahFromSatanRejected\}"></word>
-			<word id="" text="&apos;aAmantu bi{ll~ahi warusulihi"></word>
-			<word id="" text="\{57:3\}"></word>
+			<word id="ForOneAfflictedWithDoubtInFaith1" text="\{phrase:SeekRefugeWithAllahFromSatanRejected\}"></word>
+			<word id="ForOneAfflictedWithDoubtInFaith2" text="\{phrase:ForOneAfflictedWithDoubtInFaith2\}"></word>
+			<word id="ForOneAfflictedWithDoubtInFaith3" text="\{57:3\}"></word>
 		</category>
 		<category title="SettlingADebt">
-			<word id="" text="{ll~ahum~a {kofiniy biHalaAlika Eano HaraAmika wa&gt;agoniniy bifaDolika Eam~an siwaAka"></word>
-			<word id="" text="{ll~ahum~a &lt;in~iY^ &gt;aEuw*u bika mina {loham~i wa{loHazani wa{loEajozi wa{lokasali wa{lobuxoli wa{lojuboni waDalaEi {ld~ayoni wagalabapi {lr~ijaAli"></word>
+			<word id="SettlingADebt1" text="\{phrase:SettlingADebt1\}"></word>
+			<word id="SettlingADebt2" text="\{phrase:SettlingADebt2\}"></word>
 		</category>
 		<category title="ForOneAffectedByWhisperingsInPrayerOrSupplication">
-			<word id="" text="\{phrase:SeekRefugeWithAllahFromSatanRejected\}"></word>
+			<word id="ForOneAffectedByWhisperingsInPrayerOrSupplication1" text="\{phrase:SeekRefugeWithAllahFromSatanRejected\}"></word>
 		</category>
 		<category title="ForOneWhoseAffairsHaveBecomeDifficult">
-			<word id="" text="{ll~ahum~a laA sahola &lt;il~aA maA jaEalotahu saholFA wa&gt;anta tajoEalu {loHazana &lt;i*aA $i}ota saholFA"></word>
+			<word id="ForOneWhoseAffairsHaveBecomeDifficult1" text="\{phrase:ForOneWhoseAffairsHaveBecomeDifficult1\}"></word>
 		</category>
 		<category title="UponCommittingASin">
-			<word id="" text=""></word>
+			<word id="UponCommittingASin1" text=""></word>
 		</category>
 		<category title="ForExpellingTheDevilAndHisWhisperings">
-			<word id="" text="\{phrase:SeekRefugeWithAllahFromSatanRejected\}"></word>
-			<word id="" text=""></word>
-			<word id="" text=""></word>
+			<word id="ForExpellingTheDevilAndHisWhisperings1" text="\{phrase:SeekRefugeWithAllahFromSatanRejected\}"></word>
+			<word id="ForExpellingTheDevilAndHisWhisperings2" text=""></word>
+			<word id="ForExpellingTheDevilAndHisWhisperings3" text=""></word>
 		</category>
 		<category title="WhenStrickenWithAMishapOrOvertakenByAnAffair">
-			<word id="" text="qad~aru {ll~ahi wamaA $aA^&apos;a faEala"></word>
-			<word id="" text="\{3:173:14-17\}"></word>
+			<word id="WhenStrickenWithAMishapOrOvertakenByAnAffair1" text="\{phrase:WhenStrickenWithAMishapOrOvertakenByAnAffair1\}"></word>
+			<word id="WhenStrickenWithAMishapOrOvertakenByAnAffair2" text="\{3:173:14-17\}"></word>
 		</category>
 		<category title="PlacingChildrenUnderAllahsProtection">
-			<word id="" text="&gt;uEiy*ukumaA bikalimaAti {ll~ahi {lt~aAm~apu min kul~i $ayoTaAnK wahaAm~apK wamin kul~i EayonK laAm~apK"></word>
+			<word id="PlacingChildrenUnderAllahsProtection1" text="\{phrase:PlacingChildrenUnderAllahsProtection1\}"></word>
 		</category>
 		<category title="WhenVisitingTheSick">
-			<word id="" text="laA ba&gt;osa TahuwrN &lt;in $aA^&apos;a {ll~ahu"></word>
-			<word id="" text="&gt;aso&gt;alu {ll~aha {loEaZiyma rab~a {loEaro$i {loEaZiymi &gt;an ya$ofiyka (sabaEFA mar~aAtFA)"></word>
+			<word id="WhenVisitingTheSick1" text="\{phrase:WhenVisitingTheSick1\}"></word>
+			<word id="WhenVisitingTheSick2" text="\{phrase:WhenVisitingTheSick2\} (sabaEFA mar~aAtFA)"></word>
 		</category>
 		<category title="ExcellenceOfVisitingTheSick">
-			<word id="" text=""></word>
+			<word id="ExcellenceOfVisitingTheSick1" text=""></word>
 		</category>
 		<category title="TheSickWhoHaveRenouncedAllHopeOfLife">
-			<word id="" text="{ll~ahum~a {gofiro liy wa{roHamoniy wa&gt;aloHiqoniy bi{lr~afiyqi {lo&gt;aEolaY \{4:69\}"></word>
-			<word id="" text="laA^ &lt;ilaha &lt;il~aA {ll~ahu &lt;in~a lilomawoti lasakaraAtK"></word>
-			<word id="" text="laA^ &lt;ilaha &lt;il~aA {ll~ahu wa{ll~ahu &gt;akobaru laA^ &lt;ilaha &lt;il~aA {ll~ahu waHodahu laA^ &lt;ilaha &lt;il~aA {ll~ahu waHodahu laA $ariyka lahu laA^ &lt;ilaha &lt;il~aA {ll~ahu lahu {lomuloku walahu {loHamodu laA^ &lt;ilaha &lt;il~aA {ll~ahu walaA Hawola walaA quw~apa &lt;il~aA bi{ll~ahi"></word>
+			<word id="TheSickWhoHaveRenouncedAllHopeOfLife1" text="\{phrase:TheSickWhoHaveRenouncedAllHopeOfLife1\} \{4:69\}"></word>
+			<word id="TheSickWhoHaveRenouncedAllHopeOfLife2" text="\{phrase:TheSickWhoHaveRenouncedAllHopeOfLife2\}"></word>
+			<word id="TheSickWhoHaveRenouncedAllHopeOfLife3" text="\{phrase:TheSickWhoHaveRenouncedAllHopeOfLife3\}"></word>
 		</category>
 		<category title="InstructionForTheOneNearingDeath">
-			<word id="" text="laA^ &lt;ilaha &lt;il~aA {ll~ahu"></word>
+			<word id="InstructionForTheOneNearingDeath1" text="\{phrase:CreedOfIslamFirstPart\}"></word>
 		</category>
 		<category title="InstructionForOneAfflictedByCalamity">
-			<word id="" text="&lt;in~aA lil~ahi wa&lt;in~aA^ &lt;ilayohi raAjiEuwna\, {ll~ahum~a &gt;ojuroniy fiY muSiybatiy wa{xolifo liy xayorFA minohaA"></word>
+			<word id="InstructionForOneAfflictedByCalamity1" text="\{phrase:InstructionForOneAfflictedByCalamity1\}"></word>
 		</category>
 		<category title="WhenClosingTheEyesOfTheDeceased">
-			<word id="" text="{ll~ahum~a {gofiro lifulaAnK (bi{somihi) wa{rofaEo darajatahu fiY {lomahodiy~iyna wa{xolufohu fiY Eaqibihi fiY {logaAbiriyna wa{gofiro lanaA walahu ya`rab~a {loEaAlamiyna wa{fosaHo lahu fiY qaborihi wanaw~iro lahu fiyhi"></word>
+			<word id="WhenClosingTheEyesOfTheDeceased1" text="\{phrase:WhenClosingTheEyesOfTheDeceased1\}"></word>
 		</category>
 		<category title="ForTheDeceasedAtFuneralPrayer">
-			<word id="" text="{ll~ahum~a {gofiro lahu wa{roHamohu waEaAfihi wa{Eofu Eanohu wa&gt;akorimo nuzulahu wawas~iEo mudoxalahu wa{gosilohu bi{lomaA^&apos;i wa{lv~aloji wa{lobaradi wanaq~ihi mina {loxaTaAyaA kamaA naq~ayota {lv~awoba {lo&gt;aboyaDa mina {ld~anasi wa&gt;abodilohu daArFA xayorFA min daArihi wa&gt;aholFA xayorFA mino &gt;aholihi wazawojFA xayorFA min zawojihi wa&gt;adoxilohu {lojan~apa wa&gt;aEi*ohu mino Ea*aAbi {loqabori waEa*aAbi {ln~aAri"></word>
-			<word id="" text="{ll~ahum~a {gofiro liHay~inaA\, wamay~itinaA\, wa$aAhidinaA\, wagaA^}ibinaA\, waSagiyrinaA wakabiyrinaA\, wa*akarinaA wa&gt;unvaAnaA\. {ll~ahum~a mano &gt;aHoyayotahu min~aA fa&gt;aHoyihi EalaY {lo&lt;isolaAmi waman tawaf~ayotahu min~aA fatawaf~ahu EalaY {lo&lt;iymaAni {ll~ahum~a laA taHorimonaA^ &gt;ajorahu walaA tuDil~anaA baEodahu"></word>
-			<word id="" text="{ll~ahum~a &lt;in~a fulaAna bona fulaAnK fiY *im~atika waHaboli jiwaAriko faqihi min fitonapi {loqabori waEa*aAbi {ln~aAri wa&gt;anta &gt;aholu {lowafaA^&apos;i wa{loHaq~i fa{gofiro lahu wa{roHamohu &lt;in~aka &gt;anta {logafuwru {lr~aHiymu"></word>
-			<word id="" text="{ll~ahum~a Eaboduka wa{bonu &gt;amatika {HotaAja &lt;ilaY raHomatika wa&gt;anta ganiy~N Eano Ea*aAbihi &lt;in kaAna muHosinFA fazido fiY HasanaAtihi wa&lt;in kaAna musi}FA fatajaAwazo Eanohu"></word>
+			<word id="ForTheDeceasedAtFuneralPrayer1" text="\{phrase:ForTheDeceasedAtFuneralPrayer1\}"></word>
+			<word id="ForTheDeceasedAtFuneralPrayer2" text="\{phrase:ForTheDeceasedAtFuneralPrayer2\}"></word>
+			<word id="ForTheDeceasedAtFuneralPrayer3" text="\{phrase:ForTheDeceasedAtFuneralPrayer3\}"></word>
+			<word id="ForTheDeceasedAtFuneralPrayer4" text="\{phrase:ForTheDeceasedAtFuneralPrayer4\}"></word>
 		</category>
 		<category title="ForTheAdvancementOfRewardDuringTheFuneralPrayer">
-			<word id="" text="{ll~ahum~a {joEalohu faraTFA wa*uxorFA liwaAlidayohi wa$afiyEFA mujaAbFA {ll~ahum~a vaq~ilo bihi muwaAziynahumaA wa&gt;aEoZim bihi &gt;ujuwrahumaA\, wa&gt;aloHiqohu biSaAliHi {lomu&amp;ominiyna wa{joEalohu fiY kafaAlapi &lt;ibora`hiyma waqihi biraHomatika Ea*aAba {lojaHiymi"></word>
-			<word id="" text="\{1\}"></word>
+			<word id="ForTheAdvancementOfRewardDuringTheFuneralPrayer1" text="\{phrase:ForTheAdvancementOfRewardDuringTheFuneralPrayer1\}"></word>
+			<word id="ForTheAdvancementOfRewardDuringTheFuneralPrayer2" text="\{1\}"></word>
 		</category>
 		<category title="Condolence">
-			<word id="" text="&lt;in~a lil~ahi maA^ &gt;axa*a walahu maA^ &gt;aEoTaY wakul~u $ayo&apos;K Eindahu bi&gt;ajalK musam~FY falotaSobiro walotaHotasibo"></word>
+			<word id="Condolence1" text="\{phrase:Condolence1\}"></word>
 		</category>
 		<category title="PlacingTheDeceasedInTheGrave">
-			<word id="" text="bisomi {ll~ahi waEalaY sun~api rasuwli {ll~ahi"></word>
+			<word id="PlacingTheDeceasedInTheGrave1" text="\{phrase:PlacingTheDeceasedInTheGrave1\}"></word>
 		</category>
 		<category title="AfterBuryingTheDeceased">
-			<word id="" text="{ll~ahum~a {gofiro lahu {ll~ahum~a vab~itohu"></word>
+			<word id="AfterBuryingTheDeceased1" text="\{phrase:AfterBuryingTheDeceased1\}"></word>
 		</category>
 		<category title="VisitingTheGraves">
-			<word id="" text="{ls~alaAmu Ealayokumo &gt;ahola {ld~iyaAri mina {lomu&amp;ominiyna wa{lomusolimiyna wa&lt;in~aA^ &lt;in $aA^&apos;a {ll~ahu bikumo laAHiquwna (wayaroHamu {ll~ahu {lomusotaqodimiyna min~aA wa{lomusota&gt;oxiriyna) &gt;aso&gt;alu {ll~aha lanaA walakumu {loEaAfiyapa"></word>
+			<word id="VisitingTheGraves1" text="\{phrase:VisitingTheGraves1\}"></word>
 		</category>
 		<category title="PrayerSaidDuringAWindStorm">
-			<word id="" text="{ll~ahum~a &lt;in~iY^ &gt;aso&gt;aluka xayorahaA\, wa&gt;aEuw*u bika min $ar~ihaA"></word>
-			<word id="" text="{ll~ahum~a &lt;in~iY^ &gt;aso&gt;aluka xayorahaA\, waxayora maA fiyhaA\, waxayora maA^ &gt;urosilato bihi wa&gt;aEuw*u bika min $ar~ihaA\, wa$ar~i maA fiyhaA\, wa$ar~i maA^ &gt;urosilato bihi"></word>
+			<word id="PrayerSaidDuringAWindStorm1" text="\{phrase:PrayerSaidDuringAWindStorm1\}"></word>
+			<word id="PrayerSaidDuringAWindStorm2" text="\{phrase:PrayerSaidDuringAWindStorm2\}"></word>
 		</category>
 		<category title="UponHearingThunder">
-			<word id="" text="suboHa`na {l~a*iy yusab~iHu {lr~aEodu biHamodihi wa{lomalaA^}ikapu mino xiyfatihi"></word>
+			<word id="UponHearingThunder1" text="\{phrase:UponHearingThunder1\}"></word>
 		</category>
 		<category title="ForRain">
-			<word id="" text="{ll~ahum~a &gt;asoqinaA gayovFA mugiyvFA mari}FA mariyEFA naAfiEFA gayora DaAr~K EaAjilFA gayora &apos;aAjilK"></word>
-			<word id="" text="{ll~ahum~a &gt;agivonaA\, {ll~ahum~a &gt;agivonaA\, {ll~ahum~a &gt;agivonaA"></word>
-			<word id="" text="{ll~ahum~a {soqi EibaAdaka wabahaA^}imaka wa{n$uro raHomataka wa&gt;aHoyiY baladaka {lomay~ita"></word>
+			<word id="ForRain1" text="\{phrase:ForRain1\}"></word>
+			<word id="ForRain2" text="\{phrase:ForRain2\}"></word>
+			<word id="ForRain3" text="\{phrase:ForRain3\}"></word>
 		</category>
 		<category title="WhenItRains">
-			<word id="" text="{ll~ahum~a Say~ibFA naAfiEFA"></word>
+			<word id="WhenItRains1" text="\{phrase:WhenItRains1\}"></word>
 		</category>
 		<category title="AfterRainfall">
-			<word id="" text="muTironaA bifaDoli {ll~ahi waraHomatihi"></word>
+			<word id="AfterRainfall1" text="\{phrase:AfterRainfall1\}"></word>
 		</category>
 		<category title="AskingForClearSkies">
-			<word id="" text="{ll~ahum~a HawaAlayonaA walaA EalayonaA\. {ll~ahum~a EalaY {lo&apos;aAkaAmi wa{lZ~iraAbi wabuTuwni {lo&gt;awodiyapi wamanaAbiti {l$~ajari"></word>
+			<word id="AskingForClearSkies1" text="\{phrase:AskingForClearSkies1\}"></word>
 		</category>
 		<category title="UponSightingTheCrescentMoon">
-			<word id="" text="{ll~ahu &gt;akobaru {ll~ahum~a &gt;ahil~ahu EalayonaA bi{lo&gt;amoni wa{lo&lt;iymaAni wa{ls~alaAmapi wa{lo&lt;isolaAmi wa{lt~awofiyqi limaA tuHib~u rab~anaA wataroDaY rab~unaA warab~uka {ll~ahu"></word>
+			<word id="UponSightingTheCrescentMoon1" text="\{phrase:UponSightingTheCrescentMoon1\}"></word>
 		</category>
 		<category title="UponBreakingFast">
-			<word id="" text="*ahaba {lZ~ama&gt;u wa{botal~ati {loEuruwqu wavabata {lo&gt;ajoru &lt;in $aA^&apos;a {ll~ahu"></word>
-			<word id="" text="{ll~ahum~a &lt;in~iY^ &gt;aso&gt;aluka biraHomatika {l~atiy wasiEato kul~a $ayo&apos;K &gt;an tagofira liy"></word>
+			<word id="UponBreakingFast1" text="\{phrase:UponBreakingFast1\}"></word>
+			<word id="UponBreakingFast2" text="\{phrase:UponBreakingFast2\}"></word>
 		</category>
 		<category title="BeforeEating">
-			<word id="" text="bisomi {ll~ahi"></word>
-			<word id="" text="bisomi {ll~ahi fiY^ &gt;aw~alihi wa&apos;aAxirihi"></word>
-			<word id="" text="{ll~ahum~a baAriko lanaA fiyhi wa&gt;aToEimonaA xayorFA minohu"></word>
-			<word id="" text="{ll~ahum~a baAriko lanaA fiyhi wazidonaA minohu"></word>
+			<word id="BeforeEating1" text="\{phrase:InTheNameOfAllah\}"></word>
+			<word id="BeforeEating2" text="\{phrase:BeforeEating2\}"></word>
+			<word id="BeforeEating3" text="\{phrase:BeforeEating3\}"></word>
+			<word id="BeforeEating4" text="\{phrase:BeforeEating4\}"></word>
 		</category>
 		<category title="UponCompletingTheMeal">
-			<word id="" text="{loHamodu lil~ahi {l~a*iY^ &gt;aToEamaniy ha`*aA warazaqaniyhi mino gayori HawolK min~iy walaA quw~apK"></word>
-			<word id="" text="{loHamodu lil~ahi HamodFA kaviyrFA Tay~ibFA mubaArakFA fiyhi gayora makofiy~K walaA muwad~aEK walaA musotagonFY Eanohu rab~anaA"></word>
+			<word id="UponCompletingTheMeal1" text="\{phrase:UponCompletingTheMeal1\}"></word>
+			<word id="UponCompletingTheMeal2" text="\{phrase:UponCompletingTheMeal2\}"></word>
 		</category>
 		<category title="OfTheGuestForTheHost">
-			<word id="" text="{ll~ahum~a baAriko lahumo fiymaA razaqotahumo\, wa{gofiro lahumo wa{roHamohumo"></word>
+			<word id="OfTheGuestForTheHost1" text="\{phrase:OfTheGuestForTheHost1\}"></word>
 		</category>
 		<category title="SaidToOneOfferingADrinkOrTheOneWhoIntendedToDoThat">
-			<word id="" text="{ll~ahum~a &gt;aToEimo man &gt;aToEamaniy waAsoqi man saqaAniy"></word>
+			<word id="SaidToOneOfferingADrinkOrTheOneWhoIntendedToDoThat1" text="\{phrase:SaidToOneOfferingADrinkOrTheOneWhoIntendedToDoThat1\}"></word>
 		</category>
 		<category title="WhenBreakingFastInSomeonesHome">
-			<word id="" text="&gt;afoTara Eindakumu {lS~aA^}imuwna wa&gt;akala TaEaAmakumu {lo&gt;aboraAru waSal~ato Ealayokumu {lomala`^}ikapu"></word>
+			<word id="WhenBreakingFastInSomeonesHome1" text="\{phrase:WhenBreakingFastInSomeonesHome1\}"></word>
 		</category>
 		<category title="ByOneFastingWhenPresentedWithFoodAndDoesNotBreakFast">
-			<word id="" text=""></word>
+			<word id="ByOneFastingWhenPresentedWithFoodAndDoesNotBreakFast1" text=""></word>
 		</category>		
 		<category title="WhenInsultedWhileFasting">
-			<word id="" text="&lt;in~iy SaA^}imN &lt;in~iy SaA^}imN"></word>
+			<word id="WhenInsultedWhileFasting1" text="\{phrase:WhenInsultedWhileFasting1\}"></word>
 		</category>
 		<category title="UponSeeingEarlyOrPrematureFruit">
-			<word id="" text="{ll~ahum~a baAriko lanaA fiY vamarinaA wabaAriko lanaA fiY madiynatinaA wabaAriko lanaA fiY SaAEinaA wabaAriko lanaA fiY mud~inaA"></word>
+			<word id="UponSeeingEarlyOrPrematureFruit1" text="\{phrase:UponSeeingEarlyOrPrematureFruit1\}"></word>
 		</category>				
 		<category title="UponSneezing">
-			<word id="" text="{loHamodu lil~ahi\. yaroHamuka {ll~ahu\. yahodiykumu {ll~ahu wayuSoliHu baAlakumo"></word>
+			<word id="UponSneezing1" text="\{phrase:UponSneezing1\}"></word>
 		</category>
 		<category title="ToADisbelieverWhenSneezes">
-			<word id="" text="yahodiykumu {ll~ahu wayuSoliHu baAlakumo"></word>
+			<word id="ToADisbelieverWhenSneezes1" text="\{phrase:ToADisbelieverWhenSneezes1\}"></word>
 		</category>
 		<category title="ToTheNewlyWed">
-			<word id="" text="baAraka {ll~ahu laka wabaAraka Ealayoka wajamaEa bayonakumaA fiY xayorK"></word>
+			<word id="ToTheNewlyWed1" text="\{phrase:ToTheNewlyWed1\}"></word>
 		</category>
 		<category title="GroomOnWeddingNightOrWhenBuyingAnimal">
-			<word id="" text="{ll~ahum~a &lt;in~iY^ &gt;aso&gt;aluka xayorahaA waxayora maA jabalotahaA Ealayohi wa&gt;aEuw*u bika min $ar~ihaA wa$ar~i maA jabalotahaA Ealayohi"></word>
+			<word id="GroomOnWeddingNightOrWhenBuyingAnimal1" text="\{phrase:GroomOnWeddingNightOrWhenBuyingAnimal1\}"></word>
 		</category>
 		<category title="BeforeSexualIntercourse">
-			<word id="" text="bisomi {ll~ahi\. {ll~ahum~a jan~ibonaA {l$~ayoTaAna wajan~ibi {l$~ayoTaAna maA razaqotanaA"></word>
+			<word id="BeforeSexualIntercourse1" text="\{phrase:BeforeSexualIntercourse1\}"></word>
 		</category>
 		<category title="WhenAngry">
-			<word id="" text="\{phrase:SeekRefugeWithAllahFromSatanRejected\}"></word>
+			<word id="WhenAngry1" text="\{phrase:SeekRefugeWithAllahFromSatanRejected\}"></word>
 		</category>
 		<category title="UponSeeingSomeoneInTrialOrTribulation">
-			<word id="UponSeeingSomeoneInTrialOrTribulation1" text="{loHamodu lil~ahi {l~a*iy EaAfaAniy mim~aA {botalaAka bihi wafaD~alaniy EalaY kaviyrK mim~ano xalaqa tafoDiylFA"></word>
+			<word id="UponSeeingSomeoneInTrialOrTribulation1" text="\{phrase:UponSeeingSomeoneInTrialOrTribulation1\}"></word>
 		</category>
 		<category title="RemembranceAtSittingOrGathering">
-			<word id="RemembranceAtSittingOrGathering1" text="rab~i {gofiro liy watubo Ealay~a &lt;in~aka &gt;anta {lt~aw~aAbu {logafuwru"></word>
+			<word id="RemembranceAtSittingOrGathering1" text="\{phrase:RemembranceAtSittingOrGathering1\}"></word>
 		</category>
 		<category title="ForExpiationOfSinsAtTheConclusionOfSittingOrGathering">
-			<word id="ForExpiationOfSinsAtTheConclusionOfSittingOrGathering1" text="suboHa`naka {ll~ahum~a wabiHamodika\, &gt;a$ohadu &gt;ano laA^ &lt;ilaha &lt;il~aA^ &gt;anta\, &gt;asotagofiruka wa&gt;atuwbu &lt;ilayoka"></word>
-			<word id="ForExpiationOfSinsAtTheConclusionOfSittingOrGathering2" text="suboHa`naka wabiHamodika\, laA^ &lt;ilaha &lt;il~aA^ &gt;anta\, &gt;asotagofiruka wa&gt;atuwbu &lt;ilayoka"></word>
+			<word id="ForExpiationOfSinsAtTheConclusionOfSittingOrGathering1" text="\{phrase:ForExpiationOfSinsAtTheConclusionOfSittingOrGathering1\}"></word>
+			<word id="ForExpiationOfSinsAtTheConclusionOfSittingOrGathering2" text="\{phrase:ForExpiationOfSinsAtTheConclusionOfSittingOrGathering2\}"></word>
 		</category>
 		<category title="ReturningSupplicationForForgiveness">
-			<word id="ReturningSupplicationForForgiveness1" text="walaka"></word>
+			<word id="ReturningSupplicationForForgiveness1" text="\{phrase:ReturningSupplicationForForgiveness1\}"></word>
 		</category>
 		<category title="ToOneWhoDoesYouAFavor">
-			<word id="ToOneWhoDoesYouAFavor1" text="jazaAka {ll~ahu xayorFA"></word>
+			<word id="ToOneWhoDoesYouAFavor1" text="\{phrase:ToOneWhoDoesYouAFavor1\}"></word>
 		</category>
 		<category title="ProtectionFromTheDajjal">
-			<word id="" text="\{18:1-10\}"></word>
+			<word id="ProtectionFromTheDajjal1" text="\{18:1-10\}"></word>
 		</category>
 		<category title="ToOneWhoPronouncesLoveForYouForAllahsSake">
-			<word id="" text="&gt;aHab~aka {l~a*iY^ &gt;aHobabotaniy lahu"></word>
+			<word id="ToOneWhoPronouncesLoveForYouForAllahsSake1" text="\{phrase:ToOneWhoPronouncesLoveForYouForAllahsSake1\}"></word>
 		</category>
 		<category title="ToOneWhoHasOfferedYouSomeOfHisWealth">
-			<word id="" text="baAraka {ll~ahu laka fiY^ &gt;aholika wamaAlika"></word>
+			<word id="ToOneWhoHasOfferedYouSomeOfHisWealth1" text="\{phrase:ToOneWhoHasOfferedYouSomeOfHisWealth1\}"></word>
 		</category>
 		<category title="ToTheDebtorWhenHisDebtIsSettled">
-			<word id="" text="baAraka {ll~ahu laka fiY^ &gt;aholika wamaAlika &lt;in~amaA jazaA^&apos;u {ls~alafi {loHamodu wa{lo&gt;adaA^&apos;u"></word>
+			<word id="ToTheDebtorWhenHisDebtIsSettled1" text="\{phrase:ToTheDebtorWhenHisDebtIsSettled1\}"></word>
 		</category>
 		<category title="ForFearOfShirk">
-			<word id="" text="{ll~ahum~a &lt;in~iY^ &gt;aEuw*u bika &gt;ano &gt;u$orika bika wa&gt;anaA^ &gt;aEolamu wa&gt;asotagofiruka limaA laA^ &gt;aEolamu"></word>
+			<word id="ForFearOfShirk1" text="\{phrase:ForFearOfShirk1\}"></word>
 		</category>
 		<category title="WhenSomeoneBlessesYou">
-			<word id="" text="wafiyka baAraka {ll~ahu"></word>
+			<word id="WhenSomeoneBlessesYou1" text="\{phrase:WhenSomeoneBlessesYou1\}"></word>
 		</category>
 		<category title="WhenMountingAnAnimalOrAnyMeansOfTransport">
-			<word id="" text="bisomi {ll~ahi wa{loHamodu lil~ahi \{43:13:12-14:4\} {loHamodu lil~ahi {loHamodu lil~ahi {loHamodu lil~ahi {ll~ahu &gt;akobaru {ll~ahu &gt;akobaru {ll~ahu &gt;akobaru suboHa`naka {ll~ahum~a &lt;in~iy Zalamotu nafosiy fa{gofiro liy fa&lt;in~ahu laA yagofiru {l*~unuwba &lt;il~aA^ &gt;anta"></word>
+			<word id="WhenMountingAnAnimalOrAnyMeansOfTransport1" text="\{phrase:WhenMountingAnAnimalOrAnyMeansOfTransport1\}"></word>
 		</category>
 		<category title="ForTravel">
-			<word id="" text="{ll~ahu &gt;akobaru {ll~ahu &gt;akobaru {ll~ahu &gt;akobaru \{43:13:12-14:4\} {ll~ahum~a &lt;in~aA nasa&gt;aluka fiY safarinaA ha`*aA {lobir~a wa{lt~aqowaY wamina {loEamali maA taroDaY {ll~ahum~a haw~ino EalayonaA safaranaA ha`*aA waATowi Ean~aA buEodahu {ll~ahum~a &gt;anta {lS~aAHibu fiY {ls~afari wa{loxaliyfapu fiY {lo&gt;aholi {ll~ahum~a &lt;in~iY^ &gt;aEuw*u bika min waEovaA^&apos;i {ls~afari waka&apos;aAbapi {lomanZari wasuw^&apos;i {lomunqalabi fiY {lomaAli wa{lo&gt;aholi &apos;aAyibuwna taA}ibuwna EaAbiduwna lirab~inaA HaAmiduwna"></word>
+			<word id="ForTravel1" text="\{phrase:ForTravel1\}"></word>
 		</category>
 		<category title="UponEnteringATownOrVillage">
-			<word id="" text="{ll~ahum~a rab~a {ls~ama`wa`ti {ls~aboEi wamaA^ &gt;aZolalona warab~a {lo&gt;araDiyna {ls~aboEi wamaA^ &gt;aqolalona warab~a {l$~ayaATiyni wamaA^ &gt;aDolalona warab~a {lr~iyaAHi wamaA *arayona &gt;aso&gt;aluka xayora ha*ihi {loqaroyapi waxayora &gt;aholihaA waxayora maA fiyhaA wa&gt;aEuw*u bika min $ar~ihaA wa$ar~i &gt;aholihaA wa$ar~i maA fiyhaA"></word>
+			<word id="UponEnteringATownOrVillage1" text="\{phrase:UponEnteringATownOrVillage1\}"></word>
 		</category>
 		<category title="WhenEnteringTheMarket">
-			<word id="" text="laA^ &lt;ilaha &lt;il~aA {ll~ahu waHodahu laA $ariyka lahu\, lahu {lomuloku walahu {loHamodu yuHoyiy wayumiytu wahuwa Hay~N laA yamuwtu biyadihi {loxayoru wahuwa EalaY kul~i $ayo&apos;K qadiyrN"></word>
+			<word id="WhenEnteringTheMarket1" text="\{phrase:WhenEnteringTheMarket1\}"></word>
 		</category>
 		<category title="WhenTheMountedAnimalOrMeansOfTransportStumbles">
-			<word id="" text="bisomi {ll~ahi"></word>
+			<word id="WhenTheMountedAnimalOrMeansOfTransportStumbles1" text="\{phrase:InTheNameOfAllah\}"></word>
 		</category>
 		<category title="OfTheTravellerForTheResident">
 			<word id="" text="&gt;asotawodiEukumu {ll~aha {l~a*iy laA taDiyEu wadaA^}iEuhu"></word>
 		</category>
 		<category title="OfTheResidentForTheTraveller">
-			<word id="" text="&gt;asotawodiEu {ll~aha diynaka wa&gt;amaAnataka waxawaAtiyma Eamalika"></word>
-			<word id="" text="zaw~adaka {ll~ahu {lt~aqowaY wagafara *anobaka wayas~ara laka {loxayora Hayovu maA kunta"></word>
+			<word id="OfTheResidentForTheTraveller1" text="\{phrase:OfTheResidentForTheTraveller1\}"></word>
+			<word id="OfTheResidentForTheTraveller2" text="\{phrase:OfTheResidentForTheTraveller2\}"></word>
 		</category>
 		<category title="WhileAscendingOrDescending">
-			<word id="" text="{ll~ahu &gt;akobaru suboHa`na {ll~ahi"></word>
+			<word id="WhileAscendingOrDescending1" text="\{phrase:WhileAscendingOrDescending1\}"></word>
 		</category>
 		<category title="OfTheTravellerAsDawnApproaches">
-			<word id="" text="samiEa saAmiEN biHamodi {ll~ahi waHusoni balaA^}ihi EalayonaA\. rab~anaA SaAHibonaA\, wa&gt;afoDilo EalayonaA EaA}i*FA bi{ll~ahi mina {ln~aAri"></word>
+			<word id="OfTheTravellerAsDawnApproaches1" text="\{phrase:OfTheTravellerAsDawnApproaches1\}"></word>
 		</category>
 		<category title="StoppingOrLodgingSomewhere">
-			<word id="" text="&gt;aEuw*u bikalimaAti {ll~ahi {lt~aAm~aAti min $ar~i maA xalaqa"></word>
+			<word id="StoppingOrLodgingSomewhere1" text="\{phrase:StoppingOrLodgingSomewhere1\}"></word>
 		</category>
 		<category title="WhileReturningFromTravel">
-			<word id="" text="{ll~ahu &gt;akobaru {ll~ahu &gt;akobaru {ll~ahu &gt;akobaru laA^ &lt;ilaha &lt;il~aA {ll~ahu waHodahu laA $ariyka lahu\, lahu {lomuloku walahu {loHamodu wahuwa EalaY kul~i $ayo&apos;K qadiyrN &apos;aAyibuwna taA}ibuwna EaAbiduwna lirab~inaA HaAmiduwna Sadaqa {ll~ahu waEodahu wanaSara Eabodahu wahazama {lo&gt;aHozaAba waHodahu"></word>
+			<word id="WhileReturningFromTravel1" text="\{phrase:WhileReturningFromTravel1\}"></word>
 		</category>
 		<category title="UponReceivingPleasingOrDispleasingNews">
-			<word id="" text="{loHamodu lil~ahi {l~a*iy biniEomatihi tatim~u {lS~aAliHaAtu {loHamodu lil~ahi EalaY kul~i HaAlK"></word>
+			<word id="UponReceivingPleasingOrDispleasingNews1" text="\{phrase:UponReceivingPleasingOrDispleasingNews1\}"></word>
 		</category>
 		<category title="ExcellenceOfSendingPrayersUponTheProphet">
-			<word id="" text=""></word>
-			<word id="" text=""></word>
-			<word id="" text=""></word>
+			<word id="ExcellenceOfSendingPrayersUponTheProphet1" text=""></word>
+			<word id="ExcellenceOfSendingPrayersUponTheProphet2" text=""></word>
+			<word id="ExcellenceOfSendingPrayersUponTheProphet3" text=""></word>
 		</category>
 		<category title="ExcellenceOfSpreadingTheIslamicGreeting">
-			<word id="" text=""></word>
-			<word id="" text=""></word>
-			<word id="" text=""></word>
+			<word id="ExcellenceOfSpreadingTheIslamicGreeting1" text=""></word>
+			<word id="ExcellenceOfSpreadingTheIslamicGreeting2" text=""></word>
+			<word id="ExcellenceOfSpreadingTheIslamicGreeting3" text=""></word>
 		</category>
 		<category title="ReturningAGreetingToADisbeliever">
-			<word id="" text="waEalayokumo"></word>
+			<word id="ReturningAGreetingToADisbeliever1" text="\{phrase:ReturningAGreetingToADisbeliever1\}"></word>
 		</category>
 		<category title="UponHearingARoosterCrowOrTheBrayingOfADonkey">
-			<word id="" text=""></word>
+			<word id="UponHearingARoosterCrowOrTheBrayingOfADonkey1" text=""></word>
 		</category>
 		<category title="UponHearingTheBarkingOfDogsAtNight">
-			<word id="" text=""></word>
+			<word id="UponHearingTheBarkingOfDogsAtNight1" text=""></word>
 		</category>
 		<category title="ForTheOneYouHaveInsulted">
-			<word id="" text="{ll~ahum~a fa&gt;ay~umaA mu&amp;ominK sababotuhu fa{joEalo *alika lahu qurobapF &lt;ilayoka yawoma {loqiyaAmapi"></word>
+			<word id="ForTheOneYouHaveInsulted1" text="\{phrase:ForTheOneYouHaveInsulted1\}"></word>
 		</category>
 		<category title="TheEtiquetteOfPraisingAFellowMuslim">
-			<word id="" text="&gt;aHosibu fulaAnFA wa{ll~ahu Hasiybuhu"></word>
-			<word id="" text="walaA^ &gt;uzak~iy EalaY {ll~ahi &gt;aHadFA"></word>
+			<word id="TheEtiquetteOfPraisingAFellowMuslim1" text="\{phrase:TheEtiquetteOfPraisingAFellowMuslim1\}"></word>
+			<word id="TheEtiquetteOfPraisingAFellowMuslim2" text="\{phrase:TheEtiquetteOfPraisingAFellowMuslim2\}"></word>
 		</category>
 		<category title="WhenPraised">
-			<word id="" text="{ll~ahum~a laA tu&amp;aAxi*oniy bimaA yaquwluwna wa{gofiro liy maA laA yaEolamuwna (wa{joEaloniy xayorFA mim~aA yaZun~uwna)"></word>
+			<word id="WhenPraised1" text="\{phrase:WhenPraised1\}"></word>
 		</category>
 		<category title="TheTalbiyah">
-			<word id="" text="lab~ayoka {ll~ahum~a lab~ayoka\, lab~ayoka laA $ariyka laka lab~ayoka\, &lt;in~a {loHamoda wa{ln~iEomapa laka wa{lomuloka\, laA $ariyka laka"></word>
+			<word id="TheTalbiyah1" text="\{phrase:TheTalbiyah1\}"></word>
 		</category>
 		<category title="AtTheBlackStone">
-			<word id="" text="{ll~ahu &gt;akobaru"></word>
+			<word id="AtTheBlackStone1" text="\{phrase:AllahIsGreatest\}"></word>
 		</category>
 		<category title="BetweenTheYemeniCornerAndTheBlackStoneAtTheKaaba">
-			<word id="" text="\{2:201:4-14\}"></word>
+			<word id="BetweenTheYemeniCornerAndTheBlackStoneAtTheKaaba1" text="\{2:201:4-14\}"></word>
 		</category>
 		<category title="WhenAtMountSafaAndMountMarwah">
-			<word id="" text="\{2:158:1-6\} &gt;aboda&gt;u bimaA bada&gt;a {ll~ahu bihi {ll~ahu &gt;akobaru {ll~ahu &gt;akobaru {ll~ahu &gt;akobaru laA^ &lt;ilaha &lt;il~aA {ll~ahu waHodahu laA $ariyka lahu\, lahu {lomuloku walahu {loHamodu wahuwa EalaY kul~i $ayo&apos;K qadiyrN laA^ &lt;ilaha &lt;il~aA {ll~ahu waHodahu &gt;anjaza waEodahu wanaSara Eabodahu wahazama {lo&gt;aHozaAba waHodahu"></word>
+			<word id="WhenAtMountSafaAndMountMarwah1" text="\{2:158:1-6\} \{phrase:WhenAtMountSafaAndMountMarwah1\}"></word>
 		</category>
 		<category title="TheDayOfArafah">
-			<word id="" text="laA^ &lt;ilaha &lt;il~aA {ll~ahu waHodahu laA $ariyka lahu\, lahu {lomuloku walahu {loHamodu wahuwa EalaY kul~i $ayo&apos;K qadiyrN"></word>
+			<word id="TheDayOfArafah1" text="\{phrase:TheDayOfArafah1\}"></word>
 		</category>
 		<category title="AtTheSacredSite">
-			<word id="" text=""></word>
+			<word id="AtTheSacredSite1" text=""></word>
 		</category>
 		<category title="WhenThrowingEachPebbleAtTheJamaraat">
-			<word id="" text="{ll~ahu &gt;akobaru"></word>
+			<word id="WhenThrowingEachPebbleAtTheJamaraat1" text="\{phrase:AllahIsGreatest\}"></word>
 		</category>
 		<category title="AtTimesOfAmazementAndDelight">
-			<word id="" text="suboHa`na {ll~ahi"></word>
-			<word id="" text="{ll~ahu &gt;akobaru"></word>
+			<word id="AtTimesOfAmazementAndDelight1" text="\{phrase:GloryBeToAllah\}"></word>
+			<word id="AtTimesOfAmazementAndDelight2" text="\{phrase:AllahIsGreatest\}"></word>
 		</category>
 		<category title="UponReceivingPleasantNews">
-			<word id="" text=""></word>
+			<word id="UponReceivingPleasantNews1" text=""></word>
 		</category>
 		<category title="WhenFeelingSomePainInTheBody">
-			<word id="" text="bisomi {ll~ahi (valaAvFA) &gt;aEuw*u bi{ll~ahi waqudoratihi min $ar~i maA^ &gt;ajidu wa&gt;uHaA*iru (sabaEFA mar~aAtFA)"></word>
+			<word id="WhenFeelingSomePainInTheBody1" text="\{phrase:WhenFeelingSomePainInTheBody1\} (sabaEFA mar~aAtFA)"></word>
 		</category>
 		<category title="WhenInFearOfAfflictingSomethingOrSomeoneWithOnesEye">
-			<word id="" text="{ll~ahum~a baAriko Ealayohi maA $aA^&apos;a {ll~ahu laA quw~apa &lt;il~aA bi{ll~ah"></word>
-			<word id="" text=""></word>
+			<word id="WhenInFearOfAfflictingSomethingOrSomeoneWithOnesEye1" text="\{phrase:WhenInFearOfAfflictingSomethingOrSomeoneWithOnesEye1\}"></word>
+			<word id="WhenInFearOfAfflictingSomethingOrSomeoneWithOnesEye2" text=""></word>
 		</category>
 		<category title="WhenStartled">
-			<word id="" text="laA^ &lt;ilaha &lt;il~aA {ll~ahu"></word>
+			<word id="" text="\{phrase:CreedOfIslamFirstPart\}"></word>
  		</category>
 		<category title="WhenSlaughteringOrOfferingASacrifice">
-			<word id="" text="bisomi {ll~ahi wa{ll~ahu &gt;akobaru {ll~ahum~a minka walaka {ll~ahum~a taqab~alo min~iy"></word>
+			<word id="WhenSlaughteringOrOfferingASacrifice1" text="\{phrase:WhenSlaughteringOrOfferingASacrifice1\}"></word>
 		</category>
 		<category title="ToWardOffTheDeceptionOfTheObstinateDevils">
-			<word id="" text="&gt;aEuw*u bikalimaAti {ll~ahi {lt~aAm~aAti {l~atiy laA yujaAwizuhun~a bar~N walaA faAjirN min $ar~i maA xalaqa wabara&gt;a wa*ara&gt;a wamin $ar~i maA yanzilu mina {ls~amaA^&apos;i wamin $ar~i maA yaEoruju fiyhaA wamin $ar~i maA *ara&gt;a fiY {lo&gt;aroDi wamin $ar~i maA yaxoruju minohaA wimin $ar~i fitani {l~ayoli wa{ln~ahaAri wamin $ar~i kul~i TaAriqK &lt;il~aA TaAriqFA yaToruqu bixayorK ya`raHoma`nu"></word>
+			<word id="ToWardOffTheDeceptionOfTheObstinateDevils1" text="\{phrase:ToWardOffTheDeceptionOfTheObstinateDevils1\}"></word>
 		</category>
 		<category title="SeekingForgivenessAndRepentance">
-			<word id="" text=""></word>
-			<word id="" text=""></word>
-			<word id="SeekingForgivenessAndRepentance3" text="&gt;asotagofiru {ll~aha {loEaZiyma {l~a*iy laA^ &lt;ilaha &lt;il~aA huwa {loHay~u {loqay~uwumu wa&gt;atuwbu &lt;ilayohi\."></word>
-			<word id="" text=""></word>
-			<word id="" text=""></word>
-			<word id="" text=""></word>
+			<word id="SeekingForgivenessAndRepentance1" text=""></word>
+			<word id="SeekingForgivenessAndRepentance2" text=""></word>
+			<word id="SeekingForgivenessAndRepentance3" text="\{phrase:SeekingForgivenessAndRepentance3\}"></word>
+			<word id="SeekingForgivenessAndRepentance4" text=""></word>
+			<word id="SeekingForgivenessAndRepentance5" text=""></word>
+			<word id="SeekingForgivenessAndRepentance6" text=""></word>
 		</category>
 		<category title="ExcellenceOfRemembranceAndGlorificationOfAllah">
-			<word id="" text="laA^ &lt;ilaha &lt;il~aA {ll~ahu waHodahu laA $ariyka lahu\, lahu {lomuloku walahu {loHamodu wahuwa EalaY kul~i $ayo&apos;K qadiyrN (miA}apu mir~apu)"></word>
-			<word id="" text="suboHa`na {ll~ahi wabiHamodihi (miA}apu mir~apu fiY {loyawomi)"></word>
-			<word id="" text="suboHa`na {ll~ahi wabiHamodihi (HiynN yaSabiHu waHiynN yumasiy)"></word>
-			<word id="" text="laA^ &lt;ilaha &lt;il~aA {ll~ahu waHodahu laA $ariyka lahu\, lahu {lomuloku walahu {loHamodu wahuwa EalaY kul~i $ayo&apos;K qadiyrN"></word>
-			<word id="" text="suboHa`na {ll~ahi wabiHamodihi suboHa`na {ll~ahi {loEaZiymi"></word>
-			<word id="" text="suboHa`na {ll~ahi wa{loHamodu lil~ahi walaA^ &lt;ilaha &lt;il~aA {ll~ahu wa{ll~ahu &gt;akobaru"></word>
-			<word id="" text="suboHa`na {ll~ahi"></word>
-			<word id="" text="suboHa`na {ll~ahi {loEaZiymi wabiHamodihi"></word>
-			<word id="" text="laA Hawola walaA quw~apa &lt;il~aA bi{ll~ahi"></word>
-			<word id="" text="suboHa`na {ll~ahi\, wa{loHamodu lil~ahi\, walaA^ &lt;ilaha &lt;il~aA {ll~ahu\, wa{ll~ahu &gt;akobaru"></word>
-			<word id="" text="laA^ &lt;ilaha &lt;il~aA {ll~ahu waHodahu laA $ariyka lahu\, {ll~ahu &gt;akobaru kabiyrFA wa{loHamodu lil~ahi kaviyrFA suboHa`na {ll~ahi rab~i {loEaAlamiyna\, laA Hawola walaA quw~apa &lt;il~aA bi{ll~ahi {loEaziyzi {loHakiymi\, {ll~ahum~a {gofiri liy\, wa{roHamoniy\, wa{hodiniy\, wa{rozuqoniy"></word>
-			<word id="" text="{ll~ahum~a {gofiri liy\, wa{roHamoniy\, wa{hodiniy\, waEaAfiniy\, wa{rozuqoniy"></word>
-			<word id="" text="{loHamodu lil~ahi laA^ &lt;ilaha &lt;il~aA {ll~ahu"></word>
-			<word id="" text="suboHa`na {ll~ahi wa{loHamodu lil~ahi walaA^ &lt;ilaha &lt;il~aA {ll~ahu wa{ll~ahu &gt;akobaru walaA Hawola walaA quw~apa &lt;il~aA bi{ll~ahi"></word>
+			<word id="ExcellenceOfRemembranceAndGlorificationOfAllah1" text="\{phrase:ExcellenceOfRemembranceAndGlorificationOfAllah1\} (miA}apu mir~apu)"></word>
+			<word id="ExcellenceOfRemembranceAndGlorificationOfAllah2" text="\{phrase:ExcellenceOfRemembranceAndGlorificationOfAllah2\} (miA}apu mir~apu fiY {loyawomi)"></word>
+			<word id="ExcellenceOfRemembranceAndGlorificationOfAllah3" text="\{phrase:ExcellenceOfRemembranceAndGlorificationOfAllah2\} (HiynN yaSabiHu waHiynN yumasiy)"></word>
+			<word id="ExcellenceOfRemembranceAndGlorificationOfAllah4" text="\{phrase:ExcellenceOfRemembranceAndGlorificationOfAllah1\}"></word>
+			<word id="ExcellenceOfRemembranceAndGlorificationOfAllah5" text="\{phrase:ExcellenceOfRemembranceAndGlorificationOfAllah2\} \{phrase:ExcellenceOfRemembranceAndGlorificationOfAllah5\}"></word>
+			<word id="ExcellenceOfRemembranceAndGlorificationOfAllah6" text="\{phrase:ExcellenceOfRemembranceAndGlorificationOfAllah6\}"></word>
+			<word id="ExcellenceOfRemembranceAndGlorificationOfAllah7" text="\{phrase:GloryBeToAllah\}"></word>
+			<word id="ExcellenceOfRemembranceAndGlorificationOfAllah8" text="\{phrase:ExcellenceOfRemembranceAndGlorificationOfAllah8\}"></word>
+			<word id="ExcellenceOfRemembranceAndGlorificationOfAllah9" text="\{phrase:ExcellenceOfRemembranceAndGlorificationOfAllah9\}"></word>
+			<word id="ExcellenceOfRemembranceAndGlorificationOfAllah10" text="\{phrase:ExcellenceOfRemembranceAndGlorificationOfAllah10\}"></word>
+			<word id="ExcellenceOfRemembranceAndGlorificationOfAllah11" text="\{phrase:ExcellenceOfRemembranceAndGlorificationOfAllah11\}"></word>
+			<word id="ExcellenceOfRemembranceAndGlorificationOfAllah12" text="\{phrase:ExcellenceOfRemembranceAndGlorificationOfAllah12\}"></word>
+			<word id="ExcellenceOfRemembranceAndGlorificationOfAllah13" text="\{phrase:ExcellenceOfRemembranceAndGlorificationOfAllah13\}"></word>
+			<word id="ExcellenceOfRemembranceAndGlorificationOfAllah14" text="\{phrase:ExcellenceOfRemembranceAndGlorificationOfAllah14\}"></word>
 		</category>		
 		<category title="ForConcludingAllSittings">
-			<word id="" text="gafara {ll~ahu laka ya`rasuwla {ll~ahi walaka"></word>
+			<word id="ForConcludingAllSittings1" text="\{phrase:ForConcludingAllSittings1\}"></word>
 		</category>
 		<category title="ReturningASupplicationAfterHavingBestowedAGiftOrCharityUponSomeone">
-			<word id="" text="baAraka {ll~ahu fiykumo wafiyhim baAraka {ll~ah"></word>
+			<word id="ReturningASupplicationAfterHavingBestowedAGiftOrCharityUponSomeone1" text="\{phrase:ReturningASupplicationAfterHavingBestowedAGiftOrCharityUponSomeone1\}"></word>
 		</category>
 		<category title="EtiquetteOfRetiringForTheNight">
-			<word id="" text=""></word>
+			<word id="EtiquetteOfRetiringForTheNight1" text=""></word>
 		</category>
 		<category title="ForbiddanceOfAscribingThingsToOmens">
 			<word id="" text="{ll~ahum~a laA Tayora &lt;il~aA Tayoruka walaA xayora &lt;il~aA xayoruka walaA^ &lt;ilaha gayoruka"></word>
