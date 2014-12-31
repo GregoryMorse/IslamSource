@@ -10992,4 +10992,7 @@
   <data name="IslamInfo_Their" xml:space="preserve">
     <value>Their</value>
   </data>
+  <data name="IslamInfo_Phrases" xml:space="preserve">
+    <value>Phrases</value>
+  </data>
 </root>

@@ -2,7 +2,7 @@
 /*
 Plugin Name: IslamSource
 Description: Islam Source Quranic Verse and Islamic Phrase Plugin - Allows for Quranic chapters, verses even specified down through the word to be inserted easily by using formats {a:b:c-x:y:z} where b, c, x, y and z are optional depending on if a chapter, verse or particular word of a verse is desired or a range is desired so it could be in forms {a:b-y} or {a:b-x:y} such as the opening chapter which could be specified as {1:1-7}.  The Arabic is automatically displayed when posts are viewed.  It also allows for various calligraphy and Unicode Islamic words or phrases to be easily inserted through a button on the visual editor which are displayed when the posts are later viewed.
-Version: 1.1.0
+Version: 1.2.0
 Author: IslamSource
 Author URI: http://www.islamsource.info
 */
@@ -226,14 +226,14 @@ class ArabicData
     }
     public static function ArabicCombos()
 	{
-        if (ArabicData::$_ArabicCombos == null) {
+        if (ArabicData::$_ArabicCombos === null) {
             ArabicData::LoadArabic();
         }
         return ArabicData::$_ArabicCombos;
     }
     public static function ArabicLetters()
 	{
-		if (ArabicData::$_ArabicLetters == null) {
+		if (ArabicData::$_ArabicLetters === null) {
             ArabicData::LoadArabic();
         }
         return ArabicData::$_ArabicLetters;
@@ -299,7 +299,7 @@ class ArabicData
     }
     public static function MakeUniCategory($Cats)
     {
-        if (ArabicData::$_Ranges == null) { ArabicData::GetDecompositionCombiningCatData(); }
+        if (ArabicData::$_Ranges === null) { ArabicData::GetDecompositionCombiningCatData(); }
         $Ranges = array();
         for ($count = 0; $count < count($Cats); $count++) {
             if (array_key_exists($Cats[$count], ArabicData::$_Ranges)) {
@@ -311,7 +311,7 @@ class ArabicData
     public static $_ArabicLetterMap = null;
     public static function ArabicLetterMap()
     {
-        if (ArabicData::$_ArabicLetterMap == null) {
+        if (ArabicData::$_ArabicLetterMap === null) {
             ArabicData::$_ArabicLetterMap = array();
             for ($index = 0; $index < count(ArabicData::ArabicLetters()); $index++) {
                 if (ArabicData::ArabicLetters()[$index]->Symbol != "") {
@@ -660,126 +660,126 @@ class CachedData
     static $_QuranHeaders = null;
     public static function ArabicUniqueLetters()
 	{
-        if (CachedData::$_ArabicUniqueLetters == null) {
+        if (CachedData::$_ArabicUniqueLetters === null) {
             CachedData::$_ArabicUniqueLetters = CachedData::GetNum("ArabicUniqueLetters");
         }
     	return CachedData::$_ArabicUniqueLetters;
     }
     public static function ArabicAlphabet()
 	{
-        if (CachedData::$_ArabicAlphabet == null) {
+        if (CachedData::$_ArabicAlphabet === null) {
             CachedData::$_ArabicAlphabet = CachedData::GetNum("ArabicAlphabet");
         }
     	return CachedData::$_ArabicAlphabet;
     }
     public static function ArabicNumbers()
 	{
-        if (CachedData::$_ArabicNumbers == null) {
+        if (CachedData::$_ArabicNumbers === null) {
             CachedData::$_ArabicNumbers = CachedData::GetNum("ArabicNumbers");
         }
         return CachedData::$_ArabicNumbers;
     }
     public static function ArabicWaslKasraExceptions()
 	{
-        if (CachedData::$_ArabicWaslKasraExceptions == null) {
+        if (CachedData::$_ArabicWaslKasraExceptions === null) {
             CachedData::$_ArabicWaslKasraExceptions = CachedData::GetNum("ArabicWaslKasraExceptions");
         }
         return CachedData::$_ArabicWaslKasraExceptions;
     }
     public static function ArabicBaseNumbers()
 	{
-        if (CachedData::$_ArabicBaseNumbers == null) {
+        if (CachedData::$_ArabicBaseNumbers === null) {
             CachedData::$_ArabicBaseNumbers = CachedData::GetNum("base");
         }
         return CachedData::$_ArabicBaseNumbers;
     }
     public static function ArabicBaseExtraNumbers()
 	{
-        if (CachedData::$_ArabicBaseExtraNumbers == null) {
+        if (CachedData::$_ArabicBaseExtraNumbers === null) {
             CachedData::$_ArabicBaseExtraNumbers = CachedData::GetNum("baseextras");
         }
         return CachedData::$_ArabicBaseExtraNumbers;
     }
     public static function ArabicBaseTenNumbers()
 	{
-        if (CachedData::$_ArabicBaseTenNumbers == null) {
+        if (CachedData::$_ArabicBaseTenNumbers === null) {
             CachedData::$_ArabicBaseTenNumbers = CachedData::GetNum("baseten");
         }
         return CachedData::$_ArabicBaseTenNumbers;
     }
     public static function ArabicBaseHundredNumbers()
 	{
-        if (CachedData::$_ArabicBaseHundredNumbers == null) {
+        if (CachedData::$_ArabicBaseHundredNumbers === null) {
             CachedData::$_ArabicBaseHundredNumbers = CachedData::GetNum("basehundred");
         }
         return CachedData::$_ArabicBaseHundredNumbers;
     }
     public static function ArabicBaseThousandNumbers()
 	{
-        if (CachedData::$_ArabicBaseThousandNumbers == null) {
+        if (CachedData::$_ArabicBaseThousandNumbers === null) {
             CachedData::$_ArabicBaseThousandNumbers = CachedData::GetNum("thousands");
         }
         return CachedData::$_ArabicBaseThousandNumbers;
     }
     public static function ArabicBaseMillionNumbers()
 	{
-        if (CachedData::$_ArabicBaseMillionNumbers == null) {
+        if (CachedData::$_ArabicBaseMillionNumbers === null) {
             CachedData::$_ArabicBaseMillionNumbers = CachedData::GetNum("millions");
         }
         return CachedData::$_ArabicBaseMillionNumbers;
     }
     public static function ArabicBaseMilliardNumbers()
 	{
-        if (CachedData::$_ArabicBaseMilliardNumbers == null) {
+        if (CachedData::$_ArabicBaseMilliardNumbers === null) {
             CachedData::$_ArabicBaseMilliardNumbers = CachedData::GetNum("milliard");
         }
         return CachedData::$_ArabicBaseMilliardNumbers;
     }
     public static function ArabicBaseBillionNumbers()
 	{
-        if (CachedData::$_ArabicBaseBillionNumbers == null) {
+        if (CachedData::$_ArabicBaseBillionNumbers === null) {
             CachedData::$_ArabicBaseBillionNumbers = CachedData::GetNum("billions");
         }
         return CachedData::$_ArabicBaseBillionNumbers;
     }
     public static function ArabicBaseTrillionNumbers()
 	{
-        if (CachedData::$_ArabicBaseTrillionNumbers == null) {
+        if (CachedData::$_ArabicBaseTrillionNumbers === null) {
             CachedData::$_ArabicBaseTrillionNumbers = CachedData::GetNum("trillions");
         }
         return CachedData::$_ArabicBaseTrillionNumbers;
     }
     public static function ArabicFractionNumbers()
 	{
-        if (CachedData::$_ArabicFractionNumbers == null) {
+        if (CachedData::$_ArabicFractionNumbers === null) {
             CachedData::$_ArabicFractionNumbers = CachedData::GetNum("fractions");
         }
         return CachedData::$_ArabicFractionNumbers;
     }
     public static function ArabicOrdinalNumbers()
 	{
-        if (CachedData::$_ArabicOrdinalNumbers == null) {
+        if (CachedData::$_ArabicOrdinalNumbers === null) {
             CachedData::$_ArabicOrdinalNumbers = CachedData::GetNum("ordinals");
         }
         return CachedData::$_ArabicOrdinalNumbers;
     }
     public static function ArabicOrdinalExtraNumbers()
 	{
-        if (CachedData::$_ArabicOrdinalExtraNumbers == null) {
+        if (CachedData::$_ArabicOrdinalExtraNumbers === null) {
             CachedData::$_ArabicOrdinalExtraNumbers = CachedData::GetNum("ordinalextras");
         }
         return CachedData::$_ArabicOrdinalExtraNumbers;
     }
     public static function ArabicCombiners()
 	{
-        if (CachedData::$_ArabicCombiners == null) {
+        if (CachedData::$_ArabicCombiners === null) {
             CachedData::$_ArabicCombiners = CachedData::GetNum("combiners");
         }
         return CachedData::$_ArabicCombiners;
     }
     public static function QuranHeaders()
 	{
-        if (CachedData::$_QuranHeaders == null) {
+        if (CachedData::$_QuranHeaders === null) {
             CachedData::$_QuranHeaders = CachedData::GetNum("quranheaders");
         }
         return CachedData::$_QuranHeaders;
@@ -793,49 +793,49 @@ class CachedData
     static $_TehMarbutaContinueRule = null;
     public static function CertainStopPattern()
 	{
-        if (CachedData::$_CertainStopPattern == null) {
+        if (CachedData::$_CertainStopPattern === null) {
             CachedData::$_CertainStopPattern = CachedData::GetPattern("CertainStopPattern");
         }
         return CachedData::$_CertainStopPattern;
     }
     public static function OptionalStopPattern()
 	{
-        if (CachedData::$_OptionalStopPattern == null) {
+        if (CachedData::$_OptionalStopPattern === null) {
             CachedData::$_OptionalStopPattern = CachedData::GetPattern("OptionalStopPattern");
         }
         return CachedData::$_OptionalStopPattern;
     }
     public static function OptionalStopPatternNotEndOfAyah()
 	{
-        if (CachedData::$_OptionalStopPatternNotEndOfAyah == null) {
+        if (CachedData::$_OptionalStopPatternNotEndOfAyah === null) {
             CachedData::$_OptionalStopPatternNotEndOfAyah = CachedData::GetPattern("OptionalStopPatternNotEndOfAyah");
         }
         return CachedData::$_OptionalStopPatternNotEndOfAyah;
     }
     public static function CertainNotStopPattern()
 	{
-        if (CachedData::$_CertainNotStopPattern == null) {
+        if (CachedData::$_CertainNotStopPattern === null) {
             CachedData::$_CertainNotStopPattern = CachedData::GetPattern("CertainNotStopPattern");
         }
         return CachedData::$_CertainNotStopPattern;
     }
     public static function OptionalNotStopPattern()
 	{
-        if (CachedData::$_OptionalNotStopPattern == null) {
+        if (CachedData::$_OptionalNotStopPattern === null) {
             CachedData::$_OptionalNotStopPattern = CachedData::GetPattern("OptionalNotStopPattern");
         }
         return CachedData::$_OptionalNotStopPattern;
     }
     public static function TehMarbutaStopRule()
 	{
-        if (CachedData::$_TehMarbutaStopRule == null) {
+        if (CachedData::$_TehMarbutaStopRule === null) {
             CachedData::$_TehMarbutaStopRule = CachedData::GetPattern("TehMarbutaStopRule");
         }
         return CachedData::$_TehMarbutaStopRule;
     }
     public static function TehMarbutaContinueRule()
 	{
-        if (CachedData::$_TehMarbutaContinueRule == null) {
+        if (CachedData::$_TehMarbutaContinueRule === null) {
             CachedData::$_TehMarbutaContinueRule = CachedData::GetPattern("TehMarbutaContinueRule");
         }
         return CachedData::$_TehMarbutaContinueRule;
@@ -875,231 +875,231 @@ class CachedData
     static $_RecitationSpecialSymbolsNotStop = null;
     public static function ArabicLongVowels()
 	{
-        if (CachedData::$_ArabicLongVowels == null) {
+        if (CachedData::$_ArabicLongVowels === null) {
             CachedData::$_ArabicLongVowels = CachedData::GetGroup("ArabicLongVowels");
         }
         return CachedData::$_ArabicLongVowels;
     }
     public static function ArabicTanweens()
 	{
-        if (CachedData::$_ArabicTanweens == null) {
+        if (CachedData::$_ArabicTanweens === null) {
             CachedData::$_ArabicTanweens = CachedData::GetGroup("ArabicTanweens");
         }
         return CachedData::$_ArabicTanweens;
     }
     public static function ArabicFathaDammaKasra()
 	{
-        if (CachedData::$_ArabicFathaDammaKasra == null) {
+        if (CachedData::$_ArabicFathaDammaKasra === null) {
             CachedData::$_ArabicFathaDammaKasra = CachedData::GetGroup("ArabicFathaDammaKasra");
         }
         return CachedData::$_ArabicFathaDammaKasra;
     }
     public static function ArabicStopLetters()
 	{
-        if (CachedData::$_ArabicStopLetters == null) {
+        if (CachedData::$_ArabicStopLetters === null) {
             CachedData::$_ArabicStopLetters = CachedData::GetGroup("ArabicStopLetters");
         }
         return CachedData::$_ArabicStopLetters;
     }
     public static function ArabicSpecialGutteral()
 	{
-        if (CachedData::$_ArabicSpecialGutteral == null) {
+        if (CachedData::$_ArabicSpecialGutteral === null) {
             CachedData::$_ArabicSpecialGutteral = CachedData::GetGroup("ArabicSpecialGutteral");
         }
         return CachedData::$_ArabicSpecialGutteral;
     }
     public static function ArabicSpecialLeadingGutteral()
 	{
-        if (CachedData::$_ArabicSpecialLeadingGutteral == null) {
+        if (CachedData::$_ArabicSpecialLeadingGutteral === null) {
             CachedData::$_ArabicSpecialLeadingGutteral = CachedData::GetGroup("ArabicSpecialLeadingGutteral");
         }
         return CachedData::$_ArabicSpecialLeadingGutteral;
     }
     public static function ArabicPunctuationSymbols()
 	{
-        if (CachedData::$_ArabicPunctuationSymbols == null) {
+        if (CachedData::$_ArabicPunctuationSymbols === null) {
             CachedData::$_ArabicPunctuationSymbols = CachedData::GetGroup("ArabicPunctuationSymbols");
         }
         return CachedData::$_ArabicPunctuationSymbols;
     }
     public static function ArabicLetters()
 	{
-        if (CachedData::$_ArabicLetters == null) {
+        if (CachedData::$_ArabicLetters === null) {
             CachedData::$_ArabicLetters = CachedData::GetGroup("ArabicLetters");
         }
         return CachedData::$_ArabicLetters;
     }
     public static function ArabicSunLettersNoLam()
 	{
-        if (CachedData::$_ArabicSunLettersNoLam == null) {
+        if (CachedData::$_ArabicSunLettersNoLam === null) {
             CachedData::$_ArabicSunLettersNoLam = CachedData::GetGroup("ArabicSunLettersNoLam");
         }
         return CachedData::$_ArabicSunLettersNoLam;
     }
     public static function ArabicSunLetters()
 	{
-        if (CachedData::$_ArabicSunLetters == null) {
+        if (CachedData::$_ArabicSunLetters === null) {
             CachedData::$_ArabicSunLetters = CachedData::GetGroup("ArabicSunLetters");
         }
         return CachedData::$_ArabicSunLetters;
     }
     public static function ArabicMoonLettersNoVowels()
 	{
-        if (CachedData::$_ArabicMoonLettersNoVowels == null) {
+        if (CachedData::$_ArabicMoonLettersNoVowels === null) {
             CachedData::$_ArabicMoonLettersNoVowels = CachedData::GetGroup("ArabicMoonLettersNoVowels");
         }
         return CachedData::$_ArabicMoonLettersNoVowels;
     }
     public static function ArabicMoonLetters()
 	{
-        if (CachedData::$_ArabicMoonLetters == null) {
+        if (CachedData::$_ArabicMoonLetters === null) {
             CachedData::$_ArabicMoonLetters = CachedData::GetGroup("ArabicMoonLetters");
         }
         return CachedData::$_ArabicMoonLetters;
     }
     public static function RecitationCombiningSymbols()
 	{
-        if (CachedData::$_RecitationCombiningSymbols == null) {
+        if (CachedData::$_RecitationCombiningSymbols === null) {
             CachedData::$_RecitationCombiningSymbols = CachedData::GetGroup("RecitationCombiningSymbols");
         }
         return CachedData::$_RecitationCombiningSymbols;
     }
     public static function RecitationConnectingFollowerSymbols()
 	{
-        if (CachedData::$_RecitationConnectingFollowerSymbols == null) {
+        if (CachedData::$_RecitationConnectingFollowerSymbols === null) {
             CachedData::$_RecitationConnectingFollowerSymbols = CachedData::GetGroup("RecitationConnectingFollowerSymbols");
         }
         return CachedData::$_RecitationConnectingFollowerSymbols;
     }
     public static function RecitationSymbols()
 	{
-        if (CachedData::$_RecitationSymbols == null) {
+        if (CachedData::$_RecitationSymbols === null) {
             CachedData::$_RecitationSymbols = CachedData::GetGroup("RecitationSymbols");
         }
         return CachedData::$_RecitationSymbols;
     }
     public static function ArabicLettersInOrder()
 	{
-        if (CachedData::$_ArabicLettersInOrder == null) {
+        if (CachedData::$_ArabicLettersInOrder === null) {
             CachedData::$_ArabicLettersInOrder = CachedData::GetGroup("ArabicLettersInOrder");
         }
         return CachedData::$_ArabicLettersInOrder;
     }
     public static function ArabicSpecialLetters()
 	{
-        if (CachedData::$_ArabicSpecialLetters == null) {
+        if (CachedData::$_ArabicSpecialLetters === null) {
             CachedData::$_ArabicSpecialLetters = CachedData::GetGroup("ArabicSpecialLetters");
         }
         return CachedData::$_ArabicSpecialLetters;
     }
     public static function ArabicHamzas()
 	{
-        if (CachedData::$_ArabicHamzas == null) {
+        if (CachedData::$_ArabicHamzas === null) {
             CachedData::$_ArabicHamzas = CachedData::GetGroup("ArabicHamzas");
         }
         return CachedData::$_ArabicHamzas;
     }
     public static function ArabicVowels()
 	{
-        if (CachedData::$_ArabicVowels == null) {
+        if (CachedData::$_ArabicVowels === null) {
             CachedData::$_ArabicVowels = CachedData::GetGroup("ArabicVowels");
         }
         return CachedData::$_ArabicVowels;
     }
     public static function ArabicTajweed()
 	{
-        if (CachedData::$_ArabicTajweed == null) {
+        if (CachedData::$_ArabicTajweed === null) {
             CachedData::$_ArabicTajweed = CachedData::GetGroup("ArabicTajweed");
         }
         return CachedData::$_ArabicTajweed;
     }
     public static function ArabicSilent()
 	{
-        if (CachedData::$_ArabicSilent == null) {
+        if (CachedData::$_ArabicSilent === null) {
             CachedData::$_ArabicSilent = CachedData::GetGroup("ArabicSilent");
         }
         return CachedData::$_ArabicSilent;
     }
     public static function ArabicPunctuation()
 	{
-        if (CachedData::$_ArabicPunctuation == null) {
+        if (CachedData::$_ArabicPunctuation === null) {
             CachedData::$_ArabicPunctuation = CachedData::GetGroup("ArabicPunctuation");
         }
         return CachedData::$_ArabicPunctuation;
     }
     public static function ArabicNums()
 	{
-        if (CachedData::$_ArabicNums == null) {
+        if (CachedData::$_ArabicNums === null) {
             CachedData::$_ArabicNums = CachedData::GetGroup("ArabicNums");
         }
         return CachedData::$_ArabicNums;
     }
     public static function NonArabicLetters()
 	{
-        if (CachedData::$_NonArabicLetters == null) {
+        if (CachedData::$_NonArabicLetters === null) {
             CachedData::$_NonArabicLetters = CachedData::GetGroup("NonArabicLetters");
         }
         return CachedData::$_NonArabicLetters;
     }
     public static function WhitespaceSymbols()
 	{
-        if (CachedData::$_WhitespaceSymbols == null) {
+        if (CachedData::$_WhitespaceSymbols === null) {
             CachedData::$_WhitespaceSymbols = CachedData::GetGroup("WhitespaceSymbols");
         }
         return CachedData::$_WhitespaceSymbols;
     }
     public static function PunctuationSymbols()
 	{
-        if (CachedData::$_PunctuationSymbols == null) {
+        if (CachedData::$_PunctuationSymbols === null) {
             CachedData::$_PunctuationSymbols = CachedData::GetGroup("PunctuationSymbols");
         }
         return CachedData::$_PunctuationSymbols;
     }
     public static function RecitationDiacritics()
 	{
-        if (CachedData::$_RecitationDiacritics == null) {
+        if (CachedData::$_RecitationDiacritics === null) {
             CachedData::$_RecitationDiacritics = CachedData::GetGroup("RecitationDiacritics");
         }
         return CachedData::$_RecitationDiacritics;
     }
     public static function RecitationLettersDiacritics()
 	{
-        if (CachedData::$_RecitationLettersDiacritics == null) {
+        if (CachedData::$_RecitationLettersDiacritics === null) {
             CachedData::$_RecitationLettersDiacritics = CachedData::GetGroup("RecitationLettersDiacritics");
         }
         return CachedData::$_RecitationLettersDiacritics;
     }
     public static function RecitationSpecialSymbols()
 	{
-        if (CachedData::$_RecitationSpecialSymbols == null) {
+        if (CachedData::$_RecitationSpecialSymbols === null) {
             CachedData::$_RecitationSpecialSymbols = CachedData::GetGroup("RecitationSpecialSymbols");
         }
         return CachedData::$_RecitationSpecialSymbols;
     }
     public static function ArabicLeadingGutterals()
 	{
-        if (CachedData::$_ArabicLeadingGutterals == null) {
+        if (CachedData::$_ArabicLeadingGutterals === null) {
             CachedData::$_ArabicLeadingGutterals = CachedData::GetGroup("ArabicLeadingGutterals");
         }
         return CachedData::$_ArabicLeadingGutterals;
     }
     public static function RecitationLetters()
 	{
-        if (CachedData::$_RecitationLetters == null) {
+        if (CachedData::$_RecitationLetters === null) {
             CachedData::$_RecitationLetters = CachedData::GetGroup("RecitationLetters");
         }
         return CachedData::$_RecitationLetters;
     }
     public static function ArabicTrailingGutterals()
 	{
-        if (CachedData::$_ArabicTrailingGutterals == null) {
+        if (CachedData::$_ArabicTrailingGutterals === null) {
             CachedData::$_ArabicTrailingGutterals = CachedData::GetGroup("ArabicTrailingGutterals");
         }
         return CachedData::$_ArabicTrailingGutterals;
     }
     public static function RecitationSpecialSymbolsNotStop()
 	{
-        if (CachedData::$_RecitationSpecialSymbolsNotStop == null) {
+        if (CachedData::$_RecitationSpecialSymbolsNotStop === null) {
             CachedData::$_RecitationSpecialSymbolsNotStop = CachedData::GetGroup("RecitationSpecialSymbolsNotStop");
         }
         return CachedData::$_RecitationSpecialSymbolsNotStop;
@@ -1108,7 +1108,7 @@ class CachedData
     static $_ArabicComboCamelCaseDict = null;
     public static function ArabicCamelCaseDict()
     {
-        if (CachedData::$_ArabicCamelCaseDict == null) {
+        if (CachedData::$_ArabicCamelCaseDict === null) {
             CachedData::$_ArabicCamelCaseDict = array();
             for ($count = 0; $count < count(ArabicData::ArabicLetters()); $count++) {
                 if (substr(ArabicData::ArabicLetters()[$count]->UnicodeName, 0, 1) != "<") CachedData::$_ArabicCamelCaseDict[ArabicData::ToCamelCase(ArabicData::ArabicLetters()[$count]->UnicodeName)] = $count;
@@ -1118,7 +1118,7 @@ class CachedData
     }
     public static function ArabicComboCamelCaseDict()
     {
-        if (CachedData::$_ArabicComboCamelCaseDict == null) {
+        if (CachedData::$_ArabicComboCamelCaseDict === null) {
             CachedData::$_ArabicComboCamelCaseDict = array();
             for ($count = 0; $count < count(ArabicData::ArabicCombos()); $count++) {
             	for ($subcount = 0; $subcount < count(ArabicData::ArabicCombos()[$count]->UnicodeName); $subcount++) {
@@ -1180,7 +1180,7 @@ class CachedData
     }
     public static function RulesOfRecitationRegEx()
 	{
-        if (CachedData::$_RulesOfRecitationRegEx == null) {
+        if (CachedData::$_RulesOfRecitationRegEx === null) {
             CachedData::$_RulesOfRecitationRegEx = CachedData::IslamData()->metaruleset->children();
             for ($subCount = 0; $subCount < count(CachedData::$_RulesOfRecitationRegEx); $subCount++) {
                 CachedData::$_RulesOfRecitationRegEx[$subCount]->attributes()["match"] = CachedData::TranslateRegEx(CachedData::$_RulesOfRecitationRegEx[$subCount]->attributes()["match"], true);
@@ -1190,63 +1190,63 @@ class CachedData
     }
     public static function WarshScript()
 	{
-        if (CachedData::$_WarshScript == null) {
+        if (CachedData::$_WarshScript === null) {
             CachedData::$_WarshScript = CachedData::GetRuleSet("WarshScript");
         }
         return CachedData::$_WarshScript;
     }
     public static function UthmaniMinimalScript()
 	{
-        if (CachedData::$_UthmaniMinimalScript == null) {
+        if (CachedData::$_UthmaniMinimalScript === null) {
             CachedData::$_UthmaniMinimalScript = CachedData::GetRuleSet("UthmaniMinimalScript");
         }
         return CachedData::$_UthmaniMinimalScript;
     }
     public static function SimpleEnhancedScript()
 	{
-        if (CachedData::$_SimpleEnhancedScript == null) {
+        if (CachedData::$_SimpleEnhancedScript === null) {
             CachedData::$_SimpleEnhancedScript = CachedData::GetRuleSet("SimpleEnhancedScript");
         }
         return CachedData::$_SimpleEnhancedScript;
     }
     public static function SimpleScript()
 	{
-        if (CachedData::$_SimpleScript == null) {
+        if (CachedData::$_SimpleScript === null) {
             CachedData::$_SimpleScript = CachedData::GetRuleSet("SimpleScript");
         }
         return CachedData::$_SimpleScript;
     }
     public static function SimpleCleanScript()
 	{
-        if (CachedData::$_SimpleCleanScript == null) {
+        if (CachedData::$_SimpleCleanScript === null) {
             CachedData::$_SimpleCleanScript = CachedData::GetRuleSet("SimpleCleanScript");
         }
         return CachedData::$_SimpleCleanScript;
     }
     public static function SimpleMinimalScript()
 	{
-        if (CachedData::$_SimpleMinimalScript == null) {
+        if (CachedData::$_SimpleMinimalScript === null) {
             CachedData::$_SimpleMinimalScript = CachedData::GetRuleSet("SimpleMinimalScript");
         }
         return CachedData::$_SimpleMinimalScript;
     }
     public static function RomanizationRules()
 	{
-        if (CachedData::$_RomanizationRules == null) {
+        if (CachedData::$_RomanizationRules === null) {
             CachedData::$_RomanizationRules = CachedData::GetRuleSet("RomanizationRules");
         }
         return CachedData::$_RomanizationRules;
     }
     public static function ColoringSpelledOutRules()
 	{
-        if (CachedData::$_ColoringSpelledOutRules == null) {
+        if (CachedData::$_ColoringSpelledOutRules === null) {
             CachedData::$_ColoringSpelledOutRules = CachedData::GetRuleSet("ColoringSpelledOutRules");
         }
         return CachedData::$_ColoringSpelledOutRules;
     }
     public static function ErrorCheckRules()
 	{
-        if (CachedData::$_ErrorCheck == null) {
+        if (CachedData::$_ErrorCheck === null) {
             CachedData::$_ErrorCheck = CachedData::GetRuleSet("ErrorCheck");
         }
         return CachedData::$_ErrorCheck;
@@ -1274,6 +1274,7 @@ abstract class RenderDisplayClass {
 	const eRanking = 6;
 	const eList = 7;
 	const eTag = 8;
+	const ePassThru = 9;
 };
 class RenderText
 {
@@ -1312,6 +1313,8 @@ class RenderArray
 			for ($index = 0; $index < count($items[$count]->textitems); $index++) {
 				if ($items[$count]->textitems[$index]->displayClass == RenderDisplayClass::eNested) {
 					$text .= RenderArray::DoRender($items[$count]->textitems[$index]->Text);
+				} elseif ($items[$count]->textitems[$index]->displayClass == RenderDisplayClass::ePassThru) {
+					$text .= $items[$count]->textitems[$index]->Text;
 				} else {
 					if (array_search($items[$count]->textitems[$index]->font, Utility::$FontList) !== false) {
 						$text .= "<span dir=\"rtl\" style=\"display: block;\"><img src=\"" . plugins_url() . "" . "/islamsource/IslamSourceWP.php?Size=" . ($items[$count]->textitems[$index]->Size == 0 ? "100" : $items[$count]->textitems[$index]->Size) . "&Char=" . bin2hex(mb_convert_encoding($items[$count]->textitems[$index]->Text, 'UCS-4BE', 'UTF-8')) . "&Font=" . $items[$count]->textitems[$index]->font . "\">";
@@ -1363,7 +1366,7 @@ class Arabic
 	public static $_BuckwalterMap = null;
     public static function BuckwalterMap()
 	{
-        if (Arabic::$_BuckwalterMap == null) {
+        if (Arabic::$_BuckwalterMap === null) {
         	$map = getcacheitem("BuckwalterMap", true);
         	if ($map) {
         		Arabic::$_BuckwalterMap = unserialize($map);
@@ -1387,9 +1390,9 @@ class Arabic
                 $count += 1;
                 if ($buckwalter[$count] == ",") {
                     $arabicString .= ArabicData::$ArabicComma;
-                } else if ($buckwalter[$count] == ";") {
+                } elseif ($buckwalter[$count] == ";") {
                     $arabicString .= ArabicData::$ArabicSemicolon;
-                } else if ($buckwalter[$count] == "?") {
+                } elseif ($buckwalter[$count] == "?") {
                     $arabicString .= ArabicData::$ArabicQuestionMark;
                 } else {
                     $arabicString .= $buckwalter[$count];
@@ -1417,7 +1420,7 @@ class Arabic
     static $_SchemeTable = null;
     public static function GetSchemeTable()
     {
-    	if (Arabic::$_SchemeTable == null) {
+    	if (Arabic::$_SchemeTable === null) {
     		Arabic::$_SchemeTable = array();
 		    for ($count = 0; $count < count(CachedData::IslamData()->translitschemes->children()); $count++) {
 		    	$sch = CachedData::IslamData()->translitschemes->children()[$count];
@@ -1505,7 +1508,7 @@ class Arabic
     static $_letters = null;
     public static function GetSortedLetters($scheme)
     {
-    	if (Arabic::$_letters == null) {
+    	if (Arabic::$_letters === null) {
 	        $letters = array();
 	        for ($count = 0; $count < count(ArabicData::ArabicLetters()); $count++) {
 	        	$letters[] = ArabicData::ArabicLetters()[$count];
@@ -1535,7 +1538,7 @@ class Arabic
                 }
             } else {
                 if (array_key_exists(mb_substr($arabicString, $count, 1), Arabic::GetSortedLetters($scheme))) {
-                    if (Arabic::GetSchemeSpecialFromMatch(mb_substr($arabicString, $count, 1), false) != -1) {
+                    if (Arabic::GetSchemeSpecialFromMatch(mb_substr($arabicString, $count, 1), false) !== -1) {
                         $romanString .= Arabic::GetSchemeSpecialValue(Arabic::GetSchemeSpecialFromMatch(mb_substr($arabicString, $count, 1), false), $scheme == "" ? "ExtendedBuckwalter" : $scheme);
                     } else {
                         $romanString .= Arabic::GetSchemeValueFromSymbol(ArabicData::ArabicLetters()[ArabicData::FindLetterBySymbol(mb_substr($arabicString, $count, 1))], $scheme == "" ? "ExtendedBuckwalter" : $scheme);
@@ -1585,11 +1588,11 @@ class Arabic
         $output = "";
         foreach (preg_split('/(?<!^)(?!$)/u', $input) as $ch) {
             $index = ArabicData::FindLetterBySymbol($ch);
-            if ($index != -1 && Arabic::IsLetter($index)) {
+            if ($index !== -1 && Arabic::IsLetter($index)) {
                 if ($output != "" && !$quranic) { $output .= " "; }
                 $idx = array_search(ArabicData::ArabicLetters()[$index]->Symbol, CachedData::ArabicLettersInOrder());
                 $output .= $quranic ? substr(CachedData::ArabicAlphabet()[$idx], 0, strlen(CachedData::ArabicAlphabet()[$idx] - 1)) . ((substr(CachedData::ArabicAlphabet()[$idx], -1) == "n") ? "" : "o") : CachedData::ArabicAlphabet()[$idx];
-            } elseif ($index != -1 && ArabicData::ArabicLetters()[$index]->Symbol == ArabicData::$ArabicMaddahAbove) {
+            } elseif ($index !== -1 && ArabicData::ArabicLetters()[$index]->Symbol == ArabicData::$ArabicMaddahAbove) {
                 if (!$quranic) { $output .= $ch; }
             }
         }
@@ -1703,23 +1706,23 @@ class Arabic
         $index = strrpos($preString, " ");
         //take last word of pre string and first word of post string or another if it is a pause marker
         //end of ayah sign without number is used as a proper place holder
-        if ($index != -1 && strlen($preString) - 2 == $index) { $index = strrpos($preString, " ", $index - 1); }
-        if ($index != -1) { $preString = substr($preString, $index + 1); }
+        if ($index !== -1 && strlen($preString) - 2 == $index) { $index = strrpos($preString, " ", $index - 1); }
+        if ($index !== -1) { $preString = substr($preString, $index + 1); }
         if ($preString != "") { $preString .= " " . ArabicData::$ArabicEndOfAyah . " "; }
         $index = strpos($postString, " ");
-        if ($index == 2) { $index = strpos($preString, " ", $index + 1); }
-        if ($index != -1) { $postString = substr($postString, 0, $index); }
+        if ($index === 2) { $index = strpos($preString, " ", $index + 1); }
+        if ($index !== -1) { $postString = substr($postString, 0, $index); }
         if ($postString != "") { $postString = " " . ArabicData::$ArabicEndOfAyah . " " . $postString; }
         return $preString . $arabicString . $postString;
     }
     public static function UnjoinContig($arabicString, $preString, $postString)
     {
         $index = strpos($arabicString, ArabicData::$ArabicEndOfAyah);
-        if ($preString != "" && $index != -1) {
+        if ($preString != "" && $index !== -1) {
             $arabicString = substr($arabicString, $index + 1 + 1);
         }
         $index = strrpos($arabicString, ArabicData::$ArabicEndOfAyah);
-        if ($postString != "" && $index != -1) {
+        if ($postString != "" && $index !== -1) {
             $arabicString = substr($arabicString, 0, $index - 1);
         }
         return $arabicString;
@@ -1808,11 +1811,11 @@ class TanzilReader
 		preg_match_all('/(?:,?(\\d+)(?:\\:(\\d+))?(?:\\:(\\d+))?(?:-(\\d+)(?:\\:(\\d+))?(?:\\:(\\d+))?)?)/u', $str, $matches, PREG_SET_ORDER);
 		for ($count = 0; $count < count($matches); $count++) {
 			$basechapter = $matches[$count][1];
-			$baseverse = array_key_exists(2, $matches[$count]) ? $matches[$count][2] : 0;
-			$wordnumber = array_key_exists(3, $matches[$count]) ? $matches[$count][3] : 0;
-			$endchapter = array_key_exists(4, $matches[$count]) ? $matches[$count][4] : 0;
-			$extraversenumber = array_key_exists(5, $matches[$count]) ? $matches[$count][5] : 0;
-			$endwordnumber = array_key_exists(6, $matches[$count]) ? $matches[$count][6] : 0;
+			$baseverse = isset($matches[$count][2]) ? $matches[$count][2] : 0;
+			$wordnumber = isset($matches[$count][3]) ? $matches[$count][3] : 0;
+			$endchapter = isset($matches[$count][4]) ? $matches[$count][4] : 0;
+			$extraversenumber = isset($matches[$count][5]) ? $matches[$count][5] : 0;
+			$endwordnumber = isset($matches[$count][6]) ? $matches[$count][6] : 0;
 			if ($baseverse != 0 && $wordnumber == 0 && $endchapter != 0 && $extraversenumber == 0 && $endwordnumber == 0) {
 	            $extraversenumber = $endchapter;
 	            $endchapter = 0;
@@ -2028,7 +2031,7 @@ class DocBuilder
 		if (preg_match_all("/(.*?)(?:(\\\\\\{)(.*?)(\\\\\\})|$)/u", $strings, $matches, PREG_SET_ORDER) !== 0) {
 			for ($matchcount = 0; $matchcount < count($matches); $matchcount++) {
 	            if (count($matches[$matchcount])) {
-	                if (array_key_exists(1, $matches[$matchcount])) {
+	                if (isset($matches[$matchcount][1])) {
 	                    $englishByWord = explode("|", Utility::LoadResourceString("IslamInfo_" . $translationID . "WordByWord"));
 	                    $arabicText = explode(" ", $matches[$matchcount][1]);
 	                    $transliteration = explode(" ", Arabic::TransliterateToScheme(Arabic::TransliterateFromBuckwalter($matches[$matchcount][1]), $schemetype, $scheme));
@@ -2039,7 +2042,7 @@ class DocBuilder
 	                    }
 	                    array_push($renderer->Items, new RenderItem(RenderTypes::eText, [new RenderText(RenderDisplayClass::eNested, $items), new RenderText(RenderDisplayClass::eArabic, Arabic::TransliterateFromBuckwalter($matches[$matchcount][1])), new RenderText(RenderDisplayClass::eTransliteration, Arabic::TransliterateToScheme(Arabic::TransliterateFromBuckwalter($matches[$matchcount][1]), $schemetype, $scheme)), new RenderText(RenderDisplayClass::eLTR, Utility::LoadResourceString("IslamInfo_" . $translationID . "Trans"))]));
 	                }
-	                if (array_key_exists(3, $matches[$matchcount])) {
+	                if (isset($matches[$matchcount][3])) {
 	                    $renderer->Items = array_merge($renderer->Items, DocBuilder::TextFromReferences($matches[$matchcount][3], $schemetype, $scheme, $translationindex)->Items);
 	                }
 	            }
@@ -2055,7 +2058,7 @@ class DocBuilder
 	        for ($count = 0; $count < count($matches); $count++) {
 	            if (count($matches[$count]) != 0) {
 	                if (strlen($matches[$count][1]) != 0) {
-	                	array_push($renderer->Items, new RenderItem(RenderTypes::eText, [new RenderText(RenderDisplayClass::eLTR, $matches[$count][1])]));
+	                	array_push($renderer->Items, new RenderItem(RenderTypes::eText, [new RenderText(RenderDisplayClass::ePassThru, $matches[$count][1])]));
 	            	}
 	                if (isset($matches[$count][3]) && strlen($matches[$count][3]) != 0) {
 	                    $renderer->Items = array_merge($renderer->Items, DocBuilder::TextFromReferences($matches[$count][3], $schemetype, $scheme, $translationindex)->Items);
@@ -2065,14 +2068,26 @@ class DocBuilder
     	}
         return $renderer;
     }
+    static $_abbrevs = null;
+    public static function GetAbbrevs()
+    {
+    	if (DocBuilder::$_abbrevs === null) {
+	    	DocBuilder::$_abbrevs = array();
+			for ($count = 0; $count < count(CachedData::IslamData()->abbreviations->children()); $count++) {
+				DocBuilder::$_abbrevs[(string)CachedData::IslamData()->abbreviations->children()[$count]->attributes()["id"]] = CachedData::IslamData()->abbreviations->children()[$count];
+				array_walk(explode("|", (string)CachedData::IslamData()->abbreviations->children()[$count]->attributes()["text"]), function ($v) use($count) { DocBuilder::$_abbrevs[$v] = CachedData::IslamData()->abbreviations->children()[$count]; });
+			}
+		}
+		return DocBuilder::$_abbrevs;
+    }
 	public static function TextFromReferences($strings, $schemetype, $scheme, $translationindex)
 	{
-		$options = explode(";", $strings);
-		$strings = array_shift($options);
-		foreach ($options as $idx => $str) {
+		$_options = explode(";", $strings);
+		$strings = array_shift($_options);
+		$options = array();
+		foreach ($_options as $idx => $str) {
 			$kv = explode("=", $str);
 			$options[$kv[0]] = (count($kv) == 1) ? null : explode(",", $kv[1]);
-			unset($options[$idx]);
 		}
 		if (array_key_exists("Translation", $options)) { $translationindex = TanzilReader::GetTranslationIndex($options["Translation"][0]); }
 		if (array_key_exists("TranslitStyle", $options)) {
@@ -2088,34 +2103,30 @@ class DocBuilder
 		$renderer = new RenderArray("");
 		if (TanzilReader::IsQuranTextReference($strings)) {
             $renderer->Items = array_merge($renderer->Items, TanzilReader::QuranTextFromReference($strings, $schemetype, $scheme, $translationindex)->Items);
-        }
-		for ($count = 0; $count < count(CachedData::IslamData()->abbreviations->children()); $count++) {
-			if (array_search($strings, explode("|", (string)CachedData::IslamData()->abbreviations->children()[$count]->attributes()["text"])) !== false) {
-				$items = array();
-				if (array_key_exists("Char", $options)) $options["Char"] = array_map(function ($str) { return substr("00000000" . strtolower($str), -8); }, $options["Char"]);
-				if (count($options) == 0) array_push($items, new RenderItem(RenderTypes::eText, [new RenderText(RenderDisplayClass::eTag, (string)CachedData::IslamData()->abbreviations->children()[$count]->attributes()["id"] . "|" . (string)CachedData::IslamData()->abbreviations->children()[$count]->attributes()["text"])]));
-				if ((string)CachedData::IslamData()->abbreviations->children()[$count]->attributes()["font"] != "") {
-					foreach (explode("|", (string)CachedData::IslamData()->abbreviations->children()[$count]->attributes()["font"]) as $part) {
-						$font = "";
-						if (strpos($part, ';') !== false) {
-							$font = explode(';', $part)[0];
-							$part = explode(';', $part)[1];
-						}
-						if (!array_key_exists("Font", $options) || array_search($font, $options["Font"]) !== false) {
-							foreach (explode(",", $part) as $substr) {
-								if (!array_key_exists("Char", $options) || array_search(bin2hex(mb_convert_encoding(implode(array_map(function($split) { return mb_convert_encoding('&#x' . $split . ';', 'UTF-8', 'HTML-ENTITIES'); }, explode("+", $substr))), 'UCS-4BE', 'UTF-8')), $options["Char"]) !== false) {
-	                                $rendText = new RenderText(RenderDisplayClass::eArabic, implode(array_map(function($split) { return mb_convert_encoding('&#x' . $split . ';', 'UTF-8', 'HTML-ENTITIES'); }, explode("+", $substr))));
-	                                $rendText->font = $font;
-	                                if (array_key_exists("Size", $options)) $rendText->Size = $options["Size"][0];
-	                                array_push($items, new RenderItem(RenderTypes::eText, [$rendText]));
-	                            }
-							}
+        } elseif ($strings !== null && array_key_exists($strings, DocBuilder::GetAbbrevs())) {
+			$items = array();
+			if (array_key_exists("Char", $options)) $options["Char"] = array_map(function ($str) { return substr("00000000" . strtolower($str), -8); }, $options["Char"]);
+			if (count($options) == 0) array_push($items, new RenderItem(RenderTypes::eText, [new RenderText(RenderDisplayClass::eTag, (string)DocBuilder::GetAbbrevs()[$strings]->attributes()["id"] . "|" . (string)DocBuilder::GetAbbrevs()[$strings]->attributes()["text"])]));
+			if ((string)DocBuilder::GetAbbrevs()[$strings]->attributes()["font"] != "") {
+				foreach (explode("|", (string)DocBuilder::GetAbbrevs()[$strings]->attributes()["font"]) as $part) {
+					$font = "";
+					if (strpos($part, ';') !== false) {
+						$font = explode(';', $part)[0];
+						$part = explode(';', $part)[1];
+					}
+					if (!array_key_exists("Font", $options) || array_search($font, $options["Font"]) !== false) {
+						foreach (explode(",", $part) as $substr) {
+							if (!array_key_exists("Char", $options) || array_search(bin2hex(mb_convert_encoding(implode(array_map(function($split) { return mb_convert_encoding('&#x' . $split . ';', 'UTF-8', 'HTML-ENTITIES'); }, explode("+", $substr))), 'UCS-4BE', 'UTF-8')), $options["Char"]) !== false) {
+                                $rendText = new RenderText(RenderDisplayClass::eArabic, implode(array_map(function($split) { return mb_convert_encoding('&#x' . $split . ';', 'UTF-8', 'HTML-ENTITIES'); }, explode("+", $substr))));
+                                $rendText->font = $font;
+                                if (array_key_exists("Size", $options)) $rendText->Size = $options["Size"][0];
+                                array_push($items, new RenderItem(RenderTypes::eText, [$rendText]));
+                            }
 						}
 					}
 				}
-				array_push($renderer->Items, new RenderItem(RenderTypes::eText, [new RenderText(RenderDisplayClass::eNested, $items)]));
-				break;
 			}
+			array_push($renderer->Items, new RenderItem(RenderTypes::eText, [new RenderText(RenderDisplayClass::eNested, $items)]));
 		}
 		return $renderer;
 	}
@@ -2205,7 +2216,7 @@ if (array_key_exists("Char", $_GET)) {
 									for ($nesttextcount = 0; $nesttextcount < count($renderer->Items[$matchcount]->textitems[$textcount]->Text[$nestcount]->textitems); $nesttextcount++) {
 										if ($renderer->Items[$matchcount]->textitems[$textcount]->Text[$nestcount]->textitems[$nesttextcount]->font != "") {
 											$val .= "{\"value\":" . json_encode(explode("|", $id)[1]) . ", \"font\": \"" . $renderer->Items[$matchcount]->textitems[$textcount]->Text[$nestcount]->textitems[$nesttextcount]->font . "\", \"char\": \"" . bin2hex(mb_convert_encoding($renderer->Items[$matchcount]->textitems[$textcount]->Text[$nestcount]->textitems[$nesttextcount]->Text, 'UCS-4BE', 'UTF-8')) . "\"},";
-										} else if ($renderer->Items[$matchcount]->textitems[$textcount]->Text[$nestcount]->textitems[$nesttextcount]->displayClass == RenderDisplayClass::eTag) {
+										} elseif ($renderer->Items[$matchcount]->textitems[$textcount]->Text[$nestcount]->textitems[$nesttextcount]->displayClass == RenderDisplayClass::eTag) {
 											$id = $renderer->Items[$matchcount]->textitems[$textcount]->Text[$nestcount]->textitems[$nesttextcount]->Text;
 										}
 									}

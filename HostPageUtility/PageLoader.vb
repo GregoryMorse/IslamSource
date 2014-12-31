@@ -1986,6 +1986,7 @@ Public Class RenderArray
         eRanking
         eList
         eTag
+        ePassThru
     End Enum
     Structure RenderText
         Public DisplayClass As RenderDisplayClass
@@ -2919,6 +2920,8 @@ Public Class RenderArray
                     writer.WriteAttribute("style", "direction: ltr;" + Style)
                     writer.Write(HtmlTextWriter.TagRightChar)
                     WriteTable(writer, CType(Items(Count).TextItems(Index).Text, Object()), TabCount, ID + CStr(Count))
+                ElseIf Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.ePassThru Then
+                    writer.Write(CStr(Items(Count).TextItems(Index).Text))
                 ElseIf Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eContinueStop Then
                     'U+2BC3 is horizontal stop sign make red color, U+2B45/6 is left/rightwards quadruple arrow make green color
                     writer.WriteAttribute("style", "color: " + If(CStr(Items(Count).TextItems(Index).Text) <> String.Empty, "#ff0000", "#00ff00") + ";" + Style)
