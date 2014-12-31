@@ -624,7 +624,7 @@ Public Class Arabic
         'Dim Letters(ArabicData.ArabicLetters.Length - 1) As IslamData.ArabicSymbol
         'ArabicData.ArabicLetters.CopyTo(Letters, 0)
         'Array.Sort(Letters, New StringLengthComparer("RomanTranslit"))
-        Return "var translitSchemes = " + Utility.MakeJSIndexedObject(Array.ConvertAll(CachedData.IslamData.TranslitSchemes, Function(TranslitScheme As IslamData.TranslitScheme) CStr(Array.IndexOf(CachedData.IslamData.TranslitSchemes, TranslitScheme) + 1 + 2)), _
+        Return "var translitSchemes = " + Utility.MakeJSIndexedObject(Array.ConvertAll(CachedData.IslamData.TranslitSchemes, Function(TranslitScheme As IslamData.TranslitScheme) CStr(Array.IndexOf(CachedData.IslamData.TranslitSchemes, TranslitScheme) + 1 + 1)), _
                                                                           New Array() {Array.ConvertAll(Of IslamData.TranslitScheme, String)(CachedData.IslamData.TranslitSchemes, Function(TranslitScheme As IslamData.TranslitScheme) Utility.MakeJSIndexedObject({"standard", "gutteral"}, New Array() {New String() {Utility.MakeJSIndexedObject(Array.ConvertAll(ArabicTranslitLetters(), Function(Str As String) System.Text.RegularExpressions.Regex.Replace(Str.Replace(CachedData.TehMarbutaStopRule, String.Empty).Replace(CachedData.TehMarbutaContinueRule, "..."), "\(?\\u([0-9a-fA-F]{4})\)?", Function(Match As System.Text.RegularExpressions.Match) ChrW(Integer.Parse(Match.Groups(1).Value, Globalization.NumberStyles.HexNumber)))), New Array() {Array.ConvertAll(Of String, String)(ArabicTranslitLetters(),
                                                                             Function(Str As String)
                                                                                 If GetSchemeSpecialFromMatch(Str, False) <> -1 Then
@@ -664,7 +664,7 @@ Public Class Arabic
             "var arabicLettersInOrder = " + Utility.MakeJSArray(CachedData.ArabicLettersInOrder) + ";", _
             "var arabicLeadingGutterals = " + Utility.MakeJSArray(CachedData.ArabicLeadingGutterals) + ";", _
             "function getSchemeGutteralFromString(str, scheme, leading) { if (arabicLeadingGutterals.indexOf(str) !== -1) { return translitSchemes[scheme].gutteral[arabicLeadingGutterals.indexOf(str) + " + CStr(CachedData.ArabicVowels.Length) + " + (leading ? arabicLeadingGutterals.length : 0)]; } return ''; }", _
-            "function arabicLetterSpelling(sVal, bQuranic) { var count, index, output = ''; for (count = 0; count < sVal.length; count++) { index = findLetterBySymbol(sVal.charCodeAt(count)); if (index !== -1 && isLetter(index)) { if (output !== '' && !bQuranic) output += ' '; var idx = arabicLettersInOrder.indexOf(arabicLetters[index].Symbol); output += arabicAlphabet[idx].slice(0, -1) + ((arabicAlphabet[idx][arabicAlphabet[idx].length - 1] == 'n') ? '' : 'o'); } else if (index !== -1 && arabicLetters[index].Symbol === 0x653) { output += sVal.charCodeAt(count); } } return doTransliterate(output, false, 1); }", _
+            "function arabicLetterSpelling(sVal, bQuranic) { var count, index, output = ''; for (count = 0; count < sVal.length; count++) { index = findLetterBySymbol(sVal.charCodeAt(count)); if (index !== -1 && isLetter(index)) { if (output !== '' && !bQuranic) output += ' '; var idx = arabicLettersInOrder.indexOf(String.fromCharCode(parseInt(arabicLetters[index].Symbol, 10))); output += arabicAlphabet[idx].slice(0, -1) + ((arabicAlphabet[idx][arabicAlphabet[idx].length - 1] == 'n') ? '' : 'o'); } else if (index !== -1 && arabicLetters[index].Symbol === 0x653) { output += sVal.charCodeAt(count); } } return doTransliterate(output, false, 1); }", _
             "String.prototype.format = function() { var formatted = this; for (var i = 0; i < arguments.length; i++) { formatted = formatted.replace(new RegExp('\\{'+i+'\\}', 'gi'), arguments[i]); } return formatted; };", _
             "RegExp.matchResult = function(subexp, offset, str, matches) { return subexp.replace(/\$(\$|&|`|\'|[0-9]+)/g, function(m, p) { if (p === '$') return '$'; if (p === '`') return str.slice(0, offset); if (p === '\'') return str.slice(offset + matches[0].length); if (p === '&' || parseInt(p, 10) <= 0 || parseInt(p, 10) >= matches.length) return matches[0]; return matches[parseInt(p, 10)]; }); };", _
             "var ruleFunctions = [function(str, scheme) { return [str.toUpperCase()]; }, function(str, scheme) { return [transliterateWithRules(doTransliterate(arabicWordFromNumber(parseInt(doTransliterate(str, true, 1), 10), true, false, false), false, 1), scheme)]; }, function(str, scheme) { return [transliterateWithRules(arabicLetterSpelling(str, true), scheme)]; }, function(str, scheme) { return [translitSchemes[scheme.toString()].standard[str]]; }, function(str, scheme) { return [translitSchemes[scheme.toString()].standard[str]]; }, function(str, scheme) { return [" + Utility.MakeJSArray(CachedData.ArabicFathaDammaKasra) + "[" + Utility.MakeJSArray(CachedData.ArabicTanweens) + ".indexOf(str)], '" + ArabicData.ArabicLetterNoon + "']; }, function (str, scheme) { return ['', '']; }, function (str, scheme) { return ['']; }, function (str, scheme) { return [getSchemeGutteralFromString(str.slice(0, -1), scheme, true) + str[str.length - 1]]; }, function(str, scheme) { return [str[0] + getSchemeGutteralFromString(str.slice(1), scheme, false)]; }];", _
@@ -736,8 +736,8 @@ Public Class Arabic
         Strings(0) = New String() {Utility.LoadResourceString("IslamSource_Off"), "0"}
         Strings(1) = New String() {Utility.LoadResourceString("IslamSource_ExtendedBuckwalter"), "1"}
         For Count = 0 To CachedData.IslamData.TranslitSchemes.Length - 2
-            Strings(Count * 2 + 2) = New String() {Utility.LoadResourceString("IslamSource_" + CachedData.IslamData.TranslitSchemes(Count + 1).Name), CStr(Count * 2 + 2)}
-            Strings(Count * 2 + 1 + 2) = New String() {Utility.LoadResourceString("IslamSource_" + CachedData.IslamData.TranslitSchemes(Count + 1).Name) + " Literal", CStr(Count * 2 + 1 + 2)}
+            Strings(Count * 2 + 2) = New String() {Utility.LoadResourceString("IslamSource_" + CachedData.IslamData.TranslitSchemes(Count + 1).Name), CStr(Count * 2 + 2 + 2)}
+            Strings(Count * 2 + 1 + 2) = New String() {Utility.LoadResourceString("IslamSource_" + CachedData.IslamData.TranslitSchemes(Count + 1).Name) + " Literal", CStr(Count * 2 + 1 + 2 + 2)}
         Next
         Return Strings
     End Function
@@ -3132,7 +3132,7 @@ Public Class DocBuilder
     Public Shared Function BuckwalterTextFromReferences(ID As String, SchemeType As ArabicData.TranslitScheme, Scheme As String, Strings As String, TranslationID As String, TranslationIndex As Integer) As RenderArray
         Dim Renderer As New RenderArray(ID)
         If Strings = Nothing Then Return Renderer
-        Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(Strings, "(.*?)(?:(\\\{)(.*?)(\\\})|$)")
+        Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(Strings, "(.*?)(?:(\\\{)(.*?)(\\\})|$)", System.Text.RegularExpressions.RegexOptions.Singleline)
         For MatchCount As Integer = 0 To Matches.Count - 1
             If Matches(MatchCount).Length <> 0 Then
                 If Matches(MatchCount).Groups(1).Length <> 0 Then
@@ -3156,7 +3156,7 @@ Public Class DocBuilder
     Public Shared Function NormalTextFromReferences(ID As String, Strings As String, SchemeType As ArabicData.TranslitScheme, Scheme As String, TranslationIndex As Integer) As RenderArray
         Dim Renderer As New RenderArray(ID)
         If Strings = Nothing Then Return Renderer
-        Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(Strings, "(.*?)(?:(\{)(.*?)(\})|$)")
+        Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(Strings, "(.*?)(?:(\{)(.*?)(\})|$)", System.Text.RegularExpressions.RegexOptions.Singleline)
         For Count As Integer = 0 To Matches.Count - 1
             If Matches(Count).Length <> 0 Then
                 If Matches(Count).Groups(1).Length <> 0 Then

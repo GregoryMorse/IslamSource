@@ -32,6 +32,9 @@ None
 
 == Changelog ==
 
+= 1.2 =
+Speed optimizations.
+
 = 1.1 =
 Fixes and translations.
 

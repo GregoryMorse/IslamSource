@@ -1591,7 +1591,7 @@ class Arabic
             if ($index !== -1 && Arabic::IsLetter($index)) {
                 if ($output != "" && !$quranic) { $output .= " "; }
                 $idx = array_search(ArabicData::ArabicLetters()[$index]->Symbol, CachedData::ArabicLettersInOrder());
-                $output .= $quranic ? substr(CachedData::ArabicAlphabet()[$idx], 0, strlen(CachedData::ArabicAlphabet()[$idx] - 1)) . ((substr(CachedData::ArabicAlphabet()[$idx], -1) == "n") ? "" : "o") : CachedData::ArabicAlphabet()[$idx];
+                $output .= $quranic ? substr(CachedData::ArabicAlphabet()[$idx], 0, strlen(CachedData::ArabicAlphabet()[$idx]) - 1) . ((substr(CachedData::ArabicAlphabet()[$idx], -1) == "n") ? "" : "o") : CachedData::ArabicAlphabet()[$idx];
             } elseif ($index !== -1 && ArabicData::ArabicLetters()[$index]->Symbol == ArabicData::$ArabicMaddahAbove) {
                 if (!$quranic) { $output .= $ch; }
             }
@@ -2028,7 +2028,7 @@ class DocBuilder
 	{
         $renderer = new RenderArray($ID);
         if ($strings == null) { return $renderer; }
-		if (preg_match_all("/(.*?)(?:(\\\\\\{)(.*?)(\\\\\\})|$)/u", $strings, $matches, PREG_SET_ORDER) !== 0) {
+		if (preg_match_all("/(.*?)(?:(\\\\\\{)(.*?)(\\\\\\})|$)/us", $strings, $matches, PREG_SET_ORDER) !== 0) {
 			for ($matchcount = 0; $matchcount < count($matches); $matchcount++) {
 	            if (count($matches[$matchcount])) {
 	                if (isset($matches[$matchcount][1])) {
@@ -2054,7 +2054,7 @@ class DocBuilder
     {
         $renderer = new RenderArray($ID);
         if ($strings == null) { return $renderer; }
-        if (preg_match_all("/(.*?)(?:(\\{)(.*?)(\\})|$)/u", $strings, $matches, PREG_SET_ORDER) !== 0) {
+        if (preg_match_all("/(.*?)(?:(\\{)(.*?)(\\})|$)/us", $strings, $matches, PREG_SET_ORDER) !== 0) {
 	        for ($count = 0; $count < count($matches); $count++) {
 	            if (count($matches[$count]) != 0) {
 	                if (strlen($matches[$count][1]) != 0) {
@@ -2199,6 +2199,7 @@ if (array_key_exists("Char", $_GET)) {
 		cacheitemimg($im, 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']);
 		imagedestroy($im);
 	}
+} elseif (array_key_exists("Help", $_GET)) {
 } elseif (array_key_exists("Cat", $_GET)) {
 	if (!getcacheitem('http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'], false)) {
 		$json = "";
