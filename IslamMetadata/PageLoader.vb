@@ -1102,7 +1102,7 @@ Public Class Arabic
         End Get
     End Property
     Public Shared Function GetCatNoun(ID As String) As IslamData.GrammarSet.GrammarNoun()
-        Return If(_NounIDs.ContainsKey(ID), _NounIDs(ID).ToArray(), Nothing)
+        Return If(NounIDs.ContainsKey(ID), NounIDs(ID).ToArray(), Nothing)
     End Function
     Shared _TransformIDs As Dictionary(Of String, List(Of IslamData.GrammarSet.GrammarTransform))
     Public Shared ReadOnly Property TransformIDs As Dictionary(Of String, List(Of IslamData.GrammarSet.GrammarTransform))
@@ -1125,7 +1125,7 @@ Public Class Arabic
         End Get
     End Property
     Public Shared Function GetTransform(ID As String) As IslamData.GrammarSet.GrammarTransform()
-        Return If(_TransformIDs.ContainsKey(ID), _TransformIDs(ID).ToArray(), Nothing)
+        Return If(TransformIDs.ContainsKey(ID), TransformIDs(ID).ToArray(), Nothing)
     End Function
     Shared _ParticleIDs As Dictionary(Of String, List(Of IslamData.GrammarSet.GrammarParticle))
     Public Shared ReadOnly Property ParticleIDs As Dictionary(Of String, List(Of IslamData.GrammarSet.GrammarParticle))
@@ -1148,7 +1148,7 @@ Public Class Arabic
         End Get
     End Property
     Public Shared Function GetParticles(ID As String) As IslamData.GrammarSet.GrammarParticle()
-        Return If(_ParticleIDs.ContainsKey(ID), _ParticleIDs(ID).ToArray(), Nothing)
+        Return If(ParticleIDs.ContainsKey(ID), ParticleIDs(ID).ToArray(), Nothing)
     End Function
     Shared _VerbIDs As Dictionary(Of String, List(Of IslamData.GrammarSet.GrammarVerb))
     Public Shared ReadOnly Property VerbIDs As Dictionary(Of String, List(Of IslamData.GrammarSet.GrammarVerb))
@@ -1171,7 +1171,7 @@ Public Class Arabic
         End Get
     End Property
     Public Shared Function GetVerb(ID As String) As IslamData.GrammarSet.GrammarVerb()
-        Return If(_VerbIDs.ContainsKey(ID), _VerbIDs(ID).ToArray(), Nothing)
+        Return If(VerbIDs.ContainsKey(ID), VerbIDs(ID).ToArray(), Nothing)
     End Function
     Public Shared Function DisplayProximals(ByVal Item As PageLoader.TextItem) As Array()
         Dim SchemeType As ArabicData.TranslitScheme = CType(If(CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) >= 2, 2 - CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) Mod 2, CInt(HttpContext.Current.Request.QueryString.Get("translitscheme"))), ArabicData.TranslitScheme)
@@ -1483,8 +1483,8 @@ Public Class IslamData
             <System.Xml.Serialization.XmlAttribute("from")> _
             Public From As String
         End Structure
-        <System.Xml.Serialization.XmlArray("transform")> _
-        <System.Xml.Serialization.XmlArrayItem("transforms")> _
+        <System.Xml.Serialization.XmlArray("transforms")> _
+        <System.Xml.Serialization.XmlArrayItem("transform")> _
         Public Transforms() As GrammarTransform
         Public Structure GrammarParticle
             <System.Xml.Serialization.XmlAttribute("text")> _
@@ -1494,8 +1494,8 @@ Public Class IslamData
             <System.Xml.Serialization.XmlAttribute("grammar")> _
             Public Grammar As String
         End Structure
-        <System.Xml.Serialization.XmlArray("particle")> _
-        <System.Xml.Serialization.XmlArrayItem("particles")> _
+        <System.Xml.Serialization.XmlArray("particles")> _
+        <System.Xml.Serialization.XmlArrayItem("particle")> _
         Public Particles() As GrammarParticle
         Public Structure GrammarNoun
             <System.Xml.Serialization.XmlAttribute("text")> _
@@ -1507,8 +1507,8 @@ Public Class IslamData
             <System.Xml.Serialization.XmlAttribute("grammar")> _
             Public Grammar As String
         End Structure
-        <System.Xml.Serialization.XmlArray("noun")> _
-        <System.Xml.Serialization.XmlArrayItem("nouns")> _
+        <System.Xml.Serialization.XmlArray("nouns")> _
+        <System.Xml.Serialization.XmlArrayItem("noun")> _
         Public Nouns() As GrammarNoun
         Public Structure GrammarVerb
             <System.Xml.Serialization.XmlAttribute("text")> _
@@ -1520,8 +1520,8 @@ Public Class IslamData
             <System.Xml.Serialization.XmlAttribute("grammar")> _
             Public Grammar As String
         End Structure
-        <System.Xml.Serialization.XmlArray("verb")> _
-        <System.Xml.Serialization.XmlArrayItem("verbs")> _
+        <System.Xml.Serialization.XmlArray("verbs")> _
+        <System.Xml.Serialization.XmlArrayItem("verb")> _
         Public Verbs() As GrammarVerb
     End Structure
     <System.Xml.Serialization.XmlElement("grammar")> _
@@ -3175,9 +3175,9 @@ Public Class DocBuilder
             If _Abbrevs Is Nothing Then
                 _Abbrevs = New Dictionary(Of String, IslamData.AbbrevWord)
                 For Count = 0 To CachedData.IslamData.Abbreviations.Length - 1
-                    _Abbrevs.Add(CachedData.IslamData.Abbreviations(Count).TranslationID, CachedData.IslamData.Abbreviations(Count))
                     Dim AbbrevWord As IslamData.AbbrevWord = CachedData.IslamData.Abbreviations(Count)
-                    Array.ForEach(CachedData.IslamData.Abbreviations(Count).Text.Split("|"c), Sub(Str As String) _Abbrevs.Add(Str, AbbrevWord))
+                    If CachedData.IslamData.Abbreviations(Count).Text <> String.Empty Then Array.ForEach(CachedData.IslamData.Abbreviations(Count).Text.Split("|"c), Sub(Str As String) _Abbrevs.Add(Str, AbbrevWord))
+                    If CachedData.IslamData.Abbreviations(Count).TranslationID <> String.Empty AndAlso Array.IndexOf(CachedData.IslamData.Abbreviations(Count).Text.Split("|"c), CachedData.IslamData.Abbreviations(Count).TranslationID) = -1 Then _Abbrevs.Add(CachedData.IslamData.Abbreviations(Count).TranslationID, CachedData.IslamData.Abbreviations(Count))
                 Next
             End If
             Return _Abbrevs
@@ -4236,7 +4236,36 @@ Public Class TanzilReader
         Doc.Save(Path)
     End Sub
     Public Shared Function IsQuranTextReference(Str As String) As Boolean
-        Return System.Text.RegularExpressions.Regex.Match(Str, "^(?:,?(\d+)(?:\:(\d+))?(?:\:(\d+))?(?:-(\d+)(?:\:(\d+))?(?:\:(\d+))?)?)+$").Success
+        If Not System.Text.RegularExpressions.Regex.Match(Str, "^(?:,?(\d+)(?:\:(\d+))?(?:\:(\d+))?(?:-(\d+)(?:\:(\d+))?(?:\:(\d+))?)?)+$").Success Then Return False
+        Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(Str, "(?:,?(\d+)(?:\:(\d+))?(?:\:(\d+))?(?:-(\d+)(?:\:(\d+))?(?:\:(\d+))?)?)")
+        For Count = 0 To Matches.Count - 1
+            Dim BaseChapter As Integer = CInt(Matches(Count).Groups(1).Value)
+            Dim BaseVerse As Integer = If(Matches(Count).Groups(2).Value = String.Empty, 0, CInt(Matches(Count).Groups(2).Value))
+            Dim WordNumber As Integer = If(Matches(Count).Groups(3).Value = String.Empty, 0, CInt(Matches(Count).Groups(3).Value))
+            Dim EndChapter As Integer = If(Matches(Count).Groups(4).Value = String.Empty, 0, CInt(Matches(Count).Groups(4).Value))
+            Dim ExtraVerseNumber As Integer = If(Matches(Count).Groups(5).Value = String.Empty, 0, CInt(Matches(Count).Groups(5).Value))
+            Dim EndWordNumber As Integer = If(Matches(Count).Groups(6).Value = String.Empty, 0, CInt(Matches(Count).Groups(6).Value))
+            If BaseVerse <> 0 And WordNumber = 0 And EndChapter <> 0 And ExtraVerseNumber = 0 And EndWordNumber = 0 Then
+                ExtraVerseNumber = EndChapter
+                EndChapter = 0
+            ElseIf BaseVerse <> 0 And WordNumber <> 0 And EndChapter <> 0 And ExtraVerseNumber = 0 And EndWordNumber = 0 Then
+                EndWordNumber = EndChapter
+                EndChapter = 0
+            ElseIf BaseVerse <> 0 And WordNumber <> 0 And EndChapter <> 0 And ExtraVerseNumber <> 0 And EndWordNumber = 0 Then
+                EndWordNumber = ExtraVerseNumber
+                ExtraVerseNumber = EndChapter
+                EndChapter = 0
+            End If
+            If WordNumber = 0 Then WordNumber += 1
+            If BaseChapter < 1 Or BaseChapter > GetChapterCount() Then Return False
+            If EndChapter <> 0 AndAlso (EndChapter < BaseChapter Or EndChapter < 1 Or EndChapter > GetChapterCount()) Then Return False
+            If BaseVerse <> 0 AndAlso (BaseVerse < 1 Or BaseVerse > GetVerseCount(BaseChapter)) Then Return False
+            If ExtraVerseNumber <> 0 AndAlso ((BaseChapter = EndChapter And BaseVerse <> 0 And ExtraVerseNumber < BaseVerse) Or ExtraVerseNumber < 1 Or ExtraVerseNumber > GetVerseCount(If(EndChapter = 0, BaseChapter, EndChapter))) Then Return False
+            Dim Check As Collections.Generic.List(Of String()) = QuranTextRangeLookup(BaseChapter, BaseVerse, 0, EndChapter, ExtraVerseNumber, 0)
+            If WordNumber < 1 Or WordNumber > Array.FindAll(Check(0)(0).ToCharArray(), Function(Ch As Char) Ch = " ").Length Then Return False
+            If EndWordNumber <> 0 AndAlso (BaseChapter = EndChapter And BaseVerse = ExtraVerseNumber And WordNumber <> 0 And EndWordNumber < WordNumber Or EndWordNumber < 1 Or EndWordNumber > Array.FindAll(Check(Check.Count - 1)(Check(Check.Count - 1).Length - 1).ToCharArray(), Function(Ch As Char) Ch = " ").Length) Then Return False
+        Next
+        Return True
     End Function
     Public Shared Function QuranTextFromReference(Str As String, SchemeType As ArabicData.TranslitScheme, Scheme As String, TranslationIndex As Integer) As RenderArray
         Dim Renderer As New RenderArray(String.Empty)

@@ -1145,6 +1145,7 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<noun text="isoraA^&apos;N" id="NightJourney"></noun>
 			<noun text="miEoraAjN" id="Ascension"></noun>
 			<noun text="{lr~iDaA" id="Ridaa"></noun>
+			<word text="{lohaAdiy" id="Hadi"></word>
 			<noun text="{ls~aj~adu" id="TheProstratingOne"></noun>
 			<noun text="{lobaAqiru" id="Baaqir"></noun>
 			<noun text="{loEasokariy" id="Askaree"></noun>
@@ -2999,7 +3000,7 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 		<word text="Fatima" font="Shia;0047" id="Fatima"></word>
 		<word text="Hasan" font="Shia;0048" id="Hasan"></word>
 		<word text="Hussein" font="Shia;004A" id="Hussein"></word>
-		<word text="HADI" font="Shia;0042" id="TheProviderOfGuidance"></word>
+		<word text="HADI" font="Shia;0042" id="Hadi"></word>
 		<word text="RIDAA" font="Shia;0043" id="Ridaa"></word>
 		<word text="BAAQIR" font="Shia;004C" id="Baaqir"></word>
 		<word text="MAHDI|GuidedOne" font="Shia;004D" id="GuidedOne"></word>
