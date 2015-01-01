@@ -118,28 +118,28 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<transform text="u" id="PartiallyFlexibleNominative" grammar="ms|fs|faEolaAn|bp(fuEalaA^&apos;,mafaAEil),pflex,nom"></transform>
 			<transform text="a" id="PartiallyFlexibleAccusativePossessive" grammar="ms|fs|bp(fuEalaA^&apos;,mafaAEil),pflex,acc|pos"></transform>
 
-			<transform text="K" id="" grammar="ms,defectpos,indef,nom|pos"></transform>
-			<transform text="iY" id="" grammar="ms,defectpos,def|const,nom|pos"></transform>
-			<transform text="iyFA" id="" grammar="ms,defectpos,indef,acc"></transform>
-			<transform text="iYa" id="" grammar="bp,defectpos,indef,acc"></transform>
-			<transform text="iYa" id="" grammar="ms,defectpos,def|const,acc"></transform>
-			<transform text="iyaAni" id="" grammar="md,defectpos,def|indef,nom"></transform>
-			<transform text="iyaA" id="" grammar="md,defectpos,const,nom"></transform>
-			<transform text="iyayoni" id="" grammar="md,defectpos,def|indef,acc|pos"></transform>
-			<transform text="iyaY" id="" grammar="md,defectpos,const,acc|pos"></transform>
+			<transform text="K" id="PossessiveDefectiveIndefiniteSingularNominativePossessive" grammar="ms,defectpos,indef,nom|pos"></transform>
+			<transform text="iY" id="PossessiveDefectiveDefiniteSingularNominativePossessive" grammar="ms,defectpos,def|const,nom|pos"></transform>
+			<transform text="iyFA" id="PossessiveDefectiveIndefiniteSingularAccusative" grammar="ms,defectpos,indef,acc"></transform>
+			<transform text="iYa" id="PossessiveDefectiveDefiniteBrokenPluralAccusative" grammar="bp,defectpos,indef,acc"></transform>
+			<transform text="iYa" id="PossessiveDefectiveDefiniteSingularAccusative" grammar="ms,defectpos,def|const,acc"></transform>
+			<transform text="iyaAni" id="PossessiveDefectiveDefiniteDualNominative" grammar="md,defectpos,def|indef,nom"></transform>
+			<transform text="iyaA" id="PossessiveDefectiveDefiniteConstantDualNominative" grammar="md,defectpos,const,nom"></transform>
+			<transform text="iyayoni" id="PossessiveDefectiveDefiniteDualAccusativePossessive" grammar="md,defectpos,def|indef,acc|pos"></transform>
+			<transform text="iyaY" id="PossessiveDefectiveDefiniteConstantDualAccusativePossessive" grammar="md,defectpos,const,acc|pos"></transform>
 
-			<transform text="FA" id="" grammar="ms,defectacc,indef,nom|pos|acc"></transform>
-			<transform text="aA" id="" grammar="ms,defectacc,def|const,nom|pos|acc"></transform>
-			<transform text="ayaAni" id="" grammar="md,defectacc,indef|def,nom"></transform>
-			<transform text="awaAni" id="" grammar="md2cs,defectacc,indef|def,nom"></transform>
-			<transform text="ayaA awaA" id="" grammar="md,defectacc,const,nom"></transform>
-			<transform text="ayayoni" id="" grammar="md,defectacc,indef|def,pos|acc"></transform>
-			<transform text="awayoni" id="" grammar="md2cs,defectacc,indef|def,pos|acc"></transform>
-			<transform text="ayaY awaY" id="" grammar="md,defectacc,const,pos|acc"></transform>
-			<transform text="awona" id="" grammar="mp,defectacc,indef|def,nom"></transform>
-			<transform text="aw" id="" grammar="mp,defectacc,const,nom"></transform>
-			<transform text="ayona" id="" grammar="mp,defectacc,indef|def,pos|acc"></transform>
-			<transform text="aY" id="" grammar="mp,defectacc,const,pos|acc"></transform>
+			<transform text="FA" id="AccusativeDefective" grammar="ms,defectacc,indef,nom|pos|acc"></transform>
+			<transform text="aA" id="AccusativeDefective" grammar="ms,defectacc,def|const,nom|pos|acc"></transform>
+			<transform text="ayaAni" id="AccusativeDefective" grammar="md,defectacc,indef|def,nom"></transform>
+			<transform text="awaAni" id="AccusativeDefective" grammar="md2cs,defectacc,indef|def,nom"></transform>
+			<transform text="ayaA awaA" id="AccusativeDefective" grammar="md,defectacc,const,nom"></transform>
+			<transform text="ayayoni" id="AccusativeDefective" grammar="md,defectacc,indef|def,pos|acc"></transform>
+			<transform text="awayoni" id="AccusativeDefective" grammar="md2cs,defectacc,indef|def,pos|acc"></transform>
+			<transform text="ayaY awaY" id="AccusativeDefective" grammar="md,defectacc,const,pos|acc"></transform>
+			<transform text="awona" id="AccusativeDefective" grammar="mp,defectacc,indef|def,nom"></transform>
+			<transform text="aw" id="AccusativeDefective" grammar="mp,defectacc,const,nom"></transform>
+			<transform text="ayona" id="AccusativeDefective" grammar="mp,defectacc,indef|def,pos|acc"></transform>
+			<transform text="aY" id="AccusativeDefective" grammar="mp,defectacc,const,pos|acc"></transform>
 			
 			<transform text="aA" id="" grammar="ms|fs,invar,def|indef|const,nom|pos|acc"></transform>
 			<transform text="ayaAni" id="" grammar="md,invar,indef|def,nom"></transform>
@@ -148,8 +148,8 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<transform text="ayaY" id="" grammar="md,invar,const,pos|acc"></transform>
 			
 			<transform text="apN" id="FeminineForm" grammar="ms,fem"></transform>
-			<transform from="{MatchDefiniteness}" text="" id="RelativeAdjective" grammar="ms|fs,reladj"></transform>
-			<transform from="{MatchNisbahDrop}|{MatchFemininity}" text="iy~N" id="RelativeAdjective" grammar="ms|fs,reladj"></transform>
+			<transform from="{MatchDefiniteness}" text="" id="RelativeAdjectivePrefix" grammar="ms|fs,reladj"></transform>
+			<transform from="{MatchNisbahDrop}|{MatchFemininity}" text="iy~N" id="RelativeAdjectiveSuffix" grammar="ms|fs,reladj"></transform>
 			
 			<transform from="{MatchAlefMaksura}" text="y" id="ParticleAttachPronoun" grammar="1ms|1fs|1md|1fd|1mp|1fp|2ms|2fs|2md|2fd|2mp|2fp|3ms|3fs|3md|3fd|3mp|3fp|3bp"></transform>
 			<transform match="{MatchYeh}  {MatchKasra} {MatchFirstPerson} {MatchNoon} " id="ParticleFirstPersonAttachPronoun" grammar="1ms|1fs|3bp"></transform>
@@ -157,20 +157,20 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 
 			<transform text="~a Ya Y iY ~iY niY" id="My" grammar="posspron,1ms|1fs"></transform>
 			<transform text="naA" id="Our" grammar="posspron,1md|1fd|1mp|1fp"></transform>
-			<transform text="ka" id="Your" grammar="posspron,2ms"></transform>
-			<transform text="ki" id="Your" grammar="posspron,2fs"></transform>
+			<transform text="ka" id="YourMasculine" grammar="posspron,2ms"></transform>
+			<transform text="ki" id="YourFeminine" grammar="posspron,2fs"></transform>
 			<transform text="kumaA" id="YourTwo" grammar="posspron,2md|2fd"></transform>
-			<transform text="kumo" id="Your" grammar="posspron,2mp"></transform>
-			<transform text="kun~a" id="Your" grammar="posspron,2fp"></transform>
-			<transform text="hu hi" id="His" grammar="posspron,3ms,nom|acc"></transform>
-			<transform text="hi" id="His" grammar="posspron,3ms,pos"></transform>
+			<transform text="kumo" id="YourAllMasculine" grammar="posspron,2mp"></transform>
+			<transform text="kun~a" id="YourAllFeminine" grammar="posspron,2fp"></transform>
+			<transform text="hu hi" id="HisHim" grammar="posspron,3ms,nom|acc"></transform>
+			<transform text="hi" id="Him" grammar="posspron,3ms,pos"></transform>
 			<transform text="haA" id="Her" grammar="posspron,3fs|3bp"></transform>
 			<transform text="humaA himaA" id="TheirTwo" grammar="posspron,3md|3fd,nom|acc"></transform>
-			<transform text="himaA" id="TheirTwo" grammar="posspron,3md|3fd,pos"></transform>
-			<transform text="humo" id="Their" grammar="posspron,3mp,nom|acc"></transform>
-			<transform text="himo" id="Their" grammar="posspron,3mp,pos"></transform>
-			<transform text="hun~a" id="Their" grammar="posspron,3fp,nom|acc"></transform>
-			<transform text="hin~a" id="Their" grammar="posspron,3fp,pos"></transform>
+			<transform text="himaA" id="TheirsTwo" grammar="posspron,3md|3fd,pos"></transform>
+			<transform text="humo" id="TheirMasculine" grammar="posspron,3mp,nom|acc"></transform>
+			<transform text="himo" id="TheirsMasculine" grammar="posspron,3mp,pos"></transform>
+			<transform text="hun~a" id="TheirFeminine" grammar="posspron,3fp,nom|acc"></transform>
+			<transform text="hin~a" id="TheirsFeminine" grammar="posspron,3fp,pos"></transform>
 
 			<transform text="faEala" grammar="pastverbi,3ms"></transform>
 			<transform text="faEalaA" grammar="pastverbi,3md"></transform>
