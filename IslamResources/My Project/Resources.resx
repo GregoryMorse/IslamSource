@@ -10998,4 +10998,13 @@
   <data name="IslamSource_IPAValues" xml:space="preserve">
     <value>IPA Values</value>
   </data>
+  <data name="IslamInfo_CourseSubjects" xml:space="preserve">
+    <value>Course Subjects</value>
+  </data>
+  <data name="IslamInfo_Groupings" xml:space="preserve">
+    <value>Groupings</value>
+  </data>
+  <data name="IslamInfo_Phrases" xml:space="preserve">
+    <value>Phrases</value>
+  </data>
 </root>

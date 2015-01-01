@@ -492,12 +492,12 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<noun text="Ealiy~N" id="HighExalted"></noun>
 			<noun text="EaliymN" id="Knower"></noun>
 			<noun text="qariybN" id="NearClose"></noun>
-			<noun text="kabiyrN kabiyrapN" id="Big"></noun>
-			<noun text="kaviyrN kaviyrapN" id="PlentyMuch"></noun>
+			<noun text="kabiyrN" id="Big"></noun>
+			<noun text="kaviyrN" id="PlentyMuch"></noun>
 			<noun text="sariyEN" id="QuickSwiftFast"></noun>
 			<noun text="raHiymN" id="Merciful"></noun>
 			<noun text="EaZiymN" id="Supreme"></noun>
-			<noun text="qaliylN qaliylapN" id="Little"></noun>
+			<noun text="qaliylN" id="Little"></noun>
 			<noun text="kariymN" id="NobleHonorableGenerous"></noun>
 			<noun text="laTiyfN" id="Subtle"></noun>
 			<noun text="&gt;a$ad~N" id="MostSevere"></noun>
@@ -520,11 +520,11 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<noun text="&gt;anoEaAmN" plural="" id="Cattle"></noun>
 			<noun text="jabalN" plural="jibaAlN" id="Mountain"></noun>
 			<noun text="baHorN" plural="buHuwrN" id="SeaLargeRiver"></noun>
-			<noun text="$amosN" plural="$umuwsN" id="Sun"></noun>
+			<noun text="$amosN" plural="$umuwsN" grammar="f" id="Sun"></noun>
 			<noun text="qamarN" plural="&gt;aqomaArN" id="Moon"></noun>
 			<noun text="layolN" plural="layaAlN" id="Night"></noun>
 			<noun text="nahaArN" plural="&gt;anohurN" id="Midday"></noun>
-			<noun text="&gt;aroDN" plural="&gt;araADK" id="LandEarth"></noun>
+			<noun text="&gt;aroDN" plural="&gt;araADK" grammar="f" id="LandGroundEarth"></noun>
 			<noun text="samaA^&apos;N" plural="samaAwaAtN" id="Sky"></noun>
 			<noun text="&gt;abadFA" plural="" id="ForeverEver"></noun>
 			<noun text="SaAHibN" plural="&gt;aSoHaAbN" id="CompanionFellow"></noun>
@@ -532,7 +532,7 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<noun text="EaAqibapN" plural="EawaAqibN" id="EndConsequence"></noun>
 			<noun text="&gt;ajalN" plural="&apos;aAjaAlN" id="Term"></noun>
 			<noun text="Ea*aAbN" plural="Ea*aAbaAtN" id="Torment"></noun>
-			<noun text="{lo&apos;aAxirapu" plural="" id="Hereafter"></noun>
+			<noun text="&apos;aAxirapN" plural="" id="Hereafter"></noun>
 			<noun text="EiqaAbN" plural="" id="ChastisementFromSin"></noun>
 			<noun text="&gt;aliymN" plural="" id="Painful"></noun>
 			<noun text="qiyaAmapN" plural="" id="Resurrection"></noun>
@@ -544,7 +544,7 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<noun text="naArN" plural="niyraAnN" id="Fire"></noun>
 			<noun text="jan~apN" plural="jan~aAtN" id="Garden"></noun>
 			<noun text="naharN" plural="&gt;anohaArN" id="River"></noun>
-			<noun text="jahan~amN" plural="" id="Hell"></noun>
+			<noun text="jahan~amN" plural="" id="HellHellfire"></noun>
 			<noun text="wayolN" plural="" id="WoeUnto"></noun>
 			<noun text="HisaAbN" plural="HisaAbaAtN" id="Reckoning"></noun>
 			<noun text="yawomN" plural="&gt;ay~aAmN" id="Day"></noun>
@@ -603,14 +603,12 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<noun text="sawaA^&apos;N" plural="" id="SameEqualLevelFair"></noun>
 			<noun text="HadiyvN" plural="&gt;aHaAdiyvN" id="DiscourseSpeechTransmissionOfInformation"></noun>
 			<noun text="fariyqN" plural="furaqaA^&apos;N" id="PartyGroup"></noun>
-			<noun text="Tay~ibapN" plural="Tay~ibaAtN" id="Good"></noun>
+			<noun text="Tay~ibapN" plural="Tay~ibaAtN" id="GoodKind"></noun>
 
 			<noun text="wajohN" plural="wujuwhN" id="Face"></noun>
 			<noun text="&gt;um~N" plural="&gt;um~ahaAtN" id="Mother"></noun>
-			<noun text="EayonN" plural="&gt;aEoyunN EuyuwnN" id="EyeSpring"></noun>
-			<noun text="&gt;abN &gt;abati" plural="&apos;aAabaA^&apos;N" id="Father"></noun>
+			<noun text="EayonN" plural="&gt;aEoyunN EuyuwnN" id="EyeSpringRiver"></noun>
 			<noun text="zawojN" plural="&gt;azowaAjN" id="WifeHusband"></noun>
-			<noun text="famN" plural="&gt;afowaAhN" id="Mouth"></noun>
 			<noun text="rajulN" plural="rijaAlN" id="Man"></noun>
 			<noun text="lisaAnN" plural="&gt;alosinapN" id="TongueLanguage"></noun>
 			<noun text="&lt;imora&gt;apN {lomaro&gt;apu" plural="nisaA^&apos;N" id="Woman"></noun>
@@ -618,14 +616,13 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<noun text="waladN" plural="&gt;awolaAdN" id="BoySonChild"></noun>
 			<noun text="SadorN" plural="SuduwrN" id="Breast"></noun>
 			<noun text="waAlidN" plural="waAlidayonN" id="FatherDad"></noun>
-			<noun text="yadN" plural="&gt;ayodiy" id="Hand"></noun>
+			<noun text="yadN" plural="&gt;ayodiy" grammar="f" id="Hand"></noun>
 			<noun text="*ur~iy~apN" plural="*uriy~aAtN" id="DescendentsChildren"></noun>
 			<noun text="rijolN" plural="&gt;arojulN" id="Foot"></noun>
 			<noun text="&lt;ibonN" plural="banuwna baniyna &gt;abonaA^&apos;N" id="Son"></noun>
 			<noun text="&lt;ibonatN" plural="" id="Daughter"></noun>
 			<noun text="nafosN" plural="&gt;anfusN" id="Soul"></noun>
 			<noun text="ruwHN" plural="&gt;arowaAHN" id="SoulSpirit"></noun>
-			<noun text="&gt;axN" plural="&gt;axuw &gt;axaA^ &gt;axiy &lt;ixowaAnN" id="Brother"></noun>
 			<noun text="quw~apN" plural="" id="PowerStrength"></noun>
 			<noun text="&gt;um~apN" plural="&gt;umamN" id="Community"></noun>
 			<noun text="bayotN" plural="buyuwtN" id="HouseHome"></noun>
@@ -702,7 +699,7 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<noun text="nabaAtN" plural="nabaAtaAtN" id="VegetationPlant"></noun>
 			<noun text="rayobN" plural="" id="Doubt"></noun>
 			<noun text="&gt;anfN" plural="&gt;unuwfN" id="Nose"></noun>
-			<noun text="maqobarapN" plural="maqaAbirN" id="Grave"></noun>
+			<noun text="maqobarapN" plural="maqaAbirN" id="CemetaryGraveyard"></noun>
 			<noun text="&gt;abokamN" plural="bukomN" id="Dumb"></noun>
 			<noun text="bariy}N" plural="" id="Innocent"></noun>
 			<noun text="&gt;amoniyapN" plural="&gt;amaAniy~N" id="FalseHope"></noun>
@@ -739,13 +736,13 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<noun text="EaqibN" plural="&gt;aEqaAbN" id="End"></noun>
 			<noun text="&gt;axobaArN" plural="xabarN" id="News"></noun>
 			<noun text="baSarN" plural="&gt;aboSaArN" id="Sight"></noun>
-			<noun text="xazaAnapN" plural="xazaA^}inN" id="Treasure"></noun>
+			<noun text="xazaAnapN" plural="xazaA^}inN" id="TreasureClosetCabinet"></noun>
 			<noun text="vawobN" plural="viyaAbN" id="ClothesGarment"></noun>
 			<noun text="lub~N" plural="&gt;alobaAbN" id="Intellect"></noun>
 			<noun text="jidaArN" plural="judurN" id="Wall"></noun>
 			<noun text="daAb~apN" plural="dawaAbN" id="CreatureFourLeggedHorseRidingAnimal"></noun>
 			<noun text="jisomN" plural="&gt;ajosaAmN" id="Body"></noun>
-			<noun text="duburN" plural="&gt;adobaArN" id="Back"></noun>
+			<noun text="duburN" plural="&gt;adobaArN" id="BackPlotted"></noun>
 			<noun text="HulomN" plural="&gt;aHolaAmN" id="Dream"></noun>
 
 			<noun text="darajapN" plural="darajaAtN" id="Level"></noun>
@@ -763,7 +760,7 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<noun text="riyHN" plural="riyaAHN" id="WindSmell"></noun>
 			<noun text="HabolN" plural="HubaAlN" id="Rope"></noun>
 			<noun text="damN" plural="dimaA^&apos;N" id="Blood"></noun>
-			<noun text="viqolN" plural="&gt;avoqaAlN" id="LoadBurden"></noun>
+			<noun text="viqolN" plural="&gt;avoqaAlN" id="LoadBurdenWeight"></noun>
 			<noun text="EaliymN" plural="EulamaA^&apos;N" id="Knowledgable"></noun>
 			<noun text="siboTN" plural="&gt;asobaATN" id="Tribe"></noun>
 			<noun text="ZahorN" plural="ZuhuwrN" id="Back"></noun>
@@ -771,10 +768,8 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<noun text="Eam~N" plural="&gt;aEomaAmN" id="PaternalUncle"></noun>
 			<noun text="sariyrN" plural="sururN" id="BedCouch"></noun>
 			<noun text="$aEorN" plural="&gt;a$oEaArN" id="Hair"></noun>
-			<noun text="layolN" plural="layaAlN" id="Night"></noun>
 			<noun text="EimaAdN" plural="EamadN" id="Pillar"></noun>
 			<noun text="$ar~N" plural="&gt;a$oraArN" id="Evil"></noun>
-			<noun text="baxolapN" plural="baxolN baxiylN" id="DatePalm"></noun>
 			<noun text="silosilapN" plural="salaAsilN" id="Chain"></noun>
 			<noun text="EinabN" plural="&gt;aEonaAbN" id="Grape"></noun>
 			<noun text="$aroTN" plural="&gt;a$oraATN" id="ConditionSign"></noun>
@@ -783,7 +778,6 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<noun text="Eifaq" plural="&gt;aEofaAqN" id="Neck"></noun>
 			<noun text="TariyqapN" plural="TaraA^}iqN" id="WayPath"></noun>
 			<noun text="suwqN" plural="&gt;asowaAqN" id="Market"></noun>
-			<noun text="EayonN" plural="Euyuwna &gt;aEoyunN" id=""></noun>
 			<noun text="$ayoxN" plural="$uyuwxN" id="OldMan"></noun>
 			<noun text="EaqodN" plural="EuquwdN" id="CovenantPact"></noun>
 			<noun text="$aAEorN" plural="$uEaraA^&apos;N" id="Poet"></noun>
@@ -792,35 +786,30 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<noun text="gamaAmapN" plural="gamaAmN" id="Booty"></noun>
 			<noun text="SanamN" plural="&gt;aSonaAmN" id="Idol"></noun>
 
-			<noun text="&gt;abN" dual="&gt;abawaAni &gt;abuwayoni" plural="&apos;aAbaA^&apos;u" id="Father"></noun>
-			<noun text="&gt;axN" dual="&gt;axawaAni &gt;axawayoni" plural="&lt;ixowaAnu" id="Brother"></noun>
-			<noun text="famN" dual="famaAni famayoni" plural="&gt;afowaAhN" id="Mouth"></noun>
-			<noun text="*uw *aA *iy" dual="*awaAni *awayoni" plural="&gt;uwoluwo" id="OwnerOfPossessorEndowedWithOwner"></noun>
-			<noun text="*aAtN" dual="*awaAtaAni *awaAtayoni" plural="&gt;uwlaAtN" id="OwnerOfPossessorEndowedWithOwner"></noun>
+			<noun text="&gt;abuw &gt;abati" dual="&gt;abawaAni &gt;abuwayoni" plural="&apos;aAbaA^&apos;u" id="Father"></noun>
+			<noun text="&gt;axuw" dual="&lt;ixawaAni &gt;axawaAni &gt;axawayoni" plural="&lt;ixowaAnu" id="Brother"></noun>
+			<noun text="famuw" dual="famaAni famayoni" plural="&gt;afowaAhN" id="Mouth"></noun>
+			<noun text="*uw" dual="*awaAni *awayoni" plural="&gt;uwoluwo" id="OwnerOfPossessorEndowedWithOwnerMasculine"></noun>
+			<noun text="*aAtN" dual="*awaAtaAni *awaAtayoni" plural="&gt;uwlaAtN" id="OwnerOfPossessorEndowedWithOwnerFeminine"></noun>
 			
 			<noun text="{ll~ahu" id="Allah"></noun>
 			<noun text="&lt;isolaAmN" id="Islam"></noun>
 			<noun text="musolimN" id="Muslim"></noun>
 			<noun text="&lt;imaAmN" id="Imam"></noun>
 			<noun text="&apos;aAmiynN" id="MayAllahWillItSo"></noun>
-			<noun text="rasuwlN" id="Messenger"></noun>
-			<noun text="nabiy" id="Prophet"></noun>
-			<noun text="masojidN" id="Mosque"></noun>
 			<noun text="qubuwrN" id="Grave"></noun>
 			<noun text="barozaxN" id="LandOfTheDead"></noun>
-			<noun text="{loqiyaAmapu" id="Resurection"></noun>
-			<noun text="{lobaEovu" id="Resurection"></noun>
+			<noun text="{loqiyaAmapu" id="Resurrection"></noun>
+			<noun text="{lobaEovu" id="ResurrectionSending"></noun>
 			<noun text="{loHa$iru" id="Gathering"></noun>
 			<noun text="{loqaSaSu" id="SettlingOfRightsBetweenBelievers"></noun>
 			<noun text="{loHisaAbu" id="AccountReckoningQuestioning"></noun>
 			<noun text="{lomiyzaAnu" id="Scale"></noun>
 			<noun text="{lo&gt;aHasaAsu" id="Sense"></noun>
-			<noun text="{lS~iraATu" id="Path"></noun>
 			<noun text="{lr~aHimu" id="Kinship"></noun>
 			<noun text="&gt;amaAnahN" id="Safety"></noun>
-			<noun text="naArN" id="Fire"></noun>
-			<noun text="{lojaHiymu" id="Fire"></noun>
-			<noun text="laZa" id="BlazingFire"></noun>
+			<noun text="{lojaHiymu" id="FireInferno"></noun>
+			<noun text="laA*aEN" id="BlazingFireBurning"></noun>
 			<noun text="{ls~aEiyru" id="BlazingFlame"></noun>
 			<noun text="saqarN" id="Hell"></noun>
 			<noun text="{loHuTamapu" id="BrokenToPieces"></noun>
@@ -830,7 +819,7 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<noun text="taHoriymN" id="Prohibited"></noun>
 			<noun text="waquwdN" id="Fuel"></noun>
 			<noun text="lahabN" id="Flame"></noun>
-			<noun text="laDoTaY" id="BlazingFire"></noun>
+			<noun text="la*aEN" id="BlazingFire"></noun>
 			<noun text="{lowaSilapu" id="Intercession"></noun>
 			<noun text="{ls~amuwmu" id="IntenselyHotWind"></noun>
 			<noun text="{loHamiymu" id="BoilingWater"></noun>
@@ -853,8 +842,7 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<noun text="{lT~aloHu" id="AcaciaTree"></noun>
 			<noun text="{lS~idoru" id="LotusTree"></noun>
 			<noun text="gawolu" id="AnyKindOfHurt"></noun>
-			<noun text="&gt;aliymN" id="Painful"></noun>
-			<noun text="baAlosawoqN" id="Market"></noun>
+			<noun text="baAlosawoqN" id="TheMarket"></noun>
 			<noun text="kuforN" id="Disbelief"></noun>
 			<noun text="{lD~aAl~iynu" id="Astray"></noun>
 			<noun text="ZahiyrN" id="Patron"></noun>
@@ -877,10 +865,9 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<noun text="{loqaSaSu" id="Stories"></noun>
 			<noun text="kaAfuwrN" id="CoolRefreshingDrink"></noun>
 			<noun text="tasoniymN" id="FoundationOfParadise"></noun>
-			<noun text="EayonN" id="River"></noun>
 			<noun text="say~idN" id="MisterLord"></noun>
-			<noun text="SiyaAmN" id="Fasting"></noun>
-			<noun text="gafuwrN" id="Forgiving"></noun>
+			<noun text="SawomN" plural="SiyaAmN" id="Fasting"></noun>
+			<noun text="gafuwrN" id="Pardoning"></noun>
 			<noun text="hajorN" id="Dessertion"></noun>
 			<noun text="tawaAzunN" id="Balance"></noun>
 			<noun text="qiyaAmN" id="Do"></noun>
@@ -890,24 +877,21 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<noun text="varovaArN" id="Talkative"></noun>
 			<noun text="muta$ad~iqN" id="Loudmouthed"></noun>
 			<noun text="mutafariqN" id="Sporadic"></noun>
-			<noun text="&lt;ijaAzohN" id="Permission"></noun>
+			<noun text="&lt;ijaAzapN" id="PermissionLeave"></noun>
 			<noun text="mu&amp;minN" id="Faithful"></noun>
 			<noun text="muHosinN" id="Optimizer"></noun>
 			<noun text="munaAfiqN" id="Hypocrite"></noun>
 			<noun text="mu$orikN" id="Polythiest"></noun>
-			<noun text="mawolaAya" id="Protector"></noun>
+			<noun text="mawolaAya" id="MasterLordProtector"></noun>
 			<noun text="mawolaAnaA" id="Master"></noun>
-			<noun text="&gt;um~ahN" id="Community"></noun>
 			<noun text="SaHaAbapN" id="Companions"></noun>
 			<noun text="taAbiEN" id="Follower"></noun>
 			<noun text="&gt;anSaArN" id="Helpers"></noun>
 			<noun text="{lomuhaAjiriyna" id="Emigrants"></noun>
 			<noun text="fuSila" id="Division"></noun>
-			<noun text="{logayobu" id="Unseen"></noun>
 			<noun text="&lt;iqoraA" id="Recite"></noun>
 			<noun text="SaborN" id="Patience"></noun>
 			<noun text="SaboriynN" id="Satisfaction"></noun>
-			<noun text="&gt;anohaArN" id="Sacrifice"></noun>
 			<noun text="qurobaAnN" id="Slaughter"></noun>
 			<noun text="EaqiyqapN" id="SacrificialAnimalForNewborn"></noun>
 			<noun text="hadyN" id="LegallyEdibleAnimalBroughtToSacredMosqueForSacrifice"></noun>
@@ -923,40 +907,33 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<noun text="&lt;ifaAdDapN" id="GoingForth"></noun>
 			<noun text="&gt;amatN" id="FemaleSlave"></noun>
 			<noun text="raba`^}ibN" id="StepDaughter"></noun>
-			<noun text="rakabapN" id="Neck"></noun>
+			<noun text="rakabapN" id="NeckKnee"></noun>
 			<noun text="taqowaY" id="Piety"></noun>
 			<noun text="&gt;usotaA*N" plural="&gt;asaAti*apN" id="Professor"></noun>
 			<noun text="waliy" id="Guardian"></noun>
-			<noun text="dunoyaA" id="World"></noun>
-			<noun text="&gt;axirapN" id="Hereafter"></noun>
 			<noun text="&lt;iymaAnN" id="Faith"></noun>
 			<noun text="&lt;iHosaAnN" id="Excellence"></noun>
 			<noun text="niy~apN" id="Intention"></noun>
 			<noun text="xaliyfapN" id="Caliph"></noun>
 			<noun text="&gt;axolaAfapN" id="Caliphate"></noun>
 			<noun text="gurabaA^&apos;N" id="Strangers"></noun>
-			<noun text="tazokiyapN" id="Purification"></noun>
+			<noun text="tazokiyapN" id="RecommendationPurification"></noun>
 			<noun text="tarobiyapN" id="Nurturing"></noun>
-			<noun text="&lt;ibodaAEN" id="Worship"></noun>
 			<noun text="kalaAmN" id="Speech"></noun>
 			<noun text="muSoHafN" id="PrintedBookCodex"></noun>
-			<noun text="HikomapN" id="Wisdom"></noun>
 			<noun text="xu$uwEN" id="Concentration"></noun>
 			<noun text="tawak~alN" id="Empowering"></noun>
 			<noun text="kaAfirN" id="Disbeliever"></noun>
 			<noun text="tawobapN" id="Repentance"></noun>
-			<noun text="{loEalimiyapu" id="Knowledgable"></noun>
 			<noun text="{loEamaliyapu" id="Practical"></noun>
 			<noun text="{lr~uqaAqu" id="HeartSofteners"></noun>
 			<noun text="{loEaqiydapu" id="DoctrineTheologyPrincipleOfBelief"></noun>
-			<noun text="{loEibaAdatu" id="Worship"></noun>
 			<noun text="{lomuEaAmalaAtu" id="RighteousDealings"></noun>
 			<noun text="{lo&apos;aAxolaAqu" id="Manners"></noun>
 			<noun text="{lomuEaA$arapu" id="Cohabitation"></noun>
 			<noun text="&gt;aHadivN" id="Latest"></noun>
 			<noun text="{lr~aA$iduwn‎u" id="WiseOne"></noun>
 			<noun text="jan~apN" id="Gardens"></noun>
-			<noun text="*anobN" id="Sin"></noun>
 			<noun text="zinaA" id="Fornication"></noun>
 			<noun text="kiborN" id="Arrogance"></noun>
 			<noun text="bidoEapN" id="Innovation"></noun>
@@ -979,7 +956,6 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<noun text="SalawaAtN" id="Invocation"></noun>
 			<noun text="mufotiy" id="Mufti"></noun>
 			<noun text="Sad~iqN" id="Truthful"></noun>
-			<noun text="{lo&gt;amiynu" id="Trustworthy"></noun>
 			<noun text="{lo&gt;aminu" id="PeaceSecure"></noun>
 			<noun text="fawaAtiHN" id="Openers"></noun>
 			<noun text="&lt;isotigofaArN" id="AskForgiveness"></noun>
@@ -999,11 +975,9 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<noun text="daEowapN" id="CallToIslam"></noun>
 			<noun text="{ln~asu" id="Mankind"></noun>
 			<noun text="jin~N" id="Jinn"></noun>
-			<noun text="malakatN" id="Angel"></noun>
 			<noun text="diynN" id="Religion"></noun>
 			<noun text="Ea*aAbN" id="Punishment"></noun>
 			<noun text="yaqiynN" id="Certainty"></noun>
-			<noun text="SaborN" id="Patience"></noun>
 			<noun text="say~idN" id="Sir"></noun>
 			<noun text="sayodinaA" id="Madame"></noun>
 			<noun text="fataAHN" id="Conquest"></noun>
@@ -1079,7 +1053,6 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<noun text="{lS~ifaAtu" id="Attributes"></noun>
 			<noun text="{loEuluwhiy~apu" id="Divinity"></noun>
 			<noun text="EibaAdapN" id="Worship"></noun>
-			<noun text="SawomN" id="Fasting"></noun>
 			<noun text="Haj~N HaAj~N" id="Pilgrimage"></noun>
 			<noun text="Haj~iy" id="Pilgrim"></noun>
 			<noun text="sidorN" id="ExtractOfLoteTrees"></noun>
@@ -1111,8 +1084,7 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<noun text="mawotaY" id="Dead"></noun>
 			<noun text="{loEuluw" id="Transcendence"></noun>
 			<noun text="furuw^&apos;N" id="Details"></noun>
-			<noun text="sanadN" id="ListOfNarrators"></noun>
-			<noun text="&lt;isonaAdN" id="ListOfNarrators"></noun>
+			<noun text="&lt;isonaAdN" plural="sanadN" id="ListOfNarrators"></noun>
 			<noun text="matonN" id="Text"></noun>
 			<noun text="mukav~iruwna" id="ReportersOfManyTraditions"></noun>
 			<noun text="SaHiyfapN" id="WritingMaterial"></noun>
@@ -1139,8 +1111,8 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<noun text="DaEiyfN" id="Weak"></noun>
 			<noun text="munqaTi" id="NameInChainOfNarrationOmittedOrUnknownNameMentioned"></noun>
 			<noun text="muEad~alN" id="TwoOrMoreNamesMissingFromChainOfNarration"></noun>
-			<noun text="tadoliysN" id="NarratorMakesFalseClaim"></noun>
-			<noun text="mudal~asN" id="NarratorMakesFalseClaim"></noun>
+			<noun text="tadoliysN" id="FraudNarratorMakesFalseClaim"></noun>
+			<noun text="mudal~asN" id="DeceptiveNarratorMakesFalseClaim"></noun>
 			<noun text="muEal~alN" id="HiddenWeakness"></noun>
 			<noun text="munkarN" id="NarratedByUntrustworthyPersonDenounced"></noun>
 			<noun text="muDoTaribN" id="Shaky"></noun>
@@ -1170,8 +1142,6 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<noun text="jadalN" id="Debate"></noun>
 			<noun text="qiS~apN" plural="qiSaSN" id="NarrativeTaleStory"></noun>
 			<noun text="qiSaASN" id="Retaliation"></noun>
-			<noun text="EaAm~N" id="General"></noun>
-			<noun text="xaAS~N" id="Specific"></noun>
 			<noun text="muxaS~iSN" id="LimitingExpression"></noun>
 			<noun text="kul~N" id="AllEveryEach"></noun>
 			<noun text="{ln~akirapu" id="IndefiniteInNegativeOrProhibitiveConstruction"></noun>
@@ -1206,8 +1176,8 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<noun text="rifoqN" id="Courtesy"></noun>
 			<noun text="naqoSN" id="DiminishmentLoss"></noun>
 			<noun text="minobarN" id="MosquePulpit"></noun>
-			<noun text="&lt;irotibaAtN" id="StrongConnection"></noun>
-			<noun text="talaAzumN" id="StrongConnection"></noun>
+			<noun text="&lt;irotibaATN" id="LinkStrongConnection"></noun>
+			<noun text="talaAzumN" id="InherentStrongConnection"></noun>
 			<noun text="nid~N" plural="&gt;andaAdN" id="Rivals"></noun>
 			<noun text="tawofiyqN" id="DivineEmpowerment"></noun>
 			<noun text="walaAyapN" id="GovernorshipSainthood"></noun>
@@ -1274,7 +1244,7 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<noun text="{lr~aA^&apos;i" id="Opinion"></noun>
 			<noun text="&gt;aqowaAlN" id="RulingsNotPartOfTradition"></noun>
 			<noun text="EaqolN" plural="EuquwlN" id="HumanIntellect"></noun>
-			<noun text="Huj~apN" id="Evidence"></noun>
+			<noun text="Huj~apN" id="EvidenceArgument"></noun>
 			<noun text="&gt;um~N" id="Essence"></noun>
 			<noun text="&lt;isotiSolaAHN" id="DeemProper"></noun>
 			<noun text="&lt;isotiHosaAnN" id="LegalPreference"></noun>
@@ -1307,8 +1277,6 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<noun text="taEozeemN" id="Respect"></noun>
 			<noun text="ta$oriyfN" id="Honor"></noun>
 			<noun text="sababiy~apN" id="Causality"></noun>
-			<noun text="naAsixN" id="Abrogating"></noun>
-			<noun text="mansuwxN" id="Abrogated"></noun>
 			<noun text="*ulomN" id="Transgression"></noun>
 			<noun text="siwaAkN" id="ToothStick"></noun>
 			<noun text="gaADibN" id="Angry"></noun>
@@ -1330,18 +1298,17 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<noun text="&gt;aSolN" plural="&gt;uSuwlN" id="PrincipleMethodFoundation"></noun>
 			<noun text="manohajN" plural="manaAhijN" id="Methodology"></noun>
 			<noun text="{lt~a$oriyEu" plural="" id="Legislation"></noun>
-			<noun text="manduwbN" id="Recommended"></noun>
+			<noun text="manduwbN" id="RecommendedRepresentative"></noun>
 			<noun text="TahuwrN" plural="&gt;aToharN" id="PureAndPurifying"></noun>
 			<noun text="TaAhirN" id="PurifiedClean"></noun>
 			<noun text="najisN" id="Impure"></noun>
 			<noun text="najaAsapN" id="Impurity"></noun>
 			<noun text="HabiybN" id="Beloved"></noun>
-			<noun text="najaAsapN" id="Impurity"></noun>
 			<noun text="muqad~imapN" id="Introduction"></noun>
 			<noun text="fihorisN" id="Index"></noun>
 			<noun text="tamohiydN" id="Preface"></noun>
 			<noun text="muHotawayaAtN" id="Contents"></noun>
-			<noun text="tam~atN" id="End"></noun>
+			<noun text="tam~atN" id="Conclusion"></noun>
 			<noun text="*aAtiy~apN" id="Subjective"></noun>
 			<noun text="Hukomiy~apN" id="Judgmental"></noun>
 			<noun text="qul~aY" id="Fry"></noun>
@@ -1349,8 +1316,8 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<noun text="EaworapN" id="PrivatePartsOrPartsOfBodyForbiddenToExposeToOthers"></noun>
 			<noun text="&lt;isotinjaA^&apos;N" id="CleaningOnesStoolAndUrineExitsAfterDefecationOrUrinationWithWater"></noun>
 			<noun text="&lt;isotijomaArN" id="CleaningOnesStoolAndUrineExitsAfterDefecationOrUrinationWithStonesOrSubstitute"></noun>
-			<noun text="masofuwhN" id=""></noun>
-			<noun text="mayotapN" id="Dead"></noun>
+			<noun text="masofuwHN" id="Flowing"></noun>
+			<noun text="mayotapN" id="DeadAnimal"></noun>
 			<noun text="&lt;ihaAbN" id="Cuticle"></noun>
 			<noun text="diybaArN" id="Debar"></noun>
 			<noun text="mahodiy" id="GuidedOne"></noun>
@@ -1362,20 +1329,15 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<noun text="&gt;azolaAmN" id="FortuneTelling"></noun>
 			<noun text="{lomuTal~aqaAtu" id="DivorcedWomen"></noun>
 			<noun text="TalaAqN" id="Divorce"></noun>
-			<noun text="&gt;atoha" id=""></noun>
+			<noun text="&gt;atoHa" id="AssociationConsortium"></noun>
 			<noun text="kuholu" id="Elderly"></noun>
 			<noun text="rijosN" plural="&gt;arojaAsN" id="DirtFilth"></noun>
-			<noun text="{ln~iyapu" id="Intention"></noun>
-			<noun text="taEaAmN" id="Food"></noun>
 			<noun text="naAfilapN" plural="nawaAfilN" id="SupererogatoryPerformance"></noun>
 			<noun text="&lt;isotiHaAdapN" id="VaginalBleedingOtherThanMenstruation"></noun>
 			<noun text="musotaHaAdapN" id="WomanWithVaginalBleedingOtherThanMenstruation"></noun>
-			<noun text="fuqaAhapN" id="Knowledgable"></noun>
+			<noun text="faqiyhN" plural="fuqahaA&apos;N" id="JurisprudenceExpert"></noun>
 			<noun text="mu&amp;alaAqaAtN" id=""></noun>
-			<noun text="lamosahN" plural="lamosaAtN" id="Touch"></noun>
-			<noun text="xuwf~N" id="Fear"></noun>
 			<noun text="juwaAriybN" id=""></noun>
-			<noun text="xumora" id="Wine"></noun>
 			<noun text="qiraA^&apos;apN" id="Reading"></noun>
 			<noun text="$ahadapN" id="Testimony"></noun>
 			<noun text="sutorapN" plural="sutarN" id="GuardCovering"></noun>
@@ -1421,25 +1383,14 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<noun text="mawoSuwfN" id="NounBeingModified"></noun>
 			<noun text="mu*ak~arN" id="Masculine"></noun>
 			<noun text="mu&amp;an~avN" id="Feminine"></noun>
-			<noun text="bayotN" plural="buyuwtN" id="HouseHome"></noun>
 			<noun text="faSolN" plural="fuSuwlN" id="ClassClassroomSeason"></noun>
-			<noun text="kitaAb" plural="kutubN" id="Book"></noun>
 			<noun text="mudar~isN" plural="mudar~isuwna" id="Teacher"></noun>
-			<noun text="mudar~isapN" plural="mudar~isaAtN" grammar="f" id="Teacher"></noun>
 			<noun text="madorasapN" grammar="f" id="School"></noun>
 			<noun text="TaAlibN" plural="TulaAbN" id="Student"></noun>
-			<noun text="TaAlibapN" plural="TaAlibaAtN" grammar="f" id="Student"></noun>
-			<noun text="qalamN" plural="&gt;aqolaAmN" id="Pen"></noun>
-			<noun text="madiynapN" plural="mudunN" grammar="f" id="TownCity"></noun>
-			<noun text="&gt;aroDN" grammar="f" id="GroundEarth"></noun>
-			<noun text="$amosN" grammar="f" id="Sun"></noun>
-			<noun text="yadN" grammar="f" id="Hand"></noun>
 			<noun text="kurosiy~N" id="ChairThroneFootstool"></noun>
-			<noun text="salaAmN" id="Peace"></noun>
 			<noun text="TaAwilapN" plural="TaAwilaAtN" grammar="f" id="Table"></noun>
 			<noun text="kabiyrN" plural="kabiyruwna" id="LargeOld"></noun>
 			<noun text="sagiyrN" plural="sagiyruwna" id="SmallYoung"></noun>
-			<noun text="jadiydN" plural="jududN" id="New"></noun>
 			<noun text="qadiymN" plural="qudamaA^&apos;N" id="Old"></noun>
 			<noun text="&gt;ajorN" id="Reward"></noun>
 			<noun text="Ealiy~N" id="Transcendent"></noun>
@@ -1461,7 +1412,7 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<noun text="janaAzapN" id="Funeral"></noun>
 			<noun text="qadaY" id="Fulfilling"></noun>
 			<noun text="EiydN" id="CelebrationDay"></noun>
-			<noun text="&lt;isotixaArapN" id="Guidance"></noun>
+			<noun text="&lt;isotixaArapN" id="SeekingGuidance"></noun>
 			<noun text="&lt;isotasoqaA^&apos;N" id="RainForDraught"></noun>
 			<noun text="kusuwfN" id="SolarEclipse"></noun>
 			<noun text="xusuwfN" id="LunarEclipse"></noun>
@@ -1469,7 +1420,7 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<noun text="&lt;i$oraqN" id="Sunrise"></noun>
 			<noun text="fatoHN" id="Victory"></noun>
 			<noun text="&gt;aw~abinN" id="OftReturning"></noun>
-			<noun text="xawofN" id="Fear"></noun>
+			<noun text="xawofN" plural="xuwf~N" id="Fear"></noun>
 			<noun text="SafarN" id="Travel"></noun>
 			<noun text="jaAlisN" id="Sitting"></noun>
 			<noun text="waAqifN" id="Standing"></noun>
@@ -1533,8 +1484,6 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<noun text="madiynapu" id="Medina"></noun>
 			<noun text="kufapu" id="Kufa"></noun>
 
-			<noun text="qaliylaA" id="Little"></noun>
-			<noun text="kabiyrN" id="Big"></noun>
 			<noun text="yamiynN" id="Right"></noun>
 			<noun text="yasaArN" id="Left"></noun>
 			<noun text="xulofN" id="Behind"></noun>
@@ -1550,8 +1499,7 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<noun text="sanapN" id="Year"></noun>
 			<noun text="kamo" id="HowMany"></noun>
 			<noun text="mataY" id="When"></noun>
-			<noun text="kaviyrN" id="Many"></noun>
-			<noun text="biAxotiSaArN" id="Short"></noun>
+			<noun text="bi{xotiSaArN" id="InShort"></noun>
 			<noun text="TawiylN {loqaAmapu" id="Tall"></noun>
 			<noun text="jamiylN" id="YoungBeautiful"></noun>
 			<noun text="saAkinN" id="Living"></noun>
@@ -1587,8 +1535,6 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<noun text="quro&apos;aAniyuwna" id="QuranFollowers"></noun>
 			<noun text="jiboriylN" id="Gabriel"></noun>
 			<noun text="&lt;iboliysN" id="Lucifer"></noun>
-			<noun text="$ayoTaAnN" id="Satan"></noun>
-			<noun text="firawona" id="Pharoah"></noun>
 
 			<noun text="{lt~aEifu" id="Taaif"></noun>
 			<noun text="HijaAzN" id="WesternCoastOfArabianPeninsula"></noun>
@@ -1601,7 +1547,6 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<noun text="{loHudabiy~apu" id="Hudabiyyah"></noun>
 			<noun text="rawoDapN" id="Rawdah"></noun>
 			<noun text="{lojan~apu" id="Heaven"></noun>
-			<noun text="jahan~amN" id="Hell"></noun>
 			<noun text="firodawosN" id="Firdaus"></noun>
 		</nouns>
 		<verbs>
@@ -1706,6 +1651,8 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<verb text="EaAda" id="Repeated"></verb>
 			<verb text="Ha`$a" id="Forbid"></verb>
 			<verb text="Hay~a" poss="" id="ComeUntilMaintain"></verb>
+			<noun text="{noHaro" id="SlaughterSacrifice"></noun>
+			<noun text="xumora" id="Ferment"></noun>
 
 			<verb text="Eaqada" id="ConsolidationAffirmationHoldingTogether"></verb>
 			<verb text="waH~ada" id="UniteUnifyConsolidate"></verb>			
@@ -3079,7 +3026,7 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 		<word text="AH" id="AfterMigration"></word>
 		<word text="Preface" font="KFGQPCArabicSymbols01;F05C|AGAArabesque;F04D" id="Preface"></word>
 		<word text="Contents" font="KFGQPCArabicSymbols01;F03F|AGAArabesque;F04E" id="Contents"></word>
-		<word text="End" font="KFGQPCArabicSymbols01;F05D|AGAArabesque;F062" id="End"></word>
+		<word text="Conclusion" font="KFGQPCArabicSymbols01;F05D|AGAArabesque;F062" id="Conclusion"></word>
 		<word text="Introduction" font="KFGQPCArabicSymbols01;F059|AGAArabesque;F06D" id="Introduction"></word>
 		<word text="Classroom" font="KFGQPCArabicSymbols01;F05B" id="ClassClassroomSeason"></word>
 		<word text="Door" font="KFGQPCArabicSymbols01;F05E" id="GateDoor"></word>

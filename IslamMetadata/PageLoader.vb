@@ -1097,16 +1097,20 @@ Public Class Arabic
             If _NounIDs Is Nothing Then
                 _NounIDs = New Dictionary(Of String, List(Of IslamData.GrammarSet.GrammarNoun))
                 For Count As Integer = 0 To CachedData.IslamData.Grammar.Nouns.Length - 1
-                    _NounIDs.Add(CachedData.IslamData.Grammar.Nouns(Count).TranslationID, New List(Of IslamData.GrammarSet.GrammarNoun) From {CachedData.IslamData.Grammar.Nouns(Count)})
+                    If Not _NounIDs.ContainsKey(CachedData.IslamData.Grammar.Nouns(Count).TranslationID) Then
+                        _NounIDs.Add(CachedData.IslamData.Grammar.Nouns(Count).TranslationID, New List(Of IslamData.GrammarSet.GrammarNoun) From {CachedData.IslamData.Grammar.Nouns(Count)})
+                    Else
+                        Debug.Print("Duplicate ID: " + CachedData.IslamData.Grammar.Nouns(Count).TranslationID)
+                    End If
                     Dim Noun As IslamData.GrammarSet.GrammarNoun = CachedData.IslamData.Grammar.Nouns(Count)
                     If Not CachedData.IslamData.Grammar.Nouns(Count).Grammar Is Nothing AndAlso CachedData.IslamData.Grammar.Nouns(Count).Grammar.Length <> 0 Then
                         Array.ForEach(CachedData.IslamData.Grammar.Nouns(Count).Grammar.Split(","c),
                             Sub(Str As String)
-                                If Not _NounIDs.ContainsKey(Str) Then
-                                    _NounIDs.Add(Str, New List(Of IslamData.GrammarSet.GrammarNoun))
-                                End If
-                                _NounIDs(Str).Add(Noun)
-                            End Sub)
+                                    If Not _NounIDs.ContainsKey(Str) Then
+                                        _NounIDs.Add(Str, New List(Of IslamData.GrammarSet.GrammarNoun))
+                                    End If
+                                    _NounIDs(Str).Add(Noun)
+                                End Sub)
                     End If
                 Next
             End If
