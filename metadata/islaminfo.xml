@@ -128,24 +128,24 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<transform text="iyayoni" id="PossessiveDefectiveDefiniteDualAccusativePossessive" grammar="md,defectpos,def|indef,acc|pos"></transform>
 			<transform text="iyaY" id="PossessiveDefectiveDefiniteConstantDualAccusativePossessive" grammar="md,defectpos,const,acc|pos"></transform>
 
-			<transform text="FA" id="AccusativeDefective" grammar="ms,defectacc,indef,nom|pos|acc"></transform>
-			<transform text="aA" id="AccusativeDefective" grammar="ms,defectacc,def|const,nom|pos|acc"></transform>
-			<transform text="ayaAni" id="AccusativeDefective" grammar="md,defectacc,indef|def,nom"></transform>
-			<transform text="awaAni" id="AccusativeDefective" grammar="md2cs,defectacc,indef|def,nom"></transform>
-			<transform text="ayaA awaA" id="AccusativeDefective" grammar="md,defectacc,const,nom"></transform>
-			<transform text="ayayoni" id="AccusativeDefective" grammar="md,defectacc,indef|def,pos|acc"></transform>
-			<transform text="awayoni" id="AccusativeDefective" grammar="md2cs,defectacc,indef|def,pos|acc"></transform>
-			<transform text="ayaY awaY" id="AccusativeDefective" grammar="md,defectacc,const,pos|acc"></transform>
-			<transform text="awona" id="AccusativeDefective" grammar="mp,defectacc,indef|def,nom"></transform>
-			<transform text="aw" id="AccusativeDefective" grammar="mp,defectacc,const,nom"></transform>
-			<transform text="ayona" id="AccusativeDefective" grammar="mp,defectacc,indef|def,pos|acc"></transform>
-			<transform text="aY" id="AccusativeDefective" grammar="mp,defectacc,const,pos|acc"></transform>
+			<transform text="FA" id="AccusativeDefectiveIndefiniteSingular" grammar="ms,defectacc,indef,nom|pos|acc"></transform>
+			<transform text="aA" id="AccusativeDefectiveDefiniteSingular" grammar="ms,defectacc,def|const,nom|pos|acc"></transform>
+			<transform text="ayaAni" id="AccusativeDefectiveDualNominative" grammar="md,defectacc,indef|def,nom"></transform>
+			<transform text="awaAni" id="AccusativeDefectiveDualNominativeCS" grammar="md2cs,defectacc,indef|def,nom"></transform>
+			<transform text="ayaA awaA" id="AccusativeDefectiveConstantDualNominative" grammar="md,defectacc,const,nom"></transform>
+			<transform text="ayayoni" id="AccusativeDefectiveDualPossessiveAccusative" grammar="md,defectacc,indef|def,pos|acc"></transform>
+			<transform text="awayoni" id="AccusativeDefectiveDualPossessiveAccusativeCS" grammar="md2cs,defectacc,indef|def,pos|acc"></transform>
+			<transform text="ayaY awaY" id="AccusativeDefectiveDualPossessiveAccusative" grammar="md,defectacc,const,pos|acc"></transform>
+			<transform text="awona" id="AccusativeDefectivePluralNominative" grammar="mp,defectacc,indef|def,nom"></transform>
+			<transform text="aw" id="AccusativeDefectiveConstantPluralNominative" grammar="mp,defectacc,const,nom"></transform>
+			<transform text="ayona" id="AccusativeDefectivePluralPossessiveAccusative" grammar="mp,defectacc,indef|def,pos|acc"></transform>
+			<transform text="aY" id="AccusativeDefectiveConstantPluralPossessiveAccusative" grammar="mp,defectacc,const,pos|acc"></transform>
 			
-			<transform text="aA" id="" grammar="ms|fs,invar,def|indef|const,nom|pos|acc"></transform>
-			<transform text="ayaAni" id="" grammar="md,invar,indef|def,nom"></transform>
-			<transform text="ayaA" id="" grammar="md,invar,const,nom"></transform>
-			<transform text="ayayoni" id="" grammar="md,invar,indef|def,pos|acc"></transform>
-			<transform text="ayaY" id="" grammar="md,invar,const,pos|acc"></transform>
+			<transform text="aA" id="InvariantSingular" grammar="ms|fs,invar,def|indef|const,nom|pos|acc"></transform>
+			<transform text="ayaAni" id="InvariantDualNominative" grammar="md,invar,indef|def,nom"></transform>
+			<transform text="ayaA" id="InvariantDualConstantNominative" grammar="md,invar,const,nom"></transform>
+			<transform text="ayayoni" id="InvariantDualPossessiveAccusative" grammar="md,invar,indef|def,pos|acc"></transform>
+			<transform text="ayaY" id="InvariantDualConstantPossessiveAccusative" grammar="md,invar,const,pos|acc"></transform>
 			
 			<transform text="apN" id="FeminineForm" grammar="ms,fem"></transform>
 			<transform from="{MatchDefiniteness}" text="" id="RelativeAdjectivePrefix" grammar="ms|fs,reladj"></transform>
@@ -172,52 +172,52 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<transform text="hun~a" id="TheirFeminine" grammar="posspron,3fp,nom|acc"></transform>
 			<transform text="hin~a" id="TheirsFeminine" grammar="posspron,3fp,pos"></transform>
 
-			<transform text="faEala" grammar="pastverbi,3ms"></transform>
-			<transform text="faEalaA" grammar="pastverbi,3md"></transform>
-			<transform text="faEaluwA" grammar="pastverbi,3mp"></transform>
-			<transform text="faEalat" grammar="pastverbi,3fs"></transform>
-			<transform text="faEalataA" grammar="pastverbi,3fd"></transform>
-			<transform text="faEalona" grammar="pastverbi,3fp"></transform>
-			<transform text="faEalota" grammar="pastverbi,2ms"></transform>
-			<transform text="faEalotumaA" grammar="pastverbi,2md|2fd"></transform>
-			<transform text="faEalotum" grammar="pastverbi,2mp"></transform>
-			<transform text="faEaloti" grammar="pastverbi,2fs"></transform>
-			<transform text="faEalotun~a" grammar="pastverbi,2fp"></transform>
-			<transform text="faEalotu" grammar="pastverbi,1ms|1fs"></transform>
-			<transform text="faEalonaA" grammar="pastverbi,1md|1fd|1mp|1fp"></transform>
+			<transform text="faEala" id="VerbTypeIPastHePattern" grammar="pastverbi,3ms"></transform>
+			<transform text="faEalaA" id="VerbTypeIPastTheyBothMasculinePattern" grammar="pastverbi,3md"></transform>
+			<transform text="faEaluwA" id="VerbTypeIPastTheyMasculinePattern" grammar="pastverbi,3mp"></transform>
+			<transform text="faEalat" id="VerbTypeIPastShePattern" grammar="pastverbi,3fs"></transform>
+			<transform text="faEalataA" id="VerbTypeIPastTheyBothFemininePattern" grammar="pastverbi,3fd"></transform>
+			<transform text="faEalona" id="VerbTypeIPastTheyFemininePattern" grammar="pastverbi,3fp"></transform>
+			<transform text="faEalota" id="VerbTypeIPastYouMasculinePattern" grammar="pastverbi,2ms"></transform>
+			<transform text="faEalotumaA" id="VerbTypeIPastYouBothPattern" grammar="pastverbi,2md|2fd"></transform>
+			<transform text="faEalotum" id="VerbTypeIPastYouAllMasculinePattern" grammar="pastverbi,2mp"></transform>
+			<transform text="faEaloti" id="VerbTypeIPastYouFemininePattern" grammar="pastverbi,2fs"></transform>
+			<transform text="faEalotun~a" id="VerbTypeIPastYouAllFemininePattern" grammar="pastverbi,2fp"></transform>
+			<transform text="faEalotu" id="VerbTypeIPastIPattern" grammar="pastverbi,1ms|1fs"></transform>
+			<transform text="faEalonaA" id="VerbTypeIPastWePattern" grammar="pastverbi,1md|1fd|1mp|1fp"></transform>
 
-			<transform text="yafoEalu" grammar="presverbi,3ms,nom"></transform>
-			<transform text="yafoEala" grammar="presverbi,3ms,acc"></transform>
-			<transform text="yafoEalo" grammar="presverbi,3ms,prespos"></transform>
-			<transform text="yafoEalaAni" grammar="presverbi,3md,nom"></transform>
-			<transform text="yafoEalaA" grammar="presverbi,3md,acc|prespos"></transform>
-			<transform text="yafoEaluwna" grammar="presverbi,3mp,nom"></transform>
-			<transform text="yafoEaluwA" grammar="presverbi,3mp,acc|prespos"></transform>
-			<transform text="tafoEalu" grammar="presverbi,3fs|2ms,nom"></transform>
-			<transform text="tafoEala" grammar="presverbi,3fs|2ms,acc"></transform>
-			<transform text="tafoEalo" grammar="presverbi,3fs|2ms,prespos"></transform>
-			<transform text="tafoEalaAni" grammar="presverbi,3fd|2md|2fd,nom"></transform>
-			<transform text="tafoEalaA" grammar="presverbi,3fd|2md|2fd,acc|prespos"></transform>
-			<transform text="yafoEalona" grammar="presverbi,3fp"></transform>
-			<transform text="tafoEaluwna" grammar="presverbi,2mp,nom"></transform>
-			<transform text="tafoEaluwA" grammar="presverbi,2mp,acc|prespos"></transform>
-			<transform text="tafoEaliyna" grammar="presverbi,2fs,nom"></transform>
-			<transform text="tafoEaliy" grammar="presverbi,2fs,acc|prespos"></transform>
-			<transform text="tafoEalona" grammar="presverbi,2fp"></transform>
-			<transform text="&gt;afoEalu" grammar="presverbi,1ms|1fs,nom"></transform>
-			<transform text="&gt;afoEala" grammar="presverbi,1ms|1fs,acc"></transform>
-			<transform text="&gt;afoEalo" grammar="presverbi,1ms|1fs,prespos"></transform>
-			<transform text="nafoEalu" grammar="presverbi,1md|1fd|1mp|1fp,nom"></transform>
-			<transform text="nafoEala" grammar="presverbi,1md|1fd|1mp|1fp,acc"></transform>
-			<transform text="nafoEalo" grammar="presverbi,1md|1fd|1mp|1fp,prespos"></transform>
+			<transform text="yafoEalu" id="VerbTypeIPresentHeIndicativePattern" grammar="presverbi,3ms,nom"></transform>
+			<transform text="yafoEala" id="VerbTypeIPresentHeSubjunctivePattern" grammar="presverbi,3ms,acc"></transform>
+			<transform text="yafoEalo" id="VerbTypeIPresentHeJussivePattern" grammar="presverbi,3ms,prespos"></transform>
+			<transform text="yafoEalaAni" id="VerbTypeIPresentTheyBothMasculineIndicativePattern" grammar="presverbi,3md,nom"></transform>
+			<transform text="yafoEalaA" id="VerbTypeIPresentTheyBothMasculinePattern" grammar="presverbi,3md,acc|prespos"></transform>
+			<transform text="yafoEaluwna" id="VerbTypeIPresentTheyMasculineIndicativePattern" grammar="presverbi,3mp,nom"></transform>
+			<transform text="yafoEaluwA" id="VerbTypeIPresentTheyMasculinePattern" grammar="presverbi,3mp,acc|prespos"></transform>
+			<transform text="tafoEalu" id="VerbTypeIPresentSheIndicativePattern" grammar="presverbi,3fs|2ms,nom"></transform>
+			<transform text="tafoEala" id="VerbTypeIPresentSheSubjunctivePattern" grammar="presverbi,3fs|2ms,acc"></transform>
+			<transform text="tafoEalo" id="VerbTypeIPresentSheJussivePattern" grammar="presverbi,3fs|2ms,prespos"></transform>
+			<transform text="tafoEalaAni" id="VerbTypeIPastTheyBothFeminineIndicativePattern" grammar="presverbi,3fd|2md|2fd,nom"></transform>
+			<transform text="tafoEalaA" id="VerbTypeIPastTheyBothFemininePattern" grammar="presverbi,3fd|2md|2fd,acc|prespos"></transform>
+			<transform text="yafoEalona" id="VerbTypeIPresentTheyFemininePattern" grammar="presverbi,3fp"></transform>
+			<transform text="tafoEaluwna" id="VerbTypeIPresentYouAllMasculineIndicativePattern" grammar="presverbi,2mp,nom"></transform>
+			<transform text="tafoEaluwA" id="VerbTypeIPresentYouAllMasculinePattern" grammar="presverbi,2mp,acc|prespos"></transform>
+			<transform text="tafoEaliyna" id="VerbTypeIPresentYouFeminineIndicativePattern" grammar="presverbi,2fs,nom"></transform>
+			<transform text="tafoEaliy" id="VerbTypeIPresentYouFeminineIndicativePattern" grammar="presverbi,2fs,acc|prespos"></transform>
+			<transform text="tafoEalona" id="VerbTypeIPresentYouAllFemininePattern" grammar="presverbi,2fp"></transform>
+			<transform text="&gt;afoEalu" id="VerbTypeIPresentIIndicativePattern" grammar="presverbi,1ms|1fs,nom"></transform>
+			<transform text="&gt;afoEala" id="VerbTypeIPresentISubjunctivePattern" grammar="presverbi,1ms|1fs,acc"></transform>
+			<transform text="&gt;afoEalo" id="VerbTypeIPresentIJussivePattern" grammar="presverbi,1ms|1fs,prespos"></transform>
+			<transform text="nafoEalu" id="VerbTypeIPresentWeIndicativePattern" grammar="presverbi,1md|1fd|1mp|1fp,nom"></transform>
+			<transform text="nafoEala" id="VerbTypeIPresentWeSubjunctivePattern" grammar="presverbi,1md|1fd|1mp|1fp,acc"></transform>
+			<transform text="nafoEalo" id="VerbTypeIPresentWeJussivePattern" grammar="presverbi,1md|1fd|1mp|1fp,prespos"></transform>
 
-			<transform text="&lt;ifoEalo" grammar="commverbi,ms"></transform>
-			<transform text="&lt;ifoEalaA" grammar="commverbi,md|fd"></transform>
-			<transform text="&lt;ifoEaluwA" grammar="commverbi,mp"></transform>
-			<transform text="&lt;ifoEaliy" grammar="commverbi,fs"></transform>
-			<transform text="&lt;ifoEalona" grammar="commverbi,fp"></transform>
+			<transform text="&lt;ifoEalo" id="VerbTypeICommandYouMasculinePattern" grammar="commverbi,ms"></transform>
+			<transform text="&lt;ifoEalaA" id="VerbTypeICommandYouBothPattern" grammar="commverbi,md|fd"></transform>
+			<transform text="&lt;ifoEaluwA" id="VerbTypeICommandYouAllMasculinePattern" grammar="commverbi,mp"></transform>
+			<transform text="&lt;ifoEaliy" id="VerbTypeICommandYouFemininePattern" grammar="commverbi,fs"></transform>
+			<transform text="&lt;ifoEalona" id="VerbTypeICommandYouAllMasculinePattern" grammar="commverbi,fp"></transform>
 
-			<transform text="fEl" id=""></transform>
+			<transform text="fEl" id="RepresentativeStem"></transform>
 			
 			<transform text="suwqi naArN xamarN nafosN riyHN $amosN HarobN sabiylN EaSaA ka&gt;osN bi}orN daArN" id="SpecialFeminine"></transform>
 
@@ -255,24 +255,24 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 
 			<transform text="faEolaAn" id="AttributeSingularPattern"></transform>
 
-			<transform text="&gt;afoEaAlN"></transform>
-			<transform text="fuEuwlN"></transform>
-			<transform text="fiEaAlN"></transform>
-			<transform text="fuEulN"></transform>
-			<transform text="fuEalN" id=""></transform>
-			<transform text="fuE~aAlN" id=""></transform>
-			<transform text="mafaAEilu" id=""></transform>
-			<transform text="fuEalaA^&apos;u" id=""></transform>
-			<transform text="fawaAEilu" id=""></transform>
-			<transform text="fawaAEiylu" id=""></transform>
-			<transform text="mafaAEiylu" id=""></transform>
-			<transform text="&gt;afiE~alapN" id=""></transform>
-			<transform text="&gt;afoEilapN" id=""></transform>
-			<transform text="faEalN" id=""></transform>
+			<transform text="&gt;afoEaAlN" id="BrokenPluralPattern1"></transform>
+			<transform text="fuEuwlN" id="BrokenPluralPattern2"></transform>
+			<transform text="fiEaAlN" id="BrokenPluralPattern3"></transform>
+			<transform text="fuEulN" id="BrokenPluralPattern4"></transform>
+			<transform text="fuEalN" id="BrokenPluralPattern5"></transform>
+			<transform text="fuE~aAlN" id="BrokenPluralPattern6"></transform>
+			<transform text="mafaAEilu" id="BrokenPluralPattern7"></transform>
+			<transform text="fuEalaA^&apos;u" id="BrokenPluralPattern8"></transform>
+			<transform text="fawaAEilu" id="BrokenPluralPattern9"></transform>
+			<transform text="fawaAEiylu" id="BrokenPluralPattern10"></transform>
+			<transform text="mafaAEiylu" id="BrokenPluralPattern11"></transform>
+			<transform text="&gt;afiE~alapN" id="BrokenPluralPattern12"></transform>
+			<transform text="&gt;afoEilapN" id="BrokenPluralPattern13"></transform>
+			<transform text="faEalN" id="BrokenPluralPattern14"></transform>
 
-			<transform text="faEaAEilN" id=""></transform>
-			<transform text="faEaAlilu" id=""></transform>
-			<transform text="faEaAliylu" id=""></transform>
+			<transform text="faEaAEilN" id="BrokenPluralPattern15"></transform>
+			<transform text="faEaAlilu" id="BrokenPluralPattern16"></transform>
+			<transform text="faEaAliylu" id="BrokenPluralPattern17"></transform>
 		</transforms>
 		<particles>
 			<particle text="kal~aA" id="NeverCertainlyNot" grammar="resp"></particle>
@@ -1336,8 +1336,8 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<noun text="&lt;isotiHaAdapN" id="VaginalBleedingOtherThanMenstruation"></noun>
 			<noun text="musotaHaAdapN" id="WomanWithVaginalBleedingOtherThanMenstruation"></noun>
 			<noun text="faqiyhN" plural="fuqahaA&apos;N" id="JurisprudenceExpert"></noun>
-			<noun text="mu&amp;alaAqaAtN" id=""></noun>
-			<noun text="juwaAriybN" id=""></noun>
+			<noun text="muEal~aqaAtN" id="TheHangingPoems"></noun>
+			<noun text="juwaAribN" id="Socks"></noun>
 			<noun text="qiraA^&apos;apN" id="Reading"></noun>
 			<noun text="$ahadapN" id="Testimony"></noun>
 			<noun text="sutorapN" plural="sutarN" id="GuardCovering"></noun>
@@ -2667,6 +2667,7 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 		<word text="{ll~ahu &gt;akobaru {ll~ahu &gt;akobaru {ll~ahu &gt;akobaru \{43:13:12-14:4\} {ll~ahum~a &lt;in~aA nasa&gt;aluka fiY safarinaA ha`*aA {lobir~a wa{lt~aqowaY wamina {loEamali maA taroDaY {ll~ahum~a haw~ino EalayonaA safaranaA ha`*aA waATowi Ean~aA buEodahu {ll~ahum~a &gt;anta {lS~aAHibu fiY {ls~afari wa{loxaliyfapu fiY {lo&gt;aholi {ll~ahum~a &lt;in~iY^ &gt;aEuw*u bika min waEovaA^&apos;i {ls~afari waka&apos;aAbapi {lomanZari wasuw^&apos;i {lomunqalabi fiY {lomaAli wa{lo&gt;aholi &apos;aAyibuwna taA}ibuwna EaAbiduwna lirab~inaA HaAmiduwna" id="ForTravel1"></word>
 		<word text="{ll~ahum~a rab~a {ls~ama`wa`ti {ls~aboEi wamaA^ &gt;aZolalona warab~a {lo&gt;araDiyna {ls~aboEi wamaA^ &gt;aqolalona warab~a {l$~ayaATiyni wamaA^ &gt;aDolalona warab~a {lr~iyaAHi wamaA *arayona &gt;aso&gt;aluka xayora ha*ihi {loqaroyapi waxayora &gt;aholihaA waxayora maA fiyhaA wa&gt;aEuw*u bika min $ar~ihaA wa$ar~i &gt;aholihaA wa$ar~i maA fiyhaA" id="UponEnteringATownOrVillage1"></word>
 		<word text="laA^ &lt;ilaha &lt;il~aA {ll~ahu waHodahu laA $ariyka lahu\, lahu {lomuloku walahu {loHamodu yuHoyiy wayumiytu wahuwa Hay~N laA yamuwtu biyadihi {loxayoru wahuwa EalaY kul~i $ayo&apos;K qadiyrN" id="WhenEnteringTheMarket1"></word>
+		<word text="&gt;asotawodiEukumu {ll~aha {l~a*iy laA taDiyEu wadaA^}iEuhu" id="OfTheTravellerForTheResident1"></word>
 		<word text="&gt;asotawodiEu {ll~aha diynaka wa&gt;amaAnataka waxawaAtiyma Eamalika" id="OfTheResidentForTheTraveller1"></word>
 		<word text="zaw~adaka {ll~ahu {lt~aqowaY wagafara *anobaka wayas~ara laka {loxayora Hayovu maA kunta" id="OfTheResidentForTheTraveller2"></word>
 		<word text="{ll~ahu &gt;akobaru suboHa`na {ll~ahi" id="WhileAscendingOrDescending1"></word>
@@ -2700,6 +2701,61 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 		<word text="suboHa`na {ll~ahi wa{loHamodu lil~ahi walaA^ &lt;ilaha &lt;il~aA {ll~ahu wa{ll~ahu &gt;akobaru walaA Hawola walaA quw~apa &lt;il~aA bi{ll~ahi" id="ExcellenceOfRemembranceAndGlorificationOfAllah14"></word>
 		<word text="gafara {ll~ahu laka ya`rasuwla {ll~ahi walaka" id="ForConcludingAllSittings1"></word>
 		<word text="baAraka {ll~ahu fiykumo wafiyhim baAraka {ll~ah" id="ReturningASupplicationAfterHavingBestowedAGiftOrCharityUponSomeone1"></word>
+		<word text="{ll~ahum~a laA Tayora &lt;il~aA Tayoruka walaA xayora &lt;il~aA xayoruka walaA^ &lt;ilaha gayoruka" id="ForbiddanceOfAscribingThingsToOmens1"></word>
+		<word text="suboHa`na {ll~ahi wa{loHamodu lil~ahi {ll~ahu &gt;akobaru" id="HowTheProphetMadeTasbeeh1"></word>
+		<word text="{ll~ahum~a &apos;aAti nafosiy taqowaAhaA wazak~ihaA^ &gt;anta xayoru man zak~aAhaA^ &gt;anta waliy~uhaA wamawolaAhaA" id="PurificationOfTheSoul"></word>
+		<word text="{ll~ahum~a rab~a ha*ihi {ld~aEowapi {lt~aAm~api\, wa{lS~alaw`pi {loqaA^}imapi" id="AfterCallToPrayerFirstPart"></word>
+		<word text="&apos;aAti muHam~adFA {lowasiylapa wa{lofaDiylapa" id="AfterCallToPrayerSecondPart"></word>
+		<word text="wa{boEavohu maqaAmFA maHomuwdFA {l~a*iy waEadotahu (&lt;in~aka laA tuxolifu {lomiyEaAda)" id="AfterCallToPrayerThirdPart"></word>
+		<word text="Hay~a EalaY {lS~alaw`pi" id="CallToPrayerFourthVerse"></word>
+		<word text="Hay~a EalaY {lofalaAHi" id="CallToPrayerFifthVerse"></word>
+		<word text="{lS~alaw`pu xayorN mina {ln~awomi" id="CallToPrayerSixthVerse"></word>
+		<word text="qadi qaAmati {lS~alaw`pu" id="CallToBeginPrayerSixthVerse"></word>
+		<word text="waHodahu laA $ariyka lahu wa&gt;a$ohadu &gt;an~a muHam~adFA Eaboduhu warasuwluhu" id="SecondCreed"></word>
+		<word text="suboHa`nu lil~ahu wa{loHamodu lil~ahi walaA^ &lt;ilaha &lt;il~aA {ll~ahu wa{ll~ahu &gt;akobaru walaA Hawola walaA quw~apa &lt;il~aA bi{ll~ahi {loEaliY~i {loEaZiymi" id="ThirdCreed"></word>
+		<word text="laA^ &lt;ilaha &lt;il~aA {ll~ahu waHodahu laA $ariyka lahu\, lahu {lomuloku walahu {loHamodu yuHoY wayumiytu wahuwa HaY~u l~aA yamuwotu &gt;abadFA &gt;abadFA *uw {lojalaAli wa{loAikoraAmi biyadihi {loxayoru wahuwa EalaY kul~i $a}KA qadiyrN" id="FourthCreed"></word>
+		<word text="&gt;asotagofiru {ll~aha rab~iY min kul~i *anobK &gt;a*onabotuhu EamadFA &gt;awo xaTFA sir~FA &gt;awo EalaAniyapF wa&gt;atuwobu &lt;ilayohi min {l*~anobi {l~a*iYo &gt;aEolamu wamin {l*~anobi {l~a*iYo laA^ &gt;aEolamu &lt;in~aka &gt;anta Eal~aAmu {loguyubi wasat~aAru {loEuyuwobi wagaf~aAru {l*~unuwobi walaA Hawola walaA quw~apa &lt;il~aA bi{ll~ahi {loEaliY~i {loEaZiym" id="FifthCreed"></word>
+		<word text="{ll~ahum~a &lt;in~iY^ &gt;aEuw*u bika mino &gt;ano &gt;u$orika $a}FA wa&gt;anaA^ &gt;aEolamu bihi wa&gt;asotagofiruka limaA laA^ &gt;aEolamu bihi tubotu Eanohu watabar~aAtu mina {lokufori wa{l$~aroki wa{loki*obi wa{logiybapi wa{lobidoEapi wa{ln~amiymapi wa{lofawaAHi$i wa{lobuhotaAni wa{lomaEaASiYo kul~ihaA wa&gt;asolamotu wa&gt;aquwolu laA^ &lt;ilaha &lt;il~aA {ll~ahu muHam~adu r~asuwolu {ll~ahi" id="SixthCreed"></word>
+		<word text="&gt;asotawodiEuka {ll~aha diynaka wa&gt;amaA nataka waxawaAtima Eamalika\." id="BeforeTravel"></word>
+		<word text="nawayotu {lofusola lils~afari sun~apF lil~ahi taEaAlaY`" id="IntentionForJourneyShower"></word>
+		<word text="nawayotu {lofusola sun~apa {lo&lt;iHoraAmi lil~ahi taEaAlaY`" id="IntentionForIhramShower"></word>
+		<word text="&gt;uSal~iY sun~apa {ls~afari rakoEatayoni lil~ahi taEaAlaY`" id="IntentionForJourneyPrayer"></word>
+		<word text="&gt;uSal~iY sun~apa {lo&lt;iHoraAmi rakoEatayoni lil~ahi taEaAlaY`" id="IntentionForIhramPrayer"></word>
+		<word text="bisomi {ll~ahi {lr~aHomani {lr~aHiymi\. {ll~ahu &gt;akobaru\, {ll~ahu &gt;akobaru\, {ll~ahu &gt;akobaru\, suboHa`na {l~a*iy sax~ar&gt;anaA ha`*aA wamaA kun~aA lahu muqoriniyna\. wa&lt;in~aA^ &lt;ilaY rab~inaA lamunqalibuwona\. {ll~ahum~a &lt;in~aA naso&gt;aluka fiY safarinaA ha`*aA {lobir~a wa{lt~aqowaY wamina {loEamali maA taroDiY\. {ll~ahum~a huw~ino EaliynaA safaranaA ha`*aA wa&gt;aTowi Ean~aA buEodapu\. {ll~ahum~a &gt;anta {lS~aAHibu fiY {ls~afari wa{loxaliyfatu fiY {lo&gt;aholi {ll~ahum~a &lt;in~iY^ &gt;aEuw*u bika min waEovaA^&apos;i {ls~afari wakaAbati {lomanZari wasuw^&apos;i {lomunqalabi fiY {lomaAli wa{lo&gt;aholi\." id="IhramPrayerSupplication"></word>
+		<word text="nawayotu {loEumorata wa&gt;aHoramotu bihaA lil~ahi taEaAlaY`\." id="IntentionToPerformUmrah"></word>
+		<word text="lab~ayoka {ll~ahum~a lab~ayoka\, lab~ayoka laA $ariyka laka lab~ayoka\, &lt;in~a {loHamoda wa{ln~iEomata laka wa{lomuloka\, laA $ariyka laka\." id="Talbiah"></word>
+		<word text="{ll~ahum~a Sal~i EalaY say~idinaA muHam~adK waEalaY &gt;ali say~idinaA muHam~adK\. kamaA Sal~ayota EalaY &lt;ibora`hiymi waEalaY &gt;ali &lt;ibora`hiymi\. wabaAriko EalaY say~idinaA muHam~adK waEalaY &gt;ali say~idinaA muHam~adK kamaA baArakota EalaY &lt;ibora`hiyma waEalaY &gt;ali &lt;ibora`hiyma\, fiY {loEaAlamiyna &lt;in~aka HamiydN majiydN\." id="SalawatSupplicationAfterTalbiah"></word>
+		<word text="{ll~ahum~a &lt;in~iY^ &gt;aso&gt;aluka riDaAka wa{lojan~ata\, wa&gt;aEuw*u bika min saxaTika wa{ln~aAri\." id="SupplicationAfterSalawatSupplication"></word>
+		<word text="{ll~ahum~a &lt;in~a ha`*aA {loHaraAma Haramuka\, wa{lobalada baladuka walaAlo&gt;amona &gt;amanuka\, faHar~imoniy EalaY {ln~aAri wa&gt;amin~iy mino Ea*aAbika yawoma taboEa$u EibaAdaka\." id="SupplicationForArrivingAtMakkah"></word>
+		<word text="{ll~ahum~a &gt;anta {ls~alaAmu waminka {ls~alaAmu faHay~inaA rab~anaA bi{ls~alaAmi wa&gt;adoxilonaA {lojan~ata daAra {ls~alaAmi tabaArakota rab~anaA wataEaAlayota ya`*aA {loxala&gt;ali wa{lo&lt;ikoraAmi\. {ll~ahum~a {fotaHo liy &gt;abowaAba raHomatka wamagoofiratika wa&gt;adoxiloniy fiyhaA\, bisomi {ll~ahi wa{loHamodu lil~ahi wa{lS~alaAtu wa{ls~alaAmu EalaY rasuwoli {ll~ahi Sal~aY {ll~ahu Ealayopi wasal~aAma\." id="EnteringMasjidilHaram"></word>
+		<word text="{ll~ahu &gt;akobaru\, {ll~ahu &gt;akobaru\, {ll~ahu &gt;akobaru\, laA^ &lt;ilaha &lt;il~aA {ll~ahu\, wa{ll~ahu &gt;akobaru\, {ll~ahu &gt;akobaru\, wa{ll~ahi {loHamodu" id="Celebration1"></word>
+		<word text="{ll~ahum~a &lt;in~aka EafuwN tuhib~u {loEafowa faEafu Ean~i" id="Celebration2"></word>
+		<word text="taqab~alo {ll~ahu min~aA waminkumo" id="MayAllahAcceptFromUsAndFromYou"></word>
+		<word text="naso&gt;aluka ya`mano huwa {ll~ahu {l~a*iy laA^ &lt;ilaha &lt;il~aA huwa" id="IntroductionBestNames"></word>
+		<word text="{l~a*iy layosa kamivolihi $ayo&apos;N wahuwa {ls~amiyEu {lobaSiyru" id="Final1"></word>
+		<word text="{ll~ahum~a Sal~iY {foDal~a S~alaw`pi EalaY {soEadi maxoluwqaAtika sayidinaA muHam~adi" id="Final2"></word>
+		<word text="wasal~imo Eadada maEoluwmaAtika wamidaAda kalimaAtika kul~amaA *akaraka {l*~aAkiruwna wagafala Ean *ikoriki {logaAfiluwna" id="Final3"></word>
+		<word text="TalaEa {lobadoru EalayonaA" id="TheWhiteMoonFirst"></word>
+		<word text="min vaniy~aAti {lowadaAEi" id="TheWhiteMoonSecond"></word>
+		<word text="wajaba {l$~ukoru EalayonaA" id="TheWhiteMoonThird"></word>
+		<word text="maA daEaY lil~ahi daAEa" id="TheWhiteMoonFourth"></word>
+		<word text="&gt;ay~uhaA {lomaboEuwvu fiynaA" id="TheWhiteMoonFifth"></word>
+		<word text="ji}ta bi{lo&gt;amori {lomuTaAE" id="TheWhiteMoonSixth"></word>
+		<word text="ji}ta $ar~afota {lomadiynapu" id="TheWhiteMoonSeventh"></word>
+		<word text="maroHabFA ya`xayora daAEa" id="TheWhiteMoonEighth"></word>
+		<word text="mawolaAya Sal~iy wasal~imo daAi}amFA &gt;abadFA EalaY Habiybika xayori {loxuloqi kul~ihimi" id="OMasterSendPrayersAndPeace"></word>
+		<word text="SalaY Ealayoka {ll~ahu ya`EadonaAni ya`muSoTafaY ya`Safowapu {lr~aHomaAni {loHamodulil~ahi {l~a*iY^ &gt;aEoTaAniy ha`*aA {logulaAmi {lT~ayobi {lo&gt;arodaAni ha`*aA {logulaAmi {l~Tayobi {lo&gt;ardaAni qado saAdo fiY {lomahodi EalaY {logilomaAni &gt;aEiy*ihu bi{lobayoti *iy {lo&gt;arokaAni HataY &gt;araAhu bi{logi {lobunoyaAni &gt;anta {l~a*iy sumiyapa fiY {loquro&apos;aAni &gt;anta {l~a*iy sumiyapa fiY {loquro&apos;aAni &gt;aHomadu makotuwbu EalaY {lojinaAni SalaY Ealayoka {ll~ahu fiY {lo&gt;aHiyaAni &gt;aHomadohu fiY {ls~iri wa{lobirohaAni Haq~aA EalaY {lo&lt;isolaAmi wa{lo&lt;iymaAni Haq~aA EalaY {lo&lt;isolaAmi wa{lo&lt;iymaAni" id="SalutationsUponYouOfAllah"></word>
+		<word text="yaA hanaAnaA Zahara Aldi~ynu Almu&amp;ay~ad biZuhuwri {ln~abiY AaHmad yaA hanaAnaA bimuHam~ad *alika AlfaDlu mina Allh yaA hanaAnaA xuS~a biAls~abEi AlmavaAniY waHawY luTfa AlmaEa&gt;niY maAlahu fiY Alxalqi vaAniY waEalayhi Aanzala Allh yaA hanaAnaA Zahara Aldi~ynu Almu&amp;ay~ad biZuhuwri {ln~abiY AaHmad yaA hanaAnaA bimuHam~ad *alika AlfaDlu mina Allh yaA hanaAnaA min mak~apK lam~aA Zahar liAajlihi An$aqa Alqamar waAftxarat Alu muDar bihi EalY kuli~ AlAanaAm yaAhaAnaAna&gt; Zahara Aldi~ynu Almu&amp;ay~ad biZuhuwri {ln~abiY AaHmad yaA hanaAnaA bimuHam~ad *alika AlfaDlu mina Allh yaA hanaAnaA AaTyabu {ln~aAsi xalqFA waAajalu~ {ln~aAsi xuluquA *ikruhu garbFA wa$arqFA saA}irN waAlHamdu lilh yaAhanaAnaA Zahara Aldi~ynu Almu&amp;ay~ad biZuhuwri {ln~abiY AaHmad yaA hanaAnaA bimuHam~ad *alika AlfaDlu mina Allh yaA hanaAnaA Salu~wA EalY xayri AlAanaAm AlmuSTafaY badri {lt~amaAm Salu~wA Ealayhi wasali~muwA ya$faE lana&gt; yawma Alzi~HaAm yaA hanaAnaA Zahara Aldi~ynu Almu&amp;ay~ad biZuhuwri {ln~abiY AaHmad yaA hanaAnaA bimuHam~ad *alika AlfaDlu mina Allh yaA hanaAnaA" id="O"></word>
+		<word text="HasobunaA {ll~ahu waniEoma {lowakiylu\, niEoma {lomawolaY waniEoma {ln~asiyru" id="RemembranceSecond"></word>
+		<word text="laA Hawola walaA quw~apK &lt;il~aA bi{ll~ahi {loEaliY~i {loEaZiymi" id="RemembranceThird"></word>
+		<word text="{ll~ahum~a Sal~i EalaY muHam~adK waEalaY &apos;aAli muHam~adK kamaA Sal~ayota EalaY &lt;iboraAhiyma waEalaY &apos;aAli &lt;iboraAhiyma &lt;in~aka HamiydN majiydN wabaAriko EalaY muHam~adK waEalaY &apos;aAli muHam~adK kamaA baArakota EalaY &lt;iboraAhiyma waEalaY &apos;aAli &lt;iboraAhiyma fiY {loEaAlamiyna &lt;in~aka HamiydN majiydN" id="SendBlessingsFirst"></word>
+		<word text="{ll~ahum~a Sal~i EalaY muHam~adK waEalaY &apos;aAli muHam~adK kamaA Sal~ayota EalaY &lt;iboraAhiyma waEalaY &apos;aAli &lt;iboraAhiyma &lt;in~aka HamiydN majiydN {ll~ahum~a baAriko EalaY muHam~adK waEalaY &apos;aAli muHam~adK kamaA baArakota EalaY &lt;iboraAhiyma waEalaY &apos;aAli &lt;iboraAhiyma &lt;in~aka HamiydN majiydN" id="SendBlessingsSecond"></word>
+		<word text="&lt;in~a {loHamoda lil~ahi naHomaduhu wanasotaEiynuhu wanasotagofiruhu wanaEuw*u bi{ll~ahi min $uruwri &gt;anfusinaA wamin say~i}aAti &gt;aEomaAlinaA min yahodi {ll~ahu falaA muDil~a lahu waman yuDolilo falaA haAdiYa lahu\, wa&gt;a$ohadu &gt;ano laA^ &lt;ilaha &lt;il~aA {ll~ahu waHodahu laA $ariyka lahu\, wa&gt;a$ohadu &gt;an~a muHam~adFA Eaboduhu warasuwluhu" id="IntroductionFirst"></word>
+		<word text="&gt;amaA baEad\: fa&lt;in~a &gt;aSodaqa {loHadiyvi kitaAbu {ll~ahi\, waxayora {lohadoyi hadoyu muHam~adK Sal~aY {ll~ahu Ealayohi wasal~am\, wa$ar~a {lo&gt;umuwri muHodavaAtuhaA\, wakul~a muHodavapK bidoEapN\, wakul~a bidoEapK DalaAlapN\, wakul~a DalaAlapK fiY {ln~aAri" id="IntroductionSecond"></word>
+		<word text="{ll~ahum~a Sal~i EalaY sayidinaA muHam~adK Eabodika wanabiyka warasuwlika {ln~abiy~i {lo&gt;um~iy\, waEalaY &apos;aAlihi waSaHabihi wasal~imo" id="RemembranceFourth"></word>
+		<word text="raDiytu bi{ll~ahi rab~FA\, wabi{lo&lt;isolaAmi diynFA\, wabimuHam~adK nabiy~FA warasuwlFA (valaAvFA)\." id="RemembranceFifth"></word>
+		<word text="ya`rab~iy laka {loHamodu kamaA yanobagiy lijalaAli wajohika waEaZiymi suloTaAnika\." id="RemembranceSixth"></word>
+		<word text="{ll~ahum~a &lt;in~aA naEuw*u bika min &gt;ano nu$orika bika $ayo&apos;F naEolamuhu\, wanasotagofiruka limaA laA naEolamuhu\." id="RemembranceSeventh"></word>
 		
 		<word text="\{1:1:1-2\}" id="InTheNameOfAllah"></word>
 		<word text="\{113\}" id="TheDaybreak"></word>
@@ -3315,15 +3371,15 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 		</category>
 		<category title="Particles">
 			<word text="\{particle:NeverCertainlyNot,NotFutureWillNever,NotPastDidNot,ThereIsNo,Not,YesIndeed,BesidesOtherThanLessThan,Yes,ExceptUnlessIfNot,NotOtherThan\}" id="ResponseParticles"></word>
-			<word text="\{WhatThatWhich,WhoTheOneWho,WhenTheTimeWhen,Where,How,HowMany,Which,WhereFromWhy,IsAmAreDoHave,What,Why,IfNotWhyNot\}" id="Interogatives"></word>
-			<word text="\{AboveUp,Under,InFrontOf,BackAfter,InFrontOfBefore,Behind,RightOath,Left,Between,Around,Wherever\}" id="LocationPrepositions"></word>
-			<word text="\{Before,After,TimePeriodAtTheTimeOfForAPeriodOfTime,WhenForPast,WhenForFutureTherefore,Then,ThenThusTherefore,NayRatherButHowever,NearWith,NothingBut,ThatNotSoAsNotToMayNot\}" id="TimePrepositions"></word>
-			<word text="\{WithWhatBecause,AboutWhat,InWhat,AsJustAs,ForWhatForThatWhich,OutOfWhat,AsToAsFor,IfEitherOr,That,VerilyIsBut,AsIf,Whenever,WithInFrom,FromAbout,In,AsLikeSimilarity,ForTo,For,From,ToTowardsUpToNotIncluding,ByOfOath,Until,UponOn,With,AndByOfOath\}" id="Prepositions"></word>
-			<word text="\{VerilyTrulySurely,ThatSurelyVerily,AsIfAsThough,ButHoweverOnTheContraryActually,ButHowever,PerhapsMayBeSoAsTo,WishIfOnly\}" id=""></word>
-			<word text="\{ThatTo,AloneOnly,PossiblyPerhaps,When,If,O\}" id=""></word>
-			<word text="\{HasSurely,WillNearFuture,WillFuture,WillSurely,Indeed,IndeedSurely,LetDo,The,Or,SomeOfAfter,EveryoneAll\}" id=""></word>
-			<word text="\{EndowedWithOwner,PeopleOfOwnersOf,PeopleOfRelatives,FamilyRelativesPeople,LoDoNotWillNot,WhatAnExcellent,WhatAnEvil,EvilIsThatWhich,SomethingSimilar,Similitude,ThanTheOneWhoFromThoseWho\}" id="Particles"></word>
-			<word text="\{Until,Around,OtherThan,FromWith,Behind,Above,WithNear,Morning,After,EarlyMorning,Today,Always,SoThat,ForThat,Should,Negation,If,NotYetWhen\}" id=""></word>
+			<word text="\{particle:WhatThatWhich,WhoTheOneWho,WhenTheTimeWhen,Where,How,HowMany,Which,WhereFromWhy,IsAmAreDoHave,What,Why,IfNotWhyNot\}" id="Interogatives"></word>
+			<word text="\{particle:AboveUp,Under,InFrontOf,BackAfter,InFrontOfBefore,Behind,RightOath,Left,Between,Around,Wherever\}" id="LocationPrepositions"></word>
+			<word text="\{particle:Before,After,TimePeriodAtTheTimeOfForAPeriodOfTime,WhenForPast,WhenForFutureTherefore,Then,ThenThusTherefore,NayRatherButHowever,NearWith,NothingBut,ThatNotSoAsNotToMayNot\}" id="TimePrepositions"></word>
+			<word text="\{particle:WithWhatBecause,AboutWhat,InWhat,AsJustAs,ForWhatForThatWhich,OutOfWhat,AsToAsFor,IfEitherOr,That,VerilyIsBut,AsIf,Whenever,WithInFrom,FromAbout,In,AsLikeSimilarity,ForTo,For,From,ToTowardsUpToNotIncluding,ByOfOath,Until,UponOn,With,AndByOfOath\}" id="Prepositions"></word>
+			<word text="\{particle:VerilyTrulySurely,ThatSurelyVerily,AsIfAsThough,ButHoweverOnTheContraryActually,ButHowever,PerhapsMayBeSoAsTo,WishIfOnly\}" id="AccusativeParticles"></word>
+			<word text="\{particle:ThatTo,AloneOnly,PossiblyPerhaps,When,If,O\}" id="Particles1"></word>
+			<word text="\{particle:HasSurely,WillNearFuture,WillFuture,WillSurely,Indeed,IndeedSurely,LetDo,The,Or,SomeOfAfter,EveryoneAll\}" id="Particles2"></word>
+			<word text="\{particle:PeopleOfOwnersOf,PeopleOfRelatives,FamilyRelativesPeople,LoDoNotWillNot,WhatAnExcellent,WhatAnEvil,EvilIsThatWhich,SomethingSimilar,Similitude,ThanTheOneWhoFromThoseWho\}" id="Particles3"></word>
+			<word text="\{particle:OtherThan,FromWith,Above,WithNear,Morning,After,EarlyMorning,Today,Always,SoThat,ForThat,Should,Negation,If,NotYetWhen\}" id="Particles4"></word>
 		</category>
 		<category title="Nouns">
 			<word text="\{noun:proxdemo\}" id="ProximalDemonstratives"></word>
@@ -3754,7 +3810,7 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<word id="WhenTheMountedAnimalOrMeansOfTransportStumbles1" text="\{phrase:InTheNameOfAllah\}"></word>
 		</category>
 		<category title="OfTheTravellerForTheResident">
-			<word id="" text="&gt;asotawodiEukumu {ll~aha {l~a*iy laA taDiyEu wadaA^}iEuhu"></word>
+			<word id="OfTheTravellerForTheResident1" text="\{phrase:OfTheTravellerForTheResident1\}"></word>
 		</category>
 		<category title="OfTheResidentForTheTraveller">
 			<word id="OfTheResidentForTheTraveller1" text="\{phrase:OfTheResidentForTheTraveller1\}"></word>
@@ -3840,7 +3896,7 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<word id="WhenInFearOfAfflictingSomethingOrSomeoneWithOnesEye2" text=""></word>
 		</category>
 		<category title="WhenStartled">
-			<word id="" text="\{phrase:CreedOfIslamFirstPart\}"></word>
+			<word id="WhenStartled1" text="\{phrase:CreedOfIslamFirstPart\}"></word>
  		</category>
 		<category title="WhenSlaughteringOrOfferingASacrifice">
 			<word id="WhenSlaughteringOrOfferingASacrifice1" text="\{phrase:WhenSlaughteringOrOfferingASacrifice1\}"></word>
@@ -3882,97 +3938,97 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<word id="EtiquetteOfRetiringForTheNight1" text=""></word>
 		</category>
 		<category title="ForbiddanceOfAscribingThingsToOmens">
-			<word id="" text="{ll~ahum~a laA Tayora &lt;il~aA Tayoruka walaA xayora &lt;il~aA xayoruka walaA^ &lt;ilaha gayoruka"></word>
+			<word id="ForbiddanceOfAscribingThingsToOmens1" text="\{phrase:ForbiddanceOfAscribingThingsToOmens1\}"></word>
 		</category>
 		<category title="HowTheProphetMadeTasbeeh">
-			<word id="" text="suboHa`na {ll~ahi wa{loHamodu lil~ahi {ll~ahu &gt;akobaru"></word>
+			<word id="HowTheProphetMadeTasbeeh1" text="\{phrase:HowTheProphetMadeTasbeeh1\}"></word>
 		</category>
 		<category title="PurificationSupplication">
-			<word id="PurificationOfTheSoul" text="{ll~ahum~a &apos;aAti nafosiy taqowaAhaA wazak~ihaA^ &gt;anta xayoru man zak~aAhaA^ &gt;anta waliy~uhaA wamawolaAhaA"></word>
+			<word id="PurificationOfTheSoul" text="\{phrase:PurificationOfTheSoul\}"></word>
 		</category>
 		<category title="AfterCallToPrayerSupplication">
-			<word id="AfterCallToPrayerFirstPart" text="{ll~ahum~a rab~a ha*ihi {ld~aEowapi {lt~aAm~api\, wa{lS~alaw`pi {loqaA^}imapi"></word>
-			<word id="AfterCallToPrayerSecondPart" text="&apos;aAti muHam~adFA {lowasiylapa wa{lofaDiylapa"></word>
-			<word id="AfterCallToPrayerThirdPart" text="wa{boEavohu maqaAmFA maHomuwdFA {l~a*iy waEadotahu (&lt;in~aka laA tuxolifu {lomiyEaAda)"></word>
+			<word id="AfterCallToPrayerFirstPart" text="\{phrase:AfterCallToPrayerFirstPart\}"></word>
+			<word id="AfterCallToPrayerSecondPart" text="\{phrase:AfterCallToPrayerSecondPart\}"></word>
+			<word id="AfterCallToPrayerThirdPart" text="\{phrase:AfterCallToPrayerThirdPart\}"></word>
 		</category>
 		<category title="CallToPrayer">
-			<word id="CallToPrayerFirstVerse" text="{ll~ahu &gt;akobaru"></word>
-			<word id="CallToPrayerSecondVerse" text="&gt;a$ohadu &gt;ano laA^ &lt;ilaha &lt;il~aA {ll~ahu"></word>
-			<word id="CallToPrayerThirdVerse" text="&gt;a$ohadu &gt;an~a muHam~adFA rasuwlu {ll~ahi"></word>
-			<word id="CallToPrayerFourthVerse" text="Hay~a EalaY {lS~alaw`pi"></word>
-			<word id="CallToPrayerFifthVerse" text="Hay~a EalaY {lofalaAHi"></word>
-			<word id="CallToPrayerSixthVerse" text="{lS~alaw`pu xayorN mina {ln~awomi"></word>
-			<word id="CallToPrayerSeventhVerse" text="{ll~ahu &gt;akobaru"></word>
-			<word id="CallToPrayerEighthVerse" text="laA^ &lt;ilaha &lt;il~aA {ll~ahu"></word>
-			<word id="CallToBeginPrayerSixthVerse" text="qadi qaAmati {lS~alaw`pu"></word>
+			<word id="CallToPrayerFirstVerse" text="\{phrase:AllahIsGreatest\}"></word>
+			<word id="CallToPrayerSecondVerse" text="\{phrase:TestifyingCreedOfIslamFirstPart\}"></word>
+			<word id="CallToPrayerThirdVerse" text="\{phrase:TestifyingCreedOfIslamSecondPart\}"></word>
+			<word id="CallToPrayerFourthVerse" text="\{phrase:CallToPrayerFourthVerse\}"></word>
+			<word id="CallToPrayerFifthVerse" text="\{phrase:CallToPrayerFifthVerse\}"></word>
+			<word id="CallToPrayerSixthVerse" text="\{phrase:CallToPrayerSixthVerse\}"></word>
+			<word id="CallToPrayerSeventhVerse" text="\{phrase:AllahIsGreatest\}"></word>
+			<word id="CallToPrayerEighthVerse" text="\{phrase:CreedOfIslamFirstPart\}"></word>
+			<word id="CallToBeginPrayerSixthVerse" text="\{phrase:CallToBeginPrayerSixthVerse\}"></word>
 		</category>
 		<category title="Creed">
-			<word id="FirstCreed" text="laA^ &lt;ilaha &lt;il~aA {ll~ahu\, muHam~adN rasuwulu {ll~ahi"></word>
-			<word id="SecondCreed" text="{$ohadu &gt;ano laA^ &lt;ilaha &lt;il~aA {ll~ahu waHodahu laA $ariyka lahu wa&gt;a$ohadu &gt;an~a muHam~adFA Eaboduhu warasuwluhu"></word>
-			<word id="ThirdCreed" text="suboHa`nu lil~ahu wa{loHamodu lil~ahi walaA^ &lt;ilaha &lt;il~aA {ll~ahu wa{ll~ahu &gt;akobaru walaA Hawola walaA quw~apa &lt;il~aA bi{ll~ahi {loEaliY~i {loEaZiymi"></word>
-			<word id="FourthCreed" text="laA^ &lt;ilaha &lt;il~aA {ll~ahu waHodahu laA $ariyka lahu\, lahu {lomuloku walahu {loHamodu yuHoY wayumiytu wahuwa HaY~u l~aA yamuwotu &gt;abadFA &gt;abadFA *uw {lojalaAli wa{loAikoraAmi biyadihi {loxayoru wahuwa EalaY kul~i $a}KA qadiyrN"></word>
-			<word id="FifthCreed" text="&gt;asotagofiru {ll~aha rab~iY min kul~i *anobK &gt;a*onabotuhu EamadFA &gt;awo xaTFA sir~FA &gt;awo EalaAniyapF wa&gt;atuwobu &lt;ilayohi min {l*~anobi {l~a*iYo &gt;aEolamu wamin {l*~anobi {l~a*iYo laA^ &gt;aEolamu &lt;in~aka &gt;anta Eal~aAmu {loguyubi wasat~aAru {loEuyuwobi wagaf~aAru {l*~unuwobi walaA Hawola walaA quw~apa &lt;il~aA bi{ll~ahi {loEaliY~i {loEaZiym"></word>		
-			<word id="SixthCreed" text="{ll~ahum~a &lt;in~iY^ &gt;aEuw*u bika mino &gt;ano &gt;u$orika $a}FA wa&gt;anaA^ &gt;aEolamu bihi wa&gt;asotagofiruka limaA laA^ &gt;aEolamu bihi tubotu Eanohu watabar~aAtu mina {lokufori wa{l$~aroki wa{loki*obi wa{logiybapi wa{lobidoEapi wa{ln~amiymapi wa{lofawaAHi$i wa{lobuhotaAni wa{lomaEaASiYo kul~ihaA wa&gt;asolamotu wa&gt;aquwolu laA^ &lt;ilaha &lt;il~aA {ll~ahu muHam~adu r~asuwolu {ll~ahi"></word>
+			<word id="FirstCreed" text="\{phrase:CreedOfIslam\}"></word>
+			<word id="SecondCreed" text="\{phrase:TestifyingCreedOfIslamFirstPart\} \{phrase:SecondCreed\}"></word>
+			<word id="ThirdCreed" text="\{phrase:ThirdCreed\}"></word>
+			<word id="FourthCreed" text="\{phrase:FourthCreed\}"></word>
+			<word id="FifthCreed" text="\{phrase:FifthCreed\}"></word>
+			<word id="SixthCreed" text="\{phrase:SixthCreed\}"></word>
 		</category>
 		<category title="Umrah">
-			<word id="BeforeTravel" text="&gt;asotawodiEuka {ll~aha diynaka wa&gt;amaA nataka waxawaAtima Eamalika\."></word>
-			<word id="IntentionForJourneyShower" text="nawayotu {lofusola lils~afari sun~apF lil~ahi taEaAlaY`"></word>
-			<word id="IntentionForIhramShower" text="nawayotu {lofusola sun~apa {lo&lt;iHoraAmi lil~ahi taEaAlaY`"></word>
-			<word id="IntentionForJourneyPrayer" text="&gt;uSal~iY sun~apa {ls~afari rakoEatayoni lil~ahi taEaAlaY`"></word>
-			<word id="IntentionForIhramPrayer" text="&gt;uSal~iY sun~apa {lo&lt;iHoraAmi rakoEatayoni lil~ahi taEaAlaY`"></word>
-			<word id="IhramPrayerSupplication" text="bisomi {ll~ahi {lr~aHomani {lr~aHiymi\. {ll~ahu &gt;akobaru\, {ll~ahu &gt;akobaru\, {ll~ahu &gt;akobaru\, suboHa`na {l~a*iy sax~ar&gt;anaA ha`*aA wamaA kun~aA lahu muqoriniyna\. wa&lt;in~aA^ &lt;ilaY rab~inaA lamunqalibuwona\. {ll~ahum~a &lt;in~aA naso&gt;aluka fiY safarinaA ha`*aA {lobir~a wa{lt~aqowaY wamina {loEamali maA taroDiY\. {ll~ahum~a huw~ino EaliynaA safaranaA ha`*aA wa&gt;aTowi Ean~aA buEodapu\. {ll~ahum~a &gt;anta {lS~aAHibu fiY {ls~afari wa{loxaliyfatu fiY {lo&gt;aholi {ll~ahum~a &lt;in~iY^ &gt;aEuw*u bika min waEovaA^&apos;i {ls~afari wakaAbati {lomanZari wasuw^&apos;i {lomunqalabi fiY {lomaAli wa{lo&gt;aholi\."></word>
-			<word id="IntentionToPerformUmrah" text="nawayotu {loEumorata wa&gt;aHoramotu bihaA lil~ahi taEaAlaY`\."></word>
-			<word id="Talbiah" text="lab~ayoka {ll~ahum~a lab~ayoka\, lab~ayoka laA $ariyka laka lab~ayoka\, &lt;in~a {loHamoda wa{ln~iEomata laka wa{lomuloka\, laA $ariyka laka\."></word>
-			<word id="SalawatSupplicationAfterTalbiah" text="{ll~ahum~a Sal~i EalaY say~idinaA muHam~adK waEalaY &gt;ali say~idinaA muHam~adK\. kamaA Sal~ayota EalaY &lt;ibora`hiymi waEalaY &gt;ali &lt;ibora`hiymi\. wabaAriko EalaY say~idinaA muHam~adK waEalaY &gt;ali say~idinaA muHam~adK kamaA baArakota EalaY &lt;ibora`hiyma waEalaY &gt;ali &lt;ibora`hiyma\, fiY {loEaAlamiyna &lt;in~aka HamiydN majiydN\."></word>
-			<word id="SupplicationAfterSalawatSupplication" text="{ll~ahum~a &lt;in~iY^ &gt;aso&gt;aluka riDaAka wa{lojan~ata\, wa&gt;aEuw*u bika min saxaTika wa{ln~aAri\."></word>
-			<word id="SupplicationForArrivingAtMakkah" text="{ll~ahum~a &lt;in~a ha`*aA {loHaraAma Haramuka\, wa{lobalada baladuka walaAlo&gt;amona &gt;amanuka\, faHar~imoniy EalaY {ln~aAri wa&gt;amin~iy mino Ea*aAbika yawoma taboEa$u EibaAdaka\."></word>
-			<word id="EnteringMasjidilHaram" text="{ll~ahum~a &gt;anta {ls~alaAmu waminka {ls~alaAmu faHay~inaA rab~anaA bi{ls~alaAmi wa&gt;adoxilonaA {lojan~ata daAra {ls~alaAmi tabaArakota rab~anaA wataEaAlayota ya`*aA {loxala&gt;ali wa{lo&lt;ikoraAmi\. {ll~ahum~a {fotaHo liy &gt;abowaAba raHomatka wamagoofiratika wa&gt;adoxiloniy fiyhaA\, bisomi {ll~ahi wa{loHamodu lil~ahi wa{lS~alaAtu wa{ls~alaAmu EalaY rasuwoli {ll~ahi Sal~aY {ll~ahu Ealayopi wasal~aAma\."></word>
+			<word id="BeforeTravel" text="\{phrase:BeforeTravel\}"></word>
+			<word id="IntentionForJourneyShower" text="\{phrase:IntentionForJourneyShower\}"></word>
+			<word id="IntentionForIhramShower" text="\{phrase:IntentionForIhramShower\}"></word>
+			<word id="IntentionForJourneyPrayer" text="\{phrase:IntentionForJourneyPrayer\}"></word>
+			<word id="IntentionForIhramPrayer" text="\{phrase:IntentionForIhramPrayer\}"></word>
+			<word id="IhramPrayerSupplication" text="\{phrase:IhramPrayerSupplication\}"></word>
+			<word id="IntentionToPerformUmrah" text="\{phrase:IntentionToPerformUmrah\}"></word>
+			<word id="Talbiah" text="\{phrase:Talbiah\}"></word>
+			<word id="SalawatSupplicationAfterTalbiah" text="\{phrase:SalawatSupplicationAfterTalbiah\}"></word>
+			<word id="SupplicationAfterSalawatSupplication" text="\{phrase:SupplicationAfterSalawatSupplication\}"></word>
+			<word id="SupplicationForArrivingAtMakkah" text="\{phrase:SupplicationForArrivingAtMakkah\}"></word>
+			<word id="EnteringMasjidilHaram" text="\{phrase:EnteringMasjidilHaram\}"></word>
 		</category>
 		<category title="Celebration">
-			<word id="Celebration1" text="{ll~ahu &gt;akobaru\, {ll~ahu &gt;akobaru\, {ll~ahu &gt;akobaru\, laA^ &lt;ilaha &lt;il~aA {ll~ahu\, wa{ll~ahu &gt;akobaru\, {ll~ahu &gt;akobaru\, wa{ll~ahi {loHamodu"></word>
-			<word id="Celebration2" text="{ll~ahum~a &lt;in~aka EafuwN tuhib~u {loEafowa faEafu Ean~i"></word>
-			<word id="MayAllahAcceptFromUsAndFromYou" text="taqab~alo {ll~ahu min~aA waminkumo"></word>
+			<word id="Celebration1" text="\{phrase:Celebration1\}"></word>
+			<word id="Celebration2" text="\{phrase:Celebration2\}"></word>
+			<word id="MayAllahAcceptFromUsAndFromYou" text="\{phrase:MayAllahAcceptFromUsAndFromYou\}"></word>
 		</category>
 		<category title="TheBestNames">
-			<word id="IntroductionBestNames" text="naso&gt;aluka ya`mano huwa {ll~ahu {l~a*iy laA^ &lt;ilaha &lt;il~aA huwa"></word>
+			<word id="IntroductionBestNames" text="\{phrase:IntroductionBestNames\}"></word>
 			<word id="TheBeneficentTheMercifulTheEternalLordTheMostSacredTheEmbodimentOfPeaceTheInfuserOfFaithThePreserverOfSafetyTheMightyOneTheAllCompellingTheDominantOneTheCreatorTheEvolverTheFlawlessShaperTheVeryFirstTheInfiniteLastOneThePerceptibleTheImperceptible" text="\{phrase:TheBeneficent,TheMerciful,TheEternalLord,TheMostSacred,TheEmbodimentOfPeace,TheInfuserOfFaith,ThePreserverOfSafety,TheMightyOne,TheAllCompelling,TheDominantOne,TheCreator,TheEvolver,TheFlawlessShaper,TheVeryFirst,TheInfiniteLastOne,ThePerceptible,TheImperceptible\}"></word>
 			<word id="TheAllHearerTheAllSeeingTheMasterTheHelperTheSupremePardonerThePowerfulTheKnowerOfSubtletiesTheAllAwareOneTheOddTheBeautifulTheShyTheCovererTheGreatOneTheExtremelyExaltedOneTheOnlyOneTheAllPrevailingOne" text="\{phrase:TheAllHearer,TheAllSeeing,TheMaster,TheHelper,TheSupremePardoner,ThePowerful,TheKnowerOfSubtleties,TheAllAwareOne,TheOdd,TheBeautiful,TheShy,TheCoverer,TheGreatOne,TheExtremelyExaltedOne,TheOnlyOne,TheAllPrevailingOne\}"></word>
 			<word id="TheEmbodimentOfTruthTheClearTheStrongOneTheFirmOneTheEverLivingTheSelfSubsistingOneTheSublimeOneTheMagnificentOneTheAcknowledgingOneTheClementOneTheAllPervadingOneTheAllKnowingOneTheEverAcceptorOfRepentanceTheWiseOneTheSelfSufficientOneTheBountifulOneTheSoleOneTheSupremeProviderTheCloseTheRespondingOneThePardonerTheLovingOne" text="\{phrase:TheEmbodimentOfTruth,TheClear,TheStrongOne,TheFirmOne,TheEverLiving,TheSelfSubsistingOne,TheSublimeOne,TheMagnificentOne,TheAcknowledgingOne,TheClementOne,TheAllPervadingOne,TheAllKnowingOne,TheEverAcceptorOfRepentance,TheWiseOne,TheSelfSufficientOne,TheBountifulOne,TheSoleOne,TheSupremeProvider,TheClose,TheRespondingOne,ThePardoner,TheLovingOne\}"></word>
 			<word id="TheProtectingAssociateTheSoleLaudableOneTheGuardingOneTheGloriousOneTheSupremeSolverTheAllObservingWitnessTheExpeditingOneTheProcrastinatorTheOmnipotentKingTheAllAuthoritativeOneTheBrilliantTheTakerTheExtenderTheProviderTheIrresistableTheOneWhoRecompenses" text="\{phrase:TheProtectingAssociate,TheSoleLaudableOne,TheGuardingOne,TheGloriousOne,TheSupremeSolver,TheAllObservingWitness,TheExpeditingOne,TheProcrastinator,TheOmnipotentKing,TheAllAuthoritativeOne,TheBrilliant,TheTaker,TheExtender,TheProvider,TheIrresistable,TheOneWhoRecompenses\}"></word>
 			<word id="TheRecognizerTheBestowerTheOmnipotentOneTheContinuousCreatorTheOwnerTheTotalProviderTheUniversalTrusteeTheWatchfulOneTheDoerOfGoodTheReckoningOneTheOneWhoCuresTheGentleTheGiverTheSustainingOneTheLordTheGoodTheImpartialJudgeTheSupremeInHonourTheFountainHeadOfTruth" text="\{phrase:TheRecognizer,TheBestower,TheOmnipotentOne,TheContinuousCreator,TheOwner,TheTotalProvider,TheUniversalTrustee,TheWatchfulOne,TheDoerOfGood,TheReckoningOne,TheOneWhoCures,TheGentle,TheGiver,TheSustainingOne,TheLord,TheGood,TheImpartialJudge,TheSupremeInHonour,TheFountainHeadOfTruth\}"></word>
 			<word id="TheGreatForgiverTheBenignOneTheSupremeBestowerTheMostGenerousTheMostHolyFromAllWeaknessTheEternalInheritorTheMasterTheMostHighTheOneGodFinal1" text="\{phrase:TheGreatForgiver,TheBenignOne,TheSupremeBestower,TheMostGenerous,TheMostHolyFromAllWeakness,TheEternalInheritor,TheMaster,TheMostHigh,TheOneGod\}\{phrase:Final1\}"></word>
-			<word id="Final1" text="{l~a*iy layosa kamivolihi $ayo&apos;N wahuwa {ls~amiyEu {lobaSiyru"></word>
-			<word id="Final2" text="{ll~ahum~a Sal~iY {foDal~a S~alaw`pi EalaY {soEadi maxoluwqaAtika sayidinaA muHam~adi"></word>
-			<word id="Final3" text="wasal~imo Eadada maEoluwmaAtika wamidaAda kalimaAtika kul~amaA *akaraka {l*~aAkiruwna wagafala Ean *ikoriki {logaAfiluwna"></word>
+			<word id="Final1" text="\{phrase:Final1\}"></word>
+			<word id="Final2" text="\{phrase:Final2\}"></word>
+			<word id="Final3" text="\{phrase:Final3\}"></word>
 		</category>
 		<category title="TheWhiteMoon">
-			<word id="TheWhiteMoonFirst" text="TalaEa {lobadoru EalayonaA"></word>
-			<word id="TheWhiteMoonSecond" text="min vaniy~aAti {lowadaAEi"></word>
-			<word id="TheWhiteMoonThird" text="wajaba {l$~ukoru EalayonaA"></word>
-			<word id="TheWhiteMoonFourth" text="maA daEaY lil~ahi daAEa"></word>
-			<word id="TheWhiteMoonFifth" text="&gt;ay~uhaA {lomaboEuwvu fiynaA"></word>
-			<word id="TheWhiteMoonSixth" text="ji}ta bi{lo&gt;amori {lomuTaAE"></word>
-			<word id="TheWhiteMoonSeventh" text="ji}ta $ar~afota {lomadiynapu"></word>
-			<word id="TheWhiteMoonEighth" text="maroHabFA ya`xayora daAEa"></word>
+			<word id="TheWhiteMoonFirst" text="\{phrase:TheWhiteMoonFirst\}"></word>
+			<word id="TheWhiteMoonSecond" text="\{phrase:TheWhiteMoonSecond\}"></word>
+			<word id="TheWhiteMoonThird" text="\{phrase:TheWhiteMoonThird\}"></word>
+			<word id="TheWhiteMoonFourth" text="\{phrase:TheWhiteMoonFourth\}"></word>
+			<word id="TheWhiteMoonFifth" text="\{phrase:TheWhiteMoonFifth\}"></word>
+			<word id="TheWhiteMoonSixth" text="\{phrase:TheWhiteMoonSixth\}"></word>
+			<word id="TheWhiteMoonSeventh" text="\{phrase:TheWhiteMoonSeventh\}"></word>
+			<word id="TheWhiteMoonEighth" text="\{phrase:TheWhiteMoonEighth\}"></word>
 		</category>
 		<category title="PopularIslamicSongVerses">
-			<word id="OMasterSendPrayersAndPeace" text="mawolaAya Sal~iy wasal~imo daAi}amFA &gt;abadFA EalaY Habiybika xayori {loxuloqi kul~ihimi"></word>
-			<word id="SalutationsUponYouOfAllah" text="SalaY Ealayoka {ll~ahu ya`EadonaAni ya`muSoTafaY ya`Safowapu {lr~aHomaAni {loHamodulil~ahi {l~a*iY^ &gt;aEoTaAniy ha`*aA {logulaAmi {lT~ayobi {lo&gt;arodaAni ha`*aA {logulaAmi {l~Tayobi {lo&gt;ardaAni qado saAdo fiY {lomahodi EalaY {logilomaAni &gt;aEiy*ihu bi{lobayoti *iy {lo&gt;arokaAni HataY &gt;araAhu bi{logi {lobunoyaAni &gt;anta {l~a*iy sumiyapa fiY {loquro&apos;aAni &gt;anta {l~a*iy sumiyapa fiY {loquro&apos;aAni &gt;aHomadu makotuwbu EalaY {lojinaAni SalaY Ealayoka {ll~ahu fiY {lo&gt;aHiyaAni &gt;aHomadohu fiY {ls~iri wa{lobirohaAni Haq~aA EalaY {lo&lt;isolaAmi wa{lo&lt;iymaAni Haq~aA EalaY {lo&lt;isolaAmi wa{lo&lt;iymaAni"></word>
-			<word id="O" text="yaA hanaAnaA Zahara Aldi~ynu Almu&amp;ay~ad biZuhuwri {ln~abiY AaHmad yaA hanaAnaA bimuHam~ad *alika AlfaDlu mina Allh yaA hanaAnaA xuS~a biAls~abEi AlmavaAniY waHawY luTfa AlmaEa&gt;niY maAlahu fiY Alxalqi vaAniY waEalayhi Aanzala Allh yaA hanaAnaA Zahara Aldi~ynu Almu&amp;ay~ad biZuhuwri {ln~abiY AaHmad yaA hanaAnaA bimuHam~ad *alika AlfaDlu mina Allh yaA hanaAnaA min mak~apK lam~aA Zahar liAajlihi An$aqa Alqamar waAftxarat Alu muDar bihi EalY kuli~ AlAanaAm yaAhaAnaAna&gt; Zahara Aldi~ynu Almu&amp;ay~ad biZuhuwri {ln~abiY AaHmad yaA hanaAnaA bimuHam~ad *alika AlfaDlu mina Allh yaA hanaAnaA AaTyabu {ln~aAsi xalqFA waAajalu~ {ln~aAsi xuluquA *ikruhu garbFA wa$arqFA saA}irN waAlHamdu lilh yaAhanaAnaA Zahara Aldi~ynu Almu&amp;ay~ad biZuhuwri {ln~abiY AaHmad yaA hanaAnaA bimuHam~ad *alika AlfaDlu mina Allh yaA hanaAnaA Salu~wA EalY xayri AlAanaAm AlmuSTafaY badri {lt~amaAm Salu~wA Ealayhi wasali~muwA ya$faE lana&gt; yawma Alzi~HaAm yaA hanaAnaA Zahara Aldi~ynu Almu&amp;ay~ad biZuhuwri {ln~abiY AaHmad yaA hanaAnaA bimuHam~ad *alika AlfaDlu mina Allh yaA hanaAnaA"></word>
+			<word id="OMasterSendPrayersAndPeace" text="\{phrase:OMasterSendPrayersAndPeace\}"></word>
+			<word id="SalutationsUponYouOfAllah" text="\{phrase:SalutationsUponYouOfAllah\}"></word>
+			<word id="O" text="\{phrase:O\}"></word>
 		</category>
 		<category title="Remembrance">
 			<word id="RemembranceFirst" text="\{21:87:15-23\}"></word>
-			<word id="RemembranceSecond" text="HasobunaA {ll~ahu waniEoma {lowakiylu\, niEoma {lomawolaY waniEoma {ln~asiyru"></word>
-			<word id="RemembranceThird" text="laA Hawola walaA quw~apK &lt;il~aA bi{ll~ahi {loEaliY~i {loEaZiymi"></word>
-			<word id="SendBlessingsFirst" text="{ll~ahum~a Sal~i EalaY muHam~adK waEalaY &apos;aAli muHam~adK kamaA Sal~ayota EalaY &lt;iboraAhiyma waEalaY &apos;aAli &lt;iboraAhiyma &lt;in~aka HamiydN majiydN wabaAriko EalaY muHam~adK waEalaY &apos;aAli muHam~adK kamaA baArakota EalaY &lt;iboraAhiyma waEalaY &apos;aAli &lt;iboraAhiyma fiY {loEaAlamiyna &lt;in~aka HamiydN majiydN"></word>
-			<word id="SendBlessingsSecond" text="{ll~ahum~a Sal~i EalaY muHam~adK waEalaY &apos;aAli muHam~adK kamaA Sal~ayota EalaY &lt;iboraAhiyma waEalaY &apos;aAli &lt;iboraAhiyma &lt;in~aka HamiydN majiydN {ll~ahum~a baAriko EalaY muHam~adK waEalaY &apos;aAli muHam~adK kamaA baArakota EalaY &lt;iboraAhiyma waEalaY &apos;aAli &lt;iboraAhiyma &lt;in~aka HamiydN majiydN"></word>
-			<word id="IntroductionFirst" text="&lt;in~a {loHamoda lil~ahi naHomaduhu wanasotaEiynuhu wanasotagofiruhu wanaEuw*u bi{ll~ahi min $uruwri &gt;anfusinaA wamin say~i}aAti &gt;aEomaAlinaA min yahodi {ll~ahu falaA muDil~a lahu waman yuDolilo falaA haAdiYa lahu\, wa&gt;a$ohadu &gt;ano laA^ &lt;ilaha &lt;il~aA {ll~ahu waHodahu laA $ariyka lahu\, wa&gt;a$ohadu &gt;an~a muHam~adFA Eaboduhu warasuwluhu \{3:102\}\{4:1\}\{33:70-71\}"></word>
-			<word id="IntroductionSecond" text="&gt;amaA baEad\: fa&lt;in~a &gt;aSodaqa {loHadiyvi kitaAbu {ll~ahi\, waxayora {lohadoyi hadoyu muHam~adK Sal~aY {ll~ahu Ealayohi wasal~am\, wa$ar~a {lo&gt;umuwri muHodavaAtuhaA\, wakul~a muHodavapK bidoEapN\, wakul~a bidoEapK DalaAlapN\, wakul~a DalaAlapK fiY {ln~aAri"></word>
+			<word id="RemembranceSecond" text="\{phrase:RemembranceSecond\}"></word>
+			<word id="RemembranceThird" text="\{phrase:RemembranceThird\}"></word>
+			<word id="SendBlessingsFirst" text="\{phrase:SendBlessingsFirst\}"></word>
+			<word id="SendBlessingsSecond" text="\{phrase:SendBlessingsSecond\}"></word>
+			<word id="IntroductionFirst" text=" \{3:102\}\{4:1\}\{33:70-71\}"></word>
+			<word id="IntroductionSecond" text="\{phrase:IntroductionSecond\}"></word>
 			<word id="ForKnowledge" text="\{20:114:17-19\}"></word>
-			<word id="RemembranceFourth" text="{ll~ahum~a Sal~i EalaY sayidinaA muHam~adK Eabodika wanabiyka warasuwlika {ln~abiy~i {lo&gt;um~iy\, waEalaY &apos;aAlihi waSaHabihi wasal~imo"></word>
-			<word id="RemembranceFifth" text="raDiytu bi{ll~ahi rab~FA\, wabi{lo&lt;isolaAmi diynFA\, wabimuHam~adK nabiy~FA warasuwlFA (valaAvFA)\."></word>
-			<word id="RemembranceSixth" text="ya`rab~iy laka {loHamodu kamaA yanobagiy lijalaAli wajohika waEaZiymi suloTaAnika\."></word>
-			<word id="RemembranceSeventh" text="{ll~ahum~a &lt;in~aA naEuw*u bika min &gt;ano nu$orika bika $ayo&apos;F naEolamuhu\, wanasotagofiruka limaA laA naEolamuhu\."></word>
+			<word id="RemembranceFourth" text="\{phrase:RemembranceFourth\}"></word>
+			<word id="RemembranceFifth" text="\{phrase:RemembranceFifth\}"></word>
+			<word id="RemembranceSixth" text="\{phrase:RemembranceSixth\}"></word>
+			<word id="RemembranceSeventh" text="\{phrase:RemembranceSeventh\}"></word>
 			<word id="WhenSomethingIsDifficult" text="\{phrase:WhenSomethingIsDifficult\}"></word>
 			<!-- Oh Allah! Nothing is easy except what You have made easy. If You wish, You can make the difficult easy. -->
 		</category>
