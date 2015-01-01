@@ -135,7 +135,7 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<transform text="ayaA awaA" id="AccusativeDefectiveConstantDualNominative" grammar="md,defectacc,const,nom"></transform>
 			<transform text="ayayoni" id="AccusativeDefectiveDualPossessiveAccusative" grammar="md,defectacc,indef|def,pos|acc"></transform>
 			<transform text="awayoni" id="AccusativeDefectiveDualPossessiveAccusativeCS" grammar="md2cs,defectacc,indef|def,pos|acc"></transform>
-			<transform text="ayaY awaY" id="AccusativeDefectiveDualPossessiveAccusative" grammar="md,defectacc,const,pos|acc"></transform>
+			<transform text="ayaY awaY" id="AccusativeDefectiveConstantDualPossessiveAccusative" grammar="md,defectacc,const,pos|acc"></transform>
 			<transform text="awona" id="AccusativeDefectivePluralNominative" grammar="mp,defectacc,indef|def,nom"></transform>
 			<transform text="aw" id="AccusativeDefectiveConstantPluralNominative" grammar="mp,defectacc,const,nom"></transform>
 			<transform text="ayona" id="AccusativeDefectivePluralPossessiveAccusative" grammar="mp,defectacc,indef|def,pos|acc"></transform>
@@ -196,13 +196,13 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<transform text="tafoEalu" id="VerbTypeIPresentSheIndicativePattern" grammar="presverbi,3fs|2ms,nom"></transform>
 			<transform text="tafoEala" id="VerbTypeIPresentSheSubjunctivePattern" grammar="presverbi,3fs|2ms,acc"></transform>
 			<transform text="tafoEalo" id="VerbTypeIPresentSheJussivePattern" grammar="presverbi,3fs|2ms,prespos"></transform>
-			<transform text="tafoEalaAni" id="VerbTypeIPastTheyBothFeminineIndicativePattern" grammar="presverbi,3fd|2md|2fd,nom"></transform>
-			<transform text="tafoEalaA" id="VerbTypeIPastTheyBothFemininePattern" grammar="presverbi,3fd|2md|2fd,acc|prespos"></transform>
+			<transform text="tafoEalaAni" id="VerbTypeIPresentTheyBothFeminineIndicativePattern" grammar="presverbi,3fd|2md|2fd,nom"></transform>
+			<transform text="tafoEalaA" id="VerbTypeIPresentTheyBothFemininePattern" grammar="presverbi,3fd|2md|2fd,acc|prespos"></transform>
 			<transform text="yafoEalona" id="VerbTypeIPresentTheyFemininePattern" grammar="presverbi,3fp"></transform>
 			<transform text="tafoEaluwna" id="VerbTypeIPresentYouAllMasculineIndicativePattern" grammar="presverbi,2mp,nom"></transform>
 			<transform text="tafoEaluwA" id="VerbTypeIPresentYouAllMasculinePattern" grammar="presverbi,2mp,acc|prespos"></transform>
 			<transform text="tafoEaliyna" id="VerbTypeIPresentYouFeminineIndicativePattern" grammar="presverbi,2fs,nom"></transform>
-			<transform text="tafoEaliy" id="VerbTypeIPresentYouFeminineIndicativePattern" grammar="presverbi,2fs,acc|prespos"></transform>
+			<transform text="tafoEaliy" id="VerbTypeIPresentYouFemininePattern" grammar="presverbi,2fs,acc|prespos"></transform>
 			<transform text="tafoEalona" id="VerbTypeIPresentYouAllFemininePattern" grammar="presverbi,2fp"></transform>
 			<transform text="&gt;afoEalu" id="VerbTypeIPresentIIndicativePattern" grammar="presverbi,1ms|1fs,nom"></transform>
 			<transform text="&gt;afoEala" id="VerbTypeIPresentISubjunctivePattern" grammar="presverbi,1ms|1fs,acc"></transform>
@@ -215,7 +215,7 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<transform text="&lt;ifoEalaA" id="VerbTypeICommandYouBothPattern" grammar="commverbi,md|fd"></transform>
 			<transform text="&lt;ifoEaluwA" id="VerbTypeICommandYouAllMasculinePattern" grammar="commverbi,mp"></transform>
 			<transform text="&lt;ifoEaliy" id="VerbTypeICommandYouFemininePattern" grammar="commverbi,fs"></transform>
-			<transform text="&lt;ifoEalona" id="VerbTypeICommandYouAllMasculinePattern" grammar="commverbi,fp"></transform>
+			<transform text="&lt;ifoEalona" id="VerbTypeICommandYouAllFemininePattern" grammar="commverbi,fp"></transform>
 
 			<transform text="fEl" id="RepresentativeStem"></transform>
 			
