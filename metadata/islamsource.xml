@@ -166,6 +166,7 @@
 			<static name="doctext" description="IslamSource_Text" onrender="DocBuilder::GetRenderedText"></static>
 			<static name="translitschemetext" description="IslamSource_Text" onrender="Arabic::GetTransliterationSchemeTable"></static>
 			<static name="font-tester" description=""></static>
+			<static name="helptext" description="IslamSource_Text" onrender="DocBuilder::GetRenderedHelpText"></static>
 		</frame>		
 	</page>
 	<page name="islam" description="IslamSource_IslamicInformation">
