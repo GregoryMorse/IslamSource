@@ -1048,7 +1048,7 @@
     <value>(In the name of Allah). (Then) O Allah, I seek protection in You from the male and female unclean spirits.</value>
   </data>
   <data name="IslamInfo_BeforeEnteringTheToilet1WordByWord" xml:space="preserve">
-    <value>(In the name of|Allah)|(Then) O Allah|I|seek protection|in You|from|the male unclean spirits|and the female unclean spirits</value>
+    <value>(Then) O Allah|I|seek protection|in You|from|the male unclean spirits|and the female unclean spirits</value>
   </data>
   <data name="IslamInfo_AfterLeavingTheToilet" xml:space="preserve">
     <value>After Leaving The Toilet</value>
@@ -1624,7 +1624,7 @@
     <value>I bear witness that no-one is worthy of worship except Allah, the One alone, without partner, and I bear witness that Muhammad is His servant and Messenger.</value>
   </data>
   <data name="IslamInfo_SecondCreedWordByWord" xml:space="preserve">
-    <value>I bear witness|that|there is no|God|except|Allah|alone|no|partner|has He|and I bear witness|that|Muhammad|His servant|and Messenger</value>
+    <value>alone|no|partner|has He|and I bear witness|that|Muhammad|His servant|and Messenger</value>
   </data>
   <data name="IslamInfo_SixthCreed" xml:space="preserve">
     <value>Sixth creed - The words of rejecting disbelief (Rud-A-Kuffer)</value>
@@ -3307,7 +3307,7 @@
     <value>O my Lord! All praise is due to you as is befitting to your glorious presence and your great sovereignty.</value>
   </data>
   <data name="IslamInfo_RemembranceSixthWordByWord" xml:space="preserve">
-    <value>O|my Lord!|to you|All praise is due|as|is befitting|to your glorious|presence|and your great|sovereignty.</value>
+    <value>O my Lord!|to you|All praise is due|as|is befitting|to your glorious|presence|and your great|sovereignty.</value>
   </data>
   <data name="IslamInfo_RemembranceSeventh" xml:space="preserve">
     <value>Remembrance Seventh</value>
@@ -3352,7 +3352,7 @@
     <value>O Allah, make me healthy in my body.  O Allah, preserve for me my hearing.  O Allah, preserve for me my sight.  There is none worthy of worship but You.  O Allah, I seek refuge in You from disbelief and poverty and I seek refuge in You from the punishment of the grave.  There is none worthy of worship but You.  (Recite three times in Arabic).</value>
   </data>
   <data name="IslamInfo_InTheMorningOrEvening4WordByWord" xml:space="preserve">
-    <value>O Allah,|make me healthy|in|my body.|O Allah,|preserve|for me|my hearing.|O Allah,|preserve|for me|my sight.|There is none|worthy of worship|but|You.|(Recite three times in Arabic).|O Allah,||I seek refuge|in You|from|disbelief|and poverty|and I seek refuge|in You|from|the punishment|of the grave.|There is none|worthy of worship|but|You.|(Recite three times in Arabic).</value>
+    <value>O Allah,|make me healthy|in|my body.|O Allah,|preserve|for me|my hearing.|O Allah,|preserve|for me|my sight.|There is none|worthy of worship|but|You.|(Recite three times in Arabic).|O Allah,||I seek refuge|in You|from|disbelief|and poverty|and I seek refuge|in You|from|the punishment|of the grave.|There is none|worthy of worship|but|You.</value>
   </data>
   <data name="IslamInfo_InTheMorningOrEvening8" xml:space="preserve">
     <value>In The Morning Or Evening</value>
@@ -3361,7 +3361,7 @@
     <value>In the Name of Allah, Who with His Name nothing can cause harm in the earth nor in the heavens, and He is the All-Hearing, the All-Knowing.  (Recite three times in Arabic).</value>
   </data>
   <data name="IslamInfo_InTheMorningOrEvening8WordByWord" xml:space="preserve">
-    <value>In the Name|of Allah,|Who|not|can cause harm|with|His Name|anything|in|the earth|nor|in|the heavens,|and He is|the All-Hearing,|the All-Knowing.|(Recite three times in Arabic).</value>
+    <value>In the Name|of Allah,|Who|not|can cause harm|with|His Name|anything|in|the earth|nor|in|the heavens,|and He is|the All-Hearing,|the All-Knowing.</value>
   </data>
   <data name="IslamInfo_SendBlessingsFirst" xml:space="preserve">
     <value>Send Blessings First</value>
@@ -3391,7 +3391,7 @@
     <value>Welcome you who call us to a good way</value>
   </data>
   <data name="IslamInfo_TheWhiteMoonEighthWordByWord" xml:space="preserve">
-    <value>Welcome|you who call us|to a good|way</value>
+    <value>Welcome|to a good way|you who call us</value>
   </data>
   <data name="IslamInfo_TheWhiteMoonFifth" xml:space="preserve">
     <value>Fifth</value>
@@ -4972,7 +4972,7 @@
     <value>O Allah, I have ended another day and call upon You and upon the bearers of Your Throne, upon Your angels and all creation to bear witness that surely You are Allah, there is none worthy of worship but You alone, You have no partners, and that Muhammad is Your slave and Your messenger.  (Recite four times in Arabic).</value>
   </data>
   <data name="IslamInfo_InTheEvening3WordByWord" xml:space="preserve">
-    <value>O Allah,||I have ended another day|and call upon You|and upon|the bearers|of Your Throne,|upon Your angels|and all|creation|to bear witness that surely|You|are Allah,|there is none|worthy of worship|but|You|alone,|no|partners|You have,|and that|Muhammad|is Your slave|and Your messenger.|(four|times|recite in Arabic).</value>
+    <value>O Allah,||I have ended another day|and call upon You|and upon|the bearers|of Your Throne,|upon Your angels|and all|creation|to bear witness that surely|You|are Allah,|there is none|worthy of worship|but|You|alone,|no|partners|You have,|and that|Muhammad|is Your slave|and Your messenger.</value>
   </data>
   <data name="IslamInfo_InTheEvening4" xml:space="preserve">
     <value>In The Evening</value>
@@ -5008,7 +5008,7 @@
     <value>I seek refuge in the Perfect Words of Allah from the evil of what He has created.  (Recite three times in Arabic).</value>
   </data>
   <data name="IslamInfo_InTheEvening7WordByWord" xml:space="preserve">
-    <value>I seek refuge|in the Words|of Allah|Perfect|from|the evil|of what|He has created.|(Recite three times in Arabic).</value>
+    <value>I seek refuge|in the Words|of Allah|Perfect|from|the evil|of what|He has created.</value>
   </data>
   <data name="IslamInfo_InTheEvening8" xml:space="preserve">
     <value>In The Evening</value>
@@ -5056,7 +5056,7 @@
     <value>O Allah, I have entered a new morning and call upon You and upon the bearers of Your Throne, upon Your angels and all creation to bear witness that surely You are Allah, there is none worthy of worship but You alone, You have no partners, and that Muhammad is Your slave and Your messenger.  (Recite four times in Arabic).</value>
   </data>
   <data name="IslamInfo_InTheMorning3WordByWord" xml:space="preserve">
-    <value>O Allah,||I have entered a new morning|and call upon You|and upon|the bearers|of Your Throne,|upon Your angels|and all|creation|to bear witness that surely|You|are Allah,|there is none|worthy of worship|but|You|alone,|no|partners|You have,|and that|Muhammad|is Your slave|and Your messenger.|(four|times|recite in Arabic).</value>
+    <value>O Allah,||I have entered a new morning|and call upon You|and upon|the bearers|of Your Throne,|upon Your angels|and all|creation|to bear witness that surely|You|are Allah,|there is none|worthy of worship|but|You|alone,|no|partners|You have,|and that|Muhammad|is Your slave|and Your messenger.</value>
   </data>
   <data name="IslamInfo_InTheMorning4" xml:space="preserve">
     <value>In The Morning</value>
@@ -5092,7 +5092,7 @@
     <value>Glory is to Allah and praise is to Him, by the multitude of His creation, by His Pleasure, by the weight of His Throne, and by the extent of His Words.  (Recite three times in Arabic).</value>
   </data>
   <data name="IslamInfo_InTheMorning7WordByWord" xml:space="preserve">
-    <value>Glory|is to Allah|and praise is to Him,|by the multitude|of His creation,|by Pleasure,|His|by the weight|of His Throne,|and by the extent|of His Words.|(Recite three times in Arabic).</value>
+    <value>Glory|is to Allah|and praise is to Him,|by the multitude|of His creation,|by Pleasure,|His|by the weight|of His Throne,|and by the extent|of His Words.</value>
   </data>
   <data name="IslamInfo_InTheMorning8" xml:space="preserve">
     <value>In The Morning</value>

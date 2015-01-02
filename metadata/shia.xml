@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<islamdata>
+	<phrases>
+		<word text="Ealiy~N waliy {ll~ahi" id="AliFriendOfAllah"></word>
+		<word text="{ls~alaAmu Ealayoka ya`Ealiy~N {bonu muHam~adN &gt;ay~uhaA {lohaAdiy {ln~aqiy Ealayoka {ls~alaAmu" id="PeaceBeUponYouAliSonOfMuhammadOTheGuideThePureUponYouBePeace"></word>
+		<word text="ya`Ealiy~N {lo&gt;akobaru Sal~aY {ll~ahu Ealayoka" id="OTheGreatAliThePrayersOfAllahUponYou"></word>
+		<word text="ya`faATimapu Sal~aY {ll~ahu Ealayoki" id="OFatimahThePrayersOfAllahUponYou"></word>
+		<word text="ya`kariymu {holu {lobayotu" id="OGenerousPeopleOfTheHouse"></word> 
+		<word text="{ls~alaAmu Ealayoka ya`^&gt;abaA muHam~adK {loHasana {bona Ealiy~K" id="PeaceBeUponYouOFatherOfMuhammadHasanSonOfAli"></word>
+		<word text="ya`^&gt;abaA SaAliHi {lomahodiy" id="OFatherOfTheRighteousTheGuidedOne"></word>
+		<word text="Hus~ayonN Sal~aY {ll~ahu Ealayoka" id="HusseinThePrayersOfAllahUponYou"></word>
+		<word text="{ls~alaAmu Ealayoka ya`^&gt;abaA SaAliH {lomahodiy Eajala {ll~ahi farajaka" id="PeaceBeUponYouOFatherOfTheRighteousTheGuidedOneHurryAllahYourHiddenOne"></word>
+		<word text="{lomahodiy TaAwuwsu &gt;aholu {lojan~api" id="TheGuidedOneThePeacockOfThePeopleOfJannah"></word>
+		<word text="maHobaAn mahodiy &gt;awo xuwaAhad &apos;aAmad" id="TheLoveOfMahdiIsTheOne"></word>
+		<word text="&gt;anaA majonuwnu {loHus~ayonu" id="IAmCrazyHussein"></word>
+		<word text="ya`^&gt;abaA Eabodu {ll~ahi Sal~aY {ll~ahu Ealayoka" id="OFatherOfTheServantOfAllahPrayersOfAllahUponYou"></word>
+		<word text="qamaru baniy haA$im Ealayoka {ls~alaAmu" id="TheMoonOfTheTribeOfHashimUponYouBePeace"></word>
+		<word text="ya`qaA}imu &apos;aAli muHam~adK" id="OUprightFamilyOfMuhammad"></word>
+		<word text="ya`Huj~apu {bonu {loHasani {loEasokariy" id="OReasonedSonOfHasanAlAskari"></word>
+		<word text="ya`qaA}imu &apos;aAli muHam~adK Eajala {ll~ahi farajaka {ls~alaAmu Ealayoka" id="OUprightFamilyOfMuhammadHurryAllahYourHiddenOnePeaceBeUponYou"></word>
+		<word text="laA fataY &lt;il~aA Ealiy~K walaA sayofu &lt;il~aA *uw {lfiqaAri" id="NoBraveYouthExceptAliAndNoSwordExceptThePossessorOfTheSpineSplitter"></word>
+		<word text="ya`faATimapu {lz~aharaA&apos;u" id="OFatimahZahara"></word>
+		<word text="faATimapu {lz~aharaA&apos;u" id="FatimahZahara"></word>
+		<word text="{ll~ahu muHam~adN Ealiy~N" id="AllahMuhammadAli"></word>
+		<word text="ya`zayonabu kubraY" id="OZaynabKubra"></word>
+		<word text="{ls~alaAmu Ealayoka ya`^&gt;abaA Eabodi {ll~ahi" id="PeaceBeUponYouOFatherOfTheServantOfAllah"></word>
+		<word text="{ls~alaAmu Ealayoki ya`ruqiyapu binti {loHus~ayoni" id="PeaceBeUponYouORuqiyaDaughterOfHussein"></word>
+		<word text="Ealiy~N {bonu &gt;abiy TaAlibi Ealayohi {ls~alaAmu" id="AliSonOfAbuTalibUponYouBePeace"></word>
+		<word text="man kuntu mawolaAhu faha`*aA Ealiy~N mawlaAh" id="WhoeverIsKingThenThatKingIsAli"></word>
+		<word text="Ealiy~N $aAhi marodaAnu" id="AliLionOfGod"></word>
+		<word text="faATimapu {lz~haraA&apos;u EalayohaA {ls~alaAmu" id="FatimahZaharaUponHerBePeace"></word>
+		<word text="ya`Ealiy~N *ikr qiyaAmu qaA}imu sit~i" id="OAliRememberTheReappearanceOfOffice"></word>
+		<word text="Ealiy~N {bonu muwsaY {lr~iDaA Ealayohi {ls~alaAmu" id="AliSonOfMusaRidaUponHimBePeace"></word>
+		<word text="Sal~aY {ll~ahu Ealayoka" id="ThePrayersOfAllahUponYou"></word>
+	</phrases>
+	<abbreviations>
+		<word text="AliFriendOfAllah" font="Shia;0027,0073,007A" id="AliFriendOfAllah"></word>
+		<word text="PeaceBeUponYouAliSonOfMuhammadOTheGuideThePureUponYouBePeace" font="Shia;0029" id="PeaceBeUponYouAliSonOfMuhammadOTheGuideThePureUponYouBePeace"></word>
+		<word text="OTheGreatAliThePrayersOfAllahUponYou" font="Shia;002B" id="OTheGreatAliThePrayersOfAllahUponYou"></word>
+		<word text="OFatimahThePrayersOfAllahUponYou" font="Shia;002C" id="OFatimahThePrayersOfAllahUponYou"></word>
+		<word text="OGenerousPeopleOfTheHouse" font="Shia;002E" id="OGenerousPeopleOfTheHouse"></word>
+		<word text="PeaceBeUponYouOFatherOfMuhammadHasanSonOfAli" font="Shia;002F" id="PeaceBeUponYouOFatherOfMuhammadHasanSonOfAli"></word>
+		<word text="OFatherOfTheRighteousTheGuidedOne" font="Shia;0041" id="OFatherOfTheRighteousTheGuidedOne"></word>
+		<word text="HusseinThePrayersOfAllahUponYou" font="Shia;0045" id="HusseinThePrayersOfAllahUponYou"></word>
+		<word text="PeaceBeUponYouOFatherOfTheRighteousTheGuidedOneHurryAllahYourHiddenOne" font="Shia;0049" id="PeaceBeUponYouOFatherOfTheRighteousTheGuidedOneHurryAllahYourHiddenOne"></word>
+		<word text="TheGuidedOneThePeacockOfThePeopleOfJannah" font="Shia;004F" id="TheGuidedOneThePeacockOfThePeopleOfJannah"></word>
+		<word text="TheLoveOfMahdiIsTheOne" font="Shia;0050" id="TheLoveOfMahdiIsTheOne"></word>
+		<word text="IAmCrazyHussein" font="Shia;0051" id="IAmCrazyHussein"></word>
+		<word text="OFatherOfTheServantOfAllahPrayersOfAllahUponYou" font="Shia;0052" id="OFatherOfTheServantOfAllahPrayersOfAllahUponYou"></word>
+		<word text="TheMoonOfTheTribeOfHashimUponYouBePeace" font="Shia;0053" id="TheMoonOfTheTribeOfHashimUponYouBePeace"></word>
+		<word text="OUprightFamilyOfMuhammad" font="Shia;0054" id="OUprightFamilyOfMuhammad"></word>
+		<word text="OReasonedSonOfHasanAlAskari" font="Shia;0055" id="OReasonedSonOfHasanAlAskari"></word>
+		<word text="PeaceBeUponYouOFatherOfTheServantOfAllah" font="Shia;0057" id="PeaceBeUponYouOFatherOfTheServantOfAllah"></word>
+		<word text="OUprightFamilyOfMuhammadHurryAllahYourHiddenOnePeaceBeUponYou" font="Shia;0059" id="OUprightFamilyOfMuhammadHurryAllahYourHiddenOnePeaceBeUponYou"></word>
+		<word text="NoBraveYouthExceptAliAndNoSwordExceptThePossessorOfTheSpineSplitter" font="Shia;005D" id="NoBraveYouthExceptAliAndNoSwordExceptThePossessorOfTheSpineSplitter"></word>
+		<word text="PeaceBeUponYouORuqiyaDaughterOfHussein" font="Shia;005F" id="PeaceBeUponYouORuqiyaDaughterOfHussein"></word>
+		<word text="OFatimahZahara" font="Shia;0062,006D" id="OFatimahZahara"></word>
+		<word text="FatimahZahara" font="Shia;0063,006E" id="FatimahZahara"></word>
+		<word text="AliSonOfAbuTalibUponYouBePeace" font="Shia;0064" id="AliSonOfAbuTalibUponYouBePeace"></word>
+		<word text="AllahMuhammadAli" font="Shia;006C" id="AllahMuhammadAli"></word>
+		<word text="OZaynabKubra" font="Shia;007B" id="OZaynabKubra"></word>
+		<word text="WhoeverIsKingThenThatKingIsAli" font="Shia;0068" id="WhoeverIsKingThenThatKingIsAli"></word>
+		<word text="AliLionOfGod" font="Shia;006A" id="AliLionOfGod"></word>
+		<word text="FatimahZaharaUponHerBePeace" font="Shia;0076" id="FatimahZaharaUponHerBePeace"></word>
+		<word text="OAliRememberTheReappearanceOfOffice" font="Shia;0078" id="OAliRememberTheReappearanceOfOffice"></word>
+		<word text="AliSonOfMusaRidaUponHimBePeace" font="Shia;007D" id="AliSonOfMusaRidaUponHimBePeace"></word>
+	</abbreviations>
+	<lists>
+		<category title="Abbreviations">
+			<word text="" id="ShiaPhrases"></word>
+		</category>
+	</lists>
+</islamdata>

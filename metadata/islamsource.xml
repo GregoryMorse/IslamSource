@@ -188,9 +188,6 @@
 	</page>
 	<page name="phrases" description="IslamSource_Phrases">
 		<frame name="phrases" description="IslamSource_Viewer" hasform="true">
-			<radio name="selection" description="IslamSource_Selection" uselist="true" defaultvalue="0" onpopulate="Phrases::GetPhraseCategories"></radio>
-			<button name="selectiondisplay" description="IslamSource_Display"></button>
-			<button name="print" description="IslamSource_Print" onclick="Utility::GetOnPrintJS"></button>
 			<radio name="translitscheme" description="IslamSource_TransliterationScheme" uselist="true" onchange="Arabic::GetChangeTransliterationJS" onpopulate="Arabic::GetTransliterationSchemes"></radio>
 			<button name="fontsmaller" description="IslamSource_Smaller" onclick="ArabicFont::GetFontSmallerJS"></button>
 			<button name="fontdefaultsize" description="IslamSource_LetterSample" onclick="ArabicFont::GetFontDefaultSizeJS"></button>
