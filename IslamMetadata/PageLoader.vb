@@ -3148,7 +3148,13 @@ Public Class DocBuilder
         Dim Scheme As String = If(CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) >= 2, CachedData.IslamData.TranslitSchemes((CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) - 2) \ 2).Name, String.Empty)
         Dim Count As Integer = CInt(HttpContext.Current.Request.QueryString.Get("selection"))
         If Count = -1 Then Count = 0
-        Return BuckwalterTextFromReferences(Item.Name, SchemeType, Scheme, CachedData.IslamData.Lists(Count).Words(Count).Text, String.Empty, TanzilReader.GetTranslationIndex(HttpContext.Current.Request.QueryString.Get("qurantranslation")))
+        Dim Renderer As New RenderArray(Item.Name)
+        If Not CachedData.IslamData.Lists(Count).Words Is Nothing Then
+            For SubCount = 0 To CachedData.IslamData.Lists(Count).Words.Length - 1
+                Renderer.Items.AddRange(BuckwalterTextFromReferences(Item.Name, SchemeType, Scheme, CachedData.IslamData.Lists(Count).Words(SubCount).Text, String.Empty, TanzilReader.GetTranslationIndex(HttpContext.Current.Request.QueryString.Get("qurantranslation"))).Items)
+            Next
+        End If
+        Return Renderer
     End Function
     Public Shared Function GetRenderedText(ByVal Item As PageLoader.TextItem) As RenderArray
         Dim SchemeType As ArabicData.TranslitScheme = CType(If(CInt(HttpContext.Current.Request.Params("translitscheme")) >= 2, 2 - CInt(HttpContext.Current.Request.Params("translitscheme")) Mod 2, CInt(HttpContext.Current.Request.Params("translitscheme"))), ArabicData.TranslitScheme)
@@ -3382,28 +3388,28 @@ Public Class DocBuilder
             For Count As Integer = 0 To SelArr.Length - 1
                 Words.AddRange(Arabic.GetParticles(SelArr(Count)))
             Next
-            Arabic.DisplayParticle(Words.ToArray(), ID, SchemeType, Scheme)
+            Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eList, Arabic.DisplayParticle(Words.ToArray(), ID, SchemeType, Scheme))}))
         ElseIf Strings.StartsWith("noun:") Then
             Dim SelArr As String() = Strings.Replace("noun:", String.Empty).Split(","c)
             Dim Words As New List(Of IslamData.GrammarSet.GrammarNoun)
             For Count As Integer = 0 To SelArr.Length - 1
                 Words.AddRange(Arabic.GetCatNoun(SelArr(Count)))
             Next
-            Arabic.NounDisplay(Words.ToArray(), ID, SchemeType, Scheme)
+            Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eList, Arabic.NounDisplay(Words.ToArray(), ID, SchemeType, Scheme))}))
         ElseIf Strings.StartsWith("verb:") Then
             Dim SelArr As String() = Strings.Replace("verb:", String.Empty).Split(","c)
             Dim Words As New List(Of IslamData.GrammarSet.GrammarVerb)
             For Count As Integer = 0 To SelArr.Length - 1
                 Words.AddRange(Arabic.GetVerb(SelArr(Count)))
             Next
-            Arabic.VerbDisplay(Words.ToArray(), ID, SchemeType, Scheme)
+            Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eList, Arabic.VerbDisplay(Words.ToArray(), ID, SchemeType, Scheme))}))
         ElseIf Strings.StartsWith("transform:") Then
             Dim SelArr As String() = Strings.Replace("transform:", String.Empty).Split(","c)
             Dim Words As New List(Of IslamData.GrammarSet.GrammarTransform)
             For Count As Integer = 0 To SelArr.Length - 1
                 Words.AddRange(Arabic.GetTransform(SelArr(Count)))
             Next
-            Arabic.DisplayTransform(Words.ToArray(), ID, False, SchemeType, Scheme)
+            Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eList, Arabic.DisplayTransform(Words.ToArray(), ID, False, SchemeType, Scheme))}))
         ElseIf Strings.StartsWith("word:") Then
             Dim Words As IslamData.GrammarSet.GrammarWord() = Arabic.GetCatWords(Strings.Replace("word:", String.Empty).Split(","c))
             Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eList, Arabic.DisplayWord(Words, ID, SchemeType, Scheme))}))
@@ -4682,7 +4688,7 @@ Public Class TanzilReader
                             Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Words(Count)), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, TranslitWords(Count)), New RenderArray.RenderText(DirectCast(IIf(IsTranslationTextLTR(TranslationIndex), RenderArray.RenderDisplayClass.eLTR, RenderArray.RenderDisplayClass.eRTL), RenderArray.RenderDisplayClass), TanzilReader.GetW4WTranslationVerse(W4WLines, BaseChapter + Chapter, CInt(IIf(Chapter = 0, BaseVerse, 1)) + Verse, Count - PauseMarks))}))
                         End If
                     Next
-                    Text += QuranText(Chapter)(Verse) + " "
+                    Text += String.Join(String.Empty, Array.ConvertAll(Array.FindAll(QuranText(Chapter)(Verse).Trim().ToCharArray(), Function(Ch As Char) Ch <> ChrW(0)), Function(Ch As Char) CStr(Ch))) + " "
                     If TanzilReader.IsSajda(BaseChapter + Chapter, CInt(IIf(Chapter = 0, BaseVerse, 1)) + Verse) Then
                         'Sajda markers are already in the text
                         'Text += Arabic.TransliterateFromBuckwalter("R")
@@ -4691,7 +4697,7 @@ Public Class TanzilReader
                     Text += Arabic.TransliterateFromBuckwalter("=" + CStr(CInt(IIf(Chapter = 0, BaseVerse, 1)) + Verse)) + " "
                     Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.TransliterateFromBuckwalter("=" + CStr(CInt(IIf(Chapter = 0, BaseVerse, 1)) + Verse))), New RenderArray.RenderText(DirectCast(IIf(IsTranslationTextLTR(TranslationIndex), RenderArray.RenderDisplayClass.eLTR, RenderArray.RenderDisplayClass.eRTL), RenderArray.RenderDisplayClass), "(" + CStr(CInt(IIf(Chapter = 0, BaseVerse, 1)) + Verse) + ")")}))
                     'Text += Arabic.TransliterateFromBuckwalter("(" + CStr(IIf(Chapter = 0, BaseVerse, 1) + Verse) + ") ")
-                    Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eNested, Items), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Text), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, Arabic.TransliterateToScheme(QuranText(Chapter)(Verse) + " " + Arabic.TransliterateFromBuckwalter("=" + CStr(CInt(IIf(Chapter = 0, BaseVerse, 1)) + Verse)) + " ", SchemeType, Scheme).Trim()), New RenderArray.RenderText(DirectCast(IIf(IsTranslationTextLTR(TranslationIndex), RenderArray.RenderDisplayClass.eLTR, RenderArray.RenderDisplayClass.eRTL), RenderArray.RenderDisplayClass), "(" + CStr(CInt(IIf(Chapter = 0, BaseVerse, 1)) + Verse) + ") " + TanzilReader.GetTranslationVerse(Lines, BaseChapter + Chapter, CInt(IIf(Chapter = 0, BaseVerse, 1)) + Verse))}))
+                    Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eNested, Items), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Text), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, Arabic.TransliterateToScheme(String.Join(String.Empty, Array.ConvertAll(Array.FindAll(QuranText(Chapter)(Verse).Trim().ToCharArray(), Function(Ch As Char) Ch <> ChrW(0)), Function(Ch As Char) CStr(Ch))) + " " + Arabic.TransliterateFromBuckwalter("=" + CStr(CInt(IIf(Chapter = 0, BaseVerse, 1)) + Verse)) + " ", SchemeType, Scheme).Trim()), New RenderArray.RenderText(DirectCast(IIf(IsTranslationTextLTR(TranslationIndex), RenderArray.RenderDisplayClass.eLTR, RenderArray.RenderDisplayClass.eRTL), RenderArray.RenderDisplayClass), "(" + CStr(CInt(IIf(Chapter = 0, BaseVerse, 1)) + Verse) + ") " + TanzilReader.GetTranslationVerse(Lines, BaseChapter + Chapter, CInt(IIf(Chapter = 0, BaseVerse, 1)) + Verse))}))
                 Next
             Next
         End If

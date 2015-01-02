@@ -1279,12 +1279,12 @@ Public Class ArabicData
         Public CombiningClass As Integer
         Public ReadOnly Property Connecting As Boolean
             Get
-                Return JoiningStyle = "final" Or JoiningStyle = "medial" Or JoiningStyle = "C" Or (Not Shaping Is Nothing AndAlso (Shaping(1) <> Nothing Or Shaping(3) <> Nothing))
+                Return JoiningStyle <> "T" AndAlso (JoiningStyle = "final" Or JoiningStyle = "medial" Or JoiningStyle = "C" Or (Not Shaping Is Nothing AndAlso (Shaping(1) <> Nothing Or Shaping(3) <> Nothing)))
             End Get
         End Property
         Public ReadOnly Property Terminating As Boolean
             Get
-                Return JoiningStyle = "isolated" Or JoiningStyle = "final" Or JoiningStyle = "U" Or (Not Shaping Is Nothing AndAlso ((Shaping(0) <> Nothing Or Shaping(1) <> Nothing) And Shaping(2) = Nothing And Shaping(3) = Nothing))
+                Return JoiningStyle <> "T" AndAlso (JoiningStyle = "isolated" Or JoiningStyle = "final" Or JoiningStyle = "U" Or (Not Shaping Is Nothing AndAlso ((Shaping(0) <> Nothing Or Shaping(1) <> Nothing) And Shaping(2) = Nothing And Shaping(3) = Nothing)))
             End Get
         End Property
     End Structure
