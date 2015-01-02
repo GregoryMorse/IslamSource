@@ -3356,71 +3356,71 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<word text="\{phrase:IsraAndMiraj,EnlightenedMedina,BlessedMecca,RiadAlJannah,CaveOfHira,MountNour,MountUhud,SacredMosque,MosqueOfTheProphet,FarthestMosque,HolyHouse,CentralTreasury,FestivalOfBreakingFast,FestivalOfSacrifice,IslamicNewYear,Ashura,BirthdayOfTheProphet,MidShaban\}" id="Places"></word>
 		</category>
 		<category title="WhenWakingUp">
-			<word id="WhenWakingUp1" text="\{phrase:WhenWakingUp1\}\{reference:Al-Bukhari, cf. Al-Asqalani, Fathul-Bari 11/113; Muslim 4/2083\}"></word>
-			<word id="WhenWakingUp2" text="\{phrase:WhenWakingUp2\}"></word>
-			<word id="WhenWakingUp3" text="\{phrase:WhenWakingUp3\}"></word>
-			<word id="WhenWakingUp4" text="\{3:190-200\}"></word>
+			<word id="WhenWakingUp1Label" text="\{phrase:WhenWakingUp1\}\{reference:Al-Bukhari, cf. Al-Asqalani, Fathul-Bari 11/113; Muslim 4/2083\}"></word>
+			<word id="WhenWakingUp2Label" text="\{phrase:WhenWakingUp2\}"></word>
+			<word id="WhenWakingUp3Label" text="\{phrase:WhenWakingUp3\}"></word>
+			<word id="WhenWakingUp4Label" text="\{3:190-200\}"></word>
 		</category>
 		<category title="WhenWearingAGarment">
-			<word id="WhenWearingAGarment1" text="\{phrase:WhenWearingAGarment1\}"></word>
+			<word id="WhenWearingAGarment1Label" text="\{phrase:WhenWearingAGarment1\}"></word>
 		</category>
 		<category title="WhenWearingANewGarment">
-			<word id="WhenWearingANewGarment1" text="\{phrase:WhenWearingANewGarment1\}"></word>
+			<word id="WhenWearingANewGarment1Label" text="\{phrase:WhenWearingANewGarment1\}"></word>
 		</category>
 		<category title="WhenSomeoneElseWearingANewGarment">
-			<word id="WhenSomeoneElseWearingANewGarment1" text="\{phrase:WhenSomeoneElseWearingANewGarment1\}"></word>
-			<word id="WhenSomeoneElseWearingANewGarment2" text="\{phrase:WhenSomeoneElseWearingANewGarment2\}"></word>
+			<word id="WhenSomeoneElseWearingANewGarment1Label" text="\{phrase:WhenSomeoneElseWearingANewGarment1\}"></word>
+			<word id="WhenSomeoneElseWearingANewGarment2Label" text="\{phrase:WhenSomeoneElseWearingANewGarment2\}"></word>
 		</category>
 		<category title="BeforeUndressing">
-			<word id="BeforeUndressing1" text="\{phrase:InTheNameOfAllah\}"></word>
+			<word id="BeforeUndressing1Label" text="\{phrase:InTheNameOfAllah\}"></word>
 		</category>
 		<category title="BeforeEnteringTheToilet">
-			<word id="BeforeEnteringTheToilet1" text="(\{phrase:InTheNameOfAllah\}) \{phrase:BeforeEnteringTheToilet1\}"></word>
+			<word id="BeforeEnteringTheToilet1Label" text="(\{phrase:InTheNameOfAllah\}) \{phrase:BeforeEnteringTheToilet1\}"></word>
 		</category>
 		<category title="AfterLeavingTheToilet">
-			<word id="AfterLeavingTheToilet1" text="\{phrase:AfterLeavingTheToilet1\}"></word>
+			<word id="AfterLeavingTheToilet1Label" text="\{phrase:AfterLeavingTheToilet1\}"></word>
 		</category>
 		<category title="WhenStartingAblution">
-			<word id="WhenStartingAblution1" text="\{phrase:InTheNameOfAllah\}"></word>
+			<word id="WhenStartingAblution1Label" text="\{phrase:InTheNameOfAllah\}"></word>
 		</category>
 		<category title="UponCompletingAblution">
-			<word id="UponCompletingAblution1" text="\{phrase:UponCompletingAblution1\}"></word>
-			<word id="UponCompletingAblution2" text="\{phrase:UponCompletingAblution2\}"></word>
-			<word id="UponCompletingAblution3" text="\{phrase:ForExpiationOfSinsAtTheConclusionOfSittingOrGathering1\}"></word>
+			<word id="UponCompletingAblution1Label" text="\{phrase:UponCompletingAblution1\}"></word>
+			<word id="UponCompletingAblution2Label" text="\{phrase:UponCompletingAblution2\}"></word>
+			<word id="UponCompletingAblution3Label" text="\{phrase:ForExpiationOfSinsAtTheConclusionOfSittingOrGathering1\}"></word>
 		</category>
 		<category title="WhenLeavingTheHome">
-			<word id="WhenLeavingTheHome1" text="\{phrase:WhenLeavingTheHome1\}"></word>
-			<word id="WhenLeavingTheHome2" text="\{phrase:WhenLeavingTheHome2\}"></word>
+			<word id="WhenLeavingTheHome1Label" text="\{phrase:WhenLeavingTheHome1\}"></word>
+			<word id="WhenLeavingTheHome2Label" text="\{phrase:WhenLeavingTheHome2\}"></word>
 		</category>
 		<category title="UponEnteringTheHome">
-			<word id="UponEnteringTheHome1" text="\{phrase:UponEnteringTheHome1\}"></word>
+			<word id="UponEnteringTheHome1Label" text="\{phrase:UponEnteringTheHome1\}"></word>
 		</category>
 		<category title="WhenGoingToTheMosque">
-			<word id="WhenGoingToTheMosque1" text="\{phrase:WhenGoingToTheMosque1\} \{reference:Al-Bukhari 11/116 (Hadith no. 6316) and by Muslim 1/526,529-530 (Hadith no. 763). Al-Tirmidhi 5/483 (Hadith no. 3419). Al-Bukhari in Al-Adab Al-Mufrad (Hadith no. 695), p. 258.  See also Al-Albani, Sahih Al-Adab Al-Mufrad (no. 536), Al-Bukhari, cf. Al-Asqalani, Fathul-Bari 11/118.\}"></word>
+			<word id="WhenGoingToTheMosque1Label" text="\{phrase:WhenGoingToTheMosque1\} \{reference:Al-Bukhari 11/116 (Hadith no. 6316) and by Muslim 1/526,529-530 (Hadith no. 763). Al-Tirmidhi 5/483 (Hadith no. 3419). Al-Bukhari in Al-Adab Al-Mufrad (Hadith no. 695), p. 258.  See also Al-Albani, Sahih Al-Adab Al-Mufrad (no. 536), Al-Bukhari, cf. Al-Asqalani, Fathul-Bari 11/118.\}"></word>
 		</category>
 		<category title="UponEnteringTheMosque">
-			<word id="UponEnteringTheMosque1" text="\{phrase:UponEnteringTheMosque1\}"></word>
+			<word id="UponEnteringTheMosque1Label" text="\{phrase:UponEnteringTheMosque1\}"></word>
 		</category>
 		<category title="UponLeavingTheMosque">
-			<word id="UponLeavingTheMosque1" text="\{phrase:UponLeavingTheMosque1\}"></word>
+			<word id="UponLeavingTheMosque1Label" text="\{phrase:UponLeavingTheMosque1\}"></word>
 		</category>
 		<category title="ImmediatelyFollowingDeclarationOfFaithInCallToPrayer">
-			<word id="ImmediatelyFollowingDeclarationOfFaithInCallToPrayer1" text="\{phrase:ImmediatelyFollowingDeclarationOfFaithInCallToPrayer1\}"></word>
+			<word id="ImmediatelyFollowingDeclarationOfFaithInCallToPrayer1Label" text="\{phrase:ImmediatelyFollowingDeclarationOfFaithInCallToPrayer1\}"></word>
 		</category>
 		<category title="AtTheStartOfPrayer">
-			<word id="AtTheStartOfPrayer1" text="\{phrase:AtTheStartOfPrayer1\}"></word>
-			<word id="AtTheStartOfPrayer2" text="\{phrase:AtTheStartOfPrayer2\}"></word>
-			<word id="AtTheStartOfPrayer3" text="\{phrase:AtTheStartOfPrayer3\}"></word>
-			<word id="AtTheStartOfPrayer4" text="\{phrase:AtTheStartOfPrayer4\}"></word>
-			<word id="AtTheStartOfPrayer5" text="\{phrase:AtTheStartOfPrayer5\}"></word>
-			<word id="AtTheStartOfPrayer6" text="\{phrase:AtTheStartOfPrayer6\}"></word>
+			<word id="AtTheStartOfPrayer1Label" text="\{phrase:AtTheStartOfPrayer1\}"></word>
+			<word id="AtTheStartOfPrayer2Label" text="\{phrase:AtTheStartOfPrayer2\}"></word>
+			<word id="AtTheStartOfPrayer3Label" text="\{phrase:AtTheStartOfPrayer3\}"></word>
+			<word id="AtTheStartOfPrayer4Label" text="\{phrase:AtTheStartOfPrayer4\}"></word>
+			<word id="AtTheStartOfPrayer5Label" text="\{phrase:AtTheStartOfPrayer5\}"></word>
+			<word id="AtTheStartOfPrayer6Label" text="\{phrase:AtTheStartOfPrayer6\}"></word>
 		</category>
 		<category title="WhileBowingInPrayer">
-			<word id="WhileBowingInPrayer1" text="\{phrase:WhileBowingInPrayer1\} (valaAvFA)"></word>
-			<word id="WhileBowingInPrayer2" text="\{phrase:WhileBowingInPrayer2\}"></word>
-			<word id="WhileBowingInPrayer3" text="\{phrase:WhileBowingInPrayer3\}"></word>
-			<word id="WhileBowingInPrayer4" text="\{phrase:WhileBowingInPrayer4\}"></word>
-			<word id="WhileBowingInPrayer5" text="\{phrase:WhileBowingInPrayer5\}"></word>
+			<word id="WhileBowingInPrayer1Label" text="\{phrase:WhileBowingInPrayer1\} (valaAvFA)"></word>
+			<word id="WhileBowingInPrayer2Label" text="\{phrase:WhileBowingInPrayer2\}"></word>
+			<word id="WhileBowingInPrayer3Label" text="\{phrase:WhileBowingInPrayer3\}"></word>
+			<word id="WhileBowingInPrayer4Label" text="\{phrase:WhileBowingInPrayer4\}"></word>
+			<word id="WhileBowingInPrayer5Label" text="\{phrase:WhileBowingInPrayer5\}"></word>
 		</category>
 		<category title="UponRisingFromBowing">
 			<word id="UponRisingFromBowing1" text="\{phrase:UponRisingFromBowing1\}"></word>
@@ -3478,41 +3478,41 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<word id="ForSeekingGuidance1" text="\{phrase:ForSeekingGuidance1\}"></word>
 		</category>
 		<category title="InTheEvening">
-			<word id="InTheEvening1" text="\{phrase:InTheEvening1\}"></word>
-			<word id="InTheEvening2" text="\{phrase:InTheEvening2\}"></word>
-			<word id="InTheEvening3" text="\{phrase:InTheEvening3\} (&gt;arobaEFA mar~aAtFA Hiyna)"></word>
-			<word id="InTheEvening4" text="\{phrase:InTheEvening4\}"></word>
-			<word id="InTheEvening5" text="\{phrase:InTheEvening5\}"></word>
-			<word id="InTheEvening6" text="\{phrase:InTheEvening6\}"></word>
-			<word id="InTheEvening7" text="\{phrase:InTheEvening7\} (valaAvFA)"></word>
-			<word id="InTheEvening8" text="\{phrase:InTheEvening8\}"></word>
-			<word id="InTheEvening9" text="\{phrase:InTheEvening9\}"></word>
+			<word id="InTheEvening1Label" text="\{phrase:InTheEvening1\}"></word>
+			<word id="InTheEvening2Label" text="\{phrase:InTheEvening2\}"></word>
+			<word id="InTheEvening3Label" text="\{phrase:InTheEvening3\} (&gt;arobaEFA mar~aAtFA Hiyna)"></word>
+			<word id="InTheEvening4Label" text="\{phrase:InTheEvening4\}"></word>
+			<word id="InTheEvening5Label" text="\{phrase:InTheEvening5\}"></word>
+			<word id="InTheEvening6Label" text="\{phrase:InTheEvening6\}"></word>
+			<word id="InTheEvening7Label" text="\{phrase:InTheEvening7\} (valaAvFA)"></word>
+			<word id="InTheEvening8Label" text="\{phrase:InTheEvening8\}"></word>
+			<word id="InTheEvening9Label" text="\{phrase:InTheEvening9\}"></word>
 		</category>
 		<category title="InTheMorning">
-			<word id="InTheMorning1" text="\{phrase:InTheMorning1\}"></word>
-			<word id="InTheMorning2" text="\{phrase:InTheMorning2\}"></word>
-			<word id="InTheMorning3" text="\{phrase:InTheMorning3\} (&gt;arobaEFA mar~aAtFA Hiyna)"></word>
-			<word id="InTheMorning4" text="\{phrase:InTheMorning4\}"></word>
-			<word id="InTheMorning5" text="\{phrase:InTheMorning5\}"></word>
-			<word id="InTheMorning6" text="\{phrase:InTheMorning6\}"></word>
-			<word id="InTheMorning7" text="\{phrase:InTheMorning7\} (valaAvFA)"></word>
-			<word id="InTheMorning8" text="\{phrase:InTheMorning8\}"></word>
-			<word id="InTheMorning9" text="\{phrase:InTheMorning9\}"></word>
+			<word id="InTheMorning1Label" text="\{phrase:InTheMorning1\}"></word>
+			<word id="InTheMorning2Label" text="\{phrase:InTheMorning2\}"></word>
+			<word id="InTheMorning3Label" text="\{phrase:InTheMorning3\} (&gt;arobaEFA mar~aAtFA Hiyna)"></word>
+			<word id="InTheMorning4Label" text="\{phrase:InTheMorning4\}"></word>
+			<word id="InTheMorning5Label" text="\{phrase:InTheMorning5\}"></word>
+			<word id="InTheMorning6Label" text="\{phrase:InTheMorning6\}"></word>
+			<word id="InTheMorning7Label" text="\{phrase:InTheMorning7\} (valaAvFA)"></word>
+			<word id="InTheMorning8Label" text="\{phrase:InTheMorning8\}"></word>
+			<word id="InTheMorning9Label" text="\{phrase:InTheMorning9\}"></word>
 		</category>
 		<category title="InTheMorningOrEvening">
-			<word id="InTheMorningOrEvening1" text="\{2:255\}"></word>
-			<word id="InTheMorningOrEvening2" text="\{112\} (valaAvFA) \{113\} (valaAvFA) \{114\} (valaAvFA)"></word>
-			<word id="InTheMorningOrEvening3" text="\{phrase:InTheMorningOrEvening3\}"></word>
-			<word id="InTheMorningOrEvening4" text="\{phrase:InTheMorningOrEvening4\} (valaAvFA)"></word>
-			<word id="InTheMorningOrEvening5" text="\{9:129:4-17\} (sabaEFA mar~aAtFA Hiyna)"></word>
-			<word id="InTheMorningOrEvening6" text="\{phrase:InTheMorningOrEvening6\}"></word>
-			<word id="InTheMorningOrEvening7" text="\{phrase:InTheMorningOrEvening7\}"></word>
-			<word id="InTheMorningOrEvening8" text="\{phrase:InTheMorningOrEvening8\} (valaAvFA)"></word>
-			<word id="InTheMorningOrEvening9" text="\{phrase:InTheMorningOrEvening9\} (valaAvFA)"></word>
-			<word id="InTheMorningOrEvening10" text="\{phrase:InTheMorningOrEvening10\}"></word>
-			<word id="InTheMorningOrEvening11" text="\{phrase:InTheMorningOrEvening11\} (miA}apu mir~apu)"></word>
-			<word id="InTheMorningOrEvening12" text="\{phrase:InTheMorningOrEvening12\} (miA}apu mir~apu)"></word>
-			<word id="InTheMorningOrEvening13" text="\{phrase:InTheMorningOrEvening13\} (Ea$arapF)"></word>
+			<word id="InTheMorningOrEvening1Label" text="\{2:255\}"></word>
+			<word id="InTheMorningOrEvening2Label" text="\{112\} (valaAvFA) \{113\} (valaAvFA) \{114\} (valaAvFA)"></word>
+			<word id="InTheMorningOrEvening3Label" text="\{phrase:InTheMorningOrEvening3\}"></word>
+			<word id="InTheMorningOrEvening4Label" text="\{phrase:InTheMorningOrEvening4\} (valaAvFA)"></word>
+			<word id="InTheMorningOrEvening5Label" text="\{9:129:4-17\} (sabaEFA mar~aAtFA Hiyna)"></word>
+			<word id="InTheMorningOrEvening6Label" text="\{phrase:InTheMorningOrEvening6\}"></word>
+			<word id="InTheMorningOrEvening7Label" text="\{phrase:InTheMorningOrEvening7\}"></word>
+			<word id="InTheMorningOrEvening8Label" text="\{phrase:InTheMorningOrEvening8\} (valaAvFA)"></word>
+			<word id="InTheMorningOrEvening9Label" text="\{phrase:InTheMorningOrEvening9\} (valaAvFA)"></word>
+			<word id="InTheMorningOrEvening10Label" text="\{phrase:InTheMorningOrEvening10\}"></word>
+			<word id="InTheMorningOrEvening11Label" text="\{phrase:InTheMorningOrEvening11\} (miA}apu mir~apu)"></word>
+			<word id="InTheMorningOrEvening12Label" text="\{phrase:InTheMorningOrEvening12\} (miA}apu mir~apu)"></word>
+			<word id="InTheMorningOrEvening13Label" text="\{phrase:InTheMorningOrEvening13\} (Ea$arapF)"></word>
 		</category>
 		<category title="RemembranceBeforeSleeping">
 			<word id="RemembranceBeforeSleeping1" text="\{112\}\{113\}\{114\} (valaAvFA)"></word>
@@ -3547,8 +3547,8 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<word id="OddPrayerAndAfter1" text="\{87\}\{109\}\{112\} \{phrase:OddPrayerAndAfter1\}"></word>
 		</category>
 		<category title="ForAnxietyAndSorrow">
-			<word id="ForAnxietyAndSorrow1" text="\{phrase:ForAnxietyAndSorrow1\}"></word>
-			<word id="ForAnxietyAndSorrow2" text="\{phrase:ForAnxietyAndSorrow2\}"></word>
+			<word id="ForAnxietyAndSorrow1Label" text="\{phrase:ForAnxietyAndSorrow1\}"></word>
+			<word id="ForAnxietyAndSorrow2Label" text="\{phrase:ForAnxietyAndSorrow2\}"></word>
 		</category>
 		<category title="ForOneInDistress">
 			<word id="ForOneInDistress1" text="\{phrase:ForOneInDistress1\}"></word>
@@ -3721,8 +3721,8 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<word id="RemembranceAtSittingOrGathering1" text="\{phrase:RemembranceAtSittingOrGathering1\}"></word>
 		</category>
 		<category title="ForExpiationOfSinsAtTheConclusionOfSittingOrGathering">
-			<word id="ForExpiationOfSinsAtTheConclusionOfSittingOrGathering1" text="\{phrase:ForExpiationOfSinsAtTheConclusionOfSittingOrGathering1\}"></word>
-			<word id="ForExpiationOfSinsAtTheConclusionOfSittingOrGathering2" text="\{phrase:ForExpiationOfSinsAtTheConclusionOfSittingOrGathering2\}"></word>
+			<word id="ForExpiationOfSinsAtTheConclusionOfSittingOrGathering1Label" text="\{phrase:ForExpiationOfSinsAtTheConclusionOfSittingOrGathering1\}"></word>
+			<word id="ForExpiationOfSinsAtTheConclusionOfSittingOrGathering2Label" text="\{phrase:ForExpiationOfSinsAtTheConclusionOfSittingOrGathering2\}"></word>
 		</category>
 		<category title="ReturningSupplicationForForgiveness">
 			<word id="ReturningSupplicationForForgiveness1" text="\{phrase:ReturningSupplicationForForgiveness1\}"></word>
@@ -3859,12 +3859,12 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<word id="ToWardOffTheDeceptionOfTheObstinateDevils1" text="\{phrase:ToWardOffTheDeceptionOfTheObstinateDevils1\}"></word>
 		</category>
 		<category title="SeekingForgivenessAndRepentance">
-			<word id="SeekingForgivenessAndRepentance1" text=""></word>
-			<word id="SeekingForgivenessAndRepentance2" text=""></word>
-			<word id="SeekingForgivenessAndRepentance3" text="\{phrase:SeekingForgivenessAndRepentance3\}"></word>
-			<word id="SeekingForgivenessAndRepentance4" text=""></word>
-			<word id="SeekingForgivenessAndRepentance5" text=""></word>
-			<word id="SeekingForgivenessAndRepentance6" text=""></word>
+			<word id="SeekingForgivenessAndRepentance1Label" text=""></word>
+			<word id="SeekingForgivenessAndRepentance2Label" text=""></word>
+			<word id="SeekingForgivenessAndRepentance3Label" text="\{phrase:SeekingForgivenessAndRepentance3\}"></word>
+			<word id="SeekingForgivenessAndRepentance4Label" text=""></word>
+			<word id="SeekingForgivenessAndRepentance5Label" text=""></word>
+			<word id="SeekingForgivenessAndRepentance6Label" text=""></word>
 		</category>
 		<category title="ExcellenceOfRemembranceAndGlorificationOfAllah">
 			<word id="ExcellenceOfRemembranceAndGlorificationOfAllah1" text="\{phrase:ExcellenceOfRemembranceAndGlorificationOfAllah1\} (miA}apu mir~apu)"></word>
@@ -3898,91 +3898,83 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<word id="HowTheProphetMadeTasbeeh1" text="\{phrase:HowTheProphetMadeTasbeeh1\}"></word>
 		</category>
 		<category title="PurificationSupplication">
-			<word id="PurificationOfTheSoul" text="\{phrase:PurificationOfTheSoul\}"></word>
+			<word id="PurificationOfTheSoulLabel" text="\{phrase:PurificationOfTheSoul\}"></word>
 		</category>
 		<category title="AfterCallToPrayerSupplication">
-			<word id="AfterCallToPrayerFirstPart" text="\{phrase:AfterCallToPrayerFirstPart\}"></word>
-			<word id="AfterCallToPrayerSecondPart" text="\{phrase:AfterCallToPrayerSecondPart\}"></word>
-			<word id="AfterCallToPrayerThirdPart" text="\{phrase:AfterCallToPrayerThirdPart\}"></word>
+			<word id="AfterCallToPrayer" text="\{phrase:AfterCallToPrayerFirstPart,AfterCallToPrayerSecondPart,AfterCallToPrayerThirdPart\}"></word>
 		</category>
 		<category title="CallToPrayer">
-			<word id="CallToPrayerFirstVerse" text="\{phrase:AllahIsGreatest\}"></word>
-			<word id="CallToPrayerSecondVerse" text="\{phrase:TestifyingCreedOfIslamFirstPart\}"></word>
-			<word id="CallToPrayerThirdVerse" text="\{phrase:TestifyingCreedOfIslamSecondPart\}"></word>
-			<word id="CallToPrayerFourthVerse" text="\{phrase:CallToPrayerFourthVerse\}"></word>
-			<word id="CallToPrayerFifthVerse" text="\{phrase:CallToPrayerFifthVerse\}"></word>
-			<word id="CallToPrayerSixthVerse" text="\{phrase:CallToPrayerSixthVerse\}"></word>
-			<word id="CallToPrayerSeventhVerse" text="\{phrase:AllahIsGreatest\}"></word>
-			<word id="CallToPrayerEighthVerse" text="\{phrase:CreedOfIslamFirstPart\}"></word>
-			<word id="CallToBeginPrayerSixthVerse" text="\{phrase:CallToBeginPrayerSixthVerse\}"></word>
+			<word id="CallToPrayer" text="\{phrase:AllahIsGreatest,TestifyingCreedOfIslamFirstPart,TestifyingCreedOfIslamSecondPart,CallToPrayerFourthVerse,CallToPrayerFifthVerse,AllahIsGreatest,CreedOfIslamFirstPart\}"></word>
+			<word id="CallToPrayerMorning" text="\{phrase:AllahIsGreatest,TestifyingCreedOfIslamFirstPart,TestifyingCreedOfIslamSecondPart,CallToPrayerFourthVerse,CallToPrayerFifthVerse,CallToPrayerSixthVerse,AllahIsGreatest,CreedOfIslamFirstPart\}"></word>
+			<word id="CallToBeginPrayer" text="\{phrase:AllahIsGreatest,TestifyingCreedOfIslamFirstPart,TestifyingCreedOfIslamSecondPart,CallToPrayerFourthVerse,CallToPrayerFifthVerse,CallToBeginPrayerSixthVerse,AllahIsGreatest,CreedOfIslamFirstPart\}"></word>
 		</category>
 		<category title="Creed">
-			<word id="FirstCreed" text="\{phrase:CreedOfIslam\}"></word>
-			<word id="SecondCreed" text="\{phrase:TestifyingCreedOfIslamFirstPart\} \{phrase:SecondCreed\}"></word>
+			<word id="FirstCreedLabel" text="\{phrase:CreedOfIslam\}"></word>
+			<word id="SecondCreedLabel" text="\{phrase:TestifyingCreedOfIslamFirstPart\} \{phrase:SecondCreed\}"></word>
 			<word id="ThirdCreed" text="\{phrase:ThirdCreed\}"></word>
-			<word id="FourthCreed" text="\{phrase:FourthCreed\}"></word>
-			<word id="FifthCreed" text="\{phrase:FifthCreed\}"></word>
+			<word id="FourthCreedLabel" text="\{phrase:FourthCreed\}"></word>
+			<word id="FifthCreedLabel" text="\{phrase:FifthCreed\}"></word>
 			<word id="SixthCreed" text="\{phrase:SixthCreed\}"></word>
 		</category>
 		<category title="Umrah">
-			<word id="BeforeTravel" text="\{phrase:BeforeTravel\}"></word>
-			<word id="IntentionForJourneyShower" text="\{phrase:IntentionForJourneyShower\}"></word>
-			<word id="IntentionForIhramShower" text="\{phrase:IntentionForIhramShower\}"></word>
-			<word id="IntentionForJourneyPrayer" text="\{phrase:IntentionForJourneyPrayer\}"></word>
-			<word id="IntentionForIhramPrayer" text="\{phrase:IntentionForIhramPrayer\}"></word>
-			<word id="IhramPrayerSupplication" text="\{phrase:IhramPrayerSupplication\}"></word>
-			<word id="IntentionToPerformUmrah" text="\{phrase:IntentionToPerformUmrah\}"></word>
-			<word id="Talbiah" text="\{phrase:Talbiah\}"></word>
-			<word id="SalawatSupplicationAfterTalbiah" text="\{phrase:SalawatSupplicationAfterTalbiah\}"></word>
-			<word id="SupplicationAfterSalawatSupplication" text="\{phrase:SupplicationAfterSalawatSupplication\}"></word>
-			<word id="SupplicationForArrivingAtMakkah" text="\{phrase:SupplicationForArrivingAtMakkah\}"></word>
-			<word id="EnteringMasjidilHaram" text="\{phrase:EnteringMasjidilHaram\}"></word>
+			<word id="BeforeTravelLabel" text="\{phrase:BeforeTravel\}"></word>
+			<word id="IntentionForJourneyShowerLabel" text="\{phrase:IntentionForJourneyShower\}"></word>
+			<word id="IntentionForIhramShowerLabel" text="\{phrase:IntentionForIhramShower\}"></word>
+			<word id="IntentionForJourneyPrayerLabel" text="\{phrase:IntentionForJourneyPrayer\}"></word>
+			<word id="IntentionForIhramPrayerLabel" text="\{phrase:IntentionForIhramPrayer\}"></word>
+			<word id="IhramPrayerSupplicationLabel" text="\{phrase:IhramPrayerSupplication\}"></word>
+			<word id="IntentionToPerformUmrahLabel" text="\{phrase:IntentionToPerformUmrah\}"></word>
+			<word id="TalbiahLabel" text="\{phrase:Talbiah\}"></word>
+			<word id="SalawatSupplicationAfterTalbiahLabel" text="\{phrase:SalawatSupplicationAfterTalbiah\}"></word>
+			<word id="SupplicationAfterSalawatSupplicationLabel" text="\{phrase:SupplicationAfterSalawatSupplication\}"></word>
+			<word id="SupplicationForArrivingAtMakkahLabel" text="\{phrase:SupplicationForArrivingAtMakkah\}"></word>
+			<word id="EnteringMasjidilHaramLabel" text="\{phrase:EnteringMasjidilHaram\}"></word>
 		</category>
 		<category title="Celebration">
-			<word id="Celebration1" text="\{phrase:Celebration1\}"></word>
-			<word id="Celebration2" text="\{phrase:Celebration2\}"></word>
+			<word id="Celebration1Label" text="\{phrase:Celebration1\}"></word>
+			<word id="Celebration2Label" text="\{phrase:Celebration2\}"></word>
 			<word id="MayAllahAcceptFromUsAndFromYou" text="\{phrase:MayAllahAcceptFromUsAndFromYou\}"></word>
 		</category>
 		<category title="TheBestNames">
-			<word id="IntroductionBestNames" text="\{phrase:IntroductionBestNames\}"></word>
+			<word id="IntroductionBestNamesLabel" text="\{phrase:IntroductionBestNames\}"></word>
 			<word id="TheBeneficentTheMercifulTheEternalLordTheMostSacredTheEmbodimentOfPeaceTheInfuserOfFaithThePreserverOfSafetyTheMightyOneTheAllCompellingTheDominantOneTheCreatorTheEvolverTheFlawlessShaperTheVeryFirstTheInfiniteLastOneThePerceptibleTheImperceptible" text="\{phrase:TheBeneficent,TheMerciful,TheEternalLord,TheMostSacred,TheEmbodimentOfPeace,TheInfuserOfFaith,ThePreserverOfSafety,TheMightyOne,TheAllCompelling,TheDominantOne,TheCreator,TheEvolver,TheFlawlessShaper,TheVeryFirst,TheInfiniteLastOne,ThePerceptible,TheImperceptible\}"></word>
 			<word id="TheAllHearerTheAllSeeingTheMasterTheHelperTheSupremePardonerThePowerfulTheKnowerOfSubtletiesTheAllAwareOneTheOddTheBeautifulTheShyTheCovererTheGreatOneTheExtremelyExaltedOneTheOnlyOneTheAllPrevailingOne" text="\{phrase:TheAllHearer,TheAllSeeing,TheMaster,TheHelper,TheSupremePardoner,ThePowerful,TheKnowerOfSubtleties,TheAllAwareOne,TheOdd,TheBeautiful,TheShy,TheCoverer,TheGreatOne,TheExtremelyExaltedOne,TheOnlyOne,TheAllPrevailingOne\}"></word>
 			<word id="TheEmbodimentOfTruthTheClearTheStrongOneTheFirmOneTheEverLivingTheSelfSubsistingOneTheSublimeOneTheMagnificentOneTheAcknowledgingOneTheClementOneTheAllPervadingOneTheAllKnowingOneTheEverAcceptorOfRepentanceTheWiseOneTheSelfSufficientOneTheBountifulOneTheSoleOneTheSupremeProviderTheCloseTheRespondingOneThePardonerTheLovingOne" text="\{phrase:TheEmbodimentOfTruth,TheClear,TheStrongOne,TheFirmOne,TheEverLiving,TheSelfSubsistingOne,TheSublimeOne,TheMagnificentOne,TheAcknowledgingOne,TheClementOne,TheAllPervadingOne,TheAllKnowingOne,TheEverAcceptorOfRepentance,TheWiseOne,TheSelfSufficientOne,TheBountifulOne,TheSoleOne,TheSupremeProvider,TheClose,TheRespondingOne,ThePardoner,TheLovingOne\}"></word>
 			<word id="TheProtectingAssociateTheSoleLaudableOneTheGuardingOneTheGloriousOneTheSupremeSolverTheAllObservingWitnessTheExpeditingOneTheProcrastinatorTheOmnipotentKingTheAllAuthoritativeOneTheBrilliantTheTakerTheExtenderTheProviderTheIrresistableTheOneWhoRecompenses" text="\{phrase:TheProtectingAssociate,TheSoleLaudableOne,TheGuardingOne,TheGloriousOne,TheSupremeSolver,TheAllObservingWitness,TheExpeditingOne,TheProcrastinator,TheOmnipotentKing,TheAllAuthoritativeOne,TheBrilliant,TheTaker,TheExtender,TheProvider,TheIrresistable,TheOneWhoRecompenses\}"></word>
 			<word id="TheRecognizerTheBestowerTheOmnipotentOneTheContinuousCreatorTheOwnerTheTotalProviderTheUniversalTrusteeTheWatchfulOneTheDoerOfGoodTheReckoningOneTheOneWhoCuresTheGentleTheGiverTheSustainingOneTheLordTheGoodTheImpartialJudgeTheSupremeInHonourTheFountainHeadOfTruth" text="\{phrase:TheRecognizer,TheBestower,TheOmnipotentOne,TheContinuousCreator,TheOwner,TheTotalProvider,TheUniversalTrustee,TheWatchfulOne,TheDoerOfGood,TheReckoningOne,TheOneWhoCures,TheGentle,TheGiver,TheSustainingOne,TheLord,TheGood,TheImpartialJudge,TheSupremeInHonour,TheFountainHeadOfTruth\}"></word>
 			<word id="TheGreatForgiverTheBenignOneTheSupremeBestowerTheMostGenerousTheMostHolyFromAllWeaknessTheEternalInheritorTheMasterTheMostHighTheOneGodFinal1" text="\{phrase:TheGreatForgiver,TheBenignOne,TheSupremeBestower,TheMostGenerous,TheMostHolyFromAllWeakness,TheEternalInheritor,TheMaster,TheMostHigh,TheOneGod\}\{phrase:Final1\}"></word>
-			<word id="Final1" text="\{phrase:Final1\}"></word>
-			<word id="Final2" text="\{phrase:Final2\}"></word>
-			<word id="Final3" text="\{phrase:Final3\}"></word>
+			<word id="Final1Label" text="\{phrase:Final1\}"></word>
+			<word id="Final2Label" text="\{phrase:Final2\}"></word>
+			<word id="Final3Label" text="\{phrase:Final3\}"></word>
 		</category>
 		<category title="TheWhiteMoon">
-			<word id="TheWhiteMoonFirst" text="\{phrase:TheWhiteMoonFirst\}"></word>
-			<word id="TheWhiteMoonSecond" text="\{phrase:TheWhiteMoonSecond\}"></word>
-			<word id="TheWhiteMoonThird" text="\{phrase:TheWhiteMoonThird\}"></word>
-			<word id="TheWhiteMoonFourth" text="\{phrase:TheWhiteMoonFourth\}"></word>
-			<word id="TheWhiteMoonFifth" text="\{phrase:TheWhiteMoonFifth\}"></word>
-			<word id="TheWhiteMoonSixth" text="\{phrase:TheWhiteMoonSixth\}"></word>
-			<word id="TheWhiteMoonSeventh" text="\{phrase:TheWhiteMoonSeventh\}"></word>
-			<word id="TheWhiteMoonEighth" text="\{phrase:TheWhiteMoonEighth\}"></word>
+			<word id="TheWhiteMoonFirstLabel" text="\{phrase:TheWhiteMoonFirst\}"></word>
+			<word id="TheWhiteMoonSecondLabel" text="\{phrase:TheWhiteMoonSecond\}"></word>
+			<word id="TheWhiteMoonThirdLabel" text="\{phrase:TheWhiteMoonThird\}"></word>
+			<word id="TheWhiteMoonFourthLabel" text="\{phrase:TheWhiteMoonFourth\}"></word>
+			<word id="TheWhiteMoonFifthLabel" text="\{phrase:TheWhiteMoonFifth\}"></word>
+			<word id="TheWhiteMoonSixthLabel" text="\{phrase:TheWhiteMoonSixth\}"></word>
+			<word id="TheWhiteMoonSeventhLabel" text="\{phrase:TheWhiteMoonSeventh\}"></word>
+			<word id="TheWhiteMoonEighthLabel" text="\{phrase:TheWhiteMoonEighth\}"></word>
 		</category>
 		<category title="PopularIslamicSongVerses">
-			<word id="OMasterSendPrayersAndPeace" text="\{phrase:OMasterSendPrayersAndPeace\}"></word>
+			<word id="OMasterSendPrayersAndPeaceLabel" text="\{phrase:OMasterSendPrayersAndPeace\}"></word>
 			<word id="SalutationsUponYouOfAllah" text="\{phrase:SalutationsUponYouOfAllah\}"></word>
 			<word id="O" text="\{phrase:O\}"></word>
 		</category>
 		<category title="Remembrance">
-			<word id="RemembranceFirst" text="\{21:87:15-23\}"></word>
-			<word id="RemembranceSecond" text="\{phrase:RemembranceSecond\}"></word>
-			<word id="RemembranceThird" text="\{phrase:RemembranceThird\}"></word>
-			<word id="SendBlessingsFirst" text="\{phrase:SendBlessingsFirst\}"></word>
-			<word id="SendBlessingsSecond" text="\{phrase:SendBlessingsSecond\}"></word>
-			<word id="IntroductionFirst" text=" \{3:102\}\{4:1\}\{33:70-71\}"></word>
-			<word id="IntroductionSecond" text="\{phrase:IntroductionSecond\}"></word>
+			<word id="RemembranceFirstLabel" text="\{21:87:15-23\}"></word>
+			<word id="RemembranceSecondLabel" text="\{phrase:RemembranceSecond\}"></word>
+			<word id="RemembranceThirdLabel" text="\{phrase:RemembranceThird\}"></word>
+			<word id="SendBlessingsFirstLabel" text="\{phrase:SendBlessingsFirst\}"></word>
+			<word id="SendBlessingsSecondLabel" text="\{phrase:SendBlessingsSecond\}"></word>
+			<word id="IntroductionFirstLabel" text=" \{3:102\}\{4:1\}\{33:70-71\}"></word>
+			<word id="IntroductionSecondLabel" text="\{phrase:IntroductionSecond\}"></word>
 			<word id="ForKnowledge" text="\{20:114:17-19\}"></word>
-			<word id="RemembranceFourth" text="\{phrase:RemembranceFourth\}"></word>
-			<word id="RemembranceFifth" text="\{phrase:RemembranceFifth\}"></word>
-			<word id="RemembranceSixth" text="\{phrase:RemembranceSixth\}"></word>
-			<word id="RemembranceSeventh" text="\{phrase:RemembranceSeventh\}"></word>
+			<word id="RemembranceFourthLabel" text="\{phrase:RemembranceFourth\}"></word>
+			<word id="RemembranceFifthLabel" text="\{phrase:RemembranceFifth\}"></word>
+			<word id="RemembranceSixthLabel" text="\{phrase:RemembranceSixth\}"></word>
+			<word id="RemembranceSeventhLabel" text="\{phrase:RemembranceSeventh\}"></word>
 			<word id="WhenSomethingIsDifficult" text="\{phrase:WhenSomethingIsDifficult\}"></word>
 			<!-- Oh Allah! Nothing is easy except what You have made easy. If You wish, You can make the difficult easy. -->
 		</category>

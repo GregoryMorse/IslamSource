@@ -564,16 +564,16 @@
   <data name="IslamInfo_Celebration" xml:space="preserve">
     <value>Celebration</value>
   </data>
-  <data name="IslamInfo_Celebration1" xml:space="preserve">
+  <data name="IslamInfo_Celebration1Label" xml:space="preserve">
     <value>Celebration</value>
   </data>
-  <data name="IslamInfo_Celebration1Trans" xml:space="preserve">
+  <data name="IslamInfo_Celebration1" xml:space="preserve">
     <value>Allah is greatest, Allah is greatest, Allah is greatest, there is no God except Allah, and Allah is greatest, Allah is greatest, and to Allah is all praise and thanks</value>
   </data>
-  <data name="IslamInfo_Celebration2" xml:space="preserve">
+  <data name="IslamInfo_Celebration2Label" xml:space="preserve">
     <value>Celebration</value>
   </data>
-  <data name="IslamInfo_Celebration2Trans" xml:space="preserve">
+  <data name="IslamInfo_Celebration2" xml:space="preserve">
     <value>O Allah, truly You are Most Forgiving and You love forgiveness so forgive me</value>
   </data>
   <data name="IslamInfo_DayOfWeek1" xml:space="preserve">
@@ -804,19 +804,16 @@
   <data name="IslamInfo_Adam" xml:space="preserve">
     <value>Adam</value>
   </data>
-  <data name="IslamInfo_AfterCallToPrayerFirstPart" xml:space="preserve">
-    <value>After call to prayer - first part</value>
+  <data name="IslamInfo_AfterCallToPrayer" xml:space="preserve">
+    <value>After call to prayer</value>
   </data>
-  <data name="IslamInfo_AfterCallToPrayerFirstPartTrans" xml:space="preserve">
+  <data name="IslamInfo_AfterCallToPrayerFirstPart" xml:space="preserve">
     <value>O Allah, lord of this call complete and prayer of ours</value>
   </data>
   <data name="IslamInfo_AfterCallToPrayerFirstPartWordByWord" xml:space="preserve">
     <value>O Allah|Lord|of this|call|complete|and prayer|of ours</value>
   </data>
   <data name="IslamInfo_AfterCallToPrayerSecondPart" xml:space="preserve">
-    <value>After call to prayer - second part</value>
-  </data>
-  <data name="IslamInfo_AfterCallToPrayerSecondPartTrans" xml:space="preserve">
     <value>Give to Muhammad his rights of intercession and virtue</value>
   </data>
   <data name="IslamInfo_AfterCallToPrayerSecondPartWordByWord" xml:space="preserve">
@@ -826,9 +823,6 @@
     <value>After Call to Prayer Supplication</value>
   </data>
   <data name="IslamInfo_AfterCallToPrayerThirdPart" xml:space="preserve">
-    <value>After call to prayer - third part</value>
-  </data>
-  <data name="IslamInfo_AfterCallToPrayerThirdPartTrans" xml:space="preserve">
     <value>And raise him to the elevated rank which you have promised him</value>
   </data>
   <data name="IslamInfo_AfterCallToPrayerThirdPartWordByWord" xml:space="preserve">
@@ -855,10 +849,10 @@
   <data name="IslamInfo_Arial" xml:space="preserve">
     <value>Arial</value>
   </data>
-  <data name="IslamInfo_BeforeTravel" xml:space="preserve">
+  <data name="IslamInfo_BeforeTravelLabel" xml:space="preserve">
     <value>Before travel</value>
   </data>
-  <data name="IslamInfo_BeforeTravelTrans" xml:space="preserve">
+  <data name="IslamInfo_BeforeTravel" xml:space="preserve">
     <value>I hereby leave you with this religion, Amanah (responsibility) and your previous deed for Allah.</value>
   </data>
   <data name="IslamInfo_BeforeTravelWordByWord" xml:space="preserve">
@@ -867,10 +861,10 @@
   <data name="IslamInfo_BowOfPrayer" xml:space="preserve">
     <value>Bow of prayer</value>
   </data>
-  <data name="IslamInfo_CallToBeginPrayerSixthVerse" xml:space="preserve">
-    <value>Call to begin prayer - sixth verse</value>
+  <data name="IslamInfo_CallToBeginPrayer" xml:space="preserve">
+    <value>Call to begin prayer</value>
   </data>
-  <data name="IslamInfo_CallToBeginPrayerSixthVerseTrans" xml:space="preserve">
+  <data name="IslamInfo_CallToBeginPrayerSixthVerse" xml:space="preserve">
     <value>Indeed has begun the prayer</value>
   </data>
   <data name="IslamInfo_CallToBeginPrayerSixthVerseWordByWord" xml:space="preserve">
@@ -883,36 +877,30 @@
     <value>Call to prayer</value>
   </data>
   <data name="IslamInfo_CallToPrayerEighthVerse" xml:space="preserve">
-    <value>Call to prayer - eighth verse</value>
-  </data>
-  <data name="IslamInfo_CallToPrayerEighthVerseTrans" xml:space="preserve">
     <value>There is no God except Allah</value>
   </data>
   <data name="IslamInfo_CallToPrayerEighthVerseWordByWord" xml:space="preserve">
     <value>There is no|God|except|Allah</value>
   </data>
   <data name="IslamInfo_CallToPrayerFifthVerse" xml:space="preserve">
-    <value>Call to prayer - fifth verse</value>
-  </data>
-  <data name="IslamInfo_CallToPrayerFifthVerseTrans" xml:space="preserve">
     <value>Come to success</value>
   </data>
   <data name="IslamInfo_CallToPrayerFifthVerseWordByWord" xml:space="preserve">
     <value>Come|to|success</value>
   </data>
-  <data name="IslamInfo_CallToPrayerFirstVerse" xml:space="preserve">
-    <value>Call to prayer - first verse</value>
+  <data name="IslamInfo_CallToPrayer" xml:space="preserve">
+    <value>Call to prayer</value>
   </data>
-  <data name="IslamInfo_CallToPrayerFirstVerseTrans" xml:space="preserve">
+  <data name="IslamInfo_CallToPrayerMorning" xml:space="preserve">
+    <value>Call to morning prayer</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerFirstVerse" xml:space="preserve">
     <value>Allah is greatest</value>
   </data>
   <data name="IslamInfo_CallToPrayerFirstVerseWordByWord" xml:space="preserve">
     <value>Allah is|greatest</value>
   </data>
   <data name="IslamInfo_CallToPrayerFourthVerse" xml:space="preserve">
-    <value>Call to prayer - fourth verse</value>
-  </data>
-  <data name="IslamInfo_CallToPrayerFourthVerseTrans" xml:space="preserve">
     <value>Come to prayer</value>
   </data>
   <data name="IslamInfo_CallToPrayerFourthVerseWordByWord" xml:space="preserve">
@@ -922,36 +910,24 @@
     <value>Call to prayer leader</value>
   </data>
   <data name="IslamInfo_CallToPrayerSecondVerse" xml:space="preserve">
-    <value>Call to prayer - second verse</value>
-  </data>
-  <data name="IslamInfo_CallToPrayerSecondVerseTrans" xml:space="preserve">
     <value>I testify that there is no God except Allah</value>
   </data>
   <data name="IslamInfo_CallToPrayerSecondVerseWordByWord" xml:space="preserve">
     <value>I testify|that|there is no|God|except|Allah</value>
   </data>
   <data name="IslamInfo_CallToPrayerSeventhVerse" xml:space="preserve">
-    <value>Call to prayer - seventh verse</value>
-  </data>
-  <data name="IslamInfo_CallToPrayerSeventhVerseTrans" xml:space="preserve">
     <value>Allah is greatest</value>
   </data>
   <data name="IslamInfo_CallToPrayerSeventhVerseWordByWord" xml:space="preserve">
     <value>Allah is|greatest</value>
   </data>
   <data name="IslamInfo_CallToPrayerSixthVerse" xml:space="preserve">
-    <value>Call to prayer - sixth verse</value>
-  </data>
-  <data name="IslamInfo_CallToPrayerSixthVerseTrans" xml:space="preserve">
     <value>Prayer is better than sleep</value>
   </data>
   <data name="IslamInfo_CallToPrayerSixthVerseWordByWord" xml:space="preserve">
     <value>Prayer is|better|than|sleep</value>
   </data>
   <data name="IslamInfo_CallToPrayerThirdVerse" xml:space="preserve">
-    <value>Call to prayer - third verse</value>
-  </data>
-  <data name="IslamInfo_CallToPrayerThirdVerseTrans" xml:space="preserve">
     <value>I testify that Muhammad is the messenger of Allah</value>
   </data>
   <data name="IslamInfo_CallToPrayerThirdVerseWordByWord" xml:space="preserve">
@@ -987,10 +963,10 @@
   <data name="IslamInfo_Enoch" xml:space="preserve">
     <value>Enoch</value>
   </data>
-  <data name="IslamInfo_EnteringMasjidilHaram" xml:space="preserve">
+  <data name="IslamInfo_EnteringMasjidilHaramLabel" xml:space="preserve">
     <value>Entering Masjidil Haram</value>
   </data>
-  <data name="IslamInfo_EnteringMasjidilHaramTrans" xml:space="preserve">
+  <data name="IslamInfo_EnteringMasjidilHaram" xml:space="preserve">
     <value>O Allah! Thou art peace and peace is from Thee! Our Lord! Cause us to live with peace, and cause us to enter The House of Peace. Our Lord, Owner of Honour and Majesty, Thou art most Blessed and Exalted! O Allah! Grant me with Thou blessings and forgiveness, live me in it in the Name of Allah, and all Praise is to Allah, salawat and Salam to our Master Sayyidina Muhammad.</value>
   </data>
   <data name="IslamInfo_EnteringMasjidilHaramWordByWord" xml:space="preserve">
@@ -999,19 +975,19 @@
   <data name="IslamInfo_Ezekiel" xml:space="preserve">
     <value>Ezekiel</value>
   </data>
-  <data name="IslamInfo_FifthCreed" xml:space="preserve">
+  <data name="IslamInfo_FifthCreedLabel" xml:space="preserve">
     <value>Fifth creed - The word of Penitence (Astaghfar)</value>
   </data>
-  <data name="IslamInfo_FifthCreedTrans" xml:space="preserve">
+  <data name="IslamInfo_FifthCreed" xml:space="preserve">
     <value>I seek forgiveness from Allah, my Lord, from every sin I committed knowingly or unknowingly, secretly or openly, and I turn towards Him from the sin that I know and from the sin that I do not know. Certainly You, You (are) the knower of the hidden things and the Concealer (of) the mistakes and the Forgiver (of) the sins. And (there is) no power and no strength except from Allah, the Most High, the Most Great.</value>
   </data>
   <data name="IslamInfo_FifthCreedWordByWord" xml:space="preserve">
     <value>I seek forgiveness|from Allah|my Lord|from|every|sin|I commited|knowingly|or|unknowningly|secretly|or|openly|and I turn towards|Him|from|the sin|that|I know|and from|the sin|that|not|I know|certainly|you are|the knower|of the hidden things|and Concealer|of the mistakes|and Forgiver|of sins|and no|might|and no|strength|except|with Allah|the most High|the most Magnificent</value>
   </data>
-  <data name="IslamInfo_FirstCreed" xml:space="preserve">
+  <data name="IslamInfo_FirstCreedLabel" xml:space="preserve">
     <value>First creed - The Word of Purity (Tayyabah)</value>
   </data>
-  <data name="IslamInfo_FirstCreedTrans" xml:space="preserve">
+  <data name="IslamInfo_FirstCreed" xml:space="preserve">
     <value>There is no God except Allah Muhammad is the Messenger of Allah.</value>
   </data>
   <data name="IslamInfo_FirstCreedWordByWord" xml:space="preserve">
@@ -1023,22 +999,16 @@
   <data name="IslamInfo_BeforeUndressing" xml:space="preserve">
     <value>Before Undressing</value>
   </data>
-  <data name="IslamInfo_BeforeUndressing1" xml:space="preserve">
+  <data name="IslamInfo_BeforeUndressing1Label" xml:space="preserve">
     <value>Before Undressing</value>
-  </data>
-  <data name="IslamInfo_BeforeUndressing1Trans" xml:space="preserve">
-    <value>In the name of Allah.</value>
-  </data>
-  <data name="IslamInfo_BeforeUndressing1WordByWord" xml:space="preserve">
-    <value>In the name of|Allah</value>
   </data>
   <data name="IslamInfo_BeforeEnteringTheToilet" xml:space="preserve">
     <value>Before Entering The Toilet</value>
   </data>
-  <data name="IslamInfo_BeforeEnteringTheToilet1" xml:space="preserve">
+  <data name="IslamInfo_BeforeEnteringTheToilet1Label" xml:space="preserve">
     <value>After Leaving The Toilet</value>
   </data>
-  <data name="IslamInfo_BeforeEnteringTheToilet1Trans" xml:space="preserve">
+  <data name="IslamInfo_BeforeEnteringTheToilet1" xml:space="preserve">
     <value>(In the name of Allah). (Then) O Allah, I seek protection in You from the male and female unclean spirits.</value>
   </data>
   <data name="IslamInfo_BeforeEnteringTheToilet1WordByWord" xml:space="preserve">
@@ -1047,10 +1017,10 @@
   <data name="IslamInfo_AfterLeavingTheToilet" xml:space="preserve">
     <value>After Leaving The Toilet</value>
   </data>
-  <data name="IslamInfo_AfterLeavingTheToilet1" xml:space="preserve">
+  <data name="IslamInfo_AfterLeavingTheToilet1Label" xml:space="preserve">
     <value>After Leaving The Toilet</value>
   </data>
-  <data name="IslamInfo_AfterLeavingTheToilet1Trans" xml:space="preserve">
+  <data name="IslamInfo_AfterLeavingTheToilet1" xml:space="preserve">
     <value>I seek Your forgiveness.</value>
   </data>
   <data name="IslamInfo_AfterLeavingTheToilet1WordByWord" xml:space="preserve">
@@ -1059,43 +1029,37 @@
   <data name="IslamInfo_WhenStartingAblution" xml:space="preserve">
     <value>When Starting Ablution</value>
   </data>
-  <data name="IslamInfo_WhenStartingAblution1" xml:space="preserve">
+  <data name="IslamInfo_WhenStartingAblution1Label" xml:space="preserve">
     <value>When Starting Ablution</value>
-  </data>
-  <data name="IslamInfo_WhenStartingAblution1Trans" xml:space="preserve">
-    <value>In the name of Allah.</value>
-  </data>
-  <data name="IslamInfo_WhenStartingAblution1WordByWord" xml:space="preserve">
-    <value>In the name of|Allah</value>
   </data>
   <data name="IslamInfo_UponCompletingAblution" xml:space="preserve">
     <value>Upon Completing Ablution</value>
   </data>
-  <data name="IslamInfo_UponCompletingAblution1" xml:space="preserve">
+  <data name="IslamInfo_UponCompletingAblution1Label" xml:space="preserve">
     <value>Upon Completing Ablution</value>
   </data>
-  <data name="IslamInfo_UponCompletingAblution1Trans" xml:space="preserve">
+  <data name="IslamInfo_UponCompletingAblution1" xml:space="preserve">
     <value>I bear witness that none has the right to be worshipped but Allah alone, Who has no partner; and I bear witness that Muhammad is His slave and His Messenger.</value>
   </data>
   <data name="IslamInfo_UponCompletingAblution1WordByWord" xml:space="preserve">
     <value>I bear witness|that|none|has the right to be worshipped|but|Allah|alone|no|partner|has He|and I bear witness|that|Muhammad|is His slave|and His Messenger</value>
   </data>
-  <data name="IslamInfo_UponCompletingAblution2" xml:space="preserve">
+  <data name="IslamInfo_UponCompletingAblution2Label" xml:space="preserve">
     <value>Upon Completing Ablution</value>
   </data>
-  <data name="IslamInfo_UponCompletingAblution2Trans" xml:space="preserve">
+  <data name="IslamInfo_UponCompletingAblution2" xml:space="preserve">
     <value>O Allah, make me among those who turn to You in repentance, and make me among those who are purified.</value>
   </data>
   <data name="IslamInfo_UponCompletingAblution2WordByWord" xml:space="preserve">
     <value>O Allah|make me|among|those who turn to You in repentance|and make me|among|those who are purified</value>
   </data>
-  <data name="IslamInfo_UponCompletingAblution3" xml:space="preserve">
+  <data name="IslamInfo_UponCompletingAblution3Label" xml:space="preserve">
     <value>Upon Completing Ablution</value>
   </data>
-  <data name="IslamInfo_ForExpiationOfSinsAtTheConclusionOfSittingOrGathering1" xml:space="preserve">
+  <data name="IslamInfo_ForExpiationOfSinsAtTheConclusionOfSittingOrGathering1Label" xml:space="preserve">
     <value>For Expiation Of Sins At The Conclusion Of Sitting Or Gathering</value>
   </data>
-  <data name="IslamInfo_ForExpiationOfSinsAtTheConclusionOfSittingOrGathering1Trans" xml:space="preserve">
+  <data name="IslamInfo_ForExpiationOfSinsAtTheConclusionOfSittingOrGathering1" xml:space="preserve">
     <value>Glory is to You, O Allah, and praise; I bear witness that there is none worthy of worship but You.  I seek Your forgiveness and turn to You in repentance.</value>
   </data>
   <data name="IslamInfo_ForExpiationOfSinsAtTheConclusionOfSittingOrGathering1WordByWord" xml:space="preserve">
@@ -1104,19 +1068,19 @@
   <data name="IslamInfo_WhenLeavingTheHome" xml:space="preserve">
     <value>When Leaving The Home</value>
   </data>
-  <data name="IslamInfo_WhenLeavingTheHome1" xml:space="preserve">
+  <data name="IslamInfo_WhenLeavingTheHome1Label" xml:space="preserve">
     <value>When Leaving The Home</value>
   </data>
-  <data name="IslamInfo_WhenLeavingTheHome1Trans" xml:space="preserve">
+  <data name="IslamInfo_WhenLeavingTheHome1" xml:space="preserve">
     <value>In the name of Allah, I have placed my trust in Allah, there is no might and no power except by Allah.</value>
   </data>
   <data name="IslamInfo_WhenLeavingTheHome1WordByWord" xml:space="preserve">
     <value>In the name of|Allah|I have placed my trust|in|Allah|there is no|might|and no|power|except|by Allah</value>
   </data>
-  <data name="IslamInfo_WhenLeavingTheHome2" xml:space="preserve">
+  <data name="IslamInfo_WhenLeavingTheHome2Label" xml:space="preserve">
     <value>When Leaving The Home</value>
   </data>
-  <data name="IslamInfo_WhenLeavingTheHome2Trans" xml:space="preserve">
+  <data name="IslamInfo_WhenLeavingTheHome2" xml:space="preserve">
     <value>O Allah, I seek refuge in You lest I misguide others, or I am misguided by others, lest I cause others to err or I am caused to err, lest I abuse others or be abused, and lest I behave foolishly or meet with the foolishness of others.</value>
   </data>
   <data name="IslamInfo_WhenLeavingTheHome2WordByWord" xml:space="preserve">
@@ -1125,10 +1089,10 @@
   <data name="IslamInfo_UponEnteringTheHome" xml:space="preserve">
     <value>Upon Entering The Home</value>
   </data>
-  <data name="IslamInfo_UponEnteringTheHome1" xml:space="preserve">
+  <data name="IslamInfo_UponEnteringTheHome1Label" xml:space="preserve">
     <value>Upon Entering The Home</value>
   </data>
-  <data name="IslamInfo_UponEnteringTheHome1Trans" xml:space="preserve">
+  <data name="IslamInfo_UponEnteringTheHome1" xml:space="preserve">
     <value>In the name of Allah, we enter, in the name of Allah we leave and upon Allah our Lord we depend.</value>
   </data>
   <data name="IslamInfo_UponEnteringTheHome1WordByWord" xml:space="preserve">
@@ -1137,10 +1101,10 @@
   <data name="IslamInfo_UponEnteringTheMosque" xml:space="preserve">
     <value>Upon Entering The Mosque</value>
   </data>
-  <data name="IslamInfo_UponEnteringTheMosque1" xml:space="preserve">
+  <data name="IslamInfo_UponEnteringTheMosque1Label" xml:space="preserve">
     <value>Upon Entering The Mosque</value>
   </data>
-  <data name="IslamInfo_UponEnteringTheMosque1Trans" xml:space="preserve">
+  <data name="IslamInfo_UponEnteringTheMosque1" xml:space="preserve">
     <value>I seek refuge in Almighty Allah, by His Noble Face, by His primordial power, from Satan the outcast.  (In the Name of Allah, and blessings.)  (And peace be upon the Messenger of Allah.)  O Allah, open before me the doors of your mercy.</value>
   </data>
   <data name="IslamInfo_UponEnteringTheMosque1WordByWord" xml:space="preserve">
@@ -1149,10 +1113,10 @@
   <data name="IslamInfo_UponLeavingTheMosque" xml:space="preserve">
     <value>Upon Leaving The Mosque</value>
   </data>
-  <data name="IslamInfo_UponLeavingTheMosque1" xml:space="preserve">
+  <data name="IslamInfo_UponLeavingTheMosque1Label" xml:space="preserve">
     <value>Upon Leaving The Mosque</value>
   </data>
-  <data name="IslamInfo_UponLeavingTheMosque1Trans" xml:space="preserve">
+  <data name="IslamInfo_UponLeavingTheMosque1" xml:space="preserve">
     <value>In the name of Allah, and peace and blessings be upon the Messenger of Allah.  O Allah, I ask for your favor, O Allah, protect me from Satan the outcast.</value>
   </data>
   <data name="IslamInfo_UponLeavingTheMosque1WordByWord" xml:space="preserve">
@@ -1161,10 +1125,10 @@
   <data name="IslamInfo_ImmediatelyFollowingDeclarationOfFaithInCallToPrayer" xml:space="preserve">
     <value>Immediately Following Declaration Of Faith In Call To Prayer</value>
   </data>
-  <data name="IslamInfo_ImmediatelyFollowingDeclarationOfFaithInCallToPrayer1" xml:space="preserve">
+  <data name="IslamInfo_ImmediatelyFollowingDeclarationOfFaithInCallToPrayer1Label" xml:space="preserve">
     <value>Immediately Following Declaration Of Faith In Call To Prayer</value>
   </data>
-  <data name="IslamInfo_ImmediatelyFollowingDeclarationOfFaithInCallToPrayer1Trans" xml:space="preserve">
+  <data name="IslamInfo_ImmediatelyFollowingDeclarationOfFaithInCallToPrayer1" xml:space="preserve">
     <value>I bear witness that none has the right to be worshipped but Allah alone, Who has no partner, and that Muhammad is His slave and His Messenger.  I am pleased with Allah as my Lord, with Muhammad as my Messenger and with Islam as my religion.</value>
   </data>
   <data name="IslamInfo_ImmediatelyFollowingDeclarationOfFaithInCallToPrayer1WordByWord" xml:space="preserve">
@@ -1173,55 +1137,55 @@
   <data name="IslamInfo_AtTheStartOfPrayer" xml:space="preserve">
     <value>At The Start Of Prayer</value>
   </data>
-  <data name="IslamInfo_AtTheStartOfPrayer1" xml:space="preserve">
+  <data name="IslamInfo_AtTheStartOfPrayer1Label" xml:space="preserve">
     <value>At The Start Of Prayer</value>
   </data>
-  <data name="IslamInfo_AtTheStartOfPrayer1Trans" xml:space="preserve">
+  <data name="IslamInfo_AtTheStartOfPrayer1" xml:space="preserve">
     <value>O Allah, separate me from my sins as You have separated the East from the West.  O Allah, cleanse me of my transgressions as the white garment is cleansed of stains.  O Allah, wash away my sins with ice and water and frost.</value>
   </data>
   <data name="IslamInfo_AtTheStartOfPrayer1WordByWord" xml:space="preserve">
     <value>O Allah,|separate|me|from|my sins|as|You have separated||the East|from the West.|O Allah,|cleanse me|of|my transgressions|as|is cleansed|the garment|white|of|stains.|O Allah,|wash|away|my sins|with ice|and water|and frost.</value>
   </data>
-  <data name="IslamInfo_AtTheStartOfPrayer2" xml:space="preserve">
+  <data name="IslamInfo_AtTheStartOfPrayer2Label" xml:space="preserve">
     <value>At The Start Of Prayer</value>
   </data>
-  <data name="IslamInfo_AtTheStartOfPrayer2Trans" xml:space="preserve">
+  <data name="IslamInfo_AtTheStartOfPrayer2" xml:space="preserve">
     <value>Glory is to You, O Allah, and praise, Blessed is Your Name and Exalted is Your Majesty, There is none worthy of worship but You.</value>
   </data>
   <data name="IslamInfo_AtTheStartOfPrayer2WordByWord" xml:space="preserve">
     <value>Glory is to You,|O Allah,|and praise,|Blessed is|Your Name|and Exalted|is Your Majesty,|There is none|worthy of worship|but You.</value>
   </data>
-  <data name="IslamInfo_AtTheStartOfPrayer3" xml:space="preserve">
+  <data name="IslamInfo_AtTheStartOfPrayer3Label" xml:space="preserve">
     <value>At The Start Of Prayer</value>
   </data>
-  <data name="IslamInfo_AtTheStartOfPrayer3Trans" xml:space="preserve">
+  <data name="IslamInfo_AtTheStartOfPrayer3" xml:space="preserve">
     <value>I turn my face towards the One Who created the heavens and the earth, as a true believer.  I am not of those who associate partners with Allah.  Verily, my prayer and my devotion, my living and my death, are for Allah, Lord of the worlds, He has no partners.  Thus I have been commanded and I am among those who have submitted.  O Allah, You are the King, there is none worthy of worship but You.  You are my Lord and I am Your slave.  I have wronged my own soul and confess my sin.  Forgive all of my sins, surely none forgives sins but You.  Guide me to the perfection of my character, for none guides to its perfection but You.  Protect me from the evils of my character, for none may protect me from its evils but You.  I am here at Your service.  All goodness is in Your Hands, and evil is not attributed to You.  I am (created) by You, and I am (returning) to You.  You are Most Blessed, Most Exalted.  I seek Your forgiveness and repent to You.</value>
   </data>
   <data name="IslamInfo_AtTheStartOfPrayer3WordByWord" xml:space="preserve">
     <value>I turn|my face|towards the One Who|created|the heavens|and the earth,|as a true believer.|not|I am|of those|who associate partners with Allah.|Verily,|my prayer|and my devotion,|my living|and my death,|are for Allah,|Lord|of the worlds,|no|partners|has He.|Thus|I have been commanded|and I am|among those who|have submitted.|O Allah,|You|are the King,|there is none|worthy of worship|but|You.|You|are my Lord|and I am|Your slave.|I have wronged|my own soul|and confess|my sin.|Forgive|me for|my sins|all of,|surely|none|forgives|sins|but|You.|Guide me|to the perfection|of my character,|for none|guides|to its perfection|but|You.|Protect|me from|the evils of my character,|for none|may protect|me from|its evils|but|You.|I am here|at Your service.|goodness|All|is in Your Hands,|and evil|is not attributed|to You.|I|am (created) by You|and I am (returning) to You.|You are Most Blessed,|Most Exalted.|I seek Your forgiveness|and repent|to You.</value>
   </data>
-  <data name="IslamInfo_AtTheStartOfPrayer4" xml:space="preserve">
+  <data name="IslamInfo_AtTheStartOfPrayer4Label" xml:space="preserve">
     <value>At The Start Of Prayer</value>
   </data>
-  <data name="IslamInfo_AtTheStartOfPrayer4Trans" xml:space="preserve">
+  <data name="IslamInfo_AtTheStartOfPrayer4" xml:space="preserve">
     <value>O Allah, Lord of Jibra'il, Mika'il and Israfil.  Maker of the heavens and the earth.  Knower of the unseen and the seen.  You judge between Your slaves regarding that in which they differ.  Guide me to the truth regarding that in which there is difference, by Your Leave.  Surely, You guide whomever you please to the straight path.</value>
   </data>
   <data name="IslamInfo_AtTheStartOfPrayer4WordByWord" xml:space="preserve">
     <value>O Allah,|Lord|of Jibra'il,|Mika'il|and Israfil.|Maker of|the heavens|and the earth.|Knower of|the unseen|and the seen.|You|judge|between|Your slaves|that|regarding|in which|they differ.|Guide me|to that|there is difference regarding|in which|from|the truth,|by Your Leave.|Surely,|You guide||whomever you please|to|the straight|path.</value>
   </data>
-  <data name="IslamInfo_AtTheStartOfPrayer5" xml:space="preserve">
+  <data name="IslamInfo_AtTheStartOfPrayer5Label" xml:space="preserve">
     <value>At The Start Of Prayer</value>
   </data>
-  <data name="IslamInfo_AtTheStartOfPrayer5Trans" xml:space="preserve">
+  <data name="IslamInfo_AtTheStartOfPrayer5" xml:space="preserve">
     <value>Allah is the Greatest, Most Great.  Allah is the Greatest, Most Great.  Allah is the Greatest, Most Great.  Praise is to Allah, abundantly.  Praise is to Allah, abundantly.  Praise is to Allah, abundantly.  Glory is to Allah, at the break of day and at its end.  (3x).  I seek refuge in Allah from Satan, From his breath and from his voice and from his whisper.</value>
   </data>
   <data name="IslamInfo_AtTheStartOfPrayer5WordByWord" xml:space="preserve">
     <value>Allah|is the Greatest,|Most Great.|Allah|is the Greatest,|Most Great.|Allah|is the Greatest,|Most Great.|Praise|is to Allah,|abundantly.|Praise|is to Allah,|abundantly.|Praise|is to Allah,|abundantly.|Glory|is to Allah,|at the break of day|and at its end.|(3x)|I seek refuge|in Allah|from|Satan,|From|his breath|and from his voice|and from his whisper.</value>
   </data>
-  <data name="IslamInfo_AtTheStartOfPrayer6" xml:space="preserve">
+  <data name="IslamInfo_AtTheStartOfPrayer6Label" xml:space="preserve">
     <value>At The Start Of Prayer</value>
   </data>
-  <data name="IslamInfo_AtTheStartOfPrayer6Trans" xml:space="preserve">
+  <data name="IslamInfo_AtTheStartOfPrayer6" xml:space="preserve">
     <value>O Allah, praise is to You.  You are the light of the heavens and the earth and all that they contain.  Praise is to You, You are the Sustainer of the heavens and the earth and all they contain.  (Praise is to You, You are the Lord of the heavens and the earth and all they contain.)  (Praise is to You, Yours is dominion of the heavens and the earth and all they contain.)  (Praise is to You, You are the King of the heavens and the earth.)  (And praise is to you.)  (You are the truth, Your Promise is true, Your Word is true, Your audience is true, Paradise is true, Hell is true, the Prophets are true, and Muhammad (peace and blessings be upon him) is true, and the Hour of Judgement is true.)  (O Allah, to You I have submitted, and upon You I depend.  I have believed in You and to You I turn in repentence.  For Your sake I dispute and by Your standard I judge.  Forgive me what I have sent before me and what I have let behind me, what I have concealed and what I have declared.)  (You are the One Who sends forth and You are the One Who delays, there is none who has the right to be worshipped but You.)  (You are my God, there is none who has the right to be worshipped but You.)</value>
   </data>
   <data name="IslamInfo_AtTheStartOfPrayer6WordByWord" xml:space="preserve">
@@ -1230,46 +1194,46 @@
   <data name="IslamInfo_WhileBowingInPrayer" xml:space="preserve">
     <value>While Bowing In Prayer</value>
   </data>
-  <data name="IslamInfo_WhileBowingInPrayer1" xml:space="preserve">
+  <data name="IslamInfo_WhileBowingInPrayer1Label" xml:space="preserve">
     <value>While Bowing In Prayer</value>
   </data>
-  <data name="IslamInfo_WhileBowingInPrayer1Trans" xml:space="preserve">
+  <data name="IslamInfo_WhileBowingInPrayer1" xml:space="preserve">
     <value>Glory to my Lord the Exalted (3x).</value>
   </data>
   <data name="IslamInfo_WhileBowingInPrayer1WordByWord" xml:space="preserve">
     <value>Glory|to my Lord|the Exalted.</value>
   </data>
-  <data name="IslamInfo_WhileBowingInPrayer2" xml:space="preserve">
+  <data name="IslamInfo_WhileBowingInPrayer2Label" xml:space="preserve">
     <value>While Bowing In Prayer</value>
   </data>
-  <data name="IslamInfo_WhileBowingInPrayer2Trans" xml:space="preserve">
+  <data name="IslamInfo_WhileBowingInPrayer2" xml:space="preserve">
     <value>Glory is to You, O Allah, our Lord, and praise is Yours.  O Allah, forgive me.</value>
   </data>
   <data name="IslamInfo_WhileBowingInPrayer2WordByWord" xml:space="preserve">
     <value>Glory is to You,|O Allah,|our Lord,|and praise is Yours.|O Allah,|forgive|me.</value>
   </data>
-  <data name="IslamInfo_WhileBowingInPrayer3" xml:space="preserve">
+  <data name="IslamInfo_WhileBowingInPrayer3Label" xml:space="preserve">
     <value>While Bowing In Prayer</value>
   </data>
-  <data name="IslamInfo_WhileBowingInPrayer3Trans" xml:space="preserve">
+  <data name="IslamInfo_WhileBowingInPrayer3" xml:space="preserve">
     <value>Glory (to You), Most Holy (are You), Lord of the angels and the Spirit.</value>
   </data>
   <data name="IslamInfo_WhileBowingInPrayer3WordByWord" xml:space="preserve">
     <value>Glory (to You),|Most Holy (are You),|Lord|of the angels|and the Spirit.</value>
   </data>
-  <data name="IslamInfo_WhileBowingInPrayer4" xml:space="preserve">
+  <data name="IslamInfo_WhileBowingInPrayer4Label" xml:space="preserve">
     <value>While Bowing In Prayer</value>
   </data>
-  <data name="IslamInfo_WhileBowingInPrayer4Trans" xml:space="preserve">
+  <data name="IslamInfo_WhileBowingInPrayer4" xml:space="preserve">
     <value>O Allah, to You I bow (in prayer) and in You I believe and to You I have submitted.  Before You my hearing is humbled, as is my sight, my mind, my bones, my nerves and what my feet have mounted upon (for travel).</value>
   </data>
   <data name="IslamInfo_WhileBowingInPrayer4WordByWord" xml:space="preserve">
     <value>O Allah,|to You|I bow (in prayer)|and in You|I believe|and to You|I have submitted.|humbled|Before You|my hearing is,|as is my sight,|my mind,|my bones,|my nerves|and what|have mounted|upon (for travel)|my feet.</value>
   </data>
-  <data name="IslamInfo_WhileBowingInPrayer5" xml:space="preserve">
+  <data name="IslamInfo_WhileBowingInPrayer5Label" xml:space="preserve">
     <value>While Bowing In Prayer</value>
   </data>
-  <data name="IslamInfo_WhileBowingInPrayer5Trans" xml:space="preserve">
+  <data name="IslamInfo_WhileBowingInPrayer5" xml:space="preserve">
     <value>Glory is to You, Master of power, of dominion, of majesty and greatness.</value>
   </data>
   <data name="IslamInfo_WhileBowingInPrayer5WordByWord" xml:space="preserve">
@@ -1278,22 +1242,43 @@
   <data name="IslamInfo_WhenGoingToTheMosque" xml:space="preserve">
     <value>When Going To The Mosque</value>
   </data>
-  <data name="IslamInfo_WhenGoingToTheMosque1" xml:space="preserve">
+  <data name="IslamInfo_WhenGoingToTheMosque1Label" xml:space="preserve">
     <value>When Going To The Mosque</value>
   </data>
-  <data name="IslamInfo_WhenGoingToTheMosque1Trans" xml:space="preserve">
+  <data name="IslamInfo_WhenGoingToTheMosque1" xml:space="preserve">
     <value>O Allah, place light in my heart, and on my tongue light, and in my ears light and in my sight light, and above me light and below me light, and to my right light and to my left light, and before me light and behind me light.  Place in my soul light.  Magnify for me light, and amplify for me light.  Make for me light and make me a light.  O Allah, grant me light, and place light in my nerves, and in my body light and in my blood light and in my hair light and in my skin light.  (O Allah, make for me a light in my grave...  and a light in my bones.)  (Increase me in light, increase me in light, increase me in light.)  (Grant me light upon light.)</value>
   </data>
   <data name="IslamInfo_WhenGoingToTheMosque1WordByWord" xml:space="preserve">
     <value>O Allah|place|in|my heart|light|and on|my tongue|light|and in|my ears|light|and in|my sight|light|and|above me|light|and|below me|light|and to|my right|light|and to|my left|light|and|before me|light|and|behind me|light|Place|in|my soul|light|Magnify|for me|light|and amplify|for me|light|Make|for me|light|and make me|a light|O Allah|grant me|light|and place|in|my nerves|light|and in|my body|light|and in|my blood|light|and in|my hair|light|and in|my skin|light|(O Allah|make|for me|a light|in|my grave|and a light|in|my bones)|(Increase me in|light|increase me in|light|increase me in|light)|(Grant|me|light|upon|light)</value>
   </data>
+  <data name="IslamInfo_WhenSomeoneElseWearingANewGarment" xml:space="preserve">
+    <value>When Someone Else Is Wearing A New Garment</value>
+  </data>
+  <data name="IslamInfo_WhenSomeoneElseWearingANewGarment1Label" xml:space="preserve">
+    <value>When Someone Else Is Wearing A New Garment</value>
+  </data>
+  <data name="IslamInfo_WhenSomeoneElseWearingANewGarment1" xml:space="preserve">
+    <value>May Allah replace it when it is worn out.</value>
+  </data>
+  <data name="IslamInfo_WhenSomeoneElseWearingANewGarment1WordByWord" xml:space="preserve">
+    <value>Worn out|then it is replaced|(by) Allah|the Most High</value>
+  </data>
+  <data name="IslamInfo_WhenSomeoneElseWearingANewGarment2Label" xml:space="preserve">
+    <value>When Someone Else Is Wearing A New Garment</value>
+  </data>
+  <data name="IslamInfo_WhenSomeoneElseWearingANewGarment2" xml:space="preserve">
+    <value>Put on new clothes, live a praise-worthy life and die as a martyr.</value>
+  </data>
+  <data name="IslamInfo_WhenSomeoneElseWearingANewGarment2WordByWord" xml:space="preserve">
+    <value>Put on clothes|new|live a life|praise-worthy|and die as|a martyr</value>
+  </data>
   <data name="IslamInfo_WhenWearingANewGarment" xml:space="preserve">
     <value>When Wearing A New Garment</value>
   </data>
-  <data name="IslamInfo_WhenWearingANewGarment1" xml:space="preserve">
+  <data name="IslamInfo_WhenWearingANewGarment1Label" xml:space="preserve">
     <value>When Wearing A New Garment</value>
   </data>
-  <data name="IslamInfo_WhenWearingANewGarment1Trans" xml:space="preserve">
+  <data name="IslamInfo_WhenWearingANewGarment1" xml:space="preserve">
     <value>O Allah, praise is to You.  You have clothed me.  I ask You for its goodness and the goodness of what it has been made for, and I seek Your protection from the evil of it and the evil of what it has been made for.</value>
   </data>
   <data name="IslamInfo_WhenWearingANewGarment1WordByWord" xml:space="preserve">
@@ -1302,10 +1287,10 @@
   <data name="IslamInfo_WhenWearingAGarment" xml:space="preserve">
     <value>When Wearing A Garment</value>
   </data>
-  <data name="IslamInfo_WhenWearingAGarment1" xml:space="preserve">
+  <data name="IslamInfo_WhenWearingAGarment1Label" xml:space="preserve">
     <value>When Wearing A Garment</value>
   </data>
-  <data name="IslamInfo_WhenWearingAGarment1Trans" xml:space="preserve">
+  <data name="IslamInfo_WhenWearingAGarment1" xml:space="preserve">
     <value>Praise is to Allah Who has clothed me with this (garment) (3x) and provided it for me, though I was powerless myself and incapable.</value>
   </data>
   <data name="IslamInfo_WhenWearingAGarment1WordByWord" xml:space="preserve">
@@ -1314,37 +1299,37 @@
   <data name="IslamInfo_WhenWakingUp" xml:space="preserve">
     <value>When Waking Up</value>
   </data>
-  <data name="IslamInfo_WhenWakingUp1" xml:space="preserve">
+  <data name="IslamInfo_WhenWakingUp1Label" xml:space="preserve">
     <value>When Waking Up 1</value>
   </data>
-  <data name="IslamInfo_WhenWakingUp1Trans" xml:space="preserve">
+  <data name="IslamInfo_WhenWakingUp1" xml:space="preserve">
     <value>Praise is to Allah Who gives us life after He has caused us to die and to Him is the return.</value>
   </data>
   <data name="IslamInfo_WhenWakingUp1WordByWord" xml:space="preserve">
     <value>Praise is|to Allah|Who|gives us life|after||He has caused us to die|and to Him|is the return</value>
   </data>
-  <data name="IslamInfo_WhenWakingUp2" xml:space="preserve">
+  <data name="IslamInfo_WhenWakingUp2Label" xml:space="preserve">
     <value>When Waking Up 2</value>
   </data>
-  <data name="IslamInfo_WhenWakingUp2Trans" xml:space="preserve">
+  <data name="IslamInfo_WhenWakingUp2" xml:space="preserve">
     <value>There is none worthy of worship but Allah alone, Who has no partner.  His is the dominion and to Him belongs all praise, and He is Able to do all things.  Glory is to Allah.  Praise is to Allah.  There is none worthy of worship but Allah.  Allah is the Most Great.  There is no might and no power except by Allah's leave, the Exalted, the Mighty.  My Lord, forgive me.</value>
   </data>
   <data name="IslamInfo_WhenWakingUp2WordByWord" xml:space="preserve">
     <value>There is none|worthy of worship|but|Allah|alone|no|partner|for Him|His|is the dominion|and to Him|belongs all praise|and He is|upon|all|things|powerful|Glory|is to Allah|Praise|is to Allah|There is none|worthy of worship|but|Allah|Allah|is the Most Great|There is no|might|and no|power|except|by Allah's leave|the Exalted|the Mighty|My Lord|forgive me</value>
   </data>
-  <data name="IslamInfo_WhenWakingUp3" xml:space="preserve">
+  <data name="IslamInfo_WhenWakingUp3Label" xml:space="preserve">
     <value>When Waking Up 3</value>
   </data>
-  <data name="IslamInfo_WhenWakingUp3Trans" xml:space="preserve">
+  <data name="IslamInfo_WhenWakingUp3" xml:space="preserve">
     <value>Praise is to Allah Who gave strength to my body and returned my soul to me and permitted me to remember Him.</value>
   </data>
   <data name="IslamInfo_WhenWakingUp3WordByWord" xml:space="preserve">
     <value>Praise|(is) to Allah|Who|gave strength|to|my body|and returned|to me|my soul|and permitted|me|to remember Him</value>
   </data>
-  <data name="IslamInfo_FourthCreed" xml:space="preserve">
+  <data name="IslamInfo_FourthCreedLabel" xml:space="preserve">
     <value>Fourth creed - The word of Unity (Tauhid)</value>
   </data>
-  <data name="IslamInfo_FourthCreedTrans" xml:space="preserve">
+  <data name="IslamInfo_FourthCreed" xml:space="preserve">
     <value>(There is) none worthy of worship except Allah. He is only One. (There is) no partners for Him. For Him (is) the Kingdom. And for Him (is) the Praise. He gives life and causes death. And He (is) Alive. He will not die, never, ever. Possessor of Majesty and Reverence. In His hand (is) the goodness. And He (is) the goodness. And He (is) on everything powerful.</value>
   </data>
   <data name="IslamInfo_FourthCreedWordByWord" xml:space="preserve">
@@ -1353,10 +1338,10 @@
   <data name="IslamInfo_GloryBeToAllah" xml:space="preserve">
     <value>Glory be to Allah</value>
   </data>
-  <data name="IslamInfo_IhramPrayerSupplication" xml:space="preserve">
+  <data name="IslamInfo_IhramPrayerSupplicationLabel" xml:space="preserve">
     <value>Ihram Prayer Supplication</value>
   </data>
-  <data name="IslamInfo_IhramPrayerSupplicationTrans" xml:space="preserve">
+  <data name="IslamInfo_IhramPrayerSupplication" xml:space="preserve">
     <value>In the name of Allah, the Most Gracious, the Most Merciful! Allah is the greatest, Allah is the greatest, Allah is the greatest, how perfect He is, The One Who has placed this (transport) at our service, and we ourselves would not have been capable of that, and of our Lord is our final destiny. O Allah we ask You for birr and taqwaa(comprehensive terms referring to all good actions and obedience) in this journey of ours, and we ask you for deeds which please You. O Allah, facilitate our journey and let us cover it's distance quickly. O Allah, You are the Companion on the journey and The Successor over the family, O Allah, I take refuge with you from the difficulties of travel, from having a change of hearts and being in a bad predicament, and I take refuge in You from an ill fated out come with wealth and family.</value>
   </data>
   <data name="IslamInfo_IhramPrayerSupplicationWordByWord" xml:space="preserve">
@@ -1365,53 +1350,50 @@
   <data name="IslamInfo_Imam" xml:space="preserve">
     <value>Spiritual leader</value>
   </data>
-  <data name="IslamInfo_IntentionForIhramPrayer" xml:space="preserve">
+  <data name="IslamInfo_IntentionForIhramPrayerLabel" xml:space="preserve">
     <value>Intention for Ihram prayer</value>
   </data>
-  <data name="IslamInfo_IntentionForIhramPrayerTrans" xml:space="preserve">
+  <data name="IslamInfo_IntentionForIhramPrayer" xml:space="preserve">
     <value>I intend to make a Niat (two rakaat Sunat Ihram Prayer) for Allah.</value>
   </data>
   <data name="IslamInfo_IntentionForIhramPrayerWordByWord" xml:space="preserve">
     <value>I offer|recommended|Ihram Prayer|two rakat|for Allah|the most high</value>
   </data>
-  <data name="IslamInfo_IntentionForIhramShower" xml:space="preserve">
+  <data name="IslamInfo_IntentionForIhramShowerLabel" xml:space="preserve">
     <value>Intention for Ihram shower</value>
   </data>
-  <data name="IslamInfo_IntentionForIhramShowerTrans" xml:space="preserve">
+  <data name="IslamInfo_IntentionForIhramShower" xml:space="preserve">
     <value>I intend to bath (for recommended Ihram shower) for Allah.</value>
   </data>
   <data name="IslamInfo_IntentionForIhramShowerWordByWord" xml:space="preserve">
     <value>I intend|to bath|recommended|Ihram shower|for Allah|the most high</value>
   </data>
-  <data name="IslamInfo_IntentionForJourneyPrayer" xml:space="preserve">
+  <data name="IslamInfo_IntentionForJourneyPrayerLabel" xml:space="preserve">
     <value>Intention for journey prayer</value>
   </data>
-  <data name="IslamInfo_IntentionForJourneyPrayerTrans" xml:space="preserve">
+  <data name="IslamInfo_IntentionForJourneyPrayer" xml:space="preserve">
     <value>I intend to make a Niat (two rakaat Sunat Safar Prayer) for Allah.</value>
   </data>
   <data name="IslamInfo_IntentionForJourneyPrayerWordByWord" xml:space="preserve">
     <value>I offer|recommended|Safar prayer|two rakat|for Allah|the most high</value>
   </data>
-  <data name="IslamInfo_IntentionForJourneyShower" xml:space="preserve">
+  <data name="IslamInfo_IntentionForJourneyShowerLabel" xml:space="preserve">
     <value>Intention for journey shower</value>
   </data>
-  <data name="IslamInfo_IntentionForJourneyShowerTrans" xml:space="preserve">
+  <data name="IslamInfo_IntentionForJourneyShower" xml:space="preserve">
     <value>I intend to bath (for recommended Musafir shower) for Allah.</value>
   </data>
   <data name="IslamInfo_IntentionForJourneyShowerWordByWord" xml:space="preserve">
     <value>I intend|to bath|Musafir shower|recommended|for Allah|the most high</value>
   </data>
-  <data name="IslamInfo_IntentionToPerformUmrah" xml:space="preserve">
+  <data name="IslamInfo_IntentionToPerformUmrahLabel" xml:space="preserve">
     <value>Intention to perform Umrah</value>
   </data>
-  <data name="IslamInfo_IntentionToPerformUmrahTrans" xml:space="preserve">
+  <data name="IslamInfo_IntentionToPerformUmrah" xml:space="preserve">
     <value>O Allah, I respond upon Your Call to make Umrah, O Allah, I make Umrah and Ihram for Umrah just for You.</value>
   </data>
   <data name="IslamInfo_IntentionToPerformUmrahWordByWord" xml:space="preserve">
     <value>I intend|Umrah|and Ihram|just|for Allah|the most high</value>
-  </data>
-  <data name="IslamInfo_InTheNameOfAllah" xml:space="preserve">
-    <value>In the Name of Allah</value>
   </data>
   <data name="IslamInfo_Isaac" xml:space="preserve">
     <value>Isaac</value>
@@ -1539,10 +1521,10 @@
   <data name="IslamInfo_Prostration" xml:space="preserve">
     <value>Prostration</value>
   </data>
-  <data name="IslamInfo_PurificationOfTheSoul" xml:space="preserve">
+  <data name="IslamInfo_PurificationOfTheSoulLabel" xml:space="preserve">
     <value>Purification of the Soul</value>
   </data>
-  <data name="IslamInfo_PurificationOfTheSoulTrans" xml:space="preserve">
+  <data name="IslamInfo_PurificationOfTheSoul" xml:space="preserve">
     <value>O Allah, grant my soul its piety and purify it, You are the Best to purify it, You are its Guardian and Master.</value>
   </data>
   <data name="IslamInfo_PurificationOfTheSoulWordByWord" xml:space="preserve">
@@ -1572,10 +1554,10 @@
   <data name="IslamInfo_SakkalMajalla" xml:space="preserve">
     <value>Sakkal Majalla</value>
   </data>
-  <data name="IslamInfo_SalawatSupplicationAfterTalbiah" xml:space="preserve">
+  <data name="IslamInfo_SalawatSupplicationAfterTalbiahLabel" xml:space="preserve">
     <value>Salawat Supplication after Talbiah</value>
   </data>
-  <data name="IslamInfo_SalawatSupplicationAfterTalbiahTrans" xml:space="preserve">
+  <data name="IslamInfo_SalawatSupplicationAfterTalbiah" xml:space="preserve">
     <value>O Allah bless our master Muhammad and his family just as You blessed our master Abraham and sanctify our master Muhammad and the family of Muhammad just as You sanctify our master Abraham and the family of Abraham in all worlds for You are the Praiseworthy the Mighty.</value>
   </data>
   <data name="IslamInfo_SalawatSupplicationAfterTalbiahWordByWord" xml:space="preserve">
@@ -1590,19 +1572,19 @@
   <data name="IslamInfo_SchoolOfJurisprudence" xml:space="preserve">
     <value>School of jurisprudence</value>
   </data>
-  <data name="IslamInfo_SecondCreed" xml:space="preserve">
+  <data name="IslamInfo_SecondCreedLabel" xml:space="preserve">
     <value>Second creed - The word of Testimony (Shahaadat)</value>
   </data>
-  <data name="IslamInfo_SecondCreedTrans" xml:space="preserve">
+  <data name="IslamInfo_SecondCreed" xml:space="preserve">
     <value>I bear witness that no-one is worthy of worship except Allah, the One alone, without partner, and I bear witness that Muhammad is His servant and Messenger.</value>
   </data>
   <data name="IslamInfo_SecondCreedWordByWord" xml:space="preserve">
     <value>alone|no|partner|has He|and I bear witness|that|Muhammad|His servant|and Messenger</value>
   </data>
-  <data name="IslamInfo_SixthCreed" xml:space="preserve">
+  <data name="IslamInfo_SixthCreedLabel" xml:space="preserve">
     <value>Sixth creed - The words of rejecting disbelief (Rud-A-Kuffer)</value>
   </data>
-  <data name="IslamInfo_SixthCreedTrans" xml:space="preserve">
+  <data name="IslamInfo_SixthCreed" xml:space="preserve">
     <value>O Allah! Certainly I seek protection with You from, that I associate partner with You anything and I know it. And I seek forgiveness from You for that I do not know it. I repented from it and I made myself free from disbelief and polytheism and the falsehood and the back-biting and the innovation and the tell-tales and the bad deeds and the blame and the disobedience, all of them. And I submit and I say (there is) none worthy of worship except Allah, Muhammad is the Messenger of Allah.</value>
   </data>
   <data name="IslamInfo_SixthCreedWordByWord" xml:space="preserve">
@@ -1629,28 +1611,28 @@
   <data name="IslamInfo_Supplication" xml:space="preserve">
     <value>Supplication</value>
   </data>
-  <data name="IslamInfo_SupplicationAfterSalawatSupplication" xml:space="preserve">
+  <data name="IslamInfo_SupplicationAfterSalawatSupplicationLabel" xml:space="preserve">
     <value>Supplication after Salawat Supplication</value>
   </data>
-  <data name="IslamInfo_SupplicationAfterSalawatSupplicationTrans" xml:space="preserve">
+  <data name="IslamInfo_SupplicationAfterSalawatSupplication" xml:space="preserve">
     <value>O Allah! Indeed, I seek from Thee Thou blessings and Paradise. I seek refuge with Thee from Thy anger and Hell.</value>
   </data>
   <data name="IslamInfo_SupplicationAfterSalawatSupplicationWordByWord" xml:space="preserve">
     <value>O Allah|indeed|I seek from Thee|Thou blessings|and Paradise|I seek refuge with Thee|from|anger|and Hell.</value>
   </data>
-  <data name="IslamInfo_SupplicationForArrivingAtMakkah" xml:space="preserve">
+  <data name="IslamInfo_SupplicationForArrivingAtMakkahLabel" xml:space="preserve">
     <value>Supplication for arriving at Makkah</value>
   </data>
-  <data name="IslamInfo_SupplicationForArrivingAtMakkahTrans" xml:space="preserve">
+  <data name="IslamInfo_SupplicationForArrivingAtMakkah" xml:space="preserve">
     <value>O God! This sanctuary is Thy Sacred Place; and this Holy City is Thy City; and Peace therin is Thy Peace! Then forbid me from the Hell fire. O God! Save me from Thy punishment on the Day when Thou wilt raise Thy servants.</value>
   </data>
   <data name="IslamInfo_SupplicationForArrivingAtMakkahWordByWord" xml:space="preserve">
     <value>O Allah|truly|this|sanctuary is|Thy Sacred Place|and this Holy City is|Thy City|and Peace therin is|Thy Peace|Then forbid me|from|Hell fire|and save me|from|Thy punishment|on the Day when|Thou wilt raise|Thy servants</value>
   </data>
-  <data name="IslamInfo_Talbiah" xml:space="preserve">
+  <data name="IslamInfo_TalbiahLabel" xml:space="preserve">
     <value>Talbiah</value>
   </data>
-  <data name="IslamInfo_TalbiahTrans" xml:space="preserve">
+  <data name="IslamInfo_Talbiah" xml:space="preserve">
     <value>I have responded to You, My God! I have responded to You, and I proclaim that there is no other God besides You; I have responded to You. For You alone is All The Praise and All The Bounty, and for You alone is The Sovereignty. You have no partners.</value>
   </data>
   <data name="IslamInfo_TalbiahWordByWord" xml:space="preserve">
@@ -1950,10 +1932,10 @@
   <data name="IslamInfo_TheWiseOne" xml:space="preserve">
     <value>The Wise One</value>
   </data>
-  <data name="IslamInfo_ThirdCreed" xml:space="preserve">
+  <data name="IslamInfo_ThirdCreedLabel" xml:space="preserve">
     <value>Third creed - The word of Glorification (Tumjeed)</value>
   </data>
-  <data name="IslamInfo_ThirdCreedTrans" xml:space="preserve">
+  <data name="IslamInfo_ThirdCreed" xml:space="preserve">
     <value>Glory be to Allah and Praise to Allah, and there is no God except Allah, and Allah is the Greatest. And there is no Might or Power except with Allah.</value>
   </data>
   <data name="IslamInfo_ThirdCreedWordByWord" xml:space="preserve">
@@ -3159,37 +3141,37 @@
   <data name="IslamInfo_Day" xml:space="preserve">
     <value>Day</value>
   </data>
-  <data name="IslamInfo_Final1" xml:space="preserve">
+  <data name="IslamInfo_Final1Label" xml:space="preserve">
     <value>Final 1st</value>
   </data>
-  <data name="IslamInfo_Final1Trans" xml:space="preserve">
+  <data name="IslamInfo_Final1" xml:space="preserve">
     <value>which nothing is like Him and He is The Hearer, The Seer</value>
   </data>
   <data name="IslamInfo_Final1WordByWord" xml:space="preserve">
     <value>which|not|is like Him|something|and He is|The Hearer|The Seer</value>
   </data>
-  <data name="IslamInfo_Final2" xml:space="preserve">
+  <data name="IslamInfo_Final2Label" xml:space="preserve">
     <value>Final 2nd</value>
   </data>
-  <data name="IslamInfo_Final2Trans" xml:space="preserve">
+  <data name="IslamInfo_Final2" xml:space="preserve">
     <value>O Allah, send the best prayer upon your best creature Master Muhammad</value>
   </data>
   <data name="IslamInfo_Final2WordByWord" xml:space="preserve">
     <value>O Allah|send|the best|prayer|upon|best|of your creation|Master|Muhammad</value>
   </data>
-  <data name="IslamInfo_Final3" xml:space="preserve">
+  <data name="IslamInfo_Final3Label" xml:space="preserve">
     <value>Final 3rd</value>
   </data>
-  <data name="IslamInfo_Final3Trans" xml:space="preserve">
+  <data name="IslamInfo_Final3" xml:space="preserve">
     <value>And peace and the ink of his words and whenever those who remember him do so and whenever those who neglect to remember him do so</value>
   </data>
   <data name="IslamInfo_Final3WordByWord" xml:space="preserve">
     <value>And peace|recounting|his knowledge|and ink|of his words|whenever|remember Him|do so|and whenever those who neglect|to|remember Him|do so</value>
   </data>
-  <data name="IslamInfo_OMasterSendPrayersAndPeace" xml:space="preserve">
+  <data name="IslamInfo_OMasterSendPrayersAndPeaceLabel" xml:space="preserve">
     <value>O my Master, send your salutations and blessings</value>
   </data>
-  <data name="IslamInfo_OMasterSendPrayersAndPeaceTrans" xml:space="preserve">
+  <data name="IslamInfo_OMasterSendPrayersAndPeace" xml:space="preserve">
     <value>O my Master, send your salutations and blessings forever Upon Your Beloved, the best of the whole of creation</value>
   </data>
   <data name="IslamInfo_OMasterSendPrayersAndPeaceWordByWord" xml:space="preserve">
@@ -3198,145 +3180,145 @@
   <data name="IslamInfo_PopularIslamicSongVerses" xml:space="preserve">
     <value>Popular Islamic Song Verses</value>
   </data>
-  <data name="IslamInfo_IntroductionFirst" xml:space="preserve">
+  <data name="IslamInfo_IntroductionFirstLabel" xml:space="preserve">
     <value>Introduction First</value>
   </data>
-  <data name="IslamInfo_IntroductionFirstTrans" xml:space="preserve">
+  <data name="IslamInfo_IntroductionFirst" xml:space="preserve">
     <value>Verily all praise is for Allah, we praise Him, seek His help and guidance and His forgiveness; and we seek refuge in Allah from the evil of ourselves and from the sinfulness of our actions.  Whosoever Allah guides, then none can misguide him, and whosoever Allah misguides, there can be no guide for him.  I testify there is no deity worthy of worship except Allah alone, and I testify that Muhammad is His servant and messenger.</value>
   </data>
   <data name="IslamInfo_IntroductionFirstWordByWord" xml:space="preserve">
     <value>Verily|all praise|is for Allah,|we praise Him,|and seek His help and guidance|and His forgiveness;|and we seek refuge|in Allah|from|the evil|of ourselves|and from|the sinfulness|of our actions.|Whosoever|guides|Allah|then none|can misguide|him,|and whosoever|Allah misguides|there can be no|guide|for him.|and I testify|that|there is no|deity worthy of worship|except|Allah|alone|no|partner|has He,|and I testify|that|Muhammad|is His servant|and messenger.</value>
   </data>
-  <data name="IslamInfo_IntroductionSecond" xml:space="preserve">
+  <data name="IslamInfo_IntroductionSecondLabel" xml:space="preserve">
     <value>Introduction Second</value>
   </data>
-  <data name="IslamInfo_IntroductionSecondTrans" xml:space="preserve">
+  <data name="IslamInfo_IntroductionSecond" xml:space="preserve">
     <value>To proceed: Certainly the best speech is the Book of Allah and the finest guidance is the guidance of Muhammad, the prayers of Allah upon him and peace.  The most evil affair is a newly invented matter in religion and every newly invented matter is innovation and every innovation is straying and every straying is in the fire.</value>
   </data>
   <data name="IslamInfo_IntroductionSecondWordByWord" xml:space="preserve">
     <value>To|proceed:|Certainly|the best|speech|is the Book|of Allah|and the finest|guidance|is the guidance|of Muhammad,|the prayers|of Allah|upon him|and peace.|The most evil|affair|is a newly invented matter in religion|and every|newly invented matter|is innovation|and every|innovation|is straying|and every|straying|is in|the fire.</value>
   </data>
-  <data name="IslamInfo_RemembranceFirst" xml:space="preserve">
+  <data name="IslamInfo_RemembranceFirstLabel" xml:space="preserve">
     <value>Remembrance First</value>
   </data>
-  <data name="IslamInfo_RemembranceFirstTrans" xml:space="preserve">
+  <data name="IslamInfo_RemembranceFirst" xml:space="preserve">
     <value>None has the right to be worshipped but You (O Allah)), Glorified (and Exalted) are You (above all that (evil) they associate with You). Truly, I have been of the wrong-doers.</value>
   </data>
   <data name="IslamInfo_RemembranceFirstWordByWord" xml:space="preserve">
     <value>None|has the right to be worshipped|but|You|Glorified are You|Truly|I have been|of|the wrong-doers</value>
   </data>
-  <data name="IslamInfo_RemembranceSecond" xml:space="preserve">
+  <data name="IslamInfo_RemembranceSecondLabel" xml:space="preserve">
     <value>Remembrance Second</value>
   </data>
-  <data name="IslamInfo_RemembranceSecondTrans" xml:space="preserve">
+  <data name="IslamInfo_RemembranceSecond" xml:space="preserve">
     <value>Allah (Alone) is Sufficient for us, and He is the Best Disposer of affairs (for us); what an Excellent Maula (Patron, Lord) and what an Excellent Helper!</value>
   </data>
   <data name="IslamInfo_RemembranceSecondWordByWord" xml:space="preserve">
     <value>Sufficient for us|Allah|and He is the Best|Disposer of affairs|What an Excellent|Patron|and what an Excellent|Helper</value>
   </data>
-  <data name="IslamInfo_RemembranceThird" xml:space="preserve">
+  <data name="IslamInfo_RemembranceThirdLabel" xml:space="preserve">
     <value>Remembrance Third</value>
   </data>
-  <data name="IslamInfo_RemembranceThirdTrans" xml:space="preserve">
+  <data name="IslamInfo_RemembranceThird" xml:space="preserve">
     <value>There is no strength (to refrain from sins but with the protection from Allah) and there is no power (to accomplish good deeds) but with the help of Allah, the High, the Supreme</value>
   </data>
   <data name="IslamInfo_RemembranceThirdWordByWord" xml:space="preserve">
     <value>There is no|strength|and there is no|power|except|with Allah|the High|the Supreme</value>
   </data>
-  <data name="IslamInfo_RemembranceFourth" xml:space="preserve">
+  <data name="IslamInfo_RemembranceFourthLabel" xml:space="preserve">
     <value>Remembrance Fourth</value>
   </data>
-  <data name="IslamInfo_RemembranceFourthTrans" xml:space="preserve">
+  <data name="IslamInfo_RemembranceFourth" xml:space="preserve">
     <value>O Allah! Exalt and have mercy on Muhammad (peace and blessings upon him), your servant, your Prophet, and your Messenger, and upon his family and companions, and grant them peace.</value>
   </data>
   <data name="IslamInfo_RemembranceFourthWordByWord" xml:space="preserve">
     <value>O Allah!|Exalt and have mercy|on||Muhammad (peace and blessings upon him),|your servant,|your Prophet,|and your Messenger,|the Prophet|illiterate|and upon|his family|and companions,|and grant them peace.</value>
   </data>
-  <data name="IslamInfo_RemembranceFifth" xml:space="preserve">
+  <data name="IslamInfo_RemembranceFifthLabel" xml:space="preserve">
     <value>Remembrance Fifth</value>
   </data>
-  <data name="IslamInfo_RemembranceFifthTrans" xml:space="preserve">
+  <data name="IslamInfo_RemembranceFifth" xml:space="preserve">
     <value>I have accepted Allah as a Lord, Islam as a way of life, and Muhammad (peace be upon him) as a prophet of Allah.  (Recite in Arabic three times).</value>
   </data>
   <data name="IslamInfo_RemembranceFifthWordByWord" xml:space="preserve">
     <value>I have accepted|Allah|as a Lord,|Islam|as a way of life,|and Muhammad (peace be upon him)|as a prophet|and messenger (of Allah).|(Recite in Arabic three times).</value>
   </data>
-  <data name="IslamInfo_RemembranceSixth" xml:space="preserve">
+  <data name="IslamInfo_RemembranceSixthLabel" xml:space="preserve">
     <value>Remembrance Sixth</value>
   </data>
-  <data name="IslamInfo_RemembranceSixthTrans" xml:space="preserve">
+  <data name="IslamInfo_RemembranceSixth" xml:space="preserve">
     <value>O my Lord! All praise is due to you as is befitting to your glorious presence and your great sovereignty.</value>
   </data>
   <data name="IslamInfo_RemembranceSixthWordByWord" xml:space="preserve">
     <value>O my Lord!|to you|All praise is due|as|is befitting|to your glorious|presence|and your great|sovereignty.</value>
   </data>
-  <data name="IslamInfo_RemembranceSeventh" xml:space="preserve">
+  <data name="IslamInfo_RemembranceSeventhLabel" xml:space="preserve">
     <value>Remembrance Seventh</value>
   </data>
-  <data name="IslamInfo_RemembranceSeventhTrans" xml:space="preserve">
+  <data name="IslamInfo_RemembranceSeventh" xml:space="preserve">
     <value>O Allah! We seek refuge in You from associating anything other with you while we know it, and we seek repentance for associating something other with you while we don’t know it.</value>
   </data>
   <data name="IslamInfo_RemembranceSeventhWordByWord" xml:space="preserve">
     <value>O Allah!||We seek refuge|in You|from||associating other|with you|anything|while we know it,|and we seek repentance|for associating something other with you|not|while we know it.</value>
   </data>
-  <data name="IslamInfo_SeekingForgivenessAndRepentance3" xml:space="preserve">
+  <data name="IslamInfo_SeekingForgivenessAndRepentance3Label" xml:space="preserve">
     <value>Seeking Forgiveness And Repentance</value>
   </data>
-  <data name="IslamInfo_SeekingForgivenessAndRepentance3Trans" xml:space="preserve">
+  <data name="IslamInfo_SeekingForgivenessAndRepentance3" xml:space="preserve">
     <value>I seek the forgiveness of Allah the Mighty, Whom there is none worthy of worship except Him, the Living, the Eternal, and I repent to Him.</value>
   </data>
   <data name="IslamInfo_SeekingForgivenessAndRepentance3WordByWord" xml:space="preserve">
     <value>I seek the forgiveness|of Allah|the Mighty,|Whom|there is none|worthy of worship|except|Him,|the Living,|the Eternal,|and I repent|to Him.</value>
   </data>
-  <data name="IslamInfo_ForAnxietyAndSorrow2" xml:space="preserve">
+  <data name="IslamInfo_ForAnxietyAndSorrow2Label" xml:space="preserve">
     <value>For Anxiety And Sorrow</value>
   </data>
-  <data name="IslamInfo_ForAnxietyAndSorrow2Trans" xml:space="preserve">
+  <data name="IslamInfo_ForAnxietyAndSorrow2" xml:space="preserve">
     <value>O Allah, I seek refuge in You from grief and sadness, from weakness and from laziness, from miserliness and from cowardice, from being overcome by debt and overpowered by men (i.e. others).</value>
   </data>
   <data name="IslamInfo_ForAnxietyAndSorrow2WordByWord" xml:space="preserve">
     <value>O Allah,||I seek refuge|in You|from|grief|and sadness,|from weakness|and from laziness,|from miserliness|and from cowardice,|from being overcome|by debt|and overpowered|by men (i.e. others).</value>
   </data>
-  <data name="IslamInfo_InTheMorningOrEvening3" xml:space="preserve">
+  <data name="IslamInfo_InTheMorningOrEvening3Label" xml:space="preserve">
     <value>In The Morning Or Evening</value>
   </data>
-  <data name="IslamInfo_InTheMorningOrEvening3Trans" xml:space="preserve">
+  <data name="IslamInfo_InTheMorningOrEvening3" xml:space="preserve">
     <value>O Allah, You are my Lord, there is none worthy of worship but You.  You created me and I am your slave.  I keep Your covenant, and my pledge to You so far as I am able, I seek refuge in You from the evil of what I have done, I admit to Your blessings upon me, and I admit to my misdeeds.  Forgive me, for there is none who may forgive sins but You.</value>
   </data>
   <data name="IslamInfo_InTheMorningOrEvening3WordByWord" xml:space="preserve">
     <value>O Allah,|You|are my Lord,|there is none|worthy of worship|but|You.|You created me|and I am|your slave.|I|keep|Your covenant,|and my pledge to You|so far as|I am able,|I seek refuge|in You|from|the evil|of what|I have done,|I admit|to|Your blessings|upon me,|and I admit to|my misdeeds.|Forgive|me,|for|there is none|who may forgive|sins|but|You.</value>
   </data>
-  <data name="IslamInfo_InTheMorningOrEvening4" xml:space="preserve">
+  <data name="IslamInfo_InTheMorningOrEvening4Label" xml:space="preserve">
     <value>In The Morning Or Evening</value>
   </data>
-  <data name="IslamInfo_InTheMorningOrEvening4Trans" xml:space="preserve">
+  <data name="IslamInfo_InTheMorningOrEvening4" xml:space="preserve">
     <value>O Allah, make me healthy in my body.  O Allah, preserve for me my hearing.  O Allah, preserve for me my sight.  There is none worthy of worship but You.  O Allah, I seek refuge in You from disbelief and poverty and I seek refuge in You from the punishment of the grave.  There is none worthy of worship but You.  (Recite three times in Arabic).</value>
   </data>
   <data name="IslamInfo_InTheMorningOrEvening4WordByWord" xml:space="preserve">
     <value>O Allah,|make me healthy|in|my body.|O Allah,|preserve|for me|my hearing.|O Allah,|preserve|for me|my sight.|There is none|worthy of worship|but|You.|(Recite three times in Arabic).|O Allah,||I seek refuge|in You|from|disbelief|and poverty|and I seek refuge|in You|from|the punishment|of the grave.|There is none|worthy of worship|but|You.</value>
   </data>
-  <data name="IslamInfo_InTheMorningOrEvening8" xml:space="preserve">
+  <data name="IslamInfo_InTheMorningOrEvening8Label" xml:space="preserve">
     <value>In The Morning Or Evening</value>
   </data>
-  <data name="IslamInfo_InTheMorningOrEvening8Trans" xml:space="preserve">
+  <data name="IslamInfo_InTheMorningOrEvening8" xml:space="preserve">
     <value>In the Name of Allah, Who with His Name nothing can cause harm in the earth nor in the heavens, and He is the All-Hearing, the All-Knowing.  (Recite three times in Arabic).</value>
   </data>
   <data name="IslamInfo_InTheMorningOrEvening8WordByWord" xml:space="preserve">
     <value>In the Name|of Allah,|Who|not|can cause harm|with|His Name|anything|in|the earth|nor|in|the heavens,|and He is|the All-Hearing,|the All-Knowing.</value>
   </data>
-  <data name="IslamInfo_SendBlessingsFirst" xml:space="preserve">
+  <data name="IslamInfo_SendBlessingsFirstLabel" xml:space="preserve">
     <value>Send Blessings First</value>
   </data>
-  <data name="IslamInfo_SendBlessingsFirstTrans" xml:space="preserve">
+  <data name="IslamInfo_SendBlessingsFirst" xml:space="preserve">
     <value>Allah, send Your mercy on Muhammad and his posterity as you sent Your mercy on Abraham and his posterity. You are the Most Praised, the Most Glorious.  And send Your Blessings on Muhammad and his posterity as you sent Your blessings on Abraham and his posterity in the Worlds. You are the Most Praised, the Most Glorious.</value>
   </data>
   <data name="IslamInfo_SendBlessingsFirstWordByWord" xml:space="preserve">
     <value>O Allah|send Your mercy|on|Muhammad|and upon|the posterity|of Him|as|you sent Your mercy|on|Abraham|and upon|the posterity|of Him|truly You are|Most Praised|Most Glorious|and send Your blessings|on|Muhammad|and upon|the posterity|of Him|as|you sent Your blessings|on|Abraham|and upon|the posterity|of Him|in|the Worlds|truly You are|Most Praised|Most Glorious</value>
   </data>
-  <data name="IslamInfo_SendBlessingsSecond" xml:space="preserve">
+  <data name="IslamInfo_SendBlessingsSecondLabel" xml:space="preserve">
     <value>Send Blessings Second</value>
   </data>
-  <data name="IslamInfo_SendBlessingsSecondTrans" xml:space="preserve">
+  <data name="IslamInfo_SendBlessingsSecond" xml:space="preserve">
     <value>Allah, send Your mercy on Muhammad and his posterity as you sent Your mercy on Abraham and his posterity. You are the Most Praised, the Most Glorious.  Allah, send Your Blessings on Muhammad and his posterity as you sent Your blessings on Abraham and his posterity. You are the Most Praised, the Most Glorious.</value>
   </data>
   <data name="IslamInfo_SendBlessingsSecondWordByWord" xml:space="preserve">
@@ -3348,73 +3330,73 @@
   <data name="IslamInfo_TheWhiteMoon" xml:space="preserve">
     <value>The White Moon</value>
   </data>
-  <data name="IslamInfo_TheWhiteMoonEighth" xml:space="preserve">
+  <data name="IslamInfo_TheWhiteMoonEighthLabel" xml:space="preserve">
     <value>Eighth</value>
   </data>
-  <data name="IslamInfo_TheWhiteMoonEighthTrans" xml:space="preserve">
+  <data name="IslamInfo_TheWhiteMoonEighth" xml:space="preserve">
     <value>Welcome you who call us to a good way</value>
   </data>
   <data name="IslamInfo_TheWhiteMoonEighthWordByWord" xml:space="preserve">
     <value>Welcome|to a good way|you who call us</value>
   </data>
-  <data name="IslamInfo_TheWhiteMoonFifth" xml:space="preserve">
+  <data name="IslamInfo_TheWhiteMoonFifthLabel" xml:space="preserve">
     <value>Fifth</value>
   </data>
-  <data name="IslamInfo_TheWhiteMoonFifthTrans" xml:space="preserve">
+  <data name="IslamInfo_TheWhiteMoonFifth" xml:space="preserve">
     <value>Oh our Messenger (Emissary) amongst us</value>
   </data>
   <data name="IslamInfo_TheWhiteMoonFifthWordByWord" xml:space="preserve">
     <value>Oh|our Messenger|amongst us</value>
   </data>
-  <data name="IslamInfo_TheWhiteMoonFirst" xml:space="preserve">
+  <data name="IslamInfo_TheWhiteMoonFirstLabel" xml:space="preserve">
     <value>First</value>
   </data>
-  <data name="IslamInfo_TheWhiteMoonFirstTrans" xml:space="preserve">
+  <data name="IslamInfo_TheWhiteMoonFirst" xml:space="preserve">
     <value>Oh the white moon rose over us</value>
   </data>
   <data name="IslamInfo_TheWhiteMoonFirstWordByWord" xml:space="preserve">
     <value>Oh rose|the white moon|over us</value>
   </data>
-  <data name="IslamInfo_TheWhiteMoonFourth" xml:space="preserve">
+  <data name="IslamInfo_TheWhiteMoonFourthLabel" xml:space="preserve">
     <value>Fourth</value>
   </data>
-  <data name="IslamInfo_TheWhiteMoonFourthTrans" xml:space="preserve">
+  <data name="IslamInfo_TheWhiteMoonFourth" xml:space="preserve">
     <value>For him who invites us to the way of Allah</value>
   </data>
   <data name="IslamInfo_TheWhiteMoonFourthWordByWord" xml:space="preserve">
     <value>For him|who invites us|to Allah|the way of</value>
   </data>
-  <data name="IslamInfo_TheWhiteMoonSecond" xml:space="preserve">
+  <data name="IslamInfo_TheWhiteMoonSecondLabel" xml:space="preserve">
     <value>Second</value>
   </data>
-  <data name="IslamInfo_TheWhiteMoonSecondTrans" xml:space="preserve">
+  <data name="IslamInfo_TheWhiteMoonSecond" xml:space="preserve">
     <value>From the valley (where he) called "Good bye"‘</value>
   </data>
   <data name="IslamInfo_TheWhiteMoonSecondWordByWord" xml:space="preserve">
     <value>From|the valley|called "Good bye"</value>
   </data>
-  <data name="IslamInfo_TheWhiteMoonSeventh" xml:space="preserve">
+  <data name="IslamInfo_TheWhiteMoonSeventhLabel" xml:space="preserve">
     <value>Seventh</value>
   </data>
-  <data name="IslamInfo_TheWhiteMoonSeventhTrans" xml:space="preserve">
+  <data name="IslamInfo_TheWhiteMoonSeventh" xml:space="preserve">
     <value>You have brought to this city nobility</value>
   </data>
   <data name="IslamInfo_TheWhiteMoonSeventhWordByWord" xml:space="preserve">
     <value>You have brought|nobility|to this city</value>
   </data>
-  <data name="IslamInfo_TheWhiteMoonSixth" xml:space="preserve">
+  <data name="IslamInfo_TheWhiteMoonSixthLabel" xml:space="preserve">
     <value>Sixth</value>
   </data>
-  <data name="IslamInfo_TheWhiteMoonSixthTrans" xml:space="preserve">
+  <data name="IslamInfo_TheWhiteMoonSixth" xml:space="preserve">
     <value>Who comes with the exhortations (injunctions/commandments) to be heeded</value>
   </data>
   <data name="IslamInfo_TheWhiteMoonSixthWordByWord" xml:space="preserve">
     <value>Who comes|with the commandments|to be obeyed</value>
   </data>
-  <data name="IslamInfo_TheWhiteMoonThird" xml:space="preserve">
+  <data name="IslamInfo_TheWhiteMoonThirdLabel" xml:space="preserve">
     <value>Third</value>
   </data>
-  <data name="IslamInfo_TheWhiteMoonThirdTrans" xml:space="preserve">
+  <data name="IslamInfo_TheWhiteMoonThird" xml:space="preserve">
     <value>And it is incumbent upon us to show gratitude</value>
   </data>
   <data name="IslamInfo_TheWhiteMoonThirdWordByWord" xml:space="preserve">
@@ -3735,10 +3717,10 @@
   <data name="IslamInfo_Intention" xml:space="preserve">
     <value>Intention</value>
   </data>
-  <data name="IslamInfo_IntroductionBestNames" xml:space="preserve">
+  <data name="IslamInfo_IntroductionBestNamesLabel" xml:space="preserve">
     <value>Introduction</value>
   </data>
-  <data name="IslamInfo_IntroductionBestNamesTrans" xml:space="preserve">
+  <data name="IslamInfo_IntroductionBestNames" xml:space="preserve">
     <value>We ask you O that He is Allah who there is no God except He</value>
   </data>
   <data name="IslamInfo_IntroductionBestNamesWordByWord" xml:space="preserve">
@@ -4917,82 +4899,82 @@
   <data name="IslamInfo_InTheEvening" xml:space="preserve">
     <value>In The Evening</value>
   </data>
-  <data name="IslamInfo_InTheEvening1" xml:space="preserve">
+  <data name="IslamInfo_InTheEvening1Label" xml:space="preserve">
     <value>In The Evening</value>
   </data>
-  <data name="IslamInfo_InTheEvening1Trans" xml:space="preserve">
+  <data name="IslamInfo_InTheEvening1" xml:space="preserve">
     <value>We have ended a new day and with it all dominion is Allah's.  Praise is to Allah.  None has the right to be worshipped but Allah alone, Who has no partner.  To Allah belongs the dominion, and to Him is the praise and He is Able to do all things.  My Lord, I ask You for the good things of this night and of the nights that come after it, and I seek refuge in You from the evil of this night and of the nights that come after it.  My lord, I seek refuge in You from laziness and helpless old age.  My Lord, I seek refuge in You from the punishment of Hell-fire, and from the punishment of the grave.</value>
   </data>
   <data name="IslamInfo_InTheEvening1WordByWord" xml:space="preserve">
     <value>We have ended a new day|and with it|all dominion|is Allah's.|Praise|is to Allah.|None|has the right to be worshipped|but|Allah|alone,|no|partner|has He.|To Allah|belongs the dominion,|and to Him|is the praise|and He is|upon|all|things|Able to do.|My Lord,|I ask You for|the good things||of|this|night|and|of the nights that come|after it,|and I seek refuge|in You|from|the evil||of|this|night|and|of the nights that come|after it.|My lord,|I seek refuge|in You|from|laziness|and helpless|old age.|My Lord,|I seek refuge|in You|from|the punishment|of|Hell-fire,|and from the punishment|of|the grave.</value>
   </data>
-  <data name="IslamInfo_InTheEvening2" xml:space="preserve">
+  <data name="IslamInfo_InTheEvening2Label" xml:space="preserve">
     <value>In The Evening</value>
   </data>
-  <data name="IslamInfo_InTheEvening2Trans" xml:space="preserve">
+  <data name="IslamInfo_InTheEvening2" xml:space="preserve">
     <value>O Allah, You bring us the end of the day as You bring us its beginning, You bring us life and You bring us death, and to You is our fate.</value>
   </data>
   <data name="IslamInfo_InTheEvening2WordByWord" xml:space="preserve">
     <value>O Allah,|You|bring us the end of the day|as You|bring us its beginning,|You|bring us life|and You|bring us death,|and to You|is our fate.</value>
   </data>
-  <data name="IslamInfo_InTheEvening3" xml:space="preserve">
+  <data name="IslamInfo_InTheEvening3Label" xml:space="preserve">
     <value>In The Evening</value>
   </data>
-  <data name="IslamInfo_InTheEvening3Trans" xml:space="preserve">
+  <data name="IslamInfo_InTheEvening3" xml:space="preserve">
     <value>O Allah, I have ended another day and call upon You and upon the bearers of Your Throne, upon Your angels and all creation to bear witness that surely You are Allah, there is none worthy of worship but You alone, You have no partners, and that Muhammad is Your slave and Your messenger.  (Recite four times in Arabic).</value>
   </data>
   <data name="IslamInfo_InTheEvening3WordByWord" xml:space="preserve">
     <value>O Allah,||I have ended another day|and call upon You|and upon|the bearers|of Your Throne,|upon Your angels|and all|creation|to bear witness that surely|You|are Allah,|there is none|worthy of worship|but|You|alone,|no|partners|You have,|and that|Muhammad|is Your slave|and Your messenger.</value>
   </data>
-  <data name="IslamInfo_InTheEvening4" xml:space="preserve">
+  <data name="IslamInfo_InTheEvening4Label" xml:space="preserve">
     <value>In The Evening</value>
   </data>
-  <data name="IslamInfo_InTheEvening4Trans" xml:space="preserve">
+  <data name="IslamInfo_InTheEvening4" xml:space="preserve">
     <value>O Allah, as I enter this evening whatever blessing has been received by me or anyone of Your creation is from You alone, You have no partner.  All praise is for You and thanks is to You.</value>
   </data>
   <data name="IslamInfo_InTheEvening4WordByWord" xml:space="preserve">
     <value>O Allah,|as|I enter this evening||whatever|blessing has been received by me|or|anyone|of|Your creation|is from You|alone,|no|partner|You have.|for You|All praise is|and to You|thanks is.</value>
   </data>
-  <data name="IslamInfo_InTheEvening5" xml:space="preserve">
+  <data name="IslamInfo_InTheEvening5Label" xml:space="preserve">
     <value>In The Evening</value>
   </data>
-  <data name="IslamInfo_InTheEvening5Trans" xml:space="preserve">
+  <data name="IslamInfo_InTheEvening5" xml:space="preserve">
     <value>We have ended a new day and with it all the dominion which belongs to Allah, Lord of all that exists.  O Allah, I ask You for the good things of this night, its victory, its help, its light, its blessings, and its guidance.  I seek refuge in You from the evil that is in it and from the evil that follows it.</value>
   </data>
   <data name="IslamInfo_InTheEvening5WordByWord" xml:space="preserve">
     <value>We have ended a new day|and with it|all the dominion|which belongs to Allah,|Lord|of all that exists.|O Allah,||I ask You for|the good things|of this|night,|its victory,|its help,|its light,|its blessings,|and its guidance.|I seek refuge|in You|from|the evil|that is|in it|and from the evil|that|follows it.</value>
   </data>
-  <data name="IslamInfo_InTheEvening6" xml:space="preserve">
+  <data name="IslamInfo_InTheEvening6Label" xml:space="preserve">
     <value>In The Evening</value>
   </data>
-  <data name="IslamInfo_InTheEvening6Trans" xml:space="preserve">
+  <data name="IslamInfo_InTheEvening6" xml:space="preserve">
     <value>We end this day upon the natural religion of Islam, the word of sincere devotion, the religion of our Prophet Muhammad (peace and blessings of Allah be upon him), and the faith of our father Ibrahim.  He was upright (in worshipping Allah), and a Muslim.  He was not of those who worship others besides Allah.</value>
   </data>
   <data name="IslamInfo_InTheEvening6WordByWord" xml:space="preserve">
     <value>We end this day|upon|the natural religion|of Islam,||the word|of sincere devotion,||the religion|of our Prophet|Muhammad (peace and blessings of Allah be upon him),|and|the faith|of our father|Ibrahim.|He was upright (in worshipping Allah),|and a Muslim.|not|He was|of those|who worship others besides Allah.</value>
   </data>
-  <data name="IslamInfo_InTheEvening7" xml:space="preserve">
+  <data name="IslamInfo_InTheEvening7Label" xml:space="preserve">
     <value>In The Evening</value>
   </data>
-  <data name="IslamInfo_InTheEvening7Trans" xml:space="preserve">
+  <data name="IslamInfo_InTheEvening7" xml:space="preserve">
     <value>I seek refuge in the Perfect Words of Allah from the evil of what He has created.  (Recite three times in Arabic).</value>
   </data>
   <data name="IslamInfo_InTheEvening7WordByWord" xml:space="preserve">
     <value>I seek refuge|in the Words|of Allah|Perfect|from|the evil|of what|He has created.</value>
   </data>
-  <data name="IslamInfo_InTheEvening8" xml:space="preserve">
+  <data name="IslamInfo_InTheEvening8Label" xml:space="preserve">
     <value>In The Evening</value>
   </data>
-  <data name="IslamInfo_InTheEvening8Trans" xml:space="preserve">
+  <data name="IslamInfo_InTheEvening8" xml:space="preserve">
     <value>We have risen this evening and sovereignty is all Allah’s. Praise is due to Allah alone, He has no partner, there is no God but Him, unto whom is our fate.</value>
   </data>
   <data name="IslamInfo_InTheEvening8WordByWord" xml:space="preserve">
     <value>We have risen this evening|and|sovereignty is all|Allah’s.|Praise is due to|Allah alone,|no|partner|He has,|there is no|God|but|Him,|unto whom|is our fate.</value>
   </data>
-  <data name="IslamInfo_InTheEvening9" xml:space="preserve">
+  <data name="IslamInfo_InTheEvening9Label" xml:space="preserve">
     <value>In The Evening</value>
   </data>
-  <data name="IslamInfo_InTheEvening9Trans" xml:space="preserve">
+  <data name="IslamInfo_InTheEvening9" xml:space="preserve">
     <value>O Allah! I rise up in the evening with the blessing, strength, and protection, all of which you have bestowed upon me. Complete your blessing, the strength (you bestowed upon me) and your protection, in this life and the hereafter.</value>
   </data>
   <data name="IslamInfo_InTheEvening9WordByWord" xml:space="preserve">
@@ -5001,82 +4983,82 @@
   <data name="IslamInfo_InTheMorning" xml:space="preserve">
     <value>In The Morning</value>
   </data>
-  <data name="IslamInfo_InTheMorning1" xml:space="preserve">
+  <data name="IslamInfo_InTheMorning1Label" xml:space="preserve">
     <value>In The Morning</value>
   </data>
-  <data name="IslamInfo_InTheMorning1Trans" xml:space="preserve">
+  <data name="IslamInfo_InTheMorning1" xml:space="preserve">
     <value>We have entered a new day and with it all dominion is Allah's.  Praise is to Allah.  None has the right to be worshipped but Allah alone, Who has no partner.  To Allah belongs the dominion, and to Him is the praise and He is Able to do all things.  My Lord, I ask You for the goodness of this day and of the days that come after it, and I seek refuge in You from the evil of this day and of the days that come after it.  My lord, I seek refuge in You from laziness and helpless old age.  My Lord, I seek refuge in You from the punishment of Hell-fire, and from the punishment of the grave.</value>
   </data>
   <data name="IslamInfo_InTheMorning1WordByWord" xml:space="preserve">
     <value>We have entered a new day|and with it|all dominion|is Allah's.|Praise|is to Allah.|None|has the right to be worshipped|but|Allah|alone,|no|partner|has He.|To Allah|belongs the dominion,|and to Him|is the praise|and He is|upon|all|things|Able to do.|My Lord,|I ask You for|the goodness||of|this|day|and|of the days that come|after it,|and I seek refuge|in You|from|the evil||of|this|day|and|of the days that come|after it.|My lord,|I seek refuge|in You|from|laziness|and helpless|old age.|My Lord,|I seek refuge|in You|from|the punishment|of|Hell-fire,|and from the punishment|of|the grave.</value>
   </data>
-  <data name="IslamInfo_InTheMorning2" xml:space="preserve">
+  <data name="IslamInfo_InTheMorning2Label" xml:space="preserve">
     <value>In The Morning</value>
   </data>
-  <data name="IslamInfo_InTheMorning2Trans" xml:space="preserve">
+  <data name="IslamInfo_InTheMorning2" xml:space="preserve">
     <value>O Allah, by You we enter the morning and by You we enter the evening, by You we live and by You we die, and to You is the Final Return.</value>
   </data>
   <data name="IslamInfo_InTheMorning2WordByWord" xml:space="preserve">
     <value>O Allah,|by You|we enter the morning|and by You|we enter the evening,|by You|we live|and by You|we die,|and to You|is the Final Return.</value>
   </data>
-  <data name="IslamInfo_InTheMorning3" xml:space="preserve">
+  <data name="IslamInfo_InTheMorning3Label" xml:space="preserve">
     <value>In The Morning</value>
   </data>
-  <data name="IslamInfo_InTheMorning3Trans" xml:space="preserve">
+  <data name="IslamInfo_InTheMorning3" xml:space="preserve">
     <value>O Allah, I have entered a new morning and call upon You and upon the bearers of Your Throne, upon Your angels and all creation to bear witness that surely You are Allah, there is none worthy of worship but You alone, You have no partners, and that Muhammad is Your slave and Your messenger.  (Recite four times in Arabic).</value>
   </data>
   <data name="IslamInfo_InTheMorning3WordByWord" xml:space="preserve">
     <value>O Allah,||I have entered a new morning|and call upon You|and upon|the bearers|of Your Throne,|upon Your angels|and all|creation|to bear witness that surely|You|are Allah,|there is none|worthy of worship|but|You|alone,|no|partners|You have,|and that|Muhammad|is Your slave|and Your messenger.</value>
   </data>
-  <data name="IslamInfo_InTheMorning4" xml:space="preserve">
+  <data name="IslamInfo_InTheMorning4Label" xml:space="preserve">
     <value>In The Morning</value>
   </data>
-  <data name="IslamInfo_InTheMorning4Trans" xml:space="preserve">
+  <data name="IslamInfo_InTheMorning4" xml:space="preserve">
     <value>O Allah, as I enter this morning whatever blessing has been received by me or anyone of Your creation is from You alone, You have no partner.  All praise is for You and thanks is to You.</value>
   </data>
   <data name="IslamInfo_InTheMorning4WordByWord" xml:space="preserve">
     <value>O Allah,|as|I enter this morning||whatever|blessing has been received by me|or|anyone|of|Your creation|is from You|alone,|no|partner|You have.|for You|All praise is|and to You|thanks is.</value>
   </data>
-  <data name="IslamInfo_InTheMorning5" xml:space="preserve">
+  <data name="IslamInfo_InTheMorning5Label" xml:space="preserve">
     <value>In The Morning</value>
   </data>
-  <data name="IslamInfo_InTheMorning5Trans" xml:space="preserve">
+  <data name="IslamInfo_InTheMorning5" xml:space="preserve">
     <value>We have entered a new day and with it all the dominion which belongs to Allah, Lord of all that exists.  O Allah, I ask You for the goodness of this day, its victory, its help, its light, its blessings, and its guidance.  I seek refuge in You from the evil that is in it and from the evil that follows it.</value>
   </data>
   <data name="IslamInfo_InTheMorning5WordByWord" xml:space="preserve">
     <value>We have entered a new day|and with it|all the dominion|which belongs to Allah,|Lord|of all that exists.|O Allah,||I ask You for|the goodness|of this|day,|its victory,|its help,|its light,|its blessings,|and its guidance.|I seek refuge|in You|from|the evil|that is|in it|and from the evil|that|follows it.</value>
   </data>
-  <data name="IslamInfo_InTheMorning6" xml:space="preserve">
+  <data name="IslamInfo_InTheMorning6Label" xml:space="preserve">
     <value>In The Morning</value>
   </data>
-  <data name="IslamInfo_InTheMorning6Trans" xml:space="preserve">
+  <data name="IslamInfo_InTheMorning6" xml:space="preserve">
     <value>We have entered a new day upon the natural religion of Islam, the word of sincere devotion, the religion of our Prophet Muhammad (peace and blessings of Allah be upon him), and the faith of our father Ibrahim.  He was upright (in worshipping Allah), and a Muslim.  He was not of those who worship others besides Allah.</value>
   </data>
   <data name="IslamInfo_InTheMorning6WordByWord" xml:space="preserve">
     <value>We have entered a new day|upon|the natural religion|of Islam,||the word|of sincere devotion,||the religion|of our Prophet|Muhammad (peace and blessings of Allah be upon him),|and|the faith|of our father|Ibrahim.|He was upright (in worshipping Allah),|and a Muslim.|not|He was|of those|who worship others besides Allah.</value>
   </data>
-  <data name="IslamInfo_InTheMorning7" xml:space="preserve">
+  <data name="IslamInfo_InTheMorning7Label" xml:space="preserve">
     <value>In The Morning</value>
   </data>
-  <data name="IslamInfo_InTheMorning7Trans" xml:space="preserve">
+  <data name="IslamInfo_InTheMorning7" xml:space="preserve">
     <value>Glory is to Allah and praise is to Him, by the multitude of His creation, by His Pleasure, by the weight of His Throne, and by the extent of His Words.  (Recite three times in Arabic).</value>
   </data>
   <data name="IslamInfo_InTheMorning7WordByWord" xml:space="preserve">
     <value>Glory|is to Allah|and praise is to Him,|by the multitude|of His creation,|by Pleasure,|His|by the weight|of His Throne,|and by the extent|of His Words.</value>
   </data>
-  <data name="IslamInfo_InTheMorning8" xml:space="preserve">
+  <data name="IslamInfo_InTheMorning8Label" xml:space="preserve">
     <value>In The Morning</value>
   </data>
-  <data name="IslamInfo_InTheMorning8Trans" xml:space="preserve">
+  <data name="IslamInfo_InTheMorning8" xml:space="preserve">
     <value>We have risen this morning and sovereignty is all Allah’s. Praise is due to Allah alone, He has no partner, there is no God but Him, unto whom is the return.</value>
   </data>
   <data name="IslamInfo_InTheMorning8WordByWord" xml:space="preserve">
     <value>We have risen this morning|and|sovereignty is all|Allah’s.|Praise is due to|Allah alone,|no|partner|He has,|there is no|God|but|Him,|unto whom|is the return.</value>
   </data>
-  <data name="IslamInfo_InTheMorning9" xml:space="preserve">
+  <data name="IslamInfo_InTheMorning9Label" xml:space="preserve">
     <value>In The Morning</value>
   </data>
-  <data name="IslamInfo_InTheMorning9Trans" xml:space="preserve">
+  <data name="IslamInfo_InTheMorning9" xml:space="preserve">
     <value>O Allah! I rise up in the morning with the blessing, strength, and protection, all of which you have bestowed upon me. Complete your blessing, the strength (you bestowed upon me) and your protection, in this life and the hereafter.</value>
   </data>
   <data name="IslamInfo_InTheMorning9WordByWord" xml:space="preserve">
@@ -5424,7 +5406,7 @@
   <data name="IslamInfo_SupplicationAndPrayersForMorningAndAfternoon" xml:space="preserve">
     <value>Supplication And Prayers For Morning And Afternoon</value>
   </data>
-  <data name="IslamInfo_WhenWakingUp4" xml:space="preserve">
+  <data name="IslamInfo_WhenWakingUp4Label" xml:space="preserve">
     <value>When Waking Up</value>
   </data>
   <data name="IslamInfo_Swear" xml:space="preserve">
@@ -7077,7 +7059,7 @@
   <data name="IslamInfo_WhenTurningOverInTheNight1" xml:space="preserve">
     <value>When Turning Over In The Night</value>
   </data>
-  <data name="IslamInfo_ForAnxietyAndSorrow1" xml:space="preserve">
+  <data name="IslamInfo_ForAnxietyAndSorrow1Label" xml:space="preserve">
     <value>For Anxiety And Sorrow</value>
   </data>
   <data name="IslamInfo_UponSeeingSomeoneInTrialOrTribulation1" xml:space="preserve">
@@ -7086,7 +7068,7 @@
   <data name="IslamInfo_RemembranceAtSittingOrGathering1" xml:space="preserve">
     <value>Remembrance At Sitting Or Gathering</value>
   </data>
-  <data name="IslamInfo_ForExpiationOfSinsAtTheConclusionOfSittingOrGathering2" xml:space="preserve">
+  <data name="IslamInfo_ForExpiationOfSinsAtTheConclusionOfSittingOrGathering2Label" xml:space="preserve">
     <value>For Expiation Of Sins At The Conclusion Of Sitting Or Gathering</value>
   </data>
   <data name="IslamInfo_ReturningSupplicationForForgiveness1" xml:space="preserve">
