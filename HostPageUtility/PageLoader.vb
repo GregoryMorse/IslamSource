@@ -2277,6 +2277,19 @@ Public Class RenderArray
         Next
         Return CharPosInfos.ToArray()
     End Function
+    Public Shared Sub DoRenderListPdf(Doc As iTextSharp.text.Document, Writer As iTextSharp.text.pdf.PdfWriter, Font As iTextSharp.text.Font, DrawFont As Drawing.Font, Forms As Char(), CurRenderText As RenderArray.RenderText, OutArray As Object(), _Bounds As Generic.List(Of Generic.List(Of Generic.List(Of LayoutInfo))), ByRef PageOffset As PointF, BaseOffset As PointF)
+        For ListCount As Integer = 2 To OutArray.Length - 1
+            Dim InnerArray As Object() = CType(OutArray(ListCount), Object())
+            If Not InnerArray Is Nothing Then
+                For Index = 0 To InnerArray.Length - 1
+                    If TypeOf InnerArray(Index) Is Object() Then
+                        DoRenderListPdf(Doc, Writer, Font, DrawFont, Forms, CurRenderText, CType(InnerArray(Index), Object()), _Bounds(ListCount - 2)(Index)(0).Bounds, PageOffset, BaseOffset)
+                    Else
+                    End If
+                Next
+            End If
+        Next
+    End Sub
     Public Shared Sub DoRenderPdf(Doc As iTextSharp.text.Document, Writer As iTextSharp.text.pdf.PdfWriter, Font As iTextSharp.text.Font, DrawFont As Drawing.Font, Forms As Char(), CurRenderArray As List(Of HostPageUtility.RenderArray.RenderItem), _Bounds As Generic.List(Of Generic.List(Of Generic.List(Of LayoutInfo))), ByRef PageOffset As PointF, BaseOffset As PointF)
         Dim RowTop As Single = Single.NaN
         Dim MaxRect As RectangleF
@@ -2294,17 +2307,7 @@ Public Class RenderArray
                     End If
                     DoRenderPdf(Doc, Writer, Font, DrawFont, Forms, CType(CurRenderArray(Count).TextItems(SubCount).Text, List(Of RenderArray.RenderItem)), _Bounds(Count)(SubCount)(0).Bounds, PageOffset, New PointF(_Bounds(Count)(SubCount)(0).Rect.Location.X, _Bounds(Count)(SubCount)(0).Rect.Location.Y))
                 ElseIf CurRenderArray(Count).TextItems(SubCount).DisplayClass = RenderArray.RenderDisplayClass.eList Then
-                    For ListCount As Integer = 0 To CType(CurRenderArray(Count).TextItems(SubCount).Text, Object()).Length - 1
-                        Dim InnerArray As Object() = CType(CType(CurRenderArray(Count).TextItems(SubCount).Text, Object())(ListCount), Object())
-                        If Not InnerArray Is Nothing Then
-                            For Index = 0 To InnerArray.Length - 1
-                                If TypeOf InnerArray(Index) Is Object() Then
-                                    'DirectCast(InnerArray(Index), Object())
-                                Else
-                                End If
-                            Next
-                        End If
-                    Next
+                    DoRenderListPdf(Doc, Writer, Font, DrawFont, Forms, CurRenderArray(Count).TextItems(SubCount), CType(CurRenderArray(Count).TextItems(SubCount).Text, Object()), _Bounds(Count)(SubCount)(0).Bounds, PageOffset, New PointF(_Bounds(Count)(SubCount)(0).Rect.Location.X, _Bounds(Count)(SubCount)(0).Rect.Location.Y))
                 ElseIf CurRenderArray(Count).TextItems(SubCount).DisplayClass = RenderArray.RenderDisplayClass.eArabic Or CurRenderArray(Count).TextItems(SubCount).DisplayClass = HostPageUtility.RenderArray.RenderDisplayClass.eLTR Or CurRenderArray(Count).TextItems(SubCount).DisplayClass = RenderArray.RenderDisplayClass.eRTL Or CurRenderArray(Count).TextItems(SubCount).DisplayClass = RenderArray.RenderDisplayClass.eTransliteration Then
                     Dim theText As String = CStr(CurRenderArray(Count).TextItems(SubCount).Text)
                     If _Bounds(Count)(SubCount).Count <> 0 AndAlso RowTop <> _Bounds(Count)(SubCount)(0).Rect.Top Then
@@ -2339,7 +2342,7 @@ Public Class RenderArray
                         Dim Rect As RectangleF = _Bounds(Count)(SubCount)(NextCount).Rect
                         Dim Text As String = theText.Substring(0, _Bounds(Count)(SubCount)(NextCount).nChar)
                         Dim bSpace As Boolean = False
-                        If ArabicData.FindLetterBySymbol(Text(0)) <> -1 AndAlso ArabicData.ArabicLetters(ArabicData.FindLetterBySymbol(Text(0))).JoiningStyle = "T" AndAlso ArabicData.GetLigatures(" "c + Text(0), False, Forms).Length = 0 Then
+                        If ArabicData.FindLetterBySymbol(Text(0)) <> -1 AndAlso ArabicData.ArabicLetters(ArabicData.FindLetterBySymbol(Text(0))).JoiningStyle = "T" AndAlso ArabicData.GetLigatures(" "c + Text(0), False, Forms).Length = 0 AndAlso Char.GetUnicodeCategory(Text(0)) <> Globalization.UnicodeCategory.Format Then
                             Text = " "c + Text
                             bSpace = True
                         End If
@@ -2358,15 +2361,16 @@ Public Class RenderArray
                             ct.ArabicOptions = iTextSharp.text.pdf.ColumnText.AR_COMPOSEDTASHKEEL
                             ct.UseAscender = False
                             Dim NewFont As New iTextSharp.text.Font(Font)
+                            Dim Box As Integer() = Font.BaseFont.GetCharBBox(AscW(ArabicData.ConvertLigatures(Text.Substring(CharPosInfos(Index).Index, CharPosInfos(Index).Length), False, Forms)(0)))
                             If CharPosInfos(Index).Length = 1 AndAlso System.Text.RegularExpressions.Regex.Match(Text(CharPosInfos(Index).Index), "[\p{IsArabic}]").Success And Char.GetUnicodeCategory(Text(CharPosInfos(Index).Index)) = Globalization.UnicodeCategory.DecimalDigitNumber Then
                                 'end of ayah marker glyph mimicing based on Arial glyphs for small number substitutions
+                                'centering needed
                                 NewFont.Size = NewFont.Size * 0.746F
                                 'CharPosInfos(Index).X -= 0.537F * CharWidth
                                 CharPosInfos(Index).Y += 53 * 0.001F * NewFont.Size
                             End If
-                            Dim Box As Integer() = Font.BaseFont.GetCharBBox(AscW(ArabicData.ConvertLigatures(Text.Substring(CharPosInfos(Index).Index, CharPosInfos(Index).Length), False, Forms)(0)))
                             If Not Box Is Nothing Then
-                                ct.SetSimpleColumn(Rect.Left + Doc.LeftMargin + Rect.Width - 3 - CharPosInfos(Index).PriorWidth + CharPosInfos(Index).Width + If(System.Text.RegularExpressions.Regex.Match(Text(CharPosInfos(Index).Index), "[\p{IsArabic}]").Success And Char.GetUnicodeCategory(Text(CharPosInfos(Index).Index)) = Globalization.UnicodeCategory.DecimalDigitNumber, -CharPosInfos(Index).X - 1.5F, CharPosInfos(Index).X - 4.5F), Doc.PageSize.Height - Doc.TopMargin - Rect.Bottom - _Bounds(Count)(SubCount)(NextCount).Baseline - Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size) * 2 + CharPosInfos(Index).Y, Rect.Right - 3 + Doc.LeftMargin - CharPosInfos(Index).PriorWidth + If(System.Text.RegularExpressions.Regex.Match(Text(CharPosInfos(Index).Index), "[\p{IsArabic}]").Success And Char.GetUnicodeCategory(Text(CharPosInfos(Index).Index)) = Globalization.UnicodeCategory.DecimalDigitNumber, -CharPosInfos(Index).X - 1.5F, CharPosInfos(Index).X - 4.5F), Doc.PageSize.Height - Doc.TopMargin - Rect.Top + 1 - _Bounds(Count)(SubCount)(NextCount).Baseline - Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size) * 2 + CharPosInfos(Index).Y, Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size), iTextSharp.text.Element.ALIGN_RIGHT Or iTextSharp.text.Element.ALIGN_BASELINE)
+                                ct.SetSimpleColumn(Rect.Left + Doc.LeftMargin + Rect.Width - 2 - CharPosInfos(Index).PriorWidth - CharPosInfos(Index).Width + If(System.Text.RegularExpressions.Regex.Match(Text(CharPosInfos(Index).Index), "[\p{IsArabic}]").Success And Char.GetUnicodeCategory(Text(CharPosInfos(Index).Index)) = Globalization.UnicodeCategory.DecimalDigitNumber, CharPosInfos(Index).Width - CharPosInfos(Index).X, -CharPosInfos(Index).X), Doc.PageSize.Height - Doc.TopMargin - Rect.Bottom - _Bounds(Count)(SubCount)(NextCount).Baseline - Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size) * 2 + CharPosInfos(Index).Y, Rect.Right - 5 + Doc.LeftMargin - CharPosInfos(Index).PriorWidth + If(System.Text.RegularExpressions.Regex.Match(Text(CharPosInfos(Index).Index), "[\p{IsArabic}]").Success And Char.GetUnicodeCategory(Text(CharPosInfos(Index).Index)) = Globalization.UnicodeCategory.DecimalDigitNumber, CharPosInfos(Index).Width - CharPosInfos(Index).X, -CharPosInfos(Index).X), Doc.PageSize.Height - Doc.TopMargin - Rect.Top + 1 - _Bounds(Count)(SubCount)(NextCount).Baseline - Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size) * 2 + CharPosInfos(Index).Y, Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size), iTextSharp.text.Element.ALIGN_RIGHT Or iTextSharp.text.Element.ALIGN_BASELINE)
                                 ct.AddText(New iTextSharp.text.Chunk(Text.Substring(CharPosInfos(Index).Index, CharPosInfos(Index).Length), NewFont))
                                 ct.Go()
                             End If
@@ -2397,7 +2401,7 @@ Public Class RenderArray
                             bmp = Utility.GetUnicodeChar(100 * 8, CurRenderArray(Count).TextItems(SubCount).Font, Text(0))
                             ct.AddElement(iTextSharp.text.Image.GetInstance(bmp, iTextSharp.text.BaseColor.WHITE))
                         Else
-                            ct.SetSimpleColumn(Rect.Left + Doc.LeftMargin + ExtraWidth, Doc.PageSize.Height - Doc.TopMargin - Rect.Bottom - _Bounds(Count)(SubCount)(NextCount).Baseline - Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size) * 2, Rect.Right - 3 + Doc.LeftMargin + ExtraWidth, Doc.PageSize.Height - Doc.TopMargin - Rect.Top + 1 - _Bounds(Count)(SubCount)(NextCount).Baseline - Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size) * 2, Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size), If(ct.RunDirection = iTextSharp.text.pdf.PdfWriter.RUN_DIRECTION_LTR, iTextSharp.text.Element.ALIGN_RIGHT, iTextSharp.text.Element.ALIGN_RIGHT) Or iTextSharp.text.Element.ALIGN_BASELINE)
+                            ct.SetSimpleColumn(Rect.Left + Doc.LeftMargin - 2 + ExtraWidth, Doc.PageSize.Height - Doc.TopMargin - Rect.Bottom - _Bounds(Count)(SubCount)(NextCount).Baseline - Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size) * 2, Rect.Right - 5 + Doc.LeftMargin + ExtraWidth, Doc.PageSize.Height - Doc.TopMargin - Rect.Top + 1 - _Bounds(Count)(SubCount)(NextCount).Baseline - Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size) * 2, Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size), If(ct.RunDirection = iTextSharp.text.pdf.PdfWriter.RUN_DIRECTION_LTR, iTextSharp.text.Element.ALIGN_RIGHT, iTextSharp.text.Element.ALIGN_RIGHT) Or iTextSharp.text.Element.ALIGN_BASELINE)
                             ct.AddText(New iTextSharp.text.Chunk(Text, Font))
                         End If
                         ct.Go()
@@ -2561,6 +2565,8 @@ Public Class RenderArray
         Dim MaxRight As Single
     End Structure
     Public Shared Function GetTableLayout(CurRenderText As RenderArray.RenderText, OutArray As Object(), _Width As Single, ByRef Bounds As Generic.List(Of Generic.List(Of Generic.List(Of LayoutInfo))), WidthFunc As GetTextWidth) As SizeF
+        Dim Top As Single = 0
+        Dim TotalWidth As Single = 0
         Dim ColWidths As New List(Of Single)
         For Pass = 0 To 1
             For ListCount As Integer = 2 To CType(CurRenderText.Text, Object()).Length - 1
@@ -2571,16 +2577,18 @@ Public Class RenderArray
                 Bounds.Add(New Generic.List(Of Generic.List(Of LayoutInfo)))
                 If Not InnerArray Is Nothing Then
                     For Index = 0 To InnerArray.Length - 1
-                        Bounds(ListCount).Add(New Generic.List(Of LayoutInfo))
+                        Bounds(ListCount - 2).Add(New Generic.List(Of LayoutInfo))
                         Dim s As Drawing.SizeF
                         If TypeOf InnerArray(Index) Is Object() Then
-                            s = GetTableLayout(CurRenderText, DirectCast(InnerArray(Index), Object()), _Width, Bounds, WidthFunc)
+                            Dim SubBounds As New Generic.List(Of Generic.List(Of Generic.List(Of LayoutInfo)))
+                            s = GetTableLayout(CurRenderText, DirectCast(InnerArray(Index), Object()), If(Pass = 0, _Width, ColWidths(Index)), SubBounds, WidthFunc)
+                            Bounds(ListCount - 2)(Index).Add(New LayoutInfo(New RectangleF(0, Top + CurTop, s.Width, s.Height), 0, 0, SubBounds))
                         Else
                             Dim theText As String = CStr(InnerArray(Index))
                             While theText <> String.Empty
                                 Dim nChar As Integer
                                 Dim Baseline As Single
-                                nChar = WidthFunc(theText, CurRenderText.Font, _Width, CurRenderText.DisplayClass = RenderArray.RenderDisplayClass.eArabic Or CurRenderText.DisplayClass = RenderArray.RenderDisplayClass.eRTL, s, Baseline)
+                                nChar = WidthFunc(theText, CurRenderText.Font, If(Pass = 0, _Width, ColWidths(Index)), CStr(DirectCast(OutArray(1), Object())(Index)) = "arabic", s, Baseline)
                                 'break up string on previous word boundary unless beginning of string
                                 'arabic strings cannot be broken up in the middle due to letters joining which would throw off calculations
                                 If nChar = 0 Then
@@ -2590,7 +2598,7 @@ Public Class RenderArray
                                     If idx <> -1 Then nChar = idx + 1
                                 End If
                                 If theText.Substring(nChar) <> String.Empty Then
-                                    WidthFunc(theText.Substring(0, nChar), CurRenderText.Font, _Width, CurRenderText.DisplayClass = RenderArray.RenderDisplayClass.eArabic Or CurRenderText.DisplayClass = RenderArray.RenderDisplayClass.eRTL, s, Baseline)
+                                    WidthFunc(theText.Substring(0, nChar), CurRenderText.Font, If(Pass = 0, _Width, ColWidths(Index)), CStr(DirectCast(OutArray(1), Object())(Index)) = "arabic", s, Baseline)
                                 End If
                                 theText = theText.Substring(nChar)
                                 If theText <> String.Empty Then
@@ -2599,12 +2607,32 @@ Public Class RenderArray
                                 MaxWidth = Math.Max(MaxWidth, s.Width)
                             End While
                             s = New SizeF(MaxWidth, CurTop)
+                            Bounds(ListCount - 2)(Index).Add(New LayoutInfo(New RectangleF(0, Top + CurTop, s.Width, s.Height), 0, 0, Nothing))
                         End If
                         'Centering within MaxWidth can be done here
+                        If ColWidths.Count < Index + 1 Then
+                            ColWidths.Add(MaxWidth)
+                        Else
+                            ColWidths(Index) = Math.Max(ColWidths(Index), MaxWidth)
+                        End If
+                        MaxTop = Math.Max(s.Height, MaxTop)
                     Next
                 End If
+                Top += MaxTop
             Next
+            If Pass = 0 Then
+                For Index As Integer = 0 To ColWidths.Count - 1
+                    TotalWidth += ColWidths(Index)
+                Next
+                If TotalWidth <= _Width Then Exit For
+                For Index = 0 To ColWidths.Count - 1
+                    ColWidths(Index) = ColWidths(Index) / TotalWidth * _Width
+                Next
+                TotalWidth = _Width
+                Bounds.Clear()
+            End If
         Next
+        Return New SizeF(TotalWidth, Top)
     End Function
     Public Shared Function GetLayout(CurRenderArray As List(Of RenderArray.RenderItem), _Width As Single, ByRef Bounds As Generic.List(Of Generic.List(Of Generic.List(Of LayoutInfo))), WidthFunc As GetTextWidth) As SizeF
         Dim MaxRight As Single = _Width
