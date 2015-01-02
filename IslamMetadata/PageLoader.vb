@@ -3265,7 +3265,9 @@ Public Class DocBuilder
                 Words = Nothing
                 SelArr = Nothing
             End If
-            'Array.FindAll(Words, Function(Word As IslamData.GrammarSet.GrammarNoun) Array.IndexOf(SelArr, Word.TranslationID) <> -1)
+            For Count = 0 To SelArr.Length - 1
+                If Array.IndexOf(Words, SelArr(Count)) = -1 Then Debug.Print("Transform Subject ID Not Found: " + SelArr(Count))
+            Next
         ElseIf Strings.StartsWith("plurals:") Or Strings.StartsWith("possessivedeterminerpersonalpronoun:") Then
             Dim Words As IslamData.GrammarSet.GrammarTransform()
             Dim SelArr As String()
@@ -3279,7 +3281,9 @@ Public Class DocBuilder
                 Words = Nothing
                 SelArr = Nothing
             End If
-            'Array.FindAll(Words, Function(Word As IslamData.GrammarSet.GrammarTransform) Array.IndexOf(SelArr, Word.TranslationID) <> -1)
+            For Count = 0 To SelArr.Length - 1
+                If Array.IndexOf(Words, SelArr(Count)) = -1 Then Debug.Print("Transform Subject ID Not Found: " + SelArr(Count))
+            Next
         ElseIf Strings.StartsWith("particle:") Then
             Dim SelArr As String() = Strings.Replace("particle:", String.Empty).Split(","c)
             For Count As Integer = 0 To SelArr.Length - 1

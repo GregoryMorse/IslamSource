@@ -1293,27 +1293,7 @@ Public Class ArabicData
         Dim CharArr As New ArrayList
         Dim Letters As New ArrayList
         Dim Combos As New ArrayList
-        Dim Ranges As ArrayList = MakeUniCategory(CombineCategories)
-        For Count = 0 To Ranges.Count - 1
-            Dim Range As ArrayList = CType(Ranges(Count), ArrayList)
-            If Range.Count = 1 Then
-                CharArr.Add(Range(0))
-            Else
-                For SubCount = 0 To Range.Count - 1
-                    CharArr.Add(Range(SubCount))
-                Next
-            End If
-        Next
-        For Count = 0 To CharArr.Count - 1
-            Dim ArabicLet As New ArabicSymbol
-            ArabicLet.Symbol = ChrW(CInt(CharArr(Count)))
-            ArabicLet.CombiningClass = _CombPos(ArabicLet.Symbol)
-            ArabicLet.JoiningStyle = "T"
-            ArabicLet.UnicodeName = _Names.Item(ArabicLet.Symbol)(0)
-            Letters.Add(ArabicLet)
-        Next
-        CharArr = New ArrayList
-        Ranges = MakeUniCategory(ALCategories)
+        Dim Ranges As ArrayList = MakeUniCategory(ALCategories)
         For Count = 0 To Ranges.Count - 1
             Dim Range As ArrayList = CType(Ranges(Count), ArrayList)
             If Range.Count = 1 Then
@@ -1357,6 +1337,7 @@ Public Class ArabicData
             Else
                 Dim ArabicLet As New ArabicSymbol
                 ArabicLet.Symbol = ChrW(CInt(CharArr(Count)))
+                If Array.IndexOf(CombineCategories, _UniClass(ArabicLet.Symbol)) <> -1 Then ArabicLet.JoiningStyle = "T"
                 If Array.IndexOf(CausesJoining, ArabicLet.Symbol) <> -1 Then ArabicLet.JoiningStyle = "C"
                 If _DecData.ContainsKey(ChrW(CInt(CharArr(Count)))) Then
                     ArabicLet.JoiningStyle = _DecData.Item(ArabicLet.Symbol).JoiningStyle
@@ -1381,7 +1362,7 @@ Public Class ArabicData
         For Count = 0 To CharArr.Count - 1
             Dim ArabicLet As New ArabicSymbol
             ArabicLet.Symbol = ChrW(CInt(CharArr(Count)))
-            ArabicLet.JoiningStyle = If(Array.IndexOf(CausesJoining, ArabicLet.Symbol) <> -1, "C", "U")
+            ArabicLet.JoiningStyle = If(Array.IndexOf(CombineCategories, _UniClass(ArabicLet.Symbol)) <> -1, "T", If(Array.IndexOf(CausesJoining, ArabicLet.Symbol) <> -1, "C", "U"))
             ArabicLet.UnicodeName = _Names.Item(ArabicLet.Symbol)(0)
             Letters.Add(ArabicLet)
         Next
@@ -1400,7 +1381,7 @@ Public Class ArabicData
         For Count = 0 To CharArr.Count - 1
             Dim ArabicLet As New ArabicSymbol
             ArabicLet.Symbol = ChrW(CInt(CharArr(Count)))
-            ArabicLet.JoiningStyle = If(Array.IndexOf(CausesJoining, ArabicLet.Symbol) <> -1, "C", "U")
+            ArabicLet.JoiningStyle = If(Array.IndexOf(CombineCategories, _UniClass(ArabicLet.Symbol)) <> -1, "T", If(Array.IndexOf(CausesJoining, ArabicLet.Symbol) <> -1, "C", "U"))
             ArabicLet.UnicodeName = _Names.Item(ArabicLet.Symbol)(0)
             Letters.Add(ArabicLet)
         Next
@@ -1675,7 +1656,8 @@ Public Class ArabicData
                 _LigatureLookups = New Dictionary(Of String, Integer)
                 Dim Combos As ArabicCombo() = LigatureCombos
                 For Count = 0 To Combos.Length - 1
-                    If Not Combos(Count).Shaping Is Nothing Then
+                    'If there is only an isolated form then the combos which come before letters would take precedence
+                    If Not Combos(Count).Shaping Is Nothing And Not _LigatureLookups.ContainsKey(String.Join(String.Empty, Array.ConvertAll(Combos(Count).Symbol, Function(Sym As Char) CStr(Sym)))) Then
                         _LigatureLookups.Add(String.Join(String.Empty, Array.ConvertAll(Combos(Count).Symbol, Function(Sym As Char) CStr(Sym))), Count)
                     End If
                 Next
@@ -1699,11 +1681,12 @@ Public Class ArabicData
             Else
                 Dim Indexes As Integer() = Nothing
                 SubCount = CheckLigatureMatch(Str.Substring(Count), Count, Indexes)
-                If SubCount <> -1 Then
+                'transform ligatures are not processed here
+                If SubCount <> -1 AndAlso Combos(SubCount).Shaping <> Nothing AndAlso Combos(SubCount).Shaping.Length <> 1 Then
                     Dim Index As Integer = Array.FindIndex(Combos(SubCount).Symbol, Function(Ch As Char) FindLetterBySymbol(Ch) <> -1 AndAlso ArabicLetters(FindLetterBySymbol(Ch)).JoiningStyle = "T")
                     'diacritics always use isolated form
                     Dim Shape As Integer = If(Index = 0, 0, GetShapeIndexFromString(Str, Count, Indexes(Indexes.Length - 1) - Count + 1 - If(Index = -1, 0, Index)))
-                    If Combos(SubCount).Shaping <> Nothing AndAlso Combos(SubCount).Shaping(Shape) <> ChrW(0) AndAlso Array.IndexOf(SupportedForms, Combos(SubCount).Shaping(Shape)) <> -1 Then
+                    If Combos(SubCount).Shaping(Shape) <> ChrW(0) AndAlso Array.IndexOf(SupportedForms, Combos(SubCount).Shaping(Shape)) <> -1 Then
                         Ligatures.Add(New LigatureInfo With {.Ligature = Combos(SubCount).Shaping(Shape), .Indexes = Indexes})
                         Count += Combos(SubCount).Symbol.Length - 1
                     End If
@@ -1887,12 +1870,14 @@ Public Class ArabicData
     End Structure
     Public Shared ShapePositions As String() = {"isolated", "final", "initial", "medial"}
     Public Shared _CombPos As Dictionary(Of Char, Integer)
+    Public Shared _UniClass As Dictionary(Of Char, String)
     Public Shared _DecData As Dictionary(Of Char, DecData)
     Public Shared _Ranges As Dictionary(Of String, ArrayList)
     Public Shared _Names As Dictionary(Of Char, String())
     Public Shared Sub GetDecompositionCombiningCatData()
         Dim Strs As String() = IO.File.ReadAllLines(Utility.GetFilePath("metadata\UnicodeData.txt"))
         _CombPos = New Dictionary(Of Char, Integer)
+        _UniClass = New Dictionary(Of Char, String)
         _Ranges = New Dictionary(Of String, ArrayList)
         _DecData = New Dictionary(Of Char, DecData)
         _Names = New Dictionary(Of Char, String())
@@ -1901,6 +1886,7 @@ Public Class ArabicData
             'All symbol categories not needed
             If (Vals(2)(0) = "S" And Vals(4) <> "ON") Or Integer.Parse(Vals(0), Globalization.NumberStyles.AllowHexSpecifier) >= &H10000 Then Continue For
             Dim Ch As Char = ChrW(Integer.Parse(Vals(0), Globalization.NumberStyles.AllowHexSpecifier))
+            _UniClass.Add(Ch, Vals(2))
             If Vals(5) <> "" Then
                 Dim CombData As String() = Vals(5).Split(" "c)
                 If Not _DecData.ContainsKey(Ch) Then _DecData.Add(Ch, New DecData With {.Shapes = New Char() {Nothing, Nothing, Nothing, Nothing}})
@@ -2307,6 +2293,18 @@ Public Class RenderArray
                         MaxRect = New RectangleF(Doc.PageSize.Width, Doc.PageSize.Height, 0, 0)
                     End If
                     DoRenderPdf(Doc, Writer, Font, DrawFont, Forms, CType(CurRenderArray(Count).TextItems(SubCount).Text, List(Of RenderArray.RenderItem)), _Bounds(Count)(SubCount)(0).Bounds, PageOffset, New PointF(_Bounds(Count)(SubCount)(0).Rect.Location.X, _Bounds(Count)(SubCount)(0).Rect.Location.Y))
+                ElseIf CurRenderArray(Count).TextItems(SubCount).DisplayClass = RenderArray.RenderDisplayClass.eList Then
+                    For ListCount As Integer = 0 To CType(CurRenderArray(Count).TextItems(SubCount).Text, Object()).Length - 1
+                        Dim InnerArray As Object() = CType(CType(CurRenderArray(Count).TextItems(SubCount).Text, Object())(ListCount), Object())
+                        If Not InnerArray Is Nothing Then
+                            For Index = 0 To InnerArray.Length - 1
+                                If TypeOf InnerArray(Index) Is Object() Then
+                                    'DirectCast(InnerArray(Index), Object())
+                                Else
+                                End If
+                            Next
+                        End If
+                    Next
                 ElseIf CurRenderArray(Count).TextItems(SubCount).DisplayClass = RenderArray.RenderDisplayClass.eArabic Or CurRenderArray(Count).TextItems(SubCount).DisplayClass = HostPageUtility.RenderArray.RenderDisplayClass.eLTR Or CurRenderArray(Count).TextItems(SubCount).DisplayClass = RenderArray.RenderDisplayClass.eRTL Or CurRenderArray(Count).TextItems(SubCount).DisplayClass = RenderArray.RenderDisplayClass.eTransliteration Then
                     Dim theText As String = CStr(CurRenderArray(Count).TextItems(SubCount).Text)
                     If _Bounds(Count)(SubCount).Count <> 0 AndAlso RowTop <> _Bounds(Count)(SubCount)(0).Rect.Top Then
@@ -2341,7 +2339,7 @@ Public Class RenderArray
                         Dim Rect As RectangleF = _Bounds(Count)(SubCount)(NextCount).Rect
                         Dim Text As String = theText.Substring(0, _Bounds(Count)(SubCount)(NextCount).nChar)
                         Dim bSpace As Boolean = False
-                        If ArabicData.FindLetterBySymbol(Text(0)) <> -1 AndAlso ArabicData.ArabicLetters(ArabicData.FindLetterBySymbol(Text(0))).JoiningStyle = "T" Then
+                        If ArabicData.FindLetterBySymbol(Text(0)) <> -1 AndAlso ArabicData.ArabicLetters(ArabicData.FindLetterBySymbol(Text(0))).JoiningStyle = "T" AndAlso ArabicData.GetLigatures(" "c + Text(0), False, Forms).Length = 0 Then
                             Text = " "c + Text
                             bSpace = True
                         End If
@@ -2360,7 +2358,7 @@ Public Class RenderArray
                             ct.ArabicOptions = iTextSharp.text.pdf.ColumnText.AR_COMPOSEDTASHKEEL
                             ct.UseAscender = False
                             Dim NewFont As New iTextSharp.text.Font(Font)
-                            If CharPosInfos(Index).Length = 1 AndAlso Char.IsDigit(Text(CharPosInfos(Index).Index)) Then
+                            If CharPosInfos(Index).Length = 1 AndAlso System.Text.RegularExpressions.Regex.Match(Text(CharPosInfos(Index).Index), "[\p{IsArabic}]").Success And Char.GetUnicodeCategory(Text(CharPosInfos(Index).Index)) = Globalization.UnicodeCategory.DecimalDigitNumber Then
                                 'end of ayah marker glyph mimicing based on Arial glyphs for small number substitutions
                                 NewFont.Size = NewFont.Size * 0.746F
                                 'CharPosInfos(Index).X -= 0.537F * CharWidth
@@ -2368,7 +2366,7 @@ Public Class RenderArray
                             End If
                             Dim Box As Integer() = Font.BaseFont.GetCharBBox(AscW(ArabicData.ConvertLigatures(Text.Substring(CharPosInfos(Index).Index, CharPosInfos(Index).Length), False, Forms)(0)))
                             If Not Box Is Nothing Then
-                                ct.SetSimpleColumn(Rect.Left + Doc.LeftMargin + Rect.Width - 3 - CharPosInfos(Index).PriorWidth + CharPosInfos(Index).Width + If(System.Text.RegularExpressions.Regex.Match(Text(CharPosInfos(Index).Index), "[\p{IsArabic}]").Success And Char.GetUnicodeCategory(Text(CharPosInfos(Index).Index)) = Globalization.UnicodeCategory.DecimalDigitNumber, CharPosInfos(Index).X - 3.0F, -CharPosInfos(Index).X - 1.5F), Doc.PageSize.Height - Doc.TopMargin - Rect.Bottom - _Bounds(Count)(SubCount)(NextCount).Baseline - Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size) * 2 + CharPosInfos(Index).Y, Rect.Right - 3 + Doc.LeftMargin - CharPosInfos(Index).PriorWidth + If(System.Text.RegularExpressions.Regex.Match(Text(CharPosInfos(Index).Index), "[\p{IsArabic}]").Success And Char.GetUnicodeCategory(Text(CharPosInfos(Index).Index)) = Globalization.UnicodeCategory.DecimalDigitNumber, CharPosInfos(Index).X - 3.0F, -CharPosInfos(Index).X - 1.5F), Doc.PageSize.Height - Doc.TopMargin - Rect.Top + 1 - _Bounds(Count)(SubCount)(NextCount).Baseline - Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size) * 2 + CharPosInfos(Index).Y, Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size), iTextSharp.text.Element.ALIGN_RIGHT Or iTextSharp.text.Element.ALIGN_BASELINE)
+                                ct.SetSimpleColumn(Rect.Left + Doc.LeftMargin + Rect.Width - 3 - CharPosInfos(Index).PriorWidth + CharPosInfos(Index).Width + If(System.Text.RegularExpressions.Regex.Match(Text(CharPosInfos(Index).Index), "[\p{IsArabic}]").Success And Char.GetUnicodeCategory(Text(CharPosInfos(Index).Index)) = Globalization.UnicodeCategory.DecimalDigitNumber, -CharPosInfos(Index).X - 1.5F, CharPosInfos(Index).X - 4.5F), Doc.PageSize.Height - Doc.TopMargin - Rect.Bottom - _Bounds(Count)(SubCount)(NextCount).Baseline - Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size) * 2 + CharPosInfos(Index).Y, Rect.Right - 3 + Doc.LeftMargin - CharPosInfos(Index).PriorWidth + If(System.Text.RegularExpressions.Regex.Match(Text(CharPosInfos(Index).Index), "[\p{IsArabic}]").Success And Char.GetUnicodeCategory(Text(CharPosInfos(Index).Index)) = Globalization.UnicodeCategory.DecimalDigitNumber, -CharPosInfos(Index).X - 1.5F, CharPosInfos(Index).X - 4.5F), Doc.PageSize.Height - Doc.TopMargin - Rect.Top + 1 - _Bounds(Count)(SubCount)(NextCount).Baseline - Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size) * 2 + CharPosInfos(Index).Y, Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size), iTextSharp.text.Element.ALIGN_RIGHT Or iTextSharp.text.Element.ALIGN_BASELINE)
                                 ct.AddText(New iTextSharp.text.Chunk(Text.Substring(CharPosInfos(Index).Index, CharPosInfos(Index).Length), NewFont))
                                 ct.Go()
                             End If
@@ -2471,7 +2469,7 @@ Public Class RenderArray
         End If
         Font.BaseFont.CorrectArabicAdvance()
         Dim bSpace As Boolean = False
-        If ArabicData.FindLetterBySymbol(Str(0)) <> -1 AndAlso ArabicData.ArabicLetters(ArabicData.FindLetterBySymbol(Str(0))).JoiningStyle = "T" Then
+        If ArabicData.FindLetterBySymbol(Str(0)) <> -1 AndAlso ArabicData.ArabicLetters(ArabicData.FindLetterBySymbol(Str(0))).JoiningStyle = "T" AndAlso ArabicData.GetLigatures(" "c + Str(0), False, Forms).Length = 0 Then
             Str = " "c + Str
             bSpace = True
         End If
@@ -2562,6 +2560,52 @@ Public Class RenderArray
         Dim SubIndex As Integer
         Dim MaxRight As Single
     End Structure
+    Public Shared Function GetTableLayout(CurRenderText As RenderArray.RenderText, OutArray As Object(), _Width As Single, ByRef Bounds As Generic.List(Of Generic.List(Of Generic.List(Of LayoutInfo))), WidthFunc As GetTextWidth) As SizeF
+        Dim ColWidths As New List(Of Single)
+        For Pass = 0 To 1
+            For ListCount As Integer = 2 To CType(CurRenderText.Text, Object()).Length - 1
+                Dim InnerArray As Object() = CType(CType(OutArray, Object())(ListCount), Object())
+                Dim MaxWidth As Single = 0
+                Dim CurTop As Single = 0
+                Dim MaxTop As Single = 0
+                Bounds.Add(New Generic.List(Of Generic.List(Of LayoutInfo)))
+                If Not InnerArray Is Nothing Then
+                    For Index = 0 To InnerArray.Length - 1
+                        Bounds(ListCount).Add(New Generic.List(Of LayoutInfo))
+                        Dim s As Drawing.SizeF
+                        If TypeOf InnerArray(Index) Is Object() Then
+                            s = GetTableLayout(CurRenderText, DirectCast(InnerArray(Index), Object()), _Width, Bounds, WidthFunc)
+                        Else
+                            Dim theText As String = CStr(InnerArray(Index))
+                            While theText <> String.Empty
+                                Dim nChar As Integer
+                                Dim Baseline As Single
+                                nChar = WidthFunc(theText, CurRenderText.Font, _Width, CurRenderText.DisplayClass = RenderArray.RenderDisplayClass.eArabic Or CurRenderText.DisplayClass = RenderArray.RenderDisplayClass.eRTL, s, Baseline)
+                                'break up string on previous word boundary unless beginning of string
+                                'arabic strings cannot be broken up in the middle due to letters joining which would throw off calculations
+                                If nChar = 0 Then
+                                    nChar = theText.Length 'If no room for even a letter then just use placeholder
+                                ElseIf nChar <> theText.Length Then
+                                    Dim idx As Integer = Array.FindLastIndex(theText.ToCharArray(), nChar - 1, nChar, Function(ch As Char) Char.IsWhiteSpace(ch))
+                                    If idx <> -1 Then nChar = idx + 1
+                                End If
+                                If theText.Substring(nChar) <> String.Empty Then
+                                    WidthFunc(theText.Substring(0, nChar), CurRenderText.Font, _Width, CurRenderText.DisplayClass = RenderArray.RenderDisplayClass.eArabic Or CurRenderText.DisplayClass = RenderArray.RenderDisplayClass.eRTL, s, Baseline)
+                                End If
+                                theText = theText.Substring(nChar)
+                                If theText <> String.Empty Then
+                                    CurTop += s.Height
+                                End If
+                                MaxWidth = Math.Max(MaxWidth, s.Width)
+                            End While
+                            s = New SizeF(MaxWidth, CurTop)
+                        End If
+                        'Centering within MaxWidth can be done here
+                    Next
+                End If
+            Next
+        Next
+    End Function
     Public Shared Function GetLayout(CurRenderArray As List(Of RenderArray.RenderItem), _Width As Single, ByRef Bounds As Generic.List(Of Generic.List(Of Generic.List(Of LayoutInfo))), WidthFunc As GetTextWidth) As SizeF
         Dim MaxRight As Single = _Width
         Dim Top As Single = 0
@@ -2582,6 +2626,17 @@ Public Class RenderArray
                 If CurRenderArray(Count).TextItems(SubCount).DisplayClass = RenderArray.RenderDisplayClass.eNested Then
                     Dim SubBounds As New Generic.List(Of Generic.List(Of Generic.List(Of LayoutInfo)))
                     s = GetLayout(CType(CurRenderArray(Count).TextItems(SubCount).Text, List(Of RenderArray.RenderItem)), _Width, SubBounds, WidthFunc)
+                    If s.Width > NextRight Then
+                        OverIndexes.Add(New OverInfo(Count, SubCount, NextRight))
+                        NextRight = _Width
+                        IsOverflow = True
+                    End If
+                    Right = NextRight
+                    Bounds(Count)(SubCount).Add(New LayoutInfo(New RectangleF(Right, Top + CurTop, s.Width, s.Height), 0, 0, SubBounds))
+                    MaxWidth = Math.Max(MaxWidth, s.Width)
+                ElseIf CurRenderArray(Count).TextItems(SubCount).DisplayClass = RenderArray.RenderDisplayClass.eList Then
+                    Dim SubBounds As New Generic.List(Of Generic.List(Of Generic.List(Of LayoutInfo)))
+                    s = GetTableLayout(CurRenderArray(Count).TextItems(SubCount), CType(CurRenderArray(Count).TextItems(SubCount).Text, Object()), _Width, SubBounds, WidthFunc)
                     If s.Width > NextRight Then
                         OverIndexes.Add(New OverInfo(Count, SubCount, NextRight))
                         NextRight = _Width
