@@ -3611,7 +3611,7 @@ Public Class TanzilReader
         Output(1) = New String() {String.Empty, String.Empty}
         Output(2) = New String() {Utility.LoadResourceString("IslamInfo_Name"), Utility.LoadResourceString("IslamInfo_Translation")}
         For Count = 0 To CachedData.IslamData.Translations.TranslationList.Length - 1
-            Output(3 + Count) = {CachedData.IslamData.Translations.TranslationList(Count).FileName, CachedData.IslamData.Translations.TranslationList(Count).Translator + "(" + CachedData.IslamData.Translations.TranslationList(Count).Name + ")"}
+            Output(3 + Count) = {CachedData.IslamData.Translations.TranslationList(Count).FileName, CachedData.IslamData.Translations.TranslationList(Count).Translator + " (" + CachedData.IslamData.Translations.TranslationList(Count).Name + ")"}
         Next
         Return RenderArray.MakeTableJSFunctions(Output, ID)
     End Function

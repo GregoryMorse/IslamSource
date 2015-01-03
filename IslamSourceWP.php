@@ -2149,10 +2149,15 @@ class DocBuilder
 		if (TanzilReader::IsQuranTextReference($strings)) {
             $renderer->Items = array_merge($renderer->Items, TanzilReader::QuranTextFromReference($strings, $schemetype, $scheme, $translationindex)->Items);
         } elseif ($strings !== null && array_key_exists($strings, DocBuilder::GetAbbrevs())) {
-        	$phrasecat = Phrases::GetPhraseCat((string)DocBuilder::GetAbbrevs()[$strings]->attributes("id"));
+        	$phrasecat = Phrases::GetPhraseCat((string)DocBuilder::GetAbbrevs()[$strings]->attributes()["id"]);
 			$items = array();
 			if (array_key_exists("Char", $options)) $options["Char"] = array_map(function ($str) { return substr("00000000" . strtolower($str), -8); }, $options["Char"]);
-			if (count($options) == 0) array_push($items, new RenderItem(RenderTypes::eText, [new RenderText(RenderDisplayClass::eTag, (string)DocBuilder::GetAbbrevs()[$strings]->attributes()["id"] . "|" . (string)DocBuilder::GetAbbrevs()[$strings]->attributes()["text"])]));
+			if (count($options) == 0) {
+				array_push($items, new RenderItem(RenderTypes::eText, [new RenderText(RenderDisplayClass::eTag, (string)DocBuilder::GetAbbrevs()[$strings]->attributes()["id"] . "|" . (string)DocBuilder::GetAbbrevs()[$strings]->attributes()["text"])]));
+	        	if ($phrasecat !== null) {
+	        		$items = array_merge($items, Phrases::DoGetRenderedPhraseText($schemetype, $scheme, $phrasecat, $translationindex)->Items);
+	        	}
+	        }
 			if ((string)DocBuilder::GetAbbrevs()[$strings]->attributes()["font"] != "") {
 				foreach (explode("|", (string)DocBuilder::GetAbbrevs()[$strings]->attributes()["font"]) as $part) {
 					$font = "";
@@ -2172,9 +2177,6 @@ class DocBuilder
 					}
 				}
 			}
-        	if ($phrasecat) {
-        		$items = array_merge($items, Phrases::DoGetRenderedPhraseText($schemetype, $scheme, $phrasecat, $translationindex));
-        	}
 			array_push($renderer->Items, new RenderItem(RenderTypes::eText, [new RenderText(RenderDisplayClass::eNested, $items)]));
 		}
 		return $renderer;
@@ -2269,7 +2271,7 @@ if (array_key_exists("Char", $_GET)) {
 										} elseif ($renderer->Items[$matchcount]->textitems[$textcount]->Text[$nestcount]->textitems[$nesttextcount]->displayClass == RenderDisplayClass::eTag) {
 											$id = $renderer->Items[$matchcount]->textitems[$textcount]->Text[$nestcount]->textitems[$nesttextcount]->Text;
 										} elseif ($renderer->Items[$matchcount]->textitems[$textcount]->Text[$nestcount]->textitems[$nesttextcount]->displayClass == RenderDisplayClass::eArabic) {
-											if ($id != "") $val .= "{\"value\":" . json_encode(explode("|", $id)[1]) . ", \"font\":\"\", \"char\": \"" . implode(array_map(function ($it) { return "\\u" . substr("0000" . bin2hex(mb_convert_encoding($it, 'UCS-2BE', 'UTF-8')), -4); }, preg_split('/(?<!^)(?!$)/u', $renderer->Items[$matchcount]->textitems[$textcount]->Text[$nestcount]->textitems[$nesttextcount]->Text))) . "\"},";
+											if ($id != "" && $renderer->Items[$matchcount]->textitems[$textcount]->Text[$nestcount]->textitems[$nesttextcount]->Text != "") $val .= "{\"value\":" . json_encode(explode("|", $id)[1]) . ", \"font\":\"\", \"char\": \"" . implode(array_map(function ($it) { return "\\u" . substr("0000" . bin2hex(mb_convert_encoding($it, 'UCS-2BE', 'UTF-8')), -4); }, preg_split('/(?<!^)(?!$)/u', $renderer->Items[$matchcount]->textitems[$textcount]->Text[$nestcount]->textitems[$nesttextcount]->Text))) . "\"},";
 										}
 									}
 								}

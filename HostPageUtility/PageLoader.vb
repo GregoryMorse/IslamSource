@@ -2802,7 +2802,7 @@ Public Class RenderArray
         Return "function setClipboardText(text) { if (window.clipboardData) { window.clipboardData.setData('Text', text); } }"
     End Function
     Public Shared Function GetSetClipboardJS() As String
-        Return "function getText(top, child) { var iCount, item = child === '' ? renderList[top] : renderList[top].children[child], text, chtxt, str; text = String.fromCharCode(0x200E) + (item['title'] === '' ? '' : (getText(item['title'], '') + '\t')); for (iCount = 0; iCount < item['arabic'].length; iCount++) { if (item['arabic'][iCount] !== '') text += String.fromCharCode(0x202E) + $('#' + item['arabic'][iCount]).text() + '\t' + String.fromCharCode(0x202C); } for (iCount = 0; iCount < item['translit'].length; iCount++) { if (item['translit'][iCount] !== '') text += $('#' + item['translit'][iCount]).text() + '\t'; } for (iCount = 0; iCount < item['translate'].length; iCount++) { if (item['translate'][iCount] !== '') text += $('#' + item['translate'][iCount]).text() + '\t'; } chtxt = ''; for (k in item['children']) { if (chtxt !== '') chtxt += ' '; for (iCount = 0; iCount < item['children'][k]['arabic'].length; iCount++) { if (item['children'][k]['arabic'][iCount] !== '') chtxt += String.fromCharCode(0x202E) + $('#' + item['children'][k]['arabic'][iCount]).text() + String.fromCharCode(0x202C); } str = ''; for (iCount = 0; iCount < item['children'][k]['translit'].length; iCount++) { if (item['children'][k]['translit'][iCount] !== '') str += $('#' + item['children'][k]['translit'][iCount]).text(); } chtxt += (str !== '' ? '(' + str + ')' : '') + '='; for (iCount = 0; iCount < item['children'][k]['translate'].length; iCount++) { if (item['children'][k]['translate'][iCount] !== '') chtxt += $('#' + item['children'][k]['translate'][iCount]).text(); }; } if (chtxt !== '') text += '[' + chtxt + ']'; return text; }"
+        Return "function getText(top, child) { var iCount, item, text, chtxt, str; for (iCount = 0; iCount < renderList.length; iCount++) { if (renderList[iCount][top] !== undefined) { item = child === '' ? renderList[iCount][top] : renderList[iCount][top].children[child]; break; } } text = String.fromCharCode(0x200E) + (item['title'] === '' ? '' : (getText(item['title'], '') + '\t')); for (iCount = 0; iCount < item['arabic'].length; iCount++) { if (item['arabic'][iCount] !== '') text += String.fromCharCode(0x202E) + $('#' + item['arabic'][iCount]).text() + '\t' + String.fromCharCode(0x202C); } for (iCount = 0; iCount < item['translit'].length; iCount++) { if (item['translit'][iCount] !== '') text += $('#' + item['translit'][iCount]).text() + '\t'; } for (iCount = 0; iCount < item['translate'].length; iCount++) { if (item['translate'][iCount] !== '') text += $('#' + item['translate'][iCount]).text() + '\t'; } chtxt = ''; for (k in item['children']) { if (chtxt !== '') chtxt += ' '; for (iCount = 0; iCount < item['children'][k]['arabic'].length; iCount++) { if (item['children'][k]['arabic'][iCount] !== '') chtxt += String.fromCharCode(0x202E) + $('#' + item['children'][k]['arabic'][iCount]).text() + String.fromCharCode(0x202C); } str = ''; for (iCount = 0; iCount < item['children'][k]['translit'].length; iCount++) { if (item['children'][k]['translit'][iCount] !== '') str += $('#' + item['children'][k]['translit'][iCount]).text(); } chtxt += (str !== '' ? '(' + str + ')' : '') + '='; for (iCount = 0; iCount < item['children'][k]['translate'].length; iCount++) { if (item['children'][k]['translate'][iCount] !== '') chtxt += $('#' + item['children'][k]['translate'][iCount]).text(); }; } if (chtxt !== '') text += '[' + chtxt + ']'; return text; }"
     End Function
     Public Function GetRenderJS() As String()
         Return DoGetRenderJS(_ID, Items)
@@ -2854,13 +2854,13 @@ Public Class RenderArray
                 End If
             Next
             If Items(Count).Type = RenderTypes.eHeaderCenter Then
-                LastTitle = "ri" + CStr(Count)
+                LastTitle = "ri" + CStr(IIf(NestPrefix = String.Empty, ID, NestPrefix + "_")) + CStr(Count)
             End If
             If Arabic.Count <> 0 Or Translit.Count <> 0 Or Translate.Count <> 0 Then
                 If Arabic.Count = 0 Then Arabic.Add(String.Empty)
                 If Translit.Count = 0 Then Translit.Add(String.Empty)
                 If Translate.Count = 0 Then Translate.Add(String.Empty)
-                CType(Objects(0), ArrayList).Add("ri" + CStr(IIf(NestPrefix = String.Empty, String.Empty, NestPrefix + "_")) + CStr(Count))
+                CType(Objects(0), ArrayList).Add("ri" + CStr(IIf(NestPrefix = String.Empty, ID, NestPrefix + "_")) + CStr(Count))
                 CType(Objects(1), ArrayList).Add(Utility.MakeJSIndexedObject(New String() {"title", "arabic", "translit", "translate", "children"}, New Array() {New String() {"'" + CStr(IIf(Items(Count).Type <> RenderTypes.eHeaderLeft And Items(Count).Type <> RenderTypes.eHeaderCenter And Items(Count).Type <> RenderTypes.eHeaderRight, Utility.EncodeJS(LastTitle), String.Empty)) + "'", Utility.MakeJSArray(CType(Arabic.ToArray(GetType(String)), String())), Utility.MakeJSArray(CType(Translit.ToArray(GetType(String)), String())), Utility.MakeJSArray(CType(Translate.ToArray(GetType(String)), String())), Utility.MakeJSIndexedObject(CType(CType(Children(0), ArrayList).ToArray(GetType(String)), String()), New Array() {CType(CType(Children(1), ArrayList).ToArray(GetType(String)), String())}, True)}}, True))
             End If
         Next
@@ -3118,7 +3118,7 @@ Public Class RenderArray
 
                 writer.WriteBeginTag("input")
                 writer.WriteAttribute("value", "Copy")
-                writer.WriteAttribute("onclick", "javascript: setClipboardText(getText('ri" + CStr(IIf(NestPrefix = String.Empty, Count, NestPrefix)) + "', '" + CStr(IIf(NestPrefix = String.Empty, String.Empty, "ri" + NestPrefix + "_" + CStr(Count))) + "'));")
+                writer.WriteAttribute("onclick", "javascript: setClipboardText(getText('ri" + CStr(IIf(NestPrefix = String.Empty, ID, NestPrefix + "_")) + CStr(Count) + "', '" + CStr(IIf(NestPrefix = String.Empty, String.Empty, "ri" + NestPrefix + "_" + CStr(Count))) + "'));")
                 writer.WriteAttribute("type", "button")
                 writer.Write(HtmlTextWriter.TagRightChar)
 
