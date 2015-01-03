@@ -627,7 +627,7 @@ Public Class Arabic
         Output(1) = New String() {String.Empty, String.Empty}
         Output(2) = New String() {Utility.LoadResourceString("IslamInfo_Name"), Utility.LoadResourceString("IslamInfo_Translation")}
         For Count = 0 To CachedData.IslamData.TranslitSchemes.Length - 1
-            Output(3 + Count) = {CachedData.IslamData.TranslitSchemes(Count).Name, Utility.LoadResourceString("IslamInfo_" + CachedData.IslamData.TranslitSchemes(Count).Name)}
+            Output(3 + Count) = {CachedData.IslamData.TranslitSchemes(Count).Name, Utility.LoadResourceString("IslamSource_" + CachedData.IslamData.TranslitSchemes(Count).Name)}
         Next
         Return RenderArray.MakeTableJSFunctions(Output, ID)
     End Function
@@ -760,55 +760,6 @@ Public Class Arabic
         GetJS.AddRange(NumberGenJS)
         Return GetJS.ToArray()
     End Function
-    Public Shared Function GetCategories() As String()
-        Dim RetCat As New ArrayList(Array.ConvertAll(CachedData.IslamData.Lists, Function(Convert As IslamData.ListCategory) Utility.LoadResourceString("IslamInfo_" + Convert.Title)))
-        Return CType(RetCat.ToArray(GetType(String)), String())
-    End Function
-    'Public Shared Function DisplayTranslation(ByVal Item As PageLoader.TextItem) As Array()
-    '    Dim Count As Integer = CInt(HttpContext.Current.Request.QueryString.Get("selection"))
-    '    If Count = -1 Then Count = 0
-    '    Dim SchemeType As ArabicData.TranslitScheme = CType(If(CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) >= 2, 2 - CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) Mod 2, CInt(HttpContext.Current.Request.QueryString.Get("translitscheme"))), ArabicData.TranslitScheme)
-    '    Dim Scheme As String = If(CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) >= 2, CachedData.IslamData.TranslitSchemes((CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) - 2) \ 2).Name, String.Empty)
-    '    Return DoDisplayTranslation(CachedData.IslamData.Lists(Count), Item.Name, SchemeType, Scheme)
-    'End Function
-    'Public Shared Function DoDisplayTranslation(Category As IslamData.ListCategory, ID As String, SchemeType As ArabicData.TranslitScheme, Scheme As String) As Array()
-    '    Dim Output As New ArrayList
-    '    Output.Add(New String() {})
-    'If TypeOf Category Is IslamData.PrayerTime Then
-    '    Output.Add(New String() {"arabic", "transliteration", String.Empty, String.Empty, String.Empty, String.Empty})
-    '    Output.Add(New String() {Utility.LoadResourceString("IslamInfo_Arabic"), Utility.LoadResourceString("IslamInfo_Transliteration"), Utility.LoadResourceString("IslamInfo_Translation"), Utility.LoadResourceString("IslamInfo_Before"), Utility.LoadResourceString("IslamInfo_PrescribedTime"), Utility.LoadResourceString("IslamInfo_After")})
-    'ElseIf TypeOf Category Is IslamData.PrayerType Then
-    '    Output.Add(New String() {"arabic", "transliteration", String.Empty, String.Empty, String.Empty})
-    '    Output.Add(New String() {Utility.LoadResourceString("IslamInfo_Arabic"), Utility.LoadResourceString("IslamInfo_Transliteration"), Utility.LoadResourceString("IslamInfo_Translation"), Utility.LoadResourceString("IslamInfo_Classification"), Utility.LoadResourceString("IslamInfo_PrayerUnits")})
-    'Else
-    '    Output.Add(New String() {"arabic", "transliteration", String.Empty})
-    '    Output.Add(New String() {Utility.LoadResourceString("IslamInfo_Arabic"), Utility.LoadResourceString("IslamInfo_Transliteration"), Utility.LoadResourceString("IslamInfo_Translation")})
-    'End If
-    'If TypeOf Category Is IslamData.Month Then
-    '    For SubCount As Integer = 0 To CType(Category, IslamData.Month()).Length - 1
-    '        Output.Add(New String() {Arabic.TransliterateFromBuckwalter(CType(Category, IslamData.Month())(SubCount).Name), TransliterateToScheme(Arabic.TransliterateFromBuckwalter(CType(Category, IslamData.Month())(SubCount).Name), SchemeType, Scheme).Trim(), Utility.LoadResourceString("IslamInfo_" + CType(Category, IslamData.Month())(SubCount).TranslationID)})
-    '    Next
-    'ElseIf TypeOf Category Is IslamData.DayOfWeek Then
-    '    For SubCount As Integer = 0 To CType(Category, IslamData.DayOfWeek()).Length - 1
-    '        Output.Add(New String() {Arabic.TransliterateFromBuckwalter(CType(Category, IslamData.DayOfWeek())(SubCount).Name), TransliterateToScheme(Arabic.TransliterateFromBuckwalter(CType(Category, IslamData.DayOfWeek())(SubCount).Name), SchemeType, Scheme).Trim(), Utility.LoadResourceString("IslamInfo_" + CType(Category, IslamData.DayOfWeek())(SubCount).TranslationID)})
-    '    Next
-    'ElseIf TypeOf Category Is IslamData.PrayerTime Then
-    '    Dim Table As New Hashtable
-    '    Array.ForEach(CachedData.IslamData.Prayers, Sub(Convert As IslamData.PrayerType) Array.ForEach(Convert.PrayerUnits.Split(","c), Sub(Part As String) If Part.Contains("="c) Then If Table.ContainsKey(Part.Substring(0, Part.IndexOf("="c))) Then Table.Item(Part.Substring(0, Part.IndexOf("="c))) = CStr(Table.Item(Part.Substring(0, Part.IndexOf("="c)))) + vbCrLf + Part.Substring(Part.IndexOf("="c) + 1).Replace("|"c, " or ") + " " + CStr(IIf(Utility.LoadResourceString("IslamInfo_" + Convert.TranslationID) <> "Prescribed time", Utility.LoadResourceString("IslamInfo_" + Convert.TranslationID) + " - ", String.Empty)) + Convert.Classification Else Table.Add(Part.Substring(0, Part.IndexOf("="c)), Part.Substring(Part.IndexOf("="c) + 1).Replace("|"c, " or ") + " " + Convert.Classification)))
-    '    For SubCount As Integer = 0 To CType(Category, IslamData.PrayerTime()).Length - 1
-    '        Output.Add(New String() {Arabic.TransliterateFromBuckwalter(CType(Category, IslamData.PrayerTime())(SubCount).Name), TransliterateToScheme(Arabic.TransliterateFromBuckwalter(CType(Category, IslamData.PrayerTime())(SubCount).Name), SchemeType, Scheme).Trim(), Utility.LoadResourceString("IslamInfo_" + CType(Category, IslamData.PrayerTime())(SubCount).TranslationID), CStr(IIf(Table.ContainsKey("-"c + Utility.LoadResourceString("IslamInfo_" + CType(Category, IslamData.PrayerTime())(SubCount).TranslationID)), Table.Item("-"c + Utility.LoadResourceString("IslamInfo_" + CType(Category, IslamData.PrayerTime())(SubCount).TranslationID)), String.Empty)), CStr(IIf(Table.ContainsKey(Utility.LoadResourceString("IslamInfo_" + CType(Category, IslamData.PrayerTime())(SubCount).TranslationID)), Table.Item(Utility.LoadResourceString("IslamInfo_" + CType(Category, IslamData.PrayerTime())(SubCount).TranslationID)), String.Empty)), CStr(IIf(Table.ContainsKey("+"c + Utility.LoadResourceString("IslamInfo_" + CType(Category, IslamData.PrayerTime())(SubCount).TranslationID)), Table.Item("+"c + Utility.LoadResourceString("IslamInfo_" + CType(Category, IslamData.PrayerTime())(SubCount).TranslationID)), String.Empty))})
-    '    Next
-    'ElseIf TypeOf Category Is IslamData.PrayerType Then
-    '    For SubCount As Integer = 0 To CType(Category, IslamData.PrayerType()).Length - 1
-    '        Output.Add(New String() {Arabic.TransliterateFromBuckwalter(CType(Category, IslamData.PrayerType())(SubCount).Name), TransliterateToScheme(Arabic.TransliterateFromBuckwalter(CType(Category, IslamData.PrayerType())(SubCount).Name), SchemeType, Scheme).Trim(), Utility.LoadResourceString("IslamInfo_" + CType(Category, IslamData.PrayerType())(SubCount).TranslationID), CType(Category, IslamData.PrayerType())(SubCount).Classification, CType(Category, IslamData.PrayerType())(SubCount).PrayerUnits})
-    '    Next
-    'Else
-    'For SubCount As Integer = 0 To Category.Words.Length - 1
-    '    Output.Add(New String() {Arabic.TransliterateFromBuckwalter(Category.Words(SubCount).Text), TransliterateToScheme(Arabic.TransliterateFromBuckwalter(Category.Words(SubCount).Text), SchemeType, Scheme).Trim(), Utility.LoadResourceString("IslamInfo_" + Category.Words(SubCount).TranslationID)})
-    'Next
-    'End If
-    '    Return RenderArray.MakeTableJSFunctions(CType(Output.ToArray(GetType(Array)), Array()), ID)
-    'End Function
     Public Shared Function DisplayDict(ByVal Item As PageLoader.TextItem) As Array()
         Dim Lines As String() = IO.File.ReadAllLines(Utility.GetFilePath("metadata\HansWeir.txt"))
         Dim Count As Integer
@@ -857,22 +808,24 @@ Public Class Arabic
     End Function
     Public Shared Function DisplayCombo(ByVal Item As PageLoader.TextItem) As Array()
         Dim Count As Integer
-        Dim Output(ArabicData.ArabicCombos.Length + 2) As Array
-        Output(0) = New String() {}
-        Output(1) = New String() {"arabic", "arabic", String.Empty, String.Empty, String.Empty, String.Empty}
-        Output(2) = New String() {Utility.LoadResourceString("IslamInfo_LetterName"), Utility.LoadResourceString("IslamInfo_Arabic"), Utility.LoadResourceString("IslamSource_ExtendedBuckwalter"), Utility.LoadResourceString("IslamInfo_Terminating"), Utility.LoadResourceString("IslamInfo_Connecting"), Utility.LoadResourceString("IslamInfo_Shaping")}
+        Dim Output As New List(Of String())
+        Output.Add(New String() {})
+        Output.Add(New String() {"arabic", "arabic", String.Empty, String.Empty, String.Empty, String.Empty})
+        Output.Add(New String() {Utility.LoadResourceString("IslamInfo_LetterName"), Utility.LoadResourceString("IslamInfo_Arabic"), Utility.LoadResourceString("IslamSource_ExtendedBuckwalter"), Utility.LoadResourceString("IslamInfo_Terminating"), Utility.LoadResourceString("IslamInfo_Connecting"), Utility.LoadResourceString("IslamInfo_Shaping")})
         'Dim Combos(ArabicData.Data.ArabicCombos.Length - 1) As IslamData.ArabicCombo
         'ArabicData.ArabicLetters.CopyTo(ArabicData.Data.ArabicCombos, 0)
         'Array.Sort(Combos, Function(Key As IslamData.ArabicCombo, NextKey As IslamData.ArabicCombo) Key.SymbolName.CompareTo(NextKey.SymbolName))
         For Count = 0 To ArabicData.ArabicCombos.Length - 1
-            Output(Count + 3) = New String() {ArabicLetterSpelling(String.Join(String.Empty, Array.ConvertAll(ArabicData.ArabicCombos(Count).Symbol, Function(Sym As Char) CStr(Sym))), False), _
-                                                String.Join(String.Empty, Array.ConvertAll(ArabicData.ArabicCombos(Count).Symbol, Function(Sym As Char) CStr(Sym))), _
-                                                TransliterateToScheme(String.Join(String.Empty, Array.ConvertAll(ArabicData.ArabicCombos(Count).Symbol, Function(Sym As Char) CStr(Sym))), ArabicData.TranslitScheme.Literal, String.Empty), _
-                                                CStr(ArabicData.ArabicCombos(Count).Terminating), _
-                                              CStr(ArabicData.ArabicCombos(Count).Connecting), _
-                                                String.Join(vbCrLf, Array.ConvertAll(ArabicData.ArabicCombos(Count).Shaping, Function(Shape As Char) If(Shape = ChrW(0), String.Empty, Shape + " " + CStr(Hex(AscW(Shape))) + " " + If(CheckShapingOrder(Array.IndexOf(ArabicData.ArabicCombos(Count).Shaping, Shape), ArabicData.GetUnicodeName(Shape)), String.Empty, "!!!") + ArabicData.GetUnicodeName(Shape))))}
+            If Array.TrueForAll(ArabicData.ArabicCombos(Count).Symbol, Function(Ch As Char) GetSchemeValueFromSymbol(ArabicData.ArabicLetters(ArabicData.FindLetterBySymbol(Ch)), "ExtendedBuckwalter") <> String.Empty) Then
+                Output.Add(New String() {ArabicLetterSpelling(String.Join(String.Empty, Array.ConvertAll(ArabicData.ArabicCombos(Count).Symbol, Function(Sym As Char) CStr(Sym))), False), _
+                                                    String.Join(String.Empty, Array.ConvertAll(ArabicData.ArabicCombos(Count).Symbol, Function(Sym As Char) CStr(Sym))), _
+                                                    TransliterateToScheme(String.Join(String.Empty, Array.ConvertAll(ArabicData.ArabicCombos(Count).Symbol, Function(Sym As Char) CStr(Sym))), ArabicData.TranslitScheme.Literal, String.Empty), _
+                                                    CStr(ArabicData.ArabicCombos(Count).Terminating), _
+                                                  CStr(ArabicData.ArabicCombos(Count).Connecting), _
+                                                    String.Join(vbCrLf, Array.ConvertAll(ArabicData.ArabicCombos(Count).Shaping, Function(Shape As Char) If(Shape = ChrW(0), String.Empty, Shape + " " + CStr(Hex(AscW(Shape))) + " " + If(CheckShapingOrder(Array.IndexOf(ArabicData.ArabicCombos(Count).Shaping, Shape), ArabicData.GetUnicodeName(Shape)), String.Empty, "!!!") + ArabicData.GetUnicodeName(Shape))))})
+            End If
         Next
-        Return Output
+        Return Output.ToArray()
     End Function
     Public Shared Function SymbolDisplay(Symbols() As ArabicData.ArabicSymbol) As Array()
         Dim Count As Integer
@@ -898,33 +851,35 @@ Public Class Arabic
         Return Output
     End Function
     Public Shared Function DisplayAll(ByVal Item As PageLoader.TextItem) As Array()
-        Return SymbolDisplay(ArabicData.ArabicLetters)
+        Return SymbolDisplay(Array.FindAll(ArabicData.ArabicLetters, Function(Letter As ArabicData.ArabicSymbol) GetSchemeValueFromSymbol(Letter, "ExtendedBuckwalter") <> String.Empty))
     End Function
     Public Shared Function DisplayTranslitSchemes(ByVal Item As PageLoader.TextItem) As Array()
         Dim Count As Integer
-        Dim Output(CachedData.ArabicSpecialLetters.Length + ArabicData.ArabicLetters.Length + CachedData.ArabicLongVowels.Length + 2) As Array
+        Dim Output As New List(Of String())
         'Dim oFont As New Font(DefaultValue(HttpContext.Current.Request.QueryString.Get("fontcustom"), "Arial"), 13)
         'CheckIfCharInFont(ArabicData.ArabicLetters(Count).Symbol, oFont)
-        Output(0) = New String() {}
+        Output.Add(New String() {})
         Dim Strs As String() = New String() {"arabic", String.Empty, "arabic"}
         Array.Resize(Of String)(Strs, 3 + CachedData.IslamData.TranslitSchemes.Length)
-        Output(1) = Strs
+        Output.Add(Strs)
         Strs = New String() {Utility.LoadResourceString("IslamInfo_LetterName"), Utility.LoadResourceString("IslamInfo_UnicodeName"), Utility.LoadResourceString("IslamInfo_Arabic")}
         Array.Resize(Of String)(Strs, 3 + CachedData.IslamData.TranslitSchemes.Length)
         For SchemeCount = 0 To CachedData.IslamData.TranslitSchemes.Length - 1
             CType(Output(1), String())(3 + SchemeCount) = String.Empty
             Strs(3 + SchemeCount) = Utility.LoadResourceString("IslamSource_" + CachedData.IslamData.TranslitSchemes(SchemeCount).Name)
         Next
-        Output(2) = Strs
+        Output.Add(Strs)
         For Count = 0 To ArabicData.ArabicLetters.Length - 1
-            Strs = New String() {ArabicLetterSpelling(ArabicData.ArabicLetters(Count).Symbol, False),
-                                       ArabicData.GetUnicodeName(ArabicData.ArabicLetters(Count).Symbol), _
-                                       CStr(ArabicData.ArabicLetters(Count).Symbol)}
-            Array.Resize(Of String)(Strs, 3 + CachedData.IslamData.TranslitSchemes.Length)
-            For SchemeCount = 0 To CachedData.IslamData.TranslitSchemes.Length - 1
-                Strs(3 + SchemeCount) = GetSchemeValueFromSymbol(ArabicData.ArabicLetters(Count), CachedData.IslamData.TranslitSchemes(SchemeCount).Name)
-            Next
-            Output(Count + 3) = Strs
+            If GetSchemeValueFromSymbol(ArabicData.ArabicLetters(Count), "ExtendedBuckwalter") <> String.Empty Then
+                Strs = New String() {ArabicLetterSpelling(ArabicData.ArabicLetters(Count).Symbol, False),
+                                           ArabicData.GetUnicodeName(ArabicData.ArabicLetters(Count).Symbol), _
+                                           CStr(ArabicData.ArabicLetters(Count).Symbol)}
+                Array.Resize(Of String)(Strs, 3 + CachedData.IslamData.TranslitSchemes.Length)
+                For SchemeCount = 0 To CachedData.IslamData.TranslitSchemes.Length - 1
+                    Strs(3 + SchemeCount) = GetSchemeValueFromSymbol(ArabicData.ArabicLetters(Count), CachedData.IslamData.TranslitSchemes(SchemeCount).Name)
+                Next
+                Output.Add(Strs)
+            End If
         Next
         For Count = 0 To CachedData.ArabicSpecialLetters.Length - 1
             Dim Str As String = System.Text.RegularExpressions.Regex.Replace(CachedData.ArabicSpecialLetters(Count).Replace(CachedData.TehMarbutaStopRule, String.Empty).Replace(CachedData.TehMarbutaContinueRule, "..."), "\(?\\u([0-9a-fA-F]{4})\)?", Function(Match As System.Text.RegularExpressions.Match) ChrW(Integer.Parse(Match.Groups(1).Value, Globalization.NumberStyles.HexNumber)))
@@ -934,7 +889,7 @@ Public Class Arabic
             For SchemeCount = 0 To CachedData.IslamData.TranslitSchemes.Length - 1
                 Strs(3 + SchemeCount) = GetSchemeSpecialValue(GetSchemeSpecialFromMatch(CachedData.ArabicSpecialLetters(Count), False), CachedData.IslamData.TranslitSchemes(SchemeCount).Name)
             Next
-            Output(ArabicData.ArabicLetters.Length + Count + 3) = Strs
+            Output.Add(Strs)
         Next
         For Count = 0 To CachedData.ArabicLongVowels.Length - 1
             Strs = New String() {ArabicLetterSpelling(CachedData.ArabicLongVowels(Count), False), _
@@ -944,9 +899,9 @@ Public Class Arabic
             For SchemeCount = 0 To CachedData.IslamData.TranslitSchemes.Length - 1
                 Strs(3 + SchemeCount) = GetSchemeLongVowelFromString(CachedData.ArabicLongVowels(Count), CachedData.IslamData.TranslitSchemes(SchemeCount).Name)
             Next
-            Output(CachedData.ArabicSpecialLetters.Length + ArabicData.ArabicLetters.Length + Count + 3) = Strs
+            Output.Add(Strs)
         Next
-        Return Output
+        Return Output.ToArray()
     End Function
     Public Shared Function DisplayParticle(Category As IslamData.GrammarSet.GrammarParticle(), ID As String, SchemeType As ArabicData.TranslitScheme, Scheme As String) As Array()
         Dim Count As Integer
@@ -978,21 +933,23 @@ Public Class Arabic
         Output(2) = New String() {"Plural " + Utility.LoadResourceString("IslamInfo_Arabic"), "Plural " + Utility.LoadResourceString("IslamInfo_Transliteration"), "Plural " + Utility.LoadResourceString("IslamInfo_Translation"), "Dual " + Utility.LoadResourceString("IslamInfo_Arabic"), "Dual " + Utility.LoadResourceString("IslamInfo_Transliteration"), "Dual " + Utility.LoadResourceString("IslamInfo_Translation"), "Singular " + Utility.LoadResourceString("IslamInfo_Arabic"), "Singular " + Utility.LoadResourceString("IslamInfo_Transliteration"), "Singular " + Utility.LoadResourceString("IslamInfo_Translation"), "Person and Gender"}
         For Count = 0 To Category.Length - 1
             Dim Translat As String = Utility.LoadResourceString("IslamInfo_" + Category(Count).TranslationID)
-            Array.ForEach(Category(Count).Grammar.Split(","c)(0).Split("|"c),
-                          Sub(Str As String)
-                              Dim Key As String = Str.Chars(0)
-                              If Personal Then '"123".Contains(Str.Chars(0))
-                                  Key += Str.Chars(1)
-                              End If
-                              If Not Build.ContainsKey(Key) Then
-                                  Build.Add(Key, New Generic.Dictionary(Of String, String()))
-                              End If
-                              If Build.Item(Key).ContainsKey(Str.Chars(If(Personal, 2, 1))) Then
-                                  Build.Item(Key).Item(Str.Chars(If(Personal, 2, 1)))(0) += " " + Arabic.TransliterateFromBuckwalter(Category(Count).Text)
-                              Else
-                                  Build.Item(Key).Add(Str.Chars(If(Personal, 2, 1)), {Arabic.TransliterateFromBuckwalter(Category(Count).Text), Translat})
-                              End If
-                          End Sub)
+            Array.ForEach(Category(Count).Grammar.Split(","c), Sub(Sets As String) Array.ForEach(Sets.Split("|"c),
+                Sub(Str As String)
+                    If System.Text.RegularExpressions.Regex.Match(Str, "^(?:" + ArabicData.MakeRegMultiEx(Cols) + ")[pds]$").Success Then
+                        Dim Key As String = Str.Chars(0)
+                        If Personal Then '"123".Contains(Str.Chars(0))
+                            Key += Str.Chars(1)
+                        End If
+                        If Not Build.ContainsKey(Key) Then
+                            Build.Add(Key, New Generic.Dictionary(Of String, String()))
+                        End If
+                        If Build.Item(Key).ContainsKey(Str.Chars(If(Personal, 2, 1))) Then
+                            Build.Item(Key).Item(Str.Chars(If(Personal, 2, 1)))(0) += " " + Arabic.TransliterateFromBuckwalter(Category(Count).Text)
+                        Else
+                            Build.Item(Key).Add(Str.Chars(If(Personal, 2, 1)), {Arabic.TransliterateFromBuckwalter(Category(Count).Text), Translat})
+                        End If
+                    End If
+                End Sub))
         Next
         Dim ColSels As String() = {"p", "d", "s"}
         For Index = 0 To Cols.Length - 1
@@ -1028,21 +985,23 @@ Public Class Arabic
         Output(2) = New String() {"Plural " + Utility.LoadResourceString("IslamInfo_Arabic"), "Plural " + Utility.LoadResourceString("IslamInfo_Transliteration"), "Plural " + Utility.LoadResourceString("IslamInfo_Translation"), "Dual " + Utility.LoadResourceString("IslamInfo_Arabic"), "Dual " + Utility.LoadResourceString("IslamInfo_Transliteration"), "Dual " + Utility.LoadResourceString("IslamInfo_Translation"), "Singular " + Utility.LoadResourceString("IslamInfo_Arabic"), "Singular " + Utility.LoadResourceString("IslamInfo_Transliteration"), "Singular " + Utility.LoadResourceString("IslamInfo_Translation"), "Person and Gender"}
         For Count = 0 To Category.Length - 1
             Dim Translat As String = Utility.LoadResourceString("IslamInfo_" + Category(Count).TranslationID)
-            Array.ForEach(Category(Count).Grammar.Split(","c)(0).Split("|"c),
-                          Sub(Str As String)
-                              Dim Key As String = Str.Chars(0)
-                              If Personal Then '"123".Contains(Str.Chars(0))
-                                  Key += Str.Chars(1)
-                              End If
-                              If Not Build.ContainsKey(Key) Then
-                                  Build.Add(Key, New Generic.Dictionary(Of String, String()))
-                              End If
-                              If Build.Item(Key).ContainsKey(Str.Chars(If(Personal, 2, 1))) Then
-                                  Build.Item(Key).Item(Str.Chars(If(Personal, 2, 1)))(0) += " " + Arabic.TransliterateFromBuckwalter(Category(Count).Text)
-                              Else
-                                  Build.Item(Key).Add(Str.Chars(If(Personal, 2, 1)), {Arabic.TransliterateFromBuckwalter(Category(Count).Text), Translat})
-                              End If
-                          End Sub)
+            Array.ForEach(Category(Count).Grammar.Split(","c), Sub(Sets As String) Array.ForEach(Sets.Split("|"c),
+                Sub(Str As String)
+                    If System.Text.RegularExpressions.Regex.Match(Str, "^(?:" + ArabicData.MakeRegMultiEx(Cols) + ")[pds]$").Success Then
+                        Dim Key As String = Str.Chars(0)
+                        If Personal Then '"123".Contains(Str.Chars(0))
+                            Key += Str.Chars(1)
+                        End If
+                        If Not Build.ContainsKey(Key) Then
+                            Build.Add(Key, New Generic.Dictionary(Of String, String()))
+                        End If
+                        If Build.Item(Key).ContainsKey(Str.Chars(If(Personal, 2, 1))) Then
+                            Build.Item(Key).Item(Str.Chars(If(Personal, 2, 1)))(0) += " " + Arabic.TransliterateFromBuckwalter(Category(Count).Text).Replace("1", ChrW(&H610))
+                        Else
+                            Build.Item(Key).Add(Str.Chars(If(Personal, 2, 1)), {Arabic.TransliterateFromBuckwalter(Category(Count).Text).Replace("1", ChrW(&H610)), Translat})
+                        End If
+                    End If
+                End Sub))
         Next
         Dim ColSels As String() = {"p", "d", "s"}
         For Index = 0 To Cols.Length - 1
@@ -1286,7 +1245,7 @@ Public Class Arabic
         Output(1) = New String() {"arabic", "transliteration", "translation", "arabic", "transliteration", "translation", "arabic", "transliteration", "translation"}
         Output(2) = New String() {"Noun Singular " + Utility.LoadResourceString("IslamInfo_Arabic"), "Singular " + Utility.LoadResourceString("IslamInfo_Transliteration"), "Singular " + Utility.LoadResourceString("IslamInfo_Translation"), "Noun Dual " + Utility.LoadResourceString("IslamInfo_Arabic"), "Dual " + Utility.LoadResourceString("IslamInfo_Transliteration"), "Dual " + Utility.LoadResourceString("IslamInfo_Translation"), "Noun Plural " + Utility.LoadResourceString("IslamInfo_Arabic"), "Plural " + Utility.LoadResourceString("IslamInfo_Transliteration"), "Plural " + Utility.LoadResourceString("IslamInfo_Translation")}
         For Count = 0 To Category.Length - 1
-            Output(3 + Count) = New String() {Arabic.TransliterateFromBuckwalter(Category(Count).Text), Arabic.TransliterateToScheme(Arabic.TransliterateFromBuckwalter(Category(Count).Text), SchemeType, Scheme), String.Empty, String.Empty, "Two " + Utility.LoadResourceString("IslamInfo_" + Category(Count).TranslationID) + "s", String.Empty, String.Empty, Utility.LoadResourceString("IslamInfo_" + Category(Count).TranslationID) + "s"}
+            Output(3 + Count) = New String() {Arabic.TransliterateFromBuckwalter(Category(Count).Text), Arabic.TransliterateToScheme(Arabic.TransliterateFromBuckwalter(Category(Count).Text), SchemeType, Scheme), Utility.LoadResourceString("IslamInfo_" + Category(Count).TranslationID), String.Empty, String.Empty, "Two " + Utility.LoadResourceString("IslamInfo_" + Category(Count).TranslationID) + "s", String.Empty, String.Empty, Utility.LoadResourceString("IslamInfo_" + Category(Count).TranslationID) + "s"}
         Next
         Return RenderArray.MakeTableJSFunctions(CType(Output, Array()), ID)
     End Function
@@ -1331,12 +1290,13 @@ Public Class Arabic
             If (Not Category(Count).Grammar Is Nothing AndAlso Category(Count).Grammar.StartsWith("form=")) Then
                 Text = Arabic.TransliterateFromBuckwalter(Category(Count).Grammar.Substring(5).Split(","c)(0).Replace("f", Category(Count).Text.Chars(0)).Replace("E", Category(Count).Text.Chars(1)).Replace("l", Category(Count).Text.Chars(2)))
                 Present = Arabic.TransliterateFromBuckwalter(Category(Count).Grammar.Substring(5).Split(","c)(1).Replace("f", Category(Count).Text.Chars(0)).Replace("E", Category(Count).Text.Chars(1)).Replace("l", Category(Count).Text.Chars(2)))
-                Command = Arabic.TransliterateFromBuckwalter("{foE$1lo".Replace("f", Category(Count).Text.Chars(0)).Replace("E", Category(Count).Text.Chars(1)).Replace("l", Category(Count).Text.Chars(2)).Replace("$1", Category(Count).Grammar.Substring(5).Split(","c)(1).Chars(5)))
-                Forbidding = Arabic.TransliterateFromBuckwalter("laA tafoE$1lo".Replace("f", Category(Count).Text.Chars(0)).Replace("E", Category(Count).Text.Chars(1)).Replace("l", Category(Count).Text.Chars(2)).Replace("$1", Category(Count).Grammar.Substring(5).Split(","c)(1).Chars(5)))
-                PassivePast = Arabic.TransliterateFromBuckwalter("fuEila".Replace("f", Category(Count).Text.Chars(0)).Replace("E", Category(Count).Text.Chars(1)).Replace("l", Category(Count).Text.Chars(2)))
-                PassivePresent = Arabic.TransliterateFromBuckwalter("yufoEalu".Replace("f", Category(Count).Text.Chars(0)).Replace("E", Category(Count).Text.Chars(1)).Replace("l", Category(Count).Text.Chars(2)))
-                VerbalDoer = Arabic.TransliterateFromBuckwalter("faAEilN".Replace("f", Category(Count).Text.Chars(0)).Replace("E", Category(Count).Text.Chars(1)).Replace("l", Category(Count).Text.Chars(2)))
-                PassiveNoun = Arabic.TransliterateFromBuckwalter("mafoEuwlN".Replace("f", Category(Count).Text.Chars(0)).Replace("E", Category(Count).Text.Chars(1)).Replace("l", Category(Count).Text.Chars(2)))
+                Command = Arabic.TransliterateFromBuckwalter(GetTransform("VerbTypeICommandYouMasculinePattern")(0).Text.Replace("f", Category(Count).Text.Chars(0)).Replace("E", Category(Count).Text.Chars(1)).Replace("l", Category(Count).Text.Chars(2)).Replace("\1", Category(Count).Grammar.Substring(5).Split(","c)(1).Chars(5)))
+                Dim Multi As String() = GetTransform("VerbTypeIForbiddingYouMasculinePattern")(0).Text.Split(" "c)
+                Forbidding = Arabic.TransliterateFromBuckwalter(Multi(0) + " " + Multi(1).Replace("f", Category(Count).Text.Chars(0)).Replace("E", Category(Count).Text.Chars(1)).Replace("l", Category(Count).Text.Chars(2)).Replace("\1", Category(Count).Grammar.Substring(5).Split(","c)(1).Chars(5)))
+                PassivePast = Arabic.TransliterateFromBuckwalter(GetTransform("VerbTypeIPassivePastHePattern")(0).Text.Replace("f", Category(Count).Text.Chars(0)).Replace("E", Category(Count).Text.Chars(1)).Replace("l", Category(Count).Text.Chars(2)))
+                PassivePresent = Arabic.TransliterateFromBuckwalter(GetTransform("VerbTypeIPassivePresentHeMasculinePattern")(0).Text.Replace("f", Category(Count).Text.Chars(0)).Replace("E", Category(Count).Text.Chars(1)).Replace("l", Category(Count).Text.Chars(2)))
+                VerbalDoer = Arabic.TransliterateFromBuckwalter(GetTransform("VerbTypeIVerbalDoerPattern")(0).Text.Replace("f", Category(Count).Text.Chars(0)).Replace("E", Category(Count).Text.Chars(1)).Replace("l", Category(Count).Text.Chars(2)))
+                PassiveNoun = Arabic.TransliterateFromBuckwalter(GetTransform("VerbTypeIPassiveNounPattern")(0).Text.Replace("f", Category(Count).Text.Chars(0)).Replace("E", Category(Count).Text.Chars(1)).Replace("l", Category(Count).Text.Chars(2)))
                 Grammar = String.Empty
             Else
                 Text = Arabic.TransliterateFromBuckwalter(Category(Count).Text)
@@ -2911,12 +2871,11 @@ Public Class CachedData
                 Arabic.DoErrorCheck(Verses(Count)(SubCount))
             Next
         Next
-        'must check Trans and WordForWord
         For Count = 0 To IslamData.Lists.Length - 1
             Utility.LoadResourceString("IslamInfo_" + IslamData.Lists(Count).Title)
             If Not IslamData.Lists(Count).Words Is Nothing Then
                 For SubCount As Integer = 0 To IslamData.Lists(Count).Words.Length - 1
-                    DocBuilder.DoErrorCheckBuckwalterText(IslamData.Lists(Count).Words(SubCount).Text)
+                    DocBuilder.DoErrorCheckBuckwalterText(IslamData.Lists(Count).Words(SubCount).Text, String.Empty)
                     Utility.LoadResourceString("IslamInfo_" + IslamData.Lists(Count).Words(SubCount).TranslationID)
                 Next
             End If
@@ -2938,8 +2897,7 @@ Public Class CachedData
             Utility.LoadResourceString("IslamInfo_" + IslamData.Grammar.Verbs(Count).TranslationID)
         Next
         For Count = 0 To IslamData.Phrases.Length - 1
-            DocBuilder.DoErrorCheckBuckwalterText(Arabic.TransliterateFromBuckwalter(IslamData.Phrases(Count).Text))
-            Utility.LoadResourceString("IslamInfo_" + IslamData.Phrases(Count).TranslationID)
+            DocBuilder.DoErrorCheckBuckwalterText(Arabic.TransliterateFromBuckwalter(IslamData.Phrases(Count).Text), IslamData.Phrases(Count).TranslationID)
         Next
         For Count = 0 To IslamData.Abbreviations.Length - 1
             If Not Phrases.GetPhraseCat(IslamData.Abbreviations(Count).TranslationID).HasValue Then
@@ -2948,7 +2906,9 @@ Public Class CachedData
         Next
         For Count = 0 To ArabicData.ArabicLetters.Length - 1
             Arabic.DoErrorCheck(Arabic.ArabicLetterSpelling(ArabicData.ArabicLetters(Count).Symbol, False))
-            Utility.LoadResourceString("IslamInfo_" + ArabicData.ToCamelCase(ArabicData.ArabicLetters(Count).UnicodeName))
+            If Not ArabicData.ArabicLetters(Count).UnicodeName.StartsWith("<") Then
+                Utility.LoadResourceString("IslamInfo_" + ArabicData.ToCamelCase(ArabicData.ArabicLetters(Count).UnicodeName))
+            End If
         Next
         For Count = 0 To IslamData.Collections.Length - 1
             Utility.LoadResourceString("IslamInfo_" + IslamData.Collections(Count).Name)
@@ -3169,13 +3129,18 @@ Public Class DocBuilder
         Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eList, TanzilReader.GetTranslationMetadata("1"))}))
         Return Renderer
     End Function
-    Public Shared Sub DoErrorCheckBuckwalterText(Strings As String)
+    Public Shared Sub DoErrorCheckBuckwalterText(Strings As String, TranslationID As String)
         If Strings = Nothing Then Return
         Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(Strings, "(.*?)(?:(\\\{)(.*?)(\\\})|$)", System.Text.RegularExpressions.RegexOptions.Singleline)
+        Dim EnglishByWord As String() = If(TranslationID = Nothing, {}, Utility.LoadResourceString("IslamInfo_" + TranslationID + "WordByWord").Split("|"c))
         For MatchCount As Integer = 0 To Matches.Count - 1
             If Matches(MatchCount).Length <> 0 Then
                 If Matches(MatchCount).Groups(1).Length <> 0 Then
+                    Dim ArabicText As String() = Matches(MatchCount).Groups(1).Value.Split(" "c)
+                    If ArabicText.Length > 1 And EnglishByWord.Length = ArabicText.Length Then
+                    End If
                     Arabic.DoErrorCheck(Arabic.TransliterateFromBuckwalter(Matches(MatchCount).Groups(1).Value))
+                    Utility.LoadResourceString("IslamInfo_" + TranslationID)
                 End If
                 If Matches(MatchCount).Groups(3).Length <> 0 Then
                     ErrorCheckTextFromReferences(Matches(MatchCount).Groups(3).Value)
@@ -3187,7 +3152,7 @@ Public Class DocBuilder
         Dim Renderer As New RenderArray(ID)
         If Strings = Nothing Then Return Renderer
         Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(Strings, "(.*?)(?:(\\\{)(.*?)(\\\})|$)", System.Text.RegularExpressions.RegexOptions.Singleline)
-        Dim EnglishByWord As String() = Utility.LoadResourceString("IslamInfo_" + TranslationID + "WordByWord").Split("|"c)
+        Dim EnglishByWord As String() = If(TranslationID = Nothing, {}, Utility.LoadResourceString("IslamInfo_" + TranslationID + "WordByWord").Split("|"c))
         For MatchCount As Integer = 0 To Matches.Count - 1
             If Matches(MatchCount).Length <> 0 Then
                 If Matches(MatchCount).Groups(1).Length <> 0 Then
@@ -3266,7 +3231,8 @@ Public Class DocBuilder
                 SelArr = Nothing
             End If
             For Count = 0 To SelArr.Length - 1
-                If Array.IndexOf(Words, SelArr(Count)) = -1 Then Debug.Print("Transform Subject ID Not Found: " + SelArr(Count))
+                Dim S As String = SelArr(Count)
+                If Words Is Nothing OrElse Array.FindIndex(Words, Function(Word As IslamData.GrammarSet.GrammarNoun) S = Word.TranslationID) = -1 Then Debug.Print("Noun Subject ID Not Found: " + SelArr(Count))
             Next
         ElseIf Strings.StartsWith("plurals:") Or Strings.StartsWith("possessivedeterminerpersonalpronoun:") Then
             Dim Words As IslamData.GrammarSet.GrammarTransform()
@@ -3282,7 +3248,8 @@ Public Class DocBuilder
                 SelArr = Nothing
             End If
             For Count = 0 To SelArr.Length - 1
-                If Array.IndexOf(Words, SelArr(Count)) = -1 Then Debug.Print("Transform Subject ID Not Found: " + SelArr(Count))
+                Dim S As String = SelArr(Count)
+                If Words Is Nothing OrElse Array.FindIndex(Words, Function(Word As IslamData.GrammarSet.GrammarTransform) S = Word.TranslationID) = -1 Then Debug.Print("Transform Subject ID Not Found: " + SelArr(Count))
             Next
         ElseIf Strings.StartsWith("particle:") Then
             Dim SelArr As String() = Strings.Replace("particle:", String.Empty).Split(","c)

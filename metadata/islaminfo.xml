@@ -2,22 +2,22 @@
 <islamdata>
 <!--
 many Arabic words borrowed from Christianity like supplication, Lord, Heaven, Hell could be noted for differentiation
- 
+
  e:\wsusoffline\bin\wget.exe -r -np -nd -L -R jsp@q* http://corpus.quran.com/wordbyword.jsp
- 
+
  http://corpus.quran.com/wordbyword.jsp
  disable image loading in advanced browser settings
  var str = ", sura = 1, aya = 1, next, rs, func = function() { if (next.document.readyState === "complete") { window.clearInterval(rs); var startaya = aya, words = next.document.querySelectorAll(".morphologyTable > tbody > tr > td:first-child"); for (var ct = 1; ct < words.length; ct++) { if (startaya <= parseInt(words[ct].firstChild.innerText.split(":")[1], 10)) str += (aya.toString() != words[ct].firstChild.innerText.split(":")[1] ? '\r\n' : (words[ct].firstChild.innerText.split(":")[1] == startaya.toString() && words[ct].firstChild.innerText.split(":")[2] == "1)" ? '' : '|')}words[ct].childNodes[4].data; aya = parseInt(words[ct].firstChild.innerText.split(":")[1], 10); } aya = (aya < startaya) ? (console.log(str), str = '', sura++, 1) : (str += '\r\n', aya1); if (sura <= 114) { next.location.href = "http://corpus.quran.com/wordbyword.jsp?chapter=sura.toString(}&verse=aya.toString(); rs = window.setInterval(func, 100); } } }; next = window.open("http://corpus.quran.com/wordbyword.jsp?chapter=sura.toString(}&verse=aya.toString()); rs = window.setInterval(func, 100);
- 
+
  http://www.alquran-indonesia.com/web/quran/listings/details/<chapter>
  FOR /L %A IN (1,1,114) DO FOR /L %B IN (0,10,300) DO e:\wsusoffline\bin\wget.exe -O %A.%B.html http://www.alquran-indonesia.com/web/quran/listings/details/%A/%B
 
  var str = ", sura = 1, aya = 0, next, rs, func = function() { if (next.document.readyState === "complete") { window.clearInterval(rs); var its = next.document.querySelectorAll("div.padleft > table > tbody > tr"); for (var ct = 0; ct < its.length; ct++) { var nits = its[ct].querySelectorAll("span > table > tbody > tr:nth-child(2)"); for (var nct = 0; nct < nits.length; nct++) { str += (nct == 0 ? '' : '|'}nits[nct].innerText(nct == nits.length - 1 ? '\r\n' : ''); } } aya = (next.document.querySelector("span.next") != null) ? aya10 : (sura++, 0); if (sura <= 114) { next.location.href = "file:///c:/users/gregory/downloads/id/sura.toString(}.aya.toString(}.html"; rs = window.setInterval(func, 100); } console.log(str); } }; next = window.open("about:blank"); next.location.href = "file:///c:/users/gregory/downloads/id/sura.toString(}.aya.toString(}.html"; rs = window.setInterval(func, 100);
  var str = ", aya = 0; for (var sura = 1; sura <= 114; ) { var xmlhttp = new XMLHttpRequest(); xmlhttp.open("GET", "http://www.alquran-indonesia.com/web/quran/listings/details/sura.toString(}/aya.toString(), false); xmlhttp.send(); window.document.open(); window.document.write(xmlhttp.responseText); window.document.close(); var its = document.querySelectorAll("div.padleft > table > tbody > tr"); for (var ct = 0; ct < its.length; ct++) { var nits = its[ct].querySelectorAll("span > table > tbody > tr:nth-child(2)"); for (var nct = 0; nct < nits.length; nct++) { str += (nct == 0 ? '' : '|'}nits[nct].innerText(nct == nits.length - 1 ? '\r\n' : ''); } } aya = (document.querySelector("span.next") != null) ? aya10 : (sura++, 0); } console.log(str);
- 
+
 	-->
 	<synonyms>
-		
+
 	</synonyms>
 	<loanwords>
 		<word value="Allah" id="Allah" waslid="Llah"></word>
@@ -72,7 +72,7 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 		<word value="Deen|Din" id="ReligionLawJudgment"></word>
 		<word value="Riba" id="Usury"></word>
 		<word value="Shariah|Sharia" id="Law"></word>
-		
+
 		<word value="Medina" id="Medina"></word>
 		<word value="Makkah|Makah|Mecca" id="Makkah"></word>
 		<word value="Kufa" id="Kufa"></word>
@@ -140,17 +140,17 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<transform text="aw" id="AccusativeDefectiveConstantPluralNominative" grammar="mp,defectacc,const,nom"></transform>
 			<transform text="ayona" id="AccusativeDefectivePluralPossessiveAccusative" grammar="mp,defectacc,indef|def,pos|acc"></transform>
 			<transform text="aY" id="AccusativeDefectiveConstantPluralPossessiveAccusative" grammar="mp,defectacc,const,pos|acc"></transform>
-			
+
 			<transform text="aA" id="InvariantSingular" grammar="ms|fs,invar,def|indef|const,nom|pos|acc"></transform>
 			<transform text="ayaAni" id="InvariantDualNominative" grammar="md,invar,indef|def,nom"></transform>
 			<transform text="ayaA" id="InvariantDualConstantNominative" grammar="md,invar,const,nom"></transform>
 			<transform text="ayayoni" id="InvariantDualPossessiveAccusative" grammar="md,invar,indef|def,pos|acc"></transform>
 			<transform text="ayaY" id="InvariantDualConstantPossessiveAccusative" grammar="md,invar,const,pos|acc"></transform>
-			
+
 			<transform text="apN" id="FeminineForm" grammar="ms,fem"></transform>
 			<transform from="{MatchDefiniteness}" text="" id="RelativeAdjectivePrefix" grammar="ms|fs,reladj"></transform>
 			<transform from="{MatchNisbahDrop}|{MatchFemininity}" text="iy~N" id="RelativeAdjectiveSuffix" grammar="ms|fs,reladj"></transform>
-			
+
 			<transform from="{MatchAlefMaksura}" text="y" id="ParticleAttachPronoun" grammar="1ms|1fs|1md|1fd|1mp|1fp|2ms|2fs|2md|2fd|2mp|2fp|3ms|3fs|3md|3fd|3mp|3fp|3bp"></transform>
 			<transform match="{MatchYeh}  {MatchKasra} {MatchFirstPerson} {MatchNoon} " id="ParticleFirstPersonAttachPronoun" grammar="1ms|1fs|3bp"></transform>
 			<transform match="{MatchYeh}|{MatchKasra} {MatchThirdPerson}" id="ParticleThirdPersonAttachPronoun" grammar="3ms|3md|3fd|3mp|3fp"></transform>
@@ -211,14 +211,20 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<transform text="nafoEala" id="VerbTypeIPresentWeSubjunctivePattern" grammar="presverbi,1md|1fd|1mp|1fp,acc"></transform>
 			<transform text="nafoEalo" id="VerbTypeIPresentWeJussivePattern" grammar="presverbi,1md|1fd|1mp|1fp,prespos"></transform>
 
-			<transform text="&lt;ifoEalo" id="VerbTypeICommandYouMasculinePattern" grammar="commverbi,ms"></transform>
-			<transform text="&lt;ifoEalaA" id="VerbTypeICommandYouBothPattern" grammar="commverbi,md|fd"></transform>
-			<transform text="&lt;ifoEaluwA" id="VerbTypeICommandYouAllMasculinePattern" grammar="commverbi,mp"></transform>
-			<transform text="&lt;ifoEaliy" id="VerbTypeICommandYouFemininePattern" grammar="commverbi,fs"></transform>
-			<transform text="&lt;ifoEalona" id="VerbTypeICommandYouAllFemininePattern" grammar="commverbi,fp"></transform>
+			<transform text="{foE\1lo" id="VerbTypeICommandYouMasculinePattern" grammar="commverbi,ms"></transform>
+			<transform text="{foE\1laA" id="VerbTypeICommandYouBothPattern" grammar="commverbi,md|fd"></transform>
+			<transform text="{foE\1luwA" id="VerbTypeICommandYouAllMasculinePattern" grammar="commverbi,mp"></transform>
+			<transform text="{foE\1liy" id="VerbTypeICommandYouFemininePattern" grammar="commverbi,fs"></transform>
+			<transform text="{foE\1lona" id="VerbTypeICommandYouAllFemininePattern" grammar="commverbi,fp"></transform>
+
+			<transform text="laA tafoE\1lo" id="VerbTypeIForbiddingYouMasculinePattern" grammar="forbidverbi,ms"></transform>
+			<transform text="fuEila" id="VerbTypeIPassivePastHePattern" grammar="pasvpastverbi,ms"></transform>
+			<transform text="yufoEalu" id="VerbTypeIPassivePresentHeMasculinePattern" grammar="pasvpresverbi,ms"></transform>
+			<transform text="faAEilN" id="VerbTypeIVerbalDoerPattern" grammar="doernounverbi,ms"></transform>
+			<transform text="mafoEuwlN" id="VerbTypeIPassiveNounPattern" grammar="pasvnounverbi,ms"></transform>
 
 			<transform text="fEl" id="RepresentativeStem"></transform>
-			
+
 			<transform text="suwqi naArN xamarN nafosN riyHN $amosN HarobN sabiylN EaSaA ka&gt;osN bi}orN daArN" id="SpecialFeminine"></transform>
 
 			<transform text="sawofa sa" id="FutureTense"></transform>
@@ -230,7 +236,7 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<transform from="faEala yafoEulu|faEala yafoEilu" id="VerbFamilyITypeIVerbalNoun" text="fiEolN"></transform>
 			<transform from="faEala yafoEalu|faEila yafoEalu|faEila yafoEilu" id="VerbFamilyITypeIIVerbalNoun" text="faEolN"></transform>
 			<transform from="faEula yafoEulu" id="VerbFamilyITypeIIIVerbalNoun" text="fuEolN"></transform>
-			
+
 			<transform from="faEala" id="VerbFamilyI" text="laA tafoEulo fuEila yufoEalu"></transform>
 
 			<transform from="faE~ala" id="VerbFamilyII" text="yufaE~ilu faE~ilo laA tufaE~ilo fuE~ila yufaE~alu yafoEiylN mufaE~ilN mufaE~alN"></transform>
@@ -355,7 +361,7 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<particle text="EalaY" id="UponOn" grammar="prep,pos"></particle>
 			<particle text="maEa" id="With" grammar="prep,pos"></particle>
 			<particle text="wa" id="AndByOfOath" grammar="prep,pos"></particle>
-			
+
 			<particle text="&lt;in~a" id="VerilyTrulySurely" grammar="particle,acc"></particle>
 			<particle text="&gt;an~a" id="ThatSurelyVerily" grammar="particle,acc"></particle>
 			<particle text="ka&gt;an~a" id="AsIfAsThough" grammar="particle,acc"></particle>
@@ -384,16 +390,16 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<particle text="baEoDo" id="SomeOfAfter" grammar="particle,pos"></particle>
 			<particle text="kul~u kilaA" id="EveryoneAll" grammar="particle"></particle>
 
-			<particle text="&gt;uwoluwaA^ &gt;uwoliy" id="PeopleOfOwnersOf" grammar="particle"></particle>			
-			<particle text="&gt;aholN &gt;ahaAlK" id="PeopleOfRelatives" grammar="particle"></particle>			
-			<particle text="&apos;aAl" id="FamilyRelativesPeople" grammar="particle"></particle>			
-			<particle text="&gt;alaA" id="LoDoNotWillNot" grammar="particle"></particle>			
-			<particle text="niEoma" id="WhatAnExcellent" grammar="particle"></particle>			
-			<particle text="bi}sa" id="WhatAnEvil" grammar="particle"></particle>			
-			<particle text="bi}samaA" id="EvilIsThatWhich" grammar="particle"></particle>			
-			<particle text="mivol" id="SomethingSimilar" grammar="particle"></particle>			
-			<particle text="maval &gt;amovaAl" id="Similitude" grammar="particle"></particle>			
-			<particle text="mim~ano" basis="mino mano" id="ThanTheOneWhoFromThoseWho" grammar="particle"></particle>			
+			<particle text="&gt;uwoluwaA^ &gt;uwoliy" id="PeopleOfOwnersOf" grammar="particle"></particle>
+			<particle text="&gt;aholN &gt;ahaAlK" id="PeopleOfRelatives" grammar="particle"></particle>
+			<particle text="&apos;aAl" id="FamilyRelativesPeople" grammar="particle"></particle>
+			<particle text="&gt;alaA" id="LoDoNotWillNot" grammar="particle"></particle>
+			<particle text="niEoma" id="WhatAnExcellent" grammar="particle"></particle>
+			<particle text="bi}sa" id="WhatAnEvil" grammar="particle"></particle>
+			<particle text="bi}samaA" id="EvilIsThatWhich" grammar="particle"></particle>
+			<particle text="mivol" id="SomethingSimilar" grammar="particle"></particle>
+			<particle text="maval &gt;amovaAl" id="Similitude" grammar="particle"></particle>
+			<particle text="mim~ano" basis="mino mano" id="ThanTheOneWhoFromThoseWho" grammar="particle"></particle>
 
 			<particle text="gayoru min duwna" id="OtherThan" grammar="particle,pos"></particle>
 			<particle text="ladaY laduno" id="FromWith" grammar="particle,pos"></particle>
@@ -406,18 +412,18 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<particle text="{loyawoma" id="Today" grammar="particle,pos"></particle>
 			<particle text="saHarFA" id="Dawn" grammar="particle,pos"></particle>
 			<particle text="&gt;abadFA" id="Always" grammar="particle,pos"></particle>
-			
+
 			<particle text="li" id="SoThat" grammar="particle,acc"></particle>
 			<particle text="kayo likayo" id="ThatSoThat" grammar="particle,acc"></particle>
 			<particle text="li&gt;ano" id="ForThat" grammar="particle,acc"></particle>
-			
+
 			<particle text="li lo" id="Should" grammar="particle,prespos"></particle>
 			<particle text="laA" id="Negation" grammar="particle,prespos"></particle>
 			<particle text="&lt;ino" id="If" grammar="particle,prespos"></particle>
 			<particle text="lam~aA" id="NotYetWhen" grammar="particle,prespos"></particle>
 			<particle text="lamaA" id="CertainlyWhich" grammar="particle,prespos"></particle>
 			<particle text="&gt;alamo" id="DidNot" grammar="particle,prespos"></particle>
-			
+
 			<particle text="&gt;ay~umaA" id="Whichever" grammar="particle"></particle>
 		</particles>
 		<nouns>
@@ -512,7 +518,7 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<noun text="&gt;aZolamN" id="MoreUnjust"></noun>
 			<noun text="&gt;ahodaYN" id="BetterGuided"></noun>
 			<noun text="&gt;awolaYN" id="NearerCloserWoe"></noun>
-			
+
 			<noun text="&apos;aAyapN" plural="&apos;aAyaAtN" id="Sign"></noun>
 			<noun text="rasuwlN" plural="rusulN" id="Messenger"></noun>
 			<noun text="nabiy~N" plural="&gt;anobiyaA^&apos;N nabiy~uwna nabiy~iyna" id="Prophet"></noun>
@@ -555,7 +561,7 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<noun text="EaAdN" plural="" id="PeopleOfHud"></noun>
 			<noun text="vamuwdN" plural="" id="PeopleOfSalih"></noun>
 			<noun text="&lt;isora`^&apos;iyla" plural="" id="Israel"></noun>
-			
+
 			<noun text="&gt;aHadN &lt;iHodaY" plural="" id="OneOnly"></noun>
 			<noun text="&gt;amorN" plural="&gt;amuwrN" id="MatterAffair"></noun>
 			<noun text="&lt;ilahN" plural="&apos;aAlihapN" id="GodDiety"></noun>
@@ -695,7 +701,7 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<noun text="EiborapN" plural="EibarN" id="AdmonitionLesson"></noun>
 			<noun text="&gt;u*unN" plural="&apos;aA*aAnN" id="Ear"></noun>
 			<noun text="nusukN" plural="" id="Sacrifice"></noun>
-			
+
 			<noun text="nabaAtN" plural="nabaAtaAtN" id="VegetationPlant"></noun>
 			<noun text="rayobN" plural="" id="Doubt"></noun>
 			<noun text="&gt;anfN" plural="&gt;unuwfN" id="Nose"></noun>
@@ -706,15 +712,15 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<noun text="EaZomN" plural="EiZaAmN" id="Bone"></noun>
 			<noun text="&gt;aEomaY" plural="EumoyN" id="Blind"></noun>
 			<noun text="hudaY" plural="" id="Guidance"></noun>
-			<noun text="gaAlibN" plural="gaAlibuwna gaAlibiyna" id="DominantVictorious"></noun>			
+			<noun text="gaAlibN" plural="gaAlibuwna gaAlibiyna" id="DominantVictorious"></noun>
 			<noun text="jamalN" plural="jimaAlN &lt;ibilN" id="Camel"></noun>
-			<noun text="&gt;avarN" plural="&apos;aAvaArN" id="Trace"></noun>			
+			<noun text="&gt;avarN" plural="&apos;aAvaArN" id="Trace"></noun>
 			<noun text="*ahabN" plural="" id="Gold"></noun>
 			<noun text="&gt;ariykapN" plural="&gt;araA^}ikN" id="CouchThrone"></noun>
 			<noun text="burohaAnN" plural="baraAhiyna" id="Evidence"></noun>
 			<noun text="mawoqiEN" plural="mawaAqiEN" id="Place"></noun>
 			<noun text="misokiynN" plural="masaAkiyna" id="PoorPerson"></noun>
-			<noun text="&gt;usoTuwrapN" plural="&gt;asaATiyrN" id="TaleStory"></noun>			
+			<noun text="&gt;usoTuwrapN" plural="&gt;asaATiyrN" id="TaleStory"></noun>
 			<noun text="baTanN" plural="buTuwnN" id="Stomach"></noun>
 			<noun text="&gt;asowadN" plural="suwdN" id="Black"></noun>
 			<noun text="TaEaAmN" plural="&gt;aToEimapN" id="Food"></noun>
@@ -726,7 +732,7 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<noun text="na*orN" plural="nu*uwrN" id="Vow"></noun>
 			<noun text="HizobN" plural="&gt;aHozaAbN" id="Party"></noun>
 			<noun text="$aEobN" plural="$uEuwbN" id="Nation"></noun>
-			<noun text="baHorN" plural="&gt;aboHurN biHaArN" id="Sea"></noun>			
+			<noun text="baHorN" plural="&gt;aboHurN biHaArN" id="Sea"></noun>
 			<noun text="mariyDN" plural="maroDaY" id="SickPerson"></noun>
 			<noun text="bar~N" plural="&gt;aboraArN" id="RighteousPerson"></noun>
 			<noun text="&lt;ivomN" plural="&apos;aAvaAmN" id="Sin"></noun>
@@ -791,7 +797,7 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<noun text="famuw" dual="famaAni famayoni" plural="&gt;afowaAhN" id="Mouth"></noun>
 			<noun text="*uw" dual="*awaAni *awayoni" plural="&gt;uwoluwo" id="OwnerOfPossessorEndowedWithOwnerMasculine"></noun>
 			<noun text="*aAtN" dual="*awaAtaAni *awaAtayoni" plural="&gt;uwlaAtN" id="OwnerOfPossessorEndowedWithOwnerFeminine"></noun>
-			
+
 			<noun text="&lt;isolaAmN" id="Islam"></noun>
 			<noun text="musolimN" id="Muslim"></noun>
 			<noun text="&lt;imaAmN" id="Imam"></noun>
@@ -1415,11 +1421,11 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<noun text="baAEotN" id="Sell"></noun>
 
 			<noun text="$iyEapN" id="Shia"></noun>
-			<noun text="$iyEiy" id="Shii"></noun>	
+			<noun text="$iyEiy" id="Shii"></noun>
 			<noun text="qurayo$N" id="Quraish"></noun>
 			<noun text="hindN" id="Hind"></noun>
 			<noun text="Ham~adN" id="Hammad"></noun>
-			<noun text="&apos;aAzaArN" id="Azar"></noun>			
+			<noun text="&apos;aAzaArN" id="Azar"></noun>
 			<noun text="wahaAbiyapN" id="Wahhabi"></noun>
 			<noun text="salafiy~N" id="Salafi"></noun>
 			<noun text="&lt;isomaAEiliy~apN" id="Ismaili"></noun>
@@ -1442,7 +1448,7 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<noun text="EarafapN" id="Arafah"></noun>
 			<noun text="rawoDapN" id="Rawdah"></noun>
 			<noun text="firodawosN" id="Firdaus"></noun>
-			
+
 			<noun text="&apos;aAdamu" id="Adam"></noun>
 			<noun text="&lt;idoriysu" id="Enoch"></noun>
 			<noun text="nuwHN" id="Noah"></noun>
@@ -1465,7 +1471,7 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<noun text="zakariy~aA" id="Zechariah"></noun>
 			<noun text="yaHoyaY`" id="JohnTheBaptist"></noun>
 			<noun text="EiysaY" id="Jesus"></noun>
-			
+
 			<noun text="HarakapN" plural="HarakaAt" id="Vowels"></noun>
 			<noun text="HarofN" plural="HuruwfN" id="Particle"></noun>
 			<noun text="saAkinN" plural="sukuwnN" id="MarkOfStoppingOnLetter"></noun>
@@ -1549,7 +1555,7 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<verb text="SlH" id="ActRighteously" grammar="form=faEala,yafoEalu,mafoEalap"></verb>
 			<verb text="lEn" id="Curse" grammar="form=faEala,yafoEalu,faEol"></verb>
 			<verb text="nfE" id="Profit" grammar="form=faEala,yafoEalu,faEol"></verb>
-			
+
 			<verb text="nSr" id="HelpDeliver" grammar="form=faEala,yafoEulu,faEol"></verb>
 			<verb text="blg" id="Reach" grammar="form=faEala,yafoEulu,fuEuwl"></verb>
 			<verb text="trk" id="Leave" grammar="form=faEala,yafoEulu,faEol"></verb>
@@ -1573,7 +1579,7 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<verb text="kfr" id="DisbelieveBeUngrateful" grammar="form=faEala,yafoEulu,fuEol"></verb>
 			<verb text="mkr" id="Plot" grammar="form=faEala,yafoEulu,faEol"></verb>
 			<verb text="nZr" id="LookWait" grammar="form=faEala,yafoEulu,faEal"></verb>
-			
+
 			<verb text="Drb" poss="fiY mavalFA EalaY li" id="StrikeHitTravelInThroughWentForthStroveGiveExampleImposeUponStruckUponOvershadowMentionGiveExample" grammar="form=faEala,yafoEilu,faEol"></verb>
 			<verb text="Hml" id="CarryBear" grammar="form=faEala,yafoEilu,faEol"></verb>
 			<verb text="Sbr" id="BearWithPatience" grammar="form=faEala,yafoEilu,faEol"></verb>
@@ -1585,7 +1591,7 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<verb text="k*b" id="Lie" grammar="form=faEala,yafoEilu,faEil"></verb>
 			<verb text="ksb" id="Earn" grammar="form=faEala,yafoEilu,faEol"></verb>
 			<verb text="mlk" id="Possess" grammar="form=faEala,yafoEilu,fiEol"></verb>
-			
+
 			<verb text="smE" id="Hear" grammar="form=faEila,yafoEalu,faEaAlap,faEol"></verb>
 			<verb text="Hzn" id="BeGrieved" grammar="form=faEila,yafoEalu,fuEol"></verb>
 			<verb text="Hsb" id="ThinkListen" grammar="form=faEila,yafoEalu,faEol"></verb>
@@ -1596,7 +1602,7 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<verb text="Elm" id="Know" grammar="form=faEila,yafoEalu,fiEol"></verb>
 			<verb text="Eml" id="WorkDo" grammar="form=faEila,yafoEalu,faEal"></verb>
 			<verb text="krh" id="DislikeDetest" grammar="form=faEila,yafoEalu,fuEol"></verb>
-			
+
 			<verb text="bSr" id="WatchSee" grammar="form=faEula,yafoEulu,faEal"></verb>
 
 			<verb text="SnE" id="MakeConstruct" grammar="form=faEala,yafoEalu"></verb>
@@ -1622,7 +1628,7 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<verb text="nkH" id="Marry" grammar="form=faEala,yafoEilu"></verb>
 			<verb text="bsT" id="ExtendStretch" grammar="form=faEala,yafoEulu"></verb>
 			<verb text="Hlf" id="Swear" grammar="form=faEala,yafoEilu"></verb>
-			
+
 			<verb text="&gt;ataY" poss="bi" id="ComeBring"></verb>
 			<verb text="jaA^&apos;a" poss="bi" id="ComeArriveBring"></verb>
 			<verb text="taAba" poss="&lt;ilaY EalaY" id="RepentAcceptRepentance"></verb>
@@ -1643,7 +1649,7 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<noun text="xumora" id="Ferment"></noun>
 
 			<verb text="Eaqada" id="ConsolidationAffirmationHoldingTogether"></verb>
-			<verb text="waH~ada" id="UniteUnifyConsolidate"></verb>			
+			<verb text="waH~ada" id="UniteUnifyConsolidate"></verb>
 			<verb text="tuxorijuwA" id="Expel"></verb>
 			<verb text="lamaEa" id="GleamedGlitteredShone"></verb>
 			<verb text="tajoriY" id="Flow"></verb>
@@ -1760,7 +1766,7 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 		<word text="{lt~aEifu" id="Taaif"></word>
 		<word text="{loHudabiy~apu" id="Hudabiyyah"></word>
 		<word text="{lojan~apu" id="Heaven"></word>
-			
+
 		<word text="{lokalimapu" id="Word"></word>
 		<word text="&lt;isomu {lS~ilapi" id="RelativePronoun"></word>
 		<word text="&lt;isomu {lofaAEili" id="ActiveParticipleVerbalDoer"></word>
@@ -1860,7 +1866,7 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 		<word text="{loqaloqalapu SugoraYN" id="SmallBounce"></word>
 		<word text="{loqaloqalapu mutawasiTa" id="ModerateBounce"></word>
 		<word text="{loqaloqalapu kuboraY" id="GreatBounce"></word>
-		<word text="HarofN gun~apN mu$ad~adapN" id="NasalizeCharacterDoubled"></word> 
+		<word text="HarofN gun~apN mu$ad~adapN" id="NasalizeCharacterDoubled"></word>
 		<word text="nuwnN saAkinapN &lt;iZohaArN HaloqiY" id="VowellessNoonClear"></word>
 		<word text="nuwnN saAkinapN &lt;iqolaAbN" id="VowellessNoonCovered"></word>
 		<word text="nuwnN saAkinapN &lt;idogaAmN gun~apN" id="VowellessNoonAssimilatingNasalization"></word>
@@ -2088,7 +2094,7 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 		<word text="{lowaArivu" id="TheEternalInheritor"></word>
 		<word text="{lr~a$iydu" id="TheGuideToPathOfRectitude"></word>
 		<word text="{lS~abuwru" id="TheExtensivelyEnduringOne"></word>
-		
+
 		<word text="{lomawolaY" id="TheMaster"></word>
 		<word text="{ln~aSiyru" id="TheHelper"></word>
 		<word text="{loqadiyru" id="ThePowerful"></word>
@@ -2120,7 +2126,7 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 		<word text="{lr~ab~u" id="TheMasterLord"></word>
 		<word text="{loEalaY" id="TheMostHigh"></word>
 		<word text="{lo&lt;ilahu" id="TheOneGod"></word>
-		
+
 		<word text="*uw {lojabaruwtu wa{lomalakuwtu wa{lokiboriyaA&apos;u waloEaZamapu" id="TheSupremeOwnerOfSovereigntyAndGreatestThingsAndSupremeGlory"></word>
 		<word text="{ln~uwru {ls~ama`wa`ti wa{lo&gt;aroDi" id="LightOfTheHeavensAndEarth"></word>
 		<word text="{lobadiyEu {ls~ama`wa`ti wa{lo&gt;aroDi" id="TheUniqueOneOfTheHeavensAndEarth"></word>
@@ -2349,7 +2355,7 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 		<word text="wa{ll~ahi" id="ISwearByAllah4"></word>
 		<word text="riDaA bi&apos;aAloEawodapN" id="PleasedWithDecree"></word>
 		<word text="&gt;adabN {lo&apos;aAxotalaAfu" id="MannersOfDiffering"></word>
-		<word text="&apos;aAmanuwA@ S~a`li" id="RighteousDeeds"></word>				
+		<word text="&apos;aAmanuwA@ S~a`li" id="RighteousDeeds"></word>
 		<word text="ya`^&gt;ay~uhaA {l~a*iyna &apos;aAmanuwA@" id="OYouWhoBelieve"></word>
 		<word text="ya`^&gt;ay~uhaA {ln~aAsu" id="OYouMankind"></word>
 		<word text="ya`^&gt;ay~uhaA {ln~abiY~u" id="OProphet"></word>
@@ -2525,7 +2531,7 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 		<word text="samiEa {ll~ahu limano Hamidahu" id="UponRisingFromBowing1"></word>
 		<word text="rab~anaA walaka {loHamodu\, HamodFA kaviyrFA Tay~ibFA mubaArakFA fiyhi" id="UponRisingFromBowing2"></word>
 		<word text="milo&apos;a {ls~ama`wa`ti wamilo&apos;a {lo&gt;aroDi wamaA bayonahumaA\, wamilo&apos;a maA $i}ota min $ayo&apos;K baEodu\. &gt;ahola {lv~anaA^&apos;i wa{lomajodi\, &gt;aHaq~u maA qaAla {loEabodu\, wakul~unaA laka EabodN\. {ll~ahum~a laA maAniEa limaA^ &gt;aEoTayota\, walaA muEoTiYa limaA manaEota\, walaA yanfaEu *a{lojad~i minka {lojad~u" id="UponRisingFromBowing3"></word>
-		<word text="suboHa`na rab~iYa {lo&gt;aEolaY" id="\{phrase:WhileProstrating1\}"></word>
+		<word text="suboHa`na rab~iYa {lo&gt;aEolaY" id="WhileProstrating1"></word>
 		<word text="sub~uwHN\, qud~uwsN\, rab~u {lomala`^}ikapi wa{lr~uwHi" id="WhileProstrating3"></word>
 		<word text="{ll~ahum~a laka sajadotu wabika &apos;aAmantu\, walaka &gt;asolamotu\, sajada wajohiYa lil~a*iy xalaqahu\, waSaw~arahu\, wa$aq~a samoEahu wabaSarahu\, tabaAraka {ll~ahu &gt;aHosanu {loxaAliqiyna" id="WhileProstrating4"></word>
 		<word text="suboHa`na *iy {lojabaruwti\, wa{lomalakuwti\, wa{lokiboriyaA^&apos;i\, wa{loEaZamapi" id="WhileProstrating5"></word>
@@ -2761,7 +2767,7 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 		<word text="raDiytu bi{ll~ahi rab~FA\, wabi{lo&lt;isolaAmi diynFA\, wabimuHam~adK nabiy~FA warasuwlFA (valaAvFA)\." id="RemembranceFifth"></word>
 		<word text="ya`rab~iy laka {loHamodu kamaA yanobagiy lijalaAli wajohika waEaZiymi suloTaAnika\." id="RemembranceSixth"></word>
 		<word text="{ll~ahum~a &lt;in~aA naEuw*u bika min &gt;ano nu$orika bika $ayo&apos;F naEolamuhu\, wanasotagofiruka limaA laA naEolamuhu\." id="RemembranceSeventh"></word>
-		
+
 		<word text="\{1:1:1-2\}" id="InTheNameOfAllah"></word>
 		<word text="\{113\}" id="TheDaybreak"></word>
 		<word text="\{94:6\}" id="TrulyWithHardshipIsEase"></word>
@@ -2810,7 +2816,7 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 		<word text="{loHasanu {bonu Ealiy~K {boni &gt;abiy TaAlib‎K" id="HasanBinAli"></word>
 		<word text="{loHus~ayonu {bonu Ealiy~K {boni &gt;abiy TaAlibK" id="HusseinBinAli"></word>
 		<word text="Ealiy~N {bonu {loHus~ayoni {ls~aj~adi" id="AliBinHussein"></word>
-		<word text="muHam~adN {bonu Ealiy~N {lobaAqiri" id="MuhammadBinAli"></word> 
+		<word text="muHam~adN {bonu Ealiy~N {lobaAqiri" id="MuhammadBinAli"></word>
 		<word text="jaEofarN {bonu muHam~adK {lS~aAdiq‎i" id="JafarBinMuhammad"></word>
 		<word text="muwsaY {bonu jaEofarK {lokaAZim‎i" id="MusaBinJafar"></word>
 		<word text="Ealiy~N {bonu muwsaY {lr~iDaA‎" id="AliBinMusa"></word>
@@ -2901,11 +2907,11 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 		<word text="{lomasojidu {loHaraAmu" id="SacredMosque"></word>
 		<word text="{lomasojidu {ln~abawiy" id="MosqueOfTheProphet"></word>
 		<word text="{lomasojidu {lo&gt;aqoSaY‎" id="FarthestMosque"></word>
-		<word text="bayotu {lomaqodisi" id="HolyHouse"></word> 
+		<word text="bayotu {lomaqodisi" id="HolyHouse"></word>
 		<word text="bayotu {lomaAli" id="CentralTreasury"></word>
 		<word text="Eiydu {lofiTor‎i" id="FestivalOfBreakingFast"></word>
 		<word text="Eiydu {lo&gt;aDoHaY‎" id="FestivalOfSacrifice"></word>
-		<word text="ra&gt;asN {ls~anapu {lohijoriy~ap‎u" id="IslamicNewYear"></word> 
+		<word text="ra&gt;asN {ls~anapu {lohijoriy~ap‎u" id="IslamicNewYear"></word>
 		<word text="EaA$uwraA^&apos;N" id="Ashura"></word>
 		<word text="mawolidN {ln~abiy" id="BirthdayOfTheProphet"></word>
 		<word text="layolapu {ln~iSofi min $aEobaAnK" id="MidShaban"></word>
@@ -3102,7 +3108,7 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 		<word text="KHAMEES" font="KFGQPCArabicSymbols01;F02F" id="DayOfWeek5"></word>
 		<word text="JUMUAH" font="KFGQPCArabicSymbols01;F030" id="DayOfWeek6"></word>
 		<word text="SABT" font="KFGQPCArabicSymbols01;F02A" id="DayOfWeek7"></word>
-		
+
 		<word text="MUHARRAM" font="KFGQPCArabicSymbols01;F031|AGAArabesque;F031" id="Month1"></word>
 		<word text="SAFAR" font="KFGQPCArabicSymbols01;F032|AGAArabesque;F032" id="Month2"></word>
 		<word text="RABEEAWWAL" font="KFGQPCArabicSymbols01;F033|AGAArabesque;F033" id="Month3"></word>
@@ -3215,7 +3221,7 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 		<word text="TheEternalInheritor" font="Quranic;F089|Tulth;F081|Farsi;F081|Asmaul-Husna_2;0073" id="TheEternalInheritor"></word>
 		<word text="TheGuideToPathOfRectitude" font="Asmaul-Husna_2;0074" id="TheGuideToPathOfRectitude"></word>
 		<word text="TheExtensivelyEnduringOne" font="Asmaul-Husna_2;0075" id="TheExtensivelyEnduringOne"></word>
-		
+
 		<word text="TheMaster" font="Quranic;F03C|Tulth;F034|Farsi;F034" id="TheMaster"></word>
 		<word text="TheHelper" font="Quranic;F03D|Tulth;F035|Farsi;F035" id="TheHelper"></word>
 		<word text="ThePowerful" font="Quranic;F03F|Tulth;F037|Farsi;F037" id="ThePowerful"></word>
@@ -3263,7 +3269,7 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 		<word text="FixedInTheBookAndTradition" font="Tulth;F08B" id="FixedInTheBookAndTradition"></word>
 		<word text="WhoeverMemorizesThemWillEnterParadise" font="Tulth;F08C|Farsi;F089" id="WhoeverMemorizesThemWillEnterParadise"></word>
 		<word text="TheologyOfThePeopleOfTraditionAndTheGroup" font="Farsi;F086" id="TheologyOfThePeopleOfTraditionAndTheGroup"></word>
-		
+
 		<word text="BISMILLAHIRAHMANIRAHEEM" font="FDFD|KFGQPCArabicSymbols01;F021,F022,F023|AGAArabesque;F04F,F050|AGAIslamicPhrases;0021,0023,0024,0025,0026,002D,0030,0031,0032,0033,0034,0035,0036,0037,0038,0039,0040,005E|Quranic;F009,F020|Farsi;F087|Shia;0030,0032,0034,0035,0037,0060" id="InTheNameOfAllahMostBeneficentMostMerciful"></word>
 		<word text="ALHAMDULILLAHIRABBILALAMEEN" font="AGAIslamicPhrases;0029,005F|Shia;003D" id="AllPraiseAndThanksBeToAllahLordOfTheWorlds"></word>
 		<word text="TrulyWithHardshipIsEase" font="AGAIslamicPhrases;0063" id="TrulyWithHardshipIsEase"></word>
@@ -3301,7 +3307,7 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<word text="\{AS\}\{AimaaS\}\{AaaS\}\{AimS\}\{AinnaS\}\{SAWAWS\}\{SAWS\}\{ASW\}\{AWAWW\}\{RA\}\{RAunna\}\{RAumaa\}\{RAu\}\{RAaa\}\{RAT\}\{RATunna\}\{RATumaa\}\{RATu\}\{RATaa\}\{RAA\}\{RAAinna\}\{RAAimaa\}\{RAAi\}\{RAAaa\}\{R\}\{Runna\}\{Rumaa\}\{Ru\}\{Raa\}\{JK\}\{JKunna\}\{JKumaa\}\{JKa\}\{JKi\}\{JKK\}\{JKKunna\}\{JKKumaa\}\{JKKa\}\{JKKi\}\{BF\}\{BFunna\}\{BFumaa\}\{BFa\}\{BFi\}\{HZ\}\{HZunna\}\{HZumaa\}\{HZu\}\{HZaA\}\{ST\}\{STunna\}\{STumaa\}\{STu\}\{STaA\}\{DB\}\{DBunna\}\{DBumaa\}\{DBu\}\{DBaA\}\{H\}\{Hunna\}\{Humaa\}\{Ha\}\{Hi\}\{AAum\}\{ShSum\}\{ASa\}\{SWT\}\{AWJ\}\{JJ\}\{JWA\}" id="AfterNames"></word>
 			<word text="\{PeaceBeUponYou\}\{AndUponYouBePeace\}\{PeaceBeUponYouWR\}\{AndUponYouBePeaceWR\}\{PeaceBeUponYouWRWB\}\{AndUponYouBePeaceWRWB\}\{AllahHaafiz\}\{AllahHaafizWanaasir\}\{WithDivineSuccess\}\{WithDivineSuccessInExam\}\{BlessingsOfAllah\}\{SeekRefugeWithAllahFromSatanRejected\}\{INSHALLAH\}\{INSHALLAHTAALA\}\{MASHALLAH\}\{SUBHANALLAH\}\{SUBHANAKALLAH\}\{ALHAMDULILLAH\}\{ThanksALHAMDULILLAH\}\{ALLAHUAKBAR\}\{ALLAHUAKBARALLAHUAKBAR\}\{ASTAGFIRULLAH\}\{HASBIALLAH\}\{MayAllahBlessYou\}\{AllahKnowsBest\}\{InProtectionOfAllah\}\{IHavePutTrustInAllah\}\{WeHavePutTrustInAllah\}\{FearAllah\}\{SpeechOfAllah\}\{ISwearByAllah\}\{RightOfAllah\}\{MayAllahWillItSoOLordOfTheWorlds\}\{AllahSaysTheTruth\}\{InThePathOfAllah\}\{TrulyFromAllahWeComeAndToHimWillReturn\}\{LAILAHAILLALLAH\}\{RASOOLULLAH\}\{ALLAHUMMASALLAALAMUHAMMADWAALAAALIMUHAMMAD\}\{TrulyYouAreOnAnExaltedStandardOfCharacter\}\{AndPrepareAgainstThemWhateverYouAreAbleOfPower\}\{MUHAMMADURRASOOLULLAH\}\{LAILALAILLALLAHMUHAMMADURRASOOLULLAH\}\{ASHHADUANLAILAHAILLALLAH\}\{ASHHADUANNAMUHAMMADARRASOOLULLAH\}\{ASHHADUANLAILAHAILLALLAHASHHADUANNAMUHAMMADABDUHUWARASULUH\}\{ThereIsNoPowerAndNoMightExceptWithAllah\}\{ThereIsNoPowerAndNoMightExceptWithAllahMostHighMostMagnificent\}\{TrulyAllahIsWithThePatient\}\{AndForParentsKindness\}\{BeWithAllah\}\{TheNobleQuran\}\{NobleQuran\}\{MonthOfRamadanWhichWasRevealedThereinTheQuranGuidanceToMankind\}\{InRemembranceOfAllahHeartsFindPeace\}\{SafeguardYourselfFromHeWhoYouHaveBeenGoodTo\}\{TrulyAllahLovesWhenOneWhoWorksDoesTheWorkWell\}\{BlessedFeastCelebration\}\{HappyFeastCelebration\}\{GreatWithPraiseToAllah\}\{MayEveryYearYouBeInGoodHealthAndBlessings\}\{MayEveryYearYouHaveGoodness\}\{ThenTrulyThePartyOfAllahAreTheTriumphant\}\{OnWithTheTruth\}\{OLordGiveMeKnowledge\}\{Congratulations\}\{Peace\}\{AAMEEN\}\{Fight\}" id="IslamicPhrases"></word>
 			<word text="\{BISMILLAH\}\{BISMILLAHIRAHMANIRAHEEM\}\{ALHAMDULILLAHIRABBILALAMEEN\}\{TrulyWithHardshipIsEase\}\{RepelTheirEvilByMeansOfWhatIsBest\}\{AndOfHisSignsIsThatHeCreatedForYouFromYourselvesMatesThatYouMayFindTranquillityInThem\}\{AndHePlacedBetweenYouAffectionAndMercy\}\{TaughtMankindWhatNotHeKnew\}\{AllahLightHeavensAndEarth\}\{EnterItWithPeaceAndSafety\}\{FALAQ\}" id="Quran"></word>
-			<word text="\{AH\}\{Preface\}\{Contents\}\{End\}\{Introduction\}\{Classroom\}\{Door\}\{Part\}\{Index\}\{AllRightsReserved\}\{Islam\}\{Mosque\}\{World\}\{Book\}\{Light\}\{Rial\}\{Ounce\}\{Shilling\}\{Pound\}\{Dirham\}\{Dinar\}\{Lira\}\{Group\}\{Quarter\}\{Eighth\}" id="DocumentWriting"></word>
+			<word text="\{AH\}\{Preface\}\{Contents\}\{Conclusion\}\{Introduction\}\{Classroom\}\{Door\}\{Part\}\{Index\}\{AllRightsReserved\}\{Islam\}\{Mosque\}\{World\}\{Book\}\{Light\}\{Rial\}\{Ounce\}\{Shilling\}\{Pound\}\{Dirham\}\{Dinar\}\{Lira\}\{Group\}\{Quarter\}\{Eighth\}" id="DocumentWriting"></word>
 			<word text="\{AHAD\}\{ITHNAYN\}\{THULAATHAA\}\{ARBAA\}\{KHAMEES\}\{JUMUAH\}\{SABT\}" id="DaysOfWeek"></word>
 			<word text="\{MUHARRAM\}\{SAFAR\}\{RABEEAWWAL\}\{RABEETHAANEE\}\{JUMADAALUWLAA\}\{JUMADAATHAANEEAH\}\{RAJAB\}\{SHABAAN\}\{RAMADAN\}\{SHAWAAL\}\{THULQADAH\}\{THULHIJJAH\}" id="Months"></word>
 			<word text="\{TheBeneficent\}\{TheMerciful\}\{TheEternalLord\}\{TheMostSacred\}\{TheEmbodimentOfPeace\}\{TheInfuserOfFaith\}\{ThePreserverOfSafety\}\{TheMightyOne\}\{TheAllCompelling\}\{TheDominantOne\}\{TheCreator\}\{TheEvolver\}\{TheFlawlessShaper\}\{TheGreatForgiver\}\{TheAllPrevailingOne\}\{TheSupremeBestower\}\{TheTotalProvider\}\{TheSupremeSolver\}\{TheAllKnowingOne\}\{TheRestrictingOne\}\{TheExtender\}\{TheReducer\}\{TheElevatingOne\}\{TheHonourerBestower\}\{TheAbaser\}\{TheAllHearer\}\{TheAllSeeing\}\{TheImpartialJudge\}\{TheEmbodimentOfJustice\}\{TheKnowerOfSubtleties\}\{TheAllAwareOne\}\{TheClementOne\}\{TheMagnificentOne\}\{ThePardoner\}\{TheAcknowledgingOne\}\{TheSublimeOne\}\{TheGreatOne\}\{TheGuardingOne\}\{TheSustainingOne\}\{TheReckoningOne\}\{TheMajesticOne\}\{TheBountifulOne\}\{TheWatchfulOne\}\{TheRespondingOne\}\{TheAllPervadingOne\}\{TheWiseOne\}\{TheLovingOne\}\{TheGloriousOne\}\{TheInfuserOfNewLife\}\{TheAllObservingWitness\}\{TheEmbodimentOfTruth\}\{TheUniversalTrustee\}\{TheStrongOne\}\{TheFirmOne\}\{TheProtectingAssociate\}\{TheSoleLaudableOne\}\{TheAllEnumeratingOne\}\{TheOriginator\}\{TheRestorer\}\{TheMaintainerOfLife\}\{TheInflictorOfDeath\}\{TheEverLiving\}\{TheSelfSubsistingOne\}\{ThePointingOne\}\{TheAllNobleOne\}\{TheOnlyOne\}\{TheSoleOne\}\{TheSupremeProvider\}\{TheOmnipotentOne\}\{TheAllAuthoritativeOne\}\{TheExpeditingOne\}\{TheProcrastinator\}\{TheVeryFirst\}\{TheInfiniteLastOne\}\{ThePerceptible\}\{TheImperceptible\}\{TheHolderOfSupremeAuthority\}\{TheExtremelyExaltedOne\}\{TheFountainHeadOfTruth\}\{TheEverAcceptorOfRepentance\}\{TheRetaliator\}\{TheSupremePardoner\}\{TheBenignOne\}\{TheEternalPossessorOfSovereignty\}\{ThePossessorOfMajestyAndHonour\}\{TheJustOne\}\{TheAssemblerOfScatteredCreations\}\{TheSelfSufficientOne\}\{TheBestowerOfSufficiency\}\{ThePreventer\}\{TheDistressor\}\{TheBestowerOfBenefits\}\{ThePrimeLight\}\{TheProviderOfGuidance\}\{TheUniqueOne\}\{TheEverSurvivingOne\}\{TheEternalInheritor\}\{TheGuideToPathOfRectitude\}\{TheExtensivelyEnduringOne\}\{TheHelper\}\{TheMaster\}\{ThePowerful\}\{TheOdd\}\{TheBeautiful\}\{TheShy\}\{TheCoverer\}\{TheClear\}\{TheClose\}\{TheOmnipotentKing\}\{TheBrilliant\}\{TheTaker\}\{TheProvider\}\{TheIrresistable\}\{TheOneWhoRecompenses\}\{TheRecognizer\}\{TheBestower\}\{TheContinuousCreator\}\{TheOwner\}\{TheDoerOfGood\}\{TheOneWhoCures\}\{TheGentle\}\{TheGiver\}\{TheLord\}\{TheGood\}\{TheSupremeInHonour\}\{TheMostGenerous\}\{TheMostHolyFromAllWeakness\}\{TheMaster\}\{TheMostHigh\}\{TheOneGod\}\{AsmaAlHusnaBatch1\}\{AsmaAlHusnaBatch2\}\{AsmaAlHusnaBatch3\}\{AsmaAlHusnaBatch4\}\{AsmaAlHusnaBatch5\}\{AsmaAlHusnaBatch6\}\{HeIsAllah\}\{AndAllahHasTheBestNamesCallUponHimAndLeaveThemInPlaceThoseNamesNotablyCutOffWhatTheyDo\}\{TheNamesOfAllahAreBest\}\{TheNamesOfAllahAreBestFixedInTheBookAndTradition\}\{AndAllahHasTheBestNamesSoCallOnThem\}\{AndAllahHasTheBestNamesSoCallOnThemLeaveThoseWhoPracticeDeviationConcerningHisNamesTheyWillBeRecompensedForWhatTheyHaveBeenDoing\}\{SayCallUponAllahOrCallUponTheMostMercifulWhicheverNameYouCallToHimBelongTheBestNames\}\{FixedInTheBookAndTradition\}\{WhoeverMemorizesThemWillEnterParadise\}\{TheologyOfThePeopleOfTraditionAndTheGroup\}\{phrase:IntroductionBestNames,Final1,Final2,Final3\}" id="TheBestNamesOfAllahAbbreviations"></word>
@@ -3311,8 +3317,8 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<word text="\{word:ConsecratedMonth1,Month2\}\{phrase:Month3,Month4,Month5,Month6\}\{word:Month7,Month8,Month9,Month10\}\{phrase:Month11,Month12\}" id="Months"></word>
 			<word text="\{phrase:DayOfWeek1,DayOfWeek2,DayOfWeek3,DayOfWeek4,DayOfWeek5,DayOfWeek6,DayOfWeek7\}" id="DaysOfWeek"></word>
 			<word text="\{word:PrayTime1,PrayTime2,PrayTime3,PrayTime4,PrayTime5,PrayTime6,PrayTime7\}\{phrase:PrayTime8,PrayTime9\}" id="PrayerTimes"></word>
-			<word text="\{word:Permissible(Obligatory(ObligationOfTheSelf,ObligationOfSufficiency),EssentialNecessary,Tradition(TraditionObligatory,TraditionVoluntary),Recommended,Supererogatory,Neutral,Disliked),Forbidden\}" id="Jurisprudence"></word>
 			<!--
+			<word text="\{word:Permissible(Obligatory(ObligationOfTheSelf,ObligationOfSufficiency),EssentialNecessary,Tradition(TraditionObligatory,TraditionVoluntary),Recommended,Supererogatory,Neutral,Disliked),Forbidden\}" id="Jurisprudence"></word>
 			<word text="\{word:Obligatory(Month9),TraditionObligatory(MondayAndThursday,FastingMiddleLunarDays,FastingAfterFastingMonth,TheDayOfArafah,TheDayOfAshura,FastingBeforeFastingMonth,FastingBeginningPilgrimageMonth)\}" id="Fasting"></word>
 			<word text="\{word:Obligatory(PrescribedTime(Dawn=2,Noon=4,Afternoon=4,Sunset=3,Night=4),Friday(Noon=2),Funeral(0),Fulfilling(2|3|4),StateOfRitualConsecrationForPilgrimage(2)),TraditionObligatory(PrescribedTime(-Dawn=2,-Noon=4,+Noon=2,+Sunset=2,+Night=2),Friday(+Noon=4)),Necessary(Odd(+Night=1|3|5|7|9|11),CelebrationDay(2)),TraditionVoluntary(PrescribedTime(-Noon=2,+Noon=4,-Afternoon=2|4,-Sunset=2,-Night=2|4),Friday(-Noon=2*,+Noon=2)),Tradition(Guidance(2),LateNight(2*),RainForDraught(2),SolarEclipse(2),LunarEclipse(2),FastingMonthPrayer(8|12|20)),Supererogatory(Sunrise(2),MorningLight(2),Victory(2),OftReturning(2),EnteringMosque(2),Fear(2),Travel(2))\}" id="PrayerTypes"></word>
 			-->
@@ -3569,7 +3575,7 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 		</category>
 		<category title="MadeAgainstAnEnemy">
 			<word id="MadeAgainstAnEnemy1" text="\{phrase:MadeAgainstAnEnemy1\}"></word>
-		</category>		
+		</category>
 		<category title="WhenInFearOfAPeople">
 			<word id="WhenInFearOfAPeople1" text="\{phrase:WhenInFearOfAPeople1\}"></word>
 		</category>
@@ -3695,13 +3701,13 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 		</category>
 		<category title="ByOneFastingWhenPresentedWithFoodAndDoesNotBreakFast">
 			<word id="ByOneFastingWhenPresentedWithFoodAndDoesNotBreakFast1" text=""></word>
-		</category>		
+		</category>
 		<category title="WhenInsultedWhileFasting">
 			<word id="WhenInsultedWhileFasting1" text="\{phrase:WhenInsultedWhileFasting1\}"></word>
 		</category>
 		<category title="UponSeeingEarlyOrPrematureFruit">
 			<word id="UponSeeingEarlyOrPrematureFruit1" text="\{phrase:UponSeeingEarlyOrPrematureFruit1\}"></word>
-		</category>				
+		</category>
 		<category title="UponSneezing">
 			<word id="UponSneezing1" text="\{phrase:UponSneezing1\}"></word>
 		</category>
@@ -3887,7 +3893,7 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<word id="ExcellenceOfRemembranceAndGlorificationOfAllah12" text="\{phrase:ExcellenceOfRemembranceAndGlorificationOfAllah12\}"></word>
 			<word id="ExcellenceOfRemembranceAndGlorificationOfAllah13" text="\{phrase:ExcellenceOfRemembranceAndGlorificationOfAllah13\}"></word>
 			<word id="ExcellenceOfRemembranceAndGlorificationOfAllah14" text="\{phrase:ExcellenceOfRemembranceAndGlorificationOfAllah14\}"></word>
-		</category>		
+		</category>
 		<category title="ForConcludingAllSittings">
 			<word id="ForConcludingAllSittings1" text="\{phrase:ForConcludingAllSittings1\}"></word>
 		</category>
@@ -4520,7 +4526,7 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 	<islamicbooks>
 		<book title="Ulum Al-Qur&apos;an" author="Ahmad Von Denffer"></book>
 		<book title="An Introduction to the Sciences of the Qur&apos;an" author="Yasir Qadh"></book>
-		
+
 		<book title="An Introduction to the Principles of Tafseer" arabic="muqad~imapu fiY &gt;uSuwlu {lt~afosiyri" author="&lt;ibonu Tayomiy~api"></book>
 	</islamicbooks>
 	<qurandivisions>
@@ -5274,7 +5280,7 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 	<translations default="en-maulana_ali">
 		<translation file="en-maulana_ali" name="Maulana Muhammad Ali" translator="Maulana Muhammad Ali"></translation>
 		<translation file="en.asad" name="Asad" translator="Muhammad Asad"></translation>
-		
+
 		<translation file="sq.nahi" name="Efendi Nahi" translator="Hasan Efendi Nahi"></translation>
 		<translation file="sq.mehdiu" name="Feti Mehdiu" translator="Feti Mehdiu"></translation>
 		<translation file="sq.ahmeti" name="Sherif Ahmeti" translator="Sherif Ahmeti"></translation>

@@ -169,6 +169,24 @@ Public Class Utility
         spin.Free()
         Return CInt((num + (num2 * &H5D588B65)) And &H800000007FFFFFFFL)
     End Function
+    Public Shared Sub SortResX(File As String)
+        Dim Doc As New Xml.XmlDocument
+        Doc.Load(File)
+        Dim AllNodes As Xml.XmlNodeList = Doc.DocumentElement.SelectNodes("data/@name")
+        Dim Nodes(AllNodes.Count - 1) As Xml.XmlNode
+        Dim Count As Integer = 0
+        For Each Item As Xml.XmlNode In AllNodes
+            Nodes(Count) = Doc.DocumentElement.RemoveChild(CType(Item, Xml.XmlAttribute).OwnerElement)
+            Count += 1
+        Next
+        Array.Sort(Nodes, Function(x As Xml.XmlNode, y As Xml.XmlNode) x.Attributes("name").Value.CompareTo(y.Attributes("name").Value))
+        For Count = 0 To Nodes.Length - 1
+            If Count = 0 OrElse Nodes(Count - 1).Attributes("name").Value <> Nodes(Count).Attributes("name").Value Then
+                Doc.DocumentElement.AppendChild(Nodes(Count))
+            End If
+        Next
+        Doc.Save(File)
+    End Sub
     Public Shared Function LoadResourceString(resourceKey As String) As String
         LoadResourceString = Nothing
         If resourceKey Is Nothing Then Return Nothing

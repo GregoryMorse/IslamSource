@@ -32,6 +32,9 @@ None
 
 == Changelog ==
 
+= 1.3 =
+Better organization, error checking, fixes and ability to add Arabic text.
+
 = 1.2 =
 Speed optimizations.
 

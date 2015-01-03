@@ -17,7 +17,7 @@ function getBaseURL () {
 		    		if (data[count].menu[subcount] !== undefined && data[count].menu[subcount] !== null) {
 			    		var val = [], getClickFunc = function(b, paste, ch) {
 		    					return function(e) {
-				      				ed.selection.setContent((ch ? '' : '{') + paste + ";Size=" + (parseInt(ed.queryCommandValue('FontSize')) || parseInt(tinyMCE.DOM.getStyle(ed.selection.getNode(), 'fontSize', true), 10)) + (ch ? '' : '}'));
+				      				ed.selection.setContent((ch ? '' : '{') + paste + (ch ? '' : ";Size=" + (parseInt(ed.queryCommandValue('FontSize')) || parseInt(tinyMCE.DOM.getStyle(ed.selection.getNode(), 'fontSize', true), 10)) + '}'));
 		      					};
 			    			}, getMenuClickFunc = function(v) {
 					    		return function () {
@@ -39,8 +39,10 @@ function getBaseURL () {
 						    			onPostRender: getOnPostRender(url + '/IslamSourceWP.php?Font=' + data[count].menu[subcount].values[pancount].font + '&Char=' + data[count].menu[subcount].values[pancount].char, false)
 						    			});
 						    	} else {
-						    		val.push({type: 'button', name: 'category' + pancount, onclick: getClickFunc(this, '&#x' + data[count].menu[subcount].values[pancount].char + ';', true), style: "text-align: center;",
-						    			onPostRender: getOnPostRender(String.fromCharCode(parseInt(data[count].menu[subcount].values[pancount].char, 16)), true)
+						    		var st = '';
+						    		for (var chcount = 0; chcount < data[count].menu[subcount].values[pancount].char.length; chcount++) { st += '&#x' + data[count].menu[subcount].values[pancount].char.charCodeAt(chcount).toString(16) + ';'; }
+						    		val.push({type: 'button', name: 'category' + pancount, onclick: getClickFunc(this, st, true), style: "text-align: center;",
+						    			onPostRender: getOnPostRender(data[count].menu[subcount].values[pancount].char, true)
 						    			});
 						    	}
 		                    }

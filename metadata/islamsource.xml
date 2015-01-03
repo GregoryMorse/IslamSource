@@ -167,23 +167,6 @@
 			<static name="translitschemetext" description="IslamSource_Text" onrender="Arabic::GetTransliterationSchemeTable"></static>
 			<static name="font-tester" description=""></static>
 			<static name="helptext" description="IslamSource_Text" onrender="DocBuilder::GetRenderedHelpText"></static>
-		</frame>		
-	</page>
-	<page name="islam" description="IslamSource_IslamicInformation">
-		<frame name="words" description="IslamSource_Viewer" hasform="true">
-			<radio name="selection" description="IslamSource_Selection" uselist="true" defaultvalue="0" onpopulate="Arabic::GetCategories"></radio>
-			<button name="selectiondisplay" description="IslamSource_Display"></button>
-			<radio name="translitscheme" description="IslamSource_TransliterationScheme" uselist="true" onchange="Arabic::GetChangeTransliterationJS" onpopulate="Arabic::GetTransliterationSchemes"></radio>
-			<button name="fontsmaller" description="IslamSource_Smaller" onclick="ArabicFont::GetFontSmallerJS"></button>
-			<button name="fontdefaultsize" description="IslamSource_LetterSample" onclick="ArabicFont::GetFontDefaultSizeJS"></button>
-			<button name="fontbigger" description="IslamSource_Bigger" onclick="ArabicFont::GetFontBiggerJS"></button>
-			<radio name="fontselection" description="IslamSource_Font" uselist="true" defaultvalue="def" onpopulate="ArabicFont::GetFontList" onchange="ArabicFont::GetChangeFontJS"></radio>
-			<edit name="fontcustom" description="" defaultvalue="IslamSource_Lotus" rows="1"></edit>
-			<button name="fontcustomapply" description="IslamSource_Apply" onclick="ArabicFont::GetChangeCustomFontJS"></button>
-			<image name="fontloading" text="IslamSource_Loading" source="loading-h.gif"></image>
-			<static name="islaminfotext" description="IslamSource_Text" onrender="Arabic::DisplayTranslation"></static>
-			<static name="translitschemetext" description="IslamSource_Text" onrender="Arabic::GetTransliterationSchemeTable"></static>
-			<static name="font-tester" description=""></static>
 		</frame>
 	</page>
 	<page name="phrases" description="IslamSource_Phrases">
@@ -275,7 +258,7 @@
 			<static name="doctext" description="" onrender="DocBuilder::GetListRenderedText"></static>
 			<static name="translitschemetext" description="IslamSource_Text" onrender="Arabic::GetTransliterationSchemeTable"></static>
 			<static name="font-tester" description=""></static>
-		</frame>	
+		</frame>
 	</page>
 	<page name="dictionary" description="IslamSource_Dictionary">
 		<frame name="dictionary" description="IslamSource_Dictionary">
@@ -391,7 +374,7 @@
 	<page name="quotes" description="IslamSource_IslamicQuotes">
 		<frame name="notablequotes" description="IslamSource_NotableQuotes">
 		</frame>
-	</page>	
+	</page>
 	<page name="websites" description="IslamSource_IslamicWebsites">
 		<frame name="quranresources" description="IslamSource_QuranResources">
 			<static name="tanzil" description="IslamSource_IslamicWebsitesTanzil" url="http://www.tanzil.net" imageurl="http://tanzil.ca/tanzil/img/logo-4.png"></static>
@@ -453,9 +436,9 @@
 	<page name="websitearticles" description="IslamSource_IslamicArticles">
 		<frame name="notablearticles" description="IslamSource_NotableArticles">
 		</frame>
-	</page>	
+	</page>
 	<page name="newsarticles" description="IslamSource_IslamicNews">
 		<frame name="notablenews" description="IslamSource_NotableNews">
 		</frame>
-	</page>	
+	</page>
 </pages>

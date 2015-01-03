@@ -17,7 +17,7 @@ rmdir /s /q trunk\IslamSource
 svn add trunk\*
 for /D %%F in (trunk\*) do svn add %%F\*
 svn commit trunk -m "%1"
-svn copy http://plugins.svn.wordpress.org/islamsource/tags/%2 http://plugins.svn.wordpress.org/islamsource/trunk/ -m "%1"
+svn copy http://plugins.svn.wordpress.org/islamsource/trunk/ http://plugins.svn.wordpress.org/islamsource/tags/%2 -m "%1"
 rmdir /s /q trunk
 svn checkout http://plugins.svn.wordpress.org/islamsource/assets
 copy *.jpg assets

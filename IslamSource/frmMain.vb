@@ -10,8 +10,10 @@ Public Class frmMain
         'TanzilReader.CompareQuranFormats(TanzilReader.QuranTexts.Hafs, TanzilReader.QuranTexts.Warsh, TanzilReader.QuranScripts.Uthmani, TanzilReader.ArabicPresentation.Buckwalter)
         'TanzilReader.ChangeQuranFormat(TanzilReader.QuranTexts.Hafs, TanzilReader.QuranTexts.Warsh, TanzilReader.QuranScripts.Uthmani, TanzilReader.ArabicPresentation.Buckwalter)
         'TanzilReader.CheckNotablePatterns()
+        'Utility.SortResX(Utility.GetFilePath("IslamResources\Resources.en.resx"))
+        'Utility.SortResX(Utility.GetFilePath("IslamResources\My Project\Resources.resx"))
         CachedData.DoErrorCheck()
-        Dim RenderArr As RenderArray = Phrases.DoGetRenderedCatText(String.Empty, ArabicData.TranslitScheme.RuleBased, "PlainRoman", CachedData.IslamData.Lists(0), 0)
+        Dim RenderArr As RenderArray = Phrases.DoGetRenderedCatText(String.Empty, ArabicData.TranslitScheme.RuleBased, "PlainRoman", CachedData.IslamData.Phrases, 0)
         'HostPageUtility.RenderArray.OutputPdf("test.pdf", RenderArr.Items)
         For Index = 0 To PageSet.Pages.Count - 1
             Dim newNode As TreeNode = tvwMain.Nodes.Add(PageSet.Pages.Item(Index).PageName, Utility.LoadResourceString(PageSet.Pages.Item(Index).Text))
