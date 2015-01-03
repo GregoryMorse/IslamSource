@@ -1606,9 +1606,12 @@ Public Class ArabicData
         If Str.Length > 1 AndAlso FindLetterBySymbol(Str(1)) <> -1 AndAlso ArabicLetters(FindLetterBySymbol(Str(1))).JoiningStyle = "T" AndAlso LigatureLookups.ContainsKey(Str.Substring(0, 2)) Then
             Positions = {CurPos, CurPos + 1}
             Return LigatureLookups.Item(Str.Substring(0, 2))
+        ElseIf Str.Length > 1 AndAlso FindLetterBySymbol(Str(1)) <> -1 AndAlso ArabicLetters(FindLetterBySymbol(Str(1))).JoiningStyle = "T" AndAlso (LigatureLookups.ContainsKey(" " + Str.Substring(0, 2)) Or LigatureLookups.ContainsKey(" " + Str(1) + Str(0))) Then
+            Positions = {CurPos, CurPos + 1}
+            Return LigatureLookups.Item(" " + If(LigatureLookups.ContainsKey(" " + Str.Substring(0, 2)), Str.Substring(0, 2), Str(1) + Str(0)))
         End If
         If FindLetterBySymbol(Str(0)) <> -1 AndAlso ArabicLetters(FindLetterBySymbol(Str(0))).JoiningStyle <> "T" Then
-            'only 3 letters or 2 letters has possible parsing
+            'only 3 letters or 2 letters has possible parsing, or several 4 and a multiword 8 and 18
             Dim StrCount = 1
             While StrCount <> Str.Length AndAlso FindLetterBySymbol(Str(StrCount)) <> -1 AndAlso ArabicLetters(FindLetterBySymbol(Str(StrCount))).JoiningStyle = "T"
                 StrCount += 1
@@ -1631,6 +1634,9 @@ Public Class ArabicData
         If LigatureLookups.ContainsKey(Str.Substring(0, 1)) Then
             Positions = {CurPos}
             Return LigatureLookups.Item(Str.Substring(0, 1))
+        ElseIf LigatureLookups.ContainsKey(" " + Str.Substring(0, 1)) Then
+            Positions = {CurPos}
+            Return LigatureLookups.Item(" " + Str.Substring(0, 1))
         End If
         Return -1
     End Function
@@ -1701,12 +1707,12 @@ Public Class ArabicData
                 SubCount = CheckLigatureMatch(Str.Substring(Count), Count, Indexes)
                 'transform ligatures are not processed here
                 If SubCount <> -1 AndAlso Combos(SubCount).Shaping <> Nothing AndAlso Combos(SubCount).Shaping.Length <> 1 Then
-                    Dim Index As Integer = Array.FindIndex(Combos(SubCount).Symbol, Function(Ch As Char) FindLetterBySymbol(Ch) <> -1 AndAlso ArabicLetters(FindLetterBySymbol(Ch)).JoiningStyle = "T")
-                    'diacritics always use isolated form
+                    Dim Index As Integer = Array.FindIndex(Combos(SubCount).Symbol, Function(Ch As Char) Ch = " " Or FindLetterBySymbol(Ch) <> -1 AndAlso ArabicLetters(FindLetterBySymbol(Ch)).JoiningStyle = "T")
+                    'diacritics always use isolated form sitting on a space which is actually optional
                     Dim Shape As Integer = If(Index = 0, 0, GetShapeIndexFromString(Str, Count, Indexes(Indexes.Length - 1) - Count + 1 - If(Index = -1, 0, Index)))
                     If Combos(SubCount).Shaping(Shape) <> ChrW(0) AndAlso Array.IndexOf(SupportedForms, Combos(SubCount).Shaping(Shape)) <> -1 Then
                         Ligatures.Add(New LigatureInfo With {.Ligature = Combos(SubCount).Shaping(Shape), .Indexes = Indexes})
-                        Count += Combos(SubCount).Symbol.Length - 1
+                        Count += Combos(SubCount).Symbol.Length - 1 - If(Index = 0, 1, 0)
                     End If
                 End If
             End If
@@ -2250,7 +2256,7 @@ Public Class RenderArray
             For ResCount As Integer = ClusterMap(CharCount) To If(CharCount = ClusterMap.Length - 1, ActualGlyphCount - 1, ClusterMap(CharCount + 1) - 1)
                 'GlyphProps(ResCount).IsDiacritic Or GlyphProps(ResCount).IsZeroWidthSpace
                 If GlyphAdvances(ResCount) = 0 Then
-                    Dim Index As Integer = Array.FindIndex(LigArray, Function(Lig As ArabicData.LigatureInfo) Lig.Indexes(0) = RunStart + RunCount)
+                    Dim Index As Integer = Array.FindIndex(LigArray, Function(Lig As ArabicData.LigatureInfo) Lig.Indexes(0) = RunStart Or Lig.Indexes(0) = RunStart + RunCount)
                     Dim LigLen As Integer = 1
                     If Index <> -1 Then
                         While LigLen <> LigArray(Index).Indexes.Length AndAlso LigArray(Index).Indexes(LigLen - 1) + 1 = LigArray(Index).Indexes(LigLen)
@@ -2264,7 +2270,7 @@ Public Class RenderArray
                             Dim CheckGlyphIndices(GlyphCount - 1) As Short
                             Dim CheckGlyphProps(GlyphCount - 1) As SharpDX.DirectWrite.ShapingGlyphProperties
                             Analyze.GetGlyphs(Str.Substring(RunStart, RunCount + LigLen), RunCount + LigLen, FontFace, False, True, Analysis, Nothing, Nothing, New SharpDX.DirectWrite.FontFeature()() {FeatureDisabler}, New Integer() {RunCount + LigLen}, GlyphCount, CheckClusterMap, CheckTextProps, CheckGlyphIndices, CheckGlyphProps, CheckGlyphCount)
-                            If CheckGlyphCount <> RunCount + 1 Then LigLen = 1 'if ligature not being composed
+                            If CheckGlyphCount <> LigLen Then LigLen = 1 'if ligature not being composed
                         End If
                     End If
                     If Not GlyphProps(ResCount).IsDiacritic Or Not GlyphProps(ResCount).IsZeroWidthSpace Or Not GlyphProps(ResCount).IsClusterStart Then
@@ -2275,9 +2281,9 @@ Public Class RenderArray
                 End If
                 If CharCount = ClusterMap.Length - 1 OrElse ClusterMap(CharCount) <> ClusterMap(CharCount + 1) Then
                     PriorWidth += GlyphAdvances(ResCount)
-                    RunCount += 1
                     Dim Index As Integer = Array.FindIndex(LigArray, Function(Lig As ArabicData.LigatureInfo) Lig.Indexes(0) = RunStart)
-                    If Index <> -1 Then
+                    If Index = -1 OrElse (GlyphProps(ResCount).Justification <> SharpDX.DirectWrite.ScriptJustify.Blank And GlyphProps(ResCount).Justification <> SharpDX.DirectWrite.ScriptJustify.ArabicBlank Or Array.IndexOf(LigArray(Index).Indexes, RunStart) = -1) Then RunCount += 1
+                    If Index <> -1 AndAlso (GlyphProps(ResCount).Justification <> SharpDX.DirectWrite.ScriptJustify.Blank And GlyphProps(ResCount).Justification <> SharpDX.DirectWrite.ScriptJustify.ArabicBlank Or Array.IndexOf(LigArray(Index).Indexes, RunStart) = -1) Then
                         While Array.IndexOf(LigArray(Index).Indexes, RunStart + RunCount) <> -1
                             RunCount += 1
                         End While
@@ -2296,6 +2302,9 @@ Public Class RenderArray
         Return CharPosInfos.ToArray()
     End Function
     Public Shared Sub DoRenderListPdf(Doc As iTextSharp.text.Document, Writer As iTextSharp.text.pdf.PdfWriter, Font As iTextSharp.text.Font, DrawFont As Drawing.Font, Forms As Char(), CurRenderText As RenderArray.RenderText, OutArray As Object(), _Bounds As Generic.List(Of Generic.List(Of Generic.List(Of LayoutInfo))), ByRef PageOffset As PointF, BaseOffset As PointF)
+        Dim RowTop As Single = Single.NaN
+        Dim MaxRect As RectangleF
+        MaxRect = New RectangleF(Doc.PageSize.Width, Doc.PageSize.Height, 0, 0)
         For ListCount As Integer = 2 To OutArray.Length - 1
             Dim InnerArray As Object() = CType(OutArray(ListCount), Object())
             If Not InnerArray Is Nothing Then
@@ -2303,8 +2312,126 @@ Public Class RenderArray
                     If TypeOf InnerArray(Index) Is Object() Then
                         DoRenderListPdf(Doc, Writer, Font, DrawFont, Forms, CurRenderText, CType(InnerArray(Index), Object()), _Bounds(ListCount - 2)(Index)(0).Bounds, PageOffset, BaseOffset)
                     Else
+                        If Index = 0 And _Bounds(ListCount - 2)(Index).Count <> 0 AndAlso RowTop <> _Bounds(ListCount - 2)(Index)(0).Rect.Top Then
+                            RowTop = _Bounds(ListCount - 2)(Index)(0).Rect.Top
+                            Dim TestSubCount As Integer
+                            For TestSubCount = 0 To CType(OutArray(ListCount), Object()).Length - 1
+                                If TypeOf CType(OutArray(ListCount), Object())(TestSubCount) Is Object() Then Exit For
+                                Dim TestNextCount As Integer
+                                For TestNextCount = 0 To _Bounds(ListCount - 2)(TestSubCount).Count - 1
+                                    If _Bounds(ListCount - 2)(TestSubCount)(TestNextCount).Rect.Bottom + PageOffset.Y + BaseOffset.Y > Doc.PageSize.Height - Doc.BottomMargin - Doc.TopMargin Then
+                                        If MaxRect.Left <> Doc.PageSize.Width Or MaxRect.Top <> Doc.PageSize.Height Then
+                                            Writer.DirectContent.SaveState()
+                                            Writer.DirectContent.SetLineWidth(1)
+                                            Writer.DirectContent.Rectangle(MaxRect.Left + Doc.LeftMargin - 2, Doc.PageSize.Height - Doc.TopMargin - MaxRect.Bottom + Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size) * 2, MaxRect.Width - 2, MaxRect.Height - Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size) * 2)
+                                            Writer.DirectContent.Stroke()
+                                            Writer.DirectContent.RestoreState()
+                                            MaxRect = New RectangleF(Doc.PageSize.Width, Doc.PageSize.Height, 0, 0)
+                                        End If
+                                        Doc.NewPage()
+                                        PageOffset.Y = -_Bounds(ListCount - 2)(Index)(0).Rect.Top - BaseOffset.Y
+                                        Exit For
+                                    End If
+                                Next
+                                If TestNextCount <> _Bounds(ListCount - 2)(TestSubCount).Count Then Exit For
+                            Next
+                        End If
+                        Dim theText As String = CStr(InnerArray(Index)).Replace(vbCr, String.Empty).Replace(vbLf, String.Empty)
+                        For NextCount As Integer = 0 To _Bounds(ListCount - 2)(Index).Count - 1
+                            Dim Rect As RectangleF = _Bounds(ListCount - 2)(Index)(NextCount).Rect
+                            Dim Text As String = theText.Substring(0, _Bounds(ListCount - 2)(Index)(NextCount).nChar)
+                            Dim bSpace As Boolean = False
+                            If ArabicData.FindLetterBySymbol(Text(0)) <> -1 AndAlso ArabicData.ArabicLetters(ArabicData.FindLetterBySymbol(Text(0))).JoiningStyle = "T" AndAlso Char.GetUnicodeCategory(Text(0)) <> Globalization.UnicodeCategory.Format Then
+                                Text = " "c + Text
+                                bSpace = True
+                            End If
+                            Dim CharPosInfos() As CharPosInfo = {}
+                            If CStr(DirectCast(OutArray(1), Object())(Index)) = "arabic" Then CharPosInfos = GetWordDiacriticPositionsDWrite(Text, DrawFont, Forms)
+                            Dim ExtraWidth As Single = 0
+                            If bSpace Then
+                                Dim Box As Integer() = Font.BaseFont.GetCharBBox(AscW(ArabicData.ConvertLigatures(Text.Substring(CharPosInfos(0).Index, CharPosInfos(0).Length), False, Forms)(0)))
+                                ExtraWidth = CharPosInfos(0).Width + CharPosInfos(0).X + (Box(2) - Box(0)) * 0.001F * Font.Size
+                            End If
+                            For _Index As Integer = CharPosInfos.Length - 1 To 0 Step -1
+                                Text = Text.Remove(CharPosInfos(_Index).Index, CharPosInfos(_Index).Length)
+                            Next
+                            Dim FixedFont As New iTextSharp.text.Font(Font)
+                            iTextSharp.text.pdf.ColumnText.FitText(FixedFont, Text, New iTextSharp.text.Rectangle(Rect.Left + Doc.LeftMargin - 1 + ExtraWidth, Doc.PageSize.Height - Doc.TopMargin - Rect.Bottom - _Bounds(ListCount - 2)(Index)(NextCount).Baseline - Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size) * 2, Rect.Right - 4 + Doc.LeftMargin + ExtraWidth, Doc.PageSize.Height - Doc.TopMargin - Rect.Top + 1 - _Bounds(ListCount - 2)(Index)(NextCount).Baseline - Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size) * 2), Font.Size, If(CStr(DirectCast(OutArray(1), Object())(Index)) = "arabic" And System.Text.RegularExpressions.Regex.Match(Text, "(?:\p{IsArabic}|\p{IsArabicPresentationForms-A}|\p{IsArabicPresentationForms-B})+").Success, iTextSharp.text.pdf.PdfWriter.RUN_DIRECTION_RTL, iTextSharp.text.pdf.PdfWriter.RUN_DIRECTION_LTR))
+                            Text = If(bSpace, " "c, String.Empty) + theText.Substring(0, _Bounds(ListCount - 2)(Index)(NextCount).nChar)
+                            Rect.Offset(BaseOffset)
+                            Rect.Offset(PageOffset)
+                            MaxRect.X = Math.Min(MaxRect.Left, Rect.Left)
+                            MaxRect.Y = Math.Min(MaxRect.Top, Rect.Top)
+                            MaxRect.Width = Math.Max(MaxRect.Right, Rect.Right) - MaxRect.Left
+                            MaxRect.Height = Math.Max(MaxRect.Bottom, Rect.Bottom) - MaxRect.Top
+                            Dim ct As iTextSharp.text.pdf.ColumnText
+                            CharPosInfos = {}
+                            If CStr(DirectCast(OutArray(1), Object())(Index)) = "arabic" Then CharPosInfos = GetWordDiacriticPositionsDWrite(Text, New Font(DrawFont.FontFamily, FixedFont.Size), Forms)
+                            For _Index As Integer = 0 To CharPosInfos.Length - 1
+                                ct = New iTextSharp.text.pdf.ColumnText(Writer.DirectContent)
+                                ct.RunDirection = iTextSharp.text.pdf.PdfWriter.RUN_DIRECTION_RTL
+                                ct.ArabicOptions = iTextSharp.text.pdf.ColumnText.AR_COMPOSEDTASHKEEL
+                                ct.UseAscender = False
+                                Dim NewFont As New iTextSharp.text.Font(Font)
+                                NewFont.Size = FixedFont.Size
+                                Dim Box As Integer() = Font.BaseFont.GetCharBBox(AscW(ArabicData.ConvertLigatures(Text.Substring(CharPosInfos(_Index).Index, CharPosInfos(_Index).Length), False, Forms)(0)))
+                                If CharPosInfos(_Index).Length = 1 AndAlso System.Text.RegularExpressions.Regex.Match(Text(CharPosInfos(_Index).Index), "[\p{IsArabic}]").Success And Char.GetUnicodeCategory(Text(CharPosInfos(_Index).Index)) = Globalization.UnicodeCategory.DecimalDigitNumber Then
+                                    'end of ayah marker glyph mimicing based on Arial glyphs for small number substitutions
+                                    'centering needed
+                                    NewFont.Size = NewFont.Size * 0.746F
+                                    'CharPosInfos(_Index).X -= 0.537F * CharWidth
+                                    CharPosInfos(_Index).Y += 53 * 0.001F * NewFont.Size
+                                End If
+                                If Not Box Is Nothing Then
+                                    ct.SetSimpleColumn(Rect.Left + Doc.LeftMargin + Rect.Width - 2 - CharPosInfos(_Index).PriorWidth - CharPosInfos(_Index).Width + If(System.Text.RegularExpressions.Regex.Match(Text(CharPosInfos(_Index).Index), "[\p{IsArabic}]").Success And Char.GetUnicodeCategory(Text(CharPosInfos(_Index).Index)) = Globalization.UnicodeCategory.DecimalDigitNumber, CharPosInfos(_Index).Width - CharPosInfos(_Index).X, -CharPosInfos(_Index).X), Doc.PageSize.Height - Doc.TopMargin - Rect.Bottom - _Bounds(ListCount - 2)(Index)(NextCount).Baseline - Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size) * 2 + CharPosInfos(_Index).Y, Rect.Right - 5 + Doc.LeftMargin - CharPosInfos(_Index).PriorWidth + If(System.Text.RegularExpressions.Regex.Match(Text(CharPosInfos(_Index).Index), "[\p{IsArabic}]").Success And Char.GetUnicodeCategory(Text(CharPosInfos(_Index).Index)) = Globalization.UnicodeCategory.DecimalDigitNumber, CharPosInfos(_Index).Width - CharPosInfos(_Index).X, -CharPosInfos(_Index).X), Doc.PageSize.Height - Doc.TopMargin - Rect.Top + 1 - _Bounds(ListCount - 2)(Index)(NextCount).Baseline - Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size) * 2 + CharPosInfos(_Index).Y, Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size), iTextSharp.text.Element.ALIGN_RIGHT Or iTextSharp.text.Element.ALIGN_BASELINE)
+                                    ct.AddText(New iTextSharp.text.Chunk(Text.Substring(CharPosInfos(_Index).Index, CharPosInfos(_Index).Length), NewFont))
+                                    ct.Go()
+                                End If
+                            Next
+                            ExtraWidth = 0
+                            If bSpace Then
+                                Dim Box As Integer() = Font.BaseFont.GetCharBBox(AscW(ArabicData.ConvertLigatures(Text.Substring(CharPosInfos(0).Index, CharPosInfos(0).Length), False, Forms)(0)))
+                                ExtraWidth = CharPosInfos(0).Width + CharPosInfos(0).X + (Box(2) - Box(0)) * 0.001F * FixedFont.Size
+                            End If
+                            For _Index As Integer = CharPosInfos.Length - 1 To 0 Step -1
+                                Text = Text.Remove(CharPosInfos(_Index).Index, CharPosInfos(_Index).Length)
+                            Next
+                            ct = New iTextSharp.text.pdf.ColumnText(Writer.DirectContent)
+                            If CStr(DirectCast(OutArray(1), Object())(Index)) = "arabic" And System.Text.RegularExpressions.Regex.Match(Text, "(?:\s|\p{IsArabic}|\p{IsArabicPresentationForms-A}|\p{IsArabicPresentationForms-B})+").Success Then
+                                ct.RunDirection = iTextSharp.text.pdf.PdfWriter.RUN_DIRECTION_RTL
+                                ct.ArabicOptions = iTextSharp.text.pdf.ColumnText.AR_COMPOSEDTASHKEEL
+                                ct.UseAscender = False
+                            Else
+                                ct.RunDirection = iTextSharp.text.pdf.PdfWriter.RUN_DIRECTION_LTR
+                            End If
+                            Dim bmp As Bitmap = Nothing
+                            If CurRenderText.Font <> String.Empty Then
+                                'Dim BaseFont As iTextSharp.text.pdf.BaseFont = iTextSharp.text.pdf.BaseFont.CreateFont(Utility.GetFilePath("files\" + Utility.FontFile(Array.IndexOf(Utility.FontList, CurRenderArray(Count).TextItems(SubCount).Font))), iTextSharp.text.pdf.BaseFont.IDENTITY_H, iTextSharp.text.pdf.BaseFont.NOT_EMBEDDED)
+                                'Dim SpecFont As New iTextSharp.text.Font(BaseFont, 20, iTextSharp.text.Font.NORMAL)
+                                'ct.AddText(New iTextSharp.text.Chunk(Text, SpecFont))
+                                'preservation of quality on zoom factor must be specified
+                                ct.SetSimpleColumn(Rect.Left + Doc.LeftMargin - 1 + ExtraWidth, Doc.PageSize.Height - Doc.TopMargin - Rect.Bottom - _Bounds(ListCount - 2)(Index)(NextCount).Baseline - Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size) * 2, Rect.Right - 4 + Doc.LeftMargin + ExtraWidth, Doc.PageSize.Height - Doc.TopMargin - Rect.Top + 1 - _Bounds(ListCount - 2)(Index)(NextCount).Baseline - Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size) * 2, Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size), If(ct.RunDirection = iTextSharp.text.pdf.PdfWriter.RUN_DIRECTION_LTR, iTextSharp.text.Element.ALIGN_RIGHT, iTextSharp.text.Element.ALIGN_RIGHT) Or iTextSharp.text.Element.ALIGN_BASELINE)
+                                bmp = Utility.GetUnicodeChar(100 * 8, CurRenderText.Font, Text(0))
+                                ct.AddElement(iTextSharp.text.Image.GetInstance(bmp, iTextSharp.text.BaseColor.WHITE))
+                            Else
+                                ct.SetSimpleColumn(Rect.Left + Doc.LeftMargin - 1 + ExtraWidth, Doc.PageSize.Height - Doc.TopMargin - Rect.Bottom - _Bounds(ListCount - 2)(Index)(NextCount).Baseline - Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size) * 2, Rect.Right - 4 + Doc.LeftMargin + ExtraWidth, Doc.PageSize.Height - Doc.TopMargin - Rect.Top + 1 - _Bounds(ListCount - 2)(Index)(NextCount).Baseline - Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size) * 2, Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size), If(ct.RunDirection = iTextSharp.text.pdf.PdfWriter.RUN_DIRECTION_LTR, iTextSharp.text.Element.ALIGN_RIGHT, iTextSharp.text.Element.ALIGN_RIGHT) Or iTextSharp.text.Element.ALIGN_BASELINE)
+                                ct.AddText(New iTextSharp.text.Chunk(Text, FixedFont))
+                            End If
+                            ct.Go()
+                            ct = Nothing
+                            If Not bmp Is Nothing Then bmp.Dispose()
+                            theText = theText.Substring(_Bounds(ListCount - 2)(Index)(NextCount).nChar)
+                        Next
                     End If
                 Next
+            End If
+            If MaxRect.Left <> Doc.PageSize.Width Or MaxRect.Top <> Doc.PageSize.Height Then
+                Writer.DirectContent.SaveState()
+                Writer.DirectContent.SetLineWidth(1)
+                Writer.DirectContent.Rectangle(MaxRect.Left + Doc.LeftMargin - 2, Doc.PageSize.Height - Doc.TopMargin - MaxRect.Bottom + Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size) * 2, MaxRect.Width - 2, MaxRect.Height - Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size) * 2)
+                Writer.DirectContent.Stroke()
+                Writer.DirectContent.RestoreState()
+                MaxRect = New RectangleF(Doc.PageSize.Width, Doc.PageSize.Height, 0, 0)
             End If
         Next
     End Sub
@@ -2325,7 +2452,16 @@ Public Class RenderArray
                     End If
                     DoRenderPdf(Doc, Writer, Font, DrawFont, Forms, CType(CurRenderArray(Count).TextItems(SubCount).Text, List(Of RenderArray.RenderItem)), _Bounds(Count)(SubCount)(0).Bounds, PageOffset, New PointF(_Bounds(Count)(SubCount)(0).Rect.Location.X, _Bounds(Count)(SubCount)(0).Rect.Location.Y))
                 ElseIf CurRenderArray(Count).TextItems(SubCount).DisplayClass = RenderArray.RenderDisplayClass.eList Then
+                    If MaxRect.Left <> Doc.PageSize.Width Or MaxRect.Top <> Doc.PageSize.Height Then
+                        Writer.DirectContent.SaveState()
+                        Writer.DirectContent.SetLineWidth(1)
+                        Writer.DirectContent.Rectangle(MaxRect.Left + Doc.LeftMargin - 2, Doc.PageSize.Height - Doc.TopMargin - MaxRect.Bottom + Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size) * 2, MaxRect.Width - 2, MaxRect.Height - Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size) * 2)
+                        Writer.DirectContent.Stroke()
+                        Writer.DirectContent.RestoreState()
+                        MaxRect = New RectangleF(Doc.PageSize.Width, Doc.PageSize.Height, 0, 0)
+                    End If
                     DoRenderListPdf(Doc, Writer, Font, DrawFont, Forms, CurRenderArray(Count).TextItems(SubCount), CType(CurRenderArray(Count).TextItems(SubCount).Text, Object()), _Bounds(Count)(SubCount)(0).Bounds, PageOffset, New PointF(_Bounds(Count)(SubCount)(0).Rect.Location.X, _Bounds(Count)(SubCount)(0).Rect.Location.Y))
+                    MaxRect = New RectangleF(Doc.PageSize.Width, Doc.PageSize.Height, 0, 0)
                 ElseIf CurRenderArray(Count).TextItems(SubCount).DisplayClass = RenderArray.RenderDisplayClass.eArabic Or CurRenderArray(Count).TextItems(SubCount).DisplayClass = HostPageUtility.RenderArray.RenderDisplayClass.eLTR Or CurRenderArray(Count).TextItems(SubCount).DisplayClass = RenderArray.RenderDisplayClass.eRTL Or CurRenderArray(Count).TextItems(SubCount).DisplayClass = RenderArray.RenderDisplayClass.eTransliteration Then
                     Dim theText As String = CStr(CurRenderArray(Count).TextItems(SubCount).Text)
                     If _Bounds(Count)(SubCount).Count <> 0 AndAlso RowTop <> _Bounds(Count)(SubCount)(0).Rect.Top Then
@@ -2360,39 +2496,12 @@ Public Class RenderArray
                         Dim Rect As RectangleF = _Bounds(Count)(SubCount)(NextCount).Rect
                         Dim Text As String = theText.Substring(0, _Bounds(Count)(SubCount)(NextCount).nChar)
                         Dim bSpace As Boolean = False
-                        If ArabicData.FindLetterBySymbol(Text(0)) <> -1 AndAlso ArabicData.ArabicLetters(ArabicData.FindLetterBySymbol(Text(0))).JoiningStyle = "T" AndAlso ArabicData.GetLigatures(" "c + Text(0), False, Forms).Length = 0 AndAlso Char.GetUnicodeCategory(Text(0)) <> Globalization.UnicodeCategory.Format Then
+                        If ArabicData.FindLetterBySymbol(Text(0)) <> -1 AndAlso ArabicData.ArabicLetters(ArabicData.FindLetterBySymbol(Text(0))).JoiningStyle = "T" AndAlso Char.GetUnicodeCategory(Text(0)) <> Globalization.UnicodeCategory.Format Then
                             Text = " "c + Text
                             bSpace = True
                         End If
-                        Rect.Offset(BaseOffset)
-                        Rect.Offset(PageOffset)
-                        MaxRect.X = Math.Min(MaxRect.Left, Rect.Left)
-                        MaxRect.Y = Math.Min(MaxRect.Top, Rect.Top)
-                        MaxRect.Width = Math.Max(MaxRect.Right, Rect.Right) - MaxRect.Left
-                        MaxRect.Height = Math.Max(MaxRect.Bottom, Rect.Bottom) - MaxRect.Top
-                        Dim ct As iTextSharp.text.pdf.ColumnText
                         Dim CharPosInfos() As CharPosInfo = {}
                         If CurRenderArray(Count).TextItems(SubCount).DisplayClass = RenderArray.RenderDisplayClass.eArabic Or CurRenderArray(Count).TextItems(SubCount).DisplayClass = RenderArray.RenderDisplayClass.eRTL Then CharPosInfos = GetWordDiacriticPositionsDWrite(Text, DrawFont, Forms)
-                        For Index As Integer = 0 To CharPosInfos.Length - 1
-                            ct = New iTextSharp.text.pdf.ColumnText(Writer.DirectContent)
-                            ct.RunDirection = iTextSharp.text.pdf.PdfWriter.RUN_DIRECTION_RTL
-                            ct.ArabicOptions = iTextSharp.text.pdf.ColumnText.AR_COMPOSEDTASHKEEL
-                            ct.UseAscender = False
-                            Dim NewFont As New iTextSharp.text.Font(Font)
-                            Dim Box As Integer() = Font.BaseFont.GetCharBBox(AscW(ArabicData.ConvertLigatures(Text.Substring(CharPosInfos(Index).Index, CharPosInfos(Index).Length), False, Forms)(0)))
-                            If CharPosInfos(Index).Length = 1 AndAlso System.Text.RegularExpressions.Regex.Match(Text(CharPosInfos(Index).Index), "[\p{IsArabic}]").Success And Char.GetUnicodeCategory(Text(CharPosInfos(Index).Index)) = Globalization.UnicodeCategory.DecimalDigitNumber Then
-                                'end of ayah marker glyph mimicing based on Arial glyphs for small number substitutions
-                                'centering needed
-                                NewFont.Size = NewFont.Size * 0.746F
-                                'CharPosInfos(Index).X -= 0.537F * CharWidth
-                                CharPosInfos(Index).Y += 53 * 0.001F * NewFont.Size
-                            End If
-                            If Not Box Is Nothing Then
-                                ct.SetSimpleColumn(Rect.Left + Doc.LeftMargin + Rect.Width - 2 - CharPosInfos(Index).PriorWidth - CharPosInfos(Index).Width + If(System.Text.RegularExpressions.Regex.Match(Text(CharPosInfos(Index).Index), "[\p{IsArabic}]").Success And Char.GetUnicodeCategory(Text(CharPosInfos(Index).Index)) = Globalization.UnicodeCategory.DecimalDigitNumber, CharPosInfos(Index).Width - CharPosInfos(Index).X, -CharPosInfos(Index).X), Doc.PageSize.Height - Doc.TopMargin - Rect.Bottom - _Bounds(Count)(SubCount)(NextCount).Baseline - Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size) * 2 + CharPosInfos(Index).Y, Rect.Right - 5 + Doc.LeftMargin - CharPosInfos(Index).PriorWidth + If(System.Text.RegularExpressions.Regex.Match(Text(CharPosInfos(Index).Index), "[\p{IsArabic}]").Success And Char.GetUnicodeCategory(Text(CharPosInfos(Index).Index)) = Globalization.UnicodeCategory.DecimalDigitNumber, CharPosInfos(Index).Width - CharPosInfos(Index).X, -CharPosInfos(Index).X), Doc.PageSize.Height - Doc.TopMargin - Rect.Top + 1 - _Bounds(Count)(SubCount)(NextCount).Baseline - Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size) * 2 + CharPosInfos(Index).Y, Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size), iTextSharp.text.Element.ALIGN_RIGHT Or iTextSharp.text.Element.ALIGN_BASELINE)
-                                ct.AddText(New iTextSharp.text.Chunk(Text.Substring(CharPosInfos(Index).Index, CharPosInfos(Index).Length), NewFont))
-                                ct.Go()
-                            End If
-                        Next
                         Dim ExtraWidth As Single = 0
                         If bSpace Then
                             Dim Box As Integer() = Font.BaseFont.GetCharBBox(AscW(ArabicData.ConvertLigatures(Text.Substring(CharPosInfos(0).Index, CharPosInfos(0).Length), False, Forms)(0)))
@@ -2401,8 +2510,49 @@ Public Class RenderArray
                         For Index As Integer = CharPosInfos.Length - 1 To 0 Step -1
                             Text = Text.Remove(CharPosInfos(Index).Index, CharPosInfos(Index).Length)
                         Next
+                        Dim FixedFont As New iTextSharp.text.Font(Font)
+                        iTextSharp.text.pdf.ColumnText.FitText(FixedFont, Text, New iTextSharp.text.Rectangle(Rect.Left + Doc.LeftMargin - 1 + ExtraWidth, Doc.PageSize.Height - Doc.TopMargin - Rect.Bottom - _Bounds(Count)(SubCount)(NextCount).Baseline - Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size) * 2, Rect.Right - 4 + Doc.LeftMargin + ExtraWidth, Doc.PageSize.Height - Doc.TopMargin - Rect.Top + 1 - _Bounds(Count)(SubCount)(NextCount).Baseline - Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size) * 2), Font.Size, If(CurRenderArray(Count).TextItems(SubCount).DisplayClass = RenderArray.RenderDisplayClass.eArabic And System.Text.RegularExpressions.Regex.Match(Text, "(?:\p{IsArabic}|\p{IsArabicPresentationForms-A}|\p{IsArabicPresentationForms-B})+").Success Or CurRenderArray(Count).TextItems(SubCount).DisplayClass = RenderArray.RenderDisplayClass.eRTL, iTextSharp.text.pdf.PdfWriter.RUN_DIRECTION_RTL, iTextSharp.text.pdf.PdfWriter.RUN_DIRECTION_LTR))
+                        Text = If(bSpace, " "c, String.Empty) + theText.Substring(0, _Bounds(Count)(SubCount)(NextCount).nChar)
+                        Rect.Offset(BaseOffset)
+                        Rect.Offset(PageOffset)
+                        MaxRect.X = Math.Min(MaxRect.Left, Rect.Left)
+                        MaxRect.Y = Math.Min(MaxRect.Top, Rect.Top)
+                        MaxRect.Width = Math.Max(MaxRect.Right, Rect.Right) - MaxRect.Left
+                        MaxRect.Height = Math.Max(MaxRect.Bottom, Rect.Bottom) - MaxRect.Top
+                        Dim ct As iTextSharp.text.pdf.ColumnText
+                        CharPosInfos = {}
+                        If CurRenderArray(Count).TextItems(SubCount).DisplayClass = RenderArray.RenderDisplayClass.eArabic Or CurRenderArray(Count).TextItems(SubCount).DisplayClass = RenderArray.RenderDisplayClass.eRTL Then CharPosInfos = GetWordDiacriticPositionsDWrite(Text, New Font(DrawFont.FontFamily, FixedFont.Size), Forms)
+                        For Index As Integer = 0 To CharPosInfos.Length - 1
+                            ct = New iTextSharp.text.pdf.ColumnText(Writer.DirectContent)
+                            ct.RunDirection = iTextSharp.text.pdf.PdfWriter.RUN_DIRECTION_RTL
+                            ct.ArabicOptions = iTextSharp.text.pdf.ColumnText.AR_COMPOSEDTASHKEEL
+                            ct.UseAscender = False
+                            Dim NewFont As New iTextSharp.text.Font(Font)
+                            NewFont.Size = FixedFont.Size
+                            Dim Box As Integer() = Font.BaseFont.GetCharBBox(AscW(ArabicData.ConvertLigatures(Text.Substring(CharPosInfos(Index).Index, CharPosInfos(Index).Length), False, Forms)(0)))
+                            If CharPosInfos(Index).Length = 1 AndAlso System.Text.RegularExpressions.Regex.Match(Text(CharPosInfos(Index).Index), "[\p{IsArabic}]").Success And Char.GetUnicodeCategory(Text(CharPosInfos(Index).Index)) = Globalization.UnicodeCategory.DecimalDigitNumber Then
+                                'end of ayah marker glyph mimicing based on Arial glyphs for small number substitutions
+                                'centering needed must to use FitText based on the end of ayah markers inner rectangle
+                                NewFont.Size = NewFont.Size * 0.746F
+                                'CharPosInfos(Index).X -= 0.537F * CharWidth
+                                CharPosInfos(Index).Y += 53 * 0.001F * NewFont.Size
+                            End If
+                            If Not Box Is Nothing Then
+                                ct.SetSimpleColumn(Rect.Left + Doc.LeftMargin + Rect.Width - 1 - CharPosInfos(Index).PriorWidth - CharPosInfos(Index).Width + If(System.Text.RegularExpressions.Regex.Match(Text(CharPosInfos(Index).Index), "[\p{IsArabic}]").Success And Char.GetUnicodeCategory(Text(CharPosInfos(Index).Index)) = Globalization.UnicodeCategory.DecimalDigitNumber, CharPosInfos(Index).Width - CharPosInfos(Index).X, -CharPosInfos(Index).X), Doc.PageSize.Height - Doc.TopMargin - Rect.Bottom - _Bounds(Count)(SubCount)(NextCount).Baseline - Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size) * 2 + CharPosInfos(Index).Y, Rect.Right - 4 + Doc.LeftMargin - CharPosInfos(Index).PriorWidth + If(System.Text.RegularExpressions.Regex.Match(Text(CharPosInfos(Index).Index), "[\p{IsArabic}]").Success And Char.GetUnicodeCategory(Text(CharPosInfos(Index).Index)) = Globalization.UnicodeCategory.DecimalDigitNumber, CharPosInfos(Index).Width - CharPosInfos(Index).X, -CharPosInfos(Index).X), Doc.PageSize.Height - Doc.TopMargin - Rect.Top + 1 - _Bounds(Count)(SubCount)(NextCount).Baseline - Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size) * 2 + CharPosInfos(Index).Y, Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size), iTextSharp.text.Element.ALIGN_RIGHT Or iTextSharp.text.Element.ALIGN_BASELINE)
+                                ct.AddText(New iTextSharp.text.Chunk(Text.Substring(CharPosInfos(Index).Index, CharPosInfos(Index).Length), NewFont))
+                                ct.Go()
+                            End If
+                        Next
+                        ExtraWidth = 0
+                        If bSpace Then
+                            Dim Box As Integer() = Font.BaseFont.GetCharBBox(AscW(ArabicData.ConvertLigatures(Text.Substring(CharPosInfos(0).Index, CharPosInfos(0).Length), False, Forms)(0)))
+                            ExtraWidth = CharPosInfos(0).Width + CharPosInfos(0).X + (Box(2) - Box(0)) * 0.001F * FixedFont.Size
+                        End If
+                        For Index As Integer = CharPosInfos.Length - 1 To 0 Step -1
+                            Text = Text.Remove(CharPosInfos(Index).Index, CharPosInfos(Index).Length)
+                        Next
                         ct = New iTextSharp.text.pdf.ColumnText(Writer.DirectContent)
-                        If CurRenderArray(Count).TextItems(SubCount).DisplayClass = RenderArray.RenderDisplayClass.eArabic And System.Text.RegularExpressions.Regex.Match(Text, "(?:\p{IsArabic}|\p{IsArabicPresentationForms-A}|\p{IsArabicPresentationForms-B})+").Success Or CurRenderArray(Count).TextItems(SubCount).DisplayClass = RenderArray.RenderDisplayClass.eRTL Then
+                        If CurRenderArray(Count).TextItems(SubCount).DisplayClass = RenderArray.RenderDisplayClass.eArabic And System.Text.RegularExpressions.Regex.Match(Text, "(?:\s|\p{IsArabic}|\p{IsArabicPresentationForms-A}|\p{IsArabicPresentationForms-B})+").Success Or CurRenderArray(Count).TextItems(SubCount).DisplayClass = RenderArray.RenderDisplayClass.eRTL Then
                             ct.RunDirection = iTextSharp.text.pdf.PdfWriter.RUN_DIRECTION_RTL
                             ct.ArabicOptions = iTextSharp.text.pdf.ColumnText.AR_COMPOSEDTASHKEEL
                             ct.UseAscender = False
@@ -2419,8 +2569,8 @@ Public Class RenderArray
                             bmp = Utility.GetUnicodeChar(100 * 8, CurRenderArray(Count).TextItems(SubCount).Font, Text(0))
                             ct.AddElement(iTextSharp.text.Image.GetInstance(bmp, iTextSharp.text.BaseColor.WHITE))
                         Else
-                            ct.SetSimpleColumn(Rect.Left + Doc.LeftMargin - 2 + ExtraWidth, Doc.PageSize.Height - Doc.TopMargin - Rect.Bottom - _Bounds(Count)(SubCount)(NextCount).Baseline - Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size) * 2, Rect.Right - 5 + Doc.LeftMargin + ExtraWidth, Doc.PageSize.Height - Doc.TopMargin - Rect.Top + 1 - _Bounds(Count)(SubCount)(NextCount).Baseline - Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size) * 2, Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size), If(ct.RunDirection = iTextSharp.text.pdf.PdfWriter.RUN_DIRECTION_LTR, iTextSharp.text.Element.ALIGN_RIGHT, iTextSharp.text.Element.ALIGN_RIGHT) Or iTextSharp.text.Element.ALIGN_BASELINE)
-                            ct.AddText(New iTextSharp.text.Chunk(Text, Font))
+                            ct.SetSimpleColumn(Rect.Left + Doc.LeftMargin - 1 + ExtraWidth, Doc.PageSize.Height - Doc.TopMargin - Rect.Bottom - _Bounds(Count)(SubCount)(NextCount).Baseline - Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size) * 2, Rect.Right - 4 + Doc.LeftMargin + ExtraWidth, Doc.PageSize.Height - Doc.TopMargin - Rect.Top + 1 - _Bounds(Count)(SubCount)(NextCount).Baseline - Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size) * 2, Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size), If(ct.RunDirection = iTextSharp.text.pdf.PdfWriter.RUN_DIRECTION_LTR, iTextSharp.text.Element.ALIGN_RIGHT, iTextSharp.text.Element.ALIGN_RIGHT) Or iTextSharp.text.Element.ALIGN_BASELINE)
+                            ct.AddText(New iTextSharp.text.Chunk(Text, FixedFont))
                         End If
                         ct.Go()
                         ct = Nothing
@@ -2474,7 +2624,7 @@ Public Class RenderArray
         Doc.Close()
     End Sub
     Delegate Function GetTextWidth(Str As String, FontName As String, MaxWidth As Single, IsRTL As Boolean, ByRef s As SizeF, ByRef Baseline As Single) As Integer
-    Private Shared Function GetTextWidthPdf(Font As iTextSharp.text.Font, DrawFont As Font, Forms As Char(), Str As String, FontName As String, MaxWidth As Single, IsRTL As Boolean, ByRef s As SizeF, ByRef Baseline As Single) As Integer
+    Private Shared Function GetTextWidthPdf(_Font As iTextSharp.text.Font, DrawFont As Font, Forms As Char(), Str As String, FontName As String, MaxWidth As Single, IsRTL As Boolean, ByRef s As SizeF, ByRef Baseline As Single) As Integer
         If FontName <> String.Empty Then
             'Dim BaseFont As iTextSharp.text.pdf.BaseFont = iTextSharp.text.pdf.BaseFont.CreateFont(Utility.GetFilePath("files\" + Utility.FontFile(Array.IndexOf(Utility.FontList, FontName))), iTextSharp.text.pdf.BaseFont.IDENTITY_H, iTextSharp.text.pdf.BaseFont.NOT_EMBEDDED)
             'Font = New iTextSharp.text.Font(BaseFont, 20, iTextSharp.text.Font.NORMAL)
@@ -2483,15 +2633,16 @@ Public Class RenderArray
             Dim PrivFont As New Drawing.Font(PrivateFontColl.Families(0), 100)
             s = Utility.GetTextExtent(Str, PrivFont)
             s.Width = CInt(Math.Ceiling(Math.Ceiling(s.Width + 1) * 96.0F / 72.0F))
-            s.Height = CInt(Math.Ceiling(Math.Ceiling(s.Height + 1) * 96.0F / 72.0F)) + Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size) * 4
+            s.Height = CInt(Math.Ceiling(Math.Ceiling(s.Height + 1) * 96.0F / 72.0F)) + _Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, _Font.Size) * 4
             Baseline = 0
             PrivFont.Dispose()
             PrivateFontColl.Dispose()
             Return Str.Length
         End If
+        Dim Font As New iTextSharp.text.Font(_Font)
         Font.BaseFont.CorrectArabicAdvance()
         Dim bSpace As Boolean = False
-        If ArabicData.FindLetterBySymbol(Str(0)) <> -1 AndAlso ArabicData.ArabicLetters(ArabicData.FindLetterBySymbol(Str(0))).JoiningStyle = "T" AndAlso ArabicData.GetLigatures(" "c + Str(0), False, Forms).Length = 0 Then
+        If ArabicData.FindLetterBySymbol(Str(0)) <> -1 AndAlso ArabicData.ArabicLetters(ArabicData.FindLetterBySymbol(Str(0))).JoiningStyle = "T" AndAlso Char.GetUnicodeCategory(Str(0)) <> Globalization.UnicodeCategory.Format Then
             Str = " "c + Str
             bSpace = True
         End If
@@ -2500,7 +2651,7 @@ Public Class RenderArray
         Dim ExtraWidth As Single = 0
         If IsRTL And FontName = String.Empty Then CharPosInfos = GetWordDiacriticPositionsDWrite(Str, DrawFont, Forms)
         For Count As Integer = CharPosInfos.Length - 1 To 0 Step -1
-            If CharPosInfos(Count).Index <> 0 AndAlso Text(CharPosInfos(Count).Index - 1) = " "c And (CharPosInfos(Count).Index = 1 Or CharPosInfos(Count).Index = Text.Length - 1) Then
+            If Text(CharPosInfos(Count).Index - If(CharPosInfos(Count).Index <> 0, 1, 0)) = " "c And (CharPosInfos(Count).Index <= 1 Or CharPosInfos(Count).Index = Text.Length - 1) Then
                 Dim Box As Integer() = Font.BaseFont.GetCharBBox(AscW(ArabicData.ConvertLigatures(Text.Substring(CharPosInfos(Count).Index, CharPosInfos(Count).Length), False, Forms)(0)))
                 ExtraWidth += CharPosInfos(Count).Width + CharPosInfos(Count).X + (Box(2) - Box(0)) * 0.001F * Font.Size
             End If
@@ -2523,8 +2674,8 @@ Public Class RenderArray
                 Str = Str.Substring(0, If(Str.IndexOf(" "c, Len - 1) = -1, Str.Length, Str.IndexOf(" "c, Len - 1) + 1))
                 ExtraWidth = 0
                 For Count As Integer = CharPosInfos.Length - 1 To 0 Step -1
-                    If CharPosInfos(Count).Index < Len Then
-                        If Text(CharPosInfos(Count).Index - 1) = " "c And (CharPosInfos(Count).Index = 1 Or CharPosInfos(Count).Index = Str.Length - 1 Or (Str(Str.Length - 1) = " "c And CharPosInfos(Count).Index = Str.Length - 2)) Then
+                    If CharPosInfos(Count).Index + CharPosInfos(Count).Length < Len Then
+                        If Text(CharPosInfos(Count).Index - If(CharPosInfos(Count).Index <> 0, 1, 0)) = " "c And (CharPosInfos(Count).Index <= 1 Or CharPosInfos(Count).Index = Str.Length - 1 Or (Str(Str.Length - 1) = " "c And CharPosInfos(Count).Index = Str.Length - 2)) Then
                             Dim Box As Integer() = Font.BaseFont.GetCharBBox(AscW(ArabicData.ConvertLigatures(Text.Substring(CharPosInfos(Count).Index, CharPosInfos(Count).Length), False, Forms)(0)))
                             ExtraWidth += CharPosInfos(Count).Width + CharPosInfos(Count).X + (Box(2) - Box(0)) * 0.001F * Font.Size
                         End If
@@ -2540,8 +2691,8 @@ Public Class RenderArray
                 Str = Str.Substring(0, Len)
                 ExtraWidth = 0
                 For Count As Integer = CharPosInfos.Length - 1 To 0 Step -1
-                    If CharPosInfos(Count).Index < Len Then
-                        If Text(CharPosInfos(Count).Index - 1) = " "c And (CharPosInfos(Count).Index = 1 Or CharPosInfos(Count).Index = Str.Length - 1 Or (Str(Str.Length - 1) = " "c And CharPosInfos(Count).Index = Str.Length - 2)) Then
+                    If CharPosInfos(Count).Index + CharPosInfos(Count).Length < Len Then
+                        If Text(CharPosInfos(Count).Index - If(CharPosInfos(Count).Index <> 0, 1, 0)) = " "c And (CharPosInfos(Count).Index <= 1 Or CharPosInfos(Count).Index = Str.Length - 1 Or (Str(Str.Length - 1) = " "c And CharPosInfos(Count).Index = Str.Length - 2)) Then
                             Dim Box As Integer() = Font.BaseFont.GetCharBBox(AscW(ArabicData.ConvertLigatures(Text.Substring(CharPosInfos(Count).Index, CharPosInfos(Count).Length), False, Forms)(0)))
                             ExtraWidth += CharPosInfos(Count).Width + CharPosInfos(Count).X + (Box(2) - Box(0)) * 0.001F * Font.Size
                         End If
@@ -2550,12 +2701,41 @@ Public Class RenderArray
                 Next
                 s.Width = ExtraWidth + iTextSharp.text.pdf.ColumnText.GetWidth(New iTextSharp.text.Phrase(Str, Font), If(IsRTL, iTextSharp.text.pdf.PdfWriter.RUN_DIRECTION_RTL, iTextSharp.text.pdf.PdfWriter.RUN_DIRECTION_LTR), iTextSharp.text.pdf.ColumnText.AR_COMPOSEDTASHKEEL)
             End If
+            If Len = 0 Then
+                Str = Text
+                'non-Arabic scripts like Latin can be hyphenated here instead
+                Len = If(Str.IndexOf(" ") <> -1, Str.IndexOf(" ") + 1, Str.Length)
+                s.Width = MaxWidth
+                ExtraWidth = 0
+                For Count As Integer = CharPosInfos.Length - 1 To 0 Step -1
+                    If CharPosInfos(Count).Index + CharPosInfos(Count).Length < Len Then
+                        If Text(CharPosInfos(Count).Index - If(CharPosInfos(Count).Index <> 0, 1, 0)) = " "c And (CharPosInfos(Count).Index <= 1 Or CharPosInfos(Count).Index = Str.Length - 1 Or (Str(Str.Length - 1) = " "c And CharPosInfos(Count).Index = Str.Length - 2)) Then
+                            Dim Box As Integer() = Font.BaseFont.GetCharBBox(AscW(ArabicData.ConvertLigatures(Text.Substring(CharPosInfos(Count).Index, CharPosInfos(Count).Length), False, Forms)(0)))
+                            ExtraWidth += CharPosInfos(Count).Width + CharPosInfos(Count).X + (Box(2) - Box(0)) * 0.001F * Font.Size
+                        End If
+                        Str = Str.Remove(CharPosInfos(Count).Index, CharPosInfos(Count).Length)
+                    End If
+                Next
+                Text = Text.Substring(0, Len)
+                Dim _MaxAscent As Single = Font.BaseFont.GetAscentPoint(Text, Font.Size)
+                Dim _MaxDescent As Single = Font.BaseFont.GetDescentPoint(Text, Font.Size)
+                For Each CharPosInfo As CharPosInfo In CharPosInfos
+                    If CharPosInfo.Index < Len Then
+                        Dim Box As Integer() = Font.BaseFont.GetCharBBox(AscW(ArabicData.ConvertLigatures(Text.Substring(CharPosInfo.Index, CharPosInfo.Length), False, Forms)(0)))
+                        _MaxAscent = Math.Max(CharPosInfo.Y + Font.BaseFont.GetAscentPoint(Text.Substring(CharPosInfo.Index, CharPosInfo.Length), Font.Size), _MaxAscent)
+                        _MaxDescent = Math.Min(CharPosInfo.Y + Font.BaseFont.GetDescentPoint(Text.Substring(CharPosInfo.Index, CharPosInfo.Length), Font.Size), _MaxDescent)
+                    End If
+                Next
+                Baseline = _MaxAscent
+                s.Height = Font.BaseFont.GetFontDescriptor(iTextSharp.text.pdf.BaseFont.AWT_LEADING, Font.Size) * 6 + _MaxAscent - _MaxDescent
+                iTextSharp.text.pdf.ColumnText.FitText(Font, Text, New iTextSharp.text.Rectangle(s.Width, s.Height), Font.Size, If(IsRTL, iTextSharp.text.pdf.PdfWriter.RUN_DIRECTION_RTL, iTextSharp.text.pdf.PdfWriter.RUN_DIRECTION_LTR))
+            End If
         End If
         Text = Text.Substring(0, Len)
         Dim MaxAscent As Single = Font.BaseFont.GetAscentPoint(Text, Font.Size)
         Dim MaxDescent As Single = Font.BaseFont.GetDescentPoint(Text, Font.Size)
         For Each CharPosInfo As CharPosInfo In CharPosInfos
-            If CharPosInfo.Index < Len Then
+            If CharPosInfo.Index + CharPosInfo.Length < Len Then
                 Dim Box As Integer() = Font.BaseFont.GetCharBBox(AscW(ArabicData.ConvertLigatures(Text.Substring(CharPosInfo.Index, CharPosInfo.Length), False, Forms)(0)))
                 MaxAscent = Math.Max(CharPosInfo.Y + Font.BaseFont.GetAscentPoint(Text.Substring(CharPosInfo.Index, CharPosInfo.Length), Font.Size), MaxAscent)
                 MaxDescent = Math.Min(CharPosInfo.Y + Font.BaseFont.GetDescentPoint(Text.Substring(CharPosInfo.Index, CharPosInfo.Length), Font.Size), MaxDescent)
@@ -2590,11 +2770,11 @@ Public Class RenderArray
             For ListCount As Integer = 2 To CType(CurRenderText.Text, Object()).Length - 1
                 Dim InnerArray As Object() = CType(CType(OutArray, Object())(ListCount), Object())
                 Dim MaxWidth As Single = 0
-                Dim CurTop As Single = 0
                 Dim MaxTop As Single = 0
                 Bounds.Add(New Generic.List(Of Generic.List(Of LayoutInfo)))
                 If Not InnerArray Is Nothing Then
                     For Index = 0 To InnerArray.Length - 1
+                        Dim CurTop As Single = 0
                         Bounds(ListCount - 2).Add(New Generic.List(Of LayoutInfo))
                         Dim s As Drawing.SizeF
                         If TypeOf InnerArray(Index) Is Object() Then
@@ -2602,30 +2782,31 @@ Public Class RenderArray
                             s = GetTableLayout(CurRenderText, DirectCast(InnerArray(Index), Object()), If(Pass = 0, _Width, ColWidths(Index)), SubBounds, WidthFunc)
                             Bounds(ListCount - 2)(Index).Add(New LayoutInfo(New RectangleF(0, Top + CurTop, s.Width, s.Height), 0, 0, SubBounds))
                         Else
-                            Dim theText As String = CStr(InnerArray(Index))
-                            While theText <> String.Empty
-                                Dim nChar As Integer
-                                Dim Baseline As Single
-                                nChar = WidthFunc(theText, CurRenderText.Font, If(Pass = 0, _Width, ColWidths(Index)), CStr(DirectCast(OutArray(1), Object())(Index)) = "arabic", s, Baseline)
-                                'break up string on previous word boundary unless beginning of string
-                                'arabic strings cannot be broken up in the middle due to letters joining which would throw off calculations
-                                If nChar = 0 Then
-                                    nChar = theText.Length 'If no room for even a letter then just use placeholder
-                                ElseIf nChar <> theText.Length Then
-                                    Dim idx As Integer = Array.FindLastIndex(theText.ToCharArray(), nChar - 1, nChar, Function(ch As Char) Char.IsWhiteSpace(ch))
-                                    If idx <> -1 Then nChar = idx + 1
-                                End If
-                                If theText.Substring(nChar) <> String.Empty Then
-                                    WidthFunc(theText.Substring(0, nChar), CurRenderText.Font, If(Pass = 0, _Width, ColWidths(Index)), CStr(DirectCast(OutArray(1), Object())(Index)) = "arabic", s, Baseline)
-                                End If
-                                theText = theText.Substring(nChar)
-                                If theText <> String.Empty Then
+                            Dim Split() As String = CStr(InnerArray(Index)).Split({vbCrLf, vbCr, vbLf}, StringSplitOptions.RemoveEmptyEntries)
+                            For SplitCount As Integer = 0 To Split.Length - 1
+                                Dim theText As String = Split(SplitCount)
+                                While theText <> String.Empty
+                                    Dim nChar As Integer
+                                    Dim Baseline As Single
+                                    nChar = WidthFunc(theText, CurRenderText.Font, If(Pass = 0, _Width, ColWidths(Index)), CStr(DirectCast(OutArray(1), Object())(Index)) = "arabic", s, Baseline)
+                                    'break up string on previous word boundary unless beginning of string
+                                    'arabic strings cannot be broken up in the middle due to letters joining which would throw off calculations
+                                    If nChar = 0 Then
+                                        nChar = theText.Length 'If no room for even a letter then just use placeholder
+                                    ElseIf nChar <> theText.Length Then
+                                        Dim idx As Integer = Array.FindLastIndex(theText.ToCharArray(), nChar - 1, nChar, Function(ch As Char) Char.IsWhiteSpace(ch))
+                                        If idx <> -1 Then nChar = idx + 1
+                                    End If
+                                    If theText.Substring(nChar) <> String.Empty Then
+                                        WidthFunc(theText.Substring(0, nChar), CurRenderText.Font, If(Pass = 0, _Width, ColWidths(Index)), CStr(DirectCast(OutArray(1), Object())(Index)) = "arabic", s, Baseline)
+                                    End If
+                                    Bounds(ListCount - 2)(Index).Add(New LayoutInfo(New RectangleF(0, Top + CurTop, s.Width, s.Height), Baseline, nChar, Nothing))
+                                    theText = theText.Substring(nChar)
                                     CurTop += s.Height
-                                End If
-                                MaxWidth = Math.Max(MaxWidth, s.Width)
-                            End While
+                                    MaxWidth = Math.Max(MaxWidth, s.Width)
+                                End While
+                            Next
                             s = New SizeF(MaxWidth, CurTop)
-                            Bounds(ListCount - 2)(Index).Add(New LayoutInfo(New RectangleF(0, Top + CurTop, s.Width, s.Height), 0, 0, Nothing))
                         End If
                         'Centering within MaxWidth can be done here
                         If ColWidths.Count < Index + 1 Then
@@ -2638,6 +2819,15 @@ Public Class RenderArray
                 End If
                 Top += MaxTop
             Next
+            For ListCount = 0 To Bounds.Count - 1
+                Dim ColWidth As Single = 0
+                For Index = 0 To Bounds(ListCount).Count - 1
+                    For NextCount = 0 To Bounds(ListCount)(Index).Count - 1
+                        Bounds(ListCount)(Index)(NextCount) = New LayoutInfo(New RectangleF(Bounds(ListCount)(Index)(NextCount).Rect.X + ColWidth, Bounds(ListCount)(Index)(NextCount).Rect.Y, Bounds(ListCount)(Index)(NextCount).Rect.Width, Bounds(ListCount)(Index)(NextCount).Rect.Height), Bounds(ListCount)(Index)(NextCount).Baseline, Bounds(ListCount)(Index)(NextCount).nChar, Bounds(ListCount)(Index)(NextCount).Bounds)
+                    Next
+                    ColWidth += ColWidths(Index)
+                Next
+            Next
             If Pass = 0 Then
                 For Index As Integer = 0 To ColWidths.Count - 1
                     TotalWidth += ColWidths(Index)
@@ -2648,6 +2838,7 @@ Public Class RenderArray
                 Next
                 TotalWidth = _Width
                 Bounds.Clear()
+                Top = 0
             End If
         Next
         Return New SizeF(TotalWidth, Top)
