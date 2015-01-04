@@ -2311,16 +2311,17 @@ Public Class RenderArray
         Next
         'FontFace.GetGlyphRunOutline(useFont.SizeInPoints, GlyphIndices, GlyphAdvances, GlyphOffsets, False, IsRTL, GeoSink)
         Dim Width As Single = 0
-        Dim Top As Single = 0
-        Dim Bottom As Single = 0
+        Dim Height As Single = 0
+        Dim BaseLine As Single = 0
         Dim Mets As SharpDX.DirectWrite.GlyphMetrics() = FontFace.GetDesignGlyphMetrics(GlyphIndices, False)
         Array.ForEach(Mets, Sub(Met As SharpDX.DirectWrite.GlyphMetrics)
                                 Width += CSng(Met.AdvanceWidth / FontFace.Metrics.DesignUnitsPerEm * useFont.SizeInPoints)
-                                Top = Math.Max(Top, CSng((Met.VerticalOriginY - Met.TopSideBearing) / FontFace.Metrics.DesignUnitsPerEm * useFont.SizeInPoints))
-                                Bottom = Math.Min(Bottom, CSng((Met.AdvanceWidth - Met.VerticalOriginY - Met.BottomSideBearing) / FontFace.Metrics.DesignUnitsPerEm * useFont.SizeInPoints))
+                                Height = Math.Max(Height, CSng((Met.AdvanceHeight - Met.BottomSideBearing - Met.TopSideBearing) / FontFace.Metrics.DesignUnitsPerEm * useFont.SizeInPoints))
+                                'Top = Math.Max(Top, CSng((Met.VerticalOriginY - Met.TopSideBearing) / FontFace.Metrics.DesignUnitsPerEm * useFont.SizeInPoints))
+                                'Bottom = Math.Min(Bottom, CSng((Met.AdvanceWidth - Met.VerticalOriginY - Met.BottomSideBearing) / FontFace.Metrics.DesignUnitsPerEm * useFont.SizeInPoints))
                             End Sub)
         Pos = CharPosInfos.ToArray()
-        Dim Size As SizeF = New SizeF(Width + CSng(Mets(If(IsRTL, Mets.Length - 1, 0)).LeftSideBearing / FontFace.Metrics.DesignUnitsPerEm * useFont.SizeInPoints) - CSng(Mets(If(IsRTL, 0, Mets.Length - 1)).RightSideBearing / FontFace.Metrics.DesignUnitsPerEm * useFont.SizeInPoints), Top - Bottom)
+        Dim Size As SizeF = New SizeF(Width - CSng(Mets(If(IsRTL, Mets.Length - 1, 0)).LeftSideBearing / FontFace.Metrics.DesignUnitsPerEm * useFont.SizeInPoints) + CSng(Mets(If(IsRTL, 0, Mets.Length - 1)).RightSideBearing / FontFace.Metrics.DesignUnitsPerEm * useFont.SizeInPoints), Height)
         FontFace.Dispose()
         Analyze.Dispose()
         Factory.Dispose()
