@@ -1602,7 +1602,7 @@ Public Class ArabicData
     End Property
     Public Shared Function CheckLigatureMatch(Str As String, CurPos As Integer, ByRef Positions As Integer()) As Integer
         'if first is 2 diacritics or letter + diacritic
-        'letter + 2 diacritics where 2 diacritics are match and letter + diacritic is match gives precence to letter + diacritic currently
+        'letter + diacritic done only unless a space present as 2 diacritics could be nexted in required ligature which would be skipped
         'must check space with 2 diacritics first, second check will already capture space with diacritic
         If Str.Length > 2 AndAlso FindLetterBySymbol(Str(1)) <> -1 AndAlso ArabicLetters(FindLetterBySymbol(Str(1))).JoiningStyle = "T" AndAlso ArabicLetters(FindLetterBySymbol(Str(2))).JoiningStyle = "T" AndAlso (LigatureLookups.ContainsKey(Str.Substring(0, 3)) Or LigatureLookups.ContainsKey(Str(0) + Str(2) + Str(1))) Then
             Positions = {CurPos, CurPos + 1, CurPos + 2}
@@ -1610,9 +1610,6 @@ Public Class ArabicData
         ElseIf Str.Length > 1 AndAlso FindLetterBySymbol(Str(1)) <> -1 AndAlso ArabicLetters(FindLetterBySymbol(Str(1))).JoiningStyle = "T" AndAlso LigatureLookups.ContainsKey(Str.Substring(0, 2)) Then
             Positions = {CurPos, CurPos + 1}
             Return LigatureLookups.Item(Str.Substring(0, 2))
-        ElseIf Str.Length > 1 AndAlso FindLetterBySymbol(Str(1)) <> -1 AndAlso ArabicLetters(FindLetterBySymbol(Str(1))).JoiningStyle = "T" AndAlso (LigatureLookups.ContainsKey(" " + Str.Substring(0, 2)) Or LigatureLookups.ContainsKey(" " + Str(1) + Str(0))) Then
-            Positions = {CurPos, CurPos + 1}
-            Return LigatureLookups.Item(" " + If(LigatureLookups.ContainsKey(" " + Str.Substring(0, 2)), Str.Substring(0, 2), Str(1) + Str(0)))
         End If
         If FindLetterBySymbol(Str(0)) <> -1 AndAlso ArabicLetters(FindLetterBySymbol(Str(0))).JoiningStyle <> "T" Then
             'only 3 letters or 2 letters has possible parsing, or several 4 and a multiword 8 and 18
@@ -1637,7 +1634,10 @@ Public Class ArabicData
         End If
         'if first is diacritic or letter
         'check space diacritic first
-        If LigatureLookups.ContainsKey(Str.Substring(0, 1)) Then
+        If Str.Length > 1 AndAlso FindLetterBySymbol(Str(1)) <> -1 AndAlso ArabicLetters(FindLetterBySymbol(Str(1))).JoiningStyle = "T" AndAlso (LigatureLookups.ContainsKey(" " + Str.Substring(0, 2)) Or LigatureLookups.ContainsKey(" " + Str(1) + Str(0))) Then
+            Positions = {CurPos, CurPos + 1}
+            Return LigatureLookups.Item(" " + If(LigatureLookups.ContainsKey(" " + Str.Substring(0, 2)), Str.Substring(0, 2), Str(1) + Str(0)))
+        ElseIf LigatureLookups.ContainsKey(Str.Substring(0, 1)) Then
             Positions = {CurPos}
             Return LigatureLookups.Item(Str.Substring(0, 1))
         ElseIf LigatureLookups.ContainsKey(" " + Str.Substring(0, 1)) Then
@@ -1718,11 +1718,14 @@ Public Class ArabicData
                     Dim Shape As Integer = If(Index = 0, 0, GetShapeIndexFromString(Str, Count, Indexes(Indexes.Length - 1) - Count + 1 - If(Index = -1, 0, Index)))
                     If Combos(SubCount).Shaping(Shape) <> ChrW(0) AndAlso Array.IndexOf(SupportedForms, Combos(SubCount).Shaping(Shape)) <> -1 Then
                         Ligatures.Add(New LigatureInfo With {.Ligature = Combos(SubCount).Shaping(Shape), .Indexes = Indexes})
-                        Count += Combos(SubCount).Symbol.Length - 1 - If(Combos(SubCount).Symbol.Length <> Indexes.Length, 1, 0)
+                        'Ligatures can surround other ligatures which represents significant challenge
                     End If
                 End If
             End If
             Count += 1
+            While Array.FindIndex(Ligatures.ToArray(), Function(Lig As LigatureInfo) Array.IndexOf(Lig.Indexes, Count) <> -1) <> -1
+                Count += 1
+            End While
         End While
         Return Ligatures.ToArray()
     End Function
