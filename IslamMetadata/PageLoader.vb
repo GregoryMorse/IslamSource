@@ -1022,22 +1022,22 @@ Public Class Arabic
     Public Shared Function GetCatWords(SelArr As String()) As IslamData.GrammarSet.GrammarWord()
         Dim Words As New List(Of IslamData.GrammarSet.GrammarWord)
         For Count = 0 To SelArr.Length - 1
-            Dim Word As IslamData.GrammarSet.GrammarWord?
+            Dim Word As Nullable(Of IslamData.GrammarSet.GrammarWord)
             Word = GetCatWord(SelArr(Count))
             If Word.HasValue Then Words.Add(Word.Value)
         Next
         Return Words.ToArray()
     End Function
-    Public Shared Function GetCatWord(ID As String) As IslamData.GrammarSet.GrammarWord?
+    Public Shared Function GetCatWord(ID As String) As Nullable(Of IslamData.GrammarSet.GrammarWord)
+        GetCatWord = New Nullable(Of IslamData.GrammarSet.GrammarWord)
         Dim Particles As IslamData.GrammarSet.GrammarParticle() = GetParticles(ID)
-        If Not Particles Is Nothing AndAlso Particles.Length <> 0 Then Return New IslamData.GrammarSet.GrammarWord(Particles(0))
+        If Not Particles Is Nothing AndAlso Particles.Length <> 0 Then GetCatWord = New IslamData.GrammarSet.GrammarWord(Particles(0))
         Dim Nouns As IslamData.GrammarSet.GrammarNoun() = GetCatNoun(ID)
-        If Not Nouns Is Nothing AndAlso Nouns.Length <> 0 Then Return New IslamData.GrammarSet.GrammarWord(Nouns(0))
+        If Not Nouns Is Nothing AndAlso Nouns.Length <> 0 Then GetCatWord = New IslamData.GrammarSet.GrammarWord(Nouns(0))
         Dim Verbs As IslamData.GrammarSet.GrammarVerb() = GetVerb(ID)
-        If Not Verbs Is Nothing AndAlso Verbs.Length <> 0 Then Return New IslamData.GrammarSet.GrammarWord(Verbs(0))
+        If Not Verbs Is Nothing AndAlso Verbs.Length <> 0 Then GetCatWord = New IslamData.GrammarSet.GrammarWord(Verbs(0))
         Dim Transforms As IslamData.GrammarSet.GrammarTransform() = GetTransform(ID)
-        If Not Transforms Is Nothing AndAlso Transforms.Length <> 0 Then Return New IslamData.GrammarSet.GrammarWord(Transforms(0))
-        Return Nothing
+        If Not Transforms Is Nothing AndAlso Transforms.Length <> 0 Then GetCatWord = New IslamData.GrammarSet.GrammarWord(Transforms(0))
     End Function
     Public Shared Function DisplayWord(Category As IslamData.GrammarSet.GrammarWord(), ID As String, SchemeType As ArabicData.TranslitScheme, Scheme As String) As Array()
         Dim Count As Integer
@@ -3392,8 +3392,8 @@ Public Class DocBuilder
             Next
         ElseIf Abbrevs.ContainsKey(Strings) Then
             Dim AbbrevWord As IslamData.AbbrevWord = Abbrevs(Strings)
-            Dim PhraseCat As IslamData.Phrase? = Phrases.GetPhraseCat(AbbrevWord.TranslationID)
-            Dim GrammarWord As IslamData.GrammarSet.GrammarWord? = Arabic.GetCatWord(AbbrevWord.TranslationID)
+            Dim PhraseCat As Nullable(Of IslamData.Phrase) = Phrases.GetPhraseCat(AbbrevWord.TranslationID)
+            Dim GrammarWord As Nullable(Of IslamData.GrammarSet.GrammarWord) = Arabic.GetCatWord(AbbrevWord.TranslationID)
             Dim Items As New List(Of RenderArray.RenderItem)
             If AbbrevWord.Font <> String.Empty Then
                 If Options.ContainsKey("Char") Then Options("Char") = Array.ConvertAll(Options("Char"), Function(Str As String) Char.ConvertFromUtf32(Integer.Parse(Str, Globalization.NumberStyles.HexNumber)))
@@ -3441,8 +3441,9 @@ Public Class DocBuilder
     Public Shared Function GetListCategories() As String()
         Return Array.ConvertAll(CachedData.IslamData.Lists, Function(Convert As IslamData.ListCategory) Utility.LoadResourceString("IslamInfo_" + Convert.Title))
     End Function
-    Public Shared Function GetListCat(ID As String) As IslamData.ListCategory.Word?
-        Return If(ListIDs.ContainsKey(ID), ListIDs(ID), Nothing)
+    Public Shared Function GetListCat(ID As String) As Nullable(Of IslamData.ListCategory.Word)
+        GetListCat = New Nullable(Of IslamData.ListCategory.Word)
+        If ListIDs.ContainsKey(ID) Then GetListCat = ListIDs(ID)
     End Function
     Public Shared _ListIDs As Dictionary(Of String, IslamData.ListCategory.Word)
     Public Shared ReadOnly Property ListIDs As Dictionary(Of String, IslamData.ListCategory.Word)
@@ -3463,15 +3464,16 @@ Public Class DocBuilder
     Public Shared Function GetListCats(SelArr As String()) As IslamData.ListCategory.Word()
         Dim ListCats As New List(Of IslamData.ListCategory.Word)
         For SelCount As Integer = 0 To SelArr.Length - 1
-            Dim Word As IslamData.ListCategory.Word? = GetListCat(SelArr(SelCount))
+            Dim Word As Nullable(Of IslamData.ListCategory.Word) = GetListCat(SelArr(SelCount))
             If Word.HasValue Then ListCats.Add(Word.Value)
         Next
         Return ListCats.ToArray()
     End Function
 End Class
 Public Class Phrases
-    Public Shared Function GetPhraseCat(ID As String) As IslamData.Phrase?
-        Return If(PhraseIDs.ContainsKey(ID), PhraseIDs(ID), Nothing)
+    Public Shared Function GetPhraseCat(ID As String) As Nullable(Of IslamData.Phrase)
+        GetPhraseCat = New Nullable(Of IslamData.Phrase)
+        If PhraseIDs.ContainsKey(ID) Then GetPhraseCat = PhraseIDs(ID)
     End Function
     Public Shared _PhraseIDs As Dictionary(Of String, IslamData.Phrase)
     Public Shared ReadOnly Property PhraseIDs As Dictionary(Of String, IslamData.Phrase)
@@ -3488,7 +3490,7 @@ Public Class Phrases
     Public Shared Function GetPhraseCats(SelArr As String()) As IslamData.Phrase()
         Dim PhraseCats As New List(Of IslamData.Phrase)
         For SelCount As Integer = 0 To SelArr.Length - 1
-            Dim Word As IslamData.Phrase? = GetPhraseCat(SelArr(SelCount))
+            Dim Word As Nullable(Of IslamData.Phrase) = GetPhraseCat(SelArr(SelCount))
             If Word.HasValue Then PhraseCats.Add(Word.Value)
         Next
         Return PhraseCats.ToArray()
