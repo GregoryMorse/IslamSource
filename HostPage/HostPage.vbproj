@@ -32,13 +32,14 @@
     <MyType>Windows</MyType>
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
-    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <OldToolsVersion>3.5</OldToolsVersion>
     <UseIISExpress>false</UseIISExpress>
     <IISExpressSSLPort>58171</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication>
     <IISExpressWindowsAuthentication>disabled</IISExpressWindowsAuthentication>
     <IISExpressUseClassicPipelineMode>false</IISExpressUseClassicPipelineMode>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <OutputPath>bin\</OutputPath>
@@ -94,6 +95,7 @@
     <Reference Include="System.Data">
       <Name>System.Data</Name>
     </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Drawing">
       <Name>System.Drawing</Name>
     </Reference>
@@ -101,9 +103,14 @@
     <Reference Include="System.Web">
       <Name>System.Web</Name>
     </Reference>
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml">
       <Name>System.XML</Name>
     </Reference>
+    <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
     <Import Include="Microsoft.VisualBasic" />
@@ -213,7 +220,6 @@
     <Content Include="Global.asax" />
     <Content Include="host.aspx" />
     <Content Include="Menu.ascx" />
-    <Content Include="metadata\ArabicData.xml" />
     <Content Include="Page.ascx" />
     <None Include="My Project\PublishProfiles\Local Debug.pubxml" />
     <None Include="Scripts\jquery-1.11.1.intellisense.js" />
@@ -234,9 +240,22 @@
       <DependentUpon>Page.ascx.vb</DependentUpon>
     </EmbeddedResource>
     <Content Include="Scripts\jquery-1.11.1.min.map" />
+    <Content Include="web.config" />
+    <None Include="web.Debug.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
+    <None Include="web.Release.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HostPageUtility\HostPageUtility.vbproj">
+      <Project>{9adb20ba-877e-4cb0-a12b-7babe3fedc27}</Project>
+      <Name>HostPageUtility</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="CERTENROLLLib">
@@ -249,13 +268,6 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\HostPageUtility\HostPageUtility.vbproj">
-      <Project>{9adb20ba-877e-4cb0-a12b-7babe3fedc27}</Project>
-      <Name>HostPageUtility</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

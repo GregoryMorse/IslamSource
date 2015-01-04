@@ -2990,6 +2990,96 @@ Public Class RenderArray
         Next
         Return New SizeF(_Width - MaxRight, Top)
     End Function
+    Public Shared Function RenderDocXTable(Output As Object()) As String
+        Dim XML As String = "<w:tbl>"
+        Dim Count As Integer
+        Dim Index As Integer
+        If Output Is Nothing OrElse Output.Length = 0 Then Return String.Empty
+        Dim OutArray As Object() = Output
+        For Count = 2 To OutArray.Length - 1
+            If TypeOf OutArray(Count) Is Object() Then
+                XML += "<w:tr>"
+                Dim InnerArray As Object() = DirectCast(OutArray(Count), Object())
+                For Index = 0 To InnerArray.Length - 1
+                    XML += "<w:tc>"
+                    If (CStr(DirectCast(OutArray(1), Object())(Index)) <> String.Empty) Then
+                    End If
+                    If TypeOf InnerArray(Index) Is Object() Then
+                        XML += RenderDocXTable(DirectCast(InnerArray(Index), Object())) + "<w:p/>"
+                    Else
+                        XML += "<w:p><w:r><w:t>" + CStr(InnerArray(Index)).Replace(vbCrLf, "</w:t><w:br/><w:t>") + "</w:t></w:r></w:p>"
+                    End If
+                    XML += "</w:tc>"
+                Next
+                XML += "</w:tr>"
+            End If
+        Next
+        XML += "</w:tbl>"
+        Return XML
+    End Function
+    Public Shared Function RenderDocX(Items As Collections.Generic.List(Of RenderItem)) As String
+        Dim Count As Integer
+        Dim Index As Integer
+        Dim Base As Integer = 0
+        Dim XML As String = String.Empty
+        XML += "<w:p>"
+        For Count = 0 To Items.Count - 1
+            If Count <> 0 AndAlso ((Items(Count).Type = RenderTypes.eHeaderLeft Or Items(Count - 1).Type = RenderTypes.eHeaderRight) Or (Items(Count).Type = RenderTypes.eHeaderCenter And Items(Count - 1).Type <> RenderTypes.eHeaderLeft) Or (Items(Count).Type <> RenderTypes.eHeaderRight And Items(Count - 1).Type = RenderTypes.eHeaderCenter)) Then
+                'XML += "</w:p><w:p>"
+            End If
+            XML += "<w:sdt><w:sdtContent><w:tbl>"
+            If Count <> 0 AndAlso (Items(Count).Type = RenderTypes.eText And Items(Count - 1).Type <> RenderTypes.eText) Then Base = Count
+            Dim bFirst As Boolean = True
+            For Index = 0 To Items(Count).TextItems.Length - 1
+                XML += "<w:tr><w:tc>"
+                If Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eNested Then
+                    XML += RenderDocX(CType(Items(Count).TextItems(Index).Text, Collections.Generic.List(Of RenderItem)))
+                ElseIf Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eList Then
+                    XML += RenderDocXTable(CType(Items(Count).TextItems(Index).Text, Object())) + "<w:p/>"
+                ElseIf Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.ePassThru Then
+                    XML += "<w:p><w:r>"
+                    If Not bFirst Then
+                        XML += "<w:br/>"
+                        bFirst = False
+                    End If
+                    XML += "<w:t>" + CStr(Items(Count).TextItems(Index).Text) + "</w:t>"
+                    XML += "</w:r></w:p>"
+                ElseIf Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eContinueStop Then
+                    XML += "<w:p/>"
+                ElseIf Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eRanking Then
+                    XML += "<w:p/>"
+                Else
+                    XML += "<w:p><w:r>"
+                    If Not bFirst Then
+                        XML += "<w:br/>"
+                        bFirst = False
+                    End If
+                    If Array.IndexOf(Utility.FontList, Items(Count).TextItems(Index).Font) <> -1 Then
+                        'XML += "<w:drawing></w:drawing>"
+                        'writer.WriteAttribute("src", HttpUtility.HtmlEncode("host.aspx?Page=Image.gif&Image=UnicodeChar&Size=160&Char=" + Hex(AscW(CStr(Items(Count).TextItems(Index).Text)(0))) + "&Font=" + Items(Count).TextItems(Index).Font))
+                    ElseIf Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eArabic Then
+                    ElseIf Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eTransliteration Then
+                    Else
+                    End If
+                    If Array.IndexOf(Utility.FontList, Items(Count).TextItems(Index).Font) = -1 Then XML += "<w:t>" + CStr(Items(Count).TextItems(Index).Text).Replace(vbCrLf, "</w:t><w:br/><w:t>") + "</w:t>"
+                    XML += "</w:r></w:p>"
+                End If
+                XML += "</w:tc></w:tr>"
+            Next
+            XML += "</w:tbl></w:sdtContent></w:sdt>"
+        Next
+        XML += "</w:p>"
+        Return XML
+    End Function
+    Public Shared Sub OutputDocX(Stream As IO.Stream, RenderItems As List(Of RenderItem))
+        Dim XML As String = "<?xml version=""1.0"" encoding=""UTF-8"" standalone=""yes""?><w:document xmlns:w=""http://schemas.openxmlformats.org/wordprocessingml/2006/main""><w:body>"
+        XML += RenderDocX(RenderItems) + "</w:body></w:document>"
+        Dim Doc As DocumentFormat.OpenXml.Packaging.WordprocessingDocument = DocumentFormat.OpenXml.Packaging.WordprocessingDocument.Create(Stream, DocumentFormat.OpenXml.WordprocessingDocumentType.Document)
+        Dim DocStream As IO.Stream = Doc.AddMainDocumentPart().GetStream
+        Dim Bytes As Byte() = System.Text.Encoding.UTF8.GetBytes(XML)
+        DocStream.Write(Bytes, 0, Bytes.Length)
+        Doc.Close()
+    End Sub
     Public Sub Render(ByVal writer As System.Web.UI.HtmlTextWriter, ByVal TabCount As Integer)
         DoRender(writer, TabCount, _ID, Items, String.Empty)
     End Sub
