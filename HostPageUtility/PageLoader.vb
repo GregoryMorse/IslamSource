@@ -2317,7 +2317,7 @@ Public Class RenderArray
         Next
         Dim ExtraWidth As Single = 0
         For Count As Integer = CharPosInfos.Length - 1 To 0 Step -1
-            If Text(CharPosInfos(Count).Index) = " "c Or CharPosInfos(Count).Index <> 0 AndAlso Text(CharPosInfos(Count).Index - 1) = " "c Then
+            If Text(CharPosInfos(Count).Index) = " "c Or CharPosInfos(Count).Index <> 0 AndAlso Text(CharPosInfos(Count).Index - 1) = " "c And CharPosInfos(Count).Index + CharPosInfos(Count).Length >= Text.Length - 1 Then
                 Dim Box As Integer() = Font.BaseFont.GetCharBBox(AscW(ArabicData.ConvertLigatures(Text.Substring(CharPosInfos(Count).Index, CharPosInfos(Count).Length), False, Forms)(0)))
                 ExtraWidth += Math.Max(CharPosInfos(Count).Width, (Box(2) - Box(0)) * 0.001F * Font.Size) + CharPosInfos(Count).X
             End If
@@ -2327,7 +2327,7 @@ Public Class RenderArray
             Font.Size = (MinSize + MaxSize) / 2
             ExtraWidth = 0
             For _Count As Integer = CharPosInfos.Length - 1 To 0 Step -1
-                If Text(CharPosInfos(_Count).Index) = " "c Or CharPosInfos(_Count).Index <> 0 AndAlso Text(CharPosInfos(_Count).Index - 1) = " "c Then
+                If Text(CharPosInfos(_Count).Index) = " "c Or CharPosInfos(_Count).Index <> 0 AndAlso Text(CharPosInfos(_Count).Index - 1) = " "c And CharPosInfos(_Count).Index + CharPosInfos(_Count).Length >= Text.Length - 1 Then
                     Dim Box As Integer() = Font.BaseFont.GetCharBBox(AscW(ArabicData.ConvertLigatures(Text.Substring(CharPosInfos(_Count).Index, CharPosInfos(_Count).Length), False, Forms)(0)))
                     ExtraWidth += Math.Max(CharPosInfos(_Count).Width, (Box(2) - Box(0)) * 0.001F * Font.Size) + CharPosInfos(_Count).X
                 End If
@@ -2418,7 +2418,7 @@ Public Class RenderArray
                             Dim ExtraWidths As New List(Of Single)
                             Dim DivPoints As New List(Of String)
                             For _Index As Integer = CharPosInfos.Length - 1 To 0 Step -1
-                                If Text(CharPosInfos(_Index).Index) = " "c Or CharPosInfos(_Index).Index <> 0 AndAlso Text(CharPosInfos(_Index).Index - 1) = " "c Then
+                                If Text(CharPosInfos(_Index).Index) = " "c Or CharPosInfos(_Index).Index <> 0 AndAlso Text(CharPosInfos(_Index).Index - 1) = " "c And CharPosInfos(_Index).Index + CharPosInfos(_Index).Length >= Text.Length - 1 Then
                                     Dim Box As Integer() = Font.BaseFont.GetCharBBox(AscW(ArabicData.ConvertLigatures(Text.Substring(CharPosInfos(_Index).Index, CharPosInfos(_Index).Length), False, Forms)(0)))
                                     ExtraWidths.Insert(0, Math.Max(CharPosInfos(_Index).Width, (Box(2) - Box(0)) * 0.001F * FixedFont.Size) + CharPosInfos(_Index).X)
                                     DivPoints.Insert(0, Text.Substring(CharPosInfos(_Index).Index + CharPosInfos(_Index).Length))
@@ -2427,8 +2427,8 @@ Public Class RenderArray
                                 Text = Text.Remove(CharPosInfos(_Index).Index, CharPosInfos(_Index).Length)
                             Next
                             If Text <> String.Empty Then
-                                ExtraWidths.Add(0)
-                                DivPoints.Add(Text)
+                                ExtraWidths.Insert(0, 0)
+                                DivPoints.Insert(0, Text)
                             End If
                             ct = New iTextSharp.text.pdf.ColumnText(Writer.DirectContent)
                             If CStr(DirectCast(OutArray(1), Object())(Index)) = "arabic" And System.Text.RegularExpressions.Regex.Match(String.Join(String.Empty, DivPoints.ToArray()), "(?:\s|\p{IsArabic}|\p{IsArabicPresentationForms-A}|\p{IsArabicPresentationForms-B})+").Success Then
@@ -2572,7 +2572,7 @@ Public Class RenderArray
                         Dim ExtraWidths As New List(Of Single)
                         Dim DivPoints As New List(Of String)
                         For Index As Integer = CharPosInfos.Length - 1 To 0 Step -1
-                            If Text(CharPosInfos(Index).Index) = " "c Or CharPosInfos(Index).Index <> 0 AndAlso Text(CharPosInfos(Index).Index - 1) = " "c Then
+                            If Text(CharPosInfos(Index).Index) = " "c Or CharPosInfos(Index).Index <> 0 AndAlso Text(CharPosInfos(Index).Index - 1) = " "c And CharPosInfos(Index).Index + CharPosInfos(Index).Length >= Text.Length - 1 Then
                                 Dim Box As Integer() = Font.BaseFont.GetCharBBox(AscW(ArabicData.ConvertLigatures(Text.Substring(CharPosInfos(Index).Index, CharPosInfos(Index).Length), False, Forms)(0)))
                                 ExtraWidths.Insert(0, Math.Max(CharPosInfos(Index).Width, (Box(2) - Box(0)) * 0.001F * FixedFont.Size) + CharPosInfos(Index).X)
                                 DivPoints.Insert(0, Text.Substring(CharPosInfos(Index).Index + CharPosInfos(Index).Length))
@@ -2581,8 +2581,8 @@ Public Class RenderArray
                             Text = Text.Remove(CharPosInfos(Index).Index, CharPosInfos(Index).Length)
                         Next
                         If Text <> String.Empty Then
-                            ExtraWidths.Add(0)
-                            DivPoints.Add(Text)
+                            ExtraWidths.Insert(0, 0)
+                            DivPoints.Insert(0, Text)
                         End If
                         ct = New iTextSharp.text.pdf.ColumnText(Writer.DirectContent)
                         If CurRenderArray(Count).TextItems(SubCount).DisplayClass = RenderArray.RenderDisplayClass.eArabic And System.Text.RegularExpressions.Regex.Match(String.Join(String.Empty, DivPoints.ToArray()), "(?:\s|\p{IsArabic}|\p{IsArabicPresentationForms-A}|\p{IsArabicPresentationForms-B})+").Success Or CurRenderArray(Count).TextItems(SubCount).DisplayClass = RenderArray.RenderDisplayClass.eRTL Then
@@ -2689,7 +2689,7 @@ Public Class RenderArray
         Dim ExtraWidth As Single = 0
         If IsRTL And FontName = String.Empty Then CharPosInfos = GetWordDiacriticPositionsDWrite(Str, DrawFont, Forms)
         For Count As Integer = CharPosInfos.Length - 1 To 0 Step -1
-            If Text(CharPosInfos(Count).Index) = " "c Or CharPosInfos(Count).Index <> 0 AndAlso Text(CharPosInfos(Count).Index - 1) = " "c Then
+            If Text(CharPosInfos(Count).Index) = " "c Or CharPosInfos(Count).Index <> 0 AndAlso Text(CharPosInfos(Count).Index - 1) = " "c And CharPosInfos(Count).Index + CharPosInfos(Count).Length >= Text.Length - 1 Then
                 Dim Box As Integer() = Font.BaseFont.GetCharBBox(AscW(ArabicData.ConvertLigatures(Text.Substring(CharPosInfos(Count).Index, CharPosInfos(Count).Length), False, Forms)(0)))
                 ExtraWidth += Math.Max(CharPosInfos(Count).Width, (Box(2) - Box(0)) * 0.001F * Font.Size) + CharPosInfos(Count).X
             End If
@@ -2713,7 +2713,7 @@ Public Class RenderArray
                 ExtraWidth = 0
                 For Count As Integer = CharPosInfos.Length - 1 To 0 Step -1
                     If CharPosInfos(Count).Index + CharPosInfos(Count).Length < Len Then
-                        If Text(CharPosInfos(Count).Index) = " "c Or CharPosInfos(Count).Index <> 0 AndAlso Text(CharPosInfos(Count).Index - 1) = " "c Then
+                        If Text(CharPosInfos(Count).Index) = " "c Or CharPosInfos(Count).Index <> 0 AndAlso Text(CharPosInfos(Count).Index - 1) = " "c And CharPosInfos(Count).Index + CharPosInfos(Count).Length >= Str.Length - 1 Then
                             Dim Box As Integer() = Font.BaseFont.GetCharBBox(AscW(ArabicData.ConvertLigatures(Text.Substring(CharPosInfos(Count).Index, CharPosInfos(Count).Length), False, Forms)(0)))
                             ExtraWidth += Math.Max(CharPosInfos(Count).Width, (Box(2) - Box(0)) * 0.001F * Font.Size) + CharPosInfos(Count).X
                         End If
@@ -2730,7 +2730,7 @@ Public Class RenderArray
                 ExtraWidth = 0
                 For Count As Integer = CharPosInfos.Length - 1 To 0 Step -1
                     If CharPosInfos(Count).Index + CharPosInfos(Count).Length < Len Then
-                        If Text(CharPosInfos(Count).Index) = " "c Or CharPosInfos(Count).Index <> 0 AndAlso Text(CharPosInfos(Count).Index - 1) = " "c Then
+                        If Text(CharPosInfos(Count).Index) = " "c Or CharPosInfos(Count).Index <> 0 AndAlso Text(CharPosInfos(Count).Index - 1) = " "c And CharPosInfos(Count).Index + CharPosInfos(Count).Length >= Str.Length - 1 Then
                             Dim Box As Integer() = Font.BaseFont.GetCharBBox(AscW(ArabicData.ConvertLigatures(Text.Substring(CharPosInfos(Count).Index, CharPosInfos(Count).Length), False, Forms)(0)))
                             ExtraWidth += Math.Max(CharPosInfos(Count).Width, (Box(2) - Box(0)) * 0.001F * Font.Size) + CharPosInfos(Count).X
                         End If
@@ -2754,7 +2754,7 @@ Public Class RenderArray
         Dim MaxDescent As Single = Font.BaseFont.GetDescentPoint(Text, Font.Size)
         For Each CharPosInfo As CharPosInfo In CharPosInfos
             If CharPosInfo.Index + CharPosInfo.Length < Len Then
-                Dim Box As Integer() = Font.BaseFont.GetCharBBox(AscW(ArabicData.ConvertLigatures(Text.Substring(CharPosInfo.Index, CharPosInfo.Length), False, Forms)(0)))
+                'Dim Box As Integer() = Font.BaseFont.GetCharBBox(AscW(ArabicData.ConvertLigatures(Text.Substring(CharPosInfo.Index, CharPosInfo.Length), False, Forms)(0)))
                 MaxAscent = Math.Max(CharPosInfo.Y + Font.BaseFont.GetAscentPoint(Text.Substring(CharPosInfo.Index, CharPosInfo.Length), Font.Size), MaxAscent)
                 MaxDescent = Math.Min(CharPosInfo.Y + Font.BaseFont.GetDescentPoint(Text.Substring(CharPosInfo.Index, CharPosInfo.Length), Font.Size), MaxDescent)
             End If
