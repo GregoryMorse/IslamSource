@@ -2993,7 +2993,7 @@ Public Class RenderArray
             End If
             If Count <> 0 AndAlso (Items(Count).Type = RenderTypes.eText And Items(Count - 1).Type <> RenderTypes.eText) Then Base = Count
             Dim bFirst As Boolean = True
-            XML += "<w:tbl><w:tblpPr w:horzAnchor=""margin"" w:vertAnchor=""margin"" w:tblpX=""" + CStr((Bounds(Count)(0)(0).Rect.X - PageOffset.X - BaseOffset.X) * 20) + """ w:tblpY=""" + CStr((Bounds(Count)(0)(0).Rect.Y - PageOffset.Y - BaseOffset.Y) * 20) + """/>"
+            XML += "<w:tbl><w:tblpPr w:horzAnchor=""margin"" w:vertAnchor=""margin"" w:tblpX=""" + CStr((Bounds(Count)(0)(0).Rect.X + PageOffset.X + BaseOffset.X) * 20) + """ w:tblpY=""" + CStr((Bounds(Count)(0)(0).Rect.Y + PageOffset.Y + BaseOffset.Y) * 20) + """/>"
             XML += "<w:tblOverlap w:val=""never"" /><w:tblW w:w=""" + CStr(Bounds(Count)(0)(0).Rect.Width * 20) + """ w:type=""dxa""/>"
             For Index = 0 To Items(Count).TextItems.Length - 1
                 If Bounds(Count)(Index).Count = 0 Then Continue For
