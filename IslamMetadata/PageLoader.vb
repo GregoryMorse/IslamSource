@@ -117,12 +117,21 @@ Public Class Arabic
     Public Shared ReadOnly Property BuckwalterMap As Dictionary(Of Char, Integer)
         Get
             If _BuckwalterMap Is Nothing Then
-                _BuckwalterMap = New Dictionary(Of Char, Integer)
-                For Index = 0 To ArabicData.ArabicLetters.Length - 1
-                    If GetSchemeValueFromSymbol(ArabicData.ArabicLetters(Index), "ExtendedBuckwalter").Length <> 0 Then
-                        _BuckwalterMap.Add(GetSchemeValueFromSymbol(ArabicData.ArabicLetters(Index), "ExtendedBuckwalter").Chars(0), Index)
-                    End If
-                Next
+                If DiskCache.GetCacheItem("BuckwalterMap", DateTime.MinValue).Length <> 0 Then
+                    _BuckwalterMap = CType((New System.Runtime.Serialization.Formatters.Binary.BinaryFormatter).Deserialize(New IO.MemoryStream(DiskCache.GetCacheItem("BuckwalterMap", DateTime.MinValue))), Dictionary(Of Char, Integer))
+                Else
+                    _BuckwalterMap = New Dictionary(Of Char, Integer)
+                    For Index = 0 To ArabicData.ArabicLetters.Length - 1
+                        If GetSchemeValueFromSymbol(ArabicData.ArabicLetters(Index), "ExtendedBuckwalter").Length <> 0 Then
+                            _BuckwalterMap.Add(GetSchemeValueFromSymbol(ArabicData.ArabicLetters(Index), "ExtendedBuckwalter").Chars(0), Index)
+                        End If
+                    Next
+                    Dim MemStream As New IO.MemoryStream
+                    Dim Ser As New System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+                    Ser.Serialize(MemStream, _BuckwalterMap)
+                    DiskCache.CacheItem("BuckwalterMap", Now, MemStream.ToArray())
+                    MemStream.Close()
+                End If
             End If
             Return _BuckwalterMap
         End Get

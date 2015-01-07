@@ -1,19 +1,21 @@
-﻿Public Class MultiLangRender
+﻿Public Class NativeMethods
     <Runtime.InteropServices.DllImport("user32.dll", EntryPoint:="GetSystemMetrics")> _
-    Private Shared Function GetSystemMetrics(ByVal nIndex As Integer) As Integer
+    Friend Shared Function GetSystemMetrics(ByVal nIndex As Integer) As Integer
     End Function
     <Runtime.InteropServices.DllImport("user32.dll", EntryPoint:="SendMessage")> _
-    Private Shared Function SendMessage(hWnd As IntPtr, Msg As UInteger, wParam As IntPtr, lParam As IntPtr) As IntPtr
+    Friend Shared Function SendMessage(hWnd As IntPtr, Msg As UInteger, wParam As IntPtr, lParam As IntPtr) As IntPtr
     End Function
     <Runtime.InteropServices.DllImport("gdi32.dll", EntryPoint:="SelectObject")> _
-    Private Shared Function SelectObject(ByVal hdc As IntPtr, ByVal hObject As IntPtr) As IntPtr
+    Friend Shared Function SelectObject(ByVal hdc As IntPtr, ByVal hObject As IntPtr) As IntPtr
     End Function
-    <Runtime.InteropServices.DllImport("gdi32.dll", EntryPoint:="GetTextExtentExPoint", SetLastError:=True, CharSet:=Runtime.InteropServices.CharSet.Auto)> _
-    Private Shared Function GetTextExtentExPoint(ByVal hdc As IntPtr, <Runtime.InteropServices.MarshalAs(Runtime.InteropServices.UnmanagedType.LPTStr)> ByVal lpszStr As String, ByVal cchString As Integer, ByVal nMaxExtent As Integer, ByRef lpnFit As Integer, ByVal alpDx As Integer(), ByRef lpSize As Size) As Boolean
+    <Runtime.InteropServices.DllImport("gdi32.dll", EntryPoint:="GetTextExtentExPoint", SetLastError:=True, CharSet:=Runtime.InteropServices.CharSet.Unicode)> _
+    Friend Shared Function GetTextExtentExPoint(ByVal hdc As IntPtr, <Runtime.InteropServices.MarshalAs(Runtime.InteropServices.UnmanagedType.LPWStr)> ByVal lpszStr As String, ByVal cchString As Integer, ByVal nMaxExtent As Integer, ByRef lpnFit As Integer, ByVal alpDx As Integer(), ByRef lpSize As Size) As Boolean
     End Function
     <Runtime.InteropServices.DllImport("gdi32.dll", EntryPoint:="SetTextAlign")> _
-    Private Shared Function SetTextAlign(ByVal hdc As IntPtr, ByVal fMode As UInteger) As UInteger
+    Friend Shared Function SetTextAlign(ByVal hdc As IntPtr, ByVal fMode As UInteger) As UInteger
     End Function
+End Class
+Public Class MultiLangRender
     Const TA_RTLREADING As UInteger = 256
     Const SM_CXBORDER As Integer = 5
     Const SM_CYBORDER As Integer = 6
@@ -31,14 +33,14 @@
     End Property
 
     Private Shared Function GetTextWidthFromTextBox(NewText As TextBox, hdc As IntPtr) As HostPageUtility.RenderArray.GetTextWidth
-        Dim ret As IntPtr = SendMessage(NewText.Handle, EM_GETMARGINS, IntPtr.Zero, IntPtr.Zero)
-        Dim WidthOffset As Integer = (ret.ToInt32() And &HFFFF) + (ret.ToInt32() << 16) + GetSystemMetrics(SM_CXBORDER) * 2 + NewText.Margin.Left + NewText.Margin.Right
+        Dim ret As IntPtr = NativeMethods.SendMessage(NewText.Handle, EM_GETMARGINS, IntPtr.Zero, IntPtr.Zero)
+        Dim WidthOffset As Integer = (ret.ToInt32() And &HFFFF) + (ret.ToInt32() << 16) + NativeMethods.GetSystemMetrics(SM_CXBORDER) * 2 + NewText.Margin.Left + NewText.Margin.Right
         Return Function(Str As String, FontName As String, MaxWidth As Single, IsRTL As Boolean, ByRef s As SizeF, ByRef Baseline As Single)
                    Dim nChar As Integer
                    Dim GetSize As Size
                    Baseline = NewText.Font.FontFamily.GetCellAscent(NewText.Font.Style)
-                   SetTextAlign(hdc, If(IsRTL, TA_RTLREADING, CUInt(0)))
-                   GetTextExtentExPoint(hdc, Str, Str.Length, CInt(MaxWidth) - WidthOffset, nChar, Nothing, GetSize)
+                   NativeMethods.SetTextAlign(hdc, If(IsRTL, TA_RTLREADING, CUInt(0)))
+                   NativeMethods.GetTextExtentExPoint(hdc, Str, Str.Length, CInt(MaxWidth) - WidthOffset, nChar, Nothing, GetSize)
                    s = New SizeF(GetSize.Width, GetSize.Height)
                    s.Width += WidthOffset
                    NewText.Text = Str
@@ -56,11 +58,11 @@
             Me.MaximumSize = New Size(Me.Parent.Width, Me.Height)
             Dim g As Graphics = CreateGraphics()
             Dim hdc As IntPtr = g.GetHdc()
-            Dim oldFont As IntPtr = SelectObject(hdc, Font.ToHfont())
+            Dim oldFont As IntPtr = NativeMethods.SelectObject(hdc, Font.ToHfont())
             Dim CalcText As New TextBox
             CalcText.Font = Font
             Me.Size = HostPageUtility.RenderArray.GetLayout(_RenderArray, CSng(Me.Parent.Width), _Bounds, GetTextWidthFromTextBox(CalcText, hdc)).ToSize()
-            SelectObject(hdc, oldFont)
+            NativeMethods.SelectObject(hdc, oldFont)
             g.ReleaseHdc(hdc)
             g.Dispose()
         End If

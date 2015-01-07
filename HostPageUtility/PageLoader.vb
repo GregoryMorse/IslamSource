@@ -3,6 +3,103 @@ Option Strict On
 Imports System.Drawing
 Imports System.Web
 Imports System.Web.UI
+Public Class NativeMethods
+    Public Structure FIXED
+        Public fract As Short
+        Public value As Short
+    End Structure
+    Public Structure MAT2
+        <Runtime.InteropServices.MarshalAs(Runtime.InteropServices.UnmanagedType.Struct)> Public eM11 As FIXED
+        <Runtime.InteropServices.MarshalAs(Runtime.InteropServices.UnmanagedType.Struct)> Public eM12 As FIXED
+        <Runtime.InteropServices.MarshalAs(Runtime.InteropServices.UnmanagedType.Struct)> Public eM21 As FIXED
+        <Runtime.InteropServices.MarshalAs(Runtime.InteropServices.UnmanagedType.Struct)> Public eM22 As FIXED
+    End Structure
+    Public Structure POINT
+        Public x As Integer
+        Public y As Integer
+    End Structure
+    Public Structure GLYPHMETRICS
+        Public gmBlackBoxX As Integer
+        Public gmBlackBoxY As Integer
+        <Runtime.InteropServices.MarshalAs(Runtime.InteropServices.UnmanagedType.Struct)> Public gmptGlyphOrigin As Point
+        Public gmCellIncX As Short
+        Public gmCellIncY As Short
+    End Structure
+    <Runtime.InteropServices.DllImport("gdi32.dll", EntryPoint:="GetGlyphOutline")> _
+    Friend Shared Function GetGlyphOutline(hdc As IntPtr, uChar As UInteger, uFormat As UInteger, ByRef lpgm As GLYPHMETRICS, cbBuffer As UInteger, lpvBuffer As IntPtr, ByRef lpmat2 As MAT2) As Integer
+    End Function
+    Public Structure ABCFLOAT
+        Public abcfA As Single
+        Public abcfB As Single
+        Public abcfC As Single
+    End Structure
+    <Runtime.InteropServices.DllImport("gdi32", EntryPoint:="GetCharABCWidthsFloat")> _
+    Friend Shared Function GetCharABCWidthsFloat(hDC As IntPtr, iFirstChar As Integer, iLastChar As Integer, ByRef lpABCF As ABCFLOAT) As Integer
+    End Function
+    <Runtime.InteropServices.DllImport("gdi32.dll", EntryPoint:="SelectObject")> _
+    Friend Shared Function SelectObject(ByVal hdc As IntPtr, ByVal hObject As IntPtr) As IntPtr
+    End Function
+    <Runtime.InteropServices.DllImport("gdi32.dll", EntryPoint:="GetFontUnicodeRanges")> _
+    Friend Shared Function GetFontUnicodeRanges(ByVal hds As IntPtr, ByVal lpgs As IntPtr) As UInteger
+    End Function
+    <CLSCompliant(False)> _
+    Public Structure FontRange
+        Public Low As UShort
+        Public High As UShort
+    End Structure
+    <CLSCompliant(False)> _
+    Shared Function Unsign(ByVal Input As Int16) As UShort
+        If Input > -1 Then
+            Return CUShort(Input)
+        Else
+            Return CUShort(UShort.MaxValue - (Not Input))
+        End If
+    End Function
+    <CLSCompliant(False)> _
+    Shared Function GetUnicodeRangesForFont(ByVal font As Font) As Generic.List(Of FontRange)
+        Dim g As Graphics
+        Dim hdc, hFont, old, glyphSet As IntPtr
+        Dim size As UInteger
+        Dim fontRanges As Generic.List(Of FontRange)
+        Dim count As Integer
+        g = Graphics.FromHwnd(IntPtr.Zero)
+        hdc = g.GetHdc()
+        hFont = font.ToHfont()
+        old = SelectObject(hdc, hFont)
+        size = GetFontUnicodeRanges(hdc, IntPtr.Zero)
+        glyphSet = Runtime.InteropServices.Marshal.AllocHGlobal(CInt(size))
+        GetFontUnicodeRanges(hdc, glyphSet)
+        fontRanges = New Generic.List(Of FontRange)
+        count = Runtime.InteropServices.Marshal.ReadInt32(glyphSet, 12)
+        For i As Integer = 0 To count - 1
+            Dim range As FontRange = New FontRange
+            range.Low = Unsign(Runtime.InteropServices.Marshal.ReadInt16(glyphSet, 16 + (i * 4)))
+            range.High = range.Low + Unsign(Runtime.InteropServices.Marshal.ReadInt16(glyphSet, 18 + (i * 4))) - 1US
+            fontRanges.Add(range)
+        Next
+        SelectObject(hdc, old)
+        Runtime.InteropServices.Marshal.FreeHGlobal(glyphSet)
+        g.ReleaseHdc(hdc)
+        g.Dispose()
+        Return fontRanges
+    End Function
+    <CLSCompliant(False)> _
+    Shared Function CheckIfCharInFont(ByVal character As Char, ByVal font As Font) As Boolean
+        Dim intval As UInt16 = Convert.ToUInt16(character)
+        Dim ranges As Generic.List(Of FontRange) = GetUnicodeRangesForFont(font)
+        Dim isCharacterPresent As Boolean = False
+        For Each range As FontRange In ranges
+            If intval >= range.Low And intval <= range.High Then
+                isCharacterPresent = True
+                Exit For
+            End If
+        Next range
+        Return isCharacterPresent
+    End Function
+    <Runtime.InteropServices.DllImport("getuname.dll", EntryPoint:="GetUName")> _
+    Friend Shared Function GetUName(ByVal wCharCode As UShort, <Runtime.InteropServices.MarshalAs(Runtime.InteropServices.UnmanagedType.LPWStr)> ByVal lpbuf As System.Text.StringBuilder) As Integer
+    End Function
+End Class
 Public Class Utility
     Delegate Function _GetUserID() As Integer
     Public Shared GetUserID As _GetUserID
@@ -383,38 +480,6 @@ Public Class Utility
         g.Dispose()
         Return bmp
     End Function
-    Public Structure FIXED
-        Public fract As Short
-        Public value As Short
-    End Structure
-    Public Structure MAT2
-        <Runtime.InteropServices.MarshalAs(Runtime.InteropServices.UnmanagedType.Struct)> Public eM11 As FIXED
-        <Runtime.InteropServices.MarshalAs(Runtime.InteropServices.UnmanagedType.Struct)> Public eM12 As FIXED
-        <Runtime.InteropServices.MarshalAs(Runtime.InteropServices.UnmanagedType.Struct)> Public eM21 As FIXED
-        <Runtime.InteropServices.MarshalAs(Runtime.InteropServices.UnmanagedType.Struct)> Public eM22 As FIXED
-    End Structure
-    Public Structure POINT
-        Public x As Integer
-        Public y As Integer
-    End Structure
-    Public Structure GLYPHMETRICS
-        Public gmBlackBoxX As Integer
-        Public gmBlackBoxY As Integer
-        <Runtime.InteropServices.MarshalAs(Runtime.InteropServices.UnmanagedType.Struct)> Public gmptGlyphOrigin As POINT
-        Public gmCellIncX As Short
-        Public gmCellIncY As Short
-    End Structure
-    Public Declare Function GetGlyphOutline Lib "gdi32.dll" (hdc As IntPtr, uChar As UInteger, uFormat As UInteger, ByRef lpgm As GLYPHMETRICS, cbBuffer As UInteger, lpvBuffer As IntPtr, ByRef lpmat2 As MAT2) As Integer
-    Public Structure ABCFLOAT
-        Public abcfA As Single
-        Public abcfB As Single
-        Public abcfC As Single
-    End Structure
-    <Runtime.InteropServices.DllImport("gdi32", EntryPoint:="GetCharABCWidthsFloat")> Public Shared Function GetCharABCWidthsFloat(hDC As IntPtr, iFirstChar As Integer, iLastChar As Integer, ByRef lpABCF As ABCFLOAT) As Integer
-    End Function
-    <Runtime.InteropServices.DllImport("gdi32.dll", EntryPoint:="SelectObject")> _
-    Private Shared Function SelectObject(ByVal hdc As IntPtr, ByVal hObject As IntPtr) As IntPtr
-    End Function
     Public Shared Function GetTextExtent(ByVal Text As String, ByVal MeasureFont As Font) As SizeF
         Dim bmp As New Bitmap(1, 1)
         Dim g As Graphics = Graphics.FromImage(bmp)
@@ -434,10 +499,10 @@ Public Class Utility
         'GetGlyphOutline()
         If Text.Length = 1 Then
             Dim hdc As IntPtr = g.GetHdc()
-            Dim ABC As ABCFLOAT
-            Dim OldFont As IntPtr = SelectObject(hdc, MeasureFont.ToHfont())
-            GetCharABCWidthsFloat(hdc, AscW(Text(0)), AscW(Text(0)), ABC)
-            SelectObject(hdc, OldFont)
+            Dim ABC As NativeMethods.ABCFLOAT
+            Dim OldFont As IntPtr = NativeMethods.SelectObject(hdc, MeasureFont.ToHfont())
+            NativeMethods.GetCharABCWidthsFloat(hdc, AscW(Text(0)), AscW(Text(0)), ABC)
+            NativeMethods.SelectObject(hdc, OldFont)
             g.ReleaseHdc(hdc)
             GetTextExtent.Width = Math.Max(GetTextExtent.Width, ABC.abcfA + ABC.abcfB + Math.Abs(ABC.abcfC))
         End If
@@ -933,12 +998,11 @@ Public Class Geolocation
         Catch
         End Try
         Dim XMLDoc As New System.Xml.XmlDocument
-        Dim XMLChildNode As System.Xml.XmlNode
         Dim XMLNode As System.Xml.XmlNode
         XMLDoc.LoadXml(Data)
         For Each XMLNode In XMLDoc.DocumentElement.ChildNodes
             If XMLNode.Name = "result" Then
-                For Each XMLChildNode In XMLNode
+                For Each XMLChildNode As System.Xml.XmlNode In XMLNode.ChildNodes
                     If XMLChildNode.Name = "elevation" Then
                         Return XMLChildNode.InnerText
                     End If
@@ -1271,6 +1335,7 @@ Public Class PageLoader
     End Sub
 End Class
 Public Class ArabicData
+    <Serializable> _
     Public Structure ArabicCombo
         Public UnicodeName As String()
         Public Symbol As Char()
@@ -1289,6 +1354,7 @@ Public Class ArabicData
         End Property
     End Structure
     Public Shared _ArabicCombos() As ArabicCombo
+    <Serializable> _
     Public Structure ArabicSymbol
         Public UnicodeName As String
         Public Symbol As Char
@@ -1308,6 +1374,11 @@ Public Class ArabicData
     End Structure
     Public Shared _ArabicLetters() As ArabicSymbol
     Public Shared Sub LoadArabic()
+        If DiskCache.GetCacheItem("ArabicLetters", DateTime.MinValue).Length <> 0 And DiskCache.GetCacheItem("ArabicCombos", DateTime.MinValue).Length <> 0 Then
+            _ArabicLetters = CType((New System.Runtime.Serialization.Formatters.Binary.BinaryFormatter).Deserialize(New IO.MemoryStream(DiskCache.GetCacheItem("ArabicLetters", DateTime.MinValue))), ArabicData.ArabicSymbol())
+            _ArabicCombos = CType((New System.Runtime.Serialization.Formatters.Binary.BinaryFormatter).Deserialize(New IO.MemoryStream(DiskCache.GetCacheItem("ArabicCombos", DateTime.MinValue))), ArabicData.ArabicCombo())
+            Return
+        End If
         Dim CharArr As New ArrayList
         Dim Letters As New ArrayList
         Dim Combos As New ArrayList
@@ -1405,6 +1476,15 @@ Public Class ArabicData
         Next
         _ArabicLetters = CType(Letters.ToArray(GetType(ArabicSymbol)), ArabicSymbol())
         _ArabicCombos = CType(Combos.ToArray(GetType(ArabicCombo)), ArabicCombo())
+        Dim MemStream As New IO.MemoryStream
+        Dim Ser As New System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+        Ser.Serialize(MemStream, _ArabicLetters)
+        DiskCache.CacheItem("ArabicLetters", Now, MemStream.ToArray())
+        MemStream.Close()
+        MemStream = New IO.MemoryStream
+        Ser.Serialize(MemStream, _ArabicCombos)
+        DiskCache.CacheItem("ArabicCombos", Now, MemStream.ToArray())
+        MemStream.Close()
     End Sub
     Public Shared ReadOnly Property ArabicCombos As ArabicCombo()
         Get
@@ -1422,70 +1502,10 @@ Public Class ArabicData
             Return _ArabicLetters
         End Get
     End Property
-    <CLSCompliant(False)> _
-    Declare Function GetFontUnicodeRanges Lib "gdi32.dll" (ByVal hds As IntPtr, ByVal lpgs As IntPtr) As UInteger
-    <CLSCompliant(False)> _
-    Declare Function SelectObject Lib "gdi32.dll" (ByVal hDc As IntPtr, ByVal hObject As IntPtr) As IntPtr
-    <CLSCompliant(False)> _
-    Public Structure FontRange
-        Public Low As UShort
-        Public High As UShort
-    End Structure
-    <CLSCompliant(False)> _
-    Shared Function Unsign(ByVal Input As Int16) As UShort
-        If Input > -1 Then
-            Return CUShort(Input)
-        Else
-            Return CUShort(UShort.MaxValue - (Not Input))
-        End If
-    End Function
-    <CLSCompliant(False)> _
-    Shared Function GetUnicodeRangesForFont(ByVal font As Font) As Generic.List(Of FontRange)
-        Dim g As Graphics
-        Dim hdc, hFont, old, glyphSet As IntPtr
-        Dim size As UInteger
-        Dim fontRanges As Generic.List(Of FontRange)
-        Dim count As Integer
-        g = Graphics.FromHwnd(IntPtr.Zero)
-        hdc = g.GetHdc()
-        hFont = font.ToHfont()
-        old = SelectObject(hdc, hFont)
-        size = GetFontUnicodeRanges(hdc, IntPtr.Zero)
-        glyphSet = Runtime.InteropServices.Marshal.AllocHGlobal(CInt(size))
-        GetFontUnicodeRanges(hdc, glyphSet)
-        fontRanges = New Generic.List(Of FontRange)
-        count = Runtime.InteropServices.Marshal.ReadInt32(glyphSet, 12)
-        For i As Integer = 0 To count - 1
-            Dim range As FontRange = New FontRange
-            range.Low = Unsign(Runtime.InteropServices.Marshal.ReadInt16(glyphSet, 16 + (i * 4)))
-            range.High = range.Low + Unsign(Runtime.InteropServices.Marshal.ReadInt16(glyphSet, 18 + (i * 4))) - 1US
-            fontRanges.Add(range)
-        Next
-        SelectObject(hdc, old)
-        Runtime.InteropServices.Marshal.FreeHGlobal(glyphSet)
-        g.ReleaseHdc(hdc)
-        g.Dispose()
-        Return fontRanges
-    End Function
-    <CLSCompliant(False)> _
-    Shared Function CheckIfCharInFont(ByVal character As Char, ByVal font As Font) As Boolean
-        Dim intval As UInt16 = Convert.ToUInt16(character)
-        Dim ranges As Generic.List(Of FontRange) = GetUnicodeRangesForFont(font)
-        Dim isCharacterPresent As Boolean = False
-        For Each range As FontRange In ranges
-            If intval >= range.Low And intval <= range.High Then
-                isCharacterPresent = True
-                Exit For
-            End If
-        Next range
-        Return isCharacterPresent
-    End Function
-    <CLSCompliant(False)> _
-    Declare Function GetUName Lib "getuname.dll" (ByVal wCharCode As UShort, <Runtime.InteropServices.MarshalAs(Runtime.InteropServices.UnmanagedType.LPWStr)> ByVal lpbuf As System.Text.StringBuilder) As Integer
     Public Shared Function GetUnicodeName(Character As Char) As String
         Dim Str As New System.Text.StringBuilder(512)
         Try
-            GetUName(CUShort(AscW(Character)), Str)
+            NativeMethods.GetUName(CUShort(AscW(Character)), Str)
         Catch e As System.DllNotFoundException
             If FindLetterBySymbol(Character) = -1 Then Return String.Empty
             Dim Res As String = Utility.LoadResourceString("unicode_" + ArabicLetters(FindLetterBySymbol(Character)).UnicodeName)
