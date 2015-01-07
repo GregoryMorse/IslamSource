@@ -137,30 +137,30 @@ Public Class Arabic
         End Get
     End Property
     Public Shared Function TransliterateFromBuckwalter(ByVal Buckwalter As String) As String
-        Dim ArabicString As String = String.Empty
+        Dim ArabicString As New System.Text.StringBuilder
         Dim Count As Integer
-        If Buckwalter Is Nothing Then Return ArabicString
+        If Buckwalter Is Nothing Then Return ArabicString.ToString()
         For Count = 0 To Buckwalter.Length - 1
             If Buckwalter(Count) = "\" Then
                 Count += 1
                 If Buckwalter(Count) = "," Then
-                    ArabicString += ArabicData.ArabicComma
+                    ArabicString.Append(ArabicData.ArabicComma)
                 ElseIf Buckwalter(Count) = ";" Then
-                    ArabicString += ArabicData.ArabicSemicolon
+                    ArabicString.Append(ArabicData.ArabicSemicolon)
                 ElseIf Buckwalter(Count) = "?" Then
-                    ArabicString += ArabicData.ArabicQuestionMark
+                    ArabicString.Append(ArabicData.ArabicQuestionMark)
                 Else
-                    ArabicString += Buckwalter(Count)
+                    ArabicString.Append(Buckwalter(Count))
                 End If
             Else
                 If BuckwalterMap.ContainsKey(Buckwalter(Count)) Then
-                    ArabicString += ArabicData.ArabicLetters(BuckwalterMap.Item(Buckwalter(Count))).Symbol
+                    ArabicString.Append(ArabicData.ArabicLetters(BuckwalterMap.Item(Buckwalter(Count))).Symbol)
                 Else
-                    ArabicString += Buckwalter(Count)
+                    ArabicString.Append(Buckwalter(Count))
                 End If
             End If
         Next
-        Return ArabicString
+        Return ArabicString.ToString()
     End Function
     Public Shared Function TransliterateToScheme(ByVal ArabicString As String, SchemeType As ArabicData.TranslitScheme, Scheme As String) As String
         If SchemeType = ArabicData.TranslitScheme.RuleBased Then
@@ -259,33 +259,33 @@ Public Class Arabic
         Return _Letters
     End Function
     Public Shared Function TransliterateToRoman(ByVal ArabicString As String, Scheme As String) As String
-        Dim RomanString As String = String.Empty
+        Dim RomanString As New System.Text.StringBuilder
         Dim Count As Integer
         For Count = 0 To ArabicString.Length - 1
             If ArabicString(Count) = "\" Then
                 Count += 1
                 If ArabicString(Count) = "," Then
-                    RomanString += ArabicData.ArabicComma
+                    RomanString.Append(ArabicData.ArabicComma)
                 ElseIf ArabicString(Count) = ";" Then
-                    RomanString += ArabicData.ArabicSemicolon
+                    RomanString.Append(ArabicData.ArabicSemicolon)
                 ElseIf ArabicString(Count) = "?" Then
-                    RomanString += ArabicData.ArabicQuestionMark
+                    RomanString.Append(ArabicData.ArabicQuestionMark)
                 Else
-                    RomanString += ArabicString(Count)
+                    RomanString.Append(ArabicString(Count))
                 End If
             Else
                 If GetSortedLetters(Scheme).ContainsKey(ArabicString(Count)) Then
                     If GetSchemeSpecialFromMatch(ArabicString(Count), False) <> -1 Then
-                        RomanString += GetSchemeSpecialValue(GetSchemeSpecialFromMatch(ArabicString(Count), False), If(Scheme = String.Empty, "ExtendedBuckwalter", Scheme))
+                        RomanString.Append(GetSchemeSpecialValue(GetSchemeSpecialFromMatch(ArabicString(Count), False), If(Scheme = String.Empty, "ExtendedBuckwalter", Scheme)))
                     Else
-                        RomanString += GetSchemeValueFromSymbol(ArabicData.ArabicLetters(ArabicData.FindLetterBySymbol(ArabicString(Count))), If(Scheme = String.Empty, "ExtendedBuckwalter", Scheme))
+                        RomanString.Append(GetSchemeValueFromSymbol(ArabicData.ArabicLetters(ArabicData.FindLetterBySymbol(ArabicString(Count))), If(Scheme = String.Empty, "ExtendedBuckwalter", Scheme)))
                     End If
                 Else
-                    RomanString += ArabicString(Count)
+                    RomanString.Append(ArabicString(Count))
                 End If
             End If
         Next
-        Return RomanString
+        Return RomanString.ToString()
     End Function
     Structure RuleMetadata
         Sub New(NewIndex As Integer, NewLength As Integer, NewType As String)

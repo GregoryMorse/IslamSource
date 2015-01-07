@@ -408,42 +408,43 @@ Public Class Utility
         Return "'" + EncodeJS(Str) + "'"
     End Function
     Public Shared Function MakeJSArray(ByVal StringArray As String(), Optional ByVal bObject As Boolean = False) As String
-        Dim JSArray As String = "["
+        Dim JSArray As New System.Text.StringBuilder
+        JSArray.Append("[")
         Dim Count As Integer
         For Count = 0 To StringArray.Length() - 1
             If StringArray(Count) Is Nothing Then
-                JSArray += "null"
+                JSArray.Append("null")
             ElseIf bObject Then
-                JSArray += StringArray(Count)
+                JSArray.Append(StringArray(Count))
             Else
-                JSArray += MakeJSString(StringArray(Count))
+                JSArray.Append(MakeJSString(StringArray(Count)))
             End If
-            If (Count <> StringArray.Length() - 1) Then JSArray += ", "
+            If (Count <> StringArray.Length() - 1) Then JSArray.Append(", ")
         Next
-        JSArray += "]"
-        Return JSArray
+        JSArray.Append("]")
+        Return JSArray.ToString()
     End Function
     Public Shared Function MakeJSIndexedObject(ByVal IndexNamesArray As String(), ByVal StringsArray As Array(), ByVal bObject As Boolean) As String
-        Dim JSArray As String = String.Empty
+        Dim JSArray As New System.Text.StringBuilder
         Dim Count As Integer
         Dim SubCount As Integer
         For Count = 0 To StringsArray.Length - 1
-            JSArray += "{"
+            JSArray.Append("{")
             For SubCount = 0 To IndexNamesArray.Length - 1
-                JSArray += "'" + EncodeJS(IndexNamesArray(SubCount)) + "':"
+                JSArray.Append("'" + EncodeJS(IndexNamesArray(SubCount)) + "':")
                 If CType(StringsArray(Count), Object())(SubCount) Is Nothing Then
-                    JSArray += "null"
+                    JSArray.Append("null")
                 ElseIf bObject Then
-                    JSArray += CStr(CType(StringsArray(Count), Object())(SubCount))
+                    JSArray.Append(CStr(CType(StringsArray(Count), Object())(SubCount)))
                 Else
-                    JSArray += MakeJSString(CStr(CType(StringsArray(Count), String())(SubCount)))
+                    JSArray.Append(MakeJSString(CStr(CType(StringsArray(Count), String())(SubCount))))
                 End If
-                If (SubCount <> IndexNamesArray.Length() - 1) Then JSArray += ", "
+                If (SubCount <> IndexNamesArray.Length() - 1) Then JSArray.Append(", ")
             Next
-            JSArray += "}"
-            If (Count <> StringsArray.Length - 1) Then JSArray += ", "
+            JSArray.Append("}")
+            If (Count <> StringsArray.Length - 1) Then JSArray.Append(", ")
         Next
-        Return JSArray
+        Return JSArray.ToString()
     End Function
     Public Shared Function MakeTabString(ByVal Index As Integer) As String
         MakeTabString = StrDup(Index, vbTab)
