@@ -3223,8 +3223,8 @@ Public Class RenderArray
                     End If
                     If TypeOf InnerArray(Index) Is Object() Then
                         Dim NextChild As ArrayList = MakeTableJSFuncs(DirectCast(InnerArray(Index), Object()), Prefix + CStr(Count - 3) + "_" + CStr(Index))
-                        CType(Children(0), ArrayList).Add(CType(NextChild(0), ArrayList))
-                        CType(Children(1), ArrayList).Add(CType(NextChild(1), ArrayList))
+                        CType(Children(0), ArrayList).AddRange(CType(NextChild(0), ArrayList))
+                        CType(Children(1), ArrayList).AddRange(CType(NextChild(1), ArrayList))
                     End If
                 Next
                 CType(Objects(0), ArrayList).Add("ri" + Prefix + CStr(Count))
