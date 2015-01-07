@@ -4193,11 +4193,11 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 		<pattern name="MatchNisbahDrop" match="({ArabicFatha}{ArabicLetterAlef}|(?:(?:{ArabicFatha}|{ArabicKasra})({ArabicLetterYeh}|{ArabicLetterAlefMaksura})))(?=$|\s+)"></pattern>
 		<pattern name="MatchTehMarbuta" match="{ArabicLetterTehMarbuta}(?=$|\s+)"></pattern>
 		<pattern name="MatchFemininity" match="{ArabicFatha}{MatchTehMarbuta}"></pattern>
-		<pattern name="MatchAlefMaksura" match="{ArabicLetterAlefMaksura}(?=$|\s+)"></pattern>
-		<pattern name="MatchKasraYeh" match="{ArabicKasra}{ArabicLetterAlefMaksura}(?=$|\s+)"></pattern>
+		<pattern name="MatchAlefMaksura" match="{ArabicLetterAlefMaksura}(?={ArabicShadda}(?:$|\s+))"></pattern>
+		<pattern name="MatchKasraYeh" match="{ArabicKasra}{ArabicLetterYeh}(?=$|\s+)"></pattern>
 		<pattern name="MatchKasra" match="{ArabicKasra}(?=$|\s+)"></pattern>
-		<pattern name="MatchNoon" match="{ArabicNoon}{ArabicShadda}?(?=$|\s+)"></pattern>
-		<pattern name="MatchFirstPerson" match="((?:{ArabicMoonLettersNoVowels}|{ArabicLetterTeh}|{ArabicLetterTheh}|{ArabicLetterDal}|{ArabicLetterThal}|{ArabicLetterReh}|{ArabicLetterZain}|{ArabicLetterSeen}|{ArabicLetterSheen}|{ArabicLetterSad}|{ArabicLetterDad}|{ArabicLetterTah}|{ArabicLetterZah}|{ArabicLetterLam}){ArabicShadda}?|{ArabicLetterHamza}|{ArabicLetterAlefWithHamzaAbove}|{ArabicLetterWawWithHamzaAbove}|{ArabicLetterAlefWithHamzaBelow}|{ArabicLetterYehWithHamzaAbove})(?=$|\s+)"></pattern>
+		<pattern name="MatchNoon" match="{ArabicNoon}(?=$|\s+)"></pattern>
+		<pattern name="MatchFirstPerson" match="((?:{ArabicMoonLettersNoVowels}|{ArabicLetterTeh}|{ArabicLetterTheh}|{ArabicLetterDal}|{ArabicLetterThal}|{ArabicLetterReh}|{ArabicLetterZain}|{ArabicLetterSeen}|{ArabicLetterSheen}|{ArabicLetterSad}|{ArabicLetterDad}|{ArabicLetterTah}|{ArabicLetterZah}|{ArabicLetterLam}){ArabicShadda}?|{ArabicLetterNoon}{ArabicShadda}|{ArabicLetterHamza}|{ArabicLetterAlefWithHamzaAbove}|{ArabicLetterWawWithHamzaAbove}|{ArabicLetterAlefWithHamzaBelow}|{ArabicLetterYehWithHamzaAbove})(?=$|\s+)"></pattern>
 		<pattern name="MatchThirdPerson" match="((?:{ArabicSunLetters}|{ArabicMoonLettersNoVowels}|{ArabicLetterWaw}){ArabicShadda}?|{ArabicLetterAlef}|{ArabicLetterHamza}|{ArabicLetterAlefWithHamzaAbove}|{ArabicLetterWawWithHamzaAbove}|{ArabicLetterAlefWithHamzaBelow}|{ArabicLetterYehWithHamzaAbove})(?=$|\s+)"></pattern>
 	</arabicpatterns>
 	<arabicgroups>

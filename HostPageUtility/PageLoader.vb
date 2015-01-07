@@ -1374,7 +1374,7 @@ Public Class ArabicData
     End Structure
     Public Shared _ArabicLetters() As ArabicSymbol
     Public Shared Sub LoadArabic()
-        If DiskCache.GetCacheItem("ArabicLetters", DateTime.MinValue).Length <> 0 And DiskCache.GetCacheItem("ArabicCombos", DateTime.MinValue).Length <> 0 Then
+        If Not DiskCache.GetCacheItem("ArabicLetters", DateTime.MinValue) Is Nothing And Not DiskCache.GetCacheItem("ArabicCombos", DateTime.MinValue) Is Nothing Then
             _ArabicLetters = CType((New System.Runtime.Serialization.Formatters.Binary.BinaryFormatter).Deserialize(New IO.MemoryStream(DiskCache.GetCacheItem("ArabicLetters", DateTime.MinValue))), ArabicData.ArabicSymbol())
             _ArabicCombos = CType((New System.Runtime.Serialization.Formatters.Binary.BinaryFormatter).Deserialize(New IO.MemoryStream(DiskCache.GetCacheItem("ArabicCombos", DateTime.MinValue))), ArabicData.ArabicCombo())
             Return
