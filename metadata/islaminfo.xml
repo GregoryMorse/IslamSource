@@ -104,7 +104,7 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<table name="Nouns">
 				<col name="noun" link="Declensions"></col>
 				<col name="def" link="Declensions"></col>
-				<col name="fem" link="Declensions"></col>
+				<col name="fem" link="Nouns"></col>
 				<col name="reladj" link="Nouns"></col>
 				<col name="grammar"></col>
 			</table>
@@ -155,14 +155,15 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 		</identities>
 		<transforms>
 			<transform from="{MatchCaseEnding}" text="$1$5$6$7" id="StripCaseEnding" grammar="strip"></transform>
-			
+
 			<transform text="{ArabicDamma}" id="FlexibleDefiniteNominative" grammar="ms|fs|bp,flex,def|const,nom,deft"></transform>
 			<transform text="{ArabicDammatan}" id="FlexibleIndefiniteNominative" grammar="ms|fs|bp,flex,indef,nom"></transform>
 			<transform text="{ArabicKasra}" id="FlexibleDefinitePossessive" grammar="ms|fs|bp,flex,def|const,pos"></transform>
 			<transform text="{ArabicKasratan}" id="FlexibleIndefinitePossessive" grammar="ms|fs|bp,flex,indef,pos"></transform>
 			<transform text="{ArabicFatha}" id="FlexibleDefiniteAccusative" grammar="ms|fs|bp,flex,def|const,acc"></transform>
 			<transform text="{ArabicFathatan}{ArabicLetterAlef}" id="FlexibleIndefiniteAccusative" grammar="ms|bp,flex,indef,acc"></transform>
-			<transform text="{ArabicFathatan}" id="SoundFeminineFlexibleIndefiniteAccusative" grammar="fs,flex,indef,acc"></transform>
+			<transform from="{MatchAlefMaksura}" text="{ArabicLetterYeh}$1{ArabicFathatan}{ArabicLetterAlef}" id="SoundFeminineFlexibleIndefiniteAccusative" grammar="fs,flex,indef,acc"></transform>
+			<transform from="{MatchTehMarbuta}" text="{ArabicFathatan}" id="SoundFeminineFlexibleIndefiniteAccusative" grammar="fs,flex,indef,acc"></transform>
 			<transform text="{ArabicFatha}{ArabicLetterAlef}{ArabicLetterNoon}{ArabicKasra}" id="DualNominative" grammar="md|fd,flex|pflex,def|indef,nom"></transform>
 			<transform text="{ArabicFatha}{ArabicLetterYeh}{ArabicSukun}{ArabicLetterNoon}{ArabicKasra}" id="DualAccusativePossessive" grammar="md|fd,flex|pflex,def|indef,acc|pos"></transform>
 			<transform text="{ArabicFatha}{ArabicLetterAlef}" id="FlexibleConstantDualNominative" grammar="md|fd,flex|long,const,nom"></transform>
@@ -211,40 +212,47 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<transform text="ayaA" id="InvariantDualConstantNominative" grammar="md,invar,const,nom"></transform>
 			<transform text="ayayoni" id="InvariantDualPossessiveAccusative" grammar="md,invar,indef|def,pos|acc"></transform>
 			<transform text="ayaY" id="InvariantDualConstantPossessiveAccusative" grammar="md,invar,const,pos|acc"></transform>
+			
+			<transform from="{ArabicKasratan}" text="{ArabicKasra}" id="MakePossessive" grammar="deft|constpos,flex"></transform>
+			<transform from="{ArabicKasratan}" text="{ArabicKasra}{ArabicLetterAlefMaksura}" id="MakePossessive" grammar="deft|constpos,defectpos"></transform>
+			<transform from="{ArabicDammatan}" text="{ArabicDamma}" id="MakePossessive" grammar="deft|constpos,flex"></transform>
+			<transform from="{ArabicFathatan}{ArabicLetterAlef}?" text="{ArabicFatha}" id="MakePossessive" grammar="deft|constpos,flex"></transform>
+			<transform from="{ArabicFathatan}{ArabicLetterAlef}?" text="{ArabicFatha}{ArabicLetterAlef}" id="MakePossessive" grammar="deft|constpos,defectacc"></transform>
+			<transform from="({ArabicFatha}(?:{ArabicLetterAlef}|{ArabicLetterWaw}{ArabicSukun})){ArabicLetterNoon}{ArabicKasra}|({ArabicDamma}{ArabicLetterWaw}){ArabicLetterNoon}{ArabicFatha}" text="$1$2" id="MakeConstruct" grammar="constpos"></transform>
+			<transform from="({ArabicFatha}){ArabicLetterYeh}{ArabicSukun}{ArabicLetterNoon}(?:{ArabicFatha}|{ArabicKasra})|({ArabicKasra}){ArabicLetterYeh}{ArabicLetterNoon}{ArabicFatha}" text="$1$2{ArabicLetterAlefMaksura}" id="MakeConstruct" grammar="constpos"></transform>
 
 			<transform from="(^|\s+)({ArabicSunLetters})" text="$1{ArabicLetterAlefWasla}{ArabicLetterLam}$2{ArabicShadda}" id="DefiniteSunLetter" grammar="deft"></transform>
 			<transform from="(^|\s+)({ArabicMoonLetters}|{ArabicLetterAlefWithHamzaAbove}|{ArabicLetterAlefWithHamzaBelow}|{ArabicLetterHamza}|{ArabicTatweel}{ArabicHamzaAbove})" text="$1{ArabicLetterAlefWasla}{ArabicLetterLam}{ArabicSukun}$2" id="DefiniteMoonLetter" grammar="deft"></transform>
-			<transform text="{ArabicFatha}{ArabicLetterTehMarbuta}{ArabicDammatan}" id="FeminineForm" grammar="fem"></transform>
 			<transform from="{MatchDefiniteness}" text="$1$2" id="RelativeAdjectivePrefix" grammar="ms|fs,reladj"></transform>
 			<transform from="{MatchNisbahDrop}|{MatchFemininity}|(?=$|\s+)" text="{ArabicKasra}{ArabicLetterAlefMaksura}{ArabicShadda}{ArabicDammatan}" id="RelativeAdjectiveSuffix" grammar="ms|fs,reladj"></transform>
 
-			<transform from="{MatchAlefMaksura}" text="{ArabicLetterYeh}" id="AttachPronoun" grammar="posspron,1md|1fd|1mp|1fp|2ms|2fs|2md|2fd|2mp|2fp|3ms|3fs|3md|3fd|3mp|3fp"></transform>
+			<transform from="{MatchAlefMaksura}" text="{ArabicLetterYeh}$1" id="AttachPronoun" grammar="fem,posspron,1md|1fd|1mp|1fp|2ms|2fs|2md|2fd|2mp|2fp|3ms|3fs|3md|3fd|3mp|3fp,noun|verb"></transform>
+			<transform from="{ArabicLetterTehMarbuta}({ArabicFatha}|{ArabicKasra}|{ArabicDamma})" text="{ArabicLetterTeh}$1" id="AttachPronoun" grammar="posspron,1ms|1fs|1md|1fd|1mp|1fp|2ms|2fs|2md|2fd|2mp|2fp|3ms|3fs|3md|3fd|3mp|3fp,noun|verb"></transform>
+			<transform text="{ArabicFatha}{ArabicLetterTehMarbuta}{ArabicDammatan}" id="FeminineForm" grammar="fem"></transform>
 
-			<transform from="({ArabicLetterAlefMaksura})(?=$|\s+)" text="$1{ArabicShadda}{ArabicFatha}" id="My" grammar="posspron,1ms|1fs,pos"></transform>
-			<transform from="({ArabicFatha}{ArabicLetterAlef}|{ArabicDamma}{ArabicLetterWaw})(?=$|\s+)" text="$1{ArabicLetterAlefMaksura}{ArabicFatha}" id="My" grammar="posspron,1ms|1fs,pos"></transform>
-			<transform from="({MatchKasra})" text="$1{ArabicLetterAlefMaksura}" id="My" grammar="posspron,1ms|1fs,pos"></transform>
-			<transform from="{MatchFirstPerson}" text="$1{ArabicKasra}{ArabicLetterAlefMaksura}" id="My" grammar="posspron,1ms|1fs,pos"></transform>
-			<transform from="({MatchNoon})" text="$1{ArabicShadda}{ArabicKasra}{ArabicLetterAlefMaksura}" id="My" grammar="posspron,1ms|1fs,pos"></transform>
-			<transform text="{ArabicLetterNoon}{ArabicKasra}{ArabicLetterAlefMaksura}" id="My" grammar="posspron,1ms|1fs,acc"></transform>
-			<transform text="{ArabicLetterNoon}{ArabicFatha}{ArabicLetterAlef}" id="Our" grammar="posspron,1md|1fd|1mp|1fp"></transform>
-			<transform text="{ArabicLetterKaf}{ArabicFatha}" id="YourMasculine" grammar="posspron,2ms"></transform>
-			<transform text="{ArabicLetterKaf}{ArabicKasra}" id="YourFeminine" grammar="posspron,2fs"></transform>
-			<transform text="{ArabicLetterKaf}{ArabicDamma}{ArabicLetterMeem}{ArabicFatha}{ArabicLetterAlef}" id="YourTwo" grammar="posspron,2md|2fd"></transform>
-			<transform text="{ArabicLetterKaf}{ArabicDamma}{ArabicLetterMeem}{ArabicSukun}" id="YourAllMasculine" grammar="posspron,2mp"></transform>
-			<transform text="{ArabicLetterKaf}{ArabicDamma}{ArabicLetterNoon}{ArabicShadda}{ArabicFatha}" id="YourAllFeminine" grammar="posspron,2fp"></transform>
-			<transform from="{MatchThirdPerson}" text="$1{ArabicLetterHeh}{ArabicDamma}" id="HisHim" grammar="posspron,3ms,acc"></transform>
-			<transform from="({MatchKasraYeh}|{MatchKasra})" text="$1{ArabicLetterHeh}{ArabicKasra}" id="HisHim" grammar="posspron,3ms,acc"></transform>
-			<transform text="{ArabicLetterHeh}{ArabicKasra}" id="Him" grammar="posspron,3ms,pos"></transform>
-			<transform text="{ArabicLetterHeh}{ArabicFatha}{ArabicLetterAlef}" id="Her" grammar="posspron,3fs"></transform>
-			<transform from="{MatchThirdPerson}" text="$1{ArabicLetterHeh}{ArabicDamma}{ArabicLetterMeem}{ArabicFatha}{ArabicLetterAlef}" id="TheirTwo" grammar="posspron,3md|3fd,acc"></transform>
-			<transform from="({MatchKasraYeh}|{MatchKasra})" text="$1{ArabicLetterHeh}{ArabicKasra}{ArabicLetterMeem}{ArabicFatha}{ArabicLetterAlef}" id="TheirTwo" grammar="posspron,3md|3fd,acc"></transform>
-			<transform text="{ArabicLetterHeh}{ArabicKasra}{ArabicLetterMeem}{ArabicFatha}{ArabicLetterAlef}" id="TheirsTwo" grammar="posspron,3md|3fd,pos"></transform>
-			<transform from="{MatchThirdPerson}" text="$1{ArabicLetterHeh}{ArabicDamma}{ArabicLetterMeem}{ArabicSukun}" id="TheirMasculine" grammar="posspron,3mp,acc"></transform>
-			<transform from="({MatchKasraYeh}|{MatchKasra})" text="$1{ArabicLetterHeh}{ArabicKasra}{ArabicLetterMeem}{ArabicSukun}" id="TheirMasculine" grammar="posspron,3mp,acc"></transform>
-			<transform text="{ArabicLetterHeh}{ArabicKasra}{ArabicLetterMeem}{ArabicSukun}" id="TheirsMasculine" grammar="posspron,3mp,pos"></transform>
-			<transform from="{MatchThirdPerson}" text="$1{ArabicLetterHeh}{ArabicDamma}{ArabicLetterNoon}{ArabicShadda}{ArabicFatha}" id="TheirFeminine" grammar="posspron,3fp,acc"></transform>
-			<transform from="({MatchKasraYeh}|{MatchKasra})" text="$1{ArabicLetterHeh}{ArabicKasra}{ArabicLetterNoon}{ArabicShadda}{ArabicFatha}" id="TheirFeminine" grammar="posspron,3fp,acc"></transform>
-			<transform text="{ArabicLetterHeh}{ArabicKasra}{ArabicLetterNoon}{ArabicShadda}{ArabicFatha}" id="TheirsFeminine" grammar="posspron,3fp,pos"></transform>
+			<transform from="({ArabicLetterAlefMaksura})(?=$|\s+)" text="$1{ArabicShadda}{ArabicFatha}" id="My" grammar="posspron,1ms|1fs,noun"></transform>
+			<transform from="({ArabicFatha}){ArabicLetterWaw}(?=$|\s+)" text="$1{ArabicLetterAlefMaksura}{ArabicShadda}{ArabicFatha}" id="My" grammar="posspron,1ms|1fs,noun"></transform>
+			<transform from="{ArabicDamma}{ArabicLetterWaw}(?=$|\s+)" text="{ArabicKasra}{ArabicLetterAlefMaksura}{ArabicShadda}{ArabicFatha}" id="My" grammar="posspron,1ms|1fs,noun"></transform>
+			<transform from="({ArabicFatha}{ArabicLetterAlef})(?=$|\s+)" text="$1{ArabicLetterAlefMaksura}{ArabicFatha}" id="My" grammar="posspron,1ms|1fs,noun"></transform>
+			<transform from="({MatchKasra})" text="$1{ArabicLetterAlefMaksura}" id="My" grammar="posspron,1ms|1fs,noun"></transform>
+			<transform from="{MatchFirstPerson}" text="$1{ArabicKasra}{ArabicLetterAlefMaksura}" id="My" grammar="posspron,1ms|1fs,noun"></transform>
+			<transform from="({MatchNoon})" text="$1{ArabicShadda}{ArabicKasra}{ArabicLetterAlefMaksura}" id="My" grammar="posspron,1ms|1fs,noun"></transform>
+			<transform text="{ArabicLetterNoon}{ArabicKasra}{ArabicLetterAlefMaksura}" id="My" grammar="posspron,1ms|1fs,verb"></transform>
+			<transform text="{ArabicLetterNoon}{ArabicFatha}{ArabicLetterAlef}" id="Our" grammar="posspron,1md|1fd|1mp|1fp,noun|verb"></transform>
+			<transform text="{ArabicLetterKaf}{ArabicFatha}" id="YourMasculine" grammar="posspron,2ms,noun|verb"></transform>
+			<transform text="{ArabicLetterKaf}{ArabicKasra}" id="YourFeminine" grammar="posspron,2fs,noun|verb"></transform>
+			<transform text="{ArabicLetterKaf}{ArabicDamma}{ArabicLetterMeem}{ArabicFatha}{ArabicLetterAlef}" id="YourTwo" grammar="posspron,2md|2fd,noun|verb"></transform>
+			<transform text="{ArabicLetterKaf}{ArabicDamma}{ArabicLetterMeem}{ArabicSukun}" id="YourAllMasculine" grammar="posspron,2mp,noun|verb"></transform>
+			<transform text="{ArabicLetterKaf}{ArabicDamma}{ArabicLetterNoon}{ArabicShadda}{ArabicFatha}" id="YourAllFeminine" grammar="posspron,2fp,noun|verb"></transform>
+			<transform from="{MatchThirdPerson}" text="$1{ArabicLetterHeh}{ArabicDamma}" id="HisHim" grammar="posspron,3ms,noun|verb"></transform>
+			<transform from="({MatchFathaKasraYeh}|{MatchKasra})" text="$1{ArabicLetterHeh}{ArabicKasra}" id="HisHim" grammar="posspron,3ms,noun|verb"></transform>
+			<transform text="{ArabicLetterHeh}{ArabicFatha}{ArabicLetterAlef}" id="Her" grammar="posspron,3fs,noun|verb"></transform>
+			<transform from="{MatchThirdPerson}" text="$1{ArabicLetterHeh}{ArabicDamma}{ArabicLetterMeem}{ArabicFatha}{ArabicLetterAlef}" id="TheirTwo" grammar="posspron,3md|3fd,noun|verb"></transform>
+			<transform from="({MatchFathaKasraYeh}|{MatchKasra})" text="$1{ArabicLetterHeh}{ArabicKasra}{ArabicLetterMeem}{ArabicFatha}{ArabicLetterAlef}" id="TheirTwo" grammar="posspron,3md|3fd,noun|verb"></transform>
+			<transform from="{MatchThirdPerson}" text="$1{ArabicLetterHeh}{ArabicDamma}{ArabicLetterMeem}{ArabicSukun}" id="TheirMasculine" grammar="posspron,3mp,noun|verb"></transform>
+			<transform from="({MatchFathaKasraYeh}|{MatchKasra})" text="$1{ArabicLetterHeh}{ArabicKasra}{ArabicLetterMeem}{ArabicSukun}" id="TheirMasculine" grammar="posspron,3mp,noun|verb"></transform>
+			<transform from="{MatchThirdPerson}" text="$1{ArabicLetterHeh}{ArabicDamma}{ArabicLetterNoon}{ArabicShadda}{ArabicFatha}" id="TheirFeminine" grammar="posspron,3fp,noun|verb"></transform>
+			<transform from="({MatchFathaKasraYeh}|{MatchKasra})" text="$1{ArabicLetterHeh}{ArabicKasra}{ArabicLetterNoon}{ArabicShadda}{ArabicFatha}" id="TheirFeminine" grammar="posspron,3fp,noun|verb"></transform>
 
 			<transform text="faEala" id="VerbTypeIPastHePattern" grammar="pastverbi,3ms"></transform>
 			<transform text="faEalaA" id="VerbTypeIPastTheyBothMasculinePattern" grammar="pastverbi,3md"></transform>
@@ -4193,12 +4201,12 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 		<pattern name="MatchNisbahDrop" match="({ArabicFatha}{ArabicLetterAlef}|(?:(?:{ArabicFatha}|{ArabicKasra})({ArabicLetterYeh}|{ArabicLetterAlefMaksura})))(?=$|\s+)"></pattern>
 		<pattern name="MatchTehMarbuta" match="{ArabicLetterTehMarbuta}(?=$|\s+)"></pattern>
 		<pattern name="MatchFemininity" match="{ArabicFatha}{MatchTehMarbuta}"></pattern>
-		<pattern name="MatchAlefMaksura" match="{ArabicLetterAlefMaksura}(?={ArabicShadda}(?:$|\s+))"></pattern>
-		<pattern name="MatchKasraYeh" match="{ArabicKasra}{ArabicLetterYeh}(?=$|\s+)"></pattern>
+		<pattern name="MatchAlefMaksura" match="{ArabicLetterAlefMaksura}({ArabicShadda}?)(?=$|\s+)"></pattern>
+		<pattern name="MatchFathaKasraYeh" match="(?:{ArabicFatha}|{ArabicKasra}){ArabicLetterYeh}(?=$|\s+)"></pattern>
 		<pattern name="MatchKasra" match="{ArabicKasra}(?=$|\s+)"></pattern>
 		<pattern name="MatchNoon" match="{ArabicNoon}(?=$|\s+)"></pattern>
-		<pattern name="MatchFirstPerson" match="((?:{ArabicMoonLettersNoVowels}|{ArabicLetterTeh}|{ArabicLetterTheh}|{ArabicLetterDal}|{ArabicLetterThal}|{ArabicLetterReh}|{ArabicLetterZain}|{ArabicLetterSeen}|{ArabicLetterSheen}|{ArabicLetterSad}|{ArabicLetterDad}|{ArabicLetterTah}|{ArabicLetterZah}|{ArabicLetterLam}){ArabicShadda}?|{ArabicLetterNoon}{ArabicShadda}|{ArabicLetterHamza}|{ArabicLetterAlefWithHamzaAbove}|{ArabicLetterWawWithHamzaAbove}|{ArabicLetterAlefWithHamzaBelow}|{ArabicLetterYehWithHamzaAbove})(?=$|\s+)"></pattern>
-		<pattern name="MatchThirdPerson" match="((?:{ArabicSunLetters}|{ArabicMoonLettersNoVowels}|{ArabicLetterWaw}){ArabicShadda}?|{ArabicLetterAlef}|{ArabicLetterHamza}|{ArabicLetterAlefWithHamzaAbove}|{ArabicLetterWawWithHamzaAbove}|{ArabicLetterAlefWithHamzaBelow}|{ArabicLetterYehWithHamzaAbove})(?=$|\s+)"></pattern>
+		<pattern name="MatchFirstPerson" match="(?:((?:{ArabicMoonLettersNoVowels}|{ArabicLetterTeh}|{ArabicLetterTheh}|{ArabicLetterDal}|{ArabicLetterThal}|{ArabicLetterReh}|{ArabicLetterZain}|{ArabicLetterSeen}|{ArabicLetterSheen}|{ArabicLetterSad}|{ArabicLetterDad}|{ArabicLetterTah}|{ArabicLetterZah}|{ArabicLetterLam}){ArabicShadda}?|{ArabicLetterNoon}{ArabicShadda}|{ArabicLetterTehMarbuta}|{ArabicLetterHamza}|{ArabicLetterAlefWithHamzaAbove}|{ArabicLetterWawWithHamzaAbove}|{ArabicLetterAlefWithHamzaBelow}|{ArabicLetterYehWithHamzaAbove})|{ArabicFatha}|{ArabicDamma}|{ArabicSukun})(?=$|\s+)"></pattern>
+		<pattern name="MatchThirdPerson" match="((?:{ArabicSunLetters}|{ArabicMoonLettersNoVowels}|{ArabicLetterWaw}){ArabicShadda}?|{ArabicLetterAlef}|{ArabicLetterHamza}|{ArabicLetterAlefWithHamzaAbove}|{ArabicLetterWawWithHamzaAbove}|{ArabicLetterAlefWithHamzaBelow}|{ArabicLetterYehWithHamzaAbove}|{ArabicFatha}|{ArabicDamma}|{ArabicSukun})(?=$|\s+)"></pattern>
 	</arabicpatterns>
 	<arabicgroups>
 		<group name="ArabicFathaDammaKasra" text="{ArabicFatha} {ArabicDamma} {ArabicKasra}"></group>

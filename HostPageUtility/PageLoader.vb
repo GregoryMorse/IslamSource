@@ -190,9 +190,13 @@ Public Class Utility
                 Return GetConfigSetting("ipinfodbapikey")
             End Get
         End Property
+        Shared _Resources As KeyValuePair(Of String, String())()
         Public Shared ReadOnly Property Resources As KeyValuePair(Of String, String())()
             Get
-                Return Array.ConvertAll(GetConfigSetting("resources").Split(";"c), Function(Str As String) New KeyValuePair(Of String, String())(Str.Split("="c)(0), Str.Split("="c)(1).Split(","c)))
+                If _Resources Is Nothing Then
+                    _Resources = Array.ConvertAll(GetConfigSetting("resources").Split(";"c), Function(Str As String) New KeyValuePair(Of String, String())(Str.Split("="c)(0), Str.Split("="c)(1).Split(","c)))
+                End If
+                Return _Resources
             End Get
         End Property
         Public Shared ReadOnly Property FuncLibs As String()
@@ -3263,6 +3267,7 @@ Public Class RenderArray
         Dim OutArray As Object() = Output
         writer.Write(vbCrLf + BaseTabs)
         writer.WriteBeginTag("table")
+        writer.WriteAttribute("style", "table-layout: fixed;")
         'writer.WriteAttribute("id", "ri" + Prefix)
         writer.Write(HtmlTextWriter.TagRightChar)
         For Count = 2 To OutArray.Length - 1
