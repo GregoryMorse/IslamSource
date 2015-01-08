@@ -3189,7 +3189,7 @@ Public Class RenderArray
                 If Translit.Count = 0 Then Translit.Add(String.Empty)
                 If Translate.Count = 0 Then Translate.Add(String.Empty)
                 CType(Objects(0), ArrayList).Add("ri" + CStr(IIf(NestPrefix = String.Empty, ID, NestPrefix + "_")) + CStr(Count))
-                CType(Objects(1), ArrayList).Add(Utility.MakeJSIndexedObject(New String() {"title", "arabic", "translit", "translate", "children"}, New Array() {New String() {"'" + CStr(IIf(Items(Count).Type <> RenderTypes.eHeaderLeft And Items(Count).Type <> RenderTypes.eHeaderCenter And Items(Count).Type <> RenderTypes.eHeaderRight, Utility.EncodeJS(LastTitle), String.Empty)) + "'", Utility.MakeJSArray(CType(Arabic.ToArray(GetType(String)), String())), Utility.MakeJSArray(CType(Translit.ToArray(GetType(String)), String())), Utility.MakeJSArray(CType(Translate.ToArray(GetType(String)), String())), Utility.MakeJSIndexedObject(CType(CType(Children(0), ArrayList).ToArray(GetType(String)), String()), New Array() {CType(CType(Children(1), ArrayList).ToArray(GetType(String)), String())}, True)}}, True))
+                CType(Objects(1), ArrayList).Add(Utility.MakeJSIndexedObject(New String() {"title", "arabic", "translit", "translate", "children", "linkchild"}, New Array() {New String() {"'" + CStr(IIf(Items(Count).Type <> RenderTypes.eHeaderLeft And Items(Count).Type <> RenderTypes.eHeaderCenter And Items(Count).Type <> RenderTypes.eHeaderRight, Utility.EncodeJS(LastTitle), String.Empty)) + "'", Utility.MakeJSArray(CType(Arabic.ToArray(GetType(String)), String())), Utility.MakeJSArray(CType(Translit.ToArray(GetType(String)), String())), Utility.MakeJSArray(CType(Translate.ToArray(GetType(String)), String())), Utility.MakeJSIndexedObject(CType(CType(Children(0), ArrayList).ToArray(GetType(String)), String()), New Array() {CType(CType(Children(1), ArrayList).ToArray(GetType(String)), String())}, True), "true"}}, True))
             End If
         Next
         Return CType(Objects.ToArray(GetType(Object)), Object())
@@ -3203,16 +3203,16 @@ Public Class RenderArray
         Dim OutArray As Object() = Output
         If Output Is Nothing OrElse Output.Length = 0 Then Return JSFuncs.ToArray()
         JSFuncs.Add(CType(OutArray(0), String()))
-        For Count = 2 To OutArray.Length - 1
-            If TypeOf OutArray(Count) Is Object() Then
-                Dim InnerArray As Object() = DirectCast(OutArray(Count), Object())
-                For Index = 0 To InnerArray.Length - 1
-                    If TypeOf InnerArray(Index) Is Object() Then
-                        JSFuncs.AddRange(GetTableJSFunctions(DirectCast(InnerArray(Index), Object())))
-                    End If
-                Next
-            End If
-        Next
+        'For Count = 2 To OutArray.Length - 1
+        '    If TypeOf OutArray(Count) Is Object() Then
+        '        Dim InnerArray As Object() = DirectCast(OutArray(Count), Object())
+        '        For Index = 0 To InnerArray.Length - 1
+        '            If TypeOf InnerArray(Index) Is Object() Then
+        '                JSFuncs.AddRange(GetTableJSFunctions(DirectCast(InnerArray(Index), Object())))
+        '            End If
+        '        Next
+        '    End If
+        'Next
         Return JSFuncs.ToArray()
     End Function
     Public Shared Function MakeTableJSFunctions(ByRef Output As Array(), ID As String) As Array()
@@ -3253,7 +3253,7 @@ Public Class RenderArray
                     End If
                 Next
                 CType(Objects(0), ArrayList).Add("ri" + Prefix + CStr(Count))
-                CType(Objects(1), ArrayList).Add(Utility.MakeJSIndexedObject(New String() {"title", "arabic", "translit", "translate", "children"}, New Array() {New String() {"''", Utility.MakeJSArray(CType(Arabics.ToArray(GetType(String)), String())), Utility.MakeJSArray(CType(Translits.ToArray(GetType(String)), String())), Utility.MakeJSArray(CType(Translations.ToArray(GetType(String)), String())), Utility.MakeJSIndexedObject(CType(CType(Children(0), ArrayList).ToArray(GetType(String)), String()), New Array() {CType(CType(Children(1), ArrayList).ToArray(GetType(String)), String())}, True)}}, True))
+                CType(Objects(1), ArrayList).Add(Utility.MakeJSIndexedObject(New String() {"title", "arabic", "translit", "translate", "children", "linkchild"}, New Array() {New String() {"''", Utility.MakeJSArray(CType(Arabics.ToArray(GetType(String)), String())), Utility.MakeJSArray(CType(Translits.ToArray(GetType(String)), String())), Utility.MakeJSArray(CType(Translations.ToArray(GetType(String)), String())), Utility.MakeJSIndexedObject(CType(CType(Children(0), ArrayList).ToArray(GetType(String)), String()), New Array() {CType(CType(Children(1), ArrayList).ToArray(GetType(String)), String())}, True), "false"}}, True))
             End If
         Next
         Return Objects
