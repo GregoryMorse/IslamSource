@@ -1103,6 +1103,7 @@ Public Class Arabic
                         End If
                         If Build.Item(Key).ContainsKey(Str.Chars(If(Personal, 2, 1))) Then
                             Build.Item(Key).Item(Str.Chars(If(Personal, 2, 1)))(0) = If(Text = String.Empty, Build.Item(Key).Item(Str.Chars(If(Personal, 2, 1)))(0) + " " + CachedData.TranslateRegEx(Category(Count).Text, False), " " + ApplyTransform({Category(Count)}, Build.Item(Key).Item(Str.Chars(If(Personal, 2, 1)))(0)))
+                            Build.Item(Key).Item(Str.Chars(If(Personal, 2, 1)))(1) = Translat
                         Else
                             Build.Item(Key).Add(Str.Chars(If(Personal, 2, 1)), {If(Text = String.Empty, CachedData.TranslateRegEx(Category(Count).Text, False), ApplyTransform({Category(Count)}, Text)), Translat})
                         End If
@@ -1398,12 +1399,12 @@ Public Class Arabic
             Tables.Add(DeclineNoun(Category(Count), ID, SchemeType, Scheme, ColSels))
             If Array.IndexOf(ColSels, "deft") <> -1 Then
                 Dim Text As String = ApplyTransform(GetTransform("deft"), ApplyTransform(GetTransform("strip"), Arabic.TransliterateFromBuckwalter(Category(Count).Text)))
-                Tables.Add(DeclineNoun(New IslamData.GrammarSet.GrammarNoun With {.Text = Text, .Grammar = "def," + If(Array.FindIndex(Utility.DefaultValue(Category(Count).Grammar, String.Empty).Split(","c), Function(S As String) Array.IndexOf(S.Split("|"c), "fs") <> -1) <> -1, "fs", "ms"), .TranslationID = Category(Count).TranslationID}, ID, SchemeType, Scheme, ColSels))
+                Tables.Add(DeclineNoun(New IslamData.GrammarSet.GrammarNoun With {.Text = Text, .Grammar = "flex,def," + If(Array.FindIndex(Utility.DefaultValue(Category(Count).Grammar, String.Empty).Split(","c), Function(S As String) Array.IndexOf(S.Split("|"c), "fs") <> -1) <> -1, "fs", "ms") + If(Array.FindIndex(Utility.DefaultValue(Category(Count).Grammar, String.Empty).Split(","c), Function(S As String) Array.IndexOf(S.Split("|"c), "reladj") <> -1) <> -1, ",reladj", String.Empty), .TranslationID = Category(Count).TranslationID}, ID, SchemeType, Scheme, ColSels))
             End If
             If Array.IndexOf(ColSels, "fem") <> -1 Then
                 If Array.FindIndex(Utility.DefaultValue(Category(Count).Grammar, String.Empty).Split(","c), Function(S As String) Array.IndexOf(S.Split("|"c), "fs") <> -1) = -1 Then
                     Dim Text As String = ApplyTransform(GetTransform("fem"), ApplyTransform(GetTransform("strip"), Arabic.TransliterateFromBuckwalter(Category(Count).Text)))
-                    Tables.Add(NounDisplay({New IslamData.GrammarSet.GrammarNoun With {.Text = Text, .Grammar = "flex,indef,fs", .TranslationID = Category(Count).TranslationID}}, ID, SchemeType, Scheme, ColSels))
+                    Tables.Add(NounDisplay({New IslamData.GrammarSet.GrammarNoun With {.Text = Text, .Grammar = "flex,indef,fs" + If(Array.FindIndex(Utility.DefaultValue(Category(Count).Grammar, String.Empty).Split(","c), Function(S As String) Array.IndexOf(S.Split("|"c), "reladj") <> -1) <> -1, ",reladj", String.Empty), .TranslationID = Category(Count).TranslationID}}, ID, SchemeType, Scheme, ColSels))
                 Else
                     Tables.Add(String.Empty)
                 End If

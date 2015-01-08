@@ -161,13 +161,16 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<transform text="{ArabicKasra}" id="FlexibleDefinitePossessive" grammar="ms|fs|bp,flex,def|const,pos"></transform>
 			<transform text="{ArabicKasratan}" id="FlexibleIndefinitePossessive" grammar="ms|fs|bp,flex,indef,pos"></transform>
 			<transform text="{ArabicFatha}" id="FlexibleDefiniteAccusative" grammar="ms|fs|bp,flex,def|const,acc"></transform>
+			<transform from="{MatchAlefMaksura}" text="{ArabicLetterYeh}$1" id="AttachLetterEnding" grammar="ms|fs|bp,flex,indef,acc"></transform>
 			<transform text="{ArabicFathatan}{ArabicLetterAlef}" id="FlexibleIndefiniteAccusative" grammar="ms|bp,flex,indef,acc"></transform>
-			<transform from="{MatchAlefMaksura}" text="{ArabicLetterYeh}$1{ArabicFathatan}{ArabicLetterAlef}" id="SoundFeminineFlexibleIndefiniteAccusative" grammar="fs,flex,indef,acc"></transform>
-			<transform from="{MatchTehMarbuta}" text="{ArabicFathatan}" id="SoundFeminineFlexibleIndefiniteAccusative" grammar="fs,flex,indef,acc"></transform>
+			<transform from="({NotTehMarbuta})(?=$|\s+)" text="$1{ArabicFathatan}{ArabicLetterAlef}" id="SoundFeminineFlexibleIndefiniteAccusative" grammar="fs,flex,indef,acc"></transform>
+			<transform from="({MatchTehMarbuta})" text="$1{ArabicFathatan}" id="SoundFeminineFlexibleIndefiniteAccusative" grammar="fs,flex,indef,acc"></transform>
+			<transform from="{MatchAlefMaksura}" text="{ArabicLetterYeh}$1" id="AttachLetterEnding" grammar="md|fd,flex|pflex|long|defectpos|defectacc|invar,def|indef|const,nom|acc|pos"></transform>			
 			<transform text="{ArabicFatha}{ArabicLetterAlef}{ArabicLetterNoon}{ArabicKasra}" id="DualNominative" grammar="md|fd,flex|pflex,def|indef,nom"></transform>
 			<transform text="{ArabicFatha}{ArabicLetterYeh}{ArabicSukun}{ArabicLetterNoon}{ArabicKasra}" id="DualAccusativePossessive" grammar="md|fd,flex|pflex,def|indef,acc|pos"></transform>
 			<transform text="{ArabicFatha}{ArabicLetterAlef}" id="FlexibleConstantDualNominative" grammar="md|fd,flex|long,const,nom"></transform>
 			<transform text="{ArabicFatha}{ArabicLetterAlefMaksura}" id="FlexibleConstantDualAccusativePossessive" grammar="md|fd,flex|long,const,acc|pos"></transform>
+			<transform from="{MatchAlefMaksura}" text="{ArabicLetterYeh}$1" id="AttachLetterEnding" grammar="mp|fp,flex|pflex|long|defectpos|defectacc,def|indef|const,nom|acc|pos"></transform>			
 			<transform from="{MatchTehMarbuta}" text="{ArabicLetterAlef}{ArabicLetterTeh}{ArabicDamma}" id="SoundFeminineDefinitePluralNominative" grammar="fp,flex,def|const,nom"></transform>
 			<transform from="{MatchTehMarbuta}" text="{ArabicLetterAlef}{ArabicLetterTeh}{ArabicDammatan}" id="SoundFeminineIndefinitePluralNominative" grammar="fp,flex,indef,nom"></transform>
 			<transform from="{MatchTehMarbuta}" text="{ArabicLetterAlef}{ArabicLetterTeh}{ArabicKasra}" id="SoundFeminineDefinitePluralAccusativePossessive" grammar="fp,flex,def|const,acc|pos"></transform>
