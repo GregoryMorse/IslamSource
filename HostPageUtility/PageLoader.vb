@@ -834,7 +834,7 @@ End Class
 Public Class DiskCache
     Shared Function GetCacheDirectory() As String
         Dim Path As String
-        Path = IO.Path.Combine(HttpRuntime.CodegenDir, "DiskCache")
+        Path = IO.Path.Combine(If(Utility.IsDesktopApp(), IO.Directory.GetCurrentDirectory(), HttpRuntime.CodegenDir), "DiskCache")
         If Not IO.Directory.Exists(Path) Then IO.Directory.CreateDirectory(Path)
         Return Path
     End Function

@@ -29787,4 +29787,268 @@
   <data name="IslamInfo_WhileProstrating1WordByWord" xml:space="preserve">
     <value>While Prostrating1 Word By Word</value>
   </data>
+  <data name="IslamInfo_QuranicExegesis1" xml:space="preserve">
+    <value>Quranic Exegesis1</value>
+  </data>
+  <data name="IslamInfo_QuranicExegesis2" xml:space="preserve">
+    <value>Quranic Exegesis2</value>
+  </data>
+  <data name="IslamInfo_QuranicExegesis3" xml:space="preserve">
+    <value>Quranic Exegesis3</value>
+  </data>
+  <data name="IslamInfo_QuranicExegesis4" xml:space="preserve">
+    <value>Quranic Exegesis4</value>
+  </data>
+  <data name="IslamInfo_StripCaseEnding" xml:space="preserve">
+    <value>Strip Case Ending</value>
+  </data>
+  <data name="IslamInfo_AttachLetterEndingSingular" xml:space="preserve">
+    <value>Attach Letter Ending Singular</value>
+  </data>
+  <data name="IslamInfo_SoundFeminineFlexibleIndefiniteAccusativeNotNormalEnding" xml:space="preserve">
+    <value>Sound Feminine Flexible Indefinite Accusative Not Normal Ending</value>
+  </data>
+  <data name="IslamInfo_AttachLetterEndingDual" xml:space="preserve">
+    <value>Attach Letter Ending Dual</value>
+  </data>
+  <data name="IslamInfo_AttachLetterEndingPlural" xml:space="preserve">
+    <value>Attach Letter Ending Plural</value>
+  </data>
+  <data name="IslamInfo_MakePossessiveFlexiblePossessive" xml:space="preserve">
+    <value>Make Possessive Flexible Possessive</value>
+  </data>
+  <data name="IslamInfo_MakePossessiveDefectiveFromPossessive" xml:space="preserve">
+    <value>Make Possessive Defective From Possessive</value>
+  </data>
+  <data name="IslamInfo_MakePossessiveFromNominative" xml:space="preserve">
+    <value>Make Possessive From Nominative</value>
+  </data>
+  <data name="IslamInfo_MakePossessiveFromAccusative" xml:space="preserve">
+    <value>Make Possessive From Accusative</value>
+  </data>
+  <data name="IslamInfo_MakePossessiveDefectiveFromAccusative" xml:space="preserve">
+    <value>Make Possessive Defective From Accusative</value>
+  </data>
+  <data name="IslamInfo_MakeConstructForm" xml:space="preserve">
+    <value>Make Construct Form</value>
+  </data>
+  <data name="IslamInfo_MakeConstructFormYehEnding" xml:space="preserve">
+    <value>Make Construct Form Yeh Ending</value>
+  </data>
+  <data name="IslamInfo_DefiniteSunLetter" xml:space="preserve">
+    <value>Definite Sun Letter</value>
+  </data>
+  <data name="IslamInfo_DefiniteMoonLetter" xml:space="preserve">
+    <value>Definite Moon Letter</value>
+  </data>
+  <data name="IslamInfo_AttachPronoun" xml:space="preserve">
+    <value>Attach Pronoun</value>
+  </data>
+  <data name="IslamInfo_AttachPronounToFeminine" xml:space="preserve">
+    <value>Attach Pronoun To Feminine</value>
+  </data>
+  <data name="IslamInfo_MyOnYeh" xml:space="preserve">
+    <value>My On Yeh</value>
+  </data>
+  <data name="IslamInfo_MyOnWawDipthong" xml:space="preserve">
+    <value>My On Waw Dipthong</value>
+  </data>
+  <data name="IslamInfo_MyOnLongWaw" xml:space="preserve">
+    <value>My On Long Waw</value>
+  </data>
+  <data name="IslamInfo_MyOnLongAlef" xml:space="preserve">
+    <value>My On Long Alef</value>
+  </data>
+  <data name="IslamInfo_MyOnKasra" xml:space="preserve">
+    <value>My On Kasra</value>
+  </data>
+  <data name="IslamInfo_MyOnNoon" xml:space="preserve">
+    <value>My On Noon</value>
+  </data>
+  <data name="IslamInfo_MyOnVerb" xml:space="preserve">
+    <value>My On Verb</value>
+  </data>
+  <data name="IslamInfo_HisHimYehKasra" xml:space="preserve">
+    <value>His Him Yeh Kasra</value>
+  </data>
+  <data name="IslamInfo_TheirTwoYehKasra" xml:space="preserve">
+    <value>Their Two Yeh Kasra</value>
+  </data>
+  <data name="IslamInfo_TheirMasculineYehKasra" xml:space="preserve">
+    <value>Their Masculine Yeh Kasra</value>
+  </data>
+  <data name="IslamInfo_TheirFeminineYehKasra" xml:space="preserve">
+    <value>Their Feminine Yeh Kasra</value>
+  </data>
+  <data name="IslamInfo_TransmitionChainWithOnlyOneNarratorAtOneStage" xml:space="preserve">
+    <value>Transmition Chain With Only One Narrator At One Stage</value>
+  </data>
+  <data name="IslamInfo_WordsActionsApprovalDescriptionAttributedToCompanionOfProphet" xml:space="preserve">
+    <value>Words Actions Approval Description Attributed To Companion Of Prophet</value>
+  </data>
+  <data name="IslamInfo_InconsistencyDifferencesDisagreement" xml:space="preserve">
+    <value>Inconsistency Differences Disagreement</value>
+  </data>
+  <data name="IslamInfo_GrammarSyntax" xml:space="preserve">
+    <value>Grammar Syntax</value>
+  </data>
+  <data name="IslamInfo_GiveAndTakeSeasawStruggle" xml:space="preserve">
+    <value>Give And Take Seasaw Struggle</value>
+  </data>
+  <data name="IslamInfo_War" xml:space="preserve">
+    <value>War</value>
+  </data>
+  <data name="IslamInfo_ArabicPoetryMeterMovementSilentMovementSilentMovementMovementSilent" xml:space="preserve">
+    <value>Arabic Poetry Meter Movement Silent Movement Silent Movement Movement Silent</value>
+  </data>
+  <data name="IslamInfo_Poem" xml:space="preserve">
+    <value>Poem</value>
+  </data>
+  <data name="IslamInfo_Basra" xml:space="preserve">
+    <value>Basra</value>
+  </data>
+  <data name="IslamInfo_Baghdad" xml:space="preserve">
+    <value>Baghdad</value>
+  </data>
+  <data name="IslamInfo_RhetoricNonLiteralUsageOfWords" xml:space="preserve">
+    <value>Rhetoric Non Literal Usage Of Words</value>
+  </data>
+  <data name="IslamInfo_ParticleEdgeAspectDialect" xml:space="preserve">
+    <value>Particle Edge Aspect Dialect</value>
+  </data>
+  <data name="IslamInfo_EtymologyMorphologyWordPatterns" xml:space="preserve">
+    <value>Etymology Morphology Word Patterns</value>
+  </data>
+  <data name="IslamInfo_Derivation" xml:space="preserve">
+    <value>Derivation</value>
+  </data>
+  <data name="IslamInfo_GlottalStop" xml:space="preserve">
+    <value>Glottal Stop</value>
+  </data>
+  <data name="IslamInfo_Broom" xml:space="preserve">
+    <value>Broom</value>
+  </data>
+  <data name="IslamInfo_Trash" xml:space="preserve">
+    <value>Trash</value>
+  </data>
+  <data name="IslamInfo_LairOfWildAnimal" xml:space="preserve">
+    <value>Lair Of Wild Animal</value>
+  </data>
+  <data name="IslamInfo_Heaviness" xml:space="preserve">
+    <value>Heaviness</value>
+  </data>
+  <data name="IslamInfo_Lightness" xml:space="preserve">
+    <value>Lightness</value>
+  </data>
+  <data name="IslamInfo_Sweep" xml:space="preserve">
+    <value>Sweep</value>
+  </data>
+  <data name="IslamInfo_AnimalHidesInLair" xml:space="preserve">
+    <value>Animal Hides In Lair</value>
+  </data>
+  <data name="IslamInfo_SlaughterSacrifice" xml:space="preserve">
+    <value>Slaughter Sacrifice</value>
+  </data>
+  <data name="IslamInfo_Ferment" xml:space="preserve">
+    <value>Ferment</value>
+  </data>
+  <data name="IslamInfo_ShamWordByWord" xml:space="preserve">
+    <value>Sham Word By Word</value>
+  </data>
+  <data name="IslamInfo_Sham" xml:space="preserve">
+    <value>Sham</value>
+  </data>
+  <data name="IslamInfo_PausingHamzaWordByWord" xml:space="preserve">
+    <value>Pausing Hamza Word By Word</value>
+  </data>
+  <data name="IslamInfo_PausingHamza" xml:space="preserve">
+    <value>Pausing Hamza</value>
+  </data>
+  <data name="IslamInfo_GeneralAndSpecificWordByWord" xml:space="preserve">
+    <value>General And Specific Word By Word</value>
+  </data>
+  <data name="IslamInfo_GeneralAndSpecific" xml:space="preserve">
+    <value>General And Specific</value>
+  </data>
+  <data name="IslamInfo_SourcesOfAwarenessWordByWord" xml:space="preserve">
+    <value>Sources Of Awareness Word By Word</value>
+  </data>
+  <data name="IslamInfo_SourcesOfAwareness" xml:space="preserve">
+    <value>Sources Of Awareness</value>
+  </data>
+  <data name="IslamInfo_HypotheticalJurisprudenceWordByWord" xml:space="preserve">
+    <value>Hypothetical Jurisprudence Word By Word</value>
+  </data>
+  <data name="IslamInfo_HypotheticalJurisprudence" xml:space="preserve">
+    <value>Hypothetical Jurisprudence</value>
+  </data>
+  <data name="IslamInfo_AbuAmrBinAlAlaaWordByWord" xml:space="preserve">
+    <value>Abu Amr Bin Al Alaa Word By Word</value>
+  </data>
+  <data name="IslamInfo_AbuAmrBinAlAlaa" xml:space="preserve">
+    <value>Abu Amr Bin Al Alaa</value>
+  </data>
+  <data name="IslamInfo_IbnKatheerWordByWord" xml:space="preserve">
+    <value>Ibn Katheer Word By Word</value>
+  </data>
+  <data name="IslamInfo_IbnKatheer" xml:space="preserve">
+    <value>Ibn Katheer</value>
+  </data>
+  <data name="IslamInfo_NaafiWordByWord" xml:space="preserve">
+    <value>Naafi Word By Word</value>
+  </data>
+  <data name="IslamInfo_Naafi" xml:space="preserve">
+    <value>Naafi</value>
+  </data>
+  <data name="IslamInfo_IbnAamirWordByWord" xml:space="preserve">
+    <value>Ibn Aamir Word By Word</value>
+  </data>
+  <data name="IslamInfo_IbnAamir" xml:space="preserve">
+    <value>Ibn Aamir</value>
+  </data>
+  <data name="IslamInfo_AasimWordByWord" xml:space="preserve">
+    <value>Aasim Word By Word</value>
+  </data>
+  <data name="IslamInfo_Aasim" xml:space="preserve">
+    <value>Aasim</value>
+  </data>
+  <data name="IslamInfo_HamzaWordByWord" xml:space="preserve">
+    <value>Hamza Word By Word</value>
+  </data>
+  <data name="IslamInfo_AlKisaaeeWordByWord" xml:space="preserve">
+    <value>Al Kisaaee Word By Word</value>
+  </data>
+  <data name="IslamInfo_AlKisaaee" xml:space="preserve">
+    <value>Al Kisaaee</value>
+  </data>
+  <data name="IslamInfo_AbuJafarWordByWord" xml:space="preserve">
+    <value>Abu Jafar Word By Word</value>
+  </data>
+  <data name="IslamInfo_AbuJafar" xml:space="preserve">
+    <value>Abu Jafar</value>
+  </data>
+  <data name="IslamInfo_YaqoobWordByWord" xml:space="preserve">
+    <value>Yaqoob Word By Word</value>
+  </data>
+  <data name="IslamInfo_Yaqoob" xml:space="preserve">
+    <value>Yaqoob</value>
+  </data>
+  <data name="IslamInfo_KhalafWordByWord" xml:space="preserve">
+    <value>Khalaf Word By Word</value>
+  </data>
+  <data name="IslamInfo_Khalaf" xml:space="preserve">
+    <value>Khalaf</value>
+  </data>
+  <data name="IslamInfo_WarshWordByWord" xml:space="preserve">
+    <value>Warsh Word By Word</value>
+  </data>
+  <data name="IslamInfo_Warsh" xml:space="preserve">
+    <value>Warsh</value>
+  </data>
+  <data name="IslamInfo_HafsWordByWord" xml:space="preserve">
+    <value>Hafs Word By Word</value>
+  </data>
+  <data name="IslamInfo_Hafs" xml:space="preserve">
+    <value>Hafs</value>
+  </data>
 </root>
