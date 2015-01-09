@@ -1997,7 +1997,7 @@ class TanzilReader
 	                        }
 	                    }
 	                    if (!$noarabic) array_push($texts, new RenderText(RenderDisplayClass::eArabic, Arabic::TransliterateFromBuckwalter("=" . strval((int)(($chapter == 0 ? $baseverse : 1)) + $verse))));
-	                    if ($schemetype !== TranslitScheme::None) array_push($texts, new RenderText((TanzilReader::IsTranslationTextLTR($translationindex) ? RenderDisplayClass::eLTR : RenderDisplayClass::eRTL), "(" . strval((int)($chapter == 0 ? $baseverse : 1) + $verse) . ")"));
+	                    if ($translation != "") array_push($texts, new RenderText((TanzilReader::IsTranslationTextLTR($translationindex) ? RenderDisplayClass::eLTR : RenderDisplayClass::eRTL), "(" . strval((int)($chapter == 0 ? $baseverse : 1) + $verse) . ")"));
 	                    array_push($items, new RenderItem(RenderTypes::eText, $texts));
 	                    $texts = [];
 	                    //$text .= Arabic::TransliterateFromBuckwalter("(" . strval(($chapter == 0 ? $baseverse : 1) + $verse) . ") ")
