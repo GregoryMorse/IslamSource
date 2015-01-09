@@ -2975,70 +2975,71 @@ Public Class RenderArray
         Return New SizeF(_Width - MaxRight, Top)
     End Function
     Public Shared Function RenderDocXTable(Output As Object()) As String
-        Dim XML As String = "<w:tbl>"
+        Dim XML As New System.Text.StringBuilder
+        XML.Append("<w:tbl>")
         Dim Count As Integer
         Dim Index As Integer
         If Output Is Nothing OrElse Output.Length = 0 Then Return String.Empty
         Dim OutArray As Object() = Output
         For Count = 2 To OutArray.Length - 1
             If TypeOf OutArray(Count) Is Object() Then
-                XML += "<w:tr>"
+                XML.Append("<w:tr>")
                 Dim InnerArray As Object() = DirectCast(OutArray(Count), Object())
                 For Index = 0 To InnerArray.Length - 1
-                    XML += "<w:tc>"
+                    XML.Append("<w:tc>")
                     If TypeOf InnerArray(Index) Is Object() Then
-                        XML += RenderDocXTable(DirectCast(InnerArray(Index), Object())) + "<w:p/>"
+                        XML.Append(RenderDocXTable(DirectCast(InnerArray(Index), Object())) + "<w:p/>")
                     Else
-                        XML += "<w:p>"
+                        XML.Append("<w:p>")
                         If (CStr(DirectCast(OutArray(1), Object())(Index)) <> String.Empty) Then
                             If CStr(DirectCast(OutArray(1), Object())(Index)) = "arabic" Then
-                                XML += "<w:pPr><w:bidi/></w:pPr>"
+                                XML.Append("<w:pPr><w:bidi/></w:pPr>")
                             End If
                         End If
-                        XML += "<w:r><w:t>" + CStr(InnerArray(Index)).Replace(vbCrLf, "</w:t><w:br/><w:t>") + "</w:t></w:r>"
-                        XML += "</w:p>"
+                        XML.Append("<w:r><w:t>" + CStr(InnerArray(Index)).Replace(vbCrLf, "</w:t><w:br/><w:t>") + "</w:t></w:r>")
+                        XML.Append("</w:p>")
                     End If
-                    XML += "</w:tc>"
+                    XML.Append("</w:tc>")
                 Next
-                XML += "</w:tr>"
+                XML.Append("</w:tr>")
             End If
         Next
-        XML += "</w:tbl>"
-        Return XML
+        XML.Append("</w:tbl>")
+        Return XML.ToString()
     End Function
     Public Shared Function RenderDocX(Items As Collections.Generic.List(Of RenderItem), Bounds As Generic.List(Of Generic.List(Of Generic.List(Of LayoutInfo))), ByRef PageOffset As PointF, BaseOffset As PointF) As String
         Dim Count As Integer
         Dim Index As Integer
         Dim Base As Integer = 0
         Dim RowTop As Single = Single.NaN
-        Dim XML As String = String.Empty
+        Dim XML As New System.Text.StringBuilder
         For Count = 0 To Items.Count - 1
             If Count <> 0 AndAlso ((Items(Count).Type = RenderTypes.eHeaderLeft Or Items(Count - 1).Type = RenderTypes.eHeaderRight) Or (Items(Count).Type = RenderTypes.eHeaderCenter And Items(Count - 1).Type <> RenderTypes.eHeaderLeft) Or (Items(Count).Type <> RenderTypes.eHeaderRight And Items(Count - 1).Type = RenderTypes.eHeaderCenter)) Then
-                'XML += "</w:p><w:p>"
+                'XML.Append("</w:p><w:p>")
             End If
             If Count <> 0 AndAlso (Items(Count).Type = RenderTypes.eText And Items(Count - 1).Type <> RenderTypes.eText) Then Base = Count
             Dim bFirst As Boolean = True
-            XML += "<w:tbl><w:tblpPr w:horzAnchor=""margin"" w:vertAnchor=""margin"" w:tblpX=""" + CStr((Bounds(Count)(0)(0).Rect.X + PageOffset.X + BaseOffset.X) * 20) + """ w:tblpY=""" + CStr((Bounds(Count)(0)(0).Rect.Y + PageOffset.Y + BaseOffset.Y) * 20) + """/>"
-            XML += "<w:tblOverlap w:val=""never"" /><w:tblW w:w=""" + CStr(Bounds(Count)(0)(0).Rect.Width * 20) + """ w:type=""dxa""/>"
+            XML.Append("<w:tbl><w:tblpPr w:horzAnchor=""margin"" w:vertAnchor=""margin"" w:tblpX=""" + CStr((Bounds(Count)(0)(0).Rect.X + PageOffset.X + BaseOffset.X) * 20) + """ w:tblpY=""" + CStr((Bounds(Count)(0)(0).Rect.Y + PageOffset.Y + BaseOffset.Y) * 20) + """/>")
+            XML.Append("<w:tblOverlap w:val=""never"" /><w:tblW w:w=""" + CStr(Bounds(Count)(0)(0).Rect.Width * 20) + """ w:type=""dxa""/>")
             For Index = 0 To Items(Count).TextItems.Length - 1
                 If Bounds(Count)(Index).Count = 0 Then Continue For
-                XML += "<w:tr><w:tc>"
+                XML.Append("<w:tr><w:tc>")
                 If Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eNested Then
-                    XML += RenderDocX(CType(Items(Count).TextItems(Index).Text, Collections.Generic.List(Of RenderItem)), Bounds(Count)(Index)(0).Bounds, PageOffset, New PointF(Bounds(Count)(Index)(0).Rect.Location.X, Bounds(Count)(Index)(0).Rect.Location.Y)) + "<w:p/>"
+                    XML.Append(RenderDocX(CType(Items(Count).TextItems(Index).Text, Collections.Generic.List(Of RenderItem)), Bounds(Count)(Index)(0).Bounds, PageOffset, New PointF(Bounds(Count)(Index)(0).Rect.Location.X, Bounds(Count)(Index)(0).Rect.Location.Y)) + "<w:p/>")
                 ElseIf Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eList Then
-                    XML += RenderDocXTable(CType(Items(Count).TextItems(Index).Text, Object())) + "<w:p/>"
+                    XML.Append(RenderDocXTable(CType(Items(Count).TextItems(Index).Text, Object())) + "<w:p/>")
                 ElseIf Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.ePassThru Then
-                    XML += "<w:p><w:r>"
+                    XML.Append("<w:p><w:r>")
                     If Not bFirst Then
-                        XML += "<w:br/>"
+                        XML.Append("<w:br/>")
                         bFirst = False
                     End If
-                    XML += "<w:t>" + CStr(Items(Count).TextItems(Index).Text) + "</w:t>"
-                    XML += "</w:r></w:p>"
+                    XML.Append("<w:t>" + CStr(Items(Count).TextItems(Index).Text) + "</w:t>")
+                    XML.Append("</w:r></w:p>")
                 ElseIf Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eContinueStop Then
-                    XML += "<w:p/>"
+                    XML.Append("<w:p/>")
                 ElseIf Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eRanking Then
-                    XML += "<w:p/>"
+                    XML.Append("<w:p/>")
                 Else
                     If Bounds(Count)(Index).Count <> 0 AndAlso RowTop <> Bounds(Count)(Index)(0).Rect.Top Then
                         RowTop = Bounds(Count)(Index)(0).Rect.Top
@@ -3050,7 +3051,7 @@ Public Class RenderArray
                                 Dim TestNextCount As Integer
                                 For TestNextCount = 0 To Bounds(TestCount)(TestSubCount).Count - 1
                                     If Bounds(TestCount)(TestSubCount)(TestNextCount).Rect.Bottom + PageOffset.Y + BaseOffset.Y > 11.69F * 72.0F Then
-                                        XML += "<w:p><w:r><w:br w:type=""page""/></w:r></w:p>"
+                                        XML.Append("<w:p><w:r><w:br w:type=""page""/></w:r></w:p>")
                                         PageOffset.Y = -Bounds(Count)(Index)(0).Rect.Top - BaseOffset.Y
                                         Exit For
                                     End If
@@ -3060,27 +3061,27 @@ Public Class RenderArray
                             If TestSubCount <> Items(TestCount).TextItems.Length Then Exit For
                         Next
                     End If
-                    XML += "<w:p><w:r>"
+                    XML.Append("<w:p><w:r>")
                     If Not bFirst Then
-                        XML += "<w:br/>"
+                        XML.Append("<w:br/>")
                         bFirst = False
                     End If
                     If Array.IndexOf(Utility.FontList, Items(Count).TextItems(Index).Font) <> -1 Then
-                        'XML += "<w:drawing></w:drawing>"
+                        'XML.Append("<w:drawing></w:drawing>")
                         'writer.WriteAttribute("src", HttpUtility.HtmlEncode("host.aspx?Page=Image.gif&Image=UnicodeChar&Size=160&Char=" + Hex(AscW(CStr(Items(Count).TextItems(Index).Text)(0))) + "&Font=" + Items(Count).TextItems(Index).Font))
                     ElseIf Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eArabic Then
-                        XML += "<w:pPr><w:bidi/></w:pPr>"
+                        XML.Append("<w:pPr><w:bidi/></w:pPr>")
                     ElseIf Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eTransliteration Then
                     Else
                     End If
-                    If Array.IndexOf(Utility.FontList, Items(Count).TextItems(Index).Font) = -1 Then XML += "<w:t>" + CStr(Items(Count).TextItems(Index).Text).Replace(vbCrLf, "</w:t><w:br/><w:t>") + "</w:t>"
-                    XML += "</w:r></w:p>"
+                    If Array.IndexOf(Utility.FontList, Items(Count).TextItems(Index).Font) = -1 Then XML.Append("<w:t>" + CStr(Items(Count).TextItems(Index).Text).Replace(vbCrLf, "</w:t><w:br/><w:t>") + "</w:t>")
+                    XML.Append("</w:r></w:p>")
                 End If
-                XML += "</w:tc></w:tr>"
+                XML.Append("</w:tc></w:tr>")
             Next
-            XML += "</w:tbl>"
+            XML.Append("</w:tbl>")
         Next
-        Return XML
+        Return XML.ToString()
     End Function
     Public Shared Sub OutputDocX(Stream As IO.Stream, RenderItems As List(Of RenderItem))
         'A4 the international standard and default 210 mm × 297 mm, 8.27 in × 11.69 in
@@ -3100,12 +3101,14 @@ Public Class RenderArray
         DrawFont.Dispose()
         FontFace.Dispose()
         Factory.Dispose()
-        Dim XML As String = "<?xml version=""1.0"" encoding=""UTF-8"" standalone=""yes""?><w:document xmlns:w=""http://schemas.openxmlformats.org/wordprocessingml/2006/main""><w:body>"
+        Dim XML As New System.Text.StringBuilder
+        XML.Append("<?xml version=""1.0"" encoding=""UTF-8"" standalone=""yes""?><w:document xmlns:w=""http://schemas.openxmlformats.org/wordprocessingml/2006/main""><w:body>")
         Dim PageOffset As New PointF(0, 0)
-        XML += RenderDocX(RenderItems, _Bounds, PageOffset, New PointF(0, 0)) + "</w:body></w:document>"
+        XML.Append(RenderDocX(RenderItems, _Bounds, PageOffset, New PointF(0, 0)))
+        XML.Append("</w:body></w:document>")
         Dim Doc As DocumentFormat.OpenXml.Packaging.WordprocessingDocument = DocumentFormat.OpenXml.Packaging.WordprocessingDocument.Create(Stream, DocumentFormat.OpenXml.WordprocessingDocumentType.Document)
         Dim DocStream As IO.Stream = Doc.AddMainDocumentPart().GetStream
-        Dim Bytes As Byte() = System.Text.Encoding.UTF8.GetBytes(XML)
+        Dim Bytes As Byte() = System.Text.Encoding.UTF8.GetBytes(XML.ToString())
         DocStream.Write(Bytes, 0, Bytes.Length)
         Doc.Close()
     End Sub
@@ -3198,7 +3201,7 @@ Public Class RenderArray
         Return New String() {String.Empty, String.Empty, GetInitJS(ID, Items), GetCopyClipboardJS(), GetSetClipboardJS(), GetStarRatingJS(), GetContinueStopJS()}
     End Function
     Public Shared Function GetTableJSFunctions(ByVal Output As Object()) As String()()
-        Dim Count As Integer
+        'Dim Count As Integer
         Dim JSFuncs As New List(Of String())
         Dim OutArray As Object() = Output
         If Output Is Nothing OrElse Output.Length = 0 Then Return JSFuncs.ToArray()
