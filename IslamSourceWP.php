@@ -1538,7 +1538,7 @@ class Arabic
                     $romanString .= Arabic::GetSchemeSpecialValue(mb_substr($arabicString, $count), Arabic::GetSchemeSpecialFromMatch(mb_substr($arabicString, $count), false), $scheme == "" ? "ExtendedBuckwalter" : $scheme);
                     preg_match("/" . CachedData::ArabicSpecialLetters()[Arabic::GetSchemeSpecialFromMatch(mb_substr($arabicString, $count), false)] . "/u", mb_substr($arabicString, $count), $matches);
                     $count += mb_strlen($matches[0]) - 1;
-                } elseif (Arabic::GetSchemeLongVowel(mb_substr($arabicString, $count, 2), false) !== -1) {
+                } elseif (mb_strlen($arabicString) - $count > 1 && Arabic::GetSchemeLongVowel(mb_substr($arabicString, $count, 2), false) !== -1) {
                     $romanString .= Arabic::GetSchemeLongVowelFromString(mb_substr($arabicString, $count, 2), $scheme == "" ? "ExtendedBuckwalter" : $scheme);
                     $count++;
                 } elseif (array_key_exists(mb_substr($arabicString, $count, 1), Arabic::GetSortedLetters($scheme))) {
@@ -1762,7 +1762,11 @@ class Arabic
             if ((int)CachedData::RomanizationRules()[$count]->attributes()["rulefunc"] == RuleFuncs::eNone) {
                 $arabicString = preg_replace("/" . CachedData::RomanizationRules()[$count]->attributes()["match"] . "/u", CachedData::RomanizationRules()[$count]->attributes()["evaluator"], $arabicString);
             } else {
-                $arabicString = preg_replace_callback("/" . CachedData::RomanizationRules()[$count]->attributes()["match"] . "/u", function($matches) use($count, $scheme) { $func = Arabic::RuleFunctions()[(int)CachedData::RomanizationRules()[$count]->attributes()["rulefunc"] - 1]; return $func(Arabic::MatchResult(CachedData::RomanizationRules()[$count]->attributes()["evaluator"], mb_strpos($matches[0], CachedData::RomanizationRules()[$count]->attributes()["match"]), CachedData::RomanizationRules()[$count]->attributes()["match"], $matches), $scheme)[0]; }, $arabicString);
+				$func = Arabic::RuleFunctions()[(int)CachedData::RomanizationRules()[$count]->attributes()["rulefunc"] - 1];
+            	preg_match_all("/" . CachedData::RomanizationRules()[$count]->attributes()["match"] . "/u", $arabicString, $matches, PREG_OFFSET_CAPTURE | PREG_SET_ORDER);
+            	for ($matchIndex = count($matches) - 1; $matchIndex >= 0; $matchIndex--) {
+            		$arabicString = mb_substr($arabicString, 0, mb_strlen(substr($arabicString, 0, $matches[$matchIndex][0][1]))) . $func(Arabic::MatchResult(CachedData::RomanizationRules()[$count]->attributes()["evaluator"], mb_strlen(substr($arabicString, 0, $matches[$matchIndex][0][1])), $arabicString, array_map(function ($it) { return $it[0]; }, $matches[$matchIndex])), $scheme)[0] . mb_substr($arabicString, mb_strlen(substr($arabicString, 0, $matches[$matchIndex][0][1])) + mb_strlen($matches[$matchIndex][$subCount + 1][0]));
+				}
             }
         }
 
