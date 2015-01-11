@@ -1534,17 +1534,15 @@ class Arabic
                     $romanString .= mb_substr($arabicString, $count, 1);
                 }
             } else {
-                if (array_key_exists(mb_substr($arabicString, $count, 1), Arabic::GetSortedLetters($scheme))) {
-                    if (Arabic::GetSchemeSpecialFromMatch(mb_substr($arabicString, $count), false) !== -1) {
-                        $romanString .= Arabic::GetSchemeSpecialValue(mb_substr($arabicString, $count), Arabic::GetSchemeSpecialFromMatch(mb_substr($arabicString, $count), false), $scheme == "" ? "ExtendedBuckwalter" : $scheme);
-                        preg_match("/" . CachedData::ArabicSpecialLetters()[Arabic::GetSchemeSpecialFromMatch(mb_substr($arabicString, $count), false)] . "/u", mb_substr($arabicString, $count), $matches);
-                        $count += mb_strlen($matches[0]) - 1;
-                    } elseif (Arabic::GetSchemeLongVowel(mb_substr($arabicString, $count), false) !== -1) {
-                        $romanString .= Arabic::GetSchemeLongVowelFromString(mb_substr($arabicString, $count), $scheme == "" ? "ExtendedBuckwalter" : $scheme);
-                        $count++;
-                    } else {
-                        $romanString .= Arabic::GetSchemeValueFromSymbol(ArabicData::ArabicLetters()[ArabicData::FindLetterBySymbol(mb_substr($arabicString, $count, 1))], $scheme == "" ? "ExtendedBuckwalter" : $scheme);
-                    }
+                if (Arabic::GetSchemeSpecialFromMatch(mb_substr($arabicString, $count), false) !== -1) {
+                    $romanString .= Arabic::GetSchemeSpecialValue(mb_substr($arabicString, $count), Arabic::GetSchemeSpecialFromMatch(mb_substr($arabicString, $count), false), $scheme == "" ? "ExtendedBuckwalter" : $scheme);
+                    preg_match("/" . CachedData::ArabicSpecialLetters()[Arabic::GetSchemeSpecialFromMatch(mb_substr($arabicString, $count), false)] . "/u", mb_substr($arabicString, $count), $matches);
+                    $count += mb_strlen($matches[0]) - 1;
+                } elseif (Arabic::GetSchemeLongVowel(mb_substr($arabicString, $count, 2), false) !== -1) {
+                    $romanString .= Arabic::GetSchemeLongVowelFromString(mb_substr($arabicString, $count, 2), $scheme == "" ? "ExtendedBuckwalter" : $scheme);
+                    $count++;
+                } elseif (array_key_exists(mb_substr($arabicString, $count, 1), Arabic::GetSortedLetters($scheme))) {
+                    $romanString .= Arabic::GetSchemeValueFromSymbol(ArabicData::ArabicLetters()[ArabicData::FindLetterBySymbol(mb_substr($arabicString, $count, 1))], $scheme == "" ? "ExtendedBuckwalter" : $scheme);
                 } else {
                     $romanString .= mb_substr($arabicString, $count, 1);
                 }
