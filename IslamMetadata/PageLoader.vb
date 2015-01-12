@@ -2899,14 +2899,7 @@ Public Class CachedData
         Return System.Text.RegularExpressions.Regex.Replace(Value, "\{(.*?)\}",
             Function(Match As System.Text.RegularExpressions.Match)
                 If bAll Then
-                    If Match.Groups(1).Value = "CertainStopPattern" Then Return CertainStopPattern
-                    If Match.Groups(1).Value = "OptionalStopPattern" Then Return OptionalStopPattern
-                    If Match.Groups(1).Value = "OptionalStopPatternNotEndOfAyah" Then Return OptionalStopPatternNotEndOfAyah
-                    If Match.Groups(1).Value = "CertainNotStopPattern" Then Return CertainNotStopPattern
-                    If Match.Groups(1).Value = "OptionalNotStopPattern" Then Return OptionalNotStopPattern
-                    If Match.Groups(1).Value = "TehMarbutaStopRule" Then Return TehMarbutaStopRule
-                    If Match.Groups(1).Value = "TehMarbutaContinueRule" Then Return TehMarbutaContinueRule
-                    If GetPattern(Match.Groups(1).Value) <> "" Then Return GetPattern(Match.Groups(1).Value)
+                    If GetPattern(Match.Groups(1).Value) <> String.Empty Then Return GetPattern(Match.Groups(1).Value)
 
                     If Match.Groups(1).Value = "ArabicUniqueLetters" Then Return ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicUniqueLetters, Function(Str As String) Arabic.TransliterateFromBuckwalter(Str)))
                     If Match.Groups(1).Value = "ArabicNumbers" Then Return ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicNumbers, Function(Str As String) Arabic.TransliterateFromBuckwalter(Str)))
