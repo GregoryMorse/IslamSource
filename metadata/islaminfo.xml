@@ -3441,14 +3441,98 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<word text="\{word:ConsecratedMonth1,Month2\}\{phrase:Month3,Month4,Month5,Month6\}\{word:Month7,Month8,Month9,Month10\}\{phrase:Month11,Month12\}" id="Months"></word>
 			<word text="\{phrase:DayOfWeek1,DayOfWeek2,DayOfWeek3,DayOfWeek4,DayOfWeek5,DayOfWeek6,DayOfWeek7\}" id="DaysOfWeek"></word>
 			<word text="\{word:PrayTime1,PrayTime2,PrayTime3,PrayTime4,PrayTime5,PrayTime6,PrayTime7\}\{phrase:PrayTime8,PrayTime9\}" id="PrayerTimes"></word>
+			<category title="PrayerTypes">
+				<category title="Obligatory">
+					<attr id="PrescribedTime" data="Dawn=2,Noon=4,Afternoon=4,Sunset=3,Night=4"></attr>
+					<attr id="Friday" data="Noon=2"></attr>
+					<attr id="Funeral" data="UponDeath=0"></attr>
+					<attr id="Fulfilling" data="AfterRealizationDawn=2,AfterRealizationNoon=4,AfterRealizationAfternoon=4,AfterRealizationSunset=3,AfterRealizationNight=4"></attr>
+					<attr id="StateOfRitualConsecrationForPilgrimage" data="UponIntention=2"></attr>
+				</category>
+				<category title="TraditionObligatory">
+					<attr id="PrescribedTime" data="-Dawn=2,-Noon=4,+Noon=2,+Sunset=2,+Night=2"></attr>
+					<attr id="Friday" data="+Noon=4"></attr>
+				</category>
+				<category title="Necessary">
+					<attr id="Odd" data="+Night=1|3|5|7|9|11"></attr>
+					<attr id="CelebrationDay" data="2"></attr>
+				</category>
+				<category title="TraditionVoluntary">
+					<attr id="PrescribedTime" data="-Noon=2,+Noon=4,-Afternoon=2|4,-Sunset=2,-Night=2|4"></attr>
+					<attr id="Friday" data="-Noon=2*,+Noon=2"></attr>
+				</category>
+				<category title="Tradition">
+					<attr id="Guidance" data="2"></attr>
+					<attr id="LateNight" data="2*"></attr>
+					<attr id="RainForDraught" data="2"></attr>
+					<attr id="SolarEclipse" data="2"></attr>
+					<attr id="LunarEclipse" data="2"></attr>
+					<attr id="FastingMonthPrayer" data="8|12|20"></attr>
+				</category>
+				<category title="Supererogatory">
+					<attr id="Sunrise" data="2"></attr>
+					<attr id="MorningLight" data="2></attr>
+					<attr id="Victory" data="2"></attr>
+					<attr id="OftReturning" data="2"></attr>
+					<attr id="EnteringMosque" data="2"></attr>
+					<attr id="Fear" data="2"></attr>
+					<attr id="Travel" data="2"></attr>
+				</category>
+			</category>
+			<category title="Jurisprudence">
+				<category title="Permissible">
+					<category title="Obligatory">
+						<category title="ObligationOfTheSelf"></category>
+						<category title="ObligationOfSufficiency"></category>
+					</category>
+					<category title="EssentialNecessary"></category>
+					<category title="Tradition">
+						<category title="TraditionObligatory"></category>
+						<category title="TraditionVoluntary"></category>
+					</category>
+					<category title="Recommended"></category>
+					<category title="Supererogatory"></category>
+					<category title="Neutral"></category>
+					<category title="Disliked"></category>
+				</category>
+				<category title="Forbidden"></category>
+			</category>
+			<category title="Fasting">
+				<category title="Obligatory">
+					<category title="Month9"></category>
+				</category>
+				<category title="TraditionObligatory">
+					<category title="MondayAndThursday"></category>
+					<category title="FastingMiddleLunarDays"></category>
+					<category title="FastingAfterFastingMonth"></category>
+					<category title="TheDayOfArafah"></category>
+					<category title="TheDayOfAshura"></category>
+					<category title="FastingBeforeFastingMonth"></category>
+					<category title="FastingBeginningPilgrimageMonth"></category>
+				</category>
+			</category>
+			<category title="Charity">
+				<attr id="Camels" data="5-24=Camels/5=Sheep,25-35=1=1YearOldSheCamel,25-35=1=1YearOldSheCamel|2YearOldMaleCamel,36-45=1|2YearOldSheCamel,46-60=1=3YearOldSheCamel,61-75=1=4YearOldSheCamel,76-90=2=2YearOldSheCamel,91-120=2=3YearOldSheCamel,&gt;120=Camels/50=3YearOldSheCamel+(Camels%50)/40=2YearOldSheCamel"></attr>
+				<attr title="Cows" data="30-39=1=MaleCalf|FemaleCalf,&gt;39=Cows/40=2YearOldCow+(Cows%40)/30=MaleCalf|FemaleCalf"></attr>
+				<attr title="Sheep" data="40-120=1=6MonthOldSheep,121-200=2=Sheep,201-400=3=Sheep,&gt;400=Sheep/100=Sheep"></attr>
+				<attr title="Goats" data="40-120=1=1YearOldGoat,121-200=2=Goat,201-400=3=Goat,&gt;400=Goats/100=Goat"></attr>
+				<attr title="GrainsWateredByNaturalSource" data="5 130320g=10%=HarvestYield"></attr>
+				<attr title="GrainsWateredByExertion" data="5 130320g=5%=HarvestYield"></attr>
+				<attr title="Honey" data="30 2172g=10%=HarvestYield"></attr>
+				<attr title="Minerals" data="20Dinars|200Dirhams=2.5%=HarvestYield"></attr>
+				<attr title="BuriedWealth" data="Any=20%=Recovery"></attr>
+				<attr title="Gold" data="20Dinars=2.5%=Gold"></attr>
+				<attr title="Silver" data="200Dirhams=2.5%=Silver"></attr>
+				<attr title="TradeGoods" data="20Dinars|200Dirhams=2.5%=Goods"></attr>
+				<attr title="ProfitRevenue" data="20Dinars|200Dirhams=2.5%=Profits"></attr>
+				<attr title="SumsOfMutualLandPartnership" data="Sums=ItemTypePercent=ItemTypeUnit"></attr>
+				<attr title="FastBreaking" data="1Muslim|2172g|StapleFood"></attr>
+			</category>
 			<!--
-			<word text="\{word:Permissible(Obligatory(ObligationOfTheSelf,ObligationOfSufficiency),EssentialNecessary,Tradition(TraditionObligatory,TraditionVoluntary),Recommended,Supererogatory,Neutral,Disliked),Forbidden\}" id="Jurisprudence"></word>
-			<word text="\{word:Obligatory(Month9),TraditionObligatory(MondayAndThursday,FastingMiddleLunarDays,FastingAfterFastingMonth,TheDayOfArafah,TheDayOfAshura,FastingBeforeFastingMonth,FastingBeginningPilgrimageMonth)\}" id="Fasting"></word>
-			<word text="\{word:Obligatory(PrescribedTime(Dawn=2,Noon=4,Afternoon=4,Sunset=3,Night=4),Friday(Noon=2),Funeral(0),Fulfilling(2|3|4),StateOfRitualConsecrationForPilgrimage(2)),TraditionObligatory(PrescribedTime(-Dawn=2,-Noon=4,+Noon=2,+Sunset=2,+Night=2),Friday(+Noon=4)),Necessary(Odd(+Night=1|3|5|7|9|11),CelebrationDay(2)),TraditionVoluntary(PrescribedTime(-Noon=2,+Noon=4,-Afternoon=2|4,-Sunset=2,-Night=2|4),Friday(-Noon=2*,+Noon=2)),Tradition(Guidance(2),LateNight(2*),RainForDraught(2),SolarEclipse(2),LunarEclipse(2),FastingMonthPrayer(8|12|20)),Supererogatory(Sunrise(2),MorningLight(2),Victory(2),OftReturning(2),EnteringMosque(2),Fear(2),Travel(2))\}" id="PrayerTypes"></word>
 			Zakah formula and nisab
 			Condition | # of item (division rounds down) | type of item
 
-Camels 5-25 | Camels / 5 | Sheep
+Camels 5-24 | Camels / 5 | Sheep
 Camels 25-35 | 1 | 1 year old she-camel or 2 year old male camel
 Camels 36-45 | 1 | 2 year old she-camel
 Camels 46-60 | 1 | 3 year old she-camel
