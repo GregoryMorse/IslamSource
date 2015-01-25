@@ -3455,9 +3455,9 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<word text="\{Allah\}\{Muhammad\}\{Ali\}\{Fatima\}\{HADI\}\{RIDAA\}\{Hasan\}\{Hussein\}\{BAAQIR\}\{GuidedOne\}\{ASKAREE\}\{JAWAAD\}\{KADHIM\}\{SAADIQ\}\{Sajjad\}" id="Names"></word>
 		</category>
 		<category title="QuranGroups">
-			<word text="Muslim Faithful Optimizer GodFearer Prophet Messenger Righteous RighteousPerson Worshipper UnknownSourceNarrator TruthfulPerson GoodPerson WitnessPresentMartyr Patient Fighter Certain Successful Faithful" id="Good"></word>
-			<word text="Disbeliever Polythiest Hypocrite Criminal Cheater Oppressor OpenSinner Envier WickedPerson EvilPerson" id="Bad"></word>
-			<word text="ChiefsLeaders ProtectingFriendGuardian CloseFriendConsort Slave Orphan PoorPerson MenPeople ManPersonHumanBeing People Community Generation Driver Blower Withdrawer" id="Neutral"></word>
+			<word text="\{noun:Muslim,Faithful,Optimizer,GodFearer,Prophet,Messenger,Righteous,RighteousPerson,Worshipper,UnknownSourceNarrator,TruthfulPerson,GoodPerson,WitnessPresentMartyr,Patient,Fighter,Certain,Successful,Faithful\}" id="Good"></word>
+			<word text="\{noun:Disbeliever,Polythiest,Hypocrite,Criminal,Cheater,Oppressor,OpenSinner,Envier,WickedPerson,EvilPerson\}" id="Bad"></word>
+			<word text="\{noun:ChiefsLeaders,ProtectingFriendGuardian,CloseFriendConsort,Slave,Orphan,PoorPerson,MenPeople,ManPersonHumanBeing,People,Community,Generation,Driver,Blower,Withdrawer\}" id="Neutral"></word>
 		</category>
 		<category title="Groupings">
 			<word text="\{word:ConsecratedMonth1,Month2\}\{phrase:Month3,Month4,Month5,Month6\}\{word:Month7,Month8,Month9,Month10\}\{phrase:Month11,Month12\}" id="Months"></word>
@@ -3493,7 +3493,7 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 				</category>
 				<category title="Supererogatory">
 					<attr id="Sunrise" data="2"></attr>
-					<attr id="MorningLight" data="2></attr>
+					<attr id="MorningLight" data="2"></attr>
 					<attr id="Victory" data="2"></attr>
 					<attr id="OftReturning" data="2"></attr>
 					<attr id="EnteringMosque" data="2"></attr>
