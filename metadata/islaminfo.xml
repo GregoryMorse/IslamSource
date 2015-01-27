@@ -2916,17 +2916,20 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 		<word text="\{13:28:8-12\}" id="InRemembranceOfAllahHeartsFindPeace"></word>
 		<word text="{ll~ahum~a laA saholAF &lt;il~aA maA jaEalotahN saholAF wa&gt;anta tajoEala {loHazana &lt;i*aA $i}ta saholAF" id="WhenSomethingIsDifficult"></word>
 
-		<word text="muHam~adN {bonu Eabodi {ll~ahi {boni Eabodi {lomuT~alibi {boni haA$im‎K" nickname="&gt;abuw {loqaAsim" id="MuhammadBinAbdullahBinAbduAlMuttalib"></word>
-		<word text="qaAsimN {bonu muHam~adK" nickname="{lT~aAhiru" id="QaasimBinMuhammad"></word>
-		<word text="Eabodu {ll~ahi {bonu muHam~adK" nickname="{lTay~ibu" id="AbdullahBinMuhammad"></word>
-		<word text="zayonabu {bonatu muHam~adK" id="ZaynabBintiMuhammad"></word>
-		<word text="ruqay~apu {bonatu muHam~adK" id="RuqayyahBintiMuhammad"></word>
-		<word text="&gt;um~N kulovumN {bonatu muHam~adK" id="UmmKulthumBintiMuhammad"></word>
-		<word text="faATimapu {bonatu muHam~adK" id="FatimaBintiMuhammad"></word>
+		<marriage husband="MuhammadBinAbdullahBinAbduAlMuttalib" wife="KhadijahBintKhuwaylid"></marriage>
+		<word text="muHam~adN {bonu Eabodi {ll~ahi {boni Eabodi {lomuT~alibi {boni haA$im‎K" nickname="&gt;abuw {loqaAsim" father="AbdullahBinAbduAlMuttalib" mother="AaminaBintiWahb" id="MuhammadBinAbdullahBinAbduAlMuttalib"></word>
+		<word text="qaAsimN {bonu muHam~adK" nickname="{lT~aAhiru" father="MuhammadBinAbdullahBinAbduAlMuttalib" mother="KhadijahBintKhuwaylid" id="QaasimBinMuhammad"></word>
+		<word text="Eabodu {ll~ahi {bonu muHam~adK" nickname="{lTay~ibu" father="MuhammadBinAbdullahBinAbduAlMuttalib" mother="KhadijahBintKhuwaylid" id="AbdullahBinMuhammad"></word>
+		<word text="zayonabu {bonatu muHam~adK" father="MuhammadBinAbdullahBinAbduAlMuttalib" mother="KhadijahBintKhuwaylid" id="ZaynabBintiMuhammad"></word>
+		<word text="ruqay~apu {bonatu muHam~adK" father="MuhammadBinAbdullahBinAbduAlMuttalib" mother="KhadijahBintKhuwaylid" id="RuqayyahBintiMuhammad"></word>
+		<word text="&gt;um~N kulovumN {bonatu muHam~adK" father="MuhammadBinAbdullahBinAbduAlMuttalib" mother="KhadijahBintKhuwaylid" id="UmmKulthumBintiMuhammad"></word>
+		<word text="faATimapu {bonatu muHam~adK" father="MuhammadBinAbdullahBinAbduAlMuttalib" mother="KhadijahBintKhuwaylid" id="FatimaBintiMuhammad"></word>
 		<word text="HamozapN {bonu Eabodi {lomuT~alibi" id="HamzaBinAbduAlMuttalib"></word>
 		<word text="{loEabaAsu {bonu Eabodi {lomuT~alibi" id="AlAbbasBinAbduAlMuttalib"></word>
 		<word text="Eabodu {ll~ahi {bonu Eabodi {lomuT~alibi" id="AbdullahBinAbduAlMuttalib"></word>
 		<word text="&apos;aAminapu {bonatu wahobK" id="AaminaBintiWahb"></word>
+		<word text="vuwayobapu" id="Thuwaybah"></word>
+		<word text="Halimapu {bonatu &gt;abiy *uayobi Eabodu {ll~ahi {boni {loHarivi {boni $agonaA {boni jabiri {boni razami {boni nasira {boni fasayaA {boni naSori {boni SaEadi {boni bakori {boni Hawazini {boni mansuwri {boni &lt;ikorimaA {boni xafosapi {boni qayosi {boni &lt;iylani {losaEodiyapu" id="HalimahAlSadiyah"></word>
 		<word text="{bonu Eabodi {lomuT~alibi" nickname="&gt;abuw TaAlibN" id="AbuTalib"></word>
 		<word text="{bonu Eabodi {lomuT~alibi" nickname="&gt;abuw lahabN" id="AbuLahab"></word>
 		<word text="sumay~apu {bonatu xayaAT~K" id="SumayyaBintiKhayatt"></word>

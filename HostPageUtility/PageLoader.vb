@@ -3019,8 +3019,8 @@ Public Class RenderArray
             End If
             If Count <> 0 AndAlso (Items(Count).Type = RenderTypes.eText And Items(Count - 1).Type <> RenderTypes.eText) Then Base = Count
             Dim bFirst As Boolean = True
-            XML.Append("<w:tbl><w:tblpPr w:horzAnchor=""margin"" w:vertAnchor=""margin"" w:tblpX=""" + CStr((Bounds(Count)(0)(0).Rect.X + PageOffset.X + BaseOffset.X) * 20) + """ w:tblpY=""" + CStr((Bounds(Count)(0)(0).Rect.Y + PageOffset.Y + BaseOffset.Y) * 20) + """/>")
-            XML.Append("<w:tblOverlap w:val=""never"" /><w:tblW w:w=""" + CStr(Bounds(Count)(0)(0).Rect.Width * 20) + """ w:type=""dxa""/>")
+            XML.Append("<w:tbl><w:tblPr><w:tblpPr w:horzAnchor=""text"" w:vertAnchor=""text"" w:tblpX=""" + CStr((Bounds(Count)(0)(0).Rect.X + PageOffset.X + BaseOffset.X) * 20.0F) + """ w:tblpY=""" + CStr((Bounds(Count)(0)(0).Rect.Y + PageOffset.Y + BaseOffset.Y) * 20.0F) + """/>")
+            XML.Append("<w:tblOverlap w:val=""never"" /><w:tblW w:w=""" + CStr(Bounds(Count)(0)(0).Rect.Width * 20.0F) + """ w:type=""dxa""/></w:tblPr>")
             For Index = 0 To Items(Count).TextItems.Length - 1
                 If Bounds(Count)(Index).Count = 0 Then Continue For
                 XML.Append("<w:tr><w:tc>")
@@ -3050,7 +3050,7 @@ Public Class RenderArray
                                 If Items(TestCount).TextItems(TestSubCount).DisplayClass = RenderDisplayClass.eNested Then Exit For
                                 Dim TestNextCount As Integer
                                 For TestNextCount = 0 To Bounds(TestCount)(TestSubCount).Count - 1
-                                    If Bounds(TestCount)(TestSubCount)(TestNextCount).Rect.Bottom + PageOffset.Y + BaseOffset.Y > 11.69F * 72.0F Then
+                                    If Bounds(TestCount)(TestSubCount)(TestNextCount).Rect.Bottom + PageOffset.Y + BaseOffset.Y > (11.69F - 1.0F - 1.0F) * 72.0F Then
                                         XML.Append("<w:p><w:r><w:br w:type=""page""/></w:r></w:p>")
                                         PageOffset.Y = -Bounds(Count)(Index)(0).Rect.Top - BaseOffset.Y
                                         Exit For
@@ -3097,7 +3097,7 @@ Public Class RenderArray
         For Count = 0 To SupportedGlyphs.Length - 1
             If SupportedGlyphs(Count) = 0 Then Forms(Count) = ChrW(0)
         Next
-        GetLayout(RenderItems, 8.27F * 1440.0F, _Bounds, GetTextWidthFromDraw(DrawFont, Forms))
+        GetLayout(RenderItems, (8.27F - 1.0F - 1.0F) * 72.0F, _Bounds, GetTextWidthFromDraw(DrawFont, Forms))
         DrawFont.Dispose()
         FontFace.Dispose()
         Factory.Dispose()
@@ -3127,7 +3127,7 @@ Public Class RenderArray
         '    "function updateStarRating(e, item) { $(item).find('div').get(1).style.width = (Math.ceil((e.pageX - $(item).parent().offset().left) / $(item).outerWidth() * 10) * 10).toString() + '%'; $(item).find('div').get(0).style.zIndex = parseFloat($(item).find('div').get(1).style.width) > parseFloat($(item).find('div').get(0).style.width) ? 103 : 102; }"
     End Function
     Public Shared Function GetContinueStopJS() As String
-        Return "function changeContinueStop(e, item, data) {}"
+        Return "function changeContinueStop(e, item, data) { item.innerText = String.fromCharCode(item.innerText.charCodeAt(0) === 0x2B59 ? 0x2B45 : 0x2B59); item.style.color = item.innerText.charCodeAt(0) === 0x2B59 ? '#ff0000' : '#00ff00'; }"
     End Function
     Public Shared Function GetCopyClipboardJS() As String
         Return "function setClipboardText(text) { if (window.clipboardData) { window.clipboardData.setData('Text', text); } }"
@@ -3344,7 +3344,7 @@ Public Class RenderArray
                 writer.Write(vbCrLf + BaseTabs + vbTab)
                 writer.WriteBeginTag(CStr(IIf(Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eNested Or Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eRanking Or Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eList, "div", "span")))
                 Dim Style As String = String.Empty
-                If Items(Count).TextItems(Index).DisplayClass <> RenderDisplayClass.eList And (Items(Count).Type = RenderTypes.eHeaderCenter Or (Items(Count).Type = RenderTypes.eText And (Count - Base) Mod 2 = 1)) Then Style = "background-color: 0xD0D0D0;"
+                If Items(Count).TextItems(Index).DisplayClass <> RenderDisplayClass.eList And (Items(Count).Type = RenderTypes.eHeaderCenter Or (Items(Count).Type = RenderTypes.eText And (Count - Base) Mod 2 = 1)) Then Style = "background-color: #D0D0D0;"
                 If Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eNested Then
                     If Style <> String.Empty Then writer.WriteAttribute("style", Style)
                     writer.Write(HtmlTextWriter.TagRightChar)
@@ -3357,9 +3357,9 @@ Public Class RenderArray
                     writer.Write(CStr(Items(Count).TextItems(Index).Text))
                 ElseIf Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eContinueStop Then
                     'U+2BC3 is horizontal stop sign make red color, U+2B45/6 is left/rightwards quadruple arrow make green color
-                    writer.WriteAttribute("style", "color: " + If(CStr(Items(Count).TextItems(Index).Text) <> String.Empty, "#ff0000", "#00ff00") + ";" + Style)
-                    writer.WriteAttribute("onclick", "javascript: changeContinueStop(event, this, {Reference:'" + String.Empty + "'});")
-                    writer.Write(HtmlTextWriter.TagRightChar + If(CStr(Items(Count).TextItems(Index).Text) <> String.Empty, "&#2BC3;", "&#x2B45;"))
+                    writer.WriteAttribute("style", "cursor: pointer;cursor: hand;color: " & If(DirectCast(Items(Count).TextItems(Index).Text, Boolean), "#00ff00", "#ff0000") & ";" & Style)
+                    writer.WriteAttribute("onclick", "javascript: changeContinueStop(event, this, ['" + "arabic" + ID + CStr(IIf(NestPrefix = String.Empty, String.Empty, NestPrefix + "_")) + CStr(Count) + "_" + CStr(Index - 2) + "', '" + "translit" + ID + CStr(IIf(NestPrefix = String.Empty, String.Empty, NestPrefix + "_")) + CStr(Count) + "_" + CStr(Index - 1) + "']);")
+                    writer.Write(HtmlTextWriter.TagRightChar & If(DirectCast(Items(Count).TextItems(Index).Text, Boolean), "&#2B45;", "&#x2B59;"))
                 ElseIf Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eRanking Then
                     Dim Data As String() = CStr(Items(Count).TextItems(Index).Text).Split("|"c)
                     If Style <> String.Empty Then writer.WriteAttribute("style", Style)
