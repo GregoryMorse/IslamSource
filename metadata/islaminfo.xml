@@ -2519,7 +2519,71 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 		<word text="&lt;iEoraAbu {loquro&apos;aAni" id="QuranicGrammar"></word>
 		<word text="gariybu {loquro&apos;aAni" id="UnusualQuranicTerms"></word>
 		<word text="majaAzu {loquro&apos;aAni" id="QuranicMetaphor"></word>
-		<word text="&gt;aholu {lokitaAbi" id="PeopleOfTheBook"></word>
+		<!-- {search:r~?ab~[aiu] .;W4W;W4WNum} -->
+		<!-- {search:>ahol[aiu] .;W4W;W4WNum} -->
+		<!-- {search:>aSoHa`b[aiu] .;W4W;W4WNum} -->
+		<word text="rab~u {loEa`lamiyna \{1:2:3-4,2:131:9-10,5:28:16-17,6:45:9-10,6:71:40-41,6:162:8-9,7:54:33-34,7:61:9-10,7:67:9-10,7:104:7-8,7:121:3-4,10:10:14-15,10:37:21-22,26:16:6-7,26:23:4-5,26:47:3-4,26:77:5-6,26:98:3-4,26:109:11-12,26:127:11-12,26:145:11-12,26:164:11-12,26:180:11-12,26:192:3-4,27:8:13-14,27:44:30-31,28:30:18-19,32:2:7-8,37:87:3-4,37:182:3-4,39:75:17-18,40:64:22-23,40:65:14-15,40:66:20-21,41:9:15-16,43:46:11-12,43:82:2-3,45:36:7-8,56:80:3-4,59:16:16-17,69:43:3-4,81:29:7-8,83:6:4-5\}" id="LordOfTheWorlds"></word>
+		<word text="rab~u kul~i $aYo'K \{6:164:7-9\}" id="LordOfEverything"></word>
+		<word text="rab~u muwsaY` waha`ruwna \{7:122,26:48\}" id="LordOfMosesAndAaron"></word>
+		<word text="rab~u ha`ruwna wamuwsaY` \{20:70:6-8\}" id="LordOfAaronAndMoses"></word>
+		<word text="rab~u {loEaro$i \{21:22:11-12,43:82:5-6\}" id="LordOfTheThrone"></word>
+		<word text="rab~u {loEaro$i {lokariymi \{23:116:10-11\}" id="LordOfTheNobleThrone"></word>
+		<word text="rab~u {loEaro$i {loEaZiymi \{9:129:15-16,23:86:6-7,27:26:6-7\}" id="LordOfTheGreatThrone"></word>
+		<word text="rab~u {ls~ama`wa`ti wa{lo&gt;aroDi \{13:16:3-5,17:102:8-10,18:14:8-10,21:56:4-6,51:23:1-3\}" id="LordOfTheHeavensAndTheEarth"></word>
+		<word text="rab~u {ls~ama`wa`ti wa{lo&gt;aroDi wamaA bayonahumaA \{19:65:1-3,26:24:2-4,37:5:1-3,38:66:1-3,44:7:1-3,78:37:1-3\}" id="LordOfTheHeavensAndTheEarthAndWhatIsBetweenThem"></word>
+		<word text="rab~u 'aAbaA^}ikumu {lo&gt;aw~aliyna \{26:26:3-5,37:126:3-5,44:8:9-11\}" id="LordOfYourFirstForefathers"></word>
+		<word text="rab~u {loma$oriqi wa{lomagoribi \{26:28:2-4,73:9:1-3\}" id="LordOfTheEastAndTheWest"></word>
+		<word text="rab~u {loma$a`riqi wa{lomaga`ribi \{70:40:3-5\}" id="LordOfAllRisingsAndSettings"></word>
+		<word text="rab~u {loma$a`riqi \{37:5:6-7\}" id="LordOfEachPointOfSunrise"></word>
+		<word text="rab~u ha`*ihi {lobalodapi \{27:91:5-7\}" id="LordOfThisCity"></word>
+		<word text="rab~u {loEiz~api \{37:180:3-4\}" id="LordOfHonor"></word>
+		<word text="rab~u {ls~ama`wa`ti \{45:36:3-4\}" id="LordOfTheHeavens"></word>
+		<word text="rab~u {lo&gt;aroDi \{45:36:5-6\}" id="LordOfTheEarth"></word>
+		<word text="rab~u {l$~iEoraY` \{53:49:3-4\}" id="LordOfSirius"></word>
+		<word text="rab~u {loma$oriqayoni \{55:17:1-2\}" id="LordOfTheTwoEasts"></word>
+		<word text="rab~u {lomagoribayoni \{55:17:3-4\}" id="LordOfTheTwoWests"></word>
+		<word text="rab~u ha`*aA {lobayoti \{106:3:2-4\}" id="LordOfThisHouse"></word>
+		<word text="rab~u {lofalaqi \{113:1:3-4\}" id="LordOfDaybreak"></word>
+		<word text="rab~u {ln~aAsi \{114:1:3-4\}" id="LordOfMankind"></word>
+		<word text="rab~u {ls~ama`wa`ti {ls~aboEi \{23:86:3-5\}" id="LordOfTheSevenHeavens"></word>
+		<word text="&gt;aholu {lt~aqowaY` \{74:56:9-10\}" id="WorthyToBeFeared"></word>
+		<word text="&gt;aholu {lomagofirapi \{74:56:11-12\}" id="WorthyToForgive"></word>
+		<word text="&gt;aholu {lobayoti \{11:73:11-12,33:33:24-25\}" id="PeopleOfTheHouse"></word>
+		<word text="&gt;aholu bayotK \{28:12:11-12\}" id="PeopleOfAHouse"></word>
+		<word text="&gt;aholu {l*~ikori \{16:43:11-12,21:7:10-11\}" id="PeopleOfTheMessage"></word>
+		<word text="&gt;aholu {lokita`bi \{2:105:6-7,2:109:4-5,3:64:2-3,3:65:1-2,3:69:4-5,3:70:1-2,3:71:1-2,3:72:4-5,3:75:3-4,3:98:2-3,3:99:2-3,3:110:16-17,3:113:6-7,3:199:3-4,4:123:5-6,4:153:2-3,4:159:3-4,4:171:1-2,5:15:1-2,5:19:1-2,5:59:2-3,5:65:3-4,5:68:2-3,5:77:2-3,29:46:4-5,33:26:5-6,57:29:3-4,59:2:7-8,59:11:12-13,98:1:6-7,98:6:5-6\}" id="PeopleOfTheBook"></word>
+		<word text="&gt;aholu {lo&lt;injiyli \{5:47:2-3\}" id="PeopleOfTheGospel"></word>
+		<word text="&gt;aholu {lomadiynapi \{9:101:8-9,9:120:3-4,15:67:2-3\}" id="PeopleOfMadinah"></word>
+		<word text="&gt;aholu qaroyapK \{18:77:5-6\}" id="PeopleOfATown"></word>
+		<word text="&gt;aholu yavoriba \{33:13:5-6\}" id="PeopleOfYathrib"></word>
+		<word text="&gt;aholu madoyana \{20:40:31-32,28:45:12-13\}" id="PeopleOfMadyan"></word>
+		<word text="&gt;aholu {loquraY` \{7:96:3-4,7:97:2-3,7:98:2-3,12:109:10-11,59:7:7-8\}" id="PeopleOfTheCities"></word>
+		<word text="&gt;aholu ha`*ihi {loqaroyapi \{29:31:9-11,29:34:4-6\}" id="PeopleOfThisTown"></word>
+		<word text="&gt;aholu {ln~aAri \{38:64:5-6\}" id="PeopleOfTheFire"></word>
+		<word text="&gt;aSoHa`bu {lojan~api \{2:82:6-7,7:42:11-12,7:44:2-3,7:46:12-13,7:50:4-5,10:26:15-16,11:23:10-11,25:24:1-2,36:55:2-3,46:14:2-3,46:16:12-13,59:20:5-6,59:20:8-9,68:17:5-6\}" id="CompanionsOfTheParadise"></word>
+		<word text="&gt;aSoHa`bu {lomayomanapi \{56:8:1-2,56:8:4-5,90:18:2-3\}" id="CompanionsOfTheHappiness"></word>
+		<word text="&gt;aSoHa`bu {loyamiyni \{56:27:1-2,56:27:4-5,56:38:1-2,56:90:5-6,56:91:4-5,74:39:2-3\}" id="CompanionsOfTheRight"></word>
+		<word text="&gt;aSoHa`bu {lo&gt;aEoraAfi \{7:48:2-3\}" id="CompanionsOfTheElevations"></word>
+		<word text="&gt;aSoHa`bu {lokahofi \{18:9:4-5\}" id="CompanionsOfTheCave"></word>
+		<word text="&gt;aSoHa`bu {lS~ira`Ti {ls~awiY~i \{20:135:8-10\}" id="CompanionsOfTheSoundPath"></word>
+		<word text="&gt;aSoHa`bu {ls~afiynapi \{29:15:2-3\}" id="CompanionsOfTheShip"></word>
+		<word text="&gt;aSoHa`bu {ln~aAri \{2:39:6-7,2:81:9-10,2:217:59-60,2:257:22-23,2:275:45-46,3:116:15-16,5:29:9-10,7:36:7-8,7:44:4-5,7:47:6-7,7:50:2-3,10:27:26-27,13:5:25-26,39:8:36-37,40:6:9-10,40:43:21-22,58:17:12-13,59:20:3-4,64:10:6-7,74:31:3-4\}" id="CompanionsOfTheFire"></word>
+		<word text="&gt;aSoHa`bu {lojaHiymi \{2:119:10-11,5:10:6-7,5:86:6-7,9:113:19-20,22:51:7-8,57:19:21-22\}" id="CompanionsOfTheHell"></word>
+		<word text="&gt;aSoHa`bu {ls~aboti \{4:47:23-24\}" id="CompanionsOfTheSabbath"></word>
+		<word text="&gt;aSoHa`bu {loma$o_#amapi \{59:9:1-2,56:9:4-5,90:19:5-6\}" id="CompanionsOfThePessimist"></word>
+		<word text="&gt;aSoHa`bu {l$~imaAli \{56:41:1-2,56:41:4-5\}" id="CompanionsOfTheLeft"></word>
+		<word text="&gt;aSoHa`bu {ls~aEiyri \{35:6:13-14,67:10:10-11,67:11:4-5\}" id="CompanionsOfTheBlaze"></word>
+		<word text="&gt;aSoHa`bu {lo&gt;uxoduwdi \{85:4:2-3\}" id="CompanionsOfThePit"></word>
+		<word text="&gt;aSoHa`bu {lofiyli \{105:1:6-7\}" id="CompanionsOfTheElephant"></word>
+		<word text="&gt;aSoHa`bu madoyana \{9:70:13-14,22:44:1-2\}" id="CompanionsOfMadyan"></word>
+		<word text="&gt;aSoHa`bu {lo&gt;ayokapi \{15:78:3-4,26:176:2-3,38:13:4-5,50:14:1-2\}" id="CompanionsOfTheThicket"></word>
+		<word text="&gt;aSoHa`bu {loHijori \{15:80:3-4\}" id="CompanionsOfTheRock"></word>
+		<word text="&gt;aSoHa`bu {lr~as~i \{25:38:3-4,50:12:5-6\}" id="CompanionsOfTheWell"></word>
+		<word text="&gt;aSoHa`bu {loqaroyapi \{36:13:4-5\}" id="CompanionsOfTheCity"></word>
+		<word text="&gt;aSoHa`bu {loqubuwri \{60:13:18-19\}" id="CompanionsOfTheGrave"></word>
+		<word text="&gt;aSoHa`bu muwsaY` \{26:61:5-6\}" id="CompanionsOfMusa"></word>
+		<word text="wasowaAsu {loxan~aAsi" id="WhispererWhoWithdraws"></word>
+		<word text="{ln~af~a`va`tu fiY {loEuqadi" id="BlowerInKnots"></word>
 		<word text="manaAhiju {lt~afosiyri" id="MethodologyOfQuranicInterpretation"></word>
 		<word text="haAlatulu janaAbapi" id="StateofMajorRitualImpurity"></word>
 		<word text="TaAharapu {loxabavu" id="PurificationFromPhysicalFilth"></word>
@@ -3458,9 +3522,9 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<word text="\{Allah\}\{Muhammad\}\{Ali\}\{Fatima\}\{HADI\}\{RIDAA\}\{Hasan\}\{Hussein\}\{BAAQIR\}\{GuidedOne\}\{ASKAREE\}\{JAWAAD\}\{KADHIM\}\{SAADIQ\}\{Sajjad\}" id="Names"></word>
 		</category>
 		<category title="QuranGroups">
-			<word text="\{noun:Muslim,Faithful,Optimizer,GodFearer,Prophet,Messenger,Righteous,RighteousPerson,Worshipper,UnknownSourceNarrator,TruthfulPerson,GoodPerson,WitnessPresentMartyr,Patient,Fighter,Certain,Successful,Faithful\}" id="Good"></word>
-			<word text="\{noun:Disbeliever,Polythiest,Hypocrite,Criminal,Cheater,Oppressor,OpenSinner,Envier,WickedPerson,EvilPerson\}" id="Bad"></word>
-			<word text="\{noun:ChiefsLeaders,ProtectingFriendGuardian,CloseFriendConsort,Slave,Orphan,PoorPerson,MenPeople,ManPersonHumanBeing,People,Community,Generation,Driver,Blower,Withdrawer\}" id="Neutral"></word>
+			<word text="\{noun:Muslim,Faithful,Optimizer,GodFearer,Prophet,Messenger,Righteous,RighteousPerson,Worshipper,UnknownSourceNarrator,TruthfulPerson,GoodPerson,WitnessPresentMartyr,Patient,Fighter,Certain,Successful,Faithful,WorthyToBeFeared,WorthyToForgive,PeopleOfTheHouse,PeopleOfAHouse,CompanionsOfTheParadise,CompanionsOfTheHappiness,CompanionsOfTheRight,CompanionsOfTheElevations,CompanionsOfTheCave,CompanionsOfTheSoundPath,CompanionsOfTheShip\}" id="Good"></word>
+			<word text="\{noun:Disbeliever,Polythiest,Hypocrite,Criminal,Cheater,Oppressor,OpenSinner,Envier,WickedPerson,EvilPerson,WhispererWhoWithdraws,BlowerInKnots,PeopleOfTheCities,PeopleOfATown,PeopleOfThisTown,PeopleOfTheFire,CompanionsOfTheFire,CompanionsOfTheHell,CompanionsOfTheSabbath,CompanionsOfThePessimist,CompanionsOfTheLeft,CompanionsOfTheBlaze,CompanionsOfThePit,CompanionsOfTheElephant,CompanionsOfMadyan,CompanionsOfTheThicket,CompanionsOfTheRock,CompanionsOfTheWell,CompanionsOfTheCity\}" id="Bad"></word>
+			<word text="\{noun:ChiefsLeaders,ProtectingFriendGuardian,CloseFriendConsort,Slave,Orphan,PoorPerson,MenPeople,ManPersonHumanBeing,People,Community,Generation,Driver,Blower,Withdrawer,PeopleOfTheMessage,PeopleOfTheBook,PeopleOfTheGospel,PeopleOfMadinah,PeopleOfYathrib,PeopleOfMadyan,CompanionsOfTheGrave,CompanionsOfMusa\}" id="Neutral"></word>
 		</category>
 		<category title="Groupings">
 			<word text="\{word:ConsecratedMonth1,Month2\}\{phrase:Month3,Month4,Month5,Month6\}\{word:Month7,Month8,Month9,Month10\}\{phrase:Month11,Month12\}" id="Months"></word>
