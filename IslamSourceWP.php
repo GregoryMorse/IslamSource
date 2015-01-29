@@ -2,7 +2,7 @@
 /*
 Plugin Name: IslamSource
 Description: Islam Source Quranic Verse and Islamic Phrase Plugin - Allows for Quranic chapters, verses even specified down through the word to be inserted easily by using formats {a:b:c-x:y:z} where b, c, x, y and z are optional depending on if a chapter, verse or particular word of a verse is desired or a range is desired so it could be in forms {a:b-y} or {a:b-x:y} such as the opening chapter which could be specified as {1:1-7}.  The Arabic is automatically displayed when posts are viewed.  It also allows for various calligraphy and Unicode Islamic words or phrases to be easily inserted through a button on the visual editor which are displayed when the posts are later viewed.
-Version: 1.3.0
+Version: 1.4.0
 Author: IslamSource
 Author URI: http://www.islamsource.info
 */
@@ -1306,7 +1306,7 @@ class RenderArray
 				if ($items[$count]->textitems[$index]->displayClass == RenderDisplayClass::eNested) {
 					$text .= RenderArray::DoRender($items[$count]->textitems[$index]->Text);
 				} elseif ($items[$count]->textitems[$index]->displayClass == RenderDisplayClass::ePassThru) {
-					$text .= $items[$count]->textitems[$index]->Text;
+					$text .= "</div>" . $items[$count]->textitems[$index]->Text . "<div style=\"direction: rtl; display: inline-block; padding-left: 5px; padding-right: 5px;\">";
 				} else {
 					if (array_search($items[$count]->textitems[$index]->font, Utility::$FontList) !== false) {
 						$text .= "<span dir=\"rtl\" style=\"display: block;\"><img src=\"" . plugins_url() . "" . "/islamsource/IslamSourceWP.php?Size=" . ($items[$count]->textitems[$index]->Size == 0 ? "100" : $items[$count]->textitems[$index]->Size) . "&Char=" . bin2hex(mb_convert_encoding($items[$count]->textitems[$index]->Text, 'UCS-4BE', 'UTF-8')) . "&Font=" . $items[$count]->textitems[$index]->font . "\">";

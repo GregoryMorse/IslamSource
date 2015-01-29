@@ -4842,16 +4842,25 @@ Public Class TanzilReader
     Public Shared Function QuranTextFromSearch(Str As String, SchemeType As ArabicData.TranslitScheme, Scheme As String, TranslationIndex As Integer, W4W As Boolean, W4WNum As Boolean, NoArabic As Boolean) As RenderArray
         Dim Renderer As New RenderArray(String.Empty)
         Dim Verses As List(Of String()) = GetQuranText(CachedData.XMLDocMain, -1, -1, -1, -1)
+        Dim RefList As String = String.Empty
+        Dim RefCount As Integer = 0
         For Count As Integer = 0 To Verses.Count - 1
             For SubCount As Integer = 0 To Verses(Count).Length - 1
                 Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(Arabic.TransliterateToScheme(Verses(Count)(SubCount), ArabicData.TranslitScheme.Literal, String.Empty), Str)
                 For MatchCount As Integer = 0 To Matches.Count - 1
                     Renderer.Items.AddRange(DoGetRenderedQuranText(QuranTextRangeLookup(Count + 1, SubCount + 1, Array.FindAll(Verses(Count)(SubCount).Substring(0, Matches(MatchCount).Index).ToCharArray(), Function(Ch As Char) Ch = " "c).Length + 1, Count + 1, SubCount + 1, Array.FindAll(Verses(Count)(SubCount).Substring(0, Matches(MatchCount).Index + Matches(MatchCount).Length).ToCharArray(), Function(Ch As Char) Ch = " "c).Length + 1), Count + 1, SubCount + 1, CachedData.IslamData.Translations.TranslationList(TranslationIndex).Name, SchemeType, Scheme, TranslationIndex, W4W, W4WNum, NoArabic).Items)
                     Dim Reference As String = CStr(Count + 1) + ":" + CStr(SubCount + 1)
+                    RefList += If(RefList <> String.Empty, ",", String.Empty) + Reference
+                    RefCount += 1
+                    If Array.FindAll(Verses(Count)(SubCount).Substring(0, Matches(MatchCount).Index).ToCharArray(), Function(Ch As Char) Ch = " "c).Length <> 0 OrElse Array.FindAll(Verses(Count)(SubCount).Substring(Matches(MatchCount).Index + Matches(MatchCount).Length).ToCharArray(), Function(Ch As Char) Ch = " "c).Length <> 0 Then
+                        RefList += ":" + CStr(Array.FindAll(Verses(Count)(SubCount).Substring(0, Matches(MatchCount).Index).ToCharArray(), Function(Ch As Char) Ch = " "c).Length + 1)
+                        If Array.FindAll(Verses(Count)(SubCount).Substring(Matches(MatchCount).Index, Matches(MatchCount).Length).ToCharArray(), Function(Ch As Char) Ch = " "c).Length <> 0 Then RefList += "-" + CStr(Array.FindAll(Verses(Count)(SubCount).Substring(0, Matches(MatchCount).Index + Matches(MatchCount).Length).ToCharArray(), Function(Ch As Char) Ch = " "c).Length + 1)
+                    End If
                     Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eHeaderCenter, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, "(Qur'an " + Reference + ")")}))
                 Next
             Next
         Next
+        Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eHeaderCenter, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, "(Qur'an " + RefList + ") " + CStr(RefCount) + " Total")}))
         Return Renderer
     End Function
     Public Shared Function QuranTextRangeLookup(BaseChapter As Integer, BaseVerse As Integer, WordNumber As Integer, EndChapter As Integer, ExtraVerseNumber As Integer, EndWordNumber As Integer) As Collections.Generic.List(Of String())
