@@ -585,7 +585,7 @@ Public Class Arabic
                 For MatchIndex As Integer = 0 To Matches.Count - 1
                     Dim SubCount As Integer
                     For SubCount = 0 To CachedData.RulesOfRecitationRegEx(Count).Evaluator.Length - 1
-                        If (CachedData.RulesOfRecitationRegEx(Count).Evaluator(SubCount) = "optionalstop" AndAlso (OptionalStops Is Nothing AndAlso Matches(MatchIndex).Groups(SubCount + 1).Value = ArabicData.ArabicSmallHighLigatureSadWithLamWithAlefMaksura OrElse (Not OptionalStops Is Nothing AndAlso Array.IndexOf(OptionalStops, Matches(MatchIndex).Groups(SubCount + 1).Index) = -1))) OrElse (CachedData.RulesOfRecitationRegEx(Count).Evaluator(SubCount) = "optionalnotstop" AndAlso (OptionalStops Is Nothing AndAlso Matches(MatchIndex).Groups(SubCount + 1).Value <> String.Empty AndAlso Matches(MatchIndex).Groups(SubCount + 1).Value <> ArabicData.ArabicSmallHighLigatureSadWithLamWithAlefMaksura OrElse (Not OptionalStops Is Nothing AndAlso Array.IndexOf(OptionalStops, Matches(MatchIndex).Groups(SubCount + 1).Index) <> -1))) Then Exit For
+                        If (CachedData.RulesOfRecitationRegEx(Count).Evaluator(SubCount) = "optionalstop" AndAlso (OptionalStops Is Nothing AndAlso Matches(MatchIndex).Groups(SubCount + 1).Value = ArabicData.ArabicSmallHighLigatureSadWithLamWithAlefMaksura OrElse (Not OptionalStops Is Nothing AndAlso Matches(MatchIndex).Groups(SubCount + 1).Value <> String.Empty AndAlso Array.IndexOf(OptionalStops, Matches(MatchIndex).Groups(SubCount + 1).Index) = -1))) OrElse (CachedData.RulesOfRecitationRegEx(Count).Evaluator(SubCount) = "optionalnotstop" AndAlso (OptionalStops Is Nothing AndAlso Matches(MatchIndex).Groups(SubCount + 1).Value <> String.Empty AndAlso Matches(MatchIndex).Groups(SubCount + 1).Value <> ArabicData.ArabicSmallHighLigatureSadWithLamWithAlefMaksura OrElse (Not OptionalStops Is Nothing AndAlso Array.IndexOf(OptionalStops, Matches(MatchIndex).Groups(SubCount + 1).Index) <> -1))) Then Exit For
                     Next
                     If SubCount <> CachedData.RulesOfRecitationRegEx(Count).Evaluator.Length Then Continue For
                     For SubCount = 0 To CachedData.RulesOfRecitationRegEx(Count).Evaluator.Length - 1
@@ -3535,7 +3535,7 @@ Public Class DocBuilder
                     Dim ArabicText As String() = Matches(MatchCount).Groups(1).Value.Split(" "c)
                     If ArabicText.Length > 1 And EnglishByWord.Length = ArabicText.Length Then
                         Dim Transliteration As String() = Arabic.TransliterateToScheme(Arabic.TransliterateFromBuckwalter(Matches(MatchCount).Groups(1).Value), SchemeType, Scheme).Split(" "c)
-                        Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eHeaderCenter, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, Utility.LoadResourceString("IslamInfo_" + TranslationID))}))
+                        Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eHeaderCenter, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, Utility.LoadResourceString("IslamInfo_" + TranslationID + "Label"))}))
                         Dim Items As New Collections.Generic.List(Of RenderArray.RenderItem)
                         For WordCount As Integer = 0 To EnglishByWord.Length - 1
                             Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.TransliterateFromBuckwalter(ArabicText(WordCount))), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, Transliteration(WordCount)), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, EnglishByWord(WordCount))}))
@@ -5029,10 +5029,12 @@ Public Class TanzilReader
         Return GetQuranTextBySelection(Item.Name, Division, Index, CachedData.IslamData.Translations.TranslationList(TranslationIndex).FileName, SchemeType, Scheme, TranslationIndex, True, False, False)
     End Function
     Public Shared Function GenerateDefaultStops(Str As String) As Integer()
-        Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(Str, "(^\s*|\s+)(" + CachedData.OptionalPattern + ")(?=\s*$|\s+)")
+        Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(Str, "(^\s*|\s+)(" + ArabicData.MakeUniRegEx(ArabicData.ArabicEndOfAyah) + "[\p{Nd}]{1,3}|" + CachedData.OptionalPattern + ")(?=\s*$|\s+)")
         Dim DefStops(Matches.Count - 1) As Integer
+        Dim DotToggle As Boolean = False
         For Count As Integer = 0 To Matches.Count - 1
-            If Matches(Count).Groups(2).Value <> ArabicData.ArabicSmallHighLigatureSadWithLamWithAlefMaksura Then DefStops(Count) = Matches(Count).Groups(2).Index
+            If Matches(Count).Groups(2).Value <> ArabicData.ArabicSmallHighLigatureSadWithLamWithAlefMaksura AndAlso (Matches(Count).Groups(2).Value <> ArabicData.ArabicSmallHighThreeDots Or DotToggle) Then DefStops(Count) = Matches(Count).Groups(2).Index
+            If Matches(Count).Groups(2).Value = ArabicData.ArabicSmallHighThreeDots Then DotToggle = Not DotToggle
         Next
         Return DefStops
     End Function
@@ -5136,7 +5138,7 @@ Public Class TanzilReader
                     Text += Arabic.TransliterateFromBuckwalter("=" + CStr(CInt(IIf(Chapter = 0, BaseVerse, 1)) + Verse)) + " "
                     If Not NoArabic Then
                         Texts.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Text))
-                        Texts.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, If(SchemeType <> ArabicData.TranslitScheme.None, Arabic.TransliterateToScheme(QuranText(Chapter)(Verse).Trim(" "c, ChrW(0)) + " " + Arabic.TransliterateFromBuckwalter("=" + CStr(CInt(IIf(Chapter = 0, BaseVerse, 1)) + Verse)) + " ", SchemeType, Scheme).Trim(), String.Empty)))
+                        Texts.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, If(SchemeType <> ArabicData.TranslitScheme.None, Arabic.TransliterateToScheme(QuranText(Chapter)(Verse).Trim(" "c, ChrW(0)) + " " + Arabic.TransliterateFromBuckwalter("=" + CStr(CInt(IIf(Chapter = 0, BaseVerse, 1)) + Verse)) + " ", SchemeType, Scheme, GenerateDefaultStops(QuranText(Chapter)(Verse).Trim(" "c, ChrW(0)) + " " + Arabic.TransliterateFromBuckwalter("=" + CStr(CInt(IIf(Chapter = 0, BaseVerse, 1)) + Verse)) + " ")).Trim(), String.Empty)))
                         Texts.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eContinueStop, False))
                     End If
                     If Translation <> String.Empty Then Texts.Add(New RenderArray.RenderText(DirectCast(IIf(IsTranslationTextLTR(TranslationIndex), RenderArray.RenderDisplayClass.eLTR, RenderArray.RenderDisplayClass.eRTL), RenderArray.RenderDisplayClass), "(" + CStr(CInt(IIf(Chapter = 0, BaseVerse, 1)) + Verse) + ") " + TanzilReader.GetTranslationVerse(Lines, BaseChapter + Chapter, CInt(IIf(Chapter = 0, BaseVerse, 1)) + Verse)))
