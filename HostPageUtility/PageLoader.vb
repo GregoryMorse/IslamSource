@@ -2010,6 +2010,7 @@ Public Class ArabicData
         None = 0
         Literal = 1
         RuleBased = 2
+        LearningMode = 3
     End Enum
 End Class
 Public Class RenderArray

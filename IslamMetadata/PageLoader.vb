@@ -162,8 +162,10 @@ Public Class Arabic
         Next
         Return ArabicString.ToString()
     End Function
-    Public Shared Function TransliterateToScheme(ByVal ArabicString As String, SchemeType As ArabicData.TranslitScheme, Scheme As String, Optional OptionalStops() As Boolean = Nothing) As String
-        If SchemeType = ArabicData.TranslitScheme.RuleBased Then
+    Public Shared Function TransliterateToScheme(ByVal ArabicString As String, SchemeType As ArabicData.TranslitScheme, Scheme As String, Optional OptionalStops() As Integer = Nothing) As String
+        If SchemeType = ArabicData.TranslitScheme.LearningMode Then
+            Return TransliterateWithRules(ArabicString + " " + ArabicData.ArabicSmallHighLigatureSadWithLamWithAlefMaksura, Scheme, OptionalStops)
+        ElseIf SchemeType = ArabicData.TranslitScheme.RuleBased Then
             Return TransliterateWithRules(ArabicString, Scheme, OptionalStops)
         ElseIf SchemeType = ArabicData.TranslitScheme.Literal Then
             Return TransliterateToRoman(ArabicString, Scheme)
@@ -325,7 +327,6 @@ Public Class Arabic
         eLookupLongVowel
         eDivideTanween
         eDivideLetterSymbol
-        eStopOption
         eLeadingGutteral
         eTrailingGutteral
     End Enum
@@ -510,7 +511,7 @@ Public Class Arabic
         End If
         Return ArabicString
     End Function
-    Public Shared Function ReplaceMetadata(ArabicString As String, MetadataRule As RuleMetadata, Scheme As String, OptionalStops As Boolean()) As String
+    Public Shared Function ReplaceMetadata(ArabicString As String, MetadataRule As RuleMetadata, Scheme As String) As String
         For Count As Integer = 0 To CachedData.ColoringSpelledOutRules.Length - 1
             Dim Match As String = Array.Find(CachedData.ColoringSpelledOutRules(Count).Match.Split("|"c), Function(Str As String) Array.IndexOf(Array.ConvertAll(MetadataRule.Type.Split("|"c), Function(S As String) System.Text.RegularExpressions.Regex.Replace(S, "\(.*\)", String.Empty)), Str) <> -1)
             If Match <> Nothing Then
@@ -524,7 +525,7 @@ Public Class Arabic
                         Str = String.Empty
                         For Index As Integer = 0 To Args.Length - 1
                             If Not Args(Index) Is Nothing Then
-                                Str += ReplaceMetadata(Args(Index), New RuleMetadata(0, Args(Index).Length, MetaArgs(Index).Replace(" "c, "|"c)), Scheme, OptionalStops)
+                                Str += ReplaceMetadata(Args(Index), New RuleMetadata(0, Args(Index).Length, MetaArgs(Index).Replace(" "c, "|"c)), Scheme)
                             End If
                         Next
                     End If
@@ -573,7 +574,7 @@ Public Class Arabic
     Public Shared Function TransliterateContigWithRules(ByVal ArabicString As String, ByVal PreString As String, ByVal PostString As String, Scheme As String, OptionalStops As Boolean(), PreOptionalStops As Boolean(), PostOptionalStops As Boolean()) As String
         Return UnjoinContig(TransliterateWithRules(JoinContig(ArabicString, PreString, PostString), Scheme, Nothing), PreString, PostString)
     End Function
-    Public Shared Function TransliterateWithRules(ByVal ArabicString As String, Scheme As String, OptionalStops As Boolean()) As String
+    Public Shared Function TransliterateWithRules(ByVal ArabicString As String, Scheme As String, OptionalStops As Integer()) As String
         Dim Count As Integer
         Dim MetadataList As New Generic.List(Of RuleMetadata)
         DoErrorCheck(ArabicString)
@@ -581,7 +582,12 @@ Public Class Arabic
             If Not CachedData.RulesOfRecitationRegEx(Count).Evaluator Is Nothing Then
                 Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(ArabicString, CachedData.RulesOfRecitationRegEx(Count).Match)
                 For MatchIndex As Integer = 0 To Matches.Count - 1
-                    For SubCount As Integer = 0 To CachedData.RulesOfRecitationRegEx(Count).Evaluator.Length - 1
+                    Dim SubCount As Integer
+                    For SubCount = 0 To CachedData.RulesOfRecitationRegEx(Count).Evaluator.Length - 1
+                        If (CachedData.RulesOfRecitationRegEx(Count).Evaluator(SubCount) = "optionalstop" AndAlso Not OptionalStops Is Nothing AndAlso Array.IndexOf(OptionalStops, Matches(MatchIndex).Groups(SubCount + 1).Index) = -1) OrElse (CachedData.RulesOfRecitationRegEx(Count).Evaluator(SubCount) = "optionalnotstop" AndAlso (OptionalStops Is Nothing OrElse Array.IndexOf(OptionalStops, Matches(MatchIndex).Groups(SubCount + 1).Index) <> -1)) Then Exit For
+                    Next
+                    If SubCount <> CachedData.RulesOfRecitationRegEx(Count).Evaluator.Length Then Continue For
+                    For SubCount = 0 To CachedData.RulesOfRecitationRegEx(Count).Evaluator.Length - 1
                         If Not CachedData.RulesOfRecitationRegEx(Count).Evaluator(SubCount) Is Nothing And (Matches(MatchIndex).Groups(SubCount + 1).Length <> 0 Or Array.IndexOf(AllowZeroLength, CachedData.RulesOfRecitationRegEx(Count).Evaluator(SubCount)) <> -1) Then
                             MetadataList.Add(New RuleMetadata(Matches(MatchIndex).Groups(SubCount + 1).Index, Matches(MatchIndex).Groups(SubCount + 1).Length, CachedData.RulesOfRecitationRegEx(Count).Evaluator(SubCount)))
                         End If
@@ -592,7 +598,7 @@ Public Class Arabic
         MetadataList.Sort(New RuleMetadataComparer)
         Dim Index As Integer
         For Index = 0 To MetadataList.Count - 1
-            ArabicString = ReplaceMetadata(ArabicString, MetadataList(Index), Scheme, OptionalStops)
+            ArabicString = ReplaceMetadata(ArabicString, MetadataList(Index), Scheme)
         Next
         'redundant romanization rules should have -'s such as seen/teh/kaf-heh
         For Count = 0 To CachedData.RomanizationRules.Length - 1
@@ -2069,7 +2075,6 @@ Public Class IslamData
                     If _RuleFunc = "eLookupLongVowel" Then Return Arabic.RuleFuncs.eLookupLongVowel
                     If _RuleFunc = "eSpellLetter" Then Return Arabic.RuleFuncs.eSpellLetter
                     If _RuleFunc = "eSpellNumber" Then Return Arabic.RuleFuncs.eSpellNumber
-                    If _RuleFunc = "eStopOption" Then Return Arabic.RuleFuncs.eStopOption
                     If _RuleFunc = "eTrailingGutteral" Then Return Arabic.RuleFuncs.eTrailingGutteral
                     If _RuleFunc = "eUpperCase" Then Return Arabic.RuleFuncs.eUpperCase
                     'If _RuleFunc = "eNone" Then
@@ -2504,10 +2509,9 @@ Public Class CachedData
         End Get
     End Property
     Shared _CertainStopPattern As String
-    Shared _OptionalStopPattern As String
-    Shared _OptionalStopPatternNotEndOfAyah As String
+    Shared _OptionalPattern As String
+    Shared _OptionalPatternNotEndOfAyah As String
     Shared _CertainNotStopPattern As String
-    Shared _OptionalNotStopPattern As String
     Shared _TehMarbutaStopRule As String
     Shared _TehMarbutaContinueRule As String
     Public Shared ReadOnly Property CertainStopPattern As String
@@ -2518,20 +2522,20 @@ Public Class CachedData
             Return _CertainStopPattern
         End Get
     End Property
-    Public Shared ReadOnly Property OptionalStopPattern As String
+    Public Shared ReadOnly Property OptionalPattern As String
         Get
-            If _OptionalStopPattern Is Nothing Then
-                _OptionalStopPattern = GetPattern("OptionalStopPattern")
+            If _OptionalPattern Is Nothing Then
+                _OptionalPattern = GetPattern("OptionalPattern")
             End If
-            Return _OptionalStopPattern
+            Return _OptionalPattern
         End Get
     End Property
-    Public Shared ReadOnly Property OptionalStopPatternNotEndOfAyah As String
+    Public Shared ReadOnly Property OptionalPatternNotEndOfAyah As String
         Get
-            If _OptionalStopPatternNotEndOfAyah Is Nothing Then
-                _OptionalStopPatternNotEndOfAyah = GetPattern("OptionalStopPatternNotEndOfAyah")
+            If _OptionalPatternNotEndOfAyah Is Nothing Then
+                _OptionalPatternNotEndOfAyah = GetPattern("OptionalPatternNotEndOfAyah")
             End If
-            Return _OptionalStopPatternNotEndOfAyah
+            Return _OptionalPatternNotEndOfAyah
         End Get
     End Property
     Public Shared ReadOnly Property CertainNotStopPattern As String
@@ -2540,14 +2544,6 @@ Public Class CachedData
                 _CertainNotStopPattern = GetPattern("CertainNotStopPattern")
             End If
             Return _CertainNotStopPattern
-        End Get
-    End Property
-    Public Shared ReadOnly Property OptionalNotStopPattern As String
-        Get
-            If _OptionalNotStopPattern Is Nothing Then
-                _OptionalNotStopPattern = GetPattern("OptionalNotStopPattern")
-            End If
-            Return _OptionalNotStopPattern
         End Get
     End Property
     Public Shared ReadOnly Property TehMarbutaStopRule As String
@@ -3684,6 +3680,8 @@ Public Class DocBuilder
                 SchemeType = ArabicData.TranslitScheme.Literal
             ElseIf (Options("TranslitStyle")(0) = "RuleBased") Then
                 SchemeType = ArabicData.TranslitScheme.RuleBased
+            ElseIf (Options("TranslitStyle")(0) = "LearningMode") Then
+                SchemeType = ArabicData.TranslitScheme.LearningMode
             Else
                 SchemeType = ArabicData.TranslitScheme.None
             End If
@@ -3793,12 +3791,12 @@ Public Class DocBuilder
                         If Not Options.ContainsKey("Font") OrElse Array.IndexOf(Options("Font"), Font) <> -1 Then
                             Array.ForEach(Str.Split(","c),
                                 Sub(SubStr As String)
-                                        If Not Options.ContainsKey("Char") OrElse Array.IndexOf(Options("Char"), String.Join(String.Empty, Array.ConvertAll(SubStr.Split("+"c), Function(S As String) Char.ConvertFromUtf32(Integer.Parse(S, Globalization.NumberStyles.HexNumber))))) <> -1 Then
-                                            Dim RendText As New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, String.Join(String.Empty, Array.ConvertAll(SubStr.Split("+"c), Function(Split As String) Char.ConvertFromUtf32(Integer.Parse(Split, System.Globalization.NumberStyles.HexNumber)))))
-                                            RendText.Font = Font
-                                            Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {RendText}))
-                                        End If
-                                    End Sub)
+                                    If Not Options.ContainsKey("Char") OrElse Array.IndexOf(Options("Char"), String.Join(String.Empty, Array.ConvertAll(SubStr.Split("+"c), Function(S As String) Char.ConvertFromUtf32(Integer.Parse(S, Globalization.NumberStyles.HexNumber))))) <> -1 Then
+                                        Dim RendText As New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, String.Join(String.Empty, Array.ConvertAll(SubStr.Split("+"c), Function(Split As String) Char.ConvertFromUtf32(Integer.Parse(Split, System.Globalization.NumberStyles.HexNumber)))))
+                                        RendText.Font = Font
+                                        Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {RendText}))
+                                    End If
+                                End Sub)
                         End If
                     End Sub)
             End If
@@ -3963,7 +3961,7 @@ Public Class Quiz
         Dim SchemeType As ArabicData.TranslitScheme = CType(If(CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) >= 2, 2 - CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) Mod 2, CInt(HttpContext.Current.Request.QueryString.Get("translitscheme"))), ArabicData.TranslitScheme)
         Dim Scheme As String = If(CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) >= 2, CachedData.IslamData.TranslitSchemes(CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) \ 2).Name, String.Empty)
         If SchemeType = ArabicData.TranslitScheme.None Then
-            SchemeType = ArabicData.TranslitScheme.RuleBased
+            SchemeType = ArabicData.TranslitScheme.LearningMode
             Scheme = CachedData.IslamData.TranslitSchemes(3).Name
         End If
         Return Arabic.TransliterateToScheme(QuizSet(CInt(Math.Floor(Rnd() * QuizSet.Count))), SchemeType, Scheme)
@@ -5029,11 +5027,11 @@ Public Class TanzilReader
         Dim TranslationIndex As Integer = GetTranslationIndex(HttpContext.Current.Request.QueryString.Get("qurantranslation"))
         Return GetQuranTextBySelection(Item.Name, Division, Index, CachedData.IslamData.Translations.TranslationList(TranslationIndex).FileName, SchemeType, Scheme, TranslationIndex, True, False, False)
     End Function
-    Public Shared Function GenerateDefaultStops(Str As String) As Boolean()
-        Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(Str, "(^\s*|\s+)(" + CachedData.OptionalStopPattern + "|" + CachedData.OptionalNotStopPattern + ")(?=\s*$|\s+)")
-        Dim DefStops(Matches.Count - 1) As Boolean
+    Public Shared Function GenerateDefaultStops(Str As String) As Integer()
+        Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(Str, "(^\s*|\s+)(" + CachedData.OptionalPattern + ")(?=\s*$|\s+)")
+        Dim DefStops(Matches.Count - 1) As Integer
         For Count As Integer = 0 To Matches.Count - 1
-            DefStops(Count) = System.Text.RegularExpressions.Regex.Match(Matches(Count).Groups(2).Value, CachedData.OptionalNotStopPattern).Success
+            If Matches(Count).Groups(2).Value <> ArabicData.ArabicSmallHighLigatureSadWithLamWithAlefMaksura Then DefStops(Count) = Matches(Count).Groups(2).Index
         Next
         Return DefStops
     End Function

@@ -607,7 +607,7 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<noun text="&gt;ahodaYN" id="BetterGuided"></noun>
 			<noun text="&gt;awolaYN" id="NearerCloserWoe"></noun>
 
-			<noun text="&apos;aAyapN" plural="&apos;aAyaAtN" id="Sign"></noun>
+			<noun text="&apos;aAyapN" plural="&apos;aAya`tN" id="Sign"></noun>
 			<noun text="rasuwlN" plural="rusulN" id="Messenger"></noun>
 			<noun text="nabiy~N" plural="&gt;anobiyaA^&apos;N nabiy~uwna nabiy~iyna" id="Prophet"></noun>
 			<noun text="quro&apos;aAnN" plural="" id="QuranReadingRecitation"></noun>
@@ -718,7 +718,7 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<noun text="rijolN" plural="&gt;arojulN" id="Foot"></noun>
 			<noun text="{bonN" plural="banuwna baniyna &gt;abonaA^&apos;N" id="Son"></noun>
 			<noun text="{bonatN bintN {bonapN" plural="banaAtN" id="GirlDaughter"></noun>
-			<noun text="nafosN" plural="&gt;anfusN" id="Soul"></noun>
+			<noun text="nafosN" plural="&gt;anfusN" id="SoulSelf"></noun>
 			<noun text="ruwHN" plural="&gt;arowaAHN" id="SoulSpirit"></noun>
 			<noun text="quw~apN" plural="" id="PowerStrength"></noun>
 			<noun text="&gt;um~apN" plural="&gt;umamN" id="Community"></noun>
@@ -861,7 +861,7 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<noun text="HabolN" plural="HubaAlN" id="Rope"></noun>
 			<noun text="damN" plural="dimaA^&apos;N" id="Blood"></noun>
 			<noun text="viqolN" plural="&gt;avoqaAlN" id="LoadBurdenWeight"></noun>
-			<noun text="EaliymN" plural="EulamaA^&apos;N" id="Knowledgable"></noun>
+			<noun text="EaliymN" plural="EulamaA^&apos;N" id="KnowledgableScholar"></noun>
 			<noun text="siboTN" plural="&gt;asobaATN" id="Tribe"></noun>
 			<noun text="ZahorN" plural="ZuhuwrN" id="Back"></noun>
 			<noun text="Had~N" plural="HuduwdN" id="Limit"></noun>
@@ -893,9 +893,9 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 
 			<noun text="&lt;isolaAmN" id="Islam"></noun>
 			<noun text="musolimN" id="Muslim"></noun>
-			<noun text="&lt;imaAmN" id="Imam"></noun>
+			<noun text="&lt;imaAmN" plural="&gt;a}imapN" id="Imam"></noun>
 			<noun text="&apos;aAmiynN" id="MayAllahWillItSo"></noun>
-			<noun text="qubuwrN" id="Grave"></noun>
+			<noun text="qabarN" plural="qubuwrN" id="Grave"></noun>
 			<noun text="barozaxN" id="LandOfTheDead"></noun>
 			<noun text="&gt;amaAnahN" id="Safety"></noun>
 			<noun text="laA*aEN" id="BlazingFireBurning"></noun>
@@ -923,7 +923,6 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<noun text="HasadN" id="Envy"></noun>
 			<noun text="ZulomN" id="OppressionWrongdoing"></noun>
 			<noun text="buxiylN" id="Stingy"></noun>
-			<noun text="EulamaA^&apos;N" id="Scholars"></noun>
 			<noun text="&gt;akodaA^&apos;N" id="Confirmed"></noun>
 			<noun text="ruqoya" id="Charms"></noun>
 			<noun text="kaAfuwrN" id="CoolRefreshingDrink"></noun>
@@ -982,9 +981,7 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<noun text="&gt;amatN" id="FemaleSlave"></noun>
 			<noun text="raba`^}ibN" id="StepDaughter"></noun>
 			<noun text="rakabapN" id="NeckKnee"></noun>
-			<noun text="taqowaY" id="Piety"></noun>
 			<noun text="&gt;usotaA*N" plural="&gt;asaAti*apN" id="Professor"></noun>
-			<noun text="waliy" id="Guardian"></noun>
 			<noun text="&lt;iymaAnN" id="Belief"></noun>
 			<noun text="&lt;iHosaAnN" id="Excellence"></noun>
 			<noun text="niy~apN" id="Intention"></noun>
@@ -1019,7 +1016,6 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<noun text="jamaEapN" id="Congregation"></noun>
 			<noun text="tasoliymN" id="EndOfPrayerGreetingDelivery"></noun>
 			<noun text="ta$ah~udN" id="Witnessing"></noun>
-			<noun text="&gt;a*okaArN" id="SupplicationsAndPrayers"></noun>
 			<noun text="SalawaAtN" id="Invocation"></noun>
 			<noun text="mufotiy" id="Mufti"></noun>
 			<noun text="Sa`diqN" id="TruthfulPerson"></noun>
@@ -1028,7 +1024,7 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<noun text="&lt;isotigofaArN" id="AskForgiveness"></noun>
 			<noun text="tafosiyrN" id="Commentary"></noun>
 			<noun text="mufas~irN" id="Commentator"></noun>
-			<noun text="qiraA^&apos;&apos;aAtN" id="Recitations"></noun>
+			<noun text="qiraA^&apos;aAtN" id="Recitations"></noun>
 			<noun text="mujaw~adN" id="MelodicRecitation"></noun>
 			<noun text="murat~alN" id="SlowPracticeRecitation"></noun>
 			<noun text="tarotiylN" id="SlowMeasuredRhythmicTones"></noun>
@@ -1048,7 +1044,6 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<noun text="hijorapN" id="Emmigration"></noun>
 			<noun text="xuTobapN" id="Lecture"></noun>
 			<noun text="raHomapN" id="Mercy"></noun>
-			<noun text="nafosN" id="Self"></noun>
 			<noun text="jihaAdN" id="Fight"></noun>
 			<noun text="muja`hidN" id="Fighter"></noun>
 			<noun name="faroDN" id="Obligatory"></noun>
@@ -1062,8 +1057,8 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<noun text="tahaj~udN" id="LateNight"></noun>
 			<noun text="DuHaY" id="MorningLight"></noun>
 			<noun text="witorN" id="Odd"></noun>
-			<noun text="HalaAlN" id="Permissible"></noun>
-			<noun text="HaraAmN" id="Forbidden"></noun>
+			<noun text="HalaAlN" plural="HalaAlaAtN" id="Permissible"></noun>
+			<noun text="HaraAmN" plural="HaraAmaAtN" id="Forbidden"></noun>
 			<noun text="gariybN" id="TransmitionChainWithOnlyOneNarratorAtOneStage"></noun>
 			<noun text="&gt;a*~aAnN" id="CallToPrayer"></noun>
 			<noun text="mu&amp;a*~inN" id="CallToPrayerLeader"></noun>
@@ -1072,7 +1067,7 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<noun text="sujuwdN" id="Prostrating"></noun>
 			<noun text="sajodapN" id="Prostration"></noun>
 			<noun text="rakoEapN" id="UnitOfPrayer"></noun>
-			<noun text="rukuwEN" id="BowOfPrayer"></noun>
+			<noun text="rukuwEN" plural="rukuwEaAtN" id="BowOfPrayer"></noun>
 			<noun text="wuDuw^&apos;N" id="Ablution"></noun>
 			<noun text="tayam~umN" id="DustAblution"></noun>
 			<noun text="gusolN" id="MajorAblution"></noun>
@@ -1087,8 +1082,8 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<noun text="xilaAlN" id="PurifyingFingerToesBeard"></noun>
 			<noun text="fidoyapN" id="ReligiousDonation"></noun>
 			<noun text="kaf~aArapN" id="ReligiousDonationExpiation"></noun>
-			<noun text="duEaA^&apos;N" id="Supplication"></noun>
-			<noun text="*ikorN" id="ReminderRemembrance"></noun>
+			<noun text="duEaA^&apos;N" plural="daEwaAtN" id="Supplication"></noun>
+			<noun text="*ikorN" plural="&gt;a*okaArN" id="ReminderRemembranceSupplicationsAndPrayers"></noun>
 			<noun text="$ahaAdapN" id="Creed"></noun>
 			<noun text="takobiyrN" id="PhraseForAllahIsGreatest"></noun>
 			<noun text="taHomiydN" id="PhraseForAllPraiseAndThanksBeToAllah"></noun>
@@ -1100,7 +1095,7 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<noun text="tawoHiydN" id="OnenessOfGod"></noun>
 			<noun text="huf~aAZN" plural="haAfiZN" id="MemorizerOfQuran"></noun>
 			<noun text="HaniyfN" id="PureMonotheism"></noun>
-			<noun text="&lt;isotiHodaAd" id="ShavingThePubicHair"></noun>
+			<noun text="&lt;isotiHodaAdN" id="ShavingThePubicHair"></noun>
 			<noun text="jizoyapN" id="HeadTaxForNonMuslims"></noun>
 			<noun text="magaziy" id="Battles"></noun>
 			<noun text="buroquEN" id="VeilCoveringFaceWithTwoHolesToPermitVision"></noun>
@@ -1120,7 +1115,7 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<noun text="sidorN" id="ExtractOfLoteTrees"></noun>
 			<noun text="muHorimN" id="OneInAStateOfRitualConsecrationForPilgrimage"></noun>
 			<noun text="HijaAbN" id="ClothingCoveringAuraOfWoman"></noun>
-			<noun text="niqaAbN" id="FaceCoveringVeil"></noun>
+			<noun text="niqaAbN" plural="niqaAtN munaqabaAtN niqaAbatN" id="FaceCoveringVeil"></noun>
 			<noun text="&lt;iHoraAmN" id="StateOfRitualConsecrationForPilgrimage"></noun>
 			<noun text="muHal~N" id="SiteForEnteringStateOfRitualConsecration"></noun>
 			<noun text="tamat~uEN" id="EnteringStateOfRitualConsecrationForPerformingMinorPilgirimageFollowedByASeperateEntranceForMajorPilgrimage"></noun>
@@ -1132,7 +1127,7 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<noun text="taworaY`pN" id="Torah"></noun>
 			<noun text="furoqaAnN" id="DistinctionCriterion"></noun>
 			<noun text="juzo&apos;N" plural="&gt;ajozaA&apos;N" id="Part"></noun>
-			<noun text="manzilN" id="Station"></noun>
+			<noun text="manzilN" plural="manazalN" id="Station"></noun>
 			<noun text="tajowiydN" id="ProperPronunciationDuringRecitation"></noun>
 			<noun text="fiqohN" id="Jurisprudence"></noun>
 			<noun text="$ariyEapN" id="Law"></noun>
@@ -1261,7 +1256,7 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<noun text="mu$okilN" id="ApparentMeaningNotIntended"></noun>
 			<noun text="lafoZiy~N" id="Textual"></noun>
 			<noun text="qaToEiy~N" id="Definitive"></noun>
-			<noun text="Mu$otarakN" id="Homonyms"></noun>
+			<noun text="mu$otarakN" id="Homonyms"></noun>
 			<noun text="muEaw~alN" id="Explained"></noun>
 			<noun text="&lt;iqotiDaA^&apos;N" id="Necessity"></noun>
 			<noun text="$ubuhaAtN" id="DoubtsAboutExistence"></noun>
@@ -1270,9 +1265,9 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<noun text="&lt;ijotihaAdN" id="ReasonedDecision"></noun>
 			<noun text="mawoquwfN" id="WordsActionsApprovalDescriptionAttributedToCompanionOfProphet"></noun>
 			<noun text="fatowaY" plural="fataAwaY" id="Ruling"></noun>
-			<noun text="qiyaAsN" id="AnalogicalDeduction"></noun>
+			<noun text="qiyaAsN" plural="qiyaAsaAtN" id="AnalogicalDeduction"></noun>
 			<noun text="&lt;ijomaAEN" id="Concensus"></noun>
-			<noun text="$uwraY" id="Consultation"></noun>
+			<noun text="$uwraY" plural="&gt;a$uwraY" id="Consultation"></noun>
 			<noun text="majolisN" id="Council"></noun>
 			<noun text="waHoYN" id="Revelation"></noun>
 			<noun text="munaA*araAtN" id="CourtDebates"></noun>
@@ -2699,6 +2694,9 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 		<word text="&lt;ixotilaAfN tanaw~oEN" id="VarianceDifferences"></word>
 		<word text="laA^ &lt;ilaha &lt;il~aA {ll~ahu\, {lomaliku {loHaq~u {lomubiynu\, muHam~adN rasuwlu {ll~ahi\, {lSaAdiqu {lowaEodi {lo&gt;amiyni" id="Remembrance1"></word>
 		<word text="Hasobiy rab~iy jal~a {ll~ahu\, maA fiY qalobiy gayoru {ll~ahu\, nuwru muHam~adK Sal~a {ll~ahu\, laA^ &lt;ilaha &lt;il~aA {ll~ahu" id="Remembrance2"></word>
+		<word text="\{53:58\}" id="Remembrance3"></word>
+		<word text="wanaAdiyna ya`\, {ll~ahi *uwbonaY ya`\, {ll~ahi warajawnaA ya`\, {ll~ahi" id="Remembrance4"></word>
+		<word text="&gt;asotagofiru {ll~aha \{4:16:12-15\}" id="Remembrance4"></word>
 		<word text="{loHamodu lil~ahi {l~a*iy &gt;aHoyaAnaA baEoda maA^ &gt;amaAtanaA wa&lt;ilayohi {ln~u$uwru" id="WhenWakingUp1"></word>
 		<word text="laA^ &lt;ilaha &lt;il~aA {ll~ahu waHodahu laA $ariyka lahu\, lahu {lomuloku walahu {loHamodu\, wahuwa EalaY kul~i $ayo&apos;K qadiyrN\. suboHa`na {ll~ahi\, wa{loHamodu lil~ahi\, walaA^ &lt;ilaha &lt;il~aA {ll~ahu\, wa{ll~ahu &gt;akobaru\, walaA Hawola walaA quw~apa &lt;il~aA bi{ll~ahi {loEaliy~i {loEaZiymi\, rab~i {gofiroliy" id="WhenWakingUp2"></word>
 		<word text="{loHamodu lil~ahi {l~a*iy EaAfaAniy fiY jasadiy\, warad~a Ealay~a ruwHiy\, wa&gt;a*ina liy bi*ikorihi" id="WhenWakingUp3"></word>
@@ -4506,18 +4504,17 @@ Ramadan fast-breaking | One 2172-gram quantity | Dates or barley or ordinary sta
 		<nums name="millions" text="miloyuwnu miloyuwnaAni malaAyiyna"></nums>
 		<nums name="billions" text="biloyuwnu biloyuwnaAni balaAyiyna"></nums>
 		<nums name="milliard" text="miloyaAru miloyaAraAni miloyaAraAtK"></nums>
-		<nums name="trillions" text="toriloyuwnu toriloyuwnaAni triloyuwnaAtK"></nums>
+		<nums name="trillions" text="toriloyuwnu toriloyuwnaAni toriloyuwnaAtK"></nums>
 		<nums name="combiners" text="wa"></nums>
 		<nums name="quranheaders" text="&apos;aAya`tuhaA suwrapu rukuwEaAtuhaA"></nums>
 	</arabicnumbers>
 	<arabicpatterns>
 		<pattern name="CertainStopPattern" match="{ArabicSmallHighMeemInitialForm}|{PunctuationSymbols}"></pattern>
 		<pattern name="CertainNotStopPattern" match="{RecitationLettersDiacritics}|{RecitationSpecialSymbolsNotStop}"></pattern>
-		<pattern name="OptionalStopPattern" match="{ArabicEndOfAyah}|{ArabicSmallHighJeem}|{ArabicSmallHighThreeDots}|{ArabicSmallHighLigatureQafWithLamWithAlefMaksura}"></pattern>
-		<pattern name="OptionalStopPatternNotEndOfAyah" match="{ArabicSmallHighJeem}|{ArabicSmallHighThreeDots}|{ArabicSmallHighLigatureQafWithLamWithAlefMaksura}|{ArabicSmallHighLigatureSadWithLamWithAlefMaksura}"></pattern>
-		<pattern name="OptionalNotStopPattern" match="{ArabicSmallHighLigatureSadWithLamWithAlefMaksura}"></pattern>
-		<pattern name="TehMarbutaStopRule" match="(?:({ArabicFathaDammaKasra})|({ArabicTanweens})({ArabicSmallLowMeem}|{ArabicSmallHighMeemIsolatedForm})?)(?=\s*(?:{ArabicPlaceOfSajdah}?\s*(?:$|{ArabicEndOfAyah})|{CertainStopPattern}|{OptionalStopPattern}))"></pattern>
-		<pattern name="TehMarbutaContinueRule" match="(?:(?:{ArabicFathaDammaKasra})|(?:{ArabicTanweens})(?:{ArabicSmallLowMeem}|{ArabicSmallHighMeemIsolatedForm})?)(?!\s*(?:{ArabicPlaceOfSajdah}?\s*(?:$|{ArabicEndOfAyah})|{CertainStopPattern}|{OptionalStopPattern}))"></pattern>
+		<pattern name="OptionalPattern" match="{ArabicEndOfAyah}|{ArabicSmallHighJeem}|{ArabicSmallHighThreeDots}|{ArabicSmallHighLigatureQafWithLamWithAlefMaksura}|{ArabicSmallHighLigatureSadWithLamWithAlefMaksura}"></pattern>
+		<pattern name="OptionalPatternNotEndOfAyah" match="{ArabicSmallHighJeem}|{ArabicSmallHighThreeDots}|{ArabicSmallHighLigatureQafWithLamWithAlefMaksura}|{ArabicSmallHighLigatureSadWithLamWithAlefMaksura}"></pattern>
+		<pattern name="TehMarbutaStopRule" match="(?:({ArabicFathaDammaKasra})|({ArabicTanweens})({ArabicSmallLowMeem}|{ArabicSmallHighMeemIsolatedForm})?)(?=\s*(?:{ArabicPlaceOfSajdah}?\s*(?:$|{ArabicEndOfAyah})|{CertainStopPattern}|{OptionalPattern}))"></pattern>
+		<pattern name="TehMarbutaContinueRule" match="(?:(?:{ArabicFathaDammaKasra})|(?:{ArabicTanweens})(?:{ArabicSmallLowMeem}|{ArabicSmallHighMeemIsolatedForm})?)(?!\s*(?:{ArabicPlaceOfSajdah}?\s*(?:$|{ArabicEndOfAyah})|{CertainStopPattern}|{OptionalPattern}))"></pattern>
 		<pattern name="NotTehMarbuta" match="(?:{ArabicSunLetters}|{ArabicMoonLettersNoVowels}|{ArabicLetterWaw}|{ArabicLetterAlefMaksura}){ArabicShadda}?|{ArabicLetterAlef}|{ArabicLetterHamza}|{ArabicLetterAlefWithHamzaAbove}|{ArabicLetterWawWithHamzaAbove}|{ArabicLetterAlefWithHamzaBelow}|{ArabicLetterYehWithHamzaAbove}"></pattern>
 		<pattern name="MatchCaseEnding" match="({ArabicLetterTehMarbuta}){TehMarbutaStopRule}|(?:({NotTehMarbuta})(?:(?:{ArabicFathaDammaKasra})|(?:{ArabicKasratan}|{ArabicDammatan})(?:{ArabicSmallLowMeem}|{ArabicSmallHighMeemIsolatedForm})?)|({ArabicLetterHamza})(?:{ArabicFathatan})(?:{ArabicSmallLowMeem}|{ArabicSmallHighMeemIsolatedForm})?|({ArabicLetterNoon})(?:{ArabicSmallLowMeem}))(?=$|\s+)"></pattern>
 		<pattern name="MatchDefiniteness" match="(^|\s+){ArabicLetterAlefWasla}{ArabicLetterLam}(?:({ArabicSunLetters}){ArabicShadda}|{ArabicSukun}?(?={ArabicMoonLetters}|{ArabicLetterAlefWithHamzaAbove}|{ArabicLetterAlefWithHamzaBelow}|{ArabicLetterHamza}|{ArabicTatweel}{ArabicHamzaAbove}))"></pattern>
@@ -4752,13 +4749,13 @@ Ramadan fast-breaking | One 2172-gram quantity | Dates or barley or ordinary sta
     		<rule name="NotValidStartEndCombination" match="{ArabicLetterAlefWasla}{ArabicLetterLam}\S+(?:{ArabicTanweens})" evaluator="$&amp;"></rule>
 			<rule name="NotValidEnd" match="(?:{ArabicFatha}{ArabicLetterAlef}|{ArabicKasra}(?:{ArabicLetterAlefMaksura}|{ArabicSmallYeh})|{ArabicFatha}{ArabicLetterAlefMaksura}{ArabicLetterSuperscriptAlef}|{ArabicDamma}{ArabicSmallWaw})(?:(?:\s+{ArabicEndOfAyah})?(?:\s+(?:{ArabicStartOfRubElHizb}|{ArabicStopLetters}))?)?\s+(?:{ArabicLetterAlefWithHamzaAbove}|{ArabicLetterAlefWithHamzaBelow}|{ArabicLetterHamza})" evaluator="$&amp;"></rule>
 			<rule name="NotValidEnd" match="(?:{ArabicMaddahAbove})(?:(?:\s+{ArabicEndOfAyah})?(?:\s+(?:{ArabicStartOfRubElHizb}|{ArabicStopLetters}))?)?\s+({ArabicLetterAlefWithHamzaAbove}|{ArabicLetterAlefWithHamzaBelow}|{ArabicLetterHamza})" evaluator="$&amp;" negativematch="$1"></rule>
-			<rule name="OnlyAtEndOfWord" match="({ArabicFatha}{ArabicLetterAlef}{ArabicLetterAlefMaksura}(?={ArabicFatha}(?:\s*(?:$|{CertainStopPattern}|{OptionalStopPattern})|\s+)))|({ArabicSukun}|{ArabicFatha}|{ArabicKasra}|{ArabicLetterSuperscriptAlef}|{ArabicSmallHighRoundedZero}|{ArabicEmptyCentreLowStop}|{ArabicFathatan}{ArabicSmallLowMeem}?)?{ArabicLetterAlefMaksura}|{ArabicLetterAlefMaksura}(?!(?:{ArabicFathaDammaKasra}|{ArabicDammatan}|{ArabicShadda}(?:{ArabicFathaDammaKasra}|{ArabicDammatan}|{ArabicKasratan})|{ArabicMaddahAbove}(?:{ArabicFatha}|{ArabicDamma}|{ArabicDammatan})?|{ArabicSukun}(?:{ArabicHamzaAbove}(?:{ArabicDammatan}{ArabicKasratan}))?|{ArabicLetterSuperscriptAlef}(?:{ArabicMaddahAbove}|{ArabicLetterTehMarbuta}(?:{ArabicFathaDammaKasra}|{ArabicFathatan}|{ArabicKasratan})|{ArabicLetterMeem}{ArabicKasra}|{ArabicLetterNoon}(?:{ArabicFatha}{ArabicLetterAlef}{ArabicMaddahAbove}?|{ArabicKasra}(?:{ArabicLetterYeh}{ArabicLetterHeh}{ArabicDamma}|{ArabicLetterAlefMaksura}(?:{ArabicMaddahAbove}|{ArabicFatha})?)?)|{ArabicLetterHeh}(?:{ArabicKasra}{ArabicLetterNoon}{ArabicFatha}{ArabicLetterAlefMaksura}{ArabicKasra}|{ArabicFatha}{ArabicLetterAlef}{ArabicMaddahAbove}?|{ArabicDamma}(?:{ArabicLetterNoon}{ArabicShadda}{ArabicFatha}|{ArabicLetterMeem}(?:{ArabicSukun}|{ArabicDamma}|{ArabicFatha})?)?)|{ArabicLetterKaf}(?:{ArabicFatha}(?:{ArabicLetterHeh}{ArabicDamma}{ArabicLetterMeem})?|{ArabicKasra}|{ArabicDamma}{ArabicLetterMeem}(?:{ArabicSukun}|{ArabicDamma}|{ArabicFatha}{ArabicLetterAlef})?)|{ArabicLetterLam}{ArabicFatha})?)?(?:\s*(?:$|{CertainStopPattern}|{OptionalStopPattern})|\s+))" evaluator="$&amp;" negativematch="$1$2"></rule>
+			<rule name="OnlyAtEndOfWord" match="({ArabicFatha}{ArabicLetterAlef}{ArabicLetterAlefMaksura}(?={ArabicFatha}(?:\s*(?:$|{CertainStopPattern}|{OptionalPattern})|\s+)))|({ArabicSukun}|{ArabicFatha}|{ArabicKasra}|{ArabicLetterSuperscriptAlef}|{ArabicSmallHighRoundedZero}|{ArabicEmptyCentreLowStop}|{ArabicFathatan}{ArabicSmallLowMeem}?)?{ArabicLetterAlefMaksura}|{ArabicLetterAlefMaksura}(?!(?:{ArabicFathaDammaKasra}|{ArabicDammatan}|{ArabicShadda}(?:{ArabicFathaDammaKasra}|{ArabicDammatan}|{ArabicKasratan})|{ArabicMaddahAbove}(?:{ArabicFatha}|{ArabicDamma}|{ArabicDammatan})?|{ArabicSukun}(?:{ArabicHamzaAbove}(?:{ArabicDammatan}{ArabicKasratan}))?|{ArabicLetterSuperscriptAlef}(?:{ArabicMaddahAbove}|{ArabicLetterTehMarbuta}(?:{ArabicFathaDammaKasra}|{ArabicFathatan}|{ArabicKasratan})|{ArabicLetterMeem}{ArabicKasra}|{ArabicLetterNoon}(?:{ArabicFatha}{ArabicLetterAlef}{ArabicMaddahAbove}?|{ArabicKasra}(?:{ArabicLetterYeh}{ArabicLetterHeh}{ArabicDamma}|{ArabicLetterAlefMaksura}(?:{ArabicMaddahAbove}|{ArabicFatha})?)?)|{ArabicLetterHeh}(?:{ArabicKasra}{ArabicLetterNoon}{ArabicFatha}{ArabicLetterAlefMaksura}{ArabicKasra}|{ArabicFatha}{ArabicLetterAlef}{ArabicMaddahAbove}?|{ArabicDamma}(?:{ArabicLetterNoon}{ArabicShadda}{ArabicFatha}|{ArabicLetterMeem}(?:{ArabicSukun}|{ArabicDamma}|{ArabicFatha})?)?)|{ArabicLetterKaf}(?:{ArabicFatha}(?:{ArabicLetterHeh}{ArabicDamma}{ArabicLetterMeem})?|{ArabicKasra}|{ArabicDamma}{ArabicLetterMeem}(?:{ArabicSukun}|{ArabicDamma}|{ArabicFatha}{ArabicLetterAlef})?)|{ArabicLetterLam}{ArabicFatha})?)?(?:\s*(?:$|{CertainStopPattern}|{OptionalPattern})|\s+))" evaluator="$&amp;" negativematch="$1$2"></rule>
 			<rule name="OnlyAtEndOfWord" match="({ArabicFatha}(?:(?:{ArabicLetterAlefMaksura}|{ArabicLetterWaw}){ArabicLetterSuperscriptAlef})?)?{ArabicLetterTehMarbuta}" evaluator="$&amp;" negativematch="$1"></rule>
-			<rule name="OnlyAtEndOfWord" match="{ArabicLetterTehMarbuta}(?!(?:{ArabicFathaDammaKasra}|(?:{ArabicTanweens})(?:{ArabicSmallLowMeem}|{ArabicSmallHighMeemIsolatedForm})?)(?:\s*(?:$|{CertainStopPattern}|{OptionalStopPattern})|\s+))" evaluator="$&amp;"></rule>
-			<rule name="OnlyAtEndOfWord" match="({ArabicLetterTehMarbuta})?{ArabicFathatan}(?:{ArabicSmallLowMeem}|{ArabicSmallHighMeemIsolatedForm})?(?:\s+|\s*(?:$|{CertainStopPattern}|{OptionalStopPattern}))|({ArabicLetterHamza}){ArabicFathatan}(?:{ArabicSmallLowMeem}|{ArabicSmallHighMeemIsolatedForm})?{ArabicLetterAlef}?(?:\s+|\s*(?:$|{CertainStopPattern}|{OptionalStopPattern}))|(?:{ArabicLetterAlef}|{ArabicLetterAlefMaksura}|{ArabicLetterTehMarbuta}|{ArabicLetterHamza}){ArabicFathatan}|{ArabicFathatan}(?!(?:(?:{ArabicSmallLowMeem}|{ArabicSmallHighMeemIsolatedForm})?{ArabicLetterAlef}|{ArabicSmallLowMeem}?{ArabicLetterAlefMaksura})(?:\s+|\s*(?:$|{CertainStopPattern}|{OptionalStopPattern})))" evaluator="$&amp;" negativematch="$1$2"></rule>
+			<rule name="OnlyAtEndOfWord" match="{ArabicLetterTehMarbuta}(?!(?:{ArabicFathaDammaKasra}|(?:{ArabicTanweens})(?:{ArabicSmallLowMeem}|{ArabicSmallHighMeemIsolatedForm})?)(?:\s*(?:$|{CertainStopPattern}|{OptionalPattern})|\s+))" evaluator="$&amp;"></rule>
+			<rule name="OnlyAtEndOfWord" match="({ArabicLetterTehMarbuta})?{ArabicFathatan}(?:{ArabicSmallLowMeem}|{ArabicSmallHighMeemIsolatedForm})?(?:\s+|\s*(?:$|{CertainStopPattern}|{OptionalPattern}))|({ArabicLetterHamza}){ArabicFathatan}(?:{ArabicSmallLowMeem}|{ArabicSmallHighMeemIsolatedForm})?{ArabicLetterAlef}?(?:\s+|\s*(?:$|{CertainStopPattern}|{OptionalPattern}))|(?:{ArabicLetterAlef}|{ArabicLetterAlefMaksura}|{ArabicLetterTehMarbuta}|{ArabicLetterHamza}){ArabicFathatan}|{ArabicFathatan}(?!(?:(?:{ArabicSmallLowMeem}|{ArabicSmallHighMeemIsolatedForm})?{ArabicLetterAlef}|{ArabicSmallLowMeem}?{ArabicLetterAlefMaksura})(?:\s+|\s*(?:$|{CertainStopPattern}|{OptionalPattern})))" evaluator="$&amp;" negativematch="$1$2"></rule>
 			<rule name="OnlyAtStartOfWord" match="(?:(?:^\s*|\s+)({ArabicLetterWaw}{ArabicFatha}|(?:{ArabicLetterWaw}{ArabicFatha})?{ArabicLetterTeh}{ArabicFatha}|(?:{ArabicLetterWaw}{ArabicFatha}|{ArabicLetterLam}{ArabicFatha}|{ArabicLetterAlefWithHamzaAbove}{ArabicFatha}({ArabicLetterFeh}{ArabicFatha})?)?{ArabicLetterBeh}{ArabicKasra}|(?:{ArabicLetterAlefWithHamzaAbove}{ArabicFatha})?{ArabicLetterFeh}{ArabicFatha}|{ArabicLetterLam}{ArabicFatha}|{ArabicLetterWaw}{ArabicShadda}{ArabicFatha}|{ArabicLetterLam}{ArabicShadda}{ArabicFatha}|{ArabicLetterKaf}{ArabicFatha}|{ArabicLetterAlefWasla}?{ArabicLetterLam}{ArabicKasra})|\S+){ArabicLetterAlefWasla}|{ArabicLetterAlefWasla}(?={ArabicLetterAlefWasla}|{ArabicLetterAlefWithHamzaAbove}|{ArabicLetterAlefWithHamzaBelow}|{ArabicLetterAlefMaksura}|{ArabicLetterAlef}|{ArabicLetterSuperscriptAlef}|{ArabicLetterHamza}|{ArabicLetterTehMarbuta}|{ArabicLetterWaw}|{ArabicLetterYeh}|{ArabicFatha}|{ArabicKasra}|{ArabicDamma}|{ArabicSukun}|{ArabicShadda}|{ArabicMaddahAbove}|{ArabicFathatan}|{ArabicKasratan}|{ArabicDammatan}|{ArabicHamzaAbove})" evaluator="$&amp;" negativematch="$1"></rule>
 			<rule name="NotValidCombination" match="({ArabicLetterAlef}|{ArabicLetterSuperscriptAlef}|{ArabicLetterAlefMaksura}|{ArabicSmallWaw}|{ArabicSmallYeh}|{ArabicLetterSeen}|{ArabicLetterSad}|{ArabicLetterAin}|{ArabicLetterQaf}|{ArabicLetterKaf}|{ArabicLetterLam}|{ArabicLetterMeem}|{ArabicLetterNoon}|{ArabicLetterWaw}|{ArabicLetterYeh})?{ArabicMaddahAbove}" evaluator="$&amp;" negativematch="$1"></rule>
-			<rule name="NotValidCombination" match="{ArabicLetterAlef}(?:{ArabicFatha}|{ArabicKasra}|{ArabicDamma}|{ArabicSukun}|{ArabicShadda})|(?:{ArabicLetterAlef}|{ArabicLetterYeh}){ArabicDammatan}|(?:{ArabicLetterAlef}|{ArabicLetterWaw}|{ArabicLetterAlefMaksura}){ArabicKasratan}|{ArabicKasratan}(?!(?:{ArabicSmallLowMeem}|{ArabicSmallHighMeemIsolatedForm})?(?:\s+|\s*(?:$|{CertainStopPattern}|{OptionalStopPattern})))|{ArabicDammatan}(?!(?:{ArabicSmallLowMeem}|{ArabicSmallHighMeemIsolatedForm})?(?:{ArabicLetterAlef}{ArabicSmallHighRoundedZero}?)?(?:\s+|\s*(?:$|{CertainStopPattern}|{OptionalStopPattern})))" evaluator="$&amp;"></rule>
+			<rule name="NotValidCombination" match="{ArabicLetterAlef}(?:{ArabicFatha}|{ArabicKasra}|{ArabicDamma}|{ArabicSukun}|{ArabicShadda})|(?:{ArabicLetterAlef}|{ArabicLetterYeh}){ArabicDammatan}|(?:{ArabicLetterAlef}|{ArabicLetterWaw}|{ArabicLetterAlefMaksura}){ArabicKasratan}|{ArabicKasratan}(?!(?:{ArabicSmallLowMeem}|{ArabicSmallHighMeemIsolatedForm})?(?:\s+|\s*(?:$|{CertainStopPattern}|{OptionalPattern})))|{ArabicDammatan}(?!(?:{ArabicSmallLowMeem}|{ArabicSmallHighMeemIsolatedForm})?(?:{ArabicLetterAlef}{ArabicSmallHighRoundedZero}?)?(?:\s+|\s*(?:$|{CertainStopPattern}|{OptionalPattern})))" evaluator="$&amp;"></rule>
 			<rule name="NotValidCombination" match="(?:\S+({ArabicFatha}|{ArabicKasra}|{ArabicSukun}|{ArabicMaddahAbove})|\S+){ArabicLetterAlefWithHamzaBelow}|(?:\S+({ArabicFatha}|{ArabicKasra}|{ArabicSukun}|{ArabicMaddahAbove})|\S+){ArabicLetterAlefWithHamzaAbove}|(?:\S+({ArabicFatha}|{ArabicKasra}|{ArabicDamma}|{ArabicSukun}|{ArabicMaddahAbove})|\S+){ArabicLetterHamza}|({ArabicFatha}|{ArabicLetterAlefWasla}|{ArabicDamma}|{ArabicMaddahAbove})?{ArabicLetterWawWithHamzaAbove}|({ArabicFatha}|{ArabicKasra}|{ArabicDamma}|{ArabicLetterAlef}{ArabicSmallHighRoundedZero}|{ArabicLetterAlefWasla}|{ArabicSukun}|{ArabicMaddahAbove})?{ArabicLetterYehWithHamzaAbove}|{ArabicLetterAlefWithHamzaBelow}(?!{ArabicKasra}|{ArabicKasratan})|{ArabicLetterAlefWithHamzaAbove}(?!{ArabicSukun}|{ArabicFatha}|{ArabicDamma}|{ArabicDammatan})|{ArabicLetterWawWithHamzaAbove}(?!{ArabicSukun}|{ArabicFatha}|{ArabicDamma}|{ArabicKasra}|{ArabicFathatan}|{ArabicDammatan})|{ArabicLetterYehWithHamzaAbove}(?!{ArabicSukun}|{ArabicFatha}|{ArabicDamma}|{ArabicKasra}|{ArabicFathatan}|{ArabicKasratan})|{ArabicLetterHamza}(?!{ArabicSukun}|{ArabicFatha}|{ArabicDamma}|{ArabicKasra}|{ArabicFathatan}|{ArabicKasratan}|{ArabicDammatan})" evaluator="$&amp;" negativematch="$1$2$3$4$5"></rule>
 			<rule name="NotValidCombination" match="({ArabicLetterWaw}|{ArabicLetterAlefMaksura}|{ArabicFatha})?{ArabicLetterSuperscriptAlef}" evaluator="$&amp;" negativematch="$1"></rule>
 			<rule name="NotValidCombination" match="{ArabicLetterAlef}{ArabicLetterLam}{ArabicMaddahAbove}({ArabicLetterReh}|{ArabicLetterMeem}{ArabicMaddahAbove}(?:{ArabicLetterSad}{ArabicMaddahAbove}|{ArabicLetterReh})?)|(?:({ArabicLetterWaw}|{ArabicSmallWaw}|{ArabicDammatan}{ArabicSmallLowMeem}?|{ArabicFathatan}({ArabicSmallHighMeemIsolatedForm}|{ArabicSmallLowMeem})?|{ArabicMaddahAbove}|{ArabicFatha}|{ArabicKasra}|{ArabicDamma}|{ArabicLetterSuperscriptAlef}|{ArabicSukun})?|(?:^\s*|\s+)){ArabicLetterAlef}" evaluator="$&amp;" negativematch="$1$2"></rule>
@@ -4788,19 +4785,19 @@ Ramadan fast-breaking | One 2172-gram quantity | Dates or barley or ordinary sta
         <colorrule name="UnrestLetters" match="bounce" color="Blue"></colorrule>
 	</colorrules>
 	<metaruleset>
-	    <metarule name="LetterSpelling" match="((?:^|{CertainStopPattern}|{OptionalStopPattern})\s*|\s+)({ArabicUniqueLetters})(?=\s*$|\s+)" evaluator=";spellletter"></metarule>
-	    <metarule name="NumberSpelling" match="((?:^|{CertainStopPattern}|{OptionalStopPatternNotEndOfAyah})\s*|\s+)((?:{ArabicNumbers})+)(?=\s*$|\s+)" evaluator=";spellnumber"></metarule>
+	    <metarule name="LetterSpelling" match="((?:^|{CertainStopPattern}|({OptionalPattern}))\s*|\s+)({ArabicUniqueLetters})(?=\s*$|\s+)" evaluator=";optionalstop;spellletter"></metarule>
+	    <metarule name="NumberSpelling" match="((?:^|{CertainStopPattern}|{OptionalPatternNotEndOfAyah})\s*|\s+)((?:{ArabicNumbers})+)(?=\s*$|\s+)" evaluator=";spellnumber"></metarule>
 	    <metarule name="NumberSpelling" match="({ArabicEndOfAyah})()((?:{ArabicNumbers})+)()(?=\s*$|\s+)" evaluator="empty;helperlparen;spellnumber;helperrparen"></metarule>
 	    <metarule name="Stopping" match="(?:({ArabicSmallHighMeemInitialForm})|({ArabicStartOfRubElHizb})|({ArabicEndOfAyah})|({ArabicPlaceOfSajdah}))(?=\s*$|\s+)" evaluator="compulsorystop;startofhizb;endofversestop;prostration"></metarule>
 	    <metarule name="Stopping" match="({ArabicSmallHighJeem})|({ArabicSmallHighLamAlef})|({ArabicSmallHighThreeDots})(.*)({ArabicSmallHighThreeDots})|({ArabicSmallHighLigatureQafWithLamWithAlefMaksura})|({ArabicSmallHighLigatureSadWithLamWithAlefMaksura})|({ArabicSmallHighSeen})(?:\s+|\s*$)" evaluator="canstoporcontinue;prohibitedtostop;stopatfirstnotsecond;;stopatsecondnotfirst;bettertostopbutpermissibletocontinue;bettertocontinuebutpermissibletostop;subtlestopwithoutbreath"></metarule>
-	    <metarule name="Stopping" match="({ArabicFathatan})({ArabicSmallLowMeem}|{ArabicSmallHighMeemIsolatedForm})?(?=(?:{ArabicLetterAlef}|{ArabicLetterAlefMaksura})\s*(?:{ArabicPlaceOfSajdah}?\s*(?:$|{ArabicEndOfAyah})|{CertainStopPattern}|{OptionalStopPattern}))" evaluator="helperfatha;empty"></metarule>
-	    <metarule name="Stopping" match="(?:({NotTehMarbuta})(?:({ArabicFathaDammaKasra})|({ArabicKasratan}|{ArabicDammatan})({ArabicSmallLowMeem}|{ArabicSmallHighMeemIsolatedForm})?)|({ArabicLetterHamza})({ArabicFathatan})({ArabicSmallLowMeem}|{ArabicSmallHighMeemIsolatedForm})?|({ArabicLetterNoon})({ArabicSmallLowMeem}))(?=\s*(?:{ArabicPlaceOfSajdah}?\s*(?:$|{ArabicEndOfAyah})|{CertainStopPattern}|{OptionalStopPattern}))" evaluator=";empty;empty;empty;;empty;empty;;empty"></metarule>
+	    <metarule name="Stopping" match="({ArabicFathatan})({ArabicSmallLowMeem}|{ArabicSmallHighMeemIsolatedForm})?(?=(?:{ArabicLetterAlef}|{ArabicLetterAlefMaksura})\s*(?:{ArabicPlaceOfSajdah}?\s*(?:$|{ArabicEndOfAyah})|{CertainStopPattern}|({OptionalPattern})))" evaluator="helperfatha;empty;optionalstop"></metarule>
+	    <metarule name="Stopping" match="(?:({NotTehMarbuta})(?:({ArabicFathaDammaKasra})|({ArabicKasratan}|{ArabicDammatan})({ArabicSmallLowMeem}|{ArabicSmallHighMeemIsolatedForm})?)|({ArabicLetterHamza})({ArabicFathatan})({ArabicSmallLowMeem}|{ArabicSmallHighMeemIsolatedForm})?|({ArabicLetterNoon})({ArabicSmallLowMeem}))(?=\s*(?:{ArabicPlaceOfSajdah}?\s*(?:$|{ArabicEndOfAyah})|{CertainStopPattern}|({OptionalPattern})))" evaluator=";empty;empty;empty;;empty;empty;;empty;optionalstop"></metarule>
 	    <metarule name="Stopping" match="({ArabicLetterTehMarbuta}){TehMarbutaStopRule}" evaluator="helperheh;empty;empty;empty"></metarule>
 	    <metarule name="Continuing" match="({ArabicLetterTehMarbuta}){TehMarbutaContinueRule}" evaluator="helperteh"></metarule>
-	    <metarule name="Continuing" match="({ArabicFathatan})({ArabicSmallLowMeem}|{ArabicSmallHighMeemIsolatedForm})?({ArabicLetterAlef}|{ArabicLetterAlefMaksura})(?!\s*(?:{ArabicPlaceOfSajdah}?\s*(?:$|{ArabicEndOfAyah})|{CertainStopPattern}|{OptionalStopPattern}))" evaluator=";;empty"></metarule>
+	    <metarule name="Continuing" match="({ArabicFathatan})({ArabicSmallLowMeem}|{ArabicSmallHighMeemIsolatedForm})?({ArabicLetterAlef}|{ArabicLetterAlefMaksura})(?!\s*(?:{ArabicPlaceOfSajdah}?\s*(?:$|{ArabicEndOfAyah})|{CertainStopPattern}|({OptionalPattern})))" evaluator=";;empty;optionalstop"></metarule>
 	    <metarule name="SmallBounce" match="({ArabicFathaDammaKasra})({ArabicLetterDal}|{ArabicLetterBeh}|{ArabicLetterQaf}|{ArabicLetterTah}|{ArabicLetterJeem})(?={ArabicSukun}\S)" evaluator=";bounce"></metarule>
-	    <metarule name="ModerateBounce" match="({ArabicLetterDal}|{ArabicLetterBeh}|{ArabicLetterQaf}|{ArabicLetterTah}|{ArabicLetterJeem})(?=(?:(?:{ArabicTanweens})(?:{ArabicSmallLowMeem}|{ArabicSmallHighMeemIsolatedForm})?|{ArabicFathaDammaKasra})\s*(?:{ArabicPlaceOfSajdah}?\s*(?:$|{ArabicEndOfAyah})|{CertainStopPattern}|{OptionalStopPattern}))" evaluator="bounce"></metarule>
-	    <metarule name="GreatBounce" match="({ArabicLetterDal}|{ArabicLetterBeh}|{ArabicLetterQaf}|{ArabicLetterTah}|{ArabicLetterJeem})(?={ArabicSukun}\s*(?:{ArabicPlaceOfSajdah}?\s*(?:$|{ArabicEndOfAyah})|{CertainStopPattern}|{OptionalStopPattern}))" evaluator="bounce"></metarule>
+	    <metarule name="ModerateBounce" match="({ArabicLetterDal}|{ArabicLetterBeh}|{ArabicLetterQaf}|{ArabicLetterTah}|{ArabicLetterJeem})(?=(?:(?:{ArabicTanweens})(?:{ArabicSmallLowMeem}|{ArabicSmallHighMeemIsolatedForm})?|{ArabicFathaDammaKasra})\s*(?:{ArabicPlaceOfSajdah}?\s*(?:$|{ArabicEndOfAyah})|{CertainStopPattern}|({OptionalPattern})))" evaluator="bounce;optionalstop"></metarule>
+	    <metarule name="GreatBounce" match="({ArabicLetterDal}|{ArabicLetterBeh}|{ArabicLetterQaf}|{ArabicLetterTah}|{ArabicLetterJeem})(?={ArabicSukun}\s*(?:{ArabicPlaceOfSajdah}?\s*(?:$|{ArabicEndOfAyah})|{CertainStopPattern}|({OptionalPattern})))" evaluator="bounce;optionalstop"></metarule>
 	    <metarule name="NasalizeCharacterDoubled" match="({ArabicLetterNoon})({ArabicShadda})" evaluator="nasalize|normalprolong;empty"></metarule>
 	    <metarule name="VowellessNoonClear" match="(?:({ArabicLetterNoon}{ArabicSukun})|(?:({ArabicLetterNoon})|({ArabicTanweens}))(\s+))({ArabicLetterAin}|{ArabicLetterGhain}|{ArabicLetterHah}|{ArabicLetterHeh}|{ArabicLetterHamza})" evaluator=""></metarule>
 	    <metarule name="VowellessNoonCovered" match="(?:({ArabicLetterNoon})({ArabicSmallHighMeemIsolatedForm})?(?:\s+)?|(?:(?:({ArabicFathatan})({ArabicSmallHighMeemIsolatedForm})?{ArabicLetterAlef}|({ArabicLetterHamza}|{ArabicLetterTehMarbuta})({ArabicFathatan})({ArabicSmallHighMeemIsolatedForm})?|({ArabicDammatan})({ArabicSmallHighMeemIsolatedForm})?|({ArabicKasratan})({ArabicSmallLowMeem})?)(?:\s+(?:{ArabicPlaceOfSajdah}\s*$|(?:{ArabicSmallHighLamAlef}|{ArabicSmallHighLigatureSadWithLamWithAlefMaksura})\s+)?)))(?={ArabicLetterBeh}({ArabicFatha}|{ArabicDamma}|{ArabicKasra}|{ArabicDammatan}|{ArabicKasratan}))" evaluator="empty;nasalize|helpermeem;dividetanween(,empty);nasalize|helpermeem;;dividetanween(,empty);nasalize|helpermeem;dividetanween(,empty);nasalize|helpermeem;dividetanween(,empty);nasalize|helpermeem"></metarule>
@@ -4823,22 +4820,22 @@ Ramadan fast-breaking | One 2172-gram quantity | Dates or barley or ordinary sta
 	    <metarule name="EmptyCentreLowStop" match="({ArabicEmptyCentreLowStop})({ArabicLetterAlefMaksura})({ArabicLetterSuperscriptAlef})" evaluator="empty;helperfatha;helperalef"></metarule>
 	    <metarule name="EmptyCentreHighStop" match="({ArabicEmptyCentreHighStop})" evaluator="empty"></metarule>
 	    <metarule name="RoundedHighStopWithFilledCentre" match="({ArabicLetterAlef})()({ArabicRoundedHighStopWithFilledCentre})" evaluator=";helperhamza;helperfatha"></metarule>
-	    <metarule name="EmptyShadda" match="((?:^|{CertainStopPattern}|{OptionalStopPattern})\s*)({ArabicLetterBeh}|{ArabicLetterTeh}|{ArabicLetterDal}|{ArabicLetterThal}|{ArabicLetterReh}|{ArabicLetterTah}|{ArabicLetterZah}|{ArabicLetterAin}|{ArabicLetterFeh}|{ArabicLetterLam}|{ArabicLetterMeem}|{ArabicLetterNoon}|{ArabicLetterWaw})({ArabicShadda})" evaluator=";;empty"></metarule>
-	    <metarule name="EmptyHamza" match="((?:^|{CertainStopPattern}|{OptionalStopPattern})\s*)({ArabicLetterAlefWasla})(?={ArabicLetterLam}(?:(?:{ArabicSunLetters})?{ArabicShadda}|{ArabicSukun}?(?:{ArabicMoonLetters}|{ArabicLetterAlefWithHamzaAbove}|{ArabicLetterAlefWithHamzaBelow}|{ArabicLetterHamza}|{ArabicTatweel}{ArabicHamzaAbove})))" evaluator=";helperfatha"></metarule>
-	    <metarule name="EmptyHamza" match="((?:^|{CertainStopPattern}|{OptionalStopPattern})\s*)({ArabicLetterAlefWasla})(?=(?:{ArabicMoonLetters}|{ArabicSunLettersNoLam})(?:{ArabicSukun}|{ArabicShadda}?(?:{ArabicFathaDammaKasra}))?(?:{ArabicLetters})(?:{ArabicFatha}|{ArabicKasra})|{ArabicWaslKasraExceptions})" evaluator=";helperkasra"></metarule>
-	    <metarule name="EmptyHamza" match="((?:^|{CertainStopPattern}|{OptionalStopPattern})\s*)({ArabicLetterAlefWasla})(?=(?:{ArabicMoonLetters}|{ArabicSunLettersNoLam})(?:{ArabicSukun}|{ArabicShadda}?(?:{ArabicFathaDammaKasra}))?(?:{ArabicLetters}){ArabicDamma})" evaluator=";helperdamma"></metarule>
-	    <metarule name="EmptyHamza" match="((?:{CertainNotStopPattern}|{OptionalNotStopPattern})\s*)({ArabicLetterAlefWasla})" evaluator=";empty"></metarule>
-	    <metarule name="AssimilateLaamSunLetter" match="((?:(?:^|{CertainStopPattern}|{OptionalStopPattern})\s*|\s+)(?:{ArabicLetterWaw}{ArabicFatha}|{ArabicLetterBeh}{ArabicKasra}|{ArabicLetterTeh}{ArabicFatha}|{ArabicLetterKaf}{ArabicFatha}|{ArabicLetterLam}{ArabicKasra})?{ArabicLetterAlefWasla})({ArabicLetterLam})({ArabicSunLetters})(?={ArabicShadda})" evaluator=";assimilate;assimilator"></metarule>
-	    <metarule name="ClearLaamMoonLetter" match="((?:(?:^|{CertainStopPattern}|{OptionalStopPattern})\s*|\s+)(?:{ArabicLetterWaw}{ArabicFatha}|{ArabicLetterBeh}{ArabicKasra}|{ArabicLetterTeh}{ArabicFatha}|{ArabicLetterKaf}{ArabicFatha}|{ArabicLetterLam}{ArabicKasra})?{ArabicLetterAlefWasla})({ArabicLetterLam})(?={ArabicSukun}?(?:{ArabicMoonLetters}|{ArabicLetterAlefWithHamzaAbove}|{ArabicLetterAlefWithHamzaBelow}|{ArabicLetterHamza}|{ArabicTatweel}{ArabicHamzaAbove}))" evaluator=";helperprefix"></metarule>
+	    <metarule name="EmptyShadda" match="((?:^|{CertainStopPattern}|({OptionalPattern}))\s*)({ArabicLetterBeh}|{ArabicLetterTeh}|{ArabicLetterDal}|{ArabicLetterThal}|{ArabicLetterReh}|{ArabicLetterTah}|{ArabicLetterZah}|{ArabicLetterAin}|{ArabicLetterFeh}|{ArabicLetterLam}|{ArabicLetterMeem}|{ArabicLetterNoon}|{ArabicLetterWaw})({ArabicShadda})" evaluator=";optionalstop;;empty"></metarule>
+	    <metarule name="EmptyHamza" match="((?:^|{CertainStopPattern}|({OptionalPattern}))\s*)({ArabicLetterAlefWasla})(?={ArabicLetterLam}(?:(?:{ArabicSunLetters})?{ArabicShadda}|{ArabicSukun}?(?:{ArabicMoonLetters}|{ArabicLetterAlefWithHamzaAbove}|{ArabicLetterAlefWithHamzaBelow}|{ArabicLetterHamza}|{ArabicTatweel}{ArabicHamzaAbove})))" evaluator=";optionalstop;helperfatha"></metarule>
+	    <metarule name="EmptyHamza" match="((?:^|{CertainStopPattern}|({OptionalPattern}))\s*)({ArabicLetterAlefWasla})(?=(?:{ArabicMoonLetters}|{ArabicSunLettersNoLam})(?:{ArabicSukun}|{ArabicShadda}?(?:{ArabicFathaDammaKasra}))?(?:{ArabicLetters})(?:{ArabicFatha}|{ArabicKasra})|{ArabicWaslKasraExceptions})" evaluator=";optionalstop;helperkasra"></metarule>
+	    <metarule name="EmptyHamza" match="((?:^|{CertainStopPattern}|({OptionalPattern}))\s*)({ArabicLetterAlefWasla})(?=(?:{ArabicMoonLetters}|{ArabicSunLettersNoLam})(?:{ArabicSukun}|{ArabicShadda}?(?:{ArabicFathaDammaKasra}))?(?:{ArabicLetters}){ArabicDamma})" evaluator=";optionalstop;helperdamma"></metarule>
+	    <metarule name="EmptyHamza" match="((?:{CertainNotStopPattern}|({OptionalPattern}))\s*)({ArabicLetterAlefWasla})" evaluator=";optionalnotstop;empty"></metarule>
+	    <metarule name="AssimilateLaamSunLetter" match="((?:(?:^|{CertainStopPattern}|({OptionalPattern}))\s*|\s+)(?:{ArabicLetterWaw}{ArabicFatha}|{ArabicLetterBeh}{ArabicKasra}|{ArabicLetterTeh}{ArabicFatha}|{ArabicLetterKaf}{ArabicFatha}|{ArabicLetterLam}{ArabicKasra})?{ArabicLetterAlefWasla})({ArabicLetterLam})({ArabicSunLetters})(?={ArabicShadda})" evaluator=";optionalstop;assimilate;assimilator"></metarule>
+	    <metarule name="ClearLaamMoonLetter" match="((?:(?:^|{CertainStopPattern}|({OptionalPattern}))\s*|\s+)(?:{ArabicLetterWaw}{ArabicFatha}|{ArabicLetterBeh}{ArabicKasra}|{ArabicLetterTeh}{ArabicFatha}|{ArabicLetterKaf}{ArabicFatha}|{ArabicLetterLam}{ArabicKasra})?{ArabicLetterAlefWasla})({ArabicLetterLam})(?={ArabicSukun}?(?:{ArabicMoonLetters}|{ArabicLetterAlefWithHamzaAbove}|{ArabicLetterAlefWithHamzaBelow}|{ArabicLetterHamza}|{ArabicTatweel}{ArabicHamzaAbove}))" evaluator=";optionalstop;helperprefix"></metarule>
 	    <metarule name="Sukun" match="({ArabicSukun})" evaluator="empty"></metarule>
 	    <metarule name="AlefMaksuraDaggerAlef" match="({ArabicLetterAlefMaksura})(?={ArabicLetterSuperscriptAlef})" evaluator="helperfatha"></metarule>
 	    <metarule name="AlefMaddah" match="({ArabicLetterAlefWithMaddaAbove})" evaluator="dividelettersymbol(helperalef permissibleprolong,empty)"></metarule>
 	    <metarule name="Maddah" match="({ArabicFatha}{ArabicLetterAlef}|{ArabicFatha}(?:{ArabicLetterWaw}|{ArabicLetterAlefMaksura})?{ArabicLetterSuperscriptAlef})({ArabicMaddahAbove})" evaluator="permissibleprolong;empty"></metarule>
 	    <metarule name="Maddah" match="({ArabicDamma}(?:{ArabicSmallWaw}|{ArabicLetterWaw})|{ArabicKasra}(?:{ArabicSmallYeh}|{ArabicLetterYeh})|{ArabicKasra}(?:{ArabicLetterAlef}{ArabicSmallHighRoundedZero})?{ArabicLetterAlefMaksura})({ArabicMaddahAbove})" evaluator="permissibleprolong;empty"></metarule>
-	    <metarule name="AlefWaslaWawHamza" match="((?:^|{CertainStopPattern}|{OptionalStopPattern})\s*{ArabicLetterAlefWasla})({ArabicLetterWawWithHamzaAbove})" evaluator=";dividelettersymbol(helperwaw,empty)"></metarule>
-	    <metarule name="AlefWaslaAlefMaksuraHamza" match="((?:^|{CertainStopPattern}|{OptionalStopPattern})\s*{ArabicLetterAlefWasla})({ArabicLetterYehWithHamzaAbove})" evaluator=";dividelettersymbol(helperyeh,empty)"></metarule>
-	    <metarule name="AlefHamza" match="((?:^|{CertainStopPattern}|{OptionalStopPattern})\s*)({ArabicLetterAlefWithHamzaAbove}|{ArabicLetterAlefWithHamzaBelow}|{ArabicLetterHamza})" evaluator=";empty"></metarule>
-	    <metarule name="AlefHamza" match="((?:{CertainNotStopPattern}|{OptionalNotStopPattern})\s*)({ArabicLetterAlefWithHamzaAbove}|{ArabicLetterAlefWithHamzaBelow})" evaluator=";dividelettersymbol(empty,helperhamza)"></metarule>
+	    <metarule name="AlefWaslaWawHamza" match="((?:^|{CertainStopPattern}|({OptionalPattern}))\s*{ArabicLetterAlefWasla})({ArabicLetterWawWithHamzaAbove})" evaluator=";optionalstop;dividelettersymbol(helperwaw,empty)"></metarule>
+	    <metarule name="AlefWaslaAlefMaksuraHamza" match="((?:^|{CertainStopPattern}|({OptionalPattern}))\s*{ArabicLetterAlefWasla})({ArabicLetterYehWithHamzaAbove})" evaluator=";optionalstop;dividelettersymbol(helperyeh,empty)"></metarule>
+	    <metarule name="AlefHamza" match="((?:^|{CertainStopPattern}|({OptionalPattern}))\s*)({ArabicLetterAlefWithHamzaAbove}|{ArabicLetterAlefWithHamzaBelow}|{ArabicLetterHamza})" evaluator=";optionalstop;empty"></metarule>
+	    <metarule name="AlefHamza" match="((?:{CertainNotStopPattern}|({OptionalPattern}))\s*)({ArabicLetterAlefWithHamzaAbove}|{ArabicLetterAlefWithHamzaBelow})" evaluator=";optionalnotstop;dividelettersymbol(empty,helperhamza)"></metarule>
 	    <metarule name="WawHamzah" match="({ArabicLetterWawWithHamzaAbove})" evaluator="dividelettersymbol(empty,helperhamza)"></metarule>
 	    <metarule name="AlefMaksuraHamzah" match="({ArabicSukun}|{ArabicKasra}|{ArabicFatha}(?:{ArabicLetterAlef}{ArabicMaddahAbove}?)?|{ArabicLetterSuperscriptAlef}{ArabicMaddahAbove})({ArabicLetterYehWithHamzaAbove})" evaluator=";dividelettersymbol(empty,helperhamza)"></metarule>
 	    <metarule name="SmallWaw" match="({ArabicSmallWaw})" evaluator="helperwaw"></metarule>
@@ -4850,7 +4847,7 @@ Ramadan fast-breaking | One 2172-gram quantity | Dates or barley or ordinary sta
 	    <metarule name="SmallHamza" match="((?:{ArabicTatweel}|{ArabicLetterSuperscriptAlef}){ArabicHamzaAbove}|{ArabicHamzaBelow})" evaluator="helperhamza"></metarule>
 	    <metarule name="FathaSilentLetterSuperscriptAlef" match="({ArabicFatha})({ArabicLetterAlefMaksura}|{ArabicLetterWaw}){ArabicLetterSuperscriptAlef}" evaluator=";empty"></metarule>
 	    <metarule name="FathaAlefMaksura" match="({ArabicFatha})({ArabicLetterAlefMaksura})(?=\s+|\s*$)" evaluator=";helperalef"></metarule>
-	    <metarule name="FathaAlefMaksura" match="({ArabicFathatan}(?:{ArabicSmallLowMeem}|{ArabicSmallHighMeemIsolatedForm})?)({ArabicLetterAlefMaksura})(?=\s*(?:{ArabicPlaceOfSajdah}?\s*(?:$|{ArabicEndOfAyah})|{CertainStopPattern}|{OptionalStopPattern}))" evaluator=";helperalef"></metarule>
+	    <metarule name="FathaAlefMaksura" match="({ArabicFathatan}(?:{ArabicSmallLowMeem}|{ArabicSmallHighMeemIsolatedForm})?)({ArabicLetterAlefMaksura})(?=\s*(?:{ArabicPlaceOfSajdah}?\s*(?:$|{ArabicEndOfAyah})|{CertainStopPattern}|({OptionalPattern})))" evaluator=";helperalef;optionalstop"></metarule>
 	    <metarule name="FathaAlefMaksura" match="({ArabicFatha})({ArabicLetterAlefMaksura})(?={ArabicSukun}|{ArabicKasra}|{ArabicShadda})" evaluator=";helperyeh"></metarule>
 	    <metarule name="KasraAlefMaksura" match="({ArabicKasra})({ArabicLetterAlefMaksura})(?!{ArabicSmallHighRoundedZero})" evaluator=";helperyeh"></metarule>
 	</metaruleset>

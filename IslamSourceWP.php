@@ -769,10 +769,9 @@ class CachedData
         return CachedData::$_QuranHeaders;
     }
     static $_CertainStopPattern = null;
-    static $_OptionalStopPattern = null;
-    static $_OptionalStopPatternNotEndOfAyah = null;
+    static $_OptionalPattern = null;
+    static $_OptionalPatternNotEndOfAyah = null;
     static $_CertainNotStopPattern = null;
-    static $_OptionalNotStopPattern = null;
     static $_TehMarbutaStopRule = null;
     static $_TehMarbutaContinueRule = null;
     public static function CertainStopPattern()
@@ -782,19 +781,19 @@ class CachedData
         }
         return CachedData::$_CertainStopPattern;
     }
-    public static function OptionalStopPattern()
+    public static function OptionalPattern()
 	{
-        if (CachedData::$_OptionalStopPattern === null) {
-            CachedData::$_OptionalStopPattern = CachedData::GetPattern("OptionalStopPattern");
+        if (CachedData::$_OptionalPattern === null) {
+            CachedData::$_OptionalPattern = CachedData::GetPattern("OptionalPattern");
         }
-        return CachedData::$_OptionalStopPattern;
+        return CachedData::$_OptionalPattern;
     }
-    public static function OptionalStopPatternNotEndOfAyah()
+    public static function OptionalPatternNotEndOfAyah()
 	{
-        if (CachedData::$_OptionalStopPatternNotEndOfAyah === null) {
-            CachedData::$_OptionalStopPatternNotEndOfAyah = CachedData::GetPattern("OptionalStopPatternNotEndOfAyah");
+        if (CachedData::$_OptionalPatternNotEndOfAyah === null) {
+            CachedData::$_OptionalPatternNotEndOfAyah = CachedData::GetPattern("OptionalPatternNotEndOfAyah");
         }
-        return CachedData::$_OptionalStopPatternNotEndOfAyah;
+        return CachedData::$_OptionalPatternNotEndOfAyah;
     }
     public static function CertainNotStopPattern()
 	{
@@ -802,13 +801,6 @@ class CachedData
             CachedData::$_CertainNotStopPattern = CachedData::GetPattern("CertainNotStopPattern");
         }
         return CachedData::$_CertainNotStopPattern;
-    }
-    public static function OptionalNotStopPattern()
-	{
-        if (CachedData::$_OptionalNotStopPattern === null) {
-            CachedData::$_OptionalNotStopPattern = CachedData::GetPattern("OptionalNotStopPattern");
-        }
-        return CachedData::$_OptionalNotStopPattern;
     }
     public static function TehMarbutaStopRule()
 	{
@@ -1125,10 +1117,9 @@ class CachedData
         return preg_replace_callback("/\\{(.*?)\\}/u", function($matches) use($bAll) {
             if ($bAll) {
                 if ($matches[1] == "CertainStopPattern") { return CachedData::CertainStopPattern(); }
-                if ($matches[1] == "OptionalStopPattern") { return CachedData::OptionalStopPattern(); }
-                if ($matches[1] == "OptionalStopPatternNotEndOfAyah") { return CachedData::OptionalStopPatternNotEndOfAyah(); }
+                if ($matches[1] == "OptionalPattern") { return CachedData::OptionalPattern(); }
+                if ($matches[1] == "OptionalPatternNotEndOfAyah") { return CachedData::OptionalPatternNotEndOfAyah(); }
                 if ($matches[1] == "CertainNotStopPattern") { return CachedData::CertainNotStopPattern(); }
-                if ($matches[1] == "OptionalNotStopPattern") { return CachedData::OptionalNotStopPattern(); }
                 if ($matches[1] == "TehMarbutaStopRule") { return CachedData::TehMarbutaStopRule(); }
                 if ($matches[1] == "TehMarbutaContinueRule") { return CachedData::TehMarbutaContinueRule(); }
 
