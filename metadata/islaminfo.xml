@@ -2514,6 +2514,12 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 		<word text="&lt;iEoraAbu {loquro&apos;aAni" id="QuranicGrammar"></word>
 		<word text="gariybu {loquro&apos;aAni" id="UnusualQuranicTerms"></word>
 		<word text="majaAzu {loquro&apos;aAni" id="QuranicMetaphor"></word>
+		<!-- {search:suboHa`n[aiu].?.? .ll.*} -->
+		<!-- {search:suboHa`n[aiu].?.? rab.*} -->
+		<!-- {search:loHamodu lil~ahi rab.*} -->
+		<!-- {search:loHamodu lil.*} -->
+		<!-- {search:loHamodu rab.*} -->
+		<!-- {search:ll~ah[aiu] >ak.*} -->
 		<!-- {search:li?l~ah;W4W;W4WNum} -->
 		<!-- {search:r~?ab~[aiu] .;W4W;W4WNum} -->
 		<!-- {search:>ahol[aiu] .;W4W;W4WNum} -->
@@ -2751,9 +2757,9 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 		<word text="{ll~ahum~a &lt;in~iY^ &gt;aso&gt;aluka {lojan~apa wa&gt;aEuw*u bika mina {ln~aAri" id="BeforeGivingPeaceOfPrayer7"></word>
 		<word text="{ll~ahum~a biEilomika {logayobi waqudoratika EalaY {loxaloqi &gt;aHoyiniy maA Ealimota {loHayaw`pa xayorFA liy watawaf~aniY^ &lt;i*aA Ealimota {lowafaw`pa xayorFA liy\, {ll~ahum~a &lt;in~iY^ &gt;aso&gt;aluka xa$oyataka fiY {logayobi wa{l$~ahaAdapi wa&gt;aso&gt;aluka kalimapa {loHaq~i fiY {lr~iDaA wa{logaDabi wa&gt;aso&gt;aluka {loqaSoda fiY {loginaY wa{lofaqori wa&gt;aso&gt;aluka naEiymFA laA yanfadu wa&gt;aso&gt;aluka qur~apa EayonK laA tanqaTiEu wa&gt;aso&gt;aluka {lr~iDaA baEoda {loqaDaA^&apos;i wa&gt;aso&gt;aluka baroda {loEayo$i baEoda {lomawoti wa&gt;aso&gt;aluka la*~apa {ln~aZari &lt;ilaY wajohika wa{l$~awoqa &lt;ilaY liqaA^}ika fiY gayori Dar~aA^&apos;a muDir~apK walaA fitonapK muDil~apK {ll~ahum~a zay~in~aA biziynapi {lo&lt;iymaAni waAjoEalonaA hudaApF muhotadiyna" id="BeforeGivingPeaceOfPrayer8"></word>
 		<word text="{ll~ahum~a &lt;in~iY^ &gt;aso&gt;aluka ya`\, {ll~ahu bi&gt;an~aka {lowaAHidu {lo&gt;aHadu {lS~amadu {l~a*iy lamo yalido walamo yuwlado walamo yakuno lahu kufuwFA &gt;aHadN\, &gt;an tagofira liy *unuwbiy &lt;in~aka &gt;anta {logafuwru {lr~aHiymu" id="BeforeGivingPeaceOfPrayer9"></word>
-		<word text="{ll~ahum~a &lt;in~iY^ &gt;aso&gt;aluka bi&gt;an~a laka {loHamoda laA^ &lt;ilaha &lt;il~aA^ &gt;anta waHodaka laA $ariyka laka {loman~aAnu ya`badiyEa {ls~ama`wa`ti wa{lo&gt;aroDi ya`*aA {lojalaAli wa{lo&lt;ikoraAmi\, ya`Hay~u ya`qay~uwmu &lt;in~iY^ &gt;aso&gt;aluka {lojan~apa wa&gt;aEuw*u bika mina {ln~aAri" id="BeforeGivingPeaceOfPrayer10"></word>
+		<word text="{ll~ahum~a &lt;in~iY^ &gt;aso&gt;aluka bi&gt;an~a laka {loHamoda laA^ &lt;ilaha &lt;il~aA^ &gt;anta waHodaka laA $ariyka laka {loman~aAnu ya`badiyEa {ls~ama`wa`ti wa{lo&gt;aroDi ya`*aA {lojala`li wa{lo&lt;ikoraAmi\, ya`Hay~u ya`qay~uwmu &lt;in~iY^ &gt;aso&gt;aluka {lojan~apa wa&gt;aEuw*u bika mina {ln~aAri" id="BeforeGivingPeaceOfPrayer10"></word>
 		<word text="{ll~ahum~a &lt;in~iY^ &gt;aso&gt;aluka bi&gt;an~iy &gt;a$ohadu &gt;an~aka &gt;anta {ll~ahu laA^ &lt;ilaha &lt;il~aA^ &gt;anta {lo&gt;aHadu {lS~amadu {l~a*iy lamo yalido walamo yuwlado walamo yakuno lahu kufuwFA &gt;aHadN" id="BeforeGivingPeaceOfPrayer11"></word>
-		<word text="&gt;asotagofiru {ll~aha (valaAvFA) {ll~ahum~a &gt;anta {ls~alaAmu waminka {ls~alaAmu tabaArakota ya`*aA {lojalaAli wa{lo&lt;ikoraAmi" id="RemembranceAfterGivingPeaceOfPrayer1"></word>
+		<word text="&gt;asotagofiru {ll~aha (valaAvFA) {ll~ahum~a &gt;anta {ls~alaAmu waminka {ls~alaAmu tabaArakota ya`*aA {lojala`li wa{lo&lt;ikoraAmi" id="RemembranceAfterGivingPeaceOfPrayer1"></word>
 		<word text="laA^ &lt;ilaha &lt;il~aA {ll~ahu waHodahu laA $ariyka lahu\, lahu {lomuloku walahu {loHamodu wahuwa EalaY kul~i $ayo&apos;K qadiyrN {ll~ahum~a laA maAniEa limaA^ &gt;aEoTayota walaA muEoTiYa limaA manaEota walaA yanfaEu *aA {lojad~i minka {lojad~u" id="RemembranceAfterGivingPeaceOfPrayer2"></word>
 		<word text="laA^ &lt;ilaha &lt;il~aA {ll~ahu waHodahu laA $ariyka lahu\, lahu {lomuloku walahu {loHamodu wahuwa EalaY kul~i $ayo&apos;K qadiyrN laA Hawola walaA quw~apa &lt;il~aA bi{ll~ahi laA^ &lt;ilaha &lt;il~aA {ll~ahu walaA naEobudu &lt;il~aA^ &lt;iy~aAhu lahu {ln~iEomapu walahu {lofaDolu walahu {lv~anaA^&apos;u {loHasanu laA^ &lt;ilaha &lt;il~aA {ll~ahu muxoliSiyna lahu {ld~iyna walawo kariha {lokaAfiruwna" id="RemembranceAfterGivingPeaceOfPrayer3"></word>
 		<word text="suboHa`na {ll~ahi wa{loHamodu lil~ahi wa{ll~ahu &gt;akobaru (valaAvFA wavalaAviyna)\. laA^ &lt;ilaha &lt;il~aA {ll~ahu waHodahu laA $ariyka lahu\, lahu {lomuloku walahu {loHamodu wahuwa EalaY kul~i $ayo&apos;K qadiyrN" id="RemembranceAfterGivingPeaceOfPrayer4"></word>
@@ -3591,6 +3597,12 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<word text="\{phrase:TheIrresistable\}\{6:18:2,6:61:2\}" id="TheIrresistable"></word>
 			<word text="\{phrase:TheSupremeInHonour\}\{96:3:3\}" id="TheSupremeInHonour"></word>
 			<word text="\{phrase:TheMostHigh\}\{79:24:4,87:1:4,92:20:5\}" id="TheMostHigh"></word>
+			<word text="\{10:10:3-15,12:108:14-19,21:22:9-14,23:91:23-26,27:8:11-14,28:68:12-16,30:17,37:159,52:43:7-10,59:23:17-20\}" id="GloryBeToAllah"></word>
+			<word text="\{17:108:2-8,37:180,43:82,68:29:2-6\}" id="GloryBeToLord"></word>
+			<word text="\{1:2,6:45:7-10,10:10:12-15,37:182,39:75:15-18,40:65:12-15\}" id="AllPraiseAndThanksBeToAllahLordOfTheWorlds"></word>
+			<word text="\{6:1,7:43:13-39,14:39,16:75:25-31,17:111:2-22,18:1,23:28:9-15,27:15:8-16,27:59:2-13,27:93:2-12,29:63:18-24,31:25:11-17,34:1,35:1,35:34:2-12,39:29:15-21,39:74:2-17\}" id="AllPraiseAndThanksBeToAllah"></word>
+			<word text="\{45:36:2-8\}" id="AllPraiseAndThanksBeToLord"></word>
+			<word text="\{9:72:20-26,29:45:18-24,40:10:6-15\}" id="AllahIsGreatest"></word>
 		</category>
 		<category title="QuranGroups">
 			<word text="\{word:Muslim,Faithful,Optimizer,GodFearer,Prophet,Messenger,Righteous,RighteousPerson,Worshipper,UnknownSourceNarrator,TruthfulPerson,GoodPerson,WitnessPresentMartyr,Patient,Fighter,Certain,Successful,Faithful,WorthyToBeFeared,WorthyToForgive,PeopleOfTheHouse,PeopleOfAHouse,CompanionsOfTheParadise,CompanionsOfTheHappiness,CompanionsOfTheRight,CompanionsOfTheElevations,CompanionsOfTheCave,CompanionsOfTheSoundPath,CompanionsOfTheShip\}" id="Good"></word>

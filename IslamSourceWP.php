@@ -609,8 +609,6 @@ class CachedData
                     	$ruleSet[$subCount]->attributes()["rulefunc"] = RuleFuncs::eDivideTanween;
                     } elseif ((string)$ruleSet[$subCount]->attributes()["rulefunc"] == "eDivideLetterSymbol") {
                     	$ruleSet[$subCount]->attributes()["rulefunc"] = RuleFuncs::eDivideLetterSymbol;
-                    } elseif ((string)$ruleSet[$subCount]->attributes()["rulefunc"] == "eStopOption") {
-                    	$ruleSet[$subCount]->attributes()["rulefunc"] = RuleFuncs::eStopOption;
                     } elseif ((string)$ruleSet[$subCount]->attributes()["rulefunc"] == "eLeadingGutteral") {
                     	$ruleSet[$subCount]->attributes()["rulefunc"] = RuleFuncs::eLeadingGutteral;
                     } elseif ((string)$ruleSet[$subCount]->attributes()["rulefunc"] == "eTrailingGutteral") {
@@ -1340,9 +1338,8 @@ abstract class RuleFuncs
     const eLookupLongVowel = 5;
     const eDivideTanween = 6;
     const eDivideLetterSymbol = 7;
-    const eStopOption = 8;
-    const eLeadingGutteral = 9;
-    const eTrailingGutteral = 10;
+    const eLeadingGutteral = 8;
+    const eTrailingGutteral = 9;
 };
 class Arabic
 {
@@ -1551,7 +1548,6 @@ class Arabic
 		    function($str, $scheme) { return [Arabic::GetSchemeLongVowelFromString($str, $scheme)]; },
 		    function($str, $scheme) { return [CachedData::ArabicFathaDammaKasra()[array_search($str, CachedData::ArabicTanweens())], ArabicData::$ArabicLetterNoon]; },
 		    function($str, $scheme) { return ["", ""]; },
-		    function($str, $scheme) { return [""]; },
 		    function($str, $scheme) { return [Arabic::GetSchemeGutteralFromString(mb_substr($str, 0, mb_strlen($str) - 1), $scheme, true) . mb_substr($str, mb_strlen($str) - 1, 1)]; },
 		    function($str, $scheme) { return [mb_substr($str, 0, 1) . Arabic::GetSchemeGutteralFromString(mb_substr($str, 1), $scheme, false)]; }
 			];
