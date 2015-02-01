@@ -7,7 +7,7 @@ Public Class frmMain
         'clsWarshQuran.ParseQuran()
         'TanzilReader.ChangeQuranFormat(TanzilReader.QuranTexts.Warsh, TanzilReader.QuranTexts.Warsh, TanzilReader.QuranScripts.Uthmani, TanzilReader.ArabicPresentation.Buckwalter)
         'TanzilReader.ChangeQuranFormat(TanzilReader.QuranTexts.Hafs, TanzilReader.QuranTexts.Hafs, TanzilReader.QuranScripts.Uthmani, TanzilReader.ArabicPresentation.Buckwalter)
-        TanzilReader.ChangeQuranFormat(TanzilReader.QuranTexts.Hafs, TanzilReader.QuranTexts.Hafs, TanzilReader.QuranScripts.UthmaniMin, TanzilReader.ArabicPresentation.None)
+        'TanzilReader.ChangeQuranFormat(TanzilReader.QuranTexts.Hafs, TanzilReader.QuranTexts.Hafs, TanzilReader.QuranScripts.UthmaniMin, TanzilReader.ArabicPresentation.None)
         'TanzilReader.ChangeQuranFormat(TanzilReader.QuranTexts.Hafs, TanzilReader.QuranTexts.Hafs, TanzilReader.QuranScripts.SimpleEnhanced, TanzilReader.ArabicPresentation.None)
         'TanzilReader.ChangeQuranFormat(TanzilReader.QuranTexts.Hafs, TanzilReader.QuranTexts.Hafs, TanzilReader.QuranScripts.Simple, TanzilReader.ArabicPresentation.None)
         'TanzilReader.ChangeQuranFormat(TanzilReader.QuranTexts.Hafs, TanzilReader.QuranTexts.Hafs, TanzilReader.QuranScripts.SimpleMin, TanzilReader.ArabicPresentation.None)
@@ -32,10 +32,10 @@ Public Class frmMain
         Renderer.Anchor = AnchorStyles.Left Or AnchorStyles.Top Or AnchorStyles.Right Or AnchorStyles.Bottom
         Renderer.Size = New Size(gbMain.Width, gbMain.Height)
         For Count As Integer = 1 To TanzilReader.GetChapterCount()
-            Renderer.RenderArray = TanzilReader.GetQuranTextBySelection(String.Empty, 0, Count, String.Empty, ArabicData.TranslitScheme.RuleBased, "PlainRoman", 0, True, False, False).Items
+            Renderer.RenderArray = TanzilReader.GetQuranTextBySelection(String.Empty, 0, Count, "en.sahih", ArabicData.TranslitScheme.RuleBased, "PlainRoman", TanzilReader.GetTranslationIndex("en.sahih"), True, False, False).Items
             HostPageUtility.RenderArray.OutputPdf("test" + CStr(Count) + ".pdf", Renderer.RenderArray)
         Next
-        Renderer.RenderArray = TanzilReader.GetQuranTextBySelection(String.Empty, 0, 1, String.Empty, ArabicData.TranslitScheme.RuleBased, "PlainRoman", 0, True, False, False).Items
+        Renderer.RenderArray = TanzilReader.GetQuranTextBySelection(String.Empty, 0, 1, "en.sahih", ArabicData.TranslitScheme.RuleBased, "PlainRoman", TanzilReader.GetTranslationIndex("en.sahih"), True, False, False).Items
         gbMain.Controls.Add(Renderer)
     End Sub
 
