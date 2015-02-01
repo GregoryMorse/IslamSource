@@ -4850,8 +4850,8 @@ Ramadan fast-breaking | One 2172-gram quantity | Dates or barley or ordinary sta
 	    <metarule name="AlefHamza" match="((?:{CertainNotStopPattern}|({OptionalPattern}))\s*)({ArabicLetterAlefWithHamzaAbove}|{ArabicLetterAlefWithHamzaBelow})" evaluator=";optionalnotstop;dividelettersymbol(empty,helperhamza)"></metarule>
 	    <metarule name="WawHamzah" match="({ArabicLetterWawWithHamzaAbove})" evaluator="dividelettersymbol(empty,helperhamza)"></metarule>
 	    <metarule name="AlefMaksuraHamzah" match="({ArabicSukun}|{ArabicKasra}|{ArabicFatha}(?:{ArabicLetterAlef}{ArabicMaddahAbove}?)?|{ArabicLetterSuperscriptAlef}{ArabicMaddahAbove})({ArabicLetterYehWithHamzaAbove})" evaluator=";dividelettersymbol(empty,helperhamza)"></metarule>
-	    <metarule name="SmallWaw" match="({ArabicSmallWaw})(?=\s+({OptionalPattern})|\s+(?!\s*(?:{ArabicPlaceOfSajdah}?\s*(?:$|{ArabicEndOfAyah})|{CertainStopPattern})))" evaluator="helperwaw;optionalnotstop"></metarule>
-	    <metarule name="SmallYeh" match="({ArabicSmallYeh})(?=\s+({OptionalPattern})|\s+(?!\s*(?:{ArabicPlaceOfSajdah}?\s*(?:$|{ArabicEndOfAyah})|{CertainStopPattern})))" evaluator="helperyeh;optionalnotstop"></metarule>
+	    <metarule name="SmallWaw" match="({ArabicSmallWaw})(?=\s+{ArabicMaddahAbove}({OptionalPattern})|\s+{ArabicMaddahAbove}(?!\s*(?:{ArabicPlaceOfSajdah}?\s*(?:$|{ArabicEndOfAyah})|{CertainStopPattern})))" evaluator="helperwaw;optionalnotstop"></metarule>
+	    <metarule name="SmallYeh" match="({ArabicSmallYeh})(?=\s+{ArabicMaddahAbove}({OptionalPattern})|\s+{ArabicMaddahAbove}(?!\s*(?:{ArabicPlaceOfSajdah}?\s*(?:$|{ArabicEndOfAyah})|{CertainStopPattern})))" evaluator="helperyeh;optionalnotstop"></metarule>
 	    <metarule name="SmallNoon" match="({ArabicSmallHighNoon})" evaluator="helpernoon"></metarule>
 	    <metarule name="SmallHighSeen" match="({ArabicSmallHighSeen})\S+" evaluator="helperseen"></metarule>
 	    <metarule name="SmallLowSeen" match="({ArabicSmallLowSeen})" evaluator="empty"></metarule>
