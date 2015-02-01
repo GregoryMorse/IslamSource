@@ -1395,7 +1395,7 @@ class Arabic
 	{
 		if ($schemeType == TranslitScheme::LearningMode) {
 			return Arabic::TransliterateWithRules($arabicString, $scheme, $optionalStops);
-		if ($schemeType == TranslitScheme::RuleBased && $preString == '' && $postString == '') {
+		} elseif ($schemeType == TranslitScheme::RuleBased && $preString == '' && $postString == '') {
 			return Arabic::TransliterateWithRules($arabicString, $scheme, $optionalStops);
 		} elseif ($schemeType == TranslitScheme::RuleBased) {
 			return Arabic::TransliterateContigWithRules($arabicString, $preString, $postString, $scheme, $optionalStops);
@@ -1543,7 +1543,7 @@ class Arabic
                     $romanString .= Arabic::GetSchemeSpecialValue(mb_substr($arabicString, $count), Arabic::GetSchemeSpecialFromMatch(mb_substr($arabicString, $count), false), $scheme == "" ? "ExtendedBuckwalter" : $scheme);
                     preg_match("/" . CachedData::ArabicSpecialLetters()[Arabic::GetSchemeSpecialFromMatch(mb_substr($arabicString, $count), false)] . "/u", mb_substr($arabicString, $count), $matches);
                     $count += mb_strlen($matches[0]) - 1;
-                } elseif (mb_strlen($arabicString) - $count > 1 && Arabic::GetSchemeLongVowel(mb_substr($arabicString, $count, 2), false) !== -1) {
+                } elseif (mb_strlen($arabicString) - $count > 1 && Arabic::GetSchemeLongVowel(mb_substr($arabicString, $count, 2), $scheme) !== -1) {
                     $romanString .= Arabic::GetSchemeLongVowelFromString(mb_substr($arabicString, $count, 2), $scheme == "" ? "ExtendedBuckwalter" : $scheme);
                     $count++;
                 } elseif (array_key_exists(mb_substr($arabicString, $count, 1), Arabic::GetSortedLetters($scheme))) {
@@ -1567,7 +1567,7 @@ class Arabic
 		    function($str, $scheme) { return ["", ""]; },
 		    function($str, $scheme) { return [Arabic::GetSchemeGutteralFromString(mb_substr($str, 0, mb_strlen($str) - 1), $scheme, true) . mb_substr($str, mb_strlen($str) - 1, 1)]; },
 		    function($str, $scheme) { return [mb_substr($str, 0, 1) . Arabic::GetSchemeGutteralFromString(mb_substr($str, 1), $scheme, false)]; },
-		    function($str, $scheme) { return [Arabic::SchemeHasValue(Arabic::GetSchemeValueFromSymbol(ArabicData::ArabicLetters()[ArabicData::FindLetterBySymbol(mb_substr($str, 0, 1))], $scheme) . Arabic::GetSchemeValueFromSymbol(ArabicData::ArabicLetters()[ArabicData::FindLetterBySymbol(mb_substr($str, 1, 1))], $scheme)) ? mb_substr($str, 0, 1) . '-' . mb_substr($str, 1, 1) : $str]; }
+		    function($str, $scheme) { return [Arabic::SchemeHasValue(Arabic::GetSchemeValueFromSymbol(ArabicData::ArabicLetters()[ArabicData::FindLetterBySymbol(mb_substr($str, 0, 1))], $scheme) . Arabic::GetSchemeValueFromSymbol(ArabicData::ArabicLetters()[ArabicData::FindLetterBySymbol(mb_substr($str, 1, 1))], $scheme), $scheme) ? mb_substr($str, 0, 1) . '-' . mb_substr($str, 1, 1) : $str]; }
 			];
     }
     public static $AllowZeroLength = ["helperlparen", "helperrparen"];
