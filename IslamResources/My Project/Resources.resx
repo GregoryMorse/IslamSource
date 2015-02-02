@@ -30051,4 +30051,1000 @@
   <data name="IslamInfo_Hafs" xml:space="preserve">
     <value>Hafs</value>
   </data>
+  <data name="IslamInfo_LordOfThe" xml:space="preserve">
+    <value>Lord Of The</value>
+  </data>
+  <data name="IslamInfo_GloryBeToLord" xml:space="preserve">
+    <value>Glory Be To Lord</value>
+  </data>
+  <data name="IslamInfo_AllPraiseAndThanksBeToLord" xml:space="preserve">
+    <value>All Praise And Thanks Be To Lord</value>
+  </data>
+  <data name="IslamInfo_QuranGroups" xml:space="preserve">
+    <value>Quran Groups</value>
+  </data>
+  <data name="IslamInfo_Bad" xml:space="preserve">
+    <value>Bad</value>
+  </data>
+  <data name="IslamInfo_WitnessPresentMartyr" xml:space="preserve">
+    <value>Witness Present Martyr</value>
+  </data>
+  <data name="IslamInfo_GoodPerson" xml:space="preserve">
+    <value>Good Person</value>
+  </data>
+  <data name="IslamInfo_WickedPerson" xml:space="preserve">
+    <value>Wicked Person</value>
+  </data>
+  <data name="IslamInfo_EvilPerson" xml:space="preserve">
+    <value>Evil Person</value>
+  </data>
+  <data name="IslamInfo_SoulSelf" xml:space="preserve">
+    <value>Soul Self</value>
+  </data>
+  <data name="IslamInfo_Athiest" xml:space="preserve">
+    <value>Athiest</value>
+  </data>
+  <data name="IslamInfo_Monothiest" xml:space="preserve">
+    <value>Monothiest</value>
+  </data>
+  <data name="IslamInfo_Righteous" xml:space="preserve">
+    <value>Righteous</value>
+  </data>
+  <data name="IslamInfo_KnowledgableScholar" xml:space="preserve">
+    <value>Knowledgable Scholar</value>
+  </data>
+  <data name="IslamInfo_Believer" xml:space="preserve">
+    <value>Believer</value>
+  </data>
+  <data name="IslamInfo_Oppressor" xml:space="preserve">
+    <value>Oppressor</value>
+  </data>
+  <data name="IslamInfo_GodFearer" xml:space="preserve">
+    <value>God Fearer</value>
+  </data>
+  <data name="IslamInfo_Worshipper" xml:space="preserve">
+    <value>Worshipper</value>
+  </data>
+  <data name="IslamInfo_Driver" xml:space="preserve">
+    <value>Driver</value>
+  </data>
+  <data name="IslamInfo_Envier" xml:space="preserve">
+    <value>Envier</value>
+  </data>
+  <data name="IslamInfo_Blower" xml:space="preserve">
+    <value>Blower</value>
+  </data>
+  <data name="IslamInfo_Withdrawer" xml:space="preserve">
+    <value>Withdrawer</value>
+  </data>
+  <data name="IslamInfo_Patient" xml:space="preserve">
+    <value>Patient</value>
+  </data>
+  <data name="IslamInfo_Certain" xml:space="preserve">
+    <value>Certain</value>
+  </data>
+  <data name="IslamInfo_Successful" xml:space="preserve">
+    <value>Successful</value>
+  </data>
+  <data name="IslamInfo_Cheater" xml:space="preserve">
+    <value>Cheater</value>
+  </data>
+  <data name="IslamInfo_Belief" xml:space="preserve">
+    <value>Belief</value>
+  </data>
+  <data name="IslamInfo_Renouncer" xml:space="preserve">
+    <value>Renouncer</value>
+  </data>
+  <data name="IslamInfo_FaithEmpowering" xml:space="preserve">
+    <value>Faith Empowering</value>
+  </data>
+  <data name="IslamInfo_ReminderRemembranceSupplicationsAndPrayers" xml:space="preserve">
+    <value>Reminder Remembrance Supplications And Prayers</value>
+  </data>
+  <data name="IslamInfo_GestureSignIndicatorTrafficSignalAllusionHintIntimationSuggestion" xml:space="preserve">
+    <value>Gesture Sign Indicator Traffic Signal Allusion Hint Intimation Suggestion</value>
+  </data>
+  <data name="IslamInfo_TheGreatQuranWordByWord" xml:space="preserve">
+    <value>The Great Quran Word By Word</value>
+  </data>
+  <data name="IslamInfo_TheGreatQuran" xml:space="preserve">
+    <value>The Great Quran</value>
+  </data>
+  <data name="IslamInfo_TheWiseQuranWordByWord" xml:space="preserve">
+    <value>The Wise Quran Word By Word</value>
+  </data>
+  <data name="IslamInfo_TheWiseQuran" xml:space="preserve">
+    <value>The Wise Quran</value>
+  </data>
+  <data name="IslamInfo_TheGloriousQuranWordByWord" xml:space="preserve">
+    <value>The Glorious Quran Word By Word</value>
+  </data>
+  <data name="IslamInfo_TheGloriousQuran" xml:space="preserve">
+    <value>The Glorious Quran</value>
+  </data>
+  <data name="IslamInfo_TheQuranFullOfReminderWordByWord" xml:space="preserve">
+    <value>The Quran Full Of Reminder Word By Word</value>
+  </data>
+  <data name="IslamInfo_TheQuranFullOfReminder" xml:space="preserve">
+    <value>The Quran Full Of Reminder</value>
+  </data>
+  <data name="IslamInfo_AClearQuranWordByWord" xml:space="preserve">
+    <value>A Clear Quran Word By Word</value>
+  </data>
+  <data name="IslamInfo_AClearQuran" xml:space="preserve">
+    <value>A Clear Quran</value>
+  </data>
+  <data name="IslamInfo_ANobleQuranWordByWord" xml:space="preserve">
+    <value>A Noble Quran Word By Word</value>
+  </data>
+  <data name="IslamInfo_ANobleQuran" xml:space="preserve">
+    <value>A Noble Quran</value>
+  </data>
+  <data name="IslamInfo_AGloriousQuranWordByWord" xml:space="preserve">
+    <value>A Glorious Quran Word By Word</value>
+  </data>
+  <data name="IslamInfo_AGloriousQuran" xml:space="preserve">
+    <value>A Glorious Quran</value>
+  </data>
+  <data name="IslamInfo_LordOfTheWorldsWordByWord" xml:space="preserve">
+    <value>Lord Of The Worlds Word By Word</value>
+  </data>
+  <data name="IslamInfo_LordOfTheWorlds" xml:space="preserve">
+    <value>Lord Of The Worlds</value>
+  </data>
+  <data name="IslamInfo_LordOfEverythingWordByWord" xml:space="preserve">
+    <value>Lord Of Everything Word By Word</value>
+  </data>
+  <data name="IslamInfo_LordOfEverything" xml:space="preserve">
+    <value>Lord Of Everything</value>
+  </data>
+  <data name="IslamInfo_LordOfMosesAndAaronWordByWord" xml:space="preserve">
+    <value>Lord Of Moses And Aaron Word By Word</value>
+  </data>
+  <data name="IslamInfo_LordOfMosesAndAaron" xml:space="preserve">
+    <value>Lord Of Moses And Aaron</value>
+  </data>
+  <data name="IslamInfo_LordOfAaronAndMosesWordByWord" xml:space="preserve">
+    <value>Lord Of Aaron And Moses Word By Word</value>
+  </data>
+  <data name="IslamInfo_LordOfAaronAndMoses" xml:space="preserve">
+    <value>Lord Of Aaron And Moses</value>
+  </data>
+  <data name="IslamInfo_LordOfTheThroneWordByWord" xml:space="preserve">
+    <value>Lord Of The Throne Word By Word</value>
+  </data>
+  <data name="IslamInfo_LordOfTheThrone" xml:space="preserve">
+    <value>Lord Of The Throne</value>
+  </data>
+  <data name="IslamInfo_LordOfTheNobleThroneWordByWord" xml:space="preserve">
+    <value>Lord Of The Noble Throne Word By Word</value>
+  </data>
+  <data name="IslamInfo_LordOfTheNobleThrone" xml:space="preserve">
+    <value>Lord Of The Noble Throne</value>
+  </data>
+  <data name="IslamInfo_LordOfTheGreatThroneWordByWord" xml:space="preserve">
+    <value>Lord Of The Great Throne Word By Word</value>
+  </data>
+  <data name="IslamInfo_LordOfTheGreatThrone" xml:space="preserve">
+    <value>Lord Of The Great Throne</value>
+  </data>
+  <data name="IslamInfo_LordOfTheHeavensAndTheEarthWordByWord" xml:space="preserve">
+    <value>Lord Of The Heavens And The Earth Word By Word</value>
+  </data>
+  <data name="IslamInfo_LordOfTheHeavensAndTheEarth" xml:space="preserve">
+    <value>Lord Of The Heavens And The Earth</value>
+  </data>
+  <data name="IslamInfo_LordOfTheHeavensAndTheEarthAndWhatIsBetweenThemWordByWord" xml:space="preserve">
+    <value>Lord Of The Heavens And The Earth And What Is Between Them Word By Word</value>
+  </data>
+  <data name="IslamInfo_LordOfTheHeavensAndTheEarthAndWhatIsBetweenThem" xml:space="preserve">
+    <value>Lord Of The Heavens And The Earth And What Is Between Them</value>
+  </data>
+  <data name="IslamInfo_LordOfYourFirstForefathersWordByWord" xml:space="preserve">
+    <value>Lord Of Your First Forefathers Word By Word</value>
+  </data>
+  <data name="IslamInfo_LordOfYourFirstForefathers" xml:space="preserve">
+    <value>Lord Of Your First Forefathers</value>
+  </data>
+  <data name="IslamInfo_LordOfTheEastAndTheWestWordByWord" xml:space="preserve">
+    <value>Lord Of The East And The West Word By Word</value>
+  </data>
+  <data name="IslamInfo_LordOfTheEastAndTheWest" xml:space="preserve">
+    <value>Lord Of The East And The West</value>
+  </data>
+  <data name="IslamInfo_LordOfAllRisingsAndSettingsWordByWord" xml:space="preserve">
+    <value>Lord Of All Risings And Settings Word By Word</value>
+  </data>
+  <data name="IslamInfo_LordOfAllRisingsAndSettings" xml:space="preserve">
+    <value>Lord Of All Risings And Settings</value>
+  </data>
+  <data name="IslamInfo_LordOfEachPointOfSunriseWordByWord" xml:space="preserve">
+    <value>Lord Of Each Point Of Sunrise Word By Word</value>
+  </data>
+  <data name="IslamInfo_LordOfEachPointOfSunrise" xml:space="preserve">
+    <value>Lord Of Each Point Of Sunrise</value>
+  </data>
+  <data name="IslamInfo_LordOfThisCityWordByWord" xml:space="preserve">
+    <value>Lord Of This City Word By Word</value>
+  </data>
+  <data name="IslamInfo_LordOfThisCity" xml:space="preserve">
+    <value>Lord Of This City</value>
+  </data>
+  <data name="IslamInfo_LordOfHonorWordByWord" xml:space="preserve">
+    <value>Lord Of Honor Word By Word</value>
+  </data>
+  <data name="IslamInfo_LordOfHonor" xml:space="preserve">
+    <value>Lord Of Honor</value>
+  </data>
+  <data name="IslamInfo_LordOfTheHeavensWordByWord" xml:space="preserve">
+    <value>Lord Of The Heavens Word By Word</value>
+  </data>
+  <data name="IslamInfo_LordOfTheHeavens" xml:space="preserve">
+    <value>Lord Of The Heavens</value>
+  </data>
+  <data name="IslamInfo_LordOfTheEarthWordByWord" xml:space="preserve">
+    <value>Lord Of The Earth Word By Word</value>
+  </data>
+  <data name="IslamInfo_LordOfTheEarth" xml:space="preserve">
+    <value>Lord Of The Earth</value>
+  </data>
+  <data name="IslamInfo_LordOfSiriusWordByWord" xml:space="preserve">
+    <value>Lord Of Sirius Word By Word</value>
+  </data>
+  <data name="IslamInfo_LordOfSirius" xml:space="preserve">
+    <value>Lord Of Sirius</value>
+  </data>
+  <data name="IslamInfo_LordOfTheTwoEastsWordByWord" xml:space="preserve">
+    <value>Lord Of The Two Easts Word By Word</value>
+  </data>
+  <data name="IslamInfo_LordOfTheTwoEasts" xml:space="preserve">
+    <value>Lord Of The Two Easts</value>
+  </data>
+  <data name="IslamInfo_LordOfTheTwoWestsWordByWord" xml:space="preserve">
+    <value>Lord Of The Two Wests Word By Word</value>
+  </data>
+  <data name="IslamInfo_LordOfTheTwoWests" xml:space="preserve">
+    <value>Lord Of The Two Wests</value>
+  </data>
+  <data name="IslamInfo_LordOfThisHouseWordByWord" xml:space="preserve">
+    <value>Lord Of This House Word By Word</value>
+  </data>
+  <data name="IslamInfo_LordOfThisHouse" xml:space="preserve">
+    <value>Lord Of This House</value>
+  </data>
+  <data name="IslamInfo_LordOfDaybreakWordByWord" xml:space="preserve">
+    <value>Lord Of Daybreak Word By Word</value>
+  </data>
+  <data name="IslamInfo_LordOfDaybreak" xml:space="preserve">
+    <value>Lord Of Daybreak</value>
+  </data>
+  <data name="IslamInfo_LordOfMankindWordByWord" xml:space="preserve">
+    <value>Lord Of Mankind Word By Word</value>
+  </data>
+  <data name="IslamInfo_LordOfMankind" xml:space="preserve">
+    <value>Lord Of Mankind</value>
+  </data>
+  <data name="IslamInfo_LordOfTheSevenHeavensWordByWord" xml:space="preserve">
+    <value>Lord Of The Seven Heavens Word By Word</value>
+  </data>
+  <data name="IslamInfo_LordOfTheSevenHeavens" xml:space="preserve">
+    <value>Lord Of The Seven Heavens</value>
+  </data>
+  <data name="IslamInfo_WorthyToBeFearedWordByWord" xml:space="preserve">
+    <value>Worthy To Be Feared Word By Word</value>
+  </data>
+  <data name="IslamInfo_WorthyToBeFeared" xml:space="preserve">
+    <value>Worthy To Be Feared</value>
+  </data>
+  <data name="IslamInfo_WorthyToForgiveWordByWord" xml:space="preserve">
+    <value>Worthy To Forgive Word By Word</value>
+  </data>
+  <data name="IslamInfo_WorthyToForgive" xml:space="preserve">
+    <value>Worthy To Forgive</value>
+  </data>
+  <data name="IslamInfo_PeopleOfTheHouseWordByWord" xml:space="preserve">
+    <value>People Of The House Word By Word</value>
+  </data>
+  <data name="IslamInfo_PeopleOfTheHouse" xml:space="preserve">
+    <value>People Of The House</value>
+  </data>
+  <data name="IslamInfo_PeopleOfAHouseWordByWord" xml:space="preserve">
+    <value>People Of AHouse Word By Word</value>
+  </data>
+  <data name="IslamInfo_PeopleOfAHouse" xml:space="preserve">
+    <value>People Of AHouse</value>
+  </data>
+  <data name="IslamInfo_PeopleOfTheMessageWordByWord" xml:space="preserve">
+    <value>People Of The Message Word By Word</value>
+  </data>
+  <data name="IslamInfo_PeopleOfTheMessage" xml:space="preserve">
+    <value>People Of The Message</value>
+  </data>
+  <data name="IslamInfo_PeopleOfTheGospelWordByWord" xml:space="preserve">
+    <value>People Of The Gospel Word By Word</value>
+  </data>
+  <data name="IslamInfo_PeopleOfTheGospel" xml:space="preserve">
+    <value>People Of The Gospel</value>
+  </data>
+  <data name="IslamInfo_PeopleOfMadinahWordByWord" xml:space="preserve">
+    <value>People Of Madinah Word By Word</value>
+  </data>
+  <data name="IslamInfo_PeopleOfMadinah" xml:space="preserve">
+    <value>People Of Madinah</value>
+  </data>
+  <data name="IslamInfo_PeopleOfATownWordByWord" xml:space="preserve">
+    <value>People Of ATown Word By Word</value>
+  </data>
+  <data name="IslamInfo_PeopleOfATown" xml:space="preserve">
+    <value>People Of ATown</value>
+  </data>
+  <data name="IslamInfo_PeopleOfYathribWordByWord" xml:space="preserve">
+    <value>People Of Yathrib Word By Word</value>
+  </data>
+  <data name="IslamInfo_PeopleOfYathrib" xml:space="preserve">
+    <value>People Of Yathrib</value>
+  </data>
+  <data name="IslamInfo_PeopleOfMadyanWordByWord" xml:space="preserve">
+    <value>People Of Madyan Word By Word</value>
+  </data>
+  <data name="IslamInfo_PeopleOfMadyan" xml:space="preserve">
+    <value>People Of Madyan</value>
+  </data>
+  <data name="IslamInfo_PeopleOfTheCitiesWordByWord" xml:space="preserve">
+    <value>People Of The Cities Word By Word</value>
+  </data>
+  <data name="IslamInfo_PeopleOfTheCities" xml:space="preserve">
+    <value>People Of The Cities</value>
+  </data>
+  <data name="IslamInfo_PeopleOfThisTownWordByWord" xml:space="preserve">
+    <value>People Of This Town Word By Word</value>
+  </data>
+  <data name="IslamInfo_PeopleOfThisTown" xml:space="preserve">
+    <value>People Of This Town</value>
+  </data>
+  <data name="IslamInfo_PeopleOfTheFireWordByWord" xml:space="preserve">
+    <value>People Of The Fire Word By Word</value>
+  </data>
+  <data name="IslamInfo_PeopleOfTheFire" xml:space="preserve">
+    <value>People Of The Fire</value>
+  </data>
+  <data name="IslamInfo_CompanionsOfTheParadiseWordByWord" xml:space="preserve">
+    <value>Companions Of The Paradise Word By Word</value>
+  </data>
+  <data name="IslamInfo_CompanionsOfTheParadise" xml:space="preserve">
+    <value>Companions Of The Paradise</value>
+  </data>
+  <data name="IslamInfo_CompanionsOfTheHappinessWordByWord" xml:space="preserve">
+    <value>Companions Of The Happiness Word By Word</value>
+  </data>
+  <data name="IslamInfo_CompanionsOfTheHappiness" xml:space="preserve">
+    <value>Companions Of The Happiness</value>
+  </data>
+  <data name="IslamInfo_CompanionsOfTheRightWordByWord" xml:space="preserve">
+    <value>Companions Of The Right Word By Word</value>
+  </data>
+  <data name="IslamInfo_CompanionsOfTheRight" xml:space="preserve">
+    <value>Companions Of The Right</value>
+  </data>
+  <data name="IslamInfo_CompanionsOfTheElevationsWordByWord" xml:space="preserve">
+    <value>Companions Of The Elevations Word By Word</value>
+  </data>
+  <data name="IslamInfo_CompanionsOfTheElevations" xml:space="preserve">
+    <value>Companions Of The Elevations</value>
+  </data>
+  <data name="IslamInfo_CompanionsOfTheCaveWordByWord" xml:space="preserve">
+    <value>Companions Of The Cave Word By Word</value>
+  </data>
+  <data name="IslamInfo_CompanionsOfTheCave" xml:space="preserve">
+    <value>Companions Of The Cave</value>
+  </data>
+  <data name="IslamInfo_CompanionsOfTheSoundPathWordByWord" xml:space="preserve">
+    <value>Companions Of The Sound Path Word By Word</value>
+  </data>
+  <data name="IslamInfo_CompanionsOfTheSoundPath" xml:space="preserve">
+    <value>Companions Of The Sound Path</value>
+  </data>
+  <data name="IslamInfo_CompanionsOfTheShipWordByWord" xml:space="preserve">
+    <value>Companions Of The Ship Word By Word</value>
+  </data>
+  <data name="IslamInfo_CompanionsOfTheShip" xml:space="preserve">
+    <value>Companions Of The Ship</value>
+  </data>
+  <data name="IslamInfo_CompanionsOfTheFireWordByWord" xml:space="preserve">
+    <value>Companions Of The Fire Word By Word</value>
+  </data>
+  <data name="IslamInfo_CompanionsOfTheFire" xml:space="preserve">
+    <value>Companions Of The Fire</value>
+  </data>
+  <data name="IslamInfo_CompanionsOfTheHellWordByWord" xml:space="preserve">
+    <value>Companions Of The Hell Word By Word</value>
+  </data>
+  <data name="IslamInfo_CompanionsOfTheHell" xml:space="preserve">
+    <value>Companions Of The Hell</value>
+  </data>
+  <data name="IslamInfo_CompanionsOfTheSabbathWordByWord" xml:space="preserve">
+    <value>Companions Of The Sabbath Word By Word</value>
+  </data>
+  <data name="IslamInfo_CompanionsOfTheSabbath" xml:space="preserve">
+    <value>Companions Of The Sabbath</value>
+  </data>
+  <data name="IslamInfo_CompanionsOfThePessimistWordByWord" xml:space="preserve">
+    <value>Companions Of The Pessimist Word By Word</value>
+  </data>
+  <data name="IslamInfo_CompanionsOfThePessimist" xml:space="preserve">
+    <value>Companions Of The Pessimist</value>
+  </data>
+  <data name="IslamInfo_CompanionsOfTheLeftWordByWord" xml:space="preserve">
+    <value>Companions Of The Left Word By Word</value>
+  </data>
+  <data name="IslamInfo_CompanionsOfTheLeft" xml:space="preserve">
+    <value>Companions Of The Left</value>
+  </data>
+  <data name="IslamInfo_CompanionsOfTheBlazeWordByWord" xml:space="preserve">
+    <value>Companions Of The Blaze Word By Word</value>
+  </data>
+  <data name="IslamInfo_CompanionsOfTheBlaze" xml:space="preserve">
+    <value>Companions Of The Blaze</value>
+  </data>
+  <data name="IslamInfo_CompanionsOfThePitWordByWord" xml:space="preserve">
+    <value>Companions Of The Pit Word By Word</value>
+  </data>
+  <data name="IslamInfo_CompanionsOfThePit" xml:space="preserve">
+    <value>Companions Of The Pit</value>
+  </data>
+  <data name="IslamInfo_CompanionsOfTheElephantWordByWord" xml:space="preserve">
+    <value>Companions Of The Elephant Word By Word</value>
+  </data>
+  <data name="IslamInfo_CompanionsOfTheElephant" xml:space="preserve">
+    <value>Companions Of The Elephant</value>
+  </data>
+  <data name="IslamInfo_CompanionsOfMadyanWordByWord" xml:space="preserve">
+    <value>Companions Of Madyan Word By Word</value>
+  </data>
+  <data name="IslamInfo_CompanionsOfMadyan" xml:space="preserve">
+    <value>Companions Of Madyan</value>
+  </data>
+  <data name="IslamInfo_CompanionsOfTheThicketWordByWord" xml:space="preserve">
+    <value>Companions Of The Thicket Word By Word</value>
+  </data>
+  <data name="IslamInfo_CompanionsOfTheThicket" xml:space="preserve">
+    <value>Companions Of The Thicket</value>
+  </data>
+  <data name="IslamInfo_CompanionsOfTheRockWordByWord" xml:space="preserve">
+    <value>Companions Of The Rock Word By Word</value>
+  </data>
+  <data name="IslamInfo_CompanionsOfTheRock" xml:space="preserve">
+    <value>Companions Of The Rock</value>
+  </data>
+  <data name="IslamInfo_CompanionsOfTheWellWordByWord" xml:space="preserve">
+    <value>Companions Of The Well Word By Word</value>
+  </data>
+  <data name="IslamInfo_CompanionsOfTheWell" xml:space="preserve">
+    <value>Companions Of The Well</value>
+  </data>
+  <data name="IslamInfo_CompanionsOfTheCityWordByWord" xml:space="preserve">
+    <value>Companions Of The City Word By Word</value>
+  </data>
+  <data name="IslamInfo_CompanionsOfTheCity" xml:space="preserve">
+    <value>Companions Of The City</value>
+  </data>
+  <data name="IslamInfo_CompanionsOfTheGraveWordByWord" xml:space="preserve">
+    <value>Companions Of The Grave Word By Word</value>
+  </data>
+  <data name="IslamInfo_CompanionsOfTheGrave" xml:space="preserve">
+    <value>Companions Of The Grave</value>
+  </data>
+  <data name="IslamInfo_CompanionsOfMusaWordByWord" xml:space="preserve">
+    <value>Companions Of Musa Word By Word</value>
+  </data>
+  <data name="IslamInfo_CompanionsOfMusa" xml:space="preserve">
+    <value>Companions Of Musa</value>
+  </data>
+  <data name="IslamInfo_WhispererWhoWithdrawsWordByWord" xml:space="preserve">
+    <value>Whisperer Who Withdraws Word By Word</value>
+  </data>
+  <data name="IslamInfo_WhispererWhoWithdraws" xml:space="preserve">
+    <value>Whisperer Who Withdraws</value>
+  </data>
+  <data name="IslamInfo_BlowerInKnotsWordByWord" xml:space="preserve">
+    <value>Blower In Knots Word By Word</value>
+  </data>
+  <data name="IslamInfo_BlowerInKnots" xml:space="preserve">
+    <value>Blower In Knots</value>
+  </data>
+  <data name="IslamInfo_RelatedNarrationBasedExegesisWordByWord" xml:space="preserve">
+    <value>Related Narration Based Exegesis Word By Word</value>
+  </data>
+  <data name="IslamInfo_RelatedNarrationBasedExegesis" xml:space="preserve">
+    <value>Related Narration Based Exegesis</value>
+  </data>
+  <data name="IslamInfo_Remembrance3WordByWord" xml:space="preserve">
+    <value>Remembrance3 Word By Word</value>
+  </data>
+  <data name="IslamInfo_Remembrance3" xml:space="preserve">
+    <value>Remembrance3</value>
+  </data>
+  <data name="IslamInfo_Remembrance4WordByWord" xml:space="preserve">
+    <value>Remembrance4 Word By Word</value>
+  </data>
+  <data name="IslamInfo_Remembrance4" xml:space="preserve">
+    <value>Remembrance4</value>
+  </data>
+  <data name="IslamInfo_Remembrance5WordByWord" xml:space="preserve">
+    <value>Remembrance5 Word By Word</value>
+  </data>
+  <data name="IslamInfo_Remembrance5" xml:space="preserve">
+    <value>Remembrance5</value>
+  </data>
+  <data name="IslamInfo_ThuwaybahWordByWord" xml:space="preserve">
+    <value>Thuwaybah Word By Word</value>
+  </data>
+  <data name="IslamInfo_Thuwaybah" xml:space="preserve">
+    <value>Thuwaybah</value>
+  </data>
+  <data name="IslamInfo_HalimahAlSadiyahWordByWord" xml:space="preserve">
+    <value>Halimah Al Sadiyah Word By Word</value>
+  </data>
+  <data name="IslamInfo_HalimahAlSadiyah" xml:space="preserve">
+    <value>Halimah Al Sadiyah</value>
+  </data>
+  <data name="IslamInfo_TheGreatQuranWordByWord" xml:space="preserve">
+    <value>The Great Quran Word By Word</value>
+  </data>
+  <data name="IslamInfo_TheGreatQuran" xml:space="preserve">
+    <value>The Great Quran</value>
+  </data>
+  <data name="IslamInfo_TheWiseQuranWordByWord" xml:space="preserve">
+    <value>The Wise Quran Word By Word</value>
+  </data>
+  <data name="IslamInfo_TheWiseQuran" xml:space="preserve">
+    <value>The Wise Quran</value>
+  </data>
+  <data name="IslamInfo_TheGloriousQuranWordByWord" xml:space="preserve">
+    <value>The Glorious Quran Word By Word</value>
+  </data>
+  <data name="IslamInfo_TheGloriousQuran" xml:space="preserve">
+    <value>The Glorious Quran</value>
+  </data>
+  <data name="IslamInfo_TheQuranFullOfReminderWordByWord" xml:space="preserve">
+    <value>The Quran Full Of Reminder Word By Word</value>
+  </data>
+  <data name="IslamInfo_TheQuranFullOfReminder" xml:space="preserve">
+    <value>The Quran Full Of Reminder</value>
+  </data>
+  <data name="IslamInfo_AClearQuranWordByWord" xml:space="preserve">
+    <value>A Clear Quran Word By Word</value>
+  </data>
+  <data name="IslamInfo_AClearQuran" xml:space="preserve">
+    <value>A Clear Quran</value>
+  </data>
+  <data name="IslamInfo_ANobleQuranWordByWord" xml:space="preserve">
+    <value>A Noble Quran Word By Word</value>
+  </data>
+  <data name="IslamInfo_ANobleQuran" xml:space="preserve">
+    <value>A Noble Quran</value>
+  </data>
+  <data name="IslamInfo_AGloriousQuranWordByWord" xml:space="preserve">
+    <value>A Glorious Quran Word By Word</value>
+  </data>
+  <data name="IslamInfo_AGloriousQuran" xml:space="preserve">
+    <value>A Glorious Quran</value>
+  </data>
+  <data name="IslamInfo_LordOfTheWorldsWordByWord" xml:space="preserve">
+    <value>Lord Of The Worlds Word By Word</value>
+  </data>
+  <data name="IslamInfo_LordOfTheWorlds" xml:space="preserve">
+    <value>Lord Of The Worlds</value>
+  </data>
+  <data name="IslamInfo_LordOfEverythingWordByWord" xml:space="preserve">
+    <value>Lord Of Everything Word By Word</value>
+  </data>
+  <data name="IslamInfo_LordOfEverything" xml:space="preserve">
+    <value>Lord Of Everything</value>
+  </data>
+  <data name="IslamInfo_LordOfMosesAndAaronWordByWord" xml:space="preserve">
+    <value>Lord Of Moses And Aaron Word By Word</value>
+  </data>
+  <data name="IslamInfo_LordOfMosesAndAaron" xml:space="preserve">
+    <value>Lord Of Moses And Aaron</value>
+  </data>
+  <data name="IslamInfo_LordOfAaronAndMosesWordByWord" xml:space="preserve">
+    <value>Lord Of Aaron And Moses Word By Word</value>
+  </data>
+  <data name="IslamInfo_LordOfAaronAndMoses" xml:space="preserve">
+    <value>Lord Of Aaron And Moses</value>
+  </data>
+  <data name="IslamInfo_LordOfTheThroneWordByWord" xml:space="preserve">
+    <value>Lord Of The Throne Word By Word</value>
+  </data>
+  <data name="IslamInfo_LordOfTheThrone" xml:space="preserve">
+    <value>Lord Of The Throne</value>
+  </data>
+  <data name="IslamInfo_LordOfTheNobleThroneWordByWord" xml:space="preserve">
+    <value>Lord Of The Noble Throne Word By Word</value>
+  </data>
+  <data name="IslamInfo_LordOfTheNobleThrone" xml:space="preserve">
+    <value>Lord Of The Noble Throne</value>
+  </data>
+  <data name="IslamInfo_LordOfTheGreatThroneWordByWord" xml:space="preserve">
+    <value>Lord Of The Great Throne Word By Word</value>
+  </data>
+  <data name="IslamInfo_LordOfTheGreatThrone" xml:space="preserve">
+    <value>Lord Of The Great Throne</value>
+  </data>
+  <data name="IslamInfo_LordOfTheHeavensAndTheEarthWordByWord" xml:space="preserve">
+    <value>Lord Of The Heavens And The Earth Word By Word</value>
+  </data>
+  <data name="IslamInfo_LordOfTheHeavensAndTheEarth" xml:space="preserve">
+    <value>Lord Of The Heavens And The Earth</value>
+  </data>
+  <data name="IslamInfo_LordOfTheHeavensAndTheEarthAndWhatIsBetweenThemWordByWord" xml:space="preserve">
+    <value>Lord Of The Heavens And The Earth And What Is Between Them Word By Word</value>
+  </data>
+  <data name="IslamInfo_LordOfTheHeavensAndTheEarthAndWhatIsBetweenThem" xml:space="preserve">
+    <value>Lord Of The Heavens And The Earth And What Is Between Them</value>
+  </data>
+  <data name="IslamInfo_LordOfYourFirstForefathersWordByWord" xml:space="preserve">
+    <value>Lord Of Your First Forefathers Word By Word</value>
+  </data>
+  <data name="IslamInfo_LordOfYourFirstForefathers" xml:space="preserve">
+    <value>Lord Of Your First Forefathers</value>
+  </data>
+  <data name="IslamInfo_LordOfTheEastAndTheWestWordByWord" xml:space="preserve">
+    <value>Lord Of The East And The West Word By Word</value>
+  </data>
+  <data name="IslamInfo_LordOfTheEastAndTheWest" xml:space="preserve">
+    <value>Lord Of The East And The West</value>
+  </data>
+  <data name="IslamInfo_LordOfAllRisingsAndSettingsWordByWord" xml:space="preserve">
+    <value>Lord Of All Risings And Settings Word By Word</value>
+  </data>
+  <data name="IslamInfo_LordOfAllRisingsAndSettings" xml:space="preserve">
+    <value>Lord Of All Risings And Settings</value>
+  </data>
+  <data name="IslamInfo_LordOfEachPointOfSunriseWordByWord" xml:space="preserve">
+    <value>Lord Of Each Point Of Sunrise Word By Word</value>
+  </data>
+  <data name="IslamInfo_LordOfEachPointOfSunrise" xml:space="preserve">
+    <value>Lord Of Each Point Of Sunrise</value>
+  </data>
+  <data name="IslamInfo_LordOfThisCityWordByWord" xml:space="preserve">
+    <value>Lord Of This City Word By Word</value>
+  </data>
+  <data name="IslamInfo_LordOfThisCity" xml:space="preserve">
+    <value>Lord Of This City</value>
+  </data>
+  <data name="IslamInfo_LordOfHonorWordByWord" xml:space="preserve">
+    <value>Lord Of Honor Word By Word</value>
+  </data>
+  <data name="IslamInfo_LordOfHonor" xml:space="preserve">
+    <value>Lord Of Honor</value>
+  </data>
+  <data name="IslamInfo_LordOfTheHeavensWordByWord" xml:space="preserve">
+    <value>Lord Of The Heavens Word By Word</value>
+  </data>
+  <data name="IslamInfo_LordOfTheHeavens" xml:space="preserve">
+    <value>Lord Of The Heavens</value>
+  </data>
+  <data name="IslamInfo_LordOfTheEarthWordByWord" xml:space="preserve">
+    <value>Lord Of The Earth Word By Word</value>
+  </data>
+  <data name="IslamInfo_LordOfTheEarth" xml:space="preserve">
+    <value>Lord Of The Earth</value>
+  </data>
+  <data name="IslamInfo_LordOfSiriusWordByWord" xml:space="preserve">
+    <value>Lord Of Sirius Word By Word</value>
+  </data>
+  <data name="IslamInfo_LordOfSirius" xml:space="preserve">
+    <value>Lord Of Sirius</value>
+  </data>
+  <data name="IslamInfo_LordOfTheTwoEastsWordByWord" xml:space="preserve">
+    <value>Lord Of The Two Easts Word By Word</value>
+  </data>
+  <data name="IslamInfo_LordOfTheTwoEasts" xml:space="preserve">
+    <value>Lord Of The Two Easts</value>
+  </data>
+  <data name="IslamInfo_LordOfTheTwoWestsWordByWord" xml:space="preserve">
+    <value>Lord Of The Two Wests Word By Word</value>
+  </data>
+  <data name="IslamInfo_LordOfTheTwoWests" xml:space="preserve">
+    <value>Lord Of The Two Wests</value>
+  </data>
+  <data name="IslamInfo_LordOfThisHouseWordByWord" xml:space="preserve">
+    <value>Lord Of This House Word By Word</value>
+  </data>
+  <data name="IslamInfo_LordOfThisHouse" xml:space="preserve">
+    <value>Lord Of This House</value>
+  </data>
+  <data name="IslamInfo_LordOfDaybreakWordByWord" xml:space="preserve">
+    <value>Lord Of Daybreak Word By Word</value>
+  </data>
+  <data name="IslamInfo_LordOfDaybreak" xml:space="preserve">
+    <value>Lord Of Daybreak</value>
+  </data>
+  <data name="IslamInfo_LordOfMankindWordByWord" xml:space="preserve">
+    <value>Lord Of Mankind Word By Word</value>
+  </data>
+  <data name="IslamInfo_LordOfMankind" xml:space="preserve">
+    <value>Lord Of Mankind</value>
+  </data>
+  <data name="IslamInfo_LordOfTheSevenHeavensWordByWord" xml:space="preserve">
+    <value>Lord Of The Seven Heavens Word By Word</value>
+  </data>
+  <data name="IslamInfo_LordOfTheSevenHeavens" xml:space="preserve">
+    <value>Lord Of The Seven Heavens</value>
+  </data>
+  <data name="IslamInfo_WorthyToBeFearedWordByWord" xml:space="preserve">
+    <value>Worthy To Be Feared Word By Word</value>
+  </data>
+  <data name="IslamInfo_WorthyToBeFeared" xml:space="preserve">
+    <value>Worthy To Be Feared</value>
+  </data>
+  <data name="IslamInfo_WorthyToForgiveWordByWord" xml:space="preserve">
+    <value>Worthy To Forgive Word By Word</value>
+  </data>
+  <data name="IslamInfo_WorthyToForgive" xml:space="preserve">
+    <value>Worthy To Forgive</value>
+  </data>
+  <data name="IslamInfo_PeopleOfTheHouseWordByWord" xml:space="preserve">
+    <value>People Of The House Word By Word</value>
+  </data>
+  <data name="IslamInfo_PeopleOfTheHouse" xml:space="preserve">
+    <value>People Of The House</value>
+  </data>
+  <data name="IslamInfo_PeopleOfAHouseWordByWord" xml:space="preserve">
+    <value>People Of AHouse Word By Word</value>
+  </data>
+  <data name="IslamInfo_PeopleOfAHouse" xml:space="preserve">
+    <value>People Of AHouse</value>
+  </data>
+  <data name="IslamInfo_PeopleOfTheMessageWordByWord" xml:space="preserve">
+    <value>People Of The Message Word By Word</value>
+  </data>
+  <data name="IslamInfo_PeopleOfTheMessage" xml:space="preserve">
+    <value>People Of The Message</value>
+  </data>
+  <data name="IslamInfo_PeopleOfTheGospelWordByWord" xml:space="preserve">
+    <value>People Of The Gospel Word By Word</value>
+  </data>
+  <data name="IslamInfo_PeopleOfTheGospel" xml:space="preserve">
+    <value>People Of The Gospel</value>
+  </data>
+  <data name="IslamInfo_PeopleOfMadinahWordByWord" xml:space="preserve">
+    <value>People Of Madinah Word By Word</value>
+  </data>
+  <data name="IslamInfo_PeopleOfMadinah" xml:space="preserve">
+    <value>People Of Madinah</value>
+  </data>
+  <data name="IslamInfo_PeopleOfATownWordByWord" xml:space="preserve">
+    <value>People Of ATown Word By Word</value>
+  </data>
+  <data name="IslamInfo_PeopleOfATown" xml:space="preserve">
+    <value>People Of ATown</value>
+  </data>
+  <data name="IslamInfo_PeopleOfYathribWordByWord" xml:space="preserve">
+    <value>People Of Yathrib Word By Word</value>
+  </data>
+  <data name="IslamInfo_PeopleOfYathrib" xml:space="preserve">
+    <value>People Of Yathrib</value>
+  </data>
+  <data name="IslamInfo_PeopleOfMadyanWordByWord" xml:space="preserve">
+    <value>People Of Madyan Word By Word</value>
+  </data>
+  <data name="IslamInfo_PeopleOfMadyan" xml:space="preserve">
+    <value>People Of Madyan</value>
+  </data>
+  <data name="IslamInfo_PeopleOfTheCitiesWordByWord" xml:space="preserve">
+    <value>People Of The Cities Word By Word</value>
+  </data>
+  <data name="IslamInfo_PeopleOfTheCities" xml:space="preserve">
+    <value>People Of The Cities</value>
+  </data>
+  <data name="IslamInfo_PeopleOfThisTownWordByWord" xml:space="preserve">
+    <value>People Of This Town Word By Word</value>
+  </data>
+  <data name="IslamInfo_PeopleOfThisTown" xml:space="preserve">
+    <value>People Of This Town</value>
+  </data>
+  <data name="IslamInfo_PeopleOfTheFireWordByWord" xml:space="preserve">
+    <value>People Of The Fire Word By Word</value>
+  </data>
+  <data name="IslamInfo_PeopleOfTheFire" xml:space="preserve">
+    <value>People Of The Fire</value>
+  </data>
+  <data name="IslamInfo_CompanionsOfTheParadiseWordByWord" xml:space="preserve">
+    <value>Companions Of The Paradise Word By Word</value>
+  </data>
+  <data name="IslamInfo_CompanionsOfTheParadise" xml:space="preserve">
+    <value>Companions Of The Paradise</value>
+  </data>
+  <data name="IslamInfo_CompanionsOfTheHappinessWordByWord" xml:space="preserve">
+    <value>Companions Of The Happiness Word By Word</value>
+  </data>
+  <data name="IslamInfo_CompanionsOfTheHappiness" xml:space="preserve">
+    <value>Companions Of The Happiness</value>
+  </data>
+  <data name="IslamInfo_CompanionsOfTheRightWordByWord" xml:space="preserve">
+    <value>Companions Of The Right Word By Word</value>
+  </data>
+  <data name="IslamInfo_CompanionsOfTheRight" xml:space="preserve">
+    <value>Companions Of The Right</value>
+  </data>
+  <data name="IslamInfo_CompanionsOfTheElevationsWordByWord" xml:space="preserve">
+    <value>Companions Of The Elevations Word By Word</value>
+  </data>
+  <data name="IslamInfo_CompanionsOfTheElevations" xml:space="preserve">
+    <value>Companions Of The Elevations</value>
+  </data>
+  <data name="IslamInfo_CompanionsOfTheCaveWordByWord" xml:space="preserve">
+    <value>Companions Of The Cave Word By Word</value>
+  </data>
+  <data name="IslamInfo_CompanionsOfTheCave" xml:space="preserve">
+    <value>Companions Of The Cave</value>
+  </data>
+  <data name="IslamInfo_CompanionsOfTheSoundPathWordByWord" xml:space="preserve">
+    <value>Companions Of The Sound Path Word By Word</value>
+  </data>
+  <data name="IslamInfo_CompanionsOfTheSoundPath" xml:space="preserve">
+    <value>Companions Of The Sound Path</value>
+  </data>
+  <data name="IslamInfo_CompanionsOfTheShipWordByWord" xml:space="preserve">
+    <value>Companions Of The Ship Word By Word</value>
+  </data>
+  <data name="IslamInfo_CompanionsOfTheShip" xml:space="preserve">
+    <value>Companions Of The Ship</value>
+  </data>
+  <data name="IslamInfo_CompanionsOfTheFireWordByWord" xml:space="preserve">
+    <value>Companions Of The Fire Word By Word</value>
+  </data>
+  <data name="IslamInfo_CompanionsOfTheFire" xml:space="preserve">
+    <value>Companions Of The Fire</value>
+  </data>
+  <data name="IslamInfo_CompanionsOfTheHellWordByWord" xml:space="preserve">
+    <value>Companions Of The Hell Word By Word</value>
+  </data>
+  <data name="IslamInfo_CompanionsOfTheHell" xml:space="preserve">
+    <value>Companions Of The Hell</value>
+  </data>
+  <data name="IslamInfo_CompanionsOfTheSabbathWordByWord" xml:space="preserve">
+    <value>Companions Of The Sabbath Word By Word</value>
+  </data>
+  <data name="IslamInfo_CompanionsOfTheSabbath" xml:space="preserve">
+    <value>Companions Of The Sabbath</value>
+  </data>
+  <data name="IslamInfo_CompanionsOfThePessimistWordByWord" xml:space="preserve">
+    <value>Companions Of The Pessimist Word By Word</value>
+  </data>
+  <data name="IslamInfo_CompanionsOfThePessimist" xml:space="preserve">
+    <value>Companions Of The Pessimist</value>
+  </data>
+  <data name="IslamInfo_CompanionsOfTheLeftWordByWord" xml:space="preserve">
+    <value>Companions Of The Left Word By Word</value>
+  </data>
+  <data name="IslamInfo_CompanionsOfTheLeft" xml:space="preserve">
+    <value>Companions Of The Left</value>
+  </data>
+  <data name="IslamInfo_CompanionsOfTheBlazeWordByWord" xml:space="preserve">
+    <value>Companions Of The Blaze Word By Word</value>
+  </data>
+  <data name="IslamInfo_CompanionsOfTheBlaze" xml:space="preserve">
+    <value>Companions Of The Blaze</value>
+  </data>
+  <data name="IslamInfo_CompanionsOfThePitWordByWord" xml:space="preserve">
+    <value>Companions Of The Pit Word By Word</value>
+  </data>
+  <data name="IslamInfo_CompanionsOfThePit" xml:space="preserve">
+    <value>Companions Of The Pit</value>
+  </data>
+  <data name="IslamInfo_CompanionsOfTheElephantWordByWord" xml:space="preserve">
+    <value>Companions Of The Elephant Word By Word</value>
+  </data>
+  <data name="IslamInfo_CompanionsOfTheElephant" xml:space="preserve">
+    <value>Companions Of The Elephant</value>
+  </data>
+  <data name="IslamInfo_CompanionsOfMadyanWordByWord" xml:space="preserve">
+    <value>Companions Of Madyan Word By Word</value>
+  </data>
+  <data name="IslamInfo_CompanionsOfMadyan" xml:space="preserve">
+    <value>Companions Of Madyan</value>
+  </data>
+  <data name="IslamInfo_CompanionsOfTheThicketWordByWord" xml:space="preserve">
+    <value>Companions Of The Thicket Word By Word</value>
+  </data>
+  <data name="IslamInfo_CompanionsOfTheThicket" xml:space="preserve">
+    <value>Companions Of The Thicket</value>
+  </data>
+  <data name="IslamInfo_CompanionsOfTheRockWordByWord" xml:space="preserve">
+    <value>Companions Of The Rock Word By Word</value>
+  </data>
+  <data name="IslamInfo_CompanionsOfTheRock" xml:space="preserve">
+    <value>Companions Of The Rock</value>
+  </data>
+  <data name="IslamInfo_CompanionsOfTheWellWordByWord" xml:space="preserve">
+    <value>Companions Of The Well Word By Word</value>
+  </data>
+  <data name="IslamInfo_CompanionsOfTheWell" xml:space="preserve">
+    <value>Companions Of The Well</value>
+  </data>
+  <data name="IslamInfo_CompanionsOfTheCityWordByWord" xml:space="preserve">
+    <value>Companions Of The City Word By Word</value>
+  </data>
+  <data name="IslamInfo_CompanionsOfTheCity" xml:space="preserve">
+    <value>Companions Of The City</value>
+  </data>
+  <data name="IslamInfo_CompanionsOfTheGraveWordByWord" xml:space="preserve">
+    <value>Companions Of The Grave Word By Word</value>
+  </data>
+  <data name="IslamInfo_CompanionsOfTheGrave" xml:space="preserve">
+    <value>Companions Of The Grave</value>
+  </data>
+  <data name="IslamInfo_CompanionsOfMusaWordByWord" xml:space="preserve">
+    <value>Companions Of Musa Word By Word</value>
+  </data>
+  <data name="IslamInfo_CompanionsOfMusa" xml:space="preserve">
+    <value>Companions Of Musa</value>
+  </data>
+  <data name="IslamInfo_WhispererWhoWithdrawsWordByWord" xml:space="preserve">
+    <value>Whisperer Who Withdraws Word By Word</value>
+  </data>
+  <data name="IslamInfo_WhispererWhoWithdraws" xml:space="preserve">
+    <value>Whisperer Who Withdraws</value>
+  </data>
+  <data name="IslamInfo_BlowerInKnotsWordByWord" xml:space="preserve">
+    <value>Blower In Knots Word By Word</value>
+  </data>
+  <data name="IslamInfo_BlowerInKnots" xml:space="preserve">
+    <value>Blower In Knots</value>
+  </data>
+  <data name="IslamInfo_RelatedNarrationBasedExegesisWordByWord" xml:space="preserve">
+    <value>Related Narration Based Exegesis Word By Word</value>
+  </data>
+  <data name="IslamInfo_RelatedNarrationBasedExegesis" xml:space="preserve">
+    <value>Related Narration Based Exegesis</value>
+  </data>
+  <data name="IslamInfo_Remembrance3WordByWord" xml:space="preserve">
+    <value>Remembrance3 Word By Word</value>
+  </data>
+  <data name="IslamInfo_Remembrance4WordByWord" xml:space="preserve">
+    <value>Remembrance4 Word By Word</value>
+  </data>
+  <data name="IslamInfo_Remembrance4" xml:space="preserve">
+    <value>Remembrance4</value>
+  </data>
+  <data name="IslamInfo_Remembrance5WordByWord" xml:space="preserve">
+    <value>Remembrance5 Word By Word</value>
+  </data>
+  <data name="IslamInfo_Remembrance5" xml:space="preserve">
+    <value>Remembrance5</value>
+  </data>
+  <data name="IslamInfo_AfterCallToPrayerFirstPartLabel" xml:space="preserve">
+    <value>After Call To Prayer First Part Label</value>
+  </data>
+  <data name="IslamInfo_AfterCallToPrayerSecondPartLabel" xml:space="preserve">
+    <value>After Call To Prayer Second Part Label</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerFourthVerseLabel" xml:space="preserve">
+    <value>Call To Prayer Fourth Verse Label</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerFifthVerseLabel" xml:space="preserve">
+    <value>Call To Prayer Fifth Verse Label</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerSixthVerseLabel" xml:space="preserve">
+    <value>Call To Prayer Sixth Verse Label</value>
+  </data>
+  <data name="IslamInfo_CallToBeginPrayerSixthVerseLabel" xml:space="preserve">
+    <value>Call To Begin Prayer Sixth Verse Label</value>
+  </data>
+  <data name="IslamInfo_ThuwaybahWordByWord" xml:space="preserve">
+    <value>Thuwaybah Word By Word</value>
+  </data>
+  <data name="IslamInfo_Thuwaybah" xml:space="preserve">
+    <value>Thuwaybah</value>
+  </data>
+  <data name="IslamInfo_HalimahAlSadiyahWordByWord" xml:space="preserve">
+    <value>Halimah Al Sadiyah Word By Word</value>
+  </data>
+  <data name="IslamInfo_HalimahAlSadiyah" xml:space="preserve">
+    <value>Halimah Al Sadiyah</value>
+  </data>
 </root>
