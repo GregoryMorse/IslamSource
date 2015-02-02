@@ -15,6 +15,7 @@ Public Class frmMain
         'TanzilReader.CompareQuranFormats(TanzilReader.QuranTexts.Hafs, TanzilReader.QuranTexts.Warsh, TanzilReader.QuranScripts.Uthmani, TanzilReader.ArabicPresentation.Buckwalter)
         'TanzilReader.ChangeQuranFormat(TanzilReader.QuranTexts.Hafs, TanzilReader.QuranTexts.Warsh, TanzilReader.QuranScripts.Uthmani, TanzilReader.ArabicPresentation.Buckwalter)
         'TanzilReader.CheckNotablePatterns()
+        Arabic.TransliterateToScheme(Arabic.TransliterateFromBuckwalter("laA tuHar~iko bihi. lisaAnaka litaEojala bihi.^"), ArabicData.TranslitScheme.RuleBased, "PlainRoman", TanzilReader.GenerateDefaultStops(Arabic.TransliterateFromBuckwalter("laA tuHar~iko bihi. lisaAnaka litaEojala bihi.^")))
         'Utility.SortResX(Utility.GetFilePath("IslamResources\Resources.en.resx"))
         'Utility.SortResX(Utility.GetFilePath("IslamResources\My Project\Resources.resx"))
         CachedData.DoErrorCheck()
@@ -31,7 +32,7 @@ Public Class frmMain
         Dim Renderer As New MultiLangRender
         Renderer.Anchor = AnchorStyles.Left Or AnchorStyles.Top Or AnchorStyles.Right Or AnchorStyles.Bottom
         Renderer.Size = New Size(gbMain.Width, gbMain.Height)
-        For Count As Integer = 1 To TanzilReader.GetChapterCount()
+        For Count As Integer = 39 To TanzilReader.GetChapterCount()
             Renderer.RenderArray = TanzilReader.GetQuranTextBySelection(String.Empty, 0, Count, "en.sahih", ArabicData.TranslitScheme.RuleBased, "PlainRoman", TanzilReader.GetTranslationIndex("en.sahih"), True, False, False).Items
             HostPageUtility.RenderArray.OutputPdf("test" + CStr(Count) + ".pdf", Renderer.RenderArray)
         Next

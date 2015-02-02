@@ -622,6 +622,7 @@ Public Class Arabic
 
         'process wasl loanwords and names
         'process loanwords and names
+        If System.Text.RegularExpressions.Regex.Match(ArabicString, "[\p{IsArabic}|\p{IsArabicPresentationForms-A}|\p{IsArabicPresentationForms-B}]").Success Then Debug.Print(ArabicString)
         Return ArabicString
     End Function
     Public Shared Function GetTransliterationSchemeTable(ByVal Item As PageLoader.TextItem) As RenderArray
@@ -5043,13 +5044,13 @@ Public Class TanzilReader
     End Function
     Public Shared Function GenerateDefaultStops(Str As String) As Integer()
         Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(Str, "(^\s*|\s+)(" + ArabicData.MakeUniRegEx(ArabicData.ArabicEndOfAyah) + "[\p{Nd}]{1,3}|" + CachedData.OptionalPattern + ")(?=\s*$|\s+)")
-        Dim DefStops(Matches.Count - 1) As Integer
+        Dim DefStops As New List(Of Integer)
         Dim DotToggle As Boolean = False
         For Count As Integer = 0 To Matches.Count - 1
-            If Matches(Count).Groups(2).Value <> ArabicData.ArabicSmallHighLigatureSadWithLamWithAlefMaksura AndAlso (Matches(Count).Groups(2).Value <> ArabicData.ArabicSmallHighThreeDots Or DotToggle) Then DefStops(Count) = Matches(Count).Groups(2).Index
+            If Matches(Count).Groups(2).Value <> ArabicData.ArabicSmallHighLigatureSadWithLamWithAlefMaksura AndAlso (Matches(Count).Groups(2).Value <> ArabicData.ArabicSmallHighThreeDots Or DotToggle) Then DefStops.Add(Matches(Count).Groups(2).Index)
             If Matches(Count).Groups(2).Value = ArabicData.ArabicSmallHighThreeDots Then DotToggle = Not DotToggle
         Next
-        Return DefStops
+        Return DefStops.ToArray()
     End Function
     Public Shared Function DoGetRenderedQuranText(QuranText As Collections.Generic.List(Of String()), BaseChapter As Integer, BaseVerse As Integer, Translation As String, SchemeType As ArabicData.TranslitScheme, Scheme As String, TranslationIndex As Integer, W4W As Boolean, W4WNum As Boolean, NoArabic As Boolean) As RenderArray
         Dim Text As String
