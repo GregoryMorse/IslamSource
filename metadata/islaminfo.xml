@@ -1820,7 +1820,7 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 		<word text="{lomuEaAmalaAtu" id="RighteousDealings"></word>
 		<word text="{lo&apos;aAxolaAqu" id="Manners"></word>
 		<word text="{lomuEaA$arapu" id="Cohabitation"></word>
-		<word text="{lr~aA$iduwn‎u" id="WiseOne"></word>
+		<word text="{lr~aA$iduwnu" id="WiseOne"></word>
 		<word text="{lo&gt;aminu" id="PeaceSecure"></word>
 		<word text="{lt~aHoqiyqu" id="PreciseMethodicalRecitation"></word>
 		<word text="{lt~adowiyru" id="InBetweenRecitation"></word>
@@ -1874,7 +1874,7 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 		<word text="{l$~ahoru" id="Month"></word>
 		<word text="{lo&gt;awozaAEi" id="AlAwzaai"></word>
 		<word text="{loxawaAriju" id="Khawarij"></word>
-		<word text="{lo&gt;amawiy~ap‎u" id="Umayyad"></word>
+		<word text="{lo&gt;amawiy~apu" id="Umayyad"></word>
 		<word text="{loEabaAsiy~apu" id="Abbasid"></word>
 		<word text="{lofaATimiy~uwnu" id="Fatimid"></word>
 		<word text="{lomanSuwru" id="AlMansoor"></word>
@@ -2993,7 +2993,7 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 		<word text="{ll~ahum~a laA saholAF &lt;il~aA maA jaEalotahN saholAF wa&gt;anta tajoEala {loHazana &lt;i*aA $i}ta saholAF" id="WhenSomethingIsDifficult"></word>
 
 		<marriage husband="MuhammadBinAbdullahBinAbduAlMuttalib" wife="KhadijahBintKhuwaylid"></marriage>
-		<word text="muHam~adN {bonu Eabodi {ll~ahi {boni Eabodi {lomuT~alibi {boni haA$im‎K" nickname="&gt;abuw {loqaAsim" father="AbdullahBinAbduAlMuttalib" mother="AaminaBintiWahb" id="MuhammadBinAbdullahBinAbduAlMuttalib"></word>
+		<word text="muHam~adN {bonu Eabodi {ll~ahi {boni Eabodi {lomuT~alibi {boni haA$imK" nickname="&gt;abuw {loqaAsim" father="AbdullahBinAbduAlMuttalib" mother="AaminaBintiWahb" id="MuhammadBinAbdullahBinAbduAlMuttalib"></word>
 		<word text="qaAsimN {bonu muHam~adK" nickname="{lT~aAhiru" father="MuhammadBinAbdullahBinAbduAlMuttalib" mother="KhadijahBintKhuwaylid" id="QaasimBinMuhammad"></word>
 		<word text="Eabodu {ll~ahi {bonu muHam~adK" nickname="{lTay~ibu" father="MuhammadBinAbdullahBinAbduAlMuttalib" mother="KhadijahBintKhuwaylid" id="AbdullahBinMuhammad"></word>
 		<word text="zayonabu {bonatu muHam~adK" father="MuhammadBinAbdullahBinAbduAlMuttalib" mother="KhadijahBintKhuwaylid" id="ZaynabBintiMuhammad"></word>
@@ -3019,37 +3019,37 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 		<word text="EuvomaAnN {bonu EafaAnK" id="UthmanBinAffan"></word>
 		<word text="jaEofarN {bonu &gt;abiy TaAlibK" id="JafarBinAbiTalib"></word>
 		<word text="Ealiy~N {bonu &gt;abiy TaAlibK" id="AliBinAbiTalib"></word>
-		<word text="{loHasanu {bonu Ealiy~K {boni &gt;abiy TaAlib‎K" id="HasanBinAli"></word>
+		<word text="{loHasanu {bonu Ealiy~K {boni &gt;abiy TaAlibK" id="HasanBinAli"></word>
 		<word text="{loHus~ayonu {bonu Ealiy~K {boni &gt;abiy TaAlibK" id="HusseinBinAli"></word>
 		<word text="Ealiy~N {bonu {loHus~ayoni {ls~aj~adi" id="AliBinHussein"></word>
 		<word text="muHam~adN {bonu Ealiy~N {lobaAqiri" id="MuhammadBinAli"></word>
-		<word text="jaEofarN {bonu muHam~adK {lS~aAdiq‎i" id="JafarBinMuhammad"></word>
-		<word text="muwsaY {bonu jaEofarK {lokaAZim‎i" id="MusaBinJafar"></word>
-		<word text="Ealiy~N {bonu muwsaY {lr~iDaA‎" id="AliBinMusa"></word>
+		<word text="jaEofarN {bonu muHam~adK {lS~aAdiqi" id="JafarBinMuhammad"></word>
+		<word text="muwsaY {bonu jaEofarK {lokaAZimi" id="MusaBinJafar"></word>
+		<word text="Ealiy~N {bonu muwsaY {lr~iDaA" id="AliBinMusa"></word>
 		<word text="{lo&lt;imaAmu muHam~adN {lt~aqiy {lojawaAdu" id="ImamMuhammadTaqi"></word>
-		<word text="Ealiy~N {lohaAdiy {ln~aqiy‎" id="AliBinMuhammad"></word>
+		<word text="Ealiy~N {lohaAdiy {ln~aqiy" id="AliBinMuhammad"></word>
 		<word text="{loHasanu {loEasokariy {bonu Ealiy~K {boni muHam~adK" id="HasanAskariBinAli"></word>
 		<word text="muHam~adN {bonu {loHasani {lomahodiy" id="MuhammadBinAlHasan"></word>
-		<word text="TaloHapN {bonu Eabayodi {ll~ahi‎" id="TalhaBinObaidullah"></word>
+		<word text="TaloHapN {bonu Eabayodi {ll~ahi" id="TalhaBinObaidullah"></word>
 		<word text="{lz~ubayoru {bonu {loEawaAmi {boni xuwayolidK" id="AzZubayrbinAlAwam"></word>
 		<word text="saEodN {bonu malikK" id="SadBinMalik"></word>
 		<word text="saEodN {bonu &gt;abiy waq~aASK" id="SadBinAbiWaqqas"></word>
-		<word text="Eabodu {lr~aHomani {bonu Eawof‎K" id="AbdurRahmanBinAwf"></word>
-		<word text="&gt;abuw EubayodapN EaAmirN {bonu Eabodi {ll~ahi {boni {lojar~aAH‎i" id="AbuUbaidahBinAlJarrah"></word>
+		<word text="Eabodu {lr~aHomani {bonu EawofK" id="AbdurRahmanBinAwf"></word>
+		<word text="&gt;abuw EubayodapN EaAmirN {bonu Eabodi {ll~ahi {boni {lojar~aAHi" id="AbuUbaidahBinAlJarrah"></word>
 		<word text="saEiydN {bonu zayodK" id="SaeedBinZaid"></word>
 		<word text="xadiyjapu {bonatu xuwayolidK" id="KhadijahBintKhuwaylid"></word>
 		<word text="waraqapu {bonu nawofalK {boni &gt;asadK {boni Eabodi {loEuz~aY {boni quSay~K {loqura$iy" id="WaraqahBinNawfal"></word>
-		<word text="sawodapu {bonatu zamoEap‎K" id="SawdaBintZama"></word>
-		<word text="EaA^}i$apN {bonatu &gt;abiy‎ bakorK" id="AishaBintAbiBakr"></word>
+		<word text="sawodapu {bonatu zamoEapK" id="SawdaBintZama"></word>
+		<word text="EaA^}i$apN {bonatu &gt;abiy bakorK" id="AishaBintAbiBakr"></word>
 		<word text="HafoSapN {bonatu EumarK" id="HafsaBintUmar"></word>
-		<word text="zayonabu {bonatu xuzayomap‎K" id="ZaynabBintKhuzayma"></word>
-		<word text="hindN {bonatu &gt;abiy &gt;umay~ap‎K" id="HindBintAbiUmayya"></word>
+		<word text="zayonabu {bonatu xuzayomapK" id="ZaynabBintKhuzayma"></word>
+		<word text="hindN {bonatu &gt;abiy &gt;umay~apK" id="HindBintAbiUmayya"></word>
 		<word text="zayonabu {bonatu jaHo$K" id="ZaynabBintJahsh"></word>
-		<word text="juwayoriy~apN {bonatu {loHaAriv‎i" id="JuwayriyaBintAlHarith"></word>
+		<word text="juwayoriy~apN {bonatu {loHaArivi" id="JuwayriyaBintAlHarith"></word>
 		<word text="Safiy~apN {bonatu HuyaY~K" id="SafiyyaBintHuyayy"></word>
 		<word text="ramolapN {bonatu &gt;abiy sufoyaAnK" id="RamlahBintAbiSufyan"></word>
-		<word text="mayomuwnapu {bonatu {loHaAriv‎i" id="MaymunaBintAlHarith"></word>
-		<word text="maAroyapN {loquboTiy~ap‎u" id="MariaAlQibtiyya"></word>
+		<word text="mayomuwnapu {bonatu {loHaArivi" id="MaymunaBintAlHarith"></word>
+		<word text="maAroyapN {loquboTiy~apu" id="MariaAlQibtiyya"></word>
 		<word text="rayoHaAnapN {bonatu zayodK" id="RayhanaBintZayd"></word>
 		<word text="&gt;abuw hurayorapN" id="AbuHurairah"></word>
 		<word text="xaAlidN {bonu {lowaliydi" id="KhalidBinWalid"></word>
@@ -3115,7 +3115,7 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 		<word text="taho*iybN {lo&gt;aHokaAmu" id="TahdhibAlAhkam"></word>
 		<word text="{lo&lt;isotiboSaAru" id="AlIstibsar"></word>
 
-		<word text="{lo&lt;isoraA^&apos;u wa{lomiEoraAj‎u" id="IsraAndMiraj"></word>
+		<word text="{lo&lt;isoraA^&apos;u wa{lomiEoraAju" id="IsraAndMiraj"></word>
 		<word text="madiynapu {lomunaw~irapu" id="EnlightenedMedina"></word>
 		<word text="mak~apu {lomukarimapu" id="BlessedMecca"></word>
 		<word text="riyaADN {lojan~apu" id="RiadAlJannah"></word>
@@ -3124,12 +3124,12 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 		<word text="jabalN EuhuwdK" id="MountUhud"></word>
 		<word text="{lomasojidu {loHaraAmu" id="SacredMosque"></word>
 		<word text="{lomasojidu {ln~abawiy" id="MosqueOfTheProphet"></word>
-		<word text="{lomasojidu {lo&gt;aqoSaY‎" id="FarthestMosque"></word>
+		<word text="{lomasojidu {lo&gt;aqoSaY" id="FarthestMosque"></word>
 		<word text="bayotu {lomaqodisi" id="HolyHouse"></word>
 		<word text="bayotu {lomaAli" id="CentralTreasury"></word>
-		<word text="Eiydu {lofiTor‎i" id="FestivalOfBreakingFast"></word>
-		<word text="Eiydu {lo&gt;aDoHaY‎" id="FestivalOfSacrifice"></word>
-		<word text="ra&gt;asN {ls~anapu {lohijoriy~ap‎u" id="IslamicNewYear"></word>
+		<word text="Eiydu {lofiTori" id="FestivalOfBreakingFast"></word>
+		<word text="Eiydu {lo&gt;aDoHaY" id="FestivalOfSacrifice"></word>
+		<word text="ra&gt;asN {ls~anapu {lohijoriy~apu" id="IslamicNewYear"></word>
 		<word text="mawolidN {ln~abiy" id="BirthdayOfTheProphet"></word>
 		<word text="layolapu {ln~iSofi min $aEobaAnK" id="MidShaban"></word>
 	</phrases>
@@ -4525,7 +4525,7 @@ Ramadan fast-breaking | One 2172-gram quantity | Dates or barley or ordinary sta
 		<pattern name="OptionalPattern" match="{ArabicEndOfAyah}|{ArabicSmallHighJeem}|{ArabicSmallHighThreeDots}|{ArabicSmallHighLigatureQafWithLamWithAlefMaksura}|{ArabicSmallHighLigatureSadWithLamWithAlefMaksura}"></pattern>
 		<pattern name="OptionalPatternNotEndOfAyah" match="{ArabicSmallHighJeem}|{ArabicSmallHighThreeDots}|{ArabicSmallHighLigatureQafWithLamWithAlefMaksura}|{ArabicSmallHighLigatureSadWithLamWithAlefMaksura}"></pattern>
 		<pattern name="TehMarbutaStopRule" match="(?:({ArabicFathaDammaKasra})|({ArabicTanweens})({ArabicSmallLowMeem}|{ArabicSmallHighMeemIsolatedForm})?)(?=\s*(?:{ArabicPlaceOfSajdah}?\s*(?:$|{ArabicEndOfAyah})|{CertainStopPattern}|({OptionalPattern})))"></pattern>
-		<pattern name="TehMarbutaContinueRule" match="(?:(?:{ArabicFathaDammaKasra})|(?:{ArabicTanweens})(?:{ArabicSmallLowMeem}|{ArabicSmallHighMeemIsolatedForm})?)(?=\s+({OptionalPattern})\s+|(?!\s*(?:{ArabicPlaceOfSajdah}?\s*(?:$|{ArabicEndOfAyah})|{CertainStopPattern})))"></pattern>
+		<pattern name="TehMarbutaContinueRule" match="(?:(?:{ArabicFathaDammaKasra})|(?:{ArabicTanweens})(?:{ArabicSmallLowMeem}|{ArabicSmallHighMeemIsolatedForm})?)(?=\s+({OptionalPattern})\s+|\s+(?!\s+(?:{ArabicPlaceOfSajdah}?\s*(?:$|{ArabicEndOfAyah})|{CertainStopPattern})))"></pattern>
 		<pattern name="NotTehMarbuta" match="(?:{ArabicSunLetters}|{ArabicMoonLettersNoVowels}|{ArabicLetterWaw}|{ArabicLetterAlefMaksura}){ArabicShadda}?|{ArabicLetterAlef}|{ArabicLetterHamza}|{ArabicLetterAlefWithHamzaAbove}|{ArabicLetterWawWithHamzaAbove}|{ArabicLetterAlefWithHamzaBelow}|{ArabicLetterYehWithHamzaAbove}"></pattern>
 		<pattern name="MatchCaseEnding" match="({ArabicLetterTehMarbuta}){TehMarbutaStopRule}|(?:({NotTehMarbuta})(?:(?:{ArabicFathaDammaKasra})|(?:{ArabicKasratan}|{ArabicDammatan})(?:{ArabicSmallLowMeem}|{ArabicSmallHighMeemIsolatedForm})?)|({ArabicLetterHamza})(?:{ArabicFathatan})(?:{ArabicSmallLowMeem}|{ArabicSmallHighMeemIsolatedForm})?|({ArabicLetterNoon})(?:{ArabicSmallLowMeem}))(?=$|\s+)"></pattern>
 		<pattern name="MatchDefiniteness" match="(^|\s+){ArabicLetterAlefWasla}{ArabicLetterLam}(?:({ArabicSunLetters}){ArabicShadda}|{ArabicSukun}?(?={ArabicMoonLetters}|{ArabicLetterAlefWithHamzaAbove}|{ArabicLetterAlefWithHamzaBelow}|{ArabicLetterHamza}|{ArabicTatweel}{ArabicHamzaAbove}))"></pattern>
@@ -4805,7 +4805,7 @@ Ramadan fast-breaking | One 2172-gram quantity | Dates or barley or ordinary sta
 	    <metarule name="Stopping" match="(?:({NotTehMarbuta})(?:({ArabicFathaDammaKasra}|{ArabicKasra}{ArabicSmallYeh}{ArabicMaddahAbove}?|{ArabicDamma}{ArabicSmallWaw}{ArabicMaddahAbove}?)|({ArabicKasratan}|{ArabicDammatan})({ArabicSmallLowMeem}|{ArabicSmallHighMeemIsolatedForm})?)|({ArabicLetterHamza}|{ArabicTatweel}{ArabicHamzaAbove})({ArabicFathatan})({ArabicSmallLowMeem}|{ArabicSmallHighMeemIsolatedForm})?|({ArabicLetterNoon})({ArabicSmallLowMeem}))(?=\s*(?:{ArabicPlaceOfSajdah}?\s*(?:$|{ArabicEndOfAyah})|{CertainStopPattern}|({OptionalPattern})))" evaluator=";empty;empty;empty;;empty;empty;;empty;optionalstop"></metarule>
 	    <metarule name="Stopping" match="({ArabicLetterTehMarbuta}){TehMarbutaStopRule}" evaluator="helperheh;empty;empty;empty;optionalstop"></metarule>
 	    <metarule name="Continuing" match="({ArabicLetterTehMarbuta}){TehMarbutaContinueRule}" evaluator="helperteh;optionalnotstop"></metarule>
-	    <metarule name="Continuing" match="({ArabicFathatan})({ArabicSmallLowMeem}|{ArabicSmallHighMeemIsolatedForm})?({ArabicLetterAlef}|{ArabicLetterAlefMaksura})(?=\s+({OptionalPattern})|\s+(?!\s*(?:{ArabicPlaceOfSajdah}?\s*(?:$|{ArabicEndOfAyah})|{CertainStopPattern})))" evaluator=";;empty;optionalnotstop"></metarule>
+	    <metarule name="Continuing" match="({ArabicFathatan})({ArabicSmallLowMeem}|{ArabicSmallHighMeemIsolatedForm})?({ArabicLetterAlef}|{ArabicLetterAlefMaksura})(?=\s+({OptionalPattern})|\s+(?!\s+(?:{ArabicPlaceOfSajdah}?\s*(?:$|{ArabicEndOfAyah})|{CertainStopPattern})))" evaluator=";;empty;optionalnotstop"></metarule>
 	    <metarule name="SmallBounce" match="({ArabicFathaDammaKasra})({ArabicLetterDal}|{ArabicLetterBeh}|{ArabicLetterQaf}|{ArabicLetterTah}|{ArabicLetterJeem})(?={ArabicSukun}\S)" evaluator=";bounce"></metarule>
 	    <metarule name="ModerateBounce" match="({ArabicLetterDal}|{ArabicLetterBeh}|{ArabicLetterQaf}|{ArabicLetterTah}|{ArabicLetterJeem})(?=(?:(?:{ArabicTanweens})(?:{ArabicSmallLowMeem}|{ArabicSmallHighMeemIsolatedForm})?|{ArabicFathaDammaKasra})\s*(?:{ArabicPlaceOfSajdah}?\s*(?:$|{ArabicEndOfAyah})|{CertainStopPattern}|({OptionalPattern})))" evaluator="bounce;optionalstop"></metarule>
 	    <metarule name="GreatBounce" match="({ArabicLetterDal}|{ArabicLetterBeh}|{ArabicLetterQaf}|{ArabicLetterTah}|{ArabicLetterJeem})(?={ArabicSukun}\s*(?:{ArabicPlaceOfSajdah}?\s*(?:$|{ArabicEndOfAyah})|{CertainStopPattern}|({OptionalPattern})))" evaluator="bounce;optionalstop"></metarule>
@@ -4842,7 +4842,8 @@ Ramadan fast-breaking | One 2172-gram quantity | Dates or barley or ordinary sta
 	    <metarule name="AlefMaksuraDaggerAlef" match="({ArabicLetterAlefMaksura})(?:{ArabicLetterSuperscriptAlef})(?!{ArabicMaddahAbove})" evaluator="helperfatha"></metarule>
 	    <metarule name="AlefMaddah" match="({ArabicLetterAlefWithMaddaAbove})" evaluator="dividelettersymbol(helperalef permissibleprolong,empty)"></metarule>
 	    <metarule name="Maddah" match="(?:({ArabicFatha}{ArabicLetterAlef}|{ArabicFatha}{ArabicLetterSuperscriptAlef})|({ArabicFatha}{ArabicLetterWaw})({ArabicLetterSuperscriptAlef})|({ArabicFatha}{ArabicLetterAlefMaksura})({ArabicLetterSuperscriptAlef}))({ArabicMaddahAbove})" evaluator="permissibleprolong;permissibleprolong;;permissibleprolong;;empty"></metarule>
-	    <metarule name="Maddah" match="(?:({ArabicDamma}(?:{ArabicSmallWaw}|{ArabicLetterWaw})|{ArabicKasra}(?:{ArabicSmallYeh}|{ArabicLetterYeh})|{ArabicKasra}{ArabicLetterAlefMaksura})|({ArabicKasra}{ArabicLetterAlef})({ArabicSmallHighRoundedZero}{ArabicLetterAlefMaksura}))({ArabicMaddahAbove})" evaluator="permissibleprolong;permissibleprolong;;empty"></metarule>
+	    <metarule name="Maddah" match="(?:({ArabicDamma}{ArabicLetterWaw}|{ArabicKasra}{ArabicLetterYeh}|{ArabicKasra}{ArabicLetterAlefMaksura})|({ArabicKasra}{ArabicLetterAlef})({ArabicSmallHighRoundedZero}{ArabicLetterAlefMaksura}))({ArabicMaddahAbove})" evaluator="permissibleprolong;permissibleprolong;;empty"></metarule>
+	    <metarule name="Maddah" match="({ArabicDamma}{ArabicSmallWaw}|{ArabicKasra}{ArabicSmallYeh})({ArabicMaddahAbove})(?=\s+({OptionalPattern})|\s*(?!\s*(?:{ArabicPlaceOfSajdah}?\s*(?:$|{ArabicEndOfAyah})|{CertainStopPattern})))" evaluator="permissibleprolong;empty;optionalnotstop"></metarule>
 	    <metarule name="AlefWaslaWawHamza" match="((?:^|{CertainStopPattern}|({OptionalPattern}))\s*{ArabicLetterAlefWasla})({ArabicLetterWawWithHamzaAbove})" evaluator=";optionalstop;dividelettersymbol(helperwaw,empty)"></metarule>
 	    <metarule name="AlefWaslaAlefMaksuraHamza" match="((?:^|{CertainStopPattern}|({OptionalPattern}))\s*{ArabicLetterAlefWasla})({ArabicLetterYehWithHamzaAbove})" evaluator=";optionalstop;dividelettersymbol(helperyeh,empty)"></metarule>
 	    <metarule name="AlefWaslaHamza" match="((?:{CertainNotStopPattern}|({OptionalPattern}))\s*)({ArabicLetterAlefWasla})({ArabicLetterWawWithHamzaAbove}|{ArabicLetterYehWithHamzaAbove})" evaluator=";optionalnotstop;;dividelettersymbol(empty,helperhamza)"></metarule>
@@ -4850,8 +4851,8 @@ Ramadan fast-breaking | One 2172-gram quantity | Dates or barley or ordinary sta
 	    <metarule name="AlefHamza" match="((?:{CertainNotStopPattern}|({OptionalPattern}))\s*)({ArabicLetterAlefWithHamzaAbove}|{ArabicLetterAlefWithHamzaBelow})" evaluator=";optionalnotstop;dividelettersymbol(empty,helperhamza)"></metarule>
 	    <metarule name="WawHamzah" match="({ArabicLetterWawWithHamzaAbove})" evaluator="dividelettersymbol(empty,helperhamza)"></metarule>
 	    <metarule name="AlefMaksuraHamzah" match="({ArabicSukun}|{ArabicKasra}(?:{ArabicLetterAlef}{ArabicSmallHighRoundedZero})?|{ArabicDamma}|{ArabicFatha}(?:{ArabicLetterAlef}{ArabicMaddahAbove}?)?|{ArabicLetterSuperscriptAlef}{ArabicMaddahAbove})({ArabicLetterYehWithHamzaAbove})" evaluator=";dividelettersymbol(empty,helperhamza)"></metarule>
-	    <metarule name="SmallWaw" match="({ArabicSmallWaw})(?={ArabicMaddahAbove}?\s+({OptionalPattern})|{ArabicMaddahAbove}?\s*(?!\s*(?:{ArabicPlaceOfSajdah}?\s*(?:$|{ArabicEndOfAyah})|{CertainStopPattern})))" evaluator="helperwaw;optionalnotstop"></metarule>
-	    <metarule name="SmallYeh" match="({ArabicSmallYeh})(?={ArabicMaddahAbove}?\s+({OptionalPattern})|{ArabicMaddahAbove}?\s*(?!\s*(?:{ArabicPlaceOfSajdah}?\s*(?:$|{ArabicEndOfAyah})|{CertainStopPattern})))" evaluator="helperyeh;optionalnotstop"></metarule>
+	    <metarule name="SmallWaw" match="({ArabicSmallWaw})(?={ArabicMaddahAbove}?\s+({OptionalPattern})|{ArabicMaddahAbove}?\s*(?!{ArabicMaddahAbove}?\s*(?:{ArabicPlaceOfSajdah}?\s*(?:$|{ArabicEndOfAyah})|{CertainStopPattern})))" evaluator="helperwaw;optionalnotstop"></metarule>
+	    <metarule name="SmallYeh" match="({ArabicSmallYeh})(?={ArabicMaddahAbove}?\s+({OptionalPattern})|{ArabicMaddahAbove}?\s*(?!{ArabicMaddahAbove}?\s*(?:{ArabicPlaceOfSajdah}?\s*(?:$|{ArabicEndOfAyah})|{CertainStopPattern})))" evaluator="helperyeh;optionalnotstop"></metarule>
 	    <metarule name="SmallNoon" match="({ArabicSmallHighNoon})" evaluator="helpernoon"></metarule>
 	    <metarule name="SmallHighSeen" match="({ArabicSmallHighSeen})\S+" evaluator="helperseen"></metarule>
 	    <metarule name="SmallLowSeen" match="({ArabicSmallLowSeen})" evaluator="empty"></metarule>
