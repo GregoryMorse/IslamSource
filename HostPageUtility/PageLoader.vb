@@ -2031,6 +2031,7 @@ Public Class RenderArray
         eRanking
         eList
         eTag
+        eLink
         ePassThru
     End Enum
     Structure RenderText
@@ -3438,7 +3439,21 @@ Public Class RenderArray
                         writer.WriteAttribute("style", "color: " + System.Drawing.ColorTranslator.ToHtml(Items(Count).TextItems(Index).Clr) + ";" + If(Items(Count).TextItems(Index).Font <> String.Empty, "font-family:" + Items(Count).TextItems(Index).Font + ";", String.Empty) + Style)
                     End If
                     writer.Write(HtmlTextWriter.TagRightChar)
-                    If Array.IndexOf(Utility.FontList, Items(Count).TextItems(Index).Font) = -1 Then writer.Write(Utility.HtmlTextEncode(CStr(Items(Count).TextItems(Index).Text)).Replace(vbCrLf, "<br>"))
+                    Dim TestIndex As Integer = Index
+                    Do
+                        If Items(Count).TextItems(TestIndex).DisplayClass = RenderDisplayClass.eLink Then
+                            writer.WriteBeginTag("a")
+                            writer.WriteAttribute("href", CType(Items(Count).TextItems(TestIndex).Text, String())(0))
+                            writer.WriteAttribute("dir", "ltr")
+                            writer.Write(HtmlTextWriter.TagRightChar + CType(Items(Count).TextItems(TestIndex).Text, String())(1))
+                            writer.WriteEndTag("a")
+                        Else
+                            If Array.IndexOf(Utility.FontList, Items(Count).TextItems(Index).Font) = -1 Then writer.Write(Utility.HtmlTextEncode(CStr(Items(Count).TextItems(TestIndex).Text)).Replace(vbCrLf, "<br>"))
+                        End If
+                        TestIndex += 1
+                    Loop While Items(Count).TextItems.Length <> TestIndex AndAlso (Items(Count).TextItems(TestIndex).DisplayClass = RenderDisplayClass.eLink Or Items(Count).TextItems(Index).DisplayClass = Items(Count).TextItems(TestIndex).DisplayClass)
+                    Index = TestIndex - 1
+                    If TestIndex = Items(Count).TextItems.Length Then Exit For
                 End If
                 writer.WriteEndTag(CStr(IIf(Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eNested Or Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eRanking Or Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eList, "div", "span")))
             Next

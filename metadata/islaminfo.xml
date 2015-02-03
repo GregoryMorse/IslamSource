@@ -2989,7 +2989,7 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 		<word text="ya`rab~iy laka {loHamodu kamaA yanobagiy lijalaAli wajohika waEaZiymi suloTaAnika\." id="RemembranceSixth"></word>
 		<word text="{ll~ahum~a &lt;in~aA naEuw*u bika min &gt;ano nu$orika bika $ayo&apos;F naEolamuhu\, wanasotagofiruka limaA laA naEolamuhu\." id="RemembranceSeventh"></word>
 
-		<word text="\{1:1:1-2\}" id="InTheNameOfAllah"></word>
+		<word text="\{1:1:1-2;W4W;NoRef\}" id="InTheNameOfAllah"></word>
 		<word text="\{113\}" id="TheDaybreak"></word>
 		<word text="\{94:6\}" id="TrulyWithHardshipIsEase"></word>
 		<word text="\{23:96:1-4\}" id="RepelTheirEvilByMeansOfWhatIsBest"></word>
@@ -3671,8 +3671,8 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<word text="\{word:ChiefsLeaders,ProtectingFriendGuardian,CloseFriendConsort,Slave,Orphan,PoorPerson,MenPeople,ManPersonHumanBeing,People,Community,Generation,Driver,Blower,Withdrawer\}\{phrase:PeopleOfTheMessage,PeopleOfTheBook,PeopleOfTheGospel,PeopleOfMadinah,PeopleOfYathrib,PeopleOfMadyan,CompanionsOfTheGrave,CompanionsOfMusa\}" id="Neutral"></word>
 		</category>
 		<category title="Groupings">
-			<word text="\{word:ConsecratedMonth1,Month2\}\{phrase:Month3,Month4,Month5,Month6\}\{word:Month7,Month8,Month9,Month10\}\{phrase:Month11,Month12\}" id="Months"></word>
-			<word text="\{phrase:DayOfWeek1,DayOfWeek2,DayOfWeek3,DayOfWeek4,DayOfWeek5,DayOfWeek6,DayOfWeek7\}" id="DaysOfWeek"></word>
+			<word text="\{word:ConsecratedMonth1,Month2\}\{phrase:Month3,Month4,Month5,Month6\}\{word:Month7,Month8,Month9,Month10\}\{phrase:Month11,Month12\}" id="MonthNames"></word>
+			<word text="\{phrase:DayOfWeek1,DayOfWeek2,DayOfWeek3,DayOfWeek4,DayOfWeek5,DayOfWeek6,DayOfWeek7\}" id="DaysOfWeekNames"></word>
 			<word text="\{word:PrayTime1,PrayTime2,PrayTime3,PrayTime4,PrayTime5,PrayTime6,PrayTime7\}\{phrase:PrayTime8,PrayTime9\}" id="PrayerTimes"></word>
 			<category title="Inheritance">
 				<category title="FixedInheritance">
@@ -3915,7 +3915,7 @@ Ramadan fast-breaking | One 2172-gram quantity | Dates or barley or ordinary sta
 			<word text="\{word:Adam,Enoch,Noah,Eber,Saleh,Abraham,Lot,Ishmael,Isaac,Jacob,Joseph,Job,Jethro,Moses,Aaron\}\{phrase:Ezekiel\}\{word:David,Solomon,Elijah\}\{phrase:Elisha\}\{word:Jonas,Zechariah,JohnTheBaptist,Jesus\}\{phrase:JesusSonOfMary\}\{word:Muhammad\}" id="Prophets"></word>
 			<word text="\{phrase:TheSupremeOwnerOfSovereigntyAndGreatestThingsAndSupremeGlory,LightOfTheHeavensAndEarth,TheUniqueOneOfTheHeavensAndEarth,TheBenignOneTheMerciful,TheMercifulTheLovingOne,TheMercifulThePardoner,TheMercifulTheSupremePardoner,TheMightyOneTheWiseOne,TheMightyOneThePardoner,TheMightyOneTheAllKnowingOne,TheMightyOneTheMerciful,TheMightyOneTheSoleLaudableOne,TheMightyOneTheAllAuthoritativeOne,TheMightyOneTheSupremeBestower,TheClementOneTheMerciful,TheClementOneThePardoner,ThePardonerTheMerciful,ThePardonerTheLovingOne,ThePardonerTheClementOne,ThePardonerTheAcknowledgingOne,TheSelfSufficientOneTheSoleLaudableOne,TheSelfSufficientOneTheBountifulOne,TheSelfSufficientOneTheClementOne,TheAllKnowingOneTheWiseOne,TheAllKnowingOneTheClementOne,TheAllKnowingOneTheOmnipotentOne,TheAllKnowingOneTheAllAwareOne,TheWiseOneTheSoleLaudableOne,TheWiseOneTheAllAwareOne,TheWiseOneTheAllKnowingOne,TheSoleLaudableOneTheGloriousOne,TheSupremeSolverTheAllKnowingOne,TheEternalLordTheMostSacred,TheEternalLordTheEmbodimentOfTruth,TheEternalLordTheAllAuthoritativeOne,TheSublimeOneTheMagnificentOne,TheSublimeOneTheGreatOne,TheSublimeOneTheWiseOne,TheSublimeOneTheAllAwareOne,TheSupremePardonerTheOmnipotentOne,TheSupremePardonerThePardoner,TheCreatorTheAllKnowingOne,TheAllHearerTheClose,TheAllHearerTheAllKnowingOne,TheAllHearerTheAllSeeing,TheEverAcceptorOfRepentanceTheMerciful,TheEverAcceptorOfRepentanceTheWiseOne,TheEverAcceptorOfRepentanceThePardoner,TheRecognizerTheClementOne,TheRecognizerTheAllKnowingOne,TheEverLivingTheSelfSubsistingOne,TheKnowerOfSubtletiesTheAllAwareOne,TheFountainHeadOfTruthTheMerciful,TheMagnificentOneTheClementOne,TheOnlyOneTheAllPrevailingOne,TheAllAwareOneTheAllSeeing,TheStrongOneTheMightyOne,TheGathererOfMankind,TheAllPervadingOneTheAllKnowingOne,TheAllPervadingOneTheWiseOne,TheEverLivingTheBountifulOne,TheEverLivingTheCoverer\}" id="TheBestNamesOfAllah"></word>
 			<word text="\{phrase:OnenessOfLordshipDominion,OnenessOfDivinity,OnenessOfDivinityAndWorship,OnenessOfDivinityAndWorship,OnenessOfDivinityAndWorship,MajorAssociation,MinorAssociation,UniversalPrescription,LegislativePrescription,CollectiveObligation,IndividualObligation,DailyPredestination,YearlyPredestination,LifePredestination,AbsolutePredestination,PreservedTablet\}" id="Concepts"></word>
-			<word text="\{phrase:MuhammadBinAbdullahBinAbduAlMuttalib,QaasimBinMuhammad,AbdullahBinMuhammad,ZaynabBintiMuhammad,RuqayyahBintiMuhammad,UmmKulthumBintiMuhammad,FatimaBintiMuhammad,HamzaBinAbduAlMuttalib,AlAbbasBinAbduAlMuttalib,AbdullahBinAbduAlMuttalib,AaminaBintiWahb,AbuTalib,AbuLahab,SumayyaBintiKhayatt,YaasirBinAmir,AmaarBinYaasir,SuhaylBinAmr,FatimaBintiAmr,AbuJahl,AbuBakrAlSaddiqAbdullahBinAbiQuhafah,UmarBinAlKhattab,UthmanBinAffan,JafarBinAbiTalib,AliBinAbiTalib,HasanBinAli,HusseinBinAli,AliBinHussein,MuhammadBinAli,JafarBinMuhammad,MusaBinJafar,FatimaBintiMuhammad,AliBinMusa,MuhammadBinAli,AliBinMuhammad,HasanBinAli,MuhammadBinAlHasan,TalhaBinObaidullah,AzZubayrbinAlAwam,SadBinMalik,SadBinAbiWaqqas,AbdurRahmanBinAwf,AbuUbaidahBinAlJarrah,SaeedBinZaid,KhadijahBintKhuwaylid,WaraqahBinNawfal,SawdaBintZama,AishaBintAbiBakr,HafsaBintUmar,ZaynabBintKhuzayma,HindBintAbiUmayya,ZaynabBintJahsh,JuwayriyaBintAlHarith,SafiyyaBintHuyayy,RamlahBintAbiSufyan,MaymunaBintAlHarith,MariaAlQibtiyya,RayhanaBintZayd,AbuHurairah,KhalidBinWalid,AbdullahBinMasood,AbdullahBinAbbas,AbdullahBinUmar,AbdullahBinAmrBinAlAas,ZaydBinThaabit,UbayyBinKab,AnasBinMaalik,JaabirBinAbdullah,AbooMoosaaAlAsharee,MuathBinJabal,SaalimMawlaaAbeeHuthayfah,AbdullahBinAlZubayr,AbooZayd,AbooDarda,AbuSufyan,Muawiyyah,ImamAbuHanifa,ImamMalik,ImamAwzaee,ImamZayd,ImamDawood,ImamAtTabari,ImamAlLayth,ImamAthThawri,ImamShafiee,ImamHanbal,AbuDahr,AmrBinAlAas,AlLaythBinSaad,SaadBinWaad,BaniThaqeef,BaniHashim,BaniMakhzoom,GogAndMagog,ImamBukhari,ImamMuslim,HadithQudsi,ImamNawawi40Hadith,SahihAlBukhari,SahihMuslim,AlSunanAlSughra,SunanAbiDawood,SunanAlTirmidhi,SunanIbnMaja,KitabAlKafi,ManLaYahduruhuAlFaqih,TahdhibAlAhkam,AlIstibsar\}" id="Names"></word>
+			<word text="\{phrase:MuhammadBinAbdullahBinAbduAlMuttalib,QaasimBinMuhammad,AbdullahBinMuhammad,ZaynabBintiMuhammad,RuqayyahBintiMuhammad,UmmKulthumBintiMuhammad,FatimaBintiMuhammad,HamzaBinAbduAlMuttalib,AlAbbasBinAbduAlMuttalib,AbdullahBinAbduAlMuttalib,AaminaBintiWahb,AbuTalib,AbuLahab,SumayyaBintiKhayatt,YaasirBinAmir,AmaarBinYaasir,SuhaylBinAmr,FatimaBintiAmr,AbuJahl,AbuBakrAlSaddiqAbdullahBinAbiQuhafah,UmarBinAlKhattab,UthmanBinAffan,JafarBinAbiTalib,AliBinAbiTalib,HasanBinAli,HusseinBinAli,AliBinHussein,MuhammadBinAli,JafarBinMuhammad,MusaBinJafar,FatimaBintiMuhammad,AliBinMusa,MuhammadBinAli,AliBinMuhammad,HasanBinAli,MuhammadBinAlHasan,TalhaBinObaidullah,AzZubayrbinAlAwam,SadBinMalik,SadBinAbiWaqqas,AbdurRahmanBinAwf,AbuUbaidahBinAlJarrah,SaeedBinZaid,KhadijahBintKhuwaylid,WaraqahBinNawfal,SawdaBintZama,AishaBintAbiBakr,HafsaBintUmar,ZaynabBintKhuzayma,HindBintAbiUmayya,ZaynabBintJahsh,JuwayriyaBintAlHarith,SafiyyaBintHuyayy,RamlahBintAbiSufyan,MaymunaBintAlHarith,MariaAlQibtiyya,RayhanaBintZayd,AbuHurairah,KhalidBinWalid,AbdullahBinMasood,AbdullahBinAbbas,AbdullahBinUmar,AbdullahBinAmrBinAlAas,ZaydBinThaabit,UbayyBinKab,AnasBinMaalik,JaabirBinAbdullah,AbooMoosaaAlAsharee,MuathBinJabal,SaalimMawlaaAbeeHuthayfah,AbdullahBinAlZubayr,AbooZayd,AbooDarda,AbuSufyan,Muawiyyah,ImamAbuHanifa,ImamMalik,ImamAwzaee,ImamZayd,ImamDawood,ImamAtTabari,ImamAlLayth,ImamAthThawri,ImamShafiee,ImamHanbal,AbuDahr,AmrBinAlAas,AlLaythBinSaad,SaadBinWaad,BaniThaqeef,BaniHashim,BaniMakhzoom,GogAndMagog,ImamBukhari,ImamMuslim,HadithQudsi,ImamNawawi40Hadith,SahihAlBukhari,SahihMuslim,AlSunanAlSughra,SunanAbiDawood,SunanAlTirmidhi,SunanIbnMaja,KitabAlKafi,ManLaYahduruhuAlFaqih,TahdhibAlAhkam,AlIstibsar\}" id="IslamicNames"></word>
 			<word text="\{word:Ashura\}\{phrase:IsraAndMiraj,EnlightenedMedina,BlessedMecca,RiadAlJannah,CaveOfHira,MountNour,MountUhud,SacredMosque,MosqueOfTheProphet,FarthestMosque,HolyHouse,CentralTreasury,FestivalOfBreakingFast,FestivalOfSacrifice,IslamicNewYear,BirthdayOfTheProphet,MidShaban\}" id="Places"></word>
 		</category>
 		<category title="WhenWakingUp">
@@ -3938,18 +3938,21 @@ Ramadan fast-breaking | One 2172-gram quantity | Dates or barley or ordinary sta
 			<word id="BeforeUndressing1Label" text="\{phrase:InTheNameOfAllah\}"></word>
 		</category>
 		<category title="BeforeEnteringTheToilet">
-			<word id="BeforeEnteringTheToilet1Label" text="(\{phrase:InTheNameOfAllah\}) \{phrase:BeforeEnteringTheToilet1\}"></word>
+			<word id="BeforeEnteringTheToilet1Label" text="(\{phrase:InTheNameOfAllah\}) \{phrase:BeforeEnteringTheToilet1\}\{reference:Al-Bukhari 1/45, Muslim 1/283. The addition of Bismillah at its beginning was reported by Said bin Mansur. See Fathul-Bari 1/244.\}"></word>
 		</category>
 		<category title="AfterLeavingTheToilet">
-			<word id="AfterLeavingTheToilet1Label" text="\{phrase:AfterLeavingTheToilet1\}"></word>
+			<word id="AfterLeavingTheToilet1Label" text="\{phrase:AfterLeavingTheToilet1\}\{reference:Abu Dawud, Ibn Majah and At-Tirmithi. An-Nasa'i recorded it in 'Amalul-Yawm wal-Laylah. Also see the checking of Ibn Al-Qayyim's Zadul-Ma'ad, 2/387.\}"></word>
 		</category>
 		<category title="WhenStartingAblution">
-			<word id="WhenStartingAblution1Label" text="\{phrase:InTheNameOfAllah\}"></word>
+			<word id="WhenStartingAblution1Label" text="\{phrase:InTheNameOfAllah\}\{reference:Abu Dawud, Ibn Majah, and Ahmad. See also Al-Albani, 'Irwa'ul-Ghain 1/122.\}"></word>
 		</category>
 		<category title="UponCompletingAblution">
-			<word id="UponCompletingAblution1Label" text="\{phrase:UponCompletingAblution1\}"></word>
-			<word id="UponCompletingAblution2Label" text="\{phrase:UponCompletingAblution2\}"></word>
-			<word id="UponCompletingAblution3Label" text="\{phrase:ForExpiationOfSinsAtTheConclusionOfSittingOrGathering1\}"></word>
+			<word id="UponCompletingAblution1Label" text="\{phrase:UponCompletingAblution1\}\{reference:Muslim 1/209.\}"></word>
+			<word id="UponCompletingAblution2Label" text="\{phrase:UponCompletingAblution2\}\{reference:At-Tirmithi 1/78. See also Al-Albani, Sahih At- Tirmithi 1/18.\}"></word>
+			<word id="UponCompletingAblution3Label" text="\{phrase:ForExpiationOfSinsAtTheConclusionOfSittingOrGathering1\}\{reference:An-Nasa'i, 'Amalul-Yawm wal-Laylah, p. 173. See also Al-Albani, 'Irwa'ul-Ghalil 1/135 and 2/94.\}"></word>
+		</category>
+		<category title="WashroomPoster">
+			<word id="WashroomPosterLabel" text="\{list:WhenStartingAblution,UponCompletingAblution,BeforeEnteringTheToilet,AfterLeavingTheToilet\}"></word>
 		</category>
 		<category title="WhenLeavingTheHome">
 			<word id="WhenLeavingTheHome1Label" text="\{phrase:WhenLeavingTheHome1\}"></word>
