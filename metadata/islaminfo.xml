@@ -3976,114 +3976,114 @@ Ramadan fast-breaking | One 2172-gram quantity | Dates or barley or ordinary sta
 			<word id="UponLeavingTheMosque1Label" text="\{phrase:UponLeavingTheMosque1\}\{reference:\}"></word>
 		</category>
 		<category title="ImmediatelyFollowingDeclarationOfFaithInCallToPrayer">
-			<word id="ImmediatelyFollowingDeclarationOfFaithInCallToPrayer1Label" text="\{phrase:ImmediatelyFollowingDeclarationOfFaithInCallToPrayer1\}\{reference:Al-Bukhari 1/152, and the addition between brackets is from Al-Bayhaqi 1/410 with a good (Hasan) chain of narration. See 'Abdul-Azlz bin Baz's Tuhfatul-'Akhyar, pg. 38.\}"></word>
+			<word id="ImmediatelyFollowingDeclarationOfFaithInCallToPrayer1Label" text="\{phrase:ImmediatelyFollowingDeclarationOfFaithInCallToPrayer1\}\{reference:Muslim 1/290. Ibn Khuzaymah 1/220.\}"></word>
 		</category>
 		<category title="AtTheStartOfPrayer">
-			<word id="AtTheStartOfPrayer1Label" text="\{phrase:AtTheStartOfPrayer1\}"></word>
-			<word id="AtTheStartOfPrayer2Label" text="\{phrase:AtTheStartOfPrayer2\}"></word>
-			<word id="AtTheStartOfPrayer3Label" text="\{phrase:AtTheStartOfPrayer3\}"></word>
-			<word id="AtTheStartOfPrayer4Label" text="\{phrase:AtTheStartOfPrayer4\}"></word>
-			<word id="AtTheStartOfPrayer5Label" text="\{phrase:AtTheStartOfPrayer5\}"></word>
-			<word id="AtTheStartOfPrayer6Label" text="\{phrase:AtTheStartOfPrayer6\}"></word>
+			<word id="AtTheStartOfPrayer1Label" text="\{phrase:AtTheStartOfPrayer1\}\{reference:Al-Bukhari 1/181, Muslim 1/419.\}"></word>
+			<word id="AtTheStartOfPrayer2Label" text="\{phrase:AtTheStartOfPrayer2\}\{reference:Abu Dawud, Ibn Majah, An-Nasa'i, At-Tirmithi. See Al-Albani, Sahih At-Tirmithi 1/77 and Sahih Ibn Majah 1/135.\}"></word>
+			<word id="AtTheStartOfPrayer3Label" text="\{phrase:AtTheStartOfPrayer3\}\{reference:Muslim 1/534.\}"></word>
+			<word id="AtTheStartOfPrayer4Label" text="\{phrase:AtTheStartOfPrayer4\}\{reference:Muslim 1/534.\}"></word>
+			<word id="AtTheStartOfPrayer5Label" text="\{phrase:AtTheStartOfPrayer5\}\{reference:Abu Dawud 1/203, Ibn Majah 1/265, ai Ahmad 4/85. Muslim recorded a similar Hadith 1/420.\}"></word>
+			<word id="AtTheStartOfPrayer6Label" text="\{phrase:AtTheStartOfPrayer6\}\{reference:Al-Bukhari, cf. Al-Asqalani, Fathul-Bari 3/3 , 11/ 116, 13/371, 423, 465. See also Muslim for a shorter account, 1/532.\}"></word>
 		</category>
 		<category title="WhileBowingInPrayer">
-			<word id="WhileBowingInPrayer1Label" text="\{phrase:WhileBowingInPrayer1\} (valaAvFA)"></word>
-			<word id="WhileBowingInPrayer2Label" text="\{phrase:WhileBowingInPrayer2\}"></word>
-			<word id="WhileBowingInPrayer3Label" text="\{phrase:WhileBowingInPrayer3\}"></word>
-			<word id="WhileBowingInPrayer4Label" text="\{phrase:WhileBowingInPrayer4\}"></word>
-			<word id="WhileBowingInPrayer5Label" text="\{phrase:WhileBowingInPrayer5\}"></word>
+			<word id="WhileBowingInPrayer1Label" text="\{phrase:WhileBowingInPrayer1\} (valaAvFA)\{reference:Abu Dawud, Ibn Majah, An-Nasa'i, At-Tirmithi, and Ahmad. See Al-Albani's Sahih At-Tirmithi 1/83.\}"></word>
+			<word id="WhileBowingInPrayer2Label" text="\{phrase:WhileBowingInPrayer2\}\{reference:Al-Bukhari 1/99, Muslim 1/350.\}"></word>
+			<word id="WhileBowingInPrayer3Label" text="\{phrase:WhileBowingInPrayer3\}\{reference:Muslim 1/353, Abu Dawud 1/230.\}"></word>
+			<word id="WhileBowingInPrayer4Label" text="\{phrase:WhileBowingInPrayer4\}\{reference:Muslim 1/534, Abu Dawud, An-Nasa'i and At- Tirmithi.\}"></word>
+			<word id="WhileBowingInPrayer5Label" text="\{phrase:WhileBowingInPrayer5\}\{reference:Abu Dawud 1/230, An-Nasa'i and Ahmad. Its chain of narration is good (Hasan).\}"></word>
 		</category>
 		<category title="UponRisingFromBowing">
-			<word id="UponRisingFromBowing1" text="\{phrase:UponRisingFromBowing1\}"></word>
-			<word id="UponRisingFromBowing2" text="\{phrase:UponRisingFromBowing2\}"></word>
-			<word id="UponRisingFromBowing3" text="\{phrase:UponRisingFromBowing3\}"></word>
+			<word id="UponRisingFromBowing1" text="\{phrase:UponRisingFromBowing1\}\{reference:Al-Bukhari, cf. Al-Asqalani, Fathul-Bari 2/282.\}"></word>
+			<word id="UponRisingFromBowing2" text="\{phrase:UponRisingFromBowing2\}\{reference:Al-Bukhari, cf. Al-Asqalani, Fathul-Bari 2/284.\}"></word>
+			<word id="UponRisingFromBowing3" text="\{phrase:UponRisingFromBowing3\}\{reference:Muslim 1/346.\}"></word>
 		</category>
 		<category title="WhileProstrating">
-			<word id="WhileProstrating1" text="\{phrase:WhileProstrating1\} (valaAvFA)"></word>
-			<word id="WhileProstrating2" text="\{phrase:WhileBowingInPrayer2\}"></word>
-			<word id="WhileProstrating3" text="\{phrase:WhileProstrating3\}"></word>
-			<word id="WhileProstrating4" text="\{phrase:WhileProstrating4\}"></word>
-			<word id="WhileProstrating5" text="\{phrase:WhileProstrating5\}"></word>
-			<word id="WhileProstrating6" text="\{phrase:WhileProstrating6\}"></word>
-			<word id="WhileProstrating7" text="\{phrase:WhileProstrating7\}"></word>
+			<word id="WhileProstrating1" text="\{phrase:WhileProstrating1\} (valaAvFA)\{reference:Abu Dawud, Ibn Majah, An-Nasa'i, At-Tirmithi, and Ahmad. See also Al-Albani, Sahih At-Tirmithi 1/83.\}"></word>
+			<word id="WhileProstrating2" text="\{phrase:WhileBowingInPrayer2\}\{reference:Al-Bukhari and Muslim, see invocation no. 34 above.\}"></word>
+			<word id="WhileProstrating3" text="\{phrase:WhileProstrating3\}\{reference:Muslim 1/533, see invocation no. 35 above.\}"></word>
+			<word id="WhileProstrating4" text="\{phrase:WhileProstrating4\}\{reference:Muslim 1/534 and others.\}"></word>
+			<word id="WhileProstrating5" text="\{phrase:WhileProstrating5\}\{reference:Abu Dawud 1/230, An-Nasa'i, Ahmad. See also Al-Albani, Sahih Abu Dawud 1/166, see invocation no. 37 above.\}"></word>
+			<word id="WhileProstrating6" text="\{phrase:WhileProstrating6\}\{reference:Muslim 1/350.\}"></word>
+			<word id="WhileProstrating7" text="\{phrase:WhileProstrating7\}\{reference:Muslim 1/352.\}"></word>
 		</category>
 		<category title="BetweenTwoProstrations">
-			<word id="BetweenTwoProstrations1" text="\{phrase:BetweenTwoProstrations1\}"></word>
-			<word id="BetweenTwoProstrations2" text="\{phrase:BetweenTwoProstrations2\}"></word>
+			<word id="BetweenTwoProstrations1" text="\{phrase:BetweenTwoProstrations1\}\{reference:Abu Dawud 1/231. See also Al-Albani, Sahihibn Mdjah 1/148.\}"></word>
+			<word id="BetweenTwoProstrations2" text="\{phrase:BetweenTwoProstrations2\}\{reference:Abu Dawud, Ibn Majah, At-Tirmithi. See also Al-Albani, Sahih At-Tirmithi 1/90 and Sahih Ibn Majah 1/148.\}"></word>
 		</category>
 		<category title="ProstratingDueToQuranRecitation">
-			<word id="ProstratingDueToQuranRecitation1" text="\{phrase:ProstratingDueToQuranRecitation1\}"></word>
-			<word id="ProstratingDueToQuranRecitation2" text="\{phrase:ProstratingDueToQuranRecitation2\}"></word>
+			<word id="ProstratingDueToQuranRecitation1" text="\{phrase:ProstratingDueToQuranRecitation1\}\{reference:At-Tirmithi 2/474, Ahmad 6/30, and Al-Hakim.\}"></word>
+			<word id="ProstratingDueToQuranRecitation2" text="\{phrase:ProstratingDueToQuranRecitation2\}\{reference:At-Tirmithi 2/473, and Al-Hakim who graded it authentic and Ath-Thahabi agreed 1/219.\}"></word>
 		</category>
 		<category title="DeclarationWhenSittingInPrayer">
-			<word id="DeclarationWhenSittingInPrayer1" text="\{phrase:DeclarationWhenSittingInPrayer1\}"></word>
+			<word id="DeclarationWhenSittingInPrayer1" text="\{phrase:DeclarationWhenSittingInPrayer1\}\{reference:Al-Bukhari, Muslim 1/301. See also Al-Asqalani, Fathul-Bal 1/13.\}"></word>
 		</category>
 		<category title="InvocationAfterDeclarationWhenSittingInPrayer">
-			<word id="InvocationAfterDeclarationWhenSittingInPrayer1" text="\{phrase:InvocationAfterDeclarationWhenSittingInPrayer1\}"></word>
-			<word id="InvocationAfterDeclarationWhenSittingInPrayer2" text="\{phrase:InvocationAfterDeclarationWhenSittingInPrayer2\}"></word>
+			<word id="InvocationAfterDeclarationWhenSittingInPrayer1" text="\{phrase:InvocationAfterDeclarationWhenSittingInPrayer1\}\{reference:Al-Bukhari, cf. Al-Asqalani, Fathul-Bari 6/408.\}"></word>
+			<word id="InvocationAfterDeclarationWhenSittingInPrayer2" text="\{phrase:InvocationAfterDeclarationWhenSittingInPrayer2\}\{reference:Al-Bukhari, from Al-Asqalani, Fathul-Bari 6/ 407, Muslim 1/306.\}"></word>
 		</category>
 		<category title="BeforeGivingPeaceOfPrayer">
-			<word id="BeforeGivingPeaceOfPrayer1" text="\{phrase:BeforeGivingPeaceOfPrayer1\}"></word>
-			<word id="BeforeGivingPeaceOfPrayer2" text="\{phrase:BeforeGivingPeaceOfPrayer2\}"></word>
-			<word id="BeforeGivingPeaceOfPrayer3" text="\{phrase:BeforeGivingPeaceOfPrayer3\}"></word>
-			<word id="BeforeGivingPeaceOfPrayer4" text="\{phrase:BeforeGivingPeaceOfPrayer4\}"></word>
-			<word id="BeforeGivingPeaceOfPrayer5" text="\{phrase:BeforeGivingPeaceOfPrayer5\}"></word>
-			<word id="BeforeGivingPeaceOfPrayer6" text="\{phrase:BeforeGivingPeaceOfPrayer6\}"></word>
-			<word id="BeforeGivingPeaceOfPrayer7" text="\{phrase:BeforeGivingPeaceOfPrayer7\}"></word>
-			<word id="BeforeGivingPeaceOfPrayer8" text="\{phrase:BeforeGivingPeaceOfPrayer8\}"></word>
-			<word id="BeforeGivingPeaceOfPrayer9" text="\{phrase:BeforeGivingPeaceOfPrayer9\}"></word>
-			<word id="BeforeGivingPeaceOfPrayer10" text="\{phrase:BeforeGivingPeaceOfPrayer10\}"></word>
-			<word id="BeforeGivingPeaceOfPrayer11" text="\{phrase:BeforeGivingPeaceOfPrayer11\}"></word>
+			<word id="BeforeGivingPeaceOfPrayer1" text="\{phrase:BeforeGivingPeaceOfPrayer1\}\{reference:Al-Bukhari 2/102, Muslim 1/412, and this is Muslim's wording.\}"></word>
+			<word id="BeforeGivingPeaceOfPrayer2" text="\{phrase:BeforeGivingPeaceOfPrayer2\}\{reference:Al-Bukhari 1/202, Muslim 1/412.\}"></word>
+			<word id="BeforeGivingPeaceOfPrayer3" text="\{phrase:BeforeGivingPeaceOfPrayer3\}\{reference:Al-Bukhari 8/168, Muslim 4/2078.\}"></word>
+			<word id="BeforeGivingPeaceOfPrayer4" text="\{phrase:BeforeGivingPeaceOfPrayer4\}\{reference:Muslim 1/534.\}"></word>
+			<word id="BeforeGivingPeaceOfPrayer5" text="\{phrase:BeforeGivingPeaceOfPrayer5\}\{reference:Abu Dawud 2/86, An-Nasa'i 3/53. See also Al-Albani Sahih Abu Dawud 1 /284.\}"></word>
+			<word id="BeforeGivingPeaceOfPrayer6" text="\{phrase:BeforeGivingPeaceOfPrayer6\}\{reference:Al-Bukhari, cf. Al-Asqalani, Fathul-Bari 6/35.\}"></word>
+			<word id="BeforeGivingPeaceOfPrayer7" text="\{phrase:BeforeGivingPeaceOfPrayer7\}\{reference:Abu Dawud. See also Al-Albani, Sahih Ibn Majah 2/328.\}"></word>
+			<word id="BeforeGivingPeaceOfPrayer8" text="\{phrase:BeforeGivingPeaceOfPrayer8\}\{reference:An-Nasa'i 3/54, 55, Ahmad 4/364. See also Al-Albani, Sahih An-Nasa'i 1/281.\}"></word>
+			<word id="BeforeGivingPeaceOfPrayer9" text="\{phrase:BeforeGivingPeaceOfPrayer9\}\{reference:An-Nasa'i 3/52, Ahmad 4/338. See also Al-Albani, Sahih An-Nasa'i 1/280 and Sifat Salatun-Nabi, pg. 204.\}"></word>
+			<word id="BeforeGivingPeaceOfPrayer10" text="\{phrase:BeforeGivingPeaceOfPrayer10\}\{reference:Abu Dawud, An-Nasa'i, Ibn Majah, At-Tirmithi. See also Al-Albani, Sahih Ibn Majah 2/329.\}"></word>
+			<word id="BeforeGivingPeaceOfPrayer11" text="\{phrase:BeforeGivingPeaceOfPrayer11\}\{reference:Abu Dawud 2/62, Ibn Majah 2/1267, At-Tirmithi 5/515, Ahmad 5/360. See also Al-Albani, Sahih Ibn Majah 2/329 and Sahih At-Tirmithi 3/163.\}"></word>
 		</category>
 		<category title="RemembranceAfterGivingPeaceOfPrayer">
-			<word id="RemembranceAfterGivingPeaceOfPrayer1" text="\{phrase:RemembranceAfterGivingPeaceOfPrayer1\}"></word>
-			<word id="RemembranceAfterGivingPeaceOfPrayer2" text="\{phrase:RemembranceAfterGivingPeaceOfPrayer2\}"></word>
-			<word id="RemembranceAfterGivingPeaceOfPrayer3" text="\{phrase:RemembranceAfterGivingPeaceOfPrayer3\}"></word>
-			<word id="RemembranceAfterGivingPeaceOfPrayer4" text="\{phrase:RemembranceAfterGivingPeaceOfPrayer4\}"></word>
-			<word id="RemembranceAfterGivingPeaceOfPrayer5" text="\{112\} (valaAvFA) \{113\} (valaAvFA) \{114\} (valaAvFA)"></word>
-			<word id="RemembranceAfterGivingPeaceOfPrayer6" text="\{2:255\}"></word>
-			<word id="RemembranceAfterGivingPeaceOfPrayer7" text="\{phrase:RemembranceAfterGivingPeaceOfPrayer7\} (Ea$ora mar~aAtFA baEoda {lomagoribu wa{lS~aboHu)"></word>
-			<word id="RemembranceAfterGivingPeaceOfPrayer8" text="\{phrase:RemembranceAfterGivingPeaceOfPrayer8\} (baEoda {ls~alaAmi min Salaw`pi {lofajori)"></word>
+			<word id="RemembranceAfterGivingPeaceOfPrayer1" text="\{phrase:RemembranceAfterGivingPeaceOfPrayer1\}\{reference:Muslim 1/414.\}"></word>
+			<word id="RemembranceAfterGivingPeaceOfPrayer2" text="\{phrase:RemembranceAfterGivingPeaceOfPrayer2\}\{reference:Al-Bukhari 1/255, Muslim 1/414.\}"></word>
+			<word id="RemembranceAfterGivingPeaceOfPrayer3" text="\{phrase:RemembranceAfterGivingPeaceOfPrayer3\}\{reference:Muslim 1/415.\}"></word>
+			<word id="RemembranceAfterGivingPeaceOfPrayer4" text="\{phrase:RemembranceAfterGivingPeaceOfPrayer4\}\{reference:Muslim 1/418, Whoever says this after every prayer will be forgiven his sins even though they be as the foam of the sea.\}"></word>
+			<word id="RemembranceAfterGivingPeaceOfPrayer5" text="\{112\} (valaAvFA) \{113\} (valaAvFA) \{114\} (valaAvFA)\{reference:Abu Dawud 2/86, An-Nasa'i 3/68. See also Al-Albani, SahihAt-Tirmithi 2/8.\}"></word>
+			<word id="RemembranceAfterGivingPeaceOfPrayer6" text="\{2:255\}\{reference:An-Nasa'i, 'Amalul-Yawm wal-Laylah (Hadith no. 100), also Ibn As-Sunni (no. 121). See also Al-Albani, Sahihul-Jami' As-Saghir 5/339 and Silsilatul-Ahadith As-Sahihah 2/697 (no. 972).\}"></word>
+			<word id="RemembranceAfterGivingPeaceOfPrayer7" text="\{phrase:RemembranceAfterGivingPeaceOfPrayer7\} (Ea$ora mar~aAtFA baEoda {lomagoribu wa{lS~aboHu)\{reference:At-Tirmithi 5/515, Ahmad 4/227. See its checking in Ibn Al-Qayyim Al-Jawziyyah's Zddul-Ma'ad 1/300.\}"></word>
+			<word id="RemembranceAfterGivingPeaceOfPrayer8" text="\{phrase:RemembranceAfterGivingPeaceOfPrayer8\} (baEoda {ls~alaAmi min Salaw`pi {lofajori)\{reference:Ibn Majah and others. See Al-Albani, Sahih Ibn Majah 1/152 and Majma'uz-Zawd'id 10/111.\}"></word>
 		</category>
 		<category title="ForSeekingGuidance">
-			<word id="ForSeekingGuidance1" text="\{phrase:ForSeekingGuidance1\}"></word>
+			<word id="ForSeekingGuidance1" text="\{phrase:ForSeekingGuidance1\}\{reference:Al-Bukhari 7/162. and Aal-'Imran 3:159.\}"></word>
 		</category>
 		<category title="InTheEvening">
-			<word id="InTheEvening1Label" text="\{phrase:InTheEvening1\}"></word>
-			<word id="InTheEvening2Label" text="\{phrase:InTheEvening2\}"></word>
-			<word id="InTheEvening3Label" text="\{phrase:InTheEvening3\} (&gt;arobaEFA mar~aAtFA Hiyna)"></word>
-			<word id="InTheEvening4Label" text="\{phrase:InTheEvening4\}"></word>
-			<word id="InTheEvening5Label" text="\{phrase:InTheEvening5\}"></word>
-			<word id="InTheEvening6Label" text="\{phrase:InTheEvening6\}"></word>
-			<word id="InTheEvening7Label" text="\{phrase:InTheEvening7\} (valaAvFA)"></word>
-			<word id="InTheEvening8Label" text="\{phrase:InTheEvening8\}"></word>
-			<word id="InTheEvening9Label" text="\{phrase:InTheEvening9\}"></word>
+			<word id="InTheEvening1Label" text="\{phrase:InTheEvening1\}\{reference:Muslim 4/2088.\}"></word>
+			<word id="InTheEvening2Label" text="\{phrase:InTheEvening2\}\{reference:Sahih At-Tirmithi 3/142.\}"></word>
+			<word id="InTheEvening3Label" text="\{phrase:InTheEvening3\} (&gt;arobaEFA mar~aAtFA Hiyna)\{reference:Abu Dawud 4/317. It was also reported by Al-Bukhari in Al-'Adab Al-Mufrad, An-Nasa'i in 'Amalul-Yawm wal-Laylah and Ibn As-Sunni. Nasa'i's and Abu Dawud's chains of transmission are good (Hasan), Ibn Baz, p. 23.\}"></word>
+			<word id="InTheEvening4Label" text="\{phrase:InTheEvening4\}\{reference:Abu Dawud 4/318, An-Nasa'i 'Amalul-Yawm wal-Laylah (no. 7), Ibn As-Sunni (no. 41), Ibn Hibban (no. 2361). Its chain of transmission is good (Hasan), Ibn Baz, p. 24.\}"></word>
+			<word id="InTheEvening5Label" text="\{phrase:InTheEvening5\}\{reference:Abu Dawud 4/322. Its transmission chain is good (Hasan). See also Ibn Al-Qayyim, Zadul- Ma'ad 2/273.\}"></word>
+			<word id="InTheEvening6Label" text="\{phrase:InTheEvening6\}\{reference:Ahmad 3/406-7, 5/123, An-Nasa'i, 'Amalul- Yawm wal-Laylah (no. 34), At-Tirmithi 4/209.\}"></word>
+			<word id="InTheEvening7Label" text="\{phrase:InTheEvening7\} (valaAvFA)\{reference:Ahmad 2/ 290, An-Nasa'i, 'Amalul-Yawm wal-Laylah no. 590, At-Tirmithi 3/187, Ibn As-Sunni no. 68. According to Al-Albani, Ibn Majah's (2/266) chain of transmission is sound (Sahih), and following Ibn Baz 45, At-Tirmithi's report is good (Hasan).\}"></word>
+			<word id="InTheEvening8Label" text="\{phrase:InTheEvening8\}\{reference:\}"></word>
+			<word id="InTheEvening9Label" text="\{phrase:InTheEvening9\}\{reference:\}"></word>
 		</category>
 		<category title="InTheMorning">
-			<word id="InTheMorning1Label" text="\{phrase:InTheMorning1\}"></word>
-			<word id="InTheMorning2Label" text="\{phrase:InTheMorning2\}"></word>
-			<word id="InTheMorning3Label" text="\{phrase:InTheMorning3\} (&gt;arobaEFA mar~aAtFA Hiyna)"></word>
-			<word id="InTheMorning4Label" text="\{phrase:InTheMorning4\}"></word>
-			<word id="InTheMorning5Label" text="\{phrase:InTheMorning5\}"></word>
-			<word id="InTheMorning6Label" text="\{phrase:InTheMorning6\}"></word>
-			<word id="InTheMorning7Label" text="\{phrase:InTheMorning7\} (valaAvFA)"></word>
-			<word id="InTheMorning8Label" text="\{phrase:InTheMorning8\}"></word>
-			<word id="InTheMorning9Label" text="\{phrase:InTheMorning9\}"></word>
+			<word id="InTheMorning1Label" text="\{phrase:InTheMorning1\}\{reference:Muslim 4/2088.\}"></word>
+			<word id="InTheMorning2Label" text="\{phrase:InTheMorning2\}\{reference:Sahih At-Tirmithi 3/142.\}"></word>
+			<word id="InTheMorning3Label" text="\{phrase:InTheMorning3\} (&gt;arobaEFA mar~aAtFA Hiyna)\{reference:Abu Dawud 4/317. It was also reported by Al-Bukhari in Al-'Adab Al-Mufrad, An-Nasa'i in 'Amalul-Yawm wal-Laylah and Ibn As-Sunni. Nasa'i's and Abu Dawud's chains of transmission are good (Hasan), Ibn Baz, p. 23.\}"></word>
+			<word id="InTheMorning4Label" text="\{phrase:InTheMorning4\}\{reference:Abu Dawud 4/318, An-Nasa'i 'Amalul-Yawm wal-Laylah (no. 7), Ibn As-Sunni (no. 41), Ibn Hibban (no. 2361). Its chain of transmission is good (Hasan), Ibn Baz, p. 24.\}"></word>
+			<word id="InTheMorning5Label" text="\{phrase:InTheMorning5\}\{reference:Abu Dawud 4/322. Its transmission chain is good (Hasan). See also Ibn Al-Qayyim, Zadul- Ma'ad 2/273.\}"></word>
+			<word id="InTheMorning6Label" text="\{phrase:InTheMorning6\}\{reference:Ahmad 3/406-7, 5/123, An-Nasa'i, 'Amalul- Yawm wal-Laylah (no. 34), At-Tirmithi 4/209.\}"></word>
+			<word id="InTheMorning7Label" text="\{phrase:InTheMorning7\} (valaAvFA)\{reference:Muslim 4/2090.\}"></word>
+			<word id="InTheMorning8Label" text="\{phrase:InTheMorning8\}\{reference:\}"></word>
+			<word id="InTheMorning9Label" text="\{phrase:InTheMorning9\}\{reference:\}"></word>
 		</category>
 		<category title="InTheMorningOrEvening">
-			<word id="InTheMorningOrEvening1Label" text="\{2:255\}"></word>
-			<word id="InTheMorningOrEvening2Label" text="\{112\} (valaAvFA) \{113\} (valaAvFA) \{114\} (valaAvFA)"></word>
-			<word id="InTheMorningOrEvening3Label" text="\{phrase:InTheMorningOrEvening3\}"></word>
-			<word id="InTheMorningOrEvening4Label" text="\{phrase:InTheMorningOrEvening4\} (valaAvFA)"></word>
-			<word id="InTheMorningOrEvening5Label" text="\{9:129:4-17\} (sabaEFA mar~aAtFA Hiyna)"></word>
-			<word id="InTheMorningOrEvening6Label" text="\{phrase:InTheMorningOrEvening6\}"></word>
-			<word id="InTheMorningOrEvening7Label" text="\{phrase:InTheMorningOrEvening7\}"></word>
-			<word id="InTheMorningOrEvening8Label" text="\{phrase:InTheMorningOrEvening8\} (valaAvFA)"></word>
-			<word id="InTheMorningOrEvening9Label" text="\{phrase:InTheMorningOrEvening9\} (valaAvFA)"></word>
-			<word id="InTheMorningOrEvening10Label" text="\{phrase:InTheMorningOrEvening10\}"></word>
-			<word id="InTheMorningOrEvening11Label" text="\{phrase:InTheMorningOrEvening11\} (miA}apu mir~apu)"></word>
-			<word id="InTheMorningOrEvening12Label" text="\{phrase:InTheMorningOrEvening12\} (miA}apu mir~apu)"></word>
-			<word id="InTheMorningOrEvening13Label" text="\{phrase:InTheMorningOrEvening13\} (Ea$arapF)"></word>
+			<word id="InTheMorningOrEvening1Label" text="\{2:255\}\{reference:\}"></word>
+			<word id="InTheMorningOrEvening2Label" text="\{112\} (valaAvFA) \{113\} (valaAvFA) \{114\} (valaAvFA)\{reference:Abu Dawud 4/322, and At-Tirmithi 5/567. See Al-Albani's Sahih At-Tirmithi 3/182.\}"></word>
+			<word id="InTheMorningOrEvening3Label" text="\{phrase:InTheMorningOrEvening3\}\{reference:Al-Bukhari 7/150. Other reports are in An-Nasa'i and At-Tirmithi.\}"></word>
+			<word id="InTheMorningOrEvening4Label" text="\{phrase:InTheMorningOrEvening4\} (valaAvFA)\{reference:Abu Dawud 4/324, Ahmad 5/42, An-Nasa'i, 'Amalul-Yawm wal-Laylah (no. 22), Ibn As-Sunni (no. 69), Al-Bukhari Al-'Adab Al-Mufrad. Its chain of transmission is good (Hasan), Ibn Baz, p. 26.\}"></word>
+			<word id="InTheMorningOrEvening5Label" text="\{9:129:4-17\} (sabaEFA mar~aAtFA Hiyna)\{reference:Ibn As-Sunni (no. 71), Abu Dawud 4/321. Both reports are attributed directly to the Prophet j§ (Marfu1). The chain of transmission is sound (Sahih). Ibn As-Sunni.\}"></word>
+			<word id="InTheMorningOrEvening6Label" text="\{phrase:InTheMorningOrEvening6\}\{reference:Sahih Ibn Majah 2/332 and Abu Dawud.\}"></word>
+			<word id="InTheMorningOrEvening7Label" text="\{phrase:InTheMorningOrEvening7\}\{reference:Sahih At-Tirmithi 3/142 and Abu Dawud.\}"></word>
+			<word id="InTheMorningOrEvening8Label" text="\{phrase:InTheMorningOrEvening8\} (valaAvFA)\{reference:Abu Dawud 4/323, At-Tirmithi 5/465, Ibn Majah 2/332, Ahmad. Ibn Majah's chain of transmission is good (Hasan), Ibn Baz, p. 39.\}"></word>
+			<word id="InTheMorningOrEvening9Label" text="\{phrase:InTheMorningOrEvening9\} (valaAvFA)\{reference:Ahmad 4/ 337, An-Nasa'i, 'Amalul-Yawm wal-Laylah p. 4, Ibn As-Sunni (no. 68), At-Tirmithi 5/465. Its chain of transmission is good (Hasan), Ibn Baz, p. 39.\}"></word>
+			<word id="InTheMorningOrEvening10Label" text="\{phrase:InTheMorningOrEvening10\}\{reference:Its chain of transmission is sound (Sahih), Al-Hakim 1/545, see Albani, Sahihut-Targhib wat-Tarhib, 1/273.\}"></word>
+			<word id="InTheMorningOrEvening11Label" text="\{phrase:InTheMorningOrEvening11\} (miA}apu mir~apu)\{reference:Al-Bukhari 4/2071.\}"></word>
+			<word id="InTheMorningOrEvening12Label" text="\{phrase:InTheMorningOrEvening12\} (miA}apu mir~apu)\{reference:Abu Dawud 4/319, 3/957, Ahmad 4/ 60, Ibn Majah 2/331, Ibn Al-Qayyim Zadul-Ma'ad 2/388. Its chain of transmission is sound (Sahih). Al-Albani 1/270.\}"></word>
+			<word id="InTheMorningOrEvening13Label" text="\{phrase:InTheMorningOrEvening13\} (Ea$arapF)\{reference:At-Tabrani reported this Hadith together with two chain of transmissions. One of them is reliable (Jayyid). See Haithami's Majma' Az-Zawa'id 10/120, and Al-Albani's Sahih At-Targhib Wat-Tarhib 1/273.\}"></word>
 		</category>
 		<category title="RemembranceBeforeSleeping">
 			<word id="RemembranceBeforeSleeping1" text="\{112\}\{113\}\{114\} (valaAvFA)"></word>
@@ -4472,7 +4472,7 @@ Ramadan fast-breaking | One 2172-gram quantity | Dates or barley or ordinary sta
 			<word id="PurificationOfTheSoulLabel" text="\{phrase:PurificationOfTheSoul\}"></word>
 		</category>
 		<category title="AfterCallToPrayerSupplication">
-			<word id="AfterCallToPrayer" text="\{phrase:AfterCallToPrayerFirstPart,AfterCallToPrayerSecondPart,AfterCallToPrayerThirdPart\}"></word>
+			<word id="AfterCallToPrayer" text="\{phrase:AfterCallToPrayerFirstPart,AfterCallToPrayerSecondPart,AfterCallToPrayerThirdPart\}\{reference:Al-Bukhari 1/152, and the addition between brackets is from Al-Bayhaqi 1/410 with a good (Hasan) chain of narration. See 'Abdul-Azlz bin Baz's Tuhfatul-'Akhyar, pg. 38.\}"></word>
 		</category>
 		<category title="CallToPrayer">
 			<word id="CallToPrayer" text="\{phrase:AllahIsGreatest,TestifyingCreedOfIslamFirstPart,TestifyingCreedOfIslamSecondPart,CallToPrayerFourthVerse,CallToPrayerFifthVerse,AllahIsGreatest,CreedOfIslamFirstPart\}"></word>
