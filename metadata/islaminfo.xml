@@ -2343,11 +2343,11 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 		<word text="{loqadaru {ls~aAbiqi" id="AbsolutePredestination"></word>
 		<word text="{l~awoHu {lomaHofuwZi" id="PreservedTablet"></word>
 
-		<word text="{ls~alaAmu Ealayokumu" id="PeaceBeUponYou"></word>
+		<word text="{ls~alaAmu Ealayokumo" id="PeaceBeUponYou"></word>
 		<word text="waEalayokumu {ls~alaAmu" id="AndUponYouBePeace"></word>
-		<word text="{ls~alaAmu Ealayokumu waraHomapu {ll~ahi" id="PeaceBeUponYouAndMercyOfAllah"></word>
+		<word text="{ls~alaAmu Ealayokumo waraHomapu {ll~ahi" id="PeaceBeUponYouAndMercyOfAllah"></word>
 		<word text="waEalayokumu {ls~alaAmu waraHomapu {ll~ahi" id="AndUponYouBePeaceAndMercyOfAllah"></word>
-		<word text="{ls~alaAmu Ealayokumu waraHomapu {ll~ahi wabarakaAtuhu" id="PeaceBeUponYouAndMercyOfAllahAndBlessings"></word>
+		<word text="{ls~alaAmu Ealayokumo waraHomapu {ll~ahi wabarakaAtuhu" id="PeaceBeUponYouAndMercyOfAllahAndBlessings"></word>
 		<word text="waEalayokumu {ls~alaAmu waraHomapu {ll~ahi wabarakaAtuhu" id="AndUponYouBePeaceAndMercyOfAllahAndBlessings"></word>
 		<word text="Sal~aY {ll~ahu Ealayohi wasal~ama" id="ThePrayersOfAllahUponHimAndPeace"></word>
 		<word text="Sal~aY {ll~ahu Ealayohi waEalaY` &apos;aAlihi wasal~ama" id="ThePrayersOfAllahUponHimHisFamilyAndPeace"></word>
@@ -2403,7 +2403,7 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 		<word text="HafiZahumaA {ll~ahu" id="MayAllahProtectBothOfThem"></word>
 		<word text="HafiZahu {ll~ahu" id="MayAllahProtectHim"></word>
 		<word text="HafiZahaA {ll~ahu" id="MayAllahProtectHer"></word>
-		<word text="sal~amahumu taEalaY {ll~ahu" id="MayAllahKeepThemMasculineWell"></word>
+		<word text="sal~amahumo taEalaY {ll~ahu" id="MayAllahKeepThemMasculineWell"></word>
 		<word text="sal~amahun~a taEalaY {ll~ahu" id="MayAllahKeepThemFeminineWell"></word>
 		<word text="sal~amahumaA taEalaY {ll~ahu" id="MayAllahKeepBothOfThemWell"></word>
 		<word text="sal~amahu taEalaY {ll~ahu" id="MayAllahKeepHimWell"></word>
@@ -2436,6 +2436,11 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 		<word text="jazaAkumaA {ll~ahu xayorFA" id="MayAllahProtectYouBothWithGoodness"></word>
 		<word text="jazaAka {ll~ahu xayorFA" id="MayAllahProtectYouMasculineWithGoodness"></word>
 		<word text="jazaAki {ll~ahu xayorFA" id="MayAllahProtectYouFeminineWithGoodness"></word>
+		<word text="wa&lt;iy~aAkumo" id="AndToYouAllMasculine"></word>
+		<word text="wa&lt;iy~aAkun~a" id="AndToYouAllFeminine"></word>
+		<word text="wa&lt;iy~aAkumaA" id="AndToYouBoth"></word>
+		<word text="wa&lt;iy~aAka" id="AndToYouMasculine"></word>
+		<word text="wa&lt;iy~aAki" id="AndToYouFeminine"></word>
 		<word text="raHimahumu {ll~ahu" id="AllahHaveMercyOnThemMasculine"></word>
 		<word text="raHimahun~a {ll~ahu" id="AllahHaveMercyOnThemFeminine"></word>
 		<word text="raHimahumaA {ll~ahu" id="AllahHaveMercyOnBothOfThem"></word>
@@ -2615,7 +2620,7 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 		<word text="haAlatulu janaAbapi" id="StateofMajorRitualImpurity"></word>
 		<word text="TaAharapu {loxabavu" id="PurificationFromPhysicalFilth"></word>
 		<word text="TaAharapu {loHadavu" id="PurificationFromSpiritualFilth"></word>
-		<word text="Hur~imapN Ealayokum {lomayotapu" id="ForbiddenUponYouTheDeadAnimal"></word>
+		<word text="Hur~imapN Ealayokumu {lomayotapu" id="ForbiddenUponYouTheDeadAnimal"></word>
 		<word text="{loEayonu {loHasuwdi" id="TheEvilEye"></word>
 		<word text="{loEayonu {l$ayoTaAni" id="TheEyeOfSatan"></word>
 		<word text="&lt;iSaAbaAtu {loEayoni" id="HarmOfTheEye"></word>
@@ -3919,23 +3924,23 @@ Ramadan fast-breaking | One 2172-gram quantity | Dates or barley or ordinary sta
 			<word text="\{word:Ashura\}\{phrase:IsraAndMiraj,EnlightenedMedina,BlessedMecca,RiadAlJannah,CaveOfHira,MountNour,MountUhud,SacredMosque,MosqueOfTheProphet,FarthestMosque,HolyHouse,CentralTreasury,FestivalOfBreakingFast,FestivalOfSacrifice,IslamicNewYear,BirthdayOfTheProphet,MidShaban\}" id="Places"></word>
 		</category>
 		<category title="WhenWakingUp">
-			<word id="WhenWakingUp1Label" text="\{phrase:WhenWakingUp1\}\{reference:Al-Bukhari, cf. Al-Asqalani, Fathul-Bari 11/113; Muslim 4/2083\}"></word>
-			<word id="WhenWakingUp2Label" text="\{phrase:WhenWakingUp2\}"></word>
-			<word id="WhenWakingUp3Label" text="\{phrase:WhenWakingUp3\}"></word>
-			<word id="WhenWakingUp4Label" text="\{3:190-200\}"></word>
+			<word id="WhenWakingUp1Label" text="\{phrase:WhenWakingUp1\}\{reference:Al-Bukhari, cf. Al-Asqalani, Fathul-Bari 11/113; Muslim 4/2083.\}"></word>
+			<word id="WhenWakingUp2Label" text="\{phrase:WhenWakingUp2\}\{reference:Al-Bukhari, cf. Al-Asqalani, Fathul-Bari 3/39, among others. The wording here is from Ibn Majah 2/335.\}"></word>
+			<word id="WhenWakingUp3Label" text="\{phrase:WhenWakingUp3\}\{reference:At-Tirmithi 5/473. See Al-Albani's Sahih Tirmiihi 3/144.\}"></word>
+			<word id="WhenWakingUp4Label" text="\{3:190-200\}\{reference:Al-Bukhari, cf. Al-Asqalani, Fathul-Bari 8/237; Muslim 1/530.\}"></word>
 		</category>
 		<category title="WhenWearingAGarment">
-			<word id="WhenWearingAGarment1Label" text="\{phrase:WhenWearingAGarment1\}"></word>
+			<word id="WhenWearingAGarment1Label" text="\{phrase:WhenWearingAGarment1\}\{reference:Al-Bukhari, Muslim, Abu Dawud, Ibn Majah, At-Tirmithi. See also 'Irwa'ul-Ghalil 7/47.\}"></word>
 		</category>
 		<category title="WhenWearingANewGarment">
-			<word id="WhenWearingANewGarment1Label" text="\{phrase:WhenWearingANewGarment1\}"></word>
+			<word id="WhenWearingANewGarment1Label" text="\{phrase:WhenWearingANewGarment1\}\{reference:Abu Dawud and At-Tirmithi. See also Al-Albani, Mukhtasar Shamd'il At-Tirmithi, p. 47.\}"></word>
 		</category>
 		<category title="WhenSomeoneElseWearingANewGarment">
-			<word id="WhenSomeoneElseWearingANewGarment1Label" text="\{phrase:WhenSomeoneElseWearingANewGarment1\}"></word>
-			<word id="WhenSomeoneElseWearingANewGarment2Label" text="\{phrase:WhenSomeoneElseWearingANewGarment2\}"></word>
+			<word id="WhenSomeoneElseWearingANewGarment1Label" text="\{phrase:WhenSomeoneElseWearingANewGarment1\}\{reference:Abu Dawud 4/41. See also Al-Albani Sahih Abu Dawud 2/760.\}"></word>
+			<word id="WhenSomeoneElseWearingANewGarment2Label" text="\{phrase:WhenSomeoneElseWearingANewGarment2\}\{reference:Ibn Majah 2/1178, Al-Baghawi 12/41. See also Al-Albani, Sahih Ibn Majah 2/275.\}"></word>
 		</category>
 		<category title="BeforeUndressing">
-			<word id="BeforeUndressing1Label" text="\{phrase:InTheNameOfAllah\}"></word>
+			<word id="BeforeUndressing1Label" text="\{phrase:InTheNameOfAllah\}\{reference:At-Tirmithi 2/505, among others. See 'Irwa'ul Ghalil no. 49 and Sahihul-Jami' 3/203.\}"></word>
 		</category>
 		<category title="BeforeEnteringTheToilet">
 			<word id="BeforeEnteringTheToilet1Label" text="(\{phrase:InTheNameOfAllah\}) \{phrase:BeforeEnteringTheToilet1\}\{reference:Al-Bukhari 1/45, Muslim 1/283. The addition of Bismillah at its beginning was reported by Said bin Mansur. See Fathul-Bari 1/244.\}"></word>
@@ -3955,23 +3960,23 @@ Ramadan fast-breaking | One 2172-gram quantity | Dates or barley or ordinary sta
 			<word id="WashroomPosterLabel" text="\{list:WhenStartingAblution,UponCompletingAblution,BeforeEnteringTheToilet,AfterLeavingTheToilet\}"></word>
 		</category>
 		<category title="WhenLeavingTheHome">
-			<word id="WhenLeavingTheHome1Label" text="\{phrase:WhenLeavingTheHome1\}"></word>
-			<word id="WhenLeavingTheHome2Label" text="\{phrase:WhenLeavingTheHome2\}"></word>
+			<word id="WhenLeavingTheHome1Label" text="\{phrase:WhenLeavingTheHome1\}\{reference:Abu Dawud 4/325, At-Tirmithi 5/490. See also Al-Albani, Sahih At-Tirmithi 3/151.\}"></word>
+			<word id="WhenLeavingTheHome2Label" text="\{phrase:WhenLeavingTheHome2\}\{reference:Abu Dawud, Ibn Majah, An-Nasa'i, At-Tirmithi. See also Al-Albani, Sahih At-Tirmithi 3/152 and Sahih Ibn Majah 2/336.\}"></word>
 		</category>
 		<category title="UponEnteringTheHome">
-			<word id="UponEnteringTheHome1Label" text="\{phrase:UponEnteringTheHome1\}"></word>
+			<word id="UponEnteringTheHome1Label" text="\{phrase:UponEnteringTheHome1\}\{reference:Abu Dawud 4/325. Muslim (Hadith no. 2018) says that one should mention the Name of Allah when entering the home and when beginning to eat; and that the devil, hearing this, says: &quot;There is no shelter for us here tonight and no food.&quot;\}"></word>
 		</category>
 		<category title="WhenGoingToTheMosque">
 			<word id="WhenGoingToTheMosque1Label" text="\{phrase:WhenGoingToTheMosque1\} \{reference:Al-Bukhari 11/116 (Hadith no. 6316) and by Muslim 1/526,529-530 (Hadith no. 763). Al-Tirmidhi 5/483 (Hadith no. 3419). Al-Bukhari in Al-Adab Al-Mufrad (Hadith no. 695), p. 258.  See also Al-Albani, Sahih Al-Adab Al-Mufrad (no. 536), Al-Bukhari, cf. Al-Asqalani, Fathul-Bari 11/118.\}"></word>
 		</category>
 		<category title="UponEnteringTheMosque">
-			<word id="UponEnteringTheMosque1Label" text="\{phrase:UponEnteringTheMosque1\}"></word>
+			<word id="UponEnteringTheMosque1Label" text="\{phrase:UponEnteringTheMosque1\}\{reference:Abu Dawud and Al-Albani, Sahihul-Jdmi' As-Saghir (Hadithno. 4591). Ibn As-Sunni (Hadith no. 88), graded good by Al-Albani. Abu Dawud 1/126, see also Al-Albani, Sahihul-Jami'As-Saghir 1/528. Muslim 1/494. There is also a report in Sunan Ibn Majah on the authority of Fatimah (RA), : &quot;O Allah, forgive me my sins and open for me the doors of Your mercy.&quot; It was graded authentic by Al-Albani due to supporting Ahadith. See Sahih Ibn Majah 1/128-9.\}"></word>
 		</category>
 		<category title="UponLeavingTheMosque">
-			<word id="UponLeavingTheMosque1Label" text="\{phrase:UponLeavingTheMosque1\}"></word>
+			<word id="UponLeavingTheMosque1Label" text="\{phrase:UponLeavingTheMosque1\}\{reference:\}"></word>
 		</category>
 		<category title="ImmediatelyFollowingDeclarationOfFaithInCallToPrayer">
-			<word id="ImmediatelyFollowingDeclarationOfFaithInCallToPrayer1Label" text="\{phrase:ImmediatelyFollowingDeclarationOfFaithInCallToPrayer1\}"></word>
+			<word id="ImmediatelyFollowingDeclarationOfFaithInCallToPrayer1Label" text="\{phrase:ImmediatelyFollowingDeclarationOfFaithInCallToPrayer1\}\{reference:Al-Bukhari 1/152, and the addition between brackets is from Al-Bayhaqi 1/410 with a good (Hasan) chain of narration. See 'Abdul-Azlz bin Baz's Tuhfatul-'Akhyar, pg. 38.\}"></word>
 		</category>
 		<category title="AtTheStartOfPrayer">
 			<word id="AtTheStartOfPrayer1Label" text="\{phrase:AtTheStartOfPrayer1\}"></word>
@@ -4906,6 +4911,7 @@ Ramadan fast-breaking | One 2172-gram quantity | Dates or barley or ordinary sta
 			<rule name="OnlyAtEndOfWord" match="{ArabicLetterTehMarbuta}(?!(?:{ArabicFathaDammaKasra}|(?:{ArabicTanweens})(?:{ArabicSmallLowMeem}|{ArabicSmallHighMeemIsolatedForm})?)(?:\s*(?:$|{CertainStopPattern}|{OptionalPattern})|\s+))" evaluator="$&amp;"></rule>
 			<rule name="OnlyAtEndOfWord" match="({ArabicLetterTehMarbuta})?{ArabicFathatan}(?:{ArabicSmallLowMeem}|{ArabicSmallHighMeemIsolatedForm})?(?:\s+|\s*(?:$|{CertainStopPattern}|{OptionalPattern}))|({ArabicLetterHamza}){ArabicFathatan}(?:{ArabicSmallLowMeem}|{ArabicSmallHighMeemIsolatedForm})?{ArabicLetterAlef}?(?:\s+|\s*(?:$|{CertainStopPattern}|{OptionalPattern}))|(?:{ArabicLetterAlef}|{ArabicLetterAlefMaksura}|{ArabicLetterTehMarbuta}|{ArabicLetterHamza}){ArabicFathatan}|{ArabicFathatan}(?!(?:(?:{ArabicSmallLowMeem}|{ArabicSmallHighMeemIsolatedForm})?{ArabicLetterAlef}|{ArabicSmallLowMeem}?{ArabicLetterAlefMaksura})(?:\s+|\s*(?:$|{CertainStopPattern}|{OptionalPattern})))" evaluator="$&amp;" negativematch="$1$2"></rule>
 			<rule name="OnlyAtStartOfWord" match="(?:(?:^\s*|\s+)({ArabicLetterWaw}{ArabicFatha}|(?:{ArabicLetterWaw}{ArabicFatha})?{ArabicLetterTeh}{ArabicFatha}|(?:{ArabicLetterWaw}{ArabicFatha}|{ArabicLetterLam}{ArabicFatha}|{ArabicLetterAlefWithHamzaAbove}{ArabicFatha}({ArabicLetterFeh}{ArabicFatha})?)?{ArabicLetterBeh}{ArabicKasra}|(?:{ArabicLetterAlefWithHamzaAbove}{ArabicFatha})?{ArabicLetterFeh}{ArabicFatha}|{ArabicLetterLam}{ArabicFatha}|{ArabicLetterWaw}{ArabicShadda}{ArabicFatha}|{ArabicLetterLam}{ArabicShadda}{ArabicFatha}|{ArabicLetterKaf}{ArabicFatha}|{ArabicLetterAlefWasla}?{ArabicLetterLam}{ArabicKasra})|\S+){ArabicLetterAlefWasla}|{ArabicLetterAlefWasla}(?={ArabicLetterAlefWasla}|{ArabicLetterAlefWithHamzaAbove}|{ArabicLetterAlefWithHamzaBelow}|{ArabicLetterAlefMaksura}|{ArabicLetterAlef}|{ArabicLetterSuperscriptAlef}|{ArabicLetterHamza}|{ArabicLetterTehMarbuta}|{ArabicLetterWaw}|{ArabicLetterYeh}|{ArabicFatha}|{ArabicKasra}|{ArabicDamma}|{ArabicSukun}|{ArabicShadda}|{ArabicMaddahAbove}|{ArabicFathatan}|{ArabicKasratan}|{ArabicDammatan}|{ArabicHamzaAbove})" evaluator="$&amp;" negativematch="$1"></rule>
+			<rule name="NotValidCombination" match="(?:{ArabicLetterKaf}|{ArabicLetterHeh}){ArabicDamma}{ArabicLetterMeem}{ArabicSukun}?\s+(?:{ArabicLetterAlefWasla}|{ArabicLetterBeh})" evaluator="$&amp;"></rule>
 			<rule name="NotValidCombination" match="({ArabicLetterAlef}|{ArabicLetterSuperscriptAlef}|{ArabicLetterAlefMaksura}|{ArabicSmallWaw}|{ArabicSmallYeh}|{ArabicLetterSeen}|{ArabicLetterSad}|{ArabicLetterAin}|{ArabicLetterQaf}|{ArabicLetterKaf}|{ArabicLetterLam}|{ArabicLetterMeem}|{ArabicLetterNoon}|{ArabicLetterWaw}|{ArabicLetterYeh})?{ArabicMaddahAbove}" evaluator="$&amp;" negativematch="$1"></rule>
 			<rule name="NotValidCombination" match="{ArabicLetterAlef}(?:{ArabicFatha}|{ArabicKasra}|{ArabicDamma}|{ArabicSukun}|{ArabicShadda})|(?:{ArabicLetterAlef}|{ArabicLetterYeh}){ArabicDammatan}|(?:{ArabicLetterAlef}|{ArabicLetterWaw}|{ArabicLetterAlefMaksura}){ArabicKasratan}|{ArabicKasratan}(?!(?:{ArabicSmallLowMeem}|{ArabicSmallHighMeemIsolatedForm})?(?:\s+|\s*(?:$|{CertainStopPattern}|{OptionalPattern})))|{ArabicDammatan}(?!(?:{ArabicSmallLowMeem}|{ArabicSmallHighMeemIsolatedForm})?(?:{ArabicLetterAlef}{ArabicSmallHighRoundedZero}?)?(?:\s+|\s*(?:$|{CertainStopPattern}|{OptionalPattern})))" evaluator="$&amp;"></rule>
 			<rule name="NotValidCombination" match="(?:\S+({ArabicFatha}|{ArabicKasra}|{ArabicSukun}|{ArabicMaddahAbove})|\S+){ArabicLetterAlefWithHamzaBelow}|(?:\S+({ArabicFatha}|{ArabicKasra}|{ArabicSukun}|{ArabicMaddahAbove})|\S+){ArabicLetterAlefWithHamzaAbove}|(?:\S+({ArabicFatha}|{ArabicKasra}|{ArabicDamma}|{ArabicSukun}|{ArabicMaddahAbove})|\S+){ArabicLetterHamza}|({ArabicFatha}|{ArabicLetterAlefWasla}|{ArabicDamma}|{ArabicMaddahAbove})?{ArabicLetterWawWithHamzaAbove}|({ArabicFatha}|{ArabicKasra}|{ArabicDamma}|{ArabicLetterAlef}{ArabicSmallHighRoundedZero}|{ArabicLetterAlefWasla}|{ArabicSukun}|{ArabicMaddahAbove})?{ArabicLetterYehWithHamzaAbove}|{ArabicLetterAlefWithHamzaBelow}(?!{ArabicKasra}|{ArabicKasratan})|{ArabicLetterAlefWithHamzaAbove}(?!{ArabicSukun}|{ArabicFatha}|{ArabicDamma}|{ArabicDammatan})|{ArabicLetterWawWithHamzaAbove}(?!{ArabicSukun}|{ArabicFatha}|{ArabicDamma}|{ArabicKasra}|{ArabicFathatan}|{ArabicDammatan})|{ArabicLetterYehWithHamzaAbove}(?!{ArabicSukun}|{ArabicFatha}|{ArabicDamma}|{ArabicKasra}|{ArabicFathatan}|{ArabicKasratan})|{ArabicLetterHamza}(?!{ArabicSukun}|{ArabicFatha}|{ArabicDamma}|{ArabicKasra}|{ArabicFathatan}|{ArabicKasratan}|{ArabicDammatan})" evaluator="$&amp;" negativematch="$1$2$3$4$5"></rule>
