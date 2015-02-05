@@ -274,23 +274,23 @@ Partial Class Page
                 writer.WriteBeginTag("textarea")
                 writer.WriteAttribute("name", DirectCast(Item, PageLoader.EditItem).Name)
                 writer.WriteAttribute("id", DirectCast(Item, PageLoader.EditItem).Name)
-                If Web.HttpContext.Current.Request.QueryString.Get(DirectCast(Item, PageLoader.EditItem).Name) <> String.Empty Then
-                    writer.WriteAttribute("value", Web.HttpContext.Current.Request.QueryString.Get(DirectCast(Item, PageLoader.EditItem).Name))
-                ElseIf DirectCast(Item, PageLoader.EditItem).DefaultValue <> String.Empty Then
-                    writer.WriteAttribute("value", Utility.LoadResourceString(DirectCast(Item, PageLoader.EditItem).DefaultValue))
-                End If
                 writer.WriteAttribute("cols", "80")
                 writer.WriteAttribute("rows", DirectCast(Item, PageLoader.EditItem).Rows.ToString())
                 writer.Write(HtmlTextWriter.TagRightChar)
+                If Web.HttpContext.Current.Request.Params.Get(DirectCast(Item, PageLoader.EditItem).Name) <> String.Empty Then
+                    writer.Write(Web.HttpContext.Current.Request.Params.Get(DirectCast(Item, PageLoader.EditItem).Name))
+                ElseIf DirectCast(Item, PageLoader.EditItem).DefaultValue <> String.Empty Then
+                    writer.Write(Utility.LoadResourceString(DirectCast(Item, PageLoader.EditItem).DefaultValue))
+                End If
                 writer.WriteEndTag("textarea")
             Else
                 writer.WriteBeginTag("input")
                 writer.WriteAttribute("type", CStr(IIf(DirectCast(Item, PageLoader.EditItem).Rows = 0, "hidden", IIf(DirectCast(Item, PageLoader.EditItem).Password, "password", "text"))))
                 writer.WriteAttribute("name", DirectCast(Item, PageLoader.EditItem).Name)
                 writer.WriteAttribute("id", DirectCast(Item, PageLoader.EditItem).Name)
-                If DirectCast(Item, PageLoader.EditItem).Name = "fontcustom" And Web.HttpContext.Current.Request.QueryString.Get("fontselection") <> "custom" Then writer.WriteAttribute("style", "display: none;")
-                If Web.HttpContext.Current.Request.QueryString.Get(DirectCast(Item, PageLoader.EditItem).Name) <> String.Empty Then
-                    writer.WriteAttribute("value", Web.HttpContext.Current.Request.QueryString.Get(DirectCast(Item, PageLoader.EditItem).Name))
+                If DirectCast(Item, PageLoader.EditItem).Name = "fontcustom" And Web.HttpContext.Current.Request.Params.Get("fontselection") <> "custom" Then writer.WriteAttribute("style", "display: none;")
+                If Web.HttpContext.Current.Request.Params.Get(DirectCast(Item, PageLoader.EditItem).Name) <> String.Empty Then
+                    writer.WriteAttribute("value", Web.HttpContext.Current.Request.Params.Get(DirectCast(Item, PageLoader.EditItem).Name))
                 ElseIf DirectCast(Item, PageLoader.EditItem).DefaultValue <> String.Empty Then
                     writer.WriteAttribute("value", Utility.LoadResourceString(DirectCast(Item, PageLoader.EditItem).DefaultValue))
                 End If
@@ -334,10 +334,10 @@ Partial Class Page
             Else
                 Length = DirectCast(Item, PageLoader.RadioItem).OptionArray.Length
             End If
-            If HttpContext.Current.Request.QueryString.Get(DirectCast(Item, PageLoader.RadioItem).Name) Is Nothing Then
+            If HttpContext.Current.Request.Params.Get(DirectCast(Item, PageLoader.RadioItem).Name) Is Nothing Then
                 DefaultValue = DirectCast(Item, PageLoader.RadioItem).DefaultValue
             Else
-                DefaultValue = HttpContext.Current.Request.QueryString.Get(DirectCast(Item, PageLoader.RadioItem).Name)
+                DefaultValue = HttpContext.Current.Request.Params.Get(DirectCast(Item, PageLoader.RadioItem).Name)
             End If
             If (DirectCast(Item, PageLoader.RadioItem).UseList) Then
                 writer.Write(vbCrLf + BaseTabs + vbTab)
@@ -429,7 +429,7 @@ Partial Class Page
             Else
                 writer.WriteAttribute("value", Utility.LoadResourceString(DirectCast(Item, PageLoader.ButtonItem).Description))
             End If
-            If DirectCast(Item, PageLoader.ButtonItem).Name = "fontcustomapply" And Web.HttpContext.Current.Request.QueryString.Get("fontselection") <> "custom" Then writer.WriteAttribute("style", "display: none;")
+            If DirectCast(Item, PageLoader.ButtonItem).Name = "fontcustomapply" And Web.HttpContext.Current.Request.Params.Get("fontselection") <> "custom" Then writer.WriteAttribute("style", "display: none;")
             If Not DirectCast(Item, PageLoader.ButtonItem).OnClickFunction Is Nothing Then
                 Dim OnClickJS As String() = CType(DirectCast(Item, PageLoader.ButtonItem).OnClickFunction.Invoke(Nothing, Nothing), String())
                 AddToJSFunctions(OnClickJS)

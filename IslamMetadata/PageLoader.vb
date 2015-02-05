@@ -3492,7 +3492,7 @@ Public Class DocBuilder
         Return RenderArray.MakeTableJSFunctions(Output, ID)
     End Function
     Public Shared Function GetRuleSetRules(ID As String, Data As IslamData.RuleTranslationCategory.RuleTranslation()) As Array()
-        Dim Output(CachedData.IslamData.Translations.TranslationList.Length + 2) As Array
+        Dim Output(Data.Length + 2) As Array
         Output(0) = New String() {}
         Output(1) = New String() {String.Empty, String.Empty, String.Empty}
         Output(2) = New String() {Utility.LoadResourceString("IslamInfo_Name"), Utility.LoadResourceString("IslamInfo_Translation"), Utility.LoadResourceString("IslamInfo_Translation")}

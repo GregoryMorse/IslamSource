@@ -1568,7 +1568,7 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<noun text="$uEayobN" id="Jethro"></noun>
 			<noun text="muwsaY`" id="Moses"></noun>
 			<noun text="ha`ruwnu" id="Aaron"></noun>
-			<noun text="daAwudu" id="David"></noun>
+			<noun text="daAwu,du" id="David"></noun>
 			<noun text="sulayoma`nu" id="Solomon"></noun>
 			<noun text="&lt;iloyaAsu" id="Elijah"></noun>
 			<noun text="yuwnusu" id="Jonas"></noun>
@@ -1956,6 +1956,11 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 		<word text="fiEolu maADK" id="VerbInThePastTense"></word>
 		<word text="fiEolu majohuwlN" id="PassiveVerb"></word>
 		<word text="fiEolu muDaAriEN" id="PresentOrFutureTenseVerb"></word>
+		<word text="gaA^}ibu mu*ak~ari" id="ThirdPersonMasculine"></word>
+		<word text="gaA^}ibu mu&amp;an~avi" id="ThirdPersonFeminine"></word>
+		<word text="muxaAtabu mu*ak~ari" id="SecondPersonMasculine"></word>
+		<word text="muxaAtabu mu&amp;an~avi" id="SecondPersonFeminine"></word>
+		<word text="mutakal~amu" id="FirstPerson"></word>
 		<word text="{lofiEolu {lomutaEad~iy" id="TransitiveVerb"></word>
 		<word text="{lofiEolu {l~aAzimu" id="IntransitiveVerb"></word>
 		<word text="laA {ln~aAfiyapi" id="NegationParticle"></word>
@@ -2548,6 +2553,7 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 		<!-- {search:>aSoHa`b[aiu] .;W4W;W4WNum} -->
 		<!-- {search:quro'aAn[aiuFKN]\[?\]? .;W4W;W4WNum} -->
 		<!-- {search:Earo\$.*} -->
+		<!-- {search:.*kurosiy.*|.*Earo\$.*} -->
 		<word text="{loquro'aAnu {loEaZiymu \{15:87:6-7\}" id="TheGreatQuran"></word>
 		<word text="{loquro'aAnu {loHakiymu \{36:2\}" id="TheWiseQuran"></word>
 		<word text="{loquro'aAnu {lomajiydu \{50:1:3-4\}" id="TheGloriousQuran"></word>
@@ -3672,6 +3678,37 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<word text="\{52:28:9\}" id="TheFountainHeadOfTruthTheMerciful"></word>
 			<word text="\{2:37:11,2:54:26,2:128:17,2:160:11,9:104:15,9:118:31\}" id="TheEverAcceptorOfRepentanceTheMerciful"></word>
 			<word text="\{22:64:12,31:26:10,35:15:11,57:24:12,60:6:19\}" id="TheSelfSufficientOneTheSoleLaudableOne"></word>
+			<word text="\{2:127-129,2:255,34:1-2,34:26-27,38:65-66,39:4-5,42:3-5,59:22-24,60:5-6,62:1,66:2-3\}" id="VerseSequencesWithManyBeautifulNames"></word>
+			<word text="\{7:180,17:110,20:8,59:24\} id="TheMostBeautifulNamesVerses"></word>
+		</category>
+		<category title="QuranProphets">
+			<word text="\{2:31,2:33,2:34,2:35,2:37,3:33,3:59,5:27,7:11,7:19,7:26,7:27,7:31,7:35,7:172,17:61,17:70,18:50,19:58,20:115,20:116,20:117,20:120,20:121,36:60\}\{word:Adam\}" id="Adam"></word>
+			<word text="\{19:56,21:85\}{word:Enoch\}" id="Enoch"></word>
+			<word text="\{3:33,4:163,6:84,7:59,7:69,9:70,10:71,11:25,11:36,11:42,11:45,11:89,14:9,17:3,17:17,19:58,21:76,22:42,23:23,25:37,26:105,26:106,29:14,37:75,37:79,38:12,40:5,40:31,42:13,50:12,51:46,53:52,54:9,57:26,66:10,71:1,71:21,71:26\}\{word:Noah\}" id="Noah"></word>
+			<word text="\{7:65,11:50,11:58,11:60,11:89,26:124\}\{word:Eber\}" id="Eber"></word>
+			<word text="\{7:73,7:75,7:77,11:61,11:62,11:66,11:89,26:142,27:45\}\{word:Saleh\}" id="Saleh"></word>
+			<word text="\{3:33,3:65,3:67,3:68,3:84,3:95,3:97,4:54,4:125,4:163,6:74,6:75,6:83,6:161,9:70,9:114,11:69,11:74,11:75,11:76,12:6,12:38,14:35,15:51,16:120,16:123,19:41,19:46,19:58,21:51,21:60,21:62,21:69,22:26,22:43,22:78,26:69,29:16,29:31,33:7,37:83,37:104,37:109,38:45,42:13,43:26,51:24,53:37,57:26,60:4,87:19\}\{word:Abraham\}" id="Abraham"></word>
+			<word text="\{11:70,11:74,11:77,11:89,15:59,15:61,22:43,26:160,26:161,27:56,29:26,29:32,29:33,37:133,38:13,50:13,54:33,54:34,66:10\}\{word:Lot\}" id="Lot"></word>
+			<word text="\{2:125,2:127,2:133,2:136,2:140,3:84,4:163,6:86,14:39,19:54,21:85,38:48\}\{word:Ishmael\}" id="Ishmael"></word>
+			<word text="\{2:133,2:136,2:140,3:84,4:163,6:84,11:71,12:6,12:38,14:39,19:49,21:72,29:27,37:112,37:113,38:45\}\{word:Isaac\}" id="Isaac"></word>
+			<word text="\{2:132,2:133,2:136,2:140,3:84,4:163,6:84,11:71,12:6,12:38,12:68,19:6,19:49,21:72,29:27,38:45\}\{word:Jacob\}" id="Jacob"></word>
+			<word text="\{6:84,12:4,12:7,12:8,12:9,12:10,12:11,12:17,12:21,12:29,12:46,12:51,12:56,12:58,12:69,12:76,12:77,12:80,12:84,12:85,12:87,12:89,12:90,12:94,12:99,40:34\}\{word:Joseph\}" id="Joseph"></word>
+			<word text="\{4:163,6:84,21:83,38:41\}\{word:Job\}" id="Job"></word>
+			<word text="\{7:85,7:88,7:90,7:92,11:84,11:87,11:91,11:94,26:177,29:36\}\{word:Jethro\}" id="Jethro"></word>
+			<word text="\{2:51,2:53,2:54,2:55,2:60,2:61,2:67,2:87,2:108,2:136,2:246,2:248,3:84,4:153,4:164,5:20,5:22,5:24,6:84,6:91,6:154,7:104,7:115,7:117,7:122,7:127,7:128,7:131,7:134,7:138,7:142,7:143,7:144,7:148,7:150,7:155,7:159,7:160,10:77,10:81,10:83,10:84,10:87,10:88,11:17,11:96,11:110,14:5,14:6,14:8,17:2,17:101,18:60,18:66,19:51,20:9,20:11,20:17,20:19,20:36,20:40,20:49,20:57,20:65,20:70,20:77,20:83,20:86,20:88,20:91,21:48,22:44,23:45,23:49,25:35,26:10,26:45,26:48,26:52,26:61,26:63,26:65,27:7,27:9,27:10,28:3,28:7,28:10,28:15,28:18,28:19,28:20,28:29,28:30,28:31,28:37,28:38,28:43,28:44,28:48,28:76,32:23,33:7,33:69,37:114,37:120,40:23,40:26,40:27,40:37,40:53,41:45,42:13,43:46,46:12,46:30,51:38,53:36,61:5,79:15,87:19\}\{word:Moses\}" id="Moses"></word>
+			<word text="\{2:248,4:163,6:84,7:122,7:142,10:75,19:28,19:53,20:30,20:70,20:90,20:92,21:48,23:45,25:35,26:13,26:48,28:34,37:114,37:120\}\{word:Aaron\}" id="Aaron"></word>
+			<word text="\{21:85,38:48\}\{phrase:Ezekiel\}" id="Ezekiel"></word>
+			<word text="\{2:251,4:163,5:78,6:84,17:55,21:78,21:79,27:15,27:16,34:10,34:13,38:17,38:22,38:24,38:26,38:30\}\{word:David\}" id="David"></word>
+			<word text="\{2:102,4:163,6:84,21:78,21:79,21:81,27:15,27:16,27:17,27:18,27:30,27:36,27:44,34:12,38:30,38:34\}\{word:Solomon\}" id="Solomon"></word>
+			<word text="\{6:85,37:123\}\{word:Elijah\}" id="Elijah"></word>
+			<word text="\{6:86,38:48\}\{phrase:Elisha\}" id="Elisha"></word>
+			<word text="\{4:163,6:86,10:98,37:139\}\{word:Jonas\}" id="Jonas"></word>
+			<word text="\{3:37,3:38,6:85,19:2,19:7,21:89\}\{word:Zechariah\}" id="Zechariah"></word>
+			<word text="\{3:39,6:85,19:7,19:12,21:90\}\{word:JohnTheBaptist\}" id="JohnTheBaptist"></word>
+			<word text="\{2:136,3:52,3:55,3:59,3:84,4:163,6:85,42:13,43:63\}\{word:Jesus\}" id="Jesus"></word>
+			<word text="\{2:87,2:253,3:45,4:157,4:171,5:46,5:78,5:110,5:112,5:114,5:116,19:34,33:7,57:27,61:6,61:14\}\{phrase:JesusSonOfMary\}" id="JesusSonOfMary"></word>
+			<word text="\{3:144,33:40,47:2\}\{word:Muhammad\}" id="Muhammad"></word>
+			<word text="\{2:33-35,2:53-55,2:60-61,2:87,2:133,2:136,2:140,2:248,3:33,3:37-39,3:59,3:67-68,3:84,4:163-164,5:78,6:74-75,6:83-86,7:26-27,7:122,7:127-128,7:142-144,7:159-160,9:70,10:83-84,10:87-88,11:60-62,11:69-71,11:74-77,11:89,12:6-11,12:38,12:68-69,12:76-77,12:84-85,12:89-90,14:5-6,14:8-9,14:39,17:2-3,19:6-7,19:49,19:53-54,19:58,20:70,20:90-92,20:115-117,20:120-121,21:48,21:72,21:78-79,21:85,21:89-90,22:42-44,23:45,25:35,26:48,26:105-106,26:160-161,27:9-10,27:15-18,27:44-45,28:18-20,28:29-31,28:37-38,28:43-44,29:26-27,29:31-33,33:7,34:12-13,37:112-114,37:120,38:12-13,38:30,38:45,38:48,40:26-27,42:13,50:12-13,53:36-37,54:33-34,57:26-27,61:5-6,66:10,87:19\}" id="SequentialProphetVerses"></word>
 		</category>
 		<category title="QuranGroups">
 			<word text="\{word:Muslim,Faithful,Optimizer,GodFearer,Prophet,Messenger,Righteous,RighteousPerson,Worshipper,UnknownSourceNarrator,TruthfulPerson,GoodPerson,WitnessPresentMartyr,Patient,Fighter,Certain,Successful,Faithful\}\{phrase:WorthyToBeFeared,WorthyToForgive,PeopleOfTheHouse,PeopleOfAHouse,CompanionsOfTheParadise,CompanionsOfTheHappiness,CompanionsOfTheRight,CompanionsOfTheElevations,CompanionsOfTheCave,CompanionsOfTheSoundPath,CompanionsOfTheShip\}" id="Good"></word>
@@ -3987,7 +4024,7 @@ Ramadan fast-breaking | One 2172-gram quantity | Dates or barley or ordinary sta
 			<word id="AtTheStartOfPrayer3Label" text="\{phrase:AtTheStartOfPrayer3\}\{reference:Muslim 1/534.\}"></word>
 			<word id="AtTheStartOfPrayer4Label" text="\{phrase:AtTheStartOfPrayer4\}\{reference:Muslim 1/534.\}"></word>
 			<word id="AtTheStartOfPrayer5Label" text="\{phrase:AtTheStartOfPrayer5\}\{reference:Abu Dawud 1/203, Ibn Majah 1/265, ai Ahmad 4/85. Muslim recorded a similar Hadith 1/420.\}"></word>
-			<word id="AtTheStartOfPrayer6Label" text="\{phrase:AtTheStartOfPrayer6\}\{reference:Al-Bukhari, cf. Al-Asqalani, Fathul-Bari 3/3 , 11/ 116, 13/371, 423, 465. See also Muslim for a shorter account, 1/532.\}"></word>
+			<word id="AtTheStartOfPrayer6Label" text="\{phrase:AtTheStartOfPrayer6\}\{reference:Al-Bukhari, cf. Al-Asqalani, Fathul-Bari 3/3 , 11/116, 13/371, 423, 465. See also Muslim for a shorter account, 1/532.\}"></word>
 		</category>
 		<category title="WhileBowingInPrayer">
 			<word id="WhileBowingInPrayer1Label" text="\{phrase:WhileBowingInPrayer1\} (valaAvFA)\{reference:Abu Dawud, Ibn Majah, An-Nasa'i, At-Tirmithi, and Ahmad. See Al-Albani's Sahih At-Tirmithi 1/83.\}"></word>
@@ -4023,14 +4060,14 @@ Ramadan fast-breaking | One 2172-gram quantity | Dates or barley or ordinary sta
 		</category>
 		<category title="InvocationAfterDeclarationWhenSittingInPrayer">
 			<word id="InvocationAfterDeclarationWhenSittingInPrayer1" text="\{phrase:InvocationAfterDeclarationWhenSittingInPrayer1\}\{reference:Al-Bukhari, cf. Al-Asqalani, Fathul-Bari 6/408.\}"></word>
-			<word id="InvocationAfterDeclarationWhenSittingInPrayer2" text="\{phrase:InvocationAfterDeclarationWhenSittingInPrayer2\}\{reference:Al-Bukhari, from Al-Asqalani, Fathul-Bari 6/ 407, Muslim 1/306.\}"></word>
+			<word id="InvocationAfterDeclarationWhenSittingInPrayer2" text="\{phrase:InvocationAfterDeclarationWhenSittingInPrayer2\}\{reference:Al-Bukhari, from Al-Asqalani, Fathul-Bari 6/407, Muslim 1/306.\}"></word>
 		</category>
 		<category title="BeforeGivingPeaceOfPrayer">
 			<word id="BeforeGivingPeaceOfPrayer1" text="\{phrase:BeforeGivingPeaceOfPrayer1\}\{reference:Al-Bukhari 2/102, Muslim 1/412, and this is Muslim's wording.\}"></word>
 			<word id="BeforeGivingPeaceOfPrayer2" text="\{phrase:BeforeGivingPeaceOfPrayer2\}\{reference:Al-Bukhari 1/202, Muslim 1/412.\}"></word>
 			<word id="BeforeGivingPeaceOfPrayer3" text="\{phrase:BeforeGivingPeaceOfPrayer3\}\{reference:Al-Bukhari 8/168, Muslim 4/2078.\}"></word>
 			<word id="BeforeGivingPeaceOfPrayer4" text="\{phrase:BeforeGivingPeaceOfPrayer4\}\{reference:Muslim 1/534.\}"></word>
-			<word id="BeforeGivingPeaceOfPrayer5" text="\{phrase:BeforeGivingPeaceOfPrayer5\}\{reference:Abu Dawud 2/86, An-Nasa'i 3/53. See also Al-Albani Sahih Abu Dawud 1 /284.\}"></word>
+			<word id="BeforeGivingPeaceOfPrayer5" text="\{phrase:BeforeGivingPeaceOfPrayer5\}\{reference:Abu Dawud 2/86, An-Nasa'i 3/53. See also Al-Albani Sahih Abu Dawud 1/284.\}"></word>
 			<word id="BeforeGivingPeaceOfPrayer6" text="\{phrase:BeforeGivingPeaceOfPrayer6\}\{reference:Al-Bukhari, cf. Al-Asqalani, Fathul-Bari 6/35.\}"></word>
 			<word id="BeforeGivingPeaceOfPrayer7" text="\{phrase:BeforeGivingPeaceOfPrayer7\}\{reference:Abu Dawud. See also Al-Albani, Sahih Ibn Majah 2/328.\}"></word>
 			<word id="BeforeGivingPeaceOfPrayer8" text="\{phrase:BeforeGivingPeaceOfPrayer8\}\{reference:An-Nasa'i 3/54, 55, Ahmad 4/364. See also Al-Albani, Sahih An-Nasa'i 1/281.\}"></word>
@@ -4058,7 +4095,7 @@ Ramadan fast-breaking | One 2172-gram quantity | Dates or barley or ordinary sta
 			<word id="InTheEvening4Label" text="\{phrase:InTheEvening4\}\{reference:Abu Dawud 4/318, An-Nasa'i 'Amalul-Yawm wal-Laylah (no. 7), Ibn As-Sunni (no. 41), Ibn Hibban (no. 2361). Its chain of transmission is good (Hasan), Ibn Baz, p. 24.\}"></word>
 			<word id="InTheEvening5Label" text="\{phrase:InTheEvening5\}\{reference:Abu Dawud 4/322. Its transmission chain is good (Hasan). See also Ibn Al-Qayyim, Zadul- Ma'ad 2/273.\}"></word>
 			<word id="InTheEvening6Label" text="\{phrase:InTheEvening6\}\{reference:Ahmad 3/406-7, 5/123, An-Nasa'i, 'Amalul- Yawm wal-Laylah (no. 34), At-Tirmithi 4/209.\}"></word>
-			<word id="InTheEvening7Label" text="\{phrase:InTheEvening7\} (valaAvFA)\{reference:Ahmad 2/ 290, An-Nasa'i, 'Amalul-Yawm wal-Laylah no. 590, At-Tirmithi 3/187, Ibn As-Sunni no. 68. According to Al-Albani, Ibn Majah's (2/266) chain of transmission is sound (Sahih), and following Ibn Baz 45, At-Tirmithi's report is good (Hasan).\}"></word>
+			<word id="InTheEvening7Label" text="\{phrase:InTheEvening7\} (valaAvFA)\{reference:Ahmad 2/290, An-Nasa'i, 'Amalul-Yawm wal-Laylah no. 590, At-Tirmithi 3/187, Ibn As-Sunni no. 68. According to Al-Albani, Ibn Majah's (2/266) chain of transmission is sound (Sahih), and following Ibn Baz 45, At-Tirmithi's report is good (Hasan).\}"></word>
 			<word id="InTheEvening8Label" text="\{phrase:InTheEvening8\}\{reference:\}"></word>
 			<word id="InTheEvening9Label" text="\{phrase:InTheEvening9\}\{reference:\}"></word>
 		</category>
@@ -4082,379 +4119,381 @@ Ramadan fast-breaking | One 2172-gram quantity | Dates or barley or ordinary sta
 			<word id="InTheMorningOrEvening6Label" text="\{phrase:InTheMorningOrEvening6\}\{reference:Sahih Ibn Majah 2/332 and Abu Dawud.\}"></word>
 			<word id="InTheMorningOrEvening7Label" text="\{phrase:InTheMorningOrEvening7\}\{reference:Sahih At-Tirmithi 3/142 and Abu Dawud.\}"></word>
 			<word id="InTheMorningOrEvening8Label" text="\{phrase:InTheMorningOrEvening8\} (valaAvFA)\{reference:Abu Dawud 4/323, At-Tirmithi 5/465, Ibn Majah 2/332, Ahmad. Ibn Majah's chain of transmission is good (Hasan), Ibn Baz, p. 39.\}"></word>
-			<word id="InTheMorningOrEvening9Label" text="\{phrase:InTheMorningOrEvening9\} (valaAvFA)\{reference:Ahmad 4/ 337, An-Nasa'i, 'Amalul-Yawm wal-Laylah p. 4, Ibn As-Sunni (no. 68), At-Tirmithi 5/465. Its chain of transmission is good (Hasan), Ibn Baz, p. 39.\}"></word>
+			<word id="InTheMorningOrEvening9Label" text="\{phrase:InTheMorningOrEvening9\} (valaAvFA)\{reference:Ahmad 4/337, An-Nasa'i, 'Amalul-Yawm wal-Laylah p. 4, Ibn As-Sunni (no. 68), At-Tirmithi 5/465. Its chain of transmission is good (Hasan), Ibn Baz, p. 39.\}"></word>
 			<word id="InTheMorningOrEvening10Label" text="\{phrase:InTheMorningOrEvening10\}\{reference:Its chain of transmission is sound (Sahih), Al-Hakim 1/545, see Albani, Sahihut-Targhib wat-Tarhib, 1/273.\}"></word>
 			<word id="InTheMorningOrEvening11Label" text="\{phrase:InTheMorningOrEvening11\} (miA}apu mir~apu)\{reference:Al-Bukhari 4/2071.\}"></word>
-			<word id="InTheMorningOrEvening12Label" text="\{phrase:InTheMorningOrEvening12\} (miA}apu mir~apu)\{reference:Abu Dawud 4/319, 3/957, Ahmad 4/ 60, Ibn Majah 2/331, Ibn Al-Qayyim Zadul-Ma'ad 2/388. Its chain of transmission is sound (Sahih). Al-Albani 1/270.\}"></word>
+			<word id="InTheMorningOrEvening12Label" text="\{phrase:InTheMorningOrEvening12\} (miA}apu mir~apu)\{reference:Abu Dawud 4/319, 3/957, Ahmad 4/60, Ibn Majah 2/331, Ibn Al-Qayyim Zadul-Ma'ad 2/388. Its chain of transmission is sound (Sahih). Al-Albani 1/270.\}"></word>
 			<word id="InTheMorningOrEvening13Label" text="\{phrase:InTheMorningOrEvening13\} (Ea$arapF)\{reference:At-Tabrani reported this Hadith together with two chain of transmissions. One of them is reliable (Jayyid). See Haithami's Majma' Az-Zawa'id 10/120, and Al-Albani's Sahih At-Targhib Wat-Tarhib 1/273.\}"></word>
 		</category>
 		<category title="RemembranceBeforeSleeping">
-			<word id="RemembranceBeforeSleeping1" text="\{112\}\{113\}\{114\} (valaAvFA)"></word>
-			<word id="RemembranceBeforeSleeping2" text="\{2:255\}"></word>
-			<word id="RemembranceBeforeSleeping3" text="\{2:285-286\}"></word>
-			<word id="RemembranceBeforeSleeping4" text="\{phrase:RemembranceBeforeSleeping4\}"></word>
-			<word id="RemembranceBeforeSleeping5" text="\{phrase:RemembranceBeforeSleeping5\}"></word>
-			<word id="RemembranceBeforeSleeping6" text="\{phrase:RemembranceBeforeSleeping6\} (valaAvFA)"></word>
-			<word id="RemembranceBeforeSleeping7" text="\{phrase:RemembranceBeforeSleeping7\}"></word>
-			<word id="RemembranceBeforeSleeping8" text="\{phrase:RemembranceBeforeSleeping8\} (&gt;arobaEFA wavalaAviyna)\."></word>
-			<word id="RemembranceBeforeSleeping9" text="\{phrase:RemembranceBeforeSleeping9\}"></word>
-			<word id="RemembranceBeforeSleeping10" text="\{phrase:RemembranceBeforeSleeping10\}"></word>
-			<word id="RemembranceBeforeSleeping11" text="\{phrase:RemembranceBeforeSleeping11\}"></word>
-			<word id="RemembranceBeforeSleeping12" text="\{32\}\{67\}"></word>
-			<word id="RemembranceBeforeSleeping13" text="\{phrase:RemembranceBeforeSleeping13\}"></word>
+			<word id="RemembranceBeforeSleeping1" text="\{112\}\{113\}\{114\} (valaAvFA)\{reference:Al-Bukhari, cf. Al-Asqalani, Fathul-Bari 9/62, and Muslim 4/1723.\}"></word>
+			<word id="RemembranceBeforeSleeping2" text="\{2:255\}\{reference:Al-Bukhari, cf. Al-Asqalani, Fathul-Bari 4/487.\}"></word>
+			<word id="RemembranceBeforeSleeping3" text="\{2:285-286\}\{reference:Al-Bukhari, cf. Al-Asqalani, Fathul-Bari.9/94, Muslim 1/554.\}"></word>
+			<word id="RemembranceBeforeSleeping4" text="\{phrase:RemembranceBeforeSleeping4\}\{reference:Al-Bukhari 1 1/126 and Muslim 4/2084.\}"></word>
+			<word id="RemembranceBeforeSleeping5" text="\{phrase:RemembranceBeforeSleeping5\}\{reference:Muslim 4/2083 and Ahmad 2/79.\}"></word>
+			<word id="RemembranceBeforeSleeping6" text="\{phrase:RemembranceBeforeSleeping6\} (valaAvFA)\{reference:Abu Dawud 4/311. See also Al-Albani, Sahih At-Tirmithi 3/143.\}"></word>
+			<word id="RemembranceBeforeSleeping7" text="\{phrase:RemembranceBeforeSleeping7\}\{reference:Al-Asqalani, Fathul-Bari 11/113, Muslim 4/2083.\}"></word>
+			<word id="RemembranceBeforeSleeping8" text="\{phrase:RemembranceBeforeSleeping8\} (&gt;arobaEFA wavalaAviyna)\{reference:Al-Bukhari, cf. Al-Asqalani, Fathul-Bari 7/71, Muslim 4/2091.\}"></word>
+			<word id="RemembranceBeforeSleeping9" text="\{phrase:RemembranceBeforeSleeping9\}\{reference:Muslim 4/2084.\}"></word>
+			<word id="RemembranceBeforeSleeping10" text="\{phrase:RemembranceBeforeSleeping10\}\{reference:Muslim 4/2085.\}"></word>
+			<word id="RemembranceBeforeSleeping11" text="\{phrase:RemembranceBeforeSleeping11\}\{reference:Abu Dawud 4/317. See also Al-Albani, SahihAt-Tirmithi 3/142.\}"></word>
+			<word id="RemembranceBeforeSleeping12" text="\{32\}\{67\}\{reference:At-Tirmithi, An-Nasa'i. See also Al-Albani, Sahihul-Jami ' As-Saghir 4/255.\}"></word>
+			<word id="RemembranceBeforeSleeping13" text="\{phrase:RemembranceBeforeSleeping13\}\{reference:Al-Bukhari, cf. Al-Asqalani, Fathul-Bari 11/113, Muslim 4/2081.\}"></word>
 		</category>
 		<category title="WhenTurningOverInTheNight">
-			<word id="WhenTurningOverInTheNight1" text="\{phrase:WhenTurningOverInTheNight1\}"></word>
+			<word id="WhenTurningOverInTheNight1" text="\{phrase:WhenTurningOverInTheNight1\}\{reference:Al-Hakim graded it authentic and Ath-Thahabi agreed 1/540. Also see An-Nasa'i, 'Amalul-Yawm wal-Laylah, and Ibn As-Sunni. See also Al-Albani, Sahihul-Jami' As-Saghir 4/213.\}"></word>
 		</category>
 		<category title="UponExperiencingFearUnrestApprehensivenessDuringSleep">
-			<word id="UponExperiencingFearUnrestApprehensivenessDuringSleep1" text="\{phrase:UponExperiencingFearUnrestApprehensivenessDuringSleep1\}"></word>
+			<word id="UponExperiencingFearUnrestApprehensivenessDuringSleep1" text="\{phrase:UponExperiencingFearUnrestApprehensivenessDuringSleep1\}\{reference:Abu Dawud 4/12. See also Al-Albani, Sahih At- Tirmithi 3/171.\}"></word>
 		</category>
 		<category title="UponSeeingABadDream">
-			<word id="UponSeeingABadDream1" text="\{phrase:SeekRefugeWithAllahFromSatanRejected\}"></word>
+			<word id="UponSeeingABadDream1" text="\{phrase:SeekRefugeWithAllahFromSatanRejected\}\{reference:Muslim 4/1 772, 3\}"></word>
 		</category>
 		<category title="DesperateOddPrayer">
-			<word id="DesperateOddPrayer1" text="\{phrase:DesperateOddPrayer1\}"></word>
-			<word id="DesperateOddPrayer2" text="\{phrase:DesperateOddPrayer2\}"></word>
-			<word id="DesperateOddPrayer3" text="\{phrase:DesperateOddPrayer3\}"></word>
+			<word id="DesperateOddPrayer1" text="\{phrase:DesperateOddPrayer1\}\{reference:Abu Dawud, Ibn Majah, An-Nasa'i, At-Tirmithi, Ahmad, Ad-Darimi, Al-Hakim, and Al-Bayhaqi. See also Al-Albani, Sahih At-Tirmithi 1/144, Sahih Ibn Majah 1/194, and 'Irwa'ul-GhaW. 2/172.\}"></word>
+			<word id="DesperateOddPrayer2" text="\{phrase:DesperateOddPrayer2\}\{reference:Abu Dawud, Ibn Majah, An-Nasa'i, At-Tirmithi, Ahmad. See Al-Albani, Sahih At-Tirmithi 3/180, Sahih Ibn Majah 1/194, and 'Irwa'ul-Ghalil. 2/175.\}"></word>
+			<word id="DesperateOddPrayer3" text="\{phrase:DesperateOddPrayer3\}\{reference:Al-Bayhaqi graded its chain authentic in As-Sunan Al-Kubra. Al-Albani said in 'Irwa'ul-GhaliL 2/170 that its chain is authentic as a statement of 'Umar.\}"></word>
 		</category>
 		<category title="OddPrayerAndAfter">
-			<word id="OddPrayerAndAfter1" text="\{87\}\{109\}\{112\} \{phrase:OddPrayerAndAfter1\}"></word>
+			<word id="OddPrayerAndAfter1" text="\{87\}\{109\}\{112\} \{phrase:OddPrayerAndAfter1\}\{reference:An-Nasa'i 3/244, Ad-Daraqutni and others. The final addition is from Ad-Daraqutni's version 2/31 and its chain of narration is authentic. See the checking of Zadul-Ma'ad by Shu'aib Al-Arna'ut and 'Abdul-Qadir Al-Arna'ut 1/337.\}"></word>
 		</category>
 		<category title="ForAnxietyAndSorrow">
-			<word id="ForAnxietyAndSorrow1Label" text="\{phrase:ForAnxietyAndSorrow1\}"></word>
-			<word id="ForAnxietyAndSorrow2Label" text="\{phrase:ForAnxietyAndSorrow2\}"></word>
+			<word id="ForAnxietyAndSorrow1Label" text="\{phrase:ForAnxietyAndSorrow1\}\{reference:Ahmad 1/391, and Al-Albani graded it authentic.\}"></word>
+			<word id="ForAnxietyAndSorrow2Label" text="\{phrase:ForAnxietyAndSorrow2\}\{reference:Al-Bukhari 7/158. See also Al-Asqalani, Fathul-Bari 11/173.\}"></word>
 		</category>
 		<category title="ForOneInDistress">
-			<word id="ForOneInDistress1" text="\{phrase:ForOneInDistress1\}"></word>
-			<word id="ForOneInDistress2" text="\{phrase:ForOneInDistress2\}"></word>
-			<word id="ForOneInDistress3" text="\{21:87:15-23\}"></word>
-			<word id="ForOneInDistress4" text="\{phrase:ForOneInDistress4\}"></word>
+			<word id="ForOneInDistress1" text="\{phrase:ForOneInDistress1\}\{reference:Al-Bukhari 8/154, Muslim 4/2092.\}"></word>
+			<word id="ForOneInDistress2" text="\{phrase:ForOneInDistress2\}\{reference:Abu Dawud 4/324, Ahmad 5/42. Al-Albani graded it as good in Sahih Abu Dawud 3/959.\}"></word>
+			<word id="ForOneInDistress3" text="\{21:87:15-23\}\{reference:At-Tirmithi 5/529. Al-Hakim declared it authentic and Ath-Thahabi agreed with him 1/505. See also Al-Albani, Sahih At-Tirmithi 3/168.\}"></word>
+			<word id="ForOneInDistress4" text="\{phrase:ForOneInDistress4\}\{reference:Abu Dawud 2/87. See also Al-Albani, Sahih Ibn Mdjah 2/335.\}"></word>
 		</category>
 		<category title="UponEncounteringAnEnemyOrThoseOfAuthority">
-			<word id="UponEncounteringAnEnemyOrThoseOfAuthority1" text="\{phrase:UponEncounteringAnEnemyOrThoseOfAuthority1\}"></word>
-			<word id="UponEncounteringAnEnemyOrThoseOfAuthority2" text="\{phrase:UponEncounteringAnEnemyOrThoseOfAuthority2\}"></word>
-			<word id="UponEncounteringAnEnemyOrThoseOfAuthority3" text="\{3:173:14-17\}"></word>
+			<word id="UponEncounteringAnEnemyOrThoseOfAuthority1" text="\{phrase:UponEncounteringAnEnemyOrThoseOfAuthority1\}\{reference:Abu Dawud 2/89, and Al-Hakim graded it authentic and Ath-Thahabi agreed 2/142.\}"></word>
+			<word id="UponEncounteringAnEnemyOrThoseOfAuthority2" text="\{phrase:UponEncounteringAnEnemyOrThoseOfAuthority2\}\{reference:Abu Dawud 3/42, At-Tirmithi 5/572. See also Al-Albani, Sahih At-Tirmithi 3/183.\}"></word>
+			<word id="UponEncounteringAnEnemyOrThoseOfAuthority3" text="\{3:173:14-17\}\{reference:Al-Bukhari, 5/172.\}"></word>
 		</category>
 		<category title="MadeAgainstAnEnemy">
-			<word id="MadeAgainstAnEnemy1" text="\{phrase:MadeAgainstAnEnemy1\}"></word>
+			<word id="MadeAgainstAnEnemy1" text="\{phrase:MadeAgainstAnEnemy1\}\{reference:Muslim 3/1362.\}"></word>
 		</category>
 		<category title="WhenInFearOfAPeople">
-			<word id="WhenInFearOfAPeople1" text="\{phrase:WhenInFearOfAPeople1\}"></word>
+			<word id="WhenInFearOfAPeople1" text="\{phrase:WhenInFearOfAPeople1\}\{reference:Muslim 4/2300.\}"></word>
 		</category>
 		<category title="ForOneAfflictedWithDoubtInFaith">
-			<word id="ForOneAfflictedWithDoubtInFaith1" text="\{phrase:SeekRefugeWithAllahFromSatanRejected\}"></word>
-			<word id="ForOneAfflictedWithDoubtInFaith2" text="\{phrase:ForOneAfflictedWithDoubtInFaith2\}"></word>
-			<word id="ForOneAfflictedWithDoubtInFaith3" text="\{57:3\}"></word>
+			<word id="ForOneAfflictedWithDoubtInFaith1" text="\{phrase:SeekRefugeWithAllahFromSatanRejected\}\{reference:Al-Bukhari, cf. Al-Asqalani, Fathul-Bari 6/336, Muslim 1/120.\}"></word>
+			<word id="ForOneAfflictedWithDoubtInFaith2" text="\{phrase:ForOneAfflictedWithDoubtInFaith2\}\{reference:Muslim, 1/119-20.\}"></word>
+			<word id="ForOneAfflictedWithDoubtInFaith3" text="\{57:3\}\{reference:Al-Hadid 57:3, Abu Dawud 4/329. Al-Albani graded it good in SahihAbu Dawud, 3/962.\}"></word>
 		</category>
 		<category title="SettlingADebt">
-			<word id="SettlingADebt1" text="\{phrase:SettlingADebt1\}"></word>
-			<word id="SettlingADebt2" text="\{phrase:SettlingADebt2\}"></word>
+			<word id="SettlingADebt1" text="\{phrase:SettlingADebt1\}\{reference:At-Tirmithi 5/560. See also Al-Albani, Sahih At-Tirmithi 3/180.\}"></word>
+			<word id="SettlingADebt2" text="\{phrase:SettlingADebt2\}\{reference:Al-Bukhari 7/158.\}"></word>
 		</category>
 		<category title="ForOneAffectedByWhisperingsInPrayerOrSupplication">
-			<word id="ForOneAffectedByWhisperingsInPrayerOrSupplication1" text="\{phrase:SeekRefugeWithAllahFromSatanRejected\}"></word>
+			<word id="ForOneAffectedByWhisperingsInPrayerOrSupplication1" text="\{phrase:SeekRefugeWithAllahFromSatanRejected\}\{reference:Muslim 4/1729.\}"></word>
 		</category>
 		<category title="ForOneWhoseAffairsHaveBecomeDifficult">
-			<word id="ForOneWhoseAffairsHaveBecomeDifficult1" text="\{phrase:ForOneWhoseAffairsHaveBecomeDifficult1\}"></word>
+			<word id="ForOneWhoseAffairsHaveBecomeDifficult1" text="\{phrase:ForOneWhoseAffairsHaveBecomeDifficult1\}\{reference:Ibn Hibban in his Sahih (no. 2427), and Ibn As- Sunni (no. 351). Al-Hafidh (Ibn Hajar) said that this Hadith is authentic. It was also declared authentic by 'Abdul-Qadir Al-Arna'ut in his checking of An-Nawawi's Kitabul-Athkarp. p106.\}"></word>
 		</category>
 		<category title="UponCommittingASin">
-			<word id="UponCommittingASin1" text=""></word>
+			<word id="UponCommittingASin1" text="\{reference:Abu Dawud 2/86, At-Tirmithi 2/257. Al-Albani graded it authentic in Sahih Abu Dawud 1/283.\}"></word>
 		</category>
 		<category title="ForExpellingTheDevilAndHisWhisperings">
-			<word id="ForExpellingTheDevilAndHisWhisperings1" text="\{phrase:SeekRefugeWithAllahFromSatanRejected\}"></word>
-			<word id="ForExpellingTheDevilAndHisWhisperings2" text=""></word>
-			<word id="ForExpellingTheDevilAndHisWhisperings3" text=""></word>
+			<word id="ForExpellingTheDevilAndHisWhisperings1" text="\{phrase:SeekRefugeWithAllahFromSatanRejected\}\{reference:Abu Dawud 1/206, At-Tirmithi. See also Al-Albani, Sahih At-Tirmithi 1/77, and Surat Al-Mu'minun, 23:98-9.\}"></word>
+			<word id="ForExpellingTheDevilAndHisWhisperings2" text="\{reference:Muslim 1/291, Al-Bukhari 1/151.\}"></word>
+			<word id="ForExpellingTheDevilAndHisWhisperings3" text="\{reference:Muslim 1/539.\}"></word>
 		</category>
 		<category title="WhenStrickenWithAMishapOrOvertakenByAnAffair">
-			<word id="WhenStrickenWithAMishapOrOvertakenByAnAffair1" text="\{phrase:WhenStrickenWithAMishapOrOvertakenByAnAffair1\}"></word>
-			<word id="WhenStrickenWithAMishapOrOvertakenByAnAffair2" text="\{3:173:14-17\}"></word>
+			<word id="WhenStrickenWithAMishapOrOvertakenByAnAffair1" text="\{phrase:WhenStrickenWithAMishapOrOvertakenByAnAffair1\}\{reference:\}"></word>
+			<word id="WhenStrickenWithAMishapOrOvertakenByAnAffair2" text="\{3:173:14-17\}\{reference:\}"></word>
 		</category>
 		<category title="PlacingChildrenUnderAllahsProtection">
-			<word id="PlacingChildrenUnderAllahsProtection1" text="\{phrase:PlacingChildrenUnderAllahsProtection1\}"></word>
+			<word id="PlacingChildrenUnderAllahsProtection1" text="\{phrase:PlacingChildrenUnderAllahsProtection1\}\{reference:Al-Bukhari 4/119.\}"></word>
 		</category>
 		<category title="WhenVisitingTheSick">
-			<word id="WhenVisitingTheSick1" text="\{phrase:WhenVisitingTheSick1\}"></word>
-			<word id="WhenVisitingTheSick2" text="\{phrase:WhenVisitingTheSick2\} (sabaEFA mar~aAtFA)"></word>
+			<word id="WhenVisitingTheSick1" text="\{phrase:WhenVisitingTheSick1\}\{reference:Al-Bukhari, cf. Al-Asqalani Fathul-Bari 10/118.\}"></word>
+			<word id="WhenVisitingTheSick2" text="\{phrase:WhenVisitingTheSick2\} (sabaEFA mar~aAtFA)\{reference:At-Tirmithi, Abu Dawud. See also Al-Albani, Sahih At-Tirmithi 2/210 and Sahihul-Jami' As-Saghir 5/180.\}"></word>
 		</category>
 		<category title="ExcellenceOfVisitingTheSick">
-			<word id="ExcellenceOfVisitingTheSick1" text=""></word>
+			<word id="ExcellenceOfVisitingTheSick1" text="\{reference:At-Tirmithi, Ibn Majah, Ahmad. See, Al-Albani, Sahih Ibn Majah 1/244, and Sahih At-Tirmithi 1/286. It was also graded authentic by Ahmad Shakir.\}"></word>
 		</category>
 		<category title="TheSickWhoHaveRenouncedAllHopeOfLife">
-			<word id="TheSickWhoHaveRenouncedAllHopeOfLife1" text="\{phrase:TheSickWhoHaveRenouncedAllHopeOfLife1\} \{4:69\}"></word>
-			<word id="TheSickWhoHaveRenouncedAllHopeOfLife2" text="\{phrase:TheSickWhoHaveRenouncedAllHopeOfLife2\}"></word>
-			<word id="TheSickWhoHaveRenouncedAllHopeOfLife3" text="\{phrase:TheSickWhoHaveRenouncedAllHopeOfLife3\}"></word>
+			<word id="TheSickWhoHaveRenouncedAllHopeOfLife1" text="\{phrase:TheSickWhoHaveRenouncedAllHopeOfLife1\} \{4:69\}\{reference:Al-Bukhari7/10, Muslim 4/1893.\}"></word>
+			<word id="TheSickWhoHaveRenouncedAllHopeOfLife2" text="\{phrase:TheSickWhoHaveRenouncedAllHopeOfLife2\}\{reference:Al-Bukhari, cf. Al-Asqalani, Fathul-Bari 8/144.\}"></word>
+			<word id="TheSickWhoHaveRenouncedAllHopeOfLife3" text="\{phrase:TheSickWhoHaveRenouncedAllHopeOfLife3\}\{reference:At-Tirmithi and Ibn Majah. See also Al-Albani, Sahih At-Tirmithi 3/152 and Sahih Ibn Majah 2/317.\}"></word>
 		</category>
 		<category title="InstructionForTheOneNearingDeath">
-			<word id="InstructionForTheOneNearingDeath1" text="\{phrase:CreedOfIslamFirstPart\}"></word>
+			<word id="InstructionForTheOneNearingDeath1" text="\{phrase:CreedOfIslamFirstPart\}\{reference:Abu Dawud 3/190. See also Al-Albani, Sahihul-Jami' As-Saghir 5/432.\}"></word>
 		</category>
 		<category title="InstructionForOneAfflictedByCalamity">
-			<word id="InstructionForOneAfflictedByCalamity1" text="\{phrase:InstructionForOneAfflictedByCalamity1\}"></word>
+			<word id="InstructionForOneAfflictedByCalamity1" text="\{phrase:InstructionForOneAfflictedByCalamity1\}\{reference:Muslim 2/632.\}"></word>
 		</category>
 		<category title="WhenClosingTheEyesOfTheDeceased">
-			<word id="WhenClosingTheEyesOfTheDeceased1" text="\{phrase:WhenClosingTheEyesOfTheDeceased1\}"></word>
+			<word id="WhenClosingTheEyesOfTheDeceased1" text="\{phrase:WhenClosingTheEyesOfTheDeceased1\}\{reference:Muslim 2/634.\}"></word>
 		</category>
 		<category title="ForTheDeceasedAtFuneralPrayer">
-			<word id="ForTheDeceasedAtFuneralPrayer1" text="\{phrase:ForTheDeceasedAtFuneralPrayer1\}"></word>
-			<word id="ForTheDeceasedAtFuneralPrayer2" text="\{phrase:ForTheDeceasedAtFuneralPrayer2\}"></word>
-			<word id="ForTheDeceasedAtFuneralPrayer3" text="\{phrase:ForTheDeceasedAtFuneralPrayer3\}"></word>
-			<word id="ForTheDeceasedAtFuneralPrayer4" text="\{phrase:ForTheDeceasedAtFuneralPrayer4\}"></word>
+			<word id="ForTheDeceasedAtFuneralPrayer1" text="\{phrase:ForTheDeceasedAtFuneralPrayer1\}\{reference:Muslim 2/663.\}"></word>
+			<word id="ForTheDeceasedAtFuneralPrayer2" text="\{phrase:ForTheDeceasedAtFuneralPrayer2\}\{reference:Ibn Majah 1/480, Ahmad 2/368. See also Al-Albani, Sahih Ibn Majah 1/251.\}"></word>
+			<word id="ForTheDeceasedAtFuneralPrayer3" text="\{phrase:ForTheDeceasedAtFuneralPrayer3\}\{reference:Ibn Majah, Abu Dawud 3/211. See also Al Albani, Sahih Ibn Majah 1/251.\}"></word>
+			<word id="ForTheDeceasedAtFuneralPrayer4" text="\{phrase:ForTheDeceasedAtFuneralPrayer4\}\{reference:Al-Hakim 1/359 who graded it authentic and Ath-Thahabi agreed with him. See also Al-Albani, Ahkamul-Jana'iz, p. 125.\}"></word>
 		</category>
 		<category title="ForTheAdvancementOfRewardDuringTheFuneralPrayer">
-			<word id="ForTheAdvancementOfRewardDuringTheFuneralPrayer1" text="\{phrase:ForTheAdvancementOfRewardDuringTheFuneralPrayer1\}"></word>
-			<word id="ForTheAdvancementOfRewardDuringTheFuneralPrayer2" text="\{1\}"></word>
+			<word id="ForTheAdvancementOfRewardDuringTheFuneralPrayer1" text="\{phrase:ForTheAdvancementOfRewardDuringTheFuneralPrayer1\}\{reference:Ibn Qudamah, Al-Mughni 3/416 and Ad-Duroosul-Muhimmah li-Aammatil-'Ummah, pg. 15, by Shaikh 'Abdul-'Aziz bin Baz.\}"></word>
+			<word id="ForTheAdvancementOfRewardDuringTheFuneralPrayer2" text="\{1\}\{reference:Al-Bukhari, Kitabul-Jana'iz, p. 65.\}"></word>
 		</category>
 		<category title="Condolence">
-			<word id="Condolence1" text="\{phrase:Condolence1\}"></word>
+			<word id="Condolence1" text="\{phrase:Condolence1\}\{reference:Al-Bukhari 2/80, Muslim 2/636. An-Nawawi, Kitabul-'Athkar, p. 126.\}"></word>
 		</category>
 		<category title="PlacingTheDeceasedInTheGrave">
-			<word id="PlacingTheDeceasedInTheGrave1" text="\{phrase:PlacingTheDeceasedInTheGrave1\}"></word>
+			<word id="PlacingTheDeceasedInTheGrave1" text="\{phrase:PlacingTheDeceasedInTheGrave1\}\{reference:Abu Dawud 3/314 with an authentic chain. Ahmad also recorded it with the wording: With the Name of Allah, and according to the religion of the Messenger of Allah. Its chain is also authentic.\}"></word>
 		</category>
 		<category title="AfterBuryingTheDeceased">
-			<word id="AfterBuryingTheDeceased1" text="\{phrase:AfterBuryingTheDeceased1\}"></word>
+			<word id="AfterBuryingTheDeceased1" text="\{phrase:AfterBuryingTheDeceased1\}\{reference:Abu Dawud 3/315, and Al-Hakim 1/370 who graded it authentic and Ath-Thahabi agreed.\}"></word>
 		</category>
 		<category title="VisitingTheGraves">
-			<word id="VisitingTheGraves1" text="\{phrase:VisitingTheGraves1\}"></word>
+			<word id="VisitingTheGraves1" text="\{phrase:VisitingTheGraves1\}\{reference:Muslim 2/671, Ibn Majah 1/494, the portion brackets is from Muslim 2/671.\}"></word>
 		</category>
 		<category title="PrayerSaidDuringAWindStorm">
-			<word id="PrayerSaidDuringAWindStorm1" text="\{phrase:PrayerSaidDuringAWindStorm1\}"></word>
-			<word id="PrayerSaidDuringAWindStorm2" text="\{phrase:PrayerSaidDuringAWindStorm2\}"></word>
+			<word id="PrayerSaidDuringAWindStorm1" text="\{phrase:PrayerSaidDuringAWindStorm1\}\{reference:Abu Dawud 4/326, Ibn Majah 2/1228. See also Al-Albani, Sahih Ibn Mjjah 2/305.\}"></word>
+			<word id="PrayerSaidDuringAWindStorm2" text="\{phrase:PrayerSaidDuringAWindStorm2\}\{reference:Muslim 2/616, Al-Bukhari 4/76.\}"></word>
 		</category>
 		<category title="UponHearingThunder">
-			<word id="UponHearingThunder1" text="\{phrase:UponHearingThunder1\}"></word>
+			<word id="UponHearingThunder1" text="\{phrase:UponHearingThunder1\}\{reference:Al-Muwatta' 2/992. It was graded authentic by Al-Albani as a statement of Abdullah bin Zubayr only.\}"></word>
 		</category>
 		<category title="ForRain">
-			<word id="ForRain1" text="\{phrase:ForRain1\}"></word>
-			<word id="ForRain2" text="\{phrase:ForRain2\}"></word>
-			<word id="ForRain3" text="\{phrase:ForRain3\}"></word>
+			<word id="ForRain1" text="\{phrase:ForRain1\}\{reference:Abu Dawud 1/303. See also Al-Albani SahihAbu Dawud 1/216.\}"></word>
+			<word id="ForRain2" text="\{phrase:ForRain2\}\{reference:Al-Bukhari 1/224, Muslim 2/613.\}"></word>
+			<word id="ForRain3" text="\{phrase:ForRain3\}\{reference:Abu Dawud 1/305. Al-Albani graded it good in Sahih Abu Dawud 1/218.\}"></word>
 		</category>
 		<category title="WhenItRains">
-			<word id="WhenItRains1" text="\{phrase:WhenItRains1\}"></word>
+			<word id="WhenItRains1" text="\{phrase:WhenItRains1\}\{reference:Al-Bukhari, cf. Al-Asqalani, Fathul-Bari 2/518.\}"></word>
 		</category>
 		<category title="AfterRainfall">
-			<word id="AfterRainfall1" text="\{phrase:AfterRainfall1\}"></word>
+			<word id="AfterRainfall1" text="\{phrase:AfterRainfall1\}\{reference:Al-Bukhari 1/205, Muslim 1/83.\}"></word>
 		</category>
 		<category title="AskingForClearSkies">
-			<word id="AskingForClearSkies1" text="\{phrase:AskingForClearSkies1\}"></word>
+			<word id="AskingForClearSkies1" text="\{phrase:AskingForClearSkies1\}\{reference:Al-Bukhari 1/224, Muslim 1/614.\}"></word>
 		</category>
 		<category title="UponSightingTheCrescentMoon">
-			<word id="UponSightingTheCrescentMoon1" text="\{phrase:UponSightingTheCrescentMoon1\}"></word>
+			<word id="UponSightingTheCrescentMoon1" text="\{phrase:UponSightingTheCrescentMoon1\}\{reference:At-Tirmithi 5/504, Ad-Darimi 1/336. See also Al-Albani, Sahih At-Tirmithi 3/157.\}"></word>
 		</category>
 		<category title="UponBreakingFast">
-			<word id="UponBreakingFast1" text="\{phrase:UponBreakingFast1\}"></word>
-			<word id="UponBreakingFast2" text="\{phrase:UponBreakingFast2\}"></word>
+			<word id="UponBreakingFast1" text="\{phrase:UponBreakingFast1\}\{reference:Abu Dawud 2/306 and others. See also Al- Albani, Sahihul-Jami' As-Saghir 4/209.\}"></word>
+			<word id="UponBreakingFast2" text="\{phrase:UponBreakingFast2\}\{reference:Ibn Majah 1/557 from a supplication of Abdullah bin 'Amr. Al-Hafidh graded it as good in his checking of An-Nawawi's Kitabul-'Athkdr. See Sharhul- Athkar 4/342.\}"></word>
 		</category>
 		<category title="BeforeEating">
-			<word id="BeforeEating1" text="\{phrase:InTheNameOfAllah\}"></word>
-			<word id="BeforeEating2" text="\{phrase:BeforeEating2\}"></word>
-			<word id="BeforeEating3" text="\{phrase:BeforeEating3\}"></word>
-			<word id="BeforeEating4" text="\{phrase:BeforeEating4\}"></word>
+			<word id="BeforeEating1" text="\{phrase:InTheNameOfAllah\}\{reference:Abu Dawud 3/347, At-Tirmithi 4/288. See Al- Albani's Sahih At-Tirmithi 2/167.\}"></word>
+			<word id="BeforeEating2" text="\{phrase:BeforeEating2\}\{reference:\}"></word>
+			<word id="BeforeEating3" text="\{phrase:BeforeEating3\}\{reference:\}"></word>
+			<word id="BeforeEating4" text="\{phrase:BeforeEating4\}\{reference:At-Tirmithi 5/506. See also Al-Albani, Sahih At-Tirmithi 3/158.\}"></word>
 		</category>
 		<category title="UponCompletingTheMeal">
-			<word id="UponCompletingTheMeal1" text="\{phrase:UponCompletingTheMeal1\}"></word>
-			<word id="UponCompletingTheMeal2" text="\{phrase:UponCompletingTheMeal2\}"></word>
+			<word id="UponCompletingTheMeal1" text="\{phrase:UponCompletingTheMeal1\}\{reference:At-Tirmithi, Abu Dawud, and Ibn Majah. See also Al-Albani, Sahih At-Tirmithi 3/159.\}"></word>
+			<word id="UponCompletingTheMeal2" text="\{phrase:UponCompletingTheMeal2\}\{reference:Al-Bukhari 6/214, At-Tirmithi 5/507.\}"></word>
 		</category>
 		<category title="OfTheGuestForTheHost">
-			<word id="OfTheGuestForTheHost1" text="\{phrase:OfTheGuestForTheHost1\}"></word>
+			<word id="OfTheGuestForTheHost1" text="\{phrase:OfTheGuestForTheHost1\}\{reference:Muslim 3/1615.\}"></word>
 		</category>
 		<category title="SaidToOneOfferingADrinkOrTheOneWhoIntendedToDoThat">
-			<word id="SaidToOneOfferingADrinkOrTheOneWhoIntendedToDoThat1" text="\{phrase:SaidToOneOfferingADrinkOrTheOneWhoIntendedToDoThat1\}"></word>
+			<word id="SaidToOneOfferingADrinkOrTheOneWhoIntendedToDoThat1" text="\{phrase:SaidToOneOfferingADrinkOrTheOneWhoIntendedToDoThat1\}\{reference:Muslim 3/126.\}"></word>
 		</category>
 		<category title="WhenBreakingFastInSomeonesHome">
-			<word id="WhenBreakingFastInSomeonesHome1" text="\{phrase:WhenBreakingFastInSomeonesHome1\}"></word>
+			<word id="WhenBreakingFastInSomeonesHome1" text="\{phrase:WhenBreakingFastInSomeonesHome1\}\{reference:Abu Dawud 3/367, Ibn Majah 1/556, An-Nasa'i, 'Amalul-Yawm wal-Laylah 296-8. Al-Albani graded it authentic in Sahih Abu Dawud 2/730.\}"></word>
 		</category>
 		<category title="ByOneFastingWhenPresentedWithFoodAndDoesNotBreakFast">
-			<word id="ByOneFastingWhenPresentedWithFoodAndDoesNotBreakFast1" text=""></word>
+			<word id="ByOneFastingWhenPresentedWithFoodAndDoesNotBreakFast1" text="\{reference:Muslim 2/1054.\}"></word>
 		</category>
 		<category title="WhenInsultedWhileFasting">
-			<word id="WhenInsultedWhileFasting1" text="\{phrase:WhenInsultedWhileFasting1\}"></word>
+			<word id="WhenInsultedWhileFasting1" text="\{phrase:WhenInsultedWhileFasting1\}\{reference:Al-Bukhari, cf. Al-Asqalani, Fathul-Bari 4/103, Muslim 2/806. \}"></word>
 		</category>
 		<category title="UponSeeingEarlyOrPrematureFruit">
-			<word id="UponSeeingEarlyOrPrematureFruit1" text="\{phrase:UponSeeingEarlyOrPrematureFruit1\}"></word>
+			<word id="UponSeeingEarlyOrPrematureFruit1" text="\{phrase:UponSeeingEarlyOrPrematureFruit1\}\{reference:Muslim 2/1000.\}"></word>
 		</category>
 		<category title="UponSneezing">
-			<word id="UponSneezing1" text="\{phrase:UponSneezing1\}"></word>
+			<word id="UponSneezing1" text="\{phrase:UponSneezing1\}\{reference:Al-Bukhari 7/125.\}"></word>
 		</category>
 		<category title="ToADisbelieverWhenSneezes">
-			<word id="ToADisbelieverWhenSneezes1" text="\{phrase:ToADisbelieverWhenSneezes1\}"></word>
+			<word id="ToADisbelieverWhenSneezes1" text="\{phrase:ToADisbelieverWhenSneezes1\}\{reference:At-Tirmithi 5/82, Ahmad 4/400, Abu Dawud 4/308. See also Al-Albani, Sahih At-Tirmithi 2/354.\}"></word>
 		</category>
 		<category title="ToTheNewlyWed">
-			<word id="ToTheNewlyWed1" text="\{phrase:ToTheNewlyWed1\}"></word>
+			<word id="ToTheNewlyWed1" text="\{phrase:ToTheNewlyWed1\}\{reference:Abu Dawud, Ibn Majah and At-Tirmithi. See also Al-Albani, Sahih At-Tirmithi 1/316.\}"></word>
 		</category>
 		<category title="GroomOnWeddingNightOrWhenBuyingAnimal">
-			<word id="GroomOnWeddingNightOrWhenBuyingAnimal1" text="\{phrase:GroomOnWeddingNightOrWhenBuyingAnimal1\}"></word>
+			<word id="GroomOnWeddingNightOrWhenBuyingAnimal1" text="\{phrase:GroomOnWeddingNightOrWhenBuyingAnimal1\}\{reference:Abu Dawud 2/248 and Ibn Majah 1/617. See also Al-Albani, Sahih Ibn Majah 1/324.\}"></word>
 		</category>
 		<category title="BeforeSexualIntercourse">
-			<word id="BeforeSexualIntercourse1" text="\{phrase:BeforeSexualIntercourse1\}"></word>
+			<word id="BeforeSexualIntercourse1" text="\{phrase:BeforeSexualIntercourse1\}\{reference:Al-Bukhari 6/141, Muslim 2/1028.\}"></word>
 		</category>
 		<category title="WhenAngry">
-			<word id="WhenAngry1" text="\{phrase:SeekRefugeWithAllahFromSatanRejected\}"></word>
+			<word id="WhenAngry1" text="\{phrase:SeekRefugeWithAllahFromSatanRejected\}\{reference:Al-Bukhari 7/99, Muslim 4/2015.\}"></word>
 		</category>
 		<category title="UponSeeingSomeoneInTrialOrTribulation">
-			<word id="UponSeeingSomeoneInTrialOrTribulation1" text="\{phrase:UponSeeingSomeoneInTrialOrTribulation1\}"></word>
+			<word id="UponSeeingSomeoneInTrialOrTribulation1" text="\{phrase:UponSeeingSomeoneInTrialOrTribulation1\}\{reference:At-Tirmithi 5/493,4. See also Al-Albani, Sahih At-Tirmithi 3/153.\}"></word>
 		</category>
 		<category title="RemembranceAtSittingOrGathering">
-			<word id="RemembranceAtSittingOrGathering1" text="\{phrase:RemembranceAtSittingOrGathering1\}"></word>
+			<word id="RemembranceAtSittingOrGathering1" text="\{phrase:RemembranceAtSittingOrGathering1\}\{reference:Sahih Ibn Majah 2/321. See also Al-Albani, Sahih At-Tirmithi 3/153.\}"></word>
 		</category>
 		<category title="ForExpiationOfSinsAtTheConclusionOfSittingOrGathering">
-			<word id="ForExpiationOfSinsAtTheConclusionOfSittingOrGathering1Label" text="\{phrase:ForExpiationOfSinsAtTheConclusionOfSittingOrGathering1\}"></word>
-			<word id="ForExpiationOfSinsAtTheConclusionOfSittingOrGathering2Label" text="\{phrase:ForExpiationOfSinsAtTheConclusionOfSittingOrGathering2\}"></word>
+			<word id="ForExpiationOfSinsAtTheConclusionOfSittingOrGathering1Label" text="\{phrase:ForExpiationOfSinsAtTheConclusionOfSittingOrGathering1\}\{reference:Abu Dawud, Ibn Majah, At-Tirmithi and An-Nasa'i. See also Al-Albani, Sahih At-Tirmithi 3/153. Aishah (RA) said: &quot;Allah's Messenger (SAW) did not sit in a gathering, and did not recite the Qur'an, and did not perform any prayer without concluding by saying ... (then she quoted the above).&quot; This was reported by An-Nasa'i in 'Amalul-Yawm wal-Laylah (no.308), and Dr. Farooq Hamadah graded it authentic in his checking of the same book, p. 273. See also Ahmad 6/77.\}"></word>
+			<word id="ForExpiationOfSinsAtTheConclusionOfSittingOrGathering2Label" text="\{phrase:ForExpiationOfSinsAtTheConclusionOfSittingOrGathering2\}\{reference:\}"></word>
 		</category>
 		<category title="ReturningSupplicationForForgiveness">
-			<word id="ReturningSupplicationForForgiveness1" text="\{phrase:ReturningSupplicationForForgiveness1\}"></word>
+			<word id="ReturningSupplicationForForgiveness1" text="\{phrase:ReturningSupplicationForForgiveness1\}\{reference:Ahmad 5/82, and An-Nasa'i in 'Amalul-Yawm wal-Laylah p. 218, with checking by Dr. Farooq Hamadah.\}"></word>
 		</category>
 		<category title="ToOneWhoDoesYouAFavor">
-			<word id="ToOneWhoDoesYouAFavor1" text="\{phrase:ToOneWhoDoesYouAFavor1\}"></word>
+			<word id="ToOneWhoDoesYouAFavor1" text="\{phrase:ToOneWhoDoesYouAFavor1\}\{reference:At-Tirmithi (no. 2035). See also Al-Albani, Sahih At-Tirmithi 2/200 and Sahihul-Jami' (no. 6244).\}"></word>
 		</category>
 		<category title="ProtectionFromTheDajjal">
-			<word id="ProtectionFromTheDajjal1" text="\{18:1-10\}"></word>
+			<word id="ProtectionFromTheDajjal1" text="\{18:1-10\}\{reference:Muslim 1/555, another version mentions the last ten 'Ayat, Muslim 1/556.\}"></word>
 		</category>
 		<category title="ToOneWhoPronouncesLoveForYouForAllahsSake">
-			<word id="ToOneWhoPronouncesLoveForYouForAllahsSake1" text="\{phrase:ToOneWhoPronouncesLoveForYouForAllahsSake1\}"></word>
+			<word id="ToOneWhoPronouncesLoveForYouForAllahsSake1" text="\{phrase:ToOneWhoPronouncesLoveForYouForAllahsSake1\}\{reference:Abu Dawud 4/333. Al-Albani graded it good in Sahih Abu Dawud 3/965.\}"></word>
 		</category>
 		<category title="ToOneWhoHasOfferedYouSomeOfHisWealth">
-			<word id="ToOneWhoHasOfferedYouSomeOfHisWealth1" text="\{phrase:ToOneWhoHasOfferedYouSomeOfHisWealth1\}"></word>
+			<word id="ToOneWhoHasOfferedYouSomeOfHisWealth1" text="\{phrase:ToOneWhoHasOfferedYouSomeOfHisWealth1\}\{reference:Al-Bukhari, cf. Al-Asqalani, Fathul-Bari 4/88.\}"></word>
 		</category>
 		<category title="ToTheDebtorWhenHisDebtIsSettled">
-			<word id="ToTheDebtorWhenHisDebtIsSettled1" text="\{phrase:ToTheDebtorWhenHisDebtIsSettled1\}"></word>
+			<word id="ToTheDebtorWhenHisDebtIsSettled1" text="\{phrase:ToTheDebtorWhenHisDebtIsSettled1\}\{reference:An-Nasa'i, 'Amalul-Yawm wal-Laylahp. 300, Ibn Majah 2/809. See also Al-Albani, Sahih Ibn Majah 2/55.\}"></word>
 		</category>
 		<category title="ForFearOfShirk">
-			<word id="ForFearOfShirk1" text="\{phrase:ForFearOfShirk1\}"></word>
+			<word id="ForFearOfShirk1" text="\{phrase:ForFearOfShirk1\}\{reference:Ahmad 4/403. See also Al-Albani, Sahihul-Jami' As-Saghir 3/233 and Sahihut-Targhib wat-Tarhib 1/19.\}"></word>
 		</category>
 		<category title="WhenSomeoneBlessesYou">
-			<word id="WhenSomeoneBlessesYou1" text="\{phrase:WhenSomeoneBlessesYou1\}"></word>
+			<word id="WhenSomeoneBlessesYou1" text="\{phrase:WhenSomeoneBlessesYou1\}\{reference:Ibn As-Sunni, p. 138, (no. 278). See also Ibn Al-Qayyim, Al-Wdbil As-Sayyib, p. 304, with checking by Basheer Muhammad ‘Uyoon.\}"></word>
 		</category>
 		<category title="WhenMountingAnAnimalOrAnyMeansOfTransport">
-			<word id="WhenMountingAnAnimalOrAnyMeansOfTransport1" text="\{phrase:WhenMountingAnAnimalOrAnyMeansOfTransport1\}"></word>
+			<word id="WhenMountingAnAnimalOrAnyMeansOfTransport1" text="\{phrase:WhenMountingAnAnimalOrAnyMeansOfTransport1\}\{reference:Abu Dawud 3/34, At-Tirmithi 5/501. See also Al-Albani, Sahih At-Tirmithi3/156.\}"></word>
 		</category>
 		<category title="ForTravel">
-			<word id="ForTravel1" text="\{phrase:ForTravel1\}"></word>
+			<word id="ForTravel1" text="\{phrase:ForTravel1\}\{reference:Muslim 2/978.\}"></word>
 		</category>
 		<category title="UponEnteringATownOrVillage">
-			<word id="UponEnteringATownOrVillage1" text="\{phrase:UponEnteringATownOrVillage1\}"></word>
+			<word id="UponEnteringATownOrVillage1" text="\{phrase:UponEnteringATownOrVillage1\}\{reference:Al-Hakim who graded it authentic and Ath-Tfaahabi agreed 2/100, and Ibn As-Sunni (no. 524). Al-Hafidh graded it good in his checking of Al-'Athkdr 5/154. Ibn Baz said in Tuhfatul-'Akhydr p. 37, that An-Nasa'i recorded it with a good chain of narration.\}"></word>
 		</category>
 		<category title="WhenEnteringTheMarket">
-			<word id="WhenEnteringTheMarket1" text="\{phrase:WhenEnteringTheMarket1\}"></word>
+			<word id="WhenEnteringTheMarket1" text="\{phrase:WhenEnteringTheMarket1\}\{reference:At-Tirmithi 5/291, and Al-Hakim 1/538. Al-Albani graded it good in Sahih Ibn Majah 2/21 and Sahih At-Tirmithi 3/152.\}"></word>
 		</category>
 		<category title="WhenTheMountedAnimalOrMeansOfTransportStumbles">
-			<word id="WhenTheMountedAnimalOrMeansOfTransportStumbles1" text="\{phrase:InTheNameOfAllah\}"></word>
+			<word id="WhenTheMountedAnimalOrMeansOfTransportStumbles1" text="\{phrase:InTheNameOfAllah\}\{reference:Abu Dawud 4/296. Al-Albani graded it authentic in Sahih Abu Dawud 3/941.\}"></word>
 		</category>
 		<category title="OfTheTravellerForTheResident">
-			<word id="OfTheTravellerForTheResident1" text="\{phrase:OfTheTravellerForTheResident1\}"></word>
+			<word id="OfTheTravellerForTheResident1" text="\{phrase:OfTheTravellerForTheResident1\}\{reference:Ahmad 2/403, Ibn Majah 2/943. See also Al-Albani, Sahih Ibn Majah 2/133.\}"></word>
 		</category>
 		<category title="OfTheResidentForTheTraveller">
-			<word id="OfTheResidentForTheTraveller1" text="\{phrase:OfTheResidentForTheTraveller1\}"></word>
-			<word id="OfTheResidentForTheTraveller2" text="\{phrase:OfTheResidentForTheTraveller2\}"></word>
+			<word id="OfTheResidentForTheTraveller1" text="\{phrase:OfTheResidentForTheTraveller1\}\{reference:Ahmad 2/7, At-Tirmithi 5/499. See also Al-Albani, Sahih At-Tirmithi 2/155.\}"></word>
+			<word id="OfTheResidentForTheTraveller2" text="\{phrase:OfTheResidentForTheTraveller2\}\{reference:At-Tirmithi. See Al-Albani, Sahih At-Tirmithi, 3/155.\}"></word>
 		</category>
 		<category title="WhileAscendingOrDescending">
-			<word id="WhileAscendingOrDescending1" text="\{phrase:WhileAscendingOrDescending1\}"></word>
+			<word id="WhileAscendingOrDescending1" text="\{phrase:WhileAscendingOrDescending1\}\{reference:Al-Bukhari, cf. Al-Asqalani, Fathul-Bari 6/135.\}"></word>
 		</category>
 		<category title="OfTheTravellerAsDawnApproaches">
-			<word id="OfTheTravellerAsDawnApproaches1" text="\{phrase:OfTheTravellerAsDawnApproaches1\}"></word>
+			<word id="OfTheTravellerAsDawnApproaches1" text="\{phrase:OfTheTravellerAsDawnApproaches1\}\{reference:Muslim 4/2086, the meaning of sami'a saami'un (who listens has heard) is that 'a witness has witnessed our praise of Allah due to His blessings and favor upon us.' It could also be read samma'a saami'un, in which case it means 'one who has heard this statement of mine will convey it to another and he will say it as well.' This is due to the attention given to the Thikr (remembrance of Allah) and supplications made during the early morning hours. The meaning of his saying 'Our Lord, be with us and bestow Your favor upon us' is: 'Our Lord, protect us and guard us. Bless us with Your numerous bounties, and avert from us every evil.' See An-Nawawi, Sharh Sahih Muslim 17/39.\}"></word>
 		</category>
 		<category title="StoppingOrLodgingSomewhere">
-			<word id="StoppingOrLodgingSomewhere1" text="\{phrase:StoppingOrLodgingSomewhere1\}"></word>
+			<word id="StoppingOrLodgingSomewhere1" text="\{phrase:StoppingOrLodgingSomewhere1\}\{reference:Muslim 4/2080.\}"></word>
 		</category>
 		<category title="WhileReturningFromTravel">
-			<word id="WhileReturningFromTravel1" text="\{phrase:WhileReturningFromTravel1\}"></word>
+			<word id="WhileReturningFromTravel1" text="\{phrase:WhileReturningFromTravel1\}\{reference:Bukhari 7/163, Muslim 2/980.\}"></word>
 		</category>
 		<category title="UponReceivingPleasingOrDispleasingNews">
-			<word id="UponReceivingPleasingOrDispleasingNews1" text="\{phrase:UponReceivingPleasingOrDispleasingNews1\}"></word>
+			<word id="UponReceivingPleasingOrDispleasingNews1" text="\{phrase:UponReceivingPleasingOrDispleasingNews1\}\{reference:Ibn As-Sunni, 'Amalul-Yawm wal-Laylah, and Al-Hakim who graded it authentic 1/499. See also Al-Albani, Sahihul-Jami' As-Saghir 4/201.\}"></word>
 		</category>
 		<category title="ExcellenceOfSendingPrayersUponTheProphet">
-			<word id="ExcellenceOfSendingPrayersUponTheProphet1" text=""></word>
-			<word id="ExcellenceOfSendingPrayersUponTheProphet2" text=""></word>
-			<word id="ExcellenceOfSendingPrayersUponTheProphet3" text=""></word>
+			<word id="ExcellenceOfSendingPrayersUponTheProphet1" text="\{reference:Muslim 1/288.\}"></word>
+			<word id="ExcellenceOfSendingPrayersUponTheProphet2" text="\{reference:Abu Dawud 2/218, Ahmad 2/367. Al-Albani graded it authentic in Sahih Abu Dawud 2/383.\}"></word>
+			<word id="ExcellenceOfSendingPrayersUponTheProphet3" text="\{reference:At-Tirmithi 5/551 and others. See also Al-Albani, Sahih At-Tirmithi 3/177 and Sahihul-Jarai' As-Saghir 3/25.\}"></word>
+			<word id="ExcellenceOfSendingPrayersUponTheProphet4" text="\{reference:An-Nasa'i, Al-Hakim 2/421. Al-Albani graded it authentic in Sahih An-Nasa'i 1/274.\}"></word>
+			<word id="ExcellenceOfSendingPrayersUponTheProphet5" text="\{reference:Abu Dawud (no. 2041). Al-Albani graded it good in Sahih Abu Dawud 1/383.\}"></word>
 		</category>
 		<category title="ExcellenceOfSpreadingTheIslamicGreeting">
-			<word id="ExcellenceOfSpreadingTheIslamicGreeting1" text=""></word>
-			<word id="ExcellenceOfSpreadingTheIslamicGreeting2" text=""></word>
-			<word id="ExcellenceOfSpreadingTheIslamicGreeting3" text=""></word>
+			<word id="ExcellenceOfSpreadingTheIslamicGreeting1" text="\{reference:Muslim 1/74 and others.\}"></word>
+			<word id="ExcellenceOfSpreadingTheIslamicGreeting2" text="\{reference:Al-Bukhari, cf. Al-Asqalani, Fathul-Bari 1/82 as a statement of the Companion 'Ammar (RA).\}"></word>
+			<word id="ExcellenceOfSpreadingTheIslamicGreeting3" text="\{reference:Al-Bukhari, cf. Al-Asqalani, Fathul-Bari 1/55, Muslim 1/65.\}"></word>
 		</category>
 		<category title="ReturningAGreetingToADisbeliever">
-			<word id="ReturningAGreetingToADisbeliever1" text="\{phrase:ReturningAGreetingToADisbeliever1\}"></word>
+			<word id="ReturningAGreetingToADisbeliever1" text="\{phrase:ReturningAGreetingToADisbeliever1\}\{reference:Al-Bukhari, cf. Al-Asqalani, Fathul-Bari 11/42, Muslim 4/1705.\}"></word>
 		</category>
 		<category title="UponHearingARoosterCrowOrTheBrayingOfADonkey">
-			<word id="UponHearingARoosterCrowOrTheBrayingOfADonkey1" text=""></word>
+			<word id="UponHearingARoosterCrowOrTheBrayingOfADonkey1" text="\{reference:Al-Bukhari, cf. Al-Asqalani, Fathul-Bari 6/350, Muslim 4/2092.\}"></word>
 		</category>
 		<category title="UponHearingTheBarkingOfDogsAtNight">
-			<word id="UponHearingTheBarkingOfDogsAtNight1" text=""></word>
+			<word id="UponHearingTheBarkingOfDogsAtNight1" text="\{reference:Abu Dawud 4/327, Ahmad 3/306. Al-Albani graded it authentic in Sahih Abu Dawud 3/961.\}"></word>
 		</category>
 		<category title="ForTheOneYouHaveInsulted">
-			<word id="ForTheOneYouHaveInsulted1" text="\{phrase:ForTheOneYouHaveInsulted1\}"></word>
+			<word id="ForTheOneYouHaveInsulted1" text="\{phrase:ForTheOneYouHaveInsulted1\}\{reference:Al-Bukhari, cf. Al-Asqalani, Fathul-Bari 11/171, Muslim 4/2007. The wording in Muslim's report is: 'make it a purification for him and a source of mercy.\}"></word>
 		</category>
 		<category title="TheEtiquetteOfPraisingAFellowMuslim">
-			<word id="TheEtiquetteOfPraisingAFellowMuslim1" text="\{phrase:TheEtiquetteOfPraisingAFellowMuslim1\}"></word>
-			<word id="TheEtiquetteOfPraisingAFellowMuslim2" text="\{phrase:TheEtiquetteOfPraisingAFellowMuslim2\}"></word>
+			<word id="TheEtiquetteOfPraisingAFellowMuslim1" text="\{phrase:TheEtiquetteOfPraisingAFellowMuslim1\}\{reference:Muslim 4/2296.\}"></word>
+			<word id="TheEtiquetteOfPraisingAFellowMuslim2" text="\{phrase:TheEtiquetteOfPraisingAFellowMuslim2\}\{reference:\}"></word>
 		</category>
 		<category title="WhenPraised">
-			<word id="WhenPraised1" text="\{phrase:WhenPraised1\}"></word>
+			<word id="WhenPraised1" text="\{phrase:WhenPraised1\}\{reference:Al-Bukhari, Al-'Adabul-Mufrad no. 761. See Al-Albani, Sahih Al-'Adabul-Mufrad (no. 585). The portion between brackets if from Al-Bayhaqi, Shu'ab Al-Iman 4/228, and comes another account.\}"></word>
 		</category>
 		<category title="TheTalbiyah">
-			<word id="TheTalbiyah1" text="\{phrase:TheTalbiyah1\}"></word>
+			<word id="TheTalbiyah1" text="\{phrase:TheTalbiyah1\}\{reference:Al-Bukhari, cf. Al-Asqalani, Fathul-Bari 3/408, Muslim 2/841.\}"></word>
 		</category>
 		<category title="AtTheBlackStone">
-			<word id="AtTheBlackStone1" text="\{phrase:AllahIsGreatest\}"></word>
+			<word id="AtTheBlackStone1" text="\{phrase:AllahIsGreatest\}\{reference:Al-Bukhari, cf. Al-Asqalani, Fathul-Bari 3/476. See also 472. The 'something' that was referred to in this Hadith was a cane.\}"></word>
 		</category>
 		<category title="BetweenTheYemeniCornerAndTheBlackStoneAtTheKaaba">
-			<word id="BetweenTheYemeniCornerAndTheBlackStoneAtTheKaaba1" text="\{2:201:4-14\}"></word>
+			<word id="BetweenTheYemeniCornerAndTheBlackStoneAtTheKaaba1" text="\{2:201:4-14\}\{reference:Abu Dawud 2/179, Ahmad 3/411, Al-Baghawi, Sharhus-Sunnah 7/128. Al-Albani graded it good in Sahih Abu Dawud 1/354.\}"></word>
 		</category>
 		<category title="WhenAtMountSafaAndMountMarwah">
-			<word id="WhenAtMountSafaAndMountMarwah1" text="\{2:158:1-6\} \{phrase:WhenAtMountSafaAndMountMarwah1\}"></word>
+			<word id="WhenAtMountSafaAndMountMarwah1" text="\{2:158:1-6\} \{phrase:WhenAtMountSafaAndMountMarwah1\}\{reference:Muslim 2/888.\}"></word>
 		</category>
 		<category title="TheDayOfArafah">
-			<word id="TheDayOfArafah1" text="\{phrase:TheDayOfArafah1\}"></word>
+			<word id="TheDayOfArafah1" text="\{phrase:TheDayOfArafah1\}\{reference:At-Tirmithi. Al-Albani graded it good in Sahih At-Tirmithi 3/184, and also Silsilatul-'Ahadith As-Sahihah 4/6.\}"></word>
 		</category>
 		<category title="AtTheSacredSite">
-			<word id="AtTheSacredSite1" text=""></word>
+			<word id="AtTheSacredSite1" text="\{reference:Muslim 2/891.\}"></word>
 		</category>
 		<category title="WhenThrowingEachPebbleAtTheJamaraat">
-			<word id="WhenThrowingEachPebbleAtTheJamaraat1" text="\{phrase:AllahIsGreatest\}"></word>
+			<word id="WhenThrowingEachPebbleAtTheJamaraat1" text="\{phrase:AllahIsGreatest\}\{reference:Al-Bukhari, cf. Al-Asqalani, Fathul-Bari 3/581, 3, 4, and Muslim.\}"></word>
 		</category>
 		<category title="AtTimesOfAmazementAndDelight">
-			<word id="AtTimesOfAmazementAndDelight1" text="\{phrase:GloryBeToAllah\}"></word>
-			<word id="AtTimesOfAmazementAndDelight2" text="\{phrase:AllahIsGreatest\}"></word>
+			<word id="AtTimesOfAmazementAndDelight1" text="\{phrase:GloryBeToAllah\}\{reference:Al-Bukhari, cf. Al-Asqalani, Fathul-Bari 1/210, 390, 414 and Muslim 4/1857.\}"></word>
+			<word id="AtTimesOfAmazementAndDelight2" text="\{phrase:AllahIsGreatest\}\{reference:Al-Bukhari, cf. Al-Asqalani, Fathul-Bari 8/441. See also Al-Albani, Sahih At-Tirmithi 2/103, 235, Ahmad 5/218.\}"></word>
 		</category>
 		<category title="UponReceivingPleasantNews">
-			<word id="UponReceivingPleasantNews1" text=""></word>
+			<word id="UponReceivingPleasantNews1" text="\{reference:Abu Dawud, Ibn Majah, At-Tirmithi. See also Al-Albani, Sahih Ibn Majah 1/233, and 'Irwa'ul-Ghalil 2/226.\}"></word>
 		</category>
 		<category title="WhenFeelingSomePainInTheBody">
-			<word id="WhenFeelingSomePainInTheBody1" text="\{phrase:WhenFeelingSomePainInTheBody1\} (sabaEFA mar~aAtFA)"></word>
+			<word id="WhenFeelingSomePainInTheBody1" text="\{phrase:WhenFeelingSomePainInTheBody1\} (sabaEFA mar~aAtFA)\{reference:Muslim 4/1728.\}"></word>
 		</category>
 		<category title="WhenInFearOfAfflictingSomethingOrSomeoneWithOnesEye">
-			<word id="WhenInFearOfAfflictingSomethingOrSomeoneWithOnesEye1" text="\{phrase:WhenInFearOfAfflictingSomethingOrSomeoneWithOnesEye1\}"></word>
-			<word id="WhenInFearOfAfflictingSomethingOrSomeoneWithOnesEye2" text=""></word>
+			<word id="WhenInFearOfAfflictingSomethingOrSomeoneWithOnesEye1" text="\{phrase:WhenInFearOfAfflictingSomethingOrSomeoneWithOnesEye1\}\{reference:\}"></word>
+			<word id="WhenInFearOfAfflictingSomethingOrSomeoneWithOnesEye2" text="\{reference:Ahmad 4/447, Ibn Majah, Malik. Al-Albani graded it authentic in Sahihul-Jami' As-Saghir 1/212. Also see Al-Arna'ut's checking of Ibn Al-Qayyim's Zadul-Ma'ad 4/170.\}"></word>
 		</category>
 		<category title="WhenStartled">
-			<word id="WhenStartled1" text="\{phrase:CreedOfIslamFirstPart\}"></word>
+			<word id="WhenStartled1" text="\{phrase:CreedOfIslamFirstPart\}\{reference:Al-Bukhari, cf. Al-Asqalani, Fathul-Bari 6/181, Muslim 4/2208.\}"></word>
  		</category>
 		<category title="WhenSlaughteringOrOfferingASacrifice">
-			<word id="WhenSlaughteringOrOfferingASacrifice1" text="\{phrase:WhenSlaughteringOrOfferingASacrifice1\}"></word>
+			<word id="WhenSlaughteringOrOfferingASacrifice1" text="\{phrase:WhenSlaughteringOrOfferingASacrifice1\}\{reference:Muslim 3/1557, Al-Bayhaqi 9/287.\}"></word>
 		</category>
 		<category title="ToWardOffTheDeceptionOfTheObstinateDevils">
-			<word id="ToWardOffTheDeceptionOfTheObstinateDevils1" text="\{phrase:ToWardOffTheDeceptionOfTheObstinateDevils1\}"></word>
+			<word id="ToWardOffTheDeceptionOfTheObstinateDevils1" text="\{phrase:ToWardOffTheDeceptionOfTheObstinateDevils1\}\{reference:Ahmad 3/419, with an authentic chain of narration, and Ibn As-Sunni (no. 637). Al-Arna'ut, graded its chain authentic in his checking of Al-'Aqidah At-Tahawiyyah p. 133. See also Majma'uz-Zawa'id, 10/127.\}"></word>
 		</category>
 		<category title="SeekingForgivenessAndRepentance">
-			<word id="SeekingForgivenessAndRepentance1Label" text=""></word>
-			<word id="SeekingForgivenessAndRepentance2Label" text=""></word>
-			<word id="SeekingForgivenessAndRepentance3Label" text="\{phrase:SeekingForgivenessAndRepentance3\}"></word>
-			<word id="SeekingForgivenessAndRepentance4Label" text=""></word>
-			<word id="SeekingForgivenessAndRepentance5Label" text=""></word>
-			<word id="SeekingForgivenessAndRepentance6Label" text=""></word>
+			<word id="SeekingForgivenessAndRepentance1Label" text="\{reference:Al-Bukhari, cf. Al-Asqalani, Fathul-Bari 11/101.\}"></word>
+			<word id="SeekingForgivenessAndRepentance2Label" text="\{reference:Muslim 4/2076.\}"></word>
+			<word id="SeekingForgivenessAndRepentance3Label" text="\{phrase:SeekingForgivenessAndRepentance3\}\{reference:Abu Dawud 2/85, At-Tirmithi 5/569, and Al-Hakim who declared it authentic and Ath-Thahabi agreed with him 1/511. Al-Albani graded it authentic in Sahih At-Tirmithi 3/182. See also Jami'ul-'Usool li-'Ahdaith Ar-Rasool 4/389-90 checked by Al-Arna'ut.\}"></word>
+			<word id="SeekingForgivenessAndRepentance4Label" text="\{reference:At-Tirmithi, An-Nasa'i 1/279 and Al-Hakim. See also Al-Albani, Sahih At-Tirmithi 3/183, and Jdmi'ul-'Usool with Al-Arna'ut's checking 4/144.\}"></word>
+			<word id="SeekingForgivenessAndRepentance5Label" text="\{reference:Muslim 1/350.\}"></word>
+			<word id="SeekingForgivenessAndRepentance6Label" text="\{reference:Muslim 4/2075. Ibn 'Athir explains that the Prophet (SAW) was always vigilant in his remembrance and drawing near to Allah, and if he forgot to do any of what he normally did from time to time, or it slipped his mind, he felt as if he had wronged himself and so he would begin to seek the forgiveness of Allah. See Jami'ul-'Usool 4/386.\}"></word>
 		</category>
 		<category title="ExcellenceOfRemembranceAndGlorificationOfAllah">
-			<word id="ExcellenceOfRemembranceAndGlorificationOfAllah1" text="\{phrase:ExcellenceOfRemembranceAndGlorificationOfAllah1\} (miA}apu mir~apu)"></word>
-			<word id="ExcellenceOfRemembranceAndGlorificationOfAllah2" text="\{phrase:ExcellenceOfRemembranceAndGlorificationOfAllah2\} (miA}apu mir~apu fiY {loyawomi)"></word>
-			<word id="ExcellenceOfRemembranceAndGlorificationOfAllah3" text="\{phrase:ExcellenceOfRemembranceAndGlorificationOfAllah2\} (HiynN yaSabiHu waHiynN yumasiy)"></word>
-			<word id="ExcellenceOfRemembranceAndGlorificationOfAllah4" text="\{phrase:ExcellenceOfRemembranceAndGlorificationOfAllah1\}"></word>
-			<word id="ExcellenceOfRemembranceAndGlorificationOfAllah5" text="\{phrase:ExcellenceOfRemembranceAndGlorificationOfAllah2\} \{phrase:ExcellenceOfRemembranceAndGlorificationOfAllah5\}"></word>
-			<word id="ExcellenceOfRemembranceAndGlorificationOfAllah6" text="\{phrase:ExcellenceOfRemembranceAndGlorificationOfAllah6\}"></word>
-			<word id="ExcellenceOfRemembranceAndGlorificationOfAllah7" text="\{phrase:GloryBeToAllah\}"></word>
-			<word id="ExcellenceOfRemembranceAndGlorificationOfAllah8" text="\{phrase:ExcellenceOfRemembranceAndGlorificationOfAllah8\}"></word>
-			<word id="ExcellenceOfRemembranceAndGlorificationOfAllah9" text="\{phrase:ExcellenceOfRemembranceAndGlorificationOfAllah9\}"></word>
-			<word id="ExcellenceOfRemembranceAndGlorificationOfAllah10" text="\{phrase:ExcellenceOfRemembranceAndGlorificationOfAllah10\}"></word>
-			<word id="ExcellenceOfRemembranceAndGlorificationOfAllah11" text="\{phrase:ExcellenceOfRemembranceAndGlorificationOfAllah11\}"></word>
-			<word id="ExcellenceOfRemembranceAndGlorificationOfAllah12" text="\{phrase:ExcellenceOfRemembranceAndGlorificationOfAllah12\}"></word>
-			<word id="ExcellenceOfRemembranceAndGlorificationOfAllah13" text="\{phrase:ExcellenceOfRemembranceAndGlorificationOfAllah13\}"></word>
-			<word id="ExcellenceOfRemembranceAndGlorificationOfAllah14" text="\{phrase:ExcellenceOfRemembranceAndGlorificationOfAllah14\}"></word>
+			<word id="ExcellenceOfRemembranceAndGlorificationOfAllah1" text="\{phrase:ExcellenceOfRemembranceAndGlorificationOfAllah1\} (miA}apu mir~apu)\{reference:Al-Bukhari 7/67, Muslim 4/2071.\}"></word>
+			<word id="ExcellenceOfRemembranceAndGlorificationOfAllah2" text="\{phrase:ExcellenceOfRemembranceAndGlorificationOfAllah2\} (miA}apu mir~apu fiY {loyawomi)\{reference:Al-Bukhari 7/168, Muslim 4/2071.\}"></word>
+			<word id="ExcellenceOfRemembranceAndGlorificationOfAllah3" text="\{phrase:ExcellenceOfRemembranceAndGlorificationOfAllah2\} (HiynN yaSabiHu waHiynN yumasiy)\{reference:\}"></word>
+			<word id="ExcellenceOfRemembranceAndGlorificationOfAllah4" text="\{phrase:ExcellenceOfRemembranceAndGlorificationOfAllah1\}\{reference:\}"></word>
+			<word id="ExcellenceOfRemembranceAndGlorificationOfAllah5" text="\{phrase:ExcellenceOfRemembranceAndGlorificationOfAllah2\} \{phrase:ExcellenceOfRemembranceAndGlorificationOfAllah5\}\{reference:Al-Bukhari 7/168, Muslim 4/2072.\}"></word>
+			<word id="ExcellenceOfRemembranceAndGlorificationOfAllah6" text="\{phrase:ExcellenceOfRemembranceAndGlorificationOfAllah6\}\{reference:Muslim 4/2072.\}"></word>
+			<word id="ExcellenceOfRemembranceAndGlorificationOfAllah7" text="\{phrase:GloryBeToAllah\}\{reference:Muslim 4/2073.\}"></word>
+			<word id="ExcellenceOfRemembranceAndGlorificationOfAllah8" text="\{phrase:ExcellenceOfRemembranceAndGlorificationOfAllah8\}\{reference:At-Tirmithi 5/511, and Al-Hakim who graded it authentic and Ath-Thahabi agreed 1/501. See also Al-Albani, Sahihul-Jami' As-Saghir 5/531 and Sahih At-Tirmithi 3/160.\}"></word>
+			<word id="ExcellenceOfRemembranceAndGlorificationOfAllah9" text="\{phrase:ExcellenceOfRemembranceAndGlorificationOfAllah9\}\{reference:Al-Bukhari, cf. Al-Asqalani, Fathul-Bari 11/213, Muslim 4/2076.\}"></word>
+			<word id="ExcellenceOfRemembranceAndGlorificationOfAllah10" text="\{phrase:ExcellenceOfRemembranceAndGlorificationOfAllah10\}\{reference:Muslim 3/1685.\}"></word>
+			<word id="ExcellenceOfRemembranceAndGlorificationOfAllah11" text="\{phrase:ExcellenceOfRemembranceAndGlorificationOfAllah11\}\{reference:Muslim 4/2072, Abu Dawud reports the same Hadith with the addition: and when the Arab left, the Prophet (SAW) said: &quot;He has filled his hands with goodness.&quot; 1/220.\}"></word>
+			<word id="ExcellenceOfRemembranceAndGlorificationOfAllah12" text="\{phrase:ExcellenceOfRemembranceAndGlorificationOfAllah12\}\{reference:Muslim 4/2073, and in one of Muslim's reports there is the addition: 'For these words combine [the goodness of] this world and the next.'\}"></word>
+			<word id="ExcellenceOfRemembranceAndGlorificationOfAllah13" text="\{phrase:ExcellenceOfRemembranceAndGlorificationOfAllah13\}\{reference:At-Tirmithi 5/462, Ibn Majah 2/1249, and Al-Hakim who graded it authentic and Ath-Tbahabi agreed 1/503. See Al-Albani, Sahihul-Jami' As-Saghir 1/362.\}"></word>
+			<word id="ExcellenceOfRemembranceAndGlorificationOfAllah14" text="\{phrase:ExcellenceOfRemembranceAndGlorificationOfAllah14\}\{reference:Ahmad (no. 513) (Ahmad Shakir, ed.) and its chain of narration is authentic. See Majma'uz-Zawa'id 1/297. Ibn Hajar mentions it in Bulughul-Maram saying that Ibn Hibban and Al-Hakim considered it authentic.\}"></word>
 		</category>
 		<category title="ForConcludingAllSittings">
 			<word id="ForConcludingAllSittings1" text="\{phrase:ForConcludingAllSittings1\}"></word>

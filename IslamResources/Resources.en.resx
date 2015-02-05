@@ -29409,6 +29409,9 @@
   <data name="IslamSource_DocumentBuilder" xml:space="preserve">
     <value>Document Builder</value>
   </data>
+  <data name="IslamSource_HelpReference" xml:space="preserve">
+    <value>HelpReference</value>
+  </data>
   <data name="IslamSource_DownloadMapping" xml:space="preserve">
     <value>Download and Mapping</value>
   </data>
