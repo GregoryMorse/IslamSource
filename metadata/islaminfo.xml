@@ -368,6 +368,7 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<transform text="faEaAliylu" id="BrokenPluralPattern17"></transform>
 		</transforms>
 		<particles>
+			<!-- Helper Kasra search: [^~]i\t.*\t(?!PREFIX).*POS\:(?!N|V|PRON|ADJ|PN|DEM|REL|LOC) -->
 			<particle text="kal~aA" id="NeverCertainlyNot" grammar="resp"></particle>
 			<particle text="lano" id="NotFutureWillNever" grammar="resp,acc"></particle>
 			<particle text="lamo" id="NotPastDidNot" grammar="resp,prespos"></particle>
@@ -503,6 +504,7 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<particle text="li" id="SoThat" grammar="particle,acc"></particle>
 			<particle text="kaYo likaYo" id="ThatSoThat" grammar="particle,acc"></particle>
 			<particle text="li&gt;ano" id="ForThat" grammar="particle,acc"></particle>
+			<particle text="la}ino" id="While" grammar="particle"></particle>
 
 			<particle text="li lo" id="Should" grammar="particle,prespos"></particle>
 			<particle text="laA" id="Negation" grammar="particle,prespos"></particle>
@@ -1023,7 +1025,7 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<noun text="&lt;isotigofaArN" id="AskForgiveness"></noun>
 			<noun text="tafosiyrN" id="Commentary"></noun>
 			<noun text="mufas~irN" id="Commentator"></noun>
-			<noun text="qiraA^&apos;aAtN" id="Recitations"></noun>
+			<noun text="qiraA^&apos;apN" id="ReadingRecitation"></noun>
 			<noun text="mujaw~adN" id="MelodicRecitation"></noun>
 			<noun text="murat~alN" id="SlowPracticeRecitation"></noun>
 			<noun text="tarotiylN" id="SlowMeasuredRhythmicTones"></noun>
@@ -1379,7 +1381,6 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<noun text="faqiyhN" plural="fuqahaA&apos;N" id="JurisprudenceExpert"></noun>
 			<noun text="muEal~aqaAtN" id="TheHangingPoems"></noun>
 			<noun text="juwaAribN" id="Socks"></noun>
-			<noun text="qiraA^&apos;apN" id="Reading"></noun>
 			<noun text="$ahadapN" id="Testimony"></noun>
 			<noun text="sutorapN" plural="sutarN" id="GuardCovering"></noun>
 			<noun text="xamaArN" id="WineMerchant"></noun>
@@ -1630,6 +1631,12 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<noun text="mafotuwHN" id="LongFatha"></noun>
 			<noun text="naAqiSN" id="Incomplete"></noun>
 			<noun text="waqofN" id="Stopping"></noun>
+			<noun text="&gt;abotadaA&apos;N" id="Starting"></noun>
+			<noun text="qaToEN" id="CutOff"></noun>
+			<noun text="sakotN" id="BreathlessStop"></noun>
+			<noun text="muqaTuwEN" id="Joined"></noun>
+			<noun text="muwSuwlN" id="Separated"></noun>
+			<noun text="laHonN" id="Mistake"></noun>
 			<noun text="sukuwnN" id="Sukoon"></noun>
 			<noun text="hamozapN" id="GlottalStop"></noun>
 			<noun text="taTowiylN" id="Tatweel"></noun>
@@ -1638,6 +1645,7 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<noun text="kasorapN" id="Kasra"></noun>
 			<noun text="ta$odiydN" id="Repetition"></noun>
 			<noun text="$ad~apN" id="Shadda"></noun>
+			<noun text="mad~N" plural="maduwdN" id="Lengthening"></noun>
 			<noun text="mad~apN" id="MaddahAbove"></noun>
 			<noun text="&lt;imaAlapN" id="Imaala"></noun>
 			<noun text="faArizapN" id="Comma"></noun>
@@ -1763,6 +1771,7 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<verb text="Hay~a" poss="" id="ComeUntilMaintain"></verb>
 			<verb text="{noHaro" id="SlaughterSacrifice"></verb>
 			<verb text="xumora" id="Ferment"></verb>
+			<verb text="{T~ilaAEa" id="Looking"></verb>
 
 			<verb text="Eaqada" id="ConsolidationAffirmationHoldingTogether"></verb>
 			<verb text="waH~ada" id="UniteUnifyConsolidate"></verb>
@@ -1988,30 +1997,33 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 		<word text="{loqaloqalapu SugoraY" id="SmallBounce"></word>
 		<word text="{loqaloqalapu mutawasiTa" id="ModerateBounce"></word>
 		<word text="{loqaloqalapu kuboraY" id="GreatBounce"></word>
+		<word text="&apos;aAliyapN {loqaloqalapi" id="BouncingMechanism"></word>
 		<word text="HarofN gun~apN mu$ad~adapN" id="NasalizeCharacterDoubled"></word>
 		<word text="nuwnN saAkinapN &lt;iZohaArN HaloqiY" id="VowellessNoonClear"></word>
 		<word text="nuwnN saAkinapN &lt;iqolaAbN" id="VowellessNoonCovered"></word>
 		<word text="nuwnN saAkinapN &lt;idogaAmN gun~apN" id="VowellessNoonAssimilatingNasalization"></word>
 		<word text="nuwnN saAkinapN &lt;idogaAmN" id="VowellessNoonAssimilating"></word>
-		<word text="nuwnN saAkinapN &lt;ixofaA^&apos;N HaqiyqiY tafoxiym" id="VowellessNoonHideHeaviness"></word>
-		<word text="nuwnN saAkinapN &lt;ixofaA^&apos;N HaqiyqiY taroqiyq" id="VowellessNoonHideLightness"></word>
+		<word text="nuwnN saAkinapN &lt;ixofaA^&apos;N HaqiyqiY tafoxiymN" id="VowellessNoonHideHeaviness"></word>
+		<word text="nuwnN saAkinapN &lt;ixofaA^&apos;N HaqiyqiY taroqiyqN" id="VowellessNoonHideLightness"></word>
 		<word text="HarofN mu$ad~adapN" id="CharacterDoubled"></word>
 		<word text="miymN saAkinapN &lt;ixofaA^&apos;N $afawiy" id="VowellessMeemHide"></word>
 		<word text="miymN saAkinapN &lt;idogaAmN mutamaAviliyna SagiyrN" id="VowellessMeemAssimilatingSmallIdentical"></word>
 		<word text="miymN saAkinapN &lt;iZohaArN $afawiy" id="VowellessMeemClear"></word>
-		<word text="miymN saAkinapN &lt;iZohaArN &gt;a$ad~ $afawiy" id="VowellessMeemClearGreater"></word>
+		<word text="miymN saAkinapN &lt;iZohaArN &gt;a$ad~N $afawiy" id="VowellessMeemClearGreater"></word>
 		<word text="hamozapu {lowaSoli" id="EmptyHamza"></word>
 		<word text="la&apos;aAmu {lofaEoli" id="LaamVerb"></word>
 		<word text="la&apos;aAmu {loHarofi" id="LaamParticle"></word>
 		<word text="&lt;idogaAmu {ll~a&apos;aAmi $~amosiy~a" id="AssimilateLaamSunLetter"></word>
 		<word text="&lt;iZohaAru {ll~a&apos;aAmi qamariy~a" id="ClearLaamMoonLetter"></word>
+		<word text="la&apos;aAmN saAkinapN" id="VowellessLaam"></word>
+		<word text="la&apos;aAmN tafoxiymN" id="LaamHeaviness"></word>
 		<word text="la&apos;aAmN tafoxiymN" id="LaamHeaviness"></word>
 		<word text="la&apos;aAmN taroqiyqN" id="LaamLightness"></word>
 		<word text="raA^&apos;N tafoxiymN" id="RaaHeaviness"></word>
 		<word text="raA^&apos;N taroqiyqN" id="RaaLightness"></word>
-		<word text="&lt;idogaAmu {lomutamavilaAni {lS~agiyri" id="AssimilateSmallIdentical"></word>
-		<word text="&lt;idogaAmu {lomutamavilaAni {lokabiyri" id="AssimilateGreatIdentical"></word>
-		<word text="{lomutamavilaAnu {lomuTolaqu" id="AbsoluteIdentical"></word>
+		<word text="&lt;idogaAmu {lomutamaAvilaAni {lS~agiyri" id="AssimilateSmallIdentical"></word>
+		<word text="&lt;idogaAmu {lomutamaAvilaAni {lokabiyri" id="AssimilateGreatIdentical"></word>
+		<word text="{lomutamaAvilaAnu {lomuTolaqu" id="AbsoluteIdentical"></word>
 		<word text="&lt;idogaAmu {lomutajaAnisaAni {lS~agiyri" id="AssimilateSmallSimilar"></word>
 		<word text="{lomutajaAnisaAnu {lokabiyru" id="GreatSimilar"></word>
 		<word text="{lomutajaAnisaAnu {lomuTolaqu" id="AbsoluteSimilar"></word>
@@ -2019,7 +2031,7 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 		<word text="{lomutaqaAribaAnu {lokabiyru" id="GreatProximate"></word>
 		<word text="{lomutaqaAribaAnu {lomuTolaqu" id="AbsoluteProximate"></word>
 		<word text="{lomutabaAEidaAnu" id="Distanced"></word>
-		<word text="mad~N TabiyEiy" id="OriginalLengthening"></word>
+		<word text="mad~N TabiyEiy wamaA taloHaq bihi" id="OriginalLengthening"></word>
 		<word text="mad~N vaAbitN waqofN" id="SteadyLengtheningStop"></word>
 		<word text="mad~N mutaSilN waAjibN" id="ConnectedLengtheningEssential"></word>
 		<word text="mad~N liynN" id="SoftLengthening"></word>
@@ -2035,6 +2047,7 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 		<word text="mad~N EiwaAdN" id="SubstituteLengthening"></word>
 		<word text="mad~u {lofaroqi" id="DistinctionLengthening"></word>
 		<word text="mad~N tamokiyna" id="StablizationLengthening"></word>
+		<word text="mad~N masobabiyna" id="LengtheningWithTwoCauses"></word>
 		<word text="siynN waAjibN" id="SeenRequired"></word>
 		<word text="siynN ma$ohuwrN" id="SeenNoted"></word>
 		<word text="&gt;alifN xanjariyapN" id="SuperscriptAlefDaggerAlif"></word>
@@ -2049,9 +2062,22 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 		<word text="tanowiynN Dam~apN" id="Dammatan"></word>
 		<word text="tanowiynN kasorapN" id="Kasratan"></word>
 		<word text="&gt;alifN hamozapN waSolN" id="AlefWasla"></word>
+		<word text="{loSiforu {lomusotadiyru" id="TheRoundZero"></word>
+		<word text="{loSiforu {lomusotaTiylu {loqaA^}imu" id="TheStandingOblongZero"></word>
+		<word text="&gt;aHokaAmohaA {lomutamaAvilayoni" id="RelationshipInLikeness"></word>
+		<word text="&gt;aHokaAmohaA {lomutajaAnisayoni" id="RelationshipInCloseness"></word>
+		<word text="&gt;aHokaAmohaA {lomutaqaAribayoni" id="RelationshipInSameTypes"></word>
+		<word text="&gt;aHokaAmohaA {lomutabaAEidayoni" id="RelationshipInDifferentTypes"></word>
+		<word text="&gt;aHokaAm hamozapu {lowaSoli" id="RulesForEmptyHamza"></word>
+		<word text="{lowaqofu EalaY &gt;awaAxiri {lokalami" id="TheStopOnEndsOfWords"></word>
+		<word text="{lr~asom fiY haA&apos;K {lt~a&gt;uniyvi" id="TheWritingOfTheFemaleHa"></word>
+		<word text="{lokalamaAtu {loxaSuwSapi {loHafoSi" id="WordsSpecificallyForTheHafsRecitation"></word>
 		<word text="nuwnN gun~apN" id="NoonGhunna"></word>
 		<word text="yaA^&apos;N bar~iYN" id="YehBarree"></word>
 		<word text="yaA^&apos;N bar~iYN hamozapN" id="YehBarreeWithHamzaAbove"></word>
+		<word text="kiyfiyapu HaduwvN {loHaruwfi" id="FormationsOfDifferentlyVoweledLetters"></word>
+		<word text="SifaAtu {loHuruwfi" id="LetterCharacteristics"></word>
+		<word text="sujuwdN {lot~ilaAwapi" id="ProstrationsOfReading"></word>
 		<word text="tufiydu bi&gt;an~a {lowaSola &gt;awolaY maEa jawaAzK {lowaqufi" id="MeaningOfSmallHighLigatureSadWithLamWithAlefMaksura"></word>
 		<word text="tafiydu bi&gt;an~a {lowaqufa &gt;awolaY" id="MeaningOfSmallHighLigatureQafWithLamWithAlefMaksura"></word>
 		<word text="tufiydu lazuwma {lowaqufi" id="MeaningOfSmallHighMeemInitialForm"></word>
@@ -2079,10 +2105,10 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 		<word text="nutoTataAnN mutaEaAmidataAnN" id="Colon"></word>
 		<word text="yamiynN biynN qawosiynu" id="LeftSquareBracket"></word>
 		<word text="yasaArN biynN qawosiynu" id="RightSquareBracket"></word>
-		<word text="yamiynN qawisN {lomajomuwaEohu" id="LeftCurlyBracket"></word>
-		<word text="yasaArN qawisN {lomajomuwaEohu" id="RightCurlyBracket"></word>
-		<word text="yamiynN EalaAmapN {lt~anSiySu" id="LeftPointingDoubleAngleQuotationMark"></word>
-		<word text="yasaArN EalaAmapN {lt~anSiySu" id="RightPointingDoubleAngleQuotationMark"></word>
+		<word text="yamiynN qawisN {lomajomuwaEohi" id="LeftCurlyBracket"></word>
+		<word text="yasaArN qawisN {lomajomuwaEohi" id="RightCurlyBracket"></word>
+		<word text="yamiynu EalaAmapN {lt~anSiySi" id="LeftPointingDoubleAngleQuotationMark"></word>
+		<word text="yasaAru EalaAmapN {lt~anSiySi" id="RightPointingDoubleAngleQuotationMark"></word>
 		<word text="faAsilapN manquwTapN" id="Semicolon"></word>
 		<word text="Ealamapu &lt;isotifohaAmN" id="QuestionMark"></word>
 		<word text="yamiynN {loqawosaAnu" id="OrnateLeftParenthesis"></word>
@@ -3550,10 +3576,10 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<word text="\{phrase:\}" id="PropheticBiography"></word>
 		</category>
 		<category title="QuranicExegesis">
-			<word text="\{word:QuranReadingRecitation,Commentary,Recitations,Companions,Follower,PerfectedCompletelyFormed,ConsistentSimilarMutuallyResemblingOneAnother,Advancement,Delay,Abrogating,Abrogated,OppressionWrongdoing,AssociatingPartners,DiscourseSpeechTransmissionOfInformation,GovernorshipSainthood,Imam,Jurisprudence,SchoolOfJurisprudence,BlindFollowing,OnenessOfGod,Law,Reinterpretation,Explain,Interpret,Implement,BowOfPrayer,Prostrating,Prayer,Rationalists,PoorDueCharityAlmsGiving,Fasting,Pilgrimage,Tradition,Authentic,Good,Trace,Disbeliever,Disbelief,NarrationsFromJewishAndChristianSources,Salafi,Touch,DustAblution,Mystic,Shia,QadianSect,Commentator,Inspiration,UnveilingIllumination,BlueBlearyEyed,RingSeal,StarConfiguration,CallToIslam,Biography,Worship,Month9,Unlawful,Specification,Concensus,StateOfRitualConsecrationForPilgrimage,ReasonedDecision,Medina,Abraham,Moses,Ashura,CredibleReport,Emmigration,Ablution,AnalogicalDeduction,VoluntaryKindness,DistinctionCriterion,Community,ClearCut,DoubtfulMatters,ChapterFromQuran,SoulSpirit,ObviousApparent,Hidden,OldMan,SimileProverbMetaphor,Oath,Debate,NarrativeTaleStory,Kaaba,Noah,Aaron,Jesus,Muhammad,Ali,Saul,Goliath,Adam,Korah,Mary,Party,NightJourney,General,Specific,LimitingExpression,AllEveryEach,TradeBusinessTransactions,Usury,Thief,VulgarWord,Obscenity,Argument,One,HeWho,DirtInEarsOrUnderFingernailsSighUff,WhoTheOneWho,WhatThatWhich,Wherever,Whichever,MinorPilgrimage,FirstParticlePossessionConstruction,MatterAffair,BoySonChild,Mother,MenPeople,Quraish,Exception,ThoseWhoMasculine,Modification,SheWho,ConditionSign,StepDaughter,If,ClausesOfTime,Until,WaitingPeriod,Absolute,Qualified,PoorPerson,Fine,ReasonBreakingAnOathTakenInAllahsName,IslamicRuling,ReligiousDonationExpiation,Hand,SwearingOffOnesWife,Stated,ImpliedUnderstoodMeaning,Explicit,Explained,Necessity,GestureSignIndicatorTrafficSignalAllusionHintIntimationSuggestion,Complete,WillfulDisobedienceIgnorant,MajorAblution,BecomePure,Garden,CallToBeginThePrayer,Zaahiree,MajorImpurity,ReligionLawJudgment\}\{phrase:QuranicSciences,FundamentalPrinciplesOfQuranicInterpretation,LegalMethodologyFundamentalPrinciplesOfIslamicLaw,UthmanicScript,MiraculousAspectsOfTheQuran,ReasonsForRevelation,AbrogatingAndAbrogatedVerses,QuranicGrammar,TheEverLiving,IndefiniteInNegativeOrProhibitiveConstruction,Allah,DivorcedWomen,DoctrineTheologyPrincipleOfBelief,RighteousDealings,TheAllSeeing,TheAllHearer,Hasan,Hussein,ThePossessorOfTwoHorns,UnusualQuranicTerms,QuranicMetaphor,IslamicDisciplines,HadithSciences,StudentsOfFollowers,MysticCommentary,OnenessOfLordshipDominion,OnenessOfDivinity,ThePeopleOfTraditionAndTheGroup,NarrationBasedExegesis,FamiliarOpinionBasedExegesis,OpinionBasedExegesis,RelatedNarrationBasedExegesis,SacredMosque,EssenceOfTheBook,TheMatterHasBeenDecreed,StatedSimile,HiddenMetaphor,FormlessMetaphor,ISwearByAllah1,ISwearByAllah2,ISwearByAllah3,ISwearByAllah4,LaamOfEmphasis,AlOfDefiniteness,SubordinatorsBeginningConditionalClauses,GenericNounInPossessiveConstructionWithDefiniteNounOrPronoun,SubstitutionOfPartForTheWhole,IndicationOfMeaningByNecessarySupposition,IndicationOfMeaningBySuggestion,AndBreaksFast,RuleInImpliedMeaningAgreesWithStatedMeaning,RuleInImpliedMeaningIsContrapositiveToStatedMeaning,ObviousAnalogy\}\{75:17-19,16:44,6:82,31:13,98:1,1:7,25:33,110:3,7:52-53,3:7,48:10,15:9,86:1-3,5:1,5:3,6:103,75:23,83:15,16:44,16:64,8:60,108:1,75:19,24:31,5:44,4:43,79:17,27:10,2:260,55:19,55:22,33:40,4:157-158,94:4,20:102,49:13,17:36\}\{21:25,21:23,16:101,2:106,2:184,2:185,4:15,24:2,2:180,2:144,2:240,2:234,58:12-13,2:183,2:187,2:144\}\{41:3,50:1,17:85,32:11,11:1,39:23,3:7,42:11\}\{2:17-20,13:17,25:67,17:110,2:260,2:216,55:60,5:100,2:249,59:14,2:264,2:261,49:12,39:27,3:186,91:1-2,64:7,4:65,75:1-3,18:54,16:125,29:46,21:22,75:36-40,30:27,22:62,5:48,35:31,28:3,12:111\}\{3:185,39:62,2:275,5:38,2:197,18:49,46:17,2:158,2:197,2:150,24:63,4:11,4:176,4:23,3:173,3:97,5:33-34,4:23,2:180,2:196,2:222,3:97,2:228,65:4,33:49,2:275,16:80,5:89,4:92,6:145,2:173,5:6,58:3,5:38,2:196,2:173,2:222,17:24,5:6,2:184,2:187,17:23,4:10,49:6,24:4,5:95,4:23,23:117\}\{9:31,2:62,4:150-151;W4W\}" id="QuranicExegesis1"></word>
+			<word text="\{word:QuranReadingRecitation,Commentary,ReadingRecitation,Companions,Follower,PerfectedCompletelyFormed,ConsistentSimilarMutuallyResemblingOneAnother,Advancement,Delay,Abrogating,Abrogated,OppressionWrongdoing,AssociatingPartners,DiscourseSpeechTransmissionOfInformation,GovernorshipSainthood,Imam,Jurisprudence,SchoolOfJurisprudence,BlindFollowing,OnenessOfGod,Law,Reinterpretation,Explain,Interpret,Implement,BowOfPrayer,Prostrating,Prayer,Rationalists,PoorDueCharityAlmsGiving,Fasting,Pilgrimage,Tradition,Authentic,Good,Trace,Disbeliever,Disbelief,NarrationsFromJewishAndChristianSources,Salafi,Touch,DustAblution,Mystic,Shia,QadianSect,Commentator,Inspiration,UnveilingIllumination,BlueBlearyEyed,RingSeal,StarConfiguration,CallToIslam,Biography,Worship,Month9,Unlawful,Specification,Concensus,StateOfRitualConsecrationForPilgrimage,ReasonedDecision,Medina,Abraham,Moses,Ashura,CredibleReport,Emmigration,Ablution,AnalogicalDeduction,VoluntaryKindness,DistinctionCriterion,Community,ClearCut,DoubtfulMatters,ChapterFromQuran,SoulSpirit,ObviousApparent,Hidden,OldMan,SimileProverbMetaphor,Oath,Debate,NarrativeTaleStory,Kaaba,Noah,Aaron,Jesus,Muhammad,Ali,Saul,Goliath,Adam,Korah,Mary,Party,NightJourney,General,Specific,LimitingExpression,AllEveryEach,TradeBusinessTransactions,Usury,Thief,VulgarWord,Obscenity,Argument,One,HeWho,DirtInEarsOrUnderFingernailsSighUff,WhoTheOneWho,WhatThatWhich,Wherever,Whichever,MinorPilgrimage,FirstParticlePossessionConstruction,MatterAffair,BoySonChild,Mother,MenPeople,Quraish,Exception,ThoseWhoMasculine,Modification,SheWho,ConditionSign,StepDaughter,If,ClausesOfTime,Until,WaitingPeriod,Absolute,Qualified,PoorPerson,Fine,ReasonBreakingAnOathTakenInAllahsName,IslamicRuling,ReligiousDonationExpiation,Hand,SwearingOffOnesWife,Stated,ImpliedUnderstoodMeaning,Explicit,Explained,Necessity,GestureSignIndicatorTrafficSignalAllusionHintIntimationSuggestion,Complete,WillfulDisobedienceIgnorant,MajorAblution,BecomePure,Garden,CallToBeginThePrayer,Zaahiree,MajorImpurity,ReligionLawJudgment\}\{phrase:QuranicSciences,FundamentalPrinciplesOfQuranicInterpretation,LegalMethodologyFundamentalPrinciplesOfIslamicLaw,UthmanicScript,MiraculousAspectsOfTheQuran,ReasonsForRevelation,AbrogatingAndAbrogatedVerses,QuranicGrammar,TheEverLiving,IndefiniteInNegativeOrProhibitiveConstruction,Allah,DivorcedWomen,DoctrineTheologyPrincipleOfBelief,RighteousDealings,TheAllSeeing,TheAllHearer,Hasan,Hussein,ThePossessorOfTwoHorns,UnusualQuranicTerms,QuranicMetaphor,IslamicDisciplines,HadithSciences,StudentsOfFollowers,MysticCommentary,OnenessOfLordshipDominion,OnenessOfDivinity,ThePeopleOfTraditionAndTheGroup,NarrationBasedExegesis,FamiliarOpinionBasedExegesis,OpinionBasedExegesis,RelatedNarrationBasedExegesis,SacredMosque,EssenceOfTheBook,TheMatterHasBeenDecreed,StatedSimile,HiddenMetaphor,FormlessMetaphor,ISwearByAllah1,ISwearByAllah2,ISwearByAllah3,ISwearByAllah4,LaamOfEmphasis,AlOfDefiniteness,SubordinatorsBeginningConditionalClauses,GenericNounInPossessiveConstructionWithDefiniteNounOrPronoun,SubstitutionOfPartForTheWhole,IndicationOfMeaningByNecessarySupposition,IndicationOfMeaningBySuggestion,AndBreaksFast,RuleInImpliedMeaningAgreesWithStatedMeaning,RuleInImpliedMeaningIsContrapositiveToStatedMeaning,ObviousAnalogy\}\{75:17-19,16:44,6:82,31:13,98:1,1:7,25:33,110:3,7:52-53,3:7,48:10,15:9,86:1-3,5:1,5:3,6:103,75:23,83:15,16:44,16:64,8:60,108:1,75:19,24:31,5:44,4:43,79:17,27:10,2:260,55:19,55:22,33:40,4:157-158,94:4,20:102,49:13,17:36\}\{21:25,21:23,16:101,2:106,2:184,2:185,4:15,24:2,2:180,2:144,2:240,2:234,58:12-13,2:183,2:187,2:144\}\{41:3,50:1,17:85,32:11,11:1,39:23,3:7,42:11\}\{2:17-20,13:17,25:67,17:110,2:260,2:216,55:60,5:100,2:249,59:14,2:264,2:261,49:12,39:27,3:186,91:1-2,64:7,4:65,75:1-3,18:54,16:125,29:46,21:22,75:36-40,30:27,22:62,5:48,35:31,28:3,12:111\}\{3:185,39:62,2:275,5:38,2:197,18:49,46:17,2:158,2:197,2:150,24:63,4:11,4:176,4:23,3:173,3:97,5:33-34,4:23,2:180,2:196,2:222,3:97,2:228,65:4,33:49,2:275,16:80,5:89,4:92,6:145,2:173,5:6,58:3,5:38,2:196,2:173,2:222,17:24,5:6,2:184,2:187,17:23,4:10,49:6,24:4,5:95,4:23,23:117\}\{9:31,2:62,4:150-151;W4W\}" id="QuranicExegesis1"></word>
 			<word text="\{word:Incontrovertible,Conjecture,Sweep,Broom,Trash,LairOfWildAnimal,AnimalHidesInLair,GrammarSyntax,EtymologyMorphologyWordPatterns,InconsistencyDifferencesDisagreement,ReasonedDecision,CreatureFourLeggedHorseRidingAnimal,CreateOutOfNothing,ProcessOfCredibleReporting,CredibleReport,War,Between,GiveAndTakeSeasawStruggle,RenderingIncapablePowerless,Miracle,TurningAway,Poem,ArabicPoetryMeterMovementSilentMovementSilentMovementMovementSilent,SeaLargeRiver,RhymingProse\}\{phrase:BitterObnoxiousThornyPlant,FoulNourishmentPusDischarge,HorribleTreeOfHell,GeneralAndSpecific\}\{4:82,39:5:6-13,7:54:15-19,81:17,51:47,55:19-20,86:12,81:15-16,12:54:1-4,12:76:16-26,30:2-30:4:3,48:27,15:9,3:190,4:11-12,4:176,37:145-146,68:49,21:87:14,21:88,44:38,38:27:1-7,88:6-7,69:25,69:35-37,44:43-47,15:43-44,2:47-48,2:122-123,2:254,6:51,2:255,10:3,19:85-87,20:109,46:24-25,23:14,39:62,5:110:29-40,37:95-96,37:125,43:9,6:76-79,6:83:1-6,4:164:12,7:143:1-11,2:238,3:130,17:88,11:13,2:23,74:11-25;W4W\}" id="QuranicExegesis2"></word>
 			<word text="\{word:Heaviness,Lightness,Imaala,ParticleEdgeAspectDialect,Lie,MetonymyMetaphor,Makkah,Medina,Kufa,Basra,Baghdad\}\{phrase:PausingHamza,UbayyBinKab,AliBinAbiTalib,ZaydBinThaabit,AbdullahBinMasood,AbooDarda,AbooMoosaaAlAsharee,AbuAmrBinAlAlaa,IbnKatheer,Naafi,IbnAamir,Aasim,Hamza,AlKisaaee,AbuJafar,Yaqoob,Khalaf,Sham\}\{22:11:1-20,37:174:3-4,17:17:13-14,2:3:5-5,2:227:3-3,23:8,34:19:1-5,85:15,92:3,50:19:1-4,2:259:55-59,20:9,9:100:14-19,18:79:11,9:111:17-22,5:6:8-17,62:9:1-13,101:5,76:20,1:4:1-1,12:110:5-7,14:46:7-12;W4W\}" id="QuranicExegesis3"></word>
-			<word text="\{word:Commentary,Commentator,ReasonedDecision,WordsActionsApprovalDescriptionAttributedToCompanionOfProphet,WhatThatWhich,DoubtfulMatters,ApparentMeaningNotIntended,SoulSpirit,Disbelief,OppressionWrongdoing,Interpretation,Declension,RhetoricNonLiteralUsageOfWords,Permissible,Forbidden,TransmitionChainWithOnlyOneNarratorAtOneStage,Derivation,EtymologyMorphologyWordPatterns,GrammarSyntax,World,Protector,Ruling,JurisprudenceExpert,Recitations\}\{phrase:AbrogatingAndAbrogatedVerses,ReasonsForRevelation,DisjointedLetters,SourcesOfAwareness\}\{10:57-58,65:1:1-7,5:6:1-14,34:3:15-34,4:25:1-50,32:20,5:47,49:7,41:17:1-7,4:175,7:149,7:146:1-9,54:17,35:1:1-5,5:6:15-17,3:7,7:52:1-53:4,4:59,110:1:1-3:4,6:82,31:13:7,75:17-19,1:2,26:23-24,6:103:1-6,75:22-23,83:15,16:64:1-10,8:60:1-6,24:31:1-14,5:44:36,2:255:47-50,2:102:1-36;W4W\}" id="QuranicExegesis4"></word>
+			<word text="\{word:Commentary,Commentator,ReasonedDecision,WordsActionsApprovalDescriptionAttributedToCompanionOfProphet,WhatThatWhich,DoubtfulMatters,ApparentMeaningNotIntended,SoulSpirit,Disbelief,OppressionWrongdoing,Interpretation,Declension,RhetoricNonLiteralUsageOfWords,Permissible,Forbidden,TransmitionChainWithOnlyOneNarratorAtOneStage,Derivation,EtymologyMorphologyWordPatterns,GrammarSyntax,World,Protector,Ruling,JurisprudenceExpert,ReadingRecitation\}\{phrase:AbrogatingAndAbrogatedVerses,ReasonsForRevelation,DisjointedLetters,SourcesOfAwareness\}\{10:57-58,65:1:1-7,5:6:1-14,34:3:15-34,4:25:1-50,32:20,5:47,49:7,41:17:1-7,4:175,7:149,7:146:1-9,54:17,35:1:1-5,5:6:15-17,3:7,7:52:1-53:4,4:59,110:1:1-3:4,6:82,31:13:7,75:17-19,1:2,26:23-24,6:103:1-6,75:22-23,83:15,16:64:1-10,8:60:1-6,24:31:1-14,5:44:36,2:255:47-50,2:102:1-36;W4W\}" id="QuranicExegesis4"></word>
 		</category>
 		<category title="Abbreviations">
 			<word text="\{AS\}\{AimaaS\}\{AaaS\}\{AimS\}\{AinnaS\}\{SAWAWS\}\{SAWS\}\{ASW\}\{AWAWW\}\{RA\}\{RAunna\}\{RAumaa\}\{RAu\}\{RAaa\}\{RAT\}\{RATunna\}\{RATumaa\}\{RATu\}\{RATaa\}\{RAA\}\{RAAinna\}\{RAAimaa\}\{RAAi\}\{RAAaa\}\{R\}\{Runna\}\{Rumaa\}\{Ru\}\{Raa\}\{JK\}\{JKunna\}\{JKumaa\}\{JKa\}\{JKi\}\{JKK\}\{JKKunna\}\{JKKumaa\}\{JKKa\}\{JKKi\}\{BF\}\{BFunna\}\{BFumaa\}\{BFa\}\{BFi\}\{HZ\}\{HZunna\}\{HZumaa\}\{HZu\}\{HZaA\}\{ST\}\{STunna\}\{STumaa\}\{STu\}\{STaA\}\{DB\}\{DBunna\}\{DBumaa\}\{DBu\}\{DBaA\}\{H\}\{Hunna\}\{Humaa\}\{Ha\}\{Hi\}\{AAum\}\{ShSum\}\{ASa\}\{SWT\}\{AWJ\}\{JJ\}\{JWA\}" id="AfterNames"></word>
