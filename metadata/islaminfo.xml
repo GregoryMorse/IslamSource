@@ -383,7 +383,7 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<particle text="gayoru" id="NotOtherThan" grammar="except"></particle>
 
 			<particle text="maA" id="WhatThatWhich" grammar="intg,prespos"></particle>
-			<particle text="man" id="WhoTheOneWho" grammar="intg,prespos"></particle>
+			<particle text="mano" id="WhoTheOneWho" grammar="intg,prespos"></particle>
 			<particle text="mataY" id="WhenTheTimeWhen" grammar="intg,prespos"></particle>
 			<particle text="&gt;ayona" id="Where" grammar="intg,prespos"></particle>
 			<particle text="kayofa" id="How" grammar="intg"></particle>
@@ -399,7 +399,7 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 
 			<particle text="fawoqa" id="AboveUp" grammar="loc,pos"></particle>
 			<particle text="taHota" id="Under" grammar="loc,pos"></particle>
-			<particle text="bayona &gt;ayadiy bayona yadayo" id="InFrontOf" grammar="loc"></particle>
+			<particle text="bayona &gt;ayadiy bayona yadaYo" id="InFrontOf" grammar="loc"></particle>
 			<particle text="xalofa" id="BackAfter" grammar="loc,pos"></particle>
 			<particle text="&gt;amaAma" id="InFrontOfBefore" grammar="loc,pos"></particle>
 			<particle text="waraA^&apos;N" id="Behind" grammar="loc,pos"></particle>
@@ -413,7 +413,7 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<particle text="qabola" id="Before" grammar="time,pos"></particle>
 			<particle text="baEoda" id="After" grammar="time"></particle>
 			<particle text="HiynN HiynFA" id="TimePeriodAtTheTimeOfForAPeriodOfTime" grammar="time,pos"></particle>
-			<particle text="&lt;i*" id="WhenForPast" grammar="time"></particle>
+			<particle text="&lt;i*o" id="WhenForPast" grammar="time"></particle>
 			<particle text="&lt;i*aA^ &lt;i*FA" id="WhenForFutureTherefore" grammar="time,acc"></particle>
 			<particle text="vum~a" id="Then" grammar="time"></particle>
 			<particle text="fa" id="ThenThusTherefore" grammar="time"></particle>
@@ -470,22 +470,22 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<particle text="la fEl n~a" id="WillSurely" grammar="particle"></particle>
 			<particle text="laqado fEl" id="Indeed" grammar="particle"></particle>
 			<particle text="la" id="IndeedSurely" grammar="particle"></particle>
-			<particle text="li lo &gt;amoro" id="LetDo" grammar="particle"></particle>
+			<particle text="li lo &gt;amorN" id="LetDo" grammar="particle"></particle>
 			<particle text="{lo" id="The" grammar="particle"></particle>
 			<particle text="&gt;amo" id="OrInterogative" grammar="particle,intg"></particle>
 			<particle text="&gt;awo" id="Or" grammar="particle"></particle>
-			<particle text="baEoDo" id="SomeOfAfter" grammar="particle,pos"></particle>
+			<particle text="baEoDN" id="SomeOfAfter" grammar="particle,pos"></particle>
 			<particle text="kul~u kilaA" id="EveryoneAll" grammar="particle"></particle>
 
 			<particle text="&gt;uwoluwaA^ &gt;uwoliy" id="PeopleOfOwnersOf" grammar="particle"></particle>
 			<particle text="&gt;aholN &gt;ahaAlK" id="PeopleOfRelatives" grammar="particle"></particle>
-			<particle text="&apos;aAl" id="FamilyRelativesPeople" grammar="particle"></particle>
+			<particle text="&apos;aAlu" id="FamilyRelativesPeople" grammar="particle"></particle>
 			<particle text="&gt;alaA" id="LoDoNotWillNot" grammar="particle"></particle>
 			<particle text="niEoma" id="WhatAnExcellent" grammar="particle"></particle>
 			<particle text="bi}sa" id="WhatAnEvil" grammar="particle"></particle>
 			<particle text="bi}samaA" id="EvilIsThatWhich" grammar="particle"></particle>
-			<particle text="mivol" id="SomethingSimilar" grammar="particle"></particle>
-			<particle text="maval &gt;amovaAl" id="Similitude" grammar="particle"></particle>
+			<particle text="mivolu" id="SomethingSimilar" grammar="particle"></particle>
+			<particle text="mavalN &gt;amovaAlN" id="Similitude" grammar="particle"></particle>
 			<particle text="mim~ano" basis="mino mano" id="ThanTheOneWhoFromThoseWho" grammar="particle"></particle>
 
 			<particle text="gayoru min duwna" id="OtherThan" grammar="particle,pos"></particle>
@@ -501,7 +501,7 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<particle text="&gt;abadFA" id="Always" grammar="particle,pos"></particle>
 
 			<particle text="li" id="SoThat" grammar="particle,acc"></particle>
-			<particle text="kayo likayo" id="ThatSoThat" grammar="particle,acc"></particle>
+			<particle text="kaYo likaYo" id="ThatSoThat" grammar="particle,acc"></particle>
 			<particle text="li&gt;ano" id="ForThat" grammar="particle,acc"></particle>
 
 			<particle text="li lo" id="Should" grammar="particle,prespos"></particle>
@@ -2960,8 +2960,8 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 		<word text="waHodahu laA $ariyka lahu wa&gt;a$ohadu &gt;an~a muHam~adFA Eaboduhu warasuwluhu" id="SecondCreed"></word>
 		<word text="suboHa`nu lil~ahu wa{loHamodu lil~ahi walaA^ &lt;ilaha &lt;il~aA {ll~ahu wa{ll~ahu &gt;akobaru walaA Hawola walaA quw~apa &lt;il~aA bi{ll~ahi {loEaliY~i {loEaZiymi" id="ThirdCreed"></word>
 		<word text="laA^ &lt;ilaha &lt;il~aA {ll~ahu waHodahu laA $ariyka lahu\, lahu {lomuloku walahu {loHamodu yuHoY wayumiytu wahuwa HaY~u l~aA yamuwotu &gt;abadFA &gt;abadFA *uw {lojalaAli wa{loAikoraAmi biyadihi {loxayoru wahuwa EalaY kul~i $a}KA qadiyrN" id="FourthCreed"></word>
-		<word text="&gt;asotagofiru {ll~aha rab~iY min kul~i *anobK &gt;a*onabotuhu EamadFA &gt;awo xaTFA sir~FA &gt;awo EalaAniyapF wa&gt;atuwobu &lt;ilayohi min {l*~anobi {l~a*iYo &gt;aEolamu wamin {l*~anobi {l~a*iYo laA^ &gt;aEolamu &lt;in~aka &gt;anta Eal~aAmu {loguyubi wasat~aAru {loEuyuwobi wagaf~aAru {l*~unuwobi walaA Hawola walaA quw~apa &lt;il~aA bi{ll~ahi {loEaliY~i {loEaZiym" id="FifthCreed"></word>
-		<word text="{ll~ahum~a &lt;in~iY^ &gt;aEuw*u bika mino &gt;ano &gt;u$orika $a}FA wa&gt;anaA^ &gt;aEolamu bihi wa&gt;asotagofiruka limaA laA^ &gt;aEolamu bihi tubotu Eanohu watabar~aAtu mina {lokufori wa{l$~aroki wa{loki*obi wa{logiybapi wa{lobidoEapi wa{ln~amiymapi wa{lofawaAHi$i wa{lobuhotaAni wa{lomaEaASiYo kul~ihaA wa&gt;asolamotu wa&gt;aquwolu laA^ &lt;ilaha &lt;il~aA {ll~ahu muHam~adu r~asuwolu {ll~ahi" id="SixthCreed"></word>
+		<word text="&gt;asotagofiru {ll~aha rab~iY min kul~i *anobK &gt;a*onabotuhu EamadFA &gt;awo xaTFA sir~FA &gt;awo EalaAniyapF wa&gt;atuwobu &lt;ilayohi min {l*~anobi {l~a*iY &gt;aEolamu wamin {l*~anobi {l~a*iY laA^ &gt;aEolamu &lt;in~aka &gt;anta Eal~aAmu {loguyubi wasat~aAru {loEuyuwobi wagaf~aAru {l*~unuwobi walaA Hawola walaA quw~apa &lt;il~aA bi{ll~ahi {loEaliY~i {loEaZiym" id="FifthCreed"></word>
+		<word text="{ll~ahum~a &lt;in~iY^ &gt;aEuw*u bika mino &gt;ano &gt;u$orika $a}FA wa&gt;anaA^ &gt;aEolamu bihi wa&gt;asotagofiruka limaA laA^ &gt;aEolamu bihi tubotu Eanohu watabar~aAtu mina {lokufori wa{l$~aroki wa{loki*obi wa{logiybapi wa{lobidoEapi wa{ln~amiymapi wa{lofawaAHi$i wa{lobuhotaAni wa{lomaEaASiY kul~ihaA wa&gt;asolamotu wa&gt;aquwolu laA^ &lt;ilaha &lt;il~aA {ll~ahu muHam~adu r~asuwolu {ll~ahi" id="SixthCreed"></word>
 		<word text="&gt;asotawodiEuka {ll~aha diynaka wa&gt;amaA nataka waxawaAtima Eamalika\." id="BeforeTravel"></word>
 		<word text="nawayotu {lofusola lils~afari sun~apF lil~ahi taEaAlaY`" id="IntentionForJourneyShower"></word>
 		<word text="nawayotu {lofusola sun~apa {lo&lt;iHoraAmi lil~ahi taEaAlaY`" id="IntentionForIhramShower"></word>
