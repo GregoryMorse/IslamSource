@@ -305,14 +305,16 @@ Public Class Arabic
         Return RomanString.ToString()
     End Function
     Structure RuleMetadata
-        Sub New(NewIndex As Integer, NewLength As Integer, NewType As String)
+        Sub New(NewIndex As Integer, NewLength As Integer, NewType As String, NewOrigOrder As Integer)
             Index = NewIndex
             Length = NewLength
             Type = NewType
+            OrigOrder = NewOrigOrder
         End Sub
         Public Index As Integer
         Public Length As Integer
         Public Type As String
+        Public OrigOrder As Integer
         Public Children As RuleMetadata()
     End Structure
     Public Shared SimpleTrailingAlef As String = ArabicData.ArabicLetterAlef + ArabicData.ArabicSmallHighRoundedZero
@@ -390,7 +392,11 @@ Public Class Arabic
         Implements Collections.Generic.IComparer(Of RuleMetadata)
         Public Function Compare(x As RuleMetadata, y As RuleMetadata) As Integer Implements Generic.IComparer(Of RuleMetadata).Compare
             If x.Index = y.Index Then
-                Return y.Length.CompareTo(x.Length)
+                If x.Length = y.Length Then
+                    Return y.OrigOrder.CompareTo(x.OrigOrder)
+                Else
+                    Return y.Length.CompareTo(x.Length)
+                End If
             Else
                 Return y.Index.CompareTo(x.Index)
             End If
@@ -407,7 +413,7 @@ Public Class Arabic
                 For MatchIndex As Integer = 0 To Matches.Count - 1
                     For SubCount As Integer = 0 To CachedData.RulesOfRecitationRegEx(Count).Evaluator.Length - 1
                         If Not CachedData.RulesOfRecitationRegEx(Count).Evaluator(SubCount) Is Nothing Then
-                            MetadataList.Add(New RuleMetadata(Matches(MatchIndex).Groups(SubCount + 1).Index, Matches(MatchIndex).Groups(SubCount + 1).Length, CachedData.RulesOfRecitationRegEx(Count).Evaluator(SubCount)))
+                            MetadataList.Add(New RuleMetadata(Matches(MatchIndex).Groups(SubCount + 1).Index, Matches(MatchIndex).Groups(SubCount + 1).Length, CachedData.RulesOfRecitationRegEx(Count).Evaluator(SubCount), SubCount))
                         End If
                     Next
                 Next
@@ -540,7 +546,7 @@ Public Class Arabic
                         Str = String.Empty
                         For Index As Integer = 0 To Args.Length - 1
                             If Not Args(Index) Is Nothing Then
-                                Str += ReplaceMetadata(Args(Index), New RuleMetadata(0, Args(Index).Length, MetaArgs(Index).Replace(" "c, "|"c)), Scheme, LearningMode)
+                                Str += ReplaceMetadata(Args(Index), New RuleMetadata(0, Args(Index).Length, MetaArgs(Index).Replace(" "c, "|"c), Index), Scheme, LearningMode)
                             End If
                         Next
                     End If
@@ -604,7 +610,7 @@ Public Class Arabic
                     If SubCount <> CachedData.RulesOfRecitationRegEx(Count).Evaluator.Length Then Continue For
                     For SubCount = 0 To CachedData.RulesOfRecitationRegEx(Count).Evaluator.Length - 1
                         If Not CachedData.RulesOfRecitationRegEx(Count).Evaluator(SubCount) Is Nothing And (Matches(MatchIndex).Groups(SubCount + 1).Length <> 0 Or Array.IndexOf(AllowZeroLength, CachedData.RulesOfRecitationRegEx(Count).Evaluator(SubCount)) <> -1) Then
-                            MetadataList.Add(New RuleMetadata(Matches(MatchIndex).Groups(SubCount + 1).Index, Matches(MatchIndex).Groups(SubCount + 1).Length, CachedData.RulesOfRecitationRegEx(Count).Evaluator(SubCount)))
+                            MetadataList.Add(New RuleMetadata(Matches(MatchIndex).Groups(SubCount + 1).Index, Matches(MatchIndex).Groups(SubCount + 1).Length, CachedData.RulesOfRecitationRegEx(Count).Evaluator(SubCount), SubCount))
                         End If
                     Next
                 Next
