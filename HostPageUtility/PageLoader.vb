@@ -2705,18 +2705,69 @@ Public Class RenderArray
             Writer.DirectContent.Stroke()
             Writer.DirectContent.RestoreState()
             Dim ct As iTextSharp.text.pdf.ColumnText = New iTextSharp.text.pdf.ColumnText(Writer.DirectContent)
-            'ct.RunDirection = iTextSharp.text.pdf.PdfWriter.RUN_DIRECTION_RTL
-            'ct.ArabicOptions = iTextSharp.text.pdf.ColumnText.AR_COMPOSEDTASHKEEL
-            'ct.UseAscender = False
-            ct.RunDirection = iTextSharp.text.pdf.PdfWriter.RUN_DIRECTION_LTR
-            Dim FixedFont As New iTextSharp.text.Font(Font)
+            Dim PriorHeight As Single = 0
             Dim s As SizeF
             Dim BaseLine As Single
+            If Not bReverse Then
+                Dim Str As String = CStr(CType(CType(CurRenderArray(0).TextItems(0).Text, Array())(Count + 3), Object())(0))
+                Dim CharPosInfos() As CharPosInfo = {}
+                Dim FixedFont As New iTextSharp.text.Font(Font)
+                FixedFont.Size = FitText(Str, Rect.Width - 4, Font.Size, True, DrawFont, Forms)
+                Dim useFont As New Font(DrawFont.FontFamily, FixedFont.Size, DrawFont.Style)
+                GetTextWidthDraw(useFont, Forms, Str, String.Empty, Rect.Width, True, s, BaseLine)
+                GetWordDiacriticPositionsDWrite(Str, useFont, Forms, True, Nothing, CharPosInfos)
+                For Index As Integer = 0 To CharPosInfos.Length - 1
+                    ct = New iTextSharp.text.pdf.ColumnText(Writer.DirectContent)
+                    ct.RunDirection = iTextSharp.text.pdf.PdfWriter.RUN_DIRECTION_RTL
+                    ct.ArabicOptions = iTextSharp.text.pdf.ColumnText.AR_COMPOSEDTASHKEEL
+                    ct.UseAscender = False
+                    If GetWordDiacriticPositionsDWrite(ArabicData.ConvertLigatures(Str.Substring(CharPosInfos(Index).Index, CharPosInfos(Index).Length), False, Forms)(0), useFont, Forms, True, Nothing, Nothing).Width <> 0 Then
+                        ct.SetSimpleColumn(Rect.Left + Doc.LeftMargin + Rect.Width - 4 + 2 - CharPosInfos(Index).PriorWidth - CharPosInfos(Index).Width - CharPosInfos(Index).X, Doc.PageSize.Height - Doc.TopMargin - Rect.Bottom - BaseLine + CharPosInfos(Index).Y - 2, Rect.Right - 2 + Doc.LeftMargin - CharPosInfos(Index).PriorWidth - CharPosInfos(Index).X, Doc.PageSize.Height - Doc.TopMargin - Rect.Top + 1 - BaseLine + CharPosInfos(Index).Y - 2, CSng(FontFace.Metrics.LineGap * FixedFont.Size / FontFace.Metrics.DesignUnitsPerEm), iTextSharp.text.Element.ALIGN_RIGHT Or iTextSharp.text.Element.ALIGN_BASELINE)
+                        If CharPosInfos(Index).Length = 1 AndAlso System.Text.RegularExpressions.Regex.Match(Str(CharPosInfos(Index).Index), "[\p{IsArabic}\p{IsArabicPresentationForms-A}\p{IsArabicPresentationForms-B}]").Success And Char.GetUnicodeCategory(Str(CharPosInfos(Index).Index)) = Globalization.UnicodeCategory.DecimalDigitNumber Then
+                            'using scaling to emulate the glyph substitutions on end of ayah marker combinations
+                            Dim NewFont As New iTextSharp.text.Font(FixedFont)
+                            NewFont.Size = NewFont.Size * GetWordDiacriticPositionsDWrite(ArabicData.ConvertLigatures(Str.Substring(CharPosInfos(Index).Index, CharPosInfos(Index).Length), False, Forms)(0), useFont, Forms, True, Nothing, Nothing).Height / CharPosInfos(Index).Height
+                            Dim Chunk As New iTextSharp.text.Chunk(Str.Substring(CharPosInfos(Index).Index, CharPosInfos(Index).Length), NewFont)
+                            Dim useNewFont As New Font(DrawFont.FontFamily, NewFont.Size, DrawFont.Style)
+                            Chunk.SetHorizontalScaling(CharPosInfos(Index).Width / GetWordDiacriticPositionsDWrite(ArabicData.ConvertLigatures(Str.Substring(CharPosInfos(Index).Index, CharPosInfos(Index).Length), False, Forms)(0), useNewFont, Forms, True, Nothing, Nothing).Width)
+                            useNewFont.Dispose()
+                            ct.AddText(Chunk)
+                        Else
+                            If Str(CharPosInfos(Index).Index) = " "c Then
+                                ct.AddText(New iTextSharp.text.Chunk(Str.Substring(CharPosInfos(Index).Index + 1, CharPosInfos(Index).Length - 1), FixedFont))
+                            Else
+                                ct.AddText(New iTextSharp.text.Chunk(Str.Substring(CharPosInfos(Index).Index, CharPosInfos(Index).Length), FixedFont))
+                            End If
+                        End If
+                        ct.Go()
+                    End If
+                Next
+                For Index As Integer = CharPosInfos.Length - 1 To 0 Step -1
+                    If Str(CharPosInfos(Index).Index) = " "c Then
+                        Str = Str.Remove(CharPosInfos(Index).Index + 1, CharPosInfos(Index).Length - 1)
+                    Else
+                        Str = Str.Remove(CharPosInfos(Index).Index, CharPosInfos(Index).Length)
+                    End If
+                Next
+                ct.RunDirection = iTextSharp.text.pdf.PdfWriter.RUN_DIRECTION_RTL
+                ct.ArabicOptions = iTextSharp.text.pdf.ColumnText.AR_COMPOSEDTASHKEEL
+                ct.UseAscender = False
+                ct.SetSimpleColumn(Rect.Left + Doc.LeftMargin + 2, Doc.PageSize.Height - Doc.TopMargin - Rect.Bottom - BaseLine - 2 - PriorHeight, Rect.Right - 2 + Doc.LeftMargin, Doc.PageSize.Height - Doc.TopMargin - Rect.Top + 1 - BaseLine - 2 - PriorHeight, CSng(FontFace.Metrics.LineGap * FixedFont.Size / FontFace.Metrics.DesignUnitsPerEm), If(ct.RunDirection = iTextSharp.text.pdf.PdfWriter.RUN_DIRECTION_LTR, iTextSharp.text.Element.ALIGN_RIGHT, iTextSharp.text.Element.ALIGN_RIGHT) Or iTextSharp.text.Element.ALIGN_BASELINE)
+                PriorHeight += s.Height
+                ct.AddText(New iTextSharp.text.Chunk(Str, FixedFont))
+                ct.Go()
+                useFont.Dispose()
+            End If
+            ct.RunDirection = iTextSharp.text.pdf.PdfWriter.RUN_DIRECTION_LTR
             Dim Strs As String() = If(bReverse, CStr(CType(CType(CurRenderArray(0).TextItems(0).Text, Array())(Count + 3), Object())(2)), CStr(CType(CType(CurRenderArray(0).TextItems(0).Text, Array())(Count + 3), Object())(1)) + " (" + CStr(CType(CType(CurRenderArray(0).TextItems(0).Text, Array())(Count + 3), Object())(3)) + "x)").Split({vbCrLf}, StringSplitOptions.RemoveEmptyEntries)
-            Dim PriorHeight As Single = 0
             For StrCount = 0 To Strs.Length - 1
+                Dim FixedFont As New iTextSharp.text.Font(Font)
                 FixedFont.Size = FitText(Strs(StrCount), Rect.Width - 4, Font.Size, False, DrawFont, Forms)
-                GetTextWidthDraw(DrawFont, Forms, Strs(StrCount), String.Empty, Rect.Width, False, s, BaseLine)
+                GetTextWidthDraw(New Font(DrawFont.FontFamily, FixedFont.Size, DrawFont.Style), Forms, Strs(StrCount), String.Empty, Rect.Width, False, s, BaseLine)
+                If s.Height > Rect.Height / Strs.Length Then
+                    FixedFont.Size /= s.Height / (Rect.Height / Strs.Length)
+                    GetTextWidthDraw(New Font(DrawFont.FontFamily, FixedFont.Size, DrawFont.Style), Forms, Strs(StrCount), String.Empty, Rect.Width, False, s, BaseLine)
+                End If
                 ct.SetSimpleColumn(Rect.Left + Doc.LeftMargin + 2, Doc.PageSize.Height - Doc.TopMargin - Rect.Bottom - BaseLine - 2 - PriorHeight, Rect.Right - 2 + Doc.LeftMargin, Doc.PageSize.Height - Doc.TopMargin - Rect.Top + 1 - BaseLine - 2 - PriorHeight, CSng(FontFace.Metrics.LineGap * FixedFont.Size / FontFace.Metrics.DesignUnitsPerEm), If(ct.RunDirection = iTextSharp.text.pdf.PdfWriter.RUN_DIRECTION_LTR, iTextSharp.text.Element.ALIGN_RIGHT, iTextSharp.text.Element.ALIGN_RIGHT) Or iTextSharp.text.Element.ALIGN_BASELINE)
                 PriorHeight += s.Height
                 ct.AddText(New iTextSharp.text.Chunk(Strs(StrCount), FixedFont))
