@@ -343,6 +343,8 @@ Public Class Arabic
         eLearningMode
     End Enum
     Public Delegate Function RuleFunction(Str As String, Scheme As String, LearningMode As Boolean) As String()
+    Public Shared SymbolCombinations As Char() = {ArabicData.ArabicLetterAlefWithHamzaAbove, ArabicData.ArabicLetterAlefWithHamzaBelow, ArabicData.ArabicLetterAlefWithMaddaAbove, ArabicData.ArabicLetterWawWithHamzaAbove, ArabicData.ArabicLetterYehWithHamzaAbove}
+    Public Shared SymbolBreakdowns As String()() = {New String() {CStr(ArabicData.ArabicLetterAlef), CStr(ArabicData.ArabicLetterHamza)}, New String() {CStr(ArabicData.ArabicLetterAlef), CStr(ArabicData.ArabicLetterHamza)}, New String() {CStr(ArabicData.ArabicLetterHamza), CStr(ArabicData.ArabicFatha) + CStr(ArabicData.ArabicLetterAlef)}, New String() {CStr(ArabicData.ArabicLetterWaw), CStr(ArabicData.ArabicLetterHamza)}, New String() {CStr(ArabicData.ArabicLetterYeh), CStr(ArabicData.ArabicLetterHamza)}}
     Public Shared RuleFunctions As RuleFunction() = {
         Function(Str As String, Scheme As String, LearningMode As Boolean) {UCase(Str)},
         Function(Str As String, Scheme As String, LearningMode As Boolean) {TransliterateWithRules(Arabic.TransliterateFromBuckwalter(Arabic.ArabicWordFromNumber(CInt(TransliterateToScheme(Str, ArabicData.TranslitScheme.Literal, String.Empty)), True, False, False)), Scheme, Nothing, LearningMode)},
@@ -350,14 +352,14 @@ Public Class Arabic
         Function(Str As String, Scheme As String, LearningMode As Boolean) {GetSchemeValueFromSymbol(ArabicData.ArabicLetters(ArabicData.FindLetterBySymbol(Str.Chars(0))), Scheme)},
         Function(Str As String, Scheme As String, LearningMode As Boolean) {GetSchemeLongVowelFromString(Str, Scheme)},
         Function(Str As String, Scheme As String, LearningMode As Boolean) {CachedData.ArabicFathaDammaKasra(Array.IndexOf(CachedData.ArabicTanweens, Str)), ArabicData.ArabicLetterNoon},
-        Function(Str As String, Scheme As String, LearningMode As Boolean) {String.Empty, String.Empty},
+        Function(Str As String, Scheme As String, LearningMode As Boolean) If(Array.IndexOf(SymbolCombinations, Str(0)) = -1, {String.Empty, String.Empty}, SymbolBreakdowns(Array.IndexOf(SymbolCombinations, Str(0)))),
         Function(Str As String, Scheme As String, LearningMode As Boolean) {GetSchemeGutteralFromString(Str.Remove(Str.Length - 1), Scheme, True) + Str.Chars(Str.Length - 1)},
         Function(Str As String, Scheme As String, LearningMode As Boolean) {Str.Chars(0) + GetSchemeGutteralFromString(Str.Remove(0, 1), Scheme, False)},
         Function(Str As String, Scheme As String, LearningMode As Boolean) {If(SchemeHasValue(GetSchemeValueFromSymbol(ArabicData.ArabicLetters(ArabicData.FindLetterBySymbol(Str.Chars(0))), Scheme) + GetSchemeValueFromSymbol(ArabicData.ArabicLetters(ArabicData.FindLetterBySymbol(Str.Chars(1))), Scheme), Scheme), Str.Chars(0) + "-" + Str.Chars(1), Str)},
-        Function(Str As String, Scheme As String, LearningMode As Boolean) {If(LearningMode, "[" + Str + "]", String.Empty), If(LearningMode, String.Empty, Str)}
+        Function(Str As String, Scheme As String, LearningMode As Boolean) If(LearningMode, {Str, String.Empty}, {String.Empty, Str})
     }
         'Javascript does not support negative or positive lookbehind in regular expressions
-    Public Shared AllowZeroLength As String() = {"helperlparen", "helperrparen", "learningmode(helperteh,)"}
+    Public Shared AllowZeroLength As String() = {"helperlparen", "helperrparen", "learningmode(helperslash,)", "learningmode(helperlbracket,)", "learningmode(helperrbracket,)", "learningmode(helperfathatan,)", "learningmode(helperteh,)"}
     Public Shared Function IsLetter(Index As Integer) As Boolean
         Return Array.FindIndex(CachedData.ArabicLetters, Function(Str As String) Str = ArabicData.ArabicLetters(Index).Symbol) <> -1
     End Function
