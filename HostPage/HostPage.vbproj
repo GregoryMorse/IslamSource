@@ -222,9 +222,9 @@
     <Content Include="Menu.ascx" />
     <Content Include="Page.ascx" />
     <None Include="My Project\PublishProfiles\Local Debug.pubxml" />
-    <None Include="Scripts\jquery-1.11.1.intellisense.js" />
-    <Content Include="Scripts\jquery-1.11.1.js" />
-    <Content Include="Scripts\jquery-1.11.1.min.js" />
+    <None Include="Scripts\jquery-1.11.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.11.2.js" />
+    <Content Include="Scripts\jquery-1.11.2.min.js" />
     <Content Include="Scripts\jquery-ui-1.10.4.js" />
     <Content Include="Scripts\jquery-ui-1.10.4.min.js" />
     <EmbeddedResource Include="Global.asax.resx">
@@ -239,8 +239,8 @@
     <EmbeddedResource Include="Page.ascx.resx">
       <DependentUpon>Page.ascx.vb</DependentUpon>
     </EmbeddedResource>
-    <Content Include="Scripts\jquery-1.11.1.min.map" />
     <Content Include="web.config" />
+    <Content Include="Scripts\jquery-1.11.2.min.map" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
