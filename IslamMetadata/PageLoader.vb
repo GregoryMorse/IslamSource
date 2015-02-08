@@ -164,9 +164,9 @@ Public Class Arabic
     End Function
     Public Shared Function TransliterateToScheme(ByVal ArabicString As String, SchemeType As ArabicData.TranslitScheme, Scheme As String, Optional OptionalStops() As Integer = Nothing, Optional PreString As String = "", Optional PostString As String = "") As String
         If SchemeType = ArabicData.TranslitScheme.LearningMode Then
-            Return TransliterateWithRules(ArabicString, Scheme, OptionalStops)
+            Return TransliterateWithRules(ArabicString, Scheme, OptionalStops, True)
         ElseIf SchemeType = ArabicData.TranslitScheme.RuleBased And PreString = "" And PostString = "" Then
-            Return TransliterateWithRules(ArabicString, Scheme, OptionalStops)
+            Return TransliterateWithRules(ArabicString, Scheme, OptionalStops, False)
         ElseIf SchemeType = ArabicData.TranslitScheme.RuleBased Then
             Return TransliterateContigWithRules(ArabicString, PreString, PostString, Scheme, OptionalStops)
         ElseIf SchemeType = ArabicData.TranslitScheme.Literal Then
@@ -340,22 +340,24 @@ Public Class Arabic
         eLeadingGutteral
         eTrailingGutteral
         eResolveAmbiguity
+        eLearningMode
     End Enum
-    Public Delegate Function RuleFunction(Str As String, Scheme As String) As String()
+    Public Delegate Function RuleFunction(Str As String, Scheme As String, LearningMode As Boolean) As String()
     Public Shared RuleFunctions As RuleFunction() = {
-        Function(Str As String, Scheme As String) {UCase(Str)},
-        Function(Str As String, Scheme As String) {TransliterateWithRules(Arabic.TransliterateFromBuckwalter(Arabic.ArabicWordFromNumber(CInt(TransliterateToScheme(Str, ArabicData.TranslitScheme.Literal, String.Empty)), True, False, False)), Scheme, Nothing)},
-        Function(Str As String, Scheme As String) {TransliterateWithRules(ArabicLetterSpelling(Str, True), Scheme, Nothing)},
-        Function(Str As String, Scheme As String) {GetSchemeValueFromSymbol(ArabicData.ArabicLetters(ArabicData.FindLetterBySymbol(Str.Chars(0))), Scheme)},
-        Function(Str As String, Scheme As String) {GetSchemeLongVowelFromString(Str, Scheme)},
-        Function(Str As String, Scheme As String) {CachedData.ArabicFathaDammaKasra(Array.IndexOf(CachedData.ArabicTanweens, Str)), ArabicData.ArabicLetterNoon},
-        Function(Str As String, Scheme As String) {String.Empty, String.Empty},
-        Function(Str As String, Scheme As String) {GetSchemeGutteralFromString(Str.Remove(Str.Length - 1), Scheme, True) + Str.Chars(Str.Length - 1)},
-        Function(Str As String, Scheme As String) {Str.Chars(0) + GetSchemeGutteralFromString(Str.Remove(0, 1), Scheme, False)},
-        Function(Str As String, Scheme As String) {If(SchemeHasValue(GetSchemeValueFromSymbol(ArabicData.ArabicLetters(ArabicData.FindLetterBySymbol(Str.Chars(0))), Scheme) + GetSchemeValueFromSymbol(ArabicData.ArabicLetters(ArabicData.FindLetterBySymbol(Str.Chars(1))), Scheme), Scheme), Str.Chars(0) + "-" + Str.Chars(1), Str)}
+        Function(Str As String, Scheme As String, LearningMode As Boolean) {UCase(Str)},
+        Function(Str As String, Scheme As String, LearningMode As Boolean) {TransliterateWithRules(Arabic.TransliterateFromBuckwalter(Arabic.ArabicWordFromNumber(CInt(TransliterateToScheme(Str, ArabicData.TranslitScheme.Literal, String.Empty)), True, False, False)), Scheme, Nothing, LearningMode)},
+        Function(Str As String, Scheme As String, LearningMode As Boolean) {TransliterateWithRules(ArabicLetterSpelling(Str, True), Scheme, Nothing, LearningMode)},
+        Function(Str As String, Scheme As String, LearningMode As Boolean) {GetSchemeValueFromSymbol(ArabicData.ArabicLetters(ArabicData.FindLetterBySymbol(Str.Chars(0))), Scheme)},
+        Function(Str As String, Scheme As String, LearningMode As Boolean) {GetSchemeLongVowelFromString(Str, Scheme)},
+        Function(Str As String, Scheme As String, LearningMode As Boolean) {CachedData.ArabicFathaDammaKasra(Array.IndexOf(CachedData.ArabicTanweens, Str)), ArabicData.ArabicLetterNoon},
+        Function(Str As String, Scheme As String, LearningMode As Boolean) {String.Empty, String.Empty},
+        Function(Str As String, Scheme As String, LearningMode As Boolean) {GetSchemeGutteralFromString(Str.Remove(Str.Length - 1), Scheme, True) + Str.Chars(Str.Length - 1)},
+        Function(Str As String, Scheme As String, LearningMode As Boolean) {Str.Chars(0) + GetSchemeGutteralFromString(Str.Remove(0, 1), Scheme, False)},
+        Function(Str As String, Scheme As String, LearningMode As Boolean) {If(SchemeHasValue(GetSchemeValueFromSymbol(ArabicData.ArabicLetters(ArabicData.FindLetterBySymbol(Str.Chars(0))), Scheme) + GetSchemeValueFromSymbol(ArabicData.ArabicLetters(ArabicData.FindLetterBySymbol(Str.Chars(1))), Scheme), Scheme), Str.Chars(0) + "-" + Str.Chars(1), Str)},
+        Function(Str As String, Scheme As String, LearningMode As Boolean) {If(LearningMode, "[" + Str + "]", String.Empty), If(LearningMode, String.Empty, Str)}
     }
         'Javascript does not support negative or positive lookbehind in regular expressions
-        Public Shared AllowZeroLength As String() = {"helperlparen", "helperrparen"}
+    Public Shared AllowZeroLength As String() = {"helperlparen", "helperrparen", "learningmode(helperteh,)"}
     Public Shared Function IsLetter(Index As Integer) As Boolean
         Return Array.FindIndex(CachedData.ArabicLetters, Function(Str As String) Str = ArabicData.ArabicLetters(Index).Symbol) <> -1
     End Function
@@ -522,13 +524,13 @@ Public Class Arabic
         End If
         Return ArabicString
     End Function
-    Public Shared Function ReplaceMetadata(ArabicString As String, MetadataRule As RuleMetadata, Scheme As String) As String
+    Public Shared Function ReplaceMetadata(ArabicString As String, MetadataRule As RuleMetadata, Scheme As String, LearningMode As Boolean) As String
         For Count As Integer = 0 To CachedData.ColoringSpelledOutRules.Length - 1
             Dim Match As String = Array.Find(CachedData.ColoringSpelledOutRules(Count).Match.Split("|"c), Function(Str As String) Array.IndexOf(Array.ConvertAll(MetadataRule.Type.Split("|"c), Function(S As String) System.Text.RegularExpressions.Regex.Replace(S, "\(.*\)", String.Empty)), Str) <> -1)
             If Match <> Nothing Then
                 Dim Str As String = String.Format(CachedData.ColoringSpelledOutRules(Count).Evaluator, ArabicString.Substring(MetadataRule.Index, MetadataRule.Length))
                 If CachedData.ColoringSpelledOutRules(Count).RuleFunc <> RuleFuncs.eNone Then
-                    Dim Args As String() = RuleFunctions(CachedData.ColoringSpelledOutRules(Count).RuleFunc - 1)(Str, Scheme)
+                    Dim Args As String() = RuleFunctions(CachedData.ColoringSpelledOutRules(Count).RuleFunc - 1)(Str, Scheme, LearningMode)
                     If Args.Length = 1 Then
                         Str = Args(0)
                     Else
@@ -536,7 +538,7 @@ Public Class Arabic
                         Str = String.Empty
                         For Index As Integer = 0 To Args.Length - 1
                             If Not Args(Index) Is Nothing Then
-                                Str += ReplaceMetadata(Args(Index), New RuleMetadata(0, Args(Index).Length, MetaArgs(Index).Replace(" "c, "|"c)), Scheme)
+                                Str += ReplaceMetadata(Args(Index), New RuleMetadata(0, Args(Index).Length, MetaArgs(Index).Replace(" "c, "|"c)), Scheme, LearningMode)
                             End If
                         Next
                     End If
@@ -583,9 +585,9 @@ Public Class Arabic
         Return ArabicString
     End Function
     Public Shared Function TransliterateContigWithRules(ByVal ArabicString As String, ByVal PreString As String, ByVal PostString As String, Scheme As String, OptionalStops As Integer()) As String
-        Return UnjoinContig(TransliterateWithRules(JoinContig(ArabicString, PreString, PostString), Scheme, OptionalStops), PreString, PostString)
+        Return UnjoinContig(TransliterateWithRules(JoinContig(ArabicString, PreString, PostString), Scheme, OptionalStops, False), PreString, PostString)
     End Function
-    Public Shared Function TransliterateWithRules(ByVal ArabicString As String, Scheme As String, OptionalStops As Integer()) As String
+    Public Shared Function TransliterateWithRules(ByVal ArabicString As String, Scheme As String, OptionalStops As Integer(), LearningMode As Boolean) As String
         Dim Count As Integer
         Dim MetadataList As New Generic.List(Of RuleMetadata)
         DoErrorCheck(ArabicString)
@@ -609,14 +611,14 @@ Public Class Arabic
         MetadataList.Sort(New RuleMetadataComparer)
         Dim Index As Integer
         For Index = 0 To MetadataList.Count - 1
-            ArabicString = ReplaceMetadata(ArabicString, MetadataList(Index), Scheme)
+            ArabicString = ReplaceMetadata(ArabicString, MetadataList(Index), Scheme, LearningMode)
         Next
         'redundant romanization rules should have -'s such as seen/teh/kaf-heh
         For Count = 0 To CachedData.RomanizationRules.Length - 1
             If CachedData.RomanizationRules(Count).RuleFunc = RuleFuncs.eNone Then
                 ArabicString = System.Text.RegularExpressions.Regex.Replace(ArabicString, CachedData.RomanizationRules(Count).Match, CachedData.RomanizationRules(Count).Evaluator)
             Else
-                ArabicString = System.Text.RegularExpressions.Regex.Replace(ArabicString, CachedData.RomanizationRules(Count).Match, Function(Match As System.Text.RegularExpressions.Match) RuleFunctions(CachedData.RomanizationRules(Count).RuleFunc - 1)(Match.Result(CachedData.RomanizationRules(Count).Evaluator), Scheme)(0))
+                ArabicString = System.Text.RegularExpressions.Regex.Replace(ArabicString, CachedData.RomanizationRules(Count).Match, Function(Match As System.Text.RegularExpressions.Match) RuleFunctions(CachedData.RomanizationRules(Count).RuleFunc - 1)(Match.Result(CachedData.RomanizationRules(Count).Evaluator), Scheme, LearningMode)(0))
             End If
         Next
 
@@ -984,7 +986,7 @@ Public Class Arabic
         Output(2) = Strings.ToArray()
         For Count = 0 To Category.Length - 1
             Dim Objs As New List(Of Object)
-            Objs.AddRange({Arabic.TransliterateFromBuckwalter(Category(Count).Text), Arabic.TransliterateToScheme(Arabic.TransliterateFromBuckwalter(Category(Count).Text), SchemeType, Scheme), Utility.LoadResourceString("IslamInfo_" + Category(Count).TranslationID)})
+            Objs.AddRange({Arabic.TransliterateFromBuckwalter(Category(Count).Text), Arabic.TransliterateToScheme(Arabic.TransliterateFromBuckwalter(Category(Count).Text), If(SchemeType = ArabicData.TranslitScheme.RuleBased, ArabicData.TranslitScheme.LearningMode, SchemeType), Scheme), Utility.LoadResourceString("IslamInfo_" + Category(Count).TranslationID)})
             If Array.IndexOf(ColSels, "posspron") <> -1 Then
                 If Array.FindIndex(Utility.DefaultValue(Category(Count).Grammar, String.Empty).Split(","c), Function(S As String) Array.IndexOf(S.Split("|"c), "prep") <> -1) <> -1 Then
                     Objs.Add(DisplayTransform(Arabic.TransliterateFromBuckwalter(Category(Count).Text), GetTransform("posspron"), ID, True, True, SchemeType, Scheme, Nothing))
@@ -1063,7 +1065,7 @@ Public Class Arabic
                 For SubIndex = 0 To ColSels.Length - 1
                     If Not Build(Cols(Index)).ContainsKey(ColSels(SubIndex)) Then Build(Cols(Index)).Add(ColSels(SubIndex), {String.Empty, String.Empty})
                     Strs(3 * SubIndex) = Build(Cols(Index))(ColSels(SubIndex))(0)
-                    Strs(3 * SubIndex + 1) = TransliterateToScheme(Build(Cols(Index))(ColSels(SubIndex))(0), SchemeType, Scheme)
+                    Strs(3 * SubIndex + 1) = TransliterateToScheme(Build(Cols(Index))(ColSels(SubIndex))(0), If(SchemeType = ArabicData.TranslitScheme.RuleBased, ArabicData.TranslitScheme.LearningMode, SchemeType), Scheme)
                     Strs(3 * SubIndex + 2) = Build(Cols(Index))(ColSels(SubIndex))(1)
                 Next
                 Strs(3 * ColSels.Length) = ColVals(Index)
@@ -1139,7 +1141,7 @@ Public Class Arabic
                 For SubIndex = 0 To ColSels.Length - 1
                     If Not Build(Cols(Index)).ContainsKey(ColSels(SubIndex)) Then Build(Cols(Index)).Add(ColSels(SubIndex), {String.Empty, String.Empty})
                     Strs(3 * SubIndex) = Build(Cols(Index))(ColSels(SubIndex))(0)
-                    Strs(3 * SubIndex + 1) = TransliterateToScheme(Build(Cols(Index))(ColSels(SubIndex))(0), SchemeType, Scheme)
+                    Strs(3 * SubIndex + 1) = TransliterateToScheme(Build(Cols(Index))(ColSels(SubIndex))(0), If(SchemeType = ArabicData.TranslitScheme.RuleBased, ArabicData.TranslitScheme.LearningMode, SchemeType), Scheme)
                     Strs(3 * SubIndex + 2) = Build(Cols(Index))(ColSels(SubIndex))(1)
                 Next
                 Strs(3 * ColSels.Length) = ColVals(Index)
@@ -1176,7 +1178,7 @@ Public Class Arabic
         Output(1) = New String() {"arabic", "transliteration", "translation", String.Empty}
         Output(2) = New String() {Utility.LoadResourceString("IslamInfo_Arabic"), Utility.LoadResourceString("IslamInfo_Transliteration"), Utility.LoadResourceString("IslamInfo_Translation"), Utility.LoadResourceString("IslamInfo_Grammar")}
         For Count = 0 To Category.Length - 1
-            Output(3 + Count) = New String() {Arabic.TransliterateFromBuckwalter(Category(Count).Text), Arabic.TransliterateToScheme(Arabic.TransliterateFromBuckwalter(Category(Count).Text), SchemeType, Scheme), Utility.LoadResourceString("IslamInfo_" + Category(Count).TranslationID), If(Category(Count).Grammar Is Nothing, String.Empty, Category(Count).Grammar)}
+            Output(3 + Count) = New String() {Arabic.TransliterateFromBuckwalter(Category(Count).Text), Arabic.TransliterateToScheme(Arabic.TransliterateFromBuckwalter(Category(Count).Text), If(SchemeType = ArabicData.TranslitScheme.RuleBased, ArabicData.TranslitScheme.LearningMode, SchemeType), Scheme), Utility.LoadResourceString("IslamInfo_" + Category(Count).TranslationID), If(Category(Count).Grammar Is Nothing, String.Empty, Category(Count).Grammar)}
         Next
         Return RenderArray.MakeTableJSFunctions(CType(Output, Array()), ID)
     End Function
@@ -1496,21 +1498,21 @@ Public Class Arabic
             'Nisbah has a whole slow of suffix possibilities from like -ese or -ism or -ist -ar
             If Array.IndexOf(ColSels, "s") <> -1 Then
                 Dim Text As String = ApplyTransform(GetTransformMatch({"flex", Sels(Count), If(Array.FindIndex(Utility.DefaultValue(Category.Grammar, String.Empty).Split(","c), Function(S As String) Array.IndexOf(S.Split("|"c), "def") <> -1) <> -1, "def", "indef"), If(Array.FindIndex(Utility.DefaultValue(Category.Grammar, String.Empty).Split(","c), Function(S As String) Array.IndexOf(S.Split("|"c), "fs") <> -1) <> -1, "fs", "ms")}), ApplyTransform(GetTransform("strip"), Arabic.TransliterateFromBuckwalter(Category.Text)))
-                Objs.AddRange({Text, Arabic.TransliterateToScheme(Text, SchemeType, Scheme), If(Array.FindIndex(Utility.DefaultValue(Category.Grammar, String.Empty).Split(","c), Function(S As String) Array.IndexOf(S.Split("|"c), "reladj") <> -1) <> -1, "Relating to ", String.Empty) + If(Array.FindIndex(Utility.DefaultValue(Category.Grammar, String.Empty).Split(","c), Function(S As String) Array.IndexOf(S.Split("|"c), "def") <> -1) <> -1, "The ", String.Empty) + Utility.LoadResourceString("IslamInfo_" + Category.TranslationID) + If(Array.FindIndex(Utility.DefaultValue(Category.Grammar, String.Empty).Split(","c), Function(S As String) Array.IndexOf(S.Split("|"c), "fs") <> -1) <> -1, " Feminine", " Masculine")})
+                Objs.AddRange({Text, Arabic.TransliterateToScheme(Text, If(SchemeType = ArabicData.TranslitScheme.RuleBased, ArabicData.TranslitScheme.LearningMode, SchemeType), Scheme), If(Array.FindIndex(Utility.DefaultValue(Category.Grammar, String.Empty).Split(","c), Function(S As String) Array.IndexOf(S.Split("|"c), "reladj") <> -1) <> -1, "Relating to ", String.Empty) + If(Array.FindIndex(Utility.DefaultValue(Category.Grammar, String.Empty).Split(","c), Function(S As String) Array.IndexOf(S.Split("|"c), "def") <> -1) <> -1, "The ", String.Empty) + Utility.LoadResourceString("IslamInfo_" + Category.TranslationID) + If(Array.FindIndex(Utility.DefaultValue(Category.Grammar, String.Empty).Split(","c), Function(S As String) Array.IndexOf(S.Split("|"c), "fs") <> -1) <> -1, " Feminine", " Masculine")})
                 If HasPoss Then
                     Objs.Add(DisplayTransform(ApplyTransform(GetTransform("constpos"), Text), GetTransform("posspron"), ID, True, True, SchemeType, Scheme, Array.FindAll(ColSels, Function(S As String) Array.IndexOf({"p", "d", "s"}, S) <> -1)))
                 End If
             End If
             If Array.IndexOf(ColSels, "d") <> -1 Then
                 Dim Text As String = ApplyTransform(GetTransformMatch({"flex", Sels(Count), If(Array.FindIndex(Utility.DefaultValue(Category.Grammar, String.Empty).Split(","c), Function(S As String) Array.IndexOf(S.Split("|"c), "def") <> -1) <> -1, "def", "indef"), If(Array.FindIndex(Utility.DefaultValue(Category.Grammar, String.Empty).Split(","c), Function(S As String) Array.IndexOf(S.Split("|"c), "fs") <> -1) <> -1, "fd", "md")}), ApplyTransform(GetTransform("strip"), Arabic.TransliterateFromBuckwalter(Category.Text)))
-                Objs.AddRange({Text, Arabic.TransliterateToScheme(Text, SchemeType, Scheme), If(Array.FindIndex(Utility.DefaultValue(Category.Grammar, String.Empty).Split(","c), Function(S As String) Array.IndexOf(S.Split("|"c), "reladj") <> -1) <> -1, "Relating to ", String.Empty) + If(Array.FindIndex(Utility.DefaultValue(Category.Grammar, String.Empty).Split(","c), Function(S As String) Array.IndexOf(S.Split("|"c), "def") <> -1) <> -1, "The ", String.Empty) + "Two " + Utility.LoadResourceString("IslamInfo_" + Category.TranslationID) + "s" + If(Array.FindIndex(Utility.DefaultValue(Category.Grammar, String.Empty).Split(","c), Function(S As String) Array.IndexOf(S.Split("|"c), "fs") <> -1) <> -1, " Feminine", " Masculine")})
+                Objs.AddRange({Text, Arabic.TransliterateToScheme(Text, If(SchemeType = ArabicData.TranslitScheme.RuleBased, ArabicData.TranslitScheme.LearningMode, SchemeType), Scheme), If(Array.FindIndex(Utility.DefaultValue(Category.Grammar, String.Empty).Split(","c), Function(S As String) Array.IndexOf(S.Split("|"c), "reladj") <> -1) <> -1, "Relating to ", String.Empty) + If(Array.FindIndex(Utility.DefaultValue(Category.Grammar, String.Empty).Split(","c), Function(S As String) Array.IndexOf(S.Split("|"c), "def") <> -1) <> -1, "The ", String.Empty) + "Two " + Utility.LoadResourceString("IslamInfo_" + Category.TranslationID) + "s" + If(Array.FindIndex(Utility.DefaultValue(Category.Grammar, String.Empty).Split(","c), Function(S As String) Array.IndexOf(S.Split("|"c), "fs") <> -1) <> -1, " Feminine", " Masculine")})
                 If HasPoss Then
                     Objs.Add(DisplayTransform(ApplyTransform(GetTransform("constpos"), Text), GetTransform("posspron"), ID, True, True, SchemeType, Scheme, Array.FindAll(ColSels, Function(S As String) Array.IndexOf({"p", "d", "s"}, S) <> -1)))
                 End If
             End If
             If Array.IndexOf(ColSels, "p") <> -1 Then
                 Dim Text As String = ApplyTransform(GetTransformMatch({"flex", Sels(Count), If(Array.FindIndex(Utility.DefaultValue(Category.Grammar, String.Empty).Split(","c), Function(S As String) Array.IndexOf(S.Split("|"c), "def") <> -1) <> -1, "def", "indef"), If(Array.FindIndex(Utility.DefaultValue(Category.Grammar, String.Empty).Split(","c), Function(S As String) Array.IndexOf(S.Split("|"c), "fs") <> -1) <> -1, "fp", "mp")}), ApplyTransform(GetTransform("strip"), Arabic.TransliterateFromBuckwalter(Category.Text)))
-                Objs.AddRange({Text, Arabic.TransliterateToScheme(Text, SchemeType, Scheme), If(Array.FindIndex(Utility.DefaultValue(Category.Grammar, String.Empty).Split(","c), Function(S As String) Array.IndexOf(S.Split("|"c), "reladj") <> -1) <> -1, "Relating to ", String.Empty) + If(Array.FindIndex(Utility.DefaultValue(Category.Grammar, String.Empty).Split(","c), Function(S As String) Array.IndexOf(S.Split("|"c), "def") <> -1) <> -1, "The ", String.Empty) + Utility.LoadResourceString("IslamInfo_" + Category.TranslationID) + "s" + If(Array.FindIndex(Utility.DefaultValue(Category.Grammar, String.Empty).Split(","c), Function(S As String) Array.IndexOf(S.Split("|"c), "fs") <> -1) <> -1, " Feminine", " Masculine")})
+                Objs.AddRange({Text, Arabic.TransliterateToScheme(Text, If(SchemeType = ArabicData.TranslitScheme.RuleBased, ArabicData.TranslitScheme.LearningMode, SchemeType), Scheme), If(Array.FindIndex(Utility.DefaultValue(Category.Grammar, String.Empty).Split(","c), Function(S As String) Array.IndexOf(S.Split("|"c), "reladj") <> -1) <> -1, "Relating to ", String.Empty) + If(Array.FindIndex(Utility.DefaultValue(Category.Grammar, String.Empty).Split(","c), Function(S As String) Array.IndexOf(S.Split("|"c), "def") <> -1) <> -1, "The ", String.Empty) + Utility.LoadResourceString("IslamInfo_" + Category.TranslationID) + "s" + If(Array.FindIndex(Utility.DefaultValue(Category.Grammar, String.Empty).Split(","c), Function(S As String) Array.IndexOf(S.Split("|"c), "fs") <> -1) <> -1, " Feminine", " Masculine")})
                 If HasPoss Then
                     Objs.Add(DisplayTransform(ApplyTransform(GetTransform("constpos"), Text), GetTransform("posspron"), ID, True, True, SchemeType, Scheme, Array.FindAll(ColSels, Function(S As String) Array.IndexOf({"p", "d", "s"}, S) <> -1)))
                 End If
@@ -1619,31 +1621,31 @@ Public Class Arabic
                 Grammar = Utility.DefaultValue(Category(Count).Grammar, String.Empty)
             End If
             If Array.IndexOf(ColSels, "past") <> -1 Then
-                Strings.AddRange({Text, TransliterateToScheme(Text, SchemeType, Scheme), Utility.LoadResourceString("IslamInfo_" + Category(Count).TranslationID)})
+                Strings.AddRange({Text, TransliterateToScheme(Text, If(SchemeType = ArabicData.TranslitScheme.RuleBased, ArabicData.TranslitScheme.LearningMode, SchemeType), Scheme), Utility.LoadResourceString("IslamInfo_" + Category(Count).TranslationID)})
             End If
             If Array.IndexOf(ColSels, "pres") <> -1 Then
-                Strings.AddRange({Present, TransliterateToScheme(Present, SchemeType, Scheme), String.Empty})
+                Strings.AddRange({Present, TransliterateToScheme(Present, If(SchemeType = ArabicData.TranslitScheme.RuleBased, ArabicData.TranslitScheme.LearningMode, SchemeType), Scheme), String.Empty})
             End If
             If Array.IndexOf(ColSels, "comm") <> -1 Then
-                Strings.AddRange({Command, TransliterateToScheme(Command, SchemeType, Scheme), String.Empty})
+                Strings.AddRange({Command, TransliterateToScheme(Command, If(SchemeType = ArabicData.TranslitScheme.RuleBased, ArabicData.TranslitScheme.LearningMode, SchemeType), Scheme), String.Empty})
             End If
             If Array.IndexOf(ColSels, "forbid") <> -1 Then
-                Strings.AddRange({Forbidding, TransliterateToScheme(Forbidding, SchemeType, Scheme), String.Empty})
+                Strings.AddRange({Forbidding, TransliterateToScheme(Forbidding, If(SchemeType = ArabicData.TranslitScheme.RuleBased, ArabicData.TranslitScheme.LearningMode, SchemeType), Scheme), String.Empty})
             End If
             If Array.IndexOf(ColSels, "pasvpast") <> -1 Then
-                Strings.AddRange({PassivePast, TransliterateToScheme(PassivePast, SchemeType, Scheme), String.Empty})
+                Strings.AddRange({PassivePast, TransliterateToScheme(PassivePast, If(SchemeType = ArabicData.TranslitScheme.RuleBased, ArabicData.TranslitScheme.LearningMode, SchemeType), Scheme), String.Empty})
             End If
             If Array.IndexOf(ColSels, "pasvpres") <> -1 Then
-                Strings.AddRange({PassivePresent, TransliterateToScheme(PassivePresent, SchemeType, Scheme), String.Empty})
+                Strings.AddRange({PassivePresent, TransliterateToScheme(PassivePresent, If(SchemeType = ArabicData.TranslitScheme.RuleBased, ArabicData.TranslitScheme.LearningMode, SchemeType), Scheme), String.Empty})
             End If
             If Array.IndexOf(ColSels, "doernoun") <> -1 Then
-                Strings.AddRange({VerbalDoer, TransliterateToScheme(VerbalDoer, SchemeType, Scheme), String.Empty})
+                Strings.AddRange({VerbalDoer, TransliterateToScheme(VerbalDoer, If(SchemeType = ArabicData.TranslitScheme.RuleBased, ArabicData.TranslitScheme.LearningMode, SchemeType), Scheme), String.Empty})
             End If
             If Array.IndexOf(ColSels, "pasvnoun") <> -1 Then
-                Strings.AddRange({PassiveNoun, TransliterateToScheme(PassiveNoun, SchemeType, Scheme), String.Empty})
+                Strings.AddRange({PassiveNoun, TransliterateToScheme(PassiveNoun, If(SchemeType = ArabicData.TranslitScheme.RuleBased, ArabicData.TranslitScheme.LearningMode, SchemeType), Scheme), String.Empty})
             End If
             If Array.IndexOf(ColSels, "part") <> -1 Then
-                Strings.AddRange({Grammar, TransliterateToScheme(Grammar, SchemeType, Scheme), String.Empty})
+                Strings.AddRange({Grammar, TransliterateToScheme(Grammar, If(SchemeType = ArabicData.TranslitScheme.RuleBased, ArabicData.TranslitScheme.LearningMode, SchemeType), Scheme), String.Empty})
             End If
             Output(3 + Count) = Strings.ToArray()
             Strings.Clear()
@@ -2082,6 +2084,7 @@ Public Class IslamData
             Public _RuleFunc As String
             ReadOnly Property RuleFunc As Arabic.RuleFuncs
                 Get
+                    If _RuleFunc = "eLearningMode" Then Return Arabic.RuleFuncs.eLearningMode
                     If _RuleFunc = "eDivideLetterSymbol" Then Return Arabic.RuleFuncs.eDivideLetterSymbol
                     If _RuleFunc = "eDivideTanween" Then Return Arabic.RuleFuncs.eDivideTanween
                     If _RuleFunc = "eLeadingGutteral" Then Return Arabic.RuleFuncs.eLeadingGutteral
@@ -4192,7 +4195,7 @@ Public Class TanzilReader
                     TranslationArray(WordCount) += " (" + String.Join(",", Array.ConvertAll(CType(TranslationDict(TranslationArray(WordCount)).ToArray(GetType(Integer())), Integer()()), Function(Indexes As Integer()) String.Join(":", Array.ConvertAll(Indexes, Function(Idx As Integer) CStr(Idx))))) + ")"
                 Next
                 Total += Dict.Item(FreqArray(Count)).Count
-                Output.Add(New String() {Arabic.TransliterateFromBuckwalter(FreqArray(Count)), Arabic.TransliterateToScheme(Arabic.TransliterateFromBuckwalter(FreqArray(Count)), SchemeType, Scheme), String.Join(vbCrLf, TranslationArray), CStr(Dict.Item(FreqArray(Count)).Count), (CDbl(Dict.Item(FreqArray(Count)).Count) * 100 / All).ToString("n2"), (CDbl(Total) * 100 / All).ToString("n2")})
+                Output.Add(New String() {Arabic.TransliterateFromBuckwalter(FreqArray(Count)), Arabic.TransliterateToScheme(Arabic.TransliterateFromBuckwalter(FreqArray(Count)), If(SchemeType = ArabicData.TranslitScheme.RuleBased, ArabicData.TranslitScheme.LearningMode, SchemeType), Scheme), String.Join(vbCrLf, TranslationArray), CStr(Dict.Item(FreqArray(Count)).Count), (CDbl(Dict.Item(FreqArray(Count)).Count) * 100 / All).ToString("n2"), (CDbl(Total) * 100 / All).ToString("n2")})
             Next
         ElseIf Index = 3 Or Index = 4 Or Index = 5 Or Index = 6 Then
             Total = 0
