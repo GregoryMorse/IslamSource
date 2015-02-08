@@ -756,6 +756,9 @@ Public Class Utility
     Public Shared Function GetOnPrintJS() As String()
         Return New String() {"javascript: openPrintable(this);", String.Empty, "function openPrintable(btn) { var input = document.createElement('input'); input.type = 'hidden'; input.name = 'PagePrint'; input.value = btn.form.elements['Page'].value; btn.form.appendChild(input); btn.form.target = '_blank'; btn.form.elements['Page'].value = 'PrintPdf'; btn.form.submit(); btn.form.target = ''; btn.form.elements['Page'].value = btn.form.elements['PagePrint'].value; btn.form.removeChild(input); }"}
     End Function
+    Public Shared Function GetOnPrintFlashcardJS() As String()
+        Return New String() {"javascript: openPrintableFlashcard(this);", String.Empty, "function openPrintableFlashcard(btn) { var input = document.createElement('input'); input.type = 'hidden'; input.name = 'PagePrint'; input.value = btn.form.elements['Page'].value; btn.form.appendChild(input); btn.form.target = '_blank'; btn.form.elements['Page'].value = 'PrintFlashcardPdf'; btn.form.submit(); btn.form.target = ''; btn.form.elements['Page'].value = btn.form.elements['PagePrint'].value; btn.form.removeChild(input); }"}
+    End Function
     Public Shared Function GetClearOptionListJS() As String
         Return "function clearOptionList(selectObject) { while (selectObject.options.length) { selectObject.options.remove(selectObject.options.length - 1); } }"
     End Function
@@ -2669,6 +2672,70 @@ Public Class RenderArray
         Dim Fonts As String() = {"times.ttf", "me_quran.ttf", "Scheherazade.ttf", "PDMS_Saleem.ttf", "KFC_naskh.otf", "trado.ttf", "arabtype.ttf", "majalla.ttf", "msuighur.ttf", "ARIALUNI.ttf"}
         Return If(Index < 1 Or Index > 4, IO.Path.Combine(Environment.GetEnvironmentVariable("windir"), "Fonts\" + Fonts(Index)), Utility.GetFilePath("files\" + Fonts(Index)))
     End Function
+    Public Shared Sub OutputFlashcardPdf(Path As String, CurRenderArray As List(Of RenderArray.RenderItem))
+        Dim fs As New IO.FileStream(Path, IO.FileMode.Create, IO.FileAccess.Write, IO.FileShare.None)
+        OutputFlashcardPdf(fs, CurRenderArray)
+        fs.Close()
+    End Sub
+    Public Shared Sub OutputFlashcardPdf(Stream As IO.Stream, CurRenderArray As List(Of RenderArray.RenderItem))
+        Dim Doc As New iTextSharp.text.Document
+        Dim Writer As iTextSharp.text.pdf.PdfWriter = iTextSharp.text.pdf.PdfWriter.GetInstance(Doc, Stream)
+        Doc.Open()
+        Doc.NewPage()
+        Dim BaseFont As iTextSharp.text.pdf.BaseFont = iTextSharp.text.pdf.BaseFont.CreateFont(GetFontPath(0), iTextSharp.text.pdf.BaseFont.IDENTITY_H, iTextSharp.text.pdf.BaseFont.NOT_EMBEDDED)
+        Dim Font As New iTextSharp.text.Font(BaseFont, 20, iTextSharp.text.Font.NORMAL)
+        Dim _Bounds As New Generic.List(Of Generic.List(Of Generic.List(Of LayoutInfo)))
+        Dim PrivateFontColl As New Drawing.Text.PrivateFontCollection
+        PrivateFontColl.AddFontFile(GetFontPath(0))
+        Dim DrawFont As New Font(PrivateFontColl.Families(0), 20, FontStyle.Regular, GraphicsUnit.Point)
+        'divide into pages by heights
+        Dim Forms As Char() = ArabicData.GetPresentationForms()
+        For Count = 0 To Forms.Length - 1
+            If Not Font.BaseFont.CharExists(AscW(Forms(Count))) Then Forms(Count) = ChrW(0)
+        Next
+        Dim bReverse As Boolean = False
+        Dim Factory As New SharpDX.DirectWrite.Factory()
+        Dim FontFace As New SharpDX.DirectWrite.FontFace(Factory.GdiInterop.FromSystemDrawingFont(DrawFont))
+        For Count As Integer = 0 To CType(CurRenderArray(0).TextItems(0).Text, Array()).Length - 1 - 3
+            Dim Rect As New RectangleF(((Count Mod 18) Mod 3) * (Doc.PageSize.Width - Doc.LeftMargin - Doc.RightMargin) / 3, ((Count Mod 18) \ 3) * (Doc.PageSize.Height - Doc.TopMargin - Doc.BottomMargin) / 6, (Doc.PageSize.Width - Doc.LeftMargin - Doc.RightMargin) / 3, (Doc.PageSize.Height - Doc.TopMargin - Doc.BottomMargin) / 6)
+            Writer.DirectContent.SaveState()
+            Writer.DirectContent.SetLineWidth(1)
+            Writer.DirectContent.SetLineDash(0.5)
+            Writer.DirectContent.Rectangle(Rect.Left + Doc.LeftMargin + 1, Doc.PageSize.Height - Doc.TopMargin - Rect.Bottom + 1, Rect.Width - 2, Rect.Height - 2)
+            Writer.DirectContent.Stroke()
+            Writer.DirectContent.RestoreState()
+            Dim ct As iTextSharp.text.pdf.ColumnText = New iTextSharp.text.pdf.ColumnText(Writer.DirectContent)
+            'ct.RunDirection = iTextSharp.text.pdf.PdfWriter.RUN_DIRECTION_RTL
+            'ct.ArabicOptions = iTextSharp.text.pdf.ColumnText.AR_COMPOSEDTASHKEEL
+            'ct.UseAscender = False
+            ct.RunDirection = iTextSharp.text.pdf.PdfWriter.RUN_DIRECTION_LTR
+            Dim FixedFont As New iTextSharp.text.Font(Font)
+            Dim s As SizeF
+            Dim BaseLine As Single
+            Dim Strs As String() = If(bReverse, CStr(CType(CType(CurRenderArray(0).TextItems(0).Text, Array())(Count + 3), Object())(2)), CStr(CType(CType(CurRenderArray(0).TextItems(0).Text, Array())(Count + 3), Object())(1)) + " (" + CStr(CType(CType(CurRenderArray(0).TextItems(0).Text, Array())(Count + 3), Object())(3)) + "x)").Split({vbCrLf}, StringSplitOptions.RemoveEmptyEntries)
+            Dim PriorHeight As Single = 0
+            For StrCount = 0 To Strs.Length - 1
+                FixedFont.Size = FitText(Strs(StrCount), Rect.Width - 4, Font.Size, False, DrawFont, Forms)
+                GetTextWidthDraw(DrawFont, Forms, Strs(StrCount), String.Empty, Rect.Width, False, s, BaseLine)
+                ct.SetSimpleColumn(Rect.Left + Doc.LeftMargin + 2, Doc.PageSize.Height - Doc.TopMargin - Rect.Bottom - BaseLine - 2 - PriorHeight, Rect.Right - 2 + Doc.LeftMargin, Doc.PageSize.Height - Doc.TopMargin - Rect.Top + 1 - BaseLine - 2 - PriorHeight, CSng(FontFace.Metrics.LineGap * FixedFont.Size / FontFace.Metrics.DesignUnitsPerEm), If(ct.RunDirection = iTextSharp.text.pdf.PdfWriter.RUN_DIRECTION_LTR, iTextSharp.text.Element.ALIGN_RIGHT, iTextSharp.text.Element.ALIGN_RIGHT) Or iTextSharp.text.Element.ALIGN_BASELINE)
+                PriorHeight += s.Height
+                ct.AddText(New iTextSharp.text.Chunk(Strs(StrCount), FixedFont))
+                ct.Go()
+            Next
+            ct = Nothing
+            If Count Mod 18 = 17 Or Count = CType(CurRenderArray(0).TextItems(0).Text, Array()).Length - 1 - 3 Then
+                If Not bReverse Then Count -= (Count Mod 18) + 1
+                If Count <> CType(CurRenderArray(0).TextItems(0).Text, Array()).Length - 1 - 3 Or Not bReverse Then Doc.NewPage()
+                bReverse = Not bReverse
+            End If
+        Next
+        FontFace.Dispose()
+        Factory.Dispose()
+        DrawFont.Dispose()
+        PrivateFontColl.Dispose()
+        Writer.CloseStream = False
+        Doc.Close()
+    End Sub
     Public Shared Sub OutputPdf(Path As String, CurRenderArray As List(Of RenderArray.RenderItem))
         Dim fs As New IO.FileStream(Path, IO.FileMode.Create, IO.FileAccess.Write, IO.FileShare.None)
         OutputPdf(fs, CurRenderArray)

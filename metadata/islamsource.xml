@@ -303,6 +303,7 @@
 		<frame name="quranwordviewer" description="IslamSource_Viewer" hasform="true">
 			<radio name="quranselection" description="IslamSource_Selection" uselist="true" onpopulate="TanzilReader::GetWordPartitions"></radio>
 			<button name="qurandisplay" description="IslamSource_Display"></button>
+			<button name="printflashcards" description="IslamSource_Print" onclick="Utility::GetOnPrintFlashcardJS"></button>
 			<radio name="translitscheme" description="IslamSource_TransliterationScheme" uselist="true" onchange="Arabic::GetChangeTransliterationJS" onpopulate="Arabic::GetTransliterationSchemes"></radio>
 			<button name="fontsmaller" description="IslamSource_Smaller" onclick="ArabicFont::GetFontSmallerJS"></button>
 			<button name="fontdefaultsize" description="IslamSource_LetterSample" onclick="ArabicFont::GetFontDefaultSizeJS"></button>
