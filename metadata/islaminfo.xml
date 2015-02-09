@@ -2031,23 +2031,28 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 		<word text="{lomutaqaAribaAnu {lokabiyru" id="GreatProximate"></word>
 		<word text="{lomutaqaAribaAnu {lomuTolaqu" id="AbsoluteProximate"></word>
 		<word text="{lomutabaAEidaAnu" id="Distanced"></word>
-		<word text="mad~N TabiyEiy wamaA taloHaq bihi" id="OriginalLengthening"></word>
+		<word text="mad~N TabiyEiY wamaA taloHaq bihi" id="OriginalLengthening"></word>
+		<word text="mad~N bisababu {lohamozapi" id="LengtheningDueToHamza"></word>
+		<word text="mad~N bisababu {ls~ukuwni" id="LengtheningDueToSukun"></word>
 		<word text="mad~N vaAbitN waqofN" id="SteadyLengtheningStop"></word>
 		<word text="mad~N mutaSilN waAjibN" id="ConnectedLengtheningEssential"></word>
 		<word text="mad~N liynN" id="SoftLengthening"></word>
-		<word text="mad~N EaAriDN lils~ukuwnN" id="LengtheningPresentedToSukoon"></word>
+		<word text="mad~N liynN &gt;aSaliY" id="ConnectingSoftLengthening"></word>
+		<word text="mad~N liynN furaEaY" id="SecondarySoftLengthening"></word>
+		<word text="mad~N EaAriDN lils~ukuwnu" id="LengtheningPresentedToSukoon"></word>
 		<word text="mad~N la&apos;aAzimN kala&apos;aAmiy muvaq~alN" id="WeightedCompulsoryLengtheningWords"></word>
 		<word text="mad~N la&apos;aAzimN kala&apos;aAmiy muxafafN" id="LightenedCompulsoryLengtheningWords"></word>
 		<word text="mad~N la&apos;aAzimN HarofiY muvaq~alN" id="WeightedCompulsoryLengtheningLetters"></word>
 		<word text="mad~N la&apos;aAzimN HarofiY muxafafN" id="LightenedCompulsoryLengtheningLetters"></word>
 		<word text="mad~N munfaSilN jaA^}izN" id="AllowedSeparatedLengthening"></word>
-		<word text="mad~N munfaSilN silaY SugoraY" id="SeparatedLengtheningGreatConnection"></word>
-		<word text="mad~N munfaSilN silaY kuboraY" id="SeparatedLengtheningSmallConnection"></word>
+		<word text="mad~N munfaSilN silapN SugoraY" id="SeparatedLengtheningGreatConnection"></word>
+		<word text="mad~N munfaSilN silapN kuboraY" id="SeparatedLengtheningSmallConnection"></word>
 		<word text="mad~N badalN" id="ExchangeLengthening"></word>
-		<word text="mad~N EiwaAdN" id="SubstituteLengthening"></word>
+		<word text="mad~N EiwaADN" id="SubstituteLengthening"></word>
 		<word text="mad~u {lofaroqi" id="DistinctionLengthening"></word>
 		<word text="mad~N tamokiyna" id="StablizationLengthening"></word>
 		<word text="mad~N masobabiyna" id="LengtheningWithTwoCauses"></word>
+		<word text="haA^&apos;N DamiyrN" id="PronounHeh"></word>
 		<word text="siynN waAjibN" id="SeenRequired"></word>
 		<word text="siynN ma$ohuwrN" id="SeenNoted"></word>
 		<word text="&gt;alifN xanjariyapN" id="SuperscriptAlefDaggerAlif"></word>
@@ -5021,7 +5026,7 @@ Ramadan fast-breaking | One 2172-gram quantity | Dates or barley or ordinary sta
 	    <metarule name="NumberSpelling" match="({ArabicEndOfAyah})()((?:{ArabicNumbers})+)()(?=\s*$|\s+)" evaluator="empty;helperlparen;spellnumber;helperrparen"></metarule>
 	    <metarule name="Stopping" match="(?:({ArabicSmallHighMeemInitialForm})|({ArabicStartOfRubElHizb})|({ArabicEndOfAyah})|({ArabicPlaceOfSajdah}))(?=\s*$|\s+)" evaluator="compulsorystop;startofhizb;endofversestop;prostration"></metarule>
 	    <metarule name="Stopping" match="({ArabicSmallHighJeem})|({ArabicSmallHighLamAlef})|({ArabicSmallHighThreeDots})(.*)({ArabicSmallHighThreeDots})|({ArabicSmallHighLigatureQafWithLamWithAlefMaksura})|({ArabicSmallHighLigatureSadWithLamWithAlefMaksura})|({ArabicSmallHighSeen})(?:\s+|\s*$)" evaluator="canstoporcontinue;prohibitedtostop;stopatfirstnotsecond;;stopatsecondnotfirst;bettertostopbutpermissibletocontinue;bettertocontinuebutpermissibletostop;subtlestopwithoutbreath"></metarule>
-	    <metarule name="Stopping" match="()({ArabicFathatan})({ArabicSmallLowMeem}|{ArabicSmallHighMeemIsolatedForm})?({ArabicLetterAlef}|{ArabicLetterAlefMaksura})()()()(?=\s*(?:{ArabicPlaceOfSajdah}?\s*(?:$|{ArabicEndOfAyah})|{CertainStopPattern}|({OptionalPattern})))" evaluator="learningmode(helperlbracket,);helperfatha;empty;helperalef;learningmode(helperslash,);learningmode(helperfathatan,);learningmode(helperrbracket,);optionalstop"></metarule>
+	    <metarule name="StoppingSubstituteLengthening" match="()({ArabicFathatan})({ArabicSmallLowMeem}|{ArabicSmallHighMeemIsolatedForm})?({ArabicLetterAlef}|{ArabicLetterAlefMaksura})()()()(?=\s*(?:{ArabicPlaceOfSajdah}?\s*(?:$|{ArabicEndOfAyah})|{CertainStopPattern}|({OptionalPattern})))" evaluator="learningmode(helperlbracket,);helperfatha|normalprolong;empty;helperalef|normalprolong;learningmode(helperslash,);learningmode(helperfathatan,);learningmode(helperrbracket,);optionalstop"></metarule>
 	    <metarule name="Stopping" match="(?:({NotTehMarbuta})()(?:({ArabicFathaDammaKasra}|{ArabicKasra}{ArabicSmallYeh}{ArabicMaddahAbove}?|{ArabicDamma}{ArabicSmallWaw}{ArabicMaddahAbove}?)|({ArabicKasratan}|{ArabicDammatan})({ArabicSmallLowMeem}|{ArabicSmallHighMeemIsolatedForm})?)|({ArabicLetterHamza}|{ArabicTatweel}{ArabicHamzaAbove})({ArabicFathatan})({ArabicSmallLowMeem}|{ArabicSmallHighMeemIsolatedForm})?|({ArabicLetterNoon})({ArabicSmallLowMeem}))()(?=\s*(?:{ArabicPlaceOfSajdah}?\s*(?:$|{ArabicEndOfAyah})|{CertainStopPattern}|({OptionalPattern})))" evaluator=";learningmode(helperlbracket,);learningmode(,empty);learningmode(,empty);empty;;learningmode(,empty);empty;;empty;learningmode(helperrbracket,);optionalstop"></metarule>
 	    <metarule name="Stopping" match="()({ArabicLetterTehMarbuta})()(){TehMarbutaStopRule}()" evaluator="learningmode(helperlbracket,);helperheh;learningmode(helperslash,);learningmode(helperteh,);learningmode(,empty);learningmode(,empty);empty;optionalstop;learningmode(helperrbracket,)"></metarule>
 	    <metarule name="Continuing" match="({ArabicLetterTehMarbuta}){TehMarbutaContinueRule}" evaluator="helperteh;optionalnotstop"></metarule>
@@ -5067,7 +5072,9 @@ Ramadan fast-breaking | One 2172-gram quantity | Dates or barley or ordinary sta
 	    <metarule name="AlefMaksuraDaggerAlef" match="({ArabicLetterAlefMaksura})(?:{ArabicLetterSuperscriptAlef})(?!{ArabicMaddahAbove})" evaluator="helperfatha"></metarule>
 	    <metarule name="SoftLengthening" match="({ArabicFatha}(?:{ArabicLetterWaw}|{ArabicLetterYeh}))(?={ArabicSukun})" evaluator="permissibleprolong"></metarule>
 	    <metarule name="LengtheningPresentedToSukun" match="({ArabicFatha}{ArabicLetterAlef}|{ArabicDamma}{ArabicLetterWaw}|{ArabicKasra}{ArabicLetterYeh})(?={ArabicSukun})" evaluator="permissibleprolong"></metarule>
+	    <metarule name="SeperatedConnectionSmallLengthening" match="(?:((?:{ArabicFatha}|{ArabicDamma}){ArabicLetterHeh})({ArabicDamma}{ArabicSmallWaw}?)(?!\s+{ArabicLetterLam}{ArabicFatha}{ArabicLetterKaf}{ArabicDamma}{ArabicLetterMeem})|({ArabicKasra}{ArabicLetterHeh})({ArabicKasra}{ArabicSmallYeh}?))(?=\s+(?:{ArabicSunLetters}|{ArabicMoonLettersNoVowels}|{ArabicLetterWaw}|{ArabicLetterYeh}))|({ArabicKasra}{ArabicLetterYeh}{ArabicLetterHeh})({ArabicKasra}{ArabicSmallYeh}?)(?=\s+{ArabicLetterMeem}{ArabicDamma}{ArabicLetterHeh}{ArabicFatha}{ArabicLetterAlef}{ArabicLetterNoon})|({ArabicLetterNoon}{ArabicShadda}?{ArabicFatha}{ArabicLetterHeh})({ArabicDamma}{ArabicSmallWaw}?)(?=\s+{ArabicLetterLam}{ArabicFatha}{ArabicLetterKaf}{ArabicDamma}{ArabicLetterMeem})" evaluation=";normalprolong;;normalprolong;;normalprolong"></metarule>
 	    <metarule name="WeightedCompulsoryLengthening" match="({ArabicFatha}{ArabicLetterAlef}|{ArabicDamma}{ArabicLetterWaw}|{ArabicKasra}{ArabicLetterYeh})(?={ArabicShadda})" evaluator="necessaryprolong"></metarule>
+	    <metarule name="ExchangeLengthening" match="({ArabicLetterAlefWithHamzaBelow}|{ArabicLetterHamza}|{ArabicTatweel}{ArabicHamzaAbove})({ArabicKasra}(?:{ArabicLetterYeh}|{ArabicLetterAlefMaksura}))|({ArabicSukun}{ArabicSmallYeh})({ArabicKasra}{ArabicLetterAlefMaksura})" evaluator=";normalprolong;;normalprolong"></metarule>
 	    <metarule name="AlefMaddah" match="({ArabicLetterAlefWithMaddaAbove})" evaluator="dividelettersymbol(,permissibleprolong)"></metarule>
 	    <metarule name="Maddah" match="(?:({ArabicFatha}{ArabicLetterAlef}|{ArabicFatha}{ArabicLetterSuperscriptAlef})|({ArabicFatha}{ArabicLetterWaw})({ArabicLetterSuperscriptAlef})|({ArabicFatha}{ArabicLetterAlefMaksura})({ArabicLetterSuperscriptAlef}))({ArabicMaddahAbove})" evaluator="permissibleprolong;permissibleprolong;;permissibleprolong;;empty"></metarule>
 	    <metarule name="Maddah" match="(?:({ArabicDamma}{ArabicLetterWaw}|{ArabicKasra}{ArabicLetterYeh}|{ArabicKasra}{ArabicLetterAlefMaksura})|({ArabicKasra}{ArabicLetterAlef})({ArabicSmallHighRoundedZero}{ArabicLetterAlefMaksura}))({ArabicMaddahAbove})" evaluator="permissibleprolong;permissibleprolong;;empty"></metarule>
