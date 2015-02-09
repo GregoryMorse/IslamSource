@@ -2767,33 +2767,47 @@ Public Class RenderArray
             Dim Cols As Integer = 1
             Dim StrCount As Integer = 0
             Dim FixPriorHeight = PriorHeight
+            Dim CurCol As Integer = 0
             Do
                 Dim FixedFont As New iTextSharp.text.Font(Font)
                 FixedFont.Size = FitText(StrBreaks(StrCount), (Rect.Width - 4) / Cols, Font.Size, False, DrawFont, Forms)
-                GetTextWidthDraw(New Font(DrawFont.FontFamily, FixedFont.Size, DrawFont.Style), Forms, StrBreaks(StrCount), String.Empty, (Rect.Width - 4) / Cols, False, s, BaseLine)
                 If FixedFont.Size < 8 Then
                     Dim Idx As Integer = StrBreaks(StrCount).IndexOfAny({"("c, ","c, ")"c}, CInt(StrBreaks(StrCount).Length * FixedFont.Size / 8))
                     If Idx <> -1 AndAlso StrBreaks(StrCount)(Idx) = ")"c Then Idx += 1
                     StrBreaks.Insert(StrCount + 1, StrBreaks(StrCount).Substring(If(Idx = -1, CInt(StrBreaks(StrCount).Length * FixedFont.Size / 8), Idx)))
                     StrBreaks(StrCount) = StrBreaks(StrCount).Substring(0, If(Idx = -1, CInt(StrBreaks(StrCount).Length * FixedFont.Size / 8), Idx))
                     FixedFont.Size = FitText(StrBreaks(StrCount), (Rect.Width - 4) / Cols, Font.Size, False, DrawFont, Forms)
-                    GetTextWidthDraw(New Font(DrawFont.FontFamily, FixedFont.Size, DrawFont.Style), Forms, StrBreaks(StrCount), String.Empty, (Rect.Width - 4) / Cols, False, s, BaseLine)
+                End If
+                Dim useFont As New Font(DrawFont.FontFamily, FixedFont.Size, DrawFont.Style)
+                GetTextWidthDraw(useFont, Forms, StrBreaks(StrCount), String.Empty, (Rect.Width - 4) / Cols, False, s, BaseLine)
+                useFont.Dispose()
+                If FixPriorHeight + s.Height > Rect.Height Then
+                    CurCol += 1
+                    FixPriorHeight = 0
                 End If
                 FixPriorHeight += s.Height
                 StrCount += 1
-                If StrCount = StrBreaks.Count And Cols < CInt(Math.Ceiling(FixPriorHeight / Rect.Height)) Then
-                    Cols = CInt(Math.Ceiling(FixPriorHeight / Rect.Height))
+                If StrCount = StrBreaks.Count And Cols < CurCol + 1 Then
+                    Cols = CurCol + 1
                     StrBreaks.Clear()
                     StrBreaks.AddRange(Strs)
                     StrCount = 0
-                    FixPriorHeight = 0
+                    CurCol = 0
+                    FixPriorHeight = PriorHeight
                 End If
             Loop While StrCount <> StrBreaks.Count
+            CurCol = 0
             For StrCount = 0 To StrBreaks.Count - 1
                 Dim FixedFont As New iTextSharp.text.Font(Font)
                 FixedFont.Size = FitText(StrBreaks(StrCount), (Rect.Width - 4) / Cols, Font.Size, False, DrawFont, Forms)
-                GetTextWidthDraw(New Font(DrawFont.FontFamily, FixedFont.Size, DrawFont.Style), Forms, StrBreaks(StrCount), String.Empty, (Rect.Width - 4) / Cols, False, s, BaseLine)
-                ct.SetSimpleColumn((Rect.Width - 4) / Cols * CInt(Math.Floor((PriorHeight + s.Height) / Rect.Height)) + Rect.Left + Doc.LeftMargin + 2 + ((Rect.Width - 4) / Cols - s.Width) / 2, Doc.PageSize.Height - Doc.TopMargin - Rect.Bottom - BaseLine - 2 - PriorHeight + CInt(Math.Floor(PriorHeight / Rect.Height)) * Rect.Height, Rect.Right - 2 + Doc.LeftMargin, Doc.PageSize.Height - Doc.TopMargin - Rect.Top + 1 - BaseLine - 2 - PriorHeight + CInt(Math.Floor(PriorHeight / Rect.Height)) * Rect.Height, CSng(FontFace.Metrics.LineGap * FixedFont.Size / FontFace.Metrics.DesignUnitsPerEm), If(ct.RunDirection = iTextSharp.text.pdf.PdfWriter.RUN_DIRECTION_LTR, iTextSharp.text.Element.ALIGN_RIGHT, iTextSharp.text.Element.ALIGN_RIGHT) Or iTextSharp.text.Element.ALIGN_BASELINE)
+                Dim useFont As New Font(DrawFont.FontFamily, FixedFont.Size, DrawFont.Style)
+                GetTextWidthDraw(useFont, Forms, StrBreaks(StrCount), String.Empty, (Rect.Width - 4) / Cols, False, s, BaseLine)
+                useFont.Dispose()
+                If PriorHeight + s.Height > Rect.Height Then
+                    CurCol += 1
+                    PriorHeight = 0
+                End If
+                ct.SetSimpleColumn((Rect.Width - 4) / Cols * CurCol + Rect.Left + Doc.LeftMargin + 2 + ((Rect.Width - 4) / Cols - s.Width) / 2, Doc.PageSize.Height - Doc.TopMargin - Rect.Bottom - BaseLine - 2 - PriorHeight, Rect.Right - 2 + Doc.LeftMargin, Doc.PageSize.Height - Doc.TopMargin - Rect.Top + 1 - BaseLine - 2 - PriorHeight, CSng(FontFace.Metrics.LineGap * FixedFont.Size / FontFace.Metrics.DesignUnitsPerEm), If(ct.RunDirection = iTextSharp.text.pdf.PdfWriter.RUN_DIRECTION_LTR, iTextSharp.text.Element.ALIGN_RIGHT, iTextSharp.text.Element.ALIGN_RIGHT) Or iTextSharp.text.Element.ALIGN_BASELINE)
                 PriorHeight += s.Height
                 ct.AddText(New iTextSharp.text.Chunk(StrBreaks(StrCount), FixedFont))
                 ct.Go()
