@@ -2802,13 +2802,15 @@ Public Class RenderArray
                 End If
                 FixPriorHeight += s.Height
                 StrCount += 1
-                If StrCount = StrBreaks.Count And Cols < CurCol + 1 Then
-                    Cols = CurCol + 1
-                    StrBreaks.Clear()
-                    StrBreaks.AddRange(Strs)
-                    StrCount = 0
-                    CurCol = 0
-                    FixPriorHeight = PriorHeight
+                If StrCount = StrBreaks.Count Then
+                    If Cols < CurCol + 1 Or Cols > CurCol + 1 + 1 Then
+                        StrBreaks.Clear()
+                        StrBreaks.AddRange(Strs)
+                        StrCount = 0
+                        FixPriorHeight = PriorHeight
+                        Cols = CurCol + 1
+                        CurCol = 0
+                    End If
                 End If
             Loop While StrCount <> StrBreaks.Count
             CurCol = 0
