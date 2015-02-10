@@ -2785,11 +2785,13 @@ Public Class RenderArray
                 Dim FixedFont As New iTextSharp.text.Font(Font)
                 FixedFont.Size = FitText(StrBreaks(StrCount), (Rect.Width - 4) / Cols, Font.Size, False, DrawFont, Forms)
                 If FixedFont.Size < 8 Then
-                    Dim Idx As Integer = StrBreaks(StrCount).IndexOfAny({"("c, ","c, ")"c}, CInt(StrBreaks(StrCount).Length * FixedFont.Size / 8))
-                    If Idx <> -1 AndAlso StrBreaks(StrCount)(Idx) = ")"c Then Idx += 1
-                    StrBreaks.Insert(StrCount + 1, StrBreaks(StrCount).Substring(If(Idx = -1, CInt(StrBreaks(StrCount).Length * FixedFont.Size / 8), Idx)))
-                    StrBreaks(StrCount) = StrBreaks(StrCount).Substring(0, If(Idx = -1, CInt(StrBreaks(StrCount).Length * FixedFont.Size / 8), Idx))
-                    FixedFont.Size = FitText(StrBreaks(StrCount), (Rect.Width - 4) / Cols, Font.Size, False, DrawFont, Forms)
+                Dim Idx As Integer = StrBreaks(StrCount).IndexOfAny({"("c, ","c, ")"c, " "c}, CInt(StrBreaks(StrCount).Length * FixedFont.Size / 8))
+                    If Idx <> -1 Then
+                        If StrBreaks(StrCount)(Idx) = ")"c Then Idx += 1
+                        StrBreaks.Insert(StrCount + 1, StrBreaks(StrCount).Substring(Idx))
+                        StrBreaks(StrCount) = StrBreaks(StrCount).Substring(0, Idx)
+                        FixedFont.Size = FitText(StrBreaks(StrCount), (Rect.Width - 4) / Cols, Font.Size, False, DrawFont, Forms)
+                    End If
                 End If
                 Dim useFont As New Font(DrawFont.FontFamily, FixedFont.Size, DrawFont.Style)
                 GetTextWidthDraw(useFont, Forms, StrBreaks(StrCount), String.Empty, (Rect.Width - 4) / Cols, False, s, BaseLine)

@@ -4200,7 +4200,7 @@ Public Class TanzilReader
                 Dim TranslationArray(TranslationDict.Keys.Count - 1) As String
                 TranslationDict.Keys.CopyTo(TranslationArray, 0)
                 For WordCount As Integer = 0 To TranslationArray.Length - 1
-                    TranslationArray(WordCount) += " (" + String.Join(",", Array.ConvertAll(CType(TranslationDict(TranslationArray(WordCount)).ToArray(GetType(Integer())), Integer()()), Function(Indexes As Integer()) String.Join(":", Array.ConvertAll(Indexes, Function(Idx As Integer) CStr(Idx))))) + ")"
+                    TranslationArray(WordCount) += vbCrLf + "(" + String.Join(",", Array.ConvertAll(CType(TranslationDict(TranslationArray(WordCount)).ToArray(GetType(Integer())), Integer()()), Function(Indexes As Integer()) String.Join(":", Array.ConvertAll(Indexes, Function(Idx As Integer) CStr(Idx))))) + ")"
                 Next
                 Total += Dict.Item(FreqArray(Count)).Count
                 Output.Add(New String() {Arabic.TransliterateFromBuckwalter(FreqArray(Count)), Arabic.TransliterateToScheme(Arabic.TransliterateFromBuckwalter(FreqArray(Count)), If(SchemeType = ArabicData.TranslitScheme.RuleBased, ArabicData.TranslitScheme.LearningMode, SchemeType), Scheme), String.Join(vbCrLf, TranslationArray), CStr(Dict.Item(FreqArray(Count)).Count), (CDbl(Dict.Item(FreqArray(Count)).Count) * 100 / All).ToString("n2"), (CDbl(Total) * 100 / All).ToString("n2")})
@@ -4228,44 +4228,58 @@ Public Class TanzilReader
         End If
         Return CType(Output.ToArray(GetType(Array)), Array())
     End Function
-    Public Shared Function DumpRecDictionary(Dict As Dictionary(Of Char, Object)) As String
+    Public Shared Function DumpRecDictionary(Dict As Dictionary(Of Char, Object())) As String
         Dim Str As String = String.Empty
-        For Each KV As KeyValuePair(Of Char, Object) In Dict
+        For Each KV As KeyValuePair(Of Char, Object()) In Dict
             If Str <> String.Empty Then Str += " / "
-            Str += Arabic.TransliterateToScheme(KV.Key, ArabicData.TranslitScheme.Literal, String.Empty) + If(CType(KV.Value, Dictionary(Of Char, Object)).Keys.Count <> 0, String.Empty, "(" + DumpRecDictionary(CType(KV.Value, Dictionary(Of Char, Object))) + ")")
+            Str += KV.Key + If(CType(KV.Value(0), Dictionary(Of Char, Object())).Keys.Count = 0, String.Empty, "(" + DumpRecDictionary(CType(KV.Value(0), Dictionary(Of Char, Object()))) + ")")
         Next
         Return Str
     End Function
     Public Shared Function PatternAnalysis() As String()
         Dim Verses As List(Of String()) = GetQuranText(CachedData.XMLDocMain, -1, -1, -1, -1)
-        Dim PreDict As Dictionary(Of Char, Object)
-        Dim PostDict As Dictionary(Of Char, Object)
+        Dim PreDict As Dictionary(Of Char, Object())
+        Dim PostDict As Dictionary(Of Char, Object())
         Dim Strings(CachedData.RecitationSymbols.Length - 1) As String
         For LetCount = 0 To CachedData.RecitationSymbols.Length - 1
-            PreDict = New Dictionary(Of Char, Object)
-            PostDict = New Dictionary(Of Char, Object)
+            PreDict = New Dictionary(Of Char, Object())
+            PostDict = New Dictionary(Of Char, Object())
             For Count As Integer = 0 To Verses.Count - 1
                 For SubCount As Integer = 0 To Verses(Count).Length - 1
-                    Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(Arabic.TransliterateToScheme(Verses(Count)(SubCount), ArabicData.TranslitScheme.Literal, String.Empty), If(CachedData.RecitationSymbols(LetCount) = " ", "(\S*)(^|\s+|$)(\S*)", "(\S*)(?:" + ArabicData.MakeUniRegEx(CachedData.RecitationSymbols(LetCount)) + ")(\S*)"))
+                    Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(Arabic.TransliterateToScheme(Verses(Count)(SubCount), ArabicData.TranslitScheme.Literal, String.Empty), If(CachedData.RecitationSymbols(LetCount) = " ", "(\S*)(^|\s+|$)(\S*)", "(\S*)(?:" + Arabic.TransliterateToScheme(CachedData.RecitationSymbols(LetCount), ArabicData.TranslitScheme.Literal, String.Empty) + ")(\S*)"))
                     For MatchCount As Integer = 0 To Matches.Count - 1
-                        Dim CurDict As Dictionary(Of Char, Object) = PostDict
+                        Dim CurDict As Dictionary(Of Char, Object()) = PostDict
                         For StrCount = 0 To Matches(MatchCount).Groups(3).Length - 1
                             If Not CurDict.ContainsKey(Matches(MatchCount).Groups(3).Value(StrCount)) Then
-                                CurDict.Add(Matches(MatchCount).Groups(3).Value(StrCount), New Dictionary(Of Char, Object))
+                                CurDict.Add(Matches(MatchCount).Groups(3).Value(StrCount), {New Dictionary(Of Char, Object()), New Dictionary(Of Char, Object())})
                             End If
-                            CurDict = CType(CurDict(Matches(MatchCount).Groups(3).Value(StrCount)), Dictionary(Of Char, Object))
+                            CurDict = CType(CurDict(Matches(MatchCount).Groups(3).Value(StrCount))(0), Dictionary(Of Char, Object()))
+                            Dim CurOthDict As Dictionary(Of Char, Object()) = CType(CurDict(Matches(MatchCount).Groups(3).Value(StrCount))(1), Dictionary(Of Char, Object()))
+                            For StrOthCount = Matches(MatchCount).Groups(1).Length - 1 To 0 Step -1
+                                If Not CurOthDict.ContainsKey(Matches(MatchCount).Groups(1).Value(StrOthCount)) Then
+                                    CurOthDict.Add(Matches(MatchCount).Groups(1).Value(StrOthCount), {New Dictionary(Of Char, Object()), New Dictionary(Of Char, Object())})
+                                End If
+                                CurOthDict = CType(CurOthDict(Matches(MatchCount).Groups(1).Value(StrOthCount))(0), Dictionary(Of Char, Object()))
+                            Next
                         Next
                         CurDict = PreDict
                         For StrCount = Matches(MatchCount).Groups(1).Length - 1 To 0 Step -1
                             If Not CurDict.ContainsKey(Matches(MatchCount).Groups(1).Value(StrCount)) Then
-                                CurDict.Add(Matches(MatchCount).Groups(1).Value(StrCount), New Dictionary(Of Char, Object))
+                                CurDict.Add(Matches(MatchCount).Groups(1).Value(StrCount), {New Dictionary(Of Char, Object()), New Dictionary(Of Char, Object())})
                             End If
-                            CurDict = CType(CurDict(Matches(MatchCount).Groups(1).Value(StrCount)), Dictionary(Of Char, Object))
+                            CurDict = CType(CurDict(Matches(MatchCount).Groups(1).Value(StrCount))(0), Dictionary(Of Char, Object()))
+                            Dim CurOthDict As Dictionary(Of Char, Object()) = CType(CurDict(Matches(MatchCount).Groups(3).Value(StrCount))(1), Dictionary(Of Char, Object()))
+                            For StrOthCount = 0 To Matches(MatchCount).Groups(3).Length - 1
+                                If Not CurOthDict.ContainsKey(Matches(MatchCount).Groups(3).Value(StrOthCount)) Then
+                                    CurOthDict.Add(Matches(MatchCount).Groups(3).Value(StrOthCount), {New Dictionary(Of Char, Object()), New Dictionary(Of Char, Object())})
+                                End If
+                                CurOthDict = CType(CurOthDict(Matches(MatchCount).Groups(3).Value(StrOthCount))(0), Dictionary(Of Char, Object()))
+                            Next
                         Next
                     Next
                 Next
             Next
-            Strings(LetCount) = ArabicData.LeftToRightOverride + DumpRecDictionary(PreDict) + ":" + Arabic.TransliterateToScheme(CachedData.RecitationSymbols(LetCount), ArabicData.TranslitScheme.Literal, String.Empty) + ":" + DumpRecDictionary(PostDict) + ArabicData.PopDirectionalFormatting
+            Strings(LetCount) = ArabicData.LeftToRightOverride + DumpRecDictionary(PreDict) + "\" + Arabic.TransliterateToScheme(CachedData.RecitationSymbols(LetCount), ArabicData.TranslitScheme.Literal, String.Empty) + "\" + DumpRecDictionary(PostDict) + ArabicData.PopDirectionalFormatting
         Next
         Return Strings
     End Function
