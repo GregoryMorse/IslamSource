@@ -4224,9 +4224,50 @@ Public Class TanzilReader
                 Next
             End If
         ElseIf Index = 8 Then
-            Output.AddRange(Array.ConvertAll(GetQuranLetterPatterns(), Function(Str As String) {Str, String.Empty, String.Empty, String.Empty, String.Empty, String.Empty}))
+            Output.AddRange(Array.ConvertAll(PatternAnalysis(), Function(Str As String) {Str, String.Empty, String.Empty, String.Empty, String.Empty, String.Empty}))
         End If
         Return CType(Output.ToArray(GetType(Array)), Array())
+    End Function
+    Public Shared Function DumpRecDictionary(Dict As Dictionary(Of Char, Object)) As String
+        Dim Str As String = String.Empty
+        For Each KV As KeyValuePair(Of Char, Object) In Dict
+            If Str <> String.Empty Then Str += " / "
+            Str += Arabic.TransliterateToScheme(KV.Key, ArabicData.TranslitScheme.Literal, String.Empty) + If(CType(KV.Value, Dictionary(Of Char, Object)).Keys.Count <> 0, String.Empty, "(" + DumpRecDictionary(CType(KV.Value, Dictionary(Of Char, Object))) + ")")
+        Next
+        Return Str
+    End Function
+    Public Shared Function PatternAnalysis() As String()
+        Dim Verses As List(Of String()) = GetQuranText(CachedData.XMLDocMain, -1, -1, -1, -1)
+        Dim PreDict As Dictionary(Of Char, Object)
+        Dim PostDict As Dictionary(Of Char, Object)
+        Dim Strings(CachedData.RecitationSymbols.Length - 1) As String
+        For LetCount = 0 To CachedData.RecitationSymbols.Length - 1
+            PreDict = New Dictionary(Of Char, Object)
+            PostDict = New Dictionary(Of Char, Object)
+            For Count As Integer = 0 To Verses.Count - 1
+                For SubCount As Integer = 0 To Verses(Count).Length - 1
+                    Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(Arabic.TransliterateToScheme(Verses(Count)(SubCount), ArabicData.TranslitScheme.Literal, String.Empty), If(CachedData.RecitationSymbols(LetCount) = " ", "(\S*)(^|\s+|$)(\S*)", "(\S*)(?:" + ArabicData.MakeUniRegEx(CachedData.RecitationSymbols(LetCount)) + ")(\S*)"))
+                    For MatchCount As Integer = 0 To Matches.Count - 1
+                        Dim CurDict As Dictionary(Of Char, Object) = PostDict
+                        For StrCount = 0 To Matches(MatchCount).Groups(3).Length - 1
+                            If Not CurDict.ContainsKey(Matches(MatchCount).Groups(3).Value(StrCount)) Then
+                                CurDict.Add(Matches(MatchCount).Groups(3).Value(StrCount), New Dictionary(Of Char, Object))
+                            End If
+                            CurDict = CType(CurDict(Matches(MatchCount).Groups(3).Value(StrCount)), Dictionary(Of Char, Object))
+                        Next
+                        CurDict = PreDict
+                        For StrCount = Matches(MatchCount).Groups(1).Length - 1 To 0 Step -1
+                            If Not CurDict.ContainsKey(Matches(MatchCount).Groups(1).Value(StrCount)) Then
+                                CurDict.Add(Matches(MatchCount).Groups(1).Value(StrCount), New Dictionary(Of Char, Object))
+                            End If
+                            CurDict = CType(CurDict(Matches(MatchCount).Groups(1).Value(StrCount)), Dictionary(Of Char, Object))
+                        Next
+                    Next
+                Next
+            Next
+            Strings(LetCount) = ArabicData.LeftToRightOverride + DumpRecDictionary(PreDict) + ":" + Arabic.TransliterateToScheme(CachedData.RecitationSymbols(LetCount), ArabicData.TranslitScheme.Literal, String.Empty) + ":" + DumpRecDictionary(PostDict) + ArabicData.PopDirectionalFormatting
+        Next
+        Return Strings
     End Function
     Public Shared Function GetQuranLetterPatterns() As String()
         Dim RecSymbols As String = String.Join(String.Empty, Array.ConvertAll(CachedData.RecitationSpecialSymbols, Function(C As String) C))

@@ -2332,14 +2332,15 @@ Public Class RenderArray
                     If CharCount = ClusterMap.Length - 1 OrElse ClusterMap(CharCount) <> ClusterMap(CharCount + 1) Then
                         PriorWidth += GlyphAdvances(ResCount)
                         Dim Index As Integer = Array.FindIndex(LigArray, Function(Lig As ArabicData.LigatureInfo) Lig.Indexes(0) = RunStart)
-                        If Index = -1 OrElse (GlyphProps(ResCount).Justification <> SharpDX.DirectWrite.ScriptJustify.Blank And GlyphProps(ResCount).Justification <> SharpDX.DirectWrite.ScriptJustify.ArabicBlank Or Array.IndexOf(LigArray(Index).Indexes, RunStart) = -1) Then RunCount += 1
+                        If Index = -1 OrElse (GlyphProps(ResCount).Justification <> SharpDX.DirectWrite.ScriptJustify.Blank And GlyphProps(ResCount).Justification <> SharpDX.DirectWrite.ScriptJustify.ArabicBlank Or Array.IndexOf(LigArray(Index).Indexes, RunStart) = -1) And RunStart + RunCount <> Str.Length - 1 Then RunCount += 1
                         If Index <> -1 AndAlso (GlyphProps(ResCount).Justification <> SharpDX.DirectWrite.ScriptJustify.Blank And GlyphProps(ResCount).Justification <> SharpDX.DirectWrite.ScriptJustify.ArabicBlank Or Array.IndexOf(LigArray(Index).Indexes, RunStart) = -1) Then
-                            While Array.IndexOf(LigArray(Index).Indexes, RunStart + RunCount) <> -1
+                            While Array.IndexOf(LigArray(Index).Indexes, RunStart + RunCount) <> -1 And RunStart + RunCount <> Str.Length - 1
                                 RunCount += 1
                             End While
                         End If
                         If ClusterMap(CharCount) <> ResCount And GlyphAdvances(ResCount) <> 0 Then
                             RunStart = CharCount
+                            RunCount = 0
                             RunRes = ResCount
                         End If
                     End If
@@ -2368,6 +2369,8 @@ Public Class RenderArray
         If Not Pos Is Nothing Then Pos = CharPosInfos.ToArray()
         Dim Size As SizeF = New SizeF(If(IsRTL, Left - Right, Right - Left), Top - Bottom + CSng(FontFace.Metrics.LineGap * useFont.SizeInPoints / FontFace.Metrics.DesignUnitsPerEm))
         BaseLine = Top
+        Source.Shadow.Dispose()
+        Sink.Shadow.Dispose()
         FontFace.Dispose()
         Analyze.Dispose()
         Factory.Dispose()
@@ -2696,8 +2699,18 @@ Public Class RenderArray
         Dim bReverse As Boolean = False
         Dim Factory As New SharpDX.DirectWrite.Factory()
         Dim FontFace As New SharpDX.DirectWrite.FontFace(Factory.GdiInterop.FromSystemDrawingFont(DrawFont))
+        Dim Mode As Integer = 1
         For Count As Integer = 0 To CType(CurRenderArray(0).TextItems(0).Text, Array()).Length - 1 - 3
-            Dim Rect As New RectangleF(((Count Mod 18) Mod 3) * (Doc.PageSize.Width - Doc.LeftMargin - Doc.RightMargin) / 3, ((Count Mod 18) \ 3) * (Doc.PageSize.Height - Doc.TopMargin - Doc.BottomMargin) / 6, (Doc.PageSize.Width - Doc.LeftMargin - Doc.RightMargin) / 3, (Doc.PageSize.Height - Doc.TopMargin - Doc.BottomMargin) / 6)
+            Dim Rect As RectangleF
+            If Mode = 1 And (bReverse Or Count Mod 4 <> 0 Or (Count Mod 4 = 0 And CStr(CType(CType(CurRenderArray(0).TextItems(0).Text, Array())(Count + 3), Object())(2)).Length <= 80 * 24 And Count Mod 18 <> 0) Or CStr(CType(CType(CurRenderArray(0).TextItems(0).Text, Array())(Count + 3), Object())(2)).Length > 80 * 3 / 2 * 24 * 3) Then
+                Rect = New RectangleF(0, 0, (Doc.PageSize.Width - Doc.LeftMargin - Doc.RightMargin), (Doc.PageSize.Height - Doc.TopMargin - Doc.BottomMargin))
+            ElseIf (Mode = 1 Or Mode = 4) And (bReverse Or Count Mod 4 <> 0 Or Count Mod 18 <> 0 Or CStr(CType(CType(CurRenderArray(0).TextItems(0).Text, Array())(Count + 3), Object())(2)).Length > 80 * 24) Then
+                Rect = New RectangleF(((Count Mod 4) Mod 2) * (Doc.PageSize.Width - Doc.LeftMargin - Doc.RightMargin) / 2, ((Count Mod 4) \ 2) * (Doc.PageSize.Height - Doc.TopMargin - Doc.BottomMargin) / 2, (Doc.PageSize.Width - Doc.LeftMargin - Doc.RightMargin) / 2, (Doc.PageSize.Height - Doc.TopMargin - Doc.BottomMargin) / 2)
+                Mode = 4
+            Else
+                Rect = New RectangleF(((Count Mod 18) Mod 3) * (Doc.PageSize.Width - Doc.LeftMargin - Doc.RightMargin) / 3, ((Count Mod 18) \ 3) * (Doc.PageSize.Height - Doc.TopMargin - Doc.BottomMargin) / 6, (Doc.PageSize.Width - Doc.LeftMargin - Doc.RightMargin) / 3, (Doc.PageSize.Height - Doc.TopMargin - Doc.BottomMargin) / 6)
+                Mode = 18
+            End If
             Writer.DirectContent.SaveState()
             Writer.DirectContent.SetLineWidth(1)
             Writer.DirectContent.SetLineDash(0.5)
@@ -2813,8 +2826,8 @@ Public Class RenderArray
                 ct.Go()
             Next
             ct = Nothing
-            If Count Mod 18 = 17 Or Count = CType(CurRenderArray(0).TextItems(0).Text, Array()).Length - 1 - 3 Then
-                If Not bReverse Then Count -= (Count Mod 18) + 1
+            If Count Mod Mode = (Mode - 1) Or Count = CType(CurRenderArray(0).TextItems(0).Text, Array()).Length - 1 - 3 Then
+                If Not bReverse Then Count -= (Count Mod Mode) + 1
                 If Count <> CType(CurRenderArray(0).TextItems(0).Text, Array()).Length - 1 - 3 Or Not bReverse Then Doc.NewPage()
                 bReverse = Not bReverse
             End If
