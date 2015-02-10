@@ -3103,7 +3103,7 @@ Public Class CachedData
                         If Not _WordDictionary.ContainsKey(Lem) Then
                             _WordDictionary.Add(Lem, New ArrayList)
                         End If
-                        _WordDictionary.Item(Lem).Add(Location)
+                        If _WordDictionary.Item(Lem).IndexOf(Pieces(1)) = -1 Then _WordDictionary.Item(Lem).Add(Pieces(1))
                     End If
                     If Array.Find(Parts, Function(Str As String) Str = "PREFIX") <> String.Empty Then
                         If Not _PreDictionary.ContainsKey(Pieces(1)) Then
@@ -3156,16 +3156,18 @@ Public Class CachedData
                 Dim RefCount As Integer
                 Dim UniCount As Integer = 0
                 For RefCount = 0 To CachedData.WordDictionary(FreqArray(SubCount)).Count - 1
-                    If (CType(CachedData.WordDictionary(FreqArray(SubCount))(RefCount), Integer())(0) = BaseChapter AndAlso _
-                        CType(CachedData.WordDictionary(FreqArray(SubCount))(RefCount), Integer())(1) >= BaseVerse AndAlso _
-                        (BaseChapter <> Chapter OrElse _
-                        CType(CachedData.WordDictionary(FreqArray(SubCount))(RefCount), Integer())(1) <= Verse)) OrElse _
-                        (CType(CachedData.WordDictionary(FreqArray(SubCount))(RefCount), Integer())(0) > BaseChapter AndAlso _
-                        CType(CachedData.WordDictionary(FreqArray(SubCount))(RefCount), Integer())(0) < Chapter) OrElse _
-                        (CType(CachedData.WordDictionary(FreqArray(SubCount))(RefCount), Integer())(0) = Chapter AndAlso
-                        CType(CachedData.WordDictionary(FreqArray(SubCount))(RefCount), Integer())(1) <= Verse) Then
-                        UniCount += 1
-                    End If
+                    For FormCount As Integer = 0 To CachedData.FormDictionary(CStr(CachedData.WordDictionary(FreqArray(SubCount))(RefCount))).Count - 1
+                        If (CType(CachedData.FormDictionary(CStr(CachedData.WordDictionary(FreqArray(SubCount))(RefCount)))(FormCount), Integer())(0) = BaseChapter AndAlso _
+                            CType(CachedData.FormDictionary(CStr(CachedData.WordDictionary(FreqArray(SubCount))(RefCount)))(FormCount), Integer())(1) >= BaseVerse AndAlso _
+                            (BaseChapter <> Chapter OrElse _
+                            CType(CachedData.FormDictionary(CStr(CachedData.WordDictionary(FreqArray(SubCount))(RefCount)))(FormCount), Integer())(1) <= Verse)) OrElse _
+                            (CType(CachedData.FormDictionary(CStr(CachedData.WordDictionary(FreqArray(SubCount))(RefCount)))(FormCount), Integer())(0) > BaseChapter AndAlso _
+                            CType(CachedData.FormDictionary(CStr(CachedData.WordDictionary(FreqArray(SubCount))(RefCount)))(FormCount), Integer())(0) < Chapter) OrElse _
+                            (CType(CachedData.FormDictionary(CStr(CachedData.WordDictionary(FreqArray(SubCount))(RefCount)))(FormCount), Integer())(0) = Chapter AndAlso
+                            CType(CachedData.FormDictionary(CStr(CachedData.WordDictionary(FreqArray(SubCount))(RefCount)))(FormCount), Integer())(1) <= Verse) Then
+                            UniCount += 1
+                        End If
+                    Next
                 Next
                 If UniCount = CachedData.WordDictionary(FreqArray(SubCount)).Count Then
                     PartUniqueArray(Count - 1).Add(FreqArray(SubCount))
@@ -4166,7 +4168,14 @@ Public Class TanzilReader
         ElseIf Index = 1 Or Index = 9 Or Index = 10 Or Index >= 11 And Index < 11 + CachedData.IslamData.PartsOfSpeech.Length + CachedData.RecitationSymbols.Length + CachedData.RecitationSymbols.Length + CachedData.RecitationSymbols.Length Then
             Dim Dict As Generic.Dictionary(Of String, ArrayList)
             If Index = 1 Then
-                Dict = CachedData.WordDictionary
+                Dict = New Dictionary(Of String, ArrayList)
+                For Each KV As KeyValuePair(Of String, ArrayList) In CachedData.WordDictionary
+                    Dim Str As String = KV.Key + vbCrLf + String.Join(vbCrLf, CType(KV.Value.ToArray(GetType(String)), String()))
+                    Dict.Add(Str, New ArrayList)
+                    For Count As Integer = 0 To KV.Value.Count - 1
+                        Dict(Str).AddRange(CachedData.FormDictionary(CStr(KV.Value(Count))))
+                    Next
+                Next
             ElseIf Index = 9 Then
                 Dict = CachedData.PreDictionary
             ElseIf Index = 10 Then

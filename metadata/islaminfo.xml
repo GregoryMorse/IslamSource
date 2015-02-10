@@ -1582,7 +1582,7 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<noun text="HarofN" plural="&gt;aHorufN HuruwfN" id="ParticleEdgeAspectDialect"></noun>
 			<noun text="saAkinN" plural="sukuwnN" id="MarkOfStoppingOnLetter"></noun>
 			<noun text="SifapN" plural="SifaAtN" id="Adjective"></noun>
-			<noun text="DamiyrN" plural="DamaA^}irN" id="Pronoun"></noun>
+			<noun text="DamiyrN" plural="DamaA^}irN" id="PersonalPronoun"></noun>
 			<noun text="fiEolN" plural="&gt;afoEaAlN" id="Verb"></noun>
 			<noun text="maSodarN" plural="maSaAdirN" id="VerbalNoun"></noun>
 			<noun text="&lt;iEoraAbN" id="Declension"></noun>
@@ -1894,19 +1894,22 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 		<word text="{lojan~apu" id="Heaven"></word>
 
 		<word text="{lokalimapu" id="Word"></word>
-		<word text="&lt;isomu {lS~ilapi" id="RelativePronoun"></word>
+		<word text="&lt;isomu {loEilomi" id="ProperName"></word>
+		<word text="&lt;isomu {lofiEoli {lo&gt;amori" id="ImperativeVerbalNoun"></word>
+		<word text="&lt;isomu {lomuwSuwli" id="RelativePronoun"></word>
+		<word text="&lt;isomu {lS~ilapi" id="RelativeDescriptivePronoun"></word>
 		<word text="&lt;isomu {lofaAEili" id="ActiveParticipleVerbalDoer"></word>
 		<word text="&lt;isomu {lomafoEuwli" id="PassiveParticiplePassiveNoun"></word>
 		<word text="&lt;isomu tafoDiylu" id="ComparativeDerivedNoun"></word>
 		<word text="&lt;isomu {lZ~arofi" id="PossessionConstructionLikeNounsForTimePlace"></word>
 		<word text="&lt;isomu mu$otaq~N" id="DerivedNouns"></word>
 		<word text="&lt;isomu {lo&gt;alapi" id="InstrumentOfAction"></word>
-		<word text="&lt;isomu {lo&lt;i$aArapi" id="PointingNoun"></word>
+		<word text="&lt;isomu {lo&lt;i$aArapi" id="PointingDemonstrativePronoun"></word>
 		<word text="&gt;asomaA^&apos;u {lo&lt;i$aArapi" id="PointingNouns"></word>
 		<word text="&gt;asomaA^&apos;u {lo&lt;i$aArapi {lobaEiyd" id="FarPointingNouns"></word>
 		<word text="{lo&gt;asomaA^&apos;u {loxamosapu" id="FiveSpecialNouns"></word>
-		<word text="Zarofu {lomakaAni" id="ParticleOfPlace"></word>
-		<word text="Zarofu {lz~amaAni" id="ParticleOfTime"></word>
+		<word text="Zarofu {lomakaAni" id="ParticleOfPlaceAdverb"></word>
+		<word text="Zarofu {lz~amaAni" id="ParticleOfTimeAdverb"></word>
 		<word text="siygapN mubaAlagapN" id="DerivedIntensiveAdjectivesIntransitive"></word>
 		<word text="sifapN mu$ab~ahapN" id="DerivedSuperlativeAdjectivesTransitive"></word>
 		<word text="{lD~amaA^}iru {lomunfaSilapu" id="DetachedPronouns"></word>
@@ -1927,19 +1930,49 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 		<word text="{loqariybu" id="Near"></word>
 		<word text="{lobaEiydu" id="Far"></word>
 		<word text="nuwnu {lowiqaAyapi" id="FirstPersonSingularVerbalAttachedPronoun"></word>
+		<word text="Harofu {ln~aSobi" id="AccusativeParticle"></word>
 		<word text="Huruwfu {ln~aSobi" id="AccusativeParticles"></word>
-		<word text="Huruwfu {lojar~i" id="PossessionParticles"></word>
+		<word text="Harofu {lojar~i" id="PossessionParticlePreposition"></word>
+		<word text="Huruwfu {lojar~i" id="PossessionParticlesPrepositions"></word>
 		<word text="Huruwfu {lojazomi" id="PresentTensePossessionParticles"></word>
 		<word text="HuruwfN gayoru EaAmilapK" id="ParticlesWithoutDeclension"></word>
 		<word text="Huruwfu {lomakaAni" id="ParticlesOfPlace"></word>
 		<word text="Huruwfu {lz~amaAni" id="ParticlesOfTime"></word>
 		<word text="Huruwfu {loqasami" id="ParticlesForOaths"></word>
+		<word text="Harofu {ln~afiY" id="NegativeParticle"></word>
 		<word text="Huruwfu {ln~afiY" id="ParticlesOfNegation"></word>
 		<word text="Huruwfu {loEaTofi" id="ConnectingParticles"></word>
 		<word text="Huruwfu {lt~awokiydi" id="ParticlesOfEmphasis"></word>
+		<word text="Harofu {l$~aroTi" id="ConditionalParticle"></word>
 		<word text="Huruwfu {l$~aroTi" id="ParticlesOfCondition"></word>
-		<word text="Huruwfu {lo&gt;asotifohaAmi" id="ParticlesOfInterogation"></word>
+		<word text="Harofu {lo&lt;isotifohaAmi" id="InterogativeParticle"></word>
+		<word text="Huruwfu {lo&lt;isotifohaAmi" id="ParticlesOfInterogation"></word>
 		<word text="Huruwfu {loEil~api" id="VowelLetter"></word>
+		<word text="Harofu {lojawaAbi" id="AnswerParticle"></word>
+		<word text="Harofu {loEoTifi" id="CoordinatingConjunction"></word>
+		<word text="Harofu {lomasoDariY" id="SubordinatingConjunction"></word>
+		<word text="Harofu {lo&lt;isotidoraAki" id="AmendmentParticle"></word>
+		<word text="Harofu {lr~adaEi" id="AversionParticle"></word>
+		<word text="Harofu {ls~ababiy~api" id="ParticleOfCause"></word>
+		<word text="Harofu {lt~aHoqiyqi" id="AversionParticle"></word>
+		<word text="Harofu {loHaAli" id="CircumstantialParticle"></word>
+		<word text="waAwu {lomaEiy~api" id="ComitativeParticle"></word>
+		<word text="Harofu {lt~asowiy~api" id="EqualizationParticle"></word>
+		<word text="Harofu {lt~aHoDiyDi" id="ExhortationParticle"></word>
+		<word text="Harofu {lt~afoSiyli" id="ExplanationParticle"></word>
+		<word text="&gt;adaApu {lo&lt;isotivonaA&apos;i" id="ExceptiveParticle"></word>
+		<word text="Harofu {lo&lt;istaqobaAli" id="FutureParticle"></word>
+		<word text="Harofu {lo&lt;ibtadoaA&apos;i" id="InceptiveParticle"></word>
+		<word text="Harofu {lt~afosiyri" id="ParticleOfInterpretation"></word>
+		<word text="Harofu {lokaAfi" id="PreventiveParticle"></word>
+		<word text="Harofu {ln~ahiY~i" id="ProhibitionParticle"></word>
+		<word text="Harofu {lo&lt;isti}onaAfiy~api" id="ResumptionParticle"></word>
+		<word text="&gt;adaApu {loHasori" id="RestrictionParticle"></word>
+		<word text="Harofu {lo&lt;iDoraAbi" id="RetractionParticle"></word>
+		<word text="Harofu {lowaAqiEi fiY jawaAbi {l$~aroTi" id="ResultParticle"></word>
+		<word text="Harofu {lz~aA^}idi" id="SupplementalParticle"></word>
+		<word text="Harofu {lofajaA^&apos;api" id="SurpriseParticle"></word>
+		<word text="Harofu {lonidaA^&apos;i" id="VocativeParticle"></word>
 		<word text="&lt;in~a wa&gt;axawaAtuhaA" id="VerilyAndItsSisters"></word>
 		<word text="{lobolaAgapu" id="StudyOfRhetoricEloquence"></word>
 		<word text="taA^&apos;u {lomarobuwtapi" id="TheTaaOfFemininity"></word>
@@ -1949,14 +1982,12 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 		<word text="jumolapN fiEoliy~apN" id="VerbalSentence"></word>
 		<word text="jawaAbu {l$~aroTi" id="ResponseStatementAfterCondition"></word>
 		<word text="{loxabaru" id="Predicate"></word>
-		<word text="Zarofu {lomakaAni" id="RelativePlaceNouns"></word>
-		<word text="Zarofu {lr~amaAni" id="RelativeTimeNouns"></word>
 		<word text="$ibohu {lojumolapi" id="EssentiallyPossessiveConstruction"></word>
 		<word text="{l$~aroTu" id="ConditionDenotedByConditionParticle"></word>
 		<word text="Damiyro mut~aSilN" id="ConnectedPronoun"></word>
 		<word text="Damiyro munfaSilN" id="DetachedPronoun"></word>
-		<word text="Zarofu {lz~amaAni" id="AccusativeNounIndicatingTimeWhenActionOccurs"></word>
-		<word text="Zarofu {lomakaAni" id="AccusativeNounIndicatingPlaceWhereActionOccurs"></word>
+		<word text="Zarofu {lz~amaAni" id="RelativeTimeNounsAccusativeNounIndicatingTimeWhenActionOccurs"></word>
+		<word text="Zarofu {lomakaAni" id="RelativePlaceNounsAccusativeNounIndicatingPlaceWhereActionOccurs"></word>
 		<word text="{lofiEolu {lo&gt;amoru" id="CommandTenseVerb"></word>
 		<word text="fiEolu {lv~ulaAviy" id="ThreeLetterRootVerb"></word>
 		<word text="fiEolu {lv~ulaAviy {lomujar~adi" id="FirstFamilyRootVerb"></word>
@@ -1973,7 +2004,7 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 		<word text="{lofiEolu {lomutaEad~iy" id="TransitiveVerb"></word>
 		<word text="{lofiEolu {l~aAzimu" id="IntransitiveVerb"></word>
 		<word text="laA {ln~aAfiyapi" id="NegationParticle"></word>
-		<word text="laA {ln~ahiy~api" id="NegativeCommand"></word>
+		<word text="laA {ln~ahiy~api" id="ImperativeLaamPrefixNegativeCommand"></word>
 		<word text="{lomu}an~avu" id="Feminine"></word>
 		<word text="{lomubotada&gt;u" id="SubjectNominalSentence"></word>
 		<word text="{lomaADiy {lomajohuwlu" id="PassivePastTense"></word>
@@ -1987,8 +2018,10 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 		<word text="mafoEuwlN bihi" id="DirectObjectOfVerb"></word>
 		<word text="$ibohu jumolapN" id="IndirectObject"></word>
 		<word text="naA^}ibu {lofaAEili" id="DeputyDoer"></word>
-		<word text="la&apos;aAmu {lt~awokiydi" id="LaamOfEmphasis"></word>
-		<word text="{l\, {lt~aEoriyfi" id="AlOfDefiniteness"></word>
+		<word text="la&apos;aAmu {lt~awokiydi" id="LaamOfEmphasisEmphaticLaamPrefix"></word>
+		<word text="la&apos;aAmu {lo&gt;amori" id="ImperativeLaamPrefix"></word>
+		<word text="la&apos;aAmu {lt~aEoliyli" id="PurposeLaamPrefix"></word>
+		<word text="{l\, {lt~aEoriyfi" id="AlOfDefinitenessDeterminerPrefix"></word>
 		<word text="yaA^&apos;u {lomutakal~imi" id="FirstPersonAttachedPronoun"></word>
 		<word text="&lt;isomu {ln~isobapi" id="RelativeAdjective"></word>
 
@@ -2691,7 +2724,7 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 		<word text="&gt;um~u {lokitaAbi" id="EssenceOfTheBook"></word>
 		<word text="&gt;aHokamu {lofarasi" id="BridleIt"></word>
 		<word text="naqolu {ll~ugaAti" id="BasisOfTransmissionOfLanguage"></word>
-		<word text="{loHuruwfu {lomuqaT~aEaAt" id="DisjointedLetters"></word>
+		<word text="{loHuruwfu {lomuqaT~aEaAti" id="DisjointedLettersQuranicInitials"></word>
 		<word text="majaAzN Eaqoliy" id="RationalLogicalMetaphorMetonymy"></word>
 		<word text="majaAzN lugawiy" id="LinguisticMetaphorMetonymy"></word>
 		<word text="muSar~apN matohalN" id="StatedSimile"></word>
@@ -6047,19 +6080,19 @@ Ramadan fast-breaking | One 2172-gram quantity | Dates or barley or ordinary sta
 		<translation file="uz.sodik" name="Мухаммад Содик" translator="Muhammad Sodik Muhammad Yusuf"></translation>
 	</translations>
 	<partsofspeech>
-		<pos symbol="N" id="Noun"></pos>
+		<pos symbol="N" id="NounName"></pos>
 		<pos symbol="PN" id="ProperNoun"></pos>
 		<pos symbol="ADJ" id="Adjective"></pos>
 		<pos symbol="IMPN" id="ImperativeVerbalNoun"></pos>
 		<pos symbol="PRON" id="PersonalPronoun"></pos>
-		<pos symbol="DEM" id="DemonstrativePronoun"></pos>
+		<pos symbol="DEM" id="PointingDemonstrativePronoun"></pos>
 		<pos symbol="REL" id="RelativePronoun"></pos>
-		<pos symbol="T" id="TimeAdverb"></pos>
-		<pos symbol="LOC" id="LocationAdverb"></pos>
-		<pos symbol="DET" id="DeterminerPrefix"></pos>
+		<pos symbol="T" id="ParticleOfTimeAdverb"></pos>
+		<pos symbol="LOC" id="ParticleOfPlaceAdverb"></pos>
+		<pos symbol="DET" id="AlOfDefinitenessDeterminerPrefix"></pos>
 		<pos symbol="V" id="Verb"></pos>
-		<pos symbol="P" id="Preposition"></pos>
-		<pos symbol="EMPH" id="EmphaticLaamPrefix"></pos>
+		<pos symbol="P" id="PossessionParticlePreposition"></pos>
+		<pos symbol="EMPH" id="LaamOfEmphasisEmphaticLaamPrefix"></pos>
 		<pos symbol="IMPV" id="ImperativeLaamPrefix"></pos>
 		<pos symbol="PRP" id="PurposeLaamPrefix"></pos>
 		<pos symbol="CONJ" id="CoordinatingConjunction"></pos>
@@ -6069,7 +6102,7 @@ Ramadan fast-breaking | One 2172-gram quantity | Dates or barley or ordinary sta
 		<pos symbol="ANS" id="AnswerParticle"></pos>
 		<pos symbol="AVR" id="AversionParticle"></pos>
 		<pos symbol="CAUS" id="ParticleOfCause"></pos>
-		<pos symbol="CERT" id="ParticleOfCertainty"></pos>
+		<pos symbol="CERT" id="AversionParticle"></pos>
 		<pos symbol="CIRC" id="CircumstantialParticle"></pos>
 		<pos symbol="COM" id="ComitativeParticle"></pos>
 		<pos symbol="COND" id="ConditionalParticle"></pos>
@@ -6091,6 +6124,6 @@ Ramadan fast-breaking | One 2172-gram quantity | Dates or barley or ordinary sta
 		<pos symbol="SUP" id="SupplementalParticle"></pos>
 		<pos symbol="SUR" id="SurpriseParticle"></pos>
 		<pos symbol="VOC" id="VocativeParticle"></pos>
-		<pos symbol="INL" id="QuranicInitials"></pos>
+		<pos symbol="INL" id="DisjointedLettersQuranicInitials"></pos>
 	</partsofspeech>
 </islamdata>
