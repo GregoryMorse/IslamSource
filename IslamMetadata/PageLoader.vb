@@ -4232,7 +4232,7 @@ Public Class TanzilReader
         Dim Str As String = String.Empty
         For Each KV As KeyValuePair(Of Char, Object()) In Dict
             If Str <> String.Empty Then Str += " / "
-            Str += KV.Key + If(CType(KV.Value(0), Dictionary(Of Char, Object())).Keys.Count = 0, String.Empty, "(" + DumpRecDictionary(CType(KV.Value(0), Dictionary(Of Char, Object()))) + ")")
+            Str += Arabic.TransliterateToScheme(KV.Key, ArabicData.TranslitScheme.Literal, String.Empty) + If(CType(KV.Value(0), Dictionary(Of Char, Object())).Keys.Count = 0, String.Empty, "(" + DumpRecDictionary(CType(KV.Value(0), Dictionary(Of Char, Object()))) + ")")
         Next
         Return Str
     End Function
@@ -4246,15 +4246,15 @@ Public Class TanzilReader
             PostDict = New Dictionary(Of Char, Object())
             For Count As Integer = 0 To Verses.Count - 1
                 For SubCount As Integer = 0 To Verses(Count).Length - 1
-                    Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(Arabic.TransliterateToScheme(Verses(Count)(SubCount), ArabicData.TranslitScheme.Literal, String.Empty), If(CachedData.RecitationSymbols(LetCount) = " ", "(\S*)(^|\s+|$)(\S*)", "(\S*)(?:" + Arabic.TransliterateToScheme(CachedData.RecitationSymbols(LetCount), ArabicData.TranslitScheme.Literal, String.Empty) + ")(\S*)"))
+                    Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(Verses(Count)(SubCount), If(CachedData.RecitationSymbols(LetCount) = " ", "(\S*)(^|\s+|$)(\S*)", "(\S*)(" + ArabicData.MakeUniRegEx(CachedData.RecitationSymbols(LetCount)) + ")(\S*)"))
                     For MatchCount As Integer = 0 To Matches.Count - 1
                         Dim CurDict As Dictionary(Of Char, Object()) = PostDict
                         For StrCount = 0 To Matches(MatchCount).Groups(3).Length - 1
                             If Not CurDict.ContainsKey(Matches(MatchCount).Groups(3).Value(StrCount)) Then
                                 CurDict.Add(Matches(MatchCount).Groups(3).Value(StrCount), {New Dictionary(Of Char, Object()), New Dictionary(Of Char, Object())})
                             End If
-                            CurDict = CType(CurDict(Matches(MatchCount).Groups(3).Value(StrCount))(0), Dictionary(Of Char, Object()))
                             Dim CurOthDict As Dictionary(Of Char, Object()) = CType(CurDict(Matches(MatchCount).Groups(3).Value(StrCount))(1), Dictionary(Of Char, Object()))
+                            CurDict = CType(CurDict(Matches(MatchCount).Groups(3).Value(StrCount))(0), Dictionary(Of Char, Object()))
                             For StrOthCount = Matches(MatchCount).Groups(1).Length - 1 To 0 Step -1
                                 If Not CurOthDict.ContainsKey(Matches(MatchCount).Groups(1).Value(StrOthCount)) Then
                                     CurOthDict.Add(Matches(MatchCount).Groups(1).Value(StrOthCount), {New Dictionary(Of Char, Object()), New Dictionary(Of Char, Object())})
@@ -4267,8 +4267,8 @@ Public Class TanzilReader
                             If Not CurDict.ContainsKey(Matches(MatchCount).Groups(1).Value(StrCount)) Then
                                 CurDict.Add(Matches(MatchCount).Groups(1).Value(StrCount), {New Dictionary(Of Char, Object()), New Dictionary(Of Char, Object())})
                             End If
+                            Dim CurOthDict As Dictionary(Of Char, Object()) = CType(CurDict(Matches(MatchCount).Groups(1).Value(StrCount))(1), Dictionary(Of Char, Object()))
                             CurDict = CType(CurDict(Matches(MatchCount).Groups(1).Value(StrCount))(0), Dictionary(Of Char, Object()))
-                            Dim CurOthDict As Dictionary(Of Char, Object()) = CType(CurDict(Matches(MatchCount).Groups(3).Value(StrCount))(1), Dictionary(Of Char, Object()))
                             For StrOthCount = 0 To Matches(MatchCount).Groups(3).Length - 1
                                 If Not CurOthDict.ContainsKey(Matches(MatchCount).Groups(3).Value(StrOthCount)) Then
                                     CurOthDict.Add(Matches(MatchCount).Groups(3).Value(StrOthCount), {New Dictionary(Of Char, Object()), New Dictionary(Of Char, Object())})
@@ -4279,7 +4279,7 @@ Public Class TanzilReader
                     Next
                 Next
             Next
-            Strings(LetCount) = ArabicData.LeftToRightOverride + DumpRecDictionary(PreDict) + "\" + Arabic.TransliterateToScheme(CachedData.RecitationSymbols(LetCount), ArabicData.TranslitScheme.Literal, String.Empty) + "\" + DumpRecDictionary(PostDict) + ArabicData.PopDirectionalFormatting
+            Strings(LetCount) = ArabicData.LeftToRightOverride + StrReverse(DumpRecDictionary(PreDict)) + "\" + Arabic.TransliterateToScheme(CachedData.RecitationSymbols(LetCount), ArabicData.TranslitScheme.Literal, String.Empty) + "\" + DumpRecDictionary(PostDict) + ArabicData.PopDirectionalFormatting
         Next
         Return Strings
     End Function
