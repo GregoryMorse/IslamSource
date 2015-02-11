@@ -4250,7 +4250,9 @@ Public Class TanzilReader
         Return CType(Output.ToArray(GetType(Array)), Array())
     End Function
     Public Shared Function IsSingletonDictionary(Dict As Dictionary(Of Char, Object())) As Boolean
-        Return Dict.Keys.Count = 1 AndAlso IsSingletonDictionary(CType(Dict(Dict.Keys.GetEnumerator().Current)(0), Dictionary(Of Char, Object())))
+        Dim Keys(Dict.Keys.Count - 1) As Char
+        Dict.Keys.CopyTo(Keys, 0)
+        Return Dict.Keys.Count = 1 AndAlso (CType(Dict(Keys(0))(0), Dictionary(Of Char, Object())).Keys.Count = 0 OrElse IsSingletonDictionary(CType(Dict(Keys(0))(0), Dictionary(Of Char, Object()))))
     End Function
     Public Shared Function DumpRecDictionary(Dict As Dictionary(Of Char, Object()), Post As Boolean, Depth As Integer) As String
         Dim Str As String = String.Empty
@@ -4263,11 +4265,10 @@ Public Class TanzilReader
                 Else
                     Str = Arabic.TransliterateToScheme(KV.Key, ArabicData.TranslitScheme.Literal, String.Empty) + DumpRecDictionary(CType(KV.Value(0), Dictionary(Of Char, Object())), Post, Depth + 1) + Str
                 End If
-            End If
-            If Post Then
-                Str += Arabic.TransliterateToScheme(KV.Key, ArabicData.TranslitScheme.Literal, String.Empty) + vbCrLf + New String(vbTab(0), Depth) + If(CType(KV.Value(0), Dictionary(Of Char, Object())).Keys.Count = 0, String.Empty, "(" + DumpRecDictionary(CType(KV.Value(0), Dictionary(Of Char, Object())), Post, Depth + 1) + ")")
+            ElseIf Post Then
+                Str += Arabic.TransliterateToScheme(KV.Key, ArabicData.TranslitScheme.Literal, String.Empty) + If(CType(KV.Value(0), Dictionary(Of Char, Object())).Keys.Count = 0, String.Empty, vbCrLf + New String(" "c, Depth * 4) + "(" + DumpRecDictionary(CType(KV.Value(0), Dictionary(Of Char, Object())), Post, Depth + 1) + ")")
             Else
-                Str = Arabic.TransliterateToScheme(KV.Key, ArabicData.TranslitScheme.Literal, String.Empty) + vbCrLf + New String(vbTab(0), Depth) + If(CType(KV.Value(0), Dictionary(Of Char, Object())).Keys.Count = 0, String.Empty, "(" + DumpRecDictionary(CType(KV.Value(0), Dictionary(Of Char, Object())), Post, Depth + 1) + ")") + Str
+                Str = Arabic.TransliterateToScheme(KV.Key, ArabicData.TranslitScheme.Literal, String.Empty) + If(CType(KV.Value(0), Dictionary(Of Char, Object())).Keys.Count = 0, String.Empty, vbCrLf + New String(" "c, Depth * 4) + "(" + DumpRecDictionary(CType(KV.Value(0), Dictionary(Of Char, Object())), Post, Depth + 1) + ")") + Str
             End If
         Next
         Return Str

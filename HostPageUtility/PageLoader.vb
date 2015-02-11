@@ -344,15 +344,7 @@ Public Class Utility
         Return Str
     End Function
     Public Shared Function ConvertSpaces(ByVal Text As String) As String
-        Dim Location As Integer = 0
-        Do
-            Location = Text.IndexOf("  ", Location)
-            If Location = -1 Then
-                Exit Do
-            End If
-            Text = Text.Remove(Location, 1).Insert(Location, "&nbsp;")
-        Loop
-        ConvertSpaces = Text
+        Return Text.Replace("  ", "&nbsp; ")
     End Function
     Public Shared Function GetDigitLength(ByVal Number As Integer) As Integer
         If Number = 0 Then Return 1
@@ -1665,6 +1657,10 @@ Public Class ArabicData
         If Str.Length > 1 AndAlso FindLetterBySymbol(Str(1)) <> -1 AndAlso ArabicLetters(FindLetterBySymbol(Str(1))).JoiningStyle = "T" AndAlso (LigatureLookups.ContainsKey(" " + Str.Substring(0, 2)) Or LigatureLookups.ContainsKey(" " + Str(1) + Str(0))) Then
             Positions = {CurPos, CurPos + 1}
             Return LigatureLookups.Item(" " + If(LigatureLookups.ContainsKey(" " + Str.Substring(0, 2)), Str.Substring(0, 2), Str(1) + Str(0)))
+        ElseIf Str.Length > 2 AndAlso FindLetterBySymbol(Str(1)) <> -1 AndAlso ArabicLetters(FindLetterBySymbol(Str(1))).JoiningStyle = "T" AndAlso ArabicLetters(FindLetterBySymbol(Str(2))).JoiningStyle = "T" AndAlso (LigatureLookups.ContainsKey(Str(0) + Str(2))) Then
+            'Tatweel with a Hamza Above followed by diacritic
+            Positions = {CurPos, CurPos + 2}
+            Return LigatureLookups.Item(Str(0) + Str(2))
         ElseIf LigatureLookups.ContainsKey(Str.Substring(0, 1)) Then
             Positions = {CurPos}
             Return LigatureLookups.Item(Str.Substring(0, 1))
@@ -1741,9 +1737,9 @@ Public Class ArabicData
                 SubCount = CheckLigatureMatch(Str.Substring(Count), Count, Indexes)
                 'transform ligatures are not processed here
                 If SubCount <> -1 AndAlso Combos(SubCount).Shaping <> Nothing AndAlso Combos(SubCount).Shaping.Length <> 1 Then
-                    Dim Index As Integer = Array.FindIndex(Combos(SubCount).Symbol, Function(Ch As Char) Ch = " " Or FindLetterBySymbol(Ch) <> -1 AndAlso ArabicLetters(FindLetterBySymbol(Ch)).JoiningStyle = "T")
+                    Dim Index As Integer = Array.FindIndex(Combos(SubCount).Symbol, Function(Ch As Char) Ch = " " Or FindLetterBySymbol(Ch) <> -1 AndAlso (ArabicLetters(FindLetterBySymbol(Ch)).JoiningStyle = "T" Or ArabicLetters(FindLetterBySymbol(Ch)).JoiningStyle = "C"))
                     'diacritics always use isolated form sitting on a space which is actually optional
-                    Dim Shape As Integer = If(Index = 0, 0, GetShapeIndexFromString(Str, Count, Indexes(Indexes.Length - 1) - Count + 1 - If(Index = -1, 0, Index)))
+                    Dim Shape As Integer = If(Index = 0, If(FindLetterBySymbol(Combos(SubCount).Symbol(Index)) <> -1 AndAlso ArabicLetters(FindLetterBySymbol(Combos(SubCount).Symbol(Index))).JoiningStyle = "C", 3, 0), GetShapeIndexFromString(Str, Count, Indexes(Indexes.Length - 1) - Count + 1 - If(Index = -1, 0, Index)))
                     If Combos(SubCount).Shaping(Shape) <> ChrW(0) AndAlso Array.IndexOf(SupportedForms, Combos(SubCount).Shaping(Shape)) <> -1 Then
                         Ligatures.Add(New LigatureInfo With {.Ligature = Combos(SubCount).Shaping(Shape), .Indexes = Indexes})
                         'Ligatures can surround other ligatures which represents significant challenge
@@ -2324,7 +2320,10 @@ Public Class RenderArray
                             Else
                                 Dim _Mets As SharpDX.DirectWrite.GlyphMetrics() = FontFace.GetDesignGlyphMetrics(GlyphIndices, False)
                                 'Madda on small waw and Madda, Fatha, Kasra or Shadda-Kasra on small yeh
-                                CharPosInfos.Add(New CharPosInfo With {.Index = RunStart + RunCount, .Length = If(Index = -1, 1, LigLen), .PriorWidth = PriorWidth, .Width = GlyphAdvances(RunRes) + If(GlyphProps(RunRes).IsClusterStart And GlyphProps(RunRes).IsDiacritic, CSng((_Mets(RunRes).AdvanceWidth) * useFont.SizeInPoints / FontFace.Metrics.DesignUnitsPerEm), 0), .X = GlyphOffsets(ResCount).AdvanceOffset, .Y = GlyphOffsets(ResCount).AscenderOffset + If(GlyphProps(RunRes).IsClusterStart And GlyphProps(RunRes).IsDiacritic, CSng((_Mets(RunRes).AdvanceHeight - _Mets(RunRes).TopSideBearing - _Mets(RunRes).VerticalOriginY) * useFont.SizeInPoints / FontFace.Metrics.DesignUnitsPerEm), 0)})
+                                CharPosInfos.Add(New CharPosInfo With {.Index = RunStart + RunCount, .Length = If(Index = -1, 1, LigLen), .PriorWidth = PriorWidth - If(GlyphProps(RunRes).Justification = SharpDX.DirectWrite.ScriptJustify.ArabicKashida And RunCount = 1 And If(CharCount = ClusterMap.Length - 1, ActualGlyphCount, ClusterMap(CharCount + 1)) - ClusterMap(CharCount) = CharCount - RunStart, GlyphAdvances(RunRes), 0), .Width = GlyphAdvances(RunRes) + If(GlyphProps(RunRes).IsClusterStart And GlyphProps(RunRes).IsDiacritic, CSng((_Mets(RunRes).AdvanceWidth) * useFont.SizeInPoints / FontFace.Metrics.DesignUnitsPerEm), 0), .X = GlyphOffsets(ResCount).AdvanceOffset, .Y = GlyphOffsets(ResCount).AscenderOffset + If(GlyphProps(RunRes).IsClusterStart And GlyphProps(RunRes).IsDiacritic, CSng((_Mets(RunRes).AdvanceHeight - _Mets(RunRes).TopSideBearing - _Mets(RunRes).VerticalOriginY) * useFont.SizeInPoints / FontFace.Metrics.DesignUnitsPerEm), 0)})
+                                If GlyphProps(RunRes).Justification = SharpDX.DirectWrite.ScriptJustify.ArabicKashida And RunCount = 1 And If(CharCount = ClusterMap.Length - 1, ActualGlyphCount, ClusterMap(CharCount + 1)) - ClusterMap(CharCount) = CharCount - RunStart Then
+                                    CharPosInfos.Add(New CharPosInfo With {.Index = RunStart + RunCount + 1, .Length = If(Index = -1, 1, LigLen), .PriorWidth = PriorWidth, .Width = GlyphAdvances(RunRes) + If(GlyphProps(RunRes).IsClusterStart And GlyphProps(RunRes).IsDiacritic, CSng((_Mets(RunRes).AdvanceWidth) * useFont.SizeInPoints / FontFace.Metrics.DesignUnitsPerEm), 0), .X = GlyphOffsets(ResCount).AdvanceOffset, .Y = GlyphOffsets(RunRes).AscenderOffset + If(GlyphProps(RunRes).IsClusterStart And GlyphProps(RunRes).IsDiacritic, CSng((_Mets(RunRes).AdvanceHeight - _Mets(RunRes).TopSideBearing - _Mets(RunRes).VerticalOriginY) * useFont.SizeInPoints / FontFace.Metrics.DesignUnitsPerEm), 0)})
+                                End If
                             End If
                         Else
                             PriorWidth -= GlyphOffsets(ResCount).AdvanceOffset
