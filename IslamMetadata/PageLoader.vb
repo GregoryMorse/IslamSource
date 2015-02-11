@@ -4249,11 +4249,26 @@ Public Class TanzilReader
         End If
         Return CType(Output.ToArray(GetType(Array)), Array())
     End Function
-    Public Shared Function DumpRecDictionary(Dict As Dictionary(Of Char, Object())) As String
+    Public Shared Function IsSingletonDictionary(Dict As Dictionary(Of Char, Object())) As Boolean
+        Return Dict.Keys.Count = 1 AndAlso IsSingletonDictionary(CType(Dict(Dict.Keys.GetEnumerator().Current)(0), Dictionary(Of Char, Object())))
+    End Function
+    Public Shared Function DumpRecDictionary(Dict As Dictionary(Of Char, Object()), Post As Boolean, Depth As Integer) As String
         Dim Str As String = String.Empty
         For Each KV As KeyValuePair(Of Char, Object()) In Dict
-            If Str <> String.Empty Then Str += " / "
-            Str += Arabic.TransliterateToScheme(KV.Key, ArabicData.TranslitScheme.Literal, String.Empty) + If(CType(KV.Value(0), Dictionary(Of Char, Object())).Keys.Count = 0, String.Empty, "(" + DumpRecDictionary(CType(KV.Value(0), Dictionary(Of Char, Object()))) + ")")
+            If Str <> String.Empty Then Str += "/"
+            'if all are 1 recursively
+            If IsSingletonDictionary(CType(KV.Value(0), Dictionary(Of Char, Object()))) Then
+                If Post Then
+                    Str += Arabic.TransliterateToScheme(KV.Key, ArabicData.TranslitScheme.Literal, String.Empty) + DumpRecDictionary(CType(KV.Value(0), Dictionary(Of Char, Object())), Post, Depth + 1)
+                Else
+                    Str = Arabic.TransliterateToScheme(KV.Key, ArabicData.TranslitScheme.Literal, String.Empty) + DumpRecDictionary(CType(KV.Value(0), Dictionary(Of Char, Object())), Post, Depth + 1) + Str
+                End If
+            End If
+            If Post Then
+                Str += Arabic.TransliterateToScheme(KV.Key, ArabicData.TranslitScheme.Literal, String.Empty) + vbCrLf + New String(vbTab(0), Depth) + If(CType(KV.Value(0), Dictionary(Of Char, Object())).Keys.Count = 0, String.Empty, "(" + DumpRecDictionary(CType(KV.Value(0), Dictionary(Of Char, Object())), Post, Depth + 1) + ")")
+            Else
+                Str = Arabic.TransliterateToScheme(KV.Key, ArabicData.TranslitScheme.Literal, String.Empty) + vbCrLf + New String(vbTab(0), Depth) + If(CType(KV.Value(0), Dictionary(Of Char, Object())).Keys.Count = 0, String.Empty, "(" + DumpRecDictionary(CType(KV.Value(0), Dictionary(Of Char, Object())), Post, Depth + 1) + ")") + Str
+            End If
         Next
         Return Str
     End Function
@@ -4300,7 +4315,7 @@ Public Class TanzilReader
                     Next
                 Next
             Next
-            Strings(LetCount) = ArabicData.LeftToRightOverride + StrReverse(DumpRecDictionary(PreDict)) + "\" + Arabic.TransliterateToScheme(CachedData.RecitationSymbols(LetCount), ArabicData.TranslitScheme.Literal, String.Empty) + "\" + DumpRecDictionary(PostDict) + ArabicData.PopDirectionalFormatting
+            Strings(LetCount) = ArabicData.LeftToRightOverride + DumpRecDictionary(PreDict, False, 0) + "\" + Arabic.TransliterateToScheme(CachedData.RecitationSymbols(LetCount), ArabicData.TranslitScheme.Literal, String.Empty) + "\" + DumpRecDictionary(PostDict, True, 0) + ArabicData.PopDirectionalFormatting
         Next
         Return Strings
     End Function
