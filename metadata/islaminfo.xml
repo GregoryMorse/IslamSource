@@ -6080,50 +6080,50 @@ Ramadan fast-breaking | One 2172-gram quantity | Dates or barley or ordinary sta
 		<translation file="uz.sodik" name="Мухаммад Содик" translator="Muhammad Sodik Muhammad Yusuf"></translation>
 	</translations>
 	<partsofspeech>
-		<pos symbol="N" id="NounName"></pos>
-		<pos symbol="PN" id="ProperNoun"></pos>
-		<pos symbol="ADJ" id="Adjective"></pos>
-		<pos symbol="IMPN" id="ImperativeVerbalNoun"></pos>
-		<pos symbol="PRON" id="PersonalPronoun"></pos>
-		<pos symbol="DEM" id="PointingDemonstrativePronoun"></pos>
-		<pos symbol="REL" id="RelativePronoun"></pos>
-		<pos symbol="T" id="ParticleOfTimeAdverb"></pos>
-		<pos symbol="LOC" id="ParticleOfPlaceAdverb"></pos>
-		<pos symbol="DET" id="AlOfDefinitenessDeterminerPrefix"></pos>
-		<pos symbol="V" id="Verb"></pos>
-		<pos symbol="P" id="PossessionParticlePreposition"></pos>
-		<pos symbol="EMPH" id="LaamOfEmphasisEmphaticLaamPrefix"></pos>
-		<pos symbol="IMPV" id="ImperativeLaamPrefix"></pos>
-		<pos symbol="PRP" id="PurposeLaamPrefix"></pos>
-		<pos symbol="CONJ" id="CoordinatingConjunction"></pos>
-		<pos symbol="SUB" id="SubordinatingConjunction"></pos>
-		<pos symbol="ACC" id="AccusativeParticle"></pos>
-		<pos symbol="AMD" id="AmendmentParticle"></pos>
-		<pos symbol="ANS" id="AnswerParticle"></pos>
-		<pos symbol="AVR" id="AversionParticle"></pos>
-		<pos symbol="CAUS" id="ParticleOfCause"></pos>
-		<pos symbol="CERT" id="AversionParticle"></pos>
-		<pos symbol="CIRC" id="CircumstantialParticle"></pos>
-		<pos symbol="COM" id="ComitativeParticle"></pos>
-		<pos symbol="COND" id="ConditionalParticle"></pos>
-		<pos symbol="EQ" id="EqualizationParticle"></pos>
-		<pos symbol="EXH" id="ExhortationParticle"></pos>
-		<pos symbol="EXL" id="ExplanationParticle"></pos>
-		<pos symbol="EXP" id="ExceptiveParticle"></pos>
-		<pos symbol="FUT" id="FutureParticle"></pos>
-		<pos symbol="INC" id="InceptiveParticle"></pos>
-		<pos symbol="INT" id="ParticleOfInterpretation"></pos>
-		<pos symbol="INTG" id="InterogativeParticle"></pos>
-		<pos symbol="NEG" id="NegativeParticle"></pos>
-		<pos symbol="PREV" id="PreventiveParticle"></pos>
-		<pos symbol="PRO" id="ProhibitionParticle"></pos>
-		<pos symbol="REM" id="ResumptionParticle"></pos>
-		<pos symbol="RES" id="RestrictionParticle"></pos>
-		<pos symbol="RET" id="RetractionParticle"></pos>
-		<pos symbol="RSLT" id="ResultParticle"></pos>
-		<pos symbol="SUP" id="SupplementalParticle"></pos>
-		<pos symbol="SUR" id="SurpriseParticle"></pos>
-		<pos symbol="VOC" id="VocativeParticle"></pos>
-		<pos symbol="INL" id="DisjointedLettersQuranicInitials"></pos>
+		<pos symbol="N" id="NounName" color="84,141,212"></pos>
+		<pos symbol="PN" id="ProperNoun" color="37,126,156"></pos>
+		<pos symbol="ADJ" id="Adjective" color="129,38,192"></pos>
+		<pos symbol="IMPN" id="ImperativeVerbalNoun" color="168,1,123"></pos>
+		<pos symbol="PRON" id="PersonalPronoun" color="92,112,133"></pos><!-- defaulting to object pronoun, color="84,141,212" for subject pronoun-->
+		<pos symbol="DEM" id="PointingDemonstrativePronoun" color="191,159,62"></pos>
+		<pos symbol="REL" id="RelativePronoun" color="129,116,24"></pos>
+		<pos symbol="T" id="ParticleOfTimeAdverb" color="227,112,16"></pos>
+		<pos symbol="LOC" id="ParticleOfPlaceAdverb" color="227,112,16"></pos>
+		<pos symbol="DET" id="AlOfDefinitenessDeterminerPrefix" color="135,135,135"></pos>
+		<pos symbol="V" id="Verb" color="50,189,47"></pos>
+		<pos symbol="P" id="PossessionParticlePreposition" color="173,35,35"></pos>
+		<pos symbol="EMPH" id="LaamOfEmphasisEmphaticLaamPrefix" color="168,1,123"></pos>
+		<pos symbol="IMPV" id="ImperativeLaamPrefix" color="50,189,47"></pos>
+		<pos symbol="PRP" id="PurposeLaamPrefix" color="129,116,24"></pos>
+		<pos symbol="CONJ" id="CoordinatingConjunction" color="19,1,184"></pos>
+		<pos symbol="SUB" id="SubordinatingConjunction" color="129,116,24"></pos>
+		<pos symbol="ACC" id="AccusativeParticle" color="168,1,123"></pos>
+		<pos symbol="AMD" id="AmendmentParticle" color="168,1,123"></pos>
+		<pos symbol="ANS" id="AnswerParticle" color="168,1,123"></pos>
+		<pos symbol="AVR" id="AversionParticle" color="168,1,123"></pos>
+		<pos symbol="CAUS" id="ParticleOfCause" color="168,1,123"></pos>
+		<pos symbol="CERT" id="AversionParticle" color="168,1,123"></pos>
+		<pos symbol="CIRC" id="CircumstantialParticle" color="19,1,184"></pos>
+		<pos symbol="COM" id="ComitativeParticle" color="19,1,184"></pos>
+		<pos symbol="COND" id="ConditionalParticle" color="227,112,16"></pos>
+		<pos symbol="EQ" id="EqualizationParticle" color="168,1,123"></pos>
+		<pos symbol="EXH" id="ExhortationParticle" color="168,1,123"></pos>
+		<pos symbol="EXL" id="ExplanationParticle" color="168,1,123"></pos>
+		<pos symbol="EXP" id="ExceptiveParticle" color="168,1,123"></pos>
+		<pos symbol="FUT" id="FutureParticle" color="168,1,123"></pos>
+		<pos symbol="INC" id="InceptiveParticle" color="168,1,123"></pos>
+		<pos symbol="INT" id="ParticleOfInterpretation" color="129,116,24"></pos>
+		<pos symbol="INTG" id="InterogativeParticle" color="253,81,98"></pos>
+		<pos symbol="NEG" id="NegativeParticle" color="244,64,11"></pos>
+		<pos symbol="PREV" id="PreventiveParticle" color="227,112,16"></pos>
+		<pos symbol="PRO" id="ProhibitionParticle" color="244,64,11"></pos>
+		<pos symbol="REM" id="ResumptionParticle" color="19,1,184"></pos>
+		<pos symbol="RES" id="RestrictionParticle" color="168,1,123"></pos>
+		<pos symbol="RET" id="RetractionParticle" color="168,1,123"></pos>
+		<pos symbol="RSLT" id="ResultParticle" color="19,1,184"></pos>
+		<pos symbol="SUP" id="SupplementalParticle" color="168,1,123"></pos>
+		<pos symbol="SUR" id="SurpriseParticle" color="168,1,123"></pos>
+		<pos symbol="VOC" id="VocativeParticle" color="29,105,20"></pos>
+		<pos symbol="INL" id="DisjointedLettersQuranicInitials" color="227,112,16"></pos>
 	</partsofspeech>
 </islamdata>

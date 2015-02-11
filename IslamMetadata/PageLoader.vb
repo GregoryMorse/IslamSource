@@ -2311,6 +2311,18 @@ Public Class IslamData
         Public Symbol As String
         <System.Xml.Serialization.XmlAttribute("id")> _
         Public Id As String
+        <System.Xml.Serialization.XmlAttribute("color")> _
+        Public _Color As String
+        ReadOnly Property Color As Drawing.Color
+            Get
+                If _Color.Contains(",") Then
+                    Dim RGB As Integer() = Array.ConvertAll(_Color.Split(","c), Function(Str As String) CInt(Str))
+                    Return Drawing.Color.FromArgb(RGB(0), RGB(1), RGB(2))
+                Else
+                    Return Drawing.Color.FromName(_Color)
+                End If
+            End Get
+        End Property
     End Structure
     <System.Xml.Serialization.XmlArray("partsofspeech")> _
     <System.Xml.Serialization.XmlArrayItem("pos")> _
