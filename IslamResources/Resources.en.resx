@@ -31050,4 +31050,637 @@
   <data name="IslamInfo_HalimahAlSadiyah" xml:space="preserve">
     <value>Halimah Al Sadiyah</value>
   </data>
+  <data name="IslamInfo_Interest" xml:space="preserve">
+    <value>Interest</value>
+  </data>
+  <data name="IslamInfo_InterestBuster" xml:space="preserve">
+    <value>Interest Buster</value>
+  </data>
+  <data name="IslamInfo_TheMostBenificentTheMostMerciful" xml:space="preserve">
+    <value>The Most Benificent The Most Merciful</value>
+  </data>
+  <data name="IslamInfo_TheMostMercifulTheOneWhoseHelpIsSought" xml:space="preserve">
+    <value>The Most Merciful The One Whose Help Is Sought</value>
+  </data>
+  <data name="IslamInfo_TheMightyOneTheGreatForgiver" xml:space="preserve">
+    <value>The Mighty One The Great Forgiver</value>
+  </data>
+  <data name="IslamInfo_TheMightyOneTheBountifulOne" xml:space="preserve">
+    <value>The Mighty One The Bountiful One</value>
+  </data>
+  <data name="IslamInfo_TheMightyOneTheAllCompelling" xml:space="preserve">
+    <value>The Mighty One The All Compelling</value>
+  </data>
+  <data name="IslamInfo_TheMostSacredTheEmbodimentOfPeace" xml:space="preserve">
+    <value>The Most Sacred The Embodiment Of Peace</value>
+  </data>
+  <data name="IslamInfo_TheMostSacredTheMightyOne" xml:space="preserve">
+    <value>The Most Sacred The Mighty One</value>
+  </data>
+  <data name="IslamInfo_TheEmbodimentOfPeaceTheInfuserOfFaith" xml:space="preserve">
+    <value>The Embodiment Of Peace The Infuser Of Faith</value>
+  </data>
+  <data name="IslamInfo_TheInfuserOfFaithThePreserverOfSafety" xml:space="preserve">
+    <value>The Infuser Of Faith The Preserver Of Safety</value>
+  </data>
+  <data name="IslamInfo_ThePreserverOfSafetyTheMightyOne" xml:space="preserve">
+    <value>The Preserver Of Safety The Mighty One</value>
+  </data>
+  <data name="IslamInfo_TheAllCompellingTheDominantOne" xml:space="preserve">
+    <value>The All Compelling The Dominant One</value>
+  </data>
+  <data name="IslamInfo_TheClementOneTheGuideToPathOfRectitude" xml:space="preserve">
+    <value>The Clement One The Guide To Path Of Rectitude</value>
+  </data>
+  <data name="IslamInfo_TheGreatOneTheExtremelyExaltedOne" xml:space="preserve">
+    <value>The Great One The Extremely Exalted One</value>
+  </data>
+  <data name="IslamInfo_TheEmbodimentOfTruthTheClear" xml:space="preserve">
+    <value>The Embodiment Of Truth The Clear</value>
+  </data>
+  <data name="IslamInfo_TheProtectingAssociateTheSoleLaudableOne" xml:space="preserve">
+    <value>The Protecting Associate The Sole Laudable One</value>
+  </data>
+  <data name="IslamInfo_VerseSequencesWithManyBeautifulNames" xml:space="preserve">
+    <value>Verse Sequences With Many Beautiful Names</value>
+  </data>
+  <data name="IslamInfo_TheMostBeautifulNamesVerses" xml:space="preserve">
+    <value>The Most Beautiful Names Verses</value>
+  </data>
+  <data name="IslamInfo_QuranProphets" xml:space="preserve">
+    <value>Quran Prophets</value>
+  </data>
+  <data name="IslamInfo_SequentialProphetVerses" xml:space="preserve">
+    <value>Sequential Prophet Verses</value>
+  </data>
+  <data name="IslamInfo_MonthNames" xml:space="preserve">
+    <value>Month Names</value>
+  </data>
+  <data name="IslamInfo_DaysOfWeekNames" xml:space="preserve">
+    <value>Days Of Week Names</value>
+  </data>
+  <data name="IslamInfo_IslamicNames" xml:space="preserve">
+    <value>Islamic Names</value>
+  </data>
+  <data name="IslamInfo_WashroomPoster" xml:space="preserve">
+    <value>Washroom Poster</value>
+  </data>
+  <data name="IslamInfo_WashroomPosterLabel" xml:space="preserve">
+    <value>Washroom Poster Label</value>
+  </data>
+  <data name="IslamInfo_ExcellenceOfSendingPrayersUponTheProphet4" xml:space="preserve">
+    <value>Excellence Of Sending Prayers Upon The Prophet4</value>
+  </data>
+  <data name="IslamInfo_ExcellenceOfSendingPrayersUponTheProphet5" xml:space="preserve">
+    <value>Excellence Of Sending Prayers Upon The Prophet5</value>
+  </data>
+  <data name="IslamInfo_Dealings" xml:space="preserve">
+    <value>Dealings</value>
+  </data>
+  <data name="IslamInfo_Morality" xml:space="preserve">
+    <value>Morality</value>
+  </data>
+  <data name="IslamInfo_BeliefSystem" xml:space="preserve">
+    <value>Belief System</value>
+  </data>
+  <data name="IslamInfo_PartnershipContractWithTwoPartiesOneSurrenderingCapitalAndTheOtherActions" xml:space="preserve">
+    <value>Partnership Contract With Two Parties One Surrendering Capital And The Other Actions</value>
+  </data>
+  <data name="IslamInfo_PartnershipContractWithTwoPartiesOneProvidingCapitalAndTheOtherActions" xml:space="preserve">
+    <value>Partnership Contract With Two Parties One Providing Capital And The Other Actions</value>
+  </data>
+  <data name="IslamInfo_PartnershipWithProfitAndLossSharing" xml:space="preserve">
+    <value>Partnership With Profit And Loss Sharing</value>
+  </data>
+  <data name="IslamInfo_IslamicCompliantSaleWithMarkupAfterHonestDeclarationOfCost" xml:space="preserve">
+    <value>Islamic Compliant Sale With Markup After Honest Declaration Of Cost</value>
+  </data>
+  <data name="IslamInfo_UncertainDoubtful" xml:space="preserve">
+    <value>Uncertain Doubtful</value>
+  </data>
+  <data name="IslamInfo_PublicInterest" xml:space="preserve">
+    <value>Public Interest</value>
+  </data>
+  <data name="IslamInfo_ThingsWhichServeThePublicInterest" xml:space="preserve">
+    <value>Things Which Serve The Public Interest</value>
+  </data>
+  <data name="IslamInfo_BlockingOfTheMeans" xml:space="preserve">
+    <value>Blocking Of The Means</value>
+  </data>
+  <data name="IslamInfo_ReadingRecitation" xml:space="preserve">
+    <value>Reading Recitation</value>
+  </data>
+  <data name="IslamInfo_Preferred" xml:space="preserve">
+    <value>Preferred</value>
+  </data>
+  <data name="IslamInfo_Starting" xml:space="preserve">
+    <value>Starting</value>
+  </data>
+  <data name="IslamInfo_CutOff" xml:space="preserve">
+    <value>Cut Off</value>
+  </data>
+  <data name="IslamInfo_BreathlessStop" xml:space="preserve">
+    <value>Breathless Stop</value>
+  </data>
+  <data name="IslamInfo_Joined" xml:space="preserve">
+    <value>Joined</value>
+  </data>
+  <data name="IslamInfo_Separated" xml:space="preserve">
+    <value>Separated</value>
+  </data>
+  <data name="IslamInfo_Mistake" xml:space="preserve">
+    <value>Mistake</value>
+  </data>
+  <data name="IslamInfo_Lengthening" xml:space="preserve">
+    <value>Lengthening</value>
+  </data>
+  <data name="IslamInfo_While" xml:space="preserve">
+    <value>While</value>
+  </data>
+  <data name="IslamInfo_Looking" xml:space="preserve">
+    <value>Looking</value>
+  </data>
+  <data name="IslamInfo_ProperNameWordByWord" xml:space="preserve">
+    <value>Proper Name Word By Word</value>
+  </data>
+  <data name="IslamInfo_ProperName" xml:space="preserve">
+    <value>Proper Name</value>
+  </data>
+  <data name="IslamInfo_ImperativeVerbalNounWordByWord" xml:space="preserve">
+    <value>Imperative Verbal Noun Word By Word</value>
+  </data>
+  <data name="IslamInfo_RelativeDescriptivePronounWordByWord" xml:space="preserve">
+    <value>Relative Descriptive Pronoun Word By Word</value>
+  </data>
+  <data name="IslamInfo_RelativeDescriptivePronoun" xml:space="preserve">
+    <value>Relative Descriptive Pronoun</value>
+  </data>
+  <data name="IslamInfo_PointingDemonstrativePronounWordByWord" xml:space="preserve">
+    <value>Pointing Demonstrative Pronoun Word By Word</value>
+  </data>
+  <data name="IslamInfo_PointingDemonstrativePronoun" xml:space="preserve">
+    <value>Pointing Demonstrative Pronoun</value>
+  </data>
+  <data name="IslamInfo_ParticleOfPlaceAdverbWordByWord" xml:space="preserve">
+    <value>Particle Of Place Adverb Word By Word</value>
+  </data>
+  <data name="IslamInfo_ParticleOfPlaceAdverb" xml:space="preserve">
+    <value>Particle Of Place Adverb</value>
+  </data>
+  <data name="IslamInfo_ParticleOfTimeAdverbWordByWord" xml:space="preserve">
+    <value>Particle Of Time Adverb Word By Word</value>
+  </data>
+  <data name="IslamInfo_ParticleOfTimeAdverb" xml:space="preserve">
+    <value>Particle Of Time Adverb</value>
+  </data>
+  <data name="IslamInfo_AccusativeParticleWordByWord" xml:space="preserve">
+    <value>Accusative Particle Word By Word</value>
+  </data>
+  <data name="IslamInfo_PossessionParticlePrepositionWordByWord" xml:space="preserve">
+    <value>Possession Particle Preposition Word By Word</value>
+  </data>
+  <data name="IslamInfo_PossessionParticlePreposition" xml:space="preserve">
+    <value>Possession Particle Preposition</value>
+  </data>
+  <data name="IslamInfo_PossessionParticlesPrepositionsWordByWord" xml:space="preserve">
+    <value>Possession Particles Prepositions Word By Word</value>
+  </data>
+  <data name="IslamInfo_PossessionParticlesPrepositions" xml:space="preserve">
+    <value>Possession Particles Prepositions</value>
+  </data>
+  <data name="IslamInfo_NegativeParticleWordByWord" xml:space="preserve">
+    <value>Negative Particle Word By Word</value>
+  </data>
+  <data name="IslamInfo_ConditionalParticleWordByWord" xml:space="preserve">
+    <value>Conditional Particle Word By Word</value>
+  </data>
+  <data name="IslamInfo_InterogativeParticleWordByWord" xml:space="preserve">
+    <value>Interogative Particle Word By Word</value>
+  </data>
+  <data name="IslamInfo_AnswerParticleWordByWord" xml:space="preserve">
+    <value>Answer Particle Word By Word</value>
+  </data>
+  <data name="IslamInfo_CoordinatingConjunctionWordByWord" xml:space="preserve">
+    <value>Coordinating Conjunction Word By Word</value>
+  </data>
+  <data name="IslamInfo_SubordinatingConjunctionWordByWord" xml:space="preserve">
+    <value>Subordinating Conjunction Word By Word</value>
+  </data>
+  <data name="IslamInfo_AmendmentParticleWordByWord" xml:space="preserve">
+    <value>Amendment Particle Word By Word</value>
+  </data>
+  <data name="IslamInfo_AversionParticleWordByWord" xml:space="preserve">
+    <value>Aversion Particle Word By Word</value>
+  </data>
+  <data name="IslamInfo_ParticleOfCauseWordByWord" xml:space="preserve">
+    <value>Particle Of Cause Word By Word</value>
+  </data>
+  <data name="IslamInfo_CertaintyParticleWordByWord" xml:space="preserve">
+    <value>Certainty Particle Word By Word</value>
+  </data>
+  <data name="IslamInfo_CertaintyParticle" xml:space="preserve">
+    <value>Certainty Particle</value>
+  </data>
+  <data name="IslamInfo_CircumstantialParticleWordByWord" xml:space="preserve">
+    <value>Circumstantial Particle Word By Word</value>
+  </data>
+  <data name="IslamInfo_ComitativeParticleWordByWord" xml:space="preserve">
+    <value>Comitative Particle Word By Word</value>
+  </data>
+  <data name="IslamInfo_EqualizationParticleWordByWord" xml:space="preserve">
+    <value>Equalization Particle Word By Word</value>
+  </data>
+  <data name="IslamInfo_ExhortationParticleWordByWord" xml:space="preserve">
+    <value>Exhortation Particle Word By Word</value>
+  </data>
+  <data name="IslamInfo_ExplanationParticleWordByWord" xml:space="preserve">
+    <value>Explanation Particle Word By Word</value>
+  </data>
+  <data name="IslamInfo_ExceptiveParticleWordByWord" xml:space="preserve">
+    <value>Exceptive Particle Word By Word</value>
+  </data>
+  <data name="IslamInfo_FutureParticleWordByWord" xml:space="preserve">
+    <value>Future Particle Word By Word</value>
+  </data>
+  <data name="IslamInfo_InceptiveParticleWordByWord" xml:space="preserve">
+    <value>Inceptive Particle Word By Word</value>
+  </data>
+  <data name="IslamInfo_ParticleOfInterpretationWordByWord" xml:space="preserve">
+    <value>Particle Of Interpretation Word By Word</value>
+  </data>
+  <data name="IslamInfo_PreventiveParticleWordByWord" xml:space="preserve">
+    <value>Preventive Particle Word By Word</value>
+  </data>
+  <data name="IslamInfo_ProhibitionParticleWordByWord" xml:space="preserve">
+    <value>Prohibition Particle Word By Word</value>
+  </data>
+  <data name="IslamInfo_ResumptionParticleWordByWord" xml:space="preserve">
+    <value>Resumption Particle Word By Word</value>
+  </data>
+  <data name="IslamInfo_RestrictionParticleWordByWord" xml:space="preserve">
+    <value>Restriction Particle Word By Word</value>
+  </data>
+  <data name="IslamInfo_RetractionParticleWordByWord" xml:space="preserve">
+    <value>Retraction Particle Word By Word</value>
+  </data>
+  <data name="IslamInfo_ResultParticleWordByWord" xml:space="preserve">
+    <value>Result Particle Word By Word</value>
+  </data>
+  <data name="IslamInfo_SupplementalParticleWordByWord" xml:space="preserve">
+    <value>Supplemental Particle Word By Word</value>
+  </data>
+  <data name="IslamInfo_SurpriseParticleWordByWord" xml:space="preserve">
+    <value>Surprise Particle Word By Word</value>
+  </data>
+  <data name="IslamInfo_VocativeParticleWordByWord" xml:space="preserve">
+    <value>Vocative Particle Word By Word</value>
+  </data>
+  <data name="IslamInfo_RelativeTimeNounsAccusativeNounIndicatingTimeWhenActionOccursWordByWord" xml:space="preserve">
+    <value>Relative Time Nouns Accusative Noun Indicating Time When Action Occurs Word By Word</value>
+  </data>
+  <data name="IslamInfo_RelativeTimeNounsAccusativeNounIndicatingTimeWhenActionOccurs" xml:space="preserve">
+    <value>Relative Time Nouns Accusative Noun Indicating Time When Action Occurs</value>
+  </data>
+  <data name="IslamInfo_RelativePlaceNounsAccusativeNounIndicatingPlaceWhereActionOccursWordByWord" xml:space="preserve">
+    <value>Relative Place Nouns Accusative Noun Indicating Place Where Action Occurs Word By Word</value>
+  </data>
+  <data name="IslamInfo_RelativePlaceNounsAccusativeNounIndicatingPlaceWhereActionOccurs" xml:space="preserve">
+    <value>Relative Place Nouns Accusative Noun Indicating Place Where Action Occurs</value>
+  </data>
+  <data name="IslamInfo_ThirdPersonMasculineWordByWord" xml:space="preserve">
+    <value>Third Person Masculine Word By Word</value>
+  </data>
+  <data name="IslamInfo_ThirdPersonMasculine" xml:space="preserve">
+    <value>Third Person Masculine</value>
+  </data>
+  <data name="IslamInfo_ThirdPersonFeminineWordByWord" xml:space="preserve">
+    <value>Third Person Feminine Word By Word</value>
+  </data>
+  <data name="IslamInfo_ThirdPersonFeminine" xml:space="preserve">
+    <value>Third Person Feminine</value>
+  </data>
+  <data name="IslamInfo_SecondPersonMasculineWordByWord" xml:space="preserve">
+    <value>Second Person Masculine Word By Word</value>
+  </data>
+  <data name="IslamInfo_SecondPersonMasculine" xml:space="preserve">
+    <value>Second Person Masculine</value>
+  </data>
+  <data name="IslamInfo_SecondPersonFeminineWordByWord" xml:space="preserve">
+    <value>Second Person Feminine Word By Word</value>
+  </data>
+  <data name="IslamInfo_SecondPersonFeminine" xml:space="preserve">
+    <value>Second Person Feminine</value>
+  </data>
+  <data name="IslamInfo_FirstPersonWordByWord" xml:space="preserve">
+    <value>First Person Word By Word</value>
+  </data>
+  <data name="IslamInfo_FirstPerson" xml:space="preserve">
+    <value>First Person</value>
+  </data>
+  <data name="IslamInfo_ImperativeLaamPrefixNegativeCommandWordByWord" xml:space="preserve">
+    <value>Imperative Laam Prefix Negative Command Word By Word</value>
+  </data>
+  <data name="IslamInfo_ImperativeLaamPrefixNegativeCommand" xml:space="preserve">
+    <value>Imperative Laam Prefix Negative Command</value>
+  </data>
+  <data name="IslamInfo_LaamOfEmphasisEmphaticLaamPrefixWordByWord" xml:space="preserve">
+    <value>Laam Of Emphasis Emphatic Laam Prefix Word By Word</value>
+  </data>
+  <data name="IslamInfo_LaamOfEmphasisEmphaticLaamPrefix" xml:space="preserve">
+    <value>Laam Of Emphasis Emphatic Laam Prefix</value>
+  </data>
+  <data name="IslamInfo_ImperativeLaamPrefixWordByWord" xml:space="preserve">
+    <value>Imperative Laam Prefix Word By Word</value>
+  </data>
+  <data name="IslamInfo_PurposeLaamPrefixWordByWord" xml:space="preserve">
+    <value>Purpose Laam Prefix Word By Word</value>
+  </data>
+  <data name="IslamInfo_AlOfDefinitenessDeterminerPrefixWordByWord" xml:space="preserve">
+    <value>Al Of Definiteness Determiner Prefix Word By Word</value>
+  </data>
+  <data name="IslamInfo_AlOfDefinitenessDeterminerPrefix" xml:space="preserve">
+    <value>Al Of Definiteness Determiner Prefix</value>
+  </data>
+  <data name="IslamInfo_BouncingMechanismWordByWord" xml:space="preserve">
+    <value>Bouncing Mechanism Word By Word</value>
+  </data>
+  <data name="IslamInfo_BouncingMechanism" xml:space="preserve">
+    <value>Bouncing Mechanism</value>
+  </data>
+  <data name="IslamInfo_VowellessLaamWordByWord" xml:space="preserve">
+    <value>Vowelless Laam Word By Word</value>
+  </data>
+  <data name="IslamInfo_VowellessLaam" xml:space="preserve">
+    <value>Vowelless Laam</value>
+  </data>
+  <data name="IslamInfo_LengtheningDueToHamzaWordByWord" xml:space="preserve">
+    <value>Lengthening Due To Hamza Word By Word</value>
+  </data>
+  <data name="IslamInfo_LengtheningDueToHamza" xml:space="preserve">
+    <value>Lengthening Due To Hamza</value>
+  </data>
+  <data name="IslamInfo_LengtheningDueToSukunWordByWord" xml:space="preserve">
+    <value>Lengthening Due To Sukun Word By Word</value>
+  </data>
+  <data name="IslamInfo_LengtheningDueToSukun" xml:space="preserve">
+    <value>Lengthening Due To Sukun</value>
+  </data>
+  <data name="IslamInfo_ConnectingSoftLengtheningWordByWord" xml:space="preserve">
+    <value>Connecting Soft Lengthening Word By Word</value>
+  </data>
+  <data name="IslamInfo_ConnectingSoftLengthening" xml:space="preserve">
+    <value>Connecting Soft Lengthening</value>
+  </data>
+  <data name="IslamInfo_SecondarySoftLengtheningWordByWord" xml:space="preserve">
+    <value>Secondary Soft Lengthening Word By Word</value>
+  </data>
+  <data name="IslamInfo_SecondarySoftLengthening" xml:space="preserve">
+    <value>Secondary Soft Lengthening</value>
+  </data>
+  <data name="IslamInfo_LengtheningWithTwoCausesWordByWord" xml:space="preserve">
+    <value>Lengthening With Two Causes Word By Word</value>
+  </data>
+  <data name="IslamInfo_LengtheningWithTwoCauses" xml:space="preserve">
+    <value>Lengthening With Two Causes</value>
+  </data>
+  <data name="IslamInfo_PronounHehWordByWord" xml:space="preserve">
+    <value>Pronoun Heh Word By Word</value>
+  </data>
+  <data name="IslamInfo_PronounHeh" xml:space="preserve">
+    <value>Pronoun Heh</value>
+  </data>
+  <data name="IslamInfo_TheRoundZeroWordByWord" xml:space="preserve">
+    <value>The Round Zero Word By Word</value>
+  </data>
+  <data name="IslamInfo_TheRoundZero" xml:space="preserve">
+    <value>The Round Zero</value>
+  </data>
+  <data name="IslamInfo_TheStandingOblongZeroWordByWord" xml:space="preserve">
+    <value>The Standing Oblong Zero Word By Word</value>
+  </data>
+  <data name="IslamInfo_TheStandingOblongZero" xml:space="preserve">
+    <value>The Standing Oblong Zero</value>
+  </data>
+  <data name="IslamInfo_RelationshipInLikenessWordByWord" xml:space="preserve">
+    <value>Relationship In Likeness Word By Word</value>
+  </data>
+  <data name="IslamInfo_RelationshipInLikeness" xml:space="preserve">
+    <value>Relationship In Likeness</value>
+  </data>
+  <data name="IslamInfo_RelationshipInClosenessWordByWord" xml:space="preserve">
+    <value>Relationship In Closeness Word By Word</value>
+  </data>
+  <data name="IslamInfo_RelationshipInCloseness" xml:space="preserve">
+    <value>Relationship In Closeness</value>
+  </data>
+  <data name="IslamInfo_RelationshipInSameTypesWordByWord" xml:space="preserve">
+    <value>Relationship In Same Types Word By Word</value>
+  </data>
+  <data name="IslamInfo_RelationshipInSameTypes" xml:space="preserve">
+    <value>Relationship In Same Types</value>
+  </data>
+  <data name="IslamInfo_RelationshipInDifferentTypesWordByWord" xml:space="preserve">
+    <value>Relationship In Different Types Word By Word</value>
+  </data>
+  <data name="IslamInfo_RelationshipInDifferentTypes" xml:space="preserve">
+    <value>Relationship In Different Types</value>
+  </data>
+  <data name="IslamInfo_RulesForEmptyHamzaWordByWord" xml:space="preserve">
+    <value>Rules For Empty Hamza Word By Word</value>
+  </data>
+  <data name="IslamInfo_RulesForEmptyHamza" xml:space="preserve">
+    <value>Rules For Empty Hamza</value>
+  </data>
+  <data name="IslamInfo_TheStopOnEndsOfWordsWordByWord" xml:space="preserve">
+    <value>The Stop On Ends Of Words Word By Word</value>
+  </data>
+  <data name="IslamInfo_TheStopOnEndsOfWords" xml:space="preserve">
+    <value>The Stop On Ends Of Words</value>
+  </data>
+  <data name="IslamInfo_TheWritingOfTheFemaleHaWordByWord" xml:space="preserve">
+    <value>The Writing Of The Female Ha Word By Word</value>
+  </data>
+  <data name="IslamInfo_TheWritingOfTheFemaleHa" xml:space="preserve">
+    <value>The Writing Of The Female Ha</value>
+  </data>
+  <data name="IslamInfo_WordsSpecificallyForTheHafsRecitationWordByWord" xml:space="preserve">
+    <value>Words Specifically For The Hafs Recitation Word By Word</value>
+  </data>
+  <data name="IslamInfo_WordsSpecificallyForTheHafsRecitation" xml:space="preserve">
+    <value>Words Specifically For The Hafs Recitation</value>
+  </data>
+  <data name="IslamInfo_FormationsOfDifferentlyVoweledLettersWordByWord" xml:space="preserve">
+    <value>Formations Of Differently Voweled Letters Word By Word</value>
+  </data>
+  <data name="IslamInfo_FormationsOfDifferentlyVoweledLetters" xml:space="preserve">
+    <value>Formations Of Differently Voweled Letters</value>
+  </data>
+  <data name="IslamInfo_LetterCharacteristicsWordByWord" xml:space="preserve">
+    <value>Letter Characteristics Word By Word</value>
+  </data>
+  <data name="IslamInfo_ProstrationsOfReadingWordByWord" xml:space="preserve">
+    <value>Prostrations Of Reading Word By Word</value>
+  </data>
+  <data name="IslamInfo_ProstrationsOfReading" xml:space="preserve">
+    <value>Prostrations Of Reading</value>
+  </data>
+  <data name="IslamInfo_DeepestPartOfTongueWordByWord" xml:space="preserve">
+    <value>Deepest Part Of Tongue Word By Word</value>
+  </data>
+  <data name="IslamInfo_DeepestPartOfTongue" xml:space="preserve">
+    <value>Deepest Part Of Tongue</value>
+  </data>
+  <data name="IslamInfo_MiddleOfTongueWordByWord" xml:space="preserve">
+    <value>Middle Of Tongue Word By Word</value>
+  </data>
+  <data name="IslamInfo_MiddleOfTongue" xml:space="preserve">
+    <value>Middle Of Tongue</value>
+  </data>
+  <data name="IslamInfo_EdgeOfTongueWordByWord" xml:space="preserve">
+    <value>Edge Of Tongue Word By Word</value>
+  </data>
+  <data name="IslamInfo_EdgeOfTongue" xml:space="preserve">
+    <value>Edge Of Tongue</value>
+  </data>
+  <data name="IslamInfo_TipOfTongueWordByWord" xml:space="preserve">
+    <value>Tip Of Tongue Word By Word</value>
+  </data>
+  <data name="IslamInfo_TipOfTongue" xml:space="preserve">
+    <value>Tip Of Tongue</value>
+  </data>
+  <data name="IslamInfo_DeepestPartOfThroatWordByWord" xml:space="preserve">
+    <value>Deepest Part Of Throat Word By Word</value>
+  </data>
+  <data name="IslamInfo_DeepestPartOfThroat" xml:space="preserve">
+    <value>Deepest Part Of Throat</value>
+  </data>
+  <data name="IslamInfo_MiddleOfThroatWordByWord" xml:space="preserve">
+    <value>Middle Of Throat Word By Word</value>
+  </data>
+  <data name="IslamInfo_MiddleOfThroat" xml:space="preserve">
+    <value>Middle Of Throat</value>
+  </data>
+  <data name="IslamInfo_ClosestPartOfThroatWordByWord" xml:space="preserve">
+    <value>Closest Part Of Throat Word By Word</value>
+  </data>
+  <data name="IslamInfo_ClosestPartOfThroat" xml:space="preserve">
+    <value>Closest Part Of Throat</value>
+  </data>
+  <data name="IslamInfo_TheOneWhoseHelpIsSoughtWordByWord" xml:space="preserve">
+    <value>The One Whose Help Is Sought Word By Word</value>
+  </data>
+  <data name="IslamInfo_TheOneWhoseHelpIsSought" xml:space="preserve">
+    <value>The One Whose Help Is Sought</value>
+  </data>
+  <data name="IslamInfo_ThingsWhichServeThePublicInterestWordByWord" xml:space="preserve">
+    <value>Things Which Serve The Public Interest Word By Word</value>
+  </data>
+  <data name="IslamInfo_BlockingOfTheMeansWordByWord" xml:space="preserve">
+    <value>Blocking Of The Means Word By Word</value>
+  </data>
+  <data name="IslamInfo_TheMostBenificentTheMostMercifulWordByWord" xml:space="preserve">
+    <value>The Most Benificent The Most Merciful Word By Word</value>
+  </data>
+  <data name="IslamInfo_TheMostMercifulTheOneWhoseHelpIsSoughtWordByWord" xml:space="preserve">
+    <value>The Most Merciful The One Whose Help Is Sought Word By Word</value>
+  </data>
+  <data name="IslamInfo_TheMightyOneTheGreatForgiverWordByWord" xml:space="preserve">
+    <value>The Mighty One The Great Forgiver Word By Word</value>
+  </data>
+  <data name="IslamInfo_TheMightyOneTheBountifulOneWordByWord" xml:space="preserve">
+    <value>The Mighty One The Bountiful One Word By Word</value>
+  </data>
+  <data name="IslamInfo_TheMightyOneTheAllCompellingWordByWord" xml:space="preserve">
+    <value>The Mighty One The All Compelling Word By Word</value>
+  </data>
+  <data name="IslamInfo_TheClementOneTheGuideToPathOfRectitudeWordByWord" xml:space="preserve">
+    <value>The Clement One The Guide To Path Of Rectitude Word By Word</value>
+  </data>
+  <data name="IslamInfo_TheEmbodimentOfTruthTheClearWordByWord" xml:space="preserve">
+    <value>The Embodiment Of Truth The Clear Word By Word</value>
+  </data>
+  <data name="IslamInfo_TheMostSacredTheEmbodimentOfPeaceWordByWord" xml:space="preserve">
+    <value>The Most Sacred The Embodiment Of Peace Word By Word</value>
+  </data>
+  <data name="IslamInfo_TheMostSacredTheMightyOneWordByWord" xml:space="preserve">
+    <value>The Most Sacred The Mighty One Word By Word</value>
+  </data>
+  <data name="IslamInfo_TheEmbodimentOfPeaceTheInfuserOfFaithWordByWord" xml:space="preserve">
+    <value>The Embodiment Of Peace The Infuser Of Faith Word By Word</value>
+  </data>
+  <data name="IslamInfo_TheInfuserOfFaithThePreserverOfSafetyWordByWord" xml:space="preserve">
+    <value>The Infuser Of Faith The Preserver Of Safety Word By Word</value>
+  </data>
+  <data name="IslamInfo_ThePreserverOfSafetyTheMightyOneWordByWord" xml:space="preserve">
+    <value>The Preserver Of Safety The Mighty One Word By Word</value>
+  </data>
+  <data name="IslamInfo_TheAllCompellingTheDominantOneWordByWord" xml:space="preserve">
+    <value>The All Compelling The Dominant One Word By Word</value>
+  </data>
+  <data name="IslamInfo_TheProtectingAssociateTheSoleLaudableOneWordByWord" xml:space="preserve">
+    <value>The Protecting Associate The Sole Laudable One Word By Word</value>
+  </data>
+  <data name="IslamInfo_TheGreatOneTheExtremelyExaltedOneWordByWord" xml:space="preserve">
+    <value>The Great One The Extremely Exalted One Word By Word</value>
+  </data>
+  <data name="IslamInfo_TheCreatorTheEvolverWordByWord" xml:space="preserve">
+    <value>The Creator The Evolver Word By Word</value>
+  </data>
+  <data name="IslamInfo_TheCreatorTheEvolver" xml:space="preserve">
+    <value>The Creator The Evolver</value>
+  </data>
+  <data name="IslamInfo_TheEvolverTheFlawlessShaperWordByWord" xml:space="preserve">
+    <value>The Evolver The Flawless Shaper Word By Word</value>
+  </data>
+  <data name="IslamInfo_TheEvolverTheFlawlessShaper" xml:space="preserve">
+    <value>The Evolver The Flawless Shaper</value>
+  </data>
+  <data name="IslamInfo_AndToYouAllMasculineWordByWord" xml:space="preserve">
+    <value>And To You All Masculine Word By Word</value>
+  </data>
+  <data name="IslamInfo_AndToYouAllMasculine" xml:space="preserve">
+    <value>And To You All Masculine</value>
+  </data>
+  <data name="IslamInfo_AndToYouAllFeminineWordByWord" xml:space="preserve">
+    <value>And To You All Feminine Word By Word</value>
+  </data>
+  <data name="IslamInfo_AndToYouAllFeminine" xml:space="preserve">
+    <value>And To You All Feminine</value>
+  </data>
+  <data name="IslamInfo_AndToYouBothWordByWord" xml:space="preserve">
+    <value>And To You Both Word By Word</value>
+  </data>
+  <data name="IslamInfo_AndToYouBoth" xml:space="preserve">
+    <value>And To You Both</value>
+  </data>
+  <data name="IslamInfo_AndToYouMasculineWordByWord" xml:space="preserve">
+    <value>And To You Masculine Word By Word</value>
+  </data>
+  <data name="IslamInfo_AndToYouMasculine" xml:space="preserve">
+    <value>And To You Masculine</value>
+  </data>
+  <data name="IslamInfo_AndToYouFeminineWordByWord" xml:space="preserve">
+    <value>And To You Feminine Word By Word</value>
+  </data>
+  <data name="IslamInfo_AndToYouFeminine" xml:space="preserve">
+    <value>And To You Feminine</value>
+  </data>
+  <data name="IslamInfo_TheNobleThroneWordByWord" xml:space="preserve">
+    <value>The Noble Throne Word By Word</value>
+  </data>
+  <data name="IslamInfo_TheNobleThrone" xml:space="preserve">
+    <value>The Noble Throne</value>
+  </data>
+  <data name="IslamInfo_TheGreatThroneWordByWord" xml:space="preserve">
+    <value>The Great Throne Word By Word</value>
+  </data>
+  <data name="IslamInfo_TheGreatThrone" xml:space="preserve">
+    <value>The Great Throne</value>
+  </data>
+  <data name="IslamInfo_DisjointedLettersQuranicInitialsWordByWord" xml:space="preserve">
+    <value>Disjointed Letters Quranic Initials Word By Word</value>
+  </data>
+  <data name="IslamInfo_DisjointedLettersQuranicInitials" xml:space="preserve">
+    <value>Disjointed Letters Quranic Initials</value>
+  </data>
 </root>
