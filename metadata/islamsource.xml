@@ -212,6 +212,7 @@
 			<static name="alphabet" description="" onrender="Arabic::DisplayAll"></static>
 			<static name="combos" description="" onrender="Arabic::DisplayCombo"></static>
 			<static name="schemes" description="" onrender="Arabic::DisplayTranslitSchemes"></static>
+			<static name="chars" description="" onrender="CachedData::ArabicLetterCharacteristics"></static>
 		</frame>
 	</page>
 	<page name="arabicnumbers" description="IslamSource_ArabicNumbers">

@@ -2362,10 +2362,11 @@ Public Class CachedData
         Return String.Empty
     End Function
     Public Shared Function GetGroup(Name As String) As String()
+        Dim Characteristics As String() = {"Audibility", "Whispering", "Weakness", "Moderation", "Strength", "Lowness", "Elevation", "Opening", "Closing", "Restraint", "Fluency", "Vibration", "Inclination", "Repetition", "Whistling", "Diffusion", "Elongation", "Nasal", "Ease"}
         Dim Count As Integer
         For Count = 0 To CachedData.IslamData.ArabicGroups.Length - 1
             If CachedData.IslamData.ArabicGroups(Count).Name = Name Then
-                Return Array.ConvertAll(CachedData.IslamData.ArabicGroups(Count).Text, Function(Str As String) TranslateRegEx(Str, Name = "ArabicSpecialLetters"))
+                Return Array.ConvertAll(CachedData.IslamData.ArabicGroups(Count).Text, Function(Str As String) TranslateRegEx(Str, Name = "ArabicSpecialLetters" Or Array.IndexOf(Characteristics, Name) <> -1))
             End If
         Next
         Return {}
@@ -2690,6 +2691,40 @@ Public Class CachedData
             Return _ArabicPunctuationSymbols
         End Get
     End Property
+    Public Shared Function GetLetterCharacteristics(Ch As String) As String()
+        Dim Characteristics As String() = {"Audibility", "Whispering", "Weakness", "Moderation", "Strength", "Lowness", "Elevation", "Opening", "Closing", "Restraint", "Fluency", "Vibration", "Inclination", "Repetition", "Whistling", "Diffusion", "Elongation", "Nasal", "Ease"}
+        Dim Matches As New List(Of String)
+        For Count = 0 To Characteristics.Length - 1
+            If Array.IndexOf(GetGroup(Characteristics(Count)), Ch) <> -1 Then Matches.Add(Characteristics(Count))
+        Next
+        Return Matches.ToArray()
+    End Function
+    Public Shared Function ArabicLetterCharacteristics(ByVal Item As PageLoader.TextItem) As String
+        Dim MutualExclusiveChars As String() = {"Audibility", "Whispering", "Weakness", "Moderation", "Strength", "Lowness", "Elevation", "Opening", "Closing", "Restraint", "Fluency"}
+        Dim Lets As New List(Of String)
+        Lets.AddRange(Array.ConvertAll(ArabicSunLetters, Function(Str As String) ArabicData.MakeUniRegEx(Str)))
+        Lets.AddRange(Array.ConvertAll(ArabicMoonLettersNoVowels, Function(Str As String) ArabicData.MakeUniRegEx(Str)))
+        Lets.Add(GetPattern("WawExceptLengthening"))
+        Lets.Add(GetPattern("YehExceptLengthening"))
+        Lets.Add(ArabicData.MakeUniRegEx(ArabicData.ArabicLetterHamza))
+        Dim LetCombs As New List(Of String)
+        For Count As Integer = 0 To Lets.Count - 1
+            For DupCount As Integer = Count + 1 To Lets.Count - 1
+                Dim Chars As String() = GetLetterCharacteristics(Lets(Count))
+                Dim DupChars As String() = GetLetterCharacteristics(Lets(DupCount))
+                'Intersect to get matches
+                Dim Union As String() = Array.FindAll(Chars, Function(Ch As String) Array.IndexOf(DupChars, Ch) <> -1)
+                'Subtract the intersection to get differences
+                Chars = Array.FindAll(Chars, Function(Ch As String) Array.IndexOf(Union, Ch) = -1)
+                DupChars = Array.FindAll(DupChars, Function(Ch As String) Array.IndexOf(Union, Ch) = -1)
+                'Mutually exclusive differences counted only once
+                Dim MutExc As Integer = Array.FindAll(Chars, Function(Ch As String) Array.IndexOf(MutualExclusiveChars, Ch) <> -1).Length
+                LetCombs.Add(ArabicData.LeftToRightOverride + (Union.Length - Chars.Length - DupChars.Length + MutExc + 8).ToString("00") + "    " + ArabicData.PopDirectionalFormatting + DocBuilder.GetRegExText(Lets(Count)) + "+" + DocBuilder.GetRegExText(Lets(DupCount)) + ArabicData.LeftToRightOverride + "    " + CStr(Union.Length) + "    " + String.Join(", ", Chars) + " <> " + String.Join(", ", DupChars) + ArabicData.PopDirectionalFormatting)
+            Next
+        Next
+        LetCombs.Sort(StringComparer.Ordinal)
+        Return ArabicData.LeftToRightMark + String.Join(vbCrLf, LetCombs.ToArray())
+    End Function
     Public Shared ReadOnly Property ArabicLetters As String()
         Get
             If _ArabicLetters Is Nothing Then

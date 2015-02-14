@@ -2170,11 +2170,20 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 
 		<word text="{loxayo$uwmu" id="NasalPassage"></word>
 		<word text="{l$~afatayoni" id="TwoLips"></word>
+		<word text="{l$~afatayoni wamin baToni {l$~afapi" id="TwoLipsFromInside"></word>
 		<word text="{ll~isaAnu" id="Tongue"></word>
 		<word text="&gt;aqoSaY {ll~isaAni" id="DeepestPartOfTongue"></word>
+		<word text="&gt;asofalu &gt;aqoSaY {ll~isaAni" id="UnderTheDeepestPartOfTongue"></word>
 		<word text="wasaTu {ll~isaAni" id="MiddleOfTongue"></word>
 		<word text="HaAfapu {ll~isaAni" id="EdgeOfTongue"></word>
-		<word text="Tarafa {ll~isaAni" id="TipOfTongue"></word>
+		<word text="&gt;adonaAmaA limunotahaAmaA HaAfapu {ll~isaAni" id="EdgeOfTongueLowestPart"></word>
+		<word text="Tarafu {ll~isaAni" id="TipOfTongue"></word>
+		<word text="Tarafu {ll~isaAni taHotu {joEaluwA" id="UnderTipOfTongue"></word>
+		<word text="Tarafu {ll~isaAni taHotu {joEaluwA yudaAniyapi liZahori &gt;adoxalu" id="CloseToUnderTipOfTongueWithTop"></word>
+		<word text="{loHuruwfu {lo&gt;asaliy~api" id="TipOfTongueLetters"></word>
+		<word text="{loHuruwfu {ll~avawiyapi" id="GumLetters"></word>
+		<word text="{loHuruwfu {ln~iTaEiy~api" id="ElevatedGumLetters"></word>
+		<word text="{loHuruwfu {l*~aloqiy~api" id="TipLetters"></word>
 		<word text="{loHaloqu" id="Throat"></word>
 		<word text="&gt;aqoSaY {loHaloqi" id="DeepestPartOfThroat"></word>
 		<word text="wasaTu {loHaloqi" id="MiddleOfThroat"></word>
@@ -4779,7 +4788,7 @@ Ramadan fast-breaking | One 2172-gram quantity | Dates or barley or ordinary sta
 	</versenumberschemes>
 	<arabicnumbers>
 		<nums name="ArabicUniqueLetters" text="Al^m^ Al^m^S^ Al^r Al^m^r k^hyE^S^ Th Ts^m^ Ts^ ys^ S^ Hm^ E^s^q^ q^ n^"></nums>
-		<nums name="ArabicAlphabet" text="&gt;alifN baA^&apos;N taA^&apos;N vaA^&apos;N jiymN HaA^&apos;N xaA^&apos;N daAlN *aAlN raA^&apos;N zaY~N/zayonN siynN $iynN SaAdN DaAdN TaA^&apos;N ZaA^&apos;N EayonN gayonN faA^&apos;N qaAfN kaAfN laA^mN miymN nuwnN haA^&apos;N waAwN yaA^&apos;N"></nums>
+		<nums name="ArabicAlphabet" text="&gt;alifN baA^&apos;N taA^&apos;N vaA^&apos;N jiymN HaA^&apos;N xaA^&apos;N daAlN *aAlN raA^&apos;N zaAY~N/zaAyonN siynN $iynN SaAdN DaAdN TaA^&apos;N ZaA^&apos;N EayonN gayonN faA^&apos;N qaAfN kaAfN laA^mN miymN nuwnN haA^&apos;N waAwN yaA^&apos;N"></nums>
 		<nums name="ArabicNumbers" text="0 1 2 3 4 5 6 7 8 9"></nums>
 		<nums name="ArabicWaslKasraExceptions" text="mo$uwA }otuwA@ qoDuw^A@ bonuwA@ moDuwA@ mora&gt;ataAni mora&gt;ata mora&gt;atu mora&gt;atiY mora&gt;atahu, mora&gt;atuhu, mora&gt;ataka mora&gt;atihi.^ mora&gt;atayoni somuhu soma somi somu vonatayoni vonayoni bonata bonataY~a bonaYo bonahu boniY bonaka bonuwA@ bonahaA^ bonihi. bona boni bonu moru&amp;NA@"></nums>
 		<nums name="ordinals" text="&gt;aw~alN vaAniyN vaAlivN raAbiEN xaAmisN saAdisN saAbiEN vaAminN taAsiEN EaA$irN"></nums>
@@ -4816,18 +4825,20 @@ Ramadan fast-breaking | One 2172-gram quantity | Dates or barley or ordinary sta
 		<pattern name="MatchNoon" match="{ArabicNoon}(?=$|\s+)"></pattern>
 		<pattern name="MatchFirstPerson" match="(?:((?:{ArabicMoonLettersNoVowels}|{ArabicLetterTeh}|{ArabicLetterTheh}|{ArabicLetterDal}|{ArabicLetterThal}|{ArabicLetterReh}|{ArabicLetterZain}|{ArabicLetterSeen}|{ArabicLetterSheen}|{ArabicLetterSad}|{ArabicLetterDad}|{ArabicLetterTah}|{ArabicLetterZah}|{ArabicLetterLam}){ArabicShadda}?|{ArabicLetterNoon}{ArabicShadda}|{ArabicLetterTehMarbuta}|{ArabicLetterHamza}|{ArabicLetterAlefWithHamzaAbove}|{ArabicLetterWawWithHamzaAbove}|{ArabicLetterAlefWithHamzaBelow}|{ArabicLetterYehWithHamzaAbove})|{ArabicFatha}|{ArabicDamma}|{ArabicSukun})(?=$|\s+)"></pattern>
 		<pattern name="MatchThirdPerson" match="((?:{ArabicSunLetters}|{ArabicMoonLettersNoVowels}|{ArabicLetterWaw}){ArabicShadda}?|{ArabicLetterAlef}|{ArabicLetterHamza}|{ArabicLetterAlefWithHamzaAbove}|{ArabicLetterWawWithHamzaAbove}|{ArabicLetterAlefWithHamzaBelow}|{ArabicLetterYehWithHamzaAbove}|{ArabicFatha}|{ArabicDamma}|{ArabicSukun})(?=$|\s+)"></pattern>
+		<pattern name="WawExceptLengthening" match="({ArabicFatha}(?:{ArabicLetterAlef}|{ArabicLetterSuperscriptAlef})?|{ArabicKasra}|{ArabicSukun}){ArabicLetterWaw}"></pattern>
+		<pattern name="YehExceptLengthening" match="({ArabicFatha}(?:{ArabicLetterAlef}{ArabicHighSmallRoundedZero}?|{ArabicLetterSuperscriptAlef}|{ArabicLetterYeh})?|{ArabicDamma}|{ArabicSukun}){ArabicLetterYeh}|{ArabicFatha}{ArabicLetterAlefMaksura}(?={ArabicSukun}|{ArabicKasra}|{ArabicShadda})"></pattern>
 	</arabicpatterns>
 	<arabicgroups>
-		<group name="Audibility" text="{ArabicLetterBeh} {ArabicLetterJeem} {ArabicLetterDal} {ArabicLetterThal} {ArabicLetterReh} {ArabicLetterZain} {ArabicLetterDad} {ArabicLetterTah} {ArabicLetterZah} {ArabicLetterAin} {ArabicLetterGhain} {ArabicLetterQaf} {ArabicLetterLam} {ArabicLetterMeem} {ArabicLetterNoon} ({ArabicFatha}(?:{ArabicLetterAlef}|{ArabicLetterSuperscriptAlef})?|{ArabicKasra}|{ArabicSukun}){ArabicLetterWaw} ({ArabicFatha}(?:{ArabicLetterAlef}{ArabicHighSmallRoundedZero}?|{ArabicLetterSuperscriptAlef}|{ArabicLetterYeh})?|{ArabicDamma}|{ArabicSukun}){ArabicLetterYeh} {ArabicFatha}{ArabicLetterAlefMaksura}(?={ArabicSukun}|{ArabicKasra}|{ArabicShadda}) {ArabicLetterHamza}"></group>
+		<group name="Audibility" text="{ArabicLetterBeh} {ArabicLetterJeem} {ArabicLetterDal} {ArabicLetterThal} {ArabicLetterReh} {ArabicLetterZain} {ArabicLetterDad} {ArabicLetterTah} {ArabicLetterZah} {ArabicLetterAin} {ArabicLetterGhain} {ArabicLetterQaf} {ArabicLetterLam} {ArabicLetterMeem} {ArabicLetterNoon} {WawExceptLengthening} {YehExceptLengthening} {ArabicLetterHamza}"></group>
 		<group name="Whispering" text="{ArabicLetterTeh} {ArabicLetterTheh} {ArabicLetterHah} {ArabicLetterKhah} {ArabicLetterSeen} {ArabicLetterSheen} {ArabicLetterSad} {ArabicLetterFeh} {ArabicLetterKaf} {ArabicLetterHeh}"></group>
-		<group name="Weakness" text="{ArabicLetterTheh} {ArabicLetterHah} {ArabicLetterKhah} {ArabicLetterThal} {ArabicLetterZain} {ArabicLetterSeen} {ArabicLetterSheen} {ArabicLetterSad} {ArabicLetterDad} {ArabicLetterZah} {ArabicLetterGhain} {ArabicLetterFeh} {ArabicLetterHeh} ({ArabicFatha}(?:{ArabicLetterAlef}|{ArabicLetterSuperscriptAlef})?|{ArabicKasra}|{ArabicSukun}){ArabicLetterWaw} ({ArabicFatha}(?:{ArabicLetterAlef}{ArabicHighSmallRoundedZero}?|{ArabicLetterSuperscriptAlef}|{ArabicLetterYeh})?|{ArabicDamma}|{ArabicSukun}){ArabicLetterYeh} {ArabicFatha}{ArabicLetterAlefMaksura}(?={ArabicSukun}|{ArabicKasra}|{ArabicShadda})"></group>
+		<group name="Weakness" text="{ArabicLetterTheh} {ArabicLetterHah} {ArabicLetterKhah} {ArabicLetterThal} {ArabicLetterZain} {ArabicLetterSeen} {ArabicLetterSheen} {ArabicLetterSad} {ArabicLetterDad} {ArabicLetterZah} {ArabicLetterGhain} {ArabicLetterFeh} {ArabicLetterHeh} {WawExceptLengthening} {YehExceptLengthening}"></group>
 		<group name="Moderation" text="{ArabicLetterReh} {ArabicLetterAin} {ArabicLetterLam} {ArabicLetterMeem} {ArabicLetterNoon}"></group>
 		<group name="Strength" text="{ArabicLetterBeh} {ArabicLetterTeh} {ArabicLetterJeem} {ArabicLetterDal} {ArabicLetterTah} {ArabicLetterQaf} {ArabicLetterKaf} {ArabicLetterHamza}"></group>
-		<group name="Lowness" text="{ArabicLetterBeh} {ArabicLetterTeh} {ArabicLetterTheh} {ArabicLetterJeem} {ArabicLetterHah} {ArabicLetterDal} {ArabicLetterThal} {ArabicLetterReh} {ArabicLetterZain} {ArabicLetterSeen} {ArabicLetterSheen} {ArabicLetterAin} {ArabicLetterFeh} {ArabicLetterKaf} {ArabicLetterLam} {ArabicLetterMeem} {ArabicLetterNoon} {ArabicLetterHeh} ({ArabicFatha}(?:{ArabicLetterAlef}|{ArabicLetterSuperscriptAlef})?|{ArabicKasra}|{ArabicSukun}){ArabicLetterWaw} ({ArabicFatha}(?:{ArabicLetterAlef}{ArabicHighSmallRoundedZero}?|{ArabicLetterSuperscriptAlef}|{ArabicLetterYeh})?|{ArabicDamma}|{ArabicSukun}){ArabicLetterYeh} {ArabicFatha}{ArabicLetterAlefMaksura}(?={ArabicSukun}|{ArabicKasra}|{ArabicShadda}) {ArabicLetterHamza}"></group>
+		<group name="Lowness" text="{ArabicLetterBeh} {ArabicLetterTeh} {ArabicLetterTheh} {ArabicLetterJeem} {ArabicLetterHah} {ArabicLetterDal} {ArabicLetterThal} {ArabicLetterReh} {ArabicLetterZain} {ArabicLetterSeen} {ArabicLetterSheen} {ArabicLetterAin} {ArabicLetterFeh} {ArabicLetterKaf} {ArabicLetterLam} {ArabicLetterMeem} {ArabicLetterNoon} {ArabicLetterHeh} {WawExceptLengthening} {YehExceptLengthening} {ArabicLetterHamza}"></group>
 		<group name="Elevation" text="{ArabicLetterKhah} {ArabicLetterSad} {ArabicLetterDad} {ArabicLetterTah} {ArabicLetterZah} {ArabicLetterGhain} {ArabicLetterQaf}"></group>
-		<group name="Opening" text="{ArabicLetterBeh} {ArabicLetterTeh} {ArabicLetterTheh} {ArabicLetterJeem} {ArabicLetterHah} {ArabicLetterKhah} {ArabicLetterDal} {ArabicLetterThal} {ArabicLetterReh} {ArabicLetterZain} {ArabicLetterSeen} {ArabicLetterSheen} {ArabicLetterAin} {ArabicLetterGhain} {ArabicLetterFeh} {ArabicLetterQaf} {ArabicLetterKaf} {ArabicLetterLam} {ArabicLetterMeem} {ArabicLetterNoon} {ArabicLetterHeh} ({ArabicFatha}(?:{ArabicLetterAlef}|{ArabicLetterSuperscriptAlef})?|{ArabicKasra}|{ArabicSukun}){ArabicLetterWaw} ({ArabicFatha}(?:{ArabicLetterAlef}{ArabicHighSmallRoundedZero}?|{ArabicLetterSuperscriptAlef}|{ArabicLetterYeh})?|{ArabicDamma}|{ArabicSukun}){ArabicLetterYeh} {ArabicFatha}{ArabicLetterAlefMaksura}(?={ArabicSukun}|{ArabicKasra}|{ArabicShadda}) {ArabicLetterHamza}"></group>
+		<group name="Opening" text="{ArabicLetterBeh} {ArabicLetterTeh} {ArabicLetterTheh} {ArabicLetterJeem} {ArabicLetterHah} {ArabicLetterKhah} {ArabicLetterDal} {ArabicLetterThal} {ArabicLetterReh} {ArabicLetterZain} {ArabicLetterSeen} {ArabicLetterSheen} {ArabicLetterAin} {ArabicLetterGhain} {ArabicLetterFeh} {ArabicLetterQaf} {ArabicLetterKaf} {ArabicLetterLam} {ArabicLetterMeem} {ArabicLetterNoon} {ArabicLetterHeh} {WawExceptLengthening} {YehExceptLengthening} {ArabicLetterHamza}"></group>
 		<group name="Closing" text="{ArabicLetterSad} {ArabicLetterDad} {ArabicLetterTah} {ArabicLetterZah}"></group>
-		<group name="Restraint" text="{ArabicLetterTeh} {ArabicLetterTheh} {ArabicLetterJeem} {ArabicLetterHah} {ArabicLetterKhah} {ArabicLetterDal} {ArabicLetterThal} {ArabicLetterZain} {ArabicLetterSeen} {ArabicLetterSheen} {ArabicLetterSad} {ArabicLetterDad} {ArabicLetterTah} {ArabicLetterZah} {ArabicLetterAin} {ArabicLetterGhain} {ArabicLetterQaf} {ArabicLetterKaf} {ArabicLetterHeh} ({ArabicFatha}(?:{ArabicLetterAlef}|{ArabicLetterSuperscriptAlef})?|{ArabicKasra}|{ArabicSukun}){ArabicLetterWaw} ({ArabicFatha}(?:{ArabicLetterAlef}{ArabicHighSmallRoundedZero}?|{ArabicLetterSuperscriptAlef}|{ArabicLetterYeh})?|{ArabicDamma}|{ArabicSukun}){ArabicLetterYeh} {ArabicFatha}{ArabicLetterAlefMaksura}(?={ArabicSukun}|{ArabicKasra}|{ArabicShadda}) {ArabicLetterHamza}"></group>
+		<group name="Restraint" text="{ArabicLetterTeh} {ArabicLetterTheh} {ArabicLetterJeem} {ArabicLetterHah} {ArabicLetterKhah} {ArabicLetterDal} {ArabicLetterThal} {ArabicLetterZain} {ArabicLetterSeen} {ArabicLetterSheen} {ArabicLetterSad} {ArabicLetterDad} {ArabicLetterTah} {ArabicLetterZah} {ArabicLetterAin} {ArabicLetterGhain} {ArabicLetterQaf} {ArabicLetterKaf} {ArabicLetterHeh} {WawExceptLengthening} {YehExceptLengthening} {ArabicLetterHamza}"></group>
 		<group name="Fluency" text="{ArabicLetterBeh} {ArabicLetterReh} {ArabicLetterFeh} {ArabicLetterLam} {ArabicLetterMeem} {ArabicLetterNoon}"></group>
 		<group name="Vibration" text="{ArabicLetterBeh} {ArabicLetterJeem} {ArabicLetterDal} {ArabicLetterTah} {ArabicLetterQaf}"></group>
 		<group name="Inclination" text="{ArabicLetterReh} {ArabicLetterLam}"></group>
@@ -4836,7 +4847,25 @@ Ramadan fast-breaking | One 2172-gram quantity | Dates or barley or ordinary sta
 		<group name="Diffusion" text="{ArabicLetterSheen}"></group>
 		<group name="Elongation" text="{ArabicLetterDad}"></group>
 		<group name="Nasal" text="{ArabicLetterMeem} {ArabicLetterNoon}"></group>
-		<group name="Ease" text="({ArabicFatha}(?:{ArabicLetterAlef}|{ArabicLetterSuperscriptAlef})?|{ArabicKasra}|{ArabicSukun}){ArabicLetterWaw} ({ArabicFatha}(?:{ArabicLetterAlef}{ArabicHighSmallRoundedZero}?|{ArabicLetterSuperscriptAlef}|{ArabicLetterYeh})?|{ArabicDamma}|{ArabicSukun}){ArabicLetterYeh} {ArabicFatha}{ArabicLetterAlefMaksura}(?={ArabicSukun}|{ArabicKasra}|{ArabicShadda})"></group>
+		<group name="Ease" text="{WawExceptLengthening} {YehExceptLengthening}"></group>
+		<group name="NasalPassage" text="{ArabicLetterNoon}{ArabicShadda} {ArabicLetterMeem}{ArabicShadda}"></group>
+		<group name="TwoLips" text="{ArabicLetterBeh} {ArabicLetterMeem} {WawExceptLengthening}"></group>
+		<group name="TwoLipsFromInside" text="{ArabicLetterFeh}"></group>
+		<group name="DeepestPartOfTongue" text="{ArabicLetterQaf}"></group>
+		<group name="UnderTheDeepestPartOfTongue" text="{ArabicLetterKaf}"></group>
+		<group name="EdgeOfTongue" text="{ArabicLetterDad}"></group>
+		<group name="EdgeOfTongueLowestPart" text="{ArabicLetterLam}"></group>
+		<group name="UnderTipOfTongue" text="{ArabicLetterNoon}"></group>
+		<group name="CloseToUnderTipOfTongueWithTop" text="{ArabicLetterReh}"></group>
+		<group name="TipLetters" text="{ArabicLetterReh} {ArabicLetterLam} {ArabicLetterNoon}"></group>
+		<group name="MiddleOfTongue" text="{ArabicLetterJeem} {ArabicLetterSheen} {YehExceptLengthening}"></group>
+		<group name="TipOfTongueLetters" text="{ArabicLetterZain} {ArabicLetterSeen} {ArabicLetterSad}"></group>
+		<group name="ElevatedGumLetters" text="{ArabicLetterTeh} {ArabicLetterDal} {ArabicLetterTah}"></group>
+		<group name="GumLetters" text="{ArabicLetterTheh} {ArabicLetterThal} {ArabicLetterZah}"></group>
+		<group name="DeepestPartOfThroat" text="{ArabicLetterHeh} {ArabicLetterHamza}"></group>
+		<group name="MiddleOfThroat" text="{ArabicLetterHah} {ArabicLetterAin}"></group>
+		<group name="ClosestPartOfThroat" text="{ArabicLetterKhah} {ArabicLetterGhain}"></group>
+		<group name="ChestInterior" text="{ArabicFatha}{ArabicLetterAlef} {ArabicDamma}{ArabicLetterWaw} {ArabicKasra}{ArabicLetterYeh}"></group>
 		<group name="ArabicFathaDammaKasra" text="{ArabicFatha} {ArabicDamma} {ArabicKasra}"></group>
 		<group name="ArabicTanweens" text="{ArabicFathatan} {ArabicDammatan} {ArabicKasratan}"></group>
 		<group name="ArabicLongVowels" text="{ArabicFatha}{ArabicLetterAlef} {ArabicDamma}{ArabicLetterWaw} {ArabicKasra}{ArabicLetterYeh}"></group>
