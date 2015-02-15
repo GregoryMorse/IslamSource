@@ -31683,4 +31683,163 @@
   <data name="IslamInfo_DisjointedLettersQuranicInitials" xml:space="preserve">
     <value>Disjointed Letters Quranic Initials</value>
   </data>
+  <data name="IslamInfo_FalsehoodVainUnjust" xml:space="preserve">
+    <value>Falsehood Vain Unjust</value>
+  </data>
+  <data name="IslamInfo_AdditionIncrease" xml:space="preserve">
+    <value>Addition Increase</value>
+  </data>
+  <data name="IslamInfo_ThreePartySaleWithBuyBackContract" xml:space="preserve">
+    <value>Three Party Sale With Buy Back Contract</value>
+  </data>
+  <data name="IslamInfo_Suspicion" xml:space="preserve">
+    <value>Suspicion</value>
+  </data>
+  <data name="IslamInfo_CounterValue" xml:space="preserve">
+    <value>Counter Value</value>
+  </data>
+  <data name="IslamInfo_GameOfChance" xml:space="preserve">
+    <value>Game Of Chance</value>
+  </data>
+  <data name="IslamInfo_ReasonForDecision" xml:space="preserve">
+    <value>Reason For Decision</value>
+  </data>
+  <data name="IslamInfo_Exchange" xml:space="preserve">
+    <value>Exchange</value>
+  </data>
+  <data name="IslamInfo_Effort" xml:space="preserve">
+    <value>Effort</value>
+  </data>
+  <data name="IslamInfo_Risk" xml:space="preserve">
+    <value>Risk</value>
+  </data>
+  <data name="IslamInfo_GrammarRulesPrinciples" xml:space="preserve">
+    <value>Grammar Rules Principles</value>
+  </data>
+  <data name="IslamInfo_SaleWithBuyBackContractWordByWord" xml:space="preserve">
+    <value>Sale With Buy Back Contract Word By Word</value>
+  </data>
+  <data name="IslamInfo_SaleWithBuyBackContract" xml:space="preserve">
+    <value>Sale With Buy Back Contract</value>
+  </data>
+  <data name="IslamInfo_TradingOfDebtWordByWord" xml:space="preserve">
+    <value>Trading Of Debt Word By Word</value>
+  </data>
+  <data name="IslamInfo_TradingOfDebt" xml:space="preserve">
+    <value>Trading Of Debt</value>
+  </data>
+  <data name="IslamInfo_ExchangeContractsWordByWord" xml:space="preserve">
+    <value>Exchange Contracts Word By Word</value>
+  </data>
+  <data name="IslamInfo_ExchangeContracts" xml:space="preserve">
+    <value>Exchange Contracts</value>
+  </data>
+  <data name="IslamInfo_InterestInExchangeContractsWordByWord" xml:space="preserve">
+    <value>Interest In Exchange Contracts Word By Word</value>
+  </data>
+  <data name="IslamInfo_InterestInExchangeContracts" xml:space="preserve">
+    <value>Interest In Exchange Contracts</value>
+  </data>
+  <data name="IslamInfo_InterestInLoanContractsWordByWord" xml:space="preserve">
+    <value>Interest In Loan Contracts Word By Word</value>
+  </data>
+  <data name="IslamInfo_InterestInLoanContracts" xml:space="preserve">
+    <value>Interest In Loan Contracts</value>
+  </data>
+  <data name="IslamInfo_ExcessiveMajorUncertaintyWordByWord" xml:space="preserve">
+    <value>Excessive Major Uncertainty Word By Word</value>
+  </data>
+  <data name="IslamInfo_ExcessiveMajorUncertainty" xml:space="preserve">
+    <value>Excessive Major Uncertainty</value>
+  </data>
+  <data name="IslamInfo_MinorTolerableTrivialUncertaintyWordByWord" xml:space="preserve">
+    <value>Minor Tolerable Trivial Uncertainty Word By Word</value>
+  </data>
+  <data name="IslamInfo_MinorTolerableTrivialUncertainty" xml:space="preserve">
+    <value>Minor Tolerable Trivial Uncertainty</value>
+  </data>
+  <data name="IslamInfo_AlefSakinaWithFathaBeforeItWordByWord" xml:space="preserve">
+    <value>Alef Sakina With Fatha Before It Word By Word</value>
+  </data>
+  <data name="IslamInfo_AlefSakinaWithFathaBeforeIt" xml:space="preserve">
+    <value>Alef Sakina With Fatha Before It</value>
+  </data>
+  <data name="IslamInfo_WawSakinaWithDammaBeforeItWordByWord" xml:space="preserve">
+    <value>Waw Sakina With Damma Before It Word By Word</value>
+  </data>
+  <data name="IslamInfo_WawSakinaWithDammaBeforeIt" xml:space="preserve">
+    <value>Waw Sakina With Damma Before It</value>
+  </data>
+  <data name="IslamInfo_YehSakinaWithKasraBeforeItWordByWord" xml:space="preserve">
+    <value>Yeh Sakina With Kasra Before It Word By Word</value>
+  </data>
+  <data name="IslamInfo_YehSakinaWithKasraBeforeIt" xml:space="preserve">
+    <value>Yeh Sakina With Kasra Before It</value>
+  </data>
+  <data name="IslamInfo_WawWithoutLengtheningWordByWord" xml:space="preserve">
+    <value>Waw Without Lengthening Word By Word</value>
+  </data>
+  <data name="IslamInfo_WawWithoutLengthening" xml:space="preserve">
+    <value>Waw Without Lengthening</value>
+  </data>
+  <data name="IslamInfo_YehWithoutLengtheningWordByWord" xml:space="preserve">
+    <value>Yeh Without Lengthening Word By Word</value>
+  </data>
+  <data name="IslamInfo_YehWithoutLengthening" xml:space="preserve">
+    <value>Yeh Without Lengthening</value>
+  </data>
+  <data name="IslamInfo_TwoLipsFromInsideWordByWord" xml:space="preserve">
+    <value>Two Lips From Inside Word By Word</value>
+  </data>
+  <data name="IslamInfo_TwoLipsFromInside" xml:space="preserve">
+    <value>Two Lips From Inside</value>
+  </data>
+  <data name="IslamInfo_UnderTheDeepestPartOfTongueWordByWord" xml:space="preserve">
+    <value>Under The Deepest Part Of Tongue Word By Word</value>
+  </data>
+  <data name="IslamInfo_UnderTheDeepestPartOfTongue" xml:space="preserve">
+    <value>Under The Deepest Part Of Tongue</value>
+  </data>
+  <data name="IslamInfo_EdgeOfTongueLowestPartWordByWord" xml:space="preserve">
+    <value>Edge Of Tongue Lowest Part Word By Word</value>
+  </data>
+  <data name="IslamInfo_EdgeOfTongueLowestPart" xml:space="preserve">
+    <value>Edge Of Tongue Lowest Part</value>
+  </data>
+  <data name="IslamInfo_UnderTipOfTongueWordByWord" xml:space="preserve">
+    <value>Under Tip Of Tongue Word By Word</value>
+  </data>
+  <data name="IslamInfo_UnderTipOfTongue" xml:space="preserve">
+    <value>Under Tip Of Tongue</value>
+  </data>
+  <data name="IslamInfo_CloseToUnderTipOfTongueWithTopWordByWord" xml:space="preserve">
+    <value>Close To Under Tip Of Tongue With Top Word By Word</value>
+  </data>
+  <data name="IslamInfo_CloseToUnderTipOfTongueWithTop" xml:space="preserve">
+    <value>Close To Under Tip Of Tongue With Top</value>
+  </data>
+  <data name="IslamInfo_TipOfTongueLettersWordByWord" xml:space="preserve">
+    <value>Tip Of Tongue Letters Word By Word</value>
+  </data>
+  <data name="IslamInfo_TipOfTongueLetters" xml:space="preserve">
+    <value>Tip Of Tongue Letters</value>
+  </data>
+  <data name="IslamInfo_GumLettersWordByWord" xml:space="preserve">
+    <value>Gum Letters Word By Word</value>
+  </data>
+  <data name="IslamInfo_GumLetters" xml:space="preserve">
+    <value>Gum Letters</value>
+  </data>
+  <data name="IslamInfo_ElevatedGumLettersWordByWord" xml:space="preserve">
+    <value>Elevated Gum Letters Word By Word</value>
+  </data>
+  <data name="IslamInfo_ElevatedGumLetters" xml:space="preserve">
+    <value>Elevated Gum Letters</value>
+  </data>
+  <data name="IslamInfo_TipLettersWordByWord" xml:space="preserve">
+    <value>Tip Letters Word By Word</value>
+  </data>
+  <data name="IslamInfo_TipLetters" xml:space="preserve">
+    <value>Tip Letters</value>
+  </data>
 </root>

@@ -2692,6 +2692,7 @@ Public Class CachedData
         End Get
     End Property
     Public Shared Function GetLetterCharacteristics(Ch As String) As String()
+        Dim ArticulationPoints As String() = {"NasalPassage", "TwoLips", "TwoLipsFromInside", "DeepestPartOfTongue", "UnderTheDeepestPartOfTongue", "EdgeOfTongue", "EdgeOfTongueLowestPart", "UnderTipOfTongue", "CloseToUnderTipOfTongueWithTop", "MiddleOfTongue", "TipOfTongueLetters", "ElevatedGumLetters", "GumLetters", "DeepestPartOfThroat", "MiddleOfThroat", "ClosestPartOfThroat", "ChestInterior"} '"TipLetters"
         Dim Characteristics As String() = {"Audibility", "Whispering", "Weakness", "Moderation", "Strength", "Lowness", "Elevation", "Opening", "Closing", "Restraint", "Fluency", "Vibration", "Inclination", "Repetition", "Whistling", "Diffusion", "Elongation", "Nasal", "Ease"}
         Dim Matches As New List(Of String)
         For Count = 0 To Characteristics.Length - 1
