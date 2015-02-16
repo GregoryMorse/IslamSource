@@ -915,6 +915,21 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<noun text="faAHi$oha" id="EvilDeeds"></noun>
 			<noun text="ribaw`^A@" id="Usury"></noun>
 			<noun text="rabaA" id="AdditionIncrease"></noun>
+			<noun text="qaroDN" id="Loan"></word>
+			<noun text="wadiyEapN" id="Deposit"></noun>
+			<noun text="wakaAlapN" id="AgencyPowerOfAttorney"></noun>
+			<noun text="kafaAlapN" id="Guarantee"></noun>
+			<noun text="muqasapN" id="ClearanceOfObligationSettlingDebts"></noun>
+			<noun text="&lt;ijarapN" id="Leasing"></noun>
+			<noun text="&gt;ujorapN" id="Rent"></noun>
+			<noun text="&gt;ujorN" id="Wage"></noun>
+			<noun text="rahonN" id="Security"></noun>
+			<noun text="HiwaAlapN" id="TransferOfDebt"></noun>
+			<noun text="hibapN" id="Gift"></noun>
+			<noun text="mudaribN" id="Entrepreneur"></word>
+			<noun text="DaruwrapN" id="OnlyOutOfNecessity"></noun>
+			<noun text="&lt;iboraA&apos;N" id="FreeFromResponsibility"></noun>
+			<noun text="tijaArapN" id="LawOnSaleAndCommerce"></noun>
 			<noun text="tawar~uqN" id="ThreePartySaleWithBuyBackContract"></noun>
 			<noun text="$ubohapN" id="Suspicion"></noun>
 			<noun text="EiwaADN" id="CounterValue"></noun>
@@ -1351,6 +1366,7 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<noun text="&lt;iboTaAlN" id="TotalNegation"></noun>
 			<noun text="&lt;iEojazN" id="RenderingIncapablePowerless"></noun>
 			<noun text="muEojizapN" id="Miracle"></noun>
+			<noun text="SarofN" id="SaleOfCurrency"></noun>
 			<noun text="SarofapN" id="TurningAway"></noun>
 			<noun text="sajoEN" id="RhymingProse"></noun>
 			<noun text="sijaAlN" id="GiveAndTakeSeasawStruggle"></noun>
@@ -1648,7 +1664,7 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<noun text="makosuwrN" id="LongKasra"></noun>
 			<noun text="mafotuwHN" id="LongFatha"></noun>
 			<noun text="naAqiSN" id="Incomplete"></noun>
-			<noun text="waqofN" id="Stopping"></noun>
+			<noun text="waqofN" id="StoppingEndowment"></noun>
 			<noun text="&gt;abotadaA&apos;N" id="Starting"></noun>
 			<noun text="qaToEN" id="CutOff"></noun>
 			<noun text="sakotN" id="BreathlessStop"></noun>
@@ -1854,6 +1870,18 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 		<word text="ribaw`A@ {ld~uyuwni" id="InterestInLoanContracts"></word>
 		<word text="garaAru {lofaAHi$i" id="ExcessiveMajorUncertainty"></word>
 		<word text="garaAru {loyasiyri" id="MinorTolerableTrivialUncertainty"></word>
+		<word text="rab~u {lomaAli" id="Investor"></word>
+		<word text="bayoEu mu&amp;aj~ali" id="CreditSale"></word>
+		<word text="yadu {lZ~amani" id="GuaranteeCustody"></word>
+		<word text="bayoEu {lS~al~ami" id="DeferredDelivery"></word>
+		<word text="&gt;aholiy~apu {lo&gt;ada {lokamilapi" id="FullContractualCapacity"></word>
+		<word text="bayoEu {lo&lt;isotisonaA" id="ManufacturingContract"></word>
+		<word text="mu$araAkapN mutanaAqisapN" id="DiminishingPartnership"></word>
+		<word text="{lo&gt;amaAnaAtu" id="Trusts"></word>
+		<word text="&lt;ijorapu {lo&gt;axosasi" id=""></word>
+		<word text="bayoEu bi*amanK &gt;ajilK" id="DeferredPaymentSale"></word>
+		<word text="&lt;ijorapu {lomawoSuwfapi fiY {lo*im~api" id="ForwardLeaseContractEndingInSale"></word>
+		<word text="qaroDN Has~anN" id="InterestFreeGoodWillLoan"></word>
 		<word text="{lo&apos;aAxolaAqu" id="Manners"></word>
 		<word text="{lomuEaA$arapu" id="Cohabitation"></word>
 		<word text="{lr~aA$iduwnu" id="WiseOne"></word>
@@ -3649,7 +3677,7 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 		<category title="CourseSubjects">
 		</category>
 		<category title="Interest">
-			<word text="\{word:Usury,QuranReadingRecitation,Tradition,Concensus,AnalogicalDeduction,LocalCustom,AccountablePerson,UncertainDoubtful,PublicInterest,BeliefSystem,Dealings,Morality,Unlawful,Disliked,Neutral,Preferred,EssentialNecessary,AncientArabianGameOfChanceGambling,PartnershipContractWithTwoPartiesOneSurrenderingCapitalAndTheOtherActions,PartnershipContractWithTwoPartiesOneProvidingCapitalAndTheOtherActions,PartnershipWithProfitAndLossSharing,IslamicCompliantSaleWithMarkupAfterHonestDeclarationOfCost\}\{phrase:DoctrineTheologyPrincipleOfBelief,BlockingOfTheMeans,ThingsWhichServeThePublicInterest\}\{2:30,21:107;Translation=\}\{word:Islam,Law,Jurisprudence,AdditionIncrease,Bless,GrammarRulesPrinciples,FalsehoodVainUnjust,Effort,Risk,CounterValue,GameOfChance,ReasonForDecision,Exchange,Suspicion,ThreePartySaleWithBuyBackContract\}\{phrase:SaleWithBuyBackContract,TradingOfDebt,ExchangeContracts,InterestInExchangeContracts,InterestInLoanContracts,ExcessiveMajorUncertainty,MinorTolerableTrivialUncertainty\}\{2:275:3-3,2:275:21-21,2:275:27-27,2:276:3-3,2:278:10-10,3:130:6-6,4:161:2-2,30:39:4-4;Translation=\}\{30:39,4:160-161,3:130,2:275-281,4:29,5:3,5:90;Translation=\}" id="InterestBuster"></word>
+			<word text="\{word:Usury,QuranReadingRecitation,Tradition,Concensus,AnalogicalDeduction,LocalCustom,AccountablePerson,UncertainDoubtful,PublicInterest,BeliefSystem,Dealings,Morality,Unlawful,Disliked,Neutral,Preferred,EssentialNecessary,AncientArabianGameOfChanceGambling,PartnershipContractWithTwoPartiesOneSurrenderingCapitalAndTheOtherActions,PartnershipContractWithTwoPartiesOneProvidingCapitalAndTheOtherActions,PartnershipWithProfitAndLossSharing,IslamicCompliantSaleWithMarkupAfterHonestDeclarationOfCost\}\{phrase:DoctrineTheologyPrincipleOfBelief,BlockingOfTheMeans,ThingsWhichServeThePublicInterest\}\{2:30,21:107;Translation=\}\{word:Islam,Law,Jurisprudence,AdditionIncrease,Bless,GrammarRulesPrinciples,FalsehoodVainUnjust,Effort,Risk,CounterValue,GameOfChance,ReasonForDecision,Exchange,Suspicion,ThreePartySaleWithBuyBackContract\}\{phrase:SaleWithBuyBackContract,TradingOfDebt,ExchangeContracts,InterestInExchangeContracts,InterestInLoanContracts,ExcessiveMajorUncertainty,MinorTolerableTrivialUncertainty\}\{2:275:3-3,2:275:21-21,2:275:27-27,2:276:3-3,2:278:10-10,3:130:6-6,4:161:2-2,30:39:4-4;Translation=\}\{30:39,4:160-161,3:130,2:275-281,4:29,5:3,5:90;Translation=\}\{word:Deposit,AgencyPowerOfAttorney,Guarantee,ClearanceOfObligationSettlingDebts,Leasing,Rent,Wage,Security,TransferOfDebt,Gift,Entrepreneur,OnlyOutOfNecessity,FreeFromResponsibility,LawOnSaleAndCommerce,SaleOfCurrency,StoppingEndowment\}\{phrase:Investor,CreditSale,GuaranteeCustody,DeferredDelivery,FullContractualCapacity,ManufacturingContract,DiminishingPartnership,Trusts,DeferredPaymentSale,ForwardLeaseContractEndingInSale,InterestFreeGoodWillLoan\}\{2:219,2:185,57:25\}" id="InterestBuster"></word>
 		</category>
 		<category title="ScienceOfIslamicJurisprudence">
 			<word text="\{text:Foundation,Establishment,Building,Flowering,Consolidation,Stagnation and Decline\}\{word:Law,Jurisprudence,SchoolOfJurisprudence,RevelationOfAllah,Tradition,OnenessOfGod,Community,Hereafter,Prayer,Fight,Hypocrite,Quraish,Pilgrimage,Usury,Satan,Abrogation,Bequest,Unlawful,PietyFearProtection,ReasonedDecision,Concensus,Companions,Dowry,TemporaryMarriage,Consultation,AnalogicalDeduction,Shia,Medina,Makkah,Kufa,WesternCoastOfArabianPeninsula,Ruling,PrincipleMethodFoundation,Details,Wine,Commentary,GrammarSyntax,LegalPreference,DeemProper,Linking,LocalCustom,Judge,WellKnown,Follower,Trace,ActionsDeedsWorks,Mufti,Imam,Caliph,RulingsNotPartOfTradition,HumanIntellect,Rationalists,Evidence,Essence,Authentic,NominativeCase,Liar,OpenSinner,Weak,ObviousApparent,ImpliedUnderstoodMeaning,NewlyExistent,Menses,Touch,GivingPreference,Congregation,PrayTime3,UnitOfPrayer,UponOn,Zaahiree\}\{phrase:Allah,LegalMethodologyFundamentalPrinciplesOfIslamicLaw,PeopleOfTheBook,Theology,Ethics,DoctrineTheologyPrincipleOfBelief,PeopleOfReasoningOpinion,PeopleOfHadith,RealisticJurisprudence,Khawarij,Umayyad,Abbasid,CentralTreasury,Opinion,ImamAbuHanifa,ImamMalik,ImamShafiee,ImamHanbal,ImamAwzaee,ImamZayd,ImamDawood,ImamAlLayth,ImamAthThawri,ConsensusOfThePeopleOfMedina,ImamBukhari,ImamMuslim\}\{45:18,11:91,2:286,2:185,22:78,4:28,4:23-24,5:3-5,5:101,5:1,2:275,4:29,34:28,7:158,2:180,2:240,2:234,4:15-16,2:183,9:103,5:91,16:90,4:58,5:8,53:3-4,16:44,59:7\}" id="ScienceOfIslamicJurisprudence"></word>
@@ -4827,9 +4855,7 @@ Ramadan fast-breaking | One 2172-gram quantity | Dates or barley or ordinary sta
 	</arabicnumbers>
 	<arabicpatterns>
 		<pattern name="CertainStopPattern" match="{ArabicSmallHighSeen}|{ArabicSmallHighMeemInitialForm}|{PunctuationSymbols}"></pattern>
-		<pattern name="CertainNotStopPattern" match="{ArabicSmallHighLamAlef}|{RecitationLettersDiacritics}|{RecitationSpecialSymbolsNotStop}"></pattern>
-		<pattern name="OptionalPattern" match="{ArabicEndOfAyah}|{ArabicSmallHighJeem}|{ArabicSmallHighThreeDots}|(?:{ArabicSmallHighSeen}\s+)?{ArabicSmallHighLigatureQafWithLamWithAlefMaksura}|{ArabicSmallHighLigatureSadWithLamWithAlefMaksura}"></pattern>
-		<pattern name="OptionalPatternNotEndOfAyah" match="{ArabicSmallHighJeem}|{ArabicSmallHighThreeDots}|(?:{ArabicSmallHighSeen}\s+)?{ArabicSmallHighLigatureQafWithLamWithAlefMaksura}|{ArabicSmallHighLigatureSadWithLamWithAlefMaksura}"></pattern>
+		<pattern name="OptionalPattern" match="{ArabicSmallHighJeem}|{ArabicSmallHighThreeDots}|(?:{ArabicSmallHighSeen}\s+)?{ArabicSmallHighLigatureQafWithLamWithAlefMaksura}|{ArabicSmallHighLigatureSadWithLamWithAlefMaksura}"></pattern>
 		<pattern name="TehMarbutaStopRule" match="(?:({ArabicFathaDammaKasra})|({ArabicTanweens})({ArabicSmallLowMeem}|{ArabicSmallHighMeemIsolatedForm})?)(?=\s*(?:{ArabicPlaceOfSajdah}?\s*(?:$|{ArabicEndOfAyah})|{CertainStopPattern}|({OptionalPattern})))"></pattern>
 		<pattern name="TehMarbutaContinueRule" match="(?:(?:{ArabicFathaDammaKasra})|(?:{ArabicTanweens})(?:{ArabicSmallLowMeem}|{ArabicSmallHighMeemIsolatedForm})?)(?=\s+({OptionalPattern})\s+|\s+(?!\s+(?:{ArabicPlaceOfSajdah}?\s*(?:$|{ArabicEndOfAyah})|{CertainStopPattern})))"></pattern>
 		<pattern name="NotTehMarbuta" match="(?:{ArabicSunLetters}|{ArabicMoonLettersNoVowels}|{ArabicLetterWaw}|{ArabicLetterAlefMaksura}){ArabicShadda}?|{ArabicLetterAlef}|{ArabicLetterHamza}|{ArabicLetterAlefWithHamzaAbove}|{ArabicLetterWawWithHamzaAbove}|{ArabicLetterAlefWithHamzaBelow}|{ArabicLetterYehWithHamzaAbove}"></pattern>
@@ -4850,11 +4876,12 @@ Ramadan fast-breaking | One 2172-gram quantity | Dates or barley or ordinary sta
 		<pattern name="WawSakinaWithDammaBeforeIt" match="{ArabicDamma}(?:{ArabicLetterWaw}|{ArabicSmallWaw}|{ArabicLetterWawWithHamzaAbove})"></pattern>
 		<pattern name="YehSakinaWithKasraBeforeIt" match="{ArabicKasra}(?:{ArabicLetterYeh}|{ArabicSmallYeh}|{ArabicLetterYehWithHamzaAbove}|{ArabicLetterAlefMaksura})"></pattern>
 		<pattern name="Assimilated" match=""></pattern>
-		<pattern name="ContinueToNextWord" match="\s+|\s*(?:({OptionalPatternNotEndOfAyah})|{ArabicSmallHighLamAlef})\s*|\s*(?:(?:{ArabicPlaceOfSajdah}\s*)?(?:{ArabicEndOfAyah}(?:{ArabicNumbers})+\s*)?(?:{ArabicStartOfRubElHizb}\s*))"></pattern>
-		<pattern name="StartOfWordNotEndOfAyah" match="^\s*|\s+|\s*(?:{CertainStopPattern}|({OptionalPatternNotEndOfAyah})|{ArabicSmallHighLamAlef})\s*|\s*(?:(?:{ArabicPlaceOfSajdah}\s*)?(?:{ArabicStartOfRubElHizb}\s*))"></pattern>
-		<pattern name="StartOfWord" match="" evaluator="^\s*|\s+|\s*(?:{CertainStopPattern}|({OptionalPatternNotEndOfAyah})|{ArabicSmallHighLamAlef})\s*|\s*(?:(?:{ArabicPlaceOfSajdah}\s*)?(?:{ArabicEndOfAyah}(?:{ArabicNumbers})+\s*)?(?:{ArabicStartOfRubElHizb}\s*))"></pattern>
-		<pattern name="EndOfWord" match="" evaluator=""></pattern>
-		<pattern name="StoppingOnWord" match="\s*$|\s+|\s*(?:{CertainStopPattern}|({OptionalPatternNotEndOfAyah}))\s*|\s*(?:(?:{ArabicPlaceOfSajdah}\s*)?(?:{ArabicEndOfAyah}(?:{ArabicNumbers})+\s*)?(?:{ArabicStartOfRubElHizb}\s*))"></pattern>
+		<pattern name="ContinueToNextWord" match="\s+|\s*(?:({OptionalPattern})|{ArabicSmallHighLamAlef})\s*|\s*(?:(?:{ArabicPlaceOfSajdah}\s*)?(?:{ArabicEndOfAyah}(?:{ArabicNumbers})+\s*)?(?:{ArabicStartOfRubElHizb}\s*))"></pattern>
+		<pattern name="StartingOnWordNotEndOfAyah" match="^\s*|\s+|\s*(?:{CertainStopPattern}|({OptionalPattern}))\s*|\s*(?:(?:{ArabicPlaceOfSajdah}\s*)?(?:{ArabicStartOfRubElHizb}\s*))"></pattern>
+		<pattern name="StartingOnWord" match="" evaluator="^\s*|\s+|\s*(?:{CertainStopPattern}|({OptionalPattern}))\s*|\s*(?:(?:{ArabicPlaceOfSajdah}\s*)?(?:{ArabicEndOfAyah}(?:{ArabicNumbers})+\s*)?(?:{ArabicStartOfRubElHizb}\s*))"></pattern>
+		<pattern name="StartOfWord" match="^\s*|\s+|\s*(?:{CertainStopPattern}|({OptionalPattern})|{ArabicSmallHighLamAlef})\s*|\s*(?:(?:{ArabicPlaceOfSajdah}\s*)?(?:{ArabicEndOfAyah}(?:{ArabicNumbers})+\s*)?(?:{ArabicStartOfRubElHizb}\s*))" evaluator=""></pattern>
+		<pattern name="StoppingOnWord" match="\s*$|\s+|\s*(?:{CertainStopPattern}|({OptionalPattern}))\s*|\s*(?:(?:{ArabicPlaceOfSajdah}\s*)?(?:{ArabicEndOfAyah}(?:{ArabicNumbers})+\s*)?(?:{ArabicStartOfRubElHizb}\s*))"></pattern>
+		<pattern name="EndOfWord" match="\s*$|\s+|\s*(?:{CertainStopPattern}|({OptionalPattern})|{ArabicSmallHighLamAlef})\s*|\s*(?:(?:{ArabicPlaceOfSajdah}\s*)?(?:{ArabicEndOfAyah}(?:{ArabicNumbers})+\s*)?(?:{ArabicStartOfRubElHizb}\s*))" evaluator=""></pattern>
 	</arabicpatterns>
 	<arabicgroups>
 		<group name="Audibility" text="{ArabicLetterBeh} {ArabicLetterJeem} {ArabicLetterDal} {ArabicLetterThal} {ArabicLetterReh} {ArabicLetterZain} {ArabicLetterDad} {ArabicLetterTah} {ArabicLetterZah} {ArabicLetterAin} {ArabicLetterGhain} {ArabicLetterQaf} {ArabicLetterLam} {ArabicLetterMeem} {ArabicLetterNoon} {WawWithoutLengthening} {YehWithoutLengthening} {ArabicLetterHamza}"></group>
@@ -5157,7 +5184,7 @@ Ramadan fast-breaking | One 2172-gram quantity | Dates or barley or ordinary sta
 	</colorrules>
 	<metaruleset>
 	    <metarule name="LetterSpelling" match="((?:^|{CertainStopPattern}|{OptionalPattern})\s*|\s+)({ArabicUniqueLetters})(?=\s*$|\s+)" evaluator=";spellletter"></metarule>
-	    <metarule name="NumberSpelling" match="((?:^|{CertainStopPattern}|{OptionalPatternNotEndOfAyah})\s*|\s+)((?:{ArabicNumbers})+)(?=\s*$|\s+)" evaluator=";spellnumber"></metarule>
+	    <metarule name="NumberSpelling" match="({StartingOnWordNotEndOfAyah})((?:{ArabicNumbers})+)(?=\s*$|\s+)" evaluator=";;spellnumber"></metarule>
 	    <metarule name="NumberSpelling" match="({ArabicEndOfAyah})()((?:{ArabicNumbers})+)()(?=\s*$|\s+)" evaluator="empty;helperlparen;spellnumber;helperrparen"></metarule>
 	    <metarule name="Stopping" match="(?:({ArabicSmallHighMeemInitialForm})|({ArabicStartOfRubElHizb})|({ArabicEndOfAyah})|({ArabicPlaceOfSajdah}))(?=\s*$|\s+)" evaluator="compulsorystop;startofhizb;endofversestop;prostration"></metarule>
 	    <metarule name="Stopping" match="({ArabicSmallHighJeem})|({ArabicSmallHighLamAlef})|({ArabicSmallHighThreeDots})(.*)({ArabicSmallHighThreeDots})|({ArabicSmallHighLigatureQafWithLamWithAlefMaksura})|({ArabicSmallHighLigatureSadWithLamWithAlefMaksura})|({ArabicSmallHighSeen})(?:\s+|\s*$)" evaluator="canstoporcontinue;prohibitedtostop;stopatfirstnotsecond;;stopatsecondnotfirst;bettertostopbutpermissibletocontinue;bettertocontinuebutpermissibletostop;subtlestopwithoutbreath"></metarule>
@@ -5195,7 +5222,7 @@ Ramadan fast-breaking | One 2172-gram quantity | Dates or barley or ordinary sta
 	    <metarule name="EmptyHamza" match="((?:^|{CertainStopPattern}|({OptionalPattern}))\s*)({ArabicLetterAlefWasla})(?={ArabicLetterLam}(?:(?:{ArabicSunLetters})?{ArabicShadda}|{ArabicSukun}?(?:{ArabicMoonLetters}|{ArabicLetterAlefWithHamzaAbove}|{ArabicLetterAlefWithHamzaBelow}|{ArabicLetterHamza}|{ArabicTatweel}{ArabicHamzaAbove})))" evaluator=";optionalstop;helperfatha"></metarule>
 	    <metarule name="EmptyHamza" match="((?:^|{CertainStopPattern}|({OptionalPattern}))\s*)({ArabicLetterAlefWasla})(?=(?:{ArabicMoonLetters}|{ArabicSunLettersNoLam})(?:{ArabicSukun}|{ArabicShadda}?(?:{ArabicFathaDammaKasra}))?(?:{ArabicLetters}|{ArabicLetterWawWithHamzaAbove}|{ArabicLetterYehWithHamzaAbove})(?:{ArabicFatha}|{ArabicKasra})|{ArabicWaslKasraExceptions})" evaluator=";optionalstop;helperkasra"></metarule>
 	    <metarule name="EmptyHamza" match="((?:^|{CertainStopPattern}|({OptionalPattern}))\s*)({ArabicLetterAlefWasla})(?=(?:{ArabicMoonLetters}|{ArabicSunLettersNoLam})(?:{ArabicSukun}|{ArabicShadda}?(?:{ArabicFathaDammaKasra}))?(?:{ArabicLetters}|{ArabicLetterWawWithHamzaAbove}|{ArabicLetterYehWithHamzaAbove}){ArabicDamma})" evaluator=";optionalstop;helperdamma"></metarule>
-	    <metarule name="EmptyHamza" match="((?:{CertainNotStopPattern}|({OptionalPattern}))\s*)({ArabicLetterAlefWasla})" evaluator=";optionalnotstop;empty"></metarule>
+	    <metarule name="EmptyHamza" match="((?:(?:^|{CertainStopPattern}|{OptionalPattern})\s*|\s+)|(?:(?:^\s*|\s+)(?:{ArabicLetterWaw}{ArabicShadda}?{ArabicFatha}|(?:{ArabicLetterAlefWithHamzaAbove}{ArabicFatha}(?:{ArabicLetterFeh}{ArabicFatha})?|{ArabicLetterLam}{ArabicFatha}|{ArabicLetterWaw}{ArabicFatha}){ArabicLetterBeh}{ArabicKasra}|(?:{ArabicLetterWaw}{ArabicFatha})?{ArabicLetterTeh}{ArabicFatha}|{ArabicLetterKaf}{ArabicFatha}|(?:{ArabicLetterAlefWithHamzaAbove}{ArabicFatha})?{ArabicLetterFeh}{ArabicFatha})?{ArabicLetterAlefWasla}))({ArabicLetterAlefWasla})" evaluator=";optionalnotstop;empty"></metarule>
 	    <metarule name="LaaHeaviness" match="((?:(?:{ArabicFatha}|{ArabicFathatan})(?:{ArabicLetterAlef}|{ArabicLetterAlefMaksura})|{ArabicDamma}{ArabicLetterWaw}(?:{ArabicLetterAlef}{ArabicSmallHighRoundedZero})?)\s+{ArabicLetterAlefWasla}|(?:(?:^|{CertainStopPattern}|({OptionalPattern}))\s*){ArabicLetterAlefWasla}|{ArabicLetterHamza}{ArabicFatha}{ArabicLetterAlef}{ArabicMaddahAbove})({ArabicLetterLam})({ArabicLetterLam})(?={ArabicShadda}{ArabicFatha}{ArabicLetterHeh})" evaluator=";optionalstop;;emphasis"></metarule>
 	    <metarule name="LaaLightness" match="({ArabicLetterLam})(?!{ArabicShadda}{ArabicFatha}{ArabicLetterHeh})|((?:{ArabicLetterHah}|{ArabicLetterDad}){ArabicKasra}|{ArabicFatha}|{ArabicDamma}|^|\s+)({ArabicLetterLam})(?={ArabicShadda}{ArabicFatha}{ArabicLetterHeh})|({ArabicLetterLam}{ArabicShadda}?{ArabicKasra}|{ArabicKasra}{ArabicLetterAlefMaksura}\s+{ArabicLetterAlefWasla}{ArabicLetterLam})({ArabicLetterLam})(?={ArabicShadda}{ArabicFatha}{ArabicLetterHeh})" evaluator=";;;;"></metarule>
 	    <metarule name="RaaHeaviness" match="({ArabicKasra})({ArabicLetterReh})({ArabicSukun}\s*(?:{ArabicLetterKhah}|{ArabicLetterSad}|{ArabicLetterDad}|{ArabicLetterTah}|{ArabicLetterZah}|{ArabicLetterGhain}|{ArabicLetterQaf}))(?:(?={ArabicKasra}|{ArabicKasratan})(?:\s*(?:{ArabicPlaceOfSajdah}?\s*(?:$|{ArabicEndOfAyah})|{CertainStopPattern}|({OptionalPattern})))|(?!{ArabicKasra}|{ArabicKasratan}))|({ArabicLetterAlefWasla})({ArabicLetterReh})(?={ArabicSukun}(?:{ArabicLetters}|{ArabicLetterWawWithHamzaAbove}|{ArabicLetterYehWithHamzaAbove})(?:{ArabicFatha}|{ArabicKasra}))|({ArabicFatha}|{ArabicDamma})((?:{ArabicMoonLettersNoVowels}|{ArabicLetterTeh}|{ArabicLetterTheh}|{ArabicLetterDal}|{ArabicLetterThal}|{ArabicLetterZain}|{ArabicLetterSeen}|{ArabicLetterSheen}|{ArabicLetterSad}|{ArabicLetterDad}|{ArabicLetterTah}|{ArabicLetterZah}|{ArabicLetterWaw}|{ArabicLetterYeh}|{ArabicLetterYehWithHamzaAbove}){ArabicSukun}\s*)?({ArabicLetterReh})(?=(?:{ArabicSukun}|(?:\s*(?:{ArabicPlaceOfSajdah}?\s*(?:$|{ArabicEndOfAyah})|{CertainStopPattern}|({OptionalPattern})))))|({ArabicLetterReh})(?={ArabicFatha}|{ArabicDamma})" evaluator=";emphasis;;optionalstop;;emphasis;;;emphasis;optionalstop;emphasis"></metarule>
@@ -5230,9 +5257,9 @@ Ramadan fast-breaking | One 2172-gram quantity | Dates or barley or ordinary sta
 	    <metarule name="Maddah" match="({ArabicDamma}{ArabicSmallWaw}|{ArabicKasra}{ArabicSmallYeh})({ArabicMaddahAbove})(?=\s+({OptionalPattern})|\s*(?!\s*(?:{ArabicPlaceOfSajdah}?\s*(?:$|{ArabicEndOfAyah})|{CertainStopPattern})))" evaluator="permissibleprolong;empty;optionalnotstop"></metarule>
 	    <metarule name="AlefWaslaWawHamza" match="((?:^|{CertainStopPattern}|({OptionalPattern}))\s*{ArabicLetterAlefWasla})({ArabicLetterWawWithHamzaAbove})" evaluator=";optionalstop;dividelettersymbol(,empty)"></metarule>
 	    <metarule name="AlefWaslaAlefMaksuraHamza" match="((?:^|{CertainStopPattern}|({OptionalPattern}))\s*{ArabicLetterAlefWasla})({ArabicLetterYehWithHamzaAbove})" evaluator=";optionalstop;dividelettersymbol(,empty)"></metarule>
-	    <metarule name="AlefWaslaHamza" match="((?:{CertainNotStopPattern}|({OptionalPattern}))\s*)({ArabicLetterAlefWasla})({ArabicLetterWawWithHamzaAbove}|{ArabicLetterYehWithHamzaAbove})" evaluator=";optionalnotstop;;dividelettersymbol(empty,)"></metarule>
+	    <metarule name="AlefWaslaHamza" match="((?:({OptionalPattern}))\s*)({ArabicLetterAlefWasla})({ArabicLetterWawWithHamzaAbove}|{ArabicLetterYehWithHamzaAbove})" evaluator=";optionalnotstop;;dividelettersymbol(empty,)"></metarule>
 	    <metarule name="AlefHamza" match="((?:^|{CertainStopPattern}|({OptionalPattern}))\s*)({ArabicLetterAlefWithHamzaAbove}|{ArabicLetterAlefWithHamzaBelow}|{ArabicLetterHamza})" evaluator=";optionalstop;empty"></metarule>
-	    <metarule name="AlefHamza" match="((?:{CertainNotStopPattern}|({OptionalPattern}))\s*)({ArabicLetterAlefWithHamzaAbove}|{ArabicLetterAlefWithHamzaBelow})" evaluator=";optionalnotstop;dividelettersymbol(empty,)"></metarule>
+	    <metarule name="AlefHamza" match="((?:{ArabicFatha}|{ArabicKasra}|{ArabicSukun}|{ArabicMaddahAbove}|({OptionalPattern}))\s*)({ArabicLetterAlefWithHamzaAbove}|{ArabicLetterAlefWithHamzaBelow})" evaluator=";optionalnotstop;dividelettersymbol(empty,)"></metarule>
 	    <metarule name="WawHamzah" match="({ArabicLetterWawWithHamzaAbove})" evaluator="dividelettersymbol(empty,)"></metarule>
 	    <metarule name="AlefMaksuraHamzah" match="({ArabicSukun}|{ArabicKasra}(?:{ArabicLetterAlef}{ArabicSmallHighRoundedZero})?|{ArabicDamma}|{ArabicFatha}(?:{ArabicLetterAlef}{ArabicMaddahAbove}?)?|{ArabicLetterSuperscriptAlef}{ArabicMaddahAbove})({ArabicLetterYehWithHamzaAbove})" evaluator=";dividelettersymbol(empty,)"></metarule>
 	    <metarule name="SmallWaw" match="({ArabicSmallWaw})(?={ArabicMaddahAbove}?\s+({OptionalPattern})|{ArabicMaddahAbove}?\s*(?!{ArabicMaddahAbove}?\s*(?:{ArabicPlaceOfSajdah}?\s*(?:$|{ArabicEndOfAyah})|{CertainStopPattern})))" evaluator="helperwaw;optionalnotstop"></metarule>
