@@ -3525,6 +3525,8 @@ Public Class RenderArray
                     writer.Write(HtmlTextWriter.TagRightChar)
                     If TypeOf InnerArray(Index) Is Object() Then
                         WriteTable(writer, DirectCast(InnerArray(Index), Object()), TabCount + 4, Prefix + CStr(Count - 3) + "_" + CStr(Index))
+                    ElseIf TypeOf InnerArray(Index) Is RenderArray.RenderItem() Then
+                        DoRender(writer, TabCount + 4, Prefix + CStr(Count - 3) + "_" + CStr(Index), New List(Of RenderArray.RenderItem)(DirectCast(InnerArray(Index), RenderArray.RenderItem())), String.Empty)
                     Else
                         writer.Write(Utility.HtmlTextEncode(CStr(InnerArray(Index))).Replace(vbCrLf, "<br>"))
                     End If

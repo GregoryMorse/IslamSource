@@ -3539,7 +3539,7 @@ Public Class DocBuilder
         Dim Scheme As String = If(CInt(HttpContext.Current.Request.Params("translitscheme")) >= 2, CachedData.IslamData.TranslitSchemes(CInt(HttpContext.Current.Request.Params("translitscheme")) \ 2).Name, String.Empty)
         Return NormalTextFromReferences(Item.Name, HttpContext.Current.Request.Params("docedit"), SchemeType, Scheme, TanzilReader.GetTranslationIndex(HttpContext.Current.Request.Params("qurantranslation")))
     End Function
-    Public Shared Function ColorizeRegExGroups(Str As String) As List(Of RenderArray.RenderText)
+    Public Shared Function ColorizeRegExGroups(Str As String) As RenderArray.RenderText()
         'Define an numeric partial ordering of groups that is non-contiguous based on their nearest parent parenthesis
         Dim ParenPos As New List(Of Integer)
         For Count As Integer = 0 To Str.Length - 1
@@ -3547,12 +3547,11 @@ Public Class DocBuilder
         Next
         Dim CurNum As Integer = 0
         Dim NumStack As New Stack(Of Integer())
-        Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches("(^|[^\\])(\((?!\?)|\))", Str)
-        For MatchCount As Integer = Matches.Count - 1 To 0 Step -1
-            If Matches(MatchCount).Groups(2).Value = "(" Then
-                CurNum += 1
-                NumStack.Push(New Integer() {CurNum, Matches(MatchCount).Groups(2).Index})
-
+        Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(Str, "(\\\(|\\\))?(\(\??|\))")
+        For MatchCount As Integer = 0 To Matches.Count - 1
+            If Matches(MatchCount).Groups(2).Value.Chars(0) = "("c Then
+                If Matches(MatchCount).Groups(2).Value.Length = 1 Then CurNum += 1
+                NumStack.Push(New Integer() {CurNum, If(Matches(MatchCount).Groups(2).Value.Length = 1, Matches(MatchCount).Groups(2).Index, Str.Length)})
             Else
                 Dim Nums As Integer() = NumStack.Pop()
                 For Count As Integer = Nums(1) To Matches(MatchCount).Groups(2).Index
@@ -3561,17 +3560,20 @@ Public Class DocBuilder
             End If
         Next
         'If NumStack.Count <> 0 Then 'Misbalance parenthesis is exception
+        'Proper coloring requires that parent-child and neighboring siblings have different colors
+        'yet the current partial ordering does not define either of those relationships
+        'must maintain neighbor and color list to properly color
         Dim Base As Integer = 0
         Dim Renderers As New List(Of RenderArray.RenderText)
         For Count As Integer = 0 To ParenPos.Count - 1
             If Count = ParenPos.Count - 1 Then
-                Renderers.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, Str.Substring(Base)))
+                Renderers.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, Str.Substring(Base)) With {.Clr = CachedData.IslamData.ColorRules(ParenPos(Count) Mod CachedData.IslamData.ColorRules.Length).Color})
             ElseIf ParenPos(Count) <> ParenPos(Count + 1) Then
-                Renderers.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, Str.Substring(Base, Count + 1)))
+                Renderers.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, Str.Substring(Base, Count - Base + 1)) With {.Clr = CachedData.IslamData.ColorRules(ParenPos(Count) Mod CachedData.IslamData.ColorRules.Length).Color})
                 Base = Count + 1
             End If
         Next
-        Return Nothing
+        Return Renderers.ToArray()
     End Function
     Public Shared Function GetRegExText(Str As String) As String
         Return ArabicData.LeftToRightMark + System.Text.RegularExpressions.Regex.Replace(System.Text.RegularExpressions.Regex.Replace(Str, "\\u([0-9a-fA-F]{4})", Function(Match As System.Text.RegularExpressions.Match) ChrW(Integer.Parse(Match.Groups(1).Value, Globalization.NumberStyles.HexNumber))), "[\p{IsArabic}\p{IsArabicPresentationForms-A}\p{IsArabicPresentationForms-B}]+", ArabicData.LeftToRightOverride + "$&" + ArabicData.PopDirectionalFormatting)
@@ -3582,7 +3584,7 @@ Public Class DocBuilder
         Output(1) = New String() {String.Empty, String.Empty, String.Empty}
         Output(2) = New String() {Utility.LoadResourceString("IslamInfo_Name"), Utility.LoadResourceString("IslamInfo_Translation"), Utility.LoadResourceString("IslamInfo_Translation")}
         For Count = 0 To CachedData.IslamData.MetaRules.Length - 1
-            Output(3 + Count) = {CachedData.IslamData.MetaRules(Count).Name, GetRegExText(CachedData.IslamData.MetaRules(Count).Match), GetRegExText(String.Join(";", CachedData.IslamData.MetaRules(Count).Evaluator))}
+            Output(3 + Count) = New Object() {CachedData.IslamData.MetaRules(Count).Name, New RenderArray.RenderItem() {New RenderArray.RenderItem(RenderArray.RenderTypes.eText, ColorizeRegExGroups(GetRegExText(CachedData.IslamData.MetaRules(Count).Match)))}, GetRegExText(String.Join(";", CachedData.IslamData.MetaRules(Count).Evaluator))}
         Next
         Return RenderArray.MakeTableJSFunctions(Output, ID)
     End Function
