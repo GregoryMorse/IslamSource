@@ -3539,7 +3539,15 @@ Public Class DocBuilder
         Dim Scheme As String = If(CInt(HttpContext.Current.Request.Params("translitscheme")) >= 2, CachedData.IslamData.TranslitSchemes(CInt(HttpContext.Current.Request.Params("translitscheme")) \ 2).Name, String.Empty)
         Return NormalTextFromReferences(Item.Name, HttpContext.Current.Request.Params("docedit"), SchemeType, Scheme, TanzilReader.GetTranslationIndex(HttpContext.Current.Request.Params("qurantranslation")))
     End Function
-    Public Shared Function ColorizeRegExGroups(Str As String) As RenderArray.RenderText()
+    Public Shared Function ColorizeList(Strs As String()) As RenderArray.RenderText()
+        Dim Renderers As New List(Of RenderArray.RenderText)
+        For Count As Integer = 0 To Strs.Length - 1
+            Renderers.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, Strs(Count)) With {.Clr = CachedData.IslamData.ColorRules((Count + 1) Mod CachedData.IslamData.ColorRules.Length).Color})
+            If Count <> Strs.Length - 1 Then Renderers.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, ";"))
+        Next
+        Return Renderers.ToArray()
+    End Function
+    Public Shared Function ColorizeRegExGroups(Str As String, bReplaceGroup As Boolean) As RenderArray.RenderText()
         'Define an numeric partial ordering of groups that is non-contiguous based on their nearest parent parenthesis
         Dim ParenPos As New List(Of Integer)
         For Count As Integer = 0 To Str.Length - 1
@@ -3547,9 +3555,14 @@ Public Class DocBuilder
         Next
         Dim CurNum As Integer = 0
         Dim NumStack As New Stack(Of Integer())
-        Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(Str, "(\\\(|\\\))?(\(\??|\))")
+        Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(Str, If(bReplaceGroup, "(\\\$)?(\$\d+)", "(\\\(|\\\))?(\(\??|\))"))
         For MatchCount As Integer = 0 To Matches.Count - 1
-            If Matches(MatchCount).Groups(2).Value.Chars(0) = "("c Then
+            If Matches(MatchCount).Groups(2).Value.Chars(0) = "$" Then
+                Dim Num As Integer = Integer.Parse(Matches(MatchCount).Groups(2).Value.Substring(1))
+                For Count As Integer = Matches(MatchCount).Groups(2).Index To Matches(MatchCount).Groups(2).Index + Matches(MatchCount).Groups(2).Length - 1
+                    ParenPos(Count) = Num
+                Next
+            ElseIf Matches(MatchCount).Groups(2).Value.Chars(0) = "("c Then
                 If Matches(MatchCount).Groups(2).Value.Length = 1 Then CurNum += 1
                 NumStack.Push(New Integer() {CurNum, If(Matches(MatchCount).Groups(2).Value.Length = 1, Matches(MatchCount).Groups(2).Index, Str.Length)})
             Else
@@ -3584,7 +3597,7 @@ Public Class DocBuilder
         Output(1) = New String() {String.Empty, String.Empty, String.Empty}
         Output(2) = New String() {Utility.LoadResourceString("IslamInfo_Name"), Utility.LoadResourceString("IslamInfo_Translation"), Utility.LoadResourceString("IslamInfo_Translation")}
         For Count = 0 To CachedData.IslamData.MetaRules.Length - 1
-            Output(3 + Count) = New Object() {CachedData.IslamData.MetaRules(Count).Name, New RenderArray.RenderItem() {New RenderArray.RenderItem(RenderArray.RenderTypes.eText, ColorizeRegExGroups(GetRegExText(CachedData.IslamData.MetaRules(Count).Match)))}, GetRegExText(String.Join(";", CachedData.IslamData.MetaRules(Count).Evaluator))}
+            Output(3 + Count) = New Object() {CachedData.IslamData.MetaRules(Count).Name, New RenderArray.RenderItem() {New RenderArray.RenderItem(RenderArray.RenderTypes.eText, ColorizeRegExGroups(GetRegExText(CachedData.IslamData.MetaRules(Count).Match), False))}, New RenderArray.RenderItem() {New RenderArray.RenderItem(RenderArray.RenderTypes.eText, ColorizeList(Array.ConvertAll(CachedData.IslamData.MetaRules(Count).Evaluator, Function(Str As String) GetRegExText(Str))))}}
         Next
         Return RenderArray.MakeTableJSFunctions(Output, ID)
     End Function
@@ -3594,7 +3607,7 @@ Public Class DocBuilder
         Output(1) = New String() {String.Empty, String.Empty, String.Empty}
         Output(2) = New String() {Utility.LoadResourceString("IslamInfo_Name"), Utility.LoadResourceString("IslamInfo_Translation"), Utility.LoadResourceString("IslamInfo_Translation")}
         For Count = 0 To Data.Length - 1
-            Output(3 + Count) = {Data(Count).Name, GetRegExText(Data(Count).Match), GetRegExText(Data(Count).Evaluator)}
+            Output(3 + Count) = New Object() {Data(Count).Name, New RenderArray.RenderItem() {New RenderArray.RenderItem(RenderArray.RenderTypes.eText, ColorizeRegExGroups(GetRegExText(Data(Count).Match), False))}, New RenderArray.RenderItem() {New RenderArray.RenderItem(RenderArray.RenderTypes.eText, ColorizeRegExGroups(GetRegExText(Data(Count).Evaluator), True))}}
         Next
         Return RenderArray.MakeTableJSFunctions(Output, ID)
     End Function
@@ -5371,15 +5384,15 @@ Public Class TanzilReader
                         Texts.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eNested, Items))
                     End If
                     Text += QuranText(Chapter)(Verse).Trim(" "c, ChrW(0)) + If(NoRef, String.Empty, " ")
-        If TanzilReader.IsSajda(BaseChapter + Chapter, CInt(IIf(Chapter = 0, BaseVerse, 1)) + Verse) Then
-            'Sajda markers are already in the text
-            'Text += Arabic.TransliterateFromBuckwalter("R")
-            'Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.TransliterateFromBuckwalter("R"))}))
+                    If TanzilReader.IsSajda(BaseChapter + Chapter, CInt(IIf(Chapter = 0, BaseVerse, 1)) + Verse) Then
+                        'Sajda markers are already in the text
+                        'Text += Arabic.TransliterateFromBuckwalter("R")
+                        'Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.TransliterateFromBuckwalter("R"))}))
                     End If
                     If NoRef Then Text = Arabic.TransliterateFromBuckwalter("(") + Text
                     Text += Arabic.TransliterateFromBuckwalter(If(NoRef, ")", "=" + CStr(CInt(IIf(Chapter = 0, BaseVerse, 1)) + Verse))) + " "
                     If Not NoArabic Then
-                        Texts.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Text))
+                        Texts.AddRange(Arabic.ApplyColorRules(Text))
                         Texts.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, If(SchemeType <> ArabicData.TranslitScheme.None, Arabic.TransliterateToScheme(If(NoRef, Arabic.TransliterateFromBuckwalter("("), String.Empty) + QuranText(Chapter)(Verse).Trim(" "c, ChrW(0)) + Arabic.TransliterateFromBuckwalter(If(NoRef, ")", " " + "=" + CStr(CInt(IIf(Chapter = 0, BaseVerse, 1)) + Verse) + " ")), SchemeType, Scheme, GenerateDefaultStops(If(NoRef, Arabic.TransliterateFromBuckwalter("("), String.Empty) + QuranText(Chapter)(Verse).Trim(" "c, ChrW(0)) + Arabic.TransliterateFromBuckwalter(If(NoRef, ")", " " + "=" + CStr(CInt(IIf(Chapter = 0, BaseVerse, 1)) + Verse)) + " "))).Trim(), String.Empty)))
                         Texts.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eContinueStop, False))
                     End If

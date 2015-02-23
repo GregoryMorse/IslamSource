@@ -3662,7 +3662,15 @@ Public Class RenderArray
                             writer.Write(HtmlTextWriter.TagRightChar + CType(Items(Count).TextItems(TestIndex).Text, String())(1))
                             writer.WriteEndTag("a")
                         Else
-                            If Array.IndexOf(Utility.FontList, Items(Count).TextItems(Index).Font) = -1 Then writer.Write(Utility.HtmlTextEncode(CStr(Items(Count).TextItems(TestIndex).Text)).Replace(vbCrLf, "<br>"))
+                            If Array.IndexOf(Utility.FontList, Items(Count).TextItems(Index).Font) = -1 Then
+                                If Items(Count).TextItems(TestIndex).Clr <> Items(Count).TextItems(Index).Clr Then
+                                    writer.WriteBeginTag("span")
+                                    writer.WriteAttribute("style", "color: " + System.Drawing.ColorTranslator.ToHtml(Items(Count).TextItems(TestIndex).Clr) + ";" + If(Items(Count).TextItems(TestIndex).Font <> String.Empty, "font-family:" + Items(Count).TextItems(TestIndex).Font + ";", String.Empty) + Style)
+                                    writer.Write(HtmlTextWriter.TagRightChar)
+                                End If
+                                writer.Write(Utility.HtmlTextEncode(CStr(Items(Count).TextItems(TestIndex).Text)).Replace(vbCrLf, "<br>"))
+                                If Items(Count).TextItems(TestIndex).Clr <> Items(Count).TextItems(Index).Clr Then writer.WriteEndTag("span")
+                            End If
                         End If
                         TestIndex += 1
                     Loop While Items(Count).TextItems.Length <> TestIndex AndAlso (Items(Count).TextItems(TestIndex).DisplayClass = RenderDisplayClass.eLink Or Items(Count).TextItems(Index).DisplayClass = Items(Count).TextItems(TestIndex).DisplayClass)
