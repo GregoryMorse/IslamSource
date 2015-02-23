@@ -3539,6 +3539,40 @@ Public Class DocBuilder
         Dim Scheme As String = If(CInt(HttpContext.Current.Request.Params("translitscheme")) >= 2, CachedData.IslamData.TranslitSchemes(CInt(HttpContext.Current.Request.Params("translitscheme")) \ 2).Name, String.Empty)
         Return NormalTextFromReferences(Item.Name, HttpContext.Current.Request.Params("docedit"), SchemeType, Scheme, TanzilReader.GetTranslationIndex(HttpContext.Current.Request.Params("qurantranslation")))
     End Function
+    Public Shared Function ColorizeRegExGroups(Str As String) As List(Of RenderArray.RenderText)
+        'Define an numeric partial ordering of groups that is non-contiguous based on their nearest parent parenthesis
+        Dim ParenPos As New List(Of Integer)
+        For Count As Integer = 0 To Str.Length - 1
+            ParenPos.Add(0)
+        Next
+        Dim CurNum As Integer = 0
+        Dim NumStack As New Stack(Of Integer())
+        Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches("(^|[^\\])(\((?!\?)|\))", Str)
+        For MatchCount As Integer = Matches.Count - 1 To 0 Step -1
+            If Matches(MatchCount).Groups(2).Value = "(" Then
+                CurNum += 1
+                NumStack.Push(New Integer() {CurNum, Matches(MatchCount).Groups(2).Index})
+
+            Else
+                Dim Nums As Integer() = NumStack.Pop()
+                For Count As Integer = Nums(1) To Matches(MatchCount).Groups(2).Index
+                    If Nums(0) > ParenPos(Count) Then ParenPos(Count) = Nums(0)
+                Next
+            End If
+        Next
+        'If NumStack.Count <> 0 Then 'Misbalance parenthesis is exception
+        Dim Base As Integer = 0
+        Dim Renderers As New List(Of RenderArray.RenderText)
+        For Count As Integer = 0 To ParenPos.Count - 1
+            If Count = ParenPos.Count - 1 Then
+                Renderers.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, Str.Substring(Base)))
+            ElseIf ParenPos(Count) <> ParenPos(Count + 1) Then
+                Renderers.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, Str.Substring(Base, Count + 1)))
+                Base = Count + 1
+            End If
+        Next
+        Return Nothing
+    End Function
     Public Shared Function GetRegExText(Str As String) As String
         Return ArabicData.LeftToRightMark + System.Text.RegularExpressions.Regex.Replace(System.Text.RegularExpressions.Regex.Replace(Str, "\\u([0-9a-fA-F]{4})", Function(Match As System.Text.RegularExpressions.Match) ChrW(Integer.Parse(Match.Groups(1).Value, Globalization.NumberStyles.HexNumber))), "[\p{IsArabic}\p{IsArabicPresentationForms-A}\p{IsArabicPresentationForms-B}]+", ArabicData.LeftToRightOverride + "$&" + ArabicData.PopDirectionalFormatting)
     End Function
