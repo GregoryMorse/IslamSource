@@ -402,7 +402,7 @@ Public Class Arabic
             End If
         End Function
     End Class
-    Public Shared Function ApplyColorRules(ByVal ArabicString As String) As RenderArray.RenderText()
+    Public Shared Function ApplyColorRules(ByVal ArabicString As String, OptionalStops As Integer()) As RenderArray.RenderText()
         Dim Count As Integer
         Dim Index As Integer
         Dim MetadataList As New Generic.List(Of RuleMetadata)
@@ -411,7 +411,12 @@ Public Class Arabic
             If Not CachedData.RulesOfRecitationRegEx(Count).Evaluator Is Nothing Then
                 Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(ArabicString, CachedData.RulesOfRecitationRegEx(Count).Match)
                 For MatchIndex As Integer = 0 To Matches.Count - 1
-                    For SubCount As Integer = 0 To CachedData.RulesOfRecitationRegEx(Count).Evaluator.Length - 1
+                    Dim SubCount As Integer
+                    For SubCount = 0 To CachedData.RulesOfRecitationRegEx(Count).Evaluator.Length - 1
+                        If (CachedData.RulesOfRecitationRegEx(Count).Evaluator(SubCount) = "optionalstop" AndAlso (OptionalStops Is Nothing AndAlso Matches(MatchIndex).Groups(SubCount + 1).Value = ArabicData.ArabicSmallHighLigatureSadWithLamWithAlefMaksura OrElse (Not OptionalStops Is Nothing AndAlso Matches(MatchIndex).Groups(SubCount + 1).Value <> String.Empty AndAlso Array.IndexOf(OptionalStops, Matches(MatchIndex).Groups(SubCount + 1).Index) = -1))) OrElse (CachedData.RulesOfRecitationRegEx(Count).Evaluator(SubCount) = "optionalnotstop" AndAlso (OptionalStops Is Nothing AndAlso Matches(MatchIndex).Groups(SubCount + 1).Value <> String.Empty AndAlso Matches(MatchIndex).Groups(SubCount + 1).Value <> ArabicData.ArabicSmallHighLigatureSadWithLamWithAlefMaksura OrElse (Not OptionalStops Is Nothing AndAlso Matches(MatchIndex).Groups(SubCount + 1).Value <> String.Empty AndAlso Array.IndexOf(OptionalStops, Matches(MatchIndex).Groups(SubCount + 1).Index) <> -1))) Then Exit For
+                    Next
+                    If SubCount <> CachedData.RulesOfRecitationRegEx(Count).Evaluator.Length Then Continue For
+                    For SubCount = 0 To CachedData.RulesOfRecitationRegEx(Count).Evaluator.Length - 1
                         If Not CachedData.RulesOfRecitationRegEx(Count).Evaluator(SubCount) Is Nothing Then
                             MetadataList.Add(New RuleMetadata(Matches(MatchIndex).Groups(SubCount + 1).Index, Matches(MatchIndex).Groups(SubCount + 1).Length, CachedData.RulesOfRecitationRegEx(Count).Evaluator(SubCount), SubCount))
                         End If
@@ -420,25 +425,32 @@ Public Class Arabic
             End If
         Next
         MetadataList.Sort(New RuleMetadataComparer)
+        Dim RuleIndexes As New List(Of Integer)
+        For Count = 0 To ArabicString.Length - 1
+            RuleIndexes.Add(0)
+        Next
         For Index = 0 To MetadataList.Count - 1
-            If If(Index <> 0, MetadataList(Index - 1).Index + MetadataList(Index - 1).Length, 0) <> MetadataList(Index).Index Then
-                Strings.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, ArabicString.Substring(If(Index <> 0, MetadataList(Index - 1).Index + MetadataList(Index - 1).Length, 0), MetadataList(Index).Index - If(Index <> 0, MetadataList(Index - 1).Index + MetadataList(Index - 1).Length, 0))))
-            End If
-            Strings.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, ArabicString.Substring(MetadataList(Index).Index, MetadataList(Index).Length)))
             For Count = 0 To CachedData.IslamData.ColorRules.Length - 1
-                Dim Match As Integer = Array.FindIndex(CachedData.IslamData.ColorRules(Count).Match.Split("|"c), Function(Str As String) Array.IndexOf(MetadataList(Index).Type.Split("|"c), Str) <> -1)
+                Dim Match As Integer = Array.FindIndex(CachedData.IslamData.ColorRules(Count).Match.Split("|"c), Function(Str As String) Array.IndexOf(Array.ConvertAll(MetadataList(Index).Type.Split("|"c), Function(S As String) System.Text.RegularExpressions.Regex.Replace(S, "\(.*\)", String.Empty)), Str) <> -1)
                 If Match <> -1 Then
+                    For MetaCount As Integer = MetadataList(Index).Index To MetadataList(Index).Index + MetadataList(Index).Length - 1
+                        RuleIndexes(MetaCount) = Count
+                    Next
                     'ApplyColorRules(Strings(Strings.Count - 1).Text)
-                    Dim Text As RenderArray.RenderText = Strings(Strings.Count - 1)
-                    Text.Clr = CachedData.IslamData.ColorRules(Count).Color
-                    Strings(Strings.Count - 1) = Text
                 End If
             Next
         Next
-        If MetadataList.Count = 0 OrElse MetadataList(MetadataList.Count - 1).Index <> ArabicString.Length - 1 Then
-            Strings.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, ArabicString.Substring(If(MetadataList.Count = 0, 0, MetadataList(MetadataList.Count - 1).Index))))
-        End If
-        Return Strings.ToArray()
+        Dim Base As Integer = 0
+        Dim Renderers As New List(Of RenderArray.RenderText)
+        For Count = 0 To RuleIndexes.Count - 1
+            If Count = RuleIndexes.Count - 1 Then
+                Renderers.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, ArabicString.Substring(Base)) With {.Clr = CachedData.IslamData.ColorRules(RuleIndexes(Count) Mod CachedData.IslamData.ColorRules.Length).Color})
+            ElseIf RuleIndexes(Count) <> RuleIndexes(Count + 1) Then
+                Renderers.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, ArabicString.Substring(Base, Count - Base + 1)) With {.Clr = CachedData.IslamData.ColorRules(RuleIndexes(Count) Mod CachedData.IslamData.ColorRules.Length).Color})
+                Base = Count + 1
+            End If
+        Next
+        Return Renderers.ToArray()
     End Function
     Public Shared Function ArabicWordForLessThanThousand(ByVal Number As Integer, UseClassic As Boolean, UseAlefHundred As Boolean) As String
         Dim Str As String = String.Empty
@@ -5392,7 +5404,7 @@ Public Class TanzilReader
                     If NoRef Then Text = Arabic.TransliterateFromBuckwalter("(") + Text
                     Text += Arabic.TransliterateFromBuckwalter(If(NoRef, ")", "=" + CStr(CInt(IIf(Chapter = 0, BaseVerse, 1)) + Verse))) + " "
                     If Not NoArabic Then
-                        Texts.AddRange(Arabic.ApplyColorRules(Text))
+                        Texts.AddRange(Arabic.ApplyColorRules(Text, GenerateDefaultStops(Text)))
                         Texts.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, If(SchemeType <> ArabicData.TranslitScheme.None, Arabic.TransliterateToScheme(If(NoRef, Arabic.TransliterateFromBuckwalter("("), String.Empty) + QuranText(Chapter)(Verse).Trim(" "c, ChrW(0)) + Arabic.TransliterateFromBuckwalter(If(NoRef, ")", " " + "=" + CStr(CInt(IIf(Chapter = 0, BaseVerse, 1)) + Verse) + " ")), SchemeType, Scheme, GenerateDefaultStops(If(NoRef, Arabic.TransliterateFromBuckwalter("("), String.Empty) + QuranText(Chapter)(Verse).Trim(" "c, ChrW(0)) + Arabic.TransliterateFromBuckwalter(If(NoRef, ")", " " + "=" + CStr(CInt(IIf(Chapter = 0, BaseVerse, 1)) + Verse)) + " "))).Trim(), String.Empty)))
                         Texts.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eContinueStop, False))
                     End If
