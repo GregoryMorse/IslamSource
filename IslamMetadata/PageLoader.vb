@@ -4180,7 +4180,8 @@ Public Class TanzilReader
             Utility.MakeJSArray(Array.ConvertAll(Of Array, String)(TanzilReader.GetPageNames(), Function(Convert As Array) Utility.MakeJSArray(New String() {CStr(CType(Convert, Object())(0)), CStr(CType(Convert, Object())(1))})), True), _
             Utility.MakeJSArray(Array.ConvertAll(Of Array, String)(TanzilReader.GetSajdaNames(), Function(Convert As Array) Utility.MakeJSArray(New String() {CStr(CType(Convert, Object())(0)), CStr(CType(Convert, Object())(1))})), True), _
             Utility.MakeJSArray(Array.ConvertAll(Of Array, String)(TanzilReader.GetImportantNames(), Function(Convert As Array) Utility.MakeJSArray(New String() {CStr(CType(Convert, Object())(0)), CStr(CType(Convert, Object())(1))})), True), _
-            Utility.MakeJSArray(Array.ConvertAll(Of Array, String)(Arabic.GetRecitationSymbols(), Function(Convert As Array) Utility.MakeJSArray(New String() {CStr(CType(Convert, Object())(0)), CStr(CType(Convert, Object())(1))})), True)}, True)
+            Utility.MakeJSArray(Array.ConvertAll(Of Array, String)(Arabic.GetRecitationSymbols(), Function(Convert As Array) Utility.MakeJSArray(New String() {CStr(CType(Convert, Object())(0)), CStr(CType(Convert, Object())(1))})), True), _
+            Utility.MakeJSArray(Array.ConvertAll(Of Array, String)(GetRecitationRules(), Function(Convert As Array) Utility.MakeJSArray(New String() {CStr(CType(Convert, Object())(0)), CStr(CType(Convert, Object())(1))})), True)}, True)
         Return New String() {"javascript: changeQuranDivision(this.selectedIndex);", String.Empty, Utility.GetClearOptionListJS(), _
         "function changeQuranDivision(index) { var iCount; var qurandata = " + JSArrays + "; var eSelect = $('#quranselection').get(0); clearOptionList(eSelect); for (iCount = 0; iCount < qurandata[index].length; iCount++) { eSelect.options.add(new Option(qurandata[index][iCount][0], qurandata[index][iCount][1])); } }"}
     End Function
@@ -4643,6 +4644,11 @@ Public Class TanzilReader
                 ArabicData.LeftToRightOverride + "Not Middle No Diacritics: [" + ArabicData.PopDirectionalFormatting + String.Join(" ", Array.ConvertAll(NotMiddleWordNoDia.ToCharArray(), Function(C As Char) ArabicData.FixStartingCombiningSymbol(CStr(C)))) + ArabicData.LeftToRightOverride + "]" + ArabicData.PopDirectionalFormatting, _
                 Val, RevVal, DiaVal, LetVal, LetRevVal}
     End Function
+    Public Shared Function GetRecitationRules() As Array()
+        Dim Names() As Array = Array.ConvertAll(CachedData.IslamData.MetaRules, Function(Convert As IslamData.RuleMetadataTranslation) New Object() {Utility.LoadResourceString("IslamInfo_" + Convert.Name), CInt(Array.IndexOf(CachedData.IslamData.MetaRules, Convert))})
+        Array.Sort(Names, New Utility.CompareNameValueArray)
+        Return Names
+    End Function
     Public Shared Function GetSelectionNames() As Array()
         Dim Division As Integer = 0
         Dim Strings As String = HttpContext.Current.Request.QueryString.Get("qurandivision")
@@ -4667,6 +4673,8 @@ Public Class TanzilReader
             Return TanzilReader.GetImportantNames()
         ElseIf Division = 9 Then
             Return Arabic.GetRecitationSymbols()
+        ElseIf Division = 10 Then
+            GetRecitationRules()
         End If
         Return Nothing
     End Function
@@ -5259,6 +5267,8 @@ Public Class TanzilReader
                         Renderer.Items.AddRange(DoGetRenderedQuranText(QuranText, BaseChapter, BaseVerse, Translation, SchemeType, Scheme, TranslationIndex, W4W, W4WNum, NoArabic, Header, NoRef).Items)
                     End If
                 Next
+            ElseIf Division = 10 Then
+
             Else
                 QuranText = Nothing
             End If
