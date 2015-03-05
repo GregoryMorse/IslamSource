@@ -5120,6 +5120,37 @@ Public Class TanzilReader
         Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eHeaderCenter, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, "(Qur'an " + RefList + ") " + CStr(RefCount) + " Total")}))
         Return Renderer
     End Function
+    Public Shared Function QuranTextCombiner(ByRef IndexToVerse As List(Of Integer())) As String
+        Dim Verses As List(Of String()) = GetQuranText(CachedData.XMLDocMain, -1, -1, -1, -1)
+        Dim Str As New System.Text.StringBuilder
+        For Count As Integer = 0 To Verses.Count - 1
+            For SubCount As Integer = 0 To Verses(Count).Length - 1
+                Dim Words As String()
+                Dim Index As Integer
+                If SubCount = 0 Then
+                    Dim Node As System.Xml.XmlNode
+                    Node = GetTextVerse(GetTextChapter(CachedData.XMLDocMain, Count + 1), 1).Attributes.GetNamedItem("bismillah")
+                    If Not Node Is Nothing Then
+                        Words = Node.Value.Split(" "c)
+                        Index = Str.Length
+                        For WordCount = 0 To Words.Length - 1
+                            IndexToVerse.Add(New Integer() {Count + 1, SubCount, WordCount + 1, Index, Words(WordCount).Length})
+                            Index += Words(WordCount).Length + 1
+                        Next
+                        Str.Append(Node.Value + " ")
+                    End If
+                End If
+                Words = Verses(Count)(SubCount).Split(" "c)
+                Index = Str.Length
+                For WordCount = 0 To Words.Length - 1
+                    IndexToVerse.Add(New Integer() {Count + 1, SubCount + 1, WordCount + 1, Index, Words(WordCount).Length})
+                    Index += Words(WordCount).Length + 1
+                Next
+                Str.Append(Verses(Count)(SubCount) + Arabic.TransliterateFromBuckwalter("=" + CStr(SubCount + 1)) + " ")
+            Next
+        Next
+        Return Str.ToString()
+    End Function
     Public Shared Function QuranTextRangeLookup(BaseChapter As Integer, BaseVerse As Integer, WordNumber As Integer, EndChapter As Integer, ExtraVerseNumber As Integer, EndWordNumber As Integer) As Collections.Generic.List(Of String())
         Dim QuranText As New Collections.Generic.List(Of String())
         If EndChapter = 0 Or EndChapter = BaseChapter Then
@@ -5268,7 +5299,15 @@ Public Class TanzilReader
                     End If
                 Next
             ElseIf Division = 10 Then
-
+                QuranText = New Collections.Generic.List(Of String())
+                Dim IndexToVerse As New List(Of Integer())
+                Dim Text As String = QuranTextCombiner(IndexToVerse)
+                Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(Text, CachedData.IslamData.MetaRules(Index).Match)
+                Renderer.Items.AddRange(New RenderArray.RenderItem() {New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, CachedData.IslamData.MetaRules(Index).Name)}), New RenderArray.RenderItem(RenderArray.RenderTypes.eText, DocBuilder.ColorizeRegExGroups(DocBuilder.GetRegExText(CachedData.IslamData.MetaRules(Index).Match), False)), New RenderArray.RenderItem(RenderArray.RenderTypes.eText, DocBuilder.ColorizeList(Array.ConvertAll(CachedData.IslamData.MetaRules(Index).Evaluator, Function(Str As String) DocBuilder.GetRegExText(Str))))})
+                For SubCount = 0 To Matches.Count - 1
+                    'Matches(SubCount).Index
+                    'Matches(SubCount).Length
+                Next
             Else
                 QuranText = Nothing
             End If
