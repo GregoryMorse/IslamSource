@@ -3549,7 +3549,7 @@ Public Class DocBuilder
     Public Shared Function ColorizeList(Strs As String()) As RenderArray.RenderText()
         Dim Renderers As New List(Of RenderArray.RenderText)
         For Count As Integer = 0 To Strs.Length - 1
-            Renderers.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, If(Strs(Count) = String.Empty, "NULL" + CStr(Count), Strs(Count))) With {.Clr = CachedData.IslamData.ColorRules((Count + 1) Mod CachedData.IslamData.ColorRules.Length).Color})
+            Renderers.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, Strs(Count) + If(Strs(Count) = String.Empty Or Strs(Count) = CStr(ArabicData.LeftToRightMark), "NULL" + CStr(Count), String.Empty)) With {.Clr = CachedData.IslamData.ColorRules((Count + 1) Mod CachedData.IslamData.ColorRules.Length).Color})
             If Count <> Strs.Length - 1 Then Renderers.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, ";"))
         Next
         Return Renderers.ToArray()
