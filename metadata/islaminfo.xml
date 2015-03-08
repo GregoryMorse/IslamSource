@@ -1704,6 +1704,7 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<noun text="$ad~apN" id="Shadda"></noun>
 			<noun text="mad~N" plural="maduwdN" id="Lengthening"></noun>
 			<noun text="mad~apN" id="MaddahAbove"></noun>
+			<noun text="waSolN" id="JoiningContinuing"></noun>
 			<noun text="&lt;imaAlapN" id="Imaala"></noun>
 			<noun text="faArizapN" id="Comma"></noun>
 			<noun text="xaTN" id="HyphenMinus"></noun>
@@ -2144,8 +2145,8 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 		<word text="&gt;alifN mad~apN" id="AlefMaddahAbove"></word>
 		<word text="laA^mu {lofaEoli" id="LaamVerb"></word>
 		<word text="laA^mu {loHarofi" id="LaamParticle"></word>
-		<word text="&lt;idogaAmu {ll~aA^mi $~amosiy~a" id="AssimilateLaamSunLetter"></word>
-		<word text="&lt;iZohaAru {ll~aA^mi qamariy~a" id="ClearLaamMoonLetter"></word>
+		<word text="&lt;idogaAmu {ll~aA^mi {l$~amosiy~api" id="AssimilateLaamSunLetter"></word>
+		<word text="&lt;iZohaAru {ll~aA^mi {loqamariy~api" id="ClearLaamMoonLetter"></word>
 		<word text="laAmN saAkinapN" id="VowellessLaam"></word>
 		<word text="laAmN min lafoZi {lojalaAlapi" id="LaamOfTheNameOfMajesty"></word>
 		<word text="laAmN tafoxiymN" id="LaamHeaviness"></word>
@@ -2154,6 +2155,7 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 		<word text="raA^&apos;N taroqiyqN" id="RaaLightness"></word>
 		<word text="&lt;idogaAmu {lomutamaAvilaAni {lS~agiyri" id="AssimilateSmallIdentical"></word>
 		<word text="&lt;idogaAmu {lomutamaAvilaAni {lokabiyri" id="AssimilateGreatIdentical"></word>
+		<word text="{lomutamaAvilaAnu {lokabiyru" id="GreatIdentical"></word>
 		<word text="{lomutamaAvilaAnu {lomuTolaqu" id="AbsoluteIdentical"></word>
 		<word text="&lt;idogaAmu {lomutajaAnisaAni {lS~agiyri" id="AssimilateSmallSimilar"></word>
 		<word text="{lomutajaAnisaAnu {lokabiyru" id="GreatSimilar"></word>
@@ -2175,6 +2177,7 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 		<word text="{lowaqofu {ll~aAzimu" id="RequiredStop"></word>
 		<word text="{lo&lt;ibotadaA^&apos;u {lojaA^}izu" id="AllowedStart"></word>
 		<word text="{lo&lt;ibotadaA^&apos;u gayoru {lojaA^}izu" id="StartNotAllowed"></word>
+		<word text="{loEadadu {lo&lt;imolaA^}iY" id="NumberSpelling"></word>
 		<word text="mad~N TabiyEiY wamaA taloHaq bihi" id="OriginalLengthening"></word>
 		<word text="mad~N bisababu {lohamozapi" id="LengtheningDueToHamza"></word>
 		<word text="mad~N bisababu {ls~ukuwni" id="LengtheningDueToSukun"></word>
@@ -2207,6 +2210,17 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 		<word text="&gt;alifN mad~apN" id="AlefWithMaddaAbove"></word>
 		<word text="hamozapN qaToEN" id="PausingHamza"></word>
 		<word text="&gt;alifN hamozapN qaToEN" id="AlefWithHamzaAbove"></word>
+		<word text="{ls~akotu" id="TheBreathlessPause"></word>
+		<word text="qaToEu {lojamiyEi" id="CuttingOffGroup"></word>
+		<word text="waSolu {lojamiyEi" id="JoiningGroup"></word>
+		<word text="waSolu {lobasomalapi bi{ls~uwrapi" id="JoiningBismillahWithChapter"></word>
+		<word text="waSolu {lo&lt;isotiEaA*api {lobasomalapi" id="JoiningBismillahWithChapter"></word>
+		<word text="qaToEu {lokul~i" id="CuttingOffAll"></word>
+		<word text="waSolu {lokul~i" id="JoiningAll"></word>
+		<word text="waSolu {lobasomalapi bi&gt;uwli {ls~uwrapi" id="JoiningBismillahTakingABreathChapter"></word>
+		<word text="{loSiforu {lomusotadiyru" id="RoundZero"></word>
+		<word text="{loSiforu {lomusotaTiylu {loqaA^}imu" id="StandingOblongZeroSmallHighUprightRectangularZero"></word>
+		<word text="{lowajohu {l~a*iY laA yajuwzu" id="ReadingWhichIsNotAllowed"></word>
 		<word text="waAwN hamozapN" id="WawWithHamzaAbove"></word>
 		<word text="&gt;alifN hamozapN" id="AlefWithHamzaBelow"></word>
 		<word text="yaA^&apos;N hamozapN" id="YehWithHamzaAbove"></word>
@@ -5251,11 +5265,11 @@ Ramadan fast-breaking | One 2172-gram quantity | Dates or barley or ordinary sta
 	    
 	    <metarule name="StoppingEndowment" match="(?:({ArabicSmallHighMeemInitialForm})|({ArabicStartOfRubElHizb})|({ArabicEndOfAyah})|({ArabicPlaceOfSajdah}))(?={EndOfWord})" evaluator="compulsorystop;startofhizb;endofversestop;prostration"></metarule>
 	    <metarule name="StoppingEndowment" match="({ArabicSmallHighJeem})|({ArabicSmallHighLamAlef})|({ArabicSmallHighThreeDots})(.*)({ArabicSmallHighThreeDots})|({ArabicSmallHighLigatureQafWithLamWithAlefMaksura})|({ArabicSmallHighLigatureSadWithLamWithAlefMaksura})|({ArabicSmallHighSeen})(?:{EndOfWord})" evaluator="canstoporcontinue;prohibitedtostop;stopatfirstnotsecond;;stopatsecondnotfirst;bettertostopbutpermissibletocontinue;bettertocontinuebutpermissibletostop;subtlestopwithoutbreath"></metarule>
-	    <metarule name="StoppingSubstituteLengthening" match="()(?:({ArabicLetterHamza})({ArabicFathatan})({ArabicSmallLowMeem}|{ArabicSmallHighMeemIsolatedForm})?()|({ArabicFathatan})({ArabicSmallLowMeem}|{ArabicSmallHighMeemIsolatedForm})?({ArabicLetterAlef}|{ArabicLetterAlefMaksura}))()()()(?={StoppingOnWord})" evaluator="learningmode(helperlbracket,);;helperfatha|normalprolong;empty;helperalef|normalprolong;helperfatha|normalprolong;empty;helperalef|normalprolong;learningmode(helperslash,);learningmode(helperfathatan,);learningmode(helperrbracket,);optionalstop;optionalstop"></metarule>
+	    <metarule name="SubstituteLengthening" match="()(?:({ArabicLetterHamza})({ArabicFathatan})({ArabicSmallLowMeem}|{ArabicSmallHighMeemIsolatedForm})?()|({ArabicFathatan})({ArabicSmallLowMeem}|{ArabicSmallHighMeemIsolatedForm})?({ArabicLetterAlef}|{ArabicLetterAlefMaksura}))()()()(?={StoppingOnWord})" evaluator="learningmode(helperlbracket,);;helperfatha|normalprolong;empty;helperalef|normalprolong;helperfatha|normalprolong;empty;helperalef|normalprolong;learningmode(helperslash,);learningmode(helperfathatan,);learningmode(helperrbracket,);optionalstop;optionalstop"></metarule>
 	    <metarule name="StoppingEndowment" match="(?:({NotTehMarbuta})()(?:({ArabicFathaDammaKasra}|{ArabicKasra}{ArabicSmallYeh}{ArabicMaddahAbove}?|{ArabicDamma}{ArabicSmallWaw}{ArabicMaddahAbove}?)|({ArabicKasratan}|{ArabicDammatan})({ArabicSmallLowMeem}|{ArabicSmallHighMeemIsolatedForm})?)|({ArabicLetterNoon})({ArabicSmallLowMeem}))()(?={StoppingOnWord})" evaluator=";learningmode(helperlbracket,);learningmode(,empty);learningmode(,empty);empty;;empty;learningmode(helperrbracket,);optionalstop;optionalstop"></metarule>
 	    <metarule name="StoppingEndowment" match="()({ArabicLetterTehMarbuta})()(){TehMarbutaStopRule}()" evaluator="learningmode(helperlbracket,);helperheh;learningmode(helperslash,);learningmode(helperteh,);learningmode(,empty);learningmode(,empty);empty;optionalstop;optionalstop;learningmode(helperrbracket,)"></metarule>
-	    <metarule name="Continuing" match="({ArabicLetterTehMarbuta}){TehMarbutaContinueRule}" evaluator="helperteh;optionalnotstop;optionalnotstop"></metarule>
-	    <metarule name="Continuing" match="({ArabicFathatan})({ArabicSmallLowMeem}|{ArabicSmallHighMeemIsolatedForm})?({ArabicLetterAlef}|{ArabicLetterAlefMaksura})(?={ContinueToNextWord})" evaluator=";;empty;optionalnotstop;optionalnotstop"></metarule>
+	    <metarule name="JoiningContinuing" match="({ArabicLetterTehMarbuta}){TehMarbutaContinueRule}" evaluator="helperteh;optionalnotstop;optionalnotstop"></metarule>
+	    <metarule name="JoiningContinuing" match="({ArabicFathatan})({ArabicSmallLowMeem}|{ArabicSmallHighMeemIsolatedForm})?({ArabicLetterAlef}|{ArabicLetterAlefMaksura})(?={ContinueToNextWord})" evaluator=";;empty;optionalnotstop;optionalnotstop"></metarule>
 	    
 	    <metarule name="SmallBounce" match="({ArabicFathaDammaKasra}|{ArabicLetterAlefWasla})({ArabicLetterDal}|{ArabicLetterBeh}|{ArabicLetterQaf}|{ArabicLetterTah}|{ArabicLetterJeem})(?=(?:(?:{ArabicTanweens})(?:{ArabicSmallLowMeem}|{ArabicSmallHighMeemIsolatedForm})?|{ArabicFathaDammaKasra})(?={ContinueOnWord})|{ArabicSukun}(?:{ArabicSunLetters}|{ArabicMoonLettersNoVowels}|{ArabicLetterWaw}|{ArabicLetterYeh}|{ArabicLetterAlefMaksura}|{ArabicLetterHamza}|{ArabicTatweel}{ArabicHamzaAbove}))" evaluator=";bounce;optionalnotstop;optionalnotstop"></metarule>
 	    <metarule name="ModerateBounce" match="({ArabicFathaDammaKasra}|{ArabicLetterAlefWasla})({ArabicLetterDal}|{ArabicLetterBeh}|{ArabicLetterQaf}|{ArabicLetterTah}|{ArabicLetterJeem})(?=(?:(?:{ArabicTanweens})(?:{ArabicSmallLowMeem}|{ArabicSmallHighMeemIsolatedForm})?|{ArabicFathaDammaKasra})(?:{StoppingOnWord}))" evaluator=";bounce;optionalstop;optionalstop"></metarule>
@@ -5264,8 +5278,8 @@ Ramadan fast-breaking | One 2172-gram quantity | Dates or barley or ordinary sta
 	    <metarule name="AlefSmallHighRoundedZero" match="({ArabicLetterAlef}{ArabicSmallHighRoundedZero})(?={EndOfWord}|{ArabicLetterYehWithHamzaAbove}{ArabicFatha}|{ArabicLetterAlefMaksura}(?:{ArabicSukun}|{ArabicMaddahAbove})|{ArabicLetterYeh}{ArabicSukun}|{ArabicLetterThal}{ArabicSukun})" evaluator="empty"></metarule>
 	    <metarule name="AlefSmallHighRoundedZero" match="({ArabicDamma})({ArabicLetterWaw}{ArabicSmallHighRoundedZero})(?={ArabicLetterLam}|{ArabicLetterReh})" evaluator=";empty"></metarule>
 	    <metarule name="AlefSmallHighRoundedZero" match="({ArabicFatha}{ArabicLetterYeh}{ArabicSukun})({ArabicLetterYeh}{ArabicSmallHighRoundedZero})|({ArabicLetterAlefWithHamzaBelow}{ArabicKasra})((?:{ArabicLetterYeh}|{ArabicLetterAlefMaksura}){ArabicSmallHighRoundedZero})" evaluator=";empty;;empty"></metarule>
-	    <metarule name="SmallHighUprightRectangularZero" match="({ArabicSmallHighUprightRectangularZero})(?={StoppingOnWord})" evaluator="empty;optionalstop;optionalstop"></metarule>
-	    <metarule name="SmallHighUprightRectangularZero" match="({ArabicLetterAlef}{ArabicSmallHighUprightRectangularZero})(?={ContinueOnWord})" evaluator="empty;optionalnotstop;optionalnotstop"></metarule>
+	    <metarule name="StandingOblongZeroSmallHighUprightRectangularZero" match="({ArabicSmallHighUprightRectangularZero})(?={StoppingOnWord})" evaluator="empty;optionalstop;optionalstop"></metarule>
+	    <metarule name="StandingOblongZeroSmallHighUprightRectangularZero" match="({ArabicLetterAlef}{ArabicSmallHighUprightRectangularZero})(?={ContinueOnWord})" evaluator="empty;optionalnotstop;optionalnotstop"></metarule>
 	    <metarule name="EmptyCentreLowStop" match="({ArabicEmptyCentreLowStop})({ArabicLetterAlefMaksura})({ArabicLetterSuperscriptAlef})" evaluator="empty;helperfatha;helperalef"></metarule>
 	    <metarule name="EmptyCentreHighStop" match="({ArabicEmptyCentreHighStop})" evaluator="empty"></metarule>
 	    <metarule name="RoundedHighStopWithFilledCentre" match="({ArabicLetterAlef})()({ArabicRoundedHighStopWithFilledCentre})" evaluator=";helperhamza;helperfatha"></metarule>
@@ -5289,7 +5303,7 @@ Ramadan fast-breaking | One 2172-gram quantity | Dates or barley or ordinary sta
 	    
 	    <metarule name="SmallWaw" match="({ArabicSmallWaw})(?={ArabicMaddahAbove}?(?:{ContinueToNextWord}))" evaluator="helperwaw;optionalnotstop;optionalnotstop"></metarule>
 	    <metarule name="SmallYeh" match="({ArabicSmallYeh})(?={ArabicMaddahAbove}?(?:{ContinueToNextWord}))" evaluator="helperyeh;optionalnotstop;optionalnotstop"></metarule>
-	    <metarule name="FathaSilentLetterSuperscriptAlef" match="({ArabicFatha})({ArabicLetterAlefMaksura}|{ArabicLetterWaw}){ArabicLetterSuperscriptAlef}" evaluator=";empty"></metarule>
+	    <metarule name="FathaSilentLetterSuperscriptAlef" match="({ArabicFatha})({ArabicLetterAlefMaksura}|{ArabicLetterWaw})(?={ArabicLetterSuperscriptAlef})" evaluator=";empty"></metarule>
 
 	    <metarule name="WeightedCompulsoryLengtheningWords" match="({ArabicFatha}(?:{ArabicLetterAlef}|{ArabicLetterSuperscriptAlef})|{ArabicDamma}{ArabicLetterWaw})(?={ArabicMaddahAbove}?(?:{ArabicSunLetters}|{ArabicMoonLettersNoVowels}|{ArabicLetterWaw}|{ArabicLetterYeh}){ArabicShadda})|((?:{StartOfWord}){ArabicLetterHamza})({ArabicFatha}{ArabicLetterAlef})(?={ArabicMaddahAbove}?{ArabicLetterLam}(?:{ArabicSunLetters}){ArabicShadda})" evaluator="necessaryprolong"></metarule>
 	    <metarule name="LightenedCompulsoryLengtheningWords" match="({ArabicLetterHamza})({ArabicFatha}{ArabicLetterAlef})(?={ArabicMaddahAbove}?{ArabicLetterLam}{ArabicSukun})" evaluator=";necessaryprolong"></metarule>
@@ -5298,12 +5312,13 @@ Ramadan fast-breaking | One 2172-gram quantity | Dates or barley or ordinary sta
 
 	    <metarule name="ConnectedLengtheningEssential" match="({ArabicDamma}{ArabicSmallWaw}|{ArabicKasra}{ArabicLetterYeh})(?={ArabicMaddahAbove}{ArabicTatweel}{ArabicHamzaAbove})|({ArabicDamma}{ArabicLetterWaw})(?={ArabicMaddahAbove}(?:{ArabicLetterHamza}|{ArabicLetterAlefWithHamzaAbove}))|({ArabicKasra}{ArabicLetterAlefMaksura})(?={ArabicMaddahAbove}{ArabicLetterHamza})|({ArabicFatha}(?:{ArabicLetterAlef}|{ArabicLetterSuperscriptAlef}))(?={ArabicMaddahAbove}(?:(?:{ArabicLetterAlefWithHamzaAbove}|{ArabicLetterAlefWithHamzaBelow}|{ArabicLetterHamza})|{ArabicTatweel}{ArabicHamzaAbove}|{ArabicLetterWawWithHamzaAbove}|{ArabicLetterYehWithHamzaAbove}))" evaluator="obligatoryprolong;obligatoryprolong;obligatoryprolong;obligatoryprolong"></metarule>
 
-	    <metarule name="LengtheningPresentedToSukoon" match="({ArabicDamma}{ArabicLetterWaw}|{ArabicKasra}{ArabicLetterAlefMaksura})(?={ArabicShadda})|({ArabicFatha}(?:{ArabicLetterSuperscriptAlef}|{ArabicLetterAlef})|{ArabicDamma}{ArabicLetterWaw}|{ArabicKasra}{ArabicLetterYeh})(?=(?:{ArabicSunLetters}|{ArabicMoonLettersNoVowels}|{ArabicLetterWaw}|{ArabicLetterYeh}|{ArabicLetterTehMarbuta}|{ArabicLetterAlefMaksura}|{ArabicLetterHamza}){ArabicSukun})" evaluator="permissibleprolong;"></metarule>
+	    <metarule name="LengtheningPresentedToSukoon" match="({ArabicDamma}{ArabicLetterWaw}|{ArabicKasra}{ArabicLetterAlefMaksura})(?={ArabicShadda})|({ArabicFatha}(?:{ArabicLetterSuperscriptAlef}|{ArabicLetterAlef})|{ArabicDamma}{ArabicLetterWaw}|{ArabicKasra}{ArabicLetterYeh})(?=(?:{ArabicSunLetters}|{ArabicMoonLettersNoVowels}|{ArabicLetterWaw}|{ArabicLetterYeh}|{ArabicLetterTehMarbuta}|{ArabicLetterAlefMaksura}|{ArabicLetterHamza})(?:{ArabicFathaDammaKasra}|{ArabicDammatan}(?:{ArabicSmallHighMeemIsolatedForm}|{ArabicSmallLowMeem})?|{ArabicKasratan}(?:{ArabicSmallHighMeemIsolatedForm}|{ArabicSmallLowMeem})?)(?:{StoppingOnWord}))" evaluator="permissibleprolong;"></metarule>
 	    <metarule name="SoftLengthening" match="({ArabicFatha}(?:{ArabicLetterWaw}|(?:{ArabicLetterAlef}{ArabicSmallHighRoundedZero})?(?:{ArabicLetterYeh}|{ArabicLetterAlefMaksura})))(?={ArabicSukun}|{ArabicShadda}|{ArabicLetterYeh})" evaluator="permissibleprolong"></metarule>
 	    <metarule name="SoftLengtheningLetters" match="({ArabicLetterAin})({ArabicMaddahAbove})" evaluator="spellletter;empty"></metarule>
 
 	    <metarule name="AllowedSeparatedLengthening" match="(?:({ArabicKasra}{ArabicLetterAlefMaksura})|({ArabicFatha}{ArabicLetterAlefMaksura})({ArabicLetterSuperscriptAlef}))(?={ArabicMaddahAbove}({ContinueToNextWord})(?:{ArabicLetterAlefWithHamzaAbove}|{ArabicLetterAlefWithHamzaBelow}|{ArabicLetterHamza}))|({ArabicDamma}{ArabicLetterWaw})(?={ArabicMaddahAbove}({ContinueToNextWord}){ArabicLetterAlefWithHamzaAbove})|({ArabicFatha}{ArabicLetterAlef})(?={ArabicMaddahAbove}(?:({ContinueToNextWord})(?:{ArabicLetterAlefWithHamzaAbove}|{ArabicLetterAlefWithHamzaBelow}|{ArabicLetterHamza})|{ArabicTatweel}{ArabicHamzaAbove}|{ArabicLetterWawWithHamzaAbove}|{ArabicLetterYehWithHamzaAbove}))" evaluator="obligatoryprolong;obligatoryprolong;;obligatoryprolong;obligatoryprolong"></metarule>
-	    <metarule name="SeparatedLengtheningSmallConnection" match="(?:((?:{ArabicFatha}|{ArabicDamma}){ArabicLetterHeh})({ArabicDamma}{ArabicSmallWaw}?)(?!({ContinueToNextWord}){ArabicLetterLam}{ArabicFatha}{ArabicLetterKaf}{ArabicDamma}{ArabicLetterMeem})|({ArabicKasra}{ArabicLetterHeh})({ArabicKasra}{ArabicSmallYeh}?))(?=({ContinueToNextWord})(?:{ArabicSunLetters}|{ArabicMoonLettersNoVowels}|{ArabicLetterWaw}|{ArabicLetterYeh}))|({ArabicKasra}{ArabicLetterYeh}{ArabicLetterHeh})({ArabicKasra}{ArabicSmallYeh}?)(?=({ContinueToNextWord}){ArabicLetterMeem}{ArabicDamma}{ArabicLetterHeh}{ArabicFatha}{ArabicLetterAlef}{ArabicLetterNoon})|({ArabicLetterNoon}{ArabicShadda}?{ArabicFatha}{ArabicLetterHeh})({ArabicDamma}{ArabicSmallWaw}?)(?=({ContinueToNextWord}){ArabicLetterLam}{ArabicFatha}{ArabicLetterKaf}{ArabicDamma}{ArabicLetterMeem})" evaluator=";normalprolong;;normalprolong;;normalprolong"></metarule>
+	    <metarule name="SeparatedLengtheningSmallConnection" match="(?:((?:{ArabicFatha}|{ArabicDamma}){ArabicLetterHeh}{ArabicDamma})({ArabicSmallWaw}?)(?!({ContinueToNextWord}){ArabicLetterLam}{ArabicFatha}{ArabicLetterKaf}{ArabicDamma}{ArabicLetterMeem})|({ArabicKasra}{ArabicLetterHeh}{ArabicKasra})({ArabicSmallYeh}?))(?=({ContinueToNextWord})(?:{ArabicSunLetters}|{ArabicMoonLettersNoVowels}|{ArabicLetterWaw}|{ArabicLetterYeh}))|({ArabicKasra}{ArabicLetterYeh}{ArabicLetterHeh}{ArabicKasra})({ArabicSmallYeh}?)(?=({ContinueToNextWord}){ArabicLetterMeem}{ArabicDamma}{ArabicLetterHeh}{ArabicFatha}{ArabicLetterAlef}{ArabicLetterNoon})|({ArabicLetterNoon}{ArabicShadda}?{ArabicFatha}{ArabicLetterHeh})({ArabicDamma}{ArabicSmallWaw}?)(?=({ContinueToNextWord}){ArabicLetterLam}{ArabicFatha}{ArabicLetterKaf}{ArabicDamma}{ArabicLetterMeem})" evaluator=";normalprolong;;normalprolong;;normalprolong"></metarule>
+	    <metarule name="OriginalLengthening" match="{ArabicLetterSuperscriptAlef}" evaluator="normalprolong"></metarule>
 	    <metarule name="SeparatedLengtheningGreatConnection" match="({ArabicDamma}{ArabicSmallWaw}|{ArabicKasra}{ArabicSmallYeh})({ArabicMaddahAbove})(?=(?:{ContinueToNextWord})(?:{ArabicLetterHamza}|{ArabicLetterAlefWithHamzaAbove}|{ArabicLetterAlefWithHamzaBelow}))" evaluator="obligatoryprolong;empty;optionalnotstop;optionalnotstop"></metarule>
 
 	    <metarule name="ExchangeLengthening" match="({StartingOnWord}({ArabicLetterAlefWasla})(?:{ArabicLetterWawWithHamzaAbove}|{ArabicLetterYehWithHamzaAbove}))|({ArabicLetterAlefWithHamzaAbove}|{ArabicLetterHamza}|{ArabicTatweel}{ArabicHamzaAbove})({ArabicFatha}(?:{ArabicLetterAlef}|{ArabicLetterSuperscriptAlef})|{ArabicDamma}{ArabicLetterWaw})|({ArabicLetterWawWithHamzaAbove}|{ArabicLetterYehWithHamzaAbove})({ArabicFatha}{ArabicLetterAlef})|({ArabicLetterAlefWithHamzaAbove})({ArabicFatha}{ArabicLetterAlefMaksura})|({ArabicLetterAlefWithHamzaBelow}|{ArabicLetterHamza}|{ArabicTatweel}{ArabicHamzaAbove})({ArabicKasra}(?:{ArabicLetterYeh}|{ArabicLetterAlefMaksura}))(?!{ArabicSmallHighRoundedZero})|({ArabicSukun}{ArabicSmallYeh})({ArabicKasra}{ArabicLetterAlefMaksura})" evaluator=";optionalstop;normalprolong;;normalprolong;;normalprolong;;normalprolong;;normalprolong;;normalprolong"></metarule>
@@ -5350,11 +5365,11 @@ Ramadan fast-breaking | One 2172-gram quantity | Dates or barley or ordinary sta
 	    <metarule name="AlefMaksuraHamzah" match="({ArabicSukun}|{ArabicKasra}|{ArabicDamma}|{ArabicFatha}(?:{ArabicLetterAlef}{ArabicMaddahAbove})?)({ArabicLetterYehWithHamzaAbove})(?=(?:{ArabicFathaDammaKasra}|{ArabicSukun}|{ArabicFathatan}{ArabicSmallLowMeem}?{ArabicLetterAlef}|{ArabicKasratan}(?:{ArabicSmallLowMeem}|{ArabicSmallHighMeemIsolatedForm})?)(?:{EndOfWord}))" evaluator=";helperhamza"></metarule>
 	    <metarule name="SmallHamza" match="((?:{ArabicTatweel}|{ArabicLetterSuperscriptAlef}){ArabicHamzaAbove}|{ArabicHamzaBelow})" evaluator="helperhamza"></metarule>
 
-	    <metarule name="DaggerAlef" match="({ArabicLetterSuperscriptAlef})" evaluator="helperalef"></metarule>
-	    <metarule name="FathaAlefMaksura" match="({ArabicFatha})({ArabicLetterAlefMaksura})(?={EndOfWord})" evaluator=";helperalef"></metarule>
-	    <metarule name="FathaAlefMaksura" match="({ArabicFatha})({ArabicLetterAlefMaksura})(?={ArabicSukun}|{ArabicKasra}|{ArabicShadda})" evaluator=";helperyeh"></metarule>
-	    <metarule name="MaddAlefMaksura" match="((?:{ArabicFatha}|{ArabicKasra})(?:{ArabicLetterAlef}{ArabicSmallHighRoundedZero}?|{ArabicLetterSuperscriptAlef}))({ArabicLetterAlefMaksura})(?={ArabicFatha}|{ArabicSukun}|{ArabicMaddahAbove})" evaluator=";helperyeh"></metarule>
-	    <metarule name="KasraAlefMaksura" match="({ArabicKasra}|{ArabicSukun})({ArabicLetterAlefMaksura})(?!{ArabicSmallHighRoundedZero})" evaluator=";helperyeh"></metarule>
+	    <metarule name="SuperscriptAlefDaggerAlif" match="({ArabicLetterSuperscriptAlef})" evaluator="helperalef"></metarule>
+	    <metarule name="AlefMaksura" match="({ArabicFatha})({ArabicLetterAlefMaksura})(?={EndOfWord})" evaluator=";helperalef"></metarule>
+	    <metarule name="AlefMaksura" match="({ArabicFatha})({ArabicLetterAlefMaksura})(?={ArabicSukun}|{ArabicKasra}|{ArabicShadda})" evaluator=";helperyeh"></metarule>
+	    <metarule name="AlefMaksura" match="((?:{ArabicFatha}|{ArabicKasra})(?:{ArabicLetterAlef}{ArabicSmallHighRoundedZero}?|{ArabicLetterSuperscriptAlef}))({ArabicLetterAlefMaksura})(?={ArabicFatha}|{ArabicSukun}|{ArabicMaddahAbove})" evaluator=";helperyeh"></metarule>
+	    <metarule name="AlefMaksura" match="({ArabicKasra}|{ArabicSukun})({ArabicLetterAlefMaksura})(?!{ArabicSmallHighRoundedZero})" evaluator=";helperyeh"></metarule>
 	</metaruleset>
 	<!--
 	vowel pulling with Esophigal: kaaf, qaaf, khaa', ghein, Tracheal: Haa', 'ein and 'alif
