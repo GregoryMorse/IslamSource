@@ -3631,7 +3631,7 @@ Public Class DocBuilder
     Public Shared Function GenerateNDistinctColors(N As Integer, Threshold As Integer, Interleave As Integer) As Color()
         'To best support individuals with colorblindness (deuteranopia or protanopia) keep a set to 0; vary only L and b.
         Dim LABColors As New List(Of LABColor)
-        LABColors.Add(New LABColor With {.L = 0, .A = 0, .B = 0}) 'Start with Black
+        LABColors.Add(RGBToLAB(Color.White)) 'Start with background color
         Dim LowThresholds As New List(Of Double)
         For A = 0 To 200
             For L = 0 To 100 'dark to light
@@ -3645,10 +3645,10 @@ Public Class DocBuilder
                     If CurColCount = LABColors.Count Then
                         Dim Idx As Integer = LowThresholds.BinarySearch(LowThreshold)
                         If Idx < 0 Then Idx = Idx Xor -1
-                        If Idx <> 0 Or LowThresholds.Count <> N Then
+                        If Idx <> 0 Or LowThresholds.Count <> N + 1 Then
                             LABColors.Insert(Idx, New LABColor With {.L = L, .A = ((A \ 2) + If((A Mod 2) = 1, 1, 0)) * If((A Mod 2) = 1, 1, -1), .B = ((B \ 2) + If((B Mod 2) = 1, 1, 0)) * If((B Mod 2) = 1, 1, -1)})
                             LowThresholds.Insert(Idx, LowThreshold)
-                            If LowThresholds.Count > N Then
+                            If LowThresholds.Count > N + 1 Then
                                 LABColors.RemoveAt(0)
                                 LowThresholds.RemoveAt(0)
                             End If
@@ -3656,8 +3656,9 @@ Public Class DocBuilder
                     End If
                 Next
             Next
-            If LABColors.Count >= N Then Exit For
+            If LABColors.Count >= N + 1 Then Exit For
         Next
+        LABColors.RemoveAt(N) 'Remove background color
         'if less than N colors found then try with lower threshold
         If LABColors.Count < N Then Return GenerateNDistinctColors(N, Threshold - 1, Interleave)
         Dim Cols(N - 1) As Color
