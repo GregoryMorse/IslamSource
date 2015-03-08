@@ -3546,11 +3546,11 @@ Public Class DocBuilder
         Dim Scheme As String = If(CInt(HttpContext.Current.Request.Params("translitscheme")) >= 2, CachedData.IslamData.TranslitSchemes(CInt(HttpContext.Current.Request.Params("translitscheme")) \ 2).Name, String.Empty)
         Return NormalTextFromReferences(Item.Name, HttpContext.Current.Request.Params("docedit"), SchemeType, Scheme, TanzilReader.GetTranslationIndex(HttpContext.Current.Request.Params("qurantranslation")))
     End Function
-    Public Shared Function ColorizeList(Strs As String()) As RenderArray.RenderText()
+    Public Shared Function ColorizeList(Strs As String(), bArabic As Boolean) As RenderArray.RenderText()
         Dim Renderers As New List(Of RenderArray.RenderText)
         For Count As Integer = 0 To Strs.Length - 1
-            Renderers.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, Strs(Count) + If(Strs(Count) = String.Empty Or Strs(Count) = CStr(ArabicData.LeftToRightMark), "NULL" + CStr(Count), String.Empty)) With {.Clr = CachedData.IslamData.ColorRules((Count + 1) Mod CachedData.IslamData.ColorRules.Length).Color})
-            If Count <> Strs.Length - 1 Then Renderers.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, ";"))
+            Renderers.Add(New RenderArray.RenderText(If(bArabic, RenderArray.RenderDisplayClass.eArabic, RenderArray.RenderDisplayClass.eLTR), Strs(Count) + If(Not bArabic And (Strs(Count) = String.Empty Or Strs(Count) = CStr(ArabicData.LeftToRightMark)), "NULL" + CStr(Count), String.Empty)) With {.Clr = CachedData.IslamData.ColorRules((Count + 1) Mod CachedData.IslamData.ColorRules.Length).Color})
+            If Not bArabic And Count <> Strs.Length - 1 Then Renderers.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, ";"))
         Next
         Return Renderers.ToArray()
     End Function
@@ -3604,7 +3604,7 @@ Public Class DocBuilder
         Output(1) = New String() {String.Empty, String.Empty, String.Empty}
         Output(2) = New String() {Utility.LoadResourceString("IslamInfo_Name"), Utility.LoadResourceString("IslamInfo_Translation"), Utility.LoadResourceString("IslamInfo_Translation")}
         For Count = 0 To CachedData.IslamData.MetaRules.Length - 1
-            Output(3 + Count) = New Object() {CachedData.IslamData.MetaRules(Count).Name, New RenderArray.RenderItem() {New RenderArray.RenderItem(RenderArray.RenderTypes.eText, ColorizeRegExGroups(GetRegExText(CachedData.IslamData.MetaRules(Count).Match), False))}, New RenderArray.RenderItem() {New RenderArray.RenderItem(RenderArray.RenderTypes.eText, ColorizeList(Array.ConvertAll(CachedData.IslamData.MetaRules(Count).Evaluator, Function(Str As String) GetRegExText(Str))))}}
+            Output(3 + Count) = New Object() {CachedData.IslamData.MetaRules(Count).Name, New RenderArray.RenderItem() {New RenderArray.RenderItem(RenderArray.RenderTypes.eText, ColorizeRegExGroups(GetRegExText(CachedData.IslamData.MetaRules(Count).Match), False))}, New RenderArray.RenderItem() {New RenderArray.RenderItem(RenderArray.RenderTypes.eText, ColorizeList(Array.ConvertAll(CachedData.IslamData.MetaRules(Count).Evaluator, Function(Str As String) GetRegExText(Str)), False))}}
         Next
         Return RenderArray.MakeTableJSFunctions(Output, ID)
     End Function
@@ -4674,7 +4674,7 @@ Public Class TanzilReader
         ElseIf Division = 9 Then
             Return Arabic.GetRecitationSymbols()
         ElseIf Division = 10 Then
-            GetRecitationRules()
+            Return GetRecitationRules()
         End If
         Return Nothing
     End Function
@@ -5120,8 +5120,9 @@ Public Class TanzilReader
         Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eHeaderCenter, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, "(Qur'an " + RefList + ") " + CStr(RefCount) + " Total")}))
         Return Renderer
     End Function
-    Public Shared Function QuranTextCombiner(ByRef IndexToVerse As List(Of Integer())) As String
+    Public Shared Function QuranTextCombiner(ByRef IndexToVerse As Integer()()) As String
         Dim Verses As List(Of String()) = GetQuranText(CachedData.XMLDocMain, -1, -1, -1, -1)
+        Dim IndexToVerseList As New List(Of Integer())
         Dim Str As New System.Text.StringBuilder
         For Count As Integer = 0 To Verses.Count - 1
             For SubCount As Integer = 0 To Verses(Count).Length - 1
@@ -5134,7 +5135,7 @@ Public Class TanzilReader
                         Words = Node.Value.Split(" "c)
                         Index = Str.Length
                         For WordCount = 0 To Words.Length - 1
-                            IndexToVerse.Add(New Integer() {Count + 1, SubCount, WordCount + 1, Index, Words(WordCount).Length})
+                            IndexToVerseList.Add(New Integer() {Count + 1, SubCount, WordCount + 1, Index, Words(WordCount).Length})
                             Index += Words(WordCount).Length + 1
                         Next
                         Str.Append(Node.Value + " ")
@@ -5143,12 +5144,13 @@ Public Class TanzilReader
                 Words = Verses(Count)(SubCount).Split(" "c)
                 Index = Str.Length
                 For WordCount = 0 To Words.Length - 1
-                    IndexToVerse.Add(New Integer() {Count + 1, SubCount + 1, WordCount + 1, Index, Words(WordCount).Length})
+                    IndexToVerseList.Add(New Integer() {Count + 1, SubCount + 1, WordCount + 1, Index, Words(WordCount).Length})
                     Index += Words(WordCount).Length + 1
                 Next
                 Str.Append(Verses(Count)(SubCount) + Arabic.TransliterateFromBuckwalter("=" + CStr(SubCount + 1)) + " ")
             Next
         Next
+        IndexToVerse = IndexToVerseList.ToArray()
         Return Str.ToString()
     End Function
     Public Shared Function QuranTextRangeLookup(BaseChapter As Integer, BaseVerse As Integer, WordNumber As Integer, EndChapter As Integer, ExtraVerseNumber As Integer, EndWordNumber As Integer) As Collections.Generic.List(Of String())
@@ -5300,13 +5302,29 @@ Public Class TanzilReader
                 Next
             ElseIf Division = 10 Then
                 QuranText = New Collections.Generic.List(Of String())
-                Dim IndexToVerse As New List(Of Integer())
+                Dim IndexToVerse As Integer()() = Nothing
                 Dim Text As String = QuranTextCombiner(IndexToVerse)
                 Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(Text, CachedData.IslamData.MetaRules(Index).Match)
-                Renderer.Items.AddRange(New RenderArray.RenderItem() {New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, CachedData.IslamData.MetaRules(Index).Name)}), New RenderArray.RenderItem(RenderArray.RenderTypes.eText, DocBuilder.ColorizeRegExGroups(DocBuilder.GetRegExText(CachedData.IslamData.MetaRules(Index).Match), False)), New RenderArray.RenderItem(RenderArray.RenderTypes.eText, DocBuilder.ColorizeList(Array.ConvertAll(CachedData.IslamData.MetaRules(Index).Evaluator, Function(Str As String) DocBuilder.GetRegExText(Str))))})
+                Renderer.Items.AddRange(New RenderArray.RenderItem() {New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, CachedData.IslamData.MetaRules(Index).Name)}), New RenderArray.RenderItem(RenderArray.RenderTypes.eText, DocBuilder.ColorizeRegExGroups(DocBuilder.GetRegExText(CachedData.IslamData.MetaRules(Index).Match), False)), New RenderArray.RenderItem(RenderArray.RenderTypes.eText, DocBuilder.ColorizeList(Array.ConvertAll(CachedData.IslamData.MetaRules(Index).Evaluator, Function(Str As String) DocBuilder.GetRegExText(Str)), False))})
                 For SubCount = 0 To Matches.Count - 1
-                    'Matches(SubCount).Index
-                    'Matches(SubCount).Length
+                    Dim StartWordIndex As Integer = Array.BinarySearch(IndexToVerse, Matches(SubCount).Index, New QuranWordIndexComparer)
+                    If StartWordIndex < 0 Then StartWordIndex = (StartWordIndex Xor -1) - 1
+                    Dim EndWordIndex As Integer = Array.BinarySearch(IndexToVerse, Matches(SubCount).Index + Matches(SubCount).Length - 1, New QuranWordIndexComparer)
+                    If EndWordIndex < 0 Then EndWordIndex = (EndWordIndex Xor -1) + 1
+                    Dim Renderers As New List(Of RenderArray.RenderText)
+                    If IndexToVerse(StartWordIndex)(3) <> Matches(SubCount).Index Then
+                        Renderers.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Text.Substring(IndexToVerse(StartWordIndex)(3), Matches(SubCount).Index - IndexToVerse(StartWordIndex)(3))))
+                    End If
+                    Dim Groups(Matches(SubCount).Groups.Count - 1 - 1) As String
+                    For GroupCount As Integer = 1 To Matches(SubCount).Groups.Count - 1
+                        Groups(GroupCount - 1) = Matches(SubCount).Groups(GroupCount).Value
+                    Next
+                    Renderers.AddRange(DocBuilder.ColorizeList(Groups, True))
+                    If IndexToVerse(EndWordIndex)(3) + IndexToVerse(EndWordIndex)(4) <> Matches(SubCount).Index + Matches(SubCount).Length Then
+                        Renderers.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Text.Substring(Matches(SubCount).Index + Matches(SubCount).Length, IndexToVerse(EndWordIndex)(3) + IndexToVerse(EndWordIndex)(4) - (Matches(SubCount).Index + Matches(SubCount).Length))))
+                    End If
+                    Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, Renderers.ToArray()))
+                    Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eHeaderCenter, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, "(Qur'an " + CStr(IndexToVerse(StartWordIndex)(0)) + ":" + CStr(IndexToVerse(StartWordIndex)(1)) + ":" + CStr(IndexToVerse(StartWordIndex)(2)) + If(StartWordIndex <> EndWordIndex, "-" + CStr(IndexToVerse(EndWordIndex)(0)) + ":" + CStr(IndexToVerse(EndWordIndex)(1)) + ":" + CStr(IndexToVerse(EndWordIndex)(2)), String.Empty) + ")")}))
                 Next
             Else
                 QuranText = Nothing
@@ -5315,6 +5333,18 @@ Public Class TanzilReader
         Next
         Return Renderer
     End Function
+    Public Class QuranWordIndexComparer
+        Implements IComparer(Of Object)
+        Public Function Compare(x As Object, y As Object) As Integer Implements IComparer(Of Object).Compare
+            If TypeOf x Is Integer() Then
+                If CInt(y) >= CType(x, Integer())(3) And CInt(y) < (CType(x, Integer())(3) + CType(x, Integer())(4)) Then Return 0
+                Return If(CInt(y) < CType(x, Integer())(3), 1, -1)
+            Else
+                If CInt(x) >= CType(y, Integer())(3) And CInt(x) < (CType(y, Integer())(3) + CType(y, Integer())(4)) Then Return 0
+                Return If(CInt(x) < CType(y, Integer())(3), 1, -1)
+            End If
+        End Function
+    End Class
     Public Shared Function GetRenderedQuranText(ByVal Item As PageLoader.TextItem) As RenderArray
         Dim Division As Integer = 0
         Dim Index As Integer = 1
