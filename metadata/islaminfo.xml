@@ -5213,6 +5213,10 @@ Ramadan fast-breaking | One 2172-gram quantity | Dates or barley or ordinary sta
      	   	<rule name="UnrestLetters" match="bounce" evaluator="{0}-{0}"></rule>
         </ruleset>
 		<ruleset name="ErrorCheck">
+			<rule name="HamzaStartEndWord" match="({StartOfWord})(?={EndOfWord})" evaluator="$&amp;"></rule>
+			<rule name="HamzaStartWord" match="({StartOfWord})({ArabicLetterAlefWasla}(?:{ArabicLetterWawWithHamzaAbove}|{ArabicLetterYehWithHamzaAbove}))" evaluator="$&amp;"></rule>
+			<rule name="HamzaMiddleWord" match="" evaluator="$&amp;"></rule>
+			<rule name="HamzaEndWord" match="(?={EndOfWord})" evaluator="$&amp;"></rule>
 		    <!-- <rule name="TehMarbutaPartiallyFlexible" match="({ArabicLetterAlefWasla}{ArabicLetterLam}\S+)?{ArabicLetterTehMarbuta}(?:{ArabicFathaDammaKasra})" evaluator="$&amp;" negativematch="$1"></rule> -->
     		<rule name="NotValidStartEndCombination" match="{ArabicLetterAlefWasla}{ArabicLetterLam}\S+(?:{ArabicTanweens})" evaluator="$&amp;"></rule>
 			<rule name="NotValidEnd" match="(?:{ArabicFatha}{ArabicLetterAlef}|{ArabicKasra}(?:{ArabicLetterAlefMaksura}|{ArabicSmallYeh})|{ArabicFatha}{ArabicLetterAlefMaksura}{ArabicLetterSuperscriptAlef}|{ArabicDamma}{ArabicSmallWaw})({ContinueToNextWord})(?:{ArabicLetterAlefWithHamzaAbove}|{ArabicLetterAlefWithHamzaBelow}|{ArabicLetterHamza})" evaluator="$&amp;"></rule>
