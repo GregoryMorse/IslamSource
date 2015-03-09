@@ -3624,18 +3624,21 @@ Public Class DocBuilder
         Dim sH As Double = sC * (f * t + 1 - f)
         Return Math.Sqrt(deltaL * deltaL / (Lightness * Lightness * sL * sL) + deltaC * deltaC / (Chroma * Chroma * sC * sC) + deltaH * deltaH / (sH * sH))
     End Function
-    Public Shared Function GCD(A As Integer, B As Integer) As Integer 'Euclid’s algorithm
+    Public Shared Function GCD(A As Integer, B As Integer) As Integer 'Euclid's algorithm
         If B = 0 Then Return A
         Return GCD(B, A Mod B)
     End Function
     Public Shared Function GenerateNDistinctColors(N As Integer, Threshold As Integer, Interleave As Integer) As Color()
         'To best support individuals with colorblindness (deuteranopia or protanopia) keep a set to 0; vary only L and b.
         Dim LABColors As New List(Of LABColor)
-        LABColors.Add(RGBToLAB(Color.White)) 'Start with background color
         Dim LowThresholds As New List(Of Double)
-        For A = 0 To 200
-            For L = 0 To 100 'dark to light
-                For B = 0 To 200
+        LABColors.Add(RGBToLAB(Color.Black)) 'Start with pivot forecolor
+        LowThresholds.Add(100)
+        LABColors.Add(RGBToLAB(Color.White)) 'Start with background color
+        LowThresholds.Add(100)
+        For A = 0 To 200 'Pivot around 0 and move towards 100/-100
+            For L = 0 To 100 / 2 'dark to light yet for readability do not exceed half of the spectrum
+                For B = 0 To 200 'Pivot around 0 and move towards 100/-100
                     Dim CurColCount As Integer
                     Dim LowThreshold As Double = 100
                     For CurColCount = 0 To LABColors.Count - 1
@@ -4312,7 +4315,7 @@ Public Class TanzilReader
         "function changeQuranDivision(index) { var iCount; var qurandata = " + JSArrays + "; var eSelect = $('#quranselection').get(0); clearOptionList(eSelect); for (iCount = 0; iCount < qurandata[index].length; iCount++) { eSelect.options.add(new Option(qurandata[index][iCount][0], qurandata[index][iCount][1])); } }"}
     End Function
     Public Shared Function GetWordPartitions() As String()
-        Dim Parts As New Generic.List(Of String) From {Utility.LoadResourceString("IslamInfo_Letters"), Utility.LoadResourceString("IslamInfo_Words"), Utility.LoadResourceString("IslamInfo_UniqueWords"), Utility.LoadResourceString("IslamInfo_UniqueWordsPerPart"), Utility.LoadResourceString("IslamInfo_WordsPerPart"), Utility.LoadResourceString("IslamInfo_UniqueWordsPerStation"), Utility.LoadResourceString("IslamInfo_WordsPerStation"), Utility.LoadResourceString("IslamInfo_IsolatedLetters"), Utility.LoadResourceString("IslamInfo_LetterPatterns"), Utility.LoadResourceString("IslamInfo_Prefix"), Utility.LoadResourceString("IslamInfo_Suffix")}
+        Dim Parts As New Generic.List(Of String) From {Utility.LoadResourceString("IslamInfo_Letters"), Utility.LoadResourceString("IslamInfo_Words"), Utility.LoadResourceString("IslamInfo_UniqueWords"), Utility.LoadResourceString("IslamInfo_UniqueWordsPerPart"), Utility.LoadResourceString("IslamInfo_WordsPerPart"), Utility.LoadResourceString("IslamInfo_UniqueWordsPerStation"), Utility.LoadResourceString("IslamInfo_WordsPerStation"), Utility.LoadResourceString("IslamInfo_IsolatedLetters"), Utility.LoadResourceString("IslamInfo_LetterPatterns"), Utility.LoadResourceString("IslamInfo_LetterPatterns"), Utility.LoadResourceString("IslamInfo_Prefix"), Utility.LoadResourceString("IslamInfo_Suffix")}
         Parts.AddRange(Array.ConvertAll(CachedData.IslamData.PartsOfSpeech, Function(POS As IslamData.PartOfSpeechInfo) Utility.LoadResourceString("IslamInfo_" + POS.Id)))
         Parts.AddRange(Array.ConvertAll(CachedData.RecitationSymbols, Function(Sym As String) ArabicData.GetUnicodeName(Sym.Chars(0))))
         Parts.AddRange(Array.ConvertAll(CachedData.RecitationSymbols, Function(Sym As String) "Prefix of " + ArabicData.GetUnicodeName(Sym.Chars(0))))
@@ -4350,17 +4353,19 @@ Public Class TanzilReader
         ElseIf Index = 8 Then
             Return String.Empty
         ElseIf Index = 9 Then
-            Return CStr(CachedData.PreDictionary.Count)
+            Return String.Empty
         ElseIf Index = 10 Then
+            Return CStr(CachedData.PreDictionary.Count)
+        ElseIf Index = 11 Then
             Return CStr(CachedData.SufDictionary.Count)
-        ElseIf Index >= 11 And Index < 11 + CachedData.IslamData.PartsOfSpeech.Length Then
-            Return CStr(CachedData.TagDictionary.Item(CachedData.IslamData.PartsOfSpeech(Index - 11).Symbol).Count)
-        ElseIf Index >= 11 + CachedData.IslamData.PartsOfSpeech.Length And Index < 11 + CachedData.IslamData.PartsOfSpeech.Length + CachedData.RecitationSymbols.Length Then
-            Return CStr(CachedData.LetterDictionary.Item(CachedData.RecitationSymbols(Index - 11 - CachedData.IslamData.PartsOfSpeech.Length).Chars(0)).Count)
-        ElseIf Index >= 11 + CachedData.IslamData.PartsOfSpeech.Length + CachedData.RecitationSymbols.Length And Index < 11 + CachedData.IslamData.PartsOfSpeech.Length + CachedData.RecitationSymbols.Length + CachedData.RecitationSymbols.Length Then
-            Return CStr(CachedData.LetterPreDictionary.Item(CachedData.RecitationSymbols(Index - 11 - CachedData.IslamData.PartsOfSpeech.Length - CachedData.RecitationSymbols.Length).Chars(0)).Count)
-        ElseIf Index >= 11 + CachedData.IslamData.PartsOfSpeech.Length + CachedData.RecitationSymbols.Length + CachedData.RecitationSymbols.Length And Index < 11 + CachedData.IslamData.PartsOfSpeech.Length + CachedData.RecitationSymbols.Length + CachedData.RecitationSymbols.Length + CachedData.RecitationSymbols.Length Then
-            Return CStr(CachedData.LetterSufDictionary.Item(CachedData.RecitationSymbols(Index - 11 - CachedData.IslamData.PartsOfSpeech.Length - CachedData.RecitationSymbols.Length - CachedData.RecitationSymbols.Length).Chars(0)).Count)
+        ElseIf Index >= 12 And Index < 12 + CachedData.IslamData.PartsOfSpeech.Length Then
+            Return CStr(CachedData.TagDictionary.Item(CachedData.IslamData.PartsOfSpeech(Index - 12).Symbol).Count)
+        ElseIf Index >= 12 + CachedData.IslamData.PartsOfSpeech.Length And Index < 12 + CachedData.IslamData.PartsOfSpeech.Length + CachedData.RecitationSymbols.Length Then
+            Return CStr(CachedData.LetterDictionary.Item(CachedData.RecitationSymbols(Index - 12 - CachedData.IslamData.PartsOfSpeech.Length).Chars(0)).Count)
+        ElseIf Index >= 12 + CachedData.IslamData.PartsOfSpeech.Length + CachedData.RecitationSymbols.Length And Index < 12 + CachedData.IslamData.PartsOfSpeech.Length + CachedData.RecitationSymbols.Length + CachedData.RecitationSymbols.Length Then
+            Return CStr(CachedData.LetterPreDictionary.Item(CachedData.RecitationSymbols(Index - 12 - CachedData.IslamData.PartsOfSpeech.Length - CachedData.RecitationSymbols.Length).Chars(0)).Count)
+        ElseIf Index >= 12 + CachedData.IslamData.PartsOfSpeech.Length + CachedData.RecitationSymbols.Length + CachedData.RecitationSymbols.Length And Index < 12 + CachedData.IslamData.PartsOfSpeech.Length + CachedData.RecitationSymbols.Length + CachedData.RecitationSymbols.Length + CachedData.RecitationSymbols.Length Then
+            Return CStr(CachedData.LetterSufDictionary.Item(CachedData.RecitationSymbols(Index - 12 - CachedData.IslamData.PartsOfSpeech.Length - CachedData.RecitationSymbols.Length - CachedData.RecitationSymbols.Length).Chars(0)).Count)
         Else
             Return String.Empty
         End If
@@ -4371,13 +4376,13 @@ Public Class TanzilReader
         Dim All As Double
         Dim SchemeType As ArabicData.TranslitScheme = CType(If(CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) >= 2, 2 - CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) Mod 2, CInt(HttpContext.Current.Request.QueryString.Get("translitscheme"))), ArabicData.TranslitScheme)
         Dim Scheme As String = If(CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) >= 2, CachedData.IslamData.TranslitSchemes(CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) \ 2).Name, String.Empty)
-        Output.Add(New String() {String.Empty, String.Empty, String.Empty, String.Empty, String.Empty, String.Empty})
-        Output.Add(New String() {"arabic", "transliteration", "translation", String.Empty, String.Empty, String.Empty})
-        Output.Add(New String() {Utility.LoadResourceString("IslamInfo_Arabic"), Utility.LoadResourceString("IslamInfo_Transliteration"), Utility.LoadResourceString("IslamInfo_Translation"), Utility.LoadResourceString("IslamSource_WordTotal"), String.Empty, String.Empty})
         Dim Strings As String
         Dim Index As Integer
         Strings = HttpContext.Current.Request.QueryString.Get("quranselection")
         If Not Strings Is Nothing Then Index = CInt(Strings)
+        Output.Add(New String() {String.Empty, String.Empty, String.Empty, String.Empty, String.Empty, String.Empty})
+        Output.Add(New String() {If(Index = 8 Or Index = 9, "transliteration", "arabic"), "transliteration", "translation", String.Empty, String.Empty, String.Empty})
+        Output.Add(New String() {Utility.LoadResourceString(If(Index = 8 Or Index = 9, "IslamInfo_Transliteration", "IslamInfo_Arabic")), Utility.LoadResourceString("IslamInfo_Transliteration"), Utility.LoadResourceString("IslamInfo_Translation"), Utility.LoadResourceString("IslamSource_WordTotal"), String.Empty, String.Empty})
         If Index = 0 Then
             All = CachedData.TotalLetters
             Dim LetterFreqArray(CachedData.LetterDictionary.Keys.Count - 1) As Char
@@ -4396,7 +4401,7 @@ Public Class TanzilReader
                 Total += CachedData.IsolatedLetterDictionary.Item(LetterFreqArray(Count)).Count
                 Output.Add(New String() {ArabicData.LeftToRightOverride + ArabicData.GetUnicodeName(LetterFreqArray(Count)) + " ( " + ArabicData.PopDirectionalFormatting + ArabicData.FixStartingCombiningSymbol(LetterFreqArray(Count)) + ArabicData.LeftToRightOverride + " )" + ArabicData.PopDirectionalFormatting, String.Empty, String.Empty, CStr(CachedData.IsolatedLetterDictionary.Item(LetterFreqArray(Count)).Count), (CDbl(CachedData.IsolatedLetterDictionary.Item(LetterFreqArray(Count)).Count) * 100 / All).ToString("n2"), (CDbl(Total) * 100 / All).ToString("n2")})
             Next
-        ElseIf Index = 1 Or Index = 9 Or Index = 10 Or Index >= 11 And Index < 11 + CachedData.IslamData.PartsOfSpeech.Length + CachedData.RecitationSymbols.Length + CachedData.RecitationSymbols.Length + CachedData.RecitationSymbols.Length Then
+        ElseIf Index = 1 Or Index = 10 Or Index = 11 Or Index >= 12 And Index < 12 + CachedData.IslamData.PartsOfSpeech.Length + CachedData.RecitationSymbols.Length + CachedData.RecitationSymbols.Length + CachedData.RecitationSymbols.Length Then
             Dim Dict As Generic.Dictionary(Of String, ArrayList)
             If Index = 1 Then
                 Dict = New Dictionary(Of String, ArrayList)
@@ -4407,18 +4412,18 @@ Public Class TanzilReader
                         Dict(Str).AddRange(CachedData.FormDictionary(CStr(KV.Value(Count))))
                     Next
                 Next
-            ElseIf Index = 9 Then
-                Dict = CachedData.PreDictionary
             ElseIf Index = 10 Then
+                Dict = CachedData.PreDictionary
+            ElseIf Index = 11 Then
                 Dict = CachedData.SufDictionary
-            ElseIf Index >= 11 And Index < 11 + CachedData.IslamData.PartsOfSpeech.Length Then
-                Dict = CachedData.TagDictionary(CachedData.IslamData.PartsOfSpeech(Index - 11).Symbol)
-            ElseIf Index >= 11 + CachedData.IslamData.PartsOfSpeech.Length And Index < 11 + CachedData.IslamData.PartsOfSpeech.Length + CachedData.RecitationSymbols.Length Then
-                Dict = CachedData.LetterDictionary(CachedData.RecitationSymbols(Index - 11 - CachedData.IslamData.PartsOfSpeech.Length).Chars(0))
-            ElseIf Index >= 11 + CachedData.IslamData.PartsOfSpeech.Length + CachedData.RecitationSymbols.Length And Index < 11 + CachedData.IslamData.PartsOfSpeech.Length + CachedData.RecitationSymbols.Length + CachedData.RecitationSymbols.Length Then
-                Dict = CachedData.LetterPreDictionary(CachedData.RecitationSymbols(Index - 11 - CachedData.IslamData.PartsOfSpeech.Length - CachedData.RecitationSymbols.Length).Chars(0))
-            ElseIf Index >= 11 + CachedData.IslamData.PartsOfSpeech.Length + CachedData.RecitationSymbols.Length + CachedData.RecitationSymbols.Length And Index < 11 + CachedData.IslamData.PartsOfSpeech.Length + CachedData.RecitationSymbols.Length + CachedData.RecitationSymbols.Length + CachedData.RecitationSymbols.Length Then
-                Dict = CachedData.LetterSufDictionary(CachedData.RecitationSymbols(Index - 11 - CachedData.IslamData.PartsOfSpeech.Length - CachedData.RecitationSymbols.Length - CachedData.RecitationSymbols.Length).Chars(0))
+            ElseIf Index >= 12 And Index < 12 + CachedData.IslamData.PartsOfSpeech.Length Then
+                Dict = CachedData.TagDictionary(CachedData.IslamData.PartsOfSpeech(Index - 12).Symbol)
+            ElseIf Index >= 12 + CachedData.IslamData.PartsOfSpeech.Length And Index < 12 + CachedData.IslamData.PartsOfSpeech.Length + CachedData.RecitationSymbols.Length Then
+                Dict = CachedData.LetterDictionary(CachedData.RecitationSymbols(Index - 12 - CachedData.IslamData.PartsOfSpeech.Length).Chars(0))
+            ElseIf Index >= 12 + CachedData.IslamData.PartsOfSpeech.Length + CachedData.RecitationSymbols.Length And Index < 12 + CachedData.IslamData.PartsOfSpeech.Length + CachedData.RecitationSymbols.Length + CachedData.RecitationSymbols.Length Then
+                Dict = CachedData.LetterPreDictionary(CachedData.RecitationSymbols(Index - 12 - CachedData.IslamData.PartsOfSpeech.Length - CachedData.RecitationSymbols.Length).Chars(0))
+            ElseIf Index >= 12 + CachedData.IslamData.PartsOfSpeech.Length + CachedData.RecitationSymbols.Length + CachedData.RecitationSymbols.Length And Index < 12 + CachedData.IslamData.PartsOfSpeech.Length + CachedData.RecitationSymbols.Length + CachedData.RecitationSymbols.Length + CachedData.RecitationSymbols.Length Then
+                Dict = CachedData.LetterSufDictionary(CachedData.RecitationSymbols(Index - 12 - CachedData.IslamData.PartsOfSpeech.Length - CachedData.RecitationSymbols.Length - CachedData.RecitationSymbols.Length).Chars(0))
             Else
                 Dict = Nothing
             End If
@@ -4464,6 +4469,8 @@ Public Class TanzilReader
                 Next
             End If
         ElseIf Index = 8 Then
+            Output.AddRange(Array.ConvertAll(GetQuranLetterPatterns(), Function(Str As String) {Str, String.Empty, String.Empty, String.Empty, String.Empty, String.Empty}))
+        ElseIf Index = 9 Then
             Output.AddRange(Array.ConvertAll(PatternAnalysis(), Function(Str As String) {Str, String.Empty, String.Empty, String.Empty, String.Empty, String.Empty}))
         End If
         Return CType(Output.ToArray(GetType(Array)), Array())
