@@ -2981,14 +2981,15 @@ Public Class CachedData
                 If bAll Then
                     If GetPattern(Match.Groups(1).Value) <> String.Empty Then Return GetPattern(Match.Groups(1).Value)
 
-                    If Match.Groups(1).Value = "ArabicUniqueLetters" Then Return ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicUniqueLetters, Function(Str As String) Arabic.TransliterateFromBuckwalter(Str)))
-                    If Match.Groups(1).Value = "ArabicNumbers" Then Return ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicNumbers, Function(Str As String) Arabic.TransliterateFromBuckwalter(Str)))
-                    If Match.Groups(1).Value = "ArabicWaslKasraExceptions" Then Return ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicWaslKasraExceptions, Function(Str As String) Arabic.TransliterateFromBuckwalter(Str)))
+                    If Match.Groups(1).Value = "ArabicUniqueLetters" Then Return ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicUniqueLetters, Function(Str As String) ArabicData.MakeUniRegEx(Arabic.TransliterateFromBuckwalter(Str))))
+                    If Match.Groups(1).Value = "ArabicNumbers" Then Return ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicNumbers, Function(Str As String) ArabicData.MakeUniRegEx(Arabic.TransliterateFromBuckwalter(Str))))
+                    If Match.Groups(1).Value = "ArabicWaslKasraExceptions" Then Return ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicWaslKasraExceptions, Function(Str As String) ArabicData.MakeUniRegEx(Arabic.TransliterateFromBuckwalter(Str))))
                     'If Match.Groups(1).Value = "SimpleSuperscriptAlefBefore" Then Return ArabicData.MakeRegMultiEx(Array.ConvertAll(Arabic.SimpleSuperscriptAlefBefore, Function(Str As String) Arabic.TransliterateFromBuckwalter(Str.Replace(".", String.Empty).Replace("""", String.Empty).Replace("@", String.Empty).Replace("[", String.Empty).Replace("]", String.Empty).Replace("-", String.Empty).Replace("^", String.Empty))))
                     'If Match.Groups(1).Value = "SimpleSuperscriptAlefNotBefore" Then Return ArabicData.MakeRegMultiEx(Array.ConvertAll(Arabic.SimpleSuperscriptAlefNotBefore, Function(Str As String) Arabic.TransliterateFromBuckwalter(Str.Replace(".", String.Empty).Replace("""", String.Empty).Replace("@", String.Empty).Replace("[", String.Empty).Replace("]", String.Empty).Replace("-", String.Empty).Replace("^", String.Empty))))
                     'If Match.Groups(1).Value = "SimpleSuperscriptAlefAfter" Then Return ArabicData.MakeRegMultiEx(Array.ConvertAll(Arabic.SimpleSuperscriptAlefAfter, Function(Str As String) Arabic.TransliterateFromBuckwalter(Str.Replace(".", String.Empty).Replace("""", String.Empty).Replace("@", String.Empty).Replace("[", String.Empty).Replace("]", String.Empty).Replace("-", String.Empty).Replace("^", String.Empty))))
                     'If Match.Groups(1).Value = "SimpleSuperscriptAlefNotAfter" Then Return ArabicData.MakeRegMultiEx(Array.ConvertAll(Arabic.SimpleSuperscriptAlefNotAfter, Function(Str As String) Arabic.TransliterateFromBuckwalter(Str.Replace(".", String.Empty).Replace("""", String.Empty).Replace("@", String.Empty).Replace("[", String.Empty).Replace("]", String.Empty).Replace("-", String.Empty).Replace("^", String.Empty))))
                     If Match.Groups(1).Value = "ArabicLongShortVowels" Then Return ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicLongVowels, Function(StrV As String) ArabicData.MakeUniRegEx(StrV(0)) + "(?=" + ArabicData.MakeUniRegEx(StrV(1)) + ")"))
+                    If Match.Groups(1).Value = "ArabicAssimilateSameWord" Then Return ArabicData.MakeRegMultiEx(Array.ConvertAll(GetGroup("ArabicAssimilateSameWord"), Function(Str As String) ArabicData.MakeUniRegEx(Str)))
                     If Match.Groups(1).Value = "ArabicTanweens" Then Return ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicTanweens, Function(Str As String) ArabicData.MakeUniRegEx(Str)))
                     If Match.Groups(1).Value = "ArabicFathaDammaKasra" Then Return ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicFathaDammaKasra, Function(Str As String) ArabicData.MakeUniRegEx(Str)))
                     If Match.Groups(1).Value = "ArabicStopLetters" Then Return ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicStopLetters, Function(Str As String) ArabicData.MakeUniRegEx(Str)))
@@ -4561,7 +4562,7 @@ Public Class TanzilReader
     Public Shared Function GetQuranHamzaMaddDoubleLetterPatterns() As String()
         Dim CurPat As String = CachedData.GetPattern("Hamzas")
         Dim Prefixes As New Dictionary(Of String, ArrayList)
-        Dim Suffixes As New Dictionary(Of String, String)
+        Dim Suffixes As New Dictionary(Of String, ArrayList)
         Dim PreMidSuf As New Dictionary(Of String, Dictionary(Of String, String)) 'Prefix indexed
         Dim SufMidPre As New Dictionary(Of String, Dictionary(Of String, String)) 'Suffix indexed
         For Each Key As String In CachedData.FormDictionary.Keys
@@ -4578,14 +4579,30 @@ Public Class TanzilReader
                         Next
                         If Pre <> String.Empty Then
                             If Not Prefixes.ContainsKey(Matches(Count).Value) Then Prefixes.Add(Matches(Count).Value, New ArrayList)
-                            Prefixes(Matches(Count).Value).Add(Pre)
+                            Prefixes(Matches(Count).Value).Add(StrReverse(Pre))
+                        End If
+                    Next
+                ElseIf Matches(Count).Index = Key.Length - 1 Then
+                    For SubCount As Integer = 0 To CachedData.FormDictionary(Key).Count - 1
+                        Dim Loc(3) As Integer
+                        CType(CachedData.FormDictionary(Key)(SubCount), Integer()).CopyTo(Loc, 0)
+                        Dim Sup As String = String.Empty
+                        Dim LocCount As Integer = CType(CachedData.FormDictionary(Key)(SubCount), Integer())(3) + 1
+                        Do
+                            Loc(3) = LocCount
+                            If Not CachedData.LocDictionary.ContainsKey(String.Join(":", Loc)) Then Exit Do
+                            Sup += CachedData.LocDictionary(String.Join(":", Loc))
+                        Loop While True
+                        If Sup <> String.Empty Then
+                            If Not Suffixes.ContainsKey(Matches(Count).Value) Then Suffixes.Add(Matches(Count).Value, New ArrayList)
+                            Suffixes(Matches(Count).Value).Add(Sup)
                         End If
                     Next
                 End If
             Next
             'CachedData.RecitationDiacritics()
         Next
-        Dim Strings(Prefixes.Count - 1) As String
+        Dim Strings(Prefixes.Count + Suffixes.Count - 1) As String
         Dim CurNum As Integer = 0
         For Each Key As String In Prefixes.Keys
             Prefixes(Key).Sort()
@@ -4593,10 +4610,22 @@ Public Class TanzilReader
             For Count = 0 To Prefixes(Key).Count - 1
                 If Count = Prefixes(Key).Count - 1 OrElse CStr(Prefixes(Key)(Count)) <> CStr(Prefixes(Key)(Count + 1)) Then
                     If Pres <> String.Empty Then Pres += ", "
-                    Pres += CStr(Prefixes(Key)(Count))
+                    Pres += StrReverse(CStr(Prefixes(Key)(Count)))
                 End If
             Next
             Strings(CurNum) = ArabicData.LeftToRightOverride + "Pre: " + Pres + " Key: " + Key + ArabicData.PopDirectionalFormatting
+            CurNum += 1
+        Next
+        For Each Key As String In Suffixes.Keys
+            Suffixes(Key).Sort()
+            Dim Pres As String = String.Empty
+            For Count = 0 To Suffixes(Key).Count - 1
+                If Count = Suffixes(Key).Count - 1 OrElse CStr(Suffixes(Key)(Count)) <> CStr(Suffixes(Key)(Count + 1)) Then
+                    If Pres <> String.Empty Then Pres += ", "
+                    Pres += CStr(Suffixes(Key)(Count))
+                End If
+            Next
+            Strings(CurNum) = ArabicData.LeftToRightOverride + "Key: " + Key + " Sup: " + Pres + ArabicData.PopDirectionalFormatting
             CurNum += 1
         Next
         Return Strings
@@ -5335,7 +5364,7 @@ Public Class TanzilReader
                     IndexToVerseList.Add(New Integer() {Count + 1, SubCount + 1, WordCount + 1, Index, Words(WordCount).Length})
                     Index += Words(WordCount).Length + 1
                 Next
-                Str.Append(Verses(Count)(SubCount) + Arabic.TransliterateFromBuckwalter("=" + CStr(SubCount + 1)) + " ")
+                Str.Append(Verses(Count)(SubCount) + Arabic.TransliterateFromBuckwalter(" =" + CStr(SubCount + 1)) + " ")
             Next
         Next
         IndexToVerse = IndexToVerseList.ToArray()

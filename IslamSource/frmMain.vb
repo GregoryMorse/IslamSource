@@ -15,6 +15,9 @@ Public Class frmMain
         'TanzilReader.CompareQuranFormats(TanzilReader.QuranTexts.Hafs, TanzilReader.QuranTexts.Warsh, TanzilReader.QuranScripts.Uthmani, TanzilReader.ArabicPresentation.Buckwalter)
         'TanzilReader.ChangeQuranFormat(TanzilReader.QuranTexts.Hafs, TanzilReader.QuranTexts.Warsh, TanzilReader.QuranScripts.Uthmani, TanzilReader.ArabicPresentation.Buckwalter)
         'TanzilReader.CheckNotablePatterns()
+        Dim IndexToVerse As Integer()() = Nothing
+        Dim Text As String = TanzilReader.QuranTextCombiner(IndexToVerse)
+        System.Text.RegularExpressions.Regex.Match(Text, CachedData.GetPattern("ContinuousMatch"))
         Arabic.TransliterateToScheme(Arabic.TransliterateFromBuckwalter("sawodapu {bonatu zamoEapK"), ArabicData.TranslitScheme.RuleBased, "PlainRoman", TanzilReader.GenerateDefaultStops(Arabic.TransliterateFromBuckwalter("sawodapu {bonatu zamoEapK")))
         'Utility.SortResX(Utility.GetFilePath("IslamResources\Resources.en.resx"))
         'Utility.SortResX(Utility.GetFilePath("IslamResources\My Project\Resources.resx"))
