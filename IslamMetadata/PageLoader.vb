@@ -3651,7 +3651,7 @@ Public Class DocBuilder
                     Dim CurColCount As Integer
                     Dim LowThreshold As Double = 100
                     For CurColCount = 0 To LABColors.Count - 1
-                        LowThreshold = Math.Min(LowThreshold, CMCCompareColors(LABColors(CurColCount), New LABColor With {.L = L, .A = A, .B = B}, 1.0, 1.0))
+                        LowThreshold = Math.Min(LowThreshold, CMCCompareColors(LABColors(CurColCount), New LABColor With {.L = L, .A = ((A \ 2) + If((A Mod 2) = 1, 1, 0)) * If((A Mod 2) = 1, 1, -1), .B = ((B \ 2) + If((B Mod 2) = 1, 1, 0)) * If((B Mod 2) = 1, 1, -1)}, 1.0, 1.0))
                         If LowThreshold < Threshold Then Exit For
                     Next
                     If CurColCount = LABColors.Count Then
