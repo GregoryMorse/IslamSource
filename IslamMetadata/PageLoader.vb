@@ -3114,7 +3114,7 @@ Public Class CachedData
     Shared _LetterSufDictionary As New Generic.Dictionary(Of Char, Generic.Dictionary(Of String, ArrayList))
     Shared _PreDictionary As New Generic.Dictionary(Of String, ArrayList)
     Shared _SufDictionary As New Generic.Dictionary(Of String, ArrayList)
-    Shared _LocDictionary As New Generic.Dictionary(Of Integer(), String)
+    Shared _LocDictionary As New Generic.Dictionary(Of String, String)
     Shared _IsolatedLetterDictionary As New Generic.Dictionary(Of Char, ArrayList)
     Shared _TotalLetters As Integer = 0
     Shared _TotalIsolatedLetters As Integer = 0
@@ -3142,7 +3142,7 @@ Public Class CachedData
                         _TagDictionary.Add(Pieces(2), New Generic.Dictionary(Of String, ArrayList))
                     End If
                     Dim Location As Integer() = Array.ConvertAll(Pieces(0).TrimStart("("c).TrimEnd(")"c).Split(":"c), Function(Str As String) CInt(Str))
-                    _LocDictionary.Add(Location, Pieces(1))
+                    _LocDictionary.Add(Pieces(0).TrimStart("("c).TrimEnd(")"c), Pieces(1))
                     _FormDictionary.Item(Pieces(1)).Add(Location)
                     If Not _TagDictionary.Item(Pieces(2)).ContainsKey(Pieces(1)) Then
                         _TagDictionary.Item(Pieces(2)).Add(Pieces(1), New ArrayList)
@@ -3453,7 +3453,7 @@ Public Class CachedData
             Return _SufDictionary
         End Get
     End Property
-    Public Shared ReadOnly Property LocDictionary As Generic.Dictionary(Of Integer(), String)
+    Public Shared ReadOnly Property LocDictionary As Generic.Dictionary(Of String, String)
         Get
             If _LocDictionary.Keys.Count = 0 Then GetMorphologicalData()
             Return _LocDictionary
@@ -4565,15 +4565,16 @@ Public Class TanzilReader
         Dim PreMidSuf As New Dictionary(Of String, Dictionary(Of String, String)) 'Prefix indexed
         Dim SufMidPre As New Dictionary(Of String, Dictionary(Of String, String)) 'Suffix indexed
         For Each Key As String In CachedData.FormDictionary.Keys
-            Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(Key, CurPat)
+            Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(Arabic.TransliterateFromBuckwalter(Key), CurPat)
             For Count As Integer = 0 To Matches.Count - 1
                 If Matches(Count).Index = 0 Then
                     For SubCount As Integer = 0 To CachedData.FormDictionary(Key).Count - 1
-                        Dim Loc As Integer() = CType(CachedData.FormDictionary(Key)(SubCount), Integer())
+                        Dim Loc(3) As Integer
+                        CType(CachedData.FormDictionary(Key)(SubCount), Integer()).CopyTo(Loc, 0)
                         Dim Pre As String = String.Empty
                         For LocCount = 1 To CType(CachedData.FormDictionary(Key)(SubCount), Integer())(3) - 1
                             Loc(3) = LocCount
-                            Pre += CachedData.LocDictionary(Loc)
+                            Pre += CachedData.LocDictionary(String.Join(":", Loc))
                         Next
                         If Pre <> String.Empty Then
                             If Not Prefixes.ContainsKey(Matches(Count).Value) Then Prefixes.Add(Matches(Count).Value, New ArrayList)
@@ -4595,7 +4596,7 @@ Public Class TanzilReader
                     Pres += CStr(Prefixes(Key)(Count))
                 End If
             Next
-            Strings(CurNum) = ArabicData.LeftToRightOverride + "Pre: " + Pres + "Key: " + Key + ArabicData.PopDirectionalFormatting
+            Strings(CurNum) = ArabicData.LeftToRightOverride + "Pre: " + Pres + " Key: " + Key + ArabicData.PopDirectionalFormatting
             CurNum += 1
         Next
         Return Strings
