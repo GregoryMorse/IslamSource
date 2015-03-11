@@ -3116,7 +3116,7 @@ Public Class CachedData
     Shared _LetterSufDictionary As New Generic.Dictionary(Of Char, Generic.Dictionary(Of String, ArrayList))
     Shared _PreDictionary As New Generic.Dictionary(Of String, ArrayList)
     Shared _SufDictionary As New Generic.Dictionary(Of String, ArrayList)
-    Shared _LocDictionary As New Generic.Dictionary(Of String, String)
+    Shared _LocDictionary As New Generic.Dictionary(Of String, Object())
     Shared _IsolatedLetterDictionary As New Generic.Dictionary(Of Char, ArrayList)
     Shared _TotalLetters As Integer = 0
     Shared _TotalIsolatedLetters As Integer = 0
@@ -3144,13 +3144,13 @@ Public Class CachedData
                         _TagDictionary.Add(Pieces(2), New Generic.Dictionary(Of String, ArrayList))
                     End If
                     Dim Location As Integer() = Array.ConvertAll(Pieces(0).TrimStart("("c).TrimEnd(")"c).Split(":"c), Function(Str As String) CInt(Str))
-                    _LocDictionary.Add(Pieces(0).TrimStart("("c).TrimEnd(")"c), Pieces(1))
                     _FormDictionary.Item(Pieces(1)).Add(Location)
                     If Not _TagDictionary.Item(Pieces(2)).ContainsKey(Pieces(1)) Then
                         _TagDictionary.Item(Pieces(2)).Add(Pieces(1), New ArrayList)
                     End If
                     _TagDictionary.Item(Pieces(2)).Item(Pieces(1)).Add(Location)
                     Dim Parts As String() = Pieces(3).Split("|"c)
+                    _LocDictionary.Add(Pieces(0).TrimStart("("c).TrimEnd(")"c), {Pieces(1), Array.Find(Parts, Function(Str As String) Str = "PREFIX") <> String.Empty, Array.Find(Parts, Function(Str As String) Str = "SUFFIX") <> String.Empty})
                     If Array.Find(Parts, Function(Str As String) Str = "PREFIX" Or Str = "SUFFIX") = String.Empty Then
                         'LEM: or if not present FORM
                         Dim Lem As String = Array.Find(Parts, Function(Str As String) Str.StartsWith("LEM:"))
@@ -3455,7 +3455,7 @@ Public Class CachedData
             Return _SufDictionary
         End Get
     End Property
-    Public Shared ReadOnly Property LocDictionary As Generic.Dictionary(Of String, String)
+    Public Shared ReadOnly Property LocDictionary As Generic.Dictionary(Of String, Object())
         Get
             If _LocDictionary.Keys.Count = 0 Then GetMorphologicalData()
             Return _LocDictionary
@@ -4561,7 +4561,7 @@ Public Class TanzilReader
         Return Strings
     End Function
     Public Shared Function GetQuranHamzaMaddDoubleLetterPatterns() As String()
-        Dim CurPat As String = CachedData.GetPattern("Hamzas")
+        Dim CurPat As String = ArabicData.MakeRegMultiEx(CachedData.RecitationSymbols)
         Dim Prefixes As New Dictionary(Of String, ArrayList)
         Dim Suffixes As New Dictionary(Of String, ArrayList)
         Dim PreMidSuf As New Dictionary(Of String, Dictionary(Of String, String)) 'Prefix indexed
@@ -4573,30 +4573,39 @@ Public Class TanzilReader
                     For SubCount As Integer = 0 To CachedData.FormDictionary(Key).Count - 1
                         Dim Loc(3) As Integer
                         CType(CachedData.FormDictionary(Key)(SubCount), Integer()).CopyTo(Loc, 0)
-                        Dim Pre As String = String.Empty
-                        For LocCount = 1 To CType(CachedData.FormDictionary(Key)(SubCount), Integer())(3) - 1
-                            Loc(3) = LocCount
-                            Pre += CachedData.LocDictionary(String.Join(":", Loc))
-                        Next
-                        If Pre <> String.Empty Then
-                            If Not Prefixes.ContainsKey(Matches(Count).Value) Then Prefixes.Add(Matches(Count).Value, New ArrayList)
-                            Prefixes(Matches(Count).Value).Add(StrReverse(Pre))
+                        If (Not CBool(CachedData.LocDictionary(String.Join(":", Loc))(1)) And Not CBool(CachedData.LocDictionary(String.Join(":", Loc))(2))) Then
+                            Dim Pre As String = String.Empty
+                            For LocCount = 1 To CType(CachedData.FormDictionary(Key)(SubCount), Integer())(3) - 1
+                                Loc(3) = LocCount
+                                Pre += CStr(CachedData.LocDictionary(String.Join(":", Loc))(0))
+                            Next
+                            If Pre <> String.Empty Then
+                                If Not Prefixes.ContainsKey(Matches(Count).Value) Then Prefixes.Add(Matches(Count).Value, New ArrayList)
+                                Prefixes(Matches(Count).Value).Add(StrReverse(Pre))
+                                If Matches(Count).Value <> ArabicData.ArabicLetterAlefWasla Then
+                                    If Not Prefixes.ContainsKey("!" + ArabicData.ArabicLetterAlefWasla) Then Prefixes.Add("!" + ArabicData.ArabicLetterAlefWasla, New ArrayList)
+                                    Prefixes("!" + ArabicData.ArabicLetterAlefWasla).Add(StrReverse(Pre))
+                                End If
+                            End If
                         End If
                     Next
                 ElseIf Matches(Count).Index = Key.Length - 1 Then
                     For SubCount As Integer = 0 To CachedData.FormDictionary(Key).Count - 1
                         Dim Loc(3) As Integer
                         CType(CachedData.FormDictionary(Key)(SubCount), Integer()).CopyTo(Loc, 0)
-                        Dim Sup As String = String.Empty
-                        Dim LocCount As Integer = CType(CachedData.FormDictionary(Key)(SubCount), Integer())(3) + 1
-                        Do
-                            Loc(3) = LocCount
-                            If Not CachedData.LocDictionary.ContainsKey(String.Join(":", Loc)) Then Exit Do
-                            Sup += CachedData.LocDictionary(String.Join(":", Loc))
-                        Loop While True
-                        If Sup <> String.Empty Then
-                            If Not Suffixes.ContainsKey(Matches(Count).Value) Then Suffixes.Add(Matches(Count).Value, New ArrayList)
-                            Suffixes(Matches(Count).Value).Add(Sup)
+                        If (Not CBool(CachedData.LocDictionary(String.Join(":", Loc))(1)) And Not CBool(CachedData.LocDictionary(String.Join(":", Loc))(2))) Then
+                            Dim Sup As String = String.Empty
+                            Dim LocCount As Integer = CType(CachedData.FormDictionary(Key)(SubCount), Integer())(3) + 1
+                            Do
+                                Loc(3) = LocCount
+                                If Not CachedData.LocDictionary.ContainsKey(String.Join(":", Loc)) Then Exit Do
+                                Sup += CStr(CachedData.LocDictionary(String.Join(":", Loc))(0))
+                                LocCount += 1
+                            Loop While True
+                            If Sup <> String.Empty Then
+                                If Not Suffixes.ContainsKey(Matches(Count).Value) Then Suffixes.Add(Matches(Count).Value, New ArrayList)
+                                Suffixes(Matches(Count).Value).Add(Sup)
+                            End If
                         End If
                     Next
                 End If
@@ -4610,7 +4619,7 @@ Public Class TanzilReader
             Dim Pres As String = String.Empty
             For Count = 0 To Prefixes(Key).Count - 1
                 If Count = Prefixes(Key).Count - 1 OrElse CStr(Prefixes(Key)(Count)) <> CStr(Prefixes(Key)(Count + 1)) Then
-                    If Pres <> String.Empty Then Pres += ", "
+                    If Pres <> String.Empty Then Pres += " / "
                     Pres += StrReverse(CStr(Prefixes(Key)(Count)))
                 End If
             Next
@@ -4622,7 +4631,7 @@ Public Class TanzilReader
             Dim Pres As String = String.Empty
             For Count = 0 To Suffixes(Key).Count - 1
                 If Count = Suffixes(Key).Count - 1 OrElse CStr(Suffixes(Key)(Count)) <> CStr(Suffixes(Key)(Count + 1)) Then
-                    If Pres <> String.Empty Then Pres += ", "
+                    If Pres <> String.Empty Then Pres += " / "
                     Pres += CStr(Suffixes(Key)(Count))
                 End If
             Next
