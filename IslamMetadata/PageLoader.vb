@@ -4667,6 +4667,13 @@ Public Class TanzilReader
             Dim Pres As String = String.Empty
             For Each Pre As String In PreMidSuf(Key).Keys
                 PreMidSuf(Key)(Pre).Sort()
+                For Each Check As String In PreMidSuf.Keys
+                    If Key <> Check Then
+                        If PreMidSuf(Check).ContainsKey(Pre) Then
+                            Pres += "!!!" + String.Join(" / ", Array.FindAll(CType(PreMidSuf(Key)(Pre).ToArray(GetType(String)), String()), Function(S As String) Array.IndexOf(CType(PreMidSuf(Check)(Pre).ToArray(GetType(String)), String()), S) <> -1)) + "!!!"
+                        End If
+                    End If
+                Next
                 Pres += Pre + ":("
                 For Count = 0 To PreMidSuf(Key)(Pre).Count - 1
                     If Count = PreMidSuf(Key)(Pre).Count - 1 OrElse CStr(PreMidSuf(Key)(Pre)(Count)) <> CStr(PreMidSuf(Key)(Pre)(Count + 1)) Then
