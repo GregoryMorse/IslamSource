@@ -3111,6 +3111,7 @@ Public Class CachedData
     Shared _FormDictionary As New Generic.Dictionary(Of String, ArrayList)
     Shared _TagDictionary As New Generic.Dictionary(Of String, Generic.Dictionary(Of String, ArrayList))
     Shared _WordDictionary As New Generic.Dictionary(Of String, ArrayList)
+    Shared _RealWordDictionary As New Generic.Dictionary(Of String, ArrayList)
     Shared _LetterDictionary As New Generic.Dictionary(Of Char, Generic.Dictionary(Of String, ArrayList))
     Shared _LetterPreDictionary As New Generic.Dictionary(Of Char, Generic.Dictionary(Of String, ArrayList))
     Shared _LetterSufDictionary As New Generic.Dictionary(Of Char, Generic.Dictionary(Of String, ArrayList))
@@ -3240,10 +3241,15 @@ Public Class CachedData
         Next
     End Sub
     Public Shared Sub BuildQuranLetterIndex()
+        'Bismillah are not counted in here
         Dim Verses As Collections.Generic.List(Of String())
         Verses = TanzilReader.GetQuranText(CachedData.XMLDocMain, -1, -1, -1, -1)
         For Count As Integer = 0 To Verses.Count - 1
             For SubCount As Integer = 0 To Verses(Count).Length - 1
+                Dim Words As String() = Verses(Count)(SubCount).Split(" "c)
+                For LetCount As Integer = 0 To Words.Length - 1
+                    If Not _RealWordDictionary.ContainsKey(Words(LetCount)) Then _RealWordDictionary.Add(Words(LetCount), Nothing)
+                Next
                 For LetCount As Integer = 0 To Verses(Count)(SubCount).Length - 1
                     _TotalLetters += 1
                     If Not _LetterDictionary.ContainsKey(Verses(Count)(SubCount)(LetCount)) Then
@@ -3423,6 +3429,12 @@ Public Class CachedData
         Get
             If _WordDictionary.Keys.Count = 0 Then GetMorphologicalData()
             Return _WordDictionary
+        End Get
+    End Property
+    Public Shared ReadOnly Property RealWordDictionary As Generic.Dictionary(Of String, ArrayList)
+        Get
+            If _RealWordDictionary.Keys.Count = 0 Then BuildQuranLetterIndex()
+            Return _RealWordDictionary
         End Get
     End Property
     Public Shared ReadOnly Property LetterDictionary As Generic.Dictionary(Of Char, Generic.Dictionary(Of String, ArrayList))
@@ -4635,7 +4647,30 @@ Public Class TanzilReader
                     PreMidSuf(Matches(Count).Value)(Pre).Add(Suf)
                 End If
             Next
-            'CachedData.RecitationDiacritics()
+        Next
+        PreMidSuf.Clear()
+        For Each Key As String In CachedData.RealWordDictionary.Keys
+            Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(Key, CurPat)
+            For Count As Integer = 0 To Matches.Count - 1
+                If Matches(Count).Value = ArabicData.ArabicLetterHamza Or Matches(Count).Value = ArabicData.ArabicLetterAlefWithHamzaAbove Or Matches(Count).Value = ArabicData.ArabicLetterAlefWithHamzaBelow Or Matches(Count).Value = ArabicData.ArabicLetterWawWithHamzaAbove Or Matches(Count).Value = ArabicData.ArabicLetterYehWithHamzaAbove Or Matches(Count).Value = ArabicData.ArabicHamzaAbove Then
+                    Dim Pre As String = String.Empty
+                    For SubCount As Integer = Matches(Count).Index - 1 To 0 Step -1
+                        If Array.IndexOf(CachedData.ArabicSunLetters, CStr(Key(SubCount))) = -1 And Array.IndexOf(CachedData.ArabicMoonLettersNoVowels, CStr(Key(SubCount))) = -1 Then
+                            Pre = Arabic.TransliterateToScheme(Key(SubCount), ArabicData.TranslitScheme.Literal, String.Empty) + Pre
+                        Else
+                            Exit For
+                        End If
+                    Next
+                    Dim Suf As String = String.Empty
+                    For SubCount As Integer = Matches(Count).Index + 1 To Key.Length - 1
+                        Suf += Arabic.TransliterateToScheme(Key(SubCount), ArabicData.TranslitScheme.Literal, String.Empty)
+                        If Array.IndexOf(CachedData.ArabicSunLetters, CStr(Key(SubCount))) <> -1 Or Array.IndexOf(CachedData.ArabicMoonLettersNoVowels, CStr(Key(SubCount))) <> -1 Or ArabicData.ArabicLetterTehMarbuta = Key(SubCount) Then Exit For
+                    Next
+                    If Not PreMidSuf.ContainsKey(Matches(Count).Value) Then PreMidSuf.Add(Matches(Count).Value, New Dictionary(Of String, ArrayList))
+                    If Not PreMidSuf(Matches(Count).Value).ContainsKey(Pre) Then PreMidSuf(Matches(Count).Value).Add(Pre, New ArrayList)
+                    PreMidSuf(Matches(Count).Value)(Pre).Add(Suf)
+                End If
+            Next
         Next
         Dim Strings(Prefixes.Count + Suffixes.Count + PreMidSuf.Count - 1) As String
         Dim CurNum As Integer = 0
@@ -4667,17 +4702,19 @@ Public Class TanzilReader
             Dim Pres As String = String.Empty
             For Each Pre As String In PreMidSuf(Key).Keys
                 PreMidSuf(Key)(Pre).Sort()
-                For Each Check As String In PreMidSuf.Keys
-                    If Key <> Check Then
-                        If PreMidSuf(Check).ContainsKey(Pre) Then
-                            Pres += "!!!" + String.Join(" / ", Array.FindAll(CType(PreMidSuf(Key)(Pre).ToArray(GetType(String)), String()), Function(S As String) Array.IndexOf(CType(PreMidSuf(Check)(Pre).ToArray(GetType(String)), String()), S) <> -1)) + "!!!"
-                        End If
-                    End If
-                Next
                 Pres += Pre + ":("
+                Dim bFirst As Boolean = True
                 For Count = 0 To PreMidSuf(Key)(Pre).Count - 1
                     If Count = PreMidSuf(Key)(Pre).Count - 1 OrElse CStr(PreMidSuf(Key)(Pre)(Count)) <> CStr(PreMidSuf(Key)(Pre)(Count + 1)) Then
-                        If Pres <> String.Empty Then Pres += " / "
+                        If Not bFirst Then Pres += " / "
+                        bFirst = False
+                        For Each Check As String In PreMidSuf.Keys
+                            If Key <> Check Then
+                                If PreMidSuf(Check).ContainsKey(Pre) Then
+                                    If Array.IndexOf(CType(PreMidSuf(Check)(Pre).ToArray(GetType(String)), String()), CStr(PreMidSuf(Key)(Pre)(Count))) <> -1 Then Pres += "!!!" + Check + "!!!"
+                                End If
+                            End If
+                        Next
                         Pres += CStr(PreMidSuf(Key)(Pre)(Count))
                     End If
                 Next
