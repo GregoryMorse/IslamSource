@@ -3150,7 +3150,7 @@ Public Class CachedData
                     End If
                     _TagDictionary.Item(Pieces(2)).Item(Pieces(1)).Add(Location)
                     Dim Parts As String() = Pieces(3).Split("|"c)
-                    _LocDictionary.Add(Pieces(0).TrimStart("("c).TrimEnd(")"c), {Pieces(1), Array.Find(Parts, Function(Str As String) Str = "PREFIX") <> String.Empty, Array.Find(Parts, Function(Str As String) Str = "SUFFIX") <> String.Empty})
+                    _LocDictionary.Add(Pieces(0).TrimStart("("c).TrimEnd(")"c), {Pieces(1), Array.Find(Parts, Function(Str As String) Str = "PREFIX") <> String.Empty, Array.Find(Parts, Function(Str As String) Str = "SUFFIX") <> String.Empty, Pieces(2)})
                     If Array.Find(Parts, Function(Str As String) Str = "PREFIX" Or Str = "SUFFIX") = String.Empty Then
                         'LEM: or if not present FORM
                         Dim Lem As String = Array.Find(Parts, Function(Str As String) Str.StartsWith("LEM:"))
@@ -4564,8 +4564,8 @@ Public Class TanzilReader
         Dim CurPat As String = ArabicData.MakeRegMultiEx(CachedData.RecitationSymbols)
         Dim Prefixes As New Dictionary(Of String, ArrayList)
         Dim Suffixes As New Dictionary(Of String, ArrayList)
-        Dim PreMidSuf As New Dictionary(Of String, Dictionary(Of String, String)) 'Prefix indexed
-        Dim SufMidPre As New Dictionary(Of String, Dictionary(Of String, String)) 'Suffix indexed
+        Dim PreMidSuf As New Dictionary(Of String, Dictionary(Of String, ArrayList)) 'Prefix indexed
+        Dim SufMidPre As New Dictionary(Of String, Dictionary(Of String, ArrayList)) 'Suffix indexed
         For Each Key As String In CachedData.FormDictionary.Keys
             Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(Arabic.TransliterateFromBuckwalter(Key), CurPat)
             For Count As Integer = 0 To Matches.Count - 1
@@ -4573,16 +4573,22 @@ Public Class TanzilReader
                     For SubCount As Integer = 0 To CachedData.FormDictionary(Key).Count - 1
                         Dim Loc(3) As Integer
                         CType(CachedData.FormDictionary(Key)(SubCount), Integer()).CopyTo(Loc, 0)
-                        If (Not CBool(CachedData.LocDictionary(String.Join(":", Loc))(1)) And Not CBool(CachedData.LocDictionary(String.Join(":", Loc))(2))) Then
+                        If (Not CBool(CachedData.LocDictionary(String.Join(":", Loc))(1)) And Not CBool(CachedData.LocDictionary(String.Join(":", Loc))(2))) Or CStr(CachedData.LocDictionary(String.Join(":", Loc))(3)) = "DET" Or (Matches(Count).Value = ArabicData.ArabicLetterAlefWasla And CStr(CachedData.LocDictionary(String.Join(":", Loc))(3)) = "PN") Then
                             Dim Pre As String = String.Empty
                             For LocCount = 1 To CType(CachedData.FormDictionary(Key)(SubCount), Integer())(3) - 1
                                 Loc(3) = LocCount
                                 Pre += CStr(CachedData.LocDictionary(String.Join(":", Loc))(0))
                             Next
                             If Pre <> String.Empty Then
-                                If Not Prefixes.ContainsKey(Matches(Count).Value) Then Prefixes.Add(Matches(Count).Value, New ArrayList)
-                                Prefixes(Matches(Count).Value).Add(StrReverse(Pre))
-                                If Matches(Count).Value <> ArabicData.ArabicLetterAlefWasla Then
+                                Loc(3) = CType(CachedData.FormDictionary(Key)(SubCount), Integer())(3)
+                                If CStr(CachedData.LocDictionary(String.Join(":", Loc))(3)) = "DET" Or (Matches(Count).Value = ArabicData.ArabicLetterAlefWasla And CStr(CachedData.LocDictionary(String.Join(":", Loc))(3)) = "PN") Then
+                                    If Not Prefixes.ContainsKey("Al+") Then Prefixes.Add("Al+", New ArrayList)
+                                    Prefixes("Al+").Add(StrReverse(Pre))
+                                Else
+                                    If Not Prefixes.ContainsKey(Matches(Count).Value) Then Prefixes.Add(Matches(Count).Value, New ArrayList)
+                                    Prefixes(Matches(Count).Value).Add(StrReverse(Pre))
+                                End If
+                                If Matches(Count).Value <> ArabicData.ArabicLetterAlefWasla And CStr(CachedData.LocDictionary(String.Join(":", Loc))(3)) <> "DET" Then
                                     If Not Prefixes.ContainsKey("!" + ArabicData.ArabicLetterAlefWasla) Then Prefixes.Add("!" + ArabicData.ArabicLetterAlefWasla, New ArrayList)
                                     Prefixes("!" + ArabicData.ArabicLetterAlefWasla).Add(StrReverse(Pre))
                                 End If
@@ -4609,10 +4615,29 @@ Public Class TanzilReader
                         End If
                     Next
                 End If
+                If Matches(Count).Value = ArabicData.ArabicLetterHamza Or Matches(Count).Value = ArabicData.ArabicLetterAlefWithHamzaAbove Or Matches(Count).Value = ArabicData.ArabicLetterAlefWithHamzaBelow Or Matches(Count).Value = ArabicData.ArabicLetterWawWithHamzaAbove Or Matches(Count).Value = ArabicData.ArabicLetterYehWithHamzaAbove Or Matches(Count).Value = ArabicData.ArabicHamzaAbove Then
+                    Dim AKey As String = Arabic.TransliterateFromBuckwalter(Key)
+                    Dim Pre As String = String.Empty
+                    For SubCount As Integer = Matches(Count).Index - 1 To 0 Step -1
+                        If Array.IndexOf(CachedData.ArabicSunLetters, CStr(AKey(SubCount))) = -1 And Array.IndexOf(CachedData.ArabicMoonLettersNoVowels, CStr(AKey(SubCount))) = -1 Then
+                            Pre = Key(SubCount) + Pre
+                        Else
+                            Exit For
+                        End If
+                    Next
+                    Dim Suf As String = String.Empty
+                    For SubCount As Integer = Matches(Count).Index + 1 To Key.Length - 1
+                        Suf += Key(SubCount)
+                        If Array.IndexOf(CachedData.ArabicSunLetters, CStr(AKey(SubCount))) <> -1 Or Array.IndexOf(CachedData.ArabicMoonLettersNoVowels, CStr(AKey(SubCount))) <> -1 Or ArabicData.ArabicLetterTehMarbuta = AKey(SubCount) Then Exit For
+                    Next
+                    If Not PreMidSuf.ContainsKey(Matches(Count).Value) Then PreMidSuf.Add(Matches(Count).Value, New Dictionary(Of String, ArrayList))
+                    If Not PreMidSuf(Matches(Count).Value).ContainsKey(Pre) Then PreMidSuf(Matches(Count).Value).Add(Pre, New ArrayList)
+                    PreMidSuf(Matches(Count).Value)(Pre).Add(Suf)
+                End If
             Next
             'CachedData.RecitationDiacritics()
         Next
-        Dim Strings(Prefixes.Count + Suffixes.Count - 1) As String
+        Dim Strings(Prefixes.Count + Suffixes.Count + PreMidSuf.Count - 1) As String
         Dim CurNum As Integer = 0
         For Each Key As String In Prefixes.Keys
             Prefixes(Key).Sort()
@@ -4635,7 +4660,23 @@ Public Class TanzilReader
                     Pres += CStr(Suffixes(Key)(Count))
                 End If
             Next
-            Strings(CurNum) = ArabicData.LeftToRightOverride + "Key: " + Key + " Sup: " + Pres + ArabicData.PopDirectionalFormatting
+            Strings(CurNum) = ArabicData.LeftToRightOverride + "Key: " + Key + " Suf: " + Pres + ArabicData.PopDirectionalFormatting
+            CurNum += 1
+        Next
+        For Each Key As String In PreMidSuf.Keys
+            Dim Pres As String = String.Empty
+            For Each Pre As String In PreMidSuf(Key).Keys
+                PreMidSuf(Key)(Pre).Sort()
+                Pres += Pre + ":("
+                For Count = 0 To PreMidSuf(Key)(Pre).Count - 1
+                    If Count = PreMidSuf(Key)(Pre).Count - 1 OrElse CStr(PreMidSuf(Key)(Pre)(Count)) <> CStr(PreMidSuf(Key)(Pre)(Count + 1)) Then
+                        If Pres <> String.Empty Then Pres += " / "
+                        Pres += CStr(PreMidSuf(Key)(Pre)(Count))
+                    End If
+                Next
+                Pres += ") "
+            Next
+            Strings(CurNum) = ArabicData.LeftToRightOverride + "Key: " + Key + " Pre-Suf: " + Pres + ArabicData.PopDirectionalFormatting
             CurNum += 1
         Next
         Return Strings
