@@ -4677,29 +4677,30 @@ Public Class TanzilReader
             Next
         Next
         'PreMidSuf.Clear()
-        'For Each Key As String In CachedData.RealWordDictionary.Keys
-        '    Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(Key, CurPat)
-        '    For Count As Integer = 0 To Matches.Count - 1
-        '        If Matches(Count).Value = ArabicData.ArabicLetterHamza Or Matches(Count).Value = ArabicData.ArabicLetterAlefWithHamzaAbove Or Matches(Count).Value = ArabicData.ArabicLetterAlefWithHamzaBelow Or Matches(Count).Value = ArabicData.ArabicLetterWawWithHamzaAbove Or Matches(Count).Value = ArabicData.ArabicLetterYehWithHamzaAbove Or Matches(Count).Value = ArabicData.ArabicHamzaAbove Then
-        '            Dim Pre As String = String.Empty
-        '            For SubCount As Integer = Matches(Count).Index - 1 To 0 Step -1
-        '                If Array.IndexOf(CachedData.ArabicSunLetters, CStr(Key(SubCount))) = -1 And Array.IndexOf(CachedData.ArabicMoonLettersNoVowels, CStr(Key(SubCount))) = -1 Then
-        '                    Pre = Arabic.TransliterateToScheme(Key(SubCount), ArabicData.TranslitScheme.Literal, String.Empty) + Pre
-        '                Else
-        '                    Exit For
-        '                End If
-        '            Next
-        '            Dim Suf As String = String.Empty
-        '            For SubCount As Integer = Matches(Count).Index + 1 To Key.Length - 1
-        '                Suf += Arabic.TransliterateToScheme(Key(SubCount), ArabicData.TranslitScheme.Literal, String.Empty)
-        '                If Array.IndexOf(CachedData.ArabicSunLetters, CStr(Key(SubCount))) <> -1 Or Array.IndexOf(CachedData.ArabicMoonLettersNoVowels, CStr(Key(SubCount))) <> -1 Or ArabicData.ArabicLetterTehMarbuta = Key(SubCount) Then Exit For
-        '            Next
-        '            If Not PreMidSuf.ContainsKey(Matches(Count).Value) Then PreMidSuf.Add(Matches(Count).Value, New Dictionary(Of String, ArrayList))
-        '            If Not PreMidSuf(Matches(Count).Value).ContainsKey(Pre) Then PreMidSuf(Matches(Count).Value).Add(Pre, New ArrayList)
-        '            PreMidSuf(Matches(Count).Value)(Pre).Add(Suf)
-        '        End If
-        '    Next
-        'Next
+        For Each Key As String In CachedData.RealWordDictionary.Keys
+            Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(Key, CurPat)
+            For Count As Integer = 0 To Matches.Count - 1
+                'If Matches(Count).Value = ArabicData.ArabicLetterHamza Or Matches(Count).Value = ArabicData.ArabicLetterAlefWithHamzaAbove Or Matches(Count).Value = ArabicData.ArabicLetterAlefWithHamzaBelow Or Matches(Count).Value = ArabicData.ArabicLetterWawWithHamzaAbove Or Matches(Count).Value = ArabicData.ArabicLetterYehWithHamzaAbove Or Matches(Count).Value = ArabicData.ArabicHamzaAbove Then
+                If Matches(Count).Value = ArabicData.ArabicLetterAlef Or Matches(Count).Value = ArabicData.ArabicLetterWaw Or Matches(Count).Value = ArabicData.ArabicLetterYeh Or Matches(Count).Value = ArabicData.ArabicLetterAlefMaksura Or Matches(Count).Value = ArabicData.ArabicSmallWaw Or Matches(Count).Value = ArabicData.ArabicSmallYeh Or Matches(Count).Value = ArabicData.ArabicLetterSuperscriptAlef Then
+                    Dim Pre As String = String.Empty
+                    For SubCount As Integer = Matches(Count).Index - 1 To 0 Step -1
+                        If Array.IndexOf(CachedData.ArabicSunLetters, CStr(Key(SubCount))) = -1 And Array.IndexOf(CachedData.ArabicMoonLettersNoVowels, CStr(Key(SubCount))) = -1 Then
+                            Pre = Arabic.TransliterateToScheme(Key(SubCount), ArabicData.TranslitScheme.Literal, String.Empty) + Pre
+                        Else
+                            Exit For
+                        End If
+                    Next
+                    Dim Suf As String = String.Empty
+                    For SubCount As Integer = Matches(Count).Index + 1 To Key.Length - 1
+                        Suf += Arabic.TransliterateToScheme(Key(SubCount), ArabicData.TranslitScheme.Literal, String.Empty)
+                        If Array.IndexOf(CachedData.ArabicSunLetters, CStr(Key(SubCount))) <> -1 Or Array.IndexOf(CachedData.ArabicMoonLettersNoVowels, CStr(Key(SubCount))) <> -1 Or ArabicData.ArabicLetterTehMarbuta = Key(SubCount) Then Exit For
+                    Next
+                    If Not PreMidSuf.ContainsKey(Matches(Count).Value) Then PreMidSuf.Add(Matches(Count).Value, New Dictionary(Of String, ArrayList))
+                    If Not PreMidSuf(Matches(Count).Value).ContainsKey(Pre) Then PreMidSuf(Matches(Count).Value).Add(Pre, New ArrayList)
+                    PreMidSuf(Matches(Count).Value)(Pre).Add(Suf)
+                End If
+            Next
+        Next
         Dim Strings(Prefixes.Count + Suffixes.Count + PreMidSuf.Count - 1) As String
         Dim CurNum As Integer = 0
         For Each Key As String In Prefixes.Keys
