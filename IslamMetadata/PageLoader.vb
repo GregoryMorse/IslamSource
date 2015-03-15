@@ -4633,19 +4633,23 @@ Public Class TanzilReader
                         Dim Loc(3) As Integer
                         CType(CachedData.FormDictionary(Key)(SubCount), Integer()).CopyTo(Loc, 0)
                         'Hamza prefix then must look before
-                        Dim LocCount As Integer
-                        For LocCount = 1 To CType(CachedData.FormDictionary(Key)(SubCount), Integer())(3) - 1
-                            Loc(3) = LocCount
-                            PreCheck += CStr(CachedData.LocDictionary(String.Join(":", Loc))(0))
-                        Next
                         'If Arabic.TransliterateFromBuckwalter(PreCheck).IndexOfAny({ArabicData.ArabicLetterHamza, ArabicData.ArabicLetterAlefWithHamzaAbove, ArabicData.ArabicLetterAlefWithHamzaBelow, ArabicData.ArabicLetterWawWithHamzaAbove, ArabicData.ArabicLetterYehWithHamzaAbove, ArabicData.ArabicHamzaAbove}) = -1 Then PreCheck = String.Empty
                         Dim Pre As String = String.Empty
+                        Dim LocCount As Integer
                         PreCheck += Key.Substring(0, Matches(Count).Index)
                         Dim AKey As String = Arabic.TransliterateFromBuckwalter(PreCheck)
                         For SupCount As Integer = PreCheck.Length - 1 To 0 Step -1
                             Pre = PreCheck(SupCount) + Pre
                             If Array.IndexOf(CachedData.ArabicSunLetters, CStr(AKey(SupCount))) <> -1 Or Array.IndexOf(CachedData.ArabicMoonLettersNoVowels, CStr(AKey(SupCount))) <> -1 Then Exit For
                         Next
+                        If Pre.Length = PreCheck.Length Then
+                            PreCheck = String.Empty
+                            For LocCount = 1 To CType(CachedData.FormDictionary(Key)(SubCount), Integer())(3) - 1
+                                Loc(3) = LocCount
+                                PreCheck += CStr(CachedData.LocDictionary(String.Join(":", Loc))(0))
+                            Next
+                            If PreCheck <> String.Empty Then Pre = "'" + PreCheck + "'" + Pre
+                        End If
                         Dim Sup As String = Key.Substring(Matches(Count).Index + 1)
                         LocCount = CType(CachedData.FormDictionary(Key)(SubCount), Integer())(3) + 1
                         Do
