@@ -4628,6 +4628,8 @@ Public Class TanzilReader
                     Next
                 End If
                 If Matches(Count).Value = ArabicData.ArabicLetterHamza Or Matches(Count).Value = ArabicData.ArabicLetterAlefWithHamzaAbove Or Matches(Count).Value = ArabicData.ArabicLetterAlefWithHamzaBelow Or Matches(Count).Value = ArabicData.ArabicLetterWawWithHamzaAbove Or Matches(Count).Value = ArabicData.ArabicLetterYehWithHamzaAbove Or Matches(Count).Value = ArabicData.ArabicHamzaAbove Then
+                    'At the end of the word, or in the middle of the word when followed by sukun, look before
+                    'At the beginning of the word regardless of prefix, or in the middle of the word when not followed by sukun look after
                     For SubCount As Integer = 0 To CachedData.FormDictionary(Key).Count - 1
                         Dim PreCheck As String = String.Empty
                         Dim Loc(3) As Integer
@@ -4664,14 +4666,27 @@ Public Class TanzilReader
                             Suf += Sup(SufCount)
                             If Array.IndexOf(CachedData.ArabicSunLetters, CStr(AKey(SufCount))) <> -1 Or Array.IndexOf(CachedData.ArabicMoonLettersNoVowels, CStr(AKey(SufCount))) <> -1 Or ArabicData.ArabicLetterTehMarbuta = AKey(SufCount) Then Exit For
                         Next
-                        If Pre.EndsWith("_") Then
-                            If Not PreMidSuf.ContainsKey("_" + Matches(Count).Value) Then PreMidSuf.Add("_" + Matches(Count).Value, New Dictionary(Of String, ArrayList))
-                            If Not PreMidSuf("_" + Matches(Count).Value).ContainsKey(Pre.Remove(Pre.Length - 1)) Then PreMidSuf("_" + Matches(Count).Value).Add(Pre.Remove(Pre.Length - 1), New ArrayList)
-                            PreMidSuf("_" + Matches(Count).Value)(Pre.Remove(Pre.Length - 1)).Add(Suf)
+                        If (Arabic.TransliterateFromBuckwalter(Suf(0)) <> ArabicData.ArabicSukun Or Matches(Count).Index = 0) And Suf.Length <> Sup.Length Then
+                            If Pre.EndsWith("_") Then
+                                If Not SufMidPre.ContainsKey("_" + Matches(Count).Value) Then SufMidPre.Add("_" + Matches(Count).Value, New Dictionary(Of String, ArrayList))
+                                If Not SufMidPre("_" + Matches(Count).Value).ContainsKey(Suf) Then SufMidPre("_" + Matches(Count).Value).Add(Suf, New ArrayList)
+                                SufMidPre("_" + Matches(Count).Value)(Suf).Add(Pre.Remove(Pre.Length - 1))
+                            Else
+                                If Not SufMidPre.ContainsKey(Matches(Count).Value) Then SufMidPre.Add(Matches(Count).Value, New Dictionary(Of String, ArrayList))
+                                If Not SufMidPre(Matches(Count).Value).ContainsKey(Suf) Then SufMidPre(Matches(Count).Value).Add(Suf, New ArrayList)
+                                SufMidPre(Matches(Count).Value)(Suf).Add(Pre)
+                            End If
                         Else
-                            If Not PreMidSuf.ContainsKey(Matches(Count).Value) Then PreMidSuf.Add(Matches(Count).Value, New Dictionary(Of String, ArrayList))
-                            If Not PreMidSuf(Matches(Count).Value).ContainsKey(Pre) Then PreMidSuf(Matches(Count).Value).Add(Pre, New ArrayList)
-                            PreMidSuf(Matches(Count).Value)(Pre).Add(Suf)
+                            Debug.Assert(Arabic.TransliterateFromBuckwalter(Suf(0)) = ArabicData.ArabicSukun Or Suf.Length = Sup.Length)
+                            If Pre.EndsWith("_") Then
+                                If Not PreMidSuf.ContainsKey("_" + Matches(Count).Value) Then PreMidSuf.Add("_" + Matches(Count).Value, New Dictionary(Of String, ArrayList))
+                                If Not PreMidSuf("_" + Matches(Count).Value).ContainsKey(Pre.Remove(Pre.Length - 1)) Then PreMidSuf("_" + Matches(Count).Value).Add(Pre.Remove(Pre.Length - 1), New ArrayList)
+                                PreMidSuf("_" + Matches(Count).Value)(Pre.Remove(Pre.Length - 1)).Add(Suf)
+                            Else
+                                If Not PreMidSuf.ContainsKey(Matches(Count).Value) Then PreMidSuf.Add(Matches(Count).Value, New Dictionary(Of String, ArrayList))
+                                If Not PreMidSuf(Matches(Count).Value).ContainsKey(Pre) Then PreMidSuf(Matches(Count).Value).Add(Pre, New ArrayList)
+                                PreMidSuf(Matches(Count).Value)(Pre).Add(Suf)
+                            End If
                         End If
                     Next
                 End If
@@ -4682,7 +4697,8 @@ Public Class TanzilReader
             Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(Key, CurPat)
             For Count As Integer = 0 To Matches.Count - 1
                 'If Matches(Count).Value = ArabicData.ArabicLetterHamza Or Matches(Count).Value = ArabicData.ArabicLetterAlefWithHamzaAbove Or Matches(Count).Value = ArabicData.ArabicLetterAlefWithHamzaBelow Or Matches(Count).Value = ArabicData.ArabicLetterWawWithHamzaAbove Or Matches(Count).Value = ArabicData.ArabicLetterYehWithHamzaAbove Or Matches(Count).Value = ArabicData.ArabicHamzaAbove Then
-                If Matches(Count).Value = ArabicData.ArabicLetterAlef Or Matches(Count).Value = ArabicData.ArabicLetterWaw Or Matches(Count).Value = ArabicData.ArabicLetterYeh Or Matches(Count).Value = ArabicData.ArabicLetterAlefMaksura Or Matches(Count).Value = ArabicData.ArabicSmallWaw Or Matches(Count).Value = ArabicData.ArabicSmallYeh Or Matches(Count).Value = ArabicData.ArabicLetterSuperscriptAlef Then
+                'If Matches(Count).Value = ArabicData.ArabicLetterAlef Or Matches(Count).Value = ArabicData.ArabicLetterWaw Or Matches(Count).Value = ArabicData.ArabicLetterYeh Or Matches(Count).Value = ArabicData.ArabicLetterAlefMaksura Or Matches(Count).Value = ArabicData.ArabicSmallWaw Or Matches(Count).Value = ArabicData.ArabicSmallYeh Or Matches(Count).Value = ArabicData.ArabicLetterSuperscriptAlef Then
+                If Matches(Count).Index = Key.Length - 1 And (Array.IndexOf(CachedData.ArabicSunLetters, Matches(Count).Value) = -1 And Array.IndexOf(CachedData.ArabicMoonLettersNoVowels, Matches(Count).Value) = -1 And ArabicData.ArabicLetterTehMarbuta <> Matches(Count).Value) Then
                     Dim Pre As String = String.Empty
                     For SubCount As Integer = Matches(Count).Index - 1 To 0 Step -1
                         If Array.IndexOf(CachedData.ArabicSunLetters, CStr(Key(SubCount))) = -1 And Array.IndexOf(CachedData.ArabicMoonLettersNoVowels, CStr(Key(SubCount))) = -1 Then
@@ -4702,7 +4718,7 @@ Public Class TanzilReader
                 End If
             Next
         Next
-        Dim Strings(Prefixes.Count + Suffixes.Count + PreMidSuf.Count - 1) As String
+        Dim Strings(Prefixes.Count + Suffixes.Count + PreMidSuf.Count + SufMidPre.Count - 1) As String
         Dim CurNum As Integer = 0
         For Each Key As String In Prefixes.Keys
             Prefixes(Key).Sort()
@@ -4751,6 +4767,31 @@ Public Class TanzilReader
                 Pres += ") "
             Next
             Strings(CurNum) = ArabicData.LeftToRightOverride + "Key: " + Key + " Pre-Suf: " + Pres + ArabicData.PopDirectionalFormatting
+            CurNum += 1
+        Next
+        For Each Key As String In SufMidPre.Keys
+            Dim Pres As String = String.Empty
+            For Each Pre As String In SufMidPre(Key).Keys
+                SufMidPre(Key)(Pre).Sort()
+                Pres += Pre + ":("
+                Dim bFirst As Boolean = True
+                For Count = 0 To SufMidPre(Key)(Pre).Count - 1
+                    If Count = SufMidPre(Key)(Pre).Count - 1 OrElse CStr(SufMidPre(Key)(Pre)(Count)) <> CStr(SufMidPre(Key)(Pre)(Count + 1)) Then
+                        If Not bFirst Then Pres += " / "
+                        bFirst = False
+                        For Each Check As String In SufMidPre.Keys
+                            If Key <> Check Then
+                                If SufMidPre(Check).ContainsKey(Pre) Then
+                                    If Array.IndexOf(CType(SufMidPre(Check)(Pre).ToArray(GetType(String)), String()), CStr(SufMidPre(Key)(Pre)(Count))) <> -1 Then Pres += "!!!" + Check + "!!!"
+                                End If
+                            End If
+                        Next
+                        Pres += CStr(SufMidPre(Key)(Pre)(Count))
+                    End If
+                Next
+                Pres += ") "
+            Next
+            Strings(CurNum) = ArabicData.LeftToRightOverride + "Key: " + Key + " Suf-Pre: " + Pres + ArabicData.PopDirectionalFormatting
             CurNum += 1
         Next
         Return Strings
