@@ -2696,7 +2696,9 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 		<word text="{loquro&apos;aAnu {lokariymu" id="TheNobleQuran"></word>
 		<word text="quro&apos;aAnu kariymu" id="NobleQuran"></word>
 		<word text="kun maEa {ll~aha" id="BeWithAllah"></word>
+		<word text="baEada {lohijorapi" id="AfterMigration"></word>
 		<word text="h_" id="AfterMigrationSymbol"></word>
+		<word text="\u06BE" id="AfterMigrationHehDoachashmee"></word>
 		<word text="{ls~anapu {lohijiriyapu" id="AfterMigration"></word>
 		<word text="{ll~ahu &gt;akobaru" id="AllahIsGreatest"></word>
 		<word text="{ll~ahu &gt;akobaru\, {ll~ahu &gt;akobaru" id="AllahIsGreatestAllahIsGreatest"></word>
