@@ -4501,70 +4501,105 @@ Public Class TanzilReader
         End If
         Return CType(Output.ToArray(GetType(Array)), Array())
     End Function
-    Public Shared Function IsSingletonDictionary(Dict As Dictionary(Of Char, Object())) As Boolean
-        Dim Keys(Dict.Keys.Count - 1) As Char
+    Public Shared Function IsSingletonDictionary(Dict As Dictionary(Of String, Object())) As Boolean
+        Dim Keys(Dict.Keys.Count - 1) As String
         Dict.Keys.CopyTo(Keys, 0)
-        Return Dict.Keys.Count = 1 AndAlso (CType(Dict(Keys(0))(0), Dictionary(Of Char, Object())).Keys.Count = 0 OrElse IsSingletonDictionary(CType(Dict(Keys(0))(0), Dictionary(Of Char, Object()))))
+        Return Dict.Keys.Count = 1 AndAlso (CType(Dict(Keys(0))(0), Dictionary(Of String, Object())).Keys.Count = 0 OrElse IsSingletonDictionary(CType(Dict(Keys(0))(0), Dictionary(Of String, Object()))))
     End Function
-    Public Shared Function DumpRecDictionary(Dict As Dictionary(Of Char, Object()), Post As Boolean, Depth As Integer, Dual As Boolean) As String
+    Public Shared Function DumpRecDictionary(Dict As Dictionary(Of String, Object()), Post As Boolean, Depth As Integer, Dual As Boolean) As String
         Dim Str As String = String.Empty
-        For Each KV As KeyValuePair(Of Char, Object()) In Dict
+        For Each KV As KeyValuePair(Of String, Object()) In Dict
             If Str <> String.Empty Then Str = If(Post, Str + "/", "/" + Str)
             'if all are 1 recursively
-            If IsSingletonDictionary(CType(KV.Value(0), Dictionary(Of Char, Object()))) Then
+            If IsSingletonDictionary(CType(KV.Value(0), Dictionary(Of String, Object()))) Then
                 If Post Then
-                    Str += Arabic.TransliterateToScheme(KV.Key, ArabicData.TranslitScheme.Literal, String.Empty) + DumpRecDictionary(CType(KV.Value(0), Dictionary(Of Char, Object())), Post, Depth + 1, Dual)
+                    Str += Arabic.TransliterateToScheme(KV.Key, ArabicData.TranslitScheme.Literal, String.Empty) + DumpRecDictionary(CType(KV.Value(0), Dictionary(Of String, Object())), Post, Depth + 1, Dual) + If(Dual AndAlso CType(KV.Value(1), Dictionary(Of String, Object())).Keys.Count <> 0, "!(" + DumpRecDictionary(CType(KV.Value(1), Dictionary(Of String, Object())), Not Post, Depth + 1, False) + ")!", String.Empty)
                 Else
-                    Str = DumpRecDictionary(CType(KV.Value(0), Dictionary(Of Char, Object())), Post, Depth + 1, Dual) + Arabic.TransliterateToScheme(KV.Key, ArabicData.TranslitScheme.Literal, String.Empty) + Str
+                    Str = DumpRecDictionary(CType(KV.Value(0), Dictionary(Of String, Object())), Post, Depth + 1, Dual) + If(Dual AndAlso CType(KV.Value(1), Dictionary(Of String, Object())).Keys.Count <> 0, "!(" + DumpRecDictionary(CType(KV.Value(1), Dictionary(Of String, Object())), Not Post, Depth + 1, False) + ")!", String.Empty) + Arabic.TransliterateToScheme(KV.Key, ArabicData.TranslitScheme.Literal, String.Empty) + Str
                 End If
             ElseIf Post Then
-                Str += Arabic.TransliterateToScheme(KV.Key, ArabicData.TranslitScheme.Literal, String.Empty) + If(CType(KV.Value(0), Dictionary(Of Char, Object())).Keys.Count = 0, String.Empty, vbCrLf + New String(" "c, Depth * 4) + "(" + DumpRecDictionary(CType(KV.Value(0), Dictionary(Of Char, Object())), Post, Depth + 1, Dual) + ")")
+                Str += Arabic.TransliterateToScheme(KV.Key, ArabicData.TranslitScheme.Literal, String.Empty) + If(CType(KV.Value(0), Dictionary(Of String, Object())).Keys.Count = 0, String.Empty, vbCrLf + New String(" "c, Depth * 4) + "(" + DumpRecDictionary(CType(KV.Value(0), Dictionary(Of String, Object())), Post, Depth + 1, Dual) + ")") + If(Dual AndAlso CType(KV.Value(1), Dictionary(Of String, Object())).Keys.Count <> 0, "!(" + DumpRecDictionary(CType(KV.Value(1), Dictionary(Of String, Object())), Not Post, Depth + 1, False) + ")!", String.Empty)
             Else
-                Str = If(CType(KV.Value(0), Dictionary(Of Char, Object())).Keys.Count = 0, String.Empty, vbCrLf + New String(" "c, Depth * 4) + "(" + DumpRecDictionary(CType(KV.Value(0), Dictionary(Of Char, Object())), Post, Depth + 1, Dual) + ")") + Arabic.TransliterateToScheme(KV.Key, ArabicData.TranslitScheme.Literal, String.Empty) + Str
+                Str = If(CType(KV.Value(0), Dictionary(Of String, Object())).Keys.Count = 0, String.Empty, vbCrLf + New String(" "c, Depth * 4) + "(" + DumpRecDictionary(CType(KV.Value(0), Dictionary(Of String, Object())), Post, Depth + 1, Dual) + ")") + If(Dual AndAlso CType(KV.Value(1), Dictionary(Of String, Object())).Keys.Count <> 0, "!(" + DumpRecDictionary(CType(KV.Value(1), Dictionary(Of String, Object())), Not Post, Depth + 1, False) + ")!", String.Empty) + Arabic.TransliterateToScheme(KV.Key, ArabicData.TranslitScheme.Literal, String.Empty) + Str
             End If
         Next
         Return Str
     End Function
+    Public Shared Function CloneDict(Dict As Dictionary(Of String, Object())) As Dictionary(Of String, Object())
+        If Dict Is Nothing Then Return Nothing
+        Dim Clone As New Dictionary(Of String, Object())
+        For Each KV As KeyValuePair(Of String, Object()) In Dict
+            Clone.Add(KV.Key, {CloneDict(CType(KV.Value(0), Dictionary(Of String, Object()))), CloneDict(CType(KV.Value(1), Dictionary(Of String, Object())))})
+        Next
+        Return Clone
+    End Function
+    Public Shared Sub IntersectDict(ByRef Dict As Dictionary(Of String, Object()), OtherDict As Dictionary(Of String, Object()))
+        For Each KV As KeyValuePair(Of String, Object()) In Dict
+            If Not OtherDict.ContainsKey(KV.Key) Then
+                Dict.Remove(KV.Key)
+            Else
+                IntersectDict(CType(KV.Value(0), Dictionary(Of String, Object())), CType(OtherDict.Item(KV.Key)(0), Dictionary(Of String, Object())))
+                IntersectDict(CType(KV.Value(1), Dictionary(Of String, Object())), CType(OtherDict.Item(KV.Key)(1), Dictionary(Of String, Object())))
+            End If
+        Next
+    End Sub
+    Public Shared Sub TrimDict(ByRef Dict As Dictionary(Of String, Object()), OtherDict As Dictionary(Of String, Object()))
+        For Each KV As KeyValuePair(Of String, Object()) In Dict
+            If OtherDict.ContainsKey(KV.Key) Then
+
+            End If
+        Next
+    End Sub
+    Public Shared Sub PruneDict(ByRef Dict As Dictionary(Of String, Object()))
+        For Each KV As KeyValuePair(Of String, Object()) In Dict
+            PruneDict(CType(KV.Value(0), Dictionary(Of String, Object())))
+            Dim Clone As New Dictionary(Of String, Object())
+            Clone = CloneDict(CType(KV.Value(1), Dictionary(Of String, Object())))
+            'Intersect all children
+            For Each CheckChildren As KeyValuePair(Of String, Object()) In CType(KV.Value(0), Dictionary(Of String, Object()))
+                IntersectDict(Clone, CType(CheckChildren.Value(0), Dictionary(Of String, Object())))
+            Next
+            'Compare and prune intersections at child level
+            'cannot trim non-intersections at parent level unless termination markers are included
+            For Each CheckChildren As KeyValuePair(Of String, Object()) In CType(KV.Value(0), Dictionary(Of String, Object()))
+                TrimDict(CType(CheckChildren.Value(0), Dictionary(Of String, Object())), Clone)
+            Next
+        Next
+    End Sub
+    Public Shared Sub AddRecDictionary(ByRef Dict As Dictionary(Of String, Object()), Anchor As String, Str As String, OthStr As String, Post As Boolean)
+        If Not Dict.ContainsKey(Anchor) Then
+            Dict.Add(Anchor, {New Dictionary(Of String, Object()), New Dictionary(Of String, Object())})
+        End If
+        Dim CurDict As Dictionary(Of String, Object()) = CType(Dict(Anchor)(0), Dictionary(Of String, Object()))
+        Dim CurOthDict As Dictionary(Of String, Object()) = CType(Dict(Anchor)(1), Dictionary(Of String, Object()))
+        For StrCount = If(Post, 0, Str.Length - 1) To If(Post, Str.Length - 1, 0) Step If(Post, 1, -1)
+            If Not CurDict.ContainsKey(Str(StrCount)) Then
+                CurDict.Add(Str(StrCount), {New Dictionary(Of String, Object()), New Dictionary(Of String, Object())})
+            End If
+            For StrOthCount = If(Post, OthStr.Length - 1, 0) To If(Post, 0, OthStr.Length - 1) Step If(Post, -1, 1)
+                If Not CurOthDict.ContainsKey(OthStr(StrOthCount)) Then
+                    CurOthDict.Add(OthStr(StrOthCount), {New Dictionary(Of String, Object()), Nothing})
+                End If
+                CurOthDict = CType(CurOthDict(OthStr(StrOthCount))(0), Dictionary(Of String, Object()))
+            Next
+            CurOthDict = CType(CurDict(Str(StrCount))(1), Dictionary(Of String, Object()))
+            CurDict = CType(CurDict(Str(StrCount))(0), Dictionary(Of String, Object()))
+        Next
+    End Sub
     Public Shared Function PatternAnalysis() As String()
         Dim Verses As List(Of String()) = GetQuranText(CachedData.XMLDocMain, -1, -1, -1, -1)
-        Dim PreDict As Dictionary(Of Char, Object())
-        Dim PostDict As Dictionary(Of Char, Object())
+        Dim PreDict As Dictionary(Of String, Object())
+        Dim PostDict As Dictionary(Of String, Object())
         Dim Strings(CachedData.RecitationSymbols.Length - 1) As String
         For LetCount = 0 To CachedData.RecitationSymbols.Length - 1
-            PreDict = New Dictionary(Of Char, Object())
-            PostDict = New Dictionary(Of Char, Object())
+            PreDict = New Dictionary(Of String, Object())
+            PostDict = New Dictionary(Of String, Object())
             For Count As Integer = 0 To Verses.Count - 1
                 For SubCount As Integer = 0 To Verses(Count).Length - 1
                     Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(Verses(Count)(SubCount), If(CachedData.RecitationSymbols(LetCount) = " ", "(\S*)(^|\s+|$)(\S*)", "(\S*)(" + ArabicData.MakeUniRegEx(CachedData.RecitationSymbols(LetCount)) + ")(\S*)"))
                     For MatchCount As Integer = 0 To Matches.Count - 1
-                        Dim CurDict As Dictionary(Of Char, Object()) = PostDict
-                        For StrCount = 0 To Matches(MatchCount).Groups(3).Length - 1
-                            If Not CurDict.ContainsKey(Matches(MatchCount).Groups(3).Value(StrCount)) Then
-                                CurDict.Add(Matches(MatchCount).Groups(3).Value(StrCount), {New Dictionary(Of Char, Object()), New Dictionary(Of Char, Object())})
-                            End If
-                            Dim CurOthDict As Dictionary(Of Char, Object()) = CType(CurDict(Matches(MatchCount).Groups(3).Value(StrCount))(1), Dictionary(Of Char, Object()))
-                            CurDict = CType(CurDict(Matches(MatchCount).Groups(3).Value(StrCount))(0), Dictionary(Of Char, Object()))
-                            For StrOthCount = Matches(MatchCount).Groups(1).Length - 1 To 0 Step -1
-                                If Not CurOthDict.ContainsKey(Matches(MatchCount).Groups(1).Value(StrOthCount)) Then
-                                    CurOthDict.Add(Matches(MatchCount).Groups(1).Value(StrOthCount), {New Dictionary(Of Char, Object()), New Dictionary(Of Char, Object())})
-                                End If
-                                CurOthDict = CType(CurOthDict(Matches(MatchCount).Groups(1).Value(StrOthCount))(0), Dictionary(Of Char, Object()))
-                            Next
-                        Next
-                        CurDict = PreDict
-                        For StrCount = Matches(MatchCount).Groups(1).Length - 1 To 0 Step -1
-                            If Not CurDict.ContainsKey(Matches(MatchCount).Groups(1).Value(StrCount)) Then
-                                CurDict.Add(Matches(MatchCount).Groups(1).Value(StrCount), {New Dictionary(Of Char, Object()), New Dictionary(Of Char, Object())})
-                            End If
-                            Dim CurOthDict As Dictionary(Of Char, Object()) = CType(CurDict(Matches(MatchCount).Groups(1).Value(StrCount))(1), Dictionary(Of Char, Object()))
-                            CurDict = CType(CurDict(Matches(MatchCount).Groups(1).Value(StrCount))(0), Dictionary(Of Char, Object()))
-                            For StrOthCount = 0 To Matches(MatchCount).Groups(3).Length - 1
-                                If Not CurOthDict.ContainsKey(Matches(MatchCount).Groups(3).Value(StrOthCount)) Then
-                                    CurOthDict.Add(Matches(MatchCount).Groups(3).Value(StrOthCount), {New Dictionary(Of Char, Object()), New Dictionary(Of Char, Object())})
-                                End If
-                                CurOthDict = CType(CurOthDict(Matches(MatchCount).Groups(3).Value(StrOthCount))(0), Dictionary(Of Char, Object()))
-                            Next
-                        Next
+                        AddRecDictionary(PostDict, Matches(MatchCount).Groups(3).Value(0), Matches(MatchCount).Groups(3).Value.Substring(1), Matches(MatchCount).Groups(1).Value, True)
+                        AddRecDictionary(PreDict, Matches(MatchCount).Groups(1).Value(0), Matches(MatchCount).Groups(1).Value.Substring(0, Matches(MatchCount).Groups(1).Value.Length - 1), Matches(MatchCount).Groups(3).Value, False)
                     Next
                 Next
             Next
@@ -4576,8 +4611,8 @@ Public Class TanzilReader
         Dim CurPat As String = ArabicData.MakeRegMultiEx(CachedData.RecitationSymbols)
         Dim Prefixes As New Dictionary(Of String, ArrayList)
         Dim Suffixes As New Dictionary(Of String, ArrayList)
-        Dim PreMidSuf As New Dictionary(Of String, Dictionary(Of String, ArrayList)) 'Prefix indexed
-        Dim SufMidPre As New Dictionary(Of String, Dictionary(Of String, ArrayList)) 'Suffix indexed
+        Dim PreMidSuf As New Dictionary(Of String, Object()) 'Prefix indexed
+        Dim SufMidPre As New Dictionary(Of String, Object()) 'Suffix indexed
         For Each Key As String In CachedData.FormDictionary.Keys
             Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(Arabic.TransliterateFromBuckwalter(Key), CurPat)
             For Count As Integer = 0 To Matches.Count - 1
@@ -4667,26 +4702,10 @@ Public Class TanzilReader
                             If Array.IndexOf(CachedData.ArabicSunLetters, CStr(AKey(SufCount))) <> -1 Or Array.IndexOf(CachedData.ArabicMoonLettersNoVowels, CStr(AKey(SufCount))) <> -1 Or ArabicData.ArabicLetterTehMarbuta = AKey(SufCount) Then Exit For
                         Next
                         If (Arabic.TransliterateFromBuckwalter(Suf(0)) <> ArabicData.ArabicSukun Or Matches(Count).Index = 0) And Suf.Length <> Sup.Length Then
-                            If Pre.EndsWith("_") Then
-                                If Not SufMidPre.ContainsKey("_" + Matches(Count).Value) Then SufMidPre.Add("_" + Matches(Count).Value, New Dictionary(Of String, ArrayList))
-                                If Not SufMidPre("_" + Matches(Count).Value).ContainsKey(Suf) Then SufMidPre("_" + Matches(Count).Value).Add(Suf, New ArrayList)
-                                SufMidPre("_" + Matches(Count).Value)(Suf).Add(Pre.Remove(Pre.Length - 1))
-                            Else
-                                If Not SufMidPre.ContainsKey(Matches(Count).Value) Then SufMidPre.Add(Matches(Count).Value, New Dictionary(Of String, ArrayList))
-                                If Not SufMidPre(Matches(Count).Value).ContainsKey(Suf) Then SufMidPre(Matches(Count).Value).Add(Suf, New ArrayList)
-                                SufMidPre(Matches(Count).Value)(Suf).Add(Pre)
-                            End If
+                            AddRecDictionary(SufMidPre, If(Pre.EndsWith("_"), "_", String.Empty) + Matches(Count).Value, Suf, If(Pre.EndsWith("_"), Pre.Substring(0, Pre.Length - 1), Pre), True)
                         Else
                             Debug.Assert(Arabic.TransliterateFromBuckwalter(Suf(0)) = ArabicData.ArabicSukun Or Suf.Length = Sup.Length)
-                            If Pre.EndsWith("_") Then
-                                If Not PreMidSuf.ContainsKey("_" + Matches(Count).Value) Then PreMidSuf.Add("_" + Matches(Count).Value, New Dictionary(Of String, ArrayList))
-                                If Not PreMidSuf("_" + Matches(Count).Value).ContainsKey(Pre.Remove(Pre.Length - 1)) Then PreMidSuf("_" + Matches(Count).Value).Add(Pre.Remove(Pre.Length - 1), New ArrayList)
-                                PreMidSuf("_" + Matches(Count).Value)(Pre.Remove(Pre.Length - 1)).Add(Suf)
-                            Else
-                                If Not PreMidSuf.ContainsKey(Matches(Count).Value) Then PreMidSuf.Add(Matches(Count).Value, New Dictionary(Of String, ArrayList))
-                                If Not PreMidSuf(Matches(Count).Value).ContainsKey(Pre) Then PreMidSuf(Matches(Count).Value).Add(Pre, New ArrayList)
-                                PreMidSuf(Matches(Count).Value)(Pre).Add(Suf)
-                            End If
+                            AddRecDictionary(PreMidSuf, If(Pre.EndsWith("_"), "_", String.Empty) + Matches(Count).Value, If(Pre.EndsWith("_"), Pre.Substring(0, Pre.Length - 1), Pre), Suf, False)
                         End If
                     Next
                 End If
@@ -4712,9 +4731,7 @@ Public Class TanzilReader
                         Suf += Arabic.TransliterateToScheme(Key(SubCount), ArabicData.TranslitScheme.Literal, String.Empty)
                         If Array.IndexOf(CachedData.ArabicSunLetters, CStr(Key(SubCount))) <> -1 Or Array.IndexOf(CachedData.ArabicMoonLettersNoVowels, CStr(Key(SubCount))) <> -1 Or ArabicData.ArabicLetterTehMarbuta = Key(SubCount) Then Exit For
                     Next
-                    If Not PreMidSuf.ContainsKey(Matches(Count).Value) Then PreMidSuf.Add(Matches(Count).Value, New Dictionary(Of String, ArrayList))
-                    If Not PreMidSuf(Matches(Count).Value).ContainsKey(Pre) Then PreMidSuf(Matches(Count).Value).Add(Pre, New ArrayList)
-                    PreMidSuf(Matches(Count).Value)(Pre).Add(Suf)
+                    AddRecDictionary(PreMidSuf, Matches(Count).Value, Pre, Suf, False)
                 End If
             Next
         Next
@@ -4745,53 +4762,11 @@ Public Class TanzilReader
             CurNum += 1
         Next
         For Each Key As String In PreMidSuf.Keys
-            Dim Pres As String = String.Empty
-            For Each Pre As String In PreMidSuf(Key).Keys
-                PreMidSuf(Key)(Pre).Sort()
-                Pres += Pre + ":("
-                Dim bFirst As Boolean = True
-                For Count = 0 To PreMidSuf(Key)(Pre).Count - 1
-                    If Count = PreMidSuf(Key)(Pre).Count - 1 OrElse CStr(PreMidSuf(Key)(Pre)(Count)) <> CStr(PreMidSuf(Key)(Pre)(Count + 1)) Then
-                        If Not bFirst Then Pres += " / "
-                        bFirst = False
-                        For Each Check As String In PreMidSuf.Keys
-                            If Key <> Check Then
-                                If PreMidSuf(Check).ContainsKey(Pre) Then
-                                    If Array.IndexOf(CType(PreMidSuf(Check)(Pre).ToArray(GetType(String)), String()), CStr(PreMidSuf(Key)(Pre)(Count))) <> -1 Then Pres += "!!!" + Check + "!!!"
-                                End If
-                            End If
-                        Next
-                        Pres += CStr(PreMidSuf(Key)(Pre)(Count))
-                    End If
-                Next
-                Pres += ") "
-            Next
-            Strings(CurNum) = ArabicData.LeftToRightOverride + "Key: " + Key + " Pre-Suf: " + Pres + ArabicData.PopDirectionalFormatting
+            Strings(CurNum) = ArabicData.LeftToRightOverride + "Key:" + Key + "\" + Arabic.TransliterateToScheme(Key, ArabicData.TranslitScheme.Literal, String.Empty) + "\" + DumpRecDictionary(CType(PreMidSuf(Key)(0), Dictionary(Of String, Object())), False, 0, True) + "\" + ArabicData.PopDirectionalFormatting
             CurNum += 1
         Next
         For Each Key As String In SufMidPre.Keys
-            Dim Pres As String = String.Empty
-            For Each Pre As String In SufMidPre(Key).Keys
-                SufMidPre(Key)(Pre).Sort()
-                Pres += Pre + ":("
-                Dim bFirst As Boolean = True
-                For Count = 0 To SufMidPre(Key)(Pre).Count - 1
-                    If Count = SufMidPre(Key)(Pre).Count - 1 OrElse CStr(SufMidPre(Key)(Pre)(Count)) <> CStr(SufMidPre(Key)(Pre)(Count + 1)) Then
-                        If Not bFirst Then Pres += " / "
-                        bFirst = False
-                        For Each Check As String In SufMidPre.Keys
-                            If Key <> Check Then
-                                If SufMidPre(Check).ContainsKey(Pre) Then
-                                    If Array.IndexOf(CType(SufMidPre(Check)(Pre).ToArray(GetType(String)), String()), CStr(SufMidPre(Key)(Pre)(Count))) <> -1 Then Pres += "!!!" + Check + "!!!"
-                                End If
-                            End If
-                        Next
-                        Pres += CStr(SufMidPre(Key)(Pre)(Count))
-                    End If
-                Next
-                Pres += ") "
-            Next
-            Strings(CurNum) = ArabicData.LeftToRightOverride + "Key: " + Key + " Suf-Pre: " + Pres + ArabicData.PopDirectionalFormatting
+            Strings(CurNum) = ArabicData.LeftToRightOverride + "Key:" + Key + "\" + Arabic.TransliterateToScheme(Key, ArabicData.TranslitScheme.Literal, String.Empty) + "\" + DumpRecDictionary(CType(SufMidPre(Key)(0), Dictionary(Of String, Object())), False, 0, True) + "\" + ArabicData.PopDirectionalFormatting
             CurNum += 1
         Next
         Return Strings

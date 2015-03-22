@@ -4909,9 +4909,9 @@ Ramadan fast-breaking | One 2172-gram quantity | Dates or barley or ordinary sta
 		<nums name="ordinals" text="&gt;aw~alN vaAniYN vaAlivN raAbiEN xaAmisN saAdisN saAbiEN vaAminN taAsiEN EaA$irN"></nums>
 		<nums name="ordinalextras" text="HaAdiY"></nums> <!-- "&gt;uwalaY" "ap" -->
 		<nums name="fractions" text="nisof vuluv rubuE xumus"></nums>
-		<nums name="base" text="waAHidN &lt;ivonaAni valaAvapN &gt;arobaEapN xamosapN sit~apN saboEapN vamaAnoyapN tisoEapN"></nums>
-		<nums name="baseextras" text="&gt;aHada &lt;ivonaA"></nums>
-		<nums name="baseten" text="SiforN Ea$arapN Ei$oruwna valaAvuwna &gt;arobaEuwna xamosuwna sit~uwna saboEuwna vamaAnuwna tisoEuwna"></nums>
+		<nums name="base" text="wa`HidN {vonaAni vala`vapN &gt;arobaEapN xamosapN sit~apN saboEapN vama`niyapN tisoEapN"></nums>
+		<nums name="baseextras" text="&gt;aHada {vonaY"></nums>
+		<nums name="baseten" text="SiforN Ea$orapN Ei$oruwna valaAvuwna &gt;arobaEuwna xamosuwna sit~uwna saboEuwna vamaAnuwna tisoEuwna"></nums>
 		<nums name="basehundred" text="mi}apN mi}ataAni valaAvumi}apK &gt;arobaEumi}apK xamosumi}apK sit~umi}apK saboEumi}apK vamaAnumi}apK tisoEumi}apK"></nums> <!-- "miA}apN" -->
 		<nums name="thousands" text="&gt;alofN &gt;alofaAni |laAfK"></nums>
 		<nums name="millions" text="miloyuwnu miloyuwnaAni malaAyiyna"></nums>
