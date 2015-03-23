@@ -31842,4 +31842,13 @@
   <data name="IslamInfo_TipLetters" xml:space="preserve">
     <value>Tip Letters</value>
   </data>
+  <data name="IslamInfo_Ajrumiyyah" xml:space="preserve">
+    <value>Ajrumiyyah</value>
+  </data>
+  <data name="IslamInfo_AjrumiyyahChapter1" xml:space="preserve">
+    <value>Chapter 1: Speech</value>
+  </data>
+  <data name="IslamInfo_AjrumiyyahChapter1WordByWord" xml:space="preserve">
+    <value>Useful sounds:|It is|expressions/utterances|compounded,|meaningful|in its syntatical sequence.|And its only parts consists of|three:|the noun,|the verb,|and the particle|coming|with signification/meaning.|Then the noun|is known|by an expression of kasra due to an agent|and noonation,|and entering|alef|and laam|upon it,|and the letters|of expression of kasra due to an agent,|and they are|from,|and to,|and about,|and upon,|and in,|and with,|and baa,|and kaaf,|and laam,|and the letters|of oath,|and they are|waw,|and bah,|and tah.</value>
+  </data>
 </root>
