@@ -4518,9 +4518,9 @@ Public Class TanzilReader
                     Str = DumpRecDictionary(CType(KV.Value(0), Dictionary(Of String, Object())), Post, Depth + 1, Dual) + If(Dual AndAlso CType(KV.Value(1), Dictionary(Of String, Object())).Keys.Count <> 0, "!(" + DumpRecDictionary(CType(KV.Value(1), Dictionary(Of String, Object())), Not Post, Depth + 1, False) + ")!", String.Empty) + Arabic.TransliterateToScheme(KV.Key, ArabicData.TranslitScheme.Literal, String.Empty) + Str
                 End If
             ElseIf Post Then
-                Str += Arabic.TransliterateToScheme(KV.Key, ArabicData.TranslitScheme.Literal, String.Empty) + If(CType(KV.Value(0), Dictionary(Of String, Object())).Keys.Count = 0, String.Empty, vbCrLf + New String(" "c, Depth * 4) + "(" + DumpRecDictionary(CType(KV.Value(0), Dictionary(Of String, Object())), Post, Depth + 1, Dual) + ")") + If(Dual AndAlso CType(KV.Value(1), Dictionary(Of String, Object())).Keys.Count <> 0, "!(" + DumpRecDictionary(CType(KV.Value(1), Dictionary(Of String, Object())), Not Post, Depth + 1, False) + ")!", String.Empty)
+                Str += Arabic.TransliterateToScheme(KV.Key, ArabicData.TranslitScheme.Literal, String.Empty) + If(CType(KV.Value(0), Dictionary(Of String, Object())).Keys.Count = 0, String.Empty, vbCrLf + New String(" "c, Depth * 4) + "(" + DumpRecDictionary(CType(KV.Value(0), Dictionary(Of String, Object())), Post, Depth + 1, Dual) + ")" + vbCrLf + New String(" "c, Depth * 4)) + If(Dual AndAlso CType(KV.Value(1), Dictionary(Of String, Object())).Keys.Count <> 0, vbCrLf + New String(" "c, Depth * 4) + "!(" + DumpRecDictionary(CType(KV.Value(1), Dictionary(Of String, Object())), Not Post, Depth + 1, False) + ")!" + vbCrLf + New String(" "c, Depth * 4), String.Empty)
             Else
-                Str = If(CType(KV.Value(0), Dictionary(Of String, Object())).Keys.Count = 0, String.Empty, vbCrLf + New String(" "c, Depth * 4) + "(" + DumpRecDictionary(CType(KV.Value(0), Dictionary(Of String, Object())), Post, Depth + 1, Dual) + ")") + If(Dual AndAlso CType(KV.Value(1), Dictionary(Of String, Object())).Keys.Count <> 0, "!(" + DumpRecDictionary(CType(KV.Value(1), Dictionary(Of String, Object())), Not Post, Depth + 1, False) + ")!", String.Empty) + Arabic.TransliterateToScheme(KV.Key, ArabicData.TranslitScheme.Literal, String.Empty) + Str
+                Str = If(CType(KV.Value(0), Dictionary(Of String, Object())).Keys.Count = 0, String.Empty, vbCrLf + New String(" "c, Depth * 4) + "(" + DumpRecDictionary(CType(KV.Value(0), Dictionary(Of String, Object())), Post, Depth + 1, Dual) + ")" + vbCrLf + New String(" "c, Depth * 4)) + If(Dual AndAlso CType(KV.Value(1), Dictionary(Of String, Object())).Keys.Count <> 0, vbCrLf + New String(" "c, Depth * 4) + "!(" + DumpRecDictionary(CType(KV.Value(1), Dictionary(Of String, Object())), Not Post, Depth + 1, False) + ")!" + vbCrLf + New String(" "c, Depth * 4), String.Empty) + Arabic.TransliterateToScheme(KV.Key, ArabicData.TranslitScheme.Literal, String.Empty) + Str
             End If
         Next
         Return Str
@@ -4670,42 +4670,40 @@ Public Class TanzilReader
                         Dim Loc(3) As Integer
                         CType(CachedData.FormDictionary(Key)(SubCount), Integer()).CopyTo(Loc, 0)
                         'Hamza prefix then must look before
-                        'If Arabic.TransliterateFromBuckwalter(PreCheck).IndexOfAny({ArabicData.ArabicLetterHamza, ArabicData.ArabicLetterAlefWithHamzaAbove, ArabicData.ArabicLetterAlefWithHamzaBelow, ArabicData.ArabicLetterWawWithHamzaAbove, ArabicData.ArabicLetterYehWithHamzaAbove, ArabicData.ArabicHamzaAbove}) = -1 Then PreCheck = String.Empty
+                        'If PreCheck.IndexOfAny({ArabicData.ArabicLetterHamza, ArabicData.ArabicLetterAlefWithHamzaAbove, ArabicData.ArabicLetterAlefWithHamzaBelow, ArabicData.ArabicLetterWawWithHamzaAbove, ArabicData.ArabicLetterYehWithHamzaAbove, ArabicData.ArabicHamzaAbove}) = -1 Then PreCheck = String.Empty
                         Dim Pre As String = String.Empty
                         Dim LocCount As Integer
-                        PreCheck += Key.Substring(0, Matches(Count).Index)
-                        Dim AKey As String = Arabic.TransliterateFromBuckwalter(PreCheck)
+                        PreCheck += Arabic.TransliterateFromBuckwalter(Key.Substring(0, Matches(Count).Index))
                         For SupCount As Integer = PreCheck.Length - 1 To 0 Step -1
                             Pre = PreCheck(SupCount) + Pre
-                            If Array.IndexOf(CachedData.ArabicSunLetters, CStr(AKey(SupCount))) <> -1 Or Array.IndexOf(CachedData.ArabicMoonLettersNoVowels, CStr(AKey(SupCount))) <> -1 Then Exit For
+                            If Array.IndexOf(CachedData.ArabicSunLetters, CStr(PreCheck(SupCount))) <> -1 Or Array.IndexOf(CachedData.ArabicMoonLettersNoVowels, CStr(PreCheck(SupCount))) <> -1 Then Exit For
                         Next
                         If Pre.Length = PreCheck.Length Then
                             PreCheck = String.Empty
                             For LocCount = 1 To CType(CachedData.FormDictionary(Key)(SubCount), Integer())(3) - 1
                                 Loc(3) = LocCount
-                                PreCheck += CStr(CachedData.LocDictionary(String.Join(":", Loc))(0))
+                                PreCheck += Arabic.TransliterateFromBuckwalter(CStr(CachedData.LocDictionary(String.Join(":", Loc))(0)))
                             Next
-                            If PreCheck <> String.Empty Then Pre = "'" + PreCheck + "'" + Pre
+                            If PreCheck <> String.Empty Then Pre = ";" + PreCheck + ";" + Pre
                         End If
-                        Dim Sup As String = Key.Substring(Matches(Count).Index + 1)
+                        Dim Sup As String = Arabic.TransliterateFromBuckwalter(Key.Substring(Matches(Count).Index + 1))
                         LocCount = CType(CachedData.FormDictionary(Key)(SubCount), Integer())(3) + 1
                         Do
                             Loc(3) = LocCount
                             If Not CachedData.LocDictionary.ContainsKey(String.Join(":", Loc)) Then Exit Do
-                            Sup += CStr(CachedData.LocDictionary(String.Join(":", Loc))(0))
+                            Sup += Arabic.TransliterateFromBuckwalter(CStr(CachedData.LocDictionary(String.Join(":", Loc))(0)))
                             LocCount += 1
                         Loop While True
                         Dim Suf As String = String.Empty
-                        AKey = Arabic.TransliterateFromBuckwalter(Sup)
                         For SufCount As Integer = 0 To Sup.Length - 1
                             Suf += Sup(SufCount)
-                            If Array.IndexOf(CachedData.ArabicSunLetters, CStr(AKey(SufCount))) <> -1 Or Array.IndexOf(CachedData.ArabicMoonLettersNoVowels, CStr(AKey(SufCount))) <> -1 Or ArabicData.ArabicLetterTehMarbuta = AKey(SufCount) Then Exit For
+                            If Array.IndexOf(CachedData.ArabicSunLetters, CStr(Sup(SufCount))) <> -1 Or Array.IndexOf(CachedData.ArabicMoonLettersNoVowels, CStr(Sup(SufCount))) <> -1 Or ArabicData.ArabicLetterTehMarbuta = Sup(SufCount) Then Exit For
                         Next
-                        If (Arabic.TransliterateFromBuckwalter(Suf(0)) <> ArabicData.ArabicSukun Or Matches(Count).Index = 0) And Suf.Length <> Sup.Length Then
-                            AddRecDictionary(SufMidPre, If(Pre.EndsWith("_"), "_", String.Empty) + Matches(Count).Value, Suf, If(Pre.EndsWith("_"), Pre.Substring(0, Pre.Length - 1), Pre), True)
+                        If (Suf(0) <> ArabicData.ArabicSukun Or Matches(Count).Index = 0) And Suf.Length <> Sup.Length Then
+                            AddRecDictionary(SufMidPre, If(Pre.Length <> 0 AndAlso Pre(Pre.Length - 1) = ArabicData.ArabicTatweel, ArabicData.ArabicTatweel, String.Empty) + Matches(Count).Value, Suf, If(Pre.Length <> 0 AndAlso Pre(Pre.Length - 1) = ArabicData.ArabicTatweel, Pre.Substring(0, Pre.Length - 1), Pre), True)
                         Else
-                            Debug.Assert(Arabic.TransliterateFromBuckwalter(Suf(0)) = ArabicData.ArabicSukun Or Suf.Length = Sup.Length)
-                            AddRecDictionary(PreMidSuf, If(Pre.EndsWith("_"), "_", String.Empty) + Matches(Count).Value, If(Pre.EndsWith("_"), Pre.Substring(0, Pre.Length - 1), Pre), Suf, False)
+                            Debug.Assert(Suf(0) = ArabicData.ArabicSukun Or Suf.Length = Sup.Length)
+                            AddRecDictionary(PreMidSuf, If(Pre.Length <> 0 AndAlso Pre(Pre.Length - 1) = ArabicData.ArabicTatweel, ArabicData.ArabicTatweel, String.Empty) + Matches(Count).Value, If(Pre.Length <> 0 AndAlso Pre(Pre.Length - 1) = ArabicData.ArabicTatweel, Pre.Substring(0, Pre.Length - 1), Pre), Suf, False)
                         End If
                     Next
                 End If
@@ -4721,14 +4719,14 @@ Public Class TanzilReader
                     Dim Pre As String = String.Empty
                     For SubCount As Integer = Matches(Count).Index - 1 To 0 Step -1
                         If Array.IndexOf(CachedData.ArabicSunLetters, CStr(Key(SubCount))) = -1 And Array.IndexOf(CachedData.ArabicMoonLettersNoVowels, CStr(Key(SubCount))) = -1 Then
-                            Pre = Arabic.TransliterateToScheme(Key(SubCount), ArabicData.TranslitScheme.Literal, String.Empty) + Pre
+                            Pre = Key(SubCount) + Pre
                         Else
                             Exit For
                         End If
                     Next
                     Dim Suf As String = String.Empty
                     For SubCount As Integer = Matches(Count).Index + 1 To Key.Length - 1
-                        Suf += Arabic.TransliterateToScheme(Key(SubCount), ArabicData.TranslitScheme.Literal, String.Empty)
+                        Suf += Key(SubCount)
                         If Array.IndexOf(CachedData.ArabicSunLetters, CStr(Key(SubCount))) <> -1 Or Array.IndexOf(CachedData.ArabicMoonLettersNoVowels, CStr(Key(SubCount))) <> -1 Or ArabicData.ArabicLetterTehMarbuta = Key(SubCount) Then Exit For
                     Next
                     AddRecDictionary(PreMidSuf, Matches(Count).Value, Pre, Suf, False)
