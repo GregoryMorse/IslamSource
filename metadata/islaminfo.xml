@@ -808,7 +808,7 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<noun text="&gt;anfN" plural="&gt;unuwfN" id="Nose"></noun>
 			<noun text="maqobarapN" plural="maqaAbirN" id="CemetaryGraveyard"></noun>
 			<noun text="&gt;abokamN" plural="bukomN" id="Dumb"></noun>
-			<noun text="bariy}N" plural="" id="Innocent"></noun>
+			<noun text="bariy^_#N" plural="" id="Innocent"></noun>
 			<noun text="&gt;amoniyapN" plural="&gt;amaAniy~N" id="FalseHope"></noun>
 			<noun text="EaZomN" plural="EiZaAmN" id="Bone"></noun>
 			<noun text="&gt;aEomaY" plural="EumoyN" id="Blind"></noun>
@@ -984,6 +984,16 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<noun text="muta$ad~iqN" id="Loudmouthed"></noun>
 			<noun text="mutafariqN" id="Sporadic"></noun>
 			<noun text="&lt;ijaAzapN" id="PermissionLeaveAccreditation"></noun>
+			<noun text="munaAwalapN" id="GrantingBooks"></noun>
+			<noun text="kitaAbapN" id="PrescriptionCorrespondence"></noun>
+			<noun text="samaAEN" id="ReadingByTeacher"></noun>
+			<noun text="EaroDN" id="ReadingByStudents"></noun>
+			<noun text="&lt;iEolaAmN" id="Announcement"></noun>
+			<noun text="SiHaHN" id="Authenticated"></noun>
+			<noun text="muruwEapN" id="DoubtfulPersonalConduct"></noun>
+			<noun text="musotadorikaAtN" id="MissingNarrations"></noun>
+			<noun text="musotaxorijaAtN" id="MissingChainsOfNarrators"></noun>
+			<noun text="mudotaribN" id="Confused"></noun>
 			<noun text="mu&amp;ominN" id="Believer"></noun>
 			<noun text="muHosinN" id="Optimizer"></noun>
 			<noun text="muna`fiqN" id="Hypocrite"></noun>
@@ -1327,7 +1337,8 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<noun text="&lt;iqotiDaA^&apos;N" id="Necessity"></noun>
 			<noun text="$ubuhaAtN" id="DoubtsAboutExistence"></noun>
 			<noun text="badaA^&apos;N" id="AppearNewRealizationOccurToSomeone"></noun>
-			<noun text="waSiyapN" plural="waSaAyaA" id="Bequest"></noun>
+			<noun text="waSiy~apN" plural="waSaAyaA" id="Bequest"></noun>
+			<noun text="wajaAdapN" id="DiscoveryOfBooks"></noun>
 			<noun text="&lt;ijotihaAdN" id="ReasonedDecision"></noun>
 			<noun text="mawoquwfN" id="WordsActionsApprovalDescriptionAttributedToCompanionOfProphet"></noun>
 			<noun text="fatowaY" plural="fataAwaY" id="Ruling"></noun>
@@ -2255,7 +2266,7 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 		<word text="qaToEu {lokul~i" id="CuttingOffAll"></word>
 		<word text="waSolu {lokul~i" id="JoiningAll"></word>
 		<word text="waSolu {lobasomalapi bi&gt;uwli {ls~uwrapi" id="JoiningBismillahTakingABreathChapter"></word>
-		<word text="{loSiforu {lomusotadiyru" id="RoundZero"></word>
+		<word text="{loSiforu {lomusotadiyru" id="TheRoundZero"></word>
 		<word text="{loSiforu {lomusotaTiylu {loqaA^}imu" id="StandingOblongZeroSmallHighUprightRectangularZero"></word>
 		<word text="{lowajohu {l~a*iY laA yajuwzu" id="ReadingWhichIsNotAllowed"></word>
 		<word text="waAwN hamozapN" id="WawWithHamzaAbove"></word>
@@ -2266,8 +2277,6 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 		<word text="tanowiynN Dam~apN" id="Dammatan"></word>
 		<word text="tanowiynN kasorapN" id="Kasratan"></word>
 		<word text="&gt;alifN hamozapN waSolN" id="AlefHamzaContinuing"></word>
-		<word text="{loSiforu {lomusotadiyru" id="TheRoundZero"></word>
-		<word text="{loSiforu {lomusotaTiylu {loqaA^}imu" id="TheStandingOblongZero"></word>
 		<word text="&gt;aHokaAmohaA {lomutamaAvilayoni" id="RelationshipInLikeness"></word>
 		<word text="&gt;aHokaAmohaA {lomutajaAnisayoni" id="RelationshipInCloseness"></word>
 		<word text="&gt;aHokaAmohaA {lomutaqaAribayoni" id="RelationshipInSameTypes"></word>
@@ -2776,6 +2785,16 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 		<word text="qiyaAsu {l$~abapi" id="DeductionByResemblance"></word>
 		<word text="&gt;uSuwlu {ld~iyni" id="IslamicDisciplines"></word>
 		<word text="&gt;uSuwlu {lofiqohi" id="LegalMethodologyFundamentalPrinciplesOfIslamicLaw"></word>
+		<word text="Eilomu {lr~iwayapi" id="KnowledgeOfNarrations"></word>
+		<word text="Eilomu {lodiraAyapi" id="KnowledgeOfNarrationChainsAndConditions"></word>
+		<word text="Eilomu jaroHK wataEodiylK" id="KnowledgeOfFaultsAndPraiseOfCharacter"></word>
+		<word text="&lt;isonaAdu {loEaliY~i" id="SublimeChainOfNarration"></word>
+		<word text="&lt;isonaAdu naAzilK" id="DecliningChainOfNarration"></word>
+		<word text="daboTu {lS~adori" id="SoundnessOfMemory"></word>
+		<word text="daboTu {lokitaAbapi" id="WrittenAccuracy"></word>
+		<word text="ribaw`A@ {lofaDoli" id="InterestInExcess"></word>
+		<word text="ribaw`A@ {ln~asiy^_#api" id="InterstInDelay"></word>
+		<word text="kutubu {lr~ijaAli" id="BooksOfMen"></word>
 		<word text="Eilomu {lokalaAmi" id="Theology"></word>
 		<word text="Eilomu {lo&gt;axolaAqi" id="Ethics"></word>
 		<word text="qaroDN HasanN" id="InterestFreeLoan"></word>
@@ -3816,7 +3835,7 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<word text="\{word:Commentary,Commentator,ReasonedDecision,WordsActionsApprovalDescriptionAttributedToCompanionOfProphet,WhatThatWhich,DoubtfulMatters,ApparentMeaningNotIntended,SoulSpirit,Disbelief,OppressionWrongdoing,Interpretation,Declension,RhetoricNonLiteralUsageOfWords,Permissible,Forbidden,OnePartOfChainOfTransmissionHasSingleNarrator,Derivation,EtymologyMorphologyWordPatterns,GrammarSyntax,World,Protector,Ruling,JurisprudenceExpert,ReadingRecitation\}\{phrase:AbrogatingAndAbrogatedVerses,ReasonsForRevelation,DisjointedLettersQuranicInitials,SourcesOfAwareness\}\{10:57-58,65:1:1-7,5:6:1-14,34:3:15-34,4:25:1-50,32:20,5:47,49:7,41:17:1-7,4:175,7:149,7:146:1-9,54:17,35:1:1-5,5:6:15-17,3:7,7:52:1-53:4,4:59,110:1:1-3:4,6:82,31:13:7,75:17-19,1:2,26:23-24,6:103:1-6,75:22-23,83:15,16:64:1-10,8:60:1-6,24:31:1-14,5:44:36,2:255:47-50,2:102:1-36;W4W\}" id="QuranicExegesis4"></word>
 		</category>
 		<category title="ScienceOfTransmission">
-			<word text="\{word:DiscourseSpeechTransmissionOfInformation,Tradition,PrincipleMethodFoundation,Text,ListOfNarrators,WordsRulingsNotPartOfTradition,VerbAction,Decisions,AdjectiveModificationAttribute,LevelLinkInChainOfNarrators,CollectionChapterizedByLegalCategories,AllEverybodyCollection,Mode,HumanIntellectDiscernment,AccuracyPrecision,Justice,Islam,Delivering,Receiving,Narrator,AbilityToRemember,ThoseEngagedInJurisprudence,FindingBlemishesInCharacter,PraisingCharacter,EngagingInInnovation,YoungPerson,MaturePerson,HadithNarrators,OpenSinner,Ignorant,Innovation,Dreamer,Memorization,ExtremelyCarelessNotAwareOfOnesSurroundings,UnknownPerson,Authentic,Good,Weak,NarratedByUntrustworthyPersonDenounced,NarratingWithFalseClaim,DeceptiveNarratorMakesFalseClaim,CompilationByNameReferenced,TraceableElevatedNominativeCase,Connected,WordsActionsApprovalDescriptionAttributedToCompanionOfProphet,UnknownSourceNarrator,NameInChainOfNarrationOmittedOrUnknownNameMentioned,TwoOrMoreNamesMissingFromChainOfNarration,IrregularNarratedBySingleTrustworthyPersonContraryToOtherSources,Reliable,HiddenWeakness,SubtleHiddenDefect,Fabricated,OnePartOfChainOfTransmissionHasSingleNarrator,NarratedBySingleLinks,WidespreadCredibleReport\}\{phrase:LiteralLinguisticMeaning,TechnicalMeaning,LegalMeaning,RighteousCaliphs,DeceptionInTheChainOfNarration,DeceptionWithTheTeachers,GoodAndOnePartOfChainOfTransmissionHasSingleNarrator,AuthenticOnItsOwn,AuthenticWithSupport,RepellingCorruption,OpposingKnownTrustedNarrators,IgnoranceOfSituation,CutInTheChainOfNarrators,BadMemorization,TheSixBooks,SahihAlBukhari,SahihMuslim,AlSunanAnNasai,AlSunanAlSughra,SunanAbiDawood,SunanAlTirmidhi,SunanIbnMaja,MalikMuwatta\}" id="Hadith"></word>
+			<word text="\{word:DiscourseSpeechTransmissionOfInformation,Tradition,PrincipleMethodFoundation,Text,ListOfNarrators,WordsRulingsNotPartOfTradition,VerbAction,Decisions,AdjectiveModificationAttribute,LevelLinkInChainOfNarrators,CollectionChapterizedByLegalCategories,AllEverybodyCollection,Mode,HumanIntellectDiscernment,AccuracyPrecision,Justice,Islam,Delivering,Receiving,Narrator,AbilityToRemember,ThoseEngagedInJurisprudence,FindingBlemishesInCharacter,PraisingCharacter,EngagingInInnovation,YoungPerson,MaturePerson,HadithNarrators,OpenSinner,Ignorant,Innovation,Dreamer,Memorization,ExtremelyCarelessNotAwareOfOnesSurroundings,DoubtfulPersonalConduct,UnknownPerson,ReadingByTeacher,ReadingByStudents,PermissionLeaveAccreditation,GrantingBooks,PrescriptionCorrespondence,Announcement,Bequest,DiscoveryOfBooks,Authenticated,MissingNarrations,MissingChainsOfNarrators,Authentic,Good,Weak,NarratedByUntrustworthyPersonDenounced,NarratingWithFalseClaim,DeceptiveNarratorMakesFalseClaim,CompilationByNameReferenced,TraceableElevatedNominativeCase,Connected,WordsActionsApprovalDescriptionAttributedToCompanionOfProphet,UnknownSourceNarrator,NameInChainOfNarrationOmittedOrUnknownNameMentioned,TwoOrMoreNamesMissingFromChainOfNarration,IrregularNarratedBySingleTrustworthyPersonContraryToOtherSources,Reliable,HiddenWeakness,SubtleHiddenDefect,Fabricated,OnePartOfChainOfTransmissionHasSingleNarrator,NarratedBySingleLinks,WidespreadCredibleReport,Confused\}\{phrase:LiteralLinguisticMeaning,TechnicalMeaning,LegalMeaning,RighteousCaliphs,DeceptionInTheChainOfNarration,DeceptionWithTheTeachers,GoodAndOnePartOfChainOfTransmissionHasSingleNarrator,AuthenticOnItsOwn,AuthenticWithSupport,RepellingCorruption,OpposingKnownTrustedNarrators,IgnoranceOfSituation,CutInTheChainOfNarrators,BadMemorization,KnowledgeOfNarrations,KnowledgeOfNarrationChainsAndConditions,KnowledgeOfFaultsAndPraiseOfCharacter,SublimeChainOfNarration,DecliningChainOfNarration,TheSixBooks,SahihAlBukhari,SahihMuslim,AlSunanAnNasai,AlSunanAlSughra,SunanAbiDawood,SunanAlTirmidhi,SunanIbnMaja,MalikMuwatta\}" id="Hadith"></word>
 		</category>
 		<category title="Abbreviations">
 			<word text="\{AS\}\{AimaaS\}\{AaaS\}\{AimS\}\{AinnaS\}\{SAWAWS\}\{SAWS\}\{ASW\}\{AWAWW\}\{RA\}\{RAunna\}\{RAumaa\}\{RAu\}\{RAaa\}\{RAT\}\{RATunna\}\{RATumaa\}\{RATu\}\{RATaa\}\{RAA\}\{RAAinna\}\{RAAimaa\}\{RAAi\}\{RAAaa\}\{R\}\{Runna\}\{Rumaa\}\{Ru\}\{Raa\}\{JK\}\{JKunna\}\{JKumaa\}\{JKa\}\{JKi\}\{JKK\}\{JKKunna\}\{JKKumaa\}\{JKKa\}\{JKKi\}\{BF\}\{BFunna\}\{BFumaa\}\{BFa\}\{BFi\}\{HZ\}\{HZunna\}\{HZumaa\}\{HZu\}\{HZaA\}\{ST\}\{STunna\}\{STumaa\}\{STu\}\{STaA\}\{DB\}\{DBunna\}\{DBumaa\}\{DBu\}\{DBaA\}\{H\}\{Hunna\}\{Humaa\}\{Ha\}\{Hi\}\{AAum\}\{ShSum\}\{ASa\}\{SWT\}\{AWJ\}\{JJ\}\{JWA\}" id="AfterNames"></word>
