@@ -31842,13 +31842,34 @@
   <data name="IslamInfo_TipLetters" xml:space="preserve">
     <value>Tip Letters</value>
   </data>
-  <data name="IslamInfo_Ajrumiyyah" xml:space="preserve">
+  <data name="IslamInfo_Aajurroomiyyah" xml:space="preserve">
     <value>Ajrumiyyah</value>
   </data>
-  <data name="IslamInfo_AjrumiyyahChapter1" xml:space="preserve">
+  <data name="IslamInfo_AajurroomiyyahChapter1" xml:space="preserve">
     <value>Chapter 1: Speech</value>
   </data>
-  <data name="IslamInfo_AjrumiyyahChapter1WordByWord" xml:space="preserve">
+  <data name="IslamInfo_AajurroomiyyahChapter1WordByWord" xml:space="preserve">
     <value>Useful sounds:|It is|expressions/utterances|compounded,|meaningful|in its syntatical sequence.|And its only parts consists of|three:|the noun,|the verb,|and the particle|coming|with signification/meaning.|Then the noun|is known|by an expression of kasra due to an agent|and noonation,|and entering|alef|and laam|upon it,|and the letters|of expression of kasra due to an agent,|and they are|from,|and to,|and about,|and upon,|and in,|and with,|and baa,|and kaaf,|and laam,|and the letters|of oath,|and they are|waw,|and bah,|and tah.</value>
+  </data>
+  <data name="IslamInfo_GreatMasterpiece" xml:space="preserve">
+    <value>Great Masterpiece</value>
+  </data>
+  <data name="IslamInfo_GreatMasterpiece1" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="IslamInfo_GreatMasterpiece1WordByWord" xml:space="preserve">
+    <value>Masterpiece|Great.|With explanation|introduction|of Aajrumiyyah.</value>
+  </data>
+  <data name="IslamInfo_GreatMasterpiece3" xml:space="preserve">
+    <value>Great Masterpiece Introductions</value>
+  </data>
+  <data name="IslamInfo_GreatMasterpiece3WordByWord" xml:space="preserve">
+    <value>Introductions:|The definition|of grammar,|it is a subject,|it benefits,it has an origin/relation|and an author,|rulings|of Islamic law|in it.|The definition:The meaning|(of grammar)|refers to|in|language|of Arabic|on|many|meanings:|from it|the direction,|it says:|I went|in the direction of|any person|I.E.:|its direction.|And from it|similar|and like,|it says:|Muhammad|looks like|Ali,|I.E.:|it is similar|and it is like.|And refers to|the meaning|of grammar|in|terminological|scientists|on|(knowing|of the rules|which|let's one understand|with it|the rulings|of the endings|of words|Arabic|in|case|it is a construction:|from|the declension,|and structure|and what|follows|that).|The subject:the subject|of knowledge|of grammar:|words|Arabic|from|the direction|of searching|for|statues|mentioned.|The benefit:|The benefit|of studying|knowledge|of grammar:|Protecting|of the tongue|from|mistakes|in|the speech|Arabic|and understanding|the Qur'an|noble|and the transmissions|prophetic|and understanding|authentic,|the two which|the basis|of law|Islamic|and upon these two|their center.|The founder:|And it is|from|the rules|Arabic.|First author:|And well known|that|the first|to put|knowledge|of grammar|he is|the father|of black|Du'alee,|by command|of the commander|of the faithful|Ali|son of|the father|of Taalib|be pleased|may Allah|with him.|The ruling|of Islamic law|in it|and learning it|is an obligation|from|the obligation|of the collective,|and perhaps|designated|upon|one person|it becomes|the obligation|of the individual|upon him.</value>
+  </data>
+  <data name="IslamInfo_GreatMasterpiece4" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="IslamInfo_GreatMasterpiece4WordByWord" xml:space="preserve">
+    <value>In the name of|Allah|Most Benificent|Most Merciful.|Says|the workbook:|And he is|father|of the servant|of Allah|son of|Muhammad|son of|David|of Sanhaajah|famous|for the son|of Aajurroom.|And he was born|in|year|672|two|and seventy|and six hundred|and he died|in|year|723|three|and twenty|and seven hundred|from|emigration|prophetic|-|mercy on him|of Allah|the Most High.|It says:|The speech|it is|an expression|compound|having meaning|with .|And I say:|Of the expression|(of speech)|two meanings:|one of them|lexical,|and the second|grammatical.|</value>
   </data>
 </root>
