@@ -3815,7 +3815,7 @@ Public Class DocBuilder
             If Matches(MatchCount).Length <> 0 Then
                 If Matches(MatchCount).Groups(1).Length <> 0 Then
                     Dim ArabicText As String() = Matches(MatchCount).Groups(1).Value.Split(" "c)
-                    If ArabicText.Length > 1 And EnglishByWord.Length = ArabicText.Length Then
+                    If ArabicText.Length > 1 Then 'And EnglishByWord.Length = ArabicText.Length Then
                         Dim Transliteration As String() = Arabic.TransliterateToScheme(Arabic.TransliterateFromBuckwalter(Matches(MatchCount).Groups(1).Value), SchemeType, Scheme).Split(" "c)
                         'Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eHeaderCenter, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, Utility.LoadResourceString("IslamInfo_" + TranslationID))}))
                         Dim Items As New Collections.Generic.List(Of RenderArray.RenderItem)
