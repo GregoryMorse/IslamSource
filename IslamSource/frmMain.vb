@@ -15,6 +15,7 @@ Public Class frmMain
         'TanzilReader.CompareQuranFormats(TanzilReader.QuranTexts.Hafs, TanzilReader.QuranTexts.Warsh, TanzilReader.QuranScripts.Uthmani, TanzilReader.ArabicPresentation.Buckwalter)
         'TanzilReader.ChangeQuranFormat(TanzilReader.QuranTexts.Hafs, TanzilReader.QuranTexts.Warsh, TanzilReader.QuranScripts.Uthmani, TanzilReader.ArabicPresentation.Buckwalter)
         'TanzilReader.CheckNotablePatterns()
+        TanzilReader.FindMinimalVersesForCoverage()
         Dim IndexToVerse As Integer()() = Nothing
         Dim Text As String = TanzilReader.QuranTextCombiner(IndexToVerse)
         System.Text.RegularExpressions.Regex.Match(Text, CachedData.GetPattern("ContinuousMatch"))

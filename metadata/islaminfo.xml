@@ -5639,6 +5639,13 @@ Ramadan fast-breaking | One 2172-gram quantity | Dates or barley or ordinary sta
 	20E5 COMBINING REVERSE SOLIDUS OVERLAY could be used for Superscript Alef over Lams
 	0335 CombiningShortStrokeOverlay
 	-->
+	<pangrams>
+		<pangram text="Sifo xaloqa xawodi kamivoli {l$~amosi &lt;i*o bazagato \— yaHoZaY {lD~ajiyEu bihaA najolaA^'a miEoTaAri"></pangram>
+		<pangram text="halaA sakinato bi*iy DagovK faqad zaEomuwA@ \— $axoSato taTolibu ZabiyFA raAHa mujotaAzaA"></pangram>
+		<pangram text="{Sobaro EalaY HafiZi xaDirK wa{sota$iro faTunaA wazuju hamaki fiY bagodaA*i manivamalaA"></pangram>
+		<pangram text="naS~N HakiymN lahu sir~N qaATiEN wa*uw $a&gt;onK EaZiymK makotuwbN EalaY vuwbK &gt;axoDara wamugalafN bijilodK &gt;azoraqK"></pangram>
+		<pangram text="{bojad huwzi HaT~aY kuloman saEafoSi quri$ato vaxa* DaZag"></pangram>
+	</pangrams>
 	<translitschemes>
 		<scheme name="ExtendedBuckwalter" alphabet="A|b|t|v|j|H|x|d|*|r|z|s|$|S|D|T|Z|E|g|f|q|k|l|m|n|h|w|y" hamza="&apos;|&amp;pipe;|&gt;|&amp;|&lt;|}|#|{|X" literals="p|p|aw`p|aY`p|oY|aY|iY|FY|F[Y|F]Y|aw`|aY`|a`|A@|FA|F[A|F]A|&amp;first;~|{|{" multis="aA|uw|iy|aw|ay" fathadammakasratanweenlongvowelsdipthongsshaddasukun="a|u|i|F|N|K|~|o" gutterals="aA|a|uw|u|iy|i|F|N|K||aA|a|uw|u|iy|i" tajweed=":|[|;|,|.|!|]||p|Y|`" silent="_|^|W|U|e|L|Q|M|I|C|O|=|B|@|&quot;|R|-|+|%" punctuation=" |||||||||||||||||||)|(" number="0|1|2|3|4|5|6|7|8|9" nonarabic="P|J|V|G"></scheme>
 		<scheme name="IPAValues" alphabet="a:|b|t|θ|ɟ|ħ|χˠ|d|ð|ɾˠ|z|s|ɕ|sˠ|ɮˠ|tˠ|ðˠ|ʕ|ʁˠ|f|qˠ|k|l/lˠ|m|n|h|w|j" hamza="ʔ|ʔa:|ʔ|ʔ|ʔ|ʔ|ʔ||ʔ" literals="h|t|a:h|a:h|j|a:|iy|an|an|an|a:|a:|a:||an|an|an|&amp;first;&amp;first;|i|u" multis="a:|uw|iy|aw|ay" fathadammakasratanweenlongvowelsdipthongsshaddasukun="a|u|i|an|un|in||∅" gutterals="a:|a|uw|u|iy|i|an|un|in||a:|a|uw|u|iy|i" tajweed="|||||||n|h|j|a:" silent="||||||||||||||||||" punctuation=" ||||||||||||||||||||" number="|||||||||" nonarabic="|||"></scheme>

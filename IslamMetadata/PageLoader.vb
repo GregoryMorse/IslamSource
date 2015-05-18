@@ -5056,6 +5056,75 @@ Public Class TanzilReader
     Public Shared QuranFileNames As String() = {"uthmani", "uthmani-min", "simple", "simple-min", "simple-enhanced", "simple-clean"}
     Public Shared QuranScriptNames As String() = {"Uthmani", "Uthmani Minimal", "Simple", "Simple Minimal", "Simple Enhanced", "Simple Clean"}
     Public Shared PresentationCacheNames As String() = {String.Empty, "pres", "buckwalter"}
+    Public Shared Sub FindMinimalVersesForCoverage()
+        Dim Letters As String() = CachedData.RecitationSymbols 'input is letter coverage required
+        Dim SubAyah As Boolean = False 'input whether or not to break ayahs into "sub ayah" with 5 tajweed pause markers not including the 6th of forced continue
+        Dim VerseDict As New Dictionary(Of String, List(Of Integer(,)))
+        Dim Verses As List(Of String()) = GetQuranText(CachedData.XMLDocMain, -1, -1, -1, -1)
+        'initialize the letter profile dictionary
+        Dim TotalVerses As Integer = 0
+        For Count As Integer = 0 To Verses.Count - 1
+            For SubCount As Integer = 0 To Verses(Count).Length - 1
+                Dim Hits(Letters.Length - 1) As Boolean
+                For LetCount As Integer = 0 To Letters.Length - 1
+                    If Verses(Count)(SubCount).Contains(Letters(LetCount)) Then
+                        Hits(LetCount) = True
+                    End If
+                Next
+                Dim Str As String = String.Empty
+                For LetCount As Integer = 0 To Hits.Length - 1
+                    If Hits(LetCount) Then Str += Letters(LetCount)
+                Next
+                If Str.Length = Letters.Length Then Debug.Print(CStr(Count) + ":" + CStr(SubCount))
+                If Not VerseDict.ContainsKey(Str) Then VerseDict.Add(Str, New List(Of Integer(,)))
+                VerseDict(Str).Add(New Integer(0, 1) {{Count, SubCount}})
+            Next
+            TotalVerses += GetVerseCount(Count + 1)
+        Next
+        Dim CombineCount As Integer = 1 'order of n^2*n! which needs to be heuristically reduced towards n^3
+        Dim CombineVerseDict As New Dictionary(Of String, List(Of Integer(,)))(VerseDict) 'shallow copy
+        Do
+            Dim NextCombineVerseDict As New Dictionary(Of String, List(Of Integer(,)))
+            For Each LetterProfile As KeyValuePair(Of String, List(Of Integer(,))) In CombineVerseDict
+                For Each VerseLetProfile As KeyValuePair(Of String, List(Of Integer(,))) In VerseDict
+                    For Count As Integer = 0 To LetterProfile.Value.Count - 1
+                        For SubCount As Integer = 0 To VerseLetProfile.Value.Count - 1
+                            Dim SearchCount As Integer
+                            For SearchCount = 0 To LetterProfile.Value(Count).GetLength(0) - 1
+                                If LetterProfile.Value(Count)(SearchCount, 0) = VerseLetProfile.Value(SubCount)(0, 0) And LetterProfile.Value(Count)(SearchCount, 1) = VerseLetProfile.Value(SubCount)(0, 1) Then Exit For
+                            Next
+                            If SearchCount = LetterProfile.Value(Count).GetLength(0) Then
+                                Dim Hits(Letters.Length - 1) As Boolean
+                                For LetCount As Integer = 0 To Letters.Length - 1
+                                    If LetterProfile.Key.Contains(Letters(LetCount)) Or VerseLetProfile.Key.Contains(Letters(LetCount)) Then
+                                        Hits(LetCount) = True
+                                    End If
+                                Next
+                                Dim Str As String = String.Empty
+                                For LetCount As Integer = 0 To Hits.Length - 1
+                                    If Hits(LetCount) Then Str += Letters(LetCount)
+                                Next
+                                If Str.Length = Letters.Length Then
+                                    Debug.Print(CStr(VerseLetProfile.Value(SubCount)(0, 0)) + ":" + CStr(VerseLetProfile.Value(SubCount)(0, 1)) + ",")
+                                    For SearchCount = 0 To LetterProfile.Value(Count).GetLength(0) - 1
+                                        Debug.Print(String.Join(",", CStr(LetterProfile.Value(Count)(SearchCount, 0)) + ":" + CStr(LetterProfile.Value(Count)(SearchCount, 1))))
+                                    Next
+                                End If
+                                If Not NextCombineVerseDict.ContainsKey(Str) Then NextCombineVerseDict.Add(Str, New List(Of Integer(,)))
+                                Dim NewList As Integer(,) = New Integer(LetterProfile.Value(Count).GetLength(0) + VerseLetProfile.Value(SubCount).GetLength(0) - 1, 1) {}
+                                Array.Copy(LetterProfile.Value(Count), NewList, 2 * LetterProfile.Value(Count).GetLength(0))
+                                NewList(LetterProfile.Value(Count).GetLength(0), 0) = VerseLetProfile.Value(SubCount)(0, 0)
+                                NewList(LetterProfile.Value(Count).GetLength(0), 1) = VerseLetProfile.Value(SubCount)(0, 1)
+                                NextCombineVerseDict(Str).Add(NewList)
+                            End If
+                        Next
+                    Next
+                Next
+            Next
+            CombineVerseDict = NextCombineVerseDict
+            CombineCount += 1
+        Loop While CombineCount < TotalVerses
+    End Sub
     Public Shared Sub CheckNotablePatterns()
         'ComparePatterns(QuranScripts.Uthmani, QuranScripts.UthmaniMin, Arabic.UthmaniShortVowelsBeforeLongVowelsAlef)
         'ComparePatterns(QuranScripts.Uthmani, QuranScripts.UthmaniMin, Arabic.UthmaniShortVowelsBeforeLongVowelsSuperscriptAlef)
