@@ -5057,7 +5057,9 @@ Public Class TanzilReader
     Public Shared QuranScriptNames As String() = {"Uthmani", "Uthmani Minimal", "Simple", "Simple Minimal", "Simple Enhanced", "Simple Clean"}
     Public Shared PresentationCacheNames As String() = {String.Empty, "pres", "buckwalter"}
     Public Shared Sub FindMinimalVersesForCoverage()
-        Dim Letters As String() = CachedData.RecitationSymbols 'input is letter coverage required
+        Dim Letters As String() = CachedData.RecitationSymbols 'input is letter coverage required 
+        'CachedData.ArabicLetters '3:154 and 48:29
+        '{ArabicData.ArabicHamzaAbove, ArabicData.ArabicLetterHamza, ArabicData.ArabicLetterAlefWithHamzaAbove, ArabicData.ArabicLetterAlefWithHamzaBelow, ArabicData.ArabicLetterWawWithHamzaAbove, ArabicData.ArabicLetterYehWithHamzaAbove} '2:31, 3:49, 5:41, 8:19, 24:62 
         Dim SubAyah As Boolean = False 'input whether or not to break ayahs into "sub ayah" with 5 tajweed pause markers not including the 6th of forced continue
         Dim VerseDict As New Dictionary(Of String, List(Of Integer(,)))
         Dim Verses As List(Of String()) = GetQuranText(CachedData.XMLDocMain, -1, -1, -1, -1)
