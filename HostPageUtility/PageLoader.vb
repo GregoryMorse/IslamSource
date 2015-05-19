@@ -2000,7 +2000,7 @@ Public Class ArabicData
         Return If((FindLetterBySymbol(Str.Chars(0)) <> -1 AndAlso ArabicLetters(FindLetterBySymbol(Str.Chars(0))).JoiningStyle = "T") Or Str.Length = 1, LeftToRightOverride + Str + PopDirectionalFormatting, Str)
     End Function
     Public Shared Function MakeUniRegEx(Input As String) As String
-        Return String.Join(String.Empty, Array.ConvertAll(Of Char, String)(Input.ToCharArray(), Function(Ch As Char) If(System.Text.RegularExpressions.Regex.Match(Ch, "[\p{IsArabic}\p{IsArabicPresentationForms-A}\p{IsArabicPresentationForms-B}]").Success, "\u" + AscW(Ch).ToString("X4"), Ch)))
+        Return String.Join(String.Empty, Array.ConvertAll(Of Char, String)(Input.ToCharArray(), Function(Ch As Char) If(System.Text.RegularExpressions.Regex.Match(Ch, "[\p{IsArabic}\p{IsArabicPresentationForms-A}\p{IsArabicPresentationForms-B}]").Success, "\u" + AscW(Ch).ToString("X4"), If(Ch = "."c, "\" + Ch, Ch))))
     End Function
     Public Shared Function MakeRegMultiEx(Input As String()) As String
         Return String.Join("|", Input)
