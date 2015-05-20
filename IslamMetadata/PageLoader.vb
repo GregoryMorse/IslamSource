@@ -2373,7 +2373,7 @@ Public Class CachedData
         Dim Count As Integer
         For Count = 0 To CachedData.IslamData.ArabicGroups.Length - 1
             If CachedData.IslamData.ArabicGroups(Count).Name = Name Then
-                Return Array.ConvertAll(CachedData.IslamData.ArabicGroups(Count).Text, Function(Str As String) TranslateRegEx(Str, Name = "ArabicSpecialLetters" Or Name = "ArabicAssimilateAcrossWord" Or Array.IndexOf(Characteristics, Name) <> -1))
+                Return Array.ConvertAll(CachedData.IslamData.ArabicGroups(Count).Text, Function(Str As String) TranslateRegEx(Str, Name = "ArabicSpecialLetters" Or Name = "ArabicAssimilateSameWord" Or Name = "ArabicAssimilateAcrossWord" Or Name = "ArabicAssimilateLeenAcrossWord" Or Array.IndexOf(Characteristics, Name) <> -1))
             End If
         Next
         Return {}
@@ -2989,6 +2989,8 @@ Public Class CachedData
                     'If Match.Groups(1).Value = "SimpleSuperscriptAlefAfter" Then Return ArabicData.MakeRegMultiEx(Array.ConvertAll(Arabic.SimpleSuperscriptAlefAfter, Function(Str As String) Arabic.TransliterateFromBuckwalter(Str.Replace(".", String.Empty).Replace("""", String.Empty).Replace("@", String.Empty).Replace("[", String.Empty).Replace("]", String.Empty).Replace("-", String.Empty).Replace("^", String.Empty))))
                     'If Match.Groups(1).Value = "SimpleSuperscriptAlefNotAfter" Then Return ArabicData.MakeRegMultiEx(Array.ConvertAll(Arabic.SimpleSuperscriptAlefNotAfter, Function(Str As String) Arabic.TransliterateFromBuckwalter(Str.Replace(".", String.Empty).Replace("""", String.Empty).Replace("@", String.Empty).Replace("[", String.Empty).Replace("]", String.Empty).Replace("-", String.Empty).Replace("^", String.Empty))))
                     If Match.Groups(1).Value = "ArabicLongShortVowels" Then Return ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicLongVowels, Function(StrV As String) ArabicData.MakeUniRegEx(StrV(0)) + "(?=" + ArabicData.MakeUniRegEx(StrV(1)) + ")"))
+                    If Match.Groups(1).Value = "ArabicNoonSakinaLetters" Then Return ArabicData.MakeRegMultiEx(Array.ConvertAll(GetGroup("ArabicNoonSakinaLetters"), Function(Str As String) ArabicData.MakeUniRegEx(Str)))
+                    If Match.Groups(1).Value = "ArabicAssimilateLeenAcrossWord" Then Return ArabicData.MakeRegMultiEx(Array.ConvertAll(GetGroup("ArabicAssimilateLeenAcrossWord"), Function(Str As String) ArabicData.MakeUniRegEx(Str)))
                     If Match.Groups(1).Value = "ArabicAssimilateAcrossWord" Then Return ArabicData.MakeRegMultiEx(Array.ConvertAll(GetGroup("ArabicAssimilateAcrossWord"), Function(Str As String) ArabicData.MakeUniRegEx(Str)))
                     If Match.Groups(1).Value = "ArabicAssimilateSameWord" Then Return ArabicData.MakeRegMultiEx(Array.ConvertAll(GetGroup("ArabicAssimilateSameWord"), Function(Str As String) ArabicData.MakeUniRegEx(Str)))
                     If Match.Groups(1).Value = "ArabicTanweens" Then Return ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicTanweens, Function(Str As String) ArabicData.MakeUniRegEx(Str)))
