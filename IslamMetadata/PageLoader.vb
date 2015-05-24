@@ -2989,6 +2989,8 @@ Public Class CachedData
                     'If Match.Groups(1).Value = "SimpleSuperscriptAlefAfter" Then Return ArabicData.MakeRegMultiEx(Array.ConvertAll(Arabic.SimpleSuperscriptAlefAfter, Function(Str As String) Arabic.TransliterateFromBuckwalter(Str.Replace(".", String.Empty).Replace("""", String.Empty).Replace("@", String.Empty).Replace("[", String.Empty).Replace("]", String.Empty).Replace("-", String.Empty).Replace("^", String.Empty))))
                     'If Match.Groups(1).Value = "SimpleSuperscriptAlefNotAfter" Then Return ArabicData.MakeRegMultiEx(Array.ConvertAll(Arabic.SimpleSuperscriptAlefNotAfter, Function(Str As String) Arabic.TransliterateFromBuckwalter(Str.Replace(".", String.Empty).Replace("""", String.Empty).Replace("@", String.Empty).Replace("[", String.Empty).Replace("]", String.Empty).Replace("-", String.Empty).Replace("^", String.Empty))))
                     If Match.Groups(1).Value = "ArabicLongShortVowels" Then Return ArabicData.MakeRegMultiEx(Array.ConvertAll(ArabicLongVowels, Function(StrV As String) ArabicData.MakeUniRegEx(StrV(0)) + "(?=" + ArabicData.MakeUniRegEx(StrV(1)) + ")"))
+                    If Match.Groups(1).Value = "ArabicConnectingLetters" Then Return ArabicData.MakeRegMultiEx(Array.ConvertAll(GetGroup("ArabicConnectingLetters"), Function(Str As String) ArabicData.MakeUniRegEx(Str)))
+                    If Match.Groups(1).Value = "ArabicNonConnectingLetters" Then Return ArabicData.MakeRegMultiEx(Array.ConvertAll(GetGroup("ArabicNonConnectingLetters"), Function(Str As String) ArabicData.MakeUniRegEx(Str)))
                     If Match.Groups(1).Value = "ArabicNoonSakinaLetters" Then Return ArabicData.MakeRegMultiEx(Array.ConvertAll(GetGroup("ArabicNoonSakinaLetters"), Function(Str As String) ArabicData.MakeUniRegEx(Str)))
                     If Match.Groups(1).Value = "ArabicAssimilateLeenAcrossWord" Then Return ArabicData.MakeRegMultiEx(Array.ConvertAll(GetGroup("ArabicAssimilateLeenAcrossWord"), Function(Str As String) ArabicData.MakeUniRegEx(Str)))
                     If Match.Groups(1).Value = "ArabicAssimilateAcrossWord" Then Return ArabicData.MakeRegMultiEx(Array.ConvertAll(GetGroup("ArabicAssimilateAcrossWord"), Function(Str As String) ArabicData.MakeUniRegEx(Str)))
@@ -5553,7 +5555,7 @@ Public Class TanzilReader
         Dim Verses As List(Of String()) = GetQuranText(CachedData.XMLDocMain, -1, -1, -1, -1)
         Dim IndexToVerseList As New List(Of Integer())
         Dim Str As New System.Text.StringBuilder
-        For Count As Integer = 110 To Verses.Count - 1
+        For Count As Integer = 0 To Verses.Count - 1
             For SubCount As Integer = 0 To Verses(Count).Length - 1
                 Dim Words As String()
                 Dim Index As Integer
