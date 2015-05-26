@@ -3022,6 +3022,7 @@ Public Class CachedData
                     Return If(bAll, ArabicData.MakeUniRegEx(If(ArabicData.ArabicCombos(ArabicComboCamelCaseDict(Match.Groups(1).Value)).Shaping.Length = 1, ArabicData.ArabicCombos(ArabicComboCamelCaseDict(Match.Groups(1).Value)).Shaping(0), String.Join(String.Empty, Array.ConvertAll(ArabicData.ArabicCombos(ArabicComboCamelCaseDict(Match.Groups(1).Value)).Symbol, Function(Sym As Char) CStr(Sym))))), If(ArabicData.ArabicCombos(ArabicComboCamelCaseDict(Match.Groups(1).Value)).Shaping.Length = 1, ArabicData.ArabicCombos(ArabicComboCamelCaseDict(Match.Groups(1).Value)).Shaping(0), String.Join(String.Empty, Array.ConvertAll(ArabicData.ArabicCombos(ArabicComboCamelCaseDict(Match.Groups(1).Value)).Symbol, Function(Sym As Char) CStr(Sym)))))
                 End If
                 '{0} ignore
+                If Not IsNumeric(Match.Groups(1).Value) Then Debug.Print("Unknown Group: " + Match.Groups(1).Value)
                 Return Match.Value
             End Function)
     End Function
