@@ -2938,7 +2938,17 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 		<!-- {search:quro'aAn[aiuFKN]\[?\]? .;W4W;W4WNum} -->
 		<!-- {search:Earo\$.*} -->
 		<!-- {search:.*kurosiy.*|.*Earo\$.*} -->
-		<!-- {search: baHor.\s(*\sbaHor.\s)?|yabasFA|bar~i\s -->
+		<!-- {search: baHor.\s(*\sbaHor.\s)?|yabasFA|bar~i\s} -->
+		<!-- {search: (*_#|\s')aAdam*|*EiysaY*} -->
+		<!-- {search: *miyzaAn*|*w~?az[oa]n*|*m~?awa`z(iy|uw)n*|\szinu\s|&lt;isoraAf*|&gt;asoraf*|[y|t|m]~?usorif*|} -->
+		<!-- {search: *S~uwr*|&gt;anfux*|nufix*|nafax*|yunfax*|tanfux*|nafoxap*|.nfux*} -->
+		<!-- {search: T~?aEaAm*|[yn][au]ToE[ai]m*|&lt;iToEa[A`]m*|&gt;aToE[ai]m*|tuToEim*|TaA?Eim*|.sotaToEam*|v~?amara`t*|vamar*|&gt;avomar*} -->
+		<!-- {search: xiTaAb*|xaTob*|xaATab*|tuxa`Tib*|[mty]anTiq*|&gt;anTaq*} -->
+		<!-- {search: [yt]u&amp;ofak*|[ty]a&gt;of[ai]k*|(&lt;|})ifok*|mu&amp;otafika*|&gt;af~aAk*|&gt;ufik*|.fotara[yY]*|[ty]afotar*|tafotariY*|yufotaraY*|mufotar*|fariy~*|m~?ufotar*|} -->
+		<!-- {search: {n~?abiY*|naba&gt;*} -->
+		<!-- {search: {qll|$kr} -->
+		<!-- {search: {n*r|xwf} -->
+		<!-- {search: {gfr|jzy} -->
 		<word text="{loquro'aAnu {loEaZiymu \{15:87:6-7\}" id="TheGreatQuran"></word>
 		<word text="{loquro'aAnu {loHakiymu \{36:2\}" id="TheWiseQuran"></word>
 		<word text="{loquro'aAnu {lomajiydu \{50:1:3-4\}" id="TheGloriousQuran"></word>
