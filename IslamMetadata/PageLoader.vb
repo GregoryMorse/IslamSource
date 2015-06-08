@@ -2350,6 +2350,8 @@ Public Class CachedData
     Shared _ColoringSpelledOutRules As IslamData.RuleTranslationCategory.RuleTranslation()
     Shared _ErrorCheck As IslamData.RuleTranslationCategory.RuleTranslation()
     Shared _RulesOfRecitationRegEx As IslamData.RuleMetadataTranslation()
+    Shared _SavedPatterns As New Dictionary(Of String, String)
+    Shared _SavedGroups As New Dictionary(Of String, String())
     Public Shared Function GetNum(Name As String) As String()
         Dim Count As Integer
         For Count = 0 To CachedData.IslamData.ArabicNumbers.Length - 1
@@ -2361,9 +2363,11 @@ Public Class CachedData
     End Function
     Public Shared Function GetPattern(Name As String) As String
         Dim Count As Integer
+        If _SavedPatterns.ContainsKey(Name) Then Return _SavedPatterns(Name)
         For Count = 0 To CachedData.IslamData.ArabicPatterns.Length - 1
             If CachedData.IslamData.ArabicPatterns(Count).Name = Name Then
-                Return TranslateRegEx(CachedData.IslamData.ArabicPatterns(Count).Match, True)
+                _SavedPatterns.Add(Name, TranslateRegEx(CachedData.IslamData.ArabicPatterns(Count).Match, True))
+                Return _SavedPatterns(Name)
             End If
         Next
         Return String.Empty
@@ -2371,9 +2375,11 @@ Public Class CachedData
     Public Shared Function GetGroup(Name As String) As String()
         Dim Characteristics As String() = {"Audibility", "Whispering", "Weakness", "Moderation", "Strength", "Lowness", "Elevation", "Opening", "Closing", "Restraint", "Fluency", "Vibration", "Inclination", "Repetition", "Whistling", "Diffusion", "Elongation", "Nasal", "Ease"}
         Dim Count As Integer
+        If _SavedGroups.ContainsKey(Name) Then Return _SavedGroups(Name)
         For Count = 0 To CachedData.IslamData.ArabicGroups.Length - 1
             If CachedData.IslamData.ArabicGroups(Count).Name = Name Then
-                Return Array.ConvertAll(CachedData.IslamData.ArabicGroups(Count).Text, Function(Str As String) TranslateRegEx(Str, Name = "ArabicSpecialLetters" Or Name = "ArabicAssimilateSameWord" Or Name = "ArabicAssimilateAcrossWord" Or Name = "ArabicAssimilateLeenAcrossWord" Or Array.IndexOf(Characteristics, Name) <> -1))
+                _SavedGroups.Add(Name, Array.ConvertAll(CachedData.IslamData.ArabicGroups(Count).Text, Function(Str As String) TranslateRegEx(Str, Name = "ArabicSpecialLetters" Or Name = "ArabicAssimilateSameWord" Or Name = "ArabicAssimilateAcrossWord" Or Name = "ArabicAssimilateLeenAcrossWord" Or Array.IndexOf(Characteristics, Name) <> -1)))
+                Return _SavedGroups(Name)
             End If
         Next
         Return {}
