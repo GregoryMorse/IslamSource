@@ -5562,7 +5562,7 @@ Public Class TanzilReader
         Dim Verses As List(Of String()) = GetQuranText(CachedData.XMLDocMain, -1, -1, -1, -1)
         Dim IndexToVerseList As New List(Of Integer())
         Dim Str As New System.Text.StringBuilder
-        For Count As Integer = 0 To Verses.Count - 1
+        For Count As Integer = 20 To Verses.Count - 1
             For SubCount As Integer = 0 To Verses(Count).Length - 1
                 Dim Words As String()
                 Dim Index As Integer
