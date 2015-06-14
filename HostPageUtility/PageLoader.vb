@@ -1796,6 +1796,7 @@ Public Class ArabicData
     Public Const LeftPointingDoubleAngleQuotationMark As Char = ChrW(&HAB)
     Public Const RightPointingDoubleAngleQuotationMark As Char = ChrW(&HBB)
     Public Const ArabicComma As Char = ChrW(&H60C)
+    Public Const ArabicSignSallallahouAlayheWassallam As Char = ChrW(&H610)
     Public Const ArabicLetterHamza As Char = ChrW(&H621)
     Public Const ArabicLetterAlefWithMaddaAbove As Char = ChrW(&H622)
     Public Const ArabicLetterAlefWithHamzaAbove As Char = ChrW(&H623)
@@ -2322,7 +2323,7 @@ Public Class RenderArray
                                 'Madda on small waw and Madda, Fatha, Kasra or Shadda-Kasra on small yeh
                                 'Problem with fatha then dagger alef with hamza above with sukun
                                 'Also normal Unicode engine fails, the dagger alef should be not combined and be its own base
-                                'Problem with alef wasl + laam + alef wasl which throws off alignment
+                                'Problem with laam + alef wasl which throws off alignment
                                 CharPosInfos.Add(New CharPosInfo With {.Index = RunStart + RunCount, .Length = If(Index = -1, 1, LigLen), .PriorWidth = PriorWidth - If(GlyphProps(RunRes).Justification = SharpDX.DirectWrite.ScriptJustify.ArabicKashida And RunCount = 1 And If(CharCount = ClusterMap.Length - 1, ActualGlyphCount, ClusterMap(CharCount + 1)) - ClusterMap(CharCount) = CharCount - RunStart, GlyphAdvances(RunRes), 0), .Width = GlyphAdvances(RunRes) + If(GlyphProps(RunRes).IsClusterStart And GlyphProps(RunRes).IsDiacritic, CSng((_Mets(RunRes).AdvanceWidth) * useFont.SizeInPoints / FontFace.Metrics.DesignUnitsPerEm), 0), .X = GlyphOffsets(ResCount).AdvanceOffset, .Y = GlyphOffsets(ResCount).AscenderOffset + If(GlyphProps(RunRes).IsClusterStart And GlyphProps(RunRes).IsDiacritic, CSng((_Mets(RunRes).AdvanceHeight - _Mets(RunRes).TopSideBearing - _Mets(RunRes).VerticalOriginY) * useFont.SizeInPoints / FontFace.Metrics.DesignUnitsPerEm), 0)})
                                 If GlyphProps(RunRes).Justification = SharpDX.DirectWrite.ScriptJustify.ArabicKashida And RunCount = 1 And If(CharCount = ClusterMap.Length - 1, ActualGlyphCount, ClusterMap(CharCount + 1)) - ClusterMap(CharCount) = CharCount - RunStart Then
                                     CharPosInfos.Add(New CharPosInfo With {.Index = RunStart + RunCount + 1, .Length = If(Index = -1, 1, LigLen), .PriorWidth = PriorWidth, .Width = GlyphAdvances(RunRes) + If(GlyphProps(RunRes).IsClusterStart And GlyphProps(RunRes).IsDiacritic, CSng((_Mets(RunRes).AdvanceWidth) * useFont.SizeInPoints / FontFace.Metrics.DesignUnitsPerEm), 0), .X = GlyphOffsets(ResCount).AdvanceOffset, .Y = GlyphOffsets(RunRes).AscenderOffset + If(GlyphProps(RunRes).IsClusterStart And GlyphProps(RunRes).IsDiacritic, CSng((_Mets(RunRes).AdvanceHeight - _Mets(RunRes).TopSideBearing - _Mets(RunRes).VerticalOriginY) * useFont.SizeInPoints / FontFace.Metrics.DesignUnitsPerEm), 0)})
@@ -2385,6 +2386,7 @@ Public Class RenderArray
     End Function
     Public Shared Function FitText(Text As String, MaxWidth As Single, MaxSize As Single, IsRTL As Boolean, DrawFont As Font, Forms As Char()) As Single
         Dim MinSize As Single = 0
+        Text = System.Text.RegularExpressions.Regex.Replace(Text, "(" + ArabicData.ArabicLetterLam + ArabicData.ArabicKasra + "?)" + ArabicData.ArabicLetterAlefWasla, "$1" + ArabicData.ArabicLetterAlef + ArabicData.ArabicSignSallallahouAlayheWassallam)
         Dim Size As SizeF = GetWordDiacriticPositionsDWrite(Text, DrawFont, Forms, IsRTL, Nothing, Nothing)
         If Size.Width < MaxWidth Then Return DrawFont.SizeInPoints
         For Count = 0 To 50
@@ -2405,6 +2407,7 @@ Public Class RenderArray
         Dim ct As iTextSharp.text.pdf.ColumnText
         Dim CharPosInfos() As CharPosInfo = {}
         Dim useFont As New Font(DrawFont.FontFamily, FixedFont.Size, DrawFont.Style)
+        Text = System.Text.RegularExpressions.Regex.Replace(Text, "(" + ArabicData.ArabicLetterLam + ArabicData.ArabicKasra + "?)" + ArabicData.ArabicLetterAlefWasla, "$1" + ArabicData.ArabicLetterAlef + ArabicData.ArabicSignSallallahouAlayheWassallam)
         GetWordDiacriticPositionsDWrite(Text, useFont, Forms, True, Nothing, CharPosInfos)
         For Index As Integer = 0 To CharPosInfos.Length - 1
             ct = New iTextSharp.text.pdf.ColumnText(Writer.DirectContent)
@@ -2860,6 +2863,7 @@ Public Class RenderArray
             PrivateFontColl.Dispose()
             Return Str.Length
         End If
+        Str = System.Text.RegularExpressions.Regex.Replace(Str, "(" + ArabicData.ArabicLetterLam + ArabicData.ArabicKasra + "?)" + ArabicData.ArabicLetterAlefWasla, "$1" + ArabicData.ArabicLetterAlef + ArabicData.ArabicSignSallallahouAlayheWassallam)
         s = GetWordDiacriticPositionsDWrite(AddDiacriticSpacing(Str, Forms), DrawFont, Forms, IsRTL, Baseline, Nothing)
         Dim Len As Integer = Str.Length
         Dim Search As Integer = Len

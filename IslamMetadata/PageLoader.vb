@@ -3878,6 +3878,11 @@ Public Class DocBuilder
     Public Shared Sub ErrorCheckTextFromReferences(Strings As String)
         Dim _Options As String() = Strings.Split(";"c)
         Strings = _Options(0)
+        Dim Count As Integer = 0
+        While _Options(Count).EndsWith("&leftbrace") Or _Options(Count).EndsWith("&rightbrace") Or _Options(Count).EndsWith("&comma") Or _Options(Count).EndsWith("&semicolon")
+            _Options(0) = _Options(0) + ";" + _Options(Count + 1)
+            Count += 1
+        End While
         If TanzilReader.IsQuranTextReference(Strings) Then
         ElseIf Strings.StartsWith("symbol:") Then
             Dim SelArr As String() = Strings.Replace("symbol:", String.Empty).Split(","c)
@@ -3924,37 +3929,37 @@ Public Class DocBuilder
             Next
         ElseIf Strings.StartsWith("particle:") Then
             Dim SelArr As String() = Strings.Replace("particle:", String.Empty).Split(","c)
-            For Count As Integer = 0 To SelArr.Length - 1
+            For Count = 0 To SelArr.Length - 1
                 If Arabic.GetParticles(SelArr(Count)) Is Nothing Then Debug.Print("Particle ID Not Found: " + SelArr(Count))
             Next
         ElseIf Strings.StartsWith("noun:") Then
             Dim SelArr As String() = Strings.Replace("noun:", String.Empty).Split(","c)
-            For Count As Integer = 0 To SelArr.Length - 1
+            For Count = 0 To SelArr.Length - 1
                 If Arabic.GetCatNoun(SelArr(Count)) Is Nothing Then Debug.Print("Noun ID Not Found: " + SelArr(Count))
             Next
         ElseIf Strings.StartsWith("verb:") Then
             Dim SelArr As String() = Strings.Replace("verb:", String.Empty).Split(","c)
-            For Count As Integer = 0 To SelArr.Length - 1
+            For Count = 0 To SelArr.Length - 1
                 If Arabic.GetVerb(SelArr(Count)) Is Nothing Then Debug.Print("Verb ID Not Found: " + SelArr(Count))
             Next
         ElseIf Strings.StartsWith("transform:") Then
             Dim SelArr As String() = Strings.Replace("transform:", String.Empty).Split(","c)
-            For Count As Integer = 0 To SelArr.Length - 1
+            For Count = 0 To SelArr.Length - 1
                 If Arabic.GetTransform(SelArr(Count)) Is Nothing Then Debug.Print("Transform ID Not Found: " + SelArr(Count))
             Next
         ElseIf Strings.StartsWith("word:") Then
             Dim SelArr As String() = Strings.Replace("word:", String.Empty).Split(","c)
-            For Count As Integer = 0 To SelArr.Length - 1
+            For Count = 0 To SelArr.Length - 1
                 If Not Arabic.GetCatWord(SelArr(Count)).HasValue Then Debug.Print("Word ID Not Found: " + SelArr(Count))
             Next
         ElseIf Strings.StartsWith("phrase:") Then
             Dim SelArr As String() = Strings.Replace("phrase:", String.Empty).Split(","c)
-            For Count As Integer = 0 To SelArr.Length - 1
+            For Count = 0 To SelArr.Length - 1
                 If Not Phrases.GetPhraseCat(SelArr(Count)).HasValue Then Debug.Print("Phrase ID Not Found: " + SelArr(Count))
             Next
         ElseIf Strings.StartsWith("list:") Then
             Dim SelArr As String() = Strings.Replace("list:", String.Empty).Split(","c)
-            For Count As Integer = 0 To SelArr.Length - 1
+            For Count = 0 To SelArr.Length - 1
                 If GetListCats({SelArr(Count)}).Length = 0 Then Debug.Print("List ID Not Found: " + SelArr(Count))
             Next
         ElseIf Abbrevs.ContainsKey(Strings) Then
@@ -3967,9 +3972,14 @@ Public Class DocBuilder
     End Sub
     Public Shared Function TextFromReferences(ID As String, Strings As String, SchemeType As ArabicData.TranslitScheme, Scheme As String, TranslationIndex As Integer) As RenderArray
         Dim _Options As String() = Strings.Split(";"c)
+        Dim Count As Integer = 0
+        While _Options(Count).EndsWith("&leftbrace") Or _Options(Count).EndsWith("&rightbrace") Or _Options(Count).EndsWith("&comma") Or _Options(Count).EndsWith("&semicolon")
+            _Options(0) = _Options(0) + ";" + _Options(Count + 1)
+            Count += 1
+        End While
         Strings = _Options(0)
         Dim Options As New Dictionary(Of String, String())
-        For Count As Integer = 1 To _Options.Length - 1
+        For Count = 1 To _Options.Length - 1
             Dim Vals As String() = _Options(Count).Split("="c)
             Options(Vals(0)) = If(Vals.Length = 1, Nothing, Vals(1).Split(","c))
         Next
@@ -4038,28 +4048,28 @@ Public Class DocBuilder
         ElseIf Strings.StartsWith("particle:") Then
             Dim SelArr As String() = Strings.Replace("particle:", String.Empty).Split(","c)
             Dim Words As New List(Of IslamData.GrammarSet.GrammarParticle)
-            For Count As Integer = 0 To SelArr.Length - 1
+            For Count = 0 To SelArr.Length - 1
                 Words.AddRange(Arabic.GetParticles(SelArr(Count)))
             Next
             Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eList, Arabic.DisplayParticle(Words.ToArray(), ID, SchemeType, Scheme, If(Options.ContainsKey("Cols"), Options("Cols"), Nothing)))}))
         ElseIf Strings.StartsWith("noun:") Then
             Dim SelArr As String() = Strings.Replace("noun:", String.Empty).Split(","c)
             Dim Words As New List(Of IslamData.GrammarSet.GrammarNoun)
-            For Count As Integer = 0 To SelArr.Length - 1
+            For Count = 0 To SelArr.Length - 1
                 Words.AddRange(Arabic.GetCatNoun(SelArr(Count)))
             Next
             Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eList, Arabic.NounDisplay(Words.ToArray(), ID, SchemeType, Scheme, If(Options.ContainsKey("Cols"), Options("Cols"), Nothing)))}))
         ElseIf Strings.StartsWith("verb:") Then
             Dim SelArr As String() = Strings.Replace("verb:", String.Empty).Split(","c)
             Dim Words As New List(Of IslamData.GrammarSet.GrammarVerb)
-            For Count As Integer = 0 To SelArr.Length - 1
+            For Count = 0 To SelArr.Length - 1
                 Words.AddRange(Arabic.GetVerb(SelArr(Count)))
             Next
             Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eList, Arabic.VerbDisplay(Words.ToArray(), ID, SchemeType, Scheme, If(Options.ContainsKey("Cols"), Options("Cols"), Nothing)))}))
         ElseIf Strings.StartsWith("transform:") Then
             Dim SelArr As String() = Strings.Replace("transform:", String.Empty).Split(","c)
             Dim Words As New List(Of IslamData.GrammarSet.GrammarTransform)
-            For Count As Integer = 0 To SelArr.Length - 1
+            For Count = 0 To SelArr.Length - 1
                 Words.AddRange(Arabic.GetTransform(SelArr(Count)))
             Next
             Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eList, Arabic.DisplayTransform(String.Empty, Words.ToArray(), ID, False, False, SchemeType, Scheme, If(Options.ContainsKey("Cols"), Options("Cols"), Nothing)))}))
@@ -4069,13 +4079,13 @@ Public Class DocBuilder
         ElseIf Strings.StartsWith("phrase:") Then
             Dim SelArr As String() = Strings.Replace("phrase:", String.Empty).Split(","c)
             Dim PhraseCats As IslamData.Phrase() = Phrases.GetPhraseCats(SelArr)
-            For Count As Integer = 0 To PhraseCats.Length - 1
+            For Count = 0 To PhraseCats.Length - 1
                 Renderer.Items.AddRange(Phrases.DoGetRenderedPhraseText(SchemeType, Scheme, PhraseCats(Count), TranslationIndex))
             Next
         ElseIf Strings.StartsWith("list:") Then
             Dim SelArr As String() = Strings.Replace("list:", String.Empty).Split(","c)
             Dim ListCats As IslamData.ListCategory.Word() = GetListCats(SelArr)
-            For Count As Integer = 0 To ListCats.Length - 1
+            For Count = 0 To ListCats.Length - 1
                 Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eHeaderCenter, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, Utility.LoadResourceString("IslamInfo_" + ListCats(Count).TranslationID))}))
                 Renderer.Items.AddRange(BuckwalterTextFromReferences(ID, SchemeType, Scheme, ListCats(Count).Text, String.Empty, TranslationIndex).Items)
             Next
@@ -4120,9 +4130,9 @@ Public Class DocBuilder
         ElseIf Strings.StartsWith("reference:") Then
             Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eHeaderCenter, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, "(" + Strings.Replace("reference:", String.Empty) + ")")}))
         ElseIf Strings.StartsWith("arabic:") Then
-            Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.TransliterateFromBuckwalter(Strings))}))
+            Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.TransliterateFromBuckwalter(Strings.Replace("arabic:", String.Empty).Replace("&leftbrace;", "{").Replace("&rightbrace;", "}").Replace("&comma;", ",").Replace("&semicolon;", ";")))}))
         ElseIf Strings.StartsWith("text:") Then
-            Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, Strings)}))
+            Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, Strings.Replace("text:", String.Empty))}))
         Else
         End If
         Return Renderer
