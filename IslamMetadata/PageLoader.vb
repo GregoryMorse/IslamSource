@@ -5568,6 +5568,146 @@ Public Class TanzilReader
         Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eHeaderCenter, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, "(Qur'an " + RefList + ") " + CStr(RefCount) + " Total")}))
         Return Renderer
     End Function
+    Public Shared Sub CheckMutualExclusiveRules()
+        Dim IndexToVerse As Integer()() = Nothing
+        Dim Text As String = QuranTextCombiner(IndexToVerse)
+        Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(Text, ArabicData.ArabicLetterLam)
+        Dim CheckMatches As New Dictionary(Of Integer, String)
+        Debug.Print(CStr(Matches.Count))
+        For Count = 0 To Matches.Count - 1
+            If Not CheckMatches.ContainsKey(Matches(Count).Index) Then CheckMatches.Add(Matches(Count).Index, String.Empty)
+            CheckMatches(Matches(Count).Index) += "0"
+        Next
+
+        Matches = System.Text.RegularExpressions.Regex.Matches(Text, CachedData.GetPattern("LaamHeaviness"))
+        Debug.Print(CStr(Matches.Count))
+        For Count = 0 To Matches.Count - 1
+            If (True Or Matches(Count).Groups(3).Success Or Matches(Count).Groups(4).Success) And Not Matches(Count).Groups(5).Success And Not Matches(Count).Groups(6).Success Then
+                If Not CheckMatches.ContainsKey(Matches(Count).Groups(8).Index) Then CheckMatches.Add(Matches(Count).Groups(8).Index, String.Empty)
+                CheckMatches(Matches(Count).Groups(8).Index) += "1"
+            End If
+        Next
+
+        Matches = System.Text.RegularExpressions.Regex.Matches(Text, CachedData.GetPattern("LaamLightness"))
+        Debug.Print(CStr(Matches.Count))
+        For Count = 0 To Matches.Count - 1
+            If True Or ((Matches(Count).Groups(3).Success Or Matches(Count).Groups(4).Success) And Matches(Count).Groups(5).Success) Then
+                Dim Idx As Integer = -1
+                If Matches(Count).Groups(6).Success Then Idx = 6
+                If Matches(Count).Groups(8).Success Then Idx = 8
+                If Matches(Count).Groups(5).Success Then Idx = 5
+                If Not CheckMatches.ContainsKey(Matches(Count).Groups(Idx).Index) Then CheckMatches.Add(Matches(Count).Groups(Idx).Index, String.Empty)
+                CheckMatches(Matches(Count).Groups(Idx).Index) += "2"
+                If Matches(Count).Groups(2).Success Then
+                    If Not CheckMatches.ContainsKey(Matches(Count).Groups(2).Index) Then CheckMatches.Add(Matches(Count).Groups(2).Index, String.Empty)
+                    CheckMatches(Matches(Count).Groups(2).Index) += "2"
+                End If
+            End If
+        Next
+
+        Matches = System.Text.RegularExpressions.Regex.Matches(Text, CachedData.GetPattern("LaamAssimilation"))
+        Debug.Print(CStr(Matches.Count))
+        For Count = 0 To Matches.Count - 1
+            If Not CheckMatches.ContainsKey(Matches(Count).Index) Then CheckMatches.Add(Matches(Count).Index, String.Empty)
+            CheckMatches(Matches(Count).Index) += "3"
+        Next
+
+        Matches = System.Text.RegularExpressions.Regex.Matches(Text, CachedData.GetPattern("LaamSeparateLetter"))
+        Debug.Print(CStr(Matches.Count))
+        For Count = 0 To Matches.Count - 1
+            If Not CheckMatches.ContainsKey(Matches(Count).Index) Then CheckMatches.Add(Matches(Count).Index, String.Empty)
+            CheckMatches(Matches(Count).Index) += "4"
+        Next
+        Dim Keys(CheckMatches.Keys.Count - 1) As Integer
+        CheckMatches.Keys.CopyTo(Keys, 0)
+        Array.Sort(Keys)
+        For Count = 0 To Keys.Length - 1
+            If CheckMatches(Keys(Count)).Length <> 2 Then
+                Debug.Print(CStr(Keys(Count)) + ":" + CheckMatches(Keys(Count)) + Text.Substring(Math.Max(0, Keys(Count) - 15), 30))
+            End If
+        Next
+
+        CheckMatches.Clear()
+        Matches = System.Text.RegularExpressions.Regex.Matches(Text, ArabicData.ArabicLetterReh)
+        Debug.Print(CStr(Matches.Count))
+        For Count = 0 To Matches.Count - 1
+            If Not CheckMatches.ContainsKey(Matches(Count).Index) Then CheckMatches.Add(Matches(Count).Index, String.Empty)
+            CheckMatches(Matches(Count).Index) += "0"
+        Next
+
+        Matches = System.Text.RegularExpressions.Regex.Matches(Text, CachedData.GetPattern("RaaHeaviness"))
+        Debug.Print(CStr(Matches.Count))
+        For Count = 0 To Matches.Count - 1
+            If (True Or ((Matches(Count).Groups(3).Success Or Matches(Count).Groups(4).Success Or Matches(Count).Groups(7).Success Or Matches(Count).Groups(8).Success Or Matches(Count).Groups(10).Success Or Matches(Count).Groups(11).Success) And Matches(Count).Groups(2).Success)) And Not Matches(Count).Groups(5).Success And Not Matches(Count).Groups(6).Success And Not Matches(Count).Groups(15).Success And Not Matches(Count).Groups(16).Success And Not Matches(Count).Groups(23).Success And Not Matches(Count).Groups(24).Success And (True Or ((Matches(Count).Groups(26).Success Or Matches(Count).Groups(27).Success) And Matches(Count).Groups(25).Success)) Then
+                Dim Idx As Integer = -1
+                If Matches(Count).Groups(2).Success Then Idx = 2
+                If Matches(Count).Groups(13).Success Then Idx = 13
+                If Matches(Count).Groups(18).Success Then Idx = 18
+                If Matches(Count).Groups(20).Success Then Idx = 20
+                If Matches(Count).Groups(22).Success Then Idx = 22
+                If Matches(Count).Groups(25).Success Then Idx = 25
+                If Not CheckMatches.ContainsKey(Matches(Count).Groups(Idx).Index) Then CheckMatches.Add(Matches(Count).Groups(Idx).Index, String.Empty)
+                CheckMatches(Matches(Count).Groups(Idx).Index) += "1"
+            End If
+        Next
+
+        Matches = System.Text.RegularExpressions.Regex.Matches(Text, CachedData.GetPattern("RaaLightness"))
+        Debug.Print(CStr(Matches.Count))
+        For Count = 0 To Matches.Count - 1
+            If Not Matches(Count).Groups(3).Success And Not Matches(Count).Groups(4).Success And Not Matches(Count).Groups(7).Success And Not Matches(Count).Groups(8).Success And (True Or ((Matches(Count).Groups(9).Success Or Matches(Count).Groups(10).Success) And Matches(Count).Groups(6).Success)) And Not Matches(Count).Groups(15).Success And Not Matches(Count).Groups(16).Success And (True Or ((Matches(Count).Groups(18).Success Or Matches(Count).Groups(19).Success) And Matches(Count).Groups(17).Success)) Then
+                Dim Idx As Integer = -1
+                If Matches(Count).Groups(2).Success Then Idx = 2
+                If Matches(Count).Groups(6).Success Then Idx = 6
+                If Matches(Count).Groups(12).Success Then Idx = 12
+                If Matches(Count).Groups(14).Success Then Idx = 14
+                If Matches(Count).Groups(17).Success Then Idx = 17
+                If Not CheckMatches.ContainsKey(Matches(Count).Groups(Idx).Index) Then CheckMatches.Add(Matches(Count).Groups(Idx).Index, String.Empty)
+                CheckMatches(Matches(Count).Groups(Idx).Index) += "2"
+            End If
+        Next
+
+        Matches = System.Text.RegularExpressions.Regex.Matches(Text, CachedData.GetPattern("RaaHeavinessOrLightness"))
+        Debug.Print(CStr(Matches.Count))
+        For Count = 0 To Matches.Count - 1
+            If (True Or ((Matches(Count).Groups(3).Success Or Matches(Count).Groups(4).Success Or Matches(Count).Groups(5).Success Or Matches(Count).Groups(6).Success) And Matches(Count).Groups(2).Success)) And Not Matches(Count).Groups(8).Success And Not Matches(Count).Groups(9).Success Then
+                Dim Idx As Integer = -1
+                If Matches(Count).Groups(2).Success Then Idx = 2
+                If Matches(Count).Groups(7).Success Then Idx = 7
+                If Not CheckMatches.ContainsKey(Matches(Count).Groups(Idx).Index) Then CheckMatches.Add(Matches(Count).Groups(Idx).Index, String.Empty)
+                CheckMatches(Matches(Count).Groups(Idx).Index) += "3"
+            End If
+        Next
+
+        Matches = System.Text.RegularExpressions.Regex.Matches(Text, CachedData.GetPattern("RaaAssimilation"))
+        Debug.Print(CStr(Matches.Count))
+        For Count = 0 To Matches.Count - 1
+            If Not CheckMatches.ContainsKey(Matches(Count).Index) Then CheckMatches.Add(Matches(Count).Index, String.Empty)
+            CheckMatches(Matches(Count).Index) += "4"
+        Next
+
+        Matches = System.Text.RegularExpressions.Regex.Matches(Text, CachedData.GetPattern("RaaSeparateLetter"))
+        Debug.Print(CStr(Matches.Count))
+        For Count = 0 To Matches.Count - 1
+            If Not CheckMatches.ContainsKey(Matches(Count).Groups(2).Index) Then CheckMatches.Add(Matches(Count).Groups(2).Index, String.Empty)
+            CheckMatches(Matches(Count).Groups(2).Index) += "5"
+        Next
+        ReDim Keys(CheckMatches.Keys.Count - 1)
+        CheckMatches.Keys.CopyTo(Keys, 0)
+        Array.Sort(Keys)
+        For Count = 0 To Keys.Length - 1
+            If CheckMatches(Keys(Count)).Length <> 2 Then
+                Debug.Print(CStr(Keys(Count)) + ":" + CheckMatches(Keys(Count)) + Text.Substring(Math.Max(0, Keys(Count) - 15), 30))
+            End If
+        Next
+
+        CheckMatches.Clear()
+        Matches = System.Text.RegularExpressions.Regex.Matches(Text, ArabicData.ArabicLetterHamza + "|" + ArabicData.ArabicTatweel + "?" + ArabicData.ArabicHamzaAbove + "|" + ArabicData.ArabicLetterAlefWithHamzaAbove + "|" + ArabicData.ArabicLetterAlefWithHamzaBelow + "|" + ArabicData.ArabicLetterWawWithHamzaAbove + "|" + ArabicData.ArabicLetterYehWithHamzaAbove)
+        Debug.Print(CStr(Matches.Count))
+        For Count = 0 To Matches.Count - 1
+            If Not CheckMatches.ContainsKey(Matches(Count).Index) Then CheckMatches.Add(Matches(Count).Index, String.Empty)
+            CheckMatches(Matches(Count).Index) += "0"
+        Next
+    End Sub
     Public Shared Function QuranTextCombiner(ByRef IndexToVerse As Integer()()) As String
         Dim Verses As List(Of String()) = GetQuranText(CachedData.XMLDocMain, -1, -1, -1, -1)
         Dim IndexToVerseList As New List(Of Integer())
