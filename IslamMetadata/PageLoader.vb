@@ -5569,54 +5569,37 @@ Public Class TanzilReader
         Return Renderer
     End Function
     Public Shared Sub CheckMutualExclusiveRules()
+        Dim Check As String(,) = {{ArabicData.ArabicLetterLam, "emphasis|lightness|assimilate|spelllongletter|spelllongmergedletter"}, {"LaamHeaviness", ";;;;optionalstop;optionalstop;;emphasis"}, {"LaamLightness", ";lightness;optionalnotstop;optionalnotstop;lightness;lightness;;lightness"}, {"LaamAssimilation", "assimilate"}, {"LaamSeparateLetter", "spelllongletter|spelllongmergedletter"}}
         Dim IndexToVerse As Integer()() = Nothing
         Dim Text As String = QuranTextCombiner(IndexToVerse)
-        Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(Text, ArabicData.ArabicLetterLam)
+        Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(Text, Check(0, 0))
         Dim CheckMatches As New Dictionary(Of Integer, String)
         Debug.Print(CStr(Matches.Count))
         For Count = 0 To Matches.Count - 1
             If Not CheckMatches.ContainsKey(Matches(Count).Index) Then CheckMatches.Add(Matches(Count).Index, String.Empty)
             CheckMatches(Matches(Count).Index) += "0"
         Next
-
-        Matches = System.Text.RegularExpressions.Regex.Matches(Text, CachedData.GetPattern("LaamHeaviness"))
-        Debug.Print(CStr(Matches.Count))
-        For Count = 0 To Matches.Count - 1
-            If (True Or Matches(Count).Groups(3).Success Or Matches(Count).Groups(4).Success) And Not Matches(Count).Groups(5).Success And Not Matches(Count).Groups(6).Success Then
-                If Not CheckMatches.ContainsKey(Matches(Count).Groups(8).Index) Then CheckMatches.Add(Matches(Count).Groups(8).Index, String.Empty)
-                CheckMatches(Matches(Count).Groups(8).Index) += "1"
-            End If
-        Next
-
-        Matches = System.Text.RegularExpressions.Regex.Matches(Text, CachedData.GetPattern("LaamLightness"))
-        Debug.Print(CStr(Matches.Count))
-        For Count = 0 To Matches.Count - 1
-            If True Or ((Matches(Count).Groups(3).Success Or Matches(Count).Groups(4).Success) And Matches(Count).Groups(5).Success) Then
-                Dim Idx As Integer = -1
-                If Matches(Count).Groups(6).Success Then Idx = 6
-                If Matches(Count).Groups(8).Success Then Idx = 8
-                If Matches(Count).Groups(5).Success Then Idx = 5
-                If Not CheckMatches.ContainsKey(Matches(Count).Groups(Idx).Index) Then CheckMatches.Add(Matches(Count).Groups(Idx).Index, String.Empty)
-                CheckMatches(Matches(Count).Groups(Idx).Index) += "2"
-                If Matches(Count).Groups(2).Success Then
-                    If Not CheckMatches.ContainsKey(Matches(Count).Groups(2).Index) Then CheckMatches.Add(Matches(Count).Groups(2).Index, String.Empty)
-                    CheckMatches(Matches(Count).Groups(2).Index) += "2"
+        Dim MatchMetadata As String() = Check(0, 1).Split("|"c)
+        For MainCount = 1 To Check.GetLength(0) - 1
+            Matches = System.Text.RegularExpressions.Regex.Matches(Text, CachedData.GetPattern(Check(MainCount, 0)))
+            Debug.Print(CStr(Matches.Count))
+            For Count = 0 To Matches.Count - 1
+                Dim MetaRules As String() = Check(MainCount, 1).Split(";"c)
+                Dim bSieve As Boolean = False
+                For SubCount = 0 To MetaRules.Length - 1
+                    If MetaRules(SubCount) = If(True, "optionalstop", "optionalnotstop") And Matches(Count).Groups(SubCount + 1).Success Then
+                        bSieve = True
+                    End If
+                Next
+                If Not bSieve Then
+                    For SubCount = 0 To MetaRules.Length - 1
+                        If Array.IndexOf(MatchMetadata, MetaRules(SubCount).Split("|"c)(0)) <> -1 And Matches(Count).Groups(SubCount + 1).Success Then
+                            If Not CheckMatches.ContainsKey(Matches(Count).Groups(SubCount + 1).Index) Then CheckMatches.Add(Matches(Count).Groups(SubCount + 1).Index, String.Empty)
+                            CheckMatches(Matches(Count).Groups(SubCount + 1).Index) += CStr(MainCount + 1)
+                        End If
+                    Next
                 End If
-            End If
-        Next
-
-        Matches = System.Text.RegularExpressions.Regex.Matches(Text, CachedData.GetPattern("LaamAssimilation"))
-        Debug.Print(CStr(Matches.Count))
-        For Count = 0 To Matches.Count - 1
-            If Not CheckMatches.ContainsKey(Matches(Count).Index) Then CheckMatches.Add(Matches(Count).Index, String.Empty)
-            CheckMatches(Matches(Count).Index) += "3"
-        Next
-
-        Matches = System.Text.RegularExpressions.Regex.Matches(Text, CachedData.GetPattern("LaamSeparateLetter"))
-        Debug.Print(CStr(Matches.Count))
-        For Count = 0 To Matches.Count - 1
-            If Not CheckMatches.ContainsKey(Matches(Count).Index) Then CheckMatches.Add(Matches(Count).Index, String.Empty)
-            CheckMatches(Matches(Count).Index) += "4"
+            Next
         Next
         Dim Keys(CheckMatches.Keys.Count - 1) As Integer
         CheckMatches.Keys.CopyTo(Keys, 0)
