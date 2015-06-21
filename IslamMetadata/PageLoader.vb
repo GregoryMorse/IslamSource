@@ -5638,14 +5638,16 @@ Public Class TanzilReader
         Matches = System.Text.RegularExpressions.Regex.Matches(Text, CachedData.GetPattern("RaaHeaviness"))
         Debug.Print(CStr(Matches.Count))
         For Count = 0 To Matches.Count - 1
-            If (True Or ((Matches(Count).Groups(3).Success Or Matches(Count).Groups(4).Success Or Matches(Count).Groups(7).Success Or Matches(Count).Groups(8).Success Or Matches(Count).Groups(10).Success Or Matches(Count).Groups(11).Success) And Matches(Count).Groups(2).Success)) And Not Matches(Count).Groups(5).Success And Not Matches(Count).Groups(6).Success And Not Matches(Count).Groups(15).Success And Not Matches(Count).Groups(16).Success And Not Matches(Count).Groups(23).Success And Not Matches(Count).Groups(24).Success And (True Or ((Matches(Count).Groups(26).Success Or Matches(Count).Groups(27).Success) And Matches(Count).Groups(25).Success)) Then
+            If (True Or ((Matches(Count).Groups(3).Success Or Matches(Count).Groups(4).Success Or Matches(Count).Groups(7).Success Or Matches(Count).Groups(8).Success Or Matches(Count).Groups(10).Success Or Matches(Count).Groups(11).Success) And Matches(Count).Groups(2).Success)) And Not Matches(Count).Groups(5).Success And Not Matches(Count).Groups(6).Success And Not Matches(Count).Groups(15).Success And Not Matches(Count).Groups(16).Success And Not Matches(Count).Groups(19).Success And Not Matches(Count).Groups(20).Success And Not Matches(Count).Groups(28).Success And Not Matches(Count).Groups(29).Success And (True Or ((Matches(Count).Groups(31).Success Or Matches(Count).Groups(32).Success) And Matches(Count).Groups(30).Success)) Then
                 Dim Idx As Integer = -1
                 If Matches(Count).Groups(2).Success Then Idx = 2
                 If Matches(Count).Groups(13).Success Then Idx = 13
-                If Matches(Count).Groups(18).Success Then Idx = 18
-                If Matches(Count).Groups(20).Success Then Idx = 20
-                If Matches(Count).Groups(22).Success Then Idx = 22
+                If Matches(Count).Groups(17).Success Then Idx = 17
+                If Matches(Count).Groups(21).Success Then Idx = 21
+                If Matches(Count).Groups(23).Success Then Idx = 23
                 If Matches(Count).Groups(25).Success Then Idx = 25
+                If Matches(Count).Groups(27).Success Then Idx = 27
+                If Matches(Count).Groups(30).Success Then Idx = 30
                 If Not CheckMatches.ContainsKey(Matches(Count).Groups(Idx).Index) Then CheckMatches.Add(Matches(Count).Groups(Idx).Index, String.Empty)
                 CheckMatches(Matches(Count).Groups(Idx).Index) += "1"
             End If
