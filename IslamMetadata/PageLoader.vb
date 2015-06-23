@@ -5570,8 +5570,8 @@ Public Class TanzilReader
     End Function
     Public Shared Sub CheckMutualExclusiveRules()
         Dim Check As String(,) = {{ArabicData.ArabicLetterLam, "emphasis|lightness|assimilate|spelllongletter|spelllongmergedletter"}, {"LaamHeaviness", ";;;;optionalstop;optionalstop;;emphasis"}, {"LaamLightness", ";lightness;optionalnotstop;optionalnotstop;lightness;lightness;;lightness"}, {"LaamAssimilation", "assimilate"}, {"LaamSeparateLetter", "spelllongletter|spelllongmergedletter"}}
-        'Check = {{ArabicData.ArabicLetterHamza + "|" + ArabicData.ArabicTatweel + "?" + ArabicData.ArabicHamzaAbove + "|" + ArabicData.ArabicLetterAlefWithHamzaAbove + "|" + ArabicData.ArabicLetterAlefWithHamzaBelow + "|" + ArabicData.ArabicLetterWawWithHamzaAbove + "|" + ArabicData.ArabicLetterYehWithHamzaAbove, ""}}
-        Check = {{ArabicData.ArabicLetterReh, "emphasis|lightness|assimilate|spelllongletter"}, {"RaaHeaviness", ";emphasis;optionalstop;optionalstop;;emphasis;optionalnotstop;optionalnotstop;optionalstop;optionalstop;optionalnotstop;optionalnotstop;;;;emphasis;;optionalnotstop;optionalnotstop;emphasis;;optionalstop;optionalstop;emphasis;;emphasis;optionalstop;optionalstop;;emphasis;;emphasis;optionalstop;optionalstop;emphasis;optionalnotstop;optionalnotstop"}, {"RaaLightness", ";lightness;optionalstop;optionalstop;;lightness;optionalstop;optionalstop;optionalnotstop;optionalnotstop;;lightness;;lightness;optionalstop;optionalstop;lightness;optionalnotstop;optionalnotstop;"}, {"RaaHeavinessOrLightness", ";emphasis|lightness;optionalnotstop;optionalnotstop;optionalnotstop;optionalnotstop;;emphasis|lightness;optionalstop;optionalstop"}, {"RaaAssimilation", "assimilate"}, {"RaaSeparateLetter", ";spelllongletter"}}
+        'Check = {{ArabicData.ArabicLetterHamza + "|" + ArabicData.ArabicTatweel + "?" + ArabicData.ArabicHamzaAbove + "|" + ArabicData.ArabicLetterAlefWithHamzaAbove + "|" + ArabicData.ArabicLetterAlefWithHamzaBelow + "|" + ArabicData.ArabicLetterWawWithHamzaAbove + "|" + ArabicData.ArabicLetterYehWithHamzaAbove, ""}, {"LetterHamza", ""}, {"HamzaAbove", ""}, {"AlefWithHamzaAbove", ""}, {"AlefWithHamzaBelow", ""}, {"WawWithHamzaAbove", ""}, {"YehWithHamzaAbove", ""}}
+        Check = {{ArabicData.ArabicLetterReh, "emphasis|lightness|assimilate|spelllongletter"}, {"RaaHeaviness", ";emphasis;optionalnotstop;optionalnotstop;optionalstop;optionalstop;;emphasis;;emphasis;;emphasis;;emphasis;optionalstop;optionalstop;emphasis;optionalnotstop;optionalnotstop"}, {"RaaLightness", ";lightness;;;optionalstop;optionalstop;;lightness;;lightness;optionalstop;optionalstop;lightness;optionalnotstop;optionalnotstop"}, {"RaaHeavinessOrLightness", ";emphasis|lightness;optionalnotstop;optionalnotstop;optionalnotstop;optionalnotstop;;emphasis|lightness;optionalstop;optionalstop"}, {"RaaAssimilation", "assimilate"}, {"RaaSeparateLetter", ";spelllongletter"}}
         Dim IndexToVerse As Integer()() = Nothing
         Dim Text As String = QuranTextCombiner(IndexToVerse)
         Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(Text, Check(0, 0))
@@ -5589,7 +5589,7 @@ Public Class TanzilReader
                 Dim MetaRules As String() = Check(MainCount, 1).Split(";"c)
                 Dim bSieve As Boolean = False
                 For SubCount = 0 To MetaRules.Length - 1
-                    If MetaRules(SubCount) = If(True, "optionalstop", "optionalnotstop") And Matches(Count).Groups(SubCount + 1).Success Then
+                    If MetaRules(SubCount) = If(False, "optionalstop", "optionalnotstop") And Matches(Count).Groups(SubCount + 1).Success Then
                         bSieve = True
                     End If
                 Next
