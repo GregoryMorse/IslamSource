@@ -5570,13 +5570,19 @@ Public Class TanzilReader
     End Function
     Public Shared Sub CheckMutualExclusiveRules()
         Dim Check As String(,) = {{ArabicData.ArabicLetterLam, "emphasis|lightness|assimilate|spelllongletter|spelllongmergedletter"}, {"LaamHeaviness", ";;;;optionalstop;optionalstop;;emphasis"}, {"LaamLightness", ";lightness;optionalnotstop;optionalnotstop;lightness;lightness;;lightness"}, {"LaamAssimilation", "assimilate"}, {"LaamSeparateLetter", "spelllongletter|spelllongmergedletter"}}
-        Check = {{ArabicData.ArabicLetterHamza + "|" + ArabicData.ArabicTatweel + "?" + ArabicData.ArabicHamzaAbove + "|" + ArabicData.ArabicLetterAlefWithHamzaAbove + "|" + ArabicData.ArabicLetterAlefWithHamzaBelow + "|" + ArabicData.ArabicLetterWawWithHamzaAbove + "|" + ArabicData.ArabicLetterYehWithHamzaAbove, "hamza"}, {"LetterHamza", ";hamza;;hamza"}, {"HamzaAbove", ""}, {"AlefWithHamzaAbove", ";hamza;;hamza"}, {"AlefWithHamzaBelow", ";hamza;;hamza"}, {"WawWithHamzaAbove", ";hamza"}, {"YehWithHamzaAbove", ";hamza"}}
+        Check = {{ArabicData.ArabicLetterHamza + "|" + ArabicData.ArabicTatweel + "?" + ArabicData.ArabicHamzaAbove + "|" + ArabicData.ArabicLetterAlefWithHamzaAbove + "|" + ArabicData.ArabicLetterAlefWithHamzaBelow + "|" + ArabicData.ArabicLetterWawWithHamzaAbove + "|" + ArabicData.ArabicLetterYehWithHamzaAbove, "hamza"}, {"LetterHamza", ";hamza;;hamza;;hamza;;hamza"}, {"HamzaAbove", ";hamza;;hamza"}, {"AlefWithHamzaAbove", ";hamza;;hamza"}, {"AlefWithHamzaBelow", ";hamza;;hamza"}, {"WawWithHamzaAbove", ";hamza"}, {"YehWithHamzaAbove", ";hamza;;hamza"}}
         'Check = {{ArabicData.ArabicLetterReh, "emphasis|lightness|assimilate|spelllongletter"}, {"RaaHeaviness", ";emphasis;optionalnotstop;optionalnotstop;optionalstop;optionalstop;;emphasis;;emphasis;;emphasis;;emphasis;optionalstop;optionalstop;emphasis;optionalnotstop;optionalnotstop"}, {"RaaLightness", ";lightness;;;optionalstop;optionalstop;;lightness;;lightness;optionalstop;optionalstop;lightness;optionalnotstop;optionalnotstop"}, {"RaaHeavinessOrLightness", ";emphasis|lightness;optionalnotstop;optionalnotstop;optionalnotstop;optionalnotstop;;emphasis|lightness;optionalstop;optionalstop"}, {"RaaAssimilation", "assimilate"}, {"RaaSeparateLetter", ";spelllongletter"}}
         Dim IndexToVerse As Integer()() = Nothing
         Dim Text As String = QuranTextCombiner(IndexToVerse)
         Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(Text, Check(0, 0))
         Dim CheckMatches As New Dictionary(Of Integer, String)
         Debug.Print(CStr(Matches.Count))
+        Debug.Print(CStr(System.Text.RegularExpressions.Regex.Matches(Text, ArabicData.ArabicLetterHamza).Count))
+        Debug.Print(CStr(System.Text.RegularExpressions.Regex.Matches(Text, ArabicData.ArabicTatweel + "?" + ArabicData.ArabicHamzaAbove).Count))
+        Debug.Print(CStr(System.Text.RegularExpressions.Regex.Matches(Text, ArabicData.ArabicLetterAlefWithHamzaAbove).Count))
+        Debug.Print(CStr(System.Text.RegularExpressions.Regex.Matches(Text, ArabicData.ArabicLetterAlefWithHamzaBelow).Count))
+        Debug.Print(CStr(System.Text.RegularExpressions.Regex.Matches(Text, ArabicData.ArabicLetterWawWithHamzaAbove).Count))
+        Debug.Print(CStr(System.Text.RegularExpressions.Regex.Matches(Text, ArabicData.ArabicLetterYehWithHamzaAbove).Count))
         For Count = 0 To Matches.Count - 1
             If Not CheckMatches.ContainsKey(Matches(Count).Index) Then CheckMatches.Add(Matches(Count).Index, String.Empty)
             CheckMatches(Matches(Count).Index) += "0"
