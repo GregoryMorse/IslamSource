@@ -5604,7 +5604,7 @@ Public Class TanzilReader
                     For SubCount = 0 To MetaRules.Length - 1
                         If Array.IndexOf(MatchMetadata, MetaRules(SubCount).Split("|"c)(0)) <> -1 And Matches(Count).Groups(SubCount + 1).Success Then
                             If Verify.Length <> 0 And Not System.Text.RegularExpressions.Regex.Match(Matches(Count).Groups(SubCount + 1).Value, Verify(MainCount - 1)).Success Then
-                                Debug.Print("Erroneous Match: " + Check(MainCount, 0) + " " + Text.Substring(Math.Max(0, Matches(Count).Groups(SubCount + 1).Index - 15), 30))
+                                Debug.Print("Erroneous Match: " + Check(MainCount, 0) + " " + Arabic.TransliterateToScheme(Text.Substring(Math.Max(0, Matches(Count).Groups(SubCount + 1).Index - 15), 30), ArabicData.TranslitScheme.Literal, String.Empty))
                             End If
                             If Not CheckMatches.ContainsKey(Matches(Count).Groups(SubCount + 1).Index) Then CheckMatches.Add(Matches(Count).Groups(SubCount + 1).Index, String.Empty)
                             CheckMatches(Matches(Count).Groups(SubCount + 1).Index) += CStr(MainCount + 1)
@@ -5618,7 +5618,7 @@ Public Class TanzilReader
         Array.Sort(Keys)
         For Count = 0 To Keys.Length - 1
             If CheckMatches(Keys(Count)).Length <> 2 Then
-                Debug.Print(CStr(Keys(Count)) + ":" + CheckMatches(Keys(Count)) + ":" + Text(Keys(Count)) + ":" + Text.Substring(Math.Max(0, Keys(Count) - 15), 30))
+                Debug.Print(CStr(Keys(Count)) + ":" + CheckMatches(Keys(Count)) + ":" + Arabic.TransliterateToScheme(Text(Keys(Count)), ArabicData.TranslitScheme.Literal, String.Empty) + ":" + Arabic.TransliterateToScheme(Text.Substring(Math.Max(0, Keys(Count) - 15), 30), ArabicData.TranslitScheme.Literal, String.Empty))
             End If
         Next
     End Sub
