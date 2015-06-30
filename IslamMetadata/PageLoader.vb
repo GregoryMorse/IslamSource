@@ -5568,6 +5568,23 @@ Public Class TanzilReader
         Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eHeaderCenter, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, "(Qur'an " + RefList + ") " + CStr(RefCount) + " Total")}))
         Return Renderer
     End Function
+    Public Shared Function TextPositionToMorphology(Text As String, WordPos As Integer) As String
+        Dim Chapter As Integer = System.Text.RegularExpressions.Regex.Matches(Text.Substring(0, WordPos), ArabicData.ArabicEndOfAyah + Arabic.TransliterateFromBuckwalter("1") + "\s").Count
+        Dim Verse As Integer = Integer.Parse(Arabic.TransliterateToScheme(System.Text.RegularExpressions.Regex.Match(Text.Substring(WordPos), ArabicData.ArabicEndOfAyah + "(\d{1,3})").Groups(1).Value, ArabicData.TranslitScheme.Literal, String.Empty))
+        If Verse = 1 Then Chapter += 1
+        Dim Word As Integer = System.Text.RegularExpressions.Regex.Matches(Text.Substring(0, WordPos).Substring(Text.Substring(0, WordPos).LastIndexOf(ArabicData.ArabicEndOfAyah) + 1), "(\s.)?\s").Count
+        Dim Lines As String() = IO.File.ReadAllLines(Utility.GetFilePath("metadata\quranic-corpus-morphology-0.4.txt"))
+        TextPositionToMorphology = String.Empty
+        For Count As Integer = 0 To Lines.Length - 1
+            If Lines(Count).Length <> 0 AndAlso Lines(Count).Chars(0) <> "#" Then
+                Dim Pieces As String() = Lines(Count).Split(CChar(vbTab))
+                If Pieces(0).Chars(0) = "(" Then
+                    Dim Location As Integer() = Array.ConvertAll(Pieces(0).TrimStart("("c).TrimEnd(")"c).Split(":"c), Function(Str As String) CInt(Str))
+                    If Location(0) = Chapter And Location(1) = Verse And Location(2) = Word Then TextPositionToMorphology += If(TextPositionToMorphology = String.Empty, String.Empty, vbCrLf) + Lines(Count)
+                End If
+            End If
+        Next
+    End Function
     Public Shared Sub CheckMutualExclusiveRules()
         Dim Check As String(,) = {{ArabicData.ArabicLetterLam, "emphasis|lightness|assimilate|spelllongletter|spelllongmergedletter"}, {"LaamHeaviness", ";;;;optionalstop;optionalstop;;emphasis"}, {"LaamLightness", ";lightness;optionalnotstop;optionalnotstop;lightness;lightness;;lightness"}, {"LaamAssimilation", "assimilate"}, {"LaamSeparateLetter", "spelllongletter|spelllongmergedletter"}}
         Check = {{ArabicData.ArabicLetterHamza + "|" + ArabicData.ArabicTatweel + "?" + ArabicData.ArabicHamzaAbove + "|" + ArabicData.ArabicLetterAlefWithHamzaAbove + "|" + ArabicData.ArabicLetterAlefWithHamzaBelow + "|" + ArabicData.ArabicLetterWawWithHamzaAbove + "|" + ArabicData.ArabicLetterYehWithHamzaAbove, "hamza"}, {"LetterHamza", ";hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza"}, {"HamzaAbove", ";hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza"}, {"AlefWithHamzaAbove", ";hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza"}, {"AlefWithHamzaBelow", ";hamza;;hamza;;hamza;;hamza"}, {"WawWithHamzaAbove", ";hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza"}, {"YehWithHamzaAbove", ";hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza"}}
@@ -5578,12 +5595,12 @@ Public Class TanzilReader
         Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(Text, Check(0, 0))
         Dim CheckMatches As New Dictionary(Of Integer, String)
         Debug.Print(CStr(Matches.Count))
-        Debug.Print(CStr(System.Text.RegularExpressions.Regex.Matches(Text, ArabicData.ArabicLetterHamza).Count))
-        Debug.Print(CStr(System.Text.RegularExpressions.Regex.Matches(Text, ArabicData.ArabicTatweel + "?" + ArabicData.ArabicHamzaAbove).Count))
-        Debug.Print(CStr(System.Text.RegularExpressions.Regex.Matches(Text, ArabicData.ArabicLetterAlefWithHamzaAbove).Count))
-        Debug.Print(CStr(System.Text.RegularExpressions.Regex.Matches(Text, ArabicData.ArabicLetterAlefWithHamzaBelow).Count))
-        Debug.Print(CStr(System.Text.RegularExpressions.Regex.Matches(Text, ArabicData.ArabicLetterWawWithHamzaAbove).Count))
-        Debug.Print(CStr(System.Text.RegularExpressions.Regex.Matches(Text, ArabicData.ArabicLetterYehWithHamzaAbove).Count))
+        'Debug.Print(CStr(System.Text.RegularExpressions.Regex.Matches(Text, ArabicData.ArabicLetterHamza).Count))
+        'Debug.Print(CStr(System.Text.RegularExpressions.Regex.Matches(Text, ArabicData.ArabicTatweel + "?" + ArabicData.ArabicHamzaAbove).Count))
+        'Debug.Print(CStr(System.Text.RegularExpressions.Regex.Matches(Text, ArabicData.ArabicLetterAlefWithHamzaAbove).Count))
+        'Debug.Print(CStr(System.Text.RegularExpressions.Regex.Matches(Text, ArabicData.ArabicLetterAlefWithHamzaBelow).Count))
+        'Debug.Print(CStr(System.Text.RegularExpressions.Regex.Matches(Text, ArabicData.ArabicLetterWawWithHamzaAbove).Count))
+        'Debug.Print(CStr(System.Text.RegularExpressions.Regex.Matches(Text, ArabicData.ArabicLetterYehWithHamzaAbove).Count))
         For Count = 0 To Matches.Count - 1
             If Not CheckMatches.ContainsKey(Matches(Count).Index) Then CheckMatches.Add(Matches(Count).Index, String.Empty)
             CheckMatches(Matches(Count).Index) += "0"
@@ -5605,6 +5622,7 @@ Public Class TanzilReader
                         If Array.IndexOf(MatchMetadata, MetaRules(SubCount).Split("|"c)(0)) <> -1 And Matches(Count).Groups(SubCount + 1).Success Then
                             If Verify.Length <> 0 And Not System.Text.RegularExpressions.Regex.Match(Matches(Count).Groups(SubCount + 1).Value, Verify(MainCount - 1)).Success Then
                                 Debug.Print("Erroneous Match: " + Check(MainCount, 0) + " " + Arabic.TransliterateToScheme(Text.Substring(Math.Max(0, Matches(Count).Groups(SubCount + 1).Index - 15), 30), ArabicData.TranslitScheme.Literal, String.Empty))
+                                Debug.Print(TextPositionToMorphology(Text, Matches(Count).Groups(SubCount + 1).Index))
                             End If
                             If Not CheckMatches.ContainsKey(Matches(Count).Groups(SubCount + 1).Index) Then CheckMatches.Add(Matches(Count).Groups(SubCount + 1).Index, String.Empty)
                             CheckMatches(Matches(Count).Groups(SubCount + 1).Index) += CStr(MainCount + 1)
