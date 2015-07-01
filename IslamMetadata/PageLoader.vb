@@ -5585,10 +5585,44 @@ Public Class TanzilReader
             End If
         Next
     End Function
+    Public Shared Sub CheckSequentialRules()
+        Dim Check As String()() = {New String() {ArabicData.ArabicLetterHamza + "|" + ArabicData.ArabicTatweel + "?" + ArabicData.ArabicHamzaAbove + "|" + ArabicData.ArabicLetterAlefWithHamzaAbove + "|" + ArabicData.ArabicLetterAlefWithHamzaBelow + "|" + ArabicData.ArabicLetterWawWithHamzaAbove + "|" + ArabicData.ArabicLetterYehWithHamzaAbove},
+                                   New String() {ArabicData.ArabicLetterWawWithHamzaAbove, "(?:{StartOfWord}){ArabicLetterAlefWasla}", "{ArabicSukun}(?:{ArabicSunLetters}|{ArabicMoonLettersNoVowels}){ArabicDamma}(?:{ArabicSunLetters}|{ArabicMoonLettersNoVowels})"},
+                                   New String() {ArabicData.ArabicLetterYehWithHamzaAbove, "(?:{StartOfWord}){ArabicLetterAlefWasla}", "{ArabicSukun}(?:{ArabicSunLetters}|{ArabicMoonLettersNoVowels})(?:{ArabicFatha}|{ArabicKasra}|{ArabicDamma}{ArabicLetterWaw})"}}
+        Dim IndexToVerse As Integer()() = Nothing
+        Dim Text As String = QuranTextCombiner(IndexToVerse)
+        Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(Text, Check(0)(0))
+        Debug.Print(CStr(Matches.Count))
+        For Count = 0 To Matches.Count - 1
+            Dim bMatch As Boolean = True
+            For SubCount = 1 To Check.Length - 1
+                bMatch = True
+                For PatternCount = 1 To Check(SubCount).Length - 1
+                    'First match is always a before look then after then before so leave blank to start with after
+                    If PatternCount Mod 2 = 1 Then
+                        bMatch = System.Text.RegularExpressions.Regex.Match(Text.Substring(0, Matches(Count).Index), "(?:" + CachedData.TranslateRegEx(Check(SubCount)(PatternCount), True) + ")$", System.Text.RegularExpressions.RegexOptions.RightToLeft).Success
+                    Else
+                        bMatch = System.Text.RegularExpressions.Regex.Match(Text.Substring(Matches(Count).Index + 1), "^(?:" + CachedData.TranslateRegEx(Check(SubCount)(PatternCount), True) + ")").Success
+                    End If
+                    If Not bMatch Then Exit For
+                Next
+                If bMatch Then
+                    If Matches(Count).Value = Check(SubCount)(0) Then
+                        Debug.Print("Match: " + Matches(Count).Value + ": " + Arabic.TransliterateToScheme(Text.Substring(Math.Max(0, Matches(Count).Index - 15), 30), ArabicData.TranslitScheme.Literal, String.Empty))
+                    Else
+                        Debug.Print("FALSE MATCH: " + Matches(Count).Value + ": " + Arabic.TransliterateToScheme(Text.Substring(Math.Max(0, Matches(Count).Index - 15), 30), ArabicData.TranslitScheme.Literal, String.Empty))
+                    End If
+                    Exit For
+                End If
+            Next
+            If Not bMatch Then Debug.Print("Not Found: " + Matches(Count).Value + ":" + Arabic.TransliterateToScheme(Text.Substring(Math.Max(0, Matches(Count).Index - 15), 30), ArabicData.TranslitScheme.Literal, String.Empty))
+        Next
+    End Sub
     Public Shared Sub CheckMutualExclusiveRules()
         Dim Check As String(,) = {{ArabicData.ArabicLetterLam, "emphasis|lightness|assimilate|spelllongletter|spelllongmergedletter"}, {"LaamHeaviness", ";;;;optionalstop;optionalstop;;emphasis"}, {"LaamLightness", ";lightness;optionalnotstop;optionalnotstop;lightness;lightness;;lightness"}, {"LaamAssimilation", "assimilate"}, {"LaamSeparateLetter", "spelllongletter|spelllongmergedletter"}}
-        Check = {{ArabicData.ArabicLetterHamza + "|" + ArabicData.ArabicTatweel + "?" + ArabicData.ArabicHamzaAbove + "|" + ArabicData.ArabicLetterAlefWithHamzaAbove + "|" + ArabicData.ArabicLetterAlefWithHamzaBelow + "|" + ArabicData.ArabicLetterWawWithHamzaAbove + "|" + ArabicData.ArabicLetterYehWithHamzaAbove, "hamza"}, {"LetterHamza", ";hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza"}, {"HamzaAbove", ";hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza"}, {"AlefWithHamzaAbove", ";hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza"}, {"AlefWithHamzaBelow", ";hamza;;hamza;;hamza;;hamza;;hamza"}, {"WawWithHamzaAbove", ";hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza"}, {"YehWithHamzaAbove", ";hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza"}}
-        Dim Verify As String() = {CStr(ArabicData.ArabicLetterHamza), ArabicData.ArabicTatweel + "?" + ArabicData.ArabicHamzaAbove, ArabicData.ArabicLetterAlefWithHamzaAbove, ArabicData.ArabicLetterAlefWithHamzaBelow, ArabicData.ArabicLetterWawWithHamzaAbove, ArabicData.ArabicLetterYehWithHamzaAbove}
+        Check = {{CachedData.GetPattern("Hamzas"), "hamza"}, {"LetterHamza", ";hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza"}, {"HamzaAbove", ";hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza"}, {"AlefWithHamzaAbove", ";hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza"}, {"AlefWithHamzaBelow", ";hamza;;hamza;;hamza;;hamza;;hamza"}, {"WawWithHamzaAbove", ";hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza"}, {"YehWithHamzaAbove", ";hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza"}}
+        Check = {{CachedData.GetPattern("PossibleMadd"), "madd"}, {"MaddahNormal", ";madd;;"}, {"MaddahExchange", ";madd;;"}, {"MaddahEssentialConnected", "madd"}, {"MaddahEssentialSeparate", "madd"}, {"MaddahObligatory", "madd"}}
+        'Dim Verify As String() = {CStr(ArabicData.ArabicLetterHamza), ArabicData.ArabicTatweel + "?" + ArabicData.ArabicHamzaAbove, ArabicData.ArabicLetterAlefWithHamzaAbove, ArabicData.ArabicLetterAlefWithHamzaBelow, ArabicData.ArabicLetterWawWithHamzaAbove, ArabicData.ArabicLetterYehWithHamzaAbove}
         'Check = {{ArabicData.ArabicLetterReh, "emphasis|lightness|assimilate|spelllongletter"}, {"RaaHeaviness", ";emphasis;optionalnotstop;optionalnotstop;optionalstop;optionalstop;;emphasis;;emphasis;;emphasis;;emphasis;optionalstop;optionalstop;emphasis;optionalnotstop;optionalnotstop"}, {"RaaLightness", ";lightness;;;optionalstop;optionalstop;;lightness;;lightness;optionalstop;optionalstop;lightness;optionalnotstop;optionalnotstop"}, {"RaaHeavinessOrLightness", ";emphasis|lightness;optionalnotstop;optionalnotstop;optionalnotstop;optionalnotstop;;emphasis|lightness;optionalstop;optionalstop"}, {"RaaAssimilation", "assimilate"}, {"RaaSeparateLetter", ";spelllongletter"}}
         Dim IndexToVerse As Integer()() = Nothing
         Dim Text As String = QuranTextCombiner(IndexToVerse)
@@ -5620,10 +5654,10 @@ Public Class TanzilReader
                 If Not bSieve Then
                     For SubCount = 0 To MetaRules.Length - 1
                         If Array.IndexOf(MatchMetadata, MetaRules(SubCount).Split("|"c)(0)) <> -1 And Matches(Count).Groups(SubCount + 1).Success Then
-                            If Verify.Length <> 0 And Not System.Text.RegularExpressions.Regex.Match(Matches(Count).Groups(SubCount + 1).Value, Verify(MainCount - 1)).Success Then
-                                Debug.Print("Erroneous Match: " + Check(MainCount, 0) + " " + Arabic.TransliterateToScheme(Text.Substring(Math.Max(0, Matches(Count).Groups(SubCount + 1).Index - 15), 30), ArabicData.TranslitScheme.Literal, String.Empty))
-                                'Debug.Print(TextPositionToMorphology(Text, Matches(Count).Groups(SubCount + 1).Index))
-                            End If
+                            'If Verify.Length <> 0 And Not System.Text.RegularExpressions.Regex.Match(Matches(Count).Groups(SubCount + 1).Value, Verify(MainCount - 1)).Success Then
+                            '    Debug.Print("Erroneous Match: " + Check(MainCount, 0) + " " + Arabic.TransliterateToScheme(Text.Substring(Math.Max(0, Matches(Count).Groups(SubCount + 1).Index - 15), 30), ArabicData.TranslitScheme.Literal, String.Empty))
+                            '    'Debug.Print(TextPositionToMorphology(Text, Matches(Count).Groups(SubCount + 1).Index))
+                            'End If
                             If Not CheckMatches.ContainsKey(Matches(Count).Groups(SubCount + 1).Index) Then CheckMatches.Add(Matches(Count).Groups(SubCount + 1).Index, String.Empty)
                             CheckMatches(Matches(Count).Groups(SubCount + 1).Index) += CStr(MainCount + 1)
                         End If
