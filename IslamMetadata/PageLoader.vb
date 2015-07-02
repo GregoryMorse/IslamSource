@@ -2366,7 +2366,9 @@ Public Class CachedData
         If _SavedPatterns.ContainsKey(Name) Then Return _SavedPatterns(Name)
         For Count = 0 To CachedData.IslamData.ArabicPatterns.Length - 1
             If CachedData.IslamData.ArabicPatterns(Count).Name = Name Then
-                _SavedPatterns.Add(Name, TranslateRegEx(CachedData.IslamData.ArabicPatterns(Count).Match, True))
+                'Recursive and may already add pattern
+                Dim TRegEx As String = TranslateRegEx(CachedData.IslamData.ArabicPatterns(Count).Match, True)
+                If Not _SavedPatterns.ContainsKey(Name) Then _SavedPatterns.Add(Name, TRegEx)
                 Return _SavedPatterns(Name)
             End If
         Next
@@ -5621,7 +5623,7 @@ Public Class TanzilReader
     Public Shared Sub CheckMutualExclusiveRules()
         Dim Check As String(,) = {{ArabicData.ArabicLetterLam, "emphasis|lightness|assimilate|spelllongletter|spelllongmergedletter"}, {"LaamHeaviness", ";;;;optionalstop;optionalstop;;emphasis"}, {"LaamLightness", ";lightness;optionalnotstop;optionalnotstop;lightness;lightness;;lightness"}, {"LaamAssimilation", "assimilate"}, {"LaamSeparateLetter", "spelllongletter|spelllongmergedletter"}}
         Check = {{CachedData.GetPattern("Hamzas"), "hamza"}, {"LetterHamza", ";hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza"}, {"HamzaAbove", ";hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza"}, {"AlefWithHamzaAbove", ";hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza"}, {"AlefWithHamzaBelow", ";hamza;;hamza;;hamza;;hamza;;hamza"}, {"WawWithHamzaAbove", ";hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza"}, {"YehWithHamzaAbove", ";hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza"}}
-        Check = {{CachedData.GetPattern("PossibleMadd"), "madd"}, {"MaddahNormal", ";madd;;"}, {"MaddahExchange", ";madd;;"}, {"MaddahEssentialConnected", "madd"}, {"MaddahEssentialSeparate", "madd"}, {"MaddahObligatory", "madd"}}
+        Check = {{CachedData.GetPattern("PossibleMadd"), "madd"}, {"MaddahNormal", ";madd;madd;;;;madd;;madd;madd;;;;;madd;;"}, {"MaddahExchange", ";madd;;;;madd"}, {"MaddahEssentialConnected", "madd"}, {"MaddahEssentialSeparate", "madd;;"}, {"MaddahObligatory", "madd"}}
         'Dim Verify As String() = {CStr(ArabicData.ArabicLetterHamza), ArabicData.ArabicTatweel + "?" + ArabicData.ArabicHamzaAbove, ArabicData.ArabicLetterAlefWithHamzaAbove, ArabicData.ArabicLetterAlefWithHamzaBelow, ArabicData.ArabicLetterWawWithHamzaAbove, ArabicData.ArabicLetterYehWithHamzaAbove}
         'Check = {{ArabicData.ArabicLetterReh, "emphasis|lightness|assimilate|spelllongletter"}, {"RaaHeaviness", ";emphasis;optionalnotstop;optionalnotstop;optionalstop;optionalstop;;emphasis;;emphasis;;emphasis;;emphasis;optionalstop;optionalstop;emphasis;optionalnotstop;optionalnotstop"}, {"RaaLightness", ";lightness;;;optionalstop;optionalstop;;lightness;;lightness;optionalstop;optionalstop;lightness;optionalnotstop;optionalnotstop"}, {"RaaHeavinessOrLightness", ";emphasis|lightness;optionalnotstop;optionalnotstop;optionalnotstop;optionalnotstop;;emphasis|lightness;optionalstop;optionalstop"}, {"RaaAssimilation", "assimilate"}, {"RaaSeparateLetter", ";spelllongletter"}}
         Dim IndexToVerse As Integer()() = Nothing
