@@ -5620,10 +5620,11 @@ Public Class TanzilReader
             If Not bMatch Then Debug.Print("Not Found: " + Matches(Count).Value + ":" + Arabic.TransliterateToScheme(Text.Substring(Math.Max(0, Matches(Count).Index - 15), 30), ArabicData.TranslitScheme.Literal, String.Empty))
         Next
     End Sub
-    Public Shared Sub CheckMutualExclusiveRules()
+    Public Shared Sub CheckMutualExclusiveRules(bAssumeStop As Boolean)
         Dim Check As String(,) = {{ArabicData.ArabicLetterLam, "emphasis|lightness|assimilate|spelllongletter|spelllongmergedletter"}, {"LaamHeaviness", ";;;;optionalstop;optionalstop;;emphasis"}, {"LaamLightness", ";lightness;optionalnotstop;optionalnotstop;lightness;lightness;;lightness"}, {"LaamAssimilation", "assimilate"}, {"LaamSeparateLetter", "spelllongletter|spelllongmergedletter"}}
         Check = {{CachedData.GetPattern("Hamzas"), "hamza"}, {"LetterHamza", ";hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza"}, {"HamzaAbove", ";hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza"}, {"AlefWithHamzaAbove", ";hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza"}, {"AlefWithHamzaBelow", ";hamza;;hamza;;hamza;;hamza;;hamza"}, {"WawWithHamzaAbove", ";hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza"}, {"YehWithHamzaAbove", ";hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza"}}
-        Check = {{CachedData.GetPattern("PossibleMadd"), "madd"}, {"MaddahNormal", ";madd;madd;;;;madd;madd;;;;madd;;;madd;;;;madd;optionalstop;optionalstop"}, {"MaddahExchange", ";madd;;;;madd"}, {"MaddahEssentialConnected", "madd"}, {"MaddahEssentialSeparate", "madd;;"}, {"MaddahObligatory", "madd"}}
+        Check = {{CachedData.GetPattern("PossibleMadd"), "madd"}, {"MaddahCatcher", "madd;;madd;optionalnotstop;optionalnotstop;;madd;optionalstop;optionalstop"}, {"MaddahNormal", ";madd;madd;optionalnotstop;optionalnotstop;;madd;madd;;;;madd;madd;madd;;;;madd;;;madd;;;;madd;optionalstop;optionalstop"}, {"MaddahExchange", ";madd;;madd;;;;madd"}, {"MaddahEssentialConnected", "madd"}, {"MaddahEssentialSeparate", "madd;;"}, {"MaddahObligatory", "madd"}}
+        'Check = {{CachedData.GetPattern("EndOfWord"), "end"}, {"EndOfWordMadd", ";end"}, {"EndOfWordUniqueLetters", ";end"}, {"EndOfWordSukun", ";end;;end;;end;;end;;end;;end;;end;;end;;end;;end;;end;;end;;end"}, {"EndOfWordMaddLetterPresentedSukun", ";end"}, {"EndOfWordMaddHamzaPresentedSukun", ";end"}, {"EndOfWordVowelPresentedSukun", ";end"}}
         'Dim Verify As String() = {CStr(ArabicData.ArabicLetterHamza), ArabicData.ArabicTatweel + "?" + ArabicData.ArabicHamzaAbove, ArabicData.ArabicLetterAlefWithHamzaAbove, ArabicData.ArabicLetterAlefWithHamzaBelow, ArabicData.ArabicLetterWawWithHamzaAbove, ArabicData.ArabicLetterYehWithHamzaAbove}
         'Check = {{ArabicData.ArabicLetterReh, "emphasis|lightness|assimilate|spelllongletter"}, {"RaaHeaviness", ";emphasis;optionalnotstop;optionalnotstop;optionalstop;optionalstop;;emphasis;;emphasis;;emphasis;;emphasis;optionalstop;optionalstop;emphasis;optionalnotstop;optionalnotstop"}, {"RaaLightness", ";lightness;;;optionalstop;optionalstop;;lightness;;lightness;optionalstop;optionalstop;lightness;optionalnotstop;optionalnotstop"}, {"RaaHeavinessOrLightness", ";emphasis|lightness;optionalnotstop;optionalnotstop;optionalnotstop;optionalnotstop;;emphasis|lightness;optionalstop;optionalstop"}, {"RaaAssimilation", "assimilate"}, {"RaaSeparateLetter", ";spelllongletter"}}
         Dim IndexToVerse As Integer()() = Nothing
@@ -5638,6 +5639,7 @@ Public Class TanzilReader
         'Debug.Print(CStr(System.Text.RegularExpressions.Regex.Matches(Text, ArabicData.ArabicLetterWawWithHamzaAbove).Count))
         'Debug.Print(CStr(System.Text.RegularExpressions.Regex.Matches(Text, ArabicData.ArabicLetterYehWithHamzaAbove).Count))
         For Count = 0 To Matches.Count - 1
+            If Matches(Count).Length = 0 Then Continue For 'Avoid zero width matches for end of string anchors
             If Not CheckMatches.ContainsKey(Matches(Count).Index) Then CheckMatches.Add(Matches(Count).Index, String.Empty)
             CheckMatches(Matches(Count).Index) += "0"
         Next
@@ -5649,7 +5651,7 @@ Public Class TanzilReader
                 Dim MetaRules As String() = Check(MainCount, 1).Split(";"c)
                 Dim bSieve As Boolean = False
                 For SubCount = 0 To MetaRules.Length - 1
-                    If MetaRules(SubCount) = If(False, "optionalstop", "optionalnotstop") And Matches(Count).Groups(SubCount + 1).Success Then
+                    If MetaRules(SubCount) = If(bAssumeStop, "optionalstop", "optionalnotstop") And Matches(Count).Groups(SubCount + 1).Success Then
                         bSieve = True
                     End If
                 Next

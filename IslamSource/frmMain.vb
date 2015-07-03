@@ -17,7 +17,7 @@ Public Class frmMain
         'TanzilReader.CheckNotablePatterns()
         'TanzilReader.FindMinimalVersesForCoverage()
         'TanzilReader.CheckSequentialRules()
-        TanzilReader.CheckMutualExclusiveRules()
+        TanzilReader.CheckMutualExclusiveRules(False)
         Dim IndexToVerse As Integer()() = Nothing
         Dim Text As String = TanzilReader.QuranTextCombiner(IndexToVerse)
         Debug.Print(Arabic.TransliterateToScheme(System.Text.RegularExpressions.Regex.Match(Text, CachedData.GetPattern("ContinuousMatch")).Value, ArabicData.TranslitScheme.Literal, String.Empty))
