@@ -5591,23 +5591,23 @@ Public Class TanzilReader
         Dim Rules As IslamData.RuleTranslationCategory.RuleTranslation() = CachedData.GetRuleSet("HamzaWriting")
         Dim IndexToVerse As Integer()() = Nothing
         Dim Text As String = QuranTextCombiner(IndexToVerse)
-        Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(Text, CachedData.GetPattern("{Hamzas}"))
+        Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(Text, CachedData.GetPattern("Hamzas"))
         Dim CheckMatches As New Dictionary(Of Integer, String)
         Debug.Print(CStr(Matches.Count))
         For Count = 0 To Matches.Count - 1
             If Matches(Count).Length = 0 Then Continue For 'Avoid zero width matches for end of string anchors
             If Not CheckMatches.ContainsKey(Matches(Count).Index) Then CheckMatches.Add(Matches(Count).Index, String.Empty)
-            CheckMatches(Matches(Count).Index) += "0"
+            CheckMatches(Matches(Count).Index) += "0-"
         Next
-        For MainCount = 1 To Rules.Length - 1
+        For MainCount = 0 To Rules.Length - 1
             Matches = System.Text.RegularExpressions.Regex.Matches(Text, Rules(MainCount).Match)
-            Debug.Print(CStr(Matches.Count))
+            Debug.Print(Rules(MainCount).Name + ": " + CStr(Matches.Count))
             For Count = 0 To Matches.Count - 1
                 If Rules(MainCount).NegativeMatch <> String.Empty AndAlso Matches(Count).Result(Rules(MainCount).NegativeMatch) <> String.Empty Then
                     'ElseIf Matches(Count).Result(Rules(MainCount).Evaluator) <> Matches(Count).Value Then
                 Else
                     If Not CheckMatches.ContainsKey(Matches(Count).Groups(2 + If(Rules(MainCount).NegativeMatch <> String.Empty, 1, 0)).Index) Then CheckMatches.Add(Matches(Count).Groups(2 + If(Rules(MainCount).NegativeMatch <> String.Empty, 1, 0)).Index, String.Empty)
-                    CheckMatches(Matches(Count).Groups(2 + If(Rules(MainCount).NegativeMatch <> String.Empty, 1, 0)).Index) += Rules(MainCount).Name + "-"
+                    CheckMatches(Matches(Count).Groups(2 + If(Rules(MainCount).NegativeMatch <> String.Empty, 1, 0)).Index) += If(CheckMatches(Matches(Count).Groups(2 + If(Rules(MainCount).NegativeMatch <> String.Empty, 1, 0)).Index).EndsWith("-"), String.Empty, "-") + Rules(MainCount).Name + If(CheckMatches(Matches(Count).Groups(2 + If(Rules(MainCount).NegativeMatch <> String.Empty, 1, 0)).Index).Length = 2, String.Empty, "-")
                 End If
             Next
         Next
@@ -5615,7 +5615,7 @@ Public Class TanzilReader
         CheckMatches.Keys.CopyTo(Keys, 0)
         Array.Sort(Keys)
         For Count = 0 To Keys.Length - 1
-            If CheckMatches(Keys(Count)).Length <> 2 Then
+            If CheckMatches(Keys(Count)).EndsWith("-") And CheckMatches(Keys(Count)) <> "0-LetterHamzaEnd-YehHamzaKasra-" And CheckMatches(Keys(Count)) <> "0-FathaAlefHamzaAboveSukun-TatweelHamzaSukun-" And CheckMatches(Keys(Count)) <> "0-StartEndAlefHamzaYeh-LetterHamzaEnd-" Then
                 Debug.Print(CStr(Keys(Count)) + ":" + CheckMatches(Keys(Count)) + ":" + Arabic.TransliterateToScheme(Text(Keys(Count)), ArabicData.TranslitScheme.Literal, String.Empty) + ":" + Arabic.TransliterateToScheme(Text.Substring(Math.Max(0, Keys(Count) - 15), 30), ArabicData.TranslitScheme.Literal, String.Empty))
             End If
         Next
