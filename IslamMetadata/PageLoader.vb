@@ -5588,92 +5588,36 @@ Public Class TanzilReader
         Next
     End Function
     Public Shared Sub CheckSequentialRules()
-        Dim Check As String()() = {
-            New String() {ArabicData.ArabicLetterHamza + "|" + ArabicData.ArabicTatweel + "?" + ArabicData.ArabicHamzaAbove + "|" + ArabicData.ArabicLetterAlefWithHamzaAbove + "|" + ArabicData.ArabicLetterAlefWithHamzaBelow + "|" + ArabicData.ArabicLetterWawWithHamzaAbove + "|" + ArabicData.ArabicLetterYehWithHamzaAbove},
-            New String() {ArabicData.ArabicLetterWawWithHamzaAbove, "(?:{StartOfWord}){ArabicLetterAlefWasla}", "{ArabicSukun}(?:{ArabicSunLetters}|{ArabicMoonLettersNoVowels}){ArabicDamma}(?:{ArabicSunLetters}|{ArabicMoonLettersNoVowels})"},
-            New String() {ArabicData.ArabicLetterYehWithHamzaAbove, "(?:{StartOfWord}){ArabicLetterAlefWasla}", "{ArabicSukun}(?:{ArabicSunLetters}|{ArabicMoonLettersNoVowels})(?:{ArabicFatha}|{ArabicKasra}|{ArabicDamma}{ArabicLetterWaw})"},
-            New String() {ArabicData.ArabicLetterHamza, "(?:{StartOfWord})", "{ArabicFatha}(?:{Hamzas})(?:{ArabicFatha})"},
-            New String() {ArabicData.ArabicLetterAlefWithHamzaAbove, "(?:{StartOfWord})", "{ArabicFatha}(?:{Hamzas})(?:{ArabicKasra}|{ArabicDamma})|{ArabicFatha}(?:{ArabicLetterFeh}|{ArabicLetterWaw}){ArabicFatha}(?:{Hamzas}){ArabicFatha}"},
-            New String() {ArabicData.ArabicLetterWawWithHamzaAbove, "(?:{StartOfWord})(?:(?:{Hamzas}){ArabicFatha}|(?:(?:{ArabicLetterAlefWithHamzaAbove}|{ArabicLetterWaw}){ArabicFatha})?{ArabicLetterHeh}{ArabicFatha}{ArabicLetterSuperscriptAlef}{ArabicMaddahAbove})", "{ArabicDamma}"},
-            New String() {ArabicData.ArabicLetterAlefWithHamzaAbove, "(?:{StartOfWord})(?:(?:{Hamzas}){ArabicFatha}(?:(?:{ArabicLetterFeh}|{ArabicLetterWaw}){ArabicFatha})?|{ArabicLetterHeh}{ArabicFatha}{ArabicLetterSuperscriptAlef}{ArabicMaddahAbove})", "(?:{ArabicFatha}|{ArabicDamma})(?:{ArabicSunLetters}|{ArabicMoonLettersNoVowels})"},
-            New String() {ArabicData.ArabicLetterYehWithHamzaAbove, "(?:{StartOfWord})(?:{Hamzas}){ArabicFatha}", "{ArabicKasra}"},
-            New String() {ArabicData.ArabicLetterHamza, "(?:{StartOfWord})(?:{Hamzas}){ArabicFatha}", "{ArabicKasra}"},
-            New String() {ArabicData.ArabicLetterHamza, "(?:{StartOfWord})(?:{Hamzas}){ArabicFatha}", "{ArabicDamma}"},
-            New String() {ArabicData.ArabicLetterAlefWithHamzaAbove, "(?:(?:{StartOfWord})(?:(?:{ArabicLetterFeh}(?:{ArabicFatha}{ArabicLetterLam})?|(?:{ArabicLetterFeh}{ArabicFatha})?{ArabicLetterSeen}|{ArabicLetterWaw}{ArabicFatha}{ArabicLetterLam}|(?:{ArabicLetterWaw}|{ArabicLetterLam}){ArabicShadda}?|{ArabicLetterHamza}){ArabicFatha}|(?:(?:(?:{ArabicLetterWaw}{ArabicFatha})?{ArabicLetterBeh}{ArabicKasra}|(?:{ArabicLetterKaf}|{ArabicLetterWaw}){ArabicFatha})?{ArabicLetterAlefWasla}|(?:{ArabicLetterWaw}{ArabicFatha})?{ArabicLetterLam}{ArabicKasra}|{ArabicLetterLam}{ArabicShadda}{ArabicKasra}){ArabicLetterLam}{ArabicSukun}|(?:(?:{ArabicLetterFeh}|{ArabicLetterWaw}){ArabicFatha})?{ArabicLetterBeh}{ArabicKasra}|{ArabicLetterYeh}{ArabicFatha}{ArabicLetterSuperscriptAlef}{ArabicMaddahAbove})?)", "{ArabicFatha}(?:{ArabicLetterAlef}{ArabicSmallHighRoundedZero})|(?:{ArabicFatha}|{ArabicDamma})(?:{ArabicSunLetters}|{ArabicMoonLettersNoVowels}|{ArabicLetterWaw}|{ArabicLetterYeh})"},
-            New String() {ArabicData.ArabicLetterAlefWithHamzaAbove, "(?:(?:{StartOfWord})(?:(?:{ArabicLetterWaw}|{ArabicLetterFeh}){ArabicFatha}{ArabicLetterLam}{ArabicKasra}|{ArabicLetterLam}{ArabicShadda}?{ArabicKasra}))", "(?:(?:{ArabicFatha}|{ArabicDamma})(?:{ArabicSunLettersNoLam}|{ArabicMoonLettersNoVowels}|{ArabicLetterWaw}|{ArabicLetterYeh}))"},
-            New String() {ArabicData.ArabicLetterAlefWithHamzaBelow, "(?:(?:{StartOfWord})(?:{ArabicLetterWaw}{ArabicShadda}?{ArabicFatha}|(?:(?:{ArabicLetterBeh}{ArabicKasra}|{ArabicLetterWaw}{ArabicFatha})?{ArabicLetterAlefWasla}|{ArabicLetterLam}{ArabicKasra}){ArabicLetterLam}{ArabicSukun}|{ArabicLetterLam}{ArabicShadda}?{ArabicKasra}|{ArabicLetterWaw}{ArabicFatha}{ArabicLetterLam}{ArabicKasra}|(?:{ArabicLetterAlefWithHamzaAbove}{ArabicFatha})?{ArabicLetterFeh}{ArabicFatha}|(?:(?:{ArabicLetterFeh}|{ArabicLetterLam}){ArabicFatha})?{ArabicLetterBeh}{ArabicKasra}|{ArabicLetterYeh}{ArabicFatha}{ArabicLetterSuperscriptAlef}{ArabicMaddahAbove})?)", "{ArabicKasra}"},
-            New String() {ArabicData.ArabicLetterAlefWithHamzaBelow, "(?:(?:{StartOfWord}){ArabicLetterWaw}{ArabicFatha}{ArabicLetterMeem}{ArabicFatha}{ArabicLetterLam}{ArabicFatha})", "(?:{ArabicKasra}{ArabicLetterYeh}{ArabicSmallHighRoundedZero}{ArabicLetterHeh}{ArabicKasra}(?:{ArabicLetterMeem}{ArabicSukun}|{ArabicSmallYeh}{ArabicMaddahAbove}?)(?:{EndOfWord}))"},
-            New String() {ArabicData.ArabicLetterAlefWithHamzaBelow, "((?:{StartOfWord}){ArabicLetterLam}{ArabicFatha})", "(?={ArabicKasra}(?:{ArabicLetterBeh}|{ArabicLetterHah}|{ArabicLetterLam}))"},
-            New String() {ArabicData.ArabicLetterHamza, "(?:{StartOfWord})|(?:{ArabicNonConnectingLetters}|{ArabicLetterLam}){ArabicSukun}|(?:{ArabicNonConnectingLetters}|{ArabicLetterLam}|{ArabicLetterWaw}){ArabicShadda}?(?:{ArabicFatha}(?:{ArabicLetterSuperscriptAlef}{ArabicMaddahAbove})?|{ArabicKasra})", "{ArabicFatha}{ArabicLetterAlef}(?:{ArabicSunLetters}|{ArabicMoonLettersNoVowels}|{ArabicLetterWaw}|{ArabicLetterYeh}|{ArabicRoundedHighStopWithFilledCentre}{ArabicLetterAin}|{ArabicMaddahAbove}(?:{ArabicLetterMeem}{ArabicShadda}|{ArabicLetterLam}(?:{ArabicSukun}|(?:{ArabicSunLetters})?{ArabicShadda}))|{ArabicMaddahAbove}?(?:{EndOfWord}))"},
- _
-            New String() {ArabicData.ArabicTatweel + ArabicData.ArabicHamzaAbove, "{ArabicLetterMeem}{ArabicSukun}|(?:{ArabicLetterBeh}|{ArabicLetterTeh}|{ArabicLetterTheh}|{ArabicLetterJeem}|{ArabicLetterHah}|{ArabicLetterKhah}|{ArabicLetterSeen}|{ArabicLetterSheen}|{ArabicLetterSad}|{ArabicLetterDad}|{ArabicLetterTah}|{ArabicLetterZah}|{ArabicLetterAin}|{ArabicLetterGhain}|{ArabicLetterFeh}|{ArabicLetterQaf}|{ArabicLetterKaf}|{ArabicLetterMeem}|{ArabicLetterNoon}|{ArabicLetterHeh}|{ArabicLetterYeh}){ArabicShadda}?(?:{ArabicFatha}(?:{ArabicLetterSuperscriptAlef}{ArabicMaddahAbove})?|{ArabicKasra})", "{ArabicFatha}{ArabicLetterAlef}(?:{ArabicSunLetters}|{ArabicMoonLettersNoVowels}|{ArabicLetterWaw}|{ArabicLetterYeh}|(?:{EndOfWord}))"},
-            New String() {ArabicData.ArabicLetterWawWithHamzaAbove, "{ArabicFatha}(?:{ArabicLetterSuperscriptAlef}{ArabicMaddahAbove})?|{ArabicDamma}", "(?:{ArabicDamma}|{ArabicDammatan}){ArabicLetterAlef}{ArabicSmallHighRoundedZero}"},
-            New String() {ArabicData.ArabicLetterWawWithHamzaAbove, "{ArabicDamma}", "{ArabicFatha}{ArabicLetterAlef}"},
-            New String() {ArabicData.ArabicLetterYehWithHamzaAbove, "{ArabicKasra}", "{ArabicFatha}{ArabicLetterAlef}{ArabicMaddahAbove}(?:{Hamzas})"},
- _
-            New String() {ArabicData.ArabicLetterAlefWithHamzaAbove, "(?:{ArabicSunLetters}|{ArabicMoonLettersNoVowels}){ArabicShadda}?{ArabicFatha}", "(?:{ArabicSukun}|{ArabicFatha}){ArabicLetterWaw}"},
-            New String() {ArabicData.ArabicTatweel + ArabicData.ArabicHamzaAbove, "{ArabicDamma}", "{ArabicSukun}{ArabicLetterWaw}"},
-            New String() {ArabicData.ArabicTatweel + ArabicData.ArabicHamzaAbove, "(?:{ArabicLetterBeh}|{ArabicLetterTeh}|{ArabicLetterTheh}|{ArabicLetterJeem}|{ArabicLetterHah}|{ArabicLetterKhah}|{ArabicLetterSeen}|{ArabicLetterSheen}|{ArabicLetterSad}|{ArabicLetterDad}|{ArabicLetterTah}|{ArabicLetterZah}|{ArabicLetterAin}|{ArabicLetterGhain}|{ArabicLetterFeh}|{ArabicLetterQaf}|{ArabicLetterKaf}|{ArabicLetterMeem}|{ArabicLetterNoon}|{ArabicLetterHeh}|{ArabicLetterYeh}){ArabicSukun}", "{ArabicFatha}{ArabicLetterWaw}"},
-            New String() {ArabicData.ArabicTatweel + ArabicData.ArabicHamzaAbove, "(?:{ArabicLetterBeh}|{ArabicLetterTeh}|{ArabicLetterTheh}|{ArabicLetterJeem}|{ArabicLetterHah}|{ArabicLetterKhah}|{ArabicLetterSeen}|{ArabicLetterSheen}|{ArabicLetterSad}|{ArabicLetterDad}|{ArabicLetterTah}|{ArabicLetterZah}|{ArabicLetterAin}|{ArabicLetterGhain}|{ArabicLetterFeh}|{ArabicLetterQaf}|{ArabicLetterKaf}|{ArabicLetterLam}|{ArabicLetterMeem}|{ArabicLetterNoon}|{ArabicLetterHeh}|{ArabicLetterYeh})(?:{ArabicSukun}|{ArabicShadda}?(?:{ArabicFatha}(?:{ArabicLetterSuperscriptAlef}{ArabicMaddahAbove})?|{ArabicDamma}|{ArabicKasra}))|{ArabicKasra}{ArabicLetterYeh}{ArabicMaddahAbove}|{ArabicDamma}{ArabicSmallWaw}{ArabicMaddahAbove}", "{ArabicDamma}{ArabicLetterWaw}"},
-            New String() {ArabicData.ArabicLetterHamza, "(?:{ArabicNonConnectingLetters}|{ArabicLetterWaw})(?:{ArabicSukun}|{ArabicShadda}?(?:{ArabicFatha}|{ArabicDamma}|{ArabicKasra}))|{ArabicFatha}{ArabicLetterAlef}{ArabicMaddahAbove}", "{ArabicDamma}(?:{ArabicLetterWaw}|{ArabicSmallWaw})"},
- _
-            New String() {ArabicData.ArabicLetterAlefWithHamzaAbove, "(?:(?:{StartOfWord})(?:{ArabicLetterWaw}(?:{ArabicFatha}{ArabicLetterKaf})?|(?:{ArabicLetterLam}{ArabicShadda}{ArabicFatha}|{ArabicLetterWaw}{ArabicFatha})?{ArabicLetterReh}|{ArabicLetterFeh}(?:{ArabicFatha}{ArabicLetterKaf})?){ArabicFatha})", "(?:{ArabicFatha}{ArabicLetterYeh})"},
-            New String() {ArabicData.ArabicLetterAlefWithHamzaAbove, "(?:(?:{StartOfWord})(?:(?:{ArabicLetterFeh}{ArabicFatha})?{ArabicLetterBeh}{ArabicKasra}|{ArabicLetterFeh}{ArabicFatha}|{ArabicLetterLam}{ArabicKasra})?)|{ArabicDamma}{ArabicLetterWaw}{ArabicMaddahAbove}", "(?:{ArabicFatha}{ArabicLetterAlefMaksura}(?:{ArabicLetterSuperscriptAlef}{ArabicMaddahAbove}|{ArabicShadda}(?:{ArabicFatha}|{ArabicDamma}|{ArabicKasra}))(?:{EndOfWord}))"},
-            New String() {ArabicData.ArabicLetterHamza, "(?:(?:(?:{StartOfWord}){ArabicLetterAlefWithHamzaAbove}{ArabicFatha})?(?:{ArabicLetterFeh}{ArabicFatha})?{ArabicLetterReh}{ArabicFatha})", "{ArabicFatha}{ArabicLetterYeh}|{ArabicFatha}{ArabicLetterSuperscriptAlef}{ArabicMaddahAbove}"},
-            New String() {ArabicData.ArabicTatweel + ArabicData.ArabicHamzaAbove, "(?:{ArabicConnectingLetters}){ArabicShadda}?(?:{ArabicFatha}(?:{ArabicLetterSuperscriptAlef}{ArabicMaddahAbove})?|{ArabicKasra})|(?:{ArabicLetterFeh}|{ArabicLetterLam}){ArabicSukun}", "{ArabicFatha}{ArabicLetterSuperscriptAlef}{ArabicLetterNoon}|{ArabicFatha}{ArabicLetterYeh}|{ArabicKasra}(?:{ArabicLetterDal}{ArabicFatha}(?:{ArabicLetterTeh}|{ArabicLetterTehMarbuta})|{ArabicLetterYeh}|{ArabicLetterAlefMaksura}(?:{EndOfWord}))"},
-            New String() {ArabicData.ArabicLetterHamza, "(?:{ArabicNonConnectingLetters}){ArabicShadda}?(?:{ArabicFatha}{ArabicLetterSuperscriptAlef}{ArabicMaddahAbove}|{ArabicKasra}|{ArabicDamma})|{ArabicFatha}{ArabicLetterAlef}{ArabicMaddahAbove}", "{ArabicSukun}{ArabicLetterYeh}|{ArabicKasra}(?:{ArabicLetterYeh}|{ArabicLetterAlefMaksura})"},
- _
-            New String() {ArabicData.ArabicLetterHamza, "{ArabicFatha}{ArabicLetterAlef}{ArabicMaddahAbove}|{ArabicKasra}(?:{ArabicLetterAlef}{ArabicSmallHighRoundedZero})?{ArabicLetterAlefMaksura}{ArabicMaddahAbove}|{ArabicDamma}{ArabicLetterWaw}{ArabicMaddahAbove}|(?:{ArabicNonConnectingLetters}|{ArabicLetterBeh}|{ArabicLetterFeh}|{ArabicLetterLam}|{ArabicLetterWaw}|{ArabicLetterAlefMaksura}){ArabicSukun}", "{ArabicFatha}|(?:{ArabicDamma}|{ArabicKasra}|{ArabicFathatan}(?:{ArabicSmallHighMeemIsolatedForm}|{ArabicSmallLowMeem})?{ArabicLetterAlef}?|(?:{ArabicKasratan}|{ArabicDammatan})(?:{ArabicSmallHighMeemIsolatedForm}|{ArabicSmallLowMeem})?)(?:{EndOfWord})"},
-            New String() {ArabicData.ArabicHamzaAbove, "{ArabicFatha}{ArabicLetterSuperscriptAlef}", "{ArabicSukun}"},
-            New String() {ArabicData.ArabicLetterAlefWithHamzaAbove, "(?:{ArabicSunLetters}|{ArabicMoonLettersNoVowels}){ArabicSukun}", "{ArabicFatha}{ArabicLetterTehMarbuta}"},
-            New String() {ArabicData.ArabicLetterAlefWithHamzaAbove, "{ArabicFatha}", "{ArabicFatha}|{ArabicDamma}"},
-            New String() {ArabicData.ArabicTatweel + ArabicData.ArabicHamzaAbove, "{ArabicLetterSeen}{ArabicSukun}{ArabicLetterTeh}{ArabicFatha}", "{ArabicSukun}"},
-            New String() {ArabicData.ArabicTatweel + ArabicData.ArabicHamzaAbove, "{ArabicKasra}{ArabicLetterYeh}{ArabicMaddahAbove}|(?:{ArabicConnectingLetters}|{ArabicLetterYeh})(?:{ArabicSukun}|{ArabicFatha})", "{ArabicFatha}(?:{ArabicSunLetters}|{ArabicMoonLettersNoVowels}|{ArabicLetterSuperscriptAlef}|{ArabicLetterTehMarbuta})|{ArabicFathatan}(?:{ArabicSmallHighMeemIsolatedForm}|{ArabicSmallLowMeem})?{ArabicLetterAlef}"},
-            New String() {ArabicData.ArabicLetterAlefWithHamzaBelow, "{ArabicFatha}", "(?:{ArabicKasra}(?:{ArabicLetterAlefMaksura}{ArabicSmallHighRoundedZero})?|{ArabicKasratan}(?:{ArabicSmallHighMeemIsolatedForm}|{ArabicSmallLowMeem})?)(?:{EndOfWord})"},
-            New String() {ArabicData.ArabicLetterYehWithHamzaAbove, "{ArabicKasra}(?:{ArabicLetterAlef}{ArabicSmallHighRoundedZero})?"},
-            New String() {ArabicData.ArabicLetterYehWithHamzaAbove, "", "{ArabicKasra}"},
-            New String() {ArabicData.ArabicLetterWawWithHamzaAbove, "{ArabicDamma}"},
-            New String() {ArabicData.ArabicLetterWawWithHamzaAbove, "", "{ArabicDamma}"},
-            New String() {ArabicData.ArabicLetterAlefWithHamzaAbove, "{ArabicFatha}"}
-        }
-        'Check = {New String() {"(?:" + ArabicData.ArabicLetterHamza + "|" + ArabicData.ArabicTatweel + "?" + ArabicData.ArabicHamzaAbove + "|" + ArabicData.ArabicLetterAlefWithHamzaAbove + "|" + ArabicData.ArabicLetterAlefWithHamzaBelow + "|" + ArabicData.ArabicLetterWawWithHamzaAbove + "|" + ArabicData.ArabicLetterYehWithHamzaAbove + ")(?=" + ArabicData.ArabicFatha + ArabicData.ArabicLetterAlef + ")"},
-        'Check = {New String() {"(?:" + ArabicData.ArabicLetterHamza + "|" + ArabicData.ArabicTatweel + "?" + ArabicData.ArabicHamzaAbove + "|" + ArabicData.ArabicLetterAlefWithHamzaAbove + "|" + ArabicData.ArabicLetterAlefWithHamzaBelow + "|" + ArabicData.ArabicLetterWawWithHamzaAbove + "|" + ArabicData.ArabicLetterYehWithHamzaAbove + ")(?=(?:" + ArabicData.ArabicSukun + "|" + ArabicData.ArabicFatha + "|" + ArabicData.ArabicDamma + "|" + ArabicData.ArabicKasra + ")" + ArabicData.ArabicLetterWaw + ")"},
-        'Check = {New String() {"(?:" + ArabicData.ArabicLetterHamza + "|" + ArabicData.ArabicTatweel + "?" + ArabicData.ArabicHamzaAbove + "|" + ArabicData.ArabicLetterAlefWithHamzaAbove + "|" + ArabicData.ArabicLetterAlefWithHamzaBelow + "|" + ArabicData.ArabicLetterWawWithHamzaAbove + "|" + ArabicData.ArabicLetterYehWithHamzaAbove + ")(?=(?:" + ArabicData.ArabicSukun + "|" + ArabicData.ArabicFatha + "|" + ArabicData.ArabicDamma + "|" + ArabicData.ArabicKasra + ")(?:" + ArabicData.ArabicLetterYeh + "|" + ArabicData.ArabicLetterAlefMaksura + "))"},
-        '    New String() {ArabicData.ArabicLetterAlefWithHamzaAbove, "(?:(?:{StartOfWord})(?:(?:{ArabicLetterFeh}(?:{ArabicFatha}{ArabicLetterLam})?|(?:{ArabicLetterFeh}{ArabicFatha})?{ArabicLetterSeen}|{ArabicLetterWaw}{ArabicFatha}{ArabicLetterLam}|(?:{ArabicLetterWaw}|{ArabicLetterLam}){ArabicShadda}?|{ArabicLetterHamza}){ArabicFatha}|(?:(?:(?:{ArabicLetterWaw}{ArabicFatha})?{ArabicLetterBeh}{ArabicKasra}|(?:{ArabicLetterKaf}|{ArabicLetterWaw}){ArabicFatha})?{ArabicLetterAlefWasla}|(?:{ArabicLetterWaw}{ArabicFatha})?{ArabicLetterLam}{ArabicKasra}|{ArabicLetterLam}{ArabicShadda}{ArabicKasra}){ArabicLetterLam}{ArabicSukun}|(?:(?:{ArabicLetterFeh}|{ArabicLetterWaw}){ArabicFatha})?{ArabicLetterBeh}{ArabicKasra}|{ArabicLetterYeh}{ArabicFatha}{ArabicLetterSuperscriptAlef}{ArabicMaddahAbove})?)", "{ArabicFatha}(?:{ArabicLetterAlef}{ArabicSmallHighRoundedZero})|(?:{ArabicFatha}|{ArabicDamma})(?:{ArabicSunLetters}|{ArabicMoonLettersNoVowels}|{ArabicLetterWaw}|{ArabicLetterYeh})"},
-        '    New String() {ArabicData.ArabicLetterAlefWithHamzaBelow, "(?:(?:{StartOfWord})(?:{ArabicLetterWaw}{ArabicShadda}?{ArabicFatha}|(?:(?:{ArabicLetterBeh}{ArabicKasra}|{ArabicLetterWaw}{ArabicFatha})?{ArabicLetterAlefWasla}|{ArabicLetterLam}{ArabicKasra}){ArabicLetterLam}{ArabicSukun}|{ArabicLetterLam}{ArabicShadda}?{ArabicKasra}|{ArabicLetterWaw}{ArabicFatha}{ArabicLetterLam}{ArabicKasra}|(?:{ArabicLetterAlefWithHamzaAbove}{ArabicFatha})?{ArabicLetterFeh}{ArabicFatha}|(?:(?:{ArabicLetterFeh}|{ArabicLetterLam}){ArabicFatha})?{ArabicLetterBeh}{ArabicKasra}|{ArabicLetterYeh}{ArabicFatha}{ArabicLetterSuperscriptAlef}{ArabicMaddahAbove})?)", "{ArabicKasra}"},
-        '    New String() {ArabicData.ArabicLetterAlefWithHamzaAbove, "(?:(?:{StartOfWord})(?:{ArabicLetterWaw}(?:{ArabicFatha}{ArabicLetterKaf})?|(?:{ArabicLetterLam}{ArabicShadda}{ArabicFatha}|{ArabicLetterWaw}{ArabicFatha})?{ArabicLetterReh}|{ArabicLetterFeh}(?:{ArabicFatha}{ArabicLetterKaf})?){ArabicFatha})", "(?:{ArabicFatha}{ArabicLetterYeh})"},
-        '    New String() {ArabicData.ArabicLetterAlefWithHamzaAbove, "(?:(?:{StartOfWord})(?:(?:{ArabicLetterFeh}{ArabicFatha})?{ArabicLetterBeh}{ArabicKasra}|{ArabicLetterFeh}{ArabicFatha}|{ArabicLetterLam}{ArabicKasra})?)", "(?:{ArabicFatha}{ArabicLetterAlefMaksura}{ArabicShadda}(?:{ArabicFatha}|{ArabicDamma}|{ArabicKasra})(?:{EndOfWord}))"},
-        '    New String() {ArabicData.ArabicLetterHamza, "(?:(?:{StartOfWord}){ArabicLetterAlefWithHamzaAbove}{ArabicFatha}(?:{ArabicLetterFeh}{ArabicFatha})?{ArabicLetterReh}{ArabicFatha})", "{ArabicFatha}{ArabicLetterYeh}"},
-        '    New String() {ArabicData.ArabicTatweel + ArabicData.ArabicHamzaAbove, "(?:{ArabicConnectingLetters}){ArabicShadda}?(?:{ArabicFatha}{ArabicLetterSuperscriptAlef}{ArabicMaddahAbove}|{ArabicKasra})|{ArabicLetterLam}{ArabicSukun}", "{ArabicFatha}{ArabicLetterYeh}|{ArabicKasra}(?:{ArabicLetterYeh}|{ArabicLetterAlefMaksura})"},
-        '    New String() {ArabicData.ArabicLetterHamza, "(?:{ArabicNonConnectingLetters})(?:{ArabicFatha}{ArabicLetterSuperscriptAlef}{ArabicMaddahAbove}|{ArabicKasra}|{ArabicDamma})|{ArabicFatha}{ArabicLetterAlef}{ArabicMaddahAbove}", "{ArabicSukun}{ArabicLetterYeh}|{ArabicKasra}(?:{ArabicLetterYeh}|{ArabicLetterAlefMaksura})"}
-        '        }
+        Dim Rules As IslamData.RuleTranslationCategory.RuleTranslation() = CachedData.GetRuleSet("HamzaWriting")
         Dim IndexToVerse As Integer()() = Nothing
         Dim Text As String = QuranTextCombiner(IndexToVerse)
-        Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(Text, Check(0)(0))
+        Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(Text, CachedData.GetPattern("{Hamzas}"))
+        Dim CheckMatches As New Dictionary(Of Integer, String)
         Debug.Print(CStr(Matches.Count))
         For Count = 0 To Matches.Count - 1
-            Dim bMatch As Boolean = True
-            For SubCount = 1 To Check.Length - 1
-                bMatch = True
-                For PatternCount As Integer = 1 To Check(SubCount).Length - 1
-                    'First match is always a before look then after then before so leave blank to start with after
-                    If PatternCount Mod 2 = 1 Then
-                        bMatch = System.Text.RegularExpressions.Regex.Match(Text.Substring(0, Matches(Count).Index), "(?:" + CachedData.TranslateRegEx(Check(SubCount)(PatternCount), True) + ")$", System.Text.RegularExpressions.RegexOptions.RightToLeft).Success
-                    Else
-                        bMatch = System.Text.RegularExpressions.Regex.Match(Text.Substring(Matches(Count).Index + Matches(Count).Length), "^(?:" + CachedData.TranslateRegEx(Check(SubCount)(PatternCount), True) + ")").Success
-                    End If
-                    If Not bMatch Then Exit For
-                Next
-                If bMatch Then
-                    If Matches(Count).Value = Check(SubCount)(0) Then
-                        'Debug.Print("Match: " + Matches(Count).Value + ": " + Arabic.TransliterateToScheme(Text.Substring(Math.Max(0, Matches(Count).Index - 15), 30), ArabicData.TranslitScheme.Literal, String.Empty))
-                    Else
-                        Debug.Print("FALSE MATCH: " + Check(SubCount)(0) + " Not " + Matches(Count).Value + ": " + Arabic.TransliterateToScheme(Text.Substring(Math.Max(0, Matches(Count).Index - 15), 30), ArabicData.TranslitScheme.Literal, String.Empty))
-                    End If
-                    Exit For
+            If Matches(Count).Length = 0 Then Continue For 'Avoid zero width matches for end of string anchors
+            If Not CheckMatches.ContainsKey(Matches(Count).Index) Then CheckMatches.Add(Matches(Count).Index, String.Empty)
+            CheckMatches(Matches(Count).Index) += "0"
+        Next
+        For MainCount = 1 To Rules.Length - 1
+            Matches = System.Text.RegularExpressions.Regex.Matches(Text, Rules(MainCount).Match)
+            Debug.Print(CStr(Matches.Count))
+            For Count = 0 To Matches.Count - 1
+                If Rules(MainCount).NegativeMatch <> String.Empty AndAlso Matches(Count).Result(Rules(MainCount).NegativeMatch) <> String.Empty Then
+                    'ElseIf Matches(Count).Result(Rules(MainCount).Evaluator) <> Matches(Count).Value Then
+                Else
+                    If Not CheckMatches.ContainsKey(Matches(Count).Groups(2 + If(Rules(MainCount).NegativeMatch <> String.Empty, 1, 0)).Index) Then CheckMatches.Add(Matches(Count).Groups(2 + If(Rules(MainCount).NegativeMatch <> String.Empty, 1, 0)).Index, String.Empty)
+                    CheckMatches(Matches(Count).Groups(2 + If(Rules(MainCount).NegativeMatch <> String.Empty, 1, 0)).Index) += Rules(MainCount).Name + "-"
                 End If
             Next
-            If Not bMatch Then Debug.Print("Not Found: " + CStr(Matches(Count).Index) + ":" + Matches(Count).Value + ":" + Arabic.TransliterateToScheme(Text.Substring(Math.Max(0, Matches(Count).Index - 15), 30), ArabicData.TranslitScheme.Literal, String.Empty))
+        Next
+        Dim Keys(CheckMatches.Keys.Count - 1) As Integer
+        CheckMatches.Keys.CopyTo(Keys, 0)
+        Array.Sort(Keys)
+        For Count = 0 To Keys.Length - 1
+            If CheckMatches(Keys(Count)).Length <> 2 Then
+                Debug.Print(CStr(Keys(Count)) + ":" + CheckMatches(Keys(Count)) + ":" + Arabic.TransliterateToScheme(Text(Keys(Count)), ArabicData.TranslitScheme.Literal, String.Empty) + ":" + Arabic.TransliterateToScheme(Text.Substring(Math.Max(0, Keys(Count) - 15), 30), ArabicData.TranslitScheme.Literal, String.Empty))
+            End If
         Next
     End Sub
     Public Shared Sub CheckMutualExclusiveRules(bAssumeStop As Boolean)
@@ -5688,12 +5632,6 @@ Public Class TanzilReader
         Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(Text, Check(0, 0))
         Dim CheckMatches As New Dictionary(Of Integer, String)
         Debug.Print(CStr(Matches.Count))
-        'Debug.Print(CStr(System.Text.RegularExpressions.Regex.Matches(Text, ArabicData.ArabicLetterHamza).Count))
-        'Debug.Print(CStr(System.Text.RegularExpressions.Regex.Matches(Text, ArabicData.ArabicTatweel + "?" + ArabicData.ArabicHamzaAbove).Count))
-        'Debug.Print(CStr(System.Text.RegularExpressions.Regex.Matches(Text, ArabicData.ArabicLetterAlefWithHamzaAbove).Count))
-        'Debug.Print(CStr(System.Text.RegularExpressions.Regex.Matches(Text, ArabicData.ArabicLetterAlefWithHamzaBelow).Count))
-        'Debug.Print(CStr(System.Text.RegularExpressions.Regex.Matches(Text, ArabicData.ArabicLetterWawWithHamzaAbove).Count))
-        'Debug.Print(CStr(System.Text.RegularExpressions.Regex.Matches(Text, ArabicData.ArabicLetterYehWithHamzaAbove).Count))
         For Count = 0 To Matches.Count - 1
             If Matches(Count).Length = 0 Then Continue For 'Avoid zero width matches for end of string anchors
             If Not CheckMatches.ContainsKey(Matches(Count).Index) Then CheckMatches.Add(Matches(Count).Index, String.Empty)
