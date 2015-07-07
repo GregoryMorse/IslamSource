@@ -5604,7 +5604,8 @@ Public Class TanzilReader
             Debug.Print(Rules(MainCount).Name + ": " + CStr(Matches.Count))
             For Count = 0 To Matches.Count - 1
                 If Rules(MainCount).NegativeMatch <> String.Empty AndAlso Matches(Count).Result(Rules(MainCount).NegativeMatch) <> String.Empty Then
-                    'ElseIf Matches(Count).Result(Rules(MainCount).Evaluator) <> Matches(Count).Value Then
+                ElseIf Matches(Count).Result(Rules(MainCount).Evaluator) <> Matches(Count).Value Then
+                    Debug.Print(CStr(Matches(Count).Groups(2 + If(Rules(MainCount).NegativeMatch <> String.Empty, 1, 0)).Index) + ":" + If(CheckMatches(Matches(Count).Groups(2 + If(Rules(MainCount).NegativeMatch <> String.Empty, 1, 0)).Index).EndsWith("-"), String.Empty, "-") + Rules(MainCount).Name + If(CheckMatches(Matches(Count).Groups(2 + If(Rules(MainCount).NegativeMatch <> String.Empty, 1, 0)).Index).Length = 2, String.Empty, "-") + ":" + Arabic.TransliterateToScheme(Text(Matches(Count).Groups(2 + If(Rules(MainCount).NegativeMatch <> String.Empty, 1, 0)).Index), ArabicData.TranslitScheme.Literal, String.Empty) + ":" + Arabic.TransliterateToScheme(Text.Substring(Math.Max(0, Matches(Count).Groups(2 + If(Rules(MainCount).NegativeMatch <> String.Empty, 1, 0)).Index - 15), 30), ArabicData.TranslitScheme.Literal, String.Empty))
                 Else
                     If Not CheckMatches.ContainsKey(Matches(Count).Groups(2 + If(Rules(MainCount).NegativeMatch <> String.Empty, 1, 0)).Index) Then CheckMatches.Add(Matches(Count).Groups(2 + If(Rules(MainCount).NegativeMatch <> String.Empty, 1, 0)).Index, String.Empty)
                     CheckMatches(Matches(Count).Groups(2 + If(Rules(MainCount).NegativeMatch <> String.Empty, 1, 0)).Index) += If(CheckMatches(Matches(Count).Groups(2 + If(Rules(MainCount).NegativeMatch <> String.Empty, 1, 0)).Index).EndsWith("-"), String.Empty, "-") + Rules(MainCount).Name + If(CheckMatches(Matches(Count).Groups(2 + If(Rules(MainCount).NegativeMatch <> String.Empty, 1, 0)).Index).Length = 2, String.Empty, "-")
@@ -5615,7 +5616,7 @@ Public Class TanzilReader
         CheckMatches.Keys.CopyTo(Keys, 0)
         Array.Sort(Keys)
         For Count = 0 To Keys.Length - 1
-            If CheckMatches(Keys(Count)).EndsWith("-") And CheckMatches(Keys(Count)) <> "0-LetterHamzaEnd-YehHamzaKasra-" And CheckMatches(Keys(Count)) <> "0-FathaAlefHamzaAboveSukun-TatweelHamzaSukun-" And CheckMatches(Keys(Count)) <> "0-StartEndAlefHamzaYeh-LetterHamzaEnd-" Then
+            If CheckMatches(Keys(Count)).EndsWith("-") And CheckMatches(Keys(Count)) <> "0-LetterHamzaEnd-YehHamzaKasra-" And CheckMatches(Keys(Count)) <> "0-FathaAlefHamzaAboveSukun-TatweelHamzaSukun-" And CheckMatches(Keys(Count)) <> "0-LetterHamzaEnd-FathaAlefHamzaAboveEnd-" Then
                 Debug.Print(CStr(Keys(Count)) + ":" + CheckMatches(Keys(Count)) + ":" + Arabic.TransliterateToScheme(Text(Keys(Count)), ArabicData.TranslitScheme.Literal, String.Empty) + ":" + Arabic.TransliterateToScheme(Text.Substring(Math.Max(0, Keys(Count) - 15), 30), ArabicData.TranslitScheme.Literal, String.Empty))
             End If
         Next
