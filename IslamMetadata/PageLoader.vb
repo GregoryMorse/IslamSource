@@ -5601,9 +5601,10 @@ Public Class TanzilReader
         Next
         For MainCount = 0 To Rules.Length - 1
             Matches = System.Text.RegularExpressions.Regex.Matches(Text, Rules(MainCount).Match)
-            Debug.Print(Rules(MainCount).Name + ": " + CStr(Matches.Count))
+            Dim NegativeCount As Integer = 0
             For Count = 0 To Matches.Count - 1
                 If Rules(MainCount).NegativeMatch <> String.Empty AndAlso Matches(Count).Result(Rules(MainCount).NegativeMatch) <> String.Empty Then
+                    NegativeCount += 1
                 ElseIf Matches(Count).Result(Rules(MainCount).Evaluator) <> Matches(Count).Value Then
                     Debug.Print(CStr(Matches(Count).Groups(2 + If(Rules(MainCount).NegativeMatch <> String.Empty, 1, 0)).Index) + ":" + If(CheckMatches(Matches(Count).Groups(2 + If(Rules(MainCount).NegativeMatch <> String.Empty, 1, 0)).Index).EndsWith("-"), String.Empty, "-") + Rules(MainCount).Name + If(CheckMatches(Matches(Count).Groups(2 + If(Rules(MainCount).NegativeMatch <> String.Empty, 1, 0)).Index).Length = 2, String.Empty, "-") + ":" + Arabic.TransliterateToScheme(Text(Matches(Count).Groups(2 + If(Rules(MainCount).NegativeMatch <> String.Empty, 1, 0)).Index), ArabicData.TranslitScheme.Literal, String.Empty) + ":" + Arabic.TransliterateToScheme(Text.Substring(Math.Max(0, Matches(Count).Groups(2 + If(Rules(MainCount).NegativeMatch <> String.Empty, 1, 0)).Index - 15), 30), ArabicData.TranslitScheme.Literal, String.Empty))
                 Else
@@ -5611,6 +5612,7 @@ Public Class TanzilReader
                     CheckMatches(Matches(Count).Groups(2 + If(Rules(MainCount).NegativeMatch <> String.Empty, 1, 0)).Index) += If(CheckMatches(Matches(Count).Groups(2 + If(Rules(MainCount).NegativeMatch <> String.Empty, 1, 0)).Index).EndsWith("-"), String.Empty, "-") + Rules(MainCount).Name + If(CheckMatches(Matches(Count).Groups(2 + If(Rules(MainCount).NegativeMatch <> String.Empty, 1, 0)).Index).Length = 2, String.Empty, "-")
                 End If
             Next
+            Debug.Print(Rules(MainCount).Name + ": " + CStr(Matches.Count - NegativeCount))
         Next
         Dim Keys(CheckMatches.Keys.Count - 1) As Integer
         CheckMatches.Keys.CopyTo(Keys, 0)
