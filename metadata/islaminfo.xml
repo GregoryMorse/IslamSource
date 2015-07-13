@@ -840,7 +840,7 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<noun text="&lt;ivomN" plural="&apos;aAvaAmN" id="Sin"></noun>
 			<noun text="gurofapN" plural="gurafN" id="RoomQuarter"></noun>
 			<noun text="malikN" plural="muluwkN" id="King"></noun>
-			<noun text="SawotN" plural="&gt;aSowaAtN" id="Voice"></noun>
+			<noun text="SawotN" plural="bp=&gt;afoEaAlN" id="VoiceSound"></noun>
 			<noun text="EaqibN" plural="&gt;aEqaAbN" id="End"></noun>
 			<noun text="&gt;axobaArN" plural="xabarN" id="News"></noun>
 			<noun text="baSarN" plural="&gt;aboSaArN" id="Sight"></noun>
@@ -1869,7 +1869,7 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<verb text="sHr" id="EnchantBewitch" grammar="form=faEala,yafoEalu,fiEol"></verb>
 			<verb text="SlH" id="ActRighteously" grammar="form=faEala,yafoEalu,mafoEalap"></verb>
 			<verb text="lEn" id="Curse" grammar="form=faEala,yafoEalu,faEol"></verb>
-			<verb text="nfE" id="Profit" grammar="form=faEala,yafoEalu,faEol"></verb>
+			<verb text="nfE" id="Profit" grammar="form=faEala,yafoEalu,{foEalo,faEolFA,faAEilN,mafoEuwlN"></verb>
 
 			<verb text="nSr" id="HelpDeliver" grammar="form=faEala,yafoEulu,faEol"></verb>
 			<verb text="blg" id="Reach" grammar="form=faEala,yafoEulu,fuEuwl"></verb>
@@ -1907,7 +1907,7 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<verb text="ksb" id="Earn" grammar="form=faEala,yafoEilu,faEol"></verb>
 			<verb text="mlk" id="Possess" grammar="form=faEala,yafoEilu,fiEol"></verb>
 
-			<verb text="smE" id="Hear" grammar="form=faEila,yafoEalu,faEaAlap,faEol"></verb>
+			<verb text="smE" id="Hear" grammar="form=faEila,yafoEalu,{foEilo,faEaAlapF,faEolFA,faAEilN,mafoEuwlN"></verb>
 			<verb text="Hzn" id="BeGrieved" grammar="form=faEila,yafoEalu,fuEol"></verb>
 			<verb text="Hsb" id="ThinkListen" grammar="form=faEila,yafoEalu,faEol"></verb>
 			<verb text="HfZ" id="GuardProtect" grammar="form=faEila,yafoEalu,fiEol"></verb>
@@ -1937,7 +1937,7 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<verb text="nfx" id="Breathe" grammar="form=faEala,yafoEulu"></verb>
 			<verb text="ktm" id="ConcealHide" grammar="form=faEala,yafoEulu"></verb>
 			<verb text="zEm" id="Claim" grammar="form=faEala,yafoEulu"></verb>
-			<verb text="&gt;fk" id="DeludeTurnAway" grammar="form=faEala,yafoEilu"></verb>
+			<verb text="'fk" id="DeludeTurnAway" grammar="form=faEala,yafoEilu"></verb>
 			<verb text="Srf" id="TurnDivert" grammar="form=faEala,yafoEilu"></verb>
 			<verb text="sbq" id="Precede" grammar="form=faEala,yafoEilu"></verb>
 			<verb text="nkH" id="Marry" grammar="form=faEala,yafoEilu"></verb>
@@ -1949,8 +1949,8 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 
 			<verb text="qaAla yaquwlu" id="SaySpeak"></verb>
 			<verb text="kaAna yakuwnu" id="Be"></verb>
-			<verb text="&gt;ataY" poss="bi" id="ComeBring"></verb>
-			<verb text="jaA^&apos;a" poss="bi" id="ComeArriveBring"></verb>
+			<verb text="'tY" poss="bi" id="ComeBring"></verb>
+			<verb text="jA'" poss="bi" id="ComeArriveBring"></verb>
 			<verb text="taAba" poss="&lt;ilaY EalaY" id="RepentAcceptRepentance"></verb>
 			<verb text="qaDaY" poss="bayona EalaY" id="DecreeFulfillJudgeBetweenKill"></verb>
 			<verb text="EafaA" poss="Eano" id="ForgoPardonForgive"></verb>
@@ -1969,7 +1969,7 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 
 			<verb text="Eaqada" id="ConsolidationAffirmationHoldingTogether"></verb>
 			<verb text="waH~ada" id="UniteUnifyConsolidate"></verb>
-			<verb text="tuxorijuwA" id="Expel"></verb>
+			<verb text="tuxorijuwA@" id="Expel"></verb>
 			<verb text="lamaEa" id="GleamedGlitteredShone"></verb>
 			<verb text="tajoriY" id="Flow"></verb>
 			<verb text="yadoEuw" id="Call"></verb>
@@ -1990,7 +1990,6 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<verb text="Tlb" id="RequestOrder" grammar="form=yafoEulu"></verb>
 			<verb text="sotaTiyE" id="AbleCan"></verb>
 			<verb text="wDE" id="PutPlace" grammar="form=faEala,yafoEalu,Ealo,faEolFA,faAEilN,mafoEuwlN"></verb>
-			<verb text="ntaZir" id="Wait"></verb>
 			<verb text="drs" id="TeachStudy" grammar="form=yafoEulu"></verb>
 			<verb text="fDl" id="FavorTake"></verb>
 			<verb text="r'Y" id="SeeUnderstand"></verb>
@@ -2000,9 +1999,30 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<verb text="SAn" id="Protecting" grammar="form=faEola,yafuEolu,fiEolapF"></verb>
 			<verb text="HmY" id="Protecting" grammar="form=faEal,yafoEil,fiEalapN"></verb>
 			<verb text="wqY" id="Protecting" grammar="form=faEal,yafoEil,fuEalapN"></verb>
-			<verb text="'lf" id="Author" grammar="form=faE~ala,yufoE~ilu,faE~ilo,tafoEiylFA,mufaE~ilN,mufaE~alN"></verb>
-			<verb text="snf" id="Author" grammar="form=faE~ala,yufoE~ilu,faE~ilo,tafoEiylFA,mufaE~ilN,mufaE~alN"></verb>
-			<verb text="'$r" id="Indicate" grammar="form=faEaAla,yufoEiylu,faEilo,fiEaAlapN,muEiylN,mu$aArN &lt;ilayohi"></verb>			
+			<verb text="'lf" id="Author" grammar="form=faE~ala,yufaE~ilu,faE~ilo,tafoEiylFA,mufaE~ilN,mufaE~alN"></verb>
+			<verb text="snf" id="Author" grammar="form=faE~ala,yufaE~ilu,faE~ilo,tafoEiylFA,mufaE~ilN,mufaE~alN"></verb>
+			<verb text="'$r" id="Indicate" grammar="form=faEaAla,yufoEiylu,faEilo,fiEaAlapN,muEiylN,muEaAlN &lt;ilaY"></verb>
+			<verb text="jtmE" id="Fulfill" grammar="form={fotaEala,yafotaEilu,{fotaEolo,{fotiEaAlFA,mufotaEilN,mufotaEalN"></verb>
+			<verb text="ywjd" id="Fulfill" grammar="form={fotaEala,yafotaEilu,{fotaEolo,{fotiEaAlFA,mufotaEilN,mufotaEalN"></verb>
+			<verb text="rkb" id="Compose" grammar="form=faE~ala,yufaE~ilu,faE~ilo,tafoEiylFA,mufaE~ilN,mufaE~alN"></verb>
+			<verb text="$tml" id="Include" grammar="form={fotaEala,yafotaEilu,{fotaEilo,{fotiEaAlFA,mufotaEilN,mufotaEalN"></verb>
+			<verb text="btd'" id="Begin" grammar="form={fotaEala,yafotaEilu,{fotaEilo,{fotiEaAlFA,mufotaEilN,mufotaEalN"></verb>
+			<verb text="nthY" id="End" grammar="form={fotaEal,yafotaEil,{fotaEi,{fotiEaA\^'FA,mufotaEi,mufotaEa Ean"></verb>
+			<verb text="nTq" id="Pronounce" grammar="form=faEala,yafoEilu,{foEulo,fuEolFA,faAEilN,mufoEuwlN"></verb>
+			<verb text="jthd" id="HardWork" grammar="form={fotaEala,yafotaEilu,{fotaEilo,{fotiEaAlFA,mufotaEilN,mufotaEalN"></verb>
+			<verb text="sEY" id="Strive" grammar="form=faEal,yafoEal,{foEa,faEolFA,faAEi,mufaEil~N"></verb>
+			<verb text="nDm" id="Join" grammar="form={foEal~a,yufoEal~u,{foEilaAlFA,mufoEal~N"></verb>
+			<verb text="tSl" id="Join" grammar="form="></verb>
+			<verb text="qdr" id="Suppose" grammar="form=faE~ala,yufaE~ilu,faE~ilo,tafoEiylFA,mufaE~ilN,mufaE~alN"></verb>
+			<verb text="Etbr" id="Consider" grammar="form={fotaEala,yafotaEilu,{fotaEilo,{fotiEaAlFA,mufotaEilN,mufotaEalN"></verb>
+			<verb text="skt" id="Silence" grammar="form=faEala,yafoEulu,{foEulo,fuEuwlFA,faAEilN,mufoEuwlN"></verb>
+			<verb text="klm" id="Speak" grammar="form=tafaE~ala,yatafaE~alu,tafaE~alo,tafaE~ulFA,mutafaE~ilN,mutafaE~alN"></verb>
+			<verb text="ntZr" id="Wait" grammar="form={fotaEala,yafotaEilu,{fotaEilo,{fotiEaAlFA,mufotaEilN,mufotaEalN"></verb>
+			<verb text="HDr" id="Attend" grammar="form=faEala,yafoEulu,{foEulo,fuEuwlFA,faAEilN,mufoEuwlN"></verb>
+			<verb text="nSt" id="Listen" grammar="form={foEala,yufoEilu,{foEilo,{foEaAlFA,mufoEilN,mufoEalN &lt;ilaY"></verb>
+			<verb text="HSl" id="Meaning" grammar="form=faEala,yafoEulu,{foEulo,fuEuwlFA,faAEilN,mufoEuwlN fiY"></verb>
+			<verb text="xTb" id="Addressing" grammar="form=faAEala,yufaAEilu,faAEilo,fiEaAlFA,mufaAEibN,mufaAEabN"></verb>
+			<verb text="trtb" id="Result" grammar="form=tafaE~ala,yatafaE~alu,tafaE~alo,tafaE~ulFA,mutafaE~ilN,mutafaE~alN"></verb>
 		</verbs>
 	</grammar>
 	<phrases>
@@ -4015,8 +4035,8 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 		</category>
 		<category title="Aajurroomiyyah">
 			<word text="\{phrase:AajurroomiyyahChapter1\}" id="AajurroomiyyahChapter1"></word>
-			<word text="\{noun:MasterpieceMasterworkGemRarityCuriousityWorkOfArtShowpiece,SublimeHighExaltedGrandEminentSplendid,GrammarSyntaxPurposeDirectionAmountRoadSimilarKind,GrammarRulesPrinciples,IslamicRuling,Last,TongueLanguage,SpeechUsefulSounds,Reason,Benefit\}"></word>
-			<word text="\{verb:Search,Remember,Understand,Protecting,PutPlace,Author,Recognize,PrescribeWrite,Indicate\}"></word>
+			<word text="\{noun:MasterpieceMasterworkGemRarityCuriousityWorkOfArtShowpiece,SublimeHighExaltedGrandEminentSplendid,GrammarSyntaxPurposeDirectionAmountRoadSimilarKind,GrammarRulesPrinciples,IslamicRuling,Last,TongueLanguage,SpeechUsefulSounds,Reason,Benefit,MatterAffair,VoiceSound,ParticleEdgeAspectDialect\}"></word>
+			<word text="\{verb:Search,Remember,Understand,Protecting,PutPlace,Author,Recognize,PrescribeWrite,Indicate,Fulfill,Compose,Include,Begin,End,Pronounce,Profit,HardWork,Strive,Join,Consider,Silence,Speak,Wait,Attend,Listen,Meaning,Addressing,Result\}"></word>
 		</category>
 		<category title="GreatMasterpiece">
 			<word text="\{phrase:GreatMasterpiece1\}" id="GreatMasterpiece1"></word>
@@ -5630,10 +5650,9 @@ Ramadan fast-breaking | One 2172-gram quantity | Dates or barley or ordinary sta
 
 			<rule name="AlefHamzaAboveFathaTehMarbuta" match="((?:{ArabicSunLetters}|{ArabicMoonLettersNoVowels}){ArabicSukun})({Hamzas})(?={ArabicFatha}{ArabicLetterTehMarbuta})" evaluator="$1{ArabicLetterAlefWithHamzaAbove}"></rule>
 			<rule name="FathaAlefHamzaAbove" match="({ArabicFatha}|((?:{Hamzas}){ArabicFatha}(?:{ArabicLetterFeh}{ArabicFatha})?{ArabicLetterReh}{ArabicFatha}|(?:{HamzaFathaPrefixes})|(?:{HamzaLamNonConnectingFathaPrefixes})|(?:{Hamzas}){ArabicFatha}|{ArabicFatha}{ArabicLetterAlef}{ArabicMaddahAbove}))({Hamzas})(?={ArabicSukun}|{ArabicFatha}|(?:{ArabicDamma}|{ArabicDammatan})(?:{EndOfWord}))(?!{ArabicFatha}(?:{ArabicLetterAlef}|{ArabicLetterSuperscriptAlef}))" evaluator="$1{ArabicLetterAlefWithHamzaAbove}" negativematch="$2"></rule>
-			<rule name="AlefHamzaBelowEnd" match="({ArabicFatha})({Hamzas})(?=(?:{ArabicKasra}|{ArabicKasratan}(?:{ArabicSmallHighMeemIsolatedForm}|{ArabicSmallLowMeem})?)(?:{EndOfWord}))" evaluator="$1{ArabicLetterAlefWithHamzaBelow}"></rule>
 			<rule name="MaddAlefHamzaAboveEnd" match="({ArabicDamma}{ArabicLetterWaw}{ArabicMaddahAbove})({Hamzas})(?=(?:{ArabicFatha}(?:{ArabicLetterAlefMaksura}{ArabicLetterSuperscriptAlef}{ArabicMaddahAbove})?|{ArabicDamma})(?:{EndOfWord}))" evaluator="$1{ArabicLetterAlefWithHamzaAbove}"></rule>
 
-			<rule name="AlefHamzaBelowMiddleMadd" match="(({HamzaFathaPrefixes})|{ArabicFatha})({Hamzas})(?={ArabicKasra}(?:{ArabicLetterYeh}|{ArabicLetterAlefMaksura}){ArabicSmallHighRoundedZero})" evaluator="$1{ArabicLetterAlefWithHamzaBelow}" negativematch="$2"></rule>
+			<rule name="FathaAlefHamzaBelow" match="(({HamzaFathaPrefixes})|{ArabicFatha})({Hamzas})(?=(?:{ArabicKasra}|{ArabicKasratan}(?:{ArabicSmallHighMeemIsolatedForm}|{ArabicSmallLowMeem})?)(?:{EndOfWord})|{ArabicKasra}(?:{ArabicLetterYeh}|{ArabicLetterAlefMaksura}){ArabicSmallHighRoundedZero})" evaluator="$1{ArabicLetterAlefWithHamzaBelow}" negativematch="$2"></rule>
 
 			<rule name="DammaWawHamzaMiddle" match="({ArabicDamma})({Hamzas})(?={ArabicSukun}|{ArabicFatha}|{ArabicDamma}|{ArabicKasra}(?:{EndOfWord})|{ArabicFathatan}{ArabicLetterAlef}|{ArabicDammatan}(?:{ArabicLetterAlef}{ArabicSmallHighRoundedZero})?)(?!(?:{ArabicSukun}|{ArabicDamma}){ArabicLetterWaw}|{ArabicSukun}{ArabicLetterYeh})" evaluator="$1{ArabicLetterWawWithHamzaAbove}"></rule>
 			<rule name="WawHamzaDamma" match="((?:(?:{HamzaMaddPrefixes})(?=(?:{Hamzas})(?:{ArabicDamma}{ArabicLetterLam})))|((?:{StartOfWord})|(?:{HamzaSukunPrefixes})|(?:{HamzaMaddPrefixes})|(?:{HamzaFathaPrefixes})|(?:{HamzaLamNonConnectingFathaPrefixes})|(?:{Hamzas}){ArabicFatha}|{ArabicKasra}|{ArabicDamma})|{ArabicFatha}(?:(?:{ArabicLetterAlef}|{ArabicLetterSuperscriptAlef}){ArabicMaddahAbove})?)({Hamzas})(?={ArabicDamma}|{ArabicDammatan}{ArabicLetterAlef}{ArabicSmallHighRoundedZero})(?!{ArabicDamma}(?:(?:{EndOfWord})|{ArabicLetterWaw}|{ArabicSmallWaw}))" evaluator="$1{ArabicLetterWawWithHamzaAbove}" negativematch="$2"></rule>
