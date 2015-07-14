@@ -5588,9 +5588,11 @@ Public Class TanzilReader
         Next
     End Function
     Public Shared Sub CheckSequentialRules()
-        Dim Rules As IslamData.RuleTranslationCategory.RuleTranslation() = CachedData.GetRuleSet("HamzaWriting")
+        Dim Rules As IslamData.RuleTranslationCategory.RuleTranslation() = CachedData.GetRuleSet("SimpleScriptHamzaWriting") '"HamzaWriting")
         Dim IndexToVerse As Integer()() = Nothing
-        Dim Text As String = QuranTextCombiner(IndexToVerse)
+        Dim XMLDocAlt As New System.Xml.XmlDocument
+        XMLDocAlt.Load(QuranTextNames(QuranTexts.Hafs) + "-" + QuranFileNames(QuranScripts.SimpleEnhanced) + ".xml")
+        Dim Text As String = QuranTextCombiner(XMLDocAlt, IndexToVerse) 'CachedData.XMLDocMain
         Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(Text, CachedData.GetPattern("Hamzas"))
         Dim CheckMatches As New Dictionary(Of Integer, String)
         Debug.Print(CStr(Matches.Count))
@@ -5633,7 +5635,7 @@ Public Class TanzilReader
         Check = {{CachedData.GetPattern("Yehs"), "yeh"}, {"NotYeh", "yeh;;yeh;;yeh;;yeh;;;;yeh;optionalnotstop;optionalnotstop;yeh;optionalstop;optionalstop"}, {"MaddYeh", ";yeh;optionalstop;optionalstop;yeh;optionalnotstop;optionalnotstop"}, {"LeenYeh", ";yeh;;yeh"}, {"StrongYeh", ";yeh;;yeh;;yeh;;yeh;yeh;;yeh;;yeh;;yeh;;yeh"}}
         'Check = {{CachedData.GetPattern("Waws"), "waw"}, {"NotWaw", "waw;;waw;;waw;optionalnotstop;optionalnotstop;;optionalstop;optionalstop;waw;;waw;optionalnotstop;optionalnotstop;optionalstop;optionalstop"}, {"MaddWaw", ";waw;optionalstop;optionalstop;optionalnotstop;optionalnotstop"}, {"LeenWaw", ";waw;optionalstop;optionalstop;;optionalnotstop;optionalnotstop;waw"}, {"StrongWaw", ";optionalnotstop;optionalnotstop;waw;;waw;;waw;;optionalstop;optionalstop;waw"}}
         Dim IndexToVerse As Integer()() = Nothing
-        Dim Text As String = QuranTextCombiner(IndexToVerse)
+        Dim Text As String = QuranTextCombiner(CachedData.XMLDocMain, IndexToVerse)
         Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(Text, Check(0, 0))
         Dim CheckMatches As New Dictionary(Of Integer, String)
         Debug.Print(CStr(Matches.Count))
@@ -5677,8 +5679,8 @@ Public Class TanzilReader
             End If
         Next
     End Sub
-    Public Shared Function QuranTextCombiner(ByRef IndexToVerse As Integer()()) As String
-        Dim Verses As List(Of String()) = GetQuranText(CachedData.XMLDocMain, -1, -1, -1, -1)
+    Public Shared Function QuranTextCombiner(XMLDoc As System.Xml.XmlDocument, ByRef IndexToVerse As Integer()()) As String
+        Dim Verses As List(Of String()) = GetQuranText(XMLDoc, -1, -1, -1, -1)
         Dim IndexToVerseList As New List(Of Integer())
         Dim Str As New System.Text.StringBuilder
         For Count As Integer = 0 To Verses.Count - 1
@@ -5687,7 +5689,7 @@ Public Class TanzilReader
                 Dim Index As Integer
                 If SubCount = 0 Then
                     Dim Node As System.Xml.XmlNode
-                    Node = GetTextVerse(GetTextChapter(CachedData.XMLDocMain, Count + 1), 1).Attributes.GetNamedItem("bismillah")
+                    Node = GetTextVerse(GetTextChapter(XMLDoc, Count + 1), 1).Attributes.GetNamedItem("bismillah")
                     If Not Node Is Nothing Then
                         Words = Node.Value.Split(" "c)
                         Index = Str.Length
@@ -5860,7 +5862,7 @@ Public Class TanzilReader
             ElseIf Division = 10 Then
                 QuranText = New Collections.Generic.List(Of String())
                 Dim IndexToVerse As Integer()() = Nothing
-                Dim Text As String = QuranTextCombiner(IndexToVerse)
+                Dim Text As String = QuranTextCombiner(CachedData.XMLDocMain, IndexToVerse)
                 Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(Text, CachedData.IslamData.MetaRules(Index).Match)
                 Renderer.Items.AddRange(New RenderArray.RenderItem() {New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, CachedData.IslamData.MetaRules(Index).Name)}), New RenderArray.RenderItem(RenderArray.RenderTypes.eText, DocBuilder.ColorizeRegExGroups(DocBuilder.GetRegExText(CachedData.IslamData.MetaRules(Index).Match), False)), New RenderArray.RenderItem(RenderArray.RenderTypes.eText, DocBuilder.ColorizeList(Array.ConvertAll(CachedData.IslamData.MetaRules(Index).Evaluator, Function(Str As String) DocBuilder.GetRegExText(Str)), False))})
                 For SubCount = 0 To Matches.Count - 1
