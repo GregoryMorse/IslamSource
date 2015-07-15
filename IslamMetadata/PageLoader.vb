@@ -521,7 +521,7 @@ Public Class Arabic
                 If Rules(Count).NegativeMatch = String.Empty OrElse Matches(MatchCount).Result(Rules(Count).NegativeMatch) = String.Empty Then
                     Dim DupCount As Integer
                     For DupCount = 0 To Matches(MatchCount).Result(Rules(Count).Evaluator).Length - 1
-                        If ArabicString(Matches(MatchCount).Index + DupCount) <> Matches(MatchCount).Result(Rules(Count).Evaluator)(DupCount) Then
+                        If Matches(MatchCount).Index + DupCount >= ArabicString.Length OrElse ArabicString(Matches(MatchCount).Index + DupCount) <> Matches(MatchCount).Result(Rules(Count).Evaluator)(DupCount) Then
                             Exit For
                         End If
                     Next
