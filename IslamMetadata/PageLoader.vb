@@ -511,23 +511,26 @@ Public Class Arabic
                    Return If(NegativeMatch <> String.Empty AndAlso Match.Result(NegativeMatch) <> String.Empty, Match.Value, Match.Result(Evaluator))
                End Function
     End Function
-    Public Shared Function ProcessTransform(ArabicString As String, Rules As IslamData.RuleTranslationCategory.RuleTranslation()) As String
+    Public Shared Function ProcessTransform(ArabicString As String, Rules As IslamData.RuleTranslationCategory.RuleTranslation(), bPriority As Boolean) As String
         'mutual exclusivity required and makes the rules far more accurate and self-documenting and explanatory
         Dim Replacements As New List(Of RuleMetadata)
         For Count = 0 To Rules.Length - 1
-            'ArabicString = System.Text.RegularExpressions.Regex.Replace(ArabicString, Rules(Count).Match, NegativeMatchEliminator(Rules(Count).NegativeMatch, Rules(Count).Evaluator))
-            Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(ArabicString, Rules(Count).Match)
-            For MatchCount = 0 To Matches.Count - 1
-                If Rules(Count).NegativeMatch = String.Empty OrElse Matches(MatchCount).Result(Rules(Count).NegativeMatch) = String.Empty Then
-                    Dim DupCount As Integer
-                    For DupCount = 0 To Matches(MatchCount).Result(Rules(Count).Evaluator).Length - 1
-                        If Matches(MatchCount).Index + DupCount >= ArabicString.Length OrElse ArabicString(Matches(MatchCount).Index + DupCount) <> Matches(MatchCount).Result(Rules(Count).Evaluator)(DupCount) Then
-                            Exit For
-                        End If
-                    Next
-                    Replacements.Add(New RuleMetadata(Matches(MatchCount).Index + DupCount, Matches(MatchCount).Length - DupCount, Matches(MatchCount).Result(Rules(Count).Evaluator).Substring(DupCount), Count))
-                End If
-            Next
+            If bPriority Then
+                ArabicString = System.Text.RegularExpressions.Regex.Replace(ArabicString, Rules(Count).Match, NegativeMatchEliminator(Rules(Count).NegativeMatch, Rules(Count).Evaluator))
+            Else
+                Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(ArabicString, Rules(Count).Match)
+                For MatchCount = 0 To Matches.Count - 1
+                    If Rules(Count).NegativeMatch = String.Empty OrElse Matches(MatchCount).Result(Rules(Count).NegativeMatch) = String.Empty Then
+                        Dim DupCount As Integer
+                        For DupCount = 0 To Matches(MatchCount).Result(Rules(Count).Evaluator).Length - 1
+                            If Matches(MatchCount).Index + DupCount >= ArabicString.Length OrElse ArabicString(Matches(MatchCount).Index + DupCount) <> Matches(MatchCount).Result(Rules(Count).Evaluator)(DupCount) Then
+                                Exit For
+                            End If
+                        Next
+                        Replacements.Add(New RuleMetadata(Matches(MatchCount).Index + DupCount, Matches(MatchCount).Length - DupCount, Matches(MatchCount).Result(Rules(Count).Evaluator).Substring(DupCount), Count))
+                    End If
+                Next
+            End If
         Next
         Replacements.Sort(New RuleMetadataComparer)
         For Count = 0 To Replacements.Count - 1
@@ -540,24 +543,24 @@ Public Class Arabic
     End Function
     Public Shared Function ChangeBaseScript(ArabicString As String, BaseText As TanzilReader.QuranTexts, ByVal PreString As String, ByVal PostString As String) As String
         If BaseText = TanzilReader.QuranTexts.Warsh Then
-            ArabicString = UnjoinContig(ProcessTransform(JoinContig(ArabicString, PreString, PostString), CachedData.WarshScript), PreString, PostString)
+            ArabicString = UnjoinContig(ProcessTransform(JoinContig(ArabicString, PreString, PostString), CachedData.WarshScript, True), PreString, PostString)
         End If
         Return ArabicString
     End Function
     Public Shared Function ChangeScript(ArabicString As String, ScriptType As TanzilReader.QuranScripts, ByVal PreString As String, ByVal PostString As String) As String
         If ScriptType = TanzilReader.QuranScripts.UthmaniMin Then
-            ArabicString = ProcessTransform(ArabicString, CachedData.UthmaniMinimalScript)
+            ArabicString = ProcessTransform(ArabicString, CachedData.UthmaniMinimalScript, False)
         ElseIf ScriptType = TanzilReader.QuranScripts.SimpleEnhanced Then
-            ArabicString = ProcessTransform(ArabicString, CachedData.SimpleEnhancedScript)
+            ArabicString = ProcessTransform(ArabicString, CachedData.SimpleEnhancedScript, False)
         ElseIf ScriptType = TanzilReader.QuranScripts.Simple Then
-            ArabicString = ProcessTransform(ArabicString, CachedData.SimpleEnhancedScript)
-            ArabicString = ProcessTransform(ArabicString, CachedData.SimpleScript)
+            ArabicString = ProcessTransform(ArabicString, CachedData.SimpleEnhancedScript, False)
+            ArabicString = ProcessTransform(ArabicString, CachedData.SimpleScript, False)
         ElseIf ScriptType = TanzilReader.QuranScripts.SimpleClean Then
-            ArabicString = ProcessTransform(ArabicString, CachedData.SimpleEnhancedScript)
-            ArabicString = ProcessTransform(ArabicString, CachedData.SimpleCleanScript)
+            ArabicString = ProcessTransform(ArabicString, CachedData.SimpleEnhancedScript, False)
+            ArabicString = ProcessTransform(ArabicString, CachedData.SimpleCleanScript, False)
         ElseIf ScriptType = TanzilReader.QuranScripts.SimpleMin Then
-            ArabicString = ProcessTransform(ArabicString, CachedData.SimpleEnhancedScript)
-            ArabicString = ProcessTransform(ArabicString, CachedData.SimpleMinimalScript)
+            ArabicString = ProcessTransform(ArabicString, CachedData.SimpleEnhancedScript, False)
+            ArabicString = ProcessTransform(ArabicString, CachedData.SimpleMinimalScript, False)
         End If
         Return ArabicString
     End Function
