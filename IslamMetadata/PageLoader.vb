@@ -519,7 +519,13 @@ Public Class Arabic
             Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(ArabicString, Rules(Count).Match)
             For MatchCount = 0 To Matches.Count - 1
                 If Rules(Count).NegativeMatch = String.Empty OrElse Matches(MatchCount).Result(Rules(Count).NegativeMatch) = String.Empty Then
-                    Replacements.Add(New RuleMetadata(Matches(MatchCount).Index, Matches(MatchCount).Length, Matches(MatchCount).Result(Rules(Count).Evaluator), Count))
+                    Dim DupCount As Integer
+                    For DupCount = 0 To Matches(MatchCount).Result(Rules(Count).Evaluator).Length - 1
+                        If ArabicString(Matches(MatchCount).Index + DupCount) <> Matches(MatchCount).Result(Rules(Count).Evaluator)(DupCount) Then
+                            Exit For
+                        End If
+                    Next
+                    Replacements.Add(New RuleMetadata(Matches(MatchCount).Index + DupCount, Matches(MatchCount).Length - DupCount, Matches(MatchCount).Result(Rules(Count).Evaluator).Substring(DupCount), Count))
                 End If
             Next
         Next
