@@ -551,20 +551,23 @@ Public Class Arabic
         If ScriptType = TanzilReader.QuranScripts.UthmaniMin Then
             ArabicString = UnjoinContig(ProcessTransform(JoinContig(ArabicString, PreString, PostString), CachedData.UthmaniMinimalScript, False), PreString, PostString)
         ElseIf ScriptType = TanzilReader.QuranScripts.SimpleEnhanced Then
-            ArabicString = UnjoinContig(ProcessTransform(JoinContig(ArabicString, PreString, PostString), CachedData.SimpleEnhancedScript, False), PreString, PostString)
+            Dim ScriptCombine As New List(Of IslamMetadata.IslamData.RuleTranslationCategory.RuleTranslation)
+            ScriptCombine.AddRange(CachedData.SimpleScriptBase)
+            ScriptCombine.AddRange(CachedData.SimpleEnhancedScript)
+            ArabicString = UnjoinContig(ProcessTransform(JoinContig(ArabicString, PreString, PostString), ScriptCombine.ToArray(), False), PreString, PostString)
         ElseIf ScriptType = TanzilReader.QuranScripts.Simple Then
             Dim ScriptCombine As New List(Of IslamMetadata.IslamData.RuleTranslationCategory.RuleTranslation)
-            ScriptCombine.AddRange(CachedData.SimpleEnhancedScript)
+            ScriptCombine.AddRange(CachedData.SimpleScriptBase)
             ScriptCombine.AddRange(CachedData.SimpleScript)
             ArabicString = UnjoinContig(ProcessTransform(JoinContig(ArabicString, PreString, PostString), ScriptCombine.ToArray(), False), PreString, PostString)
         ElseIf ScriptType = TanzilReader.QuranScripts.SimpleClean Then
             Dim ScriptCombine As New List(Of IslamMetadata.IslamData.RuleTranslationCategory.RuleTranslation)
-            ScriptCombine.AddRange(CachedData.SimpleEnhancedScript)
+            ScriptCombine.AddRange(CachedData.SimpleScriptBase)
             ScriptCombine.AddRange(CachedData.SimpleCleanScript)
             ArabicString = UnjoinContig(ProcessTransform(JoinContig(ArabicString, PreString, PostString), ScriptCombine.ToArray(), False), PreString, PostString)
         ElseIf ScriptType = TanzilReader.QuranScripts.SimpleMin Then
             Dim ScriptCombine As New List(Of IslamMetadata.IslamData.RuleTranslationCategory.RuleTranslation)
-            ScriptCombine.AddRange(CachedData.SimpleEnhancedScript)
+            ScriptCombine.AddRange(CachedData.SimpleScriptBase)
             ScriptCombine.AddRange(CachedData.SimpleMinimalScript)
             ArabicString = UnjoinContig(ProcessTransform(JoinContig(ArabicString, PreString, PostString), ScriptCombine.ToArray(), False), PreString, PostString)
         End If
@@ -2372,6 +2375,7 @@ Public Class CachedData
     Shared _Warsh As IslamData.RuleTranslationCategory.RuleTranslation()
     Shared _WarshScript As IslamData.RuleTranslationCategory.RuleTranslation()
     Shared _UthmaniMinimalScript As IslamData.RuleTranslationCategory.RuleTranslation()
+    Shared _SimpleScriptBase As IslamData.RuleTranslationCategory.RuleTranslation()
     Shared _SimpleEnhancedScript As IslamData.RuleTranslationCategory.RuleTranslation()
     Shared _SimpleScript As IslamData.RuleTranslationCategory.RuleTranslation()
     Shared _SimpleCleanScript As IslamData.RuleTranslationCategory.RuleTranslation()
@@ -3064,6 +3068,14 @@ Public Class CachedData
                 _UthmaniMinimalScript = GetRuleSet("UthmaniMinimalScript")
             End If
             Return _UthmaniMinimalScript
+        End Get
+    End Property
+    Public Shared ReadOnly Property SimpleScriptBase As IslamData.RuleTranslationCategory.RuleTranslation()
+        Get
+            If _SimpleScriptBase Is Nothing Then
+                _SimpleScriptBase = GetRuleSet("SimpleScriptBase")
+            End If
+            Return _SimpleScriptBase
         End Get
     End Property
     Public Shared ReadOnly Property SimpleEnhancedScript As IslamData.RuleTranslationCategory.RuleTranslation()
