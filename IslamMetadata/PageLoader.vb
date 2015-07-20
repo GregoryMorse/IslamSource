@@ -2060,6 +2060,20 @@ Public Class IslamData
     <System.Xml.Serialization.XmlArray("translitschemes")> _
     <System.Xml.Serialization.XmlArrayItem("scheme")> _
     Public TranslitSchemes() As TranslitScheme
+    Structure ArabicCapInfo
+        <System.Xml.Serialization.XmlAttribute("name")> _
+        Public Name As String
+        <System.Xml.Serialization.XmlAttribute("text")> _
+        Public _Text As String
+        ReadOnly Property Text As String()
+            Get
+                Return _Text.Split({"  "}, StringSplitOptions.None)
+            End Get
+        End Property
+    End Structure
+    <System.Xml.Serialization.XmlArray("arabiccaptures")> _
+    <System.Xml.Serialization.XmlArrayItem("caps")> _
+    Public ArabicCaptures() As ArabicCapInfo
     Structure ArabicNumInfo
         <System.Xml.Serialization.XmlAttribute("name")> _
         Public Name As String
@@ -2391,6 +2405,15 @@ Public Class CachedData
         For Count = 0 To CachedData.IslamData.ArabicNumbers.Length - 1
             If CachedData.IslamData.ArabicNumbers(Count).Name = Name Then
                 Return CachedData.IslamData.ArabicNumbers(Count).Text
+            End If
+        Next
+        Return {}
+    End Function
+    Public Shared Function GetCap(Name As String) As String()
+        Dim Count As Integer
+        For Count = 0 To CachedData.IslamData.ArabicCaptures.Length - 1
+            If CachedData.IslamData.ArabicCaptures(Count).Name = Name Then
+                Return CachedData.IslamData.ArabicCaptures(Count).Text
             End If
         Next
         Return {}
@@ -3022,6 +3045,23 @@ Public Class CachedData
             Function(Match As System.Text.RegularExpressions.Match)
                 If bAll Then
                     If GetPattern(Match.Groups(1).Value) <> String.Empty Then Return GetPattern(Match.Groups(1).Value)
+                    If GetCap(Match.Groups(1).Value.Split(";"c)(0)).Length <> 0 Then
+                        Return ArabicData.MakeRegMultiEx(Array.ConvertAll(GetCap(Match.Groups(1).Value.Split(";"c)(0)), Function(Str As String)
+                                                                                                                            Dim Strs As String() = Str.Split(" "c)
+                                                                                                                            Str = String.Empty
+                                                                                                                            Dim CapLimit As Integer = If(Match.Groups(1).Value.Contains(";"), Integer.Parse(Match.Groups(1).Value.Split(";"c)(1)), 0)
+                                                                                                                            For StrCount As Integer = 0 To Strs.Length - 1
+                                                                                                                                If StrCount + 1 = CapLimit Or CapLimit = 0 Then
+                                                                                                                                    Str += ArabicData.MakeUniRegEx(Arabic.TransliterateFromBuckwalter(Strs(StrCount)))
+                                                                                                                                ElseIf StrCount + 1 < CapLimit Then
+                                                                                                                                    Str += "(" + ArabicData.MakeUniRegEx(Arabic.TransliterateFromBuckwalter(Strs(StrCount))) + ")"
+                                                                                                                                ElseIf StrCount + 1 > CapLimit Then
+                                                                                                                                    Str += "(?=" + ArabicData.MakeUniRegEx(Arabic.TransliterateFromBuckwalter(Strs(StrCount))) + ")"
+                                                                                                                                End If
+                                                                                                                            Next
+                                                                                                                            Return Str
+                                                                                                                        End Function))
+                    End If
                     If GetNum(Match.Groups(1).Value).Length <> 0 Then
                         Return ArabicData.MakeRegMultiEx(Array.ConvertAll(GetNum(Match.Groups(1).Value), Function(Str As String) ArabicData.MakeUniRegEx(Arabic.TransliterateFromBuckwalter(Str))))
                     End If
