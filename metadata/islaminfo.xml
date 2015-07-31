@@ -796,6 +796,11 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<noun text="faAsiqN" id="OpenSinner"></noun>
 			<noun text="jadiydN" plural="jududN" grammar="bp=fuEulN" id="New"></noun>
 			<noun text="mawoEiZapN" plural="mawaAEiZN" id="AdmonitionSermon"></noun>
+			<noun text="wuEaZN" plural="waAEiZN" id="Preacher"></noun>
+			<noun text="qaS~aSN" id="Storytellers"></noun>
+			<noun text="&lt;iro$aAdN" id="Guidance"></noun>
+			<noun text="tadoriysN" id="GiveInstructions"></noun>
+			<noun text="mu*aAkarapN" id="OneWhoReminds"></noun>
 			<noun text="miraArFA" plural="" id="Repeatedly"></noun>
 			<noun text="rum~aAnN" plural="" id="Pomegranate"></noun>
 			<noun text="suruwrN" plural="" id="Happiness"></noun>
@@ -1077,6 +1082,13 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<noun text="qadariy~apN" id="ThoseBelievingNoPredestination"></noun>
 			<noun text="jabariy~apN" id="ThoseBelievingNoFreedomOfChoice"></noun>
 			<noun text="jamaEapN" id="Congregation"></noun>
+			<noun text="jamaEN" id="CollectionGathering"></noun>
+			<noun text="jamohuwrN" id="Majority"></noun>
+			<noun text="tawaq~ufN" id="Stop"></noun>
+			<noun text="taEaruDN" id="OrderOfApproach"></noun>
+			<noun text="tasaAquTN" id="LeaveAlone"></noun>
+			<noun text="taqoyiydN" id="Restriction"></noun>
+			<noun text="badaAEN" id="Creativity"></noun>
 			<noun text="tasoliymN" id="EndOfPrayerGreetingDelivery"></noun>
 			<noun text="ta$ah~udN" id="Witnessing"></noun>
 			<noun text="SalawaAtN" id="Invocation"></noun>
@@ -2110,6 +2122,7 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 		<word text="{nqiTaAEu {lo&lt;isonaAdi" id="CutInTheChainOfNarrators"></word>
 		<word text="su&amp;u {loHifoZi" id="BadMemorization"></word>
 		<word text="qaroDN Has~anN" id="InterestFreeGoodWillLoan"></word>
+		<word text="baraA^'apu {lo&gt;aSoliy~api" id="OriginOfInnocence"></word>
 		<word text="{lo&apos;aAxolaAqu" id="Manners"></word>
 		<word text="{lomuEaA$arapu" id="Cohabitation"></word>
 		<word text="{lr~aA$iduwnu" id="WiseOne"></word>
