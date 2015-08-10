@@ -5687,7 +5687,7 @@ Public Class TanzilReader
         Dim Check As String(,) = {{ArabicData.ArabicLetterLam, "emphasis|lightness|assimilate|spelllongletter|spelllongmergedletter"}, {"LaamHeaviness", ";;;;optionalstop;optionalstop;;emphasis"}, {"LaamLightness", ";lightness;optionalnotstop;optionalnotstop;lightness;lightness;;lightness"}, {"LaamAssimilation", "assimilate"}, {"LaamSeparateLetter", "spelllongletter|spelllongmergedletter"}}
         'Check = {{CachedData.GetPattern("Hamzas"), "hamza"}, {"LetterHamza", ";hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza"}, {"HamzaAbove", ";hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza"}, {"AlefWithHamzaAbove", ";hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza"}, {"AlefWithHamzaBelow", ";hamza;;hamza;;hamza;;hamza;;hamza"}, {"WawWithHamzaAbove", ";hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza"}, {"YehWithHamzaAbove", ";hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza"}}
         Check = {{CachedData.GetPattern("PossibleMadd"), "madd"}, {"MaddahCatcher", ";madd;madd;optionalnotstop;optionalnotstop;;madd;madd;optionalnotstop;optionalnotstop;;madd;optionalnotstop;optionalnotstop;;madd;;madd;;madd;optionalstop;optionalstop;;madd;;madd;optionalnotstop;optionalnotstop;;;optionalnotstop;optionalnotstop;madd;;madd;;madd;madd;;optionalnotstop;optionalnotstop;madd;optionalnotstop;optionalnotstop;;madd;optionalnotstop;optionalnotstop;madd;madd;madd;madd;madd;madd;madd;madd;madd;madd;madd;madd;madd;madd;madd;madd;madd;madd;madd;madd;madd"}, {"MaddahNormal", ";madd;optionalstop;optionalstop;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;madd;madd;madd;madd;madd;;madd;madd;madd;optionalstop|optionalnotstop;optionalnotstop;optionalnotstop;;;madd;;optionalnotstop;optionalnotstop;;madd;madd;;madd;optionalstop;optionalstop;;;;;madd;;optionalstop;optionalstop;;madd;madd;;madd;;madd;optionalnotstop;optionalnotstop;;madd;;madd;optionalstop;optionalstop;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;;madd;;;madd;;;madd;madd;;;;madd;;madd;;madd;;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;;madd;optionalstop;optionalstop"}, {"MaddahExchange", ";madd;;madd;optionalstop;optionalstop;;madd;madd;optionalstop;optionalnotstop;optionalnotstop;;madd;;madd;;;madd;optionalstop;optionalstop;;madd;;madd;optionalstop;optionalstop;;"}, {"MaddahEssentialConnected", ";madd;;madd;;madd;;madd;optionalstop|optionalnotstop;optionalnotstop;optionalnotstop;madd;;madd;;madd;;madd"}, {"MaddahPresentedSukun", ";madd;madd;optionalstop;optionalstop"}, {"MaddahEssentialConnectedPresentedSukun", ";madd;;madd;;madd;;madd;optionalstop;optionalstop"}, {"MaddahEssentialSeparate", "madd;optionalnotstop;optionalnotstop"}, {"MaddahObligatory", "madd"}}
-        'Check = {{CachedData.GetPattern("LeenMadd"), "madd"}, {"MaddahLeenCatcher", "madd;optionalnotstop;optionalnotstop;madd;madd;madd;madd;madd;madd;madd;madd;madd;madd;madd;madd;madd;madd;madd;madd;madd;madd"}, {"MaddahLeen", ";madd;;;;madd;madd;optionalnotstop;optionalnotstop;madd;madd;optionalstop;optionalstop;madd;;;madd"}, {"MaddahLeenPresentedSukun", ";madd;madd;optionalstop;optionalstop"}}
+        Check = {{CachedData.GetPattern("LeenMadd"), "madd"}, {"MaddahLeenCatcher", "madd;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;optionalnotstop;optionalnotstop;madd;madd;madd;madd;madd;madd;madd;madd;madd;madd;madd;madd;madd;madd;madd;madd;madd;madd;madd;madd;madd;madd;madd;madd;;madd;;madd;;madd;;madd;;madd;;;;;;;madd"}, {"MaddahLeen", ";madd;;;;madd;madd;optionalnotstop;optionalnotstop;madd;madd;optionalstop;optionalstop;madd;;;madd"}, {"MaddahLeenPresentedSukun", ";madd;madd;optionalstop;optionalstop"}}
         'Check = {{CachedData.GetPattern("EndOfWord"), "end"}, {"EndOfWordUniqueLetters", ";end"}, {"EndOfWordMadd", ";end;;end"}, {"EndOfWordLeenMadd", ";end;;end;;;"}, {"EndOfWordSukun", ";end;;end;;;;;;;;end;;;;;;end;;;;;;end;;;;end;;;;end;;;;end;;;;end;;;;;;end;;;;end;;;;end;;"}, {"EndOfWordMaddLetterPresentedSukun", ";end"}, {"EndOfWordMaddHamzaPresentedSukun", ";end"}, {"EndOfWordMaddLeenPresentedSukun", ";end"}, {"EndOfWordVowelPresentedSukun", ";end"}}
         'Dim Verify As String() = {CStr(ArabicData.ArabicLetterHamza), ArabicData.ArabicTatweel + "?" + ArabicData.ArabicHamzaAbove, ArabicData.ArabicLetterAlefWithHamzaAbove, ArabicData.ArabicLetterAlefWithHamzaBelow, ArabicData.ArabicLetterWawWithHamzaAbove, ArabicData.ArabicLetterYehWithHamzaAbove}
         'Check = {{ArabicData.ArabicLetterReh, "emphasis|lightness|assimilate|spelllongletter"}, {"RaaHeaviness", ";emphasis;optionalnotstop;optionalnotstop;optionalstop;optionalstop;;emphasis;;emphasis;;emphasis;;emphasis;optionalstop;optionalstop;emphasis;optionalnotstop;optionalnotstop"}, {"RaaLightness", ";lightness;;;optionalstop;optionalstop;;lightness;;lightness;optionalstop;optionalstop;lightness;optionalnotstop;optionalnotstop"}, {"RaaHeavinessOrLightness", ";emphasis|lightness;optionalnotstop;optionalnotstop;optionalnotstop;optionalnotstop;;emphasis|lightness;optionalstop;optionalstop"}, {"RaaAssimilation", "assimilate"}, {"RaaSeparateLetter", ";spelllongletter"}}
@@ -5700,8 +5700,10 @@ Public Class TanzilReader
         Debug.Print(CStr(Matches.Count))
         For Count = 0 To Matches.Count - 1
             If Matches(Count).Length = 0 Then Continue For 'Avoid zero width matches for end of string anchors
-            If Not CheckMatches.ContainsKey(Matches(Count).Index) Then CheckMatches.Add(Matches(Count).Index, String.Empty)
-            CheckMatches(Matches(Count).Index) += "0"
+            For LenCount = 0 To Matches(Count).Length - 1
+                If Not CheckMatches.ContainsKey(Matches(Count).Index + LenCount) Then CheckMatches.Add(Matches(Count).Index + LenCount, String.Empty)
+                CheckMatches(Matches(Count).Index + LenCount) += "0"
+            Next
         Next
         Dim MatchMetadata As String() = Check(0, 1).Split("|"c)
         For MainCount = 1 To Check.GetLength(0) - 1
@@ -5712,6 +5714,8 @@ Public Class TanzilReader
                 Dim bSieve As Boolean = False
                 For SubCount = 0 To MetaRules.Length - 1
                     If Array.IndexOf(MetaRules(SubCount).Split("|"c), If(bAssumeContinue, "optionalstop", "optionalnotstop")) <> -1 And Matches(Count).Groups(SubCount + 1).Success Then
+                        'check continuity in prior patterns
+
                         bSieve = True
                         Exit For
                     End If
@@ -5723,8 +5727,16 @@ Public Class TanzilReader
                             '    Debug.Print("Erroneous Match: " + Check(MainCount, 0) + " " + Arabic.TransliterateToScheme(Text.Substring(Math.Max(0, Matches(Count).Groups(SubCount + 1).Index - 15), 30), ArabicData.TranslitScheme.Literal, String.Empty))
                             '    'Debug.Print(TextPositionToMorphology(Text, Matches(Count).Groups(SubCount + 1).Index))
                             'End If
-                            If Not CheckMatches.ContainsKey(Matches(Count).Groups(SubCount + 1).Index) Then CheckMatches.Add(Matches(Count).Groups(SubCount + 1).Index, String.Empty)
-                            CheckMatches(Matches(Count).Groups(SubCount + 1).Index) += CStr(MainCount)
+                            'check continuity in previous patterns
+                            Dim CheckLen As Integer = 0
+                            For CheckCount = 1 To SubCount
+                                CheckLen += Matches(Count).Groups(CheckCount).Length
+                            Next
+                            If CheckLen <> Matches(Count).Groups(SubCount + 1).Index Then Debug.Print("Non-Sequential Regular Expression Captures: " + Arabic.TransliterateToScheme(Text.Substring(Math.Max(0, Matches(Count).Groups(SubCount + 1).Index - 15), 30), ArabicData.TranslitScheme.Literal, String.Empty))
+                            For LenCount = 0 To Matches(Count).Groups(SubCount + 1).Length - 1
+                                If Not CheckMatches.ContainsKey(Matches(Count).Groups(SubCount + 1).Index + LenCount) Then CheckMatches.Add(Matches(Count).Groups(SubCount + 1).Index + LenCount, String.Empty)
+                                CheckMatches(Matches(Count).Groups(SubCount + 1).Index + LenCount) += CStr(MainCount)
+                            Next
                             SieveCount += 1
                         End If
                     Next
