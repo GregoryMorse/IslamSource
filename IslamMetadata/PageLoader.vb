@@ -3789,7 +3789,8 @@ Public Class DocBuilder
         Dim Cols As Color() = GenerateNDistinctColors(Strs.Length + 1, 15, 5)
         Dim Renderers As New List(Of RenderArray.RenderText)
         For Count As Integer = 0 To Strs.Length - 1
-            Renderers.Add(New RenderArray.RenderText(If(bArabic, RenderArray.RenderDisplayClass.eArabic, RenderArray.RenderDisplayClass.eLTR), Strs(Count) + If(Not bArabic And (Strs(Count) = String.Empty Or Strs(Count) = CStr(ArabicData.LeftToRightMark)), "NULL" + CStr(Count), String.Empty)) With {.Clr = Cols(Count + 1)})
+            Renderers.Add(New RenderArray.RenderText(If(bArabic, RenderArray.RenderDisplayClass.eArabic, RenderArray.RenderDisplayClass.eLTR), Strs(Count) + If(Not bArabic And (Strs(Count) = String.Empty Or Strs(Count) = CStr(ArabicData.LeftToRightMark)), "NULL" + CStr(Count), "_" + CStr(Count))) With {.Clr = Cols(Count + 1)})
+            'Renderers.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, CStr(Count)) With {.Clr = Color.DarkRed})
             If Not bArabic And Count <> Strs.Length - 1 Then Renderers.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, ";"))
         Next
         Return Renderers.ToArray()
@@ -3834,6 +3835,7 @@ Public Class DocBuilder
             ElseIf ParenPos(Count) <> ParenPos(Count + 1) Then
                 Renderers.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, Str.Substring(Base, Count - Base + 1)) With {.Clr = Cols(ParenPos(Count))})
                 Base = Count + 1
+                Renderers.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, CStr(ParenPos(Count))) With {.Clr = Color.DarkRed, .Font = "Courier New"})
             End If
         Next
         Return Renderers.ToArray()
@@ -3842,7 +3844,7 @@ Public Class DocBuilder
         Return ArabicData.LeftToRightMark + System.Text.RegularExpressions.Regex.Replace(System.Text.RegularExpressions.Regex.Replace(Str, "\\u([0-9a-fA-F]{4})", Function(Match As System.Text.RegularExpressions.Match) ChrW(Integer.Parse(Match.Groups(1).Value, Globalization.NumberStyles.HexNumber))), "[\p{IsArabic}\p{IsArabicPresentationForms-A}\p{IsArabicPresentationForms-B}]+", ArabicData.LeftToRightOverride + "$&" + ArabicData.PopDirectionalFormatting)
     End Function
     Public Shared Function GetMetadataRules(ID As String) As Array()
-        Dim Output(CachedData.IslamData.Translations.TranslationList.Length + 2) As Array
+        Dim Output(CachedData.IslamData.MetaRules.Length + 2) As Array
         Output(0) = New String() {}
         Output(1) = New String() {String.Empty, String.Empty, String.Empty}
         Output(2) = New String() {Utility.LoadResourceString("IslamInfo_Name"), Utility.LoadResourceString("IslamInfo_Translation"), Utility.LoadResourceString("IslamInfo_Translation")}
@@ -5706,12 +5708,8 @@ Public Class TanzilReader
         Next
     End Sub
     Public Shared Sub CheckMutualExclusiveRules(bAssumeContinue As Boolean)
-        'Check = {{CachedData.GetPattern("Hamzas"), "hamza"}, {"LetterHamza", ";hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza"}, {"HamzaAbove", ";hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza"}, {"AlefWithHamzaAbove", ";hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza"}, {"AlefWithHamzaBelow", ";hamza;;hamza;;hamza;;hamza;;hamza"}, {"WawWithHamzaAbove", ";hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza"}, {"YehWithHamzaAbove", ";hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza;;hamza"}}
-        'Check = {{CachedData.GetPattern("PossibleMadd"), "madd"}, {"MaddahCatcher", ";madd;madd;optionalnotstop;;madd;madd;;optionalnotstop;;madd;optionalnotstop;;madd;;madd;;madd;optionalstop;;madd;;madd;optionalnotstop;;;madd;;optionalnotstop;;madd;;madd;madd;;optionalnotstop;madd;optionalnotstop;;madd;optionalnotstop;madd;madd;madd;madd;madd;madd;madd;madd;madd;madd;madd"}, {"MaddahNormal", ";madd;optionalstop;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;;madd;;madd;;madd;;madd;;madd;;madd;;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;;madd;;madd;;madd;;madd;;;madd;;optionalstop|optionalnotstop;optionalnotstop;;;;madd;;madd;;madd;;madd;;optionalnotstop;;;madd;;madd;;madd;;madd;madd;madd;;;madd;optionalstop;;;;madd;;madd;;madd;;madd;;optionalstop;;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;madd;madd;;madd;;madd;optionalnotstop;;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;;;madd;;madd;;madd;;madd;;madd;;madd;;madd;optionalstop;;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;;madd;;;madd;;;madd;madd;;;madd;;madd;;madd;;madd;;madd;;madd;;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;madd;madd;optionalstop"}, {"MaddahExchange", ";madd;;madd;optionalstop;;madd;;;;;;madd;;optionalstop;optionalnotstop;;madd;;madd;madd;optionalstop;;madd;;madd;;madd;;madd;;;madd;optionalstop"}, {"MaddahEssentialConnected", ";madd;;madd;;madd;;madd;;;optionalstop|optionalnotstop;optionalnotstop;madd;;madd;;madd;;madd"}, {"MaddahPresentedSukun", ";;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;;madd;;;madd;;;madd;madd;;;;;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;optionalstop"}, {"MaddahEssentialConnectedPresentedSukun", ";madd;;madd;;madd;;madd;;;optionalstop"}, {"MaddahEssentialSeparate", "madd;optionalnotstop"}, {"MaddahObligatory", "madd"}}
-        'Check = {{CachedData.GetPattern("LeenMadd"), "madd"}, {"MaddahLeenCatcher", "madd;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;optionalnotstop;madd;madd;madd;madd;madd;madd;madd;madd;madd;madd;madd;madd;madd;madd;madd;madd;madd;madd;madd;madd;madd;madd;madd;madd;;madd;;madd;;madd;;madd;;madd;;;;;;;madd"}, {"MaddahLeen", ";;;madd;;madd;;madd;;;;;;;;;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;;;madd;;madd;;madd;;;optionalnotstop;madd;madd;madd;madd;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;madd;;optionalstop;madd;madd;;;madd;madd;madd;madd;madd"}, {"MaddahLeenPresentedSukun", ";;madd;;madd;;madd;;madd;;madd;;madd;;madd;;;;madd;;madd;;madd;;;optionalstop"}}
-        'Check = {{CachedData.GetPattern("EndOfWord"), "end"}, {"EndOfWordUniqueLetters", ";end"}, {"EndOfWordMadd", ";end;;end"}, {"EndOfWordLeenMadd", ";end;;end"}, {"EndOfWordSukun", ";end;;end;;end;;end;;end;;end;;end;;end;;end;;end;;end;;end"}, {"EndOfWordMaddLetterPresentedSukun", ";end"}, {"EndOfWordMaddHamzaPresentedSukun", ";end"}, {"EndOfWordMaddLeenPresentedSukun", ";end"}, {"EndOfWordVowelPresentedSukun", ";end"}}
         'Dim Verify As String() = {CStr(ArabicData.ArabicLetterHamza), ArabicData.ArabicTatweel + "?" + ArabicData.ArabicHamzaAbove, ArabicData.ArabicLetterAlefWithHamzaAbove, ArabicData.ArabicLetterAlefWithHamzaBelow, ArabicData.ArabicLetterWawWithHamzaAbove, ArabicData.ArabicLetterYehWithHamzaAbove}
-        Dim VerIndex As Integer = 3
+        Dim VerIndex As Integer = 4
         Dim IndexToVerse As Integer()() = Nothing
         Dim Text As String = QuranTextCombiner(CachedData.XMLDocMain, IndexToVerse)
         Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(Text, CachedData.TranslateRegEx(CachedData.IslamData.VerificationSet(VerIndex).Match, True))
