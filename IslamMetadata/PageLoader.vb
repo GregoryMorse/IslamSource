@@ -5709,7 +5709,7 @@ Public Class TanzilReader
     End Sub
     Public Shared Sub CheckMutualExclusiveRules(bAssumeContinue As Boolean)
         'Dim Verify As String() = {CStr(ArabicData.ArabicLetterHamza), ArabicData.ArabicTatweel + "?" + ArabicData.ArabicHamzaAbove, ArabicData.ArabicLetterAlefWithHamzaAbove, ArabicData.ArabicLetterAlefWithHamzaBelow, ArabicData.ArabicLetterWawWithHamzaAbove, ArabicData.ArabicLetterYehWithHamzaAbove}
-        Dim VerIndex As Integer = 11
+        Dim VerIndex As Integer = 8
         Dim IndexToVerse As Integer()() = Nothing
         Dim Text As String = QuranTextCombiner(CachedData.XMLDocMain, IndexToVerse)
         Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(Text, CachedData.TranslateRegEx(CachedData.IslamData.VerificationSet(VerIndex).Match, True))
@@ -5763,7 +5763,7 @@ Public Class TanzilReader
                             If Matches(Count).Index + CheckLen <> Matches(Count).Groups(SubCount + 1).Index Then Debug.Print("Non-Sequential Capture:" + CStr(MainCount + 1) + ":" + Arabic.TransliterateToScheme(Text.Substring(Math.Max(0, Matches(Count).Groups(SubCount + 1).Index - 15), 30), ArabicData.TranslitScheme.Literal, String.Empty))
                             For LenCount = 0 To Matches(Count).Groups(SubCount + 1).Length - 1
                                 If Not CheckMatches.ContainsKey(Matches(Count).Groups(SubCount + 1).Index + LenCount) Then CheckMatches.Add(Matches(Count).Groups(SubCount + 1).Index + LenCount, String.Empty)
-                                CheckMatches(Matches(Count).Groups(SubCount + 1).Index + LenCount) += CStr(MainCount + 1)
+                                CheckMatches(Matches(Count).Groups(SubCount + 1).Index + LenCount) += Hex(MainCount + 1)
                             Next
                             SieveCount += 1
                         End If
