@@ -5709,7 +5709,7 @@ Public Class TanzilReader
     End Sub
     Public Shared Sub CheckMutualExclusiveRules(bAssumeContinue As Boolean)
         'Dim Verify As String() = {CStr(ArabicData.ArabicLetterHamza), ArabicData.ArabicTatweel + "?" + ArabicData.ArabicHamzaAbove, ArabicData.ArabicLetterAlefWithHamzaAbove, ArabicData.ArabicLetterAlefWithHamzaBelow, ArabicData.ArabicLetterWawWithHamzaAbove, ArabicData.ArabicLetterYehWithHamzaAbove}
-        Dim VerIndex As Integer = 9
+        Dim VerIndex As Integer = 11
         Dim IndexToVerse As Integer()() = Nothing
         Dim Text As String = QuranTextCombiner(CachedData.XMLDocMain, IndexToVerse)
         Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(Text, CachedData.TranslateRegEx(CachedData.IslamData.VerificationSet(VerIndex).Match, True))
