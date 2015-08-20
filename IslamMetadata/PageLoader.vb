@@ -5709,7 +5709,7 @@ Public Class TanzilReader
     End Sub
     Public Shared Sub CheckMutualExclusiveRules(bAssumeContinue As Boolean)
         'Dim Verify As String() = {CStr(ArabicData.ArabicLetterHamza), ArabicData.ArabicTatweel + "?" + ArabicData.ArabicHamzaAbove, ArabicData.ArabicLetterAlefWithHamzaAbove, ArabicData.ArabicLetterAlefWithHamzaBelow, ArabicData.ArabicLetterWawWithHamzaAbove, ArabicData.ArabicLetterYehWithHamzaAbove}
-        Dim VerIndex As Integer = 4
+        Dim VerIndex As Integer = 8
         Dim IndexToVerse As Integer()() = Nothing
         Dim Text As String = QuranTextCombiner(CachedData.XMLDocMain, IndexToVerse)
         Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(Text, CachedData.TranslateRegEx(CachedData.IslamData.VerificationSet(VerIndex).Match, True))
@@ -5734,7 +5734,7 @@ Public Class TanzilReader
             Dim SieveCount As Integer = 0
             For Count = 0 To Matches.Count - 1
                 Dim MetaRules As String() = CachedData.RulesOfRecitationRegEx(MetaCount).Evaluator
-                If Count = 0 AndAlso Matches(Count).Groups.Count <> MetaRules.Length + 1 Then Debug.Print("Discrepency in metadata:" + CStr(MainCount) + ":" + CStr(MetaRules.Length) + ":Got:" + CStr(Matches(Count).Groups.Count - 1))
+                If Count = 0 AndAlso Matches(Count).Groups.Count <> MetaRules.Length + 1 Then Debug.Print("Discrepency in metadata:" + CStr(MainCount + 1) + ":" + CStr(MetaRules.Length) + ":Got:" + CStr(Matches(Count).Groups.Count - 1))
                 Dim bSieve As Boolean = False
                 For SubCount = 0 To MetaRules.Length - 1
                     If Array.IndexOf(MetaRules(SubCount).Split("|"c), If(bAssumeContinue, "optionalstop", "optionalnotstop")) <> -1 And Matches(Count).Groups(SubCount + 1).Success Then
