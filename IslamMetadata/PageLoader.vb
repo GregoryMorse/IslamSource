@@ -782,7 +782,7 @@ Public Class Arabic
             "var coloringRules = " + Utility.MakeJSArray(New String() {Utility.MakeJSIndexedObject(New String() {"rule", "match", "color"}, _
                                     Array.ConvertAll(Of IslamData.ColorRule, String())(CachedData.IslamData.ColorRules, Function(Convert As IslamData.ColorRule) New String() {Convert.Name, Utility.EscapeJS(Convert.Match), System.Drawing.ColorTranslator.ToHtml(Convert.Color)}), False)}, True) + ";", _
             "var rulesOfRecitationRegEx = " + Utility.MakeJSArray(New String() {Utility.MakeJSIndexedObject(New String() {"rule", "match", "evaluator"}, _
-                                    Array.ConvertAll(Of IslamData.RuleMetadataTranslation, Object())(CachedData.RulesOfRecitationRegEx, Function(Convert As IslamData.RuleMetadataTranslation) New Object() {Utility.MakeJSString(Convert.Name), Utility.MakeJSString(Utility.EscapeJS(Convert.Match)), If(Convert.Evaluator Is Nothing, Nothing, Utility.MakeJSArray(Convert.Evaluator))}), True)}, True) + ";", _
+                                    Array.ConvertAll(Of IslamData.RuleMetaSet.RuleMetadataTranslation, Object())(CachedData.RulesOfRecitationRegEx, Function(Convert As IslamData.RuleMetaSet.RuleMetadataTranslation) New Object() {Utility.MakeJSString(Convert.Name), Utility.MakeJSString(Utility.EscapeJS(Convert.Match)), If(Convert.Evaluator Is Nothing, Nothing, Utility.MakeJSArray(Convert.Evaluator))}), True)}, True) + ";", _
             "var allowZeroLength = " + Utility.MakeJSArray(AllowZeroLength) + ";", _
             "function ruleMetadataComparer(a, b) { return (a.index === b.index) ? b.length - a.length : b.index - a.index; }", _
             "function replaceMetadata(sVal, metadataRule, scheme, learningMode) { var count, elimParen = function(s) { return s.replace(/\(.*\)/, ''); }; for (count = 0; count < coloringSpelledOutRules.length; count++) { var index, match = null; for (index = 0; index < coloringSpelledOutRules[count].match.split('|').length; index++) { if (metadataRule.type.split('|').map(elimParen).indexOf(coloringSpelledOutRules[count].match.split('|')[index]) !== -1) { match = coloringSpelledOutRules[count].match.split('|')[index]; break; } } if (match !== null) { var str = coloringSpelledOutRules[count].evaluator.format(sVal.substr(metadataRule.index, metadataRule.length)); if (coloringSpelledOutRules[count].ruleFunc !== 0) { var args = ruleFunctions[coloringSpelledOutRules[count].ruleFunc - 1](str, scheme, learningMode); if (args.length === 1) { str = args[0]; } else { var metaArgs = metadataRule.type.match(/\((.*)\)/)[1].split(','); str = ''; for (index = 0; index < args.length; index++) { if (args[index] !== undefined && args[index] !== null) str += replaceMetadata(args[index], {index: 0, length: args[index].length, type: metaArgs[index].replace(' ', '|')}, scheme, learningMode); } } } sVal = sVal.substr(0, metadataRule.index) + str + sVal.substr(metadataRule.index + metadataRule.length); } } return sVal; }", _
@@ -2193,22 +2193,28 @@ Public Class IslamData
     <System.Xml.Serialization.XmlArray("verificationset")> _
     <System.Xml.Serialization.XmlArrayItem("verification")> _
     Public VerificationSet() As VerificationData
-    Structure RuleMetadataTranslation
+    Structure RuleMetaSet
+        Structure RuleMetadataTranslation
+            <System.Xml.Serialization.XmlAttribute("name")> _
+            Public Name As String
+            <System.Xml.Serialization.XmlAttribute("match")> _
+            Public Match As String
+            <System.Xml.Serialization.XmlAttribute("evaluator")> _
+            Public _Evaluator As String
+            ReadOnly Property Evaluator As String()
+                Get
+                    Return _Evaluator.Split(";"c)
+                End Get
+            End Property
+        End Structure
         <System.Xml.Serialization.XmlAttribute("name")> _
         Public Name As String
-        <System.Xml.Serialization.XmlAttribute("match")> _
-        Public Match As String
-        <System.Xml.Serialization.XmlAttribute("evaluator")> _
-        Public _Evaluator As String
-        ReadOnly Property Evaluator As String()
-            Get
-                Return _Evaluator.Split(";"c)
-            End Get
-        End Property
+        <System.Xml.Serialization.XmlElement("metarule")> _
+        Public Rules() As RuleMetadataTranslation
     End Structure
-    <System.Xml.Serialization.XmlArray("metaruleset")> _
-    <System.Xml.Serialization.XmlArrayItem("metarule")> _
-    Public MetaRules() As RuleMetadataTranslation
+    <System.Xml.Serialization.XmlArray("metarules")> _
+    <System.Xml.Serialization.XmlArrayItem("metaruleset")> _
+    Public MetaRules() As RuleMetaSet
     Structure LanguageInfo
         <System.Xml.Serialization.XmlAttribute("code")> _
         Public Code As String
@@ -2419,7 +2425,7 @@ Public Class CachedData
     Shared _RomanizationRules As IslamData.RuleTranslationCategory.RuleTranslation()
     Shared _ColoringSpelledOutRules As IslamData.RuleTranslationCategory.RuleTranslation()
     Shared _ErrorCheck As IslamData.RuleTranslationCategory.RuleTranslation()
-    Shared _RulesOfRecitationRegEx As IslamData.RuleMetadataTranslation()
+    Shared _RulesOfRecitationRegEx As IslamData.RuleMetaSet.RuleMetadataTranslation()
     Shared _SavedPatterns As New Dictionary(Of String, String)
     Shared _SavedGroups As New Dictionary(Of String, String())
     Public Shared Function GetNum(Name As String) As String()
@@ -3105,10 +3111,10 @@ Public Class CachedData
                 Return Match.Value
             End Function)
     End Function
-    Public Shared ReadOnly Property RulesOfRecitationRegEx As IslamData.RuleMetadataTranslation()
+    Public Shared ReadOnly Property RulesOfRecitationRegEx As IslamData.RuleMetaSet.RuleMetadataTranslation()
         Get
             If _RulesOfRecitationRegEx Is Nothing Then
-                _RulesOfRecitationRegEx = CachedData.IslamData.MetaRules
+                _RulesOfRecitationRegEx = TanzilReader.GetMetaRuleSet("UthmaniQuran").Rules
                 For SubCount As Integer = 0 To _RulesOfRecitationRegEx.Length - 1
                     _RulesOfRecitationRegEx(SubCount).Match = TranslateRegEx(_RulesOfRecitationRegEx(SubCount).Match, True)
                 Next
@@ -3848,8 +3854,8 @@ Public Class DocBuilder
         Output(0) = New String() {}
         Output(1) = New String() {String.Empty, String.Empty, String.Empty}
         Output(2) = New String() {Utility.LoadResourceString("IslamInfo_Name"), Utility.LoadResourceString("IslamInfo_Translation"), Utility.LoadResourceString("IslamInfo_Translation")}
-        For Count = 0 To CachedData.IslamData.MetaRules.Length - 1
-            Output(3 + Count) = New Object() {CachedData.IslamData.MetaRules(Count).Name, New RenderArray.RenderItem() {New RenderArray.RenderItem(RenderArray.RenderTypes.eText, ColorizeRegExGroups(GetRegExText(CachedData.IslamData.MetaRules(Count).Match), False))}, New RenderArray.RenderItem() {New RenderArray.RenderItem(RenderArray.RenderTypes.eText, ColorizeList(Array.ConvertAll(CachedData.IslamData.MetaRules(Count).Evaluator, Function(Str As String) GetRegExText(Str)), False))}}
+        For Count = 0 To TanzilReader.GetMetaRuleSet("UthmaniQuran").Rules.Length - 1
+            Output(3 + Count) = New Object() {TanzilReader.GetMetaRuleSet("UthmaniQuran").Rules(Count).Name, New RenderArray.RenderItem() {New RenderArray.RenderItem(RenderArray.RenderTypes.eText, ColorizeRegExGroups(GetRegExText(TanzilReader.GetMetaRuleSet("UthmaniQuran").Rules(Count).Match), False))}, New RenderArray.RenderItem() {New RenderArray.RenderItem(RenderArray.RenderTypes.eText, ColorizeList(Array.ConvertAll(TanzilReader.GetMetaRuleSet("UthmaniQuran").Rules(Count).Evaluator, Function(Str As String) GetRegExText(Str)), False))}}
         Next
         Return RenderArray.MakeTableJSFunctions(Output, ID)
     End Function
@@ -5104,8 +5110,14 @@ Public Class TanzilReader
                 ArabicData.LeftToRightOverride + "Not Middle No Diacritics: [" + ArabicData.PopDirectionalFormatting + String.Join(" ", Array.ConvertAll(NotMiddleWordNoDia.ToCharArray(), Function(C As Char) ArabicData.FixStartingCombiningSymbol(CStr(C)))) + ArabicData.LeftToRightOverride + "]" + ArabicData.PopDirectionalFormatting, _
                 Val, RevVal, DiaVal, LetVal, LetRevVal}
     End Function
+    Public Shared Function GetMetaRuleSet(Name As String) As IslamData.RuleMetaSet
+        For Count = 0 To CachedData.IslamData.MetaRules.Length - 1
+            If CachedData.IslamData.MetaRules(Count).Name = Name Then Return CachedData.IslamData.MetaRules(Count)
+        Next
+        Return Nothing
+    End Function
     Public Shared Function GetRecitationRules() As Array()
-        Dim Names() As Array = Array.ConvertAll(CachedData.IslamData.MetaRules, Function(Convert As IslamData.RuleMetadataTranslation) New Object() {Utility.LoadResourceString("IslamInfo_" + Convert.Name), CInt(Array.IndexOf(CachedData.IslamData.MetaRules, Convert))})
+        Dim Names() As Array = Array.ConvertAll(GetMetaRuleSet("UthmaniQuran").Rules, Function(Convert As IslamData.RuleMetaSet.RuleMetadataTranslation) New Object() {Utility.LoadResourceString("IslamInfo_" + Convert.Name), CInt(Array.IndexOf(CachedData.IslamData.MetaRules, Convert))})
         Array.Sort(Names, New Utility.CompareNameValueArray)
         Return Names
     End Function
@@ -5709,7 +5721,7 @@ Public Class TanzilReader
     End Sub
     Public Shared Sub CheckMutualExclusiveRules(bAssumeContinue As Boolean)
         'Dim Verify As String() = {CStr(ArabicData.ArabicLetterHamza), ArabicData.ArabicTatweel + "?" + ArabicData.ArabicHamzaAbove, ArabicData.ArabicLetterAlefWithHamzaAbove, ArabicData.ArabicLetterAlefWithHamzaBelow, ArabicData.ArabicLetterWawWithHamzaAbove, ArabicData.ArabicLetterYehWithHamzaAbove}
-        Dim VerIndex As Integer = 12
+        Dim VerIndex As Integer = 15
         Dim IndexToVerse As Integer()() = Nothing
         Dim Text As String = QuranTextCombiner(CachedData.XMLDocMain, IndexToVerse)
         Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(Text, CachedData.TranslateRegEx(CachedData.IslamData.VerificationSet(VerIndex).Match, True))
@@ -5965,8 +5977,8 @@ Public Class TanzilReader
                 QuranText = New Collections.Generic.List(Of String())
                 Dim IndexToVerse As Integer()() = Nothing
                 Dim Text As String = QuranTextCombiner(CachedData.XMLDocMain, IndexToVerse)
-                Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(Text, CachedData.IslamData.MetaRules(Index).Match)
-                Renderer.Items.AddRange(New RenderArray.RenderItem() {New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, CachedData.IslamData.MetaRules(Index).Name)}), New RenderArray.RenderItem(RenderArray.RenderTypes.eText, DocBuilder.ColorizeRegExGroups(DocBuilder.GetRegExText(CachedData.IslamData.MetaRules(Index).Match), False)), New RenderArray.RenderItem(RenderArray.RenderTypes.eText, DocBuilder.ColorizeList(Array.ConvertAll(CachedData.IslamData.MetaRules(Index).Evaluator, Function(Str As String) DocBuilder.GetRegExText(Str)), False))})
+                Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(Text, GetMetaRuleSet("UthmaniQuran").Rules(Index).Match)
+                Renderer.Items.AddRange(New RenderArray.RenderItem() {New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, GetMetaRuleSet("UthmaniQuran").Rules(Index).Name)}), New RenderArray.RenderItem(RenderArray.RenderTypes.eText, DocBuilder.ColorizeRegExGroups(DocBuilder.GetRegExText(GetMetaRuleSet("UthmaniQuran").Rules(Index).Match), False)), New RenderArray.RenderItem(RenderArray.RenderTypes.eText, DocBuilder.ColorizeList(Array.ConvertAll(GetMetaRuleSet("UthmaniQuran").Rules(Index).Evaluator, Function(Str As String) DocBuilder.GetRegExText(Str)), False))})
                 For SubCount = 0 To Matches.Count - 1
                     Dim StartWordIndex As Integer = Array.BinarySearch(IndexToVerse, Matches(SubCount).Index, New QuranWordIndexComparer)
                     If StartWordIndex < 0 Then StartWordIndex = (StartWordIndex Xor -1) - 1
