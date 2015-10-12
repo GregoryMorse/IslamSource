@@ -3044,7 +3044,9 @@ Public Class RenderArray
                         'arabic strings cannot be broken up in the middle due to letters joining which would throw off calculations
                         If nChar = 0 Then
                             nChar = theText.Length 'If no room for even a letter then just use placeholder
-                        ElseIf nChar <> theText.Length Then
+                        ElseIf nChar > theText.Length Then
+                            nChar = theText.Length 'lam + alef wasl conversion adds characters...
+                        ElseIf nChar < theText.Length Then
                             Dim idx As Integer = Array.FindLastIndex(theText.ToCharArray(), nChar - 1, nChar, Function(ch As Char) Char.IsWhiteSpace(ch))
                             If idx <> -1 Then nChar = idx + 1
                         End If
