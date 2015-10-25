@@ -2545,6 +2545,9 @@ Public Class RenderArray
         Dim RowTop As Single = Single.NaN
         Dim MaxRect As RectangleF
         For Count As Integer = 0 To CurRenderArray.Count - 1
+            'bookmarks
+            'links added using Anchor one with a name and other with reference
+            'Doc.Add(New iTextSharp.text.Chapter(CStr(CurRenderArray(Count).TextItems(0).Text), Count))
             MaxRect = New RectangleF(Doc.PageSize.Width, Doc.PageSize.Height, 0, 0)
             For SubCount As Integer = 0 To CurRenderArray(Count).TextItems.Length - 1
                 If CurRenderArray(Count).TextItems(SubCount).DisplayClass = RenderArray.RenderDisplayClass.eNested Then
