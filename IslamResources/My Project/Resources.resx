@@ -31851,8 +31851,14 @@
   <data name="IslamInfo_AajurroomiyyahChapter1WordByWord" xml:space="preserve">
     <value>Useful sounds:|It is|expressions/utterances|compounded,|meaningful|in its syntatical sequence.|And its only parts consists of|three:|the noun,|the verb,|and the particle|coming|with signification/meaning.|Then the noun|is known|by an expression of kasra due to an agent|and noonation,|and entering|alef|and laam|upon it,|and the letters|of expression of kasra due to an agent,|and they are|from,|and to,|and about,|and upon,|and in,|and with,|and baa,|and kaaf,|and laam,|and the letters|of oath,|and they are|waw,|and bah,|and tah.</value>
   </data>
-  <data name="IslamInfo_GreatMasterpiece" xml:space="preserve">
-    <value>Great Masterpiece</value>
+  <data name="IslamInfo_GreatMasterpiece1" xml:space="preserve">
+    <value>Great Masterpiece 1</value>
+  </data>
+  <data name="IslamInfo_GreatMasterpiece2" xml:space="preserve">
+    <value>Great Masterpiece 2</value>
+  </data>
+  <data name="IslamInfo_GreatMasterpiece3" xml:space="preserve">
+    <value>Great Masterpiece 3</value>
   </data>
   <data name="IslamInfo_GreatMasterpieceCover" xml:space="preserve">
     <value>Great Masterpiece</value>

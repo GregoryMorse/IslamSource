@@ -336,7 +336,7 @@ Public Class Arabic
         eSpellNumber
         eSpellLetter
         eLookupLetter
-        eLookupLongVowel
+        eLookupLongVowelDipthong
         eDivideTanween
         eLeadingGutteral
         eTrailingGutteral
@@ -357,7 +357,7 @@ Public Class Arabic
         Function(Str As String, Scheme As String, LearningMode As Boolean) If(LearningMode, {Str, String.Empty}, {String.Empty, Str})
     }
         'Javascript does not support negative or positive lookbehind in regular expressions
-    Public Shared AllowZeroLength As String() = {"helperfatha", "helperdamma", "helperfatha", "helperlparen", "helperrparen", "learningmode(helperslash,)", "learningmode(helperlbracket,)", "learningmode(helperrbracket,)", "learningmode(helperfathatan,)", "learningmode(helperteh,)"}
+    Public Shared AllowZeroLength As String() = {"helperfatha", "helperdamma", "helperkasra", "helperlparen", "helperrparen", "learningmode(helperslash,)", "learningmode(helperlbracket,)", "learningmode(helperrbracket,)", "learningmode(helperfathatan,)", "learningmode(helperteh,)"}
     Public Shared Function IsLetter(Index As Integer) As Boolean
         Return Array.FindIndex(CachedData.ArabicLetters, Function(Str As String) Str = ArabicData.ArabicLetters(Index).Symbol) <> -1
     End Function
@@ -646,7 +646,7 @@ Public Class Arabic
                 For MatchIndex As Integer = 0 To Matches.Count - 1
                     Dim SubCount As Integer
                     For SubCount = 0 To CachedData.RulesOfRecitationRegEx(Count).Evaluator.Length - 1
-                        If (CachedData.RulesOfRecitationRegEx(Count).Evaluator(SubCount) = "optionalstop" AndAlso (OptionalStops Is Nothing AndAlso Matches(MatchIndex).Groups(SubCount + 1).Value = ArabicData.ArabicSmallHighLigatureSadWithLamWithAlefMaksura OrElse (Matches(MatchIndex).Groups(SubCount + 1).Length <> 0 AndAlso Matches(MatchIndex).Groups(SubCount + 1).Index = 0) OrElse (Not OptionalStops Is Nothing AndAlso Matches(MatchIndex).Groups(SubCount + 1).Value <> String.Empty AndAlso Array.IndexOf(OptionalStops, Matches(MatchIndex).Groups(SubCount + 1).Index) = -1))) OrElse (CachedData.RulesOfRecitationRegEx(Count).Evaluator(SubCount) = "optionalnotstop" AndAlso (Matches(MatchIndex).Groups(SubCount + 1).Length = 0 OrElse Matches(MatchIndex).Groups(SubCount + 1).Index <> 0) AndAlso (OptionalStops Is Nothing AndAlso Matches(MatchIndex).Groups(SubCount + 1).Value <> String.Empty AndAlso Matches(MatchIndex).Groups(SubCount + 1).Value <> ArabicData.ArabicSmallHighLigatureSadWithLamWithAlefMaksura OrElse (Not OptionalStops Is Nothing AndAlso Matches(MatchIndex).Groups(SubCount + 1).Value <> String.Empty AndAlso Array.IndexOf(OptionalStops, Matches(MatchIndex).Groups(SubCount + 1).Index) <> -1))) Then Exit For
+                        If (CachedData.RulesOfRecitationRegEx(Count).Evaluator(SubCount) = "optionalstop" AndAlso (OptionalStops Is Nothing AndAlso Matches(MatchIndex).Groups(SubCount + 1).Value = ArabicData.ArabicSmallHighLigatureSadWithLamWithAlefMaksura OrElse (Not OptionalStops Is Nothing AndAlso Matches(MatchIndex).Groups(SubCount + 1).Value <> String.Empty AndAlso Array.IndexOf(OptionalStops, Matches(MatchIndex).Groups(SubCount + 1).Index) = -1))) OrElse (CachedData.RulesOfRecitationRegEx(Count).Evaluator(SubCount) = "optionalnotstop" AndAlso (OptionalStops Is Nothing AndAlso Matches(MatchIndex).Groups(SubCount + 1).Value <> String.Empty AndAlso Matches(MatchIndex).Groups(SubCount + 1).Value <> ArabicData.ArabicSmallHighLigatureSadWithLamWithAlefMaksura OrElse (Matches(MatchIndex).Groups(SubCount + 1).Length = 0 AndAlso Matches(MatchIndex).Groups(SubCount + 1).Index = 0) OrElse (Not OptionalStops Is Nothing AndAlso Matches(MatchIndex).Groups(SubCount + 1).Value <> String.Empty AndAlso Array.IndexOf(OptionalStops, Matches(MatchIndex).Groups(SubCount + 1).Index) <> -1))) Then Exit For
                     Next
                     If SubCount <> CachedData.RulesOfRecitationRegEx(Count).Evaluator.Length Then Continue For
                     For SubCount = 0 To CachedData.RulesOfRecitationRegEx(Count).Evaluator.Length - 1
@@ -2152,7 +2152,7 @@ Public Class IslamData
                     If _RuleFunc = "eDivideTanween" Then Return Arabic.RuleFuncs.eDivideTanween
                     If _RuleFunc = "eLeadingGutteral" Then Return Arabic.RuleFuncs.eLeadingGutteral
                     If _RuleFunc = "eLookupLetter" Then Return Arabic.RuleFuncs.eLookupLetter
-                    If _RuleFunc = "eLookupLongVowel" Then Return Arabic.RuleFuncs.eLookupLongVowel
+                    If _RuleFunc = "eLookupLongVowelDipthong" Then Return Arabic.RuleFuncs.eLookupLongVowelDipthong
                     If _RuleFunc = "eSpellLetter" Then Return Arabic.RuleFuncs.eSpellLetter
                     If _RuleFunc = "eSpellNumber" Then Return Arabic.RuleFuncs.eSpellNumber
                     If _RuleFunc = "eTrailingGutteral" Then Return Arabic.RuleFuncs.eTrailingGutteral
