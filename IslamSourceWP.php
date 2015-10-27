@@ -555,12 +555,15 @@ class CachedData
     static $_UthmaniMinimalScript = null;
     static $_SimpleEnhancedScript = null;
     static $_SimpleScript = null;
+    static $_SimpleScriptBase = null;
     static $_SimpleCleanScript = null;
     static $_SimpleMinimalScript = null;
     static $_RomanizationRules = null;
     static $_ColoringSpelledOutRules = null;
     static $_ErrorCheck = null;
     static $_RulesOfRecitationRegEx = null;
+    static $_SavedPatterns = [];
+    static $_SavedGroups = [];
     public static function GetNum($name)
     {
         for ($count = 0; $count < count(CachedData::IslamData()->arabicnumbers->children()); $count++) {
@@ -570,20 +573,35 @@ class CachedData
         }
         return [];
     }
+    public static function GetCap($name)
+    {
+        for ($count = 0; $count < count(CachedData::IslamData()->arabiccaptures->children()); $count++) {
+            if (CachedData::IslamData()->arabiccaptures->children()[$count]->attributes()["name"] == $name) {
+                return explode(" ", CachedData::IslamData()->arabiccaptures->children()[$count]->attributes()["text"]);
+            }
+        }
+        return [];    	
+    }
     public static function GetPattern($name)
     {
+    	if (array_key_exists($name, CachedData::$_SavedPatterns)) return CachedData::$_SavedPatterns[$name];
         for ($count = 0; $count < count(CachedData::IslamData()->arabicpatterns->children()); $count++) {
             if (CachedData::IslamData()->arabicpatterns->children()[$count]->attributes()["name"] == $name) {
-                return CachedData::TranslateRegEx(CachedData::IslamData()->arabicpatterns->children()[$count]->attributes()["match"], true);
+                $tregex = CachedData::TranslateRegEx(CachedData::IslamData()->arabicpatterns->children()[$count]->attributes()["match"], true);
+                if (!array_key_exists($name, CachedData::$_SavedPatterns)) CachedData::$_SavedPatterns[$name] = $tregex; 
+                return CachedData::$_SavedPatterns[$name];
             }
         }
         return "";
     }
     public static function GetGroup($name)
     {
+    	$characteristics = ["Audibility", "Whispering", "Weakness", "Moderation", "Strength", "Lowness", "Elevation", "Opening", "Closing", "Restraint", "Fluency", "Vibration", "Inclination", "Repetition", "Whistling", "Diffusion", "Elongation", "Nasal", "Ease"];
+    	if (array_key_exists($name, CachedData::$_SavedGroups)) return CachedData::$_SavedGroups[$name];
         for ($count = 0; $count < count(CachedData::IslamData()->arabicgroups->children()); $count++) {
             if (CachedData::IslamData()->arabicgroups->children()[$count]->attributes()["name"] == $name) {
-                return array_map(function($str) use($name) { return CachedData::TranslateRegEx($str, $name == "ArabicSpecialLetters"); }, explode(" ", CachedData::IslamData()->arabicgroups->children()[$count]->attributes()["text"]));
+                CachedData::$_SavedGroups[$name] = array_map(function($str) use($name) { return CachedData::TranslateRegEx($str, $name == "ArabicSpecialLetters" || $name == "ArabicAssimilateSameWord" || $name == "ArabicAssimilateAcrossWord" || $name == "ArabicAssimilateLeenAcrossWord" || array_search($name, $characteristics) != false); }, explode(" ", CachedData::IslamData()->arabicgroups->children()[$count]->attributes()["text"]));
+                return CachedData::$_SavedGroups[$name];
             }
         }
         return [];
@@ -604,18 +622,18 @@ class CachedData
                     	$ruleSet[$subCount]->attributes()["rulefunc"] = RuleFuncs::eSpellLetter;
                     } elseif ((string)$ruleSet[$subCount]->attributes()["rulefunc"] == "eLookupLetter") {
                     	$ruleSet[$subCount]->attributes()["rulefunc"] = RuleFuncs::eLookupLetter;
-                    } elseif ((string)$ruleSet[$subCount]->attributes()["rulefunc"] == "eLookupLongVowel") {
-                    	$ruleSet[$subCount]->attributes()["rulefunc"] = RuleFuncs::eLookupLongVowel;
+                    } elseif ((string)$ruleSet[$subCount]->attributes()["rulefunc"] == "eLookupLongVowelDipthong") {
+                    	$ruleSet[$subCount]->attributes()["rulefunc"] = RuleFuncs::eLookupLongVowelDipthong;
                     } elseif ((string)$ruleSet[$subCount]->attributes()["rulefunc"] == "eDivideTanween") {
                     	$ruleSet[$subCount]->attributes()["rulefunc"] = RuleFuncs::eDivideTanween;
-                    } elseif ((string)$ruleSet[$subCount]->attributes()["rulefunc"] == "eDivideLetterSymbol") {
-                    	$ruleSet[$subCount]->attributes()["rulefunc"] = RuleFuncs::eDivideLetterSymbol;
                     } elseif ((string)$ruleSet[$subCount]->attributes()["rulefunc"] == "eLeadingGutteral") {
                     	$ruleSet[$subCount]->attributes()["rulefunc"] = RuleFuncs::eLeadingGutteral;
                     } elseif ((string)$ruleSet[$subCount]->attributes()["rulefunc"] == "eTrailingGutteral") {
                     	$ruleSet[$subCount]->attributes()["rulefunc"] = RuleFuncs::eTrailingGutteral;
                     } elseif ((string)$ruleSet[$subCount]->attributes()["rulefunc"] == "eResolveAmbiguity") {
                     	$ruleSet[$subCount]->attributes()["rulefunc"] = RuleFuncs::eResolveAmbiguity;
+                    } elseif ((string)$ruleSet[$subCount]->attributes()["rulefunc"] == "eLearningMode") {
+                    	$ruleSet[$subCount]->attributes()["rulefunc"] = RuleFuncs::eLearningMode;
                     } else {
                     	$ruleSet[$subCount]->attributes()["rulefunc"] = RuleFuncs::eNone;
                     }
@@ -1117,37 +1135,16 @@ class CachedData
     {
         return preg_replace_callback("/\\{(.*?)\\}/u", function($matches) use($bAll) {
             if ($bAll) {
-                if ($matches[1] == "CertainStopPattern") { return CachedData::CertainStopPattern(); }
-                if ($matches[1] == "OptionalPattern") { return CachedData::OptionalPattern(); }
-                if ($matches[1] == "OptionalPatternNotEndOfAyah") { return CachedData::OptionalPatternNotEndOfAyah(); }
-                if ($matches[1] == "CertainNotStopPattern") { return CachedData::CertainNotStopPattern(); }
-                if ($matches[1] == "TehMarbutaStopRule") { return CachedData::TehMarbutaStopRule(); }
-                if ($matches[1] == "TehMarbutaContinueRule") { return CachedData::TehMarbutaContinueRule(); }
-
-                if ($matches[1] == "ArabicUniqueLetters") { return ArabicData::MakeRegMultiEx(array_map(function($str) { return Arabic::TransliterateFromBuckwalter($str); }, CachedData::ArabicUniqueLetters())); }
-                if ($matches[1] == "ArabicNumbers") { return ArabicData::MakeRegMultiEx(array_map(function($str) { return Arabic::TransliterateFromBuckwalter($str); }, CachedData::ArabicNumbers())); }
-                if ($matches[1] == "ArabicWaslKasraExceptions") { return ArabicData::MakeRegMultiEx(array_map(function($str) { return Arabic::TransliterateFromBuckwalter($str); }, CachedData::ArabicWaslKasraExceptions())); }
-                //if ($matches[1] == "SimpleSuperscriptAlefBefore") { return ArabicData::MakeRegMultiEx(array_map(function($str) { return Arabic::TransliterateFromBuckwalter(str_replace([".", """", "@", "[", "]", "-", "^"], "", $str)); }, CachedData::SimpleSuperscriptAlefBefore())); }
-                //if ($matches[1] == "SimpleSuperscriptAlefNotBefore") { return ArabicData::MakeRegMultiEx(array_map(function($str) { return Arabic::TransliterateFromBuckwalter(str_replace([".", """", "@", "[", "]", "-", "^"], "", $str)); }, CachedData::SimpleSuperscriptAlefNotBefore())); }
-                //if ($matches[1] == "SimpleSuperscriptAlefAfter") { return ArabicData::MakeRegMultiEx(array_map(function($str) { return Arabic::TransliterateFromBuckwalter(str_replace([".", """", "@", "[", "]", "-", "^"], "", $str)); }, CachedData::SimpleSuperscriptAlefAfter())); }
-                //if ($matches[1] == "SimpleSuperscriptAlefNotAfter") { return ArabicData::MakeRegMultiEx(array_map(function($str) { return Arabic::TransliterateFromBuckwalter(str_replace([".", """", "@", "[", "]", "-", "^"], "", $str)); }, CachedData::SimpleSuperscriptAlefNotAfter())); }
-                if ($matches[1] == "ArabicLongShortVowels") { return ArabicData::MakeRegMultiEx(array_map(function($strV) { return ArabicData::MakeUniRegEx($strV[0] . "(?=" . ArabicData::MakeUniRegEx($strV[1]) . ")"); }, CachedData::ArabicLongVowels())); }
-                if ($matches[1] == "ArabicTanweens") { return ArabicData::MakeRegMultiEx(array_map(function($str) { return ArabicData::MakeUniRegEx($str); }, CachedData::ArabicTanweens())); }
-                if ($matches[1] == "ArabicFathaDammaKasra") { return ArabicData::MakeRegMultiEx(array_map(function($str) { return ArabicData::MakeUniRegEx($str); }, CachedData::ArabicFathaDammaKasra())); }
-                if ($matches[1] == "ArabicStopLetters") { return ArabicData::MakeRegMultiEx(array_map(function($str) { return ArabicData::MakeUniRegEx($str); }, CachedData::ArabicStopLetters())); }
-                if ($matches[1] == "ArabicSpecialGutteral") { return ArabicData::MakeRegMultiEx(array_map(function($str) { return ArabicData::MakeUniRegEx($str); }, CachedData::ArabicSpecialGutteral())); }
-                if ($matches[1] == "ArabicSpecialLeadingGutteral") { return ArabicData::MakeRegMultiEx(array_map(function($str) { return ArabicData::MakeUniRegEx($str); }, CachedData::ArabicSpecialLeadingGutteral())); }
-                if ($matches[1] == "ArabicPunctuationSymbols") { return ArabicData::MakeRegMultiEx(array_map(function($str) { return ArabicData::MakeUniRegEx($str); }, CachedData::ArabicPunctuationSymbols())); }
-                if ($matches[1] == "ArabicLetters") { return ArabicData::MakeRegMultiEx(array_map(function($str) { return ArabicData::MakeUniRegEx($str); }, CachedData::ArabicLetters())); }
-                if ($matches[1] == "ArabicSunLettersNoLam") { return ArabicData::MakeRegMultiEx(array_map(function($str) { return ArabicData::MakeUniRegEx($str); }, CachedData::ArabicSunLettersNoLam())); }
-                if ($matches[1] == "ArabicSunLetters") { return ArabicData::MakeRegMultiEx(array_map(function($str) { return ArabicData::MakeUniRegEx($str); }, CachedData::ArabicSunLetters())); }
-                if ($matches[1] == "ArabicMoonLettersNoVowels") { return ArabicData::MakeRegMultiEx(array_map(function($str) { return ArabicData::MakeUniRegEx($str); }, CachedData::ArabicMoonLettersNoVowels())); }
-                if ($matches[1] == "ArabicMoonLetters") { return ArabicData::MakeRegMultiEx(array_map(function($str) { return ArabicData::MakeUniRegEx($str); }, CachedData::ArabicMoonLetters())); }
-                if ($matches[1] == "RecitationCombiningSymbols") { return ArabicData::MakeRegMultiEx(array_map(function($str) { return ArabicData::MakeUniRegEx($str); }, CachedData::RecitationCombiningSymbols())); }
-                if ($matches[1] == "RecitationConnectingFollowerSymbols") { return ArabicData::MakeRegMultiEx(array_map(function($str) { return ArabicData::MakeUniRegEx($str); }, CachedData::RecitationConnectingFollowerSymbols())); }
-                if ($matches[1] == "PunctuationSymbols") { return ArabicData::MakeRegMultiEx(array_map(function($str) { return ArabicData::MakeUniRegEx($str); }, CachedData::PunctuationSymbols())); }
-                if ($matches[1] == "RecitationLettersDiacritics") { return ArabicData::MakeRegMultiEx(array_map(function($str) { return ArabicData::MakeUniRegEx($str); }, CachedData::RecitationLettersDiacritics())); }
-                if ($matches[1] == "RecitationSpecialSymbolsNotStop") { return ArabicData::MakeRegMultiEx(array_map(function($str) { return ArabicData::MakeUniRegEx($str); }, CachedData::RecitationSpecialSymbolsNotStop())); }
+            	if (CachedData::GetPattern($matches[1]) != "") return CachedData::GetPattern($matches[1]);
+            	if (count(CachedData::GetCap(explode(";", $matches[1])[0])) != 0) {
+            		return ArabicData::MakeRegMultiEx(array_map(function ($str) use($matches) { $strs = explode(" ", $str); $str = ""; $capLimit = (strpos($matches[1], ";") !== false ? explode(";", $matches[1])[1] : 0); for ($strCount = 0; $strCount < count($strs); $strCount++ ) { if ($capLimit == 0) { $str .= ArabicData::MakeUniRegEx(Arabic::TransliterateFromBuckwalter($strs[$strCount])); } else if ($strCount + 1 <= $capLimit) { $str .= "(" . ArabicData::MakeUniRegEx(Arabic::TransliterateFromBuckwalter($strs[$strCount])) . ")"; } else if ($strCount + 1 > $capLimit) { $str .= "(?=" . ArabicData::MakeUniRegEx(Arabic::TransliterateFromBuckwalter($strs[$strCount])) . ")"; } } return $str; }, CachedData::GetCap(explode(";", $matches[1])[0])));
+            	}            	
+            	if (count(CachedData::GetNum($matches[1])) != 0) {
+            		return ArabicData::MakeRegMultiEx(array_map(function ($num) { return ArabicData::MakeUniRegEx(Arabic::TransliterateFromBuckwalter($num)); }, CachedData::GetNum($matches[1])));
+            	}
+            	if (count(CachedData::GetGroup($matches[1])) != 0) {
+            		return ArabicData::MakeRegMultiEx(array_map(function ($grp) { return ArabicData::MakeUniRegEx($grp); }, CachedData::GetGroup($matches[1])));
+            	}            	
             }
             if (preg_match("/0x([0-9a-fA-F]{4})/u", $matches[1]) === 1) {
                 return $bAll ? ArabicData::MakeUniRegEx(mb_convert_encoding('&#x' . substr($matches[1], 2) . ';', 'UTF-8', 'HTML-ENTITIES')) : mb_convert_encoding('&#x' . substr($matches[1], 2) . ';', 'UTF-8', 'HTML-ENTITIES');
@@ -1162,10 +1159,17 @@ class CachedData
             return $matches[0];
 	    }, $value);
     }
+    public static function GetMetaRuleSet($name)
+    {
+      for ($count = 0; $count < count(CachedData::IslamData()->metaruleset->children()); $count++) {
+      	if (CachedData::IslamData()->metaruleset->children()[$count]->attributes()["name"] == $name) return CachedData::IslamData()->metaruleset->children()[$count];
+      }
+      return null;
+    }
     public static function RulesOfRecitationRegEx()
 	{
         if (CachedData::$_RulesOfRecitationRegEx === null) {
-            CachedData::$_RulesOfRecitationRegEx = CachedData::IslamData()->metaruleset->children();
+            CachedData::$_RulesOfRecitationRegEx = CachedData::GetMetaRuleSet("UthmaniQuran");
             for ($subCount = 0; $subCount < count(CachedData::$_RulesOfRecitationRegEx); $subCount++) {
                 CachedData::$_RulesOfRecitationRegEx[$subCount]->attributes()["match"] = CachedData::TranslateRegEx(CachedData::$_RulesOfRecitationRegEx[$subCount]->attributes()["match"], true);
             }
@@ -1185,6 +1189,13 @@ class CachedData
             CachedData::$_UthmaniMinimalScript = CachedData::GetRuleSet("UthmaniMinimalScript");
         }
         return CachedData::$_UthmaniMinimalScript;
+    }
+    public static function SimpleScriptBase()
+	{
+        if (CachedData::$_SimpleScriptBase === null) {
+            CachedData::$_SimpleScriptBase = CachedData::GetRuleSet("SimpleScriptBase");
+        }
+        return CachedData::$_SimpleScriptBase;
     }
     public static function SimpleEnhancedScript()
 	{
@@ -1340,7 +1351,7 @@ abstract class RuleFuncs
     const eSpellNumber = 2;
     const eSpellLetter = 3;
     const eLookupLetter = 4;
-    const eLookupLongVowel = 5;
+    const eLookupLongVowelDipthong = 5;
     const eDivideTanween = 6;
     const eLeadingGutteral = 7;
     const eTrailingGutteral = 8;
@@ -1569,7 +1580,7 @@ class Arabic
 	    function($str, $scheme, $learningMode) { return [Arabic::GetSchemeGutteralFromString(mb_substr($str, 0, mb_strlen($str, 'UTF-8') - 1, 'UTF-8'), $scheme, true) . mb_substr($str, mb_strlen($str, 'UTF-8') - 1, 1, 'UTF-8')]; },
 	    function($str, $scheme, $learningMode) { return [mb_substr($str, 0, 1, 'UTF-8') . Arabic::GetSchemeGutteralFromString(mb_substr($str, 1, null, 'UTF-8'), $scheme, false)]; },
 	    function($str, $scheme, $learningMode) { return [Arabic::SchemeHasValue(Arabic::GetSchemeValueFromSymbol(ArabicData::ArabicLetters()[ArabicData::FindLetterBySymbol(mb_substr($str, 0, 1, 'UTF-8'))], $scheme) . Arabic::GetSchemeValueFromSymbol(ArabicData::ArabicLetters()[ArabicData::FindLetterBySymbol(mb_substr($str, 1, 1, 'UTF-8'))], $scheme), $scheme) ? mb_substr($str, 0, 1, 'UTF-8') . '-' . mb_substr($str, 1, 1, 'UTF-8') : $str]; },
-	    function($str, $scheme, $learningMode) { return $learningMode ? [$str, ""] : ["", $str] }
+	    function($str, $scheme, $learningMode) { return $learningMode ? [$str, ""] : ["", $str]; }
 		];
   }
   public static $AllowZeroLength = ["helperfatha", "helperdamma", "helperkasra", "helperlparen", "helperrparen", "learningmode(helperslash,)", "learningmode(helperlbracket,)", "learningmode(helperrbracket,)", "learningmode(helperfathatan,)", "learningmode(helperteh,)"];
@@ -1694,7 +1705,7 @@ class Arabic
     }
     public static function MatchResult($eval, $offset, $str, $matches)
     {
-		return preg_replace_callback("/\\$(\\$|&|`|\\'|[0-9]+)/u", function($m) use ($offset, $str, $matches) { if ($m[1] === '$') return '$'; if ($m[1] === '`') return mb_substr($str, 0, $offset, 'UTF-8'); if ($m[1] === '\'') return mb_substr($str, $offset + mb_strlen($matches[0], 'UTF-8'), null, 'UTF-8'); if ($m[1] === '&' || (int)($m[1]) <= 0 || (int)($m[1]) >= count($matches)) return $matches[0]; return $matches[(int)($m[1])]; }, $eval);
+		return preg_replace_callback("/\\$(\\$|&|`|\\'|[0-9]+)/u", function($m) use($offset, $str, $matches) { if ($m[1] === '$') return '$'; if ($m[1] === '`') return mb_substr($str, 0, $offset, 'UTF-8'); if ($m[1] === '\'') return mb_substr($str, $offset + mb_strlen($matches[0], 'UTF-8'), null, 'UTF-8'); if ($m[1] === '&' || (int)($m[1]) <= 0 || (int)($m[1]) >= count($matches)) return $matches[0]; return $matches[(int)($m[1])]; }, $eval);
     }
     public static function DoErrorCheck($arabicString)
     {
@@ -1747,7 +1758,7 @@ class Arabic
                 preg_match_all("/" . CachedData::RulesOfRecitationRegEx()[$count]->attributes()["match"] . "/u", $arabicString, $matches, PREG_OFFSET_CAPTURE | PREG_SET_ORDER);
                 for ($matchIndex = 0; $matchIndex < count($matches); $matchIndex++) {
                     for ($subCount = 0; $subCount < count(explode(";", CachedData::RulesOfRecitationRegEx()[$count]->attributes()["evaluator"])); $subCount++) {
-                    	if (explode(";", CachedData::RulesOfRecitationRegEx()[$count]->attributes()["evaluator"])[$subCount] == "optionalstop" && ($optionalStops === null && $matches[$matchIndex][$subCount + 1][0] == ArabicData::$ArabicSmallHighLigatureSadWithLamWithAlefMaksura || ($optionalStops !== null && $matches[$matchIndex][$subCount + 1][0] != '' && array_search(mb_strlen(substr($arabicString, 0, $matches[$matchIndex][$subCount + 1][1]), 'UTF-8'), $optionalStops) === false)) || explode(";", CachedData::RulesOfRecitationRegEx()[$count]->attributes()["evaluator"])[$subCount] == "optionalnotstop" && ($optionalStops === null && $matches[$matchIndex][$subCount + 1][0] != '' && $matches[$matchIndex][$subCount + 1][0] != ArabicData::$ArabicSmallHighLigatureSadWithLamWithAlefMaksura || ($optionalStops !== null && $matches[$matchIndex][$subCount + 1][0] != '' && array_search(mb_strlen(substr($arabicString, 0, $matches[$matchIndex][$subCount + 1][1]), 'UTF-8'), $optionalStops) !== false))) break;
+                    	if (explode(";", CachedData::RulesOfRecitationRegEx()[$count]->attributes()["evaluator"])[$subCount] == "optionalstop" && ($optionalStops === null && $matches[$matchIndex][$subCount + 1][0] == ArabicData::$ArabicSmallHighLigatureSadWithLamWithAlefMaksura || ($optionalStops !== null && $matches[$matchIndex][$subCount + 1][0] != '' && array_search(mb_strlen(substr($arabicString, 0, $matches[$matchIndex][$subCount + 1][1]), 'UTF-8'), $optionalStops) === false)) || explode(";", CachedData::RulesOfRecitationRegEx()[$count]->attributes()["evaluator"])[$subCount] == "optionalnotstop" && ($optionalStops === null && $matches[$matchIndex][$subCount + 1][0] != '' && $matches[$matchIndex][$subCount + 1][0] != ArabicData::$ArabicSmallHighLigatureSadWithLamWithAlefMaksura || (mb_strlen($matches[$matchIndex][$subCount + 1][0], 'UTF-8') == 0 && mb_strlen(substr($arabicString, 0, $matches[$matchIndex][$subCount + 1][1]), 'UTF-8') == 0) || ($optionalStops !== null && $matches[$matchIndex][$subCount + 1][0] != '' && array_search(mb_strlen(substr($arabicString, 0, $matches[$matchIndex][$subCount + 1][1]), 'UTF-8'), $optionalStops) !== false))) break;
                     }
                     if ($subCount != count(explode(";", CachedData::RulesOfRecitationRegEx()[$count]->attributes()["evaluator"]))) continue;
                     for ($subCount = 0; $subCount < count(explode(";", CachedData::RulesOfRecitationRegEx()[$count]->attributes()["evaluator"])); $subCount++) {
@@ -1760,7 +1771,11 @@ class Arabic
         }
         usort($metadataList, function($x, $y) {
 		        if ($x->index == $y->index) {
-		            return $y->length == $x->length ? 0 : ($y->length > $x->length ? 1 : -1);
+		        	if ($y->length == $x->length) {
+		            return $y->origOrder > $x->origOrder ? 1 : -1;		        		
+		        	} else {
+		            return $y->length > $x->length ? 1 : -1;
+		          }
 		        } else {
 		            return $y->index > $x->index ? 1 : -1;
 		        }
