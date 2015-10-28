@@ -461,7 +461,7 @@ Partial Class host
                 writer.Write(vbCrLf + vbTab + vbTab)
                 writer.WriteBeginTag("script")
                 writer.WriteAttribute("type", "text/javascript")
-                writer.WriteAttribute("src", "Scripts/jquery-1.11.1.min.js")
+                writer.WriteAttribute("src", "Scripts/jquery-1.11.3.min.js")
                 writer.Write(HtmlTextWriter.TagRightChar + vbCrLf + vbTab + vbTab)
                 writer.WriteEndTag("script")
                 writer.Write(vbCrLf + vbTab + vbTab)
