@@ -586,7 +586,7 @@ Public Class Arabic
                         Dim MetaArgs As String() = System.Text.RegularExpressions.Regex.Match(MetadataRule.Type, Match + "\((.*)\)").Groups(1).Value.Split(","c)
                         Str = String.Empty
                         For Index As Integer = 0 To Args.Length - 1
-                            If Not Args(Index) Is Nothing Then
+                            If Not Args(Index) Is Nothing And (LearningMode Or CachedData.ColoringSpelledOutRules(Count).RuleFunc <> RuleFuncs.eLearningMode Or Index <> 0) Then
                                 Str += ReplaceMetadata(Args(Index), New RuleMetadata(0, Args(Index).Length, MetaArgs(Index).Replace(" "c, "|"c), Index), Scheme, LearningMode)
                             End If
                         Next

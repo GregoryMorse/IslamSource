@@ -1692,7 +1692,7 @@ class Arabic
                         $metaArgs = explode(",", $matches[1]);
                         $str = "";
                         for ($index = 0; $index < count($args); $index++) {
-                            if ($args[$index] != null) {
+                            if ($args[$index] != null && ($learningMode || (int)CachedData::ColoringSpelledOutRules()[$count]->attributes()["rulefunc"] != RuleFuncs::eLearningMode || $index != 0)) {
                                 $str .= Arabic::ReplaceMetadata($args[$index], new RuleMetadata(0, mb_strlen($args[$index], 'UTF-8'), str_replace(" ", "|", $metaArgs[$index]), $index), $scheme, $optionalStops, $learningMode);
                             }
                         }
