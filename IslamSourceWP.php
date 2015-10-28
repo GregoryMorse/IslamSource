@@ -1161,8 +1161,8 @@ class CachedData
     }
     public static function GetMetaRuleSet($name)
     {
-      for ($count = 0; $count < count(CachedData::IslamData()->metaruleset->children()); $count++) {
-      	if (CachedData::IslamData()->metaruleset->children()[$count]->attributes()["name"] == $name) return CachedData::IslamData()->metaruleset->children()[$count];
+      for ($count = 0; $count < count(CachedData::IslamData()->metarules->children()); $count++) {
+      	if (CachedData::IslamData()->metarules->children()[$count]->attributes()["name"] == $name) return CachedData::IslamData()->metarules->children()[$count]->children();
       }
       return null;
     }

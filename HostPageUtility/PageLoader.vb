@@ -1724,7 +1724,7 @@ Public Class ArabicData
         Dim SubCount As Integer
         Dim Ligatures As New List(Of LigatureInfo)
         Dim Combos As ArabicCombo() = LigatureCombos
-        'Division seleciton between Presentation A and B forms can be done here though wasl and gunnah need consideration
+        'Division selection between Presentation A and B forms can be done here though wasl and gunnah need consideration
         Count = 0
         While Count <> Str.Length
             If Dir Then
@@ -3504,6 +3504,7 @@ Public Class RenderArray
                 writer.Write(vbCrLf + BaseTabs + vbTab)
                 writer.WriteBeginTag(CStr(IIf(Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eNested Or Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eRanking Or Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eList, "div", "span")))
                 Dim Style As String = String.Empty
+                Dim TestIndex As Integer = Index
                 If Items(Count).TextItems(Index).DisplayClass <> RenderDisplayClass.eList And (Items(Count).Type = RenderTypes.eHeaderCenter Or (Items(Count).Type = RenderTypes.eText And (Count - Base) Mod 2 = 1)) Then Style = "background-color: #D0D0D0;"
                 If Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eNested Then
                     If Style <> String.Empty Then writer.WriteAttribute("style", Style)
@@ -3597,7 +3598,6 @@ Public Class RenderArray
                         writer.WriteAttribute("style", "color: " + System.Drawing.ColorTranslator.ToHtml(Items(Count).TextItems(Index).Clr) + ";" + If(Items(Count).TextItems(Index).Font <> String.Empty, "font-family:" + Items(Count).TextItems(Index).Font + ";", String.Empty) + Style)
                     End If
                     writer.Write(HtmlTextWriter.TagRightChar)
-                    Dim TestIndex As Integer = Index
                     Do
                         If Items(Count).TextItems(TestIndex).DisplayClass = RenderDisplayClass.eLink Then
                             writer.WriteBeginTag("a")
@@ -3619,9 +3619,9 @@ Public Class RenderArray
                         TestIndex += 1
                     Loop While Items(Count).TextItems.Length <> TestIndex AndAlso (Items(Count).TextItems(TestIndex).DisplayClass = RenderDisplayClass.eLink Or Items(Count).TextItems(Index).DisplayClass = Items(Count).TextItems(TestIndex).DisplayClass)
                     Index = TestIndex - 1
-                    If TestIndex = Items(Count).TextItems.Length Then Exit For
                 End If
                 writer.WriteEndTag(CStr(IIf(Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eNested Or Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eRanking Or Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eList, "div", "span")))
+                If TestIndex = Items(Count).TextItems.Length Then Exit For
             Next
 
             If NestPrefix = String.Empty Then

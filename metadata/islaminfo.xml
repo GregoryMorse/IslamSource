@@ -5527,7 +5527,7 @@ Ramadan fast-breaking | One 2172-gram quantity | Dates or barley or ordinary sta
 		<pattern name="OptionalPattern" match="\s+(?!{ArabicSmallHighLamAlef}|{CertainStopPattern})|{ArabicSmallHighJeem}|{ArabicSmallHighThreeDots}|(?:{ArabicSmallHighSeen}\s+)?{ArabicSmallHighLigatureQafWithLamWithAlefMaksura}|{ArabicSmallHighLigatureSadWithLamWithAlefMaksura}"></pattern>
 		<pattern name="JoinToNextWord" match="\s*(?:(?:{OptionalPattern})\s*|(?:(?:{ArabicPlaceOfSajdah}\s*)?(?:{ArabicEndOfAyah}(?:{ArabicNumbers})*\s*)(?:{ArabicStartOfRubElHizb}\s*)?))"></pattern>
 		<pattern name="ContinueToNextPronounced" match="(?:(?:{ArabicLetterAlef}|{ArabicLetterWaw}|{ArabicLetterYeh}|{ArabicLetterAlefMaksura}){ArabicSmallHighRoundedZero}|{ArabicLetterAlef}{ArabicSmallHighUprightRectangularZero})?({JoinToNextWord})({ArabicLetterAlefWasla}({ArabicLetterLam}(?={ArabicSunLetters}{ArabicShadda})|{ArabicLetterWawWithHamzaAbove}|{ArabicLetterYehWithHamzaAbove}))"></pattern>
-		<pattern name="StartingOnWordNotEndOfAyah" match="^\s*|\s*(?:{CertainStopPattern}|({OptionalPattern}))\s*|\s*(?:(?:{ArabicPlaceOfSajdah}\s*)?(?:{ArabicStartOfRubElHizb}\s*))"></pattern>
+		<pattern name="StartingOnWordNotEndOfAyah" match="^\s*|\s*(?:{CertainStopPattern}|(?:{OptionalPattern}))\s*|\s*(?:(?:{ArabicPlaceOfSajdah}\s*)?(?:{ArabicStartOfRubElHizb}\s*))"></pattern>
 		<pattern name="StartingOnWord" match="^\s*|\s*(?:{CertainStopPattern})\s*"></pattern>
 		<pattern name="ContinueOnWord" match="^\s*|\s*{ArabicSmallHighLamAlef}\s*"></pattern>
 		<pattern name="StoppingOnWord" match="\s*$|\s*(?:{CertainStopPattern})\s*"></pattern>
@@ -6234,7 +6234,7 @@ Ramadan fast-breaking | One 2172-gram quantity | Dates or barley or ordinary sta
     <colorrule name="PermissibleProlongation" match="permissibleprolong" color="OrangeRed"></colorrule>
     <colorrule name="NormalProlongation" match="normalprolong" color="213,139,24"></colorrule>
     <colorrule name="Nasalization" match="nasalize" color="Green"></colorrule>
-    <colorrule name="Unannounced" match="empty|assimilate|assimilateincomplete" color="Gray"></colorrule>
+    <colorrule name="Unannounced" match="empty|spellnumber|assimilate|assimilateincomplete" color="Gray"></colorrule>
     <colorrule name="EmphaticPronounciation" match="emphasis" color="DarkBlue"></colorrule>
     <colorrule name="UnrestLetters" match="bounce" color="Blue"></colorrule>
 	</colorrules>
@@ -6278,7 +6278,7 @@ Ramadan fast-breaking | One 2172-gram quantity | Dates or barley or ordinary sta
 		</metaruleset>
 		<metaruleset name="UthmaniQuran">
 	    <metarule name="NumberSpelling" match="({ArabicEndOfAyah})()((?:{ArabicNumbers})+)()(?={EndOfWord})" evaluator="empty;helperlparen;spellnumber;helperrparen"></metarule>
-		  <metarule name="HeadingNumberSpelling" match="({StartingOnWordNotEndOfAyah})((?:{ArabicNumbers})+)(?={EndOfWord})" evaluator=";;spellnumber"></metarule>
+		  <metarule name="HeadingNumberSpelling" match="({StartingOnWordNotEndOfAyah})((?:{ArabicNumbers})+)(?={EndOfWord})" evaluator=";spellnumber"></metarule>
 
 	    <metarule name="DivisionMarkers" match="(?:({ArabicSmallHighMeemInitialForm})|({ArabicStartOfRubElHizb})|({ArabicEndOfAyah})|({ArabicPlaceOfSajdah}))(?={EndOfWord})" evaluator="compulsorystop;startofhizb;endofversestop;prostration"></metarule>
 	    <metarule name="ContinueStopMarkers" match="({ArabicSmallHighJeem})|({ArabicSmallHighLamAlef})|({ArabicSmallHighThreeDots})(.*)({ArabicSmallHighThreeDots})|({ArabicSmallHighLigatureQafWithLamWithAlefMaksura})|({ArabicSmallHighLigatureSadWithLamWithAlefMaksura})|({ArabicSmallHighSeen})(?:{EndOfWord})" evaluator="canstoporcontinue;prohibitedtostop;stopatfirstnotsecond;;stopatsecondnotfirst;bettertostopbutpermissibletocontinue;bettertocontinuebutpermissibletostop;subtlestopwithoutbreath"></metarule>
@@ -7010,7 +7010,7 @@ Ramadan fast-breaking | One 2172-gram quantity | Dates or barley or ordinary sta
 		<chapter index="20" name="Th" uniqueletters="1"></chapter>
 		<chapter index="21" name="{lo&gt;anobiyaA^&apos;a"></chapter>
 		<chapter index="22" name="{loHaj~i"></chapter>
-		<chapter index="23" name="{lomu&amp;minuwna"></chapter>
+		<chapter index="23" name="{lomu&amp;ominuwna"></chapter>
 		<chapter index="24" name="{ln~uwri"></chapter>
 		<chapter index="25" name="{lofuroqaAni"></chapter>
 		<chapter index="26" name="{l$~uEaraA^&apos;i" uniqueletters="1"></chapter>
