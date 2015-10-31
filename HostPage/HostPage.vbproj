@@ -241,6 +241,7 @@
     <Content Include="Scripts\jquery-ui-1.10.4.min.js" />
     <Content Include="web.config" />
     <Content Include="Scripts\jquery-1.11.3.min.map" />
+    <Content Include="Scripts\jquery.min.map" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>

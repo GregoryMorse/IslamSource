@@ -1885,9 +1885,15 @@ Public Class ArabicData
     Public Const LeftToRightMark As Char = ChrW(&H200E)
     Public Const RightToLeftMark As Char = ChrW(&H200F)
     Public Const PopDirectionalFormatting As Char = ChrW(&H202C)
+    Public Const LeftToRightEmbedding As Char = ChrW(&H202A)
+    Public Const RightToLeftEmbedding As Char = ChrW(&H202B)
     Public Const LeftToRightOverride As Char = ChrW(&H202D)
     Public Const RightToLeftOverride As Char = ChrW(&H202E)
     Public Const NarrowNoBreakSpace As Char = ChrW(&H202F)
+    Public Const LeftToRightIsolate As Char = ChrW(&H2066)
+    Public Const RightToLeftIsolate As Char = ChrW(&H2067)
+    Public Const FirstStrongIsolate As Char = ChrW(&H2068)
+    Public Const PopDirectionalIsolate As Char = ChrW(&H2069)
     Public Const DottedCircle As Char = ChrW(&H25CC)
     Public Const OrnateLeftParenthesis As Char = ChrW(&HFD3E)
     Public Const OrnateRightParenthesis As Char = ChrW(&HFD3F)
@@ -1998,7 +2004,7 @@ Public Class ArabicData
         Return "return " + String.Join("||", Array.ConvertAll(Of ArrayList, String)(CType(Ranges.ToArray(GetType(ArrayList)), ArrayList()), Function(Arr As ArrayList) If(Arr.Count = 1, "c===0x" + Hex(Arr(0)), "(c>=0x" + Hex(Arr(0)) + "&&c<=0x" + Hex(Arr(Arr.Count - 1)) + ")"))) + ";"
     End Function
     Public Shared Function FixStartingCombiningSymbol(Str As String) As String
-        Return If((FindLetterBySymbol(Str.Chars(0)) <> -1 AndAlso ArabicLetters(FindLetterBySymbol(Str.Chars(0))).JoiningStyle = "T") Or Str.Length = 1, LeftToRightOverride + Str + PopDirectionalFormatting, Str)
+        Return If((FindLetterBySymbol(Str.Chars(0)) <> -1 AndAlso ArabicLetters(FindLetterBySymbol(Str.Chars(0))).JoiningStyle = "T") Or Str.Length = 1, LeftToRightEmbedding + Str + PopDirectionalFormatting, Str)
     End Function
     Public Shared Function MakeUniRegEx(Input As String) As String
         Return String.Join(String.Empty, Array.ConvertAll(Of Char, String)(Input.ToCharArray(), Function(Ch As Char) If(System.Text.RegularExpressions.Regex.Match(Ch, "[\p{IsArabic}\p{IsArabicPresentationForms-A}\p{IsArabicPresentationForms-B}]").Success, "\u" + AscW(Ch).ToString("X4"), If(Ch = "."c, "\" + Ch, Ch))))

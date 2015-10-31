@@ -111,7 +111,7 @@ Public Class Arabic
         End Function
     End Class
     Public Shared Function GetRecitationSymbols() As Array()
-        Return Array.ConvertAll(CachedData.RecitationSymbols, Function(Ch As String) New Object() {ArabicData.ArabicLetters(ArabicData.FindLetterBySymbol(Ch.Chars(0))).UnicodeName + " (" + ArabicData.FixStartingCombiningSymbol(Ch) + ArabicData.LeftToRightOverride + ")" + ArabicData.PopDirectionalFormatting, ArabicData.FindLetterBySymbol(Ch.Chars(0))})
+        Return Array.ConvertAll(CachedData.RecitationSymbols, Function(Ch As String) New Object() {ArabicData.ArabicLetters(ArabicData.FindLetterBySymbol(Ch.Chars(0))).UnicodeName + " (" + ArabicData.FixStartingCombiningSymbol(Ch) + ArabicData.LeftToRightEmbedding + ")" + ArabicData.PopDirectionalFormatting, ArabicData.FindLetterBySymbol(Ch.Chars(0))})
     End Function
     Public Shared _BuckwalterMap As Dictionary(Of Char, Integer)
     Public Shared ReadOnly Property BuckwalterMap As Dictionary(Of Char, Integer)
@@ -162,13 +162,13 @@ Public Class Arabic
         Next
         Return ArabicString.ToString()
     End Function
-    Public Shared Function TransliterateToScheme(ByVal ArabicString As String, SchemeType As ArabicData.TranslitScheme, Scheme As String, Optional OptionalStops() As Integer = Nothing, Optional PreString As String = "", Optional PostString As String = "") As String
+    Public Shared Function TransliterateToScheme(ByVal ArabicString As String, SchemeType As ArabicData.TranslitScheme, Scheme As String, Optional OptionalStops() As Integer = Nothing, Optional PreString As String = "", Optional PostString As String = "", Optional PreStop As Boolean = True, Optional PostStop As Boolean = True) As String
         If SchemeType = ArabicData.TranslitScheme.LearningMode Then
             Return TransliterateWithRules(ArabicString, Scheme, OptionalStops, True)
         ElseIf SchemeType = ArabicData.TranslitScheme.RuleBased And PreString = "" And PostString = "" Then
             Return TransliterateWithRules(ArabicString, Scheme, OptionalStops, False)
         ElseIf SchemeType = ArabicData.TranslitScheme.RuleBased Then
-            Return TransliterateContigWithRules(ArabicString, PreString, PostString, Scheme, OptionalStops)
+            Return TransliterateContigWithRules(ArabicString, PreString, PostString, PreStop, PostStop, Scheme, OptionalStops)
         ElseIf SchemeType = ArabicData.TranslitScheme.Literal Then
             Return TransliterateToRoman(ArabicString, Scheme)
         Else
@@ -398,8 +398,26 @@ Public Class Arabic
             End If
         End Function
     End Class
-    Public Shared Function ApplyContigColorRules(ByVal ArabicString As String, PreString As String, PostString As String, OptionalStops As Integer(), BreakWords As Boolean) As RenderArray.RenderText()()
-
+    Public Shared Function ApplyContigColorRules(ByVal ArabicString As String, PreString As String, PostString As String, PreStop As Boolean, PostStop As Boolean, OptionalStops As Integer(), BreakWords As Boolean) As RenderArray.RenderText()()
+        Dim RendererList As New List(Of RenderArray.RenderText())
+        RendererList.AddRange(ApplyColorRules(JoinContig(ArabicString, PreString, PostString, PreStop, PostStop, OptionalStops), OptionalStops, True))
+        Dim Index As Integer = ArabicString.IndexOf(ArabicData.ArabicEndOfAyah)
+        If PreString <> String.Empty AndAlso Index <> -1 Then
+            RendererList.RemoveAt(0)
+        End If
+        Index = ArabicString.LastIndexOf(ArabicData.ArabicEndOfAyah)
+        If PostString <> String.Empty AndAlso Index <> -1 Then
+            RendererList.RemoveAt(RendererList.Count - 1)
+        End If
+        If Not BreakWords Then
+            Dim RenderTexts As New List(Of RenderArray.RenderText)
+            For Count As Integer = 0 To RendererList.Count - 1
+                RenderTexts.AddRange(RendererList(Count))
+            Next
+            RendererList.Clear()
+            RendererList.Add(RenderTexts.ToArray())
+        End If
+        Return RendererList.ToArray()
     End Function
     Public Shared Function ApplyColorRules(ByVal ArabicString As String, OptionalStops As Integer(), BreakWords As Boolean) As RenderArray.RenderText()()
         Dim Count As Integer
@@ -550,33 +568,33 @@ Public Class Arabic
     End Function
     Public Shared Function ChangeBaseScript(ArabicString As String, BaseText As TanzilReader.QuranTexts, ByVal PreString As String, ByVal PostString As String) As String
         If BaseText = TanzilReader.QuranTexts.Warsh Then
-            ArabicString = UnjoinContig(ProcessTransform(JoinContig(ArabicString, PreString, PostString), CachedData.WarshScript, True), PreString, PostString)
+            ArabicString = UnjoinContig(ProcessTransform(JoinContig(ArabicString, PreString, PostString, False, False, Nothing), CachedData.WarshScript, True), PreString, PostString)
         End If
         Return ArabicString
     End Function
     Public Shared Function ChangeScript(ArabicString As String, ScriptType As TanzilReader.QuranScripts, ByVal PreString As String, ByVal PostString As String) As String
         If ScriptType = TanzilReader.QuranScripts.UthmaniMin Then
-            ArabicString = UnjoinContig(ProcessTransform(JoinContig(ArabicString, PreString, PostString), CachedData.UthmaniMinimalScript, False), PreString, PostString)
+            ArabicString = UnjoinContig(ProcessTransform(JoinContig(ArabicString, PreString, PostString, False, False, Nothing), CachedData.UthmaniMinimalScript, False), PreString, PostString)
         ElseIf ScriptType = TanzilReader.QuranScripts.SimpleEnhanced Then
             Dim ScriptCombine As New List(Of IslamMetadata.IslamData.RuleTranslationCategory.RuleTranslation)
             ScriptCombine.AddRange(CachedData.SimpleScriptBase)
             ScriptCombine.AddRange(CachedData.SimpleEnhancedScript)
-            ArabicString = UnjoinContig(ProcessTransform(JoinContig(ArabicString, PreString, PostString), ScriptCombine.ToArray(), False), PreString, PostString)
+            ArabicString = UnjoinContig(ProcessTransform(JoinContig(ArabicString, PreString, PostString, False, False, Nothing), ScriptCombine.ToArray(), False), PreString, PostString)
         ElseIf ScriptType = TanzilReader.QuranScripts.Simple Then
             Dim ScriptCombine As New List(Of IslamMetadata.IslamData.RuleTranslationCategory.RuleTranslation)
             ScriptCombine.AddRange(CachedData.SimpleScriptBase)
             ScriptCombine.AddRange(CachedData.SimpleScript)
-            ArabicString = UnjoinContig(ProcessTransform(JoinContig(ArabicString, PreString, PostString), ScriptCombine.ToArray(), False), PreString, PostString)
+            ArabicString = UnjoinContig(ProcessTransform(JoinContig(ArabicString, PreString, PostString, False, False, Nothing), ScriptCombine.ToArray(), False), PreString, PostString)
         ElseIf ScriptType = TanzilReader.QuranScripts.SimpleClean Then
             Dim ScriptCombine As New List(Of IslamMetadata.IslamData.RuleTranslationCategory.RuleTranslation)
             ScriptCombine.AddRange(CachedData.SimpleScriptBase)
             ScriptCombine.AddRange(CachedData.SimpleCleanScript)
-            ArabicString = UnjoinContig(ProcessTransform(JoinContig(ArabicString, PreString, PostString), ScriptCombine.ToArray(), False), PreString, PostString)
+            ArabicString = UnjoinContig(ProcessTransform(JoinContig(ArabicString, PreString, PostString, False, False, Nothing), ScriptCombine.ToArray(), False), PreString, PostString)
         ElseIf ScriptType = TanzilReader.QuranScripts.SimpleMin Then
             Dim ScriptCombine As New List(Of IslamMetadata.IslamData.RuleTranslationCategory.RuleTranslation)
             ScriptCombine.AddRange(CachedData.SimpleScriptBase)
             ScriptCombine.AddRange(CachedData.SimpleMinimalScript)
-            ArabicString = UnjoinContig(ProcessTransform(JoinContig(ArabicString, PreString, PostString), ScriptCombine.ToArray(), False), PreString, PostString)
+            ArabicString = UnjoinContig(ProcessTransform(JoinContig(ArabicString, PreString, PostString, False, False, Nothing), ScriptCombine.ToArray(), False), PreString, PostString)
         End If
         Return ArabicString
     End Function
@@ -616,7 +634,7 @@ Public Class Arabic
             Next
         Next
     End Sub
-    Public Shared Function JoinContig(ByVal ArabicString As String, ByVal PreString As String, ByVal PostString As String) As String
+    Public Shared Function JoinContig(ByVal ArabicString As String, ByVal PreString As String, ByVal PostString As String, PreStop As Boolean, PostStop As Boolean, ByRef OptionalStops As Integer()) As String
         Dim Index As Integer = PreString.LastIndexOf(" "c)
         'take last word of pre string and first word of post string or another if it is a pause marker
         'end of ayah sign without number is used as a proper place holder
@@ -627,6 +645,14 @@ Public Class Arabic
         If Index = 2 Then Index = PreString.IndexOf(" "c, Index + 1)
         If Index <> -1 Then PostString = PostString.Substring(0, Index)
         If PostString <> String.Empty Then PostString = " " + ArabicData.ArabicEndOfAyah + " " + PostString
+        If Not OptionalStops Is Nothing Then
+            Dim Stops As New List(Of Integer)
+            If PreString <> String.Empty Then Stops.Add(PreString.Length - 2)
+            For Count As Integer = 0 To OptionalStops.Length - 1
+                Stops.Add(OptionalStops(Count) + PreString.Length)
+            Next
+            If PostString <> String.Empty Then Stops.Add(PreString.Length + ArabicString.Length + 1)
+        End If
         Return PreString + ArabicString + PostString
     End Function
     Public Shared Function UnjoinContig(ByVal ArabicString As String, ByVal PreString As String, ByVal PostString As String) As String
@@ -640,8 +666,8 @@ Public Class Arabic
         End If
         Return ArabicString
     End Function
-    Public Shared Function TransliterateContigWithRules(ByVal ArabicString As String, ByVal PreString As String, ByVal PostString As String, Scheme As String, OptionalStops As Integer()) As String
-        Return UnjoinContig(TransliterateWithRules(JoinContig(ArabicString, PreString, PostString), Scheme, OptionalStops, False), PreString, PostString)
+    Public Shared Function TransliterateContigWithRules(ByVal ArabicString As String, ByVal PreString As String, ByVal PostString As String, PreStop As Boolean, PostStop As Boolean, Scheme As String, OptionalStops As Integer()) As String
+        Return UnjoinContig(TransliterateWithRules(JoinContig(ArabicString, PreString, PostString, PreStop, PostStop, OptionalStops), Scheme, OptionalStops, False), PreString, PostString)
     End Function
     Public Shared Function TransliterateWithRules(ByVal ArabicString As String, Scheme As String, OptionalStops As Integer(), LearningMode As Boolean) As String
         Dim Count As Integer
@@ -747,11 +773,11 @@ Public Class Arabic
         "var arabicSpecials = " + Utility.MakeJSArray(CachedData.ArabicSpecialLetters) + ";", _
         "function getSchemeSpecialFromMatch(str, bExp) { if (bExp) { for (var count = 0; count < arabicSpecials.length; count++) { re = new RegExp(arabicSpecials[count], ''); if (re.exec(str) !== null) return count; } } else { return arabicSpecials.indexOf(str); } return -1; }", _
         "function generateDefaultStops(str) { var re = new RegExp('(^\s*|\s+)(" + ArabicData.MakeUniRegEx(ArabicData.ArabicEndOfAyah) + "[\p{Nd}]{1,3}|" + CachedData.OptionalPattern + ")(?=\s*$|\s+)', 'g'); var arr, defstops = [], dottoggle = false; while ((arr = re.exec(str)) !== null) { if (arr[2] === String.fromCharCode(0x6D6) && (arr[2] !== String.fromCharCode(0x6DB) || dottoggle)) defstops.push(arr.index + arr[1].length); if (arr[2] === String.fromCharCode(0x6DB)) dottoggle = !dottoggle; } }", _
-        "function doTransliterate(sVal, direction, conversion) { var iCount, iSubCount, sOutVal = String.fromCharCode(direction ? 0x200F : 0x200E); if (conversion === 0) return sVal; if (direction && (conversion % 2) === 0) return transliterateWithRules(sVal, Math.floor((conversion - 2) / 2) + 2, generateDefaultStops(sVal), false); for (iCount = 0; iCount < sVal.length; iCount++) { if (sVal.charAt(iCount) === '\\') { iCount++; if (sVal.charAt(iCount) === ',') { sOutVal += String.fromCharCode(0x60C); } else if (sVal.charAt(iCount) === ';') { sOutVal += String.fromCharCode(0x61B); } else if (sVal.charAt(iCount) === '?') { sOutVal += String.fromCharCode(0x61F); } else { sOutVal += String.fromCharCode(0x202D) + sVal.charAt(iCount) + String.fromCharCode(0x202C) + String.fromCharCode(0x202E) + String.fromCharCode(0x202C); } } else { if (getSchemeSpecialFromMatch(sVal.slice(iCount), false) !== -1) { sOutVal += translitSchemes[(Math.floor((conversion - 2) / 2) + 2).toString()].special[getSchemeSpecialFromMatch(sVal.slice(iCount), false)]; re = new RegExp(arabicSpecials[getSchemeSpecialFromMatch(sVal.slice(iCount), false)], ''); iCount += re.exec(sVal.slice(iCount))[0].length - 1; } else if (sVal.length - iCount > 1 && arabicMultis.indexOf(sVal.slice(iCount, 2)) !== -1) { sOutVal += translitSchemes[(Math.floor((conversion - 2) / 2) + 2).toString()].multi[arabicMultis.indexOf(sVal.slice(iCount, 2))]; iCount++; } else { for (iSubCount = 0; iSubCount < arabicLetters.length; iSubCount++) { if (direction ? sVal.charCodeAt(iCount) === parseInt(arabicLetters[iSubCount].Symbol, 10) : sVal.charAt(iCount) === unescape(translitSchemes[(Math.floor((conversion - 2) / 2) + 2).toString()].standard[String.fromCharCode(arabicLetters[iSubCount].Symbol)])) { sOutVal += (direction ? (translitSchemes[(Math.floor((conversion - 2) / 2) + 2).toString()].standard[String.fromCharCode(arabicLetters[iSubCount].Symbol)] ? translitSchemes[(Math.floor((conversion - 2) / 2) + 2).toString()].standard[String.fromCharCode(arabicLetters[iSubCount].Symbol)] : '') : ((isCombiningSymbol(iSubCount) && (iSubCount === 0 || findLetterBySymbol(sOutVal.charCodeAt(sOutVal.length - 1)) === -1 || !isLetterDiacritic(findLetterBySymbol(sOutVal.charCodeAt(sOutVal.length - 1))) && !isSpecialSymbol(findLetterBySymbol(sOutVal.charCodeAt(sOutVal.length - 1))))) ? String.fromCharCode(0x202E) + (true ? '' : String.fromCharCode(0x25CC)) : '') + String.fromCharCode(arabicLetters[iSubCount].Symbol) + ((isCombiningSymbol(iSubCount) && (iSubCount === 0 || findLetterBySymbol(sOutVal.charCodeAt(sOutVal.length - 1)) === -1 || !isLetterDiacritic(findLetterBySymbol(sOutVal.charCodeAt(sOutVal.length - 1))) && !isSpecialSymbol(findLetterBySymbol(sOutVal.charCodeAt(sOutVal.length - 1))))) ? String.fromCharCode(0x202C) : '')); break; } } if (iSubCount === arabicLetters.length) sOutVal += sVal.charAt(iCount); } } } return unescape(sOutVal); }"
+        "function doTransliterate(sVal, direction, conversion) { var iCount, iSubCount, sOutVal = ''; if (conversion === 0) return sVal; if (direction && (conversion % 2) === 0) return transliterateWithRules(sVal, Math.floor((conversion - 2) / 2) + 2, generateDefaultStops(sVal), false); for (iCount = 0; iCount < sVal.length; iCount++) { if (sVal.charAt(iCount) === '\\' || direction && (sVal.charAt(iCount) === String.fromCharCode(0x60C) || sVal.charAt(iCount) === String.fromCharCode(0x61B) || sVal.charAt(iCount) === String.fromCharCode(0x61F))) { if (!direction) iCount++; if (sVal.charAt(iCount) === (direction ? String.fromCharCode(0x60C) : ',')) { sOutVal += (direction ? '\\,' : String.fromCharCode(0x60C)); } else if (sVal.charAt(iCount) === (direction ? String.fromCharCode(0x61B) : ';')) { sOutVal += (direction ? '\\;' : String.fromCharCode(0x61B)); } else if (sVal.charAt(iCount) === (direction ? String.fromCharCode(0x61F) : '?')) { sOutVal += (direction ? '\\?' : String.fromCharCode(0x61F)); } else { sOutVal += String.fromCharCode(0x202A) + sVal.charAt(iCount) + String.fromCharCode(0x202C); } } else { if (getSchemeSpecialFromMatch(sVal.slice(iCount), false) !== -1) { sOutVal += translitSchemes[(Math.floor((conversion - 2) / 2) + 2).toString()].special[getSchemeSpecialFromMatch(sVal.slice(iCount), false)]; re = new RegExp(arabicSpecials[getSchemeSpecialFromMatch(sVal.slice(iCount), false)], ''); iCount += re.exec(sVal.slice(iCount))[0].length - 1; } else if (sVal.length - iCount > 1 && arabicMultis.indexOf(sVal.slice(iCount, 2)) !== -1) { sOutVal += translitSchemes[(Math.floor((conversion - 2) / 2) + 2).toString()].multi[arabicMultis.indexOf(sVal.slice(iCount, 2))]; iCount++; } else { for (iSubCount = 0; iSubCount < arabicLetters.length; iSubCount++) { if (direction ? sVal.charCodeAt(iCount) === parseInt(arabicLetters[iSubCount].Symbol, 10) : sVal.charAt(iCount) === unescape(translitSchemes[(Math.floor((conversion - 2) / 2) + 2).toString()].standard[String.fromCharCode(arabicLetters[iSubCount].Symbol)])) { sOutVal += (direction ? (translitSchemes[(Math.floor((conversion - 2) / 2) + 2).toString()].standard[String.fromCharCode(arabicLetters[iSubCount].Symbol)] ? translitSchemes[(Math.floor((conversion - 2) / 2) + 2).toString()].standard[String.fromCharCode(arabicLetters[iSubCount].Symbol)] : '') : (((isCombiningSymbol(iSubCount) && (iSubCount === 0 || findLetterBySymbol(sOutVal.charCodeAt(sOutVal.length - 1)) === -1 || !isLetterDiacritic(findLetterBySymbol(sOutVal.charCodeAt(sOutVal.length - 1))) && !isSpecialSymbol(findLetterBySymbol(sOutVal.charCodeAt(sOutVal.length - 1))))) ? String.fromCharCode(0x202B) : '') + String.fromCharCode(arabicLetters[iSubCount].Symbol) + ((isCombiningSymbol(iSubCount) && (iSubCount === 0 || findLetterBySymbol(sOutVal.charCodeAt(sOutVal.length - 1)) === -1 || !isLetterDiacritic(findLetterBySymbol(sOutVal.charCodeAt(sOutVal.length - 1))) && !isSpecialSymbol(findLetterBySymbol(sOutVal.charCodeAt(sOutVal.length - 1))))) ? String.fromCharCode(0x202C) : ''))); break; } } if (iSubCount === arabicLetters.length && sVal.charCodeAt(iCount) !== 0x200E && sVal.charCodeAt(iCount) !== 0x200F && !IsExplicit(sVal.charCodeAt(iCount))) sOutVal += ((direction && conversion === 1 && sVal.charAt(iCount) !== '\n') ? '\\' : '') + sVal.charAt(iCount); } } } return unescape(sOutVal); }"
     }
     Public Shared IsDiacriticJS As String = "function isDiacritic(index) { return (" + String.Join("||", Array.ConvertAll(CachedData.RecitationDiacritics, Function(C As String) "parseInt(arabicLetters[index].Symbol, 10) === 0x" + Hex(AscW(C.Chars(0))))) + "); }"
     Public Shared DiacriticJS As String() =
-        {"function doDiacritics(sVal, direction) { var iCount, sOutVal = ''; for (iCount = 0; iCount < sVal.length; iCount++) { sOutVal += findLetterBySymbol(sVal.charCodeAt(iCount)) === -1 || !isDiacritic(findLetterBySymbol(sVal.charCodeAt(iCount))) ? sVal[iCount] : ''; } return sOutVal; }", _
+        {"function doDiacritics(sVal, direction) { var iCount, sOutVal = ''; for (iCount = 0; iCount < sVal.length; iCount++) { sOutVal += (sVal.charCodeAt(iCount) === 0x671 ? String.fromCharCode(0x627) : ((findLetterBySymbol(sVal.charCodeAt(iCount)) === -1 || !isDiacritic(findLetterBySymbol(sVal.charCodeAt(iCount)))) ? sVal[iCount] : '')); } return sOutVal; }", _
             IsDiacriticJS, _
             FindLetterBySymbolJS}
     Public Shared PlainTransliterateGenJS As String() = {FindLetterBySymbolJS, IsDiacriticJS, _
@@ -768,7 +794,7 @@ Public Class Arabic
             "function schemeHasValue(str, scheme) { for (var k in translitSchemes[scheme]) { if (translitSchemes[scheme].hasOwnProperty(k) && str === translitSchemes[scheme][k]) return true; } return false; }", _
             "String.prototype.format = function() { var formatted = this; for (var i = 0; i < arguments.length; i++) { formatted = formatted.replace(new RegExp('\\{'+i+'\\}', 'gi'), arguments[i]); } return formatted; };", _
             "RegExp.matchResult = function(subexp, offset, str, matches) { return subexp.replace(/\$(\$|&|`|\'|[0-9]+)/g, function(m, p) { if (p === '$') return '$'; if (p === '`') return str.slice(0, offset); if (p === '\'') return str.slice(offset + matches[0].length); if (p === '&' || parseInt(p, 10) <= 0 || parseInt(p, 10) >= matches.length) return matches[0]; return matches[parseInt(p, 10)]; }); };", _
-            "var ruleFunctions = [function(str, scheme, learningMode) { return [str.toUpperCase()]; }, function(str, scheme, learningMode) { return [transliterateWithRules(doTransliterate(arabicWordFromNumber(parseInt(doTransliterate(str, true, 1).replace(String.fromCharCode(0x200F), ''), 10), true, false, false), false, 1).replace(String.fromCharCode(0x200E), ''), scheme, null, learningMode)]; }, function(str, scheme, learningMode) { return [transliterateWithRules(arabicLetterSpelling(str, true), scheme, null, learningMode)]; }, function(str, scheme, learningMode) { return [translitSchemes[scheme.toString()].standard[str]]; }, function(str, scheme, learningMode) { return [translitSchemes[scheme.toString()].multi[arabicMultis.indexOf(str)]]; }, function(str, scheme, learningMode) { return [" + Utility.MakeJSArray(CachedData.ArabicFathaDammaKasra) + "[" + Utility.MakeJSArray(CachedData.ArabicTanweens) + ".indexOf(str)], '" + ArabicData.ArabicLetterNoon + "']; }, function (str, scheme, learningMode) { return [getSchemeGutteralFromString(str.slice(0, -1), scheme, true) + str[str.length - 1]]; }, function(str, scheme, learningMode) { return [str[0] + getSchemeGutteralFromString(str.slice(1), scheme, false)]; }, function(str, scheme, learningMode) { return [schemeHasValue(translitSchemes[scheme.toString()].standard[str[0]] + translitSchemes[scheme.toString()].standard[str[1]]) ? str[0] + '-' + str[1] : str]; }, function(str, scheme, learningMode) { return learningMode ? [str, ''] : ['', str]; }];", _
+            "var ruleFunctions = [function(str, scheme, learningMode) { return [str.toUpperCase()]; }, function(str, scheme, learningMode) { return [transliterateWithRules(doTransliterate(arabicWordFromNumber(parseInt(doTransliterate(str, true, 1), 10), true, false, false), false, 1), scheme, null, learningMode)]; }, function(str, scheme, learningMode) { return [transliterateWithRules(arabicLetterSpelling(str, true), scheme, null, learningMode)]; }, function(str, scheme, learningMode) { return [translitSchemes[scheme.toString()].standard[str]]; }, function(str, scheme, learningMode) { return [translitSchemes[scheme.toString()].multi[arabicMultis.indexOf(str)]]; }, function(str, scheme, learningMode) { return [" + Utility.MakeJSArray(CachedData.ArabicFathaDammaKasra) + "[" + Utility.MakeJSArray(CachedData.ArabicTanweens) + ".indexOf(str)], '" + ArabicData.ArabicLetterNoon + "']; }, function (str, scheme, learningMode) { return [getSchemeGutteralFromString(str.slice(0, -1), scheme, true) + str[str.length - 1]]; }, function(str, scheme, learningMode) { return [str[0] + getSchemeGutteralFromString(str.slice(1), scheme, false)]; }, function(str, scheme, learningMode) { return [schemeHasValue(translitSchemes[scheme.toString()].standard[str[0]] + translitSchemes[scheme.toString()].standard[str[1]]) ? str[0] + '-' + str[1] : str]; }, function(str, scheme, learningMode) { return learningMode ? [str, ''] : ['', str]; }];", _
             "function isLetter(index) { return (" + String.Join("||", Array.ConvertAll(CachedData.RecitationLetters, Function(C As String) "parseInt(arabicLetters[index].Symbol, 10) === 0x" + Hex(AscW(C.Chars(0))))) + "); }", _
             "function isSymbol(index) { return (" + String.Join("||", Array.ConvertAll(GetRecitationSymbols(), Function(A As Array) "parseInt(arabicLetters[index].Symbol, 10) === 0x" + Hex(AscW(ArabicData.ArabicLetters(CInt(A.GetValue(1))).Symbol)))) + "); }", _
             "var uthmaniMinimalScript = " + Utility.MakeJSArray(New String() {Utility.MakeJSIndexedObject(New String() {"rule", "match", "evaluator", "negativematch", "ruleFunc"}, _
@@ -794,10 +820,10 @@ Public Class Arabic
             "var allowZeroLength = " + Utility.MakeJSArray(AllowZeroLength) + ";", _
             "function ruleMetadataComparer(a, b) { return (a.index === b.index) ? (b.length === a.length ? b.origOrder - a.origOrder : b.length - a.length) : b.index - a.index; }", _
             "function replaceMetadata(sVal, metadataRule, scheme, learningMode) { var count, elimParen = function(s) { return s.replace(/\(.*\)/, ''); }; for (count = 0; count < coloringSpelledOutRules.length; count++) { var index, match = null; for (index = 0; index < coloringSpelledOutRules[count].match.split('|').length; index++) { if (metadataRule.type.split('|').map(elimParen).indexOf(coloringSpelledOutRules[count].match.split('|')[index]) !== -1) { match = coloringSpelledOutRules[count].match.split('|')[index]; break; } } if (match !== null) { var str = coloringSpelledOutRules[count].evaluator.format(sVal.substr(metadataRule.index, metadataRule.length)); if (coloringSpelledOutRules[count].ruleFunc !== 0) { var args = ruleFunctions[coloringSpelledOutRules[count].ruleFunc - 1](str, scheme, learningMode); if (args.length === 1) { str = args[0]; } else { var metaArgs = metadataRule.type.match(/\((.*)\)/)[1].split(','); str = ''; for (index = 0; index < args.length; index++) { if (args[index] !== undefined && args[index] !== null && (learningMode || coloringSpelledOutRules[count].ruleFunc !== " + CStr(RuleFuncs.eLearningMode) + " || index !== 0)) str += replaceMetadata(args[index], {index: 0, length: args[index].length, type: metaArgs[index].replace(' ', '|'), origOrder: index}, scheme, learningMode); } } } sVal = sVal.substr(0, metadataRule.index) + str + sVal.substr(metadataRule.index + metadataRule.length); } } return sVal; }", _
-            "function joinContig(sVal, preString, postString) { var index = preString.lastIndexOf(' '); if (index != -1 && preString.length - 2 = index) index = preString.lastIndexOf(' ', index - 1); if (index != -1) preString = preString.substring(index + 1); if (preString != '') preString += ' ' + String.fromCharCode(0x6DD) + ' '; index = postString.indexOf(' '); if (index == 2) index = preString.indexOf(' ', index + 1); if (index != -1) postString = postString.substring(0, index); if (postString != '') postString = ' ' + String.fromCharCode(0x6DD) + ' ' + postString; return preString + ArabicString + postString; }", _
-            "function unjoinContig(sVal, preString, postString) { var index = sVal.indexOf(String.fromCharCode(0x6DD)); if (preString != '' && index != -1) sVal = sVal.substring(index + 1 +  1); index = sVal.lastIndexOf(String.fromCharCode(0x6DD)); if (postString != '' && index != -1) sVal = sVal.substring(0, index - 1); return sVal; }", _
+            "function joinContig(sVal, preString, postString) { var index = preString.lastIndexOf(' '); if (index !== -1 && preString.length - 2 === index) index = preString.lastIndexOf(' ', index - 1); if (index !== -1) preString = preString.substring(index + 1); if (preString !== '') preString += ' ' + String.fromCharCode(0x6DD) + ' '; index = postString.indexOf(' '); if (index === 2) index = preString.indexOf(' ', index + 1); if (index !== -1) postString = postString.substring(0, index); if (postString !== '') postString = ' ' + String.fromCharCode(0x6DD) + ' ' + postString; return preString + sVal + postString; }", _
+            "function unjoinContig(sVal, preString, postString) { var index = sVal.indexOf(String.fromCharCode(0x6DD)); if (preString !== '' && index !== -1) sVal = sVal.substring(index + 1 +  1); index = sVal.lastIndexOf(String.fromCharCode(0x6DD)); if (postString !== '' && index !== -1) sVal = sVal.substring(0, index - 1); return sVal; }", _
             "function transliterateContigWithRules(sVal, preString, postString, scheme, optionalStops) { return unjoinContig(transliterateWithRules(JoinContig(sVal, preString, postString), scheme, optionalStops, false), preString, postString); }", _
-            "function transliterateWithRules(sVal, scheme, optionalStops, learningMode) { var count, index, arr, re, metadataList = [], replaceFunc = function(f, e) { return function() { return f(RegExp.matchResult(e, arguments[arguments.length - 2], arguments[arguments.length - 1], Array.prototype.slice.call(arguments).slice(0, -2)), scheme)[0]; }; }; sVal = sVal.replace(/\u200F/g, ''); for (count = 0; count < errorCheckRules.length; count++) { re = new RegExp(errorCheckRules[count].match, 'g'); while ((arr = re.exec(sVal)) !== null) { if (!errorCheckRules[count].negativematch || RegExp.matchResult(errorCheckRules[count].negativematch, arr.index, sVal, arr) === '') { console.log(errorCheckRules[count].rule + ': ' + doTransliterate(sVal.substr(0, arr.index), true, 1) + '<!-- -->' + doTransliterate(sVal.substr(arr.index), true, 1)); } } } for (count = 0; count < rulesOfRecitationRegEx.length; count++) { if (rulesOfRecitationRegEx[count].evaluator !== null) { var subcount, lindex; re = new RegExp(rulesOfRecitationRegEx[count].match, 'g'); while ((arr = re.exec(sVal)) !== null) { lindex = arr.index; for (subcount = 0; subcount < rulesOfRecitationRegEx[count].evaluator.length; subcount++) { if (rulesOfRecitationRegEx[count].evaluator[subcount] == 'optionalstop' && (optionalStops === null && arr[subcount + 1] === String.fromCharCode(0x6D6) || (optionalStops !== null && arr[subcount + 1] !== '' && optionalStops.indexOf(lindex) === -1)) || rulesOfRecitationRegEx[count].evaluator[subcount] == 'optionalnotstop' && (optionalStops === null && arr[subcount + 1] !== '' && arr[subcount + 1] !== String.fromCharCode(0x6D6) || (arr[subcount + 1].length === 0 && lindex === 0) || optionalStops !== null && arr[subcount + 1] !== '' && optionalStops.indexOf(lindex) !== -1)) break; } if (subcount !== rulesOfRecitationRegEx[count].evaluator.length) continue; for (subcount = 0; subcount < rulesOfRecitationRegEx[count].evaluator.length; subcount++) { if (rulesOfRecitationRegEx[count].evaluator[subcount] !== null && (arr[subcount + 1] && arr[subcount + 1].length !== 0 || allowZeroLength.indexOf(rulesOfRecitationRegEx[count].evaluator[subcount]) !== -1)) { metadataList.push({index: lindex, length: arr[subcount + 1] ? arr[subcount + 1].length : 0, type: rulesOfRecitationRegEx[count].evaluator[subcount], origOrder: subcount}); } lindex += (arr[subcount + 1] ? arr[subcount + 1].length : 0); } } } } metadataList.sort(ruleMetadataComparer); for (index = 0; index < metadataList.length; index++) { sVal = replaceMetadata(sVal, metadataList[index], scheme, learningMode); } for (count = 0; count < romanizationRules.length; count++) { sVal = sVal.replace(new RegExp(romanizationRules[count].match, 'g'), (romanizationRules[count].ruleFunc === 0) ? romanizationRules[count].evaluator : replaceFunc(ruleFunctions[romanizationRules[count].ruleFunc - 1], romanizationRules[count].evaluator)); } return sVal; }"}
+            "function transliterateWithRules(sVal, scheme, optionalStops, learningMode) { var count, index, arr, re, metadataList = [], replaceFunc = function(f, e) { return function() { return f(RegExp.matchResult(e, arguments[arguments.length - 2], arguments[arguments.length - 1], Array.prototype.slice.call(arguments).slice(0, -2)), scheme)[0]; }; }; for (count = 0; count < errorCheckRules.length; count++) { re = new RegExp(errorCheckRules[count].match, 'g'); while ((arr = re.exec(sVal)) !== null) { if (!errorCheckRules[count].negativematch || RegExp.matchResult(errorCheckRules[count].negativematch, arr.index, sVal, arr) === '') { console.log(errorCheckRules[count].rule + ': ' + doTransliterate(sVal.substr(0, arr.index), true, 1) + '<!-- -->' + doTransliterate(sVal.substr(arr.index), true, 1)); } } } for (count = 0; count < rulesOfRecitationRegEx.length; count++) { if (rulesOfRecitationRegEx[count].evaluator !== null) { var subcount, lindex; re = new RegExp(rulesOfRecitationRegEx[count].match, 'g'); while ((arr = re.exec(sVal)) !== null) { lindex = arr.index; for (subcount = 0; subcount < rulesOfRecitationRegEx[count].evaluator.length; subcount++) { if (rulesOfRecitationRegEx[count].evaluator[subcount] == 'optionalstop' && (optionalStops === null && arr[subcount + 1] === String.fromCharCode(0x6D6) || (optionalStops !== null && arr[subcount + 1] !== '' && optionalStops.indexOf(lindex) === -1)) || rulesOfRecitationRegEx[count].evaluator[subcount] == 'optionalnotstop' && (optionalStops === null && arr[subcount + 1] !== '' && arr[subcount + 1] !== String.fromCharCode(0x6D6) || (arr[subcount + 1].length === 0 && lindex === 0) || optionalStops !== null && arr[subcount + 1] !== '' && optionalStops.indexOf(lindex) !== -1)) break; } if (subcount !== rulesOfRecitationRegEx[count].evaluator.length) continue; for (subcount = 0; subcount < rulesOfRecitationRegEx[count].evaluator.length; subcount++) { if (rulesOfRecitationRegEx[count].evaluator[subcount] !== null && (arr[subcount + 1] && arr[subcount + 1].length !== 0 || allowZeroLength.indexOf(rulesOfRecitationRegEx[count].evaluator[subcount]) !== -1)) { metadataList.push({index: lindex, length: arr[subcount + 1] ? arr[subcount + 1].length : 0, type: rulesOfRecitationRegEx[count].evaluator[subcount], origOrder: subcount}); } lindex += (arr[subcount + 1] ? arr[subcount + 1].length : 0); } } } } metadataList.sort(ruleMetadataComparer); for (index = 0; index < metadataList.length; index++) { sVal = replaceMetadata(sVal, metadataList[index], scheme, learningMode); } for (count = 0; count < romanizationRules.length; count++) { sVal = sVal.replace(new RegExp(romanizationRules[count].match, 'g'), (romanizationRules[count].ruleFunc === 0) ? romanizationRules[count].evaluator : replaceFunc(ruleFunctions[romanizationRules[count].ruleFunc - 1], romanizationRules[count].evaluator)); } return sVal; }"}
     Public Shared NumberGenJS As String() = {"var arabicOrdinalNumbers = " + Utility.MakeJSArray(CachedData.ArabicOrdinalNumbers) + ";", _
                 "var arabicOrdinalExtraNumbers = " + Utility.MakeJSArray(CachedData.ArabicOrdinalExtraNumbers) + ";", _
                 "var arabicFractionNumbers = " + Utility.MakeJSArray(CachedData.ArabicFractionNumbers) + ";", _
@@ -823,8 +849,8 @@ Public Class Arabic
     End Function
     Public Shared Function GetTransliterateJS() As String()
         Dim GetJS As New List(Of String) From {"javascript: doTransliterateDisplay();", String.Empty, GetArabicSymbolJSArray(), GetTranslitSchemeJSArray(), _
-        "function doFixDirection(sVal, direction) { var iCount, sOutVal = direction ? '\u200E' : '\u200F', bInv = false; for (iCount = 0; iCount < sVal.length; iCount++) { sOutVal += (sVal.charCodeAt(iCount) == 0x200E || sVal.charCodeAt(iCount) == 0x200F || IsExplicit(sVal.charCodeAt(iCount))) ? '' : (!bInv && IsNeutral(sVal.charCodeAt(iCount)) ? '' : (direction ? '\u202A' : '\u202B')) + sVal[iCount]; } return sOutVal; }", _
-        "function doTransliterateDisplay() { $('#translitvalue').css('direction', $('#direction0').prop('checked') ? 'ltr' : 'rtl'); $('#translitvalue').text($('#scheme0').prop('checked') ? doTransliterate($('#translitedit').val(), $('#direction0').prop('checked'), parseInt($('#translitscheme').val(), 10)) : ($('#scheme1').prop('checked') ? doDiacritics($('#translitedit').val(), $('#diacriticscheme0').prop('checked')) : doFixDirection($('#translitedit').val(), $('#diacriticscheme0').prop('checked')))); }"}
+        "function doDirectionDom(elem, sVal, direction) { elem.css('direction', direction ? 'ltr' : 'rtl'); var stack = [], lastStrong = -1, lastCount = 0, iCount; for (iCount = 0; iCount < sVal.length; iCount++) { if (sVal.charCodeAt(iCount) === 0x200E || sVal.charCodeAt(iCount) === 0x200F || sVal.charCodeAt(iCount) === 0x61C) { if (lastStrong !== iCount - 1) {  } } else if (IsExplicit(sVal.charCodeAt(iCount))) { if (sVal.charCodeAt(iCount) === 0x202C || sVal.charCodeAt(iCount) === 0x2069) { stack.pop()[1].add(document.createTextNode(sVal.substring(lastCount, iCount - 1))); lastCount = iCount + 1; lastStrong = -1; } else { (stack.length === 0 ? elem : stack[stack.length - 1][1]).add(document.createTextNode(sVal.substring(lastCount, iCount - 1))); lastCount = iCount + 1; lastStrong = -1; stack.push([sVal[iCount], (stack.length === 0 ? elem : stack[stack.length - 1][1]).add('span')]); stack[stack.length - 1][1].css('direction', (sVal[iCount] === 0x202D || sVal[iCount] === 0x202A || sVal[iCount] === 0x2066) ? 'ltr' : 'rtl'); } } else if (!IsNeutral(sVal.charCodeAt(iCount))) { lastStrong = iCount; } } (stack.length === 0 ? elem : stack[stack.length - 1][1]).add(document.createTextNode(sVal.substring(lastCount, iCount - 1))); }", _
+        "function doTransliterateDisplay() { $('#translitvalue').css('direction', !$('#scheme1').prop('checked') && $('#direction0').prop('checked') ? 'ltr' : 'rtl'); $('#translitvalue').empty(); $('#translitvalue').text($('#scheme0').prop('checked') ? doTransliterate($('#translitedit').val(), $('#direction0').prop('checked'), parseInt($('#translitscheme').val(), 10)) : ($('#scheme1').prop('checked') ? doDiacritics($('#translitedit').val(), $('#diacriticscheme0').prop('checked')) : $('#translitedit').val())); $('#translitvalue').html($('#translitvalue').html().replace(/\n/g, '<br>')); }"}
         GetJS.AddRange(ArabicData.GetUniCats())
         GetJS.AddRange(PlainTransliterateGenJS)
         GetJS.AddRange(TransliterateGenJS)
@@ -849,7 +875,7 @@ Public Class Arabic
         Dim GetJS As New List(Of String) From {"javascript: changeTransliteration();", String.Empty, Utility.GetLookupStyleSheetJS(), GetArabicSymbolJSArray(), GetTranslitSchemeJSArray(), _
         "function processTransliteration(list) { var k, child, iSubCount, text; $('span.transliteration').each(function() { $(this).css('display', $('#translitscheme').val() === '0' ? 'none' : 'block'); }); for (k in list) { text = ''; if (list.hasOwnProperty(k) && list[k]['linkchild']) { for (child in list[k]['children']) { if (list[k]['children'].hasOwnProperty(child)) { processTransliteration(list[k]['children'][child]['children']); for (iSubCount = 0; iSubCount < list[k]['children'][child]['arabic'].length; iSubCount++) { if ($('#translitscheme').val() !== '0' && $('#translitscheme').val() !== '1'  && parseInt($('#translitscheme').val(), 10) % 2 !== 1 && list[k]['children'][child]['arabic'][iSubCount] !== '' && list[k]['children'][child]['translit'][iSubCount] !== '') { if (text !== '') text += ' '; text += $('#' + list[k]['children'][child]['arabic'][iSubCount]).text(); } else { if (list[k]['children'][child]['translit'][iSubCount] !== '') $('#' + list[k]['children'][child]['translit'][iSubCount]).text(($('#translitscheme').val() === '0' || list[k]['children'][child]['arabic'][iSubCount] === '') ? '' : doTransliterate($('#' + list[k]['children'][child]['arabic'][iSubCount]).text(), true, parseInt($('#translitscheme').val(), 10))); } } } } if ($('#translitscheme').val() !== '0' && $('#translitscheme').val() !== '1' && parseInt($('#translitscheme').val(), 10) % 2 !== 1) { text = transliterateWithRules(text, Math.floor((parseInt($('#translitscheme').val(), 10) - 2) / 2) + 2, null, false).split(' '); for (child in list[k]['children']) { if (list[k]['children'].hasOwnProperty(child)) { for (iSubCount = 0; iSubCount < list[k]['children'][child]['translit'].length; iSubCount++) { if (list[k]['children'][child]['arabic'][iSubCount] !== '' && list[k]['children'][child]['translit'][iSubCount] !== '') $('#' + list[k]['children'][child]['translit'][iSubCount]).text(text.shift()); } } } } } else { processTransliteration(list[k]['children']); } for (iSubCount = 0; iSubCount < list[k]['arabic'].length; iSubCount++) { if (list[k]['translit'][iSubCount] !== '') $('#' + list[k]['translit'][iSubCount]).text(($('#translitscheme').val() === '0' || list[k]['arabic'][iSubCount] === '') ? '' : (($('#translitscheme').val() !== '0' && $('#translitscheme').val() !== '1' && parseInt($('#translitscheme').val(), 10) % 2 !== 1) ? transliterateWithRules($('#' + list[k]['arabic'][iSubCount]).text(), parseInt($('#translitscheme').val(), 10) >= 2 ? Math.floor((parseInt($('#translitscheme').val(), 10) - 2) / 2) + 2 : parseInt($('#translitscheme').val(), 10), null, false) : doTransliterate($('#' + list[k]['arabic'][iSubCount]).text(), true, parseInt($('#translitscheme').val(), 10)))); } } }", _
         "function changeTransliteration() { changeChapterTranslit(); var i; for (i = 0; i < renderList.length; i++) { processTransliteration(renderList[i]); } }", _
-        "function changeChapterTranslit() { var i; for (i = 0; i < $('#quranselection').get(0).options.length; i++) { $('#quranselection').get(0).options[i].text = $('#quranselection').get(0).options[i].text.replace(/(\(.*? )(.*?)(\))( )?(.*)/g, function (m, open, a, close) { return open + a + close + ' ' + (($('#translitscheme').val() === '0' || a === '') ? '' : (($('#translitscheme').val() !== '0' && $('#translitscheme').val() !== '1' && parseInt($('#translitscheme').val(), 10) % 2 !== 1) ? transliterateWithRules(a, parseInt($('#translitscheme').val(), 10) >= 2 ? Math.floor((parseInt($('#translitscheme').val(), 10) - 2) / 2) + 2 : parseInt($('#translitscheme').val(), 10), null, false) : doTransliterate(a, true, parseInt($('#translitscheme').val(), 10)))).replace(String.fromCharCode(0x200F), ''); }); } }"}
+        "function changeChapterTranslit() { var i; for (i = 0; i < $('#quranselection').get(0).options.length; i++) { $('#quranselection').get(0).options[i].text = $('#quranselection').get(0).options[i].text.replace(/(\(.*? )(.*?)(\))( )?(.*)/g, function (m, open, a, close) { return open + a + close + ' ' + (($('#translitscheme').val() === '0' || a === '') ? '' : (($('#translitscheme').val() !== '0' && $('#translitscheme').val() !== '1' && parseInt($('#translitscheme').val(), 10) % 2 !== 1) ? transliterateWithRules(a, parseInt($('#translitscheme').val(), 10) >= 2 ? Math.floor((parseInt($('#translitscheme').val(), 10) - 2) / 2) + 2 : parseInt($('#translitscheme').val(), 10), null, false) : doTransliterate(a, true, parseInt($('#translitscheme').val(), 10)))); }); } }"}
         GetJS.AddRange(PlainTransliterateGenJS)
         GetJS.AddRange(TransliterateGenJS)
         GetJS.AddRange(NumberGenJS)
@@ -2832,11 +2858,11 @@ Public Class CachedData
                 DupChars = Array.FindAll(DupChars, Function(Ch As String) Array.IndexOf(Union, Ch) = -1)
                 'Mutually exclusive differences counted only once
                 Dim MutExc As Integer = Array.FindAll(Chars, Function(Ch As String) Array.IndexOf(MutualExclusiveChars, Ch) <> -1).Length
-                LetCombs.Add(ArabicData.LeftToRightOverride + (Union.Length - Chars.Length - DupChars.Length + MutExc + 8).ToString("00") + "    " + ArabicData.PopDirectionalFormatting + DocBuilder.GetRegExText(Lets(Count)) + "+" + DocBuilder.GetRegExText(Lets(DupCount)) + ArabicData.LeftToRightOverride + "    " + CStr(Union.Length) + "    " + String.Join(", ", Chars) + " <> " + String.Join(", ", DupChars) + ArabicData.PopDirectionalFormatting)
+                LetCombs.Add(ArabicData.LeftToRightEmbedding + (Union.Length - Chars.Length - DupChars.Length + MutExc + 8).ToString("00") + "    " + ArabicData.PopDirectionalFormatting + DocBuilder.GetRegExText(Lets(Count)) + "+" + DocBuilder.GetRegExText(Lets(DupCount)) + ArabicData.LeftToRightEmbedding + "    " + CStr(Union.Length) + "    " + String.Join(", ", Chars) + " <> " + String.Join(", ", DupChars) + ArabicData.PopDirectionalFormatting)
             Next
         Next
         LetCombs.Sort(StringComparer.Ordinal)
-        Return ArabicData.LeftToRightMark + String.Join(vbCrLf, LetCombs.ToArray())
+        Return String.Join(vbCrLf, LetCombs.ToArray())
     End Function
     Public Shared ReadOnly Property ArabicLetters As String()
         Get
@@ -3807,7 +3833,7 @@ Public Class DocBuilder
         Dim Cols As Color() = GenerateNDistinctColors(Strs.Length + 1, 15, 5)
         Dim Renderers As New List(Of RenderArray.RenderText)
         For Count As Integer = 0 To Strs.Length - 1
-            Renderers.Add(New RenderArray.RenderText(If(bArabic, RenderArray.RenderDisplayClass.eArabic, RenderArray.RenderDisplayClass.eLTR), Strs(Count) + If(Not bArabic And (Strs(Count) = String.Empty Or Strs(Count) = CStr(ArabicData.LeftToRightMark)), "NULL" + CStr(Count), "_" + CStr(Count))) With {.Clr = Cols(Count + 1)})
+            Renderers.Add(New RenderArray.RenderText(If(bArabic, RenderArray.RenderDisplayClass.eArabic, RenderArray.RenderDisplayClass.eLTR), Strs(Count) + If(Not bArabic And (Strs(Count) = String.Empty Or Strs(Count).StartsWith(ArabicData.LeftToRightEmbedding)), "NULL" + CStr(Count), "_" + CStr(Count))) With {.Clr = Cols(Count + 1)})
             'Renderers.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, CStr(Count)) With {.Clr = Color.DarkRed})
             If Not bArabic And Count <> Strs.Length - 1 Then Renderers.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, ";"))
         Next
@@ -3859,7 +3885,7 @@ Public Class DocBuilder
         Return Renderers.ToArray()
     End Function
     Public Shared Function GetRegExText(Str As String) As String
-        Return ArabicData.LeftToRightMark + System.Text.RegularExpressions.Regex.Replace(System.Text.RegularExpressions.Regex.Replace(Str, "\\u([0-9a-fA-F]{4})", Function(Match As System.Text.RegularExpressions.Match) ChrW(Integer.Parse(Match.Groups(1).Value, Globalization.NumberStyles.HexNumber))), "[\p{IsArabic}\p{IsArabicPresentationForms-A}\p{IsArabicPresentationForms-B}]+", ArabicData.LeftToRightOverride + "$&" + ArabicData.PopDirectionalFormatting)
+        Return System.Text.RegularExpressions.Regex.Replace(System.Text.RegularExpressions.Regex.Replace(Str, "\\u([0-9a-fA-F]{4})", Function(Match As System.Text.RegularExpressions.Match) ChrW(Integer.Parse(Match.Groups(1).Value, Globalization.NumberStyles.HexNumber))), "[\p{IsArabic}\p{IsArabicPresentationForms-A}\p{IsArabicPresentationForms-B}]+", ArabicData.LeftToRightEmbedding + "$&" + ArabicData.PopDirectionalFormatting)
     End Function
     Public Shared Function GetMetadataRules(ID As String) As Array()
         Dim Output(CachedData.IslamData.MetaRules.Length + 2) As Array
@@ -4102,10 +4128,10 @@ Public Class DocBuilder
         'text before and after reference matches needs rendering
         'hadith reference matching {name,book/hadith}
         If TanzilReader.IsQuranTextReference(Strings) Then
-            Renderer.Items.AddRange(TanzilReader.QuranTextFromReference(Strings, SchemeType, Scheme, TranslationIndex, Options.ContainsKey("W4W") Or Options.ContainsKey("W4WNum"), Options.ContainsKey("W4WNum"), Options.ContainsKey("NoArabic"), Options.ContainsKey("Header"), Options.ContainsKey("NoRef")).Items)
+            Renderer.Items.AddRange(TanzilReader.QuranTextFromReference(Strings, SchemeType, Scheme, TranslationIndex, Options.ContainsKey("W4W") Or Options.ContainsKey("W4WNum"), Options.ContainsKey("W4WNum"), Options.ContainsKey("NoArabic"), Options.ContainsKey("Header"), Options.ContainsKey("NoRef"), Options.ContainsKey("Colorize"), Options.ContainsKey("Verses")).Items)
         ElseIf Strings.StartsWith("search:") Then
             Dim SelArr As String() = Strings.Replace("search:", String.Empty).Split(","c)
-            Renderer.Items.AddRange(TanzilReader.QuranTextFromSearch(SelArr(0).Replace("&leftbrace;", "{").Replace("&rightbrace;", "}").Replace("&comma;", ",").Replace("&semicolon;", ";"), SchemeType, Scheme, TranslationIndex, Options.ContainsKey("W4W") Or Options.ContainsKey("W4WNum"), Options.ContainsKey("W4WNum"), Options.ContainsKey("NoArabic"), Options.ContainsKey("Header"), Options.ContainsKey("NoRef")).Items)
+            Renderer.Items.AddRange(TanzilReader.QuranTextFromSearch(SelArr(0).Replace("&leftbrace;", "{").Replace("&rightbrace;", "}").Replace("&comma;", ",").Replace("&semicolon;", ";"), SchemeType, Scheme, TranslationIndex, Options.ContainsKey("W4W") Or Options.ContainsKey("W4WNum"), Options.ContainsKey("W4WNum"), Options.ContainsKey("NoArabic"), Options.ContainsKey("Header"), Options.ContainsKey("NoRef"), Options.ContainsKey("Colorize"), Options.ContainsKey("Verses")).Items)
         ElseIf Strings.StartsWith("symbol:") Then
             Dim Symbols As New List(Of ArabicData.ArabicSymbol)
             Dim SelArr As String() = Strings.Replace("symbol:", String.Empty).Split(","c)
@@ -4458,6 +4484,14 @@ Public Class TanzilReader
         Return New String() {"javascript: changeQuranDivision(this.selectedIndex);", String.Empty, Utility.GetClearOptionListJS(), _
         "function changeQuranDivision(index) { var iCount; var qurandata = " + JSArrays + "; var eSelect = $('#quranselection').get(0); clearOptionList(eSelect); for (iCount = 0; iCount < qurandata[index].length; iCount++) { eSelect.options.add(new Option(qurandata[index][iCount][0], qurandata[index][iCount][1])); } }"}
     End Function
+    Public Shared Function GetWordVerseModeJS() As String()
+        Return New String() {"javascript: changeWordVerseMode(this.selectedIndex);", String.Empty, _
+                             "function changeWordVerseMode(index) {}"}
+    End Function
+    Public Shared Function GetColorCueModeJS() As String()
+        Return New String() {"javascript: changeColorCueMode(this.selectedIndex);", String.Empty, _
+                             "function changeColorCueMode(index) {}"}
+    End Function
     Public Shared Function GetWordPartitions() As String()
         Dim Parts As New Generic.List(Of String) From {Utility.LoadResourceString("IslamInfo_Letters"), Utility.LoadResourceString("IslamInfo_Words"), Utility.LoadResourceString("IslamInfo_UniqueWords"), Utility.LoadResourceString("IslamInfo_UniqueWordsPerPart"), Utility.LoadResourceString("IslamInfo_WordsPerPart"), Utility.LoadResourceString("IslamInfo_UniqueWordsPerStation"), Utility.LoadResourceString("IslamInfo_WordsPerStation"), Utility.LoadResourceString("IslamInfo_IsolatedLetters"), Utility.LoadResourceString("IslamInfo_LetterPatterns"), Utility.LoadResourceString("IslamInfo_LetterPatterns"), Utility.LoadResourceString("IslamInfo_LetterPatterns"), Utility.LoadResourceString("IslamInfo_Prefix"), Utility.LoadResourceString("IslamInfo_Suffix")}
         Parts.AddRange(Array.ConvertAll(CachedData.IslamData.PartsOfSpeech, Function(POS As IslamData.PartOfSpeechInfo) Utility.LoadResourceString("IslamInfo_" + POS.Id)))
@@ -4536,7 +4570,7 @@ Public Class TanzilReader
             Array.Sort(LetterFreqArray, Function(Key As Char, NextKey As Char) CachedData.LetterDictionary.Item(NextKey).Count.CompareTo(CachedData.LetterDictionary.Item(Key).Count))
             For Count As Integer = 0 To LetterFreqArray.Length - 1
                 Total += CachedData.LetterDictionary.Item(LetterFreqArray(Count)).Count
-                Output.Add(New String() {ArabicData.LeftToRightOverride + ArabicData.GetUnicodeName(LetterFreqArray(Count)) + " ( " + ArabicData.PopDirectionalFormatting + ArabicData.FixStartingCombiningSymbol(LetterFreqArray(Count)) + ArabicData.LeftToRightOverride + " )" + ArabicData.PopDirectionalFormatting, String.Empty, String.Empty, CStr(CachedData.LetterDictionary.Item(LetterFreqArray(Count)).Count), (CDbl(CachedData.LetterDictionary.Item(LetterFreqArray(Count)).Count) * 100 / All).ToString("n2"), (CDbl(Total) * 100 / All).ToString("n2")})
+                Output.Add(New String() {ArabicData.LeftToRightEmbedding + ArabicData.GetUnicodeName(LetterFreqArray(Count)) + " ( " + ArabicData.PopDirectionalFormatting + ArabicData.FixStartingCombiningSymbol(LetterFreqArray(Count)) + ArabicData.LeftToRightEmbedding + " )" + ArabicData.PopDirectionalFormatting, String.Empty, String.Empty, CStr(CachedData.LetterDictionary.Item(LetterFreqArray(Count)).Count), (CDbl(CachedData.LetterDictionary.Item(LetterFreqArray(Count)).Count) * 100 / All).ToString("n2"), (CDbl(Total) * 100 / All).ToString("n2")})
             Next
         ElseIf Index = 7 Then
             All = CachedData.TotalIsolatedLetters
@@ -4545,7 +4579,7 @@ Public Class TanzilReader
             Array.Sort(LetterFreqArray, Function(Key As Char, NextKey As Char) CachedData.IsolatedLetterDictionary.Item(NextKey).Count.CompareTo(CachedData.IsolatedLetterDictionary.Item(Key).Count))
             For Count As Integer = 0 To LetterFreqArray.Length - 1
                 Total += CachedData.IsolatedLetterDictionary.Item(LetterFreqArray(Count)).Count
-                Output.Add(New String() {ArabicData.LeftToRightOverride + ArabicData.GetUnicodeName(LetterFreqArray(Count)) + " ( " + ArabicData.PopDirectionalFormatting + ArabicData.FixStartingCombiningSymbol(LetterFreqArray(Count)) + ArabicData.LeftToRightOverride + " )" + ArabicData.PopDirectionalFormatting, String.Empty, String.Empty, CStr(CachedData.IsolatedLetterDictionary.Item(LetterFreqArray(Count)).Count), (CDbl(CachedData.IsolatedLetterDictionary.Item(LetterFreqArray(Count)).Count) * 100 / All).ToString("n2"), (CDbl(Total) * 100 / All).ToString("n2")})
+                Output.Add(New String() {ArabicData.LeftToRightEmbedding + ArabicData.GetUnicodeName(LetterFreqArray(Count)) + " ( " + ArabicData.PopDirectionalFormatting + ArabicData.FixStartingCombiningSymbol(LetterFreqArray(Count)) + ArabicData.LeftToRightEmbedding + " )" + ArabicData.PopDirectionalFormatting, String.Empty, String.Empty, CStr(CachedData.IsolatedLetterDictionary.Item(LetterFreqArray(Count)).Count), (CDbl(CachedData.IsolatedLetterDictionary.Item(LetterFreqArray(Count)).Count) * 100 / All).ToString("n2"), (CDbl(Total) * 100 / All).ToString("n2")})
             Next
         ElseIf Index = 1 Or Index = 11 Or Index = 12 Or Index >= 13 And Index < 13 + CachedData.IslamData.PartsOfSpeech.Length + CachedData.RecitationSymbols.Length + CachedData.RecitationSymbols.Length + CachedData.RecitationSymbols.Length Then
             Dim Dict As Generic.Dictionary(Of String, ArrayList)
@@ -4604,14 +4638,14 @@ Public Class TanzilReader
                 All = If(Index = 5, CachedData.TotalUniqueWordsInStations, CachedData.TotalUniqueWordsInParts)
                 For Count As Integer = 0 To CInt(IIf(Index = 5, TanzilReader.GetStationCount(), TanzilReader.GetPartCount())) - 1
                     Total += DivArray(Count).Count
-                    Output.Add(New String() {ArabicData.LeftToRightOverride + CStr(Count + 1) + ArabicData.PopDirectionalFormatting, String.Empty, String.Empty, CStr(DivArray(Count).Count), (CDbl(DivArray(Count).Count) * 100 / All).ToString("n2"), (CDbl(Total) * 100 / All).ToString("n2")})
+                    Output.Add(New String() {ArabicData.LeftToRightEmbedding + CStr(Count + 1) + ArabicData.PopDirectionalFormatting, String.Empty, String.Empty, CStr(DivArray(Count).Count), (CDbl(DivArray(Count).Count) * 100 / All).ToString("n2"), (CDbl(Total) * 100 / All).ToString("n2")})
                 Next
             ElseIf Index = 4 Or Index = 6 Then
                 DivArray = If(Index = 6, CachedData.StationUniqueArray, CachedData.PartUniqueArray)
                 All = If(Index = 6, CachedData.TotalWordsInStations, CachedData.TotalWordsInParts)
                 For Count As Integer = 0 To CInt(IIf(Index = 6, TanzilReader.GetStationCount(), TanzilReader.GetPartCount())) - 1
                     Total += DivArray(Count).Count
-                    Output.Add(New String() {ArabicData.LeftToRightOverride + CStr(Count + 1) + ArabicData.PopDirectionalFormatting, String.Empty, String.Empty, CStr(DivArray(Count).Count), (CDbl(DivArray(Count).Count) * 100 / All).ToString("n2"), (CDbl(Total) * 100 / All).ToString("n2")})
+                    Output.Add(New String() {ArabicData.LeftToRightEmbedding + CStr(Count + 1) + ArabicData.PopDirectionalFormatting, String.Empty, String.Empty, CStr(DivArray(Count).Count), (CDbl(DivArray(Count).Count) * 100 / All).ToString("n2"), (CDbl(Total) * 100 / All).ToString("n2")})
                 Next
             End If
         ElseIf Index = 8 Then
@@ -4725,7 +4759,7 @@ Public Class TanzilReader
                     Next
                 Next
             Next
-            Strings(LetCount) = ArabicData.LeftToRightOverride + DumpRecDictionary(PreDict, False, 0, True) + "\" + Arabic.TransliterateToScheme(CachedData.RecitationSymbols(LetCount), ArabicData.TranslitScheme.Literal, String.Empty) + "\" + DumpRecDictionary(PostDict, True, 0, True) + ArabicData.PopDirectionalFormatting
+            Strings(LetCount) = ArabicData.LeftToRightEmbedding + DumpRecDictionary(PreDict, False, 0, True) + "\" + Arabic.TransliterateToScheme(CachedData.RecitationSymbols(LetCount), ArabicData.TranslitScheme.Literal, String.Empty) + "\" + DumpRecDictionary(PostDict, True, 0, True) + ArabicData.PopDirectionalFormatting
         Next
         Return Strings
     End Function
@@ -4866,7 +4900,7 @@ Public Class TanzilReader
                     Pres += StrReverse(CStr(Prefixes(Key)(Count)))
                 End If
             Next
-            Strings(CurNum) = ArabicData.LeftToRightOverride + "Pre: " + Pres + " Key: " + Key + ArabicData.PopDirectionalFormatting
+            Strings(CurNum) = ArabicData.LeftToRightEmbedding + "Pre: " + Pres + " Key: " + Key + ArabicData.PopDirectionalFormatting
             CurNum += 1
         Next
         For Each Key As String In Suffixes.Keys
@@ -4878,15 +4912,15 @@ Public Class TanzilReader
                     Pres += CStr(Suffixes(Key)(Count))
                 End If
             Next
-            Strings(CurNum) = ArabicData.LeftToRightOverride + "Key: " + Key + " Suf: " + Pres + ArabicData.PopDirectionalFormatting
+            Strings(CurNum) = ArabicData.LeftToRightEmbedding + "Key: " + Key + " Suf: " + Pres + ArabicData.PopDirectionalFormatting
             CurNum += 1
         Next
         For Each Key As String In PreMidSuf.Keys
-            Strings(CurNum) = ArabicData.LeftToRightOverride + "Key:" + Key + "\" + Arabic.TransliterateToScheme(Key, ArabicData.TranslitScheme.Literal, String.Empty) + "\" + DumpRecDictionary(CType(PreMidSuf(Key)(0), Dictionary(Of String, Object())), False, 0, True) + "\" + ArabicData.PopDirectionalFormatting
+            Strings(CurNum) = ArabicData.LeftToRightEmbedding + "Key:" + Key + "\" + Arabic.TransliterateToScheme(Key, ArabicData.TranslitScheme.Literal, String.Empty) + "\" + DumpRecDictionary(CType(PreMidSuf(Key)(0), Dictionary(Of String, Object())), False, 0, True) + "\" + ArabicData.PopDirectionalFormatting
             CurNum += 1
         Next
         For Each Key As String In SufMidPre.Keys
-            Strings(CurNum) = ArabicData.LeftToRightOverride + "Key:" + Key + "\" + Arabic.TransliterateToScheme(Key, ArabicData.TranslitScheme.Literal, String.Empty) + "\" + DumpRecDictionary(CType(SufMidPre(Key)(0), Dictionary(Of String, Object())), False, 0, True) + "\" + ArabicData.PopDirectionalFormatting
+            Strings(CurNum) = ArabicData.LeftToRightEmbedding + "Key:" + Key + "\" + Arabic.TransliterateToScheme(Key, ArabicData.TranslitScheme.Literal, String.Empty) + "\" + DumpRecDictionary(CType(SufMidPre(Key)(0), Dictionary(Of String, Object())), False, 0, True) + "\" + ArabicData.PopDirectionalFormatting
             CurNum += 1
         Next
         Return Strings
@@ -5023,12 +5057,12 @@ Public Class TanzilReader
                                       Dict.Add(Str.Chars(0), Str.Chars(1))
                                   End If
                               End Sub)
-        Dim Val As String = ArabicData.LeftToRightOverride + "Combinations: " + ArabicData.PopDirectionalFormatting
+        Dim Val As String = ArabicData.LeftToRightEmbedding + "Combinations: " + ArabicData.PopDirectionalFormatting
         For Each Key As Char In Dict.Keys
             If Dict.Item(Key).Length > (DiaSymbols.Length + LtrSymbols.Length) / 2 Then
-                Val += ArabicData.FixStartingCombiningSymbol(Key) + ArabicData.LeftToRightOverride + " [" + ArabicData.PopDirectionalFormatting + String.Join(" ", Array.ConvertAll(New String(Array.FindAll((DiaSymbols + LtrSymbols).ToCharArray(), Function(C As Char) Not Dict.Item(Key).Contains(C))).ToCharArray(), Function(C As Char) ArabicData.FixStartingCombiningSymbol(CStr(C)))) + ArabicData.LeftToRightOverride + " ]" + ArabicData.PopDirectionalFormatting + vbTab
+                Val += ArabicData.FixStartingCombiningSymbol(Key) + ArabicData.LeftToRightEmbedding + " [" + ArabicData.PopDirectionalFormatting + String.Join(" ", Array.ConvertAll(New String(Array.FindAll((DiaSymbols + LtrSymbols).ToCharArray(), Function(C As Char) Not Dict.Item(Key).Contains(C))).ToCharArray(), Function(C As Char) ArabicData.FixStartingCombiningSymbol(CStr(C)))) + ArabicData.LeftToRightEmbedding + " ]" + ArabicData.PopDirectionalFormatting + vbTab
             Else
-                Val += ArabicData.FixStartingCombiningSymbol(Key) + ArabicData.LeftToRightOverride + " ! [ " + ArabicData.PopDirectionalFormatting + String.Join(" ", Array.ConvertAll(Dict.Item(Key).ToCharArray(), Function(C As Char) ArabicData.FixStartingCombiningSymbol(CStr(C)))) + ArabicData.LeftToRightOverride + " ]" + ArabicData.PopDirectionalFormatting + vbTab
+                Val += ArabicData.FixStartingCombiningSymbol(Key) + ArabicData.LeftToRightEmbedding + " ! [ " + ArabicData.PopDirectionalFormatting + String.Join(" ", Array.ConvertAll(Dict.Item(Key).ToCharArray(), Function(C As Char) ArabicData.FixStartingCombiningSymbol(CStr(C)))) + ArabicData.LeftToRightEmbedding + " ]" + ArabicData.PopDirectionalFormatting + vbTab
             End If
         Next
         Dim RevDict As New Generic.Dictionary(Of Char, String)
@@ -5039,12 +5073,12 @@ Public Class TanzilReader
                                       RevDict.Add(Str.Chars(1), Str.Chars(0))
                                   End If
                               End Sub)
-        Dim RevVal As String = ArabicData.LeftToRightOverride + "Reverse Combinations: " + ArabicData.PopDirectionalFormatting
+        Dim RevVal As String = ArabicData.LeftToRightEmbedding + "Reverse Combinations: " + ArabicData.PopDirectionalFormatting
         For Each Key As Char In RevDict.Keys
             If RevDict.Item(Key).Length > (DiaSymbols.Length + LtrSymbols.Length) / 2 Then
-                RevVal += ArabicData.LeftToRightOverride + "[" + ArabicData.PopDirectionalFormatting + String.Join(" ", Array.ConvertAll(New String(Array.FindAll((DiaSymbols + LtrSymbols).ToCharArray(), Function(C As Char) Not RevDict.Item(Key).Contains(C))).ToCharArray(), Function(C As Char) ArabicData.FixStartingCombiningSymbol(CStr(C)))) + ArabicData.LeftToRightOverride + " ] " + ArabicData.PopDirectionalFormatting + ArabicData.FixStartingCombiningSymbol(Key) + vbTab
+                RevVal += ArabicData.LeftToRightEmbedding + "[" + ArabicData.PopDirectionalFormatting + String.Join(" ", Array.ConvertAll(New String(Array.FindAll((DiaSymbols + LtrSymbols).ToCharArray(), Function(C As Char) Not RevDict.Item(Key).Contains(C))).ToCharArray(), Function(C As Char) ArabicData.FixStartingCombiningSymbol(CStr(C)))) + ArabicData.LeftToRightEmbedding + " ] " + ArabicData.PopDirectionalFormatting + ArabicData.FixStartingCombiningSymbol(Key) + vbTab
             Else
-                RevVal += ArabicData.LeftToRightOverride + "! [ " + ArabicData.PopDirectionalFormatting + String.Join(" ", Array.ConvertAll(RevDict.Item(Key).ToCharArray(), Function(C As Char) ArabicData.FixStartingCombiningSymbol(CStr(C)))) + ArabicData.LeftToRightOverride + " ] " + ArabicData.PopDirectionalFormatting + ArabicData.FixStartingCombiningSymbol(Key) + vbTab
+                RevVal += ArabicData.LeftToRightEmbedding + "! [ " + ArabicData.PopDirectionalFormatting + String.Join(" ", Array.ConvertAll(RevDict.Item(Key).ToCharArray(), Function(C As Char) ArabicData.FixStartingCombiningSymbol(CStr(C)))) + ArabicData.LeftToRightEmbedding + " ] " + ArabicData.PopDirectionalFormatting + ArabicData.FixStartingCombiningSymbol(Key) + vbTab
             End If
         Next
         Dim DiaDict As New Generic.Dictionary(Of Char, String)
@@ -5055,12 +5089,12 @@ Public Class TanzilReader
                                          DiaDict.Add(Str.Chars(0), Str.Chars(1))
                                      End If
                                  End Sub)
-        Dim DiaVal As String = ArabicData.LeftToRightOverride + "Diacritic Only Combinations: " + ArabicData.PopDirectionalFormatting
+        Dim DiaVal As String = ArabicData.LeftToRightEmbedding + "Diacritic Only Combinations: " + ArabicData.PopDirectionalFormatting
         For Each Key As Char In DiaDict.Keys
             If DiaDict.Item(Key).Length > DiaSymbols.Length / 2 Then
-                DiaVal += ArabicData.FixStartingCombiningSymbol(Key) + ArabicData.LeftToRightOverride + " [" + ArabicData.PopDirectionalFormatting + String.Join(" ", Array.ConvertAll(New String(Array.FindAll(DiaSymbols.ToCharArray(), Function(C As Char) Not DiaDict.Item(Key).Contains(C))).ToCharArray(), Function(C As Char) ArabicData.FixStartingCombiningSymbol(CStr(C)))) + ArabicData.LeftToRightOverride + " ]" + ArabicData.PopDirectionalFormatting + vbTab
+                DiaVal += ArabicData.FixStartingCombiningSymbol(Key) + ArabicData.LeftToRightEmbedding + " [" + ArabicData.PopDirectionalFormatting + String.Join(" ", Array.ConvertAll(New String(Array.FindAll(DiaSymbols.ToCharArray(), Function(C As Char) Not DiaDict.Item(Key).Contains(C))).ToCharArray(), Function(C As Char) ArabicData.FixStartingCombiningSymbol(CStr(C)))) + ArabicData.LeftToRightEmbedding + " ]" + ArabicData.PopDirectionalFormatting + vbTab
             Else
-                DiaVal += ArabicData.FixStartingCombiningSymbol(Key) + ArabicData.LeftToRightOverride + " ! [ " + ArabicData.PopDirectionalFormatting + String.Join(" ", Array.ConvertAll(DiaDict.Item(Key).ToCharArray(), Function(C As Char) ArabicData.FixStartingCombiningSymbol(CStr(C)))) + ArabicData.LeftToRightOverride + " ]" + ArabicData.PopDirectionalFormatting + vbTab
+                DiaVal += ArabicData.FixStartingCombiningSymbol(Key) + ArabicData.LeftToRightEmbedding + " ! [ " + ArabicData.PopDirectionalFormatting + String.Join(" ", Array.ConvertAll(DiaDict.Item(Key).ToCharArray(), Function(C As Char) ArabicData.FixStartingCombiningSymbol(CStr(C)))) + ArabicData.LeftToRightEmbedding + " ]" + ArabicData.PopDirectionalFormatting + vbTab
             End If
         Next
         Dim LetDict As New Generic.Dictionary(Of Char, String)
@@ -5071,12 +5105,12 @@ Public Class TanzilReader
                                          LetDict.Add(Str.Chars(0), Str.Chars(1))
                                      End If
                                  End Sub)
-        Dim LetVal As String = ArabicData.LeftToRightOverride + "Letter Only Combinations: " + ArabicData.PopDirectionalFormatting
+        Dim LetVal As String = ArabicData.LeftToRightEmbedding + "Letter Only Combinations: " + ArabicData.PopDirectionalFormatting
         For Each Key As Char In LetDict.Keys
             If LetDict.Item(Key).Length > LtrSymbols.Length / 2 Then
-                LetVal += ArabicData.FixStartingCombiningSymbol(Key) + ArabicData.LeftToRightOverride + " [" + ArabicData.PopDirectionalFormatting + String.Join(" ", Array.ConvertAll(New String(Array.FindAll(LtrSymbols.ToCharArray(), Function(C As Char) Not LetDict.Item(Key).Contains(C))).ToCharArray(), Function(C As Char) ArabicData.FixStartingCombiningSymbol(CStr(C)))) + ArabicData.LeftToRightOverride + " ]" + ArabicData.PopDirectionalFormatting + vbTab
+                LetVal += ArabicData.FixStartingCombiningSymbol(Key) + ArabicData.LeftToRightEmbedding + " [" + ArabicData.PopDirectionalFormatting + String.Join(" ", Array.ConvertAll(New String(Array.FindAll(LtrSymbols.ToCharArray(), Function(C As Char) Not LetDict.Item(Key).Contains(C))).ToCharArray(), Function(C As Char) ArabicData.FixStartingCombiningSymbol(CStr(C)))) + ArabicData.LeftToRightEmbedding + " ]" + ArabicData.PopDirectionalFormatting + vbTab
             Else
-                LetVal += ArabicData.FixStartingCombiningSymbol(Key) + ArabicData.LeftToRightOverride + " ! [ " + ArabicData.PopDirectionalFormatting + String.Join(" ", Array.ConvertAll(LetDict.Item(Key).ToCharArray(), Function(C As Char) ArabicData.FixStartingCombiningSymbol(CStr(C)))) + ArabicData.LeftToRightOverride + " ]" + ArabicData.PopDirectionalFormatting + vbTab
+                LetVal += ArabicData.FixStartingCombiningSymbol(Key) + ArabicData.LeftToRightEmbedding + " ! [ " + ArabicData.PopDirectionalFormatting + String.Join(" ", Array.ConvertAll(LetDict.Item(Key).ToCharArray(), Function(C As Char) ArabicData.FixStartingCombiningSymbol(CStr(C)))) + ArabicData.LeftToRightEmbedding + " ]" + ArabicData.PopDirectionalFormatting + vbTab
             End If
         Next
         Dim LetRevDict As New Generic.Dictionary(Of Char, String)
@@ -5087,12 +5121,12 @@ Public Class TanzilReader
                                          LetRevDict.Add(Str.Chars(1), Str.Chars(0))
                                      End If
                                  End Sub)
-        Dim LetRevVal As String = ArabicData.LeftToRightOverride + "Reverse Letter Only Combinations: " + ArabicData.PopDirectionalFormatting
+        Dim LetRevVal As String = ArabicData.LeftToRightEmbedding + "Reverse Letter Only Combinations: " + ArabicData.PopDirectionalFormatting
         For Each Key As Char In LetRevDict.Keys
             If LetRevDict.Item(Key).Length > LtrSymbols.Length / 2 Then
-                LetRevVal += ArabicData.LeftToRightOverride + "[" + ArabicData.PopDirectionalFormatting + String.Join(" ", Array.ConvertAll(New String(Array.FindAll(LtrSymbols.ToCharArray(), Function(C As Char) Not LetRevDict.Item(Key).Contains(C))).ToCharArray(), Function(C As Char) ArabicData.FixStartingCombiningSymbol(CStr(C)))) + ArabicData.LeftToRightOverride + " ] " + ArabicData.PopDirectionalFormatting + ArabicData.FixStartingCombiningSymbol(Key) + vbTab
+                LetRevVal += ArabicData.LeftToRightEmbedding + "[" + ArabicData.PopDirectionalFormatting + String.Join(" ", Array.ConvertAll(New String(Array.FindAll(LtrSymbols.ToCharArray(), Function(C As Char) Not LetRevDict.Item(Key).Contains(C))).ToCharArray(), Function(C As Char) ArabicData.FixStartingCombiningSymbol(CStr(C)))) + ArabicData.LeftToRightEmbedding + " ] " + ArabicData.PopDirectionalFormatting + ArabicData.FixStartingCombiningSymbol(Key) + vbTab
             Else
-                LetRevVal += ArabicData.LeftToRightOverride + "! [ " + ArabicData.PopDirectionalFormatting + String.Join(" ", Array.ConvertAll(LetRevDict.Item(Key).ToCharArray(), Function(C As Char) ArabicData.FixStartingCombiningSymbol(CStr(C)))) + ArabicData.LeftToRightOverride + " ] " + ArabicData.PopDirectionalFormatting + ArabicData.FixStartingCombiningSymbol(Key) + vbTab
+                LetRevVal += ArabicData.LeftToRightEmbedding + "! [ " + ArabicData.PopDirectionalFormatting + String.Join(" ", Array.ConvertAll(LetRevDict.Item(Key).ToCharArray(), Function(C As Char) ArabicData.FixStartingCombiningSymbol(CStr(C)))) + ArabicData.LeftToRightEmbedding + " ] " + ArabicData.PopDirectionalFormatting + ArabicData.FixStartingCombiningSymbol(Key) + vbTab
             End If
         Next
         Dim StartMulti As String = " "
@@ -5107,19 +5141,19 @@ Public Class TanzilReader
         For Each Key As String In MiddleWordMultiOnly.Keys
             MiddleMulti += Key + " "
         Next
-        Return {ArabicData.LeftToRightOverride + "Unique Prefix: [" + ArabicData.PopDirectionalFormatting + StartMulti + ArabicData.LeftToRightOverride + "]" + ArabicData.PopDirectionalFormatting, _
-                ArabicData.LeftToRightOverride + "Unique Suffix: [" + ArabicData.PopDirectionalFormatting + EndMulti + ArabicData.LeftToRightOverride + "]" + ArabicData.PopDirectionalFormatting, _
-                ArabicData.LeftToRightOverride + "Unique Middle: [" + ArabicData.PopDirectionalFormatting + MiddleMulti + ArabicData.LeftToRightOverride + "]" + ArabicData.PopDirectionalFormatting, _
-                ArabicData.LeftToRightOverride + "Start Only: [" + ArabicData.PopDirectionalFormatting + String.Join(" ", Array.ConvertAll(StartWordOnly.ToCharArray(), Function(C As Char) ArabicData.FixStartingCombiningSymbol(CStr(C)))) + ArabicData.LeftToRightOverride + "]" + ArabicData.PopDirectionalFormatting, _
-                ArabicData.LeftToRightOverride + "Not Start: [" + ArabicData.PopDirectionalFormatting + String.Join(" ", Array.ConvertAll(NotStartWord.ToCharArray(), Function(C As Char) ArabicData.FixStartingCombiningSymbol(CStr(C)))) + ArabicData.LeftToRightOverride + "]" + ArabicData.PopDirectionalFormatting, _
-                ArabicData.LeftToRightOverride + "End Only: [" + ArabicData.PopDirectionalFormatting + String.Join(" ", Array.ConvertAll(EndWordOnly.ToCharArray(), Function(C As Char) ArabicData.FixStartingCombiningSymbol(CStr(C)))) + ArabicData.LeftToRightOverride + "]" + ArabicData.PopDirectionalFormatting, _
-                ArabicData.LeftToRightOverride + "Not End: [" + ArabicData.PopDirectionalFormatting + String.Join(" ", Array.ConvertAll(NotEndWord.ToCharArray(), Function(C As Char) ArabicData.FixStartingCombiningSymbol(CStr(C)))) + ArabicData.LeftToRightOverride + "]" + ArabicData.PopDirectionalFormatting, _
-                ArabicData.LeftToRightOverride + "End Only No Diacritics: [" + ArabicData.PopDirectionalFormatting + String.Join(" ", Array.ConvertAll(EndWordOnlyNoDia.ToCharArray(), Function(C As Char) ArabicData.FixStartingCombiningSymbol(CStr(C)))) + ArabicData.LeftToRightOverride + "]" + ArabicData.PopDirectionalFormatting, _
-                ArabicData.LeftToRightOverride + "Not End No Diacritics: [" + ArabicData.PopDirectionalFormatting + String.Join(" ", Array.ConvertAll(NotEndWordNoDia.ToCharArray(), Function(C As Char) ArabicData.FixStartingCombiningSymbol(CStr(C)))) + ArabicData.LeftToRightOverride + "]" + ArabicData.PopDirectionalFormatting, _
-                ArabicData.LeftToRightOverride + "Middle Only: [" + ArabicData.PopDirectionalFormatting + String.Join(" ", Array.ConvertAll(MiddleWordOnly.ToCharArray(), Function(C As Char) ArabicData.FixStartingCombiningSymbol(CStr(C)))) + ArabicData.LeftToRightOverride + "]" + ArabicData.PopDirectionalFormatting, _
-                ArabicData.LeftToRightOverride + "Not Middle: [" + ArabicData.PopDirectionalFormatting + String.Join(" ", Array.ConvertAll(NotMiddleWord.ToCharArray(), Function(C As Char) ArabicData.FixStartingCombiningSymbol(CStr(C)))) + ArabicData.LeftToRightOverride + "]" + ArabicData.PopDirectionalFormatting, _
-                ArabicData.LeftToRightOverride + "Middle Only No Diacritics: [" + ArabicData.PopDirectionalFormatting + String.Join(" ", Array.ConvertAll(MiddleWordOnlyNoDia.ToCharArray(), Function(C As Char) ArabicData.FixStartingCombiningSymbol(CStr(C)))) + ArabicData.LeftToRightOverride + "]" + ArabicData.PopDirectionalFormatting, _
-                ArabicData.LeftToRightOverride + "Not Middle No Diacritics: [" + ArabicData.PopDirectionalFormatting + String.Join(" ", Array.ConvertAll(NotMiddleWordNoDia.ToCharArray(), Function(C As Char) ArabicData.FixStartingCombiningSymbol(CStr(C)))) + ArabicData.LeftToRightOverride + "]" + ArabicData.PopDirectionalFormatting, _
+        Return {ArabicData.LeftToRightEmbedding + "Unique Prefix: [" + ArabicData.PopDirectionalFormatting + StartMulti + ArabicData.LeftToRightEmbedding + "]" + ArabicData.PopDirectionalFormatting, _
+                ArabicData.LeftToRightEmbedding + "Unique Suffix: [" + ArabicData.PopDirectionalFormatting + EndMulti + ArabicData.LeftToRightEmbedding + "]" + ArabicData.PopDirectionalFormatting, _
+                ArabicData.LeftToRightEmbedding + "Unique Middle: [" + ArabicData.PopDirectionalFormatting + MiddleMulti + ArabicData.LeftToRightEmbedding + "]" + ArabicData.PopDirectionalFormatting, _
+                ArabicData.LeftToRightEmbedding + "Start Only: [" + ArabicData.PopDirectionalFormatting + String.Join(" ", Array.ConvertAll(StartWordOnly.ToCharArray(), Function(C As Char) ArabicData.FixStartingCombiningSymbol(CStr(C)))) + ArabicData.LeftToRightEmbedding + "]" + ArabicData.PopDirectionalFormatting, _
+                ArabicData.LeftToRightEmbedding + "Not Start: [" + ArabicData.PopDirectionalFormatting + String.Join(" ", Array.ConvertAll(NotStartWord.ToCharArray(), Function(C As Char) ArabicData.FixStartingCombiningSymbol(CStr(C)))) + ArabicData.LeftToRightEmbedding + "]" + ArabicData.PopDirectionalFormatting, _
+                ArabicData.LeftToRightEmbedding + "End Only: [" + ArabicData.PopDirectionalFormatting + String.Join(" ", Array.ConvertAll(EndWordOnly.ToCharArray(), Function(C As Char) ArabicData.FixStartingCombiningSymbol(CStr(C)))) + ArabicData.LeftToRightEmbedding + "]" + ArabicData.PopDirectionalFormatting, _
+                ArabicData.LeftToRightEmbedding + "Not End: [" + ArabicData.PopDirectionalFormatting + String.Join(" ", Array.ConvertAll(NotEndWord.ToCharArray(), Function(C As Char) ArabicData.FixStartingCombiningSymbol(CStr(C)))) + ArabicData.LeftToRightEmbedding + "]" + ArabicData.PopDirectionalFormatting, _
+                ArabicData.LeftToRightEmbedding + "End Only No Diacritics: [" + ArabicData.PopDirectionalFormatting + String.Join(" ", Array.ConvertAll(EndWordOnlyNoDia.ToCharArray(), Function(C As Char) ArabicData.FixStartingCombiningSymbol(CStr(C)))) + ArabicData.LeftToRightEmbedding + "]" + ArabicData.PopDirectionalFormatting, _
+                ArabicData.LeftToRightEmbedding + "Not End No Diacritics: [" + ArabicData.PopDirectionalFormatting + String.Join(" ", Array.ConvertAll(NotEndWordNoDia.ToCharArray(), Function(C As Char) ArabicData.FixStartingCombiningSymbol(CStr(C)))) + ArabicData.LeftToRightEmbedding + "]" + ArabicData.PopDirectionalFormatting, _
+                ArabicData.LeftToRightEmbedding + "Middle Only: [" + ArabicData.PopDirectionalFormatting + String.Join(" ", Array.ConvertAll(MiddleWordOnly.ToCharArray(), Function(C As Char) ArabicData.FixStartingCombiningSymbol(CStr(C)))) + ArabicData.LeftToRightEmbedding + "]" + ArabicData.PopDirectionalFormatting, _
+                ArabicData.LeftToRightEmbedding + "Not Middle: [" + ArabicData.PopDirectionalFormatting + String.Join(" ", Array.ConvertAll(NotMiddleWord.ToCharArray(), Function(C As Char) ArabicData.FixStartingCombiningSymbol(CStr(C)))) + ArabicData.LeftToRightEmbedding + "]" + ArabicData.PopDirectionalFormatting, _
+                ArabicData.LeftToRightEmbedding + "Middle Only No Diacritics: [" + ArabicData.PopDirectionalFormatting + String.Join(" ", Array.ConvertAll(MiddleWordOnlyNoDia.ToCharArray(), Function(C As Char) ArabicData.FixStartingCombiningSymbol(CStr(C)))) + ArabicData.LeftToRightEmbedding + "]" + ArabicData.PopDirectionalFormatting, _
+                ArabicData.LeftToRightEmbedding + "Not Middle No Diacritics: [" + ArabicData.PopDirectionalFormatting + String.Join(" ", Array.ConvertAll(NotMiddleWordNoDia.ToCharArray(), Function(C As Char) ArabicData.FixStartingCombiningSymbol(CStr(C)))) + ArabicData.LeftToRightEmbedding + "]" + ArabicData.PopDirectionalFormatting, _
                 Val, RevVal, DiaVal, LetVal, LetRevVal}
     End Function
     Public Shared Function GetMetaRuleSet(Name As String) As IslamData.RuleMetaSet
@@ -5618,7 +5652,7 @@ Public Class TanzilReader
         Next
         Return True
     End Function
-    Public Shared Function QuranTextFromReference(Str As String, SchemeType As ArabicData.TranslitScheme, Scheme As String, TranslationIndex As Integer, W4W As Boolean, W4WNum As Boolean, NoArabic As Boolean, Header As Boolean, NoRef As Boolean) As RenderArray
+    Public Shared Function QuranTextFromReference(Str As String, SchemeType As ArabicData.TranslitScheme, Scheme As String, TranslationIndex As Integer, W4W As Boolean, W4WNum As Boolean, NoArabic As Boolean, Header As Boolean, NoRef As Boolean, Colorize As Boolean, Verses As Boolean) As RenderArray
         Dim Renderer As New RenderArray(String.Empty)
         Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(Str, "(?:,?(\d+)(?:\:(\d+))?(?:\:(\d+))?(?:-(\d+)(?:\:(\d+))?(?:\:(\d+))?)?)")
         Dim Reference As String
@@ -5645,14 +5679,14 @@ Public Class TanzilReader
                 ExtraVerseNumber = GetTextChapter(CachedData.XMLDocMain, BaseChapter).ChildNodes.Count
             End If
             If WordNumber = 0 Then WordNumber += 1
-            Renderer.Items.AddRange(DoGetRenderedQuranText(QuranTextRangeLookup(BaseChapter, BaseVerse, WordNumber, EndChapter, ExtraVerseNumber, EndWordNumber), BaseChapter, BaseVerse, CachedData.IslamData.Translations.TranslationList(TranslationIndex).Name, SchemeType, Scheme, TranslationIndex, W4W, W4WNum, NoArabic, Header, NoRef).Items)
+            Renderer.Items.AddRange(DoGetRenderedQuranText(QuranTextRangeLookup(BaseChapter, BaseVerse, WordNumber, EndChapter, ExtraVerseNumber, EndWordNumber), BaseChapter, BaseVerse, CachedData.IslamData.Translations.TranslationList(TranslationIndex).Name, SchemeType, Scheme, TranslationIndex, W4W, W4WNum, NoArabic, Header, NoRef, Colorize, Verses).Items)
             Reference = CStr(BaseChapter) + If(BaseVerse <> 0, ":" + CStr(BaseVerse), String.Empty) + If(EndChapter <> 0, "-" + CStr(EndChapter) + If(ExtraVerseNumber <> 0, ":" + CStr(ExtraVerseNumber), String.Empty), If(ExtraVerseNumber <> 0, "-" + CStr(ExtraVerseNumber), String.Empty))
             Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eHeaderCenter, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, "(Qur'an " + Reference + ")")}))
         Next
         Return Renderer
     End Function
     'much faster to make a word index...
-    Public Shared Function QuranTextFromSearch(Str As String, SchemeType As ArabicData.TranslitScheme, Scheme As String, TranslationIndex As Integer, W4W As Boolean, W4WNum As Boolean, NoArabic As Boolean, Header As Boolean, NoRef As Boolean) As RenderArray
+    Public Shared Function QuranTextFromSearch(Str As String, SchemeType As ArabicData.TranslitScheme, Scheme As String, TranslationIndex As Integer, W4W As Boolean, W4WNum As Boolean, NoArabic As Boolean, Header As Boolean, NoRef As Boolean, Colorize As Boolean, UseVerses As Boolean) As RenderArray
         Dim Renderer As New RenderArray(String.Empty)
         Dim Verses As List(Of String()) = GetQuranText(CachedData.XMLDocMain, -1, -1, -1, -1)
         Dim RefList As String = String.Empty
@@ -5661,7 +5695,7 @@ Public Class TanzilReader
             For SubCount As Integer = 0 To Verses(Count).Length - 1
                 Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(Arabic.TransliterateToScheme(Verses(Count)(SubCount), ArabicData.TranslitScheme.Literal, String.Empty), Str)
                 For MatchCount As Integer = 0 To Matches.Count - 1
-                    Renderer.Items.AddRange(DoGetRenderedQuranText(QuranTextRangeLookup(Count + 1, SubCount + 1, Array.FindAll(Verses(Count)(SubCount).Substring(0, Matches(MatchCount).Index).ToCharArray(), Function(Ch As Char) Ch = " "c).Length + 1, Count + 1, SubCount + 1, Array.FindAll(Verses(Count)(SubCount).Substring(0, Matches(MatchCount).Index + Matches(MatchCount).Length).ToCharArray(), Function(Ch As Char) Ch = " "c).Length + 1), Count + 1, SubCount + 1, CachedData.IslamData.Translations.TranslationList(TranslationIndex).Name, SchemeType, Scheme, TranslationIndex, W4W, W4WNum, NoArabic, Header, NoRef).Items)
+                    Renderer.Items.AddRange(DoGetRenderedQuranText(QuranTextRangeLookup(Count + 1, SubCount + 1, Array.FindAll(Verses(Count)(SubCount).Substring(0, Matches(MatchCount).Index).ToCharArray(), Function(Ch As Char) Ch = " "c).Length + 1, Count + 1, SubCount + 1, Array.FindAll(Verses(Count)(SubCount).Substring(0, Matches(MatchCount).Index + Matches(MatchCount).Length).ToCharArray(), Function(Ch As Char) Ch = " "c).Length + 1), Count + 1, SubCount + 1, CachedData.IslamData.Translations.TranslationList(TranslationIndex).Name, SchemeType, Scheme, TranslationIndex, W4W, W4WNum, NoArabic, Header, NoRef, Colorize, UseVerses).Items)
                     Dim Reference As String = CStr(Count + 1) + ":" + CStr(SubCount + 1)
                     RefList += If(RefList <> String.Empty, ",", String.Empty) + Reference
                     RefCount += 1
@@ -5669,11 +5703,11 @@ Public Class TanzilReader
                         RefList += ":" + CStr(Array.FindAll(Verses(Count)(SubCount).Substring(0, Matches(MatchCount).Index).ToCharArray(), Function(Ch As Char) Ch = " "c).Length + 1)
                         If Array.FindAll(Verses(Count)(SubCount).Substring(Matches(MatchCount).Index + Matches(MatchCount).Length).ToCharArray(), Function(Ch As Char) Ch = " "c).Length <> 0 Then RefList += "-" + CStr(Array.FindAll(Verses(Count)(SubCount).Substring(0, Matches(MatchCount).Index + Matches(MatchCount).Length).ToCharArray(), Function(Ch As Char) Ch = " "c).Length + 1)
                     End If
-                    Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eHeaderCenter, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, "(Qur'an " + Reference + ")")}))
+                    Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eHeaderCenter, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, "(" + Arabic.TransliterateToScheme(Arabic.GetCatNoun("QuranReadingRecitation")(0).Text, SchemeType, Scheme) + " " + Reference + ")")}))
                 Next
             Next
         Next
-        Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eHeaderCenter, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, "(Qur'an " + RefList + ") " + CStr(RefCount) + " Total")}))
+        Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eHeaderCenter, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, "(" + Arabic.TransliterateToScheme(Arabic.GetCatNoun("QuranReadingRecitation")(0).Text, SchemeType, Scheme) + " " + RefList + ") " + CStr(RefCount) + " Total")}))
         Return Renderer
     End Function
     Public Shared Function TextPositionToMorphology(Text As String, WordPos As Integer) As String
@@ -5868,7 +5902,7 @@ Public Class TanzilReader
         End If
         Return QuranText
     End Function
-    Public Shared Function GetQuranTextBySelection(ID As String, Division As Integer, Index As Integer, Translation As String, SchemeType As ArabicData.TranslitScheme, Scheme As String, TranslationIndex As Integer, W4W As Boolean, W4WNum As Boolean, NoArabic As Boolean, Header As Boolean, NoRef As Boolean) As RenderArray
+    Public Shared Function GetQuranTextBySelection(ID As String, Division As Integer, Index As Integer, Translation As String, SchemeType As ArabicData.TranslitScheme, Scheme As String, TranslationIndex As Integer, W4W As Boolean, W4WNum As Boolean, NoArabic As Boolean, Header As Boolean, NoRef As Boolean, Colorize As Boolean, Verses As Boolean) As RenderArray
         Dim Chapter As Integer
         Dim Verse As Integer
         Dim BaseChapter As Integer
@@ -5982,7 +6016,7 @@ Public Class TanzilReader
                     BaseVerse = CType(CachedData.LetterDictionary(ArabicData.ArabicLetters(Index).Symbol)(Keys(SectionCount))(SubCount), Integer())(1)
                     QuranText.Add(GetQuranText(CachedData.XMLDocMain, BaseChapter, BaseVerse, BaseVerse))
                     If SubCount <> CachedData.LetterDictionary(ArabicData.ArabicLetters(Index).Symbol)(Keys(SectionCount)).Count - 1 Then
-                        Renderer.Items.AddRange(DoGetRenderedQuranText(QuranText, BaseChapter, BaseVerse, Translation, SchemeType, Scheme, TranslationIndex, W4W, W4WNum, NoArabic, Header, NoRef).Items)
+                        Renderer.Items.AddRange(DoGetRenderedQuranText(QuranText, BaseChapter, BaseVerse, Translation, SchemeType, Scheme, TranslationIndex, W4W, W4WNum, NoArabic, Header, NoRef, Colorize, Verses).Items)
                     End If
                 Next
             ElseIf Division = 10 Then
@@ -6014,7 +6048,7 @@ Public Class TanzilReader
             Else
                 QuranText = Nothing
             End If
-            Renderer.Items.AddRange(DoGetRenderedQuranText(QuranText, BaseChapter, BaseVerse, Translation, SchemeType, Scheme, TranslationIndex, W4W, W4WNum, NoArabic, Header, NoRef).Items)
+            Renderer.Items.AddRange(DoGetRenderedQuranText(QuranText, BaseChapter, BaseVerse, Translation, SchemeType, Scheme, TranslationIndex, W4W, W4WNum, NoArabic, Header, NoRef, Colorize, Verses).Items)
         Next
         Return Renderer
     End Function
@@ -6040,7 +6074,7 @@ Public Class TanzilReader
         Dim SchemeType As ArabicData.TranslitScheme = CType(If(CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) >= 2, 2 - CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) Mod 2, CInt(HttpContext.Current.Request.QueryString.Get("translitscheme"))), ArabicData.TranslitScheme)
         Dim Scheme As String = If(CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) >= 2, CachedData.IslamData.TranslitSchemes(CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) \ 2).Name, String.Empty)
         Dim TranslationIndex As Integer = GetTranslationIndex(HttpContext.Current.Request.QueryString.Get("qurantranslation"))
-        Return GetQuranTextBySelection(Item.Name, Division, Index, CachedData.IslamData.Translations.TranslationList(TranslationIndex).FileName, SchemeType, Scheme, TranslationIndex, True, False, False, True, False)
+        Return GetQuranTextBySelection(Item.Name, Division, Index, CachedData.IslamData.Translations.TranslationList(TranslationIndex).FileName, SchemeType, Scheme, TranslationIndex, CInt(HttpContext.Current.Request.QueryString.Get("wordversemode")) <> 4, CInt(HttpContext.Current.Request.QueryString.Get("wordversemode")) Mod 2 = 1, False, True, False, CInt(HttpContext.Current.Request.QueryString.Get("colorcuemode")) = 0, CInt(HttpContext.Current.Request.QueryString.Get("wordversemode")) / 2 <> 1)
     End Function
     Public Shared Function GenerateDefaultStops(Str As String) As Integer()
         Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(Str, "(^\s*|\s+)(" + ArabicData.MakeUniRegEx(ArabicData.ArabicEndOfAyah) + "[\p{Nd}]{1,3}|" + CachedData.OptionalPattern + ")(?=\s*$|\s+)")
@@ -6052,7 +6086,7 @@ Public Class TanzilReader
         Next
         Return DefStops.ToArray()
     End Function
-    Public Shared Function DoGetRenderedQuranText(QuranText As Collections.Generic.List(Of String()), BaseChapter As Integer, BaseVerse As Integer, Translation As String, SchemeType As ArabicData.TranslitScheme, Scheme As String, TranslationIndex As Integer, W4W As Boolean, W4WNum As Boolean, NoArabic As Boolean, Header As Boolean, NoRef As Boolean) As RenderArray
+    Public Shared Function DoGetRenderedQuranText(QuranText As Collections.Generic.List(Of String()), BaseChapter As Integer, BaseVerse As Integer, Translation As String, SchemeType As ArabicData.TranslitScheme, Scheme As String, TranslationIndex As Integer, W4W As Boolean, W4WNum As Boolean, NoArabic As Boolean, Header As Boolean, NoRef As Boolean, Colorize As Boolean, Verses As Boolean) As RenderArray
         Dim Text As String
         Dim Node As System.Xml.XmlNode
         Dim Renderer As New RenderArray(String.Empty)
@@ -6126,7 +6160,8 @@ Public Class TanzilReader
                         End If
                         If NoRef Then Text = Arabic.TransliterateFromBuckwalter("(") + Text
                         Text += Arabic.TransliterateFromBuckwalter(If(NoRef, ")", "=" + CStr(CInt(IIf(Chapter = 0, BaseVerse, 1)) + Verse))) + " "
-                        Dim WordColors As RenderArray.RenderText()() = Arabic.ApplyColorRules(Text, GenerateDefaultStops(Text), True)
+                        Dim WordColors As RenderArray.RenderText()() = Nothing
+                        If Colorize Then WordColors = Arabic.ApplyColorRules(Text, GenerateDefaultStops(Text), True)
                         For Count As Integer = 0 To Words.Length - 1
                             'handle start/end words here which have space placeholders
                             If Words(Count).Length = 1 AndAlso _
@@ -6144,7 +6179,11 @@ Public Class TanzilReader
                                 Texts.Clear()
                             ElseIf Words(Count).Length <> 0 Then
                                 If Not NoArabic Then
-                                    Texts.AddRange(WordColors(Count))
+                                    If Colorize Then
+                                        Texts.AddRange(WordColors(Count))
+                                    Else
+                                        Texts.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Words(Count)))
+                                    End If
                                     Texts.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, If(SchemeType <> ArabicData.TranslitScheme.None, TranslitWords(Count), String.Empty)))
                                 End If
                                 If Translation <> String.Empty Then Texts.Add(New RenderArray.RenderText(DirectCast(IIf(IsTranslationTextLTR(TranslationIndex), RenderArray.RenderDisplayClass.eLTR, RenderArray.RenderDisplayClass.eRTL), RenderArray.RenderDisplayClass), TanzilReader.GetW4WTranslationVerse(W4WLines, BaseChapter + Chapter, CInt(IIf(Chapter = 0, BaseVerse, 1)) + Verse, Count - PauseMarks)))
@@ -6164,14 +6203,20 @@ Public Class TanzilReader
                         'Text += Arabic.TransliterateFromBuckwalter("(" + CStr(IIf(Chapter = 0, BaseVerse, 1) + Verse) + ") ")
                         Texts.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eNested, Items))
                     End If
-                    If Not NoArabic Then
-                        Texts.AddRange(Arabic.ApplyColorRules(Text, GenerateDefaultStops(Text), False)(0))
-                        Texts.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, If(SchemeType <> ArabicData.TranslitScheme.None, Arabic.TransliterateToScheme(If(NoRef, Arabic.TransliterateFromBuckwalter("("), String.Empty) + QuranText(Chapter)(Verse).Trim(" "c, ChrW(0)) + Arabic.TransliterateFromBuckwalter(If(NoRef, ")", " " + "=" + CStr(CInt(IIf(Chapter = 0, BaseVerse, 1)) + Verse) + " ")), SchemeType, Scheme, GenerateDefaultStops(If(NoRef, Arabic.TransliterateFromBuckwalter("("), String.Empty) + QuranText(Chapter)(Verse).Trim(" "c, ChrW(0)) + Arabic.TransliterateFromBuckwalter(If(NoRef, ")", " " + "=" + CStr(CInt(IIf(Chapter = 0, BaseVerse, 1)) + Verse)) + " "))).Trim(), String.Empty)))
-                    End If
-                    If Translation <> String.Empty Then Texts.Add(New RenderArray.RenderText(DirectCast(IIf(IsTranslationTextLTR(TranslationIndex), RenderArray.RenderDisplayClass.eLTR, RenderArray.RenderDisplayClass.eRTL), RenderArray.RenderDisplayClass), If(NoRef, String.Empty, "(" + CStr(CInt(IIf(Chapter = 0, BaseVerse, 1)) + Verse) + ") ") + TanzilReader.GetTranslationVerse(Lines, BaseChapter + Chapter, CInt(IIf(Chapter = 0, BaseVerse, 1)) + Verse)))
-                    Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, Texts.ToArray()))
-                    Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eContinueStop, False)}))
-                    Texts.Clear()
+                    If Verses Then
+                        If Not NoArabic Then
+                            If Colorize Then
+                                Texts.AddRange(Arabic.ApplyColorRules(Text, GenerateDefaultStops(Text), False)(0))
+                            Else
+                                Texts.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Text))
+                            End If
+                            Texts.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, If(SchemeType <> ArabicData.TranslitScheme.None, Arabic.TransliterateToScheme(If(NoRef, Arabic.TransliterateFromBuckwalter("("), String.Empty) + QuranText(Chapter)(Verse).Trim(" "c, ChrW(0)) + Arabic.TransliterateFromBuckwalter(If(NoRef, ")", " " + "=" + CStr(CInt(IIf(Chapter = 0, BaseVerse, 1)) + Verse) + " ")), SchemeType, Scheme, GenerateDefaultStops(If(NoRef, Arabic.TransliterateFromBuckwalter("("), String.Empty) + QuranText(Chapter)(Verse).Trim(" "c, ChrW(0)) + Arabic.TransliterateFromBuckwalter(If(NoRef, ")", " " + "=" + CStr(CInt(IIf(Chapter = 0, BaseVerse, 1)) + Verse)) + " "))).Trim(), String.Empty)))
+                        End If
+                            If Translation <> String.Empty Then Texts.Add(New RenderArray.RenderText(DirectCast(IIf(IsTranslationTextLTR(TranslationIndex), RenderArray.RenderDisplayClass.eLTR, RenderArray.RenderDisplayClass.eRTL), RenderArray.RenderDisplayClass), If(NoRef, String.Empty, "(" + CStr(CInt(IIf(Chapter = 0, BaseVerse, 1)) + Verse) + ") ") + TanzilReader.GetTranslationVerse(Lines, BaseChapter + Chapter, CInt(IIf(Chapter = 0, BaseVerse, 1)) + Verse)))
+                        End If
+                        Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, Texts.ToArray()))
+                        Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eContinueStop, False)}))
+                        Texts.Clear()
                 Next
             Next
         End If
@@ -6279,7 +6324,7 @@ Public Class TanzilReader
     Public Shared Function GetChapterNames() As Array()
         Dim SchemeType As ArabicData.TranslitScheme = CType(If(CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) >= 2, 2 - CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) Mod 2, CInt(HttpContext.Current.Request.QueryString.Get("translitscheme"))), ArabicData.TranslitScheme)
         Dim Scheme As String = If(CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) >= 2, CachedData.IslamData.TranslitSchemes(CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) \ 2).Name, String.Empty)
-        Dim Names() As Array = Array.ConvertAll(Utility.GetChildNodes("sura", Utility.GetChildNode("suras", CachedData.XMLDocInfo.DocumentElement.ChildNodes).ChildNodes), Function(Convert As System.Xml.XmlNode) New Object() {Convert.Attributes.GetNamedItem("index").Value + ". " + GetChapterEName(Convert) + " (" + ArabicData.RightToLeftOverride + Arabic.TransliterateFromBuckwalter(CachedData.QuranHeaders(1) + " " + CachedData.IslamData.QuranChapters(CInt(Convert.Attributes.GetNamedItem("index").Value) - 1).Name) + ArabicData.PopDirectionalFormatting + ")" + If(SchemeType = ArabicData.TranslitScheme.None, String.Empty, " " + Arabic.TransliterateToScheme(Arabic.TransliterateFromBuckwalter(CachedData.IslamData.QuranChapters(CInt(Convert.Attributes.GetNamedItem("index").Value) - 1).Name), SchemeType, Scheme)), CInt(Convert.Attributes.GetNamedItem("index").Value)})
+        Dim Names() As Array = Array.ConvertAll(Utility.GetChildNodes("sura", Utility.GetChildNode("suras", CachedData.XMLDocInfo.DocumentElement.ChildNodes).ChildNodes), Function(Convert As System.Xml.XmlNode) New Object() {Convert.Attributes.GetNamedItem("index").Value + ". " + GetChapterEName(Convert) + " (" + ArabicData.RightToLeftEmbedding + Arabic.TransliterateFromBuckwalter(CachedData.QuranHeaders(1) + " " + CachedData.IslamData.QuranChapters(CInt(Convert.Attributes.GetNamedItem("index").Value) - 1).Name) + ArabicData.PopDirectionalFormatting + ")" + If(SchemeType = ArabicData.TranslitScheme.None, String.Empty, " " + Arabic.TransliterateToScheme(Arabic.TransliterateFromBuckwalter(CachedData.IslamData.QuranChapters(CInt(Convert.Attributes.GetNamedItem("index").Value) - 1).Name), SchemeType, Scheme)), CInt(Convert.Attributes.GetNamedItem("index").Value)})
         Array.Sort(Names, New Utility.CompareNameValueArray)
         Return Names
     End Function
@@ -6289,7 +6334,7 @@ Public Class TanzilReader
     Public Shared Function GetChapterNamesByRevelationOrder() As Array()
         Dim SchemeType As ArabicData.TranslitScheme = CType(If(CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) >= 2, 2 - CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) Mod 2, CInt(HttpContext.Current.Request.QueryString.Get("translitscheme"))), ArabicData.TranslitScheme)
         Dim Scheme As String = If(CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) >= 2, CachedData.IslamData.TranslitSchemes(CInt(HttpContext.Current.Request.QueryString.Get("translitscheme")) \ 2).Name, String.Empty)
-        Dim Names() As Array = Array.ConvertAll(Utility.GetChildNodes("sura", Utility.GetChildNode("suras", CachedData.XMLDocInfo.DocumentElement.ChildNodes).ChildNodes), Function(Convert As System.Xml.XmlNode) New Object() {Convert.Attributes.GetNamedItem("index").Value + ". " + GetChapterEName(Convert) + " (" + ArabicData.RightToLeftOverride + Arabic.TransliterateFromBuckwalter(CachedData.QuranHeaders(1) + " " + CachedData.IslamData.QuranChapters(CInt(Convert.Attributes.GetNamedItem("index").Value) - 1).Name) + ArabicData.PopDirectionalFormatting + ")" + If(SchemeType = ArabicData.TranslitScheme.None, String.Empty, " " + Arabic.TransliterateToScheme(Arabic.TransliterateFromBuckwalter(CachedData.IslamData.QuranChapters(CInt(Convert.Attributes.GetNamedItem("index").Value) - 1).Name), SchemeType, Scheme)), CInt(Convert.Attributes.GetNamedItem("order").Value)})
+        Dim Names() As Array = Array.ConvertAll(Utility.GetChildNodes("sura", Utility.GetChildNode("suras", CachedData.XMLDocInfo.DocumentElement.ChildNodes).ChildNodes), Function(Convert As System.Xml.XmlNode) New Object() {Convert.Attributes.GetNamedItem("index").Value + ". " + GetChapterEName(Convert) + " (" + ArabicData.RightToLeftEmbedding + Arabic.TransliterateFromBuckwalter(CachedData.QuranHeaders(1) + " " + CachedData.IslamData.QuranChapters(CInt(Convert.Attributes.GetNamedItem("index").Value) - 1).Name) + ArabicData.PopDirectionalFormatting + ")" + If(SchemeType = ArabicData.TranslitScheme.None, String.Empty, " " + Arabic.TransliterateToScheme(Arabic.TransliterateFromBuckwalter(CachedData.IslamData.QuranChapters(CInt(Convert.Attributes.GetNamedItem("index").Value) - 1).Name), SchemeType, Scheme)), CInt(Convert.Attributes.GetNamedItem("order").Value)})
         Array.Sort(Names, New Utility.CompareNameValueArray)
         Return Names
     End Function

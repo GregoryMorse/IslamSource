@@ -29370,6 +29370,9 @@
   <data name="IslamSource_Collection" xml:space="preserve">
     <value>Collection</value>
   </data>
+  <data name="IslamSource_ColorCues" xml:space="preserve">
+    <value>Use Color Cues</value>
+  </data>
   <data name="IslamSource_Compute" xml:space="preserve">
     <value>Compute</value>
   </data>
@@ -29775,14 +29778,32 @@
   <data name="IslamSource_UseMilliard" xml:space="preserve">
     <value>Use Milliard</value>
   </data>
+  <data name="IslamSource_VerseOnly" xml:space="preserve">
+    <value>Verses Only</value>
+  </data>
   <data name="IslamSource_Viewer" xml:space="preserve">
     <value>Viewer</value>
   </data>
   <data name="IslamSource_Welcome" xml:space="preserve">
     <value>Welcome to IslamSource.info</value>
   </data>
+  <data name="IslamSource_WordByWordAndVerse" xml:space="preserve">
+    <value>Word By Word and Verses</value>
+  </data>
+  <data name="IslamSource_WordByWordNumberedAndVerse" xml:space="preserve">
+    <value>Word By Word Numbered and Verses</value>
+  </data>
+  <data name="IslamSource_WordByWordOnly" xml:space="preserve">
+    <value>Word By Word Only</value>
+  </data>
+  <data name="IslamSource_WordByWordNumberedOnly" xml:space="preserve">
+    <value>Word By Word Numbered Only</value>
+  </data>
   <data name="IslamSource_WordTotal" xml:space="preserve">
     <value>Word Total</value>
+  </data>
+  <data name="IslamSource_WordVerseMode" xml:space="preserve">
+    <value>Word and Verse Mode</value>
   </data>
   <data name="IslamSource_Yes" xml:space="preserve">
     <value>Yes</value>
