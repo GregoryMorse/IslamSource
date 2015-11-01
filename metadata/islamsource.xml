@@ -328,7 +328,7 @@
 			<button name="qurandisplay" description="IslamSource_Display"></button>
 			<button name="print" description="IslamSource_Print" onclick="Utility::GetOnPrintJS"></button>
 			<radio name="translitscheme" description="IslamSource_TransliterationScheme" uselist="true" onchange="Arabic::GetChangeTransliterationJS" onpopulate="Arabic::GetTransliterationSchemes"></radio>
-			<radio name="wordversemode" description="IslamSource_WordVerseMode" onchange="TanzilReader::GetWordVerseModeJS"><option name="IslamSource_WordByWordAndVerse" defaultvalue="true"></option><option name="IslamSource_WordByWordNumberedAndVerse"></option><option name="IslamSource_WordByWordOnly"></option><option name="IslamSource_WordByWordNumberedOnly"></option><option name="IslamSource_VerseOnly"></option></radio>
+			<radio name="wordversemode" description="IslamSource_WordVerseMode" uselist="true" onchange="TanzilReader::GetWordVerseModeJS"><option name="IslamSource_WordByWordAndVerse" defaultvalue="true"></option><option name="IslamSource_WordByWordNumberedAndVerse"></option><option name="IslamSource_WordByWordOnly"></option><option name="IslamSource_WordByWordNumberedOnly"></option><option name="IslamSource_VerseOnly"></option></radio>
 			<radio name="colorcuemode" description="IslamSource_ColorCues" usecheck="true" onchange="TanzilReader::GetColorCueModeJS"><option name="IslamSource_Yes" defaultvalue="true"></option><option name="IslamSource_No"></option></radio>
 			<button name="fontsmaller" description="IslamSource_Smaller" onclick="ArabicFont::GetFontSmallerJS"></button>
 			<button name="fontdefaultsize" description="IslamSource_LetterSample" onclick="ArabicFont::GetFontDefaultSizeJS"></button>
