@@ -3329,24 +3329,33 @@ Public Class RenderArray
             Dim Translit As New ArrayList
             Dim Translate As New ArrayList
             Dim Children As ArrayList = New ArrayList From {New ArrayList, New ArrayList}
+            Dim ArrIndex As Integer = 0
             For Index = 0 To Items(Count).TextItems.Length - 1
+                Dim TestIndex As Integer = Index
                 If Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eNested Then
                     Dim Objs As Object() = GetInitJSItems(ID, CType(Items(Count).TextItems(Index).Text, Collections.Generic.List(Of RenderItem)), LastTitle, CStr(Count))
                     CType(Children(0), ArrayList).AddRange(CType(Objs(0), ArrayList))
                     CType(Children(1), ArrayList).AddRange(CType(Objs(1), ArrayList))
                 ElseIf Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eList Then
                     CType(Objects(2), List(Of String())).AddRange(GetTableJSFunctions(CType(Items(Count).TextItems(Index).Text, Object())))
-                ElseIf Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eRanking Or _
-                    Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eContinueStop Then
+                ElseIf Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eRanking Then
+                ElseIf Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eContinueStop Then
+                    Arabic.Add("contstop" + ID + CStr(IIf(NestPrefix = String.Empty, String.Empty, NestPrefix + "_")) + CStr(Count) + "_" + CStr(ArrIndex))
                 Else
                     If Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eArabic Then
-                        Arabic.Add("arabic" + ID + CStr(IIf(NestPrefix = String.Empty, String.Empty, NestPrefix + "_")) + CStr(Count) + "_" + CStr(Index))
+                        Arabic.Add("arabic" + ID + CStr(IIf(NestPrefix = String.Empty, String.Empty, NestPrefix + "_")) + CStr(Count) + "_" + CStr(ArrIndex))
                     ElseIf Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eTransliteration Then
-                        Translit.Add("translit" + ID + CStr(IIf(NestPrefix = String.Empty, String.Empty, NestPrefix + "_")) + CStr(Count) + "_" + CStr(Index))
+                        Translit.Add("translit" + ID + CStr(IIf(NestPrefix = String.Empty, String.Empty, NestPrefix + "_")) + CStr(Count) + "_" + CStr(ArrIndex))
                     Else
-                        Translate.Add("translate" + ID + CStr(IIf(NestPrefix = String.Empty, String.Empty, NestPrefix + "_")) + CStr(Count) + "_" + CStr(Index))
+                        Translate.Add("translate" + ID + CStr(IIf(NestPrefix = String.Empty, String.Empty, NestPrefix + "_")) + CStr(Count) + "_" + CStr(ArrIndex))
                     End If
+                    Do
+                        TestIndex += 1
+                    Loop While Items(Count).TextItems.Length <> TestIndex AndAlso (Items(Count).TextItems(TestIndex).DisplayClass = RenderDisplayClass.eLink Or Items(Count).TextItems(Index).DisplayClass = Items(Count).TextItems(TestIndex).DisplayClass)
+                    Index = TestIndex - 1
                 End If
+                ArrIndex += 1
+                If TestIndex = Items(Count).TextItems.Length Then Exit For
             Next
             If Items(Count).Type = RenderTypes.eHeaderCenter Then
                 LastTitle = "ri" + CStr(IIf(NestPrefix = String.Empty, ID, NestPrefix + "_")) + CStr(Count)
@@ -3506,6 +3515,7 @@ Public Class RenderArray
             writer.WriteBeginTag("div")
             writer.WriteAttribute("class", "multidisplay")
             writer.Write(HtmlTextWriter.TagRightChar)
+            Dim ArrIndex As Integer = 0
             For Index = 0 To Items(Count).TextItems.Length - 1
                 writer.Write(vbCrLf + BaseTabs + vbTab)
                 writer.WriteBeginTag(CStr(IIf(Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eNested Or Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eRanking Or Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eList, "div", "span")))
@@ -3523,10 +3533,11 @@ Public Class RenderArray
                 ElseIf Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.ePassThru Then
                     writer.Write(CStr(Items(Count).TextItems(Index).Text))
                 ElseIf Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eContinueStop Then
+                    writer.WriteAttribute("id", "contstop" + ID + CStr(IIf(NestPrefix = String.Empty, String.Empty, NestPrefix + "_")) + CStr(Count) + "_" + CStr(ArrIndex))
                     'U+2BC3 is horizontal stop sign make red color, U+2B45/6 is left/rightwards quadruple arrow make green color
                     writer.WriteAttribute("style", "cursor: pointer;cursor: hand;color: " & If(DirectCast(Items(Count).TextItems(Index).Text, Boolean), "#00ff00", "#ff0000") & ";" & Style)
-                    writer.WriteAttribute("onclick", "javascript: changeContinueStop(event, this, ['" + "arabic" + ID + CStr(IIf(NestPrefix = String.Empty, String.Empty, NestPrefix + "_")) + CStr(Count) + "_" + CStr(Index - 2) + "', '" + "translit" + ID + CStr(IIf(NestPrefix = String.Empty, String.Empty, NestPrefix + "_")) + CStr(Count) + "_" + CStr(Index - 1) + "']);")
-                    writer.Write(HtmlTextWriter.TagRightChar & If(DirectCast(Items(Count).TextItems(Index).Text, Boolean), "&#2B45;", "&#x2B59;"))
+                    writer.WriteAttribute("onclick", "javascript: changeContinueStop(event, this, ['" + "arabic" + ID + CStr(IIf(NestPrefix = String.Empty, String.Empty, NestPrefix + "_")) + CStr(Count - 1) + "_" + CStr(0) + "', '" + "translit" + ID + CStr(IIf(NestPrefix = String.Empty, String.Empty, NestPrefix + "_")) + CStr(Count - 1) + "_" + CStr(1) + "']);")
+                    writer.Write(HtmlTextWriter.TagRightChar & If(DirectCast(Items(Count).TextItems(Index).Text, Boolean), "&#x2B45;", "&#x2B59;"))
                 ElseIf Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eRanking Then
                     Dim Data As String() = CStr(Items(Count).TextItems(Index).Text).Split("|"c)
                     If Style <> String.Empty Then writer.WriteAttribute("style", Style)
@@ -3590,17 +3601,17 @@ Public Class RenderArray
                     ElseIf Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eArabic Then
                         writer.WriteAttribute("class", "arabic")
                         writer.WriteAttribute("dir", If(System.Text.RegularExpressions.Regex.Match(CStr(Items(Count).TextItems(Index).Text), "(?:\s|\p{IsArabic}|\p{IsArabicPresentationForms-A}|\p{IsArabicPresentationForms-B})+").Success, "rtl", "ltr"))
-                        writer.WriteAttribute("id", "arabic" + ID + CStr(IIf(NestPrefix = String.Empty, String.Empty, NestPrefix + "_")) + CStr(Count) + "_" + CStr(Index))
+                        writer.WriteAttribute("id", "arabic" + ID + CStr(IIf(NestPrefix = String.Empty, String.Empty, NestPrefix + "_")) + CStr(Count) + "_" + CStr(ArrIndex))
                         writer.WriteAttribute("style", "color: " + System.Drawing.ColorTranslator.ToHtml(Items(Count).TextItems(Index).Clr) + ";" + If(Items(Count).TextItems(Index).Font <> String.Empty, "font-family:" + Items(Count).TextItems(Index).Font + ";", String.Empty) + Style)
                     ElseIf Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eTransliteration Then
                         writer.WriteAttribute("class", "transliteration")
                         writer.WriteAttribute("dir", "ltr")
                         writer.WriteAttribute("style", "color: " + System.Drawing.ColorTranslator.ToHtml(Items(Count).TextItems(Index).Clr) + "; display: " + CStr(IIf(CType(If(CInt(HttpContext.Current.Request.Params("translitscheme")) >= 2, 2 - CInt(HttpContext.Current.Request.Params("translitscheme")) Mod 2, CInt(HttpContext.Current.Request.Params("translitscheme"))), ArabicData.TranslitScheme) <> ArabicData.TranslitScheme.None, "block", "none")) + ";" + If(Items(Count).TextItems(Index).Font <> String.Empty, "font-family:" + Items(Count).TextItems(Index).Font + ";", String.Empty) + Style)
-                        writer.WriteAttribute("id", "translit" + ID + CStr(IIf(NestPrefix = String.Empty, String.Empty, NestPrefix + "_")) + CStr(Count) + "_" + CStr(Index))
+                        writer.WriteAttribute("id", "translit" + ID + CStr(IIf(NestPrefix = String.Empty, String.Empty, NestPrefix + "_")) + CStr(Count) + "_" + CStr(ArrIndex))
                     Else
                         writer.WriteAttribute("class", "translation")
                         writer.WriteAttribute("dir", CStr(IIf(Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eRTL, "rtl", "ltr")))
-                        writer.WriteAttribute("id", "translate" + ID + CStr(IIf(NestPrefix = String.Empty, String.Empty, NestPrefix + "_")) + CStr(Count) + "_" + CStr(Index))
+                        writer.WriteAttribute("id", "translate" + ID + CStr(IIf(NestPrefix = String.Empty, String.Empty, NestPrefix + "_")) + CStr(Count) + "_" + CStr(ArrIndex))
                         writer.WriteAttribute("style", "color: " + System.Drawing.ColorTranslator.ToHtml(Items(Count).TextItems(Index).Clr) + ";" + If(Items(Count).TextItems(Index).Font <> String.Empty, "font-family:" + Items(Count).TextItems(Index).Font + ";", String.Empty) + Style)
                     End If
                     writer.Write(HtmlTextWriter.TagRightChar)
@@ -3626,6 +3637,7 @@ Public Class RenderArray
                     Loop While Items(Count).TextItems.Length <> TestIndex AndAlso (Items(Count).TextItems(TestIndex).DisplayClass = RenderDisplayClass.eLink Or Items(Count).TextItems(Index).DisplayClass = Items(Count).TextItems(TestIndex).DisplayClass)
                     Index = TestIndex - 1
                 End If
+                ArrIndex += 1
                 writer.WriteEndTag(CStr(IIf(Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eNested Or Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eRanking Or Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eList, "div", "span")))
                 If TestIndex = Items(Count).TextItems.Length Then Exit For
             Next
