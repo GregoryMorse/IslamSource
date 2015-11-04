@@ -2466,6 +2466,7 @@ Public Class CachedData
     Shared _ColoringSpelledOutRules As IslamData.RuleTranslationCategory.RuleTranslation()
     Shared _ErrorCheck As IslamData.RuleTranslationCategory.RuleTranslation()
     Shared _RulesOfRecitationRegEx As IslamData.RuleMetaSet.RuleMetadataTranslation()
+    Shared _RulesVerificationRegEx As IslamData.RuleMetaSet.RuleMetadataTranslation()
     Shared _SavedPatterns As New Dictionary(Of String, String)
     Shared _SavedGroups As New Dictionary(Of String, String())
     Public Shared Function GetNum(Name As String) As String()
@@ -3160,6 +3161,17 @@ Public Class CachedData
                 Next
             End If
             Return _RulesOfRecitationRegEx
+        End Get
+    End Property
+    Public Shared ReadOnly Property RulesVerificationRegEx As IslamData.RuleMetaSet.RuleMetadataTranslation()
+        Get
+            If _RulesVerificationRegEx Is Nothing Then
+                _RulesVerificationRegEx = TanzilReader.GetMetaRuleSet("Verification").Rules
+                For SubCount As Integer = 0 To _RulesVerificationRegEx.Length - 1
+                    _RulesVerificationRegEx(SubCount).Match = TranslateRegEx(_RulesVerificationRegEx(SubCount).Match, True)
+                Next
+            End If
+            Return _RulesVerificationRegEx
         End Get
     End Property
     Public Shared ReadOnly Property WarshScript As IslamData.RuleTranslationCategory.RuleTranslation()
@@ -5770,7 +5782,7 @@ Public Class TanzilReader
     End Sub
     Public Shared Sub CheckMutualExclusiveRules(bAssumeContinue As Boolean)
         'Dim Verify As String() = {CStr(ArabicData.ArabicLetterHamza), ArabicData.ArabicTatweel + "?" + ArabicData.ArabicHamzaAbove, ArabicData.ArabicLetterAlefWithHamzaAbove, ArabicData.ArabicLetterAlefWithHamzaBelow, ArabicData.ArabicLetterWawWithHamzaAbove, ArabicData.ArabicLetterYehWithHamzaAbove}
-        Dim VerIndex As Integer = 16
+        Dim VerIndex As Integer = 4
         Dim IndexToVerse As Integer()() = Nothing
         Dim Text As String = QuranTextCombiner(CachedData.XMLDocMain, IndexToVerse)
         Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(Text, CachedData.TranslateRegEx(CachedData.IslamData.VerificationSet(VerIndex).Match, True))
@@ -5786,15 +5798,24 @@ Public Class TanzilReader
         Dim MatchMetadata As String() = CachedData.IslamData.VerificationSet(VerIndex).Evaluator
         For MainCount = 0 To CachedData.IslamData.VerificationSet(VerIndex).MetaRules.Length - 1
             Dim MetaCount As Integer
+            Dim bVerSet As Boolean = False
             For MetaCount = 0 To CachedData.RulesOfRecitationRegEx.Length - 1
                 If CachedData.IslamData.VerificationSet(VerIndex).MetaRules(MainCount) = CachedData.RulesOfRecitationRegEx(MetaCount).Name Then
                     Exit For
                 End If
             Next
-            Matches = System.Text.RegularExpressions.Regex.Matches(Text, CachedData.RulesOfRecitationRegEx(MetaCount).Match)
+            If MetaCount = CachedData.RulesOfRecitationRegEx.Length Then
+                bVerSet = True
+                For MetaCount = 0 To CachedData.RulesVerificationRegEx.Length - 1
+                    If CachedData.IslamData.VerificationSet(VerIndex).MetaRules(MainCount) = CachedData.RulesVerificationRegEx(MetaCount).Name Then
+                        Exit For
+                    End If
+                Next
+            End If
+            Matches = System.Text.RegularExpressions.Regex.Matches(Text, If(bVerSet, CachedData.RulesVerificationRegEx(MetaCount).Match, CachedData.RulesOfRecitationRegEx(MetaCount).Match))
             Dim SieveCount As Integer = 0
             For Count = 0 To Matches.Count - 1
-                Dim MetaRules As String() = CachedData.RulesOfRecitationRegEx(MetaCount).Evaluator
+                Dim MetaRules As String() = If(bVerSet, CachedData.RulesVerificationRegEx(MetaCount).Evaluator, CachedData.RulesOfRecitationRegEx(MetaCount).Evaluator)
                 If Count = 0 AndAlso Matches(Count).Groups.Count <> MetaRules.Length + 1 Then Debug.Print("Discrepency in metadata:" + CStr(MainCount + 1) + ":" + CStr(MetaRules.Length) + ":Got:" + CStr(Matches(Count).Groups.Count - 1))
                 Dim bSieve As Boolean = False
                 For SubCount = 0 To MetaRules.Length - 1
