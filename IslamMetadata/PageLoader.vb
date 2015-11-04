@@ -692,10 +692,45 @@ Public Class Arabic
             End If
         Next
         MetadataList.Sort(New RuleMetadataComparer)
-        Dim Index As Integer
-        For Index = 0 To MetadataList.Count - 1
+        Dim Index As Integer = 0
+        While Index <= MetadataList.Count - 1
+            Do While Index <> MetadataList.Count - 1 AndAlso MetadataList(Index).Index = MetadataList(Index + 1).Index AndAlso MetadataList(Index).Length = MetadataList(Index + 1).Length
+                Dim FirstRule As String() = MetadataList(Index).Type.Split("|"c)
+                Dim SecondRule As New List(Of String)
+                SecondRule.AddRange(MetadataList(Index + 1).Type.Split("|"c))
+                Dim FirstUpdate As String = String.Empty
+                For FirstIndex As Integer = 0 To FirstRule.Length - 1
+                    Dim SecondIndex As Integer
+                    For SecondIndex = 0 To SecondRule.Count - 1
+                        If System.Text.RegularExpressions.Regex.Replace(FirstRule(FirstIndex), "\(.*\)", String.Empty) = System.Text.RegularExpressions.Regex.Replace(SecondRule(SecondIndex), "\(.*\)", String.Empty) Then
+                            Dim Matches As String() = System.Text.RegularExpressions.Regex.Replace(FirstRule(FirstIndex), ".*\((.*)\)", "$1").Split(","c)
+                            If Matches.Length <> 1 Then
+                                Dim AddMatches As String() = System.Text.RegularExpressions.Regex.Replace(SecondRule(SecondIndex), ".*\((.*)\)", "$1").Split(","c)
+                                If FirstUpdate <> String.Empty Then FirstUpdate += "|"
+                                FirstUpdate += System.Text.RegularExpressions.Regex.Replace(FirstRule(FirstIndex), "\(.*\)", String.Empty) + "("
+                                For Count = 0 To Matches.Length - 1
+                                    FirstUpdate += Matches(Count) + If(Matches(Count) <> String.Empty And AddMatches(Count) <> String.Empty, " ", String.Empty) + AddMatches(Count)
+                                    If Count <> Matches.Length - 1 Then FirstUpdate += ","
+                                Next
+                                FirstUpdate += ")"
+                            Else
+                                FirstUpdate += If(FirstUpdate <> String.Empty, "|", String.Empty) + FirstRule(FirstIndex)
+                            End If
+                            SecondRule.RemoveAt(SecondIndex)
+                            SecondIndex -= 1
+                            Exit For
+                        End If
+                    Next
+                    If SecondIndex = SecondRule.Count Then FirstUpdate += If(FirstUpdate <> String.Empty, "|", String.Empty) + FirstRule(FirstIndex)
+                Next
+                SecondRule.Insert(0, FirstUpdate)
+                Debug.Print("First: " + MetadataList(Index).Type + " Second: " + MetadataList(Index + 1).Type + " After: " + String.Join("|"c, SecondRule.ToArray()))
+                MetadataList(Index) = New RuleMetadata(MetadataList(Index).Index, MetadataList(Index).Length, String.Join("|"c, SecondRule.ToArray()), MetadataList(Index).OrigOrder)
+                MetadataList.RemoveAt(Index + 1)
+            Loop
             ArabicString = ReplaceMetadata(ArabicString, MetadataList(Index), Scheme, LearningMode)
-        Next
+            Index += 1
+        End While
         'redundant romanization rules should have -'s such as seen/teh/kaf-heh
         For Count = 0 To CachedData.RomanizationRules.Length - 1
             If CachedData.RomanizationRules(Count).RuleFunc = RuleFuncs.eNone Then
@@ -5863,11 +5898,11 @@ Public Class TanzilReader
             End If
         Next
     End Sub
-    Public Shared Function QuranTextCombiner(XMLDoc As System.Xml.XmlDocument, ByRef IndexToVerse As Integer()()) As String
+    Public Shared Function QuranTextCombiner(XMLDoc As System.Xml.XmlDocument, ByRef IndexToVerse As Integer()(), Optional StartChapter As Integer = 1, Optional EndChapter As Integer = 0) As String
         Dim Verses As List(Of String()) = GetQuranText(XMLDoc, -1, -1, -1, -1)
         Dim IndexToVerseList As New List(Of Integer())
         Dim Str As New System.Text.StringBuilder
-        For Count As Integer = 0 To Verses.Count - 1
+        For Count As Integer = StartChapter - 1 To If(EndChapter <> 0, EndChapter - 1, Verses.Count - 1)
             For SubCount As Integer = 0 To Verses(Count).Length - 1
                 Dim Words As String()
                 Dim Index As Integer

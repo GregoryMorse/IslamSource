@@ -22,10 +22,11 @@ Public Class frmMain
         'TanzilReader.CheckNotablePatterns()
         'TanzilReader.FindMinimalVersesForCoverage()
         'TanzilReader.CheckSequentialRules()
-        TanzilReader.CheckMutualExclusiveRules(False)
-        TanzilReader.CheckMutualExclusiveRules(True)
-        'Dim IndexToVerse As Integer()() = Nothing
-        'Dim Text As String = TanzilReader.QuranTextCombiner(CachedData.XMLDocMain, IndexToVerse)
+        'TanzilReader.CheckMutualExclusiveRules(False)
+        'TanzilReader.CheckMutualExclusiveRules(True)
+        Dim IndexToVerse As Integer()() = Nothing
+        Dim Text As String = TanzilReader.QuranTextCombiner(CachedData.XMLDocMain, IndexToVerse, 2, 2)
+        Debug.Print(Arabic.TransliterateToScheme(Text, ArabicData.TranslitScheme.RuleBased, "PlainRoman", TanzilReader.GenerateDefaultStops(Text)))
         'Debug.Print(Arabic.TransliterateToScheme(System.Text.RegularExpressions.Regex.Match(Text, CachedData.GetPattern("ContinuousMatch")).Value, ArabicData.TranslitScheme.Literal, String.Empty))
         Arabic.TransliterateToScheme(Arabic.TransliterateFromBuckwalter("suwrapu {lofaAtiHapi"), ArabicData.TranslitScheme.LearningMode, "PlainRoman", TanzilReader.GenerateDefaultStops(Arabic.TransliterateFromBuckwalter("suwrapu {lofaAtiHapi")))
         Arabic.TransliterateToScheme(Arabic.TransliterateFromBuckwalter("*ikorFA"), ArabicData.TranslitScheme.LearningMode, "PlainRoman", TanzilReader.GenerateDefaultStops(Arabic.TransliterateFromBuckwalter("*ikorFA")))
