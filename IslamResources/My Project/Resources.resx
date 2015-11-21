@@ -32740,67 +32740,73 @@
     <value>Fifth Maxim Twelfth Subsidiary Maxim</value>
   </data>
   <data name="IslamInfo_Maxim5-12WordByWord" xml:space="preserve">
-    <value></value>
+    <value>The impossible|customarily|is considered/regarded as impossible|in fact/reality</value>
   </data>
   <data name="IslamInfo_Maxim6" xml:space="preserve">
     <value>Sixth Maxim</value>
   </data>
   <data name="IslamInfo_Maxim6WordByWord" xml:space="preserve">
-    <value></value>
+    <value>Giving effect/value|to word/statement/speech|is better/more appropriate/prioritized than|ignoring/neglecting them</value>
   </data>
   <data name="IslamInfo_Maxim6-1" xml:space="preserve">
     <value>Sixth Maxim First Subsidiary Maxim</value>
   </data>
   <data name="IslamInfo_Maxim6-1WordByWord" xml:space="preserve">
-    <value></value>
+    <value>Originally/the original state|in/of|speech/words|is the literal sense/should be taken according to their literal meaning</value>
   </data>
   <data name="IslamInfo_Maxim6-2" xml:space="preserve">
     <value>Sixth Maxim Second Subsidiary Maxim</value>
   </data>
   <data name="IslamInfo_Maxim6-2WordByWord" xml:space="preserve">
-    <value></value>
+    <value>When|becomes impossible|the real meaning/word|will be used/understood/taken|towards|the metaphorical meaning/word</value>
   </data>
   <data name="IslamInfo_Maxim6-3" xml:space="preserve">
     <value>Sixth Maxim Third Subsidiary Maxim</value>
   </data>
   <data name="IslamInfo_Maxim6-3WordByWord" xml:space="preserve">
-    <value></value>
+    <value>When|becomes impossible|to give effect/attach a meaning|to a word/speech|it shall be neglected/is disregarded altogether</value>
   </data>
   <data name="IslamInfo_Maxim6-4" xml:space="preserve">
     <value>Sixth Maxim Fourth Subsidiary Maxim</value>
   </data>
   <data name="IslamInfo_Maxim6-4WordByWord" xml:space="preserve">
-    <value></value>
+    <value>Not|shall be attributed/imputed|to|a silent person/one who keeps silent|an utterance/statement|(but|silence|in|case|of necessity|is pronouncement)</value>
   </data>
   <data name="IslamInfo_Maxim6-5" xml:space="preserve">
     <value>Sixth Maxim Fifth Subsidiary Maxim</value>
   </data>
   <data name="IslamInfo_Maxim6-5WordByWord" xml:space="preserve">
-    <value></value>
+    <value>A mention/reference|of/to a part/some|of that which is|not|divisible|is like mention/reference|of/to the whole</value>
   </data>
   <data name="IslamInfo_Maxim6-6" xml:space="preserve">
     <value>Sixth Maxim Sixth Subsidiary Maxim</value>
   </data>
   <data name="IslamInfo_Maxim6-6WordByWord" xml:space="preserve">
-    <value></value>
+    <value>The description|in|the present/presence|is meaningless/void/invalid/useless|but of|the absent|is valid/considerable</value>
   </data>
   <data name="IslamInfo_Maxim6-7" xml:space="preserve">
     <value>Sixth Maxim Seventh Subsidiary Maxim</value>
   </data>
   <data name="IslamInfo_Maxim6-7WordByWord" xml:space="preserve">
-    <value></value>
+    <value>The question|should be repeated/is reiterated|in|the reply/answer/response</value>
   </data>
-  <data name="IslamInfo_Maxim6-8" xml:space="preserve">
+  <data name="IslamInfo_Maxim6-8-1" xml:space="preserve">
     <value>Sixth Maxim Eighth Subsidiary Maxim</value>
   </data>
-  <data name="IslamInfo_Maxim6-8WordByWord" xml:space="preserve">
-    <value></value>
+  <data name="IslamInfo_Maxim6-8-1WordByWord" xml:space="preserve">
+    <value>Establishment/giving new meaning|is better/more appropriate|than|emphasis/confirming the previous meaning</value>
+  </data>
+  <data name="IslamInfo_Maxim6-8-2" xml:space="preserve">
+    <value>Sixth Maxim Eighth Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim6-8-2WordByWord" xml:space="preserve">
+    <value>Usage|is better|than|repetition</value>
   </data>
   <data name="IslamInfo_Maxim6-9" xml:space="preserve">
     <value>Sixth Maxim Ninth Subsidiary Maxim</value>
   </data>
   <data name="IslamInfo_Maxim6-9WordByWord" xml:space="preserve">
-    <value></value>
+    <value>The unspecified/absolute/unrestricted/unconditional|remains/will remain|on|its unrestricted state|as long as|not|found|evidence|of restriction|by text|or|indictation/deduced meaning</value>
   </data>
   <data name="IslamInfo_LegalMaxims" xml:space="preserve">
   	<value>Legal Maxims</value>
