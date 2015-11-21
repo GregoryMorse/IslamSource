@@ -3703,18 +3703,19 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
  		<word text="&lt;i*aA taEaAraDa {lomaAniEu wa{lomuqotaDiY yuqad~amu {lomaAniEu &lt;il~aA &lt;i*aA kaAna {lomuqotaDiY &gt;aEoZama" id="Maxim4-6"></word>
  		<word text="&lt;i*aA {jotamaEa {loHalaAlu wa{loHaraAmu &gt;awi {lomubiyHu wa{lomuHar~amu galaba {loHaraAmu" id="Maxim4-7"></word>
  		<word text="{loEaAdapu muHak~amapN" id="Maxim5"></word>
- 		<word text="" id="Maxim5-1"></word>
- 		<word text="" id="Maxim5-2"></word>
- 		<word text="" id="Maxim5-3"></word>
- 		<word text="" id="Maxim5-4"></word>
- 		<word text="" id="Maxim5-5"></word>
- 		<word text="" id="Maxim5-6"></word>
- 		<word text="" id="Maxim5-7"></word>
- 		<word text="" id="Maxim5-8"></word>
- 		<word text="" id="Maxim5-9"></word>
- 		<word text="" id="Maxim5-10"></word>
- 		<word text="" id="Maxim5-11"></word>
- 		<word text="" id="Maxim5-12"></word>
+ 		<word text="{sotiEomaAlu {ln~aAsi Huj~apN yajibu {loEamalu bihaA" id="Maxim5-1"></word>
+ 		<word text="&lt;in~amaA tuEotabaru {loEaAdapu &lt;i*aA {T~aradato &gt;awo galabato" id="Maxim5-2"></word>
+ 		<word text="{loEibarapu lilogaAlibi {l$~aA^}iEi laA liln~aAdiri" id="Maxim5-3"></word>
+ 		<word text="{loEurofu {l~a*iY taHomalu Ealayohi {lo&gt;alofaAZu &lt;in~amaA huwa {lomuqaArinu {ls~aAbiqu duwna {lomuta&gt;ax~iri {ll~aAHiqi" id="Maxim5-4"></word>
+ 		<word text="laA Eibarapa bi{loEurofi {lT~aAri}i" id="Maxim5-4-1"></word>
+ 		<word text="{loHaqiyqapu tutoraku bidalaAlapi {loEaAdapi" id="Maxim5-5"></word>
+ 		<word text="{lokitaAbu kaAloxiTaAbu" id="Maxim5-6"></word>
+ 		<word text="{lo&lt;i$aAraAtu {lomaEohuwdapu lilo&gt;axorasi kaAlobayaAni bi{ll~isaAni" id="Maxim5-7"></word>
+ 		<word text="{lomaEoruwfi EurofFA kaAloma$oruwTi $aroTFA" id="Maxim5-8"></word>
+ 		<word text="{lt~aEoyiynu bi{loEurofi ka{lt~aEoyiyni bi{ln~aS~i" id="Maxim5-9"></word>
+ 		<word text="{lomaEoruwfi bayona {lt~ujaAri ka{loma$oruwTi bayonahumo" id="Maxim5-10"></word>
+ 		<word text="laA tunokaru tagay~uru {lo&gt;aHokaAmi bitagay~uri {lz~imaAni" id="Maxim5-11"></word>
+ 		<word text="{lomumotaniEu EaAdapF ka{lomumotaniEi HaqiyqapF" id="Maxim5-12"></word>
  		<word text="" id="Maxim6"></word>
  		<word text="" id="Maxim6-1"></word>
  		<word text="" id="Maxim6-2"></word>
@@ -4395,7 +4396,7 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<word text="\{phrase:Maxim2,Maxim2-1-1,Maxim2-1-2,Maxim2-1-3,Maxim2-2,Maxim2-3,Maxim2-4,Maxim2-5,Maxim2-6,Maxim2-7,Maxim2-8,Maxim2-9,Maxim2-10,Maxim2-11,Maxim2-12,Maxim2-13\}" id="Maxim2"></word>
 			<word text="\{phrase:Maxim3,Maxim3-1,Maxim3-2,Maxim3-3-1,Maxim3-3-2,Maxim3-4-1,Maxim3-4-2,Maxim3-5,Maxim3-6,Maxim3-7\}" id="Maxim3"></word>
 			<word text="\{phrase:Maxim4,Maxim4-1,Maxim4-2,Maxim4-3-1,Maxim4-3-2,Maxim4-3-3,Maxim4-3-4,Maxim4-4,Maxim4-5,Maxim4-6,Maxim4-7\}" id="Maxim4"></word>
-			<word text="\{phrase:Maxim5,Maxim5-1,Maxim5-2,Maxim5-3,Maxim5-4,Maxim5-5,Maxim5-6,Maxim5-7,Maxim5-8,Maxim5-9,Maxim5-10,Maxim5-11,Maxim5-12\}" id="Maxim5"></word>
+			<word text="\{phrase:Maxim5,Maxim5-1,Maxim5-2,Maxim5-3,Maxim5-4,Maxim5-4-1,Maxim5-5,Maxim5-6,Maxim5-7,Maxim5-8,Maxim5-9,Maxim5-10,Maxim5-11,Maxim5-12\}" id="Maxim5"></word>
 			<word text="\{phrase:Maxim6,Maxim6-1,Maxim6-2,Maxim6-3,Maxim6-4,Maxim6-5,Maxim6-6,Maxim6-7,Maxim6-8,Maxim6-9\}" id="Maxim6"></word>
 		</category>
 		<category title="IslamicTheology">
