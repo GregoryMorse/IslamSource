@@ -32388,4 +32388,415 @@
   <data name="IslamInfo_FlexibleFullyFlexibleVerbOrNoun" xml:space="preserve">
     <value>Flexible Fully Flexible Verb Or Noun</value>
   </data>
+  <data name="IslamInfo_Maxim1" xml:space="preserve">
+    <value>First Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim1WordByWord" xml:space="preserve">
+    <value>Actions/deeds|depend upon/with their intentions</value>
+  </data>
+  <data name="IslamInfo_Maxim1-1" xml:space="preserve">
+    <value>First Maxim First Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim1-1WordByWord" xml:space="preserve">
+    <value>No/there is not|reward|except|by/with intention</value>
+  </data>
+  <data name="IslamInfo_Maxim1-2" xml:space="preserve">
+    <value>First Maxim Second Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim1-2WordByWord" xml:space="preserve">
+    <value>Consideration|in|contracts|is given to/with intention|and meaning|not|words|and forms</value>
+  </data>
+  <data name="IslamInfo_Maxim1-3" xml:space="preserve">
+    <value>First Maxim Third Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim1-3WordByWord" xml:space="preserve">
+    <value>Intention|makes specific|a word/statement|general|and generalizes|a word/statement|specific</value>
+  </data>
+  <data name="IslamInfo_Maxim1-4" xml:space="preserve">
+    <value>First Maxim Fourth Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim1-4WordByWord" xml:space="preserve">
+    <value>Oaths|are based|on|intentions|and objectives|not|upon|words</value>
+  </data>
+  <data name="IslamInfo_Maxim1-5" xml:space="preserve">
+    <value>First Maxim Fifth Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim1-5WordByWord" xml:space="preserve">
+    <value>Oaths|are based|on|the customs|of the one taking the oath|if|not|possible|the condition/to interpret it|upon|the meaning|legal</value>
+  </data>
+  <data name="IslamInfo_Maxim1-6-1" xml:space="preserve">
+    <value>First Maxim First Exceptional Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim1-6-1WordByWord" xml:space="preserve">
+    <value>Whoever|hastens|something|before|its allotted time|is punished|by being deprived of it</value>
+  </data>
+  <data name="IslamInfo_Maxim1-6-2" xml:space="preserve">
+    <value>First Maxim Second Exceptional Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim1-6-2WordByWord" xml:space="preserve">
+    <value>Favoring|in|righteous deeds|is disliked|and in|other than them|is liked</value>
+  </data>
+  <data name="IslamInfo_Maxim2" xml:space="preserve">
+    <value>Second Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2WordByWord" xml:space="preserve">
+    <value>Certainty|is not|invalidated/overruled|by doubt</value>
+  </data>
+  <data name="IslamInfo_Maxim2-1-1" xml:space="preserve">
+    <value>Second Maxim First Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2-1-1WordByWord" xml:space="preserve">
+    <value>The basic rule/principle|remains|that which|was|upon/as|what it|was</value>
+  </data>
+  <data name="IslamInfo_Maxim2-1-2" xml:space="preserve">
+    <value>Second Maxim First Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2-1-2WordByWord" xml:space="preserve">
+    <value>That which|is established|by a span of time|will be ruled|with its continuation|that which|did not|find|evidence|upon|its difference</value>
+  </data>
+  <data name="IslamInfo_Maxim2-1-3" xml:space="preserve">
+    <value>Second Maxim First Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2-1-3WordByWord" xml:space="preserve">
+    <value>The forthcoming|is left|upon|its previous</value>
+  </data>
+  <data name="IslamInfo_Maxim2-2" xml:space="preserve">
+    <value>Second Maxim Second Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2-2WordByWord" xml:space="preserve">
+    <value>The basic rule/principle|is free/innocent|of responsibility/liability</value>
+  </data>
+  <data name="IslamInfo_Maxim2-3" xml:space="preserve">
+    <value>Second Maxim Third Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2-3WordByWord" xml:space="preserve">
+    <value>That which|is confirmed|by certainty|not|can be validated/is known|except|by certainty</value>
+  </data>
+  <data name="IslamInfo_Maxim2-4" xml:space="preserve">
+    <value>Second Maxim Fourth Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2-4WordByWord" xml:space="preserve">
+    <value>The general rule|in/regarding|characteristics|or|things|incidental|is non-existence|(or|the basic rule/principle|is non-existence)</value>
+  </data>
+  <data name="IslamInfo_Maxim2-5" xml:space="preserve">
+    <value>Second Maxim Fifth Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2-5WordByWord" xml:space="preserve">
+    <value>The general rule|is attributing|the incident|to|the most recent|time of it</value>
+  </data>
+  <data name="IslamInfo_Maxim2-6" xml:space="preserve">
+    <value>Second Maxim Sixth Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2-6WordByWord" xml:space="preserve">
+    <value>The basic/general rule/principle|in/regarding|things|is permissibility</value>
+  </data>
+  <data name="IslamInfo_Maxim2-7" xml:space="preserve">
+    <value>Second Maxim Seventh Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2-7WordByWord" xml:space="preserve">
+    <value>The general rule|in/regarding|sexual relations|(sexual relations)|is prohibition</value>
+  </data>
+  <data name="IslamInfo_Maxim2-8" xml:space="preserve">
+    <value>Second Maxim Eighth Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2-8WordByWord" xml:space="preserve">
+    <value>No|value/estimation|implication/indication|in|the context|of the clear statement</value>
+  </data>
+  <data name="IslamInfo_Maxim2-9" xml:space="preserve">
+    <value>Second Maxim Ninth Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2-9WordByWord" xml:space="preserve">
+    <value>Not|should/will be attributed|to|the one who is silent|a statement/position|but|silence|in/at|the place|of necessity|towards|explanation|is an explanation</value>
+  </data>
+  <data name="IslamInfo_Maxim2-10" xml:space="preserve">
+    <value>Second Maxim Tenth Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2-10WordByWord" xml:space="preserve">
+    <value>No|value|with the imaginary things</value>
+  </data>
+  <data name="IslamInfo_Maxim2-11" xml:space="preserve">
+    <value>Second Maxim Eleventh Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2-11WordByWord" xml:space="preserve">
+    <value>No|value|with assumption/suspicion|that is clear|its wrong</value>
+  </data>
+  <data name="IslamInfo_Maxim2-12" xml:space="preserve">
+    <value>Second Maxim Twelfth Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2-12WordByWord" xml:space="preserve">
+    <value>The highly unlikely|normally|is equalivalent to the impossible|reality/really</value>
+  </data>
+  <data name="IslamInfo_Maxim2-13" xml:space="preserve">
+    <value>Second Maxim Thirteenth Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2-13WordByWord" xml:space="preserve">
+    <value>Not|evidence is acceptable|along with|a contrary probability/possibility|based|upon|evidence</value>
+  </data>
+  <data name="IslamInfo_Maxim3" xml:space="preserve">
+    <value>Third Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim3WordByWord" xml:space="preserve">
+    <value>Hardship/difficulty|begets/brings|facility/ease</value>
+  </data>
+  <data name="IslamInfo_Maxim3-1" xml:space="preserve">
+    <value>Third Maxim First Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim3-1WordByWord" xml:space="preserve">
+    <value>If|becomes narrow|the case|it expands|and if|becomes expansive|the case|it narrows</value>
+  </data>
+  <data name="IslamInfo_Maxim3-2" xml:space="preserve">
+    <value>Third Maxim Second Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim3-2WordByWord" xml:space="preserve">
+    <value>Necessity|makes lawful/permissible|the unlawful/prohibited things</value>
+  </data>
+  <data name="IslamInfo_Maxim3-3-1" xml:space="preserve">
+    <value>Third Maxim Third Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim3-3-1WordByWord" xml:space="preserve">
+    <value>Necessities|should be/are estimated|by the extent thereof/properly</value>
+  </data>
+  <data name="IslamInfo_Maxim3-3-2" xml:space="preserve">
+    <value>Third Maxim Third Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim3-3-2WordByWord" xml:space="preserve">
+    <value>What|has been permitted|by necessity|is estimated|in accordance to its correctness measurement</value>
+  </data>
+  <data name="IslamInfo_Maxim3-4-1" xml:space="preserve">
+    <value>Third Maxim Fourth Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim3-4-1WordByWord" xml:space="preserve">
+    <value>What|became permissible/is permitted|due to an excuse|is invalidated|with its going</value>
+  </data>
+  <data name="IslamInfo_Maxim3-4-2" xml:space="preserve">
+    <value>Third Maxim Fourth Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim3-4-2WordByWord" xml:space="preserve">
+    <value>What|stands/is based|upon|necessity|ends|with the ending|of this|necessity</value>
+  </data>
+  <data name="IslamInfo_Maxim3-5" xml:space="preserve">
+    <value>Third Maxim Fifth Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim3-5WordByWord" xml:space="preserve">
+    <value>Need|is considered|to the level/position|of necessity|general|whether was|or|specific</value>
+  </data>
+  <data name="IslamInfo_Maxim3-6" xml:space="preserve">
+    <value>Third Maxim Sixth Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim3-6WordByWord" xml:space="preserve">
+    <value>Necessity|not|does invalidate|the rights|of others</value>
+  </data>
+  <data name="IslamInfo_Maxim3-7" xml:space="preserve">
+    <value>Third Maxim Seventh Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim3-7WordByWord" xml:space="preserve">
+    <value>If|becomes impossible|the original/root|shall be sought|to|the substitute</value>
+  </data>
+  <data name="IslamInfo_Maxim4" xml:space="preserve">
+    <value>Fourth Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim4WordByWord" xml:space="preserve">
+    <value>Harm|must be eliminated|(no|harm shall be inflicted|nor|shall harm be reciprocated)</value>
+  </data>
+  <data name="IslamInfo_Maxim4-1" xml:space="preserve">
+    <value>Fourth Maxim First Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim4-1WordByWord" xml:space="preserve">
+    <value>Harm|should be repelled|by/to the degree|possible</value>
+  </data>
+  <data name="IslamInfo_Maxim4-2" xml:space="preserve">
+    <value>Fourth Maxim Second Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim4-2WordByWord" xml:space="preserve">
+    <value>Harm|not|would/may/should be eliminated|by its equivalent|or|harm|not|would/may/should be removed|by harm</value>
+  </data>
+  <data name="IslamInfo_Maxim4-3-1" xml:space="preserve">
+    <value>Fourth Maxim Third Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim4-3-1WordByWord" xml:space="preserve">
+    <value>Harm|greater|should be eliminated|by harm|lesser</value>
+  </data>
+  <data name="IslamInfo_Maxim4-3-2" xml:space="preserve">
+    <value>Fourth Maxim Third Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim4-3-2WordByWord" xml:space="preserve">
+    <value>Should be chosen|the lesser/easier|of two harms</value>
+  </data>
+  <data name="IslamInfo_Maxim4-3-3" xml:space="preserve">
+    <value>Fourth Maxim Third Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim4-3-3WordByWord" xml:space="preserve">
+    <value>When|contradicts|two corruptions/causes of harm|will be removed|the greater of the two|harms|by doing|the lesser of the two</value>
+  </data>
+  <data name="IslamInfo_Maxim4-3-4" xml:space="preserve">
+    <value>Fourth Maxim Third Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim4-3-4WordByWord" xml:space="preserve">
+    <value>When|meets|two harms|is taken to remove|the lesser|for the greater</value>
+  </data>
+  <data name="IslamInfo_Maxim4-4" xml:space="preserve">
+    <value>Fourth Maxim Fourth Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim4-4WordByWord" xml:space="preserve">
+    <value>Borne/tolerated|injury/harm|private/specific|in order to prevent/repel|injury/harm|public/general</value>
+  </data>
+  <data name="IslamInfo_Maxim4-5" xml:space="preserve">
+    <value>Fourth Maxim Fifth Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim4-5WordByWord" xml:space="preserve">
+    <value>Repelling|corruption|is better/takes precedence|than|obtaining|benefits</value>
+  </data>
+  <data name="IslamInfo_Maxim4-6" xml:space="preserve">
+    <value>Fourth Maxim Sixth Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim4-6WordByWord" xml:space="preserve">
+    <value>When|contradict|prohibiting evidence/the preclusive|and demanding evidence/the necessitated|preference shall be given to|prohibiting evidence/the preclusive|except|when|was|demanding evidence/the necessitated|greater/more important</value>
+  </data>
+  <data name="IslamInfo_Maxim4-7" xml:space="preserve">
+    <value>Fourth Maxim Seventh Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim4-7WordByWord" xml:space="preserve">
+    <value>When|coincide|the religiously lawful|and the religiously unlawful|or|the permitted|and the prohibited|shall be dominant|the religiously unlawful</value>
+  </data>
+  <data name="IslamInfo_Maxim5" xml:space="preserve">
+    <value>Fifth Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5WordByWord" xml:space="preserve">
+    <value>Custom|determines/can be the basis of judgement</value>
+  </data>
+  <data name="IslamInfo_Maxim5-1" xml:space="preserve">
+    <value>Fifth Maxim First Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5-1WordByWord" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="IslamInfo_Maxim5-2" xml:space="preserve">
+    <value>Fifth Maxim Second Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5-2WordByWord" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="IslamInfo_Maxim5-3" xml:space="preserve">
+    <value>Fifth Maxim Third Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5-3WordByWord" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="IslamInfo_Maxim5-4" xml:space="preserve">
+    <value>Fifth Maxim Fourth Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5-4WordByWord" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="IslamInfo_Maxim5-5" xml:space="preserve">
+    <value>Fifth Maxim Fifth Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5-5WordByWord" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="IslamInfo_Maxim5-6" xml:space="preserve">
+    <value>Fifth Maxim Sixth Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5-6WordByWord" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="IslamInfo_Maxim5-7" xml:space="preserve">
+    <value>Fifth Maxim Seventh Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5-7WordByWord" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="IslamInfo_Maxim5-8" xml:space="preserve">
+    <value>Fifth Maxim Eighth Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5-8WordByWord" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="IslamInfo_Maxim5-9" xml:space="preserve">
+    <value>Fifth Maxim Ninth Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5-9WordByWord" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="IslamInfo_Maxim5-10" xml:space="preserve">
+    <value>Fifth Maxim Tenth Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5-10WordByWord" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="IslamInfo_Maxim5-11" xml:space="preserve">
+    <value>Fifth Maxim Eleventh Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5-11WordByWord" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="IslamInfo_Maxim5-12" xml:space="preserve">
+    <value>Fifth Maxim Twelfth Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5-12WordByWord" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="IslamInfo_Maxim6" xml:space="preserve">
+    <value>Sixth Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim6WordByWord" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="IslamInfo_Maxim6-1" xml:space="preserve">
+    <value>Sixth Maxim First Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim6-1WordByWord" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="IslamInfo_Maxim6-2" xml:space="preserve">
+    <value>Sixth Maxim Second Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim6-2WordByWord" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="IslamInfo_Maxim6-3" xml:space="preserve">
+    <value>Sixth Maxim Third Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim6-3WordByWord" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="IslamInfo_Maxim6-4" xml:space="preserve">
+    <value>Sixth Maxim Fourth Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim6-4WordByWord" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="IslamInfo_Maxim6-5" xml:space="preserve">
+    <value>Sixth Maxim Fifth Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim6-5WordByWord" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="IslamInfo_Maxim6-6" xml:space="preserve">
+    <value>Sixth Maxim Sixth Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim6-6WordByWord" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="IslamInfo_Maxim6-7" xml:space="preserve">
+    <value>Sixth Maxim Seventh Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim6-7WordByWord" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="IslamInfo_Maxim6-8" xml:space="preserve">
+    <value>Sixth Maxim Eighth Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim6-8WordByWord" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="IslamInfo_Maxim6-9" xml:space="preserve">
+    <value>Sixth Maxim Ninth Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim6-9WordByWord" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="IslamInfo_LegalMaxims" xml:space="preserve">
+  	<value>Legal Maxims</value>
+  </data>
 </root>
