@@ -335,6 +335,8 @@ Public Class Arabic
         eUpperCase
         eSpellNumber
         eSpellLetter
+        eSpellLongLetter
+        eSpellLongMergedLetter
         eLookupLetter
         eLookupLongVowelDipthong
         eDivideTanween
@@ -347,7 +349,9 @@ Public Class Arabic
     Public Shared RuleFunctions As RuleFunction() = {
         Function(Str As String, Scheme As String, LearningMode As Boolean) {UCase(Str)},
         Function(Str As String, Scheme As String, LearningMode As Boolean) {TransliterateWithRules(Arabic.TransliterateFromBuckwalter(Arabic.ArabicWordFromNumber(CInt(TransliterateToScheme(Str, ArabicData.TranslitScheme.Literal, String.Empty)), True, False, False)), Scheme, Nothing, LearningMode)},
-        Function(Str As String, Scheme As String, LearningMode As Boolean) {TransliterateWithRules(ArabicLetterSpelling(Str, True), Scheme, Nothing, LearningMode)},
+        Function(Str As String, Scheme As String, LearningMode As Boolean) {TransliterateWithRules(ArabicLetterSpelling(Str, True, False, False), Scheme, Nothing, LearningMode)},
+        Function(Str As String, Scheme As String, LearningMode As Boolean) {TransliterateWithRules(ArabicLetterSpelling(Str, True, True, False), Scheme, Nothing, LearningMode)},
+        Function(Str As String, Scheme As String, LearningMode As Boolean) {TransliterateWithRules(ArabicLetterSpelling(Str, True, True, True), Scheme, Nothing, LearningMode)},
         Function(Str As String, Scheme As String, LearningMode As Boolean) {GetSchemeValueFromSymbol(ArabicData.ArabicLetters(ArabicData.FindLetterBySymbol(Str.Chars(0))), Scheme)},
         Function(Str As String, Scheme As String, LearningMode As Boolean) {GetSchemeLongVowelFromString(Str, Scheme)},
         Function(Str As String, Scheme As String, LearningMode As Boolean) {CachedData.ArabicFathaDammaKasra(Array.IndexOf(CachedData.ArabicTanweens, Str)), ArabicData.ArabicLetterNoon},
@@ -370,19 +374,19 @@ Public Class Arabic
     Public Shared Function IsWhitespace(Index As Integer) As Boolean
         Return Array.FindIndex(CachedData.WhitespaceSymbols, Function(Str As String) Str = ArabicData.ArabicLetters(Index).Symbol) <> -1
     End Function
-    Public Shared Function ArabicLetterSpelling(Input As String, Quranic As Boolean) As String
-        Dim Output As String = String.Empty
+    Public Shared Function ArabicLetterSpelling(Input As String, Quranic As Boolean, IsLong As Boolean, Merged As Boolean) As String
+        Dim Output As New System.Text.StringBuilder
         For Each Ch As Char In Input
             Dim Index As Integer = ArabicData.FindLetterBySymbol(Ch)
             If Index <> -1 AndAlso IsLetter(Index) Then
-                If Output <> String.Empty And Not Quranic Then Output += " "
+                If Output.Length <> 0 And Not Quranic Then Output.Append(" ")
                 Dim Idx As Integer = Array.IndexOf(CachedData.ArabicLettersInOrder, CStr(ArabicData.ArabicLetters(Index).Symbol))
-                Output += If(Quranic, CachedData.ArabicAlphabet(Idx).Remove(CachedData.ArabicAlphabet(Idx).Length - 1) + If(CachedData.ArabicAlphabet(Idx).EndsWith("n"), String.Empty, "o"), CachedData.ArabicAlphabet(Idx))
+                Output.Append(If(Quranic, If(IsLong, If(Merged, CachedData.ArabicAlphabet(Idx).Remove(CachedData.ArabicAlphabet(Idx).Length - 1).Insert(CachedData.ArabicAlphabet(Idx).Length - 2, ArabicData.ArabicMaddahAbove).Insert(1, ArabicData.ArabicShadda), CachedData.ArabicAlphabet(Idx).Remove(CachedData.ArabicAlphabet(Idx).Length - 1).Insert(CachedData.ArabicAlphabet(Idx).Length - 2, ArabicData.ArabicMaddahAbove)), CachedData.ArabicAlphabet(Idx).Remove(CachedData.ArabicAlphabet(Idx).Length - 1)) + If(CachedData.ArabicAlphabet(Idx).EndsWith("n"), String.Empty, "o"), CachedData.ArabicAlphabet(Idx)))
             ElseIf Index <> -1 AndAlso ArabicData.ArabicLetters(Index).Symbol = ArabicData.ArabicMaddahAbove Then
-                If Not Quranic Then Output += Ch
+                If Not Quranic Then Output.Append(Ch)
             End If
         Next
-        Return Arabic.TransliterateFromBuckwalter(Output)
+        Return Arabic.TransliterateFromBuckwalter(Output.ToString())
     End Function
     Class RuleMetadataComparer
         Implements Collections.Generic.IComparer(Of RuleMetadata)
@@ -602,22 +606,24 @@ Public Class Arabic
         For Count As Integer = 0 To CachedData.ColoringSpelledOutRules.Length - 1
             Dim Match As String = Array.Find(CachedData.ColoringSpelledOutRules(Count).Match.Split("|"c), Function(Str As String) Array.IndexOf(Array.ConvertAll(MetadataRule.Type.Split("|"c), Function(S As String) System.Text.RegularExpressions.Regex.Replace(S, "\(.*\)", String.Empty)), Str) <> -1)
             If Match <> Nothing Then
-                Dim Str As String = String.Format(CachedData.ColoringSpelledOutRules(Count).Evaluator, ArabicString.Substring(MetadataRule.Index, MetadataRule.Length))
+                Dim Str As New System.Text.StringBuilder
+                Str.Append(String.Format(CachedData.ColoringSpelledOutRules(Count).Evaluator, ArabicString.Substring(MetadataRule.Index, MetadataRule.Length)))
                 If CachedData.ColoringSpelledOutRules(Count).RuleFunc <> RuleFuncs.eNone Then
-                    Dim Args As String() = RuleFunctions(CachedData.ColoringSpelledOutRules(Count).RuleFunc - 1)(Str, Scheme, LearningMode)
+                    Dim Args As String() = RuleFunctions(CachedData.ColoringSpelledOutRules(Count).RuleFunc - 1)(Str.ToString(), Scheme, LearningMode)
                     If Args.Length = 1 Then
-                        Str = Args(0)
+                        Str.Clear()
+                        Str.Append(Args(0))
                     Else
                         Dim MetaArgs As String() = System.Text.RegularExpressions.Regex.Match(MetadataRule.Type, Match + "\((.*)\)").Groups(1).Value.Split(","c)
-                        Str = String.Empty
+                        Str.Clear()
                         For Index As Integer = 0 To Args.Length - 1
                             If Not Args(Index) Is Nothing And (LearningMode Or CachedData.ColoringSpelledOutRules(Count).RuleFunc <> RuleFuncs.eLearningMode Or Index <> 0) Then
-                                Str += ReplaceMetadata(Args(Index), New RuleMetadata(0, Args(Index).Length, MetaArgs(Index).Replace(" "c, "|"c), Index), Scheme, LearningMode)
+                                Str.Append(ReplaceMetadata(Args(Index), New RuleMetadata(0, Args(Index).Length, MetaArgs(Index).Replace(" "c, "|"c), Index), Scheme, LearningMode))
                             End If
                         Next
                     End If
                 End If
-                ArabicString = ArabicString.Insert(MetadataRule.Index + MetadataRule.Length, Str).Remove(MetadataRule.Index, MetadataRule.Length)
+                ArabicString = ArabicString.Insert(MetadataRule.Index + MetadataRule.Length, Str.ToString()).Remove(MetadataRule.Index, MetadataRule.Length)
             End If
         Next
         Return ArabicString
@@ -685,7 +691,7 @@ Public Class Arabic
                     For SubCount = 0 To CachedData.RulesOfRecitationRegEx(Count).Evaluator.Length - 1
                         If Not CachedData.RulesOfRecitationRegEx(Count).Evaluator(SubCount) Is Nothing AndAlso CachedData.RulesOfRecitationRegEx(Count).Evaluator(SubCount) <> String.Empty And (Matches(MatchIndex).Groups(SubCount + 1).Length <> 0 Or Array.IndexOf(AllowZeroLength, CachedData.RulesOfRecitationRegEx(Count).Evaluator(SubCount)) <> -1) Then
                             MetadataList.Add(New RuleMetadata(Matches(MatchIndex).Groups(SubCount + 1).Index, Matches(MatchIndex).Groups(SubCount + 1).Length, CachedData.RulesOfRecitationRegEx(Count).Evaluator(SubCount), SubCount))
-                            'Debug.Print(CachedData.RulesOfRecitationRegEx(Count).Name + " Index: " + CStr(Matches(MatchIndex).Groups(SubCount + 1).Index) + " Length: " + CStr(Matches(MatchIndex).Groups(SubCount + 1).Length) + " Ruling: " + CachedData.RulesOfRecitationRegEx(Count).Evaluator(SubCount))
+                            Debug.Print(CachedData.RulesOfRecitationRegEx(Count).Name + " Index: " + CStr(Matches(MatchIndex).Groups(SubCount + 1).Index) + " Length: " + CStr(Matches(MatchIndex).Groups(SubCount + 1).Length) + " Ruling: " + CachedData.RulesOfRecitationRegEx(Count).Evaluator(SubCount))
                         End If
                     Next
                 Next
@@ -698,7 +704,7 @@ Public Class Arabic
                 Dim FirstRule As String() = MetadataList(Index).Type.Split("|"c)
                 Dim SecondRule As New List(Of String)
                 SecondRule.AddRange(MetadataList(Index + 1).Type.Split("|"c))
-                Dim FirstUpdate As String = String.Empty
+                Dim FirstUpdate As New System.Text.StringBuilder
                 For FirstIndex As Integer = 0 To FirstRule.Length - 1
                     Dim SecondIndex As Integer
                     For SecondIndex = 0 To SecondRule.Count - 1
@@ -706,24 +712,24 @@ Public Class Arabic
                             Dim Matches As String() = System.Text.RegularExpressions.Regex.Replace(FirstRule(FirstIndex), ".*\((.*)\)", "$1").Split(","c)
                             If Matches.Length <> 1 Then
                                 Dim AddMatches As String() = System.Text.RegularExpressions.Regex.Replace(SecondRule(SecondIndex), ".*\((.*)\)", "$1").Split(","c)
-                                If FirstUpdate <> String.Empty Then FirstUpdate += "|"
-                                FirstUpdate += System.Text.RegularExpressions.Regex.Replace(FirstRule(FirstIndex), "\(.*\)", String.Empty) + "("
+                                If FirstUpdate.Length <> 0 Then FirstUpdate.Append("|")
+                                FirstUpdate.Append(System.Text.RegularExpressions.Regex.Replace(FirstRule(FirstIndex), "\(.*\)", String.Empty) + "(")
                                 For Count = 0 To Matches.Length - 1
-                                    FirstUpdate += Matches(Count) + If(Matches(Count) <> String.Empty And AddMatches(Count) <> String.Empty, " ", String.Empty) + AddMatches(Count)
-                                    If Count <> Matches.Length - 1 Then FirstUpdate += ","
+                                    FirstUpdate.Append(Matches(Count) + If(Matches(Count) <> String.Empty And AddMatches(Count) <> String.Empty, " ", String.Empty) + AddMatches(Count))
+                                    If Count <> Matches.Length - 1 Then FirstUpdate.Append(",")
                                 Next
-                                FirstUpdate += ")"
+                                FirstUpdate.Append(")")
                             Else
-                                FirstUpdate += If(FirstUpdate <> String.Empty, "|", String.Empty) + FirstRule(FirstIndex)
+                                FirstUpdate.Append(If(FirstUpdate.Length <> 0, "|", String.Empty) + FirstRule(FirstIndex))
                             End If
                             SecondRule.RemoveAt(SecondIndex)
                             SecondIndex -= 1
                             Exit For
                         End If
                     Next
-                    If SecondIndex = SecondRule.Count Then FirstUpdate += If(FirstUpdate <> String.Empty, "|", String.Empty) + FirstRule(FirstIndex)
+                    If SecondIndex = SecondRule.Count Then FirstUpdate.Append(If(FirstUpdate.Length <> 0, "|", String.Empty) + FirstRule(FirstIndex))
                 Next
-                SecondRule.Insert(0, FirstUpdate)
+                SecondRule.Insert(0, FirstUpdate.ToString())
                 Debug.Print("First: " + MetadataList(Index).Type + " Second: " + MetadataList(Index + 1).Type + " After: " + String.Join("|"c, SecondRule.ToArray()))
                 MetadataList(Index) = New RuleMetadata(MetadataList(Index).Index, MetadataList(Index).Length, String.Join("|"c, SecondRule.ToArray()), MetadataList(Index).OrigOrder)
                 MetadataList.RemoveAt(Index + 1)
@@ -977,8 +983,8 @@ Public Class Arabic
         'Array.Sort(Combos, Function(Key As IslamData.ArabicCombo, NextKey As IslamData.ArabicCombo) Key.SymbolName.CompareTo(NextKey.SymbolName))
         For Count = 0 To ArabicData.ArabicCombos.Length - 1
             If Array.TrueForAll(ArabicData.ArabicCombos(Count).Symbol, Function(Ch As Char) GetSchemeValueFromSymbol(ArabicData.ArabicLetters(ArabicData.FindLetterBySymbol(Ch)), "ExtendedBuckwalter") <> String.Empty) Then
-                Output.Add(New String() {ArabicLetterSpelling(String.Join(String.Empty, Array.ConvertAll(ArabicData.ArabicCombos(Count).Symbol, Function(Sym As Char) CStr(Sym))), False), _
-                                         TransliterateToScheme(ArabicLetterSpelling(String.Join(String.Empty, Array.ConvertAll(ArabicData.ArabicCombos(Count).Symbol, Function(Sym As Char) CStr(Sym))), False), SchemeType, Scheme), _
+                Output.Add(New String() {ArabicLetterSpelling(String.Join(String.Empty, Array.ConvertAll(ArabicData.ArabicCombos(Count).Symbol, Function(Sym As Char) CStr(Sym))), False, False, False), _
+                                         TransliterateToScheme(ArabicLetterSpelling(String.Join(String.Empty, Array.ConvertAll(ArabicData.ArabicCombos(Count).Symbol, Function(Sym As Char) CStr(Sym))), False, False, False), SchemeType, Scheme), _
                                                     String.Join(String.Empty, Array.ConvertAll(ArabicData.ArabicCombos(Count).Symbol, Function(Sym As Char) CStr(Sym))), _
                                                     TransliterateToScheme(String.Join(String.Empty, Array.ConvertAll(ArabicData.ArabicCombos(Count).Symbol, Function(Sym As Char) CStr(Sym))), ArabicData.TranslitScheme.Literal, String.Empty), _
                                                     CStr(ArabicData.ArabicCombos(Count).Terminating), _
@@ -1009,9 +1015,9 @@ Public Class Arabic
                 Function(Str As String)
                     Select Case Array.IndexOf(ColSet, Str)
                         Case 0
-                            Return ArabicLetterSpelling(CStr(Symbols(Count).Symbol), False)
+                            Return ArabicLetterSpelling(CStr(Symbols(Count).Symbol), False, False, False)
                         Case 1
-                            Return TransliterateToScheme(ArabicLetterSpelling(CStr(Symbols(Count).Symbol), False), SchemeType, Scheme)
+                            Return TransliterateToScheme(ArabicLetterSpelling(CStr(Symbols(Count).Symbol), False, False, False), SchemeType, Scheme)
                         Case 2
                             Return ArabicData.GetUnicodeName(Symbols(Count).Symbol)
                         Case 3
@@ -1056,7 +1062,7 @@ Public Class Arabic
         Output.Add(Strs)
         For Count = 0 To ArabicData.ArabicLetters.Length - 1
             If GetSchemeValueFromSymbol(ArabicData.ArabicLetters(Count), "ExtendedBuckwalter") <> String.Empty Then
-                Strs = New String() {ArabicLetterSpelling(ArabicData.ArabicLetters(Count).Symbol, False),
+                Strs = New String() {ArabicLetterSpelling(ArabicData.ArabicLetters(Count).Symbol, False, False, False),
                                            ArabicData.GetUnicodeName(ArabicData.ArabicLetters(Count).Symbol), _
                                            CStr(ArabicData.ArabicLetters(Count).Symbol)}
                 Array.Resize(Of String)(Strs, 3 + CachedData.IslamData.TranslitSchemes.Length)
@@ -1068,7 +1074,7 @@ Public Class Arabic
         Next
         For Count = 0 To CachedData.ArabicSpecialLetters.Length - 1
             Dim Str As String = System.Text.RegularExpressions.Regex.Replace(SubOutPatterns(CachedData.ArabicSpecialLetters(Count)), "\(?\\u([0-9a-fA-F]{4})\)?", Function(Match As System.Text.RegularExpressions.Match) ChrW(Integer.Parse(Match.Groups(1).Value, Globalization.NumberStyles.HexNumber)))
-            Strs = New String() {ArabicLetterSpelling(Str, False), String.Empty, Str, _
+            Strs = New String() {ArabicLetterSpelling(Str, False, False, False), String.Empty, Str, _
                                        TransliterateToScheme(Str, ArabicData.TranslitScheme.Literal, String.Empty)}
             Array.Resize(Of String)(Strs, 3 + CachedData.IslamData.TranslitSchemes.Length)
             For SchemeCount = 0 To CachedData.IslamData.TranslitSchemes.Length - 1
@@ -1077,7 +1083,7 @@ Public Class Arabic
             Output.Add(Strs)
         Next
         For Count = 0 To CachedData.ArabicLongVowels.Length - 1
-            Strs = New String() {ArabicLetterSpelling(CachedData.ArabicLongVowels(Count), False), _
+            Strs = New String() {ArabicLetterSpelling(CachedData.ArabicLongVowels(Count), False, False, False), _
                                        String.Empty, CachedData.ArabicLongVowels(Count), _
                                        TransliterateToScheme(CachedData.ArabicLongVowels(Count), ArabicData.TranslitScheme.Literal, String.Empty)}
             Array.Resize(Of String)(Strs, 3 + CachedData.IslamData.TranslitSchemes.Length)
@@ -2228,6 +2234,8 @@ Public Class IslamData
                     If _RuleFunc = "eLookupLetter" Then Return Arabic.RuleFuncs.eLookupLetter
                     If _RuleFunc = "eLookupLongVowelDipthong" Then Return Arabic.RuleFuncs.eLookupLongVowelDipthong
                     If _RuleFunc = "eSpellLetter" Then Return Arabic.RuleFuncs.eSpellLetter
+                    If _RuleFunc = "eSpellLongLetter" Then Return Arabic.RuleFuncs.eSpellLongLetter
+                    If _RuleFunc = "eSpellLongMergedLetter" Then Return Arabic.RuleFuncs.eSpellLongMergedLetter
                     If _RuleFunc = "eSpellNumber" Then Return Arabic.RuleFuncs.eSpellNumber
                     If _RuleFunc = "eTrailingGutteral" Then Return Arabic.RuleFuncs.eTrailingGutteral
                     If _RuleFunc = "eUpperCase" Then Return Arabic.RuleFuncs.eUpperCase
@@ -3525,7 +3533,7 @@ Public Class CachedData
             End If
         Next
         For Count = 0 To ArabicData.ArabicLetters.Length - 1
-            Arabic.DoErrorCheck(Arabic.ArabicLetterSpelling(ArabicData.ArabicLetters(Count).Symbol, False))
+            Arabic.DoErrorCheck(Arabic.ArabicLetterSpelling(ArabicData.ArabicLetters(Count).Symbol, False, False, False))
             If Not ArabicData.ArabicLetters(Count).UnicodeName.StartsWith("<") Then
                 Utility.LoadResourceString("IslamInfo_" + ArabicData.ToCamelCase(ArabicData.ArabicLetters(Count).UnicodeName))
             End If

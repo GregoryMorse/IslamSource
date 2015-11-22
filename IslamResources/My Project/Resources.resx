@@ -32808,6 +32808,96 @@
   <data name="IslamInfo_Maxim6-9WordByWord" xml:space="preserve">
     <value>The unspecified/absolute/unrestricted/unconditional|remains/will remain|on|its unrestricted state|as long as|not|found|evidence|of restriction|by text|or|indictation/deduced meaning</value>
   </data>
+  <data name="IslamInfo_MaximComp1" xml:space="preserve">
+    <value>First Comprehensive Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximComp1WordByWord" xml:space="preserve">
+    <value>When|removed/no longer exists|the preventer|returns|the prevented</value>
+  </data>
+  <data name="IslamInfo_MaximComp2" xml:space="preserve">
+    <value>Second Comprehensive Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximComp2WordByWord" xml:space="preserve">
+    <value>What|is permitted|for a reason/excuse|is annulled/invalidated|with the removal of it/once its non-existent</value>
+  </data>
+  <data name="IslamInfo_MaximComp3" xml:space="preserve">
+    <value>Third Comprehensive Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximComp3WordByWord" xml:space="preserve">
+    <value>When|conflicts|the preventer/preclusive|and the necessitated|preference shall be given to|the prevent/preclusive</value>
+  </data>
+  <data name="IslamInfo_MaximComp4" xml:space="preserve">
+    <value>Fourth Comprehensive Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximComp4WordByWord" xml:space="preserve">
+    <value>What|is prohibited|to take it|is prohibited|to give it</value>
+  </data>
+  <data name="IslamInfo_MaximComp5" xml:space="preserve">
+    <value>Fifth Comprehensive Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximComp5WordByWord" xml:space="preserve">
+    <value>What|is prohibited|to use it|is prohibited|to keep it</value>
+  </data>
+  <data name="IslamInfo_MaximComp6" xml:space="preserve">
+    <value>Sixth Comprehensive Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximComp6WordByWord" xml:space="preserve">
+    <value>What|is prohibited|to do it|is prohibited|to demand/request it</value>
+  </data>
+  <data name="IslamInfo_MaximComp7" xml:space="preserve">
+    <value>Seventh Comprehensive Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximComp7WordByWord" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="IslamInfo_MaximComp8" xml:space="preserve">
+    <value>Eighth Comprehensive Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximComp8WordByWord" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="IslamInfo_MaximComp9" xml:space="preserve">
+    <value>Ninth Comprehensive Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximComp9WordByWord" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="IslamInfo_MaximComp10" xml:space="preserve">
+    <value>Tenth Comprehensive Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximComp10WordByWord" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="IslamInfo_MaximComp11" xml:space="preserve">
+    <value>Eleventh Comprehensive Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximComp11WordByWord" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="IslamInfo_MaximComp12" xml:space="preserve">
+    <value>Twelfth Comprehensive Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximComp12WordByWord" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="IslamInfo_MaximComp13" xml:space="preserve">
+    <value>Thirteenth Comprehensive Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximComp13WordByWord" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="IslamInfo_MaximComp14" xml:space="preserve">
+    <value>Fourteenth Comprehensive Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximComp14WordByWord" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="IslamInfo_MaximComp15" xml:space="preserve">
+    <value>Fifteenth Comprehensive Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximComp15WordByWord" xml:space="preserve">
+    <value></value>
+  </data>
   <data name="IslamInfo_LegalMaxims" xml:space="preserve">
   	<value>Legal Maxims</value>
   </data>
