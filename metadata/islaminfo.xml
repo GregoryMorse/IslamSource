@@ -3744,20 +3744,20 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
  		<word text="{ls~aAqiTu laA yaEuwdu kamaA &gt;an~a {lomaEoduwma laA yaEuwdu" id="MaximComp15"></word>
  		<word text="qado ya$obutu {lofaroEu duwna {lo&gt;aSoli" id="MaximComp16"></word>
  		<word text="&lt;i*aA baTala {lo&gt;aSolu yuSaAru &lt;ilaY {lobadali" id="MaximComp17"></word>
- 		<word text="" id="MaximLiability1"></word>
- 		<word text="" id="MaximLiability2"></word>
- 		<word text="" id="MaximLiability3"></word>
- 		<word text="" id="MaximLiability4"></word>
- 		<word text="" id="MaximLiability5"></word>
- 		<word text="" id="MaximLiability6"></word>
- 		<word text="" id="MaximLiability7"></word>
- 		<word text="" id="MaximLiability8"></word>
- 		<word text="" id="MaximLiability9"></word>
- 		<word text="" id="MaximLiability10"></word>
- 		<word text="" id="MaximProperty1"></word>
- 		<word text="" id="MaximProperty2"></word>
- 		<word text="" id="MaximProperty3"></word>
- 		<word text="" id="MaximProperty4"></word>
+ 		<word text="{loxaraAju bi{lD~amaAni" id="MaximLiability1"></word>
+ 		<word text="{loguromu bi{logunomi" id="MaximLiability2"></word>
+ 		<word text="{ln~iEomapu biqadori {ln~iqomapi wa{ln~iqomapu biqadori {ln~iEomapi" id="MaximLiability3"></word>
+ 		<word text="{lo&gt;ajoru wa{lD~amaAnu laA yajotamiEaAni" id="MaximLiability4"></word>
+ 		<word text="{lojawaAzu {l$~aroEiY~u yunaAfiY {lD~amaAna" id="MaximLiability5"></word>
+ 		<word text="{lo&gt;aSolu fiY {lD~amaAni &gt;an yuDomana {lomivoliY~u bimivolihi wa{lomutaqaw~imu biqiymatihi" id="MaximLiability6"></word>
+ 		<word text="{lomubaA$iru DaAminN wa&lt;in lamo yataEam~ado" id="MaximLiability7"></word>
+ 		<word text="&lt;i*aA {jotamaEa {lomubaA$iru wa{lomutasab~ibu yuDaAfu {loHukomu &lt;ilaY {lomubaA$iri" id="MaximLiability8"></word>
+ 		<word text="{lomutasab~ibu laA yaDomanu &lt;il~aA bi{lt~aEam~udi" id="MaximLiability9"></word>
+ 		<word text="jinaAyapu {loEajomaA^&apos;i jubaArN" id="MaximLiability10"></word>
+ 		<word text="laA yajuwzu li&gt;aHadK &gt;an yataSar~afa fiY miloki gayorihi biduwni &lt;i*onihi" id="MaximProperty1"></word>
+ 		<word text="{lo&gt;amoru bi{lt~aSar~ufi fiY miloki {logayori baATilN" id="MaximProperty2"></word>
+ 		<word text="laA yajuwzu li&gt;aHadK &gt;an ya&gt;oxu*a maAla &gt;aHadK bilaA sababK $aroEiY~K" id="MaximProperty3"></word>
+ 		<word text="man sabaqa &lt;ilaY mubaAHK faqado malakahu" id="MaximProperty4"></word>
  		<word text="" id="MaximProperty5"></word>
  		<word text="" id="MaximProperty6"></word>
  		<word text="" id="MaximCondition1"></word>
@@ -6326,7 +6326,7 @@ Ramadan fast-breaking | One 2172-gram quantity | Dates or barley or ordinary sta
       <rule name="Empty" match="empty|compulsorystop|startofhizb|endofversestop|prostration|canstoporcontinue|prohibitedtostop|stopatfirstnotsecond|stopatsecondnotfirst|bettertostopbutpermissibletocontinue|bettertocontinuebutpermissibletostop|subtlestopwithoutbreath" evaluator=""></rule>
       <rule name="Normal" match="helpermeem|assimilator|assimilatorincomplete|dipthong" evaluator="{0}"></rule>
       <rule name="NecessaryProlongation" match="necessaryprolong" evaluator="{0}-{0}-{0}"></rule>
-      <rule name="ObligatoryProlongation" match="obligatoryprolong" evaluator="{0}-{0}(-{0}/2)"></rule>
+      <rule name="ObligatoryProlongation" match="obligatoryprolong" evaluator="{0}" rulefunc="eObligatory"></rule>
       <rule name="PermissibleProlongation" match="permissibleprolong" evaluator="{0}(-{0})(-{0})"></rule>
       <rule name="NormalProlongation" match="normalprolong" evaluator="{0}"></rule>
       <rule name="Nasalization" match="nasalize" evaluator="{0}"></rule>

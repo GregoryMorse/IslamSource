@@ -344,6 +344,7 @@ Public Class Arabic
         eTrailingGutteral
         eResolveAmbiguity
         eLearningMode
+        eObligatory
     End Enum
     Public Delegate Function RuleFunction(Str As String, Scheme As String, LearningMode As Boolean) As String()
     Public Shared RuleFunctions As RuleFunction() = {
@@ -358,10 +359,11 @@ Public Class Arabic
         Function(Str As String, Scheme As String, LearningMode As Boolean) {GetSchemeGutteralFromString(Str.Remove(Str.Length - 1), Scheme, True) + Str.Chars(Str.Length - 1)},
         Function(Str As String, Scheme As String, LearningMode As Boolean) {Str.Chars(0) + GetSchemeGutteralFromString(Str.Remove(0, 1), Scheme, False)},
         Function(Str As String, Scheme As String, LearningMode As Boolean) {If(SchemeHasValue(GetSchemeValueFromSymbol(ArabicData.ArabicLetters(ArabicData.FindLetterBySymbol(Str.Chars(0))), Scheme) + GetSchemeValueFromSymbol(ArabicData.ArabicLetters(ArabicData.FindLetterBySymbol(Str.Chars(1))), Scheme), Scheme), Str.Chars(0) + "-" + Str.Chars(1), Str)},
-        Function(Str As String, Scheme As String, LearningMode As Boolean) If(LearningMode, {Str, String.Empty}, {String.Empty, Str})
+        Function(Str As String, Scheme As String, LearningMode As Boolean) If(LearningMode, {Str, String.Empty}, {String.Empty, Str}),
+        Function(Str As String, Scheme As String, LearningMode As Boolean) {Str + "-" + Str + "(-" + Str(0) + ")"}
     }
         'Javascript does not support negative or positive lookbehind in regular expressions
-    Public Shared AllowZeroLength As String() = {"helperfatha", "helperdamma", "helperkasra", "helperlparen", "helperrparen", "learningmode(helperslash,)", "learningmode(helperlbracket,)", "learningmode(helperrbracket,)", "learningmode(helperfathatan,)", "learningmode(helperteh,)"}
+        Public Shared AllowZeroLength As String() = {"helperfatha", "helperdamma", "helperkasra", "helperlparen", "helperrparen", "learningmode(helperslash,)", "learningmode(helperlbracket,)", "learningmode(helperrbracket,)", "learningmode(helperfathatan,)", "learningmode(helperteh,)"}
     Public Shared Function IsLetter(Index As Integer) As Boolean
         Return Array.FindIndex(CachedData.ArabicLetters, Function(Str As String) Str = ArabicData.ArabicLetters(Index).Symbol) <> -1
     End Function
@@ -2240,6 +2242,7 @@ Public Class IslamData
                     If _RuleFunc = "eTrailingGutteral" Then Return Arabic.RuleFuncs.eTrailingGutteral
                     If _RuleFunc = "eUpperCase" Then Return Arabic.RuleFuncs.eUpperCase
                     If _RuleFunc = "eResolveAmbiguity" Then Return Arabic.RuleFuncs.eResolveAmbiguity
+                    If _RuleFunc = "eObligatory" Then Return Arabic.RuleFuncs.eObligatory
                     'If _RuleFunc = "eNone" Then
                     Return Arabic.RuleFuncs.eNone
                 End Get
