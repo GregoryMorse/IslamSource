@@ -32848,54 +32848,306 @@
     <value>Seventh Comprehensive Maxim</value>
   </data>
   <data name="IslamInfo_MaximComp7WordByWord" xml:space="preserve">
-    <value></value>
+    <value>The follower|follows</value>
   </data>
   <data name="IslamInfo_MaximComp8" xml:space="preserve">
     <value>Eighth Comprehensive Maxim</value>
   </data>
   <data name="IslamInfo_MaximComp8WordByWord" xml:space="preserve">
-    <value></value>
+    <value>The attachment|not|can/should be separated/independent|with/from the judgement</value>
   </data>
   <data name="IslamInfo_MaximComp9" xml:space="preserve">
     <value>Ninth Comprehensive Maxim</value>
   </data>
   <data name="IslamInfo_MaximComp9WordByWord" xml:space="preserve">
-    <value></value>
+    <value>Whoever|owns|something|owns|that which|is|from/of|its necessary components</value>
   </data>
   <data name="IslamInfo_MaximComp10" xml:space="preserve">
     <value>Tenth Comprehensive Maxim</value>
   </data>
   <data name="IslamInfo_MaximComp10WordByWord" xml:space="preserve">
-    <value></value>
+    <value>Absolved/overlooked|in|the follower/attachment|that which|not|can be absolved/overlooked|in the thing being followed/attached</value>
   </data>
   <data name="IslamInfo_MaximComp11" xml:space="preserve">
     <value>Eleventh Comprehensive Maxim</value>
   </data>
   <data name="IslamInfo_MaximComp11WordByWord" xml:space="preserve">
-    <value></value>
+    <value>The follower|not|will go ahead/get priority/precede|upon|the thing being followed</value>
   </data>
   <data name="IslamInfo_MaximComp12" xml:space="preserve">
     <value>Twelfth Comprehensive Maxim</value>
   </data>
   <data name="IslamInfo_MaximComp12WordByWord" xml:space="preserve">
-    <value></value>
+    <value>If|cancelled/becomes void|the thing being followed/attached|cancelled/becomes void|the attachment/follower|or|the attachment/follower|becomes invalid|with the invalidity|of the thing being attached/followed</value>
   </data>
   <data name="IslamInfo_MaximComp13" xml:space="preserve">
     <value>Thirteenth Comprehensive Maxim</value>
   </data>
   <data name="IslamInfo_MaximComp13WordByWord" xml:space="preserve">
-    <value></value>
+    <value>When|is invalid|the origin/root|shall be invalid|the derivative/branch</value>
   </data>
   <data name="IslamInfo_MaximComp14" xml:space="preserve">
     <value>Fourteenth Comprehensive Maxim</value>
   </data>
   <data name="IslamInfo_MaximComp14WordByWord" xml:space="preserve">
-    <value></value>
+    <value>When|is void|something|shall be void|that which|in|its inside</value>
   </data>
   <data name="IslamInfo_MaximComp15" xml:space="preserve">
     <value>Fifteenth Comprehensive Maxim</value>
   </data>
   <data name="IslamInfo_MaximComp15WordByWord" xml:space="preserve">
+    <value>What is waived|not|can/will be restored|as if|that|non-existent|not|can be restored</value>
+  </data>
+  <data name="IslamInfo_MaximComp16" xml:space="preserve">
+    <value>Sixteenth Comprehensive Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximComp16WordByWord" xml:space="preserve">
+    <value>May|be valid|the derivative|without|the root</value>
+  </data>
+  <data name="IslamInfo_MaximComp17" xml:space="preserve">
+    <value>Seventeenth Comprehensive Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximComp17WordByWord" xml:space="preserve">
+    <value>When|becomes void|the root|becomes sought|to|the substitute</value>
+  </data>
+  <data name="IslamInfo_MaximLiability1" xml:space="preserve">
+    <value>First Liability Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximLiability1WordByWord" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="IslamInfo_MaximLiability2" xml:space="preserve">
+    <value>Second Liability Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximLiability2WordByWord" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="IslamInfo_MaximLiability3" xml:space="preserve">
+    <value>Third Liability Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximLiability3WordByWord" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="IslamInfo_MaximLiability4" xml:space="preserve">
+    <value>Fourth Liability Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximLiability4WordByWord" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="IslamInfo_MaximLiability5" xml:space="preserve">
+    <value>Fifth Liability Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximLiability5WordByWord" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="IslamInfo_MaximLiability6" xml:space="preserve">
+    <value>Sixth Liability Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximLiability6WordByWord" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="IslamInfo_MaximLiability7" xml:space="preserve">
+    <value>Seventh Liability Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximLiability7WordByWord" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="IslamInfo_MaximLiability8" xml:space="preserve">
+    <value>Eighth Liability Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximLiability8WordByWord" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="IslamInfo_MaximLiability9" xml:space="preserve">
+    <value>Ninth Liability Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximLiability9WordByWord" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="IslamInfo_MaximLiability10" xml:space="preserve">
+    <value>Tenth Liability Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximLiability10WordByWord" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="IslamInfo_MaximProperty1" xml:space="preserve">
+    <value>First Property Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximProperty1WordByWord" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="IslamInfo_MaximProperty2" xml:space="preserve">
+    <value>Second Property Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximProperty2WordByWord" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="IslamInfo_MaximProperty3" xml:space="preserve">
+    <value>Third Property Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximProperty3WordByWord" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="IslamInfo_MaximProperty4" xml:space="preserve">
+    <value>Fourth Property Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximProperty4WordByWord" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="IslamInfo_MaximProperty5" xml:space="preserve">
+    <value>Fifth Property Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximProperty5WordByWord" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="IslamInfo_MaximProperty6" xml:space="preserve">
+    <value>Sixth Property Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximProperty6WordByWord" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="IslamInfo_MaximCondition1" xml:space="preserve">
+    <value>First Condition Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximCondition1WordByWord" xml:space="preserve">
+    <value></value>
+  </data>  
+  <data name="IslamInfo_MaximCondition2" xml:space="preserve">
+    <value>Second Condition Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximCondition2WordByWord" xml:space="preserve">
+    <value></value>
+  </data>  
+  <data name="IslamInfo_MaximCondition3" xml:space="preserve">
+    <value>Third Condition Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximCondition3WordByWord" xml:space="preserve">
+    <value></value>
+  </data>  
+  <data name="IslamInfo_MaximCondition4" xml:space="preserve">
+    <value>Fourth Condition Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximCondition4WordByWord" xml:space="preserve">
+    <value></value>
+  </data>  
+  <data name="IslamInfo_MaximCondition5" xml:space="preserve">
+    <value>Fifth Condition Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximCondition5WordByWord" xml:space="preserve">
+    <value></value>
+  </data>  
+  <data name="IslamInfo_MaximCondition6" xml:space="preserve">
+    <value>Sixth Condition Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximCondition6WordByWord" xml:space="preserve">
+    <value></value>
+  </data>  
+  <data name="IslamInfo_MaximOther1" xml:space="preserve">
+    <value>First Condition Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximOther1WordByWord" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="IslamInfo_MaximOther2" xml:space="preserve">
+    <value>First Condition Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximOther2WordByWord" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="IslamInfo_MaximOther3" xml:space="preserve">
+    <value>First Condition Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximOther3WordByWord" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="IslamInfo_MaximOther4" xml:space="preserve">
+    <value>First Condition Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximOther4WordByWord" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="IslamInfo_MaximOther5" xml:space="preserve">
+    <value>First Condition Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximOther5WordByWord" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="IslamInfo_MaximOther6" xml:space="preserve">
+    <value>First Condition Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximOther6WordByWord" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="IslamInfo_MaximOther7" xml:space="preserve">
+    <value>First Condition Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximOther7WordByWord" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="IslamInfo_MaximOther8" xml:space="preserve">
+    <value>First Condition Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximOther8WordByWord" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="IslamInfo_MaximOther9" xml:space="preserve">
+    <value>First Condition Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximOther9WordByWord" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="IslamInfo_MaximOther10" xml:space="preserve">
+    <value>First Condition Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximOther10WordByWord" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="IslamInfo_MaximOther11" xml:space="preserve">
+    <value>First Condition Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximOther11WordByWord" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="IslamInfo_MaximOther12" xml:space="preserve">
+    <value>First Condition Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximOther12WordByWord" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="IslamInfo_MaximOther13" xml:space="preserve">
+    <value>First Condition Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximOther13WordByWord" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="IslamInfo_MaximOther14" xml:space="preserve">
+    <value>First Condition Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximOther14WordByWord" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="IslamInfo_MaximOther15" xml:space="preserve">
+    <value>First Condition Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximOther15WordByWord" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="IslamInfo_MaximOther16" xml:space="preserve">
+    <value>First Condition Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximOther16WordByWord" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="IslamInfo_MaximOther17" xml:space="preserve">
+    <value>First Condition Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximOther17WordByWord" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="IslamInfo_MaximOther18" xml:space="preserve">
+    <value>First Condition Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximOther18WordByWord" xml:space="preserve">
     <value></value>
   </data>
   <data name="IslamInfo_LegalMaxims" xml:space="preserve">
