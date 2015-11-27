@@ -32844,70 +32844,70 @@
   <data name="IslamInfo_MaximComp6WordByWord" xml:space="preserve">
     <value>What|is prohibited|to do it|is prohibited|to demand/request it</value>
   </data>
-  <data name="IslamInfo_MaximComp7" xml:space="preserve">
+  <data name="IslamInfo_MaximFollow1" xml:space="preserve">
     <value>Seventh Comprehensive Maxim</value>
   </data>
-  <data name="IslamInfo_MaximComp7WordByWord" xml:space="preserve">
+  <data name="IslamInfo_MaximFollow1WordByWord" xml:space="preserve">
     <value>The follower|follows</value>
   </data>
-  <data name="IslamInfo_MaximComp8" xml:space="preserve">
+  <data name="IslamInfo_MaximFollow2" xml:space="preserve">
     <value>Eighth Comprehensive Maxim</value>
   </data>
-  <data name="IslamInfo_MaximComp8WordByWord" xml:space="preserve">
+  <data name="IslamInfo_MaximFollow2WordByWord" xml:space="preserve">
     <value>The attachment|not|can/should be separated/independent|with/from the judgement</value>
   </data>
-  <data name="IslamInfo_MaximComp9" xml:space="preserve">
+  <data name="IslamInfo_MaximFollow3" xml:space="preserve">
     <value>Ninth Comprehensive Maxim</value>
   </data>
-  <data name="IslamInfo_MaximComp9WordByWord" xml:space="preserve">
+  <data name="IslamInfo_MaximFollow3WordByWord" xml:space="preserve">
     <value>Whoever|owns|something|owns|that which|is|from/of|its necessary components</value>
   </data>
-  <data name="IslamInfo_MaximComp10" xml:space="preserve">
+  <data name="IslamInfo_MaximFollow4" xml:space="preserve">
     <value>Tenth Comprehensive Maxim</value>
   </data>
-  <data name="IslamInfo_MaximComp10WordByWord" xml:space="preserve">
+  <data name="IslamInfo_MaximFollow4WordByWord" xml:space="preserve">
     <value>Absolved/overlooked|in|the follower/attachment|that which|not|can be absolved/overlooked|in the thing being followed/attached</value>
   </data>
-  <data name="IslamInfo_MaximComp11" xml:space="preserve">
+  <data name="IslamInfo_MaximFollow5" xml:space="preserve">
     <value>Eleventh Comprehensive Maxim</value>
   </data>
-  <data name="IslamInfo_MaximComp11WordByWord" xml:space="preserve">
+  <data name="IslamInfo_MaximFollow5WordByWord" xml:space="preserve">
     <value>The follower|not|will go ahead/get priority/precede|upon|the thing being followed</value>
   </data>
-  <data name="IslamInfo_MaximComp12" xml:space="preserve">
+  <data name="IslamInfo_MaximFollow6" xml:space="preserve">
     <value>Twelfth Comprehensive Maxim</value>
   </data>
-  <data name="IslamInfo_MaximComp12WordByWord" xml:space="preserve">
+  <data name="IslamInfo_MaximFollow6WordByWord" xml:space="preserve">
     <value>If|cancelled/becomes void|the thing being followed/attached|cancelled/becomes void|the attachment/follower|or|the attachment/follower|becomes invalid|with the invalidity|of the thing being attached/followed</value>
   </data>
-  <data name="IslamInfo_MaximComp13" xml:space="preserve">
-    <value>Thirteenth Comprehensive Maxim</value>
+  <data name="IslamInfo_MaximRootDeriv1" xml:space="preserve">
+    <value>First Root Derivative Maxim</value>
   </data>
-  <data name="IslamInfo_MaximComp13WordByWord" xml:space="preserve">
+  <data name="IslamInfo_MaximRootDeriv1WordByWord" xml:space="preserve">
     <value>When|is invalid|the origin/root|shall be invalid|the derivative/branch</value>
   </data>
-  <data name="IslamInfo_MaximComp14" xml:space="preserve">
-    <value>Fourteenth Comprehensive Maxim</value>
+  <data name="IslamInfo_MaximRootDeriv2" xml:space="preserve">
+    <value>Second Root Derivative Maxim</value>
   </data>
-  <data name="IslamInfo_MaximComp14WordByWord" xml:space="preserve">
+  <data name="IslamInfo_MaximRootDeriv2WordByWord" xml:space="preserve">
     <value>When|is void|something|shall be void|that which|in|its inside</value>
   </data>
-  <data name="IslamInfo_MaximComp15" xml:space="preserve">
-    <value>Fifteenth Comprehensive Maxim</value>
+  <data name="IslamInfo_MaximRootDeriv3" xml:space="preserve">
+    <value>Third Root Derivative Maxim</value>
   </data>
-  <data name="IslamInfo_MaximComp15WordByWord" xml:space="preserve">
+  <data name="IslamInfo_MaximRootDeriv3WordByWord" xml:space="preserve">
     <value>What is waived|not|can/will be restored|as if|that|non-existent|not|can be restored</value>
   </data>
-  <data name="IslamInfo_MaximComp16" xml:space="preserve">
-    <value>Sixteenth Comprehensive Maxim</value>
+  <data name="IslamInfo_MaximRootDeriv4" xml:space="preserve">
+    <value>Fourth Root Derivative Maxim</value>
   </data>
-  <data name="IslamInfo_MaximComp16WordByWord" xml:space="preserve">
+  <data name="IslamInfo_MaximRootDeriv4WordByWord" xml:space="preserve">
     <value>May|be valid|the derivative|without|the root</value>
   </data>
-  <data name="IslamInfo_MaximComp17" xml:space="preserve">
-    <value>Seventeenth Comprehensive Maxim</value>
+  <data name="IslamInfo_MaximRootDeriv5" xml:space="preserve">
+    <value>Fifth Root Derivative Maxim</value>
   </data>
-  <data name="IslamInfo_MaximComp17WordByWord" xml:space="preserve">
+  <data name="IslamInfo_MaximRootDeriv5WordByWord" xml:space="preserve">
     <value>When|becomes void|the root|becomes sought|to|the substitute</value>
   </data>
   <data name="IslamInfo_MaximLiability1" xml:space="preserve">
@@ -32998,154 +32998,148 @@
     <value>Fifth Property Maxim</value>
   </data>
   <data name="IslamInfo_MaximProperty5WordByWord" xml:space="preserve">
-    <value></value>
-  </data>
-  <data name="IslamInfo_MaximProperty6" xml:space="preserve">
-    <value>Sixth Property Maxim</value>
-  </data>
-  <data name="IslamInfo_MaximProperty6WordByWord" xml:space="preserve">
-    <value></value>
+    <value>Change in|the cause|of ownership of a thing|entails|position/place|changing|of that thing itself</value>
   </data>
   <data name="IslamInfo_MaximCondition1" xml:space="preserve">
     <value>First Condition Maxim</value>
   </data>
   <data name="IslamInfo_MaximCondition1WordByWord" xml:space="preserve">
-    <value></value>
+    <value>What is dependent|with/on a condition|must be|fulfilled|once that/when|is fulfilled|the condition</value>
   </data>  
   <data name="IslamInfo_MaximCondition2" xml:space="preserve">
     <value>Second Condition Maxim</value>
   </data>
   <data name="IslamInfo_MaximCondition2WordByWord" xml:space="preserve">
-    <value></value>
+    <value>Shall be binding|conformity|of/to a condition|as far as|possible</value>
   </data>  
   <data name="IslamInfo_MaximCondition3" xml:space="preserve">
     <value>Third Condition Maxim</value>
   </data>
   <data name="IslamInfo_MaximCondition3WordByWord" xml:space="preserve">
-    <value></value>
+    <value>Agreements/promises|in the shape of|conditions/conditional dependents|are obligatory</value>
   </data>  
   <data name="IslamInfo_MaximCondition4" xml:space="preserve">
     <value>Fourth Condition Maxim</value>
   </data>
   <data name="IslamInfo_MaximCondition4WordByWord" xml:space="preserve">
-    <value></value>
+    <value>The thing|when|is serious/great|its position|deemed serious/given importance|in it|increased|its conditions</value>
   </data>  
   <data name="IslamInfo_MaximCondition5" xml:space="preserve">
     <value>Fifth Condition Maxim</value>
   </data>
   <data name="IslamInfo_MaximCondition5WordByWord" xml:space="preserve">
-    <value></value>
+    <value>What|is established|by Islamic law|is prioritized/given priority|over|what|is established|by condition</value>
   </data>  
   <data name="IslamInfo_MaximCondition6" xml:space="preserve">
     <value>Sixth Condition Maxim</value>
   </data>
   <data name="IslamInfo_MaximCondition6WordByWord" xml:space="preserve">
-    <value></value>
+    <value>Every|condition|without/which is contrary to|the ruling|of Islamic law|is void</value>
   </data>  
   <data name="IslamInfo_MaximOther1" xml:space="preserve">
-    <value>First Condition Maxim</value>
+    <value>First Other Maxim</value>
   </data>
   <data name="IslamInfo_MaximOther1WordByWord" xml:space="preserve">
     <value></value>
   </data>
   <data name="IslamInfo_MaximOther2" xml:space="preserve">
-    <value>First Condition Maxim</value>
+    <value>Second Other Maxim</value>
   </data>
   <data name="IslamInfo_MaximOther2WordByWord" xml:space="preserve">
     <value></value>
   </data>
   <data name="IslamInfo_MaximOther3" xml:space="preserve">
-    <value>First Condition Maxim</value>
+    <value>Third Other Maxim</value>
   </data>
   <data name="IslamInfo_MaximOther3WordByWord" xml:space="preserve">
     <value></value>
   </data>
   <data name="IslamInfo_MaximOther4" xml:space="preserve">
-    <value>First Condition Maxim</value>
+    <value>Fourth Other Maxim</value>
   </data>
   <data name="IslamInfo_MaximOther4WordByWord" xml:space="preserve">
     <value></value>
   </data>
   <data name="IslamInfo_MaximOther5" xml:space="preserve">
-    <value>First Condition Maxim</value>
+    <value>Fifth Other Maxim</value>
   </data>
   <data name="IslamInfo_MaximOther5WordByWord" xml:space="preserve">
     <value></value>
   </data>
   <data name="IslamInfo_MaximOther6" xml:space="preserve">
-    <value>First Condition Maxim</value>
+    <value>Sixth Other Maxim</value>
   </data>
   <data name="IslamInfo_MaximOther6WordByWord" xml:space="preserve">
     <value></value>
   </data>
   <data name="IslamInfo_MaximOther7" xml:space="preserve">
-    <value>First Condition Maxim</value>
+    <value>Seventh Other Maxim</value>
   </data>
   <data name="IslamInfo_MaximOther7WordByWord" xml:space="preserve">
     <value></value>
   </data>
   <data name="IslamInfo_MaximOther8" xml:space="preserve">
-    <value>First Condition Maxim</value>
+    <value>Eighth Other Maxim</value>
   </data>
   <data name="IslamInfo_MaximOther8WordByWord" xml:space="preserve">
     <value></value>
   </data>
   <data name="IslamInfo_MaximOther9" xml:space="preserve">
-    <value>First Condition Maxim</value>
+    <value>Ninth Other Maxim</value>
   </data>
   <data name="IslamInfo_MaximOther9WordByWord" xml:space="preserve">
     <value></value>
   </data>
   <data name="IslamInfo_MaximOther10" xml:space="preserve">
-    <value>First Condition Maxim</value>
+    <value>Tenth Other Maxim</value>
   </data>
   <data name="IslamInfo_MaximOther10WordByWord" xml:space="preserve">
     <value></value>
   </data>
   <data name="IslamInfo_MaximOther11" xml:space="preserve">
-    <value>First Condition Maxim</value>
+    <value>Eleventh Other Maxim</value>
   </data>
   <data name="IslamInfo_MaximOther11WordByWord" xml:space="preserve">
     <value></value>
   </data>
   <data name="IslamInfo_MaximOther12" xml:space="preserve">
-    <value>First Condition Maxim</value>
+    <value>Twelfth Other Maxim</value>
   </data>
   <data name="IslamInfo_MaximOther12WordByWord" xml:space="preserve">
     <value></value>
   </data>
   <data name="IslamInfo_MaximOther13" xml:space="preserve">
-    <value>First Condition Maxim</value>
+    <value>Thirteenth Other Maxim</value>
   </data>
   <data name="IslamInfo_MaximOther13WordByWord" xml:space="preserve">
     <value></value>
   </data>
   <data name="IslamInfo_MaximOther14" xml:space="preserve">
-    <value>First Condition Maxim</value>
+    <value>Fourteenth Other Maxim</value>
   </data>
   <data name="IslamInfo_MaximOther14WordByWord" xml:space="preserve">
     <value></value>
   </data>
   <data name="IslamInfo_MaximOther15" xml:space="preserve">
-    <value>First Condition Maxim</value>
+    <value>Fifteenth Other Maxim</value>
   </data>
   <data name="IslamInfo_MaximOther15WordByWord" xml:space="preserve">
     <value></value>
   </data>
   <data name="IslamInfo_MaximOther16" xml:space="preserve">
-    <value>First Condition Maxim</value>
+    <value>Sixteenth Other Maxim</value>
   </data>
   <data name="IslamInfo_MaximOther16WordByWord" xml:space="preserve">
     <value></value>
   </data>
   <data name="IslamInfo_MaximOther17" xml:space="preserve">
-    <value>First Condition Maxim</value>
+    <value>Seventeenth Other Maxim</value>
   </data>
   <data name="IslamInfo_MaximOther17WordByWord" xml:space="preserve">
     <value></value>
   </data>
   <data name="IslamInfo_MaximOther18" xml:space="preserve">
-    <value>First Condition Maxim</value>
+    <value>Eighteenth Other Maxim</value>
   </data>
   <data name="IslamInfo_MaximOther18WordByWord" xml:space="preserve">
     <value></value>

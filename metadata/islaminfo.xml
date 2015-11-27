@@ -3733,17 +3733,17 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
  		<word text="maA Haruma &gt;axo*uhu Haruma &lt;iEoTa&amp;uhu" id="MaximComp4"></word>
  		<word text="maA Haruma {sotiEomaAluhu Haruma {t~ixaA*uhu" id="MaximComp5"></word>
  		<word text="maA Haruma fiEoluhu Haruma Talabuhu" id="MaximComp6"></word>
- 		<word text="{lt~aAbiEu taAbiEN" id="MaximComp7"></word>
- 		<word text="{lt~aAbiEu laA yuforadu bi{loHukomi" id="MaximComp8"></word>
- 		<word text="man malaka $ayo}FA malaka maA huwa min DaruwriyaAtihi" id="MaximComp9"></word>
- 		<word text="yugotafaru fiY {lt~aAbiEi maA laA yugotafaru fiY {lomatobuwEi" id="MaximComp10"></word>
- 		<word text="{lt~aAbiEu laA yataqad~amu EalaY {lomatobuwEi" id="MaximComp11"></word>
- 		<word text="&lt;i*aA saqaTa {lomatobuwEu saqaTa {lt~aAbiEu &gt;awi {lt~aAbiEu yasoquTu bisuquwTi {lomatobuwEi" id="MaximComp12"></word>
- 		<word text="&lt;i*aA saqaTa {lo&gt;aSolu saqaTa {lofaroEu" id="MaximComp13"></word>
- 		<word text="&lt;i*aA baTala {l$~ayo}u baTala maA fiY Dimonihi" id="MaximComp14"></word>
- 		<word text="{ls~aAqiTu laA yaEuwdu kamaA &gt;an~a {lomaEoduwma laA yaEuwdu" id="MaximComp15"></word>
- 		<word text="qado ya$obutu {lofaroEu duwna {lo&gt;aSoli" id="MaximComp16"></word>
- 		<word text="&lt;i*aA baTala {lo&gt;aSolu yuSaAru &lt;ilaY {lobadali" id="MaximComp17"></word>
+ 		<word text="{lt~aAbiEu taAbiEN" id="MaximFollow1"></word>
+ 		<word text="{lt~aAbiEu laA yuforadu bi{loHukomi" id="MaximFollow2"></word>
+ 		<word text="man malaka $ayo}FA malaka maA huwa min DaruwriyaAtihi" id="MaximFollow3"></word>
+ 		<word text="yugotafaru fiY {lt~aAbiEi maA laA yugotafaru fiY {lomatobuwEi" id="MaximFollow4"></word>
+ 		<word text="{lt~aAbiEu laA yataqad~amu EalaY {lomatobuwEi" id="MaximFollow5"></word>
+ 		<word text="&lt;i*aA saqaTa {lomatobuwEu saqaTa {lt~aAbiEu &gt;awi {lt~aAbiEu yasoquTu bisuquwTi {lomatobuwEi" id="MaximFollow6"></word>
+ 		<word text="&lt;i*aA saqaTa {lo&gt;aSolu saqaTa {lofaroEu" id="MaximRootDeriv1"></word>
+ 		<word text="&lt;i*aA baTala {l$~ayo}u baTala maA fiY Dimonihi" id="MaximRootDeriv2"></word>
+ 		<word text="{ls~aAqiTu laA yaEuwdu kamaA &gt;an~a {lomaEoduwma laA yaEuwdu" id="MaximRootDeriv3"></word>
+ 		<word text="qado ya$obutu {lofaroEu duwna {lo&gt;aSoli" id="MaximRootDeriv4"></word>
+ 		<word text="&lt;i*aA baTala {lo&gt;aSolu yuSaAru &lt;ilaY {lobadali" id="MaximRootDeriv5"></word>
  		<word text="{loxaraAju bi{lD~amaAni" id="MaximLiability1"></word>
  		<word text="{loguromu bi{logunomi" id="MaximLiability2"></word>
  		<word text="{ln~iEomapu biqadori {ln~iqomapi wa{ln~iqomapu biqadori {ln~iEomapi" id="MaximLiability3"></word>
@@ -3758,14 +3758,13 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
  		<word text="{lo&gt;amoru bi{lt~aSar~ufi fiY miloki {logayori baATilN" id="MaximProperty2"></word>
  		<word text="laA yajuwzu li&gt;aHadK &gt;an ya&gt;oxu*a maAla &gt;aHadK bilaA sababK $aroEiY~K" id="MaximProperty3"></word>
  		<word text="man sabaqa &lt;ilaY mubaAHK faqado malakahu" id="MaximProperty4"></word>
- 		<word text="" id="MaximProperty5"></word>
- 		<word text="" id="MaximProperty6"></word>
- 		<word text="" id="MaximCondition1"></word>
- 		<word text="" id="MaximCondition2"></word>
- 		<word text="" id="MaximCondition3"></word>
- 		<word text="" id="MaximCondition4"></word>
- 		<word text="" id="MaximCondition5"></word>
- 		<word text="" id="MaximCondition6"></word>
+ 		<word text="yabad~ulu sababi {lomiloki qaA^}imN maqaAma tabad~uli {l*~aAti" id="MaximProperty5"></word>
+ 		<word text="{lomuEal~aqu bi{l$~aroTi yajibu vubuwtuhu Einda vubuwti {l$~aroTi" id="MaximCondition1"></word>
+ 		<word text="yalozamu muraAEaApu {l$~aroTi biqadori {lo&lt;imokaAni" id="MaximCondition2"></word>
+ 		<word text="{lomawaAEiydu biSuwrapi {lt~aEaAliyqi laAzimapN" id="MaximCondition3"></word>
+ 		<word text="{l$~ayo&apos;u &lt;i*aA EaZuma $ud~ida fiyhi wakavurato $uruwTuhu" id="MaximCondition4"></word>
+ 		<word text="maA vabata bi{l$~aroEi muqad~ama EalaY maA vabata bi{l$~aroTi" id="MaximCondition5"></word>
+ 		<word text="kul~u $aroTK bigayori Hukomi {l$~aroEi baATilN" id="MaximCondition6"></word>
  		<word text="" id="MaximOther1"></word>
  		<word text="" id="MaximOther2"></word>
  		<word text="" id="MaximOther3"></word>
