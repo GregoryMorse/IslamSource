@@ -4455,6 +4455,13 @@ many Arabic words borrowed from Christianity like supplication, Lord, Heaven, He
 			<word text="\{phrase:Maxim4,Maxim4-1,Maxim4-2,Maxim4-3-1,Maxim4-3-2,Maxim4-3-3,Maxim4-3-4,Maxim4-4,Maxim4-5,Maxim4-6,Maxim4-7\}" id="Maxim4"></word>
 			<word text="\{phrase:Maxim5,Maxim5-1,Maxim5-2,Maxim5-3,Maxim5-4,Maxim5-4-1,Maxim5-5,Maxim5-6,Maxim5-7,Maxim5-8,Maxim5-9,Maxim5-10,Maxim5-11,Maxim5-12\}" id="Maxim5"></word>
 			<word text="\{phrase:Maxim6,Maxim6-1,Maxim6-2,Maxim6-3,Maxim6-4,Maxim6-5,Maxim6-6,Maxim6-7,Maxim6-8-1,Maxim6-8-2,Maxim6-9\}" id="Maxim6"></word>
+			<word text="\{phrase:MaximComp1,MaximComp2,MaximComp3,MaximComp4,MaximComp5,MaximComp6\}" id="MaximComp1"></word>
+			<word text="\{phrase:MaximFollow1,MaximFollow2,MaximFollow3,MaximFollow4,MaximFollow5,MaximFollow6\}" id="MaximFollow1"></word>
+			<word text="\{phrase:MaximRootDeriv1,MaximRootDeriv2,MaximRootDeriv3,MaximRootDeriv4,MaximRootDeriv5\}" id="MaximRootDeriv1"></word>
+			<word text="\{phrase:MaximLiability1,MaximLiability2,MaximLiability3,MaximLiability4,MaximLiability5,MaximLiability6,MaximLiability7,MaximLiability8,MaximLiability9,MaximLiability10\}" id="MaximLiability1"></word>
+			<word text="\{phrase:MaximProperty1,MaximProperty2,MaximProperty3,MaximProperty4,MaximProperty4\}" id="MaximProperty1"></word>
+			<word text="\{phrase:MaximCondition1,MaximCondition2,MaximCondition3,MaximCondition4,MaximCondition5,MaximCondition6\}" id="MaximCondition1"></word>
+			<word text="\{phrase:MaximOther1,MaximOther2,MaximOther3,MaximOther4,MaximOther5,MaximOther6,MaximOther7,MaximOther8,MaximOther9,MaximOther10,MaximOther11,MaximOther12,MaximOther13,MaximOther14,MaximOther15,MaximOther16,MaximOther17,MaximOther18\}" id="MaximOther1"></word>
 		</category>
 		<category title="IslamicTheology">
 			<word text="\{phrase:\}" id="IslamicTheology"></word>
