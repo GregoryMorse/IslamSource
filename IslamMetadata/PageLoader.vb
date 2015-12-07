@@ -750,7 +750,7 @@ Public Class Arabic
 
         'process wasl loanwords and names
         'process loanwords and names
-        If System.Text.RegularExpressions.Regex.Match(ArabicString, "[\p{IsArabic}|\p{IsArabicPresentationForms-A}|\p{IsArabicPresentationForms-B}]").Success Then Debug.Print(ArabicString)
+        If System.Text.RegularExpressions.Regex.Match(ArabicString, "[\p{IsArabic}|\p{IsArabicPresentationForms-A}|\p{IsArabicPresentationForms-B}]").Success Then Debug.Print(ArabicString.Substring(System.Text.RegularExpressions.Regex.Match(ArabicString, "[\p{IsArabic}|\p{IsArabicPresentationForms-A}|\p{IsArabicPresentationForms-B}]").Index) + " --- " + ArabicString)
         Return ArabicString
     End Function
     Public Shared Function GetTransliterationSchemeTable(ByVal Item As PageLoader.TextItem) As RenderArray
