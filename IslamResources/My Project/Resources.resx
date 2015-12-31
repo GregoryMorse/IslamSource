@@ -29424,8 +29424,8 @@
   <data name="IslamSource_ExtendedBuckwalter" xml:space="preserve">
     <value>Extended Buckwalter</value>
   </data>
-  <data name="IslamSource_FixDirectionalMarkers" xml:space="preserve">
-    <value>Fix Directional Markers</value>
+  <data name="IslamSource_UseBiDiBias" xml:space="preserve">
+    <value>Use Bidirectional Bias</value>
   </data>
   <data name="IslamSource_Font" xml:space="preserve">
     <value>Font</value>
@@ -29655,8 +29655,8 @@
   <data name="IslamSource_Minutes" xml:space="preserve">
     <value>Minutes</value>
   </data>
-  <data name="IslamSource_ModifyDiacritics" xml:space="preserve">
-    <value>Modify diacritics</value>
+  <data name="IslamSource_ChangeScriptFormat" xml:space="preserve">
+    <value>Change Script Format</value>
   </data>
   <data name="IslamSource_No" xml:space="preserve">
     <value>No</value>
@@ -29676,8 +29676,20 @@
   <data name="IslamSource_Offset" xml:space="preserve">
     <value>Offset</value>
   </data>
+  <data name="IslamSource_FromScript" xml:space="preserve">
+    <value>Source Script Format</value>
+  </data>
+  <data name="IslamSource_ToScript" xml:space="preserve">
+    <value>Target Script Format</value>
+  </data>
   <data name="IslamSource_Operation" xml:space="preserve">
     <value>Operation</value>
+  </data>
+  <data name="IslamSource_LeftToRight" xml:space="preserve">
+    <value>Left To Right</value>
+  </data>
+  <data name="IslamSource_RightToLeft" xml:space="preserve">
+    <value>Right To Left</value>
   </data>
   <data name="IslamSource_Perform" xml:space="preserve">
     <value>Perform</value>

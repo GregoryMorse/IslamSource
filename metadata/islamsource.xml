@@ -200,10 +200,12 @@
 			<image name="fontloading" text="IslamSource_Loading" source="loading-h.gif"></image>
 			<static name="font-tester" description=""></static>
 			<edit name="translitedit" rows="4"></edit>
-			<radio name="scheme" description="IslamSource_Scheme" onchange="Arabic::GetSchemeChangeJS"><option name="IslamSource_Transliterate" defaultvalue="true"></option><option name="IslamSource_ModifyDiacritics"></option><option name="IslamSource_FixDirectionalMarkers"></option></radio>
-			<radio name="diacriticscheme" description="IslamSource_Operation"><option name="IslamSource_Add" defaultvalue="true"></option><option name="IslamSource_Remove"></option></radio>
+			<radio name="scheme" description="IslamSource_Scheme" onchange="Arabic::GetSchemeChangeJS"><option name="IslamSource_Transliterate" defaultvalue="true"></option><option name="IslamSource_ChangeScriptFormat"></option><option name="IslamSource_UseBiDiBias"></option></radio>
 			<radio name="translitscheme" description="IslamSource_TransliterationScheme" uselist="true" onpopulate="Arabic::GetTransliterationSchemes"></radio>
 			<radio name="direction" description="IslamSource_Direction"><option name="IslamSource_ArabicToRoman" defaultvalue="true"></option><option name="IslamSource_RomanToArabic"></option></radio>
+			<radio name="fromscript" description="IslamSource_FromScript" uselist="true" defaultvalue="0" onpopulate="TanzilReader::GetScriptFormatsSrc" onchange="TanzilReader::GetScriptFormatChangeJS"></radio>
+			<radio name="toscript" description="IslamSource_ToScript" uselist="true" defaultvalue="2" onpopulate="TanzilReader::GetScriptFormats" onchange="TanzilReader::GetScriptFormatChangeJS"></radio>
+			<radio name="operation" description="IslamSource_Operation"><option name="IslamSource_RightToLeft" defaultvalue="true"></option><option name="IslamSource_LeftToRight"></option></radio>
 			<button name="transliterate" description="IslamSource_Perform" onclick="Arabic::GetTransliterateJS"></button>
 			<static name="translitvalue" description=""></static>
 			<static name="translitschemetext" description="IslamSource_Text" onrender="Arabic::GetTransliterationSchemeTable"></static>

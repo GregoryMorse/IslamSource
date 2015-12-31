@@ -316,7 +316,7 @@ Partial Class Page
             writer.Write(vbCrLf + BaseTabs)
             writer.WriteBeginTag("span")
             writer.WriteAttribute("id", DirectCast(Item, PageLoader.RadioItem).Name + "_")
-            If DirectCast(Item, PageLoader.RadioItem).Name = "diacriticscheme" Then writer.WriteAttribute("style", "display: none;")
+            If DirectCast(Item, PageLoader.RadioItem).Name = "fromscript" Or DirectCast(Item, PageLoader.RadioItem).Name = "toscript" Or DirectCast(Item, PageLoader.RadioItem).Name = "operation" Then writer.WriteAttribute("style", "display: none;")
             writer.Write(HtmlTextWriter.TagRightChar)
             writer.Write(Utility.HtmlTextEncode(Utility.LoadResourceString(DirectCast(Item, PageLoader.RadioItem).Description)))
             Dim LoadArray As Object() = Nothing

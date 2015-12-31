@@ -29370,6 +29370,9 @@
   <data name="IslamSource_Collection" xml:space="preserve">
     <value>Collection</value>
   </data>
+  <data name="IslamSource_ColorCues" xml:space="preserve">
+    <value>Use Color Cues</value>
+  </data>
   <data name="IslamSource_Compute" xml:space="preserve">
     <value>Compute</value>
   </data>
@@ -29421,8 +29424,8 @@
   <data name="IslamSource_ExtendedBuckwalter" xml:space="preserve">
     <value>Extended Buckwalter</value>
   </data>
-  <data name="IslamSource_FixDirectionalMarkers" xml:space="preserve">
-    <value>Fix Directional Markers</value>
+  <data name="IslamSource_UseBiDiBias" xml:space="preserve">
+    <value>Use Bidirectional Bias</value>
   </data>
   <data name="IslamSource_Font" xml:space="preserve">
     <value>Font</value>
@@ -29652,8 +29655,8 @@
   <data name="IslamSource_Minutes" xml:space="preserve">
     <value>Minutes</value>
   </data>
-  <data name="IslamSource_ModifyDiacritics" xml:space="preserve">
-    <value>Modify diacritics</value>
+  <data name="IslamSource_ChangeScriptFormat" xml:space="preserve">
+    <value>Change Script Format</value>
   </data>
   <data name="IslamSource_No" xml:space="preserve">
     <value>No</value>
@@ -29673,8 +29676,20 @@
   <data name="IslamSource_Offset" xml:space="preserve">
     <value>Offset</value>
   </data>
+  <data name="IslamSource_FromScript" xml:space="preserve">
+    <value>Source Script Format</value>
+  </data>
+  <data name="IslamSource_ToScript" xml:space="preserve">
+    <value>Target Script Format</value>
+  </data>
   <data name="IslamSource_Operation" xml:space="preserve">
     <value>Operation</value>
+  </data>
+  <data name="IslamSource_LeftToRight" xml:space="preserve">
+    <value>Left To Right</value>
+  </data>
+  <data name="IslamSource_RightToLeft" xml:space="preserve">
+    <value>Right To Left</value>
   </data>
   <data name="IslamSource_Perform" xml:space="preserve">
     <value>Perform</value>
@@ -29775,14 +29790,32 @@
   <data name="IslamSource_UseMilliard" xml:space="preserve">
     <value>Use Milliard</value>
   </data>
+  <data name="IslamSource_VerseOnly" xml:space="preserve">
+    <value>Verses Only</value>
+  </data>
   <data name="IslamSource_Viewer" xml:space="preserve">
     <value>Viewer</value>
   </data>
   <data name="IslamSource_Welcome" xml:space="preserve">
     <value>Welcome to IslamSource.info</value>
   </data>
+  <data name="IslamSource_WordByWordAndVerse" xml:space="preserve">
+    <value>Word By Word and Verses</value>
+  </data>
+  <data name="IslamSource_WordByWordNumberedAndVerse" xml:space="preserve">
+    <value>Word By Word Numbered and Verses</value>
+  </data>
+  <data name="IslamSource_WordByWordOnly" xml:space="preserve">
+    <value>Word By Word Only</value>
+  </data>
+  <data name="IslamSource_WordByWordNumberedOnly" xml:space="preserve">
+    <value>Word By Word Numbered Only</value>
+  </data>
   <data name="IslamSource_WordTotal" xml:space="preserve">
     <value>Word Total</value>
+  </data>
+  <data name="IslamSource_WordVerseMode" xml:space="preserve">
+    <value>Word and Verse Mode</value>
   </data>
   <data name="IslamSource_Yes" xml:space="preserve">
     <value>Yes</value>
@@ -31851,8 +31884,14 @@
   <data name="IslamInfo_AajurroomiyyahChapter1WordByWord" xml:space="preserve">
     <value>Useful sounds:|It is|expressions/utterances|compounded,|meaningful|in its syntatical sequence.|And its only parts consists of|three:|the noun,|the verb,|and the particle|coming|with signification/meaning.|Then the noun|is known|by an expression of kasra due to an agent|and noonation,|and entering|alef|and laam|upon it,|and the letters|of expression of kasra due to an agent,|and they are|from,|and to,|and about,|and upon,|and in,|and with,|and baa,|and kaaf,|and laam,|and the letters|of oath,|and they are|waw,|and bah,|and tah.</value>
   </data>
-  <data name="IslamInfo_GreatMasterpiece" xml:space="preserve">
-    <value>Great Masterpiece</value>
+  <data name="IslamInfo_GreatMasterpiece1" xml:space="preserve">
+    <value>Great Masterpiece 1</value>
+  </data>
+  <data name="IslamInfo_GreatMasterpiece2" xml:space="preserve">
+    <value>Great Masterpiece 2</value>
+  </data>
+  <data name="IslamInfo_GreatMasterpiece3" xml:space="preserve">
+    <value>Great Masterpiece 3</value>
   </data>
   <data name="IslamInfo_GreatMasterpieceCover" xml:space="preserve">
     <value>Great Masterpiece</value>
@@ -31864,7 +31903,7 @@
     <value>Great Masterpiece</value>
   </data>
   <data name="IslamInfo_GreatMasterpieceIntroWordByWord" xml:space="preserve">
-    <value></value>
+    <value>In the name|of Allah|Most Benificent|Most Merciful.|All praise|is to Allah</value>
   </data>
   <data name="IslamInfo_GreatMasterpiece1" xml:space="preserve">
     <value>Great Masterpiece Introductions</value>
@@ -32230,127 +32269,127 @@
     <value>Great Masterpiece</value>
   </data>
   <data name="IslamInfo_GreatMasterpiece55WordByWord" xml:space="preserve">
-    <value>The adjective|It says:|(the chapter|of the adjective)|The adjective:|a follower|for the word being described|in its nominative|and its accusative|and its genitive,|and definiteness|and indefiniteness;|stood|The Zayd|intelligent,|and I saw|the Zayd|intelligent,|and I passed|by the Zaid|intelligent.|And I say:|the descriptive noun/attribute|in|linguistic meaning|it is|the adjective,|and in|terminological|grammatical meaning:|the follower|of the derivative|or|what is interpreted|as the derivative,|clarifying|what follows|in|definiteness,|specifying|for it|in|indefiniteness.|And the adjective|divides|to|two parts:|the first:|the adjective|true,|and the second:|the adjective|justifying/motivating/occasional.|For|the adjective|true|then it is:|that which|made nominative|pronoun|hidden|returning|to|the word being described,|just like|(came|Muhammad|the minded/wise)|then minded/wise:|an adjective|of Muhammad,|and it is|making nominative|for the pronoun|hidden|its implied|it is|returning|to|Muhammad.|And for|the adjective|occassional|then it is:|that which|made nominative case|the noun|apparent|attached|with a pronoun|returning|to|the word being described|just like|(came|Muhammad|virtuous|his father)|then virtuous:|an adjective|of Muhammad,|and his father:|an active element|for virtuous,|nominative case|with the waw|replacement|from|the damma|because it|is from|the nouns|five,|and it is|attached/possessed|to|the haa|which|is|a pronoun|returning|to|Muhammad.|And the ruling|of the adjective|that it|follows|the word it describes|in|inflection,|and in|definiteness|or|indefiniteness,|whether|was|true|or|occassional.|And meaning|this|that it|if|was|the word being described|nominative case|was|the adjective|nominative case,|just like:|(attended|Muhammad|the outstanding/righteous)|or|(attended|Muhammad|the outstanding/righteous|his father),|and if|was|the word being described|accusative case|was|the adjective|accusative case|just like:|(I saw|Muhammad|the oustanding/righteous)|or|(I saw|Muhammad|the outstanding/righteous|his father),|and if|was|the word being described|genitive case|was|the adjective|genitive case,|just like:|(I looked|toward|Muhammad|the outstanding/righteous)|or|(I looked|toward|Muhammad|the outstanding/righteous|his father),|and if|was|the word being described|definite|was|the adjective|definite,|like what|in|the group|of examples|previous,|and if|was|the word being described|indefinite|was|the adjective|indefinite,|just like:|(I saw|a man|intelligent/wise)|or|(I saw|a man|intelligent/wise|his father).|Then|if|was|the adjective|the adjective|true|increasing|upon|that|that it|follows|the word being described|in|its masculinity|or|its femininity,|and in|its singularness|or|its duality|or|its plurality.|And meaning|that|that it|if|was|the word being described|masculine|was|the adjective|masculine,|just like|(I saw|Muhammad|the intelligent/wise)|and if|was|the word being described|feminine|was|the adjective|feminine|just like:|(I saw|Fatima|the well-mannered)|and if|was|the word being described|singular|was|the adjective|singular|like what|you saw|in|these two|examples,|and if|was|the word being described|dual|was|the adjective|dual,|just like:|(I saw|the two Muhammads|intelligent/wise)|and if|was|the word being described|plural|was|the adjective|plural,|just like:|(I saw|the men|intelligent).|For|the adjective|occasional|then certainly it|is|singular|permanent|and if|was|its word being described|dual|or|plural|you say:|(I saw|the two boys|intelligent|the fathers of the two)|and you say:|(I saw|the boys|intelligent|their fathers)|and follows|the adjective|occasional|what|is after it|in|masculinity|or|femininity,|you say:|(I saw|the daughters|intelligent|their father),|and you say:|(I saw|the boys|intelligent|their mothers).|Then specified|from|this|explanation/clarification|that|the adjective|true|follows|its word being described|in|four|from|ten.|One|from|singular|and dual|and plural,|and one|from|nominative|and accusative|and genitive,|and one|from|masculininity|and femininity,|and one|from|definiteness|and indefiniteness.|And the adjective|occasional|follows|its word being described|in|two|from|five:|one|from|nominative|and accusative|and genitive,|and one|from|definiteness|and indefiniteness,|and follows|its nominative case|which|is after it|in|one|from|two|and the two are|masculinity|and femininity,|and not|follows|anything|in|singularness|and duality|and plurality,|certainly|is|singular|permanently|and forever,|and Allah|knows.</value>
+    <value>The adjective|It says:|(the chapter|of the adjective)|The adjective:|a follower|for the word being described|in|its nominative|and its accusative|and its genitive,|and definiteness|and indefiniteness;|stood|The Zayd|intelligent,|and I saw|the Zayd|intelligent,|and I passed|by the Zaid|intelligent.|And I say:|the descriptive noun/attribute|in|linguistic meaning|it is|the adjective,|and in|terminological|grammatical meaning|it is:|the follower|of the derivative|or|what is interpreted|as the derivative,|clarifying|what follows|in|definiteness,|specifying|for it|in|indefiniteness.|And the adjective|divides|to|two parts:|the first:|the adjective|true,|and the second:|the adjective|justifying/motivating/occasional.|For|the adjective|true|then it is:|that which|made nominative|pronoun|hidden|returning|to|the word being described,|just like|(came|Muhammad|the minded/wise)|then minded/wise:|an adjective|of Muhammad,|and it is|making nominative|for the pronoun|hidden|its implied|it is|returning|to|Muhammad.|And for|the adjective|occassional|then it is:|that which|made nominative case|the noun|apparent|attached|with a pronoun|returning|to|the word being described|just like|(came|Muhammad|virtuous|his father)|then virtuous:|an adjective|of Muhammad,|and his father:|an active element|for virtuous,|nominative case|with the waw|replacement|from|the damma|because it|is from|the nouns|five,|and it is|attached/possessed|to|the haa|which|is|a pronoun|returning|to|Muhammad.|And the ruling|of the adjective|that it|follows|the word it describes|in|inflection,|and in|definiteness|or|indefiniteness,|whether|was|true|or|occassional.|And meaning|this|that it|if|was|the word being described|nominative case|was|the adjective|nominative case,|just like:|(attended|Muhammad|the outstanding/righteous)|or|(attended|Muhammad|the outstanding/righteous|his father),|and if|was|the word being described|accusative case|was|the adjective|accusative case|just like:|(I saw|Muhammad|the oustanding/righteous)|or|(I saw|Muhammad|the outstanding/righteous|his father),|and if|was|the word being described|genitive case|was|the adjective|genitive case,|just like:|(I looked|toward|Muhammad|the outstanding/righteous)|or|(I looked|toward|Muhammad|the outstanding/righteous|his father),|and if|was|the word being described|definite|was|the adjective|definite,|like what|in|the group|of examples|previous,|and if|was|the word being described|indefinite|was|the adjective|indefinite,|just like:|(I saw|a man|intelligent/wise)|or|(I saw|a man|intelligent/wise|his father).|Then|if|was|the adjective|true|increasing|upon|that|that it|follows|the word being described|in|its masculinity|or|its femininity,|and in|its singularness|or|its duality|or|its plurality.|And meaning|that|that it|if|was|the word being described|masculine|was|the adjective|masculine,|just like|(I saw|Muhammad|the intelligent/wise)|and if|was|the word being described|feminine|was|the adjective|feminine|just like:|(I saw|Fatima|the well-mannered)|and if|was|the word being described|singular|was|the adjective|singular|like what|you saw|in|these two|examples,|and if|was|the word being described|dual|was|the adjective|dual,|just like:|(I saw|the two Muhammads|intelligent/wise)|and if|was|the word being described|plural|was|the adjective|plural,|just like:|(I saw|the men|intelligent).|For|the adjective|occasional|then certainly it|is|singular|permanent|and if|was|its word being described|dual|or|plural|you say:|(I saw|the two boys|intelligent|the fathers of the two)|and you say:|(I saw|the boys|intelligent|their fathers)|and follows|the adjective|occasional|what|is after it|in|masculinity|or|femininity,|you say:|(I saw|the daughters|intelligent|their father),|and you say:|(I saw|the boys|intelligent|their mothers).|Then specified|from|this|explanation/clarification|that|the adjective|true|follows|its word being described|in|four|from|ten.|One|from|singular|and dual|and plural,|and one|from|nominative|and accusative|and genitive,|and one|from|masculininity|and femininity,|and one|from|definiteness|and indefiniteness.|And the adjective|occasional|follows|its word being described|in|two|from|five:|one|from|nominative|and accusative|and genitive,|and one|from|definiteness|and indefiniteness,|and follows|its nominative case|which|is after it|in|one|from|two|and the two are|masculinity|and femininity,|and not|follows|anything|in|singularness|and duality|and plurality,|certainly|is|singular|permanently|and forever,|and Allah|knows.</value>
   </data>
   <data name="IslamInfo_GreatMasterpiece56" xml:space="preserve">
     <value>Great Masterpiece</value>
   </data>
   <data name="IslamInfo_GreatMasterpiece56WordByWord" xml:space="preserve">
-    <value>The definiteness|and its parts|It says:|the definiteness|five|things:|the noun|implied/pronoun form|just like:|I|and you,|and the noun|proper|just like:|Zayd|and Mecca,|and the noun|vague/unclear/demonstrative|just like:|this masculine|and this feminine|and these,|and the noun|which|in it|the alif|and the lam|just like:|the man|and the boy,|and what|is attached|to|one|from|these|four.|And I say:|know|that|the noun|divides|into|two parts,|the first:|the indefinite.|It will come.|And the second:|the definite|and it is:|the expression|which|refers|upon|something specific/known,|and its parts|are five:|the part|first:|the implied/pronounal form|or|pronoun,|and it is|what|refers|upon|a speaker/first person,|just like:|I,|or|addressing/second person|just like:|you masculine,|or|another/absent/away one/third person|just like:|he,|and from|here|you know|the pronoun|is three|kinds.|The kind|first:|that which|is used|to indicate|to|the speaker/first person|and it is|two words,|and the two are:|(I)|for the speaker/first person|alone,|and|(we)|for the speaker/first person|exalting|himself|or|with him|is other than him.|And the kind|second:|that which|is used|to indicate|upon|addressing/second person|and it is|five|expressions,|and they are:|(you masculine)|with fatha|of the tah|for addressing/second person|masculine|singular,|and|(you feminine)|with kasri|of the tah|for addressing/second person|feminine|singular|and|(you two)|for addressing/second person|dual|masculine|was|or|feminine|and|(you all masculine)|for plural|masculine|addressing/second person,|and|(you all feminine)|for plural|feminine|addressing/second person.|And the kind|third:|that which|is used|to indicate|upon|the other/third person,|and it is|five|expressions|also,|and they are:|(he)|for the other/third person|masculine|singular.|And|(she)|for the other/third person|feminine|singular,|and|(the two)|for the dual|other/third person|unrestricted,|masculine|was|or|feminine,|and|(they masculine)|for the plural|masculine|other/third person,|and|(they feminine)|for the plural|feminine|other/third person.|And was before|this|explanation|in|the study|of the active element|and in|the study|of the subject|and the predicate.|The part|second|from|the definite:|the proper,|and it is|what|refers|to|something specific|without|the need/requirement|for|a connection|to a speaker/first person|or|addressing/second person|or|other than the two,|and it is|two kinds:|masculine|just like|(Muhammad)|and|(Abraham)|and|(Mount)|and feminine|just like|(Fatima)|and|(Zaynab)|and|(Makkah).|The part|third:|the noun|unclear/vague,|and it is|two kinds:|the noun|of demonstration,|and the noun|of relative pronounal form.|For|the noun|of demonstration:|then it is:|that which|is used|for refering|upon|something specific/definite|by means|of a signal/indication|sensory|or|abstract in meaning,|and for it|the expression|of something specific,|and it is:|(this masculine)|for the masculine|singular,|and|(this feminine)|for the singular|feminine,|and|(these two masculine)|or|(these two masculine)|for the dual|masculine,|and|(these two feminine)|or|(these two feminine)|for the dual|feminine,|and|(these)|for the plural|unrestricted.|And for|the noun|of relativeness|then it is:|that which|refers|upon|something specific/definite|by means|of a sentence|or|similar to it.|It is mentioned|after it|definitely|and it is known as|a relative clause/synthetic relation,|and it is|following|upon|a pronoun|matching|relative|and it is known as|returning/belonging,|and for it|expressions|specific|also,|and they are:|(the masculine one who/which)|for singular|masculine.|And|(the feminine one who/which)|for the singular|feminine,|and|(the masculine two who/which)|for dual|masculine,|and|(those masculine who/which)|for plural|masculine|and|(those feminine who/which)|for plural|feminine.|The part|fourth:|the decorated/starting|with the alef|and the lam,|and it is:|each|noun|connected|with it|(the)|then it makes it|definite;|just like|(the man,|and the book,|and the boy,|and the girl).|And the part|fifth:|the noun|which|is attached|to|one|from|four|previous|so it takes on|the definiteness|from|the attached/possessing|to it,|just like|(your boy)|and|(the boy|of Muhammad)|and|(the boy|of this|man)|and|(the boy|the one who|we visited|yesterday)|and|(the boy|of the teacher).|And|the most definite|of these|definites|after|the expression|of the Majesty:|the pronoun|then|the proper noun,|then|the noun|of pointing/demonstration,|then|the noun|relative,|then|placing/starting|with the article of definiteness,|then|the attaching/possessing|to it.|And the attached/possessed|in|same level|of the attaching/possessing|to it,|except|the attached/possessed|to|the pronoun|then certainly it is|in|the same level|of the proper noun,|and Allah|knows best.</value>
+    <value>The definiteness|and its parts|It says:|the definiteness|five|things:|the noun|implied/pronoun form|just like:|I|and you,|and the noun|proper|just like:|Zayd|and Mecca,|and the noun|vague/unclear/demonstrative|just like:|this masculine|and this feminine|and these,|and the noun|which|in it|the alif|and the lam|just like:|the man|and the boy,|and what|is attached|to|one|from|these|four.|And I say:|know|that|the noun|divides|into|two parts,|the first:|the indefinite.|It will come.|And the second:|the definite|and it is:|the expression|which|refers|upon|something specific/known,|and its parts|are five:|the part|first:|the implied/pronounal form|or|pronoun,|and it is|what|refers|upon|a speaker/first person,|just like:|I,|or|addressing/second person|just like:|you masculine,|or|another/absent/away one/third person|just like:|he,|and from|here|you know|that|the pronoun|is three|kinds.|The kind|first:|that which|is used|to indicate|to|the speaker/first person|and it is|two words,|and the two are:|(I)|for the speaker/first person|alone,|and|(we)|for the speaker/first person|exalting|himself|or|with him|is other than him.|And the kind|second:|that which|is used|to indicate|upon|addressing/second person|and it is|five|expressions,|and they are:|(you masculine)|with fatha|of the tah|for addressing/second person|masculine|singular,|and|(you feminine)|with kasri|of the tah|for addressing/second person|feminine|singular|and|(you two)|for addressing/second person|dual|masculine|was|or|feminine|and|(you all masculine)|for plural|masculine|addressing/second person,|and|(you all feminine)|for plural|feminine|addressing/second person.|And the kind|third:|that which|is used|to indicate|upon|the other/third person,|and it is|five|expressions|also,|and they are:|(he)|for the other/third person|masculine|singular.|And|(she)|for the other/third person|feminine|singular,|and|(the two)|for the dual|other/third person|unrestricted,|masculine|was|or|feminine,|and|(they masculine)|for the plural|masculine|other/third person,|and|(they feminine)|for the plural|feminine|other/third person.|And was before|this|explanation|in|the study|of the active element|and in|the study|of the subject|and the predicate.|The part|second|from|the definite:|the proper,|and it is|what|refers|to|something specific|without|the need/requirement|for|a connection|to a speaker/first person|or|addressing/second person|or|other than the two,|and it is|two kinds:|masculine|just like|(Muhammad)|and|(Abraham)|and|(Mount)|and feminine|just like|(Fatima)|and|(Zaynab)|and|(Makkah).|The part|third:|the noun|unclear/vague,|and it is|two kinds:|the noun|of demonstration,|and the noun|of relative pronounal form.|For|the noun|of demonstration:|then it is:|that which|is used|for refering|upon|something specific/definite|by means|of a signal/indication|sensory|or|abstract in meaning,|and for it|the expression|of something specific,|and it is:|(this masculine)|for the masculine|singular,|and|(this feminine)|for the singular|feminine,|and|(these two masculine)|or|(these two masculine)|for the dual|masculine,|and|(these two feminine)|or|(these two feminine)|for the dual|feminine,|and|(these)|for the plural|unrestricted.|And for|the noun|of relativeness|then it is:|that which|refers|upon|something specific/definite|by means|of a sentence|or|similar to it.|It is mentioned|after it|definitely|and it is known as|a relative clause/synthetic relation,|and it is|following|upon|a pronoun|matching|relative|and it is known as|returning/belonging,|and for it|expressions|specific|also,|and they are:|(the masculine one who/which)|for singular|masculine.|And|(the feminine one who/which)|for the singular|feminine,|and|(the masculine two who/which)|or|(the masculine two who/which)|for dual|masculine,|and|(the feminine two who/which)|or|(the feminine two who/which)|for dual|feminine,|and|(those masculine who/which)|for plural|masculine|and|(those feminine who/which)|for plural|feminine.|The part|fourth:|the decorated/starting|with the alef|and the lam,|and it is:|each|noun|connected|with it|(the)|then it makes it|definite;|just like|(the man,|and the book,|and the boy,|and the girl).|And the part|fifth:|the noun|which|is attached|to|one|from|four|previous|so it takes on|the definiteness|from|the attached/possessing|to it,|just like|(your boy)|and|(the boy|of Muhammad)|and|(the boy|of this|man)|and|(the boy|the one who|we visited|yesterday)|and|(the boy|of the teacher).|And the most definite|of these|definites|after|the expression|of the Majesty:|the pronoun|then|the proper noun,|then|the noun|of pointing/demonstration,|then|the noun|relative,|then|placing/starting|with the article of definiteness,|then|the attaching/possessing|to it.|And the attached/possessed|in|same level|of the attaching/possessing|to it,|except|the attached/possessed|to|the pronoun|then certainly it is|in|the same level|of the proper noun,|and Allah|knows best.</value>
   </data>
   <data name="IslamInfo_GreatMasterpiece57" xml:space="preserve">
     <value>Great Masterpiece</value>
   </data>
   <data name="IslamInfo_GreatMasterpiece57WordByWord" xml:space="preserve">
-    <value>The indefinites|It says:|and the indefinites:|every|noun|general/common|in|its gender|not|specifying|with it|one|without|the other,|and its closer comprehension:|all|that|uses|the entry|of the alef|and the lam|upon it,|just like|the man|and the horse.|And I say:|the indefinite|it is|each|noun|used|not|for specifying|one|with other than itself|from|among|the singular|of its gender,|rather|than making correct|its generalization|upon|each|one|upon|the manner|of substitution,|just like|(a man)|and|(a woman);|then if|the first|makes correct|its generalization|upon|a male|adult/full age/matured|from|the sons/tribe|of Adam,|and the second|makes correct|its generalization|upon|each|woman|adult/full age/matured|from|the sons/tribe|of Adam.|And the sign|of the indefinite|that|it is correct|for that it|enters|upon it|(the definite particle)|and affects making|in it|the definite|just like|(a man)|then certainly it|makes correct|entering|(the definite particle)|upon it,|and affects making|in it|the definite;|then you say:|(the man)|and like that:|a boy,|and a girl,|and a boy,|and a girl,|and a scientist,|then certainly you|say:|the boy,|and the girl,|and the boy,|and the girl,|and the scientist.|Exercises/drills|1-|Place|each|noun|from|the nouns|given|in|three|sentences|meaningful,|so|is|nominative case|in|one,|and accusative case|in|the second,|and genitive case|in|the third,|and describe|that|noun|in|each|sentence|with an adjective|true|appropriate:|the two men.|Muhammad.|The sparrow.|The teacher.|A girl.|A flower.|The Muslims.|Your father.|2-|Place|an adjective|appropriate|in|each|place|from|the places|free|in|the examples|given,|and place|with vowel signs:|(a)|the student|...|loves him|his teacher|(b)|The girl|...|pleased|her parents|(c)|The nile|...|fertilizes|the land|(d)|I|love|the book|...|(e)|My country|is Egypt|...|(f)|The students|...|serve|their countries|(g)|The gardens|...|for walking/strolling|(h)|I met|a man|...|so I gave charity/spent|to/upon him|(i)|I lived|in|a house|...|(j)|How|excellent/good|the rooms|...|(k)|By/with|my brother|a cane/stick|...|(l)|I gave as a present|to|my brother|a book|...|(m)|The garments|...|the clothing|of the summer|3-|Place|a word being described|appropriate|in|each|place|from|the places|given,|and place|with vowel signs:|(a)|</value>
+    <value>The indefinites|It says:|and the indefinites:|every|noun|general/common|in|its gender|not|specifying|with it|one|without|the other,|and its closer comprehension:|all|that|uses|the entry|of the alef|and the lam|upon it,|just like|the man|and the horse.|And I say:|the indefinite|it is|each|noun|used|not|for specifying|one|with other than itself|from|among|the singular|of its gender,|rather|than making correct|its generalization|upon|each|one|upon|the manner|of substitution,|just like|(a man)|and|(a woman);|then if|the first|makes correct|its generalization|upon|a male|adult/full age/matured|from|the sons/tribe|of Adam,|and the second|makes correct|its generalization|upon|each|woman|adult/full age/matured|from|the sons/tribe|of Adam.|And the sign|of the indefinite|that|it is correct|for that it|enters|upon it|(the definite particle)|and affects making|in it|the definite|just like|(a man)|then certainly it|makes correct|entering|(the definite particle)|upon it,|and affects making|in it|the definite;|then you say:|(the man)|and like that:|a boy,|and a girl,|and a boy,|and a girl,|and a scientist,|then certainly you|say:|the boy,|and the girl,|and the boy,|and the girl,|and the scientist.|Exercises/drills|1-|Place|each|noun|from|the nouns|given|in|three|sentences|meaningful,|so|is|nominative case|in|one,|and accusative case|in|the second,|and genitive case|in|the third,|and describe|that|noun|in|each|sentence|with an adjective|true|appropriate:|the two men.|Muhammad.|The sparrow.|The teacher.|A girl.|A flower.|The Muslims.|Your father.|2-|Place|an adjective|appropriate|in|each|place|from|the places|free|in|the examples|given,|and place|with vowel signs:|(a)|the student|...|loves him|his teacher|(b)|The girl|...|pleased|her parents|(c)|The nile|...|fertilizes|the land|(d)|I|love|the book|...|(e)|My country|is Egypt|...|(f)|The students|...|serve|their countries|(g)|The gardens|...|for walking/strolling|(h)|I met|a man|...|so I gave charity/spent|to/upon him|(i)|I lived|in|a house|...|(j)|How|excellent/good|the rooms|...|(k)|By/with|my brother|a cane/stick|...|(l)|I gave as a present|to|my brother|a book|...|(m)|The garments|...|the clothing|of the summer|3-|Place|a word being described|appropriate|in|each|place|from|the places|given,|and place|with vowel signs:|(a)|...|hard-working|loves him|his teacher|(b)|...|knowledgable|serve|their nation|(c)|I|like|...|useful|(d)|...|trustworthy|passes with|a pass|brilliant|(e)|...|heavy|uprooted|the trees|(f)|I picked|...|blooming|(g)|I saw|...|poor|so I gave charity/spent|to/on her|(h)|...|severe|not|is bearable on|the body|(i)|...|diligent|served|the law/Shariah|Islamic|(j)|I benefited|from|the influences|...|previous/earlier|(k)|...|beloved|is my home/country|4-|Find|the word being described|appropriate|for each|from|the adjectives|given,|then|use|the adjective|and word being described|together|in|a sentence|meaningful,|and place|both of their endings|with vowel signs:|the huge,|the well-mannered,|the high,|the sweet/fresh,|the blooming,|the wise,|the far,|the generous,|the honest,|the wise,|the well-mannered,|wide,|wide.|Exercises/drills|upon|inflection|Inflect|the sentences|given:|the book|is a companion|enjoyable/delightful,|the student|hard working|likes him|his teacher,|the girls|well-mannered|serve|their country,|I drank|from|the water|sweet/fresh.|Response/answer|1-|The book:|a subject|nominative case|by the starting,|and the sign|of its nominative|the damma|apparent|in|its ending,|a companion:|predicate|of the subject,|nominative case|by the starting,|and the sign|of its nominative|the damma|apparent|in|its ending,|enjoyable/delightful:|an adjective|for a companion,|and the adjective|of nominative case|is nominative case,|and the sign|of its nominative|the damma|apparent|in|its ending.|2-|The student:|a subject|nominative case|by the starting,|and the sign|of its nominative|the damma|apparent|in|its ending,|hard working:|an adjective|for the student,|and the adjective|of nominative case|is nominative case,|and the sign|of its nominative|the damma|apparent|in|its ending,|likes:|a verb|present tense|indicative mood|for its free|from|subjunctive|and jussive,|and the sign|of its indicative|the damma|apparent|in|its ending,|and the haa:|the pronoun|of other/third person|acted upon|by it,|structural|upon|the damma|in|place|of accusative,|the teacher:|active element|of likes|nominative case,|and the sign|of its nominative|the damma|apparent|in|its ending,|and the teacher|attached/possessed,|and the haa|pronoun|of other/third person|possessing/attached|to it,|structural|upon|the damma|in|place|of genitive,|and the sentence|from|the verb|and its active element|in|place|of nominative|predicate|of the subject|which|is|the student,|and the connection|between|the subject|and the sentence|of the predicate|is|the pronoun|accusative case|in|(likes him).|3-|The girls:|a subject|nominative case|by the starting,|and the sign|of its nominative|the damma|apparent,|and well-mannered:|an adjective|for the girls,|and the adjective|of nominative case|is nominative case,|and the sign|of its nominative|the damma|apparent,|serve:|a verb|present tense|structural|upon|the sukun|for connected|with the noon|of femininity,|and the noon|of femininity|is an active element,|structural|upon|fatha|in|place|of nominative,|countries:|acted upon|by it|for serve|accusative case,|and the sign|of its accusative|the fatha|apparent,|and countries|attached/possessed,|and their:|pronoun|plural|of femininity|other/third person|attached/possessing|to it,|structural|upon|the fatha|in|place|of genitive,|and the sentence|from|the verb|and the active element|in|place|of nominative|the predicate|of the subject|which|is|the girls,|and the connection|between|the subject|and the sentence|of the predicate|it is|the noon|of femininity|in|(serve).|4-|Drink:|a verb|past tense,|and the haa|pronoun|of the speaker/first person|active element,|structural|upon|the damma|in|place|of accusative,|and from:|a particle|of genitive,|structural|upon|the sukun|not|a place|for it|from|inflection,|the water:|genitive case|by from,|and the sign|of its genitive|the kasra|apparent,|and the genitive preposition|and the word it makes genitive|relating|by drink,|sweet/fresh:|an adjective|for water,|and the adjective|of the genitive case|is genitive case,|and the sign|of its genitive|the kasra|apparent|in|its ending.|Questions|upon|what|came before|What|is|the adjective?|Into|how many|parts|divides|the adjective?|What|is|the adjective|true?|What|is|the adjective|occasional?|What|are|the things|which|follow|in it|the adjective|true|the word being described?|What|which|follows|the adjective|occasional|in|masculinity|and femininity?|What|is|the definite?|What|is|the pronoun?|What|is|the proper noun?|What|is|the noun|of pointing/demonstration?|What|is|the noun|of relative pronoun?|Make|for each|from|the pronoun,|the proper noun,|the noun|of pointing/demonstration,|and the noun|of relative pronoun|-|with three|examples|in|a sentence|meaningful.</value>
   </data>
   <data name="IslamInfo_GreatMasterpiece58" xml:space="preserve">
     <value>Great Masterpiece</value>
   </data>
   <data name="IslamInfo_GreatMasterpiece58WordByWord" xml:space="preserve">
-    <value></value>
+    <value>The particles|of the conjunction|It says:|(chapter|of the conjunction)|and the particles|of the conjunction|are ten,|and they are:|the waw/and,|and the faa/and/so/then,|and then/next,|and or,|and or,|and either,|and but,|and not,|and but,|and until|in|some|places.|And I say:|for the conjunctive|two meanings:|the first|linguistic|and the other|terminological.|For|its meaning|linguistic|then it is:|inclination/liking/attachment,|you say:|taking pity|any person|upon|any person|taking pity|with liking,|refering|that it|has an inclination/liking|to it|and to be compassionate/sympathetic|upon him.|And for|the conjuctive|in|the terminlogy|then it is|two parts:|the first:|the conjunction/apposition|explicative,|and the second:|the conjunction|coordinating.|Then for|the conjunction/apposition|explicative|then it is|(the follower|inert/static|shown|for its follower|in|definiteness|specifically|for it|in|indefiniteness)|then example|of conjuction/apposition|explicative|in|the definite|(came to me|Muhammad|your father)|then your father:|conjunction/apposition|explicative|upon|Muhammad,|and each of the two|definite,|and the second|in|the example|makes clear/showing|for the first,|and example|in|indefinite|its saying|the Most High|(from|water|festering)(14:16)|then festering|conjunction/apposition|explicative|upon|the water,|and each of the two|indefinite,|and the second|in|the example|specifying|for the first.|And for|the conjunction|coordinating|then it is|(the follower|which|is in the middle|between it|and between|the one being followed/word it follows|one|of the particles|of conjunction)|and these|particles|they are:|1-|The waw/and,|and it is|for entirely|joining;|so it joins|by it|two successive/following,|just like:|(came|Muhammad|and Ali)|if|was|joining|together,|and joining|with it|the preceding|upon|the delayed,|just like:|(came|Ali|and Mahmood)|if|was|joining|Mahmood|preceding|upon|joining|Ali,|and joining|with it|the delayed|upon|the preceding,|just like:|(came|Ali|and Muhammad)|if|was|joining|Muhammad|delayed|from|joining|Ali.|2-|The fah/so/then,|and it is|for succession/arrangement|and following/pursuing,|and the meaning|of succession/arrangement:|that|the second|after|the first,|and the meaning|of following/pursuing:|that it|pursues/follows it|with not|delay,|just like:|(arrived|the horsemen|then the soldiers)|if|was|joining|the horsemen|preceding|and not|did|between|the arrival|of the two parties|a delay.|3-|Then,|and it is|for succession/arrangement|with|slacking/arrangement,|and meaning|of succession/arrangement|certainly|preceded,|and the meaning|of slacking/arrangement:|that|between|the first|and the second|is a delay,|just like:|(sent|Allah|Moses|then|Jesus|then|Muhammad|upon them|salutations|and peace).|4-|The or,|and it is|for selecting|or|permissibility,|and the difference|between the two|that|selecting|not|does allow/is permissible|with it|all,|and permissibility|does allow|with it|all;|then example|of selecting|(marry|Hind|or|her sister)|and example|of permissibility|(study|fiqh/Islamic jurisprudence|or|Arabic grammar)|then certainly|you have|from|Islamic law|proof|upon|that it|not|is allowed|together|between|Hind|and her sister|with marriage,|and not|doubt|in|that it|is allowed|together|between|fiqh/Islamic jurisprudence|and Arabic grammar|in studies.|5-|The or,|and it is|for the request|of specification|after|the hamza|of questioning|just like:|(did you study|fiqh/Islamic jurisprudence|or|Arabic grammar?).|6-|And either,|with condition|that|it precedes|with the like of it,|and it is|similar|(or)|in|the two meanings|just like|its saying|the Most High:|(then bind firmly|the bond|either|a favor/oblige them by setting them free|thereafter|or|take ransom)(47:4),|and just like:|(marry|either|Hind|or|her sister).|7-|And but,|and it is|for signaling/striking/outstanding,|and meaning|it makes|what|is before it|in|ruling|of what was silence/not answered|about it,|just like:|(not|came|Muhammad|but|Bakr)|and required|for the conjunction|with it|two conditions;|the first:|that|is|conjuncted/the word which is followed by it|with it|a singular|not|a sentence,|and second:|that not|prededes|a questioning particle.|8-|Not,|and it is|negating|that which|is after it|the same/self|of the ruling|which|establishes/confirms|for that which|before it|just like:|(came|Bakr|not|Khalid).|9-|But,|and it is|refering|upon|approval|of information|that|is before it|and establishing/confirming|its opposite|for that which|is after it|just like:|(not|I love|those who are lazy|but|hard workers/those who are diligent)|and required|that|precedes it|negation|or|prohibition,|and that|is|for the word following/conjuncted|with it|singular,|and that not|precedes it|the waw/and.|10-|Until,|and it is|for gradual/progressiveness|and for goal/end/objective,|and the gradual/progressiveness:|and it is|refers|upon|passing/elapsing|of information|one thing|then/after another thing,|just like:|(die|people|even|the prophets).|And comes|(until)|starting|other than|conjunctive,|if|was|what|is after it|a sentence,|just like:|(came|our friends|even|Khalid|attending)|and comes|genitive|just like|its saying|the Most High:|(until|breaks/rising of|the dawn)(97:5)|and for this|said|the author|(and until|in|some|places).</value>
   </data>
   <data name="IslamInfo_GreatMasterpiece59" xml:space="preserve">
     <value>Great Masterpiece</value>
   </data>
   <data name="IslamInfo_GreatMasterpiece59WordByWord" xml:space="preserve">
-    <value></value>
+    <value>The ruling|of the particles|of conjunction|It says:|then if|was conjoined|upon|nominative case/indicative mood|it will be nominative case/indicative mood,|or|upon|accusative case/subjunctive mood|it will be accusative case/subjunctive mood,|or|upon|genitive case|it will be genitive case,|or|upon|jussive mood|it will be jussive mood,|you say:|(stood|Zayd|and Amr,|and I saw|Zayd|and Amr,|and I passed|by Zaid|and Amr,|and Zaid|did not|stand|and did not|sit).|And I say:|these|particles|ten|make|what|is after them|followers|for that which|is before them|in|its ruling|of inflection,|then if|was|conjuncted/the word being followed|nominative case|was|the follower/conjoined|nominative case,|just like:|(met me|Muhammad|and Khalid)|then Khalid:|conjuncted|upon|Muhammad,|and the conjuncted|upon|the nominative case|is nominative case,|and the sign|of its nominative|is the damma|apparent,|and if|was|the word being followed|accusative case|was|the follower|accusative case,|just like:|(I met|Muhammad|and Khalid)|then Khalid:|conjuncted|upon|Muhammad,|and conjuncted|upon|the accusative case|is accusative case,|and the sign|of its accusative|is the fatha|apparent,|and if|was|the word being followed|genitive case|was|the follower|genitive case|its example,|just like:|(I passed|by Muhammad|and Khalid)|then Khalid|conjuncted|upon|Muhammad,|and the conjuncted|upon|the genitive case|is genitive case,|and the sign|of its genitive|the kasra|apparent,|and if|was|the word being followed|jussive mood|was|the follower|jussive mood|also,|just like:|(did not|attend|Khalid|or|send|a messenger)|then send:|conjuncted|upon|attend,|and conjuncted|upon|the jussive mood|is jussive mood,|and the sign|of its jussive|the sukun.|And from|these|examples|you know|that|the noun|conjuncted/attached|upon|the noun,|and that|the verb|conjuncted/attached|upon|the verb.|Exercises/drills|1-|Put|the conjuncted|appropriate|after|the particle|of conjunction|mentioned|in|the examples|given:|(a)|not|I bought|a book|but|...|(b)|Not|I ate|an apple|but|...|(c)|Builds|my brother|a house|and|...|(d)|Attended|the student|then|...|(e)|I traveled|the day|of Thursday|and|...|(f)|Left|those|with the institute|until/even|...|(g)|Accompany|those who are good|not|...|(h)|Not|I visited|my brother|but|...|2-|Put|the conjuncted|upon it|appropriate|in|places|free|from|the examples|given:|(a)|eat|from|the fruit|...|not|unripe/green|(b)|remains|by you|your father|...|or|a few/some|days|(c)|not|I read|the book|...|but|some of it|(d)|not|I saw|...|but|his representitive/overseer|(e)|arrange|...|and your tools/means|(f)|I journeyed|to|...|then to Alexandria|(g)|amazes me|...|not|his speech/sayings|(h)|which of the two|do you prefer|...|or|the summer.|3-|Make|each|word|from|the words|given|in|two sentences,|so|is|in|one of the two|conjuncted|and in|the second|conjuncted|upon it:|the scholars,|the grape,|the palace,|Cairo,|he travels,|he eats,|the hard workers,|the pious,|Ahmad,|Umar,|the father|of Bakr,|read,|he wrote.|Exercises/drills|upon|inflection|Inflect|the sentences|given:|not|I saw|Muhammad|but|his representative/overseer,|visited us|your brother|and his friend,|my brother|eats|and drinks|a lot.|Answer/response|1-|Not:|particle|of negation,|structural|upon|the sukun|not|a place|for it|from|inflection,|saw|from|I saw,:|a verb|past tense|structural|upon|fatha|supposed|upon|its ending|preventing|from|its apparent|function|the place|with the sukun.|And the taa|the pronoun|of the speaker/first person|an active element,|structural|upon|damma|in|place|of nominative.|Muhammad:|acted upon|by it|accusative case,|and the sign|of its accusative|the fatha|apparent,|but:|a particle|of conjunction,|representative/overseer:|conjuncted|upon|Muhammad,|and the conjuncted|upon|the accusative case|is accusative case,|and the sign|of its accusative|the fatha|apparent,|and representative/overseer|attached/possessed|and the haa|the pronoun|of the other/third person|attached/possessing|to it,|structural|upon|the damma|in|place|of genitive.|2-|Visited:|a verb|past tense|structural|upon|the fatha|not|a place|for it|from|inflection,|and us:|acted upon|by it|structural|upon|the sukun|in|place|of accusative,|brother:|an active element|nominative case,|and the sign|of its nominative|the waw|replacement|from|the damma|because it|is from|the nouns|five,|and brother|attached/possessed|and the kaf|the pronoun|of addressing/second person|attached/possessing|to it|structural|upon|the fatha|in|place|of genitive,|and the waw|particle|of conjunction,|and friend|conjuncted|upon|brother,|and the conjuncted|upon|the nominative case|is nominative case,|and the sign|of its nominative|the damma|apparent,|and friend:|attached/possessed|and the haa|the pronoun|of the other/third person|attached/possessing|to it,|structural|upon|the damma|in|place|of genitive.|3-|Brother|from|my brother:|a subject|nominative case|with the starting,|and the sign|of its nominative|a damma|supposed|upon|its ending|preventing|from|its apparent|function|the place|with vowel signs|appropriate,|and brother|attached/possessed|and the yah|of the speaker/first person|attached/possessing|to it,|structural|upon|the sukun|in|place|of genitive,|he eats:|a verb|present tense|indicative mood|for its free|from|subjunctive|and jussive,|and the sign|of its nominative|the damma|apparent,|and the active element|a pronoun|hidden|in it|allowing|its supposed|is|returning|upon|my brother,|and the sentence|from|the verb|and the active element|in|place|of nominative|the predicate|of the subject,|and the connection|between|the sentence|of the predicate|and the subject|is|the pronoun|hidden|in|(he eats)|and the waw|the particle|of conjunction|of he drinks,|a verb|present tense|conjuncted|upon|he eats,|and the conjuncted|upon|the indicative mood|is indicative mood,|and the sign|of its indicative|the damma|apparent,|a lot:|acted upon|by it|for he eats,|accusative case,|and the sign|of its accusative|the fatha|apparent.|Questions|What|is|the conjunction?|Into|how many|parts|divides|the conjunction?|What|is|the conjunction|explicative?|Make|for the conjunction|explicative|with two examples.|What|is|the conjunction|coordinating?|What|is the meaning|of the waw/and?|What|is the meaning of|(or)?|What|is the meaning of|(either)?|What|which|is required|for the conjunction|with but?|What|which|is required|for the conjunction|with|(but)?|Which things|shares|the conjuncted|and the conjuncted|upon it?|Inflect|the sentences|given|and refer to|the conjuncted|and the conjuncted|upon it|and the instrument|of conjunction|(|and we carried across|the children|of Israel|the sea|then/whereat pursued them|Pharoah|and his troops)(10:90)|(so give|the relative|of closeness|his right|and the poor|and the farer|of the way|)(30:38)|(glorifies|for Allah|what|is in|the heavens|and the earth||and He is|the Almighty|the Wise)(57:1)|(and certainly|from|the people|of the book|are those who|believe|in Allah|and what|is revealed|to you|and what|is revealed|to them)(3:199)|(and soon|will give you|your Lord|that with which you will be pleased|(5)|did not|he find you|an orphan|then shelter you|(6)|and did find you|astray|then guide you|(7)|and did find you|needy/in need|then enriched/provided for you)(93:5-8)|(then|the hellfire|put him into|(31)|then|in|a chain|its length|seventy|cubits|then bind/insert him)(69:31-32).</value>
   </data>
   <data name="IslamInfo_GreatMasterpiece60" xml:space="preserve">
     <value>Great Masterpiece</value>
   </data>
   <data name="IslamInfo_GreatMasterpiece60WordByWord" xml:space="preserve">
-    <value></value>
+    <value>The emphasis/intensifying apposition,|and its types,|and its ruling|It says:|(the chapter|of the emphasis/intensifying apposition)|the emphasis:|(a follower|for the emphasized/definite word|in|its nominative|and its accusative|and its genitive|and its definiteness).|And I say:|the emphasis|-|it is said|the emphasis|-|its meaning|in|language:|strengthening/intensifying,|you say:|(I confirmed|something)|and you say:|(I confirmed it)|also:|if|to strengthen it.|And it is|in|terminology|of grammar|two kinds,|the first:|the emphasis/intensifying|verbal,|and the second:|the emphasis/intensifying|meaning.|For|the emphasis/intensifying|verbal:|then is|with repetition|of the expression/pronounciation|and its repetition|by itself|or|with its synonyms,|whether|was|a noun|just like|(came|Muhammad|Muhammad)|or|was|a verb|just like|(came|came|Muhammad)|or|was|a particle|just like|(yes|yes|came|Muhammad)|and just like|(came|attended|the father|of Bakr)|and|(yes|yes|came|Muhammad).|And for|the emphasis/intensifying|meaning|then it is:|(the follower|which|raises|the probability|of absent-mindedness/inattentiveness/forgetfulness|or|extending/exagerating/overstating|in|what follows)|and clarification|this|that you|if|said:|(came|the leader)|the possibility|that you|are absent-minded|or|widen|in|the speech,|and that|your intention|was the coming|of the messenger|of the leader,|then if|you said:|(came|the leader|himself)|or|you said:|(came|the leader|himself)|he raises|the possibility|and establishes/confirms it|with|the listener|that you|did not|intend/say/mention|except|the coming of|the leader|himself.|And the ruling|of this|follower|that it|agrees with|the word being followed|in|its inflection,|upon|meaning|that it|if|was|the word being followed|nominative case|was|the follower|nominative case|also,|just like|(attended|Khalid|himself)|and if|was|the word being followed|accusative case|was|the follower|accusative case|like it,|just like:|(I memorized|the Qur'an|all of it/entire)|and if|was|the word being followed|genitive case|was|the follower|genitive case|like that,|just like:|(I reflected/contemplated|on|the book|all of it/entire)|and follows|also|in|its definiteness,|like what|you saw|in|the examples|all of them.</value>
   </data>
   <data name="IslamInfo_GreatMasterpiece61" xml:space="preserve">
     <value>Great Masterpiece</value>
   </data>
   <data name="IslamInfo_GreatMasterpiece61WordByWord" xml:space="preserve">
-    <value></value>
+    <value>The expressions|of emphasis/intensifying|meaning|It says:|and is|with expressions|certain/specific,|and they are:|the self,|and the self/same,|and each/every/all,|and entire/whole/all,|and the followers|of plural/entire/whole/all,|and they are:|all/altogether/whole/entire,|and all/altogether/whole/entire,|and all/altogether/whole/entire,|you say:|stood|Zayd|himself,|and I saw|the people|all of them,|and I passed by|the people|all.|And I say:|for emphasis/intensifying|through meaning|has expressions|specific|known by|grammarians|who|follow|the speech|of the Arabs|and from|these|expression:|the self|and the same/self,|and must|that|attaches|each|one|from|these two|to|a pronoun|returning|upon|the definite word being emphasized|-|with the fatha|of the kaf|-|then if|was|the definite word being emphasized|singular|was|the pronoun|singular,|and expression|of emphasis|singular|also,|you say:|(came|Ali|himself),|and|(attended|Bakr|himself)|and if|was|the definite word being emphasized|plural|was|the pronoun|it|plural|and the expression|of emphasis|plural|also,|you say:|(came|the men|themselves),|and|(attended|the writers|themselves),|and if|was|the definite word being emphasized|dual;|then most correct|that|is|the pronoun|dual,|and the expression|of emphasis|plural,|you say:|(attended|the two men|their two/themselves)|and|(came|the two writers|their two/themselves).|And from|the expressions|of emphasis|(all/each/every),|and its similar|(entire/whole/all)|and it is a condition|in both/the two|attached|each|from the two|to|a pronoun|following|the definite word being emphasized,|just like:|(came|the army|whole/all of it)|and|(attended|the men|altogether).|And from|the expression|(entire/whole/all)|and not|emphasizing|with this|expression|famous/predominant way|except|after|the expression|(each/every/all)|and from|the famous/predominant way|its saying|the Most High|(then prostrated|the angels|all of them|together)(15:30)|and from|other than|the famous/predominant way|the saying|of Raajiz:|then|I would remain|crying|for eternity|all|And perhaps|there is a need|to|increase/extend|the strengthening/intensifying,|surprising|after|entire/whole/all|with an expression|other,|and they are:|(all/altogether/whole/entire)|and|(all/altogether/whole/entire)|and|(all/altogether/whole/entire),|and these|expressions|not|emphasize|with them|independenly/on their own,|just like:|(came|the people|all|together|all of them|altogether)|and Allah|knows.|Exercises/drills|upon|inflection|Inflect|the sentences|given:|I read|the book|all of it.|Visited us|the minister|himself.|I greeted|upon|your brother|himself/in person/personally.|Came|the men|of the army|altogether.|1-|Read:|a verb|past tense,|structural|upon|fatha|supposed|upon|its ending|preventing|from|its apparent|function|of the place|with the sukun|the exhibitor|for repeling|disliked|succession|four|vowel signs|in what|is|like the word|one,|and the taa|the pronoun|of the speaker/first person|active element,|structural|upon|the damma|in|place|of nominative,|and the book:|acted upon|by it|accusative case,|and the sign|of its accusative|the fatha|apparent,|and all:|emphasis|for the book,|and the emphasis|of the accusative case|is accusative case,|and the sign|of its accusative|the fatha|apparent,|and all|attached/possessing|and the haa|the pronoun|of the other/third person|attached/possessed|to it,|structural|upon|the damma|in|place|of genitive.|2-|Visited:|a verb|past tense,|structural|upon|the fatha|not|a place|for it|from|inflection,|us:|acted upon|by it|structural|upon|the sukun|in|place|of accusative,|and the director:|active element|of visited|nominative case,|and the sign|of its nominative|the damma|apparent|in|its ending,|and self:|emphasis|for the director,|and emphasis|of the nominative case|is nominative case,|and the sign|if its nominative|the damma|apparent,|and self|attached/possessing|and the haa|the pronoun|of the other/third person|attached/possessing|to it,|structural|upon|the damma|in|place|of genitive.|3-|I greeted:|a verb|and an active element,|upon:|a particle|of genitive|structural|upon|the sukun|not|a place|for it|from/|inflection,|brother:|genitive|by upon,|and the sign|of its genitive|the yah|replacement|from|the kasra|because it|is from|the nouns|five,|and brother|attached/possessed|and the kaf|pronoun|of addressing/second person|attached/possessing|to it,|structural|upon|the fatha|in|place|of genitive,|self/in person/personally:|emphasis|for brother,|and emphasis|of the genitive case|is genitive case,|and the sign|of its genitive|the kasra|apparent,|and self/in person/personally|attached/possessed|and the haa|the pronoun|of the other/third person|attached/possessing|to it,|structural|upon|the kasra|in|place|of genitive.|4-|Came:|a verb|past tense|structural|upon|the fatha|not|a place|for it|from|inflection,|and men:|active element|nominative case,|and the sign|of its nominative|the damma|apparent|in|its ending,|and men|attached/possessed,|and the army:|attached/possessing|to it|genitive case,|and the sign|of its genitive|the kasra|apparent,|and all:|emphasis|of the men,|and emphasis|of the nominative case|is nominative case,|and the sign|of its nominative|the damma|apparent,|and all|attached/possessed,|and them:|the pronoun|plural|of the other/third person|attached/possessing|to it,|structural|upon|the sukun|in|place|of genitive,|altogether:|emphasis|second|nominative case,|and the sign|of its nominative|the waw|replacement|for|the damma|because it|is plural|masculine|sound.|Questions|What|is|emphasis?|Into|how many|parts|divides|the emphasis?|Make|with three|examples|different|for the emphasis|verbal,|what|is|the expressions|which|used|in|emphasis|abstract?|What|which|is required|for emphasis|with self|and same/self?|What|which|is required|for emphasis|with each/every/all|and entire/whole/all?|Is|used|(altogether)|in|emphasis|other than|preceded|by all/each/every?|Inflect|the examples|given:|which|person|you accept|his behaviors/attributes|himself?|The students|all of them|are successful,|I saw|Ali|himself/in person,|I visited|the two old men/shaykhs|both of them.</value>
   </data>
   <data name="IslamInfo_GreatMasterpiece62" xml:space="preserve">
     <value>Great Masterpiece</value>
   </data>
   <data name="IslamInfo_GreatMasterpiece62WordByWord" xml:space="preserve">
-    <value></value>
+    <value>The substitute|and its ruling|It says:|when|I replace|a noun|from|a noun|or|a verb|from|a verb|it follows|in|all|of its inflection.|And I say:|the substitute|its meaning|in|language:|the substitution/exchange,|you say:|I replaced/substituted|this/like this|with that/like this,|and I replaced/substituted|this/like this|from|that/like this,|you want|that you|substitute it|for it.|And it is|in|terminology|grammatical|(the follower|intended|of the ruling|without|means/intermediary/medium).|And its ruling|that it|follows|the substituted|from it|in|its inflection,|upon|meaning|that it|if|was|the substituted|from it|nominative case|was|the substitute|nominative case,|just like:|(atteneded|Abraham|your father)|and if|was|the substituted|from it|accusative case|was|the substitute|accusative case,|just like:|(I met|Abraham|his brother)|and if|was|the substituted|from it|genitive case|was|the substitute|genitive case,|just like:|(I liked/amazed me|the character/manners|of Muhammad|your uncle)|and if|was|the substituted|from it|jussive mood|was|the substitute|jussive mood,|just like:|(whoever|thanks|his Lord|prostrates|to him|will be successful).|The kinds|of the substitute|It says:|and it is|upon|four|parts:|substitute/replacement|of something|from|something,|and substitute|of some part|from|the whole,|and the substitute|of containment/inclusiveness,|and the subtitute|of incorrect/error,|just like|your saying:|(stood|Zayd|your brother,|and I ate|a roll/loaf of bread|a third of it,|and benefited me|Zaid|with his knowledge,|I saw|Zaid|the horse),|you wanted|that|you said|the horse|then erring/mistaking|then substituting|Zaid|from it.|And I say:|the substitution|upon|four|kinds:|the kind|first:|substituting/replacing|the whole|from|the whole,|and it is known as|substitute|complete/absolute,|and its general rule:|that|is|the substitute|the same|of the substituted|from it,|just like:|(visited me|Muhammad|your uncle).|The kind|second:|the substitute|of some part|from|the whole,|and its general rule:|that|is|the substitute|a part|from|the substituted|for it,|whether|it is|less|from|the remainder|or|equal|to it|or|more|than it,|just like:|(I memorized|the Quran|a third of it)|or|(half of it)|or|(two thirds of it)|and essential|in|this|kind|that|attached|to|a pronoun|returning|to|the substituted|from it,|like what|you saw.|The kind|third:|the substitute|of containment/inclusiveness,|and its general rule:|that|is|between|the substitute|and the substituted|from it|a connection|without|the entirety/totality|or partly/partially,|and essential|in it|an attachment/possession construction|of the substitute|to|a pronoun|returning|to|the substituted|for it|also,|just like:|(I liked/amazed me|the girl|her speaking)|and|(benefitted me|the professor|the good|of his character).|The kind|fourth:|the substitute|of error/incorrectness,|and this|kind|upon|three|rules:|1-|the substitution|clear,|and its general rule:|that|you intend to say|something|then you say it,|then|it appears/becomes clear|to you|that|to change it to|what is better|than it|then you change|to it,|and that|like what|if|you say:|(this|girl|is a full moon)|then|you say|after|that:|(sun).|2-|The substitute|of forgetfulness/absent-mindedness,|and its general rule:|that|you construct|your words|in|the first|upon|perception/doubt,|then|you know|its incorrect|so you change|from it,|like what|if|you saw|a figure/shape/person|from|far|then it becomes clear|a person|then you say:|(I saw|a person)|then|near|from you|then you find it|(a horse)|then you say:|(a horse).|3-|The substitute|of error/incorrectness,|and its general rule:|that|you intend|words|then says before|your tongue|to|other than it|and after|saying/pronouncing|you change|to|what|you wanted/intended|first,|just like:|(I saw|Muhammad|the horse).|Drills/exercises|1-|Discriminate|the kinds|of substitution|contained|in|the sentences|given:|made me happy|the character|of Muhammad|our neighbor,|I saw|the ship|its sail,|gave me the good news|my sister|Fatima|about the coming|of my father,|amazed me|the garden|its flowers,|frightened me|the lion|its roar,|I drank|water|honey,|I came|to|the house|the mosque,|I rode|the train|the horse.|2-|Put|in|each|place|from|the places|free|the substitute|appropriate,|and place it|with vowel signs:|(a)|I honored|your brothers|...|and old ones|(b)|came|the pilgrims|...|and their ones who were walking|(c)|respect|all|of your people/family|...|and their women|(d)|united|the entire|nation|...|and its elderly|3-|Put|in|each|place|from|the places|free|a substitute|complete/absolute/corresponding|appropriate|and place|with vowel signs:|(a)|was|the commander|of the believers|...|a model/example|of justice/fairness|(b)|was known|the caliph/successor|of the Prophet SAWS|...|for kindness/softness|of heart|(c)|is happy|the judge|...|that|are advancing/rising|his people/nation.|(d)|Traveled|my brother|...|to|Alexandria.|4-|Put|in|each|place|from|the places|free|the substitute|of containment/inclusiveness|appropriate,|and its general rule|with vowel signs:|(a)|pleased/delighted me|the garden|of your house|...|(b)|Amazed me|the teacher|...|(c)|I played my confidence|with your friend|...|(d)|I am happy|with this|student|...|(e)|I love|Muhammad|...|(f)|I am pleased with|Khalid|...|5-|Put|in|each|place|from|the places|free|the subsituted|for it|appropriate,|and place it|with vowel signs,|then|refer to|the kind|of substitution:|(a)|benefited me|...|his knowledge|(b)|I bought|...|half of it|(c)|visited me|...|Muhammad|(d)|if|...|your father|you honor him|then you will be successful|(e)|gives me joy/pleases me/delights me|...|its flowers.|(f)|I set out on|a journey|long|I rode|on it|...|a car|Questions|What|is|the subsitution?|In what|follows|the substitute|the substituted|for it?|Into|how many|parts|divides|the substitute?|What|which|is required|in|the substitute|of the/some part|and the substitute|of containment/inclusiveness?|What|is the general rule|of the substitute|of the whole?|What|is the general rule|of the substitute|of the/some part?|What|is the general rule|of the substitute|of containment/inclusiveness?|What|is|the substitute|of error/incorrectness?|And what|are its parts?|And what|is the general rule|of all|of the parts?|Inflect|the examples|given:|the messenger|of Allah|Muhammad|the seal|of the prophethood,|were unable/incapable|the Arabs|from|producing|with the Quran|ten|verses|from it,|amazed me|the sky|its stars.</value>
   </data>
   <data name="IslamInfo_GreatMasterpiece63" xml:space="preserve">
     <value>Great Masterpiece</value>
   </data>
   <data name="IslamInfo_GreatMasterpiece63WordByWord" xml:space="preserve">
-    <value></value>
+    <value>Counting|the accusatives,|and their like|It says:|(accusative|of the nouns)|the accusatives|five|ten,|and they are:|the acted upon|by it,|and the infinitive,|and adverbs|of time,|and adverbs|of place,|and the condition,|and the specification,|and the excepted/excluded,|and the noun|of not,|and the vocative noun,|and the acted upon/object|for|the sake of it,|and the acted upon/object|accompanying it,|and the predicate|of the verb to be/was|and its sisters,|and the noun|of certainly/accusative particle|and its sisters,|and the followers|for the accusative,|and they are|four|things:|the adjective,|and the conjunction,|and the emphasis,|and the substitute.|And I say:|makes accusative|the noun|if|located|in|positions|from|five|ten|positions.|And we will discuss|upon|each|one|from|these|positions|in|a chapter|specified for it,|upon|the manner/method/way|which|we have preceded/entered upon it|in|the chapter|of nominatives,|and we make|for it|here|examples|with the purpose|of explanation|and clarification.|1-|That|is located|acted upon|by it,|just like|(Noah)|from|its saying|the Most High:|(indeed|we sent|Noah)(71:1).|2-|That|is located|an infinative,|just like|(happiness)|from|your saying:|(was joyful with|Muhammad|happiness).|3-|That|is|an adverb|of place|or|an adverb|of time;|then the first|just like|(in front of|the teacher)|from|your saying|(I sat|in front of|the teacher)|and the second|just like|(the day|of Thursday)|from|your saying|(attended|my father|the day|of Thursday).|4-|That|is located|the condition,|just like|(amused)|from|its saying|the Most High:|(whereat he (Solomon) smiled|amused)(27:19).|5-|That|is located|a specification,|just like|(perspiration)|from|your saying|(was wet with|Zaid|perspiration).|6-|That|is located|an excepted/excluded,|just like|(Muhammad)|from|your saying|(attended|the people|except|Muhammad).|7-|That|is located|a noun|for the laa|of negation,|just like|(student|of knowledge)|from|your saying|(no|student|of knowledge|is blameworthy/censured).|8-|That|is located|a vocative noun,|just like|(messenger|of Allah)|from|your saying|(O messenger|of Allah).|9-|That|is located|an object|for the sake of it,|just like|(as disciplinary punishment)|from|your saying|(treated harshly|the professor|the pupil|as disciplinary punishment).|10-|That|is located|an object|accompanying it,|just like|(with the lamp/light)|from|your saying|(I revised|with the lamp/light).|11-|That|is located|a predicate|for the verb to be/was|or|one|of its sisters|or|a noun|for certainly/accusative particle|or|one|of its sisters;|then the first|just like|(a friend)|from|your saying|(was|Abraham|a friend|to Ali)|and the second|just like|(Muhammad)|from|your saying|(I wish|Muhammad|visited us)|12-|That|is located|an adjective|for accusative case,|just like|(the distinguished)|from|your saying|(I befriended/became friends with|Muhammad|the distinguished).|13-|That|is located|a conjuncted|upon|accusative case,|just like|(Bakr)|from|your saying|(struck/hit/beat|Khalid|Amr|and Bakr).|14-|That|is located|an emphasis|for accusative case,|just like|(all of it)|from|your saying|(I memorized|the Quran|all of it).|15-|That|is located|a substitute|from|accusative case,|just like|(half of it)|from|its saying|the Most High:|(stand vigil|in/through the night|except|a little|(2)|half of it|or|reduce|from it|a little)(73:2-3).</value>
   </data>
   <data name="IslamInfo_GreatMasterpiece64" xml:space="preserve">
     <value>Great Masterpiece</value>
   </data>
   <data name="IslamInfo_GreatMasterpiece64WordByWord" xml:space="preserve">
-    <value></value>
+    <value>The object/acted upon|by it|It says:|(chapter|of the object/acted upon|by it)|and it is:|the noun,|accusative case,|which|is located|upon it|the verb,|just like|your saying:|I hit/beat/struck|Zaid,|and I rode|the horse.|And I say:|the object/acted upon|by it|according/is called|to/by|the grammarians|upon|that which|combines|three|things:|the first,|that|is|a noun,|then not|is|the object/acted upon|by it|a verb|or|a particle.|And second:|that|is|accusative case;|then not|is|the object/acted upon|by it|nominative case|and not|genitive case.|And third:|that|is|the verb|of the active element|certainly|occurring/happening/taking place|upon it,|and meant|by its occurring/happening|upon it|its attached|with it,|whether|was|that|from|the manner/side|of confirmation,|just like|(I understood|the lesson)|or|was|upon|the manner/side|of negation,|just like|(did not|understand|the lesson).|Kinds|of the object/acted upon|by it|It says:|and it is|two parts:|apparent/noun,|and implied/pronoun;|then the apparent|not|begins|its mention,|and the implied|two parts:|attached,|and separated,|and the attached|are two|ten,|and they are:|he hit/beat me,|and he hit/beat us,|and he hit/beat you masculine,|and he hit/beat you feminine,|and he hit/beat you two,|and he hit/beat you all masculine,|and he hit/beat you all feminine,|and he hit/beat him,|and he hit/beat her,|and he hit/beat them two,|and he hit/beat them masculine,|and he hit/beat them feminine.|And the separated|are two|ten,|and they are:|I,|and we,|and you masculine,|and you feminine,|and you two,|and you all masculine,|and you all feminine,|and him,|and her,|and them two,|and them masculine,|and them feminine.|And I say:|divides|the object/acted upon|by it|to|two parts:|the first|apparent,|and the second|implied.|And certainly|you knew|that|the apparent|that which|refers|upon|its meaning|without|the need|to|a connection|of a speaker/first person|or|addressee/second person|or|another/third person,|and that|the implied|that which|not|refers|upon|its meaning|except|with a connection|from|these|connections|three;|then example|of the apparent|(hit/beat|Muhammad|Bakr)|and|(hits/beats|Khalid|Amr)|and|(picked|Ismail|a flower)|and|(picks|Ismail|a flower).|And divides|the implied|accusative case|into|two parts:|the first|attached,|and the second|separated.|For|the attached|then it is:|that which|not|begins|with it|the speech|and not|is correct|it is placed/occurs|after|(except)|in|the selection.|And for|the separated|then it is:|that which|begins|with it|the speech|and is correct|it is placed/occurs|after|(except)|in|the selection.|And for the attached|two|ten|expressions:|the first:|the yah,|and it is|for the speaker/first person|one,|and must|that|separates|between it|and between|the verb|with a noon|called|the noon|of protection,|just like|(was obedient to me|Muhammad)|and|(is obedient to me|Bakr)|and|(Obey me|O Bakr).|And the second:|(us)|and it is|for the speaker/first person|exalting|himself|or|with him|others than him,|just like|(obeyed us|our suns).|And the third:|the kaf|with fatha|and it is|for the addressing/second person|singular|masculine,|just like|(feared you|your son).|And the fourth:|the kaf|with the kasra|and it is|for the addressing/second person|singular|feminine,|just like|(feared you|your son).|And the fifth:|the kaf|attached|with it|the meem|and the alef,|and it is|for the dual|addressing/second person|unrestricted,|just like|(he feared you two).|And the sixth:|the kaf|attached|with it|the meem|alone,|and it is|for the plural|of masculinity|addressing/second person,|just like|(he feared you all masculine).|And the seventh:|the kaf|attached|with it|the noon|with shadda,|and it is|for the plural|of femininity|addressing/second person,|just like|(he feared you all feminine).|And the eighth:|the haa|with the damma,|and it is|for the other/third person|singular|masculine,|just like|(he feared him).|And the ninth:|the haa|attached|with it|the alef,|and it is|for the other/third person|singular|feminine,|just like|(he feared her).|And the tenth:|the haa|attached|with it|the meem|and the alef,|and it is|for the dual|other/third person|unrestricted,|just like|(he feared them two).|And the first|on ten:|the haa|attached|with it|the meem|alone,|and it is|for plural|of masculinity|other/third person,|just like|(he feared them masculine).|And the second|on ten:|the haa|attached|with it|the noon|with shadda,|and it is|for the plural|of femininity|other/third person,|just like|(he feared them feminine).|And for the separated:|two|ten|expressions|also,|and they are|(object pronoun stem)|joining|with the yah|for the speaker/first person|alone,|or|(us)|for the one who exalts|himself,|or|with|others than him,|or|with the kaf|with fatha|for addressing/second person|singular|masculine,|or|with the kaf|with kasra|for addressing/second person|singular|feminine,|and not|kept secret|upon you|knowing|the rest/remainder.|And correct|that|the pronoun|is|(object pronoun stem)|and that|that which|is after it|connections/affixed/appendages|refering|upon|the speaker/first person|or|the addressee/second person|or|the absent one/third person,|you say:|(me|obeyed|the pupils)|and|(not|was obedient|the pupils|except|to me)|and from it|its saying|the Most High:|(you alone|we worship|and you alone|we ask for help)(1:5)|and its saying|the Exalted:|(He commanded|that not|you worship|except|Him)(12:40).|Drills/exercises|1-|Put|a pronoun|separated|appropriate|in|each|place|from|the places|free|so is|objected/acted upon|with it,|then|refer to|its meaning|after|that|you place|with vowel signs:|(a)|O|students|...|waiting|the future.|(b)|O|girls|...|expecting|the country.|(c)|O|God conscious ones|...|hopes to be|the pious.|(d)|O|girl|...|waiting|your father.|(e)|O|believers|...|will reward|Allah.|(f)|Certainly|Muhammad|indeed|delayed|...|I waited|long.|(g)|These|girls|...|hopes to be|the pious.|(h)|O Muhammad|not|I waited|except|...|2-|Put|each|noun|from|the nouns|given|in|a sentence|meaningful|so|is|object/acted upon|by it:|the book,|the trees,|the pen,|the mountain,|the horse,|pair of shoes,|the windows,|the house.|3-|Change|the pronouns|given|into|pronouns|attached of it,|then|make|each|one|from it|an object/acted upon|by it|in|a sentence|meaningful:|them two,|you all masculine,|me,|you all feminine,|him,|you two,|us.|4-|Give|for each|verb|from|the verbs|given|active element|and object/acted upon|by it|with two meaningful:|he read,|he sees,|he climbed,|he rode,|he bought,|he inhabited,|he opened,|he killed,|he rose/climbed.|5-|Make|six|sentences,|and make|in|each|sentence|two nouns|from|the nouns|given|so|is|one|of the two nouns|an active element|and the other|object/direct object|by it:|Muhammad,|the book,|Ali,|the tree,|Abraham,|the rope,|Khalil,|the water,|Ahmad,|the message/treatise,|Bakr,|the question.|6-|Give|seven|sentences|meaningful|so|is|each|sentence|authored/written/consists|from|a verb|an active element|and an object/acted upon|by it,|and is|an object/acted upon|by it|a pronoun|separated,|with condition|that not|mentioned|the pronoun|one|two times.|7-|Give|seven|sentences|meaningful|so|is|each|sentence|authored/written/consists|from|a verb|an active element|and an object/acted upon|by it,|and is|an object/acted upon|by it|a pronoun|attached,|with condition|that|is|the pronoun|in|each|one|different|for its brothers.|Questions|What|is|the object/acted upon|by it?|Into|how many|parts|divides|the object/acted upon|by it?|What|is|the apparent?|Make|with three|examples|for the object/acted upon|by it|apparent.|What|is|the implied?|Into|how many|parts|divides|the implied?|What|is|the implied|attached?|How many|expressions|for the the implied|attached|which|are located|the object/acted upon|by it?|What|is|the implied|separated?|How many|expressions|for the implied|separated|which|are located|the object/acted upon|by it?|What|which|is required|that|separated|by it|between|the verb|and the yah|of the speaker/first person?|Make|complete|with three|examples|for the implied|attached|located|object/acted upon|by it,|and with three|examples|other|for the implied|separated|located|object/acted upon|by it.|Inflect|the examples|given:|then not|fear them|and fear Me(5:3).|And worship|Allah|and not|you associate|with Him|anything(4:36).|That|is the book|not|doubt||in it||a guidance|for the pious|(2)|those who|believe|in the unseen|and establish|the prayer|and from what|was provided to them|they spend(2:2-3).|They will be rewarded|for|the oppression|of the people|of transgression/oppression|with forgiveness|and for|the evil|of the people|of sin|with goodness.</value>
   </data>
   <data name="IslamInfo_GreatMasterpiece65" xml:space="preserve">
     <value>Great Masterpiece</value>
   </data>
   <data name="IslamInfo_GreatMasterpiece65WordByWord" xml:space="preserve">
-    <value></value>
+    <value>The infinitive|It says:|(chapter|of the infinitive)|the infinitive|it is:|a noun,|accusative case,|which|comes|third|in|conjungation|of the verb,|just like:|he hit,|he hits,|to hit.|And I say:|certainly|knew|the author|the infinitive|by that it|(which|comes|third|in|conjungation|of the verb)|and meaning|that|is that it|if|said|to you|someone:|conjungate|(he hit)|for example,|then certainly you|mention|the past tense|first,|then|comes|with the present tense,|then|with the infinitive,|so you say:|he did hit,|he hits,|to hit.|And not is|the purpose|here|to know/understand|the infinitive/verbal noun|itself,|and certainly what|the purpose|to know/understand|the object|unrestricted/absolute/complete,|and it|is|infinitive/verbal noun,|and it is|a phrase|from|(that which|is not|information/predicate|with what|refers|upon|confirming/emphasizing|the action/verb,|or|its kind/type,|or|its number).|Then our saying:|(is not|predicate)|taken out|for what|was|a predicate|from|infinitives/verbals noun|just like|your saying:|(your understanding|is an understanding|precise).|And our saying:|(with what|refers|...|etc/et cetera)|meaning|that|the object|absolute/complete|three|kinds:|the first:|the confirming/emphasizing|for its action/verb,|just like|(I memorized|the lesson|memorizing/by heart),|and just like:|(I was happy|on your arrival|joyfully).|And the second:|the clarifying|of the type/kind|of action/verb,|just like:|(I loved|my teacher|like loves/with love|of a boy|for his father),|and just like:|(I stood|for the professor|standing|well-mannered).|And the third:|clarifying|of the number/count,|just like:|(I hit|the lazy person|twice),|and just like:|(I hit him|three|times).|The kinds|of the infinitive/verbal noun|absolute/complete|It says:|and it is|two parts:|pronounced/verbal,|and semantic/pertaining to meaning,|then if|agrees with|its pronounciation|the pronounciation|of its verb|then it is|pronounced/verbal,|just like:|I killed him|a killing/fatally,|and if|agrees|the meaning|of its verb|without|its pronouncation|then it is|semantic/pertaining to meaning,|just like:|I sat|a sitting/down,|and I stood|a standing/up/tall,|and what|is similar to|that.|And I say:|divides|the infinitive|which|make accusative case|upon|that it|is an object|complete/absolute|into|two parts:|the part|first:|that which|agrees with|the verb|the accusative|for it|in|its expression,|with that|is|inclusive|upon|its letters,|and in|meaning|also|with that|is|the meaning|intended|from|the verb|it is|the meaning|intended|from|the infinitive,|and that|just like:|(I sat|a sitting/down),|and|(I beat him|a beating/heavily)|and|(I went|a going/forth)|and what|is similar to|that.|And the part|second:|what|agrees with|the verb|the accusative|for it|in|its meaning,|and not|agrees with it|in|its letters,|with that|is|the letters|of the infinitive|other than|the letters|of the verb,|and that|just like:|(I sat|a sitting/down)|then if|meaning|(sat)|it is|the meaning|sitting,|then is not|the letters|of the word|one,|and like|that|(I became happy|a happiness/with joy/joyfully)|and|(I beat him|with a strike),|and|(I humiliated him|a humiliation/embarassingly),|and|(I stood|a standing/up/tall)|and what|is similar to|that,|and Allah|glorious be He|and is exalted|the most|and He knows.|Drills/exercises|1-|Make|each|verb|from|the verbs|given|in|two sentences|meaningful,|and give|for each|verb|with its infinitive|accusative case|upon|that it|is an object|absolute/complete:|confirmation/emphasis|for the action/verb|one time,|and specifying|for its kind|one time|other:|he memorized.|He drank.|He played.|He asked forgiveness.|He sold.|He moved.|2-|Make|each|noun|from|the nouns|given|an object|complete/absolute|in|a sentence|meaningful:|to memorize.|To play|quietly.|To sell|out of necessity.|To walk|fast.|To be awake|long.|To anger|the lion.|To jump|the tiger.|To summarize.|3-|Put|an object|absolute/complete|appropriate|in|each|place|from|the places|free|given:|(a)|feared|Ali|...|(b)|appeared|the full moon|...|(c)|erupts|the volcano|...|(d)|leave off|idle talk/mockery|...|(e)|keep away from|joking|...|(f)|boiled|the cooking kettle/boiler|...|(g)|the flooding|of the Nile|...|(h)|cried|the baby|...|Questions|What|is|the infinitive?|What|is|the object|complete/absolute?|Into|how many|divides|the object|complete/absolute|from|sides|what|intends|from it?|Into|how many|parts|divides|the object|absolute/complete|from|condition|equal to it|for its action/verb|or otherwise?|Make|with three|examples|for the object|absolute/complete|confirming/emphasizing|its action/verb,|make|with three|examples|for the object|absolute/complete|specifying|for the kind|of the action/verb,|make|with three|examples|for the object|absolute/complete|specifying|for the number/count,|make|with three|examples|for an object|absolute/complete|accusative case|with an action/verb|from|its expression,|and with three|examples|for an object|absolute/complete|accusative case|with an action/verb|from|its meaning.</value>
   </data>
   <data name="IslamInfo_GreatMasterpiece66" xml:space="preserve">
     <value>Great Masterpiece</value>
   </data>
   <data name="IslamInfo_GreatMasterpiece66WordByWord" xml:space="preserve">
-    <value></value>
+    <value>Adverb|of time,|and the adverb|of place|It says:|(chapter|of the adverb|of time,|and the adverb|of place)|the adverb|of time|it is:|a noun|of time|accusative case|with implied|(in)|just like|the day,|and the night,|and the early morning,|and the early morning,|and the time before day break,|and tomorrow,|and the first third of the night/darkness,|and the midnight to noon,|and the evening,|and forever/always/endless,|and a long time,|and for some time.|And what|is similar to|that.|And I say:|the adverb|its meaning|in|language:|the vessel/container,|and intended|by it|in|the custom|of the grammarians|the object|in it,|and it is|two kinds:|the first:|the adverb|of time,|and the second:|the adverb|of place.|For|the adverb|of time:|then it is|a phrase|from|the noun|which|refers|upon|the time|accusative case|with the expression|refering|upon|meaning|of the event/occurance|that|the meaning|in it,|with noting|meaning|(in/at)|refering|upon|adverbial,|and that|example|your saying:|(I fasted|the day|of Monday/second)|then certainly|(the day|of Monday/second)|an adverb|of time|object|in it,|and it is|accusative case|by your saying:|(I fasted)|and that|the action/verb|refering|upon|meaning|and it is|fasting,|and the word|upon|noting|meaning|(in/at)|which:|that|fasting|happened|in|the day|mentioned,|with difference|your saying:|(fears|the lazy person|the day|of the test)|then if|meaning|that|is that it|fears|a self|the day|of the test|and is not|its meaning|that he|fears|something|happening|on|this|day.|And know|that|the time|divides|into|two parts:|the first|specific/relevant/pertinant,|and the second|vague/unclear.|For|the specific/relevant/pertinant|then it is|(what|refers|upon|a fixed|specific|measure/amount|from|the time.|And for|the vague/unclear|then it is|(what|refers|upon|fixed|other than|specific|and not|a measure/amount).|And example|of the specific/relevant/pertinent:|the month,|and the year,|and the day,|and the year,|and the week.|And example|of the vague/unclear:|the moment,|and the time,|and the time,|and for some time.|And each|one|from|these two|kinds|permits|its stands|upon|that it|is an object|in it.|And certainly|mentioned|the author|from|the expressions|refering|upon|the time|two|ten|expressions:|the first:|(the day)|and it is|from|sunrise|of the dawn|to|the setting|of the sun,|you say:|(I fasted|the day)|or|(I fasted|the day|of Thursday/fifth)|or|(I fasted|a day|long).|And the second:|(the night)|and it is|from|the setting|of the sun|to|the sunrise|of the dawn,|you say:|(I secluded myself|the night|last/yesterday)|or|(I secluded myself|for a night)|or|(I secluded myself|the night|of Friday).|And the third:|(the early morning)|and it is|the time|what|is between|the prayer|of the dawn|and the sunrise|of the sun,|you say:|(visited me|my friend|early morning|of Sunday/first)|or|(he visited me|early morning).|And the fourth:|(early morning)|and it is|the first|of the day,|you say:|(I visited you|early morning|of Saturday/Sabbath day),|and|(I visited you|early morning).|And the fifth:|(time before daybreak/dawn)|and it is|the last|of the night|just before|the dawn,|you say:|(I revised|the lesson|just before dawn/daybreak).|And the sixth:|(tomorrow)|and it is|a noun|for the day|which|after|your day|which|you|are in it,|you say:|(if|you come to me|tomorrow|I will honor you).|And the seventh:|(the first third of the night/darkness/dusk)|and it is|a noun|for third|of the night|the first,|you say:|(I will visit you|in the first third of the night/at dusk).|And the eighth:|(the midnight to noon/before the meridian)|and it is|a noun|for the time|which|starts|from|the first|half|of the night|the second|to|noon/the meridian,|you say:|(traveled|my brother|midnight to noon).|And the ninth:|(evening/after the meridian)|and it is|a noun|for the time|which|starts|from|noon/the meridian|to|half|of the night,|you say:|(arrived/reached|the train|by us|in the evening).|And the tenth:|forever/always/endless|and the first|on ten:|(a long time):|and each|from the two|a noun|for the adverb|of the future|which|not|purpose/aim|to its ending,|you say:|(not|I will befriend/become friends/accompany|those who are evil|ever)|and|(not|I have committed|evil|for a long time).|And the second|on ten:|(some time)|and it is|a noun|for the adverb|vague/unclear|other than|known|the start|and also not|the end,|you say:|(I became friends with|Ali|for some time|from|ages ago).|And joined|to that|what|is its similar|from|each|noun|refering|upon|the adverb:|whether|was|specific/relevant/pertinent|example|forenoon,|and forenoon,|or|was|vague/unclear/obscure|example|time,|and hour,|and a moment/short time/while,|and time,|and a moment/short time/while;|then certainly|these|and that which|its examples|it is permissible/allowed|accusative|of each|one|from them|upon|that it|is an object|in it.|The adverb|of place|It says:|and the adverb|of place|it is:|a noun|of place|accusative case|with implied|(in/at),|just like:|in front of,|and behind,|and in front of,|and behind,|and above,|and below,|and at/by/with,|and opposite/facing/face to face with,|and opposite/facing/face to face with,|and in front of,|and there/over there,|and here,|and what|is similar to|that.|And I say:|certainly|you understood|in what|previous|the adverb|of time,|and that it|divides|into|two parts:|specific/relevant/pertinent,|and obscure/vague/unclear,|and you understood|that|each|one|from the two|permits/allows|its accusative|upon|that it|is an object|in it.|And know|here|that|the adverb|of place|a phrase|from|(the noun,|refering|upon|the place,|accusative case|with the expression|refering|upon|the meaning|occuring|in/at it|by noticing/observing|the meaning|(in/at)|refers|upon|the adverbial.|And it|also|divides|into|two parts:|specific/relevant/pertinant,|and obscure/vague/unclear/non-specific;|and for|the specific/relevant/pertinant|then it is:|(that which|for it|a shape|and restricted|limitations)|example:|the house,|and the mosque,|and the garden,|and the garden;|and for|the vague/obscure/unclear/non-specific|then it is:|(that which|not|for it|a shape|nor|restricted|limitations)|example:|behind,|and in front of.|And not|permits/allows|that|makes accusative|upon|that it|an object|in it|from|these two|parts|except|the second,|and it is|the obscure/vague/unclear;|for|the first|-|and it is|the specific/relevant/pertinant|-|then likes|its genitive|by a particle/preposition|of genitive|refering|upon|the intended meaning,|just like:|(I secluded myself|in|the mosque)|and|(I visited|Ali|in|his house).|And certainly|mentioned|the author|from|the expressions|refering|upon|place|three|on ten|expressions:|the first:|(in front of)|just like:|(I sat|in front of|the professor|well-mannered/well-behaved).|And the second:|(behind)|just like:|(rode/moved|the pedestrians|behind|the passengers/riders).|And the third:|(in front of)|just like:|(walked|the policeman/officer|ahead/in front of|the leader/commander/prince).|And the fourth:|(behind)|just like:|(stood|the worshippers|some of them|behind|others).|And the fifth:|(above)|just like:|(I sat|above|the chair).|And the sixth:|(below)|just like:|(stood|the cat|below|the table).|And the seventh:|(with/at/near)|just like:|(for Muhammad|a station/rank|with|the professor).|And the eighth:|(with)|just like:|(travelled/went away|with|Solomon|his brother).|And the ninth:|(opposite to/facing)|just like|(for us|a house|opposite to/facing|the Nile).|And the tenth:|(opposite to/facing)|just like|(sat|my brother|opposite to/facing|your brother).|And the first|on ten:|(opposite to/facing/in front of)|just like:|(sat|my brother|in front of/opposite to|the house|of your brother).|And the second|on ten:|(there)|just like|the saying|of Allah|the Most High:|(and we brought near|there|the others)(26:64).|And the third|ten:|(here)|just like|your saying:|(sat|Muhammad|here|a moment).|And example|of these|expressions|each|that which|refered|upon|a place|vague/obscure/unclear/non-specific,|just like:|on the right,|and on the left.|Questions|and exercises/drills|1-|What|is|the adverb?|Into|how many|parts|divides|the adverb?|What|is|the adverb|of time?|Into|how many|parts|divides|the adverb|of time?|Make|with three|examples|in|a sentence|meaningful|for the adverb|of time|specified/pertinent/relevant,|and with three|examples|other|for the adverb|of time|vague/obscure/unclear,|is|made accusative|upon|that it|is an object|in it|each|of the adverbs|of time?|2-|Make|each|one|from|the expressions|given|an object|in it|in|a sentence|meaningful,|and specify|its meaning:|the first third of the night/darkness/dusk,|midnight to midday/morning,|time,|a moment,|forenoon/morning light,|tomorrow.|3-|What|is|the adverb|of place?|What|is|the adverb|of place|unclear/vague/obscure?|What|is|the adverb|of place|specified/pertinent/relevant,|make|with three|examples|for each|from|the adverbs|of place|unclear/obscure/vague,|and the adverb|of place|specific/pertinent/relevant,|is|made accusative|upon|that it|is an object|in it|each|adverb|of place?|4-|Mention|seven|sentences|describing|in it|your action|on the day|of Friday,|with condition|that|includes|each|sentence|upon|an object|in it.</value>
   </data>
   <data name="IslamInfo_GreatMasterpiece67" xml:space="preserve">
     <value>Great Masterpiece</value>
   </data>
   <data name="IslamInfo_GreatMasterpiece67WordByWord" xml:space="preserve">
-    <value></value>
+    <value>The condition|It says:|(the chapter|of the condition)|the condition|is:|the noun,|accusative case,|explaining|for that which|is obscure/ambiguous/dubious|from|conditions/situations,|just like|your saying:|(came|Zayd|riding)|and|(I rode|the horse|saddling)|and|(I met|the servant|of Allah|riding)|and what|is similar to|that.|And I say:|the condition|in|language|(what|upon it|mankind|from|good|or|bad/evil)|and it is|in|terminology|of the grammarians|a phrase|from|(the noun,|additional/extra,|accusative case,|explaining|for that which|is obscure/ambiguous/dubious|from|conditions/situations).|And our saying:|(the noun)|includes|the clear|for example|(laughing).|In|your saying:|(came|Muhammad|laughing)|and includes|the interpreted|with the clear|for example|(he laughs)|in|your saying:|(came|Muhammad|he laughs)|then certainly it|is in|interpreting|your saying:|(laughing)|and like that|our saying:|(came|Muhammad|with him|his brother)|then certainly it|is in|interpreting|your saying:|(accompanying|for his brother).|And our saying:|(extra/additional)|its meaning|that it|is not|a part|from|the speech/words;|then/hence free|from it|the predicate.|And our saying:|(accusative case)|then/hence free|from it|the nominative case|and the genitive case.|And certainly what|makes accusative|the condition|with the verb|and similar to|the verb:|like the noun|of the active element/participle,|and the infinitive,|and the adverb,|and the noun|pointing/demonstrative.|And our saying:|(explanation|for that which|is obscure/ambiguous|from|conditions)|its meaning|that|the condition|explains|what|is hidden|and concealed|from|the descriptions|those possessing|knowledge|or|other than them.|Then|indeed it|might|be|an explanation|for the description|of the active element,|just like:|(came|the servant|of Allah|riding)|or|explanation|for the description|of the object/acted upon|by it,|just like:|(I rode|the horse|saddling),|and might|be|possible|for both cases|together,|just like:|(I met|the servant|of Allah|riding).|And like what|highlights/comes|the condition|from|the active element|and the object/acted upon|by it|then might it|highlight/come|from|the predicate,|just like:|(you|are my friend|sincere),|and might|highlight/come|from|the genitive case|from the particle/preposition|of genitive,|just like:|(I passed|by Hind|riding)|and might|highlight/come|from|the genitive case|of the attachement/possession construction,|just like|its saying|the Most High:|(that|follow|the creed|of Abraham|upright|)(16:123)|then upright:|a condition|from|Abraham,|and Abraham|is genitive case|with the fatha|replacement|from|the kasra,|and it is|genitive case|with attachment/possession construction|(creed)|to it.|The conditions|of the state/condition|and the conditions|the follower/associate|It says:|and not|is|except|indefinite,|and not|is|except|after|complete|speech,|and not|is|its associate/follower|except|definite.|And I say:|found|in|the condition|that|is|indefinite,|and not|permits/allows|that|is|definite,|and if|came|the composition|in it|the condition|definite|in|appearance,|then certainly it|is found|interpreted|this|definiteness|by indefiteness|example|their saying:|(came|the leader/commander/prince|on his own/alone),|then certainly|(on his own/alone)|a condition|from|the leader/commander/prince,|then it is|the definiteness|with the attachment/possession construction|to|the pronoun|and because it|in|interpreting|is indefinite|it is|your saying:|(single/alone)|then like that you|say:|(came|the leader/commander/prince|alone),|and example|of that|their saying:|(he sent it|struggling/fighting),|which:|struggle/fight,|and|(they came|the first available|then the first)|which:|sequence/in order.|And the origin|in|the condition|that|comes|after|the fulfillment/completion|of the speech,|and the meaning|of the fulfillment/completion|of the speech:|that|takes|the verb|its active element|and the subject|its predicate.|And perhaps|it is necessary/essential|precedes|the condition|upon|all|parts|of the speech,|like what|if|was|the condition|the noun|of questioning/interogative,|just like:|(how|did arrive|Ali)|then how:|a noun|of questioning/interogative|structural|upon|the fatha|in|place|of accusative|condition|from|Ali,|and not|permits/allows|delay|of the noun|of questioning/interogative.|And includes|in|the associate/follower|of the condition|that|is|definite,|then not|permits/allows|that|is|indefinite|with other than|justification/good reason.|And from what|justifies/gives reason|comes|the condition|from|the indefinite|that|begins|the condition|upon it,|like the saying|of the poet:|for Maya|deserted ruins/remains|is a house|it appears/becomes visible|as if it is|damaged/imperfect/bright sword|then deserted ruins/remains:|a condition|from|(house)|and house|indefinite|and justifyes|finding|the condition|from it|preceding it|upon it.|And from what|justifies|finding|the condition|from|the indefinite|that|specifies|this|indefinite|with a attachment/possession construction|or|a description|then example|first|in|its saying|the Most High:|(in|four|days/periods|equal)(41:10)|then equal:|a condition|from|(four)|and it is|indefinite,|and justifies|finding|the condition|in it|for is it|attached/possessing,|and example|second|the saying|of the poet:|you saved|O Lord|Noah|and granted|to him|in|a ship|big|in/traversing through|the open sea|loaded|Drills/exercises|1-|Put|in|each|place|from|the places|free|given|a condition|appropriate:|(a)|returns|the student|hard working|to|his country|...|(b)|do not|eat|the food|...|(c)|not|walk/travel|in/along|the road|...|(d)|put on/wear|your garment|...|(e)|do not|sleep|in|the night|...|(f)|returns|my father|from|his office/council/government|...|(g)|do not|walk|in|the earth|...|(h)|I saw|Khalid|...|2-|Place|each|noun|from|the nouns|given|a condition|clarifying|for the condition|of the active element|in|a place|meaningful:|pleased.|Strutting/deceitfully.|Naked.|Hot.|Tired.|Unshoed.|Hard working/diligent.|3-|Make|each|noun|from|the nouns|given|a condition|clarifying|for the condition|of the object/acted upon|by it|in|a place|meaningful:|shackled/tied up/bound.|Sad.|Fast/quickly.|Clear/pure.|Clean.|New.|Amused/laughing.|Bright/shining/illustrious.|Blooming.|Happy/cheerful.|4-|Describe|the horse|with four|sentences,|with condition|that|comes|in|each|sentence|with condition.|Exercises/drills|upon|inflection|Inflect|the two sentences|given:|met me|Hind|crying,|I wore|the garment|new.|Response/answer|1-|Met:|a verb|past tense|structural|upon|the fatha|not|a place|for it|from|inflection,|and the tah|a sign|of femininity,|and the noun|for protection,|and the yah|a pronoun|of the speaker/first person|an object/acted upon|by it,|structural|upon|the sukun|in|place|of accusative,|and Hind:|an active element|of met|nominative case,|and a sign|of its nominative|the damma|apparent,|and crying:|a condition|clarifying|for the condition|of the active element|nominative case|with the fatha|apparent.|2-|Wore:|a verb|past tense|structural|upon|a fatha|supposed|upon|its ending|preventing|from|its apparent|function|of the place|with the sukun|coming|with it|for pushing|dislike|successively|four|vowels|in what|is|like the word|one,|and the tah|a pronoun|of the speaker/first person|active element|structural|upon|the damma|in|place|of nominative,|and the garment:|an object/acted upon|by it|accusative case,|and the sign|of its accusative|the fatha|apparent,|new:|a condition|clarifying|for the condition|of the object/acted upon|by it|accusative case,|and the sign|of its accusative|the fatha|apparent.|Questions|What|is|the condition|linguistically|and terminologically?|What|which|comes|the condition|from it?|Is|coming|the condition|from|the attached/possessing|to it?|What|which|includes|in|the condition,|and what|which|includes|in|the associate/follower|of the condition?|What|which|justifies|finding|the condition|from|the indefinite?|Make|for the condition|with three|examples,|and apply|upon|each|one|from them|the conditions|of the condition|each of them,|and inflect them.</value>
   </data>
   <data name="IslamInfo_GreatMasterpiece68" xml:space="preserve">
     <value>Great Masterpiece</value>
   </data>
   <data name="IslamInfo_GreatMasterpiece68WordByWord" xml:space="preserve">
-    <value></value>
+    <value>The specification|It says:|(the chapter|of the specification)|the specification|it is:|the noun,|the accusative case,|the explanation|for that which|is obscure|from|the essence,|just like|your saying:|(dripped|Zaid|of sweat)|and|(burst/exploded|Bakr|in fat)|and|(is good|Muhammad|person)|and|(I bought|twenty|books)|and|(I owned|ninety|ewes/female sheep)|and|(Zayd|is more honorable/noble|than you|as a father)|and|(he is more beautiful|than you|in facial appearance/looks).|And I say:|for the specification|in|the language|are two meanings;|the first:|explanation|without any exception/absolute,|you say:|I explain|thus/like this,|you want|that you|explained/interpreted;|and the second:|separating|some|matters|from|some others|you say:|I separated|the people,|you want|that you|separate|some of them|from|some others.|And the specification|in|terminology|of the grammarians|a phrase|from|(the noun,|the clear noun,|accusative case,|explanation|for that which|is obscure|from|the essence|or|the relationship/attribution).|Then our saying:|(the noun)|its meaning|that|the specification|not|is|a verb|nor|a particle.|And our saying:|(the clear noun)|for removing/taking away|the noun|interpretation,|then if|the specification|not|is|a sentence|nor|an adverb,|with difference|of the condition|like what|previously|in|its chapter.|And our saying:|(the explanation|for that which|is obscure|from|the essence|or|the relationship/attribution)|indicates|to|that|the specification|upon|two kinds,|the first:|the specification|of the essence/vocalized/spoken,|and the second:|the specification|of the specification/attribution/noticable.|For|the specification|of the essence|-|and called|also|the specification|singular|-|and it is|(that which|raises|obscurity|of a noun|mentioned|before it|completing|of the reality)|and is|after|numbers,|just like|its saying|the Most High:|(truly I|saw|one|on ten|stars)(12:4),|(truly|the number|of months|with|Allah|is two|on ten|months)(9:36)|or|after|measurements,|from|weighing,|just like:|(I bought|a pound|of oil)|or|dry measures,|just like:|(I bought|128 pounds|of wheat/dry grain)|or|areas,|just like:|(I bought|a square|of land).|And for|the specification|of attribution/relationship/description|-|and is called|also|the specification|of the sentence|-|and it is|(that which|raises|the obscurity|of attribution/relationship|in|a sentence|preceding|upon it)|and it is|two types;|the first:|changeable,|and the second:|other than|changeable.|Then for|the changeable|then it is|upon|three|kinds:|the kind|first:|the changeable|from|the active element,|and that|just like|(exploded/burst|Zaid|in fat)|the origin|in it|(exploded/burst|the fat|of Zaid)|then deletion|of the attached/possessed|-|and it is|fat|-|and is taking place|the attached/possessing|to it|-|and it is|Zaid|-|its place,|then advanced|its rise,|then|comes|with the attached/possessed|absent/missing|then is made last|upon|the specification.|The kind|second:|the changeable|from|the object/acted upon,|and that|like|its saying|the Most High:|(and made burst forth|the earth|rivers/springs)(54:12)|its origin|(and made burst forth|the rivers/springs|of the earth)|then does|in it|example|which|preceded.|The kind|third:|the changeable|from|the subject,|and that|just like|its saying|the Most High:|(I|more|than you|in wealth)(18:34)|and its origin|(my wealth|is more|than|your wealth)|then deletion|of the attached/possessed,|and it is|(wealth)|and is taking place|the attached/possessing|to it|-|and it is|the pronoun|which|is|the yah|of the speaker/first person|-|its place|then advanced|its rise|and separated;|because|the yah|of the speaker/first person|a pronoun|attached|like what|you understood,|and it is|not|starting|with it,|then|has come|with attached/possessed|absent/missing|then is made|the specification,|then became|what|you see.|And for|other than|changeable|then just like|(filled|the container|water).|The condition|of the specification|It says:|and not|is|except|indefinite,|and not|is|except|after|complete|speech.|And I say:|includes|in|the specification|that|is|indefinite,|then not|permits/allows|that|is|definite,|and for|the saying|of the poet:|I saw you|when/after|that|you know|our faces/greats|you turn away|and you be happy/agree with|yourself|O Qais|for|Amr|Then if|its saying|(the self)|a specification,|and is not|(the)|this|(particle of addition/extra)|definite|whenever|necessary|from it|found|the specification|definite,|rather|it is|an addition|not|is intended|what|entered|definite;|then it is|indefinite,|and it is|acceptable|for that which|reminded us|from|the condition.|And not|allows/permits|in|the specification|that|precedes|upon|its action/word governing it,|rather|not|found|except|after|completion|of speech,|which:|after|the completion/fulfillment|of the verb|by its active element,|and the subject|by its predicate.|Exercise/drills|1-|Refer|kinds|of the specification|many details|in|the sentences|given:|I drank|a cup|of water,|I bought|a pound/quintar|of honey,|I possessed|ten|little bits|of gold,|I cultivated/sowed|an acre|of cotton,|I saw|one|on ten|horsemen,|I rode|the train|fifty|passengers/travellers,|Muhammad|is more perfect|from|Khalid|in character|and more noble|as a person|and more pure|in innocence/integrity,|filled|Abraham|with pride.|2-|Put|in|each|place|from|the places|free|from|the examples|a specification|appropriate:|(a)|gold|is more expensive|...|than|silver.|(b)|Iron|is stronger|...|than|lead.|(c)|The scholars|are the most truthful|of people|...|(d)|The student|of knowledge|is more honorable/noble|...|than|the ignorant.|(e)|The giraffi|is the tallest|animal|...|(f)|The sun|is greater|...|than|the earth.|(g)|I ate|five|on ten|...|(h)|I drank|a cup|...|3-|Make|each|noun|from|the nouns|given|a specification|in|a sentence|meaningful:|barley,|cane/read,|nature/character,|moral,|drinking,|laughing,|power/strength,|courage.|4-|Give|three|sentences|is|in|each|sentence|from them|a specification|unprecedented|with a noun|of counting,|with condition|that|is|the noun|of counting|nominative case|in|one|and accusative case|in|the second|and genitive case|in|the third.|Exercises/drills|upon|the inflection|Inflect|the two sentences|given:|Muhammad|is more noble/honorable|than|Khalid|himself/as a person,|I have/with me|twenty|arm lengths|of silk.|Answer/response|1-|Muhammad:|a subject,|nominative case|by starting,|and the sign|of its nominative|the damma|apparent,|more noble/honorable:|predicate|of the subject,|nominative case|by the subject,|and the sign|of its nominative|the damma|apparent,|from|Khalid:|a genitive|and a genitive case|related|with more noble/honorable,|himself/as a person:|a specification|attribution/relation/description|changeable|from|the subject|accusative case|and the sign|of its accusative|the fatha|apparent.|2-|With:|adverb|of place|related|with the absent/missing|predicate|presented,|and with|attached/possessed|and the yah|of the speaker/first person|attached/possessing|to it,|structural|upon|the sukun|in|place|of genitive,|twenty:|a subject|delayed|nominative case|with the begining,|and the sign|of its nominative|the waw|replacement|for|the damma,|because it|is an extension|for the plural|masculine|sound,|arm lengths:|a specification|for twenty,|accusative case|with the fatha|apparent,|silk:|a specification|for arm lengths,|accusative case|with the fatha|apparent.|Questions|What|is|the specification|linguistically|and terminologically?|Into|how many|parts|divides|the specification?|What|is|the specification|of essence?|What|is|the specification|of attribution/relation/description?|With what that|is called|the specification|of essence?|With what that|is called|the specification|of attribution/relation/description?|What|which|occurs|before|the specification|of essence?|Make|for the specification|of essence|with three|examples|different|and inflect|each|one|from them?|Into|how many|parts|divides|the specification|of attribution/relation/description|changeable?|Make|for the specification|changeable|from|the active element|and from|the object/acted upon|and from|the subject,|make|for the specification|of attribution/relation/description|other than|changeable,|what|are|the conditions|of the specification?|What|prevents|from|the specification|not|coming|except|after|completion|of speech?|Make|for the specification|to it|specification.</value>
   </data>
   <data name="IslamInfo_GreatMasterpiece69" xml:space="preserve">
     <value>Great Masterpiece</value>
   </data>
   <data name="IslamInfo_GreatMasterpiece69WordByWord" xml:space="preserve">
-    <value></value>
+    <value>The exception/expulsion|It says:|(the chapter|of the exception/expulsion)|and the particles|of exception|are eight,|and they are:|except,|and other than,|and except/other than/unlike,|and except/other than/unlike,|and whether,|and except/apart from,|and except/apart from,|and except/apart from.|And I say:|the exception|its meaning|in|language|absolute/complete|removal/taking out,|and it is|in|terminology|of the grammarians|a phrase|from|(taking out/removing|by except|or|one|of its sisters,|for something|if not|that|taking out/removing|then it would have been|entering|in what|before|the instrument/tool)|and its example|your saying:|(succeeded|the pupils|except|Amir)|then certainly|you took off/removed|with your saying|(except|Amir)|only one|of the pupils,|and he is|Amir,|and if not|that|taking off/removing|then would have been|Amir|entering|in|the sentence|of the pupils|succeeding.|And know|that|the instruments/tools|of exception|are many,|and certainly|mentioned|from them|the author|eight|tools/instruments,|and the ones which|mentioned them|from them|upon|three|kinds:|the kind|first:|that which|is|a particle|always|and it is|(except).|The kind|second:|that which|is|a noun|always|and they are|four,|and they are:|(except/other than/unlike)|with restriction|and the kasra|of the seen,|and|(except/other than/unlike)|with restriction|and the damma|of the seen,|and|(whether)|with extension|and the fatha|of the seen,|and|(other than).|The kind|third:|that which|is|a particle|at times|and is|a verb|at times|other,|and they are|three|tools/instruments,|and they are:|(except/apart from)|and|(except/apart from)|and|(except/apart from).|The ruling|of the excluded|by except|It says:|then the excepted|by except|makes accusative|when|was|the speech|complete|positive,|just like:|(spoke|the people|except|Zaid)|and|(left|the people|except|Amr)|and if|was|the speech|negative|complete|allowing/permitting|in it|the substitute|accusative|upon|the exception,|just like:|(not|stood|the people|except|Zaid)|and|(except|Zaid)|and if|was|the speech|incomplete|was|upon|according to|functions/factors,|just like:|(not|stood|except|Zaid)|and|(not|I struck/hit/beat|except|Zaid)|and|(not|I passed|except|by Zaid).|And I say:|know|that|for the noun|occuring|after|(except)|three|conditions;|the condition|first:|necessary|of accusative|upon|the exception,|the condition|second:|permissibility|of its following|for that which|is before|(except)|upon|that it|a substitute|from it|with|permissibility|its accusative|upon|the exception,|the condition|third:|the necessity|of its following|upon|accordance to|what|the requirement|of the function|mentioned|before|(except).|And explanation|of that|is that|the speech|which|before|(except)|as for|that|is|complete|positive,|and as for|that|is|complete|negative,|and as for|that|is|incomplete|and not|is|then|except|negative.|And meaning|being|the speech|preceding|complete:|that|mentions|in it|the excepted|from it,|and meaning|its being|incomplete|that not|mentions|in it|the excepted|from it,|and meaning|being|positive,|that not|preceded it|negation|or|its similar,|and similar|of negation:|the prohibition,|and the questioning/interogative,|and meaning|being|negative,|that|preceding it|one|of these|things.|Then if|was|the speech|preceding|complete|positive|necessary|accusative|of the noun|occurring|after|(except)|upon|exception|just like|your saying:|(stood|the people|except|Zaid)|and your saying:|(left|the people|except|Amr)|then Zaid|and Amr:|two excepted|from|speech|complete|for mentioning|the excepted|from it|-|and it is|(the people)|in|the first|and|(the people)|in|the second|-|the speech|with|that|is positive|for lack of|came before|negation|or|its similar;|then necessary|accusative of both of them,|and this|is|the condition|first.|And if|was|the speech|preceding|complete|negative|it is allowed|in it|to follow|upon|compensation/substitution|or|the accusative|upon|the exception,|just like|your saying:|(not|stood|the people|except|Zaid)|then Zaid:|exception|from|speech|complete|for mentioned|the excepted|from it,|and it is|the people,|and the speech|with|that|negation|for came before|(not)|the negation;|then allows|in it|to follow;|then you say|(except|Zaid)|with the nominative;|because|the excepted|from it|nominative case,|and the substitute|of the nominative case|is nominative case,|and allows|in it|upon|a little|the accusative|upon|the exception;|then you say:|(except|Zaid)|and this|is|the condition|second.|And if|was|the speech|preceding|incomplete,|and not|is|except|negative,|was|the exception|upon|according to|what|before|(except)|from|the factors/causes/functions;|then if|was|the function|requiring|the nominative|upon|active element|its nominative|upon it,|just like|(not|attended|except|Ali),|then if|was|the function|requiring|the accusative|upon|the object/acted upon|of its accusative|upon it,|just like|(not|I saw|except|Ali)|and if|was|the function|requiring|the genitive|with particle|from|particles/prepositions|of genitive|its genitive|by it,|just like:|(not|I passed|except|by Zaid)|and this|is|the condition|third.|The exception|with other than|and its sisters|It says:|and the exception|with except/other than/unlike,|and except/other than/unlike,|and except/other than/unlike,|and other than|genitive case|not|other.|And I say:|the noun|occurring|after|a tool/instrument|from|these|tools/particles|four|found|its genitive|with an attachment/possession construction|of the tool/instrument|to it,|for|the tool/instrument|itself|then certainly it|takes|the ruling|of the noun|occurring|after|(except)|upon|explanation/details|which|previous:|then if|was|the speech|complete|positive|its accusative|necessary|upon|the exception,|just like:|(stood|the people|except|Zaid)|and if|was|the speech|complete|negative|its following|for that which|before it|or|its accusative,|just like:|(not|visited me|anyone|except|the best/superior/good),|or:|(except|the best/superior/good)|and if|was|the speech|incomplete|negative|it will be carried out|upon|according to|the function/causes,|just like|(not|connect|with other than|the best/superior/good).|The exception|with except/apart from|and its sisters|It says:|And the exception|with except/apart from,|and except/apart from,|and except/apart from,|it permits|its accusative|and its genitive,|just like:|(stood|the people|except|Zaid,|and Zaid)|and|(except|Amr|and Amr),|and|(except|Bakr|and Bakr).|And I say:|the noun|occurring|after|a tool/instrument|from|these|particles|three|permit|for you|that|its accusative case,|and permit|for you|that|its genitive case,|and the reason|in|that|is that|these|tools/instruments|are used as|verbs|at times,|and are used|particles|at times|other|upon|what|preceded,|then if|you indicate that they are|verbs|accusative|what|after them|upon|that it|is an object/acted upon|by it,|and the acted element|a pronoun|hidden|necessary/compulsory,|and if|you indicate that they are|particles|genitive|what|is after them|upon|that it|is genitive case|with them.|And the cause|of this|frequent changing|in what|when|did not|come before|upon them|(not)|of infinitive;|then if|came before|upon|one|from them|(not)|is essential|accusative|what|is after them,|and the cause|of that|is that|(not)|of infinitive|not|entering|except|upon|the verbs;|then they|are verbs|under no circumstance|if|preceding them,|then just like:|(stood|the people|except|Zaid)|permits|in it|accusative|(Zaid)|and its genitive,|and just like:|(stood|the people|not|other than|Zaid)|not|allowed|in it|except|accusative|(Zaid)|and Allah|glorious|and exalted be He|the Most High|and He knows.|Questions|What|is|the exceptions|linguistically|and terminologically?|What|are|tools/instruments|of exception?|Into|how many|parts|divides|the tools/instruments|of exception?|How many|conditions|for the noun|occurring|after|except?|When|is necessary|the accusative|of the noun|occurring|after|except?|When|permits|the accusative|of the noun|occurring|after|except|and its followers|for that which|is before them?|What|is the meaning|being|the speech|complete?|What|is the meaning|being|the speech|negative?|What|is the ruling|of the noun|occurring|after|other than/except/unlike?|How|is inflected|other than/except/unlike?|What|is the ruling|of the noun|occurring|after|except/apart from?|Conditions|of the functioning of|(no)|function of|indeed/certainly|It says:|(chapter of|(no))|know|that|(no)|makes accusative case|the indefinite|with other than|noonation|if|directly preceding|the indefinite|and did not|repeat|(no)|just like|(no|man|in|the house).|And I say:|know|that|(no)|negation|for universal|functioning|the function of|(indeed/certainly)|then makes accusative case|the noun|oral/expression|or|in place of|and makes nominative case|the predicate.|And it is|not|functioning|this|function|essential|except|with four|conditions:|the first|that|is|its noun|indefinite.|The second:|that|is|its noun|connected|with it:|which|other than|separation|from it|and if|with the predicate.|And the third:|that|is|its noun|indefinite|also.|And the fourth:|that not|repeated|(no).|Then|know|that|the noun of|(no)|upon|three|kinds,|the first|singular,|and the second|attached/possessing|to|an indefinite,|and the third|similar|with the attached/possessed.|For|the singular|in|this|chapter,|and in|the chapter|of the vocative,|and is it:|(that which|is not|attached/possessed|nor|similar|with the attached/possessed)|then entering|in it|dual,|and plural|of brokenness,|and the plural|of masculinity|sound,|and the plural|of femininity|sound.|And its ruling|that it|builds/is structural|upon|what|makes accusative|by it:|then when|was|its accusative|with fatha|it is structured|upon|the fatha,|just like:|(no|man|in|the home),|and if|was|its accusative|with the yah|-|and that|the dual|and plural|of masculinity|sound|-|structural|upon|the yah|just like:|(no|two men|in|the house)|and when|was|its accusative|with the kasra|replacement|for|the fatha|-|and that|is plural|of femininity|sound|-|structural|upon|the kasra,|just like:|(there are no|righteous women|today).|And for|the attached/possessed|in|accusative|with the fatha|apparent|or|with that which|replaced/substituted|for it,|just like:|(no|student|of knowledge|is hated).|And for|the similar|-|attached/possessed|-|and it is|(that which|connected|with it|things|from|completion|of its meaning)|then example|of the attached/possessed|in|the ruling:|which|makes accusative|with the fatha,|just like:|(no|straightness/honorability/righteousness|of his condition|among|the people|is disliked).|It says:|then if|did not|come immediately after it|necessitates|the nominative|and necessitates|repeating|(no)|just like:|(not|in|the house|a man|nor|a woman)|then if|is repeated|it is permissible to have|its function|and its cancellation,|then if|you want|you say:|(no|man|in|the house|nor|woman)|and if|you want|you say:|(not|a man|in|the house|nor|a woman).|And I say:|certainly|you knew|that|the condition|essential|of the function of|(no)|functioning|(certainly/indeed)|four,|and this|discussion|in|the explanation|of the ruling|if|unfulfilled|a condition|from|the conditions|four|preceding.|And refering to|that|is that it|if|occurring|after|(no)|is definite|necessitates|cancellation of|(no)|and its repetition,|just like|(not|Muhammad|visited me|nor|Bakr)|and if|a separation|between|no|and its noun|separating|it,|essential|like that|its cancellation|and its repetition|just like|(no|in there|bad effect|and no|they|from it|will be intoxicated)(37:47)|then bad effect:|a subject|delayed,|and in there:|relating|with deletion|of the predicate|coming before,|and|(no)|negation|unpointed,|and if|repeated|(no)|not|necessary|its function,|rather|permits/allows|its function|if|fulfilled|the remaining|conditions,|and permits/allows|its cancellation;|then you say|upon|the function|(no|man|in|the home|nor|a woman)|with fatha of|man|and a woman,|and you say|upon|the cancellation|(not|a man|in|the home|nor|a woman)|with nominative of|a man|and a woman.|Questions|What|which|makes|(no)|the negation|for universality?|What|conditions|necessitate|functioning of|(no)|the negation|of universality?|Into|how many|parts|divides|the noun|of no?|What|is the ruling|of the noun of|(no)|singular?|What|is|the singular|in|the chapter of|(no)|and the vocative?|What|is the ruling|of the noun of|(no)|if|was|attached/possessed|or|similar|with it?|What|is the ruling|if|repeated|(no)|of negation?|What|is the ruling|if|occurring|after|(no)|of negation|is definite?|What|is the ruling|if|separation|between|(no)|and its noun|separating?</value>
   </data>
   <data name="IslamInfo_GreatMasterpiece70" xml:space="preserve">
     <value>Great Masterpiece</value>
   </data>
   <data name="IslamInfo_GreatMasterpiece70WordByWord" xml:space="preserve">
-    <value></value>
+    <value>The vocative|It says:|(the chapter|of the vocative)|the vocative|five|types:|the singular|proper noun,|and the indefinite|known/intended,|and the indefinite|other than|known/intended,|and the attached/possessed,|and the similar|with the attached/possessed.|And I say:|the vocative|in|language|it is:|the requested/wanted|its drawing closer|absolute,|and in|the terminology|of the grammarians|it is|(the requested/wanted|its drawing closer|with O|or|one|of its sisters)|and the sisters of|(O)|they are|five|just like|(O Zaid|come closer)|and|(O)|just like|(O|Abraham|understand)|and|(O)|just like:|O|trees|of Khabur|what is with your|beautiful green leaves|it is as if you are|not|sad|for|the son|of Tareef|and|(O)|just like|(O|Muhammad|come).|Then|the vocative|upon|five|kinds:|1-|The singular|proper noun,|and certainly|past|in|the chapter of|(no)|inflects|singular,|and its example|(O Muhammad)|and|(O Fatima)|and|(O you two Muhammads)|and|(O you two Fatimas)|and|(O you all Muhammads)|and|(O you all Fatimas).|2-|The indefinite|intended;|and it is:|which|intends|with it|one|specific|with that which|is correct|for calling|by its word|upon him,|just like|(O unjust)|you want|one|with its specific.|3-|The indefinite|other than|intended;|and it is:|which|intends|by it|one|other than|specific,|just like|saying|the warner:|(O negligent ones|take note)|then certainly it|not|intends|one|specific,|rather|intends|each|from|relating|upon it|the expression of|(negligent ones).|4-|The attached/possessed,|just like|(O student|of knowledge|work hard).|5-|The similar|with the attached/possessed,|and it is|that which|attaches|with it|things|from|complete|of its meaning,|whether|was|the attachment|with it|nominative case|with it,|just like|(O praiseworthy|for his action)|or|was|accusative case|with it|just like|(O memorizer/observer|of his lesson)|or|was|genitive case|with a particle/preposition|of genitive|relating|with it|just like|(O lover|of good).|It says:|then for|the singular|proper noun,|and the indefinite|intended|then both are structural|upon|the damma|from|other than|noonation,|just like|(O Zaid)|and|(O man)|and the three|remaining|accusative case|no|other.|And I say:|if|was|the vocative|singular|or|indefinite|intended|then certainly it|is structural|upon|what|makes it nominative case|with it;|then if|was|made nominative case|with the damma|then certainly it|is structural|upon|the damma,|just like|(O Muhammad)|and|(O Fatima)|and|(O man)|and|(O you all Fatimas)|and if|was|made nominative case|with the alef|replacement|for|the damma|-|and that|is the dual|-|then certainly it|is structural|upon|the alef,|just like|(O you two Muhammads)|and|(O you two Fatimas)|and if|was|made nominative case|with the waw|replacement|for|the damma|-|and that|is the plural|of masculinity|sound|-|then certainly it|is structural|upon|the waw|just like|(O you all Muhammads).|And if|was|the vocative|an indefinite|other than|intended|or|attached/possessed|or|similar|with the attached/possessed|then certainly it|makes accusative case|with the fatha|or|what|replaces/substitutes|for it|just like|(O ignorant one|learn)|and|(O lazy one|be interested/turn|upon|that which|will benefit you)|and just like|(O desirer|of honor|work|for it)|and|(O lover|of high status/ranking|persevere|upon|striving)|and just like|(O desirer|in|power/rule|do not|get angry|from|work)|and|(O one who is eager|upon|the good|be steadfast).|Questions|What|is|the vocative|lexically|and terminologically?|What|is|the tool/instrument|of calling?|Make|for each|tool/instrument|with an example,|into|how many|parts|divides|the vocative?|What|is|the singular|and make|for it|with two examples|different,|what|is|the indefinite|intended|with|the representation?|What|is|similar|with the attached/possessed?|Into|how many|kinds|is split|the similar|with the attached/possessed|with|the representation|for each|type?|What|is the ruling|of the vocative|singular?|What|is the ruling|of the vocative|of the attached/possessed?|Make|for each|kind|from|the kinds|of vocative|five|with two examples,|and inflect|one|from the two.</value>
   </data>
   <data name="IslamInfo_GreatMasterpiece71" xml:space="preserve">
     <value>Great Masterpiece</value>
   </data>
   <data name="IslamInfo_GreatMasterpiece71WordByWord" xml:space="preserve">
-    <value></value>
+    <value>The object/acted upon|for itself|It says:|(chapter|of the object/acted upon|from|its sake/reason)|and it is:|a noun,|accusative case,|mentions|explaining|for the reason|of taking place|of the action,|just like|your saying:|(stood|Zaid|out of respect|for Amr)|and|(I came to you|desiring|that which is good for you).|And I say:|the object/acted upon|from|its sake/reason)|-|and it is said|(the object/acted upon|for its sake/reason),|and|(the object/acted upon|for itself)|-|it is|in|terminology|of the grammarians|a phrase|from|(a noun,|accusative case,|which|mentions|explaining|for the reason|of taking place|of the action).|And our saying:|(noun)|includes|the clear|and interpreted|by it.|And must|in|the noun|which|occurs|an object/acted upon|for it|from|that|comprises|in it|five|things:|the first:|that|is|an infinative.|And the second:|that|is|changeable,|and meaning|its being|changeable|that not|is|refering|upon|a function|from|actions|physical/of the limbs|like the hand|and the tongue|example|(reading)|and|(hitting).|And the third:|that|is|a reason|for what|is before it.|And the fourth:|that|is|agreeing|with|its function/what it effects|in|time.|And the fifth:|that|agrees|with|its function/what it effects|in|the active element.|And example|of the noun|containing|for these|conditions|(to discipline)|from|your saying:|(I hit|my son|to discipline)|then certainly it|is an infinitive,|and it is|changeable;|because it|is not|from|actions|physical/of the limb,|and it is|a reason|for hitting,|and it|is agreeing|with|(I hit)|in|the time,|and in|the active element|also.|And every|noun|fulfilling|these|conditions|permits/allows|in it|two things:|the accusative,|and the genitive|with a particle|from|the particles/prepositions|of genitive|refering|upon|the reason|like the lam.|And know|that|for the noun|which|occurs|an object/acted upon|for its sake/reason|three|conditions:|the first:|that|is|connected|with the.|The second:|that|is|attached/possessed.|The third:|that|is|free|from|(the)/the definite particle|and from|the possession/attachment construction.|And in|all|of these|conditions|allows/permits|in it|the accusative|and the genitive|with the particle/preposition|of genitive,|except|that it|might|preference|one|of the two ways,|and might|the two be equal|in|terms of permissibility.|Then if|was|connected|with the|then mostly|in it|that|is made genitive case|refering|upon|the reason,|just like:|(I hit|my son|for discipline)|and seldom will be|its accusative.|And if|was|attached/possessed|permited/allowed|its permissibility|equally|that|its made genitive|with a particle/preposition|and if|was accusative case,|just like:|(I visited you|out of love|of your good manners)|or|(I visited you|for love|of your good manners).|And if|was|free|from|(the)/the definite particle|and from|the attachment/possession construction|then mostly|in it|that|it makes accusative,|just like:|(I stood|out of respect|for the teacher)|and seldom|its genitive|with a particle/preposition,|and Allah|knows.|Questions|What|is|the object/acted upon|for its sake/reason?|What|which|requires|in|the noun|which|occurs|an object/acted upon|for its sake/reason?|How many|conditions|for the noun|occurring|an object/acted upon|for itself?|What|is the ruling|of the object/acted upon|for itself|attached|with the|and the attached/possessed?|Make|with three|examples|for the object/acted upon|for its sake/reason|with condition|that|is|the first|attached|with the|and the second|attached/possessed|and the third|free|from|the|and the attachment/possession construction,|and inflect|each|one|from them,|and refer|in|each|example|that which|allows/permits|in it|from|the ways|with|refering|the most likely|if|was.</value>
   </data>
   <data name="IslamInfo_GreatMasterpiece72" xml:space="preserve">
     <value>Great Masterpiece</value>
   </data>
   <data name="IslamInfo_GreatMasterpiece72WordByWord" xml:space="preserve">
-    <value></value>
+    <value>The object/acted upon|with it/accompaniment|It says:|(chapter|of the object/acted upon|with it/accompaniment)|and it is:|the noun,|the accusative case,|which|is mentioned|with specifying|from|whom is done to|with it|the action,|just like|your saying:|(came|the leader|with the army)|and|(became level|the water|with the wood).|And I say:|the object/acted upon|with it/accompaniment|with|grammarians|is:|(the noun,|additiona/extra,|the accusative case|with the verb|or|what|is in it|meaning|of the verb|and its letters,|the reference|upon|the person/owner|which|occurs/happens|the action/verb|with its accompaniment,|preceded|by waw|used as|together/company/with|in language).|Then our saying:|(the noun)|includes|the singular|and the dual|and the plural,|and the masculine|and the feminine|and the interpreted|with it:|the noun|clear|without|interpretation,|and taking|from it|the verb|and the particles|and the sentence.|And our saying:|(extra/additional)|its meaning|that it|is not|a pillar|in|the speech;|then is not|an active element,|and not|a subject|and not|a predicate,|and taking out|with it|the support/main issue,|just like|(shared|Zayd|with Amr).|And our saying:|(the accusative case|with the verb|or|what|is in it|meaning|of the verb|and its letters)|refering|upon|that|causative agent|in|the object/acted upon|with it/accompaniment|upon|two kinds:|the first:|the verb,|just like|(was present|the leader|with the army).|The second:|the noun|refering|upon|the meaning|of the verb|comprising|upon|its letters,|like a noun/participle|of the active element|in|just like|(the leader|is present|with the army).|And our saying:|(preceded|by waw|is|used in wording|in|refering|upon|together/company/with)|taking off|by it|the noun|preceded|by waw|not|in wording|in|the refering|upon|accompaniment,|just like|(attended|Muhammad|and Khalid).|And know|that|the noun|occuring|after|the waw|upon|two kinds:|1-|that which|is specified|its accusative|upon|that it|is the object/acted upon|with it/accompaniment.|2-|That which|allows/permits|its accusative|upon|that|and follows it|for that which|before it|in|its inflection/declension|conjuncted|upon it.|And for|the kind|first|then its place|if|not|proper|to associate|that which|is after|the waw|to that which|is before it|in|the ruling,|just like|(I am|moving/travelling|with the mountain)|and just like|(I studied/revised|with the lamp)|then certainly|the mountain|not|proper|to associate|to the speaker/first person|in|the travelling,|and like that|the lamp|not|proper|to associate|to the speaker/first person|in|studying/revising,|and certainly|made|the author|for this|kind|with its saying:|(became level|the water|with the wood).|And for|the second|then its place|if|proper|to associate|that which|after|the waw|for that which|before it|in|the information/ruling,|just like|(attended|Ali|and Muhammad)|then certainly it|permits/allows|accusative of|(Muhammad)|upon|that it|an object/acted upon|with it/accompaniment,|and permits/allows|its nominative|upon|that it|is conjuncted|upon|(Ali);|because|Muhammad|permits/allows|associating it|with|Ali|in|attendance,|and certainly|made|the author|for this|kind|with its saying:|(came|the leader|with the army).|Questions|What|is|the object/acted upon|with it/accompaniment?|What|is intended|with the noun|here?|What|is intended|with extra/additional?|What|which|acts|in|the object/acted upon|with it/accompaniment?|Into|how many|parts|divides|the object/acted upon|with it/accompaniment?|Make|for the object/acted upon|with it/accompaniment|which|is found|its nominative|with two examples,|make|for the object/acted upon|with it/accompaniment|which|permits/allows|its accusative|and follows it|for that which|is before it|with two examples,|inflect|the two examples|which are|in|the speech|of the author,|and specify|in|each|example|from the two|from|which|kind|it is.|It says:|and for|the predicate of|(was)/the verb to be|and its sisters|and the noun of|(certainly/indeed)/accusative particle|and its sisters|then certainly|came before|mention of the two|in|the nominatives,|and like that|the followers;|the certainly|came before|there.|And I say:|from|the accusatives|the noun of|(certainly/indeed)/accusative particle|and its sisters,|and the predicate of|(was)/the verb to be|and its sisters,|and the follower|of the accusative,|and certainly|came before|explaining|that|in|its chapters;|so not|a need|for us|to|repeat|anything|from it.</value>
   </data>
   <data name="IslamInfo_GreatMasterpiece73" xml:space="preserve">
     <value>Great Masterpiece</value>
   </data>
   <data name="IslamInfo_GreatMasterpiece73WordByWord" xml:space="preserve">
-    <value></value>
+    <value>The genitives|from|the nouns|It says:|(the chapter|of the genitives|from|the nouns)|the genitives|are three|kinds:|genitive case|with the particle/preposition,|and genitive case|with the attachment/possession construction,|and the followers|of the genitive case.|And I say:|the noun|of the genitive case|upon|three|kinds;|and that|is because|the genitive|for it|as for|that|is|a particle/preposition,|from|the particles/prepositions|of genitive|which|preceded|its explanation,|in|the first|of the book|and which|will mention it|the author|after|that,|and that|just like|(Khalid)|from|your saying:|(I showed compassion/kindness|upon|Khalid)|then certainly it|is genitive case|by upon,|and it is|a particle/preposition|from|the particles/prepositions|of genitive,|and for|that|is|the genitive|for the noun|attachment/possession construction|of a noun|before it|to it,|and the meaning|of possession/attachment construction:|connection|of the second|to the first,|and that|just like|(Muhammad)|from|your saying:|(came|the servant/boy|of Muhammad)|then certainly it|is genitive case|with cause/reason|of the attachment/possession construction of|(servant/boy)|to it,|and for|that|is|genitive|for the noun|its following|for a noun|genitive case,|with that|is|an adjective|for it,|just like|(distinguished/learned)|from|your saying:|(I took|the knowledge|from|Muhammad|the distinguished/learned)|or|conjuncted|upon it,|just like|(Khalid)|from|your saying:|(I passed|by Muhammad|and Khalid)|or|other than|these two|from|the followers|which|preceded|their mention.</value>
   </data>
   <data name="IslamInfo_GreatMasterpiece74" xml:space="preserve">
     <value>Great Masterpiece</value>
   </data>
   <data name="IslamInfo_GreatMasterpiece74WordByWord" xml:space="preserve">
-    <value></value>
+    <value>It says:|and for|the genitive case|with the prepositions/particles|then it is:|what|is made genitive case|by from,|and to/toward,|and from,|and upon,|and in,|and few/many/perhaps,|and the bah,|and the kaf,|and the lam,|and the particles/prepositions|of the oath:,|and they are:|the waw,|and the bah,|and the tah,|or|with the waw|of perhaps,|and with has since,|and since/ago.|And I say:|the kind|first|from|the genitives:|the genitive case|by preposition/particle|from|the prepositions/particles|of genitive;|and the prepositions/particles|of genitive|are many.|From them|(from)|from|its meaning|the starting,|and it makes genitive case|the noun|apparent|and hidden,|just like|its saying|the Most High:|(and from you|and from|Noah)(33:7).|And from them|(to/toward)|and from|its meaning|the ending,|and it makes genitive case|the noun|apparent|and hidden|also,|just like|its saying|the Most High:|(|to him|devolves|the knowledge|of the hour|)(41:47)|and its saying:|(to|Allah|will be the return of you|all)(5:48).|And from them|(from)|and from|its meaning|the excess/surpass,|and it makes genitive case|the noun|apparent|and hidden|also,|just like|its saying|the Most High:|(|certainly|was pleased|Allah|with|the believers)(48:18)|and its saying:|(is pleased|Allah|with them|and they are pleased|with Him|)(5:119).|And from them|(upon)|and from|its meaning|above/on,|and it makes genitive case|the noun|apparent|and hidden|also,|just like|its saying|the Most High:|(and on them|and upon|ships|you are carried)(23:22).|And from them|(in)|and from|its meaning|adverbial/container,|and it makes genitive case|the noun|apparent|and the hidden|also,|just like|its saying|the Most High:|(and in|the sky|is your provision)(51:22)|and its saying:|(not|therein|headache)(37:47).|And from them|(few/many/perhaps)|and from|its meanings|decreasing/reduction,|and not|it makes genitive case|except|the noun|apparent|indefinite,|just like|your saying:|(few|men|generous|I have met).|And from them|(the bah)|and from|its meaning|excess/surpass/transgress,|and it makes genitive case|the noun|apparent|and pronoun|all of them,|just like|its saying|the Most High:|(whether|we take away|with you)(43:41)|and its saying:|(went|Allah|with their light)(2:17).|And from them|(the kaf)|and from|its meaning|the comparison,|and not|it makes genitive case|except|the noun|apparent,|just like|its saying|the Most High:|(the parable|of His light|is like a niche)(24:35).|And from them|(the lam)|and from|its meaning|worthiness|and possession,|and it makes genitive case|the noun|apparent|and hidden|also,|just like|its saying|the glorious be He|and exalted:|(glorifies|to Allah|what|is in|the heavens|and the earth|)(57:1),|and its saying:|(for him|dominion/kingdom/ownership|of the heavens|and the earth|)(2:107).|And from them|the particles|of oath|three|-|and they are:|the bah,|and the tah,|and the waw|-|and certainly|we spoke|upon them|the speech|in detail|in|the first|of the book;|then not|need|for us|to|repeat|anything|from it.|And from them|the waw of|(few/many/perhaps)|and its example|says|Imree'|of Qais|Many a night|is like the waves/amid grief|of the sea/deep|it lets down/lowers|its veils/curtains|and he said|also:|And many beautiful/chaste/respectable|of the women|do not|leave|her tent/house|And from them|(has since)|and|(since/ago)|and the two make genitive case|the two times,|and the two|indicating|upon|meaning of|(from)|if|was|that which|after the two|past tense,|just like|(not|I saw him|since|the day|of Thursday/fifth),|and|(not|I did speak to him|for|a month),|and the two are|with meaning of|(in)|if|was|that which|is after them two|present tense,|just like|(not|I have spoken to him|for|today)|and|(not|I did meet|in/during|the day today).|Then if|occur|after|(since/during/for)|or|(since/during/for)|a verb,|or|was|the noun|which|after it|the nominative case|then the two|are nouns.</value>
   </data>
   <data name="IslamInfo_GreatMasterpiece75" xml:space="preserve">
     <value>Great Masterpiece</value>
   </data>
   <data name="IslamInfo_GreatMasterpiece75WordByWord" xml:space="preserve">
-    <value></value>
+    <value>It says:|and for|that which|makes genitive case|with the attachment/possession construction,|then just like|your saying:|(a boy/servant|of Zaid)|and it is|upon|two parts:|that which|is implied|with the lam,|and what|is implied|with from;|and the one which|is implied|with the lam|just like|(the boy/servant|of Zaid)|and the one which|is implied|with from,|just like|(a garment|of silk)|and|(a door|of sheet iron)|and|(a ring|of iron).|And I say:|the part|second|from|the genitives:|the genitive case|with the possession/attachment construction,|and it is|upon|three|kinds,|mentioned|the author|from them|two kinds;|the first:|that which|is|with the attachment/possession construction|in it|upon|the meaning of|(from)|and the second:|that which|is|the attachment/possession construction|in it|upon|the meaning|of the lam,|and the third:|that which|is|the attachment/possession construction|in it|upon|the meaning of|(in).|And for|that which|is|the attachment/possession construction|in it|upon|the meaning of|(from)|then its general rule:|that|is|the attached/possessed|a part|and some|from|the attached/possessing|to it,|just like|(a long garment|of wool)|then certainly|the long garment|some|of wool|and part|from it,|and like that|the example|of the author.|And for|that which|is|the attachment/possession construction|in it|upon|the meaning of|(in)|then its general rule:|that|is|the attached/possessed|to it|an adverb|for the attached/possessed,|just like|its saying|the Most High:|(rather|plotting|in the night)(34:33)|then certainly|the night|is an adverb|for the night|and a time|occurs|the plotting|in it.|And for|that which|is|the attachment/possession construction|in it|upon|the meaning|of the lam;|then each|that which|is not|proper|in it|one|of the two kinds|mentioned,|just like|(the boy/servant|of Muhammad)|and|(the mat|of the mosque).|And certainly|left out|the author|the speech|upon|the part|third|from|the genitives,|and it is|the genitive case|with the followers,|and his excuse|in|that|is that he|certainly|previously|saying|upon it|in|the last|of the chapters|of the nominatives|in detail,|and Allah|glorious be He|and exalted|Most High|and He knows|and exalts|and is generous.|Questions|Upon|how many|kinds|is divided|the genitives?|What|is the meaning|which|indicates|upon it|the particles:|from,|about,|in,|few/many/perhaps,|the kaf,|the lam?|And what|which|makes genitive case for it|each|one|from them?|Make|with two examples|from|your creation|for the noun|of the genitive case|with each|one|from|the particles/prepositions:|upon,|the bah,|to/toward,|the waw|of oath.|Upon|how many|kinds|comes|the attachment/possession construction?|With|examples|for each|kind|with two examples.|What|is the general rule|of the attachment/possession construction|which|upon|the meaning of|(from)?|With|examples.|What|is the general rule|of the attachment/possession construction|which|upon|the meaning of|(in)?|With|examples.</value>
   </data>
   <data name="IslamInfo_ScienceOfTransmission" xml:space="preserve">
     <value>Science Of Transmission</value>
@@ -32360,5 +32399,764 @@
   </data>
   <data name="IslamInfo_FlexibleFullyFlexibleVerbOrNoun" xml:space="preserve">
     <value>Flexible Fully Flexible Verb Or Noun</value>
+  </data>
+  <data name="IslamInfo_Maxim1" xml:space="preserve">
+    <value>First Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim1WordByWord" xml:space="preserve">
+    <value>Actions/deeds|depend upon/with their intentions</value>
+  </data>
+  <data name="IslamInfo_Maxim1-1" xml:space="preserve">
+    <value>First Maxim First Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim1-1WordByWord" xml:space="preserve">
+    <value>No/there is not|reward|except|by/with intention</value>
+  </data>
+  <data name="IslamInfo_Maxim1-2" xml:space="preserve">
+    <value>First Maxim Second Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim1-2WordByWord" xml:space="preserve">
+    <value>Consideration|in|contracts|is given to/with intention|and meaning|not|words|and forms</value>
+  </data>
+  <data name="IslamInfo_Maxim1-3" xml:space="preserve">
+    <value>First Maxim Third Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim1-3WordByWord" xml:space="preserve">
+    <value>Intention|makes specific|a word/statement|general|and generalizes|a word/statement|specific</value>
+  </data>
+  <data name="IslamInfo_Maxim1-4" xml:space="preserve">
+    <value>First Maxim Fourth Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim1-4WordByWord" xml:space="preserve">
+    <value>Oaths|are based|on|intentions|and objectives|not|upon|words</value>
+  </data>
+  <data name="IslamInfo_Maxim1-5" xml:space="preserve">
+    <value>First Maxim Fifth Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim1-5WordByWord" xml:space="preserve">
+    <value>Oaths|are based|on|the customs|of the one taking the oath|if|not|possible|the condition/to interpret it|upon|the meaning|legal</value>
+  </data>
+  <data name="IslamInfo_Maxim1-6-1" xml:space="preserve">
+    <value>First Maxim First Exceptional Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim1-6-1WordByWord" xml:space="preserve">
+    <value>Whoever|hastens|something|before|its allotted time|is punished|by being deprived of it</value>
+  </data>
+  <data name="IslamInfo_Maxim1-6-2" xml:space="preserve">
+    <value>First Maxim Second Exceptional Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim1-6-2WordByWord" xml:space="preserve">
+    <value>Favoring|in|righteous deeds|is disliked|and in|other than them|is liked</value>
+  </data>
+  <data name="IslamInfo_Maxim2" xml:space="preserve">
+    <value>Second Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2WordByWord" xml:space="preserve">
+    <value>Certainty|is not|invalidated/overruled|by doubt</value>
+  </data>
+  <data name="IslamInfo_Maxim2-1-1" xml:space="preserve">
+    <value>Second Maxim First Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2-1-1WordByWord" xml:space="preserve">
+    <value>The basic rule/principle|remains|that which|was|upon/as|what it|was</value>
+  </data>
+  <data name="IslamInfo_Maxim2-1-2" xml:space="preserve">
+    <value>Second Maxim First Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2-1-2WordByWord" xml:space="preserve">
+    <value>That which|is established|by a span of time|will be ruled|with its continuation|that which|did not|find|evidence|upon|its difference</value>
+  </data>
+  <data name="IslamInfo_Maxim2-1-3" xml:space="preserve">
+    <value>Second Maxim First Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2-1-3WordByWord" xml:space="preserve">
+    <value>The forthcoming|is left|upon|its previous</value>
+  </data>
+  <data name="IslamInfo_Maxim2-2" xml:space="preserve">
+    <value>Second Maxim Second Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2-2WordByWord" xml:space="preserve">
+    <value>The basic rule/principle|is free/innocent|of responsibility/liability</value>
+  </data>
+  <data name="IslamInfo_Maxim2-3" xml:space="preserve">
+    <value>Second Maxim Third Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2-3WordByWord" xml:space="preserve">
+    <value>That which|is confirmed|by certainty|not|can be validated/is known|except|by certainty</value>
+  </data>
+  <data name="IslamInfo_Maxim2-4" xml:space="preserve">
+    <value>Second Maxim Fourth Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2-4WordByWord" xml:space="preserve">
+    <value>The general rule|in/regarding|characteristics|or|things|incidental|is non-existence|(or|the basic rule/principle|is non-existence)</value>
+  </data>
+  <data name="IslamInfo_Maxim2-5" xml:space="preserve">
+    <value>Second Maxim Fifth Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2-5WordByWord" xml:space="preserve">
+    <value>The general rule|is attributing|the incident|to|the most recent|time of it</value>
+  </data>
+  <data name="IslamInfo_Maxim2-6" xml:space="preserve">
+    <value>Second Maxim Sixth Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2-6WordByWord" xml:space="preserve">
+    <value>The basic/general rule/principle|in/regarding|things|is permissibility</value>
+  </data>
+  <data name="IslamInfo_Maxim2-7" xml:space="preserve">
+    <value>Second Maxim Seventh Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2-7WordByWord" xml:space="preserve">
+    <value>The general rule|in/regarding|sexual relations|(sexual relations)|is prohibition</value>
+  </data>
+  <data name="IslamInfo_Maxim2-8" xml:space="preserve">
+    <value>Second Maxim Eighth Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2-8WordByWord" xml:space="preserve">
+    <value>No|value/estimation|implication/indication|in|the context|of the clear statement</value>
+  </data>
+  <data name="IslamInfo_Maxim2-9" xml:space="preserve">
+    <value>Second Maxim Ninth Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2-9WordByWord" xml:space="preserve">
+    <value>Not|should/will be attributed|to|the one who is silent|a statement/position|but|silence|in/at|the place|of necessity|towards|explanation|is an explanation</value>
+  </data>
+  <data name="IslamInfo_Maxim2-10" xml:space="preserve">
+    <value>Second Maxim Tenth Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2-10WordByWord" xml:space="preserve">
+    <value>No|value|with the imaginary things</value>
+  </data>
+  <data name="IslamInfo_Maxim2-11" xml:space="preserve">
+    <value>Second Maxim Eleventh Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2-11WordByWord" xml:space="preserve">
+    <value>No|value|with assumption/suspicion|that is clear|its wrong</value>
+  </data>
+  <data name="IslamInfo_Maxim2-12" xml:space="preserve">
+    <value>Second Maxim Twelfth Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2-12WordByWord" xml:space="preserve">
+    <value>The highly unlikely|normally|is equalivalent to the impossible|reality/really</value>
+  </data>
+  <data name="IslamInfo_Maxim2-13" xml:space="preserve">
+    <value>Second Maxim Thirteenth Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2-13WordByWord" xml:space="preserve">
+    <value>Not|evidence is acceptable|along with|a contrary probability/possibility|based|upon|evidence</value>
+  </data>
+  <data name="IslamInfo_Maxim3" xml:space="preserve">
+    <value>Third Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim3WordByWord" xml:space="preserve">
+    <value>Hardship/difficulty|begets/brings|facility/ease</value>
+  </data>
+  <data name="IslamInfo_Maxim3-1" xml:space="preserve">
+    <value>Third Maxim First Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim3-1WordByWord" xml:space="preserve">
+    <value>If|becomes narrow|the case|it expands|and if|becomes expansive|the case|it narrows</value>
+  </data>
+  <data name="IslamInfo_Maxim3-2" xml:space="preserve">
+    <value>Third Maxim Second Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim3-2WordByWord" xml:space="preserve">
+    <value>Necessity|makes lawful/permissible|the unlawful/prohibited things</value>
+  </data>
+  <data name="IslamInfo_Maxim3-3-1" xml:space="preserve">
+    <value>Third Maxim Third Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim3-3-1WordByWord" xml:space="preserve">
+    <value>Necessities|should be/are estimated|by the extent thereof/properly</value>
+  </data>
+  <data name="IslamInfo_Maxim3-3-2" xml:space="preserve">
+    <value>Third Maxim Third Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim3-3-2WordByWord" xml:space="preserve">
+    <value>What|has been permitted|by necessity|is estimated|in accordance to its correctness measurement</value>
+  </data>
+  <data name="IslamInfo_Maxim3-4-1" xml:space="preserve">
+    <value>Third Maxim Fourth Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim3-4-1WordByWord" xml:space="preserve">
+    <value>What|became permissible/is permitted|due to an excuse|is invalidated|with its going</value>
+  </data>
+  <data name="IslamInfo_Maxim3-4-2" xml:space="preserve">
+    <value>Third Maxim Fourth Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim3-4-2WordByWord" xml:space="preserve">
+    <value>What|stands/is based|upon|necessity|ends|with the ending|of this|necessity</value>
+  </data>
+  <data name="IslamInfo_Maxim3-5" xml:space="preserve">
+    <value>Third Maxim Fifth Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim3-5WordByWord" xml:space="preserve">
+    <value>Need|is considered|to the level/position|of necessity|general|whether was|or|specific</value>
+  </data>
+  <data name="IslamInfo_Maxim3-6" xml:space="preserve">
+    <value>Third Maxim Sixth Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim3-6WordByWord" xml:space="preserve">
+    <value>Necessity|not|does invalidate|the rights|of others</value>
+  </data>
+  <data name="IslamInfo_Maxim3-7" xml:space="preserve">
+    <value>Third Maxim Seventh Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim3-7WordByWord" xml:space="preserve">
+    <value>If|becomes impossible|the original/root|shall be sought|to|the substitute</value>
+  </data>
+  <data name="IslamInfo_Maxim4" xml:space="preserve">
+    <value>Fourth Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim4WordByWord" xml:space="preserve">
+    <value>Harm|must be eliminated|(no|harm shall be inflicted|nor|shall harm be reciprocated)</value>
+  </data>
+  <data name="IslamInfo_Maxim4-1" xml:space="preserve">
+    <value>Fourth Maxim First Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim4-1WordByWord" xml:space="preserve">
+    <value>Harm|should be repelled|by/to the degree|possible</value>
+  </data>
+  <data name="IslamInfo_Maxim4-2" xml:space="preserve">
+    <value>Fourth Maxim Second Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim4-2WordByWord" xml:space="preserve">
+    <value>Harm|not|would/may/should be eliminated|by its equivalent|or|harm|not|would/may/should be removed|by harm</value>
+  </data>
+  <data name="IslamInfo_Maxim4-3-1" xml:space="preserve">
+    <value>Fourth Maxim Third Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim4-3-1WordByWord" xml:space="preserve">
+    <value>Harm|greater|should be eliminated|by harm|lesser</value>
+  </data>
+  <data name="IslamInfo_Maxim4-3-2" xml:space="preserve">
+    <value>Fourth Maxim Third Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim4-3-2WordByWord" xml:space="preserve">
+    <value>Should be chosen|the lesser/easier|of two harms</value>
+  </data>
+  <data name="IslamInfo_Maxim4-3-3" xml:space="preserve">
+    <value>Fourth Maxim Third Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim4-3-3WordByWord" xml:space="preserve">
+    <value>When|contradicts|two corruptions/causes of harm|will be removed|the greater of the two|harms|by doing|the lesser of the two</value>
+  </data>
+  <data name="IslamInfo_Maxim4-3-4" xml:space="preserve">
+    <value>Fourth Maxim Third Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim4-3-4WordByWord" xml:space="preserve">
+    <value>When|meets|two harms|is taken to remove|the lesser|for the greater</value>
+  </data>
+  <data name="IslamInfo_Maxim4-4" xml:space="preserve">
+    <value>Fourth Maxim Fourth Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim4-4WordByWord" xml:space="preserve">
+    <value>Borne/tolerated|injury/harm|private/specific|in order to prevent/repel|injury/harm|public/general</value>
+  </data>
+  <data name="IslamInfo_Maxim4-5" xml:space="preserve">
+    <value>Fourth Maxim Fifth Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim4-5WordByWord" xml:space="preserve">
+    <value>Repelling|corruption|is better/takes precedence|than|obtaining|benefits</value>
+  </data>
+  <data name="IslamInfo_Maxim4-6" xml:space="preserve">
+    <value>Fourth Maxim Sixth Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim4-6WordByWord" xml:space="preserve">
+    <value>When|contradict|prohibiting evidence/the preclusive|and demanding evidence/the necessitated|preference shall be given to|prohibiting evidence/the preclusive|except|when|was|demanding evidence/the necessitated|greater/more important</value>
+  </data>
+  <data name="IslamInfo_Maxim4-7" xml:space="preserve">
+    <value>Fourth Maxim Seventh Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim4-7WordByWord" xml:space="preserve">
+    <value>When|coincide|the religiously lawful|and the religiously unlawful|or|the permitted|and the prohibited|shall be dominant|the religiously unlawful</value>
+  </data>
+  <data name="IslamInfo_Maxim5" xml:space="preserve">
+    <value>Fifth Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5WordByWord" xml:space="preserve">
+    <value>Custom|determines/can be the basis of judgement</value>
+  </data>
+  <data name="IslamInfo_Maxim5-1" xml:space="preserve">
+    <value>Fifth Maxim First Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5-1WordByWord" xml:space="preserve">
+    <value>Usage|of the people/public|is an evidence/conclusive|which/and must be|used/followed|by/according to it</value>
+  </data>
+  <data name="IslamInfo_Maxim5-2" xml:space="preserve">
+    <value>Fifth Maxim Second Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5-2WordByWord" xml:space="preserve">
+    <value>Only|shall be deemed/considered effective|custom|when|constant|or|predominant</value>
+  </data>
+  <data name="IslamInfo_Maxim5-3" xml:space="preserve">
+    <value>Fifth Maxim Third Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5-3WordByWord" xml:space="preserve">
+    <value>Consideration|shall be given to the preponderant occurence|the common occurence|not|the rare occurence</value>
+  </data>
+  <data name="IslamInfo_Maxim5-4" xml:space="preserve">
+    <value>Fifth Maxim Fourth Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5-4WordByWord" xml:space="preserve">
+    <value>Customary usage|by which|are understood|upon it|the statements|only|it is|the comparison|of the previous/that which existed prior|other than|that which follows/is delayed|later/in the future</value>
+  </data>
+  <data name="IslamInfo_Maxim5-4-1" xml:space="preserve">
+    <value>Fifth Maxim Fourth Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5-4-1WordByWord" xml:space="preserve">
+    <value>No|consideration|for the custom|which accidently happened/created/innovated</value>
+  </data>
+  <data name="IslamInfo_Maxim5-5" xml:space="preserve">
+    <value>Fifth Maxim Fifth Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5-5WordByWord" xml:space="preserve">
+    <value>The reality/literality|is left|with/due to the implication|of custom</value>
+  </data>
+  <data name="IslamInfo_Maxim5-6" xml:space="preserve">
+    <value>Fifth Maxim Sixth Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5-6WordByWord" xml:space="preserve">
+    <value>Writing/written communications|is deemed equal/equivalent to/are treated the same way as stating/oral communications/verbal discourse</value>
+  </data>
+  <data name="IslamInfo_Maxim5-7" xml:space="preserve">
+    <value>Fifth Maxim Seventh Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5-7WordByWord" xml:space="preserve">
+    <value>The signs/indications|known/recognized|of the dumb person|are tantamount/equivalent|to verbal utterance/spoken statements/the tongue</value>
+  </data>
+  <data name="IslamInfo_Maxim5-8" xml:space="preserve">
+    <value>Fifth Maxim Eighth Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5-8WordByWord" xml:space="preserve">
+    <value>What is known/recognized|by custom|is like what is made conditional/regarded|as a condition/stipulated by agreement</value>
+  </data>
+  <data name="IslamInfo_Maxim5-9" xml:space="preserve">
+    <value>Fifth Maxim Ninth Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5-9WordByWord" xml:space="preserve">
+    <value>Specification/a matter established/what is stipulated|by custom/convention|is like specification/a matter established/what is stipulated|by text/a legal text</value>
+  </data>
+  <data name="IslamInfo_Maxim5-10" xml:space="preserve">
+    <value>Fifth Maxim Tenth Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5-10WordByWord" xml:space="preserve">
+    <value>What is commonly practiced/known|by/among|traders/merchants|is like a condition/deemed a stipulated condition|among them</value>
+  </data>
+  <data name="IslamInfo_Maxim5-11" xml:space="preserve">
+    <value>Fifth Maxim Eleventh Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5-11WordByWord" xml:space="preserve">
+    <value>Not|would be denied|the change|of rules|with the change|of times</value>
+  </data>
+  <data name="IslamInfo_Maxim5-12" xml:space="preserve">
+    <value>Fifth Maxim Twelfth Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5-12WordByWord" xml:space="preserve">
+    <value>The impossible|customarily|is considered/regarded as impossible|in fact/reality</value>
+  </data>
+  <data name="IslamInfo_Maxim6" xml:space="preserve">
+    <value>Sixth Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim6WordByWord" xml:space="preserve">
+    <value>Giving effect/value|to word/statement/speech|is better/more appropriate/prioritized than|ignoring/neglecting them</value>
+  </data>
+  <data name="IslamInfo_Maxim6-1" xml:space="preserve">
+    <value>Sixth Maxim First Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim6-1WordByWord" xml:space="preserve">
+    <value>Originally/the original state|in/of|speech/words|is the literal sense/should be taken according to their literal meaning</value>
+  </data>
+  <data name="IslamInfo_Maxim6-2" xml:space="preserve">
+    <value>Sixth Maxim Second Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim6-2WordByWord" xml:space="preserve">
+    <value>When|becomes impossible|the real meaning/word|will be used/understood/taken|towards|the metaphorical meaning/word</value>
+  </data>
+  <data name="IslamInfo_Maxim6-3" xml:space="preserve">
+    <value>Sixth Maxim Third Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim6-3WordByWord" xml:space="preserve">
+    <value>When|becomes impossible|to give effect/attach a meaning|to a word/speech|it shall be neglected/is disregarded altogether</value>
+  </data>
+  <data name="IslamInfo_Maxim6-4" xml:space="preserve">
+    <value>Sixth Maxim Fourth Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim6-4WordByWord" xml:space="preserve">
+    <value>Not|shall be attributed/imputed|to|a silent person/one who keeps silent|an utterance/statement|(but|silence|in|case|of necessity|is pronouncement)</value>
+  </data>
+  <data name="IslamInfo_Maxim6-5" xml:space="preserve">
+    <value>Sixth Maxim Fifth Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim6-5WordByWord" xml:space="preserve">
+    <value>A mention/reference|of/to a part/some|of that which is|not|divisible|is like mention/reference|of/to the whole</value>
+  </data>
+  <data name="IslamInfo_Maxim6-6" xml:space="preserve">
+    <value>Sixth Maxim Sixth Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim6-6WordByWord" xml:space="preserve">
+    <value>The description|in|the present/presence|is meaningless/void/invalid/useless|but of|the absent|is valid/considerable</value>
+  </data>
+  <data name="IslamInfo_Maxim6-7" xml:space="preserve">
+    <value>Sixth Maxim Seventh Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim6-7WordByWord" xml:space="preserve">
+    <value>The question|should be repeated/is reiterated|in|the reply/answer/response</value>
+  </data>
+  <data name="IslamInfo_Maxim6-8-1" xml:space="preserve">
+    <value>Sixth Maxim Eighth Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim6-8-1WordByWord" xml:space="preserve">
+    <value>Establishment/giving new meaning|is better/more appropriate|than|emphasis/confirming the previous meaning</value>
+  </data>
+  <data name="IslamInfo_Maxim6-8-2" xml:space="preserve">
+    <value>Sixth Maxim Eighth Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim6-8-2WordByWord" xml:space="preserve">
+    <value>Usage|is better|than|repetition</value>
+  </data>
+  <data name="IslamInfo_Maxim6-9" xml:space="preserve">
+    <value>Sixth Maxim Ninth Subsidiary Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim6-9WordByWord" xml:space="preserve">
+    <value>The unspecified/absolute/unrestricted/unconditional|remains/will remain|on|its unrestricted state|as long as|not|found|evidence|of restriction|by text|or|indictation/deduced meaning</value>
+  </data>
+  <data name="IslamInfo_MaximComp1" xml:space="preserve">
+    <value>First Comprehensive Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximComp1WordByWord" xml:space="preserve">
+    <value>When|removed/no longer exists|the preventer|returns|the prevented</value>
+  </data>
+  <data name="IslamInfo_MaximComp2" xml:space="preserve">
+    <value>Second Comprehensive Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximComp2WordByWord" xml:space="preserve">
+    <value>What|is permitted|for a reason/excuse|is annulled/invalidated|with the removal of it/once its non-existent</value>
+  </data>
+  <data name="IslamInfo_MaximComp3" xml:space="preserve">
+    <value>Third Comprehensive Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximComp3WordByWord" xml:space="preserve">
+    <value>When|conflicts|the preventer/preclusive|and the necessitated|preference shall be given to|the prevent/preclusive</value>
+  </data>
+  <data name="IslamInfo_MaximComp4" xml:space="preserve">
+    <value>Fourth Comprehensive Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximComp4WordByWord" xml:space="preserve">
+    <value>What|is prohibited|to take it|is prohibited|to give it</value>
+  </data>
+  <data name="IslamInfo_MaximComp5" xml:space="preserve">
+    <value>Fifth Comprehensive Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximComp5WordByWord" xml:space="preserve">
+    <value>What|is prohibited|to use it|is prohibited|to keep it</value>
+  </data>
+  <data name="IslamInfo_MaximComp6" xml:space="preserve">
+    <value>Sixth Comprehensive Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximComp6WordByWord" xml:space="preserve">
+    <value>What|is prohibited|to do it|is prohibited|to demand/request it</value>
+  </data>
+  <data name="IslamInfo_MaximFollow1" xml:space="preserve">
+    <value>First Follower Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximFollow1WordByWord" xml:space="preserve">
+    <value>The follower|follows</value>
+  </data>
+  <data name="IslamInfo_MaximFollow2" xml:space="preserve">
+    <value>Second Follower Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximFollow2WordByWord" xml:space="preserve">
+    <value>The attachment|not|can/should be separated/independent|with/from the judgement</value>
+  </data>
+  <data name="IslamInfo_MaximFollow3" xml:space="preserve">
+    <value>Third Follower Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximFollow3WordByWord" xml:space="preserve">
+    <value>Whoever|owns|something|owns|that which|is|from/of|its necessary components</value>
+  </data>
+  <data name="IslamInfo_MaximFollow4" xml:space="preserve">
+    <value>Fourth Follower Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximFollow4WordByWord" xml:space="preserve">
+    <value>Absolved/overlooked|in|the follower/attachment|that which|not|can be absolved/overlooked|in the thing being followed/attached</value>
+  </data>
+  <data name="IslamInfo_MaximFollow5" xml:space="preserve">
+    <value>Fifth Follower Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximFollow5WordByWord" xml:space="preserve">
+    <value>The follower|not|will go ahead/get priority/precede|upon|the thing being followed</value>
+  </data>
+  <data name="IslamInfo_MaximFollow6" xml:space="preserve">
+    <value>Sixth Follower Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximFollow6WordByWord" xml:space="preserve">
+    <value>If|cancelled/becomes void|the thing being followed/attached|cancelled/becomes void|the attachment/follower|or|the attachment/follower|becomes invalid|with the invalidity|of the thing being attached/followed</value>
+  </data>
+  <data name="IslamInfo_MaximRootDeriv1" xml:space="preserve">
+    <value>First Root Derivative Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximRootDeriv1WordByWord" xml:space="preserve">
+    <value>When|is invalid|the origin/root|shall be invalid|the derivative/branch</value>
+  </data>
+  <data name="IslamInfo_MaximRootDeriv2" xml:space="preserve">
+    <value>Second Root Derivative Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximRootDeriv2WordByWord" xml:space="preserve">
+    <value>When|is void|something|shall be void|that which|in|its inside</value>
+  </data>
+  <data name="IslamInfo_MaximRootDeriv3" xml:space="preserve">
+    <value>Third Root Derivative Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximRootDeriv3WordByWord" xml:space="preserve">
+    <value>What is waived|not|can/will be restored|as if|that|non-existent|not|can be restored</value>
+  </data>
+  <data name="IslamInfo_MaximRootDeriv4" xml:space="preserve">
+    <value>Fourth Root Derivative Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximRootDeriv4WordByWord" xml:space="preserve">
+    <value>May|be valid|the derivative|without|the root</value>
+  </data>
+  <data name="IslamInfo_MaximRootDeriv5" xml:space="preserve">
+    <value>Fifth Root Derivative Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximRootDeriv5WordByWord" xml:space="preserve">
+    <value>When|becomes void|the root|becomes sought|to|the substitute</value>
+  </data>
+  <data name="IslamInfo_MaximLiability1" xml:space="preserve">
+    <value>First Liability Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximLiability1WordByWord" xml:space="preserve">
+    <value>Yield/profits/land-tax/duty|are with/accompanied by liability for loss/compensation/guarantee/responsibility/</value>
+  </data>
+  <data name="IslamInfo_MaximLiability2" xml:space="preserve">
+    <value>Second Liability Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximLiability2WordByWord" xml:space="preserve">
+    <value>The loss/risk of loss|with/accompanies the gain/profit</value>
+  </data>
+  <data name="IslamInfo_MaximLiability3" xml:space="preserve">
+    <value>Third Liability Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximLiability3WordByWord" xml:space="preserve">
+    <value>The good turn/favor|is in proportion to|the bad turn/misfortune/adversity|and the bad turn/misfortune/adversity|is in proportion to|the good turn/favor</value>
+  </data>
+  <data name="IslamInfo_MaximLiability4" xml:space="preserve">
+    <value>Fourth Liability Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximLiability4WordByWord" xml:space="preserve">
+    <value>Payment of hire|and liability to compensation|not|will be combined/can go together/be possibly inclusive</value>
+  </data>
+  <data name="IslamInfo_MaximLiability5" xml:space="preserve">
+    <value>Fifth Liability Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximLiability5WordByWord" xml:space="preserve">
+    <value>Permissibility/permission|religious/legal|excludes/nullifies|liability for compensation</value>
+  </data>
+  <data name="IslamInfo_MaximLiability6" xml:space="preserve">
+    <value>Sixth Liability Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximLiability6WordByWord" xml:space="preserve">
+    <value>The basic principle|in|compensation|is that|compensates|the like/same thing|with its like|and the valuable thing|with its value/price</value>
+  </data>
+  <data name="IslamInfo_MaximLiability7" xml:space="preserve">
+    <value>Seventh Liability Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximLiability7WordByWord" xml:space="preserve">
+    <value>The perpetrator/executor/person who performs an act|is liable to make good any loss caused thereby|even though|not|did he intend</value>
+  </data>
+  <data name="IslamInfo_MaximLiability8" xml:space="preserve">
+    <value>Eighth Liability Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximLiability8WordByWord" xml:space="preserve">
+    <value>When|gathers/presents|the direct performer/perpetrator of an act|and the person who is the cause|linked/imposed|the ruling|to|the direct performer/perpetrator of an act</value>
+  </data>
+  <data name="IslamInfo_MaximLiability9" xml:space="preserve">
+    <value>Ninth Liability Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximLiability9WordByWord" xml:space="preserve">
+    <value>The causer/person who is the cause of an act being performed|not|will compensate/be liable to make good any loss caused|unless|with intention</value>
+  </data>
+  <data name="IslamInfo_MaximLiability10" xml:space="preserve">
+    <value>Tenth Liability Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximLiability10WordByWord" xml:space="preserve">
+    <value>Damage/crime|of the animal|is not liability/squander</value>
+  </data>
+  <data name="IslamInfo_MaximProperty1" xml:space="preserve">
+    <value>First Property Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximProperty1WordByWord" xml:space="preserve">
+    <value>Not|it is permitted|for anyone|that|disposes|in|the property|of another|without|permission of the owner</value>
+  </data>
+  <data name="IslamInfo_MaximProperty2" xml:space="preserve">
+    <value>Second Property Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximProperty2WordByWord" xml:space="preserve">
+    <value>Enjoining/telling|to dispose/make disposition|in|the property|of others|is void/invalid</value>
+  </data>
+  <data name="IslamInfo_MaximProperty3" xml:space="preserve">
+    <value>Third Property Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximProperty3WordByWord" xml:space="preserve">
+    <value>Not|it is permitted|for anyone|that|takes|the wealth/property|of anyone|without|a reason|legal</value>
+  </data>
+  <data name="IslamInfo_MaximProperty4" xml:space="preserve">
+    <value>Fourth Property Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximProperty4WordByWord" xml:space="preserve">
+    <value>Whoever|possesses before others|to|anything permissible|then certainly|he would/will own it</value>
+  </data>
+  <data name="IslamInfo_MaximProperty5" xml:space="preserve">
+    <value>Fifth Property Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximProperty5WordByWord" xml:space="preserve">
+    <value>Change in|the cause|of ownership of a thing|entails|position/place|changing|of that thing itself</value>
+  </data>
+  <data name="IslamInfo_MaximCondition1" xml:space="preserve">
+    <value>First Condition Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximCondition1WordByWord" xml:space="preserve">
+    <value>What is dependent|with/on a condition|must be|fulfilled|once that/when|is fulfilled|the condition</value>
+  </data>  
+  <data name="IslamInfo_MaximCondition2" xml:space="preserve">
+    <value>Second Condition Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximCondition2WordByWord" xml:space="preserve">
+    <value>Shall be binding|conformity|of/to a condition|as far as|possible</value>
+  </data>  
+  <data name="IslamInfo_MaximCondition3" xml:space="preserve">
+    <value>Third Condition Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximCondition3WordByWord" xml:space="preserve">
+    <value>Agreements/promises|in the shape of|conditions/conditional dependents|are obligatory</value>
+  </data>  
+  <data name="IslamInfo_MaximCondition4" xml:space="preserve">
+    <value>Fourth Condition Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximCondition4WordByWord" xml:space="preserve">
+    <value>The thing|when|is serious/great|its position|deemed serious/given importance|in it|increased|its conditions</value>
+  </data>  
+  <data name="IslamInfo_MaximCondition5" xml:space="preserve">
+    <value>Fifth Condition Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximCondition5WordByWord" xml:space="preserve">
+    <value>What|is established|by Islamic law|is prioritized/given priority|over|what|is established|by condition</value>
+  </data>  
+  <data name="IslamInfo_MaximCondition6" xml:space="preserve">
+    <value>Sixth Condition Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximCondition6WordByWord" xml:space="preserve">
+    <value>Every|condition|without/which is contrary to|the ruling|of Islamic law|is void</value>
+  </data>  
+  <data name="IslamInfo_MaximOther1" xml:space="preserve">
+    <value>First Other Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximOther1WordByWord" xml:space="preserve">
+    <value>The easy thing|not|shall be waived|by/because of the difficult thing</value>
+  </data>
+  <data name="IslamInfo_MaximOther2" xml:space="preserve">
+    <value>Second Other Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximOther2WordByWord" xml:space="preserve">
+    <value>Who/what is preoccupied/busy with a job|not|can be busy with another</value>
+  </data>
+  <data name="IslamInfo_MaximOther3" xml:space="preserve">
+    <value>Third Other Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximOther3WordByWord" xml:space="preserve">
+    <value>Continuance|is easier|than|commencement</value>
+  </data>
+  <data name="IslamInfo_MaximOther4" xml:space="preserve">
+    <value>Fourth Other Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximOther4WordByWord" xml:space="preserve">
+    <value>Things shall/can be absolved|in|continuance|what|not|can be absolved|in|commencement/the time of commencement</value>
+  </data>
+  <data name="IslamInfo_MaximOther5" xml:space="preserve">
+    <value>Fifth Other Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximOther5WordByWord" xml:space="preserve">
+    <value>Prevention|is easier|than|lifting/abrogation/abolition/cancellation</value>
+  </data>
+  <data name="IslamInfo_MaximOther6" xml:space="preserve">
+    <value>Sixth Other Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximOther6WordByWord" xml:space="preserve">
+    <value>Disposition|on|property of people/dependents|is contingent/dependent|upon interest</value>
+  </data>
+  <data name="IslamInfo_MaximOther7" xml:space="preserve">
+    <value>Seventh Other Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximOther7WordByWord" xml:space="preserve">
+    <value>What is established|by a proof|is as that established|by seeing</value>
+  </data>
+  <data name="IslamInfo_MaximOther8" xml:space="preserve">
+    <value>Eighth Other Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximOther8WordByWord" xml:space="preserve">
+    <value>A person|is bound|by his admission/confession|/|the confession|of a person|on/against|himself|is accepted</value>
+  </data>
+  <data name="IslamInfo_MaximOther9" xml:space="preserve">
+    <value>Ninth Other Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximOther9WordByWord" xml:space="preserve">
+    <value>Evidence|is proof|adequate|and admission|is proof|inadequate against others</value>
+  </data>
+  <data name="IslamInfo_MaximOther10" xml:space="preserve">
+    <value>Tenth Other Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximOther10WordByWord" xml:space="preserve">
+    <value>No/nullifies|proof/evidence|with|contradiction|but|not|invalidates/does get invalid|with it|a judgement|of a judge/which has already been passed</value>
+  </data>
+  <data name="IslamInfo_MaximOther11" xml:space="preserve">
+    <value>Eleventh Other Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximOther11WordByWord" xml:space="preserve">
+    <value>The unknown|in|Islamic law|as/is treated like the non-existent|and the impossible|upon it/to know</value>
+  </data>
+  <data name="IslamInfo_MaximOther12" xml:space="preserve">
+    <value>Twelfth Other Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximOther12WordByWord" xml:space="preserve">
+    <value>Is to be attributed|action|to|the actor/doer|not|the person who commanded|that which|not|was|forced</value>
+  </data>
+  <data name="IslamInfo_MaximOther13" xml:space="preserve">
+    <value>Thirteenth Other Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximOther13WordByWord" xml:space="preserve">
+    <value>Not|will be completed|the donation|except/until|with receipt/received</value>
+  </data>
+  <data name="IslamInfo_MaximOther14" xml:space="preserve">
+    <value>Fourteenth Other Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximOther14WordByWord" xml:space="preserve">
+    <value>Not has|the planter/tree/branch of the tree|unjust|a right</value>
+  </data>
+  <data name="IslamInfo_MaximOther15" xml:space="preserve">
+    <value>Fifteenth Other Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximOther15WordByWord" xml:space="preserve">
+    <value>What|is close to|the original thing|will be given|its ruling</value>
+  </data>
+  <data name="IslamInfo_MaximOther16" xml:space="preserve">
+    <value>Sixteenth Other Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximOther16WordByWord" xml:space="preserve">
+    <value>What/anything|not|does get fulfilled|obligation|except/unless|by/with it|is|an obligation</value>
+  </data>
+  <data name="IslamInfo_MaximOther17" xml:space="preserve">
+    <value>Seventeenth Other Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximOther17WordByWord" xml:space="preserve">
+    <value>No|room|for hard work/deriving legal rulings/individual, independent judgment based on reasoned inference|in/where|there is|a decisive text</value>
+  </data>
+  <data name="IslamInfo_MaximOther18" xml:space="preserve">
+    <value>Eighteenth Other Maxim</value>
+  </data>
+  <data name="IslamInfo_MaximOther18WordByWord" xml:space="preserve">
+    <value>Hard work/deriving legal rulings/individual, independent judgment based on reasoned inference|not|can be invalidated|by its like/the same</value>
+  </data>
+  <data name="IslamInfo_LegalMaxims" xml:space="preserve">
+  	<value>Legal Maxims</value>
   </data>
 </root>
