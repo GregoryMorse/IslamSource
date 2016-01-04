@@ -578,29 +578,35 @@ Public Class Arabic
         End If
         Return ArabicString
     End Function
-    Public Shared Function ChangeScript(ArabicString As String, ScriptType As TanzilReader.QuranScripts, ByVal PreString As String, ByVal PostString As String) As String
-        If ScriptType = TanzilReader.QuranScripts.UthmaniMin Then
-            ArabicString = UnjoinContig(ProcessTransform(JoinContig(ArabicString, PreString, PostString, False, False, Nothing), CachedData.RuleTranslations("UthmaniMinimalScript"), False), PreString, PostString)
-        ElseIf ScriptType = TanzilReader.QuranScripts.SimpleEnhanced Then
-            Dim ScriptCombine As New List(Of IslamMetadata.IslamData.RuleTranslationCategory.RuleTranslation)
-            ScriptCombine.AddRange(CachedData.RuleTranslations("SimpleScriptBase"))
-            ScriptCombine.AddRange(CachedData.RuleTranslations("SimpleEnhancedScript"))
-            ArabicString = UnjoinContig(ProcessTransform(JoinContig(ArabicString, PreString, PostString, False, False, Nothing), ScriptCombine.ToArray(), False), PreString, PostString)
-        ElseIf ScriptType = TanzilReader.QuranScripts.Simple Then
-            Dim ScriptCombine As New List(Of IslamMetadata.IslamData.RuleTranslationCategory.RuleTranslation)
-            ScriptCombine.AddRange(CachedData.RuleTranslations("SimpleScriptBase"))
-            ScriptCombine.AddRange(CachedData.RuleTranslations("SimpleScript"))
-            ArabicString = UnjoinContig(ProcessTransform(JoinContig(ArabicString, PreString, PostString, False, False, Nothing), ScriptCombine.ToArray(), False), PreString, PostString)
-        ElseIf ScriptType = TanzilReader.QuranScripts.SimpleClean Then
-            Dim ScriptCombine As New List(Of IslamMetadata.IslamData.RuleTranslationCategory.RuleTranslation)
-            ScriptCombine.AddRange(CachedData.RuleTranslations("SimpleScriptBase"))
-            ScriptCombine.AddRange(CachedData.RuleTranslations("SimpleCleanScript"))
-            ArabicString = UnjoinContig(ProcessTransform(JoinContig(ArabicString, PreString, PostString, False, False, Nothing), ScriptCombine.ToArray(), False), PreString, PostString)
-        ElseIf ScriptType = TanzilReader.QuranScripts.SimpleMin Then
-            Dim ScriptCombine As New List(Of IslamMetadata.IslamData.RuleTranslationCategory.RuleTranslation)
-            ScriptCombine.AddRange(CachedData.RuleTranslations("SimpleScriptBase"))
-            ScriptCombine.AddRange(CachedData.RuleTranslations("SimpleMinimalScript"))
-            ArabicString = UnjoinContig(ProcessTransform(JoinContig(ArabicString, PreString, PostString, False, False, Nothing), ScriptCombine.ToArray(), False), PreString, PostString)
+    Public Shared Function ChangeScript(ArabicString As String, SrcScriptType As TanzilReader.QuranScripts, ScriptType As TanzilReader.QuranScripts, ByVal PreString As String, ByVal PostString As String) As String
+        If SrcScriptType = TanzilReader.QuranScripts.Uthmani Then
+            If ScriptType = TanzilReader.QuranScripts.UthmaniMin Then
+                ArabicString = UnjoinContig(ProcessTransform(JoinContig(ArabicString, PreString, PostString, False, False, Nothing), CachedData.RuleTranslations("UthmaniMinimalScript"), False), PreString, PostString)
+            ElseIf ScriptType = TanzilReader.QuranScripts.SimpleEnhanced Then
+                Dim ScriptCombine As New List(Of IslamMetadata.IslamData.RuleTranslationCategory.RuleTranslation)
+                ScriptCombine.AddRange(CachedData.RuleTranslations("SimpleScriptBase"))
+                ScriptCombine.AddRange(CachedData.RuleTranslations("SimpleEnhancedScript"))
+                ArabicString = UnjoinContig(ProcessTransform(JoinContig(ArabicString, PreString, PostString, False, False, Nothing), ScriptCombine.ToArray(), False), PreString, PostString)
+            ElseIf ScriptType = TanzilReader.QuranScripts.Simple Then
+                Dim ScriptCombine As New List(Of IslamMetadata.IslamData.RuleTranslationCategory.RuleTranslation)
+                ScriptCombine.AddRange(CachedData.RuleTranslations("SimpleScriptBase"))
+                ScriptCombine.AddRange(CachedData.RuleTranslations("SimpleScript"))
+                ArabicString = UnjoinContig(ProcessTransform(JoinContig(ArabicString, PreString, PostString, False, False, Nothing), ScriptCombine.ToArray(), False), PreString, PostString)
+            ElseIf ScriptType = TanzilReader.QuranScripts.SimpleClean Then
+                Dim ScriptCombine As New List(Of IslamMetadata.IslamData.RuleTranslationCategory.RuleTranslation)
+                ScriptCombine.AddRange(CachedData.RuleTranslations("SimpleScriptBase"))
+                ScriptCombine.AddRange(CachedData.RuleTranslations("SimpleCleanScript"))
+                ArabicString = UnjoinContig(ProcessTransform(JoinContig(ArabicString, PreString, PostString, False, False, Nothing), ScriptCombine.ToArray(), False), PreString, PostString)
+            ElseIf ScriptType = TanzilReader.QuranScripts.SimpleMin Then
+                Dim ScriptCombine As New List(Of IslamMetadata.IslamData.RuleTranslationCategory.RuleTranslation)
+                ScriptCombine.AddRange(CachedData.RuleTranslations("SimpleScriptBase"))
+                ScriptCombine.AddRange(CachedData.RuleTranslations("SimpleMinimalScript"))
+                ArabicString = UnjoinContig(ProcessTransform(JoinContig(ArabicString, PreString, PostString, False, False, Nothing), ScriptCombine.ToArray(), False), PreString, PostString)
+            End If
+        ElseIf SrcScriptType = TanzilReader.QuranScripts.UthmaniMin Then
+            If ScriptType = TanzilReader.QuranScripts.Uthmani Then
+                ArabicString = UnjoinContig(ProcessTransform(JoinContig(ArabicString, PreString, PostString, False, False, Nothing), CachedData.RuleTranslations("ReverseUthmaniMinimalScript"), False), PreString, PostString)
+            End If
         End If
         Return ArabicString
     End Function
@@ -650,7 +656,7 @@ Public Class Arabic
         If Index <> -1 Then PreString = PreString.Substring(Index + 1)
         If PreString <> String.Empty Then PreString += " " + ArabicData.ArabicEndOfAyah + " "
         Index = PostString.IndexOf(" "c)
-        If Index = 2 Then Index = PreString.IndexOf(" "c, Index + 1)
+        If Index = 2 Then Index = PostString.IndexOf(" "c, Index + 1)
         If Index <> -1 Then PostString = PostString.Substring(0, Index)
         If PostString <> String.Empty Then PostString = " " + ArabicData.ArabicEndOfAyah + " " + PostString
         If Not OptionalStops Is Nothing Then
@@ -5510,9 +5516,13 @@ Public Class TanzilReader
             Loop While Total <= TargetTotal And SubCount <= Verses(Count).Length - 1 Or TargetTotal <= Total And TargetSubCount <= TargetVerses(Count).Length - 1
         Next
     End Sub
-    Public Shared Sub ChangeQuranFormat(BaseText As QuranTexts, TargetBaseText As QuranTexts, ScriptType As QuranScripts, Presentation As ArabicPresentation)
+    Public Shared Sub ChangeQuranFormat(BaseText As QuranTexts, TargetBaseText As QuranTexts, SrcScriptType As QuranScripts, ScriptType As QuranScripts, Presentation As ArabicPresentation)
         Dim Doc As New System.Xml.XmlDocument
-        Doc.Load(Utility.GetFilePath("metadata\" + QuranTextNames(BaseText) + ".xml"))
+        If SrcScriptType = QuranScripts.Uthmani Then
+            Doc.Load(Utility.GetFilePath("metadata\" + QuranTextNames(BaseText) + ".xml"))
+        Else
+            Doc.Load(Utility.GetFilePath("IslamMetadata\quran-" + QuranFileNames(SrcScriptType) + ".xml"))
+        End If
         Dim Verses As Collections.Generic.List(Of String())
         Dim UseBuckwalter As Boolean = False
         Dim Path As String
@@ -5543,7 +5553,7 @@ Public Class TanzilReader
                         PreVerse = GetTextVerse(GetTextChapter(Doc, Count), GetTextChapter(Doc, Count).ChildNodes.Count - 1).Attributes.GetNamedItem("text").Value
                         If UseBuckwalter Then PreVerse = Arabic.TransliterateFromBuckwalter(PreVerse)
                     End If
-                    CurVerse.Attributes.GetNamedItem("bismillah").Value = If(BaseText = TargetBaseText, Arabic.ChangeScript(CurVerse.Attributes.GetNamedItem("bismillah").Value, ScriptType, PreVerse, CurVerse.Attributes.GetNamedItem("text").Value), Arabic.ChangeBaseScript(CurVerse.Attributes.GetNamedItem("bismillah").Value, TargetBaseText, PreVerse, CurVerse.Attributes.GetNamedItem("text").Value))
+                    CurVerse.Attributes.GetNamedItem("bismillah").Value = If(BaseText = TargetBaseText, Arabic.ChangeScript(CurVerse.Attributes.GetNamedItem("bismillah").Value, SrcScriptType, ScriptType, PreVerse, CurVerse.Attributes.GetNamedItem("text").Value), Arabic.ChangeBaseScript(CurVerse.Attributes.GetNamedItem("bismillah").Value, TargetBaseText, PreVerse, CurVerse.Attributes.GetNamedItem("text").Value))
                     If UseBuckwalter Then
                         CurVerse.Attributes.GetNamedItem("bismillah").Value = Arabic.TransliterateToScheme(CurVerse.Attributes.GetNamedItem("bismillah").Value, ArabicData.TranslitScheme.Literal, String.Empty, Nothing)
                     End If
@@ -5560,7 +5570,7 @@ Public Class TanzilReader
                     PreVerse = GetTextVerse(ChapterNode, SubCount).Attributes.GetNamedItem("text").Value
                 End If
                 If UseBuckwalter Then PreVerse = Arabic.TransliterateFromBuckwalter(PreVerse)
-                CurVerse.Attributes.GetNamedItem("text").Value = If(BaseText = TargetBaseText, Arabic.ChangeScript(CurVerse.Attributes.GetNamedItem("text").Value, ScriptType, PreVerse, NextVerse), Arabic.ChangeBaseScript(CurVerse.Attributes.GetNamedItem("text").Value, TargetBaseText, PreVerse, NextVerse))
+                CurVerse.Attributes.GetNamedItem("text").Value = If(BaseText = TargetBaseText, Arabic.ChangeScript(CurVerse.Attributes.GetNamedItem("text").Value, SrcScriptType, ScriptType, PreVerse, NextVerse), Arabic.ChangeBaseScript(CurVerse.Attributes.GetNamedItem("text").Value, TargetBaseText, PreVerse, NextVerse))
                 If UseBuckwalter Then
                     CurVerse.Attributes.GetNamedItem("text").Value = Arabic.TransliterateToScheme(CurVerse.Attributes.GetNamedItem("text").Value, ArabicData.TranslitScheme.Literal, String.Empty, Nothing)
                 End If
