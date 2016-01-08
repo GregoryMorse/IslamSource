@@ -2551,13 +2551,14 @@ Public Class CachedData
         Next
         Return String.Empty
     End Function
+    Private Shared Characteristics As String() = {"Audibility", "Whispering", "Weakness", "Moderation", "Strength", "Lowness", "Elevation", "Opening", "Closing", "Restraint", "Fluency", "Vibration", "Inclination", "Repetition", "Whistling", "Diffusion", "Elongation", "Nasal", "Ease"}
+    Private Shared PatternAllowed As String() = {"ArabicSpecialLetters", "ArabicAssimilateSameWord", "ArabicAssimilateAcrossWord", "ArabicAssimilateLeenAcrossWord", "ArabicBehSakinCombos", "ArabicTehSakinCombos", "ArabicThehSakinCombos", "ArabicJeemSakinCombos", "ArabicHahSakinCombos", "ArabicKhahSakinCombos", "ArabicDalSakinCombos", "ArabicThalSakinCombos", "ArabicRehSakinCombos", "ArabicZainSakinCombos", "ArabicSeenSakinCombos", "ArabicSheenSakinCombos", "ArabicSadSakinCombos", "ArabicDadSakinCombos", "ArabicTahSakinCombos", "ArabicZahSakinCombos", "ArabicAinSakinCombos", "ArabicGhainSakinCombos", "ArabicFehSakinCombos", "ArabicQafSakinCombos", "ArabicKafSakinCombos", "ArabicLamSakinCombos", "ArabicMeemSakinCombos", "ArabicNoonSakinCombos", "ArabicHehSakinCombos", "ArabicWawSakinCombos", "ArabicYehSakinCombos", "ArabicHamzaSakinCombos"}
     Public Shared Function GetGroup(Name As String) As String()
-        Dim Characteristics As String() = {"Audibility", "Whispering", "Weakness", "Moderation", "Strength", "Lowness", "Elevation", "Opening", "Closing", "Restraint", "Fluency", "Vibration", "Inclination", "Repetition", "Whistling", "Diffusion", "Elongation", "Nasal", "Ease"}
         Dim Count As Integer
         If _SavedGroups.ContainsKey(Name) Then Return _SavedGroups(Name)
         For Count = 0 To CachedData.IslamData.ArabicGroups.Length - 1
             If CachedData.IslamData.ArabicGroups(Count).Name = Name Then
-                _SavedGroups.Add(Name, Array.ConvertAll(CachedData.IslamData.ArabicGroups(Count).Text, Function(Str As String) TranslateRegEx(Str, Name = "ArabicSpecialLetters" Or Name = "ArabicAssimilateSameWord" Or Name = "ArabicAssimilateAcrossWord" Or Name = "ArabicAssimilateLeenAcrossWord" Or Array.IndexOf(Characteristics, Name) <> -1)))
+                _SavedGroups.Add(Name, Array.ConvertAll(CachedData.IslamData.ArabicGroups(Count).Text, Function(Str As String) TranslateRegEx(Str, Array.IndexOf(PatternAllowed, Name) <> -1 Or Array.IndexOf(Characteristics, Name) <> -1)))
                 Return _SavedGroups(Name)
             End If
         Next
