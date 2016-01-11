@@ -1728,7 +1728,7 @@ class Arabic
         if ($index !== -1) { $preString = substr($preString, $index + 1); }
         if ($preString !== "") { $preString .= " " . ArabicData::$ArabicEndOfAyah . " "; }
         $index = strpos($postString, " ");
-        if ($index === 2) { $index = strpos($preString, " ", $index + 1); }
+        if ($index === 1) { $index = strpos($preString, " ", $index + 1); }
         if ($index !== -1) { $postString = substr($postString, 0, $index); }
         if ($postString !== "") { $postString = " " . ArabicData::$ArabicEndOfAyah . " " . $postString; }
         return $preString . $arabicString . $postString;
