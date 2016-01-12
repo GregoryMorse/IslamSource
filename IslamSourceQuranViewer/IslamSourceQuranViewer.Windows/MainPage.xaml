@@ -6,13 +6,32 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
-
+    <Page.Resources>
+        <Style x:Key="TitleStyle" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="LightGray"/>
+            <Setter Property="FontFamily" Value="Global User Interface"/>
+        </Style>
+        <CollectionViewSource x:Name="QuranDivisions" Source="{Binding Path=ViewModel.Items}"></CollectionViewSource>
+    </Page.Resources>
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <FlipView Margin="0,0,0,0">
-            <Button Content="Chapters"/>
-            <Button/>
-            <FlipViewItem/>
-        </FlipView>
-
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <ListBox x:Name="tabListBox" Grid.Row="0" ItemsSource="{Binding Source={StaticResource QuranDivisions}}" 
+                        SelectedItem="{Binding SelectedItem, Mode=TwoWay}" 
+                        BorderBrush="{x:Null}" BorderThickness="0" FontFamily="Global User Interface">
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Horizontal" />
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Title}" Margin="5" 
+                        Style="{StaticResource TitleStyle}" FontFamily="Global User Interface"/>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
     </Grid>
 </Page>
