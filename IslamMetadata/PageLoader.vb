@@ -3243,18 +3243,18 @@ Public Class CachedData
     Shared _XMLDocMain As System.Xml.XmlDocument 'Tanzil Quran data
     Shared _XMLDocInfo As System.Xml.XmlDocument 'Tanzil metadata
     Shared _XMLDocInfos As Collections.Generic.List(Of System.Xml.XmlDocument) 'Hadiths
-    Shared _RootDictionary As New Generic.Dictionary(Of String, ArrayList)
-    Shared _FormDictionary As New Generic.Dictionary(Of String, ArrayList)
-    Shared _TagDictionary As New Generic.Dictionary(Of String, Generic.Dictionary(Of String, ArrayList))
-    Shared _WordDictionary As New Generic.Dictionary(Of String, ArrayList)
-    Shared _RealWordDictionary As New Generic.Dictionary(Of String, ArrayList)
-    Shared _LetterDictionary As New Generic.Dictionary(Of Char, Generic.Dictionary(Of String, ArrayList))
-    Shared _LetterPreDictionary As New Generic.Dictionary(Of Char, Generic.Dictionary(Of String, ArrayList))
-    Shared _LetterSufDictionary As New Generic.Dictionary(Of Char, Generic.Dictionary(Of String, ArrayList))
-    Shared _PreDictionary As New Generic.Dictionary(Of String, ArrayList)
-    Shared _SufDictionary As New Generic.Dictionary(Of String, ArrayList)
+    Shared _RootDictionary As New Generic.Dictionary(Of String, List(Of Integer()))
+    Shared _FormDictionary As New Generic.Dictionary(Of String, List(Of Integer()))
+    Shared _TagDictionary As New Generic.Dictionary(Of String, Generic.Dictionary(Of String, List(Of Integer())))
+    Shared _WordDictionary As New Generic.Dictionary(Of String, List(Of String))
+    Shared _RealWordDictionary As New Generic.Dictionary(Of String, List(Of Integer()))
+    Shared _LetterDictionary As New Generic.Dictionary(Of Char, Generic.Dictionary(Of String, List(Of Integer())))
+    Shared _LetterPreDictionary As New Generic.Dictionary(Of Char, Generic.Dictionary(Of String, List(Of Integer())))
+    Shared _LetterSufDictionary As New Generic.Dictionary(Of Char, Generic.Dictionary(Of String, List(Of Integer())))
+    Shared _PreDictionary As New Generic.Dictionary(Of String, List(Of Integer()))
+    Shared _SufDictionary As New Generic.Dictionary(Of String, List(Of Integer()))
     Shared _LocDictionary As New Generic.Dictionary(Of String, Object())
-    Shared _IsolatedLetterDictionary As New Generic.Dictionary(Of Char, ArrayList)
+    Shared _IsolatedLetterDictionary As New Generic.Dictionary(Of Char, List(Of Integer()))
     Shared _TotalLetters As Integer = 0
     Shared _TotalIsolatedLetters As Integer = 0
     Shared _PartUniqueArray(TanzilReader.GetPartCount() - 1) As Generic.List(Of String)
@@ -3274,16 +3274,16 @@ Public Class CachedData
                 'FORM can be found identically in tanzil
                 If Pieces(0).Chars(0) = "(" Then
                     If Not _FormDictionary.ContainsKey(Pieces(1)) Then
-                        _FormDictionary.Add(Pieces(1), New ArrayList)
+                        _FormDictionary.Add(Pieces(1), New List(Of Integer()))
                     End If
                     'TAG
                     If Not _TagDictionary.ContainsKey(Pieces(2)) Then
-                        _TagDictionary.Add(Pieces(2), New Generic.Dictionary(Of String, ArrayList))
+                        _TagDictionary.Add(Pieces(2), New Generic.Dictionary(Of String, List(Of Integer())))
                     End If
                     Dim Location As Integer() = Array.ConvertAll(Pieces(0).TrimStart("("c).TrimEnd(")"c).Split(":"c), Function(Str As String) CInt(Str))
                     _FormDictionary.Item(Pieces(1)).Add(Location)
                     If Not _TagDictionary.Item(Pieces(2)).ContainsKey(Pieces(1)) Then
-                        _TagDictionary.Item(Pieces(2)).Add(Pieces(1), New ArrayList)
+                        _TagDictionary.Item(Pieces(2)).Add(Pieces(1), New List(Of Integer()))
                     End If
                     _TagDictionary.Item(Pieces(2)).Item(Pieces(1)).Add(Location)
                     Dim Parts As String() = Pieces(3).Split("|"c)
@@ -3297,18 +3297,18 @@ Public Class CachedData
                             Lem = Pieces(1)
                         End If
                         If Not _WordDictionary.ContainsKey(Lem) Then
-                            _WordDictionary.Add(Lem, New ArrayList)
+                            _WordDictionary.Add(Lem, New List(Of String))
                         End If
                         If _WordDictionary.Item(Lem).IndexOf(Pieces(1)) = -1 Then _WordDictionary.Item(Lem).Add(Pieces(1))
                     End If
                     If Array.Find(Parts, Function(Str As String) Str = "PREFIX") <> String.Empty Then
                         If Not _PreDictionary.ContainsKey(Pieces(1)) Then
-                            _PreDictionary.Add(Pieces(1), New ArrayList)
+                            _PreDictionary.Add(Pieces(1), New List(Of Integer()))
                         End If
                         _PreDictionary.Item(Pieces(1)).Add(Location)
                     ElseIf Array.Find(Parts, Function(Str As String) Str = "SUFFIX") <> String.Empty Then
                         If Not _SufDictionary.ContainsKey(Pieces(1)) Then
-                            _SufDictionary.Add(Pieces(1), New ArrayList)
+                            _SufDictionary.Add(Pieces(1), New List(Of Integer()))
                         End If
                         _SufDictionary.Item(Pieces(1)).Add(Location)
                     End If
@@ -3317,7 +3317,7 @@ Public Class CachedData
                     If Root <> String.Empty Then
                         Root = Root.Replace("ROOT:", String.Empty)
                         If Not _RootDictionary.ContainsKey(Root) Then
-                            _RootDictionary.Add(Root, New ArrayList)
+                            _RootDictionary.Add(Root, New List(Of Integer()))
                         End If
                         _RootDictionary.Item(Root).Add(Location)
                     End If
@@ -3353,14 +3353,14 @@ Public Class CachedData
                 Dim UniCount As Integer = 0
                 For RefCount = 0 To CachedData.WordDictionary(FreqArray(SubCount)).Count - 1
                     For FormCount As Integer = 0 To CachedData.FormDictionary(CStr(CachedData.WordDictionary(FreqArray(SubCount))(RefCount))).Count - 1
-                        If (CType(CachedData.FormDictionary(CStr(CachedData.WordDictionary(FreqArray(SubCount))(RefCount)))(FormCount), Integer())(0) = BaseChapter AndAlso _
-                            CType(CachedData.FormDictionary(CStr(CachedData.WordDictionary(FreqArray(SubCount))(RefCount)))(FormCount), Integer())(1) >= BaseVerse AndAlso _
+                        If (CachedData.FormDictionary(CStr(CachedData.WordDictionary(FreqArray(SubCount))(RefCount)))(FormCount)(0) = BaseChapter AndAlso _
+                            CachedData.FormDictionary(CStr(CachedData.WordDictionary(FreqArray(SubCount))(RefCount)))(FormCount)(1) >= BaseVerse AndAlso _
                             (BaseChapter <> Chapter OrElse _
-                            CType(CachedData.FormDictionary(CStr(CachedData.WordDictionary(FreqArray(SubCount))(RefCount)))(FormCount), Integer())(1) <= Verse)) OrElse _
-                            (CType(CachedData.FormDictionary(CStr(CachedData.WordDictionary(FreqArray(SubCount))(RefCount)))(FormCount), Integer())(0) > BaseChapter AndAlso _
-                            CType(CachedData.FormDictionary(CStr(CachedData.WordDictionary(FreqArray(SubCount))(RefCount)))(FormCount), Integer())(0) < Chapter) OrElse _
-                            (CType(CachedData.FormDictionary(CStr(CachedData.WordDictionary(FreqArray(SubCount))(RefCount)))(FormCount), Integer())(0) = Chapter AndAlso
-                            CType(CachedData.FormDictionary(CStr(CachedData.WordDictionary(FreqArray(SubCount))(RefCount)))(FormCount), Integer())(1) <= Verse) Then
+                            CachedData.FormDictionary(CStr(CachedData.WordDictionary(FreqArray(SubCount))(RefCount)))(FormCount)(1) <= Verse)) OrElse _
+                            (CachedData.FormDictionary(CStr(CachedData.WordDictionary(FreqArray(SubCount))(RefCount)))(FormCount)(0) > BaseChapter AndAlso _
+                            CachedData.FormDictionary(CStr(CachedData.WordDictionary(FreqArray(SubCount))(RefCount)))(FormCount)(0) < Chapter) OrElse _
+                            (CachedData.FormDictionary(CStr(CachedData.WordDictionary(FreqArray(SubCount))(RefCount)))(FormCount)(0) = Chapter AndAlso
+                            CachedData.FormDictionary(CStr(CachedData.WordDictionary(FreqArray(SubCount))(RefCount)))(FormCount)(1) <= Verse) Then
                             UniCount += 1
                         End If
                     Next
@@ -3389,28 +3389,28 @@ Public Class CachedData
                 For LetCount As Integer = 0 To Verses(Count)(SubCount).Length - 1
                     _TotalLetters += 1
                     If Not _LetterDictionary.ContainsKey(Verses(Count)(SubCount)(LetCount)) Then
-                        _LetterDictionary.Add(Verses(Count)(SubCount)(LetCount), New Dictionary(Of String, ArrayList))
+                        _LetterDictionary.Add(Verses(Count)(SubCount)(LetCount), New Dictionary(Of String, List(Of Integer())))
                     End If
                     If Not _LetterPreDictionary.ContainsKey(Verses(Count)(SubCount)(LetCount)) Then
-                        _LetterPreDictionary.Add(Verses(Count)(SubCount)(LetCount), New Dictionary(Of String, ArrayList))
+                        _LetterPreDictionary.Add(Verses(Count)(SubCount)(LetCount), New Dictionary(Of String, List(Of Integer())))
                     End If
                     If Not _LetterSufDictionary.ContainsKey(Verses(Count)(SubCount)(LetCount)) Then
-                        _LetterSufDictionary.Add(Verses(Count)(SubCount)(LetCount), New Dictionary(Of String, ArrayList))
+                        _LetterSufDictionary.Add(Verses(Count)(SubCount)(LetCount), New Dictionary(Of String, List(Of Integer())))
                     End If
                     Dim PrevIndex As Integer = Verses(Count)(SubCount).LastIndexOf(" "c, LetCount) + If(Verses(Count)(SubCount)(LetCount) = " ", 0, 1)
                     Dim NextIndex As Integer = Verses(Count)(SubCount).IndexOf(" "c, LetCount)
                     If NextIndex = -1 Then NextIndex = Verses(Count)(SubCount).Length
                     If Not _LetterDictionary.Item(Verses(Count)(SubCount)(LetCount)).ContainsKey(Verses(Count)(SubCount).Substring(PrevIndex, NextIndex - PrevIndex)) Then
-                        _LetterDictionary.Item(Verses(Count)(SubCount)(LetCount)).Add(Verses(Count)(SubCount).Substring(PrevIndex, NextIndex - PrevIndex), New ArrayList)
+                        _LetterDictionary.Item(Verses(Count)(SubCount)(LetCount)).Add(Verses(Count)(SubCount).Substring(PrevIndex, NextIndex - PrevIndex), New List(Of Integer()))
                     End If
                     _LetterDictionary.Item(Verses(Count)(SubCount)(LetCount))(Verses(Count)(SubCount).Substring(PrevIndex, NextIndex - PrevIndex)).Add(New Integer() {Count, SubCount, LetCount})
                     If Not _LetterPreDictionary.Item(Verses(Count)(SubCount)(LetCount)).ContainsKey(Verses(Count)(SubCount).Substring(PrevIndex, LetCount - PrevIndex)) Then
-                        _LetterPreDictionary.Item(Verses(Count)(SubCount)(LetCount)).Add(Verses(Count)(SubCount).Substring(PrevIndex, LetCount - PrevIndex), New ArrayList)
+                        _LetterPreDictionary.Item(Verses(Count)(SubCount)(LetCount)).Add(Verses(Count)(SubCount).Substring(PrevIndex, LetCount - PrevIndex), New List(Of Integer()))
                     End If
                     _LetterPreDictionary.Item(Verses(Count)(SubCount)(LetCount))(Verses(Count)(SubCount).Substring(PrevIndex, LetCount - PrevIndex)).Add(New Integer() {Count, SubCount, LetCount})
                     If LetCount <> NextIndex Then
                         If Not _LetterSufDictionary.Item(Verses(Count)(SubCount)(LetCount)).ContainsKey(Verses(Count)(SubCount).Substring(LetCount + 1, NextIndex - LetCount - 1)) Then
-                            _LetterSufDictionary.Item(Verses(Count)(SubCount)(LetCount)).Add(Verses(Count)(SubCount).Substring(LetCount + 1, NextIndex - LetCount - 1), New ArrayList)
+                            _LetterSufDictionary.Item(Verses(Count)(SubCount)(LetCount)).Add(Verses(Count)(SubCount).Substring(LetCount + 1, NextIndex - LetCount - 1), New List(Of Integer()))
                         End If
                         _LetterSufDictionary.Item(Verses(Count)(SubCount)(LetCount))(Verses(Count)(SubCount).Substring(LetCount + 1, NextIndex - LetCount - 1)).Add(New Integer() {Count, SubCount, LetCount})
                     End If
@@ -3418,7 +3418,7 @@ Public Class CachedData
                         Char.IsWhiteSpace(Verses(Count)(SubCount)(LetCount - 1)) AndAlso Char.IsWhiteSpace(Verses(Count)(SubCount)(LetCount + 1)) Then
                         _TotalIsolatedLetters += 1
                         If Not _IsolatedLetterDictionary.ContainsKey(Verses(Count)(SubCount)(LetCount)) Then
-                            _IsolatedLetterDictionary.Add(Verses(Count)(SubCount)(LetCount), New ArrayList)
+                            _IsolatedLetterDictionary.Add(Verses(Count)(SubCount)(LetCount), New List(Of Integer()))
                         End If
                         _IsolatedLetterDictionary.Item(Verses(Count)(SubCount)(LetCount)).Add(New Integer() {Count, SubCount, LetCount})
                     End If
@@ -3543,61 +3543,61 @@ Public Class CachedData
             Return _XMLDocInfos
         End Get
     End Property
-    Public Shared ReadOnly Property RootDictionary As Generic.Dictionary(Of String, ArrayList)
+    Public Shared ReadOnly Property RootDictionary As Generic.Dictionary(Of String, List(Of Integer()))
         Get
             If _RootDictionary.Keys.Count = 0 Then GetMorphologicalData()
             Return _RootDictionary
         End Get
     End Property
-    Public Shared ReadOnly Property FormDictionary As Generic.Dictionary(Of String, ArrayList)
+    Public Shared ReadOnly Property FormDictionary As Generic.Dictionary(Of String, List(Of Integer()))
         Get
             If _FormDictionary.Keys.Count = 0 Then GetMorphologicalData()
             Return _FormDictionary
         End Get
     End Property
-    Public Shared ReadOnly Property TagDictionary As Generic.Dictionary(Of String, Generic.Dictionary(Of String, ArrayList))
+    Public Shared ReadOnly Property TagDictionary As Generic.Dictionary(Of String, Generic.Dictionary(Of String, List(Of Integer())))
         Get
             If _TagDictionary.Keys.Count = 0 Then GetMorphologicalData()
             Return _TagDictionary
         End Get
     End Property
-    Public Shared ReadOnly Property WordDictionary As Generic.Dictionary(Of String, ArrayList)
+    Public Shared ReadOnly Property WordDictionary As Generic.Dictionary(Of String, List(Of String))
         Get
             If _WordDictionary.Keys.Count = 0 Then GetMorphologicalData()
             Return _WordDictionary
         End Get
     End Property
-    Public Shared ReadOnly Property RealWordDictionary As Generic.Dictionary(Of String, ArrayList)
+    Public Shared ReadOnly Property RealWordDictionary As Generic.Dictionary(Of String, List(Of Integer()))
         Get
             If _RealWordDictionary.Keys.Count = 0 Then BuildQuranLetterIndex()
             Return _RealWordDictionary
         End Get
     End Property
-    Public Shared ReadOnly Property LetterDictionary As Generic.Dictionary(Of Char, Generic.Dictionary(Of String, ArrayList))
+    Public Shared ReadOnly Property LetterDictionary As Generic.Dictionary(Of Char, Generic.Dictionary(Of String, List(Of Integer())))
         Get
             If _LetterDictionary.Keys.Count = 0 Then BuildQuranLetterIndex()
             Return _LetterDictionary
         End Get
     End Property
-    Public Shared ReadOnly Property LetterPreDictionary As Generic.Dictionary(Of Char, Generic.Dictionary(Of String, ArrayList))
+    Public Shared ReadOnly Property LetterPreDictionary As Generic.Dictionary(Of Char, Generic.Dictionary(Of String, List(Of Integer())))
         Get
             If _LetterPreDictionary.Keys.Count = 0 Then BuildQuranLetterIndex()
             Return _LetterPreDictionary
         End Get
     End Property
-    Public Shared ReadOnly Property LetterSufDictionary As Generic.Dictionary(Of Char, Generic.Dictionary(Of String, ArrayList))
+    Public Shared ReadOnly Property LetterSufDictionary As Generic.Dictionary(Of Char, Generic.Dictionary(Of String, List(Of Integer())))
         Get
             If _LetterSufDictionary.Keys.Count = 0 Then BuildQuranLetterIndex()
             Return _LetterSufDictionary
         End Get
     End Property
-    Public Shared ReadOnly Property PreDictionary As Generic.Dictionary(Of String, ArrayList)
+    Public Shared ReadOnly Property PreDictionary As Generic.Dictionary(Of String, List(Of Integer()))
         Get
             If _PreDictionary.Keys.Count = 0 Then GetMorphologicalData()
             Return _PreDictionary
         End Get
     End Property
-    Public Shared ReadOnly Property SufDictionary As Generic.Dictionary(Of String, ArrayList)
+    Public Shared ReadOnly Property SufDictionary As Generic.Dictionary(Of String, List(Of Integer()))
         Get
             If _SufDictionary.Keys.Count = 0 Then GetMorphologicalData()
             Return _SufDictionary
@@ -3615,7 +3615,7 @@ Public Class CachedData
             Return _TotalLetters
         End Get
     End Property
-    Public Shared ReadOnly Property IsolatedLetterDictionary As Generic.Dictionary(Of Char, ArrayList)
+    Public Shared ReadOnly Property IsolatedLetterDictionary As Generic.Dictionary(Of Char, List(Of Integer()))
         Get
             If _IsolatedLetterDictionary.Keys.Count = 0 Then BuildQuranLetterIndex()
             Return _IsolatedLetterDictionary
@@ -4552,7 +4552,7 @@ Public Class TanzilReader
         End If
     End Function
     Public Shared Function GetQuranWordFrequency(ByVal Item As PageLoader.TextItem) As Array()
-        Dim Output As New ArrayList
+        Dim Output As New List(Of Object)
         Dim Total As Integer = 0
         Dim All As Double
         Dim SchemeType As ArabicData.TranslitScheme = Arabic.DecodeTranslitSchemeType()
@@ -4583,12 +4583,12 @@ Public Class TanzilReader
                 Output.Add(New String() {ArabicData.LeftToRightEmbedding + ArabicData.GetUnicodeName(LetterFreqArray(Count)) + " ( " + ArabicData.PopDirectionalFormatting + ArabicData.FixStartingCombiningSymbol(LetterFreqArray(Count)) + ArabicData.LeftToRightEmbedding + " )" + ArabicData.PopDirectionalFormatting, String.Empty, String.Empty, CStr(CachedData.IsolatedLetterDictionary.Item(LetterFreqArray(Count)).Count), (CDbl(CachedData.IsolatedLetterDictionary.Item(LetterFreqArray(Count)).Count) * 100 / All).ToString("n2"), (CDbl(Total) * 100 / All).ToString("n2")})
             Next
         ElseIf Index = 1 Or Index = 11 Or Index = 12 Or Index >= 13 And Index < 13 + CachedData.IslamData.PartsOfSpeech.Length + CachedData.RecitationSymbols.Length + CachedData.RecitationSymbols.Length + CachedData.RecitationSymbols.Length Then
-            Dim Dict As Generic.Dictionary(Of String, ArrayList)
+            Dim Dict As Generic.Dictionary(Of String, List(Of Integer()))
             If Index = 1 Then
-                Dict = New Dictionary(Of String, ArrayList)
-                For Each KV As KeyValuePair(Of String, ArrayList) In CachedData.WordDictionary
-                    Dim Str As String = KV.Key + vbCrLf + String.Join(vbCrLf, CType(KV.Value.ToArray(GetType(String)), String()))
-                    Dict.Add(Str, New ArrayList)
+                Dict = New Dictionary(Of String, List(Of Integer()))
+                For Each KV As KeyValuePair(Of String, List(Of String)) In CachedData.WordDictionary
+                    Dim Str As String = KV.Key + vbCrLf + String.Join(vbCrLf, CType(KV.Value.ToArray(), String()))
+                    Dict.Add(Str, New List(Of Integer()))
                     For Count As Integer = 0 To KV.Value.Count - 1
                         Dict(Str).AddRange(CachedData.FormDictionary(CStr(KV.Value(Count))))
                     Next
@@ -4615,18 +4615,18 @@ Public Class TanzilReader
             Array.Sort(FreqArray, Function(Key As String, NextKey As String) Dict.Item(NextKey).Count.CompareTo(Dict.Item(Key).Count))
             Dim W4WLines As String() = IO.File.ReadAllLines(Utility.GetFilePath("metadata\en.w4w.shehnazshaikh.txt"))
             For Count As Integer = 0 To FreqArray.Length - 1
-                Dim TranslationDict As New Dictionary(Of String, ArrayList)
+                Dim TranslationDict As New Dictionary(Of String, List(Of Integer()))
                 For WordCount As Integer = 0 To Dict.Item(FreqArray(Count)).Count - 1
-                    Dim CheckStr As String = TanzilReader.GetW4WTranslationVerse(W4WLines, CType(Dict.Item(FreqArray(Count))(WordCount), Integer())(0), CType(Dict.Item(FreqArray(Count))(WordCount), Integer())(1), CType(Dict.Item(FreqArray(Count))(WordCount), Integer())(2) - 1)
+                    Dim CheckStr As String = TanzilReader.GetW4WTranslationVerse(W4WLines, Dict.Item(FreqArray(Count))(WordCount)(0), Dict.Item(FreqArray(Count))(WordCount)(1), Dict.Item(FreqArray(Count))(WordCount)(2) - 1)
                     If Not TranslationDict.ContainsKey(CheckStr) Then
-                        TranslationDict.Add(CheckStr, New ArrayList)
+                        TranslationDict.Add(CheckStr, New List(Of Integer()))
                     End If
-                    TranslationDict(CheckStr).Add(CType(Dict.Item(FreqArray(Count))(WordCount), Integer()))
+                    TranslationDict(CheckStr).Add(Dict.Item(FreqArray(Count))(WordCount))
                 Next
                 Dim TranslationArray(TranslationDict.Keys.Count - 1) As String
                 TranslationDict.Keys.CopyTo(TranslationArray, 0)
                 For WordCount As Integer = 0 To TranslationArray.Length - 1
-                    TranslationArray(WordCount) += vbCrLf + "(" + String.Join(",", Array.ConvertAll(CType(TranslationDict(TranslationArray(WordCount)).ToArray(GetType(Integer())), Integer()()), Function(Indexes As Integer()) String.Join(":", Array.ConvertAll(Indexes, Function(Idx As Integer) CStr(Idx))))) + ")"
+                    TranslationArray(WordCount) += vbCrLf + "(" + String.Join(",", Array.ConvertAll(TranslationDict(TranslationArray(WordCount)).ToArray(), Function(Indexes As Integer()) String.Join(":", Array.ConvertAll(Indexes, Function(Idx As Integer) CStr(Idx))))) + ")"
                 Next
                 Total += Dict.Item(FreqArray(Count)).Count
                 Output.Add(New String() {Arabic.TransliterateFromBuckwalter(FreqArray(Count)), Arabic.TransliterateToScheme(Arabic.TransliterateFromBuckwalter(FreqArray(Count)), If(SchemeType = ArabicData.TranslitScheme.RuleBased, ArabicData.TranslitScheme.LearningMode, SchemeType), Scheme, CachedData.RuleMetas("Normal")), String.Join(vbCrLf, TranslationArray), CStr(Dict.Item(FreqArray(Count)).Count), (CDbl(Dict.Item(FreqArray(Count)).Count) * 100 / All).ToString("n2"), (CDbl(Total) * 100 / All).ToString("n2")})
@@ -4656,7 +4656,7 @@ Public Class TanzilReader
         ElseIf Index = 10 Then
             Output.AddRange(Array.ConvertAll(GetQuranHamzaMaddDoubleLetterPatterns(), Function(Str As String) {Str, String.Empty, String.Empty, String.Empty, String.Empty, String.Empty}))
         End If
-        Return CType(Output.ToArray(GetType(Array)), Array())
+        Return CType(Output.ToArray(), Array())
     End Function
     Public Shared Function IsSingletonDictionary(Dict As Dictionary(Of String, Object())) As Boolean
         Dim Keys(Dict.Keys.Count - 1) As String
@@ -4766,8 +4766,8 @@ Public Class TanzilReader
     End Function
     Public Shared Function GetQuranHamzaMaddDoubleLetterPatterns() As String()
         Dim CurPat As String = ArabicData.MakeRegMultiEx(CachedData.RecitationSymbols)
-        Dim Prefixes As New Dictionary(Of String, ArrayList)
-        Dim Suffixes As New Dictionary(Of String, ArrayList)
+        Dim Prefixes As New Dictionary(Of String, List(Of String))
+        Dim Suffixes As New Dictionary(Of String, List(Of String))
         Dim PreMidSuf As New Dictionary(Of String, Object()) 'Prefix indexed
         Dim SufMidPre As New Dictionary(Of String, Object()) 'Suffix indexed
         For Each Key As String In CachedData.FormDictionary.Keys
@@ -4776,24 +4776,24 @@ Public Class TanzilReader
                 If Matches(Count).Index = 0 Then
                     For SubCount As Integer = 0 To CachedData.FormDictionary(Key).Count - 1
                         Dim Loc(3) As Integer
-                        CType(CachedData.FormDictionary(Key)(SubCount), Integer()).CopyTo(Loc, 0)
+                        CachedData.FormDictionary(Key)(SubCount).CopyTo(Loc, 0)
                         If (Not CBool(CachedData.LocDictionary(String.Join(":", Loc))(1)) And Not CBool(CachedData.LocDictionary(String.Join(":", Loc))(2))) Or CStr(CachedData.LocDictionary(String.Join(":", Loc))(3)) = "DET" Or (Matches(Count).Value = ArabicData.ArabicLetterAlefWasla And CStr(CachedData.LocDictionary(String.Join(":", Loc))(3)) = "PN") Then
                             Dim Pre As String = String.Empty
-                            For LocCount = 1 To CType(CachedData.FormDictionary(Key)(SubCount), Integer())(3) - 1
+                            For LocCount = 1 To CachedData.FormDictionary(Key)(SubCount)(3) - 1
                                 Loc(3) = LocCount
                                 Pre += CStr(CachedData.LocDictionary(String.Join(":", Loc))(0))
                             Next
                             If Pre <> String.Empty Then
-                                Loc(3) = CType(CachedData.FormDictionary(Key)(SubCount), Integer())(3)
+                                Loc(3) = CachedData.FormDictionary(Key)(SubCount)(3)
                                 If CStr(CachedData.LocDictionary(String.Join(":", Loc))(3)) = "DET" Or (Matches(Count).Value = ArabicData.ArabicLetterAlefWasla And CStr(CachedData.LocDictionary(String.Join(":", Loc))(3)) = "PN") Then
-                                    If Not Prefixes.ContainsKey("Al+") Then Prefixes.Add("Al+", New ArrayList)
+                                    If Not Prefixes.ContainsKey("Al+") Then Prefixes.Add("Al+", New List(Of String))
                                     Prefixes("Al+").Add(StrReverse(Pre))
                                 Else
-                                    If Not Prefixes.ContainsKey(Matches(Count).Value) Then Prefixes.Add(Matches(Count).Value, New ArrayList)
+                                    If Not Prefixes.ContainsKey(Matches(Count).Value) Then Prefixes.Add(Matches(Count).Value, New List(Of String))
                                     Prefixes(Matches(Count).Value).Add(StrReverse(Pre))
                                 End If
                                 If Matches(Count).Value <> ArabicData.ArabicLetterAlefWasla And CStr(CachedData.LocDictionary(String.Join(":", Loc))(3)) <> "DET" Then
-                                    If Not Prefixes.ContainsKey("!" + ArabicData.ArabicLetterAlefWasla) Then Prefixes.Add("!" + ArabicData.ArabicLetterAlefWasla, New ArrayList)
+                                    If Not Prefixes.ContainsKey("!" + ArabicData.ArabicLetterAlefWasla) Then Prefixes.Add("!" + ArabicData.ArabicLetterAlefWasla, New List(Of String))
                                     Prefixes("!" + ArabicData.ArabicLetterAlefWasla).Add(StrReverse(Pre))
                                 End If
                             End If
@@ -4802,10 +4802,10 @@ Public Class TanzilReader
                 ElseIf Matches(Count).Index = Key.Length - 1 Then
                     For SubCount As Integer = 0 To CachedData.FormDictionary(Key).Count - 1
                         Dim Loc(3) As Integer
-                        CType(CachedData.FormDictionary(Key)(SubCount), Integer()).CopyTo(Loc, 0)
+                        CachedData.FormDictionary(Key)(SubCount).CopyTo(Loc, 0)
                         If (Not CBool(CachedData.LocDictionary(String.Join(":", Loc))(1)) And Not CBool(CachedData.LocDictionary(String.Join(":", Loc))(2))) Then
                             Dim Sup As String = String.Empty
-                            Dim LocCount As Integer = CType(CachedData.FormDictionary(Key)(SubCount), Integer())(3) + 1
+                            Dim LocCount As Integer = CachedData.FormDictionary(Key)(SubCount)(3) + 1
                             Do
                                 Loc(3) = LocCount
                                 If Not CachedData.LocDictionary.ContainsKey(String.Join(":", Loc)) Then Exit Do
@@ -4813,7 +4813,7 @@ Public Class TanzilReader
                                 LocCount += 1
                             Loop While True
                             If Sup <> String.Empty Then
-                                If Not Suffixes.ContainsKey(Matches(Count).Value) Then Suffixes.Add(Matches(Count).Value, New ArrayList)
+                                If Not Suffixes.ContainsKey(Matches(Count).Value) Then Suffixes.Add(Matches(Count).Value, New List(Of String))
                                 Suffixes(Matches(Count).Value).Add(Sup)
                             End If
                         End If
@@ -4825,7 +4825,7 @@ Public Class TanzilReader
                     For SubCount As Integer = 0 To CachedData.FormDictionary(Key).Count - 1
                         Dim PreCheck As String = String.Empty
                         Dim Loc(3) As Integer
-                        CType(CachedData.FormDictionary(Key)(SubCount), Integer()).CopyTo(Loc, 0)
+                        CachedData.FormDictionary(Key)(SubCount).CopyTo(Loc, 0)
                         'Hamza prefix then must look before
                         'If PreCheck.IndexOfAny({ArabicData.ArabicLetterHamza, ArabicData.ArabicLetterAlefWithHamzaAbove, ArabicData.ArabicLetterAlefWithHamzaBelow, ArabicData.ArabicLetterWawWithHamzaAbove, ArabicData.ArabicLetterYehWithHamzaAbove, ArabicData.ArabicHamzaAbove}) = -1 Then PreCheck = String.Empty
                         Dim Pre As String = String.Empty
@@ -4837,14 +4837,14 @@ Public Class TanzilReader
                         Next
                         If Pre.Length = PreCheck.Length Then
                             PreCheck = String.Empty
-                            For LocCount = 1 To CType(CachedData.FormDictionary(Key)(SubCount), Integer())(3) - 1
+                            For LocCount = 1 To CachedData.FormDictionary(Key)(SubCount)(3) - 1
                                 Loc(3) = LocCount
                                 PreCheck += Arabic.TransliterateFromBuckwalter(CStr(CachedData.LocDictionary(String.Join(":", Loc))(0)))
                             Next
                             If PreCheck <> String.Empty Then Pre = ";" + PreCheck + ";" + Pre
                         End If
                         Dim Sup As String = Arabic.TransliterateFromBuckwalter(Key.Substring(Matches(Count).Index + 1))
-                        LocCount = CType(CachedData.FormDictionary(Key)(SubCount), Integer())(3) + 1
+                        LocCount = CachedData.FormDictionary(Key)(SubCount)(3) + 1
                         Do
                             Loc(3) = LocCount
                             If Not CachedData.LocDictionary.ContainsKey(String.Join(":", Loc)) Then Exit Do
@@ -6043,8 +6043,8 @@ Public Class TanzilReader
             ElseIf Division = 9 Then
                 QuranText = New Collections.Generic.List(Of String())
                 For SubCount = 0 To CachedData.LetterDictionary(ArabicData.ArabicLetters(Index).Symbol)(Keys(SectionCount)).Count - 1
-                    BaseChapter = CType(CachedData.LetterDictionary(ArabicData.ArabicLetters(Index).Symbol)(Keys(SectionCount))(SubCount), Integer())(0)
-                    BaseVerse = CType(CachedData.LetterDictionary(ArabicData.ArabicLetters(Index).Symbol)(Keys(SectionCount))(SubCount), Integer())(1)
+                    BaseChapter = CachedData.LetterDictionary(ArabicData.ArabicLetters(Index).Symbol)(Keys(SectionCount))(SubCount)(0)
+                    BaseVerse = CachedData.LetterDictionary(ArabicData.ArabicLetters(Index).Symbol)(Keys(SectionCount))(SubCount)(1)
                     QuranText.Add(GetQuranText(CachedData.XMLDocMain, BaseChapter, BaseVerse, BaseVerse))
                     If SubCount <> CachedData.LetterDictionary(ArabicData.ArabicLetters(Index).Symbol)(Keys(SectionCount)).Count - 1 Then
                         Renderer.Items.AddRange(DoGetRenderedQuranText(QuranText, BaseChapter, BaseVerse, Translation, SchemeType, Scheme, TranslationIndex, W4W, W4WNum, NoArabic, Header, NoRef, Colorize, Verses).Items)
@@ -6547,7 +6547,7 @@ Public Class HadithReader
         Dim XMLDocTranslate As New System.Xml.XmlDocument
         If CachedData.IslamData.Collections(Index).Translations.Length = 0 Then Return New Array() {}
         XMLDocTranslate.Load(Utility.GetFilePath("metadata\" + GetTranslationXMLFileName(Index, HttpContext.Current.Request.QueryString.Get("hadithtranslation")) + ".xml"))
-        Dim Output As New ArrayList
+        Dim Output As New List(Of Object)
         Output.Add(New String() {})
         If HadithReader.HasVolumes(Index) Then
             Output.Add(New String() {String.Empty, String.Empty, String.Empty, String.Empty, String.Empty, String.Empty})
@@ -6561,7 +6561,7 @@ Public Class HadithReader
         Else
             Output.AddRange(Array.ConvertAll(Utility.GetChildNodes("book", Utility.GetChildNode("books", CachedData.XMLDocInfos(Index).DocumentElement.ChildNodes).ChildNodes), Function(Convert As System.Xml.XmlNode) New Object() {GetBookEName(Convert, Index), Convert.Attributes.GetNamedItem("index").Value, CStr(HadithReader.GetChapterCount(Index, CInt(Convert.Attributes.GetNamedItem("index").Value))), CStr(HadithReader.GetHadithCount(Index, CInt(Convert.Attributes.GetNamedItem("index").Value))), HadithReader.GetBookHadithMapping(XMLDocTranslate, Index, CInt(Convert.Attributes.GetNamedItem("index").Value))}))
         End If
-        Return DirectCast(Output.ToArray(GetType(Array)), Array())
+        Return DirectCast(Output.ToArray(), Array())
     End Function
     Public Shared Function GetRenderedText(ByVal Item As PageLoader.TextItem) As RenderArray
         Dim SchemeType As ArabicData.TranslitScheme = Arabic.DecodeTranslitSchemeType()
@@ -6825,7 +6825,7 @@ Public Class HadithReader
         Dim Count As Integer
         Dim SubCount As Integer
         Dim Groupings As String() = ExpandString.Split(","c)
-        Dim Indexes As New ArrayList
+        Dim Indexes As New List(Of String())
         Indexes.Add(New String() {})
         Indexes.Add(New String() {String.Empty, String.Empty})
         Indexes.Add(New String() {Utility.LoadResourceString("Hadith_SourceHadithIndex"), Utility.LoadResourceString("Hadith_TranslationHadithIndex")})
@@ -6858,13 +6858,13 @@ Public Class HadithReader
                 End If
             End If
         Next
-        Return New Object() {CStr(HadithCount), Indexes.ToArray(GetType(Array))}
+        Return New Object() {CStr(HadithCount), Indexes.ToArray()}
     End Function
     Public Shared Function GetBookHadithMapping(ByVal XMLDocTranslate As System.Xml.XmlDocument, ByVal Index As Integer, ByVal BookIndex As Integer) As Object()
         Dim Count As Integer
         Dim SourceStart As Integer
         Dim Volume As Integer
-        Dim Mapping As New ArrayList
+        Dim Mapping As New List(Of Object())
         Mapping.Add(New String() {})
         If TranslationHasVolumes(XMLDocTranslate) Then
             Mapping.Add(New String() {String.Empty, String.Empty, String.Empty, String.Empty})
@@ -6975,7 +6975,7 @@ Public Class HadithReader
         Dim Books() As Integer
         Dim TranslateBookIndex As Integer
         Dim TranslationIndexes As Collections.Generic.List(Of Collections.Generic.List(Of Object))
-        Dim TranslationHadith As New ArrayList
+        Dim TranslationHadith As New List(Of String)
         If CachedData.IslamData.Collections(Index).Translations.Length = 0 Then Return New String() {}
         For Count = 0 To Utility.GetChildNode("books", XMLDocTranslate.DocumentElement.ChildNodes).ChildNodes.Count - 1
             BookNode = Utility.GetChildNode("books", XMLDocTranslate.DocumentElement.ChildNodes).ChildNodes.Item(Count)
@@ -7024,7 +7024,7 @@ Public Class HadithReader
                 End If
             End If
         Next
-        Return DirectCast(TranslationHadith.ToArray(GetType(String)), String())
+        Return DirectCast(TranslationHadith.ToArray(), String())
     End Function
 End Class
 Class IslamSiteDatabase
