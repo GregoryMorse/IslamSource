@@ -6117,6 +6117,45 @@ Public Class TanzilReader
         Next
         Return DefStops.ToArray()
     End Function
+    Public Shared Sub WordFileToResource(WordFilePath As String, ResFilePath As String)
+        Dim W4WLines As String() = IO.File.ReadAllLines(Utility.GetFilePath("metadata\en.w4w.shehnazshaikh.txt"))
+        Dim XML As New Xml.XmlDocument
+        XML.Load(ResFilePath)
+        For Count = 0 To W4WLines.Length - 1
+            Dim Words As String() = W4WLines(Count).Split("|"c)
+            For SubCount = 0 To Words.Length - 1
+                Dim NewData As Xml.XmlElement = XML.CreateElement("data")
+                Dim Attr As Xml.XmlAttribute = XML.CreateAttribute("name")
+                Attr.Value = "Quran" + CStr(Count + 1) + "." + CStr(SubCount + 1)
+                NewData.Attributes.Append(Attr)
+                Attr = XML.CreateAttribute("xml", "space", String.Empty)
+                Attr.Value = "preserve"
+                NewData.Attributes.Append(Attr)
+                Dim Inner As Xml.XmlElement = XML.CreateElement("value")
+                Inner.Value = Words(SubCount)
+                NewData.AppendChild(Inner)
+                XML.DocumentElement.AppendChild(NewData)
+            Next
+        Next
+        XML.Save(ResFilePath)
+    End Sub
+    Public Shared Sub ResourceToWordFile(ResFilePath As String, WordFilePath As String)
+        Dim W4WLines As New List(Of List(Of String))
+        Dim XML As New Xml.XmlDocument
+        XML.Load(ResFilePath)
+        Dim AllNodes As Xml.XmlNodeList = XML.DocumentElement.SelectNodes("data/@name")
+        For Each Item As Xml.XmlNode In AllNodes
+            If System.Text.RegularExpressions.Regex.Match(Item.Attributes("name").Value, "^Quran%d+\.%d+$").Success Then
+                Dim Line As Integer = Integer.Parse(Item.Attributes("name").Value.Substring(5, Item.Attributes("name").Value.IndexOf("."c) - 5))
+                Dim Word As Integer = Integer.Parse(Item.Attributes("name").Value.Substring(Item.Attributes("name").Value.IndexOf("."c) + 1))
+                If W4WLines(Line - 1) Is Nothing Then
+                    W4WLines.Insert(Line, New List(Of String))
+                End If
+                W4WLines(Line - 1).Insert(Word - 1, Item.ChildNodes(0).Value)
+            End If
+        Next
+        IO.File.WriteAllLines(Utility.GetFilePath("metadata\en.w4w.shehnazshaikh.txt"), W4WLines.ConvertAll(Function(Input As List(Of String)) String.Join("|"c, Input.ToArray())))
+    End Sub
     Public Shared Function DoGetRenderedQuranText(QuranText As Collections.Generic.List(Of String()), BaseChapter As Integer, BaseVerse As Integer, Translation As String, SchemeType As ArabicData.TranslitScheme, Scheme As String, TranslationIndex As Integer, W4W As Boolean, W4WNum As Boolean, NoArabic As Boolean, Header As Boolean, NoRef As Boolean, Colorize As Boolean, Verses As Boolean) As RenderArray
         Dim Text As String
         Dim Node As System.Xml.XmlNode
