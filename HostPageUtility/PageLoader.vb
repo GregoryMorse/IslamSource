@@ -271,16 +271,16 @@ Public Class Utility
         Return CInt((num + (num2 * &H5D588B65)) And &H800000007FFFFFFFL)
     End Function
     Public Shared Sub SortResX(File As String)
-        Dim Doc As New Xml.XmlDocument
+        Dim Doc As New Xml.Linq.XDocument
         Doc.Load(File)
-        Dim AllNodes As Xml.XmlNodeList = Doc.DocumentElement.SelectNodes("data/@name")
-        Dim Nodes(AllNodes.Count - 1) As Xml.XmlNode
+        Dim AllNodes As Xml.Linq.XNodeList = Doc.DocumentElement.SelectNodes("data/@name")
+        Dim Nodes(AllNodes.Count - 1) As Xml.Linq.XNode
         Dim Count As Integer = 0
-        For Each Item As Xml.XmlNode In AllNodes
+        For Each Item As Xml.Linq.XNode In AllNodes
             Nodes(Count) = Doc.DocumentElement.RemoveChild(CType(Item, Xml.XmlAttribute).OwnerElement)
             Count += 1
         Next
-        Array.Sort(Nodes, Function(x As Xml.XmlNode, y As Xml.XmlNode) x.Attributes("name").Value.CompareTo(y.Attributes("name").Value))
+        Array.Sort(Nodes, Function(x As Xml.Linq.XNode, y As Xml.Linq.XNode) x.Attributes("name").Value.CompareTo(y.Attributes("name").Value))
         For Count = 0 To Nodes.Length - 1
             If Count = 0 OrElse Nodes(Count - 1).Attributes("name").Value <> Nodes(Count).Attributes("name").Value Then
                 Doc.DocumentElement.AppendChild(Nodes(Count))
@@ -769,15 +769,15 @@ Public Class Utility
     Public Shared Function GetAddStyleSheetRuleJS() As String
         Return "function addStyleSheetRule(sheet, selectorText, ruleText) { if (sheet.tagName) { sheet.innerHTML = sheet.innerHTML + selectorText + ' {' + ruleText + '}'; } else if (sheet.addRule) { if (selectorText == '@font-face' && sheet.cssText != null) sheet.cssText = selectorText + ' {' + ruleText + '}'; else sheet.addRule(selectorText, ruleText); } else if (sheet.insertRule) sheet.insertRule(selectorText + ' {' + ruleText + '}', sheet.cssRules.length); }"
     End Function
-    Public Shared Function ParseValue(ByVal XMLItemNode As System.Xml.XmlNode, ByVal DefaultValue As String) As String
+    Public Shared Function ParseValue(ByVal XMLItemNode As System.Xml.Linq.XNode, ByVal DefaultValue As String) As String
         If XMLItemNode Is Nothing Then
             ParseValue = DefaultValue
         Else
             ParseValue = XMLItemNode.Value
         End If
     End Function
-    Public Shared Function GetChildNode(ByVal NodeName As String, ByVal ChildNodes As System.Xml.XmlNodeList) As System.Xml.XmlNode
-        Dim XMLNode As System.Xml.XmlNode
+    Public Shared Function GetChildNode(ByVal NodeName As String, ByVal ChildNodes As System.Xml.Linq.XNodeList) As System.Xml.Linq.XNode
+        Dim XMLNode As System.Xml.Linq.XNode
         For Each XMLNode In ChildNodes
             If XMLNode.Name = NodeName Then
                 Return XMLNode
@@ -785,19 +785,19 @@ Public Class Utility
         Next
         Return Nothing
     End Function
-    Public Shared Function GetChildNodes(ByVal NodeName As String, ByVal ChildNodes As System.Xml.XmlNodeList) As System.Xml.XmlNode()
-        Dim XMLNode As System.Xml.XmlNode
-        Dim XMLNodeList As New ArrayList
+    Public Shared Function GetChildNodes(ByVal NodeName As String, ByVal ChildNodes As System.Xml.Linq.XNodeList) As System.Xml.Linq.XNode()
+        Dim XMLNode As System.Xml.Linq.XNode
+        Dim XMLNodeList As New List(Of System.Xml.Linq.XNode)
         For Each XMLNode In ChildNodes
             If XMLNode.Name = NodeName Then
                 XMLNodeList.Add(XMLNode)
             End If
         Next
-        Return DirectCast(XMLNodeList.ToArray(GetType(System.Xml.XmlNode)), System.Xml.XmlNode())
+        Return XMLNodeList.ToArray()
     End Function
-    Public Shared Function GetChildNodeByIndex(ByVal NodeName As String, ByVal IndexName As String, ByVal Index As Integer, ByVal ChildNodes As System.Xml.XmlNodeList) As System.Xml.XmlNode
-        Dim XMLNode As System.Xml.XmlNode = ChildNodes.Item(Index)
-        Dim AttributeNode As System.Xml.XmlNode
+    Public Shared Function GetChildNodeByIndex(ByVal NodeName As String, ByVal IndexName As String, ByVal Index As Integer, ByVal ChildNodes As System.Xml.Linq.XNodeList) As System.Xml.Linq.XNode
+        Dim XMLNode As System.Xml.Linq.XNode = ChildNodes.Item(Index)
+        Dim AttributeNode As System.Xml.Linq.XNode
         If Index - 1 < ChildNodes.Count Then
             XMLNode = ChildNodes.Item(Index - 1)
             If Not XMLNode Is Nothing AndAlso XMLNode.Name = NodeName Then
@@ -817,7 +817,7 @@ Public Class Utility
         Next
         Return Nothing
     End Function
-    Public Shared Function GetChildNodeCount(ByVal NodeName As String, ByVal Node As System.Xml.XmlNode) As Integer
+    Public Shared Function GetChildNodeCount(ByVal NodeName As String, ByVal Node As System.Xml.Linq.XNode) As Integer
         Dim Index As Integer
         Dim Count As Integer = 0
         For Index = 0 To Node.ChildNodes.Count - 1
@@ -946,7 +946,7 @@ Public Class Document
         Return String.Empty
     End Function
     Public Shared Function GetXML(ByVal Item As PageLoader.TextItem) As Array
-        Dim XMLDoc As New System.Xml.XmlDocument
+        Dim XMLDoc As New System.Xml.Linq.XDocument
         XMLDoc.Load(Utility.GetFilePath("metadata\" + Utility.ConnectionData.DocXML))
         Dim RetArray(2 + XMLDoc.DocumentElement.ChildNodes.Count) As Array
         RetArray(0) = New String() {"javascript: doOnCheck(this);", "doSort();", "function doSort() { var child = $('#render').children('tr'); child.shift(); child.sort(function(a, b) { if (window.localstorage.getItem(a.children('td')(3).text()) == window.localstorage.getItem(b.children('td')(3).text())) return new Date(a.children('td')(1).text()) > new Data(b.children('td')(1).text()); return (window.localstorage.getItem(a.children('td')(3).text())) ? 1 : -1; }); child.detach().appendTo($('#render')); } function doOnCheck(element) { element.checked = !element.checked; if (element.checked) { window.localstorage.setItem($(element).parent().children('td')(3), true); } else { window.localstorage.removeItem($(element).parent().children('td')(3)); } doSort(); }"}
@@ -997,12 +997,12 @@ Public Class Geolocation
             Response.Close()
         Catch
         End Try
-        Dim XMLDoc As New System.Xml.XmlDocument
-        Dim XMLNode As System.Xml.XmlNode
+        Dim XMLDoc As New System.Xml.Linq.XDocument
+        Dim XMLNode As System.Xml.Linq.XNode
         XMLDoc.LoadXml(Data)
         For Each XMLNode In XMLDoc.DocumentElement.ChildNodes
             If XMLNode.Name = "result" Then
-                For Each XMLChildNode As System.Xml.XmlNode In XMLNode.ChildNodes
+                For Each XMLChildNode As System.Xml.Linq.XNode In XMLNode.ChildNodes
                     If XMLChildNode.Name = "elevation" Then
                         Return XMLChildNode.InnerText
                     End If
@@ -1023,23 +1023,23 @@ End Class
 <CLSCompliant(True)> _
 Public Class PageLoader
     Structure PageItem
-        Dim Page As ArrayList
+        Dim Page As List(Of Object)
         Dim PageName As String
         Dim Text As String
-        Public Sub New(ByVal NewPage As ArrayList, ByVal NewPageName As String, ByVal NewText As String)
+        Public Sub New(ByVal NewPage As List(Of Object), ByVal NewPageName As String, ByVal NewText As String)
             Page = NewPage
             PageName = NewPageName
             Text = NewText
         End Sub
     End Structure
     Structure ListItem
-        Dim List As ArrayList
+        Dim List As List(Of Object)
         Dim Title As String
         Dim Name As String
         Dim IsSection As Boolean
         Dim HasForm As Boolean
         Dim FormPostURL As String
-        Public Sub New(ByVal NewTitle As String, ByVal NewName As String, ByVal NewList As ArrayList, ByVal NewIsSection As Boolean, ByVal NewHasForm As Boolean, Optional ByVal NewFormPostURL As String = "")
+        Public Sub New(ByVal NewTitle As String, ByVal NewName As String, ByVal NewList As List(Of Object), ByVal NewIsSection As Boolean, ByVal NewHasForm As Boolean, Optional ByVal NewFormPostURL As String = "")
             List = NewList
             Name = NewName
             Title = NewTitle
@@ -1211,7 +1211,7 @@ Public Class PageLoader
         Next
         Return 0
     End Function
-    Public Shared Function GetItem(ByVal Name As String, ByVal Item As ArrayList) As Object
+    Public Shared Function GetItem(ByVal Name As String, ByVal Item As List(Of Object)) As Object
         Dim Count As Integer
         For Count = 0 To Item.Count - 1
             If IsListItem(Item(Count)) Then
@@ -1227,7 +1227,7 @@ Public Class PageLoader
     Public Function GetPageItem(ByVal Path As String) As Object
         Dim Index As Integer
         Dim StrArray As String() = Path.Split("."c)
-        Dim Item As ArrayList = GetPage(StrArray(0)).Page
+        Dim Item As List(Of Object) = GetPage(StrArray(0)).Page
         Dim ObjItem As Object = Item
         For Index = 1 To StrArray.Length - 1
             ObjItem = PageLoader.GetItem(StrArray(Index), Item)
@@ -1237,10 +1237,10 @@ Public Class PageLoader
         Next
         Return ObjItem
     End Function
-    Sub ParseSingleElement(ByRef XMLChildNode As System.Xml.XmlNode, ByRef List As ArrayList, ByVal IsTopLevel As Boolean)
+    Sub ParseSingleElement(ByRef XMLChildNode As System.Xml.Linq.XNode, ByRef List As List(Of Object), ByVal IsTopLevel As Boolean)
         If XMLChildNode.Name = "frame" Then
-            Dim XMLListNode As System.Xml.XmlNode
-            Dim ListArray As New ArrayList
+            Dim XMLListNode As System.Xml.Linq.XNode
+            Dim ListArray As New List(Of Object)
             For Each XMLListNode In XMLChildNode.ChildNodes
                 ParseSingleElement(XMLListNode, ListArray, False)
             Next
@@ -1261,8 +1261,8 @@ Public Class PageLoader
             List.Add(New DateItem(XMLChildNode.Attributes.GetNamedItem("name").Value, _
                                   XMLChildNode.Attributes.GetNamedItem("description").Value))
         ElseIf XMLChildNode.Name = "radio" Then
-            Dim XMLOptionNode As System.Xml.XmlNode
-            Dim OptionArray As New ArrayList
+            Dim XMLOptionNode As System.Xml.Linq.XNode
+            Dim OptionArray As New List(Of System.Xml.Linq.XNode)
             Dim DefaultValue As String = Utility.ParseValue(XMLChildNode.Attributes.GetNamedItem("defaultvalue"), "-1")
             For Each XMLOptionNode In XMLChildNode.ChildNodes
                 If XMLOptionNode.Name = "option" Then
@@ -1310,17 +1310,17 @@ Public Class PageLoader
         End If
     End Sub
     Public Sub New()
-        Dim XMLDoc As New System.Xml.XmlDocument
-        Dim XMLNode As System.Xml.XmlNode
-        Dim XMLChildNode As System.Xml.XmlNode
+        Dim XMLDoc As New System.Xml.Linq.XDocument
+        Dim XMLNode As System.Xml.Linq.XNode
+        Dim XMLChildNode As System.Xml.Linq.XNode
         XMLDoc.Load(Utility.GetTemplatePath())
         Title = Utility.ParseValue(XMLDoc.DocumentElement.Attributes.GetNamedItem("title"), String.Empty)
         MainImage = Utility.ParseValue(XMLDoc.DocumentElement.Attributes.GetNamedItem("mainimage"), String.Empty)
         HoverImage = Utility.ParseValue(XMLDoc.DocumentElement.Attributes.GetNamedItem("hoverimage"), String.Empty)
-        Dim PageList As ArrayList
+        Dim PageList As List(Of Object)
         For Each XMLNode In XMLDoc.DocumentElement.ChildNodes
             If XMLNode.Name = "page" Then
-                PageList = New ArrayList
+                PageList = New List(Of Object)
                 For Each XMLChildNode In XMLNode.ChildNodes
                     If XMLChildNode.Name = "child" Then
                     ElseIf XMLChildNode.Name = "addlist" Then
@@ -1379,12 +1379,12 @@ Public Class ArabicData
             _ArabicCombos = CType((New System.Runtime.Serialization.Formatters.Binary.BinaryFormatter).Deserialize(New IO.MemoryStream(DiskCache.GetCacheItem("ArabicCombos", DateTime.MinValue))), ArabicData.ArabicCombo())
             Return
         End If
-        Dim CharArr As New ArrayList
-        Dim Letters As New ArrayList
-        Dim Combos As New ArrayList
-        Dim Ranges As ArrayList = MakeUniCategory(ALCategories)
+        Dim CharArr As New List(Of Integer)
+        Dim Letters As New List(Of ArabicSymbol)
+        Dim Combos As New List(Of ArabicCombo)
+        Dim Ranges As List(Of List(Of Integer)) = MakeUniCategory(ALCategories)
         For Count = 0 To Ranges.Count - 1
-            Dim Range As ArrayList = CType(Ranges(Count), ArrayList)
+            Dim Range As List(Of Integer) = Ranges(Count)
             If Range.Count = 1 Then
                 CharArr.Add(Range(0))
             Else
@@ -1397,7 +1397,7 @@ Public Class ArabicData
             If _DecData.ContainsKey(ChrW(CInt(CharArr(Count)))) AndAlso Not _DecData.Item(ChrW(CInt(CharArr(Count)))).Chars Is Nothing AndAlso _DecData.Item(ChrW(CInt(CharArr(Count)))).Chars.Length <> 0 Then
                 Dim ComCount As Integer
                 For ComCount = 0 To Combos.Count - 1
-                    If String.Join(String.Empty, Array.ConvertAll(CType(Combos(ComCount), ArabicCombo).Symbol, Function(Sym As Char) CStr(Sym))) = String.Join(String.Empty, Array.ConvertAll(_DecData.Item(ChrW(CInt(CharArr(Count)))).Chars, Function(Sym As Char) CStr(Sym))) Then Exit For
+                    If String.Join(String.Empty, Array.ConvertAll(Combos(ComCount).Symbol, Function(Sym As Char) CStr(Sym))) = String.Join(String.Empty, Array.ConvertAll(_DecData.Item(ChrW(CInt(CharArr(Count)))).Chars, Function(Sym As Char) CStr(Sym))) Then Exit For
                 Next
                 Dim ArComb As ArabicCombo
                 If ComCount = Combos.Count Then
@@ -1406,7 +1406,7 @@ Public Class ArabicData
                     ArComb.UnicodeName = {Nothing, Nothing, Nothing, Nothing}
                     ArComb.Symbol = _DecData.Item(ChrW(CInt(CharArr(Count)))).Chars
                 Else
-                    ArComb = CType(Combos(ComCount), ArabicCombo)
+                    ArComb = Combos(ComCount)
                 End If
                 Dim Idx As Integer = Array.IndexOf(ShapePositions, _DecData.Item(ChrW(CInt(CharArr(Count)))).JoiningStyle)
                 If Idx = -1 Then
@@ -1436,10 +1436,10 @@ Public Class ArabicData
                 Letters.Add(ArabicLet)
             End If
         Next
-        CharArr = New ArrayList
+        CharArr = New List(Of Integer)
         Ranges = MakeUniCategory(WeakCategories)
         For Count = 0 To Ranges.Count - 1
-            Dim Range As ArrayList = CType(Ranges(Count), ArrayList)
+            Dim Range As List(Of Integer) = Ranges(Count)
             If Range.Count = 1 Then
                 CharArr.Add(Range(0))
             Else
@@ -1455,10 +1455,10 @@ Public Class ArabicData
             ArabicLet.UnicodeName = _Names.Item(ArabicLet.Symbol)(0)
             Letters.Add(ArabicLet)
         Next
-        CharArr = New ArrayList
+        CharArr = New List(Of Integer)
         Ranges = MakeUniCategory(NeutralCategories)
         For Count = 0 To Ranges.Count - 1
-            Dim Range As ArrayList = CType(Ranges(Count), ArrayList)
+            Dim Range As List(Of Integer) = Ranges(Count)
             If Range.Count = 1 Then
                 CharArr.Add(Range(0))
             Else
@@ -1474,8 +1474,8 @@ Public Class ArabicData
             ArabicLet.UnicodeName = _Names.Item(ArabicLet.Symbol)(0)
             Letters.Add(ArabicLet)
         Next
-        _ArabicLetters = CType(Letters.ToArray(GetType(ArabicSymbol)), ArabicSymbol())
-        _ArabicCombos = CType(Combos.ToArray(GetType(ArabicCombo)), ArabicCombo())
+        _ArabicLetters = Letters.ToArray()
+        _ArabicCombos = Combos.ToArray()
         Dim MemStream As New IO.MemoryStream
         Dim Ser As New System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
         Ser.Serialize(MemStream, _ArabicLetters)
@@ -1936,13 +1936,13 @@ Public Class ArabicData
     Public Shared _CombPos As Dictionary(Of Char, Integer)
     Public Shared _UniClass As Dictionary(Of Char, String)
     Public Shared _DecData As Dictionary(Of Char, DecData)
-    Public Shared _Ranges As Dictionary(Of String, ArrayList)
+    Public Shared _Ranges As Dictionary(Of String, List(Of List(Of Integer)))
     Public Shared _Names As Dictionary(Of Char, String())
     Public Shared Sub GetDecompositionCombiningCatData()
         Dim Strs As String() = IO.File.ReadAllLines(Utility.GetFilePath("metadata\UnicodeData.txt"))
         _CombPos = New Dictionary(Of Char, Integer)
         _UniClass = New Dictionary(Of Char, String)
-        _Ranges = New Dictionary(Of String, ArrayList)
+        _Ranges = New Dictionary(Of String, List(Of List(Of Integer)))
         _DecData = New Dictionary(Of Char, DecData)
         _Names = New Dictionary(Of Char, String())
         For Count = 0 To Strs.Length - 1
@@ -1981,17 +1981,17 @@ Public Class ArabicData
                 _Names.Add(Ch, {Vals(1)})
             End If
             Dim NewRangeMatch As Integer = Integer.Parse(Vals(0), Globalization.NumberStyles.AllowHexSpecifier)
-            If Not _Ranges.ContainsKey(Vals(4)) Then _Ranges.Add(Vals(4), New ArrayList)
-            If _Ranges(Vals(4)).Count <> 0 AndAlso CInt(CType(_Ranges(Vals(4))(_Ranges(Vals(4)).Count - 1), ArrayList)(CType(_Ranges(Vals(4))(_Ranges(Vals(4)).Count - 1), ArrayList).Count - 1)) + 1 = NewRangeMatch Then
-                CType(_Ranges(Vals(4))(_Ranges(Vals(4)).Count - 1), ArrayList).Add(NewRangeMatch)
+            If Not _Ranges.ContainsKey(Vals(4)) Then _Ranges.Add(Vals(4), New List(Of Integer))
+            If _Ranges(Vals(4)).Count <> 0 AndAlso CInt(_Ranges(Vals(4))(_Ranges(Vals(4)).Count - 1)(_Ranges(Vals(4))(_Ranges(Vals(4)).Count - 1).Count - 1)) + 1 = NewRangeMatch Then
+                _Ranges(Vals(4))(_Ranges(Vals(4)).Count - 1).Add(NewRangeMatch)
             Else
-                _Ranges(Vals(4)).Add(New ArrayList From {NewRangeMatch})
+                _Ranges(Vals(4)).Add(New List(Of Integer) From {NewRangeMatch})
             End If
         Next
     End Sub
-    Public Shared Function MakeUniCategory(Cats As String()) As ArrayList
+    Public Shared Function MakeUniCategory(Cats As String()) As List(Of List(Of Integer))
         If _Ranges Is Nothing Then GetDecompositionCombiningCatData()
-        Dim Ranges As New ArrayList
+        Dim Ranges As New List(Of List(Of Integer))
         For Count = 0 To Cats.Length - 1
             If _Ranges.ContainsKey(Cats(Count)) Then
                 Ranges.AddRange(_Ranges(Cats(Count)))
@@ -2000,8 +2000,8 @@ Public Class ArabicData
         Return Ranges
     End Function
     Public Shared Function MakeUniCategoryJS(Cats As String()) As String
-        Dim Ranges As ArrayList = MakeUniCategory(Cats)
-        Return "return " + String.Join("||", Array.ConvertAll(Of ArrayList, String)(CType(Ranges.ToArray(GetType(ArrayList)), ArrayList()), Function(Arr As ArrayList) If(Arr.Count = 1, "c===0x" + Hex(Arr(0)), "(c>=0x" + Hex(Arr(0)) + "&&c<=0x" + Hex(Arr(Arr.Count - 1)) + ")"))) + ";"
+        Dim Ranges As List(Of List(Of Integer)) = MakeUniCategory(Cats)
+        Return "return " + String.Join("||", Array.ConvertAll(Ranges.ToArray(), Function(Arr As List(Of Integer)) If(Arr.Count = 1, "c===0x" + Hex(Arr(0)), "(c>=0x" + Hex(Arr(0)) + "&&c<=0x" + Hex(Arr(Arr.Count - 1)) + ")"))) + ";"
     End Function
     Public Shared Function FixStartingCombiningSymbol(Str As String) As String
         Return If((FindLetterBySymbol(Str.Chars(0)) <> -1 AndAlso ArabicLetters(FindLetterBySymbol(Str.Chars(0))).JoiningStyle = "T") Or Str.Length = 1, LeftToRightEmbedding + Str + PopDirectionalFormatting, Str)
@@ -3316,28 +3316,28 @@ Public Class RenderArray
                 End If
             Next
         Next
-        Return "if (typeof renderList == 'undefined') { renderList = []; } renderList = renderList.concat(" + Utility.MakeJSIndexedObject(CType(CType(Objects(0), ArrayList).ToArray(GetType(String)), String()), New Array() {CType(CType(Objects(1), ArrayList).ToArray(GetType(String)), String())}, True) + "); " + String.Join(String.Empty, ListJSInit.ToArray()) + String.Join(String.Empty, ListJSAfter.ToArray())
+        Return "if (typeof renderList == 'undefined') { renderList = []; } renderList = renderList.concat(" + Utility.MakeJSIndexedObject(CType(CType(Objects(0), List(Of Object)).ToArray(GetType(String)), String()), New Array() {CType(CType(Objects(1), List(Of Object)).ToArray(GetType(String)), String())}, True) + "); " + String.Join(String.Empty, ListJSInit.ToArray()) + String.Join(String.Empty, ListJSAfter.ToArray())
     End Function
     Public Shared Function GetInitJSItems(ID As String, Items As Collections.Generic.List(Of RenderItem), Title As String, NestPrefix As String) As Object()
         Dim Count As Integer
         Dim Index As Integer
-        Dim Objects As ArrayList = New ArrayList From {New ArrayList, New ArrayList, New List(Of String())}
-        Dim Names As New ArrayList
+        Dim Objects As New List(Of Object) From {New List(Of Object), New List(Of Object), New List(Of String())}
+        Dim Names As New List(Of String)
         Dim LastTitle As String = Title
         For Count = 0 To Items.Count - 1
-            Dim Arabic As New ArrayList
-            Dim Translit As New ArrayList
-            Dim Translate As New ArrayList
-            Dim Children As ArrayList = New ArrayList From {New ArrayList, New ArrayList}
+            Dim Arabic As New List(Of String)
+            Dim Translit As New List(Of String)
+            Dim Translate As New List(Of String)
+            Dim Children As New List(Of Object) From {New List(Of Object), New List(Of Object)}
             Dim ArrIndex As Integer = 0
             For Index = 0 To Items(Count).TextItems.Length - 1
                 Dim TestIndex As Integer = Index
                 If Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eNested Then
                     Dim Objs As Object() = GetInitJSItems(ID, CType(Items(Count).TextItems(Index).Text, Collections.Generic.List(Of RenderItem)), LastTitle, CStr(Count))
-                    CType(Children(0), ArrayList).AddRange(CType(Objs(0), ArrayList))
-                    CType(Children(1), ArrayList).AddRange(CType(Objs(1), ArrayList))
+                    Children(0).AddRange(Objs(0))
+                    Children(1).AddRange(Objs(1))
                 ElseIf Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eList Then
-                    CType(Objects(2), List(Of String())).AddRange(GetTableJSFunctions(CType(Items(Count).TextItems(Index).Text, Object())))
+                    Objects(2).AddRange(GetTableJSFunctions(CType(Items(Count).TextItems(Index).Text, Object())))
                 ElseIf Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eRanking Then
                 ElseIf Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eContinueStop Then
                     Arabic.Add("contstop" + ID + CStr(IIf(NestPrefix = String.Empty, String.Empty, NestPrefix + "_")) + CStr(Count) + "_" + CStr(ArrIndex))
@@ -3364,11 +3364,11 @@ Public Class RenderArray
                 If Arabic.Count = 0 Then Arabic.Add(String.Empty)
                 If Translit.Count = 0 Then Translit.Add(String.Empty)
                 If Translate.Count = 0 Then Translate.Add(String.Empty)
-                CType(Objects(0), ArrayList).Add("ri" + CStr(IIf(NestPrefix = String.Empty, ID, NestPrefix + "_")) + CStr(Count))
-                CType(Objects(1), ArrayList).Add(Utility.MakeJSIndexedObject(New String() {"title", "arabic", "translit", "translate", "children", "linkchild"}, New Array() {New String() {"'" + CStr(IIf(Items(Count).Type <> RenderTypes.eHeaderLeft And Items(Count).Type <> RenderTypes.eHeaderCenter And Items(Count).Type <> RenderTypes.eHeaderRight, Utility.EncodeJS(LastTitle), String.Empty)) + "'", Utility.MakeJSArray(CType(Arabic.ToArray(GetType(String)), String())), Utility.MakeJSArray(CType(Translit.ToArray(GetType(String)), String())), Utility.MakeJSArray(CType(Translate.ToArray(GetType(String)), String())), Utility.MakeJSIndexedObject(CType(CType(Children(0), ArrayList).ToArray(GetType(String)), String()), New Array() {CType(CType(Children(1), ArrayList).ToArray(GetType(String)), String())}, True), "true"}}, True))
+                Objects(0).Add("ri" + CStr(IIf(NestPrefix = String.Empty, ID, NestPrefix + "_")) + CStr(Count))
+                Objects(1).Add(Utility.MakeJSIndexedObject(New String() {"title", "arabic", "translit", "translate", "children", "linkchild"}, New Array() {New String() {"'" + CStr(IIf(Items(Count).Type <> RenderTypes.eHeaderLeft And Items(Count).Type <> RenderTypes.eHeaderCenter And Items(Count).Type <> RenderTypes.eHeaderRight, Utility.EncodeJS(LastTitle), String.Empty)) + "'", Utility.MakeJSArray(CType(Arabic.ToArray(GetType(String)), String())), Utility.MakeJSArray(CType(Translit.ToArray(GetType(String)), String())), Utility.MakeJSArray(CType(Translate.ToArray(GetType(String)), String())), Utility.MakeJSIndexedObject(CType(CType(Children(0), List(Of Object)).ToArray(GetType(String)), String()), New Array() {CType(CType(Children(1), List(Of Object)).ToArray(GetType(String)), String())}, True), "true"}}, True))
             End If
         Next
-        Return CType(Objects.ToArray(GetType(Object)), Object())
+        Return Objects.ToArray()
     End Function
     Public Shared Function DoGetRenderJS(ID As String, Items As Collections.Generic.List(Of RenderItem)) As String()
         Return New String() {String.Empty, String.Empty, GetInitJS(ID, Items), GetCopyClipboardJS(), GetSetClipboardJS(), GetStarRatingJS(), GetContinueStopJS()}
@@ -3392,23 +3392,23 @@ Public Class RenderArray
         Return JSFuncs.ToArray()
     End Function
     Public Shared Function MakeTableJSFunctions(ByRef Output As Array(), ID As String) As Array()
-        Dim Objects As ArrayList = MakeTableJSFuncs(Output, ID)
-        Output(0) = New String() {String.Empty, String.Empty, "if (typeof renderList == 'undefined') { renderList = []; } renderList = renderList.concat(" + Utility.MakeJSIndexedObject(CType(CType(Objects(0), ArrayList).ToArray(GetType(String)), String()), New Array() {CType(CType(Objects(1), ArrayList).ToArray(GetType(String)), String())}, True) + ");"}
+        Dim Objects As List(Of Object) = MakeTableJSFuncs(Output, ID)
+        Output(0) = New String() {String.Empty, String.Empty, "if (typeof renderList == 'undefined') { renderList = []; } renderList = renderList.concat(" + Utility.MakeJSIndexedObject(CType(CType(Objects(0), List(Of Object)).ToArray(GetType(String)), String()), New Array() {CType(CType(Objects(1), List(Of Object)).ToArray(GetType(String)), String())}, True) + ");"}
         Return Output
     End Function
-    Public Shared Function MakeTableJSFuncs(ByVal Output As Object(), Prefix As String) As ArrayList
+    Public Shared Function MakeTableJSFuncs(ByVal Output As Object(), Prefix As String) As List(Of Object)
         '2 dimensional array for table
-        Dim Objects As ArrayList = New ArrayList From {New ArrayList, New ArrayList}
+        Dim Objects As New List(Of Object) From {New List(Of Object), New List(Of Object)}
         Dim Count As Integer
         Dim Index As Integer
         If Output.Length = 0 Then Return Nothing
         Dim OutArray As Object() = Output
         For Count = 2 To OutArray.Length - 1
             If TypeOf OutArray(Count) Is Object() Then
-                Dim Arabics As New ArrayList
-                Dim Translits As New ArrayList
-                Dim Translations As New ArrayList
-                Dim Children As ArrayList = New ArrayList From {New ArrayList, New ArrayList}
+                Dim Arabics As New List(Of String)
+                Dim Translits As New List(Of String)
+                Dim Translations As New List(Of String)
+                Dim Children As New List(Of Object) From {New List(Of Object), New List(Of Object)}
                 Dim InnerArray As Object() = DirectCast(OutArray(Count), Object())
                 For Index = 0 To InnerArray.Length - 1
                     If Count <> 2 Then
@@ -3423,13 +3423,13 @@ Public Class RenderArray
                         End If
                     End If
                     If TypeOf InnerArray(Index) Is Object() Then
-                        Dim NextChild As ArrayList = MakeTableJSFuncs(DirectCast(InnerArray(Index), Object()), Prefix + CStr(Count - 3) + "_" + CStr(Index))
-                        CType(Children(0), ArrayList).AddRange(CType(NextChild(0), ArrayList))
-                        CType(Children(1), ArrayList).AddRange(CType(NextChild(1), ArrayList))
+                        Dim NextChild As List(Of Object) = MakeTableJSFuncs(DirectCast(InnerArray(Index), Object()), Prefix + CStr(Count - 3) + "_" + CStr(Index))
+                        Children(0).AddRange(NextChild(0))
+                        Children(1).AddRange(NextChild(1))
                     End If
                 Next
-                CType(Objects(0), ArrayList).Add("ri" + Prefix + CStr(Count))
-                CType(Objects(1), ArrayList).Add(Utility.MakeJSIndexedObject(New String() {"title", "arabic", "translit", "translate", "children", "linkchild"}, New Array() {New String() {"''", Utility.MakeJSArray(CType(Arabics.ToArray(GetType(String)), String())), Utility.MakeJSArray(CType(Translits.ToArray(GetType(String)), String())), Utility.MakeJSArray(CType(Translations.ToArray(GetType(String)), String())), Utility.MakeJSIndexedObject(CType(CType(Children(0), ArrayList).ToArray(GetType(String)), String()), New Array() {CType(CType(Children(1), ArrayList).ToArray(GetType(String)), String())}, True), "false"}}, True))
+                Objects(0).Add("ri" + Prefix + CStr(Count))
+                Objects(1).Add(Utility.MakeJSIndexedObject(New String() {"title", "arabic", "translit", "translate", "children", "linkchild"}, New Array() {New String() {"''", Utility.MakeJSArray(CType(Arabics.ToArray(GetType(String)), String())), Utility.MakeJSArray(CType(Translits.ToArray(GetType(String)), String())), Utility.MakeJSArray(CType(Translations.ToArray(GetType(String)), String())), Utility.MakeJSIndexedObject(CType(CType(Children(0), List(Of Object)).ToArray(GetType(String)), String()), New Array() {CType(CType(Children(1), List(Of Object)).ToArray(GetType(String)), String())}, True), "false"}}, True))
             End If
         Next
         Return Objects
