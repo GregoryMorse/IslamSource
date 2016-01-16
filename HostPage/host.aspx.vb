@@ -66,7 +66,7 @@ Partial Class host
                 Response.Write(Request.Headers.AllKeys()(Index) + ": ")
                 Dim Count As Integer
                 For Count = 0 To Request.Headers.GetValues(Request.Headers.AllKeys()(Index)).Length - 1
-                    Response.Write(Request.Headers.GetValues(Request.Headers.AllKeys()(Index))(Count) + CStr(IIf(Count <> Request.Headers.GetValues(Request.Headers.AllKeys()(Index)).Length - 1, ", ", String.Empty)))
+                    Response.Write(Request.Headers.GetValues(Request.Headers.AllKeys()(Index))(Count) + CStr(If(Count <> Request.Headers.GetValues(Request.Headers.AllKeys()(Index)).Length - 1, ", ", String.Empty)))
                 Next
                 Response.Write(vbCrLf)
             Next
@@ -76,7 +76,7 @@ Partial Class host
             Response.Write(Environment.Version)
         ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_ViewCache AndAlso UserAccounts.IsAdmin() Then
             Dim enumerator As IDictionaryEnumerator = Cache.GetEnumerator()
-            Dim keys As New ArrayList
+            Dim keys As New Generic.List(Of Object)
             Dim encoding As System.Text.Encoding = System.Text.Encoding.ASCII
             Response.ContentType = "text/plain;charset=" + encoding.WebName
             While enumerator.MoveNext
@@ -156,228 +156,230 @@ Partial Class host
                 For Each Binding As Microsoft.Web.Administration.Binding In Site.Bindings
                     Response.Write("Binding: " + Binding.BindingInformation + vbCrLf)
                     If Not Binding.CertificateStoreName Is Nothing Then Response.Write("Store Name: " + Binding.CertificateStoreName + vbCrLf)
-                    If Not Binding.CertificateHash Is Nothing Then Response.Write("Certificate Hash: " + String.Concat(Array.ConvertAll(Of Byte, String)(Binding.CertificateHash, Function(bt As Byte) bt.ToString("X2"))) + vbCrLf)
+                    If Not Binding.CertificateHash Is Nothing Then Response.Write("Certificate Hash: " + String.Concat(Linq.Enumerable.Select(Of Byte, String)(Binding.CertificateHash, Function(bt As Byte) bt.ToString("X2"))) + vbCrLf)
                 Next
                 Response.Write(vbCrLf)
             Next
         ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_EnableSSL AndAlso UserAccounts.IsAdmin() Then
             Dim ServerManager As New Microsoft.Web.Administration.ServerManager
-            Array.ForEach(Utility.ConnectionData.SiteDomains, Sub(Domain As String) ServerManager.Sites(Domain).Bindings.Add("*:443:", "https"))
+            For Each Domain As String In Utility.ConnectionData.SiteDomains
+                ServerManager.Sites(Domain).Bindings.Add("*:443:", "https")
+            Next
             ServerManager.CommitChanges()
         ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_CurrentUser AndAlso UserAccounts.IsAdmin() Then
-            Dim encoding As System.Text.Encoding = System.Text.Encoding.ASCII
-            Response.ContentType = "text/plain;charset=" + encoding.WebName
-            Response.Write("Execution User: " + System.Security.Principal.WindowsIdentity.GetCurrent().Name() + vbCrLf)
-            Response.Write("Http Context User: " + HttpContext.Current.User.Identity.Name() + vbCrLf)
+                Dim encoding As System.Text.Encoding = System.Text.Encoding.ASCII
+                Response.ContentType = "text/plain;charset=" + encoding.WebName
+                Response.Write("Execution User: " + System.Security.Principal.WindowsIdentity.GetCurrent().Name() + vbCrLf)
+                Response.Write("Http Context User: " + HttpContext.Current.User.Identity.Name() + vbCrLf)
         ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_HadithRanking Then
-            If UserAccounts.IsLoggedIn() Then
-                Utility.LookupClassMember("IslamSiteDatabase::ModifyRankingData").Invoke(Nothing, New Object() {UserAccounts.GetUserID()})
-            End If
-            Utility.LookupClassMember("IslamSiteDatabase::WriteRankingData").Invoke(Nothing, Nothing)
+                If UserAccounts.IsLoggedIn() Then
+                    Utility.LookupClassMember("IslamSiteDatabase::ModifyRankingData").Invoke(Nothing, New Object() {UserAccounts.GetUserID()})
+                End If
+                Utility.LookupClassMember("IslamSiteDatabase::WriteRankingData").Invoke(Nothing, Nothing)
         ElseIf (Request.QueryString.Get(PageQuery) = "Image.gif") Then
-            Dim DateModified As Date = Now
-            If Request.QueryString.Get("Image") = "EMailAddress" Or _
-                Request.QueryString.Get("Image") = "GradientBackground" Or _
-                Request.QueryString.Get("Image") = "GradientBackgroundBottom" Then
-                DateModified = IO.File.GetLastWriteTimeUtc(Utility.GetFilePath("bin\HostPage.dll"))
-            ElseIf Request.QueryString.Get("Image") = "Scale" Then
-                Dim FetchImageItem As PageLoader.ImageItem
-                If Request.QueryString.Get("p") = "menu.main" Then
-                    FetchImageItem = New PageLoader.ImageItem(String.Empty, String.Empty, PageSet.MainImage, Nothing, 206, 200)
-                ElseIf Request.QueryString.Get("p") = "menu.hover" Then
-                    FetchImageItem = New PageLoader.ImageItem(String.Empty, String.Empty, PageSet.HoverImage, Nothing, 206, 200)
-                Else
-                    FetchImageItem = DirectCast(PageSet.GetPageItem(Request.QueryString.Get("p")), PageLoader.ImageItem)
-                End If
-                'check XML timestamp also
-                DateModified = IO.File.GetLastWriteTimeUtc(Utility.GetFilePath("images\" + FetchImageItem.Path))
-            ElseIf Request.QueryString.Get("Image") = "Thumb" Then
-                Dim FetchImageItem As PageLoader.TextItem = DirectCast(PageSet.GetPageItem(Request.QueryString.Get("p")), PageLoader.TextItem)
-                'check XML timestamp also
-                If CInt(DiskCache.GetCacheItems().Length * New Random().NextDouble()) = 0 Then
-                    DateModified = Utility.GetURLLastModified(FetchImageItem.ImageURL)
-                Else
-                    DateModified = Date.MinValue
-                End If
-            End If
-            Dim Bytes() As Byte = DiskCache.GetCacheItem(Request.Url.Host + "_" + Request.QueryString().ToString(), DateModified)
-            If Not Bytes Is Nothing Then
-                ResultBmp = DirectCast(Bitmap.FromStream(New IO.MemoryStream(Bytes)), Bitmap)
-            End If
-            If ResultBmp Is Nothing Then
-                If Request.QueryString.Get("Image") = "EMailAddress" Then
-                    Dim oFont As New Font("Arial", 13)
-                    Dim TextExtent As SizeF = Utility.GetTextExtent(Utility.ConnectionData.EMailAddress, oFont)
-                    bmp = New Bitmap(CInt(Math.Ceiling(Math.Ceiling(TextExtent.Width + 1) * 96.0F / 72.0F)), CInt(Math.Ceiling(Math.Ceiling(TextExtent.Height + 1) * 96.0F / 72.0F)))
-                    Dim g As Graphics = Graphics.FromImage(bmp)
-                    g.PageUnit = GraphicsUnit.Point
-                    g.TextRenderingHint = Drawing.Text.TextRenderingHint.AntiAliasGridFit
-                    g.TextContrast = 0
-                    g.FillRectangle(Brushes.White, New RectangleF(0, 0, CInt(Math.Ceiling(Math.Ceiling(TextExtent.Width + 1) * 96.0F / 72.0F)), CInt(Math.Ceiling(Math.Ceiling(TextExtent.Height + 1) * 96.0F / 72.0F))))
-                    g.DrawString(Utility.ConnectionData.EMailAddress, oFont, Brushes.Black, New RectangleF(0, 0, CSng(Math.Ceiling(TextExtent.Width + 1)), CSng(Math.Ceiling(TextExtent.Height + 1))), Drawing.StringFormat.GenericTypographic)
-                    bmp.MakeTransparent(Color.White)
-                    oFont.Dispose()
-                ElseIf Request.QueryString.Get("Image") = "MandelbrotFractal" Or Request.QueryString.Get("Image") = "JuliaFractal" Then
-                    Dim FractalBmp As New Bitmap(50, 50)
-                    If Request.QueryString.Get("Image") = "MandelbrotFractal" Then
-                        ImageQuantization.Fractal.StandardMandelbrotSet(FractalBmp)
-                    Else
-                        ImageQuantization.Fractal.StandardJuliaSet(FractalBmp)
-                    End If
-                    bmp = New Bitmap(32 * 3, 32 * 3)
-                    Dim g As Graphics = Graphics.FromImage(bmp)
-                    Dim adj As Single = CSng(32 * Math.Sqrt(2))
-                    g.ResetTransform()
-                    g.RotateTransform(45.0F)
-                    g.DrawImage(FractalBmp, -50 + adj, -25) 'top left
-                    g.ResetTransform()
-                    g.RotateTransform(45.0F)
-                    g.RotateTransform(90.0F)
-                    g.DrawImage(FractalBmp, -50 + adj - adj * 2 + adj / 2, -25 - adj * 2 + adj / 2) 'top right
-                    g.ResetTransform()
-                    g.RotateTransform(45.0F)
-                    g.ScaleTransform(-1.0F, 1.0F)
-                    g.DrawImage(FractalBmp, -50 + adj - adj * 3, -25) 'bottom left
-                    g.ResetTransform()
-                    g.RotateTransform(45.0F)
-                    g.RotateTransform(90.0F)
-                    g.ScaleTransform(-1.0F, 1.0F)
-                    g.DrawImage(FractalBmp, -50 + adj - adj * 2 + adj / 2, -25 - adj * 2 + adj / 2) 'bottom right
-                    g.ResetTransform()
-                    g.DrawImage(FractalBmp, 0, 32, 32, 32) 'left
-                    g.ResetTransform()
-                    g.RotateTransform(90.0F)
-                    g.DrawImage(FractalBmp, 0, -32 - 32, 32, 32) 'top
-                    g.ResetTransform()
-                    g.ScaleTransform(-1.0F, 1.0F)
-                    g.DrawImage(FractalBmp, -32 - 32 - 32, 32, 32, 32) 'right
-                    g.ResetTransform()
-                    g.RotateTransform(90.0F)
-                    g.ScaleTransform(-1.0F, 1.0F)
-                    g.DrawImage(FractalBmp, -32 - 32 - 32, -32 - 32, 32, 32) 'bottom
-                ElseIf Request.QueryString.Get("Image") = "GradientBackground" Then
-                    bmp = New Bitmap(1, 320)
-                    Dim g As Graphics = Graphics.FromImage(bmp)
-                    Dim oBrush As New Drawing2D.LinearGradientBrush(New Rectangle(0, 0, 1, 320), Color.LightBlue, Color.LightGray, 90)
-                    g.FillRectangle(oBrush, New Rectangle(0, 0, 1, 320))
-                ElseIf Request.QueryString.Get("Image") = "GradientBackgroundBottom" Then
-                    bmp = New Bitmap(1, 320)
-                    Dim g As Graphics = Graphics.FromImage(bmp)
-                    Dim oBrush As New Drawing2D.LinearGradientBrush(New Rectangle(0, 0, 1, 320), Color.LightGray, Color.LightBlue, 90)
-                    g.FillRectangle(oBrush, New Rectangle(0, 0, 1, 320))
+                Dim DateModified As Date = Now
+                If Request.QueryString.Get("Image") = "EMailAddress" Or _
+                    Request.QueryString.Get("Image") = "GradientBackground" Or _
+                    Request.QueryString.Get("Image") = "GradientBackgroundBottom" Then
+                    DateModified = IO.File.GetLastWriteTimeUtc(Utility.GetFilePath("bin\HostPage.dll"))
                 ElseIf Request.QueryString.Get("Image") = "Scale" Then
-                    Dim SizeF As System.Drawing.SizeF
-                    Dim Scale As Double
                     Dim FetchImageItem As PageLoader.ImageItem
-                    Dim OriginalBmp As Bitmap
                     If Request.QueryString.Get("p") = "menu.main" Then
                         FetchImageItem = New PageLoader.ImageItem(String.Empty, String.Empty, PageSet.MainImage, Nothing, 206, 200)
-                        OriginalBmp = DirectCast(Bitmap.FromFile(Utility.GetFilePath("images\" + FetchImageItem.Path)), Bitmap)
-                        Utility.AddTextLogo(OriginalBmp, Utility.LoadResourceString(PageSet.Title))
                     ElseIf Request.QueryString.Get("p") = "menu.hover" Then
                         FetchImageItem = New PageLoader.ImageItem(String.Empty, String.Empty, PageSet.HoverImage, Nothing, 206, 200)
-                        OriginalBmp = DirectCast(Bitmap.FromFile(Utility.GetFilePath("images\" + FetchImageItem.Path)), Bitmap)
-                        Utility.AddTextLogo(OriginalBmp, Utility.LoadResourceString(PageSet.Title))
                     Else
-                        'check boundaries
                         FetchImageItem = DirectCast(PageSet.GetPageItem(Request.QueryString.Get("p")), PageLoader.ImageItem)
-                        OriginalBmp = DirectCast(Bitmap.FromFile(Utility.GetFilePath("images\" + FetchImageItem.Path)), Bitmap)
                     End If
-                    SizeF = OriginalBmp.GetBounds(Drawing.GraphicsUnit.Pixel).Size
-                    Scale = Utility.ComputeImageScale(SizeF.Width, SizeF.Height, FetchImageItem.MaxX, FetchImageItem.MaxY)
-                    bmp = Utility.MakeThumbnail(OriginalBmp, Convert.ToInt32(SizeF.Width / Scale), Convert.ToInt32(SizeF.Height / Scale))
-                    If Request.QueryString.Get("p") = "menu.main" Then
-                        Utility.ApplyTransparencyFilter(bmp, Color.FromArgb(&HFFF0F0F0), Color.White)
-                    End If
-                ElseIf Request.QueryString.Get("Image") = "UnicodeChar" Then
-                    bmp = Utility.GetUnicodeChar(If(Request.QueryString.Get("Size") = Nothing, 13, CInt(Request.QueryString.Get("Size"))), Request.QueryString.Get("Font"), Char.ConvertFromUtf32(Integer.Parse(Request.QueryString.Get("Char"), Globalization.NumberStyles.HexNumber)))
+                    'check XML timestamp also
+                    DateModified = IO.File.GetLastWriteTimeUtc(Utility.GetFilePath("images\" + FetchImageItem.Path))
                 ElseIf Request.QueryString.Get("Image") = "Thumb" Then
                     Dim FetchImageItem As PageLoader.TextItem = DirectCast(PageSet.GetPageItem(Request.QueryString.Get("p")), PageLoader.TextItem)
-                    bmp = Utility.MakeThumbFromURL(FetchImageItem.ImageURL, 121)
+                    'check XML timestamp also
+                    If CInt(DiskCache.GetCacheItems().Length * New Random().NextDouble()) = 0 Then
+                        DateModified = Utility.GetURLLastModified(FetchImageItem.ImageURL)
+                    Else
+                        DateModified = Date.MinValue
+                    End If
                 End If
-                If Not bmp Is Nothing Then
-                    Dim quantizer As ImageQuantization.OctreeQuantizer = New ImageQuantization.OctreeQuantizer(255, 8, Not Bitmap.IsAlphaPixelFormat(bmp.PixelFormat), Color.White)
-                    ResultBmp = quantizer.QuantizeBitmap(bmp)
-                    bmp.Dispose()
+                Dim Bytes() As Byte = DiskCache.GetCacheItem(Request.Url.Host + "_" + Request.QueryString().ToString(), DateModified)
+                If Not Bytes Is Nothing Then
+                    ResultBmp = DirectCast(Bitmap.FromStream(New IO.MemoryStream(Bytes)), Bitmap)
                 End If
-            End If
-            If Not ResultBmp Is Nothing Then
-                Response.ContentType = "image/gif"
-                'Save crashes because it calls get_Position on the stream
-                'ResultBmp.Save(Response.OutputStream, System.Drawing.Imaging.ImageFormat.Gif)
-                Dim MemStream As New IO.MemoryStream()
-                ResultBmp.Save(MemStream, CType(IIf(Object.Equals(ResultBmp.RawFormat, Drawing.Imaging.ImageFormat.MemoryBmp), Drawing.Imaging.ImageFormat.Gif, ResultBmp.RawFormat), Drawing.Imaging.ImageFormat))
-                If Bytes Is Nothing Then DiskCache.CacheItem(Request.Url.Host + "_" + Request.QueryString().ToString(), DateModified, MemStream.GetBuffer())
-                Response.Cache.SetCacheability(HttpCacheability.Public)
-                Response.OutputStream.Write(MemStream.ToArray(), 0, CInt(MemStream.Length))
-            End If
-            ResultBmp.Dispose()
-            GC.Collect()
+                If ResultBmp Is Nothing Then
+                    If Request.QueryString.Get("Image") = "EMailAddress" Then
+                        Dim oFont As New Font("Arial", 13)
+                        Dim TextExtent As SizeF = Utility.GetTextExtent(Utility.ConnectionData.EMailAddress, oFont)
+                        bmp = New Bitmap(CInt(Math.Ceiling(Math.Ceiling(TextExtent.Width + 1) * 96.0F / 72.0F)), CInt(Math.Ceiling(Math.Ceiling(TextExtent.Height + 1) * 96.0F / 72.0F)))
+                        Dim g As Graphics = Graphics.FromImage(bmp)
+                        g.PageUnit = GraphicsUnit.Point
+                        g.TextRenderingHint = Drawing.Text.TextRenderingHint.AntiAliasGridFit
+                        g.TextContrast = 0
+                        g.FillRectangle(Brushes.White, New RectangleF(0, 0, CInt(Math.Ceiling(Math.Ceiling(TextExtent.Width + 1) * 96.0F / 72.0F)), CInt(Math.Ceiling(Math.Ceiling(TextExtent.Height + 1) * 96.0F / 72.0F))))
+                        g.DrawString(Utility.ConnectionData.EMailAddress, oFont, Brushes.Black, New RectangleF(0, 0, CSng(Math.Ceiling(TextExtent.Width + 1)), CSng(Math.Ceiling(TextExtent.Height + 1))), Drawing.StringFormat.GenericTypographic)
+                        bmp.MakeTransparent(Color.White)
+                        oFont.Dispose()
+                    ElseIf Request.QueryString.Get("Image") = "MandelbrotFractal" Or Request.QueryString.Get("Image") = "JuliaFractal" Then
+                        Dim FractalBmp As New Bitmap(50, 50)
+                        If Request.QueryString.Get("Image") = "MandelbrotFractal" Then
+                            ImageQuantization.Fractal.StandardMandelbrotSet(FractalBmp)
+                        Else
+                            ImageQuantization.Fractal.StandardJuliaSet(FractalBmp)
+                        End If
+                        bmp = New Bitmap(32 * 3, 32 * 3)
+                        Dim g As Graphics = Graphics.FromImage(bmp)
+                        Dim adj As Single = CSng(32 * Math.Sqrt(2))
+                        g.ResetTransform()
+                        g.RotateTransform(45.0F)
+                        g.DrawImage(FractalBmp, -50 + adj, -25) 'top left
+                        g.ResetTransform()
+                        g.RotateTransform(45.0F)
+                        g.RotateTransform(90.0F)
+                        g.DrawImage(FractalBmp, -50 + adj - adj * 2 + adj / 2, -25 - adj * 2 + adj / 2) 'top right
+                        g.ResetTransform()
+                        g.RotateTransform(45.0F)
+                        g.ScaleTransform(-1.0F, 1.0F)
+                        g.DrawImage(FractalBmp, -50 + adj - adj * 3, -25) 'bottom left
+                        g.ResetTransform()
+                        g.RotateTransform(45.0F)
+                        g.RotateTransform(90.0F)
+                        g.ScaleTransform(-1.0F, 1.0F)
+                        g.DrawImage(FractalBmp, -50 + adj - adj * 2 + adj / 2, -25 - adj * 2 + adj / 2) 'bottom right
+                        g.ResetTransform()
+                        g.DrawImage(FractalBmp, 0, 32, 32, 32) 'left
+                        g.ResetTransform()
+                        g.RotateTransform(90.0F)
+                        g.DrawImage(FractalBmp, 0, -32 - 32, 32, 32) 'top
+                        g.ResetTransform()
+                        g.ScaleTransform(-1.0F, 1.0F)
+                        g.DrawImage(FractalBmp, -32 - 32 - 32, 32, 32, 32) 'right
+                        g.ResetTransform()
+                        g.RotateTransform(90.0F)
+                        g.ScaleTransform(-1.0F, 1.0F)
+                        g.DrawImage(FractalBmp, -32 - 32 - 32, -32 - 32, 32, 32) 'bottom
+                    ElseIf Request.QueryString.Get("Image") = "GradientBackground" Then
+                        bmp = New Bitmap(1, 320)
+                        Dim g As Graphics = Graphics.FromImage(bmp)
+                        Dim oBrush As New Drawing2D.LinearGradientBrush(New Rectangle(0, 0, 1, 320), Color.LightBlue, Color.LightGray, 90)
+                        g.FillRectangle(oBrush, New Rectangle(0, 0, 1, 320))
+                    ElseIf Request.QueryString.Get("Image") = "GradientBackgroundBottom" Then
+                        bmp = New Bitmap(1, 320)
+                        Dim g As Graphics = Graphics.FromImage(bmp)
+                        Dim oBrush As New Drawing2D.LinearGradientBrush(New Rectangle(0, 0, 1, 320), Color.LightGray, Color.LightBlue, 90)
+                        g.FillRectangle(oBrush, New Rectangle(0, 0, 1, 320))
+                    ElseIf Request.QueryString.Get("Image") = "Scale" Then
+                        Dim SizeF As System.Drawing.SizeF
+                        Dim Scale As Double
+                        Dim FetchImageItem As PageLoader.ImageItem
+                        Dim OriginalBmp As Bitmap
+                        If Request.QueryString.Get("p") = "menu.main" Then
+                            FetchImageItem = New PageLoader.ImageItem(String.Empty, String.Empty, PageSet.MainImage, Nothing, 206, 200)
+                            OriginalBmp = DirectCast(Bitmap.FromFile(Utility.GetFilePath("images\" + FetchImageItem.Path)), Bitmap)
+                            Utility.AddTextLogo(OriginalBmp, Utility.LoadResourceString(PageSet.Title))
+                        ElseIf Request.QueryString.Get("p") = "menu.hover" Then
+                            FetchImageItem = New PageLoader.ImageItem(String.Empty, String.Empty, PageSet.HoverImage, Nothing, 206, 200)
+                            OriginalBmp = DirectCast(Bitmap.FromFile(Utility.GetFilePath("images\" + FetchImageItem.Path)), Bitmap)
+                            Utility.AddTextLogo(OriginalBmp, Utility.LoadResourceString(PageSet.Title))
+                        Else
+                            'check boundaries
+                            FetchImageItem = DirectCast(PageSet.GetPageItem(Request.QueryString.Get("p")), PageLoader.ImageItem)
+                            OriginalBmp = DirectCast(Bitmap.FromFile(Utility.GetFilePath("images\" + FetchImageItem.Path)), Bitmap)
+                        End If
+                        SizeF = OriginalBmp.GetBounds(Drawing.GraphicsUnit.Pixel).Size
+                        Scale = Utility.ComputeImageScale(SizeF.Width, SizeF.Height, FetchImageItem.MaxX, FetchImageItem.MaxY)
+                        bmp = Utility.MakeThumbnail(OriginalBmp, Convert.ToInt32(SizeF.Width / Scale), Convert.ToInt32(SizeF.Height / Scale))
+                        If Request.QueryString.Get("p") = "menu.main" Then
+                            Utility.ApplyTransparencyFilter(bmp, Color.FromArgb(&HFFF0F0F0), Color.White)
+                        End If
+                    ElseIf Request.QueryString.Get("Image") = "UnicodeChar" Then
+                        bmp = Utility.GetUnicodeChar(If(Request.QueryString.Get("Size") = Nothing, 13, CInt(Request.QueryString.Get("Size"))), Request.QueryString.Get("Font"), Char.ConvertFromUtf32(Integer.Parse(Request.QueryString.Get("Char"), Globalization.NumberStyles.HexNumber)))
+                    ElseIf Request.QueryString.Get("Image") = "Thumb" Then
+                        Dim FetchImageItem As PageLoader.TextItem = DirectCast(PageSet.GetPageItem(Request.QueryString.Get("p")), PageLoader.TextItem)
+                        bmp = Utility.MakeThumbFromURL(FetchImageItem.ImageURL, 121)
+                    End If
+                    If Not bmp Is Nothing Then
+                        Dim quantizer As ImageQuantization.OctreeQuantizer = New ImageQuantization.OctreeQuantizer(255, 8, Not Bitmap.IsAlphaPixelFormat(bmp.PixelFormat), Color.White)
+                        ResultBmp = quantizer.QuantizeBitmap(bmp)
+                        bmp.Dispose()
+                    End If
+                End If
+                If Not ResultBmp Is Nothing Then
+                    Response.ContentType = "image/gif"
+                    'Save crashes because it calls get_Position on the stream
+                    'ResultBmp.Save(Response.OutputStream, System.Drawing.Imaging.ImageFormat.Gif)
+                    Dim MemStream As New IO.MemoryStream()
+                    ResultBmp.Save(MemStream, CType(If(Object.Equals(ResultBmp.RawFormat, Drawing.Imaging.ImageFormat.MemoryBmp), Drawing.Imaging.ImageFormat.Gif, ResultBmp.RawFormat), Drawing.Imaging.ImageFormat))
+                    If Bytes Is Nothing Then DiskCache.CacheItem(Request.Url.Host + "_" + Request.QueryString().ToString(), DateModified, MemStream.GetBuffer())
+                    Response.Cache.SetCacheability(HttpCacheability.Public)
+                    Response.OutputStream.Write(MemStream.ToArray(), 0, CInt(MemStream.Length))
+                End If
+                ResultBmp.Dispose()
+                GC.Collect()
         ElseIf Request.QueryString.Get(PageQuery) = "Source" Then
-            Dim f As IO.FileStream = New IO.FileStream(CStr(IIf(IO.File.Exists(Utility.GetFilePath("files\" + Request.QueryString.Get("File"))), Utility.GetFilePath("files\" + Request.QueryString.Get("File")), Utility.GetFilePath("metadata\" + Request.QueryString.Get("File")))), IO.FileMode.Open, IO.FileAccess.Read, IO.FileShare.Read)
-            Dim buffer As Byte() = New Byte(CInt(f.Length) - 1) {}
-            Dim count As Integer = f.Read(buffer, 0, CInt(f.Length))
-            Dim encoding As System.Text.Encoding = Utility.DetectEncoding(buffer)
-            If encoding Is Nothing Then
-                encoding = System.Text.Encoding.ASCII
-            End If
-            'Convert tabs to spaces
-            Response.ContentType = "text/plain;charset=" + encoding.WebName
-            Response.Write(Utility.SourceTextEncode(encoding.GetChars(buffer, encoding.GetPreamble().Length, count - encoding.GetPreamble().Length)))
+                Dim f As IO.FileStream = New IO.FileStream(CStr(If(IO.File.Exists(Utility.GetFilePath("files\" + Request.QueryString.Get("File"))), Utility.GetFilePath("files\" + Request.QueryString.Get("File")), Utility.GetFilePath("metadata\" + Request.QueryString.Get("File")))), IO.FileMode.Open, IO.FileAccess.Read, IO.FileShare.Read)
+                Dim buffer As Byte() = New Byte(CInt(f.Length) - 1) {}
+                Dim count As Integer = f.Read(buffer, 0, CInt(f.Length))
+                Dim encoding As System.Text.Encoding = Utility.DetectEncoding(buffer)
+                If encoding Is Nothing Then
+                    encoding = System.Text.Encoding.ASCII
+                End If
+                'Convert tabs to spaces
+                Response.ContentType = "text/plain;charset=" + encoding.WebName
+                Response.Write(Utility.SourceTextEncode(encoding.GetChars(buffer, encoding.GetPreamble().Length, count - encoding.GetPreamble().Length)))
         Else
-            If Request.Params(PageQuery) = "Print" Then
-                IsPrint = True
-            ElseIf Request.Params(PageQuery) = "PrintFlashcardPdf" Or Request.Params(PageQuery) = "PrintPdf" Or Request.Params(PageQuery) = "PrintDocX" Then
-                Dim MemStream As New IO.MemoryStream()
-                Dim RenderItems As New Generic.List(Of RenderArray.RenderItem)
-                Index = PageSet.GetPageIndex(Request.Params(PagePrintQuery))
-                For Count As Integer = 0 To PageSet.Pages(Index).Page.Count - 1
-                    If PageLoader.IsListItem(PageSet.Pages(Index).Page(Count)) Then
-                        For SubIndex As Integer = 0 To DirectCast(PageSet.Pages(Index).Page(Count), PageLoader.ListItem).List.Count - 1
-                            If PageLoader.IsTextItem(DirectCast(PageSet.Pages(Index).Page(Count), PageLoader.ListItem).List.Item(SubIndex)) Then
-                                Dim Item As PageLoader.TextItem = CType(CType(PageSet.Pages(Index).Page(Count), PageLoader.ListItem).List.Item(SubIndex), PageLoader.TextItem)
-                                If Not Item.OnRenderFunction Is Nothing Then
-                                    Dim Output As Object = Item.OnRenderFunction.Invoke(Nothing, New Object() {Item})
-                                    If TypeOf Output Is RenderArray Then
-                                        RenderItems.AddRange(CType(Output, RenderArray).Items)
-                                    ElseIf TypeOf Output Is Array() Then
-                                        RenderItems.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eList, Output)}))
+                If Request.Params(PageQuery) = "Print" Then
+                    IsPrint = True
+                ElseIf Request.Params(PageQuery) = "PrintFlashcardPdf" Or Request.Params(PageQuery) = "PrintPdf" Or Request.Params(PageQuery) = "PrintDocX" Then
+                    Dim MemStream As New IO.MemoryStream()
+                    Dim RenderItems As New Generic.List(Of RenderArray.RenderItem)
+                    Index = PageSet.GetPageIndex(Request.Params(PagePrintQuery))
+                    For Count As Integer = 0 To PageSet.Pages(Index).Page.Count - 1
+                        If PageLoader.IsListItem(PageSet.Pages(Index).Page(Count)) Then
+                            For SubIndex As Integer = 0 To DirectCast(PageSet.Pages(Index).Page(Count), PageLoader.ListItem).List.Count - 1
+                                If PageLoader.IsTextItem(DirectCast(PageSet.Pages(Index).Page(Count), PageLoader.ListItem).List.Item(SubIndex)) Then
+                                    Dim Item As PageLoader.TextItem = CType(CType(PageSet.Pages(Index).Page(Count), PageLoader.ListItem).List.Item(SubIndex), PageLoader.TextItem)
+                                    If Not Item.OnRenderFunction Is Nothing Then
+                                        Dim Output As Object = Item.OnRenderFunction.Invoke(Nothing, New Object() {Item})
+                                        If TypeOf Output Is RenderArray Then
+                                            RenderItems.AddRange(CType(Output, RenderArray).Items)
+                                        ElseIf TypeOf Output Is Array() Then
+                                            RenderItems.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eList, Output)}))
+                                        End If
                                     End If
                                 End If
-                            End If
-                        Next
-                    ElseIf PageLoader.IsTextItem(PageSet.Pages(Index).Page(Count)) Then
-                        Dim Item As PageLoader.TextItem = CType(PageSet.Pages(Index).Page(Count), PageLoader.TextItem)
-                        If Not Item.OnRenderFunction Is Nothing Then
-                            Dim Output As Object = Item.OnRenderFunction.Invoke(Nothing, New Object() {Item})
-                            If TypeOf Output Is RenderArray Then
-                                RenderItems.AddRange(CType(Output, RenderArray).Items)
+                            Next
+                        ElseIf PageLoader.IsTextItem(PageSet.Pages(Index).Page(Count)) Then
+                            Dim Item As PageLoader.TextItem = CType(PageSet.Pages(Index).Page(Count), PageLoader.TextItem)
+                            If Not Item.OnRenderFunction Is Nothing Then
+                                Dim Output As Object = Item.OnRenderFunction.Invoke(Nothing, New Object() {Item})
+                                If TypeOf Output Is RenderArray Then
+                                    RenderItems.AddRange(CType(Output, RenderArray).Items)
+                                End If
                             End If
                         End If
+                    Next
+                    If RenderItems.Count <> 0 Then
+                        If Request.Params(PageQuery) = "PrintFlashcardPdf" Then
+                            RenderArray.OutputFlashcardPdf(MemStream, RenderItems)
+                            Response.ContentType = "application/pdf"
+                        ElseIf Request.Params(PageQuery) = "PrintPdf" Then
+                            RenderArray.OutputPdf(MemStream, RenderItems)
+                            Response.ContentType = "application/pdf"
+                        Else
+                            RenderArray.OutputDocX(MemStream, RenderItems)
+                            Response.ContentType = "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+                        End If
+                        Response.OutputStream.Write(MemStream.ToArray(), 0, CInt(MemStream.Length))
+                        'Dim Bytes(4096) As Byte
+                        'Dim Read As Integer
+                        'MemStream.Seek(0, IO.SeekOrigin.Begin)
+                        'Read = MemStream.Read(Bytes, 0, Bytes.Length)
+                        'While Read <> 0
+                        '    Response.OutputStream.Write(Bytes, 0, Read)
+                        '    Read = MemStream.Read(Bytes, 0, Bytes.Length)
+                        'End While
+                        Return
                     End If
-                Next
-                If RenderItems.Count <> 0 Then
-                    If Request.Params(PageQuery) = "PrintFlashcardPdf" Then
-                        RenderArray.OutputFlashcardPdf(MemStream, RenderItems)
-                        Response.ContentType = "application/pdf"
-                    ElseIf Request.Params(PageQuery) = "PrintPdf" Then
-                        RenderArray.OutputPdf(MemStream, RenderItems)
-                        Response.ContentType = "application/pdf"
-                    Else
-                        RenderArray.OutputDocX(MemStream, RenderItems)
-                        Response.ContentType = "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
-                    End If
-                    Response.OutputStream.Write(MemStream.ToArray(), 0, CInt(MemStream.Length))
-                    'Dim Bytes(4096) As Byte
-                    'Dim Read As Integer
-                    'MemStream.Seek(0, IO.SeekOrigin.Begin)
-                    'Read = MemStream.Read(Bytes, 0, Bytes.Length)
-                    'While Read <> 0
-                    '    Response.OutputStream.Write(Bytes, 0, Read)
-                    '    Read = MemStream.Read(Bytes, 0, Bytes.Length)
-                    'End While
-                    Return
-                End If
                 ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_Register Then
                     UserAccounts.Register(PageSet, Request.Form.Get(UserAccounts.ID_Username), Request.Form.Get(UserAccounts.ID_Password), Request.Form.Get(UserAccounts.ID_ConfirmPassword), Request.Form.Get(UserAccounts.ID_EmailAddress), Request.Form.Get(UserAccounts.ID_ConfirmEmailAddress), Request.Form.Get(UserAccounts.ID_Register))
                 ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_Login Then
@@ -756,7 +758,7 @@ Class UserAccounts
         HttpContext.Current.Response.Cookies.Set(Cookie)
     End Sub
     Public Shared Sub Register(ByRef PageSet As PageLoader, ByVal UserName As String, ByVal Password As String, ByVal PasswordConfirm As String, ByVal EMail As String, ByVal EMailConfirm As String, ByVal Register As String)
-        Dim Errors As New ArrayList
+        Dim Errors As New Generic.List(Of String)
         Dim UserID As Integer
         If IsLoggedIn() Then Return
         If Register = Utility.LoadResourceString("Acct_" + ID_Register) Then
@@ -790,11 +792,11 @@ Class UserAccounts
                 End If
             End If
         End If
-        Dim Controls As New ArrayList
-        Dim Form As New ArrayList
+        Dim Controls As New Generic.List(Of Object)
+        Dim Form As New Generic.List(Of Object)
         If Register <> Utility.LoadResourceString("Acct_" + ID_Register) Or Errors.Count <> 0 Then
             'check form first otherwise send new form
-            Controls.AddRange(Array.ConvertAll(Of String, PageLoader.TextItem)(CType(Errors.ToArray(GetType(String)), String()), Function(ErrorID As String) New PageLoader.TextItem(ID_Error, ErrorID)))
+            Controls.AddRange(Linq.Enumerable.Select(Errors.ToArray(), Function(ErrorID As String) CType(New PageLoader.TextItem(ID_Error, ErrorID), Object)))
             Form.Add(New PageLoader.TextItem(String.Empty, "Acct_" + ID_Username))
             Form.Add(New PageLoader.EditItem(ID_Username, UserName, 1))
             Form.Add(New PageLoader.TextItem(String.Empty, "Acct_" + ID_Password))
@@ -814,7 +816,7 @@ Class UserAccounts
         PageSet.Pages.Add(New PageLoader.PageItem(Controls, ID_Register, "Acct_" + ID_Register))
     End Sub
     Public Shared Sub Login(ByRef PageSet As PageLoader, ByVal UserName As String, ByVal Password As String, ByVal Persist As String, ByVal Login As String)
-        Dim Errors As New ArrayList
+        Dim Errors As New Generic.List(Of String)
         Dim UserID As Integer
         Dim Forgot As Boolean = False
         Dim NoActivate As Boolean = False
@@ -843,11 +845,11 @@ Class UserAccounts
                 End If
             End If
         End If
-        Dim Controls As New ArrayList
-        Dim Form As New ArrayList
+        Dim Controls As New Generic.List(Of Object)
+        Dim Form As New Generic.List(Of Object)
         If Login <> Utility.LoadResourceString("Acct_" + ID_Login) Or Errors.Count <> 0 Then
             If Errors.Count <> 0 Then
-                Controls.AddRange(Array.ConvertAll(Of String, PageLoader.TextItem)(CType(Errors.ToArray(GetType(String)), String()), Function(ErrorID As String) New PageLoader.TextItem(ID_Error, ErrorID)))
+                Controls.AddRange(Linq.Enumerable.Select(Errors.ToArray(), Function(ErrorID As String) CType(New PageLoader.TextItem(ID_Error, ErrorID), Object)))
                 If Forgot Then
                     Controls.Add(New PageLoader.TextItem(ID_ForgotUsername, "Acct_" + ID_ForgotUsername, host.GetPageString(ID_ForgotUsername)))
                     Controls.Add(New PageLoader.TextItem(ID_ForgotPassword, "Acct_" + ID_ForgotPassword, host.GetPageString(ID_ForgotPassword)))
@@ -859,7 +861,7 @@ Class UserAccounts
             Form.Add(New PageLoader.EditItem(ID_Username, UserName, 1))
             Form.Add(New PageLoader.TextItem(String.Empty, "Acct_" + ID_Password))
             Form.Add(New PageLoader.EditItem(ID_Password, String.Empty, 1, True))
-            Form.Add(New PageLoader.RadioItem(ID_Remember, "Acct_" + ID_Remember, CStr(IIf(Persist = String.Empty, "1", Persist)), New PageLoader.OptionItem() {New PageLoader.OptionItem("Acct_" + ID_Yes), New PageLoader.OptionItem("Acct_" + ID_No)}))
+            Form.Add(New PageLoader.RadioItem(ID_Remember, "Acct_" + ID_Remember, CStr(If(Persist = String.Empty, "1", Persist)), New PageLoader.OptionItem() {New PageLoader.OptionItem("Acct_" + ID_Yes), New PageLoader.OptionItem("Acct_" + ID_No)}))
             Form.Add(New PageLoader.ButtonItem(ID_Login, "Acct_" + ID_Login))
             Controls.Add(New PageLoader.ListItem("Acct_" + ID_Login, ID_Login, Form, False, True, host.GetPageString(ID_Login)))
             Controls.Add(New PageLoader.TextItem(ID_Register, "Acct_" + ID_Register, host.GetPageString(ID_Register)))
@@ -872,13 +874,13 @@ Class UserAccounts
     Public Shared Sub Logoff(ByRef PageSet As PageLoader)
         If Not IsLoggedIn() Then Return
         ClearLoginCookie()
-        Dim Controls As New ArrayList
+        Dim Controls As New Generic.List(Of Object)
         Controls.Add(New PageLoader.TextItem(String.Empty, "Acct_" + ID_LogoffSuccess))
         Controls.Add(New PageLoader.TextItem(ID_Home, "Acct_" + ID_Home, host.RootPath))
         PageSet.Pages.Add(New PageLoader.PageItem(Controls, ID_Logoff, "Acct_" + ID_Logoff))
     End Sub
     Public Shared Sub ForgotUserName(ByRef PageSet As PageLoader, ByVal EMail As String, ByVal RetrieveUserName As String)
-        Dim Errors As New ArrayList
+        Dim Errors As New Generic.List(Of String)
         If IsLoggedIn() Then Return
         If RetrieveUserName = Utility.LoadResourceString("Acct_" + ID_RetrieveUsername) Then
             Dim UserID As Integer
@@ -893,11 +895,11 @@ Class UserAccounts
                 End If
             End If
         End If
-        Dim Controls As New ArrayList
-        Dim Form As New ArrayList
+        Dim Controls As New Generic.List(Of Object)
+        Dim Form As New Generic.List(Of Object)
         If RetrieveUserName <> Utility.LoadResourceString("Acct_" + ID_RetrieveUsername) Or Errors.Count <> 0 Then
             If Errors.Count <> 0 Then
-                Controls.AddRange(Array.ConvertAll(Of String, PageLoader.TextItem)(CType(Errors.ToArray(GetType(String)), String()), Function(ErrorID As String) New PageLoader.TextItem(ID_Error, ErrorID)))
+                Controls.AddRange(Linq.Enumerable.Select(Errors.ToArray(), Function(ErrorID As String) CType(New PageLoader.TextItem(ID_Error, ErrorID), Object)))
             End If
             Form.Add(New PageLoader.TextItem(String.Empty, "Acct_" + ID_EmailAddress))
             Form.Add(New PageLoader.EditItem(ID_EmailAddress, EMail, 1))
@@ -910,7 +912,7 @@ Class UserAccounts
         PageSet.Pages.Add(New PageLoader.PageItem(Controls, ID_ForgotUsername, "Acct_" + ID_ForgotUsername))
     End Sub
     Public Shared Sub ForgotPassword(ByRef PageSet As PageLoader, ByVal UserName As String, ByVal RetrievePassword As String)
-        Dim Errors As New ArrayList
+        Dim Errors As New Generic.List(Of String)
         Dim UserID As Integer
         If IsLoggedIn() Then Return
         If RetrievePassword = Utility.LoadResourceString("Acct_" + ID_RetrievePassword) Then
@@ -925,11 +927,11 @@ Class UserAccounts
                 End If
             End If
         End If
-        Dim Controls As New ArrayList
-        Dim Form As New ArrayList
+        Dim Controls As New Generic.List(Of Object)
+        Dim Form As New Generic.List(Of Object)
         If RetrievePassword <> Utility.LoadResourceString("Acct_" + ID_RetrievePassword) Or Errors.Count <> 0 Then
             If Errors.Count <> 0 Then
-                Controls.AddRange(Array.ConvertAll(Of String, PageLoader.TextItem)(CType(Errors.ToArray(GetType(String)), String()), Function(ErrorID As String) New PageLoader.TextItem(ID_Error, ErrorID)))
+                Controls.AddRange(Linq.Enumerable.Select(Errors.ToArray(), Function(ErrorID As String) CType(New PageLoader.TextItem(ID_Error, ErrorID), Object)))
             End If
             Form.Add(New PageLoader.TextItem(String.Empty, "Acct_" + ID_Username))
             Form.Add(New PageLoader.EditItem(ID_Username, UserName, 1))
@@ -942,7 +944,7 @@ Class UserAccounts
         PageSet.Pages.Add(New PageLoader.PageItem(Controls, ID_ForgotPassword, "Acct_" + ID_ForgotPassword))
     End Sub
     Public Shared Sub ResetPassword(ByRef PageSet As PageLoader, ByVal UserID As String, ByVal UserName As String, ByVal ResetCode As String, ByVal Password As String, ByVal PasswordConfirm As String, ByVal ResetPassword As String)
-        Dim Errors As New ArrayList
+        Dim Errors As New Generic.List(Of String)
         Dim UID As Integer
         Dim ResCode As UInteger
         If IsLoggedIn() Then Return
@@ -981,11 +983,11 @@ Class UserAccounts
                 End If
             End If
         End If
-        Dim Controls As New ArrayList
-        Dim Form As New ArrayList
+        Dim Controls As New Generic.List(Of Object)
+        Dim Form As New Generic.List(Of Object)
         If ResetPassword <> Utility.LoadResourceString("Acct_" + ID_ResetPassword) Or UserID <> String.Empty Or Errors.Count <> 0 Then
             If Errors.Count <> 0 Then
-                Controls.AddRange(Array.ConvertAll(Of String, PageLoader.TextItem)(CType(Errors.ToArray(GetType(String)), String()), Function(ErrorID As String) New PageLoader.TextItem(ID_Error, ErrorID)))
+                Controls.AddRange(Linq.Enumerable.Select(Errors.ToArray(), Function(ErrorID As String) CType(New PageLoader.TextItem(ID_Error, ErrorID), Object)))
             End If
             Form.Add(New PageLoader.TextItem(String.Empty, "Acct_" + ID_Username))
             Form.Add(New PageLoader.EditItem(ID_Username, UserName, 1))
@@ -1004,7 +1006,7 @@ Class UserAccounts
         PageSet.Pages.Add(New PageLoader.PageItem(Controls, ID_ResetPassword, "Acct_" + ID_ResetPassword))
     End Sub
     Public Shared Sub ActivateAccount(ByRef PageSet As PageLoader, ByVal UserID As String, ByVal UserName As String, ByVal ActivationCode As String, ByVal ActivateAccount As String)
-        Dim Errors As New ArrayList
+        Dim Errors As New Generic.List(Of String)
         Dim UID As Integer
         Dim ActivateCode As Integer
         If IsLoggedIn() Then Return
@@ -1032,11 +1034,11 @@ Class UserAccounts
                 End If
             End If
         End If
-        Dim Controls As New ArrayList
-        Dim Form As New ArrayList
+        Dim Controls As New Generic.List(Of Object)
+        Dim Form As New Generic.List(Of Object)
         If (UserID = String.Empty And ActivateAccount <> Utility.LoadResourceString("Acct_" + ID_ActivateAccount)) Or Errors.Count <> 0 Then
             If Errors.Count <> 0 Then
-                Controls.AddRange(Array.ConvertAll(Of String, PageLoader.TextItem)(CType(Errors.ToArray(GetType(String)), String()), Function(ErrorID As String) New PageLoader.TextItem(ID_Error, ErrorID)))
+                Controls.AddRange(Linq.Enumerable.Select(Errors.ToArray(), Function(ErrorID As String) CType(New PageLoader.TextItem(ID_Error, ErrorID), Object)))
             End If
             Form.Add(New PageLoader.TextItem(String.Empty, "Acct_" + ID_Username))
             Form.Add(New PageLoader.EditItem(ID_Username, UserName, 1))
@@ -1051,7 +1053,7 @@ Class UserAccounts
         PageSet.Pages.Add(New PageLoader.PageItem(Controls, ID_ActivateAccount, "Acct_" + ID_ActivateAccount))
     End Sub
     Public Shared Sub SendActivation(ByRef PageSet As PageLoader, ByVal UserName As String, ByVal SendActivation As String)
-        Dim Errors As New ArrayList
+        Dim Errors As New Generic.List(Of String)
         Dim UserID As Integer
         If IsLoggedIn() Then Return
         If SendActivation = Utility.LoadResourceString("Acct_" + ID_SendActivationCode) Then
@@ -1066,11 +1068,11 @@ Class UserAccounts
                 End If
             End If
         End If
-        Dim Controls As New ArrayList
-        Dim Form As New ArrayList
+        Dim Controls As New Generic.List(Of Object)
+        Dim Form As New Generic.List(Of Object)
         If SendActivation <> Utility.LoadResourceString("Acct_" + ID_SendActivationCode) Or Errors.Count <> 0 Then
             If Errors.Count <> 0 Then
-                Controls.AddRange(Array.ConvertAll(Of String, PageLoader.TextItem)(CType(Errors.ToArray(GetType(String)), String()), Function(ErrorID As String) New PageLoader.TextItem(ID_Error, ErrorID)))
+                Controls.AddRange(Linq.Enumerable.Select(Errors.ToArray(), Function(ErrorID As String) CType(New PageLoader.TextItem(ID_Error, ErrorID), Object)))
             End If
             Form.Add(New PageLoader.TextItem(String.Empty, "Acct_" + ID_Username))
             Form.Add(New PageLoader.EditItem(ID_Username, UserName, 1))
@@ -1083,7 +1085,7 @@ Class UserAccounts
         PageSet.Pages.Add(New PageLoader.PageItem(Controls, ID_SendActivationCode, "Acct_" + ID_SendActivationCode))
     End Sub
     Public Shared Sub ControlPanel(ByRef PageSet As PageLoader)
-        Dim Controls As New ArrayList
+        Dim Controls As New Generic.List(Of Object)
         Controls.Add(New PageLoader.TextItem(ID_ChangeUsername, "Acct_" + ID_ChangeUsername, host.GetPageString(ID_ChangeUsername), String.Empty))
         Controls.Add(New PageLoader.TextItem(ID_ChangePassword, "Acct_" + ID_ChangePassword, host.GetPageString(ID_ChangePassword), String.Empty))
         Controls.Add(New PageLoader.TextItem(ID_ChangeEMailAddress, "Acct_" + ID_ChangeEMailAddress, host.GetPageString(ID_ChangeEMailAddress), String.Empty))
@@ -1111,7 +1113,7 @@ Class UserAccounts
         PageSet.Pages.Add(New PageLoader.PageItem(Controls, ID_ControlPanel, "Acct_" + ID_ControlPanel))
     End Sub
     Public Shared Sub DeleteAccount(ByRef PageSet As PageLoader, ByVal Certain As String, ByVal DeleteAccount As String)
-        Dim Errors As New ArrayList
+        Dim Errors As New Generic.List(Of String)
         If Not IsLoggedIn() Then Return
         If DeleteAccount = Utility.LoadResourceString("Acct_" + ID_DeleteAccount) Then
             If Certain <> "0" Then
@@ -1122,11 +1124,11 @@ Class UserAccounts
                 ClearLoginCookie()
             End If
         End If
-        Dim Controls As New ArrayList
-        Dim Form As New ArrayList
+        Dim Controls As New Generic.List(Of Object)
+        Dim Form As New Generic.List(Of Object)
         If DeleteAccount <> Utility.LoadResourceString("Acct_" + ID_DeleteAccount) Or Errors.Count <> 0 Then
             If Errors.Count <> 0 Then
-                Controls.AddRange(Array.ConvertAll(Of String, PageLoader.TextItem)(CType(Errors.ToArray(GetType(String)), String()), Function(ErrorID As String) New PageLoader.TextItem(ID_Error, ErrorID)))
+                Controls.AddRange(Linq.Enumerable.Select(Errors.ToArray(), Function(ErrorID As String) CType(New PageLoader.TextItem(ID_Error, ErrorID), Object)))
             End If
             Form.Add(New PageLoader.RadioItem(ID_Certain, "Acct_" + ID_Certain, "1", New PageLoader.OptionItem() {New PageLoader.OptionItem("Acct_" + ID_Yes), New PageLoader.OptionItem("Acct_" + ID_No)}))
             Form.Add(New PageLoader.ButtonItem(ID_DeleteAccount, "Acct_" + ID_DeleteAccount))
@@ -1138,7 +1140,7 @@ Class UserAccounts
         PageSet.Pages.Add(New PageLoader.PageItem(Controls, ID_DeleteAccount, "Acct_" + ID_DeleteAccount))
     End Sub
     Public Shared Sub ChangeEMailAddress(ByRef PageSet As PageLoader, ByVal EMail As String, ByVal EMailConfirm As String, ByVal ChangeEMailAddress As String)
-        Dim Errors As New ArrayList
+        Dim Errors As New Generic.List(Of String)
         Dim UserID As Integer
         If Not IsLoggedIn() Then Return
         If ChangeEMailAddress = Utility.LoadResourceString("Acct_" + ID_ChangeEMailAddress) Then
@@ -1154,11 +1156,11 @@ Class UserAccounts
                 ClearLoginCookie()
             End If
         End If
-        Dim Controls As New ArrayList
-        Dim Form As New ArrayList
+        Dim Controls As New Generic.List(Of Object)
+        Dim Form As New Generic.List(Of Object)
         If ChangeEMailAddress <> Utility.LoadResourceString("Acct_" + ID_ChangeEMailAddress) Or Errors.Count <> 0 Then
             If Errors.Count <> 0 Then
-                Controls.AddRange(Array.ConvertAll(Of String, PageLoader.TextItem)(CType(Errors.ToArray(GetType(String)), String()), Function(ErrorID As String) New PageLoader.TextItem(ID_Error, ErrorID)))
+                Controls.AddRange(Linq.Enumerable.Select(Errors.ToArray(), Function(ErrorID As String) CType(New PageLoader.TextItem(ID_Error, ErrorID), Object)))
             End If
             Form.Add(New PageLoader.TextItem(String.Empty, "Acct_" + ID_EmailAddress))
             Form.Add(New PageLoader.EditItem(ID_EmailAddress, String.Empty, 1))
@@ -1173,7 +1175,7 @@ Class UserAccounts
         PageSet.Pages.Add(New PageLoader.PageItem(Controls, ID_ChangeEMailAddress, "Acct_" + ID_ChangeEMailAddress))
     End Sub
     Public Shared Sub ChangePassword(ByRef PageSet As PageLoader, ByVal Password As String, ByVal PasswordConfirm As String, ByVal ChangePassword As String)
-        Dim Errors As New ArrayList
+        Dim Errors As New Generic.List(Of String)
         Dim UserID As Integer
         If Not IsLoggedIn() Then Return
         If ChangePassword = Utility.LoadResourceString("Acct_" + ID_ChangePassword) Then
@@ -1188,11 +1190,11 @@ Class UserAccounts
                 MailDispatcher.SendPasswordChangedEMail(SiteDatabase.GetUserName(UserID), SiteDatabase.GetUserEMail(UserID))
             End If
         End If
-        Dim Controls As New ArrayList
-        Dim Form As New ArrayList
+        Dim Controls As New Generic.List(Of Object)
+        Dim Form As New Generic.List(Of Object)
         If ChangePassword <> Utility.LoadResourceString("Acct_" + ID_ChangePassword) Or Errors.Count <> 0 Then
             If Errors.Count <> 0 Then
-                Controls.AddRange(Array.ConvertAll(Of String, PageLoader.TextItem)(CType(Errors.ToArray(GetType(String)), String()), Function(ErrorID As String) New PageLoader.TextItem(ID_Error, ErrorID)))
+                Controls.AddRange(Linq.Enumerable.Select(Errors.ToArray(), Function(ErrorID As String) CType(New PageLoader.TextItem(ID_Error, ErrorID), Object)))
             End If
             Form.Add(New PageLoader.TextItem(String.Empty, "Acct_" + ID_Password))
             Form.Add(New PageLoader.EditItem(ID_Password, String.Empty, 1, True))
@@ -1207,7 +1209,7 @@ Class UserAccounts
         PageSet.Pages.Add(New PageLoader.PageItem(Controls, ID_ChangePassword, "Acct_" + ID_ChangePassword))
     End Sub
     Public Shared Sub ChangeUserName(ByRef PageSet As PageLoader, ByVal UserName As String, ByVal ChangeUserName As String)
-        Dim Errors As New ArrayList
+        Dim Errors As New Generic.List(Of String)
         Dim UserID As Integer
         If Not IsLoggedIn() Then Return
         If ChangeUserName = Utility.LoadResourceString("Acct_" + ID_ChangeUsername) Then
@@ -1219,11 +1221,11 @@ Class UserAccounts
                 MailDispatcher.SendUserNameChangedEMail(SiteDatabase.GetUserName(UserID), SiteDatabase.GetUserEMail(UserID))
             End If
         End If
-        Dim Controls As New ArrayList
-        Dim Form As New ArrayList
+        Dim Controls As New Generic.List(Of Object)
+        Dim Form As New Generic.List(Of Object)
         If ChangeUserName <> Utility.LoadResourceString("Acct_" + ID_ChangeUsername) Or Errors.Count <> 0 Then
             If Errors.Count <> 0 Then
-                Controls.AddRange(Array.ConvertAll(Of String, PageLoader.TextItem)(CType(Errors.ToArray(GetType(String)), String()), Function(ErrorID As String) New PageLoader.TextItem(ID_Error, ErrorID)))
+                Controls.AddRange(Linq.Enumerable.Select(Errors.ToArray(), Function(ErrorID As String) CType(New PageLoader.TextItem(ID_Error, ErrorID), Object)))
             End If
             Form.Add(New PageLoader.TextItem(String.Empty, "Acct_" + ID_Username))
             Form.Add(New PageLoader.EditItem(ID_Username, String.Empty, 1))
@@ -1262,8 +1264,8 @@ Class UserAccounts
                 Output = "Error: " + ex.Message
             End Try
         End If
-        Dim Controls As New ArrayList
-        Dim Form As New ArrayList
+        Dim Controls As New Generic.List(Of Object)
+        Dim Form As New Generic.List(Of Object)
         Controls.Add(New PageLoader.ListItem("Acct_" + ID_CertInstall, ID_CertInstall, Form, False, True, host.GetPageString(ID_CertInstall)))
         Form.Add(New PageLoader.EditItem(ID_Certificate, String.Empty, 10))
         Form.Add(New PageLoader.EditItem(ID_CertRequest, String.Empty, 10))
@@ -1285,8 +1287,8 @@ Class UserAccounts
             Next
             Store.Close()
         End If
-        Dim Controls As New ArrayList
-        Dim Form As New ArrayList
+        Dim Controls As New Generic.List(Of Object)
+        Dim Form As New Generic.List(Of Object)
         Controls.Add(New PageLoader.ListItem("Acct_" + ID_DeleteCertRequest, ID_DeleteCertRequest, Form, False, True, host.GetPageString(ID_DeleteCertRequest)))
         Form.Add(New PageLoader.EditItem(ID_Certificate, String.Empty, 10))
         Form.Add(New PageLoader.TextItem("", Output, , , "Utility::TextRender"))
@@ -1305,8 +1307,8 @@ Class UserAccounts
             Store.Close()
             Output = "Installed Certificate!"
         End If
-        Dim Controls As New ArrayList
-        Dim Form As New ArrayList
+        Dim Controls As New Generic.List(Of Object)
+        Dim Form As New Generic.List(Of Object)
         Controls.Add(New PageLoader.ListItem("Acct_" + ID_CertInstallIntermed, ID_CertInstallIntermed, Form, False, True, host.GetPageString(ID_CertInstallIntermed)))
         Form.Add(New PageLoader.EditItem(ID_Certificate, String.Empty, 10))
         Form.Add(New PageLoader.TextItem("", Output, , , "Utility::TextRender"))
@@ -1378,11 +1380,11 @@ Class UserAccounts
                 objObjectId = New CERTENROLLLib.CObjectId
                 objObjectId.InitializeFromValue("1.3.6.1.5.5.7.3.2") ' OID for Client Authentication usage
                 objObjectIds.Add(objObjectId)
-                Array.ForEach(Utility.ConnectionData.CertExtraDomains, Sub(Domain As String)
-                                                                           objAlternativeName = New CERTENROLLLib.CAlternativeName
-                                                                           objAlternativeName.InitializeFromString(CERTENROLLLib.AlternativeNameType.XCN_CERT_ALT_NAME_DNS_NAME, Domain)
-                                                                           objAlternativeNames.Add(objAlternativeName)
-                                                                       End Sub)
+                For Each Domain As String In Utility.ConnectionData.CertExtraDomains
+                    objAlternativeName = New CERTENROLLLib.CAlternativeName
+                    objAlternativeName.InitializeFromString(CERTENROLLLib.AlternativeNameType.XCN_CERT_ALT_NAME_DNS_NAME, Domain)
+                    objAlternativeNames.Add(objAlternativeName)
+                Next
                 objExtension.InitializeEncode(objAlternativeNames)
                 objPkcs10.X509Extensions.Add(CType(objExtension, CERTENROLLLib.CX509Extension))
                 objX509ExtensionEnhancedKeyUsage.InitializeEncode(objObjectIds)
@@ -1412,8 +1414,8 @@ Class UserAccounts
                 Output = "Error: "
             End Try
         End If
-        Dim Controls As New ArrayList
-        Dim Form As New ArrayList
+        Dim Controls As New Generic.List(Of Object)
+        Dim Form As New Generic.List(Of Object)
         Controls.Add(New PageLoader.ListItem("Acct_" + ID_CertRequest, ID_CertRequest, Form, False, True, host.GetPageString(ID_CertRequest)))
         Form.Add(New PageLoader.EditItem(ID_PrivateKey, String.Empty, 10))
         Form.Add(New PageLoader.TextItem("", Output, , , "Utility::TextRender"))
@@ -1445,8 +1447,8 @@ Class UserAccounts
             writer.Write(vbCrLf + vbTab + vbTab + vbTab + vbTab)
             writer.WriteEndTag("div")
         Else
-            Dim Form As New ArrayList
-            Dim Controls As New ArrayList
+            Dim Form As New Generic.List(Of Object)
+            Dim Controls As New Generic.List(Of Object)
             Form.Add(New PageLoader.TextItem(String.Empty, "Acct_" + ID_Username))
             Form.Add(New PageLoader.EditItem(ID_Username, String.Empty, 1))
             Form.Add(New PageLoader.TextItem(String.Empty, "Acct_" + ID_Password))

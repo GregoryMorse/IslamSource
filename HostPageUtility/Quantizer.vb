@@ -317,7 +317,7 @@ Namespace ImageQuantization
         Protected Overloads Overrides Function GetPalette(ByVal original As ColorPalette) _
                                                                 As ColorPalette
             ' First off convert the octree to _maxColors colors
-            Dim palette As ArrayList = _octree.Palletize(_maxColors - CInt(IIf(_isTransparentColor, 0, 1)))
+            Dim palette As List(Of Color) = _octree.Palletize(_maxColors - CInt(If(_isTransparentColor, 0, 1)))
             ' Then convert the palette based on those colors
             For index As Integer = 0 To palette.Count - 1
                 Dim TestColor As Color = CType(palette(index), Color)
@@ -328,7 +328,7 @@ Namespace ImageQuantization
                 original.Entries(index) = TestColor
             Next
             'Clear unused palette entries
-            For index As Integer = palette.Count To _maxColors - CInt(IIf(_isTransparentColor, 0, 1))
+            For index As Integer = palette.Count To _maxColors - CInt(If(_isTransparentColor, 0, 1))
                 original.Entries(index) = Color.FromArgb(255, 0, 0, 0)
             Next
             ' Add the transparent color when alpha transparency used
@@ -436,13 +436,13 @@ Namespace ImageQuantization
             ' Convert the nodes in the octree to a palette with a maximum of colorCount colors
             ' </summary>
             ' <param name="colorCount">The maximum number of colors</param>
-            ' <returns>An arraylist with the palettized colors</returns>
-            Public Function Palletize(ByVal colorCount As Integer) As ArrayList
+            ' <returns>A List(Of Color) with the palettized colors</returns>
+            Public Function Palletize(ByVal colorCount As Integer) As List(Of Color)
                 While Leaves > colorCount
                     Reduce()
                 End While
                 ' Now palettize the nodes
-                Dim palette As New ArrayList(Leaves)
+                Dim palette As New List(Of Color)(Leaves)
                 Dim paletteIndex As Integer = 0
                 _root.ConstructPalette(palette, paletteIndex)
                 ' And return the palette
@@ -593,7 +593,7 @@ Namespace ImageQuantization
                 ' </summary>
                 ' <param name="palette">The palette</param>
                 ' <param name="paletteIndex">The current palette index</param>
-                Public Sub ConstructPalette(ByVal palette As ArrayList, _
+                Public Sub ConstructPalette(ByVal palette As List(Of Color), _
                                             ByRef paletteIndex As Integer)
                     If _leaf Then
                         ' Consume the next palette index

@@ -33,6 +33,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IslamSourceQuranViewer.Wind
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IslamSourceQuranViewer.WindowsPhone", "IslamSourceQuranViewer\IslamSourceQuranViewer.WindowsPhone\IslamSourceQuranViewer.WindowsPhone.csproj", "{9E56BC3C-7D94-4FF2-9118-89C72063C55B}"
 EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "XMLRender", "XMLRender\XMLRender.vbproj", "{8AC9D06F-320D-4CF4-8A73-725A5EF177AD}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "IslamSourceWebLib", "IslamSourceWebLib\IslamSourceWebLib.vbproj", "{92920F42-4F8B-4899-9C9D-FC73AB606124}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		IslamSourceQuranViewer\IslamSourceQuranViewer.Shared\IslamSourceQuranViewer.Shared.projitems*{893d2788-4d7a-4136-8ece-6a3394fc8265}*SharedItemsImports = 13
@@ -234,6 +238,38 @@ Global
 		{9E56BC3C-7D94-4FF2-9118-89C72063C55B}.Release|x86.ActiveCfg = Release|x86
 		{9E56BC3C-7D94-4FF2-9118-89C72063C55B}.Release|x86.Build.0 = Release|x86
 		{9E56BC3C-7D94-4FF2-9118-89C72063C55B}.Release|x86.Deploy.0 = Release|x86
+		{8AC9D06F-320D-4CF4-8A73-725A5EF177AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8AC9D06F-320D-4CF4-8A73-725A5EF177AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8AC9D06F-320D-4CF4-8A73-725A5EF177AD}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{8AC9D06F-320D-4CF4-8A73-725A5EF177AD}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{8AC9D06F-320D-4CF4-8A73-725A5EF177AD}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{8AC9D06F-320D-4CF4-8A73-725A5EF177AD}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{8AC9D06F-320D-4CF4-8A73-725A5EF177AD}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{8AC9D06F-320D-4CF4-8A73-725A5EF177AD}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{8AC9D06F-320D-4CF4-8A73-725A5EF177AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8AC9D06F-320D-4CF4-8A73-725A5EF177AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8AC9D06F-320D-4CF4-8A73-725A5EF177AD}.Release|ARM.ActiveCfg = Release|Any CPU
+		{8AC9D06F-320D-4CF4-8A73-725A5EF177AD}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{8AC9D06F-320D-4CF4-8A73-725A5EF177AD}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{8AC9D06F-320D-4CF4-8A73-725A5EF177AD}.Release|Win32.ActiveCfg = Release|Any CPU
+		{8AC9D06F-320D-4CF4-8A73-725A5EF177AD}.Release|x64.ActiveCfg = Release|Any CPU
+		{8AC9D06F-320D-4CF4-8A73-725A5EF177AD}.Release|x86.ActiveCfg = Release|Any CPU
+		{92920F42-4F8B-4899-9C9D-FC73AB606124}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92920F42-4F8B-4899-9C9D-FC73AB606124}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92920F42-4F8B-4899-9C9D-FC73AB606124}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{92920F42-4F8B-4899-9C9D-FC73AB606124}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{92920F42-4F8B-4899-9C9D-FC73AB606124}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{92920F42-4F8B-4899-9C9D-FC73AB606124}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{92920F42-4F8B-4899-9C9D-FC73AB606124}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{92920F42-4F8B-4899-9C9D-FC73AB606124}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{92920F42-4F8B-4899-9C9D-FC73AB606124}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92920F42-4F8B-4899-9C9D-FC73AB606124}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92920F42-4F8B-4899-9C9D-FC73AB606124}.Release|ARM.ActiveCfg = Release|Any CPU
+		{92920F42-4F8B-4899-9C9D-FC73AB606124}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{92920F42-4F8B-4899-9C9D-FC73AB606124}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{92920F42-4F8B-4899-9C9D-FC73AB606124}.Release|Win32.ActiveCfg = Release|Any CPU
+		{92920F42-4F8B-4899-9C9D-FC73AB606124}.Release|x64.ActiveCfg = Release|Any CPU
+		{92920F42-4F8B-4899-9C9D-FC73AB606124}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

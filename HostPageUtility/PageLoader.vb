@@ -194,7 +194,7 @@ Public Class Utility
         Public Shared ReadOnly Property Resources As KeyValuePair(Of String, String())()
             Get
                 If _Resources Is Nothing Then
-                    _Resources = Array.ConvertAll(GetConfigSetting("resources").Split(";"c), Function(Str As String) New KeyValuePair(Of String, String())(Str.Split("="c)(0), Str.Split("="c)(1).Split(","c)))
+                    _Resources = (New List(Of KeyValuePair(Of String, String()))(Linq.Enumerable.Select(GetConfigSetting("resources").Split(";"c), Function(Str As String) New KeyValuePair(Of String, String())(Str.Split("="c)(0), Str.Split("="c)(1).Split(","c))))).ToArray()
                 End If
                 Return _Resources
             End Get
@@ -247,7 +247,7 @@ Public Class Utility
         If IsDesktopApp() Then
             Return "..\..\..\" + Path
         Else
-            Return CStr(IIf(IO.File.Exists(HttpContext.Current.Request.PhysicalApplicationPath + Path), HttpContext.Current.Request.PhysicalApplicationPath + Path, HttpContext.Current.Request.PhysicalApplicationPath + ConnectionData.AlternatePath + Path))
+            Return CStr(If(IO.File.Exists(HttpContext.Current.Request.PhysicalApplicationPath + Path), HttpContext.Current.Request.PhysicalApplicationPath + Path, HttpContext.Current.Request.PhysicalApplicationPath + ConnectionData.AlternatePath + Path))
         End If
     End Function
     Friend Shared Function GetStringHashCode(ByVal s As String) As Integer
@@ -273,17 +273,17 @@ Public Class Utility
     Public Shared Sub SortResX(File As String)
         Dim Doc As New Xml.Linq.XDocument
         Doc.Load(File)
-        Dim AllNodes As Xml.Linq.XNodeList = Doc.DocumentElement.SelectNodes("data/@name")
-        Dim Nodes(AllNodes.Count - 1) As Xml.Linq.XNode
+        Dim AllNodes As Xml.Linq.XElement() = Doc.Root.SelectNodes("data/@name")
+        Dim Nodes(AllNodes.Length - 1) As Xml.Linq.XElement
         Dim Count As Integer = 0
-        For Each Item As Xml.Linq.XNode In AllNodes
-            Nodes(Count) = Doc.DocumentElement.RemoveChild(CType(Item, Xml.XmlAttribute).OwnerElement)
+        For Each Item As Xml.Linq.XElement In AllNodes
+            Nodes(Count) = Doc.Root.RemoveChild(CType(Item, Xml.XmlAttribute).OwnerElement)
             Count += 1
         Next
-        Array.Sort(Nodes, Function(x As Xml.Linq.XNode, y As Xml.Linq.XNode) x.Attributes("name").Value.CompareTo(y.Attributes("name").Value))
+        Array.Sort(Nodes, Function(x As Xml.Linq.XElement, y As Xml.Linq.XElement) x.Attributes("name").Value.CompareTo(y.Attributes("name").Value))
         For Count = 0 To Nodes.Length - 1
             If Count = 0 OrElse Nodes(Count - 1).Attributes("name").Value <> Nodes(Count).Attributes("name").Value Then
-                Doc.DocumentElement.AppendChild(Nodes(Count))
+                Doc.Root.AppendChild(Nodes(Count))
             End If
         Next
         Doc.Save(File)
@@ -291,7 +291,7 @@ Public Class Utility
     Public Shared Function LoadResourceString(resourceKey As String) As String
         LoadResourceString = Nothing
         If resourceKey Is Nothing Then Return Nothing
-        For Each Pair In If(IsDesktopApp(), Array.ConvertAll("HostPageUtility=Acct,lang,unicode;IslamResources=Hadith,IslamInfo,IslamSource".Split(";"c), Function(Str As String) New KeyValuePair(Of String, String())(Str.Split("="c)(0), Str.Split("="c)(1).Split(","c))), ConnectionData.Resources)
+        For Each Pair In If(IsDesktopApp(), Linq.Enumerable.Select("HostPageUtility=Acct,lang,unicode;IslamResources=Hadith,IslamInfo,IslamSource".Split(";"c), Function(Str As String) New KeyValuePair(Of String, String())(Str.Split("="c)(0), Str.Split("="c)(1).Split(","c))), ConnectionData.Resources)
             If Array.FindIndex(Pair.Value, Function(Str As String) Str = resourceKey Or resourceKey.StartsWith(Str + "_")) <> -1 Then
                 LoadResourceString = New System.Resources.ResourceManager(Pair.Key + ".Resources", Reflection.Assembly.Load(Pair.Key)).GetString(resourceKey, Threading.Thread.CurrentThread.CurrentUICulture)
             End If
@@ -325,7 +325,7 @@ Public Class Utility
         Transform.Clear()
         Array.Reverse(EncodeBytes) '.NET uses reverse from order of CryptEncrypt
         IO.File.WriteAllBytes(Utility.GetFilePath("bin\" + Utility.ConnectionData.KeyFileName), Transform.ExportCspBlob(True))
-        Return String.Join(String.Empty, Array.ConvertAll(EncodeBytes, Function(Convert As Byte) Convert.ToString("X2")))
+        Return String.Join(String.Empty, Linq.Enumerable.Select(EncodeBytes, Function(Convert As Byte) Convert.ToString("X2")))
     End Function
     Public Shared Function DoDecrypt(DecryptStr As String) As String
         Dim cspParams As New System.Security.Cryptography.CspParameters(1, "Microsoft Base Cryptographic Provider v1.0")
@@ -389,7 +389,7 @@ Public Class Utility
             If CInt(CType(x, Array).GetValue(1)) = CInt(CType(y, Array).GetValue(1)) Then
                 Compare = 0
             Else
-                Compare = CInt(IIf(CInt(CType(x, Array).GetValue(1)) > CInt(CType(y, Array).GetValue(1)), 1, -1))
+                Compare = CInt(If(CInt(CType(x, Array).GetValue(1)) > CInt(CType(y, Array).GetValue(1)), 1, -1))
             End If
         End Function
     End Class
@@ -398,7 +398,7 @@ Public Class Utility
     End Function
     Public Shared Function EncodeJS(Str As String) As String
         If Str Is Nothing Then Return Str
-        Return String.Join(String.Empty, Array.ConvertAll(Str.ToCharArray(), Function(Ch As Char) If(AscW(Ch) < &H100, CStr(Ch), "\u" + AscW(Ch).ToString("X4")))).Replace("'", "\'")
+        Return String.Join(String.Empty, Linq.Enumerable.Select(Str.ToCharArray(), Function(Ch As Char) If(AscW(Ch) < &H100, CStr(Ch), "\u" + AscW(Ch).ToString("X4")))).Replace("'", "\'")
     End Function
     Public Shared Function MakeJSString(Str As String) As String
         Return "'" + EncodeJS(Str) + "'"
@@ -543,8 +543,8 @@ Public Class Utility
     Public Class PrefixComparer
         Implements Collections.IComparer
         Public Function Compare(ByVal x As Object, ByVal y As Object) As Integer Implements System.Collections.IComparer.Compare
-            Dim StrLeft As String() = CStr(x).Substring(0, CInt(IIf(CStr(x).IndexOf(":") <> -1, CStr(x).IndexOf(":"), CStr(x).Length))).Split(New Char() {"."c})
-            Dim StrRight As String() = CStr(y).Substring(0, CInt(IIf(CStr(y).IndexOf(":") <> -1, CStr(y).IndexOf(":"), CStr(y).Length))).Split(New Char() {"."c})
+            Dim StrLeft As String() = CStr(x).Substring(0, CInt(If(CStr(x).IndexOf(":") <> -1, CStr(x).IndexOf(":"), CStr(x).Length))).Split(New Char() {"."c})
+            Dim StrRight As String() = CStr(y).Substring(0, CInt(If(CStr(y).IndexOf(":") <> -1, CStr(y).IndexOf(":"), CStr(y).Length))).Split(New Char() {"."c})
             If StrLeft.Length = 0 And StrRight.Length = 0 Then Return 0
             If StrLeft.Length = 0 Then Return -1
             If StrRight.Length = 0 Then Return 1
@@ -579,7 +579,7 @@ Public Class Utility
         Dim ReturnStrings(Index - StartIndex) As String
         Array.ConstrainedCopy(Strings, StartIndex, ReturnStrings, 0, Index - StartIndex + 1)
         For Index = 0 To ReturnStrings.Length - 1
-            ReturnStrings(Index) = ReturnStrings(Index).Substring(CInt(IIf(ReturnStrings(Index).IndexOf(":") <> -1, ReturnStrings(Index).IndexOf(":") + 2, 0)))
+            ReturnStrings(Index) = ReturnStrings(Index).Substring(CInt(If(ReturnStrings(Index).IndexOf(":") <> -1, ReturnStrings(Index).IndexOf(":") + 2, 0)))
         Next
         Return ReturnStrings
     End Function
@@ -682,7 +682,7 @@ Public Class Utility
                 ResultBmp = quantizer.QuantizeBitmap(bmp)
                 bmp.Dispose()
                 Dim MemStream As New IO.MemoryStream()
-                ResultBmp.Save(MemStream, DirectCast(IIf(Object.Equals(ResultBmp.RawFormat, Drawing.Imaging.ImageFormat.MemoryBmp), Drawing.Imaging.ImageFormat.Gif, ResultBmp.RawFormat), Drawing.Imaging.ImageFormat))
+                ResultBmp.Save(MemStream, DirectCast(If(Object.Equals(ResultBmp.RawFormat, Drawing.Imaging.ImageFormat.MemoryBmp), Drawing.Imaging.ImageFormat.Gif, ResultBmp.RawFormat), Drawing.Imaging.ImageFormat))
                 DiskCache.CacheItem(CacheURL, DateModified, MemStream.GetBuffer())
             End If
             'save thumb to cache
@@ -769,15 +769,15 @@ Public Class Utility
     Public Shared Function GetAddStyleSheetRuleJS() As String
         Return "function addStyleSheetRule(sheet, selectorText, ruleText) { if (sheet.tagName) { sheet.innerHTML = sheet.innerHTML + selectorText + ' {' + ruleText + '}'; } else if (sheet.addRule) { if (selectorText == '@font-face' && sheet.cssText != null) sheet.cssText = selectorText + ' {' + ruleText + '}'; else sheet.addRule(selectorText, ruleText); } else if (sheet.insertRule) sheet.insertRule(selectorText + ' {' + ruleText + '}', sheet.cssRules.length); }"
     End Function
-    Public Shared Function ParseValue(ByVal XMLItemNode As System.Xml.Linq.XNode, ByVal DefaultValue As String) As String
+    Public Shared Function ParseValue(ByVal XMLItemNode As Xml.Linq.XAttribute, ByVal DefaultValue As String) As String
         If XMLItemNode Is Nothing Then
             ParseValue = DefaultValue
         Else
             ParseValue = XMLItemNode.Value
         End If
     End Function
-    Public Shared Function GetChildNode(ByVal NodeName As String, ByVal ChildNodes As System.Xml.Linq.XNodeList) As System.Xml.Linq.XNode
-        Dim XMLNode As System.Xml.Linq.XNode
+    Public Shared Function GetChildNode(ByVal NodeName As String, ByVal ChildNodes As Xml.Linq.XElement()) As Xml.Linq.XElement
+        Dim XMLNode As Xml.Linq.XElement
         For Each XMLNode In ChildNodes
             If XMLNode.Name = NodeName Then
                 Return XMLNode
@@ -785,9 +785,9 @@ Public Class Utility
         Next
         Return Nothing
     End Function
-    Public Shared Function GetChildNodes(ByVal NodeName As String, ByVal ChildNodes As System.Xml.Linq.XNodeList) As System.Xml.Linq.XNode()
-        Dim XMLNode As System.Xml.Linq.XNode
-        Dim XMLNodeList As New List(Of System.Xml.Linq.XNode)
+    Public Shared Function GetChildNodes(ByVal NodeName As String, ByVal ChildNodes As Xml.Linq.XElement()) As Xml.Linq.XElement()
+        Dim XMLNode As Xml.Linq.XElement
+        Dim XMLNodeList As New List(Of Xml.Linq.XElement)
         For Each XMLNode In ChildNodes
             If XMLNode.Name = NodeName Then
                 XMLNodeList.Add(XMLNode)
@@ -795,13 +795,13 @@ Public Class Utility
         Next
         Return XMLNodeList.ToArray()
     End Function
-    Public Shared Function GetChildNodeByIndex(ByVal NodeName As String, ByVal IndexName As String, ByVal Index As Integer, ByVal ChildNodes As System.Xml.Linq.XNodeList) As System.Xml.Linq.XNode
-        Dim XMLNode As System.Xml.Linq.XNode = ChildNodes.Item(Index)
-        Dim AttributeNode As System.Xml.Linq.XNode
-        If Index - 1 < ChildNodes.Count Then
-            XMLNode = ChildNodes.Item(Index - 1)
+    Public Shared Function GetChildNodeByIndex(ByVal NodeName As String, ByVal IndexName As String, ByVal Index As Integer, ByVal ChildNodes As Xml.Linq.XElement()) As Xml.Linq.XElement
+        Dim XMLNode As Xml.Linq.XElement = ChildNodes(Index)
+        Dim AttributeNode As Xml.Linq.XAttribute
+        If Index - 1 < ChildNodes.Length Then
+            XMLNode = ChildNodes(Index - 1)
             If Not XMLNode Is Nothing AndAlso XMLNode.Name = NodeName Then
-                AttributeNode = XMLNode.Attributes.GetNamedItem(IndexName)
+                AttributeNode = XMLNode.Attribute(IndexName)
                 If Not AttributeNode Is Nothing AndAlso CInt(AttributeNode.Value) = Index Then
                     Return XMLNode
                 End If
@@ -809,7 +809,7 @@ Public Class Utility
         End If
         For Each XMLNode In ChildNodes
             If XMLNode.Name = NodeName Then
-                AttributeNode = XMLNode.Attributes.GetNamedItem(IndexName)
+                AttributeNode = XMLNode.Attribute(IndexName)
                 If Not AttributeNode Is Nothing AndAlso CInt(AttributeNode.Value) = Index Then
                     Return XMLNode
                 End If
@@ -817,11 +817,10 @@ Public Class Utility
         Next
         Return Nothing
     End Function
-    Public Shared Function GetChildNodeCount(ByVal NodeName As String, ByVal Node As System.Xml.Linq.XNode) As Integer
-        Dim Index As Integer
+    Public Shared Function GetChildNodeCount(ByVal NodeName As String, ByVal Node As Xml.Linq.XElement) As Integer
         Dim Count As Integer = 0
-        For Index = 0 To Node.ChildNodes.Count - 1
-            If Node.ChildNodes.Item(Index).Name = NodeName Then Count += 1
+        For Each Item In Node.Elements
+            If Item.Name = NodeName Then Count += 1
         Next
         Return Count
     End Function
@@ -946,16 +945,16 @@ Public Class Document
         Return String.Empty
     End Function
     Public Shared Function GetXML(ByVal Item As PageLoader.TextItem) As Array
-        Dim XMLDoc As New System.Xml.Linq.XDocument
+        Dim XMLDoc As New Xml.Linq.XDocument
         XMLDoc.Load(Utility.GetFilePath("metadata\" + Utility.ConnectionData.DocXML))
-        Dim RetArray(2 + XMLDoc.DocumentElement.ChildNodes.Count) As Array
-        RetArray(0) = New String() {"javascript: doOnCheck(this);", "doSort();", "function doSort() { var child = $('#render').children('tr'); child.shift(); child.sort(function(a, b) { if (window.localstorage.getItem(a.children('td')(3).text()) == window.localstorage.getItem(b.children('td')(3).text())) return new Date(a.children('td')(1).text()) > new Data(b.children('td')(1).text()); return (window.localstorage.getItem(a.children('td')(3).text())) ? 1 : -1; }); child.detach().appendTo($('#render')); } function doOnCheck(element) { element.checked = !element.checked; if (element.checked) { window.localstorage.setItem($(element).parent().children('td')(3), true); } else { window.localstorage.removeItem($(element).parent().children('td')(3)); } doSort(); }"}
-        RetArray(1) = New String() {"check", String.Empty, String.Empty, "hidden"}
-        RetArray(2) = New String() {String.Empty, String.Empty, String.Empty, String.Empty}
-        For Count As Integer = 0 To XMLDoc.DocumentElement.ChildNodes.Count - 1
-            RetArray(2 + Count) = New String() {"Separate?", XMLDoc.DocumentElement.ChildNodes.Item(Count).Attributes("date").Value, XMLDoc.DocumentElement.ChildNodes.Item(Count).Attributes("message").Value, XMLDoc.DocumentElement.ChildNodes.Item(Count).Attributes("id").Value}
+        Dim RetArray As New List(Of String())
+        RetArray.Add(New String() {"javascript: doOnCheck(this);", "doSort();", "function doSort() { var child = $('#render').children('tr'); child.shift(); child.sort(function(a, b) { if (window.localstorage.getItem(a.children('td')(3).text()) == window.localstorage.getItem(b.children('td')(3).text())) return new Date(a.children('td')(1).text()) > new Data(b.children('td')(1).text()); return (window.localstorage.getItem(a.children('td')(3).text())) ? 1 : -1; }); child.detach().appendTo($('#render')); } function doOnCheck(element) { element.checked = !element.checked; if (element.checked) { window.localstorage.setItem($(element).parent().children('td')(3), true); } else { window.localstorage.removeItem($(element).parent().children('td')(3)); } doSort(); }"})
+        RetArray.Add(New String() {"check", String.Empty, String.Empty, "hidden"})
+        RetArray.Add(New String() {String.Empty, String.Empty, String.Empty, String.Empty})
+        For Each It As Xml.Linq.XElement In XMLDoc.Root.Nodes
+            RetArray.Add(New String() {"Separate?", It.Attribute("date").Value, It.Attribute("message").Value, It.Attribute("id").Value})
         Next
-        Return RetArray
+        Return RetArray.ToArray()
     End Function
 End Class
 Public Class Geolocation
@@ -997,14 +996,14 @@ Public Class Geolocation
             Response.Close()
         Catch
         End Try
-        Dim XMLDoc As New System.Xml.Linq.XDocument
-        Dim XMLNode As System.Xml.Linq.XNode
+        Dim XMLDoc As New Xml.Linq.XDocument
+        Dim XMLNode As Xml.Linq.XElement
         XMLDoc.LoadXml(Data)
-        For Each XMLNode In XMLDoc.DocumentElement.ChildNodes
+        For Each XMLNode In XMLDoc.Root.Nodes
             If XMLNode.Name = "result" Then
-                For Each XMLChildNode As System.Xml.Linq.XNode In XMLNode.ChildNodes
+                For Each XMLChildNode As Xml.Linq.XElement In XMLNode.Nodes
                     If XMLChildNode.Name = "elevation" Then
-                        Return XMLChildNode.InnerText
+                        Return XMLChildNode.Value
                     End If
                     If XMLChildNode.Name = "resolution" Then
                         'Return XMLChildNode.InnerText
@@ -1237,99 +1236,99 @@ Public Class PageLoader
         Next
         Return ObjItem
     End Function
-    Sub ParseSingleElement(ByRef XMLChildNode As System.Xml.Linq.XNode, ByRef List As List(Of Object), ByVal IsTopLevel As Boolean)
+    Sub ParseSingleElement(ByRef XMLChildNode As Xml.Linq.XElement, ByRef List As List(Of Object), ByVal IsTopLevel As Boolean)
         If XMLChildNode.Name = "frame" Then
-            Dim XMLListNode As System.Xml.Linq.XNode
+            Dim XMLListNode As Xml.Linq.XElement
             Dim ListArray As New List(Of Object)
-            For Each XMLListNode In XMLChildNode.ChildNodes
+            For Each XMLListNode In XMLChildNode.Nodes
                 ParseSingleElement(XMLListNode, ListArray, False)
             Next
             List.Add(New ListItem( _
-                XMLChildNode.Attributes.GetNamedItem("description").Value, _
-                XMLChildNode.Attributes.GetNamedItem("name").Value, ListArray, IsTopLevel, _
-                Utility.ParseValue(XMLChildNode.Attributes.GetNamedItem("hasform"), "false") = "true"))
+                XMLChildNode.Attribute("description").Value, _
+                XMLChildNode.Attribute("name").Value, ListArray, IsTopLevel, _
+                Utility.ParseValue(XMLChildNode.Attribute("hasform"), "false") = "true"))
         ElseIf XMLChildNode.Name = "button" Then
-            List.Add(New ButtonItem(XMLChildNode.Attributes.GetNamedItem("name").Value, _
-                                    XMLChildNode.Attributes.GetNamedItem("description").Value, _
-                                    Utility.ParseValue(XMLChildNode.Attributes.GetNamedItem("onclick"), String.Empty), _
-                                    Utility.ParseValue(XMLChildNode.Attributes.GetNamedItem("onrender"), String.Empty)))
+            List.Add(New ButtonItem(XMLChildNode.Attribute("name").Value, _
+                                    XMLChildNode.Attribute("description").Value, _
+                                    Utility.ParseValue(XMLChildNode.Attribute("onclick"), String.Empty), _
+                                    Utility.ParseValue(XMLChildNode.Attribute("onrender"), String.Empty)))
         ElseIf XMLChildNode.Name = "edit" Then
-            List.Add(New EditItem(XMLChildNode.Attributes.GetNamedItem("name").Value, _
-                                  Utility.ParseValue(XMLChildNode.Attributes.GetNamedItem("defaultvalue"), String.Empty), _
-                                  CInt(Utility.ParseValue(XMLChildNode.Attributes.GetNamedItem("rows"), "1"))))
+            List.Add(New EditItem(XMLChildNode.Attribute("name").Value, _
+                                  Utility.ParseValue(XMLChildNode.Attribute("defaultvalue"), String.Empty), _
+                                  CInt(Utility.ParseValue(XMLChildNode.Attribute("rows"), "1"))))
         ElseIf XMLChildNode.Name = "date" Then
-            List.Add(New DateItem(XMLChildNode.Attributes.GetNamedItem("name").Value, _
-                                  XMLChildNode.Attributes.GetNamedItem("description").Value))
+            List.Add(New DateItem(XMLChildNode.Attribute("name").Value, _
+                                  XMLChildNode.Attribute("description").Value))
         ElseIf XMLChildNode.Name = "radio" Then
-            Dim XMLOptionNode As System.Xml.Linq.XNode
-            Dim OptionArray As New List(Of System.Xml.Linq.XNode)
-            Dim DefaultValue As String = Utility.ParseValue(XMLChildNode.Attributes.GetNamedItem("defaultvalue"), "-1")
-            For Each XMLOptionNode In XMLChildNode.ChildNodes
+            Dim XMLOptionNode As Xml.Linq.XElement
+            Dim OptionArray As New List(Of OptionItem)
+            Dim DefaultValue As String = Utility.ParseValue(XMLChildNode.Attribute("defaultvalue"), "-1")
+            For Each XMLOptionNode In XMLChildNode.Nodes
                 If XMLOptionNode.Name = "option" Then
-                    If Utility.ParseValue(XMLOptionNode.Attributes.GetNamedItem("defaultvalue"), "false") = "true" Then
+                    If Utility.ParseValue(XMLOptionNode.Attribute("defaultvalue"), "false") = "true" Then
                         DefaultValue = CStr(OptionArray.Count)
                     End If
-                    OptionArray.Add(New OptionItem(XMLOptionNode.Attributes.GetNamedItem("name").Value))
+                    OptionArray.Add(New OptionItem(XMLOptionNode.Attribute("name").Value))
                 End If
             Next
-            List.Add(New RadioItem(XMLChildNode.Attributes.GetNamedItem("name").Value, _
-                                   XMLChildNode.Attributes.GetNamedItem("description").Value, _
+            List.Add(New RadioItem(XMLChildNode.Attribute("name").Value, _
+                                   XMLChildNode.Attribute("description").Value, _
                                    DefaultValue, _
-                                   DirectCast(OptionArray.ToArray(GetType(OptionItem)), OptionItem()), _
-                                   Utility.ParseValue(XMLChildNode.Attributes.GetNamedItem("uselist"), "false") = "true", _
-                                   Utility.ParseValue(XMLChildNode.Attributes.GetNamedItem("usecheck"), "false") = "true", _
-                                   Utility.ParseValue(XMLChildNode.Attributes.GetNamedItem("onpopulate"), String.Empty), _
-                                   Utility.ParseValue(XMLChildNode.Attributes.GetNamedItem("onchange"), String.Empty)))
+                                   OptionArray.ToArray(), _
+                                   Utility.ParseValue(XMLChildNode.Attribute("uselist"), "false") = "true", _
+                                   Utility.ParseValue(XMLChildNode.Attribute("usecheck"), "false") = "true", _
+                                   Utility.ParseValue(XMLChildNode.Attribute("onpopulate"), String.Empty), _
+                                   Utility.ParseValue(XMLChildNode.Attribute("onchange"), String.Empty)))
         ElseIf XMLChildNode.Name = "ipaddr" Then
         ElseIf XMLChildNode.Name = "static" Then
             List.Add(New TextItem( _
-                            XMLChildNode.Attributes.GetNamedItem("name").Value, _
-                            XMLChildNode.Attributes.GetNamedItem("description").Value, _
-                            Utility.ParseValue(XMLChildNode.Attributes.GetNamedItem("url"), String.Empty), _
-                            Utility.ParseValue(XMLChildNode.Attributes.GetNamedItem("imageurl"), String.Empty), _
-                            Utility.ParseValue(XMLChildNode.Attributes.GetNamedItem("onrender"), String.Empty)))
+                            XMLChildNode.Attribute("name").Value, _
+                            XMLChildNode.Attribute("description").Value, _
+                            Utility.ParseValue(XMLChildNode.Attribute("url"), String.Empty), _
+                            Utility.ParseValue(XMLChildNode.Attribute("imageurl"), String.Empty), _
+                            Utility.ParseValue(XMLChildNode.Attribute("onrender"), String.Empty)))
         ElseIf XMLChildNode.Name = "image" Then
             List.Add(New ImageItem( _
-                Utility.ParseValue(XMLChildNode.Attributes.GetNamedItem("name"), String.Empty), _
-                XMLChildNode.Attributes.GetNamedItem("text").Value, _
-                XMLChildNode.Attributes.GetNamedItem("source").Value, _
-                Utility.ParseValue(XMLChildNode.Attributes.GetNamedItem("usethumbonmax"), "false") = "true", _
-                CInt(Utility.ParseValue(XMLChildNode.Attributes.GetNamedItem("maxwidth"), "0")), _
-                CInt(Utility.ParseValue(XMLChildNode.Attributes.GetNamedItem("maxheight"), "0"))))
+                Utility.ParseValue(XMLChildNode.Attribute("name"), String.Empty), _
+                XMLChildNode.Attribute("text").Value, _
+                XMLChildNode.Attribute("source").Value, _
+                Utility.ParseValue(XMLChildNode.Attribute("usethumbonmax"), "false") = "true", _
+                CInt(Utility.ParseValue(XMLChildNode.Attribute("maxwidth"), "0")), _
+                CInt(Utility.ParseValue(XMLChildNode.Attribute("maxheight"), "0"))))
         ElseIf XMLChildNode.Name = "email" Then
             List.Add(New EmailItem( _
-               Utility.ParseValue(XMLChildNode.Attributes.GetNamedItem("useimage"), "true") = "true"))
+               Utility.ParseValue(XMLChildNode.Attribute("useimage"), "true") = "true"))
         ElseIf XMLChildNode.Name = "download" Then
             List.Add(New DownloadItem( _
-                XMLChildNode.Attributes.GetNamedItem("text").Value, _
-                XMLChildNode.Attributes.GetNamedItem("path").Value, _
-                Utility.ParseValue(XMLChildNode.Attributes.GetNamedItem("onrender"), String.Empty), _
-                Utility.ParseValue(XMLChildNode.Attributes.GetNamedItem("userelativepath"), "true") = "true", _
-                Utility.ParseValue(XMLChildNode.Attributes.GetNamedItem("userelativepath"), "true") <> "true", _
-                Utility.ParseValue(XMLChildNode.Attributes.GetNamedItem("showinline"), "false") = "true"))
+                XMLChildNode.Attribute("text").Value, _
+                XMLChildNode.Attribute("path").Value, _
+                Utility.ParseValue(XMLChildNode.Attribute("onrender"), String.Empty), _
+                Utility.ParseValue(XMLChildNode.Attribute("userelativepath"), "true") = "true", _
+                Utility.ParseValue(XMLChildNode.Attribute("userelativepath"), "true") <> "true", _
+                Utility.ParseValue(XMLChildNode.Attribute("showinline"), "false") = "true"))
         End If
     End Sub
     Public Sub New()
-        Dim XMLDoc As New System.Xml.Linq.XDocument
-        Dim XMLNode As System.Xml.Linq.XNode
-        Dim XMLChildNode As System.Xml.Linq.XNode
+        Dim XMLDoc As New Xml.Linq.XDocument
+        Dim XMLNode As Xml.Linq.XElement
+        Dim XMLChildNode As Xml.Linq.XElement
         XMLDoc.Load(Utility.GetTemplatePath())
-        Title = Utility.ParseValue(XMLDoc.DocumentElement.Attributes.GetNamedItem("title"), String.Empty)
-        MainImage = Utility.ParseValue(XMLDoc.DocumentElement.Attributes.GetNamedItem("mainimage"), String.Empty)
-        HoverImage = Utility.ParseValue(XMLDoc.DocumentElement.Attributes.GetNamedItem("hoverimage"), String.Empty)
+        Title = Utility.ParseValue(XMLDoc.Root.Attribute("title"), String.Empty)
+        MainImage = Utility.ParseValue(XMLDoc.Root.Attribute("mainimage"), String.Empty)
+        HoverImage = Utility.ParseValue(XMLDoc.Root.Attribute("hoverimage"), String.Empty)
         Dim PageList As List(Of Object)
-        For Each XMLNode In XMLDoc.DocumentElement.ChildNodes
+        For Each XMLNode In XMLDoc.Root.Nodes
             If XMLNode.Name = "page" Then
                 PageList = New List(Of Object)
-                For Each XMLChildNode In XMLNode.ChildNodes
+                For Each XMLChildNode In XMLNode.Nodes
                     If XMLChildNode.Name = "child" Then
                     ElseIf XMLChildNode.Name = "addlist" Then
                     Else
                         ParseSingleElement(XMLChildNode, PageList, True)
                     End If
                 Next
-                Pages.Add(New PageItem(PageList, XMLNode.Attributes.GetNamedItem("name").Value, _
-                                       XMLNode.Attributes.GetNamedItem("description").Value))
+                Pages.Add(New PageItem(PageList, XMLNode.Attribute("name").Value, _
+                                       XMLNode.Attribute("description").Value))
             End If
         Next
     End Sub
@@ -1397,7 +1396,7 @@ Public Class ArabicData
             If _DecData.ContainsKey(ChrW(CInt(CharArr(Count)))) AndAlso Not _DecData.Item(ChrW(CInt(CharArr(Count)))).Chars Is Nothing AndAlso _DecData.Item(ChrW(CInt(CharArr(Count)))).Chars.Length <> 0 Then
                 Dim ComCount As Integer
                 For ComCount = 0 To Combos.Count - 1
-                    If String.Join(String.Empty, Array.ConvertAll(Combos(ComCount).Symbol, Function(Sym As Char) CStr(Sym))) = String.Join(String.Empty, Array.ConvertAll(_DecData.Item(ChrW(CInt(CharArr(Count)))).Chars, Function(Sym As Char) CStr(Sym))) Then Exit For
+                    If String.Join(String.Empty, Linq.Enumerable.Select(Combos(ComCount).Symbol, Function(Sym As Char) CStr(Sym))) = String.Join(String.Empty, Linq.Enumerable.Select(_DecData.Item(ChrW(CInt(CharArr(Count)))).Chars, Function(Sym As Char) CStr(Sym))) Then Exit For
                 Next
                 Dim ArComb As ArabicCombo
                 If ComCount = Combos.Count Then
@@ -1567,7 +1566,7 @@ Public Class ArabicData
     Public Shared Function TransformChars(Str As String) As String
         For Count As Integer = 0 To ArabicCombos.Length - 1
             If ArabicCombos(Count).Shaping.Length = 1 Then
-                Str = Str.Replace(String.Join(String.Empty, Array.ConvertAll(ArabicCombos(Count).Symbol, Function(Sym As Char) CStr(Sym))), ArabicCombos(Count).Shaping(0))
+                Str = Str.Replace(String.Join(String.Empty, Linq.Enumerable.Select(ArabicCombos(Count).Symbol, Function(Sym As Char) CStr(Sym))), ArabicCombos(Count).Shaping(0))
             End If
         Next
         Return Str
@@ -1580,12 +1579,16 @@ Public Class ArabicData
         Dim Forms As New List(Of Char)
         For Count As Integer = 0 To ArabicCombos.Length - 1
             If Not ArabicCombos(Count).Shaping Is Nothing Then
-                Array.ForEach(ArabicCombos(Count).Shaping, Sub(Shape As Char) If Shape >= BeginIndex AndAlso Shape <= EndIndex Then Forms.Add(Shape))
+                For Each Shape As Char In ArabicCombos(Count).Shaping
+                    If Shape >= BeginIndex AndAlso Shape <= EndIndex Then Forms.Add(Shape))
+                Next
             End If
         Next
         For Count As Integer = 0 To ArabicLetters.Length - 1
             If Not ArabicLetters(Count).Shaping Is Nothing Then
-                Array.ForEach(ArabicLetters(Count).Shaping, Sub(Shape As Char) If Shape >= BeginIndex AndAlso Shape <= EndIndex Then Forms.Add(Shape))
+                For Each Shape As Char In ArabicLetters(Count).Shaping
+                    If Shape >= BeginIndex AndAlso Shape <= EndIndex Then Forms.Add(Shape))
+                Next
             End If
         Next
         Return Forms.ToArray()
@@ -1646,8 +1649,8 @@ Public Class ArabicData
             Next
             If Positions.Length = 1 Then Positions = {}
             While Positions.Length <> 0
-                If LigatureLookups.ContainsKey(String.Join(String.Empty, Array.ConvertAll(Positions, Function(Pos As Integer) CStr(Str(Pos - CurPos))))) Then
-                    Return LigatureLookups.Item(String.Join(String.Empty, Array.ConvertAll(Positions, Function(Pos As Integer) CStr(Str(Pos - CurPos)))))
+                If LigatureLookups.ContainsKey(String.Join(String.Empty, Linq.Enumerable.Select(Positions, Function(Pos As Integer) CStr(Str(Pos - CurPos))))) Then
+                    Return LigatureLookups.Item(String.Join(String.Empty, Linq.Enumerable.Select(Positions, Function(Pos As Integer) CStr(Str(Pos - CurPos)))))
                 End If
                 ReDim Preserve Positions(Positions.Length - 2)
             End While
@@ -1681,7 +1684,7 @@ Public Class ArabicData
                     _LigatureCombos(ArabicCombos.Length + Count).Symbol = {ArabicLetters(Count).Symbol}
                     _LigatureCombos(ArabicCombos.Length + Count).Shaping = ArabicLetters(Count).Shaping
                 Next
-                Array.Sort(_LigatureCombos, Function(Com1 As ArabicCombo, Com2 As ArabicCombo) If(Com1.Symbol.Length = Com2.Symbol.Length, String.Join(String.Empty, Array.ConvertAll(Com1.Symbol, Function(Sym As Char) CStr(Sym))).CompareTo(String.Join(String.Empty, Array.ConvertAll(Com2.Symbol, Function(Sym As Char) CStr(Sym)))), If(Com1.Symbol.Length > Com2.Symbol.Length, -1, 1)))
+                Array.Sort(_LigatureCombos, Function(Com1 As ArabicCombo, Com2 As ArabicCombo) If(Com1.Symbol.Length = Com2.Symbol.Length, String.Join(String.Empty, Linq.Enumerable.Select(Com1.Symbol, Function(Sym As Char) CStr(Sym))).CompareTo(String.Join(String.Empty, Linq.Enumerable.Select(Com2.Symbol, Function(Sym As Char) CStr(Sym)))), If(Com1.Symbol.Length > Com2.Symbol.Length, -1, 1)))
             End If
             Return _LigatureCombos
         End Get
@@ -1711,8 +1714,8 @@ Public Class ArabicData
                 Dim Combos As ArabicCombo() = LigatureCombos
                 For Count = 0 To Combos.Length - 1
                     'If there is only an isolated form then the combos which come before letters would take precedence
-                    If Not Combos(Count).Shaping Is Nothing And Not _LigatureLookups.ContainsKey(String.Join(String.Empty, Array.ConvertAll(Combos(Count).Symbol, Function(Sym As Char) CStr(Sym)))) Then
-                        _LigatureLookups.Add(String.Join(String.Empty, Array.ConvertAll(Combos(Count).Symbol, Function(Sym As Char) CStr(Sym))), Count)
+                    If Not Combos(Count).Shaping Is Nothing And Not _LigatureLookups.ContainsKey(String.Join(String.Empty, Linq.Enumerable.Select(Combos(Count).Symbol, Function(Sym As Char) CStr(Sym)))) Then
+                        _LigatureLookups.Add(String.Join(String.Empty, Linq.Enumerable.Select(Combos(Count).Symbol, Function(Sym As Char) CStr(Sym))), Count)
                     End If
                 Next
             End If
@@ -1968,7 +1971,7 @@ Public Class ArabicData
                         If Array.IndexOf(ShapePositions, Data.JoiningStyle) <> -1 Then ShapeData.Shapes(Array.IndexOf(ShapePositions, Data.JoiningStyle)) = Ch
                     End If
                 Else
-                    Data.Chars = Array.ConvertAll(CombData, Function(Dat As String) ChrW(If(Integer.Parse(Dat, Globalization.NumberStyles.AllowHexSpecifier) >= &H10000, 0, Integer.Parse(Dat, Globalization.NumberStyles.AllowHexSpecifier))))
+                    Data.Chars = New List(Of Char)(Linq.Enumerable.Select(CombData, Function(Dat As String) ChrW(If(Integer.Parse(Dat, Globalization.NumberStyles.AllowHexSpecifier) >= &H10000, 0, Integer.Parse(Dat, Globalization.NumberStyles.AllowHexSpecifier))))).ToArray()
                     _DecData(Ch) = Data
                 End If
             End If
@@ -1981,7 +1984,7 @@ Public Class ArabicData
                 _Names.Add(Ch, {Vals(1)})
             End If
             Dim NewRangeMatch As Integer = Integer.Parse(Vals(0), Globalization.NumberStyles.AllowHexSpecifier)
-            If Not _Ranges.ContainsKey(Vals(4)) Then _Ranges.Add(Vals(4), New List(Of Integer))
+            If Not _Ranges.ContainsKey(Vals(4)) Then _Ranges.Add(Vals(4), New List(Of List(Of Integer)))
             If _Ranges(Vals(4)).Count <> 0 AndAlso CInt(_Ranges(Vals(4))(_Ranges(Vals(4)).Count - 1)(_Ranges(Vals(4))(_Ranges(Vals(4)).Count - 1).Count - 1)) + 1 = NewRangeMatch Then
                 _Ranges(Vals(4))(_Ranges(Vals(4)).Count - 1).Add(NewRangeMatch)
             Else
@@ -2001,13 +2004,13 @@ Public Class ArabicData
     End Function
     Public Shared Function MakeUniCategoryJS(Cats As String()) As String
         Dim Ranges As List(Of List(Of Integer)) = MakeUniCategory(Cats)
-        Return "return " + String.Join("||", Array.ConvertAll(Ranges.ToArray(), Function(Arr As List(Of Integer)) If(Arr.Count = 1, "c===0x" + Hex(Arr(0)), "(c>=0x" + Hex(Arr(0)) + "&&c<=0x" + Hex(Arr(Arr.Count - 1)) + ")"))) + ";"
+        Return "return " + String.Join("||", Linq.Enumerable.Select(Ranges.ToArray(), Function(Arr As List(Of Integer)) If(Arr.Count = 1, "c===0x" + Hex(Arr(0)), "(c>=0x" + Hex(Arr(0)) + "&&c<=0x" + Hex(Arr(Arr.Count - 1)) + ")"))) + ";"
     End Function
     Public Shared Function FixStartingCombiningSymbol(Str As String) As String
         Return If((FindLetterBySymbol(Str.Chars(0)) <> -1 AndAlso ArabicLetters(FindLetterBySymbol(Str.Chars(0))).JoiningStyle = "T") Or Str.Length = 1, LeftToRightEmbedding + Str + PopDirectionalFormatting, Str)
     End Function
     Public Shared Function MakeUniRegEx(Input As String) As String
-        Return String.Join(String.Empty, Array.ConvertAll(Of Char, String)(Input.ToCharArray(), Function(Ch As Char) If(System.Text.RegularExpressions.Regex.Match(Ch, "[\p{IsArabic}\p{IsArabicPresentationForms-A}\p{IsArabicPresentationForms-B}]").Success, "\u" + AscW(Ch).ToString("X4"), If(Ch = "."c, "\" + Ch, Ch))))
+        Return String.Join(String.Empty, Linq.Enumerable.Select(Of Char, String)(Input.ToCharArray(), Function(Ch As Char) If(System.Text.RegularExpressions.Regex.Match(Ch, "[\p{IsArabic}\p{IsArabicPresentationForms-A}\p{IsArabicPresentationForms-B}]").Success, "\u" + AscW(Ch).ToString("X4"), If(Ch = "."c, "\" + Ch, Ch))))
     End Function
     Public Shared Function MakeRegMultiEx(Input As String()) As String
         Return String.Join("|", Input)
@@ -2291,7 +2294,7 @@ Public Class RenderArray
         Dim RunStart As Integer = 0
         Dim RunRes As Integer = ClusterMap(0)
         'Dim Forms As Char() = ArabicData.GetPresentationForms()
-        'Dim SupportedGlyphs As Short() = FontFace.GetGlyphIndices(Array.ConvertAll(Forms, Function(Ch As Char) AscW(Ch)))
+        'Dim SupportedGlyphs As Short() = FontFace.GetGlyphIndices(Linq.Enumerable.Select(Forms, Function(Ch As Char) AscW(Ch)))
         'For Count = 0 To SupportedGlyphs.Length - 1
         '    If SupportedGlyphs(Count) = 0 Then Forms(Count) = ChrW(0)
         'Next
@@ -3256,7 +3259,7 @@ Public Class RenderArray
         Dim Factory As New SharpDX.DirectWrite.Factory()
         Dim DFont As SharpDX.DirectWrite.Font = Factory.GdiInterop.FromSystemDrawingFont(DrawFont)
         Dim FontFace As New SharpDX.DirectWrite.FontFace(DFont)
-        Dim SupportedGlyphs As Short() = FontFace.GetGlyphIndices(Array.ConvertAll(Forms, Function(Ch As Char) AscW(Ch)))
+        Dim SupportedGlyphs As Short() = FontFace.GetGlyphIndices(New List(Of Integer)(Linq.Enumerable.Select(Forms, Function(Ch As Char) AscW(Ch))).ToArray())
         For Count = 0 To SupportedGlyphs.Length - 1
             If SupportedGlyphs(Count) = 0 Then Forms(Count) = ChrW(0)
         Next
@@ -3303,8 +3306,8 @@ Public Class RenderArray
         Return DoGetRenderJS(_ID, Items)
     End Function
     Public Shared Function GetInitJS(ID As String, Items As Collections.Generic.List(Of RenderItem)) As String
-        Dim Objects As Object() = GetInitJSItems(ID, Items, String.Empty, String.Empty)
-        Dim ListJS As String()() = CType(Objects(2), List(Of String())).ToArray()
+        Dim Objects As InitJSStruct = GetInitJSItems(ID, Items, String.Empty, String.Empty)
+        Dim ListJS As String()() = CType(Objects.TableJS, List(Of String())).ToArray()
         Dim ListJSInit As New List(Of String)
         Dim ListJSAfter As New List(Of String)
         For Count = 0 To ListJS.Length - 1
@@ -3316,38 +3319,43 @@ Public Class RenderArray
                 End If
             Next
         Next
-        Return "if (typeof renderList == 'undefined') { renderList = []; } renderList = renderList.concat(" + Utility.MakeJSIndexedObject(CType(CType(Objects(0), List(Of Object)).ToArray(GetType(String)), String()), New Array() {CType(CType(Objects(1), List(Of Object)).ToArray(GetType(String)), String())}, True) + "); " + String.Join(String.Empty, ListJSInit.ToArray()) + String.Join(String.Empty, ListJSAfter.ToArray())
+        Return "if (typeof renderList == 'undefined') { renderList = []; } renderList = renderList.concat(" + Utility.MakeJSIndexedObject(Objects.IDs.ToArray(), New Array() {Objects.Data.ToArray()}, True) + "); " + String.Join(String.Empty, ListJSInit.ToArray()) + String.Join(String.Empty, ListJSAfter.ToArray())
     End Function
-    Public Shared Function GetInitJSItems(ID As String, Items As Collections.Generic.List(Of RenderItem), Title As String, NestPrefix As String) As Object()
+    Structure InitJSStruct
+        Dim IDs As List(Of String)
+        Dim Data As List(Of String)
+        Dim TableJS As List(Of String())
+    End Structure
+    Public Shared Function GetInitJSItems(ID As String, Items As Collections.Generic.List(Of RenderItem), Title As String, NestPrefix As String) As InitJSStruct
         Dim Count As Integer
         Dim Index As Integer
-        Dim Objects As New List(Of Object) From {New List(Of Object), New List(Of Object), New List(Of String())}
+        Dim Objects As New InitJSStruct With {.IDs = New List(Of String), .Data = New List(Of String), .TableJS = New List(Of String())}
         Dim Names As New List(Of String)
         Dim LastTitle As String = Title
         For Count = 0 To Items.Count - 1
             Dim Arabic As New List(Of String)
             Dim Translit As New List(Of String)
             Dim Translate As New List(Of String)
-            Dim Children As New List(Of Object) From {New List(Of Object), New List(Of Object)}
+            Dim Children As List(Of String)() = {New List(Of String), New List(Of String)}
             Dim ArrIndex As Integer = 0
             For Index = 0 To Items(Count).TextItems.Length - 1
                 Dim TestIndex As Integer = Index
                 If Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eNested Then
-                    Dim Objs As Object() = GetInitJSItems(ID, CType(Items(Count).TextItems(Index).Text, Collections.Generic.List(Of RenderItem)), LastTitle, CStr(Count))
-                    Children(0).AddRange(Objs(0))
-                    Children(1).AddRange(Objs(1))
+                    Dim Objs As InitJSStruct = GetInitJSItems(ID, CType(Items(Count).TextItems(Index).Text, Collections.Generic.List(Of RenderItem)), LastTitle, CStr(Count))
+                    Children(0).AddRange(Objs.IDs)
+                    Children(1).AddRange(Objs.Data)
                 ElseIf Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eList Then
-                    Objects(2).AddRange(GetTableJSFunctions(CType(Items(Count).TextItems(Index).Text, Object())))
+                    Objects.TableJS.AddRange(GetTableJSFunctions(CType(Items(Count).TextItems(Index).Text, Object())))
                 ElseIf Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eRanking Then
                 ElseIf Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eContinueStop Then
-                    Arabic.Add("contstop" + ID + CStr(IIf(NestPrefix = String.Empty, String.Empty, NestPrefix + "_")) + CStr(Count) + "_" + CStr(ArrIndex))
+                    Arabic.Add("contstop" + ID + CStr(If(NestPrefix = String.Empty, String.Empty, NestPrefix + "_")) + CStr(Count) + "_" + CStr(ArrIndex))
                 Else
                     If Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eArabic Then
-                        Arabic.Add("arabic" + ID + CStr(IIf(NestPrefix = String.Empty, String.Empty, NestPrefix + "_")) + CStr(Count) + "_" + CStr(ArrIndex))
+                        Arabic.Add("arabic" + ID + CStr(If(NestPrefix = String.Empty, String.Empty, NestPrefix + "_")) + CStr(Count) + "_" + CStr(ArrIndex))
                     ElseIf Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eTransliteration Then
-                        Translit.Add("translit" + ID + CStr(IIf(NestPrefix = String.Empty, String.Empty, NestPrefix + "_")) + CStr(Count) + "_" + CStr(ArrIndex))
+                        Translit.Add("translit" + ID + CStr(If(NestPrefix = String.Empty, String.Empty, NestPrefix + "_")) + CStr(Count) + "_" + CStr(ArrIndex))
                     Else
-                        Translate.Add("translate" + ID + CStr(IIf(NestPrefix = String.Empty, String.Empty, NestPrefix + "_")) + CStr(Count) + "_" + CStr(ArrIndex))
+                        Translate.Add("translate" + ID + CStr(If(NestPrefix = String.Empty, String.Empty, NestPrefix + "_")) + CStr(Count) + "_" + CStr(ArrIndex))
                     End If
                     Do
                         TestIndex += 1
@@ -3358,17 +3366,17 @@ Public Class RenderArray
                 If TestIndex = Items(Count).TextItems.Length Then Exit For
             Next
             If Items(Count).Type = RenderTypes.eHeaderCenter Then
-                LastTitle = "ri" + CStr(IIf(NestPrefix = String.Empty, ID, NestPrefix + "_")) + CStr(Count)
+                LastTitle = "ri" + CStr(If(NestPrefix = String.Empty, ID, NestPrefix + "_")) + CStr(Count)
             End If
             If Arabic.Count <> 0 Or Translit.Count <> 0 Or Translate.Count <> 0 Then
                 If Arabic.Count = 0 Then Arabic.Add(String.Empty)
                 If Translit.Count = 0 Then Translit.Add(String.Empty)
                 If Translate.Count = 0 Then Translate.Add(String.Empty)
-                Objects(0).Add("ri" + CStr(IIf(NestPrefix = String.Empty, ID, NestPrefix + "_")) + CStr(Count))
-                Objects(1).Add(Utility.MakeJSIndexedObject(New String() {"title", "arabic", "translit", "translate", "children", "linkchild"}, New Array() {New String() {"'" + CStr(IIf(Items(Count).Type <> RenderTypes.eHeaderLeft And Items(Count).Type <> RenderTypes.eHeaderCenter And Items(Count).Type <> RenderTypes.eHeaderRight, Utility.EncodeJS(LastTitle), String.Empty)) + "'", Utility.MakeJSArray(CType(Arabic.ToArray(GetType(String)), String())), Utility.MakeJSArray(CType(Translit.ToArray(GetType(String)), String())), Utility.MakeJSArray(CType(Translate.ToArray(GetType(String)), String())), Utility.MakeJSIndexedObject(CType(CType(Children(0), List(Of Object)).ToArray(GetType(String)), String()), New Array() {CType(CType(Children(1), List(Of Object)).ToArray(GetType(String)), String())}, True), "true"}}, True))
+                Objects.IDs.Add("ri" + CStr(If(NestPrefix = String.Empty, ID, NestPrefix + "_")) + CStr(Count))
+                Objects.Data.Add(Utility.MakeJSIndexedObject(New String() {"title", "arabic", "translit", "translate", "children", "linkchild"}, New Array() {New String() {"'" + CStr(If(Items(Count).Type <> RenderTypes.eHeaderLeft And Items(Count).Type <> RenderTypes.eHeaderCenter And Items(Count).Type <> RenderTypes.eHeaderRight, Utility.EncodeJS(LastTitle), String.Empty)) + "'", Utility.MakeJSArray(Arabic.ToArray()), Utility.MakeJSArray(Translit.ToArray()), Utility.MakeJSArray(Translate.ToArray()), Utility.MakeJSIndexedObject(Children(0).ToArray(), New Array() {Children(1).ToArray()}, True), "true"}}, True))
             End If
         Next
-        Return Objects.ToArray()
+        Return Objects
     End Function
     Public Shared Function DoGetRenderJS(ID As String, Items As Collections.Generic.List(Of RenderItem)) As String()
         Return New String() {String.Empty, String.Empty, GetInitJS(ID, Items), GetCopyClipboardJS(), GetSetClipboardJS(), GetStarRatingJS(), GetContinueStopJS()}
@@ -3392,13 +3400,13 @@ Public Class RenderArray
         Return JSFuncs.ToArray()
     End Function
     Public Shared Function MakeTableJSFunctions(ByRef Output As Array(), ID As String) As Array()
-        Dim Objects As List(Of Object) = MakeTableJSFuncs(Output, ID)
-        Output(0) = New String() {String.Empty, String.Empty, "if (typeof renderList == 'undefined') { renderList = []; } renderList = renderList.concat(" + Utility.MakeJSIndexedObject(CType(CType(Objects(0), List(Of Object)).ToArray(GetType(String)), String()), New Array() {CType(CType(Objects(1), List(Of Object)).ToArray(GetType(String)), String())}, True) + ");"}
+        Dim Objects As List(Of String)() = MakeTableJSFuncs(Output, ID)
+        Output(0) = New String() {String.Empty, String.Empty, "if (typeof renderList == 'undefined') { renderList = []; } renderList = renderList.concat(" + Utility.MakeJSIndexedObject(Objects(0).ToArray(), New Array() {Objects(1).ToArray()}, True) + ");"}
         Return Output
     End Function
-    Public Shared Function MakeTableJSFuncs(ByVal Output As Object(), Prefix As String) As List(Of Object)
+    Public Shared Function MakeTableJSFuncs(ByVal Output As Object(), Prefix As String) As List(Of String)()
         '2 dimensional array for table
-        Dim Objects As New List(Of Object) From {New List(Of Object), New List(Of Object)}
+        Dim Objects As List(Of String)() = {New List(Of String), New List(Of String)}
         Dim Count As Integer
         Dim Index As Integer
         If Output.Length = 0 Then Return Nothing
@@ -3408,28 +3416,28 @@ Public Class RenderArray
                 Dim Arabics As New List(Of String)
                 Dim Translits As New List(Of String)
                 Dim Translations As New List(Of String)
-                Dim Children As New List(Of Object) From {New List(Of Object), New List(Of Object)}
+                Dim Children As List(Of String)() = {New List(Of String), New List(Of String)}
                 Dim InnerArray As Object() = DirectCast(OutArray(Count), Object())
                 For Index = 0 To InnerArray.Length - 1
                     If Count <> 2 Then
                         If (CStr(DirectCast(OutArray(1), Object())(Index)) <> String.Empty) Then
                             If CStr(DirectCast(OutArray(1), Object())(Index)) = "arabic" Then
-                                Arabics.Add("arabic" + CStr(IIf(Prefix <> String.Empty, Prefix + "_", String.Empty)) + CStr(Count - 3) + "_" + CStr(Index))
+                                Arabics.Add("arabic" + CStr(If(Prefix <> String.Empty, Prefix + "_", String.Empty)) + CStr(Count - 3) + "_" + CStr(Index))
                             ElseIf CStr(DirectCast(OutArray(1), Object())(Index)) = "transliteration" Then
-                                Translits.Add("translit" + CStr(IIf(Prefix <> String.Empty, Prefix + "_", String.Empty)) + CStr(Count - 3) + "_" + CStr(Index))
+                                Translits.Add("translit" + CStr(If(Prefix <> String.Empty, Prefix + "_", String.Empty)) + CStr(Count - 3) + "_" + CStr(Index))
                             ElseIf CStr(DirectCast(OutArray(1), Object())(Index)) = "translation" Then
-                                Translations.Add("translate" + CStr(IIf(Prefix <> String.Empty, Prefix + "_", String.Empty)) + CStr(Count - 3) + "_" + CStr(Index))
+                                Translations.Add("translate" + CStr(If(Prefix <> String.Empty, Prefix + "_", String.Empty)) + CStr(Count - 3) + "_" + CStr(Index))
                             End If
                         End If
                     End If
                     If TypeOf InnerArray(Index) Is Object() Then
-                        Dim NextChild As List(Of Object) = MakeTableJSFuncs(DirectCast(InnerArray(Index), Object()), Prefix + CStr(Count - 3) + "_" + CStr(Index))
+                        Dim NextChild As List(Of String)() = MakeTableJSFuncs(DirectCast(InnerArray(Index), Object()), Prefix + CStr(Count - 3) + "_" + CStr(Index))
                         Children(0).AddRange(NextChild(0))
                         Children(1).AddRange(NextChild(1))
                     End If
                 Next
                 Objects(0).Add("ri" + Prefix + CStr(Count))
-                Objects(1).Add(Utility.MakeJSIndexedObject(New String() {"title", "arabic", "translit", "translate", "children", "linkchild"}, New Array() {New String() {"''", Utility.MakeJSArray(CType(Arabics.ToArray(GetType(String)), String())), Utility.MakeJSArray(CType(Translits.ToArray(GetType(String)), String())), Utility.MakeJSArray(CType(Translations.ToArray(GetType(String)), String())), Utility.MakeJSIndexedObject(CType(CType(Children(0), List(Of Object)).ToArray(GetType(String)), String()), New Array() {CType(CType(Children(1), List(Of Object)).ToArray(GetType(String)), String())}, True), "false"}}, True))
+                Objects(1).Add(Utility.MakeJSIndexedObject(New String() {"title", "arabic", "translit", "translate", "children", "linkchild"}, New Array() {New String() {"''", Utility.MakeJSArray(Arabics.ToArray()), Utility.MakeJSArray(Translits.ToArray()), Utility.MakeJSArray(Translations.ToArray()), Utility.MakeJSIndexedObject(Children(0).ToArray(), New Array() {Children(1).ToArray()}, True), "false"}}, True))
             End If
         Next
         Return Objects
@@ -3453,28 +3461,28 @@ Public Class RenderArray
                 Dim InnerArray As Object() = DirectCast(OutArray(Count), Object())
                 For Index = 0 To InnerArray.Length - 1
                     writer.Write(vbCrLf + BaseTabs + vbTab + vbTab)
-                    writer.WriteFullBeginTag(CStr(IIf(Count = 2, "th", "td")))
+                    writer.WriteFullBeginTag(CStr(If(Count = 2, "th", "td")))
                     writer.Write(vbCrLf + BaseTabs + vbTab + vbTab + vbTab)
                     writer.WriteBeginTag("span")
                     If Count <> 2 Then
                         If (CStr(DirectCast(OutArray(1), Object())(Index)) <> String.Empty) Then
                             If CStr(DirectCast(OutArray(1), Object())(Index)) = "arabic" Then
-                                writer.WriteAttribute("id", "arabic" + CStr(IIf(Prefix <> String.Empty, Prefix + "_", String.Empty)) + CStr(Count - 3) + "_" + CStr(Index))
+                                writer.WriteAttribute("id", "arabic" + CStr(If(Prefix <> String.Empty, Prefix + "_", String.Empty)) + CStr(Count - 3) + "_" + CStr(Index))
                             ElseIf CStr(DirectCast(OutArray(1), Object())(Index)) = "transliteration" Then
-                                writer.WriteAttribute("id", "translit" + CStr(IIf(Prefix <> String.Empty, Prefix + "_", String.Empty)) + CStr(Count - 3) + "_" + CStr(Index))
+                                writer.WriteAttribute("id", "translit" + CStr(If(Prefix <> String.Empty, Prefix + "_", String.Empty)) + CStr(Count - 3) + "_" + CStr(Index))
                             ElseIf CStr(DirectCast(OutArray(1), Object())(Index)) = "translation" Then
-                                writer.WriteAttribute("id", "translate" + CStr(IIf(Prefix <> String.Empty, Prefix + "_", String.Empty)) + CStr(Count - 3) + "_" + CStr(Index))
+                                writer.WriteAttribute("id", "translate" + CStr(If(Prefix <> String.Empty, Prefix + "_", String.Empty)) + CStr(Count - 3) + "_" + CStr(Index))
                             End If
                         End If
                     End If
                     If (CStr(DirectCast(OutArray(1), Object())(Index)) <> String.Empty) Then
                         writer.WriteAttribute("class", CStr(DirectCast(OutArray(1), Object())(Index)))
                         If CStr(DirectCast(OutArray(1), Object())(Index)) = "transliteration" Then
-                            writer.WriteAttribute("style", "display: " + CStr(IIf(CType(If(CInt(HttpContext.Current.Request.Params("translitscheme")) >= 2, 2 - CInt(HttpContext.Current.Request.Params("translitscheme")) Mod 2, CInt(HttpContext.Current.Request.Params("translitscheme"))), ArabicData.TranslitScheme) <> ArabicData.TranslitScheme.None, "block", "none")) + ";")
+                            writer.WriteAttribute("style", "display: " + CStr(If(CType(If(CInt(HttpContext.Current.Request.Params("translitscheme")) >= 2, 2 - CInt(HttpContext.Current.Request.Params("translitscheme")) Mod 2, CInt(HttpContext.Current.Request.Params("translitscheme"))), ArabicData.TranslitScheme) <> ArabicData.TranslitScheme.None, "block", "none")) + ";")
                         ElseIf CStr(DirectCast(OutArray(1), Object())(Index)) = "check" Then
                             writer.Write(HtmlTextWriter.TagRightChar)
                             writer.WriteBeginTag("input")
-                            writer.WriteAttribute("id", "check" + CStr(IIf(Prefix <> String.Empty, Prefix + "_", String.Empty)) + CStr(Count - 3) + "_" + CStr(Index))
+                            writer.WriteAttribute("id", "check" + CStr(If(Prefix <> String.Empty, Prefix + "_", String.Empty)) + CStr(Count - 3) + "_" + CStr(Index))
                             writer.WriteAttribute("type", "checkbox")
                             writer.WriteAttribute("onchange", CType(OutArray(0), String())(0))
                         ElseIf CStr(DirectCast(OutArray(1), Object())(Index)) = "hidden" Then
@@ -3491,7 +3499,7 @@ Public Class RenderArray
                     End If
                     writer.WriteEndTag("span")
                     writer.Write(vbCrLf + BaseTabs + vbTab + vbTab)
-                    writer.WriteEndTag(CStr(IIf(Count = 2, "th", "td")))
+                    writer.WriteEndTag(CStr(If(Count = 2, "th", "td")))
                 Next
             End If
             writer.Write(vbCrLf + BaseTabs + vbTab)
@@ -3518,7 +3526,7 @@ Public Class RenderArray
             Dim ArrIndex As Integer = 0
             For Index = 0 To Items(Count).TextItems.Length - 1
                 writer.Write(vbCrLf + BaseTabs + vbTab)
-                writer.WriteBeginTag(CStr(IIf(Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eNested Or Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eRanking Or Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eList, "div", "span")))
+                writer.WriteBeginTag(CStr(If(Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eNested Or Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eRanking Or Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eList, "div", "span")))
                 Dim Style As String = String.Empty
                 Dim TestIndex As Integer = Index
                 If Items(Count).TextItems(Index).DisplayClass <> RenderDisplayClass.eList And (Items(Count).Type = RenderTypes.eHeaderCenter Or (Items(Count).Type = RenderTypes.eText And (Count - Base) Mod 2 = 1)) Then Style = "background-color: #D0D0D0;"
@@ -3533,10 +3541,10 @@ Public Class RenderArray
                 ElseIf Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.ePassThru Then
                     writer.Write(CStr(Items(Count).TextItems(Index).Text))
                 ElseIf Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eContinueStop Then
-                    writer.WriteAttribute("id", "contstop" + ID + CStr(IIf(NestPrefix = String.Empty, String.Empty, NestPrefix + "_")) + CStr(Count) + "_" + CStr(ArrIndex))
+                    writer.WriteAttribute("id", "contstop" + ID + CStr(If(NestPrefix = String.Empty, String.Empty, NestPrefix + "_")) + CStr(Count) + "_" + CStr(ArrIndex))
                     'U+2BC3 is horizontal stop sign make red color, U+2B45/6 is left/rightwards quadruple arrow make green color
                     writer.WriteAttribute("style", "cursor: pointer;cursor: hand;color: " & If(DirectCast(Items(Count).TextItems(Index).Text, Boolean), "#00ff00", "#ff0000") & ";" & Style)
-                    writer.WriteAttribute("onclick", "javascript: changeContinueStop(event, this, ['" + "arabic" + ID + CStr(IIf(NestPrefix = String.Empty, String.Empty, NestPrefix + "_")) + CStr(Count - 1) + "_" + CStr(0) + "', '" + "translit" + ID + CStr(IIf(NestPrefix = String.Empty, String.Empty, NestPrefix + "_")) + CStr(Count - 1) + "_" + CStr(1) + "']);")
+                    writer.WriteAttribute("onclick", "javascript: changeContinueStop(event, this, ['" + "arabic" + ID + CStr(If(NestPrefix = String.Empty, String.Empty, NestPrefix + "_")) + CStr(Count - 1) + "_" + CStr(0) + "', '" + "translit" + ID + CStr(If(NestPrefix = String.Empty, String.Empty, NestPrefix + "_")) + CStr(Count - 1) + "_" + CStr(1) + "']);")
                     writer.Write(HtmlTextWriter.TagRightChar & If(DirectCast(Items(Count).TextItems(Index).Text, Boolean), "&#x2B45;", "&#x2B59;"))
                 ElseIf Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eRanking Then
                     Dim Data As String() = CStr(Items(Count).TextItems(Index).Text).Split("|"c)
@@ -3555,7 +3563,7 @@ Public Class RenderArray
                     'writer.Write(HtmlTextWriter.TagRightChar)
                     'writer.WriteBeginTag("div")
                     'writer.WriteAttribute("class", "progress")
-                    'writer.WriteAttribute("style", "width: " + CStr(IIf(CInt(Data(5)) = -1, 0, CInt(Data(5)) * 10)) + "%;")
+                    'writer.WriteAttribute("style", "width: " + CStr(If(CInt(Data(5)) = -1, 0, CInt(Data(5)) * 10)) + "%;")
                     'writer.Write(HtmlTextWriter.TagRightChar)
                     'writer.WriteEndTag("div")
                     'writer.WriteBeginTag("div")
@@ -3569,13 +3577,13 @@ Public Class RenderArray
                     writer.Write(HtmlTextWriter.TagRightChar)
                     For StarCount As Integer = 1 To 10
                         writer.WriteBeginTag("span")
-                        writer.WriteAttribute("class", CStr(IIf(StarCount Mod 2 = 1, "classification", "classificationalt")))
-                        writer.WriteAttribute("style", "color: " + CStr(IIf(CInt(IIf(CInt(Data(5)) = -1, 0, Data(5))) < StarCount, "#cccccc", "#00a4e4")) + ";")
+                        writer.WriteAttribute("class", CStr(If(StarCount Mod 2 = 1, "classification", "classificationalt")))
+                        writer.WriteAttribute("style", "color: " + CStr(If(If(CInt(Data(5)) = -1, 0, CInt(Data(5))) < StarCount, "#cccccc", "#00a4e4")) + ";")
                         writer.WriteAttribute("onclick", "javascript: changeStarRating(event, this, " + CStr(StarCount) + ", {Collection:'" + Data(0) + "', Book:'" + Data(1) + "', Hadith:'" + Data(2) + "'});")
                         writer.WriteAttribute("onmousemove", "javascript: updateStarRating(event, this, " + CStr(StarCount) + ");")
                         writer.WriteAttribute("onmouseover", "javascript: updateStarRating(event, this, " + CStr(StarCount) + ");")
                         writer.WriteAttribute("onmouseout", "javascript: restoreStarRating(event, this);")
-                        writer.Write(HtmlTextWriter.TagRightChar + CStr(IIf(CInt(IIf(CInt(Data(5)) = -1, 0, Data(5))) < StarCount, "&#x2606;", "&#x2605;")))
+                        writer.Write(HtmlTextWriter.TagRightChar + CStr(If(If(CInt(Data(5)) = -1, 0, CInt(Data(5))) < StarCount, "&#x2606;", "&#x2605;")))
                         writer.WriteEndTag("span")
                     Next
                     writer.WriteBeginTag("span")
@@ -3601,17 +3609,17 @@ Public Class RenderArray
                     ElseIf Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eArabic Then
                         writer.WriteAttribute("class", "arabic")
                         writer.WriteAttribute("dir", If(System.Text.RegularExpressions.Regex.Match(CStr(Items(Count).TextItems(Index).Text), "(?:\s|\p{IsArabic}|\p{IsArabicPresentationForms-A}|\p{IsArabicPresentationForms-B})+").Success, "rtl", "ltr"))
-                        writer.WriteAttribute("id", "arabic" + ID + CStr(IIf(NestPrefix = String.Empty, String.Empty, NestPrefix + "_")) + CStr(Count) + "_" + CStr(ArrIndex))
+                        writer.WriteAttribute("id", "arabic" + ID + CStr(If(NestPrefix = String.Empty, String.Empty, NestPrefix + "_")) + CStr(Count) + "_" + CStr(ArrIndex))
                         writer.WriteAttribute("style", "color: " + System.Drawing.ColorTranslator.ToHtml(Items(Count).TextItems(Index).Clr) + ";" + If(Items(Count).TextItems(Index).Font <> String.Empty, "font-family:" + Items(Count).TextItems(Index).Font + ";", String.Empty) + Style)
                     ElseIf Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eTransliteration Then
                         writer.WriteAttribute("class", "transliteration")
                         writer.WriteAttribute("dir", "ltr")
-                        writer.WriteAttribute("style", "color: " + System.Drawing.ColorTranslator.ToHtml(Items(Count).TextItems(Index).Clr) + "; display: " + CStr(IIf(CType(If(CInt(HttpContext.Current.Request.Params("translitscheme")) >= 2, 2 - CInt(HttpContext.Current.Request.Params("translitscheme")) Mod 2, CInt(HttpContext.Current.Request.Params("translitscheme"))), ArabicData.TranslitScheme) <> ArabicData.TranslitScheme.None, "block", "none")) + ";" + If(Items(Count).TextItems(Index).Font <> String.Empty, "font-family:" + Items(Count).TextItems(Index).Font + ";", String.Empty) + Style)
-                        writer.WriteAttribute("id", "translit" + ID + CStr(IIf(NestPrefix = String.Empty, String.Empty, NestPrefix + "_")) + CStr(Count) + "_" + CStr(ArrIndex))
+                        writer.WriteAttribute("style", "color: " + System.Drawing.ColorTranslator.ToHtml(Items(Count).TextItems(Index).Clr) + "; display: " + CStr(If(CType(If(CInt(HttpContext.Current.Request.Params("translitscheme")) >= 2, 2 - CInt(HttpContext.Current.Request.Params("translitscheme")) Mod 2, CInt(HttpContext.Current.Request.Params("translitscheme"))), ArabicData.TranslitScheme) <> ArabicData.TranslitScheme.None, "block", "none")) + ";" + If(Items(Count).TextItems(Index).Font <> String.Empty, "font-family:" + Items(Count).TextItems(Index).Font + ";", String.Empty) + Style)
+                        writer.WriteAttribute("id", "translit" + ID + CStr(If(NestPrefix = String.Empty, String.Empty, NestPrefix + "_")) + CStr(Count) + "_" + CStr(ArrIndex))
                     Else
                         writer.WriteAttribute("class", "translation")
-                        writer.WriteAttribute("dir", CStr(IIf(Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eRTL, "rtl", "ltr")))
-                        writer.WriteAttribute("id", "translate" + ID + CStr(IIf(NestPrefix = String.Empty, String.Empty, NestPrefix + "_")) + CStr(Count) + "_" + CStr(ArrIndex))
+                        writer.WriteAttribute("dir", CStr(If(Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eRTL, "rtl", "ltr")))
+                        writer.WriteAttribute("id", "translate" + ID + CStr(If(NestPrefix = String.Empty, String.Empty, NestPrefix + "_")) + CStr(Count) + "_" + CStr(ArrIndex))
                         writer.WriteAttribute("style", "color: " + System.Drawing.ColorTranslator.ToHtml(Items(Count).TextItems(Index).Clr) + ";" + If(Items(Count).TextItems(Index).Font <> String.Empty, "font-family:" + Items(Count).TextItems(Index).Font + ";", String.Empty) + Style)
                     End If
                     writer.Write(HtmlTextWriter.TagRightChar)
@@ -3638,7 +3646,7 @@ Public Class RenderArray
                     Index = TestIndex - 1
                 End If
                 ArrIndex += 1
-                writer.WriteEndTag(CStr(IIf(Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eNested Or Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eRanking Or Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eList, "div", "span")))
+                writer.WriteEndTag(CStr(If(Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eNested Or Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eRanking Or Items(Count).TextItems(Index).DisplayClass = RenderDisplayClass.eList, "div", "span")))
                 If TestIndex = Items(Count).TextItems.Length Then Exit For
             Next
 
@@ -3650,7 +3658,7 @@ Public Class RenderArray
 
                 writer.WriteBeginTag("input")
                 writer.WriteAttribute("value", "Copy")
-                writer.WriteAttribute("onclick", "javascript: setClipboardText(getText('ri" + CStr(IIf(NestPrefix = String.Empty, ID, NestPrefix + "_")) + CStr(Count) + "', '" + CStr(IIf(NestPrefix = String.Empty, String.Empty, "ri" + NestPrefix + "_" + CStr(Count))) + "'));")
+                writer.WriteAttribute("onclick", "javascript: setClipboardText(getText('ri" + CStr(If(NestPrefix = String.Empty, ID, NestPrefix + "_")) + CStr(Count) + "', '" + CStr(If(NestPrefix = String.Empty, String.Empty, "ri" + NestPrefix + "_" + CStr(Count))) + "'));")
                 writer.WriteAttribute("type", "button")
                 writer.Write(HtmlTextWriter.TagRightChar)
 
@@ -3834,7 +3842,7 @@ Public Class SiteDatabase
         Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
         If Connection Is Nothing Then Return False
         Dim Command As MySql.Data.MySqlClient.MySqlCommand = Connection.CreateCommand()
-        Command.CommandText = "SELECT UserID FROM Users WHERE UserID=" + CStr(UserID) + " AND ActivationCode IS NULL AND LoginSecret=" + CStr(Secret) + CStr(IIf(Secret Mod 2 = 0, " AND LoginTime IS NULL", " AND LoginTime IS NOT NULL AND UTC_TIMESTAMP < TIMESTAMPADD(HOUR, 1, LoginTime)"))
+        Command.CommandText = "SELECT UserID FROM Users WHERE UserID=" + CStr(UserID) + " AND ActivationCode IS NULL AND LoginSecret=" + CStr(Secret) + CStr(If(Secret Mod 2 = 0, " AND LoginTime IS NULL", " AND LoginTime IS NOT NULL AND UTC_TIMESTAMP < TIMESTAMPADD(HOUR, 1, LoginTime)"))
         Dim Reader As MySql.Data.MySqlClient.MySqlDataReader = Command.ExecuteReader()
         If Reader.Read() AndAlso Not Reader.IsDBNull(0) Then
             CheckLogin = CInt(Reader.Item("UserID")) = UserID
@@ -3863,8 +3871,8 @@ Public Class SiteDatabase
         If Connection Is Nothing Then Return -1
         Dim Generator As New System.Random()
         'Persistant login secret is even, non-persistant is odd
-        SetLogin = (Generator.Next(0, 99999999) \ 2) * 2 + CInt(IIf(Persist, 0, 1))
-        ExecuteNonQuery(Connection, "UPDATE Users SET LoginSecret=" + CStr(SetLogin) + ", LoginTime=" + CStr(IIf(Persist, "NULL", "UTC_TIMESTAMP")) + " WHERE UserID=" + CStr(UserID))
+        SetLogin = (Generator.Next(0, 99999999) \ 2) * 2 + CInt(If(Persist, 0, 1))
+        ExecuteNonQuery(Connection, "UPDATE Users SET LoginSecret=" + CStr(SetLogin) + ", LoginTime=" + CStr(If(Persist, "NULL", "UTC_TIMESTAMP")) + " WHERE UserID=" + CStr(UserID))
         Connection.Close()
     End Function
     Public Shared Sub ClearLogin(ByVal UserID As Integer)

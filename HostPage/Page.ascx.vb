@@ -73,7 +73,7 @@ Partial Class Page
         writer.Write(vbCrLf + BaseTabs)
         writer.WriteBeginTag("div")
         If Item.Name = "font-tester" Then writer.WriteAttribute("style", "font-family: 'Sakkal Majalla', 'Times New Roman'; display: none;")
-        writer.WriteAttribute("class", CStr(IIf(Item.Name = "font-tester", "font-tester", IIf(Item.Name = "Error", "error", "normal"))))
+        writer.WriteAttribute("class", CStr(If(Item.Name = "font-tester", "font-tester", If(Item.Name = "Error", "error", "normal"))))
         If Item.Name <> String.Empty Then writer.WriteAttribute("id", Item.Name)
         writer.Write(HtmlTextWriter.TagRightChar)
         If (Item.URL <> String.Empty) Then
@@ -117,7 +117,9 @@ Partial Class Page
                 AddToJSFunctions(DirectCast(Output, RenderArray).GetRenderJS())
             Else
                 RenderArray.WriteTable(writer, DirectCast(Output, Object()), TabCount + 1, Item.Name)
-                Array.ForEach(RenderArray.GetTableJSFunctions(DirectCast(Output, Object())), Sub(Strs As String()) AddToJSFunctions(Strs))
+                For Each Strs As String() In DirectCast(Output, Object())
+                    AddToJSFunctions(Strs)
+                Next
             End If
         End If
         If (Item.URL <> String.Empty) Then
@@ -171,8 +173,8 @@ Partial Class Page
                         End If
                     End If
                 Next
-                writer.WriteAttribute("action", CStr(IIf(DirectCast(Item, PageLoader.ListItem).FormPostURL <> String.Empty, DirectCast(Item, PageLoader.ListItem).FormPostURL, host.MainPage)))
-                writer.WriteAttribute("method", CStr(IIf(DirectCast(Item, PageLoader.ListItem).FormPostURL <> String.Empty Or bHasMultiEdit, "post", "get")))
+                writer.WriteAttribute("action", CStr(If(DirectCast(Item, PageLoader.ListItem).FormPostURL <> String.Empty, DirectCast(Item, PageLoader.ListItem).FormPostURL, host.MainPage)))
+                writer.WriteAttribute("method", CStr(If(DirectCast(Item, PageLoader.ListItem).FormPostURL <> String.Empty Or bHasMultiEdit, "post", "get")))
                 writer.Write(HtmlTextWriter.TagRightChar)
                 writer.Write(vbCrLf + BaseTabs + vbTab + vbTab)
                 writer.WriteBeginTag("div")
@@ -204,8 +206,8 @@ Partial Class Page
             If Not DirectCast(Item, PageLoader.DownloadItem).OnRenderFunction Is Nothing Then
                 PathName = CType(DirectCast(Item, PageLoader.DownloadItem).OnRenderFunction.Invoke(Nothing, Nothing), String())
             Else
-                PathName = New String() {CStr(IIf(DirectCast(Item, PageLoader.DownloadItem).RelativePath, IIf(DirectCast(Item, PageLoader.DownloadItem).Path.EndsWith(".h") Or DirectCast(Item, PageLoader.DownloadItem).Path.EndsWith(".vb") Or DirectCast(Item, PageLoader.DownloadItem).Path.EndsWith(".vba") Or DirectCast(Item, PageLoader.DownloadItem).Path.EndsWith(".bat"), host.GetPageString("Source&File=" + HttpUtility.UrlEncode(DirectCast(Item, PageLoader.DownloadItem).Path)), "files/" + DirectCast(Item, PageLoader.DownloadItem).Path), DirectCast(Item, PageLoader.DownloadItem).Path)), _
-                                 CStr(IIf(DirectCast(Item, PageLoader.DownloadItem).UseLink, Utility.LoadResourceString(DirectCast(Item, PageLoader.DownloadItem).Text), DirectCast(Item, PageLoader.DownloadItem).Path))}
+                PathName = New String() {CStr(If(DirectCast(Item, PageLoader.DownloadItem).RelativePath, If(DirectCast(Item, PageLoader.DownloadItem).Path.EndsWith(".h") Or DirectCast(Item, PageLoader.DownloadItem).Path.EndsWith(".vb") Or DirectCast(Item, PageLoader.DownloadItem).Path.EndsWith(".vba") Or DirectCast(Item, PageLoader.DownloadItem).Path.EndsWith(".bat"), host.GetPageString("Source&File=" + HttpUtility.UrlEncode(DirectCast(Item, PageLoader.DownloadItem).Path)), "files/" + DirectCast(Item, PageLoader.DownloadItem).Path), DirectCast(Item, PageLoader.DownloadItem).Path)), _
+                                 CStr(If(DirectCast(Item, PageLoader.DownloadItem).UseLink, Utility.LoadResourceString(DirectCast(Item, PageLoader.DownloadItem).Text), DirectCast(Item, PageLoader.DownloadItem).Path))}
             End If
             If PathName.Length = 2 Then
                 If DirectCast(Item, PageLoader.DownloadItem).ShowInline Then
@@ -253,7 +255,7 @@ Partial Class Page
                 writer.Write(vbCrLf + BaseTabs)
             End If
             writer.WriteBeginTag("img")
-            writer.WriteAttribute("src", CStr(IIf(Scale = 1, "images/" + DirectCast(Item, PageLoader.ImageItem).Path, host.GetPageString("Image.gif&Image=Scale&p=" + IndexString + "." + DirectCast(Item, PageLoader.ImageItem).Name))))
+            writer.WriteAttribute("src", CStr(If(Scale = 1, "images/" + DirectCast(Item, PageLoader.ImageItem).Path, host.GetPageString("Image.gif&Image=Scale&p=" + IndexString + "." + DirectCast(Item, PageLoader.ImageItem).Name))))
             writer.WriteAttribute("alt", Utility.HtmlTextEncode(Utility.LoadResourceString(DirectCast(Item, PageLoader.ImageItem).Text)))
             writer.WriteAttribute("width", Convert.ToInt32(SizeF.Width / Scale).ToString())
             writer.WriteAttribute("height", Convert.ToInt32(SizeF.Height / Scale).ToString())
@@ -285,7 +287,7 @@ Partial Class Page
                 writer.WriteEndTag("textarea")
             Else
                 writer.WriteBeginTag("input")
-                writer.WriteAttribute("type", CStr(IIf(DirectCast(Item, PageLoader.EditItem).Rows = 0, "hidden", IIf(DirectCast(Item, PageLoader.EditItem).Password, "password", "text"))))
+                writer.WriteAttribute("type", CStr(If(DirectCast(Item, PageLoader.EditItem).Rows = 0, "hidden", If(DirectCast(Item, PageLoader.EditItem).Password, "password", "text"))))
                 writer.WriteAttribute("name", DirectCast(Item, PageLoader.EditItem).Name)
                 writer.WriteAttribute("id", DirectCast(Item, PageLoader.EditItem).Name)
                 If DirectCast(Item, PageLoader.EditItem).Name = "fontcustom" And Web.HttpContext.Current.Request.Params.Get("fontselection") <> "custom" Then writer.WriteAttribute("style", "display: none;")
