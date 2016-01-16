@@ -277,13 +277,14 @@ Public Class Utility
         Dim Nodes(AllNodes.Length - 1) As Xml.Linq.XElement
         Dim Count As Integer = 0
         For Each Item As Xml.Linq.XElement In AllNodes
-            Nodes(Count) = Doc.Root.RemoveChild(CType(Item, Xml.XmlAttribute).OwnerElement)
+            Nodes(Count) = Item
+            Item.Remove()
             Count += 1
         Next
-        Array.Sort(Nodes, Function(x As Xml.Linq.XElement, y As Xml.Linq.XElement) x.Attributes("name").Value.CompareTo(y.Attributes("name").Value))
+        Array.Sort(Nodes, Function(x As Xml.Linq.XElement, y As Xml.Linq.XElement) x.Attribute("name").Value.CompareTo(y.Attribute("name").Value))
         For Count = 0 To Nodes.Length - 1
-            If Count = 0 OrElse Nodes(Count - 1).Attributes("name").Value <> Nodes(Count).Attributes("name").Value Then
-                Doc.Root.AppendChild(Nodes(Count))
+            If Count = 0 OrElse Nodes(Count - 1).Attribute("name").Value <> Nodes(Count).Attribute("name").Value Then
+                Doc.Root.Add(Nodes(Count))
             End If
         Next
         Doc.Save(File)

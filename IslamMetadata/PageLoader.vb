@@ -4,6 +4,15 @@ Imports HostPageUtility
 'Imports System.Drawing
 'Imports System.Web
 'Imports System.Web.UI
+
+Public Interface PortableFileIO
+    Function LoadStream(FilePath As String) As IO.Stream
+    Sub SaveStream(FilePath As String, Stream As IO.Stream)
+End Interface
+Public Class PortableMethods
+    Public Shared FileIO As PortableFileIO
+End Class
+
 Public Class PrayerTime
     Public Shared Function GetMonthName(ByVal Item As PageLoader.TextItem) As String
         Dim CultureInfo As Globalization.CultureInfo
@@ -5554,7 +5563,7 @@ Public Class TanzilReader
             UseBuckwalter = True
         End If
         Dim IndexToVerse As Integer()() = Nothing
-        Doc.Root.PreviousSibling.Value = Doc.Root.PreviousSibling.Value.Replace(QuranScriptNames(SrcScriptType), QuranScriptNames(ScriptType))
+        Doc.Root.PreviousNode.Value = Doc.Root.PreviousNode.Value.Replace(QuranScriptNames(SrcScriptType), QuranScriptNames(ScriptType))
         Verses = TanzilReader.GetQuranText(Doc, -1, -1, -1, -1)
         For Count As Integer = 0 To Verses.Count - 1
             Dim VerseAdjust As Integer = 0
@@ -5605,7 +5614,7 @@ Public Class TanzilReader
                         Else
                             GetTextVerse(ChapterNode, SubCount).Attribute("text").Value = GetTextVerse(ChapterNode, SubCount).Attribute("text").Value + " " + CurVerse.Attribute("text").Value
                         End If
-                        CurVerse.ParentNode.RemoveChild(CurVerse)
+                        CurVerse.Parent.RemoveChild(CurVerse)
                         CurVerse = GetTextVerse(ChapterNode, SubCount)
                         VerseAdjust += 1
                         SubCount -= 1
@@ -5625,7 +5634,7 @@ Public Class TanzilReader
                             Index -= 1
                         End While
                         CurVerse.Attribute("text").Value = CurVerse.Attribute("text").Value.Substring(0, CurVerse.Attribute("text").Value.Length - NewNode.Attribute("text").Value.Length - 1)
-                        CurVerse.ParentNode.InsertAfter(NewNode, CurVerse)
+                        CurVerse.Parent.InsertAfter(NewNode, CurVerse)
                         VerseAdjust -= 1
                         SubCount += 1
                         For Index = Verses(Count).Length - 1 - VerseAdjust - 1 To SubCount Step -1
@@ -5662,7 +5671,7 @@ Public Class TanzilReader
             End If
             If BaseVerse = 0 Then
                 BaseVerse += 1
-                ExtraVerseNumber = GetTextChapter(CachedData.XMLDocMain, BaseChapter).Nodes.Count
+                ExtraVerseNumber = New List(Of Xml.Linq.XNode)(GetTextChapter(CachedData.XMLDocMain, BaseChapter).Nodes).Count
             End If
             If WordNumber = 0 Then WordNumber += 1
             If BaseChapter < 1 Or BaseChapter > GetChapterCount() Then Return False
@@ -5699,7 +5708,7 @@ Public Class TanzilReader
             End If
             If BaseVerse = 0 Then
                 BaseVerse += 1
-                ExtraVerseNumber = GetTextChapter(CachedData.XMLDocMain, BaseChapter).Nodes.Count
+                ExtraVerseNumber = New List(Of Xml.Linq.XNode)(GetTextChapter(CachedData.XMLDocMain, BaseChapter).Nodes).Count
             End If
             If WordNumber = 0 Then WordNumber += 1
             Renderer.Items.AddRange(DoGetRenderedQuranText(QuranTextRangeLookup(BaseChapter, BaseVerse, WordNumber, EndChapter, ExtraVerseNumber, EndWordNumber), BaseChapter, BaseVerse, CachedData.IslamData.Translations.TranslationList(TranslationIndex).Name, SchemeType, Scheme, TranslationIndex, W4W, W4WNum, NoArabic, Header, NoRef, Colorize, Verses).Items)
@@ -5771,20 +5780,20 @@ Public Class TanzilReader
                 If Rules(MainCount).NegativeMatch <> String.Empty AndAlso Matches(Count).Result(Rules(MainCount).NegativeMatch) <> String.Empty Then
                     NegativeCount += 1
                 ElseIf Matches(Count).Result(Rules(MainCount).Evaluator) <> Matches(Count).Value Then
-                    Debug.Print(CStr(Matches(Count).Groups(2 + If(Rules(MainCount).NegativeMatch <> String.Empty, 1, 0)).Index) + ":" + If(CheckMatches(Matches(Count).Groups(2 + If(Rules(MainCount).NegativeMatch <> String.Empty, 1, 0)).Index).EndsWith("-"), String.Empty, "-") + Rules(MainCount).Name + If(CheckMatches(Matches(Count).Groups(2 + If(Rules(MainCount).NegativeMatch <> String.Empty, 1, 0)).Index).Length = 2, String.Empty, "-") + ":" + Arabic.TransliterateToScheme(Text(Matches(Count).Groups(2 + If(Rules(MainCount).NegativeMatch <> String.Empty, 1, 0)).Index), ArabicData.TranslitScheme.Literal, String.Empty, Nothing) + ":" + Arabic.TransliterateToScheme(Text.Substring(Math.Max(0, Matches(Count).Groups(2 + If(Rules(MainCount).NegativeMatch <> String.Empty, 1, 0)).Index - 15), 30), ArabicData.TranslitScheme.Literal, String.Empty, Nothing))
+                    'Debug.Print(CStr(Matches(Count).Groups(2 + If(Rules(MainCount).NegativeMatch <> String.Empty, 1, 0)).Index) + ":" + If(CheckMatches(Matches(Count).Groups(2 + If(Rules(MainCount).NegativeMatch <> String.Empty, 1, 0)).Index).EndsWith("-"), String.Empty, "-") + Rules(MainCount).Name + If(CheckMatches(Matches(Count).Groups(2 + If(Rules(MainCount).NegativeMatch <> String.Empty, 1, 0)).Index).Length = 2, String.Empty, "-") + ":" + Arabic.TransliterateToScheme(Text(Matches(Count).Groups(2 + If(Rules(MainCount).NegativeMatch <> String.Empty, 1, 0)).Index), ArabicData.TranslitScheme.Literal, String.Empty, Nothing) + ":" + Arabic.TransliterateToScheme(Text.Substring(Math.Max(0, Matches(Count).Groups(2 + If(Rules(MainCount).NegativeMatch <> String.Empty, 1, 0)).Index - 15), 30), ArabicData.TranslitScheme.Literal, String.Empty, Nothing))
                 Else
                     If Not CheckMatches.ContainsKey(Matches(Count).Groups(2 + If(Rules(MainCount).NegativeMatch <> String.Empty, 1, 0)).Index) Then CheckMatches.Add(Matches(Count).Groups(2 + If(Rules(MainCount).NegativeMatch <> String.Empty, 1, 0)).Index, String.Empty)
                     CheckMatches(Matches(Count).Groups(2 + If(Rules(MainCount).NegativeMatch <> String.Empty, 1, 0)).Index) += If(CheckMatches(Matches(Count).Groups(2 + If(Rules(MainCount).NegativeMatch <> String.Empty, 1, 0)).Index).EndsWith("-"), String.Empty, "-") + Rules(MainCount).Name + If(CheckMatches(Matches(Count).Groups(2 + If(Rules(MainCount).NegativeMatch <> String.Empty, 1, 0)).Index).Length = 2, String.Empty, "-")
                 End If
             Next
-            Debug.Print(Rules(MainCount).Name + ": " + CStr(Matches.Count - NegativeCount))
+            'Debug.Print(Rules(MainCount).Name + ": " + CStr(Matches.Count - NegativeCount))
         Next
         Dim Keys(CheckMatches.Keys.Count - 1) As Integer
         CheckMatches.Keys.CopyTo(Keys, 0)
         Array.Sort(Keys)
         For Count = 0 To Keys.Length - 1
             If CheckMatches(Keys(Count)).EndsWith("-") And CheckMatches(Keys(Count)) <> "0-LetterHamzaEnd-YehHamzaKasra-" And CheckMatches(Keys(Count)) <> "0-FathaAlefHamzaAboveSukun-TatweelHamzaSukun-" And CheckMatches(Keys(Count)) <> "0-LetterHamzaEnd-FathaAlefHamzaAboveEnd-" Then
-                Debug.Print(CStr(Keys(Count)) + ":" + CheckMatches(Keys(Count)) + ":" + Arabic.TransliterateToScheme(Text(Keys(Count)), ArabicData.TranslitScheme.Literal, String.Empty, Nothing) + ":" + Arabic.TransliterateToScheme(Text.Substring(Math.Max(0, Keys(Count) - 15), 30), ArabicData.TranslitScheme.Literal, String.Empty, Nothing))
+                'Debug.Print(CStr(Keys(Count)) + ":" + CheckMatches(Keys(Count)) + ":" + Arabic.TransliterateToScheme(Text(Keys(Count)), ArabicData.TranslitScheme.Literal, String.Empty, Nothing) + ":" + Arabic.TransliterateToScheme(Text.Substring(Math.Max(0, Keys(Count) - 15), 30), ArabicData.TranslitScheme.Literal, String.Empty, Nothing))
             End If
         Next
     End Sub
@@ -5795,7 +5804,7 @@ Public Class TanzilReader
         Dim Text As String = QuranTextCombiner(CachedData.XMLDocMain, IndexToVerse)
         Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(Text, CachedData.TranslateRegEx(CachedData.IslamData.VerificationSet(VerIndex).Match, True))
         Dim CheckMatches As New Dictionary(Of Integer, String)
-        Debug.Print(CStr(Matches.Count))
+        'Debug.Print(CStr(Matches.Count))
         For Count = 0 To Matches.Count - 1
             If Matches(Count).Length = 0 Then Continue For 'Avoid zero width matches for end of string anchors
             For LenCount = 0 To Matches(Count).Length - 1
@@ -5824,7 +5833,7 @@ Public Class TanzilReader
             Dim SieveCount As Integer = 0
             For Count = 0 To Matches.Count - 1
                 Dim MetaRules As String() = If(bVerSet, CachedData.RuleMetas("UthmaniQuran")(MetaCount).Evaluator, CachedData.RuleMetas("UthmaniQuran")(MetaCount).Evaluator)
-                If Count = 0 AndAlso Matches(Count).Groups.Count <> MetaRules.Length + 1 Then Debug.Print("Discrepency in metadata:" + CStr(MainCount + 1) + ":" + CStr(MetaRules.Length) + ":Got:" + CStr(Matches(Count).Groups.Count - 1))
+                'If Count = 0 AndAlso Matches(Count).Groups.Count <> MetaRules.Length + 1 Then Debug.Print("Discrepency in metadata:" + CStr(MainCount + 1) + ":" + CStr(MetaRules.Length) + ":Got:" + CStr(Matches(Count).Groups.Count - 1))
                 Dim bSieve As Boolean = False
                 For SubCount = 0 To MetaRules.Length - 1
                     If Array.IndexOf(MetaRules(SubCount).Split("|"c), If(bAssumeContinue, "optionalstop", "optionalnotstop")) <> -1 And Matches(Count).Groups(SubCount + 1).Success Then
@@ -5833,7 +5842,7 @@ Public Class TanzilReader
                         For CheckCount = 1 To SubCount
                             CheckLen += Matches(Count).Groups(CheckCount).Length
                         Next
-                        If Matches(Count).Index + CheckLen <> Matches(Count).Groups(SubCount + 1).Index Then Debug.Print("Non-Sequential Capture:" + CStr(MainCount + 1) + ":" + Arabic.TransliterateToScheme(Text.Substring(Math.Max(0, Matches(Count).Groups(SubCount + 1).Index - 15), 30), ArabicData.TranslitScheme.Literal, String.Empty, Nothing))
+                        'If Matches(Count).Index + CheckLen <> Matches(Count).Groups(SubCount + 1).Index Then Debug.Print("Non-Sequential Capture:" + CStr(MainCount + 1) + ":" + Arabic.TransliterateToScheme(Text.Substring(Math.Max(0, Matches(Count).Groups(SubCount + 1).Index - 15), 30), ArabicData.TranslitScheme.Literal, String.Empty, Nothing))
                         bSieve = True
                         Exit For
                     End If
@@ -5850,7 +5859,7 @@ Public Class TanzilReader
                             For CheckCount = 1 To SubCount
                                 CheckLen += Matches(Count).Groups(CheckCount).Length
                             Next
-                            If Matches(Count).Index + CheckLen <> Matches(Count).Groups(SubCount + 1).Index Then Debug.Print("Non-Sequential Capture:" + CStr(MainCount + 1) + ":" + Arabic.TransliterateToScheme(Text.Substring(Math.Max(0, Matches(Count).Groups(SubCount + 1).Index - 15), 30), ArabicData.TranslitScheme.Literal, String.Empty, Nothing))
+                            'If Matches(Count).Index + CheckLen <> Matches(Count).Groups(SubCount + 1).Index Then Debug.Print("Non-Sequential Capture:" + CStr(MainCount + 1) + ":" + Arabic.TransliterateToScheme(Text.Substring(Math.Max(0, Matches(Count).Groups(SubCount + 1).Index - 15), 30), ArabicData.TranslitScheme.Literal, String.Empty, Nothing))
                             For LenCount = 0 To Matches(Count).Groups(SubCount + 1).Length - 1
                                 If Not CheckMatches.ContainsKey(Matches(Count).Groups(SubCount + 1).Index + LenCount) Then CheckMatches.Add(Matches(Count).Groups(SubCount + 1).Index + LenCount, String.Empty)
                                 CheckMatches(Matches(Count).Groups(SubCount + 1).Index + LenCount) += Convert.ToString(MainCount + 1, 16)
@@ -5860,14 +5869,14 @@ Public Class TanzilReader
                     Next
                 End If
             Next
-            Debug.Print(CStr(SieveCount))
+            'Debug.Print(CStr(SieveCount))
         Next
         Dim Keys(CheckMatches.Keys.Count - 1) As Integer
         CheckMatches.Keys.CopyTo(Keys, 0)
         Array.Sort(Keys)
         For Count = 0 To Keys.Length - 1
             If CheckMatches(Keys(Count)).Length <> 2 Then
-                Debug.Print(CStr(Keys(Count)) + ":" + CheckMatches(Keys(Count)) + ":" + Arabic.TransliterateToScheme(Text(Keys(Count)), ArabicData.TranslitScheme.Literal, String.Empty, Nothing) + ":" + Arabic.TransliterateToScheme(Text.Substring(Math.Max(0, Keys(Count) - 15), 30), ArabicData.TranslitScheme.Literal, String.Empty, Nothing))
+                'Debug.Print(CStr(Keys(Count)) + ":" + CheckMatches(Keys(Count)) + ":" + Arabic.TransliterateToScheme(Text(Keys(Count)), ArabicData.TranslitScheme.Literal, String.Empty, Nothing) + ":" + Arabic.TransliterateToScheme(Text.Substring(Math.Max(0, Keys(Count) - 15), 30), ArabicData.TranslitScheme.Literal, String.Empty, Nothing))
             End If
         Next
     End Sub
@@ -5880,7 +5889,7 @@ Public Class TanzilReader
                 Dim Words As String()
                 Dim Index As Integer
                 If SubCount = 0 Then
-                    Dim Node As Xml.Linq.XElement
+                    Dim Node As Xml.Linq.XAttribute
                     Node = GetTextVerse(GetTextChapter(XMLDoc, Count + 1), 1).Attribute("bismillah")
                     If Not Node Is Nothing Then
                         Words = Node.Value.Split(" "c)
@@ -6126,12 +6135,8 @@ Public Class TanzilReader
             Dim Words As String() = W4WLines(Count).Split("|"c)
             For SubCount = 0 To Words.Length - 1
                 Dim NewData As Xml.Linq.XElement = XML.CreateElement("data")
-                Dim Attr As Xml.Linq.XAttribute = XML.CreateAttribute("name")
-                Attr.Value = "Quran" + CStr(Count + 1) + "." + CStr(SubCount + 1)
-                NewData.Attributes.Append(Attr)
-                Attr = XML.CreateAttribute("xml", "space", String.Empty)
-                Attr.Value = "preserve"
-                NewData.Attributes.Append(Attr)
+                NewData.Add(New Xml.Linq.XAttribute("name", "Quran" + CStr(Count + 1) + "." + CStr(SubCount + 1)))
+                NewData.Add(New Xml.Linq.XAttribute("xml:space", "preserve"))
                 Dim Inner As Xml.Linq.XElement = XML.CreateElement("value")
                 Inner.Value = Words(SubCount)
                 NewData.AppendChild(Inner)
@@ -6144,18 +6149,18 @@ Public Class TanzilReader
         Dim W4WLines As New List(Of List(Of String))
         Dim XML As New Xml.Linq.XDocument
         XML.Load(ResFilePath)
-        Dim AllNodes As Xml.XElement() = XML.Root.SelectNodes("data/@name")
+        Dim AllNodes As Xml.Linq.XElement() = XML.Root.SelectNodes("data/@name")
         For Each Item As Xml.Linq.XElement In AllNodes
-            If System.Text.RegularExpressions.Regex.Match(Item.Attributes("name").Value, "^Quran%d+\.%d+$").Success Then
-                Dim Line As Integer = Integer.Parse(Item.Attributes("name").Value.Substring(5, Item.Attributes("name").Value.IndexOf("."c) - 5))
-                Dim Word As Integer = Integer.Parse(Item.Attributes("name").Value.Substring(Item.Attributes("name").Value.IndexOf("."c) + 1))
+            If System.Text.RegularExpressions.Regex.Match(Item.Attribute("name").Value, "^Quran%d+\.%d+$").Success Then
+                Dim Line As Integer = Integer.Parse(Item.Attribute("name").Value.Substring(5, Item.Attribute("name").Value.IndexOf("."c) - 5))
+                Dim Word As Integer = Integer.Parse(Item.Attribute("name").Value.Substring(Item.Attribute("name").Value.IndexOf("."c) + 1))
                 If W4WLines(Line - 1) Is Nothing Then
                     W4WLines.Insert(Line, New List(Of String))
                 End If
                 W4WLines(Line - 1).Insert(Word - 1, Item.Nodes(0).Value)
             End If
         Next
-        IO.File.WriteAllLines(Utility.GetFilePath("metadata\en.w4w.shehnazshaikh.txt"), W4WLines.ConvertAll(Function(Input As List(Of String)) String.Join("|"c, Input.ToArray())))
+        IO.File.WriteAllLines(Utility.GetFilePath("metadata\en.w4w.shehnazshaikh.txt"), Linq.Enumerable.Select(W4WLines, Function(Input As List(Of String)) String.Join("|"c, Input.ToArray())))
     End Sub
     Public Shared Function DoGetRenderedQuranText(QuranText As Collections.Generic.List(Of String()), BaseChapter As Integer, BaseVerse As Integer, Translation As String, SchemeType As ArabicData.TranslitScheme, Scheme As String, TranslationIndex As Integer, W4W As Boolean, W4WNum As Boolean, NoArabic As Boolean, Header As Boolean, NoRef As Boolean, Colorize As Boolean, Verses As Boolean) As RenderArray
         Dim Text As String
@@ -6311,12 +6316,12 @@ Public Class TanzilReader
     Public Shared Function GetQuranText(ByVal XMLDocMain As Xml.Linq.XDocument, ByVal Chapter As Integer, ByVal StartVerse As Integer, ByVal EndVerse As Integer) As String()
         Dim Count As Integer
         If StartVerse = -1 Then StartVerse = 1
-        If EndVerse = -1 Then EndVerse = GetTextChapter(XMLDocMain, Chapter).Nodes.Count 'GetVerseCount(Chapter)
+        If EndVerse = -1 Then EndVerse = New List(Of Xml.Linq.XNode)(GetTextChapter(XMLDocMain, Chapter).Nodes).Count 'GetVerseCount(Chapter)
         Dim Verses(EndVerse - StartVerse) As String
         For Count = StartVerse To EndVerse
             Dim VerseNode As Xml.Linq.XElement = GetTextVerse(GetTextChapter(XMLDocMain, Chapter), Count)
             If Not VerseNode Is Nothing Then
-                Dim AttrNode As Xml.Linq.XElement = VerseNode.Attribute("text")
+                Dim AttrNode As Xml.Linq.XAttribute = VerseNode.Attribute("text")
                 If Not AttrNode Is Nothing Then
                     Verses(Count - StartVerse) = AttrNode.Value
                 End If
