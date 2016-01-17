@@ -10,11 +10,22 @@ Public Class WindowsSettings
     End Property
     Public ReadOnly Property Resources As KeyValuePair(Of String, String())() Implements PortableSettings.Resources
         Get
-            Return (New List(Of KeyValuePair(Of String, String()))(Linq.Enumerable.Select("HostPageUtility=Acct,lang,unicode;IslamResources=Hadith,IslamInfo,IslamSource".Split(";"c), Function(Str As String) New KeyValuePair(Of String, String())(Str.Split("="c)(0), Str.Split("="c)(1).Split(","c)))).ToArray()
+            Return (New List(Of KeyValuePair(Of String, String()))(Linq.Enumerable.Select("HostPageUtility=Acct,lang,unicode;IslamResources=Hadith,IslamInfo,IslamSource".Split(";"c), Function(Str As String) New KeyValuePair(Of String, String())(Str.Split("="c)(0), Str.Split("="c)(1).Split(","c))))).ToArray()
         End Get
     End Property
     Public Function GetFilePath(ByVal Path As String) As String Implements PortableSettings.GetFilePath
         Return "..\..\..\" + Path
+    End Function
+    <Runtime.InteropServices.DllImport("getuname.dll", EntryPoint:="GetUName")> _
+    Friend Shared Function GetUName(ByVal wCharCode As UShort, <Runtime.InteropServices.MarshalAs(Runtime.InteropServices.UnmanagedType.LPWStr)> ByVal lpbuf As System.Text.StringBuilder) As Integer
+    End Function
+    Public Function GetUName(Character As Char) As String Implements PortableSettings.GetUName
+        Dim Str As New System.Text.StringBuilder(512)
+        Try
+            GetUName(CUShort(AscW(Character)), Str)
+        Catch e As System.DllNotFoundException
+        End Try
+        Return Str.ToString()
     End Function
 End Class
 Public Class frmMain

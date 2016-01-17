@@ -65,12 +65,12 @@ Partial Class Menu
             'yi is yiddish should be ji
             'iw is hebrew should be he
             'tl is tagalog has no equivalent perhaps could be changed to es-ph or a spanish prefixed dialect
-            If IO.File.Exists(Utility.GetFilePath(VirtualPathUtility.ToAbsolute("~/bin/" + AllCultures(Count).Name + "/HostPageUtility.resources.dll"))) Then
+            If IO.File.Exists(PortableMethods.Settings.GetFilePath(VirtualPathUtility.ToAbsolute("~/bin/" + AllCultures(Count).Name + "/HostPageUtility.resources.dll"))) Then
                 writer.WriteBeginTag("option")
                 writer.WriteAttribute("value", AllCultures(Count).Name)
                 If AllCultures(Count).Name = Globalization.CultureInfo.CurrentCulture.Name Or _
                     AllCultures(Count).Name = Globalization.CultureInfo.CurrentCulture.TwoLetterISOLanguageName Then writer.WriteAttribute("selected", "selected")
-                writer.Write(HtmlTextWriter.TagRightChar + Utility.HtmlTextEncode(AllCultures(Count).NativeName))
+                writer.Write(HtmlTextWriter.TagRightChar + UtilityWeb.HtmlTextEncode(AllCultures(Count).NativeName))
                 writer.WriteEndTag("option")
             End If
         Next
@@ -80,15 +80,15 @@ Partial Class Menu
         writer.WriteBeginTag("a")
         writer.WriteAttribute("href", "/")
         'cannot use jquery inside on... functions
-        writer.WriteAttribute("onmouseover", Utility.HtmlTextEncode("javascript: document.getElementById('mainimage').src = '" + host.GetPageString("Image.gif&Image=Scale&p=menu.hover") + "';"))
-        writer.WriteAttribute("onmouseout", Utility.HtmlTextEncode("javascript: document.getElementById('mainimage').src = '" + host.GetPageString("Image.gif&Image=Scale&p=menu.main") + "';"))
+        writer.WriteAttribute("onmouseover", UtilityWeb.HtmlTextEncode("javascript: document.getElementById('mainimage').src = '" + host.GetPageString("Image.gif&Image=Scale&p=menu.hover") + "';"))
+        writer.WriteAttribute("onmouseout", UtilityWeb.HtmlTextEncode("javascript: document.getElementById('mainimage').src = '" + host.GetPageString("Image.gif&Image=Scale&p=menu.main") + "';"))
         writer.Write(HtmlTextWriter.TagRightChar)
         writer.WriteBeginTag("img")
         writer.WriteAttribute("id", "mainimage")
         writer.WriteAttribute("alt", Utility.LoadResourceString(PageSet.Title))
-        writer.WriteAttribute("src", Utility.HtmlTextEncode(host.GetPageString("Image.gif&Image=Scale&p=menu.main")))
-        SizeF = Utility.GetImageDimensions(Utility.GetFilePath("images/" + PageSet.MainImage))
-        Scale = Utility.ComputeImageScale(SizeF.Width, SizeF.Height, 226 - 10 - 10, 200)
+        writer.WriteAttribute("src", UtilityWeb.HtmlTextEncode(host.GetPageString("Image.gif&Image=Scale&p=menu.main")))
+        SizeF = UtilityWeb.GetImageDimensions(PortableMethods.Settings.GetFilePath("images/" + PageSet.MainImage))
+        Scale = UtilityWeb.ComputeImageScale(SizeF.Width, SizeF.Height, 226 - 10 - 10, 200)
         writer.WriteAttribute("width", Convert.ToInt32(SizeF.Width / Scale).ToString())
         writer.WriteAttribute("height", Convert.ToInt32(SizeF.Height / Scale).ToString())
         writer.Write(HtmlTextWriter.TagRightChar)
@@ -105,10 +105,10 @@ Partial Class Menu
             End If
             writer.Write(vbCrLf + vbTab + vbTab + vbTab + vbTab + vbTab)
             writer.WriteBeginTag("a")
-            writer.WriteAttribute("href", Utility.HtmlTextEncode(host.GetPageString(PageSet.Pages.Item(Index).PageName)))
+            writer.WriteAttribute("href", UtilityWeb.HtmlTextEncode(host.GetPageString(PageSet.Pages.Item(Index).PageName)))
             writer.Write(HtmlTextWriter.TagRightChar)
             writer.Write(vbCrLf + vbTab + vbTab + vbTab + vbTab + vbTab + vbTab)
-            writer.Write(Utility.HtmlTextEncode(CStr(If(CurIndex = Index, "-> ", String.Empty)) + Utility.LoadResourceString(PageSet.Pages.Item(Index).Text)) + Utility.HtmlTextEncode(CStr(IIf(CurIndex = Index, " <-", String.Empty))))
+            writer.Write(UtilityWeb.HtmlTextEncode(CStr(If(CurIndex = Index, "-> ", String.Empty)) + Utility.LoadResourceString(PageSet.Pages.Item(Index).Text)) + UtilityWeb.HtmlTextEncode(CStr(IIf(CurIndex = Index, " <-", String.Empty))))
             writer.Write(vbCrLf + vbTab + vbTab + vbTab + vbTab + vbTab)
             writer.WriteEndTag("a")
             writer.Write(vbCrLf + vbTab + vbTab + vbTab + vbTab)
@@ -118,12 +118,12 @@ Partial Class Menu
                     If PageLoader.IsListItem(PageSet.Pages.Item(Index).Page(SubIndex)) AndAlso DirectCast(PageSet.Pages.Item(Index).Page(SubIndex), PageLoader.ListItem).IsSection Then
                         writer.Write(vbCrLf + vbTab + vbTab + vbTab + vbTab)
                         writer.WriteFullBeginTag("div")
-                        writer.Write(Utility.ConvertSpaces(HtmlTextWriter.SpaceChar + HtmlTextWriter.SpaceChar + HtmlTextWriter.SpaceChar) + vbCrLf + vbTab + vbTab + vbTab + vbTab + vbTab)
+                        writer.Write(UtilityWeb.ConvertSpaces(HtmlTextWriter.SpaceChar + HtmlTextWriter.SpaceChar + HtmlTextWriter.SpaceChar) + vbCrLf + vbTab + vbTab + vbTab + vbTab + vbTab)
                         writer.WriteBeginTag("a")
-                        writer.WriteAttribute("href", Utility.HtmlTextEncode(host.GetPageString(PageSet.Pages.Item(Index).PageName) + CStr(If(DirectCast(PageSet.Pages.Item(Index).Page.Item(SubIndex), PageLoader.ListItem).Name <> String.Empty, "#" + DirectCast(PageSet.Pages.Item(Index).Page.Item(SubIndex), PageLoader.ListItem).Name, String.Empty))))
+                        writer.WriteAttribute("href", UtilityWeb.HtmlTextEncode(host.GetPageString(PageSet.Pages.Item(Index).PageName) + CStr(If(DirectCast(PageSet.Pages.Item(Index).Page.Item(SubIndex), PageLoader.ListItem).Name <> String.Empty, "#" + DirectCast(PageSet.Pages.Item(Index).Page.Item(SubIndex), PageLoader.ListItem).Name, String.Empty))))
                         writer.Write(HtmlTextWriter.TagRightChar)
                         writer.Write(vbCrLf + vbTab + vbTab + vbTab + vbTab + vbTab + vbTab)
-                        writer.Write(Utility.HtmlTextEncode(Utility.LoadResourceString(DirectCast(PageSet.Pages.Item(Index).Page.Item(SubIndex), PageLoader.ListItem).Title)))
+                        writer.Write(UtilityWeb.HtmlTextEncode(Utility.LoadResourceString(DirectCast(PageSet.Pages.Item(Index).Page.Item(SubIndex), PageLoader.ListItem).Title)))
                         writer.Write(vbCrLf + vbTab + vbTab + vbTab + vbTab + vbTab)
                         writer.WriteEndTag("a")
                         writer.Write(vbCrLf + vbTab + vbTab + vbTab + vbTab)

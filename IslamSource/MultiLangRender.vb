@@ -20,19 +20,19 @@ Public Class MultiLangRender
     Const SM_CXBORDER As Integer = 5
     Const SM_CYBORDER As Integer = 6
     Const EM_GETMARGINS As UInteger = &HD4
-    Dim CurBounds As Generic.List(Of Generic.List(Of Generic.List(Of HostPageUtility.RenderArray.LayoutInfo))) = Nothing
+    Dim CurBounds As Generic.List(Of Generic.List(Of Generic.List(Of HostPageUtility.RenderArrayWeb.LayoutInfo))) = Nothing
     Dim _ReEntry As Boolean = False
-    Dim _RenderArray As Generic.List(Of HostPageUtility.RenderArray.RenderItem)
-    Public Property RenderArray As List(Of HostPageUtility.RenderArray.RenderItem)
+    Dim _RenderArray As Generic.List(Of XMLRender.RenderArray.RenderItem)
+    Public Property RenderArray As List(Of XMLRender.RenderArray.RenderItem)
         Get
             Return _RenderArray
         End Get
-        Set(value As List(Of HostPageUtility.RenderArray.RenderItem))
+        Set(value As List(Of XMLRender.RenderArray.RenderItem))
             _RenderArray = value
         End Set
     End Property
 
-    Private Shared Function GetTextWidthFromTextBox(NewText As TextBox, hdc As IntPtr) As HostPageUtility.RenderArray.GetTextWidth
+    Private Shared Function GetTextWidthFromTextBox(NewText As TextBox, hdc As IntPtr) As HostPageUtility.RenderArrayWeb.GetTextWidth
         Dim ret As IntPtr = NativeMethods.SendMessage(NewText.Handle, EM_GETMARGINS, IntPtr.Zero, IntPtr.Zero)
         Dim WidthOffset As Integer = (ret.ToInt32() And &HFFFF) + (ret.ToInt32() << 16) + NativeMethods.GetSystemMetrics(SM_CXBORDER) * 2 + NewText.Margin.Left + NewText.Margin.Right
         Return Function(Str As String, FontName As String, MaxWidth As Single, IsRTL As Boolean, ByRef s As SizeF, ByRef Baseline As Single)
@@ -51,9 +51,9 @@ Public Class MultiLangRender
     Private Sub RecalcLayout()
         Me.Controls.Clear()
         If _RenderArray Is Nothing Or Me.Parent Is Nothing OrElse Me.Parent.Width = 0 Then Return
-        Dim _Bounds As Generic.List(Of Generic.List(Of Generic.List(Of HostPageUtility.RenderArray.LayoutInfo))) = CurBounds
+        Dim _Bounds As Generic.List(Of Generic.List(Of Generic.List(Of HostPageUtility.RenderArrayWeb.LayoutInfo))) = CurBounds
         If _Bounds Is Nothing Then
-            _Bounds = New Generic.List(Of Generic.List(Of Generic.List(Of HostPageUtility.RenderArray.LayoutInfo)))
+            _Bounds = New Generic.List(Of Generic.List(Of Generic.List(Of HostPageUtility.RenderArrayWeb.LayoutInfo)))
             Me.RightToLeft = Windows.Forms.RightToLeft.Yes
             Me.MaximumSize = New Size(Me.Parent.Width, Me.Height)
             Dim g As Graphics = CreateGraphics()
@@ -61,24 +61,24 @@ Public Class MultiLangRender
             Dim oldFont As IntPtr = NativeMethods.SelectObject(hdc, Font.ToHfont())
             Dim CalcText As New TextBox
             CalcText.Font = Font
-            Me.Size = HostPageUtility.RenderArray.GetLayout(_RenderArray, CSng(Me.Parent.Width), _Bounds, GetTextWidthFromTextBox(CalcText, hdc)).ToSize()
+            Me.Size = HostPageUtility.RenderArrayWeb.GetLayout(_RenderArray, CSng(Me.Parent.Width), _Bounds, GetTextWidthFromTextBox(CalcText, hdc)).ToSize()
             NativeMethods.SelectObject(hdc, oldFont)
             g.ReleaseHdc(hdc)
             g.Dispose()
         End If
         For Count As Integer = 0 To _RenderArray.Count - 1
             For SubCount As Integer = 0 To _RenderArray(Count).TextItems.Length - 1
-                If _RenderArray(Count).TextItems(SubCount).DisplayClass = HostPageUtility.RenderArray.RenderDisplayClass.eNested Then
+                If _RenderArray(Count).TextItems(SubCount).DisplayClass = XMLRender.RenderArray.RenderDisplayClass.eNested Then
                     Dim Renderer As New MultiLangRender
                     Renderer.CurBounds = _Bounds(Count)(SubCount)(0).Bounds
-                    Renderer.RenderArray = CType(_RenderArray(Count).TextItems(SubCount).Text, List(Of HostPageUtility.RenderArray.RenderItem))
+                    Renderer.RenderArray = CType(_RenderArray(Count).TextItems(SubCount).Text, List(Of XMLRender.RenderArray.RenderItem))
                     Me.Controls.Add(Renderer)
                     Renderer.Bounds = Rectangle.Round(_Bounds(Count)(SubCount)(0).Rect)
-                ElseIf _RenderArray(Count).TextItems(SubCount).DisplayClass = HostPageUtility.RenderArray.RenderDisplayClass.eArabic Or _RenderArray(Count).TextItems(SubCount).DisplayClass = HostPageUtility.RenderArray.RenderDisplayClass.eLTR Or _RenderArray(Count).TextItems(SubCount).DisplayClass = HostPageUtility.RenderArray.RenderDisplayClass.eRTL Or _RenderArray(Count).TextItems(SubCount).DisplayClass = HostPageUtility.RenderArray.RenderDisplayClass.eTransliteration Then
+                ElseIf _RenderArray(Count).TextItems(SubCount).DisplayClass = XMLRender.RenderArray.RenderDisplayClass.eArabic Or _RenderArray(Count).TextItems(SubCount).DisplayClass = XMLRender.RenderArray.RenderDisplayClass.eLTR Or _RenderArray(Count).TextItems(SubCount).DisplayClass = XMLRender.RenderArray.RenderDisplayClass.eRTL Or _RenderArray(Count).TextItems(SubCount).DisplayClass = XMLRender.RenderArray.RenderDisplayClass.eTransliteration Then
                     Dim theText As String = CStr(_RenderArray(Count).TextItems(SubCount).Text)
                     For NextCount As Integer = 0 To _Bounds(Count)(SubCount).Count - 1
                         Dim NewText As New TextBox
-                        NewText.RightToLeft = If(_RenderArray(Count).TextItems(SubCount).DisplayClass <> HostPageUtility.RenderArray.RenderDisplayClass.eLTR And _RenderArray(Count).TextItems(SubCount).DisplayClass <> HostPageUtility.RenderArray.RenderDisplayClass.eTransliteration, Windows.Forms.RightToLeft.Yes, Windows.Forms.RightToLeft.No)
+                        NewText.RightToLeft = If(_RenderArray(Count).TextItems(SubCount).DisplayClass <> XMLRender.RenderArray.RenderDisplayClass.eLTR And _RenderArray(Count).TextItems(SubCount).DisplayClass <> XMLRender.RenderArray.RenderDisplayClass.eTransliteration, Windows.Forms.RightToLeft.Yes, Windows.Forms.RightToLeft.No)
                         NewText.Font = Font
                         NewText.Text = theText.Substring(0, _Bounds(Count)(SubCount)(NextCount).nChar)
                         theText = theText.Substring(_Bounds(Count)(SubCount)(NextCount).nChar)

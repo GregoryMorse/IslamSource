@@ -671,6 +671,6 @@
             Str += iTextSharp.text.pdf.parser.PdfTextExtractor.GetTextFromPage(Reader, Cnt + 1, Strat)
         Next
         Str += "  </sura>" + vbCrLf + "</quran>" + vbCrLf
-        IO.File.WriteAllText(HostPageUtility.Utility.GetFilePath("metadata\quran-warsh.xml"), Str)
+        IO.File.WriteAllText(XMLRender.PortableMethods.Settings.GetFilePath("metadata\quran-warsh.xml"), Str)
     End Sub
 End Class

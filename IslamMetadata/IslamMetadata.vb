@@ -836,7 +836,7 @@ Public Class Arabic
         Return GetJS.ToArray()
     End Function
     Public Shared Function DisplayDict(ByVal Item As PageLoader.TextItem) As Array()
-        Dim Lines As String() = IO.File.ReadAllLines(Utility.GetFilePath("metadata\HansWeir.txt"))
+        Dim Lines As String() = Utility.ReadAllLines(PortableMethods.Settings.GetFilePath("metadata\HansWeir.txt"))
         Dim Count As Integer
         Dim Words As New List(Of String())
         Words.Add(New String() {})

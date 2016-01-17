@@ -1,5 +1,5 @@
 ﻿Imports HostPageUtility
-
+Imports XMLRender
 Partial Class host
     Inherits System.Web.UI.Page
     Dim _IsHtml As Boolean = False
@@ -37,7 +37,7 @@ Partial Class host
         Dim IsPrint As Boolean = False
         Dim bmp As Bitmap = Nothing
         Dim ResultBmp As Bitmap = Nothing
-        Utility.Initialize(AddressOf GetPageString, AddressOf UserAccounts.GetUserID, AddressOf UserAccounts.IsLoggedIn)
+        UtilityWeb.Initialize(AddressOf GetPageString, AddressOf UserAccounts.GetUserID, AddressOf UserAccounts.IsLoggedIn)
         PageSet = New PageLoader()
         Controls.Clear() 'clear viewstate and default HTML rendering control container
         If Request.QueryString.Get(LangSet) <> String.Empty Then
@@ -95,10 +95,10 @@ Partial Class host
             Next
         ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_CreateDatabase AndAlso UserAccounts.IsAdmin() Then
             SiteDatabase.CreateDatabase()
-            Utility.LookupClassMember("IslamSiteDatabase::CreateDatabase").Invoke(Nothing, Nothing)
+            UtilityWeb.LookupClassMember("IslamSiteDatabase::CreateDatabase").Invoke(Nothing, Nothing)
         ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_RemoveDatabase AndAlso UserAccounts.IsAdmin() Then
             SiteDatabase.RemoveDatabase()
-            Utility.LookupClassMember("IslamSiteDatabase::RemoveDatabase").Invoke(Nothing, Nothing)
+            UtilityWeb.LookupClassMember("IslamSiteDatabase::RemoveDatabase").Invoke(Nothing, Nothing)
         ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_CleanupState AndAlso UserAccounts.IsAdmin() Then
             SiteDatabase.CleanupStaleLoginSessions()
             SiteDatabase.CleanupStaleActivations()
@@ -162,7 +162,7 @@ Partial Class host
             Next
         ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_EnableSSL AndAlso UserAccounts.IsAdmin() Then
             Dim ServerManager As New Microsoft.Web.Administration.ServerManager
-            For Each Domain As String In Utility.ConnectionData.SiteDomains
+            For Each Domain As String In UtilityWeb.ConnectionData.SiteDomains
                 ServerManager.Sites(Domain).Bindings.Add("*:443:", "https")
             Next
             ServerManager.CommitChanges()
@@ -173,15 +173,15 @@ Partial Class host
                 Response.Write("Http Context User: " + HttpContext.Current.User.Identity.Name() + vbCrLf)
         ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_HadithRanking Then
                 If UserAccounts.IsLoggedIn() Then
-                    Utility.LookupClassMember("IslamSiteDatabase::ModifyRankingData").Invoke(Nothing, New Object() {UserAccounts.GetUserID()})
+                UtilityWeb.LookupClassMember("IslamSiteDatabase::ModifyRankingData").Invoke(Nothing, New Object() {UserAccounts.GetUserID()})
                 End If
-                Utility.LookupClassMember("IslamSiteDatabase::WriteRankingData").Invoke(Nothing, Nothing)
+            UtilityWeb.LookupClassMember("IslamSiteDatabase::WriteRankingData").Invoke(Nothing, Nothing)
         ElseIf (Request.QueryString.Get(PageQuery) = "Image.gif") Then
                 Dim DateModified As Date = Now
                 If Request.QueryString.Get("Image") = "EMailAddress" Or _
                     Request.QueryString.Get("Image") = "GradientBackground" Or _
                     Request.QueryString.Get("Image") = "GradientBackgroundBottom" Then
-                    DateModified = IO.File.GetLastWriteTimeUtc(Utility.GetFilePath("bin\HostPage.dll"))
+                DateModified = IO.File.GetLastWriteTimeUtc(PortableMethods.Settings.GetFilePath("bin\HostPage.dll"))
                 ElseIf Request.QueryString.Get("Image") = "Scale" Then
                     Dim FetchImageItem As PageLoader.ImageItem
                     If Request.QueryString.Get("p") = "menu.main" Then
@@ -192,12 +192,12 @@ Partial Class host
                         FetchImageItem = DirectCast(PageSet.GetPageItem(Request.QueryString.Get("p")), PageLoader.ImageItem)
                     End If
                     'check XML timestamp also
-                    DateModified = IO.File.GetLastWriteTimeUtc(Utility.GetFilePath("images\" + FetchImageItem.Path))
+                DateModified = IO.File.GetLastWriteTimeUtc(PortableMethods.Settings.GetFilePath("images\" + FetchImageItem.Path))
                 ElseIf Request.QueryString.Get("Image") = "Thumb" Then
                     Dim FetchImageItem As PageLoader.TextItem = DirectCast(PageSet.GetPageItem(Request.QueryString.Get("p")), PageLoader.TextItem)
                     'check XML timestamp also
                     If CInt(DiskCache.GetCacheItems().Length * New Random().NextDouble()) = 0 Then
-                        DateModified = Utility.GetURLLastModified(FetchImageItem.ImageURL)
+                    DateModified = UtilityWeb.GetURLLastModified(FetchImageItem.ImageURL)
                     Else
                         DateModified = Date.MinValue
                     End If
@@ -209,14 +209,14 @@ Partial Class host
                 If ResultBmp Is Nothing Then
                     If Request.QueryString.Get("Image") = "EMailAddress" Then
                         Dim oFont As New Font("Arial", 13)
-                        Dim TextExtent As SizeF = Utility.GetTextExtent(Utility.ConnectionData.EMailAddress, oFont)
+                    Dim TextExtent As SizeF = UtilityWeb.GetTextExtent(UtilityWeb.ConnectionData.EMailAddress, oFont)
                         bmp = New Bitmap(CInt(Math.Ceiling(Math.Ceiling(TextExtent.Width + 1) * 96.0F / 72.0F)), CInt(Math.Ceiling(Math.Ceiling(TextExtent.Height + 1) * 96.0F / 72.0F)))
                         Dim g As Graphics = Graphics.FromImage(bmp)
                         g.PageUnit = GraphicsUnit.Point
                         g.TextRenderingHint = Drawing.Text.TextRenderingHint.AntiAliasGridFit
                         g.TextContrast = 0
                         g.FillRectangle(Brushes.White, New RectangleF(0, 0, CInt(Math.Ceiling(Math.Ceiling(TextExtent.Width + 1) * 96.0F / 72.0F)), CInt(Math.Ceiling(Math.Ceiling(TextExtent.Height + 1) * 96.0F / 72.0F))))
-                        g.DrawString(Utility.ConnectionData.EMailAddress, oFont, Brushes.Black, New RectangleF(0, 0, CSng(Math.Ceiling(TextExtent.Width + 1)), CSng(Math.Ceiling(TextExtent.Height + 1))), Drawing.StringFormat.GenericTypographic)
+                    g.DrawString(UtilityWeb.ConnectionData.EMailAddress, oFont, Brushes.Black, New RectangleF(0, 0, CSng(Math.Ceiling(TextExtent.Width + 1)), CSng(Math.Ceiling(TextExtent.Height + 1))), Drawing.StringFormat.GenericTypographic)
                         bmp.MakeTransparent(Color.White)
                         oFont.Dispose()
                     ElseIf Request.QueryString.Get("Image") = "MandelbrotFractal" Or Request.QueryString.Get("Image") = "JuliaFractal" Then
@@ -274,28 +274,28 @@ Partial Class host
                         Dim OriginalBmp As Bitmap
                         If Request.QueryString.Get("p") = "menu.main" Then
                             FetchImageItem = New PageLoader.ImageItem(String.Empty, String.Empty, PageSet.MainImage, Nothing, 206, 200)
-                            OriginalBmp = DirectCast(Bitmap.FromFile(Utility.GetFilePath("images\" + FetchImageItem.Path)), Bitmap)
-                            Utility.AddTextLogo(OriginalBmp, Utility.LoadResourceString(PageSet.Title))
+                        OriginalBmp = DirectCast(Bitmap.FromFile(PortableMethods.Settings.GetFilePath("images\" + FetchImageItem.Path)), Bitmap)
+                        UtilityWeb.AddTextLogo(OriginalBmp, Utility.LoadResourceString(PageSet.Title))
                         ElseIf Request.QueryString.Get("p") = "menu.hover" Then
                             FetchImageItem = New PageLoader.ImageItem(String.Empty, String.Empty, PageSet.HoverImage, Nothing, 206, 200)
-                            OriginalBmp = DirectCast(Bitmap.FromFile(Utility.GetFilePath("images\" + FetchImageItem.Path)), Bitmap)
-                            Utility.AddTextLogo(OriginalBmp, Utility.LoadResourceString(PageSet.Title))
+                        OriginalBmp = DirectCast(Bitmap.FromFile(PortableMethods.Settings.GetFilePath("images\" + FetchImageItem.Path)), Bitmap)
+                        UtilityWeb.AddTextLogo(OriginalBmp, Utility.LoadResourceString(PageSet.Title))
                         Else
                             'check boundaries
                             FetchImageItem = DirectCast(PageSet.GetPageItem(Request.QueryString.Get("p")), PageLoader.ImageItem)
-                            OriginalBmp = DirectCast(Bitmap.FromFile(Utility.GetFilePath("images\" + FetchImageItem.Path)), Bitmap)
+                        OriginalBmp = DirectCast(Bitmap.FromFile(PortableMethods.Settings.GetFilePath("images\" + FetchImageItem.Path)), Bitmap)
                         End If
                         SizeF = OriginalBmp.GetBounds(Drawing.GraphicsUnit.Pixel).Size
-                        Scale = Utility.ComputeImageScale(SizeF.Width, SizeF.Height, FetchImageItem.MaxX, FetchImageItem.MaxY)
-                        bmp = Utility.MakeThumbnail(OriginalBmp, Convert.ToInt32(SizeF.Width / Scale), Convert.ToInt32(SizeF.Height / Scale))
+                    Scale = UtilityWeb.ComputeImageScale(SizeF.Width, SizeF.Height, FetchImageItem.MaxX, FetchImageItem.MaxY)
+                    bmp = UtilityWeb.MakeThumbnail(OriginalBmp, Convert.ToInt32(SizeF.Width / Scale), Convert.ToInt32(SizeF.Height / Scale))
                         If Request.QueryString.Get("p") = "menu.main" Then
-                            Utility.ApplyTransparencyFilter(bmp, Color.FromArgb(&HFFF0F0F0), Color.White)
+                        UtilityWeb.ApplyTransparencyFilter(bmp, Color.FromArgb(&HFFF0F0F0), Color.White)
                         End If
                     ElseIf Request.QueryString.Get("Image") = "UnicodeChar" Then
-                        bmp = Utility.GetUnicodeChar(If(Request.QueryString.Get("Size") = Nothing, 13, CInt(Request.QueryString.Get("Size"))), Request.QueryString.Get("Font"), Char.ConvertFromUtf32(Integer.Parse(Request.QueryString.Get("Char"), Globalization.NumberStyles.HexNumber)))
+                    bmp = UtilityWeb.GetUnicodeChar(If(Request.QueryString.Get("Size") = Nothing, 13, CInt(Request.QueryString.Get("Size"))), Request.QueryString.Get("Font"), Char.ConvertFromUtf32(Integer.Parse(Request.QueryString.Get("Char"), Globalization.NumberStyles.HexNumber)))
                     ElseIf Request.QueryString.Get("Image") = "Thumb" Then
                         Dim FetchImageItem As PageLoader.TextItem = DirectCast(PageSet.GetPageItem(Request.QueryString.Get("p")), PageLoader.TextItem)
-                        bmp = Utility.MakeThumbFromURL(FetchImageItem.ImageURL, 121)
+                    bmp = UtilityWeb.MakeThumbFromURL(FetchImageItem.ImageURL, 121)
                     End If
                     If Not bmp Is Nothing Then
                         Dim quantizer As ImageQuantization.OctreeQuantizer = New ImageQuantization.OctreeQuantizer(255, 8, Not Bitmap.IsAlphaPixelFormat(bmp.PixelFormat), Color.White)
@@ -316,16 +316,16 @@ Partial Class host
                 ResultBmp.Dispose()
                 GC.Collect()
         ElseIf Request.QueryString.Get(PageQuery) = "Source" Then
-                Dim f As IO.FileStream = New IO.FileStream(CStr(If(IO.File.Exists(Utility.GetFilePath("files\" + Request.QueryString.Get("File"))), Utility.GetFilePath("files\" + Request.QueryString.Get("File")), Utility.GetFilePath("metadata\" + Request.QueryString.Get("File")))), IO.FileMode.Open, IO.FileAccess.Read, IO.FileShare.Read)
+            Dim f As IO.FileStream = New IO.FileStream(CStr(If(IO.File.Exists(PortableMethods.Settings.GetFilePath("files\" + Request.QueryString.Get("File"))), PortableMethods.Settings.GetFilePath("files\" + Request.QueryString.Get("File")), PortableMethods.Settings.GetFilePath("metadata\" + Request.QueryString.Get("File")))), IO.FileMode.Open, IO.FileAccess.Read, IO.FileShare.Read)
                 Dim buffer As Byte() = New Byte(CInt(f.Length) - 1) {}
                 Dim count As Integer = f.Read(buffer, 0, CInt(f.Length))
-                Dim encoding As System.Text.Encoding = Utility.DetectEncoding(buffer)
+            Dim encoding As System.Text.Encoding = UtilityWeb.DetectEncoding(buffer)
                 If encoding Is Nothing Then
                     encoding = System.Text.Encoding.ASCII
                 End If
                 'Convert tabs to spaces
                 Response.ContentType = "text/plain;charset=" + encoding.WebName
-                Response.Write(Utility.SourceTextEncode(encoding.GetChars(buffer, encoding.GetPreamble().Length, count - encoding.GetPreamble().Length)))
+            Response.Write(UtilityWeb.SourceTextEncode(encoding.GetChars(buffer, encoding.GetPreamble().Length, count - encoding.GetPreamble().Length)))
         Else
                 If Request.Params(PageQuery) = "Print" Then
                     IsPrint = True
@@ -360,13 +360,13 @@ Partial Class host
                     Next
                     If RenderItems.Count <> 0 Then
                         If Request.Params(PageQuery) = "PrintFlashcardPdf" Then
-                            RenderArray.OutputFlashcardPdf(MemStream, RenderItems)
+                        RenderArrayWeb.OutputFlashcardPdf(MemStream, RenderItems)
                             Response.ContentType = "application/pdf"
                         ElseIf Request.Params(PageQuery) = "PrintPdf" Then
-                            RenderArray.OutputPdf(MemStream, RenderItems)
+                        RenderArrayWeb.OutputPdf(MemStream, RenderItems)
                             Response.ContentType = "application/pdf"
                         Else
-                            RenderArray.OutputDocX(MemStream, RenderItems)
+                        RenderArrayWeb.OutputDocX(MemStream, RenderItems)
                             Response.ContentType = "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
                         End If
                         Response.OutputStream.Write(MemStream.ToArray(), 0, CInt(MemStream.Length))
@@ -448,14 +448,14 @@ Partial Class host
             writer.Write("<meta http-equiv='Content-type' content='text/html;charset=" + System.Text.Encoding.UTF8.WebName + "'>")
             writer.Write("<meta property=""og:title"" content=""" + CType(Controls(Controls.Count - 1), Page).GetTitle() + """>")
             writer.Write("<meta property=""og:site_name"" content=""" + Utility.LoadResourceString(PageSet.Title) + """>")
-            writer.Write("<meta property=""og:url"" content=""" + Utility.HtmlTextEncode(Web.HttpContext.Current.Request.Url.AbsoluteUri) + """>")
+            writer.Write("<meta property=""og:url"" content=""" + UtilityWeb.HtmlTextEncode(Web.HttpContext.Current.Request.Url.AbsoluteUri) + """>")
             writer.Write("<meta property=""og:description"" content=""" + CType(Controls(Controls.Count - 1), Page).GetDescription() + """>")
-            writer.Write("<meta property=""og:image"" content=""" + Web.HttpContext.Current.Request.Url.GetLeftPart(UriPartial.Authority) + Utility.HtmlTextEncode(GetPageString("Image.gif&Image=Scale&p=menu.main")) + """>")
-            writer.Write("<meta property=""fb:app_id"" content=""" + Utility.ConnectionData.FBAppID + """>")
+            writer.Write("<meta property=""og:image"" content=""" + Web.HttpContext.Current.Request.Url.GetLeftPart(UriPartial.Authority) + UtilityWeb.HtmlTextEncode(GetPageString("Image.gif&Image=Scale&p=menu.main")) + """>")
+            writer.Write("<meta property=""fb:app_id"" content=""" + UtilityWeb.ConnectionData.FBAppID + """>")
             writer.Write("<meta property=""og:type"" content=""article"">")
             writer.Write("<meta property=""og:locale"" content=""en_US"">")
-            writer.Write("<meta property=""article:author"" content=""" + Utility.ConnectionData.AuthorName + """>")
-            writer.Write("<meta property=""article:publisher"" content=""" + Utility.ConnectionData.AuthorName + """>")
+            writer.Write("<meta property=""article:author"" content=""" + UtilityWeb.ConnectionData.AuthorName + """>")
+            writer.Write("<meta property=""article:publisher"" content=""" + UtilityWeb.ConnectionData.AuthorName + """>")
             writer.WriteFullBeginTag("title")
             writer.Write(Utility.LoadResourceString(PageSet.Title))
             writer.WriteEndTag("title")
@@ -550,7 +550,7 @@ Partial Class host
     "  var js, fjs = d.getElementsByTagName(s)[0];" + _
     "  if (d.getElementById(id)) return;" + _
     "  js = d.createElement(s); js.id = id;" + _
-    "  js.src = ""//connect.facebook.net/en_US/all.js#xfbml=1&appId=" + Utility.ConnectionData.FBAppID + """;" + _
+    "  js.src = ""//connect.facebook.net/en_US/all.js#xfbml=1&appId=" + UtilityWeb.ConnectionData.FBAppID + """;" + _
     "  fjs.parentNode.insertBefore(js, fjs);" + _
     "}(document, 'script', 'facebook-jssdk'));")
                 writer.Write(vbCrLf + vbTab + vbTab)
@@ -564,7 +564,7 @@ Partial Class host
                 writer.WriteAttribute("alt", String.Empty)
                 writer.WriteAttribute("width", "100%")
                 writer.WriteAttribute("height", "100%")
-                writer.WriteAttribute("src", Utility.HtmlTextEncode(GetPageString("Image.gif&Image=GradientBackground")))
+                writer.WriteAttribute("src", UtilityWeb.HtmlTextEncode(GetPageString("Image.gif&Image=GradientBackground")))
                 writer.Write(HtmlTextWriter.TagRightChar + vbCrLf + vbTab + vbTab)
                 writer.WriteEndTag("div")
                 writer.Write(vbCrLf + vbTab + vbTab)
@@ -584,14 +584,14 @@ Partial Class host
                 writer.WriteAttribute("alt", String.Empty)
                 writer.WriteAttribute("width", "100%")
                 writer.WriteAttribute("height", "100%")
-                writer.WriteAttribute("src", Utility.HtmlTextEncode(GetPageString("Image.gif&Image=GradientBackgroundBottom")))
+                writer.WriteAttribute("src", UtilityWeb.HtmlTextEncode(GetPageString("Image.gif&Image=GradientBackgroundBottom")))
                 writer.Write(HtmlTextWriter.TagRightChar + vbCrLf + vbTab + vbTab)
                 writer.WriteEndTag("div")
 
                 writer.Write(vbCrLf + vbTab + vbTab)
                 writer.WriteBeginTag("div")
                 writer.WriteAttribute("class", "fb-like")
-                writer.WriteAttribute("data-href", Utility.HtmlTextEncode(Web.HttpContext.Current.Request.Url.AbsoluteUri))
+                writer.WriteAttribute("data-href", UtilityWeb.HtmlTextEncode(Web.HttpContext.Current.Request.Url.AbsoluteUri))
                 writer.WriteAttribute("data-layout", "standard")
                 writer.WriteAttribute("data-action", "like")
                 writer.WriteAttribute("data-show-faces", "true")
@@ -704,7 +704,7 @@ Class UserAccounts
         Return String.Empty
     End Function
     Private Shared Function ValidateEMail(ByVal EMail As String) As String
-        If Not New Utility.EMailValidator().IsValidEMail(EMail) Then
+        If Not New UtilityWeb.EMailValidator().IsValidEMail(EMail) Then
             Return "Acct_" + ID_BadEmailFormat
         End If
         Return String.Empty
@@ -1380,7 +1380,7 @@ Class UserAccounts
                 objObjectId = New CERTENROLLLib.CObjectId
                 objObjectId.InitializeFromValue("1.3.6.1.5.5.7.3.2") ' OID for Client Authentication usage
                 objObjectIds.Add(objObjectId)
-                For Each Domain As String In Utility.ConnectionData.CertExtraDomains
+                For Each Domain As String In UtilityWeb.ConnectionData.CertExtraDomains
                     objAlternativeName = New CERTENROLLLib.CAlternativeName
                     objAlternativeName.InitializeFromString(CERTENROLLLib.AlternativeNameType.XCN_CERT_ALT_NAME_DNS_NAME, Domain)
                     objAlternativeNames.Add(objAlternativeName)
@@ -1391,7 +1391,7 @@ Class UserAccounts
                 objPkcs10.X509Extensions.Add(CType(objX509ExtensionEnhancedKeyUsage, CERTENROLLLib.CX509Extension))
 
                 'Encode the name in using the Distinguished Name object
-                objDN.Encode(Utility.ConnectionData.DistinguishedName, _
+                objDN.Encode(UtilityWeb.ConnectionData.DistinguishedName, _
                     CERTENROLLLib.X500NameFlags.XCN_CERT_X500_NAME_STR)
 
                 'Assing the subject name by using the Distinguished Name object initialized above
@@ -1427,21 +1427,21 @@ Class UserAccounts
             writer.Write(vbCrLf + vbTab + vbTab + vbTab + vbTab)
             writer.WriteFullBeginTag("div")
             writer.Write(vbCrLf + vbTab + vbTab + vbTab + vbTab + vbTab)
-            writer.Write(Utility.HtmlTextEncode(GetUserName()))
+            writer.Write(UtilityWeb.HtmlTextEncode(GetUserName()))
             writer.Write(vbCrLf + vbTab + vbTab + vbTab + vbTab + vbTab)
             writer.WriteBeginTag("a")
-            writer.WriteAttribute("href", Utility.HtmlTextEncode(host.GetPageString(ID_Logoff)))
+            writer.WriteAttribute("href", UtilityWeb.HtmlTextEncode(host.GetPageString(ID_Logoff)))
             writer.Write(HtmlTextWriter.TagRightChar)
             writer.Write(vbCrLf + vbTab + vbTab + vbTab + vbTab + vbTab + vbTab)
-            writer.Write(Utility.HtmlTextEncode(ID_Logoff))
+            writer.Write(UtilityWeb.HtmlTextEncode(ID_Logoff))
             writer.Write(vbCrLf + vbTab + vbTab + vbTab + vbTab + vbTab)
             writer.WriteEndTag("a")
             writer.Write(vbCrLf + vbTab + vbTab + vbTab + vbTab + vbTab)
             writer.WriteBeginTag("a")
-            writer.WriteAttribute("href", Utility.HtmlTextEncode(host.GetPageString(ID_ControlPanel)))
+            writer.WriteAttribute("href", UtilityWeb.HtmlTextEncode(host.GetPageString(ID_ControlPanel)))
             writer.Write(HtmlTextWriter.TagRightChar)
             writer.Write(vbCrLf + vbTab + vbTab + vbTab + vbTab + vbTab + vbTab)
-            writer.Write(Utility.HtmlTextEncode(Utility.LoadResourceString("Acct_" + ID_ControlPanel)))
+            writer.Write(UtilityWeb.HtmlTextEncode(Utility.LoadResourceString("Acct_" + ID_ControlPanel)))
             writer.Write(vbCrLf + vbTab + vbTab + vbTab + vbTab + vbTab)
             writer.WriteEndTag("a")
             writer.Write(vbCrLf + vbTab + vbTab + vbTab + vbTab)
