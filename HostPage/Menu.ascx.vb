@@ -1,4 +1,5 @@
 Imports HostPageUtility
+Imports XMLRender
 
 Partial Class Menu
     Inherits System.Web.UI.UserControl

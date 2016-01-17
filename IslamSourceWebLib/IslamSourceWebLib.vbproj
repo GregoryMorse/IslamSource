@@ -10,7 +10,8 @@
     <AssemblyName>IslamSourceWebLib</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>Windows</MyType>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0.3</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -45,6 +46,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -62,7 +65,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PageLoader.vb" />
+    <Compile Include="IslamSourceWebLib.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -97,6 +100,20 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HostPageUtility\HostPageUtility.vbproj">
+      <Project>{9adb20ba-877e-4cb0-a12b-7babe3fedc27}</Project>
+      <Name>HostPageUtility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IslamMetadata\IslamMetadata.vbproj">
+      <Project>{8cef3958-a8d0-4afa-95f1-80568237f4ee}</Project>
+      <Name>IslamMetadata</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\XMLRender\XMLRender.vbproj">
+      <Project>{8ac9d06f-320d-4cf4-8a73-725a5ef177ad}</Project>
+      <Name>XMLRender</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,6 +1,22 @@
 ﻿Imports HostPageUtility
 Imports IslamMetadata
-
+Imports XMLRender
+Public Class WindowsSettings
+    Implements PortableSettings
+    Public ReadOnly Property CacheDirectory As String Implements PortableSettings.CacheDirectory
+        Get
+            Return IO.Directory.GetCurrentDirectory()
+        End Get
+    End Property
+    Public ReadOnly Property Resources As KeyValuePair(Of String, String())() Implements PortableSettings.Resources
+        Get
+            Return (New List(Of KeyValuePair(Of String, String()))(Linq.Enumerable.Select("HostPageUtility=Acct,lang,unicode;IslamResources=Hadith,IslamInfo,IslamSource".Split(";"c), Function(Str As String) New KeyValuePair(Of String, String())(Str.Split("="c)(0), Str.Split("="c)(1).Split(","c)))).ToArray()
+        End Get
+    End Property
+    Public Function GetFilePath(ByVal Path As String) As String Implements PortableSettings.GetFilePath
+        Return "..\..\..\" + Path
+    End Function
+End Class
 Public Class frmMain
     Private PageSet As New PageLoader
     Private Sub frmMain_Load(sender As Object, e As EventArgs) Handles Me.Load

@@ -32,7 +32,7 @@
     <MyType>Windows</MyType>
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0.3</TargetFrameworkVersion>
     <OldToolsVersion>3.5</OldToolsVersion>
     <UseIISExpress>false</UseIISExpress>
     <IISExpressSSLPort>58171</IISExpressSSLPort>
@@ -60,6 +60,7 @@
     <NoWarn>42353,42354,42355</NoWarn>
     <DebugType>full</DebugType>
     <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42030,42032,42036,42104,42105,42106,42107,42108,42109</WarningsAsErrors>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <OutputPath>bin\</OutputPath>
@@ -81,6 +82,7 @@
     <DebugType>pdbonly</DebugType>
     <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42030,42032,42036,42104,42105,42106,42107,42108,42109</WarningsAsErrors>
     <UseVSHostingProcess>true</UseVSHostingProcess>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.JScript" />
@@ -256,6 +258,14 @@
     <ProjectReference Include="..\HostPageUtility\HostPageUtility.vbproj">
       <Project>{9adb20ba-877e-4cb0-a12b-7babe3fedc27}</Project>
       <Name>HostPageUtility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IslamSourceWebLib\IslamSourceWebLib.vbproj">
+      <Project>{92920f42-4f8b-4899-9c9d-fc73ab606124}</Project>
+      <Name>IslamSourceWebLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\XMLRender\XMLRender.vbproj">
+      <Project>{8ac9d06f-320d-4cf4-8a73-725a5ef177ad}</Project>
+      <Name>XMLRender</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
