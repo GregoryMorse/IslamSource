@@ -63,7 +63,7 @@ Public Class frmMain
         'Utility.SortResX(Utility.GetFilePath("IslamResources\Resources.en.resx"))
         'Utility.SortResX(Utility.GetFilePath("IslamResources\My Project\Resources.resx"))
         CachedData.DoErrorCheck()
-        Dim RenderArr As RenderArray = Phrases.DoGetRenderedCatText(String.Empty, ArabicData.TranslitScheme.RuleBased, "PlainRoman", CachedData.IslamData.Phrases, 0)
+        'Dim RenderArr As RenderArray = Phrases.DoGetRenderedCatText(String.Empty, ArabicData.TranslitScheme.RuleBased, "PlainRoman", CachedData.IslamData.Phrases, 0)
         'HostPageUtility.RenderArray.OutputPdf("test.pdf", RenderArr.Items)
         For Index = 0 To PageSet.Pages.Count - 1
             Dim newNode As TreeNode = tvwMain.Nodes.Add(PageSet.Pages.Item(Index).PageName, Utility.LoadResourceString(PageSet.Pages.Item(Index).Text))
@@ -78,7 +78,7 @@ Public Class frmMain
         Renderer.Size = New Size(gbMain.Width, gbMain.Height)
         For Count As Integer = 39 To TanzilReader.GetChapterCount()
             Renderer.RenderArray = TanzilReader.GetQuranTextBySelection(String.Empty, 0, Count, "en.sahih", ArabicData.TranslitScheme.RuleBased, "PlainRoman", TanzilReader.GetTranslationIndex("en.sahih"), True, False, False, True, False, False, True).Items
-            HostPageUtility.RenderArray.OutputPdf("test" + CStr(Count) + ".pdf", Renderer.RenderArray)
+            HostPageUtility.RenderArrayWeb.OutputPdf("test" + CStr(Count) + ".pdf", Renderer.RenderArray)
         Next
         Renderer.RenderArray = TanzilReader.GetQuranTextBySelection(String.Empty, 0, 1, "en.sahih", ArabicData.TranslitScheme.RuleBased, "PlainRoman", TanzilReader.GetTranslationIndex("en.sahih"), True, False, False, True, False, False, True).Items
         gbMain.Controls.Add(Renderer)

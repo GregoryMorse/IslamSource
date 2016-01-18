@@ -602,7 +602,7 @@ Public Class ArabicWeb
         "function processTransliteration(list) { var k, child, iSubCount, text; $('span.transliteration').each(function() { $(this).css('display', $('#translitscheme').val() === '0' ? 'none' : 'block'); }); for (k in list) { text = ''; if (list.hasOwnProperty(k) && list[k]['linkchild']) { for (child in list[k]['children']) { if (list[k]['children'].hasOwnProperty(child)) { processTransliteration(list[k]['children'][child]['children']); for (iSubCount = 0; iSubCount < list[k]['children'][child]['arabic'].length; iSubCount++) { if ($('#translitscheme').val() !== '0' && $('#translitscheme').val() !== '1'  && parseInt($('#translitscheme').val(), 10) % 2 !== 1 && list[k]['children'][child]['arabic'][iSubCount] !== '' && list[k]['children'][child]['translit'][iSubCount] !== '') { if (text !== '') text += ' '; text += $('#' + list[k]['children'][child]['arabic'][iSubCount]).text(); } else { if (list[k]['children'][child]['translit'][iSubCount] !== '') $('#' + list[k]['children'][child]['translit'][iSubCount]).text(($('#translitscheme').val() === '0' || list[k]['children'][child]['arabic'][iSubCount] === '') ? '' : doTransliterate($('#' + list[k]['children'][child]['arabic'][iSubCount]).text(), true, parseInt($('#translitscheme').val(), 10))); } } } } if ($('#translitscheme').val() !== '0' && $('#translitscheme').val() !== '1' && parseInt($('#translitscheme').val(), 10) % 2 !== 1) { text = transliterateWithRules(text, Math.floor((parseInt($('#translitscheme').val(), 10) - 2) / 2) + 2, null, false).split(' '); for (child in list[k]['children']) { if (list[k]['children'].hasOwnProperty(child)) { for (iSubCount = 0; iSubCount < list[k]['children'][child]['translit'].length; iSubCount++) { if (list[k]['children'][child]['arabic'][iSubCount] !== '' && list[k]['children'][child]['translit'][iSubCount] !== '') $('#' + list[k]['children'][child]['translit'][iSubCount]).text(text.shift()); } } } } } else { processTransliteration(list[k]['children']); } for (iSubCount = 0; iSubCount < list[k]['arabic'].length; iSubCount++) { if (list[k]['translit'][iSubCount] !== '') $('#' + list[k]['translit'][iSubCount]).text(($('#translitscheme').val() === '0' || list[k]['arabic'][iSubCount] === '') ? '' : (($('#translitscheme').val() !== '0' && $('#translitscheme').val() !== '1' && parseInt($('#translitscheme').val(), 10) % 2 !== 1) ? transliterateWithRules($('#' + list[k]['arabic'][iSubCount]).text(), parseInt($('#translitscheme').val(), 10) >= 2 ? Math.floor((parseInt($('#translitscheme').val(), 10) - 2) / 2) + 2 : parseInt($('#translitscheme').val(), 10), null, false) : doTransliterate($('#' + list[k]['arabic'][iSubCount]).text(), true, parseInt($('#translitscheme').val(), 10)))); } } }", _
         "function changeTransliteration() { changeChapterTranslit(); var i; for (i = 0; i < renderList.length; i++) { processTransliteration(renderList[i]); } }", _
         "function changeChapterTranslit() { var i; for (i = 0; i < $('#quranselection').get(0).options.length; i++) { $('#quranselection').get(0).options[i].text = $('#quranselection').get(0).options[i].text.replace(/(\(.*? )(.*?)(\u202C\))( )?(.*)/g, function (m, open, a, close) { return open + a + close + ' ' + (($('#translitscheme').val() === '0' || a === '') ? '' : (($('#translitscheme').val() !== '0' && $('#translitscheme').val() !== '1' && parseInt($('#translitscheme').val(), 10) % 2 !== 1) ? transliterateWithRules(a, parseInt($('#translitscheme').val(), 10) >= 2 ? Math.floor((parseInt($('#translitscheme').val(), 10) - 2) / 2) + 2 : parseInt($('#translitscheme').val(), 10), null, false) : doTransliterate(a, true, parseInt($('#translitscheme').val(), 10)))); }); } }"}
-        GetJS.AddRange(ArabicData.GetUniCats())
+        GetJS.AddRange(ArabicDataWeb.GetUniCats())
         GetJS.AddRange(PlainTransliterateGenJS)
         GetJS.AddRange(TransliterateGenJS)
         GetJS.AddRange(NumberGenJS)
@@ -677,7 +677,7 @@ Public Class ArabicWeb
             "var romanizationRules = " + UtilityWeb.MakeJSArray(New String() {UtilityWeb.MakeJSIndexedObject(New String() {"rule", "match", "evaluator", "ruleFunc"}, _
                                     New List(Of Object())(Linq.Enumerable.Select(CachedData.RuleTranslations("RomanizationRules"), Function(Convert As IslamData.RuleTranslationCategory.RuleTranslation) New Object() {UtilityWeb.MakeJSString(Convert.Name), UtilityWeb.MakeJSString(UtilityWeb.EscapeJS(Convert.Match)), UtilityWeb.MakeJSString(Convert.Evaluator), Convert.RuleFunc})).ToArray(), True)}, True) + ";", _
             "var coloringRules = " + UtilityWeb.MakeJSArray(New String() {UtilityWeb.MakeJSIndexedObject(New String() {"rule", "match", "color"}, _
-                                    New List(Of Object())(Linq.Enumerable.Select(Of IslamData.ColorRule, String())(CachedData.IslamData.ColorRules, Function(Convert As IslamData.ColorRule) New String() {Convert.Name, UtilityWeb.EscapeJS(Convert.Match), System.Drawing.ColorTranslator.ToHtml(Convert.Color)})).ToArray(), False)}, True) + ";", _
+                                    New List(Of Object())(Linq.Enumerable.Select(Of IslamData.ColorRule, String())(CachedData.IslamData.ColorRules, Function(Convert As IslamData.ColorRule) New String() {Convert.Name, UtilityWeb.EscapeJS(Convert.Match), System.Drawing.ColorTranslator.ToHtml(Color.FromArgb(Convert.Color))})).ToArray(), False)}, True) + ";", _
             "var rulesOfRecitationRegEx = " + UtilityWeb.MakeJSArray(New String() {UtilityWeb.MakeJSIndexedObject(New String() {"rule", "match", "evaluator"}, _
                                     New List(Of Object())(Linq.Enumerable.Select(Of IslamData.RuleMetaSet.RuleMetadataTranslation, Object())(CachedData.RuleMetas("UthmaniQuran"), Function(Convert As IslamData.RuleMetaSet.RuleMetadataTranslation) New Object() {UtilityWeb.MakeJSString(Convert.Name), UtilityWeb.MakeJSString(UtilityWeb.EscapeJS(Convert.Match)), If(Convert.Evaluator Is Nothing, Nothing, UtilityWeb.MakeJSArray(Convert.Evaluator))})).ToArray(), True)}, True) + ";", _
             "var allowZeroLength = " + UtilityWeb.MakeJSArray(Arabic.AllowZeroLength) + ";", _
@@ -738,15 +738,15 @@ Public Class ArabicFont
     End Function
     Public Shared Function GetArabicFontListJS() As String
         Return "var fontList = " + _
-        Utility.MakeJSIndexedObject(New List(Of String)(Linq.Enumerable.Select(CachedData.IslamData.ArabicFonts, Function(Convert As IslamData.ArabicFontList) Convert.ID)).ToArray(), New Array() {New List(Of String)(Linq.Enumerable.Select(CachedData.IslamData.ArabicFonts, Function(Convert As IslamData.ArabicFontList) Utility.MakeJSIndexedObject(New String() {"family", "embed", "file", "scale"}, New Array() {New String() {Convert.Family, Convert.EmbedName, Convert.FileName, CStr(Convert.Scale)}}, False))).ToArray()}, True) + _
-        ";var fontPrefs = " + Utility.MakeJSIndexedObject(New List(Of String)(Linq.Enumerable.Select(CachedData.IslamData.ScriptFonts, Function(Convert As IslamData.ScriptFont) Convert.Name)).ToArray(), _
-                                                          New Array() {New List(Of String)(Linq.Enumerable.Select(CachedData.IslamData.ScriptFonts, Function(Convert As IslamData.ScriptFont) Utility.MakeJSArray(New List(Of String)(Linq.Enumerable.Select(Of IslamData.ScriptFont.Font, String)(Convert.FontList, Function(SubConv As IslamData.ScriptFont.Font) SubConv.ID)).ToArray()))).ToArray()}, True) + ";"
+        UtilityWeb.MakeJSIndexedObject(New List(Of String)(Linq.Enumerable.Select(CachedData.IslamData.ArabicFonts, Function(Convert As IslamData.ArabicFontList) Convert.ID)).ToArray(), New Array() {New List(Of String)(Linq.Enumerable.Select(CachedData.IslamData.ArabicFonts, Function(Convert As IslamData.ArabicFontList) UtilityWeb.MakeJSIndexedObject(New String() {"family", "embed", "file", "scale"}, New Array() {New String() {Convert.Family, Convert.EmbedName, Convert.FileName, CStr(Convert.Scale)}}, False))).ToArray()}, True) + _
+        ";var fontPrefs = " + UtilityWeb.MakeJSIndexedObject(New List(Of String)(Linq.Enumerable.Select(CachedData.IslamData.ScriptFonts, Function(Convert As IslamData.ScriptFont) Convert.Name)).ToArray(), _
+                                                          New Array() {New List(Of String)(Linq.Enumerable.Select(CachedData.IslamData.ScriptFonts, Function(Convert As IslamData.ScriptFont) UtilityWeb.MakeJSArray(New List(Of String)(Linq.Enumerable.Select(Of IslamData.ScriptFont.Font, String)(Convert.FontList, Function(SubConv As IslamData.ScriptFont.Font) SubConv.ID)).ToArray()))).ToArray()}, True) + ";"
     End Function
     Public Shared Function GetFontEmbedJS() As String
         Return "function embedFontStyle(fontID) { if (isInArray(embeddedFonts, fontID)) return; embeddedFonts.push(fontID); var font=fontList[fontID]; var style = 'font-family: \'' + font.embed + '\';' + 'src: url(\'/files/' + font.file + '.eot\');' + 'src: local(\'' + font.family + '\'), url(\'/files/' + font.file + ((font.file == 'KFC_naskh') ? '.otf\') format(\'opentype\');' : '.ttf\') format(\'truetype\');'); addStyleSheetRule(newStyleSheet(), '@font-face', style);  }"
     End Function
     Public Shared Function GetFontInitJS() As String
-        Return "var tryFontCounter = 0; var embeddedFonts = " + Utility.MakeJSArray(New String() {"null"}, True) + "; var baseFont = 'Times New Roman';"
+        Return "var tryFontCounter = 0; var embeddedFonts = " + UtilityWeb.MakeJSArray(New String() {"null"}, True) + "; var baseFont = 'Times New Roman';"
     End Function
     Public Shared Function GetFontIDJS() As String
         Return "function getFontID() { var fontID = $('#fontselection').val(); if (fontID == 'def') { fontID = 'me_quran'; if (isMac && isSafari) fontID = 'scheherazade'; if (isChrome) fontID = getPrefInstalledFont('uthmani'); } return fontID; }"
@@ -755,7 +755,7 @@ Public Class ArabicFont
         Return "function getFontFace(fontID) { return fontList[fontID].family + (fontList[fontID].embed ? ',' + fontList[fontID].embed : ''); }"
     End Function
     Public Shared Function GetFontWidthJS() As String
-        Return "function fontWidth(fontName, text) { text = text || '" + Utility.EncodeJS(TanzilReader.GetTextVerse(TanzilReader.GetTextChapter(CachedData.XMLDocMain, 3), 9).Attribute("text").Value) + "' ; if (text == 2) text = '" + Utility.EncodeJS(Utility.LoadResourceString("IslamInfo_InTheNameOfAllah")) + "," + Utility.EncodeJS(TanzilReader.GetTextVerse(TanzilReader.GetTextChapter(CachedData.XMLDocMain, 1), 1).Attribute("text").Value) + "'; var tester = $('#font-tester'); tester.css('fontFamily', fontName); if (tester.firstChild) tester.remove(tester.firstChild); tester.append(document.createTextNode(text)); tester.css('display', 'block'); var width = tester.offsetWidth; tester.css('display', 'none'); return width; }"
+        Return "function fontWidth(fontName, text) { text = text || '" + UtilityWeb.EncodeJS(TanzilReader.GetTextVerse(TanzilReader.GetTextChapter(CachedData.XMLDocMain, 3), 9).Attribute("text").Value) + "' ; if (text == 2) text = '" + UtilityWeb.EncodeJS(Utility.LoadResourceString("IslamInfo_InTheNameOfAllah")) + "," + UtilityWeb.EncodeJS(TanzilReader.GetTextVerse(TanzilReader.GetTextChapter(CachedData.XMLDocMain, 1), 1).Attribute("text").Value) + "'; var tester = $('#font-tester'); tester.css('fontFamily', fontName); if (tester.firstChild) tester.remove(tester.firstChild); tester.append(document.createTextNode(text)); tester.css('display', 'block'); var width = tester.offsetWidth; tester.css('display', 'none'); return width; }"
     End Function
     Public Shared Function GetFontExistsJS() As String
         Return "function fontExists(fontName) { var fontFamily = fontName + ', ' + baseFont; return fontWidth(baseFont) * fontWidth(baseFont, 2) != fontWidth(fontFamily) * fontWidth(fontFamily, 2); }"
@@ -782,7 +782,7 @@ Public Class ArabicFont
         Return New String() {"javascript: changeCustomFont();", String.Empty, "function changeCustomFont() { fontList['custom'].family = $('#fontcustom').val(); fontList['custom'].scale = fontWidth(baseFont) / fontWidth(fontList['custom'].family); changeFont(); }"}
     End Function
     Public Shared Function GetChangeFontJS() As String()
-        Return New String() {"javascript: changeFont();", "checkInstalledFonts();", UtilityWeb.GetLookupStyleSheetJS(), GetArabicFontListJS(), Utility.GetBrowserTestJS(), Utility.GetAddStyleSheetJS(), Utility.GetAddStyleSheetRuleJS(), UtilityWeb.GetLookupStyleSheetJS(), Utility.IsInArrayJS(), GetUpdateCustomFontJS(), GetFontInitJS(), GetFontPrefInstalledJS(), GetCheckInstalledFontsJS(), GetFontIDJS(), GetFontFaceJS(), GetFontWidthJS(), GetFontExistsJS(), GetFontEmbedJS(), GetApplyFontJS(), GetTryFontJS(), GetApplyEmbedFontJS(), _
+        Return New String() {"javascript: changeFont();", "checkInstalledFonts();", UtilityWeb.GetLookupStyleSheetJS(), GetArabicFontListJS(), UtilityWeb.GetBrowserTestJS(), UtilityWeb.GetAddStyleSheetJS(), UtilityWeb.GetAddStyleSheetRuleJS(), UtilityWeb.GetLookupStyleSheetJS(), UtilityWeb.IsInArrayJS(), GetUpdateCustomFontJS(), GetFontInitJS(), GetFontPrefInstalledJS(), GetCheckInstalledFontsJS(), GetFontIDJS(), GetFontFaceJS(), GetFontWidthJS(), GetFontExistsJS(), GetFontEmbedJS(), GetApplyFontJS(), GetTryFontJS(), GetApplyEmbedFontJS(), _
         "function changeFont() { var fontID = getFontID(); updateCustomFont(); if (fontList[fontID].embed) applyEmbedFont(fontID); else applyFont(fontID); }"}
     End Function
     Public Shared Function GetFontSmallerJS() As String()
@@ -804,191 +804,11 @@ Public Class CachedDataWeb
     End Function
 End Class
 Public Class DocBuilderWeb
-    Public Structure XYZColor
-        Public X As Double
-        Public Y As Double
-        Public Z As Double
-    End Structure
-    Public Shared WhiteReference As New XYZColor With {.X = 95.047, .Y = 100.0, .Z = 108.883}
-    Public Const Epsilon As Double = 0.008856 'Intent is 216/24389
-    Public Const Kappa As Double = 903.3 'Intent is 24389/27
-    Public Shared Function PivotRGB(N As Double) As Double
-        Return If(N > 0.04045, Math.Pow((N + 0.055) / 1.055, 2.4), N / 12.92) * 100.0
-    End Function
-    Public Shared Function ToRGB(N As Double) As Double
-        Dim Result As Double = N * 255.0
-        If Result < 0 Then Return 0
-        If Result > 255 Then Return 255
-        Return Result
-    End Function
-    Public Shared Function RGBToXYZ(clr As Color) As XYZColor
-        Dim r As Double = PivotRGB(clr.R / 255.0)
-        Dim g As Double = PivotRGB(clr.G / 255.0)
-        Dim b As Double = PivotRGB(clr.B / 255.0)
-        Return New XYZColor With {.X = r * 0.4124 + g * 0.3576 + b * 0.1805, _
-                                  .Y = r * 0.2126 + g * 0.7152 + b * 0.0722, _
-                                  .Z = r * 0.0193 + g * 0.1192 + b * 0.9505}
-    End Function
-    Public Shared Function XYZToRGB(clr As XYZColor) As Color
-        Dim x As Double = clr.X / 100.0
-        Dim y As Double = clr.Y / 100.0
-        Dim z As Double = clr.Z / 100.0
-        Dim r As Double = x * 3.2406 + y * -1.5372 + z * -0.4986
-        Dim g As Double = x * -0.9689 + y * 1.8758 + z * 0.0415
-        Dim b As Double = x * 0.0557 + y * -0.204 + z * 1.057
-        r = If(r > 0.0031308, 1.055 * Math.Pow(r, 1 / 2.4) - 0.055, 12.92 * r)
-        g = If(g > 0.0031308, 1.055 * Math.Pow(g, 1 / 2.4) - 0.055, 12.92 * g)
-        b = If(b > 0.0031308, 1.055 * Math.Pow(b, 1 / 2.4) - 0.055, 12.92 * b)
-        Return Color.FromArgb(CInt(ToRGB(r)), CInt(ToRGB(g)), CInt(ToRGB(b)))
-    End Function
-    Public Structure LABColor
-        Public L As Double
-        Public A As Double
-        Public B As Double
-    End Structure
-    Public Shared Function PivotXYZ(N As Double) As Double
-        Return If(N > Epsilon, Math.Pow(N, 1.0 / 3.0), (Kappa * N + 16) / 116)
-    End Function
-    Public Shared Function RGBToLAB(clr As Color) As LABColor
-        Dim XYZCol As XYZColor = RGBToXYZ(clr)
-        Dim x As Double = PivotXYZ(XYZCol.X / WhiteReference.X)
-        Dim y As Double = PivotXYZ(XYZCol.Y / WhiteReference.Y)
-        Dim z As Double = PivotXYZ(XYZCol.Z / WhiteReference.Z)
-        Return New LABColor With {.L = Math.Max(0, 116 * y - 16), .A = 500 * (x - y), .B = 200 * (y - z)}
-    End Function
-    Public Shared Function LABToRGB(clr As LABColor) As Color
-        Dim y As Double = (clr.L + 16.0) / 116.0
-        Dim x As Double = clr.A / 500.0 + y
-        Dim z As Double = y - clr.B / 200.0
-        Dim X3 As Double = x * x * x
-        Dim Z3 As Double = z * z * z
-        Return XYZToRGB(New XYZColor With {.X = WhiteReference.X * If(X3 > Epsilon, X3, (x - 16.0 / 116.0) / 7.787), _
-                                         .Y = WhiteReference.Y * If(clr.L > (Kappa * Epsilon), Math.Pow((clr.L + 16.0) / 116.0, 3), clr.L / Kappa), _
-                                         .Z = WhiteReference.Z * If(Z3 > Epsilon, Z3, (z - 16.0 / 116.0) / 7.787)})
-    End Function
-    Public Shared Function CMCCompareColors(ColorA As LABColor, ColorB As LABColor, Lightness As Double, Chroma As Double) As Double
-        Dim deltaL As Double = ColorA.L - ColorB.L
-        Dim h As Double = Math.Atan2(ColorB.B, ColorA.A)
-        Dim C1 As Double = Math.Sqrt(ColorA.A * ColorA.A + ColorA.B * ColorA.B)
-        Dim C2 As Double = Math.Sqrt(ColorB.A * ColorB.A + ColorB.B * ColorB.B)
-        Dim deltaC As Double = C1 - C2
-        Dim deltaH As Double = Math.Sqrt((ColorA.A - ColorB.A) * (ColorA.A - ColorB.A) + (ColorA.B - ColorB.B) * (ColorA.B - ColorB.B) - deltaC * deltaC)
-        Dim C1_4 As Double = C1 * C1
-        C1_4 *= C1_4
-        Dim t As Double = If(164 <= h Or h >= 345, 0.56 + Math.Abs(0.2 * Math.Cos(h + 168.0)), 0.36 + Math.Abs(0.4 * Math.Cos(h + 35.0)))
-        Dim f As Double = Math.Sqrt(C1_4 / (C1_4 + 1900.0))
-        Dim sL As Double = If(ColorA.L < 16, 0.511, (0.040975 * ColorA.L) / (1.0 + 0.01765 * ColorA.L))
-        Dim sC As Double = (0.0638 * C1) / (1 + 0.0131 * C1) + 0.638
-        Dim sH As Double = sC * (f * t + 1 - f)
-        Return Math.Sqrt(deltaL * deltaL / (Lightness * Lightness * sL * sL) + deltaC * deltaC / (Chroma * Chroma * sC * sC) + deltaH * deltaH / (sH * sH))
-    End Function
-    Public Shared Function GCD(A As Integer, B As Integer) As Integer 'Euclid's algorithm
-        If B = 0 Then Return A
-        Return GCD(B, A Mod B)
-    End Function
-    Public Shared Function GenerateNDistinctColors(N As Integer, Threshold As Integer, Interleave As Integer) As Color()
-        'To best support individuals with colorblindness (deuteranopia or protanopia) keep a set to 0; vary only L and b.
-        Dim LABColors As New List(Of LABColor)
-        Dim LowThresholds As New List(Of Double)
-        LABColors.Add(RGBToLAB(Color.Black)) 'Start with pivot forecolor
-        LowThresholds.Add(100)
-        LABColors.Add(RGBToLAB(Color.White)) 'Start with background color
-        LowThresholds.Add(100)
-        For A = 0 To 200 'Pivot around 0 and move towards 100/-100
-            For L = 0 To 100 / 2 'dark to light yet for readability do not exceed half of the spectrum
-                For B = 0 To 200 'Pivot around 0 and move towards 100/-100
-                    Dim CurColCount As Integer
-                    Dim LowThreshold As Double = 100
-                    For CurColCount = 0 To LABColors.Count - 1
-                        LowThreshold = Math.Min(LowThreshold, CMCCompareColors(LABColors(CurColCount), New LABColor With {.L = L, .A = ((A \ 2) + If((A Mod 2) = 1, 1, 0)) * If((A Mod 2) = 1, 1, -1), .B = ((B \ 2) + If((B Mod 2) = 1, 1, 0)) * If((B Mod 2) = 1, 1, -1)}, 1.0, 1.0))
-                        If LowThreshold < Threshold Then Exit For
-                    Next
-                    If CurColCount = LABColors.Count Then
-                        Dim Idx As Integer = LowThresholds.BinarySearch(LowThreshold)
-                        If Idx < 0 Then Idx = Idx Xor -1
-                        If Idx <> 0 Or LowThresholds.Count <> N + 1 Then
-                            LABColors.Insert(Idx, New LABColor With {.L = L, .A = ((A \ 2) + If((A Mod 2) = 1, 1, 0)) * If((A Mod 2) = 1, 1, -1), .B = ((B \ 2) + If((B Mod 2) = 1, 1, 0)) * If((B Mod 2) = 1, 1, -1)})
-                            LowThresholds.Insert(Idx, LowThreshold)
-                            If LowThresholds.Count > N + 1 Then
-                                LABColors.RemoveAt(0)
-                                LowThresholds.RemoveAt(0)
-                            End If
-                        End If
-                    End If
-                Next
-            Next
-            If LABColors.Count >= N + 1 Then Exit For
-        Next
-        LABColors.RemoveAt(N) 'Remove background color
-        'if less than N colors found then try with lower threshold
-        If LABColors.Count < N Then Return GenerateNDistinctColors(N, Threshold - 1, Interleave)
-        Dim Cols(N - 1) As Color
-        For Count As Integer = 0 To N - 1
-            'Least Common Multiple LCM = a * b \ GCD(A, B)
-            Cols((Count * Interleave) \ (N * Interleave \ GCD(N, Interleave)) + (Count * Interleave) Mod N) = LABToRGB(LABColors(Count))
-        Next
-        Return Cols
-    End Function
-    Public Shared Function ColorizeList(Strs As String(), bArabic As Boolean) As RenderArray.RenderText()
-        Dim Cols As Color() = GenerateNDistinctColors(Strs.Length + 1, 15, 5)
-        Dim Renderers As New List(Of RenderArray.RenderText)
-        For Count As Integer = 0 To Strs.Length - 1
-            Renderers.Add(New RenderArray.RenderText(If(bArabic, RenderArray.RenderDisplayClass.eArabic, RenderArray.RenderDisplayClass.eLTR), Strs(Count) + If(Not bArabic And (Strs(Count) = String.Empty Or Strs(Count).StartsWith(ArabicData.LeftToRightEmbedding)), "NULL" + CStr(Count), "_" + CStr(Count))) With {.Clr = Cols(Count + 1)})
-            'Renderers.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, CStr(Count)) With {.Clr = Color.DarkRed})
-            If Not bArabic And Count <> Strs.Length - 1 Then Renderers.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, ";"))
-        Next
-        Return Renderers.ToArray()
-    End Function
-    Public Shared Function ColorizeRegExGroups(Str As String, bReplaceGroup As Boolean) As RenderArray.RenderText()
-        'Define an numeric partial ordering of groups that is non-contiguous based on their nearest parent parenthesis
-        Dim ParenPos As New List(Of Integer)
-        For Count As Integer = 0 To Str.Length - 1
-            ParenPos.Add(0)
-        Next
-        Dim CurNum As Integer = 0
-        Dim NumStack As New Stack(Of Integer())
-        Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(Str, If(bReplaceGroup, "(\\\$)?(\$\d+)", "(\\\(|\\\))?(\(\??|\))"))
-        For MatchCount As Integer = 0 To Matches.Count - 1
-            If Matches(MatchCount).Groups(2).Value.Chars(0) = "$" Then
-                Dim Num As Integer = Integer.Parse(Matches(MatchCount).Groups(2).Value.Substring(1))
-                CurNum = Math.Max(CurNum, Num)
-                For Count As Integer = Matches(MatchCount).Groups(2).Index To Matches(MatchCount).Groups(2).Index + Matches(MatchCount).Groups(2).Length - 1
-                    ParenPos(Count) = Num
-                Next
-            ElseIf Matches(MatchCount).Groups(2).Value.Chars(0) = "("c Then
-                If Matches(MatchCount).Groups(2).Value.Length = 1 Then CurNum += 1
-                NumStack.Push(New Integer() {CurNum, If(Matches(MatchCount).Groups(2).Value.Length = 1, Matches(MatchCount).Groups(2).Index, Str.Length)})
-            Else
-                Debug.Assert(NumStack.Count <> 0) 'Misbalance parenthesis is exception
-                Dim Nums As Integer() = NumStack.Pop()
-                For Count As Integer = Nums(1) To Matches(MatchCount).Groups(2).Index
-                    If Nums(0) > ParenPos(Count) Then ParenPos(Count) = Nums(0)
-                Next
-            End If
-        Next
-        Debug.Assert(NumStack.Count = 0) 'Misbalance parenthesis is exception
-        'Proper coloring requires that parent-child and neighboring siblings have different colors
-        'yet the current partial ordering does not define either of those relationships
-        'must maintain neighbor and color list to properly color
-        Dim Base As Integer = 0
-        Dim Cols As Color() = GenerateNDistinctColors(CurNum + 1, 15, 5)
-        Dim Renderers As New List(Of RenderArray.RenderText)
-        For Count As Integer = 0 To ParenPos.Count - 1
-            If Count = ParenPos.Count - 1 Then
-                Renderers.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, Str.Substring(Base)) With {.Clr = Cols(ParenPos(Count))})
-            ElseIf ParenPos(Count) <> ParenPos(Count + 1) Then
-                Renderers.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, Str.Substring(Base, Count - Base + 1)) With {.Clr = Cols(ParenPos(Count))})
-                Base = Count + 1
-                Renderers.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, CStr(ParenPos(Count))) With {.Clr = Color.DarkRed, .Font = "Courier New"})
-            End If
-        Next
-        Return Renderers.ToArray()
-    End Function
     Public Shared Function GetListRenderedText(ByVal Item As PageLoader.TextItem) As RenderArray
-        Return DocBuilder.GetListRenderedText(Arabic.DecodeTranslitSchemeType(), Arabic.DecodeTranslitScheme(), CInt(HttpContext.Current.Request.QueryString.Get("selection")), Item.Name, HttpContext.Current.Request.QueryString.Get("qurantranslation"))
+        Return GetListRenderedText(ArabicWeb.DecodeTranslitSchemeType(), ArabicWeb.DecodeTranslitScheme(), CInt(HttpContext.Current.Request.QueryString.Get("selection")), Item.Name, HttpContext.Current.Request.QueryString.Get("qurantranslation"))
     End Function
     Public Shared Function GetRenderedText(ByVal Item As PageLoader.TextItem) As RenderArray
-        Return DocBuilder.NormalTextFromReferences(Arabic.DecodeTranslitSchemeType(), Arabic.DecodeTranslitScheme(), Item.Name, HttpContext.Current.Request.Params("docedit"), HttpContext.Current.Request.Params("qurantranslation"))
+        Return GetRenderedText(ArabicWeb.DecodeTranslitSchemeType(), ArabicWeb.DecodeTranslitScheme(), Item.Name, HttpContext.Current.Request.Params("docedit"), HttpContext.Current.Request.Params("qurantranslation"))
     End Function
     Public Shared Function GetMetadataRules(ID As String) As Array()
         Dim Output(CachedData.IslamData.MetaRules.Length + 2) As Array
@@ -996,7 +816,7 @@ Public Class DocBuilderWeb
         Output(1) = New String() {String.Empty, String.Empty, String.Empty}
         Output(2) = New String() {Utility.LoadResourceString("IslamInfo_Name"), Utility.LoadResourceString("IslamInfo_Translation"), Utility.LoadResourceString("IslamInfo_Translation")}
         For Count = 0 To TanzilReader.GetMetaRuleSet("UthmaniQuran").Rules.Length - 1
-            Output(3 + Count) = New Object() {TanzilReader.GetMetaRuleSet("UthmaniQuran").Rules(Count).Name, New RenderArray.RenderItem() {New RenderArray.RenderItem(RenderArray.RenderTypes.eText, ColorizeRegExGroups(GetRegExText(TanzilReader.GetMetaRuleSet("UthmaniQuran").Rules(Count).Match), False))}, New RenderArray.RenderItem() {New RenderArray.RenderItem(RenderArray.RenderTypes.eText, ColorizeList(New List(Of String)(Linq.Enumerable.Select(TanzilReader.GetMetaRuleSet("UthmaniQuran").Rules(Count).Evaluator, Function(Str As String) GetRegExText(Str))).ToArray(), False))}}
+            Output(3 + Count) = New Object() {TanzilReader.GetMetaRuleSet("UthmaniQuran").Rules(Count).Name, New RenderArray.RenderItem() {New RenderArray.RenderItem(RenderArray.RenderTypes.eText, DocBuilder.ColorizeRegExGroups(DocBuilder.GetRegExText(TanzilReader.GetMetaRuleSet("UthmaniQuran").Rules(Count).Match), False))}, New RenderArray.RenderItem() {New RenderArray.RenderItem(RenderArray.RenderTypes.eText, DocBuilder.ColorizeList(New List(Of String)(Linq.Enumerable.Select(TanzilReader.GetMetaRuleSet("UthmaniQuran").Rules(Count).Evaluator, Function(Str As String) DocBuilder.GetRegExText(Str))).ToArray(), False))}}
         Next
         Return RenderArrayWeb.MakeTableJSFunctions(Output, ID)
     End Function
@@ -1006,17 +826,17 @@ Public Class DocBuilderWeb
         Output(1) = New String() {String.Empty, String.Empty, String.Empty}
         Output(2) = New String() {Utility.LoadResourceString("IslamInfo_Name"), Utility.LoadResourceString("IslamInfo_Translation"), Utility.LoadResourceString("IslamInfo_Translation")}
         For Count = 0 To Data.Length - 1
-            Output(3 + Count) = New Object() {Data(Count).Name, New RenderArray.RenderItem() {New RenderArray.RenderItem(RenderArray.RenderTypes.eText, ColorizeRegExGroups(GetRegExText(Data(Count).Match), False))}, New RenderArray.RenderItem() {New RenderArray.RenderItem(RenderArray.RenderTypes.eText, ColorizeRegExGroups(GetRegExText(Data(Count).Evaluator), True))}}
+            Output(3 + Count) = New Object() {Data(Count).Name, New RenderArray.RenderItem() {New RenderArray.RenderItem(RenderArray.RenderTypes.eText, DocBuilder.ColorizeRegExGroups(DocBuilder.GetRegExText(Data(Count).Match), False))}, New RenderArray.RenderItem() {New RenderArray.RenderItem(RenderArray.RenderTypes.eText, DocBuilder.ColorizeRegExGroups(DocBuilder.GetRegExText(Data(Count).Evaluator), True))}}
         Next
         Return RenderArrayWeb.MakeTableJSFunctions(Output, ID)
     End Function
     Public Shared Function GetRenderedHelpText(ByVal Item As PageLoader.TextItem) As RenderArray
-        Return DocBuilder.GetRenderedHelpText(Arabic.DecodeTranslitSchemeType(), Arabic.DecodeTranslitScheme(), Item.Name)
+        Return DocBuilderWeb.GetRenderedHelpText(ArabicWeb.DecodeTranslitSchemeType(), ArabicWeb.DecodeTranslitScheme(), Item.Name)
     End Function
     Public Shared Function GetRenderedHelpText(SchemeType As ArabicData.TranslitScheme, Scheme As String, Name As String) As RenderArray
         Dim Renderer As New RenderArray(Name)
-        Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eList, Arabic.GetTranslitSchemeMetadata("0"))}))
-        Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eList, TanzilReader.GetTranslationMetadata("1"))}))
+        Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eList, ArabicWeb.GetTranslitSchemeMetadata("0"))}))
+        Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eList, TanzilReaderWeb.GetTranslationMetadata("1"))}))
         Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eList, GetMetadataRules("2"))}))
         Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eList, GetRuleSetRules("3", CachedData.RuleTranslations("RomanizationRules")))}))
         Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eList, GetRuleSetRules("4", CachedData.RuleTranslations("ColoringSpelledOutRules")))}))
@@ -1027,6 +847,245 @@ Public Class DocBuilderWeb
         Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eList, GetRuleSetRules("9", CachedData.RuleTranslations("SimpleScript")))}))
         Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eList, GetRuleSetRules("10", CachedData.RuleTranslations("SimpleCleanScript")))}))
         Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eList, GetRuleSetRules("11", CachedData.RuleTranslations("SimpleMinimalScript")))}))
+        Return Renderer
+    End Function
+    Public Shared Function TextFromReferences(ID As String, Strings As String, SchemeType As ArabicData.TranslitScheme, Scheme As String, TranslationIndex As Integer) As RenderArray
+        Dim _Options As String() = Strings.Split(";"c)
+        Dim Count As Integer = 0
+        While _Options(Count).EndsWith("&leftbrace") Or _Options(Count).EndsWith("&rightbrace") Or _Options(Count).EndsWith("&comma") Or _Options(Count).EndsWith("&semicolon")
+            _Options(0) = _Options(0) + ";" + _Options(Count + 1)
+            Count += 1
+        End While
+        Strings = _Options(0)
+        Dim Options As New Dictionary(Of String, String())
+        For Count = 1 To _Options.Length - 1
+            Dim Vals As String() = _Options(Count).Split("="c)
+            Options(Vals(0)) = If(Vals.Length = 1, Nothing, Vals(1).Split(","c))
+        Next
+        If Options.ContainsKey("Translation") Then TranslationIndex = TanzilReader.GetTranslationIndex(Options("Translation")(0))
+        If Options.ContainsKey("TranslitStyle") Then
+            If (Options("TranslitStyle")(0) = "Literal") Then
+                SchemeType = ArabicData.TranslitScheme.Literal
+            ElseIf (Options("TranslitStyle")(0) = "RuleBased") Then
+                SchemeType = ArabicData.TranslitScheme.RuleBased
+            ElseIf (Options("TranslitStyle")(0) = "LearningMode") Then
+                SchemeType = ArabicData.TranslitScheme.LearningMode
+            Else
+                SchemeType = ArabicData.TranslitScheme.None
+            End If
+        End If
+        If Options.ContainsKey("TranslitScheme") Then Scheme = Options("TranslitScheme")(0)
+        Dim Renderer As New RenderArray(String.Empty)
+        If Strings = Nothing Then Return Renderer
+        'text before and after reference matches needs rendering
+        'hadith reference matching {name,book/hadith}
+        If TanzilReader.IsQuranTextReference(Strings) Then
+            Renderer.Items.AddRange(TanzilReader.QuranTextFromReference(Strings, SchemeType, Scheme, TranslationIndex, Options.ContainsKey("W4W") Or Options.ContainsKey("W4WNum"), Options.ContainsKey("W4WNum"), Options.ContainsKey("NoArabic"), Options.ContainsKey("Header"), Options.ContainsKey("NoRef"), Options.ContainsKey("Colorize"), Options.ContainsKey("Verses")).Items)
+        ElseIf Strings.StartsWith("search:") Then
+            Dim SelArr As String() = Strings.Replace("search:", String.Empty).Split(","c)
+            Renderer.Items.AddRange(TanzilReader.QuranTextFromSearch(SelArr(0).Replace("&leftbrace;", "{").Replace("&rightbrace;", "}").Replace("&comma;", ",").Replace("&semicolon;", ";"), SchemeType, Scheme, TranslationIndex, Options.ContainsKey("W4W") Or Options.ContainsKey("W4WNum"), Options.ContainsKey("W4WNum"), Options.ContainsKey("NoArabic"), Options.ContainsKey("Header"), Options.ContainsKey("NoRef"), Options.ContainsKey("Colorize"), Options.ContainsKey("Verses")).Items)
+        ElseIf Strings.StartsWith("symbol:") Then
+            Dim Symbols As New List(Of ArabicData.ArabicSymbol)
+            Dim SelArr As String() = Strings.Replace("symbol:", String.Empty).Split(","c)
+            For SubCount = 0 To ArabicData.ArabicLetters.Length - 1
+                If Array.IndexOf(SelArr, ArabicData.ToCamelCase(ArabicData.ArabicLetters(SubCount).UnicodeName).Replace("ArabicLetter", String.Empty).Replace("Arabic", String.Empty)) <> -1 Then
+                    Symbols.Add(ArabicData.ArabicLetters(SubCount))
+                End If
+            Next
+            Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eList, Arabic.SymbolDisplay(Symbols.ToArray(), SchemeType, Scheme, If(Options.ContainsKey("Cols"), Options("Cols"), Nothing)))}))
+        ElseIf Strings.StartsWith("personalpronoun:") Or Strings.StartsWith("proximaldemonstratives:") Or Strings.StartsWith("distaldemonstratives:") Then
+            Dim Words As IslamData.GrammarSet.GrammarNoun()
+            Dim SelArr As String()
+            If Strings.StartsWith("proximaldemonstratives") Then
+                Words = Arabic.GetCatNoun("proxdemo")
+                SelArr = Strings.Replace("proximaldemonstratives:", String.Empty).Split(","c)
+            ElseIf Strings.StartsWith("distaldemonstratives") Then
+                Words = Arabic.GetCatNoun("distdemo")
+                SelArr = Strings.Replace("distaldemonstratives:", String.Empty).Split(","c)
+            ElseIf Strings.StartsWith("personalpronoun:") Then
+                Words = Arabic.GetCatNoun("perspro")
+                SelArr = Strings.Replace("personalpronoun:", String.Empty).Split(","c)
+            Else
+                Words = Nothing
+                SelArr = Nothing
+            End If
+            Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eList, ArabicWeb.DisplayPronoun(Array.FindAll(Words, Function(Word As IslamData.GrammarSet.GrammarNoun) Array.IndexOf(SelArr, Word.TranslationID) <> -1), ID, True, SchemeType, Scheme, If(Options.ContainsKey("Cols"), Options("Cols"), Nothing)))}))
+        ElseIf Strings.StartsWith("plurals:") Or Strings.StartsWith("possessivedeterminerpersonalpronoun:") Then
+            Dim Words As IslamData.GrammarSet.GrammarTransform()
+            Dim SelArr As String()
+            If Strings.StartsWith("plurals") Then
+                Words = Arabic.GetTransform("mp|fp|bp")
+                SelArr = Strings.Replace("plurals:", String.Empty).Split(","c)
+            ElseIf Strings.StartsWith("possessivedeterminerpersonalpronoun") Then
+                Words = Arabic.GetTransform("posspron")
+                SelArr = Strings.Replace("possessivedeterminerpersonalpronoun:", String.Empty).Split(","c)
+            Else
+                Words = Nothing
+                SelArr = Nothing
+            End If
+            If Not Words Is Nothing Then Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eList, ArabicWeb.DisplayTransform(String.Empty, Array.FindAll(Words, Function(Word As IslamData.GrammarSet.GrammarTransform) Array.IndexOf(SelArr, Word.TranslationID) <> -1), ID, True, True, SchemeType, Scheme, If(Options.ContainsKey("Cols"), Options("Cols"), Nothing)))}))
+        ElseIf Strings.StartsWith("particle:") Then
+            Dim SelArr As String() = Strings.Replace("particle:", String.Empty).Split(","c)
+            Dim Words As New List(Of IslamData.GrammarSet.GrammarParticle)
+            For Count = 0 To SelArr.Length - 1
+                Words.AddRange(Arabic.GetParticles(SelArr(Count)))
+            Next
+            Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eList, ArabicWeb.DisplayParticle(Words.ToArray(), ID, SchemeType, Scheme, If(Options.ContainsKey("Cols"), Options("Cols"), Nothing)))}))
+        ElseIf Strings.StartsWith("noun:") Then
+            Dim SelArr As String() = Strings.Replace("noun:", String.Empty).Split(","c)
+            Dim Words As New List(Of IslamData.GrammarSet.GrammarNoun)
+            For Count = 0 To SelArr.Length - 1
+                Words.AddRange(Arabic.GetCatNoun(SelArr(Count)))
+            Next
+            Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eList, ArabicWeb.NounDisplay(Words.ToArray(), ID, SchemeType, Scheme, If(Options.ContainsKey("Cols"), Options("Cols"), Nothing)))}))
+        ElseIf Strings.StartsWith("verb:") Then
+            Dim SelArr As String() = Strings.Replace("verb:", String.Empty).Split(","c)
+            Dim Words As New List(Of IslamData.GrammarSet.GrammarVerb)
+            For Count = 0 To SelArr.Length - 1
+                Words.AddRange(Arabic.GetVerb(SelArr(Count)))
+            Next
+            Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eList, ArabicWeb.VerbDisplay(Words.ToArray(), ID, SchemeType, Scheme, If(Options.ContainsKey("Cols"), Options("Cols"), Nothing)))}))
+        ElseIf Strings.StartsWith("transform:") Then
+            Dim SelArr As String() = Strings.Replace("transform:", String.Empty).Split(","c)
+            Dim Words As New List(Of IslamData.GrammarSet.GrammarTransform)
+            For Count = 0 To SelArr.Length - 1
+                Words.AddRange(Arabic.GetTransform(SelArr(Count)))
+            Next
+            Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eList, ArabicWeb.DisplayTransform(String.Empty, Words.ToArray(), ID, False, False, SchemeType, Scheme, If(Options.ContainsKey("Cols"), Options("Cols"), Nothing)))}))
+        ElseIf Strings.StartsWith("word:") Then
+            Dim Words As IslamData.GrammarSet.GrammarWord() = Arabic.GetCatWords(Strings.Replace("word:", String.Empty).Split(","c))
+            Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eList, ArabicWeb.DisplayWord(Words, ID, SchemeType, Scheme))}))
+        ElseIf Strings.StartsWith("phrase:") Then
+            Dim SelArr As String() = Strings.Replace("phrase:", String.Empty).Split(","c)
+            Dim PhraseCats As IslamData.Phrase() = Phrases.GetPhraseCats(SelArr)
+            For Count = 0 To PhraseCats.Length - 1
+                Renderer.Items.AddRange(PhrasesWeb.DoGetRenderedPhraseText(SchemeType, Scheme, PhraseCats(Count), TranslationIndex))
+            Next
+        ElseIf Strings.StartsWith("list:") Then
+            Dim SelArr As String() = Strings.Replace("list:", String.Empty).Split(","c)
+            Dim ListCats As IslamData.ListCategory.Word() = DocBuilder.GetListCats(SelArr)
+            For Count = 0 To ListCats.Length - 1
+                Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eHeaderCenter, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, Utility.LoadResourceString("IslamInfo_" + ListCats(Count).TranslationID))}))
+                Renderer.Items.AddRange(BuckwalterTextFromReferences(ID, SchemeType, Scheme, ListCats(Count).Text, String.Empty, TranslationIndex).Items)
+            Next
+        ElseIf DocBuilder.Abbrevs.ContainsKey(Strings) Then
+            Dim AbbrevWord As IslamData.AbbrevWord = DocBuilder.Abbrevs(Strings)
+            Dim PhraseCat As Nullable(Of IslamData.Phrase) = Phrases.GetPhraseCat(AbbrevWord.TranslationID)
+            Dim GrammarWord As Nullable(Of IslamData.GrammarSet.GrammarWord) = Arabic.GetCatWord(AbbrevWord.TranslationID)
+            Dim Items As New List(Of RenderArray.RenderItem)
+            If AbbrevWord.Font <> String.Empty Then
+                If Options.ContainsKey("Char") Then Options("Char") = New List(Of String)(Linq.Enumerable.Select(Options("Char"), Function(Str As String) Char.ConvertFromUtf32(Integer.Parse(Str, Globalization.NumberStyles.HexNumber)))).ToArray()
+                If Options.Count = 0 Then Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTag, AbbrevWord.TranslationID + "|" + AbbrevWord.Text)}))
+                For Each Str As String In AbbrevWord.Font.Split("|"c)
+                    Dim Font As String = String.Empty
+                    If Str.Contains(";") Then
+                        Font = Str.Split(";"c)(0)
+                        Str = Str.Split(";"c)(1)
+                    End If
+                    If Not Options.ContainsKey("Font") OrElse Array.IndexOf(Options("Font"), Font) <> -1 Then
+                        For Each SubStr As String In Str.Split(","c)
+                            If Not Options.ContainsKey("Char") OrElse Array.IndexOf(Options("Char"), String.Join(String.Empty, Linq.Enumerable.Select(SubStr.Split("+"c), Function(S As String) Char.ConvertFromUtf32(Integer.Parse(S, Globalization.NumberStyles.HexNumber))))) <> -1 Then
+                                Dim RendText As New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, String.Join(String.Empty, Linq.Enumerable.Select(SubStr.Split("+"c), Function(Split As String) Char.ConvertFromUtf32(Integer.Parse(Split, System.Globalization.NumberStyles.HexNumber)))))
+                                RendText.Font = Font
+                                Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {RendText}))
+                            End If
+                        Next
+                    End If
+                Next
+            End If
+            If PhraseCat.HasValue Then
+                Renderer.Items.AddRange(PhrasesWeb.DoGetRenderedPhraseText(SchemeType, Scheme, PhraseCat.Value, TranslationIndex))
+                Renderer.Items.AddRange(Items)
+            End If
+            If GrammarWord.HasValue Then
+                If AbbrevWord.Font <> String.Empty Then
+                    Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.TransliterateFromBuckwalter(GrammarWord.Value.Text)), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, Arabic.TransliterateToScheme(Arabic.TransliterateFromBuckwalter(GrammarWord.Value.Text), SchemeType, Scheme, CachedData.RuleMetas("Normal")).Trim()), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, Utility.LoadResourceString("IslamInfo_" + GrammarWord.Value.TranslationID)), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eNested, Items)}))
+                Else
+                    Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.TransliterateFromBuckwalter(GrammarWord.Value.Text)), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, Arabic.TransliterateToScheme(Arabic.TransliterateFromBuckwalter(GrammarWord.Value.Text), SchemeType, Scheme, CachedData.RuleMetas("Normal")).Trim()), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, Utility.LoadResourceString("IslamInfo_" + GrammarWord.Value.TranslationID))}))
+                End If
+            End If
+        ElseIf Strings.StartsWith("reference:") Then
+            Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eHeaderCenter, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, "(" + Strings.Replace("reference:", String.Empty) + ")")}))
+        ElseIf Strings.StartsWith("arabic:") Then
+            Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.TransliterateFromBuckwalter(Strings.Replace("arabic:", String.Empty).Replace("&leftbrace;", "{").Replace("&rightbrace;", "}").Replace("&comma;", ",").Replace("&semicolon;", ";")))}))
+        ElseIf Strings.StartsWith("text:") Then
+            Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, Strings.Replace("text:", String.Empty))}))
+        Else
+        End If
+        Return Renderer
+    End Function
+    Public Shared Function BuckwalterTextFromReferences(ID As String, SchemeType As ArabicData.TranslitScheme, Scheme As String, Strings As String, TranslationID As String, TranslationIndex As Integer) As RenderArray
+        Dim Renderer As New RenderArray(ID)
+        If Strings = Nothing Then Return Renderer
+        Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(Strings, "(.*?)(?:(\\\{)(.*?)(\\\})|$)", System.Text.RegularExpressions.RegexOptions.Singleline)
+        Dim EnglishByWord As String() = If(TranslationID = Nothing, {}, Utility.LoadResourceString("IslamInfo_" + TranslationID + "WordByWord").Split("|"c))
+        For MatchCount As Integer = 0 To Matches.Count - 1
+            If Matches(MatchCount).Length <> 0 Then
+                If Matches(MatchCount).Groups(1).Length <> 0 Then
+                    Dim ArabicText As String() = Matches(MatchCount).Groups(1).Value.Split(" "c)
+                    If ArabicText.Length > 1 Then 'And EnglishByWord.Length = ArabicText.Length Then
+                        Dim Transliteration As String() = Arabic.TransliterateToScheme(Arabic.TransliterateFromBuckwalter(Matches(MatchCount).Groups(1).Value), SchemeType, Scheme, CachedData.RuleMetas("Normal")).Split(" "c)
+                        'Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eHeaderCenter, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, Utility.LoadResourceString("IslamInfo_" + TranslationID))}))
+                        Dim Items As New Collections.Generic.List(Of RenderArray.RenderItem)
+                        For WordCount As Integer = 0 To EnglishByWord.Length - 1
+                            Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.TransliterateFromBuckwalter(If(WordCount >= ArabicText.Length, String.Empty, ArabicText(WordCount)))), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, If(WordCount >= Transliteration.Length, String.Empty, Transliteration(WordCount))), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, EnglishByWord(WordCount))}))
+                        Next
+                        Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eNested, Items), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.TransliterateFromBuckwalter(Matches(MatchCount).Groups(1).Value)), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, Arabic.TransliterateToScheme(Arabic.TransliterateFromBuckwalter(Matches(MatchCount).Groups(1).Value), SchemeType, Scheme, CachedData.RuleMetas("Normal"))), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, Utility.LoadResourceString("IslamInfo_" + TranslationID))}))
+                    Else
+                        Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.TransliterateFromBuckwalter(Matches(MatchCount).Groups(1).Value)), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, Arabic.TransliterateToScheme(Arabic.TransliterateFromBuckwalter(Matches(MatchCount).Groups(1).Value), SchemeType, Scheme, CachedData.RuleMetas("Normal"))), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, Utility.LoadResourceString("IslamInfo_" + TranslationID))}))
+                    End If
+                End If
+                If Matches(MatchCount).Groups(3).Length <> 0 Then
+                    Renderer.Items.AddRange(TextFromReferences(ID, Matches(MatchCount).Groups(3).Value, SchemeType, Scheme, TranslationIndex).Items)
+                End If
+            End If
+        Next
+        Return Renderer
+    End Function
+    Public Shared Function NormalTextFromReferences(ID As String, Strings As String, SchemeType As ArabicData.TranslitScheme, Scheme As String, TranslationIndex As Integer) As RenderArray
+        Dim Renderer As New RenderArray(ID)
+        If Strings = Nothing Then Return Renderer
+        Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(Strings, "(.*?)(?:(\{)(.*?)(\})|$)", System.Text.RegularExpressions.RegexOptions.Singleline)
+        For Count As Integer = 0 To Matches.Count - 1
+            If Matches(Count).Length <> 0 Then
+                If Matches(Count).Groups(1).Length <> 0 Then
+                    Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.ePassThru, Matches(Count).Groups(1).Value)}))
+                End If
+                If Matches(Count).Groups(3).Length <> 0 Then
+                    Renderer.Items.AddRange(TextFromReferences(ID + CStr(Renderer.Items.Count), Matches(Count).Groups(3).Value, SchemeType, Scheme, TranslationIndex).Items)
+                End If
+            End If
+        Next
+        Return Renderer
+    End Function
+    Public Shared Function GetListRenderedText(SchemeType As ArabicData.TranslitScheme, Scheme As String, Count As Integer, Name As String, QuranTranslation As String) As RenderArray
+        If Count = -1 Then Count = 0
+        Dim Renderer As New RenderArray(Name)
+        If Not CachedData.IslamData.Lists(Count).Words Is Nothing Then
+            For SubCount = 0 To CachedData.IslamData.Lists(Count).Words.Length - 1
+                Renderer.Items.AddRange(BuckwalterTextFromReferences(Name, SchemeType, Scheme, CachedData.IslamData.Lists(Count).Words(SubCount).Text, String.Empty, TanzilReader.GetTranslationIndex(QuranTranslation)).Items)
+            Next
+        End If
+        Return Renderer
+    End Function
+    Public Shared Function GetRenderedText(SchemeType As ArabicData.TranslitScheme, Scheme As String, Name As String, DocEdit As String, QuranTranslation As String) As RenderArray
+        Return NormalTextFromReferences(Name, DocEdit, SchemeType, Scheme, TanzilReader.GetTranslationIndex(QuranTranslation))
+    End Function
+End Class
+Public Class PhrasesWeb
+    Public Shared Function GetRenderedPhraseText(ByVal Item As PageLoader.TextItem) As RenderArray
+        Dim SchemeType As ArabicData.TranslitScheme = ArabicWeb.DecodeTranslitSchemeType()
+        Dim Scheme As String = ArabicWeb.DecodeTranslitScheme()
+        Return DoGetRenderedCatText(Item.Name, SchemeType, Scheme, CachedData.IslamData.Phrases, TanzilReader.GetTranslationIndex(HttpContext.Current.Request.QueryString.Get("qurantranslation")))
+    End Function
+    Public Shared Function DoGetRenderedPhraseText(SchemeType As ArabicData.TranslitScheme, Scheme As String, Verse As IslamData.Phrase, TranslationIndex As Integer) As List(Of RenderArray.RenderItem)
+        Return DocBuilderWeb.BuckwalterTextFromReferences(String.Empty, SchemeType, Scheme, Verse.Text, Verse.TranslationID, TranslationIndex).Items
+    End Function
+    Public Shared Function DoGetRenderedCatText(ID As String, SchemeType As ArabicData.TranslitScheme, Scheme As String, Category As IslamData.Phrase(), TranslationIndex As Integer) As RenderArray
+        Dim Renderer As New RenderArray(ID)
+        For SubCount As Integer = 0 To Category.Length - 1
+            Renderer.Items.AddRange(DoGetRenderedPhraseText(SchemeType, Scheme, Category(SubCount), TranslationIndex))
+        Next
         Return Renderer
     End Function
 End Class
@@ -1102,7 +1161,7 @@ Public Class Quiz
     End Function
     Public Shared Function VerifyAnswer() As String()
         Dim JSList As New List(Of String) From {"javascript: verifyAnswer(this);", String.Empty, _
-            Arabic.GetArabicSymbolJSArray(), Arabic.GetTranslitSchemeJSArray(), Arabic.FindLetterBySymbolJS, _
+            ArabicWeb.GetArabicSymbolJSArray(), ArabicWeb.GetTranslitSchemeJSArray(), ArabicWeb.FindLetterBySymbolJS, _
             "var arabicLets = " + UtilityWeb.MakeJSArray(CachedData.ArabicLetters, False) + ";", _
             "var arabicDiacriticsBefore = " + UtilityWeb.MakeJSArray(ArabicDiacriticsBefore, False) + ";", _
             "var arabicDiacriticsAfter = " + UtilityWeb.MakeJSArray(ArabicDiacriticsAfter, False) + ";", _
@@ -1113,16 +1172,9 @@ Public Class Quiz
             "function nextQuestion() { $('#count').text('Wrong: ' + qwrong + ' Right: ' + qright); var i = Math.floor(Math.random() * 4), quizSet = getQuizSet(), pos = quizSet.length, nidx = getUniqueRnd([], pos), aidx = []; aidx[0] = getUniqueRnd([nidx], pos); aidx[1] = getUniqueRnd([nidx, aidx[0]], pos); aidx[2] = getUniqueRnd([nidx, aidx[0], aidx[1]], pos); $('#quizquestion').text(getQA(quizSet, true, nidx)); $('#answer1').prop('value', getQA(quizSet, false, i === 0 ? nidx : aidx[0])); $('#answer2').prop('value', getQA(quizSet, false, i === 1 ? nidx : aidx[i > 1 ? 1 : 0])); $('#answer3').prop('value', getQA(quizSet, false, i === 2 ? nidx : aidx[i > 2 ? 2 : 1])); $('#answer4').prop('value', getQA(quizSet, false, i === 3 ? nidx : aidx[2])); }", _
             "function verifyAnswer(ctl) { $(ctl).prop('value') === ((parseInt($('#translitscheme').val(), 10) % 2) === 0 ? transliterateWithRules($('#quizquestion').text().trim(), parseInt($('#translitscheme').val(), 10) >= 2 ? Math.floor((parseInt($('#translitscheme').val(), 10) - 2) / 2) + 2 : 5, null, false) : doTransliterate($('#quizquestion').text().trim(), true, parseInt($('#translitscheme').val(), 10))) ? qright++ : qwrong++; nextQuestion(); }"}
         JSList.AddRange(ArabicDataWeb.GetUniCats())
-        JSList.AddRange(Arabic.PlainTransliterateGenJS)
-        JSList.AddRange(Arabic.TransliterateGenJS)
+        JSList.AddRange(ArabicWeb.PlainTransliterateGenJS)
+        JSList.AddRange(ArabicWeb.TransliterateGenJS)
         Return JSList.ToArray()
-    End Function
-End Class
-Public Class PhrasesWeb
-    Public Shared Function GetRenderedPhraseText(ByVal Item As PageLoader.TextItem) As RenderArray
-        Dim SchemeType As ArabicData.TranslitScheme = ArabicWeb.DecodeTranslitSchemeType()
-        Dim Scheme As String = ArabicWeb.DecodeTranslitScheme()
-        Return Phrases.DoGetRenderedCatText(Item.Name, SchemeType, Scheme, CachedData.IslamData.Phrases, TanzilReader.GetTranslationIndex(HttpContext.Current.Request.QueryString.Get("qurantranslation")))
     End Function
 End Class
 Public Class TanzilReaderWeb
@@ -1137,18 +1189,18 @@ Public Class TanzilReaderWeb
         Return RenderArrayWeb.MakeTableJSFunctions(Output, ID)
     End Function
     Public Shared Function GetDivisionChangeJS() As String()
-        Dim JSArrays As String = Utility.MakeJSArray(New String() {Utility.MakeJSArray(New List(Of String)(Linq.Enumerable.Select(TanzilReader.GetChapterNames(), Function(Convert As Array) Utility.MakeJSArray(New String() {CStr(CType(Convert, Object())(0)), CStr(CType(Convert, Object())(1))}))).ToArray(), True), _
-            Utility.MakeJSArray(New List(Of String)(Linq.Enumerable.Select(TanzilReader.GetChapterNamesByRevelationOrder(), Function(Convert As Array) Utility.MakeJSArray(New String() {CStr(CType(Convert, Object())(0)), CStr(CType(Convert, Object())(1))}))).ToArray(), True), _
-            Utility.MakeJSArray(New List(Of String)(Linq.Enumerable.Select(TanzilReader.GetPartNames(), Function(Convert As Array) Utility.MakeJSArray(New String() {CStr(CType(Convert, Object())(0)), CStr(CType(Convert, Object())(1))}))).ToArray(), True), _
-            Utility.MakeJSArray(New List(Of String)(Linq.Enumerable.Select(TanzilReader.GetGroupNames(), Function(Convert As Array) Utility.MakeJSArray(New String() {CStr(CType(Convert, Object())(0)), CStr(CType(Convert, Object())(1))}))).ToArray(), True), _
-            Utility.MakeJSArray(New List(Of String)(Linq.Enumerable.Select(TanzilReader.GetStationNames(), Function(Convert As Array) Utility.MakeJSArray(New String() {CStr(CType(Convert, Object())(0)), CStr(CType(Convert, Object())(1))}))).ToArray(), True), _
-            Utility.MakeJSArray(New List(Of String)(Linq.Enumerable.Select(TanzilReader.GetSectionNames(), Function(Convert As Array) Utility.MakeJSArray(New String() {CStr(CType(Convert, Object())(0)), CStr(CType(Convert, Object())(1))}))).ToArray(), True), _
-            Utility.MakeJSArray(New List(Of String)(Linq.Enumerable.Select(TanzilReader.GetPageNames(), Function(Convert As Array) Utility.MakeJSArray(New String() {CStr(CType(Convert, Object())(0)), CStr(CType(Convert, Object())(1))}))).ToArray(), True), _
-            Utility.MakeJSArray(New List(Of String)(Linq.Enumerable.Select(TanzilReader.GetSajdaNames(), Function(Convert As Array) Utility.MakeJSArray(New String() {CStr(CType(Convert, Object())(0)), CStr(CType(Convert, Object())(1))}))).ToArray(), True), _
-            Utility.MakeJSArray(New List(Of String)(Linq.Enumerable.Select(TanzilReader.GetImportantNames(), Function(Convert As Array) Utility.MakeJSArray(New String() {CStr(CType(Convert, Object())(0)), CStr(CType(Convert, Object())(1))}))).ToArray(), True), _
-            Utility.MakeJSArray(New List(Of String)(Linq.Enumerable.Select(Arabic.GetRecitationSymbols(), Function(Convert As Array) Utility.MakeJSArray(New String() {CStr(CType(Convert, Object())(0)), CStr(CType(Convert, Object())(1))}))).ToArray(), True), _
-            Utility.MakeJSArray(New List(Of String)(Linq.Enumerable.Select(GetRecitationRules(), Function(Convert As Array) Utility.MakeJSArray(New String() {CStr(CType(Convert, Object())(0)), CStr(CType(Convert, Object())(1))}))).ToArray(), True)}, True)
-        Return New String() {"javascript: changeQuranDivision(this.selectedIndex);", String.Empty, Utility.GetClearOptionListJS(), _
+        Dim JSArrays As String = UtilityWeb.MakeJSArray(New String() {UtilityWeb.MakeJSArray(New List(Of String)(Linq.Enumerable.Select(TanzilReaderWeb.GetChapterNames(), Function(Convert As Array) UtilityWeb.MakeJSArray(New String() {CStr(CType(Convert, Object())(0)), CStr(CType(Convert, Object())(1))}))).ToArray(), True), _
+            UtilityWeb.MakeJSArray(New List(Of String)(Linq.Enumerable.Select(TanzilReaderWeb.GetChapterNamesByRevelationOrder(), Function(Convert As Array) UtilityWeb.MakeJSArray(New String() {CStr(CType(Convert, Object())(0)), CStr(CType(Convert, Object())(1))}))).ToArray(), True), _
+            UtilityWeb.MakeJSArray(New List(Of String)(Linq.Enumerable.Select(TanzilReader.GetPartNames(), Function(Convert As Array) UtilityWeb.MakeJSArray(New String() {CStr(CType(Convert, Object())(0)), CStr(CType(Convert, Object())(1))}))).ToArray(), True), _
+            UtilityWeb.MakeJSArray(New List(Of String)(Linq.Enumerable.Select(TanzilReader.GetGroupNames(), Function(Convert As Array) UtilityWeb.MakeJSArray(New String() {CStr(CType(Convert, Object())(0)), CStr(CType(Convert, Object())(1))}))).ToArray(), True), _
+            UtilityWeb.MakeJSArray(New List(Of String)(Linq.Enumerable.Select(TanzilReader.GetStationNames(), Function(Convert As Array) UtilityWeb.MakeJSArray(New String() {CStr(CType(Convert, Object())(0)), CStr(CType(Convert, Object())(1))}))).ToArray(), True), _
+            UtilityWeb.MakeJSArray(New List(Of String)(Linq.Enumerable.Select(TanzilReader.GetSectionNames(), Function(Convert As Array) UtilityWeb.MakeJSArray(New String() {CStr(CType(Convert, Object())(0)), CStr(CType(Convert, Object())(1))}))).ToArray(), True), _
+            UtilityWeb.MakeJSArray(New List(Of String)(Linq.Enumerable.Select(TanzilReader.GetPageNames(), Function(Convert As Array) UtilityWeb.MakeJSArray(New String() {CStr(CType(Convert, Object())(0)), CStr(CType(Convert, Object())(1))}))).ToArray(), True), _
+            UtilityWeb.MakeJSArray(New List(Of String)(Linq.Enumerable.Select(TanzilReader.GetSajdaNames(), Function(Convert As Array) UtilityWeb.MakeJSArray(New String() {CStr(CType(Convert, Object())(0)), CStr(CType(Convert, Object())(1))}))).ToArray(), True), _
+            UtilityWeb.MakeJSArray(New List(Of String)(Linq.Enumerable.Select(TanzilReader.GetImportantNames(), Function(Convert As Array) UtilityWeb.MakeJSArray(New String() {CStr(CType(Convert, Object())(0)), CStr(CType(Convert, Object())(1))}))).ToArray(), True), _
+            UtilityWeb.MakeJSArray(New List(Of String)(Linq.Enumerable.Select(Arabic.GetRecitationSymbols(), Function(Convert As Array) UtilityWeb.MakeJSArray(New String() {CStr(CType(Convert, Object())(0)), CStr(CType(Convert, Object())(1))}))).ToArray(), True), _
+            UtilityWeb.MakeJSArray(New List(Of String)(Linq.Enumerable.Select(TanzilReader.GetRecitationRules(), Function(Convert As Array) UtilityWeb.MakeJSArray(New String() {CStr(CType(Convert, Object())(0)), CStr(CType(Convert, Object())(1))}))).ToArray(), True)}, True)
+        Return New String() {"javascript: changeQuranDivision(this.selectedIndex);", String.Empty, UtilityWeb.GetClearOptionListJS(), _
         "function changeQuranDivision(index) { var iCount; var qurandata = " + JSArrays + "; var eSelect = $('#quranselection').get(0); clearOptionList(eSelect); for (iCount = 0; iCount < qurandata[index].length; iCount++) { eSelect.options.add(new Option(qurandata[index][iCount][0], qurandata[index][iCount][1])); } }"}
     End Function
     Public Shared Function GetWordVerseModeJS() As String()
@@ -1163,9 +1215,199 @@ Public Class TanzilReaderWeb
         Return TanzilReader.GetQuranWordTotal(HttpContext.Current.Request.QueryString.Get("quranselection"))
     End Function
     Public Shared Function GetQuranWordFrequency(ByVal Item As PageLoader.TextItem) As Array()
-        Return TanzilReader.GetQuranWordFrequency(Arabic.DecodeTranslitSchemeType(), Arabic.DecodeTranslitScheme(), HttpContext.Current.Request.QueryString.Get("quranselection"))
+        Return TanzilReader.GetQuranWordFrequency(ArabicWeb.DecodeTranslitSchemeType(), ArabicWeb.DecodeTranslitScheme(), HttpContext.Current.Request.QueryString.Get("quranselection"))
     End Function
     Public Shared Function GetSelectionNames() As Array()
-        Return TanzilReader.GetSelectionNames(HttpContext.Current.Request.QueryString.Get("qurandivision"))
+        Return TanzilReader.GetSelectionNames(HttpContext.Current.Request.QueryString.Get("qurandivision"), ArabicWeb.DecodeTranslitSchemeType(), ArabicWeb.DecodeTranslitScheme())
     End Function
+    Public Shared Function GetRenderedQuranText(ByVal Item As PageLoader.TextItem) As RenderArray
+        Return TanzilReader.GetRenderedQuranText(ArabicWeb.DecodeTranslitSchemeType(), ArabicWeb.DecodeTranslitScheme(), Item.Name, HttpContext.Current.Request.QueryString.Get("qurandivision"), HttpContext.Current.Request.QueryString.Get("quranselection"), HttpContext.Current.Request.QueryString.Get("qurantranslation"), HttpContext.Current.Request.QueryString.Get("wordversemode"), HttpContext.Current.Request.QueryString.Get("colorcuemode"))
+    End Function
+    Public Shared Function GetChapterNames() As Array()
+        Return TanzilReader.GetChapterNames(ArabicWeb.DecodeTranslitSchemeType(), ArabicWeb.DecodeTranslitScheme())
+    End Function
+    Public Shared Function GetChapterNamesByRevelationOrder() As Array()
+        Return TanzilReader.GetChapterNamesByRevelationOrder(ArabicWeb.DecodeTranslitSchemeType(), ArabicWeb.DecodeTranslitScheme())
+    End Function
+End Class
+Public Class HadithReaderWeb
+    Public Shared Function GetCollectionChangeOnlyJS() As String
+        Dim JSArrays As String = UtilityWeb.MakeJSArray(New List(Of String)(Linq.Enumerable.Select(CachedData.IslamData.Collections, Function(Convert As IslamData.CollectionInfo) UtilityWeb.MakeJSArray(New List(Of String)(Linq.Enumerable.Select(Of IslamData.CollectionInfo.CollTranslationInfo, String)(Convert.Translations, Function(TranslateBlock As IslamData.CollectionInfo.CollTranslationInfo) UtilityWeb.MakeJSArray(New String() {Utility.LoadResourceString("lang_local" + Languages.GetLanguageInfoByCode(TranslateBlock.FileName.Substring(0, 2)).Code) + ": " + Utility.LoadResourceString("IslamInfo_" + TranslateBlock.Name), TranslateBlock.FileName}))).ToArray(), True))).ToArray(), True)
+        Return "function changeHadithCollection(index) { var iCount; var hadithdata = " + JSArrays + "; var eSelect = $('#hadithtranslation').get(0); clearOptionList(eSelect); for (iCount = 0; iCount < hadithdata[index].length; iCount++) { eSelect.options.add(new Option(hadithdata[index][iCount][0], hadithdata[index][iCount][1])); } }"
+    End Function
+    Public Shared Function GetCollectionChangeWithBooksJS() As String()
+        Dim JSArrays As String = UtilityWeb.MakeJSArray(New List(Of String)(Linq.Enumerable.Select(Of IslamData.CollectionInfo, String)(CachedData.IslamData.Collections, Function(Convert As IslamData.CollectionInfo) UtilityWeb.MakeJSArray(New List(Of String)(Linq.Enumerable.Select(Of Array, String)(HadithReader.GetBookNamesByCollection(HadithReader.GetCollectionIndex(Convert.Name)), Function(BookNames As Array) UtilityWeb.MakeJSArray(New String() {CStr(BookNames.GetValue(0)), CStr(BookNames.GetValue(1))}))).ToArray(), True))).ToArray(), True)
+        Return New String() {"javascript: changeHadithCollectionBooks(this.selectedIndex);", String.Empty, UtilityWeb.GetClearOptionListJS(), _
+                             GetCollectionChangeOnlyJS(), _
+        "function changeHadithCollectionBooks(index) { changeHadithCollection(index); var iCount; var hadithtdata = " + JSArrays + "; var eSelect = $('#hadithbook').get(0); clearOptionList(eSelect); for (iCount = 0; iCount < hadithtdata[index].length; iCount++) { eSelect.options.add(new Option(hadithtdata[index][iCount][0], hadithtdata[index][iCount][1])); } }"}
+    End Function
+    Public Shared Function GetCollectionChangeJS() As String()
+        Return New String() {"javascript: changeHadithCollection(this.selectedIndex);", String.Empty, UtilityWeb.GetClearOptionListJS(), _
+                             GetCollectionChangeOnlyJS()}
+    End Function
+    Public Shared Function GetCollectionXMLMetaDataDownload() As String()
+        Return New String() {UtilityWeb.GetPageString("Source&File=" + CachedData.IslamData.Collections(GetCurrentCollection()).FileName + "-data.xml"), Utility.LoadResourceString("IslamInfo_" + CachedData.IslamData.Collections(GetCurrentCollection()).Name) + " XML metadata"}
+    End Function
+    Public Shared Function GetCollectionXMLDownload() As String()
+        Return New String() {UtilityWeb.GetPageString("Source&File=" + CachedData.IslamData.Collections(GetCurrentCollection()).FileName + ".xml"), Utility.LoadResourceString("IslamInfo_" + CachedData.IslamData.Collections(GetCurrentCollection()).Name) + " XML source text"}
+    End Function
+    Public Shared Function GetTranslationXMLMetaDataDownload() As String()
+        Dim TranslationIndex As Integer = HadithReader.GetTranslationIndex(GetCurrentCollection(), HttpContext.Current.Request.QueryString.Get("hadithtranslation"))
+        If TranslationIndex = -1 Then Return New String() {}
+        Return New String() {UtilityWeb.GetPageString("Source&File=" + HadithReader.GetTranslationXMLFileName(GetCurrentCollection(), HttpContext.Current.Request.QueryString.Get("hadithtranslation")) + ".xml"), CachedData.IslamData.Collections(GetCurrentCollection()).Translations(TranslationIndex).Name + " XML metadata"}
+    End Function
+    Public Shared Function GetTranslationTextDownload() As String()
+        Dim TranslationIndex As Integer = HadithReader.GetTranslationIndex(GetCurrentCollection(), HttpContext.Current.Request.QueryString.Get("hadithtranslation"))
+        If TranslationIndex = -1 Then Return New String() {}
+        Return New String() {UtilityWeb.GetPageString("Source&File=" + HadithReader.GetTranslationFileName(GetCurrentCollection(), HttpContext.Current.Request.QueryString.Get("hadithtranslation")) + ".txt"), CachedData.IslamData.Collections(GetCurrentCollection()).Translations(TranslationIndex).Name + " raw source text"}
+    End Function
+    Public Shared Function GetCurrentCollection() As Integer
+        Dim Strings As String = HttpContext.Current.Request.QueryString.Get("hadithcollection")
+        If Not Strings Is Nothing Then Return CInt(Strings) Else Return 0
+    End Function
+    Public Shared Function GetCurrentBook() As Integer
+        Dim Strings As String = HttpContext.Current.Request.QueryString.Get("hadithbook")
+        If Not Strings Is Nothing Then Return CInt(Strings) Else Return 1
+    End Function
+    Public Shared Function GetBookNames() As Array()
+        Return HadithReader.GetBookNamesByCollection(GetCurrentCollection())
+    End Function
+    Public Shared Function GetTranslationList() As Array()
+        Return HadithReader.GetTranslationList(GetCurrentCollection())
+    End Function
+    Public Shared Function GetHadithMappingText(ByVal Item As PageLoader.TextItem) As Array()
+        Return HadithReader.GetHadithMappingText(GetCurrentCollection(), HttpContext.Current.Request.QueryString.Get("hadithtranslation"))
+    End Function
+    Public Shared Function GetRenderedText(ByVal Item As PageLoader.TextItem) As RenderArray
+        Dim SchemeType As ArabicData.TranslitScheme = ArabicWeb.DecodeTranslitSchemeType()
+        Dim Scheme As String = ArabicWeb.DecodeTranslitScheme()
+        Dim Translation As String = HttpContext.Current.Request.QueryString.Get("hadithtranslation")
+        Return HadithReader.DoGetRenderedText(Item.Name, SchemeType, Scheme, Translation, GetCurrentCollection(), GetCurrentBook(), New IslamSiteDatabaseLookup())
+    End Function
+End Class
+Class IslamSiteDatabaseLookup
+    Implements IslamSiteRankingData
+    Public Function GetHadithRankingData(Collection As String, Book As Integer, Hadith As Integer) As Integer() Implements IslamSiteRankingData.GetHadithRankingData
+        Return IslamSiteDatabase.GetHadithRankingData(Collection, Book, Hadith)
+    End Function
+    Public Function GetUserHadithRankingData(Collection As String, Book As Integer, Hadith As Integer) As Integer Implements IslamSiteRankingData.GetUserHadithRankingData
+        If Not UtilityWeb.IsLoggedIn() Then Return -1
+        Dim UserID As Integer = UtilityWeb.GetUserID()
+        Return IslamSiteDatabase.GetUserHadithRankingData(UserID, Collection, Book, Hadith)
+    End Function
+End Class
+
+Class IslamSiteDatabase
+    Public Shared Sub CreateDatabase()
+        Dim Connection As MySql.Data.MySqlClient.MySqlConnection = SiteDatabase.GetConnection()
+        If Connection Is Nothing Then Return
+        SiteDatabase.ExecuteNonQuery(Connection, "CREATE TABLE HadithRankings (UserID int NOT NULL, " + _
+        "Collection VARCHAR(254) NOT NULL, " + _
+        "BookIndex int, " + _
+        "HadithIndex int NOT NULL, " + _
+        "Ranking int NOT NULL)")
+        Connection.Close()
+    End Sub
+    Public Shared Sub RemoveDatabase()
+        Dim Connection As MySql.Data.MySqlClient.MySqlConnection = SiteDatabase.GetConnection()
+        If Connection Is Nothing Then Return
+        Dim Command As MySql.Data.MySqlClient.MySqlCommand = Connection.CreateCommand()
+        SiteDatabase.ExecuteNonQuery(Connection, "DROP TABLE HadithRankings")
+        Connection.Close()
+    End Sub
+    Public Shared Sub UpdateRankingData(ByVal UserID As Integer)
+        If GetUserHadithRankingData(UserID, HttpContext.Current.Request.Form.Get("Collection"), CInt(HttpContext.Current.Request.Form.Get("Book")), CInt(HttpContext.Current.Request.Form.Get("Hadith"))) = -1 Then
+            If CInt(HttpContext.Current.Request.Form.Get("Rating")) <> 0 Then
+                SetUserHadithRankingData(UserID, HttpContext.Current.Request.Form.Get("Collection"), CInt(HttpContext.Current.Request.Form.Get("Book")), CInt(HttpContext.Current.Request.Form.Get("Hadith")), CInt(HttpContext.Current.Request.Form.Get("Rating")))
+            End If
+        Else
+            If CInt(HttpContext.Current.Request.Form.Get("Rating")) <> 0 Then
+                UpdateUserHadithRankingData(UserID, HttpContext.Current.Request.Form.Get("Collection"), CInt(HttpContext.Current.Request.Form.Get("Book")), CInt(HttpContext.Current.Request.Form.Get("Hadith")), CInt(HttpContext.Current.Request.Form.Get("Rating")))
+            Else
+                RemoveUserHadithRankingData(UserID, HttpContext.Current.Request.Form.Get("Collection"), CInt(HttpContext.Current.Request.Form.Get("Book")), CInt(HttpContext.Current.Request.Form.Get("Hadith")))
+            End If
+        End If
+    End Sub
+    Public Shared Sub WriteRankingData()
+        Dim Data As Integer() = GetHadithRankingData(HttpContext.Current.Request.Form.Get("Collection"), CInt(HttpContext.Current.Request.Form.Get("Book")), CInt(HttpContext.Current.Request.Form.Get("Hadith")))
+        If Data(1) <> 0 Then HttpContext.Current.Response.Write("Average of " + CStr(Data(0) / Data(1) / 2) + " out of " + CStr(Data(1)) + " rankings")
+    End Sub
+    Public Shared Function GetHadithCollectionRankingData(ByVal Collection As String) As Double
+        Dim Connection As MySql.Data.MySqlClient.MySqlConnection = SiteDatabase.GetConnection()
+        If Connection Is Nothing Then Return -1
+        Dim Command As MySql.Data.MySqlClient.MySqlCommand = Connection.CreateCommand()
+        Command.CommandText = "SELECT AVG(Ranking) AS AvgRank FROM HadithRankings Collection=@Collection"
+        Command.Parameters.AddWithValue("@Collection", Collection)
+        Dim Reader As MySql.Data.MySqlClient.MySqlDataReader = Command.ExecuteReader()
+        If Reader.Read() AndAlso Not Reader.IsDBNull(0) Then
+            GetHadithCollectionRankingData = Reader.GetInt32("AvgRank")
+        Else
+            GetHadithCollectionRankingData = -1
+        End If
+        Reader.Close()
+        Connection.Close()
+    End Function
+    Public Shared Function GetHadithBookRankingData(ByVal Collection As String, ByVal Book As Integer) As Double
+        Dim Connection As MySql.Data.MySqlClient.MySqlConnection = SiteDatabase.GetConnection()
+        If Connection Is Nothing Then Return -1
+        Dim Command As MySql.Data.MySqlClient.MySqlCommand = Connection.CreateCommand()
+        Command.CommandText = "SELECT AVG(Ranking) AS AvgRank FROM HadithRankings WHERE Collection=@Collection AND BookIndex=" + CStr(Book)
+        Command.Parameters.AddWithValue("@Collection", Collection)
+        Dim Reader As MySql.Data.MySqlClient.MySqlDataReader = Command.ExecuteReader()
+        If Reader.Read() AndAlso Not Reader.IsDBNull(0) Then
+            GetHadithBookRankingData = Reader.GetInt32("AvgRank")
+        Else
+            GetHadithBookRankingData = -1
+        End If
+        Reader.Close()
+        Connection.Close()
+    End Function
+    Public Shared Function GetHadithRankingData(ByVal Collection As String, ByVal Book As Integer, ByVal Hadith As Integer) As Integer()
+        Dim Connection As MySql.Data.MySqlClient.MySqlConnection = SiteDatabase.GetConnection()
+        If Connection Is Nothing Then Return {0, 0}
+        Dim Command As MySql.Data.MySqlClient.MySqlCommand = Connection.CreateCommand()
+        Command.CommandText = "SELECT SUM(Ranking) AS SumRank, COUNT(Ranking) AS CountRank FROM HadithRankings WHERE Collection=@Collection AND BookIndex=" + CStr(Book) + " AND HadithIndex=" + CStr(Hadith)
+        Command.Parameters.AddWithValue("@Collection", Collection)
+        Dim Reader As MySql.Data.MySqlClient.MySqlDataReader = Command.ExecuteReader()
+        If Reader.Read() AndAlso Not Reader.IsDBNull(0) Then
+            GetHadithRankingData = {Reader.GetInt32("SumRank"), Reader.GetInt32("CountRank")}
+        Else
+            GetHadithRankingData = {0, 0}
+        End If
+        Reader.Close()
+        Connection.Close()
+    End Function
+    Public Shared Function GetUserHadithRankingData(UserID As Integer, ByVal Collection As String, ByVal Book As Integer, ByVal Hadith As Integer) As Integer
+        Dim Connection As MySql.Data.MySqlClient.MySqlConnection = SiteDatabase.GetConnection()
+        If Connection Is Nothing Then Return -1
+        Dim Command As MySql.Data.MySqlClient.MySqlCommand = Connection.CreateCommand()
+        Command.CommandText = "SELECT Ranking FROM HadithRankings WHERE UserID=" + CStr(UserID) + " AND Collection=@Collection AND BookIndex=" + CStr(Book) + " AND HadithIndex=" + CStr(Hadith)
+        Command.Parameters.AddWithValue("@Collection", Collection)
+        Dim Reader As MySql.Data.MySqlClient.MySqlDataReader = Command.ExecuteReader()
+        If Reader.Read() AndAlso Not Reader.IsDBNull(0) Then
+            GetUserHadithRankingData = Reader.GetInt32("Ranking")
+        Else
+            GetUserHadithRankingData = -1
+        End If
+        Reader.Close()
+        Connection.Close()
+    End Function
+    Public Shared Sub SetUserHadithRankingData(ByVal UserID As Integer, ByVal Collection As String, ByVal Book As Integer, ByVal Hadith As Integer, ByVal Rank As Integer)
+        Dim Connection As MySql.Data.MySqlClient.MySqlConnection = SiteDatabase.GetConnection()
+        If Connection Is Nothing Then Return
+        SiteDatabase.ExecuteNonQuery(Connection, "INSERT INTO HadithRankings (UserID, Collection, BookIndex, HadithIndex, Ranking) VALUES (" + CStr(UserID) + ", @Collection, " + CStr(Book) + ", " + CStr(Hadith) + ", " + CStr(Rank) + ")", New Generic.Dictionary(Of String, Object) From {{"@Collection", Collection}})
+        Connection.Close()
+    End Sub
+    Public Shared Sub UpdateUserHadithRankingData(ByVal UserID As Integer, ByVal Collection As String, ByVal Book As Integer, ByVal Hadith As Integer, ByVal Rank As Integer)
+        Dim Connection As MySql.Data.MySqlClient.MySqlConnection = SiteDatabase.GetConnection()
+        If Connection Is Nothing Then Return
+        SiteDatabase.ExecuteNonQuery(Connection, "UPDATE HadithRankings SET Ranking=" + CStr(Rank) + " WHERE UserID=" + CStr(UserID) + " AND Collection=@Collection AND BookIndex=" + CStr(Book) + " AND HadithIndex=" + CStr(Hadith), New Generic.Dictionary(Of String, Object) From {{"@Collection", Collection}})
+        Connection.Close()
+    End Sub
+    Public Shared Sub RemoveUserHadithRankingData(ByVal UserID As Integer, ByVal Collection As String, ByVal Book As Integer, ByVal Hadith As Integer)
+        Dim Connection As MySql.Data.MySqlClient.MySqlConnection = SiteDatabase.GetConnection()
+        If Connection Is Nothing Then Return
+        SiteDatabase.ExecuteNonQuery(Connection, "DELETE FROM HadithRankings WHERE UserID=" + CStr(UserID) + " AND Collection=@Collection AND BookIndex=" + CStr(Book) + " AND HadithIndex=" + CStr(Hadith), New Generic.Dictionary(Of String, Object) From {{"@Collection", Collection}})
+        Connection.Close()
+    End Sub
 End Class

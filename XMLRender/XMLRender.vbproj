@@ -81,6 +81,7 @@
     <Import Include="Windows.UI.Xaml.Media.Imaging" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Calendars.vb" />
     <Compile Include="XMLRender.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
   </ItemGroup>

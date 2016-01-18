@@ -388,14 +388,6 @@ Public Class UtilityWeb
     Public Shared Function ConvertSpaces(ByVal Text As String) As String
         Return Text.Replace("  ", "&nbsp; ")
     End Function
-    Public Shared Function GetDigitLength(ByVal Number As Integer) As Integer
-        If Number = 0 Then Return 1
-        Return CInt(Math.Floor(Math.Log10(Number))) + 1
-    End Function
-    Public Shared Function ZeroPad(ByVal PadString As String, ByVal ZeroCount As Integer) As String
-        Dim RetString As String = StrDup(ZeroCount, "0") + PadString
-        Return RetString.Substring(RetString.Length - ZeroCount)
-    End Function
     Public Class EMailValidator
         Dim invalid As Boolean
         Public Function IsValidEMail(ByVal strIn As String) As Boolean
@@ -421,18 +413,6 @@ Public Class UtilityWeb
                 invalid = True
             End Try
             Return match.Groups(1).Value + domainName
-        End Function
-    End Class
-    Class CompareNameValueArray
-        Implements Collections.IComparer
-        'Compares an array of structures with a String and Integer element
-        Public Function Compare(ByVal x As Object, ByVal y As Object) As Integer _
-            Implements Collections.IComparer.Compare
-            If CInt(CType(x, Array).GetValue(1)) = CInt(CType(y, Array).GetValue(1)) Then
-                Compare = 0
-            Else
-                Compare = CInt(If(CInt(CType(x, Array).GetValue(1)) > CInt(CType(y, Array).GetValue(1)), 1, -1))
-            End If
         End Function
     End Class
     Public Shared Function EscapeJS(Str As String) As String
@@ -581,49 +561,6 @@ Public Class UtilityWeb
                 End If
             End If
         Next
-    End Function
-    Public Class PrefixComparer
-        Implements Collections.IComparer
-        Public Function Compare(ByVal x As Object, ByVal y As Object) As Integer Implements System.Collections.IComparer.Compare
-            Dim StrLeft As String() = CStr(x).Substring(0, CInt(If(CStr(x).IndexOf(":") <> -1, CStr(x).IndexOf(":"), CStr(x).Length))).Split(New Char() {"."c})
-            Dim StrRight As String() = CStr(y).Substring(0, CInt(If(CStr(y).IndexOf(":") <> -1, CStr(y).IndexOf(":"), CStr(y).Length))).Split(New Char() {"."c})
-            If StrLeft.Length = 0 And StrRight.Length = 0 Then Return 0
-            If StrLeft.Length = 0 Then Return -1
-            If StrRight.Length = 0 Then Return 1
-            Dim Check As Integer = String.Compare(StrLeft(0), StrRight(0))
-            If Check <> 0 Then Return Check
-            If StrLeft.Length = 1 And StrRight.Length = 1 Then Return 0
-            If StrLeft.Length = 1 Then Return -1
-            If StrRight.Length = 1 Then Return 1
-            If StrLeft.Length = 2 And StrRight.Length = 2 Then Return String.Compare(StrLeft(1), StrRight(1))
-            If StrLeft.Length = 2 And StrRight.Length = 3 Then Return String.Compare(StrLeft(1), StrRight(2))
-            If StrLeft.Length = 3 And StrRight.Length = 2 Then Return String.Compare(StrLeft(2), StrRight(1))
-            Check = String.Compare(StrLeft(1), StrRight(1))
-            If Check <> 0 Then Return Check
-            Return String.Compare(StrLeft(2), StrRight(2))
-        End Function
-    End Class
-    Public Shared Function GetFileLinesByNumberPrefix(Strings() As String, ByVal Prefix As String) As String()
-        Dim Index As Integer = Array.BinarySearch(Strings, Prefix, New PrefixComparer)
-        If Index < 0 OrElse Index >= Strings.Length OrElse (New PrefixComparer).Compare(Prefix, Strings(Index)) <> 0 Then Return New String() {}
-        Dim StartIndex As Integer = Index - 1
-        While StartIndex >= 0 _
-            AndAlso (New PrefixComparer).Compare(Prefix, Strings(StartIndex)) = 0
-            StartIndex -= 1
-        End While
-        StartIndex += 1
-        Index += 1
-        While Index < Strings.Length AndAlso _
-            (New PrefixComparer).Compare(Prefix, Strings(Index)) = 0
-            Index += 1
-        End While
-        Index -= 1
-        Dim ReturnStrings(Index - StartIndex) As String
-        Array.ConstrainedCopy(Strings, StartIndex, ReturnStrings, 0, Index - StartIndex + 1)
-        For Index = 0 To ReturnStrings.Length - 1
-            ReturnStrings(Index) = ReturnStrings(Index).Substring(CInt(If(ReturnStrings(Index).IndexOf(":") <> -1, ReturnStrings(Index).IndexOf(":") + 2, 0)))
-        Next
-        Return ReturnStrings
     End Function
     Public Shared Function GetImageDimensions(ByVal Path As String) As Drawing.SizeF
         Dim bmp As New Bitmap(Path)
