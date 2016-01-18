@@ -93,18 +93,18 @@
 	</page>
 	<page name="HijriCalendar" description="IslamSource_HijriCalendar">
 		<frame name="info" description="IslamSource_Information">
-			<static name="monthname" description="IslamSource_CurrentMonth" onrender="PrayerTime::GetMonthName"></static>
-			<static name="calendar" description="IslamSource_GregorianCalendar" onrender="PrayerTime::GetCalendar"></static>
-			<static name="hijrimonthname" description="IslamSource_CurrentMonth" onrender="PrayerTime::GetMonthName"></static>
-			<static name="hijricalendar" description="IslamSource_HijriCalendar" onrender="PrayerTime::GetCalendar"></static>
-			<static name="umalquramonthname" description="IslamSource_CurrentMonth" onrender="PrayerTime::GetMonthName"></static>
-			<static name="umalquracalendar" description="IslamSource_UmAlQuraCalendar" onrender="PrayerTime::GetCalendar"></static>
+			<static name="monthname" description="IslamSource_CurrentMonth" onrender="PrayerTimeWeb::GetMonthName"></static>
+			<static name="calendar" description="IslamSource_GregorianCalendar" onrender="PrayerTimeWeb::GetCalendar"></static>
+			<static name="hijrimonthname" description="IslamSource_CurrentMonth" onrender="PrayerTimeWeb::GetMonthName"></static>
+			<static name="hijricalendar" description="IslamSource_HijriCalendar" onrender="PrayerTimeWeb::GetCalendar"></static>
+			<static name="umalquramonthname" description="IslamSource_CurrentMonth" onrender="PrayerTimeWeb::GetMonthName"></static>
+			<static name="umalquracalendar" description="IslamSource_UmAlQuraCalendar" onrender="PrayerTimeWeb::GetCalendar"></static>
 		</frame>
 	</page>
 	<page name="PrayerTimes" description="IslamSource_PrayerTimes">
 		<frame name="info" description="IslamSource_Information">
-			<static name="qibladirection" description="IslamSource_QiblaDirectionFromTrueNorth" onrender="PrayerTime::GetQiblaDirection"></static>
-			<static name="praytime" description="IslamSource_PrayerTimes" onrender="PrayerTime::GetPrayerTimes"></static>
+			<static name="qibladirection" description="IslamSource_QiblaDirectionFromTrueNorth" onrender="PrayerTimeWeb::GetQiblaDirection"></static>
+			<static name="praytime" description="IslamSource_PrayerTimes" onrender="PrayerTimeWeb::GetPrayerTimes"></static>
 		</frame>
 	</page>
 	<page name="Calculations" description="IslamSource_Calculations">
@@ -153,8 +153,8 @@
 		<frame name="docbuild" description="IslamSource_Viewer" hasform="true">
 			<edit name="docedit" rows="4"></edit>
 			<button name="selectiondisplay" description="IslamSource_Display"></button>
-			<button name="print" description="IslamSource_Print" onclick="Utility::GetOnPrintJS"></button>
-			<radio name="translitscheme" description="IslamSource_TransliterationScheme" uselist="true" onchange="Arabic::GetChangeTransliterationJS" onpopulate="Arabic::GetTransliterationSchemes"></radio>
+			<button name="print" description="IslamSource_Print" onclick="UtilityWeb::GetOnPrintJS"></button>
+			<radio name="translitscheme" description="IslamSource_TransliterationScheme" uselist="true" onchange="ArabicWeb::GetChangeTransliterationJS" onpopulate="ArabicWeb::GetTransliterationSchemes"></radio>
 			<button name="fontsmaller" description="IslamSource_Smaller" onclick="ArabicFont::GetFontSmallerJS"></button>
 			<button name="fontdefaultsize" description="IslamSource_LetterSample" onclick="ArabicFont::GetFontDefaultSizeJS"></button>
 			<button name="fontbigger" description="IslamSource_Bigger" onclick="ArabicFont::GetFontBiggerJS"></button>
@@ -162,20 +162,20 @@
 			<edit name="fontcustom" description="" defaultvalue="IslamSource_Lotus" rows="1"></edit>
 			<button name="fontcustomapply" description="IslamSource_Apply" onclick="ArabicFont::GetChangeCustomFontJS"></button>
 			<image name="fontloading" text="IslamSource_Loading" source="loading-h.gif"></image>
-			<radio name="quotemode" description="IslamSource_QuoteMode" usecheck="true" onchange="RenderArray::GetQuoteModeJS"><option name="IslamSource_Quote"></option><option name="IslamSource_Disable" defaultvalue="true"></option></radio>
-			<static name="doctext" description="IslamSource_Text" onrender="DocBuilder::GetRenderedText"></static>
-			<static name="translitschemetext" description="IslamSource_Text" onrender="Arabic::GetTransliterationSchemeTable"></static>
+			<radio name="quotemode" description="IslamSource_QuoteMode" usecheck="true" onchange="RenderArrayWeb::GetQuoteModeJS"><option name="IslamSource_Quote"></option><option name="IslamSource_Disable" defaultvalue="true"></option></radio>
+			<static name="doctext" description="IslamSource_Text" onrender="DocBuilderWeb::GetRenderedText"></static>
+			<static name="translitschemetext" description="IslamSource_Text" onrender="ArabicWeb::GetTransliterationSchemeTable"></static>
 			<static name="font-tester" description=""></static>
 		</frame>
 	</page>
 	<page name="reference" description="IslamSource_HelpReference">
 		<frame name="reference" description="IslamSource_Viewer" hasform="true">
-			<static name="helptext" description="IslamSource_Text" onrender="DocBuilder::GetRenderedHelpText"></static>
+			<static name="helptext" description="IslamSource_Text" onrender="DocBuilderWeb::GetRenderedHelpText"></static>
 		</frame>
 	</page>
 	<page name="phrases" description="IslamSource_Phrases">
 		<frame name="phrases" description="IslamSource_Viewer" hasform="true">
-			<radio name="translitscheme" description="IslamSource_TransliterationScheme" uselist="true" onchange="Arabic::GetChangeTransliterationJS" onpopulate="Arabic::GetTransliterationSchemes"></radio>
+			<radio name="translitscheme" description="IslamSource_TransliterationScheme" uselist="true" onchange="ArabicWeb::GetChangeTransliterationJS" onpopulate="ArabicWeb::GetTransliterationSchemes"></radio>
 			<button name="fontsmaller" description="IslamSource_Smaller" onclick="ArabicFont::GetFontSmallerJS"></button>
 			<button name="fontdefaultsize" description="IslamSource_LetterSample" onclick="ArabicFont::GetFontDefaultSizeJS"></button>
 			<button name="fontbigger" description="IslamSource_Bigger" onclick="ArabicFont::GetFontBiggerJS"></button>
@@ -183,9 +183,9 @@
 			<edit name="fontcustom" description="" defaultvalue="IslamSource_Lotus" rows="1"></edit>
 			<button name="fontcustomapply" description="IslamSource_Apply" onclick="ArabicFont::GetChangeCustomFontJS"></button>
 			<image name="fontloading" text="IslamSource_Loading" source="loading-h.gif"></image>
-			<radio name="quotemode" description="IslamSource_QuoteMode" usecheck="true" onchange="RenderArray::GetQuoteModeJS"><option name="IslamSource_Quote"></option><option name="IslamSource_Disable" defaultvalue="true"></option></radio>
-			<static name="phrasetext" description="IslamSource_Text" onrender="Phrases::GetRenderedPhraseText"></static>
-			<static name="translitschemetext" description="IslamSource_Text" onrender="Arabic::GetTransliterationSchemeTable"></static>
+			<radio name="quotemode" description="IslamSource_QuoteMode" usecheck="true" onchange="RenderArrayWeb::GetQuoteModeJS"><option name="IslamSource_Quote"></option><option name="IslamSource_Disable" defaultvalue="true"></option></radio>
+			<static name="phrasetext" description="IslamSource_Text" onrender="PhrasesWeb::GetRenderedPhraseText"></static>
+			<static name="translitschemetext" description="IslamSource_Text" onrender="ArabicWeb::GetTransliterationSchemeTable"></static>
 			<static name="font-tester" description=""></static>
 		</frame>
 	</page>
@@ -200,20 +200,20 @@
 			<image name="fontloading" text="IslamSource_Loading" source="loading-h.gif"></image>
 			<static name="font-tester" description=""></static>
 			<edit name="translitedit" rows="4"></edit>
-			<radio name="scheme" description="IslamSource_Scheme" onchange="Arabic::GetSchemeChangeJS"><option name="IslamSource_Transliterate" defaultvalue="true"></option><option name="IslamSource_ChangeScriptFormat"></option><option name="IslamSource_UseBiDiBias"></option></radio>
-			<radio name="translitscheme" description="IslamSource_TransliterationScheme" uselist="true" onpopulate="Arabic::GetTransliterationSchemes"></radio>
+			<radio name="scheme" description="IslamSource_Scheme" onchange="ArabicWeb::GetSchemeChangeJS"><option name="IslamSource_Transliterate" defaultvalue="true"></option><option name="IslamSource_ChangeScriptFormat"></option><option name="IslamSource_UseBiDiBias"></option></radio>
+			<radio name="translitscheme" description="IslamSource_TransliterationScheme" uselist="true" onpopulate="ArabicWeb::GetTransliterationSchemes"></radio>
 			<radio name="direction" description="IslamSource_Direction"><option name="IslamSource_ArabicToRoman" defaultvalue="true"></option><option name="IslamSource_RomanToArabic"></option></radio>
-			<radio name="fromscript" description="IslamSource_FromScript" uselist="true" defaultvalue="0" onpopulate="TanzilReader::GetScriptFormatsSrc" onchange="TanzilReader::GetScriptFormatChangeJS"></radio>
-			<radio name="toscript" description="IslamSource_ToScript" uselist="true" defaultvalue="2" onpopulate="TanzilReader::GetScriptFormats" onchange="TanzilReader::GetScriptFormatChangeJS"></radio>
+			<radio name="fromscript" description="IslamSource_FromScript" uselist="true" defaultvalue="0" onpopulate="TanzilReaderWeb::GetScriptFormatsSrc" onchange="TanzilReaderWeb::GetScriptFormatChangeJS"></radio>
+			<radio name="toscript" description="IslamSource_ToScript" uselist="true" defaultvalue="2" onpopulate="TanzilReaderWeb::GetScriptFormats" onchange="TanzilReaderWeb::GetScriptFormatChangeJS"></radio>
 			<radio name="operation" description="IslamSource_Operation"><option name="IslamSource_RightToLeft" defaultvalue="true"></option><option name="IslamSource_LeftToRight"></option></radio>
-			<button name="transliterate" description="IslamSource_Perform" onclick="Arabic::GetTransliterateJS"></button>
+			<button name="transliterate" description="IslamSource_Perform" onclick="ArabicWeb::GetTransliterateJS"></button>
 			<static name="translitvalue" description=""></static>
-			<static name="translitschemetext" description="IslamSource_Text" onrender="Arabic::GetTransliterationSchemeTable"></static>
+			<static name="translitschemetext" description="IslamSource_Text" onrender="ArabicWeb::GetTransliterationSchemeTable"></static>
 		</frame>
 		<frame name="arabicalphabet" description="IslamSource_ArabicAlphabet">
-			<static name="alphabet" description="" onrender="Arabic::DisplayAll"></static>
-			<static name="combos" description="" onrender="Arabic::DisplayCombo"></static>
-			<static name="schemes" description="" onrender="Arabic::DisplayTranslitSchemes"></static>
+			<static name="alphabet" description="" onrender="ArabicWeb::DisplayAll"></static>
+			<static name="combos" description="" onrender="ArabicWeb::DisplayCombo"></static>
+			<static name="schemes" description="" onrender="ArabicWeb::DisplayTranslitSchemes"></static>
 			<static name="chars" description="" onrender="CachedData::ArabicLetterCharacteristics"></static>
 		</frame>
 	</page>
@@ -231,29 +231,29 @@
 			<radio name="useclassic" description="IslamSource_UseClassicArabic"><option name="IslamSource_Yes" defaultvalue="true"></option><option name="IslamSource_No"></option></radio>
 			<radio name="usehundredform" description="IslamSource_AlternateHundredForm"><option name="IslamSource_Yes"></option><option name="IslamSource_No" defaultvalue="true"></option></radio>
 			<radio name="usemilliard" description="IslamSource_UseMilliard"><option name="IslamSource_Yes"></option><option name="IslamSource_No" defaultvalue="true"></option></radio>
-			<button name="transliterate" description="IslamSource_Perform" onclick="Arabic::GetTransliterateNumberJS"></button>
+			<button name="transliterate" description="IslamSource_Perform" onclick="ArabicWeb::GetTransliterateNumberJS"></button>
 			<static name="translitvalue" description=""></static>
 		</frame>
 	</page>
 	<page name="quiz" description="IslamSource_Quiz">
 		<frame name="arabicquiz" description="IslamSource_Quiz">
 			<radio name="quizselection" description="IslamSource_Quiz" uselist="true" defaultvalue="" onpopulate="Quiz::GetQuizList" onchange="Quiz::GetChangeQuizJS"></radio>
-			<radio name="translitscheme" description="IslamSource_TransliterationScheme" uselist="true" onchange="Arabic::GetChangeTransliterationJS" onpopulate="Arabic::GetTransliterationSchemes"></radio>
+			<radio name="translitscheme" description="IslamSource_TransliterationScheme" uselist="true" onchange="ArabicWeb::GetChangeTransliterationJS" onpopulate="ArabicWeb::GetTransliterationSchemes"></radio>
 			<static name="count" description="" onrender="Quiz::DisplayCount"></static>
 			<static name="quizquestion" description="" onrender="Quiz::DisplayQuestion"></static>
 			<button name="answer1" description="" onrender="Quiz::DisplayAnswer" onclick="Quiz::VerifyAnswer"></button>
 			<button name="answer2" description="" onrender="Quiz::DisplayAnswer" onclick="Quiz::VerifyAnswer"></button>
 			<button name="answer3" description="" onrender="Quiz::DisplayAnswer" onclick="Quiz::VerifyAnswer"></button>
 			<button name="answer4" description="" onrender="Quiz::DisplayAnswer" onclick="Quiz::VerifyAnswer"></button>
-			<static name="translitschemetext" description="IslamSource_Text" onrender="Arabic::GetTransliterationSchemeTable"></static>
+			<static name="translitschemetext" description="IslamSource_Text" onrender="ArabicWeb::GetTransliterationSchemeTable"></static>
 		</frame>
 	</page>
 	<page name="IslamicLists" description="IslamSource_Lists">
 		<frame name="lists" description="IslamSource_Viewer" hasform="true">
-			<radio name="selection" description="IslamSource_Selection" uselist="true" defaultvalue="0" onpopulate="DocBuilder::GetListCategories"></radio>
+			<radio name="selection" description="IslamSource_Selection" uselist="true" defaultvalue="0" onpopulate="DocBuilderWeb::GetListCategories"></radio>
 			<button name="selectiondisplay" description="IslamSource_Display"></button>
-			<button name="print" description="IslamSource_Print" onclick="Utility::GetOnPrintJS"></button>
-			<radio name="translitscheme" description="IslamSource_TransliterationScheme" uselist="true" onchange="Arabic::GetChangeTransliterationJS" onpopulate="Arabic::GetTransliterationSchemes"></radio>
+			<button name="print" description="IslamSource_Print" onclick="UtilityWeb::GetOnPrintJS"></button>
+			<radio name="translitscheme" description="IslamSource_TransliterationScheme" uselist="true" onchange="ArabicWeb::GetChangeTransliterationJS" onpopulate="ArabicWeb::GetTransliterationSchemes"></radio>
 			<button name="fontsmaller" description="IslamSource_Smaller" onclick="ArabicFont::GetFontSmallerJS"></button>
 			<button name="fontdefaultsize" description="IslamSource_LetterSample" onclick="ArabicFont::GetFontDefaultSizeJS"></button>
 			<button name="fontbigger" description="IslamSource_Bigger" onclick="ArabicFont::GetFontBiggerJS"></button>
@@ -261,20 +261,20 @@
 			<edit name="fontcustom" description="" defaultvalue="IslamSource_Lotus" rows="1"></edit>
 			<button name="fontcustomapply" description="IslamSource_Apply" onclick="ArabicFont::GetChangeCustomFontJS"></button>
 			<image name="fontloading" text="IslamSource_Loading" source="loading-h.gif"></image>
-			<radio name="quotemode" description="IslamSource_QuoteMode" usecheck="true" onchange="RenderArray::GetQuoteModeJS"><option name="IslamSource_Quote"></option><option name="IslamSource_Disable" defaultvalue="true"></option></radio>
-			<static name="doctext" description="" onrender="DocBuilder::GetListRenderedText"></static>
-			<static name="translitschemetext" description="IslamSource_Text" onrender="Arabic::GetTransliterationSchemeTable"></static>
+			<radio name="quotemode" description="IslamSource_QuoteMode" usecheck="true" onchange="RenderArrayWeb::GetQuoteModeJS"><option name="IslamSource_Quote"></option><option name="IslamSource_Disable" defaultvalue="true"></option></radio>
+			<static name="doctext" description="" onrender="DocBuilderWeb::GetListRenderedText"></static>
+			<static name="translitschemetext" description="IslamSource_Text" onrender="ArabicWeb::GetTransliterationSchemeTable"></static>
 			<static name="font-tester" description=""></static>
 		</frame>
 	</page>
 	<page name="dictionary" description="IslamSource_Dictionary">
 		<frame name="dictionary" description="IslamSource_Dictionary">
-			<static name="dict" description="" onrender="Arabic::DisplayDict"></static>
+			<static name="dict" description="" onrender="ArabicWeb::DisplayDict"></static>
 		</frame>
 	</page>
 	<page name="grammar" description="IslamSource_Grammar">
 		<frame name="arabicgrammar" description="IslamSource_Grammar">
-			<radio name="translitscheme" description="IslamSource_TransliterationScheme" uselist="true" onchange="Arabic::GetChangeTransliterationJS" onpopulate="Arabic::GetTransliterationSchemes"></radio>
+			<radio name="translitscheme" description="IslamSource_TransliterationScheme" uselist="true" onchange="ArabicWeb::GetChangeTransliterationJS" onpopulate="ArabicWeb::GetTransliterationSchemes"></radio>
 			<button name="fontsmaller" description="IslamSource_Smaller" onclick="ArabicFont::GetFontSmallerJS"></button>
 			<button name="fontdefaultsize" description="IslamSource_LetterSample" onclick="ArabicFont::GetFontDefaultSizeJS"></button>
 			<button name="fontbigger" description="IslamSource_Bigger" onclick="ArabicFont::GetFontBiggerJS"></button>
@@ -283,31 +283,31 @@
 			<button name="fontcustomapply" description="IslamSource_Apply" onclick="ArabicFont::GetChangeCustomFontJS"></button>
 			<image name="fontloading" text="IslamSource_Loading" source="loading-h.gif"></image>
 			<static name="font-tester" description=""></static>
-			<static name="proximals" description="IslamSource_Text" onrender="Arabic::DisplayProximals"></static>
-			<static name="distals" description="IslamSource_Text" onrender="Arabic::DisplayDistals"></static>
-			<static name="relatives" description="IslamSource_Text" onrender="Arabic::DisplayRelatives"></static>
-			<static name="personals" description="IslamSource_Text" onrender="Arabic::DisplayPersonals"></static>
-			<static name="determinerpersonals" description="IslamSource_Text" onrender="Arabic::DisplayDeterminerPersonals"></static>
-			<static name="pastverbsfamilyi" description="IslamSource_Text" onrender="Arabic::DisplayPastVerbsFamilyI"></static>
-			<static name="presentverbsfamilyi" description="IslamSource_Text" onrender="Arabic::DisplayPresentVerbsFamilyI"></static>
-			<static name="commandverbsfamilyi" description="IslamSource_Text" onrender="Arabic::DisplayCommandVerbsFamilyI"></static>
-			<static name="responseparticles" description="IslamSource_Text" onrender="Arabic::DisplayResponseParticles"></static>
-			<static name="interogativeparticles" description="IslamSource_Text" onrender="Arabic::DisplayInterogativeParticles"></static>
-			<static name="locationparticles" description="IslamSource_Text" onrender="Arabic::DisplayLocationParticles"></static>
-			<static name="timeparticles" description="IslamSource_Text" onrender="Arabic::DisplayTimeParticles"></static>
-			<static name="prepositions" description="IslamSource_Text" onrender="Arabic::DisplayPrepositions"></static>
-			<static name="particles" description="IslamSource_Text" onrender="Arabic::DisplayParticles"></static>
-			<static name="nouns" description="IslamSource_Text" onrender="Arabic::DisplayNouns"></static>
-			<static name="verbs" description="IslamSource_Text" onrender="Arabic::DisplayVerbs"></static>
-			<static name="translitschemetext" description="IslamSource_Text" onrender="Arabic::GetTransliterationSchemeTable"></static>
+			<static name="proximals" description="IslamSource_Text" onrender="ArabicWeb::DisplayProximals"></static>
+			<static name="distals" description="IslamSource_Text" onrender="ArabicWeb::DisplayDistals"></static>
+			<static name="relatives" description="IslamSource_Text" onrender="ArabicWeb::DisplayRelatives"></static>
+			<static name="personals" description="IslamSource_Text" onrender="ArabicWeb::DisplayPersonals"></static>
+			<static name="determinerpersonals" description="IslamSource_Text" onrender="ArabicWeb::DisplayDeterminerPersonals"></static>
+			<static name="pastverbsfamilyi" description="IslamSource_Text" onrender="ArabicWeb::DisplayPastVerbsFamilyI"></static>
+			<static name="presentverbsfamilyi" description="IslamSource_Text" onrender="ArabicWeb::DisplayPresentVerbsFamilyI"></static>
+			<static name="commandverbsfamilyi" description="IslamSource_Text" onrender="ArabicWeb::DisplayCommandVerbsFamilyI"></static>
+			<static name="responseparticles" description="IslamSource_Text" onrender="ArabicWeb::DisplayResponseParticles"></static>
+			<static name="interogativeparticles" description="IslamSource_Text" onrender="ArabicWeb::DisplayInterogativeParticles"></static>
+			<static name="locationparticles" description="IslamSource_Text" onrender="ArabicWeb::DisplayLocationParticles"></static>
+			<static name="timeparticles" description="IslamSource_Text" onrender="ArabicWeb::DisplayTimeParticles"></static>
+			<static name="prepositions" description="IslamSource_Text" onrender="ArabicWeb::DisplayPrepositions"></static>
+			<static name="particles" description="IslamSource_Text" onrender="ArabicWeb::DisplayParticles"></static>
+			<static name="nouns" description="IslamSource_Text" onrender="ArabicWeb::DisplayNouns"></static>
+			<static name="verbs" description="IslamSource_Text" onrender="ArabicWeb::DisplayVerbs"></static>
+			<static name="translitschemetext" description="IslamSource_Text" onrender="ArabicWeb::GetTransliterationSchemeTable"></static>
 		</frame>
 	</page>
 	<page name="quranwords" description="IslamSource_QuranWords">
 		<frame name="quranwordviewer" description="IslamSource_Viewer" hasform="true">
-			<radio name="quranselection" description="IslamSource_Selection" uselist="true" onpopulate="TanzilReader::GetWordPartitions"></radio>
+			<radio name="quranselection" description="IslamSource_Selection" uselist="true" onpopulate="TanzilReaderWeb::GetWordPartitions"></radio>
 			<button name="qurandisplay" description="IslamSource_Display"></button>
-			<button name="printflashcards" description="IslamSource_Print" onclick="Utility::GetOnPrintFlashcardJS"></button>
-			<radio name="translitscheme" description="IslamSource_TransliterationScheme" uselist="true" onchange="Arabic::GetChangeTransliterationJS" onpopulate="Arabic::GetTransliterationSchemes"></radio>
+			<button name="printflashcards" description="IslamSource_Print" onclick="UtilityWeb::GetOnPrintFlashcardJS"></button>
+			<radio name="translitscheme" description="IslamSource_TransliterationScheme" uselist="true" onchange="ArabicWeb::GetChangeTransliterationJS" onpopulate="ArabicWeb::GetTransliterationSchemes"></radio>
 			<button name="fontsmaller" description="IslamSource_Smaller" onclick="ArabicFont::GetFontSmallerJS"></button>
 			<button name="fontdefaultsize" description="IslamSource_LetterSample" onclick="ArabicFont::GetFontDefaultSizeJS"></button>
 			<button name="fontbigger" description="IslamSource_Bigger" onclick="ArabicFont::GetFontBiggerJS"></button>
@@ -315,23 +315,23 @@
 			<edit name="fontcustom" description="" defaultvalue="IslamSource_Lotus" rows="1"></edit>
 			<button name="fontcustomapply" description="IslamSource_Apply" onclick="ArabicFont::GetChangeCustomFontJS"></button>
 			<image name="fontloading" text="IslamSource_Loading" source="loading-h.gif"></image>
-			<radio name="quotemode" description="IslamSource_QuoteMode" usecheck="true" onchange="RenderArray::GetQuoteModeJS"><option name="IslamSource_Quote"></option><option name="IslamSource_Disable" defaultvalue="true"></option></radio>
-			<static name="quranwordtotal" description="IslamSource_WordTotal" onrender="TanzilReader::GetQuranWordTotal"></static>
-			<static name="quranwords" description="IslamSource_Text" onrender="TanzilReader::GetQuranWordFrequency"></static>
-			<static name="translitschemetext" description="IslamSource_Text" onrender="Arabic::GetTransliterationSchemeTable"></static>
+			<radio name="quotemode" description="IslamSource_QuoteMode" usecheck="true" onchange="RenderArrayWeb::GetQuoteModeJS"><option name="IslamSource_Quote"></option><option name="IslamSource_Disable" defaultvalue="true"></option></radio>
+			<static name="quranwordtotal" description="IslamSource_WordTotal" onrender="TanzilReaderWeb::GetQuranWordTotal"></static>
+			<static name="quranwords" description="IslamSource_Text" onrender="TanzilReaderWeb::GetQuranWordFrequency"></static>
+			<static name="translitschemetext" description="IslamSource_Text" onrender="ArabicWeb::GetTransliterationSchemeTable"></static>
 			<static name="font-tester" description=""></static>
 		</frame>
 	</page>
 	<page name="quran" description="IslamSource_Quran">
 		<frame name="quranviewer" description="IslamSource_Viewer" hasform="true">
-			<radio name="qurandivision" description="IslamSource_Division" uselist="true" onchange="TanzilReader::GetDivisionChangeJS" onpopulate="TanzilReader::GetDivisionTypes"></radio>
-			<radio name="quranselection" description="IslamSource_Selection" uselist="true" onpopulate="TanzilReader::GetSelectionNames"></radio>
-			<radio name="qurantranslation" description="IslamSource_Translation" uselist="true" defaultvalue="en-maulana_ali" onpopulate="TanzilReader::GetTranslationList"></radio>
+			<radio name="qurandivision" description="IslamSource_Division" uselist="true" onchange="TanzilReaderWeb::GetDivisionChangeJS" onpopulate="TanzilReaderWeb::GetDivisionTypes"></radio>
+			<radio name="quranselection" description="IslamSource_Selection" uselist="true" onpopulate="TanzilReaderWeb::GetSelectionNames"></radio>
+			<radio name="qurantranslation" description="IslamSource_Translation" uselist="true" defaultvalue="en-maulana_ali" onpopulate="TanzilReaderWeb::GetTranslationList"></radio>
 			<button name="qurandisplay" description="IslamSource_Display"></button>
-			<button name="print" description="IslamSource_Print" onclick="Utility::GetOnPrintJS"></button>
-			<radio name="translitscheme" description="IslamSource_TransliterationScheme" uselist="true" onchange="Arabic::GetChangeTransliterationJS" onpopulate="Arabic::GetTransliterationSchemes"></radio>
-			<radio name="wordversemode" description="IslamSource_WordVerseMode" uselist="true" onchange="TanzilReader::GetWordVerseModeJS"><option name="IslamSource_WordByWordAndVerse" defaultvalue="true"></option><option name="IslamSource_WordByWordNumberedAndVerse"></option><option name="IslamSource_WordByWordOnly"></option><option name="IslamSource_WordByWordNumberedOnly"></option><option name="IslamSource_VerseOnly"></option></radio>
-			<radio name="colorcuemode" description="IslamSource_ColorCues" usecheck="true" onchange="TanzilReader::GetColorCueModeJS"><option name="IslamSource_Yes" defaultvalue="true"></option><option name="IslamSource_No"></option></radio>
+			<button name="print" description="IslamSource_Print" onclick="UtilityWeb::GetOnPrintJS"></button>
+			<radio name="translitscheme" description="IslamSource_TransliterationScheme" uselist="true" onchange="ArabicWeb::GetChangeTransliterationJS" onpopulate="ArabicWeb::GetTransliterationSchemes"></radio>
+			<radio name="wordversemode" description="IslamSource_WordVerseMode" uselist="true" onchange="TanzilReaderWeb::GetWordVerseModeJS"><option name="IslamSource_WordByWordAndVerse" defaultvalue="true"></option><option name="IslamSource_WordByWordNumberedAndVerse"></option><option name="IslamSource_WordByWordOnly"></option><option name="IslamSource_WordByWordNumberedOnly"></option><option name="IslamSource_VerseOnly"></option></radio>
+			<radio name="colorcuemode" description="IslamSource_ColorCues" usecheck="true" onchange="TanzilReaderWeb::GetColorCueModeJS"><option name="IslamSource_Yes" defaultvalue="true"></option><option name="IslamSource_No"></option></radio>
 			<button name="fontsmaller" description="IslamSource_Smaller" onclick="ArabicFont::GetFontSmallerJS"></button>
 			<button name="fontdefaultsize" description="IslamSource_LetterSample" onclick="ArabicFont::GetFontDefaultSizeJS"></button>
 			<button name="fontbigger" description="IslamSource_Bigger" onclick="ArabicFont::GetFontBiggerJS"></button>
@@ -339,20 +339,20 @@
 			<edit name="fontcustom" description="" defaultvalue="IslamSource_Lotus" rows="1"></edit>
 			<button name="fontcustomapply" description="IslamSource_Apply" onclick="ArabicFont::GetChangeCustomFontJS"></button>
 			<image name="fontloading" text="IslamSource_Loading" source="loading-h.gif"></image>
-			<radio name="quotemode" description="IslamSource_QuoteMode" usecheck="true" onchange="RenderArray::GetQuoteModeJS"><option name="Quote"></option><option name="Disable" defaultvalue="true"></option></radio>
-			<static name="qurantext" description="IslamSource_Text" onrender="TanzilReader::GetRenderedQuranText"></static>
-			<static name="translitschemetext" description="IslamSource_Text" onrender="Arabic::GetTransliterationSchemeTable"></static>
+			<radio name="quotemode" description="IslamSource_QuoteMode" usecheck="true" onchange="RenderArrayWeb::GetQuoteModeJS"><option name="Quote"></option><option name="Disable" defaultvalue="true"></option></radio>
+			<static name="qurantext" description="IslamSource_Text" onrender="TanzilReaderWeb::GetRenderedQuranText"></static>
+			<static name="translitschemetext" description="IslamSource_Text" onrender="ArabicWeb::GetTransliterationSchemeTable"></static>
 			<static name="font-tester" description=""></static>
 		</frame>
 	</page>
 	<page name="hadith" description="IslamSource_Hadiths">
 		<frame name="hadithviewer" description="IslamSource_Viewer" hasform="true">
-			<radio name="hadithcollection" description="IslamSource_Collection" uselist="true" onchange="HadithReader::GetCollectionChangeWithBooksJS" onpopulate="HadithReader::GetCollectionNames"></radio>
-			<radio name="hadithbook" description="IslamSource_Book" uselist="true" onpopulate="HadithReader::GetBookNames"></radio>
-			<radio name="hadithtranslation" description="IslamSource_Translation" uselist="true" defaultvalue="" onpopulate="HadithReader::GetTranslationList"></radio>
+			<radio name="hadithcollection" description="IslamSource_Collection" uselist="true" onchange="HadithReaderWeb::GetCollectionChangeWithBooksJS" onpopulate="HadithReaderWeb::GetCollectionNames"></radio>
+			<radio name="hadithbook" description="IslamSource_Book" uselist="true" onpopulate="HadithReaderWeb::GetBookNames"></radio>
+			<radio name="hadithtranslation" description="IslamSource_Translation" uselist="true" defaultvalue="" onpopulate="HadithReaderWeb::GetTranslationList"></radio>
 			<button name="hadithdisplay" description="IslamSource_Display"></button>
-			<button name="print" description="IslamSource_Print" onclick="Utility::GetOnPrintJS"></button>
-			<radio name="translitscheme" description="IslamSource_TransliterationScheme" uselist="true" onchange="Arabic::GetChangeTransliterationJS" onpopulate="Arabic::GetTransliterationSchemes"></radio>
+			<button name="print" description="IslamSource_Print" onclick="UtilityWeb::GetOnPrintJS"></button>
+			<radio name="translitscheme" description="IslamSource_TransliterationScheme" uselist="true" onchange="ArabicWeb::GetChangeTransliterationJS" onpopulate="ArabicWeb::GetTransliterationSchemes"></radio>
 			<button name="fontsmaller" description="IslamSource_Smaller" onclick="ArabicFont::GetFontSmallerJS"></button>
 			<button name="fontdefaultsize" description="IslamSource_LetterSample" onclick="ArabicFont::GetFontDefaultSizeJS"></button>
 			<button name="fontbigger" description="IslamSource_Bigger" onclick="ArabicFont::GetFontBiggerJS"></button>
@@ -360,25 +360,25 @@
 			<edit name="fontcustom" description="" defaultvalue="IslamSource_Lotus" rows="1"></edit>
 			<button name="fontcustomapply" description="IslamSource_Apply" onclick="ArabicFont::GetChangeCustomFontJS"></button>
 			<image name="fontloading" text="IslamSource_Loading" source="loading-h.gif"></image>
-			<radio name="quotemode" description="IslamSource_QuoteMode" usecheck="true" onchange="RenderArray::GetQuoteModeJS"><option name="Quote"></option><option name="Disable" defaultvalue="true"></option></radio>
-			<static name="hadithtext" description="IslamSource_Text" onrender="HadithReader::GetRenderedText"></static>
-			<static name="translitschemetext" description="IslamSource_Text" onrender="Arabic::GetTransliterationSchemeTable"></static>
+			<radio name="quotemode" description="IslamSource_QuoteMode" usecheck="true" onchange="RenderArrayWeb::GetQuoteModeJS"><option name="Quote"></option><option name="Disable" defaultvalue="true"></option></radio>
+			<static name="hadithtext" description="IslamSource_Text" onrender="HadithReaderWeb::GetRenderedText"></static>
+			<static name="translitschemetext" description="IslamSource_Text" onrender="ArabicWeb::GetTransliterationSchemeTable"></static>
 			<static name="font-tester" description=""></static>
 		</frame>
 	</page>
 	<page name="hadithsource" description="IslamSource_HadithSourceText">
 		<frame name="hadithsourceviewer" description="IslamSource_Selection" hasform="true">
 			<static name="intro" description="IslamSource_SubmissionNote"></static>
-			<radio name="hadithcollection" description="IslamSource_Collection" uselist="true" onchange="HadithReader::GetCollectionChangeJS" onpopulate="HadithReader::GetCollectionNames"></radio>
-			<radio name="hadithtranslation" description="IslamSource_Translation" uselist="true" defaultvalue="" onpopulate="HadithReader::GetTranslationList"></radio>
+			<radio name="hadithcollection" description="IslamSource_Collection" uselist="true" onchange="HadithReaderWeb::GetCollectionChangeJS" onpopulate="HadithReaderWeb::GetCollectionNames"></radio>
+			<radio name="hadithtranslation" description="IslamSource_Translation" uselist="true" defaultvalue="" onpopulate="HadithReaderWeb::GetTranslationList"></radio>
 			<button name="hadithdisplay" description="IslamSource_Display"></button>
 		</frame>
 		<frame name="hadithdownloadmapping" description="IslamSource_DownloadMapping">
-			<download text="" path="" onrender="HadithReader::GetCollectionXMLMetaDataDownload"></download>
-			<download text="" path="" onrender="HadithReader::GetCollectionXMLDownload"></download>
-			<download text="" path="" onrender="HadithReader::GetTranslationXMLMetaDataDownload"></download>
-			<download text="" path="" onrender="HadithReader::GetTranslationTextDownload"></download>
-			<static name="hadithtext" description="IslamSource_Mapping" onrender="HadithReader::GetHadithMappingText"></static>
+			<download text="" path="" onrender="HadithReaderWeb::GetCollectionXMLMetaDataDownload"></download>
+			<download text="" path="" onrender="HadithReaderWeb::GetCollectionXMLDownload"></download>
+			<download text="" path="" onrender="HadithReaderWeb::GetTranslationXMLMetaDataDownload"></download>
+			<download text="" path="" onrender="HadithReaderWeb::GetTranslationTextDownload"></download>
+			<static name="hadithtext" description="IslamSource_Mapping" onrender="HadithReaderWeb::GetHadithMappingText"></static>
 		</frame>
 	</page>
 	<page name="quotes" description="IslamSource_IslamicQuotes">

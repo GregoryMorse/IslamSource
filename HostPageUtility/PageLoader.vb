@@ -38,7 +38,6 @@ Public Class WindowsWebFileIO
     End Function
     Public Sub SaveStream(FilePath As String, Stream As IO.Stream) Implements PortableFileIO.SaveStream
         Dim File As IO.FileStream = IO.File.Open(FilePath, IO.FileMode.Create, IO.FileAccess.Write)
-        Stream.Seek(0, IO.SeekOrigin.Begin)
         Dim Bytes(4096) As Byte
         Dim Read As Integer
         Stream.Seek(0, IO.SeekOrigin.Begin)
@@ -61,10 +60,10 @@ Public Class WindowsWebFileIO
     Public Sub CreateDirectory(Path As String) Implements PortableFileIO.CreateDirectory
         IO.Directory.CreateDirectory(Path)
     End Sub
-    Function PathGetLastWriteTimeUtc(Path As String) As Date Implements PortableFileIO.PathGetLastWriteTimeUtc
+    Public Function PathGetLastWriteTimeUtc(Path As String) As Date Implements PortableFileIO.PathGetLastWriteTimeUtc
         Return IO.File.GetLastWriteTimeUtc(Path)
     End Function
-    Sub PathSetLastWriteTimeUtc(Path As String, Time As Date) Implements PortableFileIO.PathSetLastWriteTimeUtc
+    Public Sub PathSetLastWriteTimeUtc(Path As String, Time As Date) Implements PortableFileIO.PathSetLastWriteTimeUtc
         IO.File.SetLastWriteTimeUtc(Path, Time)
     End Sub
 End Class
@@ -177,6 +176,8 @@ Public Class UtilityWeb
         GetPageString = NewGetPageString
         GetUserID = NewGetUserID
         IsLoggedIn = NewIsLoggedIn
+        PortableMethods.FileIO = New WindowsWebFileIO
+        PortableMethods.Settings = New WindowsWebSettings
     End Sub
     Public Const LocalConfig As String = "~/web.config"
     Public Class ConnectionData
