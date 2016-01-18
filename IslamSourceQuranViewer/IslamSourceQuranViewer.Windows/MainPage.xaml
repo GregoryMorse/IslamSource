@@ -12,6 +12,7 @@
             <Setter Property="FontFamily" Value="Global User Interface"/>
         </Style>
         <CollectionViewSource x:Name="QuranDivisions" Source="{Binding Path=ViewModel.Items}"></CollectionViewSource>
+        <CollectionViewSource x:Name="QuranDivision" Source="{Binding Path=ViewModel.ListItems}"></CollectionViewSource>
     </Page.Resources>
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
@@ -19,7 +20,7 @@
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
         <ListBox x:Name="tabListBox" Grid.Row="0" ItemsSource="{Binding Source={StaticResource QuranDivisions}}" 
-                        SelectedItem="{Binding SelectedItem, Mode=TwoWay}" 
+                        SelectedItem="{Binding Path=ViewModel.SelectedItem, Mode=TwoWay}" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollMode="Enabled"
                         BorderBrush="{x:Null}" BorderThickness="0" FontFamily="Global User Interface">
             <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
@@ -29,6 +30,21 @@
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <TextBlock Text="{Binding Title}" Margin="5" 
+                        Style="{StaticResource TitleStyle}" FontFamily="Global User Interface"/>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <ListBox x:Name="sectionListBox" Grid.Row="1" DataContext="" ItemsSource="{Binding Source={StaticResource QuranDivision}}" 
+                        SelectedItem="{Binding Path=ViewModel.ListSelectedItem, Mode=TwoWay}"
+                        BorderBrush="{x:Null}" BorderThickness="0" FontFamily="Global User Interface" DoubleTapped="sectionListBox_DoubleTapped">
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Vertical" />
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Name}" Margin="5" 
                         Style="{StaticResource TitleStyle}" FontFamily="Global User Interface"/>
                 </DataTemplate>
             </ListBox.ItemTemplate>

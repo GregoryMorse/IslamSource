@@ -13,15 +13,21 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-// The User Control item template is documented at http://go.microsoft.com/fwlink/?LinkId=234236
-
 namespace IslamSourceQuranViewer
 {
-    public sealed partial class WordForWordUC : UserControl
+    public sealed partial class WordForWordUC : Page
     {
         public WordForWordUC()
         {
             this.InitializeComponent();
         }
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            dynamic t = e.Parameter;
+            Division = t.Division;
+            Selection = t.Selection;
+        }
+        private int Division;
+        private int Selection;
     }
 }

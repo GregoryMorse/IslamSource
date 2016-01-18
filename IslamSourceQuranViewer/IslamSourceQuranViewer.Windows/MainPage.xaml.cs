@@ -16,22 +16,36 @@ using Windows.UI.Xaml.Navigation;
 
 public class WindowsRTFileIO : XMLRender.PortableFileIO
 {
-    public async string[] GetDirectoryFiles(string Path)
+    public /*async*/ string[] GetDirectoryFiles(string Path)
     {
-        Windows.Storage.StorageFolder folder = await Windows.Storage.StorageFolder.GetFolderFromPathAsync(Path);
-        IReadOnlyList<Windows.Storage.StorageFile> files = await folder.GetFilesAsync();
-        return files.Select(file => file.Name);
+        System.Threading.Tasks.Task<Windows.Storage.StorageFolder> t = Windows.Storage.StorageFolder.GetFolderFromPathAsync(Path).AsTask();
+        t.Wait();
+        Windows.Storage.StorageFolder folder = t.Result; //await Windows.Storage.StorageFolder.GetFolderFromPathAsync(Path);
+        System.Threading.Tasks.Task<IReadOnlyList<Windows.Storage.StorageFile>> tn = folder.GetFilesAsync().AsTask();
+        t.Wait();
+        IReadOnlyList<Windows.Storage.StorageFile> files = tn.Result; //await folder.GetFilesAsync();
+        return new List<string>(files.Select(file => file.Name)).ToArray();
     }
-    public async Stream LoadStream(string FilePath)
+    public /*async*/ Stream LoadStream(string FilePath)
     {
-        Windows.Storage.StorageFile file = await Windows.Storage.StorageFile.GetFileFromPathAsync(FilePath);
-        System.IO.Stream Stream = await file.OpenStreamForReadAsync();
+        System.Threading.Tasks.Task<Windows.Storage.StorageFile> t = Windows.Storage.StorageFile.GetFileFromPathAsync(FilePath).AsTask();
+        t.Wait();
+        Windows.Storage.StorageFile file = t.Result; //await Windows.Storage.StorageFile.GetFileFromPathAsync(FilePath);
+        System.Threading.Tasks.Task<Stream> tn = file.OpenStreamForReadAsync();
+        tn.Wait();
+        Stream Stream = tn.Result; //await file.OpenStreamForReadAsync();
         return Stream;
     }
-    public async void SaveStream(string FilePath, System.IO.Stream Stream)
+    public /*async*/ void SaveStream(string FilePath, Stream Stream)
     {
-        Windows.Storage.StorageFile file = await Windows.Storage.StorageFile.GetFileFromPathAsync(FilePath);
-        Stream File = await file.OpenStreamForWriteAsync();
+        System.Threading.Tasks.Task<Windows.Storage.StorageFolder> td = Windows.Storage.StorageFolder.GetFolderFromPathAsync(System.IO.Path.GetDirectoryName(FilePath)).AsTask();
+        td.Wait();
+        System.Threading.Tasks.Task<Windows.Storage.StorageFile> t = td.Result.CreateFileAsync(System.IO.Path.GetFileName(FilePath)).AsTask();
+        t.Wait();
+        Windows.Storage.StorageFile file = t.Result; //await (await Windows.Storage.StorageFolder.GetFolderFromPathAsync(System.IO.Path.GetDirectoryName(FilePath))).Result.CreateFileAsync(System.IO.Path.GetFileName(FilePath));
+        System.Threading.Tasks.Task<Stream> tn = file.OpenStreamForWriteAsync();
+        tn.Wait();
+        Stream File = tn.Result; //await file.OpenStreamForWriteAsync();
         File.Seek(0, SeekOrigin.Begin);
         byte[] Bytes = new byte[4096];
         int Read;
@@ -48,28 +62,49 @@ public class WindowsRTFileIO : XMLRender.PortableFileIO
     {
         return System.IO.Path.Combine(Paths);
     }
-    public async void DeleteFile(string FilePath)
+    public /*async*/ void DeleteFile(string FilePath)
     {
-        Windows.Storage.StorageFile file = await Windows.Storage.StorageFile.GetFileFromPathAsync(FilePath);
-        await file.DeleteAsync();
+        System.Threading.Tasks.Task<Windows.Storage.StorageFile> t = Windows.Storage.StorageFile.GetFileFromPathAsync(FilePath).AsTask();
+        t.Wait();
+        Windows.Storage.StorageFile file = t.Result; //await Windows.Storage.StorageFile.GetFileFromPathAsync(FilePath);
+        file.DeleteAsync().AsTask().Wait();
+        //await file.DeleteAsync();
     }
-    public async bool PathExists(string Path)
+    public /*async*/ bool PathExists(string Path)
     {
-        return (await (await Windows.Storage.StorageFolder.GetFolderFromPathAsync(System.IO.Path.GetDirectoryName(Path))).TryGetItemAsync(System.IO.Path.GetFileName(Path))) != null;
+        System.Threading.Tasks.Task<Windows.Storage.StorageFolder> t = Windows.Storage.StorageFolder.GetFolderFromPathAsync(System.IO.Path.GetDirectoryName(Path)).AsTask();
+        t.Wait();
+        System.Threading.Tasks.Task<Windows.Storage.IStorageItem> tn = t.Result.TryGetItemAsync(System.IO.Path.GetFileName(Path)).AsTask();
+        tn.Wait();
+        return tn.Result != null;
+        //return (await (await Windows.Storage.StorageFolder.GetFolderFromPathAsync(System.IO.Path.GetDirectoryName(Path))).TryGetItemAsync(System.IO.Path.GetFileName(Path))) != null;
     }
-    public async void CreateDirectory(string Path)
+    public /*async*/ void CreateDirectory(string Path)
     {
-        await (await Windows.Storage.StorageFolder.GetFolderFromPathAsync(System.IO.Path.GetDirectoryName(Path))).CreateFolderAsync(System.IO.Path.GetFileName(Path), Windows.Storage.CreationCollisionOption.FailIfExists);
+        System.Threading.Tasks.Task<Windows.Storage.StorageFolder> t = Windows.Storage.StorageFolder.GetFolderFromPathAsync(System.IO.Path.GetDirectoryName(Path)).AsTask();
+        t.Wait();
+        t.Result.CreateFolderAsync(System.IO.Path.GetFileName(Path), Windows.Storage.CreationCollisionOption.FailIfExists).AsTask().Wait();
+        //await (await Windows.Storage.StorageFolder.GetFolderFromPathAsync(System.IO.Path.GetDirectoryName(Path))).CreateFolderAsync(System.IO.Path.GetFileName(Path), Windows.Storage.CreationCollisionOption.FailIfExists);
     }
-    public async DateTime PathGetLastWriteTimeUtc(string Path)
+    public /*async*/ DateTime PathGetLastWriteTimeUtc(string Path)
     {
-        Windows.Storage.StorageFile file = await Windows.Storage.StorageFile.GetFileFromPathAsync(Path);
-        return (await file.GetBasicPropertiesAsync()).DateModified;
+        System.Threading.Tasks.Task<Windows.Storage.StorageFile> t = Windows.Storage.StorageFile.GetFileFromPathAsync(Path).AsTask();
+        t.Wait();
+        Windows.Storage.StorageFile file = t.Result; //await Windows.Storage.StorageFile.GetFileFromPathAsync(Path);
+        System.Threading.Tasks.Task<Windows.Storage.FileProperties.BasicProperties> tn = file.GetBasicPropertiesAsync().AsTask();
+        tn.Wait();
+        return tn.Result.DateModified.UtcDateTime;
+        //return (await file.GetBasicPropertiesAsync()).DateModified;
     }
-    public async void PathSetLastWriteTimeUtc(string Path, DateTime Time)
+    public /*async*/ void PathSetLastWriteTimeUtc(string Path, DateTime Time)
     {
-        Windows.Storage.StorageFile file = await Windows.Storage.StorageFile.GetFileFromPathAsync(Path);
-        await (await file.OpenTransactedWriteAsync()).CommitAsync();
+        System.Threading.Tasks.Task<Windows.Storage.StorageFile> t = Windows.Storage.StorageFile.GetFileFromPathAsync(Path).AsTask();
+        t.Wait();
+        Windows.Storage.StorageFile file = t.Result; //await Windows.Storage.StorageFile.GetFileFromPathAsync(Path);
+        System.Threading.Tasks.Task<Windows.Storage.StorageStreamTransaction> tn = file.OpenTransactedWriteAsync().AsTask();
+        tn.Wait();
+        tn.Result.CommitAsync().AsTask().Wait();
+        //await(await file.OpenTransactedWriteAsync()).CommitAsync();
     }
 }
 public class WindowsRTSettings : XMLRender.PortableSettings
@@ -84,7 +119,7 @@ public class WindowsRTSettings : XMLRender.PortableSettings
     public KeyValuePair<string, string[]>[] Resources
     {
         get {
-            return (new List<KeyValuePair<string, string[]>>(System.Linq.Enumerable.Select("HostPageUtility=Acct,lang,unicode;IslamResources=Hadith,IslamInfo,IslamSource".Split(';'), Str => new KeyValuePair<String, String[]>(Str.Split('=')[0], Str.Split('=')[1].Split(','))))).ToArray();
+            return (new List<KeyValuePair<string, string[]>>(System.Linq.Enumerable.Select("HostPageUtility=Acct,lang,unicode;IslamResources=Hadith,IslamInfo,IslamSource".Split(';'), Str => new KeyValuePair<string, string[]>(Str.Split('=')[0], Str.Split('=')[1].Split(','))))).ToArray();
         }
     }
     public string GetFilePath(string Path)
@@ -114,19 +149,82 @@ namespace IslamSourceQuranViewer
             this.InitializeComponent();
         }
         public MyTabViewModel ViewModel { get; set; }
+
+        private void sectionListBox_DoubleTapped(object sender, DoubleTappedRoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(WordForWordUC), new {Division = ViewModel.SelectedItem, Selection = ViewModel.ListSelectedItem});
+        }
     }
     public class MyTabViewModel : INotifyPropertyChanged
     {
         public MyTabViewModel()
         {
-            Items = System.Linq.Enumerable.Select(IslamMetadata.TanzilReader.GetChapterNames(XMLRender.ArabicData.TranslitScheme.Literal, "PlainRoman"), Arr => new MyTabItem { Title = (string)(Arr.Cast<Object>()).First(), Content = null });
+            Items = System.Linq.Enumerable.Select(IslamMetadata.TanzilReader.GetDivisionTypes(), (Arr, idx) => new MyTabItem { Title = Arr, Index = idx });
         }
 
-        public IEnumerable<MyTabItem> Items { get; private set; }
+        public IEnumerable<MyTabItem> Items { get; set; }
+
+        public IEnumerable<MyListItem> _ListItems;
+        public IEnumerable<MyListItem> ListItems
+        {
+            get
+            {
+                return _ListItems;
+            }
+            private set
+            {
+                _ListItems = value;
+                PropertyChanged(this, new PropertyChangedEventArgs("ListItems"));
+            }
+        }
+
+        public MyListItem ListSelectedItem
+        {
+            get { return _selectedItem.SelectedItem; }
+            set
+            {
+                _selectedItem.SelectedItem = value;
+                PropertyChanged(this, new PropertyChangedEventArgs("ListSelectedItem"));
+            }
+        }
 
         private MyTabItem _selectedItem;
 
         public MyTabItem SelectedItem
+        {
+            get { return _selectedItem; }
+            set
+            {
+                _selectedItem = value;
+                PropertyChanged(this, new PropertyChangedEventArgs("SelectedItem"));
+                ListItems = _selectedItem.Items;
+            }
+        }
+
+        #region Implementation of INotifyPropertyChanged
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        #endregion
+    }
+
+    public class MyTabItem : INotifyPropertyChanged
+    {
+        public string Title { get; set; }
+        public int Index { get; set; }
+        private IEnumerable<MyListItem> _Items;
+        public IEnumerable<MyListItem> Items
+        {
+            get
+            {
+                if (_Items == null) { _Items = System.Linq.Enumerable.Select(IslamMetadata.TanzilReader.GetSelectionNames(Index.ToString(), XMLRender.ArabicData.TranslitScheme.RuleBased, "PlainRoman"), Arr => new MyListItem { Name = (string)(Arr.Cast<object>()).First() }); }
+                return _Items;
+            }
+        }
+
+        private MyListItem _selectedItem;
+
+        public MyListItem SelectedItem
         {
             get { return _selectedItem; }
             set
@@ -143,9 +241,9 @@ namespace IslamSourceQuranViewer
         #endregion
     }
 
-    public class MyTabItem
+    public class MyListItem
     {
-        public string Title { get; set; }
+        public string Name { get; set; }
         public UserControl Content { get; set; }
     }
 }
