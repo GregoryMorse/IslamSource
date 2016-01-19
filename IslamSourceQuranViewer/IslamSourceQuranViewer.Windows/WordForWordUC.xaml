@@ -14,17 +14,26 @@
         </Style>
         <CollectionViewSource x:Name="QuranText" Source="{Binding Path=ViewModel.RenderItems}"></CollectionViewSource>
         <DataTemplate x:Key="WordTemplate">
-            <StackPanel Orientation="Horizontal">
-                <ListBox ItemsSource="{Binding RenderItems}" ItemTemplateSelector="{StaticResource MyDataTemplateSelector}"></ListBox>
-            </StackPanel>
+            <ItemsControl ItemsSource="{Binding RenderItems}" ItemTemplateSelector="{StaticResource MyDataTemplateSelector}">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel Orientation="Horizontal" Width="auto"></StackPanel>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+            </ItemsControl>
         </DataTemplate>
         <DataTemplate x:Key="NormalTemplate">
-            <TextBlock Text="{Binding ItemText}"></TextBlock>
+            <TextBlock Text="{Binding ItemText}" Width="auto" HorizontalAlignment="Center" Margin="5" 
+                        Style="{StaticResource TitleStyle}"></TextBlock>
         </DataTemplate>
         <DataTemplate x:Key="MyTemplate">
-            <StackPanel Orientation="Vertical">
-                <ListBox ItemsSource="{Binding Items}" ItemTemplateSelector="{StaticResource NormalWordTemplateSelector}"></ListBox>
-            </StackPanel>
+            <ItemsControl ItemsSource="{Binding Items}" ItemTemplateSelector="{StaticResource NormalWordTemplateSelector}">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel Orientation="Vertical" Width="auto"></StackPanel>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+            </ItemsControl>
         </DataTemplate>
         <local:NormalWordTemplateSelector x:Key="NormalWordTemplateSelector" WordTemplate="{StaticResource WordTemplate}" NormalTemplate="{StaticResource NormalTemplate}"></local:NormalWordTemplateSelector>
         <local:MyDataTemplateSelector x:Key="MyDataTemplateSelector" MyTemplate="{StaticResource MyTemplate}"></local:MyDataTemplateSelector>
@@ -33,10 +42,12 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
+        <!--<ScrollViewer VerticalScrollBarVisibility="Auto">
+                    </ScrollViewer>-->
         <ItemsControl x:Name="MainControl" Grid.Row="1" ItemTemplateSelector="{StaticResource MyDataTemplateSelector}" ItemsSource="{Binding Source={StaticResource QuranText}}">
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
-                    <controls:WrapPanel></controls:WrapPanel>
+                    <controls:WrapPanel FlowDirection="RightToLeft"></controls:WrapPanel>
                 </ItemsPanelTemplate>
             </ItemsControl.ItemsPanel>
         </ItemsControl>

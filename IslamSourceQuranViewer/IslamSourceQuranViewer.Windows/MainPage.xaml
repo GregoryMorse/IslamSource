@@ -34,6 +34,7 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
+        <!--Binding Converter={StaticResource converter},RelativeSource={RelativeSource AncestorType={x:Type ListView}}}-->
         <ListBox x:Name="sectionListBox" Grid.Row="1" DataContext="" ItemsSource="{Binding Source={StaticResource QuranDivision}}" 
                         SelectedItem="{Binding Path=ViewModel.ListSelectedItem, Mode=TwoWay}"
                         BorderBrush="{x:Null}" BorderThickness="0" FontFamily="Global User Interface" DoubleTapped="sectionListBox_DoubleTapped">
