@@ -134,8 +134,11 @@
     <Content Include="Assets\SmallLogo.scale-100.png" />
     <Content Include="Assets\SplashScreen.scale-100.png" />
     <Content Include="Assets\StoreLogo.scale-100.png" />
+    <Content Include="metadata\en.sahih.txt" />
+    <Content Include="metadata\en.w4w.corpus.txt" />
     <Content Include="metadata\islaminfo.xml" />
     <Content Include="metadata\quran-data.xml" />
+    <Content Include="metadata\quran-hafs.xml" />
     <Content Include="metadata\UnicodeData.txt" />
   </ItemGroup>
   <ItemGroup>

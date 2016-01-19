@@ -152,7 +152,7 @@ namespace IslamSourceQuranViewer
 
         private void sectionListBox_DoubleTapped(object sender, DoubleTappedRoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(WordForWordUC), new {Division = ViewModel.SelectedItem, Selection = ViewModel.ListSelectedItem});
+            this.Frame.Navigate(typeof(WordForWordUC), new {Division = ViewModel.SelectedItem.Index, Selection = ViewModel.ListSelectedItem.Index + 1});
         }
     }
     public class MyTabViewModel : INotifyPropertyChanged
@@ -198,6 +198,7 @@ namespace IslamSourceQuranViewer
                 _selectedItem = value;
                 PropertyChanged(this, new PropertyChangedEventArgs("SelectedItem"));
                 ListItems = _selectedItem.Items;
+                ListSelectedItem = ListItems.First();
             }
         }
 
@@ -208,7 +209,7 @@ namespace IslamSourceQuranViewer
         #endregion
     }
 
-    public class MyTabItem : INotifyPropertyChanged
+    public class MyTabItem
     {
         public string Title { get; set; }
         public int Index { get; set; }
@@ -217,7 +218,7 @@ namespace IslamSourceQuranViewer
         {
             get
             {
-                if (_Items == null) { _Items = System.Linq.Enumerable.Select(IslamMetadata.TanzilReader.GetSelectionNames(Index.ToString(), XMLRender.ArabicData.TranslitScheme.RuleBased, "PlainRoman"), Arr => new MyListItem { Name = (string)(Arr.Cast<object>()).First() }); }
+                if (_Items == null) { _Items = System.Linq.Enumerable.Select(IslamMetadata.TanzilReader.GetSelectionNames(Index.ToString(), XMLRender.ArabicData.TranslitScheme.RuleBased, "PlainRoman"), (Arr, Idx) => new MyListItem { Name = (string)(Arr.Cast<object>()).First(), Index = Idx }); }
                 return _Items;
             }
         }
@@ -230,20 +231,13 @@ namespace IslamSourceQuranViewer
             set
             {
                 _selectedItem = value;
-                PropertyChanged(this, new PropertyChangedEventArgs("SelectedItem"));
             }
         }
-
-        #region Implementation of INotifyPropertyChanged
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        #endregion
     }
 
     public class MyListItem
     {
         public string Name { get; set; }
-        public UserControl Content { get; set; }
+        public int Index { get; set; }
     }
 }

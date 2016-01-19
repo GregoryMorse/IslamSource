@@ -3450,7 +3450,7 @@ Public Class TanzilReader
             Total = 0
             All = GetQuranWordTotalNumber()
             Array.Sort(FreqArray, Function(Key As String, NextKey As String) Dict.Item(NextKey).Count.CompareTo(Dict.Item(Key).Count))
-            Dim W4WLines As String() = Utility.ReadAllLines(PortableMethods.Settings.GetFilePath("metadata\en.w4w.shehnazshaikh.txt"))
+            Dim W4WLines As String() = Utility.ReadAllLines(PortableMethods.Settings.GetFilePath("metadata\en.w4w.corpus.txt"))
             For Count As Integer = 0 To FreqArray.Length - 1
                 Dim TranslationDict As New Dictionary(Of String, List(Of Integer()))
                 For WordCount As Integer = 0 To Dict.Item(FreqArray(Count)).Count - 1
@@ -4963,7 +4963,7 @@ Public Class TanzilReader
         Return DefStops.ToArray()
     End Function
     Public Shared Sub WordFileToResource(WordFilePath As String, ResFilePath As String)
-        '"metadata\en.w4w.shehnazshaikh.txt"
+        '"metadata\en.w4w.corpus.txt"
         Dim W4WLines As String() = Utility.ReadAllLines(WordFilePath)
         Dim Stream As IO.Stream = PortableMethods.FileIO.LoadStream(ResFilePath)
         Dim XMLDoc As Xml.Linq.XDocument = Xml.Linq.XDocument.Load(Stream)
@@ -5008,7 +5008,7 @@ Public Class TanzilReader
         Dim Node As Xml.Linq.XAttribute
         Dim Renderer As New RenderArray(String.Empty)
         Dim Lines As String() = Utility.ReadAllLines(PortableMethods.Settings.GetFilePath("metadata\" + GetTranslationFileName(Translation)))
-        Dim W4WLines As String() = If(W4W, Utility.ReadAllLines(PortableMethods.Settings.GetFilePath("metadata\en.w4w.shehnazshaikh.txt")), Nothing)
+        Dim W4WLines As String() = If(W4W, Utility.ReadAllLines(PortableMethods.Settings.GetFilePath("metadata\en.w4w.corpus.txt")), Nothing)
         If Not QuranText Is Nothing Then
             For Chapter = 0 To QuranText.Count - 1
                 Dim ChapterNode As Xml.Linq.XElement = GetChapterByIndex(BaseChapter + Chapter)
