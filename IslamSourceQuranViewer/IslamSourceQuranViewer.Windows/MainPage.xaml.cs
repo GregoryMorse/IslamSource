@@ -154,6 +154,11 @@ namespace IslamSourceQuranViewer
         {
             this.Frame.Navigate(typeof(WordForWordUC), new {Division = ViewModel.SelectedItem.Index, Selection = ViewModel.ListSelectedItem.Index + 1});
         }
+
+        private void RenderPngs_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(SplashScreen));
+        }
     }
     public class MyTabViewModel : INotifyPropertyChanged
     {

@@ -9,7 +9,7 @@
     mc:Ignorable="d">
     <Page.Resources>
         <Style x:Key="TitleStyle" TargetType="TextBlock">
-            <Setter Property="Foreground" Value="LightGray"/>
+            <Setter Property="Foreground" Value="Black"/>
             <Setter Property="FontFamily" Value="Global User Interface"/>
         </Style>
         <CollectionViewSource x:Name="QuranText" Source="{Binding Path=ViewModel.RenderItems}"></CollectionViewSource>
@@ -23,8 +23,15 @@
             </ItemsControl>
         </DataTemplate>
         <DataTemplate x:Key="NormalTemplate">
-            <TextBlock Text="{Binding ItemText}" Width="auto" HorizontalAlignment="Center" Margin="5" 
-                        Style="{StaticResource TitleStyle}"></TextBlock>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <Rectangle Grid.Row="0" Stroke="LightGray" StrokeThickness="1" StrokeDashArray="3,3" StrokeDashCap="Round"></Rectangle>
+                <TextBlock Grid.Row="0" Text="{Binding ItemText}" Width="auto" HorizontalAlignment="Center" Margin="5" 
+                        TextAlignment="Center" TextWrapping="Wrap" Style="{StaticResource TitleStyle}"></TextBlock>
+            </Grid>
         </DataTemplate>
         <DataTemplate x:Key="MyTemplate">
             <ItemsControl ItemsSource="{Binding Items}" ItemTemplateSelector="{StaticResource NormalWordTemplateSelector}">
@@ -38,18 +45,23 @@
         <local:NormalWordTemplateSelector x:Key="NormalWordTemplateSelector" WordTemplate="{StaticResource WordTemplate}" NormalTemplate="{StaticResource NormalTemplate}"></local:NormalWordTemplateSelector>
         <local:MyDataTemplateSelector x:Key="MyDataTemplateSelector" MyTemplate="{StaticResource MyTemplate}"></local:MyDataTemplateSelector>
     </Page.Resources>
-    <Grid>
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
-        <!--<ScrollViewer VerticalScrollBarVisibility="Auto">
-                    </ScrollViewer>-->
-        <ItemsControl x:Name="MainControl" Grid.Row="1" ItemTemplateSelector="{StaticResource MyDataTemplateSelector}" ItemsSource="{Binding Source={StaticResource QuranText}}">
+        <ItemsControl Background="White" x:Name="MainControl" Grid.Row="0" ItemTemplateSelector="{StaticResource MyDataTemplateSelector}" ItemsSource="{Binding Source={StaticResource QuranText}}">
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
-                    <controls:WrapPanel FlowDirection="RightToLeft"></controls:WrapPanel>
+                    <controls:WrapPanel Background="White" FlowDirection="RightToLeft"></controls:WrapPanel>
                 </ItemsPanelTemplate>
             </ItemsControl.ItemsPanel>
+            <ItemsControl.Template>
+                <ControlTemplate TargetType="ItemsControl">
+                    <ScrollViewer VerticalScrollBarVisibility="Auto">
+                        <ItemsPresenter/>
+                    </ScrollViewer>
+                </ControlTemplate>
+            </ItemsControl.Template>
         </ItemsControl>
     </Grid>
 </Page>

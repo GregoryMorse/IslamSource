@@ -8,7 +8,7 @@
     mc:Ignorable="d">
     <Page.Resources>
         <Style x:Key="TitleStyle" TargetType="TextBlock">
-            <Setter Property="Foreground" Value="LightGray"/>
+            <Setter Property="Foreground" Value="Black"/>
             <Setter Property="FontFamily" Value="Global User Interface"/>
         </Style>
         <CollectionViewSource x:Name="QuranDivisions" Source="{Binding Path=ViewModel.Items}"></CollectionViewSource>
@@ -21,7 +21,7 @@
         </Grid.RowDefinitions>
         <ListBox x:Name="tabListBox" Grid.Row="0" ItemsSource="{Binding Source={StaticResource QuranDivisions}}" 
                         SelectedItem="{Binding Path=ViewModel.SelectedItem, Mode=TwoWay}" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollMode="Enabled"
-                        BorderBrush="{x:Null}" BorderThickness="0" FontFamily="Global User Interface">
+                        Background="White" BorderBrush="{x:Null}" BorderThickness="0" FontFamily="Global User Interface">
             <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
                     <StackPanel Orientation="Horizontal" />
@@ -37,7 +37,7 @@
         <!--Binding Converter={StaticResource converter},RelativeSource={RelativeSource AncestorType={x:Type ListView}}}-->
         <ListBox x:Name="sectionListBox" Grid.Row="1" DataContext="" ItemsSource="{Binding Source={StaticResource QuranDivision}}" 
                         SelectedItem="{Binding Path=ViewModel.ListSelectedItem, Mode=TwoWay}"
-                        BorderBrush="{x:Null}" BorderThickness="0" FontFamily="Global User Interface" DoubleTapped="sectionListBox_DoubleTapped">
+                        Background="White" BorderBrush="{x:Null}" BorderThickness="0" FontFamily="Global User Interface" DoubleTapped="sectionListBox_DoubleTapped">
             <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
                     <StackPanel Orientation="Vertical" />
@@ -51,4 +51,9 @@
             </ListBox.ItemTemplate>
         </ListBox>
     </Grid>
+    <Page.BottomAppBar>
+        <AppBar>
+            <AppBarButton Name="RenderPngs" Click="RenderPngs_Click" Label="Render"></AppBarButton>
+        </AppBar>
+    </Page.BottomAppBar>
 </Page>
