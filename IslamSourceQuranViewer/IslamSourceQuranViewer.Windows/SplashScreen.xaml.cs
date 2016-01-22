@@ -24,6 +24,7 @@ namespace IslamSourceQuranViewer
     {
         async System.Threading.Tasks.Task SavePathImageAsFile(int Width, int Height, string fileName)
         {
+            float dpi = Windows.Graphics.Display.DisplayInformation.GetForCurrentView().LogicalDpi;
             Windows.UI.Xaml.Media.Imaging.RenderTargetBitmap wb = new Windows.UI.Xaml.Media.Imaging.RenderTargetBitmap();
             //Canvas cvs = new Canvas();
             //cvs.Width = Width;
@@ -37,16 +38,14 @@ namespace IslamSourceQuranViewer
             //};
             //BindingOperations.SetBinding(path, Windows.UI.Xaml.Shapes.Path.DataProperty, b);
             //cvs.Children.Add(path);
-            MainGrid.Width = Width;
-            MainGrid.Height = Height;
             Windows.Storage.StorageFile file = await Windows.Storage.ApplicationData.Current.LocalFolder.CreateFileAsync(fileName + ".png", Windows.Storage.CreationCollisionOption.ReplaceExisting);
             Windows.Storage.Streams.IRandomAccessStream stream = await file.OpenAsync(Windows.Storage.FileAccessMode.ReadWrite);
-            await wb.RenderAsync(MainGrid);
+            await wb.RenderAsync(MainGrid, (int)((float)Width * 96 / dpi), (int)((float)Height * 96 / dpi));
             //Windows.Graphics.Imaging.BitmapPropertySet propertySet = new Windows.Graphics.Imaging.BitmapPropertySet();
             //propertySet.Add("ImageQuality", new Windows.Graphics.Imaging.BitmapTypedValue(1.0, Windows.Foundation.PropertyType.Single)); // Maximum quality
             Windows.Graphics.Imaging.BitmapEncoder be = await Windows.Graphics.Imaging.BitmapEncoder.CreateAsync(Windows.Graphics.Imaging.BitmapEncoder.PngEncoderId, stream);//, propertySet);
             Windows.Storage.Streams.IBuffer buf = await wb.GetPixelsAsync();
-            be.SetPixelData(Windows.Graphics.Imaging.BitmapPixelFormat.Bgra8, Windows.Graphics.Imaging.BitmapAlphaMode.Premultiplied, (uint)wb.PixelWidth, (uint)wb.PixelHeight, 96, 96, buf.ToArray());
+            be.SetPixelData(Windows.Graphics.Imaging.BitmapPixelFormat.Bgra8, Windows.Graphics.Imaging.BitmapAlphaMode.Premultiplied, (uint)wb.PixelWidth, (uint)wb.PixelHeight, dpi, dpi, buf.ToArray());
             await be.FlushAsync();
             await stream.GetOutputStreamAt(0).FlushAsync();
             stream.Dispose();
@@ -110,6 +109,7 @@ namespace IslamSourceQuranViewer
             await SavePathImageAsFile(24, 24, "Square44x44Logo.targetsize-24_altform-unplated");
             await SavePathImageAsFile(50, 50, "StoreLogo");
             await SavePathImageAsFile(620, 300, "Wide310x150Logo.scale-200");
+            GC.Collect();
         }
     }
 }
