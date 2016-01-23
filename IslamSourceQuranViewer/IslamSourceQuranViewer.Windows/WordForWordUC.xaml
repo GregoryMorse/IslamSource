@@ -17,7 +17,8 @@
             <ItemsControl ItemsSource="{Binding RenderItems}" ItemTemplateSelector="{StaticResource MyDataTemplateSelector}">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
-                        <StackPanel Orientation="Horizontal" Width="auto"></StackPanel>
+                        <controls:WrapPanel FlowDirection="RightToLeft"></controls:WrapPanel>
+                        <!--<StackPanel Orientation="Horizontal" Width="auto"></StackPanel>-->
                     </ItemsPanelTemplate>
                 </ItemsControl.ItemsPanel>
             </ItemsControl>

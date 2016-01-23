@@ -51,7 +51,7 @@ namespace IslamSourceQuranViewer
     {
         public MyRenderItem(XMLRender.RenderArray.RenderItem RendItem)
         {
-            Items = System.Linq.Enumerable.Select(RendItem.TextItems, (Arr) => (Arr.Text.GetType() == typeof(List<XMLRender.RenderArray.RenderItem>)) ? (object)new MyRenderModel((List<XMLRender.RenderArray.RenderItem>)Arr.Text) : (object)new MyChildRenderItem { ItemText = Arr.Text.GetType() == typeof(string) ? (string)Arr.Text : ""});
+            Items = System.Linq.Enumerable.Select(RendItem.TextItems, (Arr) => (Arr.Text.GetType() == typeof(List<XMLRender.RenderArray.RenderItem>)) ? (object)new MyRenderModel((List<XMLRender.RenderArray.RenderItem>)Arr.Text) : (Arr.Text.GetType() == typeof(string) ? (object)new MyChildRenderItem { ItemText = (string)Arr.Text } : null)).Where(Arr => Arr != null);
         }
         public IEnumerable<object> Items { get; set; }
     }
