@@ -1,0 +1,32 @@
+﻿<Page
+    x:Class="IslamSourceQuranViewer.ExtSplashScreen"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:IslamSourceQuranViewer"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Page.Resources>
+        <x:String x:Key="PathString">M0,598 L217.682,657.687 L218.248,657.189 C225.677,650.966 236.918,647 249.5,647 C262.082,647 273.323,650.966 280.752,657.189 L281.473,657.823 L500,598 L500,626 L290.837,676.199 L289.964,675.991 L289.948,676.412 L290.837,676.199 L500,726 L500,746 L280.182,693.244 L278.138,694.799 C270.809,699.866 260.684,703 249.5,703 C238.316,703 228.191,699.866 220.862,694.799 L219.058,693.426 L0,746 L0,726 L208.997,676.159 L209.043,676.17 L209.042,676.148 L208.997,676.159 L0,626 z M426.166,374.447 L426.166,411.996 L313.866,456.499 L313.866,419.124 z M80.2273,374.447 L192.527,419.124 L192.527,456.499 L80.2273,411.996 z M426.166,258.845 L426.166,296.22 L313.866,340.896 L313.866,303.347 z M80.2273,258.845 L192.527,303.347 L192.527,340.896 L80.2273,296.22 z M458.152,166.363 L280.142,237.637 L280.142,548.807 L458.152,477.707 z M46.5026,166.363 L46.5026,477.707 L224.514,548.807 L224.514,237.637 z M29.6057,105.004 C33.475,104.935 37.3109,105.686 41.1136,107.258 L252.327,191.917 L464.584,107.258 C473.624,103.665 482.721,104.36 491.877,109.344 C499.062,115.138 502.655,122.961 502.655,132.812 L502.655,489.181 C502.655,501.117 497.034,509.636 485.793,514.735 L263.801,603.74 C260.904,604.435 258.875,605.189 257.716,606 L252.327,606 L247.982,606 L242.593,603.74 L19.9055,514.735 C7.96858,509.636 1.99996,501.117 1.99996,489.181 L1.99996,132.812 C1.99996,123.772 6.17228,115.949 14.5162,109.344 C19.6012,106.54 24.631,105.094 29.6057,105.004 z M314.649,9.13586 L310.133,35.4529 L333.192,48.2237 L306.947,52.4309 L301.748,77.9346 L289.808,54.6523 L263.771,57.2083 L282.407,39.0377 L271.747,14.6895 L294.966,27.1754 z M252.719,0 C256.103,0 259.349,0.483704 262.585,0.990601 C239.035,5.59503 221.251,26.2988 221.251,51.2002 C221.251,79.4752 244.166,102.404 272.444,102.404 C289.76,102.404 305.013,93.7453 314.277,80.5778 C306.938,107.84 282.29,128 252.719,128 C217.37,128 188.723,99.343 188.723,64.0028 C188.723,28.657 217.37,0 252.719,0 z</x:String>
+    </Page.Resources>
+
+    <Grid Name="MainGrid" Background="LightBlue" RenderTransformOrigin="0.582,0.152" DoubleTapped="Grid_DoubleTapped">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="*"></RowDefinition>
+			<RowDefinition Height="auto"></RowDefinition>
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="*"></ColumnDefinition>
+			<ColumnDefinition Width="auto"></ColumnDefinition>
+			<ColumnDefinition Width="*"></ColumnDefinition>
+		</Grid.ColumnDefinitions>
+        <Path Name="SplashImg" Grid.Row="1" Grid.Column="1" Data="{StaticResource PathString}" Fill="Black" HorizontalAlignment="Left" Height="746" Margin="0,0,0,0" Stretch="Fill" UseLayoutRounding="False" VerticalAlignment="Top"/>
+        <Grid Grid.Row="1" Grid.Column="1" Name="ProgressGrid">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"></RowDefinition>
+                <RowDefinition Height="8*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <ProgressRing Name="splashProgressRing" Grid.Row="1" Grid.Column="1" IsActive="True" Width="20" HorizontalAlignment="Center" VerticalAlignment="Top"></ProgressRing>
+        </Grid>
+    </Grid>
+</Page>

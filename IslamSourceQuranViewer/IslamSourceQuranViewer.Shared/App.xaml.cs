@@ -70,6 +70,10 @@ namespace IslamSourceQuranViewer
                 {
                     // TODO: Load state from previously suspended application
                 }
+                if (e.PreviousExecutionState != ApplicationExecutionState.Running) {
+                    rootFrame.Content = new ExtSplashScreen(e.SplashScreen, e.PreviousExecutionState == ApplicationExecutionState.Terminated);
+                }
+
 
                 // Place the frame in the current Window
                 Window.Current.Content = rootFrame;

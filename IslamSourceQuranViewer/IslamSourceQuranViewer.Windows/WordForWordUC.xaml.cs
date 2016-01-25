@@ -34,6 +34,22 @@ namespace IslamSourceQuranViewer
             MainControl.ItemsSource = this.ViewModel.RenderItems;
         }
         public MyRenderModel ViewModel { get; set; }
+        private async void RenderPngs_Click(object sender, RoutedEventArgs e)
+        {
+            await WindowsRTSettings.SavePathImageAsFile(1366, 768, "appstorescreenshot-wide", this);
+            await WindowsRTSettings.SavePathImageAsFile(768, 1366, "appstorescreenshot-tall", this);
+            await WindowsRTSettings.SavePathImageAsFile(1280, 768, "appstorephonescreenshot-wide", this);
+            await WindowsRTSettings.SavePathImageAsFile(768, 1280, "appstorephonescreenshot-tall", this);
+            await WindowsRTSettings.SavePathImageAsFile(1280, 720, "appstorephonescreenshot1280x720-wide", this);
+            await WindowsRTSettings.SavePathImageAsFile(720, 1280, "appstorephonescreenshot720x1280-tall", this);
+            await WindowsRTSettings.SavePathImageAsFile(800, 480, "appstorephonescreenshot800x480-wide", this);
+            await WindowsRTSettings.SavePathImageAsFile(480, 800, "appstorephonescreenshot480x800-tall", this);
+            GC.Collect();
+        }
+        private void Settings_Click(object sender, RoutedEventArgs e)
+        {
+            //this.Frame.Navigate(typeof(Settings));
+        }
 
         private int Division;
         private int Selection;

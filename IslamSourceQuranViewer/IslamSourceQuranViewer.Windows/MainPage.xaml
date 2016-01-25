@@ -53,7 +53,10 @@
     </Grid>
     <Page.BottomAppBar>
         <AppBar>
-            <AppBarButton Name="RenderPngs" Click="RenderPngs_Click" Label="Render"></AppBarButton>
+            <StackPanel Orientation="Horizontal">
+                <AppBarButton Name="RenderPngs" Click="RenderPngs_Click" Label="Render" Icon="Camera"></AppBarButton>
+                <AppBarButton Name="Settings" Click="Settings_Click" Label="Settings" Icon="Setting"></AppBarButton>
+            </StackPanel>
         </AppBar>
     </Page.BottomAppBar>
 </Page>

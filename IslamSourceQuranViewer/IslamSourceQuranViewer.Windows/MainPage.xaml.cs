@@ -130,6 +130,34 @@ public class WindowsRTSettings : XMLRender.PortableSettings
     {
         return "";
     }
+    public static async System.Threading.Tasks.Task SavePathImageAsFile(int Width, int Height, string fileName, UIElement element)
+    {
+        float dpi = Windows.Graphics.Display.DisplayInformation.GetForCurrentView().LogicalDpi;
+        Windows.UI.Xaml.Media.Imaging.RenderTargetBitmap wb = new Windows.UI.Xaml.Media.Imaging.RenderTargetBitmap();
+        //Canvas cvs = new Canvas();
+        //cvs.Width = Width;
+        //cvs.Height = Height;
+        //Windows.UI.Xaml.Shapes.Path path = new Windows.UI.Xaml.Shapes.Path();
+        //object val;
+        //Resources.TryGetValue((object)"PathString", out val);
+        //Binding b = new Binding
+        //{
+        //    Source = (string)val
+        //};
+        //BindingOperations.SetBinding(path, Windows.UI.Xaml.Shapes.Path.DataProperty, b);
+        //cvs.Children.Add(path);
+        Windows.Storage.StorageFile file = await Windows.Storage.ApplicationData.Current.LocalFolder.CreateFileAsync(fileName + ".png", Windows.Storage.CreationCollisionOption.ReplaceExisting);
+        Windows.Storage.Streams.IRandomAccessStream stream = await file.OpenAsync(Windows.Storage.FileAccessMode.ReadWrite);
+        await wb.RenderAsync(element, (int)((float)Width * 96 / dpi), (int)((float)Height * 96 / dpi));
+        //Windows.Graphics.Imaging.BitmapPropertySet propertySet = new Windows.Graphics.Imaging.BitmapPropertySet();
+        //propertySet.Add("ImageQuality", new Windows.Graphics.Imaging.BitmapTypedValue(1.0, Windows.Foundation.PropertyType.Single)); // Maximum quality
+        Windows.Graphics.Imaging.BitmapEncoder be = await Windows.Graphics.Imaging.BitmapEncoder.CreateAsync(Windows.Graphics.Imaging.BitmapEncoder.PngEncoderId, stream);//, propertySet);
+        Windows.Storage.Streams.IBuffer buf = await wb.GetPixelsAsync();
+        be.SetPixelData(Windows.Graphics.Imaging.BitmapPixelFormat.Bgra8, Windows.Graphics.Imaging.BitmapAlphaMode.Premultiplied, (uint)wb.PixelWidth, (uint)wb.PixelHeight, dpi, dpi, buf.ToArray());
+        await be.FlushAsync();
+        await stream.GetOutputStreamAt(0).FlushAsync();
+        stream.Dispose();
+    }
 }
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -157,7 +185,11 @@ namespace IslamSourceQuranViewer
 
         private void RenderPngs_Click(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(SplashScreen));
+            this.Frame.Navigate(typeof(ExtSplashScreen));
+        }
+        private void Settings_Click(object sender, RoutedEventArgs e)
+        {
+            //this.Frame.Navigate(typeof(Settings));
         }
     }
     public class MyTabViewModel : INotifyPropertyChanged
