@@ -316,6 +316,10 @@
       <Project>{0a2a299b-a9d7-4a06-b810-de0fcd3bbdd7}</Project>
       <Name>IslamResources</Name>
     </ProjectReference>
+    <ProjectReference Include="..\IslamSourceWebLib\IslamSourceWebLib.vbproj">
+      <Project>{92920f42-4f8b-4899-9c9d-fc73ab606124}</Project>
+      <Name>IslamSourceWebLib</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup>

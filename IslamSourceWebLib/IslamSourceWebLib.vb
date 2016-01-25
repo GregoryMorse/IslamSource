@@ -805,10 +805,10 @@ Public Class CachedDataWeb
 End Class
 Public Class DocBuilderWeb
     Public Shared Function GetListRenderedText(ByVal Item As PageLoader.TextItem) As RenderArray
-        Return GetListRenderedText(ArabicWeb.DecodeTranslitSchemeType(), ArabicWeb.DecodeTranslitScheme(), CInt(HttpContext.Current.Request.QueryString.Get("selection")), Item.Name, HttpContext.Current.Request.QueryString.Get("qurantranslation"))
+        Return DoGetListRenderedText(ArabicWeb.DecodeTranslitSchemeType(), ArabicWeb.DecodeTranslitScheme(), CInt(HttpContext.Current.Request.QueryString.Get("selection")), Item.Name, HttpContext.Current.Request.QueryString.Get("qurantranslation"))
     End Function
     Public Shared Function GetRenderedText(ByVal Item As PageLoader.TextItem) As RenderArray
-        Return GetRenderedText(ArabicWeb.DecodeTranslitSchemeType(), ArabicWeb.DecodeTranslitScheme(), Item.Name, HttpContext.Current.Request.Params("docedit"), HttpContext.Current.Request.Params("qurantranslation"))
+        Return DoGetRenderedText(ArabicWeb.DecodeTranslitSchemeType(), ArabicWeb.DecodeTranslitScheme(), Item.Name, HttpContext.Current.Request.Params("docedit"), HttpContext.Current.Request.Params("qurantranslation"))
     End Function
     Public Shared Function GetMetadataRules(ID As String) As Array()
         Dim Output(CachedData.IslamData.MetaRules.Length + 2) As Array
@@ -831,9 +831,9 @@ Public Class DocBuilderWeb
         Return RenderArrayWeb.MakeTableJSFunctions(Output, ID)
     End Function
     Public Shared Function GetRenderedHelpText(ByVal Item As PageLoader.TextItem) As RenderArray
-        Return DocBuilderWeb.GetRenderedHelpText(ArabicWeb.DecodeTranslitSchemeType(), ArabicWeb.DecodeTranslitScheme(), Item.Name)
+        Return DoGetRenderedHelpText(ArabicWeb.DecodeTranslitSchemeType(), ArabicWeb.DecodeTranslitScheme(), Item.Name)
     End Function
-    Public Shared Function GetRenderedHelpText(SchemeType As ArabicData.TranslitScheme, Scheme As String, Name As String) As RenderArray
+    Public Shared Function DoGetRenderedHelpText(SchemeType As ArabicData.TranslitScheme, Scheme As String, Name As String) As RenderArray
         Dim Renderer As New RenderArray(Name)
         Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eList, ArabicWeb.GetTranslitSchemeMetadata("0"))}))
         Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eList, TanzilReaderWeb.GetTranslationMetadata("1"))}))
@@ -1058,7 +1058,7 @@ Public Class DocBuilderWeb
         Next
         Return Renderer
     End Function
-    Public Shared Function GetListRenderedText(SchemeType As ArabicData.TranslitScheme, Scheme As String, Count As Integer, Name As String, QuranTranslation As String) As RenderArray
+    Public Shared Function DoGetListRenderedText(SchemeType As ArabicData.TranslitScheme, Scheme As String, Count As Integer, Name As String, QuranTranslation As String) As RenderArray
         If Count = -1 Then Count = 0
         Dim Renderer As New RenderArray(Name)
         If Not CachedData.IslamData.Lists(Count).Words Is Nothing Then
@@ -1068,7 +1068,7 @@ Public Class DocBuilderWeb
         End If
         Return Renderer
     End Function
-    Public Shared Function GetRenderedText(SchemeType As ArabicData.TranslitScheme, Scheme As String, Name As String, DocEdit As String, QuranTranslation As String) As RenderArray
+    Public Shared Function DoGetRenderedText(SchemeType As ArabicData.TranslitScheme, Scheme As String, Name As String, DocEdit As String, QuranTranslation As String) As RenderArray
         Return NormalTextFromReferences(Name, DocEdit, SchemeType, Scheme, TanzilReader.GetTranslationIndex(QuranTranslation))
     End Function
 End Class
