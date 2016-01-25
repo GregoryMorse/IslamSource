@@ -1,0 +1,4272 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Acct_AccountActivateSuccess" xml:space="preserve">
+    <value>계정이 성공적으로 활성화.</value>
+  </data>
+  <data name="Acct_AccountAlreadyActivated" xml:space="preserve">
+    <value>계정이 이미 활성화.</value>
+  </data>
+  <data name="Acct_AccountDeleteSuccess" xml:space="preserve">
+    <value>계정이 삭제.</value>
+  </data>
+  <data name="Acct_AccountNotActivated" xml:space="preserve">
+    <value>아직 활성화되지 않은 계정 먼저 이메일을 확인하거나 추가 정품 인증 코드를 요청하시기 바랍니다.</value>
+  </data>
+  <data name="Acct_ActivateAccount" xml:space="preserve">
+    <value>계정을 활성화</value>
+  </data>
+  <data name="Acct_ActivationAccountBody" xml:space="preserve">
+    <value>이 이메일은 {0} 계정의 활성화를 요청하는 : {1}.</value>
+  </data>
+  <data name="Acct_ActivationAccountSubject" xml:space="preserve">
+    <value>{0}에서 계정 활성화</value>
+  </data>
+  <data name="Acct_ActivationCode" xml:space="preserve">
+    <value>정품 인증 코드</value>
+  </data>
+  <data name="Acct_BadEmailFormat" xml:space="preserve">
+    <value>E-mail 주소는 올바른 형식의.</value>
+  </data>
+  <data name="Acct_Certain" xml:space="preserve">
+    <value>당신은 어떤가요?</value>
+  </data>
+  <data name="Acct_ChangeEmailAddress" xml:space="preserve">
+    <value>E-메일 주소 변경</value>
+  </data>
+  <data name="Acct_ChangePassword" xml:space="preserve">
+    <value>비밀번호 변경</value>
+  </data>
+  <data name="Acct_ChangeUsername" xml:space="preserve">
+    <value>사용자 이름을 변경할</value>
+  </data>
+  <data name="Acct_CheckEmailNotice" xml:space="preserve">
+    <value>정품 인증은 제공된 주소로 발송.</value>
+  </data>
+  <data name="Acct_ConfirmEmailAddress" xml:space="preserve">
+    <value>E-메일 주소에게 확인</value>
+  </data>
+  <data name="Acct_ConfirmPassword" xml:space="preserve">
+    <value>비밀번호 확인</value>
+  </data>
+  <data name="Acct_ControlPanel" xml:space="preserve">
+    <value>제어판</value>
+  </data>
+  <data name="Acct_DeleteAccount" xml:space="preserve">
+    <value>계정 삭제</value>
+  </data>
+  <data name="Acct_DuplicateUser" xml:space="preserve">
+    <value>이 이름을 가진 사용자가 이미 다른를 선택하십시오 존재합니다.</value>
+  </data>
+  <data name="Acct_EmailAddress" xml:space="preserve">
+    <value>E-메일 주소</value>
+  </data>
+  <data name="Acct_EmailChangeReactivate" xml:space="preserve">
+    <value>E-메일 주소가 변경 및 활성화의 전자 메일 계정을 다시 활성화하기 위해 보냈다.</value>
+  </data>
+  <data name="Acct_EmailInUse" xml:space="preserve">
+    <value>이미 사용중인 전자 메일은 기존의 자격 증명을 사용하여 로그인하십시오.</value>
+  </data>
+  <data name="Acct_EmailsNotMatch" xml:space="preserve">
+    <value>E-메일 주소가 일치하지 않는</value>
+  </data>
+  <data name="Acct_ForgotPassword" xml:space="preserve">
+    <value>비밀 번호를 잊으셨습니까</value>
+  </data>
+  <data name="Acct_ForgotUsername" xml:space="preserve">
+    <value>사용자 이름을 잊어 버렸</value>
+  </data>
+  <data name="Acct_Home" xml:space="preserve">
+    <value>홈</value>
+  </data>
+  <data name="Acct_IncorrectActivationCode" xml:space="preserve">
+    <value>잘못된 활성화 코드.</value>
+  </data>
+  <data name="Acct_IncorrectPasswordResetCode" xml:space="preserve">
+    <value>잘못된 암호 재설정 코드입니다.</value>
+  </data>
+  <data name="Acct_InvalidInput" xml:space="preserve">
+    <value>입력이 잘못되었습니다.</value>
+  </data>
+  <data name="Acct_InvalidUsernamePassword" xml:space="preserve">
+    <value>사용자 이름 또는 비밀번호가 잘못되었습니다.</value>
+  </data>
+  <data name="Acct_Login" xml:space="preserve">
+    <value>로그인</value>
+  </data>
+  <data name="Acct_LoginSuccess" xml:space="preserve">
+    <value>성공적으로 로그인합니다.</value>
+  </data>
+  <data name="Acct_Logoff" xml:space="preserve">
+    <value>로그 오프</value>
+  </data>
+  <data name="Acct_LogoffSuccess" xml:space="preserve">
+    <value>로그 오프 성​​공.</value>
+  </data>
+  <data name="Acct_MinimumPassword" xml:space="preserve">
+    <value>암호는 8 자 이상이어야합니다.</value>
+  </data>
+  <data name="Acct_MinimumUsername" xml:space="preserve">
+    <value>사용자 이름은 4 자 이상이어야합니다.</value>
+  </data>
+  <data name="Acct_No" xml:space="preserve">
+    <value>아니</value>
+  </data>
+  <data name="Acct_NotConfirmDelete" xml:space="preserve">
+    <value>계정 삭제를 확인해야합니다.</value>
+  </data>
+  <data name="Acct_NoUserExists" xml:space="preserve">
+    <value>제공된 사용자가 입력 한 이메일 주소를 위해 존재하지 않는다.</value>
+  </data>
+  <data name="Acct_Password" xml:space="preserve">
+    <value>암호</value>
+  </data>
+  <data name="Acct_PasswordAlreadyReset" xml:space="preserve">
+    <value>암호는 이미 다시 설정하거나 프로세스가 시작되지.</value>
+  </data>
+  <data name="Acct_PasswordChangedBody" xml:space="preserve">
+    <value>이 이메일은 {0} 계정의 암호 변경의 통지하는 것입니다 : {1}.</value>
+  </data>
+  <data name="Acct_PasswordChangedSubject" xml:space="preserve">
+    <value>비밀번호는 계정에 대한 변경 {0}</value>
+  </data>
+  <data name="Acct_PasswordChangeSuccess" xml:space="preserve">
+    <value>비밀번호가 성공적으로 변경되었습니다.</value>
+  </data>
+  <data name="Acct_PasswordEmailSent" xml:space="preserve">
+    <value>이메일은 비밀번호 재설정 프로세스를 시작하는 파일에있는 주소로 발송되었습니다.</value>
+  </data>
+  <data name="Acct_PasswordResetBody" xml:space="preserve">
+    <value>이 이메일은 {0} 계정의 암호를 재설정하는 것입니다 : {1}.</value>
+  </data>
+  <data name="Acct_PasswordResetCode" xml:space="preserve">
+    <value>비밀번호 재설정 코드</value>
+  </data>
+  <data name="Acct_PasswordResetSubject" xml:space="preserve">
+    <value>에서 계정에 대한 암호 재설정 {0}</value>
+  </data>
+  <data name="Acct_PasswordResetSuccess" xml:space="preserve">
+    <value>암호가 성공적으로 재설정합니다.</value>
+  </data>
+  <data name="Acct_PasswordsNotMatch" xml:space="preserve">
+    <value>비밀번호가 일치하지 않습니다</value>
+  </data>
+  <data name="Acct_Register" xml:space="preserve">
+    <value>레지스터</value>
+  </data>
+  <data name="Acct_Remember" xml:space="preserve">
+    <value>기억 하는가?</value>
+  </data>
+  <data name="Acct_ResendActivationEmail" xml:space="preserve">
+    <value>다시 보내기 활성화 E-메일</value>
+  </data>
+  <data name="Acct_ResetPassword" xml:space="preserve">
+    <value>암호 재설정</value>
+  </data>
+  <data name="Acct_RetrievePassword" xml:space="preserve">
+    <value>비밀번호 찾기</value>
+  </data>
+  <data name="Acct_RetrieveUsername" xml:space="preserve">
+    <value>아이디 검색</value>
+  </data>
+  <data name="Acct_SendActivationCode" xml:space="preserve">
+    <value>정품 인증 코드에게 보내기</value>
+  </data>
+  <data name="Acct_Username" xml:space="preserve">
+    <value>이름</value>
+  </data>
+  <data name="Acct_UsernameChangedBody" xml:space="preserve">
+    <value>이 이메일은 {0} 계정의 계정 이름 변경의 통지하는 것입니다 : {1}.</value>
+  </data>
+  <data name="Acct_UsernameChangedSubject" xml:space="preserve">
+    <value>사용자 이름으로 계정을 변경 {0}</value>
+  </data>
+  <data name="Acct_UsernameChangeSuccess" xml:space="preserve">
+    <value>이름이 성공적으로 변경되었습니다.</value>
+  </data>
+  <data name="Acct_UsernameEmailSent" xml:space="preserve">
+    <value>전자 메일 사용자 이름과 파일에있는 주소로 발송되었습니다.</value>
+  </data>
+  <data name="Acct_UsernameReminderBody" xml:space="preserve">
+    <value>이 이메일은 {0} 계정의 신호입니다 : {1}.</value>
+  </data>
+  <data name="Acct_UsernameReminderSubject" xml:space="preserve">
+    <value>{0}에서 계정에 대한 알림을 사용자 이름</value>
+  </data>
+  <data name="Acct_UserNotFound" xml:space="preserve">
+    <value>사용자가 존재하지 않습니다.</value>
+  </data>
+  <data name="Acct_Yes" xml:space="preserve">
+    <value>예</value>
+  </data>
+  <data name="Acct_CleanupStale" xml:space="preserve">
+    <value>정리 부실</value>
+  </data>
+  <data name="Acct_ClearCache" xml:space="preserve">
+    <value>캐시 지우기</value>
+  </data>
+  <data name="Acct_ClearDiskCache" xml:space="preserve">
+    <value>지우기 디스크 캐시</value>
+  </data>
+  <data name="Acct_CreateDatabase" xml:space="preserve">
+    <value>데이터베이스 만들기</value>
+  </data>
+  <data name="Acct_DotNetVersion" xml:space="preserve">
+    <value>닷 넷 버전</value>
+  </data>
+  <data name="Acct_RemoveDatabase" xml:space="preserve">
+    <value>데이터베이스를 제거</value>
+  </data>
+  <data name="Acct_ViewCache" xml:space="preserve">
+    <value>보기 캐시</value>
+  </data>
+  <data name="Acct_ViewDiskCache" xml:space="preserve">
+    <value>보기 디스크 캐시</value>
+  </data>
+  <data name="Acct_ViewHeaders" xml:space="preserve">
+    <value>보기 헤더</value>
+  </data>
+  <data name="Hadith_Book" xml:space="preserve">
+    <value>책</value>
+  </data>
+  <data name="Hadith_Books" xml:space="preserve">
+    <value>서적</value>
+  </data>
+  <data name="Hadith_Chapters" xml:space="preserve">
+    <value>장</value>
+  </data>
+  <data name="Hadith_Hadith" xml:space="preserve">
+    <value>하디스</value>
+  </data>
+  <data name="Hadith_Hadiths" xml:space="preserve">
+    <value>Hadiths에</value>
+  </data>
+  <data name="Hadith_IdenticalNumbering" xml:space="preserve">
+    <value>동일한 번호 매기기</value>
+  </data>
+  <data name="Hadith_Index" xml:space="preserve">
+    <value>색인</value>
+  </data>
+  <data name="Hadith_MappedOf" xml:space="preserve">
+    <value>{0} {1} 중 매핑</value>
+  </data>
+  <data name="Hadith_NoTranslation" xml:space="preserve">
+    <value>더 번역되지</value>
+  </data>
+  <data name="Hadith_SourceHadithIndex" xml:space="preserve">
+    <value>소스 하디스 색인</value>
+  </data>
+  <data name="Hadith_Translation" xml:space="preserve">
+    <value>번역</value>
+  </data>
+  <data name="Hadith_TranslationBook" xml:space="preserve">
+    <value>번역 책</value>
+  </data>
+  <data name="Hadith_TranslationHadithCount" xml:space="preserve">
+    <value>번역 하디스 횟수</value>
+  </data>
+  <data name="Hadith_TranslationHadithIndex" xml:space="preserve">
+    <value>번역 하디스 색인</value>
+  </data>
+  <data name="Hadith_TranslationMapping" xml:space="preserve">
+    <value>번역 매핑</value>
+  </data>
+  <data name="Hadith_TranslationVolume" xml:space="preserve">
+    <value>번역 권</value>
+  </data>
+  <data name="Hadith_Volume" xml:space="preserve">
+    <value>음량</value>
+  </data>
+  <data name="IslamSource_Apply" xml:space="preserve">
+    <value>적용</value>
+  </data>
+  <data name="IslamSource_ArabicAlphabet" xml:space="preserve">
+    <value>아랍 문자</value>
+  </data>
+  <data name="IslamSource_ArabicToRoman" xml:space="preserve">
+    <value>로마 아랍어</value>
+  </data>
+  <data name="IslamSource_Book" xml:space="preserve">
+    <value>책</value>
+  </data>
+  <data name="IslamSource_Collection" xml:space="preserve">
+    <value>수집</value>
+  </data>
+  <data name="IslamSource_Credits" xml:space="preserve">
+    <value>꾸란 텍스트 신용 Tanzil 프로젝트로 이동합니다.</value>
+  </data>
+  <data name="IslamSource_Direction" xml:space="preserve">
+    <value>방향</value>
+  </data>
+  <data name="IslamSource_Disable" xml:space="preserve">
+    <value>사용 안 함</value>
+  </data>
+  <data name="IslamSource_Display" xml:space="preserve">
+    <value>디스플레이</value>
+  </data>
+  <data name="IslamSource_Division" xml:space="preserve">
+    <value>분할</value>
+  </data>
+  <data name="IslamSource_DownloadMapping" xml:space="preserve">
+    <value>다운로드 및 매핑</value>
+  </data>
+  <data name="IslamSource_EnglishRomanized" xml:space="preserve">
+    <value>영어 로마자</value>
+  </data>
+  <data name="IslamSource_ExtendedBuckwalter" xml:space="preserve">
+    <value>확장 Buckwalter</value>
+  </data>
+  <data name="IslamSource_Font" xml:space="preserve">
+    <value>글꼴</value>
+  </data>
+  <data name="IslamSource_Goal" xml:space="preserve">
+    <value>이 웹 사이트는 꾸란, 하디스 컬렉션, 책, 오디오, 비디오, 뉴스, 어휘, 음역 시스템 및 프로그래밍 정보를 포함하여 이슬람에 대한 원시 소스 재료를 제공하는 것을 목표로하고있다.</value>
+  </data>
+  <data name="IslamSource_Hadiths" xml:space="preserve">
+    <value>하디스 모음</value>
+  </data>
+  <data name="IslamSource_HadithSourceText" xml:space="preserve">
+    <value>하디스 소스 텍스트</value>
+  </data>
+  <data name="IslamSource_Home" xml:space="preserve">
+    <value>홈</value>
+  </data>
+  <data name="IslamSource_Information" xml:space="preserve">
+    <value>정보</value>
+  </data>
+  <data name="IslamSource_Intro" xml:space="preserve">
+    <value>어떤 질문 또는 코멘트 나 오류는, 저에게 이메일을 보내 주시기 바랍니다 :</value>
+  </data>
+  <data name="IslamSource_Introduction" xml:space="preserve">
+    <value>소개</value>
+  </data>
+  <data name="IslamSource_IslamicArticles" xml:space="preserve">
+    <value>이슬람 기사</value>
+  </data>
+  <data name="IslamSource_IslamicCharity" xml:space="preserve">
+    <value>이슬람 자선</value>
+  </data>
+  <data name="IslamSource_IslamicFoundations" xml:space="preserve">
+    <value>이슬람의 기초</value>
+  </data>
+  <data name="IslamSource_IslamicInformation" xml:space="preserve">
+    <value>이슬람 정보</value>
+  </data>
+  <data name="IslamSource_IslamicNews" xml:space="preserve">
+    <value>이슬람 뉴스</value>
+  </data>
+  <data name="IslamSource_IslamicOrganizations" xml:space="preserve">
+    <value>이슬람 단체</value>
+  </data>
+  <data name="IslamSource_IslamicQuotes" xml:space="preserve">
+    <value>이슬람 주가</value>
+  </data>
+  <data name="IslamSource_IslamicShops" xml:space="preserve">
+    <value>이슬람 상점</value>
+  </data>
+  <data name="IslamSource_IslamicWebsites" xml:space="preserve">
+    <value>이슬람 웹 사이트</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesAhlulBaytAcademy" xml:space="preserve">
+    <value>AhlulBayt 아카데미</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesAlEman" xml:space="preserve">
+    <value>فصل : كتاب المقدمة | نداء الإيمان</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesAlHudaInternationalWelfareFoundation" xml:space="preserve">
+    <value>알 - 후다 국제 복지 재단</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesAllahsQuran" xml:space="preserve">
+    <value>알라의 꾸란</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesCorpus" xml:space="preserve">
+    <value>코란의 아랍어 코퍼스</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesCouncilAmericanIslamicRelations" xml:space="preserve">
+    <value>미국 - 이슬람 관계 협의회</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesDarusSalamPublications" xml:space="preserve">
+    <value>다르 우리 살람 간행물</value>
+  </data>
+  <data name="IslamSource_IslamicWebsiteseMuslim" xml:space="preserve">
+    <value>eMuslim</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesGuidedWaysTechnologies" xml:space="preserve">
+    <value>안내 방법 기술</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesHouseQuran" xml:space="preserve">
+    <value>꾸란의 집</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesiQuran" xml:space="preserve">
+    <value>iQuran</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesIslamicCircleNorthAmerica" xml:space="preserve">
+    <value>북미 이슬람 서클</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesIslamicFinder" xml:space="preserve">
+    <value>이슬람 찾기</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesIslamicInsights" xml:space="preserve">
+    <value>이슬람 인사이트</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesIslamicRelief" xml:space="preserve">
+    <value>이슬람 구호</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesIslamicReliefUSA" xml:space="preserve">
+    <value>이슬람 구호 USA</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesIslamicSearchCenter" xml:space="preserve">
+    <value>이슬람 검색 센터</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesIslamicSocietyNorthAmerica" xml:space="preserve">
+    <value>북미 이슬람 협회</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesIslamicThinkersSociety" xml:space="preserve">
+    <value>이슬람 사상가 사회</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesIslamSpirit" xml:space="preserve">
+    <value>이슬람 정신</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesKalamullah" xml:space="preserve">
+    <value>Kalamullah</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesMaktabahorgTheUltimateIslamicLibrary" xml:space="preserve">
+    <value>Maktabah.org 궁극적 인 이슬람 라이브러리</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesOpenBurhan" xml:space="preserve">
+    <value>오픈 Burhan 또는</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesProfessorAnsarian" xml:space="preserve">
+    <value>교수 Ansarian의 공식 웹 사이트</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesQuran" xml:space="preserve">
+    <value>꾸란</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesQuranDownload" xml:space="preserve">
+    <value>꾸란 다운로드</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesQuranExplorer" xml:space="preserve">
+    <value>꾸란 탐색기</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesQuranicAudio" xml:space="preserve">
+    <value>코란 오디오</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesQuranProject" xml:space="preserve">
+    <value>온라인 꾸란 프로젝트</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesQuranTransliteration" xml:space="preserve">
+    <value>코란 음역</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesSalah" xml:space="preserve">
+    <value>살라</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesStudyQuran" xml:space="preserve">
+    <value>연구 꾸란</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesSunnahCom" xml:space="preserve">
+    <value>Sunnah.com 말과 예언자 무하마드의 가르침 (صلى الله عليه و سلم)</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesTanzil" xml:space="preserve">
+    <value>Tanzil - 꾸란 네비게이터</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesTheAbsoluteReality" xml:space="preserve">
+    <value>절대 현실</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesTheAwaitedOneFoundation" xml:space="preserve">
+    <value>기다려온 한 재단</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesTheIslamicBulletin" xml:space="preserve">
+    <value>이슬람 공지</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesTheIslamicFoundation" xml:space="preserve">
+    <value>이슬람 재단</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesTheLahoreAhmadiyyaMovement" xml:space="preserve">
+    <value>라호르 Ahmadiyya 운동</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesTheLahoreAhmadiyyaMovementIslam" xml:space="preserve">
+    <value>이슬람 라호르 Ahmadiyya 운동</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesUnderstandQuran" xml:space="preserve">
+    <value>꾸란에게 이해</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesVerseByVerseQuran" xml:space="preserve">
+    <value>운문 절 꾸란</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesZakatFoundationAmerica" xml:space="preserve">
+    <value>미국의 Zakat 재단</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesZekr" xml:space="preserve">
+    <value>Zekr 프로젝트</value>
+  </data>
+  <data name="IslamSource_LearningIslam" xml:space="preserve">
+    <value>이슬람 학습</value>
+  </data>
+  <data name="IslamSource_Loading" xml:space="preserve">
+    <value>로딩</value>
+  </data>
+  <data name="IslamSource_Lotus" xml:space="preserve">
+    <value>로터스</value>
+  </data>
+  <data name="IslamSource_Mapping" xml:space="preserve">
+    <value>매핑</value>
+  </data>
+  <data name="IslamSource_NotableArticles" xml:space="preserve">
+    <value>주목할만한 기사</value>
+  </data>
+  <data name="IslamSource_NotableNews" xml:space="preserve">
+    <value>주목할만한 뉴스</value>
+  </data>
+  <data name="IslamSource_NotableQuotes" xml:space="preserve">
+    <value>주목할만한 주가</value>
+  </data>
+  <data name="IslamSource_Off" xml:space="preserve">
+    <value>떨어져서</value>
+  </data>
+  <data name="IslamSource_Operation" xml:space="preserve">
+    <value>조작</value>
+  </data>
+  <data name="IslamSource_Perform" xml:space="preserve">
+    <value>수행</value>
+  </data>
+  <data name="IslamSource_PlainRoman" xml:space="preserve">
+    <value>일반 로마</value>
+  </data>
+  <data name="IslamSource_PrayerTimes" xml:space="preserve">
+    <value>기도 시간</value>
+  </data>
+  <data name="IslamSource_QiblaDirectionFromTrueNorth" xml:space="preserve">
+    <value>진북에서의 Qibla 방향</value>
+  </data>
+  <data name="IslamSource_Quote" xml:space="preserve">
+    <value>시세</value>
+  </data>
+  <data name="IslamSource_QuoteMode" xml:space="preserve">
+    <value>견적 모드</value>
+  </data>
+  <data name="IslamSource_Quran" xml:space="preserve">
+    <value>성령 꾸란</value>
+  </data>
+  <data name="IslamSource_QuranResources" xml:space="preserve">
+    <value>꾸란 자료</value>
+  </data>
+  <data name="IslamSource_RomanToArabic" xml:space="preserve">
+    <value>로마 아랍어</value>
+  </data>
+  <data name="IslamSource_Scheme" xml:space="preserve">
+    <value>계획</value>
+  </data>
+  <data name="IslamSource_Selection" xml:space="preserve">
+    <value>선택</value>
+  </data>
+  <data name="IslamSource_SubmissionNote" xml:space="preserve">
+    <value>제출 : 원본 소스 하디스 컬렉션은 모든 볼륨, 책, 장과 하디스 정보와 원시 하디스 텍스트가 포함 된 XML 파일을 포함하는 XML 메타 데이터 파일을 포함해야합니다.</value>
+  </data>
+  <data name="IslamSource_Supplications" xml:space="preserve">
+    <value>청원</value>
+  </data>
+  <data name="IslamSource_Text" xml:space="preserve">
+    <value>원본</value>
+  </data>
+  <data name="IslamSource_Translation" xml:space="preserve">
+    <value>번역</value>
+  </data>
+  <data name="IslamSource_Transliterate" xml:space="preserve">
+    <value>바꾸어 쓰다</value>
+  </data>
+  <data name="IslamSource_Transliteration" xml:space="preserve">
+    <value>음역</value>
+  </data>
+  <data name="IslamSource_TransliterationScheme" xml:space="preserve">
+    <value>음역 계획</value>
+  </data>
+  <data name="IslamSource_Viewer" xml:space="preserve">
+    <value>뷰어</value>
+  </data>
+  <data name="IslamSource_Welcome" xml:space="preserve">
+    <value>IslamSource.info에 오신 것을 환영합니다</value>
+  </data>
+  <data name="IslamSource_ModifyDiacritics" xml:space="preserve">
+    <value>분음 부호를 수정</value>
+  </data>
+  <data name="IslamSource_Add" xml:space="preserve">
+    <value>추가</value>
+  </data>
+  <data name="IslamSource_Remove" xml:space="preserve">
+    <value>제거</value>
+  </data>
+  <data name="IslamInfo_Chapters" xml:space="preserve">
+    <value>장</value>
+  </data>
+  <data name="IslamInfo_ChaptersRevelationOrder" xml:space="preserve">
+    <value>요한 계시록 위해 장</value>
+  </data>
+  <data name="IslamInfo_Groups" xml:space="preserve">
+    <value>그룹</value>
+  </data>
+  <data name="IslamInfo_ImportantSelections" xml:space="preserve">
+    <value>중요한 선택</value>
+  </data>
+  <data name="IslamInfo_Pages" xml:space="preserve">
+    <value>페이지</value>
+  </data>
+  <data name="IslamInfo_Parts" xml:space="preserve">
+    <value>부품</value>
+  </data>
+  <data name="IslamInfo_Prostrations" xml:space="preserve">
+    <value>부복</value>
+  </data>
+  <data name="IslamInfo_Sections" xml:space="preserve">
+    <value>섹션</value>
+  </data>
+  <data name="IslamInfo_Stations" xml:space="preserve">
+    <value>역</value>
+  </data>
+  <data name="lang_localam" xml:space="preserve">
+    <value>암하라어</value>
+  </data>
+  <data name="lang_localar" xml:space="preserve">
+    <value>아라비아 말</value>
+  </data>
+  <data name="lang_localaz" xml:space="preserve">
+    <value>아제르바이잔</value>
+  </data>
+  <data name="lang_localber" xml:space="preserve">
+    <value>Amazigh</value>
+  </data>
+  <data name="lang_localbg" xml:space="preserve">
+    <value>불가리아 사람</value>
+  </data>
+  <data name="lang_localbn" xml:space="preserve">
+    <value>벵골 사람</value>
+  </data>
+  <data name="lang_localbs" xml:space="preserve">
+    <value>보스니아어</value>
+  </data>
+  <data name="lang_localcs" xml:space="preserve">
+    <value>체코의</value>
+  </data>
+  <data name="lang_localde" xml:space="preserve">
+    <value>독일의</value>
+  </data>
+  <data name="lang_localdv" xml:space="preserve">
+    <value>디베히어</value>
+  </data>
+  <data name="lang_localen" xml:space="preserve">
+    <value>영어</value>
+  </data>
+  <data name="lang_locales" xml:space="preserve">
+    <value>스페인의</value>
+  </data>
+  <data name="lang_localfa" xml:space="preserve">
+    <value>페르시아의</value>
+  </data>
+  <data name="lang_localfr" xml:space="preserve">
+    <value>프랑스의</value>
+  </data>
+  <data name="lang_localha" xml:space="preserve">
+    <value>하우사어</value>
+  </data>
+  <data name="lang_localhi" xml:space="preserve">
+    <value>힌디 어</value>
+  </data>
+  <data name="lang_localid" xml:space="preserve">
+    <value>인도네시아의</value>
+  </data>
+  <data name="lang_localit" xml:space="preserve">
+    <value>이탈리아의</value>
+  </data>
+  <data name="lang_localja" xml:space="preserve">
+    <value>일본의</value>
+  </data>
+  <data name="lang_localko" xml:space="preserve">
+    <value>한국의</value>
+  </data>
+  <data name="lang_localku" xml:space="preserve">
+    <value>쿠르드어</value>
+  </data>
+  <data name="lang_localml" xml:space="preserve">
+    <value>말라얄람어</value>
+  </data>
+  <data name="lang_localms" xml:space="preserve">
+    <value>말레이 사람</value>
+  </data>
+  <data name="lang_localnl" xml:space="preserve">
+    <value>네덜란드</value>
+  </data>
+  <data name="lang_localno" xml:space="preserve">
+    <value>노르웨이의</value>
+  </data>
+  <data name="lang_localpl" xml:space="preserve">
+    <value>폴란드의</value>
+  </data>
+  <data name="lang_localpt" xml:space="preserve">
+    <value>포르투갈의</value>
+  </data>
+  <data name="lang_localro" xml:space="preserve">
+    <value>루마니아어</value>
+  </data>
+  <data name="lang_localru" xml:space="preserve">
+    <value>러시아의</value>
+  </data>
+  <data name="lang_localsd" xml:space="preserve">
+    <value>신드어</value>
+  </data>
+  <data name="lang_localso" xml:space="preserve">
+    <value>소말리어</value>
+  </data>
+  <data name="lang_localsq" xml:space="preserve">
+    <value>알바니아</value>
+  </data>
+  <data name="lang_localsv" xml:space="preserve">
+    <value>스웨덴어</value>
+  </data>
+  <data name="lang_localsw" xml:space="preserve">
+    <value>스와힐리어</value>
+  </data>
+  <data name="lang_localta" xml:space="preserve">
+    <value>타밀 사람</value>
+  </data>
+  <data name="lang_localtg" xml:space="preserve">
+    <value>타지크어</value>
+  </data>
+  <data name="lang_localth" xml:space="preserve">
+    <value>타이어</value>
+  </data>
+  <data name="lang_localtr" xml:space="preserve">
+    <value>터키의</value>
+  </data>
+  <data name="lang_localtt" xml:space="preserve">
+    <value>타타르 사람</value>
+  </data>
+  <data name="lang_localug" xml:space="preserve">
+    <value>위구르어</value>
+  </data>
+  <data name="lang_localur" xml:space="preserve">
+    <value>우르두 말</value>
+  </data>
+  <data name="lang_localuz" xml:space="preserve">
+    <value>우즈벡 족</value>
+  </data>
+  <data name="lang_localzh" xml:space="preserve">
+    <value>중국의</value>
+  </data>
+  <data name="Acct_Download" xml:space="preserve">
+    <value>다운로드 {0}</value>
+  </data>
+  <data name="IslamInfo_CelebrationDay" xml:space="preserve">
+    <value>축하 일</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek1" xml:space="preserve">
+    <value>일요일</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek2" xml:space="preserve">
+    <value>월요일</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek3" xml:space="preserve">
+    <value>화요일</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek4" xml:space="preserve">
+    <value>수요일</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek5" xml:space="preserve">
+    <value>목요일</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek6" xml:space="preserve">
+    <value>금요일</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek7" xml:space="preserve">
+    <value>토요일</value>
+  </data>
+  <data name="IslamInfo_DaysOfWeek" xml:space="preserve">
+    <value>요일</value>
+  </data>
+  <data name="IslamInfo_Disliked" xml:space="preserve">
+    <value>싫어</value>
+  </data>
+  <data name="IslamInfo_EnteringMosque" xml:space="preserve">
+    <value>모스크를 입력</value>
+  </data>
+  <data name="IslamInfo_Fasting" xml:space="preserve">
+    <value>금식</value>
+  </data>
+  <data name="IslamInfo_FastingAfterFastingMonth" xml:space="preserve">
+    <value>달을 들고있는 육일 금식</value>
+  </data>
+  <data name="IslamInfo_FastingBeforeFastingMonth" xml:space="preserve">
+    <value>달을 금식하기 전에 금식</value>
+  </data>
+  <data name="IslamInfo_FastingBeginningPilgrimageMonth" xml:space="preserve">
+    <value>순례 월의 첫 번째 9 일이 금식</value>
+  </data>
+  <data name="IslamInfo_FastingDayOfArafa" xml:space="preserve">
+    <value>Arafa의 금식의 날</value>
+  </data>
+  <data name="IslamInfo_FastingDayOfAshura" xml:space="preserve">
+    <value>아수라의 금식의 날</value>
+  </data>
+  <data name="IslamInfo_FastingMiddleLunarDays" xml:space="preserve">
+    <value>금식 13 일, 14 일 및 15 일 음력 일</value>
+  </data>
+  <data name="IslamInfo_FastingMondayThursday" xml:space="preserve">
+    <value>금식 월요일과 목요일</value>
+  </data>
+  <data name="IslamInfo_FastingMonth" xml:space="preserve">
+    <value>금식의 달</value>
+  </data>
+  <data name="IslamInfo_FastingMonthPrayer" xml:space="preserve">
+    <value>금식의 달기도</value>
+  </data>
+  <data name="IslamInfo_Fear" xml:space="preserve">
+    <value>무서움</value>
+  </data>
+  <data name="IslamInfo_Forbidden" xml:space="preserve">
+    <value>금지 된</value>
+  </data>
+  <data name="IslamInfo_Friday" xml:space="preserve">
+    <value>금요일</value>
+  </data>
+  <data name="IslamInfo_Fulfilling" xml:space="preserve">
+    <value>수행</value>
+  </data>
+  <data name="IslamInfo_Funeral" xml:space="preserve">
+    <value>장례</value>
+  </data>
+  <data name="IslamInfo_Guidance" xml:space="preserve">
+    <value>안내</value>
+  </data>
+  <data name="IslamInfo_Jurisprudence" xml:space="preserve">
+    <value>법리학</value>
+  </data>
+  <data name="IslamInfo_LateNight" xml:space="preserve">
+    <value>늦은 밤</value>
+  </data>
+  <data name="IslamInfo_LunarEclipse" xml:space="preserve">
+    <value>월식</value>
+  </data>
+  <data name="IslamInfo_Month1" xml:space="preserve">
+    <value>금지 한</value>
+  </data>
+  <data name="IslamInfo_Month10" xml:space="preserve">
+    <value>운반</value>
+  </data>
+  <data name="IslamInfo_Month11" xml:space="preserve">
+    <value>휴전 중 하나</value>
+  </data>
+  <data name="IslamInfo_Month12" xml:space="preserve">
+    <value>순례 중 하나</value>
+  </data>
+  <data name="IslamInfo_Month2" xml:space="preserve">
+    <value>빈</value>
+  </data>
+  <data name="IslamInfo_Month3" xml:space="preserve">
+    <value>첫 번째 봄</value>
+  </data>
+  <data name="IslamInfo_Month4" xml:space="preserve">
+    <value>두 번째 봄</value>
+  </data>
+  <data name="IslamInfo_Month5" xml:space="preserve">
+    <value>마른 땅의 첫 달</value>
+  </data>
+  <data name="IslamInfo_Month6" xml:space="preserve">
+    <value>마른 땅의 두번째 달</value>
+  </data>
+  <data name="IslamInfo_Month7" xml:space="preserve">
+    <value>점</value>
+  </data>
+  <data name="IslamInfo_Month8" xml:space="preserve">
+    <value>흩어져</value>
+  </data>
+  <data name="IslamInfo_Month9" xml:space="preserve">
+    <value>타</value>
+  </data>
+  <data name="IslamInfo_MorningLight" xml:space="preserve">
+    <value>아침 햇살</value>
+  </data>
+  <data name="IslamInfo_Necessary" xml:space="preserve">
+    <value>필요한</value>
+  </data>
+  <data name="IslamInfo_Neutral" xml:space="preserve">
+    <value>중립국</value>
+  </data>
+  <data name="IslamInfo_ObligationOfSufficiency" xml:space="preserve">
+    <value>자족의 의무</value>
+  </data>
+  <data name="IslamInfo_ObligationOfTheSelf" xml:space="preserve">
+    <value>자기의 의무</value>
+  </data>
+  <data name="IslamInfo_Obligatory" xml:space="preserve">
+    <value>필수</value>
+  </data>
+  <data name="IslamInfo_Odd" xml:space="preserve">
+    <value>이상한</value>
+  </data>
+  <data name="IslamInfo_OftReturning" xml:space="preserve">
+    <value>자주 반환</value>
+  </data>
+  <data name="IslamInfo_Permissible" xml:space="preserve">
+    <value>허용되는</value>
+  </data>
+  <data name="IslamInfo_Prayer" xml:space="preserve">
+    <value>기도</value>
+  </data>
+  <data name="IslamInfo_PrayTime6" xml:space="preserve">
+    <value>기권</value>
+  </data>
+  <data name="IslamInfo_PrayTime7" xml:space="preserve">
+    <value>해돋이</value>
+  </data>
+  <data name="IslamInfo_PrayTime8" xml:space="preserve">
+    <value>계산 일몰</value>
+  </data>
+  <data name="IslamInfo_PrayTime9" xml:space="preserve">
+    <value>한밤중</value>
+  </data>
+  <data name="IslamInfo_PrayTime1" xml:space="preserve">
+    <value>새벽</value>
+  </data>
+  <data name="IslamInfo_PrayTime2" xml:space="preserve">
+    <value>정오</value>
+  </data>
+  <data name="IslamInfo_PrayTime3" xml:space="preserve">
+    <value>오후에</value>
+  </data>
+  <data name="IslamInfo_PrayTime4" xml:space="preserve">
+    <value>일몰</value>
+  </data>
+  <data name="IslamInfo_PrayTime5" xml:space="preserve">
+    <value>밤</value>
+  </data>
+  <data name="IslamInfo_PrescribedTime" xml:space="preserve">
+    <value>규정 된 시간</value>
+  </data>
+  <data name="IslamInfo_RainForDraught" xml:space="preserve">
+    <value>초안에 대한 비</value>
+  </data>
+  <data name="IslamInfo_Recommended" xml:space="preserve">
+    <value>추천</value>
+  </data>
+  <data name="IslamInfo_SacredState" xml:space="preserve">
+    <value>신성한 상태</value>
+  </data>
+  <data name="IslamInfo_SolarEclipse" xml:space="preserve">
+    <value>일식</value>
+  </data>
+  <data name="IslamInfo_Sunrise" xml:space="preserve">
+    <value>해돋이</value>
+  </data>
+  <data name="IslamInfo_Supererogatory" xml:space="preserve">
+    <value>Supererogatory</value>
+  </data>
+  <data name="IslamInfo_Tradition" xml:space="preserve">
+    <value>전통</value>
+  </data>
+  <data name="IslamInfo_TraditionObligatory" xml:space="preserve">
+    <value>전통 필수</value>
+  </data>
+  <data name="IslamInfo_TraditionVoluntary" xml:space="preserve">
+    <value>전통 자발적</value>
+  </data>
+  <data name="IslamInfo_Travel" xml:space="preserve">
+    <value>여행</value>
+  </data>
+  <data name="IslamInfo_Victory" xml:space="preserve">
+    <value>승리</value>
+  </data>
+  <data name="IslamInfo_Aaron" xml:space="preserve">
+    <value>아론</value>
+  </data>
+  <data name="IslamInfo_Ablution" xml:space="preserve">
+    <value>몸의 세 정식</value>
+  </data>
+  <data name="IslamInfo_Abraham" xml:space="preserve">
+    <value>아브라함</value>
+  </data>
+  <data name="IslamInfo_Adam" xml:space="preserve">
+    <value>아담</value>
+  </data>
+  <data name="IslamInfo_AfterCallToPrayerFirstPart" xml:space="preserve">
+    <value>첫 번째 부분 -기도에 대한 호출 후</value>
+  </data>
+  <data name="IslamInfo_AfterCallToPrayerFirstPartTrans" xml:space="preserve">
+    <value>O 알라, 완전한이 호출의 주님과 우리의기도</value>
+  </data>
+  <data name="IslamInfo_AfterCallToPrayerFirstPartWordByWord" xml:space="preserve">
+    <value>O 알라 | 주 | 문의 | | 완료 |기도 |이의 우리의</value>
+  </data>
+  <data name="IslamInfo_AfterCallToPrayerSecondPart" xml:space="preserve">
+    <value>두 번째 부분 -기도에 대한 호출 후</value>
+  </data>
+  <data name="IslamInfo_AfterCallToPrayerSecondPartTrans" xml:space="preserve">
+    <value>무하마드에 중보기도와 미덕 자신의 권한을 부여</value>
+  </data>
+  <data name="IslamInfo_AfterCallToPrayerSecondPartWordByWord" xml:space="preserve">
+    <value>무하마드에 | | 자신의 중보의 권리 | 미덕을 부여</value>
+  </data>
+  <data name="IslamInfo_AfterCallToPrayerSupplication" xml:space="preserve">
+    <value>기도의 간구에 호출 한 후</value>
+  </data>
+  <data name="IslamInfo_AfterCallToPrayerThirdPart" xml:space="preserve">
+    <value>세 번째 부분 -기도에 대한 호출 후</value>
+  </data>
+  <data name="IslamInfo_AfterCallToPrayerThirdPartTrans" xml:space="preserve">
+    <value>그리고 당신은 그에게 약속 한 높은 순위에 그를 인상</value>
+  </data>
+  <data name="IslamInfo_AfterCallToPrayerThirdPartWordByWord" xml:space="preserve">
+    <value>순위에 | | 그 인상 상승 | 한 | 당신은 그에게 약속했다</value>
+  </data>
+  <data name="IslamInfo_Allah" xml:space="preserve">
+    <value>한 분 하나님</value>
+  </data>
+  <data name="IslamInfo_AllahIsGreatest" xml:space="preserve">
+    <value>알라는 가장 크다</value>
+  </data>
+  <data name="IslamInfo_AllPraiseAndThanksBeToAllah" xml:space="preserve">
+    <value>모든 칭찬과 감사는 알라에 수</value>
+  </data>
+  <data name="IslamInfo_AlmsGiving" xml:space="preserve">
+    <value>주는 자선</value>
+  </data>
+  <data name="IslamInfo_AndUponYouBePeace" xml:space="preserve">
+    <value>그리고 당신에게 평화가 될</value>
+  </data>
+  <data name="IslamInfo_ArabicTypesetting" xml:space="preserve">
+    <value>아랍어 조판</value>
+  </data>
+  <data name="IslamInfo_Arial" xml:space="preserve">
+    <value>굴림</value>
+  </data>
+  <data name="IslamInfo_BeforeTravel" xml:space="preserve">
+    <value>여행 전에</value>
+  </data>
+  <data name="IslamInfo_BeforeTravelTrans" xml:space="preserve">
+    <value>본인은이 종교, Amanah (책임)과 알라에 대한 이전 증서와 함께 당신을 떠날.</value>
+  </data>
+  <data name="IslamInfo_BeforeTravelWordByWord" xml:space="preserve">
+    <value>이 종교와 | | 알라 | 본인은 당신을 떠날 어떤 | 책임 | 이전 | 증서</value>
+  </data>
+  <data name="IslamInfo_BowOfPrayer" xml:space="preserve">
+    <value>기도의 활</value>
+  </data>
+  <data name="IslamInfo_CallToBeginPrayerSixthVerse" xml:space="preserve">
+    <value>기도를 시작하는 전화 - 여섯 번째 구절</value>
+  </data>
+  <data name="IslamInfo_CallToBeginPrayerSixthVerseTrans" xml:space="preserve">
+    <value>실제로기도를 시작했다</value>
+  </data>
+  <data name="IslamInfo_CallToBeginPrayerSixthVerseWordByWord" xml:space="preserve">
+    <value>실제로 |이 시작되었습니다 |기도</value>
+  </data>
+  <data name="IslamInfo_CallToBeginThePrayer" xml:space="preserve">
+    <value>기도를 시작하는 전화</value>
+  </data>
+  <data name="IslamInfo_CallToPrayer" xml:space="preserve">
+    <value>기도로 전화</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerEighthVerse" xml:space="preserve">
+    <value>기도에 전화 - 여덟 번째 절을</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerEighthVerseTrans" xml:space="preserve">
+    <value>알라 외에는 하나님이 없다</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerEighthVerseWordByWord" xml:space="preserve">
+    <value>하나님 | | 없음이 없습니다 제외 | 알라</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerFifthVerse" xml:space="preserve">
+    <value>기도에 전화 - 다섯 번째 절을</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerFifthVerseTrans" xml:space="preserve">
+    <value>성공에 가자</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerFifthVerseWordByWord" xml:space="preserve">
+    <value>자 |에 | 성공</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerFirstVerse" xml:space="preserve">
+    <value>기도에 전화 - 첫 구절을</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerFirstVerseTrans" xml:space="preserve">
+    <value>알라는 가장 크다</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerFirstVerseWordByWord" xml:space="preserve">
+    <value>알라는 | 최대</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerFourthVerse" xml:space="preserve">
+    <value>기도에 전화 - 네 번째 절을</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerFourthVerseTrans" xml:space="preserve">
+    <value>기도로 오세요</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerFourthVerseWordByWord" xml:space="preserve">
+    <value>자 |에 |기도</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerLeader" xml:space="preserve">
+    <value>기도 지도자에게 전화</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerSecondVerse" xml:space="preserve">
+    <value>기도에 전화 - 두 번째 절을</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerSecondVerseTrans" xml:space="preserve">
+    <value>나는 신이 알라를 제외하고이 없다는 것을 증언</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerSecondVerseWordByWord" xml:space="preserve">
+    <value>나는 증언 | 그 | 신 | | 더는 없다 제외 | 알라</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerSeventhVerse" xml:space="preserve">
+    <value>기도에 전화 - 일곱 번째 절을</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerSeventhVerseTrans" xml:space="preserve">
+    <value>알라는 가장 크다</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerSeventhVerseWordByWord" xml:space="preserve">
+    <value>알라는 | 최대</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerSixthVerse" xml:space="preserve">
+    <value>기도에 전화 - 여섯 번째 절을</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerSixthVerseTrans" xml:space="preserve">
+    <value>기도는 수면보다 낫다</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerSixthVerseWordByWord" xml:space="preserve">
+    <value>더 나은 | | 이상 | 수면기도입니다</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerThirdVerse" xml:space="preserve">
+    <value>기도에 전화 - 세 번째 절을</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerThirdVerseTrans" xml:space="preserve">
+    <value>무하마드는 알라의 메신저임을 증언</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerThirdVerseWordByWord" xml:space="preserve">
+    <value>나는 증언 |이 | 메신저 | | 무하마드는 알라의</value>
+  </data>
+  <data name="IslamInfo_Chapter" xml:space="preserve">
+    <value>장</value>
+  </data>
+  <data name="IslamInfo_Creed" xml:space="preserve">
+    <value>신조</value>
+  </data>
+  <data name="IslamInfo_Custom" xml:space="preserve">
+    <value>관습</value>
+  </data>
+  <data name="IslamInfo_David" xml:space="preserve">
+    <value>데이비드</value>
+  </data>
+  <data name="IslamInfo_Default" xml:space="preserve">
+    <value>디폴트 값</value>
+  </data>
+  <data name="IslamInfo_DirectionOfprayer" xml:space="preserve">
+    <value>기도의 방향</value>
+  </data>
+  <data name="IslamInfo_Dissertation" xml:space="preserve">
+    <value>논문</value>
+  </data>
+  <data name="IslamInfo_Eber" xml:space="preserve">
+    <value>에벨</value>
+  </data>
+  <data name="IslamInfo_Elijah" xml:space="preserve">
+    <value>엘리야</value>
+  </data>
+  <data name="IslamInfo_Elisha" xml:space="preserve">
+    <value>엘리사</value>
+  </data>
+  <data name="IslamInfo_Enoch" xml:space="preserve">
+    <value>에녹</value>
+  </data>
+  <data name="IslamInfo_EnteringMasjidilHaram" xml:space="preserve">
+    <value>Masjidil 하람 입력</value>
+  </data>
+  <data name="IslamInfo_EnteringMasjidilHaramTrans" xml:space="preserve">
+    <value>알라 O!</value>
+  </data>
+  <data name="IslamInfo_EnteringMasjidilHaramWordByWord" xml:space="preserve">
+    <value>O 알라 | 너는 예술 | 평화 | 및 네게서 | 평화 | 우리는 살기 원인 | 우리의 주 | 평화 | 우리가 들어가게 | 파라다이스 | 하우스 | 평화 | 우리의 주 | | 명예의 소유자 및 폐하 | 그대</value>
+  </data>
+  <data name="IslamInfo_Ezekiel" xml:space="preserve">
+    <value>에스겔</value>
+  </data>
+  <data name="IslamInfo_FifthCreed" xml:space="preserve">
+    <value>다섯 번째 신조 - 참회의 말씀 (Astaghfar)</value>
+  </data>
+  <data name="IslamInfo_FifthCreedTrans" xml:space="preserve">
+    <value>나는 비밀리에 또는 공개적으로, 의도적으로 또는 무의식적으로 저지른 모든 죄에서, 알라, 나의 주님으로부터 용서를 구할하고 내가 아는 죄를 내가 모르는 죄에서 그를 향해 돌립니다.</value>
+  </data>
+  <data name="IslamInfo_FifthCreedWordByWord" xml:space="preserve">
+    <value>나는 용서를 구할 | 알라 | 나의 주 |에서 | 모든 | 죄 | 내가 최선을 다하고 | 고의로 | 또는 | unknowningly | 비밀 | 또는 | 공개적 | 나는쪽으로 돌려 | 그 | 죄 | | 그 | 내가 알고 |과의에서</value>
+  </data>
+  <data name="IslamInfo_FirstCreed" xml:space="preserve">
+    <value>첫 번째 신조 - 순도의 말씀 (Tayyabah)</value>
+  </data>
+  <data name="IslamInfo_FirstCreedTrans" xml:space="preserve">
+    <value>알라 무하마드는 알라의 메신저입니다 제외하고 하나님은 없다.</value>
+  </data>
+  <data name="IslamInfo_FirstCreedWordByWord" xml:space="preserve">
+    <value>하나님 | | 없음이 없습니다 제외 | 알라 | 무하마드 | 메신저 | 알라</value>
+  </data>
+  <data name="IslamInfo_FortyOurLordSupplications" xml:space="preserve">
+    <value>40 우리 주님 간구</value>
+  </data>
+  <data name="IslamInfo_FourthCreed" xml:space="preserve">
+    <value>네 번째 신조 - 유니티 (Tauhid)의 말씀</value>
+  </data>
+  <data name="IslamInfo_FourthCreedTrans" xml:space="preserve">
+    <value>알라를 제외한 예배의 가치가 없음 (없음).</value>
+  </data>
+  <data name="IslamInfo_FourthCreedWordByWord" xml:space="preserve">
+    <value>하나님 | | 제외 | 더는 없다 알라 | 형 | 없음 | 파트너 |했다 그는 | 그분 | 영국 | 그를위한 | 찬양 | 끊임없이 생활 | | 그는 삶의 터전 | 죽음을 가져온다 | 그분이 아니다 | 수</value>
+  </data>
+  <data name="IslamInfo_GloryBeToAllah" xml:space="preserve">
+    <value>영광은 알라에 수</value>
+  </data>
+  <data name="IslamInfo_IhramPrayerSupplication" xml:space="preserve">
+    <value>Ihram기도 간구</value>
+  </data>
+  <data name="IslamInfo_IhramPrayerSupplicationTrans" xml:space="preserve">
+    <value>알라, 대부분의 자비로운, 대부분의 자비의 이름으로!</value>
+  </data>
+  <data name="IslamInfo_IhramPrayerSupplicationWordByWord" xml:space="preserve">
+    <value>알라 | | 대부분의 자비로운 | 가장 자비 | 알라 |되는 가장 큰 | 알라 |되는 가장 큰 | 알라 |되는 가장 큰 | 그분이 | | 방법을 완벽하게 배치하고있다 한 |이 (수송) |의 이름으로</value>
+  </data>
+  <data name="IslamInfo_Imam" xml:space="preserve">
+    <value>영적 지도자</value>
+  </data>
+  <data name="IslamInfo_IntentionForIhramPrayer" xml:space="preserve">
+    <value>Ihram기도에 대한 의도</value>
+  </data>
+  <data name="IslamInfo_IntentionForIhramPrayerTrans" xml:space="preserve">
+    <value>나는 알라의 Niat (두 rakaat Sunat Ihram기도)를 확인하는 것입니다.</value>
+  </data>
+  <data name="IslamInfo_IntentionForIhramPrayerWordByWord" xml:space="preserve">
+    <value>추천 | | Ihram기도 | 두 rakat | 알라에 대한 | 가장 높은 내가 제공</value>
+  </data>
+  <data name="IslamInfo_IntentionForIhramShower" xml:space="preserve">
+    <value>Ihram 샤워 의도</value>
+  </data>
+  <data name="IslamInfo_IntentionForIhramShowerTrans" xml:space="preserve">
+    <value>나는 알라 (권장 Ihram 샤워) 목욕하는 것입니다.</value>
+  </data>
+  <data name="IslamInfo_IntentionForIhramShowerWordByWord" xml:space="preserve">
+    <value>나는 예정 | 목욕에 | 추천 | Ihram 샤워 | 알라에 대한 | 가장 높은</value>
+  </data>
+  <data name="IslamInfo_IntentionForJourneyPrayer" xml:space="preserve">
+    <value>여행의기도를위한기도</value>
+  </data>
+  <data name="IslamInfo_IntentionForJourneyPrayerTrans" xml:space="preserve">
+    <value>나는 알라의 Niat (두 rakaat Sunat 사파기도)를 확인하는 것입니다.</value>
+  </data>
+  <data name="IslamInfo_IntentionForJourneyPrayerWordByWord" xml:space="preserve">
+    <value>추천 | | 사파의기도 | 두 rakat | 알라에 대한 | 가장 높은 내가 제공</value>
+  </data>
+  <data name="IslamInfo_IntentionForJourneyShower" xml:space="preserve">
+    <value>여행 샤워 의도</value>
+  </data>
+  <data name="IslamInfo_IntentionForJourneyShowerTrans" xml:space="preserve">
+    <value>나는 알라 (권장 Musafir 샤워) 목욕하는 것입니다.</value>
+  </data>
+  <data name="IslamInfo_IntentionForJourneyShowerWordByWord" xml:space="preserve">
+    <value>나는 예정 | 목욕에 | Musafir 샤워 | 알라 | | 권장 가장 높은</value>
+  </data>
+  <data name="IslamInfo_IntentionToPerformUmrah" xml:space="preserve">
+    <value>움라을 수행 할 의향</value>
+  </data>
+  <data name="IslamInfo_IntentionToPerformUmrahTrans" xml:space="preserve">
+    <value>O 알라, 나는 움라, O 알라를 만들기 위해 귀하의 전화에 응답, 나는 당신을 위해 움라에 대한 움라 및 Ihram합니다.</value>
+  </data>
+  <data name="IslamInfo_IntentionToPerformUmrahWordByWord" xml:space="preserve">
+    <value>나는 예정 | 움라 | 및 Ihram | 단지 | 알라에 대한 | 가장 높은</value>
+  </data>
+  <data name="IslamInfo_InTheNameOfAllah" xml:space="preserve">
+    <value>알라의 이름으로</value>
+  </data>
+  <data name="IslamInfo_Isaac" xml:space="preserve">
+    <value>이삭</value>
+  </data>
+  <data name="IslamInfo_Ishmael" xml:space="preserve">
+    <value>이스마엘</value>
+  </data>
+  <data name="IslamInfo_Islam" xml:space="preserve">
+    <value>복종</value>
+  </data>
+  <data name="IslamInfo_IslamicWords" xml:space="preserve">
+    <value>이슬람 단어</value>
+  </data>
+  <data name="IslamInfo_Jacob" xml:space="preserve">
+    <value>야곱</value>
+  </data>
+  <data name="IslamInfo_Jesus" xml:space="preserve">
+    <value>예수</value>
+  </data>
+  <data name="IslamInfo_Jethro" xml:space="preserve">
+    <value>이드로</value>
+  </data>
+  <data name="IslamInfo_Job" xml:space="preserve">
+    <value>일</value>
+  </data>
+  <data name="IslamInfo_JohnTheBaptist" xml:space="preserve">
+    <value>세례 요한</value>
+  </data>
+  <data name="IslamInfo_Jonas" xml:space="preserve">
+    <value>조나스</value>
+  </data>
+  <data name="IslamInfo_Joseph" xml:space="preserve">
+    <value>조셉</value>
+  </data>
+  <data name="IslamInfo_Judge" xml:space="preserve">
+    <value>판사</value>
+  </data>
+  <data name="IslamInfo_KFGQPCNaskh" xml:space="preserve">
+    <value>KFGQPC Naskh</value>
+  </data>
+  <data name="IslamInfo_Law" xml:space="preserve">
+    <value>법</value>
+  </data>
+  <data name="IslamInfo_Lot" xml:space="preserve">
+    <value>제비</value>
+  </data>
+  <data name="IslamInfo_MajorAblution" xml:space="preserve">
+    <value>주요 목욕 재계</value>
+  </data>
+  <data name="IslamInfo_MalikMuwatta" xml:space="preserve">
+    <value>말리크의 Muwatta</value>
+  </data>
+  <data name="IslamInfo_MeQuran" xml:space="preserve">
+    <value>저 꾸란</value>
+  </data>
+  <data name="IslamInfo_Messenger" xml:space="preserve">
+    <value>전령</value>
+  </data>
+  <data name="IslamInfo_Months" xml:space="preserve">
+    <value>달</value>
+  </data>
+  <data name="IslamInfo_Moses" xml:space="preserve">
+    <value>모세</value>
+  </data>
+  <data name="IslamInfo_MSUighur" xml:space="preserve">
+    <value>MS 위구르어</value>
+  </data>
+  <data name="IslamInfo_Muhammad" xml:space="preserve">
+    <value>무하마드</value>
+  </data>
+  <data name="IslamInfo_Muslim" xml:space="preserve">
+    <value>제출 한</value>
+  </data>
+  <data name="IslamInfo_NamesOfAllah" xml:space="preserve">
+    <value>알라의 이름</value>
+  </data>
+  <data name="IslamInfo_Noah" xml:space="preserve">
+    <value>노아</value>
+  </data>
+  <data name="IslamInfo_OnenessOfGod" xml:space="preserve">
+    <value>하나님의 단일성</value>
+  </data>
+  <data name="IslamInfo_Part" xml:space="preserve">
+    <value>부분</value>
+  </data>
+  <data name="IslamInfo_PDMSSaleem" xml:space="preserve">
+    <value>PDMS 살림</value>
+  </data>
+  <data name="IslamInfo_PeaceBeUponYou" xml:space="preserve">
+    <value>평화는 당신에 수</value>
+  </data>
+  <data name="IslamInfo_PhraseForAllahIsGreatest" xml:space="preserve">
+    <value>알라에 대한 구문이 가장 크다</value>
+  </data>
+  <data name="IslamInfo_PhraseForAllPraiseAndThanksBeToAllah" xml:space="preserve">
+    <value>모든 칭찬과 감사에 대한 구절은 알라에 수</value>
+  </data>
+  <data name="IslamInfo_PhraseForGloryBeToAllah" xml:space="preserve">
+    <value>영광 구절은 알라에 수</value>
+  </data>
+  <data name="IslamInfo_PhraseForInTheNameOfAllah" xml:space="preserve">
+    <value>알라의 이름에 대한 구문</value>
+  </data>
+  <data name="IslamInfo_Pilgrimage" xml:space="preserve">
+    <value>순례 여행</value>
+  </data>
+  <data name="IslamInfo_Prayers" xml:space="preserve">
+    <value>기도</value>
+  </data>
+  <data name="IslamInfo_PrayerTimes" xml:space="preserve">
+    <value>기도 시간</value>
+  </data>
+  <data name="IslamInfo_ProperPronunciationDuringRecitation" xml:space="preserve">
+    <value>암송하는 동안 적절한 발음</value>
+  </data>
+  <data name="IslamInfo_Prophet" xml:space="preserve">
+    <value>예언자</value>
+  </data>
+  <data name="IslamInfo_Prophets" xml:space="preserve">
+    <value>선지자</value>
+  </data>
+  <data name="IslamInfo_Prostrating" xml:space="preserve">
+    <value>경배</value>
+  </data>
+  <data name="IslamInfo_Prostration" xml:space="preserve">
+    <value>부복</value>
+  </data>
+  <data name="IslamInfo_PurificationOfTheSoul" xml:space="preserve">
+    <value>영혼의 정화</value>
+  </data>
+  <data name="IslamInfo_PurificationOfTheSoulTrans" xml:space="preserve">
+    <value>O 알라는 내 영혼에게 그것의 경건을 부여하고 정화, 당신은 그것을 정화하는 가장 좋은, 당신은 보호자와 마스터입니다.</value>
+  </data>
+  <data name="IslamInfo_PurificationOfTheSoulWordByWord" xml:space="preserve">
+    <value>O 알라에 | 제공 | 내 영혼 | 그 신앙 | 그리고 당신은 그것을 정화에 | (혼자) | 베스트 | 누가에 | (혼자) | | 그 가디언 | 그것을 정화 및 마스터</value>
+  </data>
+  <data name="IslamInfo_PurificationSupplication" xml:space="preserve">
+    <value>정화 간구</value>
+  </data>
+  <data name="IslamInfo_Remembrance" xml:space="preserve">
+    <value>기념</value>
+  </data>
+  <data name="IslamInfo_RevelationOfAllah" xml:space="preserve">
+    <value>알라의 계시</value>
+  </data>
+  <data name="IslamInfo_RevelationOfAllahInBookForm" xml:space="preserve">
+    <value>책의 형태로 알라의 계시</value>
+  </data>
+  <data name="IslamInfo_RiyadhSaaliheen" xml:space="preserve">
+    <value>리야드 알 - Saaliheen</value>
+  </data>
+  <data name="IslamInfo_SahihBukhari" xml:space="preserve">
+    <value>Sahih 알 - Bukhari의</value>
+  </data>
+  <data name="IslamInfo_SahihMuslim" xml:space="preserve">
+    <value>Sahih 이슬람교</value>
+  </data>
+  <data name="IslamInfo_SakkalMajalla" xml:space="preserve">
+    <value>Sakkal Majalla</value>
+  </data>
+  <data name="IslamInfo_SalawatSupplicationAfterTalbiah" xml:space="preserve">
+    <value>Talbiah 후 Salawat 간구</value>
+  </data>
+  <data name="IslamInfo_SalawatSupplicationAfterTalbiahTrans" xml:space="preserve">
+    <value>O 알라는 당신이 우리의 주인 아브라함을 축복하는 것처럼 우리의 주인 무하마드와 그의 가족을 축복하고 칭찬 할 강입니다 당신이 모든 세계에 우리의 주인 아브라함과 아브라함의 가족을 거룩하게하는 것처럼 우리의 주인 무하마드와 무하마드의 가족을 거룩하게.</value>
+  </data>
+  <data name="IslamInfo_SalawatSupplicationAfterTalbiahWordByWord" xml:space="preserve">
+    <value>O 알라 | 머릿말을 보내 |시 | 마스터 | 무하마드 | 및시 |의 가족 | 마스터 | 무하마드 | 그냥 |에 | | 당신은 머릿말을 보내 아브라함 | 및시 | 아브라함 | |에 | |과 축복을 보내 주인의 가족</value>
+  </data>
+  <data name="IslamInfo_Saleh" xml:space="preserve">
+    <value>살레</value>
+  </data>
+  <data name="IslamInfo_Scheherazade" xml:space="preserve">
+    <value>세헤라자데</value>
+  </data>
+  <data name="IslamInfo_SchoolOfJurisprudence" xml:space="preserve">
+    <value>법학 전문 대학원</value>
+  </data>
+  <data name="IslamInfo_SecondCreed" xml:space="preserve">
+    <value>제 신조 - 증언의 말씀 (Shahaadat)</value>
+  </data>
+  <data name="IslamInfo_SecondCreedTrans" xml:space="preserve">
+    <value>나는 아무도 파트너없이 알라, 혼자 하나를 제외하고 예배의 가치없는 증거, 그리고 무하마드는 그의 하인과 메신저 증거.</value>
+  </data>
+  <data name="IslamInfo_SecondCreedWordByWord" xml:space="preserve">
+    <value>나는 증거 | 그 | 신 | | 더는 없다 제외 | 알라 | 단독 | 없음 | 파트너 | 그는했습니다 | 내가 증거 | 그 | 무하마드 | 그의 하인 | 메신저</value>
+  </data>
+  <data name="IslamInfo_SixthCreed" xml:space="preserve">
+    <value>여섯 번째 신조 - 불신을 거부의 말 (루드-A-Kuffer)</value>
+  </data>
+  <data name="IslamInfo_SixthCreedTrans" xml:space="preserve">
+    <value>알라 O!</value>
+  </data>
+  <data name="IslamInfo_SixthCreedWordByWord" xml:space="preserve">
+    <value>O 알라 | 물론 | 당신과 함께 | | 나는 보호를 추구에서 | 그 | 아무것도 | | 당신과 파트너를 연결하고 나는 | 알고 | 그것 |과 나는 당신의 용서를 구할 | 그것을 위해 | 알아요 | | 그것 | 내가 회개하지</value>
+  </data>
+  <data name="IslamInfo_Solomon" xml:space="preserve">
+    <value>솔로몬</value>
+  </data>
+  <data name="IslamInfo_Station" xml:space="preserve">
+    <value>역</value>
+  </data>
+  <data name="IslamInfo_SunanAbuDawood" xml:space="preserve">
+    <value>순안 아부 다우드</value>
+  </data>
+  <data name="IslamInfo_SunanIbnMaja" xml:space="preserve">
+    <value>순안 이븐 마야</value>
+  </data>
+  <data name="IslamInfo_SunanNasai" xml:space="preserve">
+    <value>순안-Nasa'i 알 - Sughra</value>
+  </data>
+  <data name="IslamInfo_SunanTirmidhi" xml:space="preserve">
+    <value>순안 알 - Tirmidhi</value>
+  </data>
+  <data name="IslamInfo_Supplication" xml:space="preserve">
+    <value>간청</value>
+  </data>
+  <data name="IslamInfo_SupplicationAfterSalawatSupplication" xml:space="preserve">
+    <value>간구 후 Salawat 간구</value>
+  </data>
+  <data name="IslamInfo_SupplicationAfterSalawatSupplicationTrans" xml:space="preserve">
+    <value>알라 O!</value>
+  </data>
+  <data name="IslamInfo_SupplicationAfterSalawatSupplicationWordByWord" xml:space="preserve">
+    <value>O 알라 | 참 | 께서 축복을 | | 내가 네게에서 추구하고 파라다이스 | 내가 너와 함께 피난처를 추구 | 분노 | | 지옥에서.</value>
+  </data>
+  <data name="IslamInfo_SupplicationForArrivingAtMakkah" xml:space="preserve">
+    <value>메카에 도착을위한 간구</value>
+  </data>
+  <data name="IslamInfo_SupplicationForArrivingAtMakkahTrans" xml:space="preserve">
+    <value>오 하나님!</value>
+  </data>
+  <data name="IslamInfo_SupplicationForArrivingAtMakkahWordByWord" xml:space="preserve">
+    <value>O 알라 | 진정한 |이 | 아버지의 신성한 장소 | | 성소는이 거룩한 도시입니다 | 네시 | 평화의 therin입니다 | 주님의 평화 | 그럼 금지 | 지옥 불 | | 나 저장 | 아버지의 처벌 | |부터부터</value>
+  </data>
+  <data name="IslamInfo_Talbiah" xml:space="preserve">
+    <value>Talbiah</value>
+  </data>
+  <data name="IslamInfo_TalbiahTrans" xml:space="preserve">
+    <value>나는 당신에게 내 하나님을 응답 한!</value>
+  </data>
+  <data name="IslamInfo_TalbiahWordByWord" xml:space="preserve">
+    <value>나는 당신에 응답 | O 알라 | 나는 당신에 응답 | | 나는 당신에 응답이 더 | 파트너 | 당신을 위해 | 나는 당신에 응답 | 참 | 모든 찬양 | 모든 바운티에 | 대한 | 없음</value>
+  </data>
+  <data name="IslamInfo_TheAbaser" xml:space="preserve">
+    <value>Abaser</value>
+  </data>
+  <data name="IslamInfo_TheAcknowledgingOne" xml:space="preserve">
+    <value>인정 하나</value>
+  </data>
+  <data name="IslamInfo_TheAllAuthoritativeOne" xml:space="preserve">
+    <value>모든 신뢰할 수있는 하나의</value>
+  </data>
+  <data name="IslamInfo_TheAllAwareOne" xml:space="preserve">
+    <value>모든 인식 한</value>
+  </data>
+  <data name="IslamInfo_TheAllCompelling" xml:space="preserve">
+    <value>모든 강제적 인</value>
+  </data>
+  <data name="IslamInfo_TheAllEnumeratingOne" xml:space="preserve">
+    <value>모든 열거 한</value>
+  </data>
+  <data name="IslamInfo_TheAllHearer" xml:space="preserve">
+    <value>모든 방청</value>
+  </data>
+  <data name="IslamInfo_TheAllKnowingOne" xml:space="preserve">
+    <value>모든 아시는 분</value>
+  </data>
+  <data name="IslamInfo_TheAllNobleOne" xml:space="preserve">
+    <value>모든 귀족 하나</value>
+  </data>
+  <data name="IslamInfo_TheAllObservingWitness" xml:space="preserve">
+    <value>모든 관측 증인</value>
+  </data>
+  <data name="IslamInfo_TheAllPervadingOne" xml:space="preserve">
+    <value>모든 만연해 하나</value>
+  </data>
+  <data name="IslamInfo_TheAllPrevailingOne" xml:space="preserve">
+    <value>모든 통용 하나</value>
+  </data>
+  <data name="IslamInfo_TheAllSeeing" xml:space="preserve">
+    <value>모든 보는</value>
+  </data>
+  <data name="IslamInfo_TheAssemblerOfScatteredCreations" xml:space="preserve">
+    <value>흩어져있는 창조의 어셈블러</value>
+  </data>
+  <data name="IslamInfo_TheBeneficent" xml:space="preserve">
+    <value>인정 많은</value>
+  </data>
+  <data name="IslamInfo_TheBenignOne" xml:space="preserve">
+    <value>양성 한</value>
+  </data>
+  <data name="IslamInfo_TheBestowerOfBenefits" xml:space="preserve">
+    <value>이익의 증여</value>
+  </data>
+  <data name="IslamInfo_TheBestowerOfSufficiency" xml:space="preserve">
+    <value>자족의 증여</value>
+  </data>
+  <data name="IslamInfo_TheBountifulOne" xml:space="preserve">
+    <value>바운티 풀 한</value>
+  </data>
+  <data name="IslamInfo_TheClementOne" xml:space="preserve">
+    <value>클레멘트 하나</value>
+  </data>
+  <data name="IslamInfo_TheCreator" xml:space="preserve">
+    <value>창조주</value>
+  </data>
+  <data name="IslamInfo_TheDistressor" xml:space="preserve">
+    <value>Distressor</value>
+  </data>
+  <data name="IslamInfo_TheDominantOne" xml:space="preserve">
+    <value>지배적</value>
+  </data>
+  <data name="IslamInfo_TheElevatingOne" xml:space="preserve">
+    <value>승강 하나</value>
+  </data>
+  <data name="IslamInfo_TheEmbodimentOfJustice" xml:space="preserve">
+    <value>정의의 예</value>
+  </data>
+  <data name="IslamInfo_TheEmbodimentOfPeace" xml:space="preserve">
+    <value>평화의 실시 예</value>
+  </data>
+  <data name="IslamInfo_TheEmbodimentOfTruth" xml:space="preserve">
+    <value>진실의 실시 예</value>
+  </data>
+  <data name="IslamInfo_TheEternalInheritor" xml:space="preserve">
+    <value>영원한 상속인</value>
+  </data>
+  <data name="IslamInfo_TheEternalLord" xml:space="preserve">
+    <value>영원한 주님</value>
+  </data>
+  <data name="IslamInfo_TheEternalPossessorOfSovereignty" xml:space="preserve">
+    <value>주권의 영원한 점유자</value>
+  </data>
+  <data name="IslamInfo_TheEverAcceptorOfRepentance" xml:space="preserve">
+    <value>회개의 계속 수락</value>
+  </data>
+  <data name="IslamInfo_TheEverSurvivingOne" xml:space="preserve">
+    <value>적 생존 한</value>
+  </data>
+  <data name="IslamInfo_TheEvolver" xml:space="preserve">
+    <value>Evolver</value>
+  </data>
+  <data name="IslamInfo_TheExpeditingOne" xml:space="preserve">
+    <value>촉진 한</value>
+  </data>
+  <data name="IslamInfo_TheExtender" xml:space="preserve">
+    <value>익스텐더</value>
+  </data>
+  <data name="IslamInfo_TheExtensivelyEnduringOne" xml:space="preserve">
+    <value>광범위하게 영속 한</value>
+  </data>
+  <data name="IslamInfo_TheExtremelyExaltedOne" xml:space="preserve">
+    <value>매우 세존</value>
+  </data>
+  <data name="IslamInfo_TheFirmOne" xml:space="preserve">
+    <value>회사 하나</value>
+  </data>
+  <data name="IslamInfo_TheFlawlessShaper" xml:space="preserve">
+    <value>흠없는 셰이퍼</value>
+  </data>
+  <data name="IslamInfo_TheFountainHeadOfTruth" xml:space="preserve">
+    <value>진실의 분수 - 머리</value>
+  </data>
+  <data name="IslamInfo_TheGloriousOne" xml:space="preserve">
+    <value>영광스러운 한</value>
+  </data>
+  <data name="IslamInfo_TheGreatForgiver" xml:space="preserve">
+    <value>위대한 Forgiver</value>
+  </data>
+  <data name="IslamInfo_TheGreatOne" xml:space="preserve">
+    <value>위대한 사람</value>
+  </data>
+  <data name="IslamInfo_TheGuardingOne" xml:space="preserve">
+    <value>보호대 하나</value>
+  </data>
+  <data name="IslamInfo_TheGuideToPathOfRectitude" xml:space="preserve">
+    <value>정직의 길에 가이드</value>
+  </data>
+  <data name="IslamInfo_TheHolderOfSupremeAuthority" xml:space="preserve">
+    <value>최고 권위의 홀더</value>
+  </data>
+  <data name="IslamInfo_TheHonourerBestower" xml:space="preserve">
+    <value>Honourer - 증여</value>
+  </data>
+  <data name="IslamInfo_TheImpartialJudge" xml:space="preserve">
+    <value>공평한 판사</value>
+  </data>
+  <data name="IslamInfo_TheImperceptible" xml:space="preserve">
+    <value>눈에 보이지 않는</value>
+  </data>
+  <data name="IslamInfo_TheInfiniteLastOne" xml:space="preserve">
+    <value>무한 마지막 하나</value>
+  </data>
+  <data name="IslamInfo_TheInflictorOfDeath" xml:space="preserve">
+    <value>죽음의 Inflictor</value>
+  </data>
+  <data name="IslamInfo_TheInfuserOfFaith" xml:space="preserve">
+    <value>믿음의 Infuser의</value>
+  </data>
+  <data name="IslamInfo_TheInfuserOfNewLife" xml:space="preserve">
+    <value>새로운 삶의 Infuser의</value>
+  </data>
+  <data name="IslamInfo_TheJustOne" xml:space="preserve">
+    <value>그냥 하나</value>
+  </data>
+  <data name="IslamInfo_TheKnowerOfSubtleties" xml:space="preserve">
+    <value>미묘한 인식 주체</value>
+  </data>
+  <data name="IslamInfo_TheLovingOne" xml:space="preserve">
+    <value>사랑 하나</value>
+  </data>
+  <data name="IslamInfo_TheMagnificentOne" xml:space="preserve">
+    <value>장려 한</value>
+  </data>
+  <data name="IslamInfo_TheMaintainerOflife" xml:space="preserve">
+    <value>삶의 관리자</value>
+  </data>
+  <data name="IslamInfo_TheMajesticOne" xml:space="preserve">
+    <value>마제스틱 하나</value>
+  </data>
+  <data name="IslamInfo_TheMerciful" xml:space="preserve">
+    <value>자비</value>
+  </data>
+  <data name="IslamInfo_TheMightyOne" xml:space="preserve">
+    <value>강 대한</value>
+  </data>
+  <data name="IslamInfo_TheMostSacred" xml:space="preserve">
+    <value>가장 신성한</value>
+  </data>
+  <data name="IslamInfo_TheOmnipotentOne" xml:space="preserve">
+    <value>전능 한</value>
+  </data>
+  <data name="IslamInfo_TheOnlyOne" xml:space="preserve">
+    <value>단 하나</value>
+  </data>
+  <data name="IslamInfo_TheOriginator" xml:space="preserve">
+    <value>송신자</value>
+  </data>
+  <data name="IslamInfo_ThePardoner" xml:space="preserve">
+    <value>용서하는 사람</value>
+  </data>
+  <data name="IslamInfo_ThePerceptible" xml:space="preserve">
+    <value>인지 할</value>
+  </data>
+  <data name="IslamInfo_ThePointingOne" xml:space="preserve">
+    <value>포인팅 하나</value>
+  </data>
+  <data name="IslamInfo_ThePossessorOfMajestyAndHonour" xml:space="preserve">
+    <value>위엄과 명예의 점유자</value>
+  </data>
+  <data name="IslamInfo_ThePrayersOfAllahUponHimAndPeace" xml:space="preserve">
+    <value>그와 평화시 알라의기도</value>
+  </data>
+  <data name="IslamInfo_ThePreserverOfSafety" xml:space="preserve">
+    <value>안전의 구명</value>
+  </data>
+  <data name="IslamInfo_ThePreventer" xml:space="preserve">
+    <value>예방 자</value>
+  </data>
+  <data name="IslamInfo_ThePrimeLight" xml:space="preserve">
+    <value>프라임 라이트</value>
+  </data>
+  <data name="IslamInfo_TheProcrastinator" xml:space="preserve">
+    <value>미루는</value>
+  </data>
+  <data name="IslamInfo_TheProtectingAssociate" xml:space="preserve">
+    <value>보호 준회원</value>
+  </data>
+  <data name="IslamInfo_TheProviderOfGuidance" xml:space="preserve">
+    <value>지침의 제공</value>
+  </data>
+  <data name="IslamInfo_TheReckoningOne" xml:space="preserve">
+    <value>응보 하나</value>
+  </data>
+  <data name="IslamInfo_TheReducer" xml:space="preserve">
+    <value>감속기</value>
+  </data>
+  <data name="IslamInfo_TheRespondingOne" xml:space="preserve">
+    <value>응답 한</value>
+  </data>
+  <data name="IslamInfo_TheRestorer" xml:space="preserve">
+    <value>양모제</value>
+  </data>
+  <data name="IslamInfo_TheRestrictingOne" xml:space="preserve">
+    <value>제한 한</value>
+  </data>
+  <data name="IslamInfo_TheRetaliator" xml:space="preserve">
+    <value>Retaliator</value>
+  </data>
+  <data name="IslamInfo_TheSelfSubsistingOne" xml:space="preserve">
+    <value>셀프 연명 하나</value>
+  </data>
+  <data name="IslamInfo_TheSelfSufficientOne" xml:space="preserve">
+    <value>자급 자족 하나</value>
+  </data>
+  <data name="IslamInfo_TheSoleLaudableOne" xml:space="preserve">
+    <value>단독 칭찬할만한 하나</value>
+  </data>
+  <data name="IslamInfo_TheSoleOne" xml:space="preserve">
+    <value>유일한 하나</value>
+  </data>
+  <data name="IslamInfo_TheStrongOne" xml:space="preserve">
+    <value>강한 하나</value>
+  </data>
+  <data name="IslamInfo_TheSublimeOne" xml:space="preserve">
+    <value>고상하게 한</value>
+  </data>
+  <data name="IslamInfo_TheSupremeBestower" xml:space="preserve">
+    <value>최고 증여</value>
+  </data>
+  <data name="IslamInfo_TheSupremePardoner" xml:space="preserve">
+    <value>대법원 용서하는 사람</value>
+  </data>
+  <data name="IslamInfo_TheSupremeProvider" xml:space="preserve">
+    <value>최고 공급자</value>
+  </data>
+  <data name="IslamInfo_TheSupremeSolver" xml:space="preserve">
+    <value>대법원 찾기</value>
+  </data>
+  <data name="IslamInfo_TheSustainingOne" xml:space="preserve">
+    <value>후원회 하나</value>
+  </data>
+  <data name="IslamInfo_TheTotalProvider" xml:space="preserve">
+    <value>총 제공</value>
+  </data>
+  <data name="IslamInfo_TheUniqueOne" xml:space="preserve">
+    <value>고유 한</value>
+  </data>
+  <data name="IslamInfo_TheUniversalTrustee" xml:space="preserve">
+    <value>유니버설 위임</value>
+  </data>
+  <data name="IslamInfo_TheVeryFirst" xml:space="preserve">
+    <value>첫 번째</value>
+  </data>
+  <data name="IslamInfo_TheWatchfulOne" xml:space="preserve">
+    <value>조심스러운 하나</value>
+  </data>
+  <data name="IslamInfo_TheWiseOne" xml:space="preserve">
+    <value>현명한 하나</value>
+  </data>
+  <data name="IslamInfo_ThirdCreed" xml:space="preserve">
+    <value>제 신조 - 영광의 말씀 (Tumjeed)</value>
+  </data>
+  <data name="IslamInfo_ThirdCreedTrans" xml:space="preserve">
+    <value>영광은 알라와 알라 칭찬에, 그리고 거기에 알라 제외하고 하나님은없고, 알라는 가장 크다.</value>
+  </data>
+  <data name="IslamInfo_ThirdCreedWordByWord" xml:space="preserve">
+    <value>영광 | 알라 | 찬양 | 알라 | 하나님 | | 더는 없다 제외 | 알라 | 알라 | 최대 |없고 | 힘 |없고 | 전원 | 제외 | 알라 | 가장 높은 | 가장 장엄한</value>
+  </data>
+  <data name="IslamInfo_TraditionalArabic" xml:space="preserve">
+    <value>전통적인 아랍어</value>
+  </data>
+  <data name="IslamInfo_TransmissionOfInformation" xml:space="preserve">
+    <value>정보의 송신</value>
+  </data>
+  <data name="IslamInfo_Umrah" xml:space="preserve">
+    <value>움라</value>
+  </data>
+  <data name="IslamInfo_UnitOfPrayer" xml:space="preserve">
+    <value>기도의 단위</value>
+  </data>
+  <data name="IslamInfo_UponHimBePeace" xml:space="preserve">
+    <value>그에게 평화가 될</value>
+  </data>
+  <data name="IslamInfo_Verse" xml:space="preserve">
+    <value>절</value>
+  </data>
+  <data name="IslamInfo_VerseOfTheThrone" xml:space="preserve">
+    <value>왕좌의 절</value>
+  </data>
+  <data name="IslamInfo_Zechariah" xml:space="preserve">
+    <value>스가랴</value>
+  </data>
+  <data name="IslamInfo_TheEverLiving" xml:space="preserve">
+    <value>적 생활</value>
+  </data>
+  <data name="IslamInfo_After" xml:space="preserve">
+    <value>후</value>
+  </data>
+  <data name="IslamInfo_Arabic" xml:space="preserve">
+    <value>아라비아 말</value>
+  </data>
+  <data name="IslamInfo_Assimilate" xml:space="preserve">
+    <value>동화하다</value>
+  </data>
+  <data name="IslamInfo_Before" xml:space="preserve">
+    <value>전에</value>
+  </data>
+  <data name="IslamInfo_bukhariBook1" xml:space="preserve">
+    <value>요한 계시록</value>
+  </data>
+  <data name="IslamInfo_bukhariBook10" xml:space="preserve">
+    <value>기도 (Adhaan)에 전화</value>
+  </data>
+  <data name="IslamInfo_bukhariBook11" xml:space="preserve">
+    <value>금요일기도</value>
+  </data>
+  <data name="IslamInfo_bukhariBook12" xml:space="preserve">
+    <value>공포의기도</value>
+  </data>
+  <data name="IslamInfo_bukhariBook13" xml:space="preserve">
+    <value>두 축제 (Eids)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook14" xml:space="preserve">
+    <value>Witr기도</value>
+  </data>
+  <data name="IslamInfo_bukhariBook15" xml:space="preserve">
+    <value>비 알라 호출 (Istisqaa)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook16" xml:space="preserve">
+    <value>일식</value>
+  </data>
+  <data name="IslamInfo_bukhariBook17" xml:space="preserve">
+    <value>코란의 리사이틀 동안 의식</value>
+  </data>
+  <data name="IslamInfo_bukhariBook18" xml:space="preserve">
+    <value>기도를 단축 (AT-Taqseer)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook19" xml:space="preserve">
+    <value>밤기도 (Tahajjud)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook1Chapter1" xml:space="preserve">
+    <value>{하나님의 영감이 알라의 메신저 (SAWS)에 공개되기 시작하는 방법.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2" xml:space="preserve">
+    <value>믿음</value>
+  </data>
+  <data name="IslamInfo_bukhariBook20" xml:space="preserve">
+    <value>성원 메카와 메디나에서기도의 미덕</value>
+  </data>
+  <data name="IslamInfo_bukhariBook21" xml:space="preserve">
+    <value>행동기도하면서</value>
+  </data>
+  <data name="IslamInfo_bukhariBook22" xml:space="preserve">
+    <value>기도의 건망증</value>
+  </data>
+  <data name="IslamInfo_bukhariBook23" xml:space="preserve">
+    <value>장례식 (알 - Janaa'iz)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook24" xml:space="preserve">
+    <value>필수 자선 세금 (Zakat)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook25" xml:space="preserve">
+    <value>Pilgrimmage (하즈)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook26" xml:space="preserve">
+    <value>마이너 Pilgrammage (UMRA)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook27" xml:space="preserve">
+    <value>Pilgrimmage 완료 방지 순례자</value>
+  </data>
+  <data name="IslamInfo_bukhariBook28" xml:space="preserve">
+    <value>사냥의 페널티 동안 Pilgrimmage에</value>
+  </data>
+  <data name="IslamInfo_bukhariBook29" xml:space="preserve">
+    <value>마디나의 미덕</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter1" xml:space="preserve">
+    <value>예언자 (SAWS)의 문 '이슬람은 다섯 원칙을 기반으로합니다.'</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter10" xml:space="preserve">
+    <value>안 사르를 좋아하는 것은 믿음의 표시이다.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter12" xml:space="preserve">
+    <value>알 - Fitan (시련과 afflications 등)에서 (도망) 도망하는 것은 종교의 일부입니다.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter13" xml:space="preserve">
+    <value>예언자 (SAWS)의 문 : "나는 알라 (AZZA 워싱턴 JAL) 여러분의 수행보다 더 잘 알고있다 '.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter14" xml:space="preserve">
+    <value>누구든지 Kufr으로 되돌릴 싫어.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter15" xml:space="preserve">
+    <value>신자의 우수성의 성적은 자신의 선행에 따른 것입니다.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter16" xml:space="preserve">
+    <value>알 - 하야 믿음의 일부입니다.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter17" xml:space="preserve">
+    <value>알라 (AZZA 워싱턴 JAL)의 문 :</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter18" xml:space="preserve">
+    <value>누구든지 믿음이 작업 (선행)이라고 말한다.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter19" xml:space="preserve">
+    <value>하나는 정말 이슬람을 포용하지만, 강제로 또는 등 살해되는 두려움 때문에하지 않는 경우</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter2" xml:space="preserve">
+    <value>귀하의 호출은 당신의 믿음을 의미한다.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter20" xml:space="preserve">
+    <value>인사를하는 것은 이슬람의 일부입니다.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter21" xml:space="preserve">
+    <value>자신의 남편에 은혜를 모르는한다.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter22" xml:space="preserve">
+    <value>죄는 무지에서이고 그가 알라 (AZZA 워싱턴 JAL)과 함께 다른 사람을 숭배하지 않는 죄인은 믿지 없습니다.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter23" xml:space="preserve">
+    <value>알라의 문 (AZZA 워싱턴 JAL) {</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter24" xml:space="preserve">
+    <value>한 종류의 Zulm (잘못된)는 다른보다 크거나 작은 수 있습니다.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter25" xml:space="preserve">
+    <value>위선자의 징후.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter26" xml:space="preserve">
+    <value>카디 르의 밤에기도를 설정하는 것은 신앙의 일부입니다.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter27" xml:space="preserve">
+    <value>알 - 지하드 (성전 - 알라의 원인에 싸움은) 믿음의 일부입니다.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter28" xml:space="preserve">
+    <value>라마단의 밤 동안기도 - 그것은을 (자발적 Nawafil) 설정하는 믿음의 일부입니다.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter29" xml:space="preserve">
+    <value>라마단 한 달 동안 Saum [(이슬람의 가르침에 따라) 단식]를 관찰하기 위해 (진심으로 충실) 알라의 보상을 기대하는 것은 단지 믿음의 일부입니다.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter3" xml:space="preserve">
+    <value>믿음의 행위에 대해 (어떤은 말한다).</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter30" xml:space="preserve">
+    <value>종교는 매우 간단합니다.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter31" xml:space="preserve">
+    <value>사랏 (기도) (의 제공은) 믿음의 일부입니다.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter32" xml:space="preserve">
+    <value>이슬람을 진심으로 포용하는 사람 (의 우수성에 대해 말했다 무엇).</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter33" xml:space="preserve">
+    <value>광고 - 딘 (좋은 의로운 행위 - 예배의 행위는) 정기적으로 이루어집니다 즉 알라 (AZZA 워싱턴 JAL)에 의해 가장 사랑.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter34" xml:space="preserve">
+    <value>믿음의 증가 및 감소.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter35" xml:space="preserve">
+    <value>Zakat을 지불하는 것은 이슬람의 일부입니다.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter36" xml:space="preserve">
+    <value>(매장의 위치까지) 장례 행렬을 동반하는 것은 신앙의 일부입니다.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter37" xml:space="preserve">
+    <value>그의 선행이 무효화 될 수 신자의 두려움은 자신의 지식없이 (손실)을.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter38" xml:space="preserve">
+    <value>믿음에 대한 예언자 (SAWS)에서 (천사) Jibrael (가브리엘)의 묻고, 이슬람, Ihsan (완벽).</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter4" xml:space="preserve">
+    <value>무슬림은 자신의 혀와 손을 해치는 무슬림을 피할 것입니다.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter40" xml:space="preserve">
+    <value>자신의 종교를 위해 모든 의심 (불분명) 일을 잎 그 사람의 우수성.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter41" xml:space="preserve">
+    <value>알 - Khumus을 (전리품의 5 분의 1이 알라의 원인에 따른다)를 지불하는 것은 신앙의 일부입니다.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter42" xml:space="preserve">
+    <value>무엇은 정책에 대한 말한다 : '행동의 보상 의도에 따라 달라집니다.'</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter43" xml:space="preserve">
+    <value>예언자 (SAWS)의 문 '종교 ​​- Nasiha입니다 [알라 (성실하고 진실하게), 그의 메신저에, 무슬림 통치자로, 그리고 모든 무슬림.]</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter5" xml:space="preserve">
+    <value>누구의 이슬람 최고 (최고 이슬람는 누구입니까?)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter6" xml:space="preserve">
+    <value>(다른 사람을) 공급하는 것은 이슬람의 일부입니다.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter7" xml:space="preserve">
+    <value>하나의 (이슬람의) 동생이 좋아하는 것은 어떤 사람이 자신을 위해 좋아하는 것은 믿음의 일부입니다.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter8" xml:space="preserve">
+    <value>메신저 (무하마드) (SAWS)를 좋아하는 것은 신앙의 일부입니다.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter9" xml:space="preserve">
+    <value>믿음의 단맛 (기쁨).</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3" xml:space="preserve">
+    <value>지식</value>
+  </data>
+  <data name="IslamInfo_bukhariBook30" xml:space="preserve">
+    <value>금식</value>
+  </data>
+  <data name="IslamInfo_bukhariBook31" xml:space="preserve">
+    <value>Ramadaan의 밤 (Taraweeh)기도</value>
+  </data>
+  <data name="IslamInfo_bukhariBook32" xml:space="preserve">
+    <value>카디 르의 밤의 미덕</value>
+  </data>
+  <data name="IslamInfo_bukhariBook33" xml:space="preserve">
+    <value>알라 (I'tikaf)의 기억의 모스크로 은퇴하기</value>
+  </data>
+  <data name="IslamInfo_bukhariBook34" xml:space="preserve">
+    <value>판매 및 무역</value>
+  </data>
+  <data name="IslamInfo_bukhariBook35" xml:space="preserve">
+    <value>물품 (AS-살람) 나중에 전달 될 수 있도록 가격이 지불되는 판매</value>
+  </data>
+  <data name="IslamInfo_bukhariBook36" xml:space="preserve">
+    <value>Shuf'a</value>
+  </data>
+  <data name="IslamInfo_bukhariBook37" xml:space="preserve">
+    <value>채용</value>
+  </data>
+  <data name="IslamInfo_bukhariBook38" xml:space="preserve">
+    <value>또 다른 한 사람 (알 - Hawaala)에서 부채의 Transferance</value>
+  </data>
+  <data name="IslamInfo_bukhariBook39" xml:space="preserve">
+    <value>Kafalah</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter1" xml:space="preserve">
+    <value>지식의 우수성.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter11" xml:space="preserve">
+    <value>예언자 (SAWS) 그들은 도망 (또는 지루)하지 않을 수 있도록 적절한 시간을 선택하여 설교에있는 사람들을 돌보​​는 데 사용됩니다.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter12" xml:space="preserve">
+    <value>누구든지 학생 (종교 이야기)를주는 특별한 날을 고정.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter13" xml:space="preserve">
+    <value>알라 (AZZA 워싱턴 JAL)이 사람에게 좋은 작업을 수행하고자하는 경우, 그는 그가 종교를 이해한다.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter14" xml:space="preserve">
+    <value>(의 우수성) 지식을 도저히.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter15" xml:space="preserve">
+    <value>지식과 알 - Hikmah (지혜)가 온 예처럼 소원</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter16" xml:space="preserve">
+    <value>예언자 무사의 여행에 대해 말했다 된 내용 ( 'AS-살람 alaihi) (그가 갔을 때) 바다에서 알 Khidr을 충족합니다.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter17" xml:space="preserve">
+    <value>예언자 (SAWS)의 문 'O 알라!</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter18" xml:space="preserve">
+    <value>몇 살 청년 (소년의 하디스의 인용, 즉 받아 들일 수)로들을 수있다.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter19" xml:space="preserve">
+    <value>지식 검색에서 이동합니다.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter2" xml:space="preserve">
+    <value>누구든지 그가 어떤 대화에서 바쁜 동안 지식에 대해 질문, 그래서 그는 얘기를 완료 한 후 질문자 대답한다.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter20" xml:space="preserve">
+    <value>배우는 사람의 우수성 (이슬람, 종교 학자됩니다)하고 다른 사람에게 가르칩니다.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter21" xml:space="preserve">
+    <value>(종교) 지식의 실종과 (종교) 무지의 모양 (관련 말했다 무엇).</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter22" xml:space="preserve">
+    <value>(종교) 지식의 우수성.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter23" xml:space="preserve">
+    <value>동물을 타고 또는 아무것도에 서있는 동안 종교 평결을 제공합니다.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter24" xml:space="preserve">
+    <value>누구든지 손짓이나 고개를 끄덕에 의해 종교적인 판결을했다.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter25" xml:space="preserve">
+    <value>예언자 (톱)은 신앙과 (그는 그들에게 설명) (종교적인) 지식을 암기하고 (집에)가 남아있는 자신의 사람들에게 (전달) 알려 압둘 카이스 '의 명 (임무)를 촉구했다.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter26" xml:space="preserve">
+    <value>문제가 문제에 대한 답을 찾는 여행을하고, 자신의 가족을 가르 칠 수 있습니다.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter27" xml:space="preserve">
+    <value>Fi를하려면? X 회전의 의무를 (종교적인) 지식을 학습.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter28" xml:space="preserve">
+    <value>설교 나 하나 하나가 싫어하는 것을 보면 가르치는 동안 분노합니다.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter29" xml:space="preserve">
+    <value>누구든지 이맘 또는 (종교) 설교자 전에 무릎을 꿇고.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter3" xml:space="preserve">
+    <value>누구든지 (전달) 지식에 자신의 목소리를 높이고 있습니다.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter30" xml:space="preserve">
+    <value>다른 사람들이 이해할 수 있도록하기 위해 세 번 자신의 이야기를 반복합니다.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter31" xml:space="preserve">
+    <value>가르치는 사람 (종교에) 그의 여자 노예와 그의 가족.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter32" xml:space="preserve">
+    <value>이맘 (최고)로 여성 (종교) 지식의 설교 (과 교수) :</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter33" xml:space="preserve">
+    <value>에 열중 하디스를 (배우).</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter34" xml:space="preserve">
+    <value>어떻게 (종교) 지식은 그가 멀리 찍은 것입니까?</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter35" xml:space="preserve">
+    <value>하루는 (떨어져 남성에서) 그들에게 종교를 가르쳐하기 위해 여성을위한 고정되어야 하는가?</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter36" xml:space="preserve">
+    <value>그는 완전히 이해할 때까지 누구든지 다음 뭔가를 (그러나 그것을 이해하지 못했다) 듣고는 다시 물었다.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter37" xml:space="preserve">
+    <value>그것은없는 사람들에게 지식을 전달하기 위해 [종교 회의 (또는 회의)에서] 존재하는 사람들에 대한 의지입니다.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter38" xml:space="preserve">
+    <value>예언자 (SAWS)에 대한 거짓말을 알려주는 사람의 죄.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter39" xml:space="preserve">
+    <value>지식의 기록.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter4" xml:space="preserve">
+    <value>해설의 개념에 대한 다른 significations를 전달하고있는 내레이터가 사용하는 단어의 다양성에 관하여 만 하디스 학자에 대한 중요성이있다.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter40" xml:space="preserve">
+    <value>지식과 그 가르침과 밤에 설교.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter41" xml:space="preserve">
+    <value>밤에 (종교) 지식에 대해 이야기하십시오.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter42" xml:space="preserve">
+    <value>(종교) 지식의 암기 (라고 무엇에 대하여).</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter43" xml:space="preserve">
+    <value>조용 (듣고) 종교 학자로합니다.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter44" xml:space="preserve">
+    <value>종교 배운 사람이 요구됩니다.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter45" xml:space="preserve">
+    <value>누구든지, 서있는 동안, (무엇인가에 대해, 상자 모양의 대 또는 비슷한 일에) 앉아있는 종교 배운 사람을 물었다.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter46" xml:space="preserve">
+    <value>종교 문제에 대해 질문하고 Jimar의 라미 (하즈 동안 미나의 Jimar에서 자갈의 투구)를하는 동안 (하즈시 미나에서) 종교 평결을 얻었다.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter47" xml:space="preserve">
+    <value>알라 (AZZA 워싱턴 JAL)의 진술 :</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter48" xml:space="preserve">
+    <value>누구든지 간단하게 어떤 사람들은 그들을 이해하지 못할 수도 더 어려워 무언가로 떨어질 수 있습니다 두려움에 대한 몇 가지 옵션 일을 떠났습니다.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter49" xml:space="preserve">
+    <value>누구든지 다른 사람이 이해하지 못할 것이 두려워 다른 사람을 통해 그들을 선호하는 그들에게 (종교) 지식을 가르치고 어떤 사람을 선택했습니다.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter5" xml:space="preserve">
+    <value>이맘은 자신의 지식을 테스트하기 위해 그의 동료에 의문을 제기.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter50" xml:space="preserve">
+    <value>((알 - 하야 '부끄러워 :-)에 관하여 말했다 무엇)) (종교적인 지식을 배우면서.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter51" xml:space="preserve">
+    <value>누구든지 수줍은 느낌 (뭔가를 물어) 다음 자신을 대신 물어 다른 사람을 요청했다.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter52" xml:space="preserve">
+    <value>종교적인 지식을 가르치고 사원에서 종교 판정을주는.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter53" xml:space="preserve">
+    <value>누구든지 더 자신이 무엇을 요구보다 질문자에게 대답했다.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter6" xml:space="preserve">
+    <value>지식에 대한 말은 무엇입니까.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter7" xml:space="preserve">
+    <value>손 (지식의 책) 교환 및 다른 국가에 종교 학자에 의해 지식의 쓰기에 손에 관한 말은 무엇입니까.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter8" xml:space="preserve">
+    <value>누구든지 모임의 먼 끝 부분에 앉아 있었다.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter9" xml:space="preserve">
+    <value>예언자 (SAWS)의 문 '그것은 간접적으로 정보의 조각을받는 사람이 그 사람이 소스에서 직접 들어 본 것보다 더 잘 이해할 수 있다는 가능성이다.'</value>
+  </data>
+  <data name="IslamInfo_bukhariBook4" xml:space="preserve">
+    <value>목욕 재계 (Wudu ')</value>
+  </data>
+  <data name="IslamInfo_bukhariBook40" xml:space="preserve">
+    <value>프록시로 표현, 권한 부여 사업</value>
+  </data>
+  <data name="IslamInfo_bukhariBook41" xml:space="preserve">
+    <value>농업</value>
+  </data>
+  <data name="IslamInfo_bukhariBook42" xml:space="preserve">
+    <value>물 유통</value>
+  </data>
+  <data name="IslamInfo_bukhariBook43" xml:space="preserve">
+    <value>대출, 대출 지급, 자산, 파산의 냉동</value>
+  </data>
+  <data name="IslamInfo_bukhariBook44" xml:space="preserve">
+    <value>Khusoomaat</value>
+  </data>
+  <data name="IslamInfo_bukhariBook45" xml:space="preserve">
+    <value>사람 (Luqaata)에 의해 포착 잃어버린 것들</value>
+  </data>
+  <data name="IslamInfo_bukhariBook46" xml:space="preserve">
+    <value>억압</value>
+  </data>
+  <data name="IslamInfo_bukhariBook47" xml:space="preserve">
+    <value>공동</value>
+  </data>
+  <data name="IslamInfo_bukhariBook48" xml:space="preserve">
+    <value>모기지</value>
+  </data>
+  <data name="IslamInfo_bukhariBook49" xml:space="preserve">
+    <value>노예의 노예 해방</value>
+  </data>
+  <data name="IslamInfo_bukhariBook5" xml:space="preserve">
+    <value>입욕 (Ghusl)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook50" xml:space="preserve">
+    <value>Makaatib</value>
+  </data>
+  <data name="IslamInfo_bukhariBook51" xml:space="preserve">
+    <value>선물</value>
+  </data>
+  <data name="IslamInfo_bukhariBook52" xml:space="preserve">
+    <value>증인</value>
+  </data>
+  <data name="IslamInfo_bukhariBook53" xml:space="preserve">
+    <value>조정하는</value>
+  </data>
+  <data name="IslamInfo_bukhariBook54" xml:space="preserve">
+    <value>조건</value>
+  </data>
+  <data name="IslamInfo_bukhariBook55" xml:space="preserve">
+    <value>의지와 성경 (Wasaayaa)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook56" xml:space="preserve">
+    <value>알라의 원인 (Jihaad)를위한 싸움</value>
+  </data>
+  <data name="IslamInfo_bukhariBook57" xml:space="preserve">
+    <value>알라 (Khumus)의 원인 부티의 5 분의 1</value>
+  </data>
+  <data name="IslamInfo_bukhariBook58" xml:space="preserve">
+    <value>Jizyah 및 Mawaad​​a'ah</value>
+  </data>
+  <data name="IslamInfo_bukhariBook59" xml:space="preserve">
+    <value>창조의 시작</value>
+  </data>
+  <data name="IslamInfo_bukhariBook6" xml:space="preserve">
+    <value>생리 기간</value>
+  </data>
+  <data name="IslamInfo_bukhariBook60" xml:space="preserve">
+    <value>선지자</value>
+  </data>
+  <data name="IslamInfo_bukhariBook61" xml:space="preserve">
+    <value>예언자 (평화가 그분에게 깃들기를)와 그의 친구들의 미덕과 장점</value>
+  </data>
+  <data name="IslamInfo_bukhariBook62" xml:space="preserve">
+    <value>예언자의 친구들</value>
+  </data>
+  <data name="IslamInfo_bukhariBook63" xml:space="preserve">
+    <value>메디나에서 도우미의 장점 (Ansaar)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook64" xml:space="preserve">
+    <value>예언자 (평화가 그분에게 깃들기를) (알 - Maghaazi)가 이끄는 군사 원정</value>
+  </data>
+  <data name="IslamInfo_bukhariBook65" xml:space="preserve">
+    <value>코란 (예언자의 Tafseer (평화가 그분에게 깃들기를))에 대한 예언 해설</value>
+  </data>
+  <data name="IslamInfo_bukhariBook66" xml:space="preserve">
+    <value>꾸란의 미덕</value>
+  </data>
+  <data name="IslamInfo_bukhariBook67" xml:space="preserve">
+    <value>혼인, 결혼 (Nikaah)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook68" xml:space="preserve">
+    <value>이혼</value>
+  </data>
+  <data name="IslamInfo_bukhariBook69" xml:space="preserve">
+    <value>가족 지원</value>
+  </data>
+  <data name="IslamInfo_bukhariBook7" xml:space="preserve">
+    <value>먼지가 손과 발을 문지르는 (Tayammum)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook70" xml:space="preserve">
+    <value>음식, 식사</value>
+  </data>
+  <data name="IslamInfo_bukhariBook71" xml:space="preserve">
+    <value>출생 (`Aqiqa)의 경우에 희생</value>
+  </data>
+  <data name="IslamInfo_bukhariBook72" xml:space="preserve">
+    <value>사냥, 도살</value>
+  </data>
+  <data name="IslamInfo_bukhariBook73" xml:space="preserve">
+    <value>알 - 아드 하 축제의 희생 (Adaahi)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook74" xml:space="preserve">
+    <value>음료수</value>
+  </data>
+  <data name="IslamInfo_bukhariBook75" xml:space="preserve">
+    <value>환자</value>
+  </data>
+  <data name="IslamInfo_bukhariBook76" xml:space="preserve">
+    <value>의학</value>
+  </data>
+  <data name="IslamInfo_bukhariBook77" xml:space="preserve">
+    <value>드레스</value>
+  </data>
+  <data name="IslamInfo_bukhariBook78" xml:space="preserve">
+    <value>좋은 매너와 양식 (알 - Adab)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook79" xml:space="preserve">
+    <value>권한 요구</value>
+  </data>
+  <data name="IslamInfo_bukhariBook8" xml:space="preserve">
+    <value>기도 (사랏)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook80" xml:space="preserve">
+    <value>호출</value>
+  </data>
+  <data name="IslamInfo_bukhariBook81" xml:space="preserve">
+    <value>심장 입찰 만들려면 (AR-Riqaq)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook82" xml:space="preserve">
+    <value>하나님의 뜻 (알 - Qadar)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook83" xml:space="preserve">
+    <value>맹세와 서약</value>
+  </data>
+  <data name="IslamInfo_bukhariBook84" xml:space="preserve">
+    <value>이루어지지 맹세에 대한 속죄</value>
+  </data>
+  <data name="IslamInfo_bukhariBook85" xml:space="preserve">
+    <value>상속의 법률 (알 - Faraa'id)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook86" xml:space="preserve">
+    <value>알라 (Hudood)에 의해 설정된 제한 및 처벌</value>
+  </data>
+  <data name="IslamInfo_bukhariBook87" xml:space="preserve">
+    <value>알라와 그의 사도와 전쟁 믿지 않는 처벌</value>
+  </data>
+  <data name="IslamInfo_bukhariBook88" xml:space="preserve">
+    <value>혈액 돈 (광고 Diyat)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook89" xml:space="preserve">
+    <value>교자 다루기</value>
+  </data>
+  <data name="IslamInfo_bukhariBook9" xml:space="preserve">
+    <value>기도의 시간</value>
+  </data>
+  <data name="IslamInfo_bukhariBook90" xml:space="preserve">
+    <value>억지로 말을 뭔가 (Ikraah)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook91" xml:space="preserve">
+    <value>트릭</value>
+  </data>
+  <data name="IslamInfo_bukhariBook92" xml:space="preserve">
+    <value>꿈의 해석</value>
+  </data>
+  <data name="IslamInfo_bukhariBook93" xml:space="preserve">
+    <value>고통과 세상의 종말</value>
+  </data>
+  <data name="IslamInfo_bukhariBook94" xml:space="preserve">
+    <value>심판 (Ahkaam)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook95" xml:space="preserve">
+    <value>소원</value>
+  </data>
+  <data name="IslamInfo_bukhariBook96" xml:space="preserve">
+    <value>진실 사람에 의해 주어진 수락 정보</value>
+  </data>
+  <data name="IslamInfo_bukhariBook97" xml:space="preserve">
+    <value>꾸란과 Sunnah에 대한 빠른 개최</value>
+  </data>
+  <data name="IslamInfo_bukhariBook98" xml:space="preserve">
+    <value>알라의 유일신, 고유성 (Tawheed)</value>
+  </data>
+  <data name="IslamInfo_Classification" xml:space="preserve">
+    <value>분류</value>
+  </data>
+  <data name="IslamInfo_Connecting" xml:space="preserve">
+    <value>연결</value>
+  </data>
+  <data name="IslamInfo_LetterName" xml:space="preserve">
+    <value>문자 이름</value>
+  </data>
+  <data name="IslamInfo_muslimBook1" xml:space="preserve">
+    <value>소개</value>
+  </data>
+  <data name="IslamInfo_muslimBook10" xml:space="preserve">
+    <value>기도의 도서 (비)</value>
+  </data>
+  <data name="IslamInfo_muslimBook11" xml:space="preserve">
+    <value>기도의 도서 (이클립스)</value>
+  </data>
+  <data name="IslamInfo_muslimBook12" xml:space="preserve">
+    <value>기도의 도서 (장례식)</value>
+  </data>
+  <data name="IslamInfo_muslimBook13" xml:space="preserve">
+    <value>Zakat의 책</value>
+  </data>
+  <data name="IslamInfo_muslimBook14" xml:space="preserve">
+    <value>금식의 책</value>
+  </data>
+  <data name="IslamInfo_muslimBook15" xml:space="preserve">
+    <value>I'tikaf의 책</value>
+  </data>
+  <data name="IslamInfo_muslimBook16" xml:space="preserve">
+    <value>순례의 책</value>
+  </data>
+  <data name="IslamInfo_muslimBook17" xml:space="preserve">
+    <value>결혼의 책</value>
+  </data>
+  <data name="IslamInfo_muslimBook18" xml:space="preserve">
+    <value>젖먹이의 책</value>
+  </data>
+  <data name="IslamInfo_muslimBook19" xml:space="preserve">
+    <value>이혼의 책</value>
+  </data>
+  <data name="IslamInfo_muslimBook2" xml:space="preserve">
+    <value>믿음의 책</value>
+  </data>
+  <data name="IslamInfo_muslimBook20" xml:space="preserve">
+    <value>모드 실행 저주의 책</value>
+  </data>
+  <data name="IslamInfo_muslimBook21" xml:space="preserve">
+    <value>으로 해방 노예의 책</value>
+  </data>
+  <data name="IslamInfo_muslimBook22" xml:space="preserve">
+    <value>거래의 책</value>
+  </data>
+  <data name="IslamInfo_muslimBook23" xml:space="preserve">
+    <value>Masaaqah의 책</value>
+  </data>
+  <data name="IslamInfo_muslimBook24" xml:space="preserve">
+    <value>이 책은 상속의 규칙에 관한</value>
+  </data>
+  <data name="IslamInfo_muslimBook25" xml:space="preserve">
+    <value>선물의 책</value>
+  </data>
+  <data name="IslamInfo_muslimBook26" xml:space="preserve">
+    <value>유증의 책</value>
+  </data>
+  <data name="IslamInfo_muslimBook27" xml:space="preserve">
+    <value>서약의 책</value>
+  </data>
+  <data name="IslamInfo_muslimBook28" xml:space="preserve">
+    <value>맹세의 책</value>
+  </data>
+  <data name="IslamInfo_muslimBook29" xml:space="preserve">
+    <value>이 책은 보답, 싸움, 살인의 책임을 설정, 선서에 관한</value>
+  </data>
+  <data name="IslamInfo_muslimBook3" xml:space="preserve">
+    <value>정화의 책</value>
+  </data>
+  <data name="IslamInfo_muslimBook30" xml:space="preserve">
+    <value>이 책은 이슬람에 의해 규정 된 처벌에 관한</value>
+  </data>
+  <data name="IslamInfo_muslimBook31" xml:space="preserve">
+    <value>이 책은 사법 결정에 관한</value>
+  </data>
+  <data name="IslamInfo_muslimBook32" xml:space="preserve">
+    <value>Luqatah의 책</value>
+  </data>
+  <data name="IslamInfo_muslimBook33" xml:space="preserve">
+    <value>지하드와 탐험의 책</value>
+  </data>
+  <data name="IslamInfo_muslimBook34" xml:space="preserve">
+    <value>정부의 책</value>
+  </data>
+  <data name="IslamInfo_muslimBook35" xml:space="preserve">
+    <value>학살 될 수 있습니다 게임 및 동물의 책과 먹을 수있는 Aninals</value>
+  </data>
+  <data name="IslamInfo_muslimBook36" xml:space="preserve">
+    <value>희생의 책</value>
+  </data>
+  <data name="IslamInfo_muslimBook37" xml:space="preserve">
+    <value>음료의 책</value>
+  </data>
+  <data name="IslamInfo_muslimBook38" xml:space="preserve">
+    <value>이 책은 옷과 장식에 관한</value>
+  </data>
+  <data name="IslamInfo_muslimBook39" xml:space="preserve">
+    <value>일반 행동에 책</value>
+  </data>
+  <data name="IslamInfo_muslimBook4" xml:space="preserve">
+    <value>월경의 책</value>
+  </data>
+  <data name="IslamInfo_muslimBook40" xml:space="preserve">
+    <value>반갑 및 인사에 대한 책</value>
+  </data>
+  <data name="IslamInfo_muslimBook41" xml:space="preserve">
+    <value>올바른 단어의 사용에 관한 책</value>
+  </data>
+  <data name="IslamInfo_muslimBook42" xml:space="preserve">
+    <value>시의 책</value>
+  </data>
+  <data name="IslamInfo_muslimBook43" xml:space="preserve">
+    <value>비전의 책</value>
+  </data>
+  <data name="IslamInfo_muslimBook44" xml:space="preserve">
+    <value>거룩한 예언자의 우수한 자질에 관한 도서 (평화가 그들에게 수 있음)와 그의 동료</value>
+  </data>
+  <data name="IslamInfo_muslimBook45" xml:space="preserve">
+    <value>신성한 예언자의 동료의 장점에 관한 도서 (알라는 그들과 함께 기쁘게 생각합니다)</value>
+  </data>
+  <data name="IslamInfo_muslimBook46" xml:space="preserve">
+    <value>미덕의 책, 좋은 매너와 관계의 넥타이의 결합</value>
+  </data>
+  <data name="IslamInfo_muslimBook47" xml:space="preserve">
+    <value>운명의 책</value>
+  </data>
+  <data name="IslamInfo_muslimBook48" xml:space="preserve">
+    <value>지식의 책</value>
+  </data>
+  <data name="IslamInfo_muslimBook49" xml:space="preserve">
+    <value>이 책은 알라, 간구, 회개의 기억에 관한 용서를 추구</value>
+  </data>
+  <data name="IslamInfo_muslimBook5" xml:space="preserve">
+    <value>기도의 책</value>
+  </data>
+  <data name="IslamInfo_muslimBook50" xml:space="preserve">
+    <value>하트 녹는 전통의 책</value>
+  </data>
+  <data name="IslamInfo_muslimBook51" xml:space="preserve">
+    <value>이 책은 회개에 회개와 권면에 관한</value>
+  </data>
+  <data name="IslamInfo_muslimBook52" xml:space="preserve">
+    <value>그들에 관하여 외식 및 명령의 charateristics가에 관한</value>
+  </data>
+  <data name="IslamInfo_muslimBook53" xml:space="preserve">
+    <value>심판, 낙원과 지옥의 오늘의 책주기 설명</value>
+  </data>
+  <data name="IslamInfo_muslimBook54" xml:space="preserve">
+    <value>파라다이스에 관한 책, 그것의 설명, 보물 창고 및 그것의 친밀</value>
+  </data>
+  <data name="IslamInfo_muslimBook55" xml:space="preserve">
+    <value>이 책은 마지막 시간의 혼란과 징조에 관한</value>
+  </data>
+  <data name="IslamInfo_muslimBook56" xml:space="preserve">
+    <value>이 책은 신앙과 마음의 연화에 관한</value>
+  </data>
+  <data name="IslamInfo_muslimBook57" xml:space="preserve">
+    <value>해설의 책</value>
+  </data>
+  <data name="IslamInfo_muslimBook6" xml:space="preserve">
+    <value>모스크와기도의 장소의 책</value>
+  </data>
+  <data name="IslamInfo_muslimBook7" xml:space="preserve">
+    <value>기도의 책 (여행자)</value>
+  </data>
+  <data name="IslamInfo_muslimBook8" xml:space="preserve">
+    <value>기도의 도서 (금)</value>
+  </data>
+  <data name="IslamInfo_muslimBook9" xml:space="preserve">
+    <value>기도의 책 (두 Eids)</value>
+  </data>
+  <data name="IslamInfo_PrayerUnits" xml:space="preserve">
+    <value>기도 단위</value>
+  </data>
+  <data name="IslamInfo_QuranChapter1" xml:space="preserve">
+    <value>열기</value>
+  </data>
+  <data name="IslamInfo_QuranChapter10" xml:space="preserve">
+    <value>조나스</value>
+  </data>
+  <data name="IslamInfo_QuranChapter100" xml:space="preserve">
+    <value>충전기</value>
+  </data>
+  <data name="IslamInfo_QuranChapter101" xml:space="preserve">
+    <value>재앙</value>
+  </data>
+  <data name="IslamInfo_QuranChapter102" xml:space="preserve">
+    <value>경쟁</value>
+  </data>
+  <data name="IslamInfo_QuranChapter103" xml:space="preserve">
+    <value>떨어지는 날, 신기원</value>
+  </data>
+  <data name="IslamInfo_QuranChapter104" xml:space="preserve">
+    <value>Traducer</value>
+  </data>
+  <data name="IslamInfo_QuranChapter105" xml:space="preserve">
+    <value>코끼리</value>
+  </data>
+  <data name="IslamInfo_QuranChapter106" xml:space="preserve">
+    <value>이 Quraysh</value>
+  </data>
+  <data name="IslamInfo_QuranChapter107" xml:space="preserve">
+    <value>구제</value>
+  </data>
+  <data name="IslamInfo_QuranChapter108" xml:space="preserve">
+    <value>풍부</value>
+  </data>
+  <data name="IslamInfo_QuranChapter109" xml:space="preserve">
+    <value>믿지 않는</value>
+  </data>
+  <data name="IslamInfo_QuranChapter11" xml:space="preserve">
+    <value>HUD</value>
+  </data>
+  <data name="IslamInfo_QuranChapter110" xml:space="preserve">
+    <value>신성한 지원</value>
+  </data>
+  <data name="IslamInfo_QuranChapter111" xml:space="preserve">
+    <value>팜 섬유</value>
+  </data>
+  <data name="IslamInfo_QuranChapter112" xml:space="preserve">
+    <value>성실</value>
+  </data>
+  <data name="IslamInfo_QuranChapter113" xml:space="preserve">
+    <value>새벽</value>
+  </data>
+  <data name="IslamInfo_QuranChapter114" xml:space="preserve">
+    <value>인류</value>
+  </data>
+  <data name="IslamInfo_QuranChapter12" xml:space="preserve">
+    <value>조셉</value>
+  </data>
+  <data name="IslamInfo_QuranChapter13" xml:space="preserve">
+    <value>천둥</value>
+  </data>
+  <data name="IslamInfo_QuranChapter14" xml:space="preserve">
+    <value>아브라함</value>
+  </data>
+  <data name="IslamInfo_QuranChapter15" xml:space="preserve">
+    <value>록</value>
+  </data>
+  <data name="IslamInfo_QuranChapter16" xml:space="preserve">
+    <value>꿀벌</value>
+  </data>
+  <data name="IslamInfo_QuranChapter17" xml:space="preserve">
+    <value>야간 여행</value>
+  </data>
+  <data name="IslamInfo_QuranChapter18" xml:space="preserve">
+    <value>동굴</value>
+  </data>
+  <data name="IslamInfo_QuranChapter19" xml:space="preserve">
+    <value>메리</value>
+  </data>
+  <data name="IslamInfo_QuranChapter2" xml:space="preserve">
+    <value>암소</value>
+  </data>
+  <data name="IslamInfo_QuranChapter20" xml:space="preserve">
+    <value>TAA - 하 '</value>
+  </data>
+  <data name="IslamInfo_QuranChapter21" xml:space="preserve">
+    <value>선지자</value>
+  </data>
+  <data name="IslamInfo_QuranChapter22" xml:space="preserve">
+    <value>순례</value>
+  </data>
+  <data name="IslamInfo_QuranChapter23" xml:space="preserve">
+    <value>신자</value>
+  </data>
+  <data name="IslamInfo_QuranChapter24" xml:space="preserve">
+    <value>빛</value>
+  </data>
+  <data name="IslamInfo_QuranChapter25" xml:space="preserve">
+    <value>기준</value>
+  </data>
+  <data name="IslamInfo_QuranChapter26" xml:space="preserve">
+    <value>시인</value>
+  </data>
+  <data name="IslamInfo_QuranChapter27" xml:space="preserve">
+    <value>개미</value>
+  </data>
+  <data name="IslamInfo_QuranChapter28" xml:space="preserve">
+    <value>이야기</value>
+  </data>
+  <data name="IslamInfo_QuranChapter29" xml:space="preserve">
+    <value>거미</value>
+  </data>
+  <data name="IslamInfo_QuranChapter3" xml:space="preserve">
+    <value>Imraan의 가족</value>
+  </data>
+  <data name="IslamInfo_QuranChapter30" xml:space="preserve">
+    <value>로마서</value>
+  </data>
+  <data name="IslamInfo_QuranChapter31" xml:space="preserve">
+    <value>Luqman</value>
+  </data>
+  <data name="IslamInfo_QuranChapter32" xml:space="preserve">
+    <value>의식</value>
+  </data>
+  <data name="IslamInfo_QuranChapter33" xml:space="preserve">
+    <value>가문</value>
+  </data>
+  <data name="IslamInfo_QuranChapter34" xml:space="preserve">
+    <value>시바</value>
+  </data>
+  <data name="IslamInfo_QuranChapter35" xml:space="preserve">
+    <value>송신자</value>
+  </data>
+  <data name="IslamInfo_QuranChapter36" xml:space="preserve">
+    <value>야신</value>
+  </data>
+  <data name="IslamInfo_QuranChapter37" xml:space="preserve">
+    <value>계급에 그려진 그</value>
+  </data>
+  <data name="IslamInfo_QuranChapter38" xml:space="preserve">
+    <value>편지 사드</value>
+  </data>
+  <data name="IslamInfo_QuranChapter39" xml:space="preserve">
+    <value>그룹</value>
+  </data>
+  <data name="IslamInfo_QuranChapter4" xml:space="preserve">
+    <value>여성</value>
+  </data>
+  <data name="IslamInfo_QuranChapter40" xml:space="preserve">
+    <value>Forgiver</value>
+  </data>
+  <data name="IslamInfo_QuranChapter41" xml:space="preserve">
+    <value>상세히 설명</value>
+  </data>
+  <data name="IslamInfo_QuranChapter42" xml:space="preserve">
+    <value>상의</value>
+  </data>
+  <data name="IslamInfo_QuranChapter43" xml:space="preserve">
+    <value>금 장신구</value>
+  </data>
+  <data name="IslamInfo_QuranChapter44" xml:space="preserve">
+    <value>연기</value>
+  </data>
+  <data name="IslamInfo_QuranChapter45" xml:space="preserve">
+    <value>웅크 리고</value>
+  </data>
+  <data name="IslamInfo_QuranChapter46" xml:space="preserve">
+    <value>모래 언덕</value>
+  </data>
+  <data name="IslamInfo_QuranChapter47" xml:space="preserve">
+    <value>무하마드</value>
+  </data>
+  <data name="IslamInfo_QuranChapter48" xml:space="preserve">
+    <value>승리</value>
+  </data>
+  <data name="IslamInfo_QuranChapter49" xml:space="preserve">
+    <value>안 아파트</value>
+  </data>
+  <data name="IslamInfo_QuranChapter5" xml:space="preserve">
+    <value>표</value>
+  </data>
+  <data name="IslamInfo_QuranChapter50" xml:space="preserve">
+    <value>편지 Qaaf</value>
+  </data>
+  <data name="IslamInfo_QuranChapter51" xml:space="preserve">
+    <value>키질 바람</value>
+  </data>
+  <data name="IslamInfo_QuranChapter52" xml:space="preserve">
+    <value>마운트</value>
+  </data>
+  <data name="IslamInfo_QuranChapter53" xml:space="preserve">
+    <value>스타</value>
+  </data>
+  <data name="IslamInfo_QuranChapter54" xml:space="preserve">
+    <value>달</value>
+  </data>
+  <data name="IslamInfo_QuranChapter55" xml:space="preserve">
+    <value>인정 많은</value>
+  </data>
+  <data name="IslamInfo_QuranChapter56" xml:space="preserve">
+    <value>피할 수없는</value>
+  </data>
+  <data name="IslamInfo_QuranChapter57" xml:space="preserve">
+    <value>철</value>
+  </data>
+  <data name="IslamInfo_QuranChapter58" xml:space="preserve">
+    <value>소장 여자</value>
+  </data>
+  <data name="IslamInfo_QuranChapter59" xml:space="preserve">
+    <value>망명</value>
+  </data>
+  <data name="IslamInfo_QuranChapter6" xml:space="preserve">
+    <value>소</value>
+  </data>
+  <data name="IslamInfo_QuranChapter60" xml:space="preserve">
+    <value>그녀는 조사되어야한다</value>
+  </data>
+  <data name="IslamInfo_QuranChapter61" xml:space="preserve">
+    <value>순위</value>
+  </data>
+  <data name="IslamInfo_QuranChapter62" xml:space="preserve">
+    <value>금요일</value>
+  </data>
+  <data name="IslamInfo_QuranChapter63" xml:space="preserve">
+    <value>위선자</value>
+  </data>
+  <data name="IslamInfo_QuranChapter64" xml:space="preserve">
+    <value>상호 환멸</value>
+  </data>
+  <data name="IslamInfo_QuranChapter65" xml:space="preserve">
+    <value>이혼</value>
+  </data>
+  <data name="IslamInfo_QuranChapter66" xml:space="preserve">
+    <value>금지</value>
+  </data>
+  <data name="IslamInfo_QuranChapter67" xml:space="preserve">
+    <value>주권</value>
+  </data>
+  <data name="IslamInfo_QuranChapter68" xml:space="preserve">
+    <value>펜</value>
+  </data>
+  <data name="IslamInfo_QuranChapter69" xml:space="preserve">
+    <value>현실</value>
+  </data>
+  <data name="IslamInfo_QuranChapter7" xml:space="preserve">
+    <value>하이츠</value>
+  </data>
+  <data name="IslamInfo_QuranChapter70" xml:space="preserve">
+    <value>상승하는 계단</value>
+  </data>
+  <data name="IslamInfo_QuranChapter71" xml:space="preserve">
+    <value>노아</value>
+  </data>
+  <data name="IslamInfo_QuranChapter72" xml:space="preserve">
+    <value>정령</value>
+  </data>
+  <data name="IslamInfo_QuranChapter73" xml:space="preserve">
+    <value>에 enshrouded 하나</value>
+  </data>
+  <data name="IslamInfo_QuranChapter74" xml:space="preserve">
+    <value>은폐 한</value>
+  </data>
+  <data name="IslamInfo_QuranChapter75" xml:space="preserve">
+    <value>부활</value>
+  </data>
+  <data name="IslamInfo_QuranChapter76" xml:space="preserve">
+    <value>사람</value>
+  </data>
+  <data name="IslamInfo_QuranChapter77" xml:space="preserve">
+    <value>밀사</value>
+  </data>
+  <data name="IslamInfo_QuranChapter78" xml:space="preserve">
+    <value>발표</value>
+  </data>
+  <data name="IslamInfo_QuranChapter79" xml:space="preserve">
+    <value>앞으로 드래그 사람들</value>
+  </data>
+  <data name="IslamInfo_QuranChapter8" xml:space="preserve">
+    <value>전쟁의 전리품</value>
+  </data>
+  <data name="IslamInfo_QuranChapter80" xml:space="preserve">
+    <value>그는 눈살을 찌푸렸다</value>
+  </data>
+  <data name="IslamInfo_QuranChapter81" xml:space="preserve">
+    <value>전복</value>
+  </data>
+  <data name="IslamInfo_QuranChapter82" xml:space="preserve">
+    <value>클 리빙</value>
+  </data>
+  <data name="IslamInfo_QuranChapter83" xml:space="preserve">
+    <value>사취</value>
+  </data>
+  <data name="IslamInfo_QuranChapter84" xml:space="preserve">
+    <value>오픈 분할</value>
+  </data>
+  <data name="IslamInfo_QuranChapter85" xml:space="preserve">
+    <value>별자리</value>
+  </data>
+  <data name="IslamInfo_QuranChapter86" xml:space="preserve">
+    <value>모닝 스타</value>
+  </data>
+  <data name="IslamInfo_QuranChapter87" xml:space="preserve">
+    <value>가장 높은</value>
+  </data>
+  <data name="IslamInfo_QuranChapter88" xml:space="preserve">
+    <value>압도적</value>
+  </data>
+  <data name="IslamInfo_QuranChapter89" xml:space="preserve">
+    <value>새벽</value>
+  </data>
+  <data name="IslamInfo_QuranChapter9" xml:space="preserve">
+    <value>회개</value>
+  </data>
+  <data name="IslamInfo_QuranChapter90" xml:space="preserve">
+    <value>도시</value>
+  </data>
+  <data name="IslamInfo_QuranChapter91" xml:space="preserve">
+    <value>일</value>
+  </data>
+  <data name="IslamInfo_QuranChapter92" xml:space="preserve">
+    <value>밤</value>
+  </data>
+  <data name="IslamInfo_QuranChapter93" xml:space="preserve">
+    <value>아침 시간</value>
+  </data>
+  <data name="IslamInfo_QuranChapter94" xml:space="preserve">
+    <value>위로의</value>
+  </data>
+  <data name="IslamInfo_QuranChapter95" xml:space="preserve">
+    <value>그림</value>
+  </data>
+  <data name="IslamInfo_QuranChapter96" xml:space="preserve">
+    <value>응고</value>
+  </data>
+  <data name="IslamInfo_QuranChapter97" xml:space="preserve">
+    <value>전원, 운명</value>
+  </data>
+  <data name="IslamInfo_QuranChapter98" xml:space="preserve">
+    <value>증거</value>
+  </data>
+  <data name="IslamInfo_QuranChapter99" xml:space="preserve">
+    <value>지진</value>
+  </data>
+  <data name="IslamInfo_Terminating" xml:space="preserve">
+    <value>종단</value>
+  </data>
+  <data name="IslamInfo_Translation" xml:space="preserve">
+    <value>번역</value>
+  </data>
+  <data name="IslamInfo_Transliteration" xml:space="preserve">
+    <value>음역</value>
+  </data>
+  <data name="IslamInfo_UnicodeName" xml:space="preserve">
+    <value>유니 코드 이름</value>
+  </data>
+  <data name="IslamInfo_UnicodeValue" xml:space="preserve">
+    <value>유니 코드 값</value>
+  </data>
+  <data name="unicode_ArabicComma" xml:space="preserve">
+    <value>아랍어 쉼표</value>
+  </data>
+  <data name="unicode_ArabicDamma" xml:space="preserve">
+    <value>아랍어 Damma</value>
+  </data>
+  <data name="unicode_ArabicDammatan" xml:space="preserve">
+    <value>아랍어 Dammatan</value>
+  </data>
+  <data name="unicode_ArabicEmptyCentreHighStop" xml:space="preserve">
+    <value>아랍어 빈 센터 하이 스톱</value>
+  </data>
+  <data name="unicode_ArabicEmptyCentreLowStop" xml:space="preserve">
+    <value>아랍어 빈 센터 낮은 정지</value>
+  </data>
+  <data name="unicode_ArabicEndOfAyah" xml:space="preserve">
+    <value>아야 아랍어 끝</value>
+  </data>
+  <data name="unicode_ArabicFatha" xml:space="preserve">
+    <value>아랍어 Fatha</value>
+  </data>
+  <data name="unicode_ArabicFathatan" xml:space="preserve">
+    <value>아랍어 Fathatan</value>
+  </data>
+  <data name="unicode_ArabicHamzaAbove" xml:space="preserve">
+    <value>아랍어 함자 위</value>
+  </data>
+  <data name="unicode_ArabicHamzaBelow" xml:space="preserve">
+    <value>아래 아랍어 함자</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitEight" xml:space="preserve">
+    <value>아랍어 인도어 자리 여덟</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitFive" xml:space="preserve">
+    <value>아랍어 인도어 숫자 다섯</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitFour" xml:space="preserve">
+    <value>아랍어 인도어 자리 네</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitNine" xml:space="preserve">
+    <value>아랍어 인도어 자리 나인</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitOne" xml:space="preserve">
+    <value>아랍어 인도어 자리 하나</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitSeven" xml:space="preserve">
+    <value>아랍어 인도어 자리 7</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitSix" xml:space="preserve">
+    <value>아랍어 인도어 자리 식스</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitThree" xml:space="preserve">
+    <value>아랍어 인도어 자리 세</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitTwo" xml:space="preserve">
+    <value>아랍어 인도어 자리 두</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitZero" xml:space="preserve">
+    <value>아랍어 인도어 자리 제로</value>
+  </data>
+  <data name="unicode_ArabicKasra" xml:space="preserve">
+    <value>아랍어 Kasra</value>
+  </data>
+  <data name="unicode_ArabicKasratan" xml:space="preserve">
+    <value>아랍어 Kasratan</value>
+  </data>
+  <data name="unicode_ArabicLetterAin" xml:space="preserve">
+    <value>아랍어 문자 아인</value>
+  </data>
+  <data name="unicode_ArabicLetterAlef" xml:space="preserve">
+    <value>아랍어 문자 알레프</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefMaksura" xml:space="preserve">
+    <value>아랍어 문자 알레프 Maksura</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefWasla" xml:space="preserve">
+    <value>아랍어 문자 알레프 Wasla</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefWithHamzaAbove" xml:space="preserve">
+    <value>함자 위의 아랍어 문자 알레프</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefWithHamzaBelow" xml:space="preserve">
+    <value>아래에 Hamza가 아랍어 문자 알레프</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefWithMaddaAbove" xml:space="preserve">
+    <value>Madda 위의 아랍어 문자 알레프</value>
+  </data>
+  <data name="unicode_ArabicLetterBeh" xml:space="preserve">
+    <value>아랍어 문자 BEH</value>
+  </data>
+  <data name="unicode_ArabicLetterDad" xml:space="preserve">
+    <value>아랍어 문자 아빠</value>
+  </data>
+  <data name="unicode_ArabicLetterDal" xml:space="preserve">
+    <value>아랍어 문자 달</value>
+  </data>
+  <data name="unicode_ArabicLetterFeh" xml:space="preserve">
+    <value>아랍어 문자 페</value>
+  </data>
+  <data name="unicode_ArabicLetterGaf" xml:space="preserve">
+    <value>아랍어 문자 GAF</value>
+  </data>
+  <data name="unicode_ArabicLetterGhain" xml:space="preserve">
+    <value>아랍어 문자 Ghain</value>
+  </data>
+  <data name="unicode_ArabicLetterHah" xml:space="preserve">
+    <value>아랍어 문자 하 ~</value>
+  </data>
+  <data name="unicode_ArabicLetterHamza" xml:space="preserve">
+    <value>아랍어 문자 함자</value>
+  </data>
+  <data name="unicode_ArabicLetterHeh" xml:space="preserve">
+    <value>아랍어 문자 ㅎ</value>
+  </data>
+  <data name="unicode_ArabicLetterJeem" xml:space="preserve">
+    <value>아랍어 문자 Jeem</value>
+  </data>
+  <data name="unicode_ArabicLetterKaf" xml:space="preserve">
+    <value>아랍어 문자 KAF</value>
+  </data>
+  <data name="unicode_ArabicLetterKhah" xml:space="preserve">
+    <value>아랍어 문자 Khah</value>
+  </data>
+  <data name="unicode_ArabicLetterLam" xml:space="preserve">
+    <value>아랍어 문자 램</value>
+  </data>
+  <data name="unicode_ArabicLetterMeem" xml:space="preserve">
+    <value>아랍어 편지 Meem</value>
+  </data>
+  <data name="unicode_ArabicLetterNoon" xml:space="preserve">
+    <value>아랍어 문자 정오</value>
+  </data>
+  <data name="unicode_ArabicLetterPeh" xml:space="preserve">
+    <value>아랍어 문자 PEH</value>
+  </data>
+  <data name="unicode_ArabicLetterQaf" xml:space="preserve">
+    <value>아랍어 문자 QAF</value>
+  </data>
+  <data name="unicode_ArabicLetterReh" xml:space="preserve">
+    <value>아랍어 문자 REH</value>
+  </data>
+  <data name="unicode_ArabicLetterSad" xml:space="preserve">
+    <value>슬픈 아랍어 편지</value>
+  </data>
+  <data name="unicode_ArabicLetterSeen" xml:space="preserve">
+    <value>본 아랍어 편지</value>
+  </data>
+  <data name="unicode_ArabicLetterSheen" xml:space="preserve">
+    <value>아랍어 문자 쉰</value>
+  </data>
+  <data name="unicode_ArabicLetterSuperscriptAlef" xml:space="preserve">
+    <value>아랍어 문자 첨자 알레프</value>
+  </data>
+  <data name="unicode_ArabicLetterTah" xml:space="preserve">
+    <value>아랍어 문자 TAH</value>
+  </data>
+  <data name="unicode_ArabicLetterTcheh" xml:space="preserve">
+    <value>아랍어 문자 Tcheh</value>
+  </data>
+  <data name="unicode_ArabicLetterTeh" xml:space="preserve">
+    <value>아랍어 문자 TEH</value>
+  </data>
+  <data name="unicode_ArabicLetterTehMarbuta" xml:space="preserve">
+    <value>아랍어 문자 TEH Marbuta</value>
+  </data>
+  <data name="unicode_ArabicLetterThal" xml:space="preserve">
+    <value>아랍어 문자 탈</value>
+  </data>
+  <data name="unicode_ArabicLetterTheh" xml:space="preserve">
+    <value>아랍어 문자 Theh</value>
+  </data>
+  <data name="unicode_ArabicLetterVeh" xml:space="preserve">
+    <value>아랍어 문자 VEH</value>
+  </data>
+  <data name="unicode_ArabicLetterWaw" xml:space="preserve">
+    <value>아랍어 문자 와우</value>
+  </data>
+  <data name="unicode_ArabicLetterWawWithHamzaAbove" xml:space="preserve">
+    <value>함자 위의 아랍어 문자 와우</value>
+  </data>
+  <data name="unicode_ArabicLetterYeh" xml:space="preserve">
+    <value>아랍어 문자 예치</value>
+  </data>
+  <data name="unicode_ArabicLetterYehWithHamzaAbove" xml:space="preserve">
+    <value>함자 위의 아랍어 문자 예치</value>
+  </data>
+  <data name="unicode_ArabicLetterZah" xml:space="preserve">
+    <value>아랍어 문자 ZAH</value>
+  </data>
+  <data name="unicode_ArabicLetterZain" xml:space="preserve">
+    <value>아랍어 문자자인</value>
+  </data>
+  <data name="unicode_ArabicLigatureAkbarIsolatedForm" xml:space="preserve">
+    <value>아랍어 합자 위대가 양식입니다</value>
+  </data>
+  <data name="unicode_ArabicLigatureAlayheIsolatedForm" xml:space="preserve">
+    <value>아랍어 합자 Alayhe 고립 된 형태</value>
+  </data>
+  <data name="unicode_ArabicLigatureAllahIsolatedForm" xml:space="preserve">
+    <value>아랍어 합자 알라 고립 된 형태</value>
+  </data>
+  <data name="unicode_ArabicLigatureBismillahArRahmanArRaheem" xml:space="preserve">
+    <value>아랍어 합자 Bismillah 아르곤 - 라만에 Ar-라힘</value>
+  </data>
+  <data name="unicode_ArabicLigatureJallajalalouhou" xml:space="preserve">
+    <value>아랍어 합자 Jallajalalouhou</value>
+  </data>
+  <data name="unicode_ArabicLigatureMohammadIsolatedForm" xml:space="preserve">
+    <value>아랍어 합자 모하마드는 양식입니다</value>
+  </data>
+  <data name="unicode_ArabicLigatureQalaUsedAsKoranicStopSignIsolatedForm" xml:space="preserve">
+    <value>코란 정지 고립 된 양식에 서명 아랍어 합자 Qala에 중고</value>
+  </data>
+  <data name="unicode_ArabicLigatureRasoulIsolatedForm" xml:space="preserve">
+    <value>아랍어 합자 Rasoul는 양식입니다</value>
+  </data>
+  <data name="unicode_ArabicLigatureSalamIsolatedForm" xml:space="preserve">
+    <value>아랍어 합자 살람 양식입니다</value>
+  </data>
+  <data name="unicode_ArabicLigatureSallaIsolatedForm" xml:space="preserve">
+    <value>아랍어 합자 살라 고립 된 형태</value>
+  </data>
+  <data name="unicode_ArabicLigatureSallallahouAlayheWasallam" xml:space="preserve">
+    <value>아랍어 합자 Sallallahou Alayhe Wasallam</value>
+  </data>
+  <data name="unicode_ArabicLigatureSallaUsedAsKoranicStopSignIsolatedForm" xml:space="preserve">
+    <value>아랍어 합자 살라은 코란 정지 표시 고립 된 형태로 사용</value>
+  </data>
+  <data name="unicode_ArabicLigatureWasallamIsolatedForm" xml:space="preserve">
+    <value>아랍어 합자 Wasallam 고립 된 형태</value>
+  </data>
+  <data name="unicode_ArabicMaddahAbove" xml:space="preserve">
+    <value>아랍어 Maddah 위</value>
+  </data>
+  <data name="unicode_ArabicPlaceOfSajdah" xml:space="preserve">
+    <value>Sajdah 아랍어 장소</value>
+  </data>
+  <data name="unicode_ArabicQuestionMark" xml:space="preserve">
+    <value>아랍어 물음표</value>
+  </data>
+  <data name="unicode_ArabicRoundedHighStopWithFilledCentre" xml:space="preserve">
+    <value>아랍어 둥근 높은 중지와 함께 센터를 채웠다</value>
+  </data>
+  <data name="unicode_ArabicSemicolon" xml:space="preserve">
+    <value>아랍어 세미콜론</value>
+  </data>
+  <data name="unicode_ArabicShadda" xml:space="preserve">
+    <value>아랍어 Shadda</value>
+  </data>
+  <data name="unicode_ArabicSmallHighJeem" xml:space="preserve">
+    <value>아랍어 작은 높은 Jeem</value>
+  </data>
+  <data name="unicode_ArabicSmallHighLamAlef" xml:space="preserve">
+    <value>아랍어 작은 높은 램 알레프</value>
+  </data>
+  <data name="unicode_ArabicSmallHighLigatureQafWithLamWithAlefMaksura" xml:space="preserve">
+    <value>알레프 Maksura와 램 아랍어 작은 높은 합자 QAF</value>
+  </data>
+  <data name="unicode_ArabicSmallHighLigatureSadWithLamWithAlefMaksura" xml:space="preserve">
+    <value>알레프 Maksura와 램 슬픈 아랍어 작은 높은 합자</value>
+  </data>
+  <data name="unicode_ArabicSmallHighMeemInitialForm" xml:space="preserve">
+    <value>아랍어 작은 높은 Meem 초기 양식</value>
+  </data>
+  <data name="unicode_ArabicSmallHighMeemIsolatedForm" xml:space="preserve">
+    <value>아랍어 작은 높은 Meem 고립 된 형태</value>
+  </data>
+  <data name="unicode_ArabicSmallHighNoon" xml:space="preserve">
+    <value>아랍어 작은 정오</value>
+  </data>
+  <data name="unicode_ArabicSmallHighRoundedZero" xml:space="preserve">
+    <value>아랍어 작은 높은 둥근 제로</value>
+  </data>
+  <data name="unicode_ArabicSmallHighSeen" xml:space="preserve">
+    <value>아랍어 작은 높은 신</value>
+  </data>
+  <data name="unicode_ArabicSmallHighThreeDots" xml:space="preserve">
+    <value>아랍어 작은 높은 세 개의 점</value>
+  </data>
+  <data name="unicode_ArabicSmallHighUprightRectangularZero" xml:space="preserve">
+    <value>아랍어 작은 높은 수직 직사각형 제로</value>
+  </data>
+  <data name="unicode_ArabicSmallLowMeem" xml:space="preserve">
+    <value>아랍어 작은 낮은 Meem</value>
+  </data>
+  <data name="unicode_ArabicSmallLowSeen" xml:space="preserve">
+    <value>아랍어 작은 낮은 신</value>
+  </data>
+  <data name="unicode_ArabicSmallWaw" xml:space="preserve">
+    <value>아랍어 작은 와우</value>
+  </data>
+  <data name="unicode_ArabicSmallYeh" xml:space="preserve">
+    <value>아랍어 작은 예치</value>
+  </data>
+  <data name="unicode_ArabicStartOfRubElHizb" xml:space="preserve">
+    <value>러브 엘적인 Hizb 아랍어 시작</value>
+  </data>
+  <data name="unicode_ArabicSukun" xml:space="preserve">
+    <value>아랍어 Sukun</value>
+  </data>
+  <data name="unicode_ArabicTatweel" xml:space="preserve">
+    <value>아랍어 Tatweel</value>
+  </data>
+  <data name="unicode_Colon" xml:space="preserve">
+    <value>결장</value>
+  </data>
+  <data name="unicode_Comma" xml:space="preserve">
+    <value>콤마</value>
+  </data>
+  <data name="unicode_ExclamationMark" xml:space="preserve">
+    <value>느낌표</value>
+  </data>
+  <data name="unicode_FullStop" xml:space="preserve">
+    <value>마침표</value>
+  </data>
+  <data name="unicode_HyphenMinus" xml:space="preserve">
+    <value>하이픈 - 마이너스</value>
+  </data>
+  <data name="unicode_LeftCurlyBracket" xml:space="preserve">
+    <value>왼쪽 중괄호</value>
+  </data>
+  <data name="unicode_LeftPointingDoubleAngleQuotationMark" xml:space="preserve">
+    <value>왼쪽을 가리키는 두 번 각도 견적 마크</value>
+  </data>
+  <data name="unicode_LeftSquareBracket" xml:space="preserve">
+    <value>왼쪽 대괄호</value>
+  </data>
+  <data name="unicode_OrnateLeftParenthesis" xml:space="preserve">
+    <value>화려한 왼쪽 괄호</value>
+  </data>
+  <data name="unicode_OrnateRightParenthesis" xml:space="preserve">
+    <value>화려한 오른쪽 괄호</value>
+  </data>
+  <data name="unicode_QuotationMark" xml:space="preserve">
+    <value>따옴표</value>
+  </data>
+  <data name="unicode_RialSign" xml:space="preserve">
+    <value>리알 로그인</value>
+  </data>
+  <data name="unicode_RightCurlyBracket" xml:space="preserve">
+    <value>오른쪽 중괄호</value>
+  </data>
+  <data name="unicode_RightPointingDoubleAngleQuotationMark" xml:space="preserve">
+    <value>오른쪽을 가리키는 두 번 각도 견적 마크</value>
+  </data>
+  <data name="unicode_RightSquareBracket" xml:space="preserve">
+    <value>오른쪽 대괄호</value>
+  </data>
+  <data name="unicode_Space" xml:space="preserve">
+    <value>공간</value>
+  </data>
+  <data name="IslamInfo_Date" xml:space="preserve">
+    <value>날짜</value>
+  </data>
+  <data name="IslamInfo_Day" xml:space="preserve">
+    <value>일</value>
+  </data>
+  <data name="IslamInfo_Final1" xml:space="preserve">
+    <value>최종 1</value>
+  </data>
+  <data name="IslamInfo_Final1Trans" xml:space="preserve">
+    <value>그분과 같이되는 아무것도하고 그는 예언자를 들으시는 분입니다</value>
+  </data>
+  <data name="IslamInfo_Final1WordByWord" xml:space="preserve">
+    <value>어떤 | 일 | | 그분처럼 | 그분이 | 청자 |하지 예언자</value>
+  </data>
+  <data name="IslamInfo_Final2" xml:space="preserve">
+    <value>최종 2</value>
+  </data>
+  <data name="IslamInfo_Final2Trans" xml:space="preserve">
+    <value>O 알라는 당신의 최선의 생물 마스터 무하마드에 따라 최적의기도를 보내</value>
+  </data>
+  <data name="IslamInfo_Final2WordByWord" xml:space="preserve">
+    <value>O 알라 | 발송 | 최고 |기도 |시 | 최고 | 당신의 창조의 | 석사 | 무하마드</value>
+  </data>
+  <data name="IslamInfo_Final3" xml:space="preserve">
+    <value>최종 3</value>
+  </data>
+  <data name="IslamInfo_Final3Trans" xml:space="preserve">
+    <value>그를 기억하고 무시하는 사람들이 그렇게 할 때마다 평화와 그의 말의 잉크 때마다 그를 기억하는 사람들은 그렇게하고</value>
+  </data>
+  <data name="IslamInfo_Final3WordByWord" xml:space="preserve">
+    <value>그리고 평화 | 열거 | 자신의 지식 | 잉크 | 그의 말의 |마다 | 그분을 기억 | 이렇게 | 때마다 무시하는 사람들 |에 | 그분을 기억 | 이렇게하십시오</value>
+  </data>
+  <data name="IslamInfo_OMasterSendPrayersAndPeace" xml:space="preserve">
+    <value>내 마스터 O, 당신의 인사에 축복을 보내</value>
+  </data>
+  <data name="IslamInfo_OMasterSendPrayersAndPeaceTrans" xml:space="preserve">
+    <value>내 마스터 O, 모든 피조물의 가장, 당신의 사랑하는하면 영원히 인사에 축복을 보내</value>
+  </data>
+  <data name="IslamInfo_OMasterSendPrayersAndPeaceWordByWord" xml:space="preserve">
+    <value>O 내 마스터 | 당신의 인사에 보내 | 축복 | 언제나 | 영원히 |시 | 당신의 사랑하는 | 전체의 | 창조의 | 최고</value>
+  </data>
+  <data name="IslamInfo_PopularIslamicSongVerses" xml:space="preserve">
+    <value>인기 이슬람 노래 구절</value>
+  </data>
+  <data name="IslamInfo_RemembranceFirst" xml:space="preserve">
+    <value>기억 우선</value>
+  </data>
+  <data name="IslamInfo_RemembranceFirstTrans" xml:space="preserve">
+    <value>) 없음 숭배 할 권리가 없다하지만 (O 알라)), 영광을 그들이 당신과 연관 (과 확고한 동맹)는 (모든 (악보다 당신입니다).</value>
+  </data>
+  <data name="IslamInfo_RemembranceFirstWordByWord" xml:space="preserve">
+    <value>없음 | 숭배 할 권리가 없다 | 만에 | | 영광을 당신은 | 참 | 내가왔다 |의 | 잘못된 불렀지</value>
+  </data>
+  <data name="IslamInfo_RemembranceSecond" xml:space="preserve">
+    <value>기억 제</value>
+  </data>
+  <data name="IslamInfo_RemembranceSecondTrans" xml:space="preserve">
+    <value>알라 (혼자)은 우리에게 충분하고, 그는 (우리를 위해) 업무의 최고 디스 포저입니다;</value>
+  </data>
+  <data name="IslamInfo_RemembranceSecondWordByWord" xml:space="preserve">
+    <value>우리에게 충분한 | 알라 | 그분은 최고입니다 | 업무의 디스 포저 | 무엇 우수 | 수호 | 및 우수한 무엇 | 도우미</value>
+  </data>
+  <data name="IslamInfo_RemembranceThird" xml:space="preserve">
+    <value>기억 제</value>
+  </data>
+  <data name="IslamInfo_RemembranceThirdTrans" xml:space="preserve">
+    <value>(죄를 알라의 보호를 자제) 더 힘이없고 (좋은 행동을 수행하는) 아무 힘이 없다 알라, 높은, 최고의 도움으로</value>
+  </data>
+  <data name="IslamInfo_RemembranceThirdWordByWord" xml:space="preserve">
+    <value>강도 | | 없음이 없습니다 더이 없습니다 | 전원 | 알라 | | 고 | 제외하고 최고</value>
+  </data>
+  <data name="IslamInfo_SendBlessingsFirst" xml:space="preserve">
+    <value>먼저 축복 보내기</value>
+  </data>
+  <data name="IslamInfo_SendBlessingsFirstTrans" xml:space="preserve">
+    <value>당신은 아브라함과 그의 후손들에 자비를 보내 알라는 무하마드와 그의 후손들에 자비를 보낼 수 있습니다.</value>
+  </data>
+  <data name="IslamInfo_SendBlessingsFirstWordByWord" xml:space="preserve">
+    <value>O 알라 | 당신의 자비를 보내 |에 | 무하마드 | 및시 | 후손 | 하나님의 | 당신은 당신의 자비를 전송 | |로 | 아브라함 | 및시 | 후손 | 하나님의 | 진정으로 당신은 | 가장 영광스러운 | 가장 칭찬 |</value>
+  </data>
+  <data name="IslamInfo_SendBlessingsSecond" xml:space="preserve">
+    <value>축복을 보내 두 번째</value>
+  </data>
+  <data name="IslamInfo_SendBlessingsSecondTrans" xml:space="preserve">
+    <value>당신은 아브라함과 그의 후손들에 자비를 보내 알라는 무하마드와 그의 후손들에 자비를 보낼 수 있습니다.</value>
+  </data>
+  <data name="IslamInfo_SendBlessingsSecondWordByWord" xml:space="preserve">
+    <value>O 알라 | 당신의 자비를 보내 |에 | 무하마드 | 및시 | 후손 | 하나님의 | 당신은 당신의 자비를 전송 | |로 | 아브라함 | 및시 | 후손 | 하나님의 | 진정으로 당신은 | 가장 영광스러운 | 가장 칭찬 |</value>
+  </data>
+  <data name="IslamInfo_TheBestNames" xml:space="preserve">
+    <value>최고의 이름</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoon" xml:space="preserve">
+    <value>흰색 달</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonEighth" xml:space="preserve">
+    <value>여덟 번째</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonEighthTrans" xml:space="preserve">
+    <value>좋은 방법으로 우리를 부르는 당신을 환영합니다</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonEighthWordByWord" xml:space="preserve">
+    <value>에 오신 것을 환영합니다 | 당신 누가 우리를 호출 | 방법 | 좋은에</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonFifth" xml:space="preserve">
+    <value>다섯 번째</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonFifthTrans" xml:space="preserve">
+    <value>아 우리 사이에 우리의 메신저 (밀사)</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonFifthWordByWord" xml:space="preserve">
+    <value>오 | 우리의 메신저 | 우리 사이</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonFirst" xml:space="preserve">
+    <value>처음으로</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonFirstTrans" xml:space="preserve">
+    <value>오 흰색 달은 우리를 장미</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonFirstWordByWord" xml:space="preserve">
+    <value>우리를 | 흰색 달 | 아 장미</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonFourth" xml:space="preserve">
+    <value>네번째</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonFourthTrans" xml:space="preserve">
+    <value>그 누가 알라의 방법으로 우리를 초대합니다</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonFourthWordByWord" xml:space="preserve">
+    <value>그를 위해 | 방식의 | 알라 | 누가 우리를 초대</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonSecond" xml:space="preserve">
+    <value>초</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonSecondTrans" xml:space="preserve">
+    <value>라는 계곡 (그가 어디)에서</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonSecondWordByWord" xml:space="preserve">
+    <value>라고 | 계곡 |에서</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonSeventh" xml:space="preserve">
+    <value>일곱 번째</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonSeventhTrans" xml:space="preserve">
+    <value>당신은이 도시의 귀족을 가져왔다</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonSeventhWordByWord" xml:space="preserve">
+    <value>이 도시에 | 귀족 | 당신은 가져</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonSixth" xml:space="preserve">
+    <value>여섯 번째</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonSixthTrans" xml:space="preserve">
+    <value>누가 무시한 할 권면 (금지 명령 / 계명)와 함께 제공</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonSixthWordByWord" xml:space="preserve">
+    <value>순종 할 | 계명 | 온다 누구</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonThird" xml:space="preserve">
+    <value>셋째</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonThirdTrans" xml:space="preserve">
+    <value>그리고 감사의 뜻을 표시하는 우리의 의무입니다</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonThirdWordByWord" xml:space="preserve">
+    <value>우리에게 | graditude을 보여 | 그리고 현직</value>
+  </data>
+  <data name="IslamInfo_AllahKnowsBest" xml:space="preserve">
+    <value>알라 가장 잘 안다</value>
+  </data>
+  <data name="IslamInfo_AllahSaysTheTruth" xml:space="preserve">
+    <value>진실은 알라에서 가장 아름답다</value>
+  </data>
+  <data name="IslamInfo_AllahSufficesMe" xml:space="preserve">
+    <value>나를 위해 충분한 알라이다</value>
+  </data>
+  <data name="IslamInfo_AllahWilledItSo" xml:space="preserve">
+    <value>알라는 그래서 그것을하려고 생각하고 있습니다</value>
+  </data>
+  <data name="IslamInfo_AllahWilling" xml:space="preserve">
+    <value>알라는 그래서 그것을 의지하는 경우</value>
+  </data>
+  <data name="IslamInfo_AndUponYouBePeaceAndMercyOfAllah" xml:space="preserve">
+    <value>그리고 당신에게 평화와 알라의 자비 수</value>
+  </data>
+  <data name="IslamInfo_AndUponYouBePeaceAndMercyOfAllahAndBlessings" xml:space="preserve">
+    <value>그리고 당신에게 평화와 알라와 그의 축복의 자비 수</value>
+  </data>
+  <data name="IslamInfo_BlessingsOfAllah" xml:space="preserve">
+    <value>알라의 축복</value>
+  </data>
+  <data name="IslamInfo_GloriousAndExaltedBeHe" xml:space="preserve">
+    <value>수 영광스럽고 고귀한 그는</value>
+  </data>
+  <data name="IslamInfo_IAskAllahForgiveness" xml:space="preserve">
+    <value>나는 알라의 용서를</value>
+  </data>
+  <data name="IslamInfo_InProtectionOfAllah" xml:space="preserve">
+    <value>알라의 보호</value>
+  </data>
+  <data name="IslamInfo_InThePathOfAllah" xml:space="preserve">
+    <value>알라의 원인에</value>
+  </data>
+  <data name="IslamInfo_MayAllahBePleased" xml:space="preserve">
+    <value>알라는 그들과 함께 기뻐할 수 있습니다</value>
+  </data>
+  <data name="IslamInfo_MayAllahBlessYou" xml:space="preserve">
+    <value>알라에서 당신에 따라 축복</value>
+  </data>
+  <data name="IslamInfo_MayAllahHaveMercy" xml:space="preserve">
+    <value>알라는 그들에 자비가있을 수 있습니다</value>
+  </data>
+  <data name="IslamInfo_MayAllahProtectYou" xml:space="preserve">
+    <value>알라가 당신을 보호 할 수 있습니다</value>
+  </data>
+  <data name="IslamInfo_MayAllahWillItSo" xml:space="preserve">
+    <value>알라는 것입니다 수 있도록</value>
+  </data>
+  <data name="IslamInfo_PeaceBeUponYouAndMercyOfAllah" xml:space="preserve">
+    <value>평화는 당신과 알라의 자비에 수</value>
+  </data>
+  <data name="IslamInfo_PeaceBeUponYouAndMercyOfAllahAndBlessings" xml:space="preserve">
+    <value>평화와 알라의 자비와 하나님의 축복이 당신을 따라가</value>
+  </data>
+  <data name="IslamInfo_SeekRefugeWithAllahFromSatanRejected" xml:space="preserve">
+    <value>나는 사탄 알라 거부에 피난처를 추구</value>
+  </data>
+  <data name="IslamInfo_SublimeAndMighty" xml:space="preserve">
+    <value>서브 라임과 마이티</value>
+  </data>
+  <data name="IslamInfo_TrulyFromAllahWeComeAndToHimWillReturn" xml:space="preserve">
+    <value>참으로 알라에서 우리는 온, 진정으로 그에게 우리가 반환된다</value>
+  </data>
+  <data name="Acct_CertRequest" xml:space="preserve">
+    <value>인증서 요청</value>
+  </data>
+  <data name="Acct_Certificate" xml:space="preserve">
+    <value>증명서</value>
+  </data>
+  <data name="Acct_CertInstall" xml:space="preserve">
+    <value>인증서 설치합니다</value>
+  </data>
+  <data name="Acct_CurrentUser" xml:space="preserve">
+    <value>현재 사용자</value>
+  </data>
+  <data name="Acct_DeleteCertRequest" xml:space="preserve">
+    <value>인증서 요청 삭제</value>
+  </data>
+  <data name="Acct_EnableSSL" xml:space="preserve">
+    <value>SSL을 사용하도록 설정</value>
+  </data>
+  <data name="Acct_PrivateKey" xml:space="preserve">
+    <value>개인 키</value>
+  </data>
+  <data name="Acct_ViewCertRequests" xml:space="preserve">
+    <value>보기 인증서 요청</value>
+  </data>
+  <data name="Acct_ViewSites" xml:space="preserve">
+    <value>보기 사이트</value>
+  </data>
+  <data name="Acct_CertInstallIntermed" xml:space="preserve">
+    <value>중간 인증서 설치합니다</value>
+  </data>
+  <data name="IslamInfo_UniqueLetters" xml:space="preserve">
+    <value>고유 문자</value>
+  </data>
+  <data name="IslamInfo_SoulStates" xml:space="preserve">
+    <value>영혼의 상태</value>
+  </data>
+  <data name="IslamInfo_Abbreviations" xml:space="preserve">
+    <value>약어</value>
+  </data>
+  <data name="IslamInfo_Names" xml:space="preserve">
+    <value>이름</value>
+  </data>
+  <data name="IslamInfo_Places" xml:space="preserve">
+    <value>장소</value>
+  </data>
+  <data name="IslamInfo_Abbasid" xml:space="preserve">
+    <value>아바스</value>
+  </data>
+  <data name="IslamInfo_AbdullahBinMasood" xml:space="preserve">
+    <value>압둘라 빈 마수드</value>
+  </data>
+  <data name="IslamInfo_AbuBakrAlSaddiq" xml:space="preserve">
+    <value>아부 바크르 알 - Saddiq</value>
+  </data>
+  <data name="IslamInfo_AbuDahr" xml:space="preserve">
+    <value>아부 Dahr</value>
+  </data>
+  <data name="IslamInfo_AbuHanifa" xml:space="preserve">
+    <value>아부 Hanifa</value>
+  </data>
+  <data name="IslamInfo_AbuHurairah" xml:space="preserve">
+    <value>AbuHurairah</value>
+  </data>
+  <data name="IslamInfo_AbuJahal" xml:space="preserve">
+    <value>아부 Jahal</value>
+  </data>
+  <data name="IslamInfo_AbuLahab" xml:space="preserve">
+    <value>아부 Lahab</value>
+  </data>
+  <data name="IslamInfo_AbuSufyan" xml:space="preserve">
+    <value>아부 Sufyan</value>
+  </data>
+  <data name="IslamInfo_Aisha" xml:space="preserve">
+    <value>아이샤</value>
+  </data>
+  <data name="IslamInfo_AliBinAbuTalib" xml:space="preserve">
+    <value>알리 빈 아부 탈 리브</value>
+  </data>
+  <data name="IslamInfo_AlLaythBinSaad" xml:space="preserve">
+    <value>알 - Layth 빈 사드</value>
+  </data>
+  <data name="IslamInfo_Allowed" xml:space="preserve">
+    <value>허용</value>
+  </data>
+  <data name="IslamInfo_AlMansoor" xml:space="preserve">
+    <value>알 - 만수르</value>
+  </data>
+  <data name="IslamInfo_AlMuwata" xml:space="preserve">
+    <value>알 - Muwata</value>
+  </data>
+  <data name="IslamInfo_AlWahsi" xml:space="preserve">
+    <value>알 - Wahsi</value>
+  </data>
+  <data name="IslamInfo_AmrBinAlAas" xml:space="preserve">
+    <value>아 므르 빈 알 - Aas에</value>
+  </data>
+  <data name="IslamInfo_AndEveryone" xml:space="preserve">
+    <value>그리고 모든 사람</value>
+  </data>
+  <data name="IslamInfo_Angel" xml:space="preserve">
+    <value>천사</value>
+  </data>
+  <data name="IslamInfo_Arrogance" xml:space="preserve">
+    <value>거만</value>
+  </data>
+  <data name="IslamInfo_AskForgiveness" xml:space="preserve">
+    <value>용서를</value>
+  </data>
+  <data name="IslamInfo_Azar" xml:space="preserve">
+    <value>아자르</value>
+  </data>
+  <data name="IslamInfo_Balance" xml:space="preserve">
+    <value>균형</value>
+  </data>
+  <data name="IslamInfo_BaniHashim" xml:space="preserve">
+    <value>바니 하심</value>
+  </data>
+  <data name="IslamInfo_BaniThaqeef" xml:space="preserve">
+    <value>바니 Thaqeef</value>
+  </data>
+  <data name="IslamInfo_Biography" xml:space="preserve">
+    <value>전기</value>
+  </data>
+  <data name="IslamInfo_Bless" xml:space="preserve">
+    <value>축복</value>
+  </data>
+  <data name="IslamInfo_Caliphate" xml:space="preserve">
+    <value>칼리프의 지위</value>
+  </data>
+  <data name="IslamInfo_CallToIslam" xml:space="preserve">
+    <value>이슬람에 전화</value>
+  </data>
+  <data name="IslamInfo_Certainty" xml:space="preserve">
+    <value>확실성</value>
+  </data>
+  <data name="IslamInfo_Cohabitation" xml:space="preserve">
+    <value>동서</value>
+  </data>
+  <data name="IslamInfo_Commentary" xml:space="preserve">
+    <value>해설</value>
+  </data>
+  <data name="IslamInfo_Community" xml:space="preserve">
+    <value>커뮤니티</value>
+  </data>
+  <data name="IslamInfo_Companions" xml:space="preserve">
+    <value>친구들</value>
+  </data>
+  <data name="IslamInfo_Concensus" xml:space="preserve">
+    <value>Concensus</value>
+  </data>
+  <data name="IslamInfo_Concentration" xml:space="preserve">
+    <value>집중</value>
+  </data>
+  <data name="IslamInfo_Congregation" xml:space="preserve">
+    <value>회중</value>
+  </data>
+  <data name="IslamInfo_Conquest" xml:space="preserve">
+    <value>정복</value>
+  </data>
+  <data name="IslamInfo_Deeds" xml:space="preserve">
+    <value>증서</value>
+  </data>
+  <data name="IslamInfo_Delivery" xml:space="preserve">
+    <value>배달</value>
+  </data>
+  <data name="IslamInfo_Dessertion" xml:space="preserve">
+    <value>Dessertion</value>
+  </data>
+  <data name="IslamInfo_Digger" xml:space="preserve">
+    <value>파는 사람</value>
+  </data>
+  <data name="IslamInfo_Disbeliever" xml:space="preserve">
+    <value>믿지 않는 사람</value>
+  </data>
+  <data name="IslamInfo_Division" xml:space="preserve">
+    <value>분할</value>
+  </data>
+  <data name="IslamInfo_Do" xml:space="preserve">
+    <value>할</value>
+  </data>
+  <data name="IslamInfo_Doctrine" xml:space="preserve">
+    <value>주의</value>
+  </data>
+  <data name="IslamInfo_Empowering" xml:space="preserve">
+    <value>역량 강화</value>
+  </data>
+  <data name="IslamInfo_Excellence" xml:space="preserve">
+    <value>우수</value>
+  </data>
+  <data name="IslamInfo_Faith" xml:space="preserve">
+    <value>신앙</value>
+  </data>
+  <data name="IslamInfo_Faithful" xml:space="preserve">
+    <value>충실한</value>
+  </data>
+  <data name="IslamInfo_Fight" xml:space="preserve">
+    <value>싸움</value>
+  </data>
+  <data name="IslamInfo_Fighter" xml:space="preserve">
+    <value>전투기</value>
+  </data>
+  <data name="IslamInfo_Firdaus" xml:space="preserve">
+    <value>Firdaus</value>
+  </data>
+  <data name="IslamInfo_Forgiving" xml:space="preserve">
+    <value>용서하는</value>
+  </data>
+  <data name="IslamInfo_Fornication" xml:space="preserve">
+    <value>간음</value>
+  </data>
+  <data name="IslamInfo_Gabriel" xml:space="preserve">
+    <value>가브리엘</value>
+  </data>
+  <data name="IslamInfo_Gardens" xml:space="preserve">
+    <value>정원</value>
+  </data>
+  <data name="IslamInfo_GloriousAndExaltedBeHeAbbr" xml:space="preserve">
+    <value>SWT</value>
+  </data>
+  <data name="IslamInfo_Goodness" xml:space="preserve">
+    <value>선량</value>
+  </data>
+  <data name="IslamInfo_Guardian" xml:space="preserve">
+    <value>보호자</value>
+  </data>
+  <data name="IslamInfo_Guidance1" xml:space="preserve">
+    <value>안내</value>
+  </data>
+  <data name="IslamInfo_Hammad" xml:space="preserve">
+    <value>하마드</value>
+  </data>
+  <data name="IslamInfo_HamzaBinAbduAlMuttalib" xml:space="preserve">
+    <value>함자 빈 Abdu 알 - Muttalib</value>
+  </data>
+  <data name="IslamInfo_Hanbal" xml:space="preserve">
+    <value>Hanbal</value>
+  </data>
+  <data name="IslamInfo_Hasan" xml:space="preserve">
+    <value>하산</value>
+  </data>
+  <data name="IslamInfo_HeartSofteners" xml:space="preserve">
+    <value>심장 가소제</value>
+  </data>
+  <data name="IslamInfo_Hell" xml:space="preserve">
+    <value>지옥</value>
+  </data>
+  <data name="IslamInfo_Hereafter" xml:space="preserve">
+    <value>이후</value>
+  </data>
+  <data name="IslamInfo_Hind" xml:space="preserve">
+    <value>암사슴</value>
+  </data>
+  <data name="IslamInfo_Hudabiyyah" xml:space="preserve">
+    <value>Hudabiyyah</value>
+  </data>
+  <data name="IslamInfo_Hunain" xml:space="preserve">
+    <value>Hunain</value>
+  </data>
+  <data name="IslamInfo_Hussein" xml:space="preserve">
+    <value>후세인</value>
+  </data>
+  <data name="IslamInfo_Hypocrite" xml:space="preserve">
+    <value>위선자</value>
+  </data>
+  <data name="IslamInfo_ImamNawawi40Hadith" xml:space="preserve">
+    <value>이맘 Nawawi 40 하디스</value>
+  </data>
+  <data name="IslamInfo_Impact" xml:space="preserve">
+    <value>충격</value>
+  </data>
+  <data name="IslamInfo_Innovation" xml:space="preserve">
+    <value>혁신</value>
+  </data>
+  <data name="IslamInfo_Intention" xml:space="preserve">
+    <value>의사</value>
+  </data>
+  <data name="IslamInfo_Introduction" xml:space="preserve">
+    <value>소개</value>
+  </data>
+  <data name="IslamInfo_Invocation" xml:space="preserve">
+    <value>호출</value>
+  </data>
+  <data name="IslamInfo_Jinn" xml:space="preserve">
+    <value>정령</value>
+  </data>
+  <data name="IslamInfo_Kaaba" xml:space="preserve">
+    <value>카바</value>
+  </data>
+  <data name="IslamInfo_KhadijahBintiKhuwaylid" xml:space="preserve">
+    <value>Khadijah binti Khooaylid</value>
+  </data>
+  <data name="IslamInfo_KhalidBinWalid" xml:space="preserve">
+    <value>칼리드 빈 왈 리드</value>
+  </data>
+  <data name="IslamInfo_Knowledgable" xml:space="preserve">
+    <value>지식이</value>
+  </data>
+  <data name="IslamInfo_Latest" xml:space="preserve">
+    <value>최근</value>
+  </data>
+  <data name="IslamInfo_Leader" xml:space="preserve">
+    <value>리더</value>
+  </data>
+  <data name="IslamInfo_Lecture" xml:space="preserve">
+    <value>강의</value>
+  </data>
+  <data name="IslamInfo_Limit" xml:space="preserve">
+    <value>한도</value>
+  </data>
+  <data name="IslamInfo_Loudmouthed" xml:space="preserve">
+    <value>목소리가 큰</value>
+  </data>
+  <data name="IslamInfo_Lucifer" xml:space="preserve">
+    <value>샛별</value>
+  </data>
+  <data name="IslamInfo_Madame" xml:space="preserve">
+    <value>부인</value>
+  </data>
+  <data name="IslamInfo_Malik" xml:space="preserve">
+    <value>말리크</value>
+  </data>
+  <data name="IslamInfo_Mankind" xml:space="preserve">
+    <value>인류</value>
+  </data>
+  <data name="IslamInfo_Manners" xml:space="preserve">
+    <value>예의</value>
+  </data>
+  <data name="IslamInfo_MannersOfDiffering" xml:space="preserve">
+    <value>: 서로 다른의 매너</value>
+  </data>
+  <data name="IslamInfo_Master" xml:space="preserve">
+    <value>석사</value>
+  </data>
+  <data name="IslamInfo_MayAllahBePleasedAbbr" xml:space="preserve">
+    <value>RA</value>
+  </data>
+  <data name="IslamInfo_MayHisGloryBeGlorified" xml:space="preserve">
+    <value>MayHisGloryBeGlorified</value>
+  </data>
+  <data name="IslamInfo_Mecca" xml:space="preserve">
+    <value>메카</value>
+  </data>
+  <data name="IslamInfo_Medina" xml:space="preserve">
+    <value>메디나</value>
+  </data>
+  <data name="IslamInfo_Mercy" xml:space="preserve">
+    <value>자비</value>
+  </data>
+  <data name="IslamInfo_MinorPilgrimage" xml:space="preserve">
+    <value>마이너 순례</value>
+  </data>
+  <data name="IslamInfo_Mosque" xml:space="preserve">
+    <value>사원</value>
+  </data>
+  <data name="IslamInfo_Muawiyyah" xml:space="preserve">
+    <value>Muawiyyah</value>
+  </data>
+  <data name="IslamInfo_Mufti" xml:space="preserve">
+    <value>평복</value>
+  </data>
+  <data name="IslamInfo_MuhammadBinAbduAlMuttalib" xml:space="preserve">
+    <value>무하마드 빈 Abdu 알 - Muttalib</value>
+  </data>
+  <data name="IslamInfo_Neck" xml:space="preserve">
+    <value>목</value>
+  </data>
+  <data name="IslamInfo_Nurturing" xml:space="preserve">
+    <value>육성</value>
+  </data>
+  <data name="IslamInfo_OBelievers" xml:space="preserve">
+    <value>O 당신 믿는</value>
+  </data>
+  <data name="IslamInfo_Optimizer" xml:space="preserve">
+    <value>최적화</value>
+  </data>
+  <data name="IslamInfo_Paradise" xml:space="preserve">
+    <value>천국</value>
+  </data>
+  <data name="IslamInfo_Patience" xml:space="preserve">
+    <value>인내</value>
+  </data>
+  <data name="IslamInfo_Permission" xml:space="preserve">
+    <value>허가</value>
+  </data>
+  <data name="IslamInfo_Persecution" xml:space="preserve">
+    <value>박해</value>
+  </data>
+  <data name="IslamInfo_Piety" xml:space="preserve">
+    <value>경건</value>
+  </data>
+  <data name="IslamInfo_PleasedWithDecree" xml:space="preserve">
+    <value>법령에 만족</value>
+  </data>
+  <data name="IslamInfo_Polythiest" xml:space="preserve">
+    <value>Polythiest</value>
+  </data>
+  <data name="IslamInfo_Practical" xml:space="preserve">
+    <value>실용적인</value>
+  </data>
+  <data name="IslamInfo_Predestination" xml:space="preserve">
+    <value>숙명</value>
+  </data>
+  <data name="IslamInfo_PrintedBook" xml:space="preserve">
+    <value>인쇄 된 책</value>
+  </data>
+  <data name="IslamInfo_Professor" xml:space="preserve">
+    <value>교수</value>
+  </data>
+  <data name="IslamInfo_Protector" xml:space="preserve">
+    <value>보호자</value>
+  </data>
+  <data name="IslamInfo_Punishment" xml:space="preserve">
+    <value>처벌</value>
+  </data>
+  <data name="IslamInfo_Purification" xml:space="preserve">
+    <value>정화</value>
+  </data>
+  <data name="IslamInfo_Quraish" xml:space="preserve">
+    <value>Quraish</value>
+  </data>
+  <data name="IslamInfo_Rawdah" xml:space="preserve">
+    <value>Rawdah</value>
+  </data>
+  <data name="IslamInfo_Recite" xml:space="preserve">
+    <value>낭송하다</value>
+  </data>
+  <data name="IslamInfo_Religion" xml:space="preserve">
+    <value>종교</value>
+  </data>
+  <data name="IslamInfo_Repentance" xml:space="preserve">
+    <value>후회</value>
+  </data>
+  <data name="IslamInfo_RiadAlJannah" xml:space="preserve">
+    <value>리아드 알 - Jannah</value>
+  </data>
+  <data name="IslamInfo_RighteousDealings" xml:space="preserve">
+    <value>의인의 거래</value>
+  </data>
+  <data name="IslamInfo_RighteousDeeds" xml:space="preserve">
+    <value>정의의 증서</value>
+  </data>
+  <data name="IslamInfo_SaadBinWaad" xml:space="preserve">
+    <value>사드 빈 Waad</value>
+  </data>
+  <data name="IslamInfo_Sacrifice" xml:space="preserve">
+    <value>희생</value>
+  </data>
+  <data name="IslamInfo_Salafi" xml:space="preserve">
+    <value>Salafi</value>
+  </data>
+  <data name="IslamInfo_Satan" xml:space="preserve">
+    <value>사탄</value>
+  </data>
+  <data name="IslamInfo_Satisfaction" xml:space="preserve">
+    <value>만족도</value>
+  </data>
+  <data name="IslamInfo_Self" xml:space="preserve">
+    <value>자기</value>
+  </data>
+  <data name="IslamInfo_Shafii" xml:space="preserve">
+    <value>Shafii</value>
+  </data>
+  <data name="IslamInfo_Sheikh" xml:space="preserve">
+    <value>미남자</value>
+  </data>
+  <data name="IslamInfo_ShowingOff" xml:space="preserve">
+    <value>과시</value>
+  </data>
+  <data name="IslamInfo_Sin" xml:space="preserve">
+    <value>죄</value>
+  </data>
+  <data name="IslamInfo_Sir" xml:space="preserve">
+    <value>님</value>
+  </data>
+  <data name="IslamInfo_Slaughter" xml:space="preserve">
+    <value>학살</value>
+  </data>
+  <data name="IslamInfo_Slave" xml:space="preserve">
+    <value>노예</value>
+  </data>
+  <data name="IslamInfo_Speech" xml:space="preserve">
+    <value>연설</value>
+  </data>
+  <data name="IslamInfo_Sporadic" xml:space="preserve">
+    <value>산재하는</value>
+  </data>
+  <data name="IslamInfo_Strangers" xml:space="preserve">
+    <value>낯선 사람</value>
+  </data>
+  <data name="IslamInfo_SupplicationsAndPrayers" xml:space="preserve">
+    <value>간구와기도</value>
+  </data>
+  <data name="IslamInfo_Taaif" xml:space="preserve">
+    <value>Taaif</value>
+  </data>
+  <data name="IslamInfo_Talkative" xml:space="preserve">
+    <value>이야기하기 좋아하는</value>
+  </data>
+  <data name="IslamInfo_ThePrayersOfAllahUponHimAndPeaceAbbr" xml:space="preserve">
+    <value>SAW | SAWS</value>
+  </data>
+  <data name="IslamInfo_Throne" xml:space="preserve">
+    <value>왕좌</value>
+  </data>
+  <data name="IslamInfo_Trustworthy" xml:space="preserve">
+    <value>신뢰할 수있는</value>
+  </data>
+  <data name="IslamInfo_Truthful" xml:space="preserve">
+    <value>진실</value>
+  </data>
+  <data name="IslamInfo_UmarBinAlKhattab" xml:space="preserve">
+    <value>우마르 빈 알 카타 브</value>
+  </data>
+  <data name="IslamInfo_Umayyad" xml:space="preserve">
+    <value>우마이야</value>
+  </data>
+  <data name="IslamInfo_Universal" xml:space="preserve">
+    <value>보편적 인</value>
+  </data>
+  <data name="IslamInfo_Unseen" xml:space="preserve">
+    <value>눈에 보이지 않는</value>
+  </data>
+  <data name="IslamInfo_UponHimBePeaceAbbr" xml:space="preserve">
+    <value>AS</value>
+  </data>
+  <data name="IslamInfo_UthmanBinAfwan" xml:space="preserve">
+    <value>가 Uthman 빈 Afwan</value>
+  </data>
+  <data name="IslamInfo_VoluntaryKindness" xml:space="preserve">
+    <value>자발적 친절</value>
+  </data>
+  <data name="IslamInfo_Wahhabi" xml:space="preserve">
+    <value>와하</value>
+  </data>
+  <data name="IslamInfo_Wisdom" xml:space="preserve">
+    <value>지혜</value>
+  </data>
+  <data name="IslamInfo_Witnessing" xml:space="preserve">
+    <value>목도</value>
+  </data>
+  <data name="IslamInfo_World" xml:space="preserve">
+    <value>세계</value>
+  </data>
+  <data name="IslamInfo_Worship" xml:space="preserve">
+    <value>예배</value>
+  </data>
+  <data name="IslamInfo_IslamicPhrases" xml:space="preserve">
+    <value>이슬람 문구</value>
+  </data>
+  <data name="IslamSource_QuranWords" xml:space="preserve">
+    <value>꾸란 단어</value>
+  </data>
+  <data name="IslamSource_UniqueWordTotal" xml:space="preserve">
+    <value>독특한 단어 합계</value>
+  </data>
+  <data name="IslamSource_WordTotal" xml:space="preserve">
+    <value>단어 합계</value>
+  </data>
+  <data name="IslamSource_FixDirectionalMarkers" xml:space="preserve">
+    <value>방향 마커에게 수정</value>
+  </data>
+  <data name="unicode_LeftToRightEmbedding" xml:space="preserve">
+    <value>왼쪽에서 오른쪽으로 임베딩</value>
+  </data>
+  <data name="unicode_RightToLeftEmbedding" xml:space="preserve">
+    <value>오른쪽에서 왼쪽 임베딩</value>
+  </data>
+  <data name="unicode_LeftToRightMark" xml:space="preserve">
+    <value>왼쪽에서 오른쪽으로 표시</value>
+  </data>
+  <data name="unicode_LeftToRightOverride" xml:space="preserve">
+    <value>왼쪽에서 오른쪽으로 재정의</value>
+  </data>
+  <data name="unicode_PopDirectionalFormatting" xml:space="preserve">
+    <value>팝 방향 서식</value>
+  </data>
+  <data name="unicode_RightToLeftMark" xml:space="preserve">
+    <value>오른쪽에서 왼쪽 마크</value>
+  </data>
+  <data name="unicode_RightToLeftOverride" xml:space="preserve">
+    <value>오른쪽에서 왼쪽 무시</value>
+  </data>
+  <data name="IslamSource_CurrentMonth" xml:space="preserve">
+    <value>현재 월</value>
+  </data>
+  <data name="IslamSource_HijriCalendar" xml:space="preserve">
+    <value>회교 식 달력</value>
+  </data>
+</root>

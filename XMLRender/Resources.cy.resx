@@ -1,0 +1,4275 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Acct_AccountActivateSuccess" xml:space="preserve">
+    <value>Cyfrif activated yn llwyddiannus.</value>
+  </data>
+  <data name="Acct_AccountAlreadyActivated" xml:space="preserve">
+    <value>Cyfrif activated yn barod.</value>
+  </data>
+  <data name="Acct_AccountDeleteSuccess" xml:space="preserve">
+    <value>Cyfrif dileu yn llwyddiannus.</value>
+  </data>
+  <data name="Acct_AccountNotActivated" xml:space="preserve">
+    <value>Nid yw cyfrif activated eto os gwelwch yn dda gwiriwch eich e-bost cyntaf neu ofyn am cod actifadu ychwanegol.</value>
+  </data>
+  <data name="Acct_ActivateAccount" xml:space="preserve">
+    <value>Activate Cyfrif</value>
+  </data>
+  <data name="Acct_ActivationAccountBody" xml:space="preserve">
+    <value>Mae'r e-bost yn gofyn am activation eich {0} ystyriaeth: {1}.</value>
+  </data>
+  <data name="Acct_ActivationAccountSubject" xml:space="preserve">
+    <value>Activation ar gyfer y cyfrif yn {0}</value>
+  </data>
+  <data name="Acct_ActivationCode" xml:space="preserve">
+    <value>Cod Ysgogi</value>
+  </data>
+  <data name="Acct_BadEmailFormat" xml:space="preserve">
+    <value>Cyfeiriad e-bost nad ydynt mewn fformat dilys.</value>
+  </data>
+  <data name="Acct_Certain" xml:space="preserve">
+    <value>A ydych yn sicr?</value>
+  </data>
+  <data name="Acct_ChangeEmailAddress" xml:space="preserve">
+    <value>Newid Cyfeiriad e-bost</value>
+  </data>
+  <data name="Acct_ChangePassword" xml:space="preserve">
+    <value>Newid Cyfrinair</value>
+  </data>
+  <data name="Acct_ChangeUsername" xml:space="preserve">
+    <value>Newid Enw Defnyddiwr</value>
+  </data>
+  <data name="Acct_CheckEmailNotice" xml:space="preserve">
+    <value>Activation a anfonir i'r cyfeiriad a ddarperir.</value>
+  </data>
+  <data name="Acct_ConfirmEmailAddress" xml:space="preserve">
+    <value>Cadarnhau Cyfeiriad E-bost</value>
+  </data>
+  <data name="Acct_ConfirmPassword" xml:space="preserve">
+    <value>Cadarnhau Cyfrinair</value>
+  </data>
+  <data name="Acct_ControlPanel" xml:space="preserve">
+    <value>Panel Rheoli</value>
+  </data>
+  <data name="Acct_DeleteAccount" xml:space="preserve">
+    <value>Dileu Cyfrif</value>
+  </data>
+  <data name="Acct_DuplicateUser" xml:space="preserve">
+    <value>Defnyddiwr gyda'r enw hwn eisoes yn bodoli os gwelwch yn dda dewiswch un arall.</value>
+  </data>
+  <data name="Acct_EmailAddress" xml:space="preserve">
+    <value>Cyfeiriad E-bost</value>
+  </data>
+  <data name="Acct_EmailChangeReactivate" xml:space="preserve">
+    <value>Cyfeiriad e-bost wedi newid a activation e-bost a anfonwyd ailddechrau'r ystyriaeth.</value>
+  </data>
+  <data name="Acct_EmailInUse" xml:space="preserve">
+    <value>E-bost eisoes yn cael eu defnyddio os gwelwch yn dda mewngofnodi gyda chymwysterau presennol.</value>
+  </data>
+  <data name="Acct_EmailsNotMatch" xml:space="preserve">
+    <value>Nid yw cyfeiriadau e-bost yn cyd-fynd</value>
+  </data>
+  <data name="Acct_ForgotPassword" xml:space="preserve">
+    <value>Forgot Password</value>
+  </data>
+  <data name="Acct_ForgotUsername" xml:space="preserve">
+    <value>Wedi anghofio Enw Defnyddiwr</value>
+  </data>
+  <data name="Acct_Home" xml:space="preserve">
+    <value>Cartref</value>
+  </data>
+  <data name="Acct_IncorrectActivationCode" xml:space="preserve">
+    <value>Cod activation anghywir.</value>
+  </data>
+  <data name="Acct_IncorrectPasswordResetCode" xml:space="preserve">
+    <value>Cod ailosod cyfrinair anghywir.</value>
+  </data>
+  <data name="Acct_InvalidInput" xml:space="preserve">
+    <value>Mewnbwn annilys.</value>
+  </data>
+  <data name="Acct_InvalidUsernamePassword" xml:space="preserve">
+    <value>Enw defnyddiwr neu gyfrinair annilys.</value>
+  </data>
+  <data name="Acct_Login" xml:space="preserve">
+    <value>Mewngofnodi</value>
+  </data>
+  <data name="Acct_LoginSuccess" xml:space="preserve">
+    <value>Mewngofnodi llwyddiannus.</value>
+  </data>
+  <data name="Acct_Logoff" xml:space="preserve">
+    <value>Allgofnodi</value>
+  </data>
+  <data name="Acct_LogoffSuccess" xml:space="preserve">
+    <value>Logoff llwyddiannus.</value>
+  </data>
+  <data name="Acct_MinimumPassword" xml:space="preserve">
+    <value>Rhaid i'r cyfrinair fod o leiaf 8 nod.</value>
+  </data>
+  <data name="Acct_MinimumUsername" xml:space="preserve">
+    <value>Rhaid i enw defnyddiwr fod o leiaf 4 cymeriadau.</value>
+  </data>
+  <data name="Acct_No" xml:space="preserve">
+    <value>Nac oes</value>
+  </data>
+  <data name="Acct_NotConfirmDelete" xml:space="preserve">
+    <value>Rhaid cadarnhau gyfrif dileu.</value>
+  </data>
+  <data name="Acct_NoUserExists" xml:space="preserve">
+    <value>Dim defnyddiwr yn bodoli ar gyfer y cyfeiriad e-bost gofnodi.</value>
+  </data>
+  <data name="Acct_Password" xml:space="preserve">
+    <value>Cyfrinair</value>
+  </data>
+  <data name="Acct_PasswordAlreadyReset" xml:space="preserve">
+    <value>Cyfrinair eisoes yn ailosod neu broses nad gychwyn.</value>
+  </data>
+  <data name="Acct_PasswordChangedBody" xml:space="preserve">
+    <value>Mae'r e-bost i roi gwybod am y newid cyfrinair eich {0} ystyriaeth: {1}.</value>
+  </data>
+  <data name="Acct_PasswordChangedSubject" xml:space="preserve">
+    <value>Newidiwyd y cyfrinair ar gyfer y cyfrif yn {0}</value>
+  </data>
+  <data name="Acct_PasswordChangeSuccess" xml:space="preserve">
+    <value>Cyfrinair newid yn llwyddiannus.</value>
+  </data>
+  <data name="Acct_PasswordEmailSent" xml:space="preserve">
+    <value>Mae e-bost wedi cael ei anfon i'ch cyfeiriad ar ffeil i gychwyn y broses ailosod cyfrinair.</value>
+  </data>
+  <data name="Acct_PasswordResetBody" xml:space="preserve">
+    <value>Mae'r e-bost yw i ailosod y cyfrinair eich {0} ystyriaeth: {1}.</value>
+  </data>
+  <data name="Acct_PasswordResetCode" xml:space="preserve">
+    <value>Cod Ailosod cyfrinair</value>
+  </data>
+  <data name="Acct_PasswordResetSubject" xml:space="preserve">
+    <value>Ailosod cyfrinair ar gyfer y cyfrif yn {0}</value>
+  </data>
+  <data name="Acct_PasswordResetSuccess" xml:space="preserve">
+    <value>Cyfrinair ailosod yn llwyddiannus.</value>
+  </data>
+  <data name="Acct_PasswordsNotMatch" xml:space="preserve">
+    <value>Nid yw'r cyfrineiriau'n cydweddu</value>
+  </data>
+  <data name="Acct_Register" xml:space="preserve">
+    <value>Cofrestru</value>
+  </data>
+  <data name="Acct_Remember" xml:space="preserve">
+    <value>Cofiwch?</value>
+  </data>
+  <data name="Acct_ResendActivationEmail" xml:space="preserve">
+    <value>Ailanfon Activation E-bost</value>
+  </data>
+  <data name="Acct_ResetPassword" xml:space="preserve">
+    <value>Ailosod Cyfrinair</value>
+  </data>
+  <data name="Acct_RetrievePassword" xml:space="preserve">
+    <value>Retrieve Password</value>
+  </data>
+  <data name="Acct_RetrieveUsername" xml:space="preserve">
+    <value>Adalw Enw Defnyddiwr</value>
+  </data>
+  <data name="Acct_SendActivationCode" xml:space="preserve">
+    <value>Anfon Cod Ysgogi</value>
+  </data>
+  <data name="Acct_Username" xml:space="preserve">
+    <value>Enw Defnyddiwr</value>
+  </data>
+  <data name="Acct_UsernameChangedBody" xml:space="preserve">
+    <value>Mae'r e-bost i roi gwybod am y cyfrif newid enw eich {0} ystyriaeth: {1}.</value>
+  </data>
+  <data name="Acct_UsernameChangedSubject" xml:space="preserve">
+    <value>Newid enw defnyddiwr ar gyfer y cyfrif yn {0}</value>
+  </data>
+  <data name="Acct_UsernameChangeSuccess" xml:space="preserve">
+    <value>Enw Defnyddiwr newid yn llwyddiannus.</value>
+  </data>
+  <data name="Acct_UsernameEmailSent" xml:space="preserve">
+    <value>Mae e-bost wedi cael ei anfon i'ch cyfeiriad ar ffeil gyda'ch enw defnyddiwr.</value>
+  </data>
+  <data name="Acct_UsernameReminderBody" xml:space="preserve">
+    <value>Mae'r e-bost yn ein hatgoffa o'ch {0} ystyriaeth: {1}.</value>
+  </data>
+  <data name="Acct_UsernameReminderSubject" xml:space="preserve">
+    <value>Enw defnyddiwr atgoffa ar gyfer y cyfrif yn {0}</value>
+  </data>
+  <data name="Acct_UserNotFound" xml:space="preserve">
+    <value>Nid yw'r defnyddiwr yn bodoli.</value>
+  </data>
+  <data name="Acct_Yes" xml:space="preserve">
+    <value>Ydw</value>
+  </data>
+  <data name="Acct_CleanupStale" xml:space="preserve">
+    <value>Cleanup hen</value>
+  </data>
+  <data name="Acct_ClearCache" xml:space="preserve">
+    <value>Cache clir</value>
+  </data>
+  <data name="Acct_ClearDiskCache" xml:space="preserve">
+    <value>Clear Disk Cache</value>
+  </data>
+  <data name="Acct_CreateDatabase" xml:space="preserve">
+    <value>Creu Cronfa Ddata</value>
+  </data>
+  <data name="Acct_DotNetVersion" xml:space="preserve">
+    <value>Fersiwn Net Dot</value>
+  </data>
+  <data name="Acct_RemoveDatabase" xml:space="preserve">
+    <value>Dileu Cronfa Ddata</value>
+  </data>
+  <data name="Acct_ViewCache" xml:space="preserve">
+    <value>Gweld Cache</value>
+  </data>
+  <data name="Acct_ViewDiskCache" xml:space="preserve">
+    <value>View Disk Cache</value>
+  </data>
+  <data name="Acct_ViewHeaders" xml:space="preserve">
+    <value>Gweld Penawdau</value>
+  </data>
+  <data name="Hadith_Book" xml:space="preserve">
+    <value>Llyfr</value>
+  </data>
+  <data name="Hadith_Books" xml:space="preserve">
+    <value>Llyfrau</value>
+  </data>
+  <data name="Hadith_Chapters" xml:space="preserve">
+    <value>Penodau</value>
+  </data>
+  <data name="Hadith_Hadith" xml:space="preserve">
+    <value>Hadith</value>
+  </data>
+  <data name="Hadith_Hadiths" xml:space="preserve">
+    <value>Hadiths</value>
+  </data>
+  <data name="Hadith_IdenticalNumbering" xml:space="preserve">
+    <value>Rhifo union yr un fath</value>
+  </data>
+  <data name="Hadith_Index" xml:space="preserve">
+    <value>Mynegai</value>
+  </data>
+  <data name="Hadith_MappedOf" xml:space="preserve">
+    <value>{0} mapio O {1}</value>
+  </data>
+  <data name="Hadith_NoTranslation" xml:space="preserve">
+    <value>Dim Cyfieithu</value>
+  </data>
+  <data name="Hadith_SourceHadithIndex" xml:space="preserve">
+    <value>Mynegai Hadith Ffynhonnell</value>
+  </data>
+  <data name="Hadith_Translation" xml:space="preserve">
+    <value>Cyfieithu</value>
+  </data>
+  <data name="Hadith_TranslationBook" xml:space="preserve">
+    <value>Cyfieithu Llyfr</value>
+  </data>
+  <data name="Hadith_TranslationHadithCount" xml:space="preserve">
+    <value>Cyfieithu Hadith Cyfrif</value>
+  </data>
+  <data name="Hadith_TranslationHadithIndex" xml:space="preserve">
+    <value>Cyfieithu Mynegai Hadith</value>
+  </data>
+  <data name="Hadith_TranslationMapping" xml:space="preserve">
+    <value>Mapio Cyfieithu</value>
+  </data>
+  <data name="Hadith_TranslationVolume" xml:space="preserve">
+    <value>Cyfrol Cyfieithu</value>
+  </data>
+  <data name="Hadith_Volume" xml:space="preserve">
+    <value>Cyfrol</value>
+  </data>
+  <data name="IslamSource_Apply" xml:space="preserve">
+    <value>Gwneud cais</value>
+  </data>
+  <data name="IslamSource_ArabicAlphabet" xml:space="preserve">
+    <value>Arabeg Wyddor</value>
+  </data>
+  <data name="IslamSource_ArabicToRoman" xml:space="preserve">
+    <value>Arabeg I Rhufeinig</value>
+  </data>
+  <data name="IslamSource_Book" xml:space="preserve">
+    <value>Llyfr</value>
+  </data>
+  <data name="IslamSource_Collection" xml:space="preserve">
+    <value>Casgliad</value>
+  </data>
+  <data name="IslamSource_Credits" xml:space="preserve">
+    <value>Credyd ar gyfer y testun Quran yn mynd at y prosiect Tanzil.</value>
+  </data>
+  <data name="IslamSource_Direction" xml:space="preserve">
+    <value>Cyfarwyddyd</value>
+  </data>
+  <data name="IslamSource_Disable" xml:space="preserve">
+    <value>Analluoga</value>
+  </data>
+  <data name="IslamSource_Display" xml:space="preserve">
+    <value>Arddangos</value>
+  </data>
+  <data name="IslamSource_Division" xml:space="preserve">
+    <value>Is-adran</value>
+  </data>
+  <data name="IslamSource_DownloadMapping" xml:space="preserve">
+    <value>Download a Mapio</value>
+  </data>
+  <data name="IslamSource_EnglishRomanized" xml:space="preserve">
+    <value>Saesneg Romanized</value>
+  </data>
+  <data name="IslamSource_ExtendedBuckwalter" xml:space="preserve">
+    <value>Estynedig Buckwalter</value>
+  </data>
+  <data name="IslamSource_Font" xml:space="preserve">
+    <value>Font</value>
+  </data>
+  <data name="IslamSource_Goal" xml:space="preserve">
+    <value>Nod y wefan yw darparu deunydd ffynhonnell crai am Islam gan gynnwys y Quran, casgliadau Hadith, llyfrau, sain, fideo, newyddion, geirfa, systemau trawslythrennu a gwybodaeth rhaglennu.</value>
+  </data>
+  <data name="IslamSource_Hadiths" xml:space="preserve">
+    <value>Casgliadau Hadith</value>
+  </data>
+  <data name="IslamSource_HadithSourceText" xml:space="preserve">
+    <value>Hadith Ffynhonnell Testun</value>
+  </data>
+  <data name="IslamSource_Home" xml:space="preserve">
+    <value>Cartref</value>
+  </data>
+  <data name="IslamSource_Information" xml:space="preserve">
+    <value>Gwybodaeth</value>
+  </data>
+  <data name="IslamSource_Intro" xml:space="preserve">
+    <value>Unrhyw gwestiynau neu sylwadau neu gamgymeriadau, os gwelwch yn dda e-bost ataf yn:</value>
+  </data>
+  <data name="IslamSource_Introduction" xml:space="preserve">
+    <value>Cyflwyniad</value>
+  </data>
+  <data name="IslamSource_IslamicArticles" xml:space="preserve">
+    <value>Erthyglau Islamaidd</value>
+  </data>
+  <data name="IslamSource_IslamicCharity" xml:space="preserve">
+    <value>Elusen Islamaidd</value>
+  </data>
+  <data name="IslamSource_IslamicFoundations" xml:space="preserve">
+    <value>Sylfeini Islamaidd</value>
+  </data>
+  <data name="IslamSource_IslamicInformation" xml:space="preserve">
+    <value>Gwybodaeth Islamaidd</value>
+  </data>
+  <data name="IslamSource_IslamicNews" xml:space="preserve">
+    <value>Islamaidd Newyddion</value>
+  </data>
+  <data name="IslamSource_IslamicOrganizations" xml:space="preserve">
+    <value>Sefydliadau Islamaidd</value>
+  </data>
+  <data name="IslamSource_IslamicQuotes" xml:space="preserve">
+    <value>Dyfyniadau Islamaidd</value>
+  </data>
+  <data name="IslamSource_IslamicShops" xml:space="preserve">
+    <value>Siopau Islamaidd</value>
+  </data>
+  <data name="IslamSource_IslamicWebsites" xml:space="preserve">
+    <value>Gwefannau Islamaidd</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesAhlulBaytAcademy" xml:space="preserve">
+    <value>Academi AhlulBayt</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesAlEman" xml:space="preserve">
+    <value>فصل: كتاب المقدمة | نداء الإيمان</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesAlHudaInternationalWelfareFoundation" xml:space="preserve">
+    <value>Al-Huda Sefydliad Lles Rhyngwladol</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesAllahsQuran" xml:space="preserve">
+    <value>Quran Allah</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesCorpus" xml:space="preserve">
+    <value>Quranic Arabeg Corpus</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesCouncilAmericanIslamicRelations" xml:space="preserve">
+    <value>Cyngor ar Gysylltiadau Americanaidd-Islamaidd</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesDarusSalamPublications" xml:space="preserve">
+    <value>Dar-us-Salam Cyhoeddiadau</value>
+  </data>
+  <data name="IslamSource_IslamicWebsiteseMuslim" xml:space="preserve">
+    <value>eMuslim</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesGuidedWaysTechnologies" xml:space="preserve">
+    <value>Teithiau Technologies Ffyrdd</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesHouseQuran" xml:space="preserve">
+    <value>Tŷ'r Quran</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesiQuran" xml:space="preserve">
+    <value>iQuran</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesIslamicCircleNorthAmerica" xml:space="preserve">
+    <value>Islamaidd Cylch Gogledd America</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesIslamicFinder" xml:space="preserve">
+    <value>Islamaidd Finder</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesIslamicInsights" xml:space="preserve">
+    <value>Insights Islamaidd</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesIslamicRelief" xml:space="preserve">
+    <value>Islamic Relief</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesIslamicReliefUSA" xml:space="preserve">
+    <value>Islamic Relief UDA</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesIslamicSearchCenter" xml:space="preserve">
+    <value>Islamaidd Chwilio Center</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesIslamicSocietyNorthAmerica" xml:space="preserve">
+    <value>Islamaidd Cymdeithas Gogledd America</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesIslamicThinkersSociety" xml:space="preserve">
+    <value>Cymdeithas Meddylwyr Islamaidd</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesIslamSpirit" xml:space="preserve">
+    <value>Islam Ysbryd</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesKalamullah" xml:space="preserve">
+    <value>Kalamullah</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesMaktabahorgTheUltimateIslamicLibrary" xml:space="preserve">
+    <value>Maktabah.org The Ultimate Llyfrgell Islamaidd</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesOpenBurhan" xml:space="preserve">
+    <value>Burhan Agored</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesProfessorAnsarian" xml:space="preserve">
+    <value>Gwefan Swyddogol yr Athro Ansarian</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesQuran" xml:space="preserve">
+    <value>Quran</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesQuranDownload" xml:space="preserve">
+    <value>Lawrlwytho Quran</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesQuranExplorer" xml:space="preserve">
+    <value>Quran Explorer</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesQuranicAudio" xml:space="preserve">
+    <value>Quranic Sain</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesQuranProject" xml:space="preserve">
+    <value>Mae'r Prosiect Quran Ar-lein</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesQuranTransliteration" xml:space="preserve">
+    <value>Qur'an Trawslythrennu</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesSalah" xml:space="preserve">
+    <value>Salah</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesStudyQuran" xml:space="preserve">
+    <value>Astudiaeth Quran</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesSunnahCom" xml:space="preserve">
+    <value>Sunnah.com Sayings a Dysgeidiaeth o Proffwyd Muhammad (صلى الله عليه و سلم)</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesTanzil" xml:space="preserve">
+    <value>Tanzil - Quran Navigator</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesTheAbsoluteReality" xml:space="preserve">
+    <value>Realiti Absoliwt</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesTheAwaitedOneFoundation" xml:space="preserve">
+    <value>Mae'r Sefydliad Aros One</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesTheIslamicBulletin" xml:space="preserve">
+    <value>Mae'r Bwletin Islamaidd</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesTheIslamicFoundation" xml:space="preserve">
+    <value>Mae'r Sefydliad Islamaidd</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesTheLahoreAhmadiyyaMovement" xml:space="preserve">
+    <value>Mae'r Ahmadiyya Symudiad Lahore</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesTheLahoreAhmadiyyaMovementIslam" xml:space="preserve">
+    <value>Mae'r Ahmadiyya Symudiad Lahore yn Islam</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesUnderstandQuran" xml:space="preserve">
+    <value>Deall Quran</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesVerseByVerseQuran" xml:space="preserve">
+    <value>Adnod Gan Adnod Quran</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesZakatFoundationAmerica" xml:space="preserve">
+    <value>Zakat Sylfaen America</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesZekr" xml:space="preserve">
+    <value>Mae'r Prosiect Zekr</value>
+  </data>
+  <data name="IslamSource_LearningIslam" xml:space="preserve">
+    <value>Islam Dysgu</value>
+  </data>
+  <data name="IslamSource_LetterSample" xml:space="preserve">
+    <value>A</value>
+  </data>
+  <data name="IslamSource_Loading" xml:space="preserve">
+    <value>Llwytho</value>
+  </data>
+  <data name="IslamSource_Lotus" xml:space="preserve">
+    <value>Lotus</value>
+  </data>
+  <data name="IslamSource_Mapping" xml:space="preserve">
+    <value>Mapio</value>
+  </data>
+  <data name="IslamSource_NotableArticles" xml:space="preserve">
+    <value>Erthyglau Nodedig</value>
+  </data>
+  <data name="IslamSource_NotableNews" xml:space="preserve">
+    <value>Newyddion Nodedig</value>
+  </data>
+  <data name="IslamSource_NotableQuotes" xml:space="preserve">
+    <value>Dyfyniadau Nodedig</value>
+  </data>
+  <data name="IslamSource_Off" xml:space="preserve">
+    <value>Oddi ar y</value>
+  </data>
+  <data name="IslamSource_Operation" xml:space="preserve">
+    <value>Ymgyrch</value>
+  </data>
+  <data name="IslamSource_Perform" xml:space="preserve">
+    <value>Perfformio</value>
+  </data>
+  <data name="IslamSource_PlainRoman" xml:space="preserve">
+    <value>Rhufeinig plaen</value>
+  </data>
+  <data name="IslamSource_PrayerTimes" xml:space="preserve">
+    <value>Gweddi Times</value>
+  </data>
+  <data name="IslamSource_QiblaDirectionFromTrueNorth" xml:space="preserve">
+    <value>Cyfarwyddyd Qibla O Gwir Gogledd</value>
+  </data>
+  <data name="IslamSource_Quote" xml:space="preserve">
+    <value>Dyfyniad</value>
+  </data>
+  <data name="IslamSource_QuoteMode" xml:space="preserve">
+    <value>Modd Dyfyniad</value>
+  </data>
+  <data name="IslamSource_Quran" xml:space="preserve">
+    <value>Y Quran Sanctaidd</value>
+  </data>
+  <data name="IslamSource_QuranResources" xml:space="preserve">
+    <value>Adnoddau Quran</value>
+  </data>
+  <data name="IslamSource_RomanToArabic" xml:space="preserve">
+    <value>Rhufeinig I Arabic</value>
+  </data>
+  <data name="IslamSource_Scheme" xml:space="preserve">
+    <value>Cynllun</value>
+  </data>
+  <data name="IslamSource_Selection" xml:space="preserve">
+    <value>Dewis</value>
+  </data>
+  <data name="IslamSource_SubmissionNote" xml:space="preserve">
+    <value>Cyflwyniadau: Rhaid i gasgliadau o Hadith ffynhonnell wreiddiol gynnwys ffeil metadata XML cynnwys yr holl gyfrol, llyfrau, pennod a gwybodaeth hadith a ffeil XML sy'n cynnwys testun Hadith amrwd.</value>
+  </data>
+  <data name="IslamSource_Supplications" xml:space="preserve">
+    <value>Ymbil</value>
+  </data>
+  <data name="IslamSource_Text" xml:space="preserve">
+    <value>Testun</value>
+  </data>
+  <data name="IslamSource_Translation" xml:space="preserve">
+    <value>Cyfieithu</value>
+  </data>
+  <data name="IslamSource_Transliterate" xml:space="preserve">
+    <value>Msgid</value>
+  </data>
+  <data name="IslamSource_Transliteration" xml:space="preserve">
+    <value>Trawslythrennu</value>
+  </data>
+  <data name="IslamSource_TransliterationScheme" xml:space="preserve">
+    <value>Cynllun Trawslythrennu</value>
+  </data>
+  <data name="IslamSource_Viewer" xml:space="preserve">
+    <value>Gwyliwr</value>
+  </data>
+  <data name="IslamSource_Welcome" xml:space="preserve">
+    <value>Croeso i IslamSource.info</value>
+  </data>
+  <data name="IslamSource_ModifyDiacritics" xml:space="preserve">
+    <value>Addasu marciau diacritig</value>
+  </data>
+  <data name="IslamSource_Add" xml:space="preserve">
+    <value>Ychwanegu</value>
+  </data>
+  <data name="IslamSource_Remove" xml:space="preserve">
+    <value>Dileu</value>
+  </data>
+  <data name="IslamInfo_Chapters" xml:space="preserve">
+    <value>Penodau</value>
+  </data>
+  <data name="IslamInfo_ChaptersRevelationOrder" xml:space="preserve">
+    <value>Penodau Yn y Gorchymyn Datguddiad</value>
+  </data>
+  <data name="IslamInfo_Groups" xml:space="preserve">
+    <value>Grwpiau</value>
+  </data>
+  <data name="IslamInfo_ImportantSelections" xml:space="preserve">
+    <value>Dewisiadau pwysig</value>
+  </data>
+  <data name="IslamInfo_Pages" xml:space="preserve">
+    <value>Tudalennau</value>
+  </data>
+  <data name="IslamInfo_Parts" xml:space="preserve">
+    <value>Rhannau</value>
+  </data>
+  <data name="IslamInfo_Prostrations" xml:space="preserve">
+    <value>Prostrations</value>
+  </data>
+  <data name="IslamInfo_Sections" xml:space="preserve">
+    <value>Adrannau</value>
+  </data>
+  <data name="IslamInfo_Stations" xml:space="preserve">
+    <value>Gorsafoedd</value>
+  </data>
+  <data name="lang_localam" xml:space="preserve">
+    <value>Amhareg</value>
+  </data>
+  <data name="lang_localar" xml:space="preserve">
+    <value>Arabic</value>
+  </data>
+  <data name="lang_localaz" xml:space="preserve">
+    <value>Azerbaijani</value>
+  </data>
+  <data name="lang_localber" xml:space="preserve">
+    <value>Amazigh</value>
+  </data>
+  <data name="lang_localbg" xml:space="preserve">
+    <value>Bwlgareg</value>
+  </data>
+  <data name="lang_localbn" xml:space="preserve">
+    <value>Bengali</value>
+  </data>
+  <data name="lang_localbs" xml:space="preserve">
+    <value>Bosnian</value>
+  </data>
+  <data name="lang_localcs" xml:space="preserve">
+    <value>Tsiec</value>
+  </data>
+  <data name="lang_localde" xml:space="preserve">
+    <value>Almaeneg</value>
+  </data>
+  <data name="lang_localdv" xml:space="preserve">
+    <value>Divehi</value>
+  </data>
+  <data name="lang_localen" xml:space="preserve">
+    <value>Saesneg</value>
+  </data>
+  <data name="lang_locales" xml:space="preserve">
+    <value>Sbaeneg</value>
+  </data>
+  <data name="lang_localfa" xml:space="preserve">
+    <value>Persian</value>
+  </data>
+  <data name="lang_localfr" xml:space="preserve">
+    <value>Ffrangeg</value>
+  </data>
+  <data name="lang_localha" xml:space="preserve">
+    <value>Hausa</value>
+  </data>
+  <data name="lang_localhi" xml:space="preserve">
+    <value>Hindi</value>
+  </data>
+  <data name="lang_localid" xml:space="preserve">
+    <value>Indonesian</value>
+  </data>
+  <data name="lang_localit" xml:space="preserve">
+    <value>Eidaleg</value>
+  </data>
+  <data name="lang_localja" xml:space="preserve">
+    <value>Siapan</value>
+  </data>
+  <data name="lang_localko" xml:space="preserve">
+    <value>Corea</value>
+  </data>
+  <data name="lang_localku" xml:space="preserve">
+    <value>Cwrdeg</value>
+  </data>
+  <data name="lang_localml" xml:space="preserve">
+    <value>Malayalam</value>
+  </data>
+  <data name="lang_localms" xml:space="preserve">
+    <value>Malay</value>
+  </data>
+  <data name="lang_localnl" xml:space="preserve">
+    <value>Iseldireg</value>
+  </data>
+  <data name="lang_localno" xml:space="preserve">
+    <value>Norwy</value>
+  </data>
+  <data name="lang_localpl" xml:space="preserve">
+    <value>Pwyleg</value>
+  </data>
+  <data name="lang_localpt" xml:space="preserve">
+    <value>Portiwgaleg</value>
+  </data>
+  <data name="lang_localro" xml:space="preserve">
+    <value>Rwmaneg</value>
+  </data>
+  <data name="lang_localru" xml:space="preserve">
+    <value>Rwsia</value>
+  </data>
+  <data name="lang_localsd" xml:space="preserve">
+    <value>Sindhi</value>
+  </data>
+  <data name="lang_localso" xml:space="preserve">
+    <value>Somali</value>
+  </data>
+  <data name="lang_localsq" xml:space="preserve">
+    <value>Albaneg</value>
+  </data>
+  <data name="lang_localsv" xml:space="preserve">
+    <value>Swedeg</value>
+  </data>
+  <data name="lang_localsw" xml:space="preserve">
+    <value>Swahili</value>
+  </data>
+  <data name="lang_localta" xml:space="preserve">
+    <value>Tamil</value>
+  </data>
+  <data name="lang_localtg" xml:space="preserve">
+    <value>Tajik</value>
+  </data>
+  <data name="lang_localth" xml:space="preserve">
+    <value>Thai</value>
+  </data>
+  <data name="lang_localtr" xml:space="preserve">
+    <value>Twrceg</value>
+  </data>
+  <data name="lang_localtt" xml:space="preserve">
+    <value>Tatar</value>
+  </data>
+  <data name="lang_localug" xml:space="preserve">
+    <value>Uyghur</value>
+  </data>
+  <data name="lang_localur" xml:space="preserve">
+    <value>Wrdw</value>
+  </data>
+  <data name="lang_localuz" xml:space="preserve">
+    <value>Wsbeceg</value>
+  </data>
+  <data name="lang_localzh" xml:space="preserve">
+    <value>Tsieineaidd</value>
+  </data>
+  <data name="Acct_Download" xml:space="preserve">
+    <value>Download {0}</value>
+  </data>
+  <data name="IslamInfo_CelebrationDay" xml:space="preserve">
+    <value>Diwrnod dathlu</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek1" xml:space="preserve">
+    <value>Dydd Sul</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek2" xml:space="preserve">
+    <value>Dydd Llun</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek3" xml:space="preserve">
+    <value>Dydd Mawrth</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek4" xml:space="preserve">
+    <value>Dydd Mercher</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek5" xml:space="preserve">
+    <value>Dydd Iau</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek6" xml:space="preserve">
+    <value>Dydd Gwener</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek7" xml:space="preserve">
+    <value>Dydd Sadwrn</value>
+  </data>
+  <data name="IslamInfo_DaysOfWeek" xml:space="preserve">
+    <value>Dyddiau'r Wythnos</value>
+  </data>
+  <data name="IslamInfo_Disliked" xml:space="preserve">
+    <value>Casáu</value>
+  </data>
+  <data name="IslamInfo_EnteringMosque" xml:space="preserve">
+    <value>Mynd i mewn mosg</value>
+  </data>
+  <data name="IslamInfo_Fasting" xml:space="preserve">
+    <value>Ymprydio</value>
+  </data>
+  <data name="IslamInfo_FastingAfterFastingMonth" xml:space="preserve">
+    <value>Ymprydio 6 diwrnod yn cario mis</value>
+  </data>
+  <data name="IslamInfo_FastingBeforeFastingMonth" xml:space="preserve">
+    <value>Ymprydio cyn ymprydio mis</value>
+  </data>
+  <data name="IslamInfo_FastingBeginningPilgrimageMonth" xml:space="preserve">
+    <value>Ymprydio 9 diwrnod cyntaf y mis pererindod</value>
+  </data>
+  <data name="IslamInfo_FastingDayOfArafa" xml:space="preserve">
+    <value>Ymprydio Diwrnod Arafa</value>
+  </data>
+  <data name="IslamInfo_FastingDayOfAshura" xml:space="preserve">
+    <value>Ymprydio Diwrnod Ashura</value>
+  </data>
+  <data name="IslamInfo_FastingMiddleLunarDays" xml:space="preserve">
+    <value>13eg ymprydio, 14 a diwrnodau lleuad 15fed</value>
+  </data>
+  <data name="IslamInfo_FastingMondayThursday" xml:space="preserve">
+    <value>Ymprydio Dydd Llun a dydd Iau</value>
+  </data>
+  <data name="IslamInfo_FastingMonth" xml:space="preserve">
+    <value>Mis ymprydio</value>
+  </data>
+  <data name="IslamInfo_FastingMonthPrayer" xml:space="preserve">
+    <value>Gweddi mis ymprydio</value>
+  </data>
+  <data name="IslamInfo_Fear" xml:space="preserve">
+    <value>Ofn</value>
+  </data>
+  <data name="IslamInfo_Forbidden" xml:space="preserve">
+    <value>Forbidden</value>
+  </data>
+  <data name="IslamInfo_Friday" xml:space="preserve">
+    <value>Dydd Gwener</value>
+  </data>
+  <data name="IslamInfo_Fulfilling" xml:space="preserve">
+    <value>Cyflawni</value>
+  </data>
+  <data name="IslamInfo_Funeral" xml:space="preserve">
+    <value>Angladd</value>
+  </data>
+  <data name="IslamInfo_Guidance" xml:space="preserve">
+    <value>Canllawiau</value>
+  </data>
+  <data name="IslamInfo_Jurisprudence" xml:space="preserve">
+    <value>Gyfreitheg</value>
+  </data>
+  <data name="IslamInfo_LateNight" xml:space="preserve">
+    <value>Hwyr y nos</value>
+  </data>
+  <data name="IslamInfo_LunarEclipse" xml:space="preserve">
+    <value>Eclipse lleuad</value>
+  </data>
+  <data name="IslamInfo_Month1" xml:space="preserve">
+    <value>Yr un gwahardd</value>
+  </data>
+  <data name="IslamInfo_Month10" xml:space="preserve">
+    <value>Cario</value>
+  </data>
+  <data name="IslamInfo_Month11" xml:space="preserve">
+    <value>Un o cadoediad</value>
+  </data>
+  <data name="IslamInfo_Month12" xml:space="preserve">
+    <value>Un pererindod</value>
+  </data>
+  <data name="IslamInfo_Month2" xml:space="preserve">
+    <value>Void</value>
+  </data>
+  <data name="IslamInfo_Month3" xml:space="preserve">
+    <value>Gwanwyn Cyntaf</value>
+  </data>
+  <data name="IslamInfo_Month4" xml:space="preserve">
+    <value>Ail Gwanwyn</value>
+  </data>
+  <data name="IslamInfo_Month5" xml:space="preserve">
+    <value>Mis Cyntaf cras Tir</value>
+  </data>
+  <data name="IslamInfo_Month6" xml:space="preserve">
+    <value>Ail Mis cras Tir</value>
+  </data>
+  <data name="IslamInfo_Month7" xml:space="preserve">
+    <value>Parch</value>
+  </data>
+  <data name="IslamInfo_Month8" xml:space="preserve">
+    <value>Scattered</value>
+  </data>
+  <data name="IslamInfo_Month9" xml:space="preserve">
+    <value>Scorched</value>
+  </data>
+  <data name="IslamInfo_MorningLight" xml:space="preserve">
+    <value>Golau bore</value>
+  </data>
+  <data name="IslamInfo_Necessary" xml:space="preserve">
+    <value>Angenrheidiol</value>
+  </data>
+  <data name="IslamInfo_Neutral" xml:space="preserve">
+    <value>Niwtral</value>
+  </data>
+  <data name="IslamInfo_ObligationOfSufficiency" xml:space="preserve">
+    <value>Rhwymedigaeth Digonolrwydd</value>
+  </data>
+  <data name="IslamInfo_ObligationOfTheSelf" xml:space="preserve">
+    <value>Rhwymedigaeth y Hunan</value>
+  </data>
+  <data name="IslamInfo_Obligatory" xml:space="preserve">
+    <value>Gorfodol</value>
+  </data>
+  <data name="IslamInfo_Odd" xml:space="preserve">
+    <value>Odd</value>
+  </data>
+  <data name="IslamInfo_OftReturning" xml:space="preserve">
+    <value>Fynych-dychwelyd</value>
+  </data>
+  <data name="IslamInfo_Permissible" xml:space="preserve">
+    <value>Ganiateir</value>
+  </data>
+  <data name="IslamInfo_Prayer" xml:space="preserve">
+    <value>Gweddi</value>
+  </data>
+  <data name="IslamInfo_PrayTime6" xml:space="preserve">
+    <value>Ymatal</value>
+  </data>
+  <data name="IslamInfo_PrayTime7" xml:space="preserve">
+    <value>Sunrise</value>
+  </data>
+  <data name="IslamInfo_PrayTime8" xml:space="preserve">
+    <value>Machlud gyfrifo</value>
+  </data>
+  <data name="IslamInfo_PrayTime9" xml:space="preserve">
+    <value>Midnight</value>
+  </data>
+  <data name="IslamInfo_PrayTime1" xml:space="preserve">
+    <value>Dawn</value>
+  </data>
+  <data name="IslamInfo_PrayTime2" xml:space="preserve">
+    <value>Noon</value>
+  </data>
+  <data name="IslamInfo_PrayTime3" xml:space="preserve">
+    <value>Prynhawn</value>
+  </data>
+  <data name="IslamInfo_PrayTime4" xml:space="preserve">
+    <value>Sunset</value>
+  </data>
+  <data name="IslamInfo_PrayTime5" xml:space="preserve">
+    <value>Noson</value>
+  </data>
+  <data name="IslamInfo_PrescribedTime" xml:space="preserve">
+    <value>Amser a ragnodwyd</value>
+  </data>
+  <data name="IslamInfo_RainForDraught" xml:space="preserve">
+    <value>Glaw ar gyfer y Drafft</value>
+  </data>
+  <data name="IslamInfo_Recommended" xml:space="preserve">
+    <value>Argymhellir</value>
+  </data>
+  <data name="IslamInfo_SacredState" xml:space="preserve">
+    <value>Cyflwr Sacred</value>
+  </data>
+  <data name="IslamInfo_SolarEclipse" xml:space="preserve">
+    <value>Diffyg ar yr haul</value>
+  </data>
+  <data name="IslamInfo_Sunrise" xml:space="preserve">
+    <value>Sunrise</value>
+  </data>
+  <data name="IslamInfo_Supererogatory" xml:space="preserve">
+    <value>Supererogatory</value>
+  </data>
+  <data name="IslamInfo_Tradition" xml:space="preserve">
+    <value>Traddodiad</value>
+  </data>
+  <data name="IslamInfo_TraditionObligatory" xml:space="preserve">
+    <value>Traddodiad Gorfodol</value>
+  </data>
+  <data name="IslamInfo_TraditionVoluntary" xml:space="preserve">
+    <value>Traddodiad Gwirfoddol</value>
+  </data>
+  <data name="IslamInfo_Travel" xml:space="preserve">
+    <value>Teithio</value>
+  </data>
+  <data name="IslamInfo_Victory" xml:space="preserve">
+    <value>Victory</value>
+  </data>
+  <data name="IslamInfo_Aaron" xml:space="preserve">
+    <value>Aaron</value>
+  </data>
+  <data name="IslamInfo_Ablution" xml:space="preserve">
+    <value>Ablution</value>
+  </data>
+  <data name="IslamInfo_Abraham" xml:space="preserve">
+    <value>Abraham</value>
+  </data>
+  <data name="IslamInfo_Adam" xml:space="preserve">
+    <value>Adam</value>
+  </data>
+  <data name="IslamInfo_AfterCallToPrayerFirstPart" xml:space="preserve">
+    <value>Ar ôl alwad i weddi - gyntaf rhan</value>
+  </data>
+  <data name="IslamInfo_AfterCallToPrayerFirstPartTrans" xml:space="preserve">
+    <value>O Allah, arglwydd yr alwad hon cyflawn a gweddi o ni</value>
+  </data>
+  <data name="IslamInfo_AfterCallToPrayerFirstPartWordByWord" xml:space="preserve">
+    <value>O Allah | Arglwydd | y | galw | gyflawn | a gweddi | o ni</value>
+  </data>
+  <data name="IslamInfo_AfterCallToPrayerSecondPart" xml:space="preserve">
+    <value>Ar ôl alwad i weddi - ail ran</value>
+  </data>
+  <data name="IslamInfo_AfterCallToPrayerSecondPartTrans" xml:space="preserve">
+    <value>Rhowch i Muhammad ei hawliau o eiriolaeth a rhinwedd</value>
+  </data>
+  <data name="IslamInfo_AfterCallToPrayerSecondPartWordByWord" xml:space="preserve">
+    <value>Rhowch | i Muhammad | ei hawliau o eiriolaeth | a rhinwedd</value>
+  </data>
+  <data name="IslamInfo_AfterCallToPrayerSupplication" xml:space="preserve">
+    <value>Ar ôl Galwad i Gweddi Ymbiliau</value>
+  </data>
+  <data name="IslamInfo_AfterCallToPrayerThirdPart" xml:space="preserve">
+    <value>Ar ôl alwad i weddi - drydedd ran</value>
+  </data>
+  <data name="IslamInfo_AfterCallToPrayerThirdPartTrans" xml:space="preserve">
+    <value>A chodi ef i reng uchel yr ydych wedi addo ei</value>
+  </data>
+  <data name="IslamInfo_AfterCallToPrayerThirdPartWordByWord" xml:space="preserve">
+    <value>A chodi ef | i reng | uchel | a | yr ydych wedi addo ei</value>
+  </data>
+  <data name="IslamInfo_Allah" xml:space="preserve">
+    <value>Yr un Duw</value>
+  </data>
+  <data name="IslamInfo_AllahIsGreatest" xml:space="preserve">
+    <value>Allah mwyaf</value>
+  </data>
+  <data name="IslamInfo_AllPraiseAndThanksBeToAllah" xml:space="preserve">
+    <value>Pob moliant a diolch i Allah</value>
+  </data>
+  <data name="IslamInfo_AlmsGiving" xml:space="preserve">
+    <value>Elusen sy'n rhoi</value>
+  </data>
+  <data name="IslamInfo_AndUponYouBePeace" xml:space="preserve">
+    <value>Ac ar i chi fod yn heddwch</value>
+  </data>
+  <data name="IslamInfo_ArabicTypesetting" xml:space="preserve">
+    <value>Cysodi Arabeg</value>
+  </data>
+  <data name="IslamInfo_Arial" xml:space="preserve">
+    <value>Arial</value>
+  </data>
+  <data name="IslamInfo_BeforeTravel" xml:space="preserve">
+    <value>Cyn teithio</value>
+  </data>
+  <data name="IslamInfo_BeforeTravelTrans" xml:space="preserve">
+    <value>Yr wyf drwy hyn yn gadael i chi y grefydd hon, Amanah (cyfrifoldeb) a'ch gweithred blaenorol ar gyfer Allah.</value>
+  </data>
+  <data name="IslamInfo_BeforeTravelWordByWord" xml:space="preserve">
+    <value>Yr wyf drwy hyn yn gadael i chi | i Allah | â chrefydd hwn | a beth | chyfrifoldeb | a blaenorol | gweithred</value>
+  </data>
+  <data name="IslamInfo_BowOfPrayer" xml:space="preserve">
+    <value>Bwa o weddi</value>
+  </data>
+  <data name="IslamInfo_CallToBeginPrayerSixthVerse" xml:space="preserve">
+    <value>Ffoniwch i ddechrau gweddi - chweched pennill</value>
+  </data>
+  <data name="IslamInfo_CallToBeginPrayerSixthVerseTrans" xml:space="preserve">
+    <value>Yn wir wedi dechrau ar y weddi</value>
+  </data>
+  <data name="IslamInfo_CallToBeginPrayerSixthVerseWordByWord" xml:space="preserve">
+    <value>Yn wir | wedi dechrau | y weddi</value>
+  </data>
+  <data name="IslamInfo_CallToBeginThePrayer" xml:space="preserve">
+    <value>Ffoniwch i ddechrau ar y weddi</value>
+  </data>
+  <data name="IslamInfo_CallToPrayer" xml:space="preserve">
+    <value>Galwad i weddi</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerEighthVerse" xml:space="preserve">
+    <value>Galwad i weddi - wythfed pennill</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerEighthVerseTrans" xml:space="preserve">
+    <value>Nid oes Duw ac eithrio Allah</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerEighthVerseWordByWord" xml:space="preserve">
+    <value>Nid oes | Duw | heblaw | Allah</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerFifthVerse" xml:space="preserve">
+    <value>Galwad i weddi - pumed pennill</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerFifthVerseTrans" xml:space="preserve">
+    <value>Dewch i lwyddiant</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerFifthVerseWordByWord" xml:space="preserve">
+    <value>Dewch | i | llwyddiant</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerFirstVerse" xml:space="preserve">
+    <value>Galwad i weddi - pennill cyntaf</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerFirstVerseTrans" xml:space="preserve">
+    <value>Allah mwyaf</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerFirstVerseWordByWord" xml:space="preserve">
+    <value>Allah yn | mwyaf</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerFourthVerse" xml:space="preserve">
+    <value>Galwad i weddi - pedwerydd pennill</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerFourthVerseTrans" xml:space="preserve">
+    <value>Dewch i weddi</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerFourthVerseWordByWord" xml:space="preserve">
+    <value>Dewch | i | gweddi</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerLeader" xml:space="preserve">
+    <value>Galwad i arweinydd y weddi</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerSecondVerse" xml:space="preserve">
+    <value>Galwad i weddi - ail bennill</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerSecondVerseTrans" xml:space="preserve">
+    <value>Yr wyf yn tystio nad oes Duw ac eithrio Allah</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerSecondVerseWordByWord" xml:space="preserve">
+    <value>Yr wyf yn tystio | hynny | oes | Duw | heblaw | Allah</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerSeventhVerse" xml:space="preserve">
+    <value>Galwad i weddi - seithfed pennill</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerSeventhVerseTrans" xml:space="preserve">
+    <value>Allah mwyaf</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerSeventhVerseWordByWord" xml:space="preserve">
+    <value>Allah yn | mwyaf</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerSixthVerse" xml:space="preserve">
+    <value>Galwad i weddi - chweched pennill</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerSixthVerseTrans" xml:space="preserve">
+    <value>Gweddi yn well na chysgu</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerSixthVerseWordByWord" xml:space="preserve">
+    <value>Gweddi yn | well | na | cysgu</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerThirdVerse" xml:space="preserve">
+    <value>Galwad i weddi - trydydd pennill</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerThirdVerseTrans" xml:space="preserve">
+    <value>Yr wyf yn tystio bod Muhammad yn negesydd Allah</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerThirdVerseWordByWord" xml:space="preserve">
+    <value>Yr wyf yn tystio | hynny | Muhammad yn | y cennad | Allah</value>
+  </data>
+  <data name="IslamInfo_Chapter" xml:space="preserve">
+    <value>Pennod</value>
+  </data>
+  <data name="IslamInfo_Creed" xml:space="preserve">
+    <value>Credo</value>
+  </data>
+  <data name="IslamInfo_Custom" xml:space="preserve">
+    <value>Custom</value>
+  </data>
+  <data name="IslamInfo_David" xml:space="preserve">
+    <value>David</value>
+  </data>
+  <data name="IslamInfo_Default" xml:space="preserve">
+    <value>Default</value>
+  </data>
+  <data name="IslamInfo_DirectionOfprayer" xml:space="preserve">
+    <value>Cyfeiriad y weddi</value>
+  </data>
+  <data name="IslamInfo_Dissertation" xml:space="preserve">
+    <value>Traethawd Hir</value>
+  </data>
+  <data name="IslamInfo_Eber" xml:space="preserve">
+    <value>Heber</value>
+  </data>
+  <data name="IslamInfo_Elijah" xml:space="preserve">
+    <value>Elijah</value>
+  </data>
+  <data name="IslamInfo_Elisha" xml:space="preserve">
+    <value>Eliseus</value>
+  </data>
+  <data name="IslamInfo_Enoch" xml:space="preserve">
+    <value>Enoch</value>
+  </data>
+  <data name="IslamInfo_EnteringMasjidilHaram" xml:space="preserve">
+    <value>Mynd i mewn i Masjidil Haram</value>
+  </data>
+  <data name="IslamInfo_EnteringMasjidilHaramTrans" xml:space="preserve">
+    <value>O Allah!</value>
+  </data>
+  <data name="IslamInfo_EnteringMasjidilHaramWordByWord" xml:space="preserve">
+    <value>O Allah | wyt ti | heddwch | ac o Ti | heddwch | yn peri i ni i fyw | Arglwydd | gyda heddwch | ac yn achosi i ni fynd i mewn | Paradise | Tŷ'r | Heddwch | Perchennog Anrhydedd | Arglwydd | a Mawrhydi | Tydi</value>
+  </data>
+  <data name="IslamInfo_Ezekiel" xml:space="preserve">
+    <value>Ezekiel</value>
+  </data>
+  <data name="IslamInfo_FifthCreed" xml:space="preserve">
+    <value>Pumed credo - Y gair o edifeirwch (Astaghfar)</value>
+  </data>
+  <data name="IslamInfo_FifthCreedTrans" xml:space="preserve">
+    <value>Yr wyf yn gofyn maddeuant o Allah, fy Arglwydd, o bob pechod yr wyf yn ymrwymo yn fwriadol neu'n ddiarwybod, yn gyfrinachol neu'n agored, ac yr wyf yn troi tuag ef oddi wrth y pechod fy mod yn gwybod ac o bechod nad wyf yn gwybod.</value>
+  </data>
+  <data name="IslamInfo_FifthCreedWordByWord" xml:space="preserve">
+    <value>Yr wyf yn gofyn maddeuant | o Allah | fy Arglwydd | o | bob | pechod | Dw i ymrwymo | fwriadol | neu | unknowningly | gyfrinachol | neu | agored | ac yr wyf yn troi tuag at | Ef | o | y pechod | hynny | rwy'n gwybod | ac o</value>
+  </data>
+  <data name="IslamInfo_FirstCreed" xml:space="preserve">
+    <value>Credo Gyntaf - Gair Purdeb (Tayyabah)</value>
+  </data>
+  <data name="IslamInfo_FirstCreedTrans" xml:space="preserve">
+    <value>Nid oes Duw ac eithrio Allah Muhammad yw Negesydd Allah.</value>
+  </data>
+  <data name="IslamInfo_FirstCreedWordByWord" xml:space="preserve">
+    <value>Nid oes | Duw | heblaw | Allah | Muhammad | Messenger | Allah</value>
+  </data>
+  <data name="IslamInfo_FortyOurLordSupplications" xml:space="preserve">
+    <value>40 Ein Harglwydd ngweddïau</value>
+  </data>
+  <data name="IslamInfo_FourthCreed" xml:space="preserve">
+    <value>Pedwerydd credo - Y gair o Undod (Tauhid)</value>
+  </data>
+  <data name="IslamInfo_FourthCreedTrans" xml:space="preserve">
+    <value>(Mae) dim deilwng o addoliad ar wahân i Allah.</value>
+  </data>
+  <data name="IslamInfo_FourthCreedWordByWord" xml:space="preserve">
+    <value>Nid oes | Duw | heblaw | Allah | ei ben ei hun | Dim | partner | wedi Ef | er ei fwyn E | Kingdom | ac iddo ef | Praise | Mae'n rhoi bywyd | ac yn dod â marwolaeth | ac Ef yw | byw erioed-| beidio | gallu</value>
+  </data>
+  <data name="IslamInfo_GloryBeToAllah" xml:space="preserve">
+    <value>Gogoniant i Allah</value>
+  </data>
+  <data name="IslamInfo_IhramPrayerSupplication" xml:space="preserve">
+    <value>Ihram Gweddi Ymbiliau</value>
+  </data>
+  <data name="IslamInfo_IhramPrayerSupplicationTrans" xml:space="preserve">
+    <value>Yn enw Allah, y rhan fwyaf o grasol, y Mwyaf trugarog!</value>
+  </data>
+  <data name="IslamInfo_IhramPrayerSupplicationWordByWord" xml:space="preserve">
+    <value>Yn enw | Allah | y Mwyaf grasol | y Mwyaf trugarog | Allah | yw'r mwyaf | Allah | yw'r mwyaf | Allah | yw'r mwyaf | sut perffaith | Mae'n | The One Pwy sydd wedi gosod | hwn (cludiant) |</value>
+  </data>
+  <data name="IslamInfo_Imam" xml:space="preserve">
+    <value>Arweinydd ysbrydol</value>
+  </data>
+  <data name="IslamInfo_IntentionForIhramPrayer" xml:space="preserve">
+    <value>Bwriad ar gyfer Ihram gweddi</value>
+  </data>
+  <data name="IslamInfo_IntentionForIhramPrayerTrans" xml:space="preserve">
+    <value>Yr wyf yn bwriadu gwneud Niat (dau rakaat Sunat Ihram Weddi) ar gyfer Allah.</value>
+  </data>
+  <data name="IslamInfo_IntentionForIhramPrayerWordByWord" xml:space="preserve">
+    <value>Rwy'n cynnig | argymell | Ihram Gweddi | dwy rakat | i Allah | y mwyaf uchel</value>
+  </data>
+  <data name="IslamInfo_IntentionForIhramShower" xml:space="preserve">
+    <value>Bwriad ar gyfer Ihram cawod</value>
+  </data>
+  <data name="IslamInfo_IntentionForIhramShowerTrans" xml:space="preserve">
+    <value>Yr wyf yn bwriadu bath (ar gyfer cawod Ihram a argymhellir) ar gyfer Allah.</value>
+  </data>
+  <data name="IslamInfo_IntentionForIhramShowerWordByWord" xml:space="preserve">
+    <value>Yr wyf yn bwriadu | i bath | argymell | Ihram cawod | i Allah | y mwyaf uchel</value>
+  </data>
+  <data name="IslamInfo_IntentionForJourneyPrayer" xml:space="preserve">
+    <value>Bwriad ar gyfer gweddi taith</value>
+  </data>
+  <data name="IslamInfo_IntentionForJourneyPrayerTrans" xml:space="preserve">
+    <value>Yr wyf yn bwriadu gwneud Niat (dau rakaat Sunat Safar Weddi) ar gyfer Allah.</value>
+  </data>
+  <data name="IslamInfo_IntentionForJourneyPrayerWordByWord" xml:space="preserve">
+    <value>Rwy'n cynnig | argymell | Safar gweddi | dwy rakat | i Allah | y mwyaf uchel</value>
+  </data>
+  <data name="IslamInfo_IntentionForJourneyShower" xml:space="preserve">
+    <value>Bwriad ar gyfer cawod daith</value>
+  </data>
+  <data name="IslamInfo_IntentionForJourneyShowerTrans" xml:space="preserve">
+    <value>Yr wyf yn bwriadu bath (ar gyfer cawod Musafir a argymhellir) ar gyfer Allah.</value>
+  </data>
+  <data name="IslamInfo_IntentionForJourneyShowerWordByWord" xml:space="preserve">
+    <value>Yr wyf yn bwriadu | i bath | Musafir cawod | argymell | i Allah | y mwyaf uchel</value>
+  </data>
+  <data name="IslamInfo_IntentionToPerformUmrah" xml:space="preserve">
+    <value>Bwriad i berfformio Umrah</value>
+  </data>
+  <data name="IslamInfo_IntentionToPerformUmrahTrans" xml:space="preserve">
+    <value>O Allah, yr wyf yn ymateb ar Eich Galwad i wneud Umrah, O Allah, yr wyf yn gwneud Umrah a Ihram ar gyfer Umrah yn unig i Chi.</value>
+  </data>
+  <data name="IslamInfo_IntentionToPerformUmrahWordByWord" xml:space="preserve">
+    <value>Yr wyf yn bwriadu | Umrah | a Ihram | yn unig | i Allah | y mwyaf uchel</value>
+  </data>
+  <data name="IslamInfo_InTheNameOfAllah" xml:space="preserve">
+    <value>Yn Enw'r Allah</value>
+  </data>
+  <data name="IslamInfo_Isaac" xml:space="preserve">
+    <value>Isaac</value>
+  </data>
+  <data name="IslamInfo_Ishmael" xml:space="preserve">
+    <value>Ishmael</value>
+  </data>
+  <data name="IslamInfo_Islam" xml:space="preserve">
+    <value>Cyflwyniad</value>
+  </data>
+  <data name="IslamInfo_IslamicWords" xml:space="preserve">
+    <value>Geiriau Islamaidd</value>
+  </data>
+  <data name="IslamInfo_Jacob" xml:space="preserve">
+    <value>Jacob</value>
+  </data>
+  <data name="IslamInfo_Jesus" xml:space="preserve">
+    <value>Iesu</value>
+  </data>
+  <data name="IslamInfo_Jethro" xml:space="preserve">
+    <value>Jethro</value>
+  </data>
+  <data name="IslamInfo_Job" xml:space="preserve">
+    <value>Swyddi</value>
+  </data>
+  <data name="IslamInfo_JohnTheBaptist" xml:space="preserve">
+    <value>Ioan Fedyddiwr</value>
+  </data>
+  <data name="IslamInfo_Jonas" xml:space="preserve">
+    <value>Jonas</value>
+  </data>
+  <data name="IslamInfo_Joseph" xml:space="preserve">
+    <value>Joseph</value>
+  </data>
+  <data name="IslamInfo_Judge" xml:space="preserve">
+    <value>Barnwr</value>
+  </data>
+  <data name="IslamInfo_KFGQPCNaskh" xml:space="preserve">
+    <value>KFGQPC Naskh</value>
+  </data>
+  <data name="IslamInfo_Law" xml:space="preserve">
+    <value>Y Gyfraith</value>
+  </data>
+  <data name="IslamInfo_Lot" xml:space="preserve">
+    <value>Lot</value>
+  </data>
+  <data name="IslamInfo_MajorAblution" xml:space="preserve">
+    <value>Ablution Mawr</value>
+  </data>
+  <data name="IslamInfo_MalikMuwatta" xml:space="preserve">
+    <value>Muwatta Malik yn</value>
+  </data>
+  <data name="IslamInfo_MeQuran" xml:space="preserve">
+    <value>Me-Quran</value>
+  </data>
+  <data name="IslamInfo_Messenger" xml:space="preserve">
+    <value>Negesydd</value>
+  </data>
+  <data name="IslamInfo_Months" xml:space="preserve">
+    <value>Misoedd</value>
+  </data>
+  <data name="IslamInfo_Moses" xml:space="preserve">
+    <value>Moses</value>
+  </data>
+  <data name="IslamInfo_MSUighur" xml:space="preserve">
+    <value>MS Uighur</value>
+  </data>
+  <data name="IslamInfo_Muhammad" xml:space="preserve">
+    <value>Muhammad</value>
+  </data>
+  <data name="IslamInfo_Muslim" xml:space="preserve">
+    <value>Un sy'n cyflwyno</value>
+  </data>
+  <data name="IslamInfo_NamesOfAllah" xml:space="preserve">
+    <value>Mae enwau Allah</value>
+  </data>
+  <data name="IslamInfo_Noah" xml:space="preserve">
+    <value>Noah</value>
+  </data>
+  <data name="IslamInfo_OnenessOfGod" xml:space="preserve">
+    <value>Undod Duw</value>
+  </data>
+  <data name="IslamInfo_Part" xml:space="preserve">
+    <value>Rhan</value>
+  </data>
+  <data name="IslamInfo_PDMSSaleem" xml:space="preserve">
+    <value>PDMS Saleem</value>
+  </data>
+  <data name="IslamInfo_PeaceBeUponYou" xml:space="preserve">
+    <value>Tangnefedd i arnoch</value>
+  </data>
+  <data name="IslamInfo_PhraseForAllahIsGreatest" xml:space="preserve">
+    <value>Ymadrodd ar gyfer Allah mwyaf</value>
+  </data>
+  <data name="IslamInfo_PhraseForAllPraiseAndThanksBeToAllah" xml:space="preserve">
+    <value>Ymadrodd ar gyfer yr holl ganmoliaeth a diolch i Allah</value>
+  </data>
+  <data name="IslamInfo_PhraseForGloryBeToAllah" xml:space="preserve">
+    <value>Ymadrodd ogoniant fydd Allah</value>
+  </data>
+  <data name="IslamInfo_PhraseForInTheNameOfAllah" xml:space="preserve">
+    <value>Ymadrodd am yn Enw'r Allah</value>
+  </data>
+  <data name="IslamInfo_Pilgrimage" xml:space="preserve">
+    <value>Pererindod</value>
+  </data>
+  <data name="IslamInfo_Prayers" xml:space="preserve">
+    <value>Gweddïau</value>
+  </data>
+  <data name="IslamInfo_PrayerTimes" xml:space="preserve">
+    <value>Amseroedd gweddi</value>
+  </data>
+  <data name="IslamInfo_ProperPronunciationDuringRecitation" xml:space="preserve">
+    <value>Ynganiad priodol yn ystod adrodd</value>
+  </data>
+  <data name="IslamInfo_Prophet" xml:space="preserve">
+    <value>Proffwyd</value>
+  </data>
+  <data name="IslamInfo_Prophets" xml:space="preserve">
+    <value>Prophets</value>
+  </data>
+  <data name="IslamInfo_Prostrating" xml:space="preserve">
+    <value>Prostrating</value>
+  </data>
+  <data name="IslamInfo_Prostration" xml:space="preserve">
+    <value>Ymostwng</value>
+  </data>
+  <data name="IslamInfo_PurificationOfTheSoul" xml:space="preserve">
+    <value>Puro y Soul</value>
+  </data>
+  <data name="IslamInfo_PurificationOfTheSoulTrans" xml:space="preserve">
+    <value>O Allah, grant fy enaid ei dduwioldeb ac yn puro ei, Ti yw'r Gorau i buro iddo, Rydych yn ei Guardian a Meistr.</value>
+  </data>
+  <data name="IslamInfo_PurificationOfTheSoulWordByWord" xml:space="preserve">
+    <value>O Allah | Os Rhowch | Fy Soul | Ei Piety | A Rydych yn ei Puro'r | Chi (Alone) | Best | Pwy | puro ei | Chi (Alone) | Ei Guardian | a Ei Meistr</value>
+  </data>
+  <data name="IslamInfo_PurificationSupplication" xml:space="preserve">
+    <value>Ymbiliau puro</value>
+  </data>
+  <data name="IslamInfo_Remembrance" xml:space="preserve">
+    <value>Cofio</value>
+  </data>
+  <data name="IslamInfo_RevelationOfAllah" xml:space="preserve">
+    <value>Datguddiad o Allah</value>
+  </data>
+  <data name="IslamInfo_RevelationOfAllahInBookForm" xml:space="preserve">
+    <value>Datguddiad o Allah ar ffurf llyfr</value>
+  </data>
+  <data name="IslamInfo_RiyadhSaaliheen" xml:space="preserve">
+    <value>Riyadh al-Saaliheen</value>
+  </data>
+  <data name="IslamInfo_SahihBukhari" xml:space="preserve">
+    <value>Sahih al-Bukhari</value>
+  </data>
+  <data name="IslamInfo_SahihMuslim" xml:space="preserve">
+    <value>Sahih Mwslimaidd</value>
+  </data>
+  <data name="IslamInfo_SakkalMajalla" xml:space="preserve">
+    <value>Sakkal Majalla</value>
+  </data>
+  <data name="IslamInfo_SalawatSupplicationAfterTalbiah" xml:space="preserve">
+    <value>Salawat Ymbiliau ôl Talbiah</value>
+  </data>
+  <data name="IslamInfo_SalawatSupplicationAfterTalbiahTrans" xml:space="preserve">
+    <value>O Allah bendithia ein meistr Muhammad a'i deulu yn union fel chi bendithio ein meistr Abraham a sancteiddia ein meistr Muhammad a'r teulu o Muhammad yn union fel chi sancteiddio ein meistr Abraham a'r teulu o Abraham ym mhob byd i Chi yw'r canmoladwy y Cedyrn.</value>
+  </data>
+  <data name="IslamInfo_SalawatSupplicationAfterTalbiahWordByWord" xml:space="preserve">
+    <value>O Allah | anfon cyfarchion | ar | meistr | Muhammad | ac ar | y teulu o | meistr | Muhammad | yn union fel y | chi anfon cyfarchion | ar | Abraham | ac ar | y teulu o | Abraham | ac anfon bendithion | ar | meistr</value>
+  </data>
+  <data name="IslamInfo_Saleh" xml:space="preserve">
+    <value>Saleh</value>
+  </data>
+  <data name="IslamInfo_Scheherazade" xml:space="preserve">
+    <value>Scheherazade</value>
+  </data>
+  <data name="IslamInfo_SchoolOfJurisprudence" xml:space="preserve">
+    <value>Ysgol cyfreitheg</value>
+  </data>
+  <data name="IslamInfo_SecondCreed" xml:space="preserve">
+    <value>Ail credo - gair Tystiolaeth (Shahaadat)</value>
+  </data>
+  <data name="IslamInfo_SecondCreedTrans" xml:space="preserve">
+    <value>Yr wyf yn tystio nad oes neb yn deilwng o addoliad ar wahân i Allah, Un yn unig, heb bartner, ac yr wyf yn tystio bod Muhammad yw ei was ac Messenger.</value>
+  </data>
+  <data name="IslamInfo_SecondCreedWordByWord" xml:space="preserve">
+    <value>Yr wyf yn tystio | hynny | oes | Duw | heblaw | Allah | ei ben ei hun | Dim | partner | wedi Ef | ac yr wyf yn tystio | hynny | Muhammad | Ei was | a Messenger</value>
+  </data>
+  <data name="IslamInfo_SixthCreed" xml:space="preserve">
+    <value>Credo dosbarth - Mae'r geiriau o wrthod anghrediniaeth (Rud-A-Kuffer)</value>
+  </data>
+  <data name="IslamInfo_SixthCreedTrans" xml:space="preserve">
+    <value>O Allah!</value>
+  </data>
+  <data name="IslamInfo_SixthCreedWordByWord" xml:space="preserve">
+    <value>O Allah | sicr | wyf yn gofyn am amddiffyn | gyda Chi | o | hynny | wyf yn cysylltu bartner gyda Chi | unrhyw beth | a I | gwybod | ei | a gofynnaf am faddeuant oddi Chi | am y | beidio | rwy'n gwybod | mae'n | nid edifarheais</value>
+  </data>
+  <data name="IslamInfo_Solomon" xml:space="preserve">
+    <value>Solomon</value>
+  </data>
+  <data name="IslamInfo_Station" xml:space="preserve">
+    <value>Gorsaf</value>
+  </data>
+  <data name="IslamInfo_SunanAbuDawood" xml:space="preserve">
+    <value>Sunan Abu Dawood</value>
+  </data>
+  <data name="IslamInfo_SunanIbnMaja" xml:space="preserve">
+    <value>Sunan Ibn Maja</value>
+  </data>
+  <data name="IslamInfo_SunanNasai" xml:space="preserve">
+    <value>Sunan yn-Nasa'i Al-Sughra</value>
+  </data>
+  <data name="IslamInfo_SunanTirmidhi" xml:space="preserve">
+    <value>Sunan al-Tirmidhi</value>
+  </data>
+  <data name="IslamInfo_Supplication" xml:space="preserve">
+    <value>Ymbil</value>
+  </data>
+  <data name="IslamInfo_SupplicationAfterSalawatSupplication" xml:space="preserve">
+    <value>Ymbil ar ôl Salawat Ymbiliau</value>
+  </data>
+  <data name="IslamInfo_SupplicationAfterSalawatSupplicationTrans" xml:space="preserve">
+    <value>O Allah!</value>
+  </data>
+  <data name="IslamInfo_SupplicationAfterSalawatSupplicationWordByWord" xml:space="preserve">
+    <value>O Allah | wir | wyf yn gofyn am o Ti | bendithion Tydi | a Paradise | wyf yn gofyn am loches gyda Ti | o | dicter | ac Uffern.</value>
+  </data>
+  <data name="IslamInfo_SupplicationForArrivingAtMakkah" xml:space="preserve">
+    <value>Ymbil ar gyfer cyrraedd Makkah</value>
+  </data>
+  <data name="IslamInfo_SupplicationForArrivingAtMakkahTrans" xml:space="preserve">
+    <value>O Dduw!</value>
+  </data>
+  <data name="IslamInfo_SupplicationForArrivingAtMakkahWordByWord" xml:space="preserve">
+    <value>O Allah | wirioneddol | hyn | noddfa yn | dy Sacred Place | ac mae hyn Ddinas Sanctaidd yn | dy City | a therin Heddwch yn | dy Peace | Yna gwahardd fi | rhag | tân Hell | a achub fi | rhag | dy cosb | ar</value>
+  </data>
+  <data name="IslamInfo_Talbiah" xml:space="preserve">
+    <value>Talbiah</value>
+  </data>
+  <data name="IslamInfo_TalbiahTrans" xml:space="preserve">
+    <value>Yr wyf wedi ymateb i chi ddangos, Fy Nuw!</value>
+  </data>
+  <data name="IslamInfo_TalbiahWordByWord" xml:space="preserve">
+    <value>Yr wyf wedi ymateb i Chi | O Allah | wyf wedi ymateb i Chi | wyf wedi ymateb i Chi | nid oes | bartner | i chi | wyf wedi ymateb i chi | wir | Cyfan Praise | a'r Holl Mae'r Bounty | i Chi |</value>
+  </data>
+  <data name="IslamInfo_TheAbaser" xml:space="preserve">
+    <value>Mae'r Abaser</value>
+  </data>
+  <data name="IslamInfo_TheAcknowledgingOne" xml:space="preserve">
+    <value>The One Cydnabod</value>
+  </data>
+  <data name="IslamInfo_TheAllAuthoritativeOne" xml:space="preserve">
+    <value>Mae'r holl Awdurdodol One</value>
+  </data>
+  <data name="IslamInfo_TheAllAwareOne" xml:space="preserve">
+    <value>Yr Un All-Ymwybodol</value>
+  </data>
+  <data name="IslamInfo_TheAllCompelling" xml:space="preserve">
+    <value>Mae'r holl Cymhellol</value>
+  </data>
+  <data name="IslamInfo_TheAllEnumeratingOne" xml:space="preserve">
+    <value>Mae'r holl-rhestru'r One</value>
+  </data>
+  <data name="IslamInfo_TheAllHearer" xml:space="preserve">
+    <value>Mae'r holl-Gwrandawr</value>
+  </data>
+  <data name="IslamInfo_TheAllKnowingOne" xml:space="preserve">
+    <value>Mae'r holl-Gwybod One</value>
+  </data>
+  <data name="IslamInfo_TheAllNobleOne" xml:space="preserve">
+    <value>Mae'r holl-Noble One</value>
+  </data>
+  <data name="IslamInfo_TheAllObservingWitness" xml:space="preserve">
+    <value>Mae'r holl Arsylwi Tystion</value>
+  </data>
+  <data name="IslamInfo_TheAllPervadingOne" xml:space="preserve">
+    <value>Mae'r holl-pervading One</value>
+  </data>
+  <data name="IslamInfo_TheAllPrevailingOne" xml:space="preserve">
+    <value>The One All-Amlycaf</value>
+  </data>
+  <data name="IslamInfo_TheAllSeeing" xml:space="preserve">
+    <value>Gyfan Gweld</value>
+  </data>
+  <data name="IslamInfo_TheAssemblerOfScatteredCreations" xml:space="preserve">
+    <value>Mae Cydosodydd y Creations gwasgaredig</value>
+  </data>
+  <data name="IslamInfo_TheBeneficent" xml:space="preserve">
+    <value>Mae'r beneficent</value>
+  </data>
+  <data name="IslamInfo_TheBenignOne" xml:space="preserve">
+    <value>The One anfalaen</value>
+  </data>
+  <data name="IslamInfo_TheBestowerOfBenefits" xml:space="preserve">
+    <value>Mae Bestower Budd-daliadau</value>
+  </data>
+  <data name="IslamInfo_TheBestowerOfSufficiency" xml:space="preserve">
+    <value>Mae Bestower Digonolrwydd</value>
+  </data>
+  <data name="IslamInfo_TheBountifulOne" xml:space="preserve">
+    <value>Mae'r Bountiful Un</value>
+  </data>
+  <data name="IslamInfo_TheClementOne" xml:space="preserve">
+    <value>Mae'r Clement Un</value>
+  </data>
+  <data name="IslamInfo_TheCreator" xml:space="preserve">
+    <value>Y Creawdwr</value>
+  </data>
+  <data name="IslamInfo_TheDistressor" xml:space="preserve">
+    <value>Mae'r Distressor</value>
+  </data>
+  <data name="IslamInfo_TheDominantOne" xml:space="preserve">
+    <value>Mae'r Dominyddol Un</value>
+  </data>
+  <data name="IslamInfo_TheElevatingOne" xml:space="preserve">
+    <value>Mae'r dyrchafu Un</value>
+  </data>
+  <data name="IslamInfo_TheEmbodimentOfJustice" xml:space="preserve">
+    <value>Mae Embodiment Cyfiawnder</value>
+  </data>
+  <data name="IslamInfo_TheEmbodimentOfPeace" xml:space="preserve">
+    <value>Mae Embodiment Heddwch</value>
+  </data>
+  <data name="IslamInfo_TheEmbodimentOfTruth" xml:space="preserve">
+    <value>Mae Embodiment Gwirionedd</value>
+  </data>
+  <data name="IslamInfo_TheEternalInheritor" xml:space="preserve">
+    <value>Mae'r Eternal etifedd</value>
+  </data>
+  <data name="IslamInfo_TheEternalLord" xml:space="preserve">
+    <value>Mae'r Eternal Arglwydd</value>
+  </data>
+  <data name="IslamInfo_TheEternalPossessorOfSovereignty" xml:space="preserve">
+    <value>Mae Eternal perchen Sofraniaeth</value>
+  </data>
+  <data name="IslamInfo_TheEverAcceptorOfRepentance" xml:space="preserve">
+    <value>Mae'r Erioed-acceptor o Edifeirwch</value>
+  </data>
+  <data name="IslamInfo_TheEverSurvivingOne" xml:space="preserve">
+    <value>The One Erioed wedi goroesi</value>
+  </data>
+  <data name="IslamInfo_TheEvolver" xml:space="preserve">
+    <value>Mae'r Evolver</value>
+  </data>
+  <data name="IslamInfo_TheExpeditingOne" xml:space="preserve">
+    <value>Mae'r hwyluso'r Un</value>
+  </data>
+  <data name="IslamInfo_TheExtender" xml:space="preserve">
+    <value>Mae'r Extender</value>
+  </data>
+  <data name="IslamInfo_TheExtensivelyEnduringOne" xml:space="preserve">
+    <value>Mae'r raddfa eang Parhaus Un</value>
+  </data>
+  <data name="IslamInfo_TheExtremelyExaltedOne" xml:space="preserve">
+    <value>The One Eithriadol Exalted</value>
+  </data>
+  <data name="IslamInfo_TheFirmOne" xml:space="preserve">
+    <value>The One Cadarn</value>
+  </data>
+  <data name="IslamInfo_TheFlawlessShaper" xml:space="preserve">
+    <value>Mae'r Flawless Shaper</value>
+  </data>
+  <data name="IslamInfo_TheFountainHeadOfTruth" xml:space="preserve">
+    <value>Ffynnon-Pennaeth Gwirionedd</value>
+  </data>
+  <data name="IslamInfo_TheGloriousOne" xml:space="preserve">
+    <value>The One Gogoneddus</value>
+  </data>
+  <data name="IslamInfo_TheGreatForgiver" xml:space="preserve">
+    <value>Mae'r Forgiver Great</value>
+  </data>
+  <data name="IslamInfo_TheGreatOne" xml:space="preserve">
+    <value>The Great One</value>
+  </data>
+  <data name="IslamInfo_TheGuardingOne" xml:space="preserve">
+    <value>Mae'r Bariau Diogelwch Un</value>
+  </data>
+  <data name="IslamInfo_TheGuideToPathOfRectitude" xml:space="preserve">
+    <value>Mae'r Canllaw i Llwybr rectitude</value>
+  </data>
+  <data name="IslamInfo_TheHolderOfSupremeAuthority" xml:space="preserve">
+    <value>Y Deilydd Awdurdod Goruchaf</value>
+  </data>
+  <data name="IslamInfo_TheHonourerBestower" xml:space="preserve">
+    <value>Mae'r Honourer-Bestower</value>
+  </data>
+  <data name="IslamInfo_TheImpartialJudge" xml:space="preserve">
+    <value>Y Barnwr diduedd</value>
+  </data>
+  <data name="IslamInfo_TheImperceptible" xml:space="preserve">
+    <value>Mae'r Anweladwy</value>
+  </data>
+  <data name="IslamInfo_TheInfiniteLastOne" xml:space="preserve">
+    <value>Mae'r Anfeidrol One Last</value>
+  </data>
+  <data name="IslamInfo_TheInflictorOfDeath" xml:space="preserve">
+    <value>Mae Inflictor Marwolaeth</value>
+  </data>
+  <data name="IslamInfo_TheInfuserOfFaith" xml:space="preserve">
+    <value>Mae Infuser Ffydd</value>
+  </data>
+  <data name="IslamInfo_TheInfuserOfNewLife" xml:space="preserve">
+    <value>Mae Infuser Bywyd Newydd</value>
+  </data>
+  <data name="IslamInfo_TheJustOne" xml:space="preserve">
+    <value>Just One</value>
+  </data>
+  <data name="IslamInfo_TheKnowerOfSubtleties" xml:space="preserve">
+    <value>Mae gwybyddwr y mân</value>
+  </data>
+  <data name="IslamInfo_TheLovingOne" xml:space="preserve">
+    <value>The One Loving</value>
+  </data>
+  <data name="IslamInfo_TheMagnificentOne" xml:space="preserve">
+    <value>The Magnificent Un</value>
+  </data>
+  <data name="IslamInfo_TheMaintainerOflife" xml:space="preserve">
+    <value>Mae Cynhaliwr bywyd</value>
+  </data>
+  <data name="IslamInfo_TheMajesticOne" xml:space="preserve">
+    <value>Y Majestic Un</value>
+  </data>
+  <data name="IslamInfo_TheMerciful" xml:space="preserve">
+    <value>Mae'r Trugarog</value>
+  </data>
+  <data name="IslamInfo_TheMightyOne" xml:space="preserve">
+    <value>Mae'r Mighty Un</value>
+  </data>
+  <data name="IslamInfo_TheMostSacred" xml:space="preserve">
+    <value>Mae'r rhan fwyaf o Sacred</value>
+  </data>
+  <data name="IslamInfo_TheOmnipotentOne" xml:space="preserve">
+    <value>Mae'r Hollalluog Un</value>
+  </data>
+  <data name="IslamInfo_TheOnlyOne" xml:space="preserve">
+    <value>Yr Un yn Unig</value>
+  </data>
+  <data name="IslamInfo_TheOriginator" xml:space="preserve">
+    <value>Mae'r Dechreuwr</value>
+  </data>
+  <data name="IslamInfo_ThePardoner" xml:space="preserve">
+    <value>Mae'r Pardoner</value>
+  </data>
+  <data name="IslamInfo_ThePerceptible" xml:space="preserve">
+    <value>Mae'r Gwelawy</value>
+  </data>
+  <data name="IslamInfo_ThePointingOne" xml:space="preserve">
+    <value>The One Pwyntio</value>
+  </data>
+  <data name="IslamInfo_ThePossessorOfMajestyAndHonour" xml:space="preserve">
+    <value>Mae perchen Mawrhydi ac Anrhydedd</value>
+  </data>
+  <data name="IslamInfo_ThePrayersOfAllahUponHimAndPeace" xml:space="preserve">
+    <value>Mae gweddïau o Allah arno ef a heddwch</value>
+  </data>
+  <data name="IslamInfo_ThePreserverOfSafety" xml:space="preserve">
+    <value>Mae'r geidwad Diogelwch</value>
+  </data>
+  <data name="IslamInfo_ThePreventer" xml:space="preserve">
+    <value>Mae'r atal yn</value>
+  </data>
+  <data name="IslamInfo_ThePrimeLight" xml:space="preserve">
+    <value>Y Golau Weinidog</value>
+  </data>
+  <data name="IslamInfo_TheProcrastinator" xml:space="preserve">
+    <value>Mae'r gohirio pethau</value>
+  </data>
+  <data name="IslamInfo_TheProtectingAssociate" xml:space="preserve">
+    <value>Mae'r Cyswllt Diogelu</value>
+  </data>
+  <data name="IslamInfo_TheProviderOfGuidance" xml:space="preserve">
+    <value>Darparwr Canllawiau</value>
+  </data>
+  <data name="IslamInfo_TheReckoningOne" xml:space="preserve">
+    <value>The Reckoning Un</value>
+  </data>
+  <data name="IslamInfo_TheReducer" xml:space="preserve">
+    <value>Mae'r Reducer</value>
+  </data>
+  <data name="IslamInfo_TheRespondingOne" xml:space="preserve">
+    <value>The One Ymateb</value>
+  </data>
+  <data name="IslamInfo_TheRestorer" xml:space="preserve">
+    <value>Mae'r Adferwr</value>
+  </data>
+  <data name="IslamInfo_TheRestrictingOne" xml:space="preserve">
+    <value>Mae'r Cyfyngu Un</value>
+  </data>
+  <data name="IslamInfo_TheRetaliator" xml:space="preserve">
+    <value>Mae'r Retaliator</value>
+  </data>
+  <data name="IslamInfo_TheSelfSubsistingOne" xml:space="preserve">
+    <value>Hunan-bodoli Un</value>
+  </data>
+  <data name="IslamInfo_TheSelfSufficientOne" xml:space="preserve">
+    <value>Yr Un Hunan-Digon</value>
+  </data>
+  <data name="IslamInfo_TheSoleLaudableOne" xml:space="preserve">
+    <value>Mae'r Unig-Ardderchog, One</value>
+  </data>
+  <data name="IslamInfo_TheSoleOne" xml:space="preserve">
+    <value>Mae'r Unig Un</value>
+  </data>
+  <data name="IslamInfo_TheStrongOne" xml:space="preserve">
+    <value>The One cryf</value>
+  </data>
+  <data name="IslamInfo_TheSublimeOne" xml:space="preserve">
+    <value>Mae'r Aruchel Un</value>
+  </data>
+  <data name="IslamInfo_TheSupremeBestower" xml:space="preserve">
+    <value>Mae'r Goruchaf Bestower</value>
+  </data>
+  <data name="IslamInfo_TheSupremePardoner" xml:space="preserve">
+    <value>Mae'r Goruchaf Pardoner</value>
+  </data>
+  <data name="IslamInfo_TheSupremeProvider" xml:space="preserve">
+    <value>Darparwr Goruchaf</value>
+  </data>
+  <data name="IslamInfo_TheSupremeSolver" xml:space="preserve">
+    <value>Mae'r Goruchaf datryswr</value>
+  </data>
+  <data name="IslamInfo_TheSustainingOne" xml:space="preserve">
+    <value>Mae'r Cynnal Un</value>
+  </data>
+  <data name="IslamInfo_TheTotalProvider" xml:space="preserve">
+    <value>Mae'r Cyfanswm y Darparwr</value>
+  </data>
+  <data name="IslamInfo_TheUniqueOne" xml:space="preserve">
+    <value>Mae'r Unigryw Un</value>
+  </data>
+  <data name="IslamInfo_TheUniversalTrustee" xml:space="preserve">
+    <value>Mae'r Ymddiriedolwyr Universal</value>
+  </data>
+  <data name="IslamInfo_TheVeryFirst" xml:space="preserve">
+    <value>Prif Iawn</value>
+  </data>
+  <data name="IslamInfo_TheWatchfulOne" xml:space="preserve">
+    <value>Mae'r gwyliadwrus Un</value>
+  </data>
+  <data name="IslamInfo_TheWiseOne" xml:space="preserve">
+    <value>Ddoeth Un</value>
+  </data>
+  <data name="IslamInfo_ThirdCreed" xml:space="preserve">
+    <value>Trydydd credo - gair glodfori (Tumjeed)</value>
+  </data>
+  <data name="IslamInfo_ThirdCreedTrans" xml:space="preserve">
+    <value>Gogoniant i Allah a Mawl i Allah, ac nid oes Duw ar wahân i Allah, ac Allah yw'r mwyaf.</value>
+  </data>
+  <data name="IslamInfo_ThirdCreedWordByWord" xml:space="preserve">
+    <value>Gogoniant | i Allah | a Praise | i Allah | ac nid oes | Duw | heblaw | Allah | a Allah | mwyaf | a dim | gallai | a dim | Ynni | eithrio | gyda Allah | Goruchaf | y rhan fwyaf o Magnificent</value>
+  </data>
+  <data name="IslamInfo_TraditionalArabic" xml:space="preserve">
+    <value>Arabeg traddodiadol</value>
+  </data>
+  <data name="IslamInfo_TransmissionOfInformation" xml:space="preserve">
+    <value>Drosglwyddo gwybodaeth</value>
+  </data>
+  <data name="IslamInfo_Umrah" xml:space="preserve">
+    <value>Umrah</value>
+  </data>
+  <data name="IslamInfo_UnitOfPrayer" xml:space="preserve">
+    <value>Uned gweddi</value>
+  </data>
+  <data name="IslamInfo_UponHimBePeace" xml:space="preserve">
+    <value>Arno heddwch</value>
+  </data>
+  <data name="IslamInfo_Verse" xml:space="preserve">
+    <value>Adnod</value>
+  </data>
+  <data name="IslamInfo_VerseOfTheThrone" xml:space="preserve">
+    <value>Mae'r Adnod y Orsedd</value>
+  </data>
+  <data name="IslamInfo_Zechariah" xml:space="preserve">
+    <value>Sechareia</value>
+  </data>
+  <data name="IslamInfo_TheEverLiving" xml:space="preserve">
+    <value>Mae'r Erioed Byw</value>
+  </data>
+  <data name="IslamInfo_After" xml:space="preserve">
+    <value>Ar ôl</value>
+  </data>
+  <data name="IslamInfo_Arabic" xml:space="preserve">
+    <value>Arabic</value>
+  </data>
+  <data name="IslamInfo_Assimilate" xml:space="preserve">
+    <value>Cymathu</value>
+  </data>
+  <data name="IslamInfo_Before" xml:space="preserve">
+    <value>Cyn</value>
+  </data>
+  <data name="IslamInfo_bukhariBook1" xml:space="preserve">
+    <value>Datguddiad</value>
+  </data>
+  <data name="IslamInfo_bukhariBook10" xml:space="preserve">
+    <value>Galwad i Gweddïau (Adhaan)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook11" xml:space="preserve">
+    <value>Dydd Gwener Gweddi</value>
+  </data>
+  <data name="IslamInfo_bukhariBook12" xml:space="preserve">
+    <value>Ofn Gweddi</value>
+  </data>
+  <data name="IslamInfo_bukhariBook13" xml:space="preserve">
+    <value>Y Ddau Gwyliau (ddau Eid)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook14" xml:space="preserve">
+    <value>Witr Gweddi</value>
+  </data>
+  <data name="IslamInfo_bukhariBook15" xml:space="preserve">
+    <value>Galw ar Allah am Rain (Istisqaa)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook16" xml:space="preserve">
+    <value>Eclipsau</value>
+  </data>
+  <data name="IslamInfo_bukhariBook17" xml:space="preserve">
+    <value>Ymostwng Yn ystod Datganiad o Qur'an</value>
+  </data>
+  <data name="IslamInfo_bukhariBook18" xml:space="preserve">
+    <value>Byrhau'r Gweddïau (Ar-Taqseer)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook19" xml:space="preserve">
+    <value>Gweddi yn y Nos (Tahajjud)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook1Chapter1" xml:space="preserve">
+    <value>{Sut dechreuodd y Ysbrydoliaeth Divine cael ei datgelu i Allah Messenger (SAWS).</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2" xml:space="preserve">
+    <value>Cred</value>
+  </data>
+  <data name="IslamInfo_bukhariBook20" xml:space="preserve">
+    <value>Rhinweddau Gweddi yn Masjid Makkah a Madinah</value>
+  </data>
+  <data name="IslamInfo_bukhariBook21" xml:space="preserve">
+    <value>Camau Gweithredu tra'n Gweddïo</value>
+  </data>
+  <data name="IslamInfo_bukhariBook22" xml:space="preserve">
+    <value>Anghofrwydd mewn Gweddi</value>
+  </data>
+  <data name="IslamInfo_bukhariBook23" xml:space="preserve">
+    <value>Angladdau (Al-Janaa'iz)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook24" xml:space="preserve">
+    <value>Gorfodol Treth Elusennau (Zakat)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook25" xml:space="preserve">
+    <value>Pilgrimmage (Hajj)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook26" xml:space="preserve">
+    <value>Mân Pilgrammage (Umra)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook27" xml:space="preserve">
+    <value>Pererinion Wedi'i warchod rhag Cwblhau'r Pilgrimmage</value>
+  </data>
+  <data name="IslamInfo_bukhariBook28" xml:space="preserve">
+    <value>Cosb o Hela tra ar Pilgrimmage</value>
+  </data>
+  <data name="IslamInfo_bukhariBook29" xml:space="preserve">
+    <value>Rhinweddau Madinah</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter1" xml:space="preserve">
+    <value>Mae'r datganiad y Proffwyd (SAWS): 'Islam yn seiliedig ar bum egwyddor.'</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter10" xml:space="preserve">
+    <value>I garu'r Ansar yn arwydd o ffydd.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter12" xml:space="preserve">
+    <value>I ffoi (rhedeg i ffwrdd) o Al-Fitan (treialon a afflications ac ati) yn rhan o grefydd.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter13" xml:space="preserve">
+    <value>Mae'r datganiad y Proffwyd (SAWS): 'Rwy'n gwybod Allah (azza JAL wa) yn well na'r holl chi ei wneud'.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter14" xml:space="preserve">
+    <value>Pwy bynnag fydd yn casáu i ddychwelyd i kufr.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter15" xml:space="preserve">
+    <value>Bydd Mae'r graddau yn rhagoriaeth y credinwyr yn ôl eu gweithredoedd da.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter16" xml:space="preserve">
+    <value>Al-Haya yn rhan o ffydd.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter17" xml:space="preserve">
+    <value>Mae'r datganiad o Allah (azza JAL wa):</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter18" xml:space="preserve">
+    <value>Pwy bynnag sy'n dweud bod ffydd yn gweithredu (gweithredoedd da).</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter19" xml:space="preserve">
+    <value>Os nad yw un yn gofleidio Islam yn wir, ond mae'n gwneud hynny trwy orfodaeth neu ar gyfer ofn o gael eu lladd ac ati</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter2" xml:space="preserve">
+    <value>Eich invocation golygu bod eich ffydd.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter20" xml:space="preserve">
+    <value>I gyfarch yn rhan o Islam.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter21" xml:space="preserve">
+    <value>I fod yn anniolchgar i un gŵr.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter22" xml:space="preserve">
+    <value>Sins yn dod o anwybodaeth ac nid pechadur yn disbeliever oni bai ei addoli eraill, ynghyd â Allah (azza JAL wa).</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter23" xml:space="preserve">
+    <value>Mae'r datganiad o Allah (azza JAL wa): {</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter24" xml:space="preserve">
+    <value>Gall Zulm (anghywir) o ryw fath yn fwy neu lai na un arall.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter25" xml:space="preserve">
+    <value>Mae arwyddion o rhagrithiwr.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter26" xml:space="preserve">
+    <value>Sefydlu gweddïau ar y noson o Qadr yn rhan o ffydd.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter27" xml:space="preserve">
+    <value>Al-Jihad (rhyfel sanctaidd - ymladd yn achos Allah) yn rhan o ffydd.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter28" xml:space="preserve">
+    <value>Mae'n rhan o ffydd i sefydlu'r (Nawafil - gwirfoddol) gweddïau yn ystod y nosweithiau o Ramadan.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter29" xml:space="preserve">
+    <value>Arsylwi Saum [ymprydio (yn ôl dysgeidiaeth Islamaidd)] yn ystod mis Ramadan (yn ddiffuant ac yn ffyddlon) gobeithio am wobrau Allah yn unig, yn rhan o ffydd.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter3" xml:space="preserve">
+    <value>(Yr hyn a ddywedir) ynglŷn â gweithredoedd o ffydd.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter30" xml:space="preserve">
+    <value>Crefydd yn hawdd iawn.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter31" xml:space="preserve">
+    <value>Mae (cynnig o) Salat (Gweddïau) yn rhan o ffydd.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter32" xml:space="preserve">
+    <value>(Yr hyn a ddywedir ynghylch rhagoriaeth) person sy'n cofleidio Islam yn ddiffuant.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter33" xml:space="preserve">
+    <value>Ad-Din (gweithred gyfiawn da - gweithred o addoliad) garu fwyaf gan Allah (azza JAL wa) yw'r hyn sy'n cael ei wneud yn rheolaidd.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter34" xml:space="preserve">
+    <value>Cynyddu ffydd a gostyngiadau.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter35" xml:space="preserve">
+    <value>I dalu Zakat yn rhan o Islam.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter36" xml:space="preserve">
+    <value>I gyd-fynd â'r gorymdeithiau angladd (hyd i'r man claddu) yn rhan o ffydd.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter37" xml:space="preserve">
+    <value>Mae ofn yn gredwr y gallai ei weithredoedd da ddirymu (ar goll) heb ei wybodaeth.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter38" xml:space="preserve">
+    <value>Mae gofyn o (angel) Jibrael (Gabriel) o'r Proffwyd (SAWS) am Gred, Islam, Ihsan (perffeithrwydd).</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter4" xml:space="preserve">
+    <value>Mwslim yw'r un sy'n osgoi niweidio Mwslimiaid â'i dafod a dwylo.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter40" xml:space="preserve">
+    <value>Y rhagoriaeth y person hwnnw sy'n gadael pob peth amheus (aneglur) er mwyn ei grefydd.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter41" xml:space="preserve">
+    <value>I dalu Al-Khumus (un rhan o bump o'r ysbail rhyfel i ei roi yn achos Allah) yn rhan o ffydd.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter42" xml:space="preserve">
+    <value>Hyn a ddywedir ynghylch y datganiad: 'Y wobr o weithredoedd yn dibynnu ar y bwriad.'</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter43" xml:space="preserve">
+    <value>Mae'r datganiad y Proffwyd (SAWS): 'Mae crefydd yn An-Nasiha [(i fod yn ddidwyll ac yn wir) i Allah, er mwyn ei Cennad, at y llywodraethwyr Mwslimaidd, ac i'r holl Fwslimiaid.]'</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter5" xml:space="preserve">
+    <value>Pwy Islam yw'r gorau (Pwy yw'r Mwslim gorau)?</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter6" xml:space="preserve">
+    <value>I fwydo (eraill) yn rhan o Islam.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter7" xml:space="preserve">
+    <value>Er mwyn hoffi am un brawd (Mwslimaidd) hyn y mae un yn hoffi ar gyfer ei hun yn rhan o ffydd.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter8" xml:space="preserve">
+    <value>I garu'r Messenger (Muhammad) (SAWS) yn rhan o ffydd.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter9" xml:space="preserve">
+    <value>Melyster (hyfrydwch) o ffydd.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3" xml:space="preserve">
+    <value>Gwybodaeth</value>
+  </data>
+  <data name="IslamInfo_bukhariBook30" xml:space="preserve">
+    <value>Ymprydio</value>
+  </data>
+  <data name="IslamInfo_bukhariBook31" xml:space="preserve">
+    <value>Gweddïo yn y Nos yn Ramadaan (Taraweeh)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook32" xml:space="preserve">
+    <value>Rhinweddau Noson o Qadr</value>
+  </data>
+  <data name="IslamInfo_bukhariBook33" xml:space="preserve">
+    <value>Ymddeol i Mosg ar gyfer Cofio Allah (I'tikaf)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook34" xml:space="preserve">
+    <value>Gwerthu a Masnach</value>
+  </data>
+  <data name="IslamInfo_bukhariBook35" xml:space="preserve">
+    <value>Gwerthu lle mae Price yn cael ei dalu am Nwyddau sydd i'w Cyflwynir ddiweddarach (Fel-Salam)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook36" xml:space="preserve">
+    <value>Shuf'a</value>
+  </data>
+  <data name="IslamInfo_bukhariBook37" xml:space="preserve">
+    <value>Llogi</value>
+  </data>
+  <data name="IslamInfo_bukhariBook38" xml:space="preserve">
+    <value>Transferance o Dyled o un person i'r llall (Al-Hawaala)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook39" xml:space="preserve">
+    <value>Caffala</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter1" xml:space="preserve">
+    <value>Mae rhagoriaeth o wybodaeth.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter11" xml:space="preserve">
+    <value>Defnyddiodd y Proffwyd (SAWS) i ofalu am y bobl yn pregethu drwy ddewis amser addas i sicrhau bod efallai na fyddant yn rhedeg i ffwrdd (neu yn diflasu).</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter12" xml:space="preserve">
+    <value>Pwy bynnag fydd yn sefydlog yn ddiwrnod arbennig i roi (a sgwrs crefyddol) i'r myfyrwyr.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter13" xml:space="preserve">
+    <value>Os Allah (azza JAL wa) am ei wneud yn dda i berson, Mae'n gwneud iddo ddeall y grefydd.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter14" xml:space="preserve">
+    <value>(Mae rhagoriaeth) amgyffred gwybodaeth.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter15" xml:space="preserve">
+    <value>Dymuno i fod fel yr un sydd â gwybodaeth ac Al-Hikmah (doethineb) [hy</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter16" xml:space="preserve">
+    <value>Beth sydd wedi cael ei ddweud am y daith Proffwyd Musa ('alaihi fel-salam) (pan aeth) yn y môr i gwrdd â Al-Khidr.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter17" xml:space="preserve">
+    <value>Mae'r datganiad y Proffwyd (SAWS): 'O Allah!</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter18" xml:space="preserve">
+    <value>Ar ba oedran y gall pobl ifanc gael gwrandawiad (hy y dyfyniad y Hadith o fachgen yn dderbyniol).</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter19" xml:space="preserve">
+    <value>I fynd allan i chwilio am wybodaeth.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter2" xml:space="preserve">
+    <value>Pwy bynnag fydd yn cael ei holi am wybodaeth tra ei fod yn brysur mewn rhai sgwrs, felly iddo orffen siarad ac yna atebodd yr holwr.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter20" xml:space="preserve">
+    <value>Mae rhagoriaeth person sy'n dysgu (Islam, yn dod yn ysgolhaig crefyddau) ac yna yn dysgu i eraill.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter21" xml:space="preserve">
+    <value>(Yr hyn a ddywedir ynghylch) y diflaniad y wybodaeth (crefyddol) ac ymddangosiad (crefyddol) anwybodaeth.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter22" xml:space="preserve">
+    <value>Mae rhagoriaeth o wybodaeth (crefyddol).</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter23" xml:space="preserve">
+    <value>Er mwyn rhoi rheithfarn crefyddol wrth reidio anifail neu sefyll ar unrhyw beth arall.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter24" xml:space="preserve">
+    <value>Pwy bynnag fydd yn rhoi rheithfarn grefyddol trwy beckoning neu drwy nodio.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter25" xml:space="preserve">
+    <value>Y Proffwyd (llifiau) anogodd y bobl (genhadaeth) o 'Abdul Qais i gofio y ffydd a'r wybodaeth (crefyddol) (gan ei fod yn esbonio iddynt) ac i roi gwybod (gyfleu) i'w bobl y maent yn eu gadael ar ôl (yn y cartref).</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter26" xml:space="preserve">
+    <value>I deithio gofyn am ateb i fater problemus, ac i ddysgu i un teulu.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter27" xml:space="preserve">
+    <value>I FI?? X dyletswyddau yn eu tro ar gyfer dysgu gwybodaeth (crefyddol).</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter28" xml:space="preserve">
+    <value>I fod yn gandryll wrth bregethu neu ddysgu os bydd un yn gweld hyn y mae un casáu.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter29" xml:space="preserve">
+    <value>Pwy bynnag fydd yn Penliniodd cyn i'r Imam neu (crefyddol) pregethwr.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter3" xml:space="preserve">
+    <value>Pwy bynnag fydd yn codi ei lais yn (gyfleu) wybodaeth.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter30" xml:space="preserve">
+    <value>Ailadrodd un yn siarad deirgwaith er mwyn gwneud i eraill ddeall.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter31" xml:space="preserve">
+    <value>Mae dyn addysgu (crefydd i) bod ei ferch-gaethwas a'i deulu.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter32" xml:space="preserve">
+    <value>Mae'r pregethu (ac addysgu) o'r wybodaeth (crefyddol) i fenywod gan y Imam (prif):</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter33" xml:space="preserve">
+    <value>Awydd i (dysgu) y Hadith.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter34" xml:space="preserve">
+    <value>Sut y bydd y wybodaeth (crefyddol) ei gymryd i ffwrdd?</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter35" xml:space="preserve">
+    <value>Os bydd y dydd fod yn sefydlog i fenywod er mwyn dysgu crefydd hwy (ar wahân i ddynion)?</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter36" xml:space="preserve">
+    <value>Pwy bynnag fydd yn clywed rhywbeth (ond nid oedd yn ei ddeall) ac yna gofynnodd eto nes ei fod yn deall yn gyfan gwbl.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter37" xml:space="preserve">
+    <value>Mae'n ddyletswydd ar y rhai sy'n bresennol [mewn cyfarfod crefyddol (neu gynhadledd)] i gyfleu'r wybodaeth i'r rhai sy'n absennol.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter38" xml:space="preserve">
+    <value>Mae pechod person sy'n dweud celwydd yn erbyn y Proffwyd (SAWS).</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter39" xml:space="preserve">
+    <value>Mae ysgrifennu gwybodaeth.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter4" xml:space="preserve">
+    <value>O ran yr amrywiaeth o eiriau a ddefnyddir gan adroddwyr gyfleu gwahanol significations ynghylch y cysyniad o yn adrodd ac sydd â phwysigrwydd ar gyfer yr ysgolheigion Hadith yn unig.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter40" xml:space="preserve">
+    <value>Mae'r wybodaeth a'r ei haddysgu a phregethu yn y nos.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter41" xml:space="preserve">
+    <value>I siarad am wybodaeth (crefyddol) yn y nos.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter42" xml:space="preserve">
+    <value>(Yr hyn a ddywedir ynghylch) y gof o'r wybodaeth (crefyddol).</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter43" xml:space="preserve">
+    <value>I fod yn dawel (a gwrando) i ddynion crefyddol a ddysgwyd.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter44" xml:space="preserve">
+    <value>Pan yn ddyn crefyddol a ddysgwyd Gofynnir.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter45" xml:space="preserve">
+    <value>Pwy bynnag, wrth sefyll, gofynnodd yn ddyn crefyddol a ddysgwyd a oedd yn eistedd (ar pulpud neu rhywbeth tebyg, am rywbeth).</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter46" xml:space="preserve">
+    <value>I holi am fater crefyddol a rhoi rheithfarn grefyddol (yn Mina yn ystod Hajj) wrth wneud y Rami o Jimar (taflu o gerrig mân yn y Jimar yn Mina yn ystod Hajj).</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter47" xml:space="preserve">
+    <value>Mae'r Datganiad o Allah (azza JAL wa):</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter48" xml:space="preserve">
+    <value>Pwy bynnag gadael rhai pethau dewisol yn syml ar gyfer yr ofn na fydd rhai pobl yn gallu eu deall a gall ddisgyn i mewn i rywbeth mwy anodd.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter49" xml:space="preserve">
+    <value>Pwy bynnag fydd yn dewis rhai pobl i ddysgu gwybodaeth (crefyddol) yn eu eu well ganddynt dros eraill rhag ofn na fydd y lleill yn ei ddeall.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter5" xml:space="preserve">
+    <value>Mae'r Imam gwestiynu ei gymdeithion er mwyn profi eu gwybodaeth.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter50" xml:space="preserve">
+    <value>(Hyn a ddywedir o ran :-) I fod yn swil (Al-Haya ') wrth ddysgu (gwybodaeth grefyddol).</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter51" xml:space="preserve">
+    <value>Pwy bynnag yn teimlo'n swil (i ofyn rhywbeth) ac yna gofyn person arall i ofyn ar ei ran.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter52" xml:space="preserve">
+    <value>Addysgu gwybodaeth grefyddol a rhoi rheithfarnau crefyddol mewn mosg.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter53" xml:space="preserve">
+    <value>Pwy bynnag a atebodd i'r holwr yn fwy na'r hyn y mae'n ei ofyn.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter6" xml:space="preserve">
+    <value>Hyn a ddywedir am wybodaeth.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter7" xml:space="preserve">
+    <value>Hyn a ddywedir ynghylch y llaw i gyfnewid llaw (o lyfrau o wybodaeth), ac ysgrifennu gwybodaeth gan ysgolheigion crefyddol i wahanol wledydd.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter8" xml:space="preserve">
+    <value>Pwy bynnag fydd yn sefyll ar ddiwedd farther o gasglu.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter9" xml:space="preserve">
+    <value>Mae'r datganiad y Proffwyd (SAWS): 'Mae'n debygol y gall person sy'n derbyn darn o wybodaeth yn anuniongyrchol ddeall yn well nag y sydd wedi clywed yn uniongyrchol o'i tharddiad.'</value>
+  </data>
+  <data name="IslamInfo_bukhariBook4" xml:space="preserve">
+    <value>Ablutions (Wudu ')</value>
+  </data>
+  <data name="IslamInfo_bukhariBook40" xml:space="preserve">
+    <value>Cynrychiolaeth, Awdurdodi, Busnes trwy ddirprwy</value>
+  </data>
+  <data name="IslamInfo_bukhariBook41" xml:space="preserve">
+    <value>Amaethyddiaeth</value>
+  </data>
+  <data name="IslamInfo_bukhariBook42" xml:space="preserve">
+    <value>Dosbarthiad Dŵr</value>
+  </data>
+  <data name="IslamInfo_bukhariBook43" xml:space="preserve">
+    <value>Benthyciadau, Talu Benthyciadau, Rhewi Eiddo, Methdaliad</value>
+  </data>
+  <data name="IslamInfo_bukhariBook44" xml:space="preserve">
+    <value>Khusoomaat</value>
+  </data>
+  <data name="IslamInfo_bukhariBook45" xml:space="preserve">
+    <value>Pethau Coll ei godi gan rywun (Luqaata)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook46" xml:space="preserve">
+    <value>Gorthrwm</value>
+  </data>
+  <data name="IslamInfo_bukhariBook47" xml:space="preserve">
+    <value>Partneriaeth</value>
+  </data>
+  <data name="IslamInfo_bukhariBook48" xml:space="preserve">
+    <value>Morgeisio</value>
+  </data>
+  <data name="IslamInfo_bukhariBook49" xml:space="preserve">
+    <value>Manumission o Caethweision</value>
+  </data>
+  <data name="IslamInfo_bukhariBook5" xml:space="preserve">
+    <value>Ymdrochi (Ghusl)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook50" xml:space="preserve">
+    <value>Makaatib</value>
+  </data>
+  <data name="IslamInfo_bukhariBook51" xml:space="preserve">
+    <value>Anrhegion</value>
+  </data>
+  <data name="IslamInfo_bukhariBook52" xml:space="preserve">
+    <value>Tystion</value>
+  </data>
+  <data name="IslamInfo_bukhariBook53" xml:space="preserve">
+    <value>Heddwch</value>
+  </data>
+  <data name="IslamInfo_bukhariBook54" xml:space="preserve">
+    <value>Amodau</value>
+  </data>
+  <data name="IslamInfo_bukhariBook55" xml:space="preserve">
+    <value>Ewyllysiau a Destament (Wasaayaa)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook56" xml:space="preserve">
+    <value>Ymladd dros yr Achos Allah (Jihaad)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook57" xml:space="preserve">
+    <value>Un rhan o bump o Booty i Achos Allah (Khumus)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook58" xml:space="preserve">
+    <value>Jizyah a Mawaada'ah</value>
+  </data>
+  <data name="IslamInfo_bukhariBook59" xml:space="preserve">
+    <value>Dechrau y Greadigaeth</value>
+  </data>
+  <data name="IslamInfo_bukhariBook6" xml:space="preserve">
+    <value>Cyfnodau Menstrual</value>
+  </data>
+  <data name="IslamInfo_bukhariBook60" xml:space="preserve">
+    <value>Prophets</value>
+  </data>
+  <data name="IslamInfo_bukhariBook61" xml:space="preserve">
+    <value>Rhinweddau a Rhinweddau y Proffwyd (PBUH) a'i Companions</value>
+  </data>
+  <data name="IslamInfo_bukhariBook62" xml:space="preserve">
+    <value>Cymdeithion y Proffwyd</value>
+  </data>
+  <data name="IslamInfo_bukhariBook63" xml:space="preserve">
+    <value>Rhinweddau'r Cynorthwywyr yn Madinah (Ansaar)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook64" xml:space="preserve">
+    <value>Alldeithiau milwrol a arweinir gan y Proffwyd (PBUH) (Al-Maghaazi)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook65" xml:space="preserve">
+    <value>Sylwadau broffwydol ar y Qur'an (Tafseer y Proffwyd (PBUH))</value>
+  </data>
+  <data name="IslamInfo_bukhariBook66" xml:space="preserve">
+    <value>Rhinweddau y Qur'an</value>
+  </data>
+  <data name="IslamInfo_bukhariBook67" xml:space="preserve">
+    <value>Briodas, Priodas (Nikaah)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook68" xml:space="preserve">
+    <value>Ysgariad</value>
+  </data>
+  <data name="IslamInfo_bukhariBook69" xml:space="preserve">
+    <value>Cefnogi'r Teulu</value>
+  </data>
+  <data name="IslamInfo_bukhariBook7" xml:space="preserve">
+    <value>Rhwbio dwylo a thraed gyda llwch (Tayammum)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook70" xml:space="preserve">
+    <value>Bwyd, Prydau</value>
+  </data>
+  <data name="IslamInfo_bukhariBook71" xml:space="preserve">
+    <value>Aberthu ar Achlysur Geni (`Aqiqa)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook72" xml:space="preserve">
+    <value>Hela, Lladd</value>
+  </data>
+  <data name="IslamInfo_bukhariBook73" xml:space="preserve">
+    <value>Aberth al-Adha Gŵyl (Adaahi)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook74" xml:space="preserve">
+    <value>Diodydd</value>
+  </data>
+  <data name="IslamInfo_bukhariBook75" xml:space="preserve">
+    <value>Cleifion</value>
+  </data>
+  <data name="IslamInfo_bukhariBook76" xml:space="preserve">
+    <value>Meddygaeth</value>
+  </data>
+  <data name="IslamInfo_bukhariBook77" xml:space="preserve">
+    <value>Gwisg</value>
+  </data>
+  <data name="IslamInfo_bukhariBook78" xml:space="preserve">
+    <value>Manners da a Ffurflen (Al-Adab)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook79" xml:space="preserve">
+    <value>Gofyn Caniatâd</value>
+  </data>
+  <data name="IslamInfo_bukhariBook8" xml:space="preserve">
+    <value>Gweddïau (Salat)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook80" xml:space="preserve">
+    <value>Invocations</value>
+  </data>
+  <data name="IslamInfo_bukhariBook81" xml:space="preserve">
+    <value>I wneud y Tendr Galon (Ar-Riqaq)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook82" xml:space="preserve">
+    <value>Will Divine (Al-Qadar)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook83" xml:space="preserve">
+    <value>Llwon a Addewidion</value>
+  </data>
+  <data name="IslamInfo_bukhariBook84" xml:space="preserve">
+    <value>Expiation Llwon heb eu hateb</value>
+  </data>
+  <data name="IslamInfo_bukhariBook85" xml:space="preserve">
+    <value>Cyfreithiau Etifeddu (Al-Faraa'id)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook86" xml:space="preserve">
+    <value>Terfynau a Chosbau a osodwyd gan Allah (Hudood)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook87" xml:space="preserve">
+    <value>Cosbi disbelievers at War gyda Allah a Ei Apostol</value>
+  </data>
+  <data name="IslamInfo_bukhariBook88" xml:space="preserve">
+    <value>Arian gwaed (Ad-Diyat)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook89" xml:space="preserve">
+    <value>Delio â Apostates</value>
+  </data>
+  <data name="IslamInfo_bukhariBook9" xml:space="preserve">
+    <value>Amseroedd y Gweddïau</value>
+  </data>
+  <data name="IslamInfo_bukhariBook90" xml:space="preserve">
+    <value>Dweud Rhywbeth dan Gorfodaeth (Ikraah)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook91" xml:space="preserve">
+    <value>Tricks</value>
+  </data>
+  <data name="IslamInfo_bukhariBook92" xml:space="preserve">
+    <value>Dehongli Dreams</value>
+  </data>
+  <data name="IslamInfo_bukhariBook93" xml:space="preserve">
+    <value>Adfyd a Diwedd y Byd</value>
+  </data>
+  <data name="IslamInfo_bukhariBook94" xml:space="preserve">
+    <value>Dyfarniadau (Ahkaam)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook95" xml:space="preserve">
+    <value>Dymuniadau</value>
+  </data>
+  <data name="IslamInfo_bukhariBook96" xml:space="preserve">
+    <value>Derbyn gwybodaeth a roddir gan berson  Yn wir</value>
+  </data>
+  <data name="IslamInfo_bukhariBook97" xml:space="preserve">
+    <value>Dal Cyflym i'r Qur'an a Sunnah</value>
+  </data>
+  <data name="IslamInfo_bukhariBook98" xml:space="preserve">
+    <value>Undod, Unigrywiaeth Allah (Tawheed)</value>
+  </data>
+  <data name="IslamInfo_Classification" xml:space="preserve">
+    <value>Dosbarthiad</value>
+  </data>
+  <data name="IslamInfo_Connecting" xml:space="preserve">
+    <value>Cysylltu</value>
+  </data>
+  <data name="IslamInfo_LetterName" xml:space="preserve">
+    <value>Llythyr Enw</value>
+  </data>
+  <data name="IslamInfo_muslimBook1" xml:space="preserve">
+    <value>Cyflwyniad</value>
+  </data>
+  <data name="IslamInfo_muslimBook10" xml:space="preserve">
+    <value>Y Llyfr Gweddi (Rain)</value>
+  </data>
+  <data name="IslamInfo_muslimBook11" xml:space="preserve">
+    <value>Y Llyfr Gweddi (Eclipse)</value>
+  </data>
+  <data name="IslamInfo_muslimBook12" xml:space="preserve">
+    <value>Y Llyfr Gweddi (Angladdau)</value>
+  </data>
+  <data name="IslamInfo_muslimBook13" xml:space="preserve">
+    <value>Llyfr Zakat</value>
+  </data>
+  <data name="IslamInfo_muslimBook14" xml:space="preserve">
+    <value>Llyfr Ymprydio</value>
+  </data>
+  <data name="IslamInfo_muslimBook15" xml:space="preserve">
+    <value>Llyfr I'tikaf</value>
+  </data>
+  <data name="IslamInfo_muslimBook16" xml:space="preserve">
+    <value>Llyfr Bererindod</value>
+  </data>
+  <data name="IslamInfo_muslimBook17" xml:space="preserve">
+    <value>Llyfr Priodas</value>
+  </data>
+  <data name="IslamInfo_muslimBook18" xml:space="preserve">
+    <value>Llyfr sugno</value>
+  </data>
+  <data name="IslamInfo_muslimBook19" xml:space="preserve">
+    <value>Llyfr Ysgariad</value>
+  </data>
+  <data name="IslamInfo_muslimBook2" xml:space="preserve">
+    <value>Llyfr Ffydd</value>
+  </data>
+  <data name="IslamInfo_muslimBook20" xml:space="preserve">
+    <value>Llyfr melltithion ennyn</value>
+  </data>
+  <data name="IslamInfo_muslimBook21" xml:space="preserve">
+    <value>Llyfr Caethweision Emancipating</value>
+  </data>
+  <data name="IslamInfo_muslimBook22" xml:space="preserve">
+    <value>Llyfr Trafodion</value>
+  </data>
+  <data name="IslamInfo_muslimBook23" xml:space="preserve">
+    <value>Llyfr Masaaqah</value>
+  </data>
+  <data name="IslamInfo_muslimBook24" xml:space="preserve">
+    <value>Y Llyfr yn ymwneud â'r Rheolau Etifeddu</value>
+  </data>
+  <data name="IslamInfo_muslimBook25" xml:space="preserve">
+    <value>Llyfr Anrhegion</value>
+  </data>
+  <data name="IslamInfo_muslimBook26" xml:space="preserve">
+    <value>Llyfr Cymynroddion</value>
+  </data>
+  <data name="IslamInfo_muslimBook27" xml:space="preserve">
+    <value>Llyfr Addunedau</value>
+  </data>
+  <data name="IslamInfo_muslimBook28" xml:space="preserve">
+    <value>Llyfr Llwon</value>
+  </data>
+  <data name="IslamInfo_muslimBook29" xml:space="preserve">
+    <value>Y Llyfr yn ymwneud â'r Llw, ar gyfer Sefydlu Cyfrifoldeb Murders, Ymladd, Requital</value>
+  </data>
+  <data name="IslamInfo_muslimBook3" xml:space="preserve">
+    <value>Llyfr Buro</value>
+  </data>
+  <data name="IslamInfo_muslimBook30" xml:space="preserve">
+    <value>Y Llyfr ymwneud â Cosbau Penodedig gan Islam</value>
+  </data>
+  <data name="IslamInfo_muslimBook31" xml:space="preserve">
+    <value>Y Llyfr ymwneud â Penderfyniadau Barnwrol</value>
+  </data>
+  <data name="IslamInfo_muslimBook32" xml:space="preserve">
+    <value>Llyfr Luqatah</value>
+  </data>
+  <data name="IslamInfo_muslimBook33" xml:space="preserve">
+    <value>Llyfr Jihad a Alldaith</value>
+  </data>
+  <data name="IslamInfo_muslimBook34" xml:space="preserve">
+    <value>Y Llyfr ar y Llywodraeth</value>
+  </data>
+  <data name="IslamInfo_muslimBook35" xml:space="preserve">
+    <value>Llyfr Gemau ac Anifeiliaid a allai fod Lladd a'r Aninals sydd i'w Bwyta</value>
+  </data>
+  <data name="IslamInfo_muslimBook36" xml:space="preserve">
+    <value>Llyfr aberth</value>
+  </data>
+  <data name="IslamInfo_muslimBook37" xml:space="preserve">
+    <value>Llyfr Diodydd</value>
+  </data>
+  <data name="IslamInfo_muslimBook38" xml:space="preserve">
+    <value>Y Llyfr yn ymwneud â Dillad a Addurno</value>
+  </data>
+  <data name="IslamInfo_muslimBook39" xml:space="preserve">
+    <value>Y Llyfr ar Ymddygiad Cyffredinol</value>
+  </data>
+  <data name="IslamInfo_muslimBook4" xml:space="preserve">
+    <value>Llyfr Mislif</value>
+  </data>
+  <data name="IslamInfo_muslimBook40" xml:space="preserve">
+    <value>Y Llyfr ar Salutations a Cyfarchion</value>
+  </data>
+  <data name="IslamInfo_muslimBook41" xml:space="preserve">
+    <value>Y Llyfr Ynghylch Defnydd Geiriau Cywir</value>
+  </data>
+  <data name="IslamInfo_muslimBook42" xml:space="preserve">
+    <value>Llyfr Poetry</value>
+  </data>
+  <data name="IslamInfo_muslimBook43" xml:space="preserve">
+    <value>Llyfr Weledigaeth</value>
+  </data>
+  <data name="IslamInfo_muslimBook44" xml:space="preserve">
+    <value>Y Llyfr ymwneud â Nodweddion rhagorol y Proffwyd Sanctaidd (gall Heddwch fod arnynt) a Ei Companions</value>
+  </data>
+  <data name="IslamInfo_muslimBook45" xml:space="preserve">
+    <value>Y Llyfr yn ymwneud â Rhagoriaethau y Companions (Allah Byddwch yn falch gyda nhw) y Proffwyd Sanctaidd</value>
+  </data>
+  <data name="IslamInfo_muslimBook46" xml:space="preserve">
+    <value>Llyfr Virtue, Manners da a Ymuno o Cysylltiadau Perthynas</value>
+  </data>
+  <data name="IslamInfo_muslimBook47" xml:space="preserve">
+    <value>Llyfr Destiny</value>
+  </data>
+  <data name="IslamInfo_muslimBook48" xml:space="preserve">
+    <value>Llyfr Gwybodaeth</value>
+  </data>
+  <data name="IslamInfo_muslimBook49" xml:space="preserve">
+    <value>Y Llyfr ymwneud â Cofio Allah, Ymbiliau, edifeirwch a maddeuant Ceisio</value>
+  </data>
+  <data name="IslamInfo_muslimBook5" xml:space="preserve">
+    <value>Llyfr Gweddïau</value>
+  </data>
+  <data name="IslamInfo_muslimBook50" xml:space="preserve">
+    <value>Y Llyfr Traddodiadau Galon-toddi</value>
+  </data>
+  <data name="IslamInfo_muslimBook51" xml:space="preserve">
+    <value>Y Llyfr ymwneud â Edifeirwch a Anogaeth i Edifeirwch</value>
+  </data>
+  <data name="IslamInfo_muslimBook52" xml:space="preserve">
+    <value>Ymwneud I Charateristics Y ragrithwyr Ac Reoli Ynghylch Nhw</value>
+  </data>
+  <data name="IslamInfo_muslimBook53" xml:space="preserve">
+    <value>The Description y Dydd y Farn, Paradise ac Uffern Book Rhoi</value>
+  </data>
+  <data name="IslamInfo_muslimBook54" xml:space="preserve">
+    <value>Y Llyfr ymwneud â Paradise, Ei Disgrifiad, Ei cymorthdaliadau a Ei Intimates</value>
+  </data>
+  <data name="IslamInfo_muslimBook55" xml:space="preserve">
+    <value>Y Llyfr yn ymwneud â'r cythrwfl ac argoelion y Awr Olaf</value>
+  </data>
+  <data name="IslamInfo_muslimBook56" xml:space="preserve">
+    <value>Y Llyfr ymwneud â Piety a feddalu of Hearts</value>
+  </data>
+  <data name="IslamInfo_muslimBook57" xml:space="preserve">
+    <value>Llyfr Sylwadau</value>
+  </data>
+  <data name="IslamInfo_muslimBook6" xml:space="preserve">
+    <value>Llyfr Mosgiau a Lleoedd Gweddi</value>
+  </data>
+  <data name="IslamInfo_muslimBook7" xml:space="preserve">
+    <value>Y Llyfr Gweddi (Travellers)</value>
+  </data>
+  <data name="IslamInfo_muslimBook8" xml:space="preserve">
+    <value>Y Llyfr Gweddi (Dydd Gwener)</value>
+  </data>
+  <data name="IslamInfo_muslimBook9" xml:space="preserve">
+    <value>Y Llyfr Gweddi (Two ddau Eid)</value>
+  </data>
+  <data name="IslamInfo_PrayerUnits" xml:space="preserve">
+    <value>Unedau gweddi</value>
+  </data>
+  <data name="IslamInfo_QuranChapter1" xml:space="preserve">
+    <value>Mae'r Agor</value>
+  </data>
+  <data name="IslamInfo_QuranChapter10" xml:space="preserve">
+    <value>Jonas</value>
+  </data>
+  <data name="IslamInfo_QuranChapter100" xml:space="preserve">
+    <value>Mae'r Chargers</value>
+  </data>
+  <data name="IslamInfo_QuranChapter101" xml:space="preserve">
+    <value>Mae'r Calamity</value>
+  </data>
+  <data name="IslamInfo_QuranChapter102" xml:space="preserve">
+    <value>Cystadleuaeth</value>
+  </data>
+  <data name="IslamInfo_QuranChapter103" xml:space="preserve">
+    <value>Bydd y Diwrnod dirywio, Epoch</value>
+  </data>
+  <data name="IslamInfo_QuranChapter104" xml:space="preserve">
+    <value>Mae'r Traducer</value>
+  </data>
+  <data name="IslamInfo_QuranChapter105" xml:space="preserve">
+    <value>Yr Eliffant</value>
+  </data>
+  <data name="IslamInfo_QuranChapter106" xml:space="preserve">
+    <value>Quraysh</value>
+  </data>
+  <data name="IslamInfo_QuranChapter107" xml:space="preserve">
+    <value>Elusendod</value>
+  </data>
+  <data name="IslamInfo_QuranChapter108" xml:space="preserve">
+    <value>Niferoedd</value>
+  </data>
+  <data name="IslamInfo_QuranChapter109" xml:space="preserve">
+    <value>Mae'r disbelievers</value>
+  </data>
+  <data name="IslamInfo_QuranChapter11" xml:space="preserve">
+    <value>Hud</value>
+  </data>
+  <data name="IslamInfo_QuranChapter110" xml:space="preserve">
+    <value>Cymorth Divine</value>
+  </data>
+  <data name="IslamInfo_QuranChapter111" xml:space="preserve">
+    <value>Mae'r Ffibr Palm</value>
+  </data>
+  <data name="IslamInfo_QuranChapter112" xml:space="preserve">
+    <value>Didwylledd</value>
+  </data>
+  <data name="IslamInfo_QuranChapter113" xml:space="preserve">
+    <value>Mae'r Dawn</value>
+  </data>
+  <data name="IslamInfo_QuranChapter114" xml:space="preserve">
+    <value>Ddynoliaeth</value>
+  </data>
+  <data name="IslamInfo_QuranChapter12" xml:space="preserve">
+    <value>Joseph</value>
+  </data>
+  <data name="IslamInfo_QuranChapter13" xml:space="preserve">
+    <value>Mae'r Thunder</value>
+  </data>
+  <data name="IslamInfo_QuranChapter14" xml:space="preserve">
+    <value>Abraham</value>
+  </data>
+  <data name="IslamInfo_QuranChapter15" xml:space="preserve">
+    <value>The Rock</value>
+  </data>
+  <data name="IslamInfo_QuranChapter16" xml:space="preserve">
+    <value>Mae'r Bee</value>
+  </data>
+  <data name="IslamInfo_QuranChapter17" xml:space="preserve">
+    <value>Y Daith Nos</value>
+  </data>
+  <data name="IslamInfo_QuranChapter18" xml:space="preserve">
+    <value>Ogof</value>
+  </data>
+  <data name="IslamInfo_QuranChapter19" xml:space="preserve">
+    <value>Mary</value>
+  </data>
+  <data name="IslamInfo_QuranChapter2" xml:space="preserve">
+    <value>Y Fuwch</value>
+  </data>
+  <data name="IslamInfo_QuranChapter20" xml:space="preserve">
+    <value>Lampau-Haa</value>
+  </data>
+  <data name="IslamInfo_QuranChapter21" xml:space="preserve">
+    <value>Mae'r Prophets</value>
+  </data>
+  <data name="IslamInfo_QuranChapter22" xml:space="preserve">
+    <value>Pererindod</value>
+  </data>
+  <data name="IslamInfo_QuranChapter23" xml:space="preserve">
+    <value>Mae'r Credinwyr</value>
+  </data>
+  <data name="IslamInfo_QuranChapter24" xml:space="preserve">
+    <value>Y Golau</value>
+  </data>
+  <data name="IslamInfo_QuranChapter25" xml:space="preserve">
+    <value>Mae'r Maen Prawf</value>
+  </data>
+  <data name="IslamInfo_QuranChapter26" xml:space="preserve">
+    <value>Mae'r Beirdd</value>
+  </data>
+  <data name="IslamInfo_QuranChapter27" xml:space="preserve">
+    <value>Mae'r Ant</value>
+  </data>
+  <data name="IslamInfo_QuranChapter28" xml:space="preserve">
+    <value>Y Storïau</value>
+  </data>
+  <data name="IslamInfo_QuranChapter29" xml:space="preserve">
+    <value>Mae'r Spider</value>
+  </data>
+  <data name="IslamInfo_QuranChapter3" xml:space="preserve">
+    <value>Y Teulu o Imraan</value>
+  </data>
+  <data name="IslamInfo_QuranChapter30" xml:space="preserve">
+    <value>Y Rhufeiniaid</value>
+  </data>
+  <data name="IslamInfo_QuranChapter31" xml:space="preserve">
+    <value>Luqman</value>
+  </data>
+  <data name="IslamInfo_QuranChapter32" xml:space="preserve">
+    <value>Mae'r ymostwng</value>
+  </data>
+  <data name="IslamInfo_QuranChapter33" xml:space="preserve">
+    <value>Mae'r CLAN</value>
+  </data>
+  <data name="IslamInfo_QuranChapter34" xml:space="preserve">
+    <value>Seba</value>
+  </data>
+  <data name="IslamInfo_QuranChapter35" xml:space="preserve">
+    <value>Mae'r Dechreuwr</value>
+  </data>
+  <data name="IslamInfo_QuranChapter36" xml:space="preserve">
+    <value>Yaseen</value>
+  </data>
+  <data name="IslamInfo_QuranChapter37" xml:space="preserve">
+    <value>Mae'r rhai a luniwyd yn Rhengoedd</value>
+  </data>
+  <data name="IslamInfo_QuranChapter38" xml:space="preserve">
+    <value>Mae'r llythyr Saad</value>
+  </data>
+  <data name="IslamInfo_QuranChapter39" xml:space="preserve">
+    <value>Mae'r Grwpiau</value>
+  </data>
+  <data name="IslamInfo_QuranChapter4" xml:space="preserve">
+    <value>Menywod</value>
+  </data>
+  <data name="IslamInfo_QuranChapter40" xml:space="preserve">
+    <value>Mae'r Forgiver</value>
+  </data>
+  <data name="IslamInfo_QuranChapter41" xml:space="preserve">
+    <value>Esboniad yn fanwl</value>
+  </data>
+  <data name="IslamInfo_QuranChapter42" xml:space="preserve">
+    <value>Ymgynghori</value>
+  </data>
+  <data name="IslamInfo_QuranChapter43" xml:space="preserve">
+    <value>Addurniadau o aur</value>
+  </data>
+  <data name="IslamInfo_QuranChapter44" xml:space="preserve">
+    <value>Mae'r Mwg</value>
+  </data>
+  <data name="IslamInfo_QuranChapter45" xml:space="preserve">
+    <value>Cwrcwd</value>
+  </data>
+  <data name="IslamInfo_QuranChapter46" xml:space="preserve">
+    <value>Y Twyni</value>
+  </data>
+  <data name="IslamInfo_QuranChapter47" xml:space="preserve">
+    <value>Muhammad</value>
+  </data>
+  <data name="IslamInfo_QuranChapter48" xml:space="preserve">
+    <value>Mae'r Victory</value>
+  </data>
+  <data name="IslamInfo_QuranChapter49" xml:space="preserve">
+    <value>Mae'r Apartments Mewnol</value>
+  </data>
+  <data name="IslamInfo_QuranChapter5" xml:space="preserve">
+    <value>Mae'r Tabl</value>
+  </data>
+  <data name="IslamInfo_QuranChapter50" xml:space="preserve">
+    <value>Mae'r llythyr Qaaf</value>
+  </data>
+  <data name="IslamInfo_QuranChapter51" xml:space="preserve">
+    <value>Mae'r Winds nithio</value>
+  </data>
+  <data name="IslamInfo_QuranChapter52" xml:space="preserve">
+    <value>Y Mwnt</value>
+  </data>
+  <data name="IslamInfo_QuranChapter53" xml:space="preserve">
+    <value>The Star</value>
+  </data>
+  <data name="IslamInfo_QuranChapter54" xml:space="preserve">
+    <value>Y Lleuad</value>
+  </data>
+  <data name="IslamInfo_QuranChapter55" xml:space="preserve">
+    <value>Mae'r beneficent</value>
+  </data>
+  <data name="IslamInfo_QuranChapter56" xml:space="preserve">
+    <value>Mae'r anochel</value>
+  </data>
+  <data name="IslamInfo_QuranChapter57" xml:space="preserve">
+    <value>Mae'r Haearn</value>
+  </data>
+  <data name="IslamInfo_QuranChapter58" xml:space="preserve">
+    <value>Mae'r pledio'n Woman</value>
+  </data>
+  <data name="IslamInfo_QuranChapter59" xml:space="preserve">
+    <value>Y Gaethglud</value>
+  </data>
+  <data name="IslamInfo_QuranChapter6" xml:space="preserve">
+    <value>Rheoliadau Gwartheg</value>
+  </data>
+  <data name="IslamInfo_QuranChapter60" xml:space="preserve">
+    <value>Fod i gael ei archwilio</value>
+  </data>
+  <data name="IslamInfo_QuranChapter61" xml:space="preserve">
+    <value>Mae'r Rhengoedd</value>
+  </data>
+  <data name="IslamInfo_QuranChapter62" xml:space="preserve">
+    <value>Dydd Gwener</value>
+  </data>
+  <data name="IslamInfo_QuranChapter63" xml:space="preserve">
+    <value>Y rhagrithwyr</value>
+  </data>
+  <data name="IslamInfo_QuranChapter64" xml:space="preserve">
+    <value>Dadrithiad Mutual</value>
+  </data>
+  <data name="IslamInfo_QuranChapter65" xml:space="preserve">
+    <value>Ysgariad</value>
+  </data>
+  <data name="IslamInfo_QuranChapter66" xml:space="preserve">
+    <value>Gorchymyn Gwahardd</value>
+  </data>
+  <data name="IslamInfo_QuranChapter67" xml:space="preserve">
+    <value>Mae'r Sofraniaeth</value>
+  </data>
+  <data name="IslamInfo_QuranChapter68" xml:space="preserve">
+    <value>Y Pen</value>
+  </data>
+  <data name="IslamInfo_QuranChapter69" xml:space="preserve">
+    <value>Realiti</value>
+  </data>
+  <data name="IslamInfo_QuranChapter7" xml:space="preserve">
+    <value>The Heights</value>
+  </data>
+  <data name="IslamInfo_QuranChapter70" xml:space="preserve">
+    <value>Mae'r Grisiau Esgynnol</value>
+  </data>
+  <data name="IslamInfo_QuranChapter71" xml:space="preserve">
+    <value>Noah</value>
+  </data>
+  <data name="IslamInfo_QuranChapter72" xml:space="preserve">
+    <value>Y Jinn</value>
+  </data>
+  <data name="IslamInfo_QuranChapter73" xml:space="preserve">
+    <value>Mae'r Enshrouded Un</value>
+  </data>
+  <data name="IslamInfo_QuranChapter74" xml:space="preserve">
+    <value>Mae'r gorchuddio Un</value>
+  </data>
+  <data name="IslamInfo_QuranChapter75" xml:space="preserve">
+    <value>Mae'r Atgyfodiad</value>
+  </data>
+  <data name="IslamInfo_QuranChapter76" xml:space="preserve">
+    <value>Dyn</value>
+  </data>
+  <data name="IslamInfo_QuranChapter77" xml:space="preserve">
+    <value>Mae'r emissaries</value>
+  </data>
+  <data name="IslamInfo_QuranChapter78" xml:space="preserve">
+    <value>Mae'r Cyhoeddiad</value>
+  </data>
+  <data name="IslamInfo_QuranChapter79" xml:space="preserve">
+    <value>Mae'r rhai sy'n llusgo allan</value>
+  </data>
+  <data name="IslamInfo_QuranChapter8" xml:space="preserve">
+    <value>Mae difetha of War</value>
+  </data>
+  <data name="IslamInfo_QuranChapter80" xml:space="preserve">
+    <value>Roedd yn gwgu</value>
+  </data>
+  <data name="IslamInfo_QuranChapter81" xml:space="preserve">
+    <value>Mae'r ddymchwel</value>
+  </data>
+  <data name="IslamInfo_QuranChapter82" xml:space="preserve">
+    <value>Mae'r glynu</value>
+  </data>
+  <data name="IslamInfo_QuranChapter83" xml:space="preserve">
+    <value>Twyllo'r</value>
+  </data>
+  <data name="IslamInfo_QuranChapter84" xml:space="preserve">
+    <value>Mae'r Hollti Agored</value>
+  </data>
+  <data name="IslamInfo_QuranChapter85" xml:space="preserve">
+    <value>Cytserau</value>
+  </data>
+  <data name="IslamInfo_QuranChapter86" xml:space="preserve">
+    <value>Mae'r Morning Star</value>
+  </data>
+  <data name="IslamInfo_QuranChapter87" xml:space="preserve">
+    <value>Y Goruchaf</value>
+  </data>
+  <data name="IslamInfo_QuranChapter88" xml:space="preserve">
+    <value>Mae'r llethol</value>
+  </data>
+  <data name="IslamInfo_QuranChapter89" xml:space="preserve">
+    <value>Mae'r Dawn</value>
+  </data>
+  <data name="IslamInfo_QuranChapter9" xml:space="preserve">
+    <value>Mae'r Edifeirwch</value>
+  </data>
+  <data name="IslamInfo_QuranChapter90" xml:space="preserve">
+    <value>Mae Dinas</value>
+  </data>
+  <data name="IslamInfo_QuranChapter91" xml:space="preserve">
+    <value>The Sun</value>
+  </data>
+  <data name="IslamInfo_QuranChapter92" xml:space="preserve">
+    <value>The Night</value>
+  </data>
+  <data name="IslamInfo_QuranChapter93" xml:space="preserve">
+    <value>Oriau Bore</value>
+  </data>
+  <data name="IslamInfo_QuranChapter94" xml:space="preserve">
+    <value>Mae'r Gysur</value>
+  </data>
+  <data name="IslamInfo_QuranChapter95" xml:space="preserve">
+    <value>Mae'r Ffig</value>
+  </data>
+  <data name="IslamInfo_QuranChapter96" xml:space="preserve">
+    <value>Mae'r clot</value>
+  </data>
+  <data name="IslamInfo_QuranChapter97" xml:space="preserve">
+    <value>The Power, Fate</value>
+  </data>
+  <data name="IslamInfo_QuranChapter98" xml:space="preserve">
+    <value>Y Dystiolaeth</value>
+  </data>
+  <data name="IslamInfo_QuranChapter99" xml:space="preserve">
+    <value>Mae'r Daeargryn</value>
+  </data>
+  <data name="IslamInfo_Terminating" xml:space="preserve">
+    <value>Terfynu</value>
+  </data>
+  <data name="IslamInfo_Translation" xml:space="preserve">
+    <value>Cyfieithu</value>
+  </data>
+  <data name="IslamInfo_Transliteration" xml:space="preserve">
+    <value>Trawslythrennu</value>
+  </data>
+  <data name="IslamInfo_UnicodeName" xml:space="preserve">
+    <value>Unicode Enw</value>
+  </data>
+  <data name="IslamInfo_UnicodeValue" xml:space="preserve">
+    <value>Gwerth Unicode</value>
+  </data>
+  <data name="unicode_ArabicComma" xml:space="preserve">
+    <value>Arabeg Adain Garpiog</value>
+  </data>
+  <data name="unicode_ArabicDamma" xml:space="preserve">
+    <value>Arabeg Damma</value>
+  </data>
+  <data name="unicode_ArabicDammatan" xml:space="preserve">
+    <value>Arabeg Dammatan</value>
+  </data>
+  <data name="unicode_ArabicEmptyCentreHighStop" xml:space="preserve">
+    <value>Canolfan Gwag Arabeg Uchel Stop</value>
+  </data>
+  <data name="unicode_ArabicEmptyCentreLowStop" xml:space="preserve">
+    <value>Canolfan Gwag Arabeg Isel Stop</value>
+  </data>
+  <data name="unicode_ArabicEndOfAyah" xml:space="preserve">
+    <value>Arabeg Diwedd Ayah</value>
+  </data>
+  <data name="unicode_ArabicFatha" xml:space="preserve">
+    <value>Arabeg Fatha</value>
+  </data>
+  <data name="unicode_ArabicFathatan" xml:space="preserve">
+    <value>Arabeg Fathatan</value>
+  </data>
+  <data name="unicode_ArabicHamzaAbove" xml:space="preserve">
+    <value>Arabeg Hamza Uchod</value>
+  </data>
+  <data name="unicode_ArabicHamzaBelow" xml:space="preserve">
+    <value>Arabeg Hamza Isod</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitEight" xml:space="preserve">
+    <value>Digid Arabeg-Indic Wyth</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitFive" xml:space="preserve">
+    <value>Digid Arabeg-Indic Pum</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitFour" xml:space="preserve">
+    <value>Digid Arabeg-Indic Four</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitNine" xml:space="preserve">
+    <value>Digid Arabeg-Indic naw</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitOne" xml:space="preserve">
+    <value>Digid Arabeg-Indic Un</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitSeven" xml:space="preserve">
+    <value>Digid Arabeg-Indic Saith</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitSix" xml:space="preserve">
+    <value>Digid Arabeg-Indic Chwe</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitThree" xml:space="preserve">
+    <value>Digid Arabeg-Indic Tri</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitTwo" xml:space="preserve">
+    <value>Digid Arabeg-Indic Dau</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitZero" xml:space="preserve">
+    <value>Digid Arabeg-Indic Zero</value>
+  </data>
+  <data name="unicode_ArabicKasra" xml:space="preserve">
+    <value>Arabeg Kasra</value>
+  </data>
+  <data name="unicode_ArabicKasratan" xml:space="preserve">
+    <value>Arabeg Kasratan</value>
+  </data>
+  <data name="unicode_ArabicLetterAin" xml:space="preserve">
+    <value>Llythyr Arabeg Ain</value>
+  </data>
+  <data name="unicode_ArabicLetterAlef" xml:space="preserve">
+    <value>Llythyr Arabeg Alef</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefMaksura" xml:space="preserve">
+    <value>Arabeg Llythyr Alef Maksura</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefWasla" xml:space="preserve">
+    <value>Arabeg Llythyr Alef Wasla</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefWithHamzaAbove" xml:space="preserve">
+    <value>Llythyr Arabeg Alef Gyda Hamza Uchod</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefWithHamzaBelow" xml:space="preserve">
+    <value>Llythyr Arabeg Alef Gyda Hamza Isod</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefWithMaddaAbove" xml:space="preserve">
+    <value>Llythyr Arabeg Alef Gyda Madda Uchod</value>
+  </data>
+  <data name="unicode_ArabicLetterBeh" xml:space="preserve">
+    <value>Llythyr Arabeg beh</value>
+  </data>
+  <data name="unicode_ArabicLetterDad" xml:space="preserve">
+    <value>Llythyr Arabeg Dad</value>
+  </data>
+  <data name="unicode_ArabicLetterDal" xml:space="preserve">
+    <value>Llythyr Arabeg Dal</value>
+  </data>
+  <data name="unicode_ArabicLetterFeh" xml:space="preserve">
+    <value>Llythyr Arabeg Feh</value>
+  </data>
+  <data name="unicode_ArabicLetterGaf" xml:space="preserve">
+    <value>Llythyr Arabeg GAF</value>
+  </data>
+  <data name="unicode_ArabicLetterGhain" xml:space="preserve">
+    <value>Llythyr Arabeg Ghain</value>
+  </data>
+  <data name="unicode_ArabicLetterHah" xml:space="preserve">
+    <value>Llythyr Arabeg Hah</value>
+  </data>
+  <data name="unicode_ArabicLetterHamza" xml:space="preserve">
+    <value>Llythyr Arabeg Hamza</value>
+  </data>
+  <data name="unicode_ArabicLetterHeh" xml:space="preserve">
+    <value>Llythyr Arabeg Heh</value>
+  </data>
+  <data name="unicode_ArabicLetterJeem" xml:space="preserve">
+    <value>Llythyr Arabeg Jeem</value>
+  </data>
+  <data name="unicode_ArabicLetterKaf" xml:space="preserve">
+    <value>Llythyr Arabeg Kaf</value>
+  </data>
+  <data name="unicode_ArabicLetterKhah" xml:space="preserve">
+    <value>Llythyr Arabeg Khah</value>
+  </data>
+  <data name="unicode_ArabicLetterLam" xml:space="preserve">
+    <value>Llythyr Arabeg Lam</value>
+  </data>
+  <data name="unicode_ArabicLetterMeem" xml:space="preserve">
+    <value>Llythyr Arabeg Meem</value>
+  </data>
+  <data name="unicode_ArabicLetterNoon" xml:space="preserve">
+    <value>Arabeg Noon Llythyr</value>
+  </data>
+  <data name="unicode_ArabicLetterPeh" xml:space="preserve">
+    <value>Llythyr Arabeg PEH</value>
+  </data>
+  <data name="unicode_ArabicLetterQaf" xml:space="preserve">
+    <value>Llythyr Arabeg QAF</value>
+  </data>
+  <data name="unicode_ArabicLetterReh" xml:space="preserve">
+    <value>Llythyr Arabeg REH</value>
+  </data>
+  <data name="unicode_ArabicLetterSad" xml:space="preserve">
+    <value>Llythyr arabic Sad</value>
+  </data>
+  <data name="unicode_ArabicLetterSeen" xml:space="preserve">
+    <value>Llythyr Arabeg gweld</value>
+  </data>
+  <data name="unicode_ArabicLetterSheen" xml:space="preserve">
+    <value>Llythyr Arabeg Sheen</value>
+  </data>
+  <data name="unicode_ArabicLetterSuperscriptAlef" xml:space="preserve">
+    <value>Arabeg Llythyr Uwchysgrif Alef</value>
+  </data>
+  <data name="unicode_ArabicLetterTah" xml:space="preserve">
+    <value>Llythyr Arabeg TAH</value>
+  </data>
+  <data name="unicode_ArabicLetterTcheh" xml:space="preserve">
+    <value>Llythyr Arabeg Tcheh</value>
+  </data>
+  <data name="unicode_ArabicLetterTeh" xml:space="preserve">
+    <value>Llythyr Arabeg TEH</value>
+  </data>
+  <data name="unicode_ArabicLetterTehMarbuta" xml:space="preserve">
+    <value>Arabeg Llythyr TEH Marbuta</value>
+  </data>
+  <data name="unicode_ArabicLetterThal" xml:space="preserve">
+    <value>Llythyr Arabeg Thal</value>
+  </data>
+  <data name="unicode_ArabicLetterTheh" xml:space="preserve">
+    <value>Llythyr Arabeg Theh</value>
+  </data>
+  <data name="unicode_ArabicLetterVeh" xml:space="preserve">
+    <value>Llythyr Arabeg Veh</value>
+  </data>
+  <data name="unicode_ArabicLetterWaw" xml:space="preserve">
+    <value>Llythyr Arabeg Waw</value>
+  </data>
+  <data name="unicode_ArabicLetterWawWithHamzaAbove" xml:space="preserve">
+    <value>Llythyr Arabeg Waw Gyda Hamza Uchod</value>
+  </data>
+  <data name="unicode_ArabicLetterYeh" xml:space="preserve">
+    <value>Llythyr Arabeg Yeh</value>
+  </data>
+  <data name="unicode_ArabicLetterYehWithHamzaAbove" xml:space="preserve">
+    <value>Llythyr Arabeg Yeh Gyda Hamza Uchod</value>
+  </data>
+  <data name="unicode_ArabicLetterZah" xml:space="preserve">
+    <value>Llythyr Arabeg Zah</value>
+  </data>
+  <data name="unicode_ArabicLetterZain" xml:space="preserve">
+    <value>Llythyr Arabeg Zain</value>
+  </data>
+  <data name="unicode_ArabicLigatureAkbarIsolatedForm" xml:space="preserve">
+    <value>Arabeg clymu Akbar anghysbell Ffurflen</value>
+  </data>
+  <data name="unicode_ArabicLigatureAlayheIsolatedForm" xml:space="preserve">
+    <value>Ffurflen Arabeg clymu Alayhe Ynysig</value>
+  </data>
+  <data name="unicode_ArabicLigatureAllahIsolatedForm" xml:space="preserve">
+    <value>Ffurflen Arabeg clymu Allah Ynysig</value>
+  </data>
+  <data name="unicode_ArabicLigatureBismillahArRahmanArRaheem" xml:space="preserve">
+    <value>Arabeg clymu Bismillah Ar-Rahman Ar-Raheem</value>
+  </data>
+  <data name="unicode_ArabicLigatureJallajalalouhou" xml:space="preserve">
+    <value>Arabeg clymu Jallajalalouhou</value>
+  </data>
+  <data name="unicode_ArabicLigatureMohammadIsolatedForm" xml:space="preserve">
+    <value>Arabeg clymu Mohammad anghysbell Ffurflen</value>
+  </data>
+  <data name="unicode_ArabicLigatureQalaUsedAsKoranicStopSignIsolatedForm" xml:space="preserve">
+    <value>Arabeg clymu Qala a Ddefnyddir fel Koranic Stop Cofrestrwch Ffurflen Arwahanedig</value>
+  </data>
+  <data name="unicode_ArabicLigatureRasoulIsolatedForm" xml:space="preserve">
+    <value>Arabeg clymu Rasoul anghysbell Ffurflen</value>
+  </data>
+  <data name="unicode_ArabicLigatureSalamIsolatedForm" xml:space="preserve">
+    <value>Arabeg clymu Salam anghysbell Ffurflen</value>
+  </data>
+  <data name="unicode_ArabicLigatureSallaIsolatedForm" xml:space="preserve">
+    <value>Ffurflen Arwahanedig Arabeg clymu Salla</value>
+  </data>
+  <data name="unicode_ArabicLigatureSallallahouAlayheWasallam" xml:space="preserve">
+    <value>Arabeg clymu Sallallahou Alayhe Wasallam</value>
+  </data>
+  <data name="unicode_ArabicLigatureSallaUsedAsKoranicStopSignIsolatedForm" xml:space="preserve">
+    <value>Arabeg clymu Salla a Ddefnyddir fel Ffurflen Arwyddion anghysbell Koranic Stop</value>
+  </data>
+  <data name="unicode_ArabicLigatureWasallamIsolatedForm" xml:space="preserve">
+    <value>Ffurflen Arabeg clymu Wasallam Ynysig</value>
+  </data>
+  <data name="unicode_ArabicMaddahAbove" xml:space="preserve">
+    <value>Arabeg Maddah Uchod</value>
+  </data>
+  <data name="unicode_ArabicPlaceOfSajdah" xml:space="preserve">
+    <value>Arabeg Place Of Sajdah</value>
+  </data>
+  <data name="unicode_ArabicQuestionMark" xml:space="preserve">
+    <value>Arabeg Cwestiwn Marc</value>
+  </data>
+  <data name="unicode_ArabicRoundedHighStopWithFilledCentre" xml:space="preserve">
+    <value>Arabeg Rounded Uchel Stop Gyda Ganolfan Llenwi</value>
+  </data>
+  <data name="unicode_ArabicSemicolon" xml:space="preserve">
+    <value>Arabeg Gwahannod</value>
+  </data>
+  <data name="unicode_ArabicShadda" xml:space="preserve">
+    <value>Arabeg Shadda</value>
+  </data>
+  <data name="unicode_ArabicSmallHighJeem" xml:space="preserve">
+    <value>Arabeg Uchel Jeem Bach</value>
+  </data>
+  <data name="unicode_ArabicSmallHighLamAlef" xml:space="preserve">
+    <value>Arabeg Bach Uchel Lam Alef</value>
+  </data>
+  <data name="unicode_ArabicSmallHighLigatureQafWithLamWithAlefMaksura" xml:space="preserve">
+    <value>Arabeg Bach Uchel clymu QAF Gyda Lam Gyda Alef Maksura</value>
+  </data>
+  <data name="unicode_ArabicSmallHighLigatureSadWithLamWithAlefMaksura" xml:space="preserve">
+    <value>Arabeg Uchel clymu Bach Trist Gyda Lam Gyda Alef Maksura</value>
+  </data>
+  <data name="unicode_ArabicSmallHighMeemInitialForm" xml:space="preserve">
+    <value>Ffurflen Cychwynnol Uchel Meem Bach Arabeg</value>
+  </data>
+  <data name="unicode_ArabicSmallHighMeemIsolatedForm" xml:space="preserve">
+    <value>Ffurflen Arabeg Uchel Meem Bach Ynysig</value>
+  </data>
+  <data name="unicode_ArabicSmallHighNoon" xml:space="preserve">
+    <value>Arabeg High Noon Bach</value>
+  </data>
+  <data name="unicode_ArabicSmallHighRoundedZero" xml:space="preserve">
+    <value>Arabeg Bach Uchel Rounded Zero</value>
+  </data>
+  <data name="unicode_ArabicSmallHighSeen" xml:space="preserve">
+    <value>Gweld Arabeg Uchel Bach</value>
+  </data>
+  <data name="unicode_ArabicSmallHighThreeDots" xml:space="preserve">
+    <value>Arabeg Bach Uchel Tri Dotiau</value>
+  </data>
+  <data name="unicode_ArabicSmallHighUprightRectangularZero" xml:space="preserve">
+    <value>Arabeg Bach Uchel Unionsyth Petryal Zero</value>
+  </data>
+  <data name="unicode_ArabicSmallLowMeem" xml:space="preserve">
+    <value>Arabeg Meem Isel Bach</value>
+  </data>
+  <data name="unicode_ArabicSmallLowSeen" xml:space="preserve">
+    <value>Gweld Arabeg Isel Bach</value>
+  </data>
+  <data name="unicode_ArabicSmallWaw" xml:space="preserve">
+    <value>Arabeg Waw Bach</value>
+  </data>
+  <data name="unicode_ArabicSmallYeh" xml:space="preserve">
+    <value>Arabeg Yeh Bach</value>
+  </data>
+  <data name="unicode_ArabicStartOfRubElHizb" xml:space="preserve">
+    <value>Arabeg Dechrau'r Rhwbiwch El Hizb</value>
+  </data>
+  <data name="unicode_ArabicSukun" xml:space="preserve">
+    <value>Arabeg Sukun</value>
+  </data>
+  <data name="unicode_ArabicTatweel" xml:space="preserve">
+    <value>Arabeg Tatweel</value>
+  </data>
+  <data name="unicode_Colon" xml:space="preserve">
+    <value>Colon</value>
+  </data>
+  <data name="unicode_Comma" xml:space="preserve">
+    <value>Adain Garpiog</value>
+  </data>
+  <data name="unicode_ExclamationMark" xml:space="preserve">
+    <value>Mark Ebychiad</value>
+  </data>
+  <data name="unicode_FullStop" xml:space="preserve">
+    <value>Stop Llawn</value>
+  </data>
+  <data name="unicode_HyphenMinus" xml:space="preserve">
+    <value>Cysylltnod-minws</value>
+  </data>
+  <data name="unicode_LeftCurlyBracket" xml:space="preserve">
+    <value>Chwith Curly braced</value>
+  </data>
+  <data name="unicode_LeftPointingDoubleAngleQuotationMark" xml:space="preserve">
+    <value>Chwith-Pwyntio Dwbl Angle Mark Dyfynbris</value>
+  </data>
+  <data name="unicode_LeftSquareBracket" xml:space="preserve">
+    <value>Chwith Sgwâr braced</value>
+  </data>
+  <data name="unicode_OrnateLeftParenthesis" xml:space="preserve">
+    <value>Addurnedig Chwith Parenthesis</value>
+  </data>
+  <data name="unicode_OrnateRightParenthesis" xml:space="preserve">
+    <value>Addurnedig Hawl Parenthesis</value>
+  </data>
+  <data name="unicode_QuotationMark" xml:space="preserve">
+    <value>Mark Dyfynbris</value>
+  </data>
+  <data name="unicode_RialSign" xml:space="preserve">
+    <value>Arwyddion Rial</value>
+  </data>
+  <data name="unicode_RightCurlyBracket" xml:space="preserve">
+    <value>Hawl Curly braced</value>
+  </data>
+  <data name="unicode_RightPointingDoubleAngleQuotationMark" xml:space="preserve">
+    <value>Mark Dyfynbris Hawl-Pwyntio Angle Dwbl</value>
+  </data>
+  <data name="unicode_RightSquareBracket" xml:space="preserve">
+    <value>Braced Hawl Sgwâr</value>
+  </data>
+  <data name="unicode_Space" xml:space="preserve">
+    <value>Gofod</value>
+  </data>
+  <data name="IslamInfo_Date" xml:space="preserve">
+    <value>Dyddiad</value>
+  </data>
+  <data name="IslamInfo_Day" xml:space="preserve">
+    <value>Dydd</value>
+  </data>
+  <data name="IslamInfo_Final1" xml:space="preserve">
+    <value>1af Terfynol</value>
+  </data>
+  <data name="IslamInfo_Final1Trans" xml:space="preserve">
+    <value>nad oes dim yn debyg iddo ac Ef yw Gwrandawr, The gweledydd</value>
+  </data>
+  <data name="IslamInfo_Final1WordByWord" xml:space="preserve">
+    <value>sydd | beidio | yn debyg iddo | rhywbeth | ac Ef yw | Y Gwrandawr | Y gweledydd</value>
+  </data>
+  <data name="IslamInfo_Final2" xml:space="preserve">
+    <value>2il Terfynol</value>
+  </data>
+  <data name="IslamInfo_Final2Trans" xml:space="preserve">
+    <value>O Allah, anfonwch y weddi gorau ar eich creadur gorau Meistr Muhammad</value>
+  </data>
+  <data name="IslamInfo_Final2WordByWord" xml:space="preserve">
+    <value>O Allah | anfon | gorau | gweddi | ar | gorau | dy greadigaeth | Meistr | Muhammad</value>
+  </data>
+  <data name="IslamInfo_Final3" xml:space="preserve">
+    <value>3ydd Terfynol</value>
+  </data>
+  <data name="IslamInfo_Final3Trans" xml:space="preserve">
+    <value>A heddwch a inc ei eiriau a phryd bynnag y rhai sy'n cofio iddo wneud hynny a phryd bynnag y rhai sy'n esgeuluso i'w gofio iddo wneud hynny</value>
+  </data>
+  <data name="IslamInfo_Final3WordByWord" xml:space="preserve">
+    <value>A heddwch | adrodd | ei wybodaeth | ac inc | ei eiriau | pryd bynnag | cofio Fo | gwneud hynny | a phryd bynnag y rhai sy'n esgeuluso | i | cofio iddo | gwneud hynny</value>
+  </data>
+  <data name="IslamInfo_OMasterSendPrayersAndPeace" xml:space="preserve">
+    <value>O fy Meistr, anfonwch eich cyfarchion a bendithion</value>
+  </data>
+  <data name="IslamInfo_OMasterSendPrayersAndPeaceTrans" xml:space="preserve">
+    <value>O fy Meistr, anfonwch eich cyfarchion a bendithion am byth Ar Eich Anwylyd, y gorau o'r holl greadigaeth</value>
+  </data>
+  <data name="IslamInfo_OMasterSendPrayersAndPeaceWordByWord" xml:space="preserve">
+    <value>O fy Meistr | anfon eich cyfarchion | a bendithion | wastad | dragwyddol | ar | Eich Beloved | y gorau | creu | o'r cyfan</value>
+  </data>
+  <data name="IslamInfo_PopularIslamicSongVerses" xml:space="preserve">
+    <value>Poblogaidd Islamaidd Song Penillion</value>
+  </data>
+  <data name="IslamInfo_RemembranceFirst" xml:space="preserve">
+    <value>Cofio Cyntaf</value>
+  </data>
+  <data name="IslamInfo_RemembranceFirstTrans" xml:space="preserve">
+    <value>Dim yr hawl i gael ei addoli, ond i chi (O Allah)), ogoneddu (a Exalted) yw i chi (yn anad dim honno (drwg) y maent yn cysylltu â chi).</value>
+  </data>
+  <data name="IslamInfo_RemembranceFirstWordByWord" xml:space="preserve">
+    <value>Dim | yr hawl i gael ei addoli | ond | Chi | ogoneddu yn Chi | Yn wir | Dw i wedi bod yn | of | anghywir-gwneuthurwyr</value>
+  </data>
+  <data name="IslamInfo_RemembranceSecond" xml:space="preserve">
+    <value>Cofio Ail</value>
+  </data>
+  <data name="IslamInfo_RemembranceSecondTrans" xml:space="preserve">
+    <value>Allah (Alone) yn Digon i ni, ac Ef yw Disposer Gorau materion (i ni);</value>
+  </data>
+  <data name="IslamInfo_RemembranceSecondWordByWord" xml:space="preserve">
+    <value>Digon i ni | Allah | ac Ef yw'r Gorau | Disposer o faterion | Beth Rhagorol | Noddwr | a beth yw Rhagorol | Helper</value>
+  </data>
+  <data name="IslamInfo_RemembranceThird" xml:space="preserve">
+    <value>Cofio Trydydd</value>
+  </data>
+  <data name="IslamInfo_RemembranceThirdTrans" xml:space="preserve">
+    <value>Nid oes unrhyw gryfder (i ymatal rhag pechodau ond gyda'r amddiffyn rhag Allah) ac nid oes unrhyw bŵer (i gyflawni gweithredoedd da), ond gyda chymorth Allah, yr Uchel, y Goruchaf</value>
+  </data>
+  <data name="IslamInfo_RemembranceThirdWordByWord" xml:space="preserve">
+    <value>Nid oes | nerth | ac nid oes | bŵer | eithrio | gyda Allah | Uchel | Goruchaf</value>
+  </data>
+  <data name="IslamInfo_SendBlessingsFirst" xml:space="preserve">
+    <value>Anfon Bendithion yn Gyntaf</value>
+  </data>
+  <data name="IslamInfo_SendBlessingsFirstTrans" xml:space="preserve">
+    <value>Allah, anfonwch eich drugaredd ar Muhammad a'i hiliogaeth wrth i chi anfon eich drugaredd ar Abraham a'i hiliogaeth.</value>
+  </data>
+  <data name="IslamInfo_SendBlessingsFirstWordByWord" xml:space="preserve">
+    <value>O Allah | anfon eich drugaredd | ar | Muhammad | ac ar | hiliogaeth | Ef | fel y | i chi anfon eich drugaredd | ar | Abraham | ac ar | hiliogaeth | Ef | wirioneddol Rydych chi | Mwyaf Canmol | Mwyaf Gogoneddus |</value>
+  </data>
+  <data name="IslamInfo_SendBlessingsSecond" xml:space="preserve">
+    <value>Anfon Bendithion Ail</value>
+  </data>
+  <data name="IslamInfo_SendBlessingsSecondTrans" xml:space="preserve">
+    <value>Allah, anfonwch eich drugaredd ar Muhammad a'i hiliogaeth wrth i chi anfon eich drugaredd ar Abraham a'i hiliogaeth.</value>
+  </data>
+  <data name="IslamInfo_SendBlessingsSecondWordByWord" xml:space="preserve">
+    <value>O Allah | anfon eich drugaredd | ar | Muhammad | ac ar | hiliogaeth | Ef | fel y | i chi anfon eich drugaredd | ar | Abraham | ac ar | hiliogaeth | Ef | wirioneddol Rydych chi | Mwyaf Canmol | Mwyaf Gogoneddus |</value>
+  </data>
+  <data name="IslamInfo_TheBestNames" xml:space="preserve">
+    <value>Mae'r Enwau Gorau</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoon" xml:space="preserve">
+    <value>The White Moon</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonEighth" xml:space="preserve">
+    <value>Wythfed</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonEighthTrans" xml:space="preserve">
+    <value>Croeso i chi sy'n ein ffonio i ffordd dda</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonEighthWordByWord" xml:space="preserve">
+    <value>Croeso | chi sy'n ein ffonio | i safon dda | ffordd</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonFifth" xml:space="preserve">
+    <value>Pumed</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonFifthTrans" xml:space="preserve">
+    <value>Oh ein Cennad (Emissary) yn ein plith</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonFifthWordByWord" xml:space="preserve">
+    <value>O | ein Messenger | yn ein plith</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonFirst" xml:space="preserve">
+    <value>Yn gyntaf</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonFirstTrans" xml:space="preserve">
+    <value>Oh cododd y lleuad gwyn dros ni</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonFirstWordByWord" xml:space="preserve">
+    <value>Oh Cododd | y lleuad gwyn | dros ni</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonFourth" xml:space="preserve">
+    <value>Pedwerydd</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonFourthTrans" xml:space="preserve">
+    <value>Iddo ef sy'n ein gwahodd i ffordd Allah</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonFourthWordByWord" xml:space="preserve">
+    <value>Iddo ef | sy'n ein gwahodd | i Allah | y ffordd o</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonSecond" xml:space="preserve">
+    <value>Ail</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonSecondTrans" xml:space="preserve">
+    <value>O'r dyffryn (lle) a elwir yn</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonSecondWordByWord" xml:space="preserve">
+    <value>O | dyffryn | elwir yn</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonSeventh" xml:space="preserve">
+    <value>Seithfed</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonSeventhTrans" xml:space="preserve">
+    <value>Rydych wedi dod i'r uchelwyr y ddinas</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonSeventhWordByWord" xml:space="preserve">
+    <value>Rydych wedi dod | uchelwyr | i'r ddinas hon</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonSixth" xml:space="preserve">
+    <value>Chweched</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonSixthTrans" xml:space="preserve">
+    <value>Pwy sy'n dod gyda'r anogaeth (gwaharddebau / gorchmynion) i'w gwrando</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonSixthWordByWord" xml:space="preserve">
+    <value>Pwy sy'n dod | gyda'r gorchmynion | i gael ei ufuddhau</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonThird" xml:space="preserve">
+    <value>Trydydd</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonThirdTrans" xml:space="preserve">
+    <value>Ac mae'n ddyletswydd arnom i ddangos diolchgarwch</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonThirdWordByWord" xml:space="preserve">
+    <value>Ac mae'n ddyletswydd | i ddangos graditude | arnom</value>
+  </data>
+  <data name="IslamInfo_AllahKnowsBest" xml:space="preserve">
+    <value>Allah yn gwybod orau</value>
+  </data>
+  <data name="IslamInfo_AllahSaysTheTruth" xml:space="preserve">
+    <value>Y gwir yn dod o Allah, y rhan fwyaf o Magnificent</value>
+  </data>
+  <data name="IslamInfo_AllahSufficesMe" xml:space="preserve">
+    <value>Digon i mi yw Allah</value>
+  </data>
+  <data name="IslamInfo_AllahWilledItSo" xml:space="preserve">
+    <value>Allah wedi willed hi mor</value>
+  </data>
+  <data name="IslamInfo_AllahWilling" xml:space="preserve">
+    <value>Os Allah ewyllysiau fod mor</value>
+  </data>
+  <data name="IslamInfo_AndUponYouBePeaceAndMercyOfAllah" xml:space="preserve">
+    <value>Ac ar i chi fod heddwch a drugaredd Allah</value>
+  </data>
+  <data name="IslamInfo_AndUponYouBePeaceAndMercyOfAllahAndBlessings" xml:space="preserve">
+    <value>Ac ar i chi fod heddwch a drugaredd Allah a Ei fendithion</value>
+  </data>
+  <data name="IslamInfo_BlessingsOfAllah" xml:space="preserve">
+    <value>Bendithion o Allah</value>
+  </data>
+  <data name="IslamInfo_GloriousAndExaltedBeHe" xml:space="preserve">
+    <value>Gogoneddus a Exalted fod ef</value>
+  </data>
+  <data name="IslamInfo_IAskAllahForgiveness" xml:space="preserve">
+    <value>Yr wyf yn gofyn maddeuant gan Allah</value>
+  </data>
+  <data name="IslamInfo_InProtectionOfAllah" xml:space="preserve">
+    <value>Yn diogelu Allah</value>
+  </data>
+  <data name="IslamInfo_InThePathOfAllah" xml:space="preserve">
+    <value>Yn yr achos Allah</value>
+  </data>
+  <data name="IslamInfo_MayAllahBePleased" xml:space="preserve">
+    <value>Mai Allah yn hapus gyda nhw</value>
+  </data>
+  <data name="IslamInfo_MayAllahBlessYou" xml:space="preserve">
+    <value>Bendithion ar chi o Allah</value>
+  </data>
+  <data name="IslamInfo_MayAllahHaveMercy" xml:space="preserve">
+    <value>Mai Allah trugarha arnynt</value>
+  </data>
+  <data name="IslamInfo_MayAllahProtectYou" xml:space="preserve">
+    <value>Mai Allah diogelu chi</value>
+  </data>
+  <data name="IslamInfo_MayAllahWillItSo" xml:space="preserve">
+    <value>Mai Allah Bydd hi mor</value>
+  </data>
+  <data name="IslamInfo_PeaceBeUponYouAndMercyOfAllah" xml:space="preserve">
+    <value>Heddwch arno chi a'r drugaredd Allah</value>
+  </data>
+  <data name="IslamInfo_PeaceBeUponYouAndMercyOfAllahAndBlessings" xml:space="preserve">
+    <value>Heddwch arno chi a'r drugaredd Allah a Ei fendithion</value>
+  </data>
+  <data name="IslamInfo_SeekRefugeWithAllahFromSatanRejected" xml:space="preserve">
+    <value>Yr wyf yn ceisio lloches gyda Allah o Satan y gwrthod</value>
+  </data>
+  <data name="IslamInfo_SublimeAndMighty" xml:space="preserve">
+    <value>Aruchel a Mighty</value>
+  </data>
+  <data name="IslamInfo_TrulyFromAllahWeComeAndToHimWillReturn" xml:space="preserve">
+    <value>Yn wir o Allah, rydym wedi dod, ac yn wir iddo byddwn yn dychwelyd</value>
+  </data>
+  <data name="Acct_CertRequest" xml:space="preserve">
+    <value>Cais Tystysgrif</value>
+  </data>
+  <data name="Acct_Certificate" xml:space="preserve">
+    <value>Tystysgrif</value>
+  </data>
+  <data name="Acct_CertInstall" xml:space="preserve">
+    <value>Gosod Tystysgrif</value>
+  </data>
+  <data name="Acct_CurrentUser" xml:space="preserve">
+    <value>Defnyddiwr presennol</value>
+  </data>
+  <data name="Acct_DeleteCertRequest" xml:space="preserve">
+    <value>Dileu Tystysgrif Cais</value>
+  </data>
+  <data name="Acct_EnableSSL" xml:space="preserve">
+    <value>Galluogi SSL</value>
+  </data>
+  <data name="Acct_PrivateKey" xml:space="preserve">
+    <value>Allwedd preifat</value>
+  </data>
+  <data name="Acct_ViewCertRequests" xml:space="preserve">
+    <value>Ceisiadau Gweld Tystysgrif</value>
+  </data>
+  <data name="Acct_ViewSites" xml:space="preserve">
+    <value>Gweld Safleoedd</value>
+  </data>
+  <data name="Acct_CertInstallIntermed" xml:space="preserve">
+    <value>Gosod Tystysgrif Ganolradd</value>
+  </data>
+  <data name="IslamInfo_UniqueLetters" xml:space="preserve">
+    <value>Llythyrau Unigryw</value>
+  </data>
+  <data name="IslamInfo_SoulStates" xml:space="preserve">
+    <value>Yn datgan Soul</value>
+  </data>
+  <data name="IslamInfo_Abbreviations" xml:space="preserve">
+    <value>Byrfoddau</value>
+  </data>
+  <data name="IslamInfo_Names" xml:space="preserve">
+    <value>Enwau</value>
+  </data>
+  <data name="IslamInfo_Places" xml:space="preserve">
+    <value>Lleoedd</value>
+  </data>
+  <data name="IslamInfo_Abbasid" xml:space="preserve">
+    <value>Abbasid</value>
+  </data>
+  <data name="IslamInfo_AbdullahBinMasood" xml:space="preserve">
+    <value>Bin Abdullah Masood</value>
+  </data>
+  <data name="IslamInfo_AbuBakrAlSaddiq" xml:space="preserve">
+    <value>Abu Bakr Al-Saddiq</value>
+  </data>
+  <data name="IslamInfo_AbuDahr" xml:space="preserve">
+    <value>Abu Dahr</value>
+  </data>
+  <data name="IslamInfo_AbuHanifa" xml:space="preserve">
+    <value>Abu Hanifa</value>
+  </data>
+  <data name="IslamInfo_AbuHurairah" xml:space="preserve">
+    <value>AbuHurairah</value>
+  </data>
+  <data name="IslamInfo_AbuJahal" xml:space="preserve">
+    <value>Abu Jahal</value>
+  </data>
+  <data name="IslamInfo_AbuLahab" xml:space="preserve">
+    <value>Abu Lahab</value>
+  </data>
+  <data name="IslamInfo_AbuSufyan" xml:space="preserve">
+    <value>Abu Sufyan</value>
+  </data>
+  <data name="IslamInfo_Aisha" xml:space="preserve">
+    <value>Aisha</value>
+  </data>
+  <data name="IslamInfo_AliBinAbuTalib" xml:space="preserve">
+    <value>Ali bin Abu Talib</value>
+  </data>
+  <data name="IslamInfo_AlLaythBinSaad" xml:space="preserve">
+    <value>Al-Saad Layth bin</value>
+  </data>
+  <data name="IslamInfo_Allowed" xml:space="preserve">
+    <value>Caniatawyd</value>
+  </data>
+  <data name="IslamInfo_AlMansoor" xml:space="preserve">
+    <value>Al-Mansoor</value>
+  </data>
+  <data name="IslamInfo_AlMuwata" xml:space="preserve">
+    <value>Al-Muwata</value>
+  </data>
+  <data name="IslamInfo_AlWahsi" xml:space="preserve">
+    <value>Al-Wahsi</value>
+  </data>
+  <data name="IslamInfo_AmrBinAlAas" xml:space="preserve">
+    <value>Amr bin Al-AAS</value>
+  </data>
+  <data name="IslamInfo_AndEveryone" xml:space="preserve">
+    <value>A pawb</value>
+  </data>
+  <data name="IslamInfo_Angel" xml:space="preserve">
+    <value>Angel</value>
+  </data>
+  <data name="IslamInfo_Arrogance" xml:space="preserve">
+    <value>Haerllugrwydd</value>
+  </data>
+  <data name="IslamInfo_AskForgiveness" xml:space="preserve">
+    <value>Gofynnwch Maddeuant</value>
+  </data>
+  <data name="IslamInfo_Azar" xml:space="preserve">
+    <value>Azar</value>
+  </data>
+  <data name="IslamInfo_Balance" xml:space="preserve">
+    <value>Balans</value>
+  </data>
+  <data name="IslamInfo_BaniHashim" xml:space="preserve">
+    <value>Bani Hashim</value>
+  </data>
+  <data name="IslamInfo_BaniThaqeef" xml:space="preserve">
+    <value>Bani Thaqeef</value>
+  </data>
+  <data name="IslamInfo_Biography" xml:space="preserve">
+    <value>Bywgraffiad</value>
+  </data>
+  <data name="IslamInfo_Bless" xml:space="preserve">
+    <value>Bendithia</value>
+  </data>
+  <data name="IslamInfo_Caliphate" xml:space="preserve">
+    <value>Caliphate</value>
+  </data>
+  <data name="IslamInfo_CallToIslam" xml:space="preserve">
+    <value>Ffoniwch I Islam</value>
+  </data>
+  <data name="IslamInfo_Certainty" xml:space="preserve">
+    <value>Sicrwydd</value>
+  </data>
+  <data name="IslamInfo_Cohabitation" xml:space="preserve">
+    <value>Cyd-fyw</value>
+  </data>
+  <data name="IslamInfo_Commentary" xml:space="preserve">
+    <value>Sylwadau</value>
+  </data>
+  <data name="IslamInfo_Community" xml:space="preserve">
+    <value>Cymunedol</value>
+  </data>
+  <data name="IslamInfo_Companions" xml:space="preserve">
+    <value>Cymdeithion</value>
+  </data>
+  <data name="IslamInfo_Concensus" xml:space="preserve">
+    <value>Consensws</value>
+  </data>
+  <data name="IslamInfo_Concentration" xml:space="preserve">
+    <value>Crynodiad</value>
+  </data>
+  <data name="IslamInfo_Congregation" xml:space="preserve">
+    <value>Cynulleidfa</value>
+  </data>
+  <data name="IslamInfo_Conquest" xml:space="preserve">
+    <value>Concwest</value>
+  </data>
+  <data name="IslamInfo_Deeds" xml:space="preserve">
+    <value>Gweithredoedd</value>
+  </data>
+  <data name="IslamInfo_Delivery" xml:space="preserve">
+    <value>Cyflawni</value>
+  </data>
+  <data name="IslamInfo_Dessertion" xml:space="preserve">
+    <value>Dessertion</value>
+  </data>
+  <data name="IslamInfo_Digger" xml:space="preserve">
+    <value>Digger</value>
+  </data>
+  <data name="IslamInfo_Disbeliever" xml:space="preserve">
+    <value>Disbeliever</value>
+  </data>
+  <data name="IslamInfo_Division" xml:space="preserve">
+    <value>Is-adran</value>
+  </data>
+  <data name="IslamInfo_Do" xml:space="preserve">
+    <value>Wneud</value>
+  </data>
+  <data name="IslamInfo_Doctrine" xml:space="preserve">
+    <value>Athrawiaeth</value>
+  </data>
+  <data name="IslamInfo_Empowering" xml:space="preserve">
+    <value>Grymuso</value>
+  </data>
+  <data name="IslamInfo_Excellence" xml:space="preserve">
+    <value>Rhagoriaeth</value>
+  </data>
+  <data name="IslamInfo_Faith" xml:space="preserve">
+    <value>Ffydd</value>
+  </data>
+  <data name="IslamInfo_Faithful" xml:space="preserve">
+    <value>Ffyddlon</value>
+  </data>
+  <data name="IslamInfo_Fight" xml:space="preserve">
+    <value>Ymladd</value>
+  </data>
+  <data name="IslamInfo_Fighter" xml:space="preserve">
+    <value>Ymladdwr</value>
+  </data>
+  <data name="IslamInfo_Firdaus" xml:space="preserve">
+    <value>Firdaus</value>
+  </data>
+  <data name="IslamInfo_Forgiving" xml:space="preserve">
+    <value>Maddau</value>
+  </data>
+  <data name="IslamInfo_Fornication" xml:space="preserve">
+    <value>Godineb</value>
+  </data>
+  <data name="IslamInfo_Gabriel" xml:space="preserve">
+    <value>Gabriel</value>
+  </data>
+  <data name="IslamInfo_Gardens" xml:space="preserve">
+    <value>Gerddi</value>
+  </data>
+  <data name="IslamInfo_GloriousAndExaltedBeHeAbbr" xml:space="preserve">
+    <value>TAA</value>
+  </data>
+  <data name="IslamInfo_Goodness" xml:space="preserve">
+    <value>Goodness</value>
+  </data>
+  <data name="IslamInfo_Guardian" xml:space="preserve">
+    <value>Gwarcheidwad</value>
+  </data>
+  <data name="IslamInfo_Guidance1" xml:space="preserve">
+    <value>Canllawiau</value>
+  </data>
+  <data name="IslamInfo_Hammad" xml:space="preserve">
+    <value>Hammad</value>
+  </data>
+  <data name="IslamInfo_HamzaBinAbduAlMuttalib" xml:space="preserve">
+    <value>Hamza bin Abdu Al-Muttalib</value>
+  </data>
+  <data name="IslamInfo_Hanbal" xml:space="preserve">
+    <value>Hanbal</value>
+  </data>
+  <data name="IslamInfo_Hasan" xml:space="preserve">
+    <value>Hasan</value>
+  </data>
+  <data name="IslamInfo_HeartSofteners" xml:space="preserve">
+    <value>Meddalwyr ar y galon</value>
+  </data>
+  <data name="IslamInfo_Hell" xml:space="preserve">
+    <value>Hell</value>
+  </data>
+  <data name="IslamInfo_Hereafter" xml:space="preserve">
+    <value>O hyn ymlaen</value>
+  </data>
+  <data name="IslamInfo_Hind" xml:space="preserve">
+    <value>Cefn</value>
+  </data>
+  <data name="IslamInfo_Hudabiyyah" xml:space="preserve">
+    <value>Hudabiyyah</value>
+  </data>
+  <data name="IslamInfo_Hunain" xml:space="preserve">
+    <value>Hunain</value>
+  </data>
+  <data name="IslamInfo_Hussein" xml:space="preserve">
+    <value>Hussein</value>
+  </data>
+  <data name="IslamInfo_Hypocrite" xml:space="preserve">
+    <value>Rhagrithiwr</value>
+  </data>
+  <data name="IslamInfo_ImamNawawi40Hadith" xml:space="preserve">
+    <value>Imam Nawawi 40 Hadith</value>
+  </data>
+  <data name="IslamInfo_Impact" xml:space="preserve">
+    <value>Effaith</value>
+  </data>
+  <data name="IslamInfo_Innovation" xml:space="preserve">
+    <value>Arloesi</value>
+  </data>
+  <data name="IslamInfo_Intention" xml:space="preserve">
+    <value>Bwriad</value>
+  </data>
+  <data name="IslamInfo_Introduction" xml:space="preserve">
+    <value>Cyflwyniad</value>
+  </data>
+  <data name="IslamInfo_Invocation" xml:space="preserve">
+    <value>Ymbil</value>
+  </data>
+  <data name="IslamInfo_Jinn" xml:space="preserve">
+    <value>Jinn</value>
+  </data>
+  <data name="IslamInfo_Kaaba" xml:space="preserve">
+    <value>Kaaba</value>
+  </data>
+  <data name="IslamInfo_KhadijahBintiKhuwaylid" xml:space="preserve">
+    <value>Khadijah binti Khooaylid</value>
+  </data>
+  <data name="IslamInfo_KhalidBinWalid" xml:space="preserve">
+    <value>Khalid bin Walid</value>
+  </data>
+  <data name="IslamInfo_Knowledgable" xml:space="preserve">
+    <value>Wybodus</value>
+  </data>
+  <data name="IslamInfo_Latest" xml:space="preserve">
+    <value>Diweddaraf</value>
+  </data>
+  <data name="IslamInfo_Leader" xml:space="preserve">
+    <value>Arweinydd</value>
+  </data>
+  <data name="IslamInfo_Lecture" xml:space="preserve">
+    <value>Darlith</value>
+  </data>
+  <data name="IslamInfo_Limit" xml:space="preserve">
+    <value>Terfyn</value>
+  </data>
+  <data name="IslamInfo_Loudmouthed" xml:space="preserve">
+    <value>Loudmouthed</value>
+  </data>
+  <data name="IslamInfo_Lucifer" xml:space="preserve">
+    <value>Lucifer</value>
+  </data>
+  <data name="IslamInfo_Madame" xml:space="preserve">
+    <value>Madame</value>
+  </data>
+  <data name="IslamInfo_Malik" xml:space="preserve">
+    <value>Malik</value>
+  </data>
+  <data name="IslamInfo_Mankind" xml:space="preserve">
+    <value>Ddynoliaeth</value>
+  </data>
+  <data name="IslamInfo_Manners" xml:space="preserve">
+    <value>Manners</value>
+  </data>
+  <data name="IslamInfo_MannersOfDiffering" xml:space="preserve">
+    <value>Moesau o Gwahanol</value>
+  </data>
+  <data name="IslamInfo_Master" xml:space="preserve">
+    <value>Meistr</value>
+  </data>
+  <data name="IslamInfo_MayAllahBePleasedAbbr" xml:space="preserve">
+    <value>RA</value>
+  </data>
+  <data name="IslamInfo_MayHisGloryBeGlorified" xml:space="preserve">
+    <value>MayHisGloryBeGlorified</value>
+  </data>
+  <data name="IslamInfo_Mecca" xml:space="preserve">
+    <value>Mecca</value>
+  </data>
+  <data name="IslamInfo_Medina" xml:space="preserve">
+    <value>Medina</value>
+  </data>
+  <data name="IslamInfo_Mercy" xml:space="preserve">
+    <value>Mercy</value>
+  </data>
+  <data name="IslamInfo_MinorPilgrimage" xml:space="preserve">
+    <value>Mân Pererindod</value>
+  </data>
+  <data name="IslamInfo_Mosque" xml:space="preserve">
+    <value>Mosg</value>
+  </data>
+  <data name="IslamInfo_Muawiyyah" xml:space="preserve">
+    <value>Muawiyyah</value>
+  </data>
+  <data name="IslamInfo_Mufti" xml:space="preserve">
+    <value>Mufti</value>
+  </data>
+  <data name="IslamInfo_MuhammadBinAbduAlMuttalib" xml:space="preserve">
+    <value>Muhammad bin Abdu Al-Muttalib</value>
+  </data>
+  <data name="IslamInfo_Neck" xml:space="preserve">
+    <value>Gwddf</value>
+  </data>
+  <data name="IslamInfo_Nurturing" xml:space="preserve">
+    <value>Meithrin</value>
+  </data>
+  <data name="IslamInfo_OBelievers" xml:space="preserve">
+    <value>O chwi sy'n credu</value>
+  </data>
+  <data name="IslamInfo_Optimizer" xml:space="preserve">
+    <value>Optimizer</value>
+  </data>
+  <data name="IslamInfo_Paradise" xml:space="preserve">
+    <value>Paradise</value>
+  </data>
+  <data name="IslamInfo_Patience" xml:space="preserve">
+    <value>Amynedd</value>
+  </data>
+  <data name="IslamInfo_Permission" xml:space="preserve">
+    <value>Caniatâd</value>
+  </data>
+  <data name="IslamInfo_Persecution" xml:space="preserve">
+    <value>Erledigaeth</value>
+  </data>
+  <data name="IslamInfo_Piety" xml:space="preserve">
+    <value>Dduwioldeb</value>
+  </data>
+  <data name="IslamInfo_PleasedWithDecree" xml:space="preserve">
+    <value>Yn falch Gyda Archddyfarniad</value>
+  </data>
+  <data name="IslamInfo_Polythiest" xml:space="preserve">
+    <value>Polythiest</value>
+  </data>
+  <data name="IslamInfo_Practical" xml:space="preserve">
+    <value>Ymarferol</value>
+  </data>
+  <data name="IslamInfo_Predestination" xml:space="preserve">
+    <value>Etholedigaeth</value>
+  </data>
+  <data name="IslamInfo_PrintedBook" xml:space="preserve">
+    <value>Argraffwyd Llyfr</value>
+  </data>
+  <data name="IslamInfo_Professor" xml:space="preserve">
+    <value>Yr Athro</value>
+  </data>
+  <data name="IslamInfo_Protector" xml:space="preserve">
+    <value>Amddiffynnydd</value>
+  </data>
+  <data name="IslamInfo_Punishment" xml:space="preserve">
+    <value>Cosb</value>
+  </data>
+  <data name="IslamInfo_Purification" xml:space="preserve">
+    <value>Puro</value>
+  </data>
+  <data name="IslamInfo_Quraish" xml:space="preserve">
+    <value>Quraish</value>
+  </data>
+  <data name="IslamInfo_Rawdah" xml:space="preserve">
+    <value>Rawdah</value>
+  </data>
+  <data name="IslamInfo_Recite" xml:space="preserve">
+    <value>Adrodd</value>
+  </data>
+  <data name="IslamInfo_Religion" xml:space="preserve">
+    <value>Crefydd</value>
+  </data>
+  <data name="IslamInfo_Repentance" xml:space="preserve">
+    <value>Edifeirwch</value>
+  </data>
+  <data name="IslamInfo_RiadAlJannah" xml:space="preserve">
+    <value>Riad Al-Jannah</value>
+  </data>
+  <data name="IslamInfo_RighteousDealings" xml:space="preserve">
+    <value>Deliadau Cyfiawn</value>
+  </data>
+  <data name="IslamInfo_RighteousDeeds" xml:space="preserve">
+    <value>Gweithredoedd Cyfiawn</value>
+  </data>
+  <data name="IslamInfo_SaadBinWaad" xml:space="preserve">
+    <value>Saad bin Waad</value>
+  </data>
+  <data name="IslamInfo_Sacrifice" xml:space="preserve">
+    <value>Aberth</value>
+  </data>
+  <data name="IslamInfo_Salafi" xml:space="preserve">
+    <value>Salafi</value>
+  </data>
+  <data name="IslamInfo_Satan" xml:space="preserve">
+    <value>Satan</value>
+  </data>
+  <data name="IslamInfo_Satisfaction" xml:space="preserve">
+    <value>Boddhad</value>
+  </data>
+  <data name="IslamInfo_Self" xml:space="preserve">
+    <value>Hunan</value>
+  </data>
+  <data name="IslamInfo_Shafii" xml:space="preserve">
+    <value>Shafii</value>
+  </data>
+  <data name="IslamInfo_Sheikh" xml:space="preserve">
+    <value>Sheikh</value>
+  </data>
+  <data name="IslamInfo_ShowingOff" xml:space="preserve">
+    <value>Yn dangos Off</value>
+  </data>
+  <data name="IslamInfo_Sin" xml:space="preserve">
+    <value>Sin</value>
+  </data>
+  <data name="IslamInfo_Sir" xml:space="preserve">
+    <value>Syr</value>
+  </data>
+  <data name="IslamInfo_Slaughter" xml:space="preserve">
+    <value>Lladd</value>
+  </data>
+  <data name="IslamInfo_Slave" xml:space="preserve">
+    <value>Slave</value>
+  </data>
+  <data name="IslamInfo_Speech" xml:space="preserve">
+    <value>Lleferydd</value>
+  </data>
+  <data name="IslamInfo_Sporadic" xml:space="preserve">
+    <value>Ysbeidiol</value>
+  </data>
+  <data name="IslamInfo_Strangers" xml:space="preserve">
+    <value>Strangers</value>
+  </data>
+  <data name="IslamInfo_SupplicationsAndPrayers" xml:space="preserve">
+    <value>Ddeisyfiadau a Gweddïau</value>
+  </data>
+  <data name="IslamInfo_Taaif" xml:space="preserve">
+    <value>Taaif</value>
+  </data>
+  <data name="IslamInfo_Talkative" xml:space="preserve">
+    <value>Siaradus</value>
+  </data>
+  <data name="IslamInfo_ThePrayersOfAllahUponHimAndPeaceAbbr" xml:space="preserve">
+    <value>SAW | SAWS</value>
+  </data>
+  <data name="IslamInfo_Throne" xml:space="preserve">
+    <value>Orsedd</value>
+  </data>
+  <data name="IslamInfo_Trustworthy" xml:space="preserve">
+    <value>Dibynadwy</value>
+  </data>
+  <data name="IslamInfo_Truthful" xml:space="preserve">
+    <value>Onest</value>
+  </data>
+  <data name="IslamInfo_UmarBinAlKhattab" xml:space="preserve">
+    <value>Umar bin Al-Khattab</value>
+  </data>
+  <data name="IslamInfo_Umayyad" xml:space="preserve">
+    <value>Umayyad</value>
+  </data>
+  <data name="IslamInfo_Universal" xml:space="preserve">
+    <value>Universal</value>
+  </data>
+  <data name="IslamInfo_Unseen" xml:space="preserve">
+    <value>Unseen</value>
+  </data>
+  <data name="IslamInfo_UponHimBePeaceAbbr" xml:space="preserve">
+    <value>AS</value>
+  </data>
+  <data name="IslamInfo_UthmanBinAfwan" xml:space="preserve">
+    <value>Uthman bin Afwan</value>
+  </data>
+  <data name="IslamInfo_VoluntaryKindness" xml:space="preserve">
+    <value>Caredigrwydd Gwirfoddol</value>
+  </data>
+  <data name="IslamInfo_Wahhabi" xml:space="preserve">
+    <value>Wahhabi</value>
+  </data>
+  <data name="IslamInfo_Wisdom" xml:space="preserve">
+    <value>Doethineb</value>
+  </data>
+  <data name="IslamInfo_Witnessing" xml:space="preserve">
+    <value>Tystio</value>
+  </data>
+  <data name="IslamInfo_World" xml:space="preserve">
+    <value>Byd</value>
+  </data>
+  <data name="IslamInfo_Worship" xml:space="preserve">
+    <value>Addoli</value>
+  </data>
+  <data name="IslamInfo_IslamicPhrases" xml:space="preserve">
+    <value>Ymadroddion Islamaidd</value>
+  </data>
+  <data name="IslamSource_QuranWords" xml:space="preserve">
+    <value>Geiriau Quran</value>
+  </data>
+  <data name="IslamSource_UniqueWordTotal" xml:space="preserve">
+    <value>Unigryw Word Cyfanswm</value>
+  </data>
+  <data name="IslamSource_WordTotal" xml:space="preserve">
+    <value>Word Cyfanswm</value>
+  </data>
+  <data name="IslamSource_FixDirectionalMarkers" xml:space="preserve">
+    <value>Atgyweiria Cyfeiriadol Marcwyr</value>
+  </data>
+  <data name="unicode_LeftToRightEmbedding" xml:space="preserve">
+    <value>Chwith-I-Hawl Ymgorffori</value>
+  </data>
+  <data name="unicode_RightToLeftEmbedding" xml:space="preserve">
+    <value>Hawl-i-chwith Mewnosod</value>
+  </data>
+  <data name="unicode_LeftToRightMark" xml:space="preserve">
+    <value>Chwith-I-Hawl Mark</value>
+  </data>
+  <data name="unicode_LeftToRightOverride" xml:space="preserve">
+    <value>Diystyru Chwith-I-Hawl</value>
+  </data>
+  <data name="unicode_PopDirectionalFormatting" xml:space="preserve">
+    <value>Pop Cyfeiriadol Formatting</value>
+  </data>
+  <data name="unicode_RightToLeftMark" xml:space="preserve">
+    <value>Hawl i--Chwith Mark</value>
+  </data>
+  <data name="unicode_RightToLeftOverride" xml:space="preserve">
+    <value>Diystyru Hawl-i-chwith</value>
+  </data>
+  <data name="IslamSource_CurrentMonth" xml:space="preserve">
+    <value>Mis cyfredol</value>
+  </data>
+  <data name="IslamSource_HijriCalendar" xml:space="preserve">
+    <value>Hijri Calendr</value>
+  </data>
+</root>

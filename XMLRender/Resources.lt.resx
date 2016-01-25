@@ -1,0 +1,4272 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Acct_AccountActivateSuccess" xml:space="preserve">
+    <value>Vartotojo duomenys sėkmingai aktyvuotas.</value>
+  </data>
+  <data name="Acct_AccountAlreadyActivated" xml:space="preserve">
+    <value>Sąskaita jau aktyvuota.</value>
+  </data>
+  <data name="Acct_AccountDeleteSuccess" xml:space="preserve">
+    <value>Sąskaita sėkmingai ištrintas.</value>
+  </data>
+  <data name="Acct_AccountNotActivated" xml:space="preserve">
+    <value>Account nėra aktyvuotas patikrinkite el pirmą ar prašyti papildomos aktyvacijos kodą.</value>
+  </data>
+  <data name="Acct_ActivateAccount" xml:space="preserve">
+    <value>Aktyvuoti sąskaitą</value>
+  </data>
+  <data name="Acct_ActivationAccountBody" xml:space="preserve">
+    <value>Šis el.pašto prašo aktyvacijos jūsų {0} sąskaita: {1}.</value>
+  </data>
+  <data name="Acct_ActivationAccountSubject" xml:space="preserve">
+    <value>Aktyvinimas sąskaitą {0}</value>
+  </data>
+  <data name="Acct_ActivationCode" xml:space="preserve">
+    <value>Aktyvacijos kodas</value>
+  </data>
+  <data name="Acct_BadEmailFormat" xml:space="preserve">
+    <value>E-pašto adresas negali negaliojančio formato.</value>
+  </data>
+  <data name="Acct_Certain" xml:space="preserve">
+    <value>Ar tikrai?</value>
+  </data>
+  <data name="Acct_ChangeEmailAddress" xml:space="preserve">
+    <value>Pakeisti E-pašto adresas</value>
+  </data>
+  <data name="Acct_ChangePassword" xml:space="preserve">
+    <value>Keisti slaptažodį</value>
+  </data>
+  <data name="Acct_ChangeUsername" xml:space="preserve">
+    <value>Keisti vardą</value>
+  </data>
+  <data name="Acct_CheckEmailNotice" xml:space="preserve">
+    <value>Aktyvinimo išsiųstas adresu.</value>
+  </data>
+  <data name="Acct_ConfirmEmailAddress" xml:space="preserve">
+    <value>Patvirtinkite elektroninio pašto adresas</value>
+  </data>
+  <data name="Acct_ConfirmPassword" xml:space="preserve">
+    <value>Pakartokite slaptažodį</value>
+  </data>
+  <data name="Acct_ControlPanel" xml:space="preserve">
+    <value>Valdymo pultas</value>
+  </data>
+  <data name="Acct_DeleteAccount" xml:space="preserve">
+    <value>Ištrinti paskyrą</value>
+  </data>
+  <data name="Acct_DuplicateUser" xml:space="preserve">
+    <value>Vartotojas su tokiu vardu jau egzistuoja, prašome pasirinkti kitą.</value>
+  </data>
+  <data name="Acct_EmailAddress" xml:space="preserve">
+    <value>E-pašto adresas</value>
+  </data>
+  <data name="Acct_EmailChangeReactivate" xml:space="preserve">
+    <value>E-pašto adresas pasikeitė ir aktyvacijos el išsiųstas aktyvuoti sąskaitą.</value>
+  </data>
+  <data name="Acct_EmailInUse" xml:space="preserve">
+    <value>E-mail jau naudojamas prašome prisijungti su esamais įgaliojimai.</value>
+  </data>
+  <data name="Acct_EmailsNotMatch" xml:space="preserve">
+    <value>E-mail adresai nesutampa</value>
+  </data>
+  <data name="Acct_ForgotPassword" xml:space="preserve">
+    <value>Pamiršote slaptažodį</value>
+  </data>
+  <data name="Acct_ForgotUsername" xml:space="preserve">
+    <value>Pamiršote vartotojo vardą</value>
+  </data>
+  <data name="Acct_Home" xml:space="preserve">
+    <value>Namai</value>
+  </data>
+  <data name="Acct_IncorrectActivationCode" xml:space="preserve">
+    <value>Neteisingas aktyvacijos kodas.</value>
+  </data>
+  <data name="Acct_IncorrectPasswordResetCode" xml:space="preserve">
+    <value>Neteisingas slaptažodžio kodas.</value>
+  </data>
+  <data name="Acct_InvalidInput" xml:space="preserve">
+    <value>Neteisingas įvedimas.</value>
+  </data>
+  <data name="Acct_InvalidUsernamePassword" xml:space="preserve">
+    <value>Neteisingas vartotojo vardas arba slaptažodis.</value>
+  </data>
+  <data name="Acct_Login" xml:space="preserve">
+    <value>Vartotojas</value>
+  </data>
+  <data name="Acct_LoginSuccess" xml:space="preserve">
+    <value>Vartotojas sėkmingas.</value>
+  </data>
+  <data name="Acct_Logoff" xml:space="preserve">
+    <value>Atsijungti</value>
+  </data>
+  <data name="Acct_LogoffSuccess" xml:space="preserve">
+    <value>Atsijungti sėkmingas.</value>
+  </data>
+  <data name="Acct_MinimumPassword" xml:space="preserve">
+    <value>Slaptažodis turi būti bent 8 simbolių.</value>
+  </data>
+  <data name="Acct_MinimumUsername" xml:space="preserve">
+    <value>Vartotojo vardas turi būti ne mažiau kaip 4 simboliai.</value>
+  </data>
+  <data name="Acct_No" xml:space="preserve">
+    <value>Ne</value>
+  </data>
+  <data name="Acct_NotConfirmDelete" xml:space="preserve">
+    <value>Turi patvirtinti paskyros ištrynimą.</value>
+  </data>
+  <data name="Acct_NoUserExists" xml:space="preserve">
+    <value>Nėra jokių naudotojų įvesto elektroninio pašto adresą.</value>
+  </data>
+  <data name="Acct_Password" xml:space="preserve">
+    <value>Slaptažodis</value>
+  </data>
+  <data name="Acct_PasswordAlreadyReset" xml:space="preserve">
+    <value>Slaptažodis jau naujo ar procesas nebūtų pradėtas.</value>
+  </data>
+  <data name="Acct_PasswordChangedBody" xml:space="preserve">
+    <value>Šis el.pašto yra informuoti apie slaptažodžio pakeitimą jūsų {0} sąskaita: {1}.</value>
+  </data>
+  <data name="Acct_PasswordChangedSubject" xml:space="preserve">
+    <value>Slaptažodis pasikeitė sąskaitą {0}</value>
+  </data>
+  <data name="Acct_PasswordChangeSuccess" xml:space="preserve">
+    <value>Slaptažodis sėkmingai pakeistas.</value>
+  </data>
+  <data name="Acct_PasswordEmailSent" xml:space="preserve">
+    <value>E-mail buvo išsiųstas į jūsų adresą faile pradėti slaptažodžio atkūrimo procesą.</value>
+  </data>
+  <data name="Acct_PasswordResetBody" xml:space="preserve">
+    <value>Šis el.pašto yra atstatyti savo {0} paskyros slaptažodį: {1}.</value>
+  </data>
+  <data name="Acct_PasswordResetCode" xml:space="preserve">
+    <value>Slaptažodžio keitimas Kodas</value>
+  </data>
+  <data name="Acct_PasswordResetSubject" xml:space="preserve">
+    <value>Slaptažodis reset sąskaitą {0}</value>
+  </data>
+  <data name="Acct_PasswordResetSuccess" xml:space="preserve">
+    <value>Slaptažodis sėkmingai atstatyti.</value>
+  </data>
+  <data name="Acct_PasswordsNotMatch" xml:space="preserve">
+    <value>Slaptažodžiai nesutampa</value>
+  </data>
+  <data name="Acct_Register" xml:space="preserve">
+    <value>Registruotis</value>
+  </data>
+  <data name="Acct_Remember" xml:space="preserve">
+    <value>Prisiminti?</value>
+  </data>
+  <data name="Acct_ResendActivationEmail" xml:space="preserve">
+    <value>Persiųsti aktyvavimo E-mail</value>
+  </data>
+  <data name="Acct_ResetPassword" xml:space="preserve">
+    <value>Atstatyti slaptažodį</value>
+  </data>
+  <data name="Acct_RetrievePassword" xml:space="preserve">
+    <value>Priimti Slaptažodis</value>
+  </data>
+  <data name="Acct_RetrieveUsername" xml:space="preserve">
+    <value>Priimti Nick</value>
+  </data>
+  <data name="Acct_SendActivationCode" xml:space="preserve">
+    <value>Siųsti aktyvacijos kodą</value>
+  </data>
+  <data name="Acct_Username" xml:space="preserve">
+    <value>Vartotojo vardas</value>
+  </data>
+  <data name="Acct_UsernameChangedBody" xml:space="preserve">
+    <value>Šis el.pašto yra informuoti apie sąskaitos pavadinimo pasikeitimą jūsų {0} sąskaita: {1}.</value>
+  </data>
+  <data name="Acct_UsernameChangedSubject" xml:space="preserve">
+    <value>Nick pasikeitė sąskaitą {0}</value>
+  </data>
+  <data name="Acct_UsernameChangeSuccess" xml:space="preserve">
+    <value>Vartotojo vardas sėkmingai pakeistas.</value>
+  </data>
+  <data name="Acct_UsernameEmailSent" xml:space="preserve">
+    <value>E-mail buvo išsiųstas jūsų nurodytu adresu ant failo su jūsų vartotojo vardu.</value>
+  </data>
+  <data name="Acct_UsernameReminderBody" xml:space="preserve">
+    <value>Šis el.pašto yra jūsų {0} sąskaitą priminimas: {1}.</value>
+  </data>
+  <data name="Acct_UsernameReminderSubject" xml:space="preserve">
+    <value>Vartotojo vardas priminimą sąskaitą {0}</value>
+  </data>
+  <data name="Acct_UserNotFound" xml:space="preserve">
+    <value>Vartotojas neegzistuoja.</value>
+  </data>
+  <data name="Acct_Yes" xml:space="preserve">
+    <value>Taip</value>
+  </data>
+  <data name="Acct_CleanupStale" xml:space="preserve">
+    <value>Valymas Nuolat</value>
+  </data>
+  <data name="Acct_ClearCache" xml:space="preserve">
+    <value>Išvalyti talpyklą</value>
+  </data>
+  <data name="Acct_ClearDiskCache" xml:space="preserve">
+    <value>Išvalyti Talpyklos</value>
+  </data>
+  <data name="Acct_CreateDatabase" xml:space="preserve">
+    <value>Sukurti duomenų bazę</value>
+  </data>
+  <data name="Acct_DotNetVersion" xml:space="preserve">
+    <value>Dot Net Versija</value>
+  </data>
+  <data name="Acct_RemoveDatabase" xml:space="preserve">
+    <value>Pašalinti duomenų bazė</value>
+  </data>
+  <data name="Acct_ViewCache" xml:space="preserve">
+    <value>Peržiūrėti talpyklos</value>
+  </data>
+  <data name="Acct_ViewDiskCache" xml:space="preserve">
+    <value>Peržiūrėti Talpyklos</value>
+  </data>
+  <data name="Acct_ViewHeaders" xml:space="preserve">
+    <value>Peržiūrėti Antraštės</value>
+  </data>
+  <data name="Hadith_Book" xml:space="preserve">
+    <value>Knyga</value>
+  </data>
+  <data name="Hadith_Books" xml:space="preserve">
+    <value>Knygos</value>
+  </data>
+  <data name="Hadith_Chapters" xml:space="preserve">
+    <value>Skyriai</value>
+  </data>
+  <data name="Hadith_Hadith" xml:space="preserve">
+    <value>Hadith</value>
+  </data>
+  <data name="Hadith_Hadiths" xml:space="preserve">
+    <value>Hadiths</value>
+  </data>
+  <data name="Hadith_IdenticalNumbering" xml:space="preserve">
+    <value>Identiški numeravimas</value>
+  </data>
+  <data name="Hadith_Index" xml:space="preserve">
+    <value>Rodiklis</value>
+  </data>
+  <data name="Hadith_MappedOf" xml:space="preserve">
+    <value>{0} prijungto Iš {1}</value>
+  </data>
+  <data name="Hadith_NoTranslation" xml:space="preserve">
+    <value>Nėra Vertimas</value>
+  </data>
+  <data name="Hadith_SourceHadithIndex" xml:space="preserve">
+    <value>Šaltinis Hadith puslapis</value>
+  </data>
+  <data name="Hadith_Translation" xml:space="preserve">
+    <value>Vertimas</value>
+  </data>
+  <data name="Hadith_TranslationBook" xml:space="preserve">
+    <value>Vertimas Užsakyti</value>
+  </data>
+  <data name="Hadith_TranslationHadithCount" xml:space="preserve">
+    <value>Vertimas Hadith Grafas</value>
+  </data>
+  <data name="Hadith_TranslationHadithIndex" xml:space="preserve">
+    <value>Vertimas Hadith puslapis</value>
+  </data>
+  <data name="Hadith_TranslationMapping" xml:space="preserve">
+    <value>Vertimas atvaizdavimas</value>
+  </data>
+  <data name="Hadith_TranslationVolume" xml:space="preserve">
+    <value>Vertimas tomas</value>
+  </data>
+  <data name="Hadith_Volume" xml:space="preserve">
+    <value>Apimtis</value>
+  </data>
+  <data name="IslamSource_Apply" xml:space="preserve">
+    <value>Taikyti</value>
+  </data>
+  <data name="IslamSource_ArabicAlphabet" xml:space="preserve">
+    <value>Arabų Alfabetas</value>
+  </data>
+  <data name="IslamSource_ArabicToRoman" xml:space="preserve">
+    <value>Iš arabų į Romos</value>
+  </data>
+  <data name="IslamSource_Book" xml:space="preserve">
+    <value>Knyga</value>
+  </data>
+  <data name="IslamSource_Collection" xml:space="preserve">
+    <value>Kolekcija</value>
+  </data>
+  <data name="IslamSource_Credits" xml:space="preserve">
+    <value>Kreditas už Korano tekste eina į Tanzil projektą.</value>
+  </data>
+  <data name="IslamSource_Direction" xml:space="preserve">
+    <value>Kryptis</value>
+  </data>
+  <data name="IslamSource_Disable" xml:space="preserve">
+    <value>Sugadinti</value>
+  </data>
+  <data name="IslamSource_Display" xml:space="preserve">
+    <value>Displėjus</value>
+  </data>
+  <data name="IslamSource_Division" xml:space="preserve">
+    <value>Skyrius</value>
+  </data>
+  <data name="IslamSource_DownloadMapping" xml:space="preserve">
+    <value>Atsisiųsti ir kartografijos</value>
+  </data>
+  <data name="IslamSource_EnglishRomanized" xml:space="preserve">
+    <value>Anglų zromanizowany</value>
+  </data>
+  <data name="IslamSource_ExtendedBuckwalter" xml:space="preserve">
+    <value>Išplėstinė Buckwalter</value>
+  </data>
+  <data name="IslamSource_Font" xml:space="preserve">
+    <value>Šriftas</value>
+  </data>
+  <data name="IslamSource_Goal" xml:space="preserve">
+    <value>Ši svetainė siekiama suteikti žalią pirminę medžiagą apie islamą, įskaitant Korano, Hadith kolekcijas, knygas, garso, vaizdo, naujienos, žodyną, transliteracijos sistemų ir programavimo informacijos.</value>
+  </data>
+  <data name="IslamSource_Hadiths" xml:space="preserve">
+    <value>Hadith kolekcijos</value>
+  </data>
+  <data name="IslamSource_HadithSourceText" xml:space="preserve">
+    <value>Hadith Šaltinis tekstas</value>
+  </data>
+  <data name="IslamSource_Home" xml:space="preserve">
+    <value>Namai</value>
+  </data>
+  <data name="IslamSource_Information" xml:space="preserve">
+    <value>Informacija</value>
+  </data>
+  <data name="IslamSource_Intro" xml:space="preserve">
+    <value>Turite klausimų ar pastabų ar klaidų, rašykite man adresu:</value>
+  </data>
+  <data name="IslamSource_Introduction" xml:space="preserve">
+    <value>Įvadas</value>
+  </data>
+  <data name="IslamSource_IslamicArticles" xml:space="preserve">
+    <value>Islamo straipsniai</value>
+  </data>
+  <data name="IslamSource_IslamicCharity" xml:space="preserve">
+    <value>Islamo labdaros</value>
+  </data>
+  <data name="IslamSource_IslamicFoundations" xml:space="preserve">
+    <value>Islamo Pamatai</value>
+  </data>
+  <data name="IslamSource_IslamicInformation" xml:space="preserve">
+    <value>Islamo Informacija</value>
+  </data>
+  <data name="IslamSource_IslamicNews" xml:space="preserve">
+    <value>Islamo Naujienos</value>
+  </data>
+  <data name="IslamSource_IslamicOrganizations" xml:space="preserve">
+    <value>Islamo organizacijos</value>
+  </data>
+  <data name="IslamSource_IslamicQuotes" xml:space="preserve">
+    <value>Islamo kotiruotės</value>
+  </data>
+  <data name="IslamSource_IslamicShops" xml:space="preserve">
+    <value>Islamo Parduotuvės</value>
+  </data>
+  <data name="IslamSource_IslamicWebsites" xml:space="preserve">
+    <value>Islamo svetainės</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesAhlulBaytAcademy" xml:space="preserve">
+    <value>AhlulBayt akademija</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesAlEman" xml:space="preserve">
+    <value>فصل: كتاب المقدمة | نداء الإيمان</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesAlHudaInternationalWelfareFoundation" xml:space="preserve">
+    <value>Al Huda Tarptautinės gerovės fondas</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesAllahsQuran" xml:space="preserve">
+    <value>Dievo Koranas</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesCorpus" xml:space="preserve">
+    <value>Quranic Arabų Corpus</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesCouncilAmericanIslamicRelations" xml:space="preserve">
+    <value>Taryba Amerikos ir islamo santykių</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesDarusSalamPublications" xml:space="preserve">
+    <value>Dar-US-Salam Publikacijos</value>
+  </data>
+  <data name="IslamSource_IslamicWebsiteseMuslim" xml:space="preserve">
+    <value>eMuslim</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesGuidedWaysTechnologies" xml:space="preserve">
+    <value>Ekskursijos būdai technologijos</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesHouseQuran" xml:space="preserve">
+    <value>Namas Korano</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesiQuran" xml:space="preserve">
+    <value>iQuran</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesIslamicCircleNorthAmerica" xml:space="preserve">
+    <value>Islamo Draugų Šiaurės Amerikoje</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesIslamicFinder" xml:space="preserve">
+    <value>Islamo paieška</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesIslamicInsights" xml:space="preserve">
+    <value>Islamo įžvalgos</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesIslamicRelief" xml:space="preserve">
+    <value>Islamic Relief</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesIslamicReliefUSA" xml:space="preserve">
+    <value>Islamic Relief JAV</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesIslamicSearchCenter" xml:space="preserve">
+    <value>Islamo Ieškoti centras</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesIslamicSocietyNorthAmerica" xml:space="preserve">
+    <value>Islamo draugijos Šiaurės Amerikoje</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesIslamicThinkersSociety" xml:space="preserve">
+    <value>Islamo mąstytojai draugija</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesIslamSpirit" xml:space="preserve">
+    <value>Islamas Dvasia</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesKalamullah" xml:space="preserve">
+    <value>Kalamullah</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesMaktabahorgTheUltimateIslamicLibrary" xml:space="preserve">
+    <value>Maktabah.org Pagrindinis Islamo biblioteka</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesOpenBurhan" xml:space="preserve">
+    <value>Atidaryti Burhan</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesProfessorAnsarian" xml:space="preserve">
+    <value>Oficiali svetainė profesorius Ansarian</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesQuran" xml:space="preserve">
+    <value>Koranas</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesQuranDownload" xml:space="preserve">
+    <value>Korano Parsisiųsti</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesQuranExplorer" xml:space="preserve">
+    <value>Korano Explorer</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesQuranicAudio" xml:space="preserve">
+    <value>Quranic Garso</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesQuranProject" xml:space="preserve">
+    <value>Dabar naršo Korano projektas</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesQuranTransliteration" xml:space="preserve">
+    <value>Koranas transliteracija</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesSalah" xml:space="preserve">
+    <value>Salah</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesStudyQuran" xml:space="preserve">
+    <value>Studijų Koranas</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesSunnahCom" xml:space="preserve">
+    <value>Sunnah.com posakiai ir mokymai pranašo Mahometo (صلى الله عليه و سلم)</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesTanzil" xml:space="preserve">
+    <value>Tanzil - Korano navigatorius</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesTheAbsoluteReality" xml:space="preserve">
+    <value>Absoliuti realybė</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesTheAwaitedOneFoundation" xml:space="preserve">
+    <value>Ilgai lauktas Vienas fondas</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesTheIslamicBulletin" xml:space="preserve">
+    <value>Islamo biuletenis</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesTheIslamicFoundation" xml:space="preserve">
+    <value>Islamo fondas</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesTheLahoreAhmadiyyaMovement" xml:space="preserve">
+    <value>Lahoras Ahmadiyya judėjimas</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesTheLahoreAhmadiyyaMovementIslam" xml:space="preserve">
+    <value>Lahoras Ahmadiyya judėjimas islamą</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesUnderstandQuran" xml:space="preserve">
+    <value>Suprasti Koraną</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesVerseByVerseQuran" xml:space="preserve">
+    <value>Eilėraščių eilėraštis Korano</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesZakatFoundationAmerica" xml:space="preserve">
+    <value>Zakat fondas Amerikoje</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesZekr" xml:space="preserve">
+    <value>Zekr projektas</value>
+  </data>
+  <data name="IslamSource_LearningIslam" xml:space="preserve">
+    <value>Mokymosi islamą</value>
+  </data>
+  <data name="IslamSource_Loading" xml:space="preserve">
+    <value>Pakrovimas</value>
+  </data>
+  <data name="IslamSource_Lotus" xml:space="preserve">
+    <value>Lotosas</value>
+  </data>
+  <data name="IslamSource_Mapping" xml:space="preserve">
+    <value>Kartografijos</value>
+  </data>
+  <data name="IslamSource_NotableArticles" xml:space="preserve">
+    <value>Žymūs straipsniai</value>
+  </data>
+  <data name="IslamSource_NotableNews" xml:space="preserve">
+    <value>Žymūs Naujienos</value>
+  </data>
+  <data name="IslamSource_NotableQuotes" xml:space="preserve">
+    <value>Žymūs kotiruotės</value>
+  </data>
+  <data name="IslamSource_Off" xml:space="preserve">
+    <value>Nuo</value>
+  </data>
+  <data name="IslamSource_Operation" xml:space="preserve">
+    <value>Operacija</value>
+  </data>
+  <data name="IslamSource_Perform" xml:space="preserve">
+    <value>Atlikti</value>
+  </data>
+  <data name="IslamSource_PlainRoman" xml:space="preserve">
+    <value>Paprastas Romanas</value>
+  </data>
+  <data name="IslamSource_PrayerTimes" xml:space="preserve">
+    <value>Malda Times "</value>
+  </data>
+  <data name="IslamSource_QiblaDirectionFromTrueNorth" xml:space="preserve">
+    <value>Qibla kryptis Nuo True North</value>
+  </data>
+  <data name="IslamSource_Quote" xml:space="preserve">
+    <value>Citata</value>
+  </data>
+  <data name="IslamSource_QuoteMode" xml:space="preserve">
+    <value>Citata režimas</value>
+  </data>
+  <data name="IslamSource_Quran" xml:space="preserve">
+    <value>Šventojo Korano</value>
+  </data>
+  <data name="IslamSource_QuranResources" xml:space="preserve">
+    <value>Korano ištekliai</value>
+  </data>
+  <data name="IslamSource_RomanToArabic" xml:space="preserve">
+    <value>Romos į arabų</value>
+  </data>
+  <data name="IslamSource_Scheme" xml:space="preserve">
+    <value>Schema</value>
+  </data>
+  <data name="IslamSource_Selection" xml:space="preserve">
+    <value>Pasirinkimas</value>
+  </data>
+  <data name="IslamSource_SubmissionNote" xml:space="preserve">
+    <value>Pristatymai: originalus šaltinis Hadith kolekcijos turi būti pateikta XML metaduomenų failą, kuriame yra visa apimtis, knyga, skyrių ir Hadith informaciją ir XML failą, kuriame yra žalias Hadith tekstą.</value>
+  </data>
+  <data name="IslamSource_Supplications" xml:space="preserve">
+    <value>Maldomis</value>
+  </data>
+  <data name="IslamSource_Text" xml:space="preserve">
+    <value>Tekstas</value>
+  </data>
+  <data name="IslamSource_Translation" xml:space="preserve">
+    <value>Vertimas</value>
+  </data>
+  <data name="IslamSource_Transliterate" xml:space="preserve">
+    <value>Transliteruoti</value>
+  </data>
+  <data name="IslamSource_Transliteration" xml:space="preserve">
+    <value>Transliteracija</value>
+  </data>
+  <data name="IslamSource_TransliterationScheme" xml:space="preserve">
+    <value>Transliteracija schema</value>
+  </data>
+  <data name="IslamSource_Viewer" xml:space="preserve">
+    <value>Žiūrovas</value>
+  </data>
+  <data name="IslamSource_Welcome" xml:space="preserve">
+    <value>Sveiki atvykę į IslamSource.info</value>
+  </data>
+  <data name="IslamSource_ModifyDiacritics" xml:space="preserve">
+    <value>Modifikuoti diakritinius</value>
+  </data>
+  <data name="IslamSource_Add" xml:space="preserve">
+    <value>Papildyti</value>
+  </data>
+  <data name="IslamSource_Remove" xml:space="preserve">
+    <value>Pašalinti</value>
+  </data>
+  <data name="IslamInfo_Chapters" xml:space="preserve">
+    <value>Skyriai</value>
+  </data>
+  <data name="IslamInfo_ChaptersRevelationOrder" xml:space="preserve">
+    <value>Skyriai Apreiškimo ordino</value>
+  </data>
+  <data name="IslamInfo_Groups" xml:space="preserve">
+    <value>Grupės</value>
+  </data>
+  <data name="IslamInfo_ImportantSelections" xml:space="preserve">
+    <value>Svarbūs pasirinkimai</value>
+  </data>
+  <data name="IslamInfo_Pages" xml:space="preserve">
+    <value>Puslapiai</value>
+  </data>
+  <data name="IslamInfo_Parts" xml:space="preserve">
+    <value>Dalys</value>
+  </data>
+  <data name="IslamInfo_Prostrations" xml:space="preserve">
+    <value>Nusilenkimų</value>
+  </data>
+  <data name="IslamInfo_Sections" xml:space="preserve">
+    <value>Skyriai</value>
+  </data>
+  <data name="IslamInfo_Stations" xml:space="preserve">
+    <value>Radijo stotys</value>
+  </data>
+  <data name="lang_localam" xml:space="preserve">
+    <value>Amharų</value>
+  </data>
+  <data name="lang_localar" xml:space="preserve">
+    <value>Arabų</value>
+  </data>
+  <data name="lang_localaz" xml:space="preserve">
+    <value>Azerbaidžano</value>
+  </data>
+  <data name="lang_localber" xml:space="preserve">
+    <value>Amazigh</value>
+  </data>
+  <data name="lang_localbg" xml:space="preserve">
+    <value>Bulgarų</value>
+  </data>
+  <data name="lang_localbn" xml:space="preserve">
+    <value>Bengalų</value>
+  </data>
+  <data name="lang_localbs" xml:space="preserve">
+    <value>Bosnijos</value>
+  </data>
+  <data name="lang_localcs" xml:space="preserve">
+    <value>Čekijos</value>
+  </data>
+  <data name="lang_localde" xml:space="preserve">
+    <value>Vokietijos</value>
+  </data>
+  <data name="lang_localdv" xml:space="preserve">
+    <value>Divehi</value>
+  </data>
+  <data name="lang_localen" xml:space="preserve">
+    <value>Anglų</value>
+  </data>
+  <data name="lang_locales" xml:space="preserve">
+    <value>Ispanų</value>
+  </data>
+  <data name="lang_localfa" xml:space="preserve">
+    <value>Persijos</value>
+  </data>
+  <data name="lang_localfr" xml:space="preserve">
+    <value>Prancūzų</value>
+  </data>
+  <data name="lang_localha" xml:space="preserve">
+    <value>Hausų</value>
+  </data>
+  <data name="lang_localhi" xml:space="preserve">
+    <value>Hindi</value>
+  </data>
+  <data name="lang_localid" xml:space="preserve">
+    <value>Indonezijos</value>
+  </data>
+  <data name="lang_localit" xml:space="preserve">
+    <value>Italijos</value>
+  </data>
+  <data name="lang_localja" xml:space="preserve">
+    <value>Japonijos</value>
+  </data>
+  <data name="lang_localko" xml:space="preserve">
+    <value>Korėjiečių</value>
+  </data>
+  <data name="lang_localku" xml:space="preserve">
+    <value>Kurdų</value>
+  </data>
+  <data name="lang_localml" xml:space="preserve">
+    <value>Malajalių</value>
+  </data>
+  <data name="lang_localms" xml:space="preserve">
+    <value>Malajų</value>
+  </data>
+  <data name="lang_localnl" xml:space="preserve">
+    <value>Olandijos</value>
+  </data>
+  <data name="lang_localno" xml:space="preserve">
+    <value>Norvegijos</value>
+  </data>
+  <data name="lang_localpl" xml:space="preserve">
+    <value>Lenkijos</value>
+  </data>
+  <data name="lang_localpt" xml:space="preserve">
+    <value>Portugalų</value>
+  </data>
+  <data name="lang_localro" xml:space="preserve">
+    <value>Rumunų</value>
+  </data>
+  <data name="lang_localru" xml:space="preserve">
+    <value>Rusijos</value>
+  </data>
+  <data name="lang_localsd" xml:space="preserve">
+    <value>Sindi</value>
+  </data>
+  <data name="lang_localso" xml:space="preserve">
+    <value>Somalio</value>
+  </data>
+  <data name="lang_localsq" xml:space="preserve">
+    <value>Albanų</value>
+  </data>
+  <data name="lang_localsv" xml:space="preserve">
+    <value>Švedų</value>
+  </data>
+  <data name="lang_localsw" xml:space="preserve">
+    <value>Svahili</value>
+  </data>
+  <data name="lang_localta" xml:space="preserve">
+    <value>Tamilų</value>
+  </data>
+  <data name="lang_localtg" xml:space="preserve">
+    <value>Tadžikistano</value>
+  </data>
+  <data name="lang_localth" xml:space="preserve">
+    <value>Tailando</value>
+  </data>
+  <data name="lang_localtr" xml:space="preserve">
+    <value>Turkų</value>
+  </data>
+  <data name="lang_localtt" xml:space="preserve">
+    <value>Totorių kalba</value>
+  </data>
+  <data name="lang_localug" xml:space="preserve">
+    <value>Uigūrų</value>
+  </data>
+  <data name="lang_localur" xml:space="preserve">
+    <value>Urdų kalba</value>
+  </data>
+  <data name="lang_localuz" xml:space="preserve">
+    <value>Uzbekų</value>
+  </data>
+  <data name="lang_localzh" xml:space="preserve">
+    <value>Kinijos</value>
+  </data>
+  <data name="Acct_Download" xml:space="preserve">
+    <value>Parsisiųsti {0}</value>
+  </data>
+  <data name="IslamInfo_CelebrationDay" xml:space="preserve">
+    <value>Šventė dieną</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek1" xml:space="preserve">
+    <value>Sekmadienis</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek2" xml:space="preserve">
+    <value>Pirmadienis</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek3" xml:space="preserve">
+    <value>Antradienis</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek4" xml:space="preserve">
+    <value>Trečiadienis</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek5" xml:space="preserve">
+    <value>Ketvirtadienis</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek6" xml:space="preserve">
+    <value>Penktadienis</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek7" xml:space="preserve">
+    <value>Šeštadienis</value>
+  </data>
+  <data name="IslamInfo_DaysOfWeek" xml:space="preserve">
+    <value>Savaitės dienos</value>
+  </data>
+  <data name="IslamInfo_Disliked" xml:space="preserve">
+    <value>Nepatiko</value>
+  </data>
+  <data name="IslamInfo_EnteringMosque" xml:space="preserve">
+    <value>Įplaukimas į mečetę</value>
+  </data>
+  <data name="IslamInfo_Fasting" xml:space="preserve">
+    <value>Badavimas</value>
+  </data>
+  <data name="IslamInfo_FastingAfterFastingMonth" xml:space="preserve">
+    <value>Pasninkas 6 dienas vykdant mėnesį</value>
+  </data>
+  <data name="IslamInfo_FastingBeforeFastingMonth" xml:space="preserve">
+    <value>Pasninkas iki badavimo mėnesį</value>
+  </data>
+  <data name="IslamInfo_FastingBeginningPilgrimageMonth" xml:space="preserve">
+    <value>Pasninkas pirmuosius 9 dienas piligrimų mėnesį</value>
+  </data>
+  <data name="IslamInfo_FastingDayOfArafa" xml:space="preserve">
+    <value>Pasninkas diena Arafa</value>
+  </data>
+  <data name="IslamInfo_FastingDayOfAshura" xml:space="preserve">
+    <value>Pasninkas diena Ashura</value>
+  </data>
+  <data name="IslamInfo_FastingMiddleLunarDays" xml:space="preserve">
+    <value>Pasninkas 13, 14 ir 15 mėnulio dienos</value>
+  </data>
+  <data name="IslamInfo_FastingMondayThursday" xml:space="preserve">
+    <value>Badavimo pirmadienis ir ketvirtadienis</value>
+  </data>
+  <data name="IslamInfo_FastingMonth" xml:space="preserve">
+    <value>Pasninkas mėnesį</value>
+  </data>
+  <data name="IslamInfo_FastingMonthPrayer" xml:space="preserve">
+    <value>Pasninkas mėnesį malda</value>
+  </data>
+  <data name="IslamInfo_Fear" xml:space="preserve">
+    <value>Baimė</value>
+  </data>
+  <data name="IslamInfo_Forbidden" xml:space="preserve">
+    <value>Draudžiamas</value>
+  </data>
+  <data name="IslamInfo_Friday" xml:space="preserve">
+    <value>Penktadienis</value>
+  </data>
+  <data name="IslamInfo_Fulfilling" xml:space="preserve">
+    <value>Įvykdyti</value>
+  </data>
+  <data name="IslamInfo_Funeral" xml:space="preserve">
+    <value>Laidotuvės</value>
+  </data>
+  <data name="IslamInfo_Guidance" xml:space="preserve">
+    <value>Vadovavimas</value>
+  </data>
+  <data name="IslamInfo_Jurisprudence" xml:space="preserve">
+    <value>Jurisprudencija</value>
+  </data>
+  <data name="IslamInfo_LateNight" xml:space="preserve">
+    <value>Vėlai naktį</value>
+  </data>
+  <data name="IslamInfo_LunarEclipse" xml:space="preserve">
+    <value>Mėnulio užtemimas</value>
+  </data>
+  <data name="IslamInfo_Month1" xml:space="preserve">
+    <value>Draudžiama vienas</value>
+  </data>
+  <data name="IslamInfo_Month10" xml:space="preserve">
+    <value>Apskaitinė</value>
+  </data>
+  <data name="IslamInfo_Month11" xml:space="preserve">
+    <value>Vienas iš paliaubų</value>
+  </data>
+  <data name="IslamInfo_Month12" xml:space="preserve">
+    <value>Vienas iš piligrimystės</value>
+  </data>
+  <data name="IslamInfo_Month2" xml:space="preserve">
+    <value>Negaliojantis</value>
+  </data>
+  <data name="IslamInfo_Month3" xml:space="preserve">
+    <value>Pirma pavasario</value>
+  </data>
+  <data name="IslamInfo_Month4" xml:space="preserve">
+    <value>Antrasis pavasaris</value>
+  </data>
+  <data name="IslamInfo_Month5" xml:space="preserve">
+    <value>Pirmas mėnuo perdžiūvusi žemė</value>
+  </data>
+  <data name="IslamInfo_Month6" xml:space="preserve">
+    <value>Antrasis mėnuo perdžiūvusi žemė</value>
+  </data>
+  <data name="IslamInfo_Month7" xml:space="preserve">
+    <value>Pagarba</value>
+  </data>
+  <data name="IslamInfo_Month8" xml:space="preserve">
+    <value>Išblaškytas</value>
+  </data>
+  <data name="IslamInfo_Month9" xml:space="preserve">
+    <value>Išdegintos</value>
+  </data>
+  <data name="IslamInfo_MorningLight" xml:space="preserve">
+    <value>Rytas šviesos</value>
+  </data>
+  <data name="IslamInfo_Necessary" xml:space="preserve">
+    <value>Reikalingas</value>
+  </data>
+  <data name="IslamInfo_Neutral" xml:space="preserve">
+    <value>Neutralus</value>
+  </data>
+  <data name="IslamInfo_ObligationOfSufficiency" xml:space="preserve">
+    <value>Pareiga pakankamumo</value>
+  </data>
+  <data name="IslamInfo_ObligationOfTheSelf" xml:space="preserve">
+    <value>Pareiga Savęs</value>
+  </data>
+  <data name="IslamInfo_Obligatory" xml:space="preserve">
+    <value>Privalomas</value>
+  </data>
+  <data name="IslamInfo_Odd" xml:space="preserve">
+    <value>Nelyginis</value>
+  </data>
+  <data name="IslamInfo_OftReturning" xml:space="preserve">
+    <value>Dažnai grįžta</value>
+  </data>
+  <data name="IslamInfo_Permissible" xml:space="preserve">
+    <value>Leistinas</value>
+  </data>
+  <data name="IslamInfo_Prayer" xml:space="preserve">
+    <value>Malda</value>
+  </data>
+  <data name="IslamInfo_PrayTime6" xml:space="preserve">
+    <value>Susilaikymas</value>
+  </data>
+  <data name="IslamInfo_PrayTime7" xml:space="preserve">
+    <value>Saulėtekis</value>
+  </data>
+  <data name="IslamInfo_PrayTime8" xml:space="preserve">
+    <value>Apskaičiuoti saulėlydis</value>
+  </data>
+  <data name="IslamInfo_PrayTime9" xml:space="preserve">
+    <value>Vidurnakčio</value>
+  </data>
+  <data name="IslamInfo_PrayTime1" xml:space="preserve">
+    <value>Aušra</value>
+  </data>
+  <data name="IslamInfo_PrayTime2" xml:space="preserve">
+    <value>Vidurdienis</value>
+  </data>
+  <data name="IslamInfo_PrayTime3" xml:space="preserve">
+    <value>Popietė</value>
+  </data>
+  <data name="IslamInfo_PrayTime4" xml:space="preserve">
+    <value>Saulėlydis</value>
+  </data>
+  <data name="IslamInfo_PrayTime5" xml:space="preserve">
+    <value>Naktis</value>
+  </data>
+  <data name="IslamInfo_PrescribedTime" xml:space="preserve">
+    <value>Nustatytas laikas</value>
+  </data>
+  <data name="IslamInfo_RainForDraught" xml:space="preserve">
+    <value>Lietus projektą</value>
+  </data>
+  <data name="IslamInfo_Recommended" xml:space="preserve">
+    <value>Rekomenduojama</value>
+  </data>
+  <data name="IslamInfo_SacredState" xml:space="preserve">
+    <value>Sakralinės valstybės</value>
+  </data>
+  <data name="IslamInfo_SolarEclipse" xml:space="preserve">
+    <value>Saulės užtemimas</value>
+  </data>
+  <data name="IslamInfo_Sunrise" xml:space="preserve">
+    <value>Saulėtekis</value>
+  </data>
+  <data name="IslamInfo_Supererogatory" xml:space="preserve">
+    <value>Supererogatory</value>
+  </data>
+  <data name="IslamInfo_Tradition" xml:space="preserve">
+    <value>Tradicija</value>
+  </data>
+  <data name="IslamInfo_TraditionObligatory" xml:space="preserve">
+    <value>Tradicija Privalomas</value>
+  </data>
+  <data name="IslamInfo_TraditionVoluntary" xml:space="preserve">
+    <value>Tradicija savanorių</value>
+  </data>
+  <data name="IslamInfo_Travel" xml:space="preserve">
+    <value>Kelionė</value>
+  </data>
+  <data name="IslamInfo_Victory" xml:space="preserve">
+    <value>Pergalė</value>
+  </data>
+  <data name="IslamInfo_Aaron" xml:space="preserve">
+    <value>Aaronas</value>
+  </data>
+  <data name="IslamInfo_Ablution" xml:space="preserve">
+    <value>Apsiplovimas</value>
+  </data>
+  <data name="IslamInfo_Abraham" xml:space="preserve">
+    <value>Abraomas</value>
+  </data>
+  <data name="IslamInfo_Adam" xml:space="preserve">
+    <value>Adomas</value>
+  </data>
+  <data name="IslamInfo_AfterCallToPrayerFirstPart" xml:space="preserve">
+    <value>Po skambučių maldai - pirmoji dalis</value>
+  </data>
+  <data name="IslamInfo_AfterCallToPrayerFirstPartTrans" xml:space="preserve">
+    <value>O boze, Viešpatie šio kvietimo išsami ir malda mūsų</value>
+  </data>
+  <data name="IslamInfo_AfterCallToPrayerFirstPartWordByWord" xml:space="preserve">
+    <value>O boze | Viešpatie | Šios | šaukinys | šaukiniai | Sukomplektuoti | ir maldos | iš mūsų</value>
+  </data>
+  <data name="IslamInfo_AfterCallToPrayerSecondPart" xml:space="preserve">
+    <value>Po skambučių maldai - antra dalis</value>
+  </data>
+  <data name="IslamInfo_AfterCallToPrayerSecondPartTrans" xml:space="preserve">
+    <value>Duok Mahometo savo teises užtarimu ir remiantis</value>
+  </data>
+  <data name="IslamInfo_AfterCallToPrayerSecondPartWordByWord" xml:space="preserve">
+    <value>Padovanoti | Mahometui | savo teises užtarimo | ir dorybė</value>
+  </data>
+  <data name="IslamInfo_AfterCallToPrayerSupplication" xml:space="preserve">
+    <value>Po maldai maldavimas</value>
+  </data>
+  <data name="IslamInfo_AfterCallToPrayerThirdPart" xml:space="preserve">
+    <value>Po kvietimo maldai - trečia dalis</value>
+  </data>
+  <data name="IslamInfo_AfterCallToPrayerThirdPartTrans" xml:space="preserve">
+    <value>Ir pakelti jį į padidėjusią rango kurį pažadėjo jį</value>
+  </data>
+  <data name="IslamInfo_AfterCallToPrayerThirdPartWordByWord" xml:space="preserve">
+    <value>Ir prikelsiu | į rangą | padidėjusi | kuris | tu pažadėjo jam</value>
+  </data>
+  <data name="IslamInfo_Allah" xml:space="preserve">
+    <value>Vienas Dievas</value>
+  </data>
+  <data name="IslamInfo_AllahIsGreatest" xml:space="preserve">
+    <value>Dievas yra didžiausias</value>
+  </data>
+  <data name="IslamInfo_AllPraiseAndThanksBeToAllah" xml:space="preserve">
+    <value>Visi girti ir ačiū Dievui</value>
+  </data>
+  <data name="IslamInfo_AlmsGiving" xml:space="preserve">
+    <value>Išmaldos davimą</value>
+  </data>
+  <data name="IslamInfo_AndUponYouBePeace" xml:space="preserve">
+    <value>Ir ant tavęs bus taika</value>
+  </data>
+  <data name="IslamInfo_ArabicTypesetting" xml:space="preserve">
+    <value>Arabų Tekstų rinkimas</value>
+  </data>
+  <data name="IslamInfo_Arial" xml:space="preserve">
+    <value>Arial</value>
+  </data>
+  <data name="IslamInfo_BeforeTravel" xml:space="preserve">
+    <value>Prieš kelionę</value>
+  </data>
+  <data name="IslamInfo_BeforeTravelTrans" xml:space="preserve">
+    <value>Prašau palikti jus su šios religijos, Amanah (atsakomybė) ir ankstesnio akto dėl Dievo.</value>
+  </data>
+  <data name="IslamInfo_BeforeTravelWordByWord" xml:space="preserve">
+    <value>Prašau palikti jus | už Dievą | su šios religijos ir | | ką atsakomybė ir | ankstesnis | veika</value>
+  </data>
+  <data name="IslamInfo_BowOfPrayer" xml:space="preserve">
+    <value>Lankas maldos</value>
+  </data>
+  <data name="IslamInfo_CallToBeginPrayerSixthVerse" xml:space="preserve">
+    <value>Skambinkite pradėti maldą - šešta eilutė</value>
+  </data>
+  <data name="IslamInfo_CallToBeginPrayerSixthVerseTrans" xml:space="preserve">
+    <value>Iš tiesų pradėjo maldą</value>
+  </data>
+  <data name="IslamInfo_CallToBeginPrayerSixthVerseWordByWord" xml:space="preserve">
+    <value>Iš tiesų | pradėjo | malda</value>
+  </data>
+  <data name="IslamInfo_CallToBeginThePrayer" xml:space="preserve">
+    <value>Skambinkite pradėti maldą</value>
+  </data>
+  <data name="IslamInfo_CallToPrayer" xml:space="preserve">
+    <value>Kvietimas maldai</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerEighthVerse" xml:space="preserve">
+    <value>Kvietimas maldai - aštuntą eilutę</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerEighthVerseTrans" xml:space="preserve">
+    <value>Dievo nėra, išskyrus Dievą</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerEighthVerseWordByWord" xml:space="preserve">
+    <value>Nėra | Dievas | išskyrus | Allahas</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerFifthVerse" xml:space="preserve">
+    <value>Kvietimas maldai - penktą eilutę</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerFifthVerseTrans" xml:space="preserve">
+    <value>Ateik į sėkmę</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerFifthVerseWordByWord" xml:space="preserve">
+    <value>Ateikite | į | sėkmė</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerFirstVerse" xml:space="preserve">
+    <value>Kvietimas maldai - pirmąjį posmą</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerFirstVerseTrans" xml:space="preserve">
+    <value>Dievas yra didžiausias</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerFirstVerseWordByWord" xml:space="preserve">
+    <value>Dievas yra | didžiausias</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerFourthVerse" xml:space="preserve">
+    <value>Kvietimas maldai - ketvirtą eilutę</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerFourthVerseTrans" xml:space="preserve">
+    <value>Atvykite į maldą</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerFourthVerseWordByWord" xml:space="preserve">
+    <value>Ateikite | į | malda</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerLeader" xml:space="preserve">
+    <value>Kvietimas į maldos lyderis</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerSecondVerse" xml:space="preserve">
+    <value>Kvietimas maldai - antrą eilutę</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerSecondVerseTrans" xml:space="preserve">
+    <value>Aš liudiju, kad nėra Dievo, išskyrus Dievą</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerSecondVerseWordByWord" xml:space="preserve">
+    <value>Aš liudiju, kad | | nėra | Dievas | išskyrus | Allahas</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerSeventhVerse" xml:space="preserve">
+    <value>Kvietimas maldai - septintą eilutę</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerSeventhVerseTrans" xml:space="preserve">
+    <value>Dievas yra didžiausias</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerSeventhVerseWordByWord" xml:space="preserve">
+    <value>Dievas yra | didžiausias</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerSixthVerse" xml:space="preserve">
+    <value>Kvietimas maldai - šeštą eilutę</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerSixthVerseTrans" xml:space="preserve">
+    <value>Malda yra geriau nei miego</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerSixthVerseWordByWord" xml:space="preserve">
+    <value>Malda | geriau | nei | miegas</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerThirdVerse" xml:space="preserve">
+    <value>Kvietimas maldai - trečią eilutę</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerThirdVerseTrans" xml:space="preserve">
+    <value>Aš liudiju, kad Mahometas yra Dievo pasiuntinys</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerThirdVerseWordByWord" xml:space="preserve">
+    <value>Aš liudiju, kad | | Muhammad | pasiuntinys | Allaho</value>
+  </data>
+  <data name="IslamInfo_Chapter" xml:space="preserve">
+    <value>Skyrius</value>
+  </data>
+  <data name="IslamInfo_Creed" xml:space="preserve">
+    <value>Credo</value>
+  </data>
+  <data name="IslamInfo_Custom" xml:space="preserve">
+    <value>Paprotys</value>
+  </data>
+  <data name="IslamInfo_David" xml:space="preserve">
+    <value>Davidas</value>
+  </data>
+  <data name="IslamInfo_Default" xml:space="preserve">
+    <value>Numatytasis</value>
+  </data>
+  <data name="IslamInfo_DirectionOfprayer" xml:space="preserve">
+    <value>Kryptis maldos</value>
+  </data>
+  <data name="IslamInfo_Dissertation" xml:space="preserve">
+    <value>Disertacija</value>
+  </data>
+  <data name="IslamInfo_Eber" xml:space="preserve">
+    <value>Eberas</value>
+  </data>
+  <data name="IslamInfo_Elijah" xml:space="preserve">
+    <value>Elijas</value>
+  </data>
+  <data name="IslamInfo_Elisha" xml:space="preserve">
+    <value>Eliziejus</value>
+  </data>
+  <data name="IslamInfo_Enoch" xml:space="preserve">
+    <value>Henochas</value>
+  </data>
+  <data name="IslamInfo_EnteringMasjidilHaram" xml:space="preserve">
+    <value>Įplaukimas Masjidil Haram</value>
+  </data>
+  <data name="IslamInfo_EnteringMasjidilHaramTrans" xml:space="preserve">
+    <value>O boze!</value>
+  </data>
+  <data name="IslamInfo_EnteringMasjidilHaramWordByWord" xml:space="preserve">
+    <value>O boze | Tu | taikos | ir iš Tavęs | taikos | priežastis mums gyventi | Mūsų Viešpats | taika | ir sukelti mums įeiti | Raj | Namai | Taikos | Savininkas Garbės | Mūsų Viešpaties ir | Didenybė | Tu</value>
+  </data>
+  <data name="IslamInfo_Ezekiel" xml:space="preserve">
+    <value>Ezechielio</value>
+  </data>
+  <data name="IslamInfo_FifthCreed" xml:space="preserve">
+    <value>Penkta kredo - atgaila žodis (Astaghfar)</value>
+  </data>
+  <data name="IslamInfo_FifthCreedTrans" xml:space="preserve">
+    <value>Aš ieškau atleidimą iš Dievo, mano Viešpaties, iš visų nuodėmės padarytą sąmoningai ar nesąmoningai, slapta ar atvirai, ir aš atsigręžti į Jį iš nuodėmės, kad aš žinau ir iš nuodėmės, kad aš nežinau.</value>
+  </data>
+  <data name="IslamInfo_FifthCreedWordByWord" xml:space="preserve">
+    <value>Aš ieškau atleidimą | nuo Allaho | mano Viešpatie | iš | kas | nuodėmė | Aš įsipareigojusi | sąmoningai | arba | unknowningly | slaptai | arba | atviriau | ir aš atsigręžti | Jam | iš | nuodėmė, kad | | Aš žinau, | ir iš</value>
+  </data>
+  <data name="IslamInfo_FirstCreed" xml:space="preserve">
+    <value>Pirma kredo - of Purity žodis (Tayyabah)</value>
+  </data>
+  <data name="IslamInfo_FirstCreedTrans" xml:space="preserve">
+    <value>Dievo nėra, išskyrus Allahas Mahometas yra Allaho Pasiuntinys.</value>
+  </data>
+  <data name="IslamInfo_FirstCreedWordByWord" xml:space="preserve">
+    <value>Nėra | Dievas | išskyrus | Dievas | Mahometas | Mesendžeris | Allahas</value>
+  </data>
+  <data name="IslamInfo_FortyOurLordSupplications" xml:space="preserve">
+    <value>40 mūsų Viešpaties maldavimai</value>
+  </data>
+  <data name="IslamInfo_FourthCreed" xml:space="preserve">
+    <value>Ketvirta kredo - Unity (Tauhid) žodis</value>
+  </data>
+  <data name="IslamInfo_FourthCreedTrans" xml:space="preserve">
+    <value>(Nėra) nieko verto garbinti išskyrus Dievą.</value>
+  </data>
+  <data name="IslamInfo_FourthCreedWordByWord" xml:space="preserve">
+    <value>Nėra | Dievas | išskyrus | Dievas | vienas | ne | partneriu | Ar jis | Jam | Karalystė | ir jam | Šlovė | Jis duoda gyvybę | ir atneša mirtį ir | Jis | nuolat gyvena | ne | pajėgi</value>
+  </data>
+  <data name="IslamInfo_GloryBeToAllah" xml:space="preserve">
+    <value>Garbė Dievui</value>
+  </data>
+  <data name="IslamInfo_IhramPrayerSupplication" xml:space="preserve">
+    <value>Ihram Malda maldavimas</value>
+  </data>
+  <data name="IslamInfo_IhramPrayerSupplicationTrans" xml:space="preserve">
+    <value>Vardan Dievo, Milosiernemu, Najmilosierniejszy vardu!</value>
+  </data>
+  <data name="IslamInfo_IhramPrayerSupplicationWordByWord" xml:space="preserve">
+    <value>Vardan Allaho | | Milosiernemu | Najmilosierniejszy | Allaho | yra didžiausias | | Dievo yra didžiausias Dievo | | yra didžiausias | kaip puikus | Jis yra | Tas, kuris dedamas | taip (transportas) |</value>
+  </data>
+  <data name="IslamInfo_Imam" xml:space="preserve">
+    <value>Dvasinis lyderis</value>
+  </data>
+  <data name="IslamInfo_IntentionForIhramPrayer" xml:space="preserve">
+    <value>Neketinama Ihram maldos</value>
+  </data>
+  <data name="IslamInfo_IntentionForIhramPrayerTrans" xml:space="preserve">
+    <value>Ketinu padaryti Niat (du rakaat Sunat Ihram Malda) už Dievą.</value>
+  </data>
+  <data name="IslamInfo_IntentionForIhramPrayerWordByWord" xml:space="preserve">
+    <value>Siūlau | Rekomenduojama | Ihram Malda | du rakat | už Dievą | aukščiausiasis</value>
+  </data>
+  <data name="IslamInfo_IntentionForIhramShower" xml:space="preserve">
+    <value>Neketinama Ihram dušas</value>
+  </data>
+  <data name="IslamInfo_IntentionForIhramShowerTrans" xml:space="preserve">
+    <value>Ketinu vonioje (už rekomenduojamą Ihram dušas) už Dievą.</value>
+  </data>
+  <data name="IslamInfo_IntentionForIhramShowerWordByWord" xml:space="preserve">
+    <value>Ketinu | į vonią | Rekomenduojama | Ihram dušas | už Dievą | aukščiausiasis</value>
+  </data>
+  <data name="IslamInfo_IntentionForJourneyPrayer" xml:space="preserve">
+    <value>Neketinama kelionės malda</value>
+  </data>
+  <data name="IslamInfo_IntentionForJourneyPrayerTrans" xml:space="preserve">
+    <value>Ketinu padaryti Niat (du rakaat Sunat Jeep safari Malda) už Dievą.</value>
+  </data>
+  <data name="IslamInfo_IntentionForJourneyPrayerWordByWord" xml:space="preserve">
+    <value>Siūlau | Rekomenduojama | Jeep safari malda | du rakat | už Dievą | aukščiausiasis</value>
+  </data>
+  <data name="IslamInfo_IntentionForJourneyShower" xml:space="preserve">
+    <value>Neketinama kelionės dušas</value>
+  </data>
+  <data name="IslamInfo_IntentionForJourneyShowerTrans" xml:space="preserve">
+    <value>Ketinu vonioje (rekomenduojamų Musafir dušas) už Dievą.</value>
+  </data>
+  <data name="IslamInfo_IntentionForJourneyShowerWordByWord" xml:space="preserve">
+    <value>Ketinu | į vonią | Musafir dušas | Rekomenduojama | už Dievą | aukščiausiasis</value>
+  </data>
+  <data name="IslamInfo_IntentionToPerformUmrah" xml:space="preserve">
+    <value>Ketinimą atlikti Umrah</value>
+  </data>
+  <data name="IslamInfo_IntentionToPerformUmrahTrans" xml:space="preserve">
+    <value>O boze, aš atsakyti ant savo Call padaryti Umrah, O boze, aš padaryti Umrah ir Ihram už Umrah tik Jums.</value>
+  </data>
+  <data name="IslamInfo_IntentionToPerformUmrahWordByWord" xml:space="preserve">
+    <value>Ketinu | Umrah | ir Ihram | tik | už Dievą | aukščiausiasis</value>
+  </data>
+  <data name="IslamInfo_InTheNameOfAllah" xml:space="preserve">
+    <value>Vardan Dievo Vardas</value>
+  </data>
+  <data name="IslamInfo_Isaac" xml:space="preserve">
+    <value>Izaokas</value>
+  </data>
+  <data name="IslamInfo_Ishmael" xml:space="preserve">
+    <value>Izmaelis</value>
+  </data>
+  <data name="IslamInfo_Islam" xml:space="preserve">
+    <value>Pateikimas</value>
+  </data>
+  <data name="IslamInfo_IslamicWords" xml:space="preserve">
+    <value>Islamo žodžiai</value>
+  </data>
+  <data name="IslamInfo_Jacob" xml:space="preserve">
+    <value>Jokūbas</value>
+  </data>
+  <data name="IslamInfo_Jesus" xml:space="preserve">
+    <value>Jėzus</value>
+  </data>
+  <data name="IslamInfo_Jethro" xml:space="preserve">
+    <value>Jethro</value>
+  </data>
+  <data name="IslamInfo_Job" xml:space="preserve">
+    <value>Darbas</value>
+  </data>
+  <data name="IslamInfo_JohnTheBaptist" xml:space="preserve">
+    <value>Jonas Krikštytojas</value>
+  </data>
+  <data name="IslamInfo_Jonas" xml:space="preserve">
+    <value>Jonas</value>
+  </data>
+  <data name="IslamInfo_Joseph" xml:space="preserve">
+    <value>Juozapas</value>
+  </data>
+  <data name="IslamInfo_Judge" xml:space="preserve">
+    <value>Teisėjas</value>
+  </data>
+  <data name="IslamInfo_KFGQPCNaskh" xml:space="preserve">
+    <value>KFGQPC Naskh</value>
+  </data>
+  <data name="IslamInfo_Law" xml:space="preserve">
+    <value>Teisė</value>
+  </data>
+  <data name="IslamInfo_Lot" xml:space="preserve">
+    <value>Daug</value>
+  </data>
+  <data name="IslamInfo_MajorAblution" xml:space="preserve">
+    <value>Majoras praplovimas</value>
+  </data>
+  <data name="IslamInfo_MalikMuwatta" xml:space="preserve">
+    <value>Malik Muwatta</value>
+  </data>
+  <data name="IslamInfo_MeQuran" xml:space="preserve">
+    <value>Me Koranas</value>
+  </data>
+  <data name="IslamInfo_Messenger" xml:space="preserve">
+    <value>Pasiuntinys</value>
+  </data>
+  <data name="IslamInfo_Months" xml:space="preserve">
+    <value>Mėnesių</value>
+  </data>
+  <data name="IslamInfo_Moses" xml:space="preserve">
+    <value>Mozė</value>
+  </data>
+  <data name="IslamInfo_MSUighur" xml:space="preserve">
+    <value>MS uigūrų</value>
+  </data>
+  <data name="IslamInfo_Muhammad" xml:space="preserve">
+    <value>Muhammadas</value>
+  </data>
+  <data name="IslamInfo_Muslim" xml:space="preserve">
+    <value>Vienas, kuris pateikia</value>
+  </data>
+  <data name="IslamInfo_NamesOfAllah" xml:space="preserve">
+    <value>Allaho pavadinimai</value>
+  </data>
+  <data name="IslamInfo_Noah" xml:space="preserve">
+    <value>Nojus</value>
+  </data>
+  <data name="IslamInfo_OnenessOfGod" xml:space="preserve">
+    <value>Išskirtinis Dievo</value>
+  </data>
+  <data name="IslamInfo_Part" xml:space="preserve">
+    <value>Dalis</value>
+  </data>
+  <data name="IslamInfo_PDMSSaleem" xml:space="preserve">
+    <value>PDMS Saleem</value>
+  </data>
+  <data name="IslamInfo_PeaceBeUponYou" xml:space="preserve">
+    <value>Telydi jus ramybė</value>
+  </data>
+  <data name="IslamInfo_PhraseForAllahIsGreatest" xml:space="preserve">
+    <value>Frazė Dievas yra didžiausias</value>
+  </data>
+  <data name="IslamInfo_PhraseForAllPraiseAndThanksBeToAllah" xml:space="preserve">
+    <value>Frazė visiems šlovinimo ir padėkos Deo</value>
+  </data>
+  <data name="IslamInfo_PhraseForGloryBeToAllah" xml:space="preserve">
+    <value>Frazė šlovės Deo</value>
+  </data>
+  <data name="IslamInfo_PhraseForInTheNameOfAllah" xml:space="preserve">
+    <value>Frazė Allaho Vardas</value>
+  </data>
+  <data name="IslamInfo_Pilgrimage" xml:space="preserve">
+    <value>Kelionė</value>
+  </data>
+  <data name="IslamInfo_Prayers" xml:space="preserve">
+    <value>Maldos</value>
+  </data>
+  <data name="IslamInfo_PrayerTimes" xml:space="preserve">
+    <value>Maldos</value>
+  </data>
+  <data name="IslamInfo_ProperPronunciationDuringRecitation" xml:space="preserve">
+    <value>Tinkamas tarimas deklamavimas metu</value>
+  </data>
+  <data name="IslamInfo_Prophet" xml:space="preserve">
+    <value>Pranašas</value>
+  </data>
+  <data name="IslamInfo_Prophets" xml:space="preserve">
+    <value>Pranašai</value>
+  </data>
+  <data name="IslamInfo_Prostrating" xml:space="preserve">
+    <value>Nusilenkti</value>
+  </data>
+  <data name="IslamInfo_Prostration" xml:space="preserve">
+    <value>Išsekimas</value>
+  </data>
+  <data name="IslamInfo_PurificationOfTheSoul" xml:space="preserve">
+    <value>Valymas Soul</value>
+  </data>
+  <data name="IslamInfo_PurificationOfTheSoulTrans" xml:space="preserve">
+    <value>O boze, suteikti mano siela savo pamaldumą ir išvalyti jį, Tu esi geriausia išvalyti jį, Jūs esate jo globėjas ir magistro.</value>
+  </data>
+  <data name="IslamInfo_PurificationOfTheSoulWordByWord" xml:space="preserve">
+    <value>O boze | You Give | Mano Siela | Jo pamaldumo | Ir Jūs išvalyti jį | Jūs (Alone) | Geriausia | Kas | Išvalo jį | Jūs (Alone) | Jo Guardian | ir jo šeimininkas</value>
+  </data>
+  <data name="IslamInfo_PurificationSupplication" xml:space="preserve">
+    <value>Valymo maldavimas</value>
+  </data>
+  <data name="IslamInfo_Remembrance" xml:space="preserve">
+    <value>Prisiminimas</value>
+  </data>
+  <data name="IslamInfo_RevelationOfAllah" xml:space="preserve">
+    <value>Apreiškimas Dievo</value>
+  </data>
+  <data name="IslamInfo_RevelationOfAllahInBookForm" xml:space="preserve">
+    <value>Apreiškimas Dievo knygos forma</value>
+  </data>
+  <data name="IslamInfo_RiyadhSaaliheen" xml:space="preserve">
+    <value>Rijadas al Saaliheen</value>
+  </data>
+  <data name="IslamInfo_SahihBukhari" xml:space="preserve">
+    <value>Sahih al-Bukhari</value>
+  </data>
+  <data name="IslamInfo_SahihMuslim" xml:space="preserve">
+    <value>Sahih musulmonų</value>
+  </data>
+  <data name="IslamInfo_SakkalMajalla" xml:space="preserve">
+    <value>Sakkal Majalla</value>
+  </data>
+  <data name="IslamInfo_SalawatSupplicationAfterTalbiah" xml:space="preserve">
+    <value>Salawat maldavimas po Talbiah</value>
+  </data>
+  <data name="IslamInfo_SalawatSupplicationAfterTalbiahTrans" xml:space="preserve">
+    <value>O boze palaiminti mūsų kapitonas Muhammad ir savo šeimą kaip Jūs palaimino savo valdovo Abraomo ir pašventinti mūsų kapitonas Muhammad ir Mahometo šeimos kaip Jūs pašventinti mūsų valdovui Abraomui ir Abraomo šeimą visų pasaulių Jūs esate pagirtina Galingasis.</value>
+  </data>
+  <data name="IslamInfo_SalawatSupplicationAfterTalbiahWordByWord" xml:space="preserve">
+    <value>O boze | siųsti sveikinimus | nuo | kapitonas | Mahometas ir | nuo | Šeimos | kapitonas | Mahometas | kaip | siųsdami sveikinimus | nuo | Abraomas ir | nuo | Abraomas | | ir siųsti palaiminimus | nuo | valdovu šeima</value>
+  </data>
+  <data name="IslamInfo_Saleh" xml:space="preserve">
+    <value>Saleh</value>
+  </data>
+  <data name="IslamInfo_Scheherazade" xml:space="preserve">
+    <value>Scheherazade</value>
+  </data>
+  <data name="IslamInfo_SchoolOfJurisprudence" xml:space="preserve">
+    <value>Mokyklos jurisprudencijos</value>
+  </data>
+  <data name="IslamInfo_SecondCreed" xml:space="preserve">
+    <value>Antra kredo - Liudijimo žodis (Shahaadat)</value>
+  </data>
+  <data name="IslamInfo_SecondCreedTrans" xml:space="preserve">
+    <value>Aš liudiju, kad nė vienas yra vertas garbinimo, išskyrus Dievą, bet tik vienas, be partnerio, ir aš liudiju, kad Muhammedas yra Jo tarnas ir "Messenger".</value>
+  </data>
+  <data name="IslamInfo_SecondCreedWordByWord" xml:space="preserve">
+    <value>Aš liudiju, kad | | nėra | Dievas | išskyrus | Dievas | vienas | ne | partneriu | Ar jis | ir aš liudiju, kad | | Mahometas | Jo tarnas | ir "Messenger"</value>
+  </data>
+  <data name="IslamInfo_SixthCreed" xml:space="preserve">
+    <value>Šeštoji kredo - Iš atmesti netikėjimą žodžiai (Rud--Kuffer)</value>
+  </data>
+  <data name="IslamInfo_SixthCreedTrans" xml:space="preserve">
+    <value>O boze!</value>
+  </data>
+  <data name="IslamInfo_SixthCreedWordByWord" xml:space="preserve">
+    <value>O boze | Žinoma, | aš ieškoti apsauga | su Jumis | iš | kad | aš sieju su jumis partneriu | nieko | aš | žinoti | tai | ir aš ieškoti atleidimą nuo tavęs | už tai | ne | Aš žinau, | tai | Aš atgailavo</value>
+  </data>
+  <data name="IslamInfo_Solomon" xml:space="preserve">
+    <value>Saliamonas</value>
+  </data>
+  <data name="IslamInfo_Station" xml:space="preserve">
+    <value>Stotis</value>
+  </data>
+  <data name="IslamInfo_SunanAbuDawood" xml:space="preserve">
+    <value>Sunan Abu Dawood</value>
+  </data>
+  <data name="IslamInfo_SunanIbnMaja" xml:space="preserve">
+    <value>Sunan Ibn Maja</value>
+  </data>
+  <data name="IslamInfo_SunanNasai" xml:space="preserve">
+    <value>Sunan-Nasa'i Al Sughra</value>
+  </data>
+  <data name="IslamInfo_SunanTirmidhi" xml:space="preserve">
+    <value>Sunan al Tirmidhi</value>
+  </data>
+  <data name="IslamInfo_Supplication" xml:space="preserve">
+    <value>Maldavimas</value>
+  </data>
+  <data name="IslamInfo_SupplicationAfterSalawatSupplication" xml:space="preserve">
+    <value>Maldavimas po Salawat maldavimas</value>
+  </data>
+  <data name="IslamInfo_SupplicationAfterSalawatSupplicationTrans" xml:space="preserve">
+    <value>O boze!</value>
+  </data>
+  <data name="IslamInfo_SupplicationAfterSalawatSupplicationWordByWord" xml:space="preserve">
+    <value>O boze | išties | stengiuosi iš Tavęs | tu palaiminimus | ir Raj | siekiu prieglobsčio pas Tave | iš | | pyktį ir pragarą.</value>
+  </data>
+  <data name="IslamInfo_SupplicationForArrivingAtMakkah" xml:space="preserve">
+    <value>Maldavimas darydama Makkah</value>
+  </data>
+  <data name="IslamInfo_SupplicationForArrivingAtMakkahTrans" xml:space="preserve">
+    <value>Dieve!</value>
+  </data>
+  <data name="IslamInfo_SupplicationForArrivingAtMakkahWordByWord" xml:space="preserve">
+    <value>O boze | tikrai | šį | šventovė yra | Tavo šventa vieta ir | tai Šventoji City | Tavo Miestas | Taikos ir therin yra | Tavo Ramybė | Tada neduok man | iš | pragaro ugnį ir | išgelbėk mane | iš | Tavo bausmės | apie</value>
+  </data>
+  <data name="IslamInfo_Talbiah" xml:space="preserve">
+    <value>Talbiah</value>
+  </data>
+  <data name="IslamInfo_TalbiahTrans" xml:space="preserve">
+    <value>Aš atsakė Tau, Dieve mano!</value>
+  </data>
+  <data name="IslamInfo_TalbiahWordByWord" xml:space="preserve">
+    <value>Aš atsakė į Jums | O boze | atsakiau Jums | atsakiau Jums | nėra | partneriu | tau | Aš atsakė jums | Tikrai | Visa Šlovė ir | Visi Grobis | Jums |</value>
+  </data>
+  <data name="IslamInfo_TheAbaser" xml:space="preserve">
+    <value>Abaser</value>
+  </data>
+  <data name="IslamInfo_TheAcknowledgingOne" xml:space="preserve">
+    <value>Pripažindama Viena</value>
+  </data>
+  <data name="IslamInfo_TheAllAuthoritativeOne" xml:space="preserve">
+    <value>Visi Autentiški Vienas</value>
+  </data>
+  <data name="IslamInfo_TheAllAwareOne" xml:space="preserve">
+    <value>Visi-Aware Viena</value>
+  </data>
+  <data name="IslamInfo_TheAllCompelling" xml:space="preserve">
+    <value>Visi Įspūdingi</value>
+  </data>
+  <data name="IslamInfo_TheAllEnumeratingOne" xml:space="preserve">
+    <value>All-vardijo vienas</value>
+  </data>
+  <data name="IslamInfo_TheAllHearer" xml:space="preserve">
+    <value>All-Slyszacy</value>
+  </data>
+  <data name="IslamInfo_TheAllKnowingOne" xml:space="preserve">
+    <value>Visi Žinantis Viena</value>
+  </data>
+  <data name="IslamInfo_TheAllNobleOne" xml:space="preserve">
+    <value>All-Noble Vienas</value>
+  </data>
+  <data name="IslamInfo_TheAllObservingWitness" xml:space="preserve">
+    <value>Visi stebėjimų Liudytojo</value>
+  </data>
+  <data name="IslamInfo_TheAllPervadingOne" xml:space="preserve">
+    <value>Visi persmelkianti Viena</value>
+  </data>
+  <data name="IslamInfo_TheAllPrevailingOne" xml:space="preserve">
+    <value>All-vyraujanti</value>
+  </data>
+  <data name="IslamInfo_TheAllSeeing" xml:space="preserve">
+    <value>All-Seeing</value>
+  </data>
+  <data name="IslamInfo_TheAssemblerOfScatteredCreations" xml:space="preserve">
+    <value>Padrika Creations Assembler</value>
+  </data>
+  <data name="IslamInfo_TheBeneficent" xml:space="preserve">
+    <value>Milosiernemu</value>
+  </data>
+  <data name="IslamInfo_TheBenignOne" xml:space="preserve">
+    <value>Gerybinė Viena</value>
+  </data>
+  <data name="IslamInfo_TheBestowerOfBenefits" xml:space="preserve">
+    <value>Iš Privalumai padovanotojas</value>
+  </data>
+  <data name="IslamInfo_TheBestowerOfSufficiency" xml:space="preserve">
+    <value>Pakankamumo padovanotojas</value>
+  </data>
+  <data name="IslamInfo_TheBountifulOne" xml:space="preserve">
+    <value>Turtinga Viena</value>
+  </data>
+  <data name="IslamInfo_TheClementOne" xml:space="preserve">
+    <value>Klemensas Viena</value>
+  </data>
+  <data name="IslamInfo_TheCreator" xml:space="preserve">
+    <value>Kūrėjas</value>
+  </data>
+  <data name="IslamInfo_TheDistressor" xml:space="preserve">
+    <value>Distressor</value>
+  </data>
+  <data name="IslamInfo_TheDominantOne" xml:space="preserve">
+    <value>Dominuojantis Viena</value>
+  </data>
+  <data name="IslamInfo_TheElevatingOne" xml:space="preserve">
+    <value>Kėlimo Viena</value>
+  </data>
+  <data name="IslamInfo_TheEmbodimentOfJustice" xml:space="preserve">
+    <value>Teisingumo įsikūnijimas</value>
+  </data>
+  <data name="IslamInfo_TheEmbodimentOfPeace" xml:space="preserve">
+    <value>Taikos įsikūnijimas</value>
+  </data>
+  <data name="IslamInfo_TheEmbodimentOfTruth" xml:space="preserve">
+    <value>Tiesos įsikūnijimas</value>
+  </data>
+  <data name="IslamInfo_TheEternalInheritor" xml:space="preserve">
+    <value>Amžinasis įpėdinis</value>
+  </data>
+  <data name="IslamInfo_TheEternalLord" xml:space="preserve">
+    <value>Amžinoji lordas</value>
+  </data>
+  <data name="IslamInfo_TheEternalPossessorOfSovereignty" xml:space="preserve">
+    <value>Amžinasis Valdytojas suverenumo</value>
+  </data>
+  <data name="IslamInfo_TheEverAcceptorOfRepentance" xml:space="preserve">
+    <value>Vis Priėmėjo Atgailos</value>
+  </data>
+  <data name="IslamInfo_TheEverSurvivingOne" xml:space="preserve">
+    <value>Kada Išgyventi Viena</value>
+  </data>
+  <data name="IslamInfo_TheEvolver" xml:space="preserve">
+    <value>Evolver</value>
+  </data>
+  <data name="IslamInfo_TheExpeditingOne" xml:space="preserve">
+    <value>Expediting Viena</value>
+  </data>
+  <data name="IslamInfo_TheExtender" xml:space="preserve">
+    <value>Plėstuvas</value>
+  </data>
+  <data name="IslamInfo_TheExtensivelyEnduringOne" xml:space="preserve">
+    <value>Itin Tvirta Viena</value>
+  </data>
+  <data name="IslamInfo_TheExtremelyExaltedOne" xml:space="preserve">
+    <value>Labai išaukštintas Viena</value>
+  </data>
+  <data name="IslamInfo_TheFirmOne" xml:space="preserve">
+    <value>Firma Viena</value>
+  </data>
+  <data name="IslamInfo_TheFlawlessShaper" xml:space="preserve">
+    <value>Nepriekaištingas Formavimo</value>
+  </data>
+  <data name="IslamInfo_TheFountainHeadOfTruth" xml:space="preserve">
+    <value>Fontanas-vadovas tiesos</value>
+  </data>
+  <data name="IslamInfo_TheGloriousOne" xml:space="preserve">
+    <value>Glorious Viena</value>
+  </data>
+  <data name="IslamInfo_TheGreatForgiver" xml:space="preserve">
+    <value>Didžioji Przebaczajacego</value>
+  </data>
+  <data name="IslamInfo_TheGreatOne" xml:space="preserve">
+    <value>Didžiosios Vienas</value>
+  </data>
+  <data name="IslamInfo_TheGuardingOne" xml:space="preserve">
+    <value>Sargyba Viena</value>
+  </data>
+  <data name="IslamInfo_TheGuideToPathOfRectitude" xml:space="preserve">
+    <value>Vadovas Kelias sąžiningumas</value>
+  </data>
+  <data name="IslamInfo_TheHolderOfSupremeAuthority" xml:space="preserve">
+    <value>Aukščiausiojo tarnybos turėtojas</value>
+  </data>
+  <data name="IslamInfo_TheHonourerBestower" xml:space="preserve">
+    <value>Honourer-padovanotojas</value>
+  </data>
+  <data name="IslamInfo_TheImpartialJudge" xml:space="preserve">
+    <value>Nešališkas teismas</value>
+  </data>
+  <data name="IslamInfo_TheImperceptible" xml:space="preserve">
+    <value>Nepastebimas</value>
+  </data>
+  <data name="IslamInfo_TheInfiniteLastOne" xml:space="preserve">
+    <value>Begalinė Paskutinis Viena</value>
+  </data>
+  <data name="IslamInfo_TheInflictorOfDeath" xml:space="preserve">
+    <value>Mirties Inflictor</value>
+  </data>
+  <data name="IslamInfo_TheInfuserOfFaith" xml:space="preserve">
+    <value>Tikėjimo Infuser</value>
+  </data>
+  <data name="IslamInfo_TheInfuserOfNewLife" xml:space="preserve">
+    <value>New Life Infuser</value>
+  </data>
+  <data name="IslamInfo_TheJustOne" xml:space="preserve">
+    <value>Tik Vienas</value>
+  </data>
+  <data name="IslamInfo_TheKnowerOfSubtleties" xml:space="preserve">
+    <value>Iš subtilybės Žinantysis</value>
+  </data>
+  <data name="IslamInfo_TheLovingOne" xml:space="preserve">
+    <value>Mylintis Viena</value>
+  </data>
+  <data name="IslamInfo_TheMagnificentOne" xml:space="preserve">
+    <value>Puiki Viena</value>
+  </data>
+  <data name="IslamInfo_TheMaintainerOflife" xml:space="preserve">
+    <value>Gyvenimo palaikytojas</value>
+  </data>
+  <data name="IslamInfo_TheMajesticOne" xml:space="preserve">
+    <value>Majestic Viena</value>
+  </data>
+  <data name="IslamInfo_TheMerciful" xml:space="preserve">
+    <value>Gailestingas</value>
+  </data>
+  <data name="IslamInfo_TheMightyOne" xml:space="preserve">
+    <value>Galingasis</value>
+  </data>
+  <data name="IslamInfo_TheMostSacred" xml:space="preserve">
+    <value>Šventa</value>
+  </data>
+  <data name="IslamInfo_TheOmnipotentOne" xml:space="preserve">
+    <value>Visagalis Viena</value>
+  </data>
+  <data name="IslamInfo_TheOnlyOne" xml:space="preserve">
+    <value>Tik Vienas</value>
+  </data>
+  <data name="IslamInfo_TheOriginator" xml:space="preserve">
+    <value>Iniciatorius</value>
+  </data>
+  <data name="IslamInfo_ThePardoner" xml:space="preserve">
+    <value>Odpuszczajacy</value>
+  </data>
+  <data name="IslamInfo_ThePerceptible" xml:space="preserve">
+    <value>Suvokiamas</value>
+  </data>
+  <data name="IslamInfo_ThePointingOne" xml:space="preserve">
+    <value>Rodydamas Viena</value>
+  </data>
+  <data name="IslamInfo_ThePossessorOfMajestyAndHonour" xml:space="preserve">
+    <value>Didybę ir garbės Valdytojas</value>
+  </data>
+  <data name="IslamInfo_ThePrayersOfAllahUponHimAndPeace" xml:space="preserve">
+    <value>Allaho maldos Jam ir taikos</value>
+  </data>
+  <data name="IslamInfo_ThePreserverOfSafety" xml:space="preserve">
+    <value>Saugos saugotojas</value>
+  </data>
+  <data name="IslamInfo_ThePreventer" xml:space="preserve">
+    <value>Preventer</value>
+  </data>
+  <data name="IslamInfo_ThePrimeLight" xml:space="preserve">
+    <value>Pirmininkas Šviesa</value>
+  </data>
+  <data name="IslamInfo_TheProcrastinator" xml:space="preserve">
+    <value>Procrastinator</value>
+  </data>
+  <data name="IslamInfo_TheProtectingAssociate" xml:space="preserve">
+    <value>Apsauga bendradarbis</value>
+  </data>
+  <data name="IslamInfo_TheProviderOfGuidance" xml:space="preserve">
+    <value>Rekomendacijos, teikėjas</value>
+  </data>
+  <data name="IslamInfo_TheReckoningOne" xml:space="preserve">
+    <value>Reckoning Viena</value>
+  </data>
+  <data name="IslamInfo_TheReducer" xml:space="preserve">
+    <value>Reduktorius</value>
+  </data>
+  <data name="IslamInfo_TheRespondingOne" xml:space="preserve">
+    <value>Reagavimas Viena</value>
+  </data>
+  <data name="IslamInfo_TheRestorer" xml:space="preserve">
+    <value>Atstatymo</value>
+  </data>
+  <data name="IslamInfo_TheRestrictingOne" xml:space="preserve">
+    <value>Ribojanti</value>
+  </data>
+  <data name="IslamInfo_TheRetaliator" xml:space="preserve">
+    <value>Retaliator</value>
+  </data>
+  <data name="IslamInfo_TheSelfSubsistingOne" xml:space="preserve">
+    <value>Savęs ginančių Vienas</value>
+  </data>
+  <data name="IslamInfo_TheSelfSufficientOne" xml:space="preserve">
+    <value>Savarankiškas Viena</value>
+  </data>
+  <data name="IslamInfo_TheSoleLaudableOne" xml:space="preserve">
+    <value>Vienintelis pagirtinas-Viena</value>
+  </data>
+  <data name="IslamInfo_TheSoleOne" xml:space="preserve">
+    <value>Vienintelis Viena</value>
+  </data>
+  <data name="IslamInfo_TheStrongOne" xml:space="preserve">
+    <value>Stiprus Vienas</value>
+  </data>
+  <data name="IslamInfo_TheSublimeOne" xml:space="preserve">
+    <value>Sublime Viena</value>
+  </data>
+  <data name="IslamInfo_TheSupremeBestower" xml:space="preserve">
+    <value>Aukščiausiasis padovanotojas</value>
+  </data>
+  <data name="IslamInfo_TheSupremePardoner" xml:space="preserve">
+    <value>Aukščiausiasis odpuszczajacy</value>
+  </data>
+  <data name="IslamInfo_TheSupremeProvider" xml:space="preserve">
+    <value>Aukščiausiasis teikėjas</value>
+  </data>
+  <data name="IslamInfo_TheSupremeSolver" xml:space="preserve">
+    <value>Aukščiausiasis sprendėjas</value>
+  </data>
+  <data name="IslamInfo_TheSustainingOne" xml:space="preserve">
+    <value>Tvarus Viena</value>
+  </data>
+  <data name="IslamInfo_TheTotalProvider" xml:space="preserve">
+    <value>Iš viso teikėjas</value>
+  </data>
+  <data name="IslamInfo_TheUniqueOne" xml:space="preserve">
+    <value>Unikalus Viena</value>
+  </data>
+  <data name="IslamInfo_TheUniversalTrustee" xml:space="preserve">
+    <value>Visos Patikėtinis</value>
+  </data>
+  <data name="IslamInfo_TheVeryFirst" xml:space="preserve">
+    <value>Labai Pirmas</value>
+  </data>
+  <data name="IslamInfo_TheWatchfulOne" xml:space="preserve">
+    <value>Akylas Viena</value>
+  </data>
+  <data name="IslamInfo_TheWiseOne" xml:space="preserve">
+    <value>Išminčius Viena</value>
+  </data>
+  <data name="IslamInfo_ThirdCreed" xml:space="preserve">
+    <value>Trečia kredo - pašlovinimo žodis (Tumjeed)</value>
+  </data>
+  <data name="IslamInfo_ThirdCreedTrans" xml:space="preserve">
+    <value>Garbė Dievui ir Šlovė Dievui, ir nėra kito Dievo išskyrus Dievą, ir Dievas yra didžiausias.</value>
+  </data>
+  <data name="IslamInfo_ThirdCreedWordByWord" xml:space="preserve">
+    <value>Šlovė | Dievui ir | Šlovė | Dievui ir | nėra | Dievas | išskyrus | Dievas | Dievas | didžiausias ir | ne | galybė ir | ne | elektros | išskyrus | su Dievu | Aukščiausiąjį | Patys nuostabiausi</value>
+  </data>
+  <data name="IslamInfo_TraditionalArabic" xml:space="preserve">
+    <value>Tradiciniai arabų</value>
+  </data>
+  <data name="IslamInfo_TransmissionOfInformation" xml:space="preserve">
+    <value>Informacijos perdavimas</value>
+  </data>
+  <data name="IslamInfo_Umrah" xml:space="preserve">
+    <value>Umrah</value>
+  </data>
+  <data name="IslamInfo_UnitOfPrayer" xml:space="preserve">
+    <value>Vieneto maldos</value>
+  </data>
+  <data name="IslamInfo_UponHimBePeace" xml:space="preserve">
+    <value>Jam būti taikos</value>
+  </data>
+  <data name="IslamInfo_Verse" xml:space="preserve">
+    <value>Eilėraštis</value>
+  </data>
+  <data name="IslamInfo_VerseOfTheThrone" xml:space="preserve">
+    <value>Sosto Verse</value>
+  </data>
+  <data name="IslamInfo_Zechariah" xml:space="preserve">
+    <value>Zacharijas</value>
+  </data>
+  <data name="IslamInfo_TheEverLiving" xml:space="preserve">
+    <value>Kada Gyvenimas</value>
+  </data>
+  <data name="IslamInfo_After" xml:space="preserve">
+    <value>Po</value>
+  </data>
+  <data name="IslamInfo_Arabic" xml:space="preserve">
+    <value>Arabų</value>
+  </data>
+  <data name="IslamInfo_Assimilate" xml:space="preserve">
+    <value>Įsisavinti</value>
+  </data>
+  <data name="IslamInfo_Before" xml:space="preserve">
+    <value>Prieš</value>
+  </data>
+  <data name="IslamInfo_bukhariBook1" xml:space="preserve">
+    <value>Apreiškimas</value>
+  </data>
+  <data name="IslamInfo_bukhariBook10" xml:space="preserve">
+    <value>Kvietimas į maldos (Adhaan)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook11" xml:space="preserve">
+    <value>Penktadienis malda</value>
+  </data>
+  <data name="IslamInfo_bukhariBook12" xml:space="preserve">
+    <value>Baimė Malda</value>
+  </data>
+  <data name="IslamInfo_bukhariBook13" xml:space="preserve">
+    <value>Du Festivaliai (Eids)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook14" xml:space="preserve">
+    <value>Witr malda</value>
+  </data>
+  <data name="IslamInfo_bukhariBook15" xml:space="preserve">
+    <value>Remdamasis Allaho lietus (Istisqaa)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook16" xml:space="preserve">
+    <value>Užtemimai</value>
+  </data>
+  <data name="IslamInfo_bukhariBook17" xml:space="preserve">
+    <value>Išsekimas Per konstatuojamojoje Korano</value>
+  </data>
+  <data name="IslamInfo_bukhariBook18" xml:space="preserve">
+    <value>Trumpinimas maldos (At-Taqseer)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook19" xml:space="preserve">
+    <value>Malda naktį (Tahajjud)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook1Chapter1" xml:space="preserve">
+    <value>{Kaip Divine Inspiration pradėjo būti atskleista Allah pasiuntinys (pjūklai).</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2" xml:space="preserve">
+    <value>Tikėjimas</value>
+  </data>
+  <data name="IslamInfo_bukhariBook20" xml:space="preserve">
+    <value>Dorybės malda Masjid Makkah ir Madinah</value>
+  </data>
+  <data name="IslamInfo_bukhariBook21" xml:space="preserve">
+    <value>Veiksmai melsdamas</value>
+  </data>
+  <data name="IslamInfo_bukhariBook22" xml:space="preserve">
+    <value>Užmaršumas Malda</value>
+  </data>
+  <data name="IslamInfo_bukhariBook23" xml:space="preserve">
+    <value>Laidotuvės (Al-Janaa'iz)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook24" xml:space="preserve">
+    <value>Privaloma Labdaros mokestis (zakat)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook25" xml:space="preserve">
+    <value>Pilgrimmage (Hadž)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook26" xml:space="preserve">
+    <value>Mažosios Pilgrammage (Umra)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook27" xml:space="preserve">
+    <value>Piligrimai trukdoma Užbaigti Pilgrimmage</value>
+  </data>
+  <data name="IslamInfo_bukhariBook28" xml:space="preserve">
+    <value>Bauda medžioklės, o dėl Pilgrimmage</value>
+  </data>
+  <data name="IslamInfo_bukhariBook29" xml:space="preserve">
+    <value>Dorybės Madinah</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter1" xml:space="preserve">
+    <value>Pranašo (pjūklai) teiginys: "Islamas yra grindžiamas penkiais principais."</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter10" xml:space="preserve">
+    <value>Mylėti Ansar yra tikėjimo ženklas.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter12" xml:space="preserve">
+    <value>Bėgti (pabėgti) nuo Al-Fitan (tyrimų ir afflications tt) yra religijos dalis.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter13" xml:space="preserve">
+    <value>Pranašo (pjūklai) pareiškimas: "Aš žinau, Dievas (STIKLO wa JAL) geriau nei visi jūs darote".</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter14" xml:space="preserve">
+    <value>Kas nekenčia grįžti prie kufr.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter15" xml:space="preserve">
+    <value>Į pranašumą tikinčiųjų rūšių bus pagal jų gerus darbus.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter16" xml:space="preserve">
+    <value>Al-Haya yra tikėjimo dalis.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter17" xml:space="preserve">
+    <value>Allaho (STIKLO wa JAL) pareiškimas:</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter18" xml:space="preserve">
+    <value>Kas sako, kad tikėjimas yra veiksmas (geri darbai).</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter19" xml:space="preserve">
+    <value>Jei vienas neturi priimti islamą tikrai, bet tai daro prievartos arba dėl baimės būti nužudytas ir tt</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter2" xml:space="preserve">
+    <value>Jūsų kreipimasis reiškia savo tikėjimą.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter20" xml:space="preserve">
+    <value>Norėdami pasveikinti yra islamo dalis.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter21" xml:space="preserve">
+    <value>Būti nedėkingi savo vyru.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter22" xml:space="preserve">
+    <value>Nuodėmės yra iš nežinojimo ir nusidėjėlis nėra Niedowiarek nebent jis garbina kitus kartu su Dievu (STIKLO wa JAL).</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter23" xml:space="preserve">
+    <value>Dievo pareiškimas (STIKLO wa JAL): {</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter24" xml:space="preserve">
+    <value>Zulm (blogai) iš vienos rūšies gali būti didesnė arba mažesnė negu kito.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter25" xml:space="preserve">
+    <value>Iš veidmainis ženklai.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter26" xml:space="preserve">
+    <value>Nustatyti maldas remiantis Qadr naktį yra tikėjimo dalis.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter27" xml:space="preserve">
+    <value>Al-Jihad (šventasis karas - kova su Dievu yra priežastis) yra tikėjimo dalis.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter28" xml:space="preserve">
+    <value>Tai tikėjimo būtų nustatyti (Nawafil - savanoriškas) dalis maldų metu naktys Ramadanas.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter29" xml:space="preserve">
+    <value>Stebėti Saum [postus (pagal islamo mokymų)] per Ramadano mėnesį (nuoširdžiai ir ištikimai) tikisi Dievo atlygį tik, yra tikėjimo dalis.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter3" xml:space="preserve">
+    <value>(Ką sakė) dėl tikėjimo darbais.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter30" xml:space="preserve">
+    <value>Religija yra labai lengva.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter31" xml:space="preserve">
+    <value>(Siūlymas) Salat (maldas) yra tikėjimo dalis.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter32" xml:space="preserve">
+    <value>(Ką sakė dėl pranašumo) asmeniui, kuris apimtų islamą nuoširdžiai.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter33" xml:space="preserve">
+    <value>Ad-Din (gera teisus aktas - aktas garbinimo) mylėjo labiausiai Allaho (STIKLO wa LJA) yra tas, kuris yra atliekamas reguliariai.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter34" xml:space="preserve">
+    <value>Faith didėja ir mažėja.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter35" xml:space="preserve">
+    <value>Mokėti Zakat yra islamo dalis.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter36" xml:space="preserve">
+    <value>Lydėti laidotuvių procesijos (iki laidojimo vietoje) yra tikėjimo dalis.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter37" xml:space="preserve">
+    <value>Tikinčiojo, kad jo geri darbai gali būti panaikintas baimė (prarasti) be jo žinios.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter38" xml:space="preserve">
+    <value>Iš (angel) Jibrael (Gabriel) prašoma iš Pranašo (pjūklai) apie tikėjimo, islamas, Ihsan (tobulumas).</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter4" xml:space="preserve">
+    <value>Musulmonų yra tas, kuris vengia savęs žalojimą musulmonai su savo liežuvio ir rankų.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter40" xml:space="preserve">
+    <value>To asmens, kuris palieka visas abejotinas (neaiškūs) dalykų savo religijos vardan pranašumą.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter41" xml:space="preserve">
+    <value>Mokėti Al-Khumus (penktadalis karo grobio turi būti pateikta kelyje Dievo priežasties) yra tikėjimo dalis.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter42" xml:space="preserve">
+    <value>Ką sako apie pareiškimą: "iš darbais atlygis priklauso nuo ketinimo.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter43" xml:space="preserve">
+    <value>Pranašo (pjūklai) teiginys: "Religija yra-Nasiha [(turi būti nuoširdus ir tikras), kad Dievas, Jo Messenger, kad musulmonų valdovai, ir visiems musulmonams.]"</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter5" xml:space="preserve">
+    <value>Kieno Islamas yra geriausias (Kas geriausias musulmonų)?</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter6" xml:space="preserve">
+    <value>Pašarų (kitiems) yra islamo dalis.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter7" xml:space="preserve">
+    <value>Patinka už savo (musulmono) brolis, kas mėgsta sau yra tikėjimo dalis.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter8" xml:space="preserve">
+    <value>Mylėti Messenger (Muhammad) (pjūklai) yra tikėjimo dalis.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter9" xml:space="preserve">
+    <value>Saldumas (malonumas) tikėjimo.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3" xml:space="preserve">
+    <value>Žinios</value>
+  </data>
+  <data name="IslamInfo_bukhariBook30" xml:space="preserve">
+    <value>Badavimas</value>
+  </data>
+  <data name="IslamInfo_bukhariBook31" xml:space="preserve">
+    <value>Girdi naktį Ramadaan (Taraweeh)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook32" xml:space="preserve">
+    <value>Dorybės iš Qadr naktį</value>
+  </data>
+  <data name="IslamInfo_bukhariBook33" xml:space="preserve">
+    <value>Einant Mečetė už atminimo Allaho (I'tikaf)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook34" xml:space="preserve">
+    <value>Pardavimų ir prekybos</value>
+  </data>
+  <data name="IslamInfo_bukhariBook35" xml:space="preserve">
+    <value>Pardavimai, kurioje Kaina mokama už pristatomų prekių Vėliau (As-Salam)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook36" xml:space="preserve">
+    <value>Shuf'a</value>
+  </data>
+  <data name="IslamInfo_bukhariBook37" xml:space="preserve">
+    <value>Darbo</value>
+  </data>
+  <data name="IslamInfo_bukhariBook38" xml:space="preserve">
+    <value>Transferance apie skolą nuo vieno asmens kitam (Al-Hawaala)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook39" xml:space="preserve">
+    <value>Kafalah</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter1" xml:space="preserve">
+    <value>Žinių pranašumą.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter11" xml:space="preserve">
+    <value>Pranašas (pjūklai), naudojami rūpintis žmonių pamokslavimo pasirinkdami tinkamą laiką, kad jie galėtų ne pabėgti (ar nuobodu).</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter12" xml:space="preserve">
+    <value>Kas nustatė ypatingą dieną suteikti (religinį aptarimas) studentams.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter13" xml:space="preserve">
+    <value>Jei Dievas (STIKLO wa JAL) nori daryti gera su asmeniu, jis leidžia jam suvokti religiją.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter14" xml:space="preserve">
+    <value>(Pranašumo) suprasdamos žinių.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter15" xml:space="preserve">
+    <value>Nori būti kaip tas, kuris turi žinių ir Al-Hikmah (išminties) [ty</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter16" xml:space="preserve">
+    <value>Kas buvo pasakyta apie pranašo Musa kelionę (alaihi as-salam) (kai jis išvyko) į jūrą susitikti Al-Khidr.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter17" xml:space="preserve">
+    <value>Pranašo (pjūklai) teiginys: "O boze!</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter18" xml:space="preserve">
+    <value>Kokio amžiaus gali būti jaunimas klausėsi (ty Hadith citatos berniukas yra priimtinas).</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter19" xml:space="preserve">
+    <value>Eiti ieškoti žinių.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter2" xml:space="preserve">
+    <value>Kas yra klausiama apie žinias, o jis yra užimtas kai pokalbis, todėl jis baigė kalbėti, tada atsakė klausimo.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter20" xml:space="preserve">
+    <value>Asmens, kuris mokosi pranašumas (islamas, tampa religijų tyrinėtojas) ir moko ją kitiems.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter21" xml:space="preserve">
+    <value>(Ką sakė dėl) nuo (religinės) žinios išnykimo ir (religinės) nežinojimo išvaizdą.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter22" xml:space="preserve">
+    <value>Iš (religinės) žinios pranašumą.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter23" xml:space="preserve">
+    <value>Duoti religinį verdiktą važiuojant gyvūnas arba stovint ant ko nors kito.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter24" xml:space="preserve">
+    <value>Kas davė religinį verdiktą pateikė kviesdamas arba linksi.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter25" xml:space="preserve">
+    <value>Pranašas (pjūklai) paragino žmones (misija) Iš "Abdul Qais įsiminti tikėjimą ir (religinis) žinių (kaip jis aiškino jiems), ir informuoti (perduoti) savo žmonių, kuriuos jie paliko (namuose).</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter26" xml:space="preserve">
+    <value>Keliauti ieško į probleminio klausimo atsakymą ir išmokyti jį į savo šeimą.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter27" xml:space="preserve">
+    <value>Fi? X rotacijos pareigas mokytis (religinis) žinias.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter28" xml:space="preserve">
+    <value>Būti įsiutę o pamokslauti ar mokyti, jei vienas mato tai, ką vienas nekenčia.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter29" xml:space="preserve">
+    <value>Kas atsiklaupė prieš Imamas ar (religine) pamokslininkas.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter3" xml:space="preserve">
+    <value>Kas kelia jo balso (perduotų) žinių.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter30" xml:space="preserve">
+    <value>Pasikartojanti savo aptarimas tris kartus, siekiant, kad kiti suprastų.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter31" xml:space="preserve">
+    <value>Vyras mokymo (religija) jo moteris vergas ir jo šeima.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter32" xml:space="preserve">
+    <value>Skelbimas (ir mokymo) į (religinės) žinios moterims, kai Imam (viršininkas):</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter33" xml:space="preserve">
+    <value>Troškimas (mokytis) Hadith.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter34" xml:space="preserve">
+    <value>Kaip (religinės) žinios jis atima?</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter35" xml:space="preserve">
+    <value>Jei dieną nustatomas moterims, siekiant išmokyti juos religiją (išskyrus vyrams)?</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter36" xml:space="preserve">
+    <value>Kas yra girdėjęs apie kažką (bet ne suprasti) ir tada vėl paklausė, kol jis suprato, jį visiškai.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter37" xml:space="preserve">
+    <value>Tai tenka tiems, kurie yra pateikti [religinės posėdyje (arba, konferencijos)] perteikti žinias tiems, kurie nedalyvauja.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter38" xml:space="preserve">
+    <value>Asmens, kuris pasakoja prieš Pranašo (pjūklai) melas nuodėmė.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter39" xml:space="preserve">
+    <value>Žinių rašymas.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter4" xml:space="preserve">
+    <value>Dėl žodžius pasakotojai perteikti skirtingas reikšmes, susijusius su pasakojimo sąvoka ir kurios veislės turi reikšmę tik Hadith mokslininkai.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter40" xml:space="preserve">
+    <value>Žinios ir jų mokymo ir pamokslavimo naktį.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter41" xml:space="preserve">
+    <value>Kalbėti apie (religinės) žinios naktį.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter42" xml:space="preserve">
+    <value>(Ką sakė dėl) nuo (religinių) žinių įsiminimą.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter43" xml:space="preserve">
+    <value>Būti ramus (ir klausytis) religinėms išmoko vyrų.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter44" xml:space="preserve">
+    <value>Kai religinis išmoko žmogus paklausė.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter45" xml:space="preserve">
+    <value>Kas, stovint, paprašė religinę išmoko žmogus, kuris sėdėjo (ant sakyklos ar panašaus dalyko, apie ką).</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter46" xml:space="preserve">
+    <value>Norėdami paklausti apie religinės klausimu ir suteikti religinį verdiktą (prie Mina per Hadž) darydamas apie Jimar Rami (mėtymo akmenukai ne į Mina Jimar metu Hadž).</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter47" xml:space="preserve">
+    <value>Allaho (STIKLO wa JAL) pareiškimas:</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter48" xml:space="preserve">
+    <value>Kas paliko kai neprivalomų dalykų tik dėl baimės, kad kai kurie žmonės gali būti neįmanoma juos suprasti ir gali patekti į kažką sunkiau.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter49" xml:space="preserve">
+    <value>Kas parinkti kai kurie žmonės juos mokyti (religinis) žinios pirmenybę juos per kitų baimės, kad kiti negali suprasti jį.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter5" xml:space="preserve">
+    <value>Imamas apklausti jo kompanionai siekiant patikrinti savo žinias.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter50" xml:space="preserve">
+    <value>(Ką sakė dėl :-) būti drovūs (Al-Haya "), o mokytis (žinių apie religiją).</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter51" xml:space="preserve">
+    <value>Tas, kas manė, drovūs (ko nors paklausti), o tada paprašė kitą asmenį paklausti jo vardu.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter52" xml:space="preserve">
+    <value>Mokymo religinę žinias ir suteikti religinių nuosprendžius mečetėje.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter53" xml:space="preserve">
+    <value>Kas atsakė į klausėjo daugiau nei tai, ką jis paklausė.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter6" xml:space="preserve">
+    <value>Ką sako apie žinias.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter7" xml:space="preserve">
+    <value>Kas sakė, dėl rankinio biržoje (knygų žinių), žinias ir religinių mokslininkų raštu įvairiose šalyse ranka.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter8" xml:space="preserve">
+    <value>Kas sėdėjo prie tolyn gale rinkimas.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter9" xml:space="preserve">
+    <value>Pranašo (pjūklai) teiginys: "Tai tikėtina, kad asmuo, kuris gauna tam tikrą informaciją netiesiogiai gali ją suprasti geriau, nei tas, kuris girdėjo jį tiesiai iš savo šaltinio."</value>
+  </data>
+  <data name="IslamInfo_bukhariBook4" xml:space="preserve">
+    <value>Protu (Wudu)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook40" xml:space="preserve">
+    <value>Atstovavimas, autorizacija, Verslas pagal įgaliojimą</value>
+  </data>
+  <data name="IslamInfo_bukhariBook41" xml:space="preserve">
+    <value>Žemdirbystė</value>
+  </data>
+  <data name="IslamInfo_bukhariBook42" xml:space="preserve">
+    <value>Paskirstymas</value>
+  </data>
+  <data name="IslamInfo_bukhariBook43" xml:space="preserve">
+    <value>Paskolos, mokėjimas Paskolos, užšaldymas nuosavybės, bankroto</value>
+  </data>
+  <data name="IslamInfo_bukhariBook44" xml:space="preserve">
+    <value>Khusoomaat</value>
+  </data>
+  <data name="IslamInfo_bukhariBook45" xml:space="preserve">
+    <value>Lost Ką įlaipinami kažkas (Luqaata)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook46" xml:space="preserve">
+    <value>Priespaudą</value>
+  </data>
+  <data name="IslamInfo_bukhariBook47" xml:space="preserve">
+    <value>Partnerystė</value>
+  </data>
+  <data name="IslamInfo_bukhariBook48" xml:space="preserve">
+    <value>Užstatymas</value>
+  </data>
+  <data name="IslamInfo_bukhariBook49" xml:space="preserve">
+    <value>Laisvai Vergų</value>
+  </data>
+  <data name="IslamInfo_bukhariBook5" xml:space="preserve">
+    <value>Maudyklų (Ghusl)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook50" xml:space="preserve">
+    <value>Makaatib</value>
+  </data>
+  <data name="IslamInfo_bukhariBook51" xml:space="preserve">
+    <value>Dovanos</value>
+  </data>
+  <data name="IslamInfo_bukhariBook52" xml:space="preserve">
+    <value>Liudytojai</value>
+  </data>
+  <data name="IslamInfo_bukhariBook53" xml:space="preserve">
+    <value>Atgavimo</value>
+  </data>
+  <data name="IslamInfo_bukhariBook54" xml:space="preserve">
+    <value>Sąlygos</value>
+  </data>
+  <data name="IslamInfo_bukhariBook55" xml:space="preserve">
+    <value>Palikimų ir testamentų (Wasaayaa)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook56" xml:space="preserve">
+    <value>Kova už Dievą Priežastis (Jihaad)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook57" xml:space="preserve">
+    <value>Vienas penktadalis laimikis į Dievą (Khumus) Priežastis</value>
+  </data>
+  <data name="IslamInfo_bukhariBook58" xml:space="preserve">
+    <value>Jizyah ir Mawaada'ah</value>
+  </data>
+  <data name="IslamInfo_bukhariBook59" xml:space="preserve">
+    <value>Pradžia Kûrimo</value>
+  </data>
+  <data name="IslamInfo_bukhariBook6" xml:space="preserve">
+    <value>Mėnesinės</value>
+  </data>
+  <data name="IslamInfo_bukhariBook60" xml:space="preserve">
+    <value>Pranašai</value>
+  </data>
+  <data name="IslamInfo_bukhariBook61" xml:space="preserve">
+    <value>Dorybės ir nuopelnus Pranašo (Ramybė Jam) ir jo kompanionų</value>
+  </data>
+  <data name="IslamInfo_bukhariBook62" xml:space="preserve">
+    <value>Kompanionai Pranašo</value>
+  </data>
+  <data name="IslamInfo_bukhariBook63" xml:space="preserve">
+    <value>Nuopelnai į Madinah padėjėjų (Ansaar)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook64" xml:space="preserve">
+    <value>Kariniai Ekspedicijos vadovaujami Pranašo (Ramybė Jam) (al-Maghaazi)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook65" xml:space="preserve">
+    <value>Pranašiškas komentaras Korano (Tafseer Pranašo (Ramybė Jam))</value>
+  </data>
+  <data name="IslamInfo_bukhariBook66" xml:space="preserve">
+    <value>Dorybės Korano</value>
+  </data>
+  <data name="IslamInfo_bukhariBook67" xml:space="preserve">
+    <value>Santuokoje, Vedybos (Nikaah)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook68" xml:space="preserve">
+    <value>Skyrybos</value>
+  </data>
+  <data name="IslamInfo_bukhariBook69" xml:space="preserve">
+    <value>Parama Šeima</value>
+  </data>
+  <data name="IslamInfo_bukhariBook7" xml:space="preserve">
+    <value>Trina rankas ir kojas su dulkių (Tayammum)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook70" xml:space="preserve">
+    <value>Maistas, valgiai</value>
+  </data>
+  <data name="IslamInfo_bukhariBook71" xml:space="preserve">
+    <value>Aukų proga gimimo ("Aqiqa)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook72" xml:space="preserve">
+    <value>Medžioklė, skerdimas</value>
+  </data>
+  <data name="IslamInfo_bukhariBook73" xml:space="preserve">
+    <value>Al-Adha šventė auka (Adaahi)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook74" xml:space="preserve">
+    <value>Gėrimai</value>
+  </data>
+  <data name="IslamInfo_bukhariBook75" xml:space="preserve">
+    <value>Pacientai</value>
+  </data>
+  <data name="IslamInfo_bukhariBook76" xml:space="preserve">
+    <value>Medicina</value>
+  </data>
+  <data name="IslamInfo_bukhariBook77" xml:space="preserve">
+    <value>Suknelė</value>
+  </data>
+  <data name="IslamInfo_bukhariBook78" xml:space="preserve">
+    <value>Geros manieros ir forma ("Al-Adab)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook79" xml:space="preserve">
+    <value>Prašoma Leidimas</value>
+  </data>
+  <data name="IslamInfo_bukhariBook8" xml:space="preserve">
+    <value>Maldos (Salat)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook80" xml:space="preserve">
+    <value>Invokacijas</value>
+  </data>
+  <data name="IslamInfo_bukhariBook81" xml:space="preserve">
+    <value>Kad širdis Tender (Ar-Riqaq)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook82" xml:space="preserve">
+    <value>Dieviškoji Valia (Al-Qadar)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook83" xml:space="preserve">
+    <value>Priesaikos ir Voti</value>
+  </data>
+  <data name="IslamInfo_bukhariBook84" xml:space="preserve">
+    <value>Ekspiacja dėl neišsipildžiusių priesaikoms teisme</value>
+  </data>
+  <data name="IslamInfo_bukhariBook85" xml:space="preserve">
+    <value>Įstatymai paveldėjimo (Al-Faraa'id)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook86" xml:space="preserve">
+    <value>Ribos ir Bausmė Allaho (Hudood) nustatyti</value>
+  </data>
+  <data name="IslamInfo_bukhariBook87" xml:space="preserve">
+    <value>Baudimas netikintieji at War su Dievu ir Jo apaštalas</value>
+  </data>
+  <data name="IslamInfo_bukhariBook88" xml:space="preserve">
+    <value>Blood Money (Ad-Diyat)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook89" xml:space="preserve">
+    <value>Darbas su apostatai</value>
+  </data>
+  <data name="IslamInfo_bukhariBook9" xml:space="preserve">
+    <value>Laikas maldų</value>
+  </data>
+  <data name="IslamInfo_bukhariBook90" xml:space="preserve">
+    <value>Sakydamas kažką per prievartą (Ikraah)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook91" xml:space="preserve">
+    <value>Gudrybės</value>
+  </data>
+  <data name="IslamInfo_bukhariBook92" xml:space="preserve">
+    <value>Aiškinimas Dreams</value>
+  </data>
+  <data name="IslamInfo_bukhariBook93" xml:space="preserve">
+    <value>Kančių ir Pasaulio pabaiga</value>
+  </data>
+  <data name="IslamInfo_bukhariBook94" xml:space="preserve">
+    <value>Sprendimai (Ahkaam)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook95" xml:space="preserve">
+    <value>Pageidavimai</value>
+  </data>
+  <data name="IslamInfo_bukhariBook96" xml:space="preserve">
+    <value>Priimti informaciją, pateiktą teisingi asmens</value>
+  </data>
+  <data name="IslamInfo_bukhariBook97" xml:space="preserve">
+    <value>Laikant Greitas Koraną ir Sunna</value>
+  </data>
+  <data name="IslamInfo_bukhariBook98" xml:space="preserve">
+    <value>Išskirtinis, unikalumas Allaho (Tawheed)</value>
+  </data>
+  <data name="IslamInfo_Classification" xml:space="preserve">
+    <value>Klasifikacija</value>
+  </data>
+  <data name="IslamInfo_Connecting" xml:space="preserve">
+    <value>Jungiamasis</value>
+  </data>
+  <data name="IslamInfo_LetterName" xml:space="preserve">
+    <value>Laiškas Vardas</value>
+  </data>
+  <data name="IslamInfo_muslimBook1" xml:space="preserve">
+    <value>Įvadas</value>
+  </data>
+  <data name="IslamInfo_muslimBook10" xml:space="preserve">
+    <value>Maldos knyga (lietaus)</value>
+  </data>
+  <data name="IslamInfo_muslimBook11" xml:space="preserve">
+    <value>Maldos knyga (užtemimas)</value>
+  </data>
+  <data name="IslamInfo_muslimBook12" xml:space="preserve">
+    <value>Maldos knyga (laidotuvės)</value>
+  </data>
+  <data name="IslamInfo_muslimBook13" xml:space="preserve">
+    <value>Iš zakat Užsakyti</value>
+  </data>
+  <data name="IslamInfo_muslimBook14" xml:space="preserve">
+    <value>Pasninkavimo Užsakyti</value>
+  </data>
+  <data name="IslamInfo_muslimBook15" xml:space="preserve">
+    <value>Iš I'tikaf Užsakyti</value>
+  </data>
+  <data name="IslamInfo_muslimBook16" xml:space="preserve">
+    <value>Piligrimystės knygos</value>
+  </data>
+  <data name="IslamInfo_muslimBook17" xml:space="preserve">
+    <value>Santuokos Užsakyti</value>
+  </data>
+  <data name="IslamInfo_muslimBook18" xml:space="preserve">
+    <value>Žindymas Užsakyti</value>
+  </data>
+  <data name="IslamInfo_muslimBook19" xml:space="preserve">
+    <value>Skyrybų Užsakyti</value>
+  </data>
+  <data name="IslamInfo_muslimBook2" xml:space="preserve">
+    <value>Tikėjimo Užsakyti</value>
+  </data>
+  <data name="IslamInfo_muslimBook20" xml:space="preserve">
+    <value>Užkerta keikia Užsakyti</value>
+  </data>
+  <data name="IslamInfo_muslimBook21" xml:space="preserve">
+    <value>Iš išlaisvinimo Vergų Užsakyti</value>
+  </data>
+  <data name="IslamInfo_muslimBook22" xml:space="preserve">
+    <value>Sandorių Užsakyti</value>
+  </data>
+  <data name="IslamInfo_muslimBook23" xml:space="preserve">
+    <value>Iš Masaaqah Užsakyti</value>
+  </data>
+  <data name="IslamInfo_muslimBook24" xml:space="preserve">
+    <value>Užsakyti Susijusių su paveldėjimo taisyklių</value>
+  </data>
+  <data name="IslamInfo_muslimBook25" xml:space="preserve">
+    <value>Dovanos Užsakyti</value>
+  </data>
+  <data name="IslamInfo_muslimBook26" xml:space="preserve">
+    <value>Iš palikimų Užsakyti</value>
+  </data>
+  <data name="IslamInfo_muslimBook27" xml:space="preserve">
+    <value>Įžadus Užsakyti</value>
+  </data>
+  <data name="IslamInfo_muslimBook28" xml:space="preserve">
+    <value>Priesaikos Užsakyti</value>
+  </data>
+  <data name="IslamInfo_muslimBook29" xml:space="preserve">
+    <value>Užsakyti susijusius su priesaika, nustatančioms nužudymų atsakomybė, Koviniai, atpildas</value>
+  </data>
+  <data name="IslamInfo_muslimBook3" xml:space="preserve">
+    <value>Gryninimo Užsakyti</value>
+  </data>
+  <data name="IslamInfo_muslimBook30" xml:space="preserve">
+    <value>Užsakyti Susijusių su Bausmių nustatyta islamo</value>
+  </data>
+  <data name="IslamInfo_muslimBook31" xml:space="preserve">
+    <value>Užsakyti Susijusių su teismo sprendimų</value>
+  </data>
+  <data name="IslamInfo_muslimBook32" xml:space="preserve">
+    <value>Iš Luqatah Užsakyti</value>
+  </data>
+  <data name="IslamInfo_muslimBook33" xml:space="preserve">
+    <value>Jihad ir ekspedicija Užsakyti</value>
+  </data>
+  <data name="IslamInfo_muslimBook34" xml:space="preserve">
+    <value>Dėl Vyriausybės Užsakyti</value>
+  </data>
+  <data name="IslamInfo_muslimBook35" xml:space="preserve">
+    <value>Žaidimų ir gyvūnų, kurie gali būti skerdžiami Užsakyti ir Aninals, kurie turi būti valgoma</value>
+  </data>
+  <data name="IslamInfo_muslimBook36" xml:space="preserve">
+    <value>Aukojimo Užsakyti</value>
+  </data>
+  <data name="IslamInfo_muslimBook37" xml:space="preserve">
+    <value>Gėrimų Užsakyti</value>
+  </data>
+  <data name="IslamInfo_muslimBook38" xml:space="preserve">
+    <value>Užsakyti Susijusių su Drabužiai ir dekoravimas</value>
+  </data>
+  <data name="IslamInfo_muslimBook39" xml:space="preserve">
+    <value>Dėl bendrojo elgesio Užsakyti</value>
+  </data>
+  <data name="IslamInfo_muslimBook4" xml:space="preserve">
+    <value>Menstruacijų Užsakyti</value>
+  </data>
+  <data name="IslamInfo_muslimBook40" xml:space="preserve">
+    <value>Ant sveikinantis sveikinimai Užsakyti</value>
+  </data>
+  <data name="IslamInfo_muslimBook41" xml:space="preserve">
+    <value>Užsakyti Dėl teisingų žodžių vartojimas</value>
+  </data>
+  <data name="IslamInfo_muslimBook42" xml:space="preserve">
+    <value>Poezijos knygų</value>
+  </data>
+  <data name="IslamInfo_muslimBook43" xml:space="preserve">
+    <value>Vizijos Užsakyti</value>
+  </data>
+  <data name="IslamInfo_muslimBook44" xml:space="preserve">
+    <value>Užsakyti Susijusių su puikios kokybės Šventosios Pranašo (taika gali jiems) ir jo palydovai</value>
+  </data>
+  <data name="IslamInfo_muslimBook45" xml:space="preserve">
+    <value>Užsakyti susijusiose su Kompanionų nuopelnus (Dievas bus malonu su jais) Šventosios Pranašo</value>
+  </data>
+  <data name="IslamInfo_muslimBook46" xml:space="preserve">
+    <value>Dorybės knyga, gerų manierų ir sujungimas į Santykių Ties</value>
+  </data>
+  <data name="IslamInfo_muslimBook47" xml:space="preserve">
+    <value>Likimo knyga</value>
+  </data>
+  <data name="IslamInfo_muslimBook48" xml:space="preserve">
+    <value>Žinių Užsakyti</value>
+  </data>
+  <data name="IslamInfo_muslimBook49" xml:space="preserve">
+    <value>Užsakyti susijusiose su Dievu, maldavimas, atgaila atminimo ir žmogaus atleidimą</value>
+  </data>
+  <data name="IslamInfo_muslimBook5" xml:space="preserve">
+    <value>Maldų Užsakyti</value>
+  </data>
+  <data name="IslamInfo_muslimBook50" xml:space="preserve">
+    <value>Iš širdies lydymosi tradicijų Užsakyti</value>
+  </data>
+  <data name="IslamInfo_muslimBook51" xml:space="preserve">
+    <value>Užsakyti Susijusių su atgaila ir paraginimo į atgailą</value>
+  </data>
+  <data name="IslamInfo_muslimBook52" xml:space="preserve">
+    <value>Susijusius su SAVYBĖS Of veidmainiai ir komanda su jomis susijusias</value>
+  </data>
+  <data name="IslamInfo_muslimBook53" xml:space="preserve">
+    <value>Užsakyti Suteikti apibūdinimas Judgment, Rojaus ir Pragaro diena</value>
+  </data>
+  <data name="IslamInfo_muslimBook54" xml:space="preserve">
+    <value>Užsakyti Susijusių į Rojų, aprašymas, jos dosnumu ir jos Intimates</value>
+  </data>
+  <data name="IslamInfo_muslimBook55" xml:space="preserve">
+    <value>Užsakyti susijusius su Sumaištis ir stebuklais paskutinę valandą</value>
+  </data>
+  <data name="IslamInfo_muslimBook56" xml:space="preserve">
+    <value>Užsakyti Susijusių su pamaldumo ir suminkština širdis</value>
+  </data>
+  <data name="IslamInfo_muslimBook57" xml:space="preserve">
+    <value>Iš komentaro Užsakyti</value>
+  </data>
+  <data name="IslamInfo_muslimBook6" xml:space="preserve">
+    <value>Mečečių ir Lankytinos maldaknygė</value>
+  </data>
+  <data name="IslamInfo_muslimBook7" xml:space="preserve">
+    <value>Maldos knyga (klajokliai)</value>
+  </data>
+  <data name="IslamInfo_muslimBook8" xml:space="preserve">
+    <value>Maldos knyga (penktadienis)</value>
+  </data>
+  <data name="IslamInfo_muslimBook9" xml:space="preserve">
+    <value>Maldos Knyga (du Eids)</value>
+  </data>
+  <data name="IslamInfo_PrayerUnits" xml:space="preserve">
+    <value>Malda vienetai</value>
+  </data>
+  <data name="IslamInfo_QuranChapter1" xml:space="preserve">
+    <value>Atidarymas</value>
+  </data>
+  <data name="IslamInfo_QuranChapter10" xml:space="preserve">
+    <value>Jonas</value>
+  </data>
+  <data name="IslamInfo_QuranChapter100" xml:space="preserve">
+    <value>Įkrovikliai</value>
+  </data>
+  <data name="IslamInfo_QuranChapter101" xml:space="preserve">
+    <value>Nelaimių</value>
+  </data>
+  <data name="IslamInfo_QuranChapter102" xml:space="preserve">
+    <value>Konkurencija</value>
+  </data>
+  <data name="IslamInfo_QuranChapter103" xml:space="preserve">
+    <value>Mažėja diena, Epocha</value>
+  </data>
+  <data name="IslamInfo_QuranChapter104" xml:space="preserve">
+    <value>Traducer</value>
+  </data>
+  <data name="IslamInfo_QuranChapter105" xml:space="preserve">
+    <value>Dramblys</value>
+  </data>
+  <data name="IslamInfo_QuranChapter106" xml:space="preserve">
+    <value>Kurajszyci</value>
+  </data>
+  <data name="IslamInfo_QuranChapter107" xml:space="preserve">
+    <value>Išmaldą</value>
+  </data>
+  <data name="IslamInfo_QuranChapter108" xml:space="preserve">
+    <value>Gausa</value>
+  </data>
+  <data name="IslamInfo_QuranChapter109" xml:space="preserve">
+    <value>Netikintieji</value>
+  </data>
+  <data name="IslamInfo_QuranChapter11" xml:space="preserve">
+    <value>Hud</value>
+  </data>
+  <data name="IslamInfo_QuranChapter110" xml:space="preserve">
+    <value>Dieviškoji palaikymas</value>
+  </data>
+  <data name="IslamInfo_QuranChapter111" xml:space="preserve">
+    <value>Palm Pluošto</value>
+  </data>
+  <data name="IslamInfo_QuranChapter112" xml:space="preserve">
+    <value>Nuoširdumas</value>
+  </data>
+  <data name="IslamInfo_QuranChapter113" xml:space="preserve">
+    <value>Aušros</value>
+  </data>
+  <data name="IslamInfo_QuranChapter114" xml:space="preserve">
+    <value>Žmonija</value>
+  </data>
+  <data name="IslamInfo_QuranChapter12" xml:space="preserve">
+    <value>Juozapas</value>
+  </data>
+  <data name="IslamInfo_QuranChapter13" xml:space="preserve">
+    <value>Perkūnas</value>
+  </data>
+  <data name="IslamInfo_QuranChapter14" xml:space="preserve">
+    <value>Abraomas</value>
+  </data>
+  <data name="IslamInfo_QuranChapter15" xml:space="preserve">
+    <value>Gibraltaras</value>
+  </data>
+  <data name="IslamInfo_QuranChapter16" xml:space="preserve">
+    <value>Bičių</value>
+  </data>
+  <data name="IslamInfo_QuranChapter17" xml:space="preserve">
+    <value>Nakties Kelionė</value>
+  </data>
+  <data name="IslamInfo_QuranChapter18" xml:space="preserve">
+    <value>Urvas</value>
+  </data>
+  <data name="IslamInfo_QuranChapter19" xml:space="preserve">
+    <value>Marija</value>
+  </data>
+  <data name="IslamInfo_QuranChapter2" xml:space="preserve">
+    <value>Karvė</value>
+  </data>
+  <data name="IslamInfo_QuranChapter20" xml:space="preserve">
+    <value>Taa-HAA</value>
+  </data>
+  <data name="IslamInfo_QuranChapter21" xml:space="preserve">
+    <value>Pranašai</value>
+  </data>
+  <data name="IslamInfo_QuranChapter22" xml:space="preserve">
+    <value>Piligriminė kelionė</value>
+  </data>
+  <data name="IslamInfo_QuranChapter23" xml:space="preserve">
+    <value>Tikinčiųjų</value>
+  </data>
+  <data name="IslamInfo_QuranChapter24" xml:space="preserve">
+    <value>Šviesa</value>
+  </data>
+  <data name="IslamInfo_QuranChapter25" xml:space="preserve">
+    <value>Kriterijus</value>
+  </data>
+  <data name="IslamInfo_QuranChapter26" xml:space="preserve">
+    <value>Poetai</value>
+  </data>
+  <data name="IslamInfo_QuranChapter27" xml:space="preserve">
+    <value>Skruzdė</value>
+  </data>
+  <data name="IslamInfo_QuranChapter28" xml:space="preserve">
+    <value>Šie pasakojimai</value>
+  </data>
+  <data name="IslamInfo_QuranChapter29" xml:space="preserve">
+    <value>Voras</value>
+  </data>
+  <data name="IslamInfo_QuranChapter3" xml:space="preserve">
+    <value>Iš Imraan Šeima</value>
+  </data>
+  <data name="IslamInfo_QuranChapter30" xml:space="preserve">
+    <value>Romėnai</value>
+  </data>
+  <data name="IslamInfo_QuranChapter31" xml:space="preserve">
+    <value>Luqman</value>
+  </data>
+  <data name="IslamInfo_QuranChapter32" xml:space="preserve">
+    <value>Išsekimas</value>
+  </data>
+  <data name="IslamInfo_QuranChapter33" xml:space="preserve">
+    <value>Klanai</value>
+  </data>
+  <data name="IslamInfo_QuranChapter34" xml:space="preserve">
+    <value>Šeba</value>
+  </data>
+  <data name="IslamInfo_QuranChapter35" xml:space="preserve">
+    <value>Iniciatorius</value>
+  </data>
+  <data name="IslamInfo_QuranChapter36" xml:space="preserve">
+    <value>Yaseen</value>
+  </data>
+  <data name="IslamInfo_QuranChapter37" xml:space="preserve">
+    <value>Tie, sudarytas Rangai</value>
+  </data>
+  <data name="IslamInfo_QuranChapter38" xml:space="preserve">
+    <value>Laiškas Saad</value>
+  </data>
+  <data name="IslamInfo_QuranChapter39" xml:space="preserve">
+    <value>Grupės</value>
+  </data>
+  <data name="IslamInfo_QuranChapter4" xml:space="preserve">
+    <value>Dėl Moterys</value>
+  </data>
+  <data name="IslamInfo_QuranChapter40" xml:space="preserve">
+    <value>Przebaczajacego</value>
+  </data>
+  <data name="IslamInfo_QuranChapter41" xml:space="preserve">
+    <value>Išsamiai paaiškinta</value>
+  </data>
+  <data name="IslamInfo_QuranChapter42" xml:space="preserve">
+    <value>Konsultacija</value>
+  </data>
+  <data name="IslamInfo_QuranChapter43" xml:space="preserve">
+    <value>Papuošalai iš aukso</value>
+  </data>
+  <data name="IslamInfo_QuranChapter44" xml:space="preserve">
+    <value>Rūkymas</value>
+  </data>
+  <data name="IslamInfo_QuranChapter45" xml:space="preserve">
+    <value>Sėlinantis</value>
+  </data>
+  <data name="IslamInfo_QuranChapter46" xml:space="preserve">
+    <value>Dunes</value>
+  </data>
+  <data name="IslamInfo_QuranChapter47" xml:space="preserve">
+    <value>Muhammadas</value>
+  </data>
+  <data name="IslamInfo_QuranChapter48" xml:space="preserve">
+    <value>Pergalė</value>
+  </data>
+  <data name="IslamInfo_QuranChapter49" xml:space="preserve">
+    <value>Vidinis Butai</value>
+  </data>
+  <data name="IslamInfo_QuranChapter5" xml:space="preserve">
+    <value>Lentelė</value>
+  </data>
+  <data name="IslamInfo_QuranChapter50" xml:space="preserve">
+    <value>Laiškas Qaaf</value>
+  </data>
+  <data name="IslamInfo_QuranChapter51" xml:space="preserve">
+    <value>Į atsijodama vėjai</value>
+  </data>
+  <data name="IslamInfo_QuranChapter52" xml:space="preserve">
+    <value>Mount</value>
+  </data>
+  <data name="IslamInfo_QuranChapter53" xml:space="preserve">
+    <value>Žvaigždžių</value>
+  </data>
+  <data name="IslamInfo_QuranChapter54" xml:space="preserve">
+    <value>Mėnulis</value>
+  </data>
+  <data name="IslamInfo_QuranChapter55" xml:space="preserve">
+    <value>Milosiernemu</value>
+  </data>
+  <data name="IslamInfo_QuranChapter56" xml:space="preserve">
+    <value>Neišvengiami</value>
+  </data>
+  <data name="IslamInfo_QuranChapter57" xml:space="preserve">
+    <value>Geležis</value>
+  </data>
+  <data name="IslamInfo_QuranChapter58" xml:space="preserve">
+    <value>Tvirtindamas, Moteris</value>
+  </data>
+  <data name="IslamInfo_QuranChapter59" xml:space="preserve">
+    <value>Tremtis</value>
+  </data>
+  <data name="IslamInfo_QuranChapter6" xml:space="preserve">
+    <value>Galvijų</value>
+  </data>
+  <data name="IslamInfo_QuranChapter60" xml:space="preserve">
+    <value>Ji tai turi būti ištirta</value>
+  </data>
+  <data name="IslamInfo_QuranChapter61" xml:space="preserve">
+    <value>Eiliniai ir puskarininkiai</value>
+  </data>
+  <data name="IslamInfo_QuranChapter62" xml:space="preserve">
+    <value>Penktadienis</value>
+  </data>
+  <data name="IslamInfo_QuranChapter63" xml:space="preserve">
+    <value>Veidmainiais</value>
+  </data>
+  <data name="IslamInfo_QuranChapter64" xml:space="preserve">
+    <value>Abipusis Nusivylimas</value>
+  </data>
+  <data name="IslamInfo_QuranChapter65" xml:space="preserve">
+    <value>Skyrybos</value>
+  </data>
+  <data name="IslamInfo_QuranChapter66" xml:space="preserve">
+    <value>Draudimas</value>
+  </data>
+  <data name="IslamInfo_QuranChapter67" xml:space="preserve">
+    <value>Suverenitetas</value>
+  </data>
+  <data name="IslamInfo_QuranChapter68" xml:space="preserve">
+    <value>Rašiklis</value>
+  </data>
+  <data name="IslamInfo_QuranChapter69" xml:space="preserve">
+    <value>Realybė</value>
+  </data>
+  <data name="IslamInfo_QuranChapter7" xml:space="preserve">
+    <value>Aukštumas</value>
+  </data>
+  <data name="IslamInfo_QuranChapter70" xml:space="preserve">
+    <value>Kylantieji Laiptai</value>
+  </data>
+  <data name="IslamInfo_QuranChapter71" xml:space="preserve">
+    <value>Nojus</value>
+  </data>
+  <data name="IslamInfo_QuranChapter72" xml:space="preserve">
+    <value>Jinn</value>
+  </data>
+  <data name="IslamInfo_QuranChapter73" xml:space="preserve">
+    <value>Apgaubtu Viena</value>
+  </data>
+  <data name="IslamInfo_QuranChapter74" xml:space="preserve">
+    <value>Likdavo vienas</value>
+  </data>
+  <data name="IslamInfo_QuranChapter75" xml:space="preserve">
+    <value>Prisikėlimas</value>
+  </data>
+  <data name="IslamInfo_QuranChapter76" xml:space="preserve">
+    <value>Vyras</value>
+  </data>
+  <data name="IslamInfo_QuranChapter77" xml:space="preserve">
+    <value>Į emisarai</value>
+  </data>
+  <data name="IslamInfo_QuranChapter78" xml:space="preserve">
+    <value>Skelbimas</value>
+  </data>
+  <data name="IslamInfo_QuranChapter79" xml:space="preserve">
+    <value>Tie, kurie vilkti atgal</value>
+  </data>
+  <data name="IslamInfo_QuranChapter8" xml:space="preserve">
+    <value>Karo grobio</value>
+  </data>
+  <data name="IslamInfo_QuranChapter80" xml:space="preserve">
+    <value>Jis susiraukė</value>
+  </data>
+  <data name="IslamInfo_QuranChapter81" xml:space="preserve">
+    <value>Nuversti</value>
+  </data>
+  <data name="IslamInfo_QuranChapter82" xml:space="preserve">
+    <value>Atskėlimas</value>
+  </data>
+  <data name="IslamInfo_QuranChapter83" xml:space="preserve">
+    <value>Apgaulė</value>
+  </data>
+  <data name="IslamInfo_QuranChapter84" xml:space="preserve">
+    <value>Skaldymo Atidaryti</value>
+  </data>
+  <data name="IslamInfo_QuranChapter85" xml:space="preserve">
+    <value>Žvaigždynai</value>
+  </data>
+  <data name="IslamInfo_QuranChapter86" xml:space="preserve">
+    <value>Aušrinė</value>
+  </data>
+  <data name="IslamInfo_QuranChapter87" xml:space="preserve">
+    <value>Aukščiausiasis</value>
+  </data>
+  <data name="IslamInfo_QuranChapter88" xml:space="preserve">
+    <value>Didžioji</value>
+  </data>
+  <data name="IslamInfo_QuranChapter89" xml:space="preserve">
+    <value>Aušros</value>
+  </data>
+  <data name="IslamInfo_QuranChapter9" xml:space="preserve">
+    <value>Atgaila</value>
+  </data>
+  <data name="IslamInfo_QuranChapter90" xml:space="preserve">
+    <value>Miestas</value>
+  </data>
+  <data name="IslamInfo_QuranChapter91" xml:space="preserve">
+    <value>Saulė</value>
+  </data>
+  <data name="IslamInfo_QuranChapter92" xml:space="preserve">
+    <value>Naktis</value>
+  </data>
+  <data name="IslamInfo_QuranChapter93" xml:space="preserve">
+    <value>Ryte</value>
+  </data>
+  <data name="IslamInfo_QuranChapter94" xml:space="preserve">
+    <value>Paguodos</value>
+  </data>
+  <data name="IslamInfo_QuranChapter95" xml:space="preserve">
+    <value>Pav</value>
+  </data>
+  <data name="IslamInfo_QuranChapter96" xml:space="preserve">
+    <value>Krešulys</value>
+  </data>
+  <data name="IslamInfo_QuranChapter97" xml:space="preserve">
+    <value>Galia, likimas</value>
+  </data>
+  <data name="IslamInfo_QuranChapter98" xml:space="preserve">
+    <value>Įrodymai</value>
+  </data>
+  <data name="IslamInfo_QuranChapter99" xml:space="preserve">
+    <value>Žemės drebėjimas</value>
+  </data>
+  <data name="IslamInfo_Terminating" xml:space="preserve">
+    <value>Terminating</value>
+  </data>
+  <data name="IslamInfo_Translation" xml:space="preserve">
+    <value>Vertimas</value>
+  </data>
+  <data name="IslamInfo_Transliteration" xml:space="preserve">
+    <value>Transliteracija</value>
+  </data>
+  <data name="IslamInfo_UnicodeName" xml:space="preserve">
+    <value>Unikodas Vardas</value>
+  </data>
+  <data name="IslamInfo_UnicodeValue" xml:space="preserve">
+    <value>Unikodo reikšmė</value>
+  </data>
+  <data name="unicode_ArabicComma" xml:space="preserve">
+    <value>Arabų kableliais</value>
+  </data>
+  <data name="unicode_ArabicDamma" xml:space="preserve">
+    <value>Arabų Damma</value>
+  </data>
+  <data name="unicode_ArabicDammatan" xml:space="preserve">
+    <value>Arabų Dammatan</value>
+  </data>
+  <data name="unicode_ArabicEmptyCentreHighStop" xml:space="preserve">
+    <value>Arabų Tuščias centras High Stop</value>
+  </data>
+  <data name="unicode_ArabicEmptyCentreLowStop" xml:space="preserve">
+    <value>Arabų Tuščias centras Žemas Stop</value>
+  </data>
+  <data name="unicode_ArabicEndOfAyah" xml:space="preserve">
+    <value>Arabų pabaiga Aukle</value>
+  </data>
+  <data name="unicode_ArabicFatha" xml:space="preserve">
+    <value>Arabų Fatha</value>
+  </data>
+  <data name="unicode_ArabicFathatan" xml:space="preserve">
+    <value>Arabų Fathatan</value>
+  </data>
+  <data name="unicode_ArabicHamzaAbove" xml:space="preserve">
+    <value>Arabų Hamza Virš</value>
+  </data>
+  <data name="unicode_ArabicHamzaBelow" xml:space="preserve">
+    <value>Arabų Hamza Žemiau</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitEight" xml:space="preserve">
+    <value>Arabų-indų skaitmenų Aštuoni</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitFive" xml:space="preserve">
+    <value>Arabų-indų skaitmenų Penki</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitFour" xml:space="preserve">
+    <value>Arabų-indų skaitmenų Keturi</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitNine" xml:space="preserve">
+    <value>Arabų-indų skaitmenų Devyni</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitOne" xml:space="preserve">
+    <value>Arabų-indų skaitmenų Viena</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitSeven" xml:space="preserve">
+    <value>Arabų-indų skaitmenų Septyni</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitSix" xml:space="preserve">
+    <value>Arabų-indų skaitmenų Šeši</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitThree" xml:space="preserve">
+    <value>Arabų-indų skaitmenų Trys</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitTwo" xml:space="preserve">
+    <value>Arabų-indų Digit Two</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitZero" xml:space="preserve">
+    <value>Arabų-indų skaitmenų nulis</value>
+  </data>
+  <data name="unicode_ArabicKasra" xml:space="preserve">
+    <value>Arabų Kasra</value>
+  </data>
+  <data name="unicode_ArabicKasratan" xml:space="preserve">
+    <value>Arabų Kasratan</value>
+  </data>
+  <data name="unicode_ArabicLetterAin" xml:space="preserve">
+    <value>Arabų raštas Ain</value>
+  </data>
+  <data name="unicode_ArabicLetterAlef" xml:space="preserve">
+    <value>Arabų raštas Alef</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefMaksura" xml:space="preserve">
+    <value>Arabų raštas Alef Maksura</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefWasla" xml:space="preserve">
+    <value>Arabų raštas Alef Wasla</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefWithHamzaAbove" xml:space="preserve">
+    <value>Arabų raštas Alef Su Hamza Above</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefWithHamzaBelow" xml:space="preserve">
+    <value>Arabų raštas Alef Su Hamza žemiau</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefWithMaddaAbove" xml:space="preserve">
+    <value>Arabų raštas Alef Su Madda Above</value>
+  </data>
+  <data name="unicode_ArabicLetterBeh" xml:space="preserve">
+    <value>Arabų raštas Beh</value>
+  </data>
+  <data name="unicode_ArabicLetterDad" xml:space="preserve">
+    <value>Arabų raštas tėtis</value>
+  </data>
+  <data name="unicode_ArabicLetterDal" xml:space="preserve">
+    <value>Arabų raštas Dal</value>
+  </data>
+  <data name="unicode_ArabicLetterFeh" xml:space="preserve">
+    <value>Arabų raštas Feh</value>
+  </data>
+  <data name="unicode_ArabicLetterGaf" xml:space="preserve">
+    <value>Arabų raštas GAF</value>
+  </data>
+  <data name="unicode_ArabicLetterGhain" xml:space="preserve">
+    <value>Arabų raštas Ghain</value>
+  </data>
+  <data name="unicode_ArabicLetterHah" xml:space="preserve">
+    <value>Arabų raštas Hah</value>
+  </data>
+  <data name="unicode_ArabicLetterHamza" xml:space="preserve">
+    <value>Arabų raštas Hamza</value>
+  </data>
+  <data name="unicode_ArabicLetterHeh" xml:space="preserve">
+    <value>Arabų raštas Heh</value>
+  </data>
+  <data name="unicode_ArabicLetterJeem" xml:space="preserve">
+    <value>Arabų raštas Jeem</value>
+  </data>
+  <data name="unicode_ArabicLetterKaf" xml:space="preserve">
+    <value>Arabų raštas Kaf</value>
+  </data>
+  <data name="unicode_ArabicLetterKhah" xml:space="preserve">
+    <value>Arabų raštas Khah</value>
+  </data>
+  <data name="unicode_ArabicLetterLam" xml:space="preserve">
+    <value>Arabų raštas Lam</value>
+  </data>
+  <data name="unicode_ArabicLetterMeem" xml:space="preserve">
+    <value>Arabų raštas meem</value>
+  </data>
+  <data name="unicode_ArabicLetterNoon" xml:space="preserve">
+    <value>Arabų raštas vidurdienis</value>
+  </data>
+  <data name="unicode_ArabicLetterPeh" xml:space="preserve">
+    <value>Arabų raštas Peh</value>
+  </data>
+  <data name="unicode_ArabicLetterQaf" xml:space="preserve">
+    <value>Arabų raštas Kaf</value>
+  </data>
+  <data name="unicode_ArabicLetterReh" xml:space="preserve">
+    <value>Arabų raštas Reh</value>
+  </data>
+  <data name="unicode_ArabicLetterSad" xml:space="preserve">
+    <value>Arabų raštas Sadas</value>
+  </data>
+  <data name="unicode_ArabicLetterSeen" xml:space="preserve">
+    <value>Arabų raštas vizitas</value>
+  </data>
+  <data name="unicode_ArabicLetterSheen" xml:space="preserve">
+    <value>Arabų raštas Sheen</value>
+  </data>
+  <data name="unicode_ArabicLetterSuperscriptAlef" xml:space="preserve">
+    <value>Arabų raštas Viršutinis Alef</value>
+  </data>
+  <data name="unicode_ArabicLetterTah" xml:space="preserve">
+    <value>Arabų raštas Tah</value>
+  </data>
+  <data name="unicode_ArabicLetterTcheh" xml:space="preserve">
+    <value>Arabų raštas Tcheh</value>
+  </data>
+  <data name="unicode_ArabicLetterTeh" xml:space="preserve">
+    <value>Arabų raštas Teh</value>
+  </data>
+  <data name="unicode_ArabicLetterTehMarbuta" xml:space="preserve">
+    <value>Arabų raštas Teh SUSIJĘ</value>
+  </data>
+  <data name="unicode_ArabicLetterThal" xml:space="preserve">
+    <value>Arabų raštas Thal</value>
+  </data>
+  <data name="unicode_ArabicLetterTheh" xml:space="preserve">
+    <value>Arabų raštas Theh</value>
+  </data>
+  <data name="unicode_ArabicLetterVeh" xml:space="preserve">
+    <value>Arabų raštas Automobilio</value>
+  </data>
+  <data name="unicode_ArabicLetterWaw" xml:space="preserve">
+    <value>Arabų raštas WAW</value>
+  </data>
+  <data name="unicode_ArabicLetterWawWithHamzaAbove" xml:space="preserve">
+    <value>Arabų raštas WAW Su Hamza Above</value>
+  </data>
+  <data name="unicode_ArabicLetterYeh" xml:space="preserve">
+    <value>Arabų raštas Yeh</value>
+  </data>
+  <data name="unicode_ArabicLetterYehWithHamzaAbove" xml:space="preserve">
+    <value>Arabų raštas Yeh Su Hamza Above</value>
+  </data>
+  <data name="unicode_ArabicLetterZah" xml:space="preserve">
+    <value>Arabų raštas Zah</value>
+  </data>
+  <data name="unicode_ArabicLetterZain" xml:space="preserve">
+    <value>Arabų raštas Zain</value>
+  </data>
+  <data name="unicode_ArabicLigatureAkbarIsolatedForm" xml:space="preserve">
+    <value>Arabų Ligature Akbar Izoliuoti formą</value>
+  </data>
+  <data name="unicode_ArabicLigatureAlayheIsolatedForm" xml:space="preserve">
+    <value>Arabų Ligature Alayhe Izoliuoti forma</value>
+  </data>
+  <data name="unicode_ArabicLigatureAllahIsolatedForm" xml:space="preserve">
+    <value>Arabų Ligature Dievas Izoliuoti forma</value>
+  </data>
+  <data name="unicode_ArabicLigatureBismillahArRahmanArRaheem" xml:space="preserve">
+    <value>Arabų Ligature Bismillah Ar-Rahman Ar-Raheem</value>
+  </data>
+  <data name="unicode_ArabicLigatureJallajalalouhou" xml:space="preserve">
+    <value>Arabų Ligature Jallajalalouhou</value>
+  </data>
+  <data name="unicode_ArabicLigatureMohammadIsolatedForm" xml:space="preserve">
+    <value>Arabų Ligature Mohammadas Izoliuoti formą</value>
+  </data>
+  <data name="unicode_ArabicLigatureQalaUsedAsKoranicStopSignIsolatedForm" xml:space="preserve">
+    <value>Arabų Ligature Kala naudojamas kaip Korano Stop Sign Pavieniai formą</value>
+  </data>
+  <data name="unicode_ArabicLigatureRasoulIsolatedForm" xml:space="preserve">
+    <value>Arabų Ligature Rasoul Izoliuoti formą</value>
+  </data>
+  <data name="unicode_ArabicLigatureSalamIsolatedForm" xml:space="preserve">
+    <value>Arabų Ligature Salam Izoliuoti formą</value>
+  </data>
+  <data name="unicode_ArabicLigatureSallaIsolatedForm" xml:space="preserve">
+    <value>Arabų Ligature Salla Izoliuota forma</value>
+  </data>
+  <data name="unicode_ArabicLigatureSallallahouAlayheWasallam" xml:space="preserve">
+    <value>Arabų Ligature Sallallahou Alayhe Wasallam</value>
+  </data>
+  <data name="unicode_ArabicLigatureSallaUsedAsKoranicStopSignIsolatedForm" xml:space="preserve">
+    <value>Arabų Ligature Salla naudojamas kaip Korano Stop Sign Izoliuoti formos</value>
+  </data>
+  <data name="unicode_ArabicLigatureWasallamIsolatedForm" xml:space="preserve">
+    <value>Arabų Ligature Wasallam Izoliuoti forma</value>
+  </data>
+  <data name="unicode_ArabicMaddahAbove" xml:space="preserve">
+    <value>Arabų Maddah Virš</value>
+  </data>
+  <data name="unicode_ArabicPlaceOfSajdah" xml:space="preserve">
+    <value>Arabų vieta Sajdah</value>
+  </data>
+  <data name="unicode_ArabicQuestionMark" xml:space="preserve">
+    <value>Arabų Klaustukas</value>
+  </data>
+  <data name="unicode_ArabicRoundedHighStopWithFilledCentre" xml:space="preserve">
+    <value>Arabų Suapvalinti Aukštos Stop Su Įdaryti centras</value>
+  </data>
+  <data name="unicode_ArabicSemicolon" xml:space="preserve">
+    <value>Arabų kabliataškiu</value>
+  </data>
+  <data name="unicode_ArabicShadda" xml:space="preserve">
+    <value>Arabų Shadda</value>
+  </data>
+  <data name="unicode_ArabicSmallHighJeem" xml:space="preserve">
+    <value>Arabų Mažas Didelis Jeem</value>
+  </data>
+  <data name="unicode_ArabicSmallHighLamAlef" xml:space="preserve">
+    <value>Arabų Mažas Didelis Lam Alef</value>
+  </data>
+  <data name="unicode_ArabicSmallHighLigatureQafWithLamWithAlefMaksura" xml:space="preserve">
+    <value>Arabų Mažas Didelis Ligature Kaf Su BAM Alef Maksura</value>
+  </data>
+  <data name="unicode_ArabicSmallHighLigatureSadWithLamWithAlefMaksura" xml:space="preserve">
+    <value>Arabų Mažas Didelis Ligature Sadas Su BAM Alef Maksura</value>
+  </data>
+  <data name="unicode_ArabicSmallHighMeemInitialForm" xml:space="preserve">
+    <value>Arabų Mažas Didelis meem pradinės formos</value>
+  </data>
+  <data name="unicode_ArabicSmallHighMeemIsolatedForm" xml:space="preserve">
+    <value>Arabų Mažas Didelis meem Izoliuoti forma</value>
+  </data>
+  <data name="unicode_ArabicSmallHighNoon" xml:space="preserve">
+    <value>Arabų Mažas Didelis vidurdienis</value>
+  </data>
+  <data name="unicode_ArabicSmallHighRoundedZero" xml:space="preserve">
+    <value>Arabų Mažas Didelis Suapvalinti nulis</value>
+  </data>
+  <data name="unicode_ArabicSmallHighSeen" xml:space="preserve">
+    <value>Arabų Mažas Didelis vizitas</value>
+  </data>
+  <data name="unicode_ArabicSmallHighThreeDots" xml:space="preserve">
+    <value>Arabų Mažas Didelis tris taškus</value>
+  </data>
+  <data name="unicode_ArabicSmallHighUprightRectangularZero" xml:space="preserve">
+    <value>Arabų Mažas Didelis Vertikalūs Stačiakampiai nulis</value>
+  </data>
+  <data name="unicode_ArabicSmallLowMeem" xml:space="preserve">
+    <value>Arabų Mažas Mažas meem</value>
+  </data>
+  <data name="unicode_ArabicSmallLowSeen" xml:space="preserve">
+    <value>Arabų Mažas Mažas vizitas</value>
+  </data>
+  <data name="unicode_ArabicSmallWaw" xml:space="preserve">
+    <value>Arabų Mažas WAW</value>
+  </data>
+  <data name="unicode_ArabicSmallYeh" xml:space="preserve">
+    <value>Arabų Mažas Yeh</value>
+  </data>
+  <data name="unicode_ArabicStartOfRubElHizb" xml:space="preserve">
+    <value>Arabų pradžia Rub El Hizb</value>
+  </data>
+  <data name="unicode_ArabicSukun" xml:space="preserve">
+    <value>Arabų Sukun</value>
+  </data>
+  <data name="unicode_ArabicTatweel" xml:space="preserve">
+    <value>Arabų Tatweel</value>
+  </data>
+  <data name="unicode_Colon" xml:space="preserve">
+    <value>Dvitaškis</value>
+  </data>
+  <data name="unicode_Comma" xml:space="preserve">
+    <value>Kablelis</value>
+  </data>
+  <data name="unicode_ExclamationMark" xml:space="preserve">
+    <value>Šauktukas</value>
+  </data>
+  <data name="unicode_FullStop" xml:space="preserve">
+    <value>Taškas</value>
+  </data>
+  <data name="unicode_HyphenMinus" xml:space="preserve">
+    <value>Brūkšnelis-Minuso</value>
+  </data>
+  <data name="unicode_LeftCurlyBracket" xml:space="preserve">
+    <value>Kairysis riestinis skliaustas</value>
+  </data>
+  <data name="unicode_LeftPointingDoubleAngleQuotationMark" xml:space="preserve">
+    <value>Kairiuoju pelės Pelės Double kampas kabutės</value>
+  </data>
+  <data name="unicode_LeftSquareBracket" xml:space="preserve">
+    <value>Kairė aikštė laikiklis</value>
+  </data>
+  <data name="unicode_OrnateLeftParenthesis" xml:space="preserve">
+    <value>Puošnus kairiojo skliausto</value>
+  </data>
+  <data name="unicode_OrnateRightParenthesis" xml:space="preserve">
+    <value>Puošnus Teisė lenktiniai skliaustai</value>
+  </data>
+  <data name="unicode_QuotationMark" xml:space="preserve">
+    <value>Kabutės</value>
+  </data>
+  <data name="unicode_RialSign" xml:space="preserve">
+    <value>Rialas Prisijungti</value>
+  </data>
+  <data name="unicode_RightCurlyBracket" xml:space="preserve">
+    <value>Teisė riestinis skliaustas</value>
+  </data>
+  <data name="unicode_RightPointingDoubleAngleQuotationMark" xml:space="preserve">
+    <value>Dešiniuoju pelės Pelės Dvivietis kampas kabutės</value>
+  </data>
+  <data name="unicode_RightSquareBracket" xml:space="preserve">
+    <value>Teisė aikštėje Bracket</value>
+  </data>
+  <data name="unicode_Space" xml:space="preserve">
+    <value>Erdvė</value>
+  </data>
+  <data name="IslamInfo_Date" xml:space="preserve">
+    <value>Data</value>
+  </data>
+  <data name="IslamInfo_Day" xml:space="preserve">
+    <value>Diena</value>
+  </data>
+  <data name="IslamInfo_Final1" xml:space="preserve">
+    <value>Galutinė 1.</value>
+  </data>
+  <data name="IslamInfo_Final1Trans" xml:space="preserve">
+    <value>kuris nieko kaip ir jis yra Slyszacy, Seer</value>
+  </data>
+  <data name="IslamInfo_Final1WordByWord" xml:space="preserve">
+    <value>kurių: | nėra | yra panašūs į Jį | kažkas ir | Jis | Slyszacy | Seer</value>
+  </data>
+  <data name="IslamInfo_Final2" xml:space="preserve">
+    <value>Galutinė 2.</value>
+  </data>
+  <data name="IslamInfo_Final2Trans" xml:space="preserve">
+    <value>O boze, siųsti geriausią maldą ant jūsų geriausias tvarinys Meistras Muhammad</value>
+  </data>
+  <data name="IslamInfo_Final2WordByWord" xml:space="preserve">
+    <value>O boze | siųsti | Geriausia | malda | nuo | Geriausia | Jūsų kūrimui | Meistras | Muhammadas</value>
+  </data>
+  <data name="IslamInfo_Final3" xml:space="preserve">
+    <value>Galutinė 3.</value>
+  </data>
+  <data name="IslamInfo_Final3Trans" xml:space="preserve">
+    <value>Taika ir jo žodžius rašalo ir kai kurie jį prisiminti tai padaryti ir kai kurie nesistengia prisiminti jį padaryti</value>
+  </data>
+  <data name="IslamInfo_Final3WordByWord" xml:space="preserve">
+    <value>Ir ramybė | pasakoti | jo žinios | ir rašalas | jo žodžius | kai | prisiminti Jį | padaryti | ir kai kurie pamiršti, | kad | prisiminti Jį | padaryti</value>
+  </data>
+  <data name="IslamInfo_OMasterSendPrayersAndPeace" xml:space="preserve">
+    <value>O mano Viešpatie, siųsti savo sveikinimus ir palaiminimus</value>
+  </data>
+  <data name="IslamInfo_OMasterSendPrayersAndPeaceTrans" xml:space="preserve">
+    <value>O mano Viešpatie, siųsti savo sveikinimus ir palaiminimus amžinai nuo jūsų mylimasis, geriausias iš visos kūrinijos</value>
+  </data>
+  <data name="IslamInfo_OMasterSendPrayersAndPeaceWordByWord" xml:space="preserve">
+    <value>O mano Meistras | siųsti savo sveikinimus ir palaiminimai | | visada | amžinai | nuo | Jūsų Mylima | Geriausia | sukurta | visumos</value>
+  </data>
+  <data name="IslamInfo_PopularIslamicSongVerses" xml:space="preserve">
+    <value>Populiarios Islamo Song Eilėraščiai</value>
+  </data>
+  <data name="IslamInfo_RemembranceFirst" xml:space="preserve">
+    <value>Atminimo Pirmas</value>
+  </data>
+  <data name="IslamInfo_RemembranceFirstTrans" xml:space="preserve">
+    <value>Nėra turi teisę būti garbinamas, bet Jūs (O boze)), pašlovinti (ir išaukštintas) yra Jums (visų pirma tos (blogio) jie sieja su Jumis).</value>
+  </data>
+  <data name="IslamInfo_RemembranceFirstWordByWord" xml:space="preserve">
+    <value>Nėra | turi teisę būti garbinamas | bet | Jūs | chwala Are You | Tikrai | buvau | iš | niesprawiedliwi</value>
+  </data>
+  <data name="IslamInfo_RemembranceSecond" xml:space="preserve">
+    <value>Atminimo Antra</value>
+  </data>
+  <data name="IslamInfo_RemembranceSecondTrans" xml:space="preserve">
+    <value>Dievas (Alone) yra pakankamai mums, ir Jis yra geriausias Asmuo, reikalus (mums);</value>
+  </data>
+  <data name="IslamInfo_RemembranceSecondWordByWord" xml:space="preserve">
+    <value>Pakanka mus | Dievas | ir jis yra geriausias | Asmuo padėtis | Kas Puikus | Rėmėjas | ir ką Puikus | padėjėjas</value>
+  </data>
+  <data name="IslamInfo_RemembranceThird" xml:space="preserve">
+    <value>Atminimo Trečia</value>
+  </data>
+  <data name="IslamInfo_RemembranceThirdTrans" xml:space="preserve">
+    <value>Nėra stiprumas (susilaikyti nuo nuodėmių, bet su apsauga nuo Dievo) ir nėra galia (atlikti gerus darbus), bet su Dievo, Aukščiausiojo, Aukščiausiojo pagalba</value>
+  </data>
+  <data name="IslamInfo_RemembranceThirdWordByWord" xml:space="preserve">
+    <value>Nėra | Stiprumas | ir nėra | elektros | išskyrus | su Dievu | Didelis | Aukščiausiasis</value>
+  </data>
+  <data name="IslamInfo_SendBlessingsFirst" xml:space="preserve">
+    <value>Siųsti Blessings Pirmas</value>
+  </data>
+  <data name="IslamInfo_SendBlessingsFirstTrans" xml:space="preserve">
+    <value>Dievas siunčia savo malonę Mahometo ir jo palikuonių, kaip jums išsiųsti savo gailestingumą Abraomui ir jo palikuonims.</value>
+  </data>
+  <data name="IslamInfo_SendBlessingsFirstWordByWord" xml:space="preserve">
+    <value>O boze | siųsti savo gailestingumą | apie | Mahometas ir | nuo | ainiai | apie Jį | kaip | siuntėte savo gailestingumą | apie | Abraomas ir | nuo | ainiai | apie Jį | tikrai Jūs esate | Labiausiai gyriaus | Dauguma Glorious |</value>
+  </data>
+  <data name="IslamInfo_SendBlessingsSecond" xml:space="preserve">
+    <value>Siųsti Blessings Antra</value>
+  </data>
+  <data name="IslamInfo_SendBlessingsSecondTrans" xml:space="preserve">
+    <value>Dievas siunčia savo malonę Mahometo ir jo palikuonių, kaip jums išsiųsti savo gailestingumą Abraomui ir jo palikuonims.</value>
+  </data>
+  <data name="IslamInfo_SendBlessingsSecondWordByWord" xml:space="preserve">
+    <value>O boze | siųsti savo gailestingumą | apie | Mahometas ir | nuo | ainiai | apie Jį | kaip | siuntėte savo gailestingumą | apie | Abraomas ir | nuo | ainiai | apie Jį | tikrai Jūs esate | Labiausiai gyriaus | Dauguma Glorious |</value>
+  </data>
+  <data name="IslamInfo_TheBestNames" xml:space="preserve">
+    <value>Geriausios Vardai</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoon" xml:space="preserve">
+    <value>Baltas Mėnulis</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonEighth" xml:space="preserve">
+    <value>Aštuntas</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonEighthTrans" xml:space="preserve">
+    <value>Sveikiname Jus, kurie vadina mus geras būdas</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonEighthWordByWord" xml:space="preserve">
+    <value>Sveiki | jūs, paskambinkite mums | į gera | būdas</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonFifth" xml:space="preserve">
+    <value>Penktas</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonFifthTrans" xml:space="preserve">
+    <value>O mūsų pasiuntinį (pasiuntinys) tarp mūsų</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonFifthWordByWord" xml:space="preserve">
+    <value>O | Mūsų Mesendžeris | tarp mūsų</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonFirst" xml:space="preserve">
+    <value>Pirmas</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonFirstTrans" xml:space="preserve">
+    <value>O baltas mėnulis pakilo virš mūsų</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonFirstWordByWord" xml:space="preserve">
+    <value>O rožė | Baltojo Mėnulio | virš mūsų</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonFourth" xml:space="preserve">
+    <value>Ketvirtas</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonFourthTrans" xml:space="preserve">
+    <value>Nes Tą, kuris kviečia mus į Dievo būdas</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonFourthWordByWord" xml:space="preserve">
+    <value>Jam | kuris mus kviečia | Deo | būdas</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonSecond" xml:space="preserve">
+    <value>Antra</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonSecondTrans" xml:space="preserve">
+    <value>Nuo slėnyje (kur) vadinamas</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonSecondWordByWord" xml:space="preserve">
+    <value>Nuo | slėnis | vadinama</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonSeventh" xml:space="preserve">
+    <value>Septintas</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonSeventhTrans" xml:space="preserve">
+    <value>Tu atvedei į šį miestą bajorų</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonSeventhWordByWord" xml:space="preserve">
+    <value>Tu atvedei | bajorų | į šį miestą</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonSixth" xml:space="preserve">
+    <value>Šeštas</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonSixthTrans" xml:space="preserve">
+    <value>Kas ateina su paraginimu (Draudimų / įsakymų) turi būti paisoma</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonSixthWordByWord" xml:space="preserve">
+    <value>Kas ateina | su įsakymų | privalu vykdyti</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonThird" xml:space="preserve">
+    <value>Trečias</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonThirdTrans" xml:space="preserve">
+    <value>Ir tai yra privaloma visiems mums parodyti dėkingumą</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonThirdWordByWord" xml:space="preserve">
+    <value>Ir tai yra įpareigotos | rodyti graditude | į mus</value>
+  </data>
+  <data name="IslamInfo_AllahKnowsBest" xml:space="preserve">
+    <value>Dievas geriausiai žino</value>
+  </data>
+  <data name="IslamInfo_AllahSaysTheTruth" xml:space="preserve">
+    <value>Tiesa yra iš Dievo, Patys nuostabiausi</value>
+  </data>
+  <data name="IslamInfo_AllahSufficesMe" xml:space="preserve">
+    <value>Pakankamas man yra Dievas</value>
+  </data>
+  <data name="IslamInfo_AllahWilledItSo" xml:space="preserve">
+    <value>Dievas panorėjo jį taip,</value>
+  </data>
+  <data name="IslamInfo_AllahWilling" xml:space="preserve">
+    <value>Jei Dievas nori, kad taip</value>
+  </data>
+  <data name="IslamInfo_AndUponYouBePeaceAndMercyOfAllah" xml:space="preserve">
+    <value>Ir ant tavęs bus taika ir Dievo gailestingumas</value>
+  </data>
+  <data name="IslamInfo_AndUponYouBePeaceAndMercyOfAllahAndBlessings" xml:space="preserve">
+    <value>Ir ant tavęs bus taika ir Dievo ir Jo palaiminimus gailestingumas</value>
+  </data>
+  <data name="IslamInfo_BlessingsOfAllah" xml:space="preserve">
+    <value>Palaimos Dievo</value>
+  </data>
+  <data name="IslamInfo_GloriousAndExaltedBeHe" xml:space="preserve">
+    <value>Šlovingą išaukštintas tebūna jis</value>
+  </data>
+  <data name="IslamInfo_IAskAllahForgiveness" xml:space="preserve">
+    <value>Prašau atleisti iš Dievo</value>
+  </data>
+  <data name="IslamInfo_InProtectionOfAllah" xml:space="preserve">
+    <value>Vardan Dievo apsaugos</value>
+  </data>
+  <data name="IslamInfo_InThePathOfAllah" xml:space="preserve">
+    <value>Vardan Dievo priežastis</value>
+  </data>
+  <data name="IslamInfo_MayAllahBePleased" xml:space="preserve">
+    <value>Gali Dievas bus malonu su jais</value>
+  </data>
+  <data name="IslamInfo_MayAllahBlessYou" xml:space="preserve">
+    <value>Palaiminimą jums nuo Dievo</value>
+  </data>
+  <data name="IslamInfo_MayAllahHaveMercy" xml:space="preserve">
+    <value>Gali Dievas pasigailėk jų</value>
+  </data>
+  <data name="IslamInfo_MayAllahProtectYou" xml:space="preserve">
+    <value>Gali Dievas apsaugoti jus</value>
+  </data>
+  <data name="IslamInfo_MayAllahWillItSo" xml:space="preserve">
+    <value>Gali Allahas bus tai, kad</value>
+  </data>
+  <data name="IslamInfo_PeaceBeUponYouAndMercyOfAllah" xml:space="preserve">
+    <value>Telydi jus ramybė ir Dievo gailestingumo</value>
+  </data>
+  <data name="IslamInfo_PeaceBeUponYouAndMercyOfAllahAndBlessings" xml:space="preserve">
+    <value>Telydi jus ramybė ir Dievo gailestingumo ir Jo palaiminimai</value>
+  </data>
+  <data name="IslamInfo_SeekRefugeWithAllahFromSatanRejected" xml:space="preserve">
+    <value>Aš ieškoti prieglobsčio pas Dievą nuo šėtono atmestas</value>
+  </data>
+  <data name="IslamInfo_SublimeAndMighty" xml:space="preserve">
+    <value>Didingas ir galingas</value>
+  </data>
+  <data name="IslamInfo_TrulyFromAllahWeComeAndToHimWillReturn" xml:space="preserve">
+    <value>Tikrai iš Dievo mes turime ateiti, ir tikrai su Juo mes grąžina</value>
+  </data>
+  <data name="Acct_CertRequest" xml:space="preserve">
+    <value>Sertifikatas Užsisakyti</value>
+  </data>
+  <data name="Acct_Certificate" xml:space="preserve">
+    <value>Pažymėjimas</value>
+  </data>
+  <data name="Acct_CertInstall" xml:space="preserve">
+    <value>Įdiekite sertifikatas</value>
+  </data>
+  <data name="Acct_CurrentUser" xml:space="preserve">
+    <value>Dabartinis Vartotojas</value>
+  </data>
+  <data name="Acct_DeleteCertRequest" xml:space="preserve">
+    <value>Ištrinti pažymėjimo prašymo</value>
+  </data>
+  <data name="Acct_EnableSSL" xml:space="preserve">
+    <value>Įjungti SSL</value>
+  </data>
+  <data name="Acct_PrivateKey" xml:space="preserve">
+    <value>Asmeninis raktas</value>
+  </data>
+  <data name="Acct_ViewCertRequests" xml:space="preserve">
+    <value>Peržiūrėti sertifikatas Prašymai</value>
+  </data>
+  <data name="Acct_ViewSites" xml:space="preserve">
+    <value>Peržiūrėti Sklypai</value>
+  </data>
+  <data name="Acct_CertInstallIntermed" xml:space="preserve">
+    <value>Įdiekite tarpinių sertifikatas</value>
+  </data>
+  <data name="IslamInfo_UniqueLetters" xml:space="preserve">
+    <value>Unikalūs laiškai</value>
+  </data>
+  <data name="IslamInfo_SoulStates" xml:space="preserve">
+    <value>Soul narės</value>
+  </data>
+  <data name="IslamInfo_Abbreviations" xml:space="preserve">
+    <value>Santrumpos</value>
+  </data>
+  <data name="IslamInfo_Names" xml:space="preserve">
+    <value>Vardai</value>
+  </data>
+  <data name="IslamInfo_Places" xml:space="preserve">
+    <value>Lankytinos vietos</value>
+  </data>
+  <data name="IslamInfo_Abbasid" xml:space="preserve">
+    <value>Abasidų</value>
+  </data>
+  <data name="IslamInfo_AbdullahBinMasood" xml:space="preserve">
+    <value>Abdullah bin Masood</value>
+  </data>
+  <data name="IslamInfo_AbuBakrAlSaddiq" xml:space="preserve">
+    <value>Abu Bakras al-Saddiq</value>
+  </data>
+  <data name="IslamInfo_AbuDahr" xml:space="preserve">
+    <value>Abu Dahr</value>
+  </data>
+  <data name="IslamInfo_AbuHanifa" xml:space="preserve">
+    <value>Abu Hanifa</value>
+  </data>
+  <data name="IslamInfo_AbuHurairah" xml:space="preserve">
+    <value>AbuHurairah</value>
+  </data>
+  <data name="IslamInfo_AbuJahal" xml:space="preserve">
+    <value>Abu Jahal</value>
+  </data>
+  <data name="IslamInfo_AbuLahab" xml:space="preserve">
+    <value>Abu Lahab</value>
+  </data>
+  <data name="IslamInfo_AbuSufyan" xml:space="preserve">
+    <value>Abu Sufyan</value>
+  </data>
+  <data name="IslamInfo_Aisha" xml:space="preserve">
+    <value>Aisha</value>
+  </data>
+  <data name="IslamInfo_AliBinAbuTalib" xml:space="preserve">
+    <value>Ali bin Abu Talib</value>
+  </data>
+  <data name="IslamInfo_AlLaythBinSaad" xml:space="preserve">
+    <value>Al-Layth bin Saad</value>
+  </data>
+  <data name="IslamInfo_Allowed" xml:space="preserve">
+    <value>Leido</value>
+  </data>
+  <data name="IslamInfo_AlMansoor" xml:space="preserve">
+    <value>Al-Mansoor</value>
+  </data>
+  <data name="IslamInfo_AlMuwata" xml:space="preserve">
+    <value>Al-Muwata</value>
+  </data>
+  <data name="IslamInfo_AlWahsi" xml:space="preserve">
+    <value>Al-Wahsi</value>
+  </data>
+  <data name="IslamInfo_AmrBinAlAas" xml:space="preserve">
+    <value>Amr bin Al-Aas</value>
+  </data>
+  <data name="IslamInfo_AndEveryone" xml:space="preserve">
+    <value>Ir visi</value>
+  </data>
+  <data name="IslamInfo_Angel" xml:space="preserve">
+    <value>Angelas</value>
+  </data>
+  <data name="IslamInfo_Arrogance" xml:space="preserve">
+    <value>Arogancija</value>
+  </data>
+  <data name="IslamInfo_AskForgiveness" xml:space="preserve">
+    <value>Prašyti atleidimo</value>
+  </data>
+  <data name="IslamInfo_Azar" xml:space="preserve">
+    <value>Azar</value>
+  </data>
+  <data name="IslamInfo_Balance" xml:space="preserve">
+    <value>Balansas</value>
+  </data>
+  <data name="IslamInfo_BaniHashim" xml:space="preserve">
+    <value>Bani Hashim</value>
+  </data>
+  <data name="IslamInfo_BaniThaqeef" xml:space="preserve">
+    <value>Bani Thaqeef</value>
+  </data>
+  <data name="IslamInfo_Biography" xml:space="preserve">
+    <value>Biografija</value>
+  </data>
+  <data name="IslamInfo_Bless" xml:space="preserve">
+    <value>Palaiminti</value>
+  </data>
+  <data name="IslamInfo_Caliphate" xml:space="preserve">
+    <value>Kalifas</value>
+  </data>
+  <data name="IslamInfo_CallToIslam" xml:space="preserve">
+    <value>Kvietimas į islamą</value>
+  </data>
+  <data name="IslamInfo_Certainty" xml:space="preserve">
+    <value>Tikrumas</value>
+  </data>
+  <data name="IslamInfo_Cohabitation" xml:space="preserve">
+    <value>Gyvenimas kartu</value>
+  </data>
+  <data name="IslamInfo_Commentary" xml:space="preserve">
+    <value>Komentaras</value>
+  </data>
+  <data name="IslamInfo_Community" xml:space="preserve">
+    <value>Bendruomenė</value>
+  </data>
+  <data name="IslamInfo_Companions" xml:space="preserve">
+    <value>Kompanionai</value>
+  </data>
+  <data name="IslamInfo_Concensus" xml:space="preserve">
+    <value>Concensus</value>
+  </data>
+  <data name="IslamInfo_Concentration" xml:space="preserve">
+    <value>Koncentracija</value>
+  </data>
+  <data name="IslamInfo_Congregation" xml:space="preserve">
+    <value>Kongregacija</value>
+  </data>
+  <data name="IslamInfo_Conquest" xml:space="preserve">
+    <value>Užkariavimas</value>
+  </data>
+  <data name="IslamInfo_Deeds" xml:space="preserve">
+    <value>Darbai</value>
+  </data>
+  <data name="IslamInfo_Delivery" xml:space="preserve">
+    <value>Pristatymas</value>
+  </data>
+  <data name="IslamInfo_Dessertion" xml:space="preserve">
+    <value>Dessertion</value>
+  </data>
+  <data name="IslamInfo_Digger" xml:space="preserve">
+    <value>Kasėjas</value>
+  </data>
+  <data name="IslamInfo_Disbeliever" xml:space="preserve">
+    <value>Niedowiarek</value>
+  </data>
+  <data name="IslamInfo_Division" xml:space="preserve">
+    <value>Skyrius</value>
+  </data>
+  <data name="IslamInfo_Do" xml:space="preserve">
+    <value>Padaryti</value>
+  </data>
+  <data name="IslamInfo_Doctrine" xml:space="preserve">
+    <value>Doktrina</value>
+  </data>
+  <data name="IslamInfo_Empowering" xml:space="preserve">
+    <value>Empowering</value>
+  </data>
+  <data name="IslamInfo_Excellence" xml:space="preserve">
+    <value>Meistriškumas</value>
+  </data>
+  <data name="IslamInfo_Faith" xml:space="preserve">
+    <value>Tikėjimas</value>
+  </data>
+  <data name="IslamInfo_Faithful" xml:space="preserve">
+    <value>Ištikimas</value>
+  </data>
+  <data name="IslamInfo_Fight" xml:space="preserve">
+    <value>Kova</value>
+  </data>
+  <data name="IslamInfo_Fighter" xml:space="preserve">
+    <value>Kovotojas</value>
+  </data>
+  <data name="IslamInfo_Firdaus" xml:space="preserve">
+    <value>Firdaus</value>
+  </data>
+  <data name="IslamInfo_Forgiving" xml:space="preserve">
+    <value>Atlaidus</value>
+  </data>
+  <data name="IslamInfo_Fornication" xml:space="preserve">
+    <value>Sanguliavimas</value>
+  </data>
+  <data name="IslamInfo_Gabriel" xml:space="preserve">
+    <value>Gabriel</value>
+  </data>
+  <data name="IslamInfo_Gardens" xml:space="preserve">
+    <value>Sodai</value>
+  </data>
+  <data name="IslamInfo_GloriousAndExaltedBeHeAbbr" xml:space="preserve">
+    <value>SWT</value>
+  </data>
+  <data name="IslamInfo_Goodness" xml:space="preserve">
+    <value>Gėris</value>
+  </data>
+  <data name="IslamInfo_Guardian" xml:space="preserve">
+    <value>Globėjas</value>
+  </data>
+  <data name="IslamInfo_Guidance1" xml:space="preserve">
+    <value>Vadovavimas</value>
+  </data>
+  <data name="IslamInfo_Hammad" xml:space="preserve">
+    <value>Hammad</value>
+  </data>
+  <data name="IslamInfo_HamzaBinAbduAlMuttalib" xml:space="preserve">
+    <value>Hamza Bin Abdu Al-Muttalib</value>
+  </data>
+  <data name="IslamInfo_Hanbal" xml:space="preserve">
+    <value>Hanbal</value>
+  </data>
+  <data name="IslamInfo_Hasan" xml:space="preserve">
+    <value>Hasan</value>
+  </data>
+  <data name="IslamInfo_HeartSofteners" xml:space="preserve">
+    <value>Širdies minkštikliai</value>
+  </data>
+  <data name="IslamInfo_Hell" xml:space="preserve">
+    <value>Pragaras</value>
+  </data>
+  <data name="IslamInfo_Hereafter" xml:space="preserve">
+    <value>Toliau</value>
+  </data>
+  <data name="IslamInfo_Hind" xml:space="preserve">
+    <value>Užpakalinis</value>
+  </data>
+  <data name="IslamInfo_Hudabiyyah" xml:space="preserve">
+    <value>Hudabiyyah</value>
+  </data>
+  <data name="IslamInfo_Hunain" xml:space="preserve">
+    <value>Hunain</value>
+  </data>
+  <data name="IslamInfo_Hussein" xml:space="preserve">
+    <value>Husseinas</value>
+  </data>
+  <data name="IslamInfo_Hypocrite" xml:space="preserve">
+    <value>Apsimetėlis</value>
+  </data>
+  <data name="IslamInfo_ImamNawawi40Hadith" xml:space="preserve">
+    <value>Imamas Nawawi 40 Hadith</value>
+  </data>
+  <data name="IslamInfo_Impact" xml:space="preserve">
+    <value>Poveikis</value>
+  </data>
+  <data name="IslamInfo_Innovation" xml:space="preserve">
+    <value>Naujovė</value>
+  </data>
+  <data name="IslamInfo_Intention" xml:space="preserve">
+    <value>Tikslas</value>
+  </data>
+  <data name="IslamInfo_Introduction" xml:space="preserve">
+    <value>Įvadas</value>
+  </data>
+  <data name="IslamInfo_Invocation" xml:space="preserve">
+    <value>Maldavimas</value>
+  </data>
+  <data name="IslamInfo_Jinn" xml:space="preserve">
+    <value>Jinn</value>
+  </data>
+  <data name="IslamInfo_Kaaba" xml:space="preserve">
+    <value>Kaabos</value>
+  </data>
+  <data name="IslamInfo_KhadijahBintiKhuwaylid" xml:space="preserve">
+    <value>Khadijah Binti Khooaylid</value>
+  </data>
+  <data name="IslamInfo_KhalidBinWalid" xml:space="preserve">
+    <value>Khalid Bin Walid</value>
+  </data>
+  <data name="IslamInfo_Knowledgable" xml:space="preserve">
+    <value>Knowledgable</value>
+  </data>
+  <data name="IslamInfo_Latest" xml:space="preserve">
+    <value>Paskutinis</value>
+  </data>
+  <data name="IslamInfo_Leader" xml:space="preserve">
+    <value>Vadovas</value>
+  </data>
+  <data name="IslamInfo_Lecture" xml:space="preserve">
+    <value>Paskaita</value>
+  </data>
+  <data name="IslamInfo_Limit" xml:space="preserve">
+    <value>Riba</value>
+  </data>
+  <data name="IslamInfo_Loudmouthed" xml:space="preserve">
+    <value>Rėksmingas</value>
+  </data>
+  <data name="IslamInfo_Lucifer" xml:space="preserve">
+    <value>Liuciferis</value>
+  </data>
+  <data name="IslamInfo_Madame" xml:space="preserve">
+    <value>Madame</value>
+  </data>
+  <data name="IslamInfo_Malik" xml:space="preserve">
+    <value>Malikas</value>
+  </data>
+  <data name="IslamInfo_Mankind" xml:space="preserve">
+    <value>Žmonija</value>
+  </data>
+  <data name="IslamInfo_Manners" xml:space="preserve">
+    <value>Manieros</value>
+  </data>
+  <data name="IslamInfo_MannersOfDiffering" xml:space="preserve">
+    <value>Manieros skirtingos</value>
+  </data>
+  <data name="IslamInfo_Master" xml:space="preserve">
+    <value>Meistras</value>
+  </data>
+  <data name="IslamInfo_MayAllahBePleasedAbbr" xml:space="preserve">
+    <value>RA</value>
+  </data>
+  <data name="IslamInfo_MayHisGloryBeGlorified" xml:space="preserve">
+    <value>MayHisGloryBeGlorified</value>
+  </data>
+  <data name="IslamInfo_Mecca" xml:space="preserve">
+    <value>Meka</value>
+  </data>
+  <data name="IslamInfo_Medina" xml:space="preserve">
+    <value>Medina</value>
+  </data>
+  <data name="IslamInfo_Mercy" xml:space="preserve">
+    <value>Gailestingumas</value>
+  </data>
+  <data name="IslamInfo_MinorPilgrimage" xml:space="preserve">
+    <value>Mažosios piligrimystė</value>
+  </data>
+  <data name="IslamInfo_Mosque" xml:space="preserve">
+    <value>Mečetė</value>
+  </data>
+  <data name="IslamInfo_Muawiyyah" xml:space="preserve">
+    <value>Muawiyyah</value>
+  </data>
+  <data name="IslamInfo_Mufti" xml:space="preserve">
+    <value>Muftis</value>
+  </data>
+  <data name="IslamInfo_MuhammadBinAbduAlMuttalib" xml:space="preserve">
+    <value>Muhammad Bin Abdu Al-Muttalib</value>
+  </data>
+  <data name="IslamInfo_Neck" xml:space="preserve">
+    <value>Kaklas</value>
+  </data>
+  <data name="IslamInfo_Nurturing" xml:space="preserve">
+    <value>Ugdymas</value>
+  </data>
+  <data name="IslamInfo_OBelievers" xml:space="preserve">
+    <value>O jūs, kurie tikite</value>
+  </data>
+  <data name="IslamInfo_Optimizer" xml:space="preserve">
+    <value>Optimizavimo</value>
+  </data>
+  <data name="IslamInfo_Paradise" xml:space="preserve">
+    <value>Rojus</value>
+  </data>
+  <data name="IslamInfo_Patience" xml:space="preserve">
+    <value>Kantrybė</value>
+  </data>
+  <data name="IslamInfo_Permission" xml:space="preserve">
+    <value>Leidimas</value>
+  </data>
+  <data name="IslamInfo_Persecution" xml:space="preserve">
+    <value>Persekiojimas</value>
+  </data>
+  <data name="IslamInfo_Piety" xml:space="preserve">
+    <value>Pamaldumas</value>
+  </data>
+  <data name="IslamInfo_PleasedWithDecree" xml:space="preserve">
+    <value>Malonu su dekretu</value>
+  </data>
+  <data name="IslamInfo_Polythiest" xml:space="preserve">
+    <value>Polythiest</value>
+  </data>
+  <data name="IslamInfo_Practical" xml:space="preserve">
+    <value>Praktiškas</value>
+  </data>
+  <data name="IslamInfo_Predestination" xml:space="preserve">
+    <value>Lemtis</value>
+  </data>
+  <data name="IslamInfo_PrintedBook" xml:space="preserve">
+    <value>Spausdintų knygų</value>
+  </data>
+  <data name="IslamInfo_Professor" xml:space="preserve">
+    <value>Profesorius</value>
+  </data>
+  <data name="IslamInfo_Protector" xml:space="preserve">
+    <value>Apsauga</value>
+  </data>
+  <data name="IslamInfo_Punishment" xml:space="preserve">
+    <value>Bausmė</value>
+  </data>
+  <data name="IslamInfo_Purification" xml:space="preserve">
+    <value>Valymas</value>
+  </data>
+  <data name="IslamInfo_Quraish" xml:space="preserve">
+    <value>Quraish</value>
+  </data>
+  <data name="IslamInfo_Rawdah" xml:space="preserve">
+    <value>Rawdah</value>
+  </data>
+  <data name="IslamInfo_Recite" xml:space="preserve">
+    <value>Deklamuoti</value>
+  </data>
+  <data name="IslamInfo_Religion" xml:space="preserve">
+    <value>Religija</value>
+  </data>
+  <data name="IslamInfo_Repentance" xml:space="preserve">
+    <value>Atgaila</value>
+  </data>
+  <data name="IslamInfo_RiadAlJannah" xml:space="preserve">
+    <value>Riad Al-Jannah</value>
+  </data>
+  <data name="IslamInfo_RighteousDealings" xml:space="preserve">
+    <value>Teisingi Santykiuose</value>
+  </data>
+  <data name="IslamInfo_RighteousDeeds" xml:space="preserve">
+    <value>Teisieji</value>
+  </data>
+  <data name="IslamInfo_SaadBinWaad" xml:space="preserve">
+    <value>Saad Bin Waad</value>
+  </data>
+  <data name="IslamInfo_Sacrifice" xml:space="preserve">
+    <value>Auka</value>
+  </data>
+  <data name="IslamInfo_Salafi" xml:space="preserve">
+    <value>Salafistinės</value>
+  </data>
+  <data name="IslamInfo_Satan" xml:space="preserve">
+    <value>Šėtonas</value>
+  </data>
+  <data name="IslamInfo_Satisfaction" xml:space="preserve">
+    <value>Pasitenkinimas</value>
+  </data>
+  <data name="IslamInfo_Self" xml:space="preserve">
+    <value>Pats</value>
+  </data>
+  <data name="IslamInfo_Shafii" xml:space="preserve">
+    <value>Shafii</value>
+  </data>
+  <data name="IslamInfo_Sheikh" xml:space="preserve">
+    <value>Šeichas</value>
+  </data>
+  <data name="IslamInfo_ShowingOff" xml:space="preserve">
+    <value>Rodomi Off</value>
+  </data>
+  <data name="IslamInfo_Sin" xml:space="preserve">
+    <value>Nuodėmė</value>
+  </data>
+  <data name="IslamInfo_Sir" xml:space="preserve">
+    <value>Seras</value>
+  </data>
+  <data name="IslamInfo_Slaughter" xml:space="preserve">
+    <value>Skerdimas</value>
+  </data>
+  <data name="IslamInfo_Slave" xml:space="preserve">
+    <value>Vergas</value>
+  </data>
+  <data name="IslamInfo_Speech" xml:space="preserve">
+    <value>Kalbos</value>
+  </data>
+  <data name="IslamInfo_Sporadic" xml:space="preserve">
+    <value>Atsitiktinis</value>
+  </data>
+  <data name="IslamInfo_Strangers" xml:space="preserve">
+    <value>Nepažįstamieji</value>
+  </data>
+  <data name="IslamInfo_SupplicationsAndPrayers" xml:space="preserve">
+    <value>Maldomis ir maldos</value>
+  </data>
+  <data name="IslamInfo_Taaif" xml:space="preserve">
+    <value>Taaif</value>
+  </data>
+  <data name="IslamInfo_Talkative" xml:space="preserve">
+    <value>Kalbus</value>
+  </data>
+  <data name="IslamInfo_ThePrayersOfAllahUponHimAndPeaceAbbr" xml:space="preserve">
+    <value>SAW | PJŪKLAI</value>
+  </data>
+  <data name="IslamInfo_Throne" xml:space="preserve">
+    <value>Sostas</value>
+  </data>
+  <data name="IslamInfo_Trustworthy" xml:space="preserve">
+    <value>Patikimas</value>
+  </data>
+  <data name="IslamInfo_Truthful" xml:space="preserve">
+    <value>Teisingas</value>
+  </data>
+  <data name="IslamInfo_UmarBinAlKhattab" xml:space="preserve">
+    <value>Umar bin Al-Khattab</value>
+  </data>
+  <data name="IslamInfo_Umayyad" xml:space="preserve">
+    <value>Umayyad</value>
+  </data>
+  <data name="IslamInfo_Universal" xml:space="preserve">
+    <value>Universalus</value>
+  </data>
+  <data name="IslamInfo_Unseen" xml:space="preserve">
+    <value>Nematytas</value>
+  </data>
+  <data name="IslamInfo_UponHimBePeaceAbbr" xml:space="preserve">
+    <value>AS</value>
+  </data>
+  <data name="IslamInfo_UthmanBinAfwan" xml:space="preserve">
+    <value>Uthman bin Afwan</value>
+  </data>
+  <data name="IslamInfo_VoluntaryKindness" xml:space="preserve">
+    <value>Savanoriškas Gerumo</value>
+  </data>
+  <data name="IslamInfo_Wahhabi" xml:space="preserve">
+    <value>Wahhabi</value>
+  </data>
+  <data name="IslamInfo_Wisdom" xml:space="preserve">
+    <value>Išmintis</value>
+  </data>
+  <data name="IslamInfo_Witnessing" xml:space="preserve">
+    <value>Liudininkai</value>
+  </data>
+  <data name="IslamInfo_World" xml:space="preserve">
+    <value>Pasaulis</value>
+  </data>
+  <data name="IslamInfo_Worship" xml:space="preserve">
+    <value>Garbinimas</value>
+  </data>
+  <data name="IslamInfo_IslamicPhrases" xml:space="preserve">
+    <value>Islamo frazės</value>
+  </data>
+  <data name="IslamSource_QuranWords" xml:space="preserve">
+    <value>Korano žodžiai</value>
+  </data>
+  <data name="IslamSource_UniqueWordTotal" xml:space="preserve">
+    <value>Unikalus Žodis viso</value>
+  </data>
+  <data name="IslamSource_WordTotal" xml:space="preserve">
+    <value>Žodis viso</value>
+  </data>
+  <data name="IslamSource_FixDirectionalMarkers" xml:space="preserve">
+    <value>Nustatyti Kryptinis žymekliai</value>
+  </data>
+  <data name="unicode_LeftToRightEmbedding" xml:space="preserve">
+    <value>Į kairę į dešinę laikydamos</value>
+  </data>
+  <data name="unicode_RightToLeftEmbedding" xml:space="preserve">
+    <value>Iš dešinės į kairę laikydamos</value>
+  </data>
+  <data name="unicode_LeftToRightMark" xml:space="preserve">
+    <value>Į kairę į dešinę Pažymėti</value>
+  </data>
+  <data name="unicode_LeftToRightOverride" xml:space="preserve">
+    <value>Į kairę į dešinę Valdymas</value>
+  </data>
+  <data name="unicode_PopDirectionalFormatting" xml:space="preserve">
+    <value>Pop Kryptinis formatavimas</value>
+  </data>
+  <data name="unicode_RightToLeftMark" xml:space="preserve">
+    <value>Iš dešinės į kairę Pažymėti</value>
+  </data>
+  <data name="unicode_RightToLeftOverride" xml:space="preserve">
+    <value>Iš dešinės į kairę Valdymas</value>
+  </data>
+  <data name="IslamSource_CurrentMonth" xml:space="preserve">
+    <value>Šis mėnuo</value>
+  </data>
+  <data name="IslamSource_HijriCalendar" xml:space="preserve">
+    <value>Hidžros kalendorius</value>
+  </data>
+</root>

@@ -1,0 +1,4275 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Acct_AccountActivateSuccess" xml:space="preserve">
+    <value>Cuntas ngníomh go rathúil.</value>
+  </data>
+  <data name="Acct_AccountAlreadyActivated" xml:space="preserve">
+    <value>Cuntas i bhfeidhm cheana féin.</value>
+  </data>
+  <data name="Acct_AccountDeleteSuccess" xml:space="preserve">
+    <value>Cuntas a scriosadh go rathúil.</value>
+  </data>
+  <data name="Acct_AccountNotActivated" xml:space="preserve">
+    <value>Ní cuntas fós ngníomh seiceáil le do thoil do r-phost sa chéad áit nó a iarraidh ar cód gníomhachtúcháin breise.</value>
+  </data>
+  <data name="Acct_ActivateAccount" xml:space="preserve">
+    <value>Gníomhachtaigh an Cuntas</value>
+  </data>
+  <data name="Acct_ActivationAccountBody" xml:space="preserve">
+    <value>Tá an r-phost ag iarraidh gníomhachtú do {0} áireamh: {1}.</value>
+  </data>
+  <data name="Acct_ActivationAccountSubject" xml:space="preserve">
+    <value>Gníomhachtaithe do chuntas ag {0}</value>
+  </data>
+  <data name="Acct_ActivationCode" xml:space="preserve">
+    <value>Cód Gníomhachtaithe</value>
+  </data>
+  <data name="Acct_BadEmailFormat" xml:space="preserve">
+    <value>Seoladh r-phoist nach bhfuil i bhformáid bailí.</value>
+  </data>
+  <data name="Acct_Certain" xml:space="preserve">
+    <value>An bhfuil tú cinnte?</value>
+  </data>
+  <data name="Acct_ChangeEmailAddress" xml:space="preserve">
+    <value>Athraigh Seoladh R-phoist</value>
+  </data>
+  <data name="Acct_ChangePassword" xml:space="preserve">
+    <value>Athraigh Pasfhocal</value>
+  </data>
+  <data name="Acct_ChangeUsername" xml:space="preserve">
+    <value>Athraigh Ainm Úsáideora</value>
+  </data>
+  <data name="Acct_CheckEmailNotice" xml:space="preserve">
+    <value>Gníomhachtaithe chuig seoladh ar fáil.</value>
+  </data>
+  <data name="Acct_ConfirmEmailAddress" xml:space="preserve">
+    <value>Deimhnigh Seoladh Ríomhphoist</value>
+  </data>
+  <data name="Acct_ConfirmPassword" xml:space="preserve">
+    <value>Dearbhaigh Pasfhocal</value>
+  </data>
+  <data name="Acct_ControlPanel" xml:space="preserve">
+    <value>Painéal Rialúcháin</value>
+  </data>
+  <data name="Acct_DeleteAccount" xml:space="preserve">
+    <value>Scrios Cuntas</value>
+  </data>
+  <data name="Acct_DuplicateUser" xml:space="preserve">
+    <value>Úsáideoir leis an ainm seo ann cheana féin le do thoil eile a roghnú.</value>
+  </data>
+  <data name="Acct_EmailAddress" xml:space="preserve">
+    <value>Seoladh R-phoist</value>
+  </data>
+  <data name="Acct_EmailChangeReactivate" xml:space="preserve">
+    <value>Athraigh Seoladh ríomhphoist agus gníomhachtaithe r-phost a sheoladh chuig athghníomhachtú áireamh.</value>
+  </data>
+  <data name="Acct_EmailInUse" xml:space="preserve">
+    <value>R-phost cheana féin in úsáid le do thoil logáil isteach le dintiúir atá ann cheana féin.</value>
+  </data>
+  <data name="Acct_EmailsNotMatch" xml:space="preserve">
+    <value>Ní gá seoltaí r-phoist a mheaitseáil</value>
+  </data>
+  <data name="Acct_ForgotPassword" xml:space="preserve">
+    <value>Forgot Password</value>
+  </data>
+  <data name="Acct_ForgotUsername" xml:space="preserve">
+    <value>Forgot Ainm Úsáideora</value>
+  </data>
+  <data name="Acct_Home" xml:space="preserve">
+    <value>Baile</value>
+  </data>
+  <data name="Acct_IncorrectActivationCode" xml:space="preserve">
+    <value>Cód gníomhachtúcháin mícheart.</value>
+  </data>
+  <data name="Acct_IncorrectPasswordResetCode" xml:space="preserve">
+    <value>Mícheart cód phasfhocal a athshocrú.</value>
+  </data>
+  <data name="Acct_InvalidInput" xml:space="preserve">
+    <value>Ionchur neamhbhailí.</value>
+  </data>
+  <data name="Acct_InvalidUsernamePassword" xml:space="preserve">
+    <value>Ainm úsáideora nó ar do phasfhocal neamhbhailí.</value>
+  </data>
+  <data name="Acct_Login" xml:space="preserve">
+    <value>Logáil isteach</value>
+  </data>
+  <data name="Acct_LoginSuccess" xml:space="preserve">
+    <value>Logáil isteach rathúil.</value>
+  </data>
+  <data name="Acct_Logoff" xml:space="preserve">
+    <value>Logoff</value>
+  </data>
+  <data name="Acct_LogoffSuccess" xml:space="preserve">
+    <value>Logoff rathúil.</value>
+  </data>
+  <data name="Acct_MinimumPassword" xml:space="preserve">
+    <value>Ní mór Pasfhocal bheith ar a laghad 8 gcarachtar.</value>
+  </data>
+  <data name="Acct_MinimumUsername" xml:space="preserve">
+    <value>Ní mór Ainm Úsáideora bheith ar a laghad 4 litreacha.</value>
+  </data>
+  <data name="Acct_No" xml:space="preserve">
+    <value>Uimh</value>
+  </data>
+  <data name="Acct_NotConfirmDelete" xml:space="preserve">
+    <value>Ní mór a scriosadh san áireamh a dhearbhú.</value>
+  </data>
+  <data name="Acct_NoUserExists" xml:space="preserve">
+    <value>Níl aon úsáideoir le haghaidh an seoladh r-phoist isteach.</value>
+  </data>
+  <data name="Acct_Password" xml:space="preserve">
+    <value>Pasfhocal</value>
+  </data>
+  <data name="Acct_PasswordAlreadyReset" xml:space="preserve">
+    <value>Pasfhocal athshocrú cheana féin nó próiseas nach thionscain.</value>
+  </data>
+  <data name="Acct_PasswordChangedBody" xml:space="preserve">
+    <value>Is é seo an r-phost a chur in iúl an t-athrú phasfhocal do {0} áireamh: {1}.</value>
+  </data>
+  <data name="Acct_PasswordChangedSubject" xml:space="preserve">
+    <value>Pasfhocal athraigh do chuntas ag {0}</value>
+  </data>
+  <data name="Acct_PasswordChangeSuccess" xml:space="preserve">
+    <value>Pasfhocal athrú go rathúil.</value>
+  </data>
+  <data name="Acct_PasswordEmailSent" xml:space="preserve">
+    <value>Tá r-phost a sheoladh chuig do sheoladh ar an gcomhad chun tús a chur leis an bpróiseas phasfhocal a athshocrú.</value>
+  </data>
+  <data name="Acct_PasswordResetBody" xml:space="preserve">
+    <value>Is é seo an r-phost a athshocrú an focal faire ar do {0} áireamh: {1}.</value>
+  </data>
+  <data name="Acct_PasswordResetCode" xml:space="preserve">
+    <value>Cód Password Reset</value>
+  </data>
+  <data name="Acct_PasswordResetSubject" xml:space="preserve">
+    <value>Pasfhocal athshocrú do chuntas ag {0}</value>
+  </data>
+  <data name="Acct_PasswordResetSuccess" xml:space="preserve">
+    <value>Pasfhocal athshocrú rathúil.</value>
+  </data>
+  <data name="Acct_PasswordsNotMatch" xml:space="preserve">
+    <value>Ní gá pasfhocail a mheaitseáil</value>
+  </data>
+  <data name="Acct_Register" xml:space="preserve">
+    <value>Cláraigh</value>
+  </data>
+  <data name="Acct_Remember" xml:space="preserve">
+    <value>Cuimhnigh?</value>
+  </data>
+  <data name="Acct_ResendActivationEmail" xml:space="preserve">
+    <value>Cuirfear ar aghaidh arís Gníomhachtaithe R-phost</value>
+  </data>
+  <data name="Acct_ResetPassword" xml:space="preserve">
+    <value>Athshocraigh Pasfhocal</value>
+  </data>
+  <data name="Acct_RetrievePassword" xml:space="preserve">
+    <value>Aisghabh Pasfhocal</value>
+  </data>
+  <data name="Acct_RetrieveUsername" xml:space="preserve">
+    <value>Aisghabh Ainm Úsáideora</value>
+  </data>
+  <data name="Acct_SendActivationCode" xml:space="preserve">
+    <value>Seol Gníomhachtaithe Cód</value>
+  </data>
+  <data name="Acct_Username" xml:space="preserve">
+    <value>Ainm Úsáideora</value>
+  </data>
+  <data name="Acct_UsernameChangedBody" xml:space="preserve">
+    <value>Is é seo an r-phost a chur ar an eolas ar an ainm a athrú san áireamh do {0} áireamh: {1}.</value>
+  </data>
+  <data name="Acct_UsernameChangedSubject" xml:space="preserve">
+    <value>Ainm Úsáideora athraigh do chuntas ag {0}</value>
+  </data>
+  <data name="Acct_UsernameChangeSuccess" xml:space="preserve">
+    <value>Ainm Úsáideora athrú go rathúil.</value>
+  </data>
+  <data name="Acct_UsernameEmailSent" xml:space="preserve">
+    <value>Tá r-phost a sheoladh chuig do sheoladh ar comhad le d'ainm úsáideora.</value>
+  </data>
+  <data name="Acct_UsernameReminderBody" xml:space="preserve">
+    <value>Is é seo an r-phost i gcuimhne do {0} áireamh: {1}.</value>
+  </data>
+  <data name="Acct_UsernameReminderSubject" xml:space="preserve">
+    <value>Ainm Úsáideora gcuimhne do chuntas ag {0}</value>
+  </data>
+  <data name="Acct_UserNotFound" xml:space="preserve">
+    <value>Ní Úsáideora ann.</value>
+  </data>
+  <data name="Acct_Yes" xml:space="preserve">
+    <value>Is ea</value>
+  </data>
+  <data name="Acct_CleanupStale" xml:space="preserve">
+    <value>Glanta stale</value>
+  </data>
+  <data name="Acct_ClearCache" xml:space="preserve">
+    <value>Clear Cache</value>
+  </data>
+  <data name="Acct_ClearDiskCache" xml:space="preserve">
+    <value>Glan Diosca Taisce</value>
+  </data>
+  <data name="Acct_CreateDatabase" xml:space="preserve">
+    <value>Cruthaigh Bunachar Sonraí</value>
+  </data>
+  <data name="Acct_DotNetVersion" xml:space="preserve">
+    <value>Ponc Glan Leagan</value>
+  </data>
+  <data name="Acct_RemoveDatabase" xml:space="preserve">
+    <value>Bain Bunachar</value>
+  </data>
+  <data name="Acct_ViewCache" xml:space="preserve">
+    <value>Féach ar Taisce</value>
+  </data>
+  <data name="Acct_ViewDiskCache" xml:space="preserve">
+    <value>Féach Diosca Cache</value>
+  </data>
+  <data name="Acct_ViewHeaders" xml:space="preserve">
+    <value>Féach ar Ceanntásca</value>
+  </data>
+  <data name="Hadith_Book" xml:space="preserve">
+    <value>Leabhar</value>
+  </data>
+  <data name="Hadith_Books" xml:space="preserve">
+    <value>Leabhair</value>
+  </data>
+  <data name="Hadith_Chapters" xml:space="preserve">
+    <value>Caibidlí</value>
+  </data>
+  <data name="Hadith_Hadith" xml:space="preserve">
+    <value>Hadith</value>
+  </data>
+  <data name="Hadith_Hadiths" xml:space="preserve">
+    <value>Hadiths</value>
+  </data>
+  <data name="Hadith_IdenticalNumbering" xml:space="preserve">
+    <value>Uimhriú comhionanna</value>
+  </data>
+  <data name="Hadith_Index" xml:space="preserve">
+    <value>Innéacs</value>
+  </data>
+  <data name="Hadith_MappedOf" xml:space="preserve">
+    <value>{0} Mapáilte As {1}</value>
+  </data>
+  <data name="Hadith_NoTranslation" xml:space="preserve">
+    <value>Uimh Aistriúchán</value>
+  </data>
+  <data name="Hadith_SourceHadithIndex" xml:space="preserve">
+    <value>Innéacs Hadith Foinse</value>
+  </data>
+  <data name="Hadith_Translation" xml:space="preserve">
+    <value>Aistriúchán</value>
+  </data>
+  <data name="Hadith_TranslationBook" xml:space="preserve">
+    <value>Aistriúcháin Leabhar</value>
+  </data>
+  <data name="Hadith_TranslationHadithCount" xml:space="preserve">
+    <value>Aistriúchán Líon Hadith</value>
+  </data>
+  <data name="Hadith_TranslationHadithIndex" xml:space="preserve">
+    <value>Innéacs Hadith Aistriúchán</value>
+  </data>
+  <data name="Hadith_TranslationMapping" xml:space="preserve">
+    <value>Mapáil Aistriúcháin</value>
+  </data>
+  <data name="Hadith_TranslationVolume" xml:space="preserve">
+    <value>Imleabhar Aistriúcháin</value>
+  </data>
+  <data name="Hadith_Volume" xml:space="preserve">
+    <value>Imleabhar</value>
+  </data>
+  <data name="IslamSource_Apply" xml:space="preserve">
+    <value>Cuir iarratas isteach</value>
+  </data>
+  <data name="IslamSource_ArabicAlphabet" xml:space="preserve">
+    <value>Araibis Aibítir</value>
+  </data>
+  <data name="IslamSource_ArabicToRoman" xml:space="preserve">
+    <value>Araibis Chun Rómhánach</value>
+  </data>
+  <data name="IslamSource_Book" xml:space="preserve">
+    <value>Leabhar</value>
+  </data>
+  <data name="IslamSource_Collection" xml:space="preserve">
+    <value>Bailiúchán</value>
+  </data>
+  <data name="IslamSource_Credits" xml:space="preserve">
+    <value>Téann Creidmheas do téacs Quran leis an tionscadal Tanzil.</value>
+  </data>
+  <data name="IslamSource_Direction" xml:space="preserve">
+    <value>Treo</value>
+  </data>
+  <data name="IslamSource_Disable" xml:space="preserve">
+    <value>Díchumasaigh</value>
+  </data>
+  <data name="IslamSource_Display" xml:space="preserve">
+    <value>Taispeáin</value>
+  </data>
+  <data name="IslamSource_Division" xml:space="preserve">
+    <value>Rannán</value>
+  </data>
+  <data name="IslamSource_DownloadMapping" xml:space="preserve">
+    <value>Íoslódáil agus Mapáil</value>
+  </data>
+  <data name="IslamSource_EnglishRomanized" xml:space="preserve">
+    <value>Béarla Romanized</value>
+  </data>
+  <data name="IslamSource_ExtendedBuckwalter" xml:space="preserve">
+    <value>BUCKWALTER Breisithe</value>
+  </data>
+  <data name="IslamSource_Font" xml:space="preserve">
+    <value>Cló</value>
+  </data>
+  <data name="IslamSource_Goal" xml:space="preserve">
+    <value>Mar aidhm ag an suíomh gréasáin chun ábhar foinse amh faoi Ioslam lena n-áirítear an Quran, bailiúcháin Hadith, leabhair, fuaime, físeáin, nuacht, stór focal, córais transliteration agus eolas a chur ar fáil cláir.</value>
+  </data>
+  <data name="IslamSource_Hadiths" xml:space="preserve">
+    <value>Bailiúcháin Hadith</value>
+  </data>
+  <data name="IslamSource_HadithSourceText" xml:space="preserve">
+    <value>Hadith Foinse Téacs</value>
+  </data>
+  <data name="IslamSource_Home" xml:space="preserve">
+    <value>Baile</value>
+  </data>
+  <data name="IslamSource_Information" xml:space="preserve">
+    <value>Faisnéis</value>
+  </data>
+  <data name="IslamSource_Intro" xml:space="preserve">
+    <value>Aon cheisteanna nó tuairimí nó earráidí, cuir ríomhphost chugam ag:</value>
+  </data>
+  <data name="IslamSource_Introduction" xml:space="preserve">
+    <value>Réamhrá</value>
+  </data>
+  <data name="IslamSource_IslamicArticles" xml:space="preserve">
+    <value>Airteagail Ioslamach</value>
+  </data>
+  <data name="IslamSource_IslamicCharity" xml:space="preserve">
+    <value>Ioslamach Carthanachta</value>
+  </data>
+  <data name="IslamSource_IslamicFoundations" xml:space="preserve">
+    <value>Fondúireachtaí Ioslamach</value>
+  </data>
+  <data name="IslamSource_IslamicInformation" xml:space="preserve">
+    <value>Eolas Ioslamach</value>
+  </data>
+  <data name="IslamSource_IslamicNews" xml:space="preserve">
+    <value>Ioslamach Nuacht</value>
+  </data>
+  <data name="IslamSource_IslamicOrganizations" xml:space="preserve">
+    <value>Eagraíochtaí Ioslamach</value>
+  </data>
+  <data name="IslamSource_IslamicQuotes" xml:space="preserve">
+    <value>Sleachta Ioslamach</value>
+  </data>
+  <data name="IslamSource_IslamicShops" xml:space="preserve">
+    <value>Siopaí Ioslamach</value>
+  </data>
+  <data name="IslamSource_IslamicWebsites" xml:space="preserve">
+    <value>Suímh Idirlín Ioslamach</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesAhlulBaytAcademy" xml:space="preserve">
+    <value>AhlulBayt Acadamh</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesAlEman" xml:space="preserve">
+    <value>فصل: كتاب المقدمة | نداء الإيمان</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesAlHudaInternationalWelfareFoundation" xml:space="preserve">
+    <value>Al-Huda Fondúireacht Leasa Idirnáisiúnta</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesAllahsQuran" xml:space="preserve">
+    <value>Quran Allah</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesCorpus" xml:space="preserve">
+    <value>Quranic Araibis Corpus</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesCouncilAmericanIslamicRelations" xml:space="preserve">
+    <value>Comhairle ar Chaidreamh Mheiriceá-Ioslamach</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesDarusSalamPublications" xml:space="preserve">
+    <value>Dar-linn-Salam Foilseacháin</value>
+  </data>
+  <data name="IslamSource_IslamicWebsiteseMuslim" xml:space="preserve">
+    <value>eMuslim</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesGuidedWaysTechnologies" xml:space="preserve">
+    <value>Treoraithe Bealaí Teicneolaíochtaí</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesHouseQuran" xml:space="preserve">
+    <value>Teach na Quran</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesiQuran" xml:space="preserve">
+    <value>iQuran</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesIslamicCircleNorthAmerica" xml:space="preserve">
+    <value>Ioslamach Ciorcal Mheiriceá Thuaidh</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesIslamicFinder" xml:space="preserve">
+    <value>Ioslamach Aimsitheoir</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesIslamicInsights" xml:space="preserve">
+    <value>Spléachadh Ioslamach</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesIslamicRelief" xml:space="preserve">
+    <value>Faoiseamh Ioslamach</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesIslamicReliefUSA" xml:space="preserve">
+    <value>Ioslamach Faoiseamh Stáit Aontaithe Mheiriceá</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesIslamicSearchCenter" xml:space="preserve">
+    <value>Ioslamach Cuardaigh Ionad</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesIslamicSocietyNorthAmerica" xml:space="preserve">
+    <value>Cumann Ioslamach de Mheiriceá Thuaidh</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesIslamicThinkersSociety" xml:space="preserve">
+    <value>Smaointeoirí Ioslamach Cumann</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesIslamSpirit" xml:space="preserve">
+    <value>Spiorad Ioslam</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesKalamullah" xml:space="preserve">
+    <value>Kalamullah</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesMaktabahorgTheUltimateIslamicLibrary" xml:space="preserve">
+    <value>Maktabah.org Ultimate Leabharlann Ioslamach</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesOpenBurhan" xml:space="preserve">
+    <value>Burhan Oscailte</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesProfessorAnsarian" xml:space="preserve">
+    <value>An Suíomh Gréasáin Oifigiúil an Ollaimh Ansarian</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesQuran" xml:space="preserve">
+    <value>Quran</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesQuranDownload" xml:space="preserve">
+    <value>Quran Íosluchtaigh</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesQuranExplorer" xml:space="preserve">
+    <value>Quran Explorer</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesQuranicAudio" xml:space="preserve">
+    <value>Quranic Fuaime</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesQuranProject" xml:space="preserve">
+    <value>An Tionscadal Quran Líne</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesQuranTransliteration" xml:space="preserve">
+    <value>Qur'an Transliteration</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesSalah" xml:space="preserve">
+    <value>Salah</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesStudyQuran" xml:space="preserve">
+    <value>Staidéar Quran</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesSunnahCom" xml:space="preserve">
+    <value>Sunnah.com Sayings agus Teachings de Prophet Muhammad (صلى الله عليه و سلم)</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesTanzil" xml:space="preserve">
+    <value>Tanzil - Quran Navigator</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesTheAbsoluteReality" xml:space="preserve">
+    <value>An Réaltacht Absalóideach</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesTheAwaitedOneFoundation" xml:space="preserve">
+    <value>An Ceann Fondúireacht feitheamh</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesTheIslamicBulletin" xml:space="preserve">
+    <value>An Bullaitín Ioslamach</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesTheIslamicFoundation" xml:space="preserve">
+    <value>Fondúireacht Ioslamach</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesTheLahoreAhmadiyyaMovement" xml:space="preserve">
+    <value>An Ahmadiyya Gluaiseacht Lahore</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesTheLahoreAhmadiyyaMovementIslam" xml:space="preserve">
+    <value>An Ahmadiyya Gluaiseacht Lahore i Ioslam</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesUnderstandQuran" xml:space="preserve">
+    <value>Tuig Quran</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesVerseByVerseQuran" xml:space="preserve">
+    <value>Verse De réir Verse Quran</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesZakatFoundationAmerica" xml:space="preserve">
+    <value>Zakat Fondúireacht Mheiriceá</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesZekr" xml:space="preserve">
+    <value>An Tionscadal Zekr</value>
+  </data>
+  <data name="IslamSource_LearningIslam" xml:space="preserve">
+    <value>Foghlaim Ioslam</value>
+  </data>
+  <data name="IslamSource_LetterSample" xml:space="preserve">
+    <value>A</value>
+  </data>
+  <data name="IslamSource_Loading" xml:space="preserve">
+    <value>Ag luchtú</value>
+  </data>
+  <data name="IslamSource_Lotus" xml:space="preserve">
+    <value>Lotus</value>
+  </data>
+  <data name="IslamSource_Mapping" xml:space="preserve">
+    <value>Mapáil</value>
+  </data>
+  <data name="IslamSource_NotableArticles" xml:space="preserve">
+    <value>Airteagail suntasacha</value>
+  </data>
+  <data name="IslamSource_NotableNews" xml:space="preserve">
+    <value>Suntasacha Nuacht</value>
+  </data>
+  <data name="IslamSource_NotableQuotes" xml:space="preserve">
+    <value>Sleachta suntasacha</value>
+  </data>
+  <data name="IslamSource_Off" xml:space="preserve">
+    <value>Lasmuigh den</value>
+  </data>
+  <data name="IslamSource_Operation" xml:space="preserve">
+    <value>Oibríocht</value>
+  </data>
+  <data name="IslamSource_Perform" xml:space="preserve">
+    <value>Feidhmigh</value>
+  </data>
+  <data name="IslamSource_PlainRoman" xml:space="preserve">
+    <value>Rómhánach Plain</value>
+  </data>
+  <data name="IslamSource_PrayerTimes" xml:space="preserve">
+    <value>Amanna Paidir</value>
+  </data>
+  <data name="IslamSource_QiblaDirectionFromTrueNorth" xml:space="preserve">
+    <value>Qibla Treo Ó True North</value>
+  </data>
+  <data name="IslamSource_Quote" xml:space="preserve">
+    <value>Athfhriotail</value>
+  </data>
+  <data name="IslamSource_QuoteMode" xml:space="preserve">
+    <value>Mód Athfhriotail</value>
+  </data>
+  <data name="IslamSource_Quran" xml:space="preserve">
+    <value>An Quran Naofa</value>
+  </data>
+  <data name="IslamSource_QuranResources" xml:space="preserve">
+    <value>Acmhainní Quran</value>
+  </data>
+  <data name="IslamSource_RomanToArabic" xml:space="preserve">
+    <value>Rómhánach Chun Araibis</value>
+  </data>
+  <data name="IslamSource_Scheme" xml:space="preserve">
+    <value>Scéim</value>
+  </data>
+  <data name="IslamSource_Selection" xml:space="preserve">
+    <value>Roghnú</value>
+  </data>
+  <data name="IslamSource_SubmissionNote" xml:space="preserve">
+    <value>Aighneachtaí: Ní mór do bhailiúcháin Hadith bunaidh go bhfuil comhad meiteashonraí XML ina bhfuil gach imleabhar, leabhar, caibidil agus eolas Hadith agus comhad XML ina bhfuil an téacs Hadith amh.</value>
+  </data>
+  <data name="IslamSource_Supplications" xml:space="preserve">
+    <value>Supplications</value>
+  </data>
+  <data name="IslamSource_Text" xml:space="preserve">
+    <value>Téacs</value>
+  </data>
+  <data name="IslamSource_Translation" xml:space="preserve">
+    <value>Aistriúchán</value>
+  </data>
+  <data name="IslamSource_Transliterate" xml:space="preserve">
+    <value>Transliterate</value>
+  </data>
+  <data name="IslamSource_Transliteration" xml:space="preserve">
+    <value>Transliteration</value>
+  </data>
+  <data name="IslamSource_TransliterationScheme" xml:space="preserve">
+    <value>Scéim Transliteration</value>
+  </data>
+  <data name="IslamSource_Viewer" xml:space="preserve">
+    <value>Amharcán</value>
+  </data>
+  <data name="IslamSource_Welcome" xml:space="preserve">
+    <value>Fáilte go dtí IslamSource.info</value>
+  </data>
+  <data name="IslamSource_ModifyDiacritics" xml:space="preserve">
+    <value>Síntí fada Athraigh</value>
+  </data>
+  <data name="IslamSource_Add" xml:space="preserve">
+    <value>Cuir</value>
+  </data>
+  <data name="IslamSource_Remove" xml:space="preserve">
+    <value>Bain</value>
+  </data>
+  <data name="IslamInfo_Chapters" xml:space="preserve">
+    <value>Caibidlí</value>
+  </data>
+  <data name="IslamInfo_ChaptersRevelationOrder" xml:space="preserve">
+    <value>Caibidlí I Ordú Revelation</value>
+  </data>
+  <data name="IslamInfo_Groups" xml:space="preserve">
+    <value>Grúpaí</value>
+  </data>
+  <data name="IslamInfo_ImportantSelections" xml:space="preserve">
+    <value>Rogha tábhachtach</value>
+  </data>
+  <data name="IslamInfo_Pages" xml:space="preserve">
+    <value>Leathanaigh</value>
+  </data>
+  <data name="IslamInfo_Parts" xml:space="preserve">
+    <value>Páirteanna</value>
+  </data>
+  <data name="IslamInfo_Prostrations" xml:space="preserve">
+    <value>Prostrations</value>
+  </data>
+  <data name="IslamInfo_Sections" xml:space="preserve">
+    <value>Ailt</value>
+  </data>
+  <data name="IslamInfo_Stations" xml:space="preserve">
+    <value>Stáisiúin</value>
+  </data>
+  <data name="lang_localam" xml:space="preserve">
+    <value>Amarais</value>
+  </data>
+  <data name="lang_localar" xml:space="preserve">
+    <value>Araibis</value>
+  </data>
+  <data name="lang_localaz" xml:space="preserve">
+    <value>Asarbaiseáinis</value>
+  </data>
+  <data name="lang_localber" xml:space="preserve">
+    <value>Amazigh</value>
+  </data>
+  <data name="lang_localbg" xml:space="preserve">
+    <value>Bulgáiris</value>
+  </data>
+  <data name="lang_localbn" xml:space="preserve">
+    <value>Beangáilis</value>
+  </data>
+  <data name="lang_localbs" xml:space="preserve">
+    <value>Boisnis</value>
+  </data>
+  <data name="lang_localcs" xml:space="preserve">
+    <value>Seice</value>
+  </data>
+  <data name="lang_localde" xml:space="preserve">
+    <value>Gearmáinis</value>
+  </data>
+  <data name="lang_localdv" xml:space="preserve">
+    <value>Divehi</value>
+  </data>
+  <data name="lang_localen" xml:space="preserve">
+    <value>Béarla</value>
+  </data>
+  <data name="lang_locales" xml:space="preserve">
+    <value>Spáinnis</value>
+  </data>
+  <data name="lang_localfa" xml:space="preserve">
+    <value>Peirsis</value>
+  </data>
+  <data name="lang_localfr" xml:space="preserve">
+    <value>Fraincis</value>
+  </data>
+  <data name="lang_localha" xml:space="preserve">
+    <value>HásaisName</value>
+  </data>
+  <data name="lang_localhi" xml:space="preserve">
+    <value>Hiondúis</value>
+  </data>
+  <data name="lang_localid" xml:space="preserve">
+    <value>Indinéisis</value>
+  </data>
+  <data name="lang_localit" xml:space="preserve">
+    <value>Iodáilis</value>
+  </data>
+  <data name="lang_localja" xml:space="preserve">
+    <value>Seapáinis</value>
+  </data>
+  <data name="lang_localko" xml:space="preserve">
+    <value>Cóiréis</value>
+  </data>
+  <data name="lang_localku" xml:space="preserve">
+    <value>Coirdis</value>
+  </data>
+  <data name="lang_localml" xml:space="preserve">
+    <value>Mailéalaimis</value>
+  </data>
+  <data name="lang_localms" xml:space="preserve">
+    <value>Malaeis</value>
+  </data>
+  <data name="lang_localnl" xml:space="preserve">
+    <value>Ollainnis</value>
+  </data>
+  <data name="lang_localno" xml:space="preserve">
+    <value>Ioruais</value>
+  </data>
+  <data name="lang_localpl" xml:space="preserve">
+    <value>Polainnis</value>
+  </data>
+  <data name="lang_localpt" xml:space="preserve">
+    <value>Portaingéilis</value>
+  </data>
+  <data name="lang_localro" xml:space="preserve">
+    <value>Rómáinis</value>
+  </data>
+  <data name="lang_localru" xml:space="preserve">
+    <value>Rúisis</value>
+  </data>
+  <data name="lang_localsd" xml:space="preserve">
+    <value>Sindhi</value>
+  </data>
+  <data name="lang_localso" xml:space="preserve">
+    <value>Somáilis</value>
+  </data>
+  <data name="lang_localsq" xml:space="preserve">
+    <value>Albáinis</value>
+  </data>
+  <data name="lang_localsv" xml:space="preserve">
+    <value>Sualainnis</value>
+  </data>
+  <data name="lang_localsw" xml:space="preserve">
+    <value>Svahaílis</value>
+  </data>
+  <data name="lang_localta" xml:space="preserve">
+    <value>Tamil</value>
+  </data>
+  <data name="lang_localtg" xml:space="preserve">
+    <value>Tajik</value>
+  </data>
+  <data name="lang_localth" xml:space="preserve">
+    <value>Téalainnis</value>
+  </data>
+  <data name="lang_localtr" xml:space="preserve">
+    <value>Tuircis</value>
+  </data>
+  <data name="lang_localtt" xml:space="preserve">
+    <value>Tatairis</value>
+  </data>
+  <data name="lang_localug" xml:space="preserve">
+    <value>Uyghur</value>
+  </data>
+  <data name="lang_localur" xml:space="preserve">
+    <value>Urdais</value>
+  </data>
+  <data name="lang_localuz" xml:space="preserve">
+    <value>Úisbéicis</value>
+  </data>
+  <data name="lang_localzh" xml:space="preserve">
+    <value>Sínis</value>
+  </data>
+  <data name="Acct_Download" xml:space="preserve">
+    <value>Íosluchtaigh {0}</value>
+  </data>
+  <data name="IslamInfo_CelebrationDay" xml:space="preserve">
+    <value>Lá Ceiliúradh</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek1" xml:space="preserve">
+    <value>Dé Domhnaigh</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek2" xml:space="preserve">
+    <value>Dé Luain</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek3" xml:space="preserve">
+    <value>Dé Máirt</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek4" xml:space="preserve">
+    <value>Dé Céadaoin</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek5" xml:space="preserve">
+    <value>Déardaoin</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek6" xml:space="preserve">
+    <value>Dé hAoine</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek7" xml:space="preserve">
+    <value>Dé Sathairn</value>
+  </data>
+  <data name="IslamInfo_DaysOfWeek" xml:space="preserve">
+    <value>Laethanta na Seachtaine</value>
+  </data>
+  <data name="IslamInfo_Disliked" xml:space="preserve">
+    <value>Thaitin</value>
+  </data>
+  <data name="IslamInfo_EnteringMosque" xml:space="preserve">
+    <value>Dul isteach i mosque</value>
+  </data>
+  <data name="IslamInfo_Fasting" xml:space="preserve">
+    <value>Fasting</value>
+  </data>
+  <data name="IslamInfo_FastingAfterFastingMonth" xml:space="preserve">
+    <value>Fasting 6 lá i mí iompar</value>
+  </data>
+  <data name="IslamInfo_FastingBeforeFastingMonth" xml:space="preserve">
+    <value>Fasting roimh fasting mhí</value>
+  </data>
+  <data name="IslamInfo_FastingBeginningPilgrimageMonth" xml:space="preserve">
+    <value>Fasting chéad 9 lá den mhí oilithreachta</value>
+  </data>
+  <data name="IslamInfo_FastingDayOfArafa" xml:space="preserve">
+    <value>Lá troscadh de Arafa</value>
+  </data>
+  <data name="IslamInfo_FastingDayOfAshura" xml:space="preserve">
+    <value>Lá troscadh de Ashura</value>
+  </data>
+  <data name="IslamInfo_FastingMiddleLunarDays" xml:space="preserve">
+    <value>13ú Fasting, 14 agus laethanta gealaí 15</value>
+  </data>
+  <data name="IslamInfo_FastingMondayThursday" xml:space="preserve">
+    <value>Fasting Luan agus Déardaoin</value>
+  </data>
+  <data name="IslamInfo_FastingMonth" xml:space="preserve">
+    <value>Míosa troscadh</value>
+  </data>
+  <data name="IslamInfo_FastingMonthPrayer" xml:space="preserve">
+    <value>Míosa troscadh paidir</value>
+  </data>
+  <data name="IslamInfo_Fear" xml:space="preserve">
+    <value>Eagla</value>
+  </data>
+  <data name="IslamInfo_Forbidden" xml:space="preserve">
+    <value>Toirmiscthe</value>
+  </data>
+  <data name="IslamInfo_Friday" xml:space="preserve">
+    <value>Dé hAoine</value>
+  </data>
+  <data name="IslamInfo_Fulfilling" xml:space="preserve">
+    <value>A chomhlíonadh</value>
+  </data>
+  <data name="IslamInfo_Funeral" xml:space="preserve">
+    <value>Sochraid</value>
+  </data>
+  <data name="IslamInfo_Guidance" xml:space="preserve">
+    <value>Treoir</value>
+  </data>
+  <data name="IslamInfo_Jurisprudence" xml:space="preserve">
+    <value>Dlí-eolaíocht</value>
+  </data>
+  <data name="IslamInfo_LateNight" xml:space="preserve">
+    <value>Déanach san oíche</value>
+  </data>
+  <data name="IslamInfo_LunarEclipse" xml:space="preserve">
+    <value>Gealaí eclipse</value>
+  </data>
+  <data name="IslamInfo_Month1" xml:space="preserve">
+    <value>An ceann forbidden</value>
+  </data>
+  <data name="IslamInfo_Month10" xml:space="preserve">
+    <value>Ag iompar</value>
+  </data>
+  <data name="IslamInfo_Month11" xml:space="preserve">
+    <value>Ceann de sos cogaidh</value>
+  </data>
+  <data name="IslamInfo_Month12" xml:space="preserve">
+    <value>Ceann de oilithreachta</value>
+  </data>
+  <data name="IslamInfo_Month2" xml:space="preserve">
+    <value>Void</value>
+  </data>
+  <data name="IslamInfo_Month3" xml:space="preserve">
+    <value>An Chéad Earrach</value>
+  </data>
+  <data name="IslamInfo_Month4" xml:space="preserve">
+    <value>Dara Earrach</value>
+  </data>
+  <data name="IslamInfo_Month5" xml:space="preserve">
+    <value>An Chéad Mí na parched Talún</value>
+  </data>
+  <data name="IslamInfo_Month6" xml:space="preserve">
+    <value>Dara Mí na parched Talún</value>
+  </data>
+  <data name="IslamInfo_Month7" xml:space="preserve">
+    <value>Meas</value>
+  </data>
+  <data name="IslamInfo_Month8" xml:space="preserve">
+    <value>Scaipthe</value>
+  </data>
+  <data name="IslamInfo_Month9" xml:space="preserve">
+    <value>Scorched</value>
+  </data>
+  <data name="IslamInfo_MorningLight" xml:space="preserve">
+    <value>Solas na maidine</value>
+  </data>
+  <data name="IslamInfo_Necessary" xml:space="preserve">
+    <value>Riachtanach</value>
+  </data>
+  <data name="IslamInfo_Neutral" xml:space="preserve">
+    <value>Neodrach</value>
+  </data>
+  <data name="IslamInfo_ObligationOfSufficiency" xml:space="preserve">
+    <value>Oibleagáid leordhóthain</value>
+  </data>
+  <data name="IslamInfo_ObligationOfTheSelf" xml:space="preserve">
+    <value>Oibleagáid ar an Féin</value>
+  </data>
+  <data name="IslamInfo_Obligatory" xml:space="preserve">
+    <value>Éigeantach</value>
+  </data>
+  <data name="IslamInfo_Odd" xml:space="preserve">
+    <value>Chorra</value>
+  </data>
+  <data name="IslamInfo_OftReturning" xml:space="preserve">
+    <value>Oft-ais</value>
+  </data>
+  <data name="IslamInfo_Permissible" xml:space="preserve">
+    <value>Incheadaithe</value>
+  </data>
+  <data name="IslamInfo_Prayer" xml:space="preserve">
+    <value>Paidir</value>
+  </data>
+  <data name="IslamInfo_PrayTime6" xml:space="preserve">
+    <value>Staonadh ó vótáil</value>
+  </data>
+  <data name="IslamInfo_PrayTime7" xml:space="preserve">
+    <value>Éirí na Gréine</value>
+  </data>
+  <data name="IslamInfo_PrayTime8" xml:space="preserve">
+    <value>Luí na gréine Ríofa</value>
+  </data>
+  <data name="IslamInfo_PrayTime9" xml:space="preserve">
+    <value>Oíche</value>
+  </data>
+  <data name="IslamInfo_PrayTime1" xml:space="preserve">
+    <value>Dawn</value>
+  </data>
+  <data name="IslamInfo_PrayTime2" xml:space="preserve">
+    <value>Meán lae</value>
+  </data>
+  <data name="IslamInfo_PrayTime3" xml:space="preserve">
+    <value>Tráthnóna</value>
+  </data>
+  <data name="IslamInfo_PrayTime4" xml:space="preserve">
+    <value>Luí na Gréine</value>
+  </data>
+  <data name="IslamInfo_PrayTime5" xml:space="preserve">
+    <value>Oíche</value>
+  </data>
+  <data name="IslamInfo_PrescribedTime" xml:space="preserve">
+    <value>Am Forordaithe</value>
+  </data>
+  <data name="IslamInfo_RainForDraught" xml:space="preserve">
+    <value>Báisteach haghaidh dréacht</value>
+  </data>
+  <data name="IslamInfo_Recommended" xml:space="preserve">
+    <value>Molta</value>
+  </data>
+  <data name="IslamInfo_SacredState" xml:space="preserve">
+    <value>Stáit Naofa</value>
+  </data>
+  <data name="IslamInfo_SolarEclipse" xml:space="preserve">
+    <value>Eclipse Gréine</value>
+  </data>
+  <data name="IslamInfo_Sunrise" xml:space="preserve">
+    <value>Éirí na Gréine</value>
+  </data>
+  <data name="IslamInfo_Supererogatory" xml:space="preserve">
+    <value>Supererogatory</value>
+  </data>
+  <data name="IslamInfo_Tradition" xml:space="preserve">
+    <value>Traidisiún</value>
+  </data>
+  <data name="IslamInfo_TraditionObligatory" xml:space="preserve">
+    <value>Traidisiún éigeantach</value>
+  </data>
+  <data name="IslamInfo_TraditionVoluntary" xml:space="preserve">
+    <value>Traidisiún Deonach</value>
+  </data>
+  <data name="IslamInfo_Travel" xml:space="preserve">
+    <value>Taisteal</value>
+  </data>
+  <data name="IslamInfo_Victory" xml:space="preserve">
+    <value>Bua</value>
+  </data>
+  <data name="IslamInfo_Aaron" xml:space="preserve">
+    <value>Aaron</value>
+  </data>
+  <data name="IslamInfo_Ablution" xml:space="preserve">
+    <value>Ionnlaidh</value>
+  </data>
+  <data name="IslamInfo_Abraham" xml:space="preserve">
+    <value>Abraham</value>
+  </data>
+  <data name="IslamInfo_Adam" xml:space="preserve">
+    <value>Adam</value>
+  </data>
+  <data name="IslamInfo_AfterCallToPrayerFirstPart" xml:space="preserve">
+    <value>Tar éis glaoch chun urnaí - an chéad chuid</value>
+  </data>
+  <data name="IslamInfo_AfterCallToPrayerFirstPartTrans" xml:space="preserve">
+    <value>O Allah, tigherna ghlao seo a chomhlánú agus paidir na linne</value>
+  </data>
+  <data name="IslamInfo_AfterCallToPrayerFirstPartWordByWord" xml:space="preserve">
+    <value>O Allah | Thiarna | seo | ghlaoch | chomhlánú | agus paidir | linne</value>
+  </data>
+  <data name="IslamInfo_AfterCallToPrayerSecondPart" xml:space="preserve">
+    <value>Tar éis glaoch chun urnaí - an dara cuid</value>
+  </data>
+  <data name="IslamInfo_AfterCallToPrayerSecondPartTrans" xml:space="preserve">
+    <value>Tabhair le Muhammad a chearta de bhua idirghuí agus</value>
+  </data>
+  <data name="IslamInfo_AfterCallToPrayerSecondPartWordByWord" xml:space="preserve">
+    <value>Tabhair | le Muhammad | a chearta de idirghuí | agus de bhua</value>
+  </data>
+  <data name="IslamInfo_AfterCallToPrayerSupplication" xml:space="preserve">
+    <value>Tar éis Call a Impí Urnaí</value>
+  </data>
+  <data name="IslamInfo_AfterCallToPrayerThirdPart" xml:space="preserve">
+    <value>Tar éis glaoch chun urnaí - an tríú cuid</value>
+  </data>
+  <data name="IslamInfo_AfterCallToPrayerThirdPartTrans" xml:space="preserve">
+    <value>Agus é a ardú go dtí céim ardaithe a bhfuil tú geallta dó</value>
+  </data>
+  <data name="IslamInfo_AfterCallToPrayerThirdPartWordByWord" xml:space="preserve">
+    <value>Agus ardú air | leis an gcéim | ardaithe | a | tú ag gealladh dó</value>
+  </data>
+  <data name="IslamInfo_Allah" xml:space="preserve">
+    <value>An Dia amháin</value>
+  </data>
+  <data name="IslamInfo_AllahIsGreatest" xml:space="preserve">
+    <value>Allah Is mó</value>
+  </data>
+  <data name="IslamInfo_AllPraiseAndThanksBeToAllah" xml:space="preserve">
+    <value>Moladh agus buíochas a bheith Allah</value>
+  </data>
+  <data name="IslamInfo_AlmsGiving" xml:space="preserve">
+    <value>Deirce a thabhairt</value>
+  </data>
+  <data name="IslamInfo_AndUponYouBePeace" xml:space="preserve">
+    <value>Agus ar tú a bheith síochána</value>
+  </data>
+  <data name="IslamInfo_ArabicTypesetting" xml:space="preserve">
+    <value>Clóchuradóireacht arabic</value>
+  </data>
+  <data name="IslamInfo_Arial" xml:space="preserve">
+    <value>Arial</value>
+  </data>
+  <data name="IslamInfo_BeforeTravel" xml:space="preserve">
+    <value>Roimh taisteal</value>
+  </data>
+  <data name="IslamInfo_BeforeTravelTrans" xml:space="preserve">
+    <value>Fág mé duit leis seo leis an reiligiún, Amanah (freagracht) agus do ghníomhas roimhe sin do Allah.</value>
+  </data>
+  <data name="IslamInfo_BeforeTravelWordByWord" xml:space="preserve">
+    <value>Fág mé duit leis seo | do Allah | leis an reiligiún | agus cad | freagracht | agus roimhe sin | ghníomhas</value>
+  </data>
+  <data name="IslamInfo_BowOfPrayer" xml:space="preserve">
+    <value>Bow na hurnaí</value>
+  </data>
+  <data name="IslamInfo_CallToBeginPrayerSixthVerse" xml:space="preserve">
+    <value>Call chun tús paidir - séú véarsa</value>
+  </data>
+  <data name="IslamInfo_CallToBeginPrayerSixthVerseTrans" xml:space="preserve">
+    <value>Tá tús curtha deimhin leis an paidir</value>
+  </data>
+  <data name="IslamInfo_CallToBeginPrayerSixthVerseWordByWord" xml:space="preserve">
+    <value>Go deimhin | Tá tús curtha | an phaidir</value>
+  </data>
+  <data name="IslamInfo_CallToBeginThePrayer" xml:space="preserve">
+    <value>Call chun tús a chur leis an paidir</value>
+  </data>
+  <data name="IslamInfo_CallToPrayer" xml:space="preserve">
+    <value>Call chun urnaí</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerEighthVerse" xml:space="preserve">
+    <value>Glaoigh chun urnaí - ochtú véarsa</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerEighthVerseTrans" xml:space="preserve">
+    <value>Níl aon Dia amháin Allah</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerEighthVerseWordByWord" xml:space="preserve">
+    <value>Níl aon | Dia | seachas | Allah</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerFifthVerse" xml:space="preserve">
+    <value>Glaoigh chun urnaí - an cúigiú véarsa</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerFifthVerseTrans" xml:space="preserve">
+    <value>Come to rath</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerFifthVerseWordByWord" xml:space="preserve">
+    <value>Tar | a | rath</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerFirstVerse" xml:space="preserve">
+    <value>Glaoigh chun urnaí - an chéad véarsa</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerFirstVerseTrans" xml:space="preserve">
+    <value>Allah Is mó</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerFirstVerseWordByWord" xml:space="preserve">
+    <value>Tá Allah | mó</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerFourthVerse" xml:space="preserve">
+    <value>Glaoigh chun urnaí - an ceathrú véarsa</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerFourthVerseTrans" xml:space="preserve">
+    <value>Come to paidir</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerFourthVerseWordByWord" xml:space="preserve">
+    <value>Tar | a | paidir</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerLeader" xml:space="preserve">
+    <value>Glaoigh le ceannaire paidir</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerSecondVerse" xml:space="preserve">
+    <value>Glaoigh chun urnaí - an dara véarsa</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerSecondVerseTrans" xml:space="preserve">
+    <value>Fianaise agam nach bhfuil aon Dia amháin Allah</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerSecondVerseWordByWord" xml:space="preserve">
+    <value>Fianaise agam | sin | níl aon | Dia | seachas | Allah</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerSeventhVerse" xml:space="preserve">
+    <value>Glaoigh chun urnaí - an seachtú véarsa</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerSeventhVerseTrans" xml:space="preserve">
+    <value>Allah Is mó</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerSeventhVerseWordByWord" xml:space="preserve">
+    <value>Tá Allah | mó</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerSixthVerse" xml:space="preserve">
+    <value>Glaoigh chun urnaí - an séú véarsa</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerSixthVerseTrans" xml:space="preserve">
+    <value>Is Urnaí níos fearr ná codladh</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerSixthVerseWordByWord" xml:space="preserve">
+    <value>Is Urnaí | níos fearr | ná | codlata</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerThirdVerse" xml:space="preserve">
+    <value>Glaoigh chun urnaí - an tríú véarsa</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerThirdVerseTrans" xml:space="preserve">
+    <value>Fianaise agam go bhfuil an Muhammad an teachtaire de Allah</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerThirdVerseWordByWord" xml:space="preserve">
+    <value>Fianaise agam | sin | Muhammad | an teachtaire | de Allah</value>
+  </data>
+  <data name="IslamInfo_Chapter" xml:space="preserve">
+    <value>Caibidil</value>
+  </data>
+  <data name="IslamInfo_Creed" xml:space="preserve">
+    <value>Creed</value>
+  </data>
+  <data name="IslamInfo_Custom" xml:space="preserve">
+    <value>Saincheaptha</value>
+  </data>
+  <data name="IslamInfo_David" xml:space="preserve">
+    <value>David</value>
+  </data>
+  <data name="IslamInfo_Default" xml:space="preserve">
+    <value>Réamhshocrú</value>
+  </data>
+  <data name="IslamInfo_DirectionOfprayer" xml:space="preserve">
+    <value>Treo na hurnaí</value>
+  </data>
+  <data name="IslamInfo_Dissertation" xml:space="preserve">
+    <value>Tráchtas</value>
+  </data>
+  <data name="IslamInfo_Eber" xml:space="preserve">
+    <value>Éibhir</value>
+  </data>
+  <data name="IslamInfo_Elijah" xml:space="preserve">
+    <value>Elijah</value>
+  </data>
+  <data name="IslamInfo_Elisha" xml:space="preserve">
+    <value>Elisha</value>
+  </data>
+  <data name="IslamInfo_Enoch" xml:space="preserve">
+    <value>Enoch</value>
+  </data>
+  <data name="IslamInfo_EnteringMasjidilHaram" xml:space="preserve">
+    <value>Dul isteach Masjidil Haram</value>
+  </data>
+  <data name="IslamInfo_EnteringMasjidilHaramTrans" xml:space="preserve">
+    <value>O Allah!</value>
+  </data>
+  <data name="IslamInfo_EnteringMasjidilHaramWordByWord" xml:space="preserve">
+    <value>O Allah | Thusa ealaíne | síochána | agus ó Thee | síocháin | deara linn chun cónaí | Ár dTiarna | le síocháin | agus a chur faoi deara linn chun dul isteach | Paradise | Teach | Síochána | Úinéir Onóra | Ár dTiarna | agus Shoilse | Thusa</value>
+  </data>
+  <data name="IslamInfo_Ezekiel" xml:space="preserve">
+    <value>Ezekiel</value>
+  </data>
+  <data name="IslamInfo_FifthCreed" xml:space="preserve">
+    <value>Cúigiú creed - An focal de aithreachais (Astaghfar)</value>
+  </data>
+  <data name="IslamInfo_FifthCreedTrans" xml:space="preserve">
+    <value>Mé a lorg maithiúnas ó Allah, mo Thiarna, ó gach peaca tiomanta mé go feasach nó unknowingly, rúnda nó go hoscailte, agus cas mé i dtreo Eisean as an pheaca go bhfuil a fhios agam, agus ón pheaca nach bhfuil a fhios agam.</value>
+  </data>
+  <data name="IslamInfo_FifthCreedWordByWord" xml:space="preserve">
+    <value>Lorg mé maithiúnas | ó Allah | mo Thiarna | ó | gach | pheaca | tiomanta mé | feasach | nó | unknowningly | rúnda | nó | hoscailte | agus cas mé i dtreo | Eisean | ó | an pheaca | sin | Tá a fhios agam | agus ó</value>
+  </data>
+  <data name="IslamInfo_FirstCreed" xml:space="preserve">
+    <value>An Chéad creed - An Briathar Íonachta (Tayyabah)</value>
+  </data>
+  <data name="IslamInfo_FirstCreedTrans" xml:space="preserve">
+    <value>Níl aon Dia ach amháin go bhfuil Allah Muhammad Messenger de Allah.</value>
+  </data>
+  <data name="IslamInfo_FirstCreedWordByWord" xml:space="preserve">
+    <value>Níl aon | Dia | seachas | Allah | Muhammad | Messenger | Allah</value>
+  </data>
+  <data name="IslamInfo_FortyOurLordSupplications" xml:space="preserve">
+    <value>40 Ár dTiarna supplications</value>
+  </data>
+  <data name="IslamInfo_FourthCreed" xml:space="preserve">
+    <value>Ceathrú creed - an focal na hAontachta (Tauhid)</value>
+  </data>
+  <data name="IslamInfo_FourthCreedTrans" xml:space="preserve">
+    <value>(Tá) aon cheann fiú adhartha seachas Allah.</value>
+  </data>
+  <data name="IslamInfo_FourthCreedWordByWord" xml:space="preserve">
+    <value>Níl aon | Dia | seachas | Allah | aonar | níl | pháirtí | Tá sé | do Eisean | An Ríocht | agus dó | Moladh | Tugann sé ar an saol |, agus tugann sé bás | agus tá sé | riamh-maireachtála | nach bhfuil | ann</value>
+  </data>
+  <data name="IslamInfo_GloryBeToAllah" xml:space="preserve">
+    <value>Glóir don Allah</value>
+  </data>
+  <data name="IslamInfo_IhramPrayerSupplication" xml:space="preserve">
+    <value>Impí Urnaí ihram</value>
+  </data>
+  <data name="IslamInfo_IhramPrayerSupplicationTrans" xml:space="preserve">
+    <value>In ainm an Allah, an chuid is mó gracious, an chuid is mó trócaire!</value>
+  </data>
+  <data name="IslamInfo_IhramPrayerSupplicationWordByWord" xml:space="preserve">
+    <value>In ainm | Allah | an chuid is mó gracious | an chuid is mó trócaire | Allah | Tá an mó | Allah | Tá an mó | Allah | Tá an mó | cé chomh foirfe | Tá sé | One Cé a chur | seo (iompar) |</value>
+  </data>
+  <data name="IslamInfo_Imam" xml:space="preserve">
+    <value>Ceannaire Spioradálta</value>
+  </data>
+  <data name="IslamInfo_IntentionForIhramPrayer" xml:space="preserve">
+    <value>Intinn do ihram paidir</value>
+  </data>
+  <data name="IslamInfo_IntentionForIhramPrayerTrans" xml:space="preserve">
+    <value>Ar intinn agam a dhéanamh Niat (dhá rakaat Sunat ihram Urnaí) le haghaidh Allah.</value>
+  </data>
+  <data name="IslamInfo_IntentionForIhramPrayerWordByWord" xml:space="preserve">
+    <value>Glacaim | molta | ihram Urnaí | dhá rakat | do Allah | an chuid is mó ard</value>
+  </data>
+  <data name="IslamInfo_IntentionForIhramShower" xml:space="preserve">
+    <value>Intinn do ihram cith</value>
+  </data>
+  <data name="IslamInfo_IntentionForIhramShowerTrans" xml:space="preserve">
+    <value>Ar intinn agam folctha (le haghaidh molta ihram cith) le haghaidh Allah.</value>
+  </data>
+  <data name="IslamInfo_IntentionForIhramShowerWordByWord" xml:space="preserve">
+    <value>Ar intinn agam | a folctha | molta | ihram cith | do Allah | an chuid is mó ard</value>
+  </data>
+  <data name="IslamInfo_IntentionForJourneyPrayer" xml:space="preserve">
+    <value>Intinn do phaidir don aistear</value>
+  </data>
+  <data name="IslamInfo_IntentionForJourneyPrayerTrans" xml:space="preserve">
+    <value>Ar intinn agam a dhéanamh Niat (dhá rakaat Sunat Safar Urnaí) le haghaidh Allah.</value>
+  </data>
+  <data name="IslamInfo_IntentionForJourneyPrayerWordByWord" xml:space="preserve">
+    <value>Glacaim | molta | Safar paidir | dhá rakat | do Allah | an chuid is mó ard</value>
+  </data>
+  <data name="IslamInfo_IntentionForJourneyShower" xml:space="preserve">
+    <value>Intinn do cith turas</value>
+  </data>
+  <data name="IslamInfo_IntentionForJourneyShowerTrans" xml:space="preserve">
+    <value>Ar intinn agam folctha (le haghaidh molta Musafir cith) le haghaidh Allah.</value>
+  </data>
+  <data name="IslamInfo_IntentionForJourneyShowerWordByWord" xml:space="preserve">
+    <value>Ar intinn agam | a folctha | Musafir cith | molta | do Allah | an chuid is mó ard</value>
+  </data>
+  <data name="IslamInfo_IntentionToPerformUmrah" xml:space="preserve">
+    <value>Intinn a dhéanamh Umrah</value>
+  </data>
+  <data name="IslamInfo_IntentionToPerformUmrahTrans" xml:space="preserve">
+    <value>O Allah, freagairt mé ar Do Ghlaoch a dhéanamh Umrah, O Allah, a dhéanamh liom Umrah agus ihram do Umrah díreach Duitse.</value>
+  </data>
+  <data name="IslamInfo_IntentionToPerformUmrahWordByWord" xml:space="preserve">
+    <value>Ar intinn agam | Umrah | agus ihram | díreach | do Allah | an chuid is mó ard</value>
+  </data>
+  <data name="IslamInfo_InTheNameOfAllah" xml:space="preserve">
+    <value>I Ainm Allah</value>
+  </data>
+  <data name="IslamInfo_Isaac" xml:space="preserve">
+    <value>Isaac</value>
+  </data>
+  <data name="IslamInfo_Ishmael" xml:space="preserve">
+    <value>Ishmael</value>
+  </data>
+  <data name="IslamInfo_Islam" xml:space="preserve">
+    <value>Aighneacht</value>
+  </data>
+  <data name="IslamInfo_IslamicWords" xml:space="preserve">
+    <value>Focail Ioslamach</value>
+  </data>
+  <data name="IslamInfo_Jacob" xml:space="preserve">
+    <value>Jacob</value>
+  </data>
+  <data name="IslamInfo_Jesus" xml:space="preserve">
+    <value>Jesus</value>
+  </data>
+  <data name="IslamInfo_Jethro" xml:space="preserve">
+    <value>Jethro</value>
+  </data>
+  <data name="IslamInfo_Job" xml:space="preserve">
+    <value>Job</value>
+  </data>
+  <data name="IslamInfo_JohnTheBaptist" xml:space="preserve">
+    <value>Eoin Baiste</value>
+  </data>
+  <data name="IslamInfo_Jonas" xml:space="preserve">
+    <value>Jonas</value>
+  </data>
+  <data name="IslamInfo_Joseph" xml:space="preserve">
+    <value>Joseph</value>
+  </data>
+  <data name="IslamInfo_Judge" xml:space="preserve">
+    <value>Breitheamh</value>
+  </data>
+  <data name="IslamInfo_KFGQPCNaskh" xml:space="preserve">
+    <value>KFGQPC Naskh</value>
+  </data>
+  <data name="IslamInfo_Law" xml:space="preserve">
+    <value>Dlí</value>
+  </data>
+  <data name="IslamInfo_Lot" xml:space="preserve">
+    <value>Lot</value>
+  </data>
+  <data name="IslamInfo_MajorAblution" xml:space="preserve">
+    <value>Ionnlaidh Mór</value>
+  </data>
+  <data name="IslamInfo_MalikMuwatta" xml:space="preserve">
+    <value>Muwatta Malik ar</value>
+  </data>
+  <data name="IslamInfo_MeQuran" xml:space="preserve">
+    <value>Mise-Quran</value>
+  </data>
+  <data name="IslamInfo_Messenger" xml:space="preserve">
+    <value>Messenger</value>
+  </data>
+  <data name="IslamInfo_Months" xml:space="preserve">
+    <value>Míonna</value>
+  </data>
+  <data name="IslamInfo_Moses" xml:space="preserve">
+    <value>Moses</value>
+  </data>
+  <data name="IslamInfo_MSUighur" xml:space="preserve">
+    <value>MS Uighur</value>
+  </data>
+  <data name="IslamInfo_Muhammad" xml:space="preserve">
+    <value>Muhammad</value>
+  </data>
+  <data name="IslamInfo_Muslim" xml:space="preserve">
+    <value>Amháin a chuireann</value>
+  </data>
+  <data name="IslamInfo_NamesOfAllah" xml:space="preserve">
+    <value>Tá ainmneacha na Allah</value>
+  </data>
+  <data name="IslamInfo_Noah" xml:space="preserve">
+    <value>Noah</value>
+  </data>
+  <data name="IslamInfo_OnenessOfGod" xml:space="preserve">
+    <value>Oneness Dé</value>
+  </data>
+  <data name="IslamInfo_Part" xml:space="preserve">
+    <value>Cuid</value>
+  </data>
+  <data name="IslamInfo_PDMSSaleem" xml:space="preserve">
+    <value>PDMS Saleem</value>
+  </data>
+  <data name="IslamInfo_PeaceBeUponYou" xml:space="preserve">
+    <value>Síocháin a bheith agat</value>
+  </data>
+  <data name="IslamInfo_PhraseForAllahIsGreatest" xml:space="preserve">
+    <value>Tá Frása do Allah is mó</value>
+  </data>
+  <data name="IslamInfo_PhraseForAllPraiseAndThanksBeToAllah" xml:space="preserve">
+    <value>Frása do gach moladh agus buíochas a bheith Allah</value>
+  </data>
+  <data name="IslamInfo_PhraseForGloryBeToAllah" xml:space="preserve">
+    <value>Frása do ghlóir don Allah</value>
+  </data>
+  <data name="IslamInfo_PhraseForInTheNameOfAllah" xml:space="preserve">
+    <value>Frása sa Ainm na Allah</value>
+  </data>
+  <data name="IslamInfo_Pilgrimage" xml:space="preserve">
+    <value>Oilithreacht</value>
+  </data>
+  <data name="IslamInfo_Prayers" xml:space="preserve">
+    <value>Paidreacha</value>
+  </data>
+  <data name="IslamInfo_PrayerTimes" xml:space="preserve">
+    <value>Amanna Urnaí</value>
+  </data>
+  <data name="IslamInfo_ProperPronunciationDuringRecitation" xml:space="preserve">
+    <value>Fuaimniú cuí le linn aithriseoireacht</value>
+  </data>
+  <data name="IslamInfo_Prophet" xml:space="preserve">
+    <value>Prophet</value>
+  </data>
+  <data name="IslamInfo_Prophets" xml:space="preserve">
+    <value>Fáithe</value>
+  </data>
+  <data name="IslamInfo_Prostrating" xml:space="preserve">
+    <value>Prostrating</value>
+  </data>
+  <data name="IslamInfo_Prostration" xml:space="preserve">
+    <value>Faonluí</value>
+  </data>
+  <data name="IslamInfo_PurificationOfTheSoul" xml:space="preserve">
+    <value>Íonú na Soul</value>
+  </data>
+  <data name="IslamInfo_PurificationOfTheSoulTrans" xml:space="preserve">
+    <value>O Allah, deontas m'anam a cráifeacht agus purify é, Is tú an Fearr a purify é, tá tú a Caomhnóir agus Máistir.</value>
+  </data>
+  <data name="IslamInfo_PurificationOfTheSoulWordByWord" xml:space="preserve">
+    <value>O Allah | Tabhair leat | Mo Soul | A cráifeacht | Agus Purify tú é | Tá tú (Aonair) | Fearr | Cé | Purifies sé | Tú (Aonair) | A Caomhnóir | agus a Máistir</value>
+  </data>
+  <data name="IslamInfo_PurificationSupplication" xml:space="preserve">
+    <value>Íonú Impí</value>
+  </data>
+  <data name="IslamInfo_Remembrance" xml:space="preserve">
+    <value>Cuimhneacháin</value>
+  </data>
+  <data name="IslamInfo_RevelationOfAllah" xml:space="preserve">
+    <value>Nochtadh de Allah</value>
+  </data>
+  <data name="IslamInfo_RevelationOfAllahInBookForm" xml:space="preserve">
+    <value>Revelation Allah i bhfoirm leabhair</value>
+  </data>
+  <data name="IslamInfo_RiyadhSaaliheen" xml:space="preserve">
+    <value>Riyadh al-Saaliheen</value>
+  </data>
+  <data name="IslamInfo_SahihBukhari" xml:space="preserve">
+    <value>Sahih al-Bukhari</value>
+  </data>
+  <data name="IslamInfo_SahihMuslim" xml:space="preserve">
+    <value>Sahih Moslamach</value>
+  </data>
+  <data name="IslamInfo_SakkalMajalla" xml:space="preserve">
+    <value>Sakkal Majalla</value>
+  </data>
+  <data name="IslamInfo_SalawatSupplicationAfterTalbiah" xml:space="preserve">
+    <value>Salawat Impí tar éis Talbiah</value>
+  </data>
+  <data name="IslamInfo_SalawatSupplicationAfterTalbiahTrans" xml:space="preserve">
+    <value>O Allah bless ár Muhammad mháistir agus a chlann díreach mar a bheannaigh tú ár máistir Abraham agus sanctify ár Muhammad mháistir agus an teaghlach de Muhammad díreach mar a sanctify tú ár máistir Abraham agus an teaghlach de Abraham i ngach saol le haghaidh Tá tú an moladh an Mighty.</value>
+  </data>
+  <data name="IslamInfo_SalawatSupplicationAfterTalbiahWordByWord" xml:space="preserve">
+    <value>O Allah | salutations a sheoladh | ar | máistir | Muhammad | agus ar | an teaghlach de | máistir | Muhammad | díreach mar | sheolann tú salutations | ar | Abraham | agus ar | an teaghlach de | Abraham | agus beannacht a sheoladh | ar | máistir</value>
+  </data>
+  <data name="IslamInfo_Saleh" xml:space="preserve">
+    <value>Saleh</value>
+  </data>
+  <data name="IslamInfo_Scheherazade" xml:space="preserve">
+    <value>Scheherazade</value>
+  </data>
+  <data name="IslamInfo_SchoolOfJurisprudence" xml:space="preserve">
+    <value>Scoil na dlí-eolaíocht</value>
+  </data>
+  <data name="IslamInfo_SecondCreed" xml:space="preserve">
+    <value>Dara creed - An focal Fianaise (Shahaadat)</value>
+  </data>
+  <data name="IslamInfo_SecondCreedTrans" xml:space="preserve">
+    <value>Iompróidh an finné mé go bhfuil aon duine fiú adhartha seachas Allah, an ceann amháin, gan aon pháirtí, agus iompróidh mé finné go bhfuil an Muhammad chuid seirbhíseach agus Messenger.</value>
+  </data>
+  <data name="IslamInfo_SecondCreedWordByWord" xml:space="preserve">
+    <value>Iompróidh an finné mé | sin | níl aon | Dia | seachas | Allah | aonar | níl | pháirtí | Tá sé | agus mé iompróidh an finné | sin | Muhammad | chuid seirbhíseach | agus Messenger</value>
+  </data>
+  <data name="IslamInfo_SixthCreed" xml:space="preserve">
+    <value>Séú creed - Na focail a dhiúltú disbelief (vi:-A-Kuffer)</value>
+  </data>
+  <data name="IslamInfo_SixthCreedTrans" xml:space="preserve">
+    <value>O Allah!</value>
+  </data>
+  <data name="IslamInfo_SixthCreedWordByWord" xml:space="preserve">
+    <value>O Allah | Cinnte | lorg mé a chosaint | le tú | ó | sin | chomhlachú mé comhpháirtíochta le tú | rud ar bith | agus mé | fhios | air | agus lorg mé maithiúnas ó tú | don | Níl | Tá a fhios agam | Sé | aithreach mé</value>
+  </data>
+  <data name="IslamInfo_Solomon" xml:space="preserve">
+    <value>Sholamón</value>
+  </data>
+  <data name="IslamInfo_Station" xml:space="preserve">
+    <value>Stáisiún</value>
+  </data>
+  <data name="IslamInfo_SunanAbuDawood" xml:space="preserve">
+    <value>Sunan Abu Dawood</value>
+  </data>
+  <data name="IslamInfo_SunanIbnMaja" xml:space="preserve">
+    <value>Sunan Ibn Maja</value>
+  </data>
+  <data name="IslamInfo_SunanNasai" xml:space="preserve">
+    <value>Sunan ar-Nasa'i Al-Sughra</value>
+  </data>
+  <data name="IslamInfo_SunanTirmidhi" xml:space="preserve">
+    <value>Sunan al-Tirmidhi</value>
+  </data>
+  <data name="IslamInfo_Supplication" xml:space="preserve">
+    <value>Impí</value>
+  </data>
+  <data name="IslamInfo_SupplicationAfterSalawatSupplication" xml:space="preserve">
+    <value>Impí tar éis Salawat Impí</value>
+  </data>
+  <data name="IslamInfo_SupplicationAfterSalawatSupplicationTrans" xml:space="preserve">
+    <value>O Allah!</value>
+  </data>
+  <data name="IslamInfo_SupplicationAfterSalawatSupplicationWordByWord" xml:space="preserve">
+    <value>O Allah | deimhin | lorg mé ó Thee | blessings Thusa | agus Paradise | lorg mé dhídean le Thee | ó | fearg | agus Ifreann.</value>
+  </data>
+  <data name="IslamInfo_SupplicationForArrivingAtMakkah" xml:space="preserve">
+    <value>Impí chun teacht ar Makkah</value>
+  </data>
+  <data name="IslamInfo_SupplicationForArrivingAtMakkahTrans" xml:space="preserve">
+    <value>Dhia!</value>
+  </data>
+  <data name="IslamInfo_SupplicationForArrivingAtMakkahWordByWord" xml:space="preserve">
+    <value>O Allah | fíor | seo | Tá tearmann | Thy Naofa Áit | agus tá sé seo Chathair Naofa | Thy Cathrach | agus tá therin Síochána | Thy Síochána | Ansin forbid dom | ó | ifreann tine | agus a shábháil dom | ó | Thy phionós | ar</value>
+  </data>
+  <data name="IslamInfo_Talbiah" xml:space="preserve">
+    <value>Talbiah</value>
+  </data>
+  <data name="IslamInfo_TalbiahTrans" xml:space="preserve">
+    <value>Mé freagra duit, Mo Dhia!</value>
+  </data>
+  <data name="IslamInfo_TalbiahWordByWord" xml:space="preserve">
+    <value>Tá mé fhreagair tú | O Allah | mé fhreagair tú | mé fhreagair tú | níl aon | pháirtí | ar do shon | tá mé fhreagair tú | Fíor | Gach An Moladh | Gach agus An Bounty | Duitse |</value>
+  </data>
+  <data name="IslamInfo_TheAbaser" xml:space="preserve">
+    <value>An Abaser</value>
+  </data>
+  <data name="IslamInfo_TheAcknowledgingOne" xml:space="preserve">
+    <value>One aithint</value>
+  </data>
+  <data name="IslamInfo_TheAllAuthoritativeOne" xml:space="preserve">
+    <value>Coiste Uile údarásach a hAon</value>
+  </data>
+  <data name="IslamInfo_TheAllAwareOne" xml:space="preserve">
+    <value>An Ceann Uile-Aware</value>
+  </data>
+  <data name="IslamInfo_TheAllCompelling" xml:space="preserve">
+    <value>Coiste Uile láidre</value>
+  </data>
+  <data name="IslamInfo_TheAllEnumeratingOne" xml:space="preserve">
+    <value>Uile-enumerating a hAon</value>
+  </data>
+  <data name="IslamInfo_TheAllHearer" xml:space="preserve">
+    <value>Coiste Uile-Hearer</value>
+  </data>
+  <data name="IslamInfo_TheAllKnowingOne" xml:space="preserve">
+    <value>An Ceann Uile-fhios agam</value>
+  </data>
+  <data name="IslamInfo_TheAllNobleOne" xml:space="preserve">
+    <value>Uile-Noble a hAon</value>
+  </data>
+  <data name="IslamInfo_TheAllObservingWitness" xml:space="preserve">
+    <value>Coiste Uile Breathnadóireachta Fhinné</value>
+  </data>
+  <data name="IslamInfo_TheAllPervadingOne" xml:space="preserve">
+    <value>Uile-pervading a hAon</value>
+  </data>
+  <data name="IslamInfo_TheAllPrevailingOne" xml:space="preserve">
+    <value>One Uile-Droch-</value>
+  </data>
+  <data name="IslamInfo_TheAllSeeing" xml:space="preserve">
+    <value>Coiste Uile-Seeing</value>
+  </data>
+  <data name="IslamInfo_TheAssemblerOfScatteredCreations" xml:space="preserve">
+    <value>An Díolamóir na Creations Scaipthe</value>
+  </data>
+  <data name="IslamInfo_TheBeneficent" xml:space="preserve">
+    <value>An beneficent</value>
+  </data>
+  <data name="IslamInfo_TheBenignOne" xml:space="preserve">
+    <value>An Ceann éadroma</value>
+  </data>
+  <data name="IslamInfo_TheBestowerOfBenefits" xml:space="preserve">
+    <value>An bronntóir na Sochair</value>
+  </data>
+  <data name="IslamInfo_TheBestowerOfSufficiency" xml:space="preserve">
+    <value>An bronntóir na leordhóthain</value>
+  </data>
+  <data name="IslamInfo_TheBountifulOne" xml:space="preserve">
+    <value>An bountiful a hAon</value>
+  </data>
+  <data name="IslamInfo_TheClementOne" xml:space="preserve">
+    <value>An Clement a hAon</value>
+  </data>
+  <data name="IslamInfo_TheCreator" xml:space="preserve">
+    <value>An Cruthaitheoir</value>
+  </data>
+  <data name="IslamInfo_TheDistressor" xml:space="preserve">
+    <value>An Distressor</value>
+  </data>
+  <data name="IslamInfo_TheDominantOne" xml:space="preserve">
+    <value>An Ceannasach a hAon</value>
+  </data>
+  <data name="IslamInfo_TheElevatingOne" xml:space="preserve">
+    <value>An elevating a hAon</value>
+  </data>
+  <data name="IslamInfo_TheEmbodimentOfJustice" xml:space="preserve">
+    <value>An embodiment Dlí agus Cirt</value>
+  </data>
+  <data name="IslamInfo_TheEmbodimentOfPeace" xml:space="preserve">
+    <value>An embodiment Síochána</value>
+  </data>
+  <data name="IslamInfo_TheEmbodimentOfTruth" xml:space="preserve">
+    <value>An embodiment na Fírinne</value>
+  </data>
+  <data name="IslamInfo_TheEternalInheritor" xml:space="preserve">
+    <value>Inheritor Shíoraí</value>
+  </data>
+  <data name="IslamInfo_TheEternalLord" xml:space="preserve">
+    <value>An Tiarna Shíoraí</value>
+  </data>
+  <data name="IslamInfo_TheEternalPossessorOfSovereignty" xml:space="preserve">
+    <value>A sealbhóir Eternal fhlaitheas</value>
+  </data>
+  <data name="IslamInfo_TheEverAcceptorOfRepentance" xml:space="preserve">
+    <value>An Or-glacóir de aithrí</value>
+  </data>
+  <data name="IslamInfo_TheEverSurvivingOne" xml:space="preserve">
+    <value>An Ceann Riamh Mharthanaigh</value>
+  </data>
+  <data name="IslamInfo_TheEvolver" xml:space="preserve">
+    <value>An Evolver</value>
+  </data>
+  <data name="IslamInfo_TheExpeditingOne" xml:space="preserve">
+    <value>An expediting a hAon</value>
+  </data>
+  <data name="IslamInfo_TheExtender" xml:space="preserve">
+    <value>An Extender</value>
+  </data>
+  <data name="IslamInfo_TheExtensivelyEnduringOne" xml:space="preserve">
+    <value>An Forleathan Marthanacha a hAon</value>
+  </data>
+  <data name="IslamInfo_TheExtremelyExaltedOne" xml:space="preserve">
+    <value>An Ceann Thar a exalted</value>
+  </data>
+  <data name="IslamInfo_TheFirmOne" xml:space="preserve">
+    <value>An ceann gnólacht</value>
+  </data>
+  <data name="IslamInfo_TheFlawlessShaper" xml:space="preserve">
+    <value>An Shaper Flawless</value>
+  </data>
+  <data name="IslamInfo_TheFountainHeadOfTruth" xml:space="preserve">
+    <value>An Fountain-Ceann na Fírinne</value>
+  </data>
+  <data name="IslamInfo_TheGloriousOne" xml:space="preserve">
+    <value>An Ceann Bhua</value>
+  </data>
+  <data name="IslamInfo_TheGreatForgiver" xml:space="preserve">
+    <value>An Forgiver Mór</value>
+  </data>
+  <data name="IslamInfo_TheGreatOne" xml:space="preserve">
+    <value>An Ceann Mór</value>
+  </data>
+  <data name="IslamInfo_TheGuardingOne" xml:space="preserve">
+    <value>An Gardáil a hAon</value>
+  </data>
+  <data name="IslamInfo_TheGuideToPathOfRectitude" xml:space="preserve">
+    <value>An Treoir maidir le Conair na rectitude</value>
+  </data>
+  <data name="IslamInfo_TheHolderOfSupremeAuthority" xml:space="preserve">
+    <value>Sealbhóir an Údaráis Uachtaraí</value>
+  </data>
+  <data name="IslamInfo_TheHonourerBestower" xml:space="preserve">
+    <value>An Honourer-bronntóir</value>
+  </data>
+  <data name="IslamInfo_TheImpartialJudge" xml:space="preserve">
+    <value>An Breitheamh Neamhchlaonta</value>
+  </data>
+  <data name="IslamInfo_TheImperceptible" xml:space="preserve">
+    <value>An imperceptible</value>
+  </data>
+  <data name="IslamInfo_TheInfiniteLastOne" xml:space="preserve">
+    <value>An infinite seo caite hAon</value>
+  </data>
+  <data name="IslamInfo_TheInflictorOfDeath" xml:space="preserve">
+    <value>An Inflictor Báis</value>
+  </data>
+  <data name="IslamInfo_TheInfuserOfFaith" xml:space="preserve">
+    <value>An Infuser an Chreidimh</value>
+  </data>
+  <data name="IslamInfo_TheInfuserOfNewLife" xml:space="preserve">
+    <value>An Infuser na Life Nua</value>
+  </data>
+  <data name="IslamInfo_TheJustOne" xml:space="preserve">
+    <value>An Just a hAon</value>
+  </data>
+  <data name="IslamInfo_TheKnowerOfSubtleties" xml:space="preserve">
+    <value>An Knower na Subtleties</value>
+  </data>
+  <data name="IslamInfo_TheLovingOne" xml:space="preserve">
+    <value>An Ceann grámhar</value>
+  </data>
+  <data name="IslamInfo_TheMagnificentOne" xml:space="preserve">
+    <value>The Magnificent a hAon</value>
+  </data>
+  <data name="IslamInfo_TheMaintainerOflife" xml:space="preserve">
+    <value>An Cothaitheoir na beatha</value>
+  </data>
+  <data name="IslamInfo_TheMajesticOne" xml:space="preserve">
+    <value>An maorga a hAon</value>
+  </data>
+  <data name="IslamInfo_TheMerciful" xml:space="preserve">
+    <value>An trócaire</value>
+  </data>
+  <data name="IslamInfo_TheMightyOne" xml:space="preserve">
+    <value>An Mighty One</value>
+  </data>
+  <data name="IslamInfo_TheMostSacred" xml:space="preserve">
+    <value>An Ró-Naofa is mó</value>
+  </data>
+  <data name="IslamInfo_TheOmnipotentOne" xml:space="preserve">
+    <value>An Omnipotent a hAon</value>
+  </data>
+  <data name="IslamInfo_TheOnlyOne" xml:space="preserve">
+    <value>An amháin a hAon</value>
+  </data>
+  <data name="IslamInfo_TheOriginator" xml:space="preserve">
+    <value>An Tionscnóir</value>
+  </data>
+  <data name="IslamInfo_ThePardoner" xml:space="preserve">
+    <value>An Pardoner</value>
+  </data>
+  <data name="IslamInfo_ThePerceptible" xml:space="preserve">
+    <value>An perceptible</value>
+  </data>
+  <data name="IslamInfo_ThePointingOne" xml:space="preserve">
+    <value>One Ag cur in iúl</value>
+  </data>
+  <data name="IslamInfo_ThePossessorOfMajestyAndHonour" xml:space="preserve">
+    <value>An sealbhóir de Shoilse agus Onóra</value>
+  </data>
+  <data name="IslamInfo_ThePrayersOfAllahUponHimAndPeace" xml:space="preserve">
+    <value>Na paidreacha de Allah air agus síocháin</value>
+  </data>
+  <data name="IslamInfo_ThePreserverOfSafety" xml:space="preserve">
+    <value>An Preserver na Sábháilteachta</value>
+  </data>
+  <data name="IslamInfo_ThePreventer" xml:space="preserve">
+    <value>An preventer</value>
+  </data>
+  <data name="IslamInfo_ThePrimeLight" xml:space="preserve">
+    <value>An Príomh-Solas</value>
+  </data>
+  <data name="IslamInfo_TheProcrastinator" xml:space="preserve">
+    <value>An procrastinator</value>
+  </data>
+  <data name="IslamInfo_TheProtectingAssociate" xml:space="preserve">
+    <value>An Comhlach Cosaint</value>
+  </data>
+  <data name="IslamInfo_TheProviderOfGuidance" xml:space="preserve">
+    <value>An Soláthróir Treoir</value>
+  </data>
+  <data name="IslamInfo_TheReckoningOne" xml:space="preserve">
+    <value>An Reckoning a hAon</value>
+  </data>
+  <data name="IslamInfo_TheReducer" xml:space="preserve">
+    <value>An reducer</value>
+  </data>
+  <data name="IslamInfo_TheRespondingOne" xml:space="preserve">
+    <value>An Ceann Freagairt</value>
+  </data>
+  <data name="IslamInfo_TheRestorer" xml:space="preserve">
+    <value>An Restorer</value>
+  </data>
+  <data name="IslamInfo_TheRestrictingOne" xml:space="preserve">
+    <value>An shrianann a hAon</value>
+  </data>
+  <data name="IslamInfo_TheRetaliator" xml:space="preserve">
+    <value>An Retaliator</value>
+  </data>
+  <data name="IslamInfo_TheSelfSubsistingOne" xml:space="preserve">
+    <value>An Féin-ar marthain a hAon</value>
+  </data>
+  <data name="IslamInfo_TheSelfSufficientOne" xml:space="preserve">
+    <value>An Féin-Dóthain amháin</value>
+  </data>
+  <data name="IslamInfo_TheSoleLaudableOne" xml:space="preserve">
+    <value>An Sól-inmholta a hAon</value>
+  </data>
+  <data name="IslamInfo_TheSoleOne" xml:space="preserve">
+    <value>An Ceann Aonair</value>
+  </data>
+  <data name="IslamInfo_TheStrongOne" xml:space="preserve">
+    <value>An Ceann Láidir</value>
+  </data>
+  <data name="IslamInfo_TheSublimeOne" xml:space="preserve">
+    <value>An Sublime a hAon</value>
+  </data>
+  <data name="IslamInfo_TheSupremeBestower" xml:space="preserve">
+    <value>An bronntóir Uachtarach</value>
+  </data>
+  <data name="IslamInfo_TheSupremePardoner" xml:space="preserve">
+    <value>An Pardoner Uachtarach</value>
+  </data>
+  <data name="IslamInfo_TheSupremeProvider" xml:space="preserve">
+    <value>An Soláthraí Uachtarach</value>
+  </data>
+  <data name="IslamInfo_TheSupremeSolver" xml:space="preserve">
+    <value>An Réiteoir Uachtarach</value>
+  </data>
+  <data name="IslamInfo_TheSustainingOne" xml:space="preserve">
+    <value>An Coinneáil hAon</value>
+  </data>
+  <data name="IslamInfo_TheTotalProvider" xml:space="preserve">
+    <value>An Soláthraí Iomlán</value>
+  </data>
+  <data name="IslamInfo_TheUniqueOne" xml:space="preserve">
+    <value>An Ceann uathúil</value>
+  </data>
+  <data name="IslamInfo_TheUniversalTrustee" xml:space="preserve">
+    <value>An tAcht Iontaobhaithe Uilíoch</value>
+  </data>
+  <data name="IslamInfo_TheVeryFirst" xml:space="preserve">
+    <value>An Chéad An-</value>
+  </data>
+  <data name="IslamInfo_TheWatchfulOne" xml:space="preserve">
+    <value>An Watchful a hAon</value>
+  </data>
+  <data name="IslamInfo_TheWiseOne" xml:space="preserve">
+    <value>An Wise a hAon</value>
+  </data>
+  <data name="IslamInfo_ThirdCreed" xml:space="preserve">
+    <value>Tríú creed - An focal de glorification (Tumjeed)</value>
+  </data>
+  <data name="IslamInfo_ThirdCreedTrans" xml:space="preserve">
+    <value>Glóir don Allah agus Moladh Allah, agus nach bhfuil aon Dia amháin Allah, Allah agus is é an mó.</value>
+  </data>
+  <data name="IslamInfo_ThirdCreedWordByWord" xml:space="preserve">
+    <value>Glóir | a Allah | agus Moladh | go Allah | agus níl aon | Dia | seachas | Allah | Allah agus | mó | agus níl | fhéadfadh | agus níl | chumhacht | seachas | le Allah | chuid is mó Ard | chuid is mó iontach</value>
+  </data>
+  <data name="IslamInfo_TraditionalArabic" xml:space="preserve">
+    <value>Araibis Traidisiúnta</value>
+  </data>
+  <data name="IslamInfo_TransmissionOfInformation" xml:space="preserve">
+    <value>Faisnéis a tharchur</value>
+  </data>
+  <data name="IslamInfo_Umrah" xml:space="preserve">
+    <value>Umrah</value>
+  </data>
+  <data name="IslamInfo_UnitOfPrayer" xml:space="preserve">
+    <value>Aonad na hurnaí</value>
+  </data>
+  <data name="IslamInfo_UponHimBePeace" xml:space="preserve">
+    <value>Ar dó a bheith síochána</value>
+  </data>
+  <data name="IslamInfo_Verse" xml:space="preserve">
+    <value>Verse</value>
+  </data>
+  <data name="IslamInfo_VerseOfTheThrone" xml:space="preserve">
+    <value>An Véarsa an Throne</value>
+  </data>
+  <data name="IslamInfo_Zechariah" xml:space="preserve">
+    <value>Zechariah</value>
+  </data>
+  <data name="IslamInfo_TheEverLiving" xml:space="preserve">
+    <value>An Riamh maireachtála</value>
+  </data>
+  <data name="IslamInfo_After" xml:space="preserve">
+    <value>Tar éis</value>
+  </data>
+  <data name="IslamInfo_Arabic" xml:space="preserve">
+    <value>Araibis</value>
+  </data>
+  <data name="IslamInfo_Assimilate" xml:space="preserve">
+    <value>Chomhshamhlú</value>
+  </data>
+  <data name="IslamInfo_Before" xml:space="preserve">
+    <value>Roimh</value>
+  </data>
+  <data name="IslamInfo_bukhariBook1" xml:space="preserve">
+    <value>Revelation</value>
+  </data>
+  <data name="IslamInfo_bukhariBook10" xml:space="preserve">
+    <value>Call Paidreacha (Adhaan)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook11" xml:space="preserve">
+    <value>Dé hAoine Urnaí</value>
+  </data>
+  <data name="IslamInfo_bukhariBook12" xml:space="preserve">
+    <value>Paidir Eagla</value>
+  </data>
+  <data name="IslamInfo_bukhariBook13" xml:space="preserve">
+    <value>An dhá Féilte (Eids)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook14" xml:space="preserve">
+    <value>Witr Urnaí</value>
+  </data>
+  <data name="IslamInfo_bukhariBook15" xml:space="preserve">
+    <value>Invoking Allah do Báistí (Istisqaa)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook16" xml:space="preserve">
+    <value>Eclipses</value>
+  </data>
+  <data name="IslamInfo_bukhariBook17" xml:space="preserve">
+    <value>Faonluí Le linn Aithris de Qur'an</value>
+  </data>
+  <data name="IslamInfo_bukhariBook18" xml:space="preserve">
+    <value>An tréimhse a ghearradh Paidreacha (Ag-Taqseer)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook19" xml:space="preserve">
+    <value>Paidir ag Night (Tahajjud)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook1Chapter1" xml:space="preserve">
+    <value>{Conas a thosaigh an Inspiration Dhiaga a nochtadh go Allah Messenger (SOTS).</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2" xml:space="preserve">
+    <value>Creideamh</value>
+  </data>
+  <data name="IslamInfo_bukhariBook20" xml:space="preserve">
+    <value>Virtues Urnaí ag Masjid Makkah agus Madinah</value>
+  </data>
+  <data name="IslamInfo_bukhariBook21" xml:space="preserve">
+    <value>Gníomhartha cé Praying</value>
+  </data>
+  <data name="IslamInfo_bukhariBook22" xml:space="preserve">
+    <value>Díchuimhne i Urnaí</value>
+  </data>
+  <data name="IslamInfo_bukhariBook23" xml:space="preserve">
+    <value>Sochraidí (Al-Janaa'iz)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook24" xml:space="preserve">
+    <value>Cáin Carthanachta Éigeantacha (Zakat)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook25" xml:space="preserve">
+    <value>Pilgrimmage (Hajj)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook26" xml:space="preserve">
+    <value>Mion Pilgrammage (Umra)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook27" xml:space="preserve">
+    <value>Oilithrigh gcoisctear Comhlánú na Pilgrimmage</value>
+  </data>
+  <data name="IslamInfo_bukhariBook28" xml:space="preserve">
+    <value>Pionós mar gheall ar an Fiach agus iad ar Pilgrimmage</value>
+  </data>
+  <data name="IslamInfo_bukhariBook29" xml:space="preserve">
+    <value>Virtues Madinah</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter1" xml:space="preserve">
+    <value>Tá an ráiteas ar an Prophet (SOTS): 'Tá Ioslam bunaithe ar chúig phrionsabail.'</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter10" xml:space="preserve">
+    <value>Le grá an Ansar Is comhartha an chreidimh.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter12" xml:space="preserve">
+    <value>Chun teitheadh ​​(rith amach) ó Al-Fitan (trialacha agus afflications araile) Is cuid den reiligiún.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter13" xml:space="preserve">
+    <value>Tá an ráiteas ar an Prophet (SOTS): 'Tá a fhios agam Allah (wa jal Azza) níos fearr ná gach ceann de tú a dhéanamh'.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter14" xml:space="preserve">
+    <value>Whoever fuath dul ar ais go dtí Kufr.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter15" xml:space="preserve">
+    <value>Beidh na gráid i superiority de na gcreidmheach a bheith de réir a n-gníomhais maith.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter16" xml:space="preserve">
+    <value>Is é Al-Haya chuid an chreidimh.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter17" xml:space="preserve">
+    <value>Tá an ráiteas ar Allah (wa jal Azza):</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter18" xml:space="preserve">
+    <value>Whoever deir go bhfuil creideamh gníomh (gníomhais maith).</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter19" xml:space="preserve">
+    <value>Más rud é nach amháin glacadh Ioslam fíor, ach ní amhlaidh éigeantas nó ar eagla a bheith maraíodh etc</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter2" xml:space="preserve">
+    <value>Ciallaíonn Do agairt do chreidimh.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter20" xml:space="preserve">
+    <value>Is é a beannú chuid de Ioslam.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter21" xml:space="preserve">
+    <value>Chun a bheith ungrateful le ceann amháin ar a fear céile.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter22" xml:space="preserve">
+    <value>Tá bpeacaí ó aineolas agus nach bhfuil peacach ar disbeliever mura worships sé daoine eile chomh maith le Allah (wa jal Azza).</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter23" xml:space="preserve">
+    <value>Tá an ráiteas ar Allah (wa jal Azza): {</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter24" xml:space="preserve">
+    <value>Is féidir Zulm (mícheart) de chineál amháin a bheith níos mó nó níos lú ná sin de eile.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter25" xml:space="preserve">
+    <value>Na comharthaí de hypocrite.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter26" xml:space="preserve">
+    <value>Chun paidreacha a bhunú ar an oíche Qadr Is cuid an chreidimh.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter27" xml:space="preserve">
+    <value>Is cuid den chreideamh - Al-Jihad (troid i cúis Allah naofa cogadh).</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter28" xml:space="preserve">
+    <value>Is cuid an chreidimh chun an (Nawafil - deonach) a bhunú paidreacha i rith na oíche de Ramadan.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter29" xml:space="preserve">
+    <value>Chun breathnú ar Saum [fasts (de réir theagasc Ioslamach)] i rith na míosa de Ramadan (ó chroí agus go dílis) ag súil le luach saothair Allah ach, mar chuid de chreidimh.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter3" xml:space="preserve">
+    <value>(Cad é a dúirt) maidir le gníomhais chreidimh.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter30" xml:space="preserve">
+    <value>Is Creideamh-éasca.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter31" xml:space="preserve">
+    <value>Is é an (thairiscint) Salat (Paidreacha) cuid de chreidimh.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter32" xml:space="preserve">
+    <value>(Cad é a dúirt maidir leis an superiority) duine a chuimsíonn Ioslam ó chroí.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter33" xml:space="preserve">
+    <value>Ad-DIN (ghníomhas dea-righteous - gníomh de adhartha) grá an chuid is mó ag Allah (wa jal Azza) go bhfuil a dhéanamh go rialta.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter34" xml:space="preserve">
+    <value>Méaduithe Creidimh agus laghduithe.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter35" xml:space="preserve">
+    <value>A íoc Zakat Is cuid den Ioslam.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter36" xml:space="preserve">
+    <value>Chun dul ar an processions sochraide (suas go dtí an áit adhlactha) Is cuid an chreidimh.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter37" xml:space="preserve">
+    <value>An eagla a believer go bhféadfadh a chuid gníomhais maith ar neamhní (caillte) i ngan fhios dó.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter38" xml:space="preserve">
+    <value>An iarraidh ar (aingeal) Jibrael (Gabriel) ó na Prophet (SOTS) faoi Creideamh, Ioslam, Ihsan (foirfeachta).</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter4" xml:space="preserve">
+    <value>Is Muslim an ceann a sheachnaíonn Muslims harming leis a theanga agus na lámha.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter40" xml:space="preserve">
+    <value>An superiority ar an duine a fhágann go léir amhrasacha (doiléir) rudaí ar mhaithe lena reiligiún.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter41" xml:space="preserve">
+    <value>A íoc Al-Khumus (an cúigiú cuid de na booty chogaidh a thabhairt i cúis Allah) Is cuid an chreidimh.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter42" xml:space="preserve">
+    <value>Cad é a dúirt maidir leis an ráiteas: 'Braitheann an luach saothair na gníomhais ar an intinn.'</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter43" xml:space="preserve">
+    <value>Tá an ráiteas ar an Prophet (SOTS): 'Is Creideamh An-Nasiha [(a bheith ó chroí a ghabháil agus fíor) go Allah, a chuid Messenger, leis an rialóirí Moslamach, agus go léir an Muslims.]'</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter5" xml:space="preserve">
+    <value>Is Cé leis Ioslam an chuid is fearr (Cé hé an Moslamach fearr)?</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter6" xml:space="preserve">
+    <value>Chun beatha (daoine eile) Is cuid de Ioslam.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter7" xml:space="preserve">
+    <value>Chun buíochas do cheann deartháir (Moslamach ar) cad maith amháin dó féin Is cuid an chreidimh.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter8" xml:space="preserve">
+    <value>Le grá an Messenger (Muhammad) (SOTS) Is cuid an chreidimh.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter9" xml:space="preserve">
+    <value>Sweetness (delight) an chreidimh.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3" xml:space="preserve">
+    <value>Eolas</value>
+  </data>
+  <data name="IslamInfo_bukhariBook30" xml:space="preserve">
+    <value>Fasting</value>
+  </data>
+  <data name="IslamInfo_bukhariBook31" xml:space="preserve">
+    <value>Guí ag Night i Ramadaan (Taraweeh)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook32" xml:space="preserve">
+    <value>Virtues Oíche na Qadr</value>
+  </data>
+  <data name="IslamInfo_bukhariBook33" xml:space="preserve">
+    <value>Ag dul ar scor le Mosc chun Cuimhneachán de Allah (I'tikaf)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook34" xml:space="preserve">
+    <value>Díolacháin agus Trádáil</value>
+  </data>
+  <data name="IslamInfo_bukhariBook35" xml:space="preserve">
+    <value>Díolacháin ina bhfuil Praghas a íocadh le haghaidh Earraí atá le Seachadadh Níos déanaí (Mar-Salam)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook36" xml:space="preserve">
+    <value>Shuf'a</value>
+  </data>
+  <data name="IslamInfo_bukhariBook37" xml:space="preserve">
+    <value>Fhostú</value>
+  </data>
+  <data name="IslamInfo_bukhariBook38" xml:space="preserve">
+    <value>Transferance de Fiach ó hAon Duine Eile (Al-Hawaala)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook39" xml:space="preserve">
+    <value>Kafalah</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter1" xml:space="preserve">
+    <value>An superiority eolais.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter11" xml:space="preserve">
+    <value>An Prophet (SOTS) a úsáidtear chun aire a thabhairt de na daoine i preaching trí roghnú am oiriúnach ionas nach bhféadfadh siad a reáchtáil ar shiúl (nó a fháil leamh).</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter12" xml:space="preserve">
+    <value>An té seasta ina lá speisialta do thabhairt (cainte reiligiúnach) do na mic léinn.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter13" xml:space="preserve">
+    <value>Más mian le Allah (wa jal Azza) a dhéanamh go maith le duine, a dhéanann sé dó comprehend an reiligiún.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter14" xml:space="preserve">
+    <value>(An superiority) a thuiscint eolais.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter15" xml:space="preserve">
+    <value>Ar mian leo a bheith cosúil leis an ceann a bhfuil eolas agus Al Hikmah-(eagna) [ie</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter16" xml:space="preserve">
+    <value>Cad a bhfuil ráite mar gheall ar an turas de Prophet Musa ('alaihi mar-Salam) (nuair a chuaigh sé) san fharraige chun freastal ar Al-Khidr.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter17" xml:space="preserve">
+    <value>Tá an ráiteas ar an Prophet (SOTS): 'O Allah!</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter18" xml:space="preserve">
+    <value>Cén aois is féidir éisteacht leis an óige (ie luachan an Hadith ó buachaill a bheith inghlactha).</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter19" xml:space="preserve">
+    <value>Chun dul amach ar thóir an eolais.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter2" xml:space="preserve">
+    <value>Whoever bhfuil ceist orthu faoi eolas cé go bhfuil sé gnóthach i roinnt comhrá, mar sin chríochnaigh sé ag caint agus ansin fhreagair an ceistitheoir.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter20" xml:space="preserve">
+    <value>(Thiocfaidh chun bheith Ioslam, ina reiligiúin scoláire) An superiority duine a fhoghlaimíonn agus ansin múineann sé do dhaoine eile.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter21" xml:space="preserve">
+    <value>(Cad é a dúirt maidir) an cealú an (creidimh) eolas agus an chuma ar (creidimh) aineolas.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter22" xml:space="preserve">
+    <value>An superiority (creidimh) eolas.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter23" xml:space="preserve">
+    <value>A thabhairt ar an fíorasc reiligiúnach agus marcaíocht ainmhí nó seasamh ar aon rud eile.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter24" xml:space="preserve">
+    <value>An té a thug fíorasc reiligiúnach ag beckoning nó nodding.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter25" xml:space="preserve">
+    <value>An Prophet (sábha) Spreag na daoine (misean) de 'Abdul Qais a memorize an creideamh agus an (creidimh) eolas (mar a mhínigh sé dóibh) agus a chur ar an eolas (in iúl) a n-daoine a bhfuil a d'fhág siad taobh thiar (sa bhaile).</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter26" xml:space="preserve">
+    <value>Chun taisteal ag lorg freagra ar ábhar fadhbanna, agus é a mhúineadh le ceann amháin ar theaghlach.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter27" xml:space="preserve">
+    <value>Chun fi?? × dualgais i uainíochta chun foghlama (creidimh) eolas.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter28" xml:space="preserve">
+    <value>Chun a bheith ar buile le linn preaching nó teagasc má fheiceann duine cad fuath amháin.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter29" xml:space="preserve">
+    <value>An té a knelt síos os comhair an Imam nó (creidimh) seanmóirí.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter3" xml:space="preserve">
+    <value>Whoever ardaíonn a ghuth i (iompar) eolas.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter30" xml:space="preserve">
+    <value>Athrá amháin caint thri d'fhonn a dhéanamh ar dhaoine eile a thuiscint.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter31" xml:space="preserve">
+    <value>Tá fear teagaisc (reiligiún a) a bhean-daor agus a chlann.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter32" xml:space="preserve">
+    <value>An seanmóireacht (agus teagaisc) den (creidimh) eolas do mhná ag an Imam (príomhfheidhmeannach):</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter33" xml:space="preserve">
+    <value>Díocas chun (a fhoghlaim) an Hadith.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter34" xml:space="preserve">
+    <value>Conas a bheidh an (creidimh) eolas ghlac sé ar shiúl?</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter35" xml:space="preserve">
+    <value>Ba chóir aghaidh an lae a shocrú do mhná d'fhonn a mhúineadh dóibh reiligiún (seachas fir)?</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter36" xml:space="preserve">
+    <value>An té a chuala rud éigin (ach ní raibh a thuiscint) agus ansin iarr arís till thuig sé go hiomlán.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter37" xml:space="preserve">
+    <value>Tá sé de dhualgas ar iad siúd atá i láthair [i gcruinniú reiligiúnach (nó comhdháil)] chun an t-eolas in iúl dóibh siúd atá as láthair.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter38" xml:space="preserve">
+    <value>An pheaca duine a insíonn bréag i gcoinne an Prophet (SOTS).</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter39" xml:space="preserve">
+    <value>An scríbhinn eolais.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter4" xml:space="preserve">
+    <value>Maidir leis an éagsúlacht na bhfocal a úsáidtear ag narrators iúl significations éagsúla maidir leis an coincheap de narrating agus a bhfuil tábhacht le haghaidh na scoláirí Hadith amháin.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter40" xml:space="preserve">
+    <value>An t-eolas agus an teagaisc agus seanmóireacht ar an oíche.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter41" xml:space="preserve">
+    <value>Chun labhairt faoi (creidimh) eolas ar an oíche.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter42" xml:space="preserve">
+    <value>(Maidir Cad é a dúirt) memorization an (creidimh) eolas.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter43" xml:space="preserve">
+    <value>Chun a bheith ciúin (agus éisteacht) le fir a foghlaimíodh creidimh.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter44" xml:space="preserve">
+    <value>Nuair a fear a foghlaimíodh reiligiúnach iarr.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter45" xml:space="preserve">
+    <value>Bé, agus é ina sheasamh, d'iarr fear reiligiúnach fhoghlaim a bhí ina suí (ar pulpit nó rud den chineál céanna, mar gheall ar rud éigin).</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter46" xml:space="preserve">
+    <value>Chun a iarraidh faoi ábhar creidimh agus a thabhairt ar an fíorasc reiligiúnach (ag Mina le linn Hajj) agus ag déanamh an Rami na Jimar (Caitheamh na púróga ag an Jimar i Mina le linn Hajj).</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter47" xml:space="preserve">
+    <value>Ráiteas de Allah (wa jal Azza):</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter48" xml:space="preserve">
+    <value>Bé fhág roinnt rudaí roghnach ach le haghaidh an eagla nach féidir le roinnt daoine a bheith in ann chun iad a thuiscint agus a d'fhéadfadh titim i rud éigin níos deacra.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter49" xml:space="preserve">
+    <value>An té a roghnaigh roinnt daoine go (creidimh) eolas mhúineadh dóibh preferring dóibh ar dhaoine eile ar eagla nach féidir na daoine eile a thuiscint.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter5" xml:space="preserve">
+    <value>An Imam ceistiú a chompánaigh chun tástáil a gcuid eolais.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter50" xml:space="preserve">
+    <value>(Cad é a dúirt maidir :-) Chun a bheith cúthail (Al-Haya ') agus iad ag foghlaim (eolas creidimh).</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter51" xml:space="preserve">
+    <value>Bhraith bé cúthail (rud éigin a iarraidh) agus ansin d'iarr duine eile a iarraidh ar a shon.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter52" xml:space="preserve">
+    <value>Teagasc eolas creidimh reiligiúnacha agus ag tabhairt fíoraisc i mosque.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter53" xml:space="preserve">
+    <value>Fhreagair bé leis an ceistitheoir níos mó ná an méid a d'iarr sé.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter6" xml:space="preserve">
+    <value>Cad é a dúirt faoi eolas.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter7" xml:space="preserve">
+    <value>Cad é a dúirt maidir leis an lámh a mhalartú láimhe (de leabhair eolais), agus an scríbhneoireacht eolais ag scoláirí reiligiúnda chuig tíortha éagsúla.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter8" xml:space="preserve">
+    <value>Whoever shuigh ag an deireadh níos faide a bhailiú.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter9" xml:space="preserve">
+    <value>Tá an ráiteas ar an Prophet (SOTS): 'Is dócha gur féidir le duine a fhaigheann píosa eolais hindíreach comprehend sé níos fearr ná sé go bhfuil a chuala sé go díreach óna foinse.'</value>
+  </data>
+  <data name="IslamInfo_bukhariBook4" xml:space="preserve">
+    <value>Ablutions (Wudu ')</value>
+  </data>
+  <data name="IslamInfo_bukhariBook40" xml:space="preserve">
+    <value>Ionadaíocht, Údarú, Gnó ag Seachfhreastalaí</value>
+  </data>
+  <data name="IslamInfo_bukhariBook41" xml:space="preserve">
+    <value>Talmhaíocht</value>
+  </data>
+  <data name="IslamInfo_bukhariBook42" xml:space="preserve">
+    <value>Dáileadh Uisce</value>
+  </data>
+  <data name="IslamInfo_bukhariBook43" xml:space="preserve">
+    <value>Iasachtaí, Íocaíocht Iasachtaí, Maoin a chalcadh, Féimheachta</value>
+  </data>
+  <data name="IslamInfo_bukhariBook44" xml:space="preserve">
+    <value>Khusoomaat</value>
+  </data>
+  <data name="IslamInfo_bukhariBook45" xml:space="preserve">
+    <value>Rudaí Caillte Mbailítear agus a scaoiltear ag duine éigin (Luqaata)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook46" xml:space="preserve">
+    <value>Oppressions</value>
+  </data>
+  <data name="IslamInfo_bukhariBook47" xml:space="preserve">
+    <value>Comhpháirtíocht</value>
+  </data>
+  <data name="IslamInfo_bukhariBook48" xml:space="preserve">
+    <value>Mhorgáistiú</value>
+  </data>
+  <data name="IslamInfo_bukhariBook49" xml:space="preserve">
+    <value>Manumission na sclábhaithe</value>
+  </data>
+  <data name="IslamInfo_bukhariBook5" xml:space="preserve">
+    <value>Snámha (Ghusl)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook50" xml:space="preserve">
+    <value>Makaatib</value>
+  </data>
+  <data name="IslamInfo_bukhariBook51" xml:space="preserve">
+    <value>Bronntanais</value>
+  </data>
+  <data name="IslamInfo_bukhariBook52" xml:space="preserve">
+    <value>Finnéithe</value>
+  </data>
+  <data name="IslamInfo_bukhariBook53" xml:space="preserve">
+    <value>Síochána</value>
+  </data>
+  <data name="IslamInfo_bukhariBook54" xml:space="preserve">
+    <value>Coinníollacha</value>
+  </data>
+  <data name="IslamInfo_bukhariBook55" xml:space="preserve">
+    <value>Uachtanna agus Testaments (Wasaayaa)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook56" xml:space="preserve">
+    <value>Troid do an Cúis na Allah (Jihaad)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook57" xml:space="preserve">
+    <value>An cúigiú cuid de booty chuig an Cúis na Allah (Khumus)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook58" xml:space="preserve">
+    <value>Jizyah agus Mawaada'ah</value>
+  </data>
+  <data name="IslamInfo_bukhariBook59" xml:space="preserve">
+    <value>Tús na Cruthú</value>
+  </data>
+  <data name="IslamInfo_bukhariBook6" xml:space="preserve">
+    <value>Tréimhsí Menstrual</value>
+  </data>
+  <data name="IslamInfo_bukhariBook60" xml:space="preserve">
+    <value>Fáithe</value>
+  </data>
+  <data name="IslamInfo_bukhariBook61" xml:space="preserve">
+    <value>Buanna agus Buanna an Prophet (pbuh) agus a chompánaigh</value>
+  </data>
+  <data name="IslamInfo_bukhariBook62" xml:space="preserve">
+    <value>Compánach an Prophet</value>
+  </data>
+  <data name="IslamInfo_bukhariBook63" xml:space="preserve">
+    <value>Buanna na Cúntóirí i Madinah (Ansaar)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook64" xml:space="preserve">
+    <value>Expeditions Míleata faoi stiúir an Prophet (pbuh) (Al-Maghaazi)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook65" xml:space="preserve">
+    <value>Tráchtaireacht prophetic ar an Qur'an (Tafseer an Prophet (pbuh))</value>
+  </data>
+  <data name="IslamInfo_bukhariBook66" xml:space="preserve">
+    <value>Virtues an Qur'an</value>
+  </data>
+  <data name="IslamInfo_bukhariBook67" xml:space="preserve">
+    <value>Phósadh, Pósta (Nikaah)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook68" xml:space="preserve">
+    <value>Colscaradh</value>
+  </data>
+  <data name="IslamInfo_bukhariBook69" xml:space="preserve">
+    <value>Tacú leis an Teaghlach</value>
+  </data>
+  <data name="IslamInfo_bukhariBook7" xml:space="preserve">
+    <value>Lámha agus na cosa Chuimil le deannach (Tayammum)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook70" xml:space="preserve">
+    <value>Bia, Béilí</value>
+  </data>
+  <data name="IslamInfo_bukhariBook71" xml:space="preserve">
+    <value>Íobairt ar Ócáid Breithe (`Aqiqa)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook72" xml:space="preserve">
+    <value>Fiach, Marú</value>
+  </data>
+  <data name="IslamInfo_bukhariBook73" xml:space="preserve">
+    <value>Al-Adha Féile Íobairt (Adaahi)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook74" xml:space="preserve">
+    <value>Deochanna</value>
+  </data>
+  <data name="IslamInfo_bukhariBook75" xml:space="preserve">
+    <value>Othair</value>
+  </data>
+  <data name="IslamInfo_bukhariBook76" xml:space="preserve">
+    <value>Leigheas</value>
+  </data>
+  <data name="IslamInfo_bukhariBook77" xml:space="preserve">
+    <value>Gúna</value>
+  </data>
+  <data name="IslamInfo_bukhariBook78" xml:space="preserve">
+    <value>Manners Chéasta agus Foirm (Al-Adab)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook79" xml:space="preserve">
+    <value>Ag cur ceiste Cead</value>
+  </data>
+  <data name="IslamInfo_bukhariBook8" xml:space="preserve">
+    <value>Paidreacha (Salat)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook80" xml:space="preserve">
+    <value>Invocations</value>
+  </data>
+  <data name="IslamInfo_bukhariBook81" xml:space="preserve">
+    <value>Chun an Tairiscint Croí (Ar-Riqaq)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook82" xml:space="preserve">
+    <value>Will Dhiaga (Al-Qadar)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook83" xml:space="preserve">
+    <value>Mionnaí agus Vows</value>
+  </data>
+  <data name="IslamInfo_bukhariBook84" xml:space="preserve">
+    <value>Expiation Mionnaí unfulfilled</value>
+  </data>
+  <data name="IslamInfo_bukhariBook85" xml:space="preserve">
+    <value>Dlíthe na hOidhreachta (Al-Faraa'id)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook86" xml:space="preserve">
+    <value>Teorainneacha agus Pionóis atá leagtha síos ag Allah (Hudood)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook87" xml:space="preserve">
+    <value>Pionós ar disbelievers Cogaidh le Allah agus a Apostle</value>
+  </data>
+  <data name="IslamInfo_bukhariBook88" xml:space="preserve">
+    <value>Airgead Fola (Ad-Diyat)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook89" xml:space="preserve">
+    <value>Déileáil le Apostates</value>
+  </data>
+  <data name="IslamInfo_bukhariBook9" xml:space="preserve">
+    <value>Times de na Paidreacha</value>
+  </data>
+  <data name="IslamInfo_bukhariBook90" xml:space="preserve">
+    <value>Rud rá faoi Éigeantas (Ikraah)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook91" xml:space="preserve">
+    <value>Seifteanna</value>
+  </data>
+  <data name="IslamInfo_bukhariBook92" xml:space="preserve">
+    <value>Léiriú Dreams</value>
+  </data>
+  <data name="IslamInfo_bukhariBook93" xml:space="preserve">
+    <value>Anacair agus an Deireadh an Domhain</value>
+  </data>
+  <data name="IslamInfo_bukhariBook94" xml:space="preserve">
+    <value>Breithiúnais (Ahkaam)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook95" xml:space="preserve">
+    <value>Mianta</value>
+  </data>
+  <data name="IslamInfo_bukhariBook96" xml:space="preserve">
+    <value>Ag glacadh le Faisnéis a Thugtar ag Duine fírinneach</value>
+  </data>
+  <data name="IslamInfo_bukhariBook97" xml:space="preserve">
+    <value>Reáchtáil Fast an Qur'an agus Sunnah</value>
+  </data>
+  <data name="IslamInfo_bukhariBook98" xml:space="preserve">
+    <value>Oneness, Uathúlacht de Allah (Tawheed)</value>
+  </data>
+  <data name="IslamInfo_Classification" xml:space="preserve">
+    <value>Aicmiú</value>
+  </data>
+  <data name="IslamInfo_Connecting" xml:space="preserve">
+    <value>Nascadh</value>
+  </data>
+  <data name="IslamInfo_LetterName" xml:space="preserve">
+    <value>Litir Ainm</value>
+  </data>
+  <data name="IslamInfo_muslimBook1" xml:space="preserve">
+    <value>Réamhrá</value>
+  </data>
+  <data name="IslamInfo_muslimBook10" xml:space="preserve">
+    <value>An Leabhar na hUrnaí (Báistí)</value>
+  </data>
+  <data name="IslamInfo_muslimBook11" xml:space="preserve">
+    <value>An Leabhar na hUrnaí (Eclipse)</value>
+  </data>
+  <data name="IslamInfo_muslimBook12" xml:space="preserve">
+    <value>An Leabhar na hUrnaí (Sochraidí)</value>
+  </data>
+  <data name="IslamInfo_muslimBook13" xml:space="preserve">
+    <value>An Leabhar Zakat</value>
+  </data>
+  <data name="IslamInfo_muslimBook14" xml:space="preserve">
+    <value>An Leabhar Fasting</value>
+  </data>
+  <data name="IslamInfo_muslimBook15" xml:space="preserve">
+    <value>An Leabhar I'tikaf</value>
+  </data>
+  <data name="IslamInfo_muslimBook16" xml:space="preserve">
+    <value>An Leabhar Oilithreacht</value>
+  </data>
+  <data name="IslamInfo_muslimBook17" xml:space="preserve">
+    <value>An Leabhar an Phósta</value>
+  </data>
+  <data name="IslamInfo_muslimBook18" xml:space="preserve">
+    <value>An Leabhar thál</value>
+  </data>
+  <data name="IslamInfo_muslimBook19" xml:space="preserve">
+    <value>An Leabhar Colscaradh</value>
+  </data>
+  <data name="IslamInfo_muslimBook2" xml:space="preserve">
+    <value>An Leabhar an Chreidimh</value>
+  </data>
+  <data name="IslamInfo_muslimBook20" xml:space="preserve">
+    <value>An Leabhar curses agairt</value>
+  </data>
+  <data name="IslamInfo_muslimBook21" xml:space="preserve">
+    <value>An Leabhar sclábhaithe emancipating</value>
+  </data>
+  <data name="IslamInfo_muslimBook22" xml:space="preserve">
+    <value>An Leabhar Idirbheart</value>
+  </data>
+  <data name="IslamInfo_muslimBook23" xml:space="preserve">
+    <value>An Leabhar Masaaqah</value>
+  </data>
+  <data name="IslamInfo_muslimBook24" xml:space="preserve">
+    <value>An Leabhar bhaineann le Rialacha hOidhreachta</value>
+  </data>
+  <data name="IslamInfo_muslimBook25" xml:space="preserve">
+    <value>An Leabhar Bronntanais</value>
+  </data>
+  <data name="IslamInfo_muslimBook26" xml:space="preserve">
+    <value>An Leabhar dTiomnachtaí</value>
+  </data>
+  <data name="IslamInfo_muslimBook27" xml:space="preserve">
+    <value>An Leabhar Vows</value>
+  </data>
+  <data name="IslamInfo_muslimBook28" xml:space="preserve">
+    <value>An Leabhar Mionnaí</value>
+  </data>
+  <data name="IslamInfo_muslimBook29" xml:space="preserve">
+    <value>An Leabhar bhaineann leis an mionn, chun bunú an Freagracht dúnmharuithe, Troid, requital</value>
+  </data>
+  <data name="IslamInfo_muslimBook3" xml:space="preserve">
+    <value>An Leabhar íonú</value>
+  </data>
+  <data name="IslamInfo_muslimBook30" xml:space="preserve">
+    <value>An Leabhar bhaineann le Pionóis Forordaithe ag Ioslam</value>
+  </data>
+  <data name="IslamInfo_muslimBook31" xml:space="preserve">
+    <value>An Leabhar bhaineann le Cinntí Breithiúnach</value>
+  </data>
+  <data name="IslamInfo_muslimBook32" xml:space="preserve">
+    <value>An Leabhar Luqatah</value>
+  </data>
+  <data name="IslamInfo_muslimBook33" xml:space="preserve">
+    <value>An Leabhar Jihad agus Expedition</value>
+  </data>
+  <data name="IslamInfo_muslimBook34" xml:space="preserve">
+    <value>An Leabhar ar an Rialtas</value>
+  </data>
+  <data name="IslamInfo_muslimBook35" xml:space="preserve">
+    <value>An Leabhar Cluichí agus na Ainmhithe Bealtaine a Maraíodh agus na Aninals a bhfuil a itheann</value>
+  </data>
+  <data name="IslamInfo_muslimBook36" xml:space="preserve">
+    <value>An Leabhar Íobairtí</value>
+  </data>
+  <data name="IslamInfo_muslimBook37" xml:space="preserve">
+    <value>An Leabhar Deochanna</value>
+  </data>
+  <data name="IslamInfo_muslimBook38" xml:space="preserve">
+    <value>An Leabhar bhaineann le Éadaí agus Maisiú</value>
+  </data>
+  <data name="IslamInfo_muslimBook39" xml:space="preserve">
+    <value>An Leabhar ar Iompar Ginearálta</value>
+  </data>
+  <data name="IslamInfo_muslimBook4" xml:space="preserve">
+    <value>An Leabhar míostrú</value>
+  </data>
+  <data name="IslamInfo_muslimBook40" xml:space="preserve">
+    <value>An Leabhar ar Salutations Beannachtaí agus</value>
+  </data>
+  <data name="IslamInfo_muslimBook41" xml:space="preserve">
+    <value>An Leabhar Maidir leis an Úsáid Focail ceart</value>
+  </data>
+  <data name="IslamInfo_muslimBook42" xml:space="preserve">
+    <value>An Leabhar Filíochta</value>
+  </data>
+  <data name="IslamInfo_muslimBook43" xml:space="preserve">
+    <value>An Leabhar Fís</value>
+  </data>
+  <data name="IslamInfo_muslimBook44" xml:space="preserve">
+    <value>An Leabhar bhaineann le Cáilíochtaí scoth an Prophet Naofa (is féidir Síochána a bheith orthu) agus a chompánaigh</value>
+  </data>
+  <data name="IslamInfo_muslimBook45" xml:space="preserve">
+    <value>An Leabhar bhaineann le Buanna na companions (Allah Bí Sásta Le Them) an Prophet Naofa</value>
+  </data>
+  <data name="IslamInfo_muslimBook46" xml:space="preserve">
+    <value>An Leabhar bhua, Manners Chéasta agus Cillian de na ceangail na Gaol</value>
+  </data>
+  <data name="IslamInfo_muslimBook47" xml:space="preserve">
+    <value>An Leabhar na Destiny</value>
+  </data>
+  <data name="IslamInfo_muslimBook48" xml:space="preserve">
+    <value>An Leabhar Eolais</value>
+  </data>
+  <data name="IslamInfo_muslimBook49" xml:space="preserve">
+    <value>An Leabhar bhaineann le Cuimhneacháin de Allah, Impí, aithrí agus maithiúnas a lorg</value>
+  </data>
+  <data name="IslamInfo_muslimBook5" xml:space="preserve">
+    <value>An Leabhar Paidreacha</value>
+  </data>
+  <data name="IslamInfo_muslimBook50" xml:space="preserve">
+    <value>An Leabhar Traidisiúin Croí-Leáphointe</value>
+  </data>
+  <data name="IslamInfo_muslimBook51" xml:space="preserve">
+    <value>An Leabhar bhaineann le aithrí agus exhortation chun aithrí</value>
+  </data>
+  <data name="IslamInfo_muslimBook52" xml:space="preserve">
+    <value>Bhaineann Chun an Charateristics An hypocrites agus Ceannasaíochta Maidir Them</value>
+  </data>
+  <data name="IslamInfo_muslimBook53" xml:space="preserve">
+    <value>An Cur síos Leabhar thabhairt ar an Lá na Breithiúnas, Paradise agus Ifreann</value>
+  </data>
+  <data name="IslamInfo_muslimBook54" xml:space="preserve">
+    <value>An Leabhar bhaineann le Paradise, a Cur síos, a Deolchairí agus a Intimates</value>
+  </data>
+  <data name="IslamInfo_muslimBook55" xml:space="preserve">
+    <value>An Leabhar bhaineann le suaitheadh ​​agus portents an Uair Last</value>
+  </data>
+  <data name="IslamInfo_muslimBook56" xml:space="preserve">
+    <value>An Leabhar bhaineann le cráifeacht agus softening na Hearts</value>
+  </data>
+  <data name="IslamInfo_muslimBook57" xml:space="preserve">
+    <value>An Leabhar Tráchtaireacht</value>
+  </data>
+  <data name="IslamInfo_muslimBook6" xml:space="preserve">
+    <value>An Leabhar Mosques agus Áiteanna Urnaí</value>
+  </data>
+  <data name="IslamInfo_muslimBook7" xml:space="preserve">
+    <value>An Leabhar na hUrnaí (Lucht Siúil)</value>
+  </data>
+  <data name="IslamInfo_muslimBook8" xml:space="preserve">
+    <value>An Leabhar na hUrnaí (Dé hAoine)</value>
+  </data>
+  <data name="IslamInfo_muslimBook9" xml:space="preserve">
+    <value>An Leabhar na hUrnaí (Dhá Eids)</value>
+  </data>
+  <data name="IslamInfo_PrayerUnits" xml:space="preserve">
+    <value>Aonaid Urnaí</value>
+  </data>
+  <data name="IslamInfo_QuranChapter1" xml:space="preserve">
+    <value>An Oscailt</value>
+  </data>
+  <data name="IslamInfo_QuranChapter10" xml:space="preserve">
+    <value>Jonas</value>
+  </data>
+  <data name="IslamInfo_QuranChapter100" xml:space="preserve">
+    <value>An Chargers</value>
+  </data>
+  <data name="IslamInfo_QuranChapter101" xml:space="preserve">
+    <value>An Calamity</value>
+  </data>
+  <data name="IslamInfo_QuranChapter102" xml:space="preserve">
+    <value>Comórtas</value>
+  </data>
+  <data name="IslamInfo_QuranChapter103" xml:space="preserve">
+    <value>An Lá meath, Aga</value>
+  </data>
+  <data name="IslamInfo_QuranChapter104" xml:space="preserve">
+    <value>An Traducer</value>
+  </data>
+  <data name="IslamInfo_QuranChapter105" xml:space="preserve">
+    <value>An Eilifint</value>
+  </data>
+  <data name="IslamInfo_QuranChapter106" xml:space="preserve">
+    <value>Quraysh</value>
+  </data>
+  <data name="IslamInfo_QuranChapter107" xml:space="preserve">
+    <value>Almsgiving</value>
+  </data>
+  <data name="IslamInfo_QuranChapter108" xml:space="preserve">
+    <value>Raidhse</value>
+  </data>
+  <data name="IslamInfo_QuranChapter109" xml:space="preserve">
+    <value>Na disbelievers</value>
+  </data>
+  <data name="IslamInfo_QuranChapter11" xml:space="preserve">
+    <value>HUD</value>
+  </data>
+  <data name="IslamInfo_QuranChapter110" xml:space="preserve">
+    <value>Tacaíocht Dhiaga</value>
+  </data>
+  <data name="IslamInfo_QuranChapter111" xml:space="preserve">
+    <value>An Snáithín Palm</value>
+  </data>
+  <data name="IslamInfo_QuranChapter112" xml:space="preserve">
+    <value>Sincerity</value>
+  </data>
+  <data name="IslamInfo_QuranChapter113" xml:space="preserve">
+    <value>An Dawn</value>
+  </data>
+  <data name="IslamInfo_QuranChapter114" xml:space="preserve">
+    <value>Mankind</value>
+  </data>
+  <data name="IslamInfo_QuranChapter12" xml:space="preserve">
+    <value>Joseph</value>
+  </data>
+  <data name="IslamInfo_QuranChapter13" xml:space="preserve">
+    <value>An Thunder</value>
+  </data>
+  <data name="IslamInfo_QuranChapter14" xml:space="preserve">
+    <value>Abraham</value>
+  </data>
+  <data name="IslamInfo_QuranChapter15" xml:space="preserve">
+    <value>An Charraig</value>
+  </data>
+  <data name="IslamInfo_QuranChapter16" xml:space="preserve">
+    <value>An Bee</value>
+  </data>
+  <data name="IslamInfo_QuranChapter17" xml:space="preserve">
+    <value>An Turas Oíche</value>
+  </data>
+  <data name="IslamInfo_QuranChapter18" xml:space="preserve">
+    <value>An Uaimh</value>
+  </data>
+  <data name="IslamInfo_QuranChapter19" xml:space="preserve">
+    <value>Máire</value>
+  </data>
+  <data name="IslamInfo_QuranChapter2" xml:space="preserve">
+    <value>An mBó</value>
+  </data>
+  <data name="IslamInfo_QuranChapter20" xml:space="preserve">
+    <value>Lampaí-Haa</value>
+  </data>
+  <data name="IslamInfo_QuranChapter21" xml:space="preserve">
+    <value>Na Fáithe</value>
+  </data>
+  <data name="IslamInfo_QuranChapter22" xml:space="preserve">
+    <value>An Oilithreacht</value>
+  </data>
+  <data name="IslamInfo_QuranChapter23" xml:space="preserve">
+    <value>Na Believers</value>
+  </data>
+  <data name="IslamInfo_QuranChapter24" xml:space="preserve">
+    <value>An Solas</value>
+  </data>
+  <data name="IslamInfo_QuranChapter25" xml:space="preserve">
+    <value>An Critéar</value>
+  </data>
+  <data name="IslamInfo_QuranChapter26" xml:space="preserve">
+    <value>Na bhFilí</value>
+  </data>
+  <data name="IslamInfo_QuranChapter27" xml:space="preserve">
+    <value>An Seangán</value>
+  </data>
+  <data name="IslamInfo_QuranChapter28" xml:space="preserve">
+    <value>Na Scéalta</value>
+  </data>
+  <data name="IslamInfo_QuranChapter29" xml:space="preserve">
+    <value>An Spider</value>
+  </data>
+  <data name="IslamInfo_QuranChapter3" xml:space="preserve">
+    <value>An Teaghlach an Imraan</value>
+  </data>
+  <data name="IslamInfo_QuranChapter30" xml:space="preserve">
+    <value>Na Rómhánaigh</value>
+  </data>
+  <data name="IslamInfo_QuranChapter31" xml:space="preserve">
+    <value>Luqman</value>
+  </data>
+  <data name="IslamInfo_QuranChapter32" xml:space="preserve">
+    <value>An faonluí</value>
+  </data>
+  <data name="IslamInfo_QuranChapter33" xml:space="preserve">
+    <value>Na Clans</value>
+  </data>
+  <data name="IslamInfo_QuranChapter34" xml:space="preserve">
+    <value>Sheba</value>
+  </data>
+  <data name="IslamInfo_QuranChapter35" xml:space="preserve">
+    <value>An Tionscnóir</value>
+  </data>
+  <data name="IslamInfo_QuranChapter36" xml:space="preserve">
+    <value>Yaseen</value>
+  </data>
+  <data name="IslamInfo_QuranChapter37" xml:space="preserve">
+    <value>Iad siúd a tarraingíodh suas i Chéimnigh</value>
+  </data>
+  <data name="IslamInfo_QuranChapter38" xml:space="preserve">
+    <value>An litir Saad</value>
+  </data>
+  <data name="IslamInfo_QuranChapter39" xml:space="preserve">
+    <value>Grúpaí</value>
+  </data>
+  <data name="IslamInfo_QuranChapter4" xml:space="preserve">
+    <value>Na mBan</value>
+  </data>
+  <data name="IslamInfo_QuranChapter40" xml:space="preserve">
+    <value>An Forgiver</value>
+  </data>
+  <data name="IslamInfo_QuranChapter41" xml:space="preserve">
+    <value>Míniú ar go mion</value>
+  </data>
+  <data name="IslamInfo_QuranChapter42" xml:space="preserve">
+    <value>Comhairliúchán</value>
+  </data>
+  <data name="IslamInfo_QuranChapter43" xml:space="preserve">
+    <value>Ornáidí óir</value>
+  </data>
+  <data name="IslamInfo_QuranChapter44" xml:space="preserve">
+    <value>An Deataigh</value>
+  </data>
+  <data name="IslamInfo_QuranChapter45" xml:space="preserve">
+    <value>Crouching</value>
+  </data>
+  <data name="IslamInfo_QuranChapter46" xml:space="preserve">
+    <value>Na Dumhcha</value>
+  </data>
+  <data name="IslamInfo_QuranChapter47" xml:space="preserve">
+    <value>Muhammad</value>
+  </data>
+  <data name="IslamInfo_QuranChapter48" xml:space="preserve">
+    <value>An Bua</value>
+  </data>
+  <data name="IslamInfo_QuranChapter49" xml:space="preserve">
+    <value>Na Árasáin Istigh</value>
+  </data>
+  <data name="IslamInfo_QuranChapter5" xml:space="preserve">
+    <value>An Tábla</value>
+  </data>
+  <data name="IslamInfo_QuranChapter50" xml:space="preserve">
+    <value>An litir Qaaf</value>
+  </data>
+  <data name="IslamInfo_QuranChapter51" xml:space="preserve">
+    <value>Na F. winnowing</value>
+  </data>
+  <data name="IslamInfo_QuranChapter52" xml:space="preserve">
+    <value>An Sliabh</value>
+  </data>
+  <data name="IslamInfo_QuranChapter53" xml:space="preserve">
+    <value>The Star</value>
+  </data>
+  <data name="IslamInfo_QuranChapter54" xml:space="preserve">
+    <value>An Ghealach</value>
+  </data>
+  <data name="IslamInfo_QuranChapter55" xml:space="preserve">
+    <value>An beneficent</value>
+  </data>
+  <data name="IslamInfo_QuranChapter56" xml:space="preserve">
+    <value>An dosheachanta</value>
+  </data>
+  <data name="IslamInfo_QuranChapter57" xml:space="preserve">
+    <value>An Iarann</value>
+  </data>
+  <data name="IslamInfo_QuranChapter58" xml:space="preserve">
+    <value>An Bhean Pléadáil</value>
+  </data>
+  <data name="IslamInfo_QuranChapter59" xml:space="preserve">
+    <value>An Exile</value>
+  </data>
+  <data name="IslamInfo_QuranChapter6" xml:space="preserve">
+    <value>Eallaigh na</value>
+  </data>
+  <data name="IslamInfo_QuranChapter60" xml:space="preserve">
+    <value>Sí go bhfuil a scrúdú</value>
+  </data>
+  <data name="IslamInfo_QuranChapter61" xml:space="preserve">
+    <value>Na Céimeanna</value>
+  </data>
+  <data name="IslamInfo_QuranChapter62" xml:space="preserve">
+    <value>Dé hAoine</value>
+  </data>
+  <data name="IslamInfo_QuranChapter63" xml:space="preserve">
+    <value>An hypocrites</value>
+  </data>
+  <data name="IslamInfo_QuranChapter64" xml:space="preserve">
+    <value>Disillusion Frithpháirteach</value>
+  </data>
+  <data name="IslamInfo_QuranChapter65" xml:space="preserve">
+    <value>Colscaradh</value>
+  </data>
+  <data name="IslamInfo_QuranChapter66" xml:space="preserve">
+    <value>An Toirmeasc</value>
+  </data>
+  <data name="IslamInfo_QuranChapter67" xml:space="preserve">
+    <value>An Flaitheas</value>
+  </data>
+  <data name="IslamInfo_QuranChapter68" xml:space="preserve">
+    <value>An Peann</value>
+  </data>
+  <data name="IslamInfo_QuranChapter69" xml:space="preserve">
+    <value>An Réaltacht</value>
+  </data>
+  <data name="IslamInfo_QuranChapter7" xml:space="preserve">
+    <value>Na Heights</value>
+  </data>
+  <data name="IslamInfo_QuranChapter70" xml:space="preserve">
+    <value>Na Staighrí Ag dul suas</value>
+  </data>
+  <data name="IslamInfo_QuranChapter71" xml:space="preserve">
+    <value>Noah</value>
+  </data>
+  <data name="IslamInfo_QuranChapter72" xml:space="preserve">
+    <value>An Jinn</value>
+  </data>
+  <data name="IslamInfo_QuranChapter73" xml:space="preserve">
+    <value>An Enshrouded a hAon</value>
+  </data>
+  <data name="IslamInfo_QuranChapter74" xml:space="preserve">
+    <value>An cloaked a hAon</value>
+  </data>
+  <data name="IslamInfo_QuranChapter75" xml:space="preserve">
+    <value>An Aiséirí</value>
+  </data>
+  <data name="IslamInfo_QuranChapter76" xml:space="preserve">
+    <value>Fear</value>
+  </data>
+  <data name="IslamInfo_QuranChapter77" xml:space="preserve">
+    <value>Na emissaries</value>
+  </data>
+  <data name="IslamInfo_QuranChapter78" xml:space="preserve">
+    <value>An Fógra</value>
+  </data>
+  <data name="IslamInfo_QuranChapter79" xml:space="preserve">
+    <value>Iad siúd a tarraing amach</value>
+  </data>
+  <data name="IslamInfo_QuranChapter8" xml:space="preserve">
+    <value>An spoils an Chogaidh</value>
+  </data>
+  <data name="IslamInfo_QuranChapter80" xml:space="preserve">
+    <value>Frowned sé</value>
+  </data>
+  <data name="IslamInfo_QuranChapter81" xml:space="preserve">
+    <value>An overthrowing</value>
+  </data>
+  <data name="IslamInfo_QuranChapter82" xml:space="preserve">
+    <value>An cleaving</value>
+  </data>
+  <data name="IslamInfo_QuranChapter83" xml:space="preserve">
+    <value>Calaois a dhéanamh ar</value>
+  </data>
+  <data name="IslamInfo_QuranChapter84" xml:space="preserve">
+    <value>An scoilteadh Oscailte</value>
+  </data>
+  <data name="IslamInfo_QuranChapter85" xml:space="preserve">
+    <value>An Constellations</value>
+  </data>
+  <data name="IslamInfo_QuranChapter86" xml:space="preserve">
+    <value>An Morning Star</value>
+  </data>
+  <data name="IslamInfo_QuranChapter87" xml:space="preserve">
+    <value>An chuid is mó Ard</value>
+  </data>
+  <data name="IslamInfo_QuranChapter88" xml:space="preserve">
+    <value>An mhillteanach</value>
+  </data>
+  <data name="IslamInfo_QuranChapter89" xml:space="preserve">
+    <value>An Dawn</value>
+  </data>
+  <data name="IslamInfo_QuranChapter9" xml:space="preserve">
+    <value>An aithrí</value>
+  </data>
+  <data name="IslamInfo_QuranChapter90" xml:space="preserve">
+    <value>An Chathair</value>
+  </data>
+  <data name="IslamInfo_QuranChapter91" xml:space="preserve">
+    <value>An Ghrian</value>
+  </data>
+  <data name="IslamInfo_QuranChapter92" xml:space="preserve">
+    <value>An Oíche</value>
+  </data>
+  <data name="IslamInfo_QuranChapter93" xml:space="preserve">
+    <value>Na Uaireanta Maidin</value>
+  </data>
+  <data name="IslamInfo_QuranChapter94" xml:space="preserve">
+    <value>An sólás</value>
+  </data>
+  <data name="IslamInfo_QuranChapter95" xml:space="preserve">
+    <value>An Fig</value>
+  </data>
+  <data name="IslamInfo_QuranChapter96" xml:space="preserve">
+    <value>An clot</value>
+  </data>
+  <data name="IslamInfo_QuranChapter97" xml:space="preserve">
+    <value>An Cumhacht, i ndán di</value>
+  </data>
+  <data name="IslamInfo_QuranChapter98" xml:space="preserve">
+    <value>An Fhianaise</value>
+  </data>
+  <data name="IslamInfo_QuranChapter99" xml:space="preserve">
+    <value>An Crith Talún</value>
+  </data>
+  <data name="IslamInfo_Terminating" xml:space="preserve">
+    <value>Foirceannaidh</value>
+  </data>
+  <data name="IslamInfo_Translation" xml:space="preserve">
+    <value>Aistriúchán</value>
+  </data>
+  <data name="IslamInfo_Transliteration" xml:space="preserve">
+    <value>Transliteration</value>
+  </data>
+  <data name="IslamInfo_UnicodeName" xml:space="preserve">
+    <value>Unicode Ainm</value>
+  </data>
+  <data name="IslamInfo_UnicodeValue" xml:space="preserve">
+    <value>Unicode Luach</value>
+  </data>
+  <data name="unicode_ArabicComma" xml:space="preserve">
+    <value>Araibis Camóga</value>
+  </data>
+  <data name="unicode_ArabicDamma" xml:space="preserve">
+    <value>Araibis Damma</value>
+  </data>
+  <data name="unicode_ArabicDammatan" xml:space="preserve">
+    <value>Araibis Dammatan</value>
+  </data>
+  <data name="unicode_ArabicEmptyCentreHighStop" xml:space="preserve">
+    <value>Araibis Folamh Ionad Ard-Stop</value>
+  </data>
+  <data name="unicode_ArabicEmptyCentreLowStop" xml:space="preserve">
+    <value>Araibis Folamh Ionad Íseal Stop</value>
+  </data>
+  <data name="unicode_ArabicEndOfAyah" xml:space="preserve">
+    <value>Araibis Deireadh ayah</value>
+  </data>
+  <data name="unicode_ArabicFatha" xml:space="preserve">
+    <value>Araibis Fatha</value>
+  </data>
+  <data name="unicode_ArabicFathatan" xml:space="preserve">
+    <value>Araibis Fathatan</value>
+  </data>
+  <data name="unicode_ArabicHamzaAbove" xml:space="preserve">
+    <value>Araibis Hamza Os cionn</value>
+  </data>
+  <data name="unicode_ArabicHamzaBelow" xml:space="preserve">
+    <value>Araibis Hamza Thíos</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitEight" xml:space="preserve">
+    <value>Digit Araibis-Indic ocht</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitFive" xml:space="preserve">
+    <value>Digit Araibis-Indic Cúig</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitFour" xml:space="preserve">
+    <value>Digit Araibis-Indic Ceathair</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitNine" xml:space="preserve">
+    <value>Digit Araibis-Indic Naoi</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitOne" xml:space="preserve">
+    <value>Araibis-Indic amháin Digit</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitSeven" xml:space="preserve">
+    <value>Digit Araibis-Indic Seacht</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitSix" xml:space="preserve">
+    <value>Digit Araibis-Indic Sé</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitThree" xml:space="preserve">
+    <value>Digit Araibis-Indic Trí</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitTwo" xml:space="preserve">
+    <value>Digit Araibis-Indic a Dó</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitZero" xml:space="preserve">
+    <value>Digit Araibis-Indic nialais</value>
+  </data>
+  <data name="unicode_ArabicKasra" xml:space="preserve">
+    <value>Araibis Kasra</value>
+  </data>
+  <data name="unicode_ArabicKasratan" xml:space="preserve">
+    <value>Araibis Kasratan</value>
+  </data>
+  <data name="unicode_ArabicLetterAin" xml:space="preserve">
+    <value>Araibis Litir Ain</value>
+  </data>
+  <data name="unicode_ArabicLetterAlef" xml:space="preserve">
+    <value>Araibis Litir Alef</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefMaksura" xml:space="preserve">
+    <value>Araibis Litir Alef Maksura</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefWasla" xml:space="preserve">
+    <value>Araibis Litir Alef Wasla</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefWithHamzaAbove" xml:space="preserve">
+    <value>Araibis Litir Alef Le Hamza Os cionn</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefWithHamzaBelow" xml:space="preserve">
+    <value>Araibis Litir Alef Le Hamza Thíos</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefWithMaddaAbove" xml:space="preserve">
+    <value>Araibis Litir Alef Le Madda Os cionn</value>
+  </data>
+  <data name="unicode_ArabicLetterBeh" xml:space="preserve">
+    <value>Araibis Litir BEH</value>
+  </data>
+  <data name="unicode_ArabicLetterDad" xml:space="preserve">
+    <value>Araibis Litir Daid</value>
+  </data>
+  <data name="unicode_ArabicLetterDal" xml:space="preserve">
+    <value>Araibis Litir Dál</value>
+  </data>
+  <data name="unicode_ArabicLetterFeh" xml:space="preserve">
+    <value>Araibis Litir Feh</value>
+  </data>
+  <data name="unicode_ArabicLetterGaf" xml:space="preserve">
+    <value>Araibis Litir Gaf</value>
+  </data>
+  <data name="unicode_ArabicLetterGhain" xml:space="preserve">
+    <value>Araibis Litir Ghain</value>
+  </data>
+  <data name="unicode_ArabicLetterHah" xml:space="preserve">
+    <value>Araibis Litir Hah</value>
+  </data>
+  <data name="unicode_ArabicLetterHamza" xml:space="preserve">
+    <value>Araibis Litir Hamza</value>
+  </data>
+  <data name="unicode_ArabicLetterHeh" xml:space="preserve">
+    <value>Araibis Litir Heh</value>
+  </data>
+  <data name="unicode_ArabicLetterJeem" xml:space="preserve">
+    <value>Araibis Litir Jeem</value>
+  </data>
+  <data name="unicode_ArabicLetterKaf" xml:space="preserve">
+    <value>Araibis Litir KAF</value>
+  </data>
+  <data name="unicode_ArabicLetterKhah" xml:space="preserve">
+    <value>Araibis Litir Khah</value>
+  </data>
+  <data name="unicode_ArabicLetterLam" xml:space="preserve">
+    <value>Araibis Litir Lam</value>
+  </data>
+  <data name="unicode_ArabicLetterMeem" xml:space="preserve">
+    <value>Araibis Litir Meem</value>
+  </data>
+  <data name="unicode_ArabicLetterNoon" xml:space="preserve">
+    <value>Meán lae Litir Araibis</value>
+  </data>
+  <data name="unicode_ArabicLetterPeh" xml:space="preserve">
+    <value>Araibis Litir Peh</value>
+  </data>
+  <data name="unicode_ArabicLetterQaf" xml:space="preserve">
+    <value>Araibis Litir Qaf</value>
+  </data>
+  <data name="unicode_ArabicLetterReh" xml:space="preserve">
+    <value>Araibis Litir reh</value>
+  </data>
+  <data name="unicode_ArabicLetterSad" xml:space="preserve">
+    <value>Araibis Litir Sad</value>
+  </data>
+  <data name="unicode_ArabicLetterSeen" xml:space="preserve">
+    <value>Litir Araibis Seen</value>
+  </data>
+  <data name="unicode_ArabicLetterSheen" xml:space="preserve">
+    <value>Araibis Litir Sheen</value>
+  </data>
+  <data name="unicode_ArabicLetterSuperscriptAlef" xml:space="preserve">
+    <value>Araibis Litir Forscript Alef</value>
+  </data>
+  <data name="unicode_ArabicLetterTah" xml:space="preserve">
+    <value>Araibis Litir Tah</value>
+  </data>
+  <data name="unicode_ArabicLetterTcheh" xml:space="preserve">
+    <value>Araibis Litir Tcheh</value>
+  </data>
+  <data name="unicode_ArabicLetterTeh" xml:space="preserve">
+    <value>Araibis Litir Teh</value>
+  </data>
+  <data name="unicode_ArabicLetterTehMarbuta" xml:space="preserve">
+    <value>Araibis Litir Teh Marbuta</value>
+  </data>
+  <data name="unicode_ArabicLetterThal" xml:space="preserve">
+    <value>Araibis Litir Thal</value>
+  </data>
+  <data name="unicode_ArabicLetterTheh" xml:space="preserve">
+    <value>Araibis Litir Theh</value>
+  </data>
+  <data name="unicode_ArabicLetterVeh" xml:space="preserve">
+    <value>Araibis Litir Feithiclí</value>
+  </data>
+  <data name="unicode_ArabicLetterWaw" xml:space="preserve">
+    <value>Araibis Litir WAW</value>
+  </data>
+  <data name="unicode_ArabicLetterWawWithHamzaAbove" xml:space="preserve">
+    <value>Araibis Litir WAW Le Hamza Os cionn</value>
+  </data>
+  <data name="unicode_ArabicLetterYeh" xml:space="preserve">
+    <value>Araibis Litir Yeh</value>
+  </data>
+  <data name="unicode_ArabicLetterYehWithHamzaAbove" xml:space="preserve">
+    <value>Araibis Litir Yeh Le Hamza Os cionn</value>
+  </data>
+  <data name="unicode_ArabicLetterZah" xml:space="preserve">
+    <value>Araibis Litir Zah</value>
+  </data>
+  <data name="unicode_ArabicLetterZain" xml:space="preserve">
+    <value>Araibis Litir Zain</value>
+  </data>
+  <data name="unicode_ArabicLigatureAkbarIsolatedForm" xml:space="preserve">
+    <value>Araibis Ligature le Akbar scoite Foirm</value>
+  </data>
+  <data name="unicode_ArabicLigatureAlayheIsolatedForm" xml:space="preserve">
+    <value>Foirm Araibis Ligature le Alayhe scoite</value>
+  </data>
+  <data name="unicode_ArabicLigatureAllahIsolatedForm" xml:space="preserve">
+    <value>Foirm Araibis Ligature le Allah scoite</value>
+  </data>
+  <data name="unicode_ArabicLigatureBismillahArRahmanArRaheem" xml:space="preserve">
+    <value>Araibis Ligature le Bismillah Ar-Rahman Ar-Raheem</value>
+  </data>
+  <data name="unicode_ArabicLigatureJallajalalouhou" xml:space="preserve">
+    <value>Araibis Ligature le Jallajalalouhou</value>
+  </data>
+  <data name="unicode_ArabicLigatureMohammadIsolatedForm" xml:space="preserve">
+    <value>Araibis Ligature le Mohammad scoite Foirm</value>
+  </data>
+  <data name="unicode_ArabicLigatureQalaUsedAsKoranicStopSignIsolatedForm" xml:space="preserve">
+    <value>Araibis Ligature le Qala Úsáidte Mar Koranic Stop Sign Foirm scoite</value>
+  </data>
+  <data name="unicode_ArabicLigatureRasoulIsolatedForm" xml:space="preserve">
+    <value>Araibis Ligature le Rasoul scoite Foirm</value>
+  </data>
+  <data name="unicode_ArabicLigatureSalamIsolatedForm" xml:space="preserve">
+    <value>Araibis Ligature le Salam scoite Foirm</value>
+  </data>
+  <data name="unicode_ArabicLigatureSallaIsolatedForm" xml:space="preserve">
+    <value>Foirm scoite Araibis Ligature le Salla</value>
+  </data>
+  <data name="unicode_ArabicLigatureSallallahouAlayheWasallam" xml:space="preserve">
+    <value>Araibis Ligature le Sallallahou Alayhe Wasallam</value>
+  </data>
+  <data name="unicode_ArabicLigatureSallaUsedAsKoranicStopSignIsolatedForm" xml:space="preserve">
+    <value>Araibis Ligature le Salla Úsáidte Mar Foirm Cláraigh scoite Koranic Stop</value>
+  </data>
+  <data name="unicode_ArabicLigatureWasallamIsolatedForm" xml:space="preserve">
+    <value>Foirm Araibis Ligature le Wasallam scoite</value>
+  </data>
+  <data name="unicode_ArabicMaddahAbove" xml:space="preserve">
+    <value>Araibis Maddah Os cionn</value>
+  </data>
+  <data name="unicode_ArabicPlaceOfSajdah" xml:space="preserve">
+    <value>Araibis Áit Sajdah</value>
+  </data>
+  <data name="unicode_ArabicQuestionMark" xml:space="preserve">
+    <value>Araibis Ceist Marc</value>
+  </data>
+  <data name="unicode_ArabicRoundedHighStopWithFilledCentre" xml:space="preserve">
+    <value>Araibis Slánaithe Ard Stop Le Lárionad Líonta</value>
+  </data>
+  <data name="unicode_ArabicSemicolon" xml:space="preserve">
+    <value>Araibis Leathstad</value>
+  </data>
+  <data name="unicode_ArabicShadda" xml:space="preserve">
+    <value>Araibis Shadda</value>
+  </data>
+  <data name="unicode_ArabicSmallHighJeem" xml:space="preserve">
+    <value>Araibis Beaga Ard Jeem</value>
+  </data>
+  <data name="unicode_ArabicSmallHighLamAlef" xml:space="preserve">
+    <value>Araibis Beaga Ard Lam Alef</value>
+  </data>
+  <data name="unicode_ArabicSmallHighLigatureQafWithLamWithAlefMaksura" xml:space="preserve">
+    <value>Araibis Beaga Ard Ligature le Qaf Le Lam Le Alef Maksura</value>
+  </data>
+  <data name="unicode_ArabicSmallHighLigatureSadWithLamWithAlefMaksura" xml:space="preserve">
+    <value>Araibis Beaga Ard Ligature le Sad Le Lam Le Alef Maksura</value>
+  </data>
+  <data name="unicode_ArabicSmallHighMeemInitialForm" xml:space="preserve">
+    <value>Araibis Foirm Tosaigh Beaga Ard Meem</value>
+  </data>
+  <data name="unicode_ArabicSmallHighMeemIsolatedForm" xml:space="preserve">
+    <value>Foirm Araibis Beaga Ard Meem scoite</value>
+  </data>
+  <data name="unicode_ArabicSmallHighNoon" xml:space="preserve">
+    <value>Araibis Ard meán lae Beag</value>
+  </data>
+  <data name="unicode_ArabicSmallHighRoundedZero" xml:space="preserve">
+    <value>Araibis Beaga Ard Slánaithe nialais</value>
+  </data>
+  <data name="unicode_ArabicSmallHighSeen" xml:space="preserve">
+    <value>Araibis Ard Beag Seen</value>
+  </data>
+  <data name="unicode_ArabicSmallHighThreeDots" xml:space="preserve">
+    <value>Araibis Beaga Ard a Trí Poncanna</value>
+  </data>
+  <data name="unicode_ArabicSmallHighUprightRectangularZero" xml:space="preserve">
+    <value>Araibis Beaga Upright Ard Dronuilleogach nialais</value>
+  </data>
+  <data name="unicode_ArabicSmallLowMeem" xml:space="preserve">
+    <value>Araibis Beaga Íseal Meem</value>
+  </data>
+  <data name="unicode_ArabicSmallLowSeen" xml:space="preserve">
+    <value>Araibis Beaga Íseal Seen</value>
+  </data>
+  <data name="unicode_ArabicSmallWaw" xml:space="preserve">
+    <value>Araibis WAW Beaga</value>
+  </data>
+  <data name="unicode_ArabicSmallYeh" xml:space="preserve">
+    <value>Araibis Yeh Beaga</value>
+  </data>
+  <data name="unicode_ArabicStartOfRubElHizb" xml:space="preserve">
+    <value>Araibis Tosaigh As Rub El Hizb</value>
+  </data>
+  <data name="unicode_ArabicSukun" xml:space="preserve">
+    <value>Araibis Sukun</value>
+  </data>
+  <data name="unicode_ArabicTatweel" xml:space="preserve">
+    <value>Araibis Tatweel</value>
+  </data>
+  <data name="unicode_Colon" xml:space="preserve">
+    <value>Colon</value>
+  </data>
+  <data name="unicode_Comma" xml:space="preserve">
+    <value>Camóga</value>
+  </data>
+  <data name="unicode_ExclamationMark" xml:space="preserve">
+    <value>Exclamation Mark</value>
+  </data>
+  <data name="unicode_FullStop" xml:space="preserve">
+    <value>Stop Iomlán</value>
+  </data>
+  <data name="unicode_HyphenMinus" xml:space="preserve">
+    <value>Fleiscín-Lúide</value>
+  </data>
+  <data name="unicode_LeftCurlyBracket" xml:space="preserve">
+    <value>Clé Curly Lúibín</value>
+  </data>
+  <data name="unicode_LeftPointingDoubleAngleQuotationMark" xml:space="preserve">
+    <value>Clé-Ag tagairt Double Uillinn Luachana Mark</value>
+  </data>
+  <data name="unicode_LeftSquareBracket" xml:space="preserve">
+    <value>Clé Cearnóg Lúibín</value>
+  </data>
+  <data name="unicode_OrnateLeftParenthesis" xml:space="preserve">
+    <value>Ornate AR CLÉ</value>
+  </data>
+  <data name="unicode_OrnateRightParenthesis" xml:space="preserve">
+    <value>Ornate DHEIS</value>
+  </data>
+  <data name="unicode_QuotationMark" xml:space="preserve">
+    <value>Marcáil Luachan</value>
+  </data>
+  <data name="unicode_RialSign" xml:space="preserve">
+    <value>Rial Cláraigh</value>
+  </data>
+  <data name="unicode_RightCurlyBracket" xml:space="preserve">
+    <value>Ceart Curly Lúibín</value>
+  </data>
+  <data name="unicode_RightPointingDoubleAngleQuotationMark" xml:space="preserve">
+    <value>Ceart-Ag tagairt Double Uillinn Luachana Mark</value>
+  </data>
+  <data name="unicode_RightSquareBracket" xml:space="preserve">
+    <value>Lúibín Ceart Cearnóg</value>
+  </data>
+  <data name="unicode_Space" xml:space="preserve">
+    <value>Spás</value>
+  </data>
+  <data name="IslamInfo_Date" xml:space="preserve">
+    <value>Dáta</value>
+  </data>
+  <data name="IslamInfo_Day" xml:space="preserve">
+    <value>Lá</value>
+  </data>
+  <data name="IslamInfo_Final1" xml:space="preserve">
+    <value>1 Deiridh</value>
+  </data>
+  <data name="IslamInfo_Final1Trans" xml:space="preserve">
+    <value>a bhfuil aon rud cosúil le Eisean agus tá sé an Hearer, an Seer</value>
+  </data>
+  <data name="IslamInfo_Final1WordByWord" xml:space="preserve">
+    <value>a | Níl | Is cosúil dó | rud éigin | agus tá sé | An Hearer | An Seer</value>
+  </data>
+  <data name="IslamInfo_Final2" xml:space="preserve">
+    <value>2 Deiridh</value>
+  </data>
+  <data name="IslamInfo_Final2Trans" xml:space="preserve">
+    <value>O Allah, a sheoladh chuig an paidir is fearr ar do chréatúr fearr Máistir Muhammad</value>
+  </data>
+  <data name="IslamInfo_Final2WordByWord" xml:space="preserve">
+    <value>O Allah | seol | an chuid is fearr | paidir | ar | is fearr | de do chruthú | Máistir | Muhammad</value>
+  </data>
+  <data name="IslamInfo_Final3" xml:space="preserve">
+    <value>3 Deiridh</value>
+  </data>
+  <data name="IslamInfo_Final3Trans" xml:space="preserve">
+    <value>Agus síocháin agus dúch a chuid focal agus aon uair a dóibh siúd a cuimhneamh air é sin a dhéanamh agus aon uair iad siúd a faillí a mheabhrú dó é sin a dhéanamh</value>
+  </data>
+  <data name="IslamInfo_Final3WordByWord" xml:space="preserve">
+    <value>Agus síocháin | bhítear ag athchomhaireamh | chuid eolais | agus dúch | chuid focal | uair | cuimhin Eisean | sin a dhéanamh | agus aon uair a dóibh siúd a faillí | a | cuimhneamh Eisean | sin a dhéanamh</value>
+  </data>
+  <data name="IslamInfo_OMasterSendPrayersAndPeace" xml:space="preserve">
+    <value>O mo Máistir, seol do salutations agus beannacht</value>
+  </data>
+  <data name="IslamInfo_OMasterSendPrayersAndPeaceTrans" xml:space="preserve">
+    <value>O mo Máistir, seol do salutations agus beannacht go deo Ar Do ionmhain, an chuid is fearr ar an iomlán de a chruthú</value>
+  </data>
+  <data name="IslamInfo_OMasterSendPrayersAndPeaceWordByWord" xml:space="preserve">
+    <value>O mo Máistir | seol do salutations | agus beannacht | i gcónaí | eternally | ar | Do Beloved | an chuid is fearr | chruthú | ar an iomlán</value>
+  </data>
+  <data name="IslamInfo_PopularIslamicSongVerses" xml:space="preserve">
+    <value>Coitianta Ioslamach Verses Song</value>
+  </data>
+  <data name="IslamInfo_RemembranceFirst" xml:space="preserve">
+    <value>Cuimhneacháin Céad</value>
+  </data>
+  <data name="IslamInfo_RemembranceFirstTrans" xml:space="preserve">
+    <value>Tá an ceart chun a worshipped Dada ach tú (O Allah)), glorified (agus exalted) Tá tú (thar aon rud eile go (olc) chomhlachú siad leis Tú).</value>
+  </data>
+  <data name="IslamInfo_RemembranceFirstWordByWord" xml:space="preserve">
+    <value>Dada | Tá an ceart chun a worshipped | ach | Tá tú | glorified Tá tú | Fíor | tá mé | de | an mícheart-doers</value>
+  </data>
+  <data name="IslamInfo_RemembranceSecond" xml:space="preserve">
+    <value>Cuimhneacháin Dara</value>
+  </data>
+  <data name="IslamInfo_RemembranceSecondTrans" xml:space="preserve">
+    <value>Allah (Aonair) Teastaíonn a dhóthain dúinn, agus tá sé an Disposer Fearr chúrsaí (dúinn);</value>
+  </data>
+  <data name="IslamInfo_RemembranceSecondWordByWord" xml:space="preserve">
+    <value>Dóthain dúinn | Allah | agus tá sé an Fearr | Disposer chúrsaí | Cad é an scoth | Pátrún | agus cad a fheabhas | Helper</value>
+  </data>
+  <data name="IslamInfo_RemembranceThird" xml:space="preserve">
+    <value>Cuimhneacháin Tríú</value>
+  </data>
+  <data name="IslamInfo_RemembranceThirdTrans" xml:space="preserve">
+    <value>Níl aon neart (a staonadh ó pheacaí ach le cosaint ó Allah) agus níl aon chumhacht (a chur i gcrích gníomhais maith), ach le cabhair ó Allah, an Ard, an Uachtarach</value>
+  </data>
+  <data name="IslamInfo_RemembranceThirdWordByWord" xml:space="preserve">
+    <value>Níl aon | neart | agus níl aon | chumhacht | seachas | le Allah | Ard | Uachtarach</value>
+  </data>
+  <data name="IslamInfo_SendBlessingsFirst" xml:space="preserve">
+    <value>Seol Beannachtaí Céad</value>
+  </data>
+  <data name="IslamInfo_SendBlessingsFirstTrans" xml:space="preserve">
+    <value>Allah, seol do trócaire ar Muhammad agus a shliocht mar a chuir tú do trócaire ar Abraham agus a shliocht.</value>
+  </data>
+  <data name="IslamInfo_SendBlessingsFirstWordByWord" xml:space="preserve">
+    <value>O Allah | seol Do trócaire | ar | Muhammad | agus ar | shliocht | de Eisean | mar atá | chuir tú Do trócaire | ar | Abraham | agus ar | shliocht | de Eisean | fírinneach go bhfuil tú | An chuid is mó Mhol | An chuid is mó Bhua |</value>
+  </data>
+  <data name="IslamInfo_SendBlessingsSecond" xml:space="preserve">
+    <value>Seol Beannachtaí Dara</value>
+  </data>
+  <data name="IslamInfo_SendBlessingsSecondTrans" xml:space="preserve">
+    <value>Allah, seol do trócaire ar Muhammad agus a shliocht mar a chuir tú do trócaire ar Abraham agus a shliocht.</value>
+  </data>
+  <data name="IslamInfo_SendBlessingsSecondWordByWord" xml:space="preserve">
+    <value>O Allah | seol Do trócaire | ar | Muhammad | agus ar | shliocht | de Eisean | mar atá | chuir tú Do trócaire | ar | Abraham | agus ar | shliocht | de Eisean | fírinneach go bhfuil tú | An chuid is mó Mhol | An chuid is mó Bhua |</value>
+  </data>
+  <data name="IslamInfo_TheBestNames" xml:space="preserve">
+    <value>An Ainmneacha Fearr</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoon" xml:space="preserve">
+    <value>An Ghealach Bán</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonEighth" xml:space="preserve">
+    <value>An tOchtú</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonEighthTrans" xml:space="preserve">
+    <value>Fáilte tú a glaoch orainn chun ar bhealach maith</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonEighthWordByWord" xml:space="preserve">
+    <value>Fáilte | leat a ghlaoch linn | le dea | bhealach</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonFifth" xml:space="preserve">
+    <value>Cúigiú</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonFifthTrans" xml:space="preserve">
+    <value>Ó ár Messenger (Emissary) i measc dúinn</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonFifthWordByWord" xml:space="preserve">
+    <value>Ó | ár Messenger | measc dúinn</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonFirst" xml:space="preserve">
+    <value>An Chéad</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonFirstTrans" xml:space="preserve">
+    <value>Ó d'ardaigh an ghealach bán os cionn linn</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonFirstWordByWord" xml:space="preserve">
+    <value>Ó d'ardaigh | an ghealach bán | os cionn linn</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonFourth" xml:space="preserve">
+    <value>Ceathrú</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonFourthTrans" xml:space="preserve">
+    <value>Chun é a cuireadh dúinn ar an mbealach Allah</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonFourthWordByWord" xml:space="preserve">
+    <value>Chun é | a cuireadh dúinn | a Allah | ar an mbealach</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonSecond" xml:space="preserve">
+    <value>Dara</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonSecondTrans" xml:space="preserve">
+    <value>Ón an ghleann (áit a bhfuair sé) a dtugtar</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonSecondWordByWord" xml:space="preserve">
+    <value>Ón | an ghleann | dtugtar</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonSeventh" xml:space="preserve">
+    <value>Seachtú</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonSeventhTrans" xml:space="preserve">
+    <value>Tá tú a thabhairt ar an uaisle na cathrach</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonSeventhWordByWord" xml:space="preserve">
+    <value>Tá tú a thug | uaisle | chun an chathair</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonSixth" xml:space="preserve">
+    <value>Séú</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonSixthTrans" xml:space="preserve">
+    <value>Cé a thagann leis na exhortations (urghairí / fheictear) a bheith heeded</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonSixthWordByWord" xml:space="preserve">
+    <value>Cé a thagann | leis an Commandments | a bheidh le géilleadh</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonThird" xml:space="preserve">
+    <value>Tríú</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonThirdTrans" xml:space="preserve">
+    <value>Agus tá sé de dhualgas orainn buíochas a thaispeáint</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonThirdWordByWord" xml:space="preserve">
+    <value>Agus tá sé de dhualgas | graditude a thaispeáint | ar dúinn</value>
+  </data>
+  <data name="IslamInfo_AllahKnowsBest" xml:space="preserve">
+    <value>Fhios Allah is fearr</value>
+  </data>
+  <data name="IslamInfo_AllahSaysTheTruth" xml:space="preserve">
+    <value>Is í an fhírinne ó Allah, an chuid is mó iontach</value>
+  </data>
+  <data name="IslamInfo_AllahSufficesMe" xml:space="preserve">
+    <value>Dóthain do dom go bhfuil Allah</value>
+  </data>
+  <data name="IslamInfo_AllahWilledItSo" xml:space="preserve">
+    <value>Allah Tá willed sé chomh</value>
+  </data>
+  <data name="IslamInfo_AllahWilling" xml:space="preserve">
+    <value>Má uachtanna Allah sé chomh</value>
+  </data>
+  <data name="IslamInfo_AndUponYouBePeaceAndMercyOfAllah" xml:space="preserve">
+    <value>Agus ar tú a bheith síochána agus an trócaire Allah</value>
+  </data>
+  <data name="IslamInfo_AndUponYouBePeaceAndMercyOfAllahAndBlessings" xml:space="preserve">
+    <value>Agus ar tú a bheith síochána agus an trócaire Allah agus a blessings</value>
+  </data>
+  <data name="IslamInfo_BlessingsOfAllah" xml:space="preserve">
+    <value>Beannachtaí de Allah</value>
+  </data>
+  <data name="IslamInfo_GloriousAndExaltedBeHe" xml:space="preserve">
+    <value>Glorious agus exalted a bheith aige</value>
+  </data>
+  <data name="IslamInfo_IAskAllahForgiveness" xml:space="preserve">
+    <value>Iarr mé maithiúnas ó Allah</value>
+  </data>
+  <data name="IslamInfo_InProtectionOfAllah" xml:space="preserve">
+    <value>I cosaint Allah</value>
+  </data>
+  <data name="IslamInfo_InThePathOfAllah" xml:space="preserve">
+    <value>I an chúis Allah</value>
+  </data>
+  <data name="IslamInfo_MayAllahBePleased" xml:space="preserve">
+    <value>May Allah a bheith sásta leo</value>
+  </data>
+  <data name="IslamInfo_MayAllahBlessYou" xml:space="preserve">
+    <value>Beannachtaí ar tú ó Allah</value>
+  </data>
+  <data name="IslamInfo_MayAllahHaveMercy" xml:space="preserve">
+    <value>May Allah trócaire orthu</value>
+  </data>
+  <data name="IslamInfo_MayAllahProtectYou" xml:space="preserve">
+    <value>May Allah tú a chosaint</value>
+  </data>
+  <data name="IslamInfo_MayAllahWillItSo" xml:space="preserve">
+    <value>Bealtaine beidh Allah sé chomh</value>
+  </data>
+  <data name="IslamInfo_PeaceBeUponYouAndMercyOfAllah" xml:space="preserve">
+    <value>Síocháin a bheith agat, agus an trócaire Allah</value>
+  </data>
+  <data name="IslamInfo_PeaceBeUponYouAndMercyOfAllahAndBlessings" xml:space="preserve">
+    <value>Síocháin a bheith agat, agus an trócaire Allah agus a blessings</value>
+  </data>
+  <data name="IslamInfo_SeekRefugeWithAllahFromSatanRejected" xml:space="preserve">
+    <value>Mé ag lorg tearmainn le Allah ó Satan an diúltaithe</value>
+  </data>
+  <data name="IslamInfo_SublimeAndMighty" xml:space="preserve">
+    <value>Sublime agus Mighty</value>
+  </data>
+  <data name="IslamInfo_TrulyFromAllahWeComeAndToHimWillReturn" xml:space="preserve">
+    <value>Fíor ó Allah ní mór dúinn teacht, agus go fírinneach a dó beidh muid ar ais</value>
+  </data>
+  <data name="Acct_CertRequest" xml:space="preserve">
+    <value>Iarratas Teastais</value>
+  </data>
+  <data name="Acct_Certificate" xml:space="preserve">
+    <value>Teastas</value>
+  </data>
+  <data name="Acct_CertInstall" xml:space="preserve">
+    <value>Suiteáil Teastas</value>
+  </data>
+  <data name="Acct_CurrentUser" xml:space="preserve">
+    <value>Úsáideoir Reatha</value>
+  </data>
+  <data name="Acct_DeleteCertRequest" xml:space="preserve">
+    <value>Scrios Teastais Iarratas</value>
+  </data>
+  <data name="Acct_EnableSSL" xml:space="preserve">
+    <value>Cumasaigh SSL</value>
+  </data>
+  <data name="Acct_PrivateKey" xml:space="preserve">
+    <value>Eochair Phríobháideach</value>
+  </data>
+  <data name="Acct_ViewCertRequests" xml:space="preserve">
+    <value>Iarratais Féach Teastas</value>
+  </data>
+  <data name="Acct_ViewSites" xml:space="preserve">
+    <value>Láithreáin Féach ar</value>
+  </data>
+  <data name="Acct_CertInstallIntermed" xml:space="preserve">
+    <value>Suiteáil Teastas Idirmheánach</value>
+  </data>
+  <data name="IslamInfo_UniqueLetters" xml:space="preserve">
+    <value>Litreacha uathúil</value>
+  </data>
+  <data name="IslamInfo_SoulStates" xml:space="preserve">
+    <value>Stáit Soul</value>
+  </data>
+  <data name="IslamInfo_Abbreviations" xml:space="preserve">
+    <value>Giorrúcháin</value>
+  </data>
+  <data name="IslamInfo_Names" xml:space="preserve">
+    <value>Ainmneacha</value>
+  </data>
+  <data name="IslamInfo_Places" xml:space="preserve">
+    <value>Áiteanna</value>
+  </data>
+  <data name="IslamInfo_Abbasid" xml:space="preserve">
+    <value>Abbasid</value>
+  </data>
+  <data name="IslamInfo_AbdullahBinMasood" xml:space="preserve">
+    <value>Abdullah bin Masood</value>
+  </data>
+  <data name="IslamInfo_AbuBakrAlSaddiq" xml:space="preserve">
+    <value>Abu Bakr Al-Saddiq</value>
+  </data>
+  <data name="IslamInfo_AbuDahr" xml:space="preserve">
+    <value>Abu Dahr</value>
+  </data>
+  <data name="IslamInfo_AbuHanifa" xml:space="preserve">
+    <value>Abu Hanifa</value>
+  </data>
+  <data name="IslamInfo_AbuHurairah" xml:space="preserve">
+    <value>AbuHurairah</value>
+  </data>
+  <data name="IslamInfo_AbuJahal" xml:space="preserve">
+    <value>Abu Jahal</value>
+  </data>
+  <data name="IslamInfo_AbuLahab" xml:space="preserve">
+    <value>Abu Lahab</value>
+  </data>
+  <data name="IslamInfo_AbuSufyan" xml:space="preserve">
+    <value>Abu Sufyan</value>
+  </data>
+  <data name="IslamInfo_Aisha" xml:space="preserve">
+    <value>Aisha</value>
+  </data>
+  <data name="IslamInfo_AliBinAbuTalib" xml:space="preserve">
+    <value>Ali araid Abu Talib</value>
+  </data>
+  <data name="IslamInfo_AlLaythBinSaad" xml:space="preserve">
+    <value>Al-Layth araid Saad</value>
+  </data>
+  <data name="IslamInfo_Allowed" xml:space="preserve">
+    <value>Ceadaithe</value>
+  </data>
+  <data name="IslamInfo_AlMansoor" xml:space="preserve">
+    <value>Al-Mansoor</value>
+  </data>
+  <data name="IslamInfo_AlMuwata" xml:space="preserve">
+    <value>Al-Muwata</value>
+  </data>
+  <data name="IslamInfo_AlWahsi" xml:space="preserve">
+    <value>Al-Wahsi</value>
+  </data>
+  <data name="IslamInfo_AmrBinAlAas" xml:space="preserve">
+    <value>Amr araid Al-Aas</value>
+  </data>
+  <data name="IslamInfo_AndEveryone" xml:space="preserve">
+    <value>Agus gach duine</value>
+  </data>
+  <data name="IslamInfo_Angel" xml:space="preserve">
+    <value>Angel</value>
+  </data>
+  <data name="IslamInfo_Arrogance" xml:space="preserve">
+    <value>Arrogance</value>
+  </data>
+  <data name="IslamInfo_AskForgiveness" xml:space="preserve">
+    <value>Iarr ar maithiúnas</value>
+  </data>
+  <data name="IslamInfo_Azar" xml:space="preserve">
+    <value>Azar</value>
+  </data>
+  <data name="IslamInfo_Balance" xml:space="preserve">
+    <value>Iarmhéid</value>
+  </data>
+  <data name="IslamInfo_BaniHashim" xml:space="preserve">
+    <value>Bani Hashim</value>
+  </data>
+  <data name="IslamInfo_BaniThaqeef" xml:space="preserve">
+    <value>Bani Thaqeef</value>
+  </data>
+  <data name="IslamInfo_Biography" xml:space="preserve">
+    <value>Beathaisnéis</value>
+  </data>
+  <data name="IslamInfo_Bless" xml:space="preserve">
+    <value>Beannaigh</value>
+  </data>
+  <data name="IslamInfo_Caliphate" xml:space="preserve">
+    <value>Caliphate</value>
+  </data>
+  <data name="IslamInfo_CallToIslam" xml:space="preserve">
+    <value>Call Chun Ioslam</value>
+  </data>
+  <data name="IslamInfo_Certainty" xml:space="preserve">
+    <value>Cinnteacht</value>
+  </data>
+  <data name="IslamInfo_Cohabitation" xml:space="preserve">
+    <value>Aontíos</value>
+  </data>
+  <data name="IslamInfo_Commentary" xml:space="preserve">
+    <value>Tráchtaireacht</value>
+  </data>
+  <data name="IslamInfo_Community" xml:space="preserve">
+    <value>Pobail</value>
+  </data>
+  <data name="IslamInfo_Companions" xml:space="preserve">
+    <value>Companions</value>
+  </data>
+  <data name="IslamInfo_Concensus" xml:space="preserve">
+    <value>Concensus</value>
+  </data>
+  <data name="IslamInfo_Concentration" xml:space="preserve">
+    <value>Tiúchan</value>
+  </data>
+  <data name="IslamInfo_Congregation" xml:space="preserve">
+    <value>Bpobal</value>
+  </data>
+  <data name="IslamInfo_Conquest" xml:space="preserve">
+    <value>Conquest</value>
+  </data>
+  <data name="IslamInfo_Deeds" xml:space="preserve">
+    <value>Gníomhais</value>
+  </data>
+  <data name="IslamInfo_Delivery" xml:space="preserve">
+    <value>Seachadadh</value>
+  </data>
+  <data name="IslamInfo_Dessertion" xml:space="preserve">
+    <value>Dessertion</value>
+  </data>
+  <data name="IslamInfo_Digger" xml:space="preserve">
+    <value>Digger</value>
+  </data>
+  <data name="IslamInfo_Disbeliever" xml:space="preserve">
+    <value>Disbeliever</value>
+  </data>
+  <data name="IslamInfo_Division" xml:space="preserve">
+    <value>Rannán</value>
+  </data>
+  <data name="IslamInfo_Do" xml:space="preserve">
+    <value>An bhfuil</value>
+  </data>
+  <data name="IslamInfo_Doctrine" xml:space="preserve">
+    <value>Teagasc</value>
+  </data>
+  <data name="IslamInfo_Empowering" xml:space="preserve">
+    <value>Chumasú</value>
+  </data>
+  <data name="IslamInfo_Excellence" xml:space="preserve">
+    <value>Barr Feabhais</value>
+  </data>
+  <data name="IslamInfo_Faith" xml:space="preserve">
+    <value>Faith</value>
+  </data>
+  <data name="IslamInfo_Faithful" xml:space="preserve">
+    <value>Dílis</value>
+  </data>
+  <data name="IslamInfo_Fight" xml:space="preserve">
+    <value>An comhrac in</value>
+  </data>
+  <data name="IslamInfo_Fighter" xml:space="preserve">
+    <value>Trodaire</value>
+  </data>
+  <data name="IslamInfo_Firdaus" xml:space="preserve">
+    <value>Firdaus</value>
+  </data>
+  <data name="IslamInfo_Forgiving" xml:space="preserve">
+    <value>Forgiving</value>
+  </data>
+  <data name="IslamInfo_Fornication" xml:space="preserve">
+    <value>Fornication</value>
+  </data>
+  <data name="IslamInfo_Gabriel" xml:space="preserve">
+    <value>Gabriel</value>
+  </data>
+  <data name="IslamInfo_Gardens" xml:space="preserve">
+    <value>Gairdíní</value>
+  </data>
+  <data name="IslamInfo_GloriousAndExaltedBeHeAbbr" xml:space="preserve">
+    <value>SWT</value>
+  </data>
+  <data name="IslamInfo_Goodness" xml:space="preserve">
+    <value>Feabhas</value>
+  </data>
+  <data name="IslamInfo_Guardian" xml:space="preserve">
+    <value>Caomhnóir</value>
+  </data>
+  <data name="IslamInfo_Guidance1" xml:space="preserve">
+    <value>Treoir</value>
+  </data>
+  <data name="IslamInfo_Hammad" xml:space="preserve">
+    <value>Hammad</value>
+  </data>
+  <data name="IslamInfo_HamzaBinAbduAlMuttalib" xml:space="preserve">
+    <value>Hamza bin Al-Abdu Muttalib</value>
+  </data>
+  <data name="IslamInfo_Hanbal" xml:space="preserve">
+    <value>Hanbal</value>
+  </data>
+  <data name="IslamInfo_Hasan" xml:space="preserve">
+    <value>Hasan</value>
+  </data>
+  <data name="IslamInfo_HeartSofteners" xml:space="preserve">
+    <value>Softeners Croí</value>
+  </data>
+  <data name="IslamInfo_Hell" xml:space="preserve">
+    <value>Ifreann</value>
+  </data>
+  <data name="IslamInfo_Hereafter" xml:space="preserve">
+    <value>Dhiaidh</value>
+  </data>
+  <data name="IslamInfo_Hind" xml:space="preserve">
+    <value>Hind</value>
+  </data>
+  <data name="IslamInfo_Hudabiyyah" xml:space="preserve">
+    <value>Hudabiyyah</value>
+  </data>
+  <data name="IslamInfo_Hunain" xml:space="preserve">
+    <value>Hunain</value>
+  </data>
+  <data name="IslamInfo_Hussein" xml:space="preserve">
+    <value>Hussein</value>
+  </data>
+  <data name="IslamInfo_Hypocrite" xml:space="preserve">
+    <value>Hypocrite</value>
+  </data>
+  <data name="IslamInfo_ImamNawawi40Hadith" xml:space="preserve">
+    <value>Imam Nawawi 40 Hadith</value>
+  </data>
+  <data name="IslamInfo_Impact" xml:space="preserve">
+    <value>Tionchar</value>
+  </data>
+  <data name="IslamInfo_Innovation" xml:space="preserve">
+    <value>Nuálaíocht</value>
+  </data>
+  <data name="IslamInfo_Intention" xml:space="preserve">
+    <value>Rún</value>
+  </data>
+  <data name="IslamInfo_Introduction" xml:space="preserve">
+    <value>Réamhrá</value>
+  </data>
+  <data name="IslamInfo_Invocation" xml:space="preserve">
+    <value>Agairt</value>
+  </data>
+  <data name="IslamInfo_Jinn" xml:space="preserve">
+    <value>Jinn</value>
+  </data>
+  <data name="IslamInfo_Kaaba" xml:space="preserve">
+    <value>Kaaba</value>
+  </data>
+  <data name="IslamInfo_KhadijahBintiKhuwaylid" xml:space="preserve">
+    <value>Khadijah binti Khooaylid</value>
+  </data>
+  <data name="IslamInfo_KhalidBinWalid" xml:space="preserve">
+    <value>Khalid bin Walid</value>
+  </data>
+  <data name="IslamInfo_Knowledgable" xml:space="preserve">
+    <value>Eolach</value>
+  </data>
+  <data name="IslamInfo_Latest" xml:space="preserve">
+    <value>Is Déanaí</value>
+  </data>
+  <data name="IslamInfo_Leader" xml:space="preserve">
+    <value>Ceannaire</value>
+  </data>
+  <data name="IslamInfo_Lecture" xml:space="preserve">
+    <value>Léacht</value>
+  </data>
+  <data name="IslamInfo_Limit" xml:space="preserve">
+    <value>Teorainn</value>
+  </data>
+  <data name="IslamInfo_Loudmouthed" xml:space="preserve">
+    <value>Loudmouthed</value>
+  </data>
+  <data name="IslamInfo_Lucifer" xml:space="preserve">
+    <value>Lucifer</value>
+  </data>
+  <data name="IslamInfo_Madame" xml:space="preserve">
+    <value>Madame</value>
+  </data>
+  <data name="IslamInfo_Malik" xml:space="preserve">
+    <value>Malik</value>
+  </data>
+  <data name="IslamInfo_Mankind" xml:space="preserve">
+    <value>Mankind</value>
+  </data>
+  <data name="IslamInfo_Manners" xml:space="preserve">
+    <value>Manners</value>
+  </data>
+  <data name="IslamInfo_MannersOfDiffering" xml:space="preserve">
+    <value>Manners éagsúla acu</value>
+  </data>
+  <data name="IslamInfo_Master" xml:space="preserve">
+    <value>Máistir</value>
+  </data>
+  <data name="IslamInfo_MayAllahBePleasedAbbr" xml:space="preserve">
+    <value>DA</value>
+  </data>
+  <data name="IslamInfo_MayHisGloryBeGlorified" xml:space="preserve">
+    <value>MayHisGloryBeGlorified</value>
+  </data>
+  <data name="IslamInfo_Mecca" xml:space="preserve">
+    <value>Mecca</value>
+  </data>
+  <data name="IslamInfo_Medina" xml:space="preserve">
+    <value>Medina</value>
+  </data>
+  <data name="IslamInfo_Mercy" xml:space="preserve">
+    <value>Trócaire</value>
+  </data>
+  <data name="IslamInfo_MinorPilgrimage" xml:space="preserve">
+    <value>Oilithreacht Mion</value>
+  </data>
+  <data name="IslamInfo_Mosque" xml:space="preserve">
+    <value>Mosc</value>
+  </data>
+  <data name="IslamInfo_Muawiyyah" xml:space="preserve">
+    <value>Muawiyyah</value>
+  </data>
+  <data name="IslamInfo_Mufti" xml:space="preserve">
+    <value>Mufti</value>
+  </data>
+  <data name="IslamInfo_MuhammadBinAbduAlMuttalib" xml:space="preserve">
+    <value>Muhammad bin Al-Abdu Muttalib</value>
+  </data>
+  <data name="IslamInfo_Neck" xml:space="preserve">
+    <value>Muineál</value>
+  </data>
+  <data name="IslamInfo_Nurturing" xml:space="preserve">
+    <value>Chothú</value>
+  </data>
+  <data name="IslamInfo_OBelievers" xml:space="preserve">
+    <value>O Tú Cé Creid</value>
+  </data>
+  <data name="IslamInfo_Optimizer" xml:space="preserve">
+    <value>Optimizer</value>
+  </data>
+  <data name="IslamInfo_Paradise" xml:space="preserve">
+    <value>Paradise</value>
+  </data>
+  <data name="IslamInfo_Patience" xml:space="preserve">
+    <value>Foighne</value>
+  </data>
+  <data name="IslamInfo_Permission" xml:space="preserve">
+    <value>Cead</value>
+  </data>
+  <data name="IslamInfo_Persecution" xml:space="preserve">
+    <value>Géarleanúint</value>
+  </data>
+  <data name="IslamInfo_Piety" xml:space="preserve">
+    <value>Cráifeacht</value>
+  </data>
+  <data name="IslamInfo_PleasedWithDecree" xml:space="preserve">
+    <value>Sásta Le Foraithne</value>
+  </data>
+  <data name="IslamInfo_Polythiest" xml:space="preserve">
+    <value>Polythiest</value>
+  </data>
+  <data name="IslamInfo_Practical" xml:space="preserve">
+    <value>Praiticiúla</value>
+  </data>
+  <data name="IslamInfo_Predestination" xml:space="preserve">
+    <value>Predestination</value>
+  </data>
+  <data name="IslamInfo_PrintedBook" xml:space="preserve">
+    <value>Clóbhuailte Leabhair</value>
+  </data>
+  <data name="IslamInfo_Professor" xml:space="preserve">
+    <value>An tOllamh</value>
+  </data>
+  <data name="IslamInfo_Protector" xml:space="preserve">
+    <value>Protector</value>
+  </data>
+  <data name="IslamInfo_Punishment" xml:space="preserve">
+    <value>Pionós</value>
+  </data>
+  <data name="IslamInfo_Purification" xml:space="preserve">
+    <value>Íonú</value>
+  </data>
+  <data name="IslamInfo_Quraish" xml:space="preserve">
+    <value>Quraish</value>
+  </data>
+  <data name="IslamInfo_Rawdah" xml:space="preserve">
+    <value>Rawdah</value>
+  </data>
+  <data name="IslamInfo_Recite" xml:space="preserve">
+    <value>Aithris</value>
+  </data>
+  <data name="IslamInfo_Religion" xml:space="preserve">
+    <value>Creideamh</value>
+  </data>
+  <data name="IslamInfo_Repentance" xml:space="preserve">
+    <value>Aithrí</value>
+  </data>
+  <data name="IslamInfo_RiadAlJannah" xml:space="preserve">
+    <value>Riad Al-Jannah</value>
+  </data>
+  <data name="IslamInfo_RighteousDealings" xml:space="preserve">
+    <value>Déileálacha Righteous</value>
+  </data>
+  <data name="IslamInfo_RighteousDeeds" xml:space="preserve">
+    <value>Gníomhais Righteous</value>
+  </data>
+  <data name="IslamInfo_SaadBinWaad" xml:space="preserve">
+    <value>Saad bin Waad</value>
+  </data>
+  <data name="IslamInfo_Sacrifice" xml:space="preserve">
+    <value>Íobairt</value>
+  </data>
+  <data name="IslamInfo_Salafi" xml:space="preserve">
+    <value>Salafi</value>
+  </data>
+  <data name="IslamInfo_Satan" xml:space="preserve">
+    <value>Satan</value>
+  </data>
+  <data name="IslamInfo_Satisfaction" xml:space="preserve">
+    <value>Sástacht</value>
+  </data>
+  <data name="IslamInfo_Self" xml:space="preserve">
+    <value>Féin</value>
+  </data>
+  <data name="IslamInfo_Shafii" xml:space="preserve">
+    <value>Shafii</value>
+  </data>
+  <data name="IslamInfo_Sheikh" xml:space="preserve">
+    <value>Sheikh</value>
+  </data>
+  <data name="IslamInfo_ShowingOff" xml:space="preserve">
+    <value>Torthaí Off</value>
+  </data>
+  <data name="IslamInfo_Sin" xml:space="preserve">
+    <value>Sin</value>
+  </data>
+  <data name="IslamInfo_Sir" xml:space="preserve">
+    <value>Sir</value>
+  </data>
+  <data name="IslamInfo_Slaughter" xml:space="preserve">
+    <value>Maraithe</value>
+  </data>
+  <data name="IslamInfo_Slave" xml:space="preserve">
+    <value>Daor</value>
+  </data>
+  <data name="IslamInfo_Speech" xml:space="preserve">
+    <value>Urlabhra</value>
+  </data>
+  <data name="IslamInfo_Sporadic" xml:space="preserve">
+    <value>Sporadic</value>
+  </data>
+  <data name="IslamInfo_Strangers" xml:space="preserve">
+    <value>Strainséirí</value>
+  </data>
+  <data name="IslamInfo_SupplicationsAndPrayers" xml:space="preserve">
+    <value>Supplications agus Paidreacha</value>
+  </data>
+  <data name="IslamInfo_Taaif" xml:space="preserve">
+    <value>Taaif</value>
+  </data>
+  <data name="IslamInfo_Talkative" xml:space="preserve">
+    <value>Cainteach</value>
+  </data>
+  <data name="IslamInfo_ThePrayersOfAllahUponHimAndPeaceAbbr" xml:space="preserve">
+    <value>Chonaic | SOTS</value>
+  </data>
+  <data name="IslamInfo_Throne" xml:space="preserve">
+    <value>Throne</value>
+  </data>
+  <data name="IslamInfo_Trustworthy" xml:space="preserve">
+    <value>Tairiseach</value>
+  </data>
+  <data name="IslamInfo_Truthful" xml:space="preserve">
+    <value>Fíor</value>
+  </data>
+  <data name="IslamInfo_UmarBinAlKhattab" xml:space="preserve">
+    <value>Umar araide Al-Khattab</value>
+  </data>
+  <data name="IslamInfo_Umayyad" xml:space="preserve">
+    <value>Umayyad</value>
+  </data>
+  <data name="IslamInfo_Universal" xml:space="preserve">
+    <value>Uilíoch</value>
+  </data>
+  <data name="IslamInfo_Unseen" xml:space="preserve">
+    <value>Unseen</value>
+  </data>
+  <data name="IslamInfo_UponHimBePeaceAbbr" xml:space="preserve">
+    <value>MAR</value>
+  </data>
+  <data name="IslamInfo_UthmanBinAfwan" xml:space="preserve">
+    <value>Uthman bin Afwan</value>
+  </data>
+  <data name="IslamInfo_VoluntaryKindness" xml:space="preserve">
+    <value>Kindness Deonach</value>
+  </data>
+  <data name="IslamInfo_Wahhabi" xml:space="preserve">
+    <value>Wahhabi</value>
+  </data>
+  <data name="IslamInfo_Wisdom" xml:space="preserve">
+    <value>Wisdom</value>
+  </data>
+  <data name="IslamInfo_Witnessing" xml:space="preserve">
+    <value>Chonaic</value>
+  </data>
+  <data name="IslamInfo_World" xml:space="preserve">
+    <value>Domhanda</value>
+  </data>
+  <data name="IslamInfo_Worship" xml:space="preserve">
+    <value>Adhradh</value>
+  </data>
+  <data name="IslamInfo_IslamicPhrases" xml:space="preserve">
+    <value>Frásaí Ioslamach</value>
+  </data>
+  <data name="IslamSource_QuranWords" xml:space="preserve">
+    <value>Focail Quran</value>
+  </data>
+  <data name="IslamSource_UniqueWordTotal" xml:space="preserve">
+    <value>Uathúil Focal Iomlán</value>
+  </data>
+  <data name="IslamSource_WordTotal" xml:space="preserve">
+    <value>Focal Iomlán</value>
+  </data>
+  <data name="IslamSource_FixDirectionalMarkers" xml:space="preserve">
+    <value>Deisigh Treo Marcóirí</value>
+  </data>
+  <data name="unicode_LeftToRightEmbedding" xml:space="preserve">
+    <value>Clé-Le-Ceart Leabú</value>
+  </data>
+  <data name="unicode_RightToLeftEmbedding" xml:space="preserve">
+    <value>Ceart-Le-Chlé Leabú</value>
+  </data>
+  <data name="unicode_LeftToRightMark" xml:space="preserve">
+    <value>Clé-Le-Ceart Mark</value>
+  </data>
+  <data name="unicode_LeftToRightOverride" xml:space="preserve">
+    <value>Sáraigh Clé-Chun-An ceart</value>
+  </data>
+  <data name="unicode_PopDirectionalFormatting" xml:space="preserve">
+    <value>Pop Treo Formáidiú</value>
+  </data>
+  <data name="unicode_RightToLeftMark" xml:space="preserve">
+    <value>Ceart-Le-Chlé Mark</value>
+  </data>
+  <data name="unicode_RightToLeftOverride" xml:space="preserve">
+    <value>Sáraigh Ceart-Chun-Chlé</value>
+  </data>
+  <data name="IslamSource_CurrentMonth" xml:space="preserve">
+    <value>Mí Reatha</value>
+  </data>
+  <data name="IslamSource_HijriCalendar" xml:space="preserve">
+    <value>Hijri Féilire</value>
+  </data>
+</root>

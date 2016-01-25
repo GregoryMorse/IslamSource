@@ -1,0 +1,4275 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Acct_AccountActivateSuccess" xml:space="preserve">
+    <value>アカウントが正常にアクティブ化。</value>
+  </data>
+  <data name="Acct_AccountAlreadyActivated" xml:space="preserve">
+    <value>アカウントはすでに有効化。</value>
+  </data>
+  <data name="Acct_AccountDeleteSuccess" xml:space="preserve">
+    <value>アカウントが正常に削除されました。</value>
+  </data>
+  <data name="Acct_AccountNotActivated" xml:space="preserve">
+    <value>まだアクティブになっていないアカウントは、まずあなたの電子メールをチェックしたり、追加のアクティベーションコードをリクエストしてください。</value>
+  </data>
+  <data name="Acct_ActivateAccount" xml:space="preserve">
+    <value>アカウントを有効化</value>
+  </data>
+  <data name="Acct_ActivationAccountBody" xml:space="preserve">
+    <value>{1}：このメールは、あなたの{0}アカウントの有効化を要求している。</value>
+  </data>
+  <data name="Acct_ActivationAccountSubject" xml:space="preserve">
+    <value>{0}でのアカウントのアクティベーション</value>
+  </data>
+  <data name="Acct_ActivationCode" xml:space="preserve">
+    <value>アクティベーションコード</value>
+  </data>
+  <data name="Acct_BadEmailFormat" xml:space="preserve">
+    <value>メールアドレス有効な形式ではありません。</value>
+  </data>
+  <data name="Acct_Certain" xml:space="preserve">
+    <value>あなたは確信している？</value>
+  </data>
+  <data name="Acct_ChangeEmailAddress" xml:space="preserve">
+    <value>電子メールアドレスを変更</value>
+  </data>
+  <data name="Acct_ChangePassword" xml:space="preserve">
+    <value>パスワードを変更</value>
+  </data>
+  <data name="Acct_ChangeUsername" xml:space="preserve">
+    <value>ユーザー名を変更する</value>
+  </data>
+  <data name="Acct_CheckEmailNotice" xml:space="preserve">
+    <value>活性化は提供されたアドレスに送信されます。</value>
+  </data>
+  <data name="Acct_ConfirmEmailAddress" xml:space="preserve">
+    <value>メールアドレスを確認する</value>
+  </data>
+  <data name="Acct_ConfirmPassword" xml:space="preserve">
+    <value>パスワードを確認</value>
+  </data>
+  <data name="Acct_ControlPanel" xml:space="preserve">
+    <value>コントロールパネル</value>
+  </data>
+  <data name="Acct_DeleteAccount" xml:space="preserve">
+    <value>アカウントの削除</value>
+  </data>
+  <data name="Acct_DuplicateUser" xml:space="preserve">
+    <value>この名前のユーザーがすでに別のを選択してください、存在し​​ています。</value>
+  </data>
+  <data name="Acct_EmailAddress" xml:space="preserve">
+    <value>Eメールアドレス</value>
+  </data>
+  <data name="Acct_EmailChangeReactivate" xml:space="preserve">
+    <value>E-mailアドレスが変更され、アクティベーションの電子メールには、アカウントを再開するために送った。</value>
+  </data>
+  <data name="Acct_EmailInUse" xml:space="preserve">
+    <value>既に使用されている電子メールは、既存の認証情報でログインしてください。</value>
+  </data>
+  <data name="Acct_EmailsNotMatch" xml:space="preserve">
+    <value>電子メールアドレスが一致していません</value>
+  </data>
+  <data name="Acct_ForgotPassword" xml:space="preserve">
+    <value>パスワードを忘れた</value>
+  </data>
+  <data name="Acct_ForgotUsername" xml:space="preserve">
+    <value>ユーザー名をお忘れですか</value>
+  </data>
+  <data name="Acct_Home" xml:space="preserve">
+    <value>ホーム</value>
+  </data>
+  <data name="Acct_IncorrectActivationCode" xml:space="preserve">
+    <value>間違ったアクティベーションコード。</value>
+  </data>
+  <data name="Acct_IncorrectPasswordResetCode" xml:space="preserve">
+    <value>不正なパスワード·リセット·コード。</value>
+  </data>
+  <data name="Acct_InvalidInput" xml:space="preserve">
+    <value>無効な入力。</value>
+  </data>
+  <data name="Acct_InvalidUsernamePassword" xml:space="preserve">
+    <value>無効なユーザー名またはパスワード。</value>
+  </data>
+  <data name="Acct_Login" xml:space="preserve">
+    <value>ログイン</value>
+  </data>
+  <data name="Acct_LoginSuccess" xml:space="preserve">
+    <value>ログインに成功する。</value>
+  </data>
+  <data name="Acct_Logoff" xml:space="preserve">
+    <value>ログオフ</value>
+  </data>
+  <data name="Acct_LogoffSuccess" xml:space="preserve">
+    <value>ログオフに成功。</value>
+  </data>
+  <data name="Acct_MinimumPassword" xml:space="preserve">
+    <value>パスワードは8文字以上でなければなりません。</value>
+  </data>
+  <data name="Acct_MinimumUsername" xml:space="preserve">
+    <value>ユーザ名は4文字以上でなければなりません。</value>
+  </data>
+  <data name="Acct_No" xml:space="preserve">
+    <value>いいえ</value>
+  </data>
+  <data name="Acct_NotConfirmDelete" xml:space="preserve">
+    <value>アカウントの削除を確認する必要があります。</value>
+  </data>
+  <data name="Acct_NoUserExists" xml:space="preserve">
+    <value>どのユーザーが入力した電子メールアドレスに存在しません。</value>
+  </data>
+  <data name="Acct_Password" xml:space="preserve">
+    <value>パスワード</value>
+  </data>
+  <data name="Acct_PasswordAlreadyReset" xml:space="preserve">
+    <value>パスワードはすでにリセットまたはプロセスが開始されません。</value>
+  </data>
+  <data name="Acct_PasswordChangedBody" xml:space="preserve">
+    <value>{1}：このメールは、あなたの{0}アカウントのパスワード変更を通知することです。</value>
+  </data>
+  <data name="Acct_PasswordChangedSubject" xml:space="preserve">
+    <value>パスワードには、アカウントの変更{0}</value>
+  </data>
+  <data name="Acct_PasswordChangeSuccess" xml:space="preserve">
+    <value>パスワードが正常に変更されました。</value>
+  </data>
+  <data name="Acct_PasswordEmailSent" xml:space="preserve">
+    <value>電子メールには、パスワードのリセット処理を開始するために、ファイルをあなたのアドレスに送信されました。</value>
+  </data>
+  <data name="Acct_PasswordResetBody" xml:space="preserve">
+    <value>このメールは、あなたの{0}アカウントのパスワードをリセットすることです：{1}。</value>
+  </data>
+  <data name="Acct_PasswordResetCode" xml:space="preserve">
+    <value>パスワードリセットコード</value>
+  </data>
+  <data name="Acct_PasswordResetSubject" xml:space="preserve">
+    <value>{0}でのアカウントのパスワードのリセット</value>
+  </data>
+  <data name="Acct_PasswordResetSuccess" xml:space="preserve">
+    <value>パスワードが正常にリセット。</value>
+  </data>
+  <data name="Acct_PasswordsNotMatch" xml:space="preserve">
+    <value>パスワードが一致しません</value>
+  </data>
+  <data name="Acct_Register" xml:space="preserve">
+    <value>登録</value>
+  </data>
+  <data name="Acct_Remember" xml:space="preserve">
+    <value>覚えていますか？</value>
+  </data>
+  <data name="Acct_ResendActivationEmail" xml:space="preserve">
+    <value>アクティベーションの電子メールを再送信</value>
+  </data>
+  <data name="Acct_ResetPassword" xml:space="preserve">
+    <value>パスワードを再設定する</value>
+  </data>
+  <data name="Acct_RetrievePassword" xml:space="preserve">
+    <value>パスワードを取得する</value>
+  </data>
+  <data name="Acct_RetrieveUsername" xml:space="preserve">
+    <value>ユーザー名を取得</value>
+  </data>
+  <data name="Acct_SendActivationCode" xml:space="preserve">
+    <value>アクティベーションコードを送ってください</value>
+  </data>
+  <data name="Acct_Username" xml:space="preserve">
+    <value>ユーザ名</value>
+  </data>
+  <data name="Acct_UsernameChangedBody" xml:space="preserve">
+    <value>{1}：このメールは、あなたの{0}アカウントのアカウント名の変更を通知することです。</value>
+  </data>
+  <data name="Acct_UsernameChangedSubject" xml:space="preserve">
+    <value>ユーザ名は{0}でアカウントの変更</value>
+  </data>
+  <data name="Acct_UsernameChangeSuccess" xml:space="preserve">
+    <value>ユーザー名の変更に成功しました。</value>
+  </data>
+  <data name="Acct_UsernameEmailSent" xml:space="preserve">
+    <value>電子メールには、あなたのユーザー名を使用してファイルのあなたのアドレスに送信されました。</value>
+  </data>
+  <data name="Acct_UsernameReminderBody" xml:space="preserve">
+    <value>{1}：このメールは、あなたの{0}アカウントのリマインダーです。</value>
+  </data>
+  <data name="Acct_UsernameReminderSubject" xml:space="preserve">
+    <value>{0}でのアカウントのユーザ名リマインダ</value>
+  </data>
+  <data name="Acct_UserNotFound" xml:space="preserve">
+    <value>ユーザーは存在しません。</value>
+  </data>
+  <data name="Acct_Yes" xml:space="preserve">
+    <value>はい</value>
+  </data>
+  <data name="Acct_CleanupStale" xml:space="preserve">
+    <value>クリーンアップ古い</value>
+  </data>
+  <data name="Acct_ClearCache" xml:space="preserve">
+    <value>キャッシュのクリア</value>
+  </data>
+  <data name="Acct_ClearDiskCache" xml:space="preserve">
+    <value>ディスクキャッシュのクリア</value>
+  </data>
+  <data name="Acct_CreateDatabase" xml:space="preserve">
+    <value>データベースの作成</value>
+  </data>
+  <data name="Acct_DotNetVersion" xml:space="preserve">
+    <value>ドットネットバージョン</value>
+  </data>
+  <data name="Acct_RemoveDatabase" xml:space="preserve">
+    <value>データベースの削除</value>
+  </data>
+  <data name="Acct_ViewCache" xml:space="preserve">
+    <value>ビューキャッシ​​ュ</value>
+  </data>
+  <data name="Acct_ViewDiskCache" xml:space="preserve">
+    <value>ビューディスクキャッシュ</value>
+  </data>
+  <data name="Acct_ViewHeaders" xml:space="preserve">
+    <value>ビューヘッダー</value>
+  </data>
+  <data name="Hadith_Book" xml:space="preserve">
+    <value>本</value>
+  </data>
+  <data name="Hadith_Books" xml:space="preserve">
+    <value>図書</value>
+  </data>
+  <data name="Hadith_Chapters" xml:space="preserve">
+    <value>チャプター</value>
+  </data>
+  <data name="Hadith_Hadith" xml:space="preserve">
+    <value>ハディース</value>
+  </data>
+  <data name="Hadith_Hadiths" xml:space="preserve">
+    <value>ハディース</value>
+  </data>
+  <data name="Hadith_IdenticalNumbering" xml:space="preserve">
+    <value>同一の番号付け</value>
+  </data>
+  <data name="Hadith_Index" xml:space="preserve">
+    <value>インデックス</value>
+  </data>
+  <data name="Hadith_MappedOf" xml:space="preserve">
+    <value>{0} {1}のマッピングされた</value>
+  </data>
+  <data name="Hadith_NoTranslation" xml:space="preserve">
+    <value>いいえ翻訳ません</value>
+  </data>
+  <data name="Hadith_SourceHadithIndex" xml:space="preserve">
+    <value>ソースハディースインデックス</value>
+  </data>
+  <data name="Hadith_Translation" xml:space="preserve">
+    <value>翻訳</value>
+  </data>
+  <data name="Hadith_TranslationBook" xml:space="preserve">
+    <value>翻訳出版</value>
+  </data>
+  <data name="Hadith_TranslationHadithCount" xml:space="preserve">
+    <value>翻訳ハディースカウント</value>
+  </data>
+  <data name="Hadith_TranslationHadithIndex" xml:space="preserve">
+    <value>翻訳ハディースインデックス</value>
+  </data>
+  <data name="Hadith_TranslationMapping" xml:space="preserve">
+    <value>変換マッピング</value>
+  </data>
+  <data name="Hadith_TranslationVolume" xml:space="preserve">
+    <value>翻訳量</value>
+  </data>
+  <data name="Hadith_Volume" xml:space="preserve">
+    <value>ボリューム</value>
+  </data>
+  <data name="IslamSource_Apply" xml:space="preserve">
+    <value>適用する</value>
+  </data>
+  <data name="IslamSource_ArabicAlphabet" xml:space="preserve">
+    <value>アラビア文字</value>
+  </data>
+  <data name="IslamSource_ArabicToRoman" xml:space="preserve">
+    <value>ローマのアラビア語</value>
+  </data>
+  <data name="IslamSource_Book" xml:space="preserve">
+    <value>本</value>
+  </data>
+  <data name="IslamSource_Collection" xml:space="preserve">
+    <value>コレクション</value>
+  </data>
+  <data name="IslamSource_Credits" xml:space="preserve">
+    <value>コー​​ランのテキストのクレジットはTanzilプロジェクトになります。</value>
+  </data>
+  <data name="IslamSource_Direction" xml:space="preserve">
+    <value>方向</value>
+  </data>
+  <data name="IslamSource_Disable" xml:space="preserve">
+    <value>無効にする</value>
+  </data>
+  <data name="IslamSource_Display" xml:space="preserve">
+    <value>ディスプレイ</value>
+  </data>
+  <data name="IslamSource_Division" xml:space="preserve">
+    <value>分裂</value>
+  </data>
+  <data name="IslamSource_DownloadMapping" xml:space="preserve">
+    <value>ダウンロードとマッピング</value>
+  </data>
+  <data name="IslamSource_EnglishRomanized" xml:space="preserve">
+    <value>英語ローマ字</value>
+  </data>
+  <data name="IslamSource_ExtendedBuckwalter" xml:space="preserve">
+    <value>拡張されたバックウォルター</value>
+  </data>
+  <data name="IslamSource_Font" xml:space="preserve">
+    <value>フォント</value>
+  </data>
+  <data name="IslamSource_Goal" xml:space="preserve">
+    <value>このウェブサイトは、コーラン、ハディースのコレクション、書籍、オーディオ、ビデオ、ニュース、語彙、音訳システムやプログラミング情報など、イスラム教に関する生のソースの材料を提供することを目的とする。</value>
+  </data>
+  <data name="IslamSource_Hadiths" xml:space="preserve">
+    <value>ハディースのコレクション</value>
+  </data>
+  <data name="IslamSource_HadithSourceText" xml:space="preserve">
+    <value>ハディースソーステキスト</value>
+  </data>
+  <data name="IslamSource_Home" xml:space="preserve">
+    <value>ホーム</value>
+  </data>
+  <data name="IslamSource_Information" xml:space="preserve">
+    <value>情報</value>
+  </data>
+  <data name="IslamSource_Intro" xml:space="preserve">
+    <value>ご質問やご意見、またはエラーが、で私にメールしてください。</value>
+  </data>
+  <data name="IslamSource_Introduction" xml:space="preserve">
+    <value>はじめに</value>
+  </data>
+  <data name="IslamSource_IslamicArticles" xml:space="preserve">
+    <value>イスラムの記事</value>
+  </data>
+  <data name="IslamSource_IslamicCharity" xml:space="preserve">
+    <value>イスラムチャリティー</value>
+  </data>
+  <data name="IslamSource_IslamicFoundations" xml:space="preserve">
+    <value>イスラム財団</value>
+  </data>
+  <data name="IslamSource_IslamicInformation" xml:space="preserve">
+    <value>イスラム情報</value>
+  </data>
+  <data name="IslamSource_IslamicNews" xml:space="preserve">
+    <value>イスラム教のニュース</value>
+  </data>
+  <data name="IslamSource_IslamicOrganizations" xml:space="preserve">
+    <value>イスラム団体</value>
+  </data>
+  <data name="IslamSource_IslamicQuotes" xml:space="preserve">
+    <value>イスラム引用</value>
+  </data>
+  <data name="IslamSource_IslamicShops" xml:space="preserve">
+    <value>イスラムショップ</value>
+  </data>
+  <data name="IslamSource_IslamicWebsites" xml:space="preserve">
+    <value>イスラムのウェブサイト</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesAhlulBaytAcademy" xml:space="preserve">
+    <value>AhlulBaytアカデミー</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesAlEman" xml:space="preserve">
+    <value>فصل：كتابالمقدمة|نداءالإيمان</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesAlHudaInternationalWelfareFoundation" xml:space="preserve">
+    <value>アル·フダ国際福祉財団</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesAllahsQuran" xml:space="preserve">
+    <value>アッラーのコーラン</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesCorpus" xml:space="preserve">
+    <value>コー​​ランのアラビア語コーパス</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesCouncilAmericanIslamicRelations" xml:space="preserve">
+    <value>アメリカのイスラム問題評議会</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesDarusSalamPublications" xml:space="preserve">
+    <value>DAR-US-サラム出版物</value>
+  </data>
+  <data name="IslamSource_IslamicWebsiteseMuslim" xml:space="preserve">
+    <value>eMuslim</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesGuidedWaysTechnologies" xml:space="preserve">
+    <value>ガイド付きウェイズ·テクノロジーズ</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesHouseQuran" xml:space="preserve">
+    <value>コー​​ランの家</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesiQuran" xml:space="preserve">
+    <value>iQuran</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesIslamicCircleNorthAmerica" xml:space="preserve">
+    <value>北米イスラムサークル</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesIslamicFinder" xml:space="preserve">
+    <value>イスラムファインダー</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesIslamicInsights" xml:space="preserve">
+    <value>イスラム洞察</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesIslamicRelief" xml:space="preserve">
+    <value>イスラムリリーフ</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesIslamicReliefUSA" xml:space="preserve">
+    <value>イスラムリリーフアメリカ</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesIslamicSearchCenter" xml:space="preserve">
+    <value>イスラム検索センター</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesIslamicSocietyNorthAmerica" xml:space="preserve">
+    <value>北米イスラム協会</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesIslamicThinkersSociety" xml:space="preserve">
+    <value>イスラム思想家協会</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesIslamSpirit" xml:space="preserve">
+    <value>イスラム教の精神</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesKalamullah" xml:space="preserve">
+    <value>Kalamullah</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesMaktabahorgTheUltimateIslamicLibrary" xml:space="preserve">
+    <value>Maktabah.org究極のイスラムライブラリ</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesOpenBurhan" xml:space="preserve">
+    <value>オープンはBurhan</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesProfessorAnsarian" xml:space="preserve">
+    <value>教授Ansarianの公式サイト</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesQuran" xml:space="preserve">
+    <value>コー​​ラン</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesQuranDownload" xml:space="preserve">
+    <value>コー​​ランダウンロード</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesQuranExplorer" xml:space="preserve">
+    <value>クルアーンエクスプローラ</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesQuranicAudio" xml:space="preserve">
+    <value>コー​​ランオーディオ</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesQuranProject" xml:space="preserve">
+    <value>オンラインコーランプロジェクト</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesQuranTransliteration" xml:space="preserve">
+    <value>クルアーン音訳</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesSalah" xml:space="preserve">
+    <value>サラーレフ</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesStudyQuran" xml:space="preserve">
+    <value>研究コーラン</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesSunnahCom" xml:space="preserve">
+    <value>Sunnah.comことわざや預言者ムハンマドの教え（صلىاللهعليهوسلم）</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesTanzil" xml:space="preserve">
+    <value>Tanzil  - コーランナビゲーター</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesTheAbsoluteReality" xml:space="preserve">
+    <value>真如</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesTheAwaitedOneFoundation" xml:space="preserve">
+    <value>待望のワン財団</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesTheIslamicBulletin" xml:space="preserve">
+    <value>イスラム速報</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesTheIslamicFoundation" xml:space="preserve">
+    <value>イスラム財団</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesTheLahoreAhmadiyyaMovement" xml:space="preserve">
+    <value>ラホールアフマディームーブメント</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesTheLahoreAhmadiyyaMovementIslam" xml:space="preserve">
+    <value>イスラム教でのラホールアフマディームーブメント</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesUnderstandQuran" xml:space="preserve">
+    <value>コー​​ランを理解する</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesVerseByVerseQuran" xml:space="preserve">
+    <value>詩コーランによって詩</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesZakatFoundationAmerica" xml:space="preserve">
+    <value>アメリカのザカート財団</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesZekr" xml:space="preserve">
+    <value>Zekrはプロジェクト</value>
+  </data>
+  <data name="IslamSource_LearningIslam" xml:space="preserve">
+    <value>イスラムを学ぶ</value>
+  </data>
+  <data name="IslamSource_LetterSample" xml:space="preserve">
+    <value>A</value>
+  </data>
+  <data name="IslamSource_Loading" xml:space="preserve">
+    <value>荷重</value>
+  </data>
+  <data name="IslamSource_Lotus" xml:space="preserve">
+    <value>蓮</value>
+  </data>
+  <data name="IslamSource_Mapping" xml:space="preserve">
+    <value>マッピング</value>
+  </data>
+  <data name="IslamSource_NotableArticles" xml:space="preserve">
+    <value>注目すべき記事</value>
+  </data>
+  <data name="IslamSource_NotableNews" xml:space="preserve">
+    <value>注目すべきニュース</value>
+  </data>
+  <data name="IslamSource_NotableQuotes" xml:space="preserve">
+    <value>注目すべき引用</value>
+  </data>
+  <data name="IslamSource_Off" xml:space="preserve">
+    <value>オフ</value>
+  </data>
+  <data name="IslamSource_Operation" xml:space="preserve">
+    <value>操作</value>
+  </data>
+  <data name="IslamSource_Perform" xml:space="preserve">
+    <value>実行する</value>
+  </data>
+  <data name="IslamSource_PlainRoman" xml:space="preserve">
+    <value>平野ローマン</value>
+  </data>
+  <data name="IslamSource_PrayerTimes" xml:space="preserve">
+    <value>祈りの時間</value>
+  </data>
+  <data name="IslamSource_QiblaDirectionFromTrueNorth" xml:space="preserve">
+    <value>真北からキブラの方向</value>
+  </data>
+  <data name="IslamSource_Quote" xml:space="preserve">
+    <value>引用</value>
+  </data>
+  <data name="IslamSource_QuoteMode" xml:space="preserve">
+    <value>見積モード</value>
+  </data>
+  <data name="IslamSource_Quran" xml:space="preserve">
+    <value>聖クルアーン</value>
+  </data>
+  <data name="IslamSource_QuranResources" xml:space="preserve">
+    <value>コー​​ランリソース</value>
+  </data>
+  <data name="IslamSource_RomanToArabic" xml:space="preserve">
+    <value>ローマのアラビア語</value>
+  </data>
+  <data name="IslamSource_Scheme" xml:space="preserve">
+    <value>スキーム</value>
+  </data>
+  <data name="IslamSource_Selection" xml:space="preserve">
+    <value>選択</value>
+  </data>
+  <data name="IslamSource_SubmissionNote" xml:space="preserve">
+    <value>提出：元のソースハディースのコレクションは、すべてのボリューム、ブック、章やハディース情報と生ハディースのテキストを含むXMLファイルを含むXMLメタデータ·ファイルが含まれている必要があります。</value>
+  </data>
+  <data name="IslamSource_Supplications" xml:space="preserve">
+    <value>祈願</value>
+  </data>
+  <data name="IslamSource_Text" xml:space="preserve">
+    <value>テキスト</value>
+  </data>
+  <data name="IslamSource_Translation" xml:space="preserve">
+    <value>翻訳</value>
+  </data>
+  <data name="IslamSource_Transliterate" xml:space="preserve">
+    <value>書き写す</value>
+  </data>
+  <data name="IslamSource_Transliteration" xml:space="preserve">
+    <value>音訳</value>
+  </data>
+  <data name="IslamSource_TransliterationScheme" xml:space="preserve">
+    <value>音訳スキーム</value>
+  </data>
+  <data name="IslamSource_Viewer" xml:space="preserve">
+    <value>ビューアー</value>
+  </data>
+  <data name="IslamSource_Welcome" xml:space="preserve">
+    <value>IslamSource.infoへようこそ</value>
+  </data>
+  <data name="IslamSource_ModifyDiacritics" xml:space="preserve">
+    <value>発音区別符号を変更します。</value>
+  </data>
+  <data name="IslamSource_Add" xml:space="preserve">
+    <value>加える</value>
+  </data>
+  <data name="IslamSource_Remove" xml:space="preserve">
+    <value>削除する</value>
+  </data>
+  <data name="IslamInfo_Chapters" xml:space="preserve">
+    <value>チャプター</value>
+  </data>
+  <data name="IslamInfo_ChaptersRevelationOrder" xml:space="preserve">
+    <value>黙示録の順序で各章</value>
+  </data>
+  <data name="IslamInfo_Groups" xml:space="preserve">
+    <value>グループ</value>
+  </data>
+  <data name="IslamInfo_ImportantSelections" xml:space="preserve">
+    <value>重要な選択</value>
+  </data>
+  <data name="IslamInfo_Pages" xml:space="preserve">
+    <value>ページ</value>
+  </data>
+  <data name="IslamInfo_Parts" xml:space="preserve">
+    <value>パーツ</value>
+  </data>
+  <data name="IslamInfo_Prostrations" xml:space="preserve">
+    <value>Prostrations</value>
+  </data>
+  <data name="IslamInfo_Sections" xml:space="preserve">
+    <value>セクション</value>
+  </data>
+  <data name="IslamInfo_Stations" xml:space="preserve">
+    <value>ステーション</value>
+  </data>
+  <data name="lang_localam" xml:space="preserve">
+    <value>アムハラ語</value>
+  </data>
+  <data name="lang_localar" xml:space="preserve">
+    <value>アラビア語</value>
+  </data>
+  <data name="lang_localaz" xml:space="preserve">
+    <value>アゼルバイジャン語</value>
+  </data>
+  <data name="lang_localber" xml:space="preserve">
+    <value>アマジグ</value>
+  </data>
+  <data name="lang_localbg" xml:space="preserve">
+    <value>ブルガリア語</value>
+  </data>
+  <data name="lang_localbn" xml:space="preserve">
+    <value>ベンガル語</value>
+  </data>
+  <data name="lang_localbs" xml:space="preserve">
+    <value>ボスニア</value>
+  </data>
+  <data name="lang_localcs" xml:space="preserve">
+    <value>チェコ語</value>
+  </data>
+  <data name="lang_localde" xml:space="preserve">
+    <value>ドイツ語</value>
+  </data>
+  <data name="lang_localdv" xml:space="preserve">
+    <value>ディベヒ語</value>
+  </data>
+  <data name="lang_localen" xml:space="preserve">
+    <value>英語</value>
+  </data>
+  <data name="lang_locales" xml:space="preserve">
+    <value>スペイン語</value>
+  </data>
+  <data name="lang_localfa" xml:space="preserve">
+    <value>ペルシア語</value>
+  </data>
+  <data name="lang_localfr" xml:space="preserve">
+    <value>フランス語</value>
+  </data>
+  <data name="lang_localha" xml:space="preserve">
+    <value>ハウサ語</value>
+  </data>
+  <data name="lang_localhi" xml:space="preserve">
+    <value>ヒンディー語</value>
+  </data>
+  <data name="lang_localid" xml:space="preserve">
+    <value>インドネシアの</value>
+  </data>
+  <data name="lang_localit" xml:space="preserve">
+    <value>イタリア語</value>
+  </data>
+  <data name="lang_localja" xml:space="preserve">
+    <value>日本の</value>
+  </data>
+  <data name="lang_localko" xml:space="preserve">
+    <value>韓国語</value>
+  </data>
+  <data name="lang_localku" xml:space="preserve">
+    <value>クルド</value>
+  </data>
+  <data name="lang_localml" xml:space="preserve">
+    <value>マラヤーラム語</value>
+  </data>
+  <data name="lang_localms" xml:space="preserve">
+    <value>マレー語</value>
+  </data>
+  <data name="lang_localnl" xml:space="preserve">
+    <value>オランダ語</value>
+  </data>
+  <data name="lang_localno" xml:space="preserve">
+    <value>ノルウェー語</value>
+  </data>
+  <data name="lang_localpl" xml:space="preserve">
+    <value>ポーランド語</value>
+  </data>
+  <data name="lang_localpt" xml:space="preserve">
+    <value>ポルトガル語</value>
+  </data>
+  <data name="lang_localro" xml:space="preserve">
+    <value>ルーマニア語</value>
+  </data>
+  <data name="lang_localru" xml:space="preserve">
+    <value>ロシア</value>
+  </data>
+  <data name="lang_localsd" xml:space="preserve">
+    <value>シンド語</value>
+  </data>
+  <data name="lang_localso" xml:space="preserve">
+    <value>ソマリ</value>
+  </data>
+  <data name="lang_localsq" xml:space="preserve">
+    <value>アルバニア語</value>
+  </data>
+  <data name="lang_localsv" xml:space="preserve">
+    <value>スウェーデン語</value>
+  </data>
+  <data name="lang_localsw" xml:space="preserve">
+    <value>スワヒリ語</value>
+  </data>
+  <data name="lang_localta" xml:space="preserve">
+    <value>タミル語</value>
+  </data>
+  <data name="lang_localtg" xml:space="preserve">
+    <value>タジク語</value>
+  </data>
+  <data name="lang_localth" xml:space="preserve">
+    <value>タイの</value>
+  </data>
+  <data name="lang_localtr" xml:space="preserve">
+    <value>トルコ語</value>
+  </data>
+  <data name="lang_localtt" xml:space="preserve">
+    <value>タタール語</value>
+  </data>
+  <data name="lang_localug" xml:space="preserve">
+    <value>ウイグル</value>
+  </data>
+  <data name="lang_localur" xml:space="preserve">
+    <value>ウルドゥー語</value>
+  </data>
+  <data name="lang_localuz" xml:space="preserve">
+    <value>ウズベク語</value>
+  </data>
+  <data name="lang_localzh" xml:space="preserve">
+    <value>中国の</value>
+  </data>
+  <data name="Acct_Download" xml:space="preserve">
+    <value>ダウンロード{0}</value>
+  </data>
+  <data name="IslamInfo_CelebrationDay" xml:space="preserve">
+    <value>お祝いの日</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek1" xml:space="preserve">
+    <value>日曜日</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek2" xml:space="preserve">
+    <value>月曜日</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek3" xml:space="preserve">
+    <value>火曜日</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek4" xml:space="preserve">
+    <value>水曜日</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek5" xml:space="preserve">
+    <value>木曜日</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek6" xml:space="preserve">
+    <value>金曜日</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek7" xml:space="preserve">
+    <value>土曜日</value>
+  </data>
+  <data name="IslamInfo_DaysOfWeek" xml:space="preserve">
+    <value>曜日</value>
+  </data>
+  <data name="IslamInfo_Disliked" xml:space="preserve">
+    <value>気に入らなかった点</value>
+  </data>
+  <data name="IslamInfo_EnteringMosque" xml:space="preserve">
+    <value>モスクに入る</value>
+  </data>
+  <data name="IslamInfo_Fasting" xml:space="preserve">
+    <value>断食</value>
+  </data>
+  <data name="IslamInfo_FastingAfterFastingMonth" xml:space="preserve">
+    <value>月を実施する際に6日間断食</value>
+  </data>
+  <data name="IslamInfo_FastingBeforeFastingMonth" xml:space="preserve">
+    <value>月を断食する前に断食</value>
+  </data>
+  <data name="IslamInfo_FastingBeginningPilgrimageMonth" xml:space="preserve">
+    <value>巡礼月の最初の9日間を断食</value>
+  </data>
+  <data name="IslamInfo_FastingDayOfArafa" xml:space="preserve">
+    <value>アラファの断食の日</value>
+  </data>
+  <data name="IslamInfo_FastingDayOfAshura" xml:space="preserve">
+    <value>阿修羅の断食の日</value>
+  </data>
+  <data name="IslamInfo_FastingMiddleLunarDays" xml:space="preserve">
+    <value>断食13日、14日と15月の日</value>
+  </data>
+  <data name="IslamInfo_FastingMondayThursday" xml:space="preserve">
+    <value>断食月曜日と木曜日</value>
+  </data>
+  <data name="IslamInfo_FastingMonth" xml:space="preserve">
+    <value>断食月</value>
+  </data>
+  <data name="IslamInfo_FastingMonthPrayer" xml:space="preserve">
+    <value>断食月の祈り</value>
+  </data>
+  <data name="IslamInfo_Fear" xml:space="preserve">
+    <value>恐怖</value>
+  </data>
+  <data name="IslamInfo_Forbidden" xml:space="preserve">
+    <value>禁じられた</value>
+  </data>
+  <data name="IslamInfo_Friday" xml:space="preserve">
+    <value>金曜日</value>
+  </data>
+  <data name="IslamInfo_Fulfilling" xml:space="preserve">
+    <value>充実した</value>
+  </data>
+  <data name="IslamInfo_Funeral" xml:space="preserve">
+    <value>葬儀</value>
+  </data>
+  <data name="IslamInfo_Guidance" xml:space="preserve">
+    <value>指導</value>
+  </data>
+  <data name="IslamInfo_Jurisprudence" xml:space="preserve">
+    <value>法学</value>
+  </data>
+  <data name="IslamInfo_LateNight" xml:space="preserve">
+    <value>夜遅く</value>
+  </data>
+  <data name="IslamInfo_LunarEclipse" xml:space="preserve">
+    <value>月食</value>
+  </data>
+  <data name="IslamInfo_Month1" xml:space="preserve">
+    <value>禁断の1</value>
+  </data>
+  <data name="IslamInfo_Month10" xml:space="preserve">
+    <value>携帯</value>
+  </data>
+  <data name="IslamInfo_Month11" xml:space="preserve">
+    <value>休戦の一つ</value>
+  </data>
+  <data name="IslamInfo_Month12" xml:space="preserve">
+    <value>巡礼の一つ</value>
+  </data>
+  <data name="IslamInfo_Month2" xml:space="preserve">
+    <value>空間</value>
+  </data>
+  <data name="IslamInfo_Month3" xml:space="preserve">
+    <value>最初の春</value>
+  </data>
+  <data name="IslamInfo_Month4" xml:space="preserve">
+    <value>第二のばね</value>
+  </data>
+  <data name="IslamInfo_Month5" xml:space="preserve">
+    <value>乾いた土地の最初の月</value>
+  </data>
+  <data name="IslamInfo_Month6" xml:space="preserve">
+    <value>乾いた土地の番目の月</value>
+  </data>
+  <data name="IslamInfo_Month7" xml:space="preserve">
+    <value>尊敬</value>
+  </data>
+  <data name="IslamInfo_Month8" xml:space="preserve">
+    <value>散在する</value>
+  </data>
+  <data name="IslamInfo_Month9" xml:space="preserve">
+    <value>焦げた</value>
+  </data>
+  <data name="IslamInfo_MorningLight" xml:space="preserve">
+    <value>朝の光</value>
+  </data>
+  <data name="IslamInfo_Necessary" xml:space="preserve">
+    <value>必要</value>
+  </data>
+  <data name="IslamInfo_Neutral" xml:space="preserve">
+    <value>ニュートラル</value>
+  </data>
+  <data name="IslamInfo_ObligationOfSufficiency" xml:space="preserve">
+    <value>充足義務</value>
+  </data>
+  <data name="IslamInfo_ObligationOfTheSelf" xml:space="preserve">
+    <value>自己の義務</value>
+  </data>
+  <data name="IslamInfo_Obligatory" xml:space="preserve">
+    <value>義務的</value>
+  </data>
+  <data name="IslamInfo_Odd" xml:space="preserve">
+    <value>奇数</value>
+  </data>
+  <data name="IslamInfo_OftReturning" xml:space="preserve">
+    <value>OFTを返す</value>
+  </data>
+  <data name="IslamInfo_Permissible" xml:space="preserve">
+    <value>許容される</value>
+  </data>
+  <data name="IslamInfo_Prayer" xml:space="preserve">
+    <value>祈り</value>
+  </data>
+  <data name="IslamInfo_PrayTime6" xml:space="preserve">
+    <value>棄権</value>
+  </data>
+  <data name="IslamInfo_PrayTime7" xml:space="preserve">
+    <value>日の出</value>
+  </data>
+  <data name="IslamInfo_PrayTime8" xml:space="preserve">
+    <value>計算されたサンセット</value>
+  </data>
+  <data name="IslamInfo_PrayTime9" xml:space="preserve">
+    <value>ミッドナイト</value>
+  </data>
+  <data name="IslamInfo_PrayTime1" xml:space="preserve">
+    <value>夜明け</value>
+  </data>
+  <data name="IslamInfo_PrayTime2" xml:space="preserve">
+    <value>正午</value>
+  </data>
+  <data name="IslamInfo_PrayTime3" xml:space="preserve">
+    <value>午後</value>
+  </data>
+  <data name="IslamInfo_PrayTime4" xml:space="preserve">
+    <value>サンセット</value>
+  </data>
+  <data name="IslamInfo_PrayTime5" xml:space="preserve">
+    <value>夜</value>
+  </data>
+  <data name="IslamInfo_PrescribedTime" xml:space="preserve">
+    <value>所定の時間</value>
+  </data>
+  <data name="IslamInfo_RainForDraught" xml:space="preserve">
+    <value>ドラフトのための雨</value>
+  </data>
+  <data name="IslamInfo_Recommended" xml:space="preserve">
+    <value>推奨される</value>
+  </data>
+  <data name="IslamInfo_SacredState" xml:space="preserve">
+    <value>神聖な状態</value>
+  </data>
+  <data name="IslamInfo_SolarEclipse" xml:space="preserve">
+    <value>日食</value>
+  </data>
+  <data name="IslamInfo_Sunrise" xml:space="preserve">
+    <value>日の出</value>
+  </data>
+  <data name="IslamInfo_Supererogatory" xml:space="preserve">
+    <value>Supererogatory</value>
+  </data>
+  <data name="IslamInfo_Tradition" xml:space="preserve">
+    <value>伝統</value>
+  </data>
+  <data name="IslamInfo_TraditionObligatory" xml:space="preserve">
+    <value>伝統必須</value>
+  </data>
+  <data name="IslamInfo_TraditionVoluntary" xml:space="preserve">
+    <value>伝統自主</value>
+  </data>
+  <data name="IslamInfo_Travel" xml:space="preserve">
+    <value>旅行</value>
+  </data>
+  <data name="IslamInfo_Victory" xml:space="preserve">
+    <value>勝利</value>
+  </data>
+  <data name="IslamInfo_Aaron" xml:space="preserve">
+    <value>アーロン</value>
+  </data>
+  <data name="IslamInfo_Ablution" xml:space="preserve">
+    <value>清めの水</value>
+  </data>
+  <data name="IslamInfo_Abraham" xml:space="preserve">
+    <value>アブラハム</value>
+  </data>
+  <data name="IslamInfo_Adam" xml:space="preserve">
+    <value>アダム</value>
+  </data>
+  <data name="IslamInfo_AfterCallToPrayerFirstPart" xml:space="preserve">
+    <value>最初の部分 - 祈りの呼び出し後</value>
+  </data>
+  <data name="IslamInfo_AfterCallToPrayerFirstPartTrans" xml:space="preserve">
+    <value>アッラー、完全なこの呼び出しの主、私たちの祈り</value>
+  </data>
+  <data name="IslamInfo_AfterCallToPrayerFirstPartWordByWord" xml:space="preserve">
+    <value>Oアッラー|主|呼び出し| |完全|祈り|この私たちの</value>
+  </data>
+  <data name="IslamInfo_AfterCallToPrayerSecondPart" xml:space="preserve">
+    <value>第二部 - 祈りの呼び出し後</value>
+  </data>
+  <data name="IslamInfo_AfterCallToPrayerSecondPartTrans" xml:space="preserve">
+    <value>ムハンマドに執り成しと美徳の彼の権利を与える</value>
+  </data>
+  <data name="IslamInfo_AfterCallToPrayerSecondPartWordByWord" xml:space="preserve">
+    <value>ムハンマドへ| |彼の執り成しの権利|と美徳を与える</value>
+  </data>
+  <data name="IslamInfo_AfterCallToPrayerSupplication" xml:space="preserve">
+    <value>祈りの嘆願を呼び出した後</value>
+  </data>
+  <data name="IslamInfo_AfterCallToPrayerThirdPart" xml:space="preserve">
+    <value>第三部 - 祈りの呼び出し後</value>
+  </data>
+  <data name="IslamInfo_AfterCallToPrayerThirdPartTrans" xml:space="preserve">
+    <value>そして、あなたは彼を約束した高架ランクに彼を上げる</value>
+  </data>
+  <data name="IslamInfo_AfterCallToPrayerThirdPartWordByWord" xml:space="preserve">
+    <value>あなたは彼を約束した|どの|高架|ランクに|て、彼を育てる</value>
+  </data>
+  <data name="IslamInfo_Allah" xml:space="preserve">
+    <value>1神</value>
+  </data>
+  <data name="IslamInfo_AllahIsGreatest" xml:space="preserve">
+    <value>アッラーは偉大です</value>
+  </data>
+  <data name="IslamInfo_AllPraiseAndThanksBeToAllah" xml:space="preserve">
+    <value>すべての賞賛と感謝をアッラ​​ーになる</value>
+  </data>
+  <data name="IslamInfo_AlmsGiving" xml:space="preserve">
+    <value>与える托鉢</value>
+  </data>
+  <data name="IslamInfo_AndUponYouBePeace" xml:space="preserve">
+    <value>そしてあなたに平和であること</value>
+  </data>
+  <data name="IslamInfo_ArabicTypesetting" xml:space="preserve">
+    <value>アラビア語組版</value>
+  </data>
+  <data name="IslamInfo_Arial" xml:space="preserve">
+    <value>MS Pゴシック</value>
+  </data>
+  <data name="IslamInfo_BeforeTravel" xml:space="preserve">
+    <value>旅行する前に</value>
+  </data>
+  <data name="IslamInfo_BeforeTravelTrans" xml:space="preserve">
+    <value>私はここに、この宗教、アマナ（責任）とアッラーのために、以前の行為を残す。</value>
+  </data>
+  <data name="IslamInfo_BeforeTravelWordByWord" xml:space="preserve">
+    <value>この宗教と| |アッラーのために|私はここに、あなたを残して、何|責任|と前|証書</value>
+  </data>
+  <data name="IslamInfo_BowOfPrayer" xml:space="preserve">
+    <value>祈りの弓</value>
+  </data>
+  <data name="IslamInfo_CallToBeginPrayerSixthVerse" xml:space="preserve">
+    <value>祈りを開始するために呼び出す - 第六詩</value>
+  </data>
+  <data name="IslamInfo_CallToBeginPrayerSixthVerseTrans" xml:space="preserve">
+    <value>確かに祈りを開始しました</value>
+  </data>
+  <data name="IslamInfo_CallToBeginPrayerSixthVerseWordByWord" xml:space="preserve">
+    <value>確かに|が始まった|祈り</value>
+  </data>
+  <data name="IslamInfo_CallToBeginThePrayer" xml:space="preserve">
+    <value>祈りを開始するために呼び出す</value>
+  </data>
+  <data name="IslamInfo_CallToPrayer" xml:space="preserve">
+    <value>祈りへの呼び出し</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerEighthVerse" xml:space="preserve">
+    <value>祈りへのコール - 第八の詩を</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerEighthVerseTrans" xml:space="preserve">
+    <value>アッラー以外に神はありません</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerEighthVerseWordByWord" xml:space="preserve">
+    <value>アッラー|除いて|神|いいえはありません</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerFifthVerse" xml:space="preserve">
+    <value>祈りへの呼び出し - 第五詩</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerFifthVerseTrans" xml:space="preserve">
+    <value>成功に来る</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerFifthVerseWordByWord" xml:space="preserve">
+    <value>来る|に|成功</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerFirstVerse" xml:space="preserve">
+    <value>祈りへのコール - 最初の詩を</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerFirstVerseTrans" xml:space="preserve">
+    <value>アッラーは偉大です</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerFirstVerseWordByWord" xml:space="preserve">
+    <value>アッラーはある|最大</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerFourthVerse" xml:space="preserve">
+    <value>祈りへのコール - 第四詩</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerFourthVerseTrans" xml:space="preserve">
+    <value>祈りに来る</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerFourthVerseWordByWord" xml:space="preserve">
+    <value>来る|に|祈り</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerLeader" xml:space="preserve">
+    <value>祈りの指導者への呼び出し</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerSecondVerse" xml:space="preserve">
+    <value>祈りへのコール -  2番を</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerSecondVerseTrans" xml:space="preserve">
+    <value>私は神はアッラーを除いて存在しないことを証言</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerSecondVerseWordByWord" xml:space="preserve">
+    <value>アッラー|除く|神|いいえがない|こと|私が証言</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerSeventhVerse" xml:space="preserve">
+    <value>祈りへのコール - 第七詩</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerSeventhVerseTrans" xml:space="preserve">
+    <value>アッラーは偉大です</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerSeventhVerseWordByWord" xml:space="preserve">
+    <value>アッラーはある|最大</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerSixthVerse" xml:space="preserve">
+    <value>祈りへのコール - 第六詩</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerSixthVerseTrans" xml:space="preserve">
+    <value>祈りは睡眠よりも優れています</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerSixthVerseWordByWord" xml:space="preserve">
+    <value>睡眠|より|良い|祈りです</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerThirdVerse" xml:space="preserve">
+    <value>祈りへのコール - 第三詩を</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerThirdVerseTrans" xml:space="preserve">
+    <value>私は、ムハンマドはアッラーの使徒であると証言</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerThirdVerseWordByWord" xml:space="preserve">
+    <value>私は証言|その|メッセンジャー| |ムハンマドはアッラーの</value>
+  </data>
+  <data name="IslamInfo_Chapter" xml:space="preserve">
+    <value>章</value>
+  </data>
+  <data name="IslamInfo_Creed" xml:space="preserve">
+    <value>クリード</value>
+  </data>
+  <data name="IslamInfo_Custom" xml:space="preserve">
+    <value>カスタム</value>
+  </data>
+  <data name="IslamInfo_David" xml:space="preserve">
+    <value>デイビッド</value>
+  </data>
+  <data name="IslamInfo_Default" xml:space="preserve">
+    <value>デフォルト</value>
+  </data>
+  <data name="IslamInfo_DirectionOfprayer" xml:space="preserve">
+    <value>祈りの方向</value>
+  </data>
+  <data name="IslamInfo_Dissertation" xml:space="preserve">
+    <value>論文</value>
+  </data>
+  <data name="IslamInfo_Eber" xml:space="preserve">
+    <value>エベル</value>
+  </data>
+  <data name="IslamInfo_Elijah" xml:space="preserve">
+    <value>エリヤ</value>
+  </data>
+  <data name="IslamInfo_Elisha" xml:space="preserve">
+    <value>エリシャ</value>
+  </data>
+  <data name="IslamInfo_Enoch" xml:space="preserve">
+    <value>イーノック</value>
+  </data>
+  <data name="IslamInfo_EnteringMasjidilHaram" xml:space="preserve">
+    <value>Masjidilハラムに入る</value>
+  </data>
+  <data name="IslamInfo_EnteringMasjidilHaramTrans" xml:space="preserve">
+    <value>アッラーのO！</value>
+  </data>
+  <data name="IslamInfo_EnteringMasjidilHaramWordByWord" xml:space="preserve">
+    <value>Oアッラー|汝アート|平和|となたから|平和|私たちが住んでいるの原因|私たちの主|安心して|と私たちは入らせる|パラダイス|ハウス|平和|私たちの主| |名誉の所有者および陛下|汝</value>
+  </data>
+  <data name="IslamInfo_Ezekiel" xml:space="preserve">
+    <value>エゼキエル</value>
+  </data>
+  <data name="IslamInfo_FifthCreed" xml:space="preserve">
+    <value>第五信条 - 懺悔の言葉（Astaghfar）</value>
+  </data>
+  <data name="IslamInfo_FifthCreedTrans" xml:space="preserve">
+    <value>私は密かに、または公然と、故意または無意識のうちに犯しすべての罪から、アッラー、わたしの主から赦しを求めて、私は私が知っている罪から、私は知らない罪から彼に向かって回します。</value>
+  </data>
+  <data name="IslamInfo_FifthCreedWordByWord" xml:space="preserve">
+    <value>故意に| |私がコミット|すべての| |の罪から|アッラーから| |私の主、私は許しを求めたり| unknowningly |密か|または|公然|と私は向かってターン|神|罪| |からその|私が知っている|とから</value>
+  </data>
+  <data name="IslamInfo_FirstCreed" xml:space="preserve">
+    <value>最初の信条 - 純度のワード（Tayyabah）</value>
+  </data>
+  <data name="IslamInfo_FirstCreedTrans" xml:space="preserve">
+    <value>アッラームハンマドはアッラーの使徒である以外に神はありません。</value>
+  </data>
+  <data name="IslamInfo_FirstCreedWordByWord" xml:space="preserve">
+    <value>神| |アッラーは|アッラー| |ムハンマド|メッセンジャー以外にはありません</value>
+  </data>
+  <data name="IslamInfo_FortyOurLordSupplications" xml:space="preserve">
+    <value>40私たちの主祈願</value>
+  </data>
+  <data name="IslamInfo_FourthCreed" xml:space="preserve">
+    <value>第四の信条 - ユニティの言葉（タウヒード）</value>
+  </data>
+  <data name="IslamInfo_FourthCreedTrans" xml:space="preserve">
+    <value>アッラーを除いて崇拝に値するなし（ありません）。</value>
+  </data>
+  <data name="IslamInfo_FourthCreedWordByWord" xml:space="preserve">
+    <value>神| |除く|いいえはありませんアッラー|一人で| NO |パートナー|き彼は|彼のために|イギリス|と彼のために|賛美|刻々と生きている| |彼は命を与える|と死をもたらし|そして彼はしない|することのできる</value>
+  </data>
+  <data name="IslamInfo_GloryBeToAllah" xml:space="preserve">
+    <value>栄光はアッラーになる</value>
+  </data>
+  <data name="IslamInfo_IhramPrayerSupplication" xml:space="preserve">
+    <value>イフラーム祈りの嘆願</value>
+  </data>
+  <data name="IslamInfo_IhramPrayerSupplicationTrans" xml:space="preserve">
+    <value>アッラー、慈悲深き、慈悲深くの名の下に！</value>
+  </data>
+  <data name="IslamInfo_IhramPrayerSupplicationWordByWord" xml:space="preserve">
+    <value>アッラー| |慈悲深き|慈悲深く|アッラー|の名前で最も偉大である|アッラー|最大になる|アッラー|最大になる|どのように完璧な|彼は|置かれた一つ|この（輸送）|</value>
+  </data>
+  <data name="IslamInfo_Imam" xml:space="preserve">
+    <value>精神的指導者</value>
+  </data>
+  <data name="IslamInfo_IntentionForIhramPrayer" xml:space="preserve">
+    <value>イフラームの祈りのための意図</value>
+  </data>
+  <data name="IslamInfo_IntentionForIhramPrayerTrans" xml:space="preserve">
+    <value>私はアッラーのためNiat（2 rakaat Sunatイフラームの祈り）を作成していきます。</value>
+  </data>
+  <data name="IslamInfo_IntentionForIhramPrayerWordByWord" xml:space="preserve">
+    <value>推奨される| |イフラームの祈り| 2 rakat |アッラーのために|最も高い私が提供</value>
+  </data>
+  <data name="IslamInfo_IntentionForIhramShower" xml:space="preserve">
+    <value>イフラームのシャワーのための意思</value>
+  </data>
+  <data name="IslamInfo_IntentionForIhramShowerTrans" xml:space="preserve">
+    <value>私はアッラーのため（推奨イフラームのシャワー用）浴にいきたいと考えています。</value>
+  </data>
+  <data name="IslamInfo_IntentionForIhramShowerWordByWord" xml:space="preserve">
+    <value>私は意図|風呂へ|お勧め|イフラームシャワー|アッラーのために|最も高い</value>
+  </data>
+  <data name="IslamInfo_IntentionForJourneyPrayer" xml:space="preserve">
+    <value>旅の祈りのための意図</value>
+  </data>
+  <data name="IslamInfo_IntentionForJourneyPrayerTrans" xml:space="preserve">
+    <value>私はアッラーのためNiat（2 rakaat Sunatサファーの祈り）を作成していきます。</value>
+  </data>
+  <data name="IslamInfo_IntentionForJourneyPrayerWordByWord" xml:space="preserve">
+    <value>最も高い|アッラーのために| 2 rakatを|お勧め| |サファーの祈りを私が提供</value>
+  </data>
+  <data name="IslamInfo_IntentionForJourneyShower" xml:space="preserve">
+    <value>旅のシャワーのための意図</value>
+  </data>
+  <data name="IslamInfo_IntentionForJourneyShowerTrans" xml:space="preserve">
+    <value>私はアッラーのため（推奨Musafirのシャワーのために）浴にいきたいと考えています。</value>
+  </data>
+  <data name="IslamInfo_IntentionForJourneyShowerWordByWord" xml:space="preserve">
+    <value>Musafirシャワー| |最も高い|アッラーのために|お勧め浴に|私が意図し</value>
+  </data>
+  <data name="IslamInfo_IntentionToPerformUmrah" xml:space="preserve">
+    <value>原因で尿失禁を実行する意思</value>
+  </data>
+  <data name="IslamInfo_IntentionToPerformUmrahTrans" xml:space="preserve">
+    <value>Oアッラーは、私が原因で尿失禁を作るためにあなたの呼び出し時に反応し、Oアッラーは、私はあなたのためだけに原因で尿失禁のための原因で尿失禁とイフラームを行います。</value>
+  </data>
+  <data name="IslamInfo_IntentionToPerformUmrahWordByWord" xml:space="preserve">
+    <value>最も高い|だけ| |アッラーのための原因で尿失禁を| |私が意図してイフラーム</value>
+  </data>
+  <data name="IslamInfo_InTheNameOfAllah" xml:space="preserve">
+    <value>アッラーの名の下に</value>
+  </data>
+  <data name="IslamInfo_Isaac" xml:space="preserve">
+    <value>アイザック</value>
+  </data>
+  <data name="IslamInfo_Ishmael" xml:space="preserve">
+    <value>イシマエル</value>
+  </data>
+  <data name="IslamInfo_Islam" xml:space="preserve">
+    <value>提出</value>
+  </data>
+  <data name="IslamInfo_IslamicWords" xml:space="preserve">
+    <value>イスラムの言葉</value>
+  </data>
+  <data name="IslamInfo_Jacob" xml:space="preserve">
+    <value>ジェイコブ</value>
+  </data>
+  <data name="IslamInfo_Jesus" xml:space="preserve">
+    <value>イエス</value>
+  </data>
+  <data name="IslamInfo_Jethro" xml:space="preserve">
+    <value>ジェスロ</value>
+  </data>
+  <data name="IslamInfo_Job" xml:space="preserve">
+    <value>仕事</value>
+  </data>
+  <data name="IslamInfo_JohnTheBaptist" xml:space="preserve">
+    <value>ジョン·ザ·バプティスト</value>
+  </data>
+  <data name="IslamInfo_Jonas" xml:space="preserve">
+    <value>ジョナス</value>
+  </data>
+  <data name="IslamInfo_Joseph" xml:space="preserve">
+    <value>ヨセフ</value>
+  </data>
+  <data name="IslamInfo_Judge" xml:space="preserve">
+    <value>裁判官</value>
+  </data>
+  <data name="IslamInfo_KFGQPCNaskh" xml:space="preserve">
+    <value>KFGQPC Naskh</value>
+  </data>
+  <data name="IslamInfo_Law" xml:space="preserve">
+    <value>法則</value>
+  </data>
+  <data name="IslamInfo_Lot" xml:space="preserve">
+    <value>たくさん</value>
+  </data>
+  <data name="IslamInfo_MajorAblution" xml:space="preserve">
+    <value>主要清め</value>
+  </data>
+  <data name="IslamInfo_MalikMuwatta" xml:space="preserve">
+    <value>マリクのMuwatta</value>
+  </data>
+  <data name="IslamInfo_MeQuran" xml:space="preserve">
+    <value>ME-コーラン</value>
+  </data>
+  <data name="IslamInfo_Messenger" xml:space="preserve">
+    <value>メッセンジャー</value>
+  </data>
+  <data name="IslamInfo_Months" xml:space="preserve">
+    <value>ヶ月</value>
+  </data>
+  <data name="IslamInfo_Moses" xml:space="preserve">
+    <value>モーセ</value>
+  </data>
+  <data name="IslamInfo_MSUighur" xml:space="preserve">
+    <value>MSウイグル</value>
+  </data>
+  <data name="IslamInfo_Muhammad" xml:space="preserve">
+    <value>ムハンマド</value>
+  </data>
+  <data name="IslamInfo_Muslim" xml:space="preserve">
+    <value>提出つ</value>
+  </data>
+  <data name="IslamInfo_NamesOfAllah" xml:space="preserve">
+    <value>アッラーの名前</value>
+  </data>
+  <data name="IslamInfo_Noah" xml:space="preserve">
+    <value>ノア</value>
+  </data>
+  <data name="IslamInfo_OnenessOfGod" xml:space="preserve">
+    <value>神のワンネス</value>
+  </data>
+  <data name="IslamInfo_Part" xml:space="preserve">
+    <value>パーツ</value>
+  </data>
+  <data name="IslamInfo_PDMSSaleem" xml:space="preserve">
+    <value>PDMSサレーム</value>
+  </data>
+  <data name="IslamInfo_PeaceBeUponYou" xml:space="preserve">
+    <value>あなたが平和でありますように</value>
+  </data>
+  <data name="IslamInfo_PhraseForAllahIsGreatest" xml:space="preserve">
+    <value>アッラーのためのフレーズが最も大きく、</value>
+  </data>
+  <data name="IslamInfo_PhraseForAllPraiseAndThanksBeToAllah" xml:space="preserve">
+    <value>すべての賞賛と感謝のためのフレーズがアッラーになる</value>
+  </data>
+  <data name="IslamInfo_PhraseForGloryBeToAllah" xml:space="preserve">
+    <value>栄光のためのフレーズは、アッラーになる</value>
+  </data>
+  <data name="IslamInfo_PhraseForInTheNameOfAllah" xml:space="preserve">
+    <value>アッラーの名のためのフレーズ</value>
+  </data>
+  <data name="IslamInfo_Pilgrimage" xml:space="preserve">
+    <value>巡礼</value>
+  </data>
+  <data name="IslamInfo_Prayers" xml:space="preserve">
+    <value>祈り</value>
+  </data>
+  <data name="IslamInfo_PrayerTimes" xml:space="preserve">
+    <value>祈りの時間</value>
+  </data>
+  <data name="IslamInfo_ProperPronunciationDuringRecitation" xml:space="preserve">
+    <value>朗読中に適切な発音</value>
+  </data>
+  <data name="IslamInfo_Prophet" xml:space="preserve">
+    <value>預言者</value>
+  </data>
+  <data name="IslamInfo_Prophets" xml:space="preserve">
+    <value>預言者たち</value>
+  </data>
+  <data name="IslamInfo_Prostrating" xml:space="preserve">
+    <value>ひれ伏すこと</value>
+  </data>
+  <data name="IslamInfo_Prostration" xml:space="preserve">
+    <value>衰弱</value>
+  </data>
+  <data name="IslamInfo_PurificationOfTheSoul" xml:space="preserve">
+    <value>魂の浄化</value>
+  </data>
+  <data name="IslamInfo_PurificationOfTheSoulTrans" xml:space="preserve">
+    <value>Oアッラーは、その信心私の魂を付与し、それを浄化し、あなたがそのガーディアンマスターであり、それを精製するのに最適です。</value>
+  </data>
+  <data name="IslamInfo_PurificationOfTheSoulWordByWord" xml:space="preserve">
+    <value>Oアッラー|あなたが与える|マイ·ソウル|その信心深|そして、あなたはそれを精製|あなた（単独）|ベスト|誰が|あなた（単独）| |そのガーディアン|それを浄化し、そのマスター</value>
+  </data>
+  <data name="IslamInfo_PurificationSupplication" xml:space="preserve">
+    <value>浄化嘆願</value>
+  </data>
+  <data name="IslamInfo_Remembrance" xml:space="preserve">
+    <value>追悼</value>
+  </data>
+  <data name="IslamInfo_RevelationOfAllah" xml:space="preserve">
+    <value>アッラーの啓示</value>
+  </data>
+  <data name="IslamInfo_RevelationOfAllahInBookForm" xml:space="preserve">
+    <value>本の形でアッラーの啓示</value>
+  </data>
+  <data name="IslamInfo_RiyadhSaaliheen" xml:space="preserve">
+    <value>リヤドアルSaaliheen</value>
+  </data>
+  <data name="IslamInfo_SahihBukhari" xml:space="preserve">
+    <value>Sahihアル·ブハーリー</value>
+  </data>
+  <data name="IslamInfo_SahihMuslim" xml:space="preserve">
+    <value>Sahihイスラム教徒</value>
+  </data>
+  <data name="IslamInfo_SakkalMajalla" xml:space="preserve">
+    <value>Sakkal Majalla</value>
+  </data>
+  <data name="IslamInfo_SalawatSupplicationAfterTalbiah" xml:space="preserve">
+    <value>Talbiah後Salawat嘆願</value>
+  </data>
+  <data name="IslamInfo_SalawatSupplicationAfterTalbiahTrans" xml:space="preserve">
+    <value>Oアッラーはあなたが私たちの主人アブラハムを祝福したのと同様に私たちのマスタームハンマドと彼の家族を祝福し、あなたが賞賛マイティであるためにあなたがすべての世界で私たちの主人アブラハムアブラハムの家族を神聖と同じように私たちのマスタームハンマドとムハンマドの家族を神聖。</value>
+  </data>
+  <data name="IslamInfo_SalawatSupplicationAfterTalbiahWordByWord" xml:space="preserve">
+    <value>アブラハム| |上に|あなたが挨拶を送る|と同じように|マスター| |ムハンマド|上に|礼拝を送る|そして時|マスター| |ムハンマドの家族と時|アブラハム| |の家族と祝福を送る|マスター|上にアッラーのO</value>
+  </data>
+  <data name="IslamInfo_Saleh" xml:space="preserve">
+    <value>サレハ</value>
+  </data>
+  <data name="IslamInfo_Scheherazade" xml:space="preserve">
+    <value>シェヘラザード</value>
+  </data>
+  <data name="IslamInfo_SchoolOfJurisprudence" xml:space="preserve">
+    <value>法学研究科</value>
+  </data>
+  <data name="IslamInfo_SecondCreed" xml:space="preserve">
+    <value>第二信条 - 証言の言葉（Shahaadat）</value>
+  </data>
+  <data name="IslamInfo_SecondCreedTrans" xml:space="preserve">
+    <value>私はパートナーなし、誰もアッラー、一人でものを除いて崇拝の価値があるん証言、と私はムハンマドは彼のしもべとメッセンジャーで証言。</value>
+  </data>
+  <data name="IslamInfo_SecondCreedWordByWord" xml:space="preserve">
+    <value>私は証言|その|神| |何もないを除く|アッラーは|一人で| NO |パートナー|彼しました|と私は証言|その|ムハンマド|しもべ|とMessenger</value>
+  </data>
+  <data name="IslamInfo_SixthCreed" xml:space="preserve">
+    <value>第六の信条 - 不信を拒絶の言葉（ルードA-Kuffer）</value>
+  </data>
+  <data name="IslamInfo_SixthCreedTrans" xml:space="preserve">
+    <value>アッラーのO！</value>
+  </data>
+  <data name="IslamInfo_SixthCreedWordByWord" xml:space="preserve">
+    <value>Oアッラー|確かに|あなたに| |私が保護を求めるから|その|何でも| |私はあなたとパートナーを関連付けて、私は|知って|それ|と私はあなたから赦しを求めて|そのため|私が知っている| |それ|私が悔い改めていない</value>
+  </data>
+  <data name="IslamInfo_Solomon" xml:space="preserve">
+    <value>ソロモン</value>
+  </data>
+  <data name="IslamInfo_Station" xml:space="preserve">
+    <value>駅</value>
+  </data>
+  <data name="IslamInfo_SunanAbuDawood" xml:space="preserve">
+    <value>蘇南アブ·ダウード</value>
+  </data>
+  <data name="IslamInfo_SunanIbnMaja" xml:space="preserve">
+    <value>蘇南イブン·マヤ</value>
+  </data>
+  <data name="IslamInfo_SunanNasai" xml:space="preserve">
+    <value>蘇南-Nasa'iアルSughra</value>
+  </data>
+  <data name="IslamInfo_SunanTirmidhi" xml:space="preserve">
+    <value>蘇南アルTirmidhi</value>
+  </data>
+  <data name="IslamInfo_Supplication" xml:space="preserve">
+    <value>嘆願</value>
+  </data>
+  <data name="IslamInfo_SupplicationAfterSalawatSupplication" xml:space="preserve">
+    <value>嘆願後Salawat嘆願</value>
+  </data>
+  <data name="IslamInfo_SupplicationAfterSalawatSupplicationTrans" xml:space="preserve">
+    <value>アッラーのO！</value>
+  </data>
+  <data name="IslamInfo_SupplicationAfterSalawatSupplicationWordByWord" xml:space="preserve">
+    <value>アッラーO |確かに|わたしはあなたから求める|汝の祝福|パラダイス|私はあなたと共に避難を求める|怒り| |からと地獄。</value>
+  </data>
+  <data name="IslamInfo_SupplicationForArrivingAtMakkah" xml:space="preserve">
+    <value>マッカに到着するための嘆願</value>
+  </data>
+  <data name="IslamInfo_SupplicationForArrivingAtMakkahTrans" xml:space="preserve">
+    <value>神よ！</value>
+  </data>
+  <data name="IslamInfo_SupplicationForArrivingAtMakkahWordByWord" xml:space="preserve">
+    <value>Oアッラー|真に|この​​|汝の聖地| |聖域であり、この聖なる都市である|なた市|平和therinがある|なた平和|地獄の火| |から|その後私を禁止し、私を救っ|なた罰| |から上</value>
+  </data>
+  <data name="IslamInfo_Talbiah" xml:space="preserve">
+    <value>Talbiah</value>
+  </data>
+  <data name="IslamInfo_TalbiahTrans" xml:space="preserve">
+    <value>私は、あなたに私の神に対応してきました！</value>
+  </data>
+  <data name="IslamInfo_TalbiahWordByWord" xml:space="preserve">
+    <value>すべてのバウンティは| |はあなたのための真| |私はあなたに応答した|あなたのために|パートナー|いいえがない|私はあなたに応答した|私はあなたに応答した| Oアッラー|すべての賞賛を私はあなたに対応してきました|</value>
+  </data>
+  <data name="IslamInfo_TheAbaser" xml:space="preserve">
+    <value>Abaser</value>
+  </data>
+  <data name="IslamInfo_TheAcknowledgingOne" xml:space="preserve">
+    <value>受諾ワン</value>
+  </data>
+  <data name="IslamInfo_TheAllAuthoritativeOne" xml:space="preserve">
+    <value>すべての権威の一つ</value>
+  </data>
+  <data name="IslamInfo_TheAllAwareOne" xml:space="preserve">
+    <value>すべての対応の一つ</value>
+  </data>
+  <data name="IslamInfo_TheAllCompelling" xml:space="preserve">
+    <value>すべての説得力</value>
+  </data>
+  <data name="IslamInfo_TheAllEnumeratingOne" xml:space="preserve">
+    <value>オール列挙ワン</value>
+  </data>
+  <data name="IslamInfo_TheAllHearer" xml:space="preserve">
+    <value>全聴</value>
+  </data>
+  <data name="IslamInfo_TheAllKnowingOne" xml:space="preserve">
+    <value>全知ワン</value>
+  </data>
+  <data name="IslamInfo_TheAllNobleOne" xml:space="preserve">
+    <value>オールノーブルワン</value>
+  </data>
+  <data name="IslamInfo_TheAllObservingWitness" xml:space="preserve">
+    <value>すべての観測証人</value>
+  </data>
+  <data name="IslamInfo_TheAllPervadingOne" xml:space="preserve">
+    <value>すべてに広がってワン</value>
+  </data>
+  <data name="IslamInfo_TheAllPrevailingOne" xml:space="preserve">
+    <value>オール卓越ワン</value>
+  </data>
+  <data name="IslamInfo_TheAllSeeing" xml:space="preserve">
+    <value>オールシーイング</value>
+  </data>
+  <data name="IslamInfo_TheAssemblerOfScatteredCreations" xml:space="preserve">
+    <value>散乱クリエーションズのアセンブラ</value>
+  </data>
+  <data name="IslamInfo_TheBeneficent" xml:space="preserve">
+    <value>慈悲</value>
+  </data>
+  <data name="IslamInfo_TheBenignOne" xml:space="preserve">
+    <value>良性ワン</value>
+  </data>
+  <data name="IslamInfo_TheBestowerOfBenefits" xml:space="preserve">
+    <value>メリットのBestower</value>
+  </data>
+  <data name="IslamInfo_TheBestowerOfSufficiency" xml:space="preserve">
+    <value>充足Bestower</value>
+  </data>
+  <data name="IslamInfo_TheBountifulOne" xml:space="preserve">
+    <value>バウンティフルワン</value>
+  </data>
+  <data name="IslamInfo_TheClementOne" xml:space="preserve">
+    <value>クレメントワン</value>
+  </data>
+  <data name="IslamInfo_TheCreator" xml:space="preserve">
+    <value>クリエイター</value>
+  </data>
+  <data name="IslamInfo_TheDistressor" xml:space="preserve">
+    <value>Distressor</value>
+  </data>
+  <data name="IslamInfo_TheDominantOne" xml:space="preserve">
+    <value>支配的</value>
+  </data>
+  <data name="IslamInfo_TheElevatingOne" xml:space="preserve">
+    <value>昇降ワン</value>
+  </data>
+  <data name="IslamInfo_TheEmbodimentOfJustice" xml:space="preserve">
+    <value>正義の実施の形態</value>
+  </data>
+  <data name="IslamInfo_TheEmbodimentOfPeace" xml:space="preserve">
+    <value>平和の実施の形態</value>
+  </data>
+  <data name="IslamInfo_TheEmbodimentOfTruth" xml:space="preserve">
+    <value>真実の実施の形態</value>
+  </data>
+  <data name="IslamInfo_TheEternalInheritor" xml:space="preserve">
+    <value>永遠の相続</value>
+  </data>
+  <data name="IslamInfo_TheEternalLord" xml:space="preserve">
+    <value>永遠の神</value>
+  </data>
+  <data name="IslamInfo_TheEternalPossessorOfSovereignty" xml:space="preserve">
+    <value>主権の永遠の持ち主</value>
+  </data>
+  <data name="IslamInfo_TheEverAcceptorOfRepentance" xml:space="preserve">
+    <value>悔い改めの絶えずアクセプタ</value>
+  </data>
+  <data name="IslamInfo_TheEverSurvivingOne" xml:space="preserve">
+    <value>今まで存続ワン</value>
+  </data>
+  <data name="IslamInfo_TheEvolver" xml:space="preserve">
+    <value>Evolverの</value>
+  </data>
+  <data name="IslamInfo_TheExpeditingOne" xml:space="preserve">
+    <value>迅速化の一つ</value>
+  </data>
+  <data name="IslamInfo_TheExtender" xml:space="preserve">
+    <value>エクステンダー</value>
+  </data>
+  <data name="IslamInfo_TheExtensivelyEnduringOne" xml:space="preserve">
+    <value>広範囲に不朽の一つ</value>
+  </data>
+  <data name="IslamInfo_TheExtremelyExaltedOne" xml:space="preserve">
+    <value>非常に高貴なワン</value>
+  </data>
+  <data name="IslamInfo_TheFirmOne" xml:space="preserve">
+    <value>事務所の一つ</value>
+  </data>
+  <data name="IslamInfo_TheFlawlessShaper" xml:space="preserve">
+    <value>完璧なシェイパー</value>
+  </data>
+  <data name="IslamInfo_TheFountainHeadOfTruth" xml:space="preserve">
+    <value>真実の泉 - ヘッド</value>
+  </data>
+  <data name="IslamInfo_TheGloriousOne" xml:space="preserve">
+    <value>グロリアスワン</value>
+  </data>
+  <data name="IslamInfo_TheGreatForgiver" xml:space="preserve">
+    <value>グレート寛容</value>
+  </data>
+  <data name="IslamInfo_TheGreatOne" xml:space="preserve">
+    <value>素晴らしいもの</value>
+  </data>
+  <data name="IslamInfo_TheGuardingOne" xml:space="preserve">
+    <value>ガーワン</value>
+  </data>
+  <data name="IslamInfo_TheGuideToPathOfRectitude" xml:space="preserve">
+    <value>清廉潔白のパスへのガイド</value>
+  </data>
+  <data name="IslamInfo_TheHolderOfSupremeAuthority" xml:space="preserve">
+    <value>最高権威のホルダー</value>
+  </data>
+  <data name="IslamInfo_TheHonourerBestower" xml:space="preserve">
+    <value>Honourer-Bestower</value>
+  </data>
+  <data name="IslamInfo_TheImpartialJudge" xml:space="preserve">
+    <value>公平なジャッジ</value>
+  </data>
+  <data name="IslamInfo_TheImperceptible" xml:space="preserve">
+    <value>感知できない</value>
+  </data>
+  <data name="IslamInfo_TheInfiniteLastOne" xml:space="preserve">
+    <value>無限ラストワン</value>
+  </data>
+  <data name="IslamInfo_TheInflictorOfDeath" xml:space="preserve">
+    <value>死の苦痛を引き起こす人</value>
+  </data>
+  <data name="IslamInfo_TheInfuserOfFaith" xml:space="preserve">
+    <value>信仰の注入器</value>
+  </data>
+  <data name="IslamInfo_TheInfuserOfNewLife" xml:space="preserve">
+    <value>新しい命の注入器</value>
+  </data>
+  <data name="IslamInfo_TheJustOne" xml:space="preserve">
+    <value>ジャスト·ワン</value>
+  </data>
+  <data name="IslamInfo_TheKnowerOfSubtleties" xml:space="preserve">
+    <value>微妙な全知</value>
+  </data>
+  <data name="IslamInfo_TheLovingOne" xml:space="preserve">
+    <value>愛するワン</value>
+  </data>
+  <data name="IslamInfo_TheMagnificentOne" xml:space="preserve">
+    <value>壮大なワン</value>
+  </data>
+  <data name="IslamInfo_TheMaintainerOflife" xml:space="preserve">
+    <value>人生のメンテ</value>
+  </data>
+  <data name="IslamInfo_TheMajesticOne" xml:space="preserve">
+    <value>マジェスティックワン</value>
+  </data>
+  <data name="IslamInfo_TheMerciful" xml:space="preserve">
+    <value>慈悲深い</value>
+  </data>
+  <data name="IslamInfo_TheMightyOne" xml:space="preserve">
+    <value>マイティワン</value>
+  </data>
+  <data name="IslamInfo_TheMostSacred" xml:space="preserve">
+    <value>最も神聖な</value>
+  </data>
+  <data name="IslamInfo_TheOmnipotentOne" xml:space="preserve">
+    <value>全能の一つ</value>
+  </data>
+  <data name="IslamInfo_TheOnlyOne" xml:space="preserve">
+    <value>オンリーワン</value>
+  </data>
+  <data name="IslamInfo_TheOriginator" xml:space="preserve">
+    <value>オリジネーター</value>
+  </data>
+  <data name="IslamInfo_ThePardoner" xml:space="preserve">
+    <value>免罪符</value>
+  </data>
+  <data name="IslamInfo_ThePerceptible" xml:space="preserve">
+    <value>知覚できる</value>
+  </data>
+  <data name="IslamInfo_ThePointingOne" xml:space="preserve">
+    <value>ポインティングワン</value>
+  </data>
+  <data name="IslamInfo_ThePossessorOfMajestyAndHonour" xml:space="preserve">
+    <value>陛下と名誉の所有者</value>
+  </data>
+  <data name="IslamInfo_ThePrayersOfAllahUponHimAndPeace" xml:space="preserve">
+    <value>彼と平和の際にアッラーの祈り</value>
+  </data>
+  <data name="IslamInfo_ThePreserverOfSafety" xml:space="preserve">
+    <value>安全の禁猟</value>
+  </data>
+  <data name="IslamInfo_ThePreventer" xml:space="preserve">
+    <value>防止装置</value>
+  </data>
+  <data name="IslamInfo_ThePrimeLight" xml:space="preserve">
+    <value>首相ライト</value>
+  </data>
+  <data name="IslamInfo_TheProcrastinator" xml:space="preserve">
+    <value>先送り</value>
+  </data>
+  <data name="IslamInfo_TheProtectingAssociate" xml:space="preserve">
+    <value>保護准</value>
+  </data>
+  <data name="IslamInfo_TheProviderOfGuidance" xml:space="preserve">
+    <value>ガイダンスの提供</value>
+  </data>
+  <data name="IslamInfo_TheReckoningOne" xml:space="preserve">
+    <value>清算ワン</value>
+  </data>
+  <data name="IslamInfo_TheReducer" xml:space="preserve">
+    <value>レデューサー</value>
+  </data>
+  <data name="IslamInfo_TheRespondingOne" xml:space="preserve">
+    <value>対応ワン</value>
+  </data>
+  <data name="IslamInfo_TheRestorer" xml:space="preserve">
+    <value>レストア</value>
+  </data>
+  <data name="IslamInfo_TheRestrictingOne" xml:space="preserve">
+    <value>の制限の一つ</value>
+  </data>
+  <data name="IslamInfo_TheRetaliator" xml:space="preserve">
+    <value>Retaliator</value>
+  </data>
+  <data name="IslamInfo_TheSelfSubsistingOne" xml:space="preserve">
+    <value>自己存続ワン</value>
+  </data>
+  <data name="IslamInfo_TheSelfSufficientOne" xml:space="preserve">
+    <value>自給ワン</value>
+  </data>
+  <data name="IslamInfo_TheSoleLaudableOne" xml:space="preserve">
+    <value>ソール称賛に値するワン</value>
+  </data>
+  <data name="IslamInfo_TheSoleOne" xml:space="preserve">
+    <value>ソールワン</value>
+  </data>
+  <data name="IslamInfo_TheStrongOne" xml:space="preserve">
+    <value>強いもの</value>
+  </data>
+  <data name="IslamInfo_TheSublimeOne" xml:space="preserve">
+    <value>サブライムワン</value>
+  </data>
+  <data name="IslamInfo_TheSupremeBestower" xml:space="preserve">
+    <value>最高裁Bestower</value>
+  </data>
+  <data name="IslamInfo_TheSupremePardoner" xml:space="preserve">
+    <value>最高裁免罪符</value>
+  </data>
+  <data name="IslamInfo_TheSupremeProvider" xml:space="preserve">
+    <value>最高裁プロバイダー</value>
+  </data>
+  <data name="IslamInfo_TheSupremeSolver" xml:space="preserve">
+    <value>最高裁ソルバー</value>
+  </data>
+  <data name="IslamInfo_TheSustainingOne" xml:space="preserve">
+    <value>持続ワン</value>
+  </data>
+  <data name="IslamInfo_TheTotalProvider" xml:space="preserve">
+    <value>トータルプロバイダ</value>
+  </data>
+  <data name="IslamInfo_TheUniqueOne" xml:space="preserve">
+    <value>ユニークな</value>
+  </data>
+  <data name="IslamInfo_TheUniversalTrustee" xml:space="preserve">
+    <value>ユニバーサルトラスティ</value>
+  </data>
+  <data name="IslamInfo_TheVeryFirst" xml:space="preserve">
+    <value>一番最初の</value>
+  </data>
+  <data name="IslamInfo_TheWatchfulOne" xml:space="preserve">
+    <value>経過観察の一つ</value>
+  </data>
+  <data name="IslamInfo_TheWiseOne" xml:space="preserve">
+    <value>ワイズワン</value>
+  </data>
+  <data name="IslamInfo_ThirdCreed" xml:space="preserve">
+    <value>第三信条 - 賛美の言葉（Tumjeed）</value>
+  </data>
+  <data name="IslamInfo_ThirdCreedTrans" xml:space="preserve">
+    <value>栄光はアッラーとアッラーに賞賛してもよく、そこにアッラー以外に神はなく、アッラーは最も大きい。</value>
+  </data>
+  <data name="IslamInfo_ThirdCreedWordByWord" xml:space="preserve">
+    <value>アッラーへ| |栄光と賛美|アッラーへ|ず、存在しない|アッラー| |アッラー|除いて|神は偉大|なし|かもしれない|なし|電力|アッラーと| |最も高い|除いて最も壮大</value>
+  </data>
+  <data name="IslamInfo_TraditionalArabic" xml:space="preserve">
+    <value>伝統的なアラビア</value>
+  </data>
+  <data name="IslamInfo_TransmissionOfInformation" xml:space="preserve">
+    <value>情報発信</value>
+  </data>
+  <data name="IslamInfo_Umrah" xml:space="preserve">
+    <value>原因で尿失禁</value>
+  </data>
+  <data name="IslamInfo_UnitOfPrayer" xml:space="preserve">
+    <value>祈りの単位</value>
+  </data>
+  <data name="IslamInfo_UponHimBePeace" xml:space="preserve">
+    <value>彼に平和であること</value>
+  </data>
+  <data name="IslamInfo_Verse" xml:space="preserve">
+    <value>詩</value>
+  </data>
+  <data name="IslamInfo_VerseOfTheThrone" xml:space="preserve">
+    <value>玉座の詩</value>
+  </data>
+  <data name="IslamInfo_Zechariah" xml:space="preserve">
+    <value>ゼカリヤ</value>
+  </data>
+  <data name="IslamInfo_TheEverLiving" xml:space="preserve">
+    <value>今までの生活</value>
+  </data>
+  <data name="IslamInfo_After" xml:space="preserve">
+    <value>後に</value>
+  </data>
+  <data name="IslamInfo_Arabic" xml:space="preserve">
+    <value>アラビア語</value>
+  </data>
+  <data name="IslamInfo_Assimilate" xml:space="preserve">
+    <value>同化する</value>
+  </data>
+  <data name="IslamInfo_Before" xml:space="preserve">
+    <value>前</value>
+  </data>
+  <data name="IslamInfo_bukhariBook1" xml:space="preserve">
+    <value>ヨハネの黙示録</value>
+  </data>
+  <data name="IslamInfo_bukhariBook10" xml:space="preserve">
+    <value>祈り（Adhaan）の呼び出し</value>
+  </data>
+  <data name="IslamInfo_bukhariBook11" xml:space="preserve">
+    <value>金曜日の祈り</value>
+  </data>
+  <data name="IslamInfo_bukhariBook12" xml:space="preserve">
+    <value>恐怖の祈り</value>
+  </data>
+  <data name="IslamInfo_bukhariBook13" xml:space="preserve">
+    <value>二つフェスティバル（EIDS）</value>
+  </data>
+  <data name="IslamInfo_bukhariBook14" xml:space="preserve">
+    <value>Witrの祈り</value>
+  </data>
+  <data name="IslamInfo_bukhariBook15" xml:space="preserve">
+    <value>雨のためにアッラーの呼び出し（Istisqaa）</value>
+  </data>
+  <data name="IslamInfo_bukhariBook16" xml:space="preserve">
+    <value>日食</value>
+  </data>
+  <data name="IslamInfo_bukhariBook17" xml:space="preserve">
+    <value>クルアーンのリサイタル中に衰弱</value>
+  </data>
+  <data name="IslamInfo_bukhariBook18" xml:space="preserve">
+    <value>（AT-Taqseer）祈りを短縮</value>
+  </data>
+  <data name="IslamInfo_bukhariBook19" xml:space="preserve">
+    <value>夜の祈り（Tahajjud）</value>
+  </data>
+  <data name="IslamInfo_bukhariBook1Chapter1" xml:space="preserve">
+    <value>{どのように神のインスピレーションは、アッラーの使徒（のこぎり）に明らかにされるようになった。</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2" xml:space="preserve">
+    <value>信念</value>
+  </data>
+  <data name="IslamInfo_bukhariBook20" xml:space="preserve">
+    <value>マスジドメッカとメディナでの祈りの美徳</value>
+  </data>
+  <data name="IslamInfo_bukhariBook21" xml:space="preserve">
+    <value>祈るながらアクション</value>
+  </data>
+  <data name="IslamInfo_bukhariBook22" xml:space="preserve">
+    <value>祈りの物忘れ</value>
+  </data>
+  <data name="IslamInfo_bukhariBook23" xml:space="preserve">
+    <value>葬式（AL-Janaa'iz）</value>
+  </data>
+  <data name="IslamInfo_bukhariBook24" xml:space="preserve">
+    <value>喜捨税（ザカート）</value>
+  </data>
+  <data name="IslamInfo_bukhariBook25" xml:space="preserve">
+    <value>巡礼（ハッジ）</value>
+  </data>
+  <data name="IslamInfo_bukhariBook26" xml:space="preserve">
+    <value>マイナーPilgrammage（Umra）</value>
+  </data>
+  <data name="IslamInfo_bukhariBook27" xml:space="preserve">
+    <value>巡礼の完了を防ぐ巡礼</value>
+  </data>
+  <data name="IslamInfo_bukhariBook28" xml:space="preserve">
+    <value>巡礼上にある間狩猟のペナルティ</value>
+  </data>
+  <data name="IslamInfo_bukhariBook29" xml:space="preserve">
+    <value>マディーナの美徳</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter1" xml:space="preserve">
+    <value>預言者（のこぎり）の声明：「イスラムは、5つの原則に基づいています。 '</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter10" xml:space="preserve">
+    <value>アンサールを愛することは、信仰の兆候である。</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter12" xml:space="preserve">
+    <value>アルFitan（試験およびafflicationsなど）からの（逃げる）逃亡するには宗教の一部である。</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter13" xml:space="preserve">
+    <value>預言者（のこぎり）の声明：「私はあなたのすべてが何よりも良いアッラー（AZZA WAのJALを）知っている」。</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter14" xml:space="preserve">
+    <value>誰がクフルに戻すことが嫌い。</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter15" xml:space="preserve">
+    <value>信者の優位性におけるグレードは彼らの善行に応じてになります。</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter16" xml:space="preserve">
+    <value>アルハヤは信仰の一部です。</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter17" xml:space="preserve">
+    <value>アッラーの声明（AZZAワシントンJAL）：</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter18" xml:space="preserve">
+    <value>誰でも、信仰が行動（善行）であることを述べています。</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter19" xml:space="preserve">
+    <value>1は本当にイスラム教を受け入れたが、強制するか、などを殺されるのを恐れて、そうしていない場合</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter2" xml:space="preserve">
+    <value>あなたの呼び出しは、あなたの信仰を意味します。</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter20" xml:space="preserve">
+    <value>挨拶するためには、イスラム教の一部です。</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter21" xml:space="preserve">
+    <value>自分の夫に恩知らずであると。</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter22" xml:space="preserve">
+    <value>罪は無知からであり、彼はアッラー（AZZAワシントンJAL）と一緒に他の人を崇拝しない限り、罪人は信じないではありません。</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter23" xml:space="preserve">
+    <value>アッラーの声明（AZZAワシントンJAL）：{</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter24" xml:space="preserve">
+    <value>一種のZulm（間違った）は、別のものより大きくしても小さくすることができる。</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter25" xml:space="preserve">
+    <value>偽善の兆し。</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter26" xml:space="preserve">
+    <value>カドルの夜に祈りを確立するためには、信仰の一部です。</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter27" xml:space="preserve">
+    <value>アル·ジハード（聖戦 - アッラーの原因で戦っ）は信仰の一部です。</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter28" xml:space="preserve">
+    <value>ラマダンの夜に祈り - それは（自主Nawafil）を確立するために、信仰の一部です。</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter29" xml:space="preserve">
+    <value>唯一のアッラーの報酬を期待して（誠実かつ忠実に）ラマダン月中サウム[断食（イスラムの教えに従った）]を観察するために、信仰の一部である。</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter3" xml:space="preserve">
+    <value>信仰の行為について、（何を言われています）。</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter30" xml:space="preserve">
+    <value>宗教は非常に簡単です。</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter31" xml:space="preserve">
+    <value>サラッ（祈り）（の提供）は信仰の一部です。</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter32" xml:space="preserve">
+    <value>イスラム教を心から包含者（の優位性について言われていること）。</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter33" xml:space="preserve">
+    <value>AD-DIN（良い正義の行為 - 崇拝の行為は）アッラー（AZZAのWA JAL）で最も愛され、定期的に行われているものです。</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter34" xml:space="preserve">
+    <value>信仰が増加し、減少する。</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter35" xml:space="preserve">
+    <value>ザカートを支払うためには、イスラム教の一部です。</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter36" xml:space="preserve">
+    <value>（埋葬地まで）葬列に同行することは信仰の一部です。</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter37" xml:space="preserve">
+    <value>彼の善行を破棄することができること信者の恐怖は、彼の知識がなくても（失われた）。</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter38" xml:space="preserve">
+    <value>信念についての預言者（のこぎり）から（天使）Jibrael（ガブリエル）の質問、イスラム教、イフサーン（完璧）。</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter4" xml:space="preserve">
+    <value>イスラム教徒は、彼の舌と手でイスラム教徒を傷つける回避1です。</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter40" xml:space="preserve">
+    <value>彼の宗教のために、すべての疑わしい（はっきりしない）のものを残し、その人の優位性。</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter41" xml:space="preserve">
+    <value>アルKhumusを（戦利品の五分の一はアッラーの原因で与え​​られること）を支払うためには、信仰の一部です。</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter42" xml:space="preserve">
+    <value>声明に関して言われていること。「行為の報酬は意思に依存します。 '</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter43" xml:space="preserve">
+    <value>預言者（のこぎり）の声明：「宗教 -  Nasihaある[アッラーに（誠実で真である）、その使徒に、イスラム教徒の支配者であり、すべてのイスラム教徒に。] '</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter5" xml:space="preserve">
+    <value>誰のイスラム教は最高です（最高のイスラム教徒は誰）？</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter6" xml:space="preserve">
+    <value>（その他）飼料には、イスラム教の一部です。</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter7" xml:space="preserve">
+    <value>1の（イスラム教徒の）兄弟のために希望するにはどのような1が自分のために好きなことは信仰の一部です。</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter8" xml:space="preserve">
+    <value>メッセンジャー（ムハンマド）（のこぎり）好きには、信仰の一部です。</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter9" xml:space="preserve">
+    <value>信仰の甘さ（喜び）。</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3" xml:space="preserve">
+    <value>知識</value>
+  </data>
+  <data name="IslamInfo_bukhariBook30" xml:space="preserve">
+    <value>断食</value>
+  </data>
+  <data name="IslamInfo_bukhariBook31" xml:space="preserve">
+    <value>ラマダーンの夜（Taraweeh）で祈る</value>
+  </data>
+  <data name="IslamInfo_bukhariBook32" xml:space="preserve">
+    <value>カドルの夜の美徳</value>
+  </data>
+  <data name="IslamInfo_bukhariBook33" xml:space="preserve">
+    <value>アッラーの追悼のためにモスクに引退（I'tikaf）</value>
+  </data>
+  <data name="IslamInfo_bukhariBook34" xml:space="preserve">
+    <value>販売と貿易</value>
+  </data>
+  <data name="IslamInfo_bukhariBook35" xml:space="preserve">
+    <value>価格が後で（AS-サラム）配信される製品のために支払われた販売</value>
+  </data>
+  <data name="IslamInfo_bukhariBook36" xml:space="preserve">
+    <value>Shuf'a</value>
+  </data>
+  <data name="IslamInfo_bukhariBook37" xml:space="preserve">
+    <value>雇用</value>
+  </data>
+  <data name="IslamInfo_bukhariBook38" xml:space="preserve">
+    <value>人から人への負債のTransferance（AL-Hawaala）</value>
+  </data>
+  <data name="IslamInfo_bukhariBook39" xml:space="preserve">
+    <value>Kafalah</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter1" xml:space="preserve">
+    <value>知識の優位性。</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter11" xml:space="preserve">
+    <value>預言者（のこぎり）、彼らは逃げる（または飽き）ない可能性がありますように、適切な時間を選択することで、説教の人々の世話をするために使用される。</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter12" xml:space="preserve">
+    <value>誰が学生に（宗教的な話）を与えるための特別な日を修正しました。</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter13" xml:space="preserve">
+    <value>アッラー（AZZAワシントンJAL）は人に良いをしたいなら、彼は彼が宗教を理解することができます。</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter14" xml:space="preserve">
+    <value>（の優位性）に関する知識を理解。</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter15" xml:space="preserve">
+    <value>知識とアル·Hikmah（知恵）を持つ1 [IEのようになりたい</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter16" xml:space="preserve">
+    <value>アルKhidrを満たすために、海の中に（彼が行ったとき）何が（AS-サラム 'alaihi）預言者ムーサーの旅について言われています。</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter17" xml:space="preserve">
+    <value>預言者（のこぎり）の声明： 'Oアッラー！</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter18" xml:space="preserve">
+    <value>何歳で若者は（少年からのハディースの引用は許容できIE）に耳を傾けたことがあります。</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter19" xml:space="preserve">
+    <value>知識の検索で外出する。</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter2" xml:space="preserve">
+    <value>誰が、彼はいくつかの会話の中でビジー状態のときの知識について尋ねられたので、彼は話を終えてから、質問者に答えている。</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter20" xml:space="preserve">
+    <value>学習者の優位性（イスラム教は、宗教学者になる）してから他の人にそれを教えています。</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter21" xml:space="preserve">
+    <value>（宗教的な）知識の消失と（宗教的な）無知の外観（に関して言われていること）。</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter22" xml:space="preserve">
+    <value>（宗教的な）知識の優位性。</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter23" xml:space="preserve">
+    <value>動物に乗ったり何か他のものの上に立っている間、宗教的評決を得た。</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter24" xml:space="preserve">
+    <value>誰が手招きしたり、うなずいによって宗教的な評決を与えた。</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter25" xml:space="preserve">
+    <value>預言者（のこぎり）は信仰と（彼は彼らに説明したように）（宗教的な）知識を暗記するようにし、（自宅で）彼らが残した彼らの人々に（伝える）に通知するためにアブドゥルQais 'の人々（ミッション）を促した。</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter26" xml:space="preserve">
+    <value>問題のある問題への答えを求めて旅すると、自分の家族にそれを教えること。</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter27" xml:space="preserve">
+    <value>からFi？X回転職務を（宗教的な）知識を学習する。</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter28" xml:space="preserve">
+    <value>説教や教えながら1が1が嫌って何見たら激怒されるように。</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter29" xml:space="preserve">
+    <value>誰がイマームか（宗教的な）説教の前にひざまずい。</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter3" xml:space="preserve">
+    <value>誰が（搬送）の知識で彼の声を上げる。</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter30" xml:space="preserve">
+    <value>他の人が理解できるようにするために三度1の話を繰り返す。</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter31" xml:space="preserve">
+    <value>教える人（宗教）彼の女スレーブと彼の家族。</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter32" xml:space="preserve">
+    <value>イマーム（最高経営責任者）による女性（宗教的な）知識の説教（と教育）：</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter33" xml:space="preserve">
+    <value>ハディース（こちら）に意欲。</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter34" xml:space="preserve">
+    <value>どのように（宗教的な）知識は彼が連れ去らのだろうか？</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter35" xml:space="preserve">
+    <value>その日は、（離れて男性から）彼らに宗教を教えるために、女性のために修正されるべきか？</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter36" xml:space="preserve">
+    <value>誰が何かを聞いた（が、それを理解していなかった）、その後、彼はそれを完全に理解するまで、再び尋ねた。</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter37" xml:space="preserve">
+    <value>それは存在しない人々に知識を伝えるために、[宗教的な会議（または会議）で、本のある方の義務である。</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter38" xml:space="preserve">
+    <value>預言者（のこぎり）に対して嘘をつく人の罪。</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter39" xml:space="preserve">
+    <value>知識の書き込み。</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter4" xml:space="preserve">
+    <value>ナレーションとその唯一のハディース学者のために重要であるという概念に関するさまざまなな意味を伝達するナレーターで使用される単語の様々に関して。</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter40" xml:space="preserve">
+    <value>知識とその教え、夜に説教。</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter41" xml:space="preserve">
+    <value>夜の（宗教的な）知識について話す。</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter42" xml:space="preserve">
+    <value>（宗教的な）知識の暗記（言われていることに関しては）。</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter43" xml:space="preserve">
+    <value>静かにして（と聞く）宗教を学んだ人にしてください。</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter44" xml:space="preserve">
+    <value>宗教的な学者が要求されたとき。</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter45" xml:space="preserve">
+    <value>誰でも、立っている間、（何かについて、説教壇や同じようなことに）座っていた宗教的な学びの男に尋ねた。</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter46" xml:space="preserve">
+    <value>宗教的な事柄について質問したり、Jimarのラミ（メッカ巡礼中にミナにあるJimarで小石の投げを）しながら（メッカ巡礼中にミナで）宗教評決を得た。</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter47" xml:space="preserve">
+    <value>アッラー（AZZAワシントンJAL）の声明：</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter48" xml:space="preserve">
+    <value>だれが何人かの人々がそれらを理解することができない可能性があり、より困難なものに分類できることを恐れて、単にいくつかのオプションのものを残しました。</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter49" xml:space="preserve">
+    <value>誰が彼らに他の人がそれを理解しないかもしれないことを恐れて、他の人の上にそれらを好む（宗教的な）知識を教えるために何人かの人を選択しました。</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter5" xml:space="preserve">
+    <value>イマームは彼らの知識をテストするために、彼の仲間を問う。</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter50" xml:space="preserve">
+    <value>（（アル·ハヤ」内気であるために:-)に関して言われていること））（宗教的な知識を学びながら。</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter51" xml:space="preserve">
+    <value>だれが（何かを求めるように）シャイな感じ、その後、彼に代わってお願いし、別の人を要求した。</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter52" xml:space="preserve">
+    <value>宗教的な知識を教え、​​モスクに宗教的な評決を与える。</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter53" xml:space="preserve">
+    <value>誰でも、より彼は尋ねたものよりも質問者に回答した。</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter6" xml:space="preserve">
+    <value>知識について言われているもの。</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter7" xml:space="preserve">
+    <value>手（知識の本の）交換し、別の国への宗教学者による知識の筆記に手に関して言われていること。</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter8" xml:space="preserve">
+    <value>誰が収集の遠い終わりに座っていた。</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter9" xml:space="preserve">
+    <value>預言者（のこぎり）の声明：「それは間接的に情報の一部を受けた者は、その供給源から直接聞いた彼は誰よりも良いことを理解可能性が高い。 '</value>
+  </data>
+  <data name="IslamInfo_bukhariBook4" xml:space="preserve">
+    <value>沐浴（ウートー '）</value>
+  </data>
+  <data name="IslamInfo_bukhariBook40" xml:space="preserve">
+    <value>代理人による表現、認可、ビジネス</value>
+  </data>
+  <data name="IslamInfo_bukhariBook41" xml:space="preserve">
+    <value>農業</value>
+  </data>
+  <data name="IslamInfo_bukhariBook42" xml:space="preserve">
+    <value>配水</value>
+  </data>
+  <data name="IslamInfo_bukhariBook43" xml:space="preserve">
+    <value>ローン、ローンの支払い、財産、破産の凍結</value>
+  </data>
+  <data name="IslamInfo_bukhariBook44" xml:space="preserve">
+    <value>Khusoomaat</value>
+  </data>
+  <data name="IslamInfo_bukhariBook45" xml:space="preserve">
+    <value>誰か（Luqaata）によって撮像された失われた事</value>
+  </data>
+  <data name="IslamInfo_bukhariBook46" xml:space="preserve">
+    <value>Oppressions</value>
+  </data>
+  <data name="IslamInfo_bukhariBook47" xml:space="preserve">
+    <value>パートナーシップ</value>
+  </data>
+  <data name="IslamInfo_bukhariBook48" xml:space="preserve">
+    <value>抵当</value>
+  </data>
+  <data name="IslamInfo_bukhariBook49" xml:space="preserve">
+    <value>奴隷のManumission</value>
+  </data>
+  <data name="IslamInfo_bukhariBook5" xml:space="preserve">
+    <value>お風呂（Ghusl）</value>
+  </data>
+  <data name="IslamInfo_bukhariBook50" xml:space="preserve">
+    <value>Makaatib</value>
+  </data>
+  <data name="IslamInfo_bukhariBook51" xml:space="preserve">
+    <value>ギフト</value>
+  </data>
+  <data name="IslamInfo_bukhariBook52" xml:space="preserve">
+    <value>目撃者</value>
+  </data>
+  <data name="IslamInfo_bukhariBook53" xml:space="preserve">
+    <value>調停</value>
+  </data>
+  <data name="IslamInfo_bukhariBook54" xml:space="preserve">
+    <value>条件</value>
+  </data>
+  <data name="IslamInfo_bukhariBook55" xml:space="preserve">
+    <value>遺言と聖書（Wasaayaa）</value>
+  </data>
+  <data name="IslamInfo_bukhariBook56" xml:space="preserve">
+    <value>アッラーの原因（Jihaad）のために戦って</value>
+  </data>
+  <data name="IslamInfo_bukhariBook57" xml:space="preserve">
+    <value>アッラーの原因に戦利品の五分の一（Khumus）</value>
+  </data>
+  <data name="IslamInfo_bukhariBook58" xml:space="preserve">
+    <value>人頭税とMawaad​​a'ah</value>
+  </data>
+  <data name="IslamInfo_bukhariBook59" xml:space="preserve">
+    <value>創造の初め</value>
+  </data>
+  <data name="IslamInfo_bukhariBook6" xml:space="preserve">
+    <value>月経</value>
+  </data>
+  <data name="IslamInfo_bukhariBook60" xml:space="preserve">
+    <value>預言者たち</value>
+  </data>
+  <data name="IslamInfo_bukhariBook61" xml:space="preserve">
+    <value>預言者（ムハンマド）とその仲間たちの長所とメリット</value>
+  </data>
+  <data name="IslamInfo_bukhariBook62" xml:space="preserve">
+    <value>預言者の仲間</value>
+  </data>
+  <data name="IslamInfo_bukhariBook63" xml:space="preserve">
+    <value>マディーナでのヘルパーのメリット（Ansaar）</value>
+  </data>
+  <data name="IslamInfo_bukhariBook64" xml:space="preserve">
+    <value>預言者（ムハンマド）（AL-Maghaazi）率いる軍事遠征</value>
+  </data>
+  <data name="IslamInfo_bukhariBook65" xml:space="preserve">
+    <value>コー​​ランに予言解説（預言者（PBUH）のタフシール）</value>
+  </data>
+  <data name="IslamInfo_bukhariBook66" xml:space="preserve">
+    <value>クルアーンの徳</value>
+  </data>
+  <data name="IslamInfo_bukhariBook67" xml:space="preserve">
+    <value>結婚生活、結婚（Nikaah）</value>
+  </data>
+  <data name="IslamInfo_bukhariBook68" xml:space="preserve">
+    <value>離婚</value>
+  </data>
+  <data name="IslamInfo_bukhariBook69" xml:space="preserve">
+    <value>家族を支える</value>
+  </data>
+  <data name="IslamInfo_bukhariBook7" xml:space="preserve">
+    <value>ほこりで手と足をこすり（Tayammum）</value>
+  </data>
+  <data name="IslamInfo_bukhariBook70" xml:space="preserve">
+    <value>食べ物、食事</value>
+  </data>
+  <data name="IslamInfo_bukhariBook71" xml:space="preserve">
+    <value>誕生の際の犠牲（ `Aqiqa）</value>
+  </data>
+  <data name="IslamInfo_bukhariBook72" xml:space="preserve">
+    <value>狩猟、屠殺</value>
+  </data>
+  <data name="IslamInfo_bukhariBook73" xml:space="preserve">
+    <value>犠牲祭まつり犠牲（Adaahi）</value>
+  </data>
+  <data name="IslamInfo_bukhariBook74" xml:space="preserve">
+    <value>飲料</value>
+  </data>
+  <data name="IslamInfo_bukhariBook75" xml:space="preserve">
+    <value>患者</value>
+  </data>
+  <data name="IslamInfo_bukhariBook76" xml:space="preserve">
+    <value>薬</value>
+  </data>
+  <data name="IslamInfo_bukhariBook77" xml:space="preserve">
+    <value>ドレス</value>
+  </data>
+  <data name="IslamInfo_bukhariBook78" xml:space="preserve">
+    <value>良いマナーとフォーム（AL-ADAB）</value>
+  </data>
+  <data name="IslamInfo_bukhariBook79" xml:space="preserve">
+    <value>許可を求める</value>
+  </data>
+  <data name="IslamInfo_bukhariBook8" xml:space="preserve">
+    <value>祈り（サラッ）</value>
+  </data>
+  <data name="IslamInfo_bukhariBook80" xml:space="preserve">
+    <value>呼び出し</value>
+  </data>
+  <data name="IslamInfo_bukhariBook81" xml:space="preserve">
+    <value>ハートテンダー作るためにアルゴン（Ar-Riqaq）</value>
+  </data>
+  <data name="IslamInfo_bukhariBook82" xml:space="preserve">
+    <value>神の意志（AL-Qadar）</value>
+  </data>
+  <data name="IslamInfo_bukhariBook83" xml:space="preserve">
+    <value>宣誓と誓い</value>
+  </data>
+  <data name="IslamInfo_bukhariBook84" xml:space="preserve">
+    <value>叶わない誓いのための罪滅ぼし</value>
+  </data>
+  <data name="IslamInfo_bukhariBook85" xml:space="preserve">
+    <value>継承の法則（アル·Faraa'id）</value>
+  </data>
+  <data name="IslamInfo_bukhariBook86" xml:space="preserve">
+    <value>アッラー（フドゥード法）で設定された制限と罰</value>
+  </data>
+  <data name="IslamInfo_bukhariBook87" xml:space="preserve">
+    <value>アッラーとその使徒との戦争での不信心者の処罰</value>
+  </data>
+  <data name="IslamInfo_bukhariBook88" xml:space="preserve">
+    <value>ブラッドマネー（AD-Diyat）</value>
+  </data>
+  <data name="IslamInfo_bukhariBook89" xml:space="preserve">
+    <value>背教者への対応</value>
+  </data>
+  <data name="IslamInfo_bukhariBook9" xml:space="preserve">
+    <value>祈りの回</value>
+  </data>
+  <data name="IslamInfo_bukhariBook90" xml:space="preserve">
+    <value>コンパル（Ikraah）の下で何かを言って</value>
+  </data>
+  <data name="IslamInfo_bukhariBook91" xml:space="preserve">
+    <value>トリック</value>
+  </data>
+  <data name="IslamInfo_bukhariBook92" xml:space="preserve">
+    <value>夢判断</value>
+  </data>
+  <data name="IslamInfo_bukhariBook93" xml:space="preserve">
+    <value>試練と世界の終わり</value>
+  </data>
+  <data name="IslamInfo_bukhariBook94" xml:space="preserve">
+    <value>判決（Ahkaam）</value>
+  </data>
+  <data name="IslamInfo_bukhariBook95" xml:space="preserve">
+    <value>願い</value>
+  </data>
+  <data name="IslamInfo_bukhariBook96" xml:space="preserve">
+    <value>偽り人で考えると受け入れ情報</value>
+  </data>
+  <data name="IslamInfo_bukhariBook97" xml:space="preserve">
+    <value>コー​​ランとスンナに堅持</value>
+  </data>
+  <data name="IslamInfo_bukhariBook98" xml:space="preserve">
+    <value>ワンネス、アッラーの唯一性（タウヒード）</value>
+  </data>
+  <data name="IslamInfo_Classification" xml:space="preserve">
+    <value>分類</value>
+  </data>
+  <data name="IslamInfo_Connecting" xml:space="preserve">
+    <value>接続する</value>
+  </data>
+  <data name="IslamInfo_LetterName" xml:space="preserve">
+    <value>文字の名前</value>
+  </data>
+  <data name="IslamInfo_muslimBook1" xml:space="preserve">
+    <value>はじめに</value>
+  </data>
+  <data name="IslamInfo_muslimBook10" xml:space="preserve">
+    <value>祈りの書（雨）</value>
+  </data>
+  <data name="IslamInfo_muslimBook11" xml:space="preserve">
+    <value>祈りの書（エクリプス）</value>
+  </data>
+  <data name="IslamInfo_muslimBook12" xml:space="preserve">
+    <value>祈りの書（葬儀）</value>
+  </data>
+  <data name="IslamInfo_muslimBook13" xml:space="preserve">
+    <value>ザカートの書</value>
+  </data>
+  <data name="IslamInfo_muslimBook14" xml:space="preserve">
+    <value>断食の書</value>
+  </data>
+  <data name="IslamInfo_muslimBook15" xml:space="preserve">
+    <value>I'tikafの書</value>
+  </data>
+  <data name="IslamInfo_muslimBook16" xml:space="preserve">
+    <value>巡礼の書</value>
+  </data>
+  <data name="IslamInfo_muslimBook17" xml:space="preserve">
+    <value>結婚の書</value>
+  </data>
+  <data name="IslamInfo_muslimBook18" xml:space="preserve">
+    <value>哺乳の書</value>
+  </data>
+  <data name="IslamInfo_muslimBook19" xml:space="preserve">
+    <value>離婚の書</value>
+  </data>
+  <data name="IslamInfo_muslimBook2" xml:space="preserve">
+    <value>信仰の書</value>
+  </data>
+  <data name="IslamInfo_muslimBook20" xml:space="preserve">
+    <value>呼び出し呪いの書</value>
+  </data>
+  <data name="IslamInfo_muslimBook21" xml:space="preserve">
+    <value>Emancipating奴隷の書籍</value>
+  </data>
+  <data name="IslamInfo_muslimBook22" xml:space="preserve">
+    <value>取引の書</value>
+  </data>
+  <data name="IslamInfo_muslimBook23" xml:space="preserve">
+    <value>Masaaqahの書</value>
+  </data>
+  <data name="IslamInfo_muslimBook24" xml:space="preserve">
+    <value>予約の継承の規則に関する用語</value>
+  </data>
+  <data name="IslamInfo_muslimBook25" xml:space="preserve">
+    <value>ギフトブック</value>
+  </data>
+  <data name="IslamInfo_muslimBook26" xml:space="preserve">
+    <value>遺産の本</value>
+  </data>
+  <data name="IslamInfo_muslimBook27" xml:space="preserve">
+    <value>誓いの書</value>
+  </data>
+  <data name="IslamInfo_muslimBook28" xml:space="preserve">
+    <value>誓いの書</value>
+  </data>
+  <data name="IslamInfo_muslimBook29" xml:space="preserve">
+    <value>予約は報復、戦い、殺人の責任を確立するために、宣誓に関する用語</value>
+  </data>
+  <data name="IslamInfo_muslimBook3" xml:space="preserve">
+    <value>精製の書</value>
+  </data>
+  <data name="IslamInfo_muslimBook30" xml:space="preserve">
+    <value>予約イスラム教の規定による処罰に関する用語</value>
+  </data>
+  <data name="IslamInfo_muslimBook31" xml:space="preserve">
+    <value>予約は司法判断に関する用語</value>
+  </data>
+  <data name="IslamInfo_muslimBook32" xml:space="preserve">
+    <value>Luqatahの書</value>
+  </data>
+  <data name="IslamInfo_muslimBook33" xml:space="preserve">
+    <value>ジハードと探検の書</value>
+  </data>
+  <data name="IslamInfo_muslimBook34" xml:space="preserve">
+    <value>政府に予約</value>
+  </data>
+  <data name="IslamInfo_muslimBook35" xml:space="preserve">
+    <value>屠殺することがあるゲームと動物の本と食べられますかAninals</value>
+  </data>
+  <data name="IslamInfo_muslimBook36" xml:space="preserve">
+    <value>犠牲の書</value>
+  </data>
+  <data name="IslamInfo_muslimBook37" xml:space="preserve">
+    <value>飲み物の書籍</value>
+  </data>
+  <data name="IslamInfo_muslimBook38" xml:space="preserve">
+    <value>予約は洋服や装飾に関する用語</value>
+  </data>
+  <data name="IslamInfo_muslimBook39" xml:space="preserve">
+    <value>一般行動に関する書籍</value>
+  </data>
+  <data name="IslamInfo_muslimBook4" xml:space="preserve">
+    <value>月経の書籍</value>
+  </data>
+  <data name="IslamInfo_muslimBook40" xml:space="preserve">
+    <value>礼拝と挨拶に予約</value>
+  </data>
+  <data name="IslamInfo_muslimBook41" xml:space="preserve">
+    <value>正しい言葉の使用に関する書籍</value>
+  </data>
+  <data name="IslamInfo_muslimBook42" xml:space="preserve">
+    <value>詩の本</value>
+  </data>
+  <data name="IslamInfo_muslimBook43" xml:space="preserve">
+    <value>ビジョンの書</value>
+  </data>
+  <data name="IslamInfo_muslimBook44" xml:space="preserve">
+    <value>聖なる預言者の優れた資質に関する用語帳（平和は彼らにすることができる）とその仲間たち</value>
+  </data>
+  <data name="IslamInfo_muslimBook45" xml:space="preserve">
+    <value>聖なる預言者の仲間のメリットに関する用語帳（アッラーは彼らと喜んで）</value>
+  </data>
+  <data name="IslamInfo_muslimBook46" xml:space="preserve">
+    <value>美徳の書、グッドマナーの関係の絆の接合</value>
+  </data>
+  <data name="IslamInfo_muslimBook47" xml:space="preserve">
+    <value>運命の書</value>
+  </data>
+  <data name="IslamInfo_muslimBook48" xml:space="preserve">
+    <value>知識の書</value>
+  </data>
+  <data name="IslamInfo_muslimBook49" xml:space="preserve">
+    <value>予約はアッラー、嘆願、悔い改めのリメンバランスに関する用語と許しを求めて</value>
+  </data>
+  <data name="IslamInfo_muslimBook5" xml:space="preserve">
+    <value>祈りの書</value>
+  </data>
+  <data name="IslamInfo_muslimBook50" xml:space="preserve">
+    <value>ハート溶融伝統の書</value>
+  </data>
+  <data name="IslamInfo_muslimBook51" xml:space="preserve">
+    <value>予約悔い改めに悔い改めとのすすめに関する用語</value>
+  </data>
+  <data name="IslamInfo_muslimBook52" xml:space="preserve">
+    <value>それらに関しては偽善、コマンドのCharateristicsに関係</value>
+  </data>
+  <data name="IslamInfo_muslimBook53" xml:space="preserve">
+    <value>予約は、審判の日の説明を与えるパラダイスと地獄</value>
+  </data>
+  <data name="IslamInfo_muslimBook54" xml:space="preserve">
+    <value>パラダイスに関する用語ブック、説明、その手配書とそのインナー</value>
+  </data>
+  <data name="IslamInfo_muslimBook55" xml:space="preserve">
+    <value>ブック過去1時間の混乱と前兆に関する用語</value>
+  </data>
+  <data name="IslamInfo_muslimBook56" xml:space="preserve">
+    <value>予約は信心深さと心の軟化に関する用語</value>
+  </data>
+  <data name="IslamInfo_muslimBook57" xml:space="preserve">
+    <value>解説の書</value>
+  </data>
+  <data name="IslamInfo_muslimBook6" xml:space="preserve">
+    <value>モスクと祈りの場所の予約</value>
+  </data>
+  <data name="IslamInfo_muslimBook7" xml:space="preserve">
+    <value>祈りの書（旅行者）</value>
+  </data>
+  <data name="IslamInfo_muslimBook8" xml:space="preserve">
+    <value>祈りの書（金曜日）</value>
+  </data>
+  <data name="IslamInfo_muslimBook9" xml:space="preserve">
+    <value>祈りの書（二のEID）</value>
+  </data>
+  <data name="IslamInfo_PrayerUnits" xml:space="preserve">
+    <value>祈りの単位</value>
+  </data>
+  <data name="IslamInfo_QuranChapter1" xml:space="preserve">
+    <value>オープニング</value>
+  </data>
+  <data name="IslamInfo_QuranChapter10" xml:space="preserve">
+    <value>ジョナス</value>
+  </data>
+  <data name="IslamInfo_QuranChapter100" xml:space="preserve">
+    <value>充電器</value>
+  </data>
+  <data name="IslamInfo_QuranChapter101" xml:space="preserve">
+    <value>カラミティ</value>
+  </data>
+  <data name="IslamInfo_QuranChapter102" xml:space="preserve">
+    <value>競争</value>
+  </data>
+  <data name="IslamInfo_QuranChapter103" xml:space="preserve">
+    <value>少子化の日、エポック</value>
+  </data>
+  <data name="IslamInfo_QuranChapter104" xml:space="preserve">
+    <value>Traducer</value>
+  </data>
+  <data name="IslamInfo_QuranChapter105" xml:space="preserve">
+    <value>ゾウ</value>
+  </data>
+  <data name="IslamInfo_QuranChapter106" xml:space="preserve">
+    <value>クライシュ族</value>
+  </data>
+  <data name="IslamInfo_QuranChapter107" xml:space="preserve">
+    <value>施し</value>
+  </data>
+  <data name="IslamInfo_QuranChapter108" xml:space="preserve">
+    <value>豊富</value>
+  </data>
+  <data name="IslamInfo_QuranChapter109" xml:space="preserve">
+    <value>不信心者</value>
+  </data>
+  <data name="IslamInfo_QuranChapter11" xml:space="preserve">
+    <value>ハッド</value>
+  </data>
+  <data name="IslamInfo_QuranChapter110" xml:space="preserve">
+    <value>神のサ​​ポート</value>
+  </data>
+  <data name="IslamInfo_QuranChapter111" xml:space="preserve">
+    <value>パームファイバー</value>
+  </data>
+  <data name="IslamInfo_QuranChapter112" xml:space="preserve">
+    <value>誠実</value>
+  </data>
+  <data name="IslamInfo_QuranChapter113" xml:space="preserve">
+    <value>夜明け</value>
+  </data>
+  <data name="IslamInfo_QuranChapter114" xml:space="preserve">
+    <value>人類</value>
+  </data>
+  <data name="IslamInfo_QuranChapter12" xml:space="preserve">
+    <value>ヨセフ</value>
+  </data>
+  <data name="IslamInfo_QuranChapter13" xml:space="preserve">
+    <value>サンダー</value>
+  </data>
+  <data name="IslamInfo_QuranChapter14" xml:space="preserve">
+    <value>アブラハム</value>
+  </data>
+  <data name="IslamInfo_QuranChapter15" xml:space="preserve">
+    <value>ロック</value>
+  </data>
+  <data name="IslamInfo_QuranChapter16" xml:space="preserve">
+    <value>ビー</value>
+  </data>
+  <data name="IslamInfo_QuranChapter17" xml:space="preserve">
+    <value>夜の旅</value>
+  </data>
+  <data name="IslamInfo_QuranChapter18" xml:space="preserve">
+    <value>ケイブ</value>
+  </data>
+  <data name="IslamInfo_QuranChapter19" xml:space="preserve">
+    <value>メアリー</value>
+  </data>
+  <data name="IslamInfo_QuranChapter2" xml:space="preserve">
+    <value>牛</value>
+  </data>
+  <data name="IslamInfo_QuranChapter20" xml:space="preserve">
+    <value>TAA-はぁ</value>
+  </data>
+  <data name="IslamInfo_QuranChapter21" xml:space="preserve">
+    <value>預言者</value>
+  </data>
+  <data name="IslamInfo_QuranChapter22" xml:space="preserve">
+    <value>巡礼</value>
+  </data>
+  <data name="IslamInfo_QuranChapter23" xml:space="preserve">
+    <value>サポーター</value>
+  </data>
+  <data name="IslamInfo_QuranChapter24" xml:space="preserve">
+    <value>ライト</value>
+  </data>
+  <data name="IslamInfo_QuranChapter25" xml:space="preserve">
+    <value>基準</value>
+  </data>
+  <data name="IslamInfo_QuranChapter26" xml:space="preserve">
+    <value>詩人</value>
+  </data>
+  <data name="IslamInfo_QuranChapter27" xml:space="preserve">
+    <value>アリ</value>
+  </data>
+  <data name="IslamInfo_QuranChapter28" xml:space="preserve">
+    <value>ストーリー</value>
+  </data>
+  <data name="IslamInfo_QuranChapter29" xml:space="preserve">
+    <value>スパイダー</value>
+  </data>
+  <data name="IslamInfo_QuranChapter3" xml:space="preserve">
+    <value>家章の家族</value>
+  </data>
+  <data name="IslamInfo_QuranChapter30" xml:space="preserve">
+    <value>ローマ人への手紙</value>
+  </data>
+  <data name="IslamInfo_QuranChapter31" xml:space="preserve">
+    <value>Luqman</value>
+  </data>
+  <data name="IslamInfo_QuranChapter32" xml:space="preserve">
+    <value>衰弱</value>
+  </data>
+  <data name="IslamInfo_QuranChapter33" xml:space="preserve">
+    <value>氏族</value>
+  </data>
+  <data name="IslamInfo_QuranChapter34" xml:space="preserve">
+    <value>シバ</value>
+  </data>
+  <data name="IslamInfo_QuranChapter35" xml:space="preserve">
+    <value>オリジネーター</value>
+  </data>
+  <data name="IslamInfo_QuranChapter36" xml:space="preserve">
+    <value>Yaseen</value>
+  </data>
+  <data name="IslamInfo_QuranChapter37" xml:space="preserve">
+    <value>ランクに策定されたもの</value>
+  </data>
+  <data name="IslamInfo_QuranChapter38" xml:space="preserve">
+    <value>手紙サアド</value>
+  </data>
+  <data name="IslamInfo_QuranChapter39" xml:space="preserve">
+    <value>グループ</value>
+  </data>
+  <data name="IslamInfo_QuranChapter4" xml:space="preserve">
+    <value>女性</value>
+  </data>
+  <data name="IslamInfo_QuranChapter40" xml:space="preserve">
+    <value>寛容に</value>
+  </data>
+  <data name="IslamInfo_QuranChapter41" xml:space="preserve">
+    <value>詳細に説明</value>
+  </data>
+  <data name="IslamInfo_QuranChapter42" xml:space="preserve">
+    <value>相談</value>
+  </data>
+  <data name="IslamInfo_QuranChapter43" xml:space="preserve">
+    <value>金の装飾品</value>
+  </data>
+  <data name="IslamInfo_QuranChapter44" xml:space="preserve">
+    <value>スモーク</value>
+  </data>
+  <data name="IslamInfo_QuranChapter45" xml:space="preserve">
+    <value>しゃがん</value>
+  </data>
+  <data name="IslamInfo_QuranChapter46" xml:space="preserve">
+    <value>砂丘</value>
+  </data>
+  <data name="IslamInfo_QuranChapter47" xml:space="preserve">
+    <value>ムハンマド</value>
+  </data>
+  <data name="IslamInfo_QuranChapter48" xml:space="preserve">
+    <value>勝利</value>
+  </data>
+  <data name="IslamInfo_QuranChapter49" xml:space="preserve">
+    <value>インナーアパート</value>
+  </data>
+  <data name="IslamInfo_QuranChapter5" xml:space="preserve">
+    <value>表</value>
+  </data>
+  <data name="IslamInfo_QuranChapter50" xml:space="preserve">
+    <value>手紙Qaaf</value>
+  </data>
+  <data name="IslamInfo_QuranChapter51" xml:space="preserve">
+    <value>ふるい分け風</value>
+  </data>
+  <data name="IslamInfo_QuranChapter52" xml:space="preserve">
+    <value>マウント</value>
+  </data>
+  <data name="IslamInfo_QuranChapter53" xml:space="preserve">
+    <value>スター</value>
+  </data>
+  <data name="IslamInfo_QuranChapter54" xml:space="preserve">
+    <value>月</value>
+  </data>
+  <data name="IslamInfo_QuranChapter55" xml:space="preserve">
+    <value>慈悲</value>
+  </data>
+  <data name="IslamInfo_QuranChapter56" xml:space="preserve">
+    <value>避けられない</value>
+  </data>
+  <data name="IslamInfo_QuranChapter57" xml:space="preserve">
+    <value>アイアン</value>
+  </data>
+  <data name="IslamInfo_QuranChapter58" xml:space="preserve">
+    <value>懇願女</value>
+  </data>
+  <data name="IslamInfo_QuranChapter59" xml:space="preserve">
+    <value>エグザイル</value>
+  </data>
+  <data name="IslamInfo_QuranChapter6" xml:space="preserve">
+    <value>牛</value>
+  </data>
+  <data name="IslamInfo_QuranChapter60" xml:space="preserve">
+    <value>彼女は、それが検査される</value>
+  </data>
+  <data name="IslamInfo_QuranChapter61" xml:space="preserve">
+    <value>ランクス</value>
+  </data>
+  <data name="IslamInfo_QuranChapter62" xml:space="preserve">
+    <value>金曜日</value>
+  </data>
+  <data name="IslamInfo_QuranChapter63" xml:space="preserve">
+    <value>偽善</value>
+  </data>
+  <data name="IslamInfo_QuranChapter64" xml:space="preserve">
+    <value>相互幻滅</value>
+  </data>
+  <data name="IslamInfo_QuranChapter65" xml:space="preserve">
+    <value>離婚</value>
+  </data>
+  <data name="IslamInfo_QuranChapter66" xml:space="preserve">
+    <value>禁止</value>
+  </data>
+  <data name="IslamInfo_QuranChapter67" xml:space="preserve">
+    <value>主権</value>
+  </data>
+  <data name="IslamInfo_QuranChapter68" xml:space="preserve">
+    <value>ペン</value>
+  </data>
+  <data name="IslamInfo_QuranChapter69" xml:space="preserve">
+    <value>リアリティ</value>
+  </data>
+  <data name="IslamInfo_QuranChapter7" xml:space="preserve">
+    <value>ハイツ</value>
+  </data>
+  <data name="IslamInfo_QuranChapter70" xml:space="preserve">
+    <value>昇順階段</value>
+  </data>
+  <data name="IslamInfo_QuranChapter71" xml:space="preserve">
+    <value>ノア</value>
+  </data>
+  <data name="IslamInfo_QuranChapter72" xml:space="preserve">
+    <value>ジン</value>
+  </data>
+  <data name="IslamInfo_QuranChapter73" xml:space="preserve">
+    <value>包まワン</value>
+  </data>
+  <data name="IslamInfo_QuranChapter74" xml:space="preserve">
+    <value>クロークワン</value>
+  </data>
+  <data name="IslamInfo_QuranChapter75" xml:space="preserve">
+    <value>復活</value>
+  </data>
+  <data name="IslamInfo_QuranChapter76" xml:space="preserve">
+    <value>マン</value>
+  </data>
+  <data name="IslamInfo_QuranChapter77" xml:space="preserve">
+    <value>使者</value>
+  </data>
+  <data name="IslamInfo_QuranChapter78" xml:space="preserve">
+    <value>お知らせ</value>
+  </data>
+  <data name="IslamInfo_QuranChapter79" xml:space="preserve">
+    <value>前後にドラッグし者たち</value>
+  </data>
+  <data name="IslamInfo_QuranChapter8" xml:space="preserve">
+    <value>戦利品</value>
+  </data>
+  <data name="IslamInfo_QuranChapter80" xml:space="preserve">
+    <value>彼は眉をひそめ</value>
+  </data>
+  <data name="IslamInfo_QuranChapter81" xml:space="preserve">
+    <value>転覆</value>
+  </data>
+  <data name="IslamInfo_QuranChapter82" xml:space="preserve">
+    <value>劈開</value>
+  </data>
+  <data name="IslamInfo_QuranChapter83" xml:space="preserve">
+    <value>詐取</value>
+  </data>
+  <data name="IslamInfo_QuranChapter84" xml:space="preserve">
+    <value>分割オープン</value>
+  </data>
+  <data name="IslamInfo_QuranChapter85" xml:space="preserve">
+    <value>星座</value>
+  </data>
+  <data name="IslamInfo_QuranChapter86" xml:space="preserve">
+    <value>モーニングスター</value>
+  </data>
+  <data name="IslamInfo_QuranChapter87" xml:space="preserve">
+    <value>至高</value>
+  </data>
+  <data name="IslamInfo_QuranChapter88" xml:space="preserve">
+    <value>圧倒的な</value>
+  </data>
+  <data name="IslamInfo_QuranChapter89" xml:space="preserve">
+    <value>夜明け</value>
+  </data>
+  <data name="IslamInfo_QuranChapter9" xml:space="preserve">
+    <value>リペンタンス</value>
+  </data>
+  <data name="IslamInfo_QuranChapter90" xml:space="preserve">
+    <value>シティ</value>
+  </data>
+  <data name="IslamInfo_QuranChapter91" xml:space="preserve">
+    <value>太陽</value>
+  </data>
+  <data name="IslamInfo_QuranChapter92" xml:space="preserve">
+    <value>ナイト</value>
+  </data>
+  <data name="IslamInfo_QuranChapter93" xml:space="preserve">
+    <value>朝の時間</value>
+  </data>
+  <data name="IslamInfo_QuranChapter94" xml:space="preserve">
+    <value>慰め</value>
+  </data>
+  <data name="IslamInfo_QuranChapter95" xml:space="preserve">
+    <value>図</value>
+  </data>
+  <data name="IslamInfo_QuranChapter96" xml:space="preserve">
+    <value>血栓</value>
+  </data>
+  <data name="IslamInfo_QuranChapter97" xml:space="preserve">
+    <value>電源、運命</value>
+  </data>
+  <data name="IslamInfo_QuranChapter98" xml:space="preserve">
+    <value>証拠</value>
+  </data>
+  <data name="IslamInfo_QuranChapter99" xml:space="preserve">
+    <value>大地震</value>
+  </data>
+  <data name="IslamInfo_Terminating" xml:space="preserve">
+    <value>終端</value>
+  </data>
+  <data name="IslamInfo_Translation" xml:space="preserve">
+    <value>翻訳</value>
+  </data>
+  <data name="IslamInfo_Transliteration" xml:space="preserve">
+    <value>音訳</value>
+  </data>
+  <data name="IslamInfo_UnicodeName" xml:space="preserve">
+    <value>Unicode名</value>
+  </data>
+  <data name="IslamInfo_UnicodeValue" xml:space="preserve">
+    <value>Unicodeの値</value>
+  </data>
+  <data name="unicode_ArabicComma" xml:space="preserve">
+    <value>アラビアカンマ</value>
+  </data>
+  <data name="unicode_ArabicDamma" xml:space="preserve">
+    <value>アラビアDamma</value>
+  </data>
+  <data name="unicode_ArabicDammatan" xml:space="preserve">
+    <value>アラビアDammatan</value>
+  </data>
+  <data name="unicode_ArabicEmptyCentreHighStop" xml:space="preserve">
+    <value>アラビア空のセンターハイストップ</value>
+  </data>
+  <data name="unicode_ArabicEmptyCentreLowStop" xml:space="preserve">
+    <value>アラビア空のセンター低ストップ</value>
+  </data>
+  <data name="unicode_ArabicEndOfAyah" xml:space="preserve">
+    <value>アヤアラビア終了</value>
+  </data>
+  <data name="unicode_ArabicFatha" xml:space="preserve">
+    <value>アラビアFatha</value>
+  </data>
+  <data name="unicode_ArabicFathatan" xml:space="preserve">
+    <value>アラビアFathatan</value>
+  </data>
+  <data name="unicode_ArabicHamzaAbove" xml:space="preserve">
+    <value>アラビアハムザ上</value>
+  </data>
+  <data name="unicode_ArabicHamzaBelow" xml:space="preserve">
+    <value>以下は、アラビア語のハムザ</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitEight" xml:space="preserve">
+    <value>アラビア語 - インド数字エイト</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitFive" xml:space="preserve">
+    <value>アラビア語 - インド数字ファイブ</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitFour" xml:space="preserve">
+    <value>アラビア語 - インド数字四</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitNine" xml:space="preserve">
+    <value>アラビア語 - インド数字ナイン</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitOne" xml:space="preserve">
+    <value>アラビア語 - インド数字ワン</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitSeven" xml:space="preserve">
+    <value>アラビア語 - インド数字セブン</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitSix" xml:space="preserve">
+    <value>アラビア語 - インド数字六</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitThree" xml:space="preserve">
+    <value>アラビア語 - インド数字スリー</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitTwo" xml:space="preserve">
+    <value>アラビア語 - インド数字二つ</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitZero" xml:space="preserve">
+    <value>アラビア語 - インド数字のゼロ</value>
+  </data>
+  <data name="unicode_ArabicKasra" xml:space="preserve">
+    <value>アラビアカスラ</value>
+  </data>
+  <data name="unicode_ArabicKasratan" xml:space="preserve">
+    <value>アラビアKasratan</value>
+  </data>
+  <data name="unicode_ArabicLetterAin" xml:space="preserve">
+    <value>アラビア文字アイン</value>
+  </data>
+  <data name="unicode_ArabicLetterAlef" xml:space="preserve">
+    <value>アラビア文字アリフ</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefMaksura" xml:space="preserve">
+    <value>アラビア文字アリフMaksura</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefWasla" xml:space="preserve">
+    <value>アラビア文字アリフWasla</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefWithHamzaAbove" xml:space="preserve">
+    <value>ハムザ以上によりアラビア文字アリフ</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefWithHamzaBelow" xml:space="preserve">
+    <value>以下は、ハムザとアラビア文字アリフ</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefWithMaddaAbove" xml:space="preserve">
+    <value>Madda以上によりアラビア文字アリフ</value>
+  </data>
+  <data name="unicode_ArabicLetterBeh" xml:space="preserve">
+    <value>アラビア文字BEH</value>
+  </data>
+  <data name="unicode_ArabicLetterDad" xml:space="preserve">
+    <value>アラビア文字お父さん</value>
+  </data>
+  <data name="unicode_ArabicLetterDal" xml:space="preserve">
+    <value>アラビア文字ダル</value>
+  </data>
+  <data name="unicode_ArabicLetterFeh" xml:space="preserve">
+    <value>アラビア文字FEH</value>
+  </data>
+  <data name="unicode_ArabicLetterGaf" xml:space="preserve">
+    <value>アラビア文字ガフ</value>
+  </data>
+  <data name="unicode_ArabicLetterGhain" xml:space="preserve">
+    <value>アラビア文字Ghain</value>
+  </data>
+  <data name="unicode_ArabicLetterHah" xml:space="preserve">
+    <value>アラビア文字ほら</value>
+  </data>
+  <data name="unicode_ArabicLetterHamza" xml:space="preserve">
+    <value>アラビア文字ハムザ</value>
+  </data>
+  <data name="unicode_ArabicLetterHeh" xml:space="preserve">
+    <value>アラビア文字のheh</value>
+  </data>
+  <data name="unicode_ArabicLetterJeem" xml:space="preserve">
+    <value>アラビア文字Jeem</value>
+  </data>
+  <data name="unicode_ArabicLetterKaf" xml:space="preserve">
+    <value>アラビア文字カーフ</value>
+  </data>
+  <data name="unicode_ArabicLetterKhah" xml:space="preserve">
+    <value>アラビア文字Khah</value>
+  </data>
+  <data name="unicode_ArabicLetterLam" xml:space="preserve">
+    <value>アラビア文字·ラム</value>
+  </data>
+  <data name="unicode_ArabicLetterMeem" xml:space="preserve">
+    <value>アラビア文字メーム</value>
+  </data>
+  <data name="unicode_ArabicLetterNoon" xml:space="preserve">
+    <value>アラビア文字の正午</value>
+  </data>
+  <data name="unicode_ArabicLetterPeh" xml:space="preserve">
+    <value>アラビア文字PEH</value>
+  </data>
+  <data name="unicode_ArabicLetterQaf" xml:space="preserve">
+    <value>アラビア文字QAF</value>
+  </data>
+  <data name="unicode_ArabicLetterReh" xml:space="preserve">
+    <value>アラビア文字REH</value>
+  </data>
+  <data name="unicode_ArabicLetterSad" xml:space="preserve">
+    <value>アラビア文字悲しい</value>
+  </data>
+  <data name="unicode_ArabicLetterSeen" xml:space="preserve">
+    <value>見たアラビア文字</value>
+  </data>
+  <data name="unicode_ArabicLetterSheen" xml:space="preserve">
+    <value>アラビア文字·シーン</value>
+  </data>
+  <data name="unicode_ArabicLetterSuperscriptAlef" xml:space="preserve">
+    <value>アラビア文字上付きアリフ</value>
+  </data>
+  <data name="unicode_ArabicLetterTah" xml:space="preserve">
+    <value>アラビア文字TAH</value>
+  </data>
+  <data name="unicode_ArabicLetterTcheh" xml:space="preserve">
+    <value>アラビア文字Tcheh</value>
+  </data>
+  <data name="unicode_ArabicLetterTeh" xml:space="preserve">
+    <value>アラビア文字·テ</value>
+  </data>
+  <data name="unicode_ArabicLetterTehMarbuta" xml:space="preserve">
+    <value>アラビア文字·テMarbuta</value>
+  </data>
+  <data name="unicode_ArabicLetterThal" xml:space="preserve">
+    <value>アラビア文字サール</value>
+  </data>
+  <data name="unicode_ArabicLetterTheh" xml:space="preserve">
+    <value>アラビア文字Theh</value>
+  </data>
+  <data name="unicode_ArabicLetterVeh" xml:space="preserve">
+    <value>アラビア文字VEH</value>
+  </data>
+  <data name="unicode_ArabicLetterWaw" xml:space="preserve">
+    <value>アラビア文字ワーウ</value>
+  </data>
+  <data name="unicode_ArabicLetterWawWithHamzaAbove" xml:space="preserve">
+    <value>ハムザ以上によりアラビア文字ワーウ</value>
+  </data>
+  <data name="unicode_ArabicLetterYeh" xml:space="preserve">
+    <value>アラビア文字葉</value>
+  </data>
+  <data name="unicode_ArabicLetterYehWithHamzaAbove" xml:space="preserve">
+    <value>ハムザ以上によりアラビア文字葉</value>
+  </data>
+  <data name="unicode_ArabicLetterZah" xml:space="preserve">
+    <value>アラビア文字ZAH</value>
+  </data>
+  <data name="unicode_ArabicLetterZain" xml:space="preserve">
+    <value>アラビア文字ザイン</value>
+  </data>
+  <data name="unicode_ArabicLigatureAkbarIsolatedForm" xml:space="preserve">
+    <value>アラビアリガチャアクバル単離された形</value>
+  </data>
+  <data name="unicode_ArabicLigatureAlayheIsolatedForm" xml:space="preserve">
+    <value>アラビアリガチャAlayhe単離された形</value>
+  </data>
+  <data name="unicode_ArabicLigatureAllahIsolatedForm" xml:space="preserve">
+    <value>アラビアリガチャアッラーに単離された形態</value>
+  </data>
+  <data name="unicode_ArabicLigatureBismillahArRahmanArRaheem" xml:space="preserve">
+    <value>アラビアリガチャーBismillahのAr-ラーマンのAr-ラヒーム</value>
+  </data>
+  <data name="unicode_ArabicLigatureJallajalalouhou" xml:space="preserve">
+    <value>アラビアリガチャJallajalalouhou</value>
+  </data>
+  <data name="unicode_ArabicLigatureMohammadIsolatedForm" xml:space="preserve">
+    <value>アラビアリガチャモハマド単離された形</value>
+  </data>
+  <data name="unicode_ArabicLigatureQalaUsedAsKoranicStopSignIsolatedForm" xml:space="preserve">
+    <value>アラビア語の合字Qalaのはコーランの一時停止の標識に単離された形態として使用</value>
+  </data>
+  <data name="unicode_ArabicLigatureRasoulIsolatedForm" xml:space="preserve">
+    <value>アラビアリガチャRasoul単離された形</value>
+  </data>
+  <data name="unicode_ArabicLigatureSalamIsolatedForm" xml:space="preserve">
+    <value>アラビアリガチャサラムに単離された形態</value>
+  </data>
+  <data name="unicode_ArabicLigatureSallaIsolatedForm" xml:space="preserve">
+    <value>アラビアリガチャサラに単離された形態</value>
+  </data>
+  <data name="unicode_ArabicLigatureSallallahouAlayheWasallam" xml:space="preserve">
+    <value>アラビアリガチャSallallahou Alayhe Wasallam</value>
+  </data>
+  <data name="unicode_ArabicLigatureSallaUsedAsKoranicStopSignIsolatedForm" xml:space="preserve">
+    <value>アラビア語の合字サラはコーラン一時停止の標識に単離された形態として使用</value>
+  </data>
+  <data name="unicode_ArabicLigatureWasallamIsolatedForm" xml:space="preserve">
+    <value>アラビアリガチャWasallam単離された形</value>
+  </data>
+  <data name="unicode_ArabicMaddahAbove" xml:space="preserve">
+    <value>アラビアMaddah上</value>
+  </data>
+  <data name="unicode_ArabicPlaceOfSajdah" xml:space="preserve">
+    <value>Sajdahアラビア場所</value>
+  </data>
+  <data name="unicode_ArabicQuestionMark" xml:space="preserve">
+    <value>アラビア語疑問符</value>
+  </data>
+  <data name="unicode_ArabicRoundedHighStopWithFilledCentre" xml:space="preserve">
+    <value>満たされたセンターのアラビア語の丸いハイストップ</value>
+  </data>
+  <data name="unicode_ArabicSemicolon" xml:space="preserve">
+    <value>アラビアセミコロン</value>
+  </data>
+  <data name="unicode_ArabicShadda" xml:space="preserve">
+    <value>アラビアShadda</value>
+  </data>
+  <data name="unicode_ArabicSmallHighJeem" xml:space="preserve">
+    <value>アラビア小型ハイJeem</value>
+  </data>
+  <data name="unicode_ArabicSmallHighLamAlef" xml:space="preserve">
+    <value>アラビア小型ハイ·ラムアリフ</value>
+  </data>
+  <data name="unicode_ArabicSmallHighLigatureQafWithLamWithAlefMaksura" xml:space="preserve">
+    <value>アリフMaksura付きラメ入りアラビア小型ハイリガチャーQAF</value>
+  </data>
+  <data name="unicode_ArabicSmallHighLigatureSadWithLamWithAlefMaksura" xml:space="preserve">
+    <value>アリフMaksura付きラメ入り悲しいアラビア小型ハイリガチャー</value>
+  </data>
+  <data name="unicode_ArabicSmallHighMeemInitialForm" xml:space="preserve">
+    <value>アラビア小型ハイメーム初期フォーム</value>
+  </data>
+  <data name="unicode_ArabicSmallHighMeemIsolatedForm" xml:space="preserve">
+    <value>アラビア小型ハイメームに単離された形態</value>
+  </data>
+  <data name="unicode_ArabicSmallHighNoon" xml:space="preserve">
+    <value>アラビア小型ハイヌーン</value>
+  </data>
+  <data name="unicode_ArabicSmallHighRoundedZero" xml:space="preserve">
+    <value>アラビア小型ハイ丸いゼロ</value>
+  </data>
+  <data name="unicode_ArabicSmallHighSeen" xml:space="preserve">
+    <value>アラビア小型ハイ見</value>
+  </data>
+  <data name="unicode_ArabicSmallHighThreeDots" xml:space="preserve">
+    <value>アラビア小型高3つのドット</value>
+  </data>
+  <data name="unicode_ArabicSmallHighUprightRectangularZero" xml:space="preserve">
+    <value>アラビア小型ハイアップライト長方形ゼロ</value>
+  </data>
+  <data name="unicode_ArabicSmallLowMeem" xml:space="preserve">
+    <value>アラビア小型低メーム</value>
+  </data>
+  <data name="unicode_ArabicSmallLowSeen" xml:space="preserve">
+    <value>アラビア小型低見</value>
+  </data>
+  <data name="unicode_ArabicSmallWaw" xml:space="preserve">
+    <value>アラビア語小ワーウ</value>
+  </data>
+  <data name="unicode_ArabicSmallYeh" xml:space="preserve">
+    <value>アラビア語小葉</value>
+  </data>
+  <data name="unicode_ArabicStartOfRubElHizb" xml:space="preserve">
+    <value>ラブエルHizbアラビア語スタート</value>
+  </data>
+  <data name="unicode_ArabicSukun" xml:space="preserve">
+    <value>アラビアSukun</value>
+  </data>
+  <data name="unicode_ArabicTatweel" xml:space="preserve">
+    <value>アラビアTatweel</value>
+  </data>
+  <data name="unicode_Colon" xml:space="preserve">
+    <value>コロン</value>
+  </data>
+  <data name="unicode_Comma" xml:space="preserve">
+    <value>コンマ</value>
+  </data>
+  <data name="unicode_ExclamationMark" xml:space="preserve">
+    <value>感嘆符</value>
+  </data>
+  <data name="unicode_FullStop" xml:space="preserve">
+    <value>終止符</value>
+  </data>
+  <data name="unicode_HyphenMinus" xml:space="preserve">
+    <value>ハイフン - マイナス</value>
+  </data>
+  <data name="unicode_LeftCurlyBracket" xml:space="preserve">
+    <value>左中括弧</value>
+  </data>
+  <data name="unicode_LeftPointingDoubleAngleQuotationMark" xml:space="preserve">
+    <value>左向きの二重山引用符</value>
+  </data>
+  <data name="unicode_LeftSquareBracket" xml:space="preserve">
+    <value>左角括弧</value>
+  </data>
+  <data name="unicode_OrnateLeftParenthesis" xml:space="preserve">
+    <value>華やかな左括弧</value>
+  </data>
+  <data name="unicode_OrnateRightParenthesis" xml:space="preserve">
+    <value>華やか右カッコ</value>
+  </data>
+  <data name="unicode_QuotationMark" xml:space="preserve">
+    <value>引用符</value>
+  </data>
+  <data name="unicode_RialSign" xml:space="preserve">
+    <value>リアルサイン</value>
+  </data>
+  <data name="unicode_RightCurlyBracket" xml:space="preserve">
+    <value>右中括弧</value>
+  </data>
+  <data name="unicode_RightPointingDoubleAngleQuotationMark" xml:space="preserve">
+    <value>右向きの二重山引用符</value>
+  </data>
+  <data name="unicode_RightSquareBracket" xml:space="preserve">
+    <value>右角括弧</value>
+  </data>
+  <data name="unicode_Space" xml:space="preserve">
+    <value>スペース</value>
+  </data>
+  <data name="IslamInfo_Date" xml:space="preserve">
+    <value>日付</value>
+  </data>
+  <data name="IslamInfo_Day" xml:space="preserve">
+    <value>日</value>
+  </data>
+  <data name="IslamInfo_Final1" xml:space="preserve">
+    <value>最終的な第一</value>
+  </data>
+  <data name="IslamInfo_Final1Trans" xml:space="preserve">
+    <value>彼のようにこれは何であり、彼は全聴にして全視で</value>
+  </data>
+  <data name="IslamInfo_Final1WordByWord" xml:space="preserve">
+    <value>シーア|聴|どの|しない|何| |彼のようであり、彼はある</value>
+  </data>
+  <data name="IslamInfo_Final2" xml:space="preserve">
+    <value>最終的な第二</value>
+  </data>
+  <data name="IslamInfo_Final2Trans" xml:space="preserve">
+    <value>Oアッラーは、あなたの最高の創造物のマスタームハンマド時に最高の祈りを送る</value>
+  </data>
+  <data name="IslamInfo_Final2WordByWord" xml:space="preserve">
+    <value>Oアッラー|送る|ベスト|祈り|時|ベスト|あなたの創造の|マスター|ムハンマド</value>
+  </data>
+  <data name="IslamInfo_Final3" xml:space="preserve">
+    <value>最終的な第三</value>
+  </data>
+  <data name="IslamInfo_Final3Trans" xml:space="preserve">
+    <value>平和と彼の言葉といつのインク彼を覚えている人は、そうとはいつでも彼を覚えて無視人たちは、そう</value>
+  </data>
+  <data name="IslamInfo_Final3WordByWord" xml:space="preserve">
+    <value>平和|彼を覚えて| |する|知識| |とインク|彼の言葉|いつ|彼を覚えて|そう|といつ無視する人々を再集計は、そう</value>
+  </data>
+  <data name="IslamInfo_OMasterSendPrayersAndPeace" xml:space="preserve">
+    <value>わが主、あなたの挨拶と祝福を送る</value>
+  </data>
+  <data name="IslamInfo_OMasterSendPrayersAndPeaceTrans" xml:space="preserve">
+    <value>わが主は、あなたの最愛に永久に創造の全体のベストをご挨拶と祝福を送る</value>
+  </data>
+  <data name="IslamInfo_OMasterSendPrayersAndPeaceWordByWord" xml:space="preserve">
+    <value>わがマスター|ご挨拶を送る|と祝福|常に|永遠|時|あなたの最愛|全体の|作成|ベスト</value>
+  </data>
+  <data name="IslamInfo_PopularIslamicSongVerses" xml:space="preserve">
+    <value>人気のイスラム歌詩</value>
+  </data>
+  <data name="IslamInfo_RemembranceFirst" xml:space="preserve">
+    <value>リメンバランスまず</value>
+  </data>
+  <data name="IslamInfo_RemembranceFirstTrans" xml:space="preserve">
+    <value>）なし崇拝される権利を持っていませんが、あなた（Oアッラー））、讃え、彼らはあなたに関連付ける（と賛美は）（すべてのこと（悪の上にいる）。</value>
+  </data>
+  <data name="IslamInfo_RemembranceFirstWordByWord" xml:space="preserve">
+    <value>どれも|あなたは| |本当に| |不義|の|私がしているあなたは讃え崇拝される権利を持っていません|しかし、</value>
+  </data>
+  <data name="IslamInfo_RemembranceSecond" xml:space="preserve">
+    <value>リメンバランスセカンド</value>
+  </data>
+  <data name="IslamInfo_RemembranceSecondTrans" xml:space="preserve">
+    <value>アッラー（単独）は、私たちのために十分であり、彼は（私たちのために）業務のベスト·ディスポーザーです。</value>
+  </data>
+  <data name="IslamInfo_RemembranceSecondWordByWord" xml:space="preserve">
+    <value>私たちのために十分な|アッラー|と彼は最高です|事務のディスポーザー|どんな優れ|パトロン|と優れたものを|ヘルパー</value>
+  </data>
+  <data name="IslamInfo_RemembranceThird" xml:space="preserve">
+    <value>リメンバランスサード</value>
+  </data>
+  <data name="IslamInfo_RemembranceThirdTrans" xml:space="preserve">
+    <value>全く強さがありません（罪からではなく、アッラーからの保護を控えるように）と（善行を達成するための）電力が供給されていないが、アッラー、高、最高の助けを借りて、</value>
+  </data>
+  <data name="IslamInfo_RemembranceThirdWordByWord" xml:space="preserve">
+    <value>強| |何もありませんし、全く存在しない|パワーは|アッラーと| |高い|除いて最高裁</value>
+  </data>
+  <data name="IslamInfo_SendBlessingsFirst" xml:space="preserve">
+    <value>まず祝福を送る</value>
+  </data>
+  <data name="IslamInfo_SendBlessingsFirstTrans" xml:space="preserve">
+    <value>あなたはアブラハムとその子孫にあなたの慈悲を送ったようにアッラーは、ムハンマドと彼の子孫にあなたの慈悲を送信します。</value>
+  </data>
+  <data name="IslamInfo_SendBlessingsFirstWordByWord" xml:space="preserve">
+    <value>ムハンマド| | ON | Oアッラー|あなたの慈悲を送信したとき|彼| |後世アブラハム| |に|あなたの慈悲を送っ|として時|彼| |後世最も輝かしい|賞賛一番|本当にあなたがある|</value>
+  </data>
+  <data name="IslamInfo_SendBlessingsSecond" xml:space="preserve">
+    <value>第二に祝福を送る</value>
+  </data>
+  <data name="IslamInfo_SendBlessingsSecondTrans" xml:space="preserve">
+    <value>あなたはアブラハムとその子孫にあなたの慈悲を送ったようにアッラーは、ムハンマドと彼の子孫にあなたの慈悲を送信します。</value>
+  </data>
+  <data name="IslamInfo_SendBlessingsSecondWordByWord" xml:space="preserve">
+    <value>ムハンマド| | ON | Oアッラー|あなたの慈悲を送信したとき|彼| |後世アブラハム| |に|あなたの慈悲を送っ|として時|彼| |後世最も輝かしい|賞賛一番|本当にあなたがある|</value>
+  </data>
+  <data name="IslamInfo_TheBestNames" xml:space="preserve">
+    <value>ベスト名</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoon" xml:space="preserve">
+    <value>ホワイト·ムーン</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonEighth" xml:space="preserve">
+    <value>第8</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonEighthTrans" xml:space="preserve">
+    <value>良い方法に私たちを呼ぶ人あなたを歓迎</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonEighthWordByWord" xml:space="preserve">
+    <value>ようこそ|ウェイ|良いにする|私たちを呼ぶ人</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonFifth" xml:space="preserve">
+    <value>第5</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonFifthTrans" xml:space="preserve">
+    <value>ああ、私たちの中で私たちのメッセンジャー（使者）</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonFifthWordByWord" xml:space="preserve">
+    <value>ああ|私たちのメッセンジャー|私たちの中で</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonFirst" xml:space="preserve">
+    <value>最初の</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonFirstTrans" xml:space="preserve">
+    <value>ああ白い月がわたしたちのバラ</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonFirstWordByWord" xml:space="preserve">
+    <value>私たちの上に|白い月を|オバラ</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonFourth" xml:space="preserve">
+    <value>第4</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonFourthTrans" xml:space="preserve">
+    <value>彼のために誰がアッラーの道に私たちを招待</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonFourthWordByWord" xml:space="preserve">
+    <value>彼のために|私たちを誘う|アッラーに|の道</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonSecond" xml:space="preserve">
+    <value>第2</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonSecondTrans" xml:space="preserve">
+    <value>（彼は）と呼ばれる谷から</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonSecondWordByWord" xml:space="preserve">
+    <value>と呼ばれる|谷|から</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonSeventh" xml:space="preserve">
+    <value>第7</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonSeventhTrans" xml:space="preserve">
+    <value>あなたはこの街の貴族に持ってきた</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonSeventhWordByWord" xml:space="preserve">
+    <value>この街に|貴族|をあなたが持ってきた</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonSixth" xml:space="preserve">
+    <value>第6</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonSixthTrans" xml:space="preserve">
+    <value>誰が留意されるべきのexhortations（差し止め命令/戒め）が付属しています</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonSixthWordByWord" xml:space="preserve">
+    <value>誰が来る|従わなければ|戒めと</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonThird" xml:space="preserve">
+    <value>第3</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonThirdTrans" xml:space="preserve">
+    <value>そして、それは感謝の気持ちを示すために、私たちの責務であると信ずる</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonThirdWordByWord" xml:space="preserve">
+    <value>私達に| graditudeを表示するために|そして、それは義務である</value>
+  </data>
+  <data name="IslamInfo_AllahKnowsBest" xml:space="preserve">
+    <value>アッラーは最もよく知っている</value>
+  </data>
+  <data name="IslamInfo_AllahSaysTheTruth" xml:space="preserve">
+    <value>真実は、アッラーから最も壮大です</value>
+  </data>
+  <data name="IslamInfo_AllahSufficesMe" xml:space="preserve">
+    <value>私のために十分なアッラーはある</value>
+  </data>
+  <data name="IslamInfo_AllahWilledItSo" xml:space="preserve">
+    <value>アッラーはので、それを意志している</value>
+  </data>
+  <data name="IslamInfo_AllahWilling" xml:space="preserve">
+    <value>アッラーはので、それを意志した場合</value>
+  </data>
+  <data name="IslamInfo_AndUponYouBePeaceAndMercyOfAllah" xml:space="preserve">
+    <value>そしてあなたに平和とアッラーの慈悲も</value>
+  </data>
+  <data name="IslamInfo_AndUponYouBePeaceAndMercyOfAllahAndBlessings" xml:space="preserve">
+    <value>そしてあなたに平和とアッラーとその恵みの慈悲も</value>
+  </data>
+  <data name="IslamInfo_BlessingsOfAllah" xml:space="preserve">
+    <value>アッラーの祝福</value>
+  </data>
+  <data name="IslamInfo_GloriousAndExaltedBeHe" xml:space="preserve">
+    <value>も栄光と賛美彼</value>
+  </data>
+  <data name="IslamInfo_IAskAllahForgiveness" xml:space="preserve">
+    <value>私はアッラーからの許しを頼む</value>
+  </data>
+  <data name="IslamInfo_InProtectionOfAllah" xml:space="preserve">
+    <value>アッラーの保護における</value>
+  </data>
+  <data name="IslamInfo_InThePathOfAllah" xml:space="preserve">
+    <value>アッラーの大義のために</value>
+  </data>
+  <data name="IslamInfo_MayAllahBePleased" xml:space="preserve">
+    <value>アッラーは彼らと満足している可能性があり</value>
+  </data>
+  <data name="IslamInfo_MayAllahBlessYou" xml:space="preserve">
+    <value>アッラーからあなたがたに祝福</value>
+  </data>
+  <data name="IslamInfo_MayAllahHaveMercy" xml:space="preserve">
+    <value>アッラーは彼らに慈悲を</value>
+  </data>
+  <data name="IslamInfo_MayAllahProtectYou" xml:space="preserve">
+    <value>アッラーはあなたを保護することができる</value>
+  </data>
+  <data name="IslamInfo_MayAllahWillItSo" xml:space="preserve">
+    <value>アッラーはその意志がありますので</value>
+  </data>
+  <data name="IslamInfo_PeaceBeUponYouAndMercyOfAllah" xml:space="preserve">
+    <value>平和はあなたとアッラーの慈悲に依存すること</value>
+  </data>
+  <data name="IslamInfo_PeaceBeUponYouAndMercyOfAllahAndBlessings" xml:space="preserve">
+    <value>平和はあなたとアッラーの慈悲と祝福の際にも</value>
+  </data>
+  <data name="IslamInfo_SeekRefugeWithAllahFromSatanRejected" xml:space="preserve">
+    <value>私が拒否され、サタンからアッラーに避難を求める</value>
+  </data>
+  <data name="IslamInfo_SublimeAndMighty" xml:space="preserve">
+    <value>崇高とマイティ</value>
+  </data>
+  <data name="IslamInfo_TrulyFromAllahWeComeAndToHimWillReturn" xml:space="preserve">
+    <value>本当にアッラーから我々は来ているし、本当に彼に我々は返還しなければならない</value>
+  </data>
+  <data name="Acct_CertRequest" xml:space="preserve">
+    <value>証明書要求</value>
+  </data>
+  <data name="Acct_Certificate" xml:space="preserve">
+    <value>証明書</value>
+  </data>
+  <data name="Acct_CertInstall" xml:space="preserve">
+    <value>証明書のインストール</value>
+  </data>
+  <data name="Acct_CurrentUser" xml:space="preserve">
+    <value>現在のユーザー</value>
+  </data>
+  <data name="Acct_DeleteCertRequest" xml:space="preserve">
+    <value>証明書の要求を削除します。</value>
+  </data>
+  <data name="Acct_EnableSSL" xml:space="preserve">
+    <value>SSLを有効にする</value>
+  </data>
+  <data name="Acct_PrivateKey" xml:space="preserve">
+    <value>秘密鍵</value>
+  </data>
+  <data name="Acct_ViewCertRequests" xml:space="preserve">
+    <value>ビュー証明書要求</value>
+  </data>
+  <data name="Acct_ViewSites" xml:space="preserve">
+    <value>ビュー·サイト</value>
+  </data>
+  <data name="Acct_CertInstallIntermed" xml:space="preserve">
+    <value>中間証明書をインストールする</value>
+  </data>
+  <data name="IslamInfo_UniqueLetters" xml:space="preserve">
+    <value>独特の手紙</value>
+  </data>
+  <data name="IslamInfo_SoulStates" xml:space="preserve">
+    <value>魂の状態</value>
+  </data>
+  <data name="IslamInfo_Abbreviations" xml:space="preserve">
+    <value>略語</value>
+  </data>
+  <data name="IslamInfo_Names" xml:space="preserve">
+    <value>名前</value>
+  </data>
+  <data name="IslamInfo_Places" xml:space="preserve">
+    <value>場所</value>
+  </data>
+  <data name="IslamInfo_Abbasid" xml:space="preserve">
+    <value>アッバース家</value>
+  </data>
+  <data name="IslamInfo_AbdullahBinMasood" xml:space="preserve">
+    <value>アブドラビンマスード</value>
+  </data>
+  <data name="IslamInfo_AbuBakrAlSaddiq" xml:space="preserve">
+    <value>アブー·バクルアルSaddiq</value>
+  </data>
+  <data name="IslamInfo_AbuDahr" xml:space="preserve">
+    <value>アブ·ダール</value>
+  </data>
+  <data name="IslamInfo_AbuHanifa" xml:space="preserve">
+    <value>アブハニーファ</value>
+  </data>
+  <data name="IslamInfo_AbuHurairah" xml:space="preserve">
+    <value>AbuHurairah</value>
+  </data>
+  <data name="IslamInfo_AbuJahal" xml:space="preserve">
+    <value>アブJahal</value>
+  </data>
+  <data name="IslamInfo_AbuLahab" xml:space="preserve">
+    <value>アブLahab</value>
+  </data>
+  <data name="IslamInfo_AbuSufyan" xml:space="preserve">
+    <value>アブSufyan</value>
+  </data>
+  <data name="IslamInfo_Aisha" xml:space="preserve">
+    <value>アイーシャ</value>
+  </data>
+  <data name="IslamInfo_AliBinAbuTalib" xml:space="preserve">
+    <value>アリビンアブタリブ</value>
+  </data>
+  <data name="IslamInfo_AlLaythBinSaad" xml:space="preserve">
+    <value>アルLaythビンサアド</value>
+  </data>
+  <data name="IslamInfo_Allowed" xml:space="preserve">
+    <value>許可された</value>
+  </data>
+  <data name="IslamInfo_AlMansoor" xml:space="preserve">
+    <value>アル·マンスール</value>
+  </data>
+  <data name="IslamInfo_AlMuwata" xml:space="preserve">
+    <value>アルMuwata</value>
+  </data>
+  <data name="IslamInfo_AlWahsi" xml:space="preserve">
+    <value>アルWahsi</value>
+  </data>
+  <data name="IslamInfo_AmrBinAlAas" xml:space="preserve">
+    <value>AMRビンアルチャララボ</value>
+  </data>
+  <data name="IslamInfo_AndEveryone" xml:space="preserve">
+    <value>と誰も</value>
+  </data>
+  <data name="IslamInfo_Angel" xml:space="preserve">
+    <value>天使</value>
+  </data>
+  <data name="IslamInfo_Arrogance" xml:space="preserve">
+    <value>傲慢</value>
+  </data>
+  <data name="IslamInfo_AskForgiveness" xml:space="preserve">
+    <value>許しを頼む</value>
+  </data>
+  <data name="IslamInfo_Azar" xml:space="preserve">
+    <value>アザー</value>
+  </data>
+  <data name="IslamInfo_Balance" xml:space="preserve">
+    <value>バランス</value>
+  </data>
+  <data name="IslamInfo_BaniHashim" xml:space="preserve">
+    <value>バニハシム</value>
+  </data>
+  <data name="IslamInfo_BaniThaqeef" xml:space="preserve">
+    <value>バニThaqeef</value>
+  </data>
+  <data name="IslamInfo_Biography" xml:space="preserve">
+    <value>バイオグラフィー</value>
+  </data>
+  <data name="IslamInfo_Bless" xml:space="preserve">
+    <value>祝福する</value>
+  </data>
+  <data name="IslamInfo_Caliphate" xml:space="preserve">
+    <value>カリフの地位</value>
+  </data>
+  <data name="IslamInfo_CallToIslam" xml:space="preserve">
+    <value>イスラム教への呼び出し</value>
+  </data>
+  <data name="IslamInfo_Certainty" xml:space="preserve">
+    <value>確実</value>
+  </data>
+  <data name="IslamInfo_Cohabitation" xml:space="preserve">
+    <value>同棲</value>
+  </data>
+  <data name="IslamInfo_Commentary" xml:space="preserve">
+    <value>解説</value>
+  </data>
+  <data name="IslamInfo_Community" xml:space="preserve">
+    <value>コミュニティ</value>
+  </data>
+  <data name="IslamInfo_Companions" xml:space="preserve">
+    <value>コンパニオン</value>
+  </data>
+  <data name="IslamInfo_Concensus" xml:space="preserve">
+    <value>コンセンサス</value>
+  </data>
+  <data name="IslamInfo_Concentration" xml:space="preserve">
+    <value>濃度</value>
+  </data>
+  <data name="IslamInfo_Congregation" xml:space="preserve">
+    <value>会衆</value>
+  </data>
+  <data name="IslamInfo_Conquest" xml:space="preserve">
+    <value>コンクエスト</value>
+  </data>
+  <data name="IslamInfo_Deeds" xml:space="preserve">
+    <value>ディーズ</value>
+  </data>
+  <data name="IslamInfo_Delivery" xml:space="preserve">
+    <value>配信</value>
+  </data>
+  <data name="IslamInfo_Dessertion" xml:space="preserve">
+    <value>Dessertion</value>
+  </data>
+  <data name="IslamInfo_Digger" xml:space="preserve">
+    <value>掘る人</value>
+  </data>
+  <data name="IslamInfo_Disbeliever" xml:space="preserve">
+    <value>信じない</value>
+  </data>
+  <data name="IslamInfo_Division" xml:space="preserve">
+    <value>分裂</value>
+  </data>
+  <data name="IslamInfo_Do" xml:space="preserve">
+    <value>やる</value>
+  </data>
+  <data name="IslamInfo_Doctrine" xml:space="preserve">
+    <value>教義</value>
+  </data>
+  <data name="IslamInfo_Empowering" xml:space="preserve">
+    <value>エンパワーメント</value>
+  </data>
+  <data name="IslamInfo_Excellence" xml:space="preserve">
+    <value>卓越</value>
+  </data>
+  <data name="IslamInfo_Faith" xml:space="preserve">
+    <value>信仰</value>
+  </data>
+  <data name="IslamInfo_Faithful" xml:space="preserve">
+    <value>忠実な</value>
+  </data>
+  <data name="IslamInfo_Fight" xml:space="preserve">
+    <value>戦い</value>
+  </data>
+  <data name="IslamInfo_Fighter" xml:space="preserve">
+    <value>戦闘機</value>
+  </data>
+  <data name="IslamInfo_Firdaus" xml:space="preserve">
+    <value>フィルダウス</value>
+  </data>
+  <data name="IslamInfo_Forgiving" xml:space="preserve">
+    <value>寛容な</value>
+  </data>
+  <data name="IslamInfo_Fornication" xml:space="preserve">
+    <value>姦淫</value>
+  </data>
+  <data name="IslamInfo_Gabriel" xml:space="preserve">
+    <value>ガブリエル</value>
+  </data>
+  <data name="IslamInfo_Gardens" xml:space="preserve">
+    <value>庭園</value>
+  </data>
+  <data name="IslamInfo_GloriousAndExaltedBeHeAbbr" xml:space="preserve">
+    <value>SWT</value>
+  </data>
+  <data name="IslamInfo_Goodness" xml:space="preserve">
+    <value>善良</value>
+  </data>
+  <data name="IslamInfo_Guardian" xml:space="preserve">
+    <value>保護者</value>
+  </data>
+  <data name="IslamInfo_Guidance1" xml:space="preserve">
+    <value>指導</value>
+  </data>
+  <data name="IslamInfo_Hammad" xml:space="preserve">
+    <value>Hammad</value>
+  </data>
+  <data name="IslamInfo_HamzaBinAbduAlMuttalib" xml:space="preserve">
+    <value>ハムザ·ビンAbduアルMuttalib</value>
+  </data>
+  <data name="IslamInfo_Hanbal" xml:space="preserve">
+    <value>Hanbal</value>
+  </data>
+  <data name="IslamInfo_Hasan" xml:space="preserve">
+    <value>ハサン</value>
+  </data>
+  <data name="IslamInfo_HeartSofteners" xml:space="preserve">
+    <value>ハート軟化剤</value>
+  </data>
+  <data name="IslamInfo_Hell" xml:space="preserve">
+    <value>地獄</value>
+  </data>
+  <data name="IslamInfo_Hereafter" xml:space="preserve">
+    <value>来世</value>
+  </data>
+  <data name="IslamInfo_Hind" xml:space="preserve">
+    <value>ハインド</value>
+  </data>
+  <data name="IslamInfo_Hudabiyyah" xml:space="preserve">
+    <value>Hudabiyyah</value>
+  </data>
+  <data name="IslamInfo_Hunain" xml:space="preserve">
+    <value>Hunain</value>
+  </data>
+  <data name="IslamInfo_Hussein" xml:space="preserve">
+    <value>フセイン</value>
+  </data>
+  <data name="IslamInfo_Hypocrite" xml:space="preserve">
+    <value>偽善者</value>
+  </data>
+  <data name="IslamInfo_ImamNawawi40Hadith" xml:space="preserve">
+    <value>イマームNawawi 40ハディース</value>
+  </data>
+  <data name="IslamInfo_Impact" xml:space="preserve">
+    <value>インパクト</value>
+  </data>
+  <data name="IslamInfo_Innovation" xml:space="preserve">
+    <value>革新</value>
+  </data>
+  <data name="IslamInfo_Intention" xml:space="preserve">
+    <value>意図</value>
+  </data>
+  <data name="IslamInfo_Introduction" xml:space="preserve">
+    <value>はじめに</value>
+  </data>
+  <data name="IslamInfo_Invocation" xml:space="preserve">
+    <value>起動</value>
+  </data>
+  <data name="IslamInfo_Jinn" xml:space="preserve">
+    <value>精霊</value>
+  </data>
+  <data name="IslamInfo_Kaaba" xml:space="preserve">
+    <value>カーバ神殿</value>
+  </data>
+  <data name="IslamInfo_KhadijahBintiKhuwaylid" xml:space="preserve">
+    <value>KhadijahビンティKhooaylid</value>
+  </data>
+  <data name="IslamInfo_KhalidBinWalid" xml:space="preserve">
+    <value>ハリド·ビンワリド</value>
+  </data>
+  <data name="IslamInfo_Knowledgable" xml:space="preserve">
+    <value>知力</value>
+  </data>
+  <data name="IslamInfo_Latest" xml:space="preserve">
+    <value>最新</value>
+  </data>
+  <data name="IslamInfo_Leader" xml:space="preserve">
+    <value>リーダー</value>
+  </data>
+  <data name="IslamInfo_Lecture" xml:space="preserve">
+    <value>講演</value>
+  </data>
+  <data name="IslamInfo_Limit" xml:space="preserve">
+    <value>リミット</value>
+  </data>
+  <data name="IslamInfo_Loudmouthed" xml:space="preserve">
+    <value>Loudmouthed</value>
+  </data>
+  <data name="IslamInfo_Lucifer" xml:space="preserve">
+    <value>ルシファー</value>
+  </data>
+  <data name="IslamInfo_Madame" xml:space="preserve">
+    <value>マダム</value>
+  </data>
+  <data name="IslamInfo_Malik" xml:space="preserve">
+    <value>マリク</value>
+  </data>
+  <data name="IslamInfo_Mankind" xml:space="preserve">
+    <value>人類</value>
+  </data>
+  <data name="IslamInfo_Manners" xml:space="preserve">
+    <value>マナー</value>
+  </data>
+  <data name="IslamInfo_MannersOfDiffering" xml:space="preserve">
+    <value>異なるのマナー</value>
+  </data>
+  <data name="IslamInfo_Master" xml:space="preserve">
+    <value>マスター</value>
+  </data>
+  <data name="IslamInfo_MayAllahBePleasedAbbr" xml:space="preserve">
+    <value>RA</value>
+  </data>
+  <data name="IslamInfo_MayHisGloryBeGlorified" xml:space="preserve">
+    <value>MayHisGloryBeGlorified</value>
+  </data>
+  <data name="IslamInfo_Mecca" xml:space="preserve">
+    <value>メッカ</value>
+  </data>
+  <data name="IslamInfo_Medina" xml:space="preserve">
+    <value>メディナ</value>
+  </data>
+  <data name="IslamInfo_Mercy" xml:space="preserve">
+    <value>マーシー</value>
+  </data>
+  <data name="IslamInfo_MinorPilgrimage" xml:space="preserve">
+    <value>マイナー巡礼</value>
+  </data>
+  <data name="IslamInfo_Mosque" xml:space="preserve">
+    <value>モスク</value>
+  </data>
+  <data name="IslamInfo_Muawiyyah" xml:space="preserve">
+    <value>Muawiyyah</value>
+  </data>
+  <data name="IslamInfo_Mufti" xml:space="preserve">
+    <value>マフティ</value>
+  </data>
+  <data name="IslamInfo_MuhammadBinAbduAlMuttalib" xml:space="preserve">
+    <value>ムハンマドビンAbduアルMuttalib</value>
+  </data>
+  <data name="IslamInfo_Neck" xml:space="preserve">
+    <value>首</value>
+  </data>
+  <data name="IslamInfo_Nurturing" xml:space="preserve">
+    <value>育成</value>
+  </data>
+  <data name="IslamInfo_OBelievers" xml:space="preserve">
+    <value>Oあなたを信じる人</value>
+  </data>
+  <data name="IslamInfo_Optimizer" xml:space="preserve">
+    <value>オプティマイザ</value>
+  </data>
+  <data name="IslamInfo_Paradise" xml:space="preserve">
+    <value>パラダイス</value>
+  </data>
+  <data name="IslamInfo_Patience" xml:space="preserve">
+    <value>忍耐</value>
+  </data>
+  <data name="IslamInfo_Permission" xml:space="preserve">
+    <value>許可</value>
+  </data>
+  <data name="IslamInfo_Persecution" xml:space="preserve">
+    <value>迫害</value>
+  </data>
+  <data name="IslamInfo_Piety" xml:space="preserve">
+    <value>信心深さ</value>
+  </data>
+  <data name="IslamInfo_PleasedWithDecree" xml:space="preserve">
+    <value>法令に満足</value>
+  </data>
+  <data name="IslamInfo_Polythiest" xml:space="preserve">
+    <value>Polythiest</value>
+  </data>
+  <data name="IslamInfo_Practical" xml:space="preserve">
+    <value>実用的</value>
+  </data>
+  <data name="IslamInfo_Predestination" xml:space="preserve">
+    <value>宿命</value>
+  </data>
+  <data name="IslamInfo_PrintedBook" xml:space="preserve">
+    <value>刷り本</value>
+  </data>
+  <data name="IslamInfo_Professor" xml:space="preserve">
+    <value>教授</value>
+  </data>
+  <data name="IslamInfo_Protector" xml:space="preserve">
+    <value>プロテクター</value>
+  </data>
+  <data name="IslamInfo_Punishment" xml:space="preserve">
+    <value>罰</value>
+  </data>
+  <data name="IslamInfo_Purification" xml:space="preserve">
+    <value>精製</value>
+  </data>
+  <data name="IslamInfo_Quraish" xml:space="preserve">
+    <value>コー​​ランの</value>
+  </data>
+  <data name="IslamInfo_Rawdah" xml:space="preserve">
+    <value>Rawdah</value>
+  </data>
+  <data name="IslamInfo_Recite" xml:space="preserve">
+    <value>暗唱する</value>
+  </data>
+  <data name="IslamInfo_Religion" xml:space="preserve">
+    <value>宗教</value>
+  </data>
+  <data name="IslamInfo_Repentance" xml:space="preserve">
+    <value>後悔</value>
+  </data>
+  <data name="IslamInfo_RiadAlJannah" xml:space="preserve">
+    <value>リヤドアルJannah</value>
+  </data>
+  <data name="IslamInfo_RighteousDealings" xml:space="preserve">
+    <value>正義の取引</value>
+  </data>
+  <data name="IslamInfo_RighteousDeeds" xml:space="preserve">
+    <value>善行</value>
+  </data>
+  <data name="IslamInfo_SaadBinWaad" xml:space="preserve">
+    <value>サアドビンWaad</value>
+  </data>
+  <data name="IslamInfo_Sacrifice" xml:space="preserve">
+    <value>犠牲</value>
+  </data>
+  <data name="IslamInfo_Salafi" xml:space="preserve">
+    <value>サラフィー</value>
+  </data>
+  <data name="IslamInfo_Satan" xml:space="preserve">
+    <value>サタン</value>
+  </data>
+  <data name="IslamInfo_Satisfaction" xml:space="preserve">
+    <value>満足</value>
+  </data>
+  <data name="IslamInfo_Self" xml:space="preserve">
+    <value>自己</value>
+  </data>
+  <data name="IslamInfo_Shafii" xml:space="preserve">
+    <value>Shafii</value>
+  </data>
+  <data name="IslamInfo_Sheikh" xml:space="preserve">
+    <value>シェイク</value>
+  </data>
+  <data name="IslamInfo_ShowingOff" xml:space="preserve">
+    <value>披露</value>
+  </data>
+  <data name="IslamInfo_Sin" xml:space="preserve">
+    <value>罪</value>
+  </data>
+  <data name="IslamInfo_Sir" xml:space="preserve">
+    <value>卿</value>
+  </data>
+  <data name="IslamInfo_Slaughter" xml:space="preserve">
+    <value>スローター</value>
+  </data>
+  <data name="IslamInfo_Slave" xml:space="preserve">
+    <value>スレーブ</value>
+  </data>
+  <data name="IslamInfo_Speech" xml:space="preserve">
+    <value>スピーチ</value>
+  </data>
+  <data name="IslamInfo_Sporadic" xml:space="preserve">
+    <value>散発</value>
+  </data>
+  <data name="IslamInfo_Strangers" xml:space="preserve">
+    <value>見知らぬ人</value>
+  </data>
+  <data name="IslamInfo_SupplicationsAndPrayers" xml:space="preserve">
+    <value>祈願と祈り</value>
+  </data>
+  <data name="IslamInfo_Taaif" xml:space="preserve">
+    <value>Taaif</value>
+  </data>
+  <data name="IslamInfo_Talkative" xml:space="preserve">
+    <value>おしゃべりな</value>
+  </data>
+  <data name="IslamInfo_ThePrayersOfAllahUponHimAndPeaceAbbr" xml:space="preserve">
+    <value>SAW |のこぎり</value>
+  </data>
+  <data name="IslamInfo_Throne" xml:space="preserve">
+    <value>王位</value>
+  </data>
+  <data name="IslamInfo_Trustworthy" xml:space="preserve">
+    <value>信頼できる</value>
+  </data>
+  <data name="IslamInfo_Truthful" xml:space="preserve">
+    <value>正直な</value>
+  </data>
+  <data name="IslamInfo_UmarBinAlKhattab" xml:space="preserve">
+    <value>ウマルビンアル·ハッターブ</value>
+  </data>
+  <data name="IslamInfo_Umayyad" xml:space="preserve">
+    <value>ウマイヤ朝</value>
+  </data>
+  <data name="IslamInfo_Universal" xml:space="preserve">
+    <value>ユニバーサル</value>
+  </data>
+  <data name="IslamInfo_Unseen" xml:space="preserve">
+    <value>目に見えない</value>
+  </data>
+  <data name="IslamInfo_UponHimBePeaceAbbr" xml:space="preserve">
+    <value>AS</value>
+  </data>
+  <data name="IslamInfo_UthmanBinAfwan" xml:space="preserve">
+    <value>オスマーンビンAfwan</value>
+  </data>
+  <data name="IslamInfo_VoluntaryKindness" xml:space="preserve">
+    <value>自主的な優しさ</value>
+  </data>
+  <data name="IslamInfo_Wahhabi" xml:space="preserve">
+    <value>ワハビの</value>
+  </data>
+  <data name="IslamInfo_Wisdom" xml:space="preserve">
+    <value>知恵</value>
+  </data>
+  <data name="IslamInfo_Witnessing" xml:space="preserve">
+    <value>立ち会い</value>
+  </data>
+  <data name="IslamInfo_World" xml:space="preserve">
+    <value>世界</value>
+  </data>
+  <data name="IslamInfo_Worship" xml:space="preserve">
+    <value>礼拝</value>
+  </data>
+  <data name="IslamInfo_IslamicPhrases" xml:space="preserve">
+    <value>イスラムフレーズ</value>
+  </data>
+  <data name="IslamSource_QuranWords" xml:space="preserve">
+    <value>コー​​ランの言葉</value>
+  </data>
+  <data name="IslamSource_UniqueWordTotal" xml:space="preserve">
+    <value>ユニークワードの合計</value>
+  </data>
+  <data name="IslamSource_WordTotal" xml:space="preserve">
+    <value>Wordの合計</value>
+  </data>
+  <data name="IslamSource_FixDirectionalMarkers" xml:space="preserve">
+    <value>方向性マーカーを修正しました。</value>
+  </data>
+  <data name="unicode_LeftToRightEmbedding" xml:space="preserve">
+    <value>左から右への埋め込み</value>
+  </data>
+  <data name="unicode_RightToLeftEmbedding" xml:space="preserve">
+    <value>右から左への埋め込み</value>
+  </data>
+  <data name="unicode_LeftToRightMark" xml:space="preserve">
+    <value>左から右へのマーク</value>
+  </data>
+  <data name="unicode_LeftToRightOverride" xml:space="preserve">
+    <value>左から右への上書き</value>
+  </data>
+  <data name="unicode_PopDirectionalFormatting" xml:space="preserve">
+    <value>ポップ指向のフォーマット</value>
+  </data>
+  <data name="unicode_RightToLeftMark" xml:space="preserve">
+    <value>右から左のマーク</value>
+  </data>
+  <data name="unicode_RightToLeftOverride" xml:space="preserve">
+    <value>右から左への上書き</value>
+  </data>
+  <data name="IslamSource_CurrentMonth" xml:space="preserve">
+    <value>今月</value>
+  </data>
+  <data name="IslamSource_HijriCalendar" xml:space="preserve">
+    <value>イスラム暦カレンダー</value>
+  </data>
+</root>

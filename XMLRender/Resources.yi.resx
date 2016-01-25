@@ -1,0 +1,4275 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Acct_AccountActivateSuccess" xml:space="preserve">
+    <value>חשבון הצלחה אַקטיווייטיד.</value>
+  </data>
+  <data name="Acct_AccountAlreadyActivated" xml:space="preserve">
+    <value>חשבון שוין אַקטיווייטיד.</value>
+  </data>
+  <data name="Acct_AccountDeleteSuccess" xml:space="preserve">
+    <value>חשבון הצלחה אויסגעמעקט.</value>
+  </data>
+  <data name="Acct_AccountNotActivated" xml:space="preserve">
+    <value>חשבון ניט נאָך אַקטיווייטיד ביטע טשעק דיין email ערשטער אָדער בעטן אַ נאָך אַקטאַוויישאַן קאָד.</value>
+  </data>
+  <data name="Acct_ActivateAccount" xml:space="preserve">
+    <value>אַקטאַווייט אַקאַונט</value>
+  </data>
+  <data name="Acct_ActivationAccountBody" xml:space="preserve">
+    <value>דעם E-פּאָסט איז ריקוועסטינג אַקטאַוויישאַן פון דיין {0} חשבון: {1}.</value>
+  </data>
+  <data name="Acct_ActivationAccountSubject" xml:space="preserve">
+    <value>אַקטאַוויישאַן פֿאַר חשבון אין {0}</value>
+  </data>
+  <data name="Acct_ActivationCode" xml:space="preserve">
+    <value>אַקטאַוויישאַן קאָוד</value>
+  </data>
+  <data name="Acct_BadEmailFormat" xml:space="preserve">
+    <value>E-פּאָסט אַדרעס ניט אין אַ גילטיק פֿאָרמאַט.</value>
+  </data>
+  <data name="Acct_Certain" xml:space="preserve">
+    <value>זענען איר זיכער?</value>
+  </data>
+  <data name="Acct_ChangeEmailAddress" xml:space="preserve">
+    <value>טוישן E-פּאָסט אַדרעס</value>
+  </data>
+  <data name="Acct_ChangePassword" xml:space="preserve">
+    <value>טוישן פּאַראָל</value>
+  </data>
+  <data name="Acct_ChangeUsername" xml:space="preserve">
+    <value>טוישן נאמען</value>
+  </data>
+  <data name="Acct_CheckEmailNotice" xml:space="preserve">
+    <value>אַקטאַוויישאַן געשיקט צו אַדרעס ביטנייַ.</value>
+  </data>
+  <data name="Acct_ConfirmEmailAddress" xml:space="preserve">
+    <value>באַשטעטיקן E-פּאָסט אַדרעס</value>
+  </data>
+  <data name="Acct_ConfirmPassword" xml:space="preserve">
+    <value>באַשטעטיקן שפּריכוואָרט</value>
+  </data>
+  <data name="Acct_ControlPanel" xml:space="preserve">
+    <value>קאָנטראָל פּאַנעל</value>
+  </data>
+  <data name="Acct_DeleteAccount" xml:space="preserve">
+    <value>ויסמעקן אַקאַונט</value>
+  </data>
+  <data name="Acct_DuplicateUser" xml:space="preserve">
+    <value>באַניצער מיט דעם נאָמען שוין יגזיסס ביטע קלייַבן אן אנדער.</value>
+  </data>
+  <data name="Acct_EmailAddress" xml:space="preserve">
+    <value>E-פּאָסט אַדרעס</value>
+  </data>
+  <data name="Acct_EmailChangeReactivate" xml:space="preserve">
+    <value>E-פּאָסט אַדרעס פארענדערט און אַקטאַוויישאַן E-פּאָסט געשיקט צו ריאַקטאַווייט חשבון.</value>
+  </data>
+  <data name="Acct_EmailInUse" xml:space="preserve">
+    <value>E-פּאָסט שוין אין נוצן ביטע לאָגין מיט יגזיסטינג קראַדענטשאַלז.</value>
+  </data>
+  <data name="Acct_EmailsNotMatch" xml:space="preserve">
+    <value>E-פּאָסט ווענדט טאָן ניט גלייַכן</value>
+  </data>
+  <data name="Acct_ForgotPassword" xml:space="preserve">
+    <value>פארגעסן פּאַראָל</value>
+  </data>
+  <data name="Acct_ForgotUsername" xml:space="preserve">
+    <value>פארגעסן נאמען</value>
+  </data>
+  <data name="Acct_Home" xml:space="preserve">
+    <value>היים</value>
+  </data>
+  <data name="Acct_IncorrectActivationCode" xml:space="preserve">
+    <value>פאַלש אַקטאַוויישאַן קאָד.</value>
+  </data>
+  <data name="Acct_IncorrectPasswordResetCode" xml:space="preserve">
+    <value>פאַלש פּאַראָל באַשטעטיק קאָד.</value>
+  </data>
+  <data name="Acct_InvalidInput" xml:space="preserve">
+    <value>פאַרקריפּלט אַרייַנשרייַב.</value>
+  </data>
+  <data name="Acct_InvalidUsernamePassword" xml:space="preserve">
+    <value>פאַרקריפּלט נאמען אָדער פּאַראָל.</value>
+  </data>
+  <data name="Acct_Login" xml:space="preserve">
+    <value>לאָגין</value>
+  </data>
+  <data name="Acct_LoginSuccess" xml:space="preserve">
+    <value>לאָגין מצליח.</value>
+  </data>
+  <data name="Acct_Logoff" xml:space="preserve">
+    <value>לאָגאָפף</value>
+  </data>
+  <data name="Acct_LogoffSuccess" xml:space="preserve">
+    <value>לאָגאָפף מצליח.</value>
+  </data>
+  <data name="Acct_MinimumPassword" xml:space="preserve">
+    <value>פּאַראָל מוזן זיין לפּחות 8 אותיות.</value>
+  </data>
+  <data name="Acct_MinimumUsername" xml:space="preserve">
+    <value>נאמען מוזן זיין לפּחות 4 אותיות.</value>
+  </data>
+  <data name="Acct_No" xml:space="preserve">
+    <value>קיין</value>
+  </data>
+  <data name="Acct_NotConfirmDelete" xml:space="preserve">
+    <value>מוזן באַשטעטיקן חשבון דילישאַן.</value>
+  </data>
+  <data name="Acct_NoUserExists" xml:space="preserve">
+    <value>ניט קיין באַניצער יגזיסס פֿאַר די אריין E-פּאָסט אַדרעס.</value>
+  </data>
+  <data name="Acct_Password" xml:space="preserve">
+    <value>פּאַראָל</value>
+  </data>
+  <data name="Acct_PasswordAlreadyReset" xml:space="preserve">
+    <value>פּאַראָל שוין באַשטעטיק אָדער פּראָצעס ניט ינישיייטיד.</value>
+  </data>
+  <data name="Acct_PasswordChangedBody" xml:space="preserve">
+    <value>דעם E-פּאָסט איז צו מיטטיילן פון די פּאַראָל ענדערונג פון דיין {0} חשבון: {1}.</value>
+  </data>
+  <data name="Acct_PasswordChangedSubject" xml:space="preserve">
+    <value>פּאַראָל פארענדערט פֿאַר חשבון אין {0}</value>
+  </data>
+  <data name="Acct_PasswordChangeSuccess" xml:space="preserve">
+    <value>פּאַראָל הצלחה געביטן.</value>
+  </data>
+  <data name="Acct_PasswordEmailSent" xml:space="preserve">
+    <value>אַ E-פּאָסט האט געשיקט געווארן צו דיין אַדרעס אויף טעקע צו אָנהייבן די פּאַראָל באַשטעטיק פּראָצעס.</value>
+  </data>
+  <data name="Acct_PasswordResetBody" xml:space="preserve">
+    <value>דעם E-פּאָסט איז צו באַשטעטיק די פּאַראָל פון דיין {0} חשבון: {1}.</value>
+  </data>
+  <data name="Acct_PasswordResetCode" xml:space="preserve">
+    <value>פּאַראָל באַשטעטיק קאָוד</value>
+  </data>
+  <data name="Acct_PasswordResetSubject" xml:space="preserve">
+    <value>פּאַראָל באַשטעטיק פֿאַר חשבון אין {0}</value>
+  </data>
+  <data name="Acct_PasswordResetSuccess" xml:space="preserve">
+    <value>פּאַראָל הצלחה באַשטעטיק.</value>
+  </data>
+  <data name="Acct_PasswordsNotMatch" xml:space="preserve">
+    <value>פּאַססוואָרדס טאָן ניט צופּאַסן</value>
+  </data>
+  <data name="Acct_Register" xml:space="preserve">
+    <value>רעגיסטרירן</value>
+  </data>
+  <data name="Acct_Remember" xml:space="preserve">
+    <value>געדענקען?</value>
+  </data>
+  <data name="Acct_ResendActivationEmail" xml:space="preserve">
+    <value>רעסענד אַקטיוואַטיאָן E-פּאָסט</value>
+  </data>
+  <data name="Acct_ResetPassword" xml:space="preserve">
+    <value>באַשטעטיק שפּריכוואָרט</value>
+  </data>
+  <data name="Acct_RetrievePassword" xml:space="preserve">
+    <value>צוריקקריגן פּאַראָל</value>
+  </data>
+  <data name="Acct_RetrieveUsername" xml:space="preserve">
+    <value>צוריקקריגן נאמען</value>
+  </data>
+  <data name="Acct_SendActivationCode" xml:space="preserve">
+    <value>שיקן אַקטיוואַטיאָן קאָוד</value>
+  </data>
+  <data name="Acct_Username" xml:space="preserve">
+    <value>נאמען</value>
+  </data>
+  <data name="Acct_UsernameChangedBody" xml:space="preserve">
+    <value>דעם E-פּאָסט איז צו מיטטיילן פון די חשבון נאָמען ענדערונג פון דיין {0} חשבון: {1}.</value>
+  </data>
+  <data name="Acct_UsernameChangedSubject" xml:space="preserve">
+    <value>נאמען פארענדערט פֿאַר חשבון אין {0}</value>
+  </data>
+  <data name="Acct_UsernameChangeSuccess" xml:space="preserve">
+    <value>נאמען הצלחה געביטן.</value>
+  </data>
+  <data name="Acct_UsernameEmailSent" xml:space="preserve">
+    <value>אַ E-פּאָסט האט געשיקט געווארן צו דיין אַדרעס אויף טעקע מיט אייער נאמען.</value>
+  </data>
+  <data name="Acct_UsernameReminderBody" xml:space="preserve">
+    <value>דעם E-פּאָסט איז אַ דערמאָנונג פון דיין {0} חשבון: {1}.</value>
+  </data>
+  <data name="Acct_UsernameReminderSubject" xml:space="preserve">
+    <value>נאמען רימיינדער פֿאַר חשבון אין {0}</value>
+  </data>
+  <data name="Acct_UserNotFound" xml:space="preserve">
+    <value>באַניצער טוט ניט עקסיסטירן.</value>
+  </data>
+  <data name="Acct_Yes" xml:space="preserve">
+    <value>יאָ</value>
+  </data>
+  <data name="Acct_CleanupStale" xml:space="preserve">
+    <value>קלינאַפּ סטייל</value>
+  </data>
+  <data name="Acct_ClearCache" xml:space="preserve">
+    <value>קלאָר קאַש</value>
+  </data>
+  <data name="Acct_ClearDiskCache" xml:space="preserve">
+    <value>קלאָר דיסק קאַש</value>
+  </data>
+  <data name="Acct_CreateDatabase" xml:space="preserve">
+    <value>שאַפֿן דאַטאַבאַסע</value>
+  </data>
+  <data name="Acct_DotNetVersion" xml:space="preserve">
+    <value>פּונקט נעץ ווערסיע</value>
+  </data>
+  <data name="Acct_RemoveDatabase" xml:space="preserve">
+    <value>אַראָפּנעמען דאַטאַבאַסע</value>
+  </data>
+  <data name="Acct_ViewCache" xml:space="preserve">
+    <value>מיינונג קאַש</value>
+  </data>
+  <data name="Acct_ViewDiskCache" xml:space="preserve">
+    <value>מיינונג דיסק קאַש</value>
+  </data>
+  <data name="Acct_ViewHeaders" xml:space="preserve">
+    <value>מיינונג העאַדערס</value>
+  </data>
+  <data name="Hadith_Book" xml:space="preserve">
+    <value>בוך</value>
+  </data>
+  <data name="Hadith_Books" xml:space="preserve">
+    <value>ספר</value>
+  </data>
+  <data name="Hadith_Chapters" xml:space="preserve">
+    <value>קאפיטלען</value>
+  </data>
+  <data name="Hadith_Hadith" xml:space="preserve">
+    <value>האַדיטה</value>
+  </data>
+  <data name="Hadith_Hadiths" xml:space="preserve">
+    <value>האַדיטהס</value>
+  </data>
+  <data name="Hadith_IdenticalNumbering" xml:space="preserve">
+    <value>יידעניקאַל נאַמבערינג</value>
+  </data>
+  <data name="Hadith_Index" xml:space="preserve">
+    <value>ינדעקס</value>
+  </data>
+  <data name="Hadith_MappedOf" xml:space="preserve">
+    <value>{0} מאַפּט פון {1}</value>
+  </data>
+  <data name="Hadith_NoTranslation" xml:space="preserve">
+    <value>ניט קיין איבערזעצונג</value>
+  </data>
+  <data name="Hadith_SourceHadithIndex" xml:space="preserve">
+    <value>מקור האַדיטה אינדעקס</value>
+  </data>
+  <data name="Hadith_Translation" xml:space="preserve">
+    <value>יבערזעצונג</value>
+  </data>
+  <data name="Hadith_TranslationBook" xml:space="preserve">
+    <value>איבערזעצונג ספר</value>
+  </data>
+  <data name="Hadith_TranslationHadithCount" xml:space="preserve">
+    <value>איבערזעצונג האַדיטה גראף</value>
+  </data>
+  <data name="Hadith_TranslationHadithIndex" xml:space="preserve">
+    <value>איבערזעצונג האַדיטה אינדעקס</value>
+  </data>
+  <data name="Hadith_TranslationMapping" xml:space="preserve">
+    <value>איבערזעצונג מאַפּפּינג</value>
+  </data>
+  <data name="Hadith_TranslationVolume" xml:space="preserve">
+    <value>איבערזעצונג באנד</value>
+  </data>
+  <data name="Hadith_Volume" xml:space="preserve">
+    <value>באַנד</value>
+  </data>
+  <data name="IslamSource_Apply" xml:space="preserve">
+    <value>צולייגן</value>
+  </data>
+  <data name="IslamSource_ArabicAlphabet" xml:space="preserve">
+    <value>אַראַביש אַלפאַבעט</value>
+  </data>
+  <data name="IslamSource_ArabicToRoman" xml:space="preserve">
+    <value>אַראַביש צו רוימער</value>
+  </data>
+  <data name="IslamSource_Book" xml:space="preserve">
+    <value>בוך</value>
+  </data>
+  <data name="IslamSource_Collection" xml:space="preserve">
+    <value>זאַמלונג</value>
+  </data>
+  <data name="IslamSource_Credits" xml:space="preserve">
+    <value>קרעדיט פֿאַר די קווראַן טעקסט גייט צו די טאַנזיל פּרויעקט.</value>
+  </data>
+  <data name="IslamSource_Direction" xml:space="preserve">
+    <value>ריכטונג</value>
+  </data>
+  <data name="IslamSource_Disable" xml:space="preserve">
+    <value>דיסאַבלע</value>
+  </data>
+  <data name="IslamSource_Display" xml:space="preserve">
+    <value>אַרויסווייַזן</value>
+  </data>
+  <data name="IslamSource_Division" xml:space="preserve">
+    <value>אָפּטייל</value>
+  </data>
+  <data name="IslamSource_DownloadMapping" xml:space="preserve">
+    <value>אראפקאפיע און מאַפּפּינג</value>
+  </data>
+  <data name="IslamSource_EnglishRomanized" xml:space="preserve">
+    <value>ענגליש ראָמאַניזעד</value>
+  </data>
+  <data name="IslamSource_ExtendedBuckwalter" xml:space="preserve">
+    <value>עקסטענדעד באַקוואַלטער</value>
+  </data>
+  <data name="IslamSource_Font" xml:space="preserve">
+    <value>קאַסע</value>
+  </data>
+  <data name="IslamSource_Goal" xml:space="preserve">
+    <value>דעם וועבזייַטל יימז צו צושטעלן רוי מקור מאַטעריאַל וועגן איסלאם אַרייַנגערעכנט די קווראַן, האַדיטה זאַמלונגען, ספר, אַודיאָ, ווידעא, נייַעס, וואָקאַבולאַרי, טראַנסליטעראַטיאָן סיסטעמס און פּראָגראַממינג אינפֿאָרמאַציע.</value>
+  </data>
+  <data name="IslamSource_Hadiths" xml:space="preserve">
+    <value>האַדיטה זאַמלונגען</value>
+  </data>
+  <data name="IslamSource_HadithSourceText" xml:space="preserve">
+    <value>האַדיטה מקור טעקסט</value>
+  </data>
+  <data name="IslamSource_Home" xml:space="preserve">
+    <value>היים</value>
+  </data>
+  <data name="IslamSource_Information" xml:space="preserve">
+    <value>אינפֿאָרמאַציע</value>
+  </data>
+  <data name="IslamSource_Intro" xml:space="preserve">
+    <value>קיין שאלות אָדער באַמערקונגען אָדער ערראָרס, ביטע בליצפּאָסט מיר בייַ:</value>
+  </data>
+  <data name="IslamSource_Introduction" xml:space="preserve">
+    <value>הקדמה</value>
+  </data>
+  <data name="IslamSource_IslamicArticles" xml:space="preserve">
+    <value>יסלאַמיק ארטיקלען</value>
+  </data>
+  <data name="IslamSource_IslamicCharity" xml:space="preserve">
+    <value>יסלאַמיק טשאַריטי</value>
+  </data>
+  <data name="IslamSource_IslamicFoundations" xml:space="preserve">
+    <value>יסלאַמיק פאָונדאַטיאָנס</value>
+  </data>
+  <data name="IslamSource_IslamicInformation" xml:space="preserve">
+    <value>יסלאַמיק אינפארמאציע</value>
+  </data>
+  <data name="IslamSource_IslamicNews" xml:space="preserve">
+    <value>יסלאַמיק נייַעס</value>
+  </data>
+  <data name="IslamSource_IslamicOrganizations" xml:space="preserve">
+    <value>יסלאַמיק אָרגאַניזאַציעס</value>
+  </data>
+  <data name="IslamSource_IslamicQuotes" xml:space="preserve">
+    <value>יסלאַמיק קוואָטעס</value>
+  </data>
+  <data name="IslamSource_IslamicShops" xml:space="preserve">
+    <value>יסלאַמיק שאָפּס</value>
+  </data>
+  <data name="IslamSource_IslamicWebsites" xml:space="preserve">
+    <value>יסלאַמיק וועבסיטעס</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesAhlulBaytAcademy" xml:space="preserve">
+    <value>אַהלולבייַט אַקאַדעמי</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesAlEman" xml:space="preserve">
+    <value>فصل: كتاب المقدمة | نداء الإيمان</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesAlHudaInternationalWelfareFoundation" xml:space="preserve">
+    <value>על-כודאַ ינטערנאַטיאָנאַל וועלפער וויקיפּעדיע</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesAllahsQuran" xml:space="preserve">
+    <value>אַלאַ ס קווראַן</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesCorpus" xml:space="preserve">
+    <value>קווראַניק אַראַביש קאָרפּוס</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesCouncilAmericanIslamicRelations" xml:space="preserve">
+    <value>ראַט אויף אמעריקאנער-יסלאַמיק באַציונגען</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesDarusSalamPublications" xml:space="preserve">
+    <value>דאַר-אונדז-סאַלאַם אויסגאבעס</value>
+  </data>
+  <data name="IslamSource_IslamicWebsiteseMuslim" xml:space="preserve">
+    <value>עמוסלים</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesGuidedWaysTechnologies" xml:space="preserve">
+    <value>גוידעד ווייַס טעטשנאָלאָגיעס</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesHouseQuran" xml:space="preserve">
+    <value>הויז פון קווראַן</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesiQuran" xml:space="preserve">
+    <value>יקווראַן</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesIslamicCircleNorthAmerica" xml:space="preserve">
+    <value>יסלאַמיק סירקלע פון ​​צפון אַמעריקע</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesIslamicFinder" xml:space="preserve">
+    <value>יסלאַמיק פינדער</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesIslamicInsights" xml:space="preserve">
+    <value>יסלאַמיק ינסייץ</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesIslamicRelief" xml:space="preserve">
+    <value>יסלאַמיק רעליעף</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesIslamicReliefUSA" xml:space="preserve">
+    <value>יסלאַמיק רעליעף USA</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesIslamicSearchCenter" xml:space="preserve">
+    <value>יסלאַמיק זוכן צענטער</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesIslamicSocietyNorthAmerica" xml:space="preserve">
+    <value>יסלאַמיק חברה פון צפון אַמעריקע</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesIslamicThinkersSociety" xml:space="preserve">
+    <value>יסלאַמיק טינגקערז געזעלשאפט</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesIslamSpirit" xml:space="preserve">
+    <value>איסלאם גייסט</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesKalamullah" xml:space="preserve">
+    <value>קאַלאַמוללאַה</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesMaktabahorgTheUltimateIslamicLibrary" xml:space="preserve">
+    <value>Maktabah.org די ולטימאַטע יסלאַמיק ביבליאָטעק</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesOpenBurhan" xml:space="preserve">
+    <value>עפענען בורהאַן</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesProfessorAnsarian" xml:space="preserve">
+    <value>דער באַאַמטער וועבזייַטל פון פּראַפעסער אַנסאַריאַן</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesQuran" xml:space="preserve">
+    <value>קווראַן</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesQuranDownload" xml:space="preserve">
+    <value>קווראַן אראפקאפיע</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesQuranExplorer" xml:space="preserve">
+    <value>קווראַן Explorer</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesQuranicAudio" xml:space="preserve">
+    <value>קווראַניק אַודיאָ</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesQuranProject" xml:space="preserve">
+    <value>די אָנליין קווראַן פּראָיעקט</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesQuranTransliteration" xml:space="preserve">
+    <value>קוור 'אַן טראַנסליטעראַטיאָן</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesSalah" xml:space="preserve">
+    <value>סאַלאַ</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesStudyQuran" xml:space="preserve">
+    <value>לערנען קווראַן</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesSunnahCom" xml:space="preserve">
+    <value>Sunnah.com סייַינגס און לערנונגען פון נביא מוכאַמאַד (صلى الله عليه و سلم)</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesTanzil" xml:space="preserve">
+    <value>טאַנזיל - קווראַן נאַוויגאַטאָר</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesTheAbsoluteReality" xml:space="preserve">
+    <value>די אַבסאָלוט פאַקט</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesTheAwaitedOneFoundation" xml:space="preserve">
+    <value>די אַווייטאַד איינער וויקיפּעדיע</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesTheIslamicBulletin" xml:space="preserve">
+    <value>די יסלאַמיק בוללעטין</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesTheIslamicFoundation" xml:space="preserve">
+    <value>די יסלאַמיק יסוד</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesTheLahoreAhmadiyyaMovement" xml:space="preserve">
+    <value>די לאַהאָרע אַהמאַדיייאַ באַוועגונג</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesTheLahoreAhmadiyyaMovementIslam" xml:space="preserve">
+    <value>די לאַהאָרע אַהמאַדיייאַ באַוועגונג אין איסלאם</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesUnderstandQuran" xml:space="preserve">
+    <value>פֿאַרשטיין קווראַן</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesVerseByVerseQuran" xml:space="preserve">
+    <value>פסוק דורך פסוק קווראַן</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesZakatFoundationAmerica" xml:space="preserve">
+    <value>זאַקאַט יסוד פון אַמעריקע</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesZekr" xml:space="preserve">
+    <value>די זעקר פּראָיעקט</value>
+  </data>
+  <data name="IslamSource_LearningIslam" xml:space="preserve">
+    <value>לערנען איסלאם</value>
+  </data>
+  <data name="IslamSource_LetterSample" xml:space="preserve">
+    <value>א</value>
+  </data>
+  <data name="IslamSource_Loading" xml:space="preserve">
+    <value>לאָודינג</value>
+  </data>
+  <data name="IslamSource_Lotus" xml:space="preserve">
+    <value>לאָטאָס</value>
+  </data>
+  <data name="IslamSource_Mapping" xml:space="preserve">
+    <value>מאַפּינג</value>
+  </data>
+  <data name="IslamSource_NotableArticles" xml:space="preserve">
+    <value>נאָוטאַבאַל ארטיקלען</value>
+  </data>
+  <data name="IslamSource_NotableNews" xml:space="preserve">
+    <value>נאָוטאַבאַל נייַעס</value>
+  </data>
+  <data name="IslamSource_NotableQuotes" xml:space="preserve">
+    <value>נאָוטאַבאַל קוואָטעס</value>
+  </data>
+  <data name="IslamSource_Off" xml:space="preserve">
+    <value>אַוועק</value>
+  </data>
+  <data name="IslamSource_Operation" xml:space="preserve">
+    <value>אָפּעראַציע</value>
+  </data>
+  <data name="IslamSource_Perform" xml:space="preserve">
+    <value>דורכפירן</value>
+  </data>
+  <data name="IslamSource_PlainRoman" xml:space="preserve">
+    <value>קלאָר רוימער</value>
+  </data>
+  <data name="IslamSource_PrayerTimes" xml:space="preserve">
+    <value>תפילה Times</value>
+  </data>
+  <data name="IslamSource_QiblaDirectionFromTrueNorth" xml:space="preserve">
+    <value>קיבלאַ דירעקטיאָן פון אמת צפון</value>
+  </data>
+  <data name="IslamSource_Quote" xml:space="preserve">
+    <value>ציטירן</value>
+  </data>
+  <data name="IslamSource_QuoteMode" xml:space="preserve">
+    <value>ציטירן מאָדע</value>
+  </data>
+  <data name="IslamSource_Quran" xml:space="preserve">
+    <value>דעם רוח קווראַן</value>
+  </data>
+  <data name="IslamSource_QuranResources" xml:space="preserve">
+    <value>קווראַן רעסאָורסעס</value>
+  </data>
+  <data name="IslamSource_RomanToArabic" xml:space="preserve">
+    <value>רוימער צו אַראַביש</value>
+  </data>
+  <data name="IslamSource_Scheme" xml:space="preserve">
+    <value>סכעמע</value>
+  </data>
+  <data name="IslamSource_Selection" xml:space="preserve">
+    <value>אָפּקלייַב</value>
+  </data>
+  <data name="IslamSource_SubmissionNote" xml:space="preserve">
+    <value>סאַבמישאַנז: אָריגינעל מקור האַדיטה זאַמלונגען מוזן אַנטהאַלטן אַ קסמל מעטאַדאַטאַ טעקע מיט אַלע באַנד, בוך, פּרק און האַדיטה אינפֿאָרמאַציע און אַ קסמל טעקע מיט די רוי האַדיטה טעקסט.</value>
+  </data>
+  <data name="IslamSource_Supplications" xml:space="preserve">
+    <value>סופּפּליקאַטיאָנס</value>
+  </data>
+  <data name="IslamSource_Text" xml:space="preserve">
+    <value>טעקסט</value>
+  </data>
+  <data name="IslamSource_Translation" xml:space="preserve">
+    <value>יבערזעצונג</value>
+  </data>
+  <data name="IslamSource_Transliterate" xml:space="preserve">
+    <value>טראַנסליטעראַטע</value>
+  </data>
+  <data name="IslamSource_Transliteration" xml:space="preserve">
+    <value>טראַנסליטעראַטיאָן</value>
+  </data>
+  <data name="IslamSource_TransliterationScheme" xml:space="preserve">
+    <value>טראַנסליטעראַטיאָן סקים</value>
+  </data>
+  <data name="IslamSource_Viewer" xml:space="preserve">
+    <value>צוקוקער</value>
+  </data>
+  <data name="IslamSource_Welcome" xml:space="preserve">
+    <value>באַגריסונג צו IslamSource.info</value>
+  </data>
+  <data name="IslamSource_ModifyDiacritics" xml:space="preserve">
+    <value>מאָדיפיצירן דיאַקריטיקס</value>
+  </data>
+  <data name="IslamSource_Add" xml:space="preserve">
+    <value>לייגן</value>
+  </data>
+  <data name="IslamSource_Remove" xml:space="preserve">
+    <value>באַזייַטיקן</value>
+  </data>
+  <data name="IslamInfo_Chapters" xml:space="preserve">
+    <value>קאפיטלען</value>
+  </data>
+  <data name="IslamInfo_ChaptersRevelationOrder" xml:space="preserve">
+    <value>קאפיטלען אין אנטפלעקונג סדר</value>
+  </data>
+  <data name="IslamInfo_Groups" xml:space="preserve">
+    <value>גרופּעס</value>
+  </data>
+  <data name="IslamInfo_ImportantSelections" xml:space="preserve">
+    <value>וויכטיק סאַלעקשאַנז</value>
+  </data>
+  <data name="IslamInfo_Pages" xml:space="preserve">
+    <value>בלעטער</value>
+  </data>
+  <data name="IslamInfo_Parts" xml:space="preserve">
+    <value>פּאַרץ</value>
+  </data>
+  <data name="IslamInfo_Prostrations" xml:space="preserve">
+    <value>פּראָסטראַטיאָנס</value>
+  </data>
+  <data name="IslamInfo_Sections" xml:space="preserve">
+    <value>סעקשאַנז</value>
+  </data>
+  <data name="IslamInfo_Stations" xml:space="preserve">
+    <value>סטאַטיאָנס</value>
+  </data>
+  <data name="lang_localam" xml:space="preserve">
+    <value>אַמהאַריש</value>
+  </data>
+  <data name="lang_localar" xml:space="preserve">
+    <value>אַראַביש</value>
+  </data>
+  <data name="lang_localaz" xml:space="preserve">
+    <value>אַזערבייַדזאַניש</value>
+  </data>
+  <data name="lang_localber" xml:space="preserve">
+    <value>אַמאַזיגה</value>
+  </data>
+  <data name="lang_localbg" xml:space="preserve">
+    <value>בולגאַריש</value>
+  </data>
+  <data name="lang_localbn" xml:space="preserve">
+    <value>בענגאַליש</value>
+  </data>
+  <data name="lang_localbs" xml:space="preserve">
+    <value>באָסניש</value>
+  </data>
+  <data name="lang_localcs" xml:space="preserve">
+    <value>טשעכיש</value>
+  </data>
+  <data name="lang_localde" xml:space="preserve">
+    <value>דייַטש</value>
+  </data>
+  <data name="lang_localdv" xml:space="preserve">
+    <value>דיוועהי</value>
+  </data>
+  <data name="lang_localen" xml:space="preserve">
+    <value>ענגליש</value>
+  </data>
+  <data name="lang_locales" xml:space="preserve">
+    <value>שפּאַניש</value>
+  </data>
+  <data name="lang_localfa" xml:space="preserve">
+    <value>פּערסיש</value>
+  </data>
+  <data name="lang_localfr" xml:space="preserve">
+    <value>פראנצויזיש</value>
+  </data>
+  <data name="lang_localha" xml:space="preserve">
+    <value>כאַוסאַ</value>
+  </data>
+  <data name="lang_localhi" xml:space="preserve">
+    <value>הינדיש</value>
+  </data>
+  <data name="lang_localid" xml:space="preserve">
+    <value>אינדאָנעזיש</value>
+  </data>
+  <data name="lang_localit" xml:space="preserve">
+    <value>איטאַליעניש</value>
+  </data>
+  <data name="lang_localja" xml:space="preserve">
+    <value>יאַפּאַניש</value>
+  </data>
+  <data name="lang_localko" xml:space="preserve">
+    <value>קאָרעיִש</value>
+  </data>
+  <data name="lang_localku" xml:space="preserve">
+    <value>קורדיש</value>
+  </data>
+  <data name="lang_localml" xml:space="preserve">
+    <value>מאַלייַאַלאַם</value>
+  </data>
+  <data name="lang_localms" xml:space="preserve">
+    <value>מאַלייַיש</value>
+  </data>
+  <data name="lang_localnl" xml:space="preserve">
+    <value>האָלענדיש</value>
+  </data>
+  <data name="lang_localno" xml:space="preserve">
+    <value>נאָרוועגיש</value>
+  </data>
+  <data name="lang_localpl" xml:space="preserve">
+    <value>פויליש</value>
+  </data>
+  <data name="lang_localpt" xml:space="preserve">
+    <value>פּאָרטוגעזיש</value>
+  </data>
+  <data name="lang_localro" xml:space="preserve">
+    <value>רומעניש</value>
+  </data>
+  <data name="lang_localru" xml:space="preserve">
+    <value>רוסיש</value>
+  </data>
+  <data name="lang_localsd" xml:space="preserve">
+    <value>סינדיש</value>
+  </data>
+  <data name="lang_localso" xml:space="preserve">
+    <value>סאָמאַליש</value>
+  </data>
+  <data name="lang_localsq" xml:space="preserve">
+    <value>אַלבאַניש</value>
+  </data>
+  <data name="lang_localsv" xml:space="preserve">
+    <value>שוועדיש</value>
+  </data>
+  <data name="lang_localsw" xml:space="preserve">
+    <value>סוואַהילי</value>
+  </data>
+  <data name="lang_localta" xml:space="preserve">
+    <value>טאַמיל</value>
+  </data>
+  <data name="lang_localtg" xml:space="preserve">
+    <value>טאַדזשיק</value>
+  </data>
+  <data name="lang_localth" xml:space="preserve">
+    <value>טייַלענדיש</value>
+  </data>
+  <data name="lang_localtr" xml:space="preserve">
+    <value>טערקיש</value>
+  </data>
+  <data name="lang_localtt" xml:space="preserve">
+    <value>טאַטאַר</value>
+  </data>
+  <data name="lang_localug" xml:space="preserve">
+    <value>ויגהור</value>
+  </data>
+  <data name="lang_localur" xml:space="preserve">
+    <value>אורדו</value>
+  </data>
+  <data name="lang_localuz" xml:space="preserve">
+    <value>אוזבעקיש</value>
+  </data>
+  <data name="lang_localzh" xml:space="preserve">
+    <value>כינעזיש</value>
+  </data>
+  <data name="Acct_Download" xml:space="preserve">
+    <value>אראפקאפיע {0}</value>
+  </data>
+  <data name="IslamInfo_CelebrationDay" xml:space="preserve">
+    <value>סימכע טאָג</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek1" xml:space="preserve">
+    <value>זונטיק</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek2" xml:space="preserve">
+    <value>מאָנטיק</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek3" xml:space="preserve">
+    <value>דינסטיק</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek4" xml:space="preserve">
+    <value>מיטוואָך</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek5" xml:space="preserve">
+    <value>דאָנערשטיק</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek6" xml:space="preserve">
+    <value>פרייַטיק</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek7" xml:space="preserve">
+    <value>שבת</value>
+  </data>
+  <data name="IslamInfo_DaysOfWeek" xml:space="preserve">
+    <value>טעג פון דער וואָך</value>
+  </data>
+  <data name="IslamInfo_Disliked" xml:space="preserve">
+    <value>דיסלייקט</value>
+  </data>
+  <data name="IslamInfo_EnteringMosque" xml:space="preserve">
+    <value>קומט אַ מאָסקווע</value>
+  </data>
+  <data name="IslamInfo_Fasting" xml:space="preserve">
+    <value>פאסטן</value>
+  </data>
+  <data name="IslamInfo_FastingAfterFastingMonth" xml:space="preserve">
+    <value>פאסטן 6 טעג אין קעריינג חודש</value>
+  </data>
+  <data name="IslamInfo_FastingBeforeFastingMonth" xml:space="preserve">
+    <value>פאסטן פאר פאסטן חודש</value>
+  </data>
+  <data name="IslamInfo_FastingBeginningPilgrimageMonth" xml:space="preserve">
+    <value>פאסטן ערשטער 9 טעג פון פּילגרימ - נעסיע חודש</value>
+  </data>
+  <data name="IslamInfo_FastingDayOfArafa" xml:space="preserve">
+    <value>פאסטן טאָג פון אַראַפאַ</value>
+  </data>
+  <data name="IslamInfo_FastingDayOfAshura" xml:space="preserve">
+    <value>פאסטן טאָג פון אַשוראַ</value>
+  </data>
+  <data name="IslamInfo_FastingMiddleLunarDays" xml:space="preserve">
+    <value>פאסטן 13, 14 און 15 לונער טעג</value>
+  </data>
+  <data name="IslamInfo_FastingMondayThursday" xml:space="preserve">
+    <value>פאסטן מאנטאג און דאנערשטאג</value>
+  </data>
+  <data name="IslamInfo_FastingMonth" xml:space="preserve">
+    <value>פאסטן חודש</value>
+  </data>
+  <data name="IslamInfo_FastingMonthPrayer" xml:space="preserve">
+    <value>פאסטן חודש תפילה</value>
+  </data>
+  <data name="IslamInfo_Fear" xml:space="preserve">
+    <value>שרעק</value>
+  </data>
+  <data name="IslamInfo_Forbidden" xml:space="preserve">
+    <value>פאַרבאָטן</value>
+  </data>
+  <data name="IslamInfo_Friday" xml:space="preserve">
+    <value>פרייַטיק</value>
+  </data>
+  <data name="IslamInfo_Fulfilling" xml:space="preserve">
+    <value>פולפילינג</value>
+  </data>
+  <data name="IslamInfo_Funeral" xml:space="preserve">
+    <value>לעווייַע</value>
+  </data>
+  <data name="IslamInfo_Guidance" xml:space="preserve">
+    <value>גיידאַנס</value>
+  </data>
+  <data name="IslamInfo_Jurisprudence" xml:space="preserve">
+    <value>דזשוריספּרודענסע</value>
+  </data>
+  <data name="IslamInfo_LateNight" xml:space="preserve">
+    <value>שפּעט נאַכט</value>
+  </data>
+  <data name="IslamInfo_LunarEclipse" xml:space="preserve">
+    <value>לונער אַקליפּס</value>
+  </data>
+  <data name="IslamInfo_Month1" xml:space="preserve">
+    <value>די פאָרבידדען איינער</value>
+  </data>
+  <data name="IslamInfo_Month10" xml:space="preserve">
+    <value>קאַרריינג</value>
+  </data>
+  <data name="IslamInfo_Month11" xml:space="preserve">
+    <value>איינער פון טרוס</value>
+  </data>
+  <data name="IslamInfo_Month12" xml:space="preserve">
+    <value>איינער פון פּילגרימ - נעסיע</value>
+  </data>
+  <data name="IslamInfo_Month2" xml:space="preserve">
+    <value>פּאָסל</value>
+  </data>
+  <data name="IslamInfo_Month3" xml:space="preserve">
+    <value>ערשטער ספּרינג</value>
+  </data>
+  <data name="IslamInfo_Month4" xml:space="preserve">
+    <value>רגע ספּרינג</value>
+  </data>
+  <data name="IslamInfo_Month5" xml:space="preserve">
+    <value>ערשטער חודש פון פּאַרטשט ארץ</value>
+  </data>
+  <data name="IslamInfo_Month6" xml:space="preserve">
+    <value>רגע חודש פון פּאַרטשט ארץ</value>
+  </data>
+  <data name="IslamInfo_Month7" xml:space="preserve">
+    <value>דערעכ - ערעץ</value>
+  </data>
+  <data name="IslamInfo_Month8" xml:space="preserve">
+    <value>צעוואָרפן</value>
+  </data>
+  <data name="IslamInfo_Month9" xml:space="preserve">
+    <value>סקאָרטשעד</value>
+  </data>
+  <data name="IslamInfo_MorningLight" xml:space="preserve">
+    <value>מאָרגן ליכט</value>
+  </data>
+  <data name="IslamInfo_Necessary" xml:space="preserve">
+    <value>נייטיק</value>
+  </data>
+  <data name="IslamInfo_Neutral" xml:space="preserve">
+    <value>נייטראַל</value>
+  </data>
+  <data name="IslamInfo_ObligationOfSufficiency" xml:space="preserve">
+    <value>פליכט פון סופפיסיענסי</value>
+  </data>
+  <data name="IslamInfo_ObligationOfTheSelf" xml:space="preserve">
+    <value>פליכט פון די אַליינ</value>
+  </data>
+  <data name="IslamInfo_Obligatory" xml:space="preserve">
+    <value>אַבליגאַטאָרי</value>
+  </data>
+  <data name="IslamInfo_Odd" xml:space="preserve">
+    <value>מאָדנע</value>
+  </data>
+  <data name="IslamInfo_OftReturning" xml:space="preserve">
+    <value>אָפט-אומגעקערט</value>
+  </data>
+  <data name="IslamInfo_Permissible" xml:space="preserve">
+    <value>קאָשער</value>
+  </data>
+  <data name="IslamInfo_Prayer" xml:space="preserve">
+    <value>טפילע</value>
+  </data>
+  <data name="IslamInfo_PrayTime6" xml:space="preserve">
+    <value>אָפאַלטונג</value>
+  </data>
+  <data name="IslamInfo_PrayTime7" xml:space="preserve">
+    <value>זונופגאַנג</value>
+  </data>
+  <data name="IslamInfo_PrayTime8" xml:space="preserve">
+    <value>קאַלקולאַטעד זונ - ונטערגאַנג</value>
+  </data>
+  <data name="IslamInfo_PrayTime9" xml:space="preserve">
+    <value>האַלבנאַכט</value>
+  </data>
+  <data name="IslamInfo_PrayTime1" xml:space="preserve">
+    <value>פאַרטאָג</value>
+  </data>
+  <data name="IslamInfo_PrayTime2" xml:space="preserve">
+    <value>מיטאָגצייַט</value>
+  </data>
+  <data name="IslamInfo_PrayTime3" xml:space="preserve">
+    <value>נאָכמיטאָג</value>
+  </data>
+  <data name="IslamInfo_PrayTime4" xml:space="preserve">
+    <value>זונ - ונטערגאַנג</value>
+  </data>
+  <data name="IslamInfo_PrayTime5" xml:space="preserve">
+    <value>נאַכט</value>
+  </data>
+  <data name="IslamInfo_PrescribedTime" xml:space="preserve">
+    <value>פּריסקרייבד צייַט</value>
+  </data>
+  <data name="IslamInfo_RainForDraught" xml:space="preserve">
+    <value>רעגן פֿאַר פּלאַן</value>
+  </data>
+  <data name="IslamInfo_Recommended" xml:space="preserve">
+    <value>רעקאָממענדעד</value>
+  </data>
+  <data name="IslamInfo_SacredState" xml:space="preserve">
+    <value>הייליק שטאַט</value>
+  </data>
+  <data name="IslamInfo_SolarEclipse" xml:space="preserve">
+    <value>זונ אַקליפּס</value>
+  </data>
+  <data name="IslamInfo_Sunrise" xml:space="preserve">
+    <value>זונופגאַנג</value>
+  </data>
+  <data name="IslamInfo_Supererogatory" xml:space="preserve">
+    <value>סופּערעראָגאַטאָרי</value>
+  </data>
+  <data name="IslamInfo_Tradition" xml:space="preserve">
+    <value>טראַדיציע</value>
+  </data>
+  <data name="IslamInfo_TraditionObligatory" xml:space="preserve">
+    <value>מסורה אַבליגאַטאָרי</value>
+  </data>
+  <data name="IslamInfo_TraditionVoluntary" xml:space="preserve">
+    <value>מסורה וואַלאַנטערי</value>
+  </data>
+  <data name="IslamInfo_Travel" xml:space="preserve">
+    <value>אַרומפאָרן</value>
+  </data>
+  <data name="IslamInfo_Victory" xml:space="preserve">
+    <value>זיג</value>
+  </data>
+  <data name="IslamInfo_Aaron" xml:space="preserve">
+    <value>אהרן</value>
+  </data>
+  <data name="IslamInfo_Ablution" xml:space="preserve">
+    <value>אַבלוטיאָן</value>
+  </data>
+  <data name="IslamInfo_Abraham" xml:space="preserve">
+    <value>אברהם</value>
+  </data>
+  <data name="IslamInfo_Adam" xml:space="preserve">
+    <value>אד"ם</value>
+  </data>
+  <data name="IslamInfo_AfterCallToPrayerFirstPart" xml:space="preserve">
+    <value>נאָך רופן צו תפילה - ערשטער טייל</value>
+  </data>
+  <data name="IslamInfo_AfterCallToPrayerFirstPartTrans" xml:space="preserve">
+    <value>אָ אַלאַ, האר פון דעם רופן גאַנץ און תפילה פון ונדזערער</value>
+  </data>
+  <data name="IslamInfo_AfterCallToPrayerFirstPartWordByWord" xml:space="preserve">
+    <value>אָ אַלאַ | האר | פון דעם | רופן | גאַנץ | און תפילה | פון ונדזערער</value>
+  </data>
+  <data name="IslamInfo_AfterCallToPrayerSecondPart" xml:space="preserve">
+    <value>נאָך רופן צו תפילה - צווייט טייל</value>
+  </data>
+  <data name="IslamInfo_AfterCallToPrayerSecondPartTrans" xml:space="preserve">
+    <value>געבן צו מוכאַמאַד זיין רעכט פון השתדלות און מייַלע</value>
+  </data>
+  <data name="IslamInfo_AfterCallToPrayerSecondPartWordByWord" xml:space="preserve">
+    <value>געבן | צו מוכאַמאַד | זיין רעכט פון השתדלות | און מייַלע</value>
+  </data>
+  <data name="IslamInfo_AfterCallToPrayerSupplication" xml:space="preserve">
+    <value>נאָך רופן צו תפילה געבעט</value>
+  </data>
+  <data name="IslamInfo_AfterCallToPrayerThirdPart" xml:space="preserve">
+    <value>נאָך רופן צו תפילה - דריטער טייל</value>
+  </data>
+  <data name="IslamInfo_AfterCallToPrayerThirdPartTrans" xml:space="preserve">
+    <value>און כאַפּן אים צו דער עלעוואַטעד ראַנג וואָס איר האָבן צוגעזאגט אים</value>
+  </data>
+  <data name="IslamInfo_AfterCallToPrayerThirdPartWordByWord" xml:space="preserve">
+    <value>און כאַפּן אים | צו די ריי | עלעוואַטעד | וואָס | איר האָבן צוגעזאגט אים</value>
+  </data>
+  <data name="IslamInfo_Allah" xml:space="preserve">
+    <value>די איין גאָט</value>
+  </data>
+  <data name="IslamInfo_AllahIsGreatest" xml:space="preserve">
+    <value>אַלאַ איז גרעסטע</value>
+  </data>
+  <data name="IslamInfo_AllPraiseAndThanksBeToAllah" xml:space="preserve">
+    <value>אַלע לויב און דאַנק זיין צו אַלאַ</value>
+  </data>
+  <data name="IslamInfo_AlmsGiving" xml:space="preserve">
+    <value>צדאָקע געבן</value>
+  </data>
+  <data name="IslamInfo_AndUponYouBePeace" xml:space="preserve">
+    <value>און אויף איר זיין שלום</value>
+  </data>
+  <data name="IslamInfo_ArabicTypesetting" xml:space="preserve">
+    <value>אַראַביש טייפּסעטינג</value>
+  </data>
+  <data name="IslamInfo_Arial" xml:space="preserve">
+    <value>אַריאַל</value>
+  </data>
+  <data name="IslamInfo_BeforeTravel" xml:space="preserve">
+    <value>איידער אַרומפאָרן</value>
+  </data>
+  <data name="IslamInfo_BeforeTravelTrans" xml:space="preserve">
+    <value>איך כירביי לאָזן איר מיט דעם רעליגיע, אַמאַנאַה (פֿאַראַנטוואָרטלעכקייט) און דיין פרייַערדיק אַקט פֿאַר אַלאַ.</value>
+  </data>
+  <data name="IslamInfo_BeforeTravelWordByWord" xml:space="preserve">
+    <value>איך כירביי לאָזן איר | פֿאַר אַלאַ | מיט דעם רעליגיע | און וואָס | פֿאַראַנטוואָרטלעכקייט | און פרייַערדיק | אַקט</value>
+  </data>
+  <data name="IslamInfo_BowOfPrayer" xml:space="preserve">
+    <value>בויגן פון תפילה</value>
+  </data>
+  <data name="IslamInfo_CallToBeginPrayerSixthVerse" xml:space="preserve">
+    <value>רוף צו נעמען תפילה - זעקסט פסוק</value>
+  </data>
+  <data name="IslamInfo_CallToBeginPrayerSixthVerseTrans" xml:space="preserve">
+    <value>טאַקע האט אנגעהויבן די תפילה</value>
+  </data>
+  <data name="IslamInfo_CallToBeginPrayerSixthVerseWordByWord" xml:space="preserve">
+    <value>טאַקע | האט אנגעהויבן | די תפילה</value>
+  </data>
+  <data name="IslamInfo_CallToBeginThePrayer" xml:space="preserve">
+    <value>רוף צו נעמען די תפילה</value>
+  </data>
+  <data name="IslamInfo_CallToPrayer" xml:space="preserve">
+    <value>רופן צו תפילה</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerEighthVerse" xml:space="preserve">
+    <value>רופן צו תפילה - אַכט פסוק</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerEighthVerseTrans" xml:space="preserve">
+    <value>עס איז ניט גאָט אַחוץ אַלאַ</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerEighthVerseWordByWord" xml:space="preserve">
+    <value>עס איז ניט | גאָט | חוץ | אַלאַ</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerFifthVerse" xml:space="preserve">
+    <value>רופן צו תפילה - פינפט פסוק</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerFifthVerseTrans" xml:space="preserve">
+    <value>קומען צו הצלחה</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerFifthVerseWordByWord" xml:space="preserve">
+    <value>קומען | צו | הצלחה</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerFirstVerse" xml:space="preserve">
+    <value>רופן צו תפילה - ערשטער פסוק</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerFirstVerseTrans" xml:space="preserve">
+    <value>אַלאַ איז גרעסטע</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerFirstVerseWordByWord" xml:space="preserve">
+    <value>אַלאַ איז | גרעסטע</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerFourthVerse" xml:space="preserve">
+    <value>רופן צו תפילה - פערט פסוק</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerFourthVerseTrans" xml:space="preserve">
+    <value>קומען צו תפילה</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerFourthVerseWordByWord" xml:space="preserve">
+    <value>קומען | צו | תפילה</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerLeader" xml:space="preserve">
+    <value>רופן צו תפילה פירער</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerSecondVerse" xml:space="preserve">
+    <value>רופן צו תפילה - צווייטע פסוק</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerSecondVerseTrans" xml:space="preserve">
+    <value>איך עדות אַז עס איז ניט גאָט אַחוץ אַלאַ</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerSecondVerseWordByWord" xml:space="preserve">
+    <value>איך עדות | אַז | עס איז ניט | גאָט | חוץ | אַלאַ</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerSeventhVerse" xml:space="preserve">
+    <value>רופן צו תפילה - זיבעט פסוק</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerSeventhVerseTrans" xml:space="preserve">
+    <value>אַלאַ איז גרעסטע</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerSeventhVerseWordByWord" xml:space="preserve">
+    <value>אַלאַ איז | גרעסטע</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerSixthVerse" xml:space="preserve">
+    <value>רופן צו תפילה - זעקסט פסוק</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerSixthVerseTrans" xml:space="preserve">
+    <value>תפילה איז בעסער ווי שלאָפן</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerSixthVerseWordByWord" xml:space="preserve">
+    <value>תפילה איז | בעסער | ווי | שלאָפן</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerThirdVerse" xml:space="preserve">
+    <value>רופן צו תפילה - דריט פסוק</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerThirdVerseTrans" xml:space="preserve">
+    <value>איך עדות אַז מוכאַמאַד איז די מעסינדזשער פון אַלאַ</value>
+  </data>
+  <data name="IslamInfo_CallToPrayerThirdVerseWordByWord" xml:space="preserve">
+    <value>איך עדות | אַז | מוכאַמאַד איז | די מעסינדזשער | פון אַלאַ</value>
+  </data>
+  <data name="IslamInfo_Chapter" xml:space="preserve">
+    <value>קאַפּיטל</value>
+  </data>
+  <data name="IslamInfo_Creed" xml:space="preserve">
+    <value>עמונע</value>
+  </data>
+  <data name="IslamInfo_Custom" xml:space="preserve">
+    <value>פירונג</value>
+  </data>
+  <data name="IslamInfo_David" xml:space="preserve">
+    <value>דוד</value>
+  </data>
+  <data name="IslamInfo_Default" xml:space="preserve">
+    <value>ניט ויסצאָלן</value>
+  </data>
+  <data name="IslamInfo_DirectionOfprayer" xml:space="preserve">
+    <value>ריכטונג פון תפילה</value>
+  </data>
+  <data name="IslamInfo_Dissertation" xml:space="preserve">
+    <value>דיסערטיישאַן</value>
+  </data>
+  <data name="IslamInfo_Eber" xml:space="preserve">
+    <value>עבער</value>
+  </data>
+  <data name="IslamInfo_Elijah" xml:space="preserve">
+    <value>אליהו</value>
+  </data>
+  <data name="IslamInfo_Elisha" xml:space="preserve">
+    <value>עלישאַ</value>
+  </data>
+  <data name="IslamInfo_Enoch" xml:space="preserve">
+    <value>ענאָטש</value>
+  </data>
+  <data name="IslamInfo_EnteringMasjidilHaram" xml:space="preserve">
+    <value>קומט מאַסדזשידיל האַראַם</value>
+  </data>
+  <data name="IslamInfo_EnteringMasjidilHaramTrans" xml:space="preserve">
+    <value>אָ אַלאַ!</value>
+  </data>
+  <data name="IslamInfo_EnteringMasjidilHaramWordByWord" xml:space="preserve">
+    <value>אָ אַלאַ | דו ביסט | שלום | און פון דיר | שלום | גרונט אונדז צו לעבן | אונדזער האר | מיט שלום | און אָנמאַכן אונדז צו קומען | גן עדן | די הויז | פון שלום | באַזיצער פון האָנאָור | אונדזער האר | און מאַדזשעסטי | דו</value>
+  </data>
+  <data name="IslamInfo_Ezekiel" xml:space="preserve">
+    <value>יחזקאל</value>
+  </data>
+  <data name="IslamInfo_FifthCreed" xml:space="preserve">
+    <value>פינפט עמונע - די וואָרט פון פּעניטענסע (אַסטאַגהפאַר)</value>
+  </data>
+  <data name="IslamInfo_FifthCreedTrans" xml:space="preserve">
+    <value>איך זוכן מחילה פון אַלאַ, מיין האר, פון יעדער זינד איך באגאנגען וויסנדיק אָדער אַננאָוינגלי, בעסאָד אָדער אפן, און איך קער צו אים פון די זינד אַז איך וויסן און פון די זינד אַז איך טאָן ניט וויסן.</value>
+  </data>
+  <data name="IslamInfo_FifthCreedWordByWord" xml:space="preserve">
+    <value>איך זוכן מחילה | פון אַלאַ | מיין האר | פון | יעדער | זינד | איך קאָממיטעד | וויסנדיק | אָדער | ונקנאָוונינגלי | בעסאָד | אָדער | אפן | און איך קער צו | אים | פון | די זינד | אַז | איך וויסן | און פון</value>
+  </data>
+  <data name="IslamInfo_FirstCreed" xml:space="preserve">
+    <value>ערשטער עמונע - די וואָרט פון פּוריטי (טייַיאַבאַה)</value>
+  </data>
+  <data name="IslamInfo_FirstCreedTrans" xml:space="preserve">
+    <value>עס איז ניט גאָט אַחוץ אַלאַ מוכאַמאַד איז די מעסינדזשער פון אַלאַ.</value>
+  </data>
+  <data name="IslamInfo_FirstCreedWordByWord" xml:space="preserve">
+    <value>עס איז ניט | גאָט | חוץ | אַלאַ | מוכאַמאַד | מעסינדזשער | אַלאַ</value>
+  </data>
+  <data name="IslamInfo_FortyOurLordSupplications" xml:space="preserve">
+    <value>40 אונדזער האר סופּפּליקאַטיאָנס</value>
+  </data>
+  <data name="IslamInfo_FourthCreed" xml:space="preserve">
+    <value>פערט עמונע - די וואָרט פון וניטי (טאַוהיד)</value>
+  </data>
+  <data name="IslamInfo_FourthCreedTrans" xml:space="preserve">
+    <value>(עס איז) קיינער ווערט פון דינען אַחוץ אַלאַ.</value>
+  </data>
+  <data name="IslamInfo_FourthCreedWordByWord" xml:space="preserve">
+    <value>עס איז ניט | גאָט | חוץ | אַלאַ | אַליין | ניט | שוטעף | האט ער | פֿאַר אים | קינגדאָם | און פֿאַר אים | לויבן | ער גיט לעבן | און ברענגט טויט | און ער איז | אלץ-לעבעדיק | נישט | טויגעוודיק פון</value>
+  </data>
+  <data name="IslamInfo_GloryBeToAllah" xml:space="preserve">
+    <value>כבוד זיין צו אַלאַ</value>
+  </data>
+  <data name="IslamInfo_IhramPrayerSupplication" xml:space="preserve">
+    <value>יהראַם תפילה געבעט</value>
+  </data>
+  <data name="IslamInfo_IhramPrayerSupplicationTrans" xml:space="preserve">
+    <value>אין דעם נאָמען פון אַלאַ, די מערסט גריישאַס, די מערסט מערסיפול!</value>
+  </data>
+  <data name="IslamInfo_IhramPrayerSupplicationWordByWord" xml:space="preserve">
+    <value>אין דעם נאָמען פון | אַלאַ | די מערסט גריישאַס | די מערסט מערסיפול | אַלאַ | איז די גרעסטע | אַלאַ | איז די גרעסטע | אַלאַ | איז די גרעסטע | ווי גאנץ | ער איז | דער איינער ווער האט געשטעלט | דעם (אַריבערפירן) |</value>
+  </data>
+  <data name="IslamInfo_Imam" xml:space="preserve">
+    <value>רוחניות פירער</value>
+  </data>
+  <data name="IslamInfo_IntentionForIhramPrayer" xml:space="preserve">
+    <value>כוונה פֿאַר יהראַם תפילה</value>
+  </data>
+  <data name="IslamInfo_IntentionForIhramPrayerTrans" xml:space="preserve">
+    <value>איך אויסן צו מאַכן אַ ניאַט (צוויי ראַקאַאַט סונאַט יהראַם תפילה) פֿאַר אַלאַ.</value>
+  </data>
+  <data name="IslamInfo_IntentionForIhramPrayerWordByWord" xml:space="preserve">
+    <value>איך פאָרשלאָגן | רעקאַמענדיד | יהראַם תפילה | צוויי ראַקאַט | פֿאַר אַלאַ | די מערסט הויך</value>
+  </data>
+  <data name="IslamInfo_IntentionForIhramShower" xml:space="preserve">
+    <value>כוונה פֿאַר יהראַם שפּריץ</value>
+  </data>
+  <data name="IslamInfo_IntentionForIhramShowerTrans" xml:space="preserve">
+    <value>איך אויסן צו וואַנע (פֿאַר רעקאַמענדיד יהראַם שפּריץ) פֿאַר אַלאַ.</value>
+  </data>
+  <data name="IslamInfo_IntentionForIhramShowerWordByWord" xml:space="preserve">
+    <value>איך אויסן | צו וואַנע | רעקאַמענדיד | יהראַם שפּריץ | פֿאַר אַלאַ | די מערסט הויך</value>
+  </data>
+  <data name="IslamInfo_IntentionForJourneyPrayer" xml:space="preserve">
+    <value>כוונה פֿאַר נסיעה תפילה</value>
+  </data>
+  <data name="IslamInfo_IntentionForJourneyPrayerTrans" xml:space="preserve">
+    <value>איך אויסן צו מאַכן אַ ניאַט (צוויי ראַקאַאַט סונאַט סאַפאַר תפילה) פֿאַר אַלאַ.</value>
+  </data>
+  <data name="IslamInfo_IntentionForJourneyPrayerWordByWord" xml:space="preserve">
+    <value>איך פאָרשלאָגן | רעקאַמענדיד | סאַפאַר תפילה | צוויי ראַקאַט | פֿאַר אַלאַ | די מערסט הויך</value>
+  </data>
+  <data name="IslamInfo_IntentionForJourneyShower" xml:space="preserve">
+    <value>כוונה פֿאַר נסיעה שפּריץ</value>
+  </data>
+  <data name="IslamInfo_IntentionForJourneyShowerTrans" xml:space="preserve">
+    <value>איך אויסן צו וואַנע (פֿאַר רעקאַמענדיד מוסאַפיר שפּריץ) פֿאַר אַלאַ.</value>
+  </data>
+  <data name="IslamInfo_IntentionForJourneyShowerWordByWord" xml:space="preserve">
+    <value>איך אויסן | צו וואַנע | מוסאַפיר שפּריץ | רעקאַמענדיד | פֿאַר אַלאַ | די מערסט הויך</value>
+  </data>
+  <data name="IslamInfo_IntentionToPerformUmrah" xml:space="preserve">
+    <value>כוונה צו דורכפירן ומראַה</value>
+  </data>
+  <data name="IslamInfo_IntentionToPerformUmrahTrans" xml:space="preserve">
+    <value>אָ אַלאַ, איך ריספּאַנד אויף דיין רוף צו מאַכן ומראַה, אָ אַלאַ, איך מאַכן ומראַה און יהראַם פֿאַר ומראַה נאָר פֿאַר איר.</value>
+  </data>
+  <data name="IslamInfo_IntentionToPerformUmrahWordByWord" xml:space="preserve">
+    <value>איך אויסן | ומראַה | און יהראַם | נאָר | פֿאַר אַלאַ | די מערסט הויך</value>
+  </data>
+  <data name="IslamInfo_InTheNameOfAllah" xml:space="preserve">
+    <value>אין דעם נאָמען פון אַלאַ</value>
+  </data>
+  <data name="IslamInfo_Isaac" xml:space="preserve">
+    <value>יצחק</value>
+  </data>
+  <data name="IslamInfo_Ishmael" xml:space="preserve">
+    <value>ישמאַעל</value>
+  </data>
+  <data name="IslamInfo_Islam" xml:space="preserve">
+    <value>סובמיססיאָן</value>
+  </data>
+  <data name="IslamInfo_IslamicWords" xml:space="preserve">
+    <value>יסלאַמיק ווערטער</value>
+  </data>
+  <data name="IslamInfo_Jacob" xml:space="preserve">
+    <value>יעקב</value>
+  </data>
+  <data name="IslamInfo_Jesus" xml:space="preserve">
+    <value>יאָשקע</value>
+  </data>
+  <data name="IslamInfo_Jethro" xml:space="preserve">
+    <value>דזשעטהראָ</value>
+  </data>
+  <data name="IslamInfo_Job" xml:space="preserve">
+    <value>אַרבעט</value>
+  </data>
+  <data name="IslamInfo_JohnTheBaptist" xml:space="preserve">
+    <value>יוחנן די באַפּטיסט</value>
+  </data>
+  <data name="IslamInfo_Jonas" xml:space="preserve">
+    <value>דזשאָנאַס</value>
+  </data>
+  <data name="IslamInfo_Joseph" xml:space="preserve">
+    <value>יוסף</value>
+  </data>
+  <data name="IslamInfo_Judge" xml:space="preserve">
+    <value>ריכטער</value>
+  </data>
+  <data name="IslamInfo_KFGQPCNaskh" xml:space="preserve">
+    <value>קפגקפּק נאַסך</value>
+  </data>
+  <data name="IslamInfo_Law" xml:space="preserve">
+    <value>געזעץ</value>
+  </data>
+  <data name="IslamInfo_Lot" xml:space="preserve">
+    <value>פּלאַץ</value>
+  </data>
+  <data name="IslamInfo_MajorAblution" xml:space="preserve">
+    <value>הויפּט אַבלוטיאָן</value>
+  </data>
+  <data name="IslamInfo_MalikMuwatta" xml:space="preserve">
+    <value>מאַליק ס מווואַטטאַ</value>
+  </data>
+  <data name="IslamInfo_MeQuran" xml:space="preserve">
+    <value>מיר-קווראַן</value>
+  </data>
+  <data name="IslamInfo_Messenger" xml:space="preserve">
+    <value>שאָליעך</value>
+  </data>
+  <data name="IslamInfo_Months" xml:space="preserve">
+    <value>חדשים</value>
+  </data>
+  <data name="IslamInfo_Moses" xml:space="preserve">
+    <value>משה</value>
+  </data>
+  <data name="IslamInfo_MSUighur" xml:space="preserve">
+    <value>מס אוּיגור</value>
+  </data>
+  <data name="IslamInfo_Muhammad" xml:space="preserve">
+    <value>מוכאַמאַד</value>
+  </data>
+  <data name="IslamInfo_Muslim" xml:space="preserve">
+    <value>איינער וואס סאַבמיץ</value>
+  </data>
+  <data name="IslamInfo_NamesOfAllah" xml:space="preserve">
+    <value>די נעמען פון אַלאַ</value>
+  </data>
+  <data name="IslamInfo_Noah" xml:space="preserve">
+    <value>נח</value>
+  </data>
+  <data name="IslamInfo_OnenessOfGod" xml:space="preserve">
+    <value>וואַננאַס פון גאָט</value>
+  </data>
+  <data name="IslamInfo_Part" xml:space="preserve">
+    <value>טייל</value>
+  </data>
+  <data name="IslamInfo_PDMSSaleem" xml:space="preserve">
+    <value>פּדמס סאַלים</value>
+  </data>
+  <data name="IslamInfo_PeaceBeUponYou" xml:space="preserve">
+    <value>שלום זיין אויף איר</value>
+  </data>
+  <data name="IslamInfo_PhraseForAllahIsGreatest" xml:space="preserve">
+    <value>פראַזע פֿאַר אַלאַ איז גרעסטע</value>
+  </data>
+  <data name="IslamInfo_PhraseForAllPraiseAndThanksBeToAllah" xml:space="preserve">
+    <value>פראַזע פֿאַר אַלע לויב און דאַנק זיין צו אַלאַ</value>
+  </data>
+  <data name="IslamInfo_PhraseForGloryBeToAllah" xml:space="preserve">
+    <value>פראַזע פֿאַר כבוד זיין צו אַלאַ</value>
+  </data>
+  <data name="IslamInfo_PhraseForInTheNameOfAllah" xml:space="preserve">
+    <value>פראַזע פֿאַר אין די נאָמען פון אַלאַ</value>
+  </data>
+  <data name="IslamInfo_Pilgrimage" xml:space="preserve">
+    <value>פּילגרימ - נעסיע</value>
+  </data>
+  <data name="IslamInfo_Prayers" xml:space="preserve">
+    <value>תפילות</value>
+  </data>
+  <data name="IslamInfo_PrayerTimes" xml:space="preserve">
+    <value>תפילה מאל</value>
+  </data>
+  <data name="IslamInfo_ProperPronunciationDuringRecitation" xml:space="preserve">
+    <value>געהעריק פּראָונאַנסייישאַן בעשאַס רעסאַטיישאַן</value>
+  </data>
+  <data name="IslamInfo_Prophet" xml:space="preserve">
+    <value>נאָווי</value>
+  </data>
+  <data name="IslamInfo_Prophets" xml:space="preserve">
+    <value>נביאים</value>
+  </data>
+  <data name="IslamInfo_Prostrating" xml:space="preserve">
+    <value>פּראָסטראַטינג</value>
+  </data>
+  <data name="IslamInfo_Prostration" xml:space="preserve">
+    <value>פּראָסטראַטיאָן</value>
+  </data>
+  <data name="IslamInfo_PurificationOfTheSoul" xml:space="preserve">
+    <value>רייניקונג פון די נשמה</value>
+  </data>
+  <data name="IslamInfo_PurificationOfTheSoulTrans" xml:space="preserve">
+    <value>אָ אַלאַ, שענקען מיין נשמה זייַן פרומקייַט און רייניקן עס, איר זענען די בעסטער צו רייניקן עס, איר זענען זייַן גאַרדיאַן און האר.</value>
+  </data>
+  <data name="IslamInfo_PurificationOfTheSoulWordByWord" xml:space="preserve">
+    <value>אָ אַלאַ | איר געבן | מייַן נשמה | זייַן פּייאַטי | און איר רייניקן עס | איר (אַליין) | בעסטער | ווער | פּוריפיעס עס | איר (אַליין) | זייַן גאַרדיאַן | און זייַן האר</value>
+  </data>
+  <data name="IslamInfo_PurificationSupplication" xml:space="preserve">
+    <value>רייניקונג געבעט</value>
+  </data>
+  <data name="IslamInfo_Remembrance" xml:space="preserve">
+    <value>דערמאָנונג</value>
+  </data>
+  <data name="IslamInfo_RevelationOfAllah" xml:space="preserve">
+    <value>התגלות פון אַלאַ</value>
+  </data>
+  <data name="IslamInfo_RevelationOfAllahInBookForm" xml:space="preserve">
+    <value>התגלות פון אַלאַ אין בוך פאָרעם</value>
+  </data>
+  <data name="IslamInfo_RiyadhSaaliheen" xml:space="preserve">
+    <value>ריאַד על-סאַאַליהעען</value>
+  </data>
+  <data name="IslamInfo_SahihBukhari" xml:space="preserve">
+    <value>סאַהיה על-בוכאַרי</value>
+  </data>
+  <data name="IslamInfo_SahihMuslim" xml:space="preserve">
+    <value>סאַהיה מוסלים</value>
+  </data>
+  <data name="IslamInfo_SakkalMajalla" xml:space="preserve">
+    <value>סאַקקאַל מאַדזשאַללאַ</value>
+  </data>
+  <data name="IslamInfo_SalawatSupplicationAfterTalbiah" xml:space="preserve">
+    <value>סאַלאַוואַט געבעט נאָך טאַלביאַה</value>
+  </data>
+  <data name="IslamInfo_SalawatSupplicationAfterTalbiahTrans" xml:space="preserve">
+    <value>אָ אַלאַ בענטשן אונדזער האר מוכאַמאַד און זיין משפּחה פּונקט ווי איר ברוך אונדזער האר אברהם און הייליקן אונדזער האר מוכאַמאַד און די משפּחה פון מוכאַמאַד פּונקט ווי איר הייליקן אונדזער האר אברהם און די משפּחה פון אברהם אין אַלע וועלטן פֿאַר איר זענען די פּרייזווערדי די גוואַלדיק.</value>
+  </data>
+  <data name="IslamInfo_SalawatSupplicationAfterTalbiahWordByWord" xml:space="preserve">
+    <value>אָ אַלאַ | שיקן סאַלוטאַטיאָנס | אויף | האר | מוכאַמאַד | און אויף | די משפּחה פון | האר | מוכאַמאַד | פּונקט ווי | איר שיקן סאַלוטאַטיאָנס | אויף | אברהם | און אויף | די משפּחה פון | אברהם | און שיקן ברכות | אויף | האר</value>
+  </data>
+  <data name="IslamInfo_Saleh" xml:space="preserve">
+    <value>סאַלעה</value>
+  </data>
+  <data name="IslamInfo_Scheherazade" xml:space="preserve">
+    <value>סטשעהעראַזאַדע</value>
+  </data>
+  <data name="IslamInfo_SchoolOfJurisprudence" xml:space="preserve">
+    <value>שולע פון ​​דזשוריספּרודענסע</value>
+  </data>
+  <data name="IslamInfo_SecondCreed" xml:space="preserve">
+    <value>רגע עמונע - די וואָרט פון עדות (שאַהאַאַדאַט)</value>
+  </data>
+  <data name="IslamInfo_SecondCreedTrans" xml:space="preserve">
+    <value>איך טראָגן עדות אַז קיין-איינער איז ווערט פון דינען אַחוץ אַלאַ, די איינער אַליין, אָן שוטעף, און איך בער עדות אַז מוכאַמאַד איז זייַן קנעכט און מעסינדזשער.</value>
+  </data>
+  <data name="IslamInfo_SecondCreedWordByWord" xml:space="preserve">
+    <value>איך טראָגן עדות | אַז | עס איז ניט | גאָט | חוץ | אַלאַ | אַליין | ניט | שוטעף | האט ער | און איך בער עדות | אַז | מוכאַמאַד | זייַן קנעכט | און מעסינדזשער</value>
+  </data>
+  <data name="IslamInfo_SixthCreed" xml:space="preserve">
+    <value>זעקסט עמונע - די ווערטער פון רידזשעקטינג דיסביליף (ראַד-A-קופפער)</value>
+  </data>
+  <data name="IslamInfo_SixthCreedTrans" xml:space="preserve">
+    <value>אָ אַלאַ!</value>
+  </data>
+  <data name="IslamInfo_SixthCreedWordByWord" xml:space="preserve">
+    <value>אָ אַלאַ | אַוואַדע | איך זוכן שוץ | מיט איר | פון | אַז | איך מיטאַרבעטער שוטעף מיט איר | עפּעס | און איך | וויסן | עס | און איך זוכן מחילה פון איר | פֿאַר אַז | נישט | איך וויסן | עס | איך תשובה</value>
+  </data>
+  <data name="IslamInfo_Solomon" xml:space="preserve">
+    <value>שלמה</value>
+  </data>
+  <data name="IslamInfo_Station" xml:space="preserve">
+    <value>סטאַנציע</value>
+  </data>
+  <data name="IslamInfo_SunanAbuDawood" xml:space="preserve">
+    <value>סונאַן אבו דאַוואָאָד</value>
+  </data>
+  <data name="IslamInfo_SunanIbnMaja" xml:space="preserve">
+    <value>סונאַן יבן מאַדזשאַ</value>
+  </data>
+  <data name="IslamInfo_SunanNasai" xml:space="preserve">
+    <value>סונאַן אַ-נאַסאַ'י על-סוגהראַ</value>
+  </data>
+  <data name="IslamInfo_SunanTirmidhi" xml:space="preserve">
+    <value>סונאַן על-טירמידהי</value>
+  </data>
+  <data name="IslamInfo_Supplication" xml:space="preserve">
+    <value>געבעט</value>
+  </data>
+  <data name="IslamInfo_SupplicationAfterSalawatSupplication" xml:space="preserve">
+    <value>געבעט נאָך סאַלאַוואַט געבעט</value>
+  </data>
+  <data name="IslamInfo_SupplicationAfterSalawatSupplicationTrans" xml:space="preserve">
+    <value>אָ אַלאַ!</value>
+  </data>
+  <data name="IslamInfo_SupplicationAfterSalawatSupplicationWordByWord" xml:space="preserve">
+    <value>אָ אַלאַ | טאַקע | איך זוכן פון דיר | דו ברכות | און גן עדן | איך זוכן אָפּדאַך מיט דיר | פון | צארן | און גיהנום.</value>
+  </data>
+  <data name="IslamInfo_SupplicationForArrivingAtMakkah" xml:space="preserve">
+    <value>געבעט פֿאַר ערייווינג בייַ מאַקקאַה</value>
+  </data>
+  <data name="IslamInfo_SupplicationForArrivingAtMakkahTrans" xml:space="preserve">
+    <value>אָ גאָט!</value>
+  </data>
+  <data name="IslamInfo_SupplicationForArrivingAtMakkahWordByWord" xml:space="preserve">
+    <value>אָ אַלאַ | באמת | דעם | מיזבייעך איז | דיין הייליק אָרט | און דעם הייליק שטאָט איז | דיין סיטי | און שלום טהערין איז | דיין שלום | דערנאך פאַרווערן מיר | פון | גיהנום פייַער | און ראַטעווען מיר | פון | דיין שטראָף | אויף</value>
+  </data>
+  <data name="IslamInfo_Talbiah" xml:space="preserve">
+    <value>טאַלביאַה</value>
+  </data>
+  <data name="IslamInfo_TalbiahTrans" xml:space="preserve">
+    <value>איך האָבן אפגערופן צו איר, מיין גאָט!</value>
+  </data>
+  <data name="IslamInfo_TalbiahWordByWord" xml:space="preserve">
+    <value>איך האָבן אפגערופן צו איר | אָ אַלאַ | איך האָבן אפגערופן צו איר | איך האָבן אפגערופן צו איר | עס איז ניט | שוטעף | פֿאַר איר | איך האָבן אפגערופן צו איר | באמת | כל די לויבן | און אַלע די ברייטהאַרציקייַט | פֿאַר איר |</value>
+  </data>
+  <data name="IslamInfo_TheAbaser" xml:space="preserve">
+    <value>די אַבאַסער</value>
+  </data>
+  <data name="IslamInfo_TheAcknowledgingOne" xml:space="preserve">
+    <value>די אַקנאַלידזשינג איינער</value>
+  </data>
+  <data name="IslamInfo_TheAllAuthoritativeOne" xml:space="preserve">
+    <value>די אַלע אַטאָראַטייטיוו איינער</value>
+  </data>
+  <data name="IslamInfo_TheAllAwareOne" xml:space="preserve">
+    <value>די אַלע-אַווער איינער</value>
+  </data>
+  <data name="IslamInfo_TheAllCompelling" xml:space="preserve">
+    <value>די אַלע קאַמפּעלינג</value>
+  </data>
+  <data name="IslamInfo_TheAllEnumeratingOne" xml:space="preserve">
+    <value>די אַלע-ענומעראַטינג איינער</value>
+  </data>
+  <data name="IslamInfo_TheAllHearer" xml:space="preserve">
+    <value>די אַלע-כירער</value>
+  </data>
+  <data name="IslamInfo_TheAllKnowingOne" xml:space="preserve">
+    <value>די אַלע-ווייל איינער</value>
+  </data>
+  <data name="IslamInfo_TheAllNobleOne" xml:space="preserve">
+    <value>די אַלע-נאָבלע איינער</value>
+  </data>
+  <data name="IslamInfo_TheAllObservingWitness" xml:space="preserve">
+    <value>די אַלע אַבזערווינג יידעס</value>
+  </data>
+  <data name="IslamInfo_TheAllPervadingOne" xml:space="preserve">
+    <value>די אַלע-פּערוויידינג איינער</value>
+  </data>
+  <data name="IslamInfo_TheAllPrevailingOne" xml:space="preserve">
+    <value>די אַלע-פּריוויילינג איינער</value>
+  </data>
+  <data name="IslamInfo_TheAllSeeing" xml:space="preserve">
+    <value>די אַלע-זייעוודיק</value>
+  </data>
+  <data name="IslamInfo_TheAssemblerOfScatteredCreations" xml:space="preserve">
+    <value>די אַססעמבלער פון סקאַטערד קרעאַטיאָנס</value>
+  </data>
+  <data name="IslamInfo_TheBeneficent" xml:space="preserve">
+    <value>די בענעפיסענט</value>
+  </data>
+  <data name="IslamInfo_TheBenignOne" xml:space="preserve">
+    <value>די ביניין איינער</value>
+  </data>
+  <data name="IslamInfo_TheBestowerOfBenefits" xml:space="preserve">
+    <value>די בעסטאָווער פון בענעפיץ</value>
+  </data>
+  <data name="IslamInfo_TheBestowerOfSufficiency" xml:space="preserve">
+    <value>די בעסטאָווער פון סופפיסיענסי</value>
+  </data>
+  <data name="IslamInfo_TheBountifulOne" xml:space="preserve">
+    <value>די באַונטיפאַל איינער</value>
+  </data>
+  <data name="IslamInfo_TheClementOne" xml:space="preserve">
+    <value>די קלעמענט איינער</value>
+  </data>
+  <data name="IslamInfo_TheCreator" xml:space="preserve">
+    <value>דער באשעפער</value>
+  </data>
+  <data name="IslamInfo_TheDistressor" xml:space="preserve">
+    <value>די דיסטרעססאָר</value>
+  </data>
+  <data name="IslamInfo_TheDominantOne" xml:space="preserve">
+    <value>די דאָמינאַנט איינער</value>
+  </data>
+  <data name="IslamInfo_TheElevatingOne" xml:space="preserve">
+    <value>די עלאַווייטינג איינער</value>
+  </data>
+  <data name="IslamInfo_TheEmbodimentOfJustice" xml:space="preserve">
+    <value>די עמבאַדימאַנט פון גערעכטיקייט</value>
+  </data>
+  <data name="IslamInfo_TheEmbodimentOfPeace" xml:space="preserve">
+    <value>די עמבאַדימאַנט פון שלום</value>
+  </data>
+  <data name="IslamInfo_TheEmbodimentOfTruth" xml:space="preserve">
+    <value>די עמבאַדימאַנט פון אמת</value>
+  </data>
+  <data name="IslamInfo_TheEternalInheritor" xml:space="preserve">
+    <value>די אייביק ינכעראַטער</value>
+  </data>
+  <data name="IslamInfo_TheEternalLord" xml:space="preserve">
+    <value>די אייביק האר</value>
+  </data>
+  <data name="IslamInfo_TheEternalPossessorOfSovereignty" xml:space="preserve">
+    <value>די אייביק פּאַזעסער פון סאַווראַנטי</value>
+  </data>
+  <data name="IslamInfo_TheEverAcceptorOfRepentance" xml:space="preserve">
+    <value>די טאָמיד-אַקסעפּטאָר פון תשובה</value>
+  </data>
+  <data name="IslamInfo_TheEverSurvivingOne" xml:space="preserve">
+    <value>די טאָמיד סערווייווינג איינער</value>
+  </data>
+  <data name="IslamInfo_TheEvolver" xml:space="preserve">
+    <value>די עוואָלווער</value>
+  </data>
+  <data name="IslamInfo_TheExpeditingOne" xml:space="preserve">
+    <value>די עקספּאַדייטינג איינער</value>
+  </data>
+  <data name="IslamInfo_TheExtender" xml:space="preserve">
+    <value>די עקסטענדער</value>
+  </data>
+  <data name="IslamInfo_TheExtensivelyEnduringOne" xml:space="preserve">
+    <value>די יקסטענסיוולי ענדיורינג איינער</value>
+  </data>
+  <data name="IslamInfo_TheExtremelyExaltedOne" xml:space="preserve">
+    <value>די גאָר יגזאָלטיד איינער</value>
+  </data>
+  <data name="IslamInfo_TheFirmOne" xml:space="preserve">
+    <value>די פירמע איינער</value>
+  </data>
+  <data name="IslamInfo_TheFlawlessShaper" xml:space="preserve">
+    <value>די פלאָלאַס שאַפּער</value>
+  </data>
+  <data name="IslamInfo_TheFountainHeadOfTruth" xml:space="preserve">
+    <value>די פאָונטאַין-קאפ פון אמת</value>
+  </data>
+  <data name="IslamInfo_TheGloriousOne" xml:space="preserve">
+    <value>דער הערלעכקייט איינער</value>
+  </data>
+  <data name="IslamInfo_TheGreatForgiver" xml:space="preserve">
+    <value>די גרויס פאָרגיווער</value>
+  </data>
+  <data name="IslamInfo_TheGreatOne" xml:space="preserve">
+    <value>די גרויס איינער</value>
+  </data>
+  <data name="IslamInfo_TheGuardingOne" xml:space="preserve">
+    <value>די גואַרדינג איינער</value>
+  </data>
+  <data name="IslamInfo_TheGuideToPathOfRectitude" xml:space="preserve">
+    <value>די גייד צו פּאַט פון רעקטיטודע</value>
+  </data>
+  <data name="IslamInfo_TheHolderOfSupremeAuthority" xml:space="preserve">
+    <value>די האָלדער פון סאַפּרים אויטאריטעט</value>
+  </data>
+  <data name="IslamInfo_TheHonourerBestower" xml:space="preserve">
+    <value>די האָנאָורער-בעסטאָווער</value>
+  </data>
+  <data name="IslamInfo_TheImpartialJudge" xml:space="preserve">
+    <value>די ימפּאַרשאַל ריכטער</value>
+  </data>
+  <data name="IslamInfo_TheImperceptible" xml:space="preserve">
+    <value>די ימפּערסעפּטיבאַל</value>
+  </data>
+  <data name="IslamInfo_TheInfiniteLastOne" xml:space="preserve">
+    <value>די ינפיניטע לעצטע איינער</value>
+  </data>
+  <data name="IslamInfo_TheInflictorOfDeath" xml:space="preserve">
+    <value>די ינפליקטאָר פון טויט</value>
+  </data>
+  <data name="IslamInfo_TheInfuserOfFaith" xml:space="preserve">
+    <value>די ינפוסער פון אמונה</value>
+  </data>
+  <data name="IslamInfo_TheInfuserOfNewLife" xml:space="preserve">
+    <value>די ינפוסער פון ניו לעבן</value>
+  </data>
+  <data name="IslamInfo_TheJustOne" xml:space="preserve">
+    <value>די נאָר איינער</value>
+  </data>
+  <data name="IslamInfo_TheKnowerOfSubtleties" xml:space="preserve">
+    <value>די נאָוער פון סאַטאַלטיז</value>
+  </data>
+  <data name="IslamInfo_TheLovingOne" xml:space="preserve">
+    <value>די לאָווינג איינער</value>
+  </data>
+  <data name="IslamInfo_TheMagnificentOne" xml:space="preserve">
+    <value>די גלענצנדיק איינער</value>
+  </data>
+  <data name="IslamInfo_TheMaintainerOflife" xml:space="preserve">
+    <value>די מאַינטאַינער פון לעבן</value>
+  </data>
+  <data name="IslamInfo_TheMajesticOne" xml:space="preserve">
+    <value>די מייַעסטעטיש איינער</value>
+  </data>
+  <data name="IslamInfo_TheMerciful" xml:space="preserve">
+    <value>די מערסיפול</value>
+  </data>
+  <data name="IslamInfo_TheMightyOne" xml:space="preserve">
+    <value>די גוואַלדיק איינער</value>
+  </data>
+  <data name="IslamInfo_TheMostSacred" xml:space="preserve">
+    <value>די מערסט הייליק</value>
+  </data>
+  <data name="IslamInfo_TheOmnipotentOne" xml:space="preserve">
+    <value>די אַמניפּאַטאַנט איינער</value>
+  </data>
+  <data name="IslamInfo_TheOnlyOne" xml:space="preserve">
+    <value>די נאָר איינער</value>
+  </data>
+  <data name="IslamInfo_TheOriginator" xml:space="preserve">
+    <value>די ערידזשאַנייטער</value>
+  </data>
+  <data name="IslamInfo_ThePardoner" xml:space="preserve">
+    <value>די פּאַרדאָנער</value>
+  </data>
+  <data name="IslamInfo_ThePerceptible" xml:space="preserve">
+    <value>די פּערסעפּטיבלע</value>
+  </data>
+  <data name="IslamInfo_ThePointingOne" xml:space="preserve">
+    <value>די פּוינטינג איינער</value>
+  </data>
+  <data name="IslamInfo_ThePossessorOfMajestyAndHonour" xml:space="preserve">
+    <value>די פּאַזעסער פון מאַדזשעסטי און האָנאָור</value>
+  </data>
+  <data name="IslamInfo_ThePrayersOfAllahUponHimAndPeace" xml:space="preserve">
+    <value>די תפילות פון אַלאַ אויף אים און שלום</value>
+  </data>
+  <data name="IslamInfo_ThePreserverOfSafety" xml:space="preserve">
+    <value>די פּראַזערווער פון זיכערקייַט</value>
+  </data>
+  <data name="IslamInfo_ThePreventer" xml:space="preserve">
+    <value>די פּרעווענטער</value>
+  </data>
+  <data name="IslamInfo_ThePrimeLight" xml:space="preserve">
+    <value>די הויפּט ליכט</value>
+  </data>
+  <data name="IslamInfo_TheProcrastinator" xml:space="preserve">
+    <value>די פּראַקראַסטאַנייטער</value>
+  </data>
+  <data name="IslamInfo_TheProtectingAssociate" xml:space="preserve">
+    <value>די פּראָטעקטינג אַססאָסיאַטע</value>
+  </data>
+  <data name="IslamInfo_TheProviderOfGuidance" xml:space="preserve">
+    <value>דער שפּייַזער פון גוידאַנסע</value>
+  </data>
+  <data name="IslamInfo_TheReckoningOne" xml:space="preserve">
+    <value>די רעקקאָנינג איינער</value>
+  </data>
+  <data name="IslamInfo_TheReducer" xml:space="preserve">
+    <value>די רעדוסער</value>
+  </data>
+  <data name="IslamInfo_TheRespondingOne" xml:space="preserve">
+    <value>די ריספּאַנדינג איינער</value>
+  </data>
+  <data name="IslamInfo_TheRestorer" xml:space="preserve">
+    <value>די ריסטאָרער</value>
+  </data>
+  <data name="IslamInfo_TheRestrictingOne" xml:space="preserve">
+    <value>די ריסטריקטינג איינער</value>
+  </data>
+  <data name="IslamInfo_TheRetaliator" xml:space="preserve">
+    <value>די רעטאַליאַטאָר</value>
+  </data>
+  <data name="IslamInfo_TheSelfSubsistingOne" xml:space="preserve">
+    <value>די שליטע סובסיסטינג איינער</value>
+  </data>
+  <data name="IslamInfo_TheSelfSufficientOne" xml:space="preserve">
+    <value>די שליטע גענוג איינער</value>
+  </data>
+  <data name="IslamInfo_TheSoleLaudableOne" xml:space="preserve">
+    <value>די פּאָדעשווע-לאַודאַבלע איינער</value>
+  </data>
+  <data name="IslamInfo_TheSoleOne" xml:space="preserve">
+    <value>די פּאָדעשווע איינער</value>
+  </data>
+  <data name="IslamInfo_TheStrongOne" xml:space="preserve">
+    <value>די שטאַרק איינער</value>
+  </data>
+  <data name="IslamInfo_TheSublimeOne" xml:space="preserve">
+    <value>די סאַבליים איינער</value>
+  </data>
+  <data name="IslamInfo_TheSupremeBestower" xml:space="preserve">
+    <value>די העכסטע בעסטאָווער</value>
+  </data>
+  <data name="IslamInfo_TheSupremePardoner" xml:space="preserve">
+    <value>די העכסטע פּאַרדאָנער</value>
+  </data>
+  <data name="IslamInfo_TheSupremeProvider" xml:space="preserve">
+    <value>די העכסטע פּראַוויידער</value>
+  </data>
+  <data name="IslamInfo_TheSupremeSolver" xml:space="preserve">
+    <value>די העכסטע סאָלווער</value>
+  </data>
+  <data name="IslamInfo_TheSustainingOne" xml:space="preserve">
+    <value>די סאַסטיינינג איינער</value>
+  </data>
+  <data name="IslamInfo_TheTotalProvider" xml:space="preserve">
+    <value>די גאַנץ פּראַוויידער</value>
+  </data>
+  <data name="IslamInfo_TheUniqueOne" xml:space="preserve">
+    <value>די יינציק איינער</value>
+  </data>
+  <data name="IslamInfo_TheUniversalTrustee" xml:space="preserve">
+    <value>די וניווערסאַל טראַסטי</value>
+  </data>
+  <data name="IslamInfo_TheVeryFirst" xml:space="preserve">
+    <value>די זייער ערשטער</value>
+  </data>
+  <data name="IslamInfo_TheWatchfulOne" xml:space="preserve">
+    <value>די וואַטשפאַל איינער</value>
+  </data>
+  <data name="IslamInfo_TheWiseOne" xml:space="preserve">
+    <value>די קלוג איינער</value>
+  </data>
+  <data name="IslamInfo_ThirdCreed" xml:space="preserve">
+    <value>דריט עמונע - די וואָרט פון גלאָריפיקיישאַן (טומדזשעעד)</value>
+  </data>
+  <data name="IslamInfo_ThirdCreedTrans" xml:space="preserve">
+    <value>כבוד זיין צו אַלאַ און לויב צו אַלאַ, און עס איז ניט גאָט אַחוץ אַלאַ, און אַללאַה איז די גרעסטע.</value>
+  </data>
+  <data name="IslamInfo_ThirdCreedWordByWord" xml:space="preserve">
+    <value>כבוד | צו אַלאַ | און לויבן | צו אַלאַ | און עס איז ניט | גאָט | חוץ | אַלאַ | און אַלאַ | גרעסטע | און קיין | זאל | און קיין | מאַכט | חוץ | מיט אַלאַ | רובֿ הויך | רובֿ מאַגניפיסענט</value>
+  </data>
+  <data name="IslamInfo_TraditionalArabic" xml:space="preserve">
+    <value>טראַדיציאָנעל אַראַביש</value>
+  </data>
+  <data name="IslamInfo_TransmissionOfInformation" xml:space="preserve">
+    <value>טראַנסמיסיע פון ​​אינפֿאָרמאַציע</value>
+  </data>
+  <data name="IslamInfo_Umrah" xml:space="preserve">
+    <value>ומראַה</value>
+  </data>
+  <data name="IslamInfo_UnitOfPrayer" xml:space="preserve">
+    <value>אַפּאַראַט פון תפילה</value>
+  </data>
+  <data name="IslamInfo_UponHimBePeace" xml:space="preserve">
+    <value>אויף אים זיין שלום</value>
+  </data>
+  <data name="IslamInfo_Verse" xml:space="preserve">
+    <value>פסוק</value>
+  </data>
+  <data name="IslamInfo_VerseOfTheThrone" xml:space="preserve">
+    <value>די פסוק פון דעם טראן</value>
+  </data>
+  <data name="IslamInfo_Zechariah" xml:space="preserve">
+    <value>זכריה</value>
+  </data>
+  <data name="IslamInfo_TheEverLiving" xml:space="preserve">
+    <value>די טאָמיד לעבעדיק</value>
+  </data>
+  <data name="IslamInfo_After" xml:space="preserve">
+    <value>נאָך</value>
+  </data>
+  <data name="IslamInfo_Arabic" xml:space="preserve">
+    <value>אַראַביש</value>
+  </data>
+  <data name="IslamInfo_Assimilate" xml:space="preserve">
+    <value>אַסימאַלייט</value>
+  </data>
+  <data name="IslamInfo_Before" xml:space="preserve">
+    <value>פריער</value>
+  </data>
+  <data name="IslamInfo_bukhariBook1" xml:space="preserve">
+    <value>התגלות</value>
+  </data>
+  <data name="IslamInfo_bukhariBook10" xml:space="preserve">
+    <value>רופן צו פּרייַערס (אַדהאַאַן)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook11" xml:space="preserve">
+    <value>פרייטיק תפילה</value>
+  </data>
+  <data name="IslamInfo_bukhariBook12" xml:space="preserve">
+    <value>מורא תפילה</value>
+  </data>
+  <data name="IslamInfo_bukhariBook13" xml:space="preserve">
+    <value>די צוויי פעסטיוואַלס (עידס)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook14" xml:space="preserve">
+    <value>וויטר תפילה</value>
+  </data>
+  <data name="IslamInfo_bukhariBook15" xml:space="preserve">
+    <value>ינוואָקינג אַלאַ פֿאַר ריין (יסטיסקאַאַ)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook16" xml:space="preserve">
+    <value>עקליפּסעס</value>
+  </data>
+  <data name="IslamInfo_bukhariBook17" xml:space="preserve">
+    <value>פּראָסטראַטיאָן בעשאַס ראַסייטאַל פון קוור 'אַן</value>
+  </data>
+  <data name="IslamInfo_bukhariBook18" xml:space="preserve">
+    <value>פעץ די תפילות (בייַ-טאַקסעער)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook19" xml:space="preserve">
+    <value>תפילה בייַ נאַכט (טאַהאַדזשדזשוד)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook1Chapter1" xml:space="preserve">
+    <value>{ווי די געטלעך ינספּיראַציע סטאַרטעד צו זיין גילוי צו אַלאַ ס מעסינדזשער (סאָז).</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2" xml:space="preserve">
+    <value>גלויבן</value>
+  </data>
+  <data name="IslamInfo_bukhariBook20" xml:space="preserve">
+    <value>מעלות פון תפילה אין מאַסדזשיד מאַקקאַה און מאַדינאַה</value>
+  </data>
+  <data name="IslamInfo_bukhariBook21" xml:space="preserve">
+    <value>אַקטיאָנס בשעת פּרייינג</value>
+  </data>
+  <data name="IslamInfo_bukhariBook22" xml:space="preserve">
+    <value>פאָרגעטפולנעסס אין תפילה</value>
+  </data>
+  <data name="IslamInfo_bukhariBook23" xml:space="preserve">
+    <value>פונעראַלס (על-דזשאַנאַאַ'יז)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook24" xml:space="preserve">
+    <value>אַבליגאַטאָרי טשאַריטי שטייַער (זאַקאַט)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook25" xml:space="preserve">
+    <value>פּילגריממאַגע (כאַדזש)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook26" xml:space="preserve">
+    <value>מינערווערטיק פּילגראַממאַגע (ומראַ)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook27" xml:space="preserve">
+    <value>פּילגרימס פּריווענטיד פון קאָמפּלעטינג די פּילגריממאַגע</value>
+  </data>
+  <data name="IslamInfo_bukhariBook28" xml:space="preserve">
+    <value>שטראָף פון גייעג בשעת אויף פּילגריממאַגע</value>
+  </data>
+  <data name="IslamInfo_bukhariBook29" xml:space="preserve">
+    <value>מעלות פון מאַדינאַה</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter1" xml:space="preserve">
+    <value>די דערקלערונג פון די נביא (סאָז): 'איסלאם איז באזירט אויף פינף כללים.'</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter10" xml:space="preserve">
+    <value>צו ליבע דער אַנסאַר איז אַ צייכן פון אמונה.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter12" xml:space="preserve">
+    <value>צו אַנטלויפן (לויפן אַוועק) פון על-פיטאַן (טריאַלס און אַפפליקאַטיאָנס אאז"ו ו) איז אַ טייל פון רעליגיע.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter13" xml:space="preserve">
+    <value>די דערקלערונג פון די נביא (סאָז): 'איך וויסן אַלאַ (אַזזאַ WA דזשאַל) בעסער ווי אַלע פון ​​איר טאָן'.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter14" xml:space="preserve">
+    <value>ווער האט פיינט צו צוריקקומען צו קופר.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter15" xml:space="preserve">
+    <value>די גראַדעס אין העכערקייַט פון די געגלויבט וועט זיין לויט צו זייער גוט מעשים.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter16" xml:space="preserve">
+    <value>על-הייַאַ איז אַ טייל פון אמונה.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter17" xml:space="preserve">
+    <value>די דערקלערונג פון אַלאַ (אַזזאַ WA דזשאַל):</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter18" xml:space="preserve">
+    <value>ווער זאגט אַז אמונה איז קאַמף (גוט מעשים).</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter19" xml:space="preserve">
+    <value>אויב איינער טוט ניט האַלדזן איסלאם באמת, אָבער טוט אַזוי דורך קאַמפּאַלשאַן אָדער פֿאַר מורא פון זייַענדיק געהרגעט אאז"ו ו</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter2" xml:space="preserve">
+    <value>דיין ינוואַקיישאַן מיטל דיין אמונה.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter20" xml:space="preserve">
+    <value>צו באַגריסן איז אַ טייל פון איסלאם.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter21" xml:space="preserve">
+    <value>צו זיין אַנגרייטפאַל צו איינער ס מאַן.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter22" xml:space="preserve">
+    <value>זינד זענען פון אומוויסנדיקייט און אַ זינדיקער איז ניט אַ דיסבעליעווער סייַדן ער ווערשאַפּס אנדערע צוזאמען מיט אַלאַ (אַזזאַ WA דזשאַל).</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter23" xml:space="preserve">
+    <value>די דערקלערונג פון אַלאַ (אַזזאַ WA דזשאַל): {</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter24" xml:space="preserve">
+    <value>זולם (פאַלש) פון איין מין קענען זיין גרעסער אָדער לעסער ווי אַז פון אנדערן.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter25" xml:space="preserve">
+    <value>די וואונדער פון אַ צווויאַק.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter26" xml:space="preserve">
+    <value>צו פאַרלייגן תפילה אויף די נאַכט פון קאַדר איז אַ טייל פון אמונה.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter27" xml:space="preserve">
+    <value>על-דזשיהאַד (הייליק מלחמה - פייטינג אין אַלאַ ס גרונט) איז אַ טייל פון אמונה.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter28" xml:space="preserve">
+    <value>עס איז אַ טייל פון אמונה צו פעסטשטעלן די (נאַוואַפיל - וואַלאַנטערי) תפילות בעשאַס די נעכט פון ראַמאַדאַן.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter29" xml:space="preserve">
+    <value>צו אָבסערווירן סאָם [פאַסץ (לויט צו יסלאַמיק לערנונגען)] בעשאַס דער חודש פון ראַמאַדאַן (בעעמעס און געטריי) כאָופּינג פֿאַר אַלאַ ס ריוואָרדז בלויז, איז אַ טייל פון אמונה.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter3" xml:space="preserve">
+    <value>(וואָס איז געזאגט) וועגן די מעשים פון אמונה.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter30" xml:space="preserve">
+    <value>רעליגיע איז זייער גרינג.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter31" xml:space="preserve">
+    <value>די (קרבן פון) סאַלאַט (פּרייַערס) איז אַ טייל פון אמונה.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter32" xml:space="preserve">
+    <value>(וואָס איז געזאגט וועגן די העכערקייַט פון) אַ מענטש וואס עמברייסיז איסלאם בעעמעס.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter33" xml:space="preserve">
+    <value>אַד-דין (גוט צדיקים אַקט - אַקט פון דינען) ליב געהאט רובֿ דורך אַלאַ (אַזזאַ WA דזשאַל) איז אַז וואָס איז געשען קעסיידער.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter34" xml:space="preserve">
+    <value>אמונה ינקריסיז און דיקריסיז.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter35" xml:space="preserve">
+    <value>צו באַצאָלן זאַקאַט איז אַ טייל פון איסלאם.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter36" xml:space="preserve">
+    <value>צו באַגלייטן די לעווייַע פּראָוסעשאַנז (אַרויף צו די אָרט פון קווורע) איז אַ טייל פון אמונה.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter37" xml:space="preserve">
+    <value>די מורא פון אַ באַליווער אַז זיין גוט מעשים זאל זיין אַנאַלד (פאַרפאַלן) אָן זיין וויסן.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter38" xml:space="preserve">
+    <value>די אַסקינג פון (מלאך) דזשיבראַעל (גאַבריעל) פון די נביא (סאָז) וועגן גלויבן, איסלאם, יהסאַן (שליימעס).</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter4" xml:space="preserve">
+    <value>א מוסלים איז די איינער וואס אַוווידז כאַרמינג מוסלימס מיט זיין צונג און הענט.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter40" xml:space="preserve">
+    <value>די העכערקייַט פון אַז מענטש וואס בלעטער אַלע סאָפעקדיק (ומקלאָר) זאכן פֿאַר די צוליב פון זיין רעליגיע.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter41" xml:space="preserve">
+    <value>צו באַצאָלן על-כומוס (איינער-פינפט פון די מלחמה בוטי צו זיין געגעבן אין אַלאַ ס גרונט) איז אַ טייל פון אמונה.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter42" xml:space="preserve">
+    <value>וואָס איז געזאגט וועגן די דערקלערונג: 'די באַלוינונג פון מעשים דעפּענדס אויף די כוונה.'</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter43" xml:space="preserve">
+    <value>די דערקלערונג פון די נביא (סאָז): 'רעליגיע איז אַ-נאַסיהאַ [(צו זיין אָפנהאַרציק און אמת) צו אַלאַ, צו זיין מעסינדזשער, צו די מוסלים עלטסטע, און צו אַלע די מוסלימס.]'</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter5" xml:space="preserve">
+    <value>וועמענס איסלאם איז דער בעסטער (ווער איז דער בעסטער מוסלים)?</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter6" xml:space="preserve">
+    <value>צו קאָרמען (אנדערע) איז אַ טייל פון איסלאם.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter7" xml:space="preserve">
+    <value>צו ווי פֿאַר איין ס (מוסלים ס) ברודער וואָס איינער לייקס פֿאַר זיך איז אַ טייל פון אמונה.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter8" xml:space="preserve">
+    <value>צו ליבע דער מעסינדזשער (מוכאַמאַד) (סאָז) איז אַ טייל פון אמונה.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter9" xml:space="preserve">
+    <value>זיסקייַט (פרייד) פון אמונה.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3" xml:space="preserve">
+    <value>וויסן</value>
+  </data>
+  <data name="IslamInfo_bukhariBook30" xml:space="preserve">
+    <value>פאסטן</value>
+  </data>
+  <data name="IslamInfo_bukhariBook31" xml:space="preserve">
+    <value>מתפלל בייַ נאַכט אין ראַמאַדאַאַן (טאַראַוועעה)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook32" xml:space="preserve">
+    <value>מעלות פון די נאַכט פון קאַדר</value>
+  </data>
+  <data name="IslamInfo_bukhariBook33" xml:space="preserve">
+    <value>ריטייערינג צו אַ מאָסקווע פֿאַר רעמעמבראַנסע פון ​​אַלאַ (י'טיקאַף)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook34" xml:space="preserve">
+    <value>פארקויפונג און א</value>
+  </data>
+  <data name="IslamInfo_bukhariBook35" xml:space="preserve">
+    <value>פארקויפונג אין וואָס אַ פּרייַז איז באַצאָלט פֿאַר סכוירע צו זיין איבערגעגעבן שפעטער (ווי-סאַלאַם)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook36" xml:space="preserve">
+    <value>שופ'אַ</value>
+  </data>
+  <data name="IslamInfo_bukhariBook37" xml:space="preserve">
+    <value>הירינג</value>
+  </data>
+  <data name="IslamInfo_bukhariBook38" xml:space="preserve">
+    <value>טראַנספעראַנסע פון ​​אַ כויוו פון איין מענטש צו אן אנדער (על-האַוואַאַלאַ)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook39" xml:space="preserve">
+    <value>קאַפאַלאַה</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter1" xml:space="preserve">
+    <value>די העכערקייַט פון וויסן.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter11" xml:space="preserve">
+    <value>דער נביא (סאָז) געניצט צו נעמען זאָרגן פון די מענטשן אין מבשר דורך סאַלעקטינג אַ פּאַסיק צייַט אַזוי אַז זיי זאלן נישט לויפן אַוועק (אָדער באַקומען באָרד).</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter12" xml:space="preserve">
+    <value>ווער פאַרפעסטיקט אַ ספּעציעל טאָג פֿאַר געבן (אַ רעליגיעז רעדן) צו די סטודענטן.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter13" xml:space="preserve">
+    <value>אויב אַלאַ (אַזזאַ WA דזשאַל) וויל צו טאָן גוט צו אַ מענטש, ער מאכט אים באַגרייַפן די רעליגיע.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter14" xml:space="preserve">
+    <value>(די העכערקייַט פון) קאַמפּריכענדינג וויסן.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter15" xml:space="preserve">
+    <value>ווינטשן צו זיין ווי דער איינער וואס האט וויסן און על-היקמאַה (חכמה) [ד"ה</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter16" xml:space="preserve">
+    <value>וואָס האט שוין געזאגט וועגן די נסיעה פון נביא מוסאַ ('אַלאַיהי ווי-סאַלאַם) (ווען ער איז) אין די ים צו טרעפן על-כידר.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter17" xml:space="preserve">
+    <value>די דערקלערונג פון די נביא (סאָז): 'אָ אַלאַ!</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter18" xml:space="preserve">
+    <value>אין וואָס עלטער זאל יוגנט זיין איינגעהערט צו (ד"ה די ציטאַט פון די האַדיטה פון אַ יינגל זיין פּאַסיק).</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter19" xml:space="preserve">
+    <value>צו גיין אויס אין זוכן פון וויסן.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter2" xml:space="preserve">
+    <value>ווער איז געפרעגט וועגן וויסן בשעת ער איז פאַרנומען אין עטלעכע שמועס, אַזוי ער פאַרטיק גערעדט און דעמאָלט געענטפערט די קוועסטשאַנער.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter20" xml:space="preserve">
+    <value>די העכערקייַט פון אַ מענטש וואס לערנז (איסלאם, ווערט אַ רעליגיאָנס דירעקטארי) און דעמאָלט לערנט עס צו אנדערע.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter21" xml:space="preserve">
+    <value>(וואָס איז געזאגט וועגן) די דיסאַפּיראַנס פון די (רעליגיעז) וויסן און די אויסזען פון (רעליגיעז) אומוויסנדיקייט.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter22" xml:space="preserve">
+    <value>די העכערקייַט פון (רעליגיעז) וויסן.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter23" xml:space="preserve">
+    <value>צו געבן אַ רעליגיעז ווערדיקט בשעת ריידינג אַ כייַע אָדער שטייענדיק אויף עפּעס אַנדערש.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter24" xml:space="preserve">
+    <value>ווער האט אַ רעליגיעז ווערדיקט דורך בעקקאָנינג אָדער דורך נאָדדינג.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter25" xml:space="preserve">
+    <value>דער נביא (סאָז) ערדזשד די מענטשן (מיסיע) פון 'אַבדול קאַיס צו מעמערייז די אמונה און די (רעליגיעז) וויסן (ווי ער דערקלערט צו זיי) און צו מיטטיילן (קאַנוויי) צו זייער מענטשן וועמען זיי לינקס הינטער (אין שטוב).</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter26" xml:space="preserve">
+    <value>צו אַרומפאָרן זוכט אַן ענטפער צו אַ פּראָבלעמאַטיק ענין, און צו לערנען עס צו איינער ס משפּחה.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter27" xml:space="preserve">
+    <value>צו פי? רענטגענ די דוטיז אין ראָוטיישאַן פֿאַר לערנען (רעליגיעז) וויסן.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter28" xml:space="preserve">
+    <value>צו זיין ופגעקאָכט בשעת מבשר אָדער לערנען אויב איינער זעט וואָס איינער האט פיינט.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter29" xml:space="preserve">
+    <value>ווער נעלט אַראָפּ איידער די ימאַם אָדער אַ (רעליגיעז) פּריידיקער.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter3" xml:space="preserve">
+    <value>ווער רייזיז זיין קול אין (קאַנווייינג) וויסן.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter30" xml:space="preserve">
+    <value>ריפּיטינג איינער ס רעדן טרייס אין סדר צו מאַכן אנדערע פֿאַרשטיין.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter31" xml:space="preserve">
+    <value>א מענטש לערנען (רעליגיע צו) זיין פרוי-שקלאַף און זיין משפּחה.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter32" xml:space="preserve">
+    <value>די מבשר (און לערנען) פון די (רעליגיעז) וויסן צו פרויען דורך די ימאַם (ראשי):</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter33" xml:space="preserve">
+    <value>באַלאָנעס צו (לערנען) די האַדיטה.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter34" xml:space="preserve">
+    <value>ווי די (רעליגיעז) וויסן וועט ער גענומען אַוועק?</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter35" xml:space="preserve">
+    <value>זאָל אַ טאָג זיין פאַרפעסטיקט פֿאַר פרויען אין סדר צו לערנען זיי רעליגיע (באַזונדער פון מענטשן)?</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter36" xml:space="preserve">
+    <value>ווער געהערט עפּעס (אָבער האט ניט פאַרשטיין עס) און דעמאָלט געבעטן ווידער ביז ער פארשטאנען עס גאָר.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter37" xml:space="preserve">
+    <value>עס איז ינקאַמבאַנט אויף די וואס זענען פאָרשטעלן [אין אַ רעליגיעז באַגעגעניש (אָדער זיצונג)] צו קאַנוויי דעם וויסן צו די וואס זענען ניטאָ.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter38" xml:space="preserve">
+    <value>די זינד פון אַ מענטש וואס דערציילט אַ ליגן קעגן דער נביא (סאָז).</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter39" xml:space="preserve">
+    <value>די שרייבן פון וויסן.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter4" xml:space="preserve">
+    <value>וועגן די פאַרשיידנקייַט פון ווערטער געניצט דורך נאַרראַטאָרס קאַנווייינג פאַרשידענע סיגניפיקאַטיאָנס וועגן דער באַגריף פון נאַרראַטינג און וואָס האט וויכטיקייט פֿאַר די האַדיטה געלערנטע בלויז.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter40" xml:space="preserve">
+    <value>די וויסן און זייַן לערנען און מבשר בייַ נאַכט.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter41" xml:space="preserve">
+    <value>צו רעדן וועגן (רעליגיעז) וויסן בייַ נאַכט.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter42" xml:space="preserve">
+    <value>(וואָס איז געזאגט וועגן) די מעמאָריזאַטיאָן פון די (רעליגיעז) וויסן.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter43" xml:space="preserve">
+    <value>צו זיין שטיל (און הערן) צו רעליגיעז געלערנט מענטשן.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter44" xml:space="preserve">
+    <value>ווען אַ רעליגיעז געלערנט מענטש איז געבעטן.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter45" xml:space="preserve">
+    <value>כוסאָועווער, בשעת שטיין, געבעטן אַ רעליגיעז געלערנט מענטש וואס איז געזעסן (אויף אַ אָמעד אָדער אַ ענלעך זאַך, וועגן עפּעס).</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter46" xml:space="preserve">
+    <value>צו פרעגן וועגן אַ רעליגיעז ענין און צו געבן אַ רעליגיעז ווערדיקט (בייַ מינאַ בעשאַס כאַדזש) בשעת טאן די ראַמי פון דזשימאַר (פארווארפן פון פּעבאַלז בייַ די דזשימאַר אין מינאַ בעשאַס כאַדזש).</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter47" xml:space="preserve">
+    <value>די סטאַטעמענט פון אַלאַ (אַזזאַ WA דזשאַל):</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter48" xml:space="preserve">
+    <value>כוסאָועווער לינקס עטלעכע אַפּשאַנאַל זאכן פשוט פֿאַר די מורא אַז עטלעכע מענטשן זאל ניט קענען צו פֿאַרשטיין זיי און קען פאַלן אין עפּעס מער שווער.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter49" xml:space="preserve">
+    <value>ווער אויסגעקליבן עטלעכע מענטשן צו לערנען זיי (רעליגיעז) וויסן פּריפערינג זיי איבער אנדערע פֿאַר מורא אַז די אנדערע זאל ניט פֿאַרשטיין עס.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter5" xml:space="preserve">
+    <value>די ימאַם קוועסטשאַנינג זיין קאַמפּאַניאַנז אין סדר צו פּרובירן זייער וויסן.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter50" xml:space="preserve">
+    <value>(וואָס איז געזאגט ווי גרוס :-) צו זיין שעמעוודיק (על-הייַאַ ') בשעת לערנען (רעליגיעז וויסן).</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter51" xml:space="preserve">
+    <value>כוסאָועווער פּעלץ שעמעוודיק (צו פרעגן עפּעס) און דעמאָלט געבעטן אנדערן מענטש צו פרעגן אויף זיין ביכאַף.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter52" xml:space="preserve">
+    <value>לערנען רעליגיעז וויסן און געבן רעליגיעז ווערדיקץ אין אַ מאָסקווע.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter53" xml:space="preserve">
+    <value>כוסאָועווער געענטפערט צו די קוועסטשאַנער מער ווי וואָס ער געפרעגט.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter6" xml:space="preserve">
+    <value>וואָס איז געזאגט וועגן וויסן.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter7" xml:space="preserve">
+    <value>וואָס איז געזאגט וועגן די האַנט צו האַנט וועקסל (פון ספר פון וויסן), און די שרייבן פון וויסן דורך רעליגיעז געלערנטע צו פאַרשידענע לענדער.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter8" xml:space="preserve">
+    <value>ווער געזעסן בייַ די ווייַטער סוף פון אַ צונויפקום.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter9" xml:space="preserve">
+    <value>די דערקלערונג פון די נביא (סאָז): 'עס איז פּראַבאַבאַל אַז אַ מענטש וואס נעמט אַ שטיק פון אינפֿאָרמאַציע מינאַצאַד זאל באַגרייַפן עס בעסער ווי ער וואס האט געהערט עס גלייַך פון זייַן מקור.'</value>
+  </data>
+  <data name="IslamInfo_bukhariBook4" xml:space="preserve">
+    <value>אַבלוטיאָנס (ווודו ')</value>
+  </data>
+  <data name="IslamInfo_bukhariBook40" xml:space="preserve">
+    <value>פאַרטרעטונג, אַוטהאָריזאַטיאָן, געשעפט דורך פּראָקסי</value>
+  </data>
+  <data name="IslamInfo_bukhariBook41" xml:space="preserve">
+    <value>אַגריקולטורע</value>
+  </data>
+  <data name="IslamInfo_bukhariBook42" xml:space="preserve">
+    <value>פאַרשפּרייטונג פון וואַסער</value>
+  </data>
+  <data name="IslamInfo_bukhariBook43" xml:space="preserve">
+    <value>לאָונז, צאָלונג פון לאָונז, פריזינג פון פאַרמאָג, באַנקרופּטסי</value>
+  </data>
+  <data name="IslamInfo_bukhariBook44" xml:space="preserve">
+    <value>כוסאָאָמאַאַט</value>
+  </data>
+  <data name="IslamInfo_bukhariBook45" xml:space="preserve">
+    <value>פאַרפאַלן טהינגס פּיקט אַרויף דורך עמעצער (לוקאַאַטאַ)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook46" xml:space="preserve">
+    <value>אָפּפּרעססיאָנס</value>
+  </data>
+  <data name="IslamInfo_bukhariBook47" xml:space="preserve">
+    <value>שוטפעס</value>
+  </data>
+  <data name="IslamInfo_bukhariBook48" xml:space="preserve">
+    <value>מאָרגידזשינג</value>
+  </data>
+  <data name="IslamInfo_bukhariBook49" xml:space="preserve">
+    <value>מאַנומיססיאָן פון סלאַוועס</value>
+  </data>
+  <data name="IslamInfo_bukhariBook5" xml:space="preserve">
+    <value>ביידינג (גהוסל)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook50" xml:space="preserve">
+    <value>מאַקאַאַטיב</value>
+  </data>
+  <data name="IslamInfo_bukhariBook51" xml:space="preserve">
+    <value>גיפס</value>
+  </data>
+  <data name="IslamInfo_bukhariBook52" xml:space="preserve">
+    <value>עדות</value>
+  </data>
+  <data name="IslamInfo_bukhariBook53" xml:space="preserve">
+    <value>פּיסמייקינג</value>
+  </data>
+  <data name="IslamInfo_bukhariBook54" xml:space="preserve">
+    <value>טנאָים</value>
+  </data>
+  <data name="IslamInfo_bukhariBook55" xml:space="preserve">
+    <value>וויל און טעסטאַמענץ (וואַסאַייַאַאַ)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook56" xml:space="preserve">
+    <value>פייטינג פֿאַר די גרונט פון אַלאַ (דזשיהאַאַד)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook57" xml:space="preserve">
+    <value>איינער-פינפט פון בוטי צו די גרונט פון אַלאַ (כומוס)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook58" xml:space="preserve">
+    <value>דזשיזיאַה און מאַוואַאַדאַ'אַה</value>
+  </data>
+  <data name="IslamInfo_bukhariBook59" xml:space="preserve">
+    <value>אָנהייב פון קרעאַטיאָן</value>
+  </data>
+  <data name="IslamInfo_bukhariBook6" xml:space="preserve">
+    <value>מענסטרואַל פּיריאַדז</value>
+  </data>
+  <data name="IslamInfo_bukhariBook60" xml:space="preserve">
+    <value>נביאים</value>
+  </data>
+  <data name="IslamInfo_bukhariBook61" xml:space="preserve">
+    <value>מעלות און מעריץ פון די נביא (פּבוה) און זיין קאָמפּאַניאָנס</value>
+  </data>
+  <data name="IslamInfo_bukhariBook62" xml:space="preserve">
+    <value>קאָמפּאַניאָנס פון די נביא</value>
+  </data>
+  <data name="IslamInfo_bukhariBook63" xml:space="preserve">
+    <value>מעריץ פון די העלפּערס אין מאַדינאַה (אַנסאַאַר)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook64" xml:space="preserve">
+    <value>מיליטער עקספּעדיטיאָנס געפירט דורך דער נביא (פּבוה) (על-מאַגהאַאַזי)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook65" xml:space="preserve">
+    <value>פּראַפעטיק קאָמענטאַר אויף די קוור 'אַן (טאַפסעער פון די נביא (פּבוה))</value>
+  </data>
+  <data name="IslamInfo_bukhariBook66" xml:space="preserve">
+    <value>מעלות פון די קוור 'אַן</value>
+  </data>
+  <data name="IslamInfo_bukhariBook67" xml:space="preserve">
+    <value>וועדלאַק, חתונה (ניקאַאַה)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook68" xml:space="preserve">
+    <value>געט</value>
+  </data>
+  <data name="IslamInfo_bukhariBook69" xml:space="preserve">
+    <value>סופּפּאָרטינג די משפּחה</value>
+  </data>
+  <data name="IslamInfo_bukhariBook7" xml:space="preserve">
+    <value>ראַבינג הענט און פֿיס מיט שטויב (טייַאַממום)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook70" xml:space="preserve">
+    <value>פוד, מילז</value>
+  </data>
+  <data name="IslamInfo_bukhariBook71" xml:space="preserve">
+    <value>קרבן אויף געלעגנהייַט פון געבורט (`אַקיקאַ)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook72" xml:space="preserve">
+    <value>גייעג, סלאָטערינג</value>
+  </data>
+  <data name="IslamInfo_bukhariBook73" xml:space="preserve">
+    <value>על-אַדהאַ פעסטיוואַל סאַקריפיסע (אַדאַאַהי)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook74" xml:space="preserve">
+    <value>טרינקען</value>
+  </data>
+  <data name="IslamInfo_bukhariBook75" xml:space="preserve">
+    <value>פּאַטיענץ</value>
+  </data>
+  <data name="IslamInfo_bukhariBook76" xml:space="preserve">
+    <value>מעדיצין</value>
+  </data>
+  <data name="IslamInfo_bukhariBook77" xml:space="preserve">
+    <value>קלייד</value>
+  </data>
+  <data name="IslamInfo_bukhariBook78" xml:space="preserve">
+    <value>גוט מאַנערז און פאָרעם (על-אַדאַב)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook79" xml:space="preserve">
+    <value>אַסקינג דערלויבעניש</value>
+  </data>
+  <data name="IslamInfo_bukhariBook8" xml:space="preserve">
+    <value>תפילות (סאַלאַט)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook80" xml:space="preserve">
+    <value>ינוואָקאַטיאָנס</value>
+  </data>
+  <data name="IslamInfo_bukhariBook81" xml:space="preserve">
+    <value>צו מאַכן די האַרץ ווייך (אַר-ריקאַק)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook82" xml:space="preserve">
+    <value>געטלעך וועט (על-קאַדאַר)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook83" xml:space="preserve">
+    <value>אָוטס און וואַוז</value>
+  </data>
+  <data name="IslamInfo_bukhariBook84" xml:space="preserve">
+    <value>פארגעבונג פֿאַר אַנפולפילד אָוטס</value>
+  </data>
+  <data name="IslamInfo_bukhariBook85" xml:space="preserve">
+    <value>געזעצן פון ירושה (על-פאַראַאַ'יד)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook86" xml:space="preserve">
+    <value>לימאַץ און פּאַנישמאַנץ באַשטימט דורך אַלאַ (הודאָאָד)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook87" xml:space="preserve">
+    <value>שטראָף פון דיסבעליעווערס אין מלחמה מיט אַלאַ און זיין אַפּאָסטלע</value>
+  </data>
+  <data name="IslamInfo_bukhariBook88" xml:space="preserve">
+    <value>בלוט געלט (אַד-דייאַט)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook89" xml:space="preserve">
+    <value>דילינג מיט אַפּאָסטאַטעס</value>
+  </data>
+  <data name="IslamInfo_bukhariBook9" xml:space="preserve">
+    <value>צייט פון די תפילות</value>
+  </data>
+  <data name="IslamInfo_bukhariBook90" xml:space="preserve">
+    <value>זאגן עפּעס אונטער קאַמפּאַלשאַן (יקראַאַה)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook91" xml:space="preserve">
+    <value>טריקס</value>
+  </data>
+  <data name="IslamInfo_bukhariBook92" xml:space="preserve">
+    <value>ינטערפּרעטאַטיאָן פון דרעאַמס</value>
+  </data>
+  <data name="IslamInfo_bukhariBook93" xml:space="preserve">
+    <value>צרות און די סוף פון דער וועלט</value>
+  </data>
+  <data name="IslamInfo_bukhariBook94" xml:space="preserve">
+    <value>משפטים (אַהקאַאַם)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook95" xml:space="preserve">
+    <value>וויל</value>
+  </data>
+  <data name="IslamInfo_bukhariBook96" xml:space="preserve">
+    <value>אַקסעפּטינג אינפארמאציע געגעבן דורך אַ טרוטפאַל פּערסאָן</value>
+  </data>
+  <data name="IslamInfo_bukhariBook97" xml:space="preserve">
+    <value>האלטן פעסט צו די קוור 'אַן און סוננאַה</value>
+  </data>
+  <data name="IslamInfo_bukhariBook98" xml:space="preserve">
+    <value>וואַננאַס, יוניקנאַס פון אַלאַ (טאַווהעעד)</value>
+  </data>
+  <data name="IslamInfo_Classification" xml:space="preserve">
+    <value>קלאַססיפיקאַטיאָן</value>
+  </data>
+  <data name="IslamInfo_Connecting" xml:space="preserve">
+    <value>קאַנעקטינג</value>
+  </data>
+  <data name="IslamInfo_LetterName" xml:space="preserve">
+    <value>בריוו נאָמען</value>
+  </data>
+  <data name="IslamInfo_muslimBook1" xml:space="preserve">
+    <value>הקדמה</value>
+  </data>
+  <data name="IslamInfo_muslimBook10" xml:space="preserve">
+    <value>די ספר פון תפילה (ריין)</value>
+  </data>
+  <data name="IslamInfo_muslimBook11" xml:space="preserve">
+    <value>די ספר פון תפילה (עקליפּסע)</value>
+  </data>
+  <data name="IslamInfo_muslimBook12" xml:space="preserve">
+    <value>די ספר פון תפילה (פונעראַלס)</value>
+  </data>
+  <data name="IslamInfo_muslimBook13" xml:space="preserve">
+    <value>די ספר פון זאַקאַט</value>
+  </data>
+  <data name="IslamInfo_muslimBook14" xml:space="preserve">
+    <value>די ספר פון פאסטן</value>
+  </data>
+  <data name="IslamInfo_muslimBook15" xml:space="preserve">
+    <value>די ספר פון י'טיקאַף</value>
+  </data>
+  <data name="IslamInfo_muslimBook16" xml:space="preserve">
+    <value>די ספר פון פּילגרימאַגע</value>
+  </data>
+  <data name="IslamInfo_muslimBook17" xml:space="preserve">
+    <value>דעם בוך פון חתונה</value>
+  </data>
+  <data name="IslamInfo_muslimBook18" xml:space="preserve">
+    <value>די ספר פון סאַקלינג</value>
+  </data>
+  <data name="IslamInfo_muslimBook19" xml:space="preserve">
+    <value>די ספר פון דיוואָרסע</value>
+  </data>
+  <data name="IslamInfo_muslimBook2" xml:space="preserve">
+    <value>די ספר פון אמונה</value>
+  </data>
+  <data name="IslamInfo_muslimBook20" xml:space="preserve">
+    <value>די ספר פון ינוואָקינג קורסעס</value>
+  </data>
+  <data name="IslamInfo_muslimBook21" xml:space="preserve">
+    <value>די ספר פון ימאַנסאַפּייטינג סלאַוועס</value>
+  </data>
+  <data name="IslamInfo_muslimBook22" xml:space="preserve">
+    <value>דעם בוך פון טראַנזאַקשאַנז</value>
+  </data>
+  <data name="IslamInfo_muslimBook23" xml:space="preserve">
+    <value>די ספר פון מאַסאַאַקאַה</value>
+  </data>
+  <data name="IslamInfo_muslimBook24" xml:space="preserve">
+    <value>דעם בוך פּערטיינינג צו די כּללים פון ירושה</value>
+  </data>
+  <data name="IslamInfo_muslimBook25" xml:space="preserve">
+    <value>די ספר פון גיפס</value>
+  </data>
+  <data name="IslamInfo_muslimBook26" xml:space="preserve">
+    <value>די ספר פון בעקוועסץ</value>
+  </data>
+  <data name="IslamInfo_muslimBook27" xml:space="preserve">
+    <value>די ספר פון וואַוז</value>
+  </data>
+  <data name="IslamInfo_muslimBook28" xml:space="preserve">
+    <value>די ספר פון אָוטס</value>
+  </data>
+  <data name="IslamInfo_muslimBook29" xml:space="preserve">
+    <value>דעם בוך פּערטיינינג צו די שבועה, פֿאַר גרינדן די פֿאַראַנטוואָרטלעכקייט פון רציחה, פייטינג, רעקוויטאַל</value>
+  </data>
+  <data name="IslamInfo_muslimBook3" xml:space="preserve">
+    <value>דעם בוך פון רייניקונג</value>
+  </data>
+  <data name="IslamInfo_muslimBook30" xml:space="preserve">
+    <value>דעם בוך פּערטיינינג צו פּאַנישמאַנץ פּריסקרייבד דורך איסלאם</value>
+  </data>
+  <data name="IslamInfo_muslimBook31" xml:space="preserve">
+    <value>דעם בוך פּערטיינינג צו דזשודיסיאַל דעסיסיאָנס</value>
+  </data>
+  <data name="IslamInfo_muslimBook32" xml:space="preserve">
+    <value>די ספר פון לוקאַטאַה</value>
+  </data>
+  <data name="IslamInfo_muslimBook33" xml:space="preserve">
+    <value>די ספר פון דזשיהאַד און עקספּעדיטיאָן</value>
+  </data>
+  <data name="IslamInfo_muslimBook34" xml:space="preserve">
+    <value>דעם בוך אויף רעגירונג</value>
+  </data>
+  <data name="IslamInfo_muslimBook35" xml:space="preserve">
+    <value>די ספר פון גאַמעס און דער אַנימאַלס וואָס זאל זיין סלאָטערד און די אַנינאַלס אַז ביסט צו עסן</value>
+  </data>
+  <data name="IslamInfo_muslimBook36" xml:space="preserve">
+    <value>די ספר פון סאַקראַפייסיז</value>
+  </data>
+  <data name="IslamInfo_muslimBook37" xml:space="preserve">
+    <value>די ספר פון דרינקס</value>
+  </data>
+  <data name="IslamInfo_muslimBook38" xml:space="preserve">
+    <value>דעם בוך פּערטיינינג צו קליידער און דעקאָראַטיאָן</value>
+  </data>
+  <data name="IslamInfo_muslimBook39" xml:space="preserve">
+    <value>דעם בוך אויף אַלגעמיינע בעהאַוויאָור</value>
+  </data>
+  <data name="IslamInfo_muslimBook4" xml:space="preserve">
+    <value>די ספר פון מענסטרויישאַן</value>
+  </data>
+  <data name="IslamInfo_muslimBook40" xml:space="preserve">
+    <value>דעם בוך אויף סאַלוטאַטיאָנס און גרעעטינגס</value>
+  </data>
+  <data name="IslamInfo_muslimBook41" xml:space="preserve">
+    <value>דעם בוך וועגן די נוצן פון ריכטיק ווערטער</value>
+  </data>
+  <data name="IslamInfo_muslimBook42" xml:space="preserve">
+    <value>די ספר פון פּאָעזיע</value>
+  </data>
+  <data name="IslamInfo_muslimBook43" xml:space="preserve">
+    <value>דעם בוך פון זעאונג</value>
+  </data>
+  <data name="IslamInfo_muslimBook44" xml:space="preserve">
+    <value>דעם בוך פּערטיינינג צו די ויסגעצייכנט קוואַלאַטיז פון דעם רוח נביא (קען שלום זיין אויף זיי) און זיין קאָמפּאַניאָנס</value>
+  </data>
+  <data name="IslamInfo_muslimBook45" xml:space="preserve">
+    <value>דעם בוך פּערטיינינג צו די מעריץ פון די קאָמפּאַניאָנס (אַלאַ זייַן צופרידן מיט זיי) פון די רוח נביא</value>
+  </data>
+  <data name="IslamInfo_muslimBook46" xml:space="preserve">
+    <value>די ספר פון ווירטוע, גוט מאַנערז און דזשוינינג פון די טיעס פון רעלאַטיאָנשיפּ</value>
+  </data>
+  <data name="IslamInfo_muslimBook47" xml:space="preserve">
+    <value>די ספר פון דעסטיני</value>
+  </data>
+  <data name="IslamInfo_muslimBook48" xml:space="preserve">
+    <value>דעם בוך פון וויסן</value>
+  </data>
+  <data name="IslamInfo_muslimBook49" xml:space="preserve">
+    <value>דעם בוך פּערטיינינג צו די רעמעמבראַנסע פון ​​אַלאַ, געבעט, תשובה און סעעקינג פאָרגיווענעסס</value>
+  </data>
+  <data name="IslamInfo_muslimBook5" xml:space="preserve">
+    <value>דעם בוך פון תפילות</value>
+  </data>
+  <data name="IslamInfo_muslimBook50" xml:space="preserve">
+    <value>די ספר פון הארץ-מעלטינג טראַדיטיאָנס</value>
+  </data>
+  <data name="IslamInfo_muslimBook51" xml:space="preserve">
+    <value>דעם בוך פּערטיינינג צו תשובה און עקסהאָרטאַטיאָן צו תשובה</value>
+  </data>
+  <data name="IslamInfo_muslimBook52" xml:space="preserve">
+    <value>פּערטיינינג צו די טשאַראַטעריסטיקס פון די חונפים און באַפֿעלן וועגן זיי</value>
+  </data>
+  <data name="IslamInfo_muslimBook53" xml:space="preserve">
+    <value>דעם בוך גיווינג באַשרייַבונג פון די טאָג פון דזשודגעמענט, גן עדן און גיהנום</value>
+  </data>
+  <data name="IslamInfo_muslimBook54" xml:space="preserve">
+    <value>דעם בוך פּערטיינינג צו גן עדן, זייַן באַשרייַבונג, זייַן באַונטיז און זייַן ינטאַמאַץ</value>
+  </data>
+  <data name="IslamInfo_muslimBook55" xml:space="preserve">
+    <value>דעם בוך פּערטיינינג צו די טערמויל און פּאָרטענץ פון די לעצטע שעה</value>
+  </data>
+  <data name="IslamInfo_muslimBook56" xml:space="preserve">
+    <value>דעם בוך פּערטיינינג צו פרומקייַט און סאָפנינג פון כאַרץ</value>
+  </data>
+  <data name="IslamInfo_muslimBook57" xml:space="preserve">
+    <value>די ספר פון קאָממענטאַרי</value>
+  </data>
+  <data name="IslamInfo_muslimBook6" xml:space="preserve">
+    <value>די ספר פון מאַסקס און ערטער פון תפילה</value>
+  </data>
+  <data name="IslamInfo_muslimBook7" xml:space="preserve">
+    <value>די ספר פון תפילה (טראַוואַלערז)</value>
+  </data>
+  <data name="IslamInfo_muslimBook8" xml:space="preserve">
+    <value>די ספר פון תפילה (פרייטאג)</value>
+  </data>
+  <data name="IslamInfo_muslimBook9" xml:space="preserve">
+    <value>די ספר פון תפילה (צוויי עידס)</value>
+  </data>
+  <data name="IslamInfo_PrayerUnits" xml:space="preserve">
+    <value>תפילה וניץ</value>
+  </data>
+  <data name="IslamInfo_QuranChapter1" xml:space="preserve">
+    <value>די עפענונג</value>
+  </data>
+  <data name="IslamInfo_QuranChapter10" xml:space="preserve">
+    <value>דזשאָנאַס</value>
+  </data>
+  <data name="IslamInfo_QuranChapter100" xml:space="preserve">
+    <value>די טשאַרגערס</value>
+  </data>
+  <data name="IslamInfo_QuranChapter101" xml:space="preserve">
+    <value>די קאַלאַמאַטי</value>
+  </data>
+  <data name="IslamInfo_QuranChapter102" xml:space="preserve">
+    <value>פאַרמעסט</value>
+  </data>
+  <data name="IslamInfo_QuranChapter103" xml:space="preserve">
+    <value>די דיקליינינג טאָג, יפּאַק</value>
+  </data>
+  <data name="IslamInfo_QuranChapter104" xml:space="preserve">
+    <value>די טראַדוסער</value>
+  </data>
+  <data name="IslamInfo_QuranChapter105" xml:space="preserve">
+    <value>דער העלפאַנד</value>
+  </data>
+  <data name="IslamInfo_QuranChapter106" xml:space="preserve">
+    <value>קוורייַש</value>
+  </data>
+  <data name="IslamInfo_QuranChapter107" xml:space="preserve">
+    <value>אַלמסגיווינג</value>
+  </data>
+  <data name="IslamInfo_QuranChapter108" xml:space="preserve">
+    <value>זעט</value>
+  </data>
+  <data name="IslamInfo_QuranChapter109" xml:space="preserve">
+    <value>די דיסבעליעווערס</value>
+  </data>
+  <data name="IslamInfo_QuranChapter11" xml:space="preserve">
+    <value>הוד</value>
+  </data>
+  <data name="IslamInfo_QuranChapter110" xml:space="preserve">
+    <value>געטלעך סופּפּאָרט</value>
+  </data>
+  <data name="IslamInfo_QuranChapter111" xml:space="preserve">
+    <value>דער דלאָניע פייבער</value>
+  </data>
+  <data name="IslamInfo_QuranChapter112" xml:space="preserve">
+    <value>אָפנ - האַרציקייַט</value>
+  </data>
+  <data name="IslamInfo_QuranChapter113" xml:space="preserve">
+    <value>די פאַרטאָג</value>
+  </data>
+  <data name="IslamInfo_QuranChapter114" xml:space="preserve">
+    <value>מענטשהייַט</value>
+  </data>
+  <data name="IslamInfo_QuranChapter12" xml:space="preserve">
+    <value>יוסף</value>
+  </data>
+  <data name="IslamInfo_QuranChapter13" xml:space="preserve">
+    <value>די טאַנדער</value>
+  </data>
+  <data name="IslamInfo_QuranChapter14" xml:space="preserve">
+    <value>אברהם</value>
+  </data>
+  <data name="IslamInfo_QuranChapter15" xml:space="preserve">
+    <value>די ראַק</value>
+  </data>
+  <data name="IslamInfo_QuranChapter16" xml:space="preserve">
+    <value>די בי</value>
+  </data>
+  <data name="IslamInfo_QuranChapter17" xml:space="preserve">
+    <value>די נאַכט רייַזע</value>
+  </data>
+  <data name="IslamInfo_QuranChapter18" xml:space="preserve">
+    <value>די הייל</value>
+  </data>
+  <data name="IslamInfo_QuranChapter19" xml:space="preserve">
+    <value>מרים</value>
+  </data>
+  <data name="IslamInfo_QuranChapter2" xml:space="preserve">
+    <value>די קאַו</value>
+  </data>
+  <data name="IslamInfo_QuranChapter20" xml:space="preserve">
+    <value>טאַאַ-האַאַ</value>
+  </data>
+  <data name="IslamInfo_QuranChapter21" xml:space="preserve">
+    <value>די נביאים</value>
+  </data>
+  <data name="IslamInfo_QuranChapter22" xml:space="preserve">
+    <value>די פּילגרימאַגע</value>
+  </data>
+  <data name="IslamInfo_QuranChapter23" xml:space="preserve">
+    <value>די געגלויבט</value>
+  </data>
+  <data name="IslamInfo_QuranChapter24" xml:space="preserve">
+    <value>די ליכט</value>
+  </data>
+  <data name="IslamInfo_QuranChapter25" xml:space="preserve">
+    <value>די קריטעריאָן</value>
+  </data>
+  <data name="IslamInfo_QuranChapter26" xml:space="preserve">
+    <value>די פּאָעץ</value>
+  </data>
+  <data name="IslamInfo_QuranChapter27" xml:space="preserve">
+    <value>די אַנט</value>
+  </data>
+  <data name="IslamInfo_QuranChapter28" xml:space="preserve">
+    <value>די סטאָריעס</value>
+  </data>
+  <data name="IslamInfo_QuranChapter29" xml:space="preserve">
+    <value>די ספּיידער</value>
+  </data>
+  <data name="IslamInfo_QuranChapter3" xml:space="preserve">
+    <value>די משפּחה פון ימראַאַן</value>
+  </data>
+  <data name="IslamInfo_QuranChapter30" xml:space="preserve">
+    <value>די רוימער</value>
+  </data>
+  <data name="IslamInfo_QuranChapter31" xml:space="preserve">
+    <value>לוקמאַן</value>
+  </data>
+  <data name="IslamInfo_QuranChapter32" xml:space="preserve">
+    <value>די פּראַסטריישאַן</value>
+  </data>
+  <data name="IslamInfo_QuranChapter33" xml:space="preserve">
+    <value>די קלאַנז</value>
+  </data>
+  <data name="IslamInfo_QuranChapter34" xml:space="preserve">
+    <value>שיבאַ</value>
+  </data>
+  <data name="IslamInfo_QuranChapter35" xml:space="preserve">
+    <value>די ערידזשאַנייטער</value>
+  </data>
+  <data name="IslamInfo_QuranChapter36" xml:space="preserve">
+    <value>יאַסעען</value>
+  </data>
+  <data name="IslamInfo_QuranChapter37" xml:space="preserve">
+    <value>די ציען אַרויף אין ראַנגקס</value>
+  </data>
+  <data name="IslamInfo_QuranChapter38" xml:space="preserve">
+    <value>די בריוו סאַד</value>
+  </data>
+  <data name="IslamInfo_QuranChapter39" xml:space="preserve">
+    <value>די גרופּעס</value>
+  </data>
+  <data name="IslamInfo_QuranChapter4" xml:space="preserve">
+    <value>די פרויען</value>
+  </data>
+  <data name="IslamInfo_QuranChapter40" xml:space="preserve">
+    <value>די פאָרגיווער</value>
+  </data>
+  <data name="IslamInfo_QuranChapter41" xml:space="preserve">
+    <value>דערקלערט אין דעטאַל</value>
+  </data>
+  <data name="IslamInfo_QuranChapter42" xml:space="preserve">
+    <value>באַראַטונג</value>
+  </data>
+  <data name="IslamInfo_QuranChapter43" xml:space="preserve">
+    <value>אָרנאַמאַנץ פון גאָלד</value>
+  </data>
+  <data name="IslamInfo_QuranChapter44" xml:space="preserve">
+    <value>די רויך</value>
+  </data>
+  <data name="IslamInfo_QuranChapter45" xml:space="preserve">
+    <value>קראָוטשינג</value>
+  </data>
+  <data name="IslamInfo_QuranChapter46" xml:space="preserve">
+    <value>די דונעס</value>
+  </data>
+  <data name="IslamInfo_QuranChapter47" xml:space="preserve">
+    <value>מוכאַמאַד</value>
+  </data>
+  <data name="IslamInfo_QuranChapter48" xml:space="preserve">
+    <value>די וויקטאָרי</value>
+  </data>
+  <data name="IslamInfo_QuranChapter49" xml:space="preserve">
+    <value>די ינער אַפּאַרטמענץ</value>
+  </data>
+  <data name="IslamInfo_QuranChapter5" xml:space="preserve">
+    <value>דער טיש</value>
+  </data>
+  <data name="IslamInfo_QuranChapter50" xml:space="preserve">
+    <value>די בריוו קאַאַף</value>
+  </data>
+  <data name="IslamInfo_QuranChapter51" xml:space="preserve">
+    <value>די ווינאָוינג ווינדס</value>
+  </data>
+  <data name="IslamInfo_QuranChapter52" xml:space="preserve">
+    <value>די בארג</value>
+  </data>
+  <data name="IslamInfo_QuranChapter53" xml:space="preserve">
+    <value>די שטערן</value>
+  </data>
+  <data name="IslamInfo_QuranChapter54" xml:space="preserve">
+    <value>די אָפּטייל</value>
+  </data>
+  <data name="IslamInfo_QuranChapter55" xml:space="preserve">
+    <value>די בענעפיסענט</value>
+  </data>
+  <data name="IslamInfo_QuranChapter56" xml:space="preserve">
+    <value>די באַשערט</value>
+  </data>
+  <data name="IslamInfo_QuranChapter57" xml:space="preserve">
+    <value>די יראָן</value>
+  </data>
+  <data name="IslamInfo_QuranChapter58" xml:space="preserve">
+    <value>די פּלידינג פרוי</value>
+  </data>
+  <data name="IslamInfo_QuranChapter59" xml:space="preserve">
+    <value>די עקסייל</value>
+  </data>
+  <data name="IslamInfo_QuranChapter6" xml:space="preserve">
+    <value>די קאַטאַל</value>
+  </data>
+  <data name="IslamInfo_QuranChapter60" xml:space="preserve">
+    <value>זי וואס איז צו זיין יגזאַמאַנד</value>
+  </data>
+  <data name="IslamInfo_QuranChapter61" xml:space="preserve">
+    <value>די רייען</value>
+  </data>
+  <data name="IslamInfo_QuranChapter62" xml:space="preserve">
+    <value>פרייַטיק</value>
+  </data>
+  <data name="IslamInfo_QuranChapter63" xml:space="preserve">
+    <value>די חונפים</value>
+  </data>
+  <data name="IslamInfo_QuranChapter64" xml:space="preserve">
+    <value>קעגנצייַטיק דיסיללוסיאָן</value>
+  </data>
+  <data name="IslamInfo_QuranChapter65" xml:space="preserve">
+    <value>געט</value>
+  </data>
+  <data name="IslamInfo_QuranChapter66" xml:space="preserve">
+    <value>דער פאַרווער</value>
+  </data>
+  <data name="IslamInfo_QuranChapter67" xml:space="preserve">
+    <value>די סאַווראַנטי</value>
+  </data>
+  <data name="IslamInfo_QuranChapter68" xml:space="preserve">
+    <value>די פּען</value>
+  </data>
+  <data name="IslamInfo_QuranChapter69" xml:space="preserve">
+    <value>די פאַקט</value>
+  </data>
+  <data name="IslamInfo_QuranChapter7" xml:space="preserve">
+    <value>די כייץ</value>
+  </data>
+  <data name="IslamInfo_QuranChapter70" xml:space="preserve">
+    <value>די אַסענדינג סטערווייז</value>
+  </data>
+  <data name="IslamInfo_QuranChapter71" xml:space="preserve">
+    <value>נח</value>
+  </data>
+  <data name="IslamInfo_QuranChapter72" xml:space="preserve">
+    <value>די דזשינן</value>
+  </data>
+  <data name="IslamInfo_QuranChapter73" xml:space="preserve">
+    <value>די ינשראַודאַד איינער</value>
+  </data>
+  <data name="IslamInfo_QuranChapter74" xml:space="preserve">
+    <value>די קלאָוקט איינער</value>
+  </data>
+  <data name="IslamInfo_QuranChapter75" xml:space="preserve">
+    <value>די רעסוררעקטיאָן</value>
+  </data>
+  <data name="IslamInfo_QuranChapter76" xml:space="preserve">
+    <value>מאַן</value>
+  </data>
+  <data name="IslamInfo_QuranChapter77" xml:space="preserve">
+    <value>די עמיססאַריעס</value>
+  </data>
+  <data name="IslamInfo_QuranChapter78" xml:space="preserve">
+    <value>די מעלדן</value>
+  </data>
+  <data name="IslamInfo_QuranChapter79" xml:space="preserve">
+    <value>די וואס שלעפּן אַרויס</value>
+  </data>
+  <data name="IslamInfo_QuranChapter8" xml:space="preserve">
+    <value>די ספּוילז פון מלחמה</value>
+  </data>
+  <data name="IslamInfo_QuranChapter80" xml:space="preserve">
+    <value>ער פראַונד</value>
+  </data>
+  <data name="IslamInfo_QuranChapter81" xml:space="preserve">
+    <value>די אָווערטהראָווינג</value>
+  </data>
+  <data name="IslamInfo_QuranChapter82" xml:space="preserve">
+    <value>די קלעאַווינג</value>
+  </data>
+  <data name="IslamInfo_QuranChapter83" xml:space="preserve">
+    <value>דעפראַודינג</value>
+  </data>
+  <data name="IslamInfo_QuranChapter84" xml:space="preserve">
+    <value>די ספּליטטינג עפֿן</value>
+  </data>
+  <data name="IslamInfo_QuranChapter85" xml:space="preserve">
+    <value>די קאַנסטאַליישאַנז</value>
+  </data>
+  <data name="IslamInfo_QuranChapter86" xml:space="preserve">
+    <value>דער מאָרגן שטערן</value>
+  </data>
+  <data name="IslamInfo_QuranChapter87" xml:space="preserve">
+    <value>די מערסט הויך</value>
+  </data>
+  <data name="IslamInfo_QuranChapter88" xml:space="preserve">
+    <value>די אָוווערוועלמינג</value>
+  </data>
+  <data name="IslamInfo_QuranChapter89" xml:space="preserve">
+    <value>די פאַרטאָג</value>
+  </data>
+  <data name="IslamInfo_QuranChapter9" xml:space="preserve">
+    <value>די ריפּענטאַנס</value>
+  </data>
+  <data name="IslamInfo_QuranChapter90" xml:space="preserve">
+    <value>די סיטי</value>
+  </data>
+  <data name="IslamInfo_QuranChapter91" xml:space="preserve">
+    <value>די זון</value>
+  </data>
+  <data name="IslamInfo_QuranChapter92" xml:space="preserve">
+    <value>די נאַכט</value>
+  </data>
+  <data name="IslamInfo_QuranChapter93" xml:space="preserve">
+    <value>דער מאָרגן אַורז</value>
+  </data>
+  <data name="IslamInfo_QuranChapter94" xml:space="preserve">
+    <value>די קאַנסאַליישאַן</value>
+  </data>
+  <data name="IslamInfo_QuranChapter95" xml:space="preserve">
+    <value>די פייַג</value>
+  </data>
+  <data name="IslamInfo_QuranChapter96" xml:space="preserve">
+    <value>די קלאַט</value>
+  </data>
+  <data name="IslamInfo_QuranChapter97" xml:space="preserve">
+    <value>די מאַכט, פאַטע</value>
+  </data>
+  <data name="IslamInfo_QuranChapter98" xml:space="preserve">
+    <value>די עווידענסע</value>
+  </data>
+  <data name="IslamInfo_QuranChapter99" xml:space="preserve">
+    <value>די ערדציטערניש</value>
+  </data>
+  <data name="IslamInfo_Terminating" xml:space="preserve">
+    <value>טערמינאַטינג</value>
+  </data>
+  <data name="IslamInfo_Translation" xml:space="preserve">
+    <value>יבערזעצונג</value>
+  </data>
+  <data name="IslamInfo_Transliteration" xml:space="preserve">
+    <value>טראַנסליטעראַטיאָן</value>
+  </data>
+  <data name="IslamInfo_UnicodeName" xml:space="preserve">
+    <value>אוניקאָד נאָמען</value>
+  </data>
+  <data name="IslamInfo_UnicodeValue" xml:space="preserve">
+    <value>אוניקאָד ווערט</value>
+  </data>
+  <data name="unicode_ArabicComma" xml:space="preserve">
+    <value>אַראַביש קאַמאַ</value>
+  </data>
+  <data name="unicode_ArabicDamma" xml:space="preserve">
+    <value>אַראַביש דאַממאַ</value>
+  </data>
+  <data name="unicode_ArabicDammatan" xml:space="preserve">
+    <value>אַראַביש דאַממאַטאַן</value>
+  </data>
+  <data name="unicode_ArabicEmptyCentreHighStop" xml:space="preserve">
+    <value>אַראַביש עמפּטי צענטער הויך האַלטן</value>
+  </data>
+  <data name="unicode_ArabicEmptyCentreLowStop" xml:space="preserve">
+    <value>אַראַביש עמפּטי צענטער נידעריק האַלטן</value>
+  </data>
+  <data name="unicode_ArabicEndOfAyah" xml:space="preserve">
+    <value>אַראַביש סוף פון ייַאַה</value>
+  </data>
+  <data name="unicode_ArabicFatha" xml:space="preserve">
+    <value>אַראַביש פאַטהאַ</value>
+  </data>
+  <data name="unicode_ArabicFathatan" xml:space="preserve">
+    <value>אַראַביש פאַטהאַטאַן</value>
+  </data>
+  <data name="unicode_ArabicHamzaAbove" xml:space="preserve">
+    <value>אַראַביש האַמזאַ העכער</value>
+  </data>
+  <data name="unicode_ArabicHamzaBelow" xml:space="preserve">
+    <value>אַראַביש האַמזאַ ונטער</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitEight" xml:space="preserve">
+    <value>אַראַביש-ינדיק דידזשיט אַכט</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitFive" xml:space="preserve">
+    <value>אַראַביש-ינדיק דידזשיט פינף</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitFour" xml:space="preserve">
+    <value>אַראַביש-ינדיק דידזשיט פיר</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitNine" xml:space="preserve">
+    <value>אַראַביש-ינדיק דידזשיט ניין</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitOne" xml:space="preserve">
+    <value>אַראַביש-ינדיק דידזשיט איינער</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitSeven" xml:space="preserve">
+    <value>אַראַביש-ינדיק דידזשיט זיבן</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitSix" xml:space="preserve">
+    <value>אַראַביש-ינדיק דידזשיט זעקס</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitThree" xml:space="preserve">
+    <value>אַראַביש-ינדיק דידזשיט דריי</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitTwo" xml:space="preserve">
+    <value>אַראַביש-ינדיק דידזשיט צוויי</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitZero" xml:space="preserve">
+    <value>אַראַביש-ינדיק דידזשיט זעראָ</value>
+  </data>
+  <data name="unicode_ArabicKasra" xml:space="preserve">
+    <value>אַראַביש קאַסראַ</value>
+  </data>
+  <data name="unicode_ArabicKasratan" xml:space="preserve">
+    <value>אַראַביש קאַסראַטאַן</value>
+  </data>
+  <data name="unicode_ArabicLetterAin" xml:space="preserve">
+    <value>אַראַביש בריוו Ain</value>
+  </data>
+  <data name="unicode_ArabicLetterAlef" xml:space="preserve">
+    <value>אַראַביש בריוו אַלעף</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefMaksura" xml:space="preserve">
+    <value>אַראַביש בריוו אַלעף מאַקסוראַ</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefWasla" xml:space="preserve">
+    <value>אַראַביש בריוו אַלעף וואַסלאַ</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefWithHamzaAbove" xml:space="preserve">
+    <value>אַראַביש בריוו אַלעף מיט האַמזאַ העכער</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefWithHamzaBelow" xml:space="preserve">
+    <value>אַראַביש בריוו אַלעף מיט האַמזאַ ונטער</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefWithMaddaAbove" xml:space="preserve">
+    <value>אַראַביש בריוו אַלעף מיט מאַדדאַ העכער</value>
+  </data>
+  <data name="unicode_ArabicLetterBeh" xml:space="preserve">
+    <value>אַראַביש בריוו בעה</value>
+  </data>
+  <data name="unicode_ArabicLetterDad" xml:space="preserve">
+    <value>אַראַביש בריוו דאַד</value>
+  </data>
+  <data name="unicode_ArabicLetterDal" xml:space="preserve">
+    <value>אַראַביש בריוו דאַל</value>
+  </data>
+  <data name="unicode_ArabicLetterFeh" xml:space="preserve">
+    <value>אַראַביש בריוו פעה</value>
+  </data>
+  <data name="unicode_ArabicLetterGaf" xml:space="preserve">
+    <value>אַראַביש בריוו גאַף</value>
+  </data>
+  <data name="unicode_ArabicLetterGhain" xml:space="preserve">
+    <value>אַראַביש בריוו גהאַין</value>
+  </data>
+  <data name="unicode_ArabicLetterHah" xml:space="preserve">
+    <value>אַראַביש בריוו כאַ</value>
+  </data>
+  <data name="unicode_ArabicLetterHamza" xml:space="preserve">
+    <value>אַראַביש בריוו האַמזאַ</value>
+  </data>
+  <data name="unicode_ArabicLetterHeh" xml:space="preserve">
+    <value>אַראַביש בריוו כע</value>
+  </data>
+  <data name="unicode_ArabicLetterJeem" xml:space="preserve">
+    <value>אַראַביש בריוו דזשעעם</value>
+  </data>
+  <data name="unicode_ArabicLetterKaf" xml:space="preserve">
+    <value>אַראַביש בריוו קאַף</value>
+  </data>
+  <data name="unicode_ArabicLetterKhah" xml:space="preserve">
+    <value>אַראַביש בריוו כאַה</value>
+  </data>
+  <data name="unicode_ArabicLetterLam" xml:space="preserve">
+    <value>אַראַביש בריוו לאַם</value>
+  </data>
+  <data name="unicode_ArabicLetterMeem" xml:space="preserve">
+    <value>אַראַביש בריוו מעעם</value>
+  </data>
+  <data name="unicode_ArabicLetterNoon" xml:space="preserve">
+    <value>אַראַביש בריוו נון</value>
+  </data>
+  <data name="unicode_ArabicLetterPeh" xml:space="preserve">
+    <value>אַראַביש בריוו פּעה</value>
+  </data>
+  <data name="unicode_ArabicLetterQaf" xml:space="preserve">
+    <value>אַראַביש בריוו קאַף</value>
+  </data>
+  <data name="unicode_ArabicLetterReh" xml:space="preserve">
+    <value>אַראַביש בריוו רע</value>
+  </data>
+  <data name="unicode_ArabicLetterSad" xml:space="preserve">
+    <value>אַראַביש בריוו טרויעריק</value>
+  </data>
+  <data name="unicode_ArabicLetterSeen" xml:space="preserve">
+    <value>אַראַביש בריוו סין</value>
+  </data>
+  <data name="unicode_ArabicLetterSheen" xml:space="preserve">
+    <value>אַראַביש בריוו שין</value>
+  </data>
+  <data name="unicode_ArabicLetterSuperscriptAlef" xml:space="preserve">
+    <value>אַראַביש בריוו סופּערסקריפּט אַלעף</value>
+  </data>
+  <data name="unicode_ArabicLetterTah" xml:space="preserve">
+    <value>אַראַביש בריוו טאַה</value>
+  </data>
+  <data name="unicode_ArabicLetterTcheh" xml:space="preserve">
+    <value>אַראַביש בריוו טטשעה</value>
+  </data>
+  <data name="unicode_ArabicLetterTeh" xml:space="preserve">
+    <value>אַראַביש בריוו טעה</value>
+  </data>
+  <data name="unicode_ArabicLetterTehMarbuta" xml:space="preserve">
+    <value>אַראַביש בריוו טעה מאַרבוטאַ</value>
+  </data>
+  <data name="unicode_ArabicLetterThal" xml:space="preserve">
+    <value>אַראַביש בריוו טאַל</value>
+  </data>
+  <data name="unicode_ArabicLetterTheh" xml:space="preserve">
+    <value>אַראַביש בריוו טהעה</value>
+  </data>
+  <data name="unicode_ArabicLetterVeh" xml:space="preserve">
+    <value>אַראַביש בריוו וועה</value>
+  </data>
+  <data name="unicode_ArabicLetterWaw" xml:space="preserve">
+    <value>אַראַביש בריוו וואַוו</value>
+  </data>
+  <data name="unicode_ArabicLetterWawWithHamzaAbove" xml:space="preserve">
+    <value>אַראַביש בריוו וואַוו מיט האַמזאַ העכער</value>
+  </data>
+  <data name="unicode_ArabicLetterYeh" xml:space="preserve">
+    <value>אַראַביש בריוו יע</value>
+  </data>
+  <data name="unicode_ArabicLetterYehWithHamzaAbove" xml:space="preserve">
+    <value>אַראַביש בריוו יע מיט האַמזאַ העכער</value>
+  </data>
+  <data name="unicode_ArabicLetterZah" xml:space="preserve">
+    <value>אַראַביש בריוו זאַה</value>
+  </data>
+  <data name="unicode_ArabicLetterZain" xml:space="preserve">
+    <value>אַראַביש בריוו זאַין</value>
+  </data>
+  <data name="unicode_ArabicLigatureAkbarIsolatedForm" xml:space="preserve">
+    <value>אַראַביש ליגאַטורע אַקבאַר ייסאַלייטאַד פאָרם</value>
+  </data>
+  <data name="unicode_ArabicLigatureAlayheIsolatedForm" xml:space="preserve">
+    <value>אַראַביש ליגאַטורע אַלייַהע ייסאַלייטאַד פאָרם</value>
+  </data>
+  <data name="unicode_ArabicLigatureAllahIsolatedForm" xml:space="preserve">
+    <value>אַראַביש ליגאַטורע אַלאַ ייסאַלייטאַד פאָרם</value>
+  </data>
+  <data name="unicode_ArabicLigatureBismillahArRahmanArRaheem" xml:space="preserve">
+    <value>אַראַביש ליגאַטורע ביסמיללאַה אַר-ראַמאַן אַר-ראַכים</value>
+  </data>
+  <data name="unicode_ArabicLigatureJallajalalouhou" xml:space="preserve">
+    <value>אַראַביש ליגאַטורע דזשאַללאַדזשאַלאַלאָוהאָו</value>
+  </data>
+  <data name="unicode_ArabicLigatureMohammadIsolatedForm" xml:space="preserve">
+    <value>אַראַביש ליגאַטורע מאָהאַממאַד ייסאַלייטאַד פאָרם</value>
+  </data>
+  <data name="unicode_ArabicLigatureQalaUsedAsKoranicStopSignIsolatedForm" xml:space="preserve">
+    <value>אַראַביש ליגאַטורע קאַלאַ געוויינט ווי קאָראַניק האַלטן זיך ייסאַלייטאַד פאָרם</value>
+  </data>
+  <data name="unicode_ArabicLigatureRasoulIsolatedForm" xml:space="preserve">
+    <value>אַראַביש ליגאַטורע ראַסאָול ייסאַלייטאַד פאָרם</value>
+  </data>
+  <data name="unicode_ArabicLigatureSalamIsolatedForm" xml:space="preserve">
+    <value>אַראַביש ליגאַטורע סאַלאַם ייסאַלייטאַד פאָרם</value>
+  </data>
+  <data name="unicode_ArabicLigatureSallaIsolatedForm" xml:space="preserve">
+    <value>אַראַביש ליגאַטורע סאַללאַ ייסאַלייטאַד פאָרם</value>
+  </data>
+  <data name="unicode_ArabicLigatureSallallahouAlayheWasallam" xml:space="preserve">
+    <value>אַראַביש ליגאַטורע סאַללאַללאַהאָו אַלייַהע וואַסאַללאַם</value>
+  </data>
+  <data name="unicode_ArabicLigatureSallaUsedAsKoranicStopSignIsolatedForm" xml:space="preserve">
+    <value>אַראַביש ליגאַטורע סאַללאַ געוויינט ווי קאָראַניק האַלטן זיך ייסאַלייטאַד פאָרם</value>
+  </data>
+  <data name="unicode_ArabicLigatureWasallamIsolatedForm" xml:space="preserve">
+    <value>אַראַביש ליגאַטורע וואַסאַללאַם ייסאַלייטאַד פאָרם</value>
+  </data>
+  <data name="unicode_ArabicMaddahAbove" xml:space="preserve">
+    <value>אַראַביש מאַדדאַה העכער</value>
+  </data>
+  <data name="unicode_ArabicPlaceOfSajdah" xml:space="preserve">
+    <value>אַראַביש אָרט פון סאַדזשדאַה</value>
+  </data>
+  <data name="unicode_ArabicQuestionMark" xml:space="preserve">
+    <value>אַראַביש פראגע צייכן</value>
+  </data>
+  <data name="unicode_ArabicRoundedHighStopWithFilledCentre" xml:space="preserve">
+    <value>אַראַביש ראַונדיד הויך האַלטן מיט אָנגעפילט צענטער</value>
+  </data>
+  <data name="unicode_ArabicSemicolon" xml:space="preserve">
+    <value>אַראַביש פּינטל - קאָמע</value>
+  </data>
+  <data name="unicode_ArabicShadda" xml:space="preserve">
+    <value>אַראַביש שאַדדאַ</value>
+  </data>
+  <data name="unicode_ArabicSmallHighJeem" xml:space="preserve">
+    <value>אַראַביש קליין הויך דזשעעם</value>
+  </data>
+  <data name="unicode_ArabicSmallHighLamAlef" xml:space="preserve">
+    <value>אַראַביש קליין הויך לאַם אַלעף</value>
+  </data>
+  <data name="unicode_ArabicSmallHighLigatureQafWithLamWithAlefMaksura" xml:space="preserve">
+    <value>אַראַביש קליין הויך ליגאַטורע קאַף מיט לאַם מיט אַלעף מאַקסוראַ</value>
+  </data>
+  <data name="unicode_ArabicSmallHighLigatureSadWithLamWithAlefMaksura" xml:space="preserve">
+    <value>אַראַביש קליין הויך ליגאַטורע טרויעריק מיט לאַם מיט אַלעף מאַקסוראַ</value>
+  </data>
+  <data name="unicode_ArabicSmallHighMeemInitialForm" xml:space="preserve">
+    <value>אַראַביש קליין הויך מעעם ערשט פאָרם</value>
+  </data>
+  <data name="unicode_ArabicSmallHighMeemIsolatedForm" xml:space="preserve">
+    <value>אַראַביש קליין הויך מעעם ייסאַלייטאַד פאָרם</value>
+  </data>
+  <data name="unicode_ArabicSmallHighNoon" xml:space="preserve">
+    <value>אַראַביש קליין הויך נון</value>
+  </data>
+  <data name="unicode_ArabicSmallHighRoundedZero" xml:space="preserve">
+    <value>אַראַביש קליין הויך ראַונדיד זעראָ</value>
+  </data>
+  <data name="unicode_ArabicSmallHighSeen" xml:space="preserve">
+    <value>אַראַביש קליין הויך סין</value>
+  </data>
+  <data name="unicode_ArabicSmallHighThreeDots" xml:space="preserve">
+    <value>אַראַביש קליין הויך דריי דאַץ</value>
+  </data>
+  <data name="unicode_ArabicSmallHighUprightRectangularZero" xml:space="preserve">
+    <value>אַראַביש קליין הויך אַפּרייט רעקטאַנגולאַר זעראָ</value>
+  </data>
+  <data name="unicode_ArabicSmallLowMeem" xml:space="preserve">
+    <value>אַראַביש קליין נידעריק מעעם</value>
+  </data>
+  <data name="unicode_ArabicSmallLowSeen" xml:space="preserve">
+    <value>אַראַביש קליין נידעריק סין</value>
+  </data>
+  <data name="unicode_ArabicSmallWaw" xml:space="preserve">
+    <value>אַראַביש קליין וואַוו</value>
+  </data>
+  <data name="unicode_ArabicSmallYeh" xml:space="preserve">
+    <value>אַראַביש קליין יע</value>
+  </data>
+  <data name="unicode_ArabicStartOfRubElHizb" xml:space="preserve">
+    <value>אַראַביש אָנהייב פון רייַבן אל היזב</value>
+  </data>
+  <data name="unicode_ArabicSukun" xml:space="preserve">
+    <value>אַראַביש סוקון</value>
+  </data>
+  <data name="unicode_ArabicTatweel" xml:space="preserve">
+    <value>אַראַביש טאַטוועעל</value>
+  </data>
+  <data name="unicode_Colon" xml:space="preserve">
+    <value>צווייפּינטל</value>
+  </data>
+  <data name="unicode_Comma" xml:space="preserve">
+    <value>קאָמע</value>
+  </data>
+  <data name="unicode_ExclamationMark" xml:space="preserve">
+    <value>עקסקלאַמיישאַן מארק</value>
+  </data>
+  <data name="unicode_FullStop" xml:space="preserve">
+    <value>גאַנץ האַלטן</value>
+  </data>
+  <data name="unicode_HyphenMinus" xml:space="preserve">
+    <value>מאַקעף-מינוס</value>
+  </data>
+  <data name="unicode_LeftCurlyBracket" xml:space="preserve">
+    <value>לינקס קורלי בראַקקעט</value>
+  </data>
+  <data name="unicode_LeftPointingDoubleAngleQuotationMark" xml:space="preserve">
+    <value>לינקס-פּוינטינג טאָפּל אַנגלע קוואָטאַטיאָן מארק</value>
+  </data>
+  <data name="unicode_LeftSquareBracket" xml:space="preserve">
+    <value>לינקס קוואדראט בראַקקעט</value>
+  </data>
+  <data name="unicode_OrnateLeftParenthesis" xml:space="preserve">
+    <value>אָרנייט לעפט פּערענטאַסיס</value>
+  </data>
+  <data name="unicode_OrnateRightParenthesis" xml:space="preserve">
+    <value>אָרנייט רעכט פּערענטאַסיס</value>
+  </data>
+  <data name="unicode_QuotationMark" xml:space="preserve">
+    <value>ציטאַט מארק</value>
+  </data>
+  <data name="unicode_RialSign" xml:space="preserve">
+    <value>ריאַל זיך</value>
+  </data>
+  <data name="unicode_RightCurlyBracket" xml:space="preserve">
+    <value>רעכט קורלי בראַקקעט</value>
+  </data>
+  <data name="unicode_RightPointingDoubleAngleQuotationMark" xml:space="preserve">
+    <value>רעכט-פּוינטינג טאָפּל אַנגלע קוואָטאַטיאָן מארק</value>
+  </data>
+  <data name="unicode_RightSquareBracket" xml:space="preserve">
+    <value>רעכט קוואדראט בראַקקעט</value>
+  </data>
+  <data name="unicode_Space" xml:space="preserve">
+    <value>פּלאַץ</value>
+  </data>
+  <data name="IslamInfo_Date" xml:space="preserve">
+    <value>דאַטע</value>
+  </data>
+  <data name="IslamInfo_Day" xml:space="preserve">
+    <value>טאָג</value>
+  </data>
+  <data name="IslamInfo_Final1" xml:space="preserve">
+    <value>לעצט 1</value>
+  </data>
+  <data name="IslamInfo_Final1Trans" xml:space="preserve">
+    <value>וואָס גאָרנישט איז ווי אים און ער איז די כירער, די סיר</value>
+  </data>
+  <data name="IslamInfo_Final1WordByWord" xml:space="preserve">
+    <value>וואָס | ניט | איז ווי אים | עפּעס | און ער איז | די כירער | די סיר</value>
+  </data>
+  <data name="IslamInfo_Final2" xml:space="preserve">
+    <value>לעצט 2</value>
+  </data>
+  <data name="IslamInfo_Final2Trans" xml:space="preserve">
+    <value>אָ אַלאַ, שיקן די בעסטער תפילה אויף אייער בעסטער באַשעפעניש האר מוכאַמאַד</value>
+  </data>
+  <data name="IslamInfo_Final2WordByWord" xml:space="preserve">
+    <value>אָ אַלאַ | שיקן | דער בעסטער | תפילה | אויף | בעסטער | פון דיין שאַפונג | האר | מוכאַמאַד</value>
+  </data>
+  <data name="IslamInfo_Final3" xml:space="preserve">
+    <value>לעצט 3</value>
+  </data>
+  <data name="IslamInfo_Final3Trans" xml:space="preserve">
+    <value>און שלום און די טינט פון זיין ווערטער און ווען די וואס געדענקען אים טאָן אַזוי און ווען די וואס פאַרלאָזן צו געדענקען אים טאָן אַזוי</value>
+  </data>
+  <data name="IslamInfo_Final3WordByWord" xml:space="preserve">
+    <value>און שלום | ריקאַונטינג | זיין וויסן | און טינט | פון זיין ווערטער | ווען | געדענקען אים | טאָן אַזוי | און ווען די וואס פאַרלאָזן | צו | געדענקען אים | טאָן אַזוי</value>
+  </data>
+  <data name="IslamInfo_OMasterSendPrayersAndPeace" xml:space="preserve">
+    <value>אָ מיין האר, שיקן אייער סאַלוטאַטיאָנס און ברכות</value>
+  </data>
+  <data name="IslamInfo_OMasterSendPrayersAndPeaceTrans" xml:space="preserve">
+    <value>אָ מיין האר, שיקן אייער סאַלוטאַטיאָנס און ברכות אויף אייביק אויף דיין באליבטע, דער בעסטער פון די גאנצע פון ​​שאַפונג</value>
+  </data>
+  <data name="IslamInfo_OMasterSendPrayersAndPeaceWordByWord" xml:space="preserve">
+    <value>אָ מיין האר | שיקן אייער סאַלוטאַטיאָנס | און ברכות | שטענדיק | יטערנאַלי | אויף | דיין באליבטע | דער בעסטער | פון קרעאַטיאָן | פון די גאנצע</value>
+  </data>
+  <data name="IslamInfo_PopularIslamicSongVerses" xml:space="preserve">
+    <value>פאָלקס יסלאַמיק סאָנג ווערסעס</value>
+  </data>
+  <data name="IslamInfo_RemembranceFirst" xml:space="preserve">
+    <value>דערמאָנונג ערשטער</value>
+  </data>
+  <data name="IslamInfo_RemembranceFirstTrans" xml:space="preserve">
+    <value>קיינער האט די רעכט צו זיין געדינט אָבער איר (אָ אַלאַ)), גלאָראַפייד (און דערהויבן) זענען איר (אויבן אַלע אַז (בייז) זיי מיטאַרבעטער מיט איר).</value>
+  </data>
+  <data name="IslamInfo_RemembranceFirstWordByWord" xml:space="preserve">
+    <value>קיינער | האט די רעכט צו זיין געדינט | אָבער | איר | גלאָראַפייד זענען איר | באמת | איך האב שוין | פון | דעם אומרעכט-דוערז</value>
+  </data>
+  <data name="IslamInfo_RemembranceSecond" xml:space="preserve">
+    <value>דערמאָנונג צווייטע</value>
+  </data>
+  <data name="IslamInfo_RemembranceSecondTrans" xml:space="preserve">
+    <value>אַלאַ (אַליין) איז גענוג פֿאַר אונדז, און ער איז דער בעסטער דיספּאָוזער פון ענינים (פֿאַר אונדז);</value>
+  </data>
+  <data name="IslamInfo_RemembranceSecondWordByWord" xml:space="preserve">
+    <value>גענוג פֿאַר אונדז | אַלאַ | און ער איז דער בעסטער | דיספּאָוזער פון ענינים | וואָס אַ ויסגעצייכנט | פּאַטראָן | און וואָס אַ ויסגעצייכנט | העלפּער</value>
+  </data>
+  <data name="IslamInfo_RemembranceThird" xml:space="preserve">
+    <value>דערמאָנונג דריט</value>
+  </data>
+  <data name="IslamInfo_RemembranceThirdTrans" xml:space="preserve">
+    <value>עס איז ניט שטאַרקייַט (צו רעפרען פון זינד אָבער מיט די שוץ פון אַלאַ) און עס איז קיין מאַכט (צו ויספירן גוט מעשים) אָבער מיט די הילף פון אַלאַ, די הויך, די העכסטע</value>
+  </data>
+  <data name="IslamInfo_RemembranceThirdWordByWord" xml:space="preserve">
+    <value>עס איז ניט | שטאַרקייַט | און עס איז ניט | מאַכט | חוץ | מיט אַלאַ | די הויך | די העכסטע</value>
+  </data>
+  <data name="IslamInfo_SendBlessingsFirst" xml:space="preserve">
+    <value>שיקן בלעסינגז ערשטער</value>
+  </data>
+  <data name="IslamInfo_SendBlessingsFirstTrans" xml:space="preserve">
+    <value>אַלאַ, שיקן אייער רחמנות אויף מוכאַמאַד און זיין זאמען ווי איר געשיקט דיין רחמנות אויף אברהם און זיין זאמען.</value>
+  </data>
+  <data name="IslamInfo_SendBlessingsFirstWordByWord" xml:space="preserve">
+    <value>אָ אַלאַ | שיקן אייער רחמנות | אויף | מוכאַמאַד | און אויף | די זאמען | פון אים | ווי | איר געשיקט דיין רחמנות | אויף | אברהם | און אויף | די זאמען | פון אים | באמת איר זענט | רובֿ געלויבט | רובֿ גלאָריאַס |</value>
+  </data>
+  <data name="IslamInfo_SendBlessingsSecond" xml:space="preserve">
+    <value>שיקן בלעסינגז צווייטע</value>
+  </data>
+  <data name="IslamInfo_SendBlessingsSecondTrans" xml:space="preserve">
+    <value>אַלאַ, שיקן אייער רחמנות אויף מוכאַמאַד און זיין זאמען ווי איר געשיקט דיין רחמנות אויף אברהם און זיין זאמען.</value>
+  </data>
+  <data name="IslamInfo_SendBlessingsSecondWordByWord" xml:space="preserve">
+    <value>אָ אַלאַ | שיקן אייער רחמנות | אויף | מוכאַמאַד | און אויף | די זאמען | פון אים | ווי | איר געשיקט דיין רחמנות | אויף | אברהם | און אויף | די זאמען | פון אים | באמת איר זענט | רובֿ געלויבט | רובֿ גלאָריאַס |</value>
+  </data>
+  <data name="IslamInfo_TheBestNames" xml:space="preserve">
+    <value>דער בעסטער נאַמעס</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoon" xml:space="preserve">
+    <value>די ווייסע מאָאָן</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonEighth" xml:space="preserve">
+    <value>אַכט</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonEighthTrans" xml:space="preserve">
+    <value>באַגריסן איר וואס רופן אונדז צו אַ גוט וועג</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonEighthWordByWord" xml:space="preserve">
+    <value>באַגריסן | איר וואס רופן אונדז | צו אַ גוט | וועג</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonFifth" xml:space="preserve">
+    <value>פינפט</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonFifthTrans" xml:space="preserve">
+    <value>טאַקע אונדזער מעסינדזשער (עמאַסערי) אַמאַנגסט אונדז</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonFifthWordByWord" xml:space="preserve">
+    <value>טאַקע | אונדזער מעסינדזשער | אַמאַנגסט אונדז</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonFirst" xml:space="preserve">
+    <value>ערשטער</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonFirstTrans" xml:space="preserve">
+    <value>טאַקע די ווייַס לעוואָנע רויז איבער אונדז</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonFirstWordByWord" xml:space="preserve">
+    <value>טאַקע רויז | די ווייַס לעוואָנע | איבער אונדז</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonFourth" xml:space="preserve">
+    <value>פערט</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonFourthTrans" xml:space="preserve">
+    <value>פֿאַר אים וואס ינווייץ אונדז צו די וועג פון אַלאַ</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonFourthWordByWord" xml:space="preserve">
+    <value>פֿאַר אים | וואס ינווייץ אונדז | צו אַלאַ | די וועג פון</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonSecond" xml:space="preserve">
+    <value>צווייט</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonSecondTrans" xml:space="preserve">
+    <value>פון די טאָל (ווו ער) גערופן</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonSecondWordByWord" xml:space="preserve">
+    <value>פון | די טאָל | גערופן</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonSeventh" xml:space="preserve">
+    <value>זיבעט</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonSeventhTrans" xml:space="preserve">
+    <value>איר האָבן געבראכט צו דעם שטאָט אדלשטאנד</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonSeventhWordByWord" xml:space="preserve">
+    <value>איר האָבן געבראכט | אדלשטאנד | צו דעם שטאָט</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonSixth" xml:space="preserve">
+    <value>זעקסט</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonSixthTrans" xml:space="preserve">
+    <value>וואס קומט מיט די עקסהאָרטאַטיאָנס (ינדזשונקטיאָנס / מצוות) צו זיין העעדעד</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonSixthWordByWord" xml:space="preserve">
+    <value>וואס קומט | מיט די מצוות | צו זיין צוגעהערט</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonThird" xml:space="preserve">
+    <value>דריט</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonThirdTrans" xml:space="preserve">
+    <value>און עס איז ינקאַמבאַנט אויף אונדז צו ווייַזן דאנקבארקייט</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonThirdWordByWord" xml:space="preserve">
+    <value>און עס איז ינקאַמבאַנט | צו ווייַזן גראַדיטודע | אויף אונדז</value>
+  </data>
+  <data name="IslamInfo_AllahKnowsBest" xml:space="preserve">
+    <value>אַלאַ ווייסט בעסטער</value>
+  </data>
+  <data name="IslamInfo_AllahSaysTheTruth" xml:space="preserve">
+    <value>דער אמת איז פון אַלאַ, רובֿ מאַגניפיסענט</value>
+  </data>
+  <data name="IslamInfo_AllahSufficesMe" xml:space="preserve">
+    <value>גענוג פֿאַר מיר איז אַלאַ</value>
+  </data>
+  <data name="IslamInfo_AllahWilledItSo" xml:space="preserve">
+    <value>אַלאַ האט ווילד עס אַזוי</value>
+  </data>
+  <data name="IslamInfo_AllahWilling" xml:space="preserve">
+    <value>אויב אַלאַ וויל עס אַזוי</value>
+  </data>
+  <data name="IslamInfo_AndUponYouBePeaceAndMercyOfAllah" xml:space="preserve">
+    <value>און אויף איר זיין שלום און די רחמנות פון אַלאַ</value>
+  </data>
+  <data name="IslamInfo_AndUponYouBePeaceAndMercyOfAllahAndBlessings" xml:space="preserve">
+    <value>און אויף איר זיין שלום און די רחמנות פון אַלאַ און זיין ברכות</value>
+  </data>
+  <data name="IslamInfo_BlessingsOfAllah" xml:space="preserve">
+    <value>ברכות פון אַלאַ</value>
+  </data>
+  <data name="IslamInfo_GloriousAndExaltedBeHe" xml:space="preserve">
+    <value>כבוד און דערהויבן זיין ער</value>
+  </data>
+  <data name="IslamInfo_IAskAllahForgiveness" xml:space="preserve">
+    <value>איך פרעגן מחילה פון אַלאַ</value>
+  </data>
+  <data name="IslamInfo_InProtectionOfAllah" xml:space="preserve">
+    <value>אין די שוץ פון אַלאַ</value>
+  </data>
+  <data name="IslamInfo_InThePathOfAllah" xml:space="preserve">
+    <value>אין די גרונט פון אַלאַ</value>
+  </data>
+  <data name="IslamInfo_MayAllahBePleased" xml:space="preserve">
+    <value>זאל אַלאַ זייַן צופרידן מיט זיי</value>
+  </data>
+  <data name="IslamInfo_MayAllahBlessYou" xml:space="preserve">
+    <value>ברכות אויף איר פון אַלאַ</value>
+  </data>
+  <data name="IslamInfo_MayAllahHaveMercy" xml:space="preserve">
+    <value>זאל אַלאַ האָבן רחמנות אויף זיי</value>
+  </data>
+  <data name="IslamInfo_MayAllahProtectYou" xml:space="preserve">
+    <value>זאל אַלאַ באַשיצן איר</value>
+  </data>
+  <data name="IslamInfo_MayAllahWillItSo" xml:space="preserve">
+    <value>זאל אַלאַ וועט עס אַזוי</value>
+  </data>
+  <data name="IslamInfo_PeaceBeUponYouAndMercyOfAllah" xml:space="preserve">
+    <value>שלום זיין אויף איר און די רחמנות פון אַלאַ</value>
+  </data>
+  <data name="IslamInfo_PeaceBeUponYouAndMercyOfAllahAndBlessings" xml:space="preserve">
+    <value>שלום זיין אויף איר און די רחמנות פון אַלאַ און זיין ברכות</value>
+  </data>
+  <data name="IslamInfo_SeekRefugeWithAllahFromSatanRejected" xml:space="preserve">
+    <value>איך זוכן אָפּדאַך מיט אַלאַ פון שׂטן די פארווארפן</value>
+  </data>
+  <data name="IslamInfo_SublimeAndMighty" xml:space="preserve">
+    <value>סאַבליים און גוואַלדיק</value>
+  </data>
+  <data name="IslamInfo_TrulyFromAllahWeComeAndToHimWillReturn" xml:space="preserve">
+    <value>באמת פון אַלאַ מיר האָבן קומען, און באמת צו אים מיר וועלן צוריקקומען</value>
+  </data>
+  <data name="Acct_CertRequest" xml:space="preserve">
+    <value>באַווייַזן בעטן</value>
+  </data>
+  <data name="Acct_Certificate" xml:space="preserve">
+    <value>באַווייַזן</value>
+  </data>
+  <data name="Acct_CertInstall" xml:space="preserve">
+    <value>ינסטאַלירן סערטיפיקאַט</value>
+  </data>
+  <data name="Acct_CurrentUser" xml:space="preserve">
+    <value>קראַנט באַניצער</value>
+  </data>
+  <data name="Acct_DeleteCertRequest" xml:space="preserve">
+    <value>דיליט סערטיפיקאַט בעטן</value>
+  </data>
+  <data name="Acct_EnableSSL" xml:space="preserve">
+    <value>געבן ססל</value>
+  </data>
+  <data name="Acct_PrivateKey" xml:space="preserve">
+    <value>פּריוואַט דורכפֿאַל</value>
+  </data>
+  <data name="Acct_ViewCertRequests" xml:space="preserve">
+    <value>מיינונג סערטיפיקאַט ריקוועס</value>
+  </data>
+  <data name="Acct_ViewSites" xml:space="preserve">
+    <value>מיינונג זייטלעך</value>
+  </data>
+  <data name="Acct_CertInstallIntermed" xml:space="preserve">
+    <value>ינסטאַלירן ינטערמעדיאַטע סערטיפיקאַט</value>
+  </data>
+  <data name="IslamInfo_UniqueLetters" xml:space="preserve">
+    <value>יינציק בריוו</value>
+  </data>
+  <data name="IslamInfo_SoulStates" xml:space="preserve">
+    <value>נשמה שטאַטן</value>
+  </data>
+  <data name="IslamInfo_Abbreviations" xml:space="preserve">
+    <value>אַבריווייישאַנז</value>
+  </data>
+  <data name="IslamInfo_Names" xml:space="preserve">
+    <value>נעמען</value>
+  </data>
+  <data name="IslamInfo_Places" xml:space="preserve">
+    <value>ערטער</value>
+  </data>
+  <data name="IslamInfo_Abbasid" xml:space="preserve">
+    <value>אַבבאַסיד</value>
+  </data>
+  <data name="IslamInfo_AbdullahBinMasood" xml:space="preserve">
+    <value>אַבדאַלאַ בין מאַסוד</value>
+  </data>
+  <data name="IslamInfo_AbuBakrAlSaddiq" xml:space="preserve">
+    <value>אבו באַקר על-סאַדדיק</value>
+  </data>
+  <data name="IslamInfo_AbuDahr" xml:space="preserve">
+    <value>אבו דאַהר</value>
+  </data>
+  <data name="IslamInfo_AbuHanifa" xml:space="preserve">
+    <value>אבו האַניפאַ</value>
+  </data>
+  <data name="IslamInfo_AbuHurairah" xml:space="preserve">
+    <value>אַבוהוראַיראַה</value>
+  </data>
+  <data name="IslamInfo_AbuJahal" xml:space="preserve">
+    <value>אבו דזשאַהאַל</value>
+  </data>
+  <data name="IslamInfo_AbuLahab" xml:space="preserve">
+    <value>אבו לאַהאַב</value>
+  </data>
+  <data name="IslamInfo_AbuSufyan" xml:space="preserve">
+    <value>אבו סופיאַן</value>
+  </data>
+  <data name="IslamInfo_Aisha" xml:space="preserve">
+    <value>אַישאַ</value>
+  </data>
+  <data name="IslamInfo_AliBinAbuTalib" xml:space="preserve">
+    <value>עלי בין אבו טאַליב</value>
+  </data>
+  <data name="IslamInfo_AlLaythBinSaad" xml:space="preserve">
+    <value>על-לייַטה בין סאַד</value>
+  </data>
+  <data name="IslamInfo_Allowed" xml:space="preserve">
+    <value>ערלויבט</value>
+  </data>
+  <data name="IslamInfo_AlMansoor" xml:space="preserve">
+    <value>על-מאַנסאָאָר</value>
+  </data>
+  <data name="IslamInfo_AlMuwata" xml:space="preserve">
+    <value>על-מווואַטאַ</value>
+  </data>
+  <data name="IslamInfo_AlWahsi" xml:space="preserve">
+    <value>על-וואַהסי</value>
+  </data>
+  <data name="IslamInfo_AmrBinAlAas" xml:space="preserve">
+    <value>אַמר בין על-אַאַס</value>
+  </data>
+  <data name="IslamInfo_AndEveryone" xml:space="preserve">
+    <value>און אַלעמען</value>
+  </data>
+  <data name="IslamInfo_Angel" xml:space="preserve">
+    <value>מאַלעך</value>
+  </data>
+  <data name="IslamInfo_Arrogance" xml:space="preserve">
+    <value>גאַדלעס</value>
+  </data>
+  <data name="IslamInfo_AskForgiveness" xml:space="preserve">
+    <value>פרעגן פאָרגיווענעסס</value>
+  </data>
+  <data name="IslamInfo_Azar" xml:space="preserve">
+    <value>אַזאַר</value>
+  </data>
+  <data name="IslamInfo_Balance" xml:space="preserve">
+    <value>וואָג</value>
+  </data>
+  <data name="IslamInfo_BaniHashim" xml:space="preserve">
+    <value>באַני האַשים</value>
+  </data>
+  <data name="IslamInfo_BaniThaqeef" xml:space="preserve">
+    <value>באַני טהאַקעעף</value>
+  </data>
+  <data name="IslamInfo_Biography" xml:space="preserve">
+    <value>ביאגראפיע</value>
+  </data>
+  <data name="IslamInfo_Bless" xml:space="preserve">
+    <value>בענטשן</value>
+  </data>
+  <data name="IslamInfo_Caliphate" xml:space="preserve">
+    <value>קאַליפאַטע</value>
+  </data>
+  <data name="IslamInfo_CallToIslam" xml:space="preserve">
+    <value>רוף צו איסלאם</value>
+  </data>
+  <data name="IslamInfo_Certainty" xml:space="preserve">
+    <value>זיכערקייט</value>
+  </data>
+  <data name="IslamInfo_Cohabitation" xml:space="preserve">
+    <value>קאָוכאַבאַטיישאַן</value>
+  </data>
+  <data name="IslamInfo_Commentary" xml:space="preserve">
+    <value>קאָמענטאַר</value>
+  </data>
+  <data name="IslamInfo_Community" xml:space="preserve">
+    <value>יידע</value>
+  </data>
+  <data name="IslamInfo_Companions" xml:space="preserve">
+    <value>קאָמפּאַניאָנס</value>
+  </data>
+  <data name="IslamInfo_Concensus" xml:space="preserve">
+    <value>קאָנסענסוס</value>
+  </data>
+  <data name="IslamInfo_Concentration" xml:space="preserve">
+    <value>קאַנסאַנטריישאַן</value>
+  </data>
+  <data name="IslamInfo_Congregation" xml:space="preserve">
+    <value>קאָנגרעגאַציע</value>
+  </data>
+  <data name="IslamInfo_Conquest" xml:space="preserve">
+    <value>קאָנקוועסט</value>
+  </data>
+  <data name="IslamInfo_Deeds" xml:space="preserve">
+    <value>מעשים</value>
+  </data>
+  <data name="IslamInfo_Delivery" xml:space="preserve">
+    <value>עקספּרעס</value>
+  </data>
+  <data name="IslamInfo_Dessertion" xml:space="preserve">
+    <value>דעססערטיאָן</value>
+  </data>
+  <data name="IslamInfo_Digger" xml:space="preserve">
+    <value>דיגער</value>
+  </data>
+  <data name="IslamInfo_Disbeliever" xml:space="preserve">
+    <value>דיסבעליעווער</value>
+  </data>
+  <data name="IslamInfo_Division" xml:space="preserve">
+    <value>אָפּטייל</value>
+  </data>
+  <data name="IslamInfo_Do" xml:space="preserve">
+    <value>טאָן</value>
+  </data>
+  <data name="IslamInfo_Doctrine" xml:space="preserve">
+    <value>דאָקטערין</value>
+  </data>
+  <data name="IslamInfo_Empowering" xml:space="preserve">
+    <value>ימפּאַוערינג</value>
+  </data>
+  <data name="IslamInfo_Excellence" xml:space="preserve">
+    <value>עקסאַלאַנס</value>
+  </data>
+  <data name="IslamInfo_Faith" xml:space="preserve">
+    <value>גלויבן</value>
+  </data>
+  <data name="IslamInfo_Faithful" xml:space="preserve">
+    <value>געטרייַ</value>
+  </data>
+  <data name="IslamInfo_Fight" xml:space="preserve">
+    <value>קאַמף</value>
+  </data>
+  <data name="IslamInfo_Fighter" xml:space="preserve">
+    <value>פייטער</value>
+  </data>
+  <data name="IslamInfo_Firdaus" xml:space="preserve">
+    <value>פירדאַוס</value>
+  </data>
+  <data name="IslamInfo_Forgiving" xml:space="preserve">
+    <value>מוחל</value>
+  </data>
+  <data name="IslamInfo_Fornication" xml:space="preserve">
+    <value>זנוס</value>
+  </data>
+  <data name="IslamInfo_Gabriel" xml:space="preserve">
+    <value>גאַבריעל</value>
+  </data>
+  <data name="IslamInfo_Gardens" xml:space="preserve">
+    <value>גאַרדענס</value>
+  </data>
+  <data name="IslamInfo_GloriousAndExaltedBeHeAbbr" xml:space="preserve">
+    <value>סווט</value>
+  </data>
+  <data name="IslamInfo_Goodness" xml:space="preserve">
+    <value>גוצקייַט</value>
+  </data>
+  <data name="IslamInfo_Guardian" xml:space="preserve">
+    <value>אַפּעטראָפּעס</value>
+  </data>
+  <data name="IslamInfo_Guidance1" xml:space="preserve">
+    <value>גיידאַנס</value>
+  </data>
+  <data name="IslamInfo_Hammad" xml:space="preserve">
+    <value>האַממאַד</value>
+  </data>
+  <data name="IslamInfo_HamzaBinAbduAlMuttalib" xml:space="preserve">
+    <value>האַמזאַ בין אַבדו על-מוטטאַליב</value>
+  </data>
+  <data name="IslamInfo_Hanbal" xml:space="preserve">
+    <value>האַנבאַל</value>
+  </data>
+  <data name="IslamInfo_Hasan" xml:space="preserve">
+    <value>האַסאַן</value>
+  </data>
+  <data name="IslamInfo_HeartSofteners" xml:space="preserve">
+    <value>האַרץ סאָפטענערס</value>
+  </data>
+  <data name="IslamInfo_Hell" xml:space="preserve">
+    <value>גענעם</value>
+  </data>
+  <data name="IslamInfo_Hereafter" xml:space="preserve">
+    <value>לעגאַבע</value>
+  </data>
+  <data name="IslamInfo_Hind" xml:space="preserve">
+    <value>הינד</value>
+  </data>
+  <data name="IslamInfo_Hudabiyyah" xml:space="preserve">
+    <value>הודאַביייאַה</value>
+  </data>
+  <data name="IslamInfo_Hunain" xml:space="preserve">
+    <value>הונאַין</value>
+  </data>
+  <data name="IslamInfo_Hussein" xml:space="preserve">
+    <value>כוסיין</value>
+  </data>
+  <data name="IslamInfo_Hypocrite" xml:space="preserve">
+    <value>צווויאַק</value>
+  </data>
+  <data name="IslamInfo_ImamNawawi40Hadith" xml:space="preserve">
+    <value>ימאַם נאַוואַווי 40 האַדיטה</value>
+  </data>
+  <data name="IslamInfo_Impact" xml:space="preserve">
+    <value>פּראַל</value>
+  </data>
+  <data name="IslamInfo_Innovation" xml:space="preserve">
+    <value>כידעש</value>
+  </data>
+  <data name="IslamInfo_Intention" xml:space="preserve">
+    <value>כוונה</value>
+  </data>
+  <data name="IslamInfo_Introduction" xml:space="preserve">
+    <value>הקדמה</value>
+  </data>
+  <data name="IslamInfo_Invocation" xml:space="preserve">
+    <value>ינוואַקיישאַן</value>
+  </data>
+  <data name="IslamInfo_Jinn" xml:space="preserve">
+    <value>דזשינן</value>
+  </data>
+  <data name="IslamInfo_Kaaba" xml:space="preserve">
+    <value>קאַאַבאַ</value>
+  </data>
+  <data name="IslamInfo_KhadijahBintiKhuwaylid" xml:space="preserve">
+    <value>כאַדידזשאַה בינטי כאָאָייַליד</value>
+  </data>
+  <data name="IslamInfo_KhalidBinWalid" xml:space="preserve">
+    <value>Khalid בין וואַליד</value>
+  </data>
+  <data name="IslamInfo_Knowledgable" xml:space="preserve">
+    <value>קנאָוולעדגאַבלע</value>
+  </data>
+  <data name="IslamInfo_Latest" xml:space="preserve">
+    <value>לעצט</value>
+  </data>
+  <data name="IslamInfo_Leader" xml:space="preserve">
+    <value>פירער</value>
+  </data>
+  <data name="IslamInfo_Lecture" xml:space="preserve">
+    <value>לעקציע</value>
+  </data>
+  <data name="IslamInfo_Limit" xml:space="preserve">
+    <value>באַגרענעצן</value>
+  </data>
+  <data name="IslamInfo_Loudmouthed" xml:space="preserve">
+    <value>לאָודמאָוטהעד</value>
+  </data>
+  <data name="IslamInfo_Lucifer" xml:space="preserve">
+    <value>לוסיפער</value>
+  </data>
+  <data name="IslamInfo_Madame" xml:space="preserve">
+    <value>מאַדאַם</value>
+  </data>
+  <data name="IslamInfo_Malik" xml:space="preserve">
+    <value>מאַליק</value>
+  </data>
+  <data name="IslamInfo_Mankind" xml:space="preserve">
+    <value>מענטשהייַט</value>
+  </data>
+  <data name="IslamInfo_Manners" xml:space="preserve">
+    <value>מאַנירן</value>
+  </data>
+  <data name="IslamInfo_MannersOfDiffering" xml:space="preserve">
+    <value>מאַנירן פון דיפרינג</value>
+  </data>
+  <data name="IslamInfo_Master" xml:space="preserve">
+    <value>באַלעבאָס</value>
+  </data>
+  <data name="IslamInfo_MayAllahBePleasedAbbr" xml:space="preserve">
+    <value>רא</value>
+  </data>
+  <data name="IslamInfo_MayHisGloryBeGlorified" xml:space="preserve">
+    <value>מייַהיסגלאָריבעגלאָריפיעד</value>
+  </data>
+  <data name="IslamInfo_Mecca" xml:space="preserve">
+    <value>מעקאַ</value>
+  </data>
+  <data name="IslamInfo_Medina" xml:space="preserve">
+    <value>מעדינאַ</value>
+  </data>
+  <data name="IslamInfo_Mercy" xml:space="preserve">
+    <value>ראַכמאָנעס</value>
+  </data>
+  <data name="IslamInfo_MinorPilgrimage" xml:space="preserve">
+    <value>מינערווערטיק פּילגרימאַגע</value>
+  </data>
+  <data name="IslamInfo_Mosque" xml:space="preserve">
+    <value>מאָסקווע</value>
+  </data>
+  <data name="IslamInfo_Muawiyyah" xml:space="preserve">
+    <value>מואַוויייאַה</value>
+  </data>
+  <data name="IslamInfo_Mufti" xml:space="preserve">
+    <value>מופטי</value>
+  </data>
+  <data name="IslamInfo_MuhammadBinAbduAlMuttalib" xml:space="preserve">
+    <value>מוכאַמאַד בין אַבדו על-מוטטאַליב</value>
+  </data>
+  <data name="IslamInfo_Neck" xml:space="preserve">
+    <value>האַלדז</value>
+  </data>
+  <data name="IslamInfo_Nurturing" xml:space="preserve">
+    <value>נערטשערינג</value>
+  </data>
+  <data name="IslamInfo_OBelievers" xml:space="preserve">
+    <value>אָ איר ווער גלויבט</value>
+  </data>
+  <data name="IslamInfo_Optimizer" xml:space="preserve">
+    <value>אָפּטימיזער</value>
+  </data>
+  <data name="IslamInfo_Paradise" xml:space="preserve">
+    <value>גאַניידן</value>
+  </data>
+  <data name="IslamInfo_Patience" xml:space="preserve">
+    <value>געדולד</value>
+  </data>
+  <data name="IslamInfo_Permission" xml:space="preserve">
+    <value>דערלויבעניש</value>
+  </data>
+  <data name="IslamInfo_Persecution" xml:space="preserve">
+    <value>רעדיפע</value>
+  </data>
+  <data name="IslamInfo_Piety" xml:space="preserve">
+    <value>פרומקייַט</value>
+  </data>
+  <data name="IslamInfo_PleasedWithDecree" xml:space="preserve">
+    <value>צופרידן מיט דעקרעע</value>
+  </data>
+  <data name="IslamInfo_Polythiest" xml:space="preserve">
+    <value>פּאָליטהיעסט</value>
+  </data>
+  <data name="IslamInfo_Practical" xml:space="preserve">
+    <value>פּראַקטיש</value>
+  </data>
+  <data name="IslamInfo_Predestination" xml:space="preserve">
+    <value>פּרעדעסטינאַטיאָן</value>
+  </data>
+  <data name="IslamInfo_PrintedBook" xml:space="preserve">
+    <value>געדרוקט ספר</value>
+  </data>
+  <data name="IslamInfo_Professor" xml:space="preserve">
+    <value>פּראָפעסאָר</value>
+  </data>
+  <data name="IslamInfo_Protector" xml:space="preserve">
+    <value>באַשיצער</value>
+  </data>
+  <data name="IslamInfo_Punishment" xml:space="preserve">
+    <value>שטראָף</value>
+  </data>
+  <data name="IslamInfo_Purification" xml:space="preserve">
+    <value>רייניקונג</value>
+  </data>
+  <data name="IslamInfo_Quraish" xml:space="preserve">
+    <value>קווראַיש</value>
+  </data>
+  <data name="IslamInfo_Rawdah" xml:space="preserve">
+    <value>ראַוודאַה</value>
+  </data>
+  <data name="IslamInfo_Recite" xml:space="preserve">
+    <value>פאָרלייענען</value>
+  </data>
+  <data name="IslamInfo_Religion" xml:space="preserve">
+    <value>רעליגיע</value>
+  </data>
+  <data name="IslamInfo_Repentance" xml:space="preserve">
+    <value>תשובה</value>
+  </data>
+  <data name="IslamInfo_RiadAlJannah" xml:space="preserve">
+    <value>ריאַד על-דזשאַננאַה</value>
+  </data>
+  <data name="IslamInfo_RighteousDealings" xml:space="preserve">
+    <value>צדיקים דילינגז</value>
+  </data>
+  <data name="IslamInfo_RighteousDeeds" xml:space="preserve">
+    <value>צדיקים דעעדס</value>
+  </data>
+  <data name="IslamInfo_SaadBinWaad" xml:space="preserve">
+    <value>סאַד בין וואַאַד</value>
+  </data>
+  <data name="IslamInfo_Sacrifice" xml:space="preserve">
+    <value>קאָרבן</value>
+  </data>
+  <data name="IslamInfo_Salafi" xml:space="preserve">
+    <value>סאַלאַפי</value>
+  </data>
+  <data name="IslamInfo_Satan" xml:space="preserve">
+    <value>סאָטן</value>
+  </data>
+  <data name="IslamInfo_Satisfaction" xml:space="preserve">
+    <value>באַפרידיקונג</value>
+  </data>
+  <data name="IslamInfo_Self" xml:space="preserve">
+    <value>גופע</value>
+  </data>
+  <data name="IslamInfo_Shafii" xml:space="preserve">
+    <value>שאַפיי</value>
+  </data>
+  <data name="IslamInfo_Sheikh" xml:space="preserve">
+    <value>שיק</value>
+  </data>
+  <data name="IslamInfo_ShowingOff" xml:space="preserve">
+    <value>ווייַזונג אַוועק</value>
+  </data>
+  <data name="IslamInfo_Sin" xml:space="preserve">
+    <value>זינד</value>
+  </data>
+  <data name="IslamInfo_Sir" xml:space="preserve">
+    <value>מייַנ הער</value>
+  </data>
+  <data name="IslamInfo_Slaughter" xml:space="preserve">
+    <value>שעכטן</value>
+  </data>
+  <data name="IslamInfo_Slave" xml:space="preserve">
+    <value>שקלאַף</value>
+  </data>
+  <data name="IslamInfo_Speech" xml:space="preserve">
+    <value>רעדע</value>
+  </data>
+  <data name="IslamInfo_Sporadic" xml:space="preserve">
+    <value>ספּאָראַדיש</value>
+  </data>
+  <data name="IslamInfo_Strangers" xml:space="preserve">
+    <value>פרעמדע</value>
+  </data>
+  <data name="IslamInfo_SupplicationsAndPrayers" xml:space="preserve">
+    <value>סופּפּליקאַטיאָנס און תפילות</value>
+  </data>
+  <data name="IslamInfo_Taaif" xml:space="preserve">
+    <value>טאַאַיף</value>
+  </data>
+  <data name="IslamInfo_Talkative" xml:space="preserve">
+    <value>טאָקאַטיוו</value>
+  </data>
+  <data name="IslamInfo_ThePrayersOfAllahUponHimAndPeaceAbbr" xml:space="preserve">
+    <value>געזען | סאָז</value>
+  </data>
+  <data name="IslamInfo_Throne" xml:space="preserve">
+    <value>טראָן</value>
+  </data>
+  <data name="IslamInfo_Trustworthy" xml:space="preserve">
+    <value>טראַסטווערדי</value>
+  </data>
+  <data name="IslamInfo_Truthful" xml:space="preserve">
+    <value>עמעסדיק</value>
+  </data>
+  <data name="IslamInfo_UmarBinAlKhattab" xml:space="preserve">
+    <value>ומאַר בין על-כאַטטאַב</value>
+  </data>
+  <data name="IslamInfo_Umayyad" xml:space="preserve">
+    <value>ומייַיאַד</value>
+  </data>
+  <data name="IslamInfo_Universal" xml:space="preserve">
+    <value>וניווערסאַל</value>
+  </data>
+  <data name="IslamInfo_Unseen" xml:space="preserve">
+    <value>ומבאַמערקט</value>
+  </data>
+  <data name="IslamInfo_UponHimBePeaceAbbr" xml:space="preserve">
+    <value>ווי</value>
+  </data>
+  <data name="IslamInfo_UthmanBinAfwan" xml:space="preserve">
+    <value>וטהמאַן בין אַפוואַן</value>
+  </data>
+  <data name="IslamInfo_VoluntaryKindness" xml:space="preserve">
+    <value>וואַלאַנטערי קינדנעסס</value>
+  </data>
+  <data name="IslamInfo_Wahhabi" xml:space="preserve">
+    <value>וואַההאַבי</value>
+  </data>
+  <data name="IslamInfo_Wisdom" xml:space="preserve">
+    <value>קלוגשאַפט</value>
+  </data>
+  <data name="IslamInfo_Witnessing" xml:space="preserve">
+    <value>וויטנאַסינג</value>
+  </data>
+  <data name="IslamInfo_World" xml:space="preserve">
+    <value>וועלט</value>
+  </data>
+  <data name="IslamInfo_Worship" xml:space="preserve">
+    <value>דינען</value>
+  </data>
+  <data name="IslamInfo_IslamicPhrases" xml:space="preserve">
+    <value>יסלאַמיק פראַסעס</value>
+  </data>
+  <data name="IslamSource_QuranWords" xml:space="preserve">
+    <value>קווראַן ווערטער</value>
+  </data>
+  <data name="IslamSource_UniqueWordTotal" xml:space="preserve">
+    <value>יינציק וואָרט גאַנץ</value>
+  </data>
+  <data name="IslamSource_WordTotal" xml:space="preserve">
+    <value>וואָרט גאַנץ</value>
+  </data>
+  <data name="IslamSource_FixDirectionalMarkers" xml:space="preserve">
+    <value>פאַרריכטן דירעקטיאָנאַל מאַרקערס</value>
+  </data>
+  <data name="unicode_LeftToRightEmbedding" xml:space="preserve">
+    <value>לינקס-to-רעכט עמבעדדינג</value>
+  </data>
+  <data name="unicode_RightToLeftEmbedding" xml:space="preserve">
+    <value>רעכט-צו-לעפט עמבעדדינג</value>
+  </data>
+  <data name="unicode_LeftToRightMark" xml:space="preserve">
+    <value>לינקס-to-רעכט מארק</value>
+  </data>
+  <data name="unicode_LeftToRightOverride" xml:space="preserve">
+    <value>לינקס-to-רעכט אָוועררידע</value>
+  </data>
+  <data name="unicode_PopDirectionalFormatting" xml:space="preserve">
+    <value>קנאַל דירעקטיאָנאַל פאָרמאַטטינג</value>
+  </data>
+  <data name="unicode_RightToLeftMark" xml:space="preserve">
+    <value>רעכט-צו-לעפט מארק</value>
+  </data>
+  <data name="unicode_RightToLeftOverride" xml:space="preserve">
+    <value>רעכט-צו-לעפט אָוועררידע</value>
+  </data>
+  <data name="IslamSource_CurrentMonth" xml:space="preserve">
+    <value>קראַנט חודש</value>
+  </data>
+  <data name="IslamSource_HijriCalendar" xml:space="preserve">
+    <value>הידזשרי קאַלענדאַר</value>
+  </data>
+</root>

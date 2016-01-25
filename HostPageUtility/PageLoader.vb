@@ -16,6 +16,11 @@ Public Class WindowsWebSettings
             Return UtilityWeb.ConnectionData.Resources
         End Get
     End Property
+    Public ReadOnly Property FuncLibs As String() Implements PortableSettings.FuncLibs
+        Get
+            Return UtilityWeb.ConnectionData.FuncLibs
+        End Get
+    End Property
     Public Function GetFilePath(ByVal Path As String) As String Implements PortableSettings.GetFilePath
         Return CStr(If(IO.File.Exists(HttpContext.Current.Request.PhysicalApplicationPath + Path), HttpContext.Current.Request.PhysicalApplicationPath + Path, HttpContext.Current.Request.PhysicalApplicationPath + UtilityWeb.ConnectionData.AlternatePath + Path))
     End Function
@@ -709,7 +714,7 @@ Public Class UtilityWeb
                 LookupClassMember = CheckType.GetMethod(ClassMember(2))
             End If
             If LookupClassMember Is Nothing Then
-                For Each Key As String In ConnectionData.FuncLibs
+                For Each Key As String In PortableMethods.Settings.FuncLibs
                     Dim Asm As Reflection.Assembly = Reflection.Assembly.Load(Key)
                     If Not Asm Is Nothing Then
                         CheckType = Asm.GetType(Key + "." + ClassMember(0))
