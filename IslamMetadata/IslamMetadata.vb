@@ -4047,9 +4047,6 @@ Public Class TanzilReader
                 New Object() {"Simple Enhanced", QuranScripts.SimpleEnhanced},
                 New Object() {"Simple Clean", QuranScripts.SimpleClean}}
     End Function
-    Public Shared Function GetScriptFormatChangeJS() As String()
-        Return New String() {"javascript: doScriptFormatOptChange(this);", String.Empty, "function doScriptFormatOptChange(obj) { var ct, oth = $(obj.id === 'toscript' ? '#fromscript' : '#toscript')[0]; for (ct = 0; ct < oth.options.length - 1 - 1; ct++) { if (obj.options[ct].value !== oth.options[(ct >= oth.selectedIndex) ? ct + 1 : ct].value) break; } oth.options.add(new Option(obj.options[ct].text, obj.options[ct].value), (ct >= oth.selectedIndex) ? ct + 1 : ct); for (ct = 0; ct < oth.options.length - 1; ct++) { if (oth.options[ct].value === obj.options[obj.selectedIndex].value) { oth.options.remove(ct); } } }"}
-    End Function
     Public Enum QuranScripts
         Uthmani = 0
         UthmaniMin = 1

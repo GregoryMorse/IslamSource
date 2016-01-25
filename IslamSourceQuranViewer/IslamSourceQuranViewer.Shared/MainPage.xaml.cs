@@ -143,33 +143,59 @@ public class WindowsRTSettings : XMLRender.PortableSettings
     {
         return "";
     }
-    public static async System.Threading.Tasks.Task SavePathImageAsFile(int Width, int Height, string fileName, UIElement element)
+    public static async System.Threading.Tasks.Task SavePathImageAsFile(int Width, int Height, string fileName, FrameworkElement element, bool UseRenderTarget = true)
     {
-        float dpi = Windows.Graphics.Display.DisplayInformation.GetForCurrentView().LogicalDpi;
-        Windows.UI.Xaml.Media.Imaging.RenderTargetBitmap wb = new Windows.UI.Xaml.Media.Imaging.RenderTargetBitmap();
-        //Canvas cvs = new Canvas();
-        //cvs.Width = Width;
-        //cvs.Height = Height;
-        //Windows.UI.Xaml.Shapes.Path path = new Windows.UI.Xaml.Shapes.Path();
-        //object val;
-        //Resources.TryGetValue((object)"PathString", out val);
-        //Binding b = new Binding
-        //{
-        //    Source = (string)val
-        //};
-        //BindingOperations.SetBinding(path, Windows.UI.Xaml.Shapes.Path.DataProperty, b);
-        //cvs.Children.Add(path);
-        Windows.Storage.StorageFile file = await Windows.Storage.ApplicationData.Current.LocalFolder.CreateFileAsync(fileName + ".png", Windows.Storage.CreationCollisionOption.ReplaceExisting);
-        Windows.Storage.Streams.IRandomAccessStream stream = await file.OpenAsync(Windows.Storage.FileAccessMode.ReadWrite);
-        await wb.RenderAsync(element, (int)((float)Width * 96 / dpi), (int)((float)Height * 96 / dpi));
-        //Windows.Graphics.Imaging.BitmapPropertySet propertySet = new Windows.Graphics.Imaging.BitmapPropertySet();
-        //propertySet.Add("ImageQuality", new Windows.Graphics.Imaging.BitmapTypedValue(1.0, Windows.Foundation.PropertyType.Single)); // Maximum quality
-        Windows.Graphics.Imaging.BitmapEncoder be = await Windows.Graphics.Imaging.BitmapEncoder.CreateAsync(Windows.Graphics.Imaging.BitmapEncoder.PngEncoderId, stream);//, propertySet);
-        Windows.Storage.Streams.IBuffer buf = await wb.GetPixelsAsync();
-        be.SetPixelData(Windows.Graphics.Imaging.BitmapPixelFormat.Bgra8, Windows.Graphics.Imaging.BitmapAlphaMode.Premultiplied, (uint)wb.PixelWidth, (uint)wb.PixelHeight, dpi, dpi, buf.ToArray());
-        await be.FlushAsync();
-        await stream.GetOutputStreamAt(0).FlushAsync();
-        stream.Dispose();
+        if (!UseRenderTarget)
+        {
+            double oldWidth = element.Width;
+            double oldHeight = element.Height;
+            //engine takes the Ceiling so make sure its below or sometimes off by 1 rounding up from ActualWidth/Height
+            element.Width = Math.Floor((float)Width);
+            element.Height = Math.Floor((float)Height);
+            element.UpdateLayout();
+            if (element.ActualWidth > element.Width || element.ActualHeight > element.Height) {
+                if (element.ActualWidth > element.Width) element.Width -= 1;
+                if (element.ActualHeight > element.Height) element.Height -= 1;
+                element.UpdateLayout();
+            }
+            if (element.ActualWidth > element.Width) element.Height -= 1;
+            System.IO.MemoryStream memstream = await WinRTXamlToolkit.Composition.WriteableBitmapRenderExtensions.RenderToPngStream(element);
+            element.Width = oldWidth;
+            element.Height = oldHeight;
+            element.UpdateLayout();
+            Windows.Storage.StorageFile file = await Windows.Storage.ApplicationData.Current.LocalFolder.CreateFileAsync(fileName + ".png", Windows.Storage.CreationCollisionOption.ReplaceExisting);
+            Windows.Storage.Streams.IRandomAccessStream stream = await file.OpenAsync(Windows.Storage.FileAccessMode.ReadWrite);
+            await stream.WriteAsync(memstream.GetWindowsRuntimeBuffer());
+            stream.Dispose();
+        }
+        else
+        {
+            //Canvas cvs = new Canvas();
+            //cvs.Width = Width;
+            //cvs.Height = Height;
+            //Windows.UI.Xaml.Shapes.Path path = new Windows.UI.Xaml.Shapes.Path();
+            //object val;
+            //Resources.TryGetValue((object)"PathString", out val);
+            //Binding b = new Binding
+            //{
+            //    Source = (string)val
+            //};
+            //BindingOperations.SetBinding(path, Windows.UI.Xaml.Shapes.Path.DataProperty, b);
+            //cvs.Children.Add(path);
+            float dpi = Windows.Graphics.Display.DisplayInformation.GetForCurrentView().LogicalDpi;
+            Windows.UI.Xaml.Media.Imaging.RenderTargetBitmap wb = new Windows.UI.Xaml.Media.Imaging.RenderTargetBitmap();
+            await wb.RenderAsync(element, (int)((float)Width * 96 / dpi), (int)((float)Height * 96 / dpi));
+            Windows.Storage.Streams.IBuffer buf = await wb.GetPixelsAsync();
+            Windows.Storage.StorageFile file = await Windows.Storage.ApplicationData.Current.LocalFolder.CreateFileAsync(fileName + ".png", Windows.Storage.CreationCollisionOption.ReplaceExisting);
+            Windows.Storage.Streams.IRandomAccessStream stream = await file.OpenAsync(Windows.Storage.FileAccessMode.ReadWrite);
+            //Windows.Graphics.Imaging.BitmapPropertySet propertySet = new Windows.Graphics.Imaging.BitmapPropertySet();
+            //propertySet.Add("ImageQuality", new Windows.Graphics.Imaging.BitmapTypedValue(1.0, Windows.Foundation.PropertyType.Single)); // Maximum quality
+            Windows.Graphics.Imaging.BitmapEncoder be = await Windows.Graphics.Imaging.BitmapEncoder.CreateAsync(Windows.Graphics.Imaging.BitmapEncoder.PngEncoderId, stream);//, propertySet);
+            be.SetPixelData(Windows.Graphics.Imaging.BitmapPixelFormat.Bgra8, Windows.Graphics.Imaging.BitmapAlphaMode.Premultiplied, (uint)Width, (uint)Height, 96, 96, buf.ToArray());
+            await be.FlushAsync();
+            await stream.GetOutputStreamAt(0).FlushAsync();
+            stream.Dispose();
+        }
     }
 }
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238

@@ -726,6 +726,7 @@ Public Class UtilityWeb
                 Next
             End If
         End If
+        If LookupClassMember Is Nothing Then Debug.Print("Could not find class member: " + Text)
     End Function
     Public Shared Function TextRender(ByVal Item As PageLoader.TextItem) As String
         Return Item.Text

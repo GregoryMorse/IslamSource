@@ -122,7 +122,6 @@
       <SubType>Designer</SubType>
     </AppxManifest>
     <None Include="IslamSourceQuranViewer.Windows_StoreKey.pfx" />
-    <None Include="IslamSourceQuranViewer.Windows_TemporaryKey.pfx" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -139,8 +138,32 @@
     <None Include="Package.StoreAssociation.xml" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="SharpDX, Version=2.4.2.0, Culture=neutral, PublicKeyToken=627a3d6d1956f55a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SharpDX.2.4.2\lib\win8\SharpDX.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SharpDX.D3DCompiler, Version=2.4.2.0, Culture=neutral, PublicKeyToken=627a3d6d1956f55a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SharpDX.D3DCompiler.2.4.2\lib\win8\SharpDX.D3DCompiler.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SharpDX.Direct2D1, Version=2.4.2.0, Culture=neutral, PublicKeyToken=627a3d6d1956f55a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SharpDX.Direct2D1.2.4.2\lib\win8\SharpDX.Direct2D1.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SharpDX.Direct3D11, Version=2.4.2.0, Culture=neutral, PublicKeyToken=627a3d6d1956f55a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SharpDX.Direct3D11.2.4.2\lib\win8\SharpDX.Direct3D11.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SharpDX.DXGI, Version=2.4.2.0, Culture=neutral, PublicKeyToken=627a3d6d1956f55a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SharpDX.DXGI.2.4.2\lib\win8\SharpDX.DXGI.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="WinRTXamlToolkit, Version=1.6.1.3, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\WinRTXamlToolkit.1.6.1.3\lib\netcore451\WinRTXamlToolkit.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WinRTXamlToolkit.Composition, Version=1.6.1.3, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\WinRTXamlToolkit.Composition.1.6.1.3\lib\netcore451\WinRTXamlToolkit.Composition.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>

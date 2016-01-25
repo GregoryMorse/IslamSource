@@ -30,11 +30,13 @@ namespace IslamSourceQuranViewer
         public ExtSplashScreen()
         {
             this.InitializeComponent();
+            this.BottomAppBar.Visibility = Windows.UI.Xaml.Visibility.Visible;
             this.ProgressGrid.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
         }
         public ExtSplashScreen(Windows.ApplicationModel.Activation.SplashScreen splashScreen, bool loadState)
         {
             this.InitializeComponent();
+            this.BottomAppBar.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
             this.ProgressGrid.Visibility = Windows.UI.Xaml.Visibility.Visible;
             // Listen for window resize events to reposition the extended splash screen image accordingly.
             // This ensures that the extended splash screen formats properly in response to window resizing.
@@ -106,9 +108,8 @@ namespace IslamSourceQuranViewer
                 // code to load your app's state here 
             }
         }
-        private async void Grid_DoubleTapped(object sender, DoubleTappedRoutedEventArgs e)
+        private async void RenderPngs_Click(object sender, RoutedEventArgs e)
         {
-            if (this.ProgressGrid.Visibility == Windows.UI.Xaml.Visibility.Visible) return;
             await WindowsRTSettings.SavePathImageAsFile(50, 50, "storelogo.scale-100", MainGrid);
             await WindowsRTSettings.SavePathImageAsFile(70, 70, "storelogo.scale-140", MainGrid);
             await WindowsRTSettings.SavePathImageAsFile(90, 90, "storelogo.scale-180", MainGrid);
@@ -116,10 +117,12 @@ namespace IslamSourceQuranViewer
             await WindowsRTSettings.SavePathImageAsFile(150, 150, "logo.scale-100", MainGrid);
             await WindowsRTSettings.SavePathImageAsFile(210, 210, "logo.scale-140", MainGrid);
             await WindowsRTSettings.SavePathImageAsFile(270, 270, "logo.scale-180", MainGrid);
+            await WindowsRTSettings.SavePathImageAsFile(360, 360, "logo.scale-240", MainGrid);
             await WindowsRTSettings.SavePathImageAsFile(24, 24, "smalllogo.scale-80", MainGrid);
             await WindowsRTSettings.SavePathImageAsFile(30, 30, "smalllogo.scale-100", MainGrid);
             await WindowsRTSettings.SavePathImageAsFile(42, 42, "smalllogo.scale-140", MainGrid);
             await WindowsRTSettings.SavePathImageAsFile(54, 54, "smalllogo.scale-180", MainGrid);
+            await WindowsRTSettings.SavePathImageAsFile(106, 106, "smalllogo.scale-240", MainGrid);
             await WindowsRTSettings.SavePathImageAsFile(620, 300, "splashscreen.scale-100", MainGrid);
             await WindowsRTSettings.SavePathImageAsFile(868, 420, "splashscreen.scale-140", MainGrid);
             await WindowsRTSettings.SavePathImageAsFile(1116, 540, "splashscreen.scale-180", MainGrid);
@@ -127,6 +130,7 @@ namespace IslamSourceQuranViewer
             await WindowsRTSettings.SavePathImageAsFile(310, 150, "widelogo.scale-100", MainGrid);
             await WindowsRTSettings.SavePathImageAsFile(434, 210, "widelogo.scale-140", MainGrid);
             await WindowsRTSettings.SavePathImageAsFile(558, 270, "widelogo.scale-180", MainGrid);
+            await WindowsRTSettings.SavePathImageAsFile(744, 360, "widelogo.scale-240", MainGrid);
             await WindowsRTSettings.SavePathImageAsFile(24, 24, "badgelogo.scale-100", MainGrid);
             await WindowsRTSettings.SavePathImageAsFile(34, 34, "badgelogo.scale-140", MainGrid);
             await WindowsRTSettings.SavePathImageAsFile(34, 34, "badgelogo.scale-180", MainGrid);
@@ -154,6 +158,14 @@ namespace IslamSourceQuranViewer
             await WindowsRTSettings.SavePathImageAsFile(358, 358, "appstorephonepromotional-358x358", MainGrid);
             await WindowsRTSettings.SavePathImageAsFile(358, 173, "appstorephonepromotional-358x173", MainGrid);
             GC.Collect();
+        }
+        private void Settings_Click(object sender, RoutedEventArgs e)
+        {
+            //this.Frame.Navigate(typeof(Settings));
+        }
+        private void Back_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.GoBack();
         }
     }
 }

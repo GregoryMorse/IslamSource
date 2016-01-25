@@ -32,8 +32,13 @@ Public Class Utility
     Public Shared Function ColorB(Clr As Integer) As Byte
         Return CByte((Clr And &HFF))
     End Function
+    Public Shared Function UnsignedToInteger(Value As Long) As Integer
+        If Value < 0 Or Value >= 4294967296 Then Throw New OverflowException
+        If Value <= 2147483647 Then Return CInt(Value)
+        Return CInt(Value - 4294967296)
+    End Function
     Public Shared Function MakeArgb(ByVal alpha As Byte, ByVal red As Byte, ByVal green As Byte, ByVal blue As Byte) As Integer
-        Return CInt((CLng(((((red << &H10) Or (green << 8)) Or blue) Or (alpha << &H18))) And &HFFFFFFFF))
+        Return UnsignedToInteger(((((CLng(red) << &H10) Or (CLng(green) << 8)) Or CLng(blue)) Or (CLng(alpha) << &H18)) And &HFFFFFFFF)
     End Function
     Public Shared Function ColorFromName(Clr As String) As Integer
         Dim clrDict As New Dictionary(Of String, Long) From {
