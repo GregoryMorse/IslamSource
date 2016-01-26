@@ -19,6 +19,9 @@ Public Class frmMain
                 Return {"IslamMetadata"}
             End Get
         End Property
+        Public Function GetTemplatePath() As String Implements PortableSettings.GetTemplatePath
+            Return GetFilePath("metadata\IslamSource.xml")
+        End Function
         Public Function GetFilePath(ByVal Path As String) As String Implements PortableSettings.GetFilePath
             Return "..\..\..\" + Path
         End Function
@@ -34,10 +37,13 @@ Public Class frmMain
             Return Str.ToString()
         End Function
     End Class
-    Private PageSet As New PageLoader
+    Private PageSet As PageLoader
     Private Sub frmMain_Load(sender As Object, e As EventArgs) Handles Me.Load
         PortableMethods.FileIO = New WindowsWebFileIO
         PortableMethods.Settings = New WindowsSettings
+        PageSet = New PageLoader
+        'TanzilReader.WordFileToResource("..\..\..\metadata\en.w4w.corpus.txt", "w4w.corpus.en.resx")
+        'TanzilReader.ResourceToWordFile("w4w.corpus.xx.resx", "..\..\..\metadata\xx.w4w.corpus.txt")
         'clsWarshQuran.ParseQuran()
         'TanzilReader.ChangeQuranFormat(TanzilReader.QuranTexts.Warsh, TanzilReader.QuranTexts.Warsh, TanzilReader.QuranScripts.Uthmani, TanzilReader.ArabicPresentation.Buckwalter)
         'TanzilReader.ChangeQuranFormat(TanzilReader.QuranTexts.Hafs, TanzilReader.QuranTexts.Hafs, TanzilReader.QuranScripts.Uthmani, TanzilReader.ArabicPresentation.Buckwalter)
@@ -55,9 +61,9 @@ Public Class frmMain
         'TanzilReader.ChangeQuranFormat(TanzilReader.QuranTexts.Hafs, TanzilReader.QuranTexts.Warsh, TanzilReader.QuranScripts.Uthmani, TanzilReader.ArabicPresentation.Buckwalter)
         'TanzilReader.CheckNotablePatterns()
         'TanzilReader.FindMinimalVersesForCoverage()
-        TanzilReader.CheckSequentialRules()
-        'TanzilReader.CheckMutualExclusiveRules(False)
-        'TanzilReader.CheckMutualExclusiveRules(True)
+        'TanzilReader.CheckSequentialRules()
+        TanzilReader.CheckMutualExclusiveRules(False)
+        TanzilReader.CheckMutualExclusiveRules(True)
         Dim IndexToVerse As Integer()() = Nothing
         Dim Text As String = TanzilReader.QuranTextCombiner(CachedData.XMLDocMain, IndexToVerse, 2, 2)
         Dim IndVerses As String() = TanzilReader.QuranTextRangeLookup(2, 5, 0, 2, 0, 0)(0)

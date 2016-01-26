@@ -343,6 +343,7 @@ Public Class Arabic
         eResolveAmbiguity
         eLearningMode
         eObligatory
+        eSkip
     End Enum
     Public Delegate Function RuleFunction(Str As String, Scheme As String, LearningMode As Boolean) As String()
     Public Shared RuleFunctions As RuleFunction() = {
@@ -358,7 +359,8 @@ Public Class Arabic
         Function(Str As String, Scheme As String, LearningMode As Boolean) {Str.Chars(0) + GetSchemeGutteralFromString(Str.Remove(0, 1), Scheme, False)},
         Function(Str As String, Scheme As String, LearningMode As Boolean) {If(SchemeHasValue(GetSchemeValueFromSymbol(ArabicData.ArabicLetters(ArabicData.FindLetterBySymbol(Str.Chars(0))), Scheme) + GetSchemeValueFromSymbol(ArabicData.ArabicLetters(ArabicData.FindLetterBySymbol(Str.Chars(1))), Scheme), Scheme), Str.Chars(0) + "-" + Str.Chars(1), Str)},
         Function(Str As String, Scheme As String, LearningMode As Boolean) If(LearningMode, {Str, String.Empty}, {String.Empty, Str}),
-        Function(Str As String, Scheme As String, LearningMode As Boolean) {Str + "-" + Str + "(-" + Str(0) + ")"}
+        Function(Str As String, Scheme As String, LearningMode As Boolean) {Str + "-" + Str + "(-" + Str(0) + ")"},
+        Function(Str As String, Scheme As String, LearningMode As Boolean) New List(Of String)(Linq.Enumerable.Select(Str.ToCharArray(), Function(Ch As Char) CStr(Ch))).ToArray()
     }
     'Javascript does not support negative or positive lookbehind in regular expressions
     Public Shared AllowZeroLength As String() = {"helperfatha", "helperdamma", "helperkasra", "helperlparen", "helperrparen", "learningmode(helperslash,)", "learningmode(helperlbracket,)", "learningmode(helperrbracket,)", "learningmode(helperfathatan,)", "learningmode(helperteh,)"}
@@ -430,7 +432,8 @@ Public Class Arabic
         Dim Strings As New Generic.List(Of RenderArray.RenderText)
         For Count = 0 To RuleSet.Length - 1
             If Not RuleSet(Count).Evaluator Is Nothing Then
-                Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(ArabicString, RuleSet(Count).Match)
+                If Not RegExDict.ContainsKey(RuleSet(Count).Name) Then RegExDict.Add(RuleSet(Count).Name, New System.Text.RegularExpressions.Regex(RuleSet(Count).Match))
+                Dim Matches As System.Text.RegularExpressions.MatchCollection = RegExDict(RuleSet(Count).Name).Matches(ArabicString)
                 For MatchIndex As Integer = 0 To Matches.Count - 1
                     Dim SubCount As Integer
                     For SubCount = 0 To RuleSet(Count).Evaluator.Length - 1
@@ -691,13 +694,15 @@ Public Class Arabic
     Public Shared Function TransliterateContigWithRules(ByVal ArabicString As String, ByVal PreString As String, ByVal PostString As String, PreStop As Boolean, PostStop As Boolean, Scheme As String, OptionalStops As Integer(), RuleSet As IslamMetadata.IslamData.RuleMetaSet.RuleMetadataTranslation()) As String
         Return UnjoinContig(TransliterateWithRules(JoinContig(ArabicString, PreString, PostString, PreStop, PostStop, OptionalStops), Scheme, OptionalStops, False, RuleSet), PreString, PostString)
     End Function
+    Public Shared RegExDict As New Dictionary(Of String, System.Text.RegularExpressions.Regex)
     Public Shared Function TransliterateWithRules(ByVal ArabicString As String, Scheme As String, OptionalStops As Integer(), LearningMode As Boolean, RuleSet As IslamMetadata.IslamData.RuleMetaSet.RuleMetadataTranslation()) As String
         Dim Count As Integer
         Dim MetadataList As New Generic.List(Of RuleMetadata)
         DoErrorCheck(ArabicString)
         For Count = 0 To RuleSet.Length - 1
             If Not RuleSet(Count).Evaluator Is Nothing Then
-                Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(ArabicString, RuleSet(Count).Match)
+                If Not RegExDict.ContainsKey(RuleSet(Count).Name) Then RegExDict.Add(RuleSet(Count).Name, New System.Text.RegularExpressions.Regex(RuleSet(Count).Match))
+                Dim Matches As System.Text.RegularExpressions.MatchCollection = RegExDict(RuleSet(Count).Name).Matches(ArabicString)
                 For MatchIndex As Integer = 0 To Matches.Count - 1
                     Dim SubCount As Integer
                     For SubCount = 0 To RuleSet(Count).Evaluator.Length - 1
@@ -1504,6 +1509,7 @@ Public Class IslamData
                     If _RuleFunc = "eUpperCase" Then Return Arabic.RuleFuncs.eUpperCase
                     If _RuleFunc = "eResolveAmbiguity" Then Return Arabic.RuleFuncs.eResolveAmbiguity
                     If _RuleFunc = "eObligatory" Then Return Arabic.RuleFuncs.eObligatory
+                    If _RuleFunc = "eSkip" Then Return Arabic.RuleFuncs.eSkip
                     'If _RuleFunc = "eNone" Then
                     Return Arabic.RuleFuncs.eNone
                 End Get
@@ -4396,7 +4402,7 @@ Public Class TanzilReader
             UseBuckwalter = True
         End If
         Dim IndexToVerse As Integer()() = Nothing
-        CType(Doc.Root.PreviousNode, Xml.Linq.XElement).Value = CType(Doc.Root.PreviousNode, Xml.Linq.XElement).Value.Replace(QuranScriptNames(SrcScriptType), QuranScriptNames(ScriptType))
+        CType(Doc.Root.PreviousNode, Xml.Linq.XComment).Value = CType(Doc.Root.PreviousNode, Xml.Linq.XComment).Value.Replace(QuranScriptNames(SrcScriptType), QuranScriptNames(ScriptType))
         Verses = TanzilReader.GetQuranText(Doc, -1, -1, -1, -1)
         For Count As Integer = 0 To Verses.Count - 1
             Dim VerseAdjust As Integer = 0
@@ -4970,7 +4976,7 @@ Public Class TanzilReader
             For SubCount = 0 To Words.Length - 1
                 Dim NewData As New Xml.Linq.XElement("data")
                 NewData.Add(New Xml.Linq.XAttribute("name", "Quran" + CStr(Count + 1) + "." + CStr(SubCount + 1)))
-                NewData.Add(New Xml.Linq.XAttribute("xml:space", "preserve"))
+                NewData.Add(New Xml.Linq.XAttribute(Xml.Linq.XNamespace.Xml + "space", "preserve"))
                 Dim Inner As New Xml.Linq.XElement("value")
                 Inner.Value = Words(SubCount)
                 NewData.Add(Inner)
@@ -4987,7 +4993,7 @@ Public Class TanzilReader
         Dim Stream As IO.Stream = PortableMethods.FileIO.LoadStream(ResFilePath)
         Dim XMLDoc As Xml.Linq.XDocument = XML.Linq.XDocument.Load(Stream)
         Stream.Dispose()
-        Dim AllNodes As Xml.Linq.XElement() = Nothing '(New List(Of Xml.Linq.XElement)(System.Xml.XPath.Extensions.XPathSelectElements(XMLDoc.Root, "data/@name"))).ToArray()
+        Dim AllNodes As Xml.Linq.XElement() = (New List(Of Xml.Linq.XElement)(Linq.Enumerable.Where(XMLDoc.Root.Elements, Function(elem) elem.Name = "data" And Not elem.Attribute("name") Is Nothing))).ToArray()
         For Each Item As Xml.Linq.XElement In AllNodes
             If System.Text.RegularExpressions.Regex.Match(Item.Attribute("name").Value, "^Quran%d+\.%d+$").Success Then
                 Dim Line As Integer = Integer.Parse(Item.Attribute("name").Value.Substring(5, Item.Attribute("name").Value.IndexOf("."c) - 5))

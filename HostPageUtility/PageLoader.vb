@@ -21,6 +21,9 @@ Public Class WindowsWebSettings
             Return UtilityWeb.ConnectionData.FuncLibs
         End Get
     End Property
+    Public Function GetTemplatePath() As String Implements PortableSettings.GetTemplatePath
+        Return UtilityWeb.GetTemplatePath()
+    End Function
     Public Function GetFilePath(ByVal Path As String) As String Implements PortableSettings.GetFilePath
         Return CStr(If(IO.File.Exists(HttpContext.Current.Request.PhysicalApplicationPath + Path), HttpContext.Current.Request.PhysicalApplicationPath + Path, HttpContext.Current.Request.PhysicalApplicationPath + UtilityWeb.ConnectionData.AlternatePath + Path))
     End Function
@@ -1197,7 +1200,7 @@ Public Class PageLoader
     Public Sub New()
         Dim XMLNode As Xml.Linq.XElement
         Dim XMLChildNode As Xml.Linq.XElement
-        Dim Stream As IO.Stream = PortableMethods.FileIO.LoadStream(UtilityWeb.GetTemplatePath())
+        Dim Stream As IO.Stream = PortableMethods.FileIO.LoadStream(PortableMethods.Settings.GetTemplatePath())
         Dim XMLDoc As Xml.Linq.XDocument = Xml.Linq.XDocument.Load(Stream)
         Stream.Dispose()
         Title = Utility.ParseValue(XMLDoc.Root.Attribute("title"), String.Empty)

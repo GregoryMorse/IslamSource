@@ -135,6 +135,9 @@ public class WindowsRTSettings : XMLRender.PortableSettings
             return new string[] {"IslamMetadata"};
         }
     }
+    public string GetTemplatePath() {
+        return GetFilePath("metadata\\IslamSource.xml");
+    }
     public string GetFilePath(string Path)
     {
         return System.IO.Path.Combine(Windows.ApplicationModel.Package.Current.InstalledLocation.Path, Path);
@@ -260,7 +263,7 @@ namespace IslamSourceQuranViewer
 
         public MyListItem ListSelectedItem
         {
-            get { return _selectedItem.SelectedItem; }
+            get { return _selectedItem == null ? null : _selectedItem.SelectedItem; }
             set
             {
                 _selectedItem.SelectedItem = value;

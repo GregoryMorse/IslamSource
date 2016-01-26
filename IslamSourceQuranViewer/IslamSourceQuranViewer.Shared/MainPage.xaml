@@ -12,7 +12,7 @@
             <Setter Property="FontFamily" Value="Global User Interface"/>
         </Style>
         <CollectionViewSource x:Name="QuranDivisions" Source="{Binding Path=ViewModel.Items}"></CollectionViewSource>
-        <CollectionViewSource x:Name="QuranDivision" Source="{Binding Path=ViewModel.ListItems}"></CollectionViewSource>
+        <CollectionViewSource x:Name="QuranDivision" Source="{Binding Path=ViewModel.ListItems, Mode=TwoWay}"></CollectionViewSource>
     </Page.Resources>
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
@@ -35,7 +35,7 @@
             </ListBox.ItemTemplate>
         </ListBox>
         <!--Binding Converter={StaticResource converter},RelativeSource={RelativeSource AncestorType={x:Type ListView}}}-->
-        <ListBox x:Name="sectionListBox" Grid.Row="1" DataContext="" ItemsSource="{Binding Source={StaticResource QuranDivision}}" 
+        <ListBox x:Name="sectionListBox" Grid.Row="1" ItemsSource="{Binding Source={StaticResource QuranDivision}}" 
                         SelectedItem="{Binding Path=ViewModel.ListSelectedItem, Mode=TwoWay}"
                         Background="White" BorderBrush="{x:Null}" BorderThickness="0" FontFamily="Global User Interface" DoubleTapped="sectionListBox_DoubleTapped">
             <ListBox.ItemsPanel>

@@ -4,6 +4,7 @@ Public Interface PortableSettings
     ReadOnly Property CacheDirectory As String
     ReadOnly Property Resources As KeyValuePair(Of String, String())()
     ReadOnly Property FuncLibs As String()
+    Function GetTemplatePath() As String
     Function GetFilePath(ByVal Path As String) As String
     Function GetUName(Character As Char) As String
 End Interface
