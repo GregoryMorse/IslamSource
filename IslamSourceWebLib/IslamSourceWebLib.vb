@@ -25,7 +25,7 @@ End Class
 Public Class ArabicWeb
     Public Shared Sub CompileRegexes()
         Dim regexinfos As New List(Of System.Text.RegularExpressions.RegexCompilationInfo)
-        regexinfos.Add(New System.Text.RegularExpressions.RegexCompilationInfo(pattern, System.Text.RegularExpressions.RegexOptions.None, name:=, "TranslitRegexes", False))
+        'regexinfos.Add(New System.Text.RegularExpressions.RegexCompilationInfo(pattern, System.Text.RegularExpressions.RegexOptions.None, name:=, "TranslitRegexes", False))
         System.Text.RegularExpressions.Regex.CompileToAssembly(regexinfos.ToArray(), New Reflection.AssemblyName("IslamSourceRegex, Version=1.0.0.1001, Culture=neutral, PublicKeyToken=null"))
     End Sub
     Public Shared Function DecodeTranslitScheme() As String

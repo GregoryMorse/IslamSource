@@ -4995,13 +4995,13 @@ Public Class TanzilReader
         Stream.Dispose()
         Dim AllNodes As Xml.Linq.XElement() = (New List(Of Xml.Linq.XElement)(Linq.Enumerable.Where(XMLDoc.Root.Elements, Function(elem) elem.Name = "data" And Not elem.Attribute("name") Is Nothing))).ToArray()
         For Each Item As Xml.Linq.XElement In AllNodes
-            If System.Text.RegularExpressions.Regex.Match(Item.Attribute("name").Value, "^Quran%d+\.%d+$").Success Then
+            If System.Text.RegularExpressions.Regex.Match(Item.Attribute("name").Value, "^Quran\d+\.\d+$").Success Then
                 Dim Line As Integer = Integer.Parse(Item.Attribute("name").Value.Substring(5, Item.Attribute("name").Value.IndexOf("."c) - 5))
                 Dim Word As Integer = Integer.Parse(Item.Attribute("name").Value.Substring(Item.Attribute("name").Value.IndexOf("."c) + 1))
-                If W4WLines(Line - 1) Is Nothing Then
-                    W4WLines.Insert(Line, New List(Of String))
+                If W4WLines.Count < Line OrElse W4WLines(Line - 1) Is Nothing Then
+                    W4WLines.Insert(Line - 1, New List(Of String))
                 End If
-                W4WLines(Line - 1).Insert(Word - 1, CType(Item.FirstNode, Xml.Linq.XElement).Value)
+                W4WLines(Line - 1).Insert(Word - 1, New List(Of Xml.Linq.XElement)(Item.Elements).Item(0).Value)
             End If
         Next
         Utility.WriteAllLines(WordFilePath, New List(Of String)(Linq.Enumerable.Select(W4WLines, Function(Input As List(Of String)) String.Join("|"c, Input.ToArray()))).ToArray())

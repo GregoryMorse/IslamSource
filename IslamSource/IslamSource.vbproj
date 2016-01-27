@@ -123,6 +123,7 @@
     <EmbeddedResource Include="MultiLangRender.resx">
       <DependentUpon>MultiLangRender.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.hu.resx" />
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
@@ -157,11 +158,8 @@
       <Name>XMLRender</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <XliffResource Include="MultilingualResources\IslamSource.hu.xlf">
-      <SubType>Designer</SubType>
-    </XliffResource>
+    <XliffResource Include="MultilingualResources\IslamSource.hu.xlf" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Multilingual App Toolkit\Microsoft.Multilingual.ResxResources.targets" Label="MultilingualAppToolkit" Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\Multilingual App Toolkit\Microsoft.Multilingual.ResxResources.targets')" />
