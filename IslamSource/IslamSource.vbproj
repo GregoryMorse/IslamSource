@@ -123,6 +123,8 @@
     <EmbeddedResource Include="MultiLangRender.resx">
       <DependentUpon>MultiLangRender.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="W4WResources.hu.resx" />
+    <EmbeddedResource Include="W4WResources.resx" />
     <EmbeddedResource Include="My Project\Resources.hu.resx" />
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

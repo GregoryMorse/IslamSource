@@ -3118,10 +3118,20 @@ Public Class DocBuilder
     Public Shared Function GetRegExText(Str As String) As String
         Return System.Text.RegularExpressions.Regex.Replace(System.Text.RegularExpressions.Regex.Replace(Str, "\\u([0-9a-fA-F]{4})", Function(Match As System.Text.RegularExpressions.Match) ChrW(Integer.Parse(Match.Groups(1).Value, Globalization.NumberStyles.HexNumber))), "[\p{IsArabic}\p{IsArabicPresentationForms-A}\p{IsArabicPresentationForms-B}]+", ArabicData.LeftToRightEmbedding + "$&" + ArabicData.PopDirectionalFormatting)
     End Function
+    Public Shared W4WItems As Dictionary(Of String, String)
+    Public Shared Function GetW4WItem(ID As String) As String
+        If W4WItems Is Nothing Then
+            W4WItems = New Dictionary(Of String, String)
+            For Each Line As String In Utility.ReadAllLines(PortableMethods.Settings.GetFilePath("metadata\en.w4w.txt"))
+                W4WItems.Add(Line.Substring(0, Line.IndexOf("="c)), Line.Substring(Line.IndexOf("="c) + 1))
+            Next
+        End If
+        Return W4WItems(ID)
+    End Function
     Public Shared Sub DoErrorCheckBuckwalterText(Strings As String, TranslationID As String)
         If Strings = Nothing Then Return
         Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(Strings, "(.*?)(?:(\\\{)(.*?)(\\\})|$)", System.Text.RegularExpressions.RegexOptions.Singleline)
-        Dim EnglishByWord As String() = If(TranslationID = Nothing, {}, Utility.LoadResourceString("IslamInfo_" + TranslationID + "WordByWord").Split("|"c))
+        Dim EnglishByWord As String() = If(TranslationID = Nothing, {}, GetW4WItem("IslamInfo_" + TranslationID).Split("|"c))
         For MatchCount As Integer = 0 To Matches.Count - 1
             If Matches(MatchCount).Length <> 0 Then
                 If Matches(MatchCount).Groups(1).Length <> 0 Then

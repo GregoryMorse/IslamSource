@@ -148,6 +148,7 @@ public class WindowsRTSettings : XMLRender.PortableSettings
     }
     public static async System.Threading.Tasks.Task SavePathImageAsFile(int Width, int Height, string fileName, FrameworkElement element, bool UseRenderTarget = true)
     {
+#if WINDOWS_APP
         if (!UseRenderTarget)
         {
             double oldWidth = element.Width;
@@ -173,6 +174,7 @@ public class WindowsRTSettings : XMLRender.PortableSettings
         }
         else
         {
+#endif
             //Canvas cvs = new Canvas();
             //cvs.Width = Width;
             //cvs.Height = Height;
@@ -198,7 +200,9 @@ public class WindowsRTSettings : XMLRender.PortableSettings
             await be.FlushAsync();
             await stream.GetOutputStreamAt(0).FlushAsync();
             stream.Dispose();
+#if WINDOWS_APP
         }
+#endif
     }
 }
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238

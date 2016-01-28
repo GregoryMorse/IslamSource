@@ -366,7 +366,6 @@ if not exist ..\images mkdir ..\images
 if not exist ..\metadata mkdir ..\metadata
 if not exist ..\Scripts mkdir ..\Scripts
 xcopy /E /Y ..\..\HostPage\Content ..\Content
-xcopy /E /Y ..\..\HostPage\metadata ..\metadata
 xcopy /E /Y ..\..\HostPage\Scripts ..\Scripts
 xcopy /E /Y ..\..\files ..\files
 xcopy /E /Y ..\..\images ..\images
