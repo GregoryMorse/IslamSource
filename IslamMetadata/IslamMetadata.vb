@@ -3090,14 +3090,14 @@ Public Class DocBuilder
                 If Matches(MatchCount).Groups(2).Value.Length = 1 Then CurNum += 1
                 NumStack.Push(New Integer() {CurNum, If(Matches(MatchCount).Groups(2).Value.Length = 1, Matches(MatchCount).Groups(2).Index, Str.Length)})
             Else
-                Debug.Assert(NumStack.Count <> 0) 'Misbalance parenthesis is exception
+                Debug.Assert(NumStack.Count <> 0) 'Imbalance parenthesis is exception
                 Dim Nums As Integer() = NumStack.Pop()
                 For Count As Integer = Nums(1) To Matches(MatchCount).Groups(2).Index
                     If Nums(0) > ParenPos(Count) Then ParenPos(Count) = Nums(0)
                 Next
             End If
         Next
-        Debug.Assert(NumStack.Count = 0) 'Misbalance parenthesis is exception
+        Debug.Assert(NumStack.Count = 0) 'Imbalance parenthesis is exception
         'Proper coloring requires that parent-child and neighboring siblings have different colors
         'yet the current partial ordering does not define either of those relationships
         'must maintain neighbor and color list to properly color
