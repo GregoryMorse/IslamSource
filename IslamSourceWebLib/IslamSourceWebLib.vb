@@ -1023,7 +1023,7 @@ Public Class DocBuilderWeb
         Dim Renderer As New RenderArray(ID)
         If Strings = Nothing Then Return Renderer
         Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(Strings, "(.*?)(?:(\\\{)(.*?)(\\\})|$)", System.Text.RegularExpressions.RegexOptions.Singleline)
-        Dim EnglishByWord As String() = If(TranslationID = Nothing, {}, DocBuilder.GetW4WItem("IslamInfo_" + TranslationID).Split("|"c))
+        Dim EnglishByWord As String() = If(TranslationID = Nothing, {}, DocBuilder.GetW4WItem(TranslationID).Split("|"c))
         For MatchCount As Integer = 0 To Matches.Count - 1
             If Matches(MatchCount).Length <> 0 Then
                 If Matches(MatchCount).Groups(1).Length <> 0 Then

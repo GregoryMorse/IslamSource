@@ -3131,7 +3131,7 @@ Public Class DocBuilder
     Public Shared Sub DoErrorCheckBuckwalterText(Strings As String, TranslationID As String)
         If Strings = Nothing Then Return
         Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(Strings, "(.*?)(?:(\\\{)(.*?)(\\\})|$)", System.Text.RegularExpressions.RegexOptions.Singleline)
-        Dim EnglishByWord As String() = If(TranslationID = Nothing, {}, GetW4WItem("IslamInfo_" + TranslationID).Split("|"c))
+        Dim EnglishByWord As String() = If(TranslationID = Nothing, {}, GetW4WItem(TranslationID).Split("|"c))
         For MatchCount As Integer = 0 To Matches.Count - 1
             If Matches(MatchCount).Length <> 0 Then
                 If Matches(MatchCount).Groups(1).Length <> 0 Then
