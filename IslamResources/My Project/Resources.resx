@@ -7972,7 +7972,7 @@
     <value>Enter</value>
   </data>
   <data name="IslamInfo_EnteringMasjidilHaram" xml:space="preserve">
-    <value>O Allah! Thou art peace and peace is from Thee! Our Lord! Cause us to live with peace, and cause us to enter The House of Peace. Our Lord, Owner of Honour and Majesty, Thou art most Blessed and Exalted! O Allah! Grant me with Thou blessings and forgiveness, live me in it in the Name of Allah, and all Praise is to Allah, salawat and Salam to our Master Sayyidina Muhammad.</value>
+    <value>O Allah! Thou art peace and peace is from Thee! Our Lord! Cause us to live with peace, and cause us to enter The House of Peace. Our Lord, Owner of Honor and Majesty, Thou art most Blessed and Exalted! O Allah! Grant me with Thou blessings and forgiveness, live me in it in the Name of Allah, and all Praise is to Allah, salawat and Salam to our Master Sayyidina Muhammad.</value>
   </data>
   <data name="IslamInfo_EnteringMasjidilHaramLabel" xml:space="preserve">
     <value>Entering Masjidil Haram</value>
@@ -11004,11 +11004,11 @@
   <data name="IslamInfo_InterlockedFemaleAndMaleSign" xml:space="preserve">
     <value>Interlocked Female And Male Sign</value>
   </data>
-  <data name="IslamInfo_InterogativeParticle" xml:space="preserve">
-    <value>Interogative Particle</value>
+  <data name="IslamInfo_InterrogativeParticle" xml:space="preserve">
+    <value>Interrogative Particle</value>
   </data>
-  <data name="IslamInfo_Interogatives" xml:space="preserve">
-    <value>Interogatives</value>
+  <data name="IslamInfo_Interrogatives" xml:space="preserve">
+    <value>Interrogatives</value>
   </data>
   <data name="IslamInfo_Interpret" xml:space="preserve">
     <value>Interpret</value>
@@ -13719,8 +13719,8 @@
   <data name="IslamInfo_MajorImpurity" xml:space="preserve">
     <value>Major Impurity</value>
   </data>
-  <data name="IslamInfo_MajorIncorrectPronounciation" xml:space="preserve">
-    <value>Major Incorrect Pronounciation</value>
+  <data name="IslamInfo_MajorIncorrectPronunciation" xml:space="preserve">
+    <value>Major Incorrect Pronunciation</value>
   </data>
   <data name="IslamInfo_MajorPolythiesm" xml:space="preserve">
     <value>Major Polythiesm</value>
@@ -14343,8 +14343,8 @@
   <data name="IslamInfo_MinorAssociation" xml:space="preserve">
     <value>Minor Association</value>
   </data>
-  <data name="IslamInfo_MinorIncorrectPronounciation" xml:space="preserve">
-    <value>Minor Incorrect Pronounciation</value>
+  <data name="IslamInfo_MinorIncorrectPronunciation" xml:space="preserve">
+    <value>Minor Incorrect Pronunciation</value>
   </data>
   <data name="IslamInfo_MinorPilgrimage" xml:space="preserve">
     <value>Minor Pilgrimage</value>
@@ -15064,7 +15064,7 @@
     <value>The Book of Mosques and Places of Prayer</value>
   </data>
   <data name="IslamInfo_muslimBook7" xml:space="preserve">
-    <value>The Book of Prayer (Travellers)</value>
+    <value>The Book of Prayer (Travelers)</value>
   </data>
   <data name="IslamInfo_muslimBook8" xml:space="preserve">
     <value>The Book of Prayer (Friday)</value>
@@ -15870,26 +15870,26 @@
   <data name="IslamInfo_OfTheGuestForTheHost1" xml:space="preserve">
     <value>Of The Guest For The Host1</value>
   </data>
-  <data name="IslamInfo_OfTheResidentForTheTraveller" xml:space="preserve">
-    <value>Of The Resident For The Traveller</value>
+  <data name="IslamInfo_OfTheResidentForTheTraveler" xml:space="preserve">
+    <value>Of The Resident For The Traveler</value>
   </data>
-  <data name="IslamInfo_OfTheResidentForTheTraveller1" xml:space="preserve">
-    <value>Of The Resident For The Traveller1</value>
+  <data name="IslamInfo_OfTheResidentForTheTraveler1" xml:space="preserve">
+    <value>Of The Resident For The Traveler1</value>
   </data>
-  <data name="IslamInfo_OfTheResidentForTheTraveller2" xml:space="preserve">
-    <value>Of The Resident For The Traveller2</value>
+  <data name="IslamInfo_OfTheResidentForTheTraveler2" xml:space="preserve">
+    <value>Of The Resident For The Traveler2</value>
   </data>
-  <data name="IslamInfo_OfTheTravellerAsDawnApproaches" xml:space="preserve">
-    <value>Of The Traveller As Dawn Approaches</value>
+  <data name="IslamInfo_OfTheTravelerAsDawnApproaches" xml:space="preserve">
+    <value>Of The Traveler As Dawn Approaches</value>
   </data>
-  <data name="IslamInfo_OfTheTravellerAsDawnApproaches1" xml:space="preserve">
-    <value>Of The Traveller As Dawn Approaches1</value>
+  <data name="IslamInfo_OfTheTravelerAsDawnApproaches1" xml:space="preserve">
+    <value>Of The Traveler As Dawn Approaches1</value>
   </data>
-  <data name="IslamInfo_OfTheTravellerForTheResident" xml:space="preserve">
-    <value>Of The Traveller For The Resident</value>
+  <data name="IslamInfo_OfTheTravelerForTheResident" xml:space="preserve">
+    <value>Of The Traveler For The Resident</value>
   </data>
-  <data name="IslamInfo_OfTheTravellerForTheResident1" xml:space="preserve">
-    <value>Of The Traveller For The Resident1</value>
+  <data name="IslamInfo_OfTheTravelerForTheResident1" xml:space="preserve">
+    <value>Of The Traveler For The Resident1</value>
   </data>
   <data name="IslamInfo_OftReturning" xml:space="preserve">
     <value>Oft-returning</value>
@@ -16068,8 +16068,8 @@
   <data name="IslamInfo_OriginalOf" xml:space="preserve">
     <value>Original Of</value>
   </data>
-  <data name="IslamInfo_OrInterogative" xml:space="preserve">
-    <value>Or Interogative</value>
+  <data name="IslamInfo_OrInterrogative" xml:space="preserve">
+    <value>Or Interrogative</value>
   </data>
   <data name="IslamInfo_OriyaAiLengthMark" xml:space="preserve">
     <value>Oriya Ai Length Mark</value>
@@ -21816,8 +21816,8 @@
   <data name="IslamInfo_TheHolderOfSupremeAuthority" xml:space="preserve">
     <value>The Holder of Supreme Authority</value>
   </data>
-  <data name="IslamInfo_TheHonourerBestower" xml:space="preserve">
-    <value>The Honourer-Bestower</value>
+  <data name="IslamInfo_TheHonorerBestower" xml:space="preserve">
+    <value>The Honorer-Bestower</value>
   </data>
   <data name="IslamInfo_TheImpartialJudge" xml:space="preserve">
     <value>The Impartial Judge</value>
@@ -22032,8 +22032,8 @@
   <data name="IslamInfo_ThePointingOne" xml:space="preserve">
     <value>The Pointing One</value>
   </data>
-  <data name="IslamInfo_ThePossessorOfMajestyAndHonour" xml:space="preserve">
-    <value>The Possessor of Majesty and Honour</value>
+  <data name="IslamInfo_ThePossessorOfMajestyAndHonor" xml:space="preserve">
+    <value>The Possessor of Majesty and Honor</value>
   </data>
   <data name="IslamInfo_ThePossessorOfTwoHorns" xml:space="preserve">
     <value>The Possessor Of Two Horns</value>
@@ -22095,8 +22095,8 @@
   <data name="IslamInfo_TheRecognizerTheAllKnowingOne" xml:space="preserve">
     <value>The Recognizer The All Knowing One</value>
   </data>
-  <data name="IslamInfo_TheRecognizerTheBestowerTheOmnipotentOneTheContinuousCreatorTheOwnerTheTotalProviderTheUniversalTrusteeTheWatchfulOneTheDoerOfGoodTheReckoningOneTheOneWhoCuresTheGentleTheGiverTheSustainingOneTheLordTheGoodTheImpartialJudgeTheSupremeInHonourTheFountainHeadOfTruth" xml:space="preserve">
-    <value>The Recognizer The Bestower The Omnipotent One The Continuous Creator The Owner The Total Provider The Universal Trustee The Watchful One The Doer Of Good The Reckoning One The One Who Cures The Gentle The Giver The Sustaining One The Lord The Good The Impartial Judge The Supreme In Honour The Fountain Head Of Truth</value>
+  <data name="IslamInfo_TheRecognizerTheBestowerTheOmnipotentOneTheContinuousCreatorTheOwnerTheTotalProviderTheUniversalTrusteeTheWatchfulOneTheDoerOfGoodTheReckoningOneTheOneWhoCuresTheGentleTheGiverTheSustainingOneTheLordTheGoodTheImpartialJudgeTheSupremeInHonorTheFountainHeadOfTruth" xml:space="preserve">
+    <value>The Recognizer The Bestower The Omnipotent One The Continuous Creator The Owner The Total Provider The Universal Trustee The Watchful One The Doer Of Good The Reckoning One The One Who Cures The Gentle The Giver The Sustaining One The Lord The Good The Impartial Judge The Supreme In Honor The Fountain Head Of Truth</value>
   </data>
   <data name="IslamInfo_TheRecognizerTheClementOne" xml:space="preserve">
     <value>The Recognizer The Clement One</value>
@@ -22242,8 +22242,8 @@
   <data name="IslamInfo_TheSupremeBestower" xml:space="preserve">
     <value>The Supreme Bestower</value>
   </data>
-  <data name="IslamInfo_TheSupremeInHonour" xml:space="preserve">
-    <value>The Supreme In Honour</value>
+  <data name="IslamInfo_TheSupremeInHonor" xml:space="preserve">
+    <value>The Supreme In Honor</value>
   </data>
   <data name="IslamInfo_TheSupremeOwnerOfSovereigntyAndGreatestThingsAndSupremeGlory" xml:space="preserve">
     <value>The Supreme Owner Of Sovereignty And Greatest Things And Supreme Glory</value>
@@ -24777,8 +24777,8 @@
   <data name="IslamInfo_Wherever" xml:space="preserve">
     <value>Wherever</value>
   </data>
-  <data name="IslamInfo_WhereverInterogative" xml:space="preserve">
-    <value>Wherever Interogative</value>
+  <data name="IslamInfo_WhereverInterrogative" xml:space="preserve">
+    <value>Wherever Interrogative</value>
   </data>
   <data name="IslamInfo_Which" xml:space="preserve">
     <value>Which</value>
@@ -26634,8 +26634,8 @@
   <data name="IslamInfo_InterestBuster" xml:space="preserve">
     <value>Interest Buster</value>
   </data>
-  <data name="IslamInfo_TheMostBenificentTheMostMerciful" xml:space="preserve">
-    <value>The Most Benificent The Most Merciful</value>
+  <data name="IslamInfo_TheMostBeneficentTheMostMerciful" xml:space="preserve">
+    <value>The Most Beneficent The Most Merciful</value>
   </data>
   <data name="IslamInfo_TheMostMercifulTheOneWhoseHelpIsSought" xml:space="preserve">
     <value>The Most Merciful The One Whose Help Is Sought</value>
@@ -26887,7 +26887,7 @@
     <value>Words Specifically For The Hafs Recitation</value>
   </data>
   <data name="IslamInfo_FormationsOfDifferentlyVoweledLetters" xml:space="preserve">
-    <value>Formations Of Differently Voweled Letters</value>
+    <value>Formations Of Differently Vowelled Letters</value>
   </data>
   <data name="IslamInfo_ProstrationsOfReading" xml:space="preserve">
     <value>Prostrations Of Reading</value>

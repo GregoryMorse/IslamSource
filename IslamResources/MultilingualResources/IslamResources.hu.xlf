@@ -35715,8 +35715,8 @@
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Kifejezetten a Hafs szavalat a szavakkal</target>
         </trans-unit>
         <trans-unit id="IslamInfo_FormationsOfDifferentlyVoweledLetters" translate="yes" xml:space="preserve">
-          <source>Formations Of Differently Voweled Letters</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Formációk eltérő Voweled levelek</target>
+          <source>Formations Of Differently Vowelled Letters</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Formációk eltérő Vowelled levelek</target>
         </trans-unit>
         <trans-unit id="IslamInfo_ProstrationsOfReading" translate="yes" xml:space="preserve">
           <source>Prostrations Of Reading</source>
