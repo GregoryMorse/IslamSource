@@ -128,7 +128,6 @@
     <Content Include="metadata\am.sadiq.txt" />
     <Content Include="metadata\ar.jalalayn.txt" />
     <Content Include="metadata\ar.muyassar.txt" />
-    <Content Include="metadata\ArabicShaping.txt" />
     <Content Include="metadata\az.mammadaliyev.txt" />
     <Content Include="metadata\az.musayev.txt" />
     <Content Include="metadata\ber.mensur.txt" />

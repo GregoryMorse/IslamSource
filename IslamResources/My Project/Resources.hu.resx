@@ -10899,12 +10899,6 @@
   <data name="IslamInfo_InterlockedFemaleAndMaleSign" xml:space="preserve">
     <value>Interlocked Female And Male Sign</value>
   </data>
-  <data name="IslamInfo_InterogativeParticle" xml:space="preserve">
-    <value>Kérdő részecske</value>
-  </data>
-  <data name="IslamInfo_Interogatives" xml:space="preserve">
-    <value>Interogatives</value>
-  </data>
   <data name="IslamInfo_Interpret" xml:space="preserve">
     <value>Értelmezése</value>
   </data>
@@ -13614,9 +13608,6 @@
   <data name="IslamInfo_MajorImpurity" xml:space="preserve">
     <value>Jelentős szennyezettség</value>
   </data>
-  <data name="IslamInfo_MajorIncorrectPronounciation" xml:space="preserve">
-    <value>Nagy helytelen kiejtés</value>
-  </data>
   <data name="IslamInfo_MajorPolythiesm" xml:space="preserve">
     <value>Nagy Polythiesm</value>
   </data>
@@ -14237,9 +14228,6 @@
   </data>
   <data name="IslamInfo_MinorAssociation" xml:space="preserve">
     <value>Kisebb Egyesület</value>
-  </data>
-  <data name="IslamInfo_MinorIncorrectPronounciation" xml:space="preserve">
-    <value>Kisebb helytelen kiejtés</value>
   </data>
   <data name="IslamInfo_MinorPilgrimage" xml:space="preserve">
     <value>Kisebb zarándoklat</value>
@@ -15765,27 +15753,6 @@
   <data name="IslamInfo_OfTheGuestForTheHost1" xml:space="preserve">
     <value>A vendég a Host1</value>
   </data>
-  <data name="IslamInfo_OfTheResidentForTheTraveller" xml:space="preserve">
-    <value>A a belföldi illetőségű az utas részére</value>
-  </data>
-  <data name="IslamInfo_OfTheResidentForTheTraveller1" xml:space="preserve">
-    <value>A rezidensek számára a Traveller1</value>
-  </data>
-  <data name="IslamInfo_OfTheResidentForTheTraveller2" xml:space="preserve">
-    <value>A rezidensek számára a Traveller2</value>
-  </data>
-  <data name="IslamInfo_OfTheTravellerAsDawnApproaches" xml:space="preserve">
-    <value>Az utazó, mint Hajnal</value>
-  </data>
-  <data name="IslamInfo_OfTheTravellerAsDawnApproaches1" xml:space="preserve">
-    <value>Az utazó, mivel Dawn Approaches1</value>
-  </data>
-  <data name="IslamInfo_OfTheTravellerForTheResident" xml:space="preserve">
-    <value>Az utas a rezidens</value>
-  </data>
-  <data name="IslamInfo_OfTheTravellerForTheResident1" xml:space="preserve">
-    <value>Az utas számára a Resident1</value>
-  </data>
   <data name="IslamInfo_OftReturning" xml:space="preserve">
     <value>Gyakran visszatérő</value>
   </data>
@@ -15962,9 +15929,6 @@
   </data>
   <data name="IslamInfo_OriginalOf" xml:space="preserve">
     <value>Original Of</value>
-  </data>
-  <data name="IslamInfo_OrInterogative" xml:space="preserve">
-    <value>Vagy a kérdő</value>
   </data>
   <data name="IslamInfo_OriyaAiLengthMark" xml:space="preserve">
     <value>Oriya Ai Length Mark</value>
@@ -21711,9 +21675,6 @@
   <data name="IslamInfo_TheHolderOfSupremeAuthority" xml:space="preserve">
     <value>A Legfelsőbb hatóság jogosult</value>
   </data>
-  <data name="IslamInfo_TheHonourerBestower" xml:space="preserve">
-    <value>A Honourer-megőrzője</value>
-  </data>
   <data name="IslamInfo_TheImpartialJudge" xml:space="preserve">
     <value>A pártatlan bírónak</value>
   </data>
@@ -21927,9 +21888,6 @@
   <data name="IslamInfo_ThePointingOne" xml:space="preserve">
     <value>A mutató egy</value>
   </data>
-  <data name="IslamInfo_ThePossessorOfMajestyAndHonour" xml:space="preserve">
-    <value>A tulajdonos a felség és a becsület</value>
-  </data>
   <data name="IslamInfo_ThePossessorOfTwoHorns" xml:space="preserve">
     <value>A két szarv birtokosa</value>
   </data>
@@ -21989,9 +21947,6 @@
   </data>
   <data name="IslamInfo_TheRecognizerTheAllKnowingOne" xml:space="preserve">
     <value>A felismerő az összes ismerete egy</value>
-  </data>
-  <data name="IslamInfo_TheRecognizerTheBestowerTheOmnipotentOneTheContinuousCreatorTheOwnerTheTotalProviderTheUniversalTrusteeTheWatchfulOneTheDoerOfGoodTheReckoningOneTheOneWhoCuresTheGentleTheGiverTheSustainingOneTheLordTheGoodTheImpartialJudgeTheSupremeInHonourTheFountainHeadOfTruth" xml:space="preserve">
-    <value>A felismerő megőrzője a mindenható egy folyamatos alkotója a tulajdonosa az összes szolgáltató az egyetemes Trustee éber az egyik a tettes a jó számítása egy, aki gyógyít a szelíd az ajándékozó az önfenntartó egy az Úr, a jó a pártatlan bíró a legfelsőbb igazság kút feje tiszteletére</value>
   </data>
   <data name="IslamInfo_TheRecognizerTheClementOne" xml:space="preserve">
     <value>A felismerő a Kelemen egy</value>
@@ -22136,9 +22091,6 @@
   </data>
   <data name="IslamInfo_TheSupremeBestower" xml:space="preserve">
     <value>A Legfelsőbb megőrzője</value>
-  </data>
-  <data name="IslamInfo_TheSupremeInHonour" xml:space="preserve">
-    <value>A Legfelsőbb tiszteletére</value>
   </data>
   <data name="IslamInfo_TheSupremeOwnerOfSovereigntyAndGreatestThingsAndSupremeGlory" xml:space="preserve">
     <value>A legfőbb tulajdonosa a szuverenitás, a legnagyobb dolog és a Legfelsőbb dicsőség</value>
@@ -24672,9 +24624,6 @@
   <data name="IslamInfo_Wherever" xml:space="preserve">
     <value>Bárhol</value>
   </data>
-  <data name="IslamInfo_WhereverInterogative" xml:space="preserve">
-    <value>Bárhol Kérdő</value>
-  </data>
   <data name="IslamInfo_Which" xml:space="preserve">
     <value>Amely</value>
   </data>
@@ -26540,9 +26489,6 @@
   </data>
   <data name="IslamInfo_InterestBuster" xml:space="preserve">
     <value>Kamat Buster</value>
-  </data>
-  <data name="IslamInfo_TheMostBenificentTheMostMerciful" xml:space="preserve">
-    <value>A legtöbb Benificent a legkegyelmesebb</value>
   </data>
   <data name="IslamInfo_TheMostMercifulTheOneWhoseHelpIsSought" xml:space="preserve">
     <value>A legtöbb irgalmas az egyik, akinek segítségével kérik</value>

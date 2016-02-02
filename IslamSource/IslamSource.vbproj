@@ -111,21 +111,13 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="frmMain.hu.resx">
-      <DependentUpon>frmMain.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MultiLangRender.hu.resx">
-      <DependentUpon>MultiLangRender.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MultiLangRender.resx">
       <DependentUpon>MultiLangRender.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="W4WResources.hu.resx" />
     <EmbeddedResource Include="W4WResources.resx" />
-    <EmbeddedResource Include="My Project\Resources.hu.resx" />
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
@@ -161,7 +153,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <XliffResource Include="MultilingualResources\IslamSource.hu.xlf" />
+    <Folder Include="MultilingualResources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Multilingual App Toolkit\Microsoft.Multilingual.ResxResources.targets" Label="MultilingualAppToolkit" Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\Multilingual App Toolkit\Microsoft.Multilingual.ResxResources.targets')" />

@@ -4656,7 +4656,7 @@ Public Class TanzilReader
         Dim Text As String = QuranTextCombiner(CachedData.XMLDocMain, IndexToVerse)
         Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(Text, CachedData.TranslateRegEx(CachedData.IslamData.VerificationSet(VerIndex).Match, True))
         Dim CheckMatches As New Dictionary(Of Integer, String)
-        'Debug.Print(CStr(Matches.Count))
+        Debug.WriteLine(CStr(Matches.Count))
         For Count = 0 To Matches.Count - 1
             If Matches(Count).Length = 0 Then Continue For 'Avoid zero width matches for end of string anchors
             For LenCount = 0 To Matches(Count).Length - 1
@@ -4675,17 +4675,17 @@ Public Class TanzilReader
             Next
             If MetaCount = CachedData.RuleMetas("UthmaniQuran").Length Then
                 bVerSet = True
-                For MetaCount = 0 To CachedData.RuleMetas("UthmaniQuran").Length - 1
-                    If CachedData.IslamData.VerificationSet(VerIndex).MetaRules(MainCount) = CachedData.RuleMetas("UthmaniQuran")(MetaCount).Name Then
+                For MetaCount = 0 To CachedData.RuleMetas("Verification").Length - 1
+                    If CachedData.IslamData.VerificationSet(VerIndex).MetaRules(MainCount) = CachedData.RuleMetas("Verification")(MetaCount).Name Then
                         Exit For
                     End If
                 Next
             End If
-            Matches = System.Text.RegularExpressions.Regex.Matches(Text, If(bVerSet, CachedData.RuleMetas("UthmaniQuran")(MetaCount).Match, CachedData.RuleMetas("UthmaniQuran")(MetaCount).Match))
+            Matches = System.Text.RegularExpressions.Regex.Matches(Text, If(bVerSet, CachedData.RuleMetas("Verification")(MetaCount).Match, CachedData.RuleMetas("UthmaniQuran")(MetaCount).Match))
             Dim SieveCount As Integer = 0
             For Count = 0 To Matches.Count - 1
-                Dim MetaRules As String() = If(bVerSet, CachedData.RuleMetas("UthmaniQuran")(MetaCount).Evaluator, CachedData.RuleMetas("UthmaniQuran")(MetaCount).Evaluator)
-                'If Count = 0 AndAlso Matches(Count).Groups.Count <> MetaRules.Length + 1 Then Debug.Print("Discrepency in metadata:" + CStr(MainCount + 1) + ":" + CStr(MetaRules.Length) + ":Got:" + CStr(Matches(Count).Groups.Count - 1))
+                Dim MetaRules As String() = If(bVerSet, CachedData.RuleMetas("Verification")(MetaCount).Evaluator, CachedData.RuleMetas("UthmaniQuran")(MetaCount).Evaluator)
+                If Count = 0 AndAlso Matches(Count).Groups.Count <> MetaRules.Length + 1 Then Debug.WriteLine("Discrepency in metadata:" + CStr(MainCount + 1) + ":" + CStr(MetaRules.Length) + ":Got:" + CStr(Matches(Count).Groups.Count - 1))
                 Dim bSieve As Boolean = False
                 For SubCount = 0 To MetaRules.Length - 1
                     If Array.IndexOf(MetaRules(SubCount).Split("|"c), If(bAssumeContinue, "optionalstop", "optionalnotstop")) <> -1 And Matches(Count).Groups(SubCount + 1).Success Then
@@ -4694,7 +4694,7 @@ Public Class TanzilReader
                         For CheckCount = 1 To SubCount
                             CheckLen += Matches(Count).Groups(CheckCount).Length
                         Next
-                        'If Matches(Count).Index + CheckLen <> Matches(Count).Groups(SubCount + 1).Index Then Debug.Print("Non-Sequential Capture:" + CStr(MainCount + 1) + ":" + Arabic.TransliterateToScheme(Text.Substring(Math.Max(0, Matches(Count).Groups(SubCount + 1).Index - 15), 30), ArabicData.TranslitScheme.Literal, String.Empty, Nothing))
+                        If Matches(Count).Index + CheckLen <> Matches(Count).Groups(SubCount + 1).Index Then Debug.WriteLine("Non-Sequential Capture:" + CStr(MainCount + 1) + ":" + Arabic.TransliterateToScheme(Text.Substring(Math.Max(0, Matches(Count).Groups(SubCount + 1).Index - 15), 30), ArabicData.TranslitScheme.Literal, String.Empty, Nothing))
                         bSieve = True
                         Exit For
                     End If
@@ -4703,15 +4703,15 @@ Public Class TanzilReader
                     For SubCount = 0 To MetaRules.Length - 1
                         If Array.IndexOf(MatchMetadata, MetaRules(SubCount).Split("|"c)(0)) <> -1 And Matches(Count).Groups(SubCount + 1).Success Then
                             'If Verify.Length <> 0 And Not System.Text.RegularExpressions.Regex.Match(Matches(Count).Groups(SubCount + 1).Value, Verify(MainCount - 1)).Success Then
-                            '    Debug.Print("Erroneous Match: " + Check(MainCount, 0) + " " + Arabic.TransliterateToScheme(Text.Substring(Math.Max(0, Matches(Count).Groups(SubCount + 1).Index - 15), 30), ArabicData.TranslitScheme.Literal, String.Empty))
-                            '    'Debug.Print(TextPositionToMorphology(Text, Matches(Count).Groups(SubCount + 1).Index))
+                            '    Debug.WriteLine("Erroneous Match: " + Check(MainCount, 0) + " " + Arabic.TransliterateToScheme(Text.Substring(Math.Max(0, Matches(Count).Groups(SubCount + 1).Index - 15), 30), ArabicData.TranslitScheme.Literal, String.Empty, Nothing))
+                            '    'Debug.WriteLine(TextPositionToMorphology(Text, Matches(Count).Groups(SubCount + 1).Index))
                             'End If
                             'check continuity in previous patterns
                             Dim CheckLen As Integer = 0
                             For CheckCount = 1 To SubCount
                                 CheckLen += Matches(Count).Groups(CheckCount).Length
                             Next
-                            'If Matches(Count).Index + CheckLen <> Matches(Count).Groups(SubCount + 1).Index Then Debug.Print("Non-Sequential Capture:" + CStr(MainCount + 1) + ":" + Arabic.TransliterateToScheme(Text.Substring(Math.Max(0, Matches(Count).Groups(SubCount + 1).Index - 15), 30), ArabicData.TranslitScheme.Literal, String.Empty, Nothing))
+                            If Matches(Count).Index + CheckLen <> Matches(Count).Groups(SubCount + 1).Index Then Debug.WriteLine("Non-Sequential Capture:" + CStr(MainCount + 1) + ":" + Arabic.TransliterateToScheme(Text.Substring(Math.Max(0, Matches(Count).Groups(SubCount + 1).Index - 15), 30), ArabicData.TranslitScheme.Literal, String.Empty, Nothing))
                             For LenCount = 0 To Matches(Count).Groups(SubCount + 1).Length - 1
                                 If Not CheckMatches.ContainsKey(Matches(Count).Groups(SubCount + 1).Index + LenCount) Then CheckMatches.Add(Matches(Count).Groups(SubCount + 1).Index + LenCount, String.Empty)
                                 CheckMatches(Matches(Count).Groups(SubCount + 1).Index + LenCount) += Convert.ToString(MainCount + 1, 16)
@@ -4721,14 +4721,14 @@ Public Class TanzilReader
                     Next
                 End If
             Next
-            'Debug.Print(CStr(SieveCount))
+            Debug.WriteLine(CStr(SieveCount))
         Next
         Dim Keys(CheckMatches.Keys.Count - 1) As Integer
         CheckMatches.Keys.CopyTo(Keys, 0)
         Array.Sort(Keys)
         For Count = 0 To Keys.Length - 1
             If CheckMatches(Keys(Count)).Length <> 2 Then
-                'Debug.Print(CStr(Keys(Count)) + ":" + CheckMatches(Keys(Count)) + ":" + Arabic.TransliterateToScheme(Text(Keys(Count)), ArabicData.TranslitScheme.Literal, String.Empty, Nothing) + ":" + Arabic.TransliterateToScheme(Text.Substring(Math.Max(0, Keys(Count) - 15), 30), ArabicData.TranslitScheme.Literal, String.Empty, Nothing))
+                Debug.WriteLine(CStr(Keys(Count)) + ":" + CheckMatches(Keys(Count)) + ":" + Arabic.TransliterateToScheme(Text(Keys(Count)), ArabicData.TranslitScheme.Literal, String.Empty, Nothing) + ":" + Arabic.TransliterateToScheme(Text.Substring(Math.Max(0, Keys(Count) - 15), 30), ArabicData.TranslitScheme.Literal, String.Empty, Nothing))
             End If
         Next
     End Sub
