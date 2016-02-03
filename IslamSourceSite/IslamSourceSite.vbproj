@@ -82,216 +82,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="bin\prv.key" />
-    <Content Include="Content\jquery.calendars.picker.css" />
-    <Content Include="Content\Styles.css" />
-    <Content Include="files\KFC_naskh.eot" />
-    <Content Include="files\KFC_naskh.otf" />
-    <Content Include="files\me_quran.eot" />
-    <Content Include="files\me_quran.ttf" />
-    <Content Include="files\PDMS_Saleem.eot" />
-    <Content Include="files\PDMS_Saleem.ttf" />
-    <Content Include="files\Scheherazade.eot" />
-    <Content Include="files\Scheherazade.ttf" />
-    <Content Include="files\islamic.ttf" />
-    <Content Include="files\51AHB.TTF" />
-    <Content Include="files\5BISMILI.TTF" />
-    <Content Include="files\5BISMILU.TTF" />
-    <Content Include="files\aga-arabesque.ttf" />
-    <Content Include="files\AGA_Islamic_Phrases.eot" />
-    <Content Include="files\AGA_Islamic_Phrases.TTF" />
-    <Content Include="files\Asmaul-Husna_1.ttf" />
-    <Content Include="files\Asmaul-Husna_2.ttf" />
-    <Content Include="files\Besmellah.ttf" />
-    <Content Include="files\Besmellah_1.ttf" />
-    <Content Include="files\Besmellah_2.ttf" />
-    <Content Include="files\Besmellah_3.ttf" />
-    <Content Include="files\Besmellah_4.ttf" />
-    <Content Include="files\Besmellah_5.ttf" />
-    <Content Include="files\Farsi.ttf" />
-    <Content Include="files\MCS Aljalalah.TTF" />
-    <Content Include="files\MCS Basmalah italic.TTF" />
-    <Content Include="files\MCS Mix.TTF" />
-    <Content Include="files\MCS P_Mohammad.TTF" />
-    <Content Include="files\PageQ3.TTf" />
-    <Content Include="files\Quranic.ttf" />
-    <Content Include="files\SHIA.TTF" />
-    <Content Include="files\Symbols1_Ver02.otf" />
-    <Content Include="files\Tulth.ttf" />
+    <Content Include="..\HostPage\Content\*.*"><Link>Content\%(RecursiveDir)%(FileName)</Link></Content>
     <None Include="islamsource.pubxml" />
-    <Content Include="host.aspx" />
-    <Content Include="images\islamsource.jpg" />
-    <Content Include="images\islamsourcehover.jpg" />
-    <Content Include="images\loading-h.gif" />
-    <Content Include="images\stars.png" />
-    <Content Include="images\stars_change.png" />
-    <Content Include="images\stars_full.png" />
-    <Content Include="metadata\am.sadiq.txt" />
-    <Content Include="metadata\ar.jalalayn.txt" />
-    <Content Include="metadata\ar.muyassar.txt" />
-    <Content Include="metadata\az.mammadaliyev.txt" />
-    <Content Include="metadata\az.musayev.txt" />
-    <Content Include="metadata\ber.mensur.txt" />
-    <Content Include="metadata\bg.theophanov.txt" />
-    <Content Include="metadata\bn.bengali.txt" />
-    <Content Include="metadata\bn.hoque.txt" />
-    <Content Include="metadata\bs.korkut.txt" />
-    <Content Include="metadata\bs.mlivo.txt" />
-    <Content Include="metadata\bukhari-data.xml" />
-    <Content Include="metadata\bukhari.en-muhsin_khan-data.xml" />
-    <Content Include="metadata\bukhari.en-muhsin_khan.txt" />
-    <Content Include="metadata\bukhari.xml" />
-    <Content Include="metadata\cs.hrbek.txt" />
-    <Content Include="metadata\cs.nykl.txt" />
-    <Content Include="metadata\dawood-data.xml" />
-    <Content Include="metadata\dawood.en-ahmad_hasan-data.xml" />
-    <Content Include="metadata\dawood.en-ahmad_hasan.txt" />
-    <Content Include="metadata\dawood.xml" />
-    <Content Include="metadata\de.aburida.txt" />
-    <Content Include="metadata\de.bubenheim.txt" />
-    <Content Include="metadata\de.khoury.txt" />
-    <Content Include="metadata\de.zaidan.txt" />
-    <Content Include="metadata\dv.divehi.txt" />
-    <Content Include="metadata\en-maulana_ali.txt" />
-    <Content Include="metadata\en.ahmedali.txt" />
-    <Content Include="metadata\en.ahmedraza.txt" />
-    <Content Include="metadata\en.arberry.txt" />
-    <Content Include="metadata\en.asad.txt" />
-    <Content Include="metadata\en.daryabadi.txt" />
-    <Content Include="metadata\en.hilali.txt" />
-    <Content Include="metadata\en.itani.txt" />
-    <Content Include="metadata\en.maududi.txt" />
-    <Content Include="metadata\en.pickthall.txt" />
-    <Content Include="metadata\en.qarai.txt" />
-    <Content Include="metadata\en.qaribullah.txt" />
-    <Content Include="metadata\en.sahih.txt" />
-    <Content Include="metadata\en.sarwar.txt" />
-    <Content Include="metadata\en.shakir.txt" />
-    <Content Include="metadata\en.transliteration.txt" />
-    <Content Include="metadata\en.w4w.qurandev.txt" />
-    <Content Include="metadata\en.w4w.shehnazshaikh.txt" />
-    <Content Include="metadata\en.w4w.tanzil.txt" />
-    <Content Include="metadata\en.wahiduddin.txt" />
-    <Content Include="metadata\en.yusufali.txt" />
-    <Content Include="metadata\es.asad.txt" />
-    <Content Include="metadata\es.bornez.txt" />
-    <Content Include="metadata\es.cortes.txt" />
-    <Content Include="metadata\es.garcia.txt" />
-    <Content Include="metadata\fa.ansarian.txt" />
-    <Content Include="metadata\fa.ayati.txt" />
-    <Content Include="metadata\fa.bahrampour.txt" />
-    <Content Include="metadata\fa.fooladvand.txt" />
-    <Content Include="metadata\fa.ghomshei.txt" />
-    <Content Include="metadata\fa.khorramdel.txt" />
-    <Content Include="metadata\fa.khorramshahi.txt" />
-    <Content Include="metadata\fa.makarem.txt" />
-    <Content Include="metadata\fa.moezzi.txt" />
-    <Content Include="metadata\fa.mojtabavi.txt" />
-    <Content Include="metadata\fa.sadeqi.txt" />
-    <Content Include="metadata\fr.hamidullah.txt" />
-    <Content Include="metadata\ha.gumi.txt" />
-    <Content Include="metadata\HansWeir.txt" />
-    <Content Include="metadata\hi.farooq.txt" />
-    <Content Include="metadata\hi.hindi.txt" />
-    <Content Include="metadata\id.indonesian.txt" />
-    <Content Include="metadata\id.jalalayn.txt" />
-    <Content Include="metadata\id.muntakhab.txt" />
-    <Content Include="metadata\id.w4w.txt" />
-    <Content Include="metadata\islaminfo.xml" />
-    <Content Include="metadata\islamsource.xml" />
-    <Content Include="metadata\it.piccardo.txt" />
-    <Content Include="metadata\ja.japanese.txt" />
-    <Content Include="metadata\ko.korean.txt" />
-    <Content Include="metadata\ku.asan.txt" />
-    <Content Include="metadata\majah-data.xml" />
-    <Content Include="metadata\majah.xml" />
-    <Content Include="metadata\ml.abdulhameed.txt" />
-    <Content Include="metadata\ml.karakunnu.txt" />
-    <Content Include="metadata\ms.basmeih.txt" />
-    <Content Include="metadata\muslim-data.xml" />
-    <Content Include="metadata\muslim.en-abdul_hamid_siddiqui-data.xml" />
-    <Content Include="metadata\muslim.en-abdul_hamid_siddiqui.txt" />
-    <Content Include="metadata\muslim.xml" />
-    <Content Include="metadata\muwatta-data.xml" />
-    <Content Include="metadata\muwatta.en-aisha_abdarahman_attarjumana_yaqub_johnson-data.xml" />
-    <Content Include="metadata\muwatta.en-aisha_abdarahman_attarjumana_yaqub_johnson.txt" />
-    <Content Include="metadata\muwatta.xml" />
-    <Content Include="metadata\nasai-data.xml" />
-    <Content Include="metadata\nasai.xml" />
-    <Content Include="metadata\nl.keyzer.txt" />
-    <Content Include="metadata\nl.leemhuis.txt" />
-    <Content Include="metadata\nl.siregar.txt" />
-    <Content Include="metadata\no.berg.txt" />
-    <Content Include="metadata\pl.bielawskiego.txt" />
-    <Content Include="metadata\pt.elhayek.txt" />
-    <Content Include="metadata\quran-data.xml" />
-    <Content Include="metadata\quran-hafs.xml" />
-    <Content Include="metadata\quran-index.ar.mushafaltajweed.xml" />
-    <Content Include="metadata\quran-index.en.mushafaltajweed.xml" />
-    <Content Include="metadata\quran-index.en.xml" />
-    <Content Include="metadata\quran-tafseer.ar.aljlalin.xml" />
-    <Content Include="metadata\quran-tafseer.ar.alqurtubi.xml" />
-    <Content Include="metadata\quran-tafseer.ar.alsaadi.xml" />
-    <Content Include="metadata\quran-tafseer.ar.altabari.xml" />
-    <Content Include="metadata\quran-tafseer.ar.ibnkathir.xml" />
-    <Content Include="metadata\quran-tafseer.ar.jalaladdin.xml" />
-    <Content Include="metadata\quran-tafseer.ar.kingfahad.xml" />
-    <Content Include="metadata\quran-tafseer.ar.xml" />
-    <Content Include="metadata\quran-tafseer.en.maududi.xml" />
-    <Content Include="metadata\quran-warsh.xml" />
-    <Content Include="metadata\qurandev-corpus-morphology.txt" />
-    <Content Include="metadata\quranic-corpus-morphology-0.4.txt" />
-    <Content Include="metadata\riyad-data.xml" />
-    <Content Include="metadata\riyad.xml" />
-    <Content Include="metadata\ro.grigore.txt" />
-    <Content Include="metadata\ru.abuadel.txt" />
-    <Content Include="metadata\ru.krachkovsky.txt" />
-    <Content Include="metadata\ru.kuliev-alsaadi.txt" />
-    <Content Include="metadata\ru.kuliev.txt" />
-    <Content Include="metadata\ru.muntahab.txt" />
-    <Content Include="metadata\ru.osmanov.txt" />
-    <Content Include="metadata\ru.porokhova.txt" />
-    <Content Include="metadata\ru.sablukov.txt" />
-    <Content Include="metadata\sd.amroti.txt" />
-    <Content Include="metadata\so.abduh.txt" />
-    <Content Include="metadata\sq.ahmeti.txt" />
-    <Content Include="metadata\sq.mehdiu.txt" />
-    <Content Include="metadata\sq.nahi.txt" />
-    <Content Include="metadata\sv.bernstrom.txt" />
-    <Content Include="metadata\sw.barwani.txt" />
-    <Content Include="metadata\ta.tamil.txt" />
-    <Content Include="metadata\tg.ayati.txt" />
-    <Content Include="metadata\th.thai.txt" />
-    <Content Include="metadata\tirmidhi-data.xml" />
-    <Content Include="metadata\tirmidhi.xml" />
-    <Content Include="metadata\tr.ates.txt" />
-    <Content Include="metadata\tr.bulac.txt" />
-    <Content Include="metadata\tr.diyanet.txt" />
-    <Content Include="metadata\tr.golpinarli.txt" />
-    <Content Include="metadata\tr.ozturk.txt" />
-    <Content Include="metadata\tr.transliteration.txt" />
-    <Content Include="metadata\tr.vakfi.txt" />
-    <Content Include="metadata\tr.yazir.txt" />
-    <Content Include="metadata\tr.yildirim.txt" />
-    <Content Include="metadata\tr.yuksel.txt" />
-    <Content Include="metadata\tt.nugman.txt" />
-    <Content Include="metadata\ug.saleh.txt" />
-    <Content Include="metadata\UnicodeData.txt" />
-    <Content Include="metadata\ur.ahmedali.txt" />
-    <Content Include="metadata\ur.jalandhry.txt" />
-    <Content Include="metadata\ur.jawadi.txt" />
-    <Content Include="metadata\ur.junagarhi.txt" />
-    <Content Include="metadata\ur.kanzuliman.txt" />
-    <Content Include="metadata\ur.maududi.txt" />
-    <Content Include="metadata\ur.najafi.txt" />
-    <Content Include="metadata\ur.qadri.txt" />
-    <Content Include="metadata\uz.sodik.txt" />
-    <Content Include="metadata\zh.jian.txt" />
-    <Content Include="metadata\zh.majian.txt" />
-    <Content Include="Scripts\jquery.calendars.all.min.js" />
-    <Content Include="Scripts\jquery.calendars.islamic.min.js" />
-    <Content Include="Scripts\jquery.calendars.picker.lang.min.js" />
-    <Content Include="Scripts\jquery.calendars.ummalqura.min.js" />
-    <Content Include="Scripts\jquery.plugin.min.js" />
+    <Content Include="..\HostPage\host.aspx"><Link>host.aspx</Link></Content>
+    <Content Include="..\files\*.*"><Link>files\%(RecursiveDir)%(FileName)</Link></Content>
+    <Content Include="..\images\*.*"><Link>images\%(RecursiveDir)%(FileName)</Link></Content>
+    <Content Include="..\metadata\*.*"><Link>metadata\%(RecursiveDir)%(FileName)</Link></Content>
+    <Content Include="..\HostPage\Scripts\*.*"><Link>Scripts\%(RecursiveDir)%(FileName)</Link></Content>
     <Content Include="Web.config" />
     <None Include="My Project\PublishProfiles\islamsource.pubxml" />
     <None Include="My Project\PublishProfiles\iWebHosting.pubxml" />
@@ -358,19 +155,6 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
-  <PropertyGroup>
-    <PreBuildEvent>if not exist ..\Content mkdir ..\Content
-if not exist ..\files mkdir ..\files
-if not exist ..\images mkdir ..\images
-if not exist ..\metadata mkdir ..\metadata
-if not exist ..\Scripts mkdir ..\Scripts
-xcopy /E /Y ..\..\HostPage\Content ..\Content
-xcopy /E /Y ..\..\HostPage\Scripts ..\Scripts
-xcopy /E /Y ..\..\files ..\files
-xcopy /E /Y ..\..\images ..\images
-xcopy /E /Y ..\..\metadata ..\metadata
-copy /Y ..\..\HostPage\host.aspx ..\</PreBuildEvent>
-  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
@@ -378,4 +162,7 @@ copy /Y ..\..\HostPage\host.aspx ..\</PreBuildEvent>
   <Target Name="AfterBuild">
   </Target>
   -->
+  <Target Name="CopyLinkedContentFiles" BeforeTargets="Build">
+    <Copy SourceFiles="%(Content.Identity)" DestinationFiles="%(Content.Link)" SkipUnchangedFiles="true" OverwriteReadOnlyFiles="true" Condition="'%(Content.Link)' != ''" />
+  </Target>
 </Project>

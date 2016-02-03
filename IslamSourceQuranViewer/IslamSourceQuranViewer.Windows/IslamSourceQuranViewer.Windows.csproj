@@ -129,12 +129,12 @@
     <Content Include="Assets\SmallLogo.scale-100.png" />
     <Content Include="Assets\SplashScreen.scale-100.png" />
     <Content Include="Assets\StoreLogo.scale-100.png" />
-    <Content Include="metadata\en.sahih.txt" />
-    <Content Include="metadata\en.w4w.corpus.txt" />
-    <Content Include="metadata\islaminfo.xml" />
-    <Content Include="metadata\quran-data.xml" />
-    <Content Include="metadata\quran-hafs.xml" />
-    <Content Include="metadata\UnicodeData.txt" />
+    <Content Include="..\..\metadata\en.sahih.txt"><Link>metadata\en.sahih.txt</Link></Content>
+    <Content Include="..\..\metadata\en.w4w.corpus.txt"><Link>metadata\en.w4w.corpus.txt</Link></Content>
+    <Content Include="..\..\metadata\islaminfo.xml"><Link>metadata\islaminfo.xml</Link></Content>
+    <Content Include="..\..\metadata\quran-data.xml"><Link>metadata\quran-data.xml</Link></Content>
+    <Content Include="..\..\metadata\quran-hafs.xml"><Link>metadata\quran-hafs.xml</Link></Content>
+    <Content Include="..\..\metadata\UnicodeData.txt"><Link>metadata\UnicodeData.txt</Link></Content>
     <None Include="Package.StoreAssociation.xml" />
   </ItemGroup>
   <ItemGroup>
@@ -179,4 +179,11 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  <Target Name="CopyLinkedContentFiles" BeforeTargets="Build">
+    <Copy SourceFiles="%(Content.Identity)" 
+          DestinationFiles="%(Content.Link)" 
+          SkipUnchangedFiles='true' 
+          OverwriteReadOnlyFiles='true' 
+          Condition="'%(Content.Link)' != ''" />
+ </Target>
 </Project>
