@@ -4682,11 +4682,13 @@ Public Class TanzilReader
             End If
             Matches = System.Text.RegularExpressions.Regex.Matches(Text, If(bVerSet, CachedData.RuleMetas("Verification")(MetaCount).Match, CachedData.RuleMetas("UthmaniQuran")(MetaCount).Match))
             Dim SieveCount As Integer = 0
+            Dim MetaRules As String() = If(bVerSet, CachedData.RuleMetas("Verification")(MetaCount).Evaluator, CachedData.RuleMetas("UthmaniQuran")(MetaCount).Evaluator)
+            Dim CoverageMap(MetaRules.Length - 1) As Boolean
             For Count = 0 To Matches.Count - 1
-                Dim MetaRules As String() = If(bVerSet, CachedData.RuleMetas("Verification")(MetaCount).Evaluator, CachedData.RuleMetas("UthmaniQuran")(MetaCount).Evaluator)
                 If Count = 0 AndAlso Matches(Count).Groups.Count <> MetaRules.Length + 1 Then Debug.WriteLine("Discrepency in metadata:" + CStr(MainCount + 1) + ":" + CStr(MetaRules.Length) + ":Got:" + CStr(Matches(Count).Groups.Count - 1))
                 Dim bSieve As Boolean = False
                 For SubCount = 0 To MetaRules.Length - 1
+                    If Matches(Count).Groups(SubCount + 1).Success Then CoverageMap(SubCount) = True
                     If Array.IndexOf(MetaRules(SubCount).Split("|"c), If(bAssumeContinue, "optionalstop", "optionalnotstop")) <> -1 And Matches(Count).Groups(SubCount + 1).Success Then
                         'check continuity in prior patterns
                         Dim CheckLen As Integer = 0
@@ -4721,6 +4723,9 @@ Public Class TanzilReader
                 End If
             Next
             Debug.WriteLine(CStr(SieveCount))
+            For Count = 0 To CoverageMap.Length - 1
+                If Not CoverageMap(Count) Then Debug.WriteLine("Unused Metadata: " + CStr(Count) + " " + MetaRules(Count))
+            Next
         Next
         Dim Keys(CheckMatches.Keys.Count - 1) As Integer
         CheckMatches.Keys.CopyTo(Keys, 0)
