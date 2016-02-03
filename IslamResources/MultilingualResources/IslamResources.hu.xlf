@@ -10480,8 +10480,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_EnteringMasjidilHaram" translate="yes" xml:space="preserve">
           <source>O Allah! Thou art peace and peace is from Thee! Our Lord! Cause us to live with peace, and cause us to enter The House of Peace. Our Lord, Owner of Honor and Majesty, Thou art most Blessed and Exalted! O Allah! Grant me with Thou blessings and forgiveness, live me in it in the Name of Allah, and all Praise is to Allah, salawat and Salam to our Master Sayyidina Muhammad.</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">O Allah! Te békét és nyugalmat tőled! Mi Urunk! Okoz számunkra, hogy élni a nyugalmat, és okoz számunkra, hogy belépjünk a House of Peace. Mi Urunk, a Becsületrend tulajdonosa és a felség, te vagy áldott és a magasztos! O Allah! Grant nekem a te, áldások és a megbocsátás, él velem, hogy Allah nevében, és minden dicséretet, hogy Allah, melletted, és a mi mester Sayyidina Muhammad Salam.</target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
+          <target state="translated" state-qualifier="mt-suggestion">O Allah! Te békét és nyugalmat tőled! Mi Urunk! Okoz számunkra, hogy élni a nyugalmat, és okoz számunkra, hogy belépjünk a House of Peace. Mi Urunk, a Becsületrend tulajdonosa és a felség, te vagy áldott és a magasztos! O Allah! Grant nekem a te, áldások és a megbocsátás, él velem, hogy Allah nevében, és minden dicséretet, hogy Allah, melletted, és a mi mester Sayyidina Muhammad Salam.</target>
         </trans-unit>
         <trans-unit id="IslamInfo_EnteringMasjidilHaramLabel" translate="yes" xml:space="preserve">
           <source>Entering Masjidil Haram</source>
@@ -19921,8 +19920,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_muslimBook7" translate="yes" xml:space="preserve">
           <source>The Book of Prayer (Travelers)</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">A könyv az imádság (utasok)</target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
+          <target state="translated" state-qualifier="mt-suggestion">A könyv az imádság (utasok)</target>
         </trans-unit>
         <trans-unit id="IslamInfo_muslimBook8" translate="yes" xml:space="preserve">
           <source>The Book of Prayer (Friday)</source>

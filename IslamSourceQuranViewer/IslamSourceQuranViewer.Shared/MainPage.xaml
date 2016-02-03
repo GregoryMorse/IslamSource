@@ -52,11 +52,9 @@
         </ListBox>
     </Grid>
     <Page.BottomAppBar>
-        <AppBar>
-            <StackPanel Orientation="Horizontal">
-                <AppBarButton Name="RenderPngs" Click="RenderPngs_Click" Label="Render" Icon="Camera"></AppBarButton>
-                <AppBarButton Name="Settings" Click="Settings_Click" Label="Settings" Icon="Setting"></AppBarButton>
-            </StackPanel>
-        </AppBar>
+        <CommandBar>
+            <AppBarButton Name="RenderPngs" Click="RenderPngs_Click" Label="Render" Icon="Camera"></AppBarButton>
+            <AppBarButton Name="Settings" Click="Settings_Click" Label="Settings" Icon="Setting"></AppBarButton>
+        </CommandBar>
     </Page.BottomAppBar>
 </Page>
