@@ -62,8 +62,8 @@ Public Class frmMain
         'TanzilReader.CheckNotablePatterns()
         'TanzilReader.FindMinimalVersesForCoverage()
         'TanzilReader.CheckSequentialRules()
-        TanzilReader.CheckMutualExclusiveRules(False)
-        TanzilReader.CheckMutualExclusiveRules(True)
+        TanzilReader.CheckMutualExclusiveRules(False, 7)
+        TanzilReader.CheckMutualExclusiveRules(True, 7)
         Dim IndexToVerse As Integer()() = Nothing
         Dim Text As String = TanzilReader.QuranTextCombiner(CachedData.XMLDocMain, IndexToVerse, 2, 2)
         Dim IndVerses As String() = TanzilReader.QuranTextRangeLookup(2, 5, 0, 2, 0, 0)(0)
