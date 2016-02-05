@@ -50,6 +50,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
+        <Rectangle Fill="White"></Rectangle>
         <ItemsControl Background="White" x:Name="MainControl" Grid.Row="0" ItemTemplateSelector="{StaticResource MyDataTemplateSelector}" ItemsSource="{Binding Source={StaticResource QuranText}}">
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
