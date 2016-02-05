@@ -17,6 +17,9 @@
     <ProjectTypeGuids>{BC8A1FFA-BEE3-4634-8014-F334798102B3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <PackageCertificateKeyFile>IslamSourceQuranViewer.Windows_StoreKey.pfx</PackageCertificateKeyFile>
     <PackageCertificateThumbprint>BFEAC8A0C6BDC08641C82BC2B8E5DFDEDC73B37B</PackageCertificateThumbprint>
+    <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
+    <AppxBundlePlatforms>neutral</AppxBundlePlatforms>
+    <NuGetPackageImportStamp>e438bd6c</NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -129,41 +132,29 @@
     <Content Include="Assets\SmallLogo.scale-100.png" />
     <Content Include="Assets\SplashScreen.scale-100.png" />
     <Content Include="Assets\StoreLogo.scale-100.png" />
-    <Content Include="..\..\metadata\en.sahih.txt"><Link>metadata\en.sahih.txt</Link></Content>
-    <Content Include="..\..\metadata\en.w4w.corpus.txt"><Link>metadata\en.w4w.corpus.txt</Link></Content>
-    <Content Include="..\..\metadata\islaminfo.xml"><Link>metadata\islaminfo.xml</Link></Content>
-    <Content Include="..\..\metadata\quran-data.xml"><Link>metadata\quran-data.xml</Link></Content>
-    <Content Include="..\..\metadata\quran-hafs.xml"><Link>metadata\quran-hafs.xml</Link></Content>
-    <Content Include="..\..\metadata\UnicodeData.txt"><Link>metadata\UnicodeData.txt</Link></Content>
+    <Content Include="..\..\metadata\en.sahih.txt">
+      <Link>metadata\en.sahih.txt</Link>
+    </Content>
+    <Content Include="..\..\metadata\en.w4w.corpus.txt">
+      <Link>metadata\en.w4w.corpus.txt</Link>
+    </Content>
+    <Content Include="..\..\metadata\islaminfo.xml">
+      <Link>metadata\islaminfo.xml</Link>
+    </Content>
+    <Content Include="..\..\metadata\quran-data.xml">
+      <Link>metadata\quran-data.xml</Link>
+    </Content>
+    <Content Include="..\..\metadata\quran-hafs.xml">
+      <Link>metadata\quran-hafs.xml</Link>
+    </Content>
+    <Content Include="..\..\metadata\UnicodeData.txt">
+      <Link>metadata\UnicodeData.txt</Link>
+    </Content>
     <None Include="Package.StoreAssociation.xml" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="SharpDX, Version=2.4.2.0, Culture=neutral, PublicKeyToken=627a3d6d1956f55a, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\SharpDX.2.4.2\lib\win8\SharpDX.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="SharpDX.D3DCompiler, Version=2.4.2.0, Culture=neutral, PublicKeyToken=627a3d6d1956f55a, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\SharpDX.D3DCompiler.2.4.2\lib\win8\SharpDX.D3DCompiler.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="SharpDX.Direct2D1, Version=2.4.2.0, Culture=neutral, PublicKeyToken=627a3d6d1956f55a, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\SharpDX.Direct2D1.2.4.2\lib\win8\SharpDX.Direct2D1.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="SharpDX.Direct3D11, Version=2.4.2.0, Culture=neutral, PublicKeyToken=627a3d6d1956f55a, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\SharpDX.Direct3D11.2.4.2\lib\win8\SharpDX.Direct3D11.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="SharpDX.DXGI, Version=2.4.2.0, Culture=neutral, PublicKeyToken=627a3d6d1956f55a, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\SharpDX.DXGI.2.4.2\lib\win8\SharpDX.DXGI.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="WinRTXamlToolkit, Version=1.6.1.3, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\WinRTXamlToolkit.1.6.1.3\lib\netcore451\WinRTXamlToolkit.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="WinRTXamlToolkit.Composition, Version=1.6.1.3, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\WinRTXamlToolkit.Composition.1.6.1.3\lib\netcore451\WinRTXamlToolkit.Composition.dll</HintPath>
+    <Reference Include="WinRTXamlToolkit, Version=1.8.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\WinRTXamlToolkit.Windows.1.8.1.0\lib\netcore451\WinRTXamlToolkit.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>
@@ -180,10 +171,6 @@
   </Target>
   -->
   <Target Name="CopyLinkedContentFiles" BeforeTargets="Build">
-    <Copy SourceFiles="%(Content.Identity)" 
-          DestinationFiles="%(Content.Link)" 
-          SkipUnchangedFiles='true' 
-          OverwriteReadOnlyFiles='true' 
-          Condition="'%(Content.Link)' != ''" />
- </Target>
+    <Copy SourceFiles="%(Content.Identity)" DestinationFiles="%(Content.Link)" SkipUnchangedFiles="true" OverwriteReadOnlyFiles="true" Condition="'%(Content.Link)' != ''" />
+  </Target>
 </Project>

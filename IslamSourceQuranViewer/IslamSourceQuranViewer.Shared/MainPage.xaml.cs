@@ -148,7 +148,7 @@ public class WindowsRTSettings : XMLRender.PortableSettings
     }
     public static async System.Threading.Tasks.Task SavePathImageAsFile(int Width, int Height, string fileName, FrameworkElement element, bool UseRenderTarget = true)
     {
-#if WINDOWS_APP
+#if WINDOWS_APP && STORETOOLKIT
         if (!UseRenderTarget)
         {
             double oldWidth = element.Width;
@@ -157,16 +157,20 @@ public class WindowsRTSettings : XMLRender.PortableSettings
             element.Width = Math.Floor((float)Width);
             element.Height = Math.Floor((float)Height);
             element.UpdateLayout();
-            if (element.ActualWidth > element.Width || element.ActualHeight > element.Height) {
+            //await element.Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, new Windows.UI.Core.DispatchedHandler(() => element.Dispatcher.ProcessEvents(Windows.UI.Core.CoreProcessEventsOption.ProcessAllIfPresent)));
+            await WinRTXamlToolkit.AwaitableUI.EventAsync.FromEvent<object>(eh => element.LayoutUpdated += eh, eh => element.LayoutUpdated -= eh);
+            if (element.ActualWidth > element.Width || element.ActualHeight > element.Height)
+            {
                 if (element.ActualWidth > element.Width) element.Width -= 1;
                 if (element.ActualHeight > element.Height) element.Height -= 1;
                 element.UpdateLayout();
+                await WinRTXamlToolkit.AwaitableUI.EventAsync.FromEvent<object>(eh => element.LayoutUpdated += eh, eh => element.LayoutUpdated -= eh);
             }
-            if (element.ActualWidth > element.Width) element.Height -= 1;
             System.IO.MemoryStream memstream = await WinRTXamlToolkit.Composition.WriteableBitmapRenderExtensions.RenderToPngStream(element);
             element.Width = oldWidth;
             element.Height = oldHeight;
             element.UpdateLayout();
+            await WinRTXamlToolkit.AwaitableUI.EventAsync.FromEvent<object>(eh => element.LayoutUpdated += eh, eh => element.LayoutUpdated -= eh);
             Windows.Storage.StorageFile file = await Windows.Storage.ApplicationData.Current.LocalFolder.CreateFileAsync(fileName + ".png", Windows.Storage.CreationCollisionOption.ReplaceExisting);
             Windows.Storage.Streams.IRandomAccessStream stream = await file.OpenAsync(Windows.Storage.FileAccessMode.ReadWrite);
             await stream.WriteAsync(memstream.GetWindowsRuntimeBuffer());
@@ -200,7 +204,7 @@ public class WindowsRTSettings : XMLRender.PortableSettings
             await be.FlushAsync();
             await stream.GetOutputStreamAt(0).FlushAsync();
             stream.Dispose();
-#if WINDOWS_APP
+#if WINDOWS_APP && STORETOOLKIT
         }
 #endif
     }
