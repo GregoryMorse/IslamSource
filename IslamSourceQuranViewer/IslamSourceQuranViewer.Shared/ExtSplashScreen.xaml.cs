@@ -26,6 +26,7 @@ namespace IslamSourceQuranViewer
         private Windows.ApplicationModel.Activation.SplashScreen splash; // Variable to hold the splash screen object.
         internal bool dismissed = false; // Variable to track splash screen dismissal status.
         internal Frame rootFrame;
+        internal System.Threading.SynchronizationContext ctx;
 
         public ExtSplashScreen()
         {
@@ -35,6 +36,7 @@ namespace IslamSourceQuranViewer
         }
         public ExtSplashScreen(Windows.ApplicationModel.Activation.SplashScreen splashScreen, bool loadState)
         {
+            ctx = System.Threading.SynchronizationContext.Current;
             this.InitializeComponent();
             this.BottomAppBar.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
             this.ProgressGrid.Visibility = Windows.UI.Xaml.Visibility.Visible;
@@ -65,6 +67,14 @@ namespace IslamSourceQuranViewer
             //MainGrid.SetValue(Canvas.TopProperty, splashImageRect.Y);
             //MainGrid.Height = splashImageRect.Height;
             //MainGrid.Width = splashImageRect.Width;
+            //MainGrid.SetValue(Canvas.LeftProperty, Window.Current.Bounds.Left);
+            //MainGrid.SetValue(Canvas.TopProperty, Window.Current.Bounds.Top);
+            //MainGrid.Height = Window.Current.Bounds.Height;
+            //MainGrid.Width = Window.Current.Bounds.Width;
+            if (Window.Current.Bounds.Width < Window.Current.Bounds.Height * .94 / 722 * 502.655)
+            {
+                MainGrid.ColumnDefinitions[1].Width = new GridLength(Window.Current.Bounds.Width - 2);
+            }
         }
         void SplashScreen_OnResize(Object sender, Windows.UI.Core.WindowSizeChangedEventArgs e)
         {
@@ -86,16 +96,21 @@ namespace IslamSourceQuranViewer
             dismissed = true;
 
             // Complete app setup operations here...
-            await DismissExtendedSplash();
+            /*await*/ DismissExtendedSplash();
         }
-        async System.Threading.Tasks.Task DismissExtendedSplash()
+        void /*async System.Threading.Tasks.Task*/ DismissExtendedSplash()
         {
-            await Windows.ApplicationModel.Core.CoreApplication.MainView.CoreWindow.Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal,
-                () =>
-                {
+            ctx.Post(delegate {
                     rootFrame.Navigate(typeof(MainPage));
                     Window.Current.Content = rootFrame;
-                });
+                }, null);
+            //Windows Phone has problem getting TPL event sources properly initialized or a crash will occur on first task call
+            //await Windows.ApplicationModel.Core.CoreApplication.MainView.CoreWindow.Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal,
+            //    () =>
+            //    {
+            //        rootFrame.Navigate(typeof(MainPage));
+            //        Window.Current.Content = rootFrame;
+            //    });
                 // Navigate to mainpage
             // Place the frame in the current Window
             

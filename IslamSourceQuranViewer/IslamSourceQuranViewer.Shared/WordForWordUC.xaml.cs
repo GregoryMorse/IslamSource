@@ -17,6 +17,15 @@ using WinRTXamlToolkit.Controls;
 
 namespace IslamSourceQuranViewer
 {
+    public class MyWrapPanel : WrapPanel
+    {
+        protected override Size MeasureOverride(Size constraint)
+        {
+            Size size = base.MeasureOverride(constraint);
+            size.Width += 1;
+            return size;
+        }
+    }
     public sealed partial class WordForWordUC : Page
     {
         public WordForWordUC()

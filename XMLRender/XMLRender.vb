@@ -255,6 +255,46 @@ Public Class Utility
             System.Diagnostics.Debug.WriteLine("  <data name=""" + resourceKey + """ xml:space=""preserve"">" + vbCrLf + "    <value>" + System.Text.RegularExpressions.Regex.Replace(System.Text.RegularExpressions.Regex.Replace(resourceKey, ".*_", String.Empty), "(.+?)([A-Z])", "$1 $2") + "</value>" + vbCrLf + "  </data>")
         End If
     End Function
+    Public Shared Sub WordFileToResource(WordFilePath As String, ResFilePath As String)
+        Dim W4WLines As String() = Utility.ReadAllLines(WordFilePath)
+        Dim Stream As IO.Stream = PortableMethods.FileIO.LoadStream(ResFilePath)
+        Dim XMLDoc As Xml.Linq.XDocument = Xml.Linq.XDocument.Load(Stream)
+        Stream.Dispose()
+        For Count = 0 To W4WLines.Length - 1
+            Dim Words As String() = W4WLines(Count).Substring(W4WLines(Count).IndexOf("="c) + 1).Split("|"c)
+            For SubCount = 0 To Words.Length - 1
+                Dim NewData As New Xml.Linq.XElement("data")
+                NewData.Add(New Xml.Linq.XAttribute("name", W4WLines(Count).Substring(0, W4WLines(Count).IndexOf("="c)) + "." + CStr(SubCount + 1)))
+                NewData.Add(New Xml.Linq.XAttribute(Xml.Linq.XNamespace.Xml + "space", "preserve"))
+                Dim Inner As New Xml.Linq.XElement("value")
+                Inner.Value = Words(SubCount)
+                NewData.Add(Inner)
+                XMLDoc.Root.Add(NewData)
+            Next
+        Next
+        Dim MemStream As New IO.MemoryStream
+        XMLDoc.Save(MemStream)
+        PortableMethods.FileIO.SaveStream(ResFilePath, MemStream)
+        MemStream.Dispose()
+    End Sub
+    Public Shared Sub ResourceToWordFile(ResFilePath As String, WordFilePath As String)
+        Dim W4WLines As New Dictionary(Of String, List(Of String))
+        Dim Stream As IO.Stream = PortableMethods.FileIO.LoadStream(ResFilePath)
+        Dim XMLDoc As Xml.Linq.XDocument = XML.Linq.XDocument.Load(Stream)
+        Stream.Dispose()
+        Dim AllNodes As Xml.Linq.XElement() = (New List(Of Xml.Linq.XElement)(Linq.Enumerable.Where(XMLDoc.Root.Elements, Function(elem) elem.Name = "data" And Not elem.Attribute("name") Is Nothing))).ToArray()
+        For Each Item As Xml.Linq.XElement In AllNodes
+            If System.Text.RegularExpressions.Regex.Match(Item.Attribute("name").Value, "^.*\.\d+$").Success Then
+                Dim LineKey As String = Item.Attribute("name").Value.Substring(0, Item.Attribute("name").Value.IndexOf("."c))
+                Dim Word As Integer = Integer.Parse(Item.Attribute("name").Value.Substring(Item.Attribute("name").Value.IndexOf("."c) + 1))
+                If Not W4WLines.ContainsKey(LineKey) Then
+                    W4WLines.Add(LineKey, New List(Of String))
+                End If
+                W4WLines(LineKey).Insert(Word - 1, New List(Of Xml.Linq.XElement)(Item.Elements).Item(0).Value)
+            End If
+        Next
+        Utility.WriteAllLines(WordFilePath, New List(Of String)(W4WLines.Select(Function(Input As KeyValuePair(Of String, List(Of String))) Input.Key + "=" + String.Join("|"c, Input.Value.ToArray()))).ToArray())
+    End Sub
     Public Shared Sub WriteAllLines(FilePath As String, Lines() As String)
         Dim MemStream As New IO.MemoryStream
         Dim Writer As New IO.StreamWriter(MemStream)

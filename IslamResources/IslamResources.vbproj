@@ -77,6 +77,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="W4WResources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>W4WResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="W4WResources.hu.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>W4WResources.hu.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.hu.resx" />
@@ -85,6 +95,15 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="W4WResources.hu.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>W4WResources.hu.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="W4WResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>W4WResources.Designer.vb</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
