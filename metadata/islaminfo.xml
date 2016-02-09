@@ -7543,9 +7543,10 @@ Ramadan fast-breaking | One 2172-gram quantity | Dates or barley or ordinary sta
 		<reciter name="Yaser_Salamah_128kbps" reciter="Yaser Salamah" bitrate="128" source="everyayah"></reciter>
 		<reciter name="Yasser_Ad-Dussary_128kbps" reciter="Yasser Ad-Dussary" bitrate="128" source="everyayah"></reciter>
 	</reciters>
-	<translations default="en.sahih">
+	<translations>
 		<translation file="en-maulana_ali" name="Maulana Muhammad Ali" translator="Maulana Muhammad Ali"></translation>
 		<translation file="en.asad" name="Asad" translator="Muhammad Asad"></translation>
+		<translation file="hu.halima" name="Halima" translator="Kiss Zsuzsanna Halima"></translation>
 
 		<translation file="sq.nahi" name="Efendi Nahi" translator="Hasan Efendi Nahi"></translation>
 		<translation file="sq.mehdiu" name="Feti Mehdiu" translator="Feti Mehdiu"></translation>
@@ -7660,6 +7661,10 @@ Ramadan fast-breaking | One 2172-gram quantity | Dates or barley or ordinary sta
 		<translation file="ug.saleh" name="محمد صالح" translator="Muhammad Saleh"></translation>
 		<translation file="uz.sodik" name="Мухаммад Содик" translator="Muhammad Sodik Muhammad Yusuf"></translation>
 	</translations>
+	<languagedefaults default="en">
+		<default language="en" quran="en.sahih" quranw4w="en.w4w.corpus" transliteration="PlainRoman"></default>
+		<default language="hu" quran="hu.halima" quranw4w="hu.w4w.corpus" transliteration="Hungarian"></default>
+	</languagedefaults>
 	<partsofspeech>
 		<pos symbol="N" id="NounName" color="84,141,212"></pos>
 		<pos symbol="PN" id="ProperNoun" color="37,126,156"></pos>

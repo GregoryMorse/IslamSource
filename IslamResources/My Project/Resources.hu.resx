@@ -27549,4 +27549,58 @@
   <data name="IslamInfo_LegalMaxims" xml:space="preserve">
     <value>Jogi mondások</value>
   </data>
+  <data name="IslamInfo_InterrogativeParticle" xml:space="preserve">
+    <value>Kérdőszó</value>
+  </data>
+  <data name="IslamInfo_Interrogatives" xml:space="preserve">
+    <value>Interrogatives</value>
+  </data>
+  <data name="IslamInfo_MajorIncorrectPronunciation" xml:space="preserve">
+    <value>Nagy helytelen kiejtése</value>
+  </data>
+  <data name="IslamInfo_MinorIncorrectPronunciation" xml:space="preserve">
+    <value>Kisebb helytelen kiejtése</value>
+  </data>
+  <data name="IslamInfo_OfTheResidentForTheTraveler" xml:space="preserve">
+    <value>A a belföldi illetőségű az utazók</value>
+  </data>
+  <data name="IslamInfo_OfTheResidentForTheTraveler1" xml:space="preserve">
+    <value>A rezidensek számára a Traveler1</value>
+  </data>
+  <data name="IslamInfo_OfTheResidentForTheTraveler2" xml:space="preserve">
+    <value>A rezidensek számára a Traveler2</value>
+  </data>
+  <data name="IslamInfo_OfTheTravelerAsDawnApproaches" xml:space="preserve">
+    <value>Az utas, mint Hajnal</value>
+  </data>
+  <data name="IslamInfo_OfTheTravelerAsDawnApproaches1" xml:space="preserve">
+    <value>Az utas, mivel Dawn Approaches1</value>
+  </data>
+  <data name="IslamInfo_OfTheTravelerForTheResident" xml:space="preserve">
+    <value>Az utas, a rezidens</value>
+  </data>
+  <data name="IslamInfo_OfTheTravelerForTheResident1" xml:space="preserve">
+    <value>Az utas számára a Resident1</value>
+  </data>
+  <data name="IslamInfo_OrInterrogative" xml:space="preserve">
+    <value>Vagy a kérdő</value>
+  </data>
+  <data name="IslamInfo_TheHonorerBestower" xml:space="preserve">
+    <value>A Honorer-megőrzője</value>
+  </data>
+  <data name="IslamInfo_ThePossessorOfMajestyAndHonor" xml:space="preserve">
+    <value>A tulajdonos a felség és becsület</value>
+  </data>
+  <data name="IslamInfo_TheRecognizerTheBestowerTheOmnipotentOneTheContinuousCreatorTheOwnerTheTotalProviderTheUniversalTrusteeTheWatchfulOneTheDoerOfGoodTheReckoningOneTheOneWhoCuresTheGentleTheGiverTheSustainingOneTheLordTheGoodTheImpartialJudgeTheSupremeInHonorTheFountainHeadOfTruth" xml:space="preserve">
+    <value>A felismerő megőrzője a mindenható egy folyamatos alkotója a tulajdonosa az összes szolgáltató az egyetemes Trustee éber az egyik a tettes a jó számítása egy, aki gyógyít a szelíd az ajándékozó az önfenntartó egy az Úr, a jó a pártatlan bíró a legfelsőbb igazság kút feje tiszteletére</value>
+  </data>
+  <data name="IslamInfo_TheSupremeInHonor" xml:space="preserve">
+    <value>A Legfelsőbb tiszteletére</value>
+  </data>
+  <data name="IslamInfo_WhereverInterrogative" xml:space="preserve">
+    <value>Bárhol Kérdő</value>
+  </data>
+  <data name="IslamInfo_TheMostBeneficentTheMostMerciful" xml:space="preserve">
+    <value>A leg--bb jótékony a legtöbb irgalmas</value>
+  </data>
 </root>

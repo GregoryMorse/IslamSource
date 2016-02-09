@@ -91,7 +91,7 @@ namespace IslamSourceQuranViewer
         }
 
         // Include code to be executed when the system has transitioned from the splash screen to the extended splash screen (application's first view).
-        async void DismissedEventHandler(Windows.ApplicationModel.Activation.SplashScreen sender, object e)
+        /*async*/ void DismissedEventHandler(Windows.ApplicationModel.Activation.SplashScreen sender, object e)
         {
             dismissed = true;
 
