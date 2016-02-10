@@ -28,7 +28,13 @@ public class WindowsRTFileIO : XMLRender.PortableFileIO
     }
     public /*async*/ Stream LoadStream(string FilePath)
     {
-        System.Threading.Tasks.Task<Windows.Storage.StorageFile> t = Windows.Storage.StorageFile.GetFileFromPathAsync(FilePath).AsTask();
+        Windows.ApplicationModel.Resources.Core.ResourceCandidate rc = Windows.ApplicationModel.Resources.Core.ResourceManager.Current.MainResourceMap.GetValue(FilePath.Replace(Windows.ApplicationModel.Package.Current.InstalledLocation.Path, "ms-resource:///Files").Replace("\\", "/"), Windows.ApplicationModel.Resources.Core.ResourceContext.GetForCurrentView());
+        System.Threading.Tasks.Task<Windows.Storage.StorageFile> t;
+        if (rc != null && rc.IsMatch) {
+            t = rc.GetValueAsFileAsync().AsTask();
+        } else {
+            t = Windows.Storage.StorageFile.GetFileFromPathAsync(FilePath).AsTask();
+        }
         t.Wait();
         Windows.Storage.StorageFile file = t.Result; //await Windows.Storage.StorageFile.GetFileFromPathAsync(FilePath);
         System.Threading.Tasks.Task<Stream> tn = file.OpenStreamForReadAsync();

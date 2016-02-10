@@ -39,7 +39,7 @@ namespace IslamSourceQuranViewer
             Division = t.Division;
             Selection = t.Selection;
             this.DataContext = this;
-            this.ViewModel = new MyRenderModel(IslamMetadata.TanzilReader.GetRenderedQuranText(XMLRender.ArabicData.TranslitScheme.RuleBased, "PlainRoman", String.Empty, Division.ToString(), Selection.ToString(), String.Empty, "0", "1").Items);
+            this.ViewModel = new MyRenderModel(IslamMetadata.TanzilReader.GetRenderedQuranText(XMLRender.ArabicData.TranslitScheme.RuleBased, String.Empty, String.Empty, Division.ToString(), Selection.ToString(), String.Empty, "0", "1").Items);
             MainControl.ItemsSource = this.ViewModel.RenderItems;
         }
         public MyRenderModel ViewModel { get; set; }

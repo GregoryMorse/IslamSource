@@ -1621,7 +1621,31 @@ Public Class IslamData
     <Xml.Serialization.XmlArray("scriptfonts")> _
     <Xml.Serialization.XmlArrayItem("scriptfont")> _
     Public ScriptFonts() As ScriptFont
-
+    Public Class LanguageDefaults
+        Public Class LanguageDefault
+            <Xml.Serialization.XmlAttribute("language")>
+            Public ID As String
+            <Xml.Serialization.XmlAttribute("quran")>
+            Public QuranFile As String
+            <Xml.Serialization.XmlAttribute("quranw4w")>
+            Public QuranW4WFile As String
+            <Xml.Serialization.XmlAttribute("transliteration")>
+            Public TranslitScheme As String
+        End Class
+        <Xml.Serialization.XmlAttribute("default")>
+        Public DefaultLanguage As String
+        <Xml.Serialization.XmlElement("languagedefault")>
+        Public LanguageDefaultList() As LanguageDefault
+        Public Function GetLanguageByID(LangID As String) As LanguageDefault
+            If LangID = String.Empty Then LangID = System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName
+            For Count As Integer = 0 To LanguageDefaultList.Length - 1
+                If LanguageDefaultList(Count).ID = LangID Then Return LanguageDefaultList(Count)
+            Next
+            Return GetLanguageByID(String.Empty)
+        End Function
+    End Class
+    <Xml.Serialization.XmlElement("languagedefaults")>
+    Public LanguageDefaultInfo As LanguageDefaults
     Public Class TranslationsInfo
         Public Structure TranslationInfo
             <Xml.Serialization.XmlAttribute("name")> _
@@ -1631,9 +1655,7 @@ Public Class IslamData
             <Xml.Serialization.XmlAttribute("translator")> _
             Public Translator As String
         End Structure
-        <Xml.Serialization.XmlAttribute("default")> _
-        Public DefaultTranslation As String
-        <Xml.Serialization.XmlElement("translation")> _
+        <Xml.Serialization.XmlElement("translation")>
         Public TranslationList() As TranslationInfo
     End Class
     Structure VerseNumberScheme
@@ -3118,15 +3140,24 @@ Public Class DocBuilder
     Public Shared Function GetRegExText(Str As String) As String
         Return System.Text.RegularExpressions.Regex.Replace(System.Text.RegularExpressions.Regex.Replace(Str, "\\u([0-9a-fA-F]{4})", Function(Match As System.Text.RegularExpressions.Match) ChrW(Integer.Parse(Match.Groups(1).Value, Globalization.NumberStyles.HexNumber))), "[\p{IsArabic}\p{IsArabicPresentationForms-A}\p{IsArabicPresentationForms-B}]+", ArabicData.LeftToRightEmbedding + "$&" + ArabicData.PopDirectionalFormatting)
     End Function
-    Public Shared W4WItems As Dictionary(Of String, String)
+    Public Shared W4WItems As Dictionary(Of String, Dictionary(Of String, String))
     Public Shared Function GetW4WItem(ID As String) As String
+        Dim LangID As String = Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName
         If W4WItems Is Nothing Then
-            W4WItems = New Dictionary(Of String, String)
-            For Each Line As String In Utility.ReadAllLines(PortableMethods.Settings.GetFilePath("metadata\en.w4w.txt"))
-                W4WItems.Add(Line.Substring(0, Line.IndexOf("="c)), Line.Substring(Line.IndexOf("="c) + 1))
-            Next
+            W4WItems = New Dictionary(Of String, Dictionary(Of String, String))
         End If
-        Return W4WItems(ID)
+        If Not W4WItems.ContainsKey(LangID) Then
+            If Not PortableMethods.FileIO.PathExists(PortableMethods.Settings.GetFilePath("metadata\" + LangID + ".txt")) And W4WItems.ContainsKey(CachedData.IslamData.LanguageDefaultInfo.DefaultLanguage) Then
+                W4WItems.Add(LangID, W4WItems(CachedData.IslamData.LanguageDefaultInfo.DefaultLanguage))
+            Else
+                If Not PortableMethods.FileIO.PathExists(PortableMethods.Settings.GetFilePath("metadata\" + LangID + ".txt")) Then LangID = CachedData.IslamData.LanguageDefaultInfo.DefaultLanguage
+                W4WItems.Add(LangID, New Dictionary(Of String, String))
+                For Each Line As String In Utility.ReadAllLines(PortableMethods.Settings.GetFilePath("metadata\" + LangID + ".txt"))
+                    W4WItems(LangID).Add(Line.Substring(0, Line.IndexOf("="c)), Line.Substring(Line.IndexOf("="c) + 1))
+                Next
+            End If
+        End If
+        Return W4WItems(LangID)(ID)
     End Function
     Public Shared Sub DoErrorCheckBuckwalterText(Strings As String, TranslationID As String)
         If Strings = Nothing Then Return
@@ -3339,10 +3370,10 @@ Public Class TanzilReader
         Return New List(Of String())(Linq.Enumerable.Select(CachedData.IslamData.Translations.TranslationList, Function(Convert As IslamData.TranslationsInfo.TranslationInfo) New String() {Utility.LoadResourceString("lang_local" + Languages.GetLanguageInfoByCode(Convert.FileName.Substring(0, CInt(If(Convert.FileName.IndexOf("-") <> -1, Convert.FileName.IndexOf("-"), Convert.FileName.IndexOf("."))))).Code) + ": " + Convert.Name, Convert.FileName})).ToArray()
     End Function
     Public Shared Function GetTranslationIndex(ByVal Translation As String) As Integer
-        If String.IsNullOrEmpty(Translation) Then Translation = CachedData.IslamData.Translations.DefaultTranslation 'Default
+        If String.IsNullOrEmpty(Translation) Then Translation = CachedData.IslamData.LanguageDefaultInfo.GetLanguageByID(String.Empty).QuranFile 'Default
         Dim Count As Integer = Array.FindIndex(CachedData.IslamData.Translations.TranslationList, Function(Test As IslamData.TranslationsInfo.TranslationInfo) Test.FileName = Translation)
         If Count = -1 Then
-            Translation = CachedData.IslamData.Translations.DefaultTranslation 'Default
+            Translation = CachedData.IslamData.LanguageDefaultInfo.GetLanguageByID(String.Empty).QuranFile 'Default
             Count = Array.FindIndex(CachedData.IslamData.Translations.TranslationList, Function(Test As IslamData.TranslationsInfo.TranslationInfo) Test.FileName = Translation)
         End If
         Return Count
@@ -3466,7 +3497,7 @@ Public Class TanzilReader
             Total = 0
             All = GetQuranWordTotalNumber()
             Array.Sort(FreqArray, Function(Key As String, NextKey As String) Dict.Item(NextKey).Count.CompareTo(Dict.Item(Key).Count))
-            Dim W4WLines As String() = Utility.ReadAllLines(PortableMethods.Settings.GetFilePath("metadata\en.w4w.corpus.txt"))
+            Dim W4WLines As String() = Utility.ReadAllLines(PortableMethods.Settings.GetFilePath("metadata\" + CachedData.IslamData.LanguageDefaultInfo.GetLanguageByID(Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName).QuranW4WFile + ".txt"))
             For Count As Integer = 0 To FreqArray.Length - 1
                 Dim TranslationDict As New Dictionary(Of String, List(Of Integer()))
                 For WordCount As Integer = 0 To Dict.Item(FreqArray(Count)).Count - 1
@@ -4980,7 +5011,6 @@ Public Class TanzilReader
         Return DefStops.ToArray()
     End Function
     Public Shared Sub WordFileToResource(WordFilePath As String, ResFilePath As String)
-        '"metadata\en.w4w.corpus.txt"
         Dim W4WLines As String() = Utility.ReadAllLines(WordFilePath)
         Dim Stream As IO.Stream = PortableMethods.FileIO.LoadStream(ResFilePath)
         Dim XMLDoc As Xml.Linq.XDocument = Xml.Linq.XDocument.Load(Stream)
@@ -5025,7 +5055,7 @@ Public Class TanzilReader
         Dim Node As Xml.Linq.XAttribute
         Dim Renderer As New RenderArray(String.Empty)
         Dim Lines As String() = Utility.ReadAllLines(PortableMethods.Settings.GetFilePath("metadata\" + GetTranslationFileName(Translation)))
-        Dim W4WLines As String() = If(W4W, Utility.ReadAllLines(PortableMethods.Settings.GetFilePath("metadata\en.w4w.corpus.txt")), Nothing)
+        Dim W4WLines As String() = If(W4W, Utility.ReadAllLines(PortableMethods.Settings.GetFilePath("metadata\" + CachedData.IslamData.LanguageDefaultInfo.GetLanguageByID(Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName).QuranW4WFile + ".txt")), Nothing)
         If Not QuranText Is Nothing Then
             For Chapter = 0 To QuranText.Count - 1
                 Dim ChapterNode As Xml.Linq.XElement = GetChapterByIndex(BaseChapter + Chapter)

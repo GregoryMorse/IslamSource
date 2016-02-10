@@ -35,6 +35,8 @@ namespace IslamSourceQuranViewer
         /// </summary>
         public App()
         {
+            Windows.Globalization.ApplicationLanguages.PrimaryLanguageOverride = "hu";
+            //Windows.ApplicationModel.Resources.Core.ResourceContext.GetForCurrentView().Reset();
             this.InitializeComponent();
             this.Suspending += this.OnSuspending;
         }
