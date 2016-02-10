@@ -42,10 +42,10 @@ Public Class frmMain
         PortableMethods.FileIO = New WindowsWebFileIO
         PortableMethods.Settings = New WindowsSettings
         PageSet = New PageLoader
-        'TanzilReader.WordFileToResource("..\..\..\metadata\en.w4w.corpus.txt", "..\..\..\IslamResources\QuranResources.resx")
-        'TanzilReader.ResourceToWordFile("..\..\..\IslamResources\QuranResources.hu.resx", "..\..\..\metadata\hu.w4w.corpus.txt")
-        'Utility.WordFileToResource("..\..\..\metadata\en.w4w.txt", "..\..\..\IslamResources\W4WResources.resx")
-        'Utility.ResourceToWordFile("..\..\..\IslamResources\W4WResources.hu.resx", "..\..\..\metadata\hu.w4w.txt")
+        'TanzilReader.WordFileToResource("..\..\..\metadata\en.w4w.corpus.txt", "..\..\..\ResourceToolkitTemp\QuranResources.resx")
+        'TanzilReader.ResourceToWordFile("..\..\..\ResourceToolkitTemp\QuranResources.hu.resx", "..\..\..\metadata\hu.w4w.corpus.txt")
+        'Utility.WordFileToResource("..\..\..\metadata\en.w4w.txt", "..\..\..\ResourceToolkit\W4WResources.resx")
+        Utility.ResourceToWordFile("..\..\..\ResourceToolkit\W4WResources.hu.resx", "..\..\..\metadata\hu.w4w.txt")
         'clsWarshQuran.ParseQuran()
         'TanzilReader.ChangeQuranFormat(TanzilReader.QuranTexts.Warsh, TanzilReader.QuranTexts.Warsh, TanzilReader.QuranScripts.Uthmani, TanzilReader.ArabicPresentation.Buckwalter)
         'TanzilReader.ChangeQuranFormat(TanzilReader.QuranTexts.Hafs, TanzilReader.QuranTexts.Hafs, TanzilReader.QuranScripts.Uthmani, TanzilReader.ArabicPresentation.Buckwalter)

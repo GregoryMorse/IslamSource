@@ -56,10 +56,6 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .NET Framework and Windows SDK is automatically included -->
-    <EmbeddedResource Include="QuranResources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>QuranResources.Designer.vb</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="W4WResources.hu.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>W4WResources.hu.Designer.vb</LastGenOutput>
@@ -98,11 +94,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="My Project\AssemblyInfo.vb" />
-    <Compile Include="QuranResources.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QuranResources.resx</DependentUpon>
-    </Compile>
     <Compile Include="W4WResources.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
