@@ -247,7 +247,6 @@ Public Class Utility
         If resourceKey Is Nothing Then Return Nothing
         For Each Pair In PortableMethods.Settings.Resources
             If Array.FindIndex(Pair.Value, Function(Str As String) Str = resourceKey Or resourceKey.StartsWith(Str + "_")) <> -1 Then
-
                 LoadResourceString = New System.Resources.ResourceManager(Pair.Key + ".Resources", Reflection.Assembly.Load(Pair.Key)).GetString(resourceKey, Threading.Thread.CurrentThread.CurrentUICulture)
             End If
         Next

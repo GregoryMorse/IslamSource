@@ -110,6 +110,10 @@
       <Project>{8cef3958-a8d0-4afa-95f1-80568237f4ee}</Project>
       <Name>IslamMetadata</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\IslamResources\IslamResources.vbproj">
+      <Project>{0a2a299b-a9d7-4a06-b810-de0fcd3bbdd7}</Project>
+      <Name>IslamResources</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\XMLRender\XMLRender.vbproj">
       <Project>{8ac9d06f-320d-4cf4-8a73-725a5ef177ad}</Project>
       <Name>XMLRender</Name>
@@ -124,18 +128,29 @@
     </AppxManifest>
     <None Include="IslamSourceQuranViewer.StoreToolkit.Windows_TemporaryKey.pfx" />
     <None Include="packages.config" />
-    <PRIResource Include="Resources.resw" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\Logo.scale-100.png" />
     <Content Include="Assets\SmallLogo.scale-100.png" />
     <Content Include="Assets\SplashScreen.scale-100.png" />
     <Content Include="Assets\StoreLogo.scale-100.png" />
+    <Content Include="..\..\metadata\en.w4w.txt">
+      <Link>metadata\en\en.w4w.txt</Link>
+    </Content>
+    <Content Include="..\..\metadata\hu.halima.txt">
+      <Link>metadata\hu\hu.halima.txt</Link>
+    </Content>
+    <Content Include="..\..\metadata\hu.w4w.corpus.txt">
+      <Link>metadata\hu\hu.w4w.corpus.txt</Link>
+    </Content>
+    <Content Include="..\..\metadata\hu.w4w.txt">
+      <Link>metadata\hu\hu.w4w.txt</Link>
+    </Content>
     <Content Include="..\..\metadata\en.sahih.txt">
-      <Link>metadata\en.sahih.txt</Link>
+      <Link>metadata\en\en.sahih.txt</Link>
     </Content>
     <Content Include="..\..\metadata\en.w4w.corpus.txt">
-      <Link>metadata\en.w4w.corpus.txt</Link>
+      <Link>metadata\en\en.w4w.corpus.txt</Link>
     </Content>
     <Content Include="..\..\metadata\islaminfo.xml">
       <Link>metadata\islaminfo.xml</Link>

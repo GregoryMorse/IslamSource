@@ -315,7 +315,7 @@ namespace IslamSourceQuranViewer
         {
             get
             {
-                if (_Items == null) { _Items = System.Linq.Enumerable.Select(IslamMetadata.TanzilReader.GetSelectionNames(Index.ToString(), XMLRender.ArabicData.TranslitScheme.RuleBased, "PlainRoman"), (Arr, Idx) => new MyListItem { Name = (string)(Arr.Cast<object>()).First(), Index = Idx }); }
+                if (_Items == null) { _Items = System.Linq.Enumerable.Select(IslamMetadata.TanzilReader.GetSelectionNames(Index.ToString(), XMLRender.ArabicData.TranslitScheme.RuleBased, String.Empty), (Arr, Idx) => new MyListItem { Name = (string)(Arr.Cast<object>()).First(), Index = Idx }); }
                 return _Items;
             }
         }

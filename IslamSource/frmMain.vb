@@ -25,7 +25,7 @@ Public Class frmMain
         Public Function GetFilePath(ByVal Path As String) As String Implements PortableSettings.GetFilePath
             Return "..\..\..\" + Path
         End Function
-        <Runtime.InteropServices.DllImport("getuname.dll", EntryPoint:="GetUName")> _
+        <Runtime.InteropServices.DllImport("getuname.dll", EntryPoint:="GetUName")>
         Friend Shared Function GetUName(ByVal wCharCode As UShort, <Runtime.InteropServices.MarshalAs(Runtime.InteropServices.UnmanagedType.LPWStr)> ByVal lpbuf As System.Text.StringBuilder) As Integer
         End Function
         Public Function GetUName(Character As Char) As String Implements PortableSettings.GetUName
@@ -37,11 +37,7 @@ Public Class frmMain
             Return Str.ToString()
         End Function
     End Class
-    Private PageSet As PageLoader
-    Private Sub frmMain_Load(sender As Object, e As EventArgs) Handles Me.Load
-        PortableMethods.FileIO = New WindowsWebFileIO
-        PortableMethods.Settings = New WindowsSettings
-        PageSet = New PageLoader
+    Private Sub UtilityTestCode()
         'TanzilReader.WordFileToResource("..\..\..\metadata\en.w4w.corpus.txt", "..\..\..\ResourceToolkitTemp\QuranResources.resx")
         'TanzilReader.ResourceToWordFile("..\..\..\ResourceToolkitTemp\QuranResources.hu.resx", "..\..\..\metadata\hu.w4w.corpus.txt")
         'Utility.WordFileToResource("..\..\..\metadata\en.w4w.txt", "..\..\..\ResourceToolkit\W4WResources.resx")
@@ -69,17 +65,28 @@ Public Class frmMain
         Dim IndexToVerse As Integer()() = Nothing
         Dim Text As String = TanzilReader.QuranTextCombiner(CachedData.XMLDocMain, IndexToVerse, 2, 2)
         Dim IndVerses As String() = TanzilReader.QuranTextRangeLookup(2, 5, 0, 2, 0, 0)(0)
-        Debug.Print(Arabic.TransliterateToScheme(IndVerses(0), ArabicData.TranslitScheme.RuleBased, "PlainRoman", CachedData.RuleMetas("UthmaniQuran"), TanzilReader.GenerateDefaultStops(IndVerses(0))))
-        Debug.Print(Arabic.TransliterateToScheme(Text, ArabicData.TranslitScheme.RuleBased, "PlainRoman", CachedData.RuleMetas("UthmaniQuran"), TanzilReader.GenerateDefaultStops(Text)))
+        Debug.Print(Arabic.TransliterateToScheme(IndVerses(0), ArabicData.TranslitScheme.RuleBased, String.Empty, CachedData.RuleMetas("UthmaniQuran"), TanzilReader.GenerateDefaultStops(IndVerses(0))))
+        Debug.Print(Arabic.TransliterateToScheme(Text, ArabicData.TranslitScheme.RuleBased, String.Empty, CachedData.RuleMetas("UthmaniQuran"), TanzilReader.GenerateDefaultStops(Text)))
         'Debug.Print(Arabic.TransliterateToScheme(System.Text.RegularExpressions.Regex.Match(Text, CachedData.GetPattern("ContinuousMatch")).Value, ArabicData.TranslitScheme.Literal, String.Empty))
-        Arabic.TransliterateToScheme(Arabic.TransliterateFromBuckwalter("suwrapu {lofaAtiHapi"), ArabicData.TranslitScheme.LearningMode, "PlainRoman", CachedData.RuleMetas("UthmaniQuran"), TanzilReader.GenerateDefaultStops(Arabic.TransliterateFromBuckwalter("suwrapu {lofaAtiHapi")))
-        Arabic.TransliterateToScheme(Arabic.TransliterateFromBuckwalter("*ikorFA"), ArabicData.TranslitScheme.LearningMode, "PlainRoman", CachedData.RuleMetas("UthmaniQuran"), TanzilReader.GenerateDefaultStops(Arabic.TransliterateFromBuckwalter("*ikorFA")))
-        Arabic.TransliterateToScheme(Arabic.TransliterateFromBuckwalter("bihi."), ArabicData.TranslitScheme.LearningMode, "PlainRoman", CachedData.RuleMetas("UthmaniQuran"), TanzilReader.GenerateDefaultStops(Arabic.TransliterateFromBuckwalter("bihi.")))
+        Arabic.TransliterateToScheme(Arabic.TransliterateFromBuckwalter("suwrapu {lofaAtiHapi"), ArabicData.TranslitScheme.LearningMode, String.Empty, CachedData.RuleMetas("UthmaniQuran"), TanzilReader.GenerateDefaultStops(Arabic.TransliterateFromBuckwalter("suwrapu {lofaAtiHapi")))
+        Arabic.TransliterateToScheme(Arabic.TransliterateFromBuckwalter("*ikorFA"), ArabicData.TranslitScheme.LearningMode, String.Empty, CachedData.RuleMetas("UthmaniQuran"), TanzilReader.GenerateDefaultStops(Arabic.TransliterateFromBuckwalter("*ikorFA")))
+        Arabic.TransliterateToScheme(Arabic.TransliterateFromBuckwalter("bihi."), ArabicData.TranslitScheme.LearningMode, String.Empty, CachedData.RuleMetas("UthmaniQuran"), TanzilReader.GenerateDefaultStops(Arabic.TransliterateFromBuckwalter("bihi.")))
         'Utility.SortResX(Utility.GetFilePath("IslamResources\Resources.en.resx"))
         'Utility.SortResX(Utility.GetFilePath("IslamResources\My Project\Resources.resx"))
         CachedData.DoErrorCheck()
-        'Dim RenderArr As RenderArray = Phrases.DoGetRenderedCatText(String.Empty, ArabicData.TranslitScheme.RuleBased, "PlainRoman", CachedData.IslamData.Phrases, 0)
+        'Dim RenderArr As RenderArray = Phrases.DoGetRenderedCatText(String.Empty, ArabicData.TranslitScheme.RuleBased, String.Empty, CachedData.IslamData.Phrases, 0)
         'HostPageUtility.RenderArray.OutputPdf("test.pdf", RenderArr.Items)
+        For Count As Integer = 39 To TanzilReader.GetChapterCount()
+            Dim RA As RenderArray = TanzilReader.GetQuranTextBySelection(String.Empty, 0, Count, String.Empty, ArabicData.TranslitScheme.RuleBased, String.Empty, TanzilReader.GetTranslationIndex(String.Empty), True, False, False, True, False, False, True)
+            HostPageUtility.RenderArrayWeb.OutputPdf("test" + CStr(Count) + ".pdf", RA.Items)
+        Next
+    End Sub
+    Private PageSet As PageLoader
+    Private Sub frmMain_Load(sender As Object, e As EventArgs) Handles Me.Load
+        PortableMethods.FileIO = New WindowsWebFileIO
+        PortableMethods.Settings = New WindowsSettings
+        PageSet = New PageLoader
+        UtilityTestCode()
         For Index = 0 To PageSet.Pages.Count - 1
             Dim newNode As TreeNode = tvwMain.Nodes.Add(PageSet.Pages.Item(Index).PageName, Utility.LoadResourceString(PageSet.Pages.Item(Index).Text))
             For SubIndex = 0 To PageSet.Pages.Item(Index).Page.Count - 1
@@ -91,11 +98,7 @@ Public Class frmMain
         Dim Renderer As New MultiLangRender
         Renderer.Anchor = AnchorStyles.Left Or AnchorStyles.Top Or AnchorStyles.Right Or AnchorStyles.Bottom
         Renderer.Size = New Size(gbMain.Width, gbMain.Height)
-        For Count As Integer = 39 To TanzilReader.GetChapterCount()
-            Renderer.RenderArray = TanzilReader.GetQuranTextBySelection(String.Empty, 0, Count, "en.sahih", ArabicData.TranslitScheme.RuleBased, "PlainRoman", TanzilReader.GetTranslationIndex("en.sahih"), True, False, False, True, False, False, True).Items
-            HostPageUtility.RenderArrayWeb.OutputPdf("test" + CStr(Count) + ".pdf", Renderer.RenderArray)
-        Next
-        Renderer.RenderArray = TanzilReader.GetQuranTextBySelection(String.Empty, 0, 1, "en.sahih", ArabicData.TranslitScheme.RuleBased, "PlainRoman", TanzilReader.GetTranslationIndex("en.sahih"), True, False, False, True, False, False, True).Items
+        Renderer.RenderArray = TanzilReader.GetQuranTextBySelection(String.Empty, 0, 1, String.Empty, ArabicData.TranslitScheme.RuleBased, String.Empty, TanzilReader.GetTranslationIndex(String.Empty), True, False, False, True, False, False, True).Items
         gbMain.Controls.Add(Renderer)
     End Sub
 

@@ -145,10 +145,6 @@
     <Content Include="..\..\metadata\hu.w4w.txt">
       <Link>metadata\hu\hu.w4w.txt</Link>
     </Content>
-    <Content Include="Assets\Logo.scale-100.png" />
-    <Content Include="Assets\SmallLogo.scale-100.png" />
-    <Content Include="Assets\SplashScreen.scale-100.png" />
-    <Content Include="Assets\StoreLogo.scale-100.png" />
     <Content Include="..\..\metadata\en.sahih.txt">
       <Link>metadata\en\en.sahih.txt</Link>
     </Content>
@@ -167,6 +163,25 @@
     <Content Include="..\..\metadata\UnicodeData.txt">
       <Link>metadata\UnicodeData.txt</Link>
     </Content>
+    <Content Include="Assets\Logo.scale-100.png" />
+    <Content Include="Assets\logo.scale-140.png" />
+    <Content Include="Assets\logo.scale-180.png" />
+    <Content Include="Assets\logo.scale-80.png" />
+    <Content Include="Assets\SmallLogo.scale-100.png" />
+    <Content Include="Assets\smalllogo.scale-140.png" />
+    <Content Include="Assets\smalllogo.scale-180.png" />
+    <Content Include="Assets\smalllogo.scale-80.png" />
+    <Content Include="Assets\SplashScreen.scale-100.png" />
+    <Content Include="Assets\splashscreen.scale-140.png" />
+    <Content Include="Assets\splashscreen.scale-180.png" />
+    <Content Include="Assets\StoreLogo.scale-100.png" />
+
+    <Content Include="Assets\storelogo.scale-140.png" />
+    <Content Include="Assets\storelogo.scale-180.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-100.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-140.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-180.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-80.png" />
     <None Include="Package.StoreAssociation.xml" />
   </ItemGroup>
   <ItemGroup>

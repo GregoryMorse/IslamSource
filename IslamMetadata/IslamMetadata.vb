@@ -168,7 +168,7 @@ Public Class Arabic
         ElseIf SchemeType = ArabicData.TranslitScheme.RuleBased Then
             Return TransliterateContigWithRules(ArabicString, PreString, PostString, PreStop, PostStop, Scheme, OptionalStops, RuleSet)
         ElseIf SchemeType = ArabicData.TranslitScheme.Literal Then
-            Return TransliterateToRoman(ArabicString, Scheme)
+            Return TransliterateToLiteral(ArabicString, Scheme)
         Else
             Return New String(System.Array.FindAll(ArabicString.ToCharArray(), Function(Check As Char) Check = " "c))
         End If
@@ -270,37 +270,38 @@ Public Class Arabic
         End If
         Return _Letters
     End Function
-    Public Shared Function TransliterateToRoman(ByVal ArabicString As String, Scheme As String) As String
-        Dim RomanString As New System.Text.StringBuilder
+    Public Shared Function TransliterateToLiteral(ByVal ArabicString As String, Scheme As String) As String
+        Dim LiteralString As New System.Text.StringBuilder
         Dim Count As Integer = 0
+        If Scheme = String.Empty Then Scheme = "ExtendedBuckwalter"
         While Count <= ArabicString.Length - 1
             If ArabicString(Count) = "\" Then
                 Count += 1
                 If ArabicString(Count) = "," Then
-                    RomanString.Append(ArabicData.ArabicComma)
+                    LiteralString.Append(ArabicData.ArabicComma)
                 ElseIf ArabicString(Count) = ";" Then
-                    RomanString.Append(ArabicData.ArabicSemicolon)
+                    LiteralString.Append(ArabicData.ArabicSemicolon)
                 ElseIf ArabicString(Count) = "?" Then
-                    RomanString.Append(ArabicData.ArabicQuestionMark)
+                    LiteralString.Append(ArabicData.ArabicQuestionMark)
                 Else
-                    RomanString.Append(ArabicString(Count))
+                    LiteralString.Append(ArabicString(Count))
                 End If
             Else
                 If GetSchemeSpecialFromMatch(ArabicString.Substring(Count), False) <> -1 Then
-                    RomanString.Append(GetSchemeSpecialValue(ArabicString.Substring(Count), GetSchemeSpecialFromMatch(ArabicString.Substring(Count), False), If(Scheme = String.Empty, "ExtendedBuckwalter", Scheme)))
+                    LiteralString.Append(GetSchemeSpecialValue(ArabicString.Substring(Count), GetSchemeSpecialFromMatch(ArabicString.Substring(Count), False), Scheme))
                     Count += System.Text.RegularExpressions.Regex.Match(CachedData.ArabicSpecialLetters(GetSchemeSpecialFromMatch(ArabicString.Substring(Count), False)), ArabicString.Substring(Count)).Value.Length - 1
-                ElseIf ArabicString.Length - Count > 1 AndAlso GetSchemeLongVowel(ArabicString.Substring(Count, 2), If(Scheme = String.Empty, "ExtendedBuckwalter", Scheme)) <> -1 Then
-                    RomanString.Append(GetSchemeLongVowelFromString(ArabicString.Substring(Count, 2), If(Scheme = String.Empty, "ExtendedBuckwalter", Scheme)))
+                ElseIf ArabicString.Length - Count > 1 AndAlso GetSchemeLongVowel(ArabicString.Substring(Count, 2), Scheme) <> -1 Then
+                    LiteralString.Append(GetSchemeLongVowelFromString(ArabicString.Substring(Count, 2), Scheme))
                     Count += 1
                 ElseIf GetSortedLetters(Scheme).ContainsKey(ArabicString(Count)) Then
-                    RomanString.Append(GetSchemeValueFromSymbol(ArabicData.ArabicLetters(ArabicData.FindLetterBySymbol(ArabicString(Count))), If(Scheme = String.Empty, "ExtendedBuckwalter", Scheme)))
+                    LiteralString.Append(GetSchemeValueFromSymbol(ArabicData.ArabicLetters(ArabicData.FindLetterBySymbol(ArabicString(Count))), Scheme))
                 Else
-                    RomanString.Append(ArabicString(Count))
+                    LiteralString.Append(ArabicString(Count))
                 End If
             End If
             Count += 1
         End While
-        Return RomanString.ToString()
+        Return LiteralString.ToString()
     End Function
     Structure RuleMetadata
         Sub New(NewIndex As Integer, NewLength As Integer, NewType As String, NewOrigOrder As Integer)
@@ -698,6 +699,7 @@ Public Class Arabic
     Public Shared Function TransliterateWithRules(ByVal ArabicString As String, Scheme As String, OptionalStops As Integer(), LearningMode As Boolean, RuleSet As IslamMetadata.IslamData.RuleMetaSet.RuleMetadataTranslation()) As String
         Dim Count As Integer
         Dim MetadataList As New Generic.List(Of RuleMetadata)
+        If Scheme = String.Empty Then Scheme = CachedData.IslamData.LanguageDefaultInfo.GetLanguageByID(String.Empty).TranslitScheme
         DoErrorCheck(ArabicString)
         For Count = 0 To RuleSet.Length - 1
             If Not RuleSet(Count).Evaluator Is Nothing Then

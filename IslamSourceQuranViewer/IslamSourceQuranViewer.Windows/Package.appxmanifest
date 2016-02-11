@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest">
-  <Identity Name="35516GMorseCode.QuranWordByWord" Publisher="CN=781370EF-81C3-47A0-A05B-C3423B2AB7DA" Version="1.1.0.2" />
+  <Identity Name="35516GMorseCode.QuranWordByWord" Publisher="CN=781370EF-81C3-47A0-A05B-C3423B2AB7DA" Version="1.1.0.3" />
   <Properties>
     <DisplayName>Quran Word By Word</DisplayName>
     <PublisherDisplayName>GMorseCode</PublisherDisplayName>
@@ -16,6 +16,8 @@
   <Applications>
     <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="IslamSourceQuranViewer.Windows.App">
       <m2:VisualElements DisplayName="Quran Word By Word" Square150x150Logo="Assets\Logo.png" Square30x30Logo="Assets\SmallLogo.png" Description="IslamSourceQuranViewer.Windows" ForegroundText="light" BackgroundColor="#464646">
+        <m2:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png">
+        </m2:DefaultTile>
         <m2:SplashScreen Image="Assets\SplashScreen.png" />
         <m2:InitialRotationPreference>
           <m2:Rotation Preference="portrait" />
