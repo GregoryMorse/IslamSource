@@ -152,6 +152,10 @@ public class WindowsRTSettings : XMLRender.PortableSettings
     {
         return "";
     }
+    public string GetResourceString(string baseName, string resourceKey)
+    {
+        return Windows.ApplicationModel.Resources.ResourceLoader.GetForViewIndependentUse(baseName + ".Resources").GetString(resourceKey);
+    }
     public static async System.Threading.Tasks.Task SavePathImageAsFile(int Width, int Height, string fileName, FrameworkElement element, bool UseRenderTarget = true)
     {
 #if WINDOWS_APP && STORETOOLKIT

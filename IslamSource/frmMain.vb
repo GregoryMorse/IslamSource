@@ -36,6 +36,9 @@ Public Class frmMain
             End Try
             Return Str.ToString()
         End Function
+        Public Function GetResourceString(baseName As String, resourceKey As String) As String
+            Return New System.Resources.ResourceManager(baseName + ".Resources", Reflection.Assembly.Load(baseName)).GetString(resourceKey, Threading.Thread.CurrentThread.CurrentUICulture)
+        End Function
     End Class
     Private Sub UtilityTestCode()
         'TanzilReader.WordFileToResource("..\..\..\metadata\en.w4w.corpus.txt", "..\..\..\ResourceToolkitTemp\QuranResources.resx")

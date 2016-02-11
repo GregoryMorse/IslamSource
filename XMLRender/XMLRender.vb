@@ -7,6 +7,7 @@ Public Interface PortableSettings
     Function GetTemplatePath() As String
     Function GetFilePath(ByVal Path As String) As String
     Function GetUName(Character As Char) As String
+    Function GetResourceString(baseName As String, resourceKey As String) As String
 End Interface
 Public Interface PortableFileIO
     Function LoadStream(FilePath As String) As IO.Stream
@@ -247,7 +248,7 @@ Public Class Utility
         If resourceKey Is Nothing Then Return Nothing
         For Each Pair In PortableMethods.Settings.Resources
             If Array.FindIndex(Pair.Value, Function(Str As String) Str = resourceKey Or resourceKey.StartsWith(Str + "_")) <> -1 Then
-                LoadResourceString = New System.Resources.ResourceManager(Pair.Key + ".Resources", Reflection.Assembly.Load(Pair.Key)).GetString(resourceKey, Threading.Thread.CurrentThread.CurrentUICulture)
+                LoadResourceString = PortableMethods.Settings.GetResourceString(Pair.Key, resourceKey)
             End If
         Next
         If LoadResourceString = Nothing And Not resourceKey.EndsWith("_") Then
