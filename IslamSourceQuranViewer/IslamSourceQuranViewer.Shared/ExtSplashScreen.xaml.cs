@@ -33,6 +33,7 @@ namespace IslamSourceQuranViewer
             this.InitializeComponent();
             this.BottomAppBar.Visibility = Windows.UI.Xaml.Visibility.Visible;
             this.ProgressGrid.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+            Position();
         }
         public ExtSplashScreen(Windows.ApplicationModel.Activation.SplashScreen splashScreen, bool loadState)
         {

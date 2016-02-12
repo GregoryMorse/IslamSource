@@ -244,6 +244,7 @@ namespace IslamSourceQuranViewer
 
         private void sectionListBox_DoubleTapped(object sender, DoubleTappedRoutedEventArgs e)
         {
+            if (ViewModel.ListSelectedItem == null) return;
             this.Frame.Navigate(typeof(WordForWordUC), new {Division = ViewModel.SelectedItem.Index, Selection = ViewModel.ListSelectedItem.Index + 1});
         }
 
