@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest">
-  <Identity Name="35516GMorseCode.QuranWordByWord" Publisher="CN=781370EF-81C3-47A0-A05B-C3423B2AB7DA" Version="1.1.0.3" />
+  <Identity Name="35516GMorseCode.QuranWordByWord" Publisher="CN=781370EF-81C3-47A0-A05B-C3423B2AB7DA" Version="1.1.0.5" />
   <Properties>
     <DisplayName>Quran Word By Word</DisplayName>
     <PublisherDisplayName>GMorseCode</PublisherDisplayName>

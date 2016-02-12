@@ -50,63 +50,10 @@
   <PropertyGroup>
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
-  <ItemGroup>
-    <!-- A reference to the entire .NET Framework and Windows SDK is automatically included -->
-    <EmbeddedResource Include="Resources.af.resx" />
-    <EmbeddedResource Include="Resources.ar.resx" />
-    <EmbeddedResource Include="Resources.be.resx" />
-    <EmbeddedResource Include="Resources.bg.resx" />
-    <EmbeddedResource Include="Resources.ca.resx" />
-    <EmbeddedResource Include="Resources.cs.resx" />
-    <EmbeddedResource Include="Resources.cy.resx" />
-    <EmbeddedResource Include="Resources.da.resx" />
-    <EmbeddedResource Include="Resources.de.resx" />
-    <EmbeddedResource Include="Resources.el.resx" />
-    <EmbeddedResource Include="Resources.en.resx">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources.es.resx" />
-    <EmbeddedResource Include="Resources.et.resx" />
-    <EmbeddedResource Include="Resources.fa.resx" />
-    <EmbeddedResource Include="Resources.fi.resx" />
-    <EmbeddedResource Include="Resources.fr.resx" />
-    <EmbeddedResource Include="Resources.ga.resx" />
-    <EmbeddedResource Include="Resources.gl.resx" />
-    <EmbeddedResource Include="Resources.hi.resx" />
-    <EmbeddedResource Include="Resources.hr.resx" />
-    <EmbeddedResource Include="Resources.hu.resx" />
-    <EmbeddedResource Include="Resources.id.resx" />
-    <EmbeddedResource Include="Resources.is.resx" />
-    <EmbeddedResource Include="Resources.it.resx" />
-    <EmbeddedResource Include="Resources.iw.resx" />
-    <EmbeddedResource Include="Resources.ja.resx" />
-    <EmbeddedResource Include="Resources.ko.resx" />
-    <EmbeddedResource Include="Resources.lt.resx" />
-    <EmbeddedResource Include="Resources.lv.resx" />
-    <EmbeddedResource Include="Resources.mk.resx" />
-    <EmbeddedResource Include="Resources.ms.resx" />
-    <EmbeddedResource Include="Resources.mt.resx" />
-    <EmbeddedResource Include="Resources.nl.resx" />
-    <EmbeddedResource Include="Resources.no.resx" />
-    <EmbeddedResource Include="Resources.pl.resx" />
-    <EmbeddedResource Include="Resources.pt-pt.resx" />
-    <EmbeddedResource Include="Resources.ro.resx" />
-    <EmbeddedResource Include="Resources.ru.resx" />
-    <EmbeddedResource Include="Resources.sk.resx" />
-    <EmbeddedResource Include="Resources.sl.resx" />
-    <EmbeddedResource Include="Resources.sq.resx" />
-    <EmbeddedResource Include="Resources.sr.resx" />
-    <EmbeddedResource Include="Resources.sv.resx" />
-    <EmbeddedResource Include="Resources.sw.resx" />
-    <EmbeddedResource Include="Resources.th.resx" />
-    <EmbeddedResource Include="Resources.tl.resx" />
-    <EmbeddedResource Include="Resources.tr.resx" />
-    <EmbeddedResource Include="Resources.uk.resx" />
-    <EmbeddedResource Include="Resources.vi.resx" />
-    <EmbeddedResource Include="Resources.yi.resx" />
-    <EmbeddedResource Include="Resources.zh-cn.resx" />
-    <EmbeddedResource Include="Resources.zh-tw.resx" />
-  </ItemGroup>
+  <PropertyGroup Label="MultilingualAppToolkit">
+    <MultilingualAppToolkitVersion>4.0</MultilingualAppToolkitVersion>
+    <MultilingualFallbackLanguage>en</MultilingualFallbackLanguage>
+  </PropertyGroup>
   <ItemGroup>
     <Import Include="Microsoft.VisualBasic" />
     <Import Include="System" />
@@ -135,6 +82,14 @@
     <Import Include="Windows.UI.Xaml.Media.Imaging" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Resources.en.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.en.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.hu.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.hu.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
@@ -149,270 +104,28 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Calendars.vb" />
-    <Compile Include="Resources.af.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.af.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Resources.ar.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.ar.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Resources.be.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.be.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Resources.bg.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.bg.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Resources.ca.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.ca.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Resources.cs.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.cs.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Resources.cy.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.cy.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Resources.da.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.da.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Resources.de.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.de.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Resources.el.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.el.resx</DependentUpon>
-    </Compile>
     <Compile Include="Resources.en.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.en.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Resources.es.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.es.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Resources.et.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.et.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Resources.fa.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.fa.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Resources.fi.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.fi.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Resources.fr.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.fr.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Resources.ga.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.ga.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Resources.gl.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.gl.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Resources.hi.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.hi.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Resources.hr.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.hr.resx</DependentUpon>
     </Compile>
     <Compile Include="Resources.hu.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.hu.resx</DependentUpon>
     </Compile>
-    <Compile Include="Resources.id.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.id.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Resources.is.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.is.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Resources.it.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.it.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Resources.iw.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.iw.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Resources.ja.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.ja.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Resources.ko.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.ko.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Resources.lt.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.lt.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Resources.lv.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.lv.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Resources.mk.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.mk.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Resources.ms.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.ms.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Resources.mt.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.mt.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Resources.nl.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.nl.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Resources.no.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.no.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Resources.pl.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.pl.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Resources.pt-pt.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.pt-pt.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Resources.ro.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.ro.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Resources.ru.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.ru.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Resources.sk.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.sk.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Resources.sl.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.sl.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Resources.sq.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.sq.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Resources.sr.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.sr.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Resources.sv.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.sv.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Resources.sw.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.sw.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Resources.th.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.th.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Resources.tl.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.tl.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Resources.tr.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.tr.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Resources.uk.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.uk.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Resources.vi.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.vi.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Resources.yi.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.yi.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Resources.zh-cn.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.zh-cn.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Resources.zh-tw.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.zh-tw.resx</DependentUpon>
-    </Compile>
     <Compile Include="XMLRender.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
   </ItemGroup>
+  <ItemGroup>
+    <XliffResource Include="MultilingualResources\XMLRender.en.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.hu.xlf" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.VisualBasic.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Multilingual App Toolkit\Microsoft.Multilingual.ResxResources.targets" Label="MultilingualAppToolkit" Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\Multilingual App Toolkit\Microsoft.Multilingual.ResxResources.targets')" />
+  <Target Name="MATPrerequisite" BeforeTargets="PrepareForBuild" Condition="!Exists('$(MSBuildExtensionsPath)\Microsoft\Multilingual App Toolkit\Microsoft.Multilingual.ResxResources.targets')" Label="MultilingualAppToolkit">
+    <Warning Text="$(MSBuildProjectFile) is Multilingual build enabled, but the Multilingual App Toolkit is unavailable during the build. If building with Visual Studio, please check to ensure that toolkit is properly installed." />
+  </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

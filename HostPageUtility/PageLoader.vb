@@ -35,7 +35,7 @@ Public Class WindowsWebSettings
         End Try
         Return Str.ToString()
     End Function
-    Public Function GetResourceString(baseName As String, resourceKey As String) As String
+    Public Function GetResourceString(baseName As String, resourceKey As String) As String Implements PortableSettings.GetResourceString
         Return New System.Resources.ResourceManager(baseName + ".Resources", Reflection.Assembly.Load(baseName)).GetString(resourceKey, Threading.Thread.CurrentThread.CurrentUICulture)
     End Function
 End Class
