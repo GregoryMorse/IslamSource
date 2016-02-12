@@ -125,7 +125,8 @@ public class WindowsRTSettings : XMLRender.PortableSettings
     {
         get {
             //Windows.Storage.ApplicationData.Current.LocalFolder.InstalledLocation;
-            return Windows.ApplicationModel.Package.Current.InstalledLocation.Path;
+            //Windows.ApplicationModel.Package.Current.InstalledLocation.Path;
+            return Windows.Storage.ApplicationData.Current.TemporaryFolder.Path;
         }
     }
     public KeyValuePair<string, string[]>[] Resources
