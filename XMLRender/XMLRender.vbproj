@@ -82,44 +82,970 @@
     <Import Include="Windows.UI.Xaml.Media.Imaging" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Resources.en.resx">
+    <EmbeddedResource Include="Resources.af.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.en.Designer.vb</LastGenOutput>
+      <LastGenOutput>Resources.af.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.am.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.am.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.ar.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.ar.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.as.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.as.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.az-Latn.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.az-Latn.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.be.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.be.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.bg.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.bg.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.bn.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.bn.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.bs-Cyrl.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.bs-Cyrl.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.bs-Latn.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.bs-Latn.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.ca.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.ca.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.chr-Cher.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.chr-Cher.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.cs.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.cs.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.cy.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.cy.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.da.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.da.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.de.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.de.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.el.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.el.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.es.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.es.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.et.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.et.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.eu.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.eu.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.fa.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.fa.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.fi.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.fi.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.fil.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.fil.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.fr.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.fr.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.ga.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.ga.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.gl.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.gl.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.gu.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.gu.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.ha-Latn.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.ha-Latn.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.he.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.he.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.hi.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.hi.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.hr.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.hr.Designer.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources.hu.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.hu.Designer.vb</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Resources.hy.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.hy.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.id.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.id.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.is.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.is.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.it.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.it.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.iu-Latn.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.iu-Latn.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.ja.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.ja.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.ka.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.ka.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.kk.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.kk.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.km.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.km.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.kn.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.kn.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.ko.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.ko.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.kok.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.kok.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.ku-Arab.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.ku-Arab.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.lb.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.lb.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.lo.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.lo.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.lt.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.lt.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.lv.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.lv.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.mi.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.mi.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.mk.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.mk.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.ml.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.ml.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.mr.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.mr.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.ms.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.ms.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.mt.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.mt.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.nb.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.nb.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.ne.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.ne.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.nl.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.nl.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.nn.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.nn.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.or.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.or.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.pa-Arab.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.pa-Arab.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.pa.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.pa.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.pl.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.pl.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.prs.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.prs.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.pt.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.pt.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.quz.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.quz.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
-      <CustomToolNamespace>My.Resources</CustomToolNamespace>
-      <SubType>Designer</SubType>
     </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Resources.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
+    <EmbeddedResource Include="Resources.ro.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.ro.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.ru.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.ru.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.rw.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.rw.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.sd-Arab.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.sd-Arab.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.si.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.si.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.sk.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.sk.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.sl.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.sl.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.sq.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.sq.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.sr-Cyrl.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.sr-Cyrl.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.sr-Latn.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.sr-Latn.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.sv.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.sv.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.sw.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.sw.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.ta.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.ta.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.te.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.te.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.tg-Cyrl.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.tg-Cyrl.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.th.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.th.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.ti.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.ti.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.tn.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.tn.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.tr.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.tr.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.uk.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.uk.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.ur.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.ur.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.uz-Latn.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.uz-Latn.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.vi.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.vi.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.wo.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.wo.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.xh.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.xh.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.zh-Hans.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.zh-Hans.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.zh-Hant.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.zh-Hant.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.zu.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.zu.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
     <Compile Include="Calendars.vb" />
-    <Compile Include="Resources.en.Designer.vb">
+    <Compile Include="Resources.af.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.en.resx</DependentUpon>
+      <DependentUpon>Resources.af.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.am.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.am.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.ar.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.ar.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.as.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.as.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.az-Latn.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.az-Latn.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.be.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.be.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.bg.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.bg.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.bn.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.bn.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.bs-Cyrl.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.bs-Cyrl.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.bs-Latn.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.bs-Latn.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.ca.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.ca.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.chr-Cher.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.chr-Cher.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.cs.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.cs.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.cy.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.cy.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.da.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.da.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.de.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.de.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.el.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.el.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.es.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.es.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.et.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.et.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.eu.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.eu.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.fa.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.fa.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.fi.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.fi.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.fil.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.fil.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.fr.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.fr.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.ga.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.ga.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.gl.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.gl.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.gu.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.gu.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.ha-Latn.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.ha-Latn.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.he.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.he.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.hi.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.hi.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.hr.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.hr.resx</DependentUpon>
     </Compile>
     <Compile Include="Resources.hu.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.hu.resx</DependentUpon>
     </Compile>
+    <Compile Include="Resources.hy.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.hy.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.id.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.id.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.is.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.is.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.it.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.it.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.iu-Latn.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.iu-Latn.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.ja.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.ja.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.ka.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.ka.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.kk.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.kk.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.km.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.km.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.kn.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.kn.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.ko.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.ko.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.kok.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.kok.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.ku-Arab.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.ku-Arab.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.lb.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.lb.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.lo.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.lo.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.lt.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.lt.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.lv.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.lv.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.mi.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.mi.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.mk.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.mk.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.ml.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.ml.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.mr.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.mr.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.ms.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.ms.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.mt.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.mt.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.nb.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.nb.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.ne.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.ne.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.nl.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.nl.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.nn.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.nn.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.or.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.or.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.pa-Arab.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.pa-Arab.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.pa.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.pa.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.pl.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.pl.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.prs.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.prs.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.pt.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.pt.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.quz.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.quz.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.ro.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.ro.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.ru.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.ru.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.rw.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.rw.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.sd-Arab.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.sd-Arab.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.si.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.si.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.sk.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.sk.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.sl.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.sl.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.sq.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.sq.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.sr-Cyrl.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.sr-Cyrl.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.sr-Latn.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.sr-Latn.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.sv.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.sv.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.sw.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.sw.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.ta.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.ta.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.te.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.te.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.tg-Cyrl.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.tg-Cyrl.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.th.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.th.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.ti.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.ti.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.tn.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.tn.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.tr.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.tr.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.uk.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.uk.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.ur.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.ur.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.uz-Latn.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.uz-Latn.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.vi.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.vi.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.wo.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.wo.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.xh.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.xh.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.zh-Hans.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.zh-Hans.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.zh-Hant.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.zh-Hant.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.zu.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.zu.resx</DependentUpon>
+    </Compile>
     <Compile Include="XMLRender.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
   </ItemGroup>
   <ItemGroup>
-    <XliffResource Include="MultilingualResources\XMLRender.en.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.af.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.am.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.ar.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.as.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.az-Latn.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.be.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.bg.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.bn.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.bs-Cyrl.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.bs-Latn.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.ca.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.chr-Cher.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.cs.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.cy.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.da.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.de.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.el.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.es.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.et.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.eu.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.fa.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.fi.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.fil.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.fr.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.ga.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.gd.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.gl.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.gu.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.ha-Latn.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.he.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.hi.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.hr.xlf" />
     <XliffResource Include="MultilingualResources\XMLRender.hu.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.hy.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.id.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.ig.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.is.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.it.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.iu-Latn.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.ja.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.ka.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.kk.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.km.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.kn.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.ko.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.kok.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.ku-Arab.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.ky.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.lb.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.lo.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.lt.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.lv.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.mi.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.mk.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.ml.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.mr.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.ms.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.mt.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.nb.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.ne.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.nl.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.nn.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.nso.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.or.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.pa-Arab.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.pa.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.pl.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.prs.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.ps.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.pt.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.quz.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.rm.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.ro.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.ru.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.rw.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.sd-Arab.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.si.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.sk.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.sl.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.sq.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.sr-Cyrl.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.sr-Latn.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.sv.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.sw.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.ta.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.te.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.tg-Cyrl.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.th.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.ti.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.tk.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.tn.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.tr.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.tt.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.ug.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.uk.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.ur.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.uz-Latn.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.vi.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.wo.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.xh.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.yo.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.zh-Hans.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.zh-Hant.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.zu.xlf" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.VisualBasic.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Multilingual App Toolkit\Microsoft.Multilingual.ResxResources.targets" Label="MultilingualAppToolkit" Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\Multilingual App Toolkit\Microsoft.Multilingual.ResxResources.targets')" />

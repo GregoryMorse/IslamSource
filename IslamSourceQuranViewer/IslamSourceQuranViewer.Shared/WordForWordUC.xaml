@@ -1,5 +1,6 @@
 ﻿<Page
     x:Class="IslamSourceQuranViewer.WordForWordUC"
+    x:Name="TopLevel"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:IslamSourceQuranViewer"
@@ -29,8 +30,10 @@
                 </Grid.RowDefinitions>
 
                 <Rectangle Grid.Row="0" Stroke="LightGray" StrokeThickness="1" StrokeDashArray="3,3" StrokeDashCap="Round"></Rectangle>
-                <TextBlock Grid.Row="0" Text="{Binding ItemText}" Width="auto" HorizontalAlignment="Center" Margin="5" 
-                        TextAlignment="Center" TextWrapping="Wrap" Style="{StaticResource TitleStyle}"></TextBlock>
+                <TextBlock Grid.Row="0" Width="auto" HorizontalAlignment="Center" Margin="5" FlowDirection="{Binding Direction}"
+                        TextAlignment="Center" TextWrapping="Wrap" Style="{StaticResource TitleStyle}" FontSize="{Binding ElementName=TopLevel, Path=UIChanger.AllFontSize, Mode=OneWay}">
+                    <Run Text="{Binding ItemText}" Foreground="{Binding Color}"></Run>
+                </TextBlock>
             </Grid>
         </DataTemplate>
         <DataTemplate x:Key="MyTemplate">
@@ -58,7 +61,7 @@
             </ItemsControl.ItemsPanel>
             <ItemsControl.Template>
                 <ControlTemplate TargetType="ItemsControl">
-                    <ScrollViewer VerticalScrollBarVisibility="Auto">
+                    <ScrollViewer VerticalScrollBarVisibility="Auto" ZoomMode="Enabled">
                         <ItemsPresenter/>
                     </ScrollViewer>
                 </ControlTemplate>
@@ -67,6 +70,9 @@
     </Grid>
     <Page.BottomAppBar>
         <CommandBar>
+            <AppBarButton Name="ZoomIn" Click="ZoomIn_Click" Label="Bigger" Icon="ZoomIn"></AppBarButton>
+            <AppBarButton Name="ZoomOut" Click="ZoomOut_Click" Label="Smaller" Icon="ZoomOut"></AppBarButton>
+            <AppBarButton Name="Default" Click="Default_Click" Label="Default" Icon="Zoom"></AppBarButton>
             <AppBarButton Name="RenderPngs" Click="RenderPngs_Click" Label="Render" Icon="Camera"></AppBarButton>
             <AppBarButton Name="Settings" Click="Settings_Click" Label="Settings" Icon="Setting"></AppBarButton>
             <AppBarButton Name="Back" Click="Back_Click" Label="Back" Icon="Back"></AppBarButton>
