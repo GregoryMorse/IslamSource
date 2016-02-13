@@ -714,7 +714,7 @@ Public Class Arabic
                     For SubCount = 0 To RuleSet(Count).Evaluator.Length - 1
                         If Not RuleSet(Count).Evaluator(SubCount) Is Nothing AndAlso RuleSet(Count).Evaluator(SubCount) <> String.Empty And (Matches(MatchIndex).Groups(SubCount + 1).Length <> 0 Or Array.IndexOf(AllowZeroLength, RuleSet(Count).Evaluator(SubCount)) <> -1) Then
                             MetadataList.Add(New RuleMetadata(Matches(MatchIndex).Groups(SubCount + 1).Index, Matches(MatchIndex).Groups(SubCount + 1).Length, RuleSet(Count).Evaluator(SubCount), SubCount))
-                            Debug.WriteLine(RuleSet(Count).Name + " Index: " + CStr(Matches(MatchIndex).Groups(SubCount + 1).Index) + " Length: " + CStr(Matches(MatchIndex).Groups(SubCount + 1).Length) + " Ruling: " + RuleSet(Count).Evaluator(SubCount))
+                            'Debug.WriteLine(RuleSet(Count).Name + " Index: " + CStr(Matches(MatchIndex).Groups(SubCount + 1).Index) + " Length: " + CStr(Matches(MatchIndex).Groups(SubCount + 1).Length) + " Ruling: " + RuleSet(Count).Evaluator(SubCount))
                         End If
                     Next
                 Next
@@ -753,7 +753,7 @@ Public Class Arabic
                     If SecondIndex = SecondRule.Count Then FirstUpdate.Append(If(FirstUpdate.Length <> 0, "|", String.Empty) + FirstRule(FirstIndex))
                 Next
                 SecondRule.Insert(0, FirstUpdate.ToString())
-                'Debug.Print("First: " + MetadataList(Index).Type + " Second: " + MetadataList(Index + 1).Type + " After: " + String.Join("|"c, SecondRule.ToArray()))
+                Debug.WriteLine("First: " + MetadataList(Index).Type + " Second: " + MetadataList(Index + 1).Type + " After: " + String.Join("|"c, SecondRule.ToArray()))
                 MetadataList(Index) = New RuleMetadata(MetadataList(Index).Index, MetadataList(Index).Length, String.Join("|"c, SecondRule.ToArray()), MetadataList(Index).OrigOrder)
                 MetadataList.RemoveAt(Index + 1)
             Loop
