@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Acct_ChangePassword" xml:space="preserve">
+    <value>Смени лозинка</value>
+  </data>
+  <data name="Acct_ClearCache" xml:space="preserve">
+    <value>Исчисти кеш</value>
+  </data>
+  <data name="Acct_ConfirmPassword" xml:space="preserve">
+    <value>Потврди лозинка</value>
+  </data>
+  <data name="Acct_ControlPanel" xml:space="preserve">
+    <value>Контролна табла</value>
+  </data>
+  <data name="Acct_DeleteAccount" xml:space="preserve">
+    <value>Избришете ја сметката</value>
+  </data>
+  <data name="Acct_EmailAddress" xml:space="preserve">
+    <value>Адреса на е-пошта</value>
+  </data>
+  <data name="Acct_ForgotPassword" xml:space="preserve">
+    <value>Ја заборавивте лозинката?</value>
+  </data>
+  <data name="Acct_Home" xml:space="preserve">
+    <value>Почеток</value>
+  </data>
+  <data name="Acct_InvalidInput" xml:space="preserve">
+    <value>Неважечки внес</value>
+  </data>
+  <data name="Acct_Login" xml:space="preserve">
+    <value>Пријава</value>
+  </data>
+  <data name="Acct_No" xml:space="preserve">
+    <value>Не</value>
+  </data>
+  <data name="Acct_Password" xml:space="preserve">
+    <value>Лозинка:</value>
+  </data>
+  <data name="Acct_PasswordsNotMatch" xml:space="preserve">
+    <value>Лозинките не се совпаѓаат</value>
+  </data>
+  <data name="Acct_Register" xml:space="preserve">
+    <value>Регистрирај</value>
+  </data>
+  <data name="Acct_ResetPassword" xml:space="preserve">
+    <value>Повторно поставете ја лозинката...</value>
+  </data>
+  <data name="Acct_Username" xml:space="preserve">
+    <value>Корисничко име</value>
+  </data>
+  <data name="Acct_Yes" xml:space="preserve">
+    <value>Да</value>
+  </data>
+  <data name="lang_ber" xml:space="preserve">
+    <value>тамазитски</value>
+  </data>
+  <data name="lang_en" xml:space="preserve">
+    <value>англиски</value>
+  </data>
+  <data name="lang_sw" xml:space="preserve">
+    <value>кисвахили</value>
+  </data>
+  <data name="lang_localam" xml:space="preserve">
+    <value>амхарски</value>
+  </data>
+  <data name="lang_localar" xml:space="preserve">
+    <value>арапски</value>
+  </data>
+  <data name="lang_localaz" xml:space="preserve">
+    <value>Азербејџански</value>
+  </data>
+  <data name="lang_localbg" xml:space="preserve">
+    <value>бугарски</value>
+  </data>
+  <data name="lang_localbn" xml:space="preserve">
+    <value>Бенгалски</value>
+  </data>
+  <data name="lang_localbs" xml:space="preserve">
+    <value>Босански</value>
+  </data>
+  <data name="lang_localcs" xml:space="preserve">
+    <value>чешки</value>
+  </data>
+  <data name="lang_localde" xml:space="preserve">
+    <value>германски</value>
+  </data>
+  <data name="lang_localdv" xml:space="preserve">
+    <value>дивехи</value>
+  </data>
+  <data name="lang_localen" xml:space="preserve">
+    <value>англиски</value>
+  </data>
+  <data name="lang_locales" xml:space="preserve">
+    <value>шпански</value>
+  </data>
+  <data name="lang_localfa" xml:space="preserve">
+    <value>персиски</value>
+  </data>
+  <data name="lang_localfr" xml:space="preserve">
+    <value>француски</value>
+  </data>
+  <data name="lang_localha" xml:space="preserve">
+    <value>хауса</value>
+  </data>
+  <data name="lang_localhi" xml:space="preserve">
+    <value>хинди</value>
+  </data>
+  <data name="lang_localid" xml:space="preserve">
+    <value>Индонезиски</value>
+  </data>
+  <data name="lang_localit" xml:space="preserve">
+    <value>италијански</value>
+  </data>
+  <data name="lang_localja" xml:space="preserve">
+    <value>јапонски</value>
+  </data>
+  <data name="lang_localko" xml:space="preserve">
+    <value>корејски</value>
+  </data>
+  <data name="lang_localml" xml:space="preserve">
+    <value>Малајалам</value>
+  </data>
+  <data name="lang_localms" xml:space="preserve">
+    <value>малајски</value>
+  </data>
+  <data name="lang_localnl" xml:space="preserve">
+    <value>холандски</value>
+  </data>
+  <data name="lang_localno" xml:space="preserve">
+    <value>норвешки</value>
+  </data>
+  <data name="lang_localpl" xml:space="preserve">
+    <value>полски</value>
+  </data>
+  <data name="lang_localpt" xml:space="preserve">
+    <value>португалски</value>
+  </data>
+  <data name="lang_localro" xml:space="preserve">
+    <value>романски</value>
+  </data>
+  <data name="lang_localru" xml:space="preserve">
+    <value>руски</value>
+  </data>
+  <data name="lang_localsd" xml:space="preserve">
+    <value>синдхи</value>
+  </data>
+  <data name="lang_localso" xml:space="preserve">
+    <value>сомалиски</value>
+  </data>
+  <data name="lang_localsq" xml:space="preserve">
+    <value>албански</value>
+  </data>
+  <data name="lang_localsv" xml:space="preserve">
+    <value>шведски</value>
+  </data>
+  <data name="lang_localsw" xml:space="preserve">
+    <value>Свахили</value>
+  </data>
+  <data name="lang_localta" xml:space="preserve">
+    <value>тамилски</value>
+  </data>
+  <data name="lang_localtg" xml:space="preserve">
+    <value>Таџикистански</value>
+  </data>
+  <data name="lang_localth" xml:space="preserve">
+    <value>тајландски</value>
+  </data>
+  <data name="lang_localtr" xml:space="preserve">
+    <value>турски</value>
+  </data>
+  <data name="lang_localtt" xml:space="preserve">
+    <value>Татарски</value>
+  </data>
+  <data name="lang_localug" xml:space="preserve">
+    <value>ујгурски</value>
+  </data>
+  <data name="lang_localur" xml:space="preserve">
+    <value>Урду</value>
+  </data>
+  <data name="lang_localuz" xml:space="preserve">
+    <value>узбекистански</value>
+  </data>
+  <data name="lang_localzh" xml:space="preserve">
+    <value>Кинески</value>
+  </data>
+  <data name="Acct_Download" xml:space="preserve">
+    <value>Преземи {0}</value>
+  </data>
+  <data name="unicode_Colon" xml:space="preserve">
+    <value>Знак за две точки</value>
+  </data>
+  <data name="unicode_Comma" xml:space="preserve">
+    <value>Запирка</value>
+  </data>
+  <data name="unicode_Space" xml:space="preserve">
+    <value>Простор</value>
+  </data>
+  <data name="Acct_Certificate" xml:space="preserve">
+    <value>Сертификат:</value>
+  </data>
+  <data name="Acct_CurrentUser" xml:space="preserve">
+    <value>Тековен корисник</value>
+  </data>
+  <data name="unicode_PopDirectionalFormatting" xml:space="preserve">
+    <value>‬	Отворање насочено форматирање</value>
+  </data>
+</root>

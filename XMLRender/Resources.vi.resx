@@ -1,0 +1,903 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Acct_AccountActivateSuccess" xml:space="preserve">
+    <value>Tài khoản được kích hoạt thành công.</value>
+  </data>
+  <data name="Acct_AccountAlreadyActivated" xml:space="preserve">
+    <value>Tài khoản của bạn đã được kích hoạt.</value>
+  </data>
+  <data name="Acct_AccountDeleteSuccess" xml:space="preserve">
+    <value>Tài khoản đã xóa thành công.</value>
+  </data>
+  <data name="Acct_AccountNotActivated" xml:space="preserve">
+    <value>Tài khoản không chưa kích hoạt xin vui lòng kiểm tra email của bạn trước hoặc yêu cầu một mã số kích hoạt bổ sung.</value>
+  </data>
+  <data name="Acct_ActivateAccount" xml:space="preserve">
+    <value>Kích hoạt tài khoản</value>
+  </data>
+  <data name="Acct_ActivationAccountBody" xml:space="preserve">
+    <value>Thư điện tử này yêu cầu kích hoạt tài khoản {0}: {1}. xin vui lòng sử dụng liên kết sau: {2} hoặc bằng cách đến trang {3} và nhập tên người dùng và kích hoạt mã sau đây: {4}</value>
+  </data>
+  <data name="Acct_ActivationAccountSubject" xml:space="preserve">
+    <value>Kích hoạt tài khoản tại {0}</value>
+  </data>
+  <data name="Acct_ActivationCode" xml:space="preserve">
+    <value>Mã Kích hoạt</value>
+  </data>
+  <data name="Acct_BadEmailFormat" xml:space="preserve">
+    <value>Địa chỉ e-mail không có trong một định dạng hợp lệ.</value>
+  </data>
+  <data name="Acct_Certain" xml:space="preserve">
+    <value>Bạn có chắc?</value>
+  </data>
+  <data name="Acct_ChangeEmailAddress" xml:space="preserve">
+    <value>Thay đổi địa chỉ E-mail</value>
+  </data>
+  <data name="Acct_ChangePassword" xml:space="preserve">
+    <value>Đổi Mật khẩu</value>
+  </data>
+  <data name="Acct_ChangeUsername" xml:space="preserve">
+    <value>Thay đổi tên người dùng</value>
+  </data>
+  <data name="Acct_CheckEmailNotice" xml:space="preserve">
+    <value>Kích hoạt được gửi đến địa chỉ cung cấp.  Vui lòng kiểm tra email của bạn để kích hoạt tài khoản của bạn mà sẽ hoàn tất đăng ký của bạn.</value>
+  </data>
+  <data name="Acct_CleanupStale" xml:space="preserve">
+    <value>Dọn dẹp cu</value>
+  </data>
+  <data name="Acct_ClearCache" xml:space="preserve">
+    <value>Xóa Bộ đệm ẩn</value>
+  </data>
+  <data name="Acct_ClearDiskCache" xml:space="preserve">
+    <value>Xoá bộ nhớ Cache đĩa</value>
+  </data>
+  <data name="Acct_ConfirmEmailAddress" xml:space="preserve">
+    <value>Xác nhận địa chỉ email</value>
+  </data>
+  <data name="Acct_ConfirmPassword" xml:space="preserve">
+    <value>Xác nhận Mật khẩu</value>
+  </data>
+  <data name="Acct_ControlPanel" xml:space="preserve">
+    <value>Pa-nen Điều khiển</value>
+  </data>
+  <data name="Acct_CreateDatabase" xml:space="preserve">
+    <value>Tạo cơ sở dữ liệu</value>
+  </data>
+  <data name="Acct_DeleteAccount" xml:space="preserve">
+    <value>Xóa bỏ Trương mục</value>
+  </data>
+  <data name="Acct_DotNetVersion" xml:space="preserve">
+    <value>Phiên bản dot Net</value>
+  </data>
+  <data name="Acct_DuplicateUser" xml:space="preserve">
+    <value>Người dùng với tên này đã tồn tại vui lòng chọn khác.</value>
+  </data>
+  <data name="Acct_EmailAddress" xml:space="preserve">
+    <value>Địa chỉ Email</value>
+  </data>
+  <data name="Acct_EmailChangeReactivate" xml:space="preserve">
+    <value>Thay đổi địa chỉ email và kích hoạt email gửi để kích hoạt lại tài khoản.</value>
+  </data>
+  <data name="Acct_EmailInUse" xml:space="preserve">
+    <value>E-mail đã sử dụng xin vui lòng đăng nhập với thông tin đăng nhập hiện tại.</value>
+  </data>
+  <data name="Acct_EmailsNotMatch" xml:space="preserve">
+    <value>Địa chỉ e-mail không khớp</value>
+  </data>
+  <data name="Acct_ForgotPassword" xml:space="preserve">
+    <value>Quên Mật khẩu</value>
+  </data>
+  <data name="Acct_ForgotUsername" xml:space="preserve">
+    <value>Quên tên đăng nhập</value>
+  </data>
+  <data name="Acct_Home" xml:space="preserve">
+    <value>Trang chủ</value>
+  </data>
+  <data name="Acct_IncorrectActivationCode" xml:space="preserve">
+    <value>Mã kích hoạt không chính xác.</value>
+  </data>
+  <data name="Acct_IncorrectPasswordResetCode" xml:space="preserve">
+    <value>Không đúng mật khẩu đặt lại mã.</value>
+  </data>
+  <data name="Acct_InvalidInput" xml:space="preserve">
+    <value>Đầu vào không hợp lệ.</value>
+  </data>
+  <data name="Acct_InvalidUsernamePassword" xml:space="preserve">
+    <value>Không hợp lệ tên người dùng hoặc mật khẩu.</value>
+  </data>
+  <data name="Acct_Login" xml:space="preserve">
+    <value>Đăng nhập</value>
+  </data>
+  <data name="Acct_LoginSuccess" xml:space="preserve">
+    <value>Đăng nhập thành công.</value>
+  </data>
+  <data name="Acct_Logoff" xml:space="preserve">
+    <value>Đăng xuất</value>
+  </data>
+  <data name="Acct_LogoffSuccess" xml:space="preserve">
+    <value>Đăng xuất thành công.</value>
+  </data>
+  <data name="Acct_MinimumPassword" xml:space="preserve">
+    <value>Mật khẩu phải có ít nhất 8 ký tự.</value>
+  </data>
+  <data name="Acct_MinimumUsername" xml:space="preserve">
+    <value>Tên người dùng phải có ít nhất 4 ký tự.</value>
+  </data>
+  <data name="Acct_No" xml:space="preserve">
+    <value>Không</value>
+  </data>
+  <data name="Acct_NotConfirmDelete" xml:space="preserve">
+    <value>Phải xác nhận việc xóa tài khoản.</value>
+  </data>
+  <data name="Acct_NoUserExists" xml:space="preserve">
+    <value>Người dùng không tồn tại cho địa chỉ e-mail vào.</value>
+  </data>
+  <data name="Acct_Password" xml:space="preserve">
+    <value>M?t kh?u</value>
+  </data>
+  <data name="Acct_PasswordAlreadyReset" xml:space="preserve">
+    <value>Đã đặt lại mật khẩu hoặc quá trình không khởi tạo.</value>
+  </data>
+  <data name="Acct_PasswordChangedBody" xml:space="preserve">
+    <value>Email này là để thông báo thay đổi mật khẩu của tài khoản {0}: {1}.</value>
+  </data>
+  <data name="Acct_PasswordChangedSubject" xml:space="preserve">
+    <value>Mật khẩu thay đổi cho tài khoản tại {0}</value>
+  </data>
+  <data name="Acct_PasswordChangeSuccess" xml:space="preserve">
+    <value>Mật khẩu thay đổi thành công.</value>
+  </data>
+  <data name="Acct_PasswordEmailSent" xml:space="preserve">
+    <value>Email đã được gửi đến địa chỉ của bạn vào tập tin để bắt đầu đặt lại mật khẩu quá trình.</value>
+  </data>
+  <data name="Acct_PasswordResetBody" xml:space="preserve">
+    <value>Email này là để đặt lại mật khẩu của tài khoản {0}: {1}. xin vui lòng sử dụng liên kết sau: {3} hoặc bằng cách tiếp tục đi đến trang {4} và nhập tên người dùng và mật khẩu sau đặt lại mã số: {5}</value>
+  </data>
+  <data name="Acct_PasswordResetCode" xml:space="preserve">
+    <value>Mật khẩu đặt lại mã</value>
+  </data>
+  <data name="Acct_PasswordResetSubject" xml:space="preserve">
+    <value>Mật khẩu đặt lại cho tài khoản tại {0}</value>
+  </data>
+  <data name="Acct_PasswordResetSuccess" xml:space="preserve">
+    <value>Thành công đặt lại mật khẩu.</value>
+  </data>
+  <data name="Acct_PasswordsNotMatch" xml:space="preserve">
+    <value>Mật khẩu không khớp</value>
+  </data>
+  <data name="Acct_Register" xml:space="preserve">
+    <value>Đăng ký</value>
+  </data>
+  <data name="Acct_Remember" xml:space="preserve">
+    <value>Còn nhớ không?</value>
+  </data>
+  <data name="Acct_RemoveDatabase" xml:space="preserve">
+    <value>Loại bỏ cơ sở dữ liệu</value>
+  </data>
+  <data name="Acct_ResendActivationEmail" xml:space="preserve">
+    <value>Gửi lại email kích hoạt</value>
+  </data>
+  <data name="Acct_ResetPassword" xml:space="preserve">
+    <value>Đặt lại Mật khẩu</value>
+  </data>
+  <data name="Acct_RetrievePassword" xml:space="preserve">
+    <value>Lấy lại mật khẩu</value>
+  </data>
+  <data name="Acct_RetrieveUsername" xml:space="preserve">
+    <value>Truy xuất tên người dùng</value>
+  </data>
+  <data name="Acct_SendActivationCode" xml:space="preserve">
+    <value>Gửi mã kích hoạt</value>
+  </data>
+  <data name="Acct_Username" xml:space="preserve">
+    <value>Tên người dùng</value>
+  </data>
+  <data name="Acct_UsernameChangedBody" xml:space="preserve">
+    <value>Email này là để thông báo thay đổi tên tài khoản của tài khoản {0}: {1}.</value>
+  </data>
+  <data name="Acct_UsernameChangedSubject" xml:space="preserve">
+    <value>Tên người dùng thay đổi cho tài khoản tại {0}</value>
+  </data>
+  <data name="Acct_UsernameChangeSuccess" xml:space="preserve">
+    <value>Tên người dùng thay đổi thành công.</value>
+  </data>
+  <data name="Acct_UsernameEmailSent" xml:space="preserve">
+    <value>Email đã được gửi đến địa chỉ của bạn vào các tập tin với tên người dùng của bạn.</value>
+  </data>
+  <data name="Acct_UsernameReminderBody" xml:space="preserve">
+    <value>Thư này là một lời nhắc nhở {0} tài khoản của bạn: {1}.</value>
+  </data>
+  <data name="Acct_UsernameReminderSubject" xml:space="preserve">
+    <value>Xin nhắc lại tên người dùng cho tài khoản tại {0}</value>
+  </data>
+  <data name="Acct_UserNotFound" xml:space="preserve">
+    <value>Người dùng không tồn tại.</value>
+  </data>
+  <data name="Acct_ViewCache" xml:space="preserve">
+    <value>Xem Cache</value>
+  </data>
+  <data name="Acct_ViewDiskCache" xml:space="preserve">
+    <value>View Disk Cache</value>
+  </data>
+  <data name="Acct_ViewHeaders" xml:space="preserve">
+    <value>View Headers</value>
+  </data>
+  <data name="Acct_Yes" xml:space="preserve">
+    <value>Có</value>
+  </data>
+  <data name="lang_am" xml:space="preserve">
+    <value>ኣማርኛ</value>
+  </data>
+  <data name="lang_ar" xml:space="preserve">
+    <value>العربية</value>
+  </data>
+  <data name="lang_az" xml:space="preserve">
+    <value>Azerbaycan dili</value>
+  </data>
+  <data name="lang_ber" xml:space="preserve">
+    <value>Tiếng Tamazight</value>
+  </data>
+  <data name="lang_bg" xml:space="preserve">
+    <value>БЪЛГАРСКИ</value>
+  </data>
+  <data name="lang_bn" xml:space="preserve">
+    <value>বাংলা</value>
+  </data>
+  <data name="lang_bs" xml:space="preserve">
+    <value>Bosanski</value>
+  </data>
+  <data name="lang_cs" xml:space="preserve">
+    <value>Čeština</value>
+  </data>
+  <data name="lang_de" xml:space="preserve">
+    <value>Deutsch</value>
+  </data>
+  <data name="lang_dv" xml:space="preserve">
+    <value>ދިވެހި</value>
+  </data>
+  <data name="lang_en" xml:space="preserve">
+    <value>Tiếng Anh</value>
+  </data>
+  <data name="lang_es" xml:space="preserve">
+    <value>tại Tây Ban Nha</value>
+  </data>
+  <data name="lang_fa" xml:space="preserve">
+    <value>فارسى</value>
+  </data>
+  <data name="lang_fr" xml:space="preserve">
+    <value>Français</value>
+  </data>
+  <data name="lang_ha" xml:space="preserve">
+    <value>Ḥawsa</value>
+  </data>
+  <data name="lang_hi" xml:space="preserve">
+    <value>हिन्दी</value>
+  </data>
+  <data name="lang_id" xml:space="preserve">
+    <value>Paket Bahasa Indonesia</value>
+  </data>
+  <data name="lang_it" xml:space="preserve">
+    <value>Italiano</value>
+  </data>
+  <data name="lang_ja" xml:space="preserve">
+    <value>日本語</value>
+  </data>
+  <data name="lang_ko" xml:space="preserve">
+    <value>한국어</value>
+  </data>
+  <data name="lang_ku" xml:space="preserve">
+    <value>کوردی</value>
+  </data>
+  <data name="lang_ml" xml:space="preserve">
+    <value>മലയാളം</value>
+  </data>
+  <data name="lang_ms" xml:space="preserve">
+    <value>Bahasa melayu</value>
+  </data>
+  <data name="lang_nl" xml:space="preserve">
+    <value>Nederlands</value>
+  </data>
+  <data name="lang_no" xml:space="preserve">
+    <value>Norsk</value>
+  </data>
+  <data name="lang_pl" xml:space="preserve">
+    <value>Polski</value>
+  </data>
+  <data name="lang_pt" xml:space="preserve">
+    <value>Português</value>
+  </data>
+  <data name="lang_ro" xml:space="preserve">
+    <value>रोमानो</value>
+  </data>
+  <data name="lang_ru" xml:space="preserve">
+    <value>РУССКИЙ ЯЗЫК</value>
+  </data>
+  <data name="lang_sd" xml:space="preserve">
+    <value>سنڌي</value>
+  </data>
+  <data name="lang_so" xml:space="preserve">
+    <value>AF Soomaali</value>
+  </data>
+  <data name="lang_sq" xml:space="preserve">
+    <value>Shqip</value>
+  </data>
+  <data name="lang_sv" xml:space="preserve">
+    <value>Svenska</value>
+  </data>
+  <data name="lang_sw" xml:space="preserve">
+    <value>Tiếng Kiswahili</value>
+  </data>
+  <data name="lang_ta" xml:space="preserve">
+    <value>தமிழ்</value>
+  </data>
+  <data name="lang_tg" xml:space="preserve">
+    <value>ТОҶИКИ</value>
+  </data>
+  <data name="lang_th" xml:space="preserve">
+    <value>ภาษาไทย</value>
+  </data>
+  <data name="lang_tr" xml:space="preserve">
+    <value>Türkçe</value>
+  </data>
+  <data name="lang_tt" xml:space="preserve">
+    <value>ТАТАРЧА</value>
+  </data>
+  <data name="lang_ug" xml:space="preserve">
+    <value>ئۇيغۇر</value>
+  </data>
+  <data name="lang_ur" xml:space="preserve">
+    <value>اردو</value>
+  </data>
+  <data name="lang_uz" xml:space="preserve">
+    <value>o'zbek h ўзбек тили</value>
+  </data>
+  <data name="lang_zh" xml:space="preserve">
+    <value>中文</value>
+  </data>
+  <data name="lang_localam" xml:space="preserve">
+    <value>Tiếng Am-ha-ric</value>
+  </data>
+  <data name="lang_localar" xml:space="preserve">
+    <value>Tiếng A-Rập</value>
+  </data>
+  <data name="lang_localaz" xml:space="preserve">
+    <value>Tiếng Azerbaijan</value>
+  </data>
+  <data name="lang_localber" xml:space="preserve">
+    <value>Amazigh</value>
+  </data>
+  <data name="lang_localbg" xml:space="preserve">
+    <value>Tiếng Bun-ga-ri</value>
+  </data>
+  <data name="lang_localbn" xml:space="preserve">
+    <value>Tiếng Bengali</value>
+  </data>
+  <data name="lang_localbs" xml:space="preserve">
+    <value>Tiếng Bosnia</value>
+  </data>
+  <data name="lang_localcs" xml:space="preserve">
+    <value>Tiếng Séc</value>
+  </data>
+  <data name="lang_localde" xml:space="preserve">
+    <value>Tiếng Đức</value>
+  </data>
+  <data name="lang_localdv" xml:space="preserve">
+    <value>Tiếng Đi-vê-hi</value>
+  </data>
+  <data name="lang_localen" xml:space="preserve">
+    <value>Tiếng Anh</value>
+  </data>
+  <data name="lang_locales" xml:space="preserve">
+    <value>Tiếng Tây Ban Nha</value>
+  </data>
+  <data name="lang_localfa" xml:space="preserve">
+    <value>Tiếng Ba Tư</value>
+  </data>
+  <data name="lang_localfr" xml:space="preserve">
+    <value>Tiếng Pháp</value>
+  </data>
+  <data name="lang_localha" xml:space="preserve">
+    <value>Tiếng Hausa</value>
+  </data>
+  <data name="lang_localhi" xml:space="preserve">
+    <value>Tiếng Hindi</value>
+  </data>
+  <data name="lang_localid" xml:space="preserve">
+    <value>Tiếng Indonesia</value>
+  </data>
+  <data name="lang_localit" xml:space="preserve">
+    <value>Tiếng Ý</value>
+  </data>
+  <data name="lang_localja" xml:space="preserve">
+    <value>Tiếng Nhật</value>
+  </data>
+  <data name="lang_localko" xml:space="preserve">
+    <value>Tiếng Hàn</value>
+  </data>
+  <data name="lang_localku" xml:space="preserve">
+    <value>Tiếng Kurd</value>
+  </data>
+  <data name="lang_localml" xml:space="preserve">
+    <value>Tiếng Malayalam (Bắc Ấn Độ)</value>
+  </data>
+  <data name="lang_localms" xml:space="preserve">
+    <value>Tiếng Mã-lai</value>
+  </data>
+  <data name="lang_localnl" xml:space="preserve">
+    <value>Tiếng Hà Lan</value>
+  </data>
+  <data name="lang_localno" xml:space="preserve">
+    <value>Tiếng Na Uy</value>
+  </data>
+  <data name="lang_localpl" xml:space="preserve">
+    <value>Tiếng Ba Lan</value>
+  </data>
+  <data name="lang_localpt" xml:space="preserve">
+    <value>Tiếng Bồ Đào Nha</value>
+  </data>
+  <data name="lang_localro" xml:space="preserve">
+    <value>Tiếng Ru-ma-ni</value>
+  </data>
+  <data name="lang_localru" xml:space="preserve">
+    <value>Tiếng Nga</value>
+  </data>
+  <data name="lang_localsd" xml:space="preserve">
+    <value>Tiếng Sindhi</value>
+  </data>
+  <data name="lang_localso" xml:space="preserve">
+    <value>Tiếng Xô-ma-li</value>
+  </data>
+  <data name="lang_localsq" xml:space="preserve">
+    <value>Tiếng An-ba-ni</value>
+  </data>
+  <data name="lang_localsv" xml:space="preserve">
+    <value>Tiếng Thụy Điển</value>
+  </data>
+  <data name="lang_localsw" xml:space="preserve">
+    <value>Tiếng Swahili</value>
+  </data>
+  <data name="lang_localta" xml:space="preserve">
+    <value>Tiếng Ta-min</value>
+  </data>
+  <data name="lang_localtg" xml:space="preserve">
+    <value>Tiếng Ta-dic</value>
+  </data>
+  <data name="lang_localth" xml:space="preserve">
+    <value>Tiếng Thái</value>
+  </data>
+  <data name="lang_localtr" xml:space="preserve">
+    <value>Tiếng Thổ Nhĩ Kỳ</value>
+  </data>
+  <data name="lang_localtt" xml:space="preserve">
+    <value>Tiếng Tatar</value>
+  </data>
+  <data name="lang_localug" xml:space="preserve">
+    <value>Tiếng Uyghur</value>
+  </data>
+  <data name="lang_localur" xml:space="preserve">
+    <value>Tiếng U-đu</value>
+  </data>
+  <data name="lang_localuz" xml:space="preserve">
+    <value>Tiếng Uzbek</value>
+  </data>
+  <data name="lang_localzh" xml:space="preserve">
+    <value>Tiếng Trung Quốc</value>
+  </data>
+  <data name="Acct_Download" xml:space="preserve">
+    <value>Tải xuống {0}</value>
+  </data>
+  <data name="unicode_ArabicComma" xml:space="preserve">
+    <value>Tiếng ả Rập dấu phẩy</value>
+  </data>
+  <data name="unicode_ArabicDamma" xml:space="preserve">
+    <value>Tiếng ả Rập Damma</value>
+  </data>
+  <data name="unicode_ArabicDammatan" xml:space="preserve">
+    <value>Tiếng ả Rập Dammatan</value>
+  </data>
+  <data name="unicode_ArabicEmptyCentreHighStop" xml:space="preserve">
+    <value>Tiếng ả Rập rỗng tâm cao dừng</value>
+  </data>
+  <data name="unicode_ArabicEmptyCentreLowStop" xml:space="preserve">
+    <value>Tiếng ả Rập rỗng tâm thấp dừng</value>
+  </data>
+  <data name="unicode_ArabicEndOfAyah" xml:space="preserve">
+    <value>Tiếng ả Rập cuối Ayah</value>
+  </data>
+  <data name="unicode_ArabicFatha" xml:space="preserve">
+    <value>Tiếng ả Rập Fatha</value>
+  </data>
+  <data name="unicode_ArabicFathatan" xml:space="preserve">
+    <value>Tiếng ả Rập Fathatan</value>
+  </data>
+  <data name="unicode_ArabicHamzaAbove" xml:space="preserve">
+    <value>Tiếng ả Rập Hamza ở trên</value>
+  </data>
+  <data name="unicode_ArabicHamzaBelow" xml:space="preserve">
+    <value>Tiếng ả Rập Hamza dưới đây</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitEight" xml:space="preserve">
+    <value>Chữ số ả-Rập-Indic tám</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitFive" xml:space="preserve">
+    <value>Chữ số ả-Rập-Indic 5</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitFour" xml:space="preserve">
+    <value>Chữ số ả-Rập-Indic bốn</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitNine" xml:space="preserve">
+    <value>Chữ số ả-Rập-Indic chín</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitOne" xml:space="preserve">
+    <value>Chữ số ả-Rập-Indic One</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitSeven" xml:space="preserve">
+    <value>Chữ số ả-Rập-Indic bảy</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitSix" xml:space="preserve">
+    <value>Chữ số ả-Rập-Indic sáu</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitThree" xml:space="preserve">
+    <value>Chữ số ả-Rập-Indic ba</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitTwo" xml:space="preserve">
+    <value>Chữ số ả-Rập-Indic hai</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitZero" xml:space="preserve">
+    <value>Chữ số ả-Rập-Indic Zero</value>
+  </data>
+  <data name="unicode_ArabicKasra" xml:space="preserve">
+    <value>Tiếng ả Rập Kasra</value>
+  </data>
+  <data name="unicode_ArabicKasratan" xml:space="preserve">
+    <value>Tiếng ả Rập Kasratan</value>
+  </data>
+  <data name="unicode_ArabicLetterAin" xml:space="preserve">
+    <value>Tiếng ả Rập thư Ain</value>
+  </data>
+  <data name="unicode_ArabicLetterAlef" xml:space="preserve">
+    <value>Tiếng ả Rập thư Alef</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefMaksura" xml:space="preserve">
+    <value>Tiếng ả Rập thư Alef Maksura</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefWasla" xml:space="preserve">
+    <value>Tiếng ả Rập thư Alef Wasla</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefWithHamzaAbove" xml:space="preserve">
+    <value>Tiếng ả Rập thư Alef với Hamza ở trên</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefWithHamzaBelow" xml:space="preserve">
+    <value>Tiếng ả Rập thư Alef với Hamza dưới đây</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefWithMaddaAbove" xml:space="preserve">
+    <value>Tiếng ả Rập thư Alef với Madda ở trên</value>
+  </data>
+  <data name="unicode_ArabicLetterBeh" xml:space="preserve">
+    <value>Tiếng ả Rập thư Beh</value>
+  </data>
+  <data name="unicode_ArabicLetterDad" xml:space="preserve">
+    <value>Tiếng ả Rập thư gửi bố</value>
+  </data>
+  <data name="unicode_ArabicLetterDal" xml:space="preserve">
+    <value>Tiếng ả Rập thư Dal</value>
+  </data>
+  <data name="unicode_ArabicLetterFeh" xml:space="preserve">
+    <value>Tiếng ả Rập thư Feh</value>
+  </data>
+  <data name="unicode_ArabicLetterGaf" xml:space="preserve">
+    <value>Tiếng ả Rập thư Gaf</value>
+  </data>
+  <data name="unicode_ArabicLetterGhain" xml:space="preserve">
+    <value>Tiếng ả Rập thư Ghain</value>
+  </data>
+  <data name="unicode_ArabicLetterHah" xml:space="preserve">
+    <value>Tiếng ả Rập thư Hah</value>
+  </data>
+  <data name="unicode_ArabicLetterHamza" xml:space="preserve">
+    <value>Tiếng ả Rập thư Hamza</value>
+  </data>
+  <data name="unicode_ArabicLetterHeh" xml:space="preserve">
+    <value>Tiếng ả Rập thư Heh</value>
+  </data>
+  <data name="unicode_ArabicLetterJeem" xml:space="preserve">
+    <value>Tiếng ả Rập thư Jeem</value>
+  </data>
+  <data name="unicode_ArabicLetterKaf" xml:space="preserve">
+    <value>Tiếng ả Rập thư Kaf</value>
+  </data>
+  <data name="unicode_ArabicLetterKhah" xml:space="preserve">
+    <value>Tiếng ả Rập thư Khah</value>
+  </data>
+  <data name="unicode_ArabicLetterLam" xml:space="preserve">
+    <value>Tiếng ả Rập thư lâm</value>
+  </data>
+  <data name="unicode_ArabicLetterMeem" xml:space="preserve">
+    <value>Tiếng ả Rập thư Meem</value>
+  </data>
+  <data name="unicode_ArabicLetterNoon" xml:space="preserve">
+    <value>Tiếng ả Rập thư giữa trưa</value>
+  </data>
+  <data name="unicode_ArabicLetterPeh" xml:space="preserve">
+    <value>Tiếng ả Rập thư Peh</value>
+  </data>
+  <data name="unicode_ArabicLetterQaf" xml:space="preserve">
+    <value>Tiếng ả Rập thư Qaf</value>
+  </data>
+  <data name="unicode_ArabicLetterReh" xml:space="preserve">
+    <value>Tiếng ả Rập thư Reh</value>
+  </data>
+  <data name="unicode_ArabicLetterSad" xml:space="preserve">
+    <value>Tiếng ả Rập thư buồn</value>
+  </data>
+  <data name="unicode_ArabicLetterSeen" xml:space="preserve">
+    <value>Tiếng ả Rập thư thấy</value>
+  </data>
+  <data name="unicode_ArabicLetterSheen" xml:space="preserve">
+    <value>Tiếng ả Rập thư Sheen</value>
+  </data>
+  <data name="unicode_ArabicLetterSuperscriptAlef" xml:space="preserve">
+    <value>Tiếng ả Rập thư Superscript Alef</value>
+  </data>
+  <data name="unicode_ArabicLetterTah" xml:space="preserve">
+    <value>Tiếng ả Rập thư Tah</value>
+  </data>
+  <data name="unicode_ArabicLetterTcheh" xml:space="preserve">
+    <value>Tiếng ả Rập thư Tcheh</value>
+  </data>
+  <data name="unicode_ArabicLetterTeh" xml:space="preserve">
+    <value>Tiếng ả Rập thư Teh</value>
+  </data>
+  <data name="unicode_ArabicLetterTehMarbuta" xml:space="preserve">
+    <value>Tiếng ả Rập thư Teh Marbuta</value>
+  </data>
+  <data name="unicode_ArabicLetterThal" xml:space="preserve">
+    <value>Tiếng ả Rập thư Thal</value>
+  </data>
+  <data name="unicode_ArabicLetterTheh" xml:space="preserve">
+    <value>Tiếng ả Rập thư Theh</value>
+  </data>
+  <data name="unicode_ArabicLetterVeh" xml:space="preserve">
+    <value>Tiếng ả Rập thư Veh</value>
+  </data>
+  <data name="unicode_ArabicLetterWaw" xml:space="preserve">
+    <value>Tiếng ả Rập thư Waw</value>
+  </data>
+  <data name="unicode_ArabicLetterWawWithHamzaAbove" xml:space="preserve">
+    <value>Tiếng ả Rập thư Waw với Hamza ở trên</value>
+  </data>
+  <data name="unicode_ArabicLetterYeh" xml:space="preserve">
+    <value>Tiếng ả Rập thư Yeh</value>
+  </data>
+  <data name="unicode_ArabicLetterYehWithHamzaAbove" xml:space="preserve">
+    <value>Tiếng ả Rập thư Yeh với Hamza ở trên</value>
+  </data>
+  <data name="unicode_ArabicLetterZah" xml:space="preserve">
+    <value>Tiếng ả Rập thư Zah</value>
+  </data>
+  <data name="unicode_ArabicLetterZain" xml:space="preserve">
+    <value>Zain ả Rập thư</value>
+  </data>
+  <data name="unicode_ArabicLigatureAkbarIsolatedForm" xml:space="preserve">
+    <value>Tiếng ả Rập Ligature Akbar phân lập biểu mẫu</value>
+  </data>
+  <data name="unicode_ArabicLigatureAlayheIsolatedForm" xml:space="preserve">
+    <value>Ligature tiếng ả Rập Alayhe cô lập biểu mẫu</value>
+  </data>
+  <data name="unicode_ArabicLigatureAllahIsolatedForm" xml:space="preserve">
+    <value>Tiếng ả Rập Ligature Allah cô lập biểu mẫu</value>
+  </data>
+  <data name="unicode_ArabicLigatureBismillahArRahmanArRaheem" xml:space="preserve">
+    <value>Tiếng ả Rập cổ Allah Ar-Rahman Ar-Raheem</value>
+  </data>
+  <data name="unicode_ArabicLigatureJallajalalouhou" xml:space="preserve">
+    <value>Ligature tiếng ả Rập Jallajalalouhou</value>
+  </data>
+  <data name="unicode_ArabicLigatureMohammadIsolatedForm" xml:space="preserve">
+    <value>Tiếng ả Rập Ligature Mohammad cô lập biểu mẫu</value>
+  </data>
+  <data name="unicode_ArabicLigatureQalaUsedAsKoranicStopSignIsolatedForm" xml:space="preserve">
+    <value>Qala Ligature ả Rập được sử dụng như Koranic dừng ký bị cô lập</value>
+  </data>
+  <data name="unicode_ArabicLigatureRasoulIsolatedForm" xml:space="preserve">
+    <value>Ligature tiếng ả Rập Rasoul cô lập biểu mẫu</value>
+  </data>
+  <data name="unicode_ArabicLigatureSalamIsolatedForm" xml:space="preserve">
+    <value>Tiếng ả Rập Ligature Salam cô lập biểu mẫu</value>
+  </data>
+  <data name="unicode_ArabicLigatureSallaIsolatedForm" xml:space="preserve">
+    <value>Tiếng ả Rập Ligature Salla cô lập biểu mẫu</value>
+  </data>
+  <data name="unicode_ArabicLigatureSallallahouAlayheWasallam" xml:space="preserve">
+    <value>Ligature tiếng ả Rập Sallallahou Alayhe Wasallam</value>
+  </data>
+  <data name="unicode_ArabicLigatureSallaUsedAsKoranicStopSignIsolatedForm" xml:space="preserve">
+    <value>Tiếng ả Rập Ligature Salla được sử dụng như Koranic dừng ký bị cô lập</value>
+  </data>
+  <data name="unicode_ArabicLigatureWasallamIsolatedForm" xml:space="preserve">
+    <value>Ligature tiếng ả Rập Wasallam cô lập biểu mẫu</value>
+  </data>
+  <data name="unicode_ArabicMaddahAbove" xml:space="preserve">
+    <value>Tiếng ả Rập Maddah ở trên</value>
+  </data>
+  <data name="unicode_ArabicPlaceOfSajdah" xml:space="preserve">
+    <value>Tiếng ả Rập nơi của Sajdah</value>
+  </data>
+  <data name="unicode_ArabicQuestionMark" xml:space="preserve">
+    <value>Dấu chấm hỏi tiếng ả Rập</value>
+  </data>
+  <data name="unicode_ArabicRoundedHighStopWithFilledCentre" xml:space="preserve">
+    <value>Tiếng ả Rập làm tròn cao dừng lại với Trung tâm đầy</value>
+  </data>
+  <data name="unicode_ArabicSemicolon" xml:space="preserve">
+    <value>Dấu chấm phẩy ả Rập</value>
+  </data>
+  <data name="unicode_ArabicShadda" xml:space="preserve">
+    <value>Tiếng ả Rập Shadda</value>
+  </data>
+  <data name="unicode_ArabicSmallHighJeem" xml:space="preserve">
+    <value>Tiếng ả Rập Jeem nhỏ cao</value>
+  </data>
+  <data name="unicode_ArabicSmallHighLamAlef" xml:space="preserve">
+    <value>Tiếng ả Rập Lam nhỏ cao Alef</value>
+  </data>
+  <data name="unicode_ArabicSmallHighLigatureQafWithLamWithAlefMaksura" xml:space="preserve">
+    <value>Tiếng ả Rập Ligature nhỏ cao Qaf với Lâm với Alef Maksura</value>
+  </data>
+  <data name="unicode_ArabicSmallHighLigatureSadWithLamWithAlefMaksura" xml:space="preserve">
+    <value>Tiếng ả Rập nhỏ cao Ligature buồn với Lâm với Alef Maksura</value>
+  </data>
+  <data name="unicode_ArabicSmallHighMeemInitialForm" xml:space="preserve">
+    <value>Tiếng ả Rập nhỏ cao Meem ban đầu mẫu</value>
+  </data>
+  <data name="unicode_ArabicSmallHighMeemIsolatedForm" xml:space="preserve">
+    <value>Tiếng ả Rập Meem nhỏ cao cô lập biểu mẫu</value>
+  </data>
+  <data name="unicode_ArabicSmallHighNoon" xml:space="preserve">
+    <value>Tiếng ả Rập nhỏ High Noon</value>
+  </data>
+  <data name="unicode_ArabicSmallHighRoundedZero" xml:space="preserve">
+    <value>Tiếng ả Rập nhỏ Zero cao làm tròn</value>
+  </data>
+  <data name="unicode_ArabicSmallHighSeen" xml:space="preserve">
+    <value>Tiếng ả Rập nhỏ cao thấy</value>
+  </data>
+  <data name="unicode_ArabicSmallHighThreeDots" xml:space="preserve">
+    <value>Tiếng ả Rập nhỏ cao ba chấm</value>
+  </data>
+  <data name="unicode_ArabicSmallHighUprightRectangularZero" xml:space="preserve">
+    <value>Tiếng ả Rập nhỏ hình chữ nhật đứng thẳng cao Zero</value>
+  </data>
+  <data name="unicode_ArabicSmallLowMeem" xml:space="preserve">
+    <value>Tiếng ả Rập Meem nhỏ thấp</value>
+  </data>
+  <data name="unicode_ArabicSmallLowSeen" xml:space="preserve">
+    <value>Tiếng ả Rập nhỏ ít nhìn thấy</value>
+  </data>
+  <data name="unicode_ArabicSmallWaw" xml:space="preserve">
+    <value>Waw nhỏ tiếng ả Rập</value>
+  </data>
+  <data name="unicode_ArabicSmallYeh" xml:space="preserve">
+    <value>Yeh nhỏ tiếng ả Rập</value>
+  </data>
+  <data name="unicode_ArabicStartOfRubElHizb" xml:space="preserve">
+    <value>Tiếng ả Rập đầu chà El Hizb</value>
+  </data>
+  <data name="unicode_ArabicSukun" xml:space="preserve">
+    <value>Tiếng ả Rập Sukun</value>
+  </data>
+  <data name="unicode_ArabicTatweel" xml:space="preserve">
+    <value>Tiếng ả Rập Tatweel</value>
+  </data>
+  <data name="unicode_Colon" xml:space="preserve">
+    <value>Đại tràng</value>
+  </data>
+  <data name="unicode_Comma" xml:space="preserve">
+    <value>Dấu phảy</value>
+  </data>
+  <data name="unicode_ExclamationMark" xml:space="preserve">
+    <value>Dấu chấm than</value>
+  </data>
+  <data name="unicode_FullStop" xml:space="preserve">
+    <value>Daáu chaám</value>
+  </data>
+  <data name="unicode_HyphenMinus" xml:space="preserve">
+    <value>Gạch nối-trừ</value>
+  </data>
+  <data name="unicode_LeftCurlyBracket" xml:space="preserve">
+    <value>Khung trái xoăn</value>
+  </data>
+  <data name="unicode_LeftPointingDoubleAngleQuotationMark" xml:space="preserve">
+    <value>Chỉ còn lại đôi góc báo giá đánh dấu</value>
+  </data>
+  <data name="unicode_LeftSquareBracket" xml:space="preserve">
+    <value>Khung hình vuông bên trái</value>
+  </data>
+  <data name="unicode_OrnateLeftParenthesis" xml:space="preserve">
+    <value>Trang trí công phu dấu ngoặc đơn trái</value>
+  </data>
+  <data name="unicode_OrnateRightParenthesis" xml:space="preserve">
+    <value>Dấu ngoặc đơn bên phải văn hoa</value>
+  </data>
+  <data name="unicode_QuotationMark" xml:space="preserve">
+    <value>Báo giá đánh dấu</value>
+  </data>
+  <data name="unicode_RialSign" xml:space="preserve">
+    <value>Rial i-ran đăng</value>
+  </data>
+  <data name="unicode_RightCurlyBracket" xml:space="preserve">
+    <value>Ngay Curly Bracket</value>
+  </data>
+  <data name="unicode_RightPointingDoubleAngleQuotationMark" xml:space="preserve">
+    <value>Trỏ phải tăng gấp đôi góc báo giá đánh dấu</value>
+  </data>
+  <data name="unicode_RightSquareBracket" xml:space="preserve">
+    <value>Phải quảng trường khung</value>
+  </data>
+  <data name="unicode_Space" xml:space="preserve">
+    <value>Dấu cách</value>
+  </data>
+  <data name="Acct_CertRequest" xml:space="preserve">
+    <value>Yêu cầu giấy chứng nhận</value>
+  </data>
+  <data name="Acct_Certificate" xml:space="preserve">
+    <value>Chứng chỉ</value>
+  </data>
+  <data name="Acct_CertInstall" xml:space="preserve">
+    <value>Cài đặt chứng chỉ</value>
+  </data>
+  <data name="Acct_CurrentUser" xml:space="preserve">
+    <value>Người dùng hiện thời</value>
+  </data>
+  <data name="Acct_DeleteCertRequest" xml:space="preserve">
+    <value>Xóa bỏ yêu cầu giấy chứng nhận</value>
+  </data>
+  <data name="Acct_EnableSSL" xml:space="preserve">
+    <value>Sử SSL</value>
+  </data>
+  <data name="Acct_PrivateKey" xml:space="preserve">
+    <value>Khóa riêng</value>
+  </data>
+  <data name="Acct_ViewCertRequests" xml:space="preserve">
+    <value>Xem chứng chỉ yêu cầu</value>
+  </data>
+  <data name="Acct_ViewSites" xml:space="preserve">
+    <value>Xem các trang web</value>
+  </data>
+  <data name="Acct_CertInstallIntermed" xml:space="preserve">
+    <value>Cài đặt chứng chỉ Trung cấp</value>
+  </data>
+  <data name="unicode_LeftToRightEmbedding" xml:space="preserve">
+    <value>Việc nhúng trái-qua-phải</value>
+  </data>
+  <data name="unicode_RightToLeftEmbedding" xml:space="preserve">
+    <value>Việc nhúng phải-qua-trái</value>
+  </data>
+  <data name="unicode_LeftToRightMark" xml:space="preserve">
+    <value>Nhãn hiệu trái-qua-phải</value>
+  </data>
+  <data name="unicode_LeftToRightOverride" xml:space="preserve">
+    <value>Ghi đè trái-qua-phải</value>
+  </data>
+  <data name="unicode_PopDirectionalFormatting" xml:space="preserve">
+    <value>Pop định dạng định hướng</value>
+  </data>
+  <data name="unicode_RightToLeftMark" xml:space="preserve">
+    <value>Nhãn hiệu phải-sang-trái</value>
+  </data>
+  <data name="unicode_RightToLeftOverride" xml:space="preserve">
+    <value>Ghi đè phải-qua-trái</value>
+  </data>
+</root>

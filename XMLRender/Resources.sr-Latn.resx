@@ -1,0 +1,903 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Acct_AccountActivateSuccess" xml:space="preserve">
+    <value>Račun je uspješno aktiviran.</value>
+  </data>
+  <data name="Acct_AccountAlreadyActivated" xml:space="preserve">
+    <value>Nalog je već aktiviran.</value>
+  </data>
+  <data name="Acct_AccountDeleteSuccess" xml:space="preserve">
+    <value>Nalog je uspješno izbrisana.</value>
+  </data>
+  <data name="Acct_AccountNotActivated" xml:space="preserve">
+    <value>Račun nije još aktivirana Provjerite Vaš email prvo ili zatražite kod za dodatne aktivacije.</value>
+  </data>
+  <data name="Acct_ActivateAccount" xml:space="preserve">
+    <value>Aktivirate nalog</value>
+  </data>
+  <data name="Acct_ActivationAccountBody" xml:space="preserve">
+    <value>Ova e-pošta zahteva za aktivaciju vašeg naloga {0}: {1}. Molimo vas da koristite Sljedeća veza: {2} ili tako nastavljamo sa {3} na stranici i da unesete vaše korisničko ime i sledeći kôd za aktivaciju: {4}</value>
+  </data>
+  <data name="Acct_ActivationAccountSubject" xml:space="preserve">
+    <value>Aktivacija za račun na {0}</value>
+  </data>
+  <data name="Acct_ActivationCode" xml:space="preserve">
+    <value>Šifra aktivacije</value>
+  </data>
+  <data name="Acct_BadEmailFormat" xml:space="preserve">
+    <value>E-adresa nije u važećem formatu.</value>
+  </data>
+  <data name="Acct_Certain" xml:space="preserve">
+    <value>Jeste li sigurni?</value>
+  </data>
+  <data name="Acct_ChangeEmailAddress" xml:space="preserve">
+    <value>Promena adrese e-pošte</value>
+  </data>
+  <data name="Acct_ChangePassword" xml:space="preserve">
+    <value>Promeni lozinku</value>
+  </data>
+  <data name="Acct_ChangeUsername" xml:space="preserve">
+    <value>Promenite korisničko ime</value>
+  </data>
+  <data name="Acct_CheckEmailNotice" xml:space="preserve">
+    <value>Aktivacija je poslala na adresu koju ste dobili.  Provjerite Vaš e-mail da aktivirate svoj nalog koji će dovršiti registracija.</value>
+  </data>
+  <data name="Acct_CleanupStale" xml:space="preserve">
+    <value>Čišćenje bajatog</value>
+  </data>
+  <data name="Acct_ClearCache" xml:space="preserve">
+    <value>Obriši keš</value>
+  </data>
+  <data name="Acct_ClearDiskCache" xml:space="preserve">
+    <value>Brisanje keša na disku</value>
+  </data>
+  <data name="Acct_ConfirmEmailAddress" xml:space="preserve">
+    <value>Potvrdite e-adresu</value>
+  </data>
+  <data name="Acct_ConfirmPassword" xml:space="preserve">
+    <value>Potvrda lozinke</value>
+  </data>
+  <data name="Acct_ControlPanel" xml:space="preserve">
+    <value>Kontrolna tabla</value>
+  </data>
+  <data name="Acct_CreateDatabase" xml:space="preserve">
+    <value>Kreiranje baze podataka</value>
+  </data>
+  <data name="Acct_DeleteAccount" xml:space="preserve">
+    <value>Brisanje naloga</value>
+  </data>
+  <data name="Acct_DotNetVersion" xml:space="preserve">
+    <value>Dot Net verzija</value>
+  </data>
+  <data name="Acct_DuplicateUser" xml:space="preserve">
+    <value>Korisnik sa ovim imenom već postoji Odaberite neki drugi.</value>
+  </data>
+  <data name="Acct_EmailAddress" xml:space="preserve">
+    <value>e-adresa</value>
+  </data>
+  <data name="Acct_EmailChangeReactivate" xml:space="preserve">
+    <value>E-adresa promenila i aktiviranje poslao da biste ponovo aktivirali nalog e-pošte.</value>
+  </data>
+  <data name="Acct_EmailInUse" xml:space="preserve">
+    <value>E-već u upotrebi molim te prijavu sa postojećeg akreditiva.</value>
+  </data>
+  <data name="Acct_EmailsNotMatch" xml:space="preserve">
+    <value>Adrese e-pošte se ne podudaraju.</value>
+  </data>
+  <data name="Acct_ForgotPassword" xml:space="preserve">
+    <value>Zaboravljena lozinka</value>
+  </data>
+  <data name="Acct_ForgotUsername" xml:space="preserve">
+    <value>Zaboravili korisničko ime</value>
+  </data>
+  <data name="Acct_Home" xml:space="preserve">
+    <value>Kuća</value>
+  </data>
+  <data name="Acct_IncorrectActivationCode" xml:space="preserve">
+    <value>Neispravan aktivacijski kod.</value>
+  </data>
+  <data name="Acct_IncorrectPasswordResetCode" xml:space="preserve">
+    <value>Šifra za poništavanje neispravne lozinke.</value>
+  </data>
+  <data name="Acct_InvalidInput" xml:space="preserve">
+    <value>Nevažeći unos.</value>
+  </data>
+  <data name="Acct_InvalidUsernamePassword" xml:space="preserve">
+    <value>Nevažeće korisničko ime ili lozinka.</value>
+  </data>
+  <data name="Acct_Login" xml:space="preserve">
+    <value>Prijavi se</value>
+  </data>
+  <data name="Acct_LoginSuccess" xml:space="preserve">
+    <value>Prijava je uspešna.</value>
+  </data>
+  <data name="Acct_Logoff" xml:space="preserve">
+    <value>Odjavljivanje</value>
+  </data>
+  <data name="Acct_LogoffSuccess" xml:space="preserve">
+    <value>Kada se odjavite uspešan.</value>
+  </data>
+  <data name="Acct_MinimumPassword" xml:space="preserve">
+    <value>Lozinka mora imati najmanje 8 znakova.</value>
+  </data>
+  <data name="Acct_MinimumUsername" xml:space="preserve">
+    <value>Korisničko ime mora biti najmanje 4 znaka.</value>
+  </data>
+  <data name="Acct_No" xml:space="preserve">
+    <value>Ne</value>
+  </data>
+  <data name="Acct_NotConfirmDelete" xml:space="preserve">
+    <value>Morate da potvrdite brisanje naloga.</value>
+  </data>
+  <data name="Acct_NoUserExists" xml:space="preserve">
+    <value>Nijedan korisnik postoji za unetu e-adresu.</value>
+  </data>
+  <data name="Acct_Password" xml:space="preserve">
+    <value>Lozinke</value>
+  </data>
+  <data name="Acct_PasswordAlreadyReset" xml:space="preserve">
+    <value>Već za poništavanje lozinke ili proces nije pokrenut.</value>
+  </data>
+  <data name="Acct_PasswordChangedBody" xml:space="preserve">
+    <value>Ova e-mail je obavijestiti o promeni lozinku vašeg naloga {0}: {1}.</value>
+  </data>
+  <data name="Acct_PasswordChangedSubject" xml:space="preserve">
+    <value>Lozinka je promenjena za račun na {0}</value>
+  </data>
+  <data name="Acct_PasswordChangeSuccess" xml:space="preserve">
+    <value>Lozinka je uspešno promenjena.</value>
+  </data>
+  <data name="Acct_PasswordEmailSent" xml:space="preserve">
+    <value>E-mail poslat na vašu adresu na datoteci da pokrene proces za poništavanje lozinke.</value>
+  </data>
+  <data name="Acct_PasswordResetBody" xml:space="preserve">
+    <value>Ova e-pošta je da poništite lozinku za vaš račun {0}: {1}. Molimo vas da koristite Sljedeća veza: {3} ili Prođite na stranicu {4} i unesete vaše korisničko ime i sljedeću lozinku poništite Šifra: {5}</value>
+  </data>
+  <data name="Acct_PasswordResetCode" xml:space="preserve">
+    <value>Šifra za poništavanje lozinke</value>
+  </data>
+  <data name="Acct_PasswordResetSubject" xml:space="preserve">
+    <value>Lozinke za korisnički račun na {0}</value>
+  </data>
+  <data name="Acct_PasswordResetSuccess" xml:space="preserve">
+    <value>Uspješno za poništavanje lozinke.</value>
+  </data>
+  <data name="Acct_PasswordsNotMatch" xml:space="preserve">
+    <value>Lozinke se ne podudaraju</value>
+  </data>
+  <data name="Acct_Register" xml:space="preserve">
+    <value>REGISTER</value>
+  </data>
+  <data name="Acct_Remember" xml:space="preserve">
+    <value>Zapamti?</value>
+  </data>
+  <data name="Acct_RemoveDatabase" xml:space="preserve">
+    <value>Uklanjanje baze podataka</value>
+  </data>
+  <data name="Acct_ResendActivationEmail" xml:space="preserve">
+    <value>Ponovno slanje e-pošte za aktivaciju</value>
+  </data>
+  <data name="Acct_ResetPassword" xml:space="preserve">
+    <value>Poništavanje lozinke</value>
+  </data>
+  <data name="Acct_RetrievePassword" xml:space="preserve">
+    <value>Biste preuzeli lozinku</value>
+  </data>
+  <data name="Acct_RetrieveUsername" xml:space="preserve">
+    <value>Preuzme korisničko ime</value>
+  </data>
+  <data name="Acct_SendActivationCode" xml:space="preserve">
+    <value>Pošalji aktivacijski kod</value>
+  </data>
+  <data name="Acct_Username" xml:space="preserve">
+    <value>Korisničko ime</value>
+  </data>
+  <data name="Acct_UsernameChangedBody" xml:space="preserve">
+    <value>Ova e-mail je obavijestiti od promena imena računa vašeg računa {0}: {1}.</value>
+  </data>
+  <data name="Acct_UsernameChangedSubject" xml:space="preserve">
+    <value>Korisničko ime je promenila za račun na {0}</value>
+  </data>
+  <data name="Acct_UsernameChangeSuccess" xml:space="preserve">
+    <value>Korisničko ime je uspešno promenjena.</value>
+  </data>
+  <data name="Acct_UsernameEmailSent" xml:space="preserve">
+    <value>Mejl je poslat na vašu adresu na datoteku sa vaše korisničko ime.</value>
+  </data>
+  <data name="Acct_UsernameReminderBody" xml:space="preserve">
+    <value>Ova e-pošta je podsetnik na vaš račun {0}: {1}.</value>
+  </data>
+  <data name="Acct_UsernameReminderSubject" xml:space="preserve">
+    <value>Podsetnik za korisničko ime za nalog na {0}</value>
+  </data>
+  <data name="Acct_UserNotFound" xml:space="preserve">
+    <value>Korisnik ne postoji.</value>
+  </data>
+  <data name="Acct_ViewCache" xml:space="preserve">
+    <value>Prikaz keš</value>
+  </data>
+  <data name="Acct_ViewDiskCache" xml:space="preserve">
+    <value>Prikaz Disk keš</value>
+  </data>
+  <data name="Acct_ViewHeaders" xml:space="preserve">
+    <value>Prikazivanje zaglavlja</value>
+  </data>
+  <data name="Acct_Yes" xml:space="preserve">
+    <value>Da</value>
+  </data>
+  <data name="lang_am" xml:space="preserve">
+    <value>ኣማርኛ</value>
+  </data>
+  <data name="lang_ar" xml:space="preserve">
+    <value>العربية</value>
+  </data>
+  <data name="lang_az" xml:space="preserve">
+    <value>Azərbaycan dili</value>
+  </data>
+  <data name="lang_ber" xml:space="preserve">
+    <value>tamašek</value>
+  </data>
+  <data name="lang_bg" xml:space="preserve">
+    <value>БЪЛГАРСКИ</value>
+  </data>
+  <data name="lang_bn" xml:space="preserve">
+    <value>বাংলা</value>
+  </data>
+  <data name="lang_bs" xml:space="preserve">
+    <value>Bosanski</value>
+  </data>
+  <data name="lang_cs" xml:space="preserve">
+    <value>Čeština</value>
+  </data>
+  <data name="lang_de" xml:space="preserve">
+    <value>Deutsch</value>
+  </data>
+  <data name="lang_dv" xml:space="preserve">
+    <value>ދިވެހި</value>
+  </data>
+  <data name="lang_en" xml:space="preserve">
+    <value>engleski</value>
+  </data>
+  <data name="lang_es" xml:space="preserve">
+    <value>Español</value>
+  </data>
+  <data name="lang_fa" xml:space="preserve">
+    <value>فارسى</value>
+  </data>
+  <data name="lang_fr" xml:space="preserve">
+    <value>Français</value>
+  </data>
+  <data name="lang_ha" xml:space="preserve">
+    <value>Ḥawsa</value>
+  </data>
+  <data name="lang_hi" xml:space="preserve">
+    <value>हिन्दी</value>
+  </data>
+  <data name="lang_id" xml:space="preserve">
+    <value>Bahasa Indonezija</value>
+  </data>
+  <data name="lang_it" xml:space="preserve">
+    <value>Italiano</value>
+  </data>
+  <data name="lang_ja" xml:space="preserve">
+    <value>日本語</value>
+  </data>
+  <data name="lang_ko" xml:space="preserve">
+    <value>한국어</value>
+  </data>
+  <data name="lang_ku" xml:space="preserve">
+    <value>کوردی</value>
+  </data>
+  <data name="lang_ml" xml:space="preserve">
+    <value>മലയാളം</value>
+  </data>
+  <data name="lang_ms" xml:space="preserve">
+    <value>Bahasa melayu</value>
+  </data>
+  <data name="lang_nl" xml:space="preserve">
+    <value>Holandija</value>
+  </data>
+  <data name="lang_no" xml:space="preserve">
+    <value>Norsk</value>
+  </data>
+  <data name="lang_pl" xml:space="preserve">
+    <value>Polski</value>
+  </data>
+  <data name="lang_pt" xml:space="preserve">
+    <value>português</value>
+  </data>
+  <data name="lang_ro" xml:space="preserve">
+    <value>रोमानो</value>
+  </data>
+  <data name="lang_ru" xml:space="preserve">
+    <value>РУССКИЙ ЯЗЫК</value>
+  </data>
+  <data name="lang_sd" xml:space="preserve">
+    <value>سنڌي</value>
+  </data>
+  <data name="lang_so" xml:space="preserve">
+    <value>AF Soomaali</value>
+  </data>
+  <data name="lang_sq" xml:space="preserve">
+    <value>Šćip</value>
+  </data>
+  <data name="lang_sv" xml:space="preserve">
+    <value>Љvedska</value>
+  </data>
+  <data name="lang_sw" xml:space="preserve">
+    <value>kisvahili</value>
+  </data>
+  <data name="lang_ta" xml:space="preserve">
+    <value>தமிழ்</value>
+  </data>
+  <data name="lang_tg" xml:space="preserve">
+    <value>ТОҶИКИ</value>
+  </data>
+  <data name="lang_th" xml:space="preserve">
+    <value>ภาษาไทย</value>
+  </data>
+  <data name="lang_tr" xml:space="preserve">
+    <value>Türkçe</value>
+  </data>
+  <data name="lang_tt" xml:space="preserve">
+    <value>ТАТАРЧА</value>
+  </data>
+  <data name="lang_ug" xml:space="preserve">
+    <value>ئۇيغۇر</value>
+  </data>
+  <data name="lang_ur" xml:space="preserve">
+    <value>اردو</value>
+  </data>
+  <data name="lang_uz" xml:space="preserve">
+    <value>o'zbek do ўзбек тили</value>
+  </data>
+  <data name="lang_zh" xml:space="preserve">
+    <value>中文</value>
+  </data>
+  <data name="lang_localam" xml:space="preserve">
+    <value>amharski</value>
+  </data>
+  <data name="lang_localar" xml:space="preserve">
+    <value>arapski</value>
+  </data>
+  <data name="lang_localaz" xml:space="preserve">
+    <value>azerbejdžanski</value>
+  </data>
+  <data name="lang_localber" xml:space="preserve">
+    <value>Amazigh</value>
+  </data>
+  <data name="lang_localbg" xml:space="preserve">
+    <value>bugarski</value>
+  </data>
+  <data name="lang_localbn" xml:space="preserve">
+    <value>bengalski</value>
+  </data>
+  <data name="lang_localbs" xml:space="preserve">
+    <value>bosanski</value>
+  </data>
+  <data name="lang_localcs" xml:space="preserve">
+    <value>češki</value>
+  </data>
+  <data name="lang_localde" xml:space="preserve">
+    <value>nemački</value>
+  </data>
+  <data name="lang_localdv" xml:space="preserve">
+    <value>divehi</value>
+  </data>
+  <data name="lang_localen" xml:space="preserve">
+    <value>engleski</value>
+  </data>
+  <data name="lang_locales" xml:space="preserve">
+    <value>španski</value>
+  </data>
+  <data name="lang_localfa" xml:space="preserve">
+    <value>persijski</value>
+  </data>
+  <data name="lang_localfr" xml:space="preserve">
+    <value>francuski</value>
+  </data>
+  <data name="lang_localha" xml:space="preserve">
+    <value>hausa</value>
+  </data>
+  <data name="lang_localhi" xml:space="preserve">
+    <value>hindi</value>
+  </data>
+  <data name="lang_localid" xml:space="preserve">
+    <value>indonežanski</value>
+  </data>
+  <data name="lang_localit" xml:space="preserve">
+    <value>italijanski</value>
+  </data>
+  <data name="lang_localja" xml:space="preserve">
+    <value>japanski</value>
+  </data>
+  <data name="lang_localko" xml:space="preserve">
+    <value>korejski</value>
+  </data>
+  <data name="lang_localku" xml:space="preserve">
+    <value>kurdski</value>
+  </data>
+  <data name="lang_localml" xml:space="preserve">
+    <value>malajalam</value>
+  </data>
+  <data name="lang_localms" xml:space="preserve">
+    <value>malajski</value>
+  </data>
+  <data name="lang_localnl" xml:space="preserve">
+    <value>holandski </value>
+  </data>
+  <data name="lang_localno" xml:space="preserve">
+    <value>norveški</value>
+  </data>
+  <data name="lang_localpl" xml:space="preserve">
+    <value>poljski</value>
+  </data>
+  <data name="lang_localpt" xml:space="preserve">
+    <value>portugalski</value>
+  </data>
+  <data name="lang_localro" xml:space="preserve">
+    <value>rumunski</value>
+  </data>
+  <data name="lang_localru" xml:space="preserve">
+    <value>ruski</value>
+  </data>
+  <data name="lang_localsd" xml:space="preserve">
+    <value>sindhi</value>
+  </data>
+  <data name="lang_localso" xml:space="preserve">
+    <value>somalski</value>
+  </data>
+  <data name="lang_localsq" xml:space="preserve">
+    <value>albanski</value>
+  </data>
+  <data name="lang_localsv" xml:space="preserve">
+    <value>švedski</value>
+  </data>
+  <data name="lang_localsw" xml:space="preserve">
+    <value>svahili</value>
+  </data>
+  <data name="lang_localta" xml:space="preserve">
+    <value>tamilski</value>
+  </data>
+  <data name="lang_localtg" xml:space="preserve">
+    <value>tadžički</value>
+  </data>
+  <data name="lang_localth" xml:space="preserve">
+    <value>tajski</value>
+  </data>
+  <data name="lang_localtr" xml:space="preserve">
+    <value>turski</value>
+  </data>
+  <data name="lang_localtt" xml:space="preserve">
+    <value>tatarski</value>
+  </data>
+  <data name="lang_localug" xml:space="preserve">
+    <value>ujgurski</value>
+  </data>
+  <data name="lang_localur" xml:space="preserve">
+    <value>urdu</value>
+  </data>
+  <data name="lang_localuz" xml:space="preserve">
+    <value>uzbečki</value>
+  </data>
+  <data name="lang_localzh" xml:space="preserve">
+    <value>kineski</value>
+  </data>
+  <data name="Acct_Download" xml:space="preserve">
+    <value>Preuzmi aplikaciju {0}</value>
+  </data>
+  <data name="unicode_ArabicComma" xml:space="preserve">
+    <value>Arapski zarez</value>
+  </data>
+  <data name="unicode_ArabicDamma" xml:space="preserve">
+    <value>Arapski Damma</value>
+  </data>
+  <data name="unicode_ArabicDammatan" xml:space="preserve">
+    <value>Arapski Dammatan</value>
+  </data>
+  <data name="unicode_ArabicEmptyCentreHighStop" xml:space="preserve">
+    <value>Arapski prazni centar visoko stanica</value>
+  </data>
+  <data name="unicode_ArabicEmptyCentreLowStop" xml:space="preserve">
+    <value>Arapski prazni centar nisko zaustavljanje</value>
+  </data>
+  <data name="unicode_ArabicEndOfAyah" xml:space="preserve">
+    <value>Arapski kraj Aj</value>
+  </data>
+  <data name="unicode_ArabicFatha" xml:space="preserve">
+    <value>Arapski Fatha</value>
+  </data>
+  <data name="unicode_ArabicFathatan" xml:space="preserve">
+    <value>Arapski Fathatan</value>
+  </data>
+  <data name="unicode_ArabicHamzaAbove" xml:space="preserve">
+    <value>Iznad arapski Hamza</value>
+  </data>
+  <data name="unicode_ArabicHamzaBelow" xml:space="preserve">
+    <value>Ispod arapske Hamza</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitEight" xml:space="preserve">
+    <value>Arapski-indijski broja 8</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitFive" xml:space="preserve">
+    <value>Arapski-indijski cifru 5</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitFour" xml:space="preserve">
+    <value>Arapski-indijski cifru 4</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitNine" xml:space="preserve">
+    <value>Arapski-indijski cifra 9</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitOne" xml:space="preserve">
+    <value>Arapski-indijski broj jedan</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitSeven" xml:space="preserve">
+    <value>Arapski-indijski broj sedam</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitSix" xml:space="preserve">
+    <value>Arapski-indijski cifara 6</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitThree" xml:space="preserve">
+    <value>Arapski-indijski cifru 3</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitTwo" xml:space="preserve">
+    <value>Arapski-indijski broj dva</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitZero" xml:space="preserve">
+    <value>Arapski-indijski broj nula</value>
+  </data>
+  <data name="unicode_ArabicKasra" xml:space="preserve">
+    <value>Arapski Kasra</value>
+  </data>
+  <data name="unicode_ArabicKasratan" xml:space="preserve">
+    <value>Arapski Kasratan</value>
+  </data>
+  <data name="unicode_ArabicLetterAin" xml:space="preserve">
+    <value>Arapsko pismo Ain</value>
+  </data>
+  <data name="unicode_ArabicLetterAlef" xml:space="preserve">
+    <value>Arapski slova Alef</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefMaksura" xml:space="preserve">
+    <value>Arapski slova Alef Maksura</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefWasla" xml:space="preserve">
+    <value>Arapski slova Alef Wasla</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefWithHamzaAbove" xml:space="preserve">
+    <value>Arapski slova Alef sa Hamza iznad</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefWithHamzaBelow" xml:space="preserve">
+    <value>Arapski slova Alef sa Hamza ispod</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefWithMaddaAbove" xml:space="preserve">
+    <value>Arapski slova Alef sa Madda iznad</value>
+  </data>
+  <data name="unicode_ArabicLetterBeh" xml:space="preserve">
+    <value>Arapsko pismo Beh</value>
+  </data>
+  <data name="unicode_ArabicLetterDad" xml:space="preserve">
+    <value>Arapsko pismo tata</value>
+  </data>
+  <data name="unicode_ArabicLetterDal" xml:space="preserve">
+    <value>Dal Arapskog pisma</value>
+  </data>
+  <data name="unicode_ArabicLetterFeh" xml:space="preserve">
+    <value>Arapsko pismo Feh</value>
+  </data>
+  <data name="unicode_ArabicLetterGaf" xml:space="preserve">
+    <value>Arapsko pismo Gaf</value>
+  </data>
+  <data name="unicode_ArabicLetterGhain" xml:space="preserve">
+    <value>Arapsko pismo Ghain</value>
+  </data>
+  <data name="unicode_ArabicLetterHah" xml:space="preserve">
+    <value>Arapski slovo "i" Hah</value>
+  </data>
+  <data name="unicode_ArabicLetterHamza" xml:space="preserve">
+    <value>Hamza Arapskog pisma</value>
+  </data>
+  <data name="unicode_ArabicLetterHeh" xml:space="preserve">
+    <value>Arapsko pismo Heh</value>
+  </data>
+  <data name="unicode_ArabicLetterJeem" xml:space="preserve">
+    <value>Arapsko pismo Jeem</value>
+  </data>
+  <data name="unicode_ArabicLetterKaf" xml:space="preserve">
+    <value>Kaf Arapskog pisma</value>
+  </data>
+  <data name="unicode_ArabicLetterKhah" xml:space="preserve">
+    <value>Arapsko pismo Khah</value>
+  </data>
+  <data name="unicode_ArabicLetterLam" xml:space="preserve">
+    <value>Arapsko pismo Lam</value>
+  </data>
+  <data name="unicode_ArabicLetterMeem" xml:space="preserve">
+    <value>Arapsko pismo Meem</value>
+  </data>
+  <data name="unicode_ArabicLetterNoon" xml:space="preserve">
+    <value>Arapsko pismo u podne</value>
+  </data>
+  <data name="unicode_ArabicLetterPeh" xml:space="preserve">
+    <value>Arapsko pismo Peh</value>
+  </data>
+  <data name="unicode_ArabicLetterQaf" xml:space="preserve">
+    <value>Arapsko pismo Qaf</value>
+  </data>
+  <data name="unicode_ArabicLetterReh" xml:space="preserve">
+    <value>Arapsko pismo Reh</value>
+  </data>
+  <data name="unicode_ArabicLetterSad" xml:space="preserve">
+    <value>Tužna Arapskog pisma</value>
+  </data>
+  <data name="unicode_ArabicLetterSeen" xml:space="preserve">
+    <value>Arapsko pismo video</value>
+  </data>
+  <data name="unicode_ArabicLetterSheen" xml:space="preserve">
+    <value>Sheen Arapskog pisma</value>
+  </data>
+  <data name="unicode_ArabicLetterSuperscriptAlef" xml:space="preserve">
+    <value>Arapsko pismo eksponentnog teksta Alef</value>
+  </data>
+  <data name="unicode_ArabicLetterTah" xml:space="preserve">
+    <value>Arapsko pismo Tah</value>
+  </data>
+  <data name="unicode_ArabicLetterTcheh" xml:space="preserve">
+    <value>Arapsko pismo Tcheh</value>
+  </data>
+  <data name="unicode_ArabicLetterTeh" xml:space="preserve">
+    <value>Arapsko pismo polaznika</value>
+  </data>
+  <data name="unicode_ArabicLetterTehMarbuta" xml:space="preserve">
+    <value>Arapsko pismo ttt Marbuta</value>
+  </data>
+  <data name="unicode_ArabicLetterThal" xml:space="preserve">
+    <value>Arapsko pismo Tala</value>
+  </data>
+  <data name="unicode_ArabicLetterTheh" xml:space="preserve">
+    <value>Arapsko pismo tak</value>
+  </data>
+  <data name="unicode_ArabicLetterVeh" xml:space="preserve">
+    <value>Arapsko pismo Veh</value>
+  </data>
+  <data name="unicode_ArabicLetterWaw" xml:space="preserve">
+    <value>Arapsko pismo Waw</value>
+  </data>
+  <data name="unicode_ArabicLetterWawWithHamzaAbove" xml:space="preserve">
+    <value>Arapsko pismo Waw sa Hamza iznad</value>
+  </data>
+  <data name="unicode_ArabicLetterYeh" xml:space="preserve">
+    <value>Yeh Arapskog pisma</value>
+  </data>
+  <data name="unicode_ArabicLetterYehWithHamzaAbove" xml:space="preserve">
+    <value>Yeh arapsko pismo sa Hamza iznad</value>
+  </data>
+  <data name="unicode_ArabicLetterZah" xml:space="preserve">
+    <value>Arapsko pismo Zah</value>
+  </data>
+  <data name="unicode_ArabicLetterZain" xml:space="preserve">
+    <value>Zein Arapskog pisma</value>
+  </data>
+  <data name="unicode_ArabicLigatureAkbarIsolatedForm" xml:space="preserve">
+    <value>Arapski vezivanja Akbar izolovano obrasca</value>
+  </data>
+  <data name="unicode_ArabicLigatureAlayheIsolatedForm" xml:space="preserve">
+    <value>Arapski vezivanja Alayhe izolovani obrasca</value>
+  </data>
+  <data name="unicode_ArabicLigatureAllahIsolatedForm" xml:space="preserve">
+    <value>Arapski vezivanja Allah izolovano obrasca</value>
+  </data>
+  <data name="unicode_ArabicLigatureBismillahArRahmanArRaheem" xml:space="preserve">
+    <value>Arapski Podvezni Bismilah Ar-Rahman Ar-Raheem</value>
+  </data>
+  <data name="unicode_ArabicLigatureJallajalalouhou" xml:space="preserve">
+    <value>Arapski vezivanja Jallajalalouhou</value>
+  </data>
+  <data name="unicode_ArabicLigatureMohammadIsolatedForm" xml:space="preserve">
+    <value>Arapski vezivanja Mohammad izolovano obrasca</value>
+  </data>
+  <data name="unicode_ArabicLigatureQalaUsedAsKoranicStopSignIsolatedForm" xml:space="preserve">
+    <value>Arapski vezivanja Qala koristi kao Koranic Stop potpisati izolovani obrasca</value>
+  </data>
+  <data name="unicode_ArabicLigatureRasoulIsolatedForm" xml:space="preserve">
+    <value>Arapski vezivanja Rasul izolovano obrasca</value>
+  </data>
+  <data name="unicode_ArabicLigatureSalamIsolatedForm" xml:space="preserve">
+    <value>Arapski vezivanja Salam izolovano obrasca</value>
+  </data>
+  <data name="unicode_ArabicLigatureSallaIsolatedForm" xml:space="preserve">
+    <value>Arapski vezivanja Salla izolovano obrasca</value>
+  </data>
+  <data name="unicode_ArabicLigatureSallallahouAlayheWasallam" xml:space="preserve">
+    <value>Arapski vezivanja Sallallahou Alayhe Wasallam</value>
+  </data>
+  <data name="unicode_ArabicLigatureSallaUsedAsKoranicStopSignIsolatedForm" xml:space="preserve">
+    <value>Arapski vezivanja Salla koristi kao Koranic Stop potpisati izolovani obrasca</value>
+  </data>
+  <data name="unicode_ArabicLigatureWasallamIsolatedForm" xml:space="preserve">
+    <value>Arapski vezivanja Wasallam izolovani obrasca</value>
+  </data>
+  <data name="unicode_ArabicMaddahAbove" xml:space="preserve">
+    <value>Iznad arapski Maddah</value>
+  </data>
+  <data name="unicode_ArabicPlaceOfSajdah" xml:space="preserve">
+    <value>Arapski mesto od Sajdah</value>
+  </data>
+  <data name="unicode_ArabicQuestionMark" xml:space="preserve">
+    <value>Arapski znak pitanja</value>
+  </data>
+  <data name="unicode_ArabicRoundedHighStopWithFilledCentre" xml:space="preserve">
+    <value>Arapski zaokružuje visoko stanica sa popunjeni centar</value>
+  </data>
+  <data name="unicode_ArabicSemicolon" xml:space="preserve">
+    <value>Arapski i zarez</value>
+  </data>
+  <data name="unicode_ArabicShadda" xml:space="preserve">
+    <value>Arapski Shadda</value>
+  </data>
+  <data name="unicode_ArabicSmallHighJeem" xml:space="preserve">
+    <value>Arapski male visoko Jeem</value>
+  </data>
+  <data name="unicode_ArabicSmallHighLamAlef" xml:space="preserve">
+    <value>Arapski male visoko Lam Alef</value>
+  </data>
+  <data name="unicode_ArabicSmallHighLigatureQafWithLamWithAlefMaksura" xml:space="preserve">
+    <value>Arapski male visoko vezivanja Qaf sa Lam sa Alef Maksura</value>
+  </data>
+  <data name="unicode_ArabicSmallHighLigatureSadWithLamWithAlefMaksura" xml:space="preserve">
+    <value>Arapski male visoko vezivanja tužno sa Lam sa Alef Maksura</value>
+  </data>
+  <data name="unicode_ArabicSmallHighMeemInitialForm" xml:space="preserve">
+    <value>Arapski male visoke Meem početno obrasca</value>
+  </data>
+  <data name="unicode_ArabicSmallHighMeemIsolatedForm" xml:space="preserve">
+    <value>Arapski male visoke Meem izolovani obrasca</value>
+  </data>
+  <data name="unicode_ArabicSmallHighNoon" xml:space="preserve">
+    <value>Arapski mali u podne</value>
+  </data>
+  <data name="unicode_ArabicSmallHighRoundedZero" xml:space="preserve">
+    <value>Arapski male visoko zaokruženi nula</value>
+  </data>
+  <data name="unicode_ArabicSmallHighSeen" xml:space="preserve">
+    <value>Arapski male srednje video</value>
+  </data>
+  <data name="unicode_ArabicSmallHighThreeDots" xml:space="preserve">
+    <value>Arapski mala baci tri tačke</value>
+  </data>
+  <data name="unicode_ArabicSmallHighUprightRectangularZero" xml:space="preserve">
+    <value>Arapski male visoko uspravno pravougaoni nula</value>
+  </data>
+  <data name="unicode_ArabicSmallLowMeem" xml:space="preserve">
+    <value>Arapski malim niskim Meem</value>
+  </data>
+  <data name="unicode_ArabicSmallLowSeen" xml:space="preserve">
+    <value>Arapski malih nisko video</value>
+  </data>
+  <data name="unicode_ArabicSmallWaw" xml:space="preserve">
+    <value>Arapski male Waw</value>
+  </data>
+  <data name="unicode_ArabicSmallYeh" xml:space="preserve">
+    <value>Arapski male Yeh</value>
+  </data>
+  <data name="unicode_ArabicStartOfRubElHizb" xml:space="preserve">
+    <value>Arapski početak Rub El Hizb</value>
+  </data>
+  <data name="unicode_ArabicSukun" xml:space="preserve">
+    <value>Arapski Sukun</value>
+  </data>
+  <data name="unicode_ArabicTatweel" xml:space="preserve">
+    <value>Arapski Tatweel</value>
+  </data>
+  <data name="unicode_Colon" xml:space="preserve">
+    <value>Debelog creva</value>
+  </data>
+  <data name="unicode_Comma" xml:space="preserve">
+    <value>Zarez</value>
+  </data>
+  <data name="unicode_ExclamationMark" xml:space="preserve">
+    <value>Znak uzvika</value>
+  </data>
+  <data name="unicode_FullStop" xml:space="preserve">
+    <value>Kraj priče</value>
+  </data>
+  <data name="unicode_HyphenMinus" xml:space="preserve">
+    <value>Crtica (minus)</value>
+  </data>
+  <data name="unicode_LeftCurlyBracket" xml:space="preserve">
+    <value>Curly lijeva zagrada</value>
+  </data>
+  <data name="unicode_LeftPointingDoubleAngleQuotationMark" xml:space="preserve">
+    <value>Dvostruki ugaoni znak navoda okrenut nalevo</value>
+  </data>
+  <data name="unicode_LeftSquareBracket" xml:space="preserve">
+    <value>Leva uglasta zagrada</value>
+  </data>
+  <data name="unicode_OrnateLeftParenthesis" xml:space="preserve">
+    <value>Bogate leva zagrada</value>
+  </data>
+  <data name="unicode_OrnateRightParenthesis" xml:space="preserve">
+    <value>Bogate desna zagrada</value>
+  </data>
+  <data name="unicode_QuotationMark" xml:space="preserve">
+    <value>Znak navoda</value>
+  </data>
+  <data name="unicode_RialSign" xml:space="preserve">
+    <value>Rial znak</value>
+  </data>
+  <data name="unicode_RightCurlyBracket" xml:space="preserve">
+    <value>Desna vitičasta zagrada</value>
+  </data>
+  <data name="unicode_RightPointingDoubleAngleQuotationMark" xml:space="preserve">
+    <value>Dvostruki ugaoni znak navoda okrenut nadesno</value>
+  </data>
+  <data name="unicode_RightSquareBracket" xml:space="preserve">
+    <value>Desna uglasta zagrada</value>
+  </data>
+  <data name="unicode_Space" xml:space="preserve">
+    <value>Razmak</value>
+  </data>
+  <data name="Acct_CertRequest" xml:space="preserve">
+    <value>Zahtev za certifikat</value>
+  </data>
+  <data name="Acct_Certificate" xml:space="preserve">
+    <value>Certifikat</value>
+  </data>
+  <data name="Acct_CertInstall" xml:space="preserve">
+    <value>Instaliraj certifikat</value>
+  </data>
+  <data name="Acct_CurrentUser" xml:space="preserve">
+    <value>Trenutni korisnik</value>
+  </data>
+  <data name="Acct_DeleteCertRequest" xml:space="preserve">
+    <value>Izbriši poziv za certifikat</value>
+  </data>
+  <data name="Acct_EnableSSL" xml:space="preserve">
+    <value>Omogući SSL</value>
+  </data>
+  <data name="Acct_PrivateKey" xml:space="preserve">
+    <value>Privatni ključ</value>
+  </data>
+  <data name="Acct_ViewCertRequests" xml:space="preserve">
+    <value>Prikaz certifikata zahteva</value>
+  </data>
+  <data name="Acct_ViewSites" xml:space="preserve">
+    <value>Prikaz lokacije</value>
+  </data>
+  <data name="Acct_CertInstallIntermed" xml:space="preserve">
+    <value>Instalirajte posredničku certifikata</value>
+  </data>
+  <data name="unicode_LeftToRightEmbedding" xml:space="preserve">
+    <value>Ugrađivanje s-lijeva-na-desno</value>
+  </data>
+  <data name="unicode_RightToLeftEmbedding" xml:space="preserve">
+    <value>Ugrađivanje s-desna-na-lijevo</value>
+  </data>
+  <data name="unicode_LeftToRightMark" xml:space="preserve">
+    <value>Mark nadesno</value>
+  </data>
+  <data name="unicode_LeftToRightOverride" xml:space="preserve">
+    <value>Premošćavanje zdesna nalevo</value>
+  </data>
+  <data name="unicode_PopDirectionalFormatting" xml:space="preserve">
+    <value>Pop pravca oblikovanja</value>
+  </data>
+  <data name="unicode_RightToLeftMark" xml:space="preserve">
+    <value>Oznaka zdesna nalevo</value>
+  </data>
+  <data name="unicode_RightToLeftOverride" xml:space="preserve">
+    <value>Premošćavanje-desna-na-lijevo</value>
+  </data>
+</root>

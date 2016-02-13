@@ -1,0 +1,591 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Acct_ActivateAccount" xml:space="preserve">
+    <value>"Activar conta"</value>
+  </data>
+  <data name="Acct_ActivationCode" xml:space="preserve">
+    <value>Código de activación</value>
+  </data>
+  <data name="Acct_ChangeEmailAddress" xml:space="preserve">
+    <value>Change E-mail Address...</value>
+  </data>
+  <data name="Acct_ChangePassword" xml:space="preserve">
+    <value>Modificar contrasinal</value>
+  </data>
+  <data name="Acct_ClearCache" xml:space="preserve">
+    <value>Limpar caché</value>
+  </data>
+  <data name="Acct_ConfirmPassword" xml:space="preserve">
+    <value>Confirmar contrasinal:</value>
+  </data>
+  <data name="Acct_ControlPanel" xml:space="preserve">
+    <value>Panel de control</value>
+  </data>
+  <data name="Acct_DeleteAccount" xml:space="preserve">
+    <value>Eliminar conta</value>
+  </data>
+  <data name="Acct_EmailAddress" xml:space="preserve">
+    <value>Enderezo de correo electrónico</value>
+  </data>
+  <data name="Acct_ForgotPassword" xml:space="preserve">
+    <value>Esquecín o contrasinal</value>
+  </data>
+  <data name="Acct_Home" xml:space="preserve">
+    <value>Inicio</value>
+  </data>
+  <data name="Acct_InvalidInput" xml:space="preserve">
+    <value>Entrada non válida</value>
+  </data>
+  <data name="Acct_Login" xml:space="preserve">
+    <value>Iniciar sesión</value>
+  </data>
+  <data name="Acct_LoginSuccess" xml:space="preserve">
+    <value>Inicio de sesión correcto.</value>
+  </data>
+  <data name="Acct_Logoff" xml:space="preserve">
+    <value>Logoff</value>
+  </data>
+  <data name="Acct_No" xml:space="preserve">
+    <value>Non</value>
+  </data>
+  <data name="Acct_Password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="Acct_PasswordsNotMatch" xml:space="preserve">
+    <value>Os contrasinais non coinciden</value>
+  </data>
+  <data name="Acct_Register" xml:space="preserve">
+    <value>REXISTRAR</value>
+  </data>
+  <data name="Acct_ResetPassword" xml:space="preserve">
+    <value>Restablecer contrasinal</value>
+  </data>
+  <data name="Acct_Username" xml:space="preserve">
+    <value>Nome de usuario</value>
+  </data>
+  <data name="Acct_Yes" xml:space="preserve">
+    <value>Si</value>
+  </data>
+  <data name="lang_ber" xml:space="preserve">
+    <value>Tamazight</value>
+  </data>
+  <data name="lang_de" xml:space="preserve">
+    <value>Deutsch</value>
+  </data>
+  <data name="lang_en" xml:space="preserve">
+    <value>Inglés</value>
+  </data>
+  <data name="lang_nl" xml:space="preserve">
+    <value>Nederlands</value>
+  </data>
+  <data name="lang_sv" xml:space="preserve">
+    <value>Svenska</value>
+  </data>
+  <data name="lang_sw" xml:space="preserve">
+    <value>Suahili</value>
+  </data>
+  <data name="lang_tr" xml:space="preserve">
+    <value>Türkçe</value>
+  </data>
+  <data name="lang_localam" xml:space="preserve">
+    <value>Amárico</value>
+  </data>
+  <data name="lang_localar" xml:space="preserve">
+    <value>Árabe</value>
+  </data>
+  <data name="lang_localaz" xml:space="preserve">
+    <value>Acerbaixano</value>
+  </data>
+  <data name="lang_localbg" xml:space="preserve">
+    <value>Búlgaro</value>
+  </data>
+  <data name="lang_localbn" xml:space="preserve">
+    <value>Bengalí</value>
+  </data>
+  <data name="lang_localbs" xml:space="preserve">
+    <value>Bosníaco</value>
+  </data>
+  <data name="lang_localcs" xml:space="preserve">
+    <value>Checo</value>
+  </data>
+  <data name="lang_localde" xml:space="preserve">
+    <value>Alemán</value>
+  </data>
+  <data name="lang_localdv" xml:space="preserve">
+    <value>Divehi</value>
+  </data>
+  <data name="lang_localen" xml:space="preserve">
+    <value>Inglés</value>
+  </data>
+  <data name="lang_locales" xml:space="preserve">
+    <value>Español</value>
+  </data>
+  <data name="lang_localfa" xml:space="preserve">
+    <value>Persa</value>
+  </data>
+  <data name="lang_localfr" xml:space="preserve">
+    <value>Francés</value>
+  </data>
+  <data name="lang_localha" xml:space="preserve">
+    <value>Hausa</value>
+  </data>
+  <data name="lang_localhi" xml:space="preserve">
+    <value>Hindi</value>
+  </data>
+  <data name="lang_localid" xml:space="preserve">
+    <value>Indonesio</value>
+  </data>
+  <data name="lang_localit" xml:space="preserve">
+    <value>Italiano</value>
+  </data>
+  <data name="lang_localja" xml:space="preserve">
+    <value>Xaponés</value>
+  </data>
+  <data name="lang_localko" xml:space="preserve">
+    <value>Coreano</value>
+  </data>
+  <data name="lang_localku" xml:space="preserve">
+    <value>Kurdo</value>
+  </data>
+  <data name="lang_localml" xml:space="preserve">
+    <value>Malaiala</value>
+  </data>
+  <data name="lang_localms" xml:space="preserve">
+    <value>Malaio</value>
+  </data>
+  <data name="lang_localnl" xml:space="preserve">
+    <value>Neerlandés</value>
+  </data>
+  <data name="lang_localno" xml:space="preserve">
+    <value>Noruegués</value>
+  </data>
+  <data name="lang_localpl" xml:space="preserve">
+    <value>Polaco</value>
+  </data>
+  <data name="lang_localpt" xml:space="preserve">
+    <value>Portugués</value>
+  </data>
+  <data name="lang_localro" xml:space="preserve">
+    <value>Romanés</value>
+  </data>
+  <data name="lang_localru" xml:space="preserve">
+    <value>Ruso</value>
+  </data>
+  <data name="lang_localsd" xml:space="preserve">
+    <value>Sindi</value>
+  </data>
+  <data name="lang_localso" xml:space="preserve">
+    <value>Somalí</value>
+  </data>
+  <data name="lang_localsq" xml:space="preserve">
+    <value>Albanés</value>
+  </data>
+  <data name="lang_localsv" xml:space="preserve">
+    <value>Sueco</value>
+  </data>
+  <data name="lang_localsw" xml:space="preserve">
+    <value>Suahili</value>
+  </data>
+  <data name="lang_localta" xml:space="preserve">
+    <value>Támil</value>
+  </data>
+  <data name="lang_localtg" xml:space="preserve">
+    <value>Taxico</value>
+  </data>
+  <data name="lang_localth" xml:space="preserve">
+    <value>Tai</value>
+  </data>
+  <data name="lang_localtr" xml:space="preserve">
+    <value>Turco</value>
+  </data>
+  <data name="lang_localtt" xml:space="preserve">
+    <value>Tártaro</value>
+  </data>
+  <data name="lang_localug" xml:space="preserve">
+    <value>Uigur</value>
+  </data>
+  <data name="lang_localur" xml:space="preserve">
+    <value>Urdú</value>
+  </data>
+  <data name="lang_localuz" xml:space="preserve">
+    <value>Uzbeco</value>
+  </data>
+  <data name="lang_localzh" xml:space="preserve">
+    <value>Chinés</value>
+  </data>
+  <data name="Acct_Download" xml:space="preserve">
+    <value>Descargar {0}</value>
+  </data>
+  <data name="unicode_ArabicComma" xml:space="preserve">
+    <value>Arabic Comma</value>
+  </data>
+  <data name="unicode_ArabicDamma" xml:space="preserve">
+    <value>Arabic Damma</value>
+  </data>
+  <data name="unicode_ArabicDammatan" xml:space="preserve">
+    <value>Arabic Dammatan</value>
+  </data>
+  <data name="unicode_ArabicEmptyCentreHighStop" xml:space="preserve">
+    <value>Arabic Empty Centre High Stop</value>
+  </data>
+  <data name="unicode_ArabicEmptyCentreLowStop" xml:space="preserve">
+    <value>Arabic Empty Centre Low Stop</value>
+  </data>
+  <data name="unicode_ArabicEndOfAyah" xml:space="preserve">
+    <value>Arabic End Of Ayah</value>
+  </data>
+  <data name="unicode_ArabicFatha" xml:space="preserve">
+    <value>Arabic Fatha</value>
+  </data>
+  <data name="unicode_ArabicFathatan" xml:space="preserve">
+    <value>Arabic Fathatan</value>
+  </data>
+  <data name="unicode_ArabicHamzaAbove" xml:space="preserve">
+    <value>Arabic Hamza Above</value>
+  </data>
+  <data name="unicode_ArabicHamzaBelow" xml:space="preserve">
+    <value>Arabic Hamza Below</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitEight" xml:space="preserve">
+    <value>Arabic-Indic Digit Eight</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitFive" xml:space="preserve">
+    <value>Arabic-Indic Digit Five</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitFour" xml:space="preserve">
+    <value>Arabic-Indic Digit Four</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitNine" xml:space="preserve">
+    <value>Arabic-Indic Digit Nine</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitOne" xml:space="preserve">
+    <value>Arabic-Indic Digit One</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitSeven" xml:space="preserve">
+    <value>Arabic-Indic Digit Seven</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitSix" xml:space="preserve">
+    <value>Arabic-Indic Digit Six</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitThree" xml:space="preserve">
+    <value>Arabic-Indic Digit Three</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitTwo" xml:space="preserve">
+    <value>Arabic-Indic Digit Two</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitZero" xml:space="preserve">
+    <value>Arabic-Indic Digit Zero</value>
+  </data>
+  <data name="unicode_ArabicKasra" xml:space="preserve">
+    <value>Arabic Kasra</value>
+  </data>
+  <data name="unicode_ArabicKasratan" xml:space="preserve">
+    <value>Arabic Kasratan</value>
+  </data>
+  <data name="unicode_ArabicLetterAin" xml:space="preserve">
+    <value>Arabic Letter Ain</value>
+  </data>
+  <data name="unicode_ArabicLetterAlef" xml:space="preserve">
+    <value>Arabic Letter Alef</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefMaksura" xml:space="preserve">
+    <value>Arabic Letter Alef Maksura</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefWasla" xml:space="preserve">
+    <value>Arabic Letter Alef Wasla</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefWithHamzaAbove" xml:space="preserve">
+    <value>Arabic Letter Alef With Hamza Above</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefWithHamzaBelow" xml:space="preserve">
+    <value>Arabic Letter Alef With Hamza Below</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefWithMaddaAbove" xml:space="preserve">
+    <value>Arabic Letter Alef With Madda Above</value>
+  </data>
+  <data name="unicode_ArabicLetterBeh" xml:space="preserve">
+    <value>Arabic Letter Beh</value>
+  </data>
+  <data name="unicode_ArabicLetterDad" xml:space="preserve">
+    <value>Arabic Letter Dad</value>
+  </data>
+  <data name="unicode_ArabicLetterDal" xml:space="preserve">
+    <value>Arabic Letter Dal</value>
+  </data>
+  <data name="unicode_ArabicLetterFeh" xml:space="preserve">
+    <value>Arabic Letter Feh</value>
+  </data>
+  <data name="unicode_ArabicLetterGaf" xml:space="preserve">
+    <value>Arabic Letter Gaf</value>
+  </data>
+  <data name="unicode_ArabicLetterGhain" xml:space="preserve">
+    <value>Arabic Letter Ghain</value>
+  </data>
+  <data name="unicode_ArabicLetterHah" xml:space="preserve">
+    <value>Arabic Letter Hah</value>
+  </data>
+  <data name="unicode_ArabicLetterHamza" xml:space="preserve">
+    <value>Arabic Letter Hamza</value>
+  </data>
+  <data name="unicode_ArabicLetterHeh" xml:space="preserve">
+    <value>Arabic Letter Heh</value>
+  </data>
+  <data name="unicode_ArabicLetterJeem" xml:space="preserve">
+    <value>Arabic Letter Jeem</value>
+  </data>
+  <data name="unicode_ArabicLetterKaf" xml:space="preserve">
+    <value>Arabic Letter Kaf</value>
+  </data>
+  <data name="unicode_ArabicLetterKhah" xml:space="preserve">
+    <value>Arabic Letter Khah</value>
+  </data>
+  <data name="unicode_ArabicLetterLam" xml:space="preserve">
+    <value>Arabic Letter Lam</value>
+  </data>
+  <data name="unicode_ArabicLetterMeem" xml:space="preserve">
+    <value>Arabic Letter Meem</value>
+  </data>
+  <data name="unicode_ArabicLetterNoon" xml:space="preserve">
+    <value>Arabic Letter Noon</value>
+  </data>
+  <data name="unicode_ArabicLetterPeh" xml:space="preserve">
+    <value>Arabic Letter Peh</value>
+  </data>
+  <data name="unicode_ArabicLetterQaf" xml:space="preserve">
+    <value>Arabic Letter Qaf</value>
+  </data>
+  <data name="unicode_ArabicLetterReh" xml:space="preserve">
+    <value>Arabic Letter Reh</value>
+  </data>
+  <data name="unicode_ArabicLetterSad" xml:space="preserve">
+    <value>Arabic Letter Sad</value>
+  </data>
+  <data name="unicode_ArabicLetterSeen" xml:space="preserve">
+    <value>Arabic Letter Seen</value>
+  </data>
+  <data name="unicode_ArabicLetterSheen" xml:space="preserve">
+    <value>Arabic Letter Sheen</value>
+  </data>
+  <data name="unicode_ArabicLetterSuperscriptAlef" xml:space="preserve">
+    <value>Arabic Letter Superscript Alef</value>
+  </data>
+  <data name="unicode_ArabicLetterTah" xml:space="preserve">
+    <value>Arabic Letter Tah</value>
+  </data>
+  <data name="unicode_ArabicLetterTcheh" xml:space="preserve">
+    <value>Arabic Letter Tcheh</value>
+  </data>
+  <data name="unicode_ArabicLetterTeh" xml:space="preserve">
+    <value>Arabic Letter Teh</value>
+  </data>
+  <data name="unicode_ArabicLetterTehMarbuta" xml:space="preserve">
+    <value>Arabic Letter Teh Marbuta</value>
+  </data>
+  <data name="unicode_ArabicLetterThal" xml:space="preserve">
+    <value>Arabic Letter Thal</value>
+  </data>
+  <data name="unicode_ArabicLetterTheh" xml:space="preserve">
+    <value>Arabic Letter Theh</value>
+  </data>
+  <data name="unicode_ArabicLetterVeh" xml:space="preserve">
+    <value>Arabic Letter Veh</value>
+  </data>
+  <data name="unicode_ArabicLetterWaw" xml:space="preserve">
+    <value>Arabic Letter Waw</value>
+  </data>
+  <data name="unicode_ArabicLetterWawWithHamzaAbove" xml:space="preserve">
+    <value>Arabic Letter Waw With Hamza Above</value>
+  </data>
+  <data name="unicode_ArabicLetterYeh" xml:space="preserve">
+    <value>Arabic Letter Yeh</value>
+  </data>
+  <data name="unicode_ArabicLetterYehWithHamzaAbove" xml:space="preserve">
+    <value>Arabic Letter Yeh With Hamza Above</value>
+  </data>
+  <data name="unicode_ArabicLetterZah" xml:space="preserve">
+    <value>Arabic Letter Zah</value>
+  </data>
+  <data name="unicode_ArabicLetterZain" xml:space="preserve">
+    <value>Arabic Letter Zain</value>
+  </data>
+  <data name="unicode_ArabicLigatureAkbarIsolatedForm" xml:space="preserve">
+    <value>Arabic Ligature Akbar Isolated Form</value>
+  </data>
+  <data name="unicode_ArabicLigatureAlayheIsolatedForm" xml:space="preserve">
+    <value>Arabic Ligature Alayhe Isolated Form</value>
+  </data>
+  <data name="unicode_ArabicLigatureAllahIsolatedForm" xml:space="preserve">
+    <value>Arabic Ligature Allah Isolated Form</value>
+  </data>
+  <data name="unicode_ArabicLigatureBismillahArRahmanArRaheem" xml:space="preserve">
+    <value>Arabic Ligature Bismillah Ar-Rahman Ar-Raheem</value>
+  </data>
+  <data name="unicode_ArabicLigatureJallajalalouhou" xml:space="preserve">
+    <value>Arabic Ligature Jallajalalouhou</value>
+  </data>
+  <data name="unicode_ArabicLigatureMohammadIsolatedForm" xml:space="preserve">
+    <value>Arabic Ligature Mohammad Isolated Form</value>
+  </data>
+  <data name="unicode_ArabicLigatureQalaUsedAsKoranicStopSignIsolatedForm" xml:space="preserve">
+    <value>Arabic Ligature Qala Used As Koranic Stop Sign Isolated Form</value>
+  </data>
+  <data name="unicode_ArabicLigatureRasoulIsolatedForm" xml:space="preserve">
+    <value>Arabic Ligature Rasoul Isolated Form</value>
+  </data>
+  <data name="unicode_ArabicLigatureSalamIsolatedForm" xml:space="preserve">
+    <value>Arabic Ligature Salam Isolated Form</value>
+  </data>
+  <data name="unicode_ArabicLigatureSallaIsolatedForm" xml:space="preserve">
+    <value>Arabic Ligature Salla Isolated Form</value>
+  </data>
+  <data name="unicode_ArabicLigatureSallallahouAlayheWasallam" xml:space="preserve">
+    <value>Arabic Ligature Sallallahou Alayhe Wasallam</value>
+  </data>
+  <data name="unicode_ArabicLigatureSallaUsedAsKoranicStopSignIsolatedForm" xml:space="preserve">
+    <value>Arabic Ligature Salla Used As Koranic Stop Sign Isolated Form</value>
+  </data>
+  <data name="unicode_ArabicLigatureWasallamIsolatedForm" xml:space="preserve">
+    <value>Arabic Ligature Wasallam Isolated Form</value>
+  </data>
+  <data name="unicode_ArabicMaddahAbove" xml:space="preserve">
+    <value>Arabic Maddah Above</value>
+  </data>
+  <data name="unicode_ArabicPlaceOfSajdah" xml:space="preserve">
+    <value>Arabic Place Of Sajdah</value>
+  </data>
+  <data name="unicode_ArabicQuestionMark" xml:space="preserve">
+    <value>Arabic Question Mark</value>
+  </data>
+  <data name="unicode_ArabicRoundedHighStopWithFilledCentre" xml:space="preserve">
+    <value>Arabic Rounded High Stop With Filled Centre</value>
+  </data>
+  <data name="unicode_ArabicSemicolon" xml:space="preserve">
+    <value>Arabic Semicolon</value>
+  </data>
+  <data name="unicode_ArabicShadda" xml:space="preserve">
+    <value>Arabic Shadda</value>
+  </data>
+  <data name="unicode_ArabicSmallHighJeem" xml:space="preserve">
+    <value>Arabic Small High Jeem</value>
+  </data>
+  <data name="unicode_ArabicSmallHighLamAlef" xml:space="preserve">
+    <value>Arabic Small High Lam Alef</value>
+  </data>
+  <data name="unicode_ArabicSmallHighLigatureQafWithLamWithAlefMaksura" xml:space="preserve">
+    <value>Arabic Small High Ligature Qaf With Lam With Alef Maksura</value>
+  </data>
+  <data name="unicode_ArabicSmallHighLigatureSadWithLamWithAlefMaksura" xml:space="preserve">
+    <value>Arabic Small High Ligature Sad With Lam With Alef Maksura</value>
+  </data>
+  <data name="unicode_ArabicSmallHighMeemInitialForm" xml:space="preserve">
+    <value>Arabic Small High Meem Initial Form</value>
+  </data>
+  <data name="unicode_ArabicSmallHighMeemIsolatedForm" xml:space="preserve">
+    <value>Arabic Small High Meem Isolated Form</value>
+  </data>
+  <data name="unicode_ArabicSmallHighNoon" xml:space="preserve">
+    <value>Arabic Small High Noon</value>
+  </data>
+  <data name="unicode_ArabicSmallHighRoundedZero" xml:space="preserve">
+    <value>Arabic Small High Rounded Zero</value>
+  </data>
+  <data name="unicode_ArabicSmallHighSeen" xml:space="preserve">
+    <value>Arabic Small High Seen</value>
+  </data>
+  <data name="unicode_ArabicSmallHighThreeDots" xml:space="preserve">
+    <value>Arabic Small High Three Dots</value>
+  </data>
+  <data name="unicode_ArabicSmallHighUprightRectangularZero" xml:space="preserve">
+    <value>Arabic Small High Upright Rectangular Zero</value>
+  </data>
+  <data name="unicode_ArabicSmallLowMeem" xml:space="preserve">
+    <value>Arabic Small Low Meem</value>
+  </data>
+  <data name="unicode_ArabicSmallLowSeen" xml:space="preserve">
+    <value>Arabic Small Low Seen</value>
+  </data>
+  <data name="unicode_ArabicSmallWaw" xml:space="preserve">
+    <value>Arabic Small Waw</value>
+  </data>
+  <data name="unicode_ArabicSmallYeh" xml:space="preserve">
+    <value>Arabic Small Yeh</value>
+  </data>
+  <data name="unicode_ArabicStartOfRubElHizb" xml:space="preserve">
+    <value>Arabic Start Of Rub El Hizb</value>
+  </data>
+  <data name="unicode_ArabicSukun" xml:space="preserve">
+    <value>Arabic Sukun</value>
+  </data>
+  <data name="unicode_ArabicTatweel" xml:space="preserve">
+    <value>Arabic Tatweel</value>
+  </data>
+  <data name="unicode_Colon" xml:space="preserve">
+    <value>Colon</value>
+  </data>
+  <data name="unicode_Comma" xml:space="preserve">
+    <value>Coma</value>
+  </data>
+  <data name="unicode_ExclamationMark" xml:space="preserve">
+    <value>Signo de exclamación</value>
+  </data>
+  <data name="unicode_FullStop" xml:space="preserve">
+    <value>Full Stop</value>
+  </data>
+  <data name="unicode_HyphenMinus" xml:space="preserve">
+    <value>Hyphen-Minus</value>
+  </data>
+  <data name="unicode_LeftPointingDoubleAngleQuotationMark" xml:space="preserve">
+    <value>Left-Pointing Double Angle Quotation Mark</value>
+  </data>
+  <data name="unicode_OrnateLeftParenthesis" xml:space="preserve">
+    <value>Ornate Left Parenthesis</value>
+  </data>
+  <data name="unicode_OrnateRightParenthesis" xml:space="preserve">
+    <value>Ornate Right Parenthesis</value>
+  </data>
+  <data name="unicode_QuotationMark" xml:space="preserve">
+    <value>Quotation Mark</value>
+  </data>
+  <data name="unicode_RialSign" xml:space="preserve">
+    <value>Rial Sign</value>
+  </data>
+  <data name="unicode_RightPointingDoubleAngleQuotationMark" xml:space="preserve">
+    <value>Right-Pointing Double Angle Quotation Mark</value>
+  </data>
+  <data name="unicode_Space" xml:space="preserve">
+    <value>Espazo</value>
+  </data>
+  <data name="Acct_Certificate" xml:space="preserve">
+    <value>Certificado</value>
+  </data>
+  <data name="Acct_CurrentUser" xml:space="preserve">
+    <value>Usuario actual</value>
+  </data>
+  <data name="unicode_LeftToRightMark" xml:space="preserve">
+    <value>Left-To-Right Mark</value>
+  </data>
+  <data name="unicode_LeftToRightOverride" xml:space="preserve">
+    <value>Left-To-Right Override</value>
+  </data>
+  <data name="unicode_PopDirectionalFormatting" xml:space="preserve">
+    <value>Pop Directional Formatting</value>
+  </data>
+  <data name="unicode_RightToLeftMark" xml:space="preserve">
+    <value>Right-To-Left Mark</value>
+  </data>
+  <data name="unicode_RightToLeftOverride" xml:space="preserve">
+    <value>Right-To-Left Override</value>
+  </data>
+</root>

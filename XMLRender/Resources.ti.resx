@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Acct_ChangePassword" xml:space="preserve">
+    <value>መሕለፍ ቃል ለውጥ</value>
+  </data>
+  <data name="Acct_ConfirmPassword" xml:space="preserve">
+    <value>መሕለፊ ቃል ኣረጋግጽ</value>
+  </data>
+  <data name="Acct_ControlPanel" xml:space="preserve">
+    <value>ናይ ቁጽጽር ፓነል</value>
+  </data>
+  <data name="Acct_DeleteAccount" xml:space="preserve">
+    <value>መፍለዪ ሰርዝ</value>
+  </data>
+  <data name="Acct_EmailAddress" xml:space="preserve">
+    <value>ኣድራሻ ኢ-ሜይል</value>
+  </data>
+  <data name="Acct_Home" xml:space="preserve">
+    <value>መበገሲ ገጽ</value>
+  </data>
+  <data name="Acct_InvalidInput" xml:space="preserve">
+    <value>ዘይቅቡል መእተዊ</value>
+  </data>
+  <data name="Acct_Login" xml:space="preserve">
+    <value>&amp;ብመንነት መፍለዪ እተዉ</value>
+  </data>
+  <data name="Acct_No" xml:space="preserve">
+    <value>ኣይኮነን</value>
+  </data>
+  <data name="Acct_Password" xml:space="preserve">
+    <value>&amp;መሕለፊ ቃል</value>
+  </data>
+  <data name="Acct_PasswordsNotMatch" xml:space="preserve">
+    <value>መሕለፊ ቃላት ኣይመሳሰሉን እዮም</value>
+  </data>
+  <data name="Acct_Register" xml:space="preserve">
+    <value>REGISTER</value>
+  </data>
+  <data name="Acct_Username" xml:space="preserve">
+    <value>ስም ተጠቃሚ</value>
+  </data>
+  <data name="Acct_Yes" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="lang_ber" xml:space="preserve">
+    <value>ታማዚ</value>
+  </data>
+  <data name="lang_en" xml:space="preserve">
+    <value>እንግሊዝ</value>
+  </data>
+  <data name="lang_sw" xml:space="preserve">
+    <value>ኪስዋሂሊ</value>
+  </data>
+  <data name="lang_localam" xml:space="preserve">
+    <value>ኣምሓርኛ</value>
+  </data>
+  <data name="lang_localar" xml:space="preserve">
+    <value>ዓረብ</value>
+  </data>
+  <data name="lang_localaz" xml:space="preserve">
+    <value>ኣዘርባጃኒኛ</value>
+  </data>
+  <data name="lang_localbg" xml:space="preserve">
+    <value>ቡልጋሪያኛ</value>
+  </data>
+  <data name="lang_localcs" xml:space="preserve">
+    <value>ቸክ</value>
+  </data>
+  <data name="lang_localde" xml:space="preserve">
+    <value>ጀርመን</value>
+  </data>
+  <data name="lang_localdv" xml:space="preserve">
+    <value>ዲቨሂ</value>
+  </data>
+  <data name="lang_localen" xml:space="preserve">
+    <value>እንግሊዝ</value>
+  </data>
+  <data name="lang_locales" xml:space="preserve">
+    <value>ስፓኒሽ</value>
+  </data>
+  <data name="lang_localfa" xml:space="preserve">
+    <value>ፐርሺያኛ</value>
+  </data>
+  <data name="lang_localfr" xml:space="preserve">
+    <value>ፈረንሳይ</value>
+  </data>
+  <data name="lang_localha" xml:space="preserve">
+    <value>ሃውሳ</value>
+  </data>
+  <data name="lang_localhi" xml:space="preserve">
+    <value>ህንዲ</value>
+  </data>
+  <data name="lang_localid" xml:space="preserve">
+    <value>ኢንዶኔዢያኛ</value>
+  </data>
+  <data name="lang_localit" xml:space="preserve">
+    <value>ጥልያንኛ</value>
+  </data>
+  <data name="lang_localja" xml:space="preserve">
+    <value>ጃፓናዊ</value>
+  </data>
+  <data name="lang_localko" xml:space="preserve">
+    <value>ኮሪያ</value>
+  </data>
+  <data name="lang_localml" xml:space="preserve">
+    <value>ማላያላም</value>
+  </data>
+  <data name="lang_localms" xml:space="preserve">
+    <value>ማላይ</value>
+  </data>
+  <data name="lang_localnl" xml:space="preserve">
+    <value>ዳች</value>
+  </data>
+  <data name="lang_localno" xml:space="preserve">
+    <value>ኖርወጃዊ</value>
+  </data>
+  <data name="lang_localpl" xml:space="preserve">
+    <value>ፖላንድኛ</value>
+  </data>
+  <data name="lang_localpt" xml:space="preserve">
+    <value>ፖርቱጋልኛ</value>
+  </data>
+  <data name="lang_localro" xml:space="preserve">
+    <value>ሮማንያኛ</value>
+  </data>
+  <data name="lang_localru" xml:space="preserve">
+    <value>ሩስያኛ</value>
+  </data>
+  <data name="lang_localsd" xml:space="preserve">
+    <value>ሲንዲ</value>
+  </data>
+  <data name="lang_localso" xml:space="preserve">
+    <value>ሶማሊ</value>
+  </data>
+  <data name="lang_localsq" xml:space="preserve">
+    <value>ኣልባንያ</value>
+  </data>
+  <data name="lang_localsv" xml:space="preserve">
+    <value>ሽወደን</value>
+  </data>
+  <data name="lang_localsw" xml:space="preserve">
+    <value>ስዋሂሊ</value>
+  </data>
+  <data name="lang_localta" xml:space="preserve">
+    <value>ታሚል</value>
+  </data>
+  <data name="lang_localtg" xml:space="preserve">
+    <value>ታጂክ</value>
+  </data>
+  <data name="lang_localth" xml:space="preserve">
+    <value>ታይ</value>
+  </data>
+  <data name="lang_localtr" xml:space="preserve">
+    <value>ቱርካኛ</value>
+  </data>
+  <data name="lang_localtt" xml:space="preserve">
+    <value>ታታር</value>
+  </data>
+  <data name="lang_localug" xml:space="preserve">
+    <value>ኡይሁር</value>
+  </data>
+  <data name="lang_localur" xml:space="preserve">
+    <value>ኡርዱ</value>
+  </data>
+  <data name="lang_localuz" xml:space="preserve">
+    <value>ኡዝቤክ</value>
+  </data>
+  <data name="lang_localzh" xml:space="preserve">
+    <value>ቻይንኛ</value>
+  </data>
+  <data name="Acct_Download" xml:space="preserve">
+    <value>ኣውርድ {0}</value>
+  </data>
+  <data name="unicode_Colon" xml:space="preserve">
+    <value>&amp;አምድ</value>
+  </data>
+  <data name="unicode_Comma" xml:space="preserve">
+    <value>ንኡስ ሰረዝ</value>
+  </data>
+  <data name="unicode_Space" xml:space="preserve">
+    <value>ቦታ</value>
+  </data>
+  <data name="Acct_Certificate" xml:space="preserve">
+    <value>ምስክር</value>
+  </data>
+  <data name="Acct_CurrentUser" xml:space="preserve">
+    <value>እዋናዊ ተጠቃሚ</value>
+  </data>
+</root>

@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Acct_ChangePassword" xml:space="preserve">
+    <value>Tshintsha ipasiwedi</value>
+  </data>
+  <data name="Acct_ClearCache" xml:space="preserve">
+    <value>Susa i-Cache</value>
+  </data>
+  <data name="Acct_ConfirmPassword" xml:space="preserve">
+    <value>Qinisekisa iPhaswedi</value>
+  </data>
+  <data name="Acct_ControlPanel" xml:space="preserve">
+    <value>Iphaneli yokuLawula</value>
+  </data>
+  <data name="Acct_DeleteAccount" xml:space="preserve">
+    <value>Cima iAkhawunti</value>
+  </data>
+  <data name="Acct_EmailAddress" xml:space="preserve">
+    <value>IDilesi yeImeyili</value>
+  </data>
+  <data name="Acct_ForgotPassword" xml:space="preserve">
+    <value>Uyilibele ipasiwedi?</value>
+  </data>
+  <data name="Acct_Home" xml:space="preserve">
+    <value>Ikhaya</value>
+  </data>
+  <data name="Acct_InvalidInput" xml:space="preserve">
+    <value>Ungenelo olungamkelekanga</value>
+  </data>
+  <data name="Acct_Login" xml:space="preserve">
+    <value>i-Login</value>
+  </data>
+  <data name="Acct_Logoff" xml:space="preserve">
+    <value>Ukuphuma kwikhopyutha</value>
+  </data>
+  <data name="Acct_No" xml:space="preserve">
+    <value>Hayi</value>
+  </data>
+  <data name="Acct_Password" xml:space="preserve">
+    <value>iphaswedi</value>
+  </data>
+  <data name="Acct_PasswordsNotMatch" xml:space="preserve">
+    <value>Iipasiwedi azifani:</value>
+  </data>
+  <data name="Acct_Register" xml:space="preserve">
+    <value>REGISTER</value>
+  </data>
+  <data name="Acct_ResetPassword" xml:space="preserve">
+    <value>Seta kwakhona iPasiwedi</value>
+  </data>
+  <data name="Acct_Username" xml:space="preserve">
+    <value>Igama lomsebenzisi</value>
+  </data>
+  <data name="Acct_Yes" xml:space="preserve">
+    <value>Ewe</value>
+  </data>
+  <data name="lang_ber" xml:space="preserve">
+    <value>I-Tamazight</value>
+  </data>
+  <data name="lang_en" xml:space="preserve">
+    <value>IsiNgesi</value>
+  </data>
+  <data name="lang_sw" xml:space="preserve">
+    <value>I-Kiswahili</value>
+  </data>
+  <data name="lang_localam" xml:space="preserve">
+    <value>I-Amharic</value>
+  </data>
+  <data name="lang_localar" xml:space="preserve">
+    <value>IsiArabhu</value>
+  </data>
+  <data name="lang_localaz" xml:space="preserve">
+    <value>IsiAzerbaijani</value>
+  </data>
+  <data name="lang_localbg" xml:space="preserve">
+    <value>I-Bulgarian</value>
+  </data>
+  <data name="lang_localbn" xml:space="preserve">
+    <value>I-Bengali</value>
+  </data>
+  <data name="lang_localcs" xml:space="preserve">
+    <value>i-Czech</value>
+  </data>
+  <data name="lang_localde" xml:space="preserve">
+    <value>isiJamani</value>
+  </data>
+  <data name="lang_localdv" xml:space="preserve">
+    <value>I-Divehi</value>
+  </data>
+  <data name="lang_localen" xml:space="preserve">
+    <value>IsiNgesi</value>
+  </data>
+  <data name="lang_locales" xml:space="preserve">
+    <value>Isi-Spanish</value>
+  </data>
+  <data name="lang_localfa" xml:space="preserve">
+    <value>Isi-Persian</value>
+  </data>
+  <data name="lang_localfr" xml:space="preserve">
+    <value>isiFrentshi</value>
+  </data>
+  <data name="lang_localha" xml:space="preserve">
+    <value>I-Hausa</value>
+  </data>
+  <data name="lang_localhi" xml:space="preserve">
+    <value>IsiHindi</value>
+  </data>
+  <data name="lang_localid" xml:space="preserve">
+    <value>Isi-Indonesia</value>
+  </data>
+  <data name="lang_localit" xml:space="preserve">
+    <value>isiTaliyane </value>
+  </data>
+  <data name="lang_localja" xml:space="preserve">
+    <value>IsiJapani</value>
+  </data>
+  <data name="lang_localko" xml:space="preserve">
+    <value>isi-Korea</value>
+  </data>
+  <data name="lang_localml" xml:space="preserve">
+    <value>I-Malayalam</value>
+  </data>
+  <data name="lang_localms" xml:space="preserve">
+    <value>I-Malay</value>
+  </data>
+  <data name="lang_localnl" xml:space="preserve">
+    <value>isiDatshi</value>
+  </data>
+  <data name="lang_localno" xml:space="preserve">
+    <value>Isi-Norway</value>
+  </data>
+  <data name="lang_localpl" xml:space="preserve">
+    <value>Isi-Polish</value>
+  </data>
+  <data name="lang_localpt" xml:space="preserve">
+    <value>isiPhuthukezi</value>
+  </data>
+  <data name="lang_localro" xml:space="preserve">
+    <value>I-Romanian</value>
+  </data>
+  <data name="lang_localru" xml:space="preserve">
+    <value>isiRashiya</value>
+  </data>
+  <data name="lang_localsd" xml:space="preserve">
+    <value>I-Sindhi</value>
+  </data>
+  <data name="lang_localso" xml:space="preserve">
+    <value>IsiSomali</value>
+  </data>
+  <data name="lang_localsq" xml:space="preserve">
+    <value>YaseAlbania/lwaseAlbania/IsiAlbania</value>
+  </data>
+  <data name="lang_localsv" xml:space="preserve">
+    <value>Isi-Swedish</value>
+  </data>
+  <data name="lang_localsw" xml:space="preserve">
+    <value>IsiSwahili</value>
+  </data>
+  <data name="lang_localta" xml:space="preserve">
+    <value>Isi-Tamil</value>
+  </data>
+  <data name="lang_localtg" xml:space="preserve">
+    <value>I-Tajik</value>
+  </data>
+  <data name="lang_localth" xml:space="preserve">
+    <value>IsiThai</value>
+  </data>
+  <data name="lang_localtr" xml:space="preserve">
+    <value>isi-Turkey</value>
+  </data>
+  <data name="lang_localtt" xml:space="preserve">
+    <value>I-Tatar</value>
+  </data>
+  <data name="lang_localug" xml:space="preserve">
+    <value>IsiUyghur</value>
+  </data>
+  <data name="lang_localur" xml:space="preserve">
+    <value>Isi-Urdu</value>
+  </data>
+  <data name="lang_localuz" xml:space="preserve">
+    <value>I-Uzbek</value>
+  </data>
+  <data name="lang_localzh" xml:space="preserve">
+    <value>isiTshayina</value>
+  </data>
+  <data name="Acct_Download" xml:space="preserve">
+    <value>Kuphela {0}</value>
+  </data>
+  <data name="unicode_Colon" xml:space="preserve">
+    <value>iKholoni</value>
+  </data>
+  <data name="unicode_Comma" xml:space="preserve">
+    <value>iKhoma</value>
+  </data>
+  <data name="unicode_Space" xml:space="preserve">
+    <value>Isithuba</value>
+  </data>
+  <data name="Acct_Certificate" xml:space="preserve">
+    <value>Isatifiketi: </value>
+  </data>
+  <data name="Acct_CurrentUser" xml:space="preserve">
+    <value>Umsebenzisi wangoku</value>
+  </data>
+  <data name="unicode_PopDirectionalFormatting" xml:space="preserve">
+    <value>‬	uFomatho lwasemacaleni oluzivelelayo</value>
+  </data>
+</root>

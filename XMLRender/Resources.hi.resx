@@ -1,0 +1,903 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Acct_AccountActivateSuccess" xml:space="preserve">
+    <value>खाता सफलतापूर्वक सक्रिय कर लिया है।</value>
+  </data>
+  <data name="Acct_AccountAlreadyActivated" xml:space="preserve">
+    <value>खाता पहले से सक्रिय है।</value>
+  </data>
+  <data name="Acct_AccountDeleteSuccess" xml:space="preserve">
+    <value>खाता सफलतापूर्वक हटा दिया।</value>
+  </data>
+  <data name="Acct_AccountNotActivated" xml:space="preserve">
+    <value>खाते में नहीं अभी तक सक्रिय कृपया अपने ईमेल पहले की जाँच करें या एक अतिरिक्त सक्रियण कोड के लिए अनुरोध।</value>
+  </data>
+  <data name="Acct_ActivateAccount" xml:space="preserve">
+    <value>खाते को सक्रिय करें</value>
+  </data>
+  <data name="Acct_ActivationAccountBody" xml:space="preserve">
+    <value>इस ई-मेल आपके {0} खाते के सक्रियकरण अनुरोध कर रहा है: {1}. कृपया निम्न लिंक का उपयोग करें: {2} पृष्ठ {3} से आगे बढ़ने और अपने उपयोगकर्ता नाम और निम्न सक्रियण कोड दर्ज करके या: {4}</value>
+  </data>
+  <data name="Acct_ActivationAccountSubject" xml:space="preserve">
+    <value>{0} पर खाते के लिए सक्रियण</value>
+  </data>
+  <data name="Acct_ActivationCode" xml:space="preserve">
+    <value>सक्रियण कोड</value>
+  </data>
+  <data name="Acct_BadEmailFormat" xml:space="preserve">
+    <value>ई-मेल पते मान् य स् वरूप में नहीं।</value>
+  </data>
+  <data name="Acct_Certain" xml:space="preserve">
+    <value>आप निश्चित हैं?</value>
+  </data>
+  <data name="Acct_ChangeEmailAddress" xml:space="preserve">
+    <value>ई-मेल पता परिवर्तित करें</value>
+  </data>
+  <data name="Acct_ChangePassword" xml:space="preserve">
+    <value>पासवर्ड परिवर्तित करें</value>
+  </data>
+  <data name="Acct_ChangeUsername" xml:space="preserve">
+    <value>उपयोगकर्ता नाम परिवर्तित करें</value>
+  </data>
+  <data name="Acct_CheckEmailNotice" xml:space="preserve">
+    <value>सक्रियण प्रदान पता करने के लिए भेजा है।  कृपया अपना पंजीकरण पूरा होगा जो अपने खाते को सक्रिय करने के लिए अपने ई-मेल की जाँच करें।</value>
+  </data>
+  <data name="Acct_CleanupStale" xml:space="preserve">
+    <value>क्लीनअप बासी</value>
+  </data>
+  <data name="Acct_ClearCache" xml:space="preserve">
+    <value>कैश साफ़ करें</value>
+  </data>
+  <data name="Acct_ClearDiskCache" xml:space="preserve">
+    <value>डिस्क कैश को साफ़ करें</value>
+  </data>
+  <data name="Acct_ConfirmEmailAddress" xml:space="preserve">
+    <value>ई-मेल पते की पुष्टि करें</value>
+  </data>
+  <data name="Acct_ConfirmPassword" xml:space="preserve">
+    <value>पासवर्ड की पुष्टि करें</value>
+  </data>
+  <data name="Acct_ControlPanel" xml:space="preserve">
+    <value>नियंत्रण कक्ष</value>
+  </data>
+  <data name="Acct_CreateDatabase" xml:space="preserve">
+    <value>डेटाबेस बनाएँ</value>
+  </data>
+  <data name="Acct_DeleteAccount" xml:space="preserve">
+    <value>खाता हटाएँ</value>
+  </data>
+  <data name="Acct_DotNetVersion" xml:space="preserve">
+    <value>डॉट नेट संस्करण</value>
+  </data>
+  <data name="Acct_DuplicateUser" xml:space="preserve">
+    <value>उपयोगकर्ता इस नाम के साथ पहले से ही मौजूद है कृपया अन्य को चुनें।</value>
+  </data>
+  <data name="Acct_EmailAddress" xml:space="preserve">
+    <value>ई-मेल पता</value>
+  </data>
+  <data name="Acct_EmailChangeReactivate" xml:space="preserve">
+    <value>ई-मेल पता बदल गया और सक्रियकरण ई-मेल खाते को पुनः सक्रिय करने के लिए भेजा।</value>
+  </data>
+  <data name="Acct_EmailInUse" xml:space="preserve">
+    <value>पहले से ही उपयोग में मौजूदा क्रेडेंशियल्स के साथ लॉगिन कृपया ई-मेल।</value>
+  </data>
+  <data name="Acct_EmailsNotMatch" xml:space="preserve">
+    <value>ई-मेल पते से मेल नहीं खाती</value>
+  </data>
+  <data name="Acct_ForgotPassword" xml:space="preserve">
+    <value>पासवर्ड भूल गए</value>
+  </data>
+  <data name="Acct_ForgotUsername" xml:space="preserve">
+    <value>उपयोगकर्ता नाम भूल गए</value>
+  </data>
+  <data name="Acct_Home" xml:space="preserve">
+    <value>मुख पृष्ठ</value>
+  </data>
+  <data name="Acct_IncorrectActivationCode" xml:space="preserve">
+    <value>गलत सक्रियकरण कोड।</value>
+  </data>
+  <data name="Acct_IncorrectPasswordResetCode" xml:space="preserve">
+    <value>ग़लत पासवर्ड रीसेट कोड।</value>
+  </data>
+  <data name="Acct_InvalidInput" xml:space="preserve">
+    <value>अमान्य इनपुट।</value>
+  </data>
+  <data name="Acct_InvalidUsernamePassword" xml:space="preserve">
+    <value>अमान्य उपयोगकर्ता नाम या पासवर्ड।</value>
+  </data>
+  <data name="Acct_Login" xml:space="preserve">
+    <value>लॉगिन</value>
+  </data>
+  <data name="Acct_LoginSuccess" xml:space="preserve">
+    <value>सफल लॉगिन।</value>
+  </data>
+  <data name="Acct_Logoff" xml:space="preserve">
+    <value>लॉग ऑफ़</value>
+  </data>
+  <data name="Acct_LogoffSuccess" xml:space="preserve">
+    <value>सफल लॉग ऑफ।</value>
+  </data>
+  <data name="Acct_MinimumPassword" xml:space="preserve">
+    <value>पासवर्ड कम से कम 8 वर्ण होना आवश्यक है।</value>
+  </data>
+  <data name="Acct_MinimumUsername" xml:space="preserve">
+    <value>उपयोगकर्ता नाम में कम से कम 4 अक्षर होना आवश्यक है।</value>
+  </data>
+  <data name="Acct_No" xml:space="preserve">
+    <value>नहीं</value>
+  </data>
+  <data name="Acct_NotConfirmDelete" xml:space="preserve">
+    <value>खाता हटाने की पुष्टि करनी होगी।</value>
+  </data>
+  <data name="Acct_NoUserExists" xml:space="preserve">
+    <value>दर्ज किए गए ई-मेल पते के लिए कोई उपयोगकर्ता मौजूद नहीं है।</value>
+  </data>
+  <data name="Acct_Password" xml:space="preserve">
+    <value>पासवर्ड</value>
+  </data>
+  <data name="Acct_PasswordAlreadyReset" xml:space="preserve">
+    <value>पहले से ही पासवर्ड रीसेट करें या प्रक्रिया नहीं शुरू की।</value>
+  </data>
+  <data name="Acct_PasswordChangedBody" xml:space="preserve">
+    <value>इस ई-मेल आपके {0} खाते का पासवर्ड परिवर्तन के सूचित करने के लिए है: {1}।</value>
+  </data>
+  <data name="Acct_PasswordChangedSubject" xml:space="preserve">
+    <value>पासवर्ड {0} पर खाते के लिए परिवर्तित</value>
+  </data>
+  <data name="Acct_PasswordChangeSuccess" xml:space="preserve">
+    <value>पासवर्ड सफलतापूर्वक परिवर्तित कर दिया।</value>
+  </data>
+  <data name="Acct_PasswordEmailSent" xml:space="preserve">
+    <value>एक ई-मेल आपके पते पर आरंभ करने के लिए फ़ाइल के लिए पासवर्ड रीसेट प्रक्रिया भेजा गया है।</value>
+  </data>
+  <data name="Acct_PasswordResetBody" xml:space="preserve">
+    <value>आपके {0} खाते का पासवर्ड रीसेट करने के लिए इस ई-मेल है: {1}. कृपया निम्न लिंक का उपयोग करें: {3} या पृष्ठ के लिए आगे बढ़ने से {4} और अपना उपयोगकर्ता नाम और पासवर्ड निम्न में प्रवेश कोड रीसेट: {5}</value>
+  </data>
+  <data name="Acct_PasswordResetCode" xml:space="preserve">
+    <value>पासवर्ड रीसेट कोड</value>
+  </data>
+  <data name="Acct_PasswordResetSubject" xml:space="preserve">
+    <value>{0} पर खाते के लिए रीसेट पासवर्ड</value>
+  </data>
+  <data name="Acct_PasswordResetSuccess" xml:space="preserve">
+    <value>पासवर्ड सफलतापूर्वक रीसेट।</value>
+  </data>
+  <data name="Acct_PasswordsNotMatch" xml:space="preserve">
+    <value>पासवर्ड मेल नहीं खाते</value>
+  </data>
+  <data name="Acct_Register" xml:space="preserve">
+    <value>पंजीकृत करें</value>
+  </data>
+  <data name="Acct_Remember" xml:space="preserve">
+    <value>याद है?</value>
+  </data>
+  <data name="Acct_RemoveDatabase" xml:space="preserve">
+    <value>डेटाबेस निकालें</value>
+  </data>
+  <data name="Acct_ResendActivationEmail" xml:space="preserve">
+    <value>सक्रियकरण ई-मेल पुनः भेजें</value>
+  </data>
+  <data name="Acct_ResetPassword" xml:space="preserve">
+    <value>पासवर्ड रीसेट करें</value>
+  </data>
+  <data name="Acct_RetrievePassword" xml:space="preserve">
+    <value>पासवर्ड पुनः प्राप्त</value>
+  </data>
+  <data name="Acct_RetrieveUsername" xml:space="preserve">
+    <value>उपयोगकर्ता नाम *</value>
+  </data>
+  <data name="Acct_SendActivationCode" xml:space="preserve">
+    <value>सक्रियण कोड भेजें</value>
+  </data>
+  <data name="Acct_Username" xml:space="preserve">
+    <value>उपयोगकर्ता नाम</value>
+  </data>
+  <data name="Acct_UsernameChangedBody" xml:space="preserve">
+    <value>इस ई-मेल आपके {0} खाते का खाता नाम परिवर्तन के सूचित करने के लिए है: {1}।</value>
+  </data>
+  <data name="Acct_UsernameChangedSubject" xml:space="preserve">
+    <value>{0} पर खाते के लिए उपयोगकर्ता नाम बदल चुका</value>
+  </data>
+  <data name="Acct_UsernameChangeSuccess" xml:space="preserve">
+    <value>उपयोगकर्ता नाम सफलतापूर्वक परिवर्तित कर दिया।</value>
+  </data>
+  <data name="Acct_UsernameEmailSent" xml:space="preserve">
+    <value>अपना उपयोगकर्ता नाम के साथ फ़ाइल पर अपने पते के लिए कोई ई-मेल भेजा गया है।</value>
+  </data>
+  <data name="Acct_UsernameReminderBody" xml:space="preserve">
+    <value>इस ई-मेल आपके {0} खाते के एक अनुस्मारक है: {1}।</value>
+  </data>
+  <data name="Acct_UsernameReminderSubject" xml:space="preserve">
+    <value>{0} पर खाते के लिए उपयोगकर्ता नाम अनुस्मारक</value>
+  </data>
+  <data name="Acct_UserNotFound" xml:space="preserve">
+    <value>उपयोगकर्ता मौजूद नहीं है।</value>
+  </data>
+  <data name="Acct_ViewCache" xml:space="preserve">
+    <value>दृश्य कैश</value>
+  </data>
+  <data name="Acct_ViewDiskCache" xml:space="preserve">
+    <value>देखें डिस्क कैश</value>
+  </data>
+  <data name="Acct_ViewHeaders" xml:space="preserve">
+    <value>दृश्य शीर्ष लेख</value>
+  </data>
+  <data name="Acct_Yes" xml:space="preserve">
+    <value>हाँ</value>
+  </data>
+  <data name="lang_am" xml:space="preserve">
+    <value>ኣማርኛ</value>
+  </data>
+  <data name="lang_ar" xml:space="preserve">
+    <value>العربية</value>
+  </data>
+  <data name="lang_az" xml:space="preserve">
+    <value>Azərbaycan dili</value>
+  </data>
+  <data name="lang_ber" xml:space="preserve">
+    <value>तमाज़ित</value>
+  </data>
+  <data name="lang_bg" xml:space="preserve">
+    <value>БЪЛГАРСКИ</value>
+  </data>
+  <data name="lang_bn" xml:space="preserve">
+    <value>বাংলা</value>
+  </data>
+  <data name="lang_bs" xml:space="preserve">
+    <value>bosanski</value>
+  </data>
+  <data name="lang_cs" xml:space="preserve">
+    <value>Čeština</value>
+  </data>
+  <data name="lang_de" xml:space="preserve">
+    <value>Deutsch</value>
+  </data>
+  <data name="lang_dv" xml:space="preserve">
+    <value>ދިވެހި</value>
+  </data>
+  <data name="lang_en" xml:space="preserve">
+    <value>अंग्रेज़ी</value>
+  </data>
+  <data name="lang_es" xml:space="preserve">
+    <value>español</value>
+  </data>
+  <data name="lang_fa" xml:space="preserve">
+    <value>فارسى</value>
+  </data>
+  <data name="lang_fr" xml:space="preserve">
+    <value>français</value>
+  </data>
+  <data name="lang_ha" xml:space="preserve">
+    <value>Ḥawsa</value>
+  </data>
+  <data name="lang_hi" xml:space="preserve">
+    <value>हिन्दी</value>
+  </data>
+  <data name="lang_id" xml:space="preserve">
+    <value>बहासा इंडोनेशिया</value>
+  </data>
+  <data name="lang_it" xml:space="preserve">
+    <value>italiano</value>
+  </data>
+  <data name="lang_ja" xml:space="preserve">
+    <value>日本語</value>
+  </data>
+  <data name="lang_ko" xml:space="preserve">
+    <value>한국어</value>
+  </data>
+  <data name="lang_ku" xml:space="preserve">
+    <value>کوردی</value>
+  </data>
+  <data name="lang_ml" xml:space="preserve">
+    <value>മലയാളം</value>
+  </data>
+  <data name="lang_ms" xml:space="preserve">
+    <value>इस्तेमाल Bahasa melayu</value>
+  </data>
+  <data name="lang_nl" xml:space="preserve">
+    <value>इस डच</value>
+  </data>
+  <data name="lang_no" xml:space="preserve">
+    <value>Norsk</value>
+  </data>
+  <data name="lang_pl" xml:space="preserve">
+    <value>polski</value>
+  </data>
+  <data name="lang_pt" xml:space="preserve">
+    <value>português</value>
+  </data>
+  <data name="lang_ro" xml:space="preserve">
+    <value>रोमानो</value>
+  </data>
+  <data name="lang_ru" xml:space="preserve">
+    <value>РУССКИЙ ЯЗЫК</value>
+  </data>
+  <data name="lang_sd" xml:space="preserve">
+    <value>سنڌي</value>
+  </data>
+  <data name="lang_so" xml:space="preserve">
+    <value>वायु सेना Soomaali</value>
+  </data>
+  <data name="lang_sq" xml:space="preserve">
+    <value>shqip</value>
+  </data>
+  <data name="lang_sv" xml:space="preserve">
+    <value>Svenska</value>
+  </data>
+  <data name="lang_sw" xml:space="preserve">
+    <value>किस्वाहिली</value>
+  </data>
+  <data name="lang_ta" xml:space="preserve">
+    <value>தமிழ்</value>
+  </data>
+  <data name="lang_tg" xml:space="preserve">
+    <value>ТОҶИКИ</value>
+  </data>
+  <data name="lang_th" xml:space="preserve">
+    <value>ภาษาไทย</value>
+  </data>
+  <data name="lang_tr" xml:space="preserve">
+    <value>इस तुर्की</value>
+  </data>
+  <data name="lang_tt" xml:space="preserve">
+    <value>ТАТАРЧА</value>
+  </data>
+  <data name="lang_ug" xml:space="preserve">
+    <value>ئۇيغۇر</value>
+  </data>
+  <data name="lang_ur" xml:space="preserve">
+    <value>اردو विशेषता</value>
+  </data>
+  <data name="lang_uz" xml:space="preserve">
+    <value>o'zbek तिलि ўзбек тили</value>
+  </data>
+  <data name="lang_zh" xml:space="preserve">
+    <value>中文</value>
+  </data>
+  <data name="lang_localam" xml:space="preserve">
+    <value>अमहरिक</value>
+  </data>
+  <data name="lang_localar" xml:space="preserve">
+    <value>अरबी</value>
+  </data>
+  <data name="lang_localaz" xml:space="preserve">
+    <value>अज़रबैजानी</value>
+  </data>
+  <data name="lang_localber" xml:space="preserve">
+    <value>Amazigh</value>
+  </data>
+  <data name="lang_localbg" xml:space="preserve">
+    <value>बुल्गारियाई</value>
+  </data>
+  <data name="lang_localbn" xml:space="preserve">
+    <value>बंगाली</value>
+  </data>
+  <data name="lang_localbs" xml:space="preserve">
+    <value>बोस्नियन</value>
+  </data>
+  <data name="lang_localcs" xml:space="preserve">
+    <value>चेक</value>
+  </data>
+  <data name="lang_localde" xml:space="preserve">
+    <value>जर्मन</value>
+  </data>
+  <data name="lang_localdv" xml:space="preserve">
+    <value>दिवेही</value>
+  </data>
+  <data name="lang_localen" xml:space="preserve">
+    <value>अंग्रेज़ी</value>
+  </data>
+  <data name="lang_locales" xml:space="preserve">
+    <value>स्पेनिश</value>
+  </data>
+  <data name="lang_localfa" xml:space="preserve">
+    <value>फ़ारसी</value>
+  </data>
+  <data name="lang_localfr" xml:space="preserve">
+    <value>फ्रेंच</value>
+  </data>
+  <data name="lang_localha" xml:space="preserve">
+    <value>होसा</value>
+  </data>
+  <data name="lang_localhi" xml:space="preserve">
+    <value>हिंदी</value>
+  </data>
+  <data name="lang_localid" xml:space="preserve">
+    <value>इंडोनेशियाई</value>
+  </data>
+  <data name="lang_localit" xml:space="preserve">
+    <value>इतालवी </value>
+  </data>
+  <data name="lang_localja" xml:space="preserve">
+    <value>जापानी</value>
+  </data>
+  <data name="lang_localko" xml:space="preserve">
+    <value>कोरियाई</value>
+  </data>
+  <data name="lang_localku" xml:space="preserve">
+    <value>कुर्दिश</value>
+  </data>
+  <data name="lang_localml" xml:space="preserve">
+    <value>मलयालम</value>
+  </data>
+  <data name="lang_localms" xml:space="preserve">
+    <value>मलय</value>
+  </data>
+  <data name="lang_localnl" xml:space="preserve">
+    <value>डच</value>
+  </data>
+  <data name="lang_localno" xml:space="preserve">
+    <value>नार्वेजियाई</value>
+  </data>
+  <data name="lang_localpl" xml:space="preserve">
+    <value>पोलिश</value>
+  </data>
+  <data name="lang_localpt" xml:space="preserve">
+    <value>पुर्तगाली</value>
+  </data>
+  <data name="lang_localro" xml:space="preserve">
+    <value>रोमानियाई</value>
+  </data>
+  <data name="lang_localru" xml:space="preserve">
+    <value>रूसी</value>
+  </data>
+  <data name="lang_localsd" xml:space="preserve">
+    <value>सिंधी</value>
+  </data>
+  <data name="lang_localso" xml:space="preserve">
+    <value>सोमाली</value>
+  </data>
+  <data name="lang_localsq" xml:space="preserve">
+    <value>अल्बानियाई</value>
+  </data>
+  <data name="lang_localsv" xml:space="preserve">
+    <value>स्वीडिश</value>
+  </data>
+  <data name="lang_localsw" xml:space="preserve">
+    <value>स्वाहिली</value>
+  </data>
+  <data name="lang_localta" xml:space="preserve">
+    <value>तमिल</value>
+  </data>
+  <data name="lang_localtg" xml:space="preserve">
+    <value>तजिक</value>
+  </data>
+  <data name="lang_localth" xml:space="preserve">
+    <value>थाई</value>
+  </data>
+  <data name="lang_localtr" xml:space="preserve">
+    <value>तुर्की</value>
+  </data>
+  <data name="lang_localtt" xml:space="preserve">
+    <value>तातार</value>
+  </data>
+  <data name="lang_localug" xml:space="preserve">
+    <value>इयोग़र</value>
+  </data>
+  <data name="lang_localur" xml:space="preserve">
+    <value>उर्दू</value>
+  </data>
+  <data name="lang_localuz" xml:space="preserve">
+    <value>उज़्बेक</value>
+  </data>
+  <data name="lang_localzh" xml:space="preserve">
+    <value>चीनी</value>
+  </data>
+  <data name="Acct_Download" xml:space="preserve">
+    <value>{0} डाउनलोड करें</value>
+  </data>
+  <data name="unicode_ArabicComma" xml:space="preserve">
+    <value>अरबी अल्पविराम</value>
+  </data>
+  <data name="unicode_ArabicDamma" xml:space="preserve">
+    <value>अरबी Damma</value>
+  </data>
+  <data name="unicode_ArabicDammatan" xml:space="preserve">
+    <value>अरबी Dammatan</value>
+  </data>
+  <data name="unicode_ArabicEmptyCentreHighStop" xml:space="preserve">
+    <value>अरबी खाली केंद्र उच्च रोक</value>
+  </data>
+  <data name="unicode_ArabicEmptyCentreLowStop" xml:space="preserve">
+    <value>अरबी खाली सेंटर कम रोक</value>
+  </data>
+  <data name="unicode_ArabicEndOfAyah" xml:space="preserve">
+    <value>Ayah के अरबी अंत</value>
+  </data>
+  <data name="unicode_ArabicFatha" xml:space="preserve">
+    <value>अरबी Fatha</value>
+  </data>
+  <data name="unicode_ArabicFathatan" xml:space="preserve">
+    <value>अरबी Fathatan</value>
+  </data>
+  <data name="unicode_ArabicHamzaAbove" xml:space="preserve">
+    <value>अरबी हमजा ऊपर</value>
+  </data>
+  <data name="unicode_ArabicHamzaBelow" xml:space="preserve">
+    <value>अरबी हमजा नीचे</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitEight" xml:space="preserve">
+    <value>अरबी-भारतीय अंक आठ</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitFive" xml:space="preserve">
+    <value>अरबी-भारतीय अंक पांच</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitFour" xml:space="preserve">
+    <value>अरबी-भारतीय अंक चार</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitNine" xml:space="preserve">
+    <value>अरबी-भारतीय अंक नौ</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitOne" xml:space="preserve">
+    <value>अरबी-भारतीय अंक एक</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitSeven" xml:space="preserve">
+    <value>अरबी-भारतीय अंक सात</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitSix" xml:space="preserve">
+    <value>अरबी-भारतीय अंक छः</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitThree" xml:space="preserve">
+    <value>अरबी-भारतीय अंक तीन</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitTwo" xml:space="preserve">
+    <value>अरबी-भारतीय अंक दो</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitZero" xml:space="preserve">
+    <value>अरबी-भारतीय अंक शून्य</value>
+  </data>
+  <data name="unicode_ArabicKasra" xml:space="preserve">
+    <value>अरबी Kasra</value>
+  </data>
+  <data name="unicode_ArabicKasratan" xml:space="preserve">
+    <value>अरबी Kasratan</value>
+  </data>
+  <data name="unicode_ArabicLetterAin" xml:space="preserve">
+    <value>अरबी अक्षर आइन</value>
+  </data>
+  <data name="unicode_ArabicLetterAlef" xml:space="preserve">
+    <value>अरबी अक्षर अलिफ़</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefMaksura" xml:space="preserve">
+    <value>अरबी अक्षर Alef Maksura</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefWasla" xml:space="preserve">
+    <value>अरबी अक्षर Alef Wasla</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefWithHamzaAbove" xml:space="preserve">
+    <value>अरबी अक्षर अलिफ़ हम्ज़ा इसके बाद के संस्करण के साथ</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefWithHamzaBelow" xml:space="preserve">
+    <value>अरबी अक्षर अलिफ़ हम्ज़ा नीचे के साथ</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefWithMaddaAbove" xml:space="preserve">
+    <value>अरबी अक्षर अलिफ़ Madda इसके बाद के संस्करण के साथ</value>
+  </data>
+  <data name="unicode_ArabicLetterBeh" xml:space="preserve">
+    <value>अरबी अक्षर Beh</value>
+  </data>
+  <data name="unicode_ArabicLetterDad" xml:space="preserve">
+    <value>अरबी पत्र पिताजी</value>
+  </data>
+  <data name="unicode_ArabicLetterDal" xml:space="preserve">
+    <value>अरबी अक्षर दाल</value>
+  </data>
+  <data name="unicode_ArabicLetterFeh" xml:space="preserve">
+    <value>अरबी अक्षर Feh</value>
+  </data>
+  <data name="unicode_ArabicLetterGaf" xml:space="preserve">
+    <value>अरबी अक्षर Gaf</value>
+  </data>
+  <data name="unicode_ArabicLetterGhain" xml:space="preserve">
+    <value>अरबी पत्र Ghain</value>
+  </data>
+  <data name="unicode_ArabicLetterHah" xml:space="preserve">
+    <value>अरबी अक्षर हा</value>
+  </data>
+  <data name="unicode_ArabicLetterHamza" xml:space="preserve">
+    <value>अरबी अक्षर हमजा</value>
+  </data>
+  <data name="unicode_ArabicLetterHeh" xml:space="preserve">
+    <value>अरबी अक्षर हे</value>
+  </data>
+  <data name="unicode_ArabicLetterJeem" xml:space="preserve">
+    <value>अरबी पत्र Jeem</value>
+  </data>
+  <data name="unicode_ArabicLetterKaf" xml:space="preserve">
+    <value>अरबी अक्षर Kaf</value>
+  </data>
+  <data name="unicode_ArabicLetterKhah" xml:space="preserve">
+    <value>अरबी पत्र Khah</value>
+  </data>
+  <data name="unicode_ArabicLetterLam" xml:space="preserve">
+    <value>अरबी अक्षर लाम</value>
+  </data>
+  <data name="unicode_ArabicLetterMeem" xml:space="preserve">
+    <value>अरबी अक्षर Meem</value>
+  </data>
+  <data name="unicode_ArabicLetterNoon" xml:space="preserve">
+    <value>अरबी पत्र दोपहर</value>
+  </data>
+  <data name="unicode_ArabicLetterPeh" xml:space="preserve">
+    <value>अरबी अक्षर Peh</value>
+  </data>
+  <data name="unicode_ArabicLetterQaf" xml:space="preserve">
+    <value>अरबी अक्षर काफ</value>
+  </data>
+  <data name="unicode_ArabicLetterReh" xml:space="preserve">
+    <value>अरबी अक्षर जिन्दगी</value>
+  </data>
+  <data name="unicode_ArabicLetterSad" xml:space="preserve">
+    <value>अरबी अक्षर दु: खी</value>
+  </data>
+  <data name="unicode_ArabicLetterSeen" xml:space="preserve">
+    <value>अरबी अक्षर देखा</value>
+  </data>
+  <data name="unicode_ArabicLetterSheen" xml:space="preserve">
+    <value>अरबी अक्षर शीन</value>
+  </data>
+  <data name="unicode_ArabicLetterSuperscriptAlef" xml:space="preserve">
+    <value>अरबी अक्षर सुपरस्क्रिप्ट अलिफ़</value>
+  </data>
+  <data name="unicode_ArabicLetterTah" xml:space="preserve">
+    <value>अरबी अक्षर Tah</value>
+  </data>
+  <data name="unicode_ArabicLetterTcheh" xml:space="preserve">
+    <value>अरबी पत्र Tcheh</value>
+  </data>
+  <data name="unicode_ArabicLetterTeh" xml:space="preserve">
+    <value>अरबी अक्षर तेह</value>
+  </data>
+  <data name="unicode_ArabicLetterTehMarbuta" xml:space="preserve">
+    <value>अरबी अक्षर तेह Marbuta</value>
+  </data>
+  <data name="unicode_ArabicLetterThal" xml:space="preserve">
+    <value>अरबी अक्षर थाल</value>
+  </data>
+  <data name="unicode_ArabicLetterTheh" xml:space="preserve">
+    <value>अरबी अक्षर एकम</value>
+  </data>
+  <data name="unicode_ArabicLetterVeh" xml:space="preserve">
+    <value>अरबी अक्षर Veh</value>
+  </data>
+  <data name="unicode_ArabicLetterWaw" xml:space="preserve">
+    <value>अरबी अक्षर Waw</value>
+  </data>
+  <data name="unicode_ArabicLetterWawWithHamzaAbove" xml:space="preserve">
+    <value>अरबी अक्षर Waw हमजा इसके बाद के संस्करण के साथ</value>
+  </data>
+  <data name="unicode_ArabicLetterYeh" xml:space="preserve">
+    <value>अरबी पत्र ये</value>
+  </data>
+  <data name="unicode_ArabicLetterYehWithHamzaAbove" xml:space="preserve">
+    <value>अरबी पत्र ये उपरोक्त, हम्ज़ा के साथ</value>
+  </data>
+  <data name="unicode_ArabicLetterZah" xml:space="preserve">
+    <value>अरबी पत्र Zah</value>
+  </data>
+  <data name="unicode_ArabicLetterZain" xml:space="preserve">
+    <value>अरबी अक्षर Zain</value>
+  </data>
+  <data name="unicode_ArabicLigatureAkbarIsolatedForm" xml:space="preserve">
+    <value>अरबी संयुक्ताक्षर अकबर प्रपत्र अलग-थलग</value>
+  </data>
+  <data name="unicode_ArabicLigatureAlayheIsolatedForm" xml:space="preserve">
+    <value>अरबी संयुक्ताक्षर Alayhe प्रपत्र अलग-थलग</value>
+  </data>
+  <data name="unicode_ArabicLigatureAllahIsolatedForm" xml:space="preserve">
+    <value>अरबी संयुक्ताक्षर अल्लाह प्रपत्र अलग-थलग</value>
+  </data>
+  <data name="unicode_ArabicLigatureBismillahArRahmanArRaheem" xml:space="preserve">
+    <value>अरबी संयुक्ताक्षर बिस्मिल्ला Ar-Rahman Ar-Raheem</value>
+  </data>
+  <data name="unicode_ArabicLigatureJallajalalouhou" xml:space="preserve">
+    <value>अरबी संयुक्ताक्षर Jallajalalouhou</value>
+  </data>
+  <data name="unicode_ArabicLigatureMohammadIsolatedForm" xml:space="preserve">
+    <value>अरबी संयुक्ताक्षर मोहम्मद प्रपत्र अलग-थलग</value>
+  </data>
+  <data name="unicode_ArabicLigatureQalaUsedAsKoranicStopSignIsolatedForm" xml:space="preserve">
+    <value>अरबी संयुक्ताक्षर Qala बदल बंद करो साइन अलग प्रपत्र के रूप में इस्तेमाल किया</value>
+  </data>
+  <data name="unicode_ArabicLigatureRasoulIsolatedForm" xml:space="preserve">
+    <value>अरबी संयुक्ताक्षर Rasoul प्रपत्र अलग-थलग</value>
+  </data>
+  <data name="unicode_ArabicLigatureSalamIsolatedForm" xml:space="preserve">
+    <value>अरबी संयुक्ताक्षर सलाम प्रपत्र अलग-थलग</value>
+  </data>
+  <data name="unicode_ArabicLigatureSallaIsolatedForm" xml:space="preserve">
+    <value>अरबी संयुक्ताक्षर Salla प्रपत्र अलग-थलग</value>
+  </data>
+  <data name="unicode_ArabicLigatureSallallahouAlayheWasallam" xml:space="preserve">
+    <value>अरबी संयुक्ताक्षर Sallallahou Alayhe Wasallam</value>
+  </data>
+  <data name="unicode_ArabicLigatureSallaUsedAsKoranicStopSignIsolatedForm" xml:space="preserve">
+    <value>अरबी संयुक्ताक्षर Salla बदल बंद करो साइन अलग प्रपत्र के रूप में इस्तेमाल किया</value>
+  </data>
+  <data name="unicode_ArabicLigatureWasallamIsolatedForm" xml:space="preserve">
+    <value>अरबी संयुक्ताक्षर Wasallam प्रपत्र अलग-थलग</value>
+  </data>
+  <data name="unicode_ArabicMaddahAbove" xml:space="preserve">
+    <value>अरबी Maddah इसके बाद के संस्करण</value>
+  </data>
+  <data name="unicode_ArabicPlaceOfSajdah" xml:space="preserve">
+    <value>अरबी सज्दाः की जगह</value>
+  </data>
+  <data name="unicode_ArabicQuestionMark" xml:space="preserve">
+    <value>अरबी प्रश्नचिह्न</value>
+  </data>
+  <data name="unicode_ArabicRoundedHighStopWithFilledCentre" xml:space="preserve">
+    <value>अरबी गोल भरे हुए केंद्र के साथ उच्च रोक</value>
+  </data>
+  <data name="unicode_ArabicSemicolon" xml:space="preserve">
+    <value>अरबी अर्धविराम</value>
+  </data>
+  <data name="unicode_ArabicShadda" xml:space="preserve">
+    <value>अरबी Shadda</value>
+  </data>
+  <data name="unicode_ArabicSmallHighJeem" xml:space="preserve">
+    <value>अरबी छोटे उच्च Jeem</value>
+  </data>
+  <data name="unicode_ArabicSmallHighLamAlef" xml:space="preserve">
+    <value>अरबी छोटे उच्च लाम अलिफ़</value>
+  </data>
+  <data name="unicode_ArabicSmallHighLigatureQafWithLamWithAlefMaksura" xml:space="preserve">
+    <value>लाम अलिफ़ Maksura के साथ साथ अरबी छोटे उच्च संयुक्ताक्षर काफ</value>
+  </data>
+  <data name="unicode_ArabicSmallHighLigatureSadWithLamWithAlefMaksura" xml:space="preserve">
+    <value>अरबी छोटे उच्च संयुक्ताक्षर दु: खी लाम अलिफ़ Maksura के साथ साथ</value>
+  </data>
+  <data name="unicode_ArabicSmallHighMeemInitialForm" xml:space="preserve">
+    <value>अरबी छोटे उच्च Meem प्रारंभिक प्रपत्र</value>
+  </data>
+  <data name="unicode_ArabicSmallHighMeemIsolatedForm" xml:space="preserve">
+    <value>अरबी छोटे उच्च Meem प्रपत्र अलग-थलग</value>
+  </data>
+  <data name="unicode_ArabicSmallHighNoon" xml:space="preserve">
+    <value>अरबी छोटे उच्च दोपहर</value>
+  </data>
+  <data name="unicode_ArabicSmallHighRoundedZero" xml:space="preserve">
+    <value>अरबी छोटे उच्च गोल शून्य</value>
+  </data>
+  <data name="unicode_ArabicSmallHighSeen" xml:space="preserve">
+    <value>अरबी छोटे उच्च देखा</value>
+  </data>
+  <data name="unicode_ArabicSmallHighThreeDots" xml:space="preserve">
+    <value>अरबी छोटे उच्च तीन डॉट्स</value>
+  </data>
+  <data name="unicode_ArabicSmallHighUprightRectangularZero" xml:space="preserve">
+    <value>अरबी छोटे उच्च ईमानदार आयताकार शून्य</value>
+  </data>
+  <data name="unicode_ArabicSmallLowMeem" xml:space="preserve">
+    <value>अरबी छोटे कम Meem</value>
+  </data>
+  <data name="unicode_ArabicSmallLowSeen" xml:space="preserve">
+    <value>अरबी छोटे कम देखा</value>
+  </data>
+  <data name="unicode_ArabicSmallWaw" xml:space="preserve">
+    <value>अरबी छोटे Waw</value>
+  </data>
+  <data name="unicode_ArabicSmallYeh" xml:space="preserve">
+    <value>अरबी छोटा सा ये</value>
+  </data>
+  <data name="unicode_ArabicStartOfRubElHizb" xml:space="preserve">
+    <value>रगड़ El हिज्ब के अरबी शुरू</value>
+  </data>
+  <data name="unicode_ArabicSukun" xml:space="preserve">
+    <value>अरबी Sukun</value>
+  </data>
+  <data name="unicode_ArabicTatweel" xml:space="preserve">
+    <value>अरबी Tatweel</value>
+  </data>
+  <data name="unicode_Colon" xml:space="preserve">
+    <value>बृहदान्त्र</value>
+  </data>
+  <data name="unicode_Comma" xml:space="preserve">
+    <value>अल्पविराम</value>
+  </data>
+  <data name="unicode_ExclamationMark" xml:space="preserve">
+    <value>विस्मयादिबोधक चिह्न</value>
+  </data>
+  <data name="unicode_FullStop" xml:space="preserve">
+    <value>पूर्ण विराम</value>
+  </data>
+  <data name="unicode_HyphenMinus" xml:space="preserve">
+    <value>हायफ़न-ऋण</value>
+  </data>
+  <data name="unicode_LeftCurlyBracket" xml:space="preserve">
+    <value>बाएँ धनु धनुकोष्ठक</value>
+  </data>
+  <data name="unicode_LeftPointingDoubleAngleQuotationMark" xml:space="preserve">
+    <value>बाईं ओर इशारा करते हुए कोण उद्धरण चिह्न डबल</value>
+  </data>
+  <data name="unicode_LeftSquareBracket" xml:space="preserve">
+    <value>बायाँ गुरुकोष्ठक</value>
+  </data>
+  <data name="unicode_OrnateLeftParenthesis" xml:space="preserve">
+    <value>अलंकृत बायाँ लघु कोष्ठक</value>
+  </data>
+  <data name="unicode_OrnateRightParenthesis" xml:space="preserve">
+    <value>अलंकृत दायाँ लघु कोष्ठक</value>
+  </data>
+  <data name="unicode_QuotationMark" xml:space="preserve">
+    <value>उद्धरण चिह्न</value>
+  </data>
+  <data name="unicode_RialSign" xml:space="preserve">
+    <value>रियाल चिह्न</value>
+  </data>
+  <data name="unicode_RightCurlyBracket" xml:space="preserve">
+    <value>दायाँ लघु कोष्ठक</value>
+  </data>
+  <data name="unicode_RightPointingDoubleAngleQuotationMark" xml:space="preserve">
+    <value>दाएँ-इंगित करते हुए कोण उद्धरण चिह्न डबल</value>
+  </data>
+  <data name="unicode_RightSquareBracket" xml:space="preserve">
+    <value>दायाँ गुरुकोष्ठक</value>
+  </data>
+  <data name="unicode_Space" xml:space="preserve">
+    <value>स्‍पेस</value>
+  </data>
+  <data name="Acct_CertRequest" xml:space="preserve">
+    <value>प्रमाणपत्र अनुरोध</value>
+  </data>
+  <data name="Acct_Certificate" xml:space="preserve">
+    <value>प्रमाणपत्र</value>
+  </data>
+  <data name="Acct_CertInstall" xml:space="preserve">
+    <value>प्रमाण पत्र स्थापित करें</value>
+  </data>
+  <data name="Acct_CurrentUser" xml:space="preserve">
+    <value>वर्तमान उपयोगकर्ता</value>
+  </data>
+  <data name="Acct_DeleteCertRequest" xml:space="preserve">
+    <value>प्रमाणपत्र अनुरोध हटा दें</value>
+  </data>
+  <data name="Acct_EnableSSL" xml:space="preserve">
+    <value>SSL सक्षम करें</value>
+  </data>
+  <data name="Acct_PrivateKey" xml:space="preserve">
+    <value>निजी कुंजी</value>
+  </data>
+  <data name="Acct_ViewCertRequests" xml:space="preserve">
+    <value>दृश्य प्रमाणपत्र अनुरोध</value>
+  </data>
+  <data name="Acct_ViewSites" xml:space="preserve">
+    <value>उन साइट्स को दिखाएँ</value>
+  </data>
+  <data name="Acct_CertInstallIntermed" xml:space="preserve">
+    <value>मध्यस्थ प्रमाणपत्र स्थापित करें</value>
+  </data>
+  <data name="unicode_LeftToRightEmbedding" xml:space="preserve">
+    <value>बाएँ-से-दाएँ एम्बेडिंग</value>
+  </data>
+  <data name="unicode_RightToLeftEmbedding" xml:space="preserve">
+    <value>दाएँ-से-बाएँ एम्बेडिंग</value>
+  </data>
+  <data name="unicode_LeftToRightMark" xml:space="preserve">
+    <value>बाएँ-से-दाएँ चिह्न</value>
+  </data>
+  <data name="unicode_LeftToRightOverride" xml:space="preserve">
+    <value>बाएँ-से-दाएँ ओवरराइड</value>
+  </data>
+  <data name="unicode_PopDirectionalFormatting" xml:space="preserve">
+    <value>दिशात्मक स्वरूपण पॉप</value>
+  </data>
+  <data name="unicode_RightToLeftMark" xml:space="preserve">
+    <value>दाएँ-से-बाएँ चिह्न</value>
+  </data>
+  <data name="unicode_RightToLeftOverride" xml:space="preserve">
+    <value>दाएँ-से-बाएँ ओवरराइड</value>
+  </data>
+</root>

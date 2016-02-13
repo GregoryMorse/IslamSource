@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Acct_ChangePassword" xml:space="preserve">
+    <value>پاس ورڈ بدلو</value>
+  </data>
+  <data name="Acct_ConfirmPassword" xml:space="preserve">
+    <value>لفظی کنجی دی تصدیق کرو</value>
+  </data>
+  <data name="Acct_ControlPanel" xml:space="preserve">
+    <value>کنٹرول پینل</value>
+  </data>
+  <data name="Acct_DeleteAccount" xml:space="preserve">
+    <value>اکاؤنٹ مٹادیو</value>
+  </data>
+  <data name="Acct_EmailAddress" xml:space="preserve">
+    <value>&amp;ای میل پتہ</value>
+  </data>
+  <data name="Acct_Home" xml:space="preserve">
+    <value>ہوم</value>
+  </data>
+  <data name="Acct_InvalidInput" xml:space="preserve">
+    <value>ناجائز ان پٹ</value>
+  </data>
+  <data name="Acct_Login" xml:space="preserve">
+    <value>&amp;لاگ ان</value>
+  </data>
+  <data name="Acct_No" xml:space="preserve">
+    <value>نئیں</value>
+  </data>
+  <data name="Acct_Password" xml:space="preserve">
+    <value>لفظی کنجی</value>
+  </data>
+  <data name="Acct_PasswordsNotMatch" xml:space="preserve">
+    <value>پاس ورڈ مشابہ نہیں</value>
+  </data>
+  <data name="Acct_Register" xml:space="preserve">
+    <value>REGISTER</value>
+  </data>
+  <data name="Acct_Username" xml:space="preserve">
+    <value>نام صارف</value>
+  </data>
+  <data name="Acct_Yes" xml:space="preserve">
+    <value>ہاں جی</value>
+  </data>
+  <data name="lang_ber" xml:space="preserve">
+    <value>تمازیت</value>
+  </data>
+  <data name="lang_en" xml:space="preserve">
+    <value>انگریزی</value>
+  </data>
+  <data name="lang_sw" xml:space="preserve">
+    <value>کسواہلی</value>
+  </data>
+  <data name="lang_localam" xml:space="preserve">
+    <value>آرامی</value>
+  </data>
+  <data name="lang_localar" xml:space="preserve">
+    <value>عربی</value>
+  </data>
+  <data name="lang_localaz" xml:space="preserve">
+    <value>آذربائیجانی</value>
+  </data>
+  <data name="lang_localbg" xml:space="preserve">
+    <value>بلغاروی</value>
+  </data>
+  <data name="lang_localbn" xml:space="preserve">
+    <value>بنگالی</value>
+  </data>
+  <data name="lang_localcs" xml:space="preserve">
+    <value>چیک</value>
+  </data>
+  <data name="lang_localde" xml:space="preserve">
+    <value>جرمن</value>
+  </data>
+  <data name="lang_localdv" xml:space="preserve">
+    <value>دیوہائی</value>
+  </data>
+  <data name="lang_localen" xml:space="preserve">
+    <value>انگریزی</value>
+  </data>
+  <data name="lang_locales" xml:space="preserve">
+    <value>ہسپانوی</value>
+  </data>
+  <data name="lang_localfa" xml:space="preserve">
+    <value>فارسی</value>
+  </data>
+  <data name="lang_localfr" xml:space="preserve">
+    <value>فرانسیسی</value>
+  </data>
+  <data name="lang_localha" xml:space="preserve">
+    <value>ہوسہ</value>
+  </data>
+  <data name="lang_localhi" xml:space="preserve">
+    <value>ہندی</value>
+  </data>
+  <data name="lang_localid" xml:space="preserve">
+    <value>انڈونیشیائی</value>
+  </data>
+  <data name="lang_localit" xml:space="preserve">
+    <value>اطالوی</value>
+  </data>
+  <data name="lang_localja" xml:space="preserve">
+    <value>جاپانی</value>
+  </data>
+  <data name="lang_localko" xml:space="preserve">
+    <value>کوریائی</value>
+  </data>
+  <data name="lang_localml" xml:space="preserve">
+    <value>ملیالم</value>
+  </data>
+  <data name="lang_localms" xml:space="preserve">
+    <value>مالایا</value>
+  </data>
+  <data name="lang_localnl" xml:space="preserve">
+    <value>ڈچ</value>
+  </data>
+  <data name="lang_localno" xml:space="preserve">
+    <value>نارویجن</value>
+  </data>
+  <data name="lang_localpl" xml:space="preserve">
+    <value>پولینڈی</value>
+  </data>
+  <data name="lang_localpt" xml:space="preserve">
+    <value>پرتگیزی</value>
+  </data>
+  <data name="lang_localro" xml:space="preserve">
+    <value>رومینیائی</value>
+  </data>
+  <data name="lang_localru" xml:space="preserve">
+    <value>روسی</value>
+  </data>
+  <data name="lang_localsd" xml:space="preserve">
+    <value>سندھی</value>
+  </data>
+  <data name="lang_localso" xml:space="preserve">
+    <value>صومالی</value>
+  </data>
+  <data name="lang_localsq" xml:space="preserve">
+    <value>البانوی</value>
+  </data>
+  <data name="lang_localsv" xml:space="preserve">
+    <value>سویڈیش</value>
+  </data>
+  <data name="lang_localsw" xml:space="preserve">
+    <value>سواہیلی</value>
+  </data>
+  <data name="lang_localta" xml:space="preserve">
+    <value>تامل</value>
+  </data>
+  <data name="lang_localtg" xml:space="preserve">
+    <value>تاجک</value>
+  </data>
+  <data name="lang_localth" xml:space="preserve">
+    <value>تھائی</value>
+  </data>
+  <data name="lang_localtr" xml:space="preserve">
+    <value>ترک</value>
+  </data>
+  <data name="lang_localtt" xml:space="preserve">
+    <value>تاتار</value>
+  </data>
+  <data name="lang_localug" xml:space="preserve">
+    <value>ایگور</value>
+  </data>
+  <data name="lang_localur" xml:space="preserve">
+    <value>اردو</value>
+  </data>
+  <data name="lang_localuz" xml:space="preserve">
+    <value>ازبک</value>
+  </data>
+  <data name="lang_localzh" xml:space="preserve">
+    <value>چینی</value>
+  </data>
+  <data name="Acct_Download" xml:space="preserve">
+    <value>{0} ڈاؤن لوڈ کرو</value>
+  </data>
+  <data name="unicode_Colon" xml:space="preserve">
+    <value>&amp;کولن</value>
+  </data>
+  <data name="unicode_Comma" xml:space="preserve">
+    <value>&amp;کاما</value>
+  </data>
+  <data name="unicode_Space" xml:space="preserve">
+    <value>سپیس</value>
+  </data>
+  <data name="Acct_Certificate" xml:space="preserve">
+    <value>سرتیفیکیٹ</value>
+  </data>
+  <data name="Acct_CurrentUser" xml:space="preserve">
+    <value>حالیہ صارف</value>
+  </data>
+</root>

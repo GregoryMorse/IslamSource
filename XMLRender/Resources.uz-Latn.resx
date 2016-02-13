@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Acct_ChangePassword" xml:space="preserve">
+    <value>Parolni o‘zgartirmoq</value>
+  </data>
+  <data name="Acct_ClearCache" xml:space="preserve">
+    <value>Keshni tozalamoq</value>
+  </data>
+  <data name="Acct_ConfirmPassword" xml:space="preserve">
+    <value>Parolni tasdiqlash</value>
+  </data>
+  <data name="Acct_ControlPanel" xml:space="preserve">
+    <value>Boshqaruv paneli</value>
+  </data>
+  <data name="Acct_DeleteAccount" xml:space="preserve">
+    <value>Qaydnomani yo‘q qilish</value>
+  </data>
+  <data name="Acct_EmailAddress" xml:space="preserve">
+    <value>E-pochta manzili</value>
+  </data>
+  <data name="Acct_ForgotPassword" xml:space="preserve">
+    <value>Parolni unutdingizmi?</value>
+  </data>
+  <data name="Acct_Home" xml:space="preserve">
+    <value>Uy</value>
+  </data>
+  <data name="Acct_InvalidInput" xml:space="preserve">
+    <value>Noto‘g‘ri kiritish</value>
+  </data>
+  <data name="Acct_Login" xml:space="preserve">
+    <value>&amp;Kirish</value>
+  </data>
+  <data name="Acct_No" xml:space="preserve">
+    <value>Yo'q</value>
+  </data>
+  <data name="Acct_Password" xml:space="preserve">
+    <value>Parol</value>
+  </data>
+  <data name="Acct_PasswordsNotMatch" xml:space="preserve">
+    <value>Parollar bir-biriga to‘g‘ri kelishmayapti</value>
+  </data>
+  <data name="Acct_Register" xml:space="preserve">
+    <value>Ro'yxatdan o'tkazish</value>
+  </data>
+  <data name="Acct_ResetPassword" xml:space="preserve">
+    <value>Parol o‘rnatmoq...</value>
+  </data>
+  <data name="Acct_Username" xml:space="preserve">
+    <value>Foydalanuvchi nomi</value>
+  </data>
+  <data name="Acct_Yes" xml:space="preserve">
+    <value>Ha</value>
+  </data>
+  <data name="lang_ber" xml:space="preserve">
+    <value>Tamazit</value>
+  </data>
+  <data name="lang_en" xml:space="preserve">
+    <value>Inglizcha</value>
+  </data>
+  <data name="lang_sw" xml:space="preserve">
+    <value>Svahili tili</value>
+  </data>
+  <data name="lang_localam" xml:space="preserve">
+    <value>Amxarik</value>
+  </data>
+  <data name="lang_localar" xml:space="preserve">
+    <value>Arabcha</value>
+  </data>
+  <data name="lang_localaz" xml:space="preserve">
+    <value>Ozarbayjoncha</value>
+  </data>
+  <data name="lang_localbg" xml:space="preserve">
+    <value>Bolgarcha</value>
+  </data>
+  <data name="lang_localbn" xml:space="preserve">
+    <value>Bengali</value>
+  </data>
+  <data name="lang_localbs" xml:space="preserve">
+    <value>Bosniyacha</value>
+  </data>
+  <data name="lang_localcs" xml:space="preserve">
+    <value>Chexcha</value>
+  </data>
+  <data name="lang_localde" xml:space="preserve">
+    <value>Nemischa</value>
+  </data>
+  <data name="lang_localdv" xml:space="preserve">
+    <value>Divexi</value>
+  </data>
+  <data name="lang_localen" xml:space="preserve">
+    <value>Inglizcha</value>
+  </data>
+  <data name="lang_locales" xml:space="preserve">
+    <value>Ispancha</value>
+  </data>
+  <data name="lang_localfa" xml:space="preserve">
+    <value>Forscha</value>
+  </data>
+  <data name="lang_localfr" xml:space="preserve">
+    <value>Fransuzcha</value>
+  </data>
+  <data name="lang_localha" xml:space="preserve">
+    <value>Hauza</value>
+  </data>
+  <data name="lang_localhi" xml:space="preserve">
+    <value>Hind</value>
+  </data>
+  <data name="lang_localid" xml:space="preserve">
+    <value>Indoneziyacha</value>
+  </data>
+  <data name="lang_localit" xml:space="preserve">
+    <value>Italyancha</value>
+  </data>
+  <data name="lang_localja" xml:space="preserve">
+    <value>Yaponcha</value>
+  </data>
+  <data name="lang_localko" xml:space="preserve">
+    <value>Koreyscha</value>
+  </data>
+  <data name="lang_localml" xml:space="preserve">
+    <value>Malayalam</value>
+  </data>
+  <data name="lang_localms" xml:space="preserve">
+    <value>Malayacha</value>
+  </data>
+  <data name="lang_localnl" xml:space="preserve">
+    <value>Gollandcha</value>
+  </data>
+  <data name="lang_localno" xml:space="preserve">
+    <value>Norvegiyacha</value>
+  </data>
+  <data name="lang_localpl" xml:space="preserve">
+    <value>Polyakcha</value>
+  </data>
+  <data name="lang_localpt" xml:space="preserve">
+    <value>Portugalcha</value>
+  </data>
+  <data name="lang_localro" xml:space="preserve">
+    <value>Rumincha</value>
+  </data>
+  <data name="lang_localru" xml:space="preserve">
+    <value>Ruscha</value>
+  </data>
+  <data name="lang_localsd" xml:space="preserve">
+    <value>Sindxi</value>
+  </data>
+  <data name="lang_localso" xml:space="preserve">
+    <value>Somalicha</value>
+  </data>
+  <data name="lang_localsq" xml:space="preserve">
+    <value>Albancha</value>
+  </data>
+  <data name="lang_localsv" xml:space="preserve">
+    <value>Shvedcha</value>
+  </data>
+  <data name="lang_localsw" xml:space="preserve">
+    <value>Suaxili</value>
+  </data>
+  <data name="lang_localta" xml:space="preserve">
+    <value>Tamilcha</value>
+  </data>
+  <data name="lang_localtg" xml:space="preserve">
+    <value>Tojikcha</value>
+  </data>
+  <data name="lang_localth" xml:space="preserve">
+    <value>Taycha</value>
+  </data>
+  <data name="lang_localtr" xml:space="preserve">
+    <value>Turkcha</value>
+  </data>
+  <data name="lang_localtt" xml:space="preserve">
+    <value>Tatarcha</value>
+  </data>
+  <data name="lang_localug" xml:space="preserve">
+    <value>Uyg'urcha</value>
+  </data>
+  <data name="lang_localur" xml:space="preserve">
+    <value>Urdu</value>
+  </data>
+  <data name="lang_localuz" xml:space="preserve">
+    <value>O\'zbekcha</value>
+  </data>
+  <data name="lang_localzh" xml:space="preserve">
+    <value>Xitoycha</value>
+  </data>
+  <data name="Acct_Download" xml:space="preserve">
+    <value>{0}ni yuklab olish</value>
+  </data>
+  <data name="unicode_Colon" xml:space="preserve">
+    <value>Qo‘sh nuqta</value>
+  </data>
+  <data name="unicode_Comma" xml:space="preserve">
+    <value>Vergul</value>
+  </data>
+  <data name="unicode_Space" xml:space="preserve">
+    <value>Bo‘shliq</value>
+  </data>
+  <data name="Acct_Certificate" xml:space="preserve">
+    <value>Sertifikat</value>
+  </data>
+  <data name="Acct_CurrentUser" xml:space="preserve">
+    <value>Joriy foydalanuvchi</value>
+  </data>
+  <data name="unicode_PopDirectionalFormatting" xml:space="preserve">
+    <value>‬	Yo‘nalishni formatlash</value>
+  </data>
+</root>

@@ -1,0 +1,225 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Acct_ChangePassword" xml:space="preserve">
+    <value>પાસવર્ડ બદલો</value>
+  </data>
+  <data name="Acct_ClearCache" xml:space="preserve">
+    <value>કૅશ સાફ કરો</value>
+  </data>
+  <data name="Acct_ConfirmPassword" xml:space="preserve">
+    <value>પાસવર્ડની પુષ્ટિ કરો</value>
+  </data>
+  <data name="Acct_ControlPanel" xml:space="preserve">
+    <value>નિયંત્રણ કક્ષ</value>
+  </data>
+  <data name="Acct_DeleteAccount" xml:space="preserve">
+    <value>ખાતું હટાવો</value>
+  </data>
+  <data name="Acct_EmailAddress" xml:space="preserve">
+    <value>ઈ-મેલ સરનામું</value>
+  </data>
+  <data name="Acct_ForgotPassword" xml:space="preserve">
+    <value>પાસવર્ડ ભૂલી ગયા?</value>
+  </data>
+  <data name="Acct_Home" xml:space="preserve">
+    <value>હોમ</value>
+  </data>
+  <data name="Acct_InvalidInput" xml:space="preserve">
+    <value>અમાન્ય ઇનપુટ</value>
+  </data>
+  <data name="Acct_Login" xml:space="preserve">
+    <value>લોગિન</value>
+  </data>
+  <data name="Acct_Logoff" xml:space="preserve">
+    <value>લોગઓફ</value>
+  </data>
+  <data name="Acct_No" xml:space="preserve">
+    <value>નહીં</value>
+  </data>
+  <data name="Acct_Password" xml:space="preserve">
+    <value>પાસવર્ડ:</value>
+  </data>
+  <data name="Acct_PasswordsNotMatch" xml:space="preserve">
+    <value>પાસવર્ડ્સ મેળ ખાતા નથી</value>
+  </data>
+  <data name="Acct_Register" xml:space="preserve">
+    <value>નોંધણી કરાવો</value>
+  </data>
+  <data name="Acct_ResetPassword" xml:space="preserve">
+    <value>પાસવર્ડ રીસેટ કરો...</value>
+  </data>
+  <data name="Acct_Username" xml:space="preserve">
+    <value>ઉપયોગકર્તા નામ</value>
+  </data>
+  <data name="Acct_Yes" xml:space="preserve">
+    <value>હા</value>
+  </data>
+  <data name="lang_ber" xml:space="preserve">
+    <value>તામાઝિટ</value>
+  </data>
+  <data name="lang_en" xml:space="preserve">
+    <value>અંગ્રેજી</value>
+  </data>
+  <data name="lang_sw" xml:space="preserve">
+    <value>કિશ્વાહિલી</value>
+  </data>
+  <data name="lang_localam" xml:space="preserve">
+    <value>એમ્હારિક</value>
+  </data>
+  <data name="lang_localar" xml:space="preserve">
+    <value>અરબી</value>
+  </data>
+  <data name="lang_localaz" xml:space="preserve">
+    <value>અઝરબૈજાની</value>
+  </data>
+  <data name="lang_localbg" xml:space="preserve">
+    <value>બલ્ગેરિયન</value>
+  </data>
+  <data name="lang_localbn" xml:space="preserve">
+    <value>બંગાળી</value>
+  </data>
+  <data name="lang_localbs" xml:space="preserve">
+    <value>બોસ્નિયન</value>
+  </data>
+  <data name="lang_localcs" xml:space="preserve">
+    <value>ચેક</value>
+  </data>
+  <data name="lang_localde" xml:space="preserve">
+    <value>જર્મન</value>
+  </data>
+  <data name="lang_localdv" xml:space="preserve">
+    <value>દિવેહિ</value>
+  </data>
+  <data name="lang_localen" xml:space="preserve">
+    <value>અંગ્રેજી</value>
+  </data>
+  <data name="lang_locales" xml:space="preserve">
+    <value>સ્પેનિશ</value>
+  </data>
+  <data name="lang_localfa" xml:space="preserve">
+    <value>પર્શિયન</value>
+  </data>
+  <data name="lang_localfr" xml:space="preserve">
+    <value>ફ્રેંચ</value>
+  </data>
+  <data name="lang_localha" xml:space="preserve">
+    <value>હૌસા</value>
+  </data>
+  <data name="lang_localhi" xml:space="preserve">
+    <value>હિંદી</value>
+  </data>
+  <data name="lang_localid" xml:space="preserve">
+    <value>ઇન્ડોનેશિયન</value>
+  </data>
+  <data name="lang_localit" xml:space="preserve">
+    <value>ઇટાલિયન</value>
+  </data>
+  <data name="lang_localja" xml:space="preserve">
+    <value>જાપાની</value>
+  </data>
+  <data name="lang_localko" xml:space="preserve">
+    <value>કોરિયન</value>
+  </data>
+  <data name="lang_localku" xml:space="preserve">
+    <value>કુર્દિશ</value>
+  </data>
+  <data name="lang_localml" xml:space="preserve">
+    <value>મલયાલમ</value>
+  </data>
+  <data name="lang_localms" xml:space="preserve">
+    <value>મલય</value>
+  </data>
+  <data name="lang_localnl" xml:space="preserve">
+    <value>ડચ</value>
+  </data>
+  <data name="lang_localno" xml:space="preserve">
+    <value>નોર્વેજિયન</value>
+  </data>
+  <data name="lang_localpl" xml:space="preserve">
+    <value>પૉલીશ</value>
+  </data>
+  <data name="lang_localpt" xml:space="preserve">
+    <value>પોર્ટુગીઝ</value>
+  </data>
+  <data name="lang_localro" xml:space="preserve">
+    <value>રોમાનિયન</value>
+  </data>
+  <data name="lang_localru" xml:space="preserve">
+    <value>રશિયન</value>
+  </data>
+  <data name="lang_localsd" xml:space="preserve">
+    <value>સિંધી</value>
+  </data>
+  <data name="lang_localso" xml:space="preserve">
+    <value>સોમાલી</value>
+  </data>
+  <data name="lang_localsq" xml:space="preserve">
+    <value>અલ્બેનિયન</value>
+  </data>
+  <data name="lang_localsv" xml:space="preserve">
+    <value>સ્વીડિશ</value>
+  </data>
+  <data name="lang_localsw" xml:space="preserve">
+    <value>સ્વાહિલિ</value>
+  </data>
+  <data name="lang_localta" xml:space="preserve">
+    <value>તમિલ</value>
+  </data>
+  <data name="lang_localtg" xml:space="preserve">
+    <value>તાજીક</value>
+  </data>
+  <data name="lang_localth" xml:space="preserve">
+    <value>થાઈ</value>
+  </data>
+  <data name="lang_localtr" xml:space="preserve">
+    <value>ટર્કિશ</value>
+  </data>
+  <data name="lang_localtt" xml:space="preserve">
+    <value>તાતાર</value>
+  </data>
+  <data name="lang_localug" xml:space="preserve">
+    <value>ઇગુર</value>
+  </data>
+  <data name="lang_localur" xml:space="preserve">
+    <value>ઉર્દુ</value>
+  </data>
+  <data name="lang_localuz" xml:space="preserve">
+    <value>ઉઝ્બેક</value>
+  </data>
+  <data name="lang_localzh" xml:space="preserve">
+    <value>ચાઈનીઝ</value>
+  </data>
+  <data name="Acct_Download" xml:space="preserve">
+    <value>{0} ને ડાઉનલોડ કરો</value>
+  </data>
+  <data name="unicode_Colon" xml:space="preserve">
+    <value>અર્ધવિરામ</value>
+  </data>
+  <data name="unicode_Comma" xml:space="preserve">
+    <value>અલ્પવિરામ</value>
+  </data>
+  <data name="unicode_Space" xml:space="preserve">
+    <value>રિક્તિ</value>
+  </data>
+  <data name="Acct_Certificate" xml:space="preserve">
+    <value>પ્રમાણપત્ર</value>
+  </data>
+  <data name="Acct_CurrentUser" xml:space="preserve">
+    <value>વર્તમાન ઉપયોગકર્તા</value>
+  </data>
+  <data name="unicode_PopDirectionalFormatting" xml:space="preserve">
+    <value>‬	પૉપ ડાયરેક્શનલ સ્વરૂપણ</value>
+  </data>
+</root>

@@ -1,0 +1,1196 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
+  <file datatype="xml" source-language="en-US" target-language="sv" original="XMLRENDER/RESOURCES.RESX" tool-id="MultilingualAppToolkit" product-name="n/a" product-version="n/a" build-num="n/a">
+    <header>
+      <tool tool-id="MultilingualAppToolkit" tool-name="Multilingual App Toolkit" tool-version="4.0.1573.0" tool-company="Microsoft" />
+    </header>
+    <body>
+      <group id="XMLRENDER/RESOURCES.RESX" datatype="resx">
+        <trans-unit id="Acct_AccountActivateSuccess" translate="yes" xml:space="preserve">
+          <source>Account successfully activated.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Konto lyckosam aktiverat.</target>
+        </trans-unit>
+        <trans-unit id="Acct_AccountAlreadyActivated" translate="yes" xml:space="preserve">
+          <source>Account already activated.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Konto redan aktiverat.</target>
+        </trans-unit>
+        <trans-unit id="Acct_AccountDeleteSuccess" translate="yes" xml:space="preserve">
+          <source>Account successfully deleted.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Kontot har tagits bort.</target>
+        </trans-unit>
+        <trans-unit id="Acct_AccountNotActivated" translate="yes" xml:space="preserve">
+          <source>Account not yet activated please check your email first or request an additional activation code.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Hänsyn inte ändå aktiverat kontrollera din e-post först eller begära en ytterligare aktiveringskod.</target>
+        </trans-unit>
+        <trans-unit id="Acct_ActivateAccount" translate="yes" xml:space="preserve">
+          <source>Activate Account</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Aktivera konto</target>
+        </trans-unit>
+        <trans-unit id="Acct_ActivationAccountBody" translate="yes" xml:space="preserve">
+          <source>This e-mail is requesting activation of your {0} account: {1}.  Please use the following link: {2} or by proceeding to the page {3} and entering your username and the following activation code: {4}</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Detta e-postmeddelande begär aktivering av kontot {0}: {1}. Använd följande länk: (2) eller genom att sidan {3} och ange ditt användarnamn och följande aktiveringskoden: {4}</target>
+        </trans-unit>
+        <trans-unit id="Acct_ActivationAccountSubject" translate="yes" xml:space="preserve">
+          <source>Activation for account at {0}</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Aktiveringen för konto på {0}</target>
+        </trans-unit>
+        <trans-unit id="Acct_ActivationCode" translate="yes" xml:space="preserve">
+          <source>Activation Code</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Aktiveringskod</target>
+        </trans-unit>
+        <trans-unit id="Acct_BadEmailFormat" translate="yes" xml:space="preserve">
+          <source>E-mail address not in a valid format.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">E-postadress inte i ett giltigt format.</target>
+        </trans-unit>
+        <trans-unit id="Acct_Certain" translate="yes" xml:space="preserve">
+          <source>Are you certain?</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Är du säker?</target>
+        </trans-unit>
+        <trans-unit id="Acct_ChangeEmailAddress" translate="yes" xml:space="preserve">
+          <source>Change E-mail Address</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Ändra e-postadress</target>
+        </trans-unit>
+        <trans-unit id="Acct_ChangePassword" translate="yes" xml:space="preserve">
+          <source>Change Password</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Ändra lösenord</target>
+        </trans-unit>
+        <trans-unit id="Acct_ChangeUsername" translate="yes" xml:space="preserve">
+          <source>Change Username</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Ändra användarnamn</target>
+        </trans-unit>
+        <trans-unit id="Acct_CheckEmailNotice" translate="yes" xml:space="preserve">
+          <source>Activation sent to address provided.  Please check your e-mail to activate your account which will complete your registration.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Aktiveringen skickas till epostadressen.  Vänligen kontrollera din e-post för att aktivera ditt konto vilket kommer att slutföra din registrering.</target>
+        </trans-unit>
+        <trans-unit id="Acct_CleanupStale" translate="yes" xml:space="preserve">
+          <source>Cleanup Stale</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Rensning av unken</target>
+        </trans-unit>
+        <trans-unit id="Acct_ClearCache" translate="yes" xml:space="preserve">
+          <source>Clear Cache</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Rensa cache</target>
+        </trans-unit>
+        <trans-unit id="Acct_ClearDiskCache" translate="yes" xml:space="preserve">
+          <source>Clear Disk Cache</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Rensa diskcache</target>
+        </trans-unit>
+        <trans-unit id="Acct_ConfirmEmailAddress" translate="yes" xml:space="preserve">
+          <source>Confirm E-mail Address</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Bekräfta e-postadress</target>
+        </trans-unit>
+        <trans-unit id="Acct_ConfirmPassword" translate="yes" xml:space="preserve">
+          <source>Confirm Password</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Bekräfta lösenord</target>
+        </trans-unit>
+        <trans-unit id="Acct_ControlPanel" translate="yes" xml:space="preserve">
+          <source>Control Panel</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Kontrollpanelen</target>
+        </trans-unit>
+        <trans-unit id="Acct_CreateDatabase" translate="yes" xml:space="preserve">
+          <source>Create Database</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Skapa databas</target>
+        </trans-unit>
+        <trans-unit id="Acct_DeleteAccount" translate="yes" xml:space="preserve">
+          <source>Delete Account</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Ta bort konto</target>
+        </trans-unit>
+        <trans-unit id="Acct_DotNetVersion" translate="yes" xml:space="preserve">
+          <source>Dot Net Version</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Dot Net-Version</target>
+        </trans-unit>
+        <trans-unit id="Acct_DuplicateUser" translate="yes" xml:space="preserve">
+          <source>User with this name already exists please choose another.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Användare med detta namn finns redan Vänligen välj en annan.</target>
+        </trans-unit>
+        <trans-unit id="Acct_EmailAddress" translate="yes" xml:space="preserve">
+          <source>E-mail Address</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">E-postadress</target>
+        </trans-unit>
+        <trans-unit id="Acct_EmailChangeReactivate" translate="yes" xml:space="preserve">
+          <source>E-mail address changed and activation e-mail sent to reactivate account.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">E-postadress ändras och aktiveringsmail skickas till aktivera konto.</target>
+        </trans-unit>
+        <trans-unit id="Acct_EmailInUse" translate="yes" xml:space="preserve">
+          <source>E-mail already in use please login with existing credentials.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">E-post redan används vänligen logga in med befintliga autentiseringsuppgifter.</target>
+        </trans-unit>
+        <trans-unit id="Acct_EmailsNotMatch" translate="yes" xml:space="preserve">
+          <source>E-mail addresses do not match</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">E-postadresser matchar inte</target>
+        </trans-unit>
+        <trans-unit id="Acct_ForgotPassword" translate="yes" xml:space="preserve">
+          <source>Forgot Password</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Har du glömt ditt lösenord?</target>
+        </trans-unit>
+        <trans-unit id="Acct_ForgotUsername" translate="yes" xml:space="preserve">
+          <source>Forgot Username</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Glömt användarnamn</target>
+        </trans-unit>
+        <trans-unit id="Acct_Home" translate="yes" xml:space="preserve">
+          <source>Home</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Hem</target>
+        </trans-unit>
+        <trans-unit id="Acct_IncorrectActivationCode" translate="yes" xml:space="preserve">
+          <source>Incorrect activation code.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Felaktig aktiveringskoden.</target>
+        </trans-unit>
+        <trans-unit id="Acct_IncorrectPasswordResetCode" translate="yes" xml:space="preserve">
+          <source>Incorrect password reset code.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Felaktigt lösenord återställa koden.</target>
+        </trans-unit>
+        <trans-unit id="Acct_InvalidInput" translate="yes" xml:space="preserve">
+          <source>Invalid input.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Ogiltig indata.</target>
+        </trans-unit>
+        <trans-unit id="Acct_InvalidUsernamePassword" translate="yes" xml:space="preserve">
+          <source>Invalid username or password.</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Ogiltigt användarnamn eller lösenord.</target>
+        </trans-unit>
+        <trans-unit id="Acct_Login" translate="yes" xml:space="preserve">
+          <source>Login</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Inloggning</target>
+        </trans-unit>
+        <trans-unit id="Acct_LoginSuccess" translate="yes" xml:space="preserve">
+          <source>Login successful.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Logga in framgångsrikt.</target>
+        </trans-unit>
+        <trans-unit id="Acct_Logoff" translate="yes" xml:space="preserve">
+          <source>Logoff</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Logga ut</target>
+        </trans-unit>
+        <trans-unit id="Acct_LogoffSuccess" translate="yes" xml:space="preserve">
+          <source>Logoff successful.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Utloggning framgångsrika.</target>
+        </trans-unit>
+        <trans-unit id="Acct_MinimumPassword" translate="yes" xml:space="preserve">
+          <source>Password must be at least 8 characters.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Lösenordet måste vara minst 8 tecken.</target>
+        </trans-unit>
+        <trans-unit id="Acct_MinimumUsername" translate="yes" xml:space="preserve">
+          <source>Username must be at least 4 characters.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Användarnamn måste vara minst 4 tecken.</target>
+        </trans-unit>
+        <trans-unit id="Acct_No" translate="yes" xml:space="preserve">
+          <source>No</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Nej</target>
+        </trans-unit>
+        <trans-unit id="Acct_NotConfirmDelete" translate="yes" xml:space="preserve">
+          <source>Must confirm account deletion.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Måste bekräfta kontot tas bort.</target>
+        </trans-unit>
+        <trans-unit id="Acct_NoUserExists" translate="yes" xml:space="preserve">
+          <source>No user exists for the entered e-mail address.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Det finns ingen användare angivna e-postadress.</target>
+        </trans-unit>
+        <trans-unit id="Acct_Password" translate="yes" xml:space="preserve">
+          <source>Password</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Password</target>
+        </trans-unit>
+        <trans-unit id="Acct_PasswordAlreadyReset" translate="yes" xml:space="preserve">
+          <source>Password already reset or process not initiated.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Återställning redan av lösenord eller process initierad inte.</target>
+        </trans-unit>
+        <trans-unit id="Acct_PasswordChangedBody" translate="yes" xml:space="preserve">
+          <source>This e-mail is to inform of the password change of your {0} account: {1}.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Detta e-postmeddelande är att informera lösenord förändring av kontot {0}: {1}.</target>
+        </trans-unit>
+        <trans-unit id="Acct_PasswordChangedSubject" translate="yes" xml:space="preserve">
+          <source>Password changed for account at {0}</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Lösenordet ändras för konto på {0}</target>
+        </trans-unit>
+        <trans-unit id="Acct_PasswordChangeSuccess" translate="yes" xml:space="preserve">
+          <source>Password successfully changed.</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Lösenordet har ändrats.</target>
+        </trans-unit>
+        <trans-unit id="Acct_PasswordEmailSent" translate="yes" xml:space="preserve">
+          <source>An e-mail has been sent to your address on file to initiate the password reset process.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Ett e-postmeddelande har skickats till din postadress att inleda processen för återställning av lösenord.</target>
+        </trans-unit>
+        <trans-unit id="Acct_PasswordResetBody" translate="yes" xml:space="preserve">
+          <source>This e-mail is to reset the password of your {0} account: {1}.  Please use the following link: {3} or by proceeding to the page {4}  and entering your username and the following password reset code: {5}</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Detta e-postmeddelande är att återställa lösenordet för kontot {0}: {1}. Använd följande länk: {3} eller genom att gå vidare till sidan {4} och ange ditt användarnamn och det följande lösenordet lägga rätt kod: {5}</target>
+        </trans-unit>
+        <trans-unit id="Acct_PasswordResetCode" translate="yes" xml:space="preserve">
+          <source>Password Reset Code</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Lösenord återställningskod</target>
+        </trans-unit>
+        <trans-unit id="Acct_PasswordResetSubject" translate="yes" xml:space="preserve">
+          <source>Password reset for account at {0}</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Lösenordsåterställning för konto på {0}</target>
+        </trans-unit>
+        <trans-unit id="Acct_PasswordResetSuccess" translate="yes" xml:space="preserve">
+          <source>Password successfully reset.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Lösenord har återställts.</target>
+        </trans-unit>
+        <trans-unit id="Acct_PasswordsNotMatch" translate="yes" xml:space="preserve">
+          <source>Passwords do not match</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Lösenorden matchar inte</target>
+        </trans-unit>
+        <trans-unit id="Acct_Register" translate="yes" xml:space="preserve">
+          <source>Register</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Registrera</target>
+        </trans-unit>
+        <trans-unit id="Acct_Remember" translate="yes" xml:space="preserve">
+          <source>Remember?</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Kom ihåg?</target>
+        </trans-unit>
+        <trans-unit id="Acct_RemoveDatabase" translate="yes" xml:space="preserve">
+          <source>Remove Database</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Ta bort databasen</target>
+        </trans-unit>
+        <trans-unit id="Acct_ResendActivationEmail" translate="yes" xml:space="preserve">
+          <source>Resend Activation E-mail</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Skicka om aktiveringsmail</target>
+        </trans-unit>
+        <trans-unit id="Acct_ResetPassword" translate="yes" xml:space="preserve">
+          <source>Reset Password</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Återställ lösenord</target>
+        </trans-unit>
+        <trans-unit id="Acct_RetrievePassword" translate="yes" xml:space="preserve">
+          <source>Retrieve Password</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Hämta lösenord</target>
+        </trans-unit>
+        <trans-unit id="Acct_RetrieveUsername" translate="yes" xml:space="preserve">
+          <source>Retrieve Username</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Hämta användarnamn</target>
+        </trans-unit>
+        <trans-unit id="Acct_SendActivationCode" translate="yes" xml:space="preserve">
+          <source>Send Activation Code</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Sända aktiveringskoden</target>
+        </trans-unit>
+        <trans-unit id="Acct_Username" translate="yes" xml:space="preserve">
+          <source>Username</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Användarnamn</target>
+        </trans-unit>
+        <trans-unit id="Acct_UsernameChangedBody" translate="yes" xml:space="preserve">
+          <source>This e-mail is to inform of the account name change of your {0} account: {1}.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Detta e-postmeddelande är att meddela om ändringen av kontot av kontot {0}: {1}.</target>
+        </trans-unit>
+        <trans-unit id="Acct_UsernameChangedSubject" translate="yes" xml:space="preserve">
+          <source>Username changed for account at {0}</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Användarnamn förändrats för konto på {0}</target>
+        </trans-unit>
+        <trans-unit id="Acct_UsernameChangeSuccess" translate="yes" xml:space="preserve">
+          <source>Username successfully changed.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Användarnamn ändrats har.</target>
+        </trans-unit>
+        <trans-unit id="Acct_UsernameEmailSent" translate="yes" xml:space="preserve">
+          <source>An e-mail has been sent to your address on file with your username.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Ett e-postmeddelande har skickats till din adress i filen med ditt användarnamn.</target>
+        </trans-unit>
+        <trans-unit id="Acct_UsernameReminderBody" translate="yes" xml:space="preserve">
+          <source>This e-mail is a reminder of your {0} account: {1}.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Detta e-postmeddelande är en påminnelse om kontot {0}: {1}.</target>
+        </trans-unit>
+        <trans-unit id="Acct_UsernameReminderSubject" translate="yes" xml:space="preserve">
+          <source>Username reminder for account at {0}</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Användarnamn påminnelse för konto på {0}</target>
+        </trans-unit>
+        <trans-unit id="Acct_UserNotFound" translate="yes" xml:space="preserve">
+          <source>User does not exist.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Användaren finns inte.</target>
+        </trans-unit>
+        <trans-unit id="Acct_ViewCache" translate="yes" xml:space="preserve">
+          <source>View Cache</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Visa Cache</target>
+        </trans-unit>
+        <trans-unit id="Acct_ViewDiskCache" translate="yes" xml:space="preserve">
+          <source>View Disk Cache</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Visa Disk-Cache</target>
+        </trans-unit>
+        <trans-unit id="Acct_ViewHeaders" translate="yes" xml:space="preserve">
+          <source>View Headers</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Visa rubriker</target>
+        </trans-unit>
+        <trans-unit id="Acct_Yes" translate="yes" xml:space="preserve">
+          <source>Yes</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Ja</target>
+        </trans-unit>
+        <trans-unit id="lang_am" translate="yes" xml:space="preserve">
+          <source>ኣማርኛ</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">ኣማርኛ</target>
+        </trans-unit>
+        <trans-unit id="lang_ar" translate="yes" xml:space="preserve">
+          <source>العربية</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">العربية</target>
+        </trans-unit>
+        <trans-unit id="lang_az" translate="yes" xml:space="preserve">
+          <source>Azərbaycan dili</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Azərbaycan dili</target>
+        </trans-unit>
+        <trans-unit id="lang_ber" translate="yes" xml:space="preserve">
+          <source>Tamazight</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Tamazight</target>
+        </trans-unit>
+        <trans-unit id="lang_bg" translate="yes" xml:space="preserve">
+          <source>български</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">БЪЛГАРСКИ</target>
+        </trans-unit>
+        <trans-unit id="lang_bn" translate="yes" xml:space="preserve">
+          <source>বাংলা</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">বাংলা</target>
+        </trans-unit>
+        <trans-unit id="lang_bs" translate="yes" xml:space="preserve">
+          <source>bosanski</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Bosanski</target>
+        </trans-unit>
+        <trans-unit id="lang_cs" translate="yes" xml:space="preserve">
+          <source>čeština</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Čeština</target>
+        </trans-unit>
+        <trans-unit id="lang_de" translate="yes" xml:space="preserve">
+          <source>Deutsch</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Deutsch</target>
+        </trans-unit>
+        <trans-unit id="lang_dv" translate="yes" xml:space="preserve">
+          <source>ދިވެހި</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">ދިވެހި</target>
+        </trans-unit>
+        <trans-unit id="lang_en" translate="yes" xml:space="preserve">
+          <source>English</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Engelska</target>
+        </trans-unit>
+        <trans-unit id="lang_es" translate="yes" xml:space="preserve">
+          <source>español</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Español</target>
+        </trans-unit>
+        <trans-unit id="lang_fa" translate="yes" xml:space="preserve">
+          <source>فارسى</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">فارسى</target>
+        </trans-unit>
+        <trans-unit id="lang_fr" translate="yes" xml:space="preserve">
+          <source>français</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Français</target>
+        </trans-unit>
+        <trans-unit id="lang_ha" translate="yes" xml:space="preserve">
+          <source>ḥawsa</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Ḥawsa</target>
+        </trans-unit>
+        <trans-unit id="lang_hi" translate="yes" xml:space="preserve">
+          <source>हिन्दी</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">हिन्दी</target>
+        </trans-unit>
+        <trans-unit id="lang_id" translate="yes" xml:space="preserve">
+          <source>Bahasa Indonesia</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Bahasa Indonesia</target>
+        </trans-unit>
+        <trans-unit id="lang_it" translate="yes" xml:space="preserve">
+          <source>italiano</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Italiano</target>
+        </trans-unit>
+        <trans-unit id="lang_ja" translate="yes" xml:space="preserve">
+          <source>日本語</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">日本語</target>
+        </trans-unit>
+        <trans-unit id="lang_ko" translate="yes" xml:space="preserve">
+          <source>한국어</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">한국어</target>
+        </trans-unit>
+        <trans-unit id="lang_ku" translate="yes" xml:space="preserve">
+          <source>کوردی</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">کوردی</target>
+        </trans-unit>
+        <trans-unit id="lang_ml" translate="yes" xml:space="preserve">
+          <source>മലയാളം</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">മലയാളം</target>
+        </trans-unit>
+        <trans-unit id="lang_ms" translate="yes" xml:space="preserve">
+          <source>Bahasa melayu</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Bahasa melayu</target>
+        </trans-unit>
+        <trans-unit id="lang_nl" translate="yes" xml:space="preserve">
+          <source>Nederlands</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Nederlands</target>
+        </trans-unit>
+        <trans-unit id="lang_no" translate="yes" xml:space="preserve">
+          <source>Norsk</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Norsk</target>
+        </trans-unit>
+        <trans-unit id="lang_pl" translate="yes" xml:space="preserve">
+          <source>polski</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Polski</target>
+        </trans-unit>
+        <trans-unit id="lang_pt" translate="yes" xml:space="preserve">
+          <source>português</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Português</target>
+        </trans-unit>
+        <trans-unit id="lang_ro" translate="yes" xml:space="preserve">
+          <source>रोमानो</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">रोमानो</target>
+        </trans-unit>
+        <trans-unit id="lang_ru" translate="yes" xml:space="preserve">
+          <source>Русский язык</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">РУССКИЙ ЯЗЫК</target>
+        </trans-unit>
+        <trans-unit id="lang_sd" translate="yes" xml:space="preserve">
+          <source>سنڌي</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">سنڌي</target>
+        </trans-unit>
+        <trans-unit id="lang_so" translate="yes" xml:space="preserve">
+          <source>af Soomaali</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">AF Soomaali</target>
+        </trans-unit>
+        <trans-unit id="lang_sq" translate="yes" xml:space="preserve">
+          <source>shqip</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Shqip</target>
+        </trans-unit>
+        <trans-unit id="lang_sv" translate="yes" xml:space="preserve">
+          <source>Svenska</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Svenska</target>
+        </trans-unit>
+        <trans-unit id="lang_sw" translate="yes" xml:space="preserve">
+          <source>Kiswahili</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Swahili</target>
+        </trans-unit>
+        <trans-unit id="lang_ta" translate="yes" xml:space="preserve">
+          <source>தமிழ்</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">தமிழ்</target>
+        </trans-unit>
+        <trans-unit id="lang_tg" translate="yes" xml:space="preserve">
+          <source>тоҷики</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">ТОҶИКИ</target>
+        </trans-unit>
+        <trans-unit id="lang_th" translate="yes" xml:space="preserve">
+          <source>ภาษาไทย</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">ภาษาไทย</target>
+        </trans-unit>
+        <trans-unit id="lang_tr" translate="yes" xml:space="preserve">
+          <source>Türkçe</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Türkçe</target>
+        </trans-unit>
+        <trans-unit id="lang_tt" translate="yes" xml:space="preserve">
+          <source>татарча</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">ТАТАРЧА</target>
+        </trans-unit>
+        <trans-unit id="lang_ug" translate="yes" xml:space="preserve">
+          <source>ئۇيغۇر</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">ئۇيغۇر</target>
+        </trans-unit>
+        <trans-unit id="lang_ur" translate="yes" xml:space="preserve">
+          <source>اردو</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">اردو</target>
+        </trans-unit>
+        <trans-unit id="lang_uz" translate="yes" xml:space="preserve">
+          <source>o'zbek tili ўзбек тили</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">o'zbek saldoinformation ўзбек тили</target>
+        </trans-unit>
+        <trans-unit id="lang_zh" translate="yes" xml:space="preserve">
+          <source>中文</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">中文</target>
+        </trans-unit>
+        <trans-unit id="lang_localam" translate="yes" xml:space="preserve">
+          <source>Amharic</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Amhariska</target>
+        </trans-unit>
+        <trans-unit id="lang_localar" translate="yes" xml:space="preserve">
+          <source>Arabic</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Arabiska</target>
+        </trans-unit>
+        <trans-unit id="lang_localaz" translate="yes" xml:space="preserve">
+          <source>Azerbaijani</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Azerbajdzjanska</target>
+        </trans-unit>
+        <trans-unit id="lang_localber" translate="yes" xml:space="preserve">
+          <source>Amazigh</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Amazigh</target>
+        </trans-unit>
+        <trans-unit id="lang_localbg" translate="yes" xml:space="preserve">
+          <source>Bulgarian</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Bulgariska</target>
+        </trans-unit>
+        <trans-unit id="lang_localbn" translate="yes" xml:space="preserve">
+          <source>Bengali</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Bengali</target>
+        </trans-unit>
+        <trans-unit id="lang_localbs" translate="yes" xml:space="preserve">
+          <source>Bosnian</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Bosniska</target>
+        </trans-unit>
+        <trans-unit id="lang_localcs" translate="yes" xml:space="preserve">
+          <source>Czech</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Tjeckiska</target>
+        </trans-unit>
+        <trans-unit id="lang_localde" translate="yes" xml:space="preserve">
+          <source>German</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Tyska</target>
+        </trans-unit>
+        <trans-unit id="lang_localdv" translate="yes" xml:space="preserve">
+          <source>Divehi</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Divehi</target>
+        </trans-unit>
+        <trans-unit id="lang_localen" translate="yes" xml:space="preserve">
+          <source>English</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Engelska</target>
+        </trans-unit>
+        <trans-unit id="lang_locales" translate="yes" xml:space="preserve">
+          <source>Spanish</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Spanska</target>
+        </trans-unit>
+        <trans-unit id="lang_localfa" translate="yes" xml:space="preserve">
+          <source>Persian</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Persiska</target>
+        </trans-unit>
+        <trans-unit id="lang_localfr" translate="yes" xml:space="preserve">
+          <source>French</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Franska</target>
+        </trans-unit>
+        <trans-unit id="lang_localha" translate="yes" xml:space="preserve">
+          <source>Hausa</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Hausa</target>
+        </trans-unit>
+        <trans-unit id="lang_localhi" translate="yes" xml:space="preserve">
+          <source>Hindi</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Hindi</target>
+        </trans-unit>
+        <trans-unit id="lang_localid" translate="yes" xml:space="preserve">
+          <source>Indonesian</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Indonesiska</target>
+        </trans-unit>
+        <trans-unit id="lang_localit" translate="yes" xml:space="preserve">
+          <source>Italian</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Italienska</target>
+        </trans-unit>
+        <trans-unit id="lang_localja" translate="yes" xml:space="preserve">
+          <source>Japanese</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Japanska</target>
+        </trans-unit>
+        <trans-unit id="lang_localko" translate="yes" xml:space="preserve">
+          <source>Korean</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Koreanska</target>
+        </trans-unit>
+        <trans-unit id="lang_localku" translate="yes" xml:space="preserve">
+          <source>Kurdish</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Kurdiska</target>
+        </trans-unit>
+        <trans-unit id="lang_localml" translate="yes" xml:space="preserve">
+          <source>Malayalam</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Malayalam</target>
+        </trans-unit>
+        <trans-unit id="lang_localms" translate="yes" xml:space="preserve">
+          <source>Malay</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Malajiska</target>
+        </trans-unit>
+        <trans-unit id="lang_localnl" translate="yes" xml:space="preserve">
+          <source>Dutch</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Nederländska</target>
+        </trans-unit>
+        <trans-unit id="lang_localno" translate="yes" xml:space="preserve">
+          <source>Norwegian</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Norska</target>
+        </trans-unit>
+        <trans-unit id="lang_localpl" translate="yes" xml:space="preserve">
+          <source>Polish</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Polska</target>
+        </trans-unit>
+        <trans-unit id="lang_localpt" translate="yes" xml:space="preserve">
+          <source>Portuguese</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Portugisiska</target>
+        </trans-unit>
+        <trans-unit id="lang_localro" translate="yes" xml:space="preserve">
+          <source>Romanian</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Rumänska</target>
+        </trans-unit>
+        <trans-unit id="lang_localru" translate="yes" xml:space="preserve">
+          <source>Russian</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Ryska</target>
+        </trans-unit>
+        <trans-unit id="lang_localsd" translate="yes" xml:space="preserve">
+          <source>Sindhi</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Sindhi</target>
+        </trans-unit>
+        <trans-unit id="lang_localso" translate="yes" xml:space="preserve">
+          <source>Somali</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Somali</target>
+        </trans-unit>
+        <trans-unit id="lang_localsq" translate="yes" xml:space="preserve">
+          <source>Albanian</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Albanska</target>
+        </trans-unit>
+        <trans-unit id="lang_localsv" translate="yes" xml:space="preserve">
+          <source>Swedish</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Svenska</target>
+        </trans-unit>
+        <trans-unit id="lang_localsw" translate="yes" xml:space="preserve">
+          <source>Swahili</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Swahili</target>
+        </trans-unit>
+        <trans-unit id="lang_localta" translate="yes" xml:space="preserve">
+          <source>Tamil</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Tamilska</target>
+        </trans-unit>
+        <trans-unit id="lang_localtg" translate="yes" xml:space="preserve">
+          <source>Tajik</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Tadzjikiska</target>
+        </trans-unit>
+        <trans-unit id="lang_localth" translate="yes" xml:space="preserve">
+          <source>Thai</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Thailändska</target>
+        </trans-unit>
+        <trans-unit id="lang_localtr" translate="yes" xml:space="preserve">
+          <source>Turkish</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Turkiska</target>
+        </trans-unit>
+        <trans-unit id="lang_localtt" translate="yes" xml:space="preserve">
+          <source>Tatar</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Tatariska</target>
+        </trans-unit>
+        <trans-unit id="lang_localug" translate="yes" xml:space="preserve">
+          <source>Uyghur</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Uiguriska</target>
+        </trans-unit>
+        <trans-unit id="lang_localur" translate="yes" xml:space="preserve">
+          <source>Urdu</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Urdu</target>
+        </trans-unit>
+        <trans-unit id="lang_localuz" translate="yes" xml:space="preserve">
+          <source>Uzbek</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Uzbekiska</target>
+        </trans-unit>
+        <trans-unit id="lang_localzh" translate="yes" xml:space="preserve">
+          <source>Chinese</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Kinesiska</target>
+        </trans-unit>
+        <trans-unit id="Acct_Download" translate="yes" xml:space="preserve">
+          <source>Download {0}</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Hämta {0}</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicComma" translate="yes" xml:space="preserve">
+          <source>Arabic Comma</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Arabic Comma</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicDamma" translate="yes" xml:space="preserve">
+          <source>Arabic Damma</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Arabic Damma</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicDammatan" translate="yes" xml:space="preserve">
+          <source>Arabic Dammatan</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Arabic Dammatan</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicEmptyCentreHighStop" translate="yes" xml:space="preserve">
+          <source>Arabic Empty Centre High Stop</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Arabic Empty Centre High Stop</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicEmptyCentreLowStop" translate="yes" xml:space="preserve">
+          <source>Arabic Empty Centre Low Stop</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Arabic Empty Centre Low Stop</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicEndOfAyah" translate="yes" xml:space="preserve">
+          <source>Arabic End Of Ayah</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Arabic End Of Ayah</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicFatha" translate="yes" xml:space="preserve">
+          <source>Arabic Fatha</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Arabic Fatha</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicFathatan" translate="yes" xml:space="preserve">
+          <source>Arabic Fathatan</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Arabic Fathatan</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicHamzaAbove" translate="yes" xml:space="preserve">
+          <source>Arabic Hamza Above</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Arabic Hamza Above</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicHamzaBelow" translate="yes" xml:space="preserve">
+          <source>Arabic Hamza Below</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Arabic Hamza Below</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicIndicDigitEight" translate="yes" xml:space="preserve">
+          <source>Arabic-Indic Digit Eight</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Arabic-Indic Digit Eight</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicIndicDigitFive" translate="yes" xml:space="preserve">
+          <source>Arabic-Indic Digit Five</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Arabic-Indic Digit Five</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicIndicDigitFour" translate="yes" xml:space="preserve">
+          <source>Arabic-Indic Digit Four</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Arabic-Indic Digit Four</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicIndicDigitNine" translate="yes" xml:space="preserve">
+          <source>Arabic-Indic Digit Nine</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Arabic-Indic Digit Nine</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicIndicDigitOne" translate="yes" xml:space="preserve">
+          <source>Arabic-Indic Digit One</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Arabic-Indic Digit One</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicIndicDigitSeven" translate="yes" xml:space="preserve">
+          <source>Arabic-Indic Digit Seven</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Arabic-Indic Digit Seven</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicIndicDigitSix" translate="yes" xml:space="preserve">
+          <source>Arabic-Indic Digit Six</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Arabic-Indic Digit Six</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicIndicDigitThree" translate="yes" xml:space="preserve">
+          <source>Arabic-Indic Digit Three</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Arabic-Indic Digit Three</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicIndicDigitTwo" translate="yes" xml:space="preserve">
+          <source>Arabic-Indic Digit Two</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Arabic-Indic Digit Two</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicIndicDigitZero" translate="yes" xml:space="preserve">
+          <source>Arabic-Indic Digit Zero</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Arabic-Indic Digit Zero</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicKasra" translate="yes" xml:space="preserve">
+          <source>Arabic Kasra</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Arabic Kasra</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicKasratan" translate="yes" xml:space="preserve">
+          <source>Arabic Kasratan</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Arabic Kasratan</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLetterAin" translate="yes" xml:space="preserve">
+          <source>Arabic Letter Ain</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Arabic Letter Ain</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLetterAlef" translate="yes" xml:space="preserve">
+          <source>Arabic Letter Alef</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Arabic Letter Alef</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLetterAlefMaksura" translate="yes" xml:space="preserve">
+          <source>Arabic Letter Alef Maksura</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Arabic Letter Alef Maksura</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLetterAlefWasla" translate="yes" xml:space="preserve">
+          <source>Arabic Letter Alef Wasla</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Arabic Letter Alef Wasla</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLetterAlefWithHamzaAbove" translate="yes" xml:space="preserve">
+          <source>Arabic Letter Alef With Hamza Above</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Arabic Letter Alef With Hamza Above</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLetterAlefWithHamzaBelow" translate="yes" xml:space="preserve">
+          <source>Arabic Letter Alef With Hamza Below</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Arabic Letter Alef With Hamza Below</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLetterAlefWithMaddaAbove" translate="yes" xml:space="preserve">
+          <source>Arabic Letter Alef With Madda Above</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Arabic Letter Alef With Madda Above</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLetterBeh" translate="yes" xml:space="preserve">
+          <source>Arabic Letter Beh</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Arabic Letter Beh</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLetterDad" translate="yes" xml:space="preserve">
+          <source>Arabic Letter Dad</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Arabic Letter Dad</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLetterDal" translate="yes" xml:space="preserve">
+          <source>Arabic Letter Dal</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Arabic Letter Dal</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLetterFeh" translate="yes" xml:space="preserve">
+          <source>Arabic Letter Feh</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Arabic Letter Feh</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLetterGaf" translate="yes" xml:space="preserve">
+          <source>Arabic Letter Gaf</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Arabic Letter Gaf</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLetterGhain" translate="yes" xml:space="preserve">
+          <source>Arabic Letter Ghain</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Arabic Letter Ghain</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLetterHah" translate="yes" xml:space="preserve">
+          <source>Arabic Letter Hah</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Arabic Letter Hah</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLetterHamza" translate="yes" xml:space="preserve">
+          <source>Arabic Letter Hamza</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Arabic Letter Hamza</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLetterHeh" translate="yes" xml:space="preserve">
+          <source>Arabic Letter Heh</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Arabic Letter Heh</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLetterJeem" translate="yes" xml:space="preserve">
+          <source>Arabic Letter Jeem</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Arabic Letter Jeem</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLetterKaf" translate="yes" xml:space="preserve">
+          <source>Arabic Letter Kaf</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Arabic Letter Kaf</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLetterKhah" translate="yes" xml:space="preserve">
+          <source>Arabic Letter Khah</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Arabic Letter Khah</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLetterLam" translate="yes" xml:space="preserve">
+          <source>Arabic Letter Lam</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Arabic Letter Lam</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLetterMeem" translate="yes" xml:space="preserve">
+          <source>Arabic Letter Meem</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Arabic Letter Meem</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLetterNoon" translate="yes" xml:space="preserve">
+          <source>Arabic Letter Noon</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Arabic Letter Noon</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLetterPeh" translate="yes" xml:space="preserve">
+          <source>Arabic Letter Peh</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Arabic Letter Peh</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLetterQaf" translate="yes" xml:space="preserve">
+          <source>Arabic Letter Qaf</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Arabic Letter Qaf</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLetterReh" translate="yes" xml:space="preserve">
+          <source>Arabic Letter Reh</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Arabic Letter Reh</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLetterSad" translate="yes" xml:space="preserve">
+          <source>Arabic Letter Sad</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Arabic Letter Sad</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLetterSeen" translate="yes" xml:space="preserve">
+          <source>Arabic Letter Seen</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Arabic Letter Seen</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLetterSheen" translate="yes" xml:space="preserve">
+          <source>Arabic Letter Sheen</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Arabic Letter Sheen</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLetterSuperscriptAlef" translate="yes" xml:space="preserve">
+          <source>Arabic Letter Superscript Alef</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Arabic Letter Superscript Alef</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLetterTah" translate="yes" xml:space="preserve">
+          <source>Arabic Letter Tah</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Arabic Letter Tah</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLetterTcheh" translate="yes" xml:space="preserve">
+          <source>Arabic Letter Tcheh</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Arabic Letter Tcheh</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLetterTeh" translate="yes" xml:space="preserve">
+          <source>Arabic Letter Teh</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Arabic Letter Teh</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLetterTehMarbuta" translate="yes" xml:space="preserve">
+          <source>Arabic Letter Teh Marbuta</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Arabic Letter Teh Marbuta</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLetterThal" translate="yes" xml:space="preserve">
+          <source>Arabic Letter Thal</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Arabic Letter Thal</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLetterTheh" translate="yes" xml:space="preserve">
+          <source>Arabic Letter Theh</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Arabic Letter Theh</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLetterVeh" translate="yes" xml:space="preserve">
+          <source>Arabic Letter Veh</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Arabic Letter Veh</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLetterWaw" translate="yes" xml:space="preserve">
+          <source>Arabic Letter Waw</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Arabic Letter Waw</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLetterWawWithHamzaAbove" translate="yes" xml:space="preserve">
+          <source>Arabic Letter Waw With Hamza Above</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Arabic Letter Waw With Hamza Above</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLetterYeh" translate="yes" xml:space="preserve">
+          <source>Arabic Letter Yeh</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Arabic Letter Yeh</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLetterYehWithHamzaAbove" translate="yes" xml:space="preserve">
+          <source>Arabic Letter Yeh With Hamza Above</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Arabic Letter Yeh With Hamza Above</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLetterZah" translate="yes" xml:space="preserve">
+          <source>Arabic Letter Zah</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Arabic Letter Zah</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLetterZain" translate="yes" xml:space="preserve">
+          <source>Arabic Letter Zain</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Arabic Letter Zain</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLigatureAkbarIsolatedForm" translate="yes" xml:space="preserve">
+          <source>Arabic Ligature Akbar Isolated Form</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Arabic Ligature Akbar Isolated Form</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLigatureAlayheIsolatedForm" translate="yes" xml:space="preserve">
+          <source>Arabic Ligature Alayhe Isolated Form</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Arabic Ligature Alayhe Isolated Form</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLigatureAllahIsolatedForm" translate="yes" xml:space="preserve">
+          <source>Arabic Ligature Allah Isolated Form</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Arabic Ligature Allah Isolated Form</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLigatureBismillahArRahmanArRaheem" translate="yes" xml:space="preserve">
+          <source>Arabic Ligature Bismillah Ar-Rahman Ar-Raheem</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Arabic Ligature Bismillah Ar-Rahman Ar-Raheem</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLigatureJallajalalouhou" translate="yes" xml:space="preserve">
+          <source>Arabic Ligature Jallajalalouhou</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Arabic Ligature Jallajalalouhou</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLigatureMohammadIsolatedForm" translate="yes" xml:space="preserve">
+          <source>Arabic Ligature Mohammad Isolated Form</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Arabic Ligature Mohammad Isolated Form</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLigatureQalaUsedAsKoranicStopSignIsolatedForm" translate="yes" xml:space="preserve">
+          <source>Arabic Ligature Qala Used As Koranic Stop Sign Isolated Form</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Arabic Ligature Qala Used As Koranic Stop Sign Isolated Form</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLigatureRasoulIsolatedForm" translate="yes" xml:space="preserve">
+          <source>Arabic Ligature Rasoul Isolated Form</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Arabic Ligature Rasoul Isolated Form</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLigatureSalamIsolatedForm" translate="yes" xml:space="preserve">
+          <source>Arabic Ligature Salam Isolated Form</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Arabic Ligature Salam Isolated Form</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLigatureSallaIsolatedForm" translate="yes" xml:space="preserve">
+          <source>Arabic Ligature Salla Isolated Form</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Arabic Ligature Salla Isolated Form</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLigatureSallallahouAlayheWasallam" translate="yes" xml:space="preserve">
+          <source>Arabic Ligature Sallallahou Alayhe Wasallam</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Arabic Ligature Sallallahou Alayhe Wasallam</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLigatureSallaUsedAsKoranicStopSignIsolatedForm" translate="yes" xml:space="preserve">
+          <source>Arabic Ligature Salla Used As Koranic Stop Sign Isolated Form</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Arabic Ligature Salla Used As Koranic Stop Sign Isolated Form</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLigatureWasallamIsolatedForm" translate="yes" xml:space="preserve">
+          <source>Arabic Ligature Wasallam Isolated Form</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Arabic Ligature Wasallam Isolated Form</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicMaddahAbove" translate="yes" xml:space="preserve">
+          <source>Arabic Maddah Above</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Arabic Maddah Above</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicPlaceOfSajdah" translate="yes" xml:space="preserve">
+          <source>Arabic Place Of Sajdah</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Arabic Place Of Sajdah</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicQuestionMark" translate="yes" xml:space="preserve">
+          <source>Arabic Question Mark</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Arabic Question Mark</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicRoundedHighStopWithFilledCentre" translate="yes" xml:space="preserve">
+          <source>Arabic Rounded High Stop With Filled Centre</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Arabic Rounded High Stop With Filled Centre</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicSemicolon" translate="yes" xml:space="preserve">
+          <source>Arabic Semicolon</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Arabic Semicolon</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicShadda" translate="yes" xml:space="preserve">
+          <source>Arabic Shadda</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Arabic Shadda</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicSmallHighJeem" translate="yes" xml:space="preserve">
+          <source>Arabic Small High Jeem</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Arabic Small High Jeem</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicSmallHighLamAlef" translate="yes" xml:space="preserve">
+          <source>Arabic Small High Lam Alef</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Arabic Small High Lam Alef</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicSmallHighLigatureQafWithLamWithAlefMaksura" translate="yes" xml:space="preserve">
+          <source>Arabic Small High Ligature Qaf With Lam With Alef Maksura</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Arabic Small High Ligature Qaf With Lam With Alef Maksura</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicSmallHighLigatureSadWithLamWithAlefMaksura" translate="yes" xml:space="preserve">
+          <source>Arabic Small High Ligature Sad With Lam With Alef Maksura</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Arabic Small High Ligature Sad With Lam With Alef Maksura</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicSmallHighMeemInitialForm" translate="yes" xml:space="preserve">
+          <source>Arabic Small High Meem Initial Form</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Arabic Small High Meem Initial Form</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicSmallHighMeemIsolatedForm" translate="yes" xml:space="preserve">
+          <source>Arabic Small High Meem Isolated Form</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Arabic Small High Meem Isolated Form</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicSmallHighNoon" translate="yes" xml:space="preserve">
+          <source>Arabic Small High Noon</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Arabic Small High Noon</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicSmallHighRoundedZero" translate="yes" xml:space="preserve">
+          <source>Arabic Small High Rounded Zero</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Arabic Small High Rounded Zero</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicSmallHighSeen" translate="yes" xml:space="preserve">
+          <source>Arabic Small High Seen</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Arabic Small High Seen</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicSmallHighThreeDots" translate="yes" xml:space="preserve">
+          <source>Arabic Small High Three Dots</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Arabic Small High Three Dots</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicSmallHighUprightRectangularZero" translate="yes" xml:space="preserve">
+          <source>Arabic Small High Upright Rectangular Zero</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Arabic Small High Upright Rectangular Zero</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicSmallLowMeem" translate="yes" xml:space="preserve">
+          <source>Arabic Small Low Meem</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Arabic Small Low Meem</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicSmallLowSeen" translate="yes" xml:space="preserve">
+          <source>Arabic Small Low Seen</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Arabic Small Low Seen</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicSmallWaw" translate="yes" xml:space="preserve">
+          <source>Arabic Small Waw</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Arabic Small Waw</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicSmallYeh" translate="yes" xml:space="preserve">
+          <source>Arabic Small Yeh</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Arabic Small Yeh</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicStartOfRubElHizb" translate="yes" xml:space="preserve">
+          <source>Arabic Start Of Rub El Hizb</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Arabic Start Of Rub El Hizb</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicSukun" translate="yes" xml:space="preserve">
+          <source>Arabic Sukun</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Arabic Sukun</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicTatweel" translate="yes" xml:space="preserve">
+          <source>Arabic Tatweel</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Arabic Tatweel</target>
+        </trans-unit>
+        <trans-unit id="unicode_Colon" translate="yes" xml:space="preserve">
+          <source>Colon</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Kolon</target>
+        </trans-unit>
+        <trans-unit id="unicode_Comma" translate="yes" xml:space="preserve">
+          <source>Comma</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Komma</target>
+        </trans-unit>
+        <trans-unit id="unicode_ExclamationMark" translate="yes" xml:space="preserve">
+          <source>Exclamation Mark</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Utropstecken</target>
+        </trans-unit>
+        <trans-unit id="unicode_FullStop" translate="yes" xml:space="preserve">
+          <source>Full Stop</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Full Stop</target>
+        </trans-unit>
+        <trans-unit id="unicode_HyphenMinus" translate="yes" xml:space="preserve">
+          <source>Hyphen-Minus</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Hyphen-Minus</target>
+        </trans-unit>
+        <trans-unit id="unicode_LeftCurlyBracket" translate="yes" xml:space="preserve">
+          <source>Left Curly Bracket</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Left Curly Bracket</target>
+        </trans-unit>
+        <trans-unit id="unicode_LeftPointingDoubleAngleQuotationMark" translate="yes" xml:space="preserve">
+          <source>Left-Pointing Double Angle Quotation Mark</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Vänsterpekande vinklat citattecken</target>
+        </trans-unit>
+        <trans-unit id="unicode_LeftSquareBracket" translate="yes" xml:space="preserve">
+          <source>Left Square Bracket</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Left Square Bracket</target>
+        </trans-unit>
+        <trans-unit id="unicode_OrnateLeftParenthesis" translate="yes" xml:space="preserve">
+          <source>Ornate Left Parenthesis</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Ornate Left Parenthesis</target>
+        </trans-unit>
+        <trans-unit id="unicode_OrnateRightParenthesis" translate="yes" xml:space="preserve">
+          <source>Ornate Right Parenthesis</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Ornate Right Parenthesis</target>
+        </trans-unit>
+        <trans-unit id="unicode_QuotationMark" translate="yes" xml:space="preserve">
+          <source>Quotation Mark</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Citattecken</target>
+        </trans-unit>
+        <trans-unit id="unicode_RialSign" translate="yes" xml:space="preserve">
+          <source>Rial Sign</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Rial Sign</target>
+        </trans-unit>
+        <trans-unit id="unicode_RightCurlyBracket" translate="yes" xml:space="preserve">
+          <source>Right Curly Bracket</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Right Curly Bracket</target>
+        </trans-unit>
+        <trans-unit id="unicode_RightPointingDoubleAngleQuotationMark" translate="yes" xml:space="preserve">
+          <source>Right-Pointing Double Angle Quotation Mark</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Högerpekande vinklat citattecken</target>
+        </trans-unit>
+        <trans-unit id="unicode_RightSquareBracket" translate="yes" xml:space="preserve">
+          <source>Right Square Bracket</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Right Square Bracket</target>
+        </trans-unit>
+        <trans-unit id="unicode_Space" translate="yes" xml:space="preserve">
+          <source>Space</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Blanksteg</target>
+        </trans-unit>
+        <trans-unit id="Acct_CertRequest" translate="yes" xml:space="preserve">
+          <source>Certificate Request</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Certifikatbegäran</target>
+        </trans-unit>
+        <trans-unit id="Acct_Certificate" translate="yes" xml:space="preserve">
+          <source>Certificate</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Certifikat</target>
+        </trans-unit>
+        <trans-unit id="Acct_CertInstall" translate="yes" xml:space="preserve">
+          <source>Install Certificate</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Installera certifikat</target>
+        </trans-unit>
+        <trans-unit id="Acct_CurrentUser" translate="yes" xml:space="preserve">
+          <source>Current User</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Aktuell användare</target>
+        </trans-unit>
+        <trans-unit id="Acct_DeleteCertRequest" translate="yes" xml:space="preserve">
+          <source>Delete Certificate Request</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Ta bort certifikatbegäran</target>
+        </trans-unit>
+        <trans-unit id="Acct_EnableSSL" translate="yes" xml:space="preserve">
+          <source>Enable SSL</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Aktivera SSL</target>
+        </trans-unit>
+        <trans-unit id="Acct_PrivateKey" translate="yes" xml:space="preserve">
+          <source>Private Key</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Privat nyckel</target>
+        </trans-unit>
+        <trans-unit id="Acct_ViewCertRequests" translate="yes" xml:space="preserve">
+          <source>View Certificate Requests</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Visa certifikatbegäranden</target>
+        </trans-unit>
+        <trans-unit id="Acct_ViewSites" translate="yes" xml:space="preserve">
+          <source>View Sites</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Visa webbplatser</target>
+        </trans-unit>
+        <trans-unit id="Acct_CertInstallIntermed" translate="yes" xml:space="preserve">
+          <source>Install Intermediate Certificate</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Installera mellanliggande certifikat</target>
+        </trans-unit>
+        <trans-unit id="unicode_LeftToRightEmbedding" translate="yes" xml:space="preserve">
+          <source>Left-To-Right Embedding</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Left-To-Right Embedding</target>
+        </trans-unit>
+        <trans-unit id="unicode_RightToLeftEmbedding" translate="yes" xml:space="preserve">
+          <source>Right-To-Left Embedding</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Right-To-Left Embedding</target>
+        </trans-unit>
+        <trans-unit id="unicode_LeftToRightMark" translate="yes" xml:space="preserve">
+          <source>Left-To-Right Mark</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Left-To-Right Mark</target>
+        </trans-unit>
+        <trans-unit id="unicode_LeftToRightOverride" translate="yes" xml:space="preserve">
+          <source>Left-To-Right Override</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Left-To-Right Override</target>
+        </trans-unit>
+        <trans-unit id="unicode_PopDirectionalFormatting" translate="yes" xml:space="preserve">
+          <source>Pop Directional Formatting</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Pop Directional Formatting</target>
+        </trans-unit>
+        <trans-unit id="unicode_RightToLeftMark" translate="yes" xml:space="preserve">
+          <source>Right-To-Left Mark</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Right-To-Left Mark</target>
+        </trans-unit>
+        <trans-unit id="unicode_RightToLeftOverride" translate="yes" xml:space="preserve">
+          <source>Right-To-Left Override</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Right-To-Left Override</target>
+        </trans-unit>
+      </group>
+    </body>
+  </file>
+</xliff>

@@ -246,7 +246,7 @@ namespace IslamSourceQuranViewer
         private void sectionListBox_DoubleTapped(object sender, DoubleTappedRoutedEventArgs e)
         {
             if (ViewModel.ListSelectedItem == null) return;
-            this.Frame.Navigate(typeof(WordForWordUC), new {Division = ViewModel.SelectedItem.Index, Selection = ViewModel.ListSelectedItem.Index + 1});
+            this.Frame.Navigate(typeof(WordForWordUC), new {Division = ViewModel.SelectedItem.Index, Selection = ViewModel.ListSelectedItem.Index});
         }
 
         private void RenderPngs_Click(object sender, RoutedEventArgs e)
@@ -321,7 +321,7 @@ namespace IslamSourceQuranViewer
         {
             get
             {
-                if (_Items == null) { _Items = System.Linq.Enumerable.Select(IslamMetadata.TanzilReader.GetSelectionNames(Index.ToString(), XMLRender.ArabicData.TranslitScheme.RuleBased, String.Empty), (Arr, Idx) => new MyListItem { Name = (string)(Arr.Cast<object>()).First(), Index = Idx }); }
+                if (_Items == null) { _Items = System.Linq.Enumerable.Select(IslamMetadata.TanzilReader.GetSelectionNames(Index.ToString(), XMLRender.ArabicData.TranslitScheme.RuleBased, String.Empty), (Arr, Idx) => new MyListItem { Name = (string)(Arr.Cast<object>()).First(), Index = (int)(Arr.Cast<object>()).Last() }); }
                 return _Items;
             }
         }

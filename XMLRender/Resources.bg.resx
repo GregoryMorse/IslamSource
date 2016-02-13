@@ -1,0 +1,903 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Acct_AccountActivateSuccess" xml:space="preserve">
+    <value>Акаунт успешно активиран.</value>
+  </data>
+  <data name="Acct_AccountAlreadyActivated" xml:space="preserve">
+    <value>Акаунт вече активиран.</value>
+  </data>
+  <data name="Acct_AccountDeleteSuccess" xml:space="preserve">
+    <value>Сметка успешно заличава.</value>
+  </data>
+  <data name="Acct_AccountNotActivated" xml:space="preserve">
+    <value>Сметка не още активизирам харесвам шах your email първо или да поиска допълнително активиране код.</value>
+  </data>
+  <data name="Acct_ActivateAccount" xml:space="preserve">
+    <value>Активиране на профил</value>
+  </data>
+  <data name="Acct_ActivationAccountBody" xml:space="preserve">
+    <value>Този e-mail адрес е искане за активиране на вашия акаунт за {0}: {1}. Моля, използвайте следния линк: {2} или като пристъпи към страницата {3} и въведете потребителското си име и следният код за активиране: {4}</value>
+  </data>
+  <data name="Acct_ActivationAccountSubject" xml:space="preserve">
+    <value>Активиране за сметка на {0}</value>
+  </data>
+  <data name="Acct_ActivationCode" xml:space="preserve">
+    <value>Код за активиране</value>
+  </data>
+  <data name="Acct_BadEmailFormat" xml:space="preserve">
+    <value>Имейл адрес не е в невалиден формат.</value>
+  </data>
+  <data name="Acct_Certain" xml:space="preserve">
+    <value>Сигурни ли сте?</value>
+  </data>
+  <data name="Acct_ChangeEmailAddress" xml:space="preserve">
+    <value>Промяна на имейл адреса</value>
+  </data>
+  <data name="Acct_ChangePassword" xml:space="preserve">
+    <value>Смяна на паролата</value>
+  </data>
+  <data name="Acct_ChangeUsername" xml:space="preserve">
+    <value>Смяна на потребителско име</value>
+  </data>
+  <data name="Acct_CheckEmailNotice" xml:space="preserve">
+    <value>Активиране, изпратени на посочения адрес.  Моля, проверете вашата електронна поща да активирате вашия акаунт, който ще завърши регистрацията си.</value>
+  </data>
+  <data name="Acct_CleanupStale" xml:space="preserve">
+    <value>Почистване остаряла</value>
+  </data>
+  <data name="Acct_ClearCache" xml:space="preserve">
+    <value>Изчистване на кеша</value>
+  </data>
+  <data name="Acct_ClearDiskCache" xml:space="preserve">
+    <value>Изчисти кеша на диска</value>
+  </data>
+  <data name="Acct_ConfirmEmailAddress" xml:space="preserve">
+    <value>Потвърдете имейл адрес</value>
+  </data>
+  <data name="Acct_ConfirmPassword" xml:space="preserve">
+    <value>Потвърдете паролата</value>
+  </data>
+  <data name="Acct_ControlPanel" xml:space="preserve">
+    <value>Контролен панел</value>
+  </data>
+  <data name="Acct_CreateDatabase" xml:space="preserve">
+    <value>Създаване на база данни</value>
+  </data>
+  <data name="Acct_DeleteAccount" xml:space="preserve">
+    <value>Изтриване на акаунта</value>
+  </data>
+  <data name="Acct_DotNetVersion" xml:space="preserve">
+    <value>Dot Net версия</value>
+  </data>
+  <data name="Acct_DuplicateUser" xml:space="preserve">
+    <value>Потребител с това име вече съществува моля изберете друга.</value>
+  </data>
+  <data name="Acct_EmailAddress" xml:space="preserve">
+    <value>Имейл адрес</value>
+  </data>
+  <data name="Acct_EmailChangeReactivate" xml:space="preserve">
+    <value>Имейл адрес се променя и изпраща имейл за активиране за да активирате отново акаунта.</value>
+  </data>
+  <data name="Acct_EmailInUse" xml:space="preserve">
+    <value>Е-мейл вече използва моля вход със съществуващите идентификационни данни.</value>
+  </data>
+  <data name="Acct_EmailsNotMatch" xml:space="preserve">
+    <value>Имейл адреси не съвпадат</value>
+  </data>
+  <data name="Acct_ForgotPassword" xml:space="preserve">
+    <value>Забравена парола</value>
+  </data>
+  <data name="Acct_ForgotUsername" xml:space="preserve">
+    <value>Забравено потребителско име</value>
+  </data>
+  <data name="Acct_Home" xml:space="preserve">
+    <value>Начало</value>
+  </data>
+  <data name="Acct_IncorrectActivationCode" xml:space="preserve">
+    <value>Неправилен активиране код.</value>
+  </data>
+  <data name="Acct_IncorrectPasswordResetCode" xml:space="preserve">
+    <value>Неправилна парола проучване кодекс.</value>
+  </data>
+  <data name="Acct_InvalidInput" xml:space="preserve">
+    <value>Невалиден вход.</value>
+  </data>
+  <data name="Acct_InvalidUsernamePassword" xml:space="preserve">
+    <value>Невалидно потребителско име или парола.</value>
+  </data>
+  <data name="Acct_Login" xml:space="preserve">
+    <value>Вход</value>
+  </data>
+  <data name="Acct_LoginSuccess" xml:space="preserve">
+    <value>Вход е успешна.</value>
+  </data>
+  <data name="Acct_Logoff" xml:space="preserve">
+    <value>Излизане</value>
+  </data>
+  <data name="Acct_LogoffSuccess" xml:space="preserve">
+    <value>Logoff успешно.</value>
+  </data>
+  <data name="Acct_MinimumPassword" xml:space="preserve">
+    <value>Паролата трябва да бъде най-малко 8 знака.</value>
+  </data>
+  <data name="Acct_MinimumUsername" xml:space="preserve">
+    <value>Потребителското име трябва да бъде най-малко 4 символа.</value>
+  </data>
+  <data name="Acct_No" xml:space="preserve">
+    <value>Не</value>
+  </data>
+  <data name="Acct_NotConfirmDelete" xml:space="preserve">
+    <value>Трябва да потвърдите изтриването на сметката.</value>
+  </data>
+  <data name="Acct_NoUserExists" xml:space="preserve">
+    <value>Никой потребител не съществува за въведения имейл адрес.</value>
+  </data>
+  <data name="Acct_Password" xml:space="preserve">
+    <value>Парола</value>
+  </data>
+  <data name="Acct_PasswordAlreadyReset" xml:space="preserve">
+    <value>Вече за възстановяване на паролата или процес не образува.</value>
+  </data>
+  <data name="Acct_PasswordChangedBody" xml:space="preserve">
+    <value>Този е-мейл е да информира на смяната на паролата на вашия акаунт за {0}: {1}.</value>
+  </data>
+  <data name="Acct_PasswordChangedSubject" xml:space="preserve">
+    <value>Парола промяна за сметка на {0}</value>
+  </data>
+  <data name="Acct_PasswordChangeSuccess" xml:space="preserve">
+    <value>Парола променена успешно.</value>
+  </data>
+  <data name="Acct_PasswordEmailSent" xml:space="preserve">
+    <value>Е-мейл е изпратено до вашия адрес на файла да започне процес за възстановяване на паролата.</value>
+  </data>
+  <data name="Acct_PasswordResetBody" xml:space="preserve">
+    <value>Този е-мейл е да смените паролата на вашия акаунт за {0}: {1}. Моля, използвайте следния линк: {3} или чрез процедура на страницата {4} и въведете вашето потребителско име и парола за следните проучване код: {5}</value>
+  </data>
+  <data name="Acct_PasswordResetCode" xml:space="preserve">
+    <value>Код за нулиране на паролата</value>
+  </data>
+  <data name="Acct_PasswordResetSubject" xml:space="preserve">
+    <value>Парола проучване за сметка на {0}</value>
+  </data>
+  <data name="Acct_PasswordResetSuccess" xml:space="preserve">
+    <value>Успешно възстановяване на паролата.</value>
+  </data>
+  <data name="Acct_PasswordsNotMatch" xml:space="preserve">
+    <value>Несъвпадащи пароли</value>
+  </data>
+  <data name="Acct_Register" xml:space="preserve">
+    <value>Регистрирай</value>
+  </data>
+  <data name="Acct_Remember" xml:space="preserve">
+    <value>Запомни?</value>
+  </data>
+  <data name="Acct_RemoveDatabase" xml:space="preserve">
+    <value>Премахване на база данни</value>
+  </data>
+  <data name="Acct_ResendActivationEmail" xml:space="preserve">
+    <value>Повторно активиране електронна поща</value>
+  </data>
+  <data name="Acct_ResetPassword" xml:space="preserve">
+    <value>Реинициализация на парола</value>
+  </data>
+  <data name="Acct_RetrievePassword" xml:space="preserve">
+    <value>Извличане на парола</value>
+  </data>
+  <data name="Acct_RetrieveUsername" xml:space="preserve">
+    <value>Извличане на потребителско име</value>
+  </data>
+  <data name="Acct_SendActivationCode" xml:space="preserve">
+    <value>Изпрати код за активиране</value>
+  </data>
+  <data name="Acct_Username" xml:space="preserve">
+    <value>Потребителско име</value>
+  </data>
+  <data name="Acct_UsernameChangedBody" xml:space="preserve">
+    <value>Този е-мейл е да информира за промяна на акаунт името на вашия акаунт за {0}: {1}.</value>
+  </data>
+  <data name="Acct_UsernameChangedSubject" xml:space="preserve">
+    <value>Потребителско име променени за сметка на {0}</value>
+  </data>
+  <data name="Acct_UsernameChangeSuccess" xml:space="preserve">
+    <value>Потребителско име успешно променена.</value>
+  </data>
+  <data name="Acct_UsernameEmailSent" xml:space="preserve">
+    <value>Е-мейл е изпратено до вашия адрес на файла с вашето потребителско име.</value>
+  </data>
+  <data name="Acct_UsernameReminderBody" xml:space="preserve">
+    <value>Този е-мейл е напомняне на профила {0}: {1}.</value>
+  </data>
+  <data name="Acct_UsernameReminderSubject" xml:space="preserve">
+    <value>Потребителско име за напомняне за сметка на {0}</value>
+  </data>
+  <data name="Acct_UserNotFound" xml:space="preserve">
+    <value>Потребителят не съществува.</value>
+  </data>
+  <data name="Acct_ViewCache" xml:space="preserve">
+    <value>Изглед кеш</value>
+  </data>
+  <data name="Acct_ViewDiskCache" xml:space="preserve">
+    <value>Изглед на дисковия кеш</value>
+  </data>
+  <data name="Acct_ViewHeaders" xml:space="preserve">
+    <value>Изглед заглавки</value>
+  </data>
+  <data name="Acct_Yes" xml:space="preserve">
+    <value>Да</value>
+  </data>
+  <data name="lang_am" xml:space="preserve">
+    <value>ኣማርኛ</value>
+  </data>
+  <data name="lang_ar" xml:space="preserve">
+    <value>العربية</value>
+  </data>
+  <data name="lang_az" xml:space="preserve">
+    <value>Azərbaycan Дили</value>
+  </data>
+  <data name="lang_ber" xml:space="preserve">
+    <value>Тамазихт</value>
+  </data>
+  <data name="lang_bg" xml:space="preserve">
+    <value>БЪЛГАРСКИ</value>
+  </data>
+  <data name="lang_bn" xml:space="preserve">
+    <value>বাংলা</value>
+  </data>
+  <data name="lang_bs" xml:space="preserve">
+    <value>Босански</value>
+  </data>
+  <data name="lang_cs" xml:space="preserve">
+    <value>Език</value>
+  </data>
+  <data name="lang_de" xml:space="preserve">
+    <value>Deutsch</value>
+  </data>
+  <data name="lang_dv" xml:space="preserve">
+    <value>ދިވެހި</value>
+  </data>
+  <data name="lang_en" xml:space="preserve">
+    <value>Английски</value>
+  </data>
+  <data name="lang_es" xml:space="preserve">
+    <value>Español</value>
+  </data>
+  <data name="lang_fa" xml:space="preserve">
+    <value>فارسى</value>
+  </data>
+  <data name="lang_fr" xml:space="preserve">
+    <value>français</value>
+  </data>
+  <data name="lang_ha" xml:space="preserve">
+    <value>Ḥawsa</value>
+  </data>
+  <data name="lang_hi" xml:space="preserve">
+    <value>हिन्दी</value>
+  </data>
+  <data name="lang_id" xml:space="preserve">
+    <value>Бахаса Индонезия</value>
+  </data>
+  <data name="lang_it" xml:space="preserve">
+    <value>Italiano</value>
+  </data>
+  <data name="lang_ja" xml:space="preserve">
+    <value>ЯПОНСКИ</value>
+  </data>
+  <data name="lang_ko" xml:space="preserve">
+    <value>한국어</value>
+  </data>
+  <data name="lang_ku" xml:space="preserve">
+    <value>کوردی</value>
+  </data>
+  <data name="lang_ml" xml:space="preserve">
+    <value>മലയാളം</value>
+  </data>
+  <data name="lang_ms" xml:space="preserve">
+    <value>Малайския</value>
+  </data>
+  <data name="lang_nl" xml:space="preserve">
+    <value>Холандия</value>
+  </data>
+  <data name="lang_no" xml:space="preserve">
+    <value>Norsk</value>
+  </data>
+  <data name="lang_pl" xml:space="preserve">
+    <value>полски</value>
+  </data>
+  <data name="lang_pt" xml:space="preserve">
+    <value>Português</value>
+  </data>
+  <data name="lang_ro" xml:space="preserve">
+    <value>रोमानो</value>
+  </data>
+  <data name="lang_ru" xml:space="preserve">
+    <value>РУССКИЙ ЯЗЫК</value>
+  </data>
+  <data name="lang_sd" xml:space="preserve">
+    <value>سنڌي</value>
+  </data>
+  <data name="lang_so" xml:space="preserve">
+    <value>AF Soomaali</value>
+  </data>
+  <data name="lang_sq" xml:space="preserve">
+    <value>Shqip</value>
+  </data>
+  <data name="lang_sv" xml:space="preserve">
+    <value>Svenska</value>
+  </data>
+  <data name="lang_sw" xml:space="preserve">
+    <value>Кисуахили</value>
+  </data>
+  <data name="lang_ta" xml:space="preserve">
+    <value>தமிழ்</value>
+  </data>
+  <data name="lang_tg" xml:space="preserve">
+    <value>ТОҶИКИ</value>
+  </data>
+  <data name="lang_th" xml:space="preserve">
+    <value>ภาษาไทย</value>
+  </data>
+  <data name="lang_tr" xml:space="preserve">
+    <value>Türkçe</value>
+  </data>
+  <data name="lang_tt" xml:space="preserve">
+    <value>ТАТАРЧА</value>
+  </data>
+  <data name="lang_ug" xml:space="preserve">
+    <value>ئۇيغۇر</value>
+  </data>
+  <data name="lang_ur" xml:space="preserve">
+    <value>اردو</value>
+  </data>
+  <data name="lang_uz" xml:space="preserve">
+    <value>O'zbek tili ўзбек тили</value>
+  </data>
+  <data name="lang_zh" xml:space="preserve">
+    <value>中文</value>
+  </data>
+  <data name="lang_localam" xml:space="preserve">
+    <value>Амхарски</value>
+  </data>
+  <data name="lang_localar" xml:space="preserve">
+    <value>Арабски</value>
+  </data>
+  <data name="lang_localaz" xml:space="preserve">
+    <value>Азербайджански</value>
+  </data>
+  <data name="lang_localber" xml:space="preserve">
+    <value>Amazigh</value>
+  </data>
+  <data name="lang_localbg" xml:space="preserve">
+    <value>Български</value>
+  </data>
+  <data name="lang_localbn" xml:space="preserve">
+    <value>Бенгалски</value>
+  </data>
+  <data name="lang_localbs" xml:space="preserve">
+    <value>Босненски</value>
+  </data>
+  <data name="lang_localcs" xml:space="preserve">
+    <value>Чешки</value>
+  </data>
+  <data name="lang_localde" xml:space="preserve">
+    <value>Немски</value>
+  </data>
+  <data name="lang_localdv" xml:space="preserve">
+    <value>Дивехи</value>
+  </data>
+  <data name="lang_localen" xml:space="preserve">
+    <value>Английски</value>
+  </data>
+  <data name="lang_locales" xml:space="preserve">
+    <value>Испански</value>
+  </data>
+  <data name="lang_localfa" xml:space="preserve">
+    <value>Персийски</value>
+  </data>
+  <data name="lang_localfr" xml:space="preserve">
+    <value>Френски</value>
+  </data>
+  <data name="lang_localha" xml:space="preserve">
+    <value>Хауса</value>
+  </data>
+  <data name="lang_localhi" xml:space="preserve">
+    <value>Хинди</value>
+  </data>
+  <data name="lang_localid" xml:space="preserve">
+    <value>Индонезийски</value>
+  </data>
+  <data name="lang_localit" xml:space="preserve">
+    <value>Италиански</value>
+  </data>
+  <data name="lang_localja" xml:space="preserve">
+    <value>Японски</value>
+  </data>
+  <data name="lang_localko" xml:space="preserve">
+    <value>Корейски</value>
+  </data>
+  <data name="lang_localku" xml:space="preserve">
+    <value>Кюрдски</value>
+  </data>
+  <data name="lang_localml" xml:space="preserve">
+    <value>Малаялам</value>
+  </data>
+  <data name="lang_localms" xml:space="preserve">
+    <value>Малайски</value>
+  </data>
+  <data name="lang_localnl" xml:space="preserve">
+    <value>Нидерландски</value>
+  </data>
+  <data name="lang_localno" xml:space="preserve">
+    <value>Норвежки</value>
+  </data>
+  <data name="lang_localpl" xml:space="preserve">
+    <value>Полски</value>
+  </data>
+  <data name="lang_localpt" xml:space="preserve">
+    <value>Португалски</value>
+  </data>
+  <data name="lang_localro" xml:space="preserve">
+    <value>Румънски</value>
+  </data>
+  <data name="lang_localru" xml:space="preserve">
+    <value>Руски</value>
+  </data>
+  <data name="lang_localsd" xml:space="preserve">
+    <value>Синдхи</value>
+  </data>
+  <data name="lang_localso" xml:space="preserve">
+    <value>Сомалийски</value>
+  </data>
+  <data name="lang_localsq" xml:space="preserve">
+    <value>Албански</value>
+  </data>
+  <data name="lang_localsv" xml:space="preserve">
+    <value>Шведски</value>
+  </data>
+  <data name="lang_localsw" xml:space="preserve">
+    <value>Суахили</value>
+  </data>
+  <data name="lang_localta" xml:space="preserve">
+    <value>Тамилски</value>
+  </data>
+  <data name="lang_localtg" xml:space="preserve">
+    <value>Таджикски</value>
+  </data>
+  <data name="lang_localth" xml:space="preserve">
+    <value>Тайландски</value>
+  </data>
+  <data name="lang_localtr" xml:space="preserve">
+    <value>Турски</value>
+  </data>
+  <data name="lang_localtt" xml:space="preserve">
+    <value>Татарски</value>
+  </data>
+  <data name="lang_localug" xml:space="preserve">
+    <value>Уйгурски</value>
+  </data>
+  <data name="lang_localur" xml:space="preserve">
+    <value>Урду</value>
+  </data>
+  <data name="lang_localuz" xml:space="preserve">
+    <value>Узбекски</value>
+  </data>
+  <data name="lang_localzh" xml:space="preserve">
+    <value>Китайски</value>
+  </data>
+  <data name="Acct_Download" xml:space="preserve">
+    <value>Изтегляне на {0}</value>
+  </data>
+  <data name="unicode_ArabicComma" xml:space="preserve">
+    <value>Арабски запетая</value>
+  </data>
+  <data name="unicode_ArabicDamma" xml:space="preserve">
+    <value>Арабски Димитрова</value>
+  </data>
+  <data name="unicode_ArabicDammatan" xml:space="preserve">
+    <value>Арабски Dammatan</value>
+  </data>
+  <data name="unicode_ArabicEmptyCentreHighStop" xml:space="preserve">
+    <value>Арабски празни център високо стоп</value>
+  </data>
+  <data name="unicode_ArabicEmptyCentreLowStop" xml:space="preserve">
+    <value>Арабски празни център ниска стоп</value>
+  </data>
+  <data name="unicode_ArabicEndOfAyah" xml:space="preserve">
+    <value>Арабски края на Аят</value>
+  </data>
+  <data name="unicode_ArabicFatha" xml:space="preserve">
+    <value>Арабски баща</value>
+  </data>
+  <data name="unicode_ArabicFathatan" xml:space="preserve">
+    <value>Арабски Fathatan</value>
+  </data>
+  <data name="unicode_ArabicHamzaAbove" xml:space="preserve">
+    <value>По-горе арабски хамза</value>
+  </data>
+  <data name="unicode_ArabicHamzaBelow" xml:space="preserve">
+    <value>Арабски хамза по-долу</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitEight" xml:space="preserve">
+    <value>Арабски индийски цифра осем</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitFive" xml:space="preserve">
+    <value>Арабски индийски цифра пет</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitFour" xml:space="preserve">
+    <value>Арабски индийски цифра четири</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitNine" xml:space="preserve">
+    <value>Арабски индийски цифра девет</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitOne" xml:space="preserve">
+    <value>Арабски индийски цифра едно</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitSeven" xml:space="preserve">
+    <value>Арабски индийски цифра седем</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitSix" xml:space="preserve">
+    <value>Арабски индийски цифра шест</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitThree" xml:space="preserve">
+    <value>Арабски индийски цифра три</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitTwo" xml:space="preserve">
+    <value>Арабски индийски цифра два</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitZero" xml:space="preserve">
+    <value>Арабски индийски цифра нула</value>
+  </data>
+  <data name="unicode_ArabicKasra" xml:space="preserve">
+    <value>Арабски Kasra</value>
+  </data>
+  <data name="unicode_ArabicKasratan" xml:space="preserve">
+    <value>Арабски Kasratan</value>
+  </data>
+  <data name="unicode_ArabicLetterAin" xml:space="preserve">
+    <value>Ain арабски писмо</value>
+  </data>
+  <data name="unicode_ArabicLetterAlef" xml:space="preserve">
+    <value>Арабски буквата алеф</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefMaksura" xml:space="preserve">
+    <value>Арабски буквата алеф Maksura</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefWasla" xml:space="preserve">
+    <value>Арабски буквата алеф Wasla</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefWithHamzaAbove" xml:space="preserve">
+    <value>Арабски буквата алеф с хамза горе</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefWithHamzaBelow" xml:space="preserve">
+    <value>Арабски буквата алеф с хамза по-долу</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefWithMaddaAbove" xml:space="preserve">
+    <value>Арабски буквата алеф с Madda по-горе</value>
+  </data>
+  <data name="unicode_ArabicLetterBeh" xml:space="preserve">
+    <value>Арабски писмо БЕХ</value>
+  </data>
+  <data name="unicode_ArabicLetterDad" xml:space="preserve">
+    <value>Арабски писмо татко</value>
+  </data>
+  <data name="unicode_ArabicLetterDal" xml:space="preserve">
+    <value>Арабски писмо Велева</value>
+  </data>
+  <data name="unicode_ArabicLetterFeh" xml:space="preserve">
+    <value>Арабски писмо Feh</value>
+  </data>
+  <data name="unicode_ArabicLetterGaf" xml:space="preserve">
+    <value>Арабски писмо Gaf</value>
+  </data>
+  <data name="unicode_ArabicLetterGhain" xml:space="preserve">
+    <value>Арабски писмо Ghain</value>
+  </data>
+  <data name="unicode_ArabicLetterHah" xml:space="preserve">
+    <value>Арабски писмо ха</value>
+  </data>
+  <data name="unicode_ArabicLetterHamza" xml:space="preserve">
+    <value>Арабски писмо хамза</value>
+  </data>
+  <data name="unicode_ArabicLetterHeh" xml:space="preserve">
+    <value>Арабски писмо Хе</value>
+  </data>
+  <data name="unicode_ArabicLetterJeem" xml:space="preserve">
+    <value>Арабски писмо Jeem</value>
+  </data>
+  <data name="unicode_ArabicLetterKaf" xml:space="preserve">
+    <value>Арабски писмо Юлия</value>
+  </data>
+  <data name="unicode_ArabicLetterKhah" xml:space="preserve">
+    <value>Арабски писмо Khah</value>
+  </data>
+  <data name="unicode_ArabicLetterLam" xml:space="preserve">
+    <value>Арабски буквата Лам</value>
+  </data>
+  <data name="unicode_ArabicLetterMeem" xml:space="preserve">
+    <value>Арабски писмо Корнелия</value>
+  </data>
+  <data name="unicode_ArabicLetterNoon" xml:space="preserve">
+    <value>Арабски писмо пладне</value>
+  </data>
+  <data name="unicode_ArabicLetterPeh" xml:space="preserve">
+    <value>Арабски писмо Peh</value>
+  </data>
+  <data name="unicode_ArabicLetterQaf" xml:space="preserve">
+    <value>Арабски писмо Qaf</value>
+  </data>
+  <data name="unicode_ArabicLetterReh" xml:space="preserve">
+    <value>Арабски писмо Reh</value>
+  </data>
+  <data name="unicode_ArabicLetterSad" xml:space="preserve">
+    <value>Арабски писмо тъжно</value>
+  </data>
+  <data name="unicode_ArabicLetterSeen" xml:space="preserve">
+    <value>Арабски писмото, видян</value>
+  </data>
+  <data name="unicode_ArabicLetterSheen" xml:space="preserve">
+    <value>Арабски писмо Шийн</value>
+  </data>
+  <data name="unicode_ArabicLetterSuperscriptAlef" xml:space="preserve">
+    <value>Арабски писмо горен алеф</value>
+  </data>
+  <data name="unicode_ArabicLetterTah" xml:space="preserve">
+    <value>Арабски писмо Tah</value>
+  </data>
+  <data name="unicode_ArabicLetterTcheh" xml:space="preserve">
+    <value>Арабски писмо Tcheh</value>
+  </data>
+  <data name="unicode_ArabicLetterTeh" xml:space="preserve">
+    <value>Арабски писмо Teh</value>
+  </data>
+  <data name="unicode_ArabicLetterTehMarbuta" xml:space="preserve">
+    <value>Арабски писмо Teh Marbuta</value>
+  </data>
+  <data name="unicode_ArabicLetterThal" xml:space="preserve">
+    <value>Арабски писмо Thal</value>
+  </data>
+  <data name="unicode_ArabicLetterTheh" xml:space="preserve">
+    <value>Арабски писмо Theh</value>
+  </data>
+  <data name="unicode_ArabicLetterVeh" xml:space="preserve">
+    <value>Арабски писмо Veh</value>
+  </data>
+  <data name="unicode_ArabicLetterWaw" xml:space="preserve">
+    <value>Арабски писмо Waw</value>
+  </data>
+  <data name="unicode_ArabicLetterWawWithHamzaAbove" xml:space="preserve">
+    <value>Арабски писмо Waw с хамза горе</value>
+  </data>
+  <data name="unicode_ArabicLetterYeh" xml:space="preserve">
+    <value>Арабски писмо Yeh</value>
+  </data>
+  <data name="unicode_ArabicLetterYehWithHamzaAbove" xml:space="preserve">
+    <value>Арабски писмо Yeh с хамза горе</value>
+  </data>
+  <data name="unicode_ArabicLetterZah" xml:space="preserve">
+    <value>Арабски писмо Zah</value>
+  </data>
+  <data name="unicode_ArabicLetterZain" xml:space="preserve">
+    <value>Арабски писмо Zain</value>
+  </data>
+  <data name="unicode_ArabicLigatureAkbarIsolatedForm" xml:space="preserve">
+    <value>Арабски лигатура Акбар изолирана форма</value>
+  </data>
+  <data name="unicode_ArabicLigatureAlayheIsolatedForm" xml:space="preserve">
+    <value>Арабски лигатура Alayhe изолирана форма</value>
+  </data>
+  <data name="unicode_ArabicLigatureAllahIsolatedForm" xml:space="preserve">
+    <value>Арабски лигатура Аллах изолирана форма</value>
+  </data>
+  <data name="unicode_ArabicLigatureBismillahArRahmanArRaheem" xml:space="preserve">
+    <value>Арабски лигатура Bismillah Ar-Rahman Ar-Raheem</value>
+  </data>
+  <data name="unicode_ArabicLigatureJallajalalouhou" xml:space="preserve">
+    <value>Арабски лигатура Jallajalalouhou</value>
+  </data>
+  <data name="unicode_ArabicLigatureMohammadIsolatedForm" xml:space="preserve">
+    <value>Арабски лигатура Мохамед изолирана форма</value>
+  </data>
+  <data name="unicode_ArabicLigatureQalaUsedAsKoranicStopSignIsolatedForm" xml:space="preserve">
+    <value>Арабски лигатура калай, използвани като Корана стоп подпише формуляр за изолирани</value>
+  </data>
+  <data name="unicode_ArabicLigatureRasoulIsolatedForm" xml:space="preserve">
+    <value>Арабски лигатура Стефан изолирана форма</value>
+  </data>
+  <data name="unicode_ArabicLigatureSalamIsolatedForm" xml:space="preserve">
+    <value>Арабски лигатура Салам изолирана форма</value>
+  </data>
+  <data name="unicode_ArabicLigatureSallaIsolatedForm" xml:space="preserve">
+    <value>Арабски лигатура Salla изолирана форма</value>
+  </data>
+  <data name="unicode_ArabicLigatureSallallahouAlayheWasallam" xml:space="preserve">
+    <value>Арабски лигатура Sallallahou Alayhe Wasallam</value>
+  </data>
+  <data name="unicode_ArabicLigatureSallaUsedAsKoranicStopSignIsolatedForm" xml:space="preserve">
+    <value>Арабски лигатура Salla използва като Корана стоп подпише формуляр за изолирани</value>
+  </data>
+  <data name="unicode_ArabicLigatureWasallamIsolatedForm" xml:space="preserve">
+    <value>Арабски лигатура Wasallam изолирана форма</value>
+  </data>
+  <data name="unicode_ArabicMaddahAbove" xml:space="preserve">
+    <value>Арабски Maddah-горе</value>
+  </data>
+  <data name="unicode_ArabicPlaceOfSajdah" xml:space="preserve">
+    <value>Арабски място на Sajdah</value>
+  </data>
+  <data name="unicode_ArabicQuestionMark" xml:space="preserve">
+    <value>Арабски въпросителен знак</value>
+  </data>
+  <data name="unicode_ArabicRoundedHighStopWithFilledCentre" xml:space="preserve">
+    <value>Арабски закръглени високо спирка с пълни център</value>
+  </data>
+  <data name="unicode_ArabicSemicolon" xml:space="preserve">
+    <value>Арабски запетая</value>
+  </data>
+  <data name="unicode_ArabicShadda" xml:space="preserve">
+    <value>Арабски Shadda</value>
+  </data>
+  <data name="unicode_ArabicSmallHighJeem" xml:space="preserve">
+    <value>Арабски малки високо Jeem</value>
+  </data>
+  <data name="unicode_ArabicSmallHighLamAlef" xml:space="preserve">
+    <value>Арабски малки високо Лам алеф</value>
+  </data>
+  <data name="unicode_ArabicSmallHighLigatureQafWithLamWithAlefMaksura" xml:space="preserve">
+    <value>Арабски малки висока лигатура Qaf с Лам с алеф Maksura</value>
+  </data>
+  <data name="unicode_ArabicSmallHighLigatureSadWithLamWithAlefMaksura" xml:space="preserve">
+    <value>Арабски малки лигатура в висока тъжно с Лам с алеф Maksura</value>
+  </data>
+  <data name="unicode_ArabicSmallHighMeemInitialForm" xml:space="preserve">
+    <value>Арабски малки високо Корнелия първоначалната форма</value>
+  </data>
+  <data name="unicode_ArabicSmallHighMeemIsolatedForm" xml:space="preserve">
+    <value>Арабски малки високо Корнелия изолирана форма</value>
+  </data>
+  <data name="unicode_ArabicSmallHighNoon" xml:space="preserve">
+    <value>Арабски малки пладне</value>
+  </data>
+  <data name="unicode_ArabicSmallHighRoundedZero" xml:space="preserve">
+    <value>Арабски малки висока кръгла нула</value>
+  </data>
+  <data name="unicode_ArabicSmallHighSeen" xml:space="preserve">
+    <value>Арабски малки висока виждал</value>
+  </data>
+  <data name="unicode_ArabicSmallHighThreeDots" xml:space="preserve">
+    <value>Арабски малки високо три точки</value>
+  </data>
+  <data name="unicode_ArabicSmallHighUprightRectangularZero" xml:space="preserve">
+    <value>Арабски малки високо изправено правоъгълна нула</value>
+  </data>
+  <data name="unicode_ArabicSmallLowMeem" xml:space="preserve">
+    <value>Арабски малък нисък Корнелия</value>
+  </data>
+  <data name="unicode_ArabicSmallLowSeen" xml:space="preserve">
+    <value>Арабски малки ниско вижда</value>
+  </data>
+  <data name="unicode_ArabicSmallWaw" xml:space="preserve">
+    <value>Арабски малки Waw</value>
+  </data>
+  <data name="unicode_ArabicSmallYeh" xml:space="preserve">
+    <value>Арабски малки Yeh</value>
+  </data>
+  <data name="unicode_ArabicStartOfRubElHizb" xml:space="preserve">
+    <value>Арабски началото на разтривайте Ел Хизб</value>
+  </data>
+  <data name="unicode_ArabicSukun" xml:space="preserve">
+    <value>Хотел арабски Sukun</value>
+  </data>
+  <data name="unicode_ArabicTatweel" xml:space="preserve">
+    <value>Арабски Tatweel</value>
+  </data>
+  <data name="unicode_Colon" xml:space="preserve">
+    <value>Дебелото черво</value>
+  </data>
+  <data name="unicode_Comma" xml:space="preserve">
+    <value>Запетая</value>
+  </data>
+  <data name="unicode_ExclamationMark" xml:space="preserve">
+    <value>Удивителен знак</value>
+  </data>
+  <data name="unicode_FullStop" xml:space="preserve">
+    <value>Пълно спиране</value>
+  </data>
+  <data name="unicode_HyphenMinus" xml:space="preserve">
+    <value>Тире/минус</value>
+  </data>
+  <data name="unicode_LeftCurlyBracket" xml:space="preserve">
+    <value>Лява фигурна скоба</value>
+  </data>
+  <data name="unicode_LeftPointingDoubleAngleQuotationMark" xml:space="preserve">
+    <value>Сочеща наляво двойна кавичка</value>
+  </data>
+  <data name="unicode_LeftSquareBracket" xml:space="preserve">
+    <value>Лява квадратна скоба</value>
+  </data>
+  <data name="unicode_OrnateLeftParenthesis" xml:space="preserve">
+    <value>Украсен лява скоба</value>
+  </data>
+  <data name="unicode_OrnateRightParenthesis" xml:space="preserve">
+    <value>Украсен дясна скоба</value>
+  </data>
+  <data name="unicode_QuotationMark" xml:space="preserve">
+    <value>Кавичка</value>
+  </data>
+  <data name="unicode_RialSign" xml:space="preserve">
+    <value>Риал знак</value>
+  </data>
+  <data name="unicode_RightCurlyBracket" xml:space="preserve">
+    <value>Дясна къдрава скоба</value>
+  </data>
+  <data name="unicode_RightPointingDoubleAngleQuotationMark" xml:space="preserve">
+    <value>Сочеща надясно двойна кавичка</value>
+  </data>
+  <data name="unicode_RightSquareBracket" xml:space="preserve">
+    <value>Дясна квадратна скоба</value>
+  </data>
+  <data name="unicode_Space" xml:space="preserve">
+    <value>Интервал</value>
+  </data>
+  <data name="Acct_CertRequest" xml:space="preserve">
+    <value>Искане на сертификат</value>
+  </data>
+  <data name="Acct_Certificate" xml:space="preserve">
+    <value>Сертификат</value>
+  </data>
+  <data name="Acct_CertInstall" xml:space="preserve">
+    <value>Инсталиране на сертификат</value>
+  </data>
+  <data name="Acct_CurrentUser" xml:space="preserve">
+    <value>Текущ потребител</value>
+  </data>
+  <data name="Acct_DeleteCertRequest" xml:space="preserve">
+    <value>Изтриване на искане за сертификат</value>
+  </data>
+  <data name="Acct_EnableSSL" xml:space="preserve">
+    <value>Разрешаване на SSL</value>
+  </data>
+  <data name="Acct_PrivateKey" xml:space="preserve">
+    <value>Личен ключ</value>
+  </data>
+  <data name="Acct_ViewCertRequests" xml:space="preserve">
+    <value>Преглед сертификат заявки</value>
+  </data>
+  <data name="Acct_ViewSites" xml:space="preserve">
+    <value>Преглед сайтове</value>
+  </data>
+  <data name="Acct_CertInstallIntermed" xml:space="preserve">
+    <value>Инсталиране на междинното сертификата</value>
+  </data>
+  <data name="unicode_LeftToRightEmbedding" xml:space="preserve">
+    <value>Вграждане отляво надясно</value>
+  </data>
+  <data name="unicode_RightToLeftEmbedding" xml:space="preserve">
+    <value>Вграждане отдясно наляво</value>
+  </data>
+  <data name="unicode_LeftToRightMark" xml:space="preserve">
+    <value>Отляво надясно Марк</value>
+  </data>
+  <data name="unicode_LeftToRightOverride" xml:space="preserve">
+    <value>Припокриване отляво надясно</value>
+  </data>
+  <data name="unicode_PopDirectionalFormatting" xml:space="preserve">
+    <value>Форматиране, показващо посоката</value>
+  </data>
+  <data name="unicode_RightToLeftMark" xml:space="preserve">
+    <value>Марк отдясно наляво</value>
+  </data>
+  <data name="unicode_RightToLeftOverride" xml:space="preserve">
+    <value>Припокриване отдясно наляво</value>
+  </data>
+</root>

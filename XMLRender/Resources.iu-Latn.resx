@@ -1,0 +1,210 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Acct_ChangePassword" xml:space="preserve">
+    <value>Asijjirli isirut</value>
+  </data>
+  <data name="Acct_ClearCache" xml:space="preserve">
+    <value>Piijarli Qinnisimajuq</value>
+  </data>
+  <data name="Acct_ConfirmPassword" xml:space="preserve">
+    <value>Suqquirli isirut</value>
+  </data>
+  <data name="Acct_ControlPanel" xml:space="preserve">
+    <value>Aulattiviup Takussauvinga</value>
+  </data>
+  <data name="Acct_EmailAddress" xml:space="preserve">
+    <value>Irngiinaaqtaummut Turaarut</value>
+  </data>
+  <data name="Acct_ForgotPassword" xml:space="preserve">
+    <value>Puiguqpiuk isirutiit?</value>
+  </data>
+  <data name="Acct_Home" xml:space="preserve">
+    <value>Pigiarvik</value>
+  </data>
+  <data name="Acct_InvalidInput" xml:space="preserve">
+    <value>Naammanngittuq naqittaqtaq</value>
+  </data>
+  <data name="Acct_Login" xml:space="preserve">
+    <value>Isirli</value>
+  </data>
+  <data name="Acct_No" xml:space="preserve">
+    <value>Aagga</value>
+  </data>
+  <data name="Acct_Password" xml:space="preserve">
+    <value>Isirut:</value>
+  </data>
+  <data name="Acct_PasswordsNotMatch" xml:space="preserve">
+    <value>Isirutiik ajjjigiinngittuuk:</value>
+  </data>
+  <data name="Acct_ResetPassword" xml:space="preserve">
+    <value>Pigiattiarli Isirut</value>
+  </data>
+  <data name="Acct_Username" xml:space="preserve">
+    <value>Atuqtuup atinga</value>
+  </data>
+  <data name="Acct_Yes" xml:space="preserve">
+    <value>Ii</value>
+  </data>
+  <data name="lang_ber" xml:space="preserve">
+    <value>Tamazight</value>
+  </data>
+  <data name="lang_en" xml:space="preserve">
+    <value>Qallunaatitut</value>
+  </data>
+  <data name="lang_sw" xml:space="preserve">
+    <value>Kiswahili</value>
+  </data>
+  <data name="lang_localam" xml:space="preserve">
+    <value>Amharic</value>
+  </data>
+  <data name="lang_localar" xml:space="preserve">
+    <value>Arabic</value>
+  </data>
+  <data name="lang_localaz" xml:space="preserve">
+    <value>Ajupaiijani</value>
+  </data>
+  <data name="lang_localbg" xml:space="preserve">
+    <value>Bulgarian</value>
+  </data>
+  <data name="lang_localbn" xml:space="preserve">
+    <value>Bengali</value>
+  </data>
+  <data name="lang_localbs" xml:space="preserve">
+    <value>Bosnian</value>
+  </data>
+  <data name="lang_localcs" xml:space="preserve">
+    <value>Czech</value>
+  </data>
+  <data name="lang_localde" xml:space="preserve">
+    <value>German</value>
+  </data>
+  <data name="lang_localdv" xml:space="preserve">
+    <value>Divehi</value>
+  </data>
+  <data name="lang_localen" xml:space="preserve">
+    <value>Qallunaatitut</value>
+  </data>
+  <data name="lang_locales" xml:space="preserve">
+    <value>Spainmiutitut</value>
+  </data>
+  <data name="lang_localfa" xml:space="preserve">
+    <value>Persian</value>
+  </data>
+  <data name="lang_localfr" xml:space="preserve">
+    <value>Uiviititut</value>
+  </data>
+  <data name="lang_localha" xml:space="preserve">
+    <value>Hausa</value>
+  </data>
+  <data name="lang_localhi" xml:space="preserve">
+    <value>Hindi</value>
+  </data>
+  <data name="lang_localid" xml:space="preserve">
+    <value>Indonesian</value>
+  </data>
+  <data name="lang_localit" xml:space="preserve">
+    <value>Italiantitut</value>
+  </data>
+  <data name="lang_localja" xml:space="preserve">
+    <value>Jaapaniisititut</value>
+  </data>
+  <data name="lang_localko" xml:space="preserve">
+    <value>Korean</value>
+  </data>
+  <data name="lang_localml" xml:space="preserve">
+    <value>Malayalam</value>
+  </data>
+  <data name="lang_localms" xml:space="preserve">
+    <value>Malay</value>
+  </data>
+  <data name="lang_localnl" xml:space="preserve">
+    <value>Dutch</value>
+  </data>
+  <data name="lang_localno" xml:space="preserve">
+    <value>Norwegianmiutitut</value>
+  </data>
+  <data name="lang_localpl" xml:space="preserve">
+    <value>Polish</value>
+  </data>
+  <data name="lang_localpt" xml:space="preserve">
+    <value>Portuguese</value>
+  </data>
+  <data name="lang_localro" xml:space="preserve">
+    <value>Romanian</value>
+  </data>
+  <data name="lang_localru" xml:space="preserve">
+    <value>Russian</value>
+  </data>
+  <data name="lang_localsd" xml:space="preserve">
+    <value>Sindhi</value>
+  </data>
+  <data name="lang_localso" xml:space="preserve">
+    <value>Somali</value>
+  </data>
+  <data name="lang_localsq" xml:space="preserve">
+    <value>Albanian</value>
+  </data>
+  <data name="lang_localsv" xml:space="preserve">
+    <value>Swedish</value>
+  </data>
+  <data name="lang_localsw" xml:space="preserve">
+    <value>Swahili</value>
+  </data>
+  <data name="lang_localta" xml:space="preserve">
+    <value>Tamil</value>
+  </data>
+  <data name="lang_localtg" xml:space="preserve">
+    <value>Tajik</value>
+  </data>
+  <data name="lang_localth" xml:space="preserve">
+    <value>Thai</value>
+  </data>
+  <data name="lang_localtr" xml:space="preserve">
+    <value>Turkish</value>
+  </data>
+  <data name="lang_localtt" xml:space="preserve">
+    <value>Tatar</value>
+  </data>
+  <data name="lang_localug" xml:space="preserve">
+    <value>Uyghur</value>
+  </data>
+  <data name="lang_localur" xml:space="preserve">
+    <value>Urdu</value>
+  </data>
+  <data name="lang_localuz" xml:space="preserve">
+    <value>Uspik</value>
+  </data>
+  <data name="lang_localzh" xml:space="preserve">
+    <value>Sainiisititut</value>
+  </data>
+  <data name="unicode_Colon" xml:space="preserve">
+    <value>Aliriik taqsaralaak</value>
+  </data>
+  <data name="unicode_Comma" xml:space="preserve">
+    <value>Nimiqtaannguaq</value>
+  </data>
+  <data name="unicode_Space" xml:space="preserve">
+    <value>Akunnia</value>
+  </data>
+  <data name="Acct_Certificate" xml:space="preserve">
+    <value>Kajusijjut:</value>
+  </data>
+  <data name="Acct_CurrentUser" xml:space="preserve">
+    <value>Maanna Atuqtuq</value>
+  </data>
+  <data name="unicode_PopDirectionalFormatting" xml:space="preserve">
+    <value>‬	Saqqikallat Turaaqtanganik Aaqqigiariniq</value>
+  </data>
+</root>

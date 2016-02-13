@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Acct_ChangePassword" xml:space="preserve">
+    <value>ᎯᏁᏟᏴᎾ ᎠᏍᏚᎢᏍᏙᏗ ᎥᎧᏁᎬᎩ</value>
+  </data>
+  <data name="Acct_ControlPanel" xml:space="preserve">
+    <value>ᎠᎯᎸᏍᏗ ᎠᏯᏔᎾᎸ</value>
+  </data>
+  <data name="Acct_DeleteAccount" xml:space="preserve">
+    <value>ᎠᏍᎪᎸᏛᎯ ᎠᏚᏓᎸᏗ</value>
+  </data>
+  <data name="Acct_EmailAddress" xml:space="preserve">
+    <value>ᎠᎾᎦᎵᏍᎩ ᎪᏪᎵ ᎪᏪᎵ ᏫᏗᎦᏅᏗ:</value>
+  </data>
+  <data name="Acct_Home" xml:space="preserve">
+    <value>ᏗᏇᏅᏒᎢ</value>
+  </data>
+  <data name="Acct_InvalidInput" xml:space="preserve">
+    <value>ᏂᏓᏓᏂᎸᎬᎾ ᎪᏣᎸᏅᎢ</value>
+  </data>
+  <data name="Acct_No" xml:space="preserve">
+    <value>Ꮭ</value>
+  </data>
+  <data name="Acct_Password" xml:space="preserve">
+    <value>ᎠᏍᏚᎢᏍᏙᏗ ᎥᎧᏁᎬᎢ</value>
+  </data>
+  <data name="Acct_PasswordsNotMatch" xml:space="preserve">
+    <value>ᏗᏍᏚᎢᏍᏙᏗ ᎥᎧᏁᎬᎢ Ꮭ ᏱᏓᏙᎵᎦ</value>
+  </data>
+  <data name="Acct_Register" xml:space="preserve">
+    <value>ᏕᏣᏙᎥᎢ ᎰᏪᎸᎦ</value>
+  </data>
+  <data name="Acct_Username" xml:space="preserve">
+    <value>ᎬᏗᏍᎩ ᏚᏙᎥᎢ</value>
+  </data>
+  <data name="Acct_Yes" xml:space="preserve">
+    <value>ᎥᎥ</value>
+  </data>
+  <data name="lang_ber" xml:space="preserve">
+    <value>ᏖᎹᏌᏱᏘ</value>
+  </data>
+  <data name="lang_en" xml:space="preserve">
+    <value>ᎩᎵᏏ</value>
+  </data>
+  <data name="lang_sw" xml:space="preserve">
+    <value>ᎩᏍᏩᎯᎵ</value>
+  </data>
+  <data name="lang_localam" xml:space="preserve">
+    <value>ᎠᎹᎭᎵᎩ</value>
+  </data>
+  <data name="lang_localar" xml:space="preserve">
+    <value>ᎠᎳᏈ</value>
+  </data>
+  <data name="lang_localaz" xml:space="preserve">
+    <value>ᎠᏎᏆᏣᏂ</value>
+  </data>
+  <data name="lang_localbg" xml:space="preserve">
+    <value>ᏊᎵᎨᎵᎠᏂ</value>
+  </data>
+  <data name="lang_localcs" xml:space="preserve">
+    <value>ᏤᎩ</value>
+  </data>
+  <data name="lang_localde" xml:space="preserve">
+    <value>ᏙᎢᏥ</value>
+  </data>
+  <data name="lang_localdv" xml:space="preserve">
+    <value>ᏗᏇᎯ</value>
+  </data>
+  <data name="lang_localen" xml:space="preserve">
+    <value>ᎩᎵᏏ</value>
+  </data>
+  <data name="lang_locales" xml:space="preserve">
+    <value>ᏍᏆᏂ</value>
+  </data>
+  <data name="lang_localfa" xml:space="preserve">
+    <value>ᏋᏏᎠᏂ</value>
+  </data>
+  <data name="lang_localfr" xml:space="preserve">
+    <value>ᎦᎸᏥ</value>
+  </data>
+  <data name="lang_localha" xml:space="preserve">
+    <value>ᎭᎤᏌ</value>
+  </data>
+  <data name="lang_localhi" xml:space="preserve">
+    <value>ᎯᏂᏗ</value>
+  </data>
+  <data name="lang_localid" xml:space="preserve">
+    <value>ᎢᏂᏙᏂᏏᎠ</value>
+  </data>
+  <data name="lang_localit" xml:space="preserve">
+    <value>ᎬᏩᎵᏲᏥᎢ</value>
+  </data>
+  <data name="lang_localja" xml:space="preserve">
+    <value>ᏣᏩᏂᏏ</value>
+  </data>
+  <data name="lang_localko" xml:space="preserve">
+    <value>ᎪᎵᎠᏂ</value>
+  </data>
+  <data name="lang_localml" xml:space="preserve">
+    <value>ᎠᏂᎹᎴ</value>
+  </data>
+  <data name="lang_localms" xml:space="preserve">
+    <value>ᎹᎴ</value>
+  </data>
+  <data name="lang_localnl" xml:space="preserve">
+    <value>ᏛᏥ</value>
+  </data>
+  <data name="lang_localno" xml:space="preserve">
+    <value>ᏃᎵᏪᏥᏂ</value>
+  </data>
+  <data name="lang_localpl" xml:space="preserve">
+    <value>ᏉᎵᏍ</value>
+  </data>
+  <data name="lang_localpt" xml:space="preserve">
+    <value>ᏉᏧᎦᎵ</value>
+  </data>
+  <data name="lang_localro" xml:space="preserve">
+    <value>ᎶᎹᏂᎠᏂ</value>
+  </data>
+  <data name="lang_localru" xml:space="preserve">
+    <value>ᎸᏌᏂ</value>
+  </data>
+  <data name="lang_localsd" xml:space="preserve">
+    <value>ᏍᎢᏂᏗ</value>
+  </data>
+  <data name="lang_localso" xml:space="preserve">
+    <value>ᏐᎹᎵ</value>
+  </data>
+  <data name="lang_localsq" xml:space="preserve">
+    <value>ᎠᎵᏇᏂ</value>
+  </data>
+  <data name="lang_localsv" xml:space="preserve">
+    <value>ᏍᏫᏗᏍ</value>
+  </data>
+  <data name="lang_localsw" xml:space="preserve">
+    <value>ᏍᏩᎯᎵ</value>
+  </data>
+  <data name="lang_localta" xml:space="preserve">
+    <value>ᏔᎻᎵ</value>
+  </data>
+  <data name="lang_localtg" xml:space="preserve">
+    <value>ᏔᏥᎦ</value>
+  </data>
+  <data name="lang_localth" xml:space="preserve">
+    <value>ᏔᏱ</value>
+  </data>
+  <data name="lang_localtr" xml:space="preserve">
+    <value>ᎠᎬᎾ</value>
+  </data>
+  <data name="lang_localtt" xml:space="preserve">
+    <value>ᏔᏔ</value>
+  </data>
+  <data name="lang_localur" xml:space="preserve">
+    <value>ᎤᎵᏚ</value>
+  </data>
+  <data name="lang_localuz" xml:space="preserve">
+    <value>ᎤᏍᏇᎩ</value>
+  </data>
+  <data name="lang_localzh" xml:space="preserve">
+    <value>ᏓᎶᏂᎨᏍᏛ</value>
+  </data>
+  <data name="unicode_Comma" xml:space="preserve">
+    <value>ᎠᏓᏍᎦᏃᎳᏗᏍᎩ</value>
+  </data>
+  <data name="unicode_Space" xml:space="preserve">
+    <value>ᎤᏜᏅᏛᎯ</value>
+  </data>
+  <data name="Acct_CurrentUser" xml:space="preserve">
+    <value>ᏃᏊ ᏥᎩ ᎬᏗᏍᎩ</value>
+  </data>
+</root>

@@ -1,0 +1,903 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Acct_AccountActivateSuccess" xml:space="preserve">
+    <value>Account geactiveerd.</value>
+  </data>
+  <data name="Acct_AccountAlreadyActivated" xml:space="preserve">
+    <value>Account al is geactiveerd.</value>
+  </data>
+  <data name="Acct_AccountDeleteSuccess" xml:space="preserve">
+    <value>Account verwijderd.</value>
+  </data>
+  <data name="Acct_AccountNotActivated" xml:space="preserve">
+    <value>Account wordt niet nog geactiveerd Controleer uw e-mail eerst of een extra activeringscode aanvragen.</value>
+  </data>
+  <data name="Acct_ActivateAccount" xml:space="preserve">
+    <value>Account activeren</value>
+  </data>
+  <data name="Acct_ActivationAccountBody" xml:space="preserve">
+    <value>Deze e-mail vraagt activering van uw rekening {0}: {1}. Gebruik de volgende link: {2} of door te gaan naar de pagina {3} en uw gebruikersnaam en de volgende activeringscode: {4}</value>
+  </data>
+  <data name="Acct_ActivationAccountSubject" xml:space="preserve">
+    <value>Activering voor account op {0}</value>
+  </data>
+  <data name="Acct_ActivationCode" xml:space="preserve">
+    <value>Activeringscode</value>
+  </data>
+  <data name="Acct_BadEmailFormat" xml:space="preserve">
+    <value>E-mailadres niet met een ongeldige indeling.</value>
+  </data>
+  <data name="Acct_Certain" xml:space="preserve">
+    <value>Bent u zeker?</value>
+  </data>
+  <data name="Acct_ChangeEmailAddress" xml:space="preserve">
+    <value>E-mailadres wijzigen</value>
+  </data>
+  <data name="Acct_ChangePassword" xml:space="preserve">
+    <value>Wachtwoord wijzigen</value>
+  </data>
+  <data name="Acct_ChangeUsername" xml:space="preserve">
+    <value>Gebruikersnaam wijzigen</value>
+  </data>
+  <data name="Acct_CheckEmailNotice" xml:space="preserve">
+    <value>Activering naar opgegeven adres verzonden.  Controleer uw e-mail om uw account die zal het voltooien van uw registratie te activeren.</value>
+  </data>
+  <data name="Acct_CleanupStale" xml:space="preserve">
+    <value>Opruimen-verlopen</value>
+  </data>
+  <data name="Acct_ClearCache" xml:space="preserve">
+    <value>Cache wissen</value>
+  </data>
+  <data name="Acct_ClearDiskCache" xml:space="preserve">
+    <value>De cache van schijf</value>
+  </data>
+  <data name="Acct_ConfirmEmailAddress" xml:space="preserve">
+    <value>E-mailadres bevestigen</value>
+  </data>
+  <data name="Acct_ConfirmPassword" xml:space="preserve">
+    <value>Wachtwoord bevestigen</value>
+  </data>
+  <data name="Acct_ControlPanel" xml:space="preserve">
+    <value>Configuratiescherm</value>
+  </data>
+  <data name="Acct_CreateDatabase" xml:space="preserve">
+    <value>Database maken</value>
+  </data>
+  <data name="Acct_DeleteAccount" xml:space="preserve">
+    <value>Account verwijderen</value>
+  </data>
+  <data name="Acct_DotNetVersion" xml:space="preserve">
+    <value>Dot Net versie</value>
+  </data>
+  <data name="Acct_DuplicateUser" xml:space="preserve">
+    <value>Gebruiker met deze naam bestaat al kies een andere.</value>
+  </data>
+  <data name="Acct_EmailAddress" xml:space="preserve">
+    <value>E-mailadres</value>
+  </data>
+  <data name="Acct_EmailChangeReactivate" xml:space="preserve">
+    <value>E-mailadres gewijzigd en activatie e-mail verzonden naar het account opnieuw activeren.</value>
+  </data>
+  <data name="Acct_EmailInUse" xml:space="preserve">
+    <value>E-mailberichten al in gebruik alstublieft inloggen met bestaande referenties.</value>
+  </data>
+  <data name="Acct_EmailsNotMatch" xml:space="preserve">
+    <value>E-mailadressen komen niet overeen</value>
+  </data>
+  <data name="Acct_ForgotPassword" xml:space="preserve">
+    <value>Wachtwoord vergeten</value>
+  </data>
+  <data name="Acct_ForgotUsername" xml:space="preserve">
+    <value>Gebruikersnaam vergeten</value>
+  </data>
+  <data name="Acct_Home" xml:space="preserve">
+    <value>Thuis</value>
+  </data>
+  <data name="Acct_IncorrectActivationCode" xml:space="preserve">
+    <value>Onjuiste activeringscode.</value>
+  </data>
+  <data name="Acct_IncorrectPasswordResetCode" xml:space="preserve">
+    <value>Onjuist wachtwoord reset code.</value>
+  </data>
+  <data name="Acct_InvalidInput" xml:space="preserve">
+    <value>Ongeldige invoer.</value>
+  </data>
+  <data name="Acct_InvalidUsernamePassword" xml:space="preserve">
+    <value>Ongeldige gebruikersnaam of ongeldig wachtwoord.</value>
+  </data>
+  <data name="Acct_Login" xml:space="preserve">
+    <value>Aanmelden</value>
+  </data>
+  <data name="Acct_LoginSuccess" xml:space="preserve">
+    <value>Login succesvol.</value>
+  </data>
+  <data name="Acct_Logoff" xml:space="preserve">
+    <value>Afmelden</value>
+  </data>
+  <data name="Acct_LogoffSuccess" xml:space="preserve">
+    <value>Afmelding succesvol.</value>
+  </data>
+  <data name="Acct_MinimumPassword" xml:space="preserve">
+    <value>Wachtwoord moet minstens 8 tekens bestaan.</value>
+  </data>
+  <data name="Acct_MinimumUsername" xml:space="preserve">
+    <value>Gebruikersnaam moet ten minste 4 tekens bestaan.</value>
+  </data>
+  <data name="Acct_No" xml:space="preserve">
+    <value>Nee</value>
+  </data>
+  <data name="Acct_NotConfirmDelete" xml:space="preserve">
+    <value>Account verwijdering moet bevestigen.</value>
+  </data>
+  <data name="Acct_NoUserExists" xml:space="preserve">
+    <value>Geen gebruiker bestaat voor het ingevoerde e-mailadres.</value>
+  </data>
+  <data name="Acct_Password" xml:space="preserve">
+    <value>PASSWORD</value>
+  </data>
+  <data name="Acct_PasswordAlreadyReset" xml:space="preserve">
+    <value>Al wachtwoordhersteldiskette of proces niet gestart.</value>
+  </data>
+  <data name="Acct_PasswordChangedBody" xml:space="preserve">
+    <value>Deze e-mail is het informeren van het wijzigen van het wachtwoord van uw account {0}: {1}.</value>
+  </data>
+  <data name="Acct_PasswordChangedSubject" xml:space="preserve">
+    <value>Wachtwoord gewijzigd voor account op {0}</value>
+  </data>
+  <data name="Acct_PasswordChangeSuccess" xml:space="preserve">
+    <value>Wachtwoord wijzigen voltooid.</value>
+  </data>
+  <data name="Acct_PasswordEmailSent" xml:space="preserve">
+    <value>Een e-mail is verzonden naar uw adres op bestand te starten dat de wachtwoordhersteldiskette proces.</value>
+  </data>
+  <data name="Acct_PasswordResetBody" xml:space="preserve">
+    <value>Deze e-mail is to reset het wachtwoord van uw account {0}: {1}. Gebruik de volgende link: {3} of procedure naar de pagina {4} en het invoeren van uw gebruikersnaam en het volgende wachtwoord reset code: {5}</value>
+  </data>
+  <data name="Acct_PasswordResetCode" xml:space="preserve">
+    <value>Wachtwoord Reset Code</value>
+  </data>
+  <data name="Acct_PasswordResetSubject" xml:space="preserve">
+    <value>Wachtwoord opnieuw instellen voor de account op {0}</value>
+  </data>
+  <data name="Acct_PasswordResetSuccess" xml:space="preserve">
+    <value>Wachtwoord alleen opnieuw instellen.</value>
+  </data>
+  <data name="Acct_PasswordsNotMatch" xml:space="preserve">
+    <value>De wachtwoorden komen niet overeen</value>
+  </data>
+  <data name="Acct_Register" xml:space="preserve">
+    <value>Registreren</value>
+  </data>
+  <data name="Acct_Remember" xml:space="preserve">
+    <value>Weet je nog?</value>
+  </data>
+  <data name="Acct_RemoveDatabase" xml:space="preserve">
+    <value>Database verwijderen</value>
+  </data>
+  <data name="Acct_ResendActivationEmail" xml:space="preserve">
+    <value>Verzend activatie E-mail opnieuw</value>
+  </data>
+  <data name="Acct_ResetPassword" xml:space="preserve">
+    <value>Wachtwoord opnieuw instellen</value>
+  </data>
+  <data name="Acct_RetrievePassword" xml:space="preserve">
+    <value>Wachtwoord opvragen</value>
+  </data>
+  <data name="Acct_RetrieveUsername" xml:space="preserve">
+    <value>Gebruikersnaam ophalen</value>
+  </data>
+  <data name="Acct_SendActivationCode" xml:space="preserve">
+    <value>Stuur activatiecode</value>
+  </data>
+  <data name="Acct_Username" xml:space="preserve">
+    <value>Gebruikersnaam</value>
+  </data>
+  <data name="Acct_UsernameChangedBody" xml:space="preserve">
+    <value>Deze e-mail is het informeren van de account naam wijzigen van de account van uw {0}: {1}.</value>
+  </data>
+  <data name="Acct_UsernameChangedSubject" xml:space="preserve">
+    <value>Gebruikersnaam voor account op {0} gewijzigd</value>
+  </data>
+  <data name="Acct_UsernameChangeSuccess" xml:space="preserve">
+    <value>Gebruikersnaam is gewijzigd.</value>
+  </data>
+  <data name="Acct_UsernameEmailSent" xml:space="preserve">
+    <value>Een e-mail is verzonden naar uw adres op bestand met uw gebruikersnaam.</value>
+  </data>
+  <data name="Acct_UsernameReminderBody" xml:space="preserve">
+    <value>Deze e-mail is een herinnering aan uw account {0}: {1}.</value>
+  </data>
+  <data name="Acct_UsernameReminderSubject" xml:space="preserve">
+    <value>Gebruikersnaam herinnering voor account op {0}</value>
+  </data>
+  <data name="Acct_UserNotFound" xml:space="preserve">
+    <value>Gebruiker bestaat niet.</value>
+  </data>
+  <data name="Acct_ViewCache" xml:space="preserve">
+    <value>Bekijk Cache</value>
+  </data>
+  <data name="Acct_ViewDiskCache" xml:space="preserve">
+    <value>Weergave schijfcache</value>
+  </data>
+  <data name="Acct_ViewHeaders" xml:space="preserve">
+    <value>View Headers</value>
+  </data>
+  <data name="Acct_Yes" xml:space="preserve">
+    <value>Ja</value>
+  </data>
+  <data name="lang_am" xml:space="preserve">
+    <value>ኣማርኛ</value>
+  </data>
+  <data name="lang_ar" xml:space="preserve">
+    <value>العربية</value>
+  </data>
+  <data name="lang_az" xml:space="preserve">
+    <value>Azərbaycan dili</value>
+  </data>
+  <data name="lang_ber" xml:space="preserve">
+    <value>Tamazight</value>
+  </data>
+  <data name="lang_bg" xml:space="preserve">
+    <value>БЪЛГАРСКИ</value>
+  </data>
+  <data name="lang_bn" xml:space="preserve">
+    <value>বাংলা</value>
+  </data>
+  <data name="lang_bs" xml:space="preserve">
+    <value>Bosanski</value>
+  </data>
+  <data name="lang_cs" xml:space="preserve">
+    <value>Čeština</value>
+  </data>
+  <data name="lang_de" xml:space="preserve">
+    <value>Deutsch</value>
+  </data>
+  <data name="lang_dv" xml:space="preserve">
+    <value>ދިވެހި</value>
+  </data>
+  <data name="lang_en" xml:space="preserve">
+    <value>Engels</value>
+  </data>
+  <data name="lang_es" xml:space="preserve">
+    <value>Español</value>
+  </data>
+  <data name="lang_fa" xml:space="preserve">
+    <value>فارسى</value>
+  </data>
+  <data name="lang_fr" xml:space="preserve">
+    <value>Français</value>
+  </data>
+  <data name="lang_ha" xml:space="preserve">
+    <value>Ḥawsa</value>
+  </data>
+  <data name="lang_hi" xml:space="preserve">
+    <value>हिन्दी</value>
+  </data>
+  <data name="lang_id" xml:space="preserve">
+    <value>Bahasa Indonesia</value>
+  </data>
+  <data name="lang_it" xml:space="preserve">
+    <value>Italiano</value>
+  </data>
+  <data name="lang_ja" xml:space="preserve">
+    <value>日本語</value>
+  </data>
+  <data name="lang_ko" xml:space="preserve">
+    <value>한국어</value>
+  </data>
+  <data name="lang_ku" xml:space="preserve">
+    <value>کوردی</value>
+  </data>
+  <data name="lang_ml" xml:space="preserve">
+    <value>മലയാളം</value>
+  </data>
+  <data name="lang_ms" xml:space="preserve">
+    <value>Bahasa melayu</value>
+  </data>
+  <data name="lang_nl" xml:space="preserve">
+    <value>Nederlands</value>
+  </data>
+  <data name="lang_no" xml:space="preserve">
+    <value>Norsk</value>
+  </data>
+  <data name="lang_pl" xml:space="preserve">
+    <value>Polski</value>
+  </data>
+  <data name="lang_pt" xml:space="preserve">
+    <value>Português</value>
+  </data>
+  <data name="lang_ro" xml:space="preserve">
+    <value>रोमानो</value>
+  </data>
+  <data name="lang_ru" xml:space="preserve">
+    <value>РУССКИЙ ЯЗЫК</value>
+  </data>
+  <data name="lang_sd" xml:space="preserve">
+    <value>سنڌي</value>
+  </data>
+  <data name="lang_so" xml:space="preserve">
+    <value>af Soomaali</value>
+  </data>
+  <data name="lang_sq" xml:space="preserve">
+    <value>shqip</value>
+  </data>
+  <data name="lang_sv" xml:space="preserve">
+    <value>Svenska</value>
+  </data>
+  <data name="lang_sw" xml:space="preserve">
+    <value>Kiswahili</value>
+  </data>
+  <data name="lang_ta" xml:space="preserve">
+    <value>தமிழ்</value>
+  </data>
+  <data name="lang_tg" xml:space="preserve">
+    <value>ТОҶИКИ</value>
+  </data>
+  <data name="lang_th" xml:space="preserve">
+    <value>ภาษาไทย</value>
+  </data>
+  <data name="lang_tr" xml:space="preserve">
+    <value>Türkçe</value>
+  </data>
+  <data name="lang_tt" xml:space="preserve">
+    <value>ТАТАРЧА</value>
+  </data>
+  <data name="lang_ug" xml:space="preserve">
+    <value>ئۇيغۇر</value>
+  </data>
+  <data name="lang_ur" xml:space="preserve">
+    <value>اردو</value>
+  </data>
+  <data name="lang_uz" xml:space="preserve">
+    <value>O'zbek tili ўзбек тили</value>
+  </data>
+  <data name="lang_zh" xml:space="preserve">
+    <value>中文</value>
+  </data>
+  <data name="lang_localam" xml:space="preserve">
+    <value>Amhaars</value>
+  </data>
+  <data name="lang_localar" xml:space="preserve">
+    <value>Arabisch</value>
+  </data>
+  <data name="lang_localaz" xml:space="preserve">
+    <value>Azerbeidzjaans</value>
+  </data>
+  <data name="lang_localber" xml:space="preserve">
+    <value>Amazigh</value>
+  </data>
+  <data name="lang_localbg" xml:space="preserve">
+    <value>Bulgaars</value>
+  </data>
+  <data name="lang_localbn" xml:space="preserve">
+    <value>Bengali</value>
+  </data>
+  <data name="lang_localbs" xml:space="preserve">
+    <value>Bosnisch</value>
+  </data>
+  <data name="lang_localcs" xml:space="preserve">
+    <value>Tsjechisch</value>
+  </data>
+  <data name="lang_localde" xml:space="preserve">
+    <value>Duits</value>
+  </data>
+  <data name="lang_localdv" xml:space="preserve">
+    <value>Divehi</value>
+  </data>
+  <data name="lang_localen" xml:space="preserve">
+    <value>Engels</value>
+  </data>
+  <data name="lang_locales" xml:space="preserve">
+    <value>Spaans</value>
+  </data>
+  <data name="lang_localfa" xml:space="preserve">
+    <value>Perzisch</value>
+  </data>
+  <data name="lang_localfr" xml:space="preserve">
+    <value>Frans</value>
+  </data>
+  <data name="lang_localha" xml:space="preserve">
+    <value>Hausa</value>
+  </data>
+  <data name="lang_localhi" xml:space="preserve">
+    <value>Hindi</value>
+  </data>
+  <data name="lang_localid" xml:space="preserve">
+    <value>Indonesisch</value>
+  </data>
+  <data name="lang_localit" xml:space="preserve">
+    <value>Italiaans</value>
+  </data>
+  <data name="lang_localja" xml:space="preserve">
+    <value>Japans</value>
+  </data>
+  <data name="lang_localko" xml:space="preserve">
+    <value>Koreaans</value>
+  </data>
+  <data name="lang_localku" xml:space="preserve">
+    <value>Koerdisch</value>
+  </data>
+  <data name="lang_localml" xml:space="preserve">
+    <value>Malayalam</value>
+  </data>
+  <data name="lang_localms" xml:space="preserve">
+    <value>Maleis</value>
+  </data>
+  <data name="lang_localnl" xml:space="preserve">
+    <value>Nederlands</value>
+  </data>
+  <data name="lang_localno" xml:space="preserve">
+    <value>Noors</value>
+  </data>
+  <data name="lang_localpl" xml:space="preserve">
+    <value>Pools</value>
+  </data>
+  <data name="lang_localpt" xml:space="preserve">
+    <value>Portugees</value>
+  </data>
+  <data name="lang_localro" xml:space="preserve">
+    <value>Roemeens</value>
+  </data>
+  <data name="lang_localru" xml:space="preserve">
+    <value>Russisch</value>
+  </data>
+  <data name="lang_localsd" xml:space="preserve">
+    <value>Sindhi</value>
+  </data>
+  <data name="lang_localso" xml:space="preserve">
+    <value>Somalisch</value>
+  </data>
+  <data name="lang_localsq" xml:space="preserve">
+    <value>Albanees</value>
+  </data>
+  <data name="lang_localsv" xml:space="preserve">
+    <value>Zweeds</value>
+  </data>
+  <data name="lang_localsw" xml:space="preserve">
+    <value>Swahili</value>
+  </data>
+  <data name="lang_localta" xml:space="preserve">
+    <value>Tamil</value>
+  </data>
+  <data name="lang_localtg" xml:space="preserve">
+    <value>Tadzjieks</value>
+  </data>
+  <data name="lang_localth" xml:space="preserve">
+    <value>Thais</value>
+  </data>
+  <data name="lang_localtr" xml:space="preserve">
+    <value>Turks</value>
+  </data>
+  <data name="lang_localtt" xml:space="preserve">
+    <value>Tataars</value>
+  </data>
+  <data name="lang_localug" xml:space="preserve">
+    <value>Oeigoers</value>
+  </data>
+  <data name="lang_localur" xml:space="preserve">
+    <value>Urdu</value>
+  </data>
+  <data name="lang_localuz" xml:space="preserve">
+    <value>Oezbeeks</value>
+  </data>
+  <data name="lang_localzh" xml:space="preserve">
+    <value>Chinees</value>
+  </data>
+  <data name="Acct_Download" xml:space="preserve">
+    <value>{0} downloaden</value>
+  </data>
+  <data name="unicode_ArabicComma" xml:space="preserve">
+    <value>Arabische komma</value>
+  </data>
+  <data name="unicode_ArabicDamma" xml:space="preserve">
+    <value>Arabische Damma</value>
+  </data>
+  <data name="unicode_ArabicDammatan" xml:space="preserve">
+    <value>Arabische Dammatan</value>
+  </data>
+  <data name="unicode_ArabicEmptyCentreHighStop" xml:space="preserve">
+    <value>Arabische hoge punt met open midden</value>
+  </data>
+  <data name="unicode_ArabicEmptyCentreLowStop" xml:space="preserve">
+    <value>Arabische lage punt met open midden</value>
+  </data>
+  <data name="unicode_ArabicEndOfAyah" xml:space="preserve">
+    <value>Arabisch einde van Ayah</value>
+  </data>
+  <data name="unicode_ArabicFatha" xml:space="preserve">
+    <value>Arabische Fatha</value>
+  </data>
+  <data name="unicode_ArabicFathatan" xml:space="preserve">
+    <value>Arabische Fathatan</value>
+  </data>
+  <data name="unicode_ArabicHamzaAbove" xml:space="preserve">
+    <value>Arabische Hamza boven</value>
+  </data>
+  <data name="unicode_ArabicHamzaBelow" xml:space="preserve">
+    <value>Arabische Hamza onder</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitEight" xml:space="preserve">
+    <value>Arabisch-Indisch cijfer 8</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitFive" xml:space="preserve">
+    <value>Arabisch-Indisch cijfer 5</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitFour" xml:space="preserve">
+    <value>Arabisch-Indisch cijfer 4</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitNine" xml:space="preserve">
+    <value>Arabisch-Indisch cijfer 9</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitOne" xml:space="preserve">
+    <value>Arabisch-Indisch cijfer 1</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitSeven" xml:space="preserve">
+    <value>Arabisch-Indisch cijfer 7</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitSix" xml:space="preserve">
+    <value>Arabisch-Indisch cijfer 6</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitThree" xml:space="preserve">
+    <value>Arabisch-Indisch cijfer 3</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitTwo" xml:space="preserve">
+    <value>Arabisch-Indisch cijfer 2</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitZero" xml:space="preserve">
+    <value>Arabisch-Indisch cijfer 0</value>
+  </data>
+  <data name="unicode_ArabicKasra" xml:space="preserve">
+    <value>Arabische Kasra</value>
+  </data>
+  <data name="unicode_ArabicKasratan" xml:space="preserve">
+    <value>Arabische Kasratan</value>
+  </data>
+  <data name="unicode_ArabicLetterAin" xml:space="preserve">
+    <value>Arabische letter Ain</value>
+  </data>
+  <data name="unicode_ArabicLetterAlef" xml:space="preserve">
+    <value>Arabische letter Alef</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefMaksura" xml:space="preserve">
+    <value>Arabische letter Alef Maksura</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefWasla" xml:space="preserve">
+    <value>Arabische letter Alef Wasla</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefWithHamzaAbove" xml:space="preserve">
+    <value>Arabische letter Alef met hamza erboven</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefWithHamzaBelow" xml:space="preserve">
+    <value>Arabische letter Alef met hamza eronder</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefWithMaddaAbove" xml:space="preserve">
+    <value>Arabische letter Alef met madda erboven</value>
+  </data>
+  <data name="unicode_ArabicLetterBeh" xml:space="preserve">
+    <value>Arabische letter Beh</value>
+  </data>
+  <data name="unicode_ArabicLetterDad" xml:space="preserve">
+    <value>Arabische letter Dad</value>
+  </data>
+  <data name="unicode_ArabicLetterDal" xml:space="preserve">
+    <value>Arabische letter Dal</value>
+  </data>
+  <data name="unicode_ArabicLetterFeh" xml:space="preserve">
+    <value>Arabische letter Feh</value>
+  </data>
+  <data name="unicode_ArabicLetterGaf" xml:space="preserve">
+    <value>Arabische letter Gaf</value>
+  </data>
+  <data name="unicode_ArabicLetterGhain" xml:space="preserve">
+    <value>Arabische letter Ghain</value>
+  </data>
+  <data name="unicode_ArabicLetterHah" xml:space="preserve">
+    <value>Arabische letter Hah</value>
+  </data>
+  <data name="unicode_ArabicLetterHamza" xml:space="preserve">
+    <value>Arabische letter Hamza</value>
+  </data>
+  <data name="unicode_ArabicLetterHeh" xml:space="preserve">
+    <value>Arabische letter Heh</value>
+  </data>
+  <data name="unicode_ArabicLetterJeem" xml:space="preserve">
+    <value>Arabische letter Jeem</value>
+  </data>
+  <data name="unicode_ArabicLetterKaf" xml:space="preserve">
+    <value>Arabische letter Kaf</value>
+  </data>
+  <data name="unicode_ArabicLetterKhah" xml:space="preserve">
+    <value>Arabische letter Khah</value>
+  </data>
+  <data name="unicode_ArabicLetterLam" xml:space="preserve">
+    <value>Arabische letter Lam</value>
+  </data>
+  <data name="unicode_ArabicLetterMeem" xml:space="preserve">
+    <value>Arabische letter Meem</value>
+  </data>
+  <data name="unicode_ArabicLetterNoon" xml:space="preserve">
+    <value>Arabische letter Noon</value>
+  </data>
+  <data name="unicode_ArabicLetterPeh" xml:space="preserve">
+    <value>Arabische letter Peh</value>
+  </data>
+  <data name="unicode_ArabicLetterQaf" xml:space="preserve">
+    <value>Arabische letter Qaf</value>
+  </data>
+  <data name="unicode_ArabicLetterReh" xml:space="preserve">
+    <value>Arabische letter Reh</value>
+  </data>
+  <data name="unicode_ArabicLetterSad" xml:space="preserve">
+    <value>Arabische letter Sad</value>
+  </data>
+  <data name="unicode_ArabicLetterSeen" xml:space="preserve">
+    <value>Arabische letter Seen</value>
+  </data>
+  <data name="unicode_ArabicLetterSheen" xml:space="preserve">
+    <value>Arabische letter Sheen</value>
+  </data>
+  <data name="unicode_ArabicLetterSuperscriptAlef" xml:space="preserve">
+    <value>Arabische letter Superscript Alef</value>
+  </data>
+  <data name="unicode_ArabicLetterTah" xml:space="preserve">
+    <value>Arabische letter Tah</value>
+  </data>
+  <data name="unicode_ArabicLetterTcheh" xml:space="preserve">
+    <value>Arabische letter Tcheh</value>
+  </data>
+  <data name="unicode_ArabicLetterTeh" xml:space="preserve">
+    <value>Arabische letter Teh</value>
+  </data>
+  <data name="unicode_ArabicLetterTehMarbuta" xml:space="preserve">
+    <value>Arabische letter Teh Marbuta</value>
+  </data>
+  <data name="unicode_ArabicLetterThal" xml:space="preserve">
+    <value>Arabische letter Thal</value>
+  </data>
+  <data name="unicode_ArabicLetterTheh" xml:space="preserve">
+    <value>Arabische letter Theh</value>
+  </data>
+  <data name="unicode_ArabicLetterVeh" xml:space="preserve">
+    <value>Arabische letter Veh</value>
+  </data>
+  <data name="unicode_ArabicLetterWaw" xml:space="preserve">
+    <value>Arabische letter Waw</value>
+  </data>
+  <data name="unicode_ArabicLetterWawWithHamzaAbove" xml:space="preserve">
+    <value>Arabische letter Waw met hamza erboven</value>
+  </data>
+  <data name="unicode_ArabicLetterYeh" xml:space="preserve">
+    <value>Arabische letter Yeh</value>
+  </data>
+  <data name="unicode_ArabicLetterYehWithHamzaAbove" xml:space="preserve">
+    <value>Arabische letter Yeh met hamza erboven</value>
+  </data>
+  <data name="unicode_ArabicLetterZah" xml:space="preserve">
+    <value>Arabische letter Zah</value>
+  </data>
+  <data name="unicode_ArabicLetterZain" xml:space="preserve">
+    <value>Arabische letter Zain</value>
+  </data>
+  <data name="unicode_ArabicLigatureAkbarIsolatedForm" xml:space="preserve">
+    <value>Arabische ligatuur Akbar in alleenstaande vorm</value>
+  </data>
+  <data name="unicode_ArabicLigatureAlayheIsolatedForm" xml:space="preserve">
+    <value>Arabische ligatuur Alayhe in alleenstaande vorm</value>
+  </data>
+  <data name="unicode_ArabicLigatureAllahIsolatedForm" xml:space="preserve">
+    <value>Arabische ligatuur Allah in alleenstaande vorm</value>
+  </data>
+  <data name="unicode_ArabicLigatureBismillahArRahmanArRaheem" xml:space="preserve">
+    <value>Arabische ligatuur Bismillah Ar-Rahman Ar-Raheem</value>
+  </data>
+  <data name="unicode_ArabicLigatureJallajalalouhou" xml:space="preserve">
+    <value>Arabische ligatuur Jallajalalouhou</value>
+  </data>
+  <data name="unicode_ArabicLigatureMohammadIsolatedForm" xml:space="preserve">
+    <value>Arabische ligatuur Mohammad in alleenstaande vorm</value>
+  </data>
+  <data name="unicode_ArabicLigatureQalaUsedAsKoranicStopSignIsolatedForm" xml:space="preserve">
+    <value>Arabische ligatuur Qala gebruikt als Koran-eindteken in alleenstaande vorm</value>
+  </data>
+  <data name="unicode_ArabicLigatureRasoulIsolatedForm" xml:space="preserve">
+    <value>Arabische ligatuur Rasoul in alleenstaande vorm</value>
+  </data>
+  <data name="unicode_ArabicLigatureSalamIsolatedForm" xml:space="preserve">
+    <value>Arabische ligatuur Salam in alleenstaande vorm</value>
+  </data>
+  <data name="unicode_ArabicLigatureSallaIsolatedForm" xml:space="preserve">
+    <value>Arabische ligatuur Salla in alleenstaande vorm</value>
+  </data>
+  <data name="unicode_ArabicLigatureSallallahouAlayheWasallam" xml:space="preserve">
+    <value>Arabische ligatuur Sallallahou Alayhe Wasallam</value>
+  </data>
+  <data name="unicode_ArabicLigatureSallaUsedAsKoranicStopSignIsolatedForm" xml:space="preserve">
+    <value>Arabische ligatuur Salla gebruikt als Koran-eindteken in alleenstaande vorm</value>
+  </data>
+  <data name="unicode_ArabicLigatureWasallamIsolatedForm" xml:space="preserve">
+    <value>Arabische ligatuur Wasallam in alleenstaande vorm</value>
+  </data>
+  <data name="unicode_ArabicMaddahAbove" xml:space="preserve">
+    <value>Arabische Maddah boven</value>
+  </data>
+  <data name="unicode_ArabicPlaceOfSajdah" xml:space="preserve">
+    <value>Arabische Place Of Sajdah</value>
+  </data>
+  <data name="unicode_ArabicQuestionMark" xml:space="preserve">
+    <value>Arabisch vraagteken</value>
+  </data>
+  <data name="unicode_ArabicRoundedHighStopWithFilledCentre" xml:space="preserve">
+    <value>Arabische ronde hoge punt met gevuld midden</value>
+  </data>
+  <data name="unicode_ArabicSemicolon" xml:space="preserve">
+    <value>Arabische puntkomma</value>
+  </data>
+  <data name="unicode_ArabicShadda" xml:space="preserve">
+    <value>Arabische Shadda</value>
+  </data>
+  <data name="unicode_ArabicSmallHighJeem" xml:space="preserve">
+    <value>Arabische kleine hoge Jeem</value>
+  </data>
+  <data name="unicode_ArabicSmallHighLamAlef" xml:space="preserve">
+    <value>Arabische kleine hoge Lam Alef</value>
+  </data>
+  <data name="unicode_ArabicSmallHighLigatureQafWithLamWithAlefMaksura" xml:space="preserve">
+    <value>Arabische kleine hoge ligatuur Qaf met Lam met Alef Maksura</value>
+  </data>
+  <data name="unicode_ArabicSmallHighLigatureSadWithLamWithAlefMaksura" xml:space="preserve">
+    <value>Arabische kleine hoge ligatuur Sad met Lam met Alef Maksura</value>
+  </data>
+  <data name="unicode_ArabicSmallHighMeemInitialForm" xml:space="preserve">
+    <value>Arabische kleine hoge Meem in beginvorm</value>
+  </data>
+  <data name="unicode_ArabicSmallHighMeemIsolatedForm" xml:space="preserve">
+    <value>Arabische kleine hoge Meem in alleenstaande vorm</value>
+  </data>
+  <data name="unicode_ArabicSmallHighNoon" xml:space="preserve">
+    <value>Arabische kleine hoge Noon</value>
+  </data>
+  <data name="unicode_ArabicSmallHighRoundedZero" xml:space="preserve">
+    <value>Arabische kleine hoge ronde nul</value>
+  </data>
+  <data name="unicode_ArabicSmallHighSeen" xml:space="preserve">
+    <value>Arabische kleine hoge Seen</value>
+  </data>
+  <data name="unicode_ArabicSmallHighThreeDots" xml:space="preserve">
+    <value>Arabische kleine hoge 3 punten</value>
+  </data>
+  <data name="unicode_ArabicSmallHighUprightRectangularZero" xml:space="preserve">
+    <value>Arabische kleine hoge rechtopstaande rechthoekige nul</value>
+  </data>
+  <data name="unicode_ArabicSmallLowMeem" xml:space="preserve">
+    <value>Arabische kleine lage Meem</value>
+  </data>
+  <data name="unicode_ArabicSmallLowSeen" xml:space="preserve">
+    <value>Arabische kleine lage Seen</value>
+  </data>
+  <data name="unicode_ArabicSmallWaw" xml:space="preserve">
+    <value>Arabische kleine Waw</value>
+  </data>
+  <data name="unicode_ArabicSmallYeh" xml:space="preserve">
+    <value>Arabische kleine Yeh</value>
+  </data>
+  <data name="unicode_ArabicStartOfRubElHizb" xml:space="preserve">
+    <value>Arabisch begin van Rub El Hizb</value>
+  </data>
+  <data name="unicode_ArabicSukun" xml:space="preserve">
+    <value>Arabische Sukun</value>
+  </data>
+  <data name="unicode_ArabicTatweel" xml:space="preserve">
+    <value>Arabische Tatweel</value>
+  </data>
+  <data name="unicode_Colon" xml:space="preserve">
+    <value>Dikke darm</value>
+  </data>
+  <data name="unicode_Comma" xml:space="preserve">
+    <value>Komma</value>
+  </data>
+  <data name="unicode_ExclamationMark" xml:space="preserve">
+    <value>Uitroepteken</value>
+  </data>
+  <data name="unicode_FullStop" xml:space="preserve">
+    <value>Punt</value>
+  </data>
+  <data name="unicode_HyphenMinus" xml:space="preserve">
+    <value>Koppelteken/Min-teken</value>
+  </data>
+  <data name="unicode_LeftCurlyBracket" xml:space="preserve">
+    <value>Linker accolade</value>
+  </data>
+  <data name="unicode_LeftPointingDoubleAngleQuotationMark" xml:space="preserve">
+    <value>Dubbel aanhalingsteken naar links</value>
+  </data>
+  <data name="unicode_LeftSquareBracket" xml:space="preserve">
+    <value>Linker rechte haak</value>
+  </data>
+  <data name="unicode_OrnateLeftParenthesis" xml:space="preserve">
+    <value>Sierlijk haakje links</value>
+  </data>
+  <data name="unicode_OrnateRightParenthesis" xml:space="preserve">
+    <value>Sierlijk haakje rechts</value>
+  </data>
+  <data name="unicode_QuotationMark" xml:space="preserve">
+    <value>Aanhalingsteken</value>
+  </data>
+  <data name="unicode_RialSign" xml:space="preserve">
+    <value>Rial-teken</value>
+  </data>
+  <data name="unicode_RightCurlyBracket" xml:space="preserve">
+    <value>Rechter accolade</value>
+  </data>
+  <data name="unicode_RightPointingDoubleAngleQuotationMark" xml:space="preserve">
+    <value>Dubbel aanhalingsteken naar rechts</value>
+  </data>
+  <data name="unicode_RightSquareBracket" xml:space="preserve">
+    <value>Rechter rechte haak</value>
+  </data>
+  <data name="unicode_Space" xml:space="preserve">
+    <value>Spatie</value>
+  </data>
+  <data name="Acct_CertRequest" xml:space="preserve">
+    <value>Certificaat aanvragen</value>
+  </data>
+  <data name="Acct_Certificate" xml:space="preserve">
+    <value>Certificaat</value>
+  </data>
+  <data name="Acct_CertInstall" xml:space="preserve">
+    <value>Certificaat installeren</value>
+  </data>
+  <data name="Acct_CurrentUser" xml:space="preserve">
+    <value>Huidige gebruiker</value>
+  </data>
+  <data name="Acct_DeleteCertRequest" xml:space="preserve">
+    <value>Certificaataanvraag verwijderen</value>
+  </data>
+  <data name="Acct_EnableSSL" xml:space="preserve">
+    <value>SSL inschakelen</value>
+  </data>
+  <data name="Acct_PrivateKey" xml:space="preserve">
+    <value>De persoonlijke sleutel</value>
+  </data>
+  <data name="Acct_ViewCertRequests" xml:space="preserve">
+    <value>Bekijk certificaat verzoeken</value>
+  </data>
+  <data name="Acct_ViewSites" xml:space="preserve">
+    <value>Sites weergeven</value>
+  </data>
+  <data name="Acct_CertInstallIntermed" xml:space="preserve">
+    <value>Intermediair certificaat installeren</value>
+  </data>
+  <data name="unicode_LeftToRightEmbedding" xml:space="preserve">
+    <value>Links-naar-rechts ingesloten</value>
+  </data>
+  <data name="unicode_RightToLeftEmbedding" xml:space="preserve">
+    <value>Rechts-naar-links ingesloten</value>
+  </data>
+  <data name="unicode_LeftToRightMark" xml:space="preserve">
+    <value>Links-naar-rechts-teken (LRM)</value>
+  </data>
+  <data name="unicode_LeftToRightOverride" xml:space="preserve">
+    <value>Links-naar-rechts opheffen</value>
+  </data>
+  <data name="unicode_PopDirectionalFormatting" xml:space="preserve">
+    <value>Pop Directional Formatting</value>
+  </data>
+  <data name="unicode_RightToLeftMark" xml:space="preserve">
+    <value>Rechts-naar-links-teken (RLM)</value>
+  </data>
+  <data name="unicode_RightToLeftOverride" xml:space="preserve">
+    <value>Rechts-naar-links opheffen</value>
+  </data>
+</root>

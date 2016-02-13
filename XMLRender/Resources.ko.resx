@@ -1,0 +1,903 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Acct_AccountActivateSuccess" xml:space="preserve">
+    <value>계정 활성화입니다.</value>
+  </data>
+  <data name="Acct_AccountAlreadyActivated" xml:space="preserve">
+    <value>계정 활성화입니다.</value>
+  </data>
+  <data name="Acct_AccountDeleteSuccess" xml:space="preserve">
+    <value>계정 성공적으로 삭제 되었습니다.</value>
+  </data>
+  <data name="Acct_AccountNotActivated" xml:space="preserve">
+    <value>하지 계정 아직 귀하의 이메일을 먼저 확인 하시기 바랍니다 활성화 또는 추가 정품 인증 코드를 요청.</value>
+  </data>
+  <data name="Acct_ActivateAccount" xml:space="preserve">
+    <value>계정 활성화</value>
+  </data>
+  <data name="Acct_ActivationAccountBody" xml:space="preserve">
+    <value>이 전자 메일 계정 {0}의 활성화 요청: {1}. 다음 링크를 사용 하십시오: {2} 또는 페이지 {3}가 사용자 이름 및 다음 정품 인증 코드를 입력 하 여: {4}</value>
+  </data>
+  <data name="Acct_ActivationAccountSubject" xml:space="preserve">
+    <value>계정 {0}에 대 한 활성화</value>
+  </data>
+  <data name="Acct_ActivationCode" xml:space="preserve">
+    <value>활성화 코드</value>
+  </data>
+  <data name="Acct_BadEmailFormat" xml:space="preserve">
+    <value>유효한 형식에 없는 전자 메일 주소입니다.</value>
+  </data>
+  <data name="Acct_Certain" xml:space="preserve">
+    <value>당신은 특정?</value>
+  </data>
+  <data name="Acct_ChangeEmailAddress" xml:space="preserve">
+    <value>전자 메일 주소 변경</value>
+  </data>
+  <data name="Acct_ChangePassword" xml:space="preserve">
+    <value>비밀번호 변경</value>
+  </data>
+  <data name="Acct_ChangeUsername" xml:space="preserve">
+    <value>사용자 이름 변경</value>
+  </data>
+  <data name="Acct_CheckEmailNotice" xml:space="preserve">
+    <value>제공 된 주소로 보낸 활성화입니다.  등록 완료 됩니다 귀하의 계정을 활성화 하 여 전자 메일을 확인 하시기 바랍니다.</value>
+  </data>
+  <data name="Acct_CleanupStale" xml:space="preserve">
+    <value>정리 부실</value>
+  </data>
+  <data name="Acct_ClearCache" xml:space="preserve">
+    <value>캐시 지우기</value>
+  </data>
+  <data name="Acct_ClearDiskCache" xml:space="preserve">
+    <value>디스크 캐시</value>
+  </data>
+  <data name="Acct_ConfirmEmailAddress" xml:space="preserve">
+    <value>전자 메일 주소 확인</value>
+  </data>
+  <data name="Acct_ConfirmPassword" xml:space="preserve">
+    <value>암호 확인</value>
+  </data>
+  <data name="Acct_ControlPanel" xml:space="preserve">
+    <value>제어판</value>
+  </data>
+  <data name="Acct_CreateDatabase" xml:space="preserve">
+    <value>데이터베이스 만들기</value>
+  </data>
+  <data name="Acct_DeleteAccount" xml:space="preserve">
+    <value>계정 삭제</value>
+  </data>
+  <data name="Acct_DotNetVersion" xml:space="preserve">
+    <value>닷 넷 버전</value>
+  </data>
+  <data name="Acct_DuplicateUser" xml:space="preserve">
+    <value>이 이름의 사용자가 이미 존재 다른를 선택 하십시오.</value>
+  </data>
+  <data name="Acct_EmailAddress" xml:space="preserve">
+    <value>전자 메일 주소</value>
+  </data>
+  <data name="Acct_EmailChangeReactivate" xml:space="preserve">
+    <value>전자 메일 주소를 변경 하 고 계정을 다시 활성화 하려면 정품 인증 전자 메일 전송.</value>
+  </data>
+  <data name="Acct_EmailInUse" xml:space="preserve">
+    <value>전자 메일을 이미 사용에서 하십시오 기존 자격 증명으로 로그인.</value>
+  </data>
+  <data name="Acct_EmailsNotMatch" xml:space="preserve">
+    <value>전자 메일 주소와 일치 하지 않는</value>
+  </data>
+  <data name="Acct_ForgotPassword" xml:space="preserve">
+    <value>암호 잊음</value>
+  </data>
+  <data name="Acct_ForgotUsername" xml:space="preserve">
+    <value>사용자 이름을 잊어버렸습니다.</value>
+  </data>
+  <data name="Acct_Home" xml:space="preserve">
+    <value>홈</value>
+  </data>
+  <data name="Acct_IncorrectActivationCode" xml:space="preserve">
+    <value>잘못 된 활성화 코드입니다.</value>
+  </data>
+  <data name="Acct_IncorrectPasswordResetCode" xml:space="preserve">
+    <value>잘못 된 암호 코드를 다시 설정합니다.</value>
+  </data>
+  <data name="Acct_InvalidInput" xml:space="preserve">
+    <value>잘못된 입력입니다.</value>
+  </data>
+  <data name="Acct_InvalidUsernamePassword" xml:space="preserve">
+    <value>잘못된 사용자 이름 또는 암호입니다.</value>
+  </data>
+  <data name="Acct_Login" xml:space="preserve">
+    <value>로그인</value>
+  </data>
+  <data name="Acct_LoginSuccess" xml:space="preserve">
+    <value>로그인 성공입니다.</value>
+  </data>
+  <data name="Acct_Logoff" xml:space="preserve">
+    <value>로그 오프</value>
+  </data>
+  <data name="Acct_LogoffSuccess" xml:space="preserve">
+    <value>로그 오프 성공입니다.</value>
+  </data>
+  <data name="Acct_MinimumPassword" xml:space="preserve">
+    <value>암호는 8 자 이상 이어야 합니다.</value>
+  </data>
+  <data name="Acct_MinimumUsername" xml:space="preserve">
+    <value>사용자 이름 4 자 여야 합니다.</value>
+  </data>
+  <data name="Acct_No" xml:space="preserve">
+    <value>아니요</value>
+  </data>
+  <data name="Acct_NotConfirmDelete" xml:space="preserve">
+    <value>계정 삭제를 확인 해야 합니다.</value>
+  </data>
+  <data name="Acct_NoUserExists" xml:space="preserve">
+    <value>사용자 입력 한 전자 메일 주소에 대 한 존재합니다.</value>
+  </data>
+  <data name="Acct_Password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="Acct_PasswordAlreadyReset" xml:space="preserve">
+    <value>암호를 이미 다시 설정 하거나 프로세스를 시작할 수 없습니다.</value>
+  </data>
+  <data name="Acct_PasswordChangedBody" xml:space="preserve">
+    <value>이 전자 메일 계정 {0}의 암호 변경의 통보 하는 것입니다: {1}.</value>
+  </data>
+  <data name="Acct_PasswordChangedSubject" xml:space="preserve">
+    <value>암호 계정 {0}에 대 한 변경</value>
+  </data>
+  <data name="Acct_PasswordChangeSuccess" xml:space="preserve">
+    <value>암호가 변경되었습니다.</value>
+  </data>
+  <data name="Acct_PasswordEmailSent" xml:space="preserve">
+    <value>전자 메일이 보냈습니다 시작 파일에 귀하의 주소로 비밀 번호 재설정 프로세스.</value>
+  </data>
+  <data name="Acct_PasswordResetBody" xml:space="preserve">
+    <value>이 전자 메일 계정 {0}의 암호를 다시 설정 하는 것입니다: {1}. 다음 링크를 사용 하십시오: {3} 또는 페이지를 진행 하 여 {4} 사용자 이름 및 다음 암호를 입력 하 고 코드를 재설정: {5}</value>
+  </data>
+  <data name="Acct_PasswordResetCode" xml:space="preserve">
+    <value>비밀 번호 재설정 코드</value>
+  </data>
+  <data name="Acct_PasswordResetSubject" xml:space="preserve">
+    <value>암호 재설정 계정 {0}에 대 한</value>
+  </data>
+  <data name="Acct_PasswordResetSuccess" xml:space="preserve">
+    <value>암호는 성공적으로 다시 설정합니다.</value>
+  </data>
+  <data name="Acct_PasswordsNotMatch" xml:space="preserve">
+    <value>암호가 일치하지 않음</value>
+  </data>
+  <data name="Acct_Register" xml:space="preserve">
+    <value>등록</value>
+  </data>
+  <data name="Acct_Remember" xml:space="preserve">
+    <value>기억?</value>
+  </data>
+  <data name="Acct_RemoveDatabase" xml:space="preserve">
+    <value>데이터베이스 제거</value>
+  </data>
+  <data name="Acct_ResendActivationEmail" xml:space="preserve">
+    <value>활성화 이메일을 다시 보내기</value>
+  </data>
+  <data name="Acct_ResetPassword" xml:space="preserve">
+    <value>암호 다시 설정</value>
+  </data>
+  <data name="Acct_RetrievePassword" xml:space="preserve">
+    <value>암호 검색</value>
+  </data>
+  <data name="Acct_RetrieveUsername" xml:space="preserve">
+    <value>사용자 이름 검색</value>
+  </data>
+  <data name="Acct_SendActivationCode" xml:space="preserve">
+    <value>정품 인증 코드를 보내</value>
+  </data>
+  <data name="Acct_Username" xml:space="preserve">
+    <value>사용자 이름</value>
+  </data>
+  <data name="Acct_UsernameChangedBody" xml:space="preserve">
+    <value>이 전자 메일 {0} 계정의 계정 이름 변경의 통보 하는 것입니다: {1}.</value>
+  </data>
+  <data name="Acct_UsernameChangedSubject" xml:space="preserve">
+    <value>계정 {0}에 대 한 사용자 이름 변경</value>
+  </data>
+  <data name="Acct_UsernameChangeSuccess" xml:space="preserve">
+    <value>성공적으로 변경 하는 사용자 이름입니다.</value>
+  </data>
+  <data name="Acct_UsernameEmailSent" xml:space="preserve">
+    <value>전자 메일 사용자 이름으로 파일에 귀하의 주소로 보냈습니다.</value>
+  </data>
+  <data name="Acct_UsernameReminderBody" xml:space="preserve">
+    <value>이 전자 메일은 계정 {0}의 알림: {1}.</value>
+  </data>
+  <data name="Acct_UsernameReminderSubject" xml:space="preserve">
+    <value>계정 {0}에 대 한 사용자 알림</value>
+  </data>
+  <data name="Acct_UserNotFound" xml:space="preserve">
+    <value>사용자는 존재 하지 않는다.</value>
+  </data>
+  <data name="Acct_ViewCache" xml:space="preserve">
+    <value>보기 캐시</value>
+  </data>
+  <data name="Acct_ViewDiskCache" xml:space="preserve">
+    <value>보기 디스크 캐시</value>
+  </data>
+  <data name="Acct_ViewHeaders" xml:space="preserve">
+    <value>보기 머리글</value>
+  </data>
+  <data name="Acct_Yes" xml:space="preserve">
+    <value>예</value>
+  </data>
+  <data name="lang_am" xml:space="preserve">
+    <value>ኣማርኛ</value>
+  </data>
+  <data name="lang_ar" xml:space="preserve">
+    <value>العربية</value>
+  </data>
+  <data name="lang_az" xml:space="preserve">
+    <value>Azərbaycan 딜리</value>
+  </data>
+  <data name="lang_ber" xml:space="preserve">
+    <value>타마지트어</value>
+  </data>
+  <data name="lang_bg" xml:space="preserve">
+    <value>БЪЛГАРСКИ</value>
+  </data>
+  <data name="lang_bn" xml:space="preserve">
+    <value>বাংলা</value>
+  </data>
+  <data name="lang_bs" xml:space="preserve">
+    <value>bosanski</value>
+  </data>
+  <data name="lang_cs" xml:space="preserve">
+    <value>Čeština</value>
+  </data>
+  <data name="lang_de" xml:space="preserve">
+    <value>Deutsch</value>
+  </data>
+  <data name="lang_dv" xml:space="preserve">
+    <value>ދިވެހި</value>
+  </data>
+  <data name="lang_en" xml:space="preserve">
+    <value>영어</value>
+  </data>
+  <data name="lang_es" xml:space="preserve">
+    <value>스페인어</value>
+  </data>
+  <data name="lang_fa" xml:space="preserve">
+    <value>فارسى</value>
+  </data>
+  <data name="lang_fr" xml:space="preserve">
+    <value>프랑스어</value>
+  </data>
+  <data name="lang_ha" xml:space="preserve">
+    <value>Ḥawsa</value>
+  </data>
+  <data name="lang_hi" xml:space="preserve">
+    <value>हिन्दी</value>
+  </data>
+  <data name="lang_id" xml:space="preserve">
+    <value>바 하 사 인도네시아</value>
+  </data>
+  <data name="lang_it" xml:space="preserve">
+    <value>이탈리아어</value>
+  </data>
+  <data name="lang_ja" xml:space="preserve">
+    <value>日本語</value>
+  </data>
+  <data name="lang_ko" xml:space="preserve">
+    <value>한국어</value>
+  </data>
+  <data name="lang_ku" xml:space="preserve">
+    <value>کوردی</value>
+  </data>
+  <data name="lang_ml" xml:space="preserve">
+    <value>മലയാളം</value>
+  </data>
+  <data name="lang_ms" xml:space="preserve">
+    <value>말레이어</value>
+  </data>
+  <data name="lang_nl" xml:space="preserve">
+    <value>네덜란드어</value>
+  </data>
+  <data name="lang_no" xml:space="preserve">
+    <value>Norsk</value>
+  </data>
+  <data name="lang_pl" xml:space="preserve">
+    <value>고객 지원</value>
+  </data>
+  <data name="lang_pt" xml:space="preserve">
+    <value>포르투갈어</value>
+  </data>
+  <data name="lang_ro" xml:space="preserve">
+    <value>रोमानो</value>
+  </data>
+  <data name="lang_ru" xml:space="preserve">
+    <value>РУССКИЙ ЯЗЫК</value>
+  </data>
+  <data name="lang_sd" xml:space="preserve">
+    <value>سنڌي</value>
+  </data>
+  <data name="lang_so" xml:space="preserve">
+    <value>어 Soomaali</value>
+  </data>
+  <data name="lang_sq" xml:space="preserve">
+    <value>shqip</value>
+  </data>
+  <data name="lang_sv" xml:space="preserve">
+    <value>Svenska</value>
+  </data>
+  <data name="lang_sw" xml:space="preserve">
+    <value>스와힐리어</value>
+  </data>
+  <data name="lang_ta" xml:space="preserve">
+    <value>தமிழ்</value>
+  </data>
+  <data name="lang_tg" xml:space="preserve">
+    <value>ТОҶИКИ</value>
+  </data>
+  <data name="lang_th" xml:space="preserve">
+    <value>ภาษาไทย</value>
+  </data>
+  <data name="lang_tr" xml:space="preserve">
+    <value>보고</value>
+  </data>
+  <data name="lang_tt" xml:space="preserve">
+    <value>ТАТАРЧА</value>
+  </data>
+  <data name="lang_ug" xml:space="preserve">
+    <value>ئۇيغۇر</value>
+  </data>
+  <data name="lang_ur" xml:space="preserve">
+    <value>اردو</value>
+  </data>
+  <data name="lang_uz" xml:space="preserve">
+    <value>o'zbek tili ўзбек тили</value>
+  </data>
+  <data name="lang_zh" xml:space="preserve">
+    <value>中文</value>
+  </data>
+  <data name="lang_localam" xml:space="preserve">
+    <value>암하라어</value>
+  </data>
+  <data name="lang_localar" xml:space="preserve">
+    <value>아랍어</value>
+  </data>
+  <data name="lang_localaz" xml:space="preserve">
+    <value>아제르바이잔어</value>
+  </data>
+  <data name="lang_localber" xml:space="preserve">
+    <value>Amazigh</value>
+  </data>
+  <data name="lang_localbg" xml:space="preserve">
+    <value>불가리아어</value>
+  </data>
+  <data name="lang_localbn" xml:space="preserve">
+    <value>벵골어</value>
+  </data>
+  <data name="lang_localbs" xml:space="preserve">
+    <value>보스니아어</value>
+  </data>
+  <data name="lang_localcs" xml:space="preserve">
+    <value>체코어</value>
+  </data>
+  <data name="lang_localde" xml:space="preserve">
+    <value>독일어</value>
+  </data>
+  <data name="lang_localdv" xml:space="preserve">
+    <value>디베히어</value>
+  </data>
+  <data name="lang_localen" xml:space="preserve">
+    <value>영어</value>
+  </data>
+  <data name="lang_locales" xml:space="preserve">
+    <value>스페인어</value>
+  </data>
+  <data name="lang_localfa" xml:space="preserve">
+    <value>이란어</value>
+  </data>
+  <data name="lang_localfr" xml:space="preserve">
+    <value>프랑스어</value>
+  </data>
+  <data name="lang_localha" xml:space="preserve">
+    <value>하우사어</value>
+  </data>
+  <data name="lang_localhi" xml:space="preserve">
+    <value>힌디어</value>
+  </data>
+  <data name="lang_localid" xml:space="preserve">
+    <value>인도네시아어</value>
+  </data>
+  <data name="lang_localit" xml:space="preserve">
+    <value>이탈리아어</value>
+  </data>
+  <data name="lang_localja" xml:space="preserve">
+    <value>일본어</value>
+  </data>
+  <data name="lang_localko" xml:space="preserve">
+    <value>한국어</value>
+  </data>
+  <data name="lang_localku" xml:space="preserve">
+    <value>쿠르드어</value>
+  </data>
+  <data name="lang_localml" xml:space="preserve">
+    <value>말라얄람어</value>
+  </data>
+  <data name="lang_localms" xml:space="preserve">
+    <value>말레이어</value>
+  </data>
+  <data name="lang_localnl" xml:space="preserve">
+    <value>네덜란드어</value>
+  </data>
+  <data name="lang_localno" xml:space="preserve">
+    <value>노르웨이어</value>
+  </data>
+  <data name="lang_localpl" xml:space="preserve">
+    <value>폴란드어</value>
+  </data>
+  <data name="lang_localpt" xml:space="preserve">
+    <value>포르투갈어</value>
+  </data>
+  <data name="lang_localro" xml:space="preserve">
+    <value>루마니아어</value>
+  </data>
+  <data name="lang_localru" xml:space="preserve">
+    <value>러시아어</value>
+  </data>
+  <data name="lang_localsd" xml:space="preserve">
+    <value>신디어</value>
+  </data>
+  <data name="lang_localso" xml:space="preserve">
+    <value>소말리아어</value>
+  </data>
+  <data name="lang_localsq" xml:space="preserve">
+    <value>알바니아어</value>
+  </data>
+  <data name="lang_localsv" xml:space="preserve">
+    <value>스웨덴어</value>
+  </data>
+  <data name="lang_localsw" xml:space="preserve">
+    <value>스와힐리어</value>
+  </data>
+  <data name="lang_localta" xml:space="preserve">
+    <value>타밀어</value>
+  </data>
+  <data name="lang_localtg" xml:space="preserve">
+    <value>타지키스탄어</value>
+  </data>
+  <data name="lang_localth" xml:space="preserve">
+    <value>태국어</value>
+  </data>
+  <data name="lang_localtr" xml:space="preserve">
+    <value>터키어</value>
+  </data>
+  <data name="lang_localtt" xml:space="preserve">
+    <value>타타르어</value>
+  </data>
+  <data name="lang_localug" xml:space="preserve">
+    <value>위구르어</value>
+  </data>
+  <data name="lang_localur" xml:space="preserve">
+    <value>우르두어</value>
+  </data>
+  <data name="lang_localuz" xml:space="preserve">
+    <value>우즈베크어</value>
+  </data>
+  <data name="lang_localzh" xml:space="preserve">
+    <value>중국어</value>
+  </data>
+  <data name="Acct_Download" xml:space="preserve">
+    <value>{0} 다운로드</value>
+  </data>
+  <data name="unicode_ArabicComma" xml:space="preserve">
+    <value>Arabic Comma</value>
+  </data>
+  <data name="unicode_ArabicDamma" xml:space="preserve">
+    <value>Arabic Damma</value>
+  </data>
+  <data name="unicode_ArabicDammatan" xml:space="preserve">
+    <value>Arabic Dammatan</value>
+  </data>
+  <data name="unicode_ArabicEmptyCentreHighStop" xml:space="preserve">
+    <value>Arabic Empty Centre High Stop</value>
+  </data>
+  <data name="unicode_ArabicEmptyCentreLowStop" xml:space="preserve">
+    <value>Arabic Empty Centre Low Stop</value>
+  </data>
+  <data name="unicode_ArabicEndOfAyah" xml:space="preserve">
+    <value>Arabic End Of Ayah</value>
+  </data>
+  <data name="unicode_ArabicFatha" xml:space="preserve">
+    <value>Arabic Fatha</value>
+  </data>
+  <data name="unicode_ArabicFathatan" xml:space="preserve">
+    <value>Arabic Fathatan</value>
+  </data>
+  <data name="unicode_ArabicHamzaAbove" xml:space="preserve">
+    <value>Arabic Hamza Above</value>
+  </data>
+  <data name="unicode_ArabicHamzaBelow" xml:space="preserve">
+    <value>Arabic Hamza Below</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitEight" xml:space="preserve">
+    <value>Arabic-Indic Digit Eight</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitFive" xml:space="preserve">
+    <value>Arabic-Indic Digit Five</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitFour" xml:space="preserve">
+    <value>Arabic-Indic Digit Four</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitNine" xml:space="preserve">
+    <value>Arabic-Indic Digit Nine</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitOne" xml:space="preserve">
+    <value>Arabic-Indic Digit One</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitSeven" xml:space="preserve">
+    <value>Arabic-Indic Digit Seven</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitSix" xml:space="preserve">
+    <value>Arabic-Indic Digit Six</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitThree" xml:space="preserve">
+    <value>Arabic-Indic Digit Three</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitTwo" xml:space="preserve">
+    <value>Arabic-Indic Digit Two</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitZero" xml:space="preserve">
+    <value>Arabic-Indic Digit Zero</value>
+  </data>
+  <data name="unicode_ArabicKasra" xml:space="preserve">
+    <value>Arabic Kasra</value>
+  </data>
+  <data name="unicode_ArabicKasratan" xml:space="preserve">
+    <value>Arabic Kasratan</value>
+  </data>
+  <data name="unicode_ArabicLetterAin" xml:space="preserve">
+    <value>Arabic Letter Ain</value>
+  </data>
+  <data name="unicode_ArabicLetterAlef" xml:space="preserve">
+    <value>Arabic Letter Alef</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefMaksura" xml:space="preserve">
+    <value>Arabic Letter Alef Maksura</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefWasla" xml:space="preserve">
+    <value>Arabic Letter Alef Wasla</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefWithHamzaAbove" xml:space="preserve">
+    <value>Arabic Letter Alef With Hamza Above</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefWithHamzaBelow" xml:space="preserve">
+    <value>Arabic Letter Alef With Hamza Below</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefWithMaddaAbove" xml:space="preserve">
+    <value>Arabic Letter Alef With Madda Above</value>
+  </data>
+  <data name="unicode_ArabicLetterBeh" xml:space="preserve">
+    <value>Arabic Letter Beh</value>
+  </data>
+  <data name="unicode_ArabicLetterDad" xml:space="preserve">
+    <value>Arabic Letter Dad</value>
+  </data>
+  <data name="unicode_ArabicLetterDal" xml:space="preserve">
+    <value>Arabic Letter Dal</value>
+  </data>
+  <data name="unicode_ArabicLetterFeh" xml:space="preserve">
+    <value>Arabic Letter Feh</value>
+  </data>
+  <data name="unicode_ArabicLetterGaf" xml:space="preserve">
+    <value>Arabic Letter Gaf</value>
+  </data>
+  <data name="unicode_ArabicLetterGhain" xml:space="preserve">
+    <value>Arabic Letter Ghain</value>
+  </data>
+  <data name="unicode_ArabicLetterHah" xml:space="preserve">
+    <value>Arabic Letter Hah</value>
+  </data>
+  <data name="unicode_ArabicLetterHamza" xml:space="preserve">
+    <value>Arabic Letter Hamza</value>
+  </data>
+  <data name="unicode_ArabicLetterHeh" xml:space="preserve">
+    <value>Arabic Letter Heh</value>
+  </data>
+  <data name="unicode_ArabicLetterJeem" xml:space="preserve">
+    <value>Arabic Letter Jeem</value>
+  </data>
+  <data name="unicode_ArabicLetterKaf" xml:space="preserve">
+    <value>Arabic Letter Kaf</value>
+  </data>
+  <data name="unicode_ArabicLetterKhah" xml:space="preserve">
+    <value>Arabic Letter Khah</value>
+  </data>
+  <data name="unicode_ArabicLetterLam" xml:space="preserve">
+    <value>Arabic Letter Lam</value>
+  </data>
+  <data name="unicode_ArabicLetterMeem" xml:space="preserve">
+    <value>Arabic Letter Meem</value>
+  </data>
+  <data name="unicode_ArabicLetterNoon" xml:space="preserve">
+    <value>Arabic Letter Noon</value>
+  </data>
+  <data name="unicode_ArabicLetterPeh" xml:space="preserve">
+    <value>Arabic Letter Peh</value>
+  </data>
+  <data name="unicode_ArabicLetterQaf" xml:space="preserve">
+    <value>Arabic Letter Qaf</value>
+  </data>
+  <data name="unicode_ArabicLetterReh" xml:space="preserve">
+    <value>Arabic Letter Reh</value>
+  </data>
+  <data name="unicode_ArabicLetterSad" xml:space="preserve">
+    <value>Arabic Letter Sad</value>
+  </data>
+  <data name="unicode_ArabicLetterSeen" xml:space="preserve">
+    <value>Arabic Letter Seen</value>
+  </data>
+  <data name="unicode_ArabicLetterSheen" xml:space="preserve">
+    <value>Arabic Letter Sheen</value>
+  </data>
+  <data name="unicode_ArabicLetterSuperscriptAlef" xml:space="preserve">
+    <value>Arabic Letter Superscript Alef</value>
+  </data>
+  <data name="unicode_ArabicLetterTah" xml:space="preserve">
+    <value>Arabic Letter Tah</value>
+  </data>
+  <data name="unicode_ArabicLetterTcheh" xml:space="preserve">
+    <value>Arabic Letter Tcheh</value>
+  </data>
+  <data name="unicode_ArabicLetterTeh" xml:space="preserve">
+    <value>Arabic Letter Teh</value>
+  </data>
+  <data name="unicode_ArabicLetterTehMarbuta" xml:space="preserve">
+    <value>Arabic Letter Teh Marbuta</value>
+  </data>
+  <data name="unicode_ArabicLetterThal" xml:space="preserve">
+    <value>Arabic Letter Thal</value>
+  </data>
+  <data name="unicode_ArabicLetterTheh" xml:space="preserve">
+    <value>Arabic Letter Theh</value>
+  </data>
+  <data name="unicode_ArabicLetterVeh" xml:space="preserve">
+    <value>Arabic Letter Veh</value>
+  </data>
+  <data name="unicode_ArabicLetterWaw" xml:space="preserve">
+    <value>Arabic Letter Waw</value>
+  </data>
+  <data name="unicode_ArabicLetterWawWithHamzaAbove" xml:space="preserve">
+    <value>Arabic Letter Waw With Hamza Above</value>
+  </data>
+  <data name="unicode_ArabicLetterYeh" xml:space="preserve">
+    <value>Arabic Letter Yeh</value>
+  </data>
+  <data name="unicode_ArabicLetterYehWithHamzaAbove" xml:space="preserve">
+    <value>Arabic Letter Yeh With Hamza Above</value>
+  </data>
+  <data name="unicode_ArabicLetterZah" xml:space="preserve">
+    <value>Arabic Letter Zah</value>
+  </data>
+  <data name="unicode_ArabicLetterZain" xml:space="preserve">
+    <value>Arabic Letter Zain</value>
+  </data>
+  <data name="unicode_ArabicLigatureAkbarIsolatedForm" xml:space="preserve">
+    <value>Arabic Ligature Akbar Isolated Form</value>
+  </data>
+  <data name="unicode_ArabicLigatureAlayheIsolatedForm" xml:space="preserve">
+    <value>Arabic Ligature Alayhe Isolated Form</value>
+  </data>
+  <data name="unicode_ArabicLigatureAllahIsolatedForm" xml:space="preserve">
+    <value>Arabic Ligature Allah Isolated Form</value>
+  </data>
+  <data name="unicode_ArabicLigatureBismillahArRahmanArRaheem" xml:space="preserve">
+    <value>Arabic Ligature Bismillah Ar-Rahman Ar-Raheem</value>
+  </data>
+  <data name="unicode_ArabicLigatureJallajalalouhou" xml:space="preserve">
+    <value>Arabic Ligature Jallajalalouhou</value>
+  </data>
+  <data name="unicode_ArabicLigatureMohammadIsolatedForm" xml:space="preserve">
+    <value>Arabic Ligature Mohammad Isolated Form</value>
+  </data>
+  <data name="unicode_ArabicLigatureQalaUsedAsKoranicStopSignIsolatedForm" xml:space="preserve">
+    <value>Arabic Ligature Qala Used As Koranic Stop Sign Isolated Form</value>
+  </data>
+  <data name="unicode_ArabicLigatureRasoulIsolatedForm" xml:space="preserve">
+    <value>Arabic Ligature Rasoul Isolated Form</value>
+  </data>
+  <data name="unicode_ArabicLigatureSalamIsolatedForm" xml:space="preserve">
+    <value>Arabic Ligature Salam Isolated Form</value>
+  </data>
+  <data name="unicode_ArabicLigatureSallaIsolatedForm" xml:space="preserve">
+    <value>Arabic Ligature Salla Isolated Form</value>
+  </data>
+  <data name="unicode_ArabicLigatureSallallahouAlayheWasallam" xml:space="preserve">
+    <value>Arabic Ligature Sallallahou Alayhe Wasallam</value>
+  </data>
+  <data name="unicode_ArabicLigatureSallaUsedAsKoranicStopSignIsolatedForm" xml:space="preserve">
+    <value>Arabic Ligature Salla Used As Koranic Stop Sign Isolated Form</value>
+  </data>
+  <data name="unicode_ArabicLigatureWasallamIsolatedForm" xml:space="preserve">
+    <value>Arabic Ligature Wasallam Isolated Form</value>
+  </data>
+  <data name="unicode_ArabicMaddahAbove" xml:space="preserve">
+    <value>Arabic Maddah Above</value>
+  </data>
+  <data name="unicode_ArabicPlaceOfSajdah" xml:space="preserve">
+    <value>Arabic Place Of Sajdah</value>
+  </data>
+  <data name="unicode_ArabicQuestionMark" xml:space="preserve">
+    <value>Arabic Question Mark</value>
+  </data>
+  <data name="unicode_ArabicRoundedHighStopWithFilledCentre" xml:space="preserve">
+    <value>Arabic Rounded High Stop With Filled Centre</value>
+  </data>
+  <data name="unicode_ArabicSemicolon" xml:space="preserve">
+    <value>Arabic Semicolon</value>
+  </data>
+  <data name="unicode_ArabicShadda" xml:space="preserve">
+    <value>Arabic Shadda</value>
+  </data>
+  <data name="unicode_ArabicSmallHighJeem" xml:space="preserve">
+    <value>Arabic Small High Jeem</value>
+  </data>
+  <data name="unicode_ArabicSmallHighLamAlef" xml:space="preserve">
+    <value>Arabic Small High Lam Alef</value>
+  </data>
+  <data name="unicode_ArabicSmallHighLigatureQafWithLamWithAlefMaksura" xml:space="preserve">
+    <value>Arabic Small High Ligature Qaf With Lam With Alef Maksura</value>
+  </data>
+  <data name="unicode_ArabicSmallHighLigatureSadWithLamWithAlefMaksura" xml:space="preserve">
+    <value>Arabic Small High Ligature Sad With Lam With Alef Maksura</value>
+  </data>
+  <data name="unicode_ArabicSmallHighMeemInitialForm" xml:space="preserve">
+    <value>Arabic Small High Meem Initial Form</value>
+  </data>
+  <data name="unicode_ArabicSmallHighMeemIsolatedForm" xml:space="preserve">
+    <value>Arabic Small High Meem Isolated Form</value>
+  </data>
+  <data name="unicode_ArabicSmallHighNoon" xml:space="preserve">
+    <value>Arabic Small High Noon</value>
+  </data>
+  <data name="unicode_ArabicSmallHighRoundedZero" xml:space="preserve">
+    <value>Arabic Small High Rounded Zero</value>
+  </data>
+  <data name="unicode_ArabicSmallHighSeen" xml:space="preserve">
+    <value>Arabic Small High Seen</value>
+  </data>
+  <data name="unicode_ArabicSmallHighThreeDots" xml:space="preserve">
+    <value>Arabic Small High Three Dots</value>
+  </data>
+  <data name="unicode_ArabicSmallHighUprightRectangularZero" xml:space="preserve">
+    <value>Arabic Small High Upright Rectangular Zero</value>
+  </data>
+  <data name="unicode_ArabicSmallLowMeem" xml:space="preserve">
+    <value>Arabic Small Low Meem</value>
+  </data>
+  <data name="unicode_ArabicSmallLowSeen" xml:space="preserve">
+    <value>Arabic Small Low Seen</value>
+  </data>
+  <data name="unicode_ArabicSmallWaw" xml:space="preserve">
+    <value>Arabic Small Waw</value>
+  </data>
+  <data name="unicode_ArabicSmallYeh" xml:space="preserve">
+    <value>Arabic Small Yeh</value>
+  </data>
+  <data name="unicode_ArabicStartOfRubElHizb" xml:space="preserve">
+    <value>Arabic Start Of Rub El Hizb</value>
+  </data>
+  <data name="unicode_ArabicSukun" xml:space="preserve">
+    <value>Arabic Sukun</value>
+  </data>
+  <data name="unicode_ArabicTatweel" xml:space="preserve">
+    <value>Arabic Tatweel</value>
+  </data>
+  <data name="unicode_Colon" xml:space="preserve">
+    <value>콜론</value>
+  </data>
+  <data name="unicode_Comma" xml:space="preserve">
+    <value>쉼표</value>
+  </data>
+  <data name="unicode_ExclamationMark" xml:space="preserve">
+    <value>느낌표</value>
+  </data>
+  <data name="unicode_FullStop" xml:space="preserve">
+    <value>Full Stop</value>
+  </data>
+  <data name="unicode_HyphenMinus" xml:space="preserve">
+    <value>Hyphen-Minus</value>
+  </data>
+  <data name="unicode_LeftCurlyBracket" xml:space="preserve">
+    <value>Left Curly Bracket</value>
+  </data>
+  <data name="unicode_LeftPointingDoubleAngleQuotationMark" xml:space="preserve">
+    <value>Left-Pointing Double Angle Quotation Mark</value>
+  </data>
+  <data name="unicode_LeftSquareBracket" xml:space="preserve">
+    <value>왼쪽 대괄호</value>
+  </data>
+  <data name="unicode_OrnateLeftParenthesis" xml:space="preserve">
+    <value>Ornate Left Parenthesis</value>
+  </data>
+  <data name="unicode_OrnateRightParenthesis" xml:space="preserve">
+    <value>Ornate Right Parenthesis</value>
+  </data>
+  <data name="unicode_QuotationMark" xml:space="preserve">
+    <value>따옴표</value>
+  </data>
+  <data name="unicode_RialSign" xml:space="preserve">
+    <value>Rial Sign</value>
+  </data>
+  <data name="unicode_RightCurlyBracket" xml:space="preserve">
+    <value>Right Curly Bracket</value>
+  </data>
+  <data name="unicode_RightPointingDoubleAngleQuotationMark" xml:space="preserve">
+    <value>Right-Pointing Double Angle Quotation Mark</value>
+  </data>
+  <data name="unicode_RightSquareBracket" xml:space="preserve">
+    <value>오른쪽 대괄호</value>
+  </data>
+  <data name="unicode_Space" xml:space="preserve">
+    <value>공간</value>
+  </data>
+  <data name="Acct_CertRequest" xml:space="preserve">
+    <value>인증서 요청</value>
+  </data>
+  <data name="Acct_Certificate" xml:space="preserve">
+    <value>인증서</value>
+  </data>
+  <data name="Acct_CertInstall" xml:space="preserve">
+    <value>인증서 설치</value>
+  </data>
+  <data name="Acct_CurrentUser" xml:space="preserve">
+    <value>현재 사용자</value>
+  </data>
+  <data name="Acct_DeleteCertRequest" xml:space="preserve">
+    <value>인증서 요청을 삭제</value>
+  </data>
+  <data name="Acct_EnableSSL" xml:space="preserve">
+    <value>SSL 사용</value>
+  </data>
+  <data name="Acct_PrivateKey" xml:space="preserve">
+    <value>개인 키</value>
+  </data>
+  <data name="Acct_ViewCertRequests" xml:space="preserve">
+    <value>보기 인증서 요청</value>
+  </data>
+  <data name="Acct_ViewSites" xml:space="preserve">
+    <value>사이트 보기</value>
+  </data>
+  <data name="Acct_CertInstallIntermed" xml:space="preserve">
+    <value>중간 인증서 설치</value>
+  </data>
+  <data name="unicode_LeftToRightEmbedding" xml:space="preserve">
+    <value>Left-To-Right Embedding</value>
+  </data>
+  <data name="unicode_RightToLeftEmbedding" xml:space="preserve">
+    <value>Right-To-Left Embedding</value>
+  </data>
+  <data name="unicode_LeftToRightMark" xml:space="preserve">
+    <value>Left-To-Right Mark</value>
+  </data>
+  <data name="unicode_LeftToRightOverride" xml:space="preserve">
+    <value>Left-To-Right Override</value>
+  </data>
+  <data name="unicode_PopDirectionalFormatting" xml:space="preserve">
+    <value>Pop Directional Formatting</value>
+  </data>
+  <data name="unicode_RightToLeftMark" xml:space="preserve">
+    <value>Right-To-Left Mark</value>
+  </data>
+  <data name="unicode_RightToLeftOverride" xml:space="preserve">
+    <value>Right-To-Left Override</value>
+  </data>
+</root>

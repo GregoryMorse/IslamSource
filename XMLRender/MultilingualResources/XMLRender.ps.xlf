@@ -1,0 +1,1196 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
+  <file datatype="xml" source-language="en-US" target-language="ps" original="XMLRENDER/RESOURCES.RESX" tool-id="MultilingualAppToolkit" product-name="n/a" product-version="n/a" build-num="n/a">
+    <header>
+      <tool tool-id="MultilingualAppToolkit" tool-name="Multilingual App Toolkit" tool-version="4.0.1573.0" tool-company="Microsoft" />
+    </header>
+    <body>
+      <group id="XMLRENDER/RESOURCES.RESX" datatype="resx">
+        <trans-unit id="Acct_AccountActivateSuccess" translate="yes" xml:space="preserve">
+          <source>Account successfully activated.</source>
+          <target state="new">Account successfully activated.</target>
+        </trans-unit>
+        <trans-unit id="Acct_AccountAlreadyActivated" translate="yes" xml:space="preserve">
+          <source>Account already activated.</source>
+          <target state="new">Account already activated.</target>
+        </trans-unit>
+        <trans-unit id="Acct_AccountDeleteSuccess" translate="yes" xml:space="preserve">
+          <source>Account successfully deleted.</source>
+          <target state="new">Account successfully deleted.</target>
+        </trans-unit>
+        <trans-unit id="Acct_AccountNotActivated" translate="yes" xml:space="preserve">
+          <source>Account not yet activated please check your email first or request an additional activation code.</source>
+          <target state="new">Account not yet activated please check your email first or request an additional activation code.</target>
+        </trans-unit>
+        <trans-unit id="Acct_ActivateAccount" translate="yes" xml:space="preserve">
+          <source>Activate Account</source>
+          <target state="new">Activate Account</target>
+        </trans-unit>
+        <trans-unit id="Acct_ActivationAccountBody" translate="yes" xml:space="preserve">
+          <source>This e-mail is requesting activation of your {0} account: {1}.  Please use the following link: {2} or by proceeding to the page {3} and entering your username and the following activation code: {4}</source>
+          <target state="new">This e-mail is requesting activation of your {0} account: {1}.  Please use the following link: {2} or by proceeding to the page {3} and entering your username and the following activation code: {4}</target>
+        </trans-unit>
+        <trans-unit id="Acct_ActivationAccountSubject" translate="yes" xml:space="preserve">
+          <source>Activation for account at {0}</source>
+          <target state="new">Activation for account at {0}</target>
+        </trans-unit>
+        <trans-unit id="Acct_ActivationCode" translate="yes" xml:space="preserve">
+          <source>Activation Code</source>
+          <target state="new">Activation Code</target>
+        </trans-unit>
+        <trans-unit id="Acct_BadEmailFormat" translate="yes" xml:space="preserve">
+          <source>E-mail address not in a valid format.</source>
+          <target state="new">E-mail address not in a valid format.</target>
+        </trans-unit>
+        <trans-unit id="Acct_Certain" translate="yes" xml:space="preserve">
+          <source>Are you certain?</source>
+          <target state="new">Are you certain?</target>
+        </trans-unit>
+        <trans-unit id="Acct_ChangeEmailAddress" translate="yes" xml:space="preserve">
+          <source>Change E-mail Address</source>
+          <target state="new">Change E-mail Address</target>
+        </trans-unit>
+        <trans-unit id="Acct_ChangePassword" translate="yes" xml:space="preserve">
+          <source>Change Password</source>
+          <target state="new">Change Password</target>
+        </trans-unit>
+        <trans-unit id="Acct_ChangeUsername" translate="yes" xml:space="preserve">
+          <source>Change Username</source>
+          <target state="new">Change Username</target>
+        </trans-unit>
+        <trans-unit id="Acct_CheckEmailNotice" translate="yes" xml:space="preserve">
+          <source>Activation sent to address provided.  Please check your e-mail to activate your account which will complete your registration.</source>
+          <target state="new">Activation sent to address provided.  Please check your e-mail to activate your account which will complete your registration.</target>
+        </trans-unit>
+        <trans-unit id="Acct_CleanupStale" translate="yes" xml:space="preserve">
+          <source>Cleanup Stale</source>
+          <target state="new">Cleanup Stale</target>
+        </trans-unit>
+        <trans-unit id="Acct_ClearCache" translate="yes" xml:space="preserve">
+          <source>Clear Cache</source>
+          <target state="new">Clear Cache</target>
+        </trans-unit>
+        <trans-unit id="Acct_ClearDiskCache" translate="yes" xml:space="preserve">
+          <source>Clear Disk Cache</source>
+          <target state="new">Clear Disk Cache</target>
+        </trans-unit>
+        <trans-unit id="Acct_ConfirmEmailAddress" translate="yes" xml:space="preserve">
+          <source>Confirm E-mail Address</source>
+          <target state="new">Confirm E-mail Address</target>
+        </trans-unit>
+        <trans-unit id="Acct_ConfirmPassword" translate="yes" xml:space="preserve">
+          <source>Confirm Password</source>
+          <target state="new">Confirm Password</target>
+        </trans-unit>
+        <trans-unit id="Acct_ControlPanel" translate="yes" xml:space="preserve">
+          <source>Control Panel</source>
+          <target state="new">Control Panel</target>
+        </trans-unit>
+        <trans-unit id="Acct_CreateDatabase" translate="yes" xml:space="preserve">
+          <source>Create Database</source>
+          <target state="new">Create Database</target>
+        </trans-unit>
+        <trans-unit id="Acct_DeleteAccount" translate="yes" xml:space="preserve">
+          <source>Delete Account</source>
+          <target state="new">Delete Account</target>
+        </trans-unit>
+        <trans-unit id="Acct_DotNetVersion" translate="yes" xml:space="preserve">
+          <source>Dot Net Version</source>
+          <target state="new">Dot Net Version</target>
+        </trans-unit>
+        <trans-unit id="Acct_DuplicateUser" translate="yes" xml:space="preserve">
+          <source>User with this name already exists please choose another.</source>
+          <target state="new">User with this name already exists please choose another.</target>
+        </trans-unit>
+        <trans-unit id="Acct_EmailAddress" translate="yes" xml:space="preserve">
+          <source>E-mail Address</source>
+          <target state="new">E-mail Address</target>
+        </trans-unit>
+        <trans-unit id="Acct_EmailChangeReactivate" translate="yes" xml:space="preserve">
+          <source>E-mail address changed and activation e-mail sent to reactivate account.</source>
+          <target state="new">E-mail address changed and activation e-mail sent to reactivate account.</target>
+        </trans-unit>
+        <trans-unit id="Acct_EmailInUse" translate="yes" xml:space="preserve">
+          <source>E-mail already in use please login with existing credentials.</source>
+          <target state="new">E-mail already in use please login with existing credentials.</target>
+        </trans-unit>
+        <trans-unit id="Acct_EmailsNotMatch" translate="yes" xml:space="preserve">
+          <source>E-mail addresses do not match</source>
+          <target state="new">E-mail addresses do not match</target>
+        </trans-unit>
+        <trans-unit id="Acct_ForgotPassword" translate="yes" xml:space="preserve">
+          <source>Forgot Password</source>
+          <target state="new">Forgot Password</target>
+        </trans-unit>
+        <trans-unit id="Acct_ForgotUsername" translate="yes" xml:space="preserve">
+          <source>Forgot Username</source>
+          <target state="new">Forgot Username</target>
+        </trans-unit>
+        <trans-unit id="Acct_Home" translate="yes" xml:space="preserve">
+          <source>Home</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">کور</target>
+        </trans-unit>
+        <trans-unit id="Acct_IncorrectActivationCode" translate="yes" xml:space="preserve">
+          <source>Incorrect activation code.</source>
+          <target state="new">Incorrect activation code.</target>
+        </trans-unit>
+        <trans-unit id="Acct_IncorrectPasswordResetCode" translate="yes" xml:space="preserve">
+          <source>Incorrect password reset code.</source>
+          <target state="new">Incorrect password reset code.</target>
+        </trans-unit>
+        <trans-unit id="Acct_InvalidInput" translate="yes" xml:space="preserve">
+          <source>Invalid input.</source>
+          <target state="new">Invalid input.</target>
+        </trans-unit>
+        <trans-unit id="Acct_InvalidUsernamePassword" translate="yes" xml:space="preserve">
+          <source>Invalid username or password.</source>
+          <target state="new">Invalid username or password.</target>
+        </trans-unit>
+        <trans-unit id="Acct_Login" translate="yes" xml:space="preserve">
+          <source>Login</source>
+          <target state="new">Login</target>
+        </trans-unit>
+        <trans-unit id="Acct_LoginSuccess" translate="yes" xml:space="preserve">
+          <source>Login successful.</source>
+          <target state="new">Login successful.</target>
+        </trans-unit>
+        <trans-unit id="Acct_Logoff" translate="yes" xml:space="preserve">
+          <source>Logoff</source>
+          <target state="new">Logoff</target>
+        </trans-unit>
+        <trans-unit id="Acct_LogoffSuccess" translate="yes" xml:space="preserve">
+          <source>Logoff successful.</source>
+          <target state="new">Logoff successful.</target>
+        </trans-unit>
+        <trans-unit id="Acct_MinimumPassword" translate="yes" xml:space="preserve">
+          <source>Password must be at least 8 characters.</source>
+          <target state="new">Password must be at least 8 characters.</target>
+        </trans-unit>
+        <trans-unit id="Acct_MinimumUsername" translate="yes" xml:space="preserve">
+          <source>Username must be at least 4 characters.</source>
+          <target state="new">Username must be at least 4 characters.</target>
+        </trans-unit>
+        <trans-unit id="Acct_No" translate="yes" xml:space="preserve">
+          <source>No</source>
+          <target state="new">No</target>
+        </trans-unit>
+        <trans-unit id="Acct_NotConfirmDelete" translate="yes" xml:space="preserve">
+          <source>Must confirm account deletion.</source>
+          <target state="new">Must confirm account deletion.</target>
+        </trans-unit>
+        <trans-unit id="Acct_NoUserExists" translate="yes" xml:space="preserve">
+          <source>No user exists for the entered e-mail address.</source>
+          <target state="new">No user exists for the entered e-mail address.</target>
+        </trans-unit>
+        <trans-unit id="Acct_Password" translate="yes" xml:space="preserve">
+          <source>Password</source>
+          <target state="new">Password</target>
+        </trans-unit>
+        <trans-unit id="Acct_PasswordAlreadyReset" translate="yes" xml:space="preserve">
+          <source>Password already reset or process not initiated.</source>
+          <target state="new">Password already reset or process not initiated.</target>
+        </trans-unit>
+        <trans-unit id="Acct_PasswordChangedBody" translate="yes" xml:space="preserve">
+          <source>This e-mail is to inform of the password change of your {0} account: {1}.</source>
+          <target state="new">This e-mail is to inform of the password change of your {0} account: {1}.</target>
+        </trans-unit>
+        <trans-unit id="Acct_PasswordChangedSubject" translate="yes" xml:space="preserve">
+          <source>Password changed for account at {0}</source>
+          <target state="new">Password changed for account at {0}</target>
+        </trans-unit>
+        <trans-unit id="Acct_PasswordChangeSuccess" translate="yes" xml:space="preserve">
+          <source>Password successfully changed.</source>
+          <target state="new">Password successfully changed.</target>
+        </trans-unit>
+        <trans-unit id="Acct_PasswordEmailSent" translate="yes" xml:space="preserve">
+          <source>An e-mail has been sent to your address on file to initiate the password reset process.</source>
+          <target state="new">An e-mail has been sent to your address on file to initiate the password reset process.</target>
+        </trans-unit>
+        <trans-unit id="Acct_PasswordResetBody" translate="yes" xml:space="preserve">
+          <source>This e-mail is to reset the password of your {0} account: {1}.  Please use the following link: {3} or by proceeding to the page {4}  and entering your username and the following password reset code: {5}</source>
+          <target state="new">This e-mail is to reset the password of your {0} account: {1}.  Please use the following link: {3} or by proceeding to the page {4}  and entering your username and the following password reset code: {5}</target>
+        </trans-unit>
+        <trans-unit id="Acct_PasswordResetCode" translate="yes" xml:space="preserve">
+          <source>Password Reset Code</source>
+          <target state="new">Password Reset Code</target>
+        </trans-unit>
+        <trans-unit id="Acct_PasswordResetSubject" translate="yes" xml:space="preserve">
+          <source>Password reset for account at {0}</source>
+          <target state="new">Password reset for account at {0}</target>
+        </trans-unit>
+        <trans-unit id="Acct_PasswordResetSuccess" translate="yes" xml:space="preserve">
+          <source>Password successfully reset.</source>
+          <target state="new">Password successfully reset.</target>
+        </trans-unit>
+        <trans-unit id="Acct_PasswordsNotMatch" translate="yes" xml:space="preserve">
+          <source>Passwords do not match</source>
+          <target state="new">Passwords do not match</target>
+        </trans-unit>
+        <trans-unit id="Acct_Register" translate="yes" xml:space="preserve">
+          <source>Register</source>
+          <target state="new">Register</target>
+        </trans-unit>
+        <trans-unit id="Acct_Remember" translate="yes" xml:space="preserve">
+          <source>Remember?</source>
+          <target state="new">Remember?</target>
+        </trans-unit>
+        <trans-unit id="Acct_RemoveDatabase" translate="yes" xml:space="preserve">
+          <source>Remove Database</source>
+          <target state="new">Remove Database</target>
+        </trans-unit>
+        <trans-unit id="Acct_ResendActivationEmail" translate="yes" xml:space="preserve">
+          <source>Resend Activation E-mail</source>
+          <target state="new">Resend Activation E-mail</target>
+        </trans-unit>
+        <trans-unit id="Acct_ResetPassword" translate="yes" xml:space="preserve">
+          <source>Reset Password</source>
+          <target state="new">Reset Password</target>
+        </trans-unit>
+        <trans-unit id="Acct_RetrievePassword" translate="yes" xml:space="preserve">
+          <source>Retrieve Password</source>
+          <target state="new">Retrieve Password</target>
+        </trans-unit>
+        <trans-unit id="Acct_RetrieveUsername" translate="yes" xml:space="preserve">
+          <source>Retrieve Username</source>
+          <target state="new">Retrieve Username</target>
+        </trans-unit>
+        <trans-unit id="Acct_SendActivationCode" translate="yes" xml:space="preserve">
+          <source>Send Activation Code</source>
+          <target state="new">Send Activation Code</target>
+        </trans-unit>
+        <trans-unit id="Acct_Username" translate="yes" xml:space="preserve">
+          <source>Username</source>
+          <target state="new">Username</target>
+        </trans-unit>
+        <trans-unit id="Acct_UsernameChangedBody" translate="yes" xml:space="preserve">
+          <source>This e-mail is to inform of the account name change of your {0} account: {1}.</source>
+          <target state="new">This e-mail is to inform of the account name change of your {0} account: {1}.</target>
+        </trans-unit>
+        <trans-unit id="Acct_UsernameChangedSubject" translate="yes" xml:space="preserve">
+          <source>Username changed for account at {0}</source>
+          <target state="new">Username changed for account at {0}</target>
+        </trans-unit>
+        <trans-unit id="Acct_UsernameChangeSuccess" translate="yes" xml:space="preserve">
+          <source>Username successfully changed.</source>
+          <target state="new">Username successfully changed.</target>
+        </trans-unit>
+        <trans-unit id="Acct_UsernameEmailSent" translate="yes" xml:space="preserve">
+          <source>An e-mail has been sent to your address on file with your username.</source>
+          <target state="new">An e-mail has been sent to your address on file with your username.</target>
+        </trans-unit>
+        <trans-unit id="Acct_UsernameReminderBody" translate="yes" xml:space="preserve">
+          <source>This e-mail is a reminder of your {0} account: {1}.</source>
+          <target state="new">This e-mail is a reminder of your {0} account: {1}.</target>
+        </trans-unit>
+        <trans-unit id="Acct_UsernameReminderSubject" translate="yes" xml:space="preserve">
+          <source>Username reminder for account at {0}</source>
+          <target state="new">Username reminder for account at {0}</target>
+        </trans-unit>
+        <trans-unit id="Acct_UserNotFound" translate="yes" xml:space="preserve">
+          <source>User does not exist.</source>
+          <target state="new">User does not exist.</target>
+        </trans-unit>
+        <trans-unit id="Acct_ViewCache" translate="yes" xml:space="preserve">
+          <source>View Cache</source>
+          <target state="new">View Cache</target>
+        </trans-unit>
+        <trans-unit id="Acct_ViewDiskCache" translate="yes" xml:space="preserve">
+          <source>View Disk Cache</source>
+          <target state="new">View Disk Cache</target>
+        </trans-unit>
+        <trans-unit id="Acct_ViewHeaders" translate="yes" xml:space="preserve">
+          <source>View Headers</source>
+          <target state="new">View Headers</target>
+        </trans-unit>
+        <trans-unit id="Acct_Yes" translate="yes" xml:space="preserve">
+          <source>Yes</source>
+          <target state="new">Yes</target>
+        </trans-unit>
+        <trans-unit id="lang_am" translate="yes" xml:space="preserve">
+          <source>ኣማርኛ</source>
+          <target state="new">ኣማርኛ</target>
+        </trans-unit>
+        <trans-unit id="lang_ar" translate="yes" xml:space="preserve">
+          <source>العربية</source>
+          <target state="new">العربية</target>
+        </trans-unit>
+        <trans-unit id="lang_az" translate="yes" xml:space="preserve">
+          <source>Azərbaycan dili</source>
+          <target state="new">Azərbaycan dili</target>
+        </trans-unit>
+        <trans-unit id="lang_ber" translate="yes" xml:space="preserve">
+          <source>Tamazight</source>
+          <target state="new">Tamazight</target>
+        </trans-unit>
+        <trans-unit id="lang_bg" translate="yes" xml:space="preserve">
+          <source>български</source>
+          <target state="new">български</target>
+        </trans-unit>
+        <trans-unit id="lang_bn" translate="yes" xml:space="preserve">
+          <source>বাংলা</source>
+          <target state="new">বাংলা</target>
+        </trans-unit>
+        <trans-unit id="lang_bs" translate="yes" xml:space="preserve">
+          <source>bosanski</source>
+          <target state="new">bosanski</target>
+        </trans-unit>
+        <trans-unit id="lang_cs" translate="yes" xml:space="preserve">
+          <source>čeština</source>
+          <target state="new">čeština</target>
+        </trans-unit>
+        <trans-unit id="lang_de" translate="yes" xml:space="preserve">
+          <source>Deutsch</source>
+          <target state="new">Deutsch</target>
+        </trans-unit>
+        <trans-unit id="lang_dv" translate="yes" xml:space="preserve">
+          <source>ދިވެހި</source>
+          <target state="new">ދިވެހި</target>
+        </trans-unit>
+        <trans-unit id="lang_en" translate="yes" xml:space="preserve">
+          <source>English</source>
+          <target state="new">English</target>
+        </trans-unit>
+        <trans-unit id="lang_es" translate="yes" xml:space="preserve">
+          <source>español</source>
+          <target state="new">español</target>
+        </trans-unit>
+        <trans-unit id="lang_fa" translate="yes" xml:space="preserve">
+          <source>فارسى</source>
+          <target state="new">فارسى</target>
+        </trans-unit>
+        <trans-unit id="lang_fr" translate="yes" xml:space="preserve">
+          <source>français</source>
+          <target state="new">français</target>
+        </trans-unit>
+        <trans-unit id="lang_ha" translate="yes" xml:space="preserve">
+          <source>ḥawsa</source>
+          <target state="new">ḥawsa</target>
+        </trans-unit>
+        <trans-unit id="lang_hi" translate="yes" xml:space="preserve">
+          <source>हिन्दी</source>
+          <target state="new">हिन्दी</target>
+        </trans-unit>
+        <trans-unit id="lang_id" translate="yes" xml:space="preserve">
+          <source>Bahasa Indonesia</source>
+          <target state="new">Bahasa Indonesia</target>
+        </trans-unit>
+        <trans-unit id="lang_it" translate="yes" xml:space="preserve">
+          <source>italiano</source>
+          <target state="new">italiano</target>
+        </trans-unit>
+        <trans-unit id="lang_ja" translate="yes" xml:space="preserve">
+          <source>日本語</source>
+          <target state="new">日本語</target>
+        </trans-unit>
+        <trans-unit id="lang_ko" translate="yes" xml:space="preserve">
+          <source>한국어</source>
+          <target state="new">한국어</target>
+        </trans-unit>
+        <trans-unit id="lang_ku" translate="yes" xml:space="preserve">
+          <source>کوردی</source>
+          <target state="new">کوردی</target>
+        </trans-unit>
+        <trans-unit id="lang_ml" translate="yes" xml:space="preserve">
+          <source>മലയാളം</source>
+          <target state="new">മലയാളം</target>
+        </trans-unit>
+        <trans-unit id="lang_ms" translate="yes" xml:space="preserve">
+          <source>Bahasa melayu</source>
+          <target state="new">Bahasa melayu</target>
+        </trans-unit>
+        <trans-unit id="lang_nl" translate="yes" xml:space="preserve">
+          <source>Nederlands</source>
+          <target state="new">Nederlands</target>
+        </trans-unit>
+        <trans-unit id="lang_no" translate="yes" xml:space="preserve">
+          <source>Norsk</source>
+          <target state="new">Norsk</target>
+        </trans-unit>
+        <trans-unit id="lang_pl" translate="yes" xml:space="preserve">
+          <source>polski</source>
+          <target state="new">polski</target>
+        </trans-unit>
+        <trans-unit id="lang_pt" translate="yes" xml:space="preserve">
+          <source>português</source>
+          <target state="new">português</target>
+        </trans-unit>
+        <trans-unit id="lang_ro" translate="yes" xml:space="preserve">
+          <source>रोमानो</source>
+          <target state="new">रोमानो</target>
+        </trans-unit>
+        <trans-unit id="lang_ru" translate="yes" xml:space="preserve">
+          <source>Русский язык</source>
+          <target state="new">Русский язык</target>
+        </trans-unit>
+        <trans-unit id="lang_sd" translate="yes" xml:space="preserve">
+          <source>سنڌي</source>
+          <target state="new">سنڌي</target>
+        </trans-unit>
+        <trans-unit id="lang_so" translate="yes" xml:space="preserve">
+          <source>af Soomaali</source>
+          <target state="new">af Soomaali</target>
+        </trans-unit>
+        <trans-unit id="lang_sq" translate="yes" xml:space="preserve">
+          <source>shqip</source>
+          <target state="new">shqip</target>
+        </trans-unit>
+        <trans-unit id="lang_sv" translate="yes" xml:space="preserve">
+          <source>Svenska</source>
+          <target state="new">Svenska</target>
+        </trans-unit>
+        <trans-unit id="lang_sw" translate="yes" xml:space="preserve">
+          <source>Kiswahili</source>
+          <target state="new">Kiswahili</target>
+        </trans-unit>
+        <trans-unit id="lang_ta" translate="yes" xml:space="preserve">
+          <source>தமிழ்</source>
+          <target state="new">தமிழ்</target>
+        </trans-unit>
+        <trans-unit id="lang_tg" translate="yes" xml:space="preserve">
+          <source>тоҷики</source>
+          <target state="new">тоҷики</target>
+        </trans-unit>
+        <trans-unit id="lang_th" translate="yes" xml:space="preserve">
+          <source>ภาษาไทย</source>
+          <target state="new">ภาษาไทย</target>
+        </trans-unit>
+        <trans-unit id="lang_tr" translate="yes" xml:space="preserve">
+          <source>Türkçe</source>
+          <target state="new">Türkçe</target>
+        </trans-unit>
+        <trans-unit id="lang_tt" translate="yes" xml:space="preserve">
+          <source>татарча</source>
+          <target state="new">татарча</target>
+        </trans-unit>
+        <trans-unit id="lang_ug" translate="yes" xml:space="preserve">
+          <source>ئۇيغۇر</source>
+          <target state="new">ئۇيغۇر</target>
+        </trans-unit>
+        <trans-unit id="lang_ur" translate="yes" xml:space="preserve">
+          <source>اردو</source>
+          <target state="new">اردو</target>
+        </trans-unit>
+        <trans-unit id="lang_uz" translate="yes" xml:space="preserve">
+          <source>o'zbek tili ўзбек тили</source>
+          <target state="new">o'zbek tili ўзбек тили</target>
+        </trans-unit>
+        <trans-unit id="lang_zh" translate="yes" xml:space="preserve">
+          <source>中文</source>
+          <target state="new">中文</target>
+        </trans-unit>
+        <trans-unit id="lang_localam" translate="yes" xml:space="preserve">
+          <source>Amharic</source>
+          <target state="new">Amharic</target>
+        </trans-unit>
+        <trans-unit id="lang_localar" translate="yes" xml:space="preserve">
+          <source>Arabic</source>
+          <target state="new">Arabic</target>
+        </trans-unit>
+        <trans-unit id="lang_localaz" translate="yes" xml:space="preserve">
+          <source>Azerbaijani</source>
+          <target state="new">Azerbaijani</target>
+        </trans-unit>
+        <trans-unit id="lang_localber" translate="yes" xml:space="preserve">
+          <source>Amazigh</source>
+          <target state="new">Amazigh</target>
+        </trans-unit>
+        <trans-unit id="lang_localbg" translate="yes" xml:space="preserve">
+          <source>Bulgarian</source>
+          <target state="new">Bulgarian</target>
+        </trans-unit>
+        <trans-unit id="lang_localbn" translate="yes" xml:space="preserve">
+          <source>Bengali</source>
+          <target state="new">Bengali</target>
+        </trans-unit>
+        <trans-unit id="lang_localbs" translate="yes" xml:space="preserve">
+          <source>Bosnian</source>
+          <target state="new">Bosnian</target>
+        </trans-unit>
+        <trans-unit id="lang_localcs" translate="yes" xml:space="preserve">
+          <source>Czech</source>
+          <target state="new">Czech</target>
+        </trans-unit>
+        <trans-unit id="lang_localde" translate="yes" xml:space="preserve">
+          <source>German</source>
+          <target state="new">German</target>
+        </trans-unit>
+        <trans-unit id="lang_localdv" translate="yes" xml:space="preserve">
+          <source>Divehi</source>
+          <target state="new">Divehi</target>
+        </trans-unit>
+        <trans-unit id="lang_localen" translate="yes" xml:space="preserve">
+          <source>English</source>
+          <target state="new">English</target>
+        </trans-unit>
+        <trans-unit id="lang_locales" translate="yes" xml:space="preserve">
+          <source>Spanish</source>
+          <target state="new">Spanish</target>
+        </trans-unit>
+        <trans-unit id="lang_localfa" translate="yes" xml:space="preserve">
+          <source>Persian</source>
+          <target state="new">Persian</target>
+        </trans-unit>
+        <trans-unit id="lang_localfr" translate="yes" xml:space="preserve">
+          <source>French</source>
+          <target state="new">French</target>
+        </trans-unit>
+        <trans-unit id="lang_localha" translate="yes" xml:space="preserve">
+          <source>Hausa</source>
+          <target state="new">Hausa</target>
+        </trans-unit>
+        <trans-unit id="lang_localhi" translate="yes" xml:space="preserve">
+          <source>Hindi</source>
+          <target state="new">Hindi</target>
+        </trans-unit>
+        <trans-unit id="lang_localid" translate="yes" xml:space="preserve">
+          <source>Indonesian</source>
+          <target state="new">Indonesian</target>
+        </trans-unit>
+        <trans-unit id="lang_localit" translate="yes" xml:space="preserve">
+          <source>Italian</source>
+          <target state="new">Italian</target>
+        </trans-unit>
+        <trans-unit id="lang_localja" translate="yes" xml:space="preserve">
+          <source>Japanese</source>
+          <target state="new">Japanese</target>
+        </trans-unit>
+        <trans-unit id="lang_localko" translate="yes" xml:space="preserve">
+          <source>Korean</source>
+          <target state="new">Korean</target>
+        </trans-unit>
+        <trans-unit id="lang_localku" translate="yes" xml:space="preserve">
+          <source>Kurdish</source>
+          <target state="new">Kurdish</target>
+        </trans-unit>
+        <trans-unit id="lang_localml" translate="yes" xml:space="preserve">
+          <source>Malayalam</source>
+          <target state="new">Malayalam</target>
+        </trans-unit>
+        <trans-unit id="lang_localms" translate="yes" xml:space="preserve">
+          <source>Malay</source>
+          <target state="new">Malay</target>
+        </trans-unit>
+        <trans-unit id="lang_localnl" translate="yes" xml:space="preserve">
+          <source>Dutch</source>
+          <target state="new">Dutch</target>
+        </trans-unit>
+        <trans-unit id="lang_localno" translate="yes" xml:space="preserve">
+          <source>Norwegian</source>
+          <target state="new">Norwegian</target>
+        </trans-unit>
+        <trans-unit id="lang_localpl" translate="yes" xml:space="preserve">
+          <source>Polish</source>
+          <target state="new">Polish</target>
+        </trans-unit>
+        <trans-unit id="lang_localpt" translate="yes" xml:space="preserve">
+          <source>Portuguese</source>
+          <target state="new">Portuguese</target>
+        </trans-unit>
+        <trans-unit id="lang_localro" translate="yes" xml:space="preserve">
+          <source>Romanian</source>
+          <target state="new">Romanian</target>
+        </trans-unit>
+        <trans-unit id="lang_localru" translate="yes" xml:space="preserve">
+          <source>Russian</source>
+          <target state="new">Russian</target>
+        </trans-unit>
+        <trans-unit id="lang_localsd" translate="yes" xml:space="preserve">
+          <source>Sindhi</source>
+          <target state="new">Sindhi</target>
+        </trans-unit>
+        <trans-unit id="lang_localso" translate="yes" xml:space="preserve">
+          <source>Somali</source>
+          <target state="new">Somali</target>
+        </trans-unit>
+        <trans-unit id="lang_localsq" translate="yes" xml:space="preserve">
+          <source>Albanian</source>
+          <target state="new">Albanian</target>
+        </trans-unit>
+        <trans-unit id="lang_localsv" translate="yes" xml:space="preserve">
+          <source>Swedish</source>
+          <target state="new">Swedish</target>
+        </trans-unit>
+        <trans-unit id="lang_localsw" translate="yes" xml:space="preserve">
+          <source>Swahili</source>
+          <target state="new">Swahili</target>
+        </trans-unit>
+        <trans-unit id="lang_localta" translate="yes" xml:space="preserve">
+          <source>Tamil</source>
+          <target state="new">Tamil</target>
+        </trans-unit>
+        <trans-unit id="lang_localtg" translate="yes" xml:space="preserve">
+          <source>Tajik</source>
+          <target state="new">Tajik</target>
+        </trans-unit>
+        <trans-unit id="lang_localth" translate="yes" xml:space="preserve">
+          <source>Thai</source>
+          <target state="new">Thai</target>
+        </trans-unit>
+        <trans-unit id="lang_localtr" translate="yes" xml:space="preserve">
+          <source>Turkish</source>
+          <target state="new">Turkish</target>
+        </trans-unit>
+        <trans-unit id="lang_localtt" translate="yes" xml:space="preserve">
+          <source>Tatar</source>
+          <target state="new">Tatar</target>
+        </trans-unit>
+        <trans-unit id="lang_localug" translate="yes" xml:space="preserve">
+          <source>Uyghur</source>
+          <target state="new">Uyghur</target>
+        </trans-unit>
+        <trans-unit id="lang_localur" translate="yes" xml:space="preserve">
+          <source>Urdu</source>
+          <target state="new">Urdu</target>
+        </trans-unit>
+        <trans-unit id="lang_localuz" translate="yes" xml:space="preserve">
+          <source>Uzbek</source>
+          <target state="new">Uzbek</target>
+        </trans-unit>
+        <trans-unit id="lang_localzh" translate="yes" xml:space="preserve">
+          <source>Chinese</source>
+          <target state="new">Chinese</target>
+        </trans-unit>
+        <trans-unit id="Acct_Download" translate="yes" xml:space="preserve">
+          <source>Download {0}</source>
+          <target state="new">Download {0}</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicComma" translate="yes" xml:space="preserve">
+          <source>Arabic Comma</source>
+          <target state="new">Arabic Comma</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicDamma" translate="yes" xml:space="preserve">
+          <source>Arabic Damma</source>
+          <target state="new">Arabic Damma</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicDammatan" translate="yes" xml:space="preserve">
+          <source>Arabic Dammatan</source>
+          <target state="new">Arabic Dammatan</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicEmptyCentreHighStop" translate="yes" xml:space="preserve">
+          <source>Arabic Empty Centre High Stop</source>
+          <target state="new">Arabic Empty Centre High Stop</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicEmptyCentreLowStop" translate="yes" xml:space="preserve">
+          <source>Arabic Empty Centre Low Stop</source>
+          <target state="new">Arabic Empty Centre Low Stop</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicEndOfAyah" translate="yes" xml:space="preserve">
+          <source>Arabic End Of Ayah</source>
+          <target state="new">Arabic End Of Ayah</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicFatha" translate="yes" xml:space="preserve">
+          <source>Arabic Fatha</source>
+          <target state="new">Arabic Fatha</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicFathatan" translate="yes" xml:space="preserve">
+          <source>Arabic Fathatan</source>
+          <target state="new">Arabic Fathatan</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicHamzaAbove" translate="yes" xml:space="preserve">
+          <source>Arabic Hamza Above</source>
+          <target state="new">Arabic Hamza Above</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicHamzaBelow" translate="yes" xml:space="preserve">
+          <source>Arabic Hamza Below</source>
+          <target state="new">Arabic Hamza Below</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicIndicDigitEight" translate="yes" xml:space="preserve">
+          <source>Arabic-Indic Digit Eight</source>
+          <target state="new">Arabic-Indic Digit Eight</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicIndicDigitFive" translate="yes" xml:space="preserve">
+          <source>Arabic-Indic Digit Five</source>
+          <target state="new">Arabic-Indic Digit Five</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicIndicDigitFour" translate="yes" xml:space="preserve">
+          <source>Arabic-Indic Digit Four</source>
+          <target state="new">Arabic-Indic Digit Four</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicIndicDigitNine" translate="yes" xml:space="preserve">
+          <source>Arabic-Indic Digit Nine</source>
+          <target state="new">Arabic-Indic Digit Nine</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicIndicDigitOne" translate="yes" xml:space="preserve">
+          <source>Arabic-Indic Digit One</source>
+          <target state="new">Arabic-Indic Digit One</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicIndicDigitSeven" translate="yes" xml:space="preserve">
+          <source>Arabic-Indic Digit Seven</source>
+          <target state="new">Arabic-Indic Digit Seven</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicIndicDigitSix" translate="yes" xml:space="preserve">
+          <source>Arabic-Indic Digit Six</source>
+          <target state="new">Arabic-Indic Digit Six</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicIndicDigitThree" translate="yes" xml:space="preserve">
+          <source>Arabic-Indic Digit Three</source>
+          <target state="new">Arabic-Indic Digit Three</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicIndicDigitTwo" translate="yes" xml:space="preserve">
+          <source>Arabic-Indic Digit Two</source>
+          <target state="new">Arabic-Indic Digit Two</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicIndicDigitZero" translate="yes" xml:space="preserve">
+          <source>Arabic-Indic Digit Zero</source>
+          <target state="new">Arabic-Indic Digit Zero</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicKasra" translate="yes" xml:space="preserve">
+          <source>Arabic Kasra</source>
+          <target state="new">Arabic Kasra</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicKasratan" translate="yes" xml:space="preserve">
+          <source>Arabic Kasratan</source>
+          <target state="new">Arabic Kasratan</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLetterAin" translate="yes" xml:space="preserve">
+          <source>Arabic Letter Ain</source>
+          <target state="new">Arabic Letter Ain</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLetterAlef" translate="yes" xml:space="preserve">
+          <source>Arabic Letter Alef</source>
+          <target state="new">Arabic Letter Alef</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLetterAlefMaksura" translate="yes" xml:space="preserve">
+          <source>Arabic Letter Alef Maksura</source>
+          <target state="new">Arabic Letter Alef Maksura</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLetterAlefWasla" translate="yes" xml:space="preserve">
+          <source>Arabic Letter Alef Wasla</source>
+          <target state="new">Arabic Letter Alef Wasla</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLetterAlefWithHamzaAbove" translate="yes" xml:space="preserve">
+          <source>Arabic Letter Alef With Hamza Above</source>
+          <target state="new">Arabic Letter Alef With Hamza Above</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLetterAlefWithHamzaBelow" translate="yes" xml:space="preserve">
+          <source>Arabic Letter Alef With Hamza Below</source>
+          <target state="new">Arabic Letter Alef With Hamza Below</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLetterAlefWithMaddaAbove" translate="yes" xml:space="preserve">
+          <source>Arabic Letter Alef With Madda Above</source>
+          <target state="new">Arabic Letter Alef With Madda Above</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLetterBeh" translate="yes" xml:space="preserve">
+          <source>Arabic Letter Beh</source>
+          <target state="new">Arabic Letter Beh</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLetterDad" translate="yes" xml:space="preserve">
+          <source>Arabic Letter Dad</source>
+          <target state="new">Arabic Letter Dad</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLetterDal" translate="yes" xml:space="preserve">
+          <source>Arabic Letter Dal</source>
+          <target state="new">Arabic Letter Dal</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLetterFeh" translate="yes" xml:space="preserve">
+          <source>Arabic Letter Feh</source>
+          <target state="new">Arabic Letter Feh</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLetterGaf" translate="yes" xml:space="preserve">
+          <source>Arabic Letter Gaf</source>
+          <target state="new">Arabic Letter Gaf</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLetterGhain" translate="yes" xml:space="preserve">
+          <source>Arabic Letter Ghain</source>
+          <target state="new">Arabic Letter Ghain</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLetterHah" translate="yes" xml:space="preserve">
+          <source>Arabic Letter Hah</source>
+          <target state="new">Arabic Letter Hah</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLetterHamza" translate="yes" xml:space="preserve">
+          <source>Arabic Letter Hamza</source>
+          <target state="new">Arabic Letter Hamza</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLetterHeh" translate="yes" xml:space="preserve">
+          <source>Arabic Letter Heh</source>
+          <target state="new">Arabic Letter Heh</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLetterJeem" translate="yes" xml:space="preserve">
+          <source>Arabic Letter Jeem</source>
+          <target state="new">Arabic Letter Jeem</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLetterKaf" translate="yes" xml:space="preserve">
+          <source>Arabic Letter Kaf</source>
+          <target state="new">Arabic Letter Kaf</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLetterKhah" translate="yes" xml:space="preserve">
+          <source>Arabic Letter Khah</source>
+          <target state="new">Arabic Letter Khah</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLetterLam" translate="yes" xml:space="preserve">
+          <source>Arabic Letter Lam</source>
+          <target state="new">Arabic Letter Lam</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLetterMeem" translate="yes" xml:space="preserve">
+          <source>Arabic Letter Meem</source>
+          <target state="new">Arabic Letter Meem</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLetterNoon" translate="yes" xml:space="preserve">
+          <source>Arabic Letter Noon</source>
+          <target state="new">Arabic Letter Noon</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLetterPeh" translate="yes" xml:space="preserve">
+          <source>Arabic Letter Peh</source>
+          <target state="new">Arabic Letter Peh</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLetterQaf" translate="yes" xml:space="preserve">
+          <source>Arabic Letter Qaf</source>
+          <target state="new">Arabic Letter Qaf</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLetterReh" translate="yes" xml:space="preserve">
+          <source>Arabic Letter Reh</source>
+          <target state="new">Arabic Letter Reh</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLetterSad" translate="yes" xml:space="preserve">
+          <source>Arabic Letter Sad</source>
+          <target state="new">Arabic Letter Sad</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLetterSeen" translate="yes" xml:space="preserve">
+          <source>Arabic Letter Seen</source>
+          <target state="new">Arabic Letter Seen</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLetterSheen" translate="yes" xml:space="preserve">
+          <source>Arabic Letter Sheen</source>
+          <target state="new">Arabic Letter Sheen</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLetterSuperscriptAlef" translate="yes" xml:space="preserve">
+          <source>Arabic Letter Superscript Alef</source>
+          <target state="new">Arabic Letter Superscript Alef</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLetterTah" translate="yes" xml:space="preserve">
+          <source>Arabic Letter Tah</source>
+          <target state="new">Arabic Letter Tah</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLetterTcheh" translate="yes" xml:space="preserve">
+          <source>Arabic Letter Tcheh</source>
+          <target state="new">Arabic Letter Tcheh</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLetterTeh" translate="yes" xml:space="preserve">
+          <source>Arabic Letter Teh</source>
+          <target state="new">Arabic Letter Teh</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLetterTehMarbuta" translate="yes" xml:space="preserve">
+          <source>Arabic Letter Teh Marbuta</source>
+          <target state="new">Arabic Letter Teh Marbuta</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLetterThal" translate="yes" xml:space="preserve">
+          <source>Arabic Letter Thal</source>
+          <target state="new">Arabic Letter Thal</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLetterTheh" translate="yes" xml:space="preserve">
+          <source>Arabic Letter Theh</source>
+          <target state="new">Arabic Letter Theh</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLetterVeh" translate="yes" xml:space="preserve">
+          <source>Arabic Letter Veh</source>
+          <target state="new">Arabic Letter Veh</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLetterWaw" translate="yes" xml:space="preserve">
+          <source>Arabic Letter Waw</source>
+          <target state="new">Arabic Letter Waw</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLetterWawWithHamzaAbove" translate="yes" xml:space="preserve">
+          <source>Arabic Letter Waw With Hamza Above</source>
+          <target state="new">Arabic Letter Waw With Hamza Above</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLetterYeh" translate="yes" xml:space="preserve">
+          <source>Arabic Letter Yeh</source>
+          <target state="new">Arabic Letter Yeh</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLetterYehWithHamzaAbove" translate="yes" xml:space="preserve">
+          <source>Arabic Letter Yeh With Hamza Above</source>
+          <target state="new">Arabic Letter Yeh With Hamza Above</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLetterZah" translate="yes" xml:space="preserve">
+          <source>Arabic Letter Zah</source>
+          <target state="new">Arabic Letter Zah</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLetterZain" translate="yes" xml:space="preserve">
+          <source>Arabic Letter Zain</source>
+          <target state="new">Arabic Letter Zain</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLigatureAkbarIsolatedForm" translate="yes" xml:space="preserve">
+          <source>Arabic Ligature Akbar Isolated Form</source>
+          <target state="new">Arabic Ligature Akbar Isolated Form</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLigatureAlayheIsolatedForm" translate="yes" xml:space="preserve">
+          <source>Arabic Ligature Alayhe Isolated Form</source>
+          <target state="new">Arabic Ligature Alayhe Isolated Form</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLigatureAllahIsolatedForm" translate="yes" xml:space="preserve">
+          <source>Arabic Ligature Allah Isolated Form</source>
+          <target state="new">Arabic Ligature Allah Isolated Form</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLigatureBismillahArRahmanArRaheem" translate="yes" xml:space="preserve">
+          <source>Arabic Ligature Bismillah Ar-Rahman Ar-Raheem</source>
+          <target state="new">Arabic Ligature Bismillah Ar-Rahman Ar-Raheem</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLigatureJallajalalouhou" translate="yes" xml:space="preserve">
+          <source>Arabic Ligature Jallajalalouhou</source>
+          <target state="new">Arabic Ligature Jallajalalouhou</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLigatureMohammadIsolatedForm" translate="yes" xml:space="preserve">
+          <source>Arabic Ligature Mohammad Isolated Form</source>
+          <target state="new">Arabic Ligature Mohammad Isolated Form</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLigatureQalaUsedAsKoranicStopSignIsolatedForm" translate="yes" xml:space="preserve">
+          <source>Arabic Ligature Qala Used As Koranic Stop Sign Isolated Form</source>
+          <target state="new">Arabic Ligature Qala Used As Koranic Stop Sign Isolated Form</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLigatureRasoulIsolatedForm" translate="yes" xml:space="preserve">
+          <source>Arabic Ligature Rasoul Isolated Form</source>
+          <target state="new">Arabic Ligature Rasoul Isolated Form</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLigatureSalamIsolatedForm" translate="yes" xml:space="preserve">
+          <source>Arabic Ligature Salam Isolated Form</source>
+          <target state="new">Arabic Ligature Salam Isolated Form</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLigatureSallaIsolatedForm" translate="yes" xml:space="preserve">
+          <source>Arabic Ligature Salla Isolated Form</source>
+          <target state="new">Arabic Ligature Salla Isolated Form</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLigatureSallallahouAlayheWasallam" translate="yes" xml:space="preserve">
+          <source>Arabic Ligature Sallallahou Alayhe Wasallam</source>
+          <target state="new">Arabic Ligature Sallallahou Alayhe Wasallam</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLigatureSallaUsedAsKoranicStopSignIsolatedForm" translate="yes" xml:space="preserve">
+          <source>Arabic Ligature Salla Used As Koranic Stop Sign Isolated Form</source>
+          <target state="new">Arabic Ligature Salla Used As Koranic Stop Sign Isolated Form</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicLigatureWasallamIsolatedForm" translate="yes" xml:space="preserve">
+          <source>Arabic Ligature Wasallam Isolated Form</source>
+          <target state="new">Arabic Ligature Wasallam Isolated Form</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicMaddahAbove" translate="yes" xml:space="preserve">
+          <source>Arabic Maddah Above</source>
+          <target state="new">Arabic Maddah Above</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicPlaceOfSajdah" translate="yes" xml:space="preserve">
+          <source>Arabic Place Of Sajdah</source>
+          <target state="new">Arabic Place Of Sajdah</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicQuestionMark" translate="yes" xml:space="preserve">
+          <source>Arabic Question Mark</source>
+          <target state="new">Arabic Question Mark</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicRoundedHighStopWithFilledCentre" translate="yes" xml:space="preserve">
+          <source>Arabic Rounded High Stop With Filled Centre</source>
+          <target state="new">Arabic Rounded High Stop With Filled Centre</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicSemicolon" translate="yes" xml:space="preserve">
+          <source>Arabic Semicolon</source>
+          <target state="new">Arabic Semicolon</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicShadda" translate="yes" xml:space="preserve">
+          <source>Arabic Shadda</source>
+          <target state="new">Arabic Shadda</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicSmallHighJeem" translate="yes" xml:space="preserve">
+          <source>Arabic Small High Jeem</source>
+          <target state="new">Arabic Small High Jeem</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicSmallHighLamAlef" translate="yes" xml:space="preserve">
+          <source>Arabic Small High Lam Alef</source>
+          <target state="new">Arabic Small High Lam Alef</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicSmallHighLigatureQafWithLamWithAlefMaksura" translate="yes" xml:space="preserve">
+          <source>Arabic Small High Ligature Qaf With Lam With Alef Maksura</source>
+          <target state="new">Arabic Small High Ligature Qaf With Lam With Alef Maksura</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicSmallHighLigatureSadWithLamWithAlefMaksura" translate="yes" xml:space="preserve">
+          <source>Arabic Small High Ligature Sad With Lam With Alef Maksura</source>
+          <target state="new">Arabic Small High Ligature Sad With Lam With Alef Maksura</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicSmallHighMeemInitialForm" translate="yes" xml:space="preserve">
+          <source>Arabic Small High Meem Initial Form</source>
+          <target state="new">Arabic Small High Meem Initial Form</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicSmallHighMeemIsolatedForm" translate="yes" xml:space="preserve">
+          <source>Arabic Small High Meem Isolated Form</source>
+          <target state="new">Arabic Small High Meem Isolated Form</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicSmallHighNoon" translate="yes" xml:space="preserve">
+          <source>Arabic Small High Noon</source>
+          <target state="new">Arabic Small High Noon</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicSmallHighRoundedZero" translate="yes" xml:space="preserve">
+          <source>Arabic Small High Rounded Zero</source>
+          <target state="new">Arabic Small High Rounded Zero</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicSmallHighSeen" translate="yes" xml:space="preserve">
+          <source>Arabic Small High Seen</source>
+          <target state="new">Arabic Small High Seen</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicSmallHighThreeDots" translate="yes" xml:space="preserve">
+          <source>Arabic Small High Three Dots</source>
+          <target state="new">Arabic Small High Three Dots</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicSmallHighUprightRectangularZero" translate="yes" xml:space="preserve">
+          <source>Arabic Small High Upright Rectangular Zero</source>
+          <target state="new">Arabic Small High Upright Rectangular Zero</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicSmallLowMeem" translate="yes" xml:space="preserve">
+          <source>Arabic Small Low Meem</source>
+          <target state="new">Arabic Small Low Meem</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicSmallLowSeen" translate="yes" xml:space="preserve">
+          <source>Arabic Small Low Seen</source>
+          <target state="new">Arabic Small Low Seen</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicSmallWaw" translate="yes" xml:space="preserve">
+          <source>Arabic Small Waw</source>
+          <target state="new">Arabic Small Waw</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicSmallYeh" translate="yes" xml:space="preserve">
+          <source>Arabic Small Yeh</source>
+          <target state="new">Arabic Small Yeh</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicStartOfRubElHizb" translate="yes" xml:space="preserve">
+          <source>Arabic Start Of Rub El Hizb</source>
+          <target state="new">Arabic Start Of Rub El Hizb</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicSukun" translate="yes" xml:space="preserve">
+          <source>Arabic Sukun</source>
+          <target state="new">Arabic Sukun</target>
+        </trans-unit>
+        <trans-unit id="unicode_ArabicTatweel" translate="yes" xml:space="preserve">
+          <source>Arabic Tatweel</source>
+          <target state="new">Arabic Tatweel</target>
+        </trans-unit>
+        <trans-unit id="unicode_Colon" translate="yes" xml:space="preserve">
+          <source>Colon</source>
+          <target state="new">Colon</target>
+        </trans-unit>
+        <trans-unit id="unicode_Comma" translate="yes" xml:space="preserve">
+          <source>Comma</source>
+          <target state="new">Comma</target>
+        </trans-unit>
+        <trans-unit id="unicode_ExclamationMark" translate="yes" xml:space="preserve">
+          <source>Exclamation Mark</source>
+          <target state="new">Exclamation Mark</target>
+        </trans-unit>
+        <trans-unit id="unicode_FullStop" translate="yes" xml:space="preserve">
+          <source>Full Stop</source>
+          <target state="new">Full Stop</target>
+        </trans-unit>
+        <trans-unit id="unicode_HyphenMinus" translate="yes" xml:space="preserve">
+          <source>Hyphen-Minus</source>
+          <target state="new">Hyphen-Minus</target>
+        </trans-unit>
+        <trans-unit id="unicode_LeftCurlyBracket" translate="yes" xml:space="preserve">
+          <source>Left Curly Bracket</source>
+          <target state="new">Left Curly Bracket</target>
+        </trans-unit>
+        <trans-unit id="unicode_LeftPointingDoubleAngleQuotationMark" translate="yes" xml:space="preserve">
+          <source>Left-Pointing Double Angle Quotation Mark</source>
+          <target state="new">Left-Pointing Double Angle Quotation Mark</target>
+        </trans-unit>
+        <trans-unit id="unicode_LeftSquareBracket" translate="yes" xml:space="preserve">
+          <source>Left Square Bracket</source>
+          <target state="new">Left Square Bracket</target>
+        </trans-unit>
+        <trans-unit id="unicode_OrnateLeftParenthesis" translate="yes" xml:space="preserve">
+          <source>Ornate Left Parenthesis</source>
+          <target state="new">Ornate Left Parenthesis</target>
+        </trans-unit>
+        <trans-unit id="unicode_OrnateRightParenthesis" translate="yes" xml:space="preserve">
+          <source>Ornate Right Parenthesis</source>
+          <target state="new">Ornate Right Parenthesis</target>
+        </trans-unit>
+        <trans-unit id="unicode_QuotationMark" translate="yes" xml:space="preserve">
+          <source>Quotation Mark</source>
+          <target state="new">Quotation Mark</target>
+        </trans-unit>
+        <trans-unit id="unicode_RialSign" translate="yes" xml:space="preserve">
+          <source>Rial Sign</source>
+          <target state="new">Rial Sign</target>
+        </trans-unit>
+        <trans-unit id="unicode_RightCurlyBracket" translate="yes" xml:space="preserve">
+          <source>Right Curly Bracket</source>
+          <target state="new">Right Curly Bracket</target>
+        </trans-unit>
+        <trans-unit id="unicode_RightPointingDoubleAngleQuotationMark" translate="yes" xml:space="preserve">
+          <source>Right-Pointing Double Angle Quotation Mark</source>
+          <target state="new">Right-Pointing Double Angle Quotation Mark</target>
+        </trans-unit>
+        <trans-unit id="unicode_RightSquareBracket" translate="yes" xml:space="preserve">
+          <source>Right Square Bracket</source>
+          <target state="new">Right Square Bracket</target>
+        </trans-unit>
+        <trans-unit id="unicode_Space" translate="yes" xml:space="preserve">
+          <source>Space</source>
+          <target state="new">Space</target>
+        </trans-unit>
+        <trans-unit id="Acct_CertRequest" translate="yes" xml:space="preserve">
+          <source>Certificate Request</source>
+          <target state="new">Certificate Request</target>
+        </trans-unit>
+        <trans-unit id="Acct_Certificate" translate="yes" xml:space="preserve">
+          <source>Certificate</source>
+          <target state="new">Certificate</target>
+        </trans-unit>
+        <trans-unit id="Acct_CertInstall" translate="yes" xml:space="preserve">
+          <source>Install Certificate</source>
+          <target state="new">Install Certificate</target>
+        </trans-unit>
+        <trans-unit id="Acct_CurrentUser" translate="yes" xml:space="preserve">
+          <source>Current User</source>
+          <target state="new">Current User</target>
+        </trans-unit>
+        <trans-unit id="Acct_DeleteCertRequest" translate="yes" xml:space="preserve">
+          <source>Delete Certificate Request</source>
+          <target state="new">Delete Certificate Request</target>
+        </trans-unit>
+        <trans-unit id="Acct_EnableSSL" translate="yes" xml:space="preserve">
+          <source>Enable SSL</source>
+          <target state="new">Enable SSL</target>
+        </trans-unit>
+        <trans-unit id="Acct_PrivateKey" translate="yes" xml:space="preserve">
+          <source>Private Key</source>
+          <target state="new">Private Key</target>
+        </trans-unit>
+        <trans-unit id="Acct_ViewCertRequests" translate="yes" xml:space="preserve">
+          <source>View Certificate Requests</source>
+          <target state="new">View Certificate Requests</target>
+        </trans-unit>
+        <trans-unit id="Acct_ViewSites" translate="yes" xml:space="preserve">
+          <source>View Sites</source>
+          <target state="new">View Sites</target>
+        </trans-unit>
+        <trans-unit id="Acct_CertInstallIntermed" translate="yes" xml:space="preserve">
+          <source>Install Intermediate Certificate</source>
+          <target state="new">Install Intermediate Certificate</target>
+        </trans-unit>
+        <trans-unit id="unicode_LeftToRightEmbedding" translate="yes" xml:space="preserve">
+          <source>Left-To-Right Embedding</source>
+          <target state="new">Left-To-Right Embedding</target>
+        </trans-unit>
+        <trans-unit id="unicode_RightToLeftEmbedding" translate="yes" xml:space="preserve">
+          <source>Right-To-Left Embedding</source>
+          <target state="new">Right-To-Left Embedding</target>
+        </trans-unit>
+        <trans-unit id="unicode_LeftToRightMark" translate="yes" xml:space="preserve">
+          <source>Left-To-Right Mark</source>
+          <target state="new">Left-To-Right Mark</target>
+        </trans-unit>
+        <trans-unit id="unicode_LeftToRightOverride" translate="yes" xml:space="preserve">
+          <source>Left-To-Right Override</source>
+          <target state="new">Left-To-Right Override</target>
+        </trans-unit>
+        <trans-unit id="unicode_PopDirectionalFormatting" translate="yes" xml:space="preserve">
+          <source>Pop Directional Formatting</source>
+          <target state="new">Pop Directional Formatting</target>
+        </trans-unit>
+        <trans-unit id="unicode_RightToLeftMark" translate="yes" xml:space="preserve">
+          <source>Right-To-Left Mark</source>
+          <target state="new">Right-To-Left Mark</target>
+        </trans-unit>
+        <trans-unit id="unicode_RightToLeftOverride" translate="yes" xml:space="preserve">
+          <source>Right-To-Left Override</source>
+          <target state="new">Right-To-Left Override</target>
+        </trans-unit>
+      </group>
+    </body>
+  </file>
+</xliff>

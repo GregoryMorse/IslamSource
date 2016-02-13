@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Acct_ChangePassword" xml:space="preserve">
+    <value>ផ្លាស់ប្តូរពាក្យសម្ងាត់</value>
+  </data>
+  <data name="Acct_ConfirmPassword" xml:space="preserve">
+    <value>បញ្ជាក់ពាក្យសម្ងាត់</value>
+  </data>
+  <data name="Acct_ControlPanel" xml:space="preserve">
+    <value>ផ្ទាំងត្រួតពិនិត្យ</value>
+  </data>
+  <data name="Acct_DeleteAccount" xml:space="preserve">
+    <value>លុបគណនី</value>
+  </data>
+  <data name="Acct_EmailAddress" xml:space="preserve">
+    <value>អាសយដ្ឋានអ៊ីមែល</value>
+  </data>
+  <data name="Acct_Home" xml:space="preserve">
+    <value>គេហ</value>
+  </data>
+  <data name="Acct_InvalidInput" xml:space="preserve">
+    <value>ការបញ្ចូលមិនត្រឹមត្រូវ</value>
+  </data>
+  <data name="Acct_Login" xml:space="preserve">
+    <value>ឡ&amp;កចូល</value>
+  </data>
+  <data name="Acct_No" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="Acct_Password" xml:space="preserve">
+    <value>ពាក្យ​សម្ងាត់</value>
+  </data>
+  <data name="Acct_PasswordsNotMatch" xml:space="preserve">
+    <value>ពាក្យសម្ងាត់មិនផ្គូផ្គង</value>
+  </data>
+  <data name="Acct_Register" xml:space="preserve">
+    <value>REGISTER</value>
+  </data>
+  <data name="Acct_Username" xml:space="preserve">
+    <value>ឈ្មោះ​អ្នក​ប្រើ</value>
+  </data>
+  <data name="Acct_Yes" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="lang_ber" xml:space="preserve">
+    <value>តាម៉ាហ្សាយ</value>
+  </data>
+  <data name="lang_en" xml:space="preserve">
+    <value>អង់គ្លេស</value>
+  </data>
+  <data name="lang_sw" xml:space="preserve">
+    <value>គីសវ៉ាហ៊ីលី</value>
+  </data>
+  <data name="lang_localam" xml:space="preserve">
+    <value>អាំហារិក</value>
+  </data>
+  <data name="lang_localar" xml:space="preserve">
+    <value>អារ៉ាប់</value>
+  </data>
+  <data name="lang_localaz" xml:space="preserve">
+    <value>ភាសាអាហ្សែបៃហ្សង</value>
+  </data>
+  <data name="lang_localbg" xml:space="preserve">
+    <value>ប៊ុលហ្គារី</value>
+  </data>
+  <data name="lang_localbs" xml:space="preserve">
+    <value>បូស្នៀ</value>
+  </data>
+  <data name="lang_localcs" xml:space="preserve">
+    <value>ឆែក</value>
+  </data>
+  <data name="lang_localde" xml:space="preserve">
+    <value>អាល្លឺម៉ង់</value>
+  </data>
+  <data name="lang_localdv" xml:space="preserve">
+    <value>ទេវីហ៊ី</value>
+  </data>
+  <data name="lang_localen" xml:space="preserve">
+    <value>អង់គ្លេស</value>
+  </data>
+  <data name="lang_locales" xml:space="preserve">
+    <value>អេស្ប៉ាញ</value>
+  </data>
+  <data name="lang_localfa" xml:space="preserve">
+    <value>ព៊ែក្ស</value>
+  </data>
+  <data name="lang_localfr" xml:space="preserve">
+    <value>បារាំង</value>
+  </data>
+  <data name="lang_localha" xml:space="preserve">
+    <value>ហ៊ូសា</value>
+  </data>
+  <data name="lang_localhi" xml:space="preserve">
+    <value>ហិណ្ឌី</value>
+  </data>
+  <data name="lang_localid" xml:space="preserve">
+    <value>ឥណ្ឌូណេស៊ី</value>
+  </data>
+  <data name="lang_localit" xml:space="preserve">
+    <value>អ៊ីតាលី</value>
+  </data>
+  <data name="lang_localja" xml:space="preserve">
+    <value>ជប៉ុន</value>
+  </data>
+  <data name="lang_localko" xml:space="preserve">
+    <value>កូរ៉េ</value>
+  </data>
+  <data name="lang_localml" xml:space="preserve">
+    <value>ម៉ាឡេយ៉ាឡាំ</value>
+  </data>
+  <data name="lang_localms" xml:space="preserve">
+    <value>ម៉ាឡេ</value>
+  </data>
+  <data name="lang_localnl" xml:space="preserve">
+    <value>ហូឡង់</value>
+  </data>
+  <data name="lang_localno" xml:space="preserve">
+    <value>ន័រវែស</value>
+  </data>
+  <data name="lang_localpl" xml:space="preserve">
+    <value>ប៉ូឡូញ</value>
+  </data>
+  <data name="lang_localpt" xml:space="preserve">
+    <value>ព័រទុយហ្គាល់</value>
+  </data>
+  <data name="lang_localro" xml:space="preserve">
+    <value>រ៉ូម៉ានី</value>
+  </data>
+  <data name="lang_localru" xml:space="preserve">
+    <value>រូស្ស៊ី</value>
+  </data>
+  <data name="lang_localsd" xml:space="preserve">
+    <value>ស៊ីនឌី</value>
+  </data>
+  <data name="lang_localso" xml:space="preserve">
+    <value>សូម៉ាលី</value>
+  </data>
+  <data name="lang_localsq" xml:space="preserve">
+    <value>អាល់បានី</value>
+  </data>
+  <data name="lang_localsv" xml:space="preserve">
+    <value>ស៊ុយអ៊ែត</value>
+  </data>
+  <data name="lang_localsw" xml:space="preserve">
+    <value>ស្វាហីលី</value>
+  </data>
+  <data name="lang_localta" xml:space="preserve">
+    <value>តាមិល</value>
+  </data>
+  <data name="lang_localtg" xml:space="preserve">
+    <value>តាដហ្ស៉ីគ</value>
+  </data>
+  <data name="lang_localth" xml:space="preserve">
+    <value>ថៃ</value>
+  </data>
+  <data name="lang_localtr" xml:space="preserve">
+    <value>ទូរគី</value>
+  </data>
+  <data name="lang_localtt" xml:space="preserve">
+    <value>តាតា</value>
+  </data>
+  <data name="lang_localug" xml:space="preserve">
+    <value>អ៊ុយហ្គ័រ</value>
+  </data>
+  <data name="lang_localur" xml:space="preserve">
+    <value>អ៊ូឌូ</value>
+  </data>
+  <data name="lang_localuz" xml:space="preserve">
+    <value>អ៊ូហ្សបេគ</value>
+  </data>
+  <data name="lang_localzh" xml:space="preserve">
+    <value>ចិន</value>
+  </data>
+  <data name="Acct_Download" xml:space="preserve">
+    <value>ទាញយក {0}</value>
+  </data>
+  <data name="unicode_Colon" xml:space="preserve">
+    <value>សញ្ញាចុ&amp;ចពីរ</value>
+  </data>
+  <data name="unicode_Comma" xml:space="preserve">
+    <value>, (សញ្ញាក្បៀស)</value>
+  </data>
+  <data name="unicode_Space" xml:space="preserve">
+    <value>ដកឃ្លា</value>
+  </data>
+  <data name="Acct_Certificate" xml:space="preserve">
+    <value>វិញ្ញាបនបត្រ:</value>
+  </data>
+  <data name="Acct_CurrentUser" xml:space="preserve">
+    <value>អ្នកប្រើបច្ចុប្បន្ន</value>
+  </data>
+</root>

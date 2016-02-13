@@ -1,0 +1,216 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Acct_ChangePassword" xml:space="preserve">
+    <value>رمزعبور را تبدیل کنید</value>
+  </data>
+  <data name="Acct_ClearCache" xml:space="preserve">
+    <value>نهانگاه موقت را پاک نمایید</value>
+  </data>
+  <data name="Acct_ConfirmPassword" xml:space="preserve">
+    <value>رمزعبور را تایید نمایید</value>
+  </data>
+  <data name="Acct_ControlPanel" xml:space="preserve">
+    <value>صفحۀ کنترول</value>
+  </data>
+  <data name="Acct_DeleteAccount" xml:space="preserve">
+    <value>حساب را حذف کنید</value>
+  </data>
+  <data name="Acct_EmailAddress" xml:space="preserve">
+    <value>آدرس ایمیل</value>
+  </data>
+  <data name="Acct_ForgotPassword" xml:space="preserve">
+    <value>Forgot password?</value>
+  </data>
+  <data name="Acct_Home" xml:space="preserve">
+    <value>خانه</value>
+  </data>
+  <data name="Acct_InvalidInput" xml:space="preserve">
+    <value>دخولی نامعتبر</value>
+  </data>
+  <data name="Acct_Login" xml:space="preserve">
+    <value>دخول به سیستم</value>
+  </data>
+  <data name="Acct_No" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="Acct_Password" xml:space="preserve">
+    <value>رمزعبور:</value>
+  </data>
+  <data name="Acct_PasswordsNotMatch" xml:space="preserve">
+    <value>رمز عبور یکسان نمیباشند</value>
+  </data>
+  <data name="Acct_Register" xml:space="preserve">
+    <value>راجستر کردن</value>
+  </data>
+  <data name="Acct_ResetPassword" xml:space="preserve">
+    <value>Reset password...</value>
+  </data>
+  <data name="Acct_Username" xml:space="preserve">
+    <value>اسم استفاده کننده</value>
+  </data>
+  <data name="Acct_Yes" xml:space="preserve">
+    <value>بلی</value>
+  </data>
+  <data name="lang_ber" xml:space="preserve">
+    <value>تمازیت</value>
+  </data>
+  <data name="lang_en" xml:space="preserve">
+    <value>انگلیسی</value>
+  </data>
+  <data name="lang_sw" xml:space="preserve">
+    <value>کیسوالی</value>
+  </data>
+  <data name="lang_localam" xml:space="preserve">
+    <value>امهری</value>
+  </data>
+  <data name="lang_localar" xml:space="preserve">
+    <value>عربی</value>
+  </data>
+  <data name="lang_localaz" xml:space="preserve">
+    <value>آذربایجانی</value>
+  </data>
+  <data name="lang_localbg" xml:space="preserve">
+    <value>بلغاریایی</value>
+  </data>
+  <data name="lang_localbn" xml:space="preserve">
+    <value>بنگالی</value>
+  </data>
+  <data name="lang_localcs" xml:space="preserve">
+    <value>چک</value>
+  </data>
+  <data name="lang_localde" xml:space="preserve">
+    <value>آلمانی</value>
+  </data>
+  <data name="lang_localdv" xml:space="preserve">
+    <value>دیوهلی</value>
+  </data>
+  <data name="lang_localen" xml:space="preserve">
+    <value>انگلیسی</value>
+  </data>
+  <data name="lang_locales" xml:space="preserve">
+    <value>هسپانوی</value>
+  </data>
+  <data name="lang_localfa" xml:space="preserve">
+    <value>فارسی</value>
+  </data>
+  <data name="lang_localfr" xml:space="preserve">
+    <value>فرانسوی</value>
+  </data>
+  <data name="lang_localha" xml:space="preserve">
+    <value>هاسا</value>
+  </data>
+  <data name="lang_localhi" xml:space="preserve">
+    <value>هندی</value>
+  </data>
+  <data name="lang_localid" xml:space="preserve">
+    <value>اندونیزی</value>
+  </data>
+  <data name="lang_localit" xml:space="preserve">
+    <value>ایتالیایی</value>
+  </data>
+  <data name="lang_localja" xml:space="preserve">
+    <value>جاپانی</value>
+  </data>
+  <data name="lang_localko" xml:space="preserve">
+    <value>کوریایی</value>
+  </data>
+  <data name="lang_localml" xml:space="preserve">
+    <value>مالایایی</value>
+  </data>
+  <data name="lang_localms" xml:space="preserve">
+    <value>ماله</value>
+  </data>
+  <data name="lang_localnl" xml:space="preserve">
+    <value>هالندی</value>
+  </data>
+  <data name="lang_localno" xml:space="preserve">
+    <value>نارویژی</value>
+  </data>
+  <data name="lang_localpl" xml:space="preserve">
+    <value>لهستانی</value>
+  </data>
+  <data name="lang_localpt" xml:space="preserve">
+    <value>پرتگالی</value>
+  </data>
+  <data name="lang_localro" xml:space="preserve">
+    <value>رومانی</value>
+  </data>
+  <data name="lang_localru" xml:space="preserve">
+    <value>روسی</value>
+  </data>
+  <data name="lang_localsd" xml:space="preserve">
+    <value>سندی</value>
+  </data>
+  <data name="lang_localso" xml:space="preserve">
+    <value>سومالی</value>
+  </data>
+  <data name="lang_localsq" xml:space="preserve">
+    <value>آلبانیایی</value>
+  </data>
+  <data name="lang_localsv" xml:space="preserve">
+    <value>سوئدی</value>
+  </data>
+  <data name="lang_localsw" xml:space="preserve">
+    <value>سواهیلی</value>
+  </data>
+  <data name="lang_localta" xml:space="preserve">
+    <value>تامیل</value>
+  </data>
+  <data name="lang_localtg" xml:space="preserve">
+    <value>تاجیک</value>
+  </data>
+  <data name="lang_localth" xml:space="preserve">
+    <value>تایلندی</value>
+  </data>
+  <data name="lang_localtr" xml:space="preserve">
+    <value>ترکی</value>
+  </data>
+  <data name="lang_localtt" xml:space="preserve">
+    <value>تاتار</value>
+  </data>
+  <data name="lang_localug" xml:space="preserve">
+    <value>ایغوری</value>
+  </data>
+  <data name="lang_localur" xml:space="preserve">
+    <value>اردو</value>
+  </data>
+  <data name="lang_localuz" xml:space="preserve">
+    <value>ازبک</value>
+  </data>
+  <data name="lang_localzh" xml:space="preserve">
+    <value>چینایی</value>
+  </data>
+  <data name="Acct_Download" xml:space="preserve">
+    <value>{0} را دانلود نمایید</value>
+  </data>
+  <data name="unicode_Colon" xml:space="preserve">
+    <value>دونقطه</value>
+  </data>
+  <data name="unicode_Comma" xml:space="preserve">
+    <value>کامه</value>
+  </data>
+  <data name="unicode_Space" xml:space="preserve">
+    <value>فاصله</value>
+  </data>
+  <data name="Acct_Certificate" xml:space="preserve">
+    <value>سند</value>
+  </data>
+  <data name="Acct_CurrentUser" xml:space="preserve">
+    <value>استفاده کننده کنونی</value>
+  </data>
+  <data name="unicode_PopDirectionalFormatting" xml:space="preserve">
+    <value>‬	قالب بندی جهتی پوپ</value>
+  </data>
+</root>

@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Acct_ChangePassword" xml:space="preserve">
+    <value>Fetola Khunulolamoraba</value>
+  </data>
+  <data name="Acct_ClearCache" xml:space="preserve">
+    <value>Phimola mo khetšheng</value>
+  </data>
+  <data name="Acct_ConfirmPassword" xml:space="preserve">
+    <value>Tlhomamisa Khunololamoraba</value>
+  </data>
+  <data name="Acct_ControlPanel" xml:space="preserve">
+    <value>Phaneletaolo</value>
+  </data>
+  <data name="Acct_DeleteAccount" xml:space="preserve">
+    <value>Phimola Akhaonto</value>
+  </data>
+  <data name="Acct_EmailAddress" xml:space="preserve">
+    <value>Aterese ya Imeile</value>
+  </data>
+  <data name="Acct_ForgotPassword" xml:space="preserve">
+    <value>O lebetse khunololamoraba?</value>
+  </data>
+  <data name="Acct_Home" xml:space="preserve">
+    <value>Gae</value>
+  </data>
+  <data name="Acct_InvalidInput" xml:space="preserve">
+    <value>Tsenyogare ga e a siama</value>
+  </data>
+  <data name="Acct_Login" xml:space="preserve">
+    <value>&amp;Tsena</value>
+  </data>
+  <data name="Acct_Logoff" xml:space="preserve">
+    <value>Tima</value>
+  </data>
+  <data name="Acct_No" xml:space="preserve">
+    <value>Nnyaa</value>
+  </data>
+  <data name="Acct_Password" xml:space="preserve">
+    <value>Tselaitshupo/Khunololamoraba</value>
+  </data>
+  <data name="Acct_PasswordsNotMatch" xml:space="preserve">
+    <value>Dikhunololamoraba ga di tsamaelelane</value>
+  </data>
+  <data name="Acct_Register" xml:space="preserve">
+    <value>REGISTER</value>
+  </data>
+  <data name="Acct_ResetPassword" xml:space="preserve">
+    <value>Tlhomasešwa Khunololamoraba</value>
+  </data>
+  <data name="Acct_Username" xml:space="preserve">
+    <value>Leinatiriso</value>
+  </data>
+  <data name="Acct_Yes" xml:space="preserve">
+    <value>Ee</value>
+  </data>
+  <data name="lang_ber" xml:space="preserve">
+    <value>Setamazight</value>
+  </data>
+  <data name="lang_en" xml:space="preserve">
+    <value>Seesimane</value>
+  </data>
+  <data name="lang_sw" xml:space="preserve">
+    <value>Se-Swahili</value>
+  </data>
+  <data name="lang_localam" xml:space="preserve">
+    <value>Se-Amharic</value>
+  </data>
+  <data name="lang_localar" xml:space="preserve">
+    <value>Searabia</value>
+  </data>
+  <data name="lang_localaz" xml:space="preserve">
+    <value>Se-Azerbaijani</value>
+  </data>
+  <data name="lang_localbg" xml:space="preserve">
+    <value>Se-Bulgaria</value>
+  </data>
+  <data name="lang_localbn" xml:space="preserve">
+    <value>SeBengali</value>
+  </data>
+  <data name="lang_localcs" xml:space="preserve">
+    <value>Se-Czech</value>
+  </data>
+  <data name="lang_localde" xml:space="preserve">
+    <value>Sejeremane</value>
+  </data>
+  <data name="lang_localdv" xml:space="preserve">
+    <value>Sedivehi</value>
+  </data>
+  <data name="lang_localen" xml:space="preserve">
+    <value>Seesimane</value>
+  </data>
+  <data name="lang_locales" xml:space="preserve">
+    <value>Sepaniše</value>
+  </data>
+  <data name="lang_localfa" xml:space="preserve">
+    <value>SePersia</value>
+  </data>
+  <data name="lang_localfr" xml:space="preserve">
+    <value>Sefora</value>
+  </data>
+  <data name="lang_localha" xml:space="preserve">
+    <value>Se-Hausa</value>
+  </data>
+  <data name="lang_localhi" xml:space="preserve">
+    <value>Sehindi</value>
+  </data>
+  <data name="lang_localid" xml:space="preserve">
+    <value>Se-Indonesia</value>
+  </data>
+  <data name="lang_localit" xml:space="preserve">
+    <value>Se-Italy </value>
+  </data>
+  <data name="lang_localja" xml:space="preserve">
+    <value>Sejapane</value>
+  </data>
+  <data name="lang_localko" xml:space="preserve">
+    <value>SeKorea</value>
+  </data>
+  <data name="lang_localml" xml:space="preserve">
+    <value>SeMalayalam</value>
+  </data>
+  <data name="lang_localms" xml:space="preserve">
+    <value>Se-Malay</value>
+  </data>
+  <data name="lang_localnl" xml:space="preserve">
+    <value>Dutch</value>
+  </data>
+  <data name="lang_localno" xml:space="preserve">
+    <value>Se-Norway</value>
+  </data>
+  <data name="lang_localpl" xml:space="preserve">
+    <value>Polish</value>
+  </data>
+  <data name="lang_localpt" xml:space="preserve">
+    <value>Sepotokisi</value>
+  </data>
+  <data name="lang_localro" xml:space="preserve">
+    <value>Se-Romania</value>
+  </data>
+  <data name="lang_localru" xml:space="preserve">
+    <value>Se-Russia</value>
+  </data>
+  <data name="lang_localsd" xml:space="preserve">
+    <value>SeSindhi</value>
+  </data>
+  <data name="lang_localso" xml:space="preserve">
+    <value>Sesomali</value>
+  </data>
+  <data name="lang_localsq" xml:space="preserve">
+    <value>Se-Albania</value>
+  </data>
+  <data name="lang_localsv" xml:space="preserve">
+    <value>Se-Sweden</value>
+  </data>
+  <data name="lang_localsw" xml:space="preserve">
+    <value>Seswahili</value>
+  </data>
+  <data name="lang_localta" xml:space="preserve">
+    <value>Se-Tamili</value>
+  </data>
+  <data name="lang_localtg" xml:space="preserve">
+    <value>Setajiki</value>
+  </data>
+  <data name="lang_localth" xml:space="preserve">
+    <value>SeThai</value>
+  </data>
+  <data name="lang_localtr" xml:space="preserve">
+    <value>SeTurk</value>
+  </data>
+  <data name="lang_localtt" xml:space="preserve">
+    <value>Se-Tatar</value>
+  </data>
+  <data name="lang_localug" xml:space="preserve">
+    <value>Se-Uyghur</value>
+  </data>
+  <data name="lang_localur" xml:space="preserve">
+    <value>Se-Urdu</value>
+  </data>
+  <data name="lang_localuz" xml:space="preserve">
+    <value>SeUzbek</value>
+  </data>
+  <data name="lang_localzh" xml:space="preserve">
+    <value>Chinese</value>
+  </data>
+  <data name="Acct_Download" xml:space="preserve">
+    <value>Laisolola {0}</value>
+  </data>
+  <data name="unicode_Colon" xml:space="preserve">
+    <value>&amp;Phegelwana</value>
+  </data>
+  <data name="unicode_Comma" xml:space="preserve">
+    <value>Phegelwana</value>
+  </data>
+  <data name="unicode_Space" xml:space="preserve">
+    <value>Sebaka</value>
+  </data>
+  <data name="Acct_Certificate" xml:space="preserve">
+    <value>Setifikeiti</value>
+  </data>
+  <data name="Acct_CurrentUser" xml:space="preserve">
+    <value>Modirisi wa Jaanong</value>
+  </data>
+  <data name="unicode_PopDirectionalFormatting" xml:space="preserve">
+    <value>‬	Tlhagisa go Fometa ga Kaelo</value>
+  </data>
+</root>

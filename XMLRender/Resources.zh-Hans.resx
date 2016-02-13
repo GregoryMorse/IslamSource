@@ -1,0 +1,903 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Acct_AccountActivateSuccess" xml:space="preserve">
+    <value>成功激活帐户。</value>
+  </data>
+  <data name="Acct_AccountAlreadyActivated" xml:space="preserve">
+    <value>帐户已激活。</value>
+  </data>
+  <data name="Acct_AccountDeleteSuccess" xml:space="preserve">
+    <value>帐户已成功删除。</value>
+  </data>
+  <data name="Acct_AccountNotActivated" xml:space="preserve">
+    <value>不考虑尚未激活首先请检查您的电子邮件或请求额外的激活码。</value>
+  </data>
+  <data name="Acct_ActivateAccount" xml:space="preserve">
+    <value>激活帐户</value>
+  </data>
+  <data name="Acct_ActivationAccountBody" xml:space="preserve">
+    <value>这封电子邮件请求激活您的帐户 {0}: {1}.请使用下面的链接: {2} 或通过出发到页 {3} 并输入您的用户名和下面的激活代码: {4}</value>
+  </data>
+  <data name="Acct_ActivationAccountSubject" xml:space="preserve">
+    <value>激活帐户 {0} 处</value>
+  </data>
+  <data name="Acct_ActivationCode" xml:space="preserve">
+    <value>激活代码</value>
+  </data>
+  <data name="Acct_BadEmailFormat" xml:space="preserve">
+    <value>不在有效的格式的电子邮件地址。</value>
+  </data>
+  <data name="Acct_Certain" xml:space="preserve">
+    <value>确实吗?</value>
+  </data>
+  <data name="Acct_ChangeEmailAddress" xml:space="preserve">
+    <value>更改电子邮件地址</value>
+  </data>
+  <data name="Acct_ChangePassword" xml:space="preserve">
+    <value>更改密码</value>
+  </data>
+  <data name="Acct_ChangeUsername" xml:space="preserve">
+    <value>更改用户名</value>
+  </data>
+  <data name="Acct_CheckEmailNotice" xml:space="preserve">
+    <value>激活发送到提供的地址。 请检查您的电子邮件来激活您的帐户，将完成您的注册。</value>
+  </data>
+  <data name="Acct_CleanupStale" xml:space="preserve">
+    <value>清理陈旧</value>
+  </data>
+  <data name="Acct_ClearCache" xml:space="preserve">
+    <value>清除缓存</value>
+  </data>
+  <data name="Acct_ClearDiskCache" xml:space="preserve">
+    <value>清除磁盘缓存</value>
+  </data>
+  <data name="Acct_ConfirmEmailAddress" xml:space="preserve">
+    <value>确认电子邮件地址</value>
+  </data>
+  <data name="Acct_ConfirmPassword" xml:space="preserve">
+    <value>确认密码</value>
+  </data>
+  <data name="Acct_ControlPanel" xml:space="preserve">
+    <value>控制面板</value>
+  </data>
+  <data name="Acct_CreateDatabase" xml:space="preserve">
+    <value>创建数据库</value>
+  </data>
+  <data name="Acct_DeleteAccount" xml:space="preserve">
+    <value>删除帐户</value>
+  </data>
+  <data name="Acct_DotNetVersion" xml:space="preserve">
+    <value>网点净版</value>
+  </data>
+  <data name="Acct_DuplicateUser" xml:space="preserve">
+    <value>已存在具有此名称的用户请选择另一个。</value>
+  </data>
+  <data name="Acct_EmailAddress" xml:space="preserve">
+    <value>电子邮件地址</value>
+  </data>
+  <data name="Acct_EmailChangeReactivate" xml:space="preserve">
+    <value>更改电子邮件地址和发送重新激活帐户激活电子邮件。</value>
+  </data>
+  <data name="Acct_EmailInUse" xml:space="preserve">
+    <value>请电子邮件已经在使用中请使用现有的凭据登录。</value>
+  </data>
+  <data name="Acct_EmailsNotMatch" xml:space="preserve">
+    <value>电子邮件地址不匹配</value>
+  </data>
+  <data name="Acct_ForgotPassword" xml:space="preserve">
+    <value>忘记了密码</value>
+  </data>
+  <data name="Acct_ForgotUsername" xml:space="preserve">
+    <value>忘了用户名</value>
+  </data>
+  <data name="Acct_Home" xml:space="preserve">
+    <value>主页</value>
+  </data>
+  <data name="Acct_IncorrectActivationCode" xml:space="preserve">
+    <value>不正确的激活代码。</value>
+  </data>
+  <data name="Acct_IncorrectPasswordResetCode" xml:space="preserve">
+    <value>不正确的密码重置代码。</value>
+  </data>
+  <data name="Acct_InvalidInput" xml:space="preserve">
+    <value>输入无效。</value>
+  </data>
+  <data name="Acct_InvalidUsernamePassword" xml:space="preserve">
+    <value>无效的用户名或密码。</value>
+  </data>
+  <data name="Acct_Login" xml:space="preserve">
+    <value>登录</value>
+  </data>
+  <data name="Acct_LoginSuccess" xml:space="preserve">
+    <value>登录成功。</value>
+  </data>
+  <data name="Acct_Logoff" xml:space="preserve">
+    <value>注销</value>
+  </data>
+  <data name="Acct_LogoffSuccess" xml:space="preserve">
+    <value>注销成功。</value>
+  </data>
+  <data name="Acct_MinimumPassword" xml:space="preserve">
+    <value>密码必须至少 8 个字符。</value>
+  </data>
+  <data name="Acct_MinimumUsername" xml:space="preserve">
+    <value>用户名必须是至少 4 个字符。</value>
+  </data>
+  <data name="Acct_No" xml:space="preserve">
+    <value>否</value>
+  </data>
+  <data name="Acct_NotConfirmDelete" xml:space="preserve">
+    <value>必须确认删除帐户。</value>
+  </data>
+  <data name="Acct_NoUserExists" xml:space="preserve">
+    <value>没有用户存在输入的电子邮件地址。</value>
+  </data>
+  <data name="Acct_Password" xml:space="preserve">
+    <value>密码</value>
+  </data>
+  <data name="Acct_PasswordAlreadyReset" xml:space="preserve">
+    <value>密码已重置或过程不会启动。</value>
+  </data>
+  <data name="Acct_PasswordChangedBody" xml:space="preserve">
+    <value>这封电子邮件是您的 {0} 帐户的密码更改的通知: {1}。</value>
+  </data>
+  <data name="Acct_PasswordChangedSubject" xml:space="preserve">
+    <value>在 {0} 的帐户更改密码</value>
+  </data>
+  <data name="Acct_PasswordChangeSuccess" xml:space="preserve">
+    <value>已成功更改密码。</value>
+  </data>
+  <data name="Acct_PasswordEmailSent" xml:space="preserve">
+    <value>一封电子邮件发送到您的地址上文件以启动密码重置过程。</value>
+  </data>
+  <data name="Acct_PasswordResetBody" xml:space="preserve">
+    <value>这封电子邮件是重置您的 {0} 帐户的密码: {1}.请使用下面的链接: {3} 或出发到页 {4} 并输入您的用户名和以下密码重置代码: {5}</value>
+  </data>
+  <data name="Acct_PasswordResetCode" xml:space="preserve">
+    <value>密码重置代码</value>
+  </data>
+  <data name="Acct_PasswordResetSubject" xml:space="preserve">
+    <value>密码重置帐户 {0} 处</value>
+  </data>
+  <data name="Acct_PasswordResetSuccess" xml:space="preserve">
+    <value>成功地重置密码。</value>
+  </data>
+  <data name="Acct_PasswordsNotMatch" xml:space="preserve">
+    <value>密码不匹配</value>
+  </data>
+  <data name="Acct_Register" xml:space="preserve">
+    <value>注册</value>
+  </data>
+  <data name="Acct_Remember" xml:space="preserve">
+    <value>还记得吗?</value>
+  </data>
+  <data name="Acct_RemoveDatabase" xml:space="preserve">
+    <value>删除数据库</value>
+  </data>
+  <data name="Acct_ResendActivationEmail" xml:space="preserve">
+    <value>重新发送激活电子邮件</value>
+  </data>
+  <data name="Acct_ResetPassword" xml:space="preserve">
+    <value>重置密码</value>
+  </data>
+  <data name="Acct_RetrievePassword" xml:space="preserve">
+    <value>取回密码</value>
+  </data>
+  <data name="Acct_RetrieveUsername" xml:space="preserve">
+    <value>检索用户名</value>
+  </data>
+  <data name="Acct_SendActivationCode" xml:space="preserve">
+    <value>发送激活码</value>
+  </data>
+  <data name="Acct_Username" xml:space="preserve">
+    <value>用户名</value>
+  </data>
+  <data name="Acct_UsernameChangedBody" xml:space="preserve">
+    <value>这封电子邮件是您的 {0} 帐户的帐户名称更改的通知: {1}。</value>
+  </data>
+  <data name="Acct_UsernameChangedSubject" xml:space="preserve">
+    <value>用户名更改帐户 {0} 处</value>
+  </data>
+  <data name="Acct_UsernameChangeSuccess" xml:space="preserve">
+    <value>已成功更改用户名。</value>
+  </data>
+  <data name="Acct_UsernameEmailSent" xml:space="preserve">
+    <value>电子邮件已向您的地址与您的用户名的文件。</value>
+  </data>
+  <data name="Acct_UsernameReminderBody" xml:space="preserve">
+    <value>这封电子邮件是提醒您的帐户 {0}: {1}。</value>
+  </data>
+  <data name="Acct_UsernameReminderSubject" xml:space="preserve">
+    <value>在 {0} 的帐户的用户名提醒</value>
+  </data>
+  <data name="Acct_UserNotFound" xml:space="preserve">
+    <value>用户不存在。</value>
+  </data>
+  <data name="Acct_ViewCache" xml:space="preserve">
+    <value>视图缓存</value>
+  </data>
+  <data name="Acct_ViewDiskCache" xml:space="preserve">
+    <value>查看磁盘高速缓存</value>
+  </data>
+  <data name="Acct_ViewHeaders" xml:space="preserve">
+    <value>查看头</value>
+  </data>
+  <data name="Acct_Yes" xml:space="preserve">
+    <value>是</value>
+  </data>
+  <data name="lang_am" xml:space="preserve">
+    <value>ኣማርኛ</value>
+  </data>
+  <data name="lang_ar" xml:space="preserve">
+    <value>沙迦</value>
+  </data>
+  <data name="lang_az" xml:space="preserve">
+    <value>Azərbaycan 帝力</value>
+  </data>
+  <data name="lang_ber" xml:space="preserve">
+    <value>塔马塞特语</value>
+  </data>
+  <data name="lang_bg" xml:space="preserve">
+    <value>БЪЛГАРСКИ</value>
+  </data>
+  <data name="lang_bn" xml:space="preserve">
+    <value>বাংলা</value>
+  </data>
+  <data name="lang_bs" xml:space="preserve">
+    <value>波斯尼亚</value>
+  </data>
+  <data name="lang_cs" xml:space="preserve">
+    <value>Čeština</value>
+  </data>
+  <data name="lang_de" xml:space="preserve">
+    <value>德语</value>
+  </data>
+  <data name="lang_dv" xml:space="preserve">
+    <value>ދިވެހި</value>
+  </data>
+  <data name="lang_en" xml:space="preserve">
+    <value>英语</value>
+  </data>
+  <data name="lang_es" xml:space="preserve">
+    <value>español</value>
+  </data>
+  <data name="lang_fa" xml:space="preserve">
+    <value>فارسى</value>
+  </data>
+  <data name="lang_fr" xml:space="preserve">
+    <value>法国</value>
+  </data>
+  <data name="lang_ha" xml:space="preserve">
+    <value>Ḥawsa</value>
+  </data>
+  <data name="lang_hi" xml:space="preserve">
+    <value>हिन्दी</value>
+  </data>
+  <data name="lang_id" xml:space="preserve">
+    <value>印度尼西亚语</value>
+  </data>
+  <data name="lang_it" xml:space="preserve">
+    <value>意大利菜</value>
+  </data>
+  <data name="lang_ja" xml:space="preserve">
+    <value>日语</value>
+  </data>
+  <data name="lang_ko" xml:space="preserve">
+    <value>韩语</value>
+  </data>
+  <data name="lang_ku" xml:space="preserve">
+    <value>کوردی</value>
+  </data>
+  <data name="lang_ml" xml:space="preserve">
+    <value>മലയാളം</value>
+  </data>
+  <data name="lang_ms" xml:space="preserve">
+    <value>马来语</value>
+  </data>
+  <data name="lang_nl" xml:space="preserve">
+    <value>荷兰</value>
+  </data>
+  <data name="lang_no" xml:space="preserve">
+    <value>挪威</value>
+  </data>
+  <data name="lang_pl" xml:space="preserve">
+    <value>以</value>
+  </data>
+  <data name="lang_pt" xml:space="preserve">
+    <value>葡萄牙语</value>
+  </data>
+  <data name="lang_ro" xml:space="preserve">
+    <value>रोमानो</value>
+  </data>
+  <data name="lang_ru" xml:space="preserve">
+    <value>РУССКИЙ ЯЗЫК</value>
+  </data>
+  <data name="lang_sd" xml:space="preserve">
+    <value>سنڌي</value>
+  </data>
+  <data name="lang_so" xml:space="preserve">
+    <value>af Soomaali</value>
+  </data>
+  <data name="lang_sq" xml:space="preserve">
+    <value>shqip</value>
+  </data>
+  <data name="lang_sv" xml:space="preserve">
+    <value>瑞典</value>
+  </data>
+  <data name="lang_sw" xml:space="preserve">
+    <value>斯瓦希里语</value>
+  </data>
+  <data name="lang_ta" xml:space="preserve">
+    <value>தமிழ்</value>
+  </data>
+  <data name="lang_tg" xml:space="preserve">
+    <value>ТОҶИКИ</value>
+  </data>
+  <data name="lang_th" xml:space="preserve">
+    <value>ภาษาไทย</value>
+  </data>
+  <data name="lang_tr" xml:space="preserve">
+    <value>Türkçe</value>
+  </data>
+  <data name="lang_tt" xml:space="preserve">
+    <value>ТАТАРЧА</value>
+  </data>
+  <data name="lang_ug" xml:space="preserve">
+    <value>ئۇيغۇر</value>
+  </data>
+  <data name="lang_ur" xml:space="preserve">
+    <value>اردو</value>
+  </data>
+  <data name="lang_uz" xml:space="preserve">
+    <value>o'zbek 地利等客运 ўзбек тили</value>
+  </data>
+  <data name="lang_zh" xml:space="preserve">
+    <value>中文</value>
+  </data>
+  <data name="lang_localam" xml:space="preserve">
+    <value>阿姆哈拉语</value>
+  </data>
+  <data name="lang_localar" xml:space="preserve">
+    <value>阿拉伯语</value>
+  </data>
+  <data name="lang_localaz" xml:space="preserve">
+    <value>阿塞拜疆语</value>
+  </data>
+  <data name="lang_localber" xml:space="preserve">
+    <value>柏柏尔人</value>
+  </data>
+  <data name="lang_localbg" xml:space="preserve">
+    <value>保加利亚语</value>
+  </data>
+  <data name="lang_localbn" xml:space="preserve">
+    <value>孟加拉语</value>
+  </data>
+  <data name="lang_localbs" xml:space="preserve">
+    <value>波斯尼亚语</value>
+  </data>
+  <data name="lang_localcs" xml:space="preserve">
+    <value>捷克语</value>
+  </data>
+  <data name="lang_localde" xml:space="preserve">
+    <value>德语</value>
+  </data>
+  <data name="lang_localdv" xml:space="preserve">
+    <value>马尔代夫语</value>
+  </data>
+  <data name="lang_localen" xml:space="preserve">
+    <value>英语</value>
+  </data>
+  <data name="lang_locales" xml:space="preserve">
+    <value>西班牙语</value>
+  </data>
+  <data name="lang_localfa" xml:space="preserve">
+    <value>波斯语</value>
+  </data>
+  <data name="lang_localfr" xml:space="preserve">
+    <value>法语</value>
+  </data>
+  <data name="lang_localha" xml:space="preserve">
+    <value>豪撒语</value>
+  </data>
+  <data name="lang_localhi" xml:space="preserve">
+    <value>印地语</value>
+  </data>
+  <data name="lang_localid" xml:space="preserve">
+    <value>印度尼西亚语</value>
+  </data>
+  <data name="lang_localit" xml:space="preserve">
+    <value>意大利语</value>
+  </data>
+  <data name="lang_localja" xml:space="preserve">
+    <value>日语</value>
+  </data>
+  <data name="lang_localko" xml:space="preserve">
+    <value>朝鲜语</value>
+  </data>
+  <data name="lang_localku" xml:space="preserve">
+    <value>库尔德语</value>
+  </data>
+  <data name="lang_localml" xml:space="preserve">
+    <value>马拉雅拉姆语</value>
+  </data>
+  <data name="lang_localms" xml:space="preserve">
+    <value>马来语</value>
+  </data>
+  <data name="lang_localnl" xml:space="preserve">
+    <value>荷兰语</value>
+  </data>
+  <data name="lang_localno" xml:space="preserve">
+    <value>挪威语</value>
+  </data>
+  <data name="lang_localpl" xml:space="preserve">
+    <value>波兰语</value>
+  </data>
+  <data name="lang_localpt" xml:space="preserve">
+    <value>葡萄牙语</value>
+  </data>
+  <data name="lang_localro" xml:space="preserve">
+    <value>罗马尼亚语</value>
+  </data>
+  <data name="lang_localru" xml:space="preserve">
+    <value>俄语</value>
+  </data>
+  <data name="lang_localsd" xml:space="preserve">
+    <value>信德语</value>
+  </data>
+  <data name="lang_localso" xml:space="preserve">
+    <value>索马里语</value>
+  </data>
+  <data name="lang_localsq" xml:space="preserve">
+    <value>阿尔巴尼亚语</value>
+  </data>
+  <data name="lang_localsv" xml:space="preserve">
+    <value>瑞典语</value>
+  </data>
+  <data name="lang_localsw" xml:space="preserve">
+    <value>斯瓦希里语</value>
+  </data>
+  <data name="lang_localta" xml:space="preserve">
+    <value>泰米尔语</value>
+  </data>
+  <data name="lang_localtg" xml:space="preserve">
+    <value>塔吉克语</value>
+  </data>
+  <data name="lang_localth" xml:space="preserve">
+    <value>泰语</value>
+  </data>
+  <data name="lang_localtr" xml:space="preserve">
+    <value>土耳其语</value>
+  </data>
+  <data name="lang_localtt" xml:space="preserve">
+    <value>鞑靼语</value>
+  </data>
+  <data name="lang_localug" xml:space="preserve">
+    <value>维吾尔语</value>
+  </data>
+  <data name="lang_localur" xml:space="preserve">
+    <value>乌尔都语</value>
+  </data>
+  <data name="lang_localuz" xml:space="preserve">
+    <value>乌兹别克语</value>
+  </data>
+  <data name="lang_localzh" xml:space="preserve">
+    <value>中文</value>
+  </data>
+  <data name="Acct_Download" xml:space="preserve">
+    <value>下载 {0}</value>
+  </data>
+  <data name="unicode_ArabicComma" xml:space="preserve">
+    <value>阿拉伯文逗号</value>
+  </data>
+  <data name="unicode_ArabicDamma" xml:space="preserve">
+    <value>阿拉伯文 Damma</value>
+  </data>
+  <data name="unicode_ArabicDammatan" xml:space="preserve">
+    <value>阿拉伯文 Dammatan</value>
+  </data>
+  <data name="unicode_ArabicEmptyCentreHighStop" xml:space="preserve">
+    <value>阿拉伯文空心高句号</value>
+  </data>
+  <data name="unicode_ArabicEmptyCentreLowStop" xml:space="preserve">
+    <value>阿拉伯文空心下句号</value>
+  </data>
+  <data name="unicode_ArabicEndOfAyah" xml:space="preserve">
+    <value>阿拉伯文 Ayah 结束</value>
+  </data>
+  <data name="unicode_ArabicFatha" xml:space="preserve">
+    <value>阿拉伯文 Fatha</value>
+  </data>
+  <data name="unicode_ArabicFathatan" xml:space="preserve">
+    <value>阿拉伯文 Fathatan</value>
+  </data>
+  <data name="unicode_ArabicHamzaAbove" xml:space="preserve">
+    <value>阿拉伯文上喉塞音符</value>
+  </data>
+  <data name="unicode_ArabicHamzaBelow" xml:space="preserve">
+    <value>阿拉伯文下喉塞音符</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitEight" xml:space="preserve">
+    <value>阿拉伯 - 印度文数字八</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitFive" xml:space="preserve">
+    <value>阿拉伯 - 印度文数字五</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitFour" xml:space="preserve">
+    <value>阿拉伯 - 印度文数字四</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitNine" xml:space="preserve">
+    <value>阿拉伯 - 印度文数字九</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitOne" xml:space="preserve">
+    <value>阿拉伯 - 印度文数字一</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitSeven" xml:space="preserve">
+    <value>阿拉伯 - 印度文数字七</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitSix" xml:space="preserve">
+    <value>阿拉伯 - 印度文数字六</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitThree" xml:space="preserve">
+    <value>阿拉伯 - 印度文数字三</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitTwo" xml:space="preserve">
+    <value>阿拉伯 - 印度文数字二</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitZero" xml:space="preserve">
+    <value>阿拉伯 - 印度文数字○</value>
+  </data>
+  <data name="unicode_ArabicKasra" xml:space="preserve">
+    <value>阿拉伯文 Kasra</value>
+  </data>
+  <data name="unicode_ArabicKasratan" xml:space="preserve">
+    <value>阿拉伯文 Kasratan</value>
+  </data>
+  <data name="unicode_ArabicLetterAin" xml:space="preserve">
+    <value>阿拉伯文字母 Ain</value>
+  </data>
+  <data name="unicode_ArabicLetterAlef" xml:space="preserve">
+    <value>阿拉伯文字母 Alef</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefMaksura" xml:space="preserve">
+    <value>阿拉伯文字母 Alef Maksura</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefWasla" xml:space="preserve">
+    <value>阿拉伯文字母 Alef Wasla</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefWithHamzaAbove" xml:space="preserve">
+    <value>带上喉塞音符的阿拉伯文字母 Alef</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefWithHamzaBelow" xml:space="preserve">
+    <value>带下喉塞音符的阿拉伯文字母 Alef</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefWithMaddaAbove" xml:space="preserve">
+    <value>带上 Madda 的阿拉伯文字母 Alef</value>
+  </data>
+  <data name="unicode_ArabicLetterBeh" xml:space="preserve">
+    <value>阿拉伯文字母 Beh</value>
+  </data>
+  <data name="unicode_ArabicLetterDad" xml:space="preserve">
+    <value>阿拉伯文字母 Dad</value>
+  </data>
+  <data name="unicode_ArabicLetterDal" xml:space="preserve">
+    <value>阿拉伯文字母 Dal</value>
+  </data>
+  <data name="unicode_ArabicLetterFeh" xml:space="preserve">
+    <value>阿拉伯文字母 Feh</value>
+  </data>
+  <data name="unicode_ArabicLetterGaf" xml:space="preserve">
+    <value>阿拉伯文字母 Gaf</value>
+  </data>
+  <data name="unicode_ArabicLetterGhain" xml:space="preserve">
+    <value>阿拉伯文字母 Ghain</value>
+  </data>
+  <data name="unicode_ArabicLetterHah" xml:space="preserve">
+    <value>阿拉伯文字母 Hah</value>
+  </data>
+  <data name="unicode_ArabicLetterHamza" xml:space="preserve">
+    <value>阿拉伯文字母喉塞音符</value>
+  </data>
+  <data name="unicode_ArabicLetterHeh" xml:space="preserve">
+    <value>阿拉伯文字母 Heh</value>
+  </data>
+  <data name="unicode_ArabicLetterJeem" xml:space="preserve">
+    <value>阿拉伯文字母 Jeem</value>
+  </data>
+  <data name="unicode_ArabicLetterKaf" xml:space="preserve">
+    <value>阿拉伯文字母 Kaf</value>
+  </data>
+  <data name="unicode_ArabicLetterKhah" xml:space="preserve">
+    <value>阿拉伯文字母 Khah</value>
+  </data>
+  <data name="unicode_ArabicLetterLam" xml:space="preserve">
+    <value>阿拉伯文字母 Lam</value>
+  </data>
+  <data name="unicode_ArabicLetterMeem" xml:space="preserve">
+    <value>阿拉伯文字母 Meem</value>
+  </data>
+  <data name="unicode_ArabicLetterNoon" xml:space="preserve">
+    <value>阿拉伯文字母 Noon</value>
+  </data>
+  <data name="unicode_ArabicLetterPeh" xml:space="preserve">
+    <value>阿拉伯文字母 Peh</value>
+  </data>
+  <data name="unicode_ArabicLetterQaf" xml:space="preserve">
+    <value>阿拉伯文字母 Qaf</value>
+  </data>
+  <data name="unicode_ArabicLetterReh" xml:space="preserve">
+    <value>阿拉伯文字母 Reh</value>
+  </data>
+  <data name="unicode_ArabicLetterSad" xml:space="preserve">
+    <value>阿拉伯文字母 Sad</value>
+  </data>
+  <data name="unicode_ArabicLetterSeen" xml:space="preserve">
+    <value>阿拉伯文字母 Seen</value>
+  </data>
+  <data name="unicode_ArabicLetterSheen" xml:space="preserve">
+    <value>阿拉伯文字母 Sheen</value>
+  </data>
+  <data name="unicode_ArabicLetterSuperscriptAlef" xml:space="preserve">
+    <value>阿拉伯文字母上标 Alef</value>
+  </data>
+  <data name="unicode_ArabicLetterTah" xml:space="preserve">
+    <value>阿拉伯文字母 Tah</value>
+  </data>
+  <data name="unicode_ArabicLetterTcheh" xml:space="preserve">
+    <value>阿拉伯文字母 Tcheh</value>
+  </data>
+  <data name="unicode_ArabicLetterTeh" xml:space="preserve">
+    <value>阿拉伯文字母 Teh</value>
+  </data>
+  <data name="unicode_ArabicLetterTehMarbuta" xml:space="preserve">
+    <value>阿拉伯文字母 Teh Marbuta</value>
+  </data>
+  <data name="unicode_ArabicLetterThal" xml:space="preserve">
+    <value>阿拉伯文字母 Thal</value>
+  </data>
+  <data name="unicode_ArabicLetterTheh" xml:space="preserve">
+    <value>阿拉伯文字母 Theh</value>
+  </data>
+  <data name="unicode_ArabicLetterVeh" xml:space="preserve">
+    <value>阿拉伯文字母 Veh</value>
+  </data>
+  <data name="unicode_ArabicLetterWaw" xml:space="preserve">
+    <value>阿拉伯文字母 Waw</value>
+  </data>
+  <data name="unicode_ArabicLetterWawWithHamzaAbove" xml:space="preserve">
+    <value>带上喉塞音符的阿拉伯文字母 Waw</value>
+  </data>
+  <data name="unicode_ArabicLetterYeh" xml:space="preserve">
+    <value>阿拉伯文字母 Yeh</value>
+  </data>
+  <data name="unicode_ArabicLetterYehWithHamzaAbove" xml:space="preserve">
+    <value>带上喉塞音符的阿拉伯文字母 Yeh</value>
+  </data>
+  <data name="unicode_ArabicLetterZah" xml:space="preserve">
+    <value>阿拉伯文字母 Zah</value>
+  </data>
+  <data name="unicode_ArabicLetterZain" xml:space="preserve">
+    <value>阿拉伯文字母 Zain</value>
+  </data>
+  <data name="unicode_ArabicLigatureAkbarIsolatedForm" xml:space="preserve">
+    <value>阿拉伯文连字 Akbar 独立形式</value>
+  </data>
+  <data name="unicode_ArabicLigatureAlayheIsolatedForm" xml:space="preserve">
+    <value>阿拉伯文连字 Alayhe 独立形式</value>
+  </data>
+  <data name="unicode_ArabicLigatureAllahIsolatedForm" xml:space="preserve">
+    <value>阿拉伯文连字 Allah 独立形式</value>
+  </data>
+  <data name="unicode_ArabicLigatureBismillahArRahmanArRaheem" xml:space="preserve">
+    <value>阿拉伯文连字 Bismillah Ar-Rahman Ar-Raheem</value>
+  </data>
+  <data name="unicode_ArabicLigatureJallajalalouhou" xml:space="preserve">
+    <value>阿拉伯文连字 Jallajalalouhou</value>
+  </data>
+  <data name="unicode_ArabicLigatureMohammadIsolatedForm" xml:space="preserve">
+    <value>阿拉伯文连字 Mohammad 独立形式</value>
+  </data>
+  <data name="unicode_ArabicLigatureQalaUsedAsKoranicStopSignIsolatedForm" xml:space="preserve">
+    <value>阿拉伯文连字 Qala 用于可兰经的句号标记独立形式</value>
+  </data>
+  <data name="unicode_ArabicLigatureRasoulIsolatedForm" xml:space="preserve">
+    <value>阿拉伯文连字 Rasoul 独立形式</value>
+  </data>
+  <data name="unicode_ArabicLigatureSalamIsolatedForm" xml:space="preserve">
+    <value>阿拉伯文连字 Salam 独立形式</value>
+  </data>
+  <data name="unicode_ArabicLigatureSallaIsolatedForm" xml:space="preserve">
+    <value>阿拉伯文连字 Salla 独立形式</value>
+  </data>
+  <data name="unicode_ArabicLigatureSallallahouAlayheWasallam" xml:space="preserve">
+    <value>阿拉伯文连字 Sallallahou Alayhe Wasallam</value>
+  </data>
+  <data name="unicode_ArabicLigatureSallaUsedAsKoranicStopSignIsolatedForm" xml:space="preserve">
+    <value>阿拉伯文连字 Salla 用于可兰经的句号标记独立形式</value>
+  </data>
+  <data name="unicode_ArabicLigatureWasallamIsolatedForm" xml:space="preserve">
+    <value>阿拉伯文连字 Wasallam 独立形式</value>
+  </data>
+  <data name="unicode_ArabicMaddahAbove" xml:space="preserve">
+    <value>阿拉伯文上 Maddah</value>
+  </data>
+  <data name="unicode_ArabicPlaceOfSajdah" xml:space="preserve">
+    <value>阿拉伯文 Sajdah 的位置</value>
+  </data>
+  <data name="unicode_ArabicQuestionMark" xml:space="preserve">
+    <value>阿拉伯文问号</value>
+  </data>
+  <data name="unicode_ArabicRoundedHighStopWithFilledCentre" xml:space="preserve">
+    <value>有实心的阿拉伯文圆高句号</value>
+  </data>
+  <data name="unicode_ArabicSemicolon" xml:space="preserve">
+    <value>阿拉伯文分号</value>
+  </data>
+  <data name="unicode_ArabicShadda" xml:space="preserve">
+    <value>阿拉伯文 Shadda</value>
+  </data>
+  <data name="unicode_ArabicSmallHighJeem" xml:space="preserve">
+    <value>阿拉伯文小型高 Jeem</value>
+  </data>
+  <data name="unicode_ArabicSmallHighLamAlef" xml:space="preserve">
+    <value>阿拉伯文小型高 Lam Alef</value>
+  </data>
+  <data name="unicode_ArabicSmallHighLigatureQafWithLamWithAlefMaksura" xml:space="preserve">
+    <value>带 Lam 的阿拉伯文小型高连字 Qaf，还带有 Alef Maksura</value>
+  </data>
+  <data name="unicode_ArabicSmallHighLigatureSadWithLamWithAlefMaksura" xml:space="preserve">
+    <value>带 Lam 的阿拉伯文小型高连字 Sad，还带有 Alef Maksura</value>
+  </data>
+  <data name="unicode_ArabicSmallHighMeemInitialForm" xml:space="preserve">
+    <value>阿拉伯文小型高 Meem 词首形式</value>
+  </data>
+  <data name="unicode_ArabicSmallHighMeemIsolatedForm" xml:space="preserve">
+    <value>阿拉伯文小型高 Meem 独立形式</value>
+  </data>
+  <data name="unicode_ArabicSmallHighNoon" xml:space="preserve">
+    <value>阿拉伯文小型高 Noon</value>
+  </data>
+  <data name="unicode_ArabicSmallHighRoundedZero" xml:space="preserve">
+    <value>阿拉伯文小型高圆○</value>
+  </data>
+  <data name="unicode_ArabicSmallHighSeen" xml:space="preserve">
+    <value>阿拉伯文小型高 Seen</value>
+  </data>
+  <data name="unicode_ArabicSmallHighThreeDots" xml:space="preserve">
+    <value>阿拉伯文小型高三点</value>
+  </data>
+  <data name="unicode_ArabicSmallHighUprightRectangularZero" xml:space="preserve">
+    <value>阿拉伯文小型高竖矩形○</value>
+  </data>
+  <data name="unicode_ArabicSmallLowMeem" xml:space="preserve">
+    <value>阿拉伯文小型下 Meem</value>
+  </data>
+  <data name="unicode_ArabicSmallLowSeen" xml:space="preserve">
+    <value>阿拉伯文小型下 Seen</value>
+  </data>
+  <data name="unicode_ArabicSmallWaw" xml:space="preserve">
+    <value>阿拉伯文小型 Waw</value>
+  </data>
+  <data name="unicode_ArabicSmallYeh" xml:space="preserve">
+    <value>阿拉伯文小型 Yeh</value>
+  </data>
+  <data name="unicode_ArabicStartOfRubElHizb" xml:space="preserve">
+    <value>阿拉伯文 Rub El Hizb 开始</value>
+  </data>
+  <data name="unicode_ArabicSukun" xml:space="preserve">
+    <value>阿拉伯文 Sukun</value>
+  </data>
+  <data name="unicode_ArabicTatweel" xml:space="preserve">
+    <value>阿拉伯文 Tatweel</value>
+  </data>
+  <data name="unicode_Colon" xml:space="preserve">
+    <value>冒号</value>
+  </data>
+  <data name="unicode_Comma" xml:space="preserve">
+    <value>逗号</value>
+  </data>
+  <data name="unicode_ExclamationMark" xml:space="preserve">
+    <value>叹号</value>
+  </data>
+  <data name="unicode_FullStop" xml:space="preserve">
+    <value>句号</value>
+  </data>
+  <data name="unicode_HyphenMinus" xml:space="preserve">
+    <value>连字符 - 负号</value>
+  </data>
+  <data name="unicode_LeftCurlyBracket" xml:space="preserve">
+    <value>左花括号</value>
+  </data>
+  <data name="unicode_LeftPointingDoubleAngleQuotationMark" xml:space="preserve">
+    <value>左指双尖引号</value>
+  </data>
+  <data name="unicode_LeftSquareBracket" xml:space="preserve">
+    <value>左方括号</value>
+  </data>
+  <data name="unicode_OrnateLeftParenthesis" xml:space="preserve">
+    <value>装饰左圆括号</value>
+  </data>
+  <data name="unicode_OrnateRightParenthesis" xml:space="preserve">
+    <value>装饰右圆括号</value>
+  </data>
+  <data name="unicode_QuotationMark" xml:space="preserve">
+    <value>引号</value>
+  </data>
+  <data name="unicode_RialSign" xml:space="preserve">
+    <value>里亚尔符号</value>
+  </data>
+  <data name="unicode_RightCurlyBracket" xml:space="preserve">
+    <value>右花括号</value>
+  </data>
+  <data name="unicode_RightPointingDoubleAngleQuotationMark" xml:space="preserve">
+    <value>右指双尖引号</value>
+  </data>
+  <data name="unicode_RightSquareBracket" xml:space="preserve">
+    <value>右方括号</value>
+  </data>
+  <data name="unicode_Space" xml:space="preserve">
+    <value>太空</value>
+  </data>
+  <data name="Acct_CertRequest" xml:space="preserve">
+    <value>证书请求</value>
+  </data>
+  <data name="Acct_Certificate" xml:space="preserve">
+    <value>证书</value>
+  </data>
+  <data name="Acct_CertInstall" xml:space="preserve">
+    <value>安装证书</value>
+  </data>
+  <data name="Acct_CurrentUser" xml:space="preserve">
+    <value>当前用户</value>
+  </data>
+  <data name="Acct_DeleteCertRequest" xml:space="preserve">
+    <value>删除证书请求</value>
+  </data>
+  <data name="Acct_EnableSSL" xml:space="preserve">
+    <value>启用 SSL</value>
+  </data>
+  <data name="Acct_PrivateKey" xml:space="preserve">
+    <value>专用密钥</value>
+  </data>
+  <data name="Acct_ViewCertRequests" xml:space="preserve">
+    <value>查看证书请求</value>
+  </data>
+  <data name="Acct_ViewSites" xml:space="preserve">
+    <value>查看网站</value>
+  </data>
+  <data name="Acct_CertInstallIntermed" xml:space="preserve">
+    <value>安装中级证书</value>
+  </data>
+  <data name="unicode_LeftToRightEmbedding" xml:space="preserve">
+    <value>从左至右嵌入</value>
+  </data>
+  <data name="unicode_RightToLeftEmbedding" xml:space="preserve">
+    <value>从右至左嵌入</value>
+  </data>
+  <data name="unicode_LeftToRightMark" xml:space="preserve">
+    <value>从左至右标志</value>
+  </data>
+  <data name="unicode_LeftToRightOverride" xml:space="preserve">
+    <value>从左至右强制</value>
+  </data>
+  <data name="unicode_PopDirectionalFormatting" xml:space="preserve">
+    <value>流行音乐定向格式</value>
+  </data>
+  <data name="unicode_RightToLeftMark" xml:space="preserve">
+    <value>从右至左标志</value>
+  </data>
+  <data name="unicode_RightToLeftOverride" xml:space="preserve">
+    <value>从右至左强制</value>
+  </data>
+</root>

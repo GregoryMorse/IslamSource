@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Acct_ChangePassword" xml:space="preserve">
+    <value>Змена пароля</value>
+  </data>
+  <data name="Acct_ConfirmPassword" xml:space="preserve">
+    <value>Пацвердзіце пароль</value>
+  </data>
+  <data name="Acct_ControlPanel" xml:space="preserve">
+    <value>панэль кіравання</value>
+  </data>
+  <data name="Acct_DeleteAccount" xml:space="preserve">
+    <value>Выдаліць уліковы запіс</value>
+  </data>
+  <data name="Acct_EmailAddress" xml:space="preserve">
+    <value>Адрас электроннай пошты</value>
+  </data>
+  <data name="Acct_Home" xml:space="preserve">
+    <value>Галоўная</value>
+  </data>
+  <data name="Acct_InvalidInput" xml:space="preserve">
+    <value>Памылковы ўвод</value>
+  </data>
+  <data name="Acct_Login" xml:space="preserve">
+    <value>&amp;Увайсці</value>
+  </data>
+  <data name="Acct_No" xml:space="preserve">
+    <value>Не</value>
+  </data>
+  <data name="Acct_Password" xml:space="preserve">
+    <value>Пароль</value>
+  </data>
+  <data name="Acct_PasswordsNotMatch" xml:space="preserve">
+    <value>Паролі не супадаюць</value>
+  </data>
+  <data name="Acct_Register" xml:space="preserve">
+    <value>REGISTER</value>
+  </data>
+  <data name="Acct_Username" xml:space="preserve">
+    <value>Імя карыстальніка</value>
+  </data>
+  <data name="Acct_Yes" xml:space="preserve">
+    <value>Так</value>
+  </data>
+  <data name="lang_ber" xml:space="preserve">
+    <value>Тамазігхт</value>
+  </data>
+  <data name="lang_en" xml:space="preserve">
+    <value>Англійская</value>
+  </data>
+  <data name="lang_sw" xml:space="preserve">
+    <value>суахілі</value>
+  </data>
+  <data name="lang_localam" xml:space="preserve">
+    <value>амхарская</value>
+  </data>
+  <data name="lang_localar" xml:space="preserve">
+    <value>Арабская</value>
+  </data>
+  <data name="lang_localaz" xml:space="preserve">
+    <value>азербайджанская</value>
+  </data>
+  <data name="lang_localbg" xml:space="preserve">
+    <value>балгарская</value>
+  </data>
+  <data name="lang_localbs" xml:space="preserve">
+    <value>Баснійская</value>
+  </data>
+  <data name="lang_localcs" xml:space="preserve">
+    <value>чэшская</value>
+  </data>
+  <data name="lang_localde" xml:space="preserve">
+    <value>нямецкая</value>
+  </data>
+  <data name="lang_localdv" xml:space="preserve">
+    <value>Дзівехі</value>
+  </data>
+  <data name="lang_localen" xml:space="preserve">
+    <value>Англійская</value>
+  </data>
+  <data name="lang_locales" xml:space="preserve">
+    <value>іспанская</value>
+  </data>
+  <data name="lang_localfa" xml:space="preserve">
+    <value>фарсі</value>
+  </data>
+  <data name="lang_localfr" xml:space="preserve">
+    <value>французская</value>
+  </data>
+  <data name="lang_localha" xml:space="preserve">
+    <value>хауса</value>
+  </data>
+  <data name="lang_localhi" xml:space="preserve">
+    <value>Хіндзі</value>
+  </data>
+  <data name="lang_localid" xml:space="preserve">
+    <value>інданезійская</value>
+  </data>
+  <data name="lang_localit" xml:space="preserve">
+    <value>італьянская</value>
+  </data>
+  <data name="lang_localja" xml:space="preserve">
+    <value>Японская</value>
+  </data>
+  <data name="lang_localko" xml:space="preserve">
+    <value>Карэйская</value>
+  </data>
+  <data name="lang_localml" xml:space="preserve">
+    <value>Малаялам</value>
+  </data>
+  <data name="lang_localms" xml:space="preserve">
+    <value>малайская</value>
+  </data>
+  <data name="lang_localnl" xml:space="preserve">
+    <value>нідэрландская</value>
+  </data>
+  <data name="lang_localno" xml:space="preserve">
+    <value>нарвежская</value>
+  </data>
+  <data name="lang_localpl" xml:space="preserve">
+    <value>польская</value>
+  </data>
+  <data name="lang_localpt" xml:space="preserve">
+    <value>партугальская</value>
+  </data>
+  <data name="lang_localro" xml:space="preserve">
+    <value>румынская</value>
+  </data>
+  <data name="lang_localru" xml:space="preserve">
+    <value>руская</value>
+  </data>
+  <data name="lang_localsd" xml:space="preserve">
+    <value>сіндхі</value>
+  </data>
+  <data name="lang_localso" xml:space="preserve">
+    <value>самалійская</value>
+  </data>
+  <data name="lang_localsq" xml:space="preserve">
+    <value>албанская</value>
+  </data>
+  <data name="lang_localsv" xml:space="preserve">
+    <value>шведская</value>
+  </data>
+  <data name="lang_localsw" xml:space="preserve">
+    <value>Суахілі</value>
+  </data>
+  <data name="lang_localta" xml:space="preserve">
+    <value>Тамільская</value>
+  </data>
+  <data name="lang_localtg" xml:space="preserve">
+    <value>таджыкская</value>
+  </data>
+  <data name="lang_localth" xml:space="preserve">
+    <value>Тайская</value>
+  </data>
+  <data name="lang_localtr" xml:space="preserve">
+    <value>турэцкая</value>
+  </data>
+  <data name="lang_localtt" xml:space="preserve">
+    <value>татарская</value>
+  </data>
+  <data name="lang_localug" xml:space="preserve">
+    <value>уйгурская</value>
+  </data>
+  <data name="lang_localur" xml:space="preserve">
+    <value>урду</value>
+  </data>
+  <data name="lang_localuz" xml:space="preserve">
+    <value>узбекская</value>
+  </data>
+  <data name="lang_localzh" xml:space="preserve">
+    <value>Кітайская</value>
+  </data>
+  <data name="Acct_Download" xml:space="preserve">
+    <value>Спампаваць {0}</value>
+  </data>
+  <data name="unicode_Colon" xml:space="preserve">
+    <value>&amp;Двукроп'е</value>
+  </data>
+  <data name="unicode_Comma" xml:space="preserve">
+    <value>&amp;Коска</value>
+  </data>
+  <data name="unicode_Space" xml:space="preserve">
+    <value>Прабел</value>
+  </data>
+  <data name="Acct_Certificate" xml:space="preserve">
+    <value>Сертыфікат</value>
+  </data>
+  <data name="Acct_CurrentUser" xml:space="preserve">
+    <value>Бягучы карыстальнік</value>
+  </data>
+</root>
