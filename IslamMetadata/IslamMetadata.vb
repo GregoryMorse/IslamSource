@@ -624,7 +624,7 @@ Public Class Arabic
     End Function
     Public Shared Function ReplaceMetadata(ArabicString As String, MetadataRule As RuleMetadata, Scheme As String, LearningMode As Boolean) As String
         For Count As Integer = 0 To CachedData.RuleTranslations("ColoringSpelledOutRules").Length - 1
-            Dim Match As String = Array.Find(CachedData.RuleTranslations("ColoringSpelledOutRules")(Count).Match.Split("|"c), Function(Str As String) Array.IndexOf(New List(Of String)(Linq.Enumerable.Select(MetadataRule.Type.Split("|"c), Function(S As String) System.Text.RegularExpressions.Regex.Replace(S, "\(.*\)", String.Empty))).ToArray(), Str) <> -1)
+            Dim Match As String = Array.Find(CachedData.RuleTranslations("ColoringSpelledOutRules")(Count).Match.Split("|"c), Function(Str As String) Array.IndexOf(New List(Of String)(Linq.Enumerable.Select(MetadataRule.Type.Split("|"c), Function(S As String) System.Text.RegularExpressions.Regex.Replace(S, "\(.*\)|^null$", String.Empty))).ToArray(), Str) <> -1)
             If Match <> Nothing Then
                 Dim Str As New System.Text.StringBuilder
                 Str.Append(String.Format(CachedData.RuleTranslations("ColoringSpelledOutRules")(Count).Evaluator, ArabicString.Substring(MetadataRule.Index, MetadataRule.Length)))
@@ -708,7 +708,7 @@ Public Class Arabic
                 For MatchIndex As Integer = 0 To Matches.Count - 1
                     Dim SubCount As Integer
                     For SubCount = 0 To RuleSet(Count).Evaluator.Length - 1
-                        If (Array.IndexOf(RuleSet(Count).Evaluator(SubCount).Split("|"c), "optionalstop") <> -1 AndAlso (OptionalStops Is Nothing AndAlso Matches(MatchIndex).Groups(SubCount + 1).Value = ArabicData.ArabicSmallHighLigatureSadWithLamWithAlefMaksura OrElse (Matches(MatchIndex).Groups(SubCount + 1).Success AndAlso (Matches(MatchIndex).Groups(SubCount + 1).Index <> 0 And Matches(MatchIndex).Groups(SubCount + 1).Index <> ArabicString.Length)) OrElse (Not OptionalStops Is Nothing AndAlso Matches(MatchIndex).Groups(SubCount + 1).Value <> String.Empty AndAlso Array.IndexOf(OptionalStops, Matches(MatchIndex).Groups(SubCount + 1).Index) = -1))) OrElse (Array.IndexOf(RuleSet(Count).Evaluator(SubCount).Split("|"c), "optionalnotstop") <> -1 AndAlso (OptionalStops Is Nothing AndAlso Matches(MatchIndex).Groups(SubCount + 1).Value <> ArabicData.ArabicSmallHighLigatureSadWithLamWithAlefMaksura AndAlso ((Matches(MatchIndex).Groups(SubCount + 1).Success AndAlso Matches(MatchIndex).Groups(SubCount + 1).Length = 0 AndAlso (Matches(MatchIndex).Groups(SubCount + 1).Index = 0 Or Matches(MatchIndex).Groups(SubCount + 1).Index = ArabicString.Length)) OrElse (Not OptionalStops Is Nothing AndAlso Matches(MatchIndex).Groups(SubCount + 1).Value <> String.Empty AndAlso Array.IndexOf(OptionalStops, Matches(MatchIndex).Groups(SubCount + 1).Index) <> -1)))) Then Exit For
+                        If (Array.IndexOf(RuleSet(Count).Evaluator(SubCount).Split("|"c), "optionalstop") <> -1 AndAlso (OptionalStops Is Nothing AndAlso Matches(MatchIndex).Groups(SubCount + 1).Value = ArabicData.ArabicSmallHighLigatureSadWithLamWithAlefMaksura OrElse (Matches(MatchIndex).Groups(SubCount + 1).Success AndAlso (Array.IndexOf(RuleSet(Count).Evaluator(SubCount).Split("|"c), "optionalnotstop") <> -1 Or (Matches(MatchIndex).Groups(SubCount + 1).Index <> 0 And Matches(MatchIndex).Groups(SubCount + 1).Index <> ArabicString.Length))) OrElse (Not OptionalStops Is Nothing AndAlso Matches(MatchIndex).Groups(SubCount + 1).Value <> String.Empty AndAlso Array.IndexOf(OptionalStops, Matches(MatchIndex).Groups(SubCount + 1).Index) = -1))) OrElse (Array.IndexOf(RuleSet(Count).Evaluator(SubCount).Split("|"c), "optionalnotstop") <> -1 AndAlso (OptionalStops Is Nothing AndAlso Matches(MatchIndex).Groups(SubCount + 1).Value <> ArabicData.ArabicSmallHighLigatureSadWithLamWithAlefMaksura AndAlso ((Matches(MatchIndex).Groups(SubCount + 1).Success AndAlso Matches(MatchIndex).Groups(SubCount + 1).Length = 0 AndAlso (Matches(MatchIndex).Groups(SubCount + 1).Index = 0 Or Matches(MatchIndex).Groups(SubCount + 1).Index = ArabicString.Length)) OrElse (Not OptionalStops Is Nothing AndAlso Matches(MatchIndex).Groups(SubCount + 1).Value <> String.Empty AndAlso Array.IndexOf(OptionalStops, Matches(MatchIndex).Groups(SubCount + 1).Index) <> -1)))) Then Exit For
                     Next
                     If SubCount <> RuleSet(Count).Evaluator.Length Then Continue For
                     For SubCount = 0 To RuleSet(Count).Evaluator.Length - 1
@@ -753,7 +753,7 @@ Public Class Arabic
                     If SecondIndex = SecondRule.Count Then FirstUpdate.Append(If(FirstUpdate.Length <> 0, "|", String.Empty) + FirstRule(FirstIndex))
                 Next
                 SecondRule.Insert(0, FirstUpdate.ToString())
-                Debug.WriteLine("First: " + MetadataList(Index).Type + " Second: " + MetadataList(Index + 1).Type + " After: " + String.Join("|"c, SecondRule.ToArray()))
+                'Debug.WriteLine("First: " + MetadataList(Index).Type + " Second: " + MetadataList(Index + 1).Type + " After: " + String.Join("|"c, SecondRule.ToArray()))
                 MetadataList(Index) = New RuleMetadata(MetadataList(Index).Index, MetadataList(Index).Length, String.Join("|"c, SecondRule.ToArray()), MetadataList(Index).OrigOrder)
                 MetadataList.RemoveAt(Index + 1)
             Loop
@@ -5140,7 +5140,8 @@ Public Class TanzilReader
                                 PauseMarks += 1
                                 If Not NoArabic Then
                                     Texts.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, " " + Words(Count)))
-                                    Texts.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, If(SchemeType <> ArabicData.TranslitScheme.None, TranslitWords(Count), String.Empty)))
+                                    Texts.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, " "))
+                                    'Texts.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, If(SchemeType <> ArabicData.TranslitScheme.None, TranslitWords(Count), String.Empty)))
                                     If Count <> Words.Length - 1 AndAlso Words(Count + 1).Length <> 1 Then Texts.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eContinueStop, Array.IndexOf(DefStops, Pos) = -1))
                                 End If
                                 If W4WNum Then Texts.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, CStr(Count + 1)))

@@ -10,7 +10,6 @@
     <Page.Resources>
         <Style x:Key="TitleStyle" TargetType="TextBlock">
             <Setter Property="Foreground" Value="Black"/>
-            <Setter Property="FontFamily" Value="Global User Interface"/>
         </Style>
         <CollectionViewSource x:Name="QuranText" Source="{Binding Path=ViewModel.RenderItems}"></CollectionViewSource>
         <DataTemplate x:Key="WordTemplate">
@@ -30,9 +29,9 @@
                 </Grid.RowDefinitions>
 
                 <Rectangle Grid.Row="0" Stroke="LightGray" StrokeThickness="1" StrokeDashArray="3,3" StrokeDashCap="Round"></Rectangle>
-                <TextBlock Grid.Row="0" Width="auto" HorizontalAlignment="Center" Margin="5" FlowDirection="{Binding Direction}"
-                        TextAlignment="Center" TextWrapping="Wrap" Style="{StaticResource TitleStyle}" FontSize="{Binding ElementName=TopLevel, Path=UIChanger.AllFontSize, Mode=OneWay}">
-                    <Run Text="{Binding ItemText}" Foreground="{Binding Color}"></Run>
+                <TextBlock Grid.Row="0" Width="auto" HorizontalAlignment="Center" Margin="5" FlowDirection="{Binding Direction}" local:FormattedTextBehavior.FormattedText="{Binding ItemRuns}" 
+                        TextAlignment="Center" TextWrapping="Wrap" Style="{StaticResource TitleStyle}" FontFamily="{Binding ElementName=TopLevel, Path=UIChanger.FontFamily, Mode=OneWay}" FontSize="{Binding ElementName=TopLevel, Path=UIChanger.AllFontSize, Mode=OneWay}">
+                        <!--<Run Text="{Binding ItemText}" Foreground="{Binding Color}"></Run>-->
                 </TextBlock>
             </Grid>
         </DataTemplate>

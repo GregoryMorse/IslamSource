@@ -255,7 +255,7 @@ namespace IslamSourceQuranViewer
         }
         private void Settings_Click(object sender, RoutedEventArgs e)
         {
-            //this.Frame.Navigate(typeof(Settings));
+            this.Frame.Navigate(typeof(Settings));
         }
     }
     public class MyTabViewModel : INotifyPropertyChanged

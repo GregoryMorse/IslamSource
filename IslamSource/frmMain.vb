@@ -78,11 +78,15 @@ Public Class frmMain
         'TanzilReader.CheckMutualExclusiveRules(False, 4)
         'TanzilReader.CheckMutualExclusiveRules(True, 4)
         Dim IndexToVerse As Integer()() = Nothing
-        Dim Text As String = TanzilReader.QuranTextCombiner(CachedData.XMLDocMain, IndexToVerse, 113, 4)
+        'Dim Text As String = TanzilReader.QuranTextCombiner(CachedData.XMLDocMain, IndexToVerse, 18, 13)
         'Dim IndVerses As String() = TanzilReader.QuranTextRangeLookup(2, 5, 0, 2, 0, 0)(0)
-        Text = TanzilReader.GetQuranText(CachedData.XMLDocMain, 2, 11, 11)(0)
+        Text = TanzilReader.GetQuranText(CachedData.XMLDocMain, 19, 4, 4)(0) + " " + ArabicData.ArabicEndOfAyah
         'Debug.Print(Arabic.TransliterateToScheme(IndVerses(0), ArabicData.TranslitScheme.RuleBased, String.Empty, CachedData.RuleMetas("UthmaniQuran"), TanzilReader.GenerateDefaultStops(IndVerses(0))))
         Debug.Print(Arabic.TransliterateToScheme(Text, ArabicData.TranslitScheme.RuleBased, String.Empty, CachedData.RuleMetas("UthmaniQuran"), TanzilReader.GenerateDefaultStops(Text)))
+        For Selection = 33 To TanzilReader.GetChapterCount()
+            TanzilReader.GetRenderedQuranText(ArabicData.TranslitScheme.RuleBased, String.Empty, String.Empty, "0", Selection.ToString(), String.Empty, "0", "1")
+            Debug.Print(CStr(Selection))
+        Next
         'Debug.Print(Arabic.TransliterateToScheme(System.Text.RegularExpressions.Regex.Match(Text, CachedData.GetPattern("ContinuousMatch")).Value, ArabicData.TranslitScheme.Literal, String.Empty))
         Arabic.TransliterateToScheme(Arabic.TransliterateFromBuckwalter("suwrapu {lofaAtiHapi"), ArabicData.TranslitScheme.LearningMode, String.Empty, CachedData.RuleMetas("UthmaniQuran"), TanzilReader.GenerateDefaultStops(Arabic.TransliterateFromBuckwalter("suwrapu {lofaAtiHapi")))
         Arabic.TransliterateToScheme(Arabic.TransliterateFromBuckwalter("*ikorFA"), ArabicData.TranslitScheme.LearningMode, String.Empty, CachedData.RuleMetas("UthmaniQuran"), TanzilReader.GenerateDefaultStops(Arabic.TransliterateFromBuckwalter("*ikorFA")))

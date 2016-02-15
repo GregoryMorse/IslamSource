@@ -60,6 +60,14 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>QuranResources.Designer.vb</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="QuranResources.zh-Hans.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>QuranResources.zh-Hans.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuranResources.zh-Hant.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>QuranResources.zh-Hant.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Import Include="Microsoft.VisualBasic" />
@@ -95,6 +103,20 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QuranResources.resx</DependentUpon>
     </Compile>
+    <Compile Include="QuranResources.zh-Hans.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuranResources.zh-Hans.resx</DependentUpon>
+    </Compile>
+    <Compile Include="QuranResources.zh-Hant.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuranResources.zh-Hant.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <XliffResource Include="MultilingualResources\ResourceToolkitTemp.zh-Hans.xlf" />
+    <XliffResource Include="MultilingualResources\ResourceToolkitTemp.zh-Hant.xlf" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.VisualBasic.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Multilingual App Toolkit\Microsoft.Multilingual.ResxResources.targets" Label="MultilingualAppToolkit" Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\Multilingual App Toolkit\Microsoft.Multilingual.ResxResources.targets')" />

@@ -39,6 +39,7 @@ namespace IslamSourceQuranViewer
             //Windows.ApplicationModel.Resources.Core.ResourceContext.GetForCurrentView().Reset();
             this.InitializeComponent();
             this.Suspending += this.OnSuspending;
+            Settings.InitDefaultSettings();
         }
 
         /// <summary>

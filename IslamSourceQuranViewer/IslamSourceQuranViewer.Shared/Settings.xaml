@@ -1,0 +1,39 @@
+﻿<Page
+    x:Class="IslamSourceQuranViewer.Settings"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:IslamSourceQuranViewer"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <StackPanel Orientation="Vertical">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Arabic Font" VerticalAlignment="Center"></TextBlock>
+                <ComboBox ItemsSource="{Binding Fonts}" VerticalAlignment="Center"></ComboBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Use Recitation Rule Coloring" VerticalAlignment="Center"></TextBlock>
+                <CheckBox IsChecked="{Binding UseColoring}" VerticalAlignment="Center"></CheckBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Show Translation" VerticalAlignment="Center"></TextBlock>
+                <CheckBox IsChecked="{Binding ShowTranslation}" VerticalAlignment="Center"></CheckBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Show Transliteration" VerticalAlignment="Center"></TextBlock>
+                <CheckBox IsChecked="{Binding ShowTransliteration}" VerticalAlignment="Center"></CheckBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Show Word By Word" VerticalAlignment="Center"></TextBlock>
+                <CheckBox IsChecked="{Binding ShowW4W}" VerticalAlignment="Center"></CheckBox>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+    <Page.BottomAppBar>
+        <CommandBar>
+            <AppBarButton Name="Back" Click="Back_Click" Label="Back" Icon="Back"></AppBarButton>
+        </CommandBar>
+    </Page.BottomAppBar>
+</Page>
