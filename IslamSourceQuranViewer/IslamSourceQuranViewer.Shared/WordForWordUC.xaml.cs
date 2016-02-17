@@ -357,7 +357,7 @@ namespace IslamSourceQuranViewer
             [System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst = LF_FACESIZE)]
             public string lfFaceName;
         }
-        public static Size GetWordDiacriticPositionsDWrite(string Str, FontFamily useFont, float fontSize, char[] Forms, bool IsRTL, ref float BaseLine, ref CharPosInfo[] Pos)
+        public static Size GetWordDiacriticPositionsDWrite(string Str, string useFont, float fontSize, char[] Forms, bool IsRTL, ref float BaseLine, ref CharPosInfo[] Pos)
         {
             if (Str == string.Empty)
             {
@@ -366,9 +366,9 @@ namespace IslamSourceQuranViewer
             SharpDX.DirectWrite.Factory factory = new SharpDX.DirectWrite.Factory();
             SharpDX.DirectWrite.TextAnalyzer analyzer = new SharpDX.DirectWrite.TextAnalyzer(factory);
             LOGFONT lf = new LOGFONT();
-            lf.lfFaceName = useFont.Source;
-            float size = fontSize * Windows.Graphics.Display.DisplayInformation.GetForCurrentView().RawDpiY / 72.0f;
-            lf.lfHeight = (int)size;
+            lf.lfFaceName = useFont;
+            float pointSize = fontSize * Windows.Graphics.Display.DisplayInformation.GetForCurrentView().RawDpiY / 72.0f;
+            lf.lfHeight = (int)fontSize;
             lf.lfQuality = 5; //clear type
             SharpDX.DirectWrite.Font font = factory.GdiInterop.FromLogFont(lf);
             SharpDX.DirectWrite.FontFace fontFace = new SharpDX.DirectWrite.FontFace(font);
@@ -393,8 +393,10 @@ namespace IslamSourceQuranViewer
                     analyzer.GetGlyphs(Str, Str.Length, fontFace, false, IsRTL, scriptAnalysis, null, null, featureArrayArray1, numArray1, maxGlyphCount, clusterMap, textProps, glyphIndices, glyphProps, out actualGlyphCount);
                     break;
                 }
-                catch (SharpDX.SharpDXException exception) {
-                    if (exception.ResultCode == SharpDX.Result.GetResultFromWin32Error(0x7a)) {
+                catch (SharpDX.SharpDXException exception)
+                {
+                    if (exception.ResultCode == SharpDX.Result.GetResultFromWin32Error(0x7a))
+                    {
                         maxGlyphCount *= 2;
                         glyphIndices = new short[(maxGlyphCount - 1) + 1];
                         glyphProps = new SharpDX.DirectWrite.ShapingGlyphProperties[(maxGlyphCount - 1) + 1];
@@ -407,7 +409,7 @@ namespace IslamSourceQuranViewer
             SharpDX.DirectWrite.GlyphOffset[] glyphOffsets = new SharpDX.DirectWrite.GlyphOffset[(actualGlyphCount - 1) + 1];
             SharpDX.DirectWrite.FontFeature[][] features = new SharpDX.DirectWrite.FontFeature[][] { featureArray };
             int[] featureRangeLengths = new int[] { Str.Length };
-            analyzer.GetGlyphPlacements(Str, clusterMap, textProps, Str.Length, glyphIndices, glyphProps, actualGlyphCount, fontFace, size, false, IsRTL, scriptAnalysis, null, features, featureRangeLengths, glyphAdvances, glyphOffsets);
+            analyzer.GetGlyphPlacements(Str, clusterMap, textProps, Str.Length, glyphIndices, glyphProps, actualGlyphCount, fontFace, fontSize, false, IsRTL, scriptAnalysis, null, features, featureRangeLengths, glyphAdvances, glyphOffsets);
             List<CharPosInfo> list = new List<CharPosInfo>();
             float PriorWidth = 0f;
             int RunStart = 0;
@@ -415,138 +417,141 @@ namespace IslamSourceQuranViewer
             if (IsRTL & (Pos != null))
             {
                 XMLRender.ArabicData.LigatureInfo[] array = XMLRender.ArabicData.GetLigatures(Str, false, Forms);
-                for (int CharCount = 0; CharCount < clusterMap.Length - 1; CharCount++) {
+                for (int CharCount = 0; CharCount < clusterMap.Length - 1; CharCount++)
+                {
                     int RunCount = 0;
-                    for (int ResCount = clusterMap[CharCount]; ResCount <= ((CharCount == (clusterMap.Length - 1)) ? (actualGlyphCount - 1) : (clusterMap[CharCount + 1] - 1)); ResCount++) {
-                        if ((glyphAdvances[ResCount] == 0f) & ((clusterMap.Length <= (RunStart + RunCount)) || (clusterMap[RunStart] == clusterMap[RunStart + RunCount]))) {
-                                    int Index = Array.FindIndex<XMLRender.ArabicData.LigatureInfo>(array, (lig) => lig.Indexes[0] == RunStart + RunCount);
-                                    int LigLen = 1;
-                                    if (Index != -1)
-                                    {
-                                        while ((LigLen != array[Index].Indexes.Length) && ((array[Index].Indexes[LigLen - 1] + 1) == array[Index].Indexes[LigLen]))
-                                        {
-                                            LigLen++;
-                                        }
-                                        if (LigLen != 1)
-                                        {
-                                            int CheckGlyphCount = 0;
-                                            short[] CheckClusterMap = new short[((RunCount + LigLen) -1) +1];
-                                        SharpDX.DirectWrite.ShapingTextProperties[] CheckTextProps = new SharpDX.DirectWrite.ShapingTextProperties[((RunCount + LigLen) -1) +1];
-                                            short[] CheckGlyphIndices = new short[(maxGlyphCount - 1) + 1];
-                                        SharpDX.DirectWrite.ShapingGlyphProperties[] CheckGlyphProps = new SharpDX.DirectWrite.ShapingGlyphProperties[(maxGlyphCount - 1) + 1];
-                                            analyzer.GetGlyphs(Str.Substring(RunStart, RunCount + LigLen), RunCount + LigLen, fontFace, false, IsRTL, scriptAnalysis, null, null, new SharpDX.DirectWrite.FontFeature[][] { featureArray }, new int[] { RunCount + LigLen }, maxGlyphCount, CheckClusterMap, CheckTextProps, CheckGlyphIndices, CheckGlyphProps, out CheckGlyphCount);
-                                            if ((CheckGlyphCount != LigLen) & (CheckGlyphCount != (LigLen - (((glyphProps[RunRes].Justification != SharpDX.DirectWrite.ScriptJustify.Blank) & (glyphProps[RunRes].Justification != SharpDX.DirectWrite.ScriptJustify.ArabicBlank)) ? 0 : 1))))
-                                            {
-                                                LigLen = 1;
-                                            }
-                                        }
-                                    }
-                                    if ((!glyphProps[ResCount].IsDiacritic | !glyphProps[ResCount].IsZeroWidthSpace) | !glyphProps[ResCount].IsClusterStart)
-                                    {
-                                        CharPosInfo info;
-                                        if (((LigLen == 1) && System.Text.RegularExpressions.Regex.Match(Str[RunStart + RunCount].ToString(), @"[\p{IsArabic}\p{IsArabicPresentationForms-A}\p{IsArabicPresentationForms-B}]").Success) & (System.Globalization.CharUnicodeInfo.GetUnicodeCategory(Str[RunStart + RunCount]) == System.Globalization.UnicodeCategory.DecimalDigitNumber))
-                                        {
-                                        SharpDX.DirectWrite.GlyphMetrics[] _Mets = fontFace.GetDesignGlyphMetrics(glyphIndices, false);
-                                            info = new CharPosInfo
-                                            {
-                                                Index = RunStart + RunCount,
-                                                Length = (Index == -1) ? 1 : LigLen,
-                                                PriorWidth = PriorWidth,
-                                                Width = 2f * ((_Mets[ResCount].AdvanceWidth * fontSize) / ((float)fontFace.Metrics.DesignUnitsPerEm)),
-                                                X = (glyphOffsets[ResCount].AdvanceOffset - glyphAdvances[RunRes]) - (((_Mets[ResCount].AdvanceWidth * fontSize) / ((float)fontFace.Metrics.DesignUnitsPerEm)) / 4f),
-                                                Y = glyphOffsets[ResCount].AscenderOffset,
-                                                Height = (((_Mets[ResCount].AdvanceHeight + _Mets[ResCount].BottomSideBearing) - _Mets[ResCount].TopSideBearing) * fontSize) / ((float)fontFace.Metrics.DesignUnitsPerEm)
-                                            };
-                                            list.Add(info);
-                                        }
-                                        else
-                                        {
-                                    SharpDX.DirectWrite.GlyphMetrics[] _Mets = fontFace.GetDesignGlyphMetrics(glyphIndices, false);
-                                            info = new CharPosInfo
-                                            {
-                                                Index = RunStart + RunCount,
-                                                Length = (Index == -1) ? 1 : LigLen,
-                                                PriorWidth = PriorWidth - ((((glyphProps[RunRes].Justification == SharpDX.DirectWrite.ScriptJustify.ArabicKashida) & (RunCount == 1)) &((((CharCount == (clusterMap.Length - 1)) ? actualGlyphCount : clusterMap[CharCount + 1]) - clusterMap[CharCount]) == (CharCount - RunStart))) ? glyphAdvances[RunRes] : 0f),
-                                                Width = glyphAdvances[RunRes] + ((glyphProps[RunRes].IsClusterStart & glyphProps[RunRes].IsDiacritic) ? ((_Mets[RunRes].AdvanceWidth * fontSize) / ((float)fontFace.Metrics.DesignUnitsPerEm)) : 0f),
-                                                X = glyphOffsets[ResCount].AdvanceOffset,
-                                                Y = glyphOffsets[ResCount].AscenderOffset + ((glyphProps[RunRes].IsClusterStart & glyphProps[RunRes].IsDiacritic) ? ((((_Mets[RunRes].AdvanceHeight - _Mets[RunRes].TopSideBearing) - _Mets[RunRes].VerticalOriginY) * fontSize) / ((float)fontFace.Metrics.DesignUnitsPerEm)) : 0f)
-                                            };
-                                            list.Add(info);
-                                            if (((glyphProps[RunRes].Justification == SharpDX.DirectWrite.ScriptJustify.ArabicKashida) & (RunCount == 1)) &((((CharCount == (clusterMap.Length - 1)) ? actualGlyphCount : clusterMap[CharCount + 1]) - clusterMap[CharCount]) == (CharCount - RunStart)))
-                                            {
-                                                info = new CharPosInfo
-                                                {
-                                                    Index = (RunStart + RunCount) +1,
-                                                    Length = (Index == -1) ? 1 : LigLen,
-                                                    PriorWidth = PriorWidth,
-                                                    Width = glyphAdvances[RunRes] + ((glyphProps[RunRes].IsClusterStart & glyphProps[RunRes].IsDiacritic) ? ((_Mets[RunRes].AdvanceWidth * fontSize) / ((float)fontFace.Metrics.DesignUnitsPerEm)) : 0f),
-                                                    X = glyphOffsets[ResCount].AdvanceOffset,
-                                                    Y = glyphOffsets[RunRes].AscenderOffset + ((glyphProps[RunRes].IsClusterStart & glyphProps[RunRes].IsDiacritic) ? ((((_Mets[RunRes].AdvanceHeight - _Mets[RunRes].TopSideBearing) - _Mets[RunRes].VerticalOriginY) * fontSize) / ((float)fontFace.Metrics.DesignUnitsPerEm)) : 0f)
-                                                };
-                                                list.Add(info);
-                                            }
-                                        }
-                                    }
-                                    else
-                                    {
-                                PriorWidth -= glyphOffsets[ResCount].AdvanceOffset;
-                                    }
-                                }
-                                if ((CharCount == (clusterMap.Length - 1)) || (clusterMap[CharCount] != clusterMap[CharCount + 1]))
+                    for (int ResCount = clusterMap[CharCount]; ResCount <= ((CharCount == (clusterMap.Length - 1)) ? (actualGlyphCount - 1) : (clusterMap[CharCount + 1] - 1)); ResCount++)
+                    {
+                        if ((glyphAdvances[ResCount] == 0f) & ((clusterMap.Length <= (RunStart + RunCount)) || (clusterMap[RunStart] == clusterMap[RunStart + RunCount])))
+                        {
+                            int Index = Array.FindIndex<XMLRender.ArabicData.LigatureInfo>(array, (lig) => lig.Indexes[0] == RunStart + RunCount);
+                            int LigLen = 1;
+                            if (Index != -1)
+                            {
+                                while ((LigLen != array[Index].Indexes.Length) && ((array[Index].Indexes[LigLen - 1] + 1) == array[Index].Indexes[LigLen]))
                                 {
-                            PriorWidth += glyphAdvances[ResCount];
-                                    int Index = Array.FindIndex<XMLRender.ArabicData.LigatureInfo>(array, (lig) => lig.Indexes[0] == RunStart);
-                                    if ((Index == -1) || ((((glyphProps[ResCount].Justification != SharpDX.DirectWrite.ScriptJustify.Blank) & (glyphProps[ResCount].Justification != SharpDX.DirectWrite.ScriptJustify.ArabicBlank)) | (Array.IndexOf<int>(array[Index].Indexes, RunStart) == -1)) & ((RunStart + RunCount) != (Str.Length - 1))))
+                                    LigLen++;
+                                }
+                                if (LigLen != 1)
+                                {
+                                    int CheckGlyphCount = 0;
+                                    short[] CheckClusterMap = new short[((RunCount + LigLen) - 1) + 1];
+                                    SharpDX.DirectWrite.ShapingTextProperties[] CheckTextProps = new SharpDX.DirectWrite.ShapingTextProperties[((RunCount + LigLen) - 1) + 1];
+                                    short[] CheckGlyphIndices = new short[(maxGlyphCount - 1) + 1];
+                                    SharpDX.DirectWrite.ShapingGlyphProperties[] CheckGlyphProps = new SharpDX.DirectWrite.ShapingGlyphProperties[(maxGlyphCount - 1) + 1];
+                                    analyzer.GetGlyphs(Str.Substring(RunStart, RunCount + LigLen), RunCount + LigLen, fontFace, false, IsRTL, scriptAnalysis, null, null, new SharpDX.DirectWrite.FontFeature[][] { featureArray }, new int[] { RunCount + LigLen }, maxGlyphCount, CheckClusterMap, CheckTextProps, CheckGlyphIndices, CheckGlyphProps, out CheckGlyphCount);
+                                    if ((CheckGlyphCount != LigLen) & (CheckGlyphCount != (LigLen - (((glyphProps[RunRes].Justification != SharpDX.DirectWrite.ScriptJustify.Blank) & (glyphProps[RunRes].Justification != SharpDX.DirectWrite.ScriptJustify.ArabicBlank)) ? 0 : 1))))
                                     {
-                                        RunCount++;
-                                    }
-                                    if ((Index != -1) && (((glyphProps[ResCount].Justification != SharpDX.DirectWrite.ScriptJustify.Blank) & (glyphProps[ResCount].Justification != SharpDX.DirectWrite.ScriptJustify.ArabicBlank)) | (Array.IndexOf<int>(array[Index].Indexes, RunStart) == -1)))
-                                    {
-                                        while ((Array.IndexOf<int>(array[Index].Indexes, RunStart + RunCount) != -1) & ((RunStart + RunCount) != (Str.Length - 1)))
-                                        {
-                                            RunCount++;
-                                        }
-                                    }
-                                    if ((clusterMap[CharCount] != ResCount) & !(glyphAdvances[ResCount] == 0f))
-                                    {
-                                        RunStart = CharCount;
-                                        RunCount = 0;
-                                RunRes = ResCount;
+                                        LigLen = 1;
                                     }
                                 }
                             }
-                            if ((CharCount != (clusterMap.Length - 1)) && (clusterMap[CharCount] != clusterMap[CharCount + 1]))
+                            if ((!glyphProps[ResCount].IsDiacritic | !glyphProps[ResCount].IsZeroWidthSpace) | !glyphProps[ResCount].IsClusterStart)
                             {
-                                RunStart = CharCount + 1;
-                                if (!(glyphAdvances[clusterMap[CharCount + 1]] == 0f) | (glyphProps[clusterMap[CharCount + 1]].IsClusterStart & glyphProps[clusterMap[CharCount + 1]].IsDiacritic))
+                                CharPosInfo info;
+                                if (((LigLen == 1) && System.Text.RegularExpressions.Regex.Match(Str[RunStart + RunCount].ToString(), @"[\p{IsArabic}\p{IsArabicPresentationForms-A}\p{IsArabicPresentationForms-B}]").Success) & (System.Globalization.CharUnicodeInfo.GetUnicodeCategory(Str[RunStart + RunCount]) == System.Globalization.UnicodeCategory.DecimalDigitNumber))
                                 {
-                            RunRes = clusterMap[CharCount + 1];
+                                    SharpDX.DirectWrite.GlyphMetrics[] _Mets = fontFace.GetDesignGlyphMetrics(glyphIndices, false);
+                                    info = new CharPosInfo
+                                    {
+                                        Index = RunStart + RunCount,
+                                        Length = (Index == -1) ? 1 : LigLen,
+                                        PriorWidth = PriorWidth,
+                                        Width = 2f * ((_Mets[ResCount].AdvanceWidth * pointSize) / ((float)fontFace.Metrics.DesignUnitsPerEm)),
+                                        X = (glyphOffsets[ResCount].AdvanceOffset - glyphAdvances[RunRes]) - (((_Mets[ResCount].AdvanceWidth * pointSize) / ((float)fontFace.Metrics.DesignUnitsPerEm)) / 4f),
+                                        Y = glyphOffsets[ResCount].AscenderOffset,
+                                        Height = (((_Mets[ResCount].AdvanceHeight + _Mets[ResCount].BottomSideBearing) - _Mets[ResCount].TopSideBearing) * pointSize) / ((float)fontFace.Metrics.DesignUnitsPerEm)
+                                    };
+                                    list.Add(info);
                                 }
+                                else
+                                {
+                                    SharpDX.DirectWrite.GlyphMetrics[] _Mets = fontFace.GetDesignGlyphMetrics(glyphIndices, false);
+                                    info = new CharPosInfo
+                                    {
+                                        Index = RunStart + RunCount,
+                                        Length = (Index == -1) ? 1 : LigLen,
+                                        PriorWidth = PriorWidth - ((((glyphProps[RunRes].Justification == SharpDX.DirectWrite.ScriptJustify.ArabicKashida) & (RunCount == 1)) & ((((CharCount == (clusterMap.Length - 1)) ? actualGlyphCount : clusterMap[CharCount + 1]) - clusterMap[CharCount]) == (CharCount - RunStart))) ? glyphAdvances[RunRes] : 0f),
+                                        Width = glyphAdvances[RunRes] + ((glyphProps[RunRes].IsClusterStart & glyphProps[RunRes].IsDiacritic) ? ((_Mets[RunRes].AdvanceWidth * pointSize) / ((float)fontFace.Metrics.DesignUnitsPerEm)) : 0f),
+                                        X = glyphOffsets[ResCount].AdvanceOffset,
+                                        Y = glyphOffsets[ResCount].AscenderOffset + ((glyphProps[RunRes].IsClusterStart & glyphProps[RunRes].IsDiacritic) ? ((((_Mets[RunRes].AdvanceHeight - _Mets[RunRes].TopSideBearing) - _Mets[RunRes].VerticalOriginY) * pointSize) / ((float)fontFace.Metrics.DesignUnitsPerEm)) : 0f)
+                                    };
+                                    list.Add(info);
+                                    if (((glyphProps[RunRes].Justification == SharpDX.DirectWrite.ScriptJustify.ArabicKashida) & (RunCount == 1)) & ((((CharCount == (clusterMap.Length - 1)) ? actualGlyphCount : clusterMap[CharCount + 1]) - clusterMap[CharCount]) == (CharCount - RunStart)))
+                                    {
+                                        info = new CharPosInfo
+                                        {
+                                            Index = (RunStart + RunCount) + 1,
+                                            Length = (Index == -1) ? 1 : LigLen,
+                                            PriorWidth = PriorWidth,
+                                            Width = glyphAdvances[RunRes] + ((glyphProps[RunRes].IsClusterStart & glyphProps[RunRes].IsDiacritic) ? ((_Mets[RunRes].AdvanceWidth * pointSize) / ((float)fontFace.Metrics.DesignUnitsPerEm)) : 0f),
+                                            X = glyphOffsets[ResCount].AdvanceOffset,
+                                            Y = glyphOffsets[RunRes].AscenderOffset + ((glyphProps[RunRes].IsClusterStart & glyphProps[RunRes].IsDiacritic) ? ((((_Mets[RunRes].AdvanceHeight - _Mets[RunRes].TopSideBearing) - _Mets[RunRes].VerticalOriginY) * pointSize) / ((float)fontFace.Metrics.DesignUnitsPerEm)) : 0f)
+                                        };
+                                        list.Add(info);
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                PriorWidth -= glyphOffsets[ResCount].AdvanceOffset;
                             }
                         }
+                        if ((CharCount == (clusterMap.Length - 1)) || (clusterMap[CharCount] != clusterMap[CharCount + 1]))
+                        {
+                            PriorWidth += glyphAdvances[ResCount];
+                            int Index = Array.FindIndex<XMLRender.ArabicData.LigatureInfo>(array, (lig) => lig.Indexes[0] == RunStart);
+                            if ((Index == -1) || ((((glyphProps[ResCount].Justification != SharpDX.DirectWrite.ScriptJustify.Blank) & (glyphProps[ResCount].Justification != SharpDX.DirectWrite.ScriptJustify.ArabicBlank)) | (Array.IndexOf<int>(array[Index].Indexes, RunStart) == -1)) & ((RunStart + RunCount) != (Str.Length - 1))))
+                            {
+                                RunCount++;
+                            }
+                            if ((Index != -1) && (((glyphProps[ResCount].Justification != SharpDX.DirectWrite.ScriptJustify.Blank) & (glyphProps[ResCount].Justification != SharpDX.DirectWrite.ScriptJustify.ArabicBlank)) | (Array.IndexOf<int>(array[Index].Indexes, RunStart) == -1)))
+                            {
+                                while ((Array.IndexOf<int>(array[Index].Indexes, RunStart + RunCount) != -1) & ((RunStart + RunCount) != (Str.Length - 1)))
+                                {
+                                    RunCount++;
+                                }
+                            }
+                            if ((clusterMap[CharCount] != ResCount) & !(glyphAdvances[ResCount] == 0f))
+                            {
+                                RunStart = CharCount;
+                                RunCount = 0;
+                                RunRes = ResCount;
+                            }
+                        }
+                    }
+                    if ((CharCount != (clusterMap.Length - 1)) && (clusterMap[CharCount] != clusterMap[CharCount + 1]))
+                    {
+                        RunStart = CharCount + 1;
+                        if (!(glyphAdvances[clusterMap[CharCount + 1]] == 0f) | (glyphProps[clusterMap[CharCount + 1]].IsClusterStart & glyphProps[clusterMap[CharCount + 1]].IsDiacritic))
+                        {
+                            RunRes = clusterMap[CharCount + 1];
+                        }
+                    }
+                }
             }
             float Width = 0f;
             float Top = 0f;
             float Bottom = 0f;
             SharpDX.DirectWrite.GlyphMetrics[] designGlyphMetrics = fontFace.GetDesignGlyphMetrics(glyphIndices, false);
-            float Left = IsRTL ? 0f : (glyphOffsets[0].AdvanceOffset - ((designGlyphMetrics[0].LeftSideBearing * fontSize) / ((float)fontFace.Metrics.DesignUnitsPerEm)));
-            float Right = IsRTL ? (glyphOffsets[0].AdvanceOffset - ((designGlyphMetrics[0].RightSideBearing * fontSize) / ((float)fontFace.Metrics.DesignUnitsPerEm))) : 0f;
+            float Left = IsRTL ? 0f : (glyphOffsets[0].AdvanceOffset - ((designGlyphMetrics[0].LeftSideBearing * pointSize) / ((float)fontFace.Metrics.DesignUnitsPerEm)));
+            float Right = IsRTL ? (glyphOffsets[0].AdvanceOffset - ((designGlyphMetrics[0].RightSideBearing * pointSize) / ((float)fontFace.Metrics.DesignUnitsPerEm))) : 0f;
             for (int i = 0; i <= designGlyphMetrics.Length - 1; i++)
             {
-                Left = IsRTL ? Math.Max(Left, (glyphOffsets[i].AdvanceOffset + Width) - ((Math.Max(0, designGlyphMetrics[i].LeftSideBearing) * fontSize) / ((float)fontFace.Metrics.DesignUnitsPerEm))) : Math.Min(Left, (glyphOffsets[i].AdvanceOffset + Width) - ((designGlyphMetrics[i].LeftSideBearing * fontSize) / ((float)fontFace.Metrics.DesignUnitsPerEm)));
+                Left = IsRTL ? Math.Max(Left, (glyphOffsets[i].AdvanceOffset + Width) - ((Math.Max(0, designGlyphMetrics[i].LeftSideBearing) * pointSize) / ((float)fontFace.Metrics.DesignUnitsPerEm))) : Math.Min(Left, (glyphOffsets[i].AdvanceOffset + Width) - ((designGlyphMetrics[i].LeftSideBearing * pointSize) / ((float)fontFace.Metrics.DesignUnitsPerEm)));
                 if (!(glyphAdvances[i] == 0f))
                 {
-                    Width += (IsRTL ? ((float)(-1)) : ((float)1)) * ((designGlyphMetrics[i].AdvanceWidth * fontSize) / ((float)fontFace.Metrics.DesignUnitsPerEm));
+                    Width += (IsRTL ? ((float)(-1)) : ((float)1)) * ((designGlyphMetrics[i].AdvanceWidth * pointSize) / ((float)fontFace.Metrics.DesignUnitsPerEm));
                 }
-                Right = IsRTL ? Math.Min(Right, (glyphOffsets[i].AdvanceOffset + Width) - ((designGlyphMetrics[i].RightSideBearing * fontSize) / ((float)fontFace.Metrics.DesignUnitsPerEm))) : Math.Max(Right, (glyphOffsets[i].AdvanceOffset + Width) - ((Math.Min(0, designGlyphMetrics[i].RightSideBearing) * fontSize) / ((float)fontFace.Metrics.DesignUnitsPerEm)));
-                Top = Math.Max(Top, glyphOffsets[i].AscenderOffset + (((designGlyphMetrics[i].VerticalOriginY - designGlyphMetrics[i].TopSideBearing) * fontSize) / ((float)fontFace.Metrics.DesignUnitsPerEm)));
-                Bottom = Math.Min(Bottom, glyphOffsets[i].AscenderOffset + ((((designGlyphMetrics[i].VerticalOriginY - designGlyphMetrics[i].AdvanceHeight) + designGlyphMetrics[i].BottomSideBearing) * fontSize) / ((float)fontFace.Metrics.DesignUnitsPerEm)));
+                Right = IsRTL ? Math.Min(Right, (glyphOffsets[i].AdvanceOffset + Width) - ((designGlyphMetrics[i].RightSideBearing * pointSize) / ((float)fontFace.Metrics.DesignUnitsPerEm))) : Math.Max(Right, (glyphOffsets[i].AdvanceOffset + Width) - ((Math.Min(0, designGlyphMetrics[i].RightSideBearing) * pointSize) / ((float)fontFace.Metrics.DesignUnitsPerEm)));
+                Top = Math.Max(Top, glyphOffsets[i].AscenderOffset + (((designGlyphMetrics[i].VerticalOriginY - designGlyphMetrics[i].TopSideBearing) * pointSize) / ((float)fontFace.Metrics.DesignUnitsPerEm)));
+                Bottom = Math.Min(Bottom, glyphOffsets[i].AscenderOffset + ((((designGlyphMetrics[i].VerticalOriginY - designGlyphMetrics[i].AdvanceHeight) + designGlyphMetrics[i].BottomSideBearing) * pointSize) / ((float)fontFace.Metrics.DesignUnitsPerEm)));
             }
             if (Pos != null)
             {
                 Pos = list.ToArray();
             }
-            Size Size = new Size(IsRTL ? (Left - Right) : (Right - Left), (Top - Bottom) + ((fontFace.Metrics.LineGap * fontSize) / ((float)fontFace.Metrics.DesignUnitsPerEm)));
+            Size Size = new Size(IsRTL ? (Left - Right) : (Right - Left), (Top - Bottom) + ((fontFace.Metrics.LineGap * pointSize) / ((float)fontFace.Metrics.DesignUnitsPerEm)));
             BaseLine = Top;
             analysisSource.Shadow.Dispose();
             analysisSink.Shadow.Dispose();
@@ -565,12 +570,29 @@ namespace IslamSourceQuranViewer
         public List<MyChildRenderBlockItem> ItemRuns { get { return _ItemRuns; } set {
                 char[] Forms = XMLRender.ArabicData.GetPresentationForms;
                 //XMLRender.ArabicData.LigatureInfo[] ligs = XMLRender.ArabicData.GetLigatures(String.Join(String.Empty, System.Linq.Enumerable.Select(value, (Run) => Run.ItemText)), false, Forms);
-                float BaseLine;
-                CharPosInfo[] pos;
-                GetWordDiacriticPositionsDWrite(String.Join(String.Empty, System.Linq.Enumerable.Select(value, (Run) => Run.ItemText)), AppSettings.strSelectedFont, AppSettings.dFontSize, Forms, true, ref BaseLine, ref pos);
+                float BaseLine = 0;
+                CharPosInfo[] chpos = null;
+                GetWordDiacriticPositionsDWrite(String.Join(String.Empty, System.Linq.Enumerable.Select(value, (Run) => Run.ItemText)), AppSettings.strSelectedFont, (float)AppSettings.dFontSize, Forms, true, ref BaseLine, ref chpos);
                 int pos = value[0].ItemText.Length;
                 int count = 1;
                 while (count < value.Count) {
+                    for (int subcount = 0; subcount < chpos.Length; subcount++)
+                    {
+                        if (pos <= chpos[subcount].Index && pos >= chpos[subcount].Index + chpos[subcount].Length)
+                        {
+                            if (pos + value[1].ItemText.Length <= chpos[subcount].Index + chpos[subcount].Length)
+                            {
+                                if (chpos[subcount].Index + chpos[subcount].Length - pos == value[1].ItemText.Length)
+                                {
+                                    value[count - 1].ItemText += value[count].ItemText; value.RemoveAt(count); count--;
+                                }
+                                else {
+                                    value[count - 1].ItemText += value[count].ItemText.Substring(0, chpos[subcount].Index + chpos[subcount].Length - pos); value[count].ItemText = value[count].ItemText.Substring(chpos[subcount].Index + chpos[subcount].Length - pos);
+                                }
+                            }
+                        }
+
+                    }
                     //for (int subcount = 0; subcount < ligs.Length; subcount++) {
                     //    for indexes which are before, and after, find the maximum index in this group which is after
                     //    if (pos <= ligs[subcount].Indexes[0] && pos >= ligs[subcount].Indexes[ligs[subcount].Indexes.Length - 1]) {
@@ -581,7 +603,7 @@ namespace IslamSourceQuranViewer
                     //                } else {
                     //                    value[count - 1].ItemText += value[count].ItemText.Substring(0, ligs[subcount].Indexes[ligcount] - pos); value[count].ItemText = value[count].ItemText.Substring(ligs[subcount].Indexes[ligcount] - pos);
                     //                }
-                    //                break;
+                    //                break; //need to break again...
                     //            }
                     //        }
                     //    }

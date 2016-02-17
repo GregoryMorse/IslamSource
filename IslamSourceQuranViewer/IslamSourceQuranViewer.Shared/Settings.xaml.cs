@@ -36,7 +36,7 @@ namespace IslamSourceQuranViewer
         }
         public AppSettings MyAppSettings { get; set; }
     }
-    public class AppSettings : INotifyPropertyChanged
+    public class AppSettings //: INotifyPropertyChanged
     {
         public AppSettings() { }
         public static void InitDefaultSettings()
@@ -98,10 +98,10 @@ namespace IslamSourceQuranViewer
         public bool ShowTranslation { get { return bShowTranslation; } set { bShowTranslation = value; } }
         public bool ShowTransliteration { get { return bShowTransliteration; } set { bShowTransliteration = value; } }
         public bool ShowW4W { get { return bShowW4W; } set { bShowW4W = value; } }
-        #region Implementation of INotifyPropertyChanged
+        //#region Implementation of INotifyPropertyChanged
 
-        public event PropertyChangedEventHandler PropertyChanged;
+        //public event PropertyChangedEventHandler PropertyChanged;
 
-        #endregion
+        //#endregion
     }
 }
